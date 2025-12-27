@@ -58,7 +58,7 @@ Amazon PA-API v5とGoogle Jules APIを活用した商品調査記事の自動生
     - **Property 5: Investigation Result Processing Completeness**
     - **Validates: Requirements 2.3, 5.3**
 
-- [ ] 4. 記事生成システムの実装
+- [-] 4. 記事生成システムの実装
   - [ ] 4.1 Article_Generatorの基本実装
     - Markdown記事生成エンジンの開発
     - 記事テンプレートシステムの構築
