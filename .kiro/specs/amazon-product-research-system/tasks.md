@@ -39,22 +39,22 @@ Amazon PA-API v5とGoogle Jules APIを活用した商品調査記事の自動生
     - **Property 3: Comprehensive Error Handling and Retry Logic**
     - **Validates: Requirements 1.4, 2.5, 6.1, 6.2**
 
-- [ ] 3. Google Jules API統合の実装
-  - [ ] 3.1 Jules_Investigatorの基本実装
+- [x] 3. Google Jules API統合の実装
+  - [x] 3.1 Jules_Investigatorの基本実装
     - Jules APIクライアントとセッション管理
     - 調査プロンプト生成とレスポンス処理
     - _Requirements: 2.1, 2.2, 2.3_
 
-  - [ ] 3.2 Jules調査リクエストのプロパティテスト
+  - [x] 3.2 Jules調査リクエストのプロパティテスト
     - **Property 4: Jules Investigation Request Formatting**
     - **Validates: Requirements 2.1, 2.2, 2.4**
 
-  - [ ] 3.3 調査結果処理の実装
+  - [x] 3.3 調査結果処理の実装
     - 調査結果の解析と構造化
     - Review_Analyzerによるレビュー分析機能
     - _Requirements: 2.3, 5.3_
 
-  - [ ] 3.4 調査結果処理のプロパティテスト
+  - [x] 3.4 調査結果処理のプロパティテスト
     - **Property 5: Investigation Result Processing Completeness**
     - **Validates: Requirements 2.3, 5.3**
 
