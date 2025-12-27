@@ -1,0 +1,140 @@
+name: Product Research Pipeline
+
+on:
+  schedule:
+    # Run daily at 2 AM UTC
+    - cron: '0 2 * * *'
+  workflow_dispatch:
+    inputs:
+      categories:
+        description: 'Product categories to search (comma-separated)'
+        required: false
+        default: 'Electronics,Home,Sports'
+      max_results:
+        description: 'Maximum results per category'
+        required: false
+        default: '10'
+
+jobs:
+  product-search:
+    runs-on: ubuntu-latest
+    outputs:
+      products-found: ${{ steps.search.outputs.products-found }}
+    
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Use Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '20.x'
+        cache: 'npm'
+    
+    - name: Install dependencies
+      run: npm ci
+    
+    - name: Build project
+      run: npm run build
+    
+    - name: Run product search
+      id: search
+      env:
+        AMAZON_ACCESS_KEY: ${{ secrets.AMAZON_ACCESS_KEY }}
+        AMAZON_SECRET_KEY: ${{ secrets.AMAZON_SECRET_KEY }}
+        AMAZON_PARTNER_TAG: ${{ secrets.AMAZON_PARTNER_TAG }}
+        PRODUCT_CATEGORIES: ${{ github.event.inputs.categories || 'Electronics,Home,Sports' }}
+        MAX_RESULTS_PER_CATEGORY: ${{ github.event.inputs.max_results || '10' }}
+      run: |
+        echo "Starting product search..."
+        # This will be implemented in later tasks
+        echo "products-found=true" >> $GITHUB_OUTPUT
+    
+    - name: Upload product data
+      uses: actions/upload-artifact@v4
+      with:
+        name: product-data
+        path: data/products/
+        retention-days: 7
+
+  jules-investigation:
+    needs: product-search
+    if: needs.product-search.outputs.products-found == 'true'
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Use Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '20.x'
+        cache: 'npm'
+    
+    - name: Install dependencies
+      run: npm ci
+    
+    - name: Download product data
+      uses: actions/download-artifact@v4
+      with:
+        name: product-data
+        path: data/products/
+    
+    - name: Run Jules investigation
+      env:
+        JULES_API_KEY: ${{ secrets.JULES_API_KEY }}
+        JULES_BASE_URL: ${{ secrets.JULES_BASE_URL }}
+      run: |
+        echo "Starting Jules investigation..."
+        # This will be implemented in later tasks
+    
+    - name: Upload investigation results
+      uses: actions/upload-artifact@v4
+      with:
+        name: investigation-results
+        path: data/investigations/
+        retention-days: 7
+
+  article-generation:
+    needs: jules-investigation
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Use Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '20.x'
+        cache: 'npm'
+    
+    - name: Install dependencies
+      run: npm ci
+    
+    - name: Download investigation results
+      uses: actions/download-artifact@v4
+      with:
+        name: investigation-results
+        path: data/investigations/
+    
+    - name: Generate articles
+      env:
+        AMAZON_PARTNER_TAG: ${{ secrets.AMAZON_PARTNER_TAG }}
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        GITHUB_REPOSITORY: ${{ github.repository }}
+      run: |
+        echo "Generating articles..."
+        # This will be implemented in later tasks
+    
+    - name: Commit and push articles
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git add articles/
+        if git diff --staged --quiet; then
+          echo "No changes to commit"
+        else
+          git commit -m "Add new product research articles [automated]"
+          git push
+        fi

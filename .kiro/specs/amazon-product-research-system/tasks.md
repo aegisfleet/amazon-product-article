@@ -6,13 +6,13 @@ Amazon PA-API v5とGoogle Jules APIを活用した商品調査記事の自動生
 
 ## Tasks
 
-- [ ] 1. プロジェクト基盤とコア設定の構築
+- [-] 1. プロジェクト基盤とコア設定の構築
   - TypeScript環境とGitHub Actions基盤の設定
   - 設定管理システムとシークレット管理の実装
   - 基本的なディレクトリ構造とファイル構成の作成
   - _Requirements: 7.1, 4.3_
 
-- [ ] 1.1 プロジェクト設定のプロパティテスト
+- [x] 1.1 プロジェクト設定のプロパティテスト
   - **Property 12: Configuration Management and Validation**
   - **Validates: Requirements 7.1, 7.2, 7.3, 7.4, 7.5**
 
