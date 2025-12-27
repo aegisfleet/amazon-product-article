@@ -1,0 +1,494 @@
+/**
+ * Amazon Product Advertising API v5 Client
+ * Handles authentication, rate limiting, and product data retrieval
+ */
+
+import axios, { AxiosInstance, AxiosResponse } from 'axios';
+import crypto from 'crypto';
+import { Logger } from '../utils/Logger';
+import { 
+  PAAPICredentials, 
+  PAAPIRequest, 
+  PAAPIResponse, 
+  PAAPIItem,
+  RateLimitConfig 
+} from '../types/PAAPITypes';
+import { Product, ProductDetail, ProductSearchParams, ProductSearchResult } from '../types/Product';
+
+export class PAAPIClient {
+  private logger = Logger.getInstance();
+  private credentials?: PAAPICredentials;
+  private httpClient: AxiosInstance;
+  private rateLimitConfig: RateLimitConfig;
+  private lastRequestTime = 0;
+  private requestQueue: Array<() => Promise<any>> = [];
+  private isProcessingQueue = false;
+
+  constructor() {
+    this.rateLimitConfig = {
+      requestsPerSecond: 1, // PA-API v5 limit
+      burstLimit: 5,
+      retryDelay: 1000,
+      maxRetries: 3
+    };
+
+    this.httpClient = axios.create({
+      timeout: 30000,
+      headers: {
+        'Content-Type': 'application/json; charset=utf-8',
+        'User-Agent': 'amazon-product-research-system/1.0.0'
+      }
+    });
+  }
+
+  /**
+   * Authenticate with Amazon PA-API v5
+   */
+  async authenticate(accessKey: string, secretKey: string, partnerTag: string, region = 'us-east-1'): Promise<void> {
+    if (!accessKey || !secretKey || !partnerTag) {
+      throw new Error('Missing required PA-API credentials');
+    }
+
+    this.credentials = {
+      accessKey,
+      secretKey,
+      partnerTag,
+      region
+    };
+
+    this.logger.info('PA-API client authenticated successfully');
+  }
+
+  /**
+   * Search for products by category and keywords
+   */
+  async searchProducts(params: ProductSearchParams): Promise<ProductSearchResult> {
+    this.validateAuthentication();
+
+    const request: PAAPIRequest = {
+      Operation: 'SearchItems',
+      PartnerTag: this.credentials!.partnerTag,
+      PartnerType: 'Associates',
+      Marketplace: this.getMarketplace(),
+      Keywords: params.keywords.join(' '),
+      SearchIndex: this.mapCategoryToSearchIndex(params.category),
+      ItemCount: Math.min(params.maxResults, 10), // PA-API limit
+      Resources: [
+        'Images.Primary.Large',
+        'Images.Primary.Medium',
+        'Images.Variants.Large',
+        'ItemInfo.Title',
+        'ItemInfo.Features',
+        'ItemInfo.ManufactureInfo',
+        'Offers.Listings.Price',
+        'Offers.Listings.Availability',
+        'Offers.Summaries.HighestPrice',
+        'Offers.Summaries.LowestPrice',
+        'CustomerReviews.StarRating',
+        'CustomerReviews.Count',
+        'BrowseNodeInfo.BrowseNodes'
+      ]
+    };
+
+    if (params.minPrice) {
+      request.MinPrice = params.minPrice * 100; // Convert to cents
+    }
+    if (params.maxPrice) {
+      request.MaxPrice = params.maxPrice * 100; // Convert to cents
+    }
+    if (params.sortBy) {
+      request.SortBy = this.mapSortBy(params.sortBy);
+    }
+
+    const response = await this.makeRequest(request);
+    const products = this.parseSearchResponse(response);
+
+    return {
+      products,
+      totalResults: response.SearchResult?.TotalResultCount || 0,
+      searchParams: params,
+      timestamp: new Date()
+    };
+  }
+
+  /**
+   * Get detailed product information by ASIN
+   */
+  async getProductDetails(asin: string): Promise<ProductDetail> {
+    this.validateAuthentication();
+
+    const request: PAAPIRequest = {
+      Operation: 'GetItems',
+      PartnerTag: this.credentials!.partnerTag,
+      PartnerType: 'Associates',
+      Marketplace: this.getMarketplace(),
+      ItemIds: [asin],
+      Resources: [
+        'Images.Primary.Large',
+        'Images.Primary.Medium',
+        'Images.Variants.Large',
+        'ItemInfo.Title',
+        'ItemInfo.Features',
+        'ItemInfo.ManufactureInfo',
+        'ItemInfo.ProductInfo',
+        'Offers.Listings.Price',
+        'Offers.Listings.Availability',
+        'Offers.Summaries.HighestPrice',
+        'Offers.Summaries.LowestPrice',
+        'CustomerReviews.StarRating',
+        'CustomerReviews.Count',
+        'BrowseNodeInfo.BrowseNodes'
+      ]
+    };
+
+    const response = await this.makeRequest(request);
+    
+    if (!response.ItemsResult?.Items?.[0]) {
+      throw new Error(`Product with ASIN ${asin} not found`);
+    }
+
+    return this.parseProductDetail(response.ItemsResult.Items[0]);
+  }
+
+  /**
+   * Handle rate limiting with queue management
+   */
+  async handleRateLimit(): Promise<void> {
+    const now = Date.now();
+    const timeSinceLastRequest = now - this.lastRequestTime;
+    const minInterval = 1000 / this.rateLimitConfig.requestsPerSecond;
+
+    if (timeSinceLastRequest < minInterval) {
+      const delay = minInterval - timeSinceLastRequest;
+      this.logger.debug(`Rate limiting: waiting ${delay}ms`);
+      await this.sleep(delay);
+    }
+
+    this.lastRequestTime = Date.now();
+  }
+
+  /**
+   * Make authenticated request to PA-API
+   */
+  private async makeRequest(request: PAAPIRequest): Promise<PAAPIResponse> {
+    return new Promise((resolve, reject) => {
+      this.requestQueue.push(async () => {
+        try {
+          await this.handleRateLimit();
+          
+          const host = this.getHost();
+          const endpoint = request.Operation === 'GetItems' ? '/paapi5/getitems' : '/paapi5/searchitems';
+          const url = `https://${host}${endpoint}`;
+          
+          // Determine the correct target based on operation
+          const target = request.Operation === 'GetItems' 
+            ? 'com.amazon.paapi5.v1.ProductAdvertisingAPIv1.GetItems'
+            : 'com.amazon.paapi5.v1.ProductAdvertisingAPIv1.SearchItems';
+          
+          const headers = this.createAuthHeaders(request, host, endpoint, target);
+          
+          let lastError: Error | null = null;
+          
+          for (let attempt = 1; attempt <= this.rateLimitConfig.maxRetries; attempt++) {
+            try {
+              this.logger.debug(`Making PA-API request (attempt ${attempt}/${this.rateLimitConfig.maxRetries})`);
+              
+              const response: AxiosResponse<PAAPIResponse> = await this.httpClient.post(url, request, { headers });
+              
+              if (response.data.Errors && response.data.Errors.length > 0) {
+                const error = response.data.Errors[0];
+                if (error) {
+                  throw new Error(`PA-API Error: ${error.Code} - ${error.Message}`);
+                }
+              }
+              
+              return resolve(response.data);
+            } catch (error) {
+              lastError = error as Error;
+              
+              if (attempt < this.rateLimitConfig.maxRetries) {
+                const delay = this.rateLimitConfig.retryDelay * Math.pow(2, attempt - 1);
+                this.logger.warn(`Request failed (attempt ${attempt}), retrying in ${delay}ms: ${lastError.message}`);
+                await this.sleep(delay);
+              }
+            }
+          }
+          
+          reject(new Error(`PA-API request failed after ${this.rateLimitConfig.maxRetries} attempts: ${lastError?.message}`));
+        } catch (error) {
+          reject(error);
+        }
+      });
+      
+      this.processQueue();
+    });
+  }
+
+  /**
+   * Process request queue to maintain rate limits
+   */
+  private async processQueue(): Promise<void> {
+    if (this.isProcessingQueue || this.requestQueue.length === 0) {
+      return;
+    }
+
+    this.isProcessingQueue = true;
+
+    while (this.requestQueue.length > 0) {
+      const request = this.requestQueue.shift();
+      if (request) {
+        await request();
+      }
+    }
+
+    this.isProcessingQueue = false;
+  }
+
+  /**
+   * Create AWS Signature Version 4 headers
+   */
+  private createAuthHeaders(request: PAAPIRequest, host: string, endpoint: string, target: string): Record<string, string> {
+    const now = new Date();
+    const amzDate = now.toISOString().replace(/[:\-]|\.\d{3}/g, '');
+    const dateStamp = amzDate.substr(0, 8);
+    
+    const canonicalHeaders = `host:${host}\nx-amz-date:${amzDate}\n`;
+    const signedHeaders = 'host;x-amz-date';
+    const payloadHash = crypto.createHash('sha256').update(JSON.stringify(request)).digest('hex');
+    
+    const canonicalRequest = [
+      'POST',
+      endpoint,
+      '',
+      canonicalHeaders,
+      signedHeaders,
+      payloadHash
+    ].join('\n');
+    
+    const algorithm = 'AWS4-HMAC-SHA256';
+    const credentialScope = `${dateStamp}/${this.credentials!.region}/ProductAdvertisingAPI/aws4_request`;
+    const stringToSign = [
+      algorithm,
+      amzDate,
+      credentialScope,
+      crypto.createHash('sha256').update(canonicalRequest).digest('hex')
+    ].join('\n');
+    
+    const signingKey = this.getSignatureKey(this.credentials!.secretKey, dateStamp, this.credentials!.region, 'ProductAdvertisingAPI');
+    const signature = crypto.createHmac('sha256', signingKey).update(stringToSign).digest('hex');
+    
+    const authorizationHeader = `${algorithm} Credential=${this.credentials!.accessKey}/${credentialScope}, SignedHeaders=${signedHeaders}, Signature=${signature}`;
+    
+    return {
+      'Authorization': authorizationHeader,
+      'X-Amz-Date': amzDate,
+      'X-Amz-Target': target
+    };
+  }
+
+  /**
+   * Generate AWS signature key
+   */
+  private getSignatureKey(key: string, dateStamp: string, regionName: string, serviceName: string): Buffer {
+    const kDate = crypto.createHmac('sha256', `AWS4${key}`).update(dateStamp).digest();
+    const kRegion = crypto.createHmac('sha256', kDate).update(regionName).digest();
+    const kService = crypto.createHmac('sha256', kRegion).update(serviceName).digest();
+    const kSigning = crypto.createHmac('sha256', kService).update('aws4_request').digest();
+    return kSigning;
+  }
+
+  /**
+   * Parse search response into Product objects
+   */
+  private parseSearchResponse(response: PAAPIResponse): Product[] {
+    if (!response.SearchResult?.Items) {
+      return [];
+    }
+
+    return response.SearchResult.Items.map(item => this.parseProduct(item));
+  }
+
+  /**
+   * Parse PA-API item into Product object
+   */
+  private parseProduct(item: PAAPIItem): Product {
+    const price = this.extractPrice(item);
+    const images = this.extractImages(item);
+    const rating = this.extractRating(item);
+    
+    return {
+      asin: item.ASIN,
+      title: item.ItemInfo?.Title?.DisplayValue || 'Unknown Title',
+      category: this.extractCategory(item),
+      price,
+      images,
+      specifications: this.extractSpecifications(item),
+      availability: item.Offers?.Listings?.[0]?.Availability?.Message || 'Unknown',
+      rating
+    };
+  }
+
+  /**
+   * Parse PA-API item into ProductDetail object
+   */
+  private parseProductDetail(item: PAAPIItem): ProductDetail {
+    const product = this.parseProduct(item);
+    
+    const result: ProductDetail = {
+      ...product,
+      features: item.ItemInfo?.Features?.DisplayValues || []
+    };
+    
+    // Only add optional properties if they exist
+    const manufacturer = item.ItemInfo?.ManufactureInfo?.Brand?.DisplayValue;
+    if (manufacturer) {
+      result.manufacturer = manufacturer;
+    }
+    
+    const model = item.ItemInfo?.ManufactureInfo?.Model?.DisplayValue;
+    if (model) {
+      result.model = model;
+    }
+    
+    return result;
+  }
+
+  /**
+   * Extract price information from PA-API item
+   */
+  private extractPrice(item: PAAPIItem) {
+    const listing = item.Offers?.Listings?.[0];
+    const summary = item.Offers?.Summaries?.[0];
+    
+    if (listing?.Price) {
+      return {
+        amount: listing.Price.Amount / 100, // Convert from cents
+        currency: listing.Price.Currency,
+        formatted: listing.Price.DisplayAmount
+      };
+    }
+    
+    if (summary?.LowestPrice) {
+      return {
+        amount: summary.LowestPrice.Amount / 100,
+        currency: summary.LowestPrice.Currency,
+        formatted: summary.LowestPrice.DisplayAmount
+      };
+    }
+    
+    return {
+      amount: 0,
+      currency: 'USD',
+      formatted: 'Price not available'
+    };
+  }
+
+  /**
+   * Extract image information from PA-API item
+   */
+  private extractImages(item: PAAPIItem) {
+    const primary = item.Images?.Primary?.Large?.URL || item.Images?.Primary?.Medium?.URL || '';
+    const thumbnails = item.Images?.Variants?.map(variant => variant.Large?.URL).filter(Boolean) || [];
+    
+    return {
+      primary,
+      thumbnails: thumbnails as string[]
+    };
+  }
+
+  /**
+   * Extract rating information from PA-API item
+   */
+  private extractRating(item: PAAPIItem) {
+    return {
+      average: item.CustomerReviews?.StarRating?.Value || 0,
+      count: item.CustomerReviews?.Count || 0
+    };
+  }
+
+  /**
+   * Extract category from PA-API item
+   */
+  private extractCategory(item: PAAPIItem): string {
+    return item.BrowseNodeInfo?.BrowseNodes?.[0]?.DisplayName || 'Unknown';
+  }
+
+  /**
+   * Extract specifications from PA-API item
+   */
+  private extractSpecifications(item: PAAPIItem): Record<string, string> {
+    const specs: Record<string, string> = {};
+    
+    if (item.ItemInfo?.ManufactureInfo?.Brand?.DisplayValue) {
+      specs.brand = item.ItemInfo.ManufactureInfo.Brand.DisplayValue;
+    }
+    
+    if (item.ItemInfo?.ManufactureInfo?.Model?.DisplayValue) {
+      specs.model = item.ItemInfo.ManufactureInfo.Model.DisplayValue;
+    }
+    
+    return specs;
+  }
+
+  /**
+   * Utility methods
+   */
+  private validateAuthentication(): void {
+    if (!this.credentials) {
+      throw new Error('PA-API client not authenticated. Call authenticate() first.');
+    }
+  }
+
+  private getHost(): string {
+    const regionHosts: Record<string, string> = {
+      'us-east-1': 'webservices.amazon.com',
+      'us-west-2': 'webservices.amazon.com',
+      'eu-west-1': 'webservices.amazon.co.uk',
+      'ap-northeast-1': 'webservices.amazon.co.jp'
+    };
+    
+    return regionHosts[this.credentials!.region] || 'webservices.amazon.com';
+  }
+
+  private getMarketplace(): string {
+    const marketplaces: Record<string, string> = {
+      'us-east-1': 'www.amazon.com',
+      'us-west-2': 'www.amazon.com',
+      'eu-west-1': 'www.amazon.co.uk',
+      'ap-northeast-1': 'www.amazon.co.jp'
+    };
+    
+    return marketplaces[this.credentials!.region] || 'www.amazon.com';
+  }
+
+  private mapCategoryToSearchIndex(category: string): string {
+    const categoryMap: Record<string, string> = {
+      'electronics': 'Electronics',
+      'books': 'Books',
+      'clothing': 'Fashion',
+      'home': 'HomeGarden',
+      'sports': 'SportingGoods',
+      'toys': 'ToysAndGames',
+      'automotive': 'Automotive',
+      'beauty': 'Beauty',
+      'health': 'HealthPersonalCare',
+      'kitchen': 'KitchenAndDining'
+    };
+    
+    return categoryMap[category.toLowerCase()] || 'All';
+  }
+
+  private mapSortBy(sortBy: string): string {
+    const sortMap: Record<string, string> = {
+      'relevance': 'Relevance',
+      'price': 'Price:LowToHigh',
+      'rating': 'AvgCustomerReviews'
+    };
+    
+    return sortMap[sortBy] || 'Relevance';
+  }
+
+  private sleep(ms: number): Promise<void> {
+    return new Promise(resolve => setTimeout(resolve, ms));
+  }
+}
