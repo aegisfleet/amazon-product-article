@@ -210,7 +210,7 @@ export class AffiliateLinkManager {
         const tag = newPartnerTag || this.config.partnerTag;
 
         // 既存のAmazonリンクを検出して更新
-        const amazonLinkPattern = /(https?:\/\/(www\.)?amazon\.(co\.jp|com|co\.uk|de|fr)\/[^\s\)]*)/g;
+        const amazonLinkPattern = /(https?:\/\/(www\.)?amazon\.(co\.jp|com|co\.uk|de|fr)\/[^\s)]*)/g;
 
         return content.replace(amazonLinkPattern, (match) => {
             try {
@@ -322,7 +322,7 @@ export class AffiliateLinkManager {
      * コンテンツからアフィリエイトリンクを抽出
      */
     private extractAffiliateLinks(content: string): string[] {
-        const amazonLinkPattern = /https?:\/\/(www\.)?amazon\.(co\.jp|com|co\.uk|de|fr)\/[^\s\)"]*/g;
+        const amazonLinkPattern = /https?:\/\/(www\.)?amazon\.(co\.jp|com|co\.uk|de|fr)\/[^\s)"]*/g;
         const matches = content.match(amazonLinkPattern);
         return matches || [];
     }
