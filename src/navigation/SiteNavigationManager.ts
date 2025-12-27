@@ -229,7 +229,6 @@ ${urls.map(u => `  <url>
 
         // 価格帯フィルタ
         if (params.priceRange) {
-            const range = this.parsePriceRange(params.priceRange);
             filtered = filtered.filter(a => {
                 // priceRangeはarticleの属性として使用
                 return a.priceRange === params.priceRange;
@@ -333,7 +332,7 @@ ${urls.map(u => `  <url>
     /**
      * メーカーフィルタを作成
      */
-    private createManufacturerFilters(manufacturers: string[]): ManufacturerFilter[] {
+    private createManufacturerFilters(_manufacturers: string[]): ManufacturerFilter[] {
         const manufacturerMap = new Map<string, { count: number; categories: Set<string> }>();
 
         for (const article of this.articles) {
@@ -503,12 +502,13 @@ ${urls.map(u => `  <url>
                 case 'rating':
                     comparison = (a.rating || 0) - (b.rating || 0);
                     break;
-                case 'price':
+                case 'price': {
                     // priceRangeで簡易比較
                     const priceOrder = { 'low': 1, 'medium': 2, 'high': 3, 'premium': 4 };
                     comparison = (priceOrder[a.priceRange as keyof typeof priceOrder] || 0) -
                         (priceOrder[b.priceRange as keyof typeof priceOrder] || 0);
                     break;
+                }
             }
 
             return sortOrder === 'desc' ? -comparison : comparison;
