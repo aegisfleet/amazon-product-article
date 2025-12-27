@@ -4,9 +4,8 @@
  */
 
 import * as fc from 'fast-check';
+import { InvestigationResult } from '../../types/JulesTypes';
 import { ReviewAnalyzer } from '../ReviewAnalyzer';
-import { InvestigationResult, CompetitiveProduct } from '../../types/JulesTypes';
-import { Product } from '../../types/Product';
 
 describe('ReviewAnalyzer Property Tests', () => {
   let analyzer: ReviewAnalyzer;
@@ -38,7 +37,7 @@ describe('ReviewAnalyzer Property Tests', () => {
               fc.constant('Sports & Outdoors')
             ),
             price: fc.record({
-              amount: fc.float({ min: 1, max: 1000 }),
+              amount: fc.float({ min: 1, max: 1000, noNaN: true }),
               currency: fc.constant('USD'),
               formatted: fc.string({ minLength: 5, maxLength: 15 })
             }),
@@ -53,7 +52,7 @@ describe('ReviewAnalyzer Property Tests', () => {
             ),
             availability: fc.string({ minLength: 5, maxLength: 20 }),
             rating: fc.record({
-              average: fc.float({ min: 1, max: 5 }),
+              average: fc.float({ min: 1, max: 5, noNaN: true }),
               count: fc.integer({ min: 0, max: 1000 })
             })
           }),
@@ -84,12 +83,12 @@ describe('ReviewAnalyzer Property Tests', () => {
           const analysisResult = await analyzer.analyzeInvestigationResult(investigationResult);
 
           // Verify all required analysis components are extracted (Requirements 2.3, 5.3)
-          
+
           // 1. Pros/cons analysis completeness
           expect(analysisResult.positiveInsights).toBeDefined();
           expect(analysisResult.negativeInsights).toBeDefined();
           expect(analysisResult.positiveInsights.length).toBeGreaterThan(0);
-          
+
           // Each insight should have required structure
           analysisResult.positiveInsights.forEach(insight => {
             expect(insight.category).toBeDefined();
@@ -111,7 +110,7 @@ describe('ReviewAnalyzer Property Tests', () => {
           // 3. User experiences analysis
           expect(analysisResult.useCaseAnalysis).toBeDefined();
           expect(analysisResult.useCaseAnalysis.length).toBeGreaterThan(0);
-          
+
           analysisResult.useCaseAnalysis.forEach(useCase => {
             expect(useCase.useCase).toBeDefined();
             expect(useCase.suitability).toBeGreaterThanOrEqual(0);
@@ -133,10 +132,10 @@ describe('ReviewAnalyzer Property Tests', () => {
           expect(analysisResult.keyThemes.length).toBeLessThanOrEqual(5);
 
           // 6. Verify data consistency
-          const totalOriginalPoints = investigationResult.analysis.positivePoints.length + 
-                                    investigationResult.analysis.negativePoints.length;
-          const totalProcessedInsights = analysisResult.positiveInsights.length + 
-                                       analysisResult.negativeInsights.length;
+          const totalOriginalPoints = investigationResult.analysis.positivePoints.length +
+            investigationResult.analysis.negativePoints.length;
+          const totalProcessedInsights = analysisResult.positiveInsights.length +
+            analysisResult.negativeInsights.length;
           expect(totalProcessedInsights).toBe(totalOriginalPoints);
         }
       ),
