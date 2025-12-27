@@ -58,22 +58,22 @@ Amazon PA-API v5とGoogle Jules APIを活用した商品調査記事の自動生
     - **Property 5: Investigation Result Processing Completeness**
     - **Validates: Requirements 2.3, 5.3**
 
-- [-] 4. 記事生成システムの実装
-  - [ ] 4.1 Article_Generatorの基本実装
+- [x] 4. 記事生成システムの実装
+  - [x] 4.1 Article_Generatorの基本実装
     - Markdown記事生成エンジンの開発
     - 記事テンプレートシステムの構築
     - _Requirements: 3.1, 3.2, 3.4_
 
-  - [ ] 4.2 記事構造のプロパティテスト
+  - [x] 4.2 記事構造のプロパティテスト
     - **Property 6: Article Structure and Content Completeness**
     - **Validates: Requirements 3.1, 3.2, 3.4, 3.5**
 
-  - [ ] 4.3 Article_Quality_Managerの実装
+  - [x] 4.3 Article_Quality_Managerの実装
     - 記事品質検証システムの開発
     - Jules向け詳細プロンプトテンプレートの作成
     - _Requirements: 3.5, 6.5_
 
-  - [ ] 4.4 レビュー分析のプロパティテスト
+  - [x] 4.4 レビュー分析のプロパティテスト
     - **Property 7: Review Analysis and Categorization Accuracy**
     - **Validates: Requirements 3.3, 5.3**
 
@@ -90,37 +90,37 @@ Amazon PA-API v5とGoogle Jules APIを活用した商品調査記事の自動生
 - [ ] 6. Checkpoint - コア機能の統合テスト
   - すべてのコア機能が正常に動作することを確認し、ユーザーに質問があれば対応する
 
-- [ ] 7. アフィリエイトシステムの実装
-  - [ ] 7.1 Affiliate_Link_Managerの実装
+- [x] 7. アフィリエイトシステムの実装
+  - [x] 7.1 Affiliate_Link_Managerの実装
     - Amazonアフィリエイトリンク生成機能
     - リンク検証とコンプライアンス確認
     - _Requirements: 8.1, 8.3, 8.5_
 
-  - [ ] 7.2 アフィリエイトリンクのプロパティテスト
+  - [x] 7.2 アフィリエイトリンクのプロパティテスト
     - **Property 13: Affiliate Link Generation and Compliance**
     - **Validates: Requirements 8.1, 8.3, 8.5**
 
-  - [ ] 7.3 法的開示システムの実装
+  - [x] 7.3 法的開示システムの実装
     - アフィリエイト開示文の自動挿入機能
     - サイト全体の透明性確保システム
     - _Requirements: 8.2, 8.4_
 
-  - [ ] 7.4 法的コンプライアンステスト
+  - [x] 7.4 法的コンプライアンステスト
     - **Property 14: Legal Disclosure Compliance**
     - **Validates: Requirements 8.2, 8.4**
 
-- [ ] 8. サイトナビゲーションとフィルタリング機能
-  - [ ] 8.1 Site_Navigation_Managerの実装
+- [x] 8. サイトナビゲーションとフィルタリング機能
+  - [x] 8.1 Site_Navigation_Managerの実装
     - カテゴリ管理とインデックス生成
     - フィルタリングインターフェースの構築
     - _Requirements: 9.1, 9.2_
 
-  - [ ] 8.2 レスポンシブデザインの実装
+  - [x] 8.2 レスポンシブデザインの実装
     - モバイルファーストCSSフレームワーク
     - タッチフレンドリーUIコンポーネント
     - _Requirements: 9.1, 9.2, 9.3_
 
-  - [ ] 8.3 レスポンシブデザインのプロパティテスト
+  - [x] 8.3 レスポンシブデザインのプロパティテスト
     - **Property 15: Mobile-First Responsive Design Implementation**
     - **Validates: Requirements 9.1, 9.2, 9.3, 9.4**
 
@@ -128,13 +128,13 @@ Amazon PA-API v5とGoogle Jules APIを活用した商品調査記事の自動生
     - **Property 16: Mobile Performance Optimization**
     - **Validates: Requirements 9.5**
 
-- [ ] 9. GitHub統合とワークフロー実装
-  - [ ] 9.1 GitHub_Publisherの実装
+- [x] 9. GitHub統合とワークフロー実装
+  - [x] 9.1 GitHub_Publisherの実装
     - 記事コミットと自動デプロイ機能
     - GitHub Pages統合とサイト更新
     - _Requirements: 4.1, 4.2, 4.5_
 
-  - [ ] 9.2 Auto_Merge_Managerの実装
+  - [x] 9.2 Auto_Merge_Managerの実装
     - Julesプルリクエストの条件付き自動マージ
     - ファイルパス制限と安全性確保
     - _Requirements: 4.4_
