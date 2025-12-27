@@ -2,9 +2,9 @@
  * Article_Generator - 調査結果からMarkdown記事として生成するコンポーネント
  */
 
-import { Product } from '../types/Product';
-import { InvestigationResult } from '../types/JulesTypes';
 import { ReviewAnalysisResult } from '../analysis/ReviewAnalyzer';
+import { InvestigationResult } from '../types/JulesTypes';
+import { Product } from '../types/Product';
 import { Logger } from '../utils/Logger';
 
 export interface ArticleMetadata {
@@ -99,7 +99,7 @@ export class ArticleGenerator {
     try {
       const articleTemplate = template || this.defaultTemplate;
       const metadata = this.generateSEOMetadata(product, investigation);
-      
+
       const sections = await this.generateSections(
         product,
         investigation,
@@ -110,7 +110,7 @@ export class ArticleGenerator {
       const content = this.assembleArticle(sections, metadata);
       const mobileOptimizedContent = this.createMobileOptimizedLayout(content);
       const contentWithAffiliateLinks = this.insertAffiliateLinks(mobileOptimizedContent, product.asin);
-      
+
       const affiliateLinks = this.extractAffiliateLinks(contentWithAffiliateLinks);
       const wordCount = this.calculateWordCount(contentWithAffiliateLinks);
 
@@ -142,7 +142,7 @@ export class ArticleGenerator {
   generateSEOMetadata(product: Product, investigation: InvestigationResult): ArticleMetadata {
     const title = `${product.title}の詳細レビュー：ユーザーの本音と競合比較`;
     const description = `${product.title}の実際のユーザーレビューを分析し、競合商品との比較を通じて購買判断をサポート`;
-    
+
     const tags = this.generateTags(product, investigation);
     const seoKeywords = this.generateSEOKeywords(product, investigation);
     const priceRange = this.determinePriceRange(product.price.amount);
@@ -205,7 +205,7 @@ export class ArticleGenerator {
   insertAffiliateLinks(content: string, asin: string): string {
     const affiliateTag = process.env.AMAZON_AFFILIATE_TAG || 'your-affiliate-tag';
     const affiliateUrl = `https://www.amazon.co.jp/dp/${asin}?tag=${affiliateTag}`;
-    
+
     // 商品名の後にアフィリエイトリンクを挿入
     let contentWithLinks = content.replace(
       /(## 商品詳細・購入)/,
@@ -367,7 +367,7 @@ ${reviewAnalysis ? this.generateSentimentAnalysis(reviewAnalysis) : ''}`;
         const features = competitor.featureComparison
           .map(feature => `  - ${feature}`)
           .join('\n');
-        
+
         const differentiators = competitor.differentiators
           .map(diff => `  - ${diff}`)
           .join('\n');
@@ -432,9 +432,9 @@ ${investigation.analysis.recommendation.cons.map(con => `- ⚠️ ${con}`).join(
 
 この商品は${scoreText}の評価となりました。特に${investigation.analysis.recommendation.pros[0] || '品質面'}での優位性が認められます。
 
-${score >= 80 ? '自信を持っておすすめできる商品です。' : 
-  score >= 60 ? '用途を限定すれば良い選択肢となります。' : 
-  '購入前に他の選択肢も検討することをおすすめします。'}`;
+${score >= 80 ? '自信を持っておすすめできる商品です。' :
+        score >= 60 ? '用途を限定すれば良い選択肢となります。' :
+          '購入前に他の選択肢も検討することをおすすめします。'}`;
 
     return {
       title: '購入推奨度',
@@ -479,7 +479,7 @@ ${score >= 80 ? '自信を持っておすすめできる商品です。' :
   private assembleArticle(sections: ArticleSection[], metadata: ArticleMetadata): string {
     const frontMatter = this.generateFrontMatter(metadata);
     const sectionsContent = sections.map(section => section.content).join('\n\n');
-    
+
     return `${frontMatter}\n\n${sectionsContent}`;
   }
 
@@ -574,22 +574,22 @@ mobile_optimized: ${metadata.mobileOptimized}
   // Helper methods
   private generateTags(product: Product, investigation: InvestigationResult): string[] {
     const tags = ['商品レビュー', product.category];
-    
+
     if (investigation.analysis.recommendation.score >= 80) {
       tags.push('おすすめ');
     }
-    
+
     if (product.price.amount < 5000) {
       tags.push('お手頃価格');
     }
-    
+
     return tags;
   }
 
-  private generateSEOKeywords(product: Product, investigation: InvestigationResult): string[] {
+  private generateSEOKeywords(product: Product, _investigation: InvestigationResult): string[] {
     const titleWords = product.title.split(' ');
     const firstWord = titleWords.length > 0 ? titleWords[0]! : product.title;
-    
+
     return [
       firstWord, // 商品名の最初の単語
       'レビュー',
@@ -617,20 +617,20 @@ mobile_optimized: ${metadata.mobileOptimized}
   private extractManufacturer(product: Product): string | undefined {
     const title = product.title;
     const manufacturers = ['Apple', 'Sony', 'Samsung', 'Nintendo', 'Microsoft'];
-    
+
     for (const manufacturer of manufacturers) {
       if (title.includes(manufacturer)) {
         return manufacturer;
       }
     }
-    
+
     return undefined;
   }
 
   private shouldBeFeatured(product: Product, investigation: InvestigationResult): boolean {
-    return product.rating.average >= 4.0 && 
-           investigation.analysis.recommendation.score >= 80 &&
-           product.rating.count >= 100;
+    return product.rating.average >= 4.0 &&
+      investigation.analysis.recommendation.score >= 80 &&
+      product.rating.count >= 100;
   }
 
   private convertTablesToMobileFriendly(content: string): string {
@@ -658,7 +658,7 @@ mobile_optimized: ${metadata.mobileOptimized}
     while ((match = linkRegex.exec(content)) !== null) {
       const linkText = match[1];
       const linkUrl = match[2];
-      
+
       if (linkText && linkUrl && linkUrl.includes('amazon.co.jp') && linkUrl.includes('tag=')) {
         const asinMatch = linkUrl.match(/\/dp\/([A-Z0-9]{10})/);
         if (asinMatch && asinMatch[1]) {
@@ -682,8 +682,8 @@ mobile_optimized: ${metadata.mobileOptimized}
 
   private generateSentimentAnalysis(reviewAnalysis: ReviewAnalysisResult): string {
     const sentiment = reviewAnalysis.overallSentiment;
-    const sentimentText = sentiment.overall > 0.3 ? 'ポジティブ' : 
-                        sentiment.overall < -0.3 ? 'ネガティブ' : '中立';
+    const sentimentText = sentiment.overall > 0.3 ? 'ポジティブ' :
+      sentiment.overall < -0.3 ? 'ネガティブ' : '中立';
 
     return `
 ### 📊 レビュー傾向分析

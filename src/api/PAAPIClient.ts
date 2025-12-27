@@ -5,15 +5,15 @@
 
 import axios, { AxiosInstance, AxiosResponse } from 'axios';
 import crypto from 'crypto';
-import { Logger } from '../utils/Logger';
-import { 
-  PAAPICredentials, 
-  PAAPIRequest, 
-  PAAPIResponse, 
+import {
+  PAAPICredentials,
   PAAPIItem,
-  RateLimitConfig 
+  PAAPIRequest,
+  PAAPIResponse,
+  RateLimitConfig
 } from '../types/PAAPITypes';
 import { Product, ProductDetail, ProductSearchParams, ProductSearchResult } from '../types/Product';
+import { Logger } from '../utils/Logger';
 
 export class PAAPIClient {
   private logger = Logger.getInstance();
@@ -142,7 +142,7 @@ export class PAAPIClient {
     };
 
     const response = await this.makeRequest(request);
-    
+
     if (!response.ItemsResult?.Items?.[0]) {
       throw new Error(`Product with ASIN ${asin} not found`);
     }
@@ -175,37 +175,37 @@ export class PAAPIClient {
       this.requestQueue.push(async () => {
         try {
           await this.handleRateLimit();
-          
+
           const host = this.getHost();
           const endpoint = request.Operation === 'GetItems' ? '/paapi5/getitems' : '/paapi5/searchitems';
           const url = `https://${host}${endpoint}`;
-          
+
           // Determine the correct target based on operation
-          const target = request.Operation === 'GetItems' 
+          const target = request.Operation === 'GetItems'
             ? 'com.amazon.paapi5.v1.ProductAdvertisingAPIv1.GetItems'
             : 'com.amazon.paapi5.v1.ProductAdvertisingAPIv1.SearchItems';
-          
+
           const headers = this.createAuthHeaders(request, host, endpoint, target);
-          
+
           let lastError: Error | null = null;
-          
+
           for (let attempt = 1; attempt <= this.rateLimitConfig.maxRetries; attempt++) {
             try {
               this.logger.debug(`Making PA-API request (attempt ${attempt}/${this.rateLimitConfig.maxRetries})`);
-              
+
               const response: AxiosResponse<PAAPIResponse> = await this.httpClient.post(url, request, { headers });
-              
+
               if (response.data.Errors && response.data.Errors.length > 0) {
                 const error = response.data.Errors[0];
                 if (error) {
                   throw new Error(`PA-API Error: ${error.Code} - ${error.Message}`);
                 }
               }
-              
+
               return resolve(response.data);
             } catch (error) {
               lastError = error as Error;
-              
+
               if (attempt < this.rateLimitConfig.maxRetries) {
                 const delay = this.rateLimitConfig.retryDelay * Math.pow(2, attempt - 1);
                 this.logger.warn(`Request failed (attempt ${attempt}), retrying in ${delay}ms: ${lastError.message}`);
@@ -213,14 +213,14 @@ export class PAAPIClient {
               }
             }
           }
-          
+
           reject(new Error(`PA-API request failed after ${this.rateLimitConfig.maxRetries} attempts: ${lastError?.message}`));
         } catch (error) {
           reject(error);
         }
       });
-      
-      this.processQueue();
+
+      void this.processQueue();
     });
   }
 
@@ -249,13 +249,13 @@ export class PAAPIClient {
    */
   private createAuthHeaders(request: PAAPIRequest, host: string, endpoint: string, target: string): Record<string, string> {
     const now = new Date();
-    const amzDate = now.toISOString().replace(/[:\-]|\.\d{3}/g, '');
+    const amzDate = now.toISOString().replace(/[:-]|\.\d{3}/g, '');
     const dateStamp = amzDate.substr(0, 8);
-    
+
     const canonicalHeaders = `host:${host}\nx-amz-date:${amzDate}\n`;
     const signedHeaders = 'host;x-amz-date';
     const payloadHash = crypto.createHash('sha256').update(JSON.stringify(request)).digest('hex');
-    
+
     const canonicalRequest = [
       'POST',
       endpoint,
@@ -264,7 +264,7 @@ export class PAAPIClient {
       signedHeaders,
       payloadHash
     ].join('\n');
-    
+
     const algorithm = 'AWS4-HMAC-SHA256';
     const credentialScope = `${dateStamp}/${this.credentials!.region}/ProductAdvertisingAPI/aws4_request`;
     const stringToSign = [
@@ -273,12 +273,12 @@ export class PAAPIClient {
       credentialScope,
       crypto.createHash('sha256').update(canonicalRequest).digest('hex')
     ].join('\n');
-    
+
     const signingKey = this.getSignatureKey(this.credentials!.secretKey, dateStamp, this.credentials!.region, 'ProductAdvertisingAPI');
     const signature = crypto.createHmac('sha256', signingKey).update(stringToSign).digest('hex');
-    
+
     const authorizationHeader = `${algorithm} Credential=${this.credentials!.accessKey}/${credentialScope}, SignedHeaders=${signedHeaders}, Signature=${signature}`;
-    
+
     return {
       'Authorization': authorizationHeader,
       'X-Amz-Date': amzDate,
@@ -315,7 +315,7 @@ export class PAAPIClient {
     const price = this.extractPrice(item);
     const images = this.extractImages(item);
     const rating = this.extractRating(item);
-    
+
     return {
       asin: item.ASIN,
       title: item.ItemInfo?.Title?.DisplayValue || 'Unknown Title',
@@ -333,23 +333,23 @@ export class PAAPIClient {
    */
   private parseProductDetail(item: PAAPIItem): ProductDetail {
     const product = this.parseProduct(item);
-    
+
     const result: ProductDetail = {
       ...product,
       features: item.ItemInfo?.Features?.DisplayValues || []
     };
-    
+
     // Only add optional properties if they exist
     const manufacturer = item.ItemInfo?.ManufactureInfo?.Brand?.DisplayValue;
     if (manufacturer) {
       result.manufacturer = manufacturer;
     }
-    
+
     const model = item.ItemInfo?.ManufactureInfo?.Model?.DisplayValue;
     if (model) {
       result.model = model;
     }
-    
+
     return result;
   }
 
@@ -359,7 +359,7 @@ export class PAAPIClient {
   private extractPrice(item: PAAPIItem) {
     const listing = item.Offers?.Listings?.[0];
     const summary = item.Offers?.Summaries?.[0];
-    
+
     if (listing?.Price) {
       return {
         amount: listing.Price.Amount / 100, // Convert from cents
@@ -367,7 +367,7 @@ export class PAAPIClient {
         formatted: listing.Price.DisplayAmount
       };
     }
-    
+
     if (summary?.LowestPrice) {
       return {
         amount: summary.LowestPrice.Amount / 100,
@@ -375,7 +375,7 @@ export class PAAPIClient {
         formatted: summary.LowestPrice.DisplayAmount
       };
     }
-    
+
     return {
       amount: 0,
       currency: 'USD',
@@ -389,7 +389,7 @@ export class PAAPIClient {
   private extractImages(item: PAAPIItem) {
     const primary = item.Images?.Primary?.Large?.URL || item.Images?.Primary?.Medium?.URL || '';
     const thumbnails = item.Images?.Variants?.map(variant => variant.Large?.URL).filter(Boolean) || [];
-    
+
     return {
       primary,
       thumbnails: thumbnails as string[]
@@ -418,15 +418,15 @@ export class PAAPIClient {
    */
   private extractSpecifications(item: PAAPIItem): Record<string, string> {
     const specs: Record<string, string> = {};
-    
+
     if (item.ItemInfo?.ManufactureInfo?.Brand?.DisplayValue) {
       specs.brand = item.ItemInfo.ManufactureInfo.Brand.DisplayValue;
     }
-    
+
     if (item.ItemInfo?.ManufactureInfo?.Model?.DisplayValue) {
       specs.model = item.ItemInfo.ManufactureInfo.Model.DisplayValue;
     }
-    
+
     return specs;
   }
 
@@ -446,7 +446,7 @@ export class PAAPIClient {
       'eu-west-1': 'webservices.amazon.co.uk',
       'ap-northeast-1': 'webservices.amazon.co.jp'
     };
-    
+
     return regionHosts[this.credentials!.region] || 'webservices.amazon.com';
   }
 
@@ -457,7 +457,7 @@ export class PAAPIClient {
       'eu-west-1': 'www.amazon.co.uk',
       'ap-northeast-1': 'www.amazon.co.jp'
     };
-    
+
     return marketplaces[this.credentials!.region] || 'www.amazon.com';
   }
 
@@ -474,7 +474,7 @@ export class PAAPIClient {
       'health': 'HealthPersonalCare',
       'kitchen': 'KitchenAndDining'
     };
-    
+
     return categoryMap[category.toLowerCase()] || 'All';
   }
 
@@ -484,7 +484,7 @@ export class PAAPIClient {
       'price': 'Price:LowToHigh',
       'rating': 'AvgCustomerReviews'
     };
-    
+
     return sortMap[sortBy] || 'Relevance';
   }
 

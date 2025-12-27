@@ -2,7 +2,7 @@
  * Review_Analyzer - ユーザーレビューの分析と評価を行うコンポーネント
  */
 
-import { InvestigationResult, CompetitiveProduct } from '../types/JulesTypes';
+import { CompetitiveProduct, InvestigationResult } from '../types/JulesTypes';
 import { Product } from '../types/Product';
 import { Logger } from '../utils/Logger';
 
@@ -69,9 +69,9 @@ export class ReviewAnalyzer {
    * Jules調査結果を解析して構造化されたレビュー分析を生成
    */
   async analyzeInvestigationResult(result: InvestigationResult): Promise<ReviewAnalysisResult> {
-    this.logger.info('Starting investigation result analysis', { 
+    this.logger.info('Starting investigation result analysis', {
       sessionId: result.sessionId,
-      productAsin: result.product.asin 
+      productAsin: result.product.asin
     });
 
     try {
@@ -105,10 +105,10 @@ export class ReviewAnalyzer {
    * ポジティブ/ネガティブポイントからインサイトを抽出
    */
   private extractInsights(points: string[], type: 'positive' | 'negative'): AnalysisInsight[] {
-    return points.map((point, index) => {
+    return points.map((point, _index) => {
       const category = this.categorizeInsight(point);
       const impact = this.assessImpact(point, type);
-      
+
       return {
         category,
         insight: point,
@@ -146,11 +146,11 @@ export class ReviewAnalyzer {
   /**
    * インサイトの影響度を評価
    */
-  private assessImpact(insight: string, type: 'positive' | 'negative'): 'high' | 'medium' | 'low' {
+  private assessImpact(insight: string, _type: 'positive' | 'negative'): 'high' | 'medium' | 'low' {
     const highImpactKeywords = [
       '致命的', '重大', '深刻', '最高', '素晴らしい', '完璧', '最悪', '使えない'
     ];
-    
+
     const mediumImpactKeywords = [
       '良い', '悪い', '問題', '改善', '満足', '不満', '便利', '不便'
     ];
@@ -211,7 +211,7 @@ export class ReviewAnalyzer {
   private assessCategoryRelevance(useCase: string, category: string): number {
     // 簡易的な関連性評価（実際の実装ではより詳細な分析を行う）
     const baseScore = 50;
-    
+
     if (useCase.toLowerCase().includes(category.toLowerCase())) {
       return baseScore + 30;
     }
@@ -232,7 +232,7 @@ export class ReviewAnalyzer {
     };
 
     const identifiedTypes: string[] = [];
-    
+
     for (const [type, patterns] of Object.entries(userTypePatterns)) {
       if (patterns.some(pattern => useCase.includes(pattern))) {
         identifiedTypes.push(type);
@@ -260,7 +260,7 @@ export class ReviewAnalyzer {
     ];
 
     const limitations: string[] = [];
-    
+
     limitationKeywords.forEach(keyword => {
       if (useCase.includes(keyword)) {
         const index = useCase.indexOf(keyword);
@@ -299,7 +299,7 @@ export class ReviewAnalyzer {
    */
   private extractStrengths(competitiveAnalysis: CompetitiveProduct[], recommendation: any): string[] {
     const strengths = [...recommendation.pros];
-    
+
     // 競合分析から追加の強みを抽出
     competitiveAnalysis.forEach(competitor => {
       competitor.differentiators.forEach(diff => {
@@ -324,7 +324,7 @@ export class ReviewAnalyzer {
    */
   private extractDifferentiators(competitiveAnalysis: CompetitiveProduct[]): string[] {
     const differentiators: string[] = [];
-    
+
     competitiveAnalysis.forEach(competitor => {
       competitor.differentiators.forEach(diff => {
         if (!differentiators.includes(diff)) {
@@ -426,16 +426,16 @@ export class ReviewAnalyzer {
    * 側面別センチメントを計算
    */
   private calculateAspectSentiment(result: InvestigationResult, aspect: string): number {
-    const positiveMatches = result.analysis.positivePoints.filter(point => 
+    const positiveMatches = result.analysis.positivePoints.filter(point =>
       point.includes(aspect)
     ).length;
-    
-    const negativeMatches = result.analysis.negativePoints.filter(point => 
+
+    const negativeMatches = result.analysis.negativePoints.filter(point =>
       point.includes(aspect)
     ).length;
 
     const totalMatches = positiveMatches + negativeMatches;
-    
+
     return totalMatches > 0 ? (positiveMatches - negativeMatches) / totalMatches : 0;
   }
 
