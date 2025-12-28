@@ -203,7 +203,14 @@ export class PAAPIClient {
               }
 
               return resolve(response.data);
-            } catch (error) {
+            } catch (error: any) {
+              // Log detailed error information for debugging
+              if (error.response) {
+                const errorData = error.response.data;
+                const errorInfo = errorData?.Errors?.[0] || errorData?.__type || errorData;
+                this.logger.error(`PA-API Response Error: ${JSON.stringify(errorInfo)}`);
+              }
+
               lastError = error as Error;
 
               if (attempt < this.rateLimitConfig.maxRetries) {
