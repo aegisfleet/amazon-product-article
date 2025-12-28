@@ -1,0 +1,43 @@
+name: Auto-Merge Jules PRs
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+jobs:
+  auto-merge:
+    # JulesボットまたはJules関連のユーザーからのPRのみ処理
+    if: github.actor == 'jules[bot]' || contains(github.actor, 'jules')
+    runs-on: ubuntu-latest
+    
+    permissions:
+      contents: write
+      pull-requests: write
+    
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Use Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '20.x'
+        cache: 'npm'
+    
+    - name: Install dependencies
+      run: npm ci
+    
+    - name: Build project
+      run: npm run build
+    
+    - name: Validate and auto-merge PR
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        PR_NUMBER: ${{ github.event.pull_request.number }}
+        PR_AUTHOR: ${{ github.event.pull_request.user.login }}
+      run: npm run merge:pr
+    
+    - name: Report merge status
+      if: always()
+      run: |
+        echo "PR #${{ github.event.pull_request.number }} processing completed"
+        echo "Author: ${{ github.event.pull_request.user.login }}"

@@ -14,7 +14,8 @@
     "clean": "rimraf dist",
     "search:products": "ts-node src/scripts/product-search-cli.ts",
     "investigate": "ts-node src/scripts/jules-investigation-cli.ts",
-    "generate:articles": "ts-node src/scripts/article-generation-cli.ts"
+    "generate:articles": "ts-node src/scripts/article-generation-cli.ts",
+    "merge:pr": "ts-node src/scripts/pr-merge-cli.ts"
   },
   "keywords": [
     "amazon",
@@ -40,6 +41,7 @@
     "typescript": "^5.0.0"
   },
   "dependencies": {
+    "@octokit/rest": "^20.0.0",
     "axios": "^1.6.0",
     "dotenv": "^16.3.0"
   }
