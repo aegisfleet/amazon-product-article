@@ -280,14 +280,26 @@ export class AffiliateLinkManager {
     }
 
     /**
+     * ホスト名が指定のマーケットプレイスに該当するかを判定
+     * 完全一致、またはサブドメインとしての一致のみ許可する
+     * 例: "amazon.co.jp" または "www.amazon.co.jp" は OK
+     *     "evil-amazon.co.jp.example.com" は NG
+     */
+    private isMarketplaceHost(hostname: string, domain: AmazonMarketplace): boolean {
+        const lowerHost = hostname.toLowerCase();
+        const lowerDomain = domain.toLowerCase();
+        return lowerHost === lowerDomain || lowerHost.endsWith('.' + lowerDomain);
+    }
+
+    /**
      * ホスト名からマーケットプレイスを特定
      */
     private identifyMarketplace(hostname: string): AmazonMarketplace {
-        if (hostname.includes('amazon.co.jp')) return 'amazon.co.jp';
-        if (hostname.includes('amazon.com')) return 'amazon.com';
-        if (hostname.includes('amazon.co.uk')) return 'amazon.co.uk';
-        if (hostname.includes('amazon.de')) return 'amazon.de';
-        if (hostname.includes('amazon.fr')) return 'amazon.fr';
+        if (this.isMarketplaceHost(hostname, 'amazon.co.jp')) return 'amazon.co.jp';
+        if (this.isMarketplaceHost(hostname, 'amazon.com')) return 'amazon.com';
+        if (this.isMarketplaceHost(hostname, 'amazon.co.uk')) return 'amazon.co.uk';
+        if (this.isMarketplaceHost(hostname, 'amazon.de')) return 'amazon.de';
+        if (this.isMarketplaceHost(hostname, 'amazon.fr')) return 'amazon.fr';
         return 'amazon.co.jp'; // デフォルト
     }
 
