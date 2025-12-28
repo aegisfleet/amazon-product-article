@@ -246,26 +246,33 @@ export class PAAPIClient {
 
   /**
    * Create AWS Signature Version 4 headers
-   * PA-API v5 requires: content-type, host, x-amz-date to be signed
+   * Matches official paapi5-nodejs-sdk implementation
+   * Signs: content-encoding, content-type, host, x-amz-date, x-amz-target (alphabetical order)
    */
   private createAuthHeaders(request: PAAPIRequest, host: string, endpoint: string, target: string): Record<string, string> {
     const now = new Date();
     const amzDate = now.toISOString().replace(/[:-]|\.\d{3}/g, '');
     const dateStamp = amzDate.substring(0, 8);
 
-    // PA-API v5 required headers
-    const contentType = 'application/json; charset=utf-8';
+    // Request headers to be signed (must match official SDK)
+    const requestHeaders: Record<string, string> = {
+      'content-encoding': 'amz-1.0',
+      'content-type': 'application/json; charset=utf-8',
+      'host': host,
+      'x-amz-date': amzDate,
+      'x-amz-target': target
+    };
+
+    // Create canonical headers (sorted alphabetically by header name)
+    const sortedHeaderNames = Object.keys(requestHeaders).sort();
+    const canonicalHeaders = sortedHeaderNames
+      .map(name => `${name.toLowerCase()}:${requestHeaders[name]}\n`)
+      .join('');
+
+    const signedHeaders = sortedHeaderNames.map(name => name.toLowerCase()).join(';');
+
+    // Payload hash
     const payloadHash = crypto.createHash('sha256').update(JSON.stringify(request)).digest('hex');
-
-    // Canonical headers must be sorted alphabetically by header name (lowercase)
-    // PA-API v5 typically signs: content-type, host, x-amz-date
-    const canonicalHeaders = [
-      `content-type:${contentType}`,
-      `host:${host}`,
-      `x-amz-date:${amzDate}`
-    ].join('\n') + '\n';
-
-    const signedHeaders = 'content-type;host;x-amz-date';
 
     const canonicalRequest = [
       'POST',
@@ -293,7 +300,7 @@ export class PAAPIClient {
     return {
       'Authorization': authorizationHeader,
       'Content-Encoding': 'amz-1.0',
-      'Content-Type': contentType,
+      'Content-Type': 'application/json; charset=utf-8',
       'Host': host,
       'X-Amz-Date': amzDate,
       'X-Amz-Target': target
