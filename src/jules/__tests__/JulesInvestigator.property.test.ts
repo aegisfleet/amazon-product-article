@@ -68,38 +68,50 @@ describe('JulesInvestigator Property Tests', () => {
           // Generate investigation prompt
           const prompt = investigator.formatInvestigationPrompt(product);
 
-          // Verify all required elements are present
-
           // 1. User review analysis instructions (Requirements 2.1, 2.2)
           expect(prompt).toContain('ユーザーレビュー分析');
-          expect(prompt).toContain('良い点：具体的な使用体験と満足ポイント');
-          expect(prompt).toContain('悪い点：問題点と改善要望');
+          expect(prompt).toContain('Voice of the Customer');
+          expect(prompt).toContain('具体的な使用体験と満足ポイント');
+          expect(prompt).toContain('問題点と改善要望');
           expect(prompt).toContain('使用シーン：どのような場面で活用されているか');
 
-          // 2. Competitive comparison requirements (Requirements 2.2, 2.4)
+          // 2. User stories and experiences (New Requirement)
+          expect(prompt).toContain('ユーザーストーリーと実体験');
+          expect(prompt).toContain('実際のユーザーがどのような背景で商品を購入し');
+          expect(prompt).toContain('具体的なエピソードや感想');
+          expect(prompt).toContain('良い体験だけでなく、失敗談や苦労した点も含める');
+
+          // 3. Competitive comparison requirements (Requirements 2.2, 2.4)
           expect(prompt).toContain('競合商品との比較');
           expect(prompt).toContain('同カテゴリの主要競合商品3-5点');
           expect(prompt).toContain('価格、機能、品質の比較');
           expect(prompt).toContain('差別化ポイントの特定');
 
-          // 3. Market positioning focus (Requirements 2.4)
+          // 4. Market positioning focus (Requirements 2.4)
           expect(prompt).toContain('購買推奨度');
           expect(prompt).toContain('どのようなユーザーに適しているか');
           expect(prompt).toContain('購入時の注意点');
           expect(prompt).toContain('コストパフォーマンス評価');
 
-          // 4. Product information inclusion (Requirements 2.1)
+          // 5. Information sources (New Requirement)
+          expect(prompt).toContain('情報ソース');
+          expect(prompt).toContain('調査に使用した情報の出典');
+
+          // 6. Product information inclusion (Requirements 2.1)
           expect(prompt).toContain(product.title);
           expect(prompt).toContain(product.asin);
           expect(prompt).toContain(product.category);
           expect(prompt).toContain(product.price.formatted);
 
-          // 5. Structured format requirements (Requirements 2.2)
+          // 7. Structured format requirements (Requirements 2.2)
           expect(prompt).toContain('JSON形式で構造化');
           expect(prompt).toContain('"analysis"');
           expect(prompt).toContain('"positivePoints"');
           expect(prompt).toContain('"negativePoints"');
           expect(prompt).toContain('"useCases"');
+          expect(prompt).toContain('"userStories"');
+          expect(prompt).toContain('"userImpression"');
+          expect(prompt).toContain('"sources"');
           expect(prompt).toContain('"competitiveAnalysis"');
           expect(prompt).toContain('"recommendation"');
 

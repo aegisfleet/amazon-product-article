@@ -2,10 +2,10 @@
  * Unit tests for ArticleGenerator
  */
 
-import { ArticleGenerator } from '../ArticleGenerator';
-import { Product } from '../../types/Product';
-import { InvestigationResult } from '../../types/JulesTypes';
 import { ReviewAnalysisResult } from '../../analysis/ReviewAnalyzer';
+import { InvestigationResult } from '../../types/JulesTypes';
+import { Product } from '../../types/Product';
+import { ArticleGenerator } from '../ArticleGenerator';
 
 describe('ArticleGenerator', () => {
   let generator: ArticleGenerator;
@@ -15,7 +15,7 @@ describe('ArticleGenerator', () => {
 
   beforeEach(() => {
     generator = new ArticleGenerator();
-    
+
     mockProduct = {
       asin: 'B08N5WRWNW',
       title: 'テスト商品 スマートフォン',
@@ -68,15 +68,48 @@ describe('ArticleGenerator', () => {
             differentiators: ['ブランド力', '品質の安定性']
           }
         ],
+
         recommendation: {
           targetUsers: ['写真愛好家', 'ビジネスユーザー'],
           pros: ['高品質なカメラ', '安定した性能'],
           cons: ['価格が高い', '重量がある'],
           score: 85
-        }
+        },
+        userStories: [],
+        userImpression: '',
+        sources: []
       },
       generatedAt: new Date('2025-01-01T00:00:00Z')
     };
+
+    // Add new fields for tests
+    mockInvestigation.analysis.userStories = [
+      {
+        userType: '会社員',
+        scenario: '通勤・通学',
+        experience: '通勤中のストレスが減った',
+        sentiment: 'positive'
+      },
+      {
+        userType: '学生',
+        scenario: '勉強中',
+        experience: '集中力が高まった',
+        sentiment: 'positive'
+      }
+    ];
+    mockInvestigation.analysis.userImpression = '多くのユーザーが満足感を得ている';
+    mockInvestigation.analysis.sources = [
+      {
+        name: 'Amazonレビュー',
+        url: 'https://amazon.co.jp',
+        credibility: 'High'
+      },
+      {
+        name: 'Tech Blog',
+        url: 'https://example.com/blog',
+        credibility: 'Medium'
+      }
+    ];
 
     mockReviewAnalysis = {
       positiveInsights: [
@@ -146,8 +179,13 @@ describe('ArticleGenerator', () => {
       expect(result.content).toContain('## 競合商品との比較');
       expect(result.content).toContain('## 購入推奨度');
       expect(result.content).toContain('## 商品詳細・購入');
+      expect(result.content).toContain('## 参考情報ソース');
+      expect(result.content).toContain('購入者の生の声');
+      expect(result.content).toContain('会社員の体験談 (通勤・通学)');
+      expect(result.content).toContain('多くのユーザーが満足感を得ている');
+      expect(result.content).toContain('[Amazonレビュー](https://amazon.co.jp)');
       expect(result.wordCount).toBeGreaterThan(0);
-      expect(result.sections).toHaveLength(6);
+      expect(result.sections).toHaveLength(7);
     });
 
     it('should include affiliate disclosure', async () => {
@@ -170,7 +208,7 @@ describe('ArticleGenerator', () => {
 
       expect(result).toBeDefined();
       expect(result.content).toContain('# テスト商品 スマートフォンの詳細レビュー');
-      expect(result.sections).toHaveLength(6);
+      expect(result.sections).toHaveLength(7);
     });
   });
 
@@ -256,7 +294,7 @@ describe('ArticleGenerator', () => {
       const result = generator.insertAffiliateLinks(content, 'B08N5WRWNW');
 
       expect(result).toContain('tag=test-affiliate-tag');
-      
+
       delete process.env.AMAZON_AFFILIATE_TAG;
     });
   });
@@ -275,7 +313,10 @@ describe('ArticleGenerator', () => {
             pros: [],
             cons: [],
             score: 0
-          }
+          },
+          userStories: [],
+          userImpression: '',
+          sources: []
         }
       };
 
