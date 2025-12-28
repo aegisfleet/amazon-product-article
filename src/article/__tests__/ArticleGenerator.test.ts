@@ -220,7 +220,7 @@ describe('ArticleGenerator', () => {
       expect(metadata.asin).toBe('B08N5WRWNW');
       expect(metadata.category).toBe('Electronics');
       expect(metadata.priceRange).toBe('premium');
-      expect(metadata.rating).toBe(4.2);
+      // PA-API v5ではレビューデータ取得不可のためrating未設定
       expect(metadata.mobileOptimized).toBe(true);
       expect(metadata.tags).toContain('商品レビュー');
       expect(metadata.seoKeywords).toContain('レビュー');
