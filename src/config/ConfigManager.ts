@@ -45,7 +45,6 @@ export interface SystemConfig {
 
   // Article Generation Configuration
   articleGeneration: {
-    templatePath: string;
     outputPath: string;
     minWordCount: number;
     includeImages: boolean;
@@ -118,7 +117,6 @@ export class ConfigManager {
         searchKeywords: this.getEnvVar('SEARCH_KEYWORDS', 'best,top,review').split(','),
       },
       articleGeneration: {
-        templatePath: this.getEnvVar('ARTICLE_TEMPLATE_PATH', './templates'),
         outputPath: this.getEnvVar('ARTICLE_OUTPUT_PATH', './articles'),
         minWordCount: parseInt(this.getEnvVar('MIN_WORD_COUNT', '2000'), 10),
         includeImages: this.getEnvVar('INCLUDE_IMAGES', 'true') === 'true',
