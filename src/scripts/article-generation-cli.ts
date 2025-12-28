@@ -25,6 +25,41 @@ interface CLIOptions {
     githubRepository: string | undefined;
 }
 
+/**
+ * JSONファイルの実際の構造（analysisのみを含む）
+ */
+interface RawInvestigationFile {
+    analysis: {
+        positivePoints: string[];
+        negativePoints: string[];
+        useCases: string[];
+        userStories: Array<{
+            userType: string;
+            scenario: string;
+            experience: string;
+            sentiment: 'positive' | 'negative' | 'mixed';
+        }>;
+        userImpression: string;
+        sources: Array<{
+            name: string;
+            url?: string;
+            credibility?: string;
+        }>;
+        competitiveAnalysis: Array<{
+            name: string;
+            priceComparison: string;
+            featureComparison: string[];
+            differentiators: string[];
+        }>;
+        recommendation: {
+            targetUsers: string[];
+            pros: string[];
+            cons: string[];
+            score: number;
+        };
+    };
+}
+
 interface InvestigationData {
     product: Product;
     investigation: InvestigationResult;
@@ -47,6 +82,9 @@ function getOptions(): CLIOptions {
     };
 }
 
+/**
+ * ファイル名からASINを抽出し、JSON構造を変換してInvestigationDataを構築
+ */
 async function loadInvestigationResults(): Promise<InvestigationData[]> {
     const investigationsDir = path.join(process.cwd(), 'data', 'investigations');
 
@@ -58,8 +96,37 @@ async function loadInvestigationResults(): Promise<InvestigationData[]> {
         for (const file of jsonFiles) {
             try {
                 const filePath = path.join(investigationsDir, file);
-                const data = await fs.readFile(filePath, 'utf-8');
-                results.push(JSON.parse(data));
+                const rawData = await fs.readFile(filePath, 'utf-8');
+                const parsed: RawInvestigationFile = JSON.parse(rawData);
+
+                // ファイル名からASINを抽出 (e.g., "B07DZZJ2B9.json" -> "B07DZZJ2B9")
+                const asin = path.basename(file, '.json');
+
+                // 最小限のProduct情報を構築（ASINのみ必須、他はプレースホルダー）
+                const product: Product = {
+                    asin,
+                    title: `Product ${asin}`,  // タイトルは後で記事生成時に更新可能
+                    category: '',
+                    price: { amount: 0, currency: 'JPY', formatted: '' },
+                    images: { primary: '', thumbnails: [] },
+                    specifications: {},
+                    availability: '',
+                    rating: { average: 0, count: 0 },
+                };
+
+                // InvestigationResultを構築
+                const investigation: InvestigationResult = {
+                    sessionId: `file-${asin}`,
+                    product,
+                    analysis: parsed.analysis,
+                    generatedAt: new Date(),
+                };
+
+                results.push({
+                    product,
+                    investigation,
+                    timestamp: new Date().toISOString(),
+                });
             } catch (error) {
                 logger.warn(`Failed to load investigation file ${file}:`, error);
             }
