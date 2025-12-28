@@ -176,6 +176,7 @@ export interface InvestigationResult {
     userStories: UserStory[];      // New: Specific user stories
     userImpression: string;        // New: Overall impression summary
     sources: SourceReference[];    // New: Information sources
+    lastInvestigated?: string;     // New: ISO Date string of last investigation
     recommendation: {
       targetUsers: string[];
       pros: string[];

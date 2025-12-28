@@ -6,6 +6,8 @@
  */
 
 import axios, { AxiosError, AxiosInstance } from 'axios';
+import * as fs from 'fs';
+import * as path from 'path';
 import {
   ActivitiesResponse,
   InvestigationContext,
@@ -290,10 +292,18 @@ export class JulesInvestigator {
   /**
    * 調査プロンプトを生成
    */
-  formatInvestigationPrompt(product: Product): string {
+  formatInvestigationPrompt(product: Product, existingData?: InvestigationResult['analysis']): string {
+    const today = new Date().toISOString().split('T')[0];
+
+    // 既存データがある場合の追加指示
+    const updateInstruction = existingData
+      ? `\n【既存データの更新】\n以下に以前の調査データがあります。この内容をベースに、最新の情報でアップデートしてください。\n- 既存の「良い点」「悪い点」が現在も有効か検証し、維持または更新してください。\n- 新しいレビューや競合製品の情報を追加してください。\n- "lastInvestigated" フィールドを "${today}" に更新してください。\n\n既存データ:\n\`\`\`json\n${JSON.stringify(existingData, null, 2)}\n\`\`\`\n`
+      : '';
+
     // PA-API v5ではレビューデータ取得不可のため外部収集を依頼
     const prompt = `商品「${product.title}」について以下の観点で詳細調査を実施してください：
-
+現在の日付: ${today}
+${updateInstruction}
 ⚠️ 重要：Amazon PA-APIの制限により、評価・レビュー数データは取得できていません。
 外部の情報源（価格.com、レビューブログ、SNS等）から実際のユーザーレビューを収集・分析してください。
 
@@ -376,6 +386,7 @@ ${Object.entries(product.specifications).map(([key, value]) => `  - ${key}: ${va
         "credibility": "信頼性評価"
       }
     ],
+    "lastInvestigated": "YYYY-MM-DD",
     "competitiveAnalysis": [
       {
         "name": "競合商品名",
@@ -398,6 +409,23 @@ ${Object.entries(product.specifications).map(([key, value]) => `  - ${key}: ${va
   }
 
   /**
+   * 既存の調査データを読み込む
+   */
+  private readExistingInvestigation(asin: string): InvestigationResult['analysis'] | undefined {
+    try {
+      const filePath = path.join(process.cwd(), 'data', 'investigations', `${asin}.json`);
+      if (fs.existsSync(filePath)) {
+        const fileContent = fs.readFileSync(filePath, 'utf-8');
+        const data = JSON.parse(fileContent);
+        return data.analysis;
+      }
+    } catch (error) {
+      this.logger.warn(`Failed to read existing investigation for ${asin}`, error);
+    }
+    return undefined;
+  }
+
+  /**
    * 調査セッションを開始（非同期用：即座にセッションIDを返す）
    * GitHub Actions ワークフローで使用 - Julesが非同期でPRを作成する
    */
@@ -412,14 +440,16 @@ ${Object.entries(product.specifications).map(([key, value]) => `  - ${key}: ${va
       includeCompetitors: true
     };
 
-    const prompt = this.formatInvestigationPrompt(product);
+    const existingData = this.readExistingInvestigation(product.asin);
+    const prompt = this.formatInvestigationPrompt(product, existingData);
     const sessionId = await this.createSession(prompt, context, sourceContext);
     const session = await this.getSession(sessionId);
 
     this.logger.info('Investigation session started (async mode)', {
       sessionId,
       sessionName: session.name,
-      productAsin: product.asin
+      productAsin: product.asin,
+      hasExistingData: !!existingData
     });
 
     return {
@@ -445,7 +475,8 @@ ${Object.entries(product.specifications).map(([key, value]) => `  - ${key}: ${va
       includeCompetitors: true
     };
 
-    const prompt = this.formatInvestigationPrompt(product);
+    const existingData = this.readExistingInvestigation(product.asin);
+    const prompt = this.formatInvestigationPrompt(product, existingData);
     const sessionId = await this.createSession(prompt, context, sourceContext);
 
     // セッション完了まで待機
