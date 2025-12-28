@@ -44,7 +44,7 @@ export class PAAPIClient {
   /**
    * Authenticate with Amazon PA-API v5
    */
-  async authenticate(accessKey: string, secretKey: string, partnerTag: string, region = 'ap-northeast-1'): Promise<void> {
+  async authenticate(accessKey: string, secretKey: string, partnerTag: string, region = 'us-west-2'): Promise<void> {
     if (!accessKey || !secretKey || !partnerTag) {
       throw new Error('Missing required PA-API credentials');
     }
@@ -470,9 +470,8 @@ export class PAAPIClient {
   private getHost(): string {
     const regionHosts: Record<string, string> = {
       'us-east-1': 'webservices.amazon.com',
-      'us-west-2': 'webservices.amazon.com',
-      'eu-west-1': 'webservices.amazon.co.uk',
-      'ap-northeast-1': 'webservices.amazon.co.jp'
+      'us-west-2': 'webservices.amazon.co.jp',
+      'eu-west-1': 'webservices.amazon.co.uk'
     };
 
     return regionHosts[this.credentials!.region] || 'webservices.amazon.com';
@@ -481,9 +480,8 @@ export class PAAPIClient {
   private getMarketplace(): string {
     const marketplaces: Record<string, string> = {
       'us-east-1': 'www.amazon.com',
-      'us-west-2': 'www.amazon.com',
-      'eu-west-1': 'www.amazon.co.uk',
-      'ap-northeast-1': 'www.amazon.co.jp'
+      'us-west-2': 'www.amazon.co.jp',
+      'eu-west-1': 'www.amazon.co.uk'
     };
 
     return marketplaces[this.credentials!.region] || 'www.amazon.com';
