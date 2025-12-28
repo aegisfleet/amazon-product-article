@@ -487,17 +487,23 @@ export class PAAPIClient {
   }
 
   private mapCategoryToSearchIndex(category: string): string {
+    // Japan-specific SearchIndex values
+    // See: https://webservices.amazon.co.jp/paapi5/documentation/locale-reference/japan.html
     const categoryMap: Record<string, string> = {
       'electronics': 'Electronics',
       'books': 'Books',
       'clothing': 'Fashion',
-      'home': 'HomeGarden',
-      'sports': 'SportingGoods',
-      'toys': 'ToysAndGames',
+      'home': 'HomeAndKitchen',
+      'sports': 'SportsAndOutdoors',
+      'toys': 'Toys',
       'automotive': 'Automotive',
       'beauty': 'Beauty',
       'health': 'HealthPersonalCare',
-      'kitchen': 'KitchenAndDining'
+      'kitchen': 'HomeAndKitchen',
+      'garden': 'ToolsAndHomeImprovement',
+      'computers': 'Computers',
+      'music': 'Music',
+      'videogames': 'VideoGames'
     };
 
     return categoryMap[category.toLowerCase()] || 'All';
