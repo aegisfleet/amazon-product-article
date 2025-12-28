@@ -10,6 +10,17 @@ import path from 'path';
 import { PAAPIClient } from '../../api/PAAPIClient';
 import { Product, ProductSearchParams } from '../../types/Product';
 import { ProductSearcher } from '../ProductSearcher';
+import { ReviewVerifier } from '../ReviewVerifier';
+
+// Mock ReviewVerifier
+jest.mock('../ReviewVerifier');
+const mockedReviewVerifier = ReviewVerifier as jest.MockedClass<typeof ReviewVerifier>;
+
+// Setup default mock implementation
+mockedReviewVerifier.prototype.verifyReviews = jest.fn().mockResolvedValue({
+  count: 100,
+  rating: 4.5
+});
 
 // Mock PAAPIClient for testing
 class MockPAAPIClient extends PAAPIClient {
@@ -62,6 +73,9 @@ describe('ProductSearcher Property Tests', () => {
     (searcher as any).dataDir = testDataDir;
 
     await searcher.initialize();
+
+    // Mock sleep to speed up tests
+    (searcher as any).sleep = jest.fn().mockResolvedValue(void 0);
   });
 
   afterEach(async () => {
