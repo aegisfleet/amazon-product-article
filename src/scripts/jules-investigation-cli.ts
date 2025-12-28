@@ -3,6 +3,8 @@
  * Jules Investigation CLI Script
  * GitHub Actions から実行されるJules調査スクリプト
  * 
+ * Jules API ドキュメント: https://jules.google/docs/api/reference/
+ * 
  * 環境変数:
  *   JULES_API_KEY - Jules API キー (https://jules.google.com/settings#api で取得)
  *   JULES_SOURCE - Jules ソース名 (例: sources/github/owner/repo)

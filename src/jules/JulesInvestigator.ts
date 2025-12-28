@@ -1,6 +1,8 @@
 /**
  * Jules_Investigator - Google Jules APIを使用した商品調査の実行
- * API Reference: https://jules.google/docs/api/reference/
+ * 
+ * 公式APIドキュメント: https://jules.google/docs/api/reference/
+ * ※ 迷ったら上記ドキュメントを参照してください
  */
 
 import axios, { AxiosError, AxiosInstance } from 'axios';

@@ -1,6 +1,9 @@
 /**
  * Google Jules API types and interfaces
- * Based on: https://jules.google/docs/api/reference/
+ * 
+ * 公式APIドキュメント: https://jules.google/docs/api/reference/
+ * 
+ * ※ 迷ったら上記ドキュメントを参照してください
  */
 
 import { Product } from './Product';
