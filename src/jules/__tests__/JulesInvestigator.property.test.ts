@@ -103,6 +103,12 @@ describe('JulesInvestigator Property Tests', () => {
           expect(prompt).toContain(product.category);
           expect(prompt).toContain(product.price.formatted);
 
+
+          // Verify prompt enrichment (fallback instructions)
+          expect(prompt).toContain('重要：Amazonの商品ページへのアクセスが拒否される');
+          expect(prompt).toContain('Google検索を行い');
+          expect(prompt).toContain(`商品名: ${product.title}`);
+
           // Verify rating text logic
           if (product.rating.count === 0) {
             expect(prompt).toContain('レビュー数: 不明/多数');
