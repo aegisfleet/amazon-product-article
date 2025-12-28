@@ -654,20 +654,13 @@ ${score >= 80 ? '自信を持っておすすめできる商品です。' :
 
 </div>
 
-### ✅ 購入前チェックリスト
-
-- [ ] 使用目的と商品特性の適合性を確認
-- [ ] 予算と価格の妥当性を検討
-- [ ] 配送日程と必要時期の確認
-- [ ] 返品・交換ポリシーの確認
-
 *最新の価格や在庫状況は、購入前に必ずAmazonの商品ページでご確認ください。*`;
 
     return {
       title: '商品詳細・購入',
       content,
       wordCount: this.calculateWordCount(content),
-      requiredElements: ['商品情報', '購入リンク', '購入前チェックリスト']
+      requiredElements: ['商品情報', '購入リンク']
     };
   }
 
@@ -840,11 +833,9 @@ ${score >= 80 ? '自信を持っておすすめできる商品です。' :
   }
 
   private convertTablesToMobileFriendly(content: string): string {
-    // テーブルをカード形式に変換（簡易実装）
-    return content.replace(
-      /\|([^|]+)\|([^|]+)\|/g,
-      '<div class="mobile-card"><strong>$1</strong>: $2</div>'
-    );
+    // テーブルをレスポンシブコンテナでラップ（テーブル構造を保持）
+    // Markdownテーブルはそのまま保持し、CSSで横スクロール対応にする
+    return content;
   }
 
   private optimizeListsForMobile(content: string): string {

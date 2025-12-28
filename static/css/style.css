@@ -523,12 +523,37 @@ a:hover {
   margin-bottom: var(--spacing-md);
 }
 
-/* Tables in Content */
+/* Tables in Content - Mobile Responsive */
 .content table {
   width: 100%;
   border-collapse: collapse;
   margin: var(--spacing-lg) 0;
   font-size: 0.95rem;
+  display: block;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.content table thead,
+.content table tbody,
+.content table tr {
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+}
+
+@media (max-width: 640px) {
+  .content table {
+    font-size: 0.85rem;
+  }
+
+  .content table thead,
+  .content table tbody,
+  .content table tr {
+    display: block;
+    width: max-content;
+    min-width: 100%;
+  }
 }
 
 .content th,
@@ -536,6 +561,15 @@ a:hover {
   padding: var(--spacing-sm) var(--spacing-md);
   border: 1px solid var(--color-border);
   text-align: left;
+  white-space: nowrap;
+}
+
+@media (max-width: 640px) {
+  .content th,
+  .content td {
+    white-space: normal;
+    min-width: 100px;
+  }
 }
 
 .content th {
