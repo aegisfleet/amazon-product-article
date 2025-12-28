@@ -106,7 +106,8 @@ export class ArticleGenerator {
         product,
         investigation,
         reviewAnalysis,
-        articleTemplate
+        articleTemplate,
+        affiliatePartnerTag
       );
 
       const content = this.assembleArticle(sections, metadata);
@@ -228,27 +229,29 @@ export class ArticleGenerator {
     product: Product,
     investigation: InvestigationResult,
     reviewAnalysis: ReviewAnalysisResult | undefined,
-    template: ArticleTemplate
+    template: ArticleTemplate,
+    affiliatePartnerTag?: string
   ): Promise<ArticleSection[]> {
     const sections: ArticleSection[] = [];
+    const affiliateTag = affiliatePartnerTag || process.env.AMAZON_PARTNER_TAG || 'your-affiliate-tag';
 
-    // 導入部
-    sections.push(await this.generateIntroductionSection(product, investigation, template.sections.introduction));
+    // 商品ヒーローセクション（商品概要 + 購入リンク）
+    sections.push(await this.generateProductHeroSection(product, investigation, affiliateTag));
 
-    // 商品概要
-    sections.push(await this.generateProductOverviewSection(product, investigation));
+    // 商品の特徴と使い方
+    sections.push(await this.generateFeaturesSection(product, investigation));
 
     // ユーザーレビュー分析
     sections.push(await this.generateUserReviewsSection(investigation, reviewAnalysis, template.sections.userReviews));
 
-    // 競合商品との比較
-    sections.push(await this.generateCompetitiveAnalysisSection(investigation, template.sections.competitiveAnalysis));
+    // 競合商品との比較（表形式）
+    sections.push(await this.generateCompetitiveAnalysisSection(investigation, template.sections.competitiveAnalysis, affiliateTag));
 
     // 購入推奨度
     sections.push(await this.generateRecommendationSection(investigation, template.sections.recommendation));
 
-    // 商品詳細・購入
-    sections.push(await this.generatePurchaseSection(product));
+    // 商品詳細・購入（下部）
+    sections.push(await this.generatePurchaseSection(product, affiliateTag));
 
     // 情報ソース（もしあれば）
     if (investigation.analysis.sources && investigation.analysis.sources.length > 0) {
@@ -281,25 +284,124 @@ ${sources}`;
   }
 
   /**
-   * 導入部セクションを生成
+   * 商品ヒーローセクションを生成（商品概要 + 購入リンク）
+   */
+  private async generateProductHeroSection(
+    product: Product,
+    investigation: InvestigationResult,
+    affiliateTag: string
+  ): Promise<ArticleSection> {
+    const affiliateUrl = `https://www.amazon.co.jp/dp/${product.asin}?tag=${affiliateTag}`;
+    const productDescription = investigation.analysis.productDescription ||
+      `${product.title}は、${product.category}カテゴリの商品です。`;
+
+    const score = investigation.analysis.recommendation.score;
+    const scoreText = this.getScoreDescription(score);
+    const scoreEmoji = score >= 80 ? '🏆' : score >= 60 ? '👍' : '📝';
+
+    const content = `# ${product.title}
+
+<div class="product-hero-card">
+
+<div class="product-hero-image">
+
+![${product.title}](${product.images.primary})
+
+</div>
+
+<div class="product-hero-info">
+
+${productDescription}
+
+<div class="product-score-badge">
+${scoreEmoji} 総合評価: <strong>${score}点</strong> (${scoreText})
+</div>
+
+**価格**: ${product.price.formatted}<br>
+**在庫**: ${product.availability}
+
+<a href="${affiliateUrl}" class="btn-amazon-hero">🛒 Amazonで詳細を見る</a>
+
+</div>
+
+</div>`;
+
+    return {
+      title: '商品ヒーロー',
+      content,
+      wordCount: this.calculateWordCount(content),
+      requiredElements: ['商品画像', '商品説明', '購入リンク', '評価']
+    };
+  }
+
+  /**
+   * 商品の特徴と使い方セクションを生成
+   */
+  private async generateFeaturesSection(
+    product: Product,
+    investigation: InvestigationResult
+  ): Promise<ArticleSection> {
+    // 仕様情報
+    const specifications = Object.entries(product.specifications)
+      .slice(0, 5)  // 上位5つに制限
+      .map(([key, value]) => `| ${key} | ${value} |`)
+      .join('\n');
+
+    // 使用シーン
+    const useCases = investigation.analysis.useCases
+      .slice(0, 4)  // 上位4つに制限
+      .map((useCase, i) => {
+        const icons = ['💡', '🎯', '✨', '🔧'];
+        return `<div class="feature-card">
+<span class="feature-icon">${icons[i] || '📌'}</span>
+<span class="feature-text">${useCase}</span>
+</div>`;
+      })
+      .join('\n');
+
+    // 使い方（productUsageがあれば使用）
+    const productUsage = investigation.analysis.productUsage;
+    const usageSection = productUsage && productUsage.length > 0
+      ? `### 🔧 使い方
+
+${productUsage.map((usage, i) => `${i + 1}. ${usage}`).join('\n')}`
+      : '';
+
+    const content = `## 📦 商品の特徴
+
+### 主な仕様
+
+| 項目 | 内容 |
+|:-----|:-----|
+${specifications}
+
+### 💡 こんなシーンで活躍
+
+<div class="feature-grid">
+
+${useCases}
+
+</div>
+
+${usageSection}`;
+
+    return {
+      title: '商品の特徴',
+      content,
+      wordCount: this.calculateWordCount(content),
+      requiredElements: ['仕様', '使用シーン']
+    };
+  }
+
+  /**
+   * 導入部セクションを生成（後方互換性のため保持、現在は未使用）
    */
   private async generateIntroductionSection(
     product: Product,
-    investigation: InvestigationResult,
+    _investigation: InvestigationResult,
     template: TemplateSection
   ): Promise<ArticleSection> {
-    const content = `# ${product.title}の詳細レビュー
-
-${product.title}について、実際のユーザーレビューを詳細に分析し、競合商品との比較を通じて、あなたの購買判断をサポートします。
-
-この記事では、${investigation.analysis.positivePoints.length}件のポジティブな評価と${investigation.analysis.negativePoints.length}件の改善点を分析し、どのような方にこの商品が適しているかを明確にお伝えします。
-
-## この記事で分かること
-
-- 実際のユーザーが感じた良い点・気になる点
-- 競合商品との具体的な比較
-- あなたに適した商品かどうかの判断基準
-- 購入時に注意すべきポイント`;
+    const content = `# ${product.title}の詳細レビュー`;
 
     return {
       title: '導入部',
@@ -310,7 +412,7 @@ ${product.title}について、実際のユーザーレビューを詳細に分�
   }
 
   /**
-   * 商品概要セクションを生成
+   * 商品概要セクションを生成（後方互換性のため保持、現在は未使用）
    */
   private async generateProductOverviewSection(product: Product, investigation: InvestigationResult): Promise<ArticleSection> {
     const specifications = Object.entries(product.specifications)
@@ -400,13 +502,32 @@ ${reviewAnalysis ? this.generateSentimentAnalysis(reviewAnalysis) : ''}`;
   }
 
   /**
-   * 競合分析セクションを生成
+   * 競合分析セクションを生成（表形式で競合商品リンク付き）
    */
   private async generateCompetitiveAnalysisSection(
     investigation: InvestigationResult,
-    template: TemplateSection
+    template: TemplateSection,
+    affiliateTag: string
   ): Promise<ArticleSection> {
-    const competitiveAnalysis = investigation.analysis.competitiveAnalysis
+    const competitors = investigation.analysis.competitiveAnalysis;
+
+    // 競合商品がある場合は表形式で表示
+    let competitiveTable = '';
+    if (competitors && competitors.length > 0) {
+      competitiveTable = `### 📊 競合商品比較表
+
+| 商品名 | 価格帯 | 様々 |
+|:-----|:-----|:-----|
+${competitors.map(c => {
+        const link = c.asin
+          ? `[🛒 ${c.name}](https://www.amazon.co.jp/dp/${c.asin}?tag=${affiliateTag})`
+          : c.name;
+        return `| ${link} | ${c.priceComparison} | ${c.differentiators.slice(0, 2).join('、')} |`;
+      }).join('\n')}`;
+    }
+
+    // 各競合商品の詳細
+    const competitiveDetails = competitors
       .map(competitor => {
         const features = competitor.featureComparison
           .map(feature => `  - ${feature}`)
@@ -417,11 +538,11 @@ ${reviewAnalysis ? this.generateSentimentAnalysis(reviewAnalysis) : ''}`;
           .join('\n');
 
         // ASINがある場合はアフィリエイトリンクを生成
-        const competitorName = competitor.asin
-          ? `[${competitor.name}](https://www.amazon.co.jp/dp/${competitor.asin}?tag=${process.env.AMAZON_PARTNER_TAG || 'your-affiliate-tag'})`
-          : competitor.name;
+        const competitorLink = competitor.asin
+          ? `<a href="https://www.amazon.co.jp/dp/${competitor.asin}?tag=${affiliateTag}" class="competitor-link">🛒 Amazonで見る</a>`
+          : '';
 
-        return `### ${competitorName}との比較
+        return `### ${competitor.name}との比較
 
 **価格比較**: ${competitor.priceComparison}
 
@@ -429,19 +550,37 @@ ${reviewAnalysis ? this.generateSentimentAnalysis(reviewAnalysis) : ''}`;
 ${features}
 
 **差別化ポイント**:
-${differentiators}`;
+${differentiators}
+
+${competitorLink}`;
       })
       .join('\n\n');
 
-    const content = `## 競合商品との比較
+    const content = `## 🥊 競合商品との比較
 
-${competitiveAnalysis}
+${competitiveTable}
 
-### 総合的な競合優位性
+${competitiveDetails}
 
-${investigation.analysis.recommendation.pros.map(pro => `- ✅ ${pro}`).join('\n')}
+### ✅ 総合的な競合優位性
 
-${investigation.analysis.recommendation.cons.map(con => `- ❌ ${con}`).join('\n')}`;
+<div class="pros-cons-grid">
+
+<div class="pros-card">
+<h4>👍 良い点</h4>
+
+${investigation.analysis.recommendation.pros.map(pro => `- ${pro}`).join('\n')}
+
+</div>
+
+<div class="cons-card">
+<h4>👎 気になる点</h4>
+
+${investigation.analysis.recommendation.cons.map(con => `- ${con}`).join('\n')}
+
+</div>
+
+</div>`;
 
     return {
       title: '競合商品との比較',
@@ -494,18 +633,28 @@ ${score >= 80 ? '自信を持っておすすめできる商品です。' :
   }
 
   /**
-   * 購入セクションを生成
+   * 購入セクションを生成（下部）
    */
-  private async generatePurchaseSection(product: Product): Promise<ArticleSection> {
-    const content = `## 商品詳細・購入
+  private async generatePurchaseSection(product: Product, affiliateTag: string): Promise<ArticleSection> {
+    const affiliateUrl = `https://www.amazon.co.jp/dp/${product.asin}?tag=${affiliateTag}`;
+
+    const content = `## 🛒 商品詳細・購入
+
+<div class="purchase-card">
 
 ### 商品情報
 
-- **ASIN**: ${product.asin}
-- **現在価格**: ${product.price.formatted}
-- **在庫状況**: ${product.availability}
+| 項目 | 内容 |
+|:-----|:-----|
+| ASIN | ${product.asin} |
+| 現在価格 | ${product.price.formatted} |
+| 在庫状況 | ${product.availability} |
 
-### 購入前チェックリスト
+<a href="${affiliateUrl}" class="btn-amazon-large">🛒 Amazonで購入する</a>
+
+</div>
+
+### ✅ 購入前チェックリスト
 
 - [ ] 使用目的と商品特性の適合性を確認
 - [ ] 予算と価格の妥当性を検討
@@ -518,7 +667,7 @@ ${score >= 80 ? '自信を持っておすすめできる商品です。' :
       title: '商品詳細・購入',
       content,
       wordCount: this.calculateWordCount(content),
-      requiredElements: ['商品情報', '購入前チェックリスト']
+      requiredElements: ['商品情報', '購入リンク', '購入前チェックリスト']
     };
   }
 
