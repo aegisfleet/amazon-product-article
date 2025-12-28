@@ -84,6 +84,7 @@ async function main(): Promise<void> {
             base: prData.base.ref,
             author: prData.user?.login || '',
             state: prData.state as 'open' | 'closed' | 'merged',
+            draft: prData.draft || false,
             changedFiles: filesData.map(f => f.filename),
             labels: prData.labels.map(l => (typeof l === 'string' ? l : l.name || '')),
             createdAt: new Date(prData.created_at),
@@ -92,6 +93,42 @@ async function main(): Promise<void> {
 
         logger.info(`PR title: ${pr.title}`);
         logger.info(`Changed files: ${pr.changedFiles.length}`);
+        logger.info(`Draft status: ${pr.draft}`);
+
+        // ドラフトPRの場合は、ready状態に変換
+        if (pr.draft) {
+            logger.info('PR is a draft, converting to ready for review...');
+
+            const { execSync } = await import('child_process');
+            try {
+                execSync(`gh pr ready ${options.prNumber}`, {
+                    stdio: 'pipe',
+                    env: { ...process.env, GH_TOKEN: options.token }
+                });
+                logger.info('Successfully converted draft PR to ready for review');
+
+                // 状態が更新されるまで待機
+                let attempts = 0;
+                const maxAttempts = 3;
+                while (attempts < maxAttempts) {
+                    await new Promise(resolve => setTimeout(resolve, 3000));
+                    const { data: updatedPr } = await octokit.pulls.get({
+                        owner: options.owner,
+                        repo: options.repo,
+                        pull_number: options.prNumber,
+                    });
+                    if (!updatedPr.draft) {
+                        logger.info('PR is now ready for review');
+                        break;
+                    }
+                    attempts++;
+                    logger.info(`Waiting for PR to be ready (attempt ${attempts}/${maxAttempts})...`);
+                }
+            } catch (error) {
+                logger.error('Failed to convert draft PR to ready:', error);
+                throw error;
+            }
+        }
 
         // AutoMergeManager で検証
         const mergeManager = new AutoMergeManager();

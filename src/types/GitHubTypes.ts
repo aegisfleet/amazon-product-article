@@ -10,6 +10,7 @@ export interface PullRequest {
     base: string;
     author: string;
     state: 'open' | 'closed' | 'merged';
+    draft: boolean;
     createdAt: Date;
     updatedAt: Date;
     labels: string[];
