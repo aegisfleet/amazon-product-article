@@ -4,7 +4,7 @@
  */
 
 import * as fc from 'fast-check';
-import { InvestigationResult } from '../../types/JulesTypes';
+import { InvestigationResult, UserStory } from '../../types/JulesTypes';
 import { ReviewAnalyzer } from '../ReviewAnalyzer';
 
 describe('ReviewAnalyzer Property Tests', () => {
@@ -74,7 +74,19 @@ describe('ReviewAnalyzer Property Tests', () => {
               pros: fc.array(fc.string({ minLength: 10, maxLength: 80 }), { minLength: 1, maxLength: 8 }),
               cons: fc.array(fc.string({ minLength: 10, maxLength: 80 }), { minLength: 0, maxLength: 6 }),
               score: fc.integer({ min: 0, max: 100 })
-            })
+            }),
+            userStories: fc.array(fc.record({
+              userType: fc.string({ minLength: 5, maxLength: 20 }),
+              scenario: fc.string({ minLength: 10, maxLength: 50 }),
+              experience: fc.string({ minLength: 10, maxLength: 100 }),
+              sentiment: fc.constantFrom('positive', 'negative', 'mixed') as fc.Arbitrary<UserStory['sentiment']>
+            }), { minLength: 1, maxLength: 5 }),
+            userImpression: fc.string({ minLength: 20, maxLength: 200 }),
+            sources: fc.array(fc.record({
+              name: fc.string({ minLength: 5, maxLength: 30 }),
+              url: fc.webUrl(),
+              credibility: fc.constantFrom('high', 'medium', 'low')
+            }), { minLength: 0, maxLength: 3 })
           }),
           generatedAt: fc.date()
         }),
