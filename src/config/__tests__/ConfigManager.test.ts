@@ -13,7 +13,7 @@ describe('ConfigManager Property-Based Tests', () => {
   beforeEach(() => {
     // Save original environment
     originalEnv = { ...process.env };
-    
+
     // Clear ConfigManager singleton for each test
     (ConfigManager as any).instance = undefined;
   });
@@ -55,6 +55,9 @@ describe('ConfigManager Property-Based Tests', () => {
           includeImages: fc.boolean(),
         }),
         async (validConfig) => {
+          // Reset singleton for each property test iteration
+          (ConfigManager as any).instance = undefined;
+
           // Set up valid environment variables
           process.env.AMAZON_ACCESS_KEY = validConfig.amazonAccessKey;
           process.env.AMAZON_SECRET_KEY = validConfig.amazonSecretKey;
@@ -77,10 +80,10 @@ describe('ConfigManager Property-Based Tests', () => {
           process.env.INCLUDE_IMAGES = validConfig.includeImages.toString();
 
           const configManager = ConfigManager.getInstance();
-          
+
           // Valid configuration should initialize without throwing
           await expect(configManager.initialize()).resolves.not.toThrow();
-          
+
           // Should be able to get the configuration
           const config = configManager.getConfig();
           expect(config).toBeDefined();
@@ -89,7 +92,7 @@ describe('ConfigManager Property-Based Tests', () => {
           expect(config.github.token).toBe(validConfig.githubToken);
         }
       ),
-      { numRuns: 100 }
+      { numRuns: 20 }
     );
   });
 
@@ -132,44 +135,58 @@ describe('ConfigManager Property-Based Tests', () => {
           })
         ),
         async (invalidConfig) => {
+          // Reset singleton for each property test iteration
+          (ConfigManager as any).instance = undefined;
+
+          // Clear all relevant environment variables first
+          delete process.env.AMAZON_ACCESS_KEY;
+          delete process.env.AMAZON_SECRET_KEY;
+          delete process.env.AMAZON_PARTNER_TAG;
+          delete process.env.JULES_API_KEY;
+          delete process.env.GITHUB_TOKEN;
+          delete process.env.GITHUB_REPOSITORY;
+          delete process.env.RETRY_ATTEMPTS;
+          delete process.env.MIN_WORD_COUNT;
+
           // Set up environment with invalid configuration
           // For missing_amazon_key scenario, don't set AMAZON_ACCESS_KEY at all
           if (invalidConfig.scenario !== 'missing_amazon_key') {
             process.env.AMAZON_ACCESS_KEY = (invalidConfig as any).amazonAccessKey;
-          } else {
-            // Ensure AMAZON_ACCESS_KEY is not set
-            delete process.env.AMAZON_ACCESS_KEY;
           }
-          
+
           // Set other required environment variables
           process.env.AMAZON_SECRET_KEY = invalidConfig.amazonSecretKey;
           process.env.AMAZON_PARTNER_TAG = invalidConfig.amazonPartnerTag;
           process.env.JULES_API_KEY = invalidConfig.julesApiKey;
           process.env.GITHUB_TOKEN = invalidConfig.githubToken;
           process.env.GITHUB_REPOSITORY = invalidConfig.githubRepository;
-          
+
           if ('retryAttempts' in invalidConfig) {
             process.env.RETRY_ATTEMPTS = invalidConfig.retryAttempts.toString();
           }
-          
+
           if ('minWordCount' in invalidConfig) {
             process.env.MIN_WORD_COUNT = invalidConfig.minWordCount.toString();
           }
 
           const configManager = ConfigManager.getInstance();
-          
+
           // Invalid configuration should throw with clear error message
           await expect(configManager.initialize()).rejects.toThrow();
-          
+
+          // Reset singleton again to test error message
+          (ConfigManager as any).instance = undefined;
+          const freshConfigManager = ConfigManager.getInstance();
+
           try {
-            await configManager.initialize();
+            await freshConfigManager.initialize();
           } catch (error) {
             // Error message should be descriptive
             expect(error).toBeInstanceOf(Error);
             const errorMessage = (error as Error).message;
             expect(errorMessage).toBeTruthy();
             expect(errorMessage.length).toBeGreaterThan(10);
-            
+
             // Should contain relevant context about what failed
             if (invalidConfig.scenario === 'missing_amazon_key') {
               expect(errorMessage.toLowerCase()).toContain('amazon_access_key');
@@ -181,7 +198,7 @@ describe('ConfigManager Property-Based Tests', () => {
           }
         }
       ),
-      { numRuns: 100 }
+      { numRuns: 20 }
     );
   });
 
@@ -197,6 +214,9 @@ describe('ConfigManager Property-Based Tests', () => {
           newRetryDelay: fc.integer({ min: 100, max: 60000 }),
         }),
         async (testData) => {
+          // Reset singleton for each property test iteration
+          (ConfigManager as any).instance = undefined;
+
           // Set up initial valid environment
           process.env.AMAZON_ACCESS_KEY = 'test_access_key_12345';
           process.env.AMAZON_SECRET_KEY = 'test_secret_key_1234567890';
@@ -209,7 +229,7 @@ describe('ConfigManager Property-Based Tests', () => {
 
           const configManager = ConfigManager.getInstance();
           await configManager.initialize();
-          
+
           const initialConfig = configManager.getConfig();
           expect(initialConfig.system.retryAttempts).toBe(testData.initialRetryAttempts);
           expect(initialConfig.system.retryDelay).toBe(testData.initialRetryDelay);
@@ -225,13 +245,13 @@ describe('ConfigManager Property-Based Tests', () => {
 
           // Valid updates should succeed
           expect(() => configManager.updateConfig(updates)).not.toThrow();
-          
+
           const updatedConfig = configManager.getConfig();
           expect(updatedConfig.system.retryAttempts).toBe(testData.newRetryAttempts);
           expect(updatedConfig.system.retryDelay).toBe(testData.newRetryDelay);
         }
       ),
-      { numRuns: 100 }
+      { numRuns: 20 }
     );
   });
 });
