@@ -80,13 +80,13 @@ export class PAAPIClient {
         'ItemInfo.Title',
         'ItemInfo.Features',
         'ItemInfo.ManufactureInfo',
+        'ItemInfo.ProductInfo',
         'Offers.Listings.Price',
-        'Offers.Listings.Availability',
+        'Offers.Listings.Availability.Type',
         'Offers.Summaries.HighestPrice',
         'Offers.Summaries.LowestPrice',
-        'CustomerReviews.StarRating',
-        'CustomerReviews.Count',
-        'BrowseNodeInfo.BrowseNodes'
+        'BrowseNodeInfo.BrowseNodes',
+        'ParentASIN'
       ]
     };
 
@@ -132,12 +132,11 @@ export class PAAPIClient {
         'ItemInfo.ManufactureInfo',
         'ItemInfo.ProductInfo',
         'Offers.Listings.Price',
-        'Offers.Listings.Availability',
+        'Offers.Listings.Availability.Type',
         'Offers.Summaries.HighestPrice',
         'Offers.Summaries.LowestPrice',
-        'CustomerReviews.StarRating',
-        'CustomerReviews.Count',
-        'BrowseNodeInfo.BrowseNodes'
+        'BrowseNodeInfo.BrowseNodes',
+        'ParentASIN'
       ]
     };
 
