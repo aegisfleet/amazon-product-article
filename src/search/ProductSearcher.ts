@@ -5,6 +5,7 @@
 
 import fs from 'fs/promises';
 import path from 'path';
+import crypto from 'crypto';
 import { PAAPIClient } from '../api/PAAPIClient';
 import { ConfigManager } from '../config/ConfigManager';
 import {
@@ -382,7 +383,8 @@ export class ProductSearcher {
 
   private generateSessionId(): string {
     const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
-    const random = Math.random().toString(36).substring(2, 8);
+    // Use cryptographically secure random bytes for the session suffix
+    const random = crypto.randomBytes(4).toString('hex');
     return `${timestamp}_${random}`;
   }
 
