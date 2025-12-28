@@ -320,12 +320,18 @@ export class JulesInvestigator {
 5. 情報ソース
    - 調査に使用した情報の出典（レビューサイト、ブログ、SNSなど）
 
+重要：Amazonの商品ページへのアクセスが拒否される（403エラー等）場合でも調査を諦めないでください。
+以下の「商品名」や「型番/仕様」を使用してGoogle検索を行い、ブログ記事、レビューサイト、YouTube動画、競合他社の販売ページなどから情報を収集してください。
+「Amazonにアクセスできなかったため調査不能」という結論は避けてください。
+
 商品情報：
 - ASIN: ${product.asin}
+- 商品名: ${product.title}
 - カテゴリ: ${product.category}
 - 価格: ${product.price.formatted}
 - ${ratingText}
-- 仕様: ${Object.entries(product.specifications).map(([key, value]) => `${key}: ${value}`).join(', ')}
+- 仕様・詳細:
+${Object.entries(product.specifications).map(([key, value]) => `  - ${key}: ${value}`).join('\n')}
 
 調査結果は以下のJSON形式で構造化して提供してください。
 なお、ファイル名は "data/investigations/${product.asin}.json" としてください：
