@@ -11,7 +11,10 @@
     "test:coverage": "jest --coverage",
     "lint": "eslint src/**/*.ts",
     "lint:fix": "eslint src/**/*.ts --fix",
-    "clean": "rimraf dist"
+    "clean": "rimraf dist",
+    "search:products": "ts-node src/scripts/product-search-cli.ts",
+    "investigate": "ts-node src/scripts/jules-investigation-cli.ts",
+    "generate:articles": "ts-node src/scripts/article-generation-cli.ts"
   },
   "keywords": [
     "amazon",

@@ -143,18 +143,18 @@ Amazon PA-API v5とGoogle Jules APIを活用した商品調査記事の自動生
     - **Property 8: Workflow Pipeline Execution Integrity**
     - **Validates: Requirements 4.1, 4.2, 4.4, 4.5**
 
-- [ ] 10. GitHub Actionsワークフローの構築
-  - [ ] 10.1 商品検索ワークフローの作成
+- [x] 10. GitHub Actionsワークフローの構築
+  - [x] 10.1 商品検索ワークフローの作成
     - スケジュール実行とマニュアルトリガー
     - PA-API統合とデータ収集パイプライン
     - _Requirements: 4.1_
 
-  - [ ] 10.2 Jules調査ワークフローの作成
+  - [x] 10.2 Jules調査ワークフローの作成
     - 商品データからJules調査セッション作成
     - 調査完了の監視と結果取得
     - _Requirements: 4.1_
 
-  - [ ] 10.3 記事生成・公開ワークフローの作成
+  - [x] 10.3 記事生成・公開ワークフローの作成
     - 調査結果から記事生成とコミット
     - GitHub Pages自動デプロイ
     - _Requirements: 4.1, 4.5_
