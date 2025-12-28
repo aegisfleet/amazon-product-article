@@ -1,0 +1,52 @@
+{{ define "main" }}
+<section class="hero">
+    <div class="container">
+        <h1>Smart Product Research</h1>
+        <p>
+            In-depth analysis, real user reviews, and data-driven comparisons to help you make the best buying
+            decisions.
+        </p>
+    </div>
+</section>
+
+<section class="container">
+    <div class="header-content" style="margin-bottom: var(--spacing-lg);">
+        <h2>Latest Reviews</h2>
+        <a href="{{ " articles" | relURL }}" class="read-more">View All →</a>
+    </div>
+
+    <div class="card-grid">
+        {{ range first 6 (where .Site.RegularPages "Section" "articles") }}
+        <article class="card">
+            <div class="card-image">
+                <!-- Placeholder for product image integration later -->
+                {{ if .Params.images }}
+                <img src="{{ index .Params.images 0 }}" alt="{{ .Title }}"
+                    style="width:100%; height:100%; object-fit:cover;">
+                {{ else }}
+                <div
+                    style="width:100%; height:100%; display:flex; align-items:center; justify-content:center; background:#f3f4f6; color:#9ca3af;">
+                    No Image
+                </div>
+                {{ end }}
+            </div>
+            <div class="card-content">
+                <div class="card-header">
+                    {{ with .Params.category }}<span class="card-tag">{{ . }}</span>{{ end }}
+                    <h3 class="card-title">
+                        <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+                    </h3>
+                </div>
+                <p class="card-excerpt">
+                    {{ .Description | default (.Summary | truncate 100) }}
+                </p>
+                <div class="card-footer">
+                    <span class="article-meta">{{ .Date.Format "Jan 2, 2006" }}</span>
+                    <a href="{{ .RelPermalink }}" class="read-more">Read Review →</a>
+                </div>
+            </div>
+        </article>
+        {{ end }}
+    </div>
+</section>
+{{ end }}
