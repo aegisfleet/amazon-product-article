@@ -157,7 +157,7 @@ export class ArticleGenerator {
       publishDate: new Date(),
       asin: product.asin,
       priceRange,
-      rating: product.rating.average,
+      // PA-API v5ではレビューデータ取得不可のためrating不使用
       featured: this.shouldBeFeatured(product, investigation),
       mobileOptimized: true,
       seoKeywords
@@ -321,7 +321,7 @@ ${product.title}について、実際のユーザーレビューを詳細に分�
 - **商品名**: ${product.title}
 - **価格**: ${product.price.formatted}
 - **カテゴリ**: ${product.category}
-- **平均評価**: ${product.rating.average > 0 ? `${product.rating.average}点` : '情報なし'}
+- **平均評価**: 外部情報源を参照
 - **在庫状況**: ${product.availability}
 
 ### 主な仕様

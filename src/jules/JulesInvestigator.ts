@@ -291,13 +291,14 @@ export class JulesInvestigator {
    * 調査プロンプトを生成
    */
   formatInvestigationPrompt(product: Product): string {
-    const ratingText = product.rating.count === 0
-      ? `評価: ${product.rating.average}/5 (レビュー数: 不明/多数)`
-      : `評価: ${product.rating.average}/5 (${product.rating.count}件のレビュー)`;
-
+    // PA-API v5ではレビューデータ取得不可のため外部収集を依頼
     const prompt = `商品「${product.title}」について以下の観点で詳細調査を実施してください：
 
+⚠️ 重要：Amazon PA-APIの制限により、評価・レビュー数データは取得できていません。
+外部の情報源（価格.com、レビューブログ、SNS等）から実際のユーザーレビューを収集・分析してください。
+
 1. ユーザーレビュー分析（"Voice of the Customer"）
+   ⇒ Amazon以外のレビューサイト（価格.com、みんなのレビュー等）も積極的に調査
    - 具体的な使用体験と満足ポイント（単なる機能列挙ではなく、体験として記述）
    - 問題点と改善要望
    - 使用シーン：どのような場面で活用されているか
@@ -329,7 +330,6 @@ export class JulesInvestigator {
 - 商品名: ${product.title}
 - カテゴリ: ${product.category}
 - 価格: ${product.price.formatted}
-- ${ratingText}
 - 仕様・詳細:
 ${Object.entries(product.specifications).map(([key, value]) => `  - ${key}: ${value}`).join('\n')}
 

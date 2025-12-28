@@ -109,12 +109,9 @@ describe('JulesInvestigator Property Tests', () => {
           expect(prompt).toContain('Google検索を行い');
           expect(prompt).toContain(`商品名: ${product.title}`);
 
-          // Verify rating text logic
-          if (product.rating.count === 0) {
-            expect(prompt).toContain('レビュー数: 不明/多数');
-          } else {
-            expect(prompt).toContain(`${product.rating.count}件のレビュー`);
-          }
+          // Verify external data collection instructions (PA-API v5 limitation)
+          expect(prompt).toContain('PA-APIの制限により');
+          expect(prompt).toContain('外部の情報源');
 
           // 7. Structured format requirements (Requirements 2.2)
           expect(prompt).toContain('JSON形式で構造化');
