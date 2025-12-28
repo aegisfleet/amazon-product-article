@@ -7,12 +7,11 @@ import * as dotenv from 'dotenv';
 import { Logger } from '../utils/Logger';
 
 export interface SystemConfig {
-  // Amazon PA-API Configuration
+  // Amazon PA-API Configuration (Japan marketplace)
   amazon: {
     accessKey: string;
     secretKey: string;
     partnerTag: string;
-    region: string;
   };
 
   // Jules API Configuration
@@ -95,8 +94,7 @@ export class ConfigManager {
       amazon: {
         accessKey: this.getRequiredEnvVar('AMAZON_ACCESS_KEY'),
         secretKey: this.getRequiredEnvVar('AMAZON_SECRET_KEY'),
-        partnerTag: this.getRequiredEnvVar('AMAZON_PARTNER_TAG'),
-        region: this.getEnvVar('AMAZON_REGION', 'us-west-2'),
+        partnerTag: this.getRequiredEnvVar('AMAZON_PARTNER_TAG')
       },
       jules: {
         apiKey: this.getRequiredEnvVar('JULES_API_KEY'),

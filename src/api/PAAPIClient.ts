@@ -42,9 +42,9 @@ export class PAAPIClient {
   }
 
   /**
-   * Authenticate with Amazon PA-API v5
+   * Authenticate with Amazon PA-API v5 (Japan marketplace)
    */
-  async authenticate(accessKey: string, secretKey: string, partnerTag: string, region = 'us-west-2'): Promise<void> {
+  async authenticate(accessKey: string, secretKey: string, partnerTag: string): Promise<void> {
     if (!accessKey || !secretKey || !partnerTag) {
       throw new Error('Missing required PA-API credentials');
     }
@@ -53,10 +53,10 @@ export class PAAPIClient {
       accessKey,
       secretKey,
       partnerTag,
-      region
+      region: 'us-west-2' // Fixed: Japan uses us-west-2
     };
 
-    this.logger.info('PA-API client authenticated successfully');
+    this.logger.info('PA-API client authenticated successfully (Japan marketplace)');
   }
 
   /**
@@ -207,7 +207,7 @@ export class PAAPIClient {
               if (error.response) {
                 const errorData = error.response.data;
                 const errorInfo = errorData?.Errors?.[0] || errorData?.__type || errorData;
-                this.logger.error(`PA-API Response Error: ${JSON.stringify(errorInfo)}`);
+                this.logger.debug(`PA-API Response Error: ${JSON.stringify(errorInfo)}`);
               }
 
               lastError = error as Error;
@@ -405,8 +405,8 @@ export class PAAPIClient {
 
     return {
       amount: 0,
-      currency: 'USD',
-      formatted: 'Price not available'
+      currency: 'JPY',
+      formatted: '価格情報なし'
     };
   }
 
@@ -425,11 +425,13 @@ export class PAAPIClient {
 
   /**
    * Extract rating information from PA-API item
+   * Note: CustomerReviews resource is not available in PA-API v5
    */
-  private extractRating(item: PAAPIItem) {
+  private extractRating(_item: PAAPIItem) {
+    // CustomerReviews resource is not available in PA-API v5
     return {
-      average: item.CustomerReviews?.StarRating?.Value || 0,
-      count: item.CustomerReviews?.Count || 0
+      average: 0,
+      count: 0
     };
   }
 
@@ -467,23 +469,13 @@ export class PAAPIClient {
   }
 
   private getHost(): string {
-    const regionHosts: Record<string, string> = {
-      'us-east-1': 'webservices.amazon.com',
-      'us-west-2': 'webservices.amazon.co.jp',
-      'eu-west-1': 'webservices.amazon.co.uk'
-    };
-
-    return regionHosts[this.credentials!.region] || 'webservices.amazon.com';
+    // Japan marketplace uses us-west-2 region
+    return 'webservices.amazon.co.jp';
   }
 
   private getMarketplace(): string {
-    const marketplaces: Record<string, string> = {
-      'us-east-1': 'www.amazon.com',
-      'us-west-2': 'www.amazon.co.jp',
-      'eu-west-1': 'www.amazon.co.uk'
-    };
-
-    return marketplaces[this.credentials!.region] || 'www.amazon.com';
+    // Japan marketplace
+    return 'www.amazon.co.jp';
   }
 
   private mapCategoryToSearchIndex(category: string): string {

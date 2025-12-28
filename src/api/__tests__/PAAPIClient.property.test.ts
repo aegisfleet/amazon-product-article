@@ -20,21 +20,19 @@ describe('PAAPIClient Property Tests', () => {
           fc.record({
             accessKey: fc.string({ minLength: 1, maxLength: 50 }),
             secretKey: fc.string({ minLength: 1, maxLength: 100 }),
-            partnerTag: fc.string({ minLength: 1, maxLength: 30 }),
-            region: fc.constantFrom('us-east-1', 'us-west-2', 'eu-west-1', 'ap-northeast-1')
+            partnerTag: fc.string({ minLength: 1, maxLength: 30 })
           }),
           async (credentials) => {
             const client = new PAAPIClient();
-            
+
             // Test authentication with generated credentials
             try {
               await client.authenticate(
                 credentials.accessKey,
                 credentials.secretKey,
-                credentials.partnerTag,
-                credentials.region
+                credentials.partnerTag
               );
-              
+
               // Authentication should complete without throwing
               // We can't test actual API calls without real credentials,
               // but we can verify the client accepts the credentials
@@ -60,7 +58,7 @@ describe('PAAPIClient Property Tests', () => {
           }),
           async (invalidCredentials) => {
             const client = new PAAPIClient();
-            
+
             // Should throw error for invalid credentials
             await expect(
               client.authenticate(
@@ -85,7 +83,7 @@ describe('PAAPIClient Property Tests', () => {
           }),
           async (searchParams) => {
             const client = new PAAPIClient();
-            
+
             // Should throw error when trying to search without authentication
             await expect(
               client.searchProducts(searchParams)
@@ -104,13 +102,13 @@ describe('PAAPIClient Property Tests', () => {
         secretKey: 'test-secret-key',
         partnerTag: 'test-partner-tag'
       };
-      
+
       await client.authenticate(
         credentials.accessKey,
         credentials.secretKey,
         credentials.partnerTag
       );
-      
+
       // Try to make a request that will fail (no real API access)
       try {
         await client.searchProducts({
@@ -127,25 +125,23 @@ describe('PAAPIClient Property Tests', () => {
       }
     });
 
-    it('should handle region validation correctly', async () => {
+    it('should authenticate with valid credentials for Japan marketplace', async () => {
       await fc.assert(
         fc.asyncProperty(
           fc.record({
             accessKey: fc.string({ minLength: 10, maxLength: 50 }),
             secretKey: fc.string({ minLength: 20, maxLength: 100 }),
-            partnerTag: fc.string({ minLength: 5, maxLength: 30 }),
-            region: fc.string({ minLength: 1, maxLength: 20 })
+            partnerTag: fc.string({ minLength: 5, maxLength: 30 })
           }),
           async (credentials) => {
             const client = new PAAPIClient();
-            
-            // Should accept any region string (validation happens at API level)
+
+            // Japan marketplace is fixed, no region parameter needed
             await expect(
               client.authenticate(
                 credentials.accessKey,
                 credentials.secretKey,
-                credentials.partnerTag,
-                credentials.region
+                credentials.partnerTag
               )
             ).resolves.not.toThrow();
           }
