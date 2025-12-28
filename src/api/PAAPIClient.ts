@@ -246,15 +246,29 @@ export class PAAPIClient {
 
   /**
    * Create AWS Signature Version 4 headers
+   * PA-API v5 requires specific headers to be signed: content-encoding, content-type, host, x-amz-content-sha256, x-amz-date, x-amz-target
    */
   private createAuthHeaders(request: PAAPIRequest, host: string, endpoint: string, target: string): Record<string, string> {
     const now = new Date();
     const amzDate = now.toISOString().replace(/[:-]|\.\d{3}/g, '');
-    const dateStamp = amzDate.substr(0, 8);
+    const dateStamp = amzDate.substring(0, 8);
 
-    const canonicalHeaders = `host:${host}\nx-amz-date:${amzDate}\n`;
-    const signedHeaders = 'host;x-amz-date';
+    // PA-API v5 required headers
+    const contentType = 'application/json; charset=utf-8';
+    const contentEncoding = 'amz-1.0';
     const payloadHash = crypto.createHash('sha256').update(JSON.stringify(request)).digest('hex');
+
+    // Canonical headers must be sorted alphabetically by header name
+    const canonicalHeaders = [
+      `content-encoding:${contentEncoding}`,
+      `content-type:${contentType}`,
+      `host:${host}`,
+      `x-amz-content-sha256:${payloadHash}`,
+      `x-amz-date:${amzDate}`,
+      `x-amz-target:${target}`
+    ].join('\n') + '\n';
+
+    const signedHeaders = 'content-encoding;content-type;host;x-amz-content-sha256;x-amz-date;x-amz-target';
 
     const canonicalRequest = [
       'POST',
@@ -281,6 +295,10 @@ export class PAAPIClient {
 
     return {
       'Authorization': authorizationHeader,
+      'Content-Encoding': contentEncoding,
+      'Content-Type': contentType,
+      'Host': host,
+      'X-Amz-Content-Sha256': payloadHash,
       'X-Amz-Date': amzDate,
       'X-Amz-Target': target
     };
