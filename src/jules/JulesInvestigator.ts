@@ -341,7 +341,40 @@ export class JulesInvestigator {
   }
 
   /**
+   * 調査セッションを開始（非同期用：即座にセッションIDを返す）
+   * GitHub Actions ワークフローで使用 - Julesが非同期でPRを作成する
+   */
+  async startInvestigation(
+    product: Product,
+    sourceContext: SourceContext
+  ): Promise<{ sessionId: string; sessionName: string; product: Product }> {
+    const context: InvestigationContext = {
+      product,
+      focusAreas: ['user_reviews', 'competitive_analysis', 'purchase_recommendation'],
+      analysisDepth: 'detailed',
+      includeCompetitors: true
+    };
+
+    const prompt = this.formatInvestigationPrompt(product);
+    const sessionId = await this.createSession(prompt, context, sourceContext);
+    const session = await this.getSession(sessionId);
+
+    this.logger.info('Investigation session started (async mode)', {
+      sessionId,
+      sessionName: session.name,
+      productAsin: product.asin
+    });
+
+    return {
+      sessionId,
+      sessionName: session.name,
+      product
+    };
+  }
+
+  /**
    * 完全な調査プロセスを実行（セッション作成から結果取得まで）
+   * ローカル実行用 - 完了まで待機する
    */
   async conductInvestigation(
     product: Product,

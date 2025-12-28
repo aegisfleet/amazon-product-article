@@ -14,7 +14,7 @@
 import fs from 'fs/promises';
 import path from 'path';
 import { JulesInvestigator } from '../jules/JulesInvestigator';
-import { InvestigationResult, JulesCredentials, SourceContext } from '../types/JulesTypes';
+import { JulesCredentials, SourceContext } from '../types/JulesTypes';
 import { Product } from '../types/Product';
 import { Logger } from '../utils/Logger';
 
@@ -86,21 +86,24 @@ async function ensureOutputDirectories(): Promise<void> {
     }
 }
 
-async function saveInvestigationResult(
+async function saveSessionInfo(
     product: Product,
-    result: InvestigationResult
+    sessionInfo: { sessionId: string; sessionName: string }
 ): Promise<void> {
-    const investigationsDir = path.join(process.cwd(), 'data', 'investigations');
+    const sessionsDir = path.join(process.cwd(), 'data', 'sessions');
+    await fs.mkdir(sessionsDir, { recursive: true });
+
     const filename = `${product.asin}-${Date.now()}.json`;
-    const filePath = path.join(investigationsDir, filename);
+    const filePath = path.join(sessionsDir, filename);
 
     await fs.writeFile(filePath, JSON.stringify({
         product,
-        investigation: result,
+        session: sessionInfo,
+        status: 'started',
         timestamp: new Date().toISOString(),
     }, null, 2));
 
-    logger.info(`Investigation result saved: ${filename}`);
+    logger.info(`Session info saved: ${filename}`);
 }
 
 async function setGitHubOutput(name: string, value: string): Promise<void> {
@@ -152,30 +155,31 @@ async function main(): Promise<void> {
             },
         };
 
-        // 各商品を調査
-        let completedInvestigations = 0;
-        const investigationResults: Array<{
+        // 各商品のセッションを開始
+        let startedSessions = 0;
+        const sessionResults: Array<{
             product: Product;
-            result: InvestigationResult;
+            session: { sessionId: string; sessionName: string };
         }> = [];
 
         for (const product of productsToInvestigate) {
             try {
-                logger.info(`Investigating product: ${product.title} (ASIN: ${product.asin})`);
+                logger.info(`Starting investigation for: ${product.title} (ASIN: ${product.asin})`);
 
-                const result = await investigator.conductInvestigation(product, sourceContext);
+                // 非同期でセッションを開始（Julesが非同期でPRを作成）
+                const sessionInfo = await investigator.startInvestigation(product, sourceContext);
 
-                await saveInvestigationResult(product, result);
-                investigationResults.push({ product, result });
-                completedInvestigations++;
+                await saveSessionInfo(product, sessionInfo);
+                sessionResults.push({ product, session: sessionInfo });
+                startedSessions++;
 
-                logger.info(`Investigation completed for ${product.asin}`);
+                logger.info(`Investigation session started for ${product.asin}: ${sessionInfo.sessionId}`);
 
                 // レート制限対応
-                await new Promise(resolve => setTimeout(resolve, 5000));
+                await new Promise(resolve => setTimeout(resolve, 2000));
 
             } catch (error) {
-                logger.error(`Failed to investigate product ${product.asin}:`, error);
+                logger.error(`Failed to start investigation for ${product.asin}:`, error);
                 // 個別の失敗は継続
             }
         }
@@ -184,26 +188,28 @@ async function main(): Promise<void> {
         const summaryFile = path.join(
             process.cwd(),
             'data',
-            'investigations',
+            'sessions',
             'latest-summary.json'
         );
+        await fs.mkdir(path.dirname(summaryFile), { recursive: true });
         await fs.writeFile(summaryFile, JSON.stringify({
             totalProducts: productsToInvestigate.length,
-            completedInvestigations,
-            results: investigationResults,
+            startedSessions,
+            sessions: sessionResults,
             timestamp: new Date().toISOString(),
         }, null, 2));
 
         // GitHub Actions 出力を設定
-        await setGitHubOutput('investigations-completed', completedInvestigations.toString());
+        await setGitHubOutput('sessions-started', startedSessions.toString());
         await setGitHubOutput('total-products', productsToInvestigate.length.toString());
 
-        logger.info(`Jules investigation completed: ${completedInvestigations}/${productsToInvestigate.length} products`);
+        logger.info(`Jules sessions started: ${startedSessions}/${productsToInvestigate.length} products`);
+        logger.info('Note: Jules will create PRs asynchronously. Check GitHub for PR creation.');
         process.exit(0);
 
     } catch (error) {
         logger.error('Jules investigation failed:', error);
-        await setGitHubOutput('investigations-completed', '0');
+        await setGitHubOutput('sessions-started', '0');
         process.exit(1);
     }
 }
