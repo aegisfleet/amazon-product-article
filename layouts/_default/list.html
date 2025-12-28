@@ -1,12 +1,30 @@
 {{ define "main" }}
-<h1>📦 {{ .Site.Title }}</h1>
-<p>自動生成された製品レビュー記事一覧</p>
-<ul class="article-list">
-    {{ range (where .Site.RegularPages "Section" "articles") }}
-    <li class="article-item">
-        <a href="{{ .RelPermalink }}">📄 {{ .Title }}</a>
-        {{ with .Description }}<p class="article-description">{{ . }}</p>{{ end }}
-    </li>
-    {{ end }}
-</ul>
+<div class="container" style="padding-top: var(--spacing-xl);">
+    <div class="article-header">
+        <h1>{{ .Title }}</h1>
+        {{ with .Description }}<p class="article-meta">{{ . }}</p>{{ end }}
+    </div>
+
+    <div class="card-grid">
+        {{ range .Pages }}
+        <article class="card">
+            <div class="card-content">
+                <div class="card-header">
+                    {{ with .Params.category }}<span class="card-tag">{{ . }}</span>{{ end }}
+                    <h3 class="card-title">
+                        <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+                    </h3>
+                </div>
+                <p class="card-excerpt">
+                    {{ .Description | default (.Summary | truncate 120) }}
+                </p>
+                <div class="card-footer">
+                    <span class="article-meta">{{ .Date.Format "Jan 2, 2006" }}</span>
+                    <a href="{{ .RelPermalink }}" class="read-more">Read Review →</a>
+                </div>
+            </div>
+        </article>
+        {{ end }}
+    </div>
+</div>
 {{ end }}

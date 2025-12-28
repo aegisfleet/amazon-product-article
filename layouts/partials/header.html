@@ -1,0 +1,37 @@
+<header class="site-header">
+    <div class="container header-content">
+        <a href="{{ " /" | relURL }}" class="brand">
+            <span class="brand-icon">📦</span>
+            {{ .Site.Title }}
+        </a>
+
+        <button class="mobile-menu-btn" aria-label="Menu"
+            onclick="document.querySelector('.nav-links').classList.toggle('active')">
+            ☰
+        </button>
+
+        <nav class="nav-links">
+            <a href="{{ " /" | relURL }}">Home</a>
+            <a href="{{ " articles" | relURL }}">Reviews</a>
+            <!-- Add more links here later -->
+        </nav>
+    </div>
+
+    <style>
+        /* Mobile Menu Toggle Logic (Inline for simplicity, ideally in JS file) */
+        @media (max-width: 767px) {
+            .nav-links.active {
+                display: flex;
+                flex-direction: column;
+                position: absolute;
+                top: 4rem;
+                left: 0;
+                right: 0;
+                background: var(--color-bg-card);
+                padding: var(--spacing-lg);
+                border-bottom: 1px solid var(--color-border);
+                box-shadow: var(--shadow-lg);
+            }
+        }
+    </style>
+</header>
