@@ -169,6 +169,21 @@ async function main(): Promise<void> {
         });
 
         logger.info(`PR #${options.prNumber} merged successfully`);
+
+        // マージ完了後、ブランチを削除（GitHubの設定で自動削除されない場合の保険）
+        try {
+            logger.info(`Deleting head branch: ${pr.head}...`);
+            await octokit.git.deleteRef({
+                owner: options.owner,
+                repo: options.repo,
+                ref: `heads/${pr.head}`,
+            });
+            logger.info(`Head branch ${pr.head} deleted successfully`);
+        } catch (error) {
+            // ブランチ削除の失敗は致命的ではないため、ログを出力して続行
+            // GitHubの設定ですでに削除されている場合などが考えられる
+            logger.warn(`Failed to delete head branch ${pr.head}:`, error);
+        }
         process.exit(0);
 
     } catch (error) {
