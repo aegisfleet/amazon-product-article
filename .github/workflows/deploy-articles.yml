@@ -4,7 +4,6 @@ on:
   push:
     branches: [main]
     paths:
-      - 'articles/**'
       - 'data/**'
   workflow_dispatch:
     inputs:
@@ -50,8 +49,14 @@ jobs:
         AMAZON_PARTNER_TAG: ${{ secrets.AMAZON_PARTNER_TAG }}
       run: npm run generate:articles
     
-    - name: Generate site
-      run: npm run generate:site
+    - name: Setup Hugo
+      uses: peaceiris/actions-hugo@v3
+      with:
+        hugo-version: 'latest'
+        extended: true
+    
+    - name: Build site with Hugo
+      run: hugo --minify
     
     - name: Setup Pages
       uses: actions/configure-pages@v5
@@ -59,7 +64,7 @@ jobs:
     - name: Upload artifact
       uses: actions/upload-pages-artifact@v3
       with:
-        path: '_site'
+        path: 'public'
 
   deploy:
     environment:
