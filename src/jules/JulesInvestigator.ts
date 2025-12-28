@@ -341,6 +341,7 @@ ${updateInstruction}
    - 同カテゴリの主要競合商品3-5点
    - 価格、機能、品質の比較
    - 差別化ポイントの特定
+   - **可能であれば各競合商品のASINを特定してください**
 
 4. 購買推奨度
    - どのようなユーザーに適しているか
@@ -390,6 +391,7 @@ ${Object.entries(product.specifications).map(([key, value]) => `  - ${key}: ${va
     "competitiveAnalysis": [
       {
         "name": "競合商品名",
+        "asin": "B0XXXXXXXX (ASINが特定できる場合)",
         "priceComparison": "価格比較の説明",
         "featureComparison": ["機能比較1", "機能比較2"],
         "differentiators": ["差別化ポイント1", "差別化ポイント2"]

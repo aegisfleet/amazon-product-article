@@ -416,7 +416,12 @@ ${reviewAnalysis ? this.generateSentimentAnalysis(reviewAnalysis) : ''}`;
           .map(diff => `  - ${diff}`)
           .join('\n');
 
-        return `### ${competitor.name}との比較
+        // ASINがある場合はアフィリエイトリンクを生成
+        const competitorName = competitor.asin
+          ? `[${competitor.name}](https://www.amazon.co.jp/dp/${competitor.asin}?tag=${process.env.AMAZON_PARTNER_TAG || 'your-affiliate-tag'})`
+          : competitor.name;
+
+        return `### ${competitorName}との比較
 
 **価格比較**: ${competitor.priceComparison}
 
