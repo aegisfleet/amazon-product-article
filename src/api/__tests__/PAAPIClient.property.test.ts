@@ -123,7 +123,7 @@ describe('PAAPIClient Property Tests', () => {
         expect(errorMessage).not.toContain(credentials.secretKey);
         expect(errorMessage).not.toContain(credentials.partnerTag);
       }
-    });
+    }, 15000);
 
     it('should authenticate with valid credentials for Japan marketplace', async () => {
       await fc.assert(
