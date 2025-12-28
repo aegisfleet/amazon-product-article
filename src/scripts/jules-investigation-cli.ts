@@ -4,14 +4,15 @@
  * GitHub Actions から実行されるJules調査スクリプト
  * 
  * 環境変数:
- *   JULES_API_KEY - Jules API キー
- *   JULES_BASE_URL - Jules API ベースURL（オプション）
+ *   JULES_API_KEY - Jules API キー (https://jules.google.com/settings#api で取得)
+ *   JULES_SOURCE - Jules ソース名 (例: sources/github/owner/repo)
+ *   JULES_STARTING_BRANCH - 開始ブランチ (デフォルト: main)
  */
 
 import fs from 'fs/promises';
 import path from 'path';
 import { JulesInvestigator } from '../jules/JulesInvestigator';
-import { InvestigationResult, JulesCredentials } from '../types/JulesTypes';
+import { InvestigationResult, JulesCredentials, SourceContext } from '../types/JulesTypes';
 import { Product } from '../types/Product';
 import { Logger } from '../utils/Logger';
 
@@ -19,23 +20,30 @@ const logger = Logger.getInstance();
 
 interface CLIOptions {
     apiKey: string;
-    projectId: string;
+    source: string;
+    startingBranch: string;
     maxProducts: number;
 }
 
 function getOptions(): CLIOptions {
     const apiKey = process.env.JULES_API_KEY;
-    const projectId = process.env.JULES_PROJECT_ID || 'amazon-product-research';
+    const source = process.env.JULES_SOURCE;
+    const startingBranch = process.env.JULES_STARTING_BRANCH || 'main';
 
     if (!apiKey) {
         throw new Error('Missing required environment variable: JULES_API_KEY');
+    }
+
+    if (!source) {
+        throw new Error('Missing required environment variable: JULES_SOURCE (e.g., sources/github/owner/repo)');
     }
 
     const maxProducts = parseInt(process.env.MAX_INVESTIGATION_PRODUCTS || '5', 10);
 
     return {
         apiKey,
-        projectId,
+        source,
+        startingBranch,
         maxProducts,
     };
 }
@@ -50,7 +58,7 @@ async function loadProducts(): Promise<Product[]> {
 
     try {
         const data = await fs.readFile(sessionFile, 'utf-8');
-        const session = JSON.parse(data);
+        const session = JSON.parse(data) as { results?: Array<{ products?: Product[] }> };
 
         // すべてのカテゴリから商品を収集
         const products: Product[] = [];
@@ -108,7 +116,8 @@ async function main(): Promise<void> {
 
     try {
         const options = getOptions();
-        logger.info(`Project ID: ${options.projectId}`);
+        logger.info(`Source: ${options.source}`);
+        logger.info(`Starting Branch: ${options.startingBranch}`);
         logger.info(`Max products to investigate: ${options.maxProducts}`);
 
         await ensureOutputDirectories();
@@ -130,9 +139,16 @@ async function main(): Promise<void> {
         // Jules Investigator を初期化
         const credentials: JulesCredentials = {
             apiKey: options.apiKey,
-            projectId: options.projectId,
         };
         const investigator = new JulesInvestigator(credentials);
+
+        // ソースコンテキストを作成
+        const sourceContext: SourceContext = {
+            source: options.source,
+            githubRepoContext: {
+                startingBranch: options.startingBranch,
+            },
+        };
 
         // 各商品を調査
         let completedInvestigations = 0;
@@ -145,7 +161,7 @@ async function main(): Promise<void> {
             try {
                 logger.info(`Investigating product: ${product.title} (ASIN: ${product.asin})`);
 
-                const result = await investigator.conductInvestigation(product);
+                const result = await investigator.conductInvestigation(product, sourceContext);
 
                 await saveInvestigationResult(product, result);
                 investigationResults.push({ product, result });
@@ -154,7 +170,7 @@ async function main(): Promise<void> {
                 logger.info(`Investigation completed for ${product.asin}`);
 
                 // レート制限対応
-                await new Promise(resolve => setTimeout(resolve, 2000));
+                await new Promise(resolve => setTimeout(resolve, 5000));
 
             } catch (error) {
                 logger.error(`Failed to investigate product ${product.asin}:`, error);

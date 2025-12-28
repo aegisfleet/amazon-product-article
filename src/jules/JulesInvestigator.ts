@@ -1,20 +1,26 @@
 /**
  * Jules_Investigator - Google Jules APIを使用した商品調査の実行
+ * API Reference: https://jules.google/docs/api/reference/
  */
 
-import axios, { AxiosInstance, AxiosError } from 'axios';
-import { Product } from '../types/Product';
+import axios, { AxiosError, AxiosInstance } from 'axios';
 import {
-  JulesCredentials,
+  ActivitiesResponse,
   InvestigationContext,
+  InvestigationResult,
+  JulesCredentials,
+  JulesError,
   JulesSessionRequest,
   JulesSessionResponse,
+  JulesSourcesResponse,
+  SessionActivity,
   SessionStatus,
-  InvestigationResult,
-  JulesError,
-  JulesApiResponse
+  SourceContext
 } from '../types/JulesTypes';
+import { Product } from '../types/Product';
 import { Logger } from '../utils/Logger';
+
+const JULES_API_BASE_URL = 'https://jules.googleapis.com/v1alpha';
 
 export class JulesInvestigator {
   private client: AxiosInstance;
@@ -24,14 +30,13 @@ export class JulesInvestigator {
   constructor(credentials: JulesCredentials) {
     this.credentials = credentials;
     this.logger = Logger.getInstance();
-    
+
     this.client = axios.create({
-      baseURL: 'https://jules-api.googleapis.com/v1',
+      baseURL: JULES_API_BASE_URL,
       timeout: 30000,
       headers: {
-        'Authorization': `Bearer ${credentials.apiKey}`,
-        'Content-Type': 'application/json',
-        'X-Project-ID': credentials.projectId
+        'X-Goog-Api-Key': credentials.apiKey,
+        'Content-Type': 'application/json'
       }
     });
 
@@ -40,8 +45,7 @@ export class JulesInvestigator {
       (config) => {
         this.logger.info('Jules API Request', {
           method: config.method,
-          url: config.url,
-          headers: config.headers
+          url: config.url
         });
         return config;
       },
@@ -71,32 +75,41 @@ export class JulesInvestigator {
   }
 
   /**
+   * 利用可能なソース（GitHubリポジトリ）を一覧取得
+   */
+  async listSources(): Promise<JulesSourcesResponse> {
+    try {
+      const response = await this.client.get<JulesSourcesResponse>('/sources');
+      this.logger.info('Jules sources retrieved', { count: response.data.sources.length });
+      return response.data;
+    } catch (error) {
+      const julesError = this.handleApiError(error);
+      this.logger.error('Failed to list Jules sources', julesError);
+      throw new Error(`Failed to list sources: ${julesError.message}`);
+    }
+  }
+
+  /**
    * 商品調査セッションを作成
    */
-  async createSession(prompt: string, context: InvestigationContext): Promise<string> {
+  async createSession(prompt: string, context: InvestigationContext, sourceContext: SourceContext): Promise<string> {
     try {
       const request: JulesSessionRequest = {
         prompt,
-        context,
-        sessionConfig: {
-          maxTokens: 4000,
-          temperature: 0.7,
-          timeout: 300000 // 5 minutes
-        }
+        sourceContext,
+        title: `Product Investigation: ${context.product.title}`,
+        automationMode: 'AUTO_CREATE_PR',
+        requirePlanApproval: false  // 自動承認
       };
 
-      const response = await this.client.post<JulesApiResponse<JulesSessionResponse>>(
+      const response = await this.client.post<JulesSessionResponse>(
         '/sessions',
         request
       );
 
-      if (!response.data.success || !response.data.data) {
-        throw new Error(`Failed to create Jules session: ${response.data.error?.message}`);
-      }
+      const sessionId = response.data.id;
+      this.logger.info('Jules session created successfully', { sessionId, name: response.data.name });
 
-      const sessionId = response.data.data.sessionId;
-      this.logger.info('Jules session created successfully', { sessionId });
-      
       return sessionId;
     } catch (error) {
       const julesError = this.handleApiError(error);
@@ -106,22 +119,95 @@ export class JulesInvestigator {
   }
 
   /**
-   * セッションのステータスを監視
+   * セッション情報を取得
+   */
+  async getSession(sessionId: string): Promise<JulesSessionResponse> {
+    try {
+      const response = await this.client.get<JulesSessionResponse>(
+        `/sessions/${sessionId}`
+      );
+      return response.data;
+    } catch (error) {
+      const julesError = this.handleApiError(error);
+      this.logger.error('Failed to get session', { sessionId, error: julesError });
+      throw new Error(`Failed to get session: ${julesError.message}`);
+    }
+  }
+
+  /**
+   * セッションのアクティビティを取得
+   */
+  async listActivities(sessionId: string, pageSize = 30): Promise<SessionActivity[]> {
+    try {
+      const response = await this.client.get<ActivitiesResponse>(
+        `/sessions/${sessionId}/activities`,
+        { params: { pageSize } }
+      );
+      return response.data.activities;
+    } catch (error) {
+      const julesError = this.handleApiError(error);
+      this.logger.error('Failed to list activities', { sessionId, error: julesError });
+      throw new Error(`Failed to list activities: ${julesError.message}`);
+    }
+  }
+
+  /**
+   * セッションにメッセージを送信
+   */
+  async sendMessage(sessionId: string, prompt: string): Promise<void> {
+    try {
+      await this.client.post(
+        `/sessions/${sessionId}:sendMessage`,
+        { prompt }
+      );
+      this.logger.info('Message sent to session', { sessionId });
+    } catch (error) {
+      const julesError = this.handleApiError(error);
+      this.logger.error('Failed to send message', { sessionId, error: julesError });
+      throw new Error(`Failed to send message: ${julesError.message}`);
+    }
+  }
+
+  /**
+   * プランを承認
+   */
+  async approvePlan(sessionId: string): Promise<void> {
+    try {
+      await this.client.post(`/sessions/${sessionId}:approvePlan`);
+      this.logger.info('Plan approved for session', { sessionId });
+    } catch (error) {
+      const julesError = this.handleApiError(error);
+      this.logger.error('Failed to approve plan', { sessionId, error: julesError });
+      throw new Error(`Failed to approve plan: ${julesError.message}`);
+    }
+  }
+
+  /**
+   * セッションのステータスを監視（アクティビティから推定）
    */
   async monitorSession(sessionId: string): Promise<SessionStatus> {
     try {
-      const response = await this.client.get<JulesApiResponse<SessionStatus>>(
-        `/sessions/${sessionId}/status`
-      );
+      const session = await this.getSession(sessionId);
+      const activities = await this.listActivities(sessionId);
 
-      if (!response.data.success || !response.data.data) {
-        throw new Error(`Failed to get session status: ${response.data.error?.message}`);
+      // セッション出力があれば完了
+      const hasOutput = session.outputs && session.outputs.length > 0;
+
+      // 最新のアクティビティを確認
+      const latestActivity = activities[activities.length - 1];
+
+      let status: SessionStatus['status'] = 'processing';
+      if (hasOutput) {
+        status = 'completed';
+      } else if (latestActivity?.type === 'AGENT_MESSAGE') {
+        status = 'processing';
       }
 
-      const status = response.data.data;
-      this.logger.info('Session status retrieved', { sessionId, status: status.status });
-      
-      return status;
+      return {
+        sessionId,
+        status,
+        currentStep: latestActivity?.content?.substring(0, 100) ?? undefined
+      };
     } catch (error) {
       const julesError = this.handleApiError(error);
       this.logger.error('Failed to get session status', { sessionId, error: julesError });
@@ -130,32 +216,70 @@ export class JulesInvestigator {
   }
 
   /**
-   * 調査結果を取得
+   * 調査結果を取得（セッション出力とアクティビティから構築）
    */
-  async retrieveResults(sessionId: string): Promise<InvestigationResult> {
+  async retrieveResults(sessionId: string, product: Product): Promise<InvestigationResult> {
     try {
-      const response = await this.client.get<JulesApiResponse<InvestigationResult>>(
-        `/sessions/${sessionId}/results`
-      );
+      const activities = await this.listActivities(sessionId, 100);
 
-      if (!response.data.success || !response.data.data) {
-        throw new Error(`Failed to retrieve results: ${response.data.error?.message}`);
-      }
+      // エージェントメッセージから分析結果を抽出
+      const agentMessages = activities
+        .filter(a => a.type === 'AGENT_MESSAGE')
+        .map(a => a.content || '')
+        .join('\n');
 
-      const result = response.data.data;
-      result.generatedAt = new Date();
-      
-      this.logger.info('Investigation results retrieved successfully', { 
-        sessionId, 
-        analysisPoints: result.analysis.positivePoints.length + result.analysis.negativePoints.length 
+      // 簡易的な分析結果パース（実際にはより洗練されたパースが必要）
+      const result: InvestigationResult = {
+        sessionId,
+        product,
+        analysis: this.parseAnalysisFromContent(agentMessages),
+        generatedAt: new Date(),
+        rawResponse: agentMessages
+      };
+
+      this.logger.info('Investigation results retrieved successfully', {
+        sessionId,
+        analysisPoints: result.analysis.positivePoints.length + result.analysis.negativePoints.length
       });
-      
+
       return result;
     } catch (error) {
       const julesError = this.handleApiError(error);
       this.logger.error('Failed to retrieve investigation results', { sessionId, error: julesError });
       throw new Error(`Results retrieval failed: ${julesError.message}`);
     }
+  }
+
+  /**
+   * コンテンツから分析結果をパース
+   */
+  private parseAnalysisFromContent(content: string): InvestigationResult['analysis'] {
+    // JSONブロックを抽出して解析を試みる
+    const jsonMatch = content.match(/```json\s*([\s\S]*?)\s*```/);
+    if (jsonMatch && jsonMatch[1]) {
+      try {
+        const parsed = JSON.parse(jsonMatch[1]) as { analysis?: InvestigationResult['analysis'] };
+        if (parsed.analysis) {
+          return parsed.analysis;
+        }
+      } catch {
+        this.logger.warn('Failed to parse JSON analysis, using fallback');
+      }
+    }
+
+    // フォールバック: デフォルト構造を返す
+    return {
+      positivePoints: [],
+      negativePoints: [],
+      useCases: [],
+      competitiveAnalysis: [],
+      recommendation: {
+        targetUsers: [],
+        pros: [],
+        cons: [],
+        score: 0
+      }
+    };
   }
 
   /**
@@ -187,11 +311,12 @@ export class JulesInvestigator {
 - 仕様: ${Object.entries(product.specifications).map(([key, value]) => `${key}: ${value}`).join(', ')}
 
 調査結果は以下のJSON形式で構造化して提供してください：
+\`\`\`json
 {
   "analysis": {
-    "positivePoints": ["具体的な良い点1", "具体的な良い点2", ...],
-    "negativePoints": ["具体的な問題点1", "具体的な問題点2", ...],
-    "useCases": ["使用シーン1", "使用シーン2", ...],
+    "positivePoints": ["具体的な良い点1", "具体的な良い点2"],
+    "negativePoints": ["具体的な問題点1", "具体的な問題点2"],
+    "useCases": ["使用シーン1", "使用シーン2"],
     "competitiveAnalysis": [
       {
         "name": "競合商品名",
@@ -207,7 +332,8 @@ export class JulesInvestigator {
       "score": 85
     }
   }
-}`;
+}
+\`\`\``;
 
     return prompt;
   }
@@ -215,7 +341,11 @@ export class JulesInvestigator {
   /**
    * 完全な調査プロセスを実行（セッション作成から結果取得まで）
    */
-  async conductInvestigation(product: Product, maxWaitTime: number = 300000): Promise<InvestigationResult> {
+  async conductInvestigation(
+    product: Product,
+    sourceContext: SourceContext,
+    maxWaitTime: number = 300000
+  ): Promise<InvestigationResult> {
     const context: InvestigationContext = {
       product,
       focusAreas: ['user_reviews', 'competitive_analysis', 'purchase_recommendation'],
@@ -224,21 +354,21 @@ export class JulesInvestigator {
     };
 
     const prompt = this.formatInvestigationPrompt(product);
-    const sessionId = await this.createSession(prompt, context);
+    const sessionId = await this.createSession(prompt, context, sourceContext);
 
     // セッション完了まで待機
     const startTime = Date.now();
     while (Date.now() - startTime < maxWaitTime) {
       const status = await this.monitorSession(sessionId);
-      
+
       if (status.status === 'completed') {
-        return await this.retrieveResults(sessionId);
+        return await this.retrieveResults(sessionId, product);
       } else if (status.status === 'failed') {
         throw new Error(`Investigation failed: ${status.error}`);
       }
 
-      // 5秒待機してから再チェック
-      await new Promise(resolve => setTimeout(resolve, 5000));
+      // 10秒待機してから再チェック
+      await new Promise(resolve => setTimeout(resolve, 10000));
     }
 
     throw new Error(`Investigation timeout after ${maxWaitTime}ms`);
@@ -247,7 +377,7 @@ export class JulesInvestigator {
   /**
    * APIエラーを処理
    */
-  private handleApiError(error: any): JulesError {
+  private handleApiError(error: unknown): JulesError {
     if (error instanceof AxiosError) {
       const status = error.response?.status;
       const data = error.response?.data;
@@ -266,7 +396,7 @@ export class JulesInvestigator {
       if (status === 401 || status === 403) {
         return {
           code: 'AUTHENTICATION_ERROR',
-          message: 'Jules API authentication failed',
+          message: 'Jules API authentication failed. Check your API key.',
           details: data,
           retryable: false
         };
@@ -292,19 +422,28 @@ export class JulesInvestigator {
     }
 
     // ネットワークエラーやタイムアウト
-    if (error.code === 'ECONNABORTED' || error.code === 'ENOTFOUND') {
+    if (error instanceof Error) {
+      if (error.message.includes('ECONNABORTED') || error.message.includes('ENOTFOUND')) {
+        return {
+          code: 'NETWORK_ERROR',
+          message: 'Network error connecting to Jules API',
+          details: error.message,
+          retryable: true
+        };
+      }
+
       return {
-        code: 'NETWORK_ERROR',
-        message: 'Network error connecting to Jules API',
-        details: error.message,
-        retryable: true
+        code: 'UNKNOWN_ERROR',
+        message: error.message,
+        details: error,
+        retryable: false
       };
     }
 
     // その他のエラー
     return {
       code: 'UNKNOWN_ERROR',
-      message: error.message || 'Unknown Jules API error',
+      message: 'Unknown Jules API error',
       details: error,
       retryable: false
     };

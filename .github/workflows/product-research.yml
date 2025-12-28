@@ -79,7 +79,8 @@ jobs:
     - name: Run Jules investigation
       env:
         JULES_API_KEY: ${{ secrets.JULES_API_KEY }}
-        JULES_PROJECT_ID: ${{ secrets.JULES_PROJECT_ID }}
+        JULES_SOURCE: ${{ secrets.JULES_SOURCE }}
+        JULES_STARTING_BRANCH: 'main'
         MAX_INVESTIGATION_PRODUCTS: '5'
       run: npm run investigate
     

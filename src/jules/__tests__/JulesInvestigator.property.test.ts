@@ -4,18 +4,16 @@
  */
 
 import * as fc from 'fast-check';
-import { JulesInvestigator } from '../JulesInvestigator';
-import { Product } from '../../types/Product';
 import { JulesCredentials } from '../../types/JulesTypes';
+import { Product } from '../../types/Product';
+import { JulesInvestigator } from '../JulesInvestigator';
 
 describe('JulesInvestigator Property Tests', () => {
   let investigator: JulesInvestigator;
 
   beforeAll(() => {
     const mockCredentials: JulesCredentials = {
-      apiKey: 'test-api-key',
-      projectId: 'test-project-id',
-      region: 'us-central1'
+      apiKey: 'test-api-key'
     };
     investigator = new JulesInvestigator(mockCredentials);
   });
@@ -71,7 +69,7 @@ describe('JulesInvestigator Property Tests', () => {
           const prompt = investigator.formatInvestigationPrompt(product);
 
           // Verify all required elements are present
-          
+
           // 1. User review analysis instructions (Requirements 2.1, 2.2)
           expect(prompt).toContain('ユーザーレビュー分析');
           expect(prompt).toContain('良い点：具体的な使用体験と満足ポイント');
