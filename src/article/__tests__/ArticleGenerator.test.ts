@@ -173,12 +173,12 @@ describe('ArticleGenerator', () => {
       const result = await generator.generateArticle(mockProduct, mockInvestigation, mockReviewAnalysis);
 
       expect(result).toBeDefined();
-      expect(result.content).toContain('# テスト商品 スマートフォンの詳細レビュー');
-      expect(result.content).toContain('## 商品概要');
+      expect(result.content).toContain('# テスト商品 スマートフォン');
+      expect(result.content).toContain('## 📦 商品の特徴');
       expect(result.content).toContain('## ユーザーレビュー分析');
-      expect(result.content).toContain('## 競合商品との比較');
+      expect(result.content).toContain('## 🥊 競合商品との比較');
       expect(result.content).toContain('## 購入推奨度');
-      expect(result.content).toContain('## 商品詳細・購入');
+      expect(result.content).toContain('## 🛒 商品詳細・購入');
       expect(result.content).toContain('## 参考情報ソース');
       expect(result.content).toContain('購入者の生の声');
       expect(result.content).toContain('会社員の体験談 (通勤・通学)');
@@ -207,7 +207,7 @@ describe('ArticleGenerator', () => {
       const result = await generator.generateArticle(mockProduct, mockInvestigation);
 
       expect(result).toBeDefined();
-      expect(result.content).toContain('# テスト商品 スマートフォンの詳細レビュー');
+      expect(result.content).toContain('# テスト商品 スマートフォン');
       expect(result.sections).toHaveLength(7);
     });
   });
@@ -322,7 +322,7 @@ describe('ArticleGenerator', () => {
 
       const result = await generator.generateArticle(mockProduct, emptyInvestigation);
       expect(result).toBeDefined();
-      expect(result.content).toContain('# テスト商品 スマートフォンの詳細レビュー');
+      expect(result.content).toContain('# テスト商品 スマートフォン');
     });
 
     it('should handle products with minimal information', async () => {

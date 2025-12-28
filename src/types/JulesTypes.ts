@@ -177,6 +177,8 @@ export interface InvestigationResult {
     userImpression: string;        // New: Overall impression summary
     sources: SourceReference[];    // New: Information sources
     lastInvestigated?: string;     // New: ISO Date string of last investigation
+    productDescription?: string;   // New: Brief product description (1-2 sentences)
+    productUsage?: string[];       // New: Main usage/purpose (3-5 items)
     recommendation: {
       targetUsers: string[];
       pros: string[];

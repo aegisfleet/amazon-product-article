@@ -326,6 +326,11 @@ ${updateInstruction}
 
 以下の観点で調査・分析を行ってください：
 
+0. **商品概要と使い方**（サイト上部に表示する最重要情報）
+   - **productDescription**: この商品は何か、1-2文で簡潔に説明（例：「〇〇は、△△用の□□です。」）
+   - **productUsage**: 主な使い方・用途を3-5項目で箇条書き
+   - これはサイトの最上部に表示される情報なので、ユーザーが商品を理解しやすい説明にしてください
+
 1. ユーザーレビュー分析（"Voice of the Customer"）
    ⇒ Amazon以外のレビューサイト（価格.com、みんなのレビュー等）も積極的に調査
    - 具体的な使用体験と満足ポイント（単なる機能列挙ではなく、体験として記述）
@@ -341,7 +346,8 @@ ${updateInstruction}
    - 同カテゴリの主要競合商品3-5点
    - 価格、機能、品質の比較
    - 差別化ポイントの特定
-   - **可能であれば各競合商品のASINを特定してください**
+   - **【必須】各競合商品のASINを必ず特定してください**（アフィリエイトリンク生成に使用）
+   - ASINが見つからない場合は "asin": null と記載
 
 4. 購買推奨度
    - どのようなユーザーに適しているか
@@ -368,6 +374,8 @@ ${Object.entries(product.specifications).map(([key, value]) => `  - ${key}: ${va
 \`\`\`json
 {
   "analysis": {
+    "productDescription": "この商品が何かを1-2文で簡潔に説明",
+    "productUsage": ["使い方1", "使い方2", "使い方3"],
     "positivePoints": ["具体的な良い点1", "具体的な良い点2"],
     "negativePoints": ["具体的な問題点1", "具体的な問題点2"],
     "useCases": ["使用シーン1", "使用シーン2"],
@@ -391,7 +399,7 @@ ${Object.entries(product.specifications).map(([key, value]) => `  - ${key}: ${va
     "competitiveAnalysis": [
       {
         "name": "競合商品名",
-        "asin": "B0XXXXXXXX (ASINが特定できる場合)",
+        "asin": "B0XXXXXXXX または null（ASINが特定できる場合は必ず記載）",
         "priceComparison": "価格比較の説明",
         "featureComparison": ["機能比較1", "機能比較2"],
         "differentiators": ["差別化ポイント1", "差別化ポイント2"]
