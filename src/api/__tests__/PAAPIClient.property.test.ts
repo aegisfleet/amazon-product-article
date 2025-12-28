@@ -27,7 +27,7 @@ describe('PAAPIClient Property Tests', () => {
 
             // Test authentication with generated credentials
             try {
-              await client.authenticate(
+              client.authenticate(
                 credentials.accessKey,
                 credentials.secretKey,
                 credentials.partnerTag
@@ -60,13 +60,13 @@ describe('PAAPIClient Property Tests', () => {
             const client = new PAAPIClient();
 
             // Should throw error for invalid credentials
-            await expect(
+            expect(() =>
               client.authenticate(
                 invalidCredentials.accessKey as any,
                 invalidCredentials.secretKey as any,
                 invalidCredentials.partnerTag as any
               )
-            ).rejects.toThrow('Missing required PA-API credentials');
+            ).toThrow('Missing required PA-API credentials');
           }
         ),
         { numRuns: 100 }
@@ -103,7 +103,7 @@ describe('PAAPIClient Property Tests', () => {
         partnerTag: 'test-partner-tag'
       };
 
-      await client.authenticate(
+      client.authenticate(
         credentials.accessKey,
         credentials.secretKey,
         credentials.partnerTag
@@ -137,13 +137,13 @@ describe('PAAPIClient Property Tests', () => {
             const client = new PAAPIClient();
 
             // Japan marketplace is fixed, no region parameter needed
-            await expect(
+            expect(() =>
               client.authenticate(
                 credentials.accessKey,
                 credentials.secretKey,
                 credentials.partnerTag
               )
-            ).resolves.not.toThrow();
+            ).not.toThrow();
           }
         ),
         { numRuns: 100 }
