@@ -531,22 +531,30 @@ ${score >= 80 ? '自信を持っておすすめできる商品です。' :
    * フロントマターを生成
    */
   private generateFrontMatter(metadata: ArticleMetadata): string {
-    return `---
-title: "${metadata.title}"
-description: "${metadata.description}"
-date: ${metadata.publishDate.toISOString().split('T')[0]}
-category: "${metadata.category}"
-${metadata.subcategory ? `subcategory: "${metadata.subcategory}"` : ''}
-${metadata.manufacturer ? `manufacturer: "${metadata.manufacturer}"` : ''}
-asin: "${metadata.asin}"
-price_range: "${metadata.priceRange}"
-${metadata.rating ? `rating: ${metadata.rating}` : ''}
-tags: [${metadata.tags.map(tag => `"${tag}"`).join(', ')}]
-keywords: [${metadata.seoKeywords.map(keyword => `"${keyword}"`).join(', ')}]
-featured: ${metadata.featured}
-mobile_optimized: ${metadata.mobileOptimized}
-last_investigated: "${metadata.lastInvestigated || ''}"
----`;
+    const lines = [
+      '---',
+      `title: "${metadata.title}"`,
+      `description: "${metadata.description}"`,
+      `date: ${metadata.publishDate.toISOString().split('T')[0]}`,
+      `category: "${metadata.category}"`
+    ];
+
+    if (metadata.subcategory) lines.push(`subcategory: "${metadata.subcategory}"`);
+    if (metadata.manufacturer) lines.push(`manufacturer: "${metadata.manufacturer}"`);
+
+    lines.push(`asin: "${metadata.asin}"`);
+    lines.push(`price_range: "${metadata.priceRange}"`);
+
+    if (metadata.rating) lines.push(`rating: ${metadata.rating}`);
+
+    lines.push(`tags: [${metadata.tags.map(tag => `"${tag}"`).join(', ')}]`);
+    lines.push(`keywords: [${metadata.seoKeywords.map(keyword => `"${keyword}"`).join(', ')}]`);
+    lines.push(`featured: ${metadata.featured}`);
+    lines.push(`mobile_optimized: ${metadata.mobileOptimized}`);
+    lines.push(`last_investigated: "${metadata.lastInvestigated || ''}"`);
+    lines.push('---');
+
+    return lines.join('\n');
   }
 
   /**
