@@ -141,7 +141,7 @@ async function loadInvestigationResults(): Promise<InvestigationData[]> {
 
 async function ensureOutputDirectories(): Promise<void> {
     const dirs = [
-        path.join(process.cwd(), 'articles'),
+        path.join(process.cwd(), 'content', 'articles'),
     ];
 
     for (const dir of dirs) {
@@ -153,7 +153,7 @@ async function saveArticle(
     article: GeneratedArticle,
     asin: string
 ): Promise<string> {
-    const articlesDir = path.join(process.cwd(), 'articles');
+    const articlesDir = path.join(process.cwd(), 'content', 'articles');
     const filename = `${asin}.md`;
     const filePath = path.join(articlesDir, filename);
 
@@ -241,6 +241,7 @@ async function main(): Promise<void> {
         // サマリー保存
         const summaryFile = path.join(
             process.cwd(),
+            'content',
             'articles',
             'generation-summary.json'
         );

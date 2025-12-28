@@ -75,9 +75,10 @@ jspm_packages/
 temp/
 tmp/
 
-# Generated articles (will be committed separately)
-articles/*.md
-!articles/README.md
+# Generated articles (created from data/ during CI)
+articles/
+content/articles/
 
 # Generated site (deployed via GitHub Pages)
 _site/
+public/

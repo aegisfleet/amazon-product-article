@@ -1,0 +1,12 @@
+{{ define "main" }}
+<h1>📦 {{ .Site.Title }}</h1>
+<p>自動生成された製品レビュー記事一覧</p>
+<ul class="article-list">
+    {{ range (where .Site.RegularPages "Section" "articles") }}
+    <li class="article-item">
+        <a href="{{ .RelPermalink }}">📄 {{ .Title }}</a>
+        {{ with .Description }}<p class="article-description">{{ . }}</p>{{ end }}
+    </li>
+    {{ end }}
+</ul>
+{{ end }}

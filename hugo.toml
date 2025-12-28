@@ -1,0 +1,50 @@
+# Hugo Configuration for Amazon Product Articles
+# https://gohugo.io/getting-started/configuration/
+
+baseURL = "https://aegisfleet.github.io/amazon-product-article/"
+languageCode = "ja"
+title = "Amazon Product Articles"
+defaultContentLanguage = "ja"
+
+# Japanese-friendly settings
+hasCJKLanguage = true
+
+# Disable unused features for faster builds
+disableKinds = ["taxonomy", "term", "RSS", "sitemap", "robotsTXT"]
+
+# Output configuration
+[outputs]
+  home = ["HTML"]
+  section = ["HTML"]
+  page = ["HTML"]
+
+# Build settings
+[build]
+  writeStats = false
+
+# Markup settings - critical for proper Markdown rendering
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      # Allow raw HTML in Markdown files (for custom spans, etc.)
+      unsafe = true
+    [markup.goldmark.parser]
+      autoHeadingID = true
+      autoHeadingIDType = "github"
+      [markup.goldmark.parser.attribute]
+        block = true
+        title = true
+
+# URL settings - keep article URLs at root level like /B07DZZJ2B9/
+[permalinks]
+  articles = "/:filename/"
+
+# Minify output
+[minify]
+  minifyOutput = false
+
+# Related content (disabled for now)
+[related]
+  threshold = 0
+  includeNewer = false
+  toLower = false
