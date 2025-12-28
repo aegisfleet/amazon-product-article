@@ -13,8 +13,19 @@ on:
         required: false
         default: 'Auto-triggered after PR merge'
 
+# GitHub Pages へのデプロイ権限
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# 同時実行を防止
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
 jobs:
-  deploy:
+  build:
     runs-on: ubuntu-latest
     
     steps:
@@ -34,18 +45,51 @@ jobs:
     - name: Build project
       run: npm run build
     
-    - name: Process new articles
+    - name: Generate articles
       env:
         AMAZON_PARTNER_TAG: ${{ secrets.AMAZON_PARTNER_TAG }}
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        GITHUB_REPOSITORY: ${{ github.repository }}
       run: |
-        echo "New articles detected in commit: ${{ github.sha }}"
-        # 記事の後処理（アフィリエイトリンク挿入、品質チェック等）
+        echo "Generating articles from investigation data..."
         npm run generate:articles || echo "No additional processing needed"
+    
+    - name: Setup Pages
+      uses: actions/configure-pages@v5
+    
+    - name: Create site structure
+      run: |
+        mkdir -p _site
+        cp -r articles/* _site/ 2>/dev/null || true
+        # インデックスページを生成
+        echo "# Amazon Product Articles" > _site/index.md
+        echo "" >> _site/index.md
+        echo "Generated articles:" >> _site/index.md
+        echo "" >> _site/index.md
+        for f in _site/*.md; do
+          if [ "$f" != "_site/index.md" ] && [ "$f" != "_site/README.md" ]; then
+            basename="${f##*/}"
+            name="${basename%.md}"
+            echo "- [$name]($basename)" >> _site/index.md
+          fi
+        done
+    
+    - name: Upload artifact
+      uses: actions/upload-pages-artifact@v3
+      with:
+        path: '_site'
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    
+    steps:
+    - name: Deploy to GitHub Pages
+      id: deployment
+      uses: actions/deploy-pages@v4
     
     - name: Report deployment status
       run: |
-        echo "Articles deployed successfully"
-        echo "Commit: ${{ github.sha }}"
-        echo "Author: ${{ github.actor }}"
+        echo "Articles deployed successfully to GitHub Pages"
+        echo "URL: ${{ steps.deployment.outputs.page_url }}"
