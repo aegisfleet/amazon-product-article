@@ -289,13 +289,13 @@ describe('ArticleGenerator', () => {
     });
 
     it('should use environment affiliate tag when available', () => {
-      process.env.AMAZON_AFFILIATE_TAG = 'test-affiliate-tag';
+      process.env.AMAZON_PARTNER_TAG = 'test-affiliate-tag';
       const content = '## 商品詳細・購入\n\n商品の詳細情報です。';
       const result = generator.insertAffiliateLinks(content, 'B08N5WRWNW');
 
       expect(result).toContain('tag=test-affiliate-tag');
 
-      delete process.env.AMAZON_AFFILIATE_TAG;
+      delete process.env.AMAZON_PARTNER_TAG;
     });
   });
 
