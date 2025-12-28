@@ -291,6 +291,10 @@ export class JulesInvestigator {
    * 調査プロンプトを生成
    */
   formatInvestigationPrompt(product: Product): string {
+    const ratingText = product.rating.count === 0
+      ? `評価: ${product.rating.average}/5 (レビュー数: 不明/多数)`
+      : `評価: ${product.rating.average}/5 (${product.rating.count}件のレビュー)`;
+
     const prompt = `商品「${product.title}」について以下の観点で詳細調査を実施してください：
 
 1. ユーザーレビュー分析（"Voice of the Customer"）
@@ -320,7 +324,7 @@ export class JulesInvestigator {
 - ASIN: ${product.asin}
 - カテゴリ: ${product.category}
 - 価格: ${product.price.formatted}
-- 評価: ${product.rating.average}/5 (${product.rating.count}件のレビュー)
+- ${ratingText}
 - 仕様: ${Object.entries(product.specifications).map(([key, value]) => `${key}: ${value}`).join(', ')}
 
 調査結果は以下のJSON形式で構造化して提供してください。

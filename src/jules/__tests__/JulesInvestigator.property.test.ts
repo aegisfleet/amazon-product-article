@@ -103,6 +103,13 @@ describe('JulesInvestigator Property Tests', () => {
           expect(prompt).toContain(product.category);
           expect(prompt).toContain(product.price.formatted);
 
+          // Verify rating text logic
+          if (product.rating.count === 0) {
+            expect(prompt).toContain('レビュー数: 不明/多数');
+          } else {
+            expect(prompt).toContain(`${product.rating.count}件のレビュー`);
+          }
+
           // 7. Structured format requirements (Requirements 2.2)
           expect(prompt).toContain('JSON形式で構造化');
           expect(prompt).toContain('"analysis"');

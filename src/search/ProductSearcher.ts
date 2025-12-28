@@ -3,22 +3,23 @@
  * Handles product search across multiple categories and structured data storage
  */
 
-import { PAAPIClient } from '../api/PAAPIClient';
-import { Logger } from '../utils/Logger';
-import { ConfigManager } from '../config/ConfigManager';
-import { 
-  Product, 
-  ProductSearchParams, 
-  ProductSearchResult 
-} from '../types/Product';
 import fs from 'fs/promises';
 import path from 'path';
+import { PAAPIClient } from '../api/PAAPIClient';
+import { ConfigManager } from '../config/ConfigManager';
+import {
+  Product,
+  ProductSearchParams,
+  ProductSearchResult
+} from '../types/Product';
+import { Logger } from '../utils/Logger';
 
 export interface CategoryConfig {
   name: string;
   searchIndex: string;
   keywords: string[];
   maxResults: number;
+  sortBy?: 'relevance' | 'price' | 'rating';
   enabled: boolean;
 }
 
@@ -63,11 +64,12 @@ export class ProductSearcher {
     for (const category of categories) {
       try {
         this.logger.info(`Searching category: ${category.name}`);
-        
+
         const searchParams: ProductSearchParams = {
           category: category.name,
           keywords: category.keywords,
-          maxResults: category.maxResults
+          maxResults: category.maxResults,
+          ...(category.sortBy ? { sortBy: category.sortBy } : {})
         };
 
         const result = await this.papiClient.searchProducts(searchParams);
@@ -78,10 +80,10 @@ export class ProductSearcher {
         await this.saveCategoryResults(sessionId, category.name, result);
 
         this.logger.info(`Found ${result.products.length} products in ${category.name}`);
-        
+
         // Rate limiting delay between categories
         await this.sleep(1000);
-        
+
       } catch (error) {
         this.logger.error(`Failed to search category ${category.name}:`, error);
         // Continue with other categories
@@ -97,7 +99,7 @@ export class ProductSearcher {
     };
 
     await this.saveSearchSession(session);
-    
+
     this.logger.info(`Search session ${sessionId} completed: ${totalProducts} total products`);
     return session;
   }
@@ -114,17 +116,18 @@ export class ProductSearcher {
     const searchParams: ProductSearchParams = {
       category: category.name,
       keywords: customKeywords || category.keywords,
-      maxResults: category.maxResults
+      maxResults: category.maxResults,
+      ...(category.sortBy ? { sortBy: category.sortBy } : {})
     };
 
     this.logger.info(`Searching category ${categoryName} with keywords: ${searchParams.keywords.join(', ')}`);
-    
+
     const result = await this.papiClient.searchProducts(searchParams);
-    
+
     // Save results
     const sessionId = this.generateSessionId();
     await this.saveCategoryResults(sessionId, categoryName, result);
-    
+
     this.logger.info(`Found ${result.products.length} products in ${categoryName}`);
     return result;
   }
@@ -135,7 +138,7 @@ export class ProductSearcher {
   async getStoredProducts(categoryName: string, sessionId?: string): Promise<Product[]> {
     try {
       const categoryDir = path.join(this.dataDir, 'categories', categoryName);
-      
+
       if (sessionId) {
         const filePath = path.join(categoryDir, `${sessionId}.json`);
         const data = await fs.readFile(filePath, 'utf-8');
@@ -146,7 +149,7 @@ export class ProductSearcher {
       // Get latest session if no sessionId provided
       const files = await fs.readdir(categoryDir);
       const jsonFiles = files.filter(f => f.endsWith('.json')).sort().reverse();
-      
+
       if (jsonFiles.length === 0) {
         return [];
       }
@@ -155,7 +158,7 @@ export class ProductSearcher {
       const data = await fs.readFile(latestFile, 'utf-8');
       const result: ProductSearchResult = JSON.parse(data);
       return result.products;
-      
+
     } catch (error) {
       this.logger.warn(`Failed to load stored products for ${categoryName}:`, error);
       return [];
@@ -181,13 +184,13 @@ export class ProductSearcher {
    */
   async customSearch(params: ProductSearchParams): Promise<ProductSearchResult> {
     this.logger.info(`Custom search: ${params.category} - ${params.keywords.join(', ')}`);
-    
+
     const result = await this.papiClient.searchProducts(params);
-    
+
     // Save custom search results
     const sessionId = this.generateSessionId();
     await this.saveCategoryResults(sessionId, `custom_${params.category}`, result);
-    
+
     // Also save session for statistics tracking
     const session: SearchSession = {
       id: sessionId,
@@ -197,7 +200,7 @@ export class ProductSearcher {
       results: [result]
     };
     await this.saveSearchSession(session);
-    
+
     return result;
   }
 
@@ -223,9 +226,9 @@ export class ProductSearcher {
         const sessionPath = path.join(sessionsDir, sessionFile);
         const data = await fs.readFile(sessionPath, 'utf-8');
         const session: SearchSession = JSON.parse(data);
-        
+
         totalProducts += session.totalProducts;
-        
+
         if (!lastSearchDate || new Date(session.timestamp) > new Date(lastSearchDate)) {
           lastSearchDate = new Date(session.timestamp);
         }
@@ -242,7 +245,7 @@ export class ProductSearcher {
         categoryCounts,
         ...(lastSearchDate && { lastSearchDate })
       };
-      
+
     } catch (error) {
       this.logger.warn('Failed to get search statistics:', error);
       return {
@@ -267,7 +270,7 @@ export class ProductSearcher {
       for (const sessionFile of sessionFiles) {
         const sessionPath = path.join(sessionsDir, sessionFile);
         const stats = await fs.stat(sessionPath);
-        
+
         if (stats.mtime < cutoffDate) {
           await fs.unlink(sessionPath);
           this.logger.info(`Cleaned old session file: ${sessionFile}`);
@@ -285,7 +288,7 @@ export class ProductSearcher {
         for (const file of categoryFiles) {
           const filePath = path.join(categoryDir, file);
           const stats = await fs.stat(filePath);
-          
+
           if (stats.mtime < cutoffDate) {
             await fs.unlink(filePath);
             this.logger.info(`Cleaned old category file: ${category}/${file}`);
@@ -311,7 +314,8 @@ export class ProductSearcher {
         searchIndex: this.getSearchIndexForCategory(cat),
         enabled: true,
         keywords: ['best', 'top', 'review'],
-        maxResults: 10
+        maxResults: 10,
+        sortBy: 'rating'
       }));
       return categoryConfigs.length > 0 ? categoryConfigs : this.getDefaultCategories();
     } catch (error) {
@@ -326,6 +330,7 @@ export class ProductSearcher {
         searchIndex: 'Electronics',
         keywords: ['smartphone', 'laptop', 'headphones'],
         maxResults: 10,
+        sortBy: 'rating',
         enabled: true
       },
       {
@@ -333,6 +338,7 @@ export class ProductSearcher {
         searchIndex: 'Books',
         keywords: ['programming', 'business', 'self-help'],
         maxResults: 10,
+        sortBy: 'rating',
         enabled: true
       },
       {
@@ -340,6 +346,7 @@ export class ProductSearcher {
         searchIndex: 'HomeGarden',
         keywords: ['kitchen', 'furniture', 'decor'],
         maxResults: 10,
+        sortBy: 'rating',
         enabled: true
       }
     ];
@@ -355,7 +362,8 @@ export class ProductSearcher {
         searchIndex: this.getSearchIndexForCategory(cat),
         enabled: true,
         keywords: ['best', 'top', 'review'],
-        maxResults: 10
+        maxResults: 10,
+        sortBy: 'rating'
       }));
       const allCategories = categoryConfigs.length > 0 ? categoryConfigs : this.getDefaultCategories();
       return allCategories.find(c => c.name === categoryName);
@@ -391,10 +399,10 @@ export class ProductSearcher {
     try {
       const categoryDir = path.join(this.dataDir, 'categories', categoryName);
       await fs.mkdir(categoryDir, { recursive: true });
-      
+
       const filePath = path.join(categoryDir, `${sessionId}.json`);
       await fs.writeFile(filePath, JSON.stringify(result, null, 2));
-      
+
     } catch (error) {
       this.logger.error(`Failed to save category results for ${categoryName}:`, error);
     }
@@ -404,10 +412,10 @@ export class ProductSearcher {
     try {
       const sessionsDir = path.join(this.dataDir, 'sessions');
       await fs.mkdir(sessionsDir, { recursive: true });
-      
+
       const filePath = path.join(sessionsDir, `${session.id}.json`);
       await fs.writeFile(filePath, JSON.stringify(session, null, 2));
-      
+
     } catch (error) {
       this.logger.error(`Failed to save search session ${session.id}:`, error);
     }
