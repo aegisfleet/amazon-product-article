@@ -312,7 +312,8 @@ export class JulesInvestigator {
 - 評価: ${product.rating.average}/5 (${product.rating.count}件のレビュー)
 - 仕様: ${Object.entries(product.specifications).map(([key, value]) => `${key}: ${value}`).join(', ')}
 
-調査結果は以下のJSON形式で構造化して提供してください：
+調査結果は以下のJSON形式で構造化して提供してください。
+なお、ファイル名は "data/investigations/${product.asin}.json" としてください：
 \`\`\`json
 {
   "analysis": {
