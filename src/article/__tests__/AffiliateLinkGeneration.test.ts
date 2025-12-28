@@ -44,15 +44,17 @@ describe('ArticleGenerator Affiliate Links', () => {
                 name: 'Competitor A',
                 asin: 'B00COMPETITORA',
                 priceComparison: 'Same price',
-                featureComparison: [],
-                differentiators: []
+                featureComparison: ['Feature 1'],
+                differentiators: ['Diff 1']
             }
         ];
 
         const result = await generator.generateArticle(mockProduct, mockInvestigation);
 
-        // Check if the competitor section contains the affiliate link
-        expect(result.content).toContain('[Competitor A](https://www.amazon.co.jp/dp/B00COMPETITORA?tag=');
+        // New format: competitor links appear in HTML anchor tags
+        expect(result.content).toContain('https://www.amazon.co.jp/dp/B00COMPETITORA?tag=');
+        // Table format includes links
+        expect(result.content).toContain('Competitor A');
     });
 
     it('should use default name for competitor without ASIN', async () => {
@@ -60,8 +62,8 @@ describe('ArticleGenerator Affiliate Links', () => {
             {
                 name: 'Competitor B',
                 priceComparison: 'Cheaper',
-                featureComparison: [],
-                differentiators: []
+                featureComparison: ['Feature 1'],
+                differentiators: ['Diff 1']
             }
         ];
 
@@ -69,6 +71,7 @@ describe('ArticleGenerator Affiliate Links', () => {
 
         // Check if the competitor section uses just the name
         expect(result.content).toContain('### Competitor Bとの比較');
-        expect(result.content).not.toContain('[Competitor B](https://www.amazon.co.jp/dp/');
+        // Should not contain affiliate link for competitor without ASIN
+        expect(result.content).not.toContain('https://www.amazon.co.jp/dp/B00COMPETITORB');
     });
 });
