@@ -44,7 +44,7 @@ export class PAAPIClient {
   /**
    * Authenticate with Amazon PA-API v5
    */
-  async authenticate(accessKey: string, secretKey: string, partnerTag: string, region = 'us-east-1'): Promise<void> {
+  async authenticate(accessKey: string, secretKey: string, partnerTag: string, region = 'ap-northeast-1'): Promise<void> {
     if (!accessKey || !secretKey || !partnerTag) {
       throw new Error('Missing required PA-API credentials');
     }
