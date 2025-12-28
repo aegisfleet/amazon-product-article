@@ -130,6 +130,19 @@ async function main(): Promise<void> {
             }
         }
 
+        // 変更ファイルがない場合はPRをクローズ
+        if (pr.changedFiles.length === 0) {
+            logger.warn('PR has no changed files, closing...');
+            await octokit.pulls.update({
+                owner: options.owner,
+                repo: options.repo,
+                pull_number: options.prNumber,
+                state: 'closed'
+            });
+            logger.info(`PR #${options.prNumber} closed successfully`);
+            process.exit(0);
+        }
+
         // AutoMergeManager で検証
         const mergeManager = new AutoMergeManager();
         const decision = mergeManager.validatePullRequest(pr);
