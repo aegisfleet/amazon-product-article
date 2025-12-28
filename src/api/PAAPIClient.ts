@@ -15,13 +15,19 @@ import {
 import { Product, ProductDetail, ProductSearchParams, ProductSearchResult } from '../types/Product';
 import { Logger } from '../utils/Logger';
 
+interface PAAPIErrorData {
+  Errors?: Array<{ Code: string; Message: string }>;
+  __type?: string;
+  [key: string]: unknown;
+}
+
 export class PAAPIClient {
   private logger = Logger.getInstance();
   private credentials?: PAAPICredentials;
   private httpClient: AxiosInstance;
   private rateLimitConfig: RateLimitConfig;
   private lastRequestTime = 0;
-  private requestQueue: Array<() => Promise<any>> = [];
+  private requestQueue: Array<() => Promise<void>> = [];
   private isProcessingQueue = false;
 
   constructor() {
@@ -44,7 +50,7 @@ export class PAAPIClient {
   /**
    * Authenticate with Amazon PA-API v5 (Japan marketplace)
    */
-  async authenticate(accessKey: string, secretKey: string, partnerTag: string): Promise<void> {
+  authenticate(accessKey: string, secretKey: string, partnerTag: string): void {
     if (!accessKey || !secretKey || !partnerTag) {
       throw new Error('Missing required PA-API credentials');
     }
@@ -202,10 +208,10 @@ export class PAAPIClient {
               }
 
               return resolve(response.data);
-            } catch (error: any) {
+            } catch (error: unknown) {
               // Log detailed error information for debugging
-              if (error.response) {
-                const errorData = error.response.data;
+              if (axios.isAxiosError(error) && error.response) {
+                const errorData = error.response.data as PAAPIErrorData;
                 const errorInfo = errorData?.Errors?.[0] || errorData?.__type || errorData;
                 this.logger.debug(`PA-API Response Error: ${JSON.stringify(errorInfo)}`);
               }
@@ -383,7 +389,7 @@ export class PAAPIClient {
   /**
    * Extract price information from PA-API item
    */
-  private extractPrice(item: PAAPIItem) {
+  private extractPrice(item: PAAPIItem): Product['price'] {
     const listing = item.Offers?.Listings?.[0];
     const summary = item.Offers?.Summaries?.[0];
 
@@ -413,7 +419,7 @@ export class PAAPIClient {
   /**
    * Extract image information from PA-API item
    */
-  private extractImages(item: PAAPIItem) {
+  private extractImages(item: PAAPIItem): Product['images'] {
     const primary = item.Images?.Primary?.Large?.URL || item.Images?.Primary?.Medium?.URL || '';
     const thumbnails = item.Images?.Variants?.map(variant => variant.Large?.URL).filter(Boolean) || [];
 
@@ -427,7 +433,7 @@ export class PAAPIClient {
    * Extract rating information from PA-API item
    * Note: CustomerReviews resource is not available in PA-API v5
    */
-  private extractRating(_item: PAAPIItem) {
+  private extractRating(_item: PAAPIItem): Product['rating'] {
     // CustomerReviews resource is not available in PA-API v5
     return {
       average: 0,

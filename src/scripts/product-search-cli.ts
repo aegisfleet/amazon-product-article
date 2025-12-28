@@ -88,7 +88,7 @@ async function main(): Promise<void> {
 
         // PA-API クライアントを初期化
         const papiClient = new PAAPIClient();
-        await papiClient.authenticate(
+        papiClient.authenticate(
             options.accessKey,
             options.secretKey,
             options.partnerTag

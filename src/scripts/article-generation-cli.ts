@@ -231,7 +231,7 @@ async function main(): Promise<void> {
         const paapiClient = new PAAPIClient();
         if (options.accessKey && options.secretKey && options.partnerTag) {
             try {
-                await paapiClient.authenticate(options.accessKey, options.secretKey, options.partnerTag);
+                paapiClient.authenticate(options.accessKey, options.secretKey, options.partnerTag);
             } catch (error) {
                 logger.error('Failed to authenticate with PA-API:', error);
                 // Continue? Or exit? If we demand prices, we should probably warn strongly or fail.
