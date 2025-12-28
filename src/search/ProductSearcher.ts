@@ -13,7 +13,6 @@ import {
   ProductSearchResult
 } from '../types/Product';
 import { Logger } from '../utils/Logger';
-import { ReviewVerifier } from './ReviewVerifier';
 
 export interface CategoryConfig {
   name: string;
@@ -35,7 +34,6 @@ export interface SearchSession {
 export class ProductSearcher {
   private logger = Logger.getInstance();
   private papiClient: PAAPIClient;
-  private reviewVerifier = new ReviewVerifier();
   private config = ConfigManager.getInstance();
   private dataDir: string;
 
@@ -76,9 +74,7 @@ export class ProductSearcher {
 
         const result = await this.papiClient.searchProducts(searchParams);
 
-        // Verify and filter products based on actual reviews
-        result.products = await this.verifyAndFilterProducts(result.products);
-        result.totalResults = result.products.length;
+        // PA-API v5ではレビューデータ取得不可のためフィルタリングなし
 
         results.push(result);
         totalProducts += result.products.length;
@@ -131,9 +127,7 @@ export class ProductSearcher {
 
     const result = await this.papiClient.searchProducts(searchParams);
 
-    // Verify and filter products
-    result.products = await this.verifyAndFilterProducts(result.products);
-    result.totalResults = result.products.length;
+    // PA-API v5ではレビューデータ取得不可のためフィルタリングなし
 
     // Save results
     const sessionId = this.generateSessionId();
@@ -198,9 +192,7 @@ export class ProductSearcher {
 
     const result = await this.papiClient.searchProducts(params);
 
-    // Verify and filter products
-    result.products = await this.verifyAndFilterProducts(result.products);
-    result.totalResults = result.products.length;
+    // PA-API v5ではレビューデータ取得不可のためフィルタリングなし
 
     // Save custom search results
     const sessionId = this.generateSessionId();
@@ -451,48 +443,4 @@ export class ProductSearcher {
     return categoryMap[categoryName.toLowerCase()] || 'All';
   }
 
-  /**
-   * Verify reviews for products and filter out those with 0 confirmed reviews
-   */
-  private async verifyAndFilterProducts(products: Product[]): Promise<Product[]> {
-    const verifiedProducts: Product[] = [];
-
-    for (const product of products) {
-      // Small delay to be polite to Amazon
-      await this.sleep(1000);
-
-      const reviewData = await this.reviewVerifier.verifyReviews(product.asin);
-
-      if (reviewData) {
-        // Update product with real data
-        product.rating = {
-          average: reviewData.rating,
-          count: reviewData.count
-        };
-
-        // Filter out if count is 0
-        if (reviewData.count > 0) {
-          verifiedProducts.push(product);
-        } else {
-          this.logger.info(`Skipping product ${product.asin} (0 verified reviews)`);
-        }
-      } else {
-        // Verification failed (maybe 403 or layout change)
-        // Decide whether to keep or drop. 
-        // For now, if we can't verify, we keep it but warn, OR if it was 0 from API, we might drop it?
-        // Let's keep it but leave rating as is (0/0) so Jules handles it as "unknown"
-        // But the user goal is to avoid 0 reviews.
-        // Let's drop it if we can't confirm > 0 reviews to be safe for this specific task.
-        this.logger.warn(`Could not verify reviews for ${product.asin}, skipping safety check.`);
-        // To be safe and avoid "0 reviews" error from Jules, we only include if we CONFIRM > 0
-        if (product.rating.count > 0) {
-          verifiedProducts.push(product);
-        } else {
-          this.logger.info(`Skipping unverified product ${product.asin}`);
-        }
-      }
-    }
-
-    return verifiedProducts;
-  }
 }

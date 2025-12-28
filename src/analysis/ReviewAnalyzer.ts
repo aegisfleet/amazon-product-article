@@ -199,10 +199,10 @@ export class ReviewAnalyzer {
   private calculateUseCaseSuitability(useCase: string, product: Product): number {
     // 商品カテゴリと使用ケースの関連性を評価
     const categoryRelevance = this.assessCategoryRelevance(useCase, product.category);
-    const ratingBonus = (product.rating.average - 3) * 10; // 評価による補正
-    const reviewCountBonus = Math.min(product.rating.count / 100, 10); // レビュー数による補正
+    // PA-API v5ではレビューデータ取得不可のため評価平均のみで補正
+    const ratingBonus = (product.rating.average - 3) * 10;
 
-    return Math.min(Math.max(categoryRelevance + ratingBonus + reviewCountBonus, 0), 100);
+    return Math.min(Math.max(categoryRelevance + ratingBonus, 0), 100);
   }
 
   /**
