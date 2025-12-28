@@ -9,8 +9,10 @@
  *   GITHUB_REPOSITORY - GitHubリポジトリ（owner/repo形式）
  */
 
+import dotenv from 'dotenv';
 import fs from 'fs/promises';
 import path from 'path';
+import { PAAPIClient } from '../api/PAAPIClient';
 import { ArticleGenerator, GeneratedArticle } from '../article/ArticleGenerator';
 import { GitHubPublisher } from '../github/GitHubPublisher';
 import { InvestigationResult } from '../types/JulesTypes';
@@ -19,8 +21,13 @@ import { Logger } from '../utils/Logger';
 
 const logger = Logger.getInstance();
 
+// Load environment variables
+dotenv.config();
+
 interface CLIOptions {
     partnerTag: string;
+    accessKey: string;
+    secretKey: string;
     githubToken: string | undefined;
     githubRepository: string | undefined;
 }
@@ -57,6 +64,7 @@ interface RawInvestigationFile {
             cons: string[];
             score: number;
         };
+        lastInvestigated?: string;
     };
 }
 
@@ -68,6 +76,8 @@ interface InvestigationData {
 
 function getOptions(): CLIOptions {
     const partnerTag = process.env.AMAZON_PARTNER_TAG || '';
+    const accessKey = process.env.AMAZON_ACCESS_KEY || '';
+    const secretKey = process.env.AMAZON_SECRET_KEY || '';
     const githubToken = process.env.GITHUB_TOKEN;
     const githubRepository = process.env.GITHUB_REPOSITORY;
 
@@ -75,8 +85,14 @@ function getOptions(): CLIOptions {
         logger.warn('AMAZON_PARTNER_TAG not set, affiliate links will be incomplete');
     }
 
+    if (!accessKey || !secretKey) {
+        logger.warn('AMAZON_ACCESS_KEY or AMAZON_SECRET_KEY not set, live product data will not be fetched');
+    }
+
     return {
         partnerTag,
+        accessKey,
+        secretKey,
         githubToken,
         githubRepository,
     };
@@ -211,13 +227,49 @@ async function main(): Promise<void> {
         let generatedCount = 0;
         const generatedArticles: string[] = [];
 
+        // Initialize PA-API Client
+        const paapiClient = new PAAPIClient();
+        if (options.accessKey && options.secretKey && options.partnerTag) {
+            try {
+                await paapiClient.authenticate(options.accessKey, options.secretKey, options.partnerTag);
+            } catch (error) {
+                logger.error('Failed to authenticate with PA-API:', error);
+                // Continue? Or exit? If we demand prices, we should probably warn strongly or fail.
+                // For now, let's proceed but we won't get live data.
+            }
+        }
+
         for (const data of investigations) {
             try {
-                logger.info(`Generating article for: ${data.product.title} (ASIN: ${data.product.asin})`);
+                logger.info(`Processing article for: ${data.product.asin}`);
+
+                // Fetch live product data if possible
+                if (options.accessKey && options.secretKey && options.partnerTag) {
+                    try {
+                        logger.info(`Fetching live data from PA-API for ${data.product.asin}...`);
+                        const liveProduct = await paapiClient.getProductDetails(data.product.asin);
+                        // Merge live data into the product object
+                        data.product = {
+                            ...data.product,
+                            ...liveProduct,
+                            // Preserve fields that might not be in PA-API detail if needed, but getProductDetails returns a full ProductDetail which extends Product
+                        };
+                        // Update investigation product reference as well
+                        data.investigation.product = data.product;
+                        logger.info(`Successfully updated product data for ${data.product.asin}`);
+                    } catch (error) {
+                        logger.warn(`Failed to fetch live data for ${data.product.asin}, utilizing placeholder data:`, error);
+                    }
+                }
+
+                logger.info(`Generating article for: ${data.product.title}`);
 
                 const article = await generator.generateArticle(
                     data.product,
-                    data.investigation
+                    data.investigation,
+                    undefined,
+                    undefined,
+                    options.partnerTag
                 );
 
                 const articlePath = await saveArticle(article, data.product.asin);

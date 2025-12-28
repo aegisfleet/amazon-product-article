@@ -21,6 +21,7 @@ export interface ArticleMetadata {
   featured: boolean;
   mobileOptimized: boolean;
   seoKeywords: string[];
+  lastInvestigated?: string;
 }
 
 export interface ArticleTemplate {
@@ -89,7 +90,8 @@ export class ArticleGenerator {
     product: Product,
     investigation: InvestigationResult,
     reviewAnalysis?: ReviewAnalysisResult,
-    template?: ArticleTemplate
+    template?: ArticleTemplate,
+    affiliatePartnerTag?: string
   ): Promise<GeneratedArticle> {
     this.logger.info('Starting article generation', {
       productAsin: product.asin,
@@ -109,7 +111,7 @@ export class ArticleGenerator {
 
       const content = this.assembleArticle(sections, metadata);
       const mobileOptimizedContent = this.createMobileOptimizedLayout(content);
-      const contentWithAffiliateLinks = this.insertAffiliateLinks(mobileOptimizedContent, product.asin);
+      const contentWithAffiliateLinks = this.insertAffiliateLinks(mobileOptimizedContent, product.asin, affiliatePartnerTag);
 
       const affiliateLinks = this.extractAffiliateLinks(contentWithAffiliateLinks);
       const wordCount = this.calculateWordCount(contentWithAffiliateLinks);
@@ -160,7 +162,8 @@ export class ArticleGenerator {
       // PA-API v5ではレビューデータ取得不可のためrating不使用
       featured: this.shouldBeFeatured(product, investigation),
       mobileOptimized: true,
-      seoKeywords
+      seoKeywords,
+      ...(investigation.analysis.lastInvestigated && { lastInvestigated: investigation.analysis.lastInvestigated })
     };
 
     if (subcategory) {
@@ -202,8 +205,8 @@ export class ArticleGenerator {
   /**
    * アフィリエイトリンクを挿入
    */
-  insertAffiliateLinks(content: string, asin: string): string {
-    const affiliateTag = process.env.AMAZON_AFFILIATE_TAG || 'your-affiliate-tag';
+  insertAffiliateLinks(content: string, asin: string, partnerTag?: string): string {
+    const affiliateTag = partnerTag || process.env.AMAZON_PARTNER_TAG || 'your-affiliate-tag';
     const affiliateUrl = `https://www.amazon.co.jp/dp/${asin}?tag=${affiliateTag}`;
 
     // 商品名の後にアフィリエイトリンクを挿入
@@ -233,7 +236,7 @@ export class ArticleGenerator {
     sections.push(await this.generateIntroductionSection(product, investigation, template.sections.introduction));
 
     // 商品概要
-    sections.push(await this.generateProductOverviewSection(product));
+    sections.push(await this.generateProductOverviewSection(product, investigation));
 
     // ユーザーレビュー分析
     sections.push(await this.generateUserReviewsSection(investigation, reviewAnalysis, template.sections.userReviews));
@@ -309,7 +312,7 @@ ${product.title}について、実際のユーザーレビューを詳細に分�
   /**
    * 商品概要セクションを生成
    */
-  private async generateProductOverviewSection(product: Product): Promise<ArticleSection> {
+  private async generateProductOverviewSection(product: Product, investigation: InvestigationResult): Promise<ArticleSection> {
     const specifications = Object.entries(product.specifications)
       .map(([key, value]) => `- **${key}**: ${value}`)
       .join('\n');
@@ -323,6 +326,7 @@ ${product.title}について、実際のユーザーレビューを詳細に分�
 - **カテゴリ**: ${product.category}
 - **平均評価**: 外部情報源を参照
 - **在庫状況**: ${product.availability}
+- **調査日**: ${investigation.analysis.lastInvestigated || '不明'}
 
 ### 主な仕様
 
@@ -541,6 +545,7 @@ tags: [${metadata.tags.map(tag => `"${tag}"`).join(', ')}]
 keywords: [${metadata.seoKeywords.map(keyword => `"${keyword}"`).join(', ')}]
 featured: ${metadata.featured}
 mobile_optimized: ${metadata.mobileOptimized}
+last_investigated: "${metadata.lastInvestigated || ''}"
 ---`;
   }
 
