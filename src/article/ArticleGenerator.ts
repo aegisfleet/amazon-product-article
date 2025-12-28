@@ -247,7 +247,34 @@ export class ArticleGenerator {
     // 商品詳細・購入
     sections.push(await this.generatePurchaseSection(product));
 
+    // 情報ソース（もしあれば）
+    if (investigation.analysis.sources && investigation.analysis.sources.length > 0) {
+      sections.push(await this.generateSourcesSection(investigation));
+    }
+
     return sections;
+  }
+
+  /**
+   * 情報ソースセクションを生成
+   */
+  private async generateSourcesSection(investigation: InvestigationResult): Promise<ArticleSection> {
+    const sources = investigation.analysis.sources
+      .map(source => `- [${source.name}](${source.url || '#'}) ${source.credibility ? `(${source.credibility})` : ''}`)
+      .join('\n');
+
+    const content = `## 参考情報ソース
+
+本記事の作成にあたり、以下の情報を参照しました：
+
+${sources}`;
+
+    return {
+      title: '参考情報ソース',
+      content,
+      wordCount: this.calculateWordCount(content),
+      requiredElements: ['情報ソース一覧']
+    };
   }
 
   /**
@@ -331,6 +358,17 @@ ${specifications}
       .map(useCase => `- ${useCase}`)
       .join('\n');
 
+    // ユーザーストーリーの生成
+    const userStories = investigation.analysis.userStories && investigation.analysis.userStories.length > 0
+      ? `### 🗣️ 購入者の生の声（ユーザーストーリー）
+${investigation.analysis.userImpression ? `\n> **${investigation.analysis.userImpression}**\n` : ''}
+${investigation.analysis.userStories.map(story => `#### ${story.userType}の体験談 (${story.scenario})
+
+> "${story.experience}"
+> 
+> (評価: ${story.sentiment === 'positive' ? '満足' : story.sentiment === 'negative' ? '不満' : '普通'})`).join('\n\n')}`
+      : '';
+
     const content = `## ユーザーレビュー分析
 
 ### 👍 ユーザーが評価している点
@@ -344,6 +382,8 @@ ${negativePoints}
 ### 💡 実際の使用シーン
 
 ${useCases}
+
+${userStories}
 
 ${reviewAnalysis ? this.generateSentimentAnalysis(reviewAnalysis) : ''}`;
 

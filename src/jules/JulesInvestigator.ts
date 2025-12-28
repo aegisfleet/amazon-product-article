@@ -275,6 +275,9 @@ export class JulesInvestigator {
       negativePoints: [],
       useCases: [],
       competitiveAnalysis: [],
+      userStories: [],
+      userImpression: '',
+      sources: [],
       recommendation: {
         targetUsers: [],
         pros: [],
@@ -290,20 +293,28 @@ export class JulesInvestigator {
   formatInvestigationPrompt(product: Product): string {
     const prompt = `商品「${product.title}」について以下の観点で詳細調査を実施してください：
 
-1. ユーザーレビュー分析
-   - 良い点：具体的な使用体験と満足ポイント
-   - 悪い点：問題点と改善要望
+1. ユーザーレビュー分析（"Voice of the Customer"）
+   - 具体的な使用体験と満足ポイント（単なる機能列挙ではなく、体験として記述）
+   - 問題点と改善要望
    - 使用シーン：どのような場面で活用されているか
 
-2. 競合商品との比較
+2. ユーザーストーリーと実体験
+   - 実際のユーザーがどのような背景で商品を購入し、どのように生活が変わったか
+   - 具体的なエピソードや感想（「通勤時間が楽しくなった」「家事が楽になった」など）
+   - 良い体験だけでなく、失敗談や苦労した点も含める
+
+3. 競合商品との比較
    - 同カテゴリの主要競合商品3-5点
    - 価格、機能、品質の比較
    - 差別化ポイントの特定
 
-3. 購買推奨度
+4. 購買推奨度
    - どのようなユーザーに適しているか
    - 購入時の注意点
    - コストパフォーマンス評価
+
+5. 情報ソース
+   - 調査に使用した情報の出典（レビューサイト、ブログ、SNSなど）
 
 商品情報：
 - ASIN: ${product.asin}
@@ -320,6 +331,22 @@ export class JulesInvestigator {
     "positivePoints": ["具体的な良い点1", "具体的な良い点2"],
     "negativePoints": ["具体的な問題点1", "具体的な問題点2"],
     "useCases": ["使用シーン1", "使用シーン2"],
+    "userStories": [
+      {
+        "userType": "ユーザー属性（例：30代会社員、主婦、学生）",
+        "scenario": "使用シチュエーション",
+        "experience": "具体的な体験談・ストーリー",
+        "sentiment": "positive" | "negative" | "mixed"
+      }
+    ],
+    "userImpression": "ユーザーの総評・全体的な感想のまとめ",
+    "sources": [
+      {
+        "name": "情報源の名前",
+        "url": "URL（もしあれば）",
+        "credibility": "信頼性評価"
+      }
+    ],
     "competitiveAnalysis": [
       {
         "name": "競合商品名",

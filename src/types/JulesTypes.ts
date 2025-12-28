@@ -152,6 +152,19 @@ export interface CompetitiveProduct {
   differentiators: string[];
 }
 
+export interface UserStory {
+  userType: string;  // e.g., "Commuter", "Runner", "Parent"
+  scenario: string;
+  experience: string;
+  sentiment: 'positive' | 'negative' | 'mixed';
+}
+
+export interface SourceReference {
+  name: string;
+  url?: string;
+  credibility?: string;
+}
+
 export interface InvestigationResult {
   sessionId: string;
   product: Product;
@@ -160,6 +173,9 @@ export interface InvestigationResult {
     negativePoints: string[];
     useCases: string[];
     competitiveAnalysis: CompetitiveProduct[];
+    userStories: UserStory[];      // New: Specific user stories
+    userImpression: string;        // New: Overall impression summary
+    sources: SourceReference[];    // New: Information sources
     recommendation: {
       targetUsers: string[];
       pros: string[];
