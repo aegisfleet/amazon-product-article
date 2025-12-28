@@ -16,6 +16,108 @@ import { Logger } from '../utils/Logger';
 
 const logger = Logger.getInstance();
 
+// リトライ設定
+const MAX_MERGE_RETRIES = 3;
+const INITIAL_RETRY_DELAY_MS = 2000;  // 2秒
+
+/**
+ * 指定時間待機する
+ */
+async function sleep(ms: number): Promise<void> {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+/**
+ * Base branch変更エラーかどうかを判定
+ */
+function isBaseBranchModifiedError(error: unknown): boolean {
+    if (error && typeof error === 'object' && 'message' in error) {
+        const message = String((error as { message: string }).message);
+        return message.includes('Base branch was modified');
+    }
+    return false;
+}
+
+/**
+ * PRブランチをbase branchから更新する
+ */
+async function updatePullRequestBranch(
+    octokit: Octokit,
+    owner: string,
+    repo: string,
+    pullNumber: number
+): Promise<boolean> {
+    try {
+        logger.info(`Updating PR branch from base branch...`);
+        await octokit.pulls.updateBranch({
+            owner,
+            repo,
+            pull_number: pullNumber,
+        });
+        logger.info('PR branch updated successfully');
+        return true;
+    } catch (error) {
+        logger.warn('Failed to update PR branch:', error);
+        return false;
+    }
+}
+
+/**
+ * リトライ付きでPRをマージする
+ */
+async function mergeWithRetry(
+    octokit: Octokit,
+    owner: string,
+    repo: string,
+    pullNumber: number,
+    commitTitle: string
+): Promise<void> {
+    let lastError: unknown;
+
+    for (let attempt = 1; attempt <= MAX_MERGE_RETRIES; attempt++) {
+        try {
+            logger.info(`Attempting to merge PR (attempt ${attempt}/${MAX_MERGE_RETRIES})...`);
+            await octokit.pulls.merge({
+                owner,
+                repo,
+                pull_number: pullNumber,
+                merge_method: 'squash',
+                commit_title: commitTitle,
+            });
+            logger.info(`PR #${pullNumber} merged successfully`);
+            return;
+        } catch (error) {
+            lastError = error;
+
+            if (isBaseBranchModifiedError(error)) {
+                logger.warn(`Merge failed: Base branch was modified (attempt ${attempt}/${MAX_MERGE_RETRIES})`);
+
+                if (attempt < MAX_MERGE_RETRIES) {
+                    // 指数バックオフで待機
+                    const delayMs = INITIAL_RETRY_DELAY_MS * Math.pow(2, attempt - 1);
+                    logger.info(`Waiting ${delayMs}ms before retry...`);
+                    await sleep(delayMs);
+
+                    // PRブランチを更新
+                    const updated = await updatePullRequestBranch(octokit, owner, repo, pullNumber);
+                    if (!updated) {
+                        logger.warn('Branch update failed, but will still retry merge');
+                    }
+
+                    // 更新後の状態が安定するまで待機
+                    await sleep(1000);
+                }
+            } else {
+                // Base branch変更以外のエラーはリトライしない
+                throw error;
+            }
+        }
+    }
+
+    // 全リトライ失敗
+    throw lastError;
+}
+
 interface CLIOptions {
     token: string;
     prNumber: number;
@@ -158,17 +260,14 @@ async function main(): Promise<void> {
             process.exit(0);
         }
 
-        // PRをマージ
-        logger.info('Attempting to merge PR...');
-        await octokit.pulls.merge({
-            owner: options.owner,
-            repo: options.repo,
-            pull_number: options.prNumber,
-            merge_method: 'squash',
-            commit_title: `[Jules] ${prData.title}`,
-        });
-
-        logger.info(`PR #${options.prNumber} merged successfully`);
+        // PRをマージ（リトライ付き）
+        await mergeWithRetry(
+            octokit,
+            options.owner,
+            options.repo,
+            options.prNumber,
+            `[Jules] ${prData.title}`
+        );
 
         // マージ完了後、ブランチを削除（GitHubの設定で自動削除されない場合の保険）
         try {
