@@ -14,21 +14,21 @@ export interface SystemConfig {
     partnerTag: string;
     region: string;
   };
-  
+
   // Jules API Configuration
   jules: {
     apiKey: string;
     baseUrl: string;
     timeout: number;
   };
-  
+
   // GitHub Configuration
   github: {
     token: string;
     repository: string;
     branch: string;
   };
-  
+
   // System Configuration
   system: {
     logLevel: string;
@@ -36,14 +36,14 @@ export interface SystemConfig {
     retryDelay: number;
     maxConcurrentRequests: number;
   };
-  
+
   // Product Search Configuration
   productSearch: {
     categories: string[];
     maxResultsPerCategory: number;
     searchKeywords: string[];
   };
-  
+
   // Article Generation Configuration
   articleGeneration: {
     templatePath: string;
@@ -72,7 +72,7 @@ export class ConfigManager {
 
   public async initialize(): Promise<void> {
     this.logger.info('Initializing configuration manager');
-    
+
     try {
       this.config = await this.loadConfiguration();
       this.validateConfiguration(this.config);
@@ -96,7 +96,7 @@ export class ConfigManager {
         accessKey: this.getRequiredEnvVar('AMAZON_ACCESS_KEY'),
         secretKey: this.getRequiredEnvVar('AMAZON_SECRET_KEY'),
         partnerTag: this.getRequiredEnvVar('AMAZON_PARTNER_TAG'),
-        region: this.getEnvVar('AMAZON_REGION', 'us-east-1'),
+        region: this.getEnvVar('AMAZON_REGION', 'ap-northeast-1'),
       },
       jules: {
         apiKey: this.getRequiredEnvVar('JULES_API_KEY'),
@@ -184,7 +184,7 @@ export class ConfigManager {
     if (!this.config) {
       throw new Error('Configuration not initialized');
     }
-    
+
     this.config = { ...this.config, ...updates };
     this.validateConfiguration(this.config);
     this.logger.info('Configuration updated successfully');
