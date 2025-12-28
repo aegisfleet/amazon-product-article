@@ -10,17 +10,6 @@ import path from 'path';
 import { PAAPIClient } from '../../api/PAAPIClient';
 import { Product, ProductSearchParams } from '../../types/Product';
 import { ProductSearcher } from '../ProductSearcher';
-import { ReviewVerifier } from '../ReviewVerifier';
-
-// Mock ReviewVerifier
-jest.mock('../ReviewVerifier');
-const mockedReviewVerifier = ReviewVerifier as jest.MockedClass<typeof ReviewVerifier>;
-
-// Setup default mock implementation
-mockedReviewVerifier.prototype.verifyReviews = jest.fn().mockResolvedValue({
-  count: 100,
-  rating: 4.5
-});
 
 // Mock PAAPIClient for testing
 class MockPAAPIClient extends PAAPIClient {

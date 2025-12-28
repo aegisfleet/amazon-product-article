@@ -321,7 +321,7 @@ ${product.title}について、実際のユーザーレビューを詳細に分�
 - **商品名**: ${product.title}
 - **価格**: ${product.price.formatted}
 - **カテゴリ**: ${product.category}
-- **平均評価**: ${product.rating.average}点 (${product.rating.count}件のレビュー)
+- **平均評価**: ${product.rating.average > 0 ? `${product.rating.average}点` : '情報なし'}
 - **在庫状況**: ${product.availability}
 
 ### 主な仕様
@@ -667,10 +667,9 @@ mobile_optimized: ${metadata.mobileOptimized}
     return undefined;
   }
 
-  private shouldBeFeatured(product: Product, investigation: InvestigationResult): boolean {
-    return product.rating.average >= 4.0 &&
-      investigation.analysis.recommendation.score >= 80 &&
-      product.rating.count >= 100;
+  private shouldBeFeatured(_product: Product, investigation: InvestigationResult): boolean {
+    // Jules調査の推奨スコアのみで判定（PA-API v5ではレビューデータ取得不可）
+    return investigation.analysis.recommendation.score >= 80;
   }
 
   private convertTablesToMobileFriendly(content: string): string {
