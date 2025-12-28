@@ -6,6 +6,12 @@ on:
     paths:
       - 'articles/**'
       - 'data/**'
+  workflow_dispatch:
+    inputs:
+      reason:
+        description: 'Reason for manual trigger'
+        required: false
+        default: 'Auto-triggered after PR merge'
 
 jobs:
   deploy:
