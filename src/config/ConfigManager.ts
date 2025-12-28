@@ -96,7 +96,7 @@ export class ConfigManager {
         accessKey: this.getRequiredEnvVar('AMAZON_ACCESS_KEY'),
         secretKey: this.getRequiredEnvVar('AMAZON_SECRET_KEY'),
         partnerTag: this.getRequiredEnvVar('AMAZON_PARTNER_TAG'),
-        region: this.getEnvVar('AMAZON_REGION', 'ap-northeast-1'),
+        region: this.getEnvVar('AMAZON_REGION', 'us-west-2'),
       },
       jules: {
         apiKey: this.getRequiredEnvVar('JULES_API_KEY'),
