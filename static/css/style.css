@@ -206,6 +206,24 @@ a:hover {
   flex: 1;
 }
 
+.card-meta-ext {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+  font-size: 0.9em;
+}
+
+.card-rating {
+  color: #f59e0b;
+  font-weight: bold;
+}
+
+.card-price {
+  font-weight: bold;
+  color: var(--color-text-main);
+}
+
 .card-footer {
   display: flex;
   justify-content: space-between;
