@@ -326,7 +326,7 @@ export class PAAPIClient {
 
           reject(new Error(`PA-API request failed after ${this.rateLimitConfig.maxRetries} attempts: ${lastError?.message}`));
         } catch (error) {
-          reject(error);
+          reject(error as Error);
         }
       });
 

@@ -99,7 +99,7 @@ export class AffiliateLinkManager {
                 issues.push('トラッキングID (tag) パラメータがありません');
             }
 
-        } catch (e) {
+        } catch (_e) {
             issues.push('無効なURL形式です');
         }
 

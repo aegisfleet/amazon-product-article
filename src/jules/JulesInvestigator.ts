@@ -55,7 +55,7 @@ export class JulesInvestigator {
       },
       (error) => {
         this.logger.error('Jules API Request Error', error);
-        return Promise.reject(error);
+        return Promise.reject(error as Error);
       }
     );
 
@@ -73,7 +73,7 @@ export class JulesInvestigator {
           statusText: error.response?.statusText,
           data: error.response?.data
         });
-        return Promise.reject(error);
+        return Promise.reject(error as Error);
       }
     );
   }
