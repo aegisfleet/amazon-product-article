@@ -22,6 +22,7 @@
     /* Gray 200 */
 
     /* Component Variables */
+    --bg-header: rgba(255, 255, 255, 0.8);
     --bg-gradient-hero: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
     --bg-gradient-pros: linear-gradient(135deg, #ecfdf5, #d1fae5);
     --bg-gradient-cons: linear-gradient(135deg, #fef2f2, #fee2e2);
@@ -89,6 +90,7 @@
         /* Indigo 400 */
 
         /* Dark Mode Components */
+        --bg-header: rgba(31, 41, 55, 0.8);
         --bg-gradient-hero: linear-gradient(135deg, #1f2937 0%, #374151 100%);
         --bg-gradient-pros: linear-gradient(135deg, #064e3b, #065f46);
         --bg-gradient-cons: linear-gradient(135deg, #7f1d1d, #991b1b);
@@ -125,6 +127,7 @@
     /* Indigo 400 */
 
     /* Dark Mode Components */
+    --bg-header: rgba(31, 41, 55, 0.8);
     --bg-gradient-hero: linear-gradient(135deg, #1f2937 0%, #374151 100%);
     --bg-gradient-pros: linear-gradient(135deg, #064e3b, #065f46);
     --bg-gradient-cons: linear-gradient(135deg, #7f1d1d, #991b1b);
