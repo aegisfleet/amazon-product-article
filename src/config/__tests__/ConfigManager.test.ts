@@ -10,17 +10,38 @@ import { ConfigManager, SystemConfig } from '../ConfigManager';
 describe('ConfigManager Property-Based Tests', () => {
   let originalEnv: NodeJS.ProcessEnv;
 
+  const clearAllConfigEnvVars = () => {
+    // Clear all config-related environment variables
+    const configEnvVars = [
+      'AMAZON_ACCESS_KEY', 'AMAZON_SECRET_KEY', 'AMAZON_PARTNER_TAG', 'AMAZON_REGION',
+      'JULES_API_KEY', 'JULES_BASE_URL', 'JULES_TIMEOUT',
+      'GITHUB_TOKEN', 'GITHUB_REPOSITORY', 'GITHUB_BRANCH',
+      'LOG_LEVEL', 'RETRY_ATTEMPTS', 'RETRY_DELAY', 'MAX_CONCURRENT_REQUESTS',
+      'PRODUCT_CATEGORIES', 'MAX_RESULTS_PER_CATEGORY', 'SEARCH_KEYWORDS',
+      'MIN_WORD_COUNT', 'INCLUDE_IMAGES', 'ARTICLE_OUTPUT_PATH'
+    ];
+    for (const envVar of configEnvVars) {
+      delete process.env[envVar];
+    }
+  };
+
   beforeEach(() => {
     // Save original environment
     originalEnv = { ...process.env };
 
-    // Clear ConfigManager singleton for each test
-    (ConfigManager as any).instance = undefined;
+    // Clear ConfigManager singleton using proper method
+    ConfigManager.resetInstance();
+
+    // Clear all config-related env vars
+    clearAllConfigEnvVars();
   });
 
   afterEach(() => {
     // Restore original environment
     process.env = originalEnv;
+
+    // Reset singleton after each test
+    ConfigManager.resetInstance();
   });
 
   /**
@@ -56,7 +77,8 @@ describe('ConfigManager Property-Based Tests', () => {
         }),
         async (validConfig) => {
           // Reset singleton for each property test iteration
-          (ConfigManager as any).instance = undefined;
+          ConfigManager.resetInstance();
+          clearAllConfigEnvVars();
 
           // Set up valid environment variables
           process.env.AMAZON_ACCESS_KEY = validConfig.amazonAccessKey;
@@ -136,17 +158,8 @@ describe('ConfigManager Property-Based Tests', () => {
         ),
         async (invalidConfig) => {
           // Reset singleton for each property test iteration
-          (ConfigManager as any).instance = undefined;
-
-          // Clear all relevant environment variables first
-          delete process.env.AMAZON_ACCESS_KEY;
-          delete process.env.AMAZON_SECRET_KEY;
-          delete process.env.AMAZON_PARTNER_TAG;
-          delete process.env.JULES_API_KEY;
-          delete process.env.GITHUB_TOKEN;
-          delete process.env.GITHUB_REPOSITORY;
-          delete process.env.RETRY_ATTEMPTS;
-          delete process.env.MIN_WORD_COUNT;
+          ConfigManager.resetInstance();
+          clearAllConfigEnvVars();
 
           // Set up environment with invalid configuration
           // For missing_amazon_key scenario, don't set AMAZON_ACCESS_KEY at all
@@ -175,7 +188,25 @@ describe('ConfigManager Property-Based Tests', () => {
           await expect(configManager.initialize()).rejects.toThrow();
 
           // Reset singleton again to test error message
-          (ConfigManager as any).instance = undefined;
+          ConfigManager.resetInstance();
+          clearAllConfigEnvVars();
+
+          // Re-set the same invalid config
+          if (invalidConfig.scenario !== 'missing_amazon_key') {
+            process.env.AMAZON_ACCESS_KEY = (invalidConfig as any).amazonAccessKey;
+          }
+          process.env.AMAZON_SECRET_KEY = invalidConfig.amazonSecretKey;
+          process.env.AMAZON_PARTNER_TAG = invalidConfig.amazonPartnerTag;
+          process.env.JULES_API_KEY = invalidConfig.julesApiKey;
+          process.env.GITHUB_TOKEN = invalidConfig.githubToken;
+          process.env.GITHUB_REPOSITORY = invalidConfig.githubRepository;
+          if ('retryAttempts' in invalidConfig) {
+            process.env.RETRY_ATTEMPTS = invalidConfig.retryAttempts.toString();
+          }
+          if ('minWordCount' in invalidConfig) {
+            process.env.MIN_WORD_COUNT = invalidConfig.minWordCount.toString();
+          }
+
           const freshConfigManager = ConfigManager.getInstance();
 
           try {
@@ -215,7 +246,8 @@ describe('ConfigManager Property-Based Tests', () => {
         }),
         async (testData) => {
           // Reset singleton for each property test iteration
-          (ConfigManager as any).instance = undefined;
+          ConfigManager.resetInstance();
+          clearAllConfigEnvVars();
 
           // Set up initial valid environment
           process.env.AMAZON_ACCESS_KEY = 'test_access_key_12345';

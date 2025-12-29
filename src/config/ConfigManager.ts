@@ -68,6 +68,13 @@ export class ConfigManager {
     return ConfigManager.instance;
   }
 
+  /**
+   * Reset the singleton instance (for testing purposes only)
+   */
+  public static resetInstance(): void {
+    ConfigManager.instance = undefined as unknown as ConfigManager;
+  }
+
   public async initialize(): Promise<void> {
     this.logger.info('Initializing configuration manager');
 
