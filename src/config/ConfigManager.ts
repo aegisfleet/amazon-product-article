@@ -119,9 +119,9 @@ export class ConfigManager {
         maxConcurrentRequests: parseInt(this.getEnvVar('MAX_CONCURRENT_REQUESTS', '5'), 10),
       },
       productSearch: {
-        categories: this.getEnvVar('PRODUCT_CATEGORIES', 'Electronics,Home,Sports').split(','),
+        categories: this.parseListEnvVar('PRODUCT_CATEGORIES', ''),
         maxResultsPerCategory: parseInt(this.getEnvVar('MAX_RESULTS_PER_CATEGORY', '10'), 10),
-        searchKeywords: this.getEnvVar('SEARCH_KEYWORDS', 'best,top,review').split(','),
+        searchKeywords: this.parseListEnvVar('SEARCH_KEYWORDS', 'best,top,review'),
       },
       articleGeneration: {
         outputPath: this.getEnvVar('ARTICLE_OUTPUT_PATH', './articles'),
@@ -181,6 +181,14 @@ export class ConfigManager {
 
   private getEnvVar(name: string, defaultValue: string): string {
     return process.env[name] || defaultValue;
+  }
+
+  private parseListEnvVar(name: string, defaultValue: string): string[] {
+    const value = process.env[name] || defaultValue;
+    if (!value) {
+      return [];
+    }
+    return value.split(',').map(item => item.trim()).filter(Boolean);
   }
 
   public updateConfig(updates: Partial<SystemConfig>): void {
