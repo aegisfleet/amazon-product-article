@@ -39,6 +39,19 @@
                 <p class="card-excerpt">
                     {{ .Description | default (.Summary | truncate 100) }}
                 </p>
+                <div class="card-meta-ext"
+                    style="display: flex; justify-content: space-between; align-items: center; margin-top: 10px; font-size: 0.9em;">
+                    {{ if .Params.score }}
+                    <span class="card-rating" style="color: #f59e0b; font-weight: bold;">
+                        ★ {{ .Params.score }}
+                    </span>
+                    {{ end }}
+                    {{ if .Params.price }}
+                    <span class="card-price" style="font-weight: bold; color: #374151;">
+                        {{ .Params.price }}
+                    </span>
+                    {{ end }}
+                </div>
                 <div class="card-footer">
                     <span class="article-meta">{{ .Date.Format "2006年01月02日" }}</span>
                     <a href="{{ .RelPermalink }}" class="read-more">レビューを読む →</a>

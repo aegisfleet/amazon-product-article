@@ -17,6 +17,8 @@ export interface ArticleMetadata {
   publishDate: Date;
   asin: string;
   priceRange: string;
+  price?: string;
+  score?: number;
   rating?: number;
   featured: boolean;
   mobileOptimized: boolean;
@@ -158,6 +160,8 @@ export class ArticleGenerator {
     const tags = this.generateTags(product, investigation);
     const seoKeywords = this.generateSEOKeywords(product, investigation);
     const priceRange = this.determinePriceRange(product.price.amount);
+    const price = product.price.formatted;
+    const score = investigation.analysis.recommendation.score;
     const subcategory = this.determineSubcategory(product);
     const manufacturer = this.extractManufacturer(product);
 
@@ -172,6 +176,8 @@ export class ArticleGenerator {
       publishDate: new Date(),
       asin: product.asin,
       priceRange,
+      price,
+      score,
       // PA-API v5ではレビューデータ取得不可のためrating不使用
       featured: this.shouldBeFeatured(product, investigation),
       mobileOptimized: true,
