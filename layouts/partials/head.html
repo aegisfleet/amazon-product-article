@@ -13,3 +13,13 @@
 <!-- CSS -->
 <link rel="stylesheet" href="{{ `css/variables.css` | relURL }}">
 <link rel="stylesheet" href="{{ `css/style.css` | relURL }}">
+
+<script>
+    (function () {
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme) {
+            document.documentElement.setAttribute('data-theme', savedTheme);
+        }
+    })();
+</script>
+<script src="{{ `js/theme.js` | relURL }}" defer></script>
