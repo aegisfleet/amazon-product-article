@@ -257,7 +257,9 @@ async function main(): Promise<void> {
                         data.investigation.product = data.product;
                         logger.info(`Successfully updated product data for ${data.product.asin}`);
                     } catch (error) {
-                        logger.warn(`Failed to fetch live data for ${data.product.asin}, utilizing placeholder data:`, error);
+                        // PA-APIで商品が見つからない = amazon.co.jpで販売されていない可能性
+                        logger.warn(`商品 ${data.product.asin} はamazon.co.jpで取得できませんでした。記事生成をスキップします:`, error);
+                        continue; // この商品の記事生成をスキップ
                     }
                 }
 
