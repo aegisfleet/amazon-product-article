@@ -197,8 +197,17 @@ export class ArticleGenerator {
     let mobileContent = content;
 
     // blockquoteを一時的にプレースホルダーで置換（段落分割から保護）
+    // HTML形式とMarkdown形式の両方を保護
     const blockquotes: string[] = [];
+
+    // HTML形式の<blockquote>タグを保護
     mobileContent = mobileContent.replace(/<blockquote>[\s\S]*?<\/blockquote>/g, (match) => {
+      blockquotes.push(match);
+      return `__BLOCKQUOTE_${blockquotes.length - 1}__`;
+    });
+
+    // Markdown形式の「>」で始まる行を保護（連続する引用行をまとめて保護）
+    mobileContent = mobileContent.replace(/^> .+$/gm, (match) => {
       blockquotes.push(match);
       return `__BLOCKQUOTE_${blockquotes.length - 1}__`;
     });
@@ -941,13 +950,12 @@ ${score >= 80 ? '自信を持っておすすめできる商品です。' :
     sanitized = sanitized.replace(/\*([^*]+)\*/g, '$1');
 
     // 全ての改行をスペースに変換して1つの連続したテキストにする
-    // （Hugoが改行をMarkdownとして解釈して余計なタグを挿入するのを防ぐ）
     sanitized = sanitized.replace(/\n+/g, ' ');
 
     // 連続するスペースを1つに正規化
     sanitized = sanitized.replace(/\s{2,}/g, ' ').trim();
 
-    // HTMLのblockquoteタグを使用して確実にスタイルを適用（1行で出力）
-    return `<blockquote><p>${sanitized}</p></blockquote>`;
+    // Markdownのblockquote記法「>」を使用
+    return `> ${sanitized}`;
   }
 }
