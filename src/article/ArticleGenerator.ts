@@ -22,6 +22,7 @@ export interface ArticleMetadata {
   mobileOptimized: boolean;
   seoKeywords: string[];
   lastInvestigated?: string;
+  images?: string[];  // Product image URLs for Hugo front matter
 }
 
 export interface ArticleTemplate {
@@ -154,6 +155,9 @@ export class ArticleGenerator {
     const subcategory = this.determineSubcategory(product);
     const manufacturer = this.extractManufacturer(product);
 
+    // Product images for Hugo front matter (filter out empty strings)
+    const images = product.images.primary ? [product.images.primary] : [];
+
     const metadata: ArticleMetadata = {
       title,
       description,
@@ -166,7 +170,8 @@ export class ArticleGenerator {
       featured: this.shouldBeFeatured(product, investigation),
       mobileOptimized: true,
       seoKeywords,
-      ...(investigation.analysis.lastInvestigated && { lastInvestigated: investigation.analysis.lastInvestigated })
+      ...(investigation.analysis.lastInvestigated && { lastInvestigated: investigation.analysis.lastInvestigated }),
+      ...(images.length > 0 && { images })
     };
 
     if (subcategory) {
@@ -700,6 +705,12 @@ ${score >= 80 ? '自信を持っておすすめできる商品です。' :
     lines.push(`featured: ${metadata.featured}`);
     lines.push(`mobile_optimized: ${metadata.mobileOptimized}`);
     lines.push(`last_investigated: "${metadata.lastInvestigated || ''}"`);
+
+    // Add images for Hugo template (used on home page)
+    if (metadata.images && metadata.images.length > 0) {
+      lines.push(`images: [${metadata.images.map(img => `"${img}"`).join(', ')}]`);
+    }
+
     lines.push('---');
 
     return lines.join('\n');
