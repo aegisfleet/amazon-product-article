@@ -7,23 +7,7 @@
 
     <div class="card-grid">
         {{ range .Pages }}
-        <article class="card">
-            <div class="card-content">
-                <div class="card-header">
-                    {{ with .Params.category }}<span class="card-tag">{{ . }}</span>{{ end }}
-                    <h3 class="card-title">
-                        <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-                    </h3>
-                </div>
-                <p class="card-excerpt">
-                    {{ .Description | default (.Summary | truncate 120) }}
-                </p>
-                <div class="card-footer">
-                    <span class="article-meta">{{ .Date.Format "2006年01月02日" }}</span>
-                    <a href="{{ .RelPermalink }}" class="read-more">レビューを読む →</a>
-                </div>
-            </div>
-        </article>
+        {{ partial "product-card.html" . }}
         {{ end }}
     </div>
 </div>

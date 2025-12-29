@@ -1,0 +1,41 @@
+<article class="card">
+    <div class="card-image">
+        <!-- Placeholder for product image integration later -->
+        {{ if .Params.images }}
+        <img src="{{ index .Params.images 0 }}" alt="{{ .Title }}"
+            style="width:100%; height:100%; object-fit:cover;">
+        {{ else }}
+        <div
+            style="width:100%; height:100%; display:flex; align-items:center; justify-content:center; background:#f3f4f6; color:#9ca3af;">
+            画像なし
+        </div>
+        {{ end }}
+    </div>
+    <div class="card-content">
+        <div class="card-header">
+            {{ with .Params.category }}<span class="card-tag">{{ . }}</span>{{ end }}
+            <h3 class="card-title">
+                <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+            </h3>
+        </div>
+        <p class="card-excerpt">
+            {{ .Description | default (.Summary | truncate 100) }}
+        </p>
+        <div class="card-meta-ext">
+            {{ if .Params.score }}
+            <span class="card-rating">
+                ★ {{ .Params.score }}
+            </span>
+            {{ end }}
+            {{ if .Params.price }}
+            <span class="card-price">
+                {{ .Params.price }}
+            </span>
+            {{ end }}
+        </div>
+        <div class="card-footer">
+            <span class="article-meta">{{ .Date.Format "2006年01月02日" }}</span>
+            <a href="{{ .RelPermalink }}" class="read-more">レビューを読む →</a>
+        </div>
+    </div>
+</article>
