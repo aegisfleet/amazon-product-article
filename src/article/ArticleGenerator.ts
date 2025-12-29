@@ -404,13 +404,12 @@ ${scoreEmoji} 総合評価: <strong>${score}点</strong> (${scoreText})
 </div>
 
 <div class="product-meta">
-${primeBadge}
-${availabilityInfo}
+${availabilityInfo ? `<p>${availabilityInfo}</p>` : ''}
+<p><strong>価格</strong>: ${product.price.formatted}
+${brandInfo ? ` <strong>ブランド</strong>: ${brand}` : ''}${productDetail.model ? ` <strong>モデル</strong>: ${productDetail.model}` : ''}</p>
+${primeBadge ? `<p>${primeBadge}</p>` : ''}
+${releaseDateInfo ? `<p>${releaseDateInfo}</p>` : ''}
 </div>
-
-**価格**: ${product.price.formatted}
-${brandInfo}
-${releaseDateInfo}
 
 <a href="${affiliateUrl}" class="btn-amazon-hero" target="_blank" rel="noopener noreferrer">🛒 Amazonで詳細を見る</a>
 
@@ -430,15 +429,9 @@ ${releaseDateInfo}
    * 商品の特徴と使い方セクションを生成
    */
   private async generateFeaturesSection(
-    product: Product,
+    _product: Product,
     investigation: InvestigationResult
   ): Promise<ArticleSection> {
-    // 仕様情報
-    const specifications = Object.entries(product.specifications)
-      .slice(0, 5)  // 上位5つに制限
-      .map(([key, value]) => `| ${key} | ${value} |`)
-      .join('\n');
-
     // 使用シーン
     const useCases = investigation.analysis.useCases
       .slice(0, 4)  // 上位4つに制限
@@ -460,12 +453,6 @@ ${productUsage.map((usage, i) => `${i + 1}. ${usage}`).join('\n')}`
       : '';
 
     const content = `## 📦 商品の特徴
-
-### 主な仕様
-
-| 項目 | 内容 |
-|:-----|:-----|
-${specifications}
 
 ### 💡 こんなシーンで活躍
 
