@@ -310,8 +310,7 @@ ${sources}`;
     const scoreText = this.getScoreDescription(score);
     const scoreEmoji = score >= 80 ? '🏆' : score >= 60 ? '👍' : '📝';
 
-    // 表示用の製品名（productName があればそれを使用）
-    const displayName = investigation.analysis.productName || `Product ${product.asin}`;
+
     const content = `<div class="product-hero-card">
 
 <div class="product-hero-image">
