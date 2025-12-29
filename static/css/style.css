@@ -230,8 +230,8 @@ a:hover {
 .card-tag {
   display: inline-block;
   padding: 0.25rem 0.75rem;
-  background-color: #E0E7FF;
-  color: var(--color-primary-dark);
+  background-color: var(--bg-tag);
+  color: var(--text-tag);
   border-radius: 9999px;
   font-size: 0.75rem;
   font-weight: 600;
@@ -408,7 +408,7 @@ a:hover {
   display: grid;
   grid-template-columns: 1fr;
   gap: var(--spacing-xl);
-  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+  background: var(--bg-gradient-hero);
   border-radius: var(--radius-xl);
   padding: var(--spacing-xl);
   margin: var(--spacing-xl) 0;
@@ -557,7 +557,7 @@ a:hover {
 }
 
 .pros-card {
-  background: linear-gradient(135deg, #ecfdf5, #d1fae5);
+  background: var(--bg-gradient-pros);
   border: 1px solid #10b981;
   border-radius: var(--radius-lg);
   padding: var(--spacing-lg);
@@ -570,7 +570,7 @@ a:hover {
 }
 
 .cons-card {
-  background: linear-gradient(135deg, #fef2f2, #fee2e2);
+  background: var(--bg-gradient-cons);
   border: 1px solid #ef4444;
   border-radius: var(--radius-lg);
   padding: var(--spacing-lg);
@@ -584,7 +584,7 @@ a:hover {
 
 /* Purchase Card */
 .purchase-card {
-  background: linear-gradient(135deg, #fef3c7, #fcd34d);
+  background: var(--bg-gradient-purchase);
   border: 2px solid #f59e0b;
   border-radius: var(--radius-xl);
   padding: var(--spacing-xl);
@@ -652,7 +652,7 @@ a:hover {
 }
 
 .content tr:nth-child(even) {
-  background: rgba(0, 0, 0, 0.02);
+  background: var(--bg-table-stripe);
 }
 
 /* Competitor Link */
@@ -779,8 +779,8 @@ a:hover {
   display: flex;
   align-items: center;
   gap: var(--spacing-md);
-  background: linear-gradient(135deg, #f0f9ff, #e0f2fe);
-  border: 1px solid #0ea5e9;
+  background: var(--bg-competitor-preview);
+  border: 1px solid var(--border-competitor-preview);
   border-radius: var(--radius-md);
   padding: var(--spacing-sm) var(--spacing-md);
   margin: var(--spacing-md) 0;
@@ -791,7 +791,7 @@ a:hover {
   height: 60px;
   object-fit: contain;
   border-radius: var(--radius-sm);
-  background: white;
+  background: var(--bg-competitor-img);
   flex-shrink: 0;
 }
 
@@ -804,12 +804,12 @@ a:hover {
 
 .competitor-actual-price {
   font-weight: 700;
-  color: #b91c1c;
+  color: var(--text-competitor-price);
   font-size: 1rem;
 }
 
 .competitor-availability {
-  color: #059669;
+  color: var(--text-competitor-availability);
   font-size: 0.8rem;
 }
 
@@ -820,22 +820,7 @@ a:hover {
 }
 
 @media (prefers-color-scheme: dark) {
-  .competitor-preview {
-    background: linear-gradient(135deg, #0c4a6e, #075985);
-    border-color: #0284c7;
-  }
-
-  .competitor-preview-img {
-    background: #1e293b;
-  }
-
-  .competitor-actual-price {
-    color: #fca5a5;
-  }
-
-  .competitor-availability {
-    color: #6ee7b7;
-  }
+  /* Removed competitor preview overrides (using variables now) */
 }
 
 /* Review Cards */
@@ -854,21 +839,4 @@ a:hover {
   padding: 0;
 }
 
-/* Dark Mode Adjustments */
-@media (prefers-color-scheme: dark) {
-  .product-hero-card {
-    background: linear-gradient(135deg, #1f2937 0%, #374151 100%);
-  }
-
-  .pros-card {
-    background: linear-gradient(135deg, #064e3b, #065f46);
-  }
-
-  .cons-card {
-    background: linear-gradient(135deg, #7f1d1d, #991b1b);
-  }
-
-  .purchase-card {
-    background: linear-gradient(135deg, #78350f, #92400e);
-  }
-}
+/* Dark Mode Adjustments - Now handled via variables */

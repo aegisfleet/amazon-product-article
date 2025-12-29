@@ -21,6 +21,22 @@
     --color-border: #E5E7EB;
     /* Gray 200 */
 
+    /* Component Variables */
+    --bg-gradient-hero: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+    --bg-gradient-pros: linear-gradient(135deg, #ecfdf5, #d1fae5);
+    --bg-gradient-cons: linear-gradient(135deg, #fef2f2, #fee2e2);
+    --bg-gradient-purchase: linear-gradient(135deg, #fef3c7, #fcd34d);
+
+    --bg-tag: #E0E7FF;
+    --text-tag: #4338CA;
+
+    --bg-table-stripe: rgba(0, 0, 0, 0.02);
+    --bg-competitor-preview: linear-gradient(135deg, #f0f9ff, #e0f2fe);
+    --border-competitor-preview: #0ea5e9;
+    --bg-competitor-img: #ffffff;
+    --text-competitor-price: #b91c1c;
+    --text-competitor-availability: #059669;
+
     /* Amazon Specific */
     --color-amazon-orange: #FF9900;
     --color-amazon-blue: #232F3E;
@@ -71,6 +87,22 @@
         /* Indigo 500 */
         --color-primary-dark: #818CF8;
         /* Indigo 400 */
+
+        /* Dark Mode Components */
+        --bg-gradient-hero: linear-gradient(135deg, #1f2937 0%, #374151 100%);
+        --bg-gradient-pros: linear-gradient(135deg, #064e3b, #065f46);
+        --bg-gradient-cons: linear-gradient(135deg, #7f1d1d, #991b1b);
+        --bg-gradient-purchase: linear-gradient(135deg, #78350f, #92400e);
+
+        --bg-tag: #374151;
+        --text-tag: #A5B4FC;
+
+        --bg-table-stripe: rgba(255, 255, 255, 0.05);
+        --bg-competitor-preview: linear-gradient(135deg, #0c4a6e, #075985);
+        --border-competitor-preview: #0284c7;
+        --bg-competitor-img: #1e293b;
+        --text-competitor-price: #fca5a5;
+        --text-competitor-availability: #6ee7b7;
     }
 }
 
@@ -91,4 +123,20 @@
     /* Indigo 500 */
     --color-primary-dark: #818CF8;
     /* Indigo 400 */
+
+    /* Dark Mode Components */
+    --bg-gradient-hero: linear-gradient(135deg, #1f2937 0%, #374151 100%);
+    --bg-gradient-pros: linear-gradient(135deg, #064e3b, #065f46);
+    --bg-gradient-cons: linear-gradient(135deg, #7f1d1d, #991b1b);
+    --bg-gradient-purchase: linear-gradient(135deg, #78350f, #92400e);
+
+    --bg-tag: #374151;
+    --text-tag: #A5B4FC;
+
+    --bg-table-stripe: rgba(255, 255, 255, 0.05);
+    --bg-competitor-preview: linear-gradient(135deg, #0c4a6e, #075985);
+    --border-competitor-preview: #0284c7;
+    --bg-competitor-img: #1e293b;
+    --text-competitor-price: #fca5a5;
+    --text-competitor-availability: #6ee7b7;
 }
