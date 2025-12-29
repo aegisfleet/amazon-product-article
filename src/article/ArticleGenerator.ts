@@ -591,6 +591,7 @@ ${reviewAnalysis ? this.generateSentimentAnalysis(reviewAnalysis) : ''}`;
 
   /**
    * 競合分析セクションを生成（カード形式で競合商品リンク付き）
+   * PA-APIで情報が取得できなかった競合商品は非表示にする
    */
   private async generateCompetitiveAnalysisSection(
     investigation: InvestigationResult,
@@ -598,7 +599,24 @@ ${reviewAnalysis ? this.generateSentimentAnalysis(reviewAnalysis) : ''}`;
     affiliateTag: string,
     competitorDetails?: Map<string, ProductDetail>
   ): Promise<ArticleSection> {
-    const competitors = investigation.analysis.competitiveAnalysis;
+    let competitors = investigation.analysis.competitiveAnalysis;
+
+    // PA-API が利用可能で競合商品情報がある場合、取得できた商品のみにフィルタリング
+    // これにより、amazon.co.jp で販売されていない商品は非表示になる
+    if (competitorDetails && competitorDetails.size > 0) {
+      const originalCount = competitors.length;
+      competitors = competitors.filter(competitor => {
+        // ASINがない場合、または PA-API で取得できた場合のみ表示
+        if (!competitor.asin) {
+          return true; // ASINがない競合商品は表示（リンクなし）
+        }
+        return competitorDetails.has(competitor.asin);
+      });
+
+      if (competitors.length < originalCount) {
+        this.logger.info(`Filtered out ${originalCount - competitors.length} competitor(s) not available on amazon.co.jp`);
+      }
+    }
 
     // 各競合商品をカード形式で表示
     const competitorCards = competitors
