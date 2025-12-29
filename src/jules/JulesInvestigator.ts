@@ -293,12 +293,27 @@ export class JulesInvestigator {
    * 調査プロンプトを生成
    */
   formatInvestigationPrompt(product: Product, existingData?: InvestigationResult['analysis']): string {
-    const today = new Date().toISOString().split('T')[0];
+    // JSTで現在の日付を取得 (YYYY-MM-DD)
+    const formatter = new Intl.DateTimeFormat('ja-JP', {
+      timeZone: 'Asia/Tokyo',
+      year: 'numeric',
+      month: '2-digit',
+      day: '2-digit',
+    });
+    const parts = formatter.formatToParts(new Date());
+    const year = parts.find(p => p.type === 'year')?.value;
+    const month = parts.find(p => p.type === 'month')?.value;
+    const day = parts.find(p => p.type === 'day')?.value;
+    const today = `${year}-${month}-${day}`;
 
     // 既存データがある場合の追加指示
     const updateInstruction = existingData
       ? `\n【既存データの更新】\n以下に以前の調査データがあります。この内容をベースに、最新の情報でアップデートしてください。\n- 既存の「良い点」「悪い点」が現在も有効か検証し、維持または更新してください。\n- 新しいレビューや競合製品の情報を追加してください。\n- "lastInvestigated" フィールドを "${today}" に更新してください。\n\n既存データ:\n\`\`\`json\n${JSON.stringify(existingData, null, 2)}\n\`\`\`\n`
       : '';
+
+    // ブランド情報の取得（ProductDetail型の場合）
+    const brand = 'brand' in product ? (product as any).brand : undefined;
+    const brandInfo = brand ? `- ブランド: ${brand}` : '';
 
     // PA-API v5ではレビューデータ取得不可のため外部収集を依頼
     const prompt = `【重要：出力言語の指定】
@@ -373,6 +388,7 @@ ${updateInstruction}
 商品情報：
 - ASIN: ${product.asin}
 - 商品名: ${product.title}
+${brandInfo}
 - カテゴリ: ${product.category}
 - 価格: ${product.price.formatted}
 - 仕様・詳細:
