@@ -402,7 +402,7 @@ export class ProductSearcher {
         sortBy: 'rating'
       }));
       return categoryConfigs.length > 0 ? categoryConfigs : this.getDefaultCategories();
-    } catch (error) {
+    } catch (_error) {
       return this.getDefaultCategories();
     }
   }
@@ -472,7 +472,7 @@ export class ProductSearcher {
 
       const allCategories = categoryConfigs.length > 0 ? categoryConfigs : this.getDefaultCategories();
       return allCategories.find(c => c.name === categoryName);
-    } catch (error) {
+    } catch (_error) {
       const defaultCategories = this.getDefaultCategories();
       return defaultCategories.find(c => c.name === categoryName);
     }
@@ -494,7 +494,7 @@ export class ProductSearcher {
     for (const dir of dirs) {
       try {
         await fs.mkdir(dir, { recursive: true });
-      } catch (error) {
+      } catch (_error) {
         // Directory might already exist
       }
     }
