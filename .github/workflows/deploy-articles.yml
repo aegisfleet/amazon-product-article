@@ -21,7 +21,7 @@ permissions:
 # 同時実行を防止
 concurrency:
   group: "pages"
-  cancel-in-progress: false
+  cancel-in-progress: true
 
 jobs:
   build:
