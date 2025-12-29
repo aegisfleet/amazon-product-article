@@ -6,11 +6,6 @@ on:
     paths:
       - 'data/**'
   workflow_dispatch:
-    inputs:
-      reason:
-        description: 'Reason for manual trigger'
-        required: false
-        default: 'Auto-triggered after PR merge'
 
 # GitHub Pages へのデプロイ権限
 permissions:
