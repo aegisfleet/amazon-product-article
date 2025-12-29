@@ -1,15 +1,15 @@
 {{ define "main" }}
 <div class="container" style="padding-top: var(--spacing-xl);">
     <a href="{{ `articles` | relURL }}" class="back-link"
-        style="margin-bottom: var(--spacing-lg); display: inline-block;">← Back to Reviews</a>
+        style="margin-bottom: var(--spacing-lg); display: inline-block;">← レビュー一覧に戻る</a>
 
     <article class="article-content">
         <header class="article-header">
             {{ with .Params.category }}<span class="card-tag">{{ . }}</span>{{ end }}
             <h1 class="hero-title" style="margin-top: var(--spacing-sm);">{{ .Title }}</h1>
             <div class="article-meta">
-                <span>Published on {{ .Date.Format "January 2, 2006" }}</span>
-                {{ with .Params.author }}<span> • by {{ . }}</span>{{ end }}
+                <span>公開日: {{ .Date.Format "2006年01月02日" }}</span>
+                {{ with .Params.author }}<span> • 著者: {{ . }}</span>{{ end }}
             </div>
         </header>
 
@@ -20,8 +20,7 @@
         <!-- Affiliate Disclaimer -->
         <div
             style="background: #f3f4f6; padding: var(--spacing-lg); border-radius: var(--radius-lg); margin-top: var(--spacing-2xl); font-size: 0.875rem; color: var(--color-text-muted);">
-            <p><strong>Note:</strong> This article contains affiliate links. When you purchase through these links, we
-                may earn a small commission at no additional cost to you.</p>
+            <p><strong>注:</strong> この記事にはアフィリエイトリンクが含まれています。これらのリンクを通じて購入された場合、私たちは追加費用なしで少額の手数料を得ることがあります。</p>
         </div>
     </article>
 </div>
