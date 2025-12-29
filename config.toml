@@ -10,7 +10,7 @@ defaultContentLanguage = "ja"
 hasCJKLanguage = true
 
 # Disable unused features for faster builds
-disableKinds = ["taxonomy", "term", "RSS", "sitemap", "robotsTXT"]
+disableKinds = ["RSS", "sitemap", "robotsTXT"]
 
 # Output configuration
 [outputs]
@@ -48,3 +48,7 @@ disableKinds = ["taxonomy", "term", "RSS", "sitemap", "robotsTXT"]
   threshold = 0
   includeNewer = false
   toLower = false
+
+[taxonomies]
+  category = "categories"
+  tag = "tags"
