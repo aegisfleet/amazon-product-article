@@ -53,7 +53,7 @@ jobs:
       run: npm run search:products
     
     - name: Upload product data
-      uses: actions/upload-artifact@v4
+      uses: actions/upload-artifact@v6
       with:
         name: product-data
         path: data/products/
@@ -94,7 +94,7 @@ jobs:
       run: npm run investigate
     
     - name: Upload session data
-      uses: actions/upload-artifact@v4
+      uses: actions/upload-artifact@v6
       with:
         name: session-data
         path: data/sessions/
