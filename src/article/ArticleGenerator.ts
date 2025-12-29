@@ -886,6 +886,9 @@ ${infoRows.join('\n')}
     lines.push(`asin: "${metadata.asin}"`);
     lines.push(`price_range: "${metadata.priceRange}"`);
 
+    if (metadata.price) lines.push(`price: "${metadata.price}"`);
+    if (metadata.score) lines.push(`score: ${metadata.score}`);
+
     if (metadata.rating) lines.push(`rating: ${metadata.rating}`);
 
     lines.push(`tags: [${metadata.tags.map(tag => `"${tag}"`).join(', ')}]`);
