@@ -328,6 +328,32 @@ ${sources}`;
     const scoreText = this.getScoreDescription(score);
     const scoreEmoji = score >= 80 ? '🏆' : score >= 60 ? '👍' : '📝';
 
+    // ProductDetail型の追加フィールドを取得（存在すれば）
+    const productDetail = product as any;
+    const isPrimeEligible = productDetail.isPrimeEligible;
+    const availability = productDetail.availability;
+    const brand = productDetail.brand;
+    const releaseDate = productDetail.releaseDate;
+
+    // Prime対応バッジ
+    const primeBadge = isPrimeEligible
+      ? '<span class="prime-badge">✓ Prime対応</span>'
+      : '';
+
+    // 在庫状況
+    const availabilityInfo = availability
+      ? `<span class="availability-info">📦 ${availability}</span>`
+      : '';
+
+    // ブランド情報
+    const brandInfo = brand
+      ? `**ブランド**: ${brand}`
+      : '';
+
+    // 発売日情報
+    const releaseDateInfo = releaseDate
+      ? `**発売日**: ${releaseDate}`
+      : '';
 
     const content = `<div class="product-hero-card">
 
@@ -345,7 +371,14 @@ ${productDescription}
 ${scoreEmoji} 総合評価: <strong>${score}点</strong> (${scoreText})
 </div>
 
+<div class="product-meta">
+${primeBadge}
+${availabilityInfo}
+</div>
+
 **価格**: ${product.price.formatted}
+${brandInfo}
+${releaseDateInfo}
 
 <a href="${affiliateUrl}" class="btn-amazon-hero" target="_blank" rel="noopener noreferrer">🛒 Amazonで詳細を見る</a>
 
@@ -357,7 +390,7 @@ ${scoreEmoji} 総合評価: <strong>${score}点</strong> (${scoreText})
       title: '商品ヒーロー',
       content,
       wordCount: this.calculateWordCount(content),
-      requiredElements: ['商品画像', '商品説明', '購入リンク', '評価']
+      requiredElements: ['商品画像', '商品説明', '購入リンク', '評価', 'Prime対応', '在庫状況']
     };
   }
 

@@ -47,6 +47,58 @@ export interface PAAPIItem {
         DisplayValue: string;
       };
     };
+    ByLineInfo?: {
+      Brand?: {
+        DisplayValue: string;
+        Locale: string;
+      };
+      Manufacturer?: {
+        DisplayValue: string;
+        Locale: string;
+      };
+      Contributors?: Array<{
+        Name: string;
+        Role: string;
+        Locale: string;
+      }>;
+    };
+    ContentInfo?: {
+      Edition?: {
+        DisplayValue: string;
+        Locale: string;
+      };
+      Languages?: {
+        DisplayValues: Array<{
+          DisplayValue: string;
+          Type: string;
+        }>;
+      };
+      PagesCount?: {
+        DisplayValue: number;
+      };
+      PublicationDate?: {
+        DisplayValue: string;
+      };
+    };
+    TechnicalInfo?: {
+      Formats?: {
+        DisplayValues: string[];
+      };
+      EnergyEfficiencyClass?: {
+        DisplayValue: string;
+      };
+    };
+    ExternalIds?: {
+      EANs?: {
+        DisplayValues: string[];
+      };
+      ISBNs?: {
+        DisplayValues: string[];
+      };
+      UPCs?: {
+        DisplayValues: string[];
+      };
+    };
   };
   Images?: {
     Primary?: {
@@ -78,6 +130,9 @@ export interface PAAPIItem {
       };
       Availability?: {
         Message: string;
+      };
+      DeliveryInfo?: {
+        IsPrimeEligible: boolean;
       };
     }>;
     Summaries?: Array<{
