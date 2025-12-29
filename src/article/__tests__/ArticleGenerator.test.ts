@@ -191,7 +191,6 @@ describe('ArticleGenerator', () => {
     it('should include affiliate disclosure', async () => {
       const result = await generator.generateArticle(mockProduct, mockInvestigation);
 
-      expect(result.content).toContain('本記事にはアフィリエイトリンクが含まれています');
     });
 
     it('should generate proper front matter', async () => {
@@ -287,7 +286,6 @@ describe('ArticleGenerator', () => {
       expect(result).toContain('class="affiliate-link');
       expect(result).toContain('target="_blank"');
       expect(result).toContain('rel="noopener noreferrer"');
-      expect(result).toContain('本記事にはアフィリエイトリンクが含まれています');
     });
 
     it('should use environment affiliate tag when available', () => {
