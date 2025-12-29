@@ -9,34 +9,34 @@ jobs:
     # JulesボットまたはJules関連のユーザーからのPRのみ処理
     if: github.actor == 'jules[bot]' || contains(github.actor, 'jules')
     runs-on: ubuntu-latest
-    
+
     permissions:
       contents: write
       pull-requests: write
       actions: write
-    
+
     steps:
     - uses: actions/checkout@v6
-    
+
     - name: Use Node.js
       uses: actions/setup-node@v6
       with:
         node-version: '20.x'
         cache: 'npm'
-    
+
     - name: Install dependencies
       run: npm ci
-    
+
     - name: Build project
       run: npm run build
-    
+
     - name: Validate and auto-merge PR
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         PR_NUMBER: ${{ github.event.pull_request.number }}
         PR_AUTHOR: ${{ github.event.pull_request.user.login }}
       run: npm run merge:pr
-    
+
     - name: Trigger deploy workflow
       if: success()
       uses: actions/github-script@v8
@@ -45,19 +45,16 @@ jobs:
         script: |
           // マージ後、少し待機してからデプロイをトリガー
           await new Promise(resolve => setTimeout(resolve, 5000));
-          
+
           console.log('Triggering Deploy Articles workflow...');
           await github.rest.actions.createWorkflowDispatch({
             owner: context.repo.owner,
             repo: context.repo.repo,
             workflow_id: 'deploy-articles.yml',
-            ref: 'main',
-            inputs: {
-              reason: `Auto-triggered after PR #${{ github.event.pull_request.number }} merge`
-            }
+            ref: 'main'
           });
           console.log('Deploy workflow triggered successfully');
-    
+
     - name: Report merge status
       if: always()
       run: |
