@@ -39,15 +39,14 @@
                 <p class="card-excerpt">
                     {{ .Description | default (.Summary | truncate 100) }}
                 </p>
-                <div class="card-meta-ext"
-                    style="display: flex; justify-content: space-between; align-items: center; margin-top: 10px; font-size: 0.9em;">
+                <div class="card-meta-ext">
                     {{ if .Params.score }}
-                    <span class="card-rating" style="color: #f59e0b; font-weight: bold;">
+                    <span class="card-rating">
                         ★ {{ .Params.score }}
                     </span>
                     {{ end }}
                     {{ if .Params.price }}
-                    <span class="card-price" style="font-weight: bold; color: #374151;">
+                    <span class="card-price">
                         {{ .Params.price }}
                     </span>
                     {{ end }}
