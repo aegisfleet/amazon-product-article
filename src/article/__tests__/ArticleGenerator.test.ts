@@ -198,7 +198,7 @@ describe('ArticleGenerator', () => {
       const result = await generator.generateArticle(mockProduct, mockInvestigation);
 
       expect(result.content).toContain('---');
-      expect(result.content).toContain('title: "テスト商品 スマートフォンの詳細レビュー：ユーザーの本音と競合比較"');
+      expect(result.content).toContain('title: "テスト商品 スマートフォン"');
       expect(result.content).toContain('asin: "B08N5WRWNW"');
       expect(result.content).toContain('mobile_optimized: true');
     });
@@ -216,7 +216,7 @@ describe('ArticleGenerator', () => {
     it('should generate proper SEO metadata', () => {
       const metadata = generator.generateSEOMetadata(mockProduct, mockInvestigation);
 
-      expect(metadata.title).toBe('テスト商品 スマートフォンの詳細レビュー：ユーザーの本音と競合比較');
+      expect(metadata.title).toBe('テスト商品 スマートフォン');
       expect(metadata.asin).toBe('B08N5WRWNW');
       expect(metadata.category).toBe('Electronics');
       expect(metadata.priceRange).toBe('premium');

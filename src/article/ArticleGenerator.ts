@@ -146,8 +146,12 @@ export class ArticleGenerator {
   generateSEOMetadata(product: Product, investigation: InvestigationResult): ArticleMetadata {
     // productName があればそれを使用、なければ ASIN からフォールバック
     const displayName = investigation.analysis.productName || `Product ${product.asin}`;
-    const title = `${displayName}の詳細レビュー：ユーザーの本音と競合比較`;
-    const description = `${displayName}の実際のユーザーレビューを分析し、競合商品との比較を通じて購買判断をサポート`;
+    // タイトルをシンプルに商品名のみにする
+    const title = displayName;
+
+    // card-excerpt用にproductDescriptionを使用（なければ従来の生成ロジックへフォールバック）
+    const description = investigation.analysis.productDescription ||
+      `${displayName}の実際のユーザーレビューを分析し、競合商品との比較を通じて購買判断をサポート`;
 
     const tags = this.generateTags(product, investigation);
     const seoKeywords = this.generateSEOKeywords(product, investigation);
