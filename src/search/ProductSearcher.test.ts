@@ -50,12 +50,16 @@ describe('ProductSearcher', () => {
             };
 
             // Mock getProductDetails to return mock product
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any, @typescript-eslint/no-unsafe-argument
             mockPapiClient.getProductDetails.mockResolvedValue(mockProduct as any);
 
             const session = await searcher.searchByAsins(asins);
 
+            // eslint-disable-next-line @typescript-eslint/unbound-method
             expect(mockPapiClient.getProductDetails).toHaveBeenCalledTimes(2);
+            // eslint-disable-next-line @typescript-eslint/unbound-method
             expect(mockPapiClient.getProductDetails).toHaveBeenCalledWith('B000000001');
+            // eslint-disable-next-line @typescript-eslint/unbound-method
             expect(mockPapiClient.getProductDetails).toHaveBeenCalledWith('B000000002');
             expect(session.results.length).toBe(1); // One result batch
             expect(session.results?.[0]?.products.length).toBe(2);
@@ -67,7 +71,7 @@ describe('ProductSearcher', () => {
     describe('searchAllCategories', () => {
         it('should exclude products in content/articles', async () => {
             // Mock sleep to return immediately
-            // @ts-ignore
+            // @ts-expect-error - Accessing private method for testing
             searcher.sleep = jest.fn().mockResolvedValue(undefined);
 
             // Mock searchProducts to return a product that is already investigated
