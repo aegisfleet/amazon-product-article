@@ -284,7 +284,10 @@ export class ArticleGenerator {
 
     // 情報ソース（もしあれば）
     if (investigation.analysis.sources && investigation.analysis.sources.length > 0) {
-      sections.push(await this.generateSourcesSection(investigation));
+      const sourcesSection = await this.generateSourcesSection(investigation);
+      if (sourcesSection) {
+        sections.push(sourcesSection);
+      }
     }
 
     return sections;
@@ -292,17 +295,46 @@ export class ArticleGenerator {
 
   /**
    * 情報ソースセクションを生成
+   * 意味のないソース（抽象的な名前）はフィルタリング、URLなしはプレーンテキスト
    */
-  private async generateSourcesSection(investigation: InvestigationResult): Promise<ArticleSection> {
-    const sources = investigation.analysis.sources
-      .map(source => `- [${source.name}](${source.url || '#'}) ${source.credibility ? `(${source.credibility})` : ''}`)
+  private async generateSourcesSection(investigation: InvestigationResult): Promise<ArticleSection | null> {
+    // 除外するソース名のリスト（意味のない抽象的なソース）
+    const excludedPatterns = [
+      'category analysis',
+      'general market knowledge',
+      'market analysis',
+      'product specifications',
+      'internal analysis',
+      'market research'
+    ];
+
+    // 有効なソースのみフィルタリング
+    const validSources = investigation.analysis.sources.filter(source => {
+      const nameLower = source.name.toLowerCase();
+      return !excludedPatterns.some(pattern => nameLower.includes(pattern));
+    });
+
+    // 有効なソースがなければnullを返す（セクション非表示）
+    if (validSources.length === 0) {
+      return null;
+    }
+
+    // URLがあればリンク、なければプレーンテキスト
+    const sourcesList = validSources
+      .map(source => {
+        const credibility = source.credibility ? ` (${source.credibility})` : '';
+        if (source.url) {
+          return `- [${source.name}](${source.url})${credibility}`;
+        }
+        return `- ${source.name}${credibility}`;
+      })
       .join('\n');
 
     const content = `## 参考情報ソース
 
 本記事の作成にあたり、以下の情報を参照しました：
 
-${sources}`;
+${sourcesList}`;
 
     return {
       title: '参考情報ソース',
