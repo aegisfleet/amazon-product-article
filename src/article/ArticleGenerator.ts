@@ -474,7 +474,7 @@ ${specifications}
     // ユーザーストーリーの生成
     const userStories = investigation.analysis.userStories && investigation.analysis.userStories.length > 0
       ? `### 🗣️ 購入者の生の声（ユーザーストーリー）
-${investigation.analysis.userImpression ? `\n> **${investigation.analysis.userImpression}**\n` : ''}
+${investigation.analysis.userImpression ? this.formatUserImpressionAsBlockquote(investigation.analysis.userImpression) : ''}
 ${investigation.analysis.userStories.map(story => `#### ${story.userType}の体験談 (${story.scenario})
 
 > "${story.experience}"
@@ -916,5 +916,27 @@ ${score >= 80 ? '自信を持っておすすめできる商品です。' :
     if (score >= 60) return '普通';
     if (score >= 50) return 'やや不足';
     return '要検討';
+  }
+
+  /**
+   * userImpressionをMarkdown引用ブロックとして正しくフォーマット
+   * - Markdownの強調記号（**）を除去
+   * - 複数行の場合は各行に引用記号を付与
+   */
+  private formatUserImpressionAsBlockquote(userImpression: string): string {
+    // Markdownの強調記法（**text**）を除去
+    let sanitized = userImpression.replace(/\*\*([^*]+)\*\*/g, '$1');
+
+    // *text* 形式のイタリック記法も除去
+    sanitized = sanitized.replace(/\*([^*]+)\*/g, '$1');
+
+    // 連続する改行を1つの改行に正規化
+    sanitized = sanitized.replace(/\n{2,}/g, '\n');
+
+    // 各行に引用記号を付与
+    const lines = sanitized.split('\n').filter(line => line.trim() !== '');
+    const quotedLines = lines.map(line => `> ${line.trim()}`).join('\n>\n');
+
+    return `\n${quotedLines}\n`;
   }
 }
