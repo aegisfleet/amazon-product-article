@@ -2,15 +2,27 @@
 <div class="container" style="padding-top: var(--spacing-xl);">
     <div class="back-links" style="margin-bottom: var(--spacing-lg);">
         <a href="{{ `` | relURL }}" class="back-link" style="display: inline-block; margin-right: 1rem;">← ホームに戻る</a>
+        {{ if .Params.categories }}
+        {{ $cat := index .Params.categories 0 }}
+        {{ with site.GetPage (printf "categories/%s" $cat) }}
+        <a href="{{ .RelPermalink }}" class="back-link" style="display: inline-block;">← {{ $cat }}に戻る</a>
+        {{ end }}
+        {{ else }}
         {{ with .Params.category }}
-        <a href="{{ " categories/" | relURL }}{{ . | urlize }}" class="back-link" style="display: inline-block;">← {{ .
-            }}に戻る</a>
+        {{ with site.GetPage (printf "categories/%s" .) }}
+        <a href="{{ .RelPermalink }}" class="back-link" style="display: inline-block;">← {{ $.Params.category }}に戻る</a>
+        {{ end }}
+        {{ end }}
         {{ end }}
     </div>
 
     <article class="article-content">
         <header class="article-header">
+            {{ if .Params.categories }}
+            <span class="card-tag">{{ index .Params.categories 0 }}</span>
+            {{ else }}
             {{ with .Params.category }}<span class="card-tag">{{ . }}</span>{{ end }}
+            {{ end }}
             <h1 class="hero-title" style="margin-top: var(--spacing-sm);">{{ .Title }}</h1>
             <div class="article-meta">
                 <span>公開日: {{ .Date.Format "2006年01月02日" }}</span>

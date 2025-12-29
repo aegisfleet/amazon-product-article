@@ -2,8 +2,7 @@
     <div class="card-image">
         <!-- Placeholder for product image integration later -->
         {{ if .Params.images }}
-        <img src="{{ index .Params.images 0 }}" alt="{{ .Title }}"
-            style="width:100%; height:100%; object-fit:cover;">
+        <img src="{{ index .Params.images 0 }}" alt="{{ .Title }}" style="width:100%; height:100%; object-fit:cover;">
         {{ else }}
         <div
             style="width:100%; height:100%; display:flex; align-items:center; justify-content:center; background:#f3f4f6; color:#9ca3af;">
@@ -13,7 +12,11 @@
     </div>
     <div class="card-content">
         <div class="card-header">
+            {{ if .Params.categories }}
+            <span class="card-tag">{{ index .Params.categories 0 }}</span>
+            {{ else }}
             {{ with .Params.category }}<span class="card-tag">{{ . }}</span>{{ end }}
+            {{ end }}
             <h3 class="card-title">
                 <a href="{{ .RelPermalink }}">{{ .Title }}</a>
             </h3>

@@ -863,7 +863,7 @@ ${infoRows.join('\n')}
       `title: "${metadata.title}"`,
       `description: "${metadata.description}"`,
       `date: ${metadata.publishDate.toISOString().split('T')[0]}`,
-      `category: "${metadata.category}"`
+      `categories: ["${metadata.category}"]`
     ];
 
     if (metadata.subcategory) lines.push(`subcategory: "${metadata.subcategory}"`);
