@@ -143,8 +143,10 @@ export class ArticleGenerator {
    * SEOメタデータを生成
    */
   generateSEOMetadata(product: Product, investigation: InvestigationResult): ArticleMetadata {
-    const title = `${product.title}の詳細レビュー：ユーザーの本音と競合比較`;
-    const description = `${product.title}の実際のユーザーレビューを分析し、競合商品との比較を通じて購買判断をサポート`;
+    // productName があればそれを使用、なければ ASIN からフォールバック
+    const displayName = investigation.analysis.productName || `Product ${product.asin}`;
+    const title = `${displayName}の詳細レビュー：ユーザーの本音と競合比較`;
+    const description = `${displayName}の実際のユーザーレビューを分析し、競合商品との比較を通じて購買判断をサポート`;
 
     const tags = this.generateTags(product, investigation);
     const seoKeywords = this.generateSEOKeywords(product, investigation);
@@ -299,7 +301,9 @@ ${sources}`;
     const scoreText = this.getScoreDescription(score);
     const scoreEmoji = score >= 80 ? '🏆' : score >= 60 ? '👍' : '📝';
 
-    const content = `# ${product.title}
+    // 表示用の製品名（productName があればそれを使用）
+    const displayName = investigation.analysis.productName || `Product ${product.asin}`;
+    const content = `# ${displayName}
 
 <div class="product-hero-card">
 
