@@ -285,6 +285,8 @@ describe('ArticleGenerator', () => {
 
       expect(result).toContain('amazon.co.jp/dp/B08N5WRWNW');
       expect(result).toContain('class="affiliate-link');
+      expect(result).toContain('target="_blank"');
+      expect(result).toContain('rel="noopener noreferrer"');
       expect(result).toContain('本記事にはアフィリエイトリンクが含まれています');
     });
 
