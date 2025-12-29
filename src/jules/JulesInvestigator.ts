@@ -301,7 +301,10 @@ export class JulesInvestigator {
       : '';
 
     // PA-API v5ではレビューデータ取得不可のため外部収集を依頼
-    const prompt = `商品「${product.title}」について以下の観点で詳細調査を実施してください：
+    const prompt = `【重要：出力言語の指定】
+すべての出力（productName、productDescription、productUsage、positivePoints、negativePoints、useCases、userStories、userImpression、sources、competitiveAnalysis、recommendationの各フィールドのテキスト）は、必ず日本語で記述してください。英語やその他の言語での出力は避けてください。
+
+商品「${product.title}」について以下の観点で詳細調査を実施してください：
 現在の日付: ${today}
 ${updateInstruction}
 ⚠️ 重要：Amazon PA-APIの制限により、評価・レビュー数データは取得できていません。
