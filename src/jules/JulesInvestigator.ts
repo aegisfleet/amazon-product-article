@@ -304,6 +304,16 @@ export class JulesInvestigator {
     const prompt = `【重要：出力言語の指定】
 すべての出力（productName、productDescription、productUsage、positivePoints、negativePoints、useCases、userStories、userImpression、sources、competitiveAnalysis、recommendationの各フィールドのテキスト）は、必ず日本語で記述してください。英語やその他の言語での出力は避けてください。
 
+【重要：amazon.co.jp での販売確認】
+調査を開始する前に、指定されたASIN (${product.asin}) がamazon.co.jpで現在販売されているかを確認してください。
+以下のいずれかに該当する場合、"availableOnAmazonJP" フィールドを false に設定してください：
+- 商品ページが存在しない（404エラー）
+- 「現在お取り扱いできません」と表示される
+- 「この商品は現在お取り扱いできません」と表示される
+- 海外のAmazon（amazon.com等）でのみ販売されている
+
+販売中の商品のみ詳細調査を進めてください。非販売商品の場合でも、上記のavailableOnAmazonJPフィールドを含むJSON形式で出力してください。
+
 商品「${product.title}」について以下の観点で詳細調査を実施してください：
 現在の日付: ${today}
 ${updateInstruction}
@@ -380,6 +390,7 @@ ${Object.entries(product.specifications).map(([key, value]) => `  - ${key}: ${va
 \`\`\`json
 {
   "analysis": {
+    "availableOnAmazonJP": true,
     "productName": "正式な製品名（検索タグを除いた簡潔な名前）",
     "productDescription": "この商品が何かを1-2文で簡潔に説明",
     "productUsage": ["使い方1", "使い方2", "使い方3"],
