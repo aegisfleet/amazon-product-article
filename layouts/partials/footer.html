@@ -1,5 +1,9 @@
 <footer class="site-footer">
     <div class="container">
+        <p style="font-size: 0.8rem; margin-bottom: 1rem;">
+            {{ .Site.Title
+            }}は、Amazon.co.jpを宣伝しリンクすることによってサイトが紹介料を獲得できる手段を提供することを目的に設定されたアフィリエイトプログラムである、Amazonアソシエイト・プログラムの参加者です。
+        </p>
         <p>&copy; {{ now.Year }} {{ .Site.Title }}. All rights reserved.</p>
         <p style="font-size: 0.8rem; margin-top: 0.5rem;">
             Last updated: {{ now.Format "2006-01-02" }}
