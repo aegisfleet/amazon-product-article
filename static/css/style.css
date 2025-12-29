@@ -241,7 +241,7 @@ a:hover {
 }
 
 .content h2 {
-  font-size: 1.875rem;
+  font-size: 2.125rem;
   font-weight: 700;
   margin-top: var(--spacing-2xl);
   margin-bottom: var(--spacing-md);
@@ -276,6 +276,14 @@ a:hover {
   font-style: italic;
   color: var(--color-text-muted);
   margin: var(--spacing-lg) 0;
+}
+
+.content blockquote p {
+  margin-bottom: var(--spacing-sm);
+}
+
+.content blockquote p:last-child {
+  margin-bottom: 0;
 }
 
 /* Products Table/Grid in Article */

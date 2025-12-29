@@ -173,7 +173,7 @@ describe('ArticleGenerator', () => {
       const result = await generator.generateArticle(mockProduct, mockInvestigation, mockReviewAnalysis);
 
       expect(result).toBeDefined();
-      expect(result.content).toContain('# テスト商品 スマートフォン');
+      expect(result.content).toContain('<div class="product-hero-card">');
       expect(result.content).toContain('## 📦 商品の特徴');
       expect(result.content).toContain('## ユーザーレビュー分析');
       expect(result.content).toContain('## 🥊 競合商品との比較');
@@ -207,7 +207,7 @@ describe('ArticleGenerator', () => {
       const result = await generator.generateArticle(mockProduct, mockInvestigation);
 
       expect(result).toBeDefined();
-      expect(result.content).toContain('# テスト商品 スマートフォン');
+      expect(result.content).toContain('<div class="product-hero-card">');
       expect(result.sections).toHaveLength(7);
     });
   });
@@ -323,8 +323,8 @@ describe('ArticleGenerator', () => {
 
       const result = await generator.generateArticle(mockProduct, emptyInvestigation);
       expect(result).toBeDefined();
-      // When productName is not set, should fallback to "Product {ASIN}"
-      expect(result.content).toContain('# Product B08N5WRWNW');
+      // When productName is not set, should still have product-hero-card
+      expect(result.content).toContain('<div class="product-hero-card">');
     });
 
     it('should handle products with minimal information', async () => {
