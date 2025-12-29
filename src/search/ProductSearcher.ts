@@ -3,9 +3,9 @@
  * Handles product search across multiple categories and structured data storage
  */
 
+import crypto from 'crypto';
 import fs from 'fs/promises';
 import path from 'path';
-import crypto from 'crypto';
 import { PAAPIClient } from '../api/PAAPIClient';
 import { ConfigManager } from '../config/ConfigManager';
 import {
@@ -37,10 +37,12 @@ export class ProductSearcher {
   private papiClient: PAAPIClient;
   private config = ConfigManager.getInstance();
   private dataDir: string;
+  private contentDir: string;
 
   constructor(papiClient: PAAPIClient) {
     this.papiClient = papiClient;
     this.dataDir = path.join(process.cwd(), 'data', 'products');
+    this.contentDir = path.join(process.cwd(), 'content', 'articles');
   }
 
   /**
@@ -52,38 +54,112 @@ export class ProductSearcher {
   }
 
   /**
+   * Search products by specific ASINs
+   */
+  async searchByAsins(asins: string[]): Promise<SearchSession> {
+    const sessionId = this.generateSessionId();
+    const results: ProductSearchResult[] = [];
+    const products: Product[] = [];
+
+    this.logger.info(`Starting manual product search session ${sessionId} for ${asins.length} ASINs`);
+
+    for (const asin of asins) {
+      try {
+        const productDetail = await this.papiClient.getProductDetails(asin);
+        // Convert ProductDetail to Product (ProductDetail extends Product, so this is safe)
+        products.push(productDetail);
+        this.logger.info(`Found product: ${productDetail.title} (${asin})`);
+      } catch (error) {
+        this.logger.error(`Failed to fetch product for ASIN ${asin}:`, error);
+      }
+
+      // Rate limiting
+      await this.sleep(200);
+    }
+
+    if (products.length > 0) {
+      const result: ProductSearchResult = {
+        products,
+        totalResults: products.length,
+        searchParams: {
+          category: 'Manual',
+          keywords: asins,
+          maxResults: asins.length
+        },
+        timestamp: new Date()
+      };
+
+      results.push(result);
+      await this.saveCategoryResults(sessionId, 'manual', result);
+    }
+
+    const session: SearchSession = {
+      id: sessionId,
+      timestamp: new Date(),
+      categories: ['Manual'],
+      totalProducts: products.length,
+      results
+    };
+
+    await this.saveSearchSession(session);
+    return session;
+  }
+
+  /**
    * Search products across all enabled categories
    */
   async searchAllCategories(): Promise<SearchSession> {
     const categories = this.getEnabledCategories();
+    // Shuffle categories to vary the starting point
+    this.shuffleArray(categories);
+
     const sessionId = this.generateSessionId();
     const results: ProductSearchResult[] = [];
     let totalProducts = 0;
 
+    // Get exclusion list (products already investigated)
+    const exclusionList = await this.getExclusionList();
+    this.logger.info(`Found ${exclusionList.size} existing products to exclude`);
+
     this.logger.info(`Starting product search session ${sessionId} for ${categories.length} categories`);
 
     for (const category of categories) {
+      // Don't search too many categories in one run if we already found enough
+      // But let's keep searching all configured categories for now as per requirement
+      // unless we want to limit total products per session
+
       try {
-        this.logger.info(`Searching category: ${category.name}`);
+        // Pick a random keyword from the category's keyword list
+        const keyword = category.keywords[Math.floor(Math.random() * category.keywords.length)] || category.keywords[0] || 'popular';
+        this.logger.info(`Searching category: ${category.name} with keyword: ${keyword}`);
 
         const searchParams: ProductSearchParams = {
           category: category.name,
-          keywords: category.keywords,
+          keywords: [keyword], // Use the single random keyword
           maxResults: category.maxResults,
           ...(category.sortBy ? { sortBy: category.sortBy } : {})
         };
 
         const result = await this.papiClient.searchProducts(searchParams);
 
-        // PA-API v5ではレビューデータ取得不可のためフィルタリングなし
+        // Filter out excluded products
+        const initialCount = result.products.length;
+        result.products = result.products.filter(p => !exclusionList.has(p.asin));
 
-        results.push(result);
-        totalProducts += result.products.length;
+        if (initialCount !== result.products.length) {
+          this.logger.info(`Filtered ${initialCount - result.products.length} existing products from results`);
+        }
 
-        // Save category results
-        await this.saveCategoryResults(sessionId, category.name, result);
+        if (result.products.length > 0) {
+          results.push(result);
+          totalProducts += result.products.length;
 
-        this.logger.info(`Found ${result.products.length} products in ${category.name}`);
+          // Save category results
+          await this.saveCategoryResults(sessionId, category.name, result);
+          this.logger.info(`Found ${result.products.length} new products in ${category.name}`);
+        } else {
+          this.logger.info(`No new products found in ${category.name}`);
+        }
 
         // Rate limiting delay between categories
         await this.sleep(1000);
@@ -127,8 +203,6 @@ export class ProductSearcher {
     this.logger.info(`Searching category ${categoryName} with keywords: ${searchParams.keywords.join(', ')}`);
 
     const result = await this.papiClient.searchProducts(searchParams);
-
-    // PA-API v5ではレビューデータ取得不可のためフィルタリングなし
 
     // Save results
     const sessionId = this.generateSessionId();
@@ -192,8 +266,6 @@ export class ProductSearcher {
     this.logger.info(`Custom search: ${params.category} - ${params.keywords.join(', ')}`);
 
     const result = await this.papiClient.searchProducts(params);
-
-    // PA-API v5ではレビューデータ取得不可のためフィルタリングなし
 
     // Save custom search results
     const sessionId = this.generateSessionId();
@@ -317,11 +389,15 @@ export class ProductSearcher {
       const config = this.config.getConfig();
       const categories = config.productSearch?.categories || [];
       // Convert string categories to CategoryConfig objects
+      // Note: Config override is not fully implemented for randomize, for now we fall back to defaults effectively 
+      // if categories are just strings. 
+      // Ideally config would support detailed category config.
+
       const categoryConfigs: CategoryConfig[] = categories.map(cat => ({
         name: cat,
         searchIndex: this.getSearchIndexForCategory(cat),
         enabled: true,
-        keywords: ['best', 'top', 'review'],
+        keywords: ['おすすめ', '人気', 'ランキング'], // Default Japanese keywords
         maxResults: 10,
         sortBy: 'rating'
       }));
@@ -332,27 +408,44 @@ export class ProductSearcher {
   }
 
   private getDefaultCategories(): CategoryConfig[] {
+    // Categories and keywords tailored for amazon.co.jp
     return [
       {
         name: 'electronics',
         searchIndex: 'Electronics',
-        keywords: ['smartphone', 'laptop', 'headphones'],
+        keywords: ['スマートフォン', 'ワイヤレスイヤホン', 'モバイルバッテリー', 'スマートウォッチ', 'タブレット'],
         maxResults: 10,
         sortBy: 'rating',
         enabled: true
       },
       {
-        name: 'books',
-        searchIndex: 'Books',
-        keywords: ['programming', 'business', 'self-help'],
+        name: 'computers',
+        searchIndex: 'Computers',
+        keywords: ['ノートパソコン', 'ゲーミングマウス', 'キーボード', 'モニター', '外付けSSD'],
+        maxResults: 10,
+        sortBy: 'rating',
+        enabled: true
+      },
+      {
+        name: 'kitchen',
+        searchIndex: 'Kitchen',
+        keywords: ['コーヒーメーカー', 'フライパン', '弁当箱', '水筒', '包丁'],
         maxResults: 10,
         sortBy: 'rating',
         enabled: true
       },
       {
         name: 'home',
-        searchIndex: 'HomeGarden',
-        keywords: ['kitchen', 'furniture', 'decor'],
+        searchIndex: 'HomeAndKitchen',
+        keywords: ['掃除機', '空気清浄機', '加湿器', '枕', '収納'],
+        maxResults: 10,
+        sortBy: 'rating',
+        enabled: true
+      },
+      {
+        name: 'appliances',
+        searchIndex: 'Appliances', // 'LargeAppliances' in some regions, checking map
+        keywords: ['冷蔵庫', '洗濯機', '電子レンジ', '炊飯器', 'ドライヤー'],
         maxResults: 10,
         sortBy: 'rating',
         enabled: true
@@ -364,15 +457,19 @@ export class ProductSearcher {
     try {
       const config = this.config.getConfig();
       const categories = config.productSearch?.categories || [];
-      // Convert string categories to CategoryConfig objects and find the matching one
+      // This part is simplified, ideally we merge config with defaults
+      // For now, if we have dynamic user config, we use generic keywords
+      // If we use defaults, we get the rich keyword lists
+
       const categoryConfigs: CategoryConfig[] = categories.map(cat => ({
         name: cat,
         searchIndex: this.getSearchIndexForCategory(cat),
         enabled: true,
-        keywords: ['best', 'top', 'review'],
+        keywords: ['おすすめ', '人気'],
         maxResults: 10,
         sortBy: 'rating'
       }));
+
       const allCategories = categoryConfigs.length > 0 ? categoryConfigs : this.getDefaultCategories();
       return allCategories.find(c => c.name === categoryName);
     } catch (error) {
@@ -383,7 +480,6 @@ export class ProductSearcher {
 
   private generateSessionId(): string {
     const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
-    // Use cryptographically secure random bytes for the session suffix
     const random = crypto.randomBytes(4).toString('hex');
     return `${timestamp}_${random}`;
   }
@@ -439,10 +535,64 @@ export class ProductSearcher {
       'electronics': 'Electronics',
       'books': 'Books',
       'clothing': 'Fashion',
-      'home': 'HomeGarden',
-      'sports': 'SportingGoods'
+      'home': 'HomeAndKitchen',
+      'kitchen': 'Kitchen',
+      'sports': 'SportsAndOutdoors',
+      'toys': 'Toys',
+      'automotive': 'Automotive',
+      'beauty': 'Beauty',
+      'health': 'HealthPersonalCare',
+      'computers': 'Computers',
+      'music': 'Music',
+      'videogames': 'VideoGames',
+      'appliances': 'Appliances'
     };
     return categoryMap[categoryName.toLowerCase()] || 'All';
+  }
+
+  /**
+   * Get a set of ASINs that have already been investigated/generated
+   * Scans the content/articles directory for existing article bundles
+   */
+  private async getExclusionList(): Promise<Set<string>> {
+    const exclusionList = new Set<string>();
+
+    try {
+      // Check if content directory exists
+      try {
+        await fs.access(this.contentDir);
+      } catch {
+        return exclusionList;
+      }
+
+      const files = await fs.readdir(this.contentDir);
+
+      // Assuming article directories are named by ASIN or contain ASIN
+      // Based on user workspace, articles might be in subfolders like /ASIN/index.md or just matched by name
+      // Standard pattern in this project seems to be /ASIN/ or similar
+
+      for (const file of files) {
+        // Simple heuristic: if the folder name looks like an ASIN (10 alphanumeric chars), exclude it
+        if (/^[A-Z0-9]{10}$/.test(file)) {
+          exclusionList.add(file);
+        }
+      }
+
+    } catch (error) {
+      this.logger.warn('Failed to generate exclusion list:', error);
+    }
+
+    return exclusionList;
+  }
+
+  /**
+   * Shuffle an array in place
+   */
+  private shuffleArray(array: any[]): void {
+    for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]];
+    }
   }
 
 }
