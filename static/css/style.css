@@ -565,6 +565,7 @@ a:hover {
 }
 
 @media (max-width: 640px) {
+
   .content th,
   .content td {
     white-space: normal;
@@ -597,6 +598,107 @@ a:hover {
 .competitor-link:hover {
   background: #e68a00;
   color: #232f3e !important;
+}
+
+/* Competitor Cards */
+.competitor-cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-lg);
+  margin: var(--spacing-lg) 0;
+}
+
+@media (min-width: 768px) {
+  .competitor-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.competitor-card {
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-lg);
+  transition: var(--transition-base);
+}
+
+.competitor-card:hover {
+  border-color: var(--color-primary);
+  box-shadow: var(--shadow-md);
+}
+
+.competitor-card h4 {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--color-text-main);
+  margin-bottom: var(--spacing-sm);
+}
+
+.competitor-price {
+  font-size: 0.95rem;
+  color: var(--color-text-muted);
+  margin-bottom: var(--spacing-md);
+  padding-bottom: var(--spacing-sm);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.competitor-features,
+.competitor-diff {
+  margin-bottom: var(--spacing-md);
+}
+
+.competitor-features strong,
+.competitor-diff strong {
+  display: block;
+  font-size: 0.875rem;
+  color: var(--color-text-main);
+  margin-bottom: var(--spacing-xs);
+}
+
+.competitor-features ul,
+.competitor-diff ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.competitor-features li,
+.competitor-diff li {
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+  padding-left: 1rem;
+  position: relative;
+  margin-bottom: var(--spacing-xs);
+}
+
+.competitor-features li::before,
+.competitor-diff li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: var(--color-primary);
+}
+
+.btn-amazon-small {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-xs);
+  background: linear-gradient(135deg, #ff9900, #e68a00);
+  color: #232f3e;
+  padding: var(--spacing-sm) var(--spacing-md);
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  font-size: 0.875rem;
+  text-decoration: none;
+  transition: var(--transition-base);
+  margin-top: var(--spacing-sm);
+}
+
+.btn-amazon-small:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-sm);
+  color: #232f3e;
 }
 
 /* Review Cards */

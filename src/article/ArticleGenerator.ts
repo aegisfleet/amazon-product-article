@@ -509,7 +509,7 @@ ${reviewAnalysis ? this.generateSentimentAnalysis(reviewAnalysis) : ''}`;
   }
 
   /**
-   * 競合分析セクションを生成（表形式で競合商品リンク付き）
+   * 競合分析セクションを生成（カード形式で競合商品リンク付き）
    */
   private async generateCompetitiveAnalysisSection(
     investigation: InvestigationResult,
@@ -518,56 +518,49 @@ ${reviewAnalysis ? this.generateSentimentAnalysis(reviewAnalysis) : ''}`;
   ): Promise<ArticleSection> {
     const competitors = investigation.analysis.competitiveAnalysis;
 
-    // 競合商品がある場合は表形式で表示
-    let competitiveTable = '';
-    if (competitors && competitors.length > 0) {
-      competitiveTable = `### 📊 競合商品比較表
-
-| 商品名 | 価格帯 | 様々 |
-|:-----|:-----|:-----|
-${competitors.map(c => {
-        const link = c.asin
-          ? `[🛒 ${c.name}](https://www.amazon.co.jp/dp/${c.asin}?tag=${affiliateTag})`
-          : c.name;
-        return `| ${link} | ${c.priceComparison} | ${c.differentiators.slice(0, 2).join('、')} |`;
-      }).join('\n')}`;
-    }
-
-    // 各競合商品の詳細
-    const competitiveDetails = competitors
+    // 各競合商品をカード形式で表示
+    const competitorCards = competitors
       .map(competitor => {
         const features = competitor.featureComparison
-          .map(feature => `  - ${feature}`)
+          .map(feature => `<li>${feature}</li>`)
           .join('\n');
 
         const differentiators = competitor.differentiators
-          .map(diff => `  - ${diff}`)
+          .map(diff => `<li>${diff}</li>`)
           .join('\n');
 
         // ASINがある場合はアフィリエイトリンクを生成
         const competitorLink = competitor.asin
-          ? `<a href="https://www.amazon.co.jp/dp/${competitor.asin}?tag=${affiliateTag}" class="competitor-link">🛒 Amazonで見る</a>`
+          ? `<a href="https://www.amazon.co.jp/dp/${competitor.asin}?tag=${affiliateTag}" class="btn-amazon-small">🛒 Amazonで見る</a>`
           : '';
 
-        return `### ${competitor.name}との比較
-
-**価格比較**: ${competitor.priceComparison}
-
-**機能比較**:
+        return `<div class="competitor-card">
+<h4>${competitor.name}</h4>
+<p class="competitor-price">💰 ${competitor.priceComparison}</p>
+<div class="competitor-features">
+<strong>機能比較:</strong>
+<ul>
 ${features}
-
-**差別化ポイント**:
+</ul>
+</div>
+<div class="competitor-diff">
+<strong>差別化ポイント:</strong>
+<ul>
 ${differentiators}
-
-${competitorLink}`;
+</ul>
+</div>
+${competitorLink}
+</div>`;
       })
       .join('\n\n');
 
     const content = `## 🥊 競合商品との比較
 
-${competitiveTable}
+<div class="competitor-cards">
 
-${competitiveDetails}
+${competitorCards}
+
+</div>
 
 ### ✅ 総合的な競合優位性
 
