@@ -312,9 +312,7 @@ ${sources}`;
 
     // 表示用の製品名（productName があればそれを使用）
     const displayName = investigation.analysis.productName || `Product ${product.asin}`;
-    const content = `# ${displayName}
-
-<div class="product-hero-card">
+    const content = `<div class="product-hero-card">
 
 <div class="product-hero-image">
 
