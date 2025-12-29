@@ -136,7 +136,13 @@ export class PAAPIClient {
         'ItemInfo.Features',
         'ItemInfo.ManufactureInfo',
         'ItemInfo.ProductInfo',
+        'ItemInfo.ByLineInfo',
+        'ItemInfo.ContentInfo',
+        'ItemInfo.TechnicalInfo',
+        'ItemInfo.ExternalIds',
         'Offers.Listings.Price',
+        'Offers.Listings.Availability.Message',
+        'Offers.Listings.DeliveryInfo.IsPrimeEligible',
         'Offers.Summaries.HighestPrice',
         'Offers.Summaries.LowestPrice',
         'BrowseNodeInfo.BrowseNodes',
@@ -378,6 +384,58 @@ export class PAAPIClient {
     const model = item.ItemInfo?.ManufactureInfo?.Model?.DisplayValue;
     if (model) {
       result.model = model;
+    }
+
+    // ByLineInfo: ブランド情報（より詳細）
+    const brand = item.ItemInfo?.ByLineInfo?.Brand?.DisplayValue;
+    if (brand) {
+      result.brand = brand;
+    }
+
+    // ContentInfo: 発売日、言語情報
+    const releaseDate = item.ItemInfo?.ContentInfo?.PublicationDate?.DisplayValue;
+    if (releaseDate) {
+      result.releaseDate = releaseDate;
+    }
+
+    const languages = item.ItemInfo?.ContentInfo?.Languages?.DisplayValues;
+    if (languages && languages.length > 0) {
+      result.languages = languages.map(lang => lang.DisplayValue);
+    }
+
+    // ByLineInfo: Contributors（著者、出演者等）
+    const contributors = item.ItemInfo?.ByLineInfo?.Contributors;
+    if (contributors && contributors.length > 0) {
+      result.contributors = contributors.map(c => ({
+        name: c.Name,
+        role: c.Role
+      }));
+    }
+
+    // ExternalIds: EAN, ISBN, UPC
+    const externalIds = item.ItemInfo?.ExternalIds;
+    if (externalIds) {
+      result.externalIds = {};
+      if (externalIds.EANs?.DisplayValues?.[0]) {
+        result.externalIds.ean = externalIds.EANs.DisplayValues[0];
+      }
+      if (externalIds.ISBNs?.DisplayValues?.[0]) {
+        result.externalIds.isbn = externalIds.ISBNs.DisplayValues[0];
+      }
+      if (externalIds.UPCs?.DisplayValues?.[0]) {
+        result.externalIds.upc = externalIds.UPCs.DisplayValues[0];
+      }
+    }
+
+    // Offers: 在庫状況、Prime対応
+    const listing = item.Offers?.Listings?.[0];
+    if (listing) {
+      if (listing.Availability?.Message) {
+        result.availability = listing.Availability.Message;
+      }
+      if (listing.DeliveryInfo?.IsPrimeEligible !== undefined) {
+        result.isPrimeEligible = listing.DeliveryInfo.IsPrimeEligible;
+      }
     }
 
     return result;

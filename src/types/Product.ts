@@ -33,6 +33,21 @@ export interface ProductDetail extends Product {
   };
   manufacturer?: string;
   model?: string;
+  // 新規追加フィールド（PA-API拡張）
+  brand?: string;
+  releaseDate?: string;
+  isPrimeEligible?: boolean;
+  availability?: string;
+  externalIds?: {
+    ean?: string;
+    isbn?: string;
+    upc?: string;
+  };
+  languages?: string[];
+  contributors?: Array<{
+    name: string;
+    role: string;
+  }>;
 }
 
 export interface ProductSearchParams {
