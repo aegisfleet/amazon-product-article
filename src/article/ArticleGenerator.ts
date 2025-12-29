@@ -227,9 +227,6 @@ export class ArticleGenerator {
       `$1\n\n<a href="${affiliateUrl}" class="affiliate-link mobile-friendly-button" target="_blank" rel="noopener noreferrer"><strong>${asin}をAmazonで確認する</strong></a>\n`
     );
 
-    // 記事の最後にアフィリエイト開示を追加しない（テンプレート側で制御）
-    // contentWithLinks += '\n\n---\n*本記事にはアフィリエイトリンクが含まれています。商品購入時に当サイトが収益を得る場合があります。*';
-
     return contentWithLinks;
   }
 
