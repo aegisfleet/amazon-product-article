@@ -9,6 +9,7 @@ import { ConfigManager, SystemConfig } from '../ConfigManager';
 
 describe('ConfigManager Property-Based Tests', () => {
   let originalEnv: NodeJS.ProcessEnv;
+  let consoleErrorSpy: jest.SpyInstance;
 
   const clearAllConfigEnvVars = () => {
     // Clear all config-related environment variables
@@ -34,9 +35,15 @@ describe('ConfigManager Property-Based Tests', () => {
 
     // Clear all config-related env vars
     clearAllConfigEnvVars();
+
+    // Suppress expected error logs during testing
+    consoleErrorSpy = jest.spyOn(console, 'error').mockImplementation(() => { });
   });
 
   afterEach(() => {
+    // Restore console.error
+    consoleErrorSpy.mockRestore();
+
     // Restore original environment
     process.env = originalEnv;
 
