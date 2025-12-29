@@ -54,6 +54,7 @@ interface RawInvestigationFile {
         }>;
         competitiveAnalysis: Array<{
             name: string;
+            asin?: string;
             priceComparison: string;
             featureComparison: string[];
             differentiators: string[];
@@ -263,6 +264,25 @@ async function main(): Promise<void> {
                     }
                 }
 
+                // 競合商品のASINを抽出してPA-APIで情報取得
+                let competitorDetails: Map<string, import('../types/Product').ProductDetail> | undefined;
+                if (options.accessKey && options.secretKey && options.partnerTag) {
+                    const competitorAsins = data.investigation.analysis.competitiveAnalysis
+                        .filter(c => c.asin)
+                        .map(c => c.asin!);
+
+                    if (competitorAsins.length > 0) {
+                        try {
+                            logger.info(`Fetching competitor product details for ${competitorAsins.length} ASINs...`);
+                            competitorDetails = await paapiClient.getMultipleProductDetails(competitorAsins);
+                            logger.info(`Successfully fetched ${competitorDetails.size} competitor product details`);
+                        } catch (error) {
+                            logger.warn('Failed to fetch competitor product details, continuing without:', error);
+                            // フォールバック: 競合商品情報なしで続行
+                        }
+                    }
+                }
+
                 logger.info(`Generating article for: ${data.product.title}`);
 
                 const article = await generator.generateArticle(
@@ -270,7 +290,8 @@ async function main(): Promise<void> {
                     data.investigation,
                     undefined,
                     undefined,
-                    options.partnerTag
+                    options.partnerTag,
+                    competitorDetails
                 );
 
                 const articlePath = await saveArticle(article, data.product.asin);

@@ -160,6 +160,69 @@ export class PAAPIClient {
   }
 
   /**
+   * Get detailed product information for multiple ASINs (up to 10)
+   * Returns a Map where keys are ASINs and values are ProductDetail objects
+   * Failed lookups are silently omitted from the result
+   */
+  async getMultipleProductDetails(asins: string[]): Promise<Map<string, ProductDetail>> {
+    this.validateAuthentication();
+
+    const result = new Map<string, ProductDetail>();
+
+    if (asins.length === 0) {
+      return result;
+    }
+
+    // PA-API allows max 10 items per request
+    const validAsins = asins.filter(asin => /^[A-Z0-9]{10}$/.test(asin)).slice(0, 10);
+
+    if (validAsins.length === 0) {
+      this.logger.warn('No valid ASINs provided for batch lookup');
+      return result;
+    }
+
+    const request: PAAPIRequest = {
+      Operation: 'GetItems',
+      PartnerTag: this.credentials!.partnerTag,
+      PartnerType: 'Associates',
+      Marketplace: this.getMarketplace(),
+      ItemIds: validAsins,
+      Resources: [
+        'Images.Primary.Large',
+        'Images.Primary.Medium',
+        'ItemInfo.Title',
+        'ItemInfo.ByLineInfo',
+        'Offers.Listings.Price',
+        'Offers.Listings.Availability.Message',
+        'Offers.Listings.DeliveryInfo.IsPrimeEligible',
+        'Offers.Summaries.LowestPrice'
+      ]
+    };
+
+    try {
+      const response = await this.makeRequest(request);
+
+      if (response.ItemsResult?.Items) {
+        for (const item of response.ItemsResult.Items) {
+          try {
+            const detail = this.parseProductDetail(item);
+            result.set(item.ASIN, detail);
+          } catch (error) {
+            this.logger.warn(`Failed to parse product detail for ASIN ${item.ASIN}: ${error}`);
+          }
+        }
+      }
+
+      this.logger.info(`Successfully fetched ${result.size}/${validAsins.length} competitor product details`);
+    } catch (error) {
+      this.logger.warn(`Failed to fetch competitor product details: ${error}`);
+      // Return empty map on failure (graceful degradation)
+    }
+
+    return result;
+  }
+
+  /**
    * Handle rate limiting with queue management
    */
   async handleRateLimit(): Promise<void> {
