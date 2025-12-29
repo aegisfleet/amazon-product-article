@@ -4,7 +4,7 @@
 
 import { ReviewAnalysisResult } from '../analysis/ReviewAnalyzer';
 import { InvestigationResult } from '../types/JulesTypes';
-import { Product } from '../types/Product';
+import { Product, ProductDetail } from '../types/Product';
 import { Logger } from '../utils/Logger';
 
 export interface ArticleMetadata {
@@ -92,7 +92,8 @@ export class ArticleGenerator {
     investigation: InvestigationResult,
     reviewAnalysis?: ReviewAnalysisResult,
     template?: ArticleTemplate,
-    affiliatePartnerTag?: string
+    affiliatePartnerTag?: string,
+    competitorDetails?: Map<string, ProductDetail>
   ): Promise<GeneratedArticle> {
     this.logger.info('Starting article generation', {
       productAsin: product.asin,
@@ -108,7 +109,8 @@ export class ArticleGenerator {
         investigation,
         reviewAnalysis,
         articleTemplate,
-        affiliatePartnerTag
+        affiliatePartnerTag,
+        competitorDetails
       );
 
       const content = this.assembleArticle(sections, metadata);
@@ -259,7 +261,8 @@ export class ArticleGenerator {
     investigation: InvestigationResult,
     reviewAnalysis: ReviewAnalysisResult | undefined,
     template: ArticleTemplate,
-    affiliatePartnerTag?: string
+    affiliatePartnerTag?: string,
+    competitorDetails?: Map<string, ProductDetail>
   ): Promise<ArticleSection[]> {
     const sections: ArticleSection[] = [];
     const affiliateTag = affiliatePartnerTag || process.env.AMAZON_PARTNER_TAG || 'your-affiliate-tag';
@@ -274,7 +277,7 @@ export class ArticleGenerator {
     sections.push(await this.generateUserReviewsSection(investigation, reviewAnalysis, template.sections.userReviews));
 
     // 競合商品との比較（表形式）
-    sections.push(await this.generateCompetitiveAnalysisSection(investigation, template.sections.competitiveAnalysis, affiliateTag));
+    sections.push(await this.generateCompetitiveAnalysisSection(investigation, template.sections.competitiveAnalysis, affiliateTag, competitorDetails));
 
     // 購入推奨度
     sections.push(await this.generateRecommendationSection(investigation, template.sections.recommendation));
@@ -592,7 +595,8 @@ ${reviewAnalysis ? this.generateSentimentAnalysis(reviewAnalysis) : ''}`;
   private async generateCompetitiveAnalysisSection(
     investigation: InvestigationResult,
     template: TemplateSection,
-    affiliateTag: string
+    affiliateTag: string,
+    competitorDetails?: Map<string, ProductDetail>
   ): Promise<ArticleSection> {
     const competitors = investigation.analysis.competitiveAnalysis;
 
@@ -606,6 +610,28 @@ ${reviewAnalysis ? this.generateSentimentAnalysis(reviewAnalysis) : ''}`;
         const differentiators = competitor.differentiators
           .map(diff => `<li>${diff}</li>`)
           .join('\n');
+
+        // PA-APIから取得した競合商品の詳細情報
+        const detail = competitor.asin ? competitorDetails?.get(competitor.asin) : undefined;
+
+        // 商品プレビュー（PA-API情報がある場合）
+        let productPreview = '';
+        if (detail) {
+          const imageUrl = detail.images?.primary || '';
+          const priceText = detail.price?.formatted || '';
+          const availabilityText = detail.availability || '';
+          const primeText = detail.isPrimeEligible ? '⭐ Prime対応' : '';
+
+          productPreview = `
+<div class="competitor-preview">
+<img src="${imageUrl}" alt="${competitor.name}" class="competitor-preview-img">
+<div class="competitor-preview-info">
+${priceText ? `<span class="competitor-actual-price">${priceText}</span>` : ''}
+${availabilityText ? `<span class="competitor-availability">📦 ${availabilityText}</span>` : ''}
+${primeText ? `<span class="competitor-prime">${primeText}</span>` : ''}
+</div>
+</div>`;
+        }
 
         // ASINがある場合はアフィリエイトリンクを生成
         const competitorLink = competitor.asin
@@ -627,6 +653,7 @@ ${features}
 ${differentiators}
 </ul>
 </div>
+${productPreview}
 ${competitorLink}
 </div>`;
       })

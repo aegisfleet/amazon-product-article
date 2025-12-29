@@ -709,6 +709,70 @@ a:hover {
   color: #232f3e;
 }
 
+/* Competitor Preview (PA-API Product Info) */
+.competitor-preview {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  background: linear-gradient(135deg, #f0f9ff, #e0f2fe);
+  border: 1px solid #0ea5e9;
+  border-radius: var(--radius-md);
+  padding: var(--spacing-sm) var(--spacing-md);
+  margin: var(--spacing-md) 0;
+}
+
+.competitor-preview-img {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  border-radius: var(--radius-sm);
+  background: white;
+  flex-shrink: 0;
+}
+
+.competitor-preview-info {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+  font-size: 0.875rem;
+}
+
+.competitor-actual-price {
+  font-weight: 700;
+  color: #b91c1c;
+  font-size: 1rem;
+}
+
+.competitor-availability {
+  color: #059669;
+  font-size: 0.8rem;
+}
+
+.competitor-prime {
+  color: #ff9900;
+  font-weight: 600;
+  font-size: 0.8rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  .competitor-preview {
+    background: linear-gradient(135deg, #0c4a6e, #075985);
+    border-color: #0284c7;
+  }
+
+  .competitor-preview-img {
+    background: #1e293b;
+  }
+
+  .competitor-actual-price {
+    color: #fca5a5;
+  }
+
+  .competitor-availability {
+    color: #6ee7b7;
+  }
+}
+
 /* Review Cards */
 .review-card {
   background: var(--color-bg-card);
