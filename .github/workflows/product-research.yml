@@ -10,9 +10,8 @@ on:
   workflow_dispatch:
     inputs:
       categories:
-        description: 'Product categories to search (comma-separated)'
+        description: 'Product categories to search (comma-separated, default: all)'
         required: false
-        default: 'Electronics,Home,Sports'
       max_results:
         description: 'Maximum results per category'
         required: false
@@ -48,7 +47,7 @@ jobs:
         AMAZON_ACCESS_KEY: ${{ secrets.AMAZON_ACCESS_KEY }}
         AMAZON_SECRET_KEY: ${{ secrets.AMAZON_SECRET_KEY }}
         AMAZON_PARTNER_TAG: ${{ secrets.AMAZON_PARTNER_TAG }}
-        PRODUCT_CATEGORIES: ${{ github.event.inputs.categories || 'Electronics,Home,Sports' }}
+        PRODUCT_CATEGORIES: ${{ github.event.inputs.categories }}
         MAX_RESULTS_PER_CATEGORY: ${{ github.event.inputs.max_results || '10' }}
         INPUT_ASINS: ${{ github.event.inputs.asins }}
       run: npm run search:products
