@@ -921,13 +921,13 @@ ${score >= 80 ? '自信を持っておすすめできる商品です。' :
     // *text* 形式のイタリック記法も除去
     sanitized = sanitized.replace(/\*([^*]+)\*/g, '$1');
 
-    // 連続する改行を1つの改行に正規化
-    sanitized = sanitized.replace(/\n{2,}/g, '\n');
+    // 連続する改行を段落区切りに変換
+    sanitized = sanitized.replace(/\n{2,}/g, '</p><p>');
 
-    // 各行に引用記号を付与
-    const lines = sanitized.split('\n').filter(line => line.trim() !== '');
-    const quotedLines = lines.map(line => `> ${line.trim()}`).join('\n>\n');
+    // 単一の改行は削除してテキストを連続させる
+    sanitized = sanitized.replace(/\n/g, ' ');
 
-    return `\n${quotedLines}\n`;
+    // HTMLのblockquoteタグを使用して確実にスタイルを適用
+    return `\n<blockquote>\n<p>${sanitized}</p>\n</blockquote>\n`;
   }
 }
