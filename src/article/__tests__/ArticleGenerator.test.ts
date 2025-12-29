@@ -274,7 +274,7 @@ describe('ArticleGenerator', () => {
       const content = '![テスト画像](https://example.com/image.jpg)';
       const optimized = generator.createMobileOptimizedLayout(content);
 
-      expect(optimized).toContain('.mobile-responsive-image');
+      expect(optimized).toContain('class="mobile-responsive-image"');
     });
   });
 
@@ -284,7 +284,7 @@ describe('ArticleGenerator', () => {
       const result = generator.insertAffiliateLinks(content, 'B08N5WRWNW');
 
       expect(result).toContain('amazon.co.jp/dp/B08N5WRWNW');
-      expect(result).toContain('.affiliate-link');
+      expect(result).toContain('class="affiliate-link');
       expect(result).toContain('本記事にはアフィリエイトリンクが含まれています');
     });
 
