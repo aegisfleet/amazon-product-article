@@ -319,7 +319,7 @@ ${updateInstruction}
 1. この種の製品（${product.category}）を購入するユーザーが一般的に重視するポイントを挙げる
 2. 同価格帯の一般的な競合製品と比較した際の、この商品の（スペック上の）強み・弱みを分析する
 3. 「一般的なユーザーの声」として、このカテゴリの製品によくある肯定・否定意見を記載する
-4. JSONの "sources" フィールドには、具体的なURLの代わりに "General Market Knowledge" または "Category Analysis" と記載する
+4. JSONの "sources" フィールドには、具体的なURLの代わりに "General Market Knowledge" または "Category Analysis" と記載する（これは最終手段であり、可能な限り関連するカテゴリの一般的記事などのURLを探して記載すること）
 
 **あなたの出力は、最終的に必ず指定されたJSON形式である必要があります。**
 「調査できませんでした」という報告のみや、選択肢の提示のみで終わることは避けてください。
@@ -361,7 +361,10 @@ ${updateInstruction}
    - コストパフォーマンス評価
 
 5. 情報ソース
-   - 調査に使用した情報の出典（レビューサイト、ブログ、SNSなど）
+   - 調査に使用した情報の出典を具体的にリストアップしてください。
+   - 「Category Analysis」や「Market Research」のような抽象的な名称ではなく、具体的なWebサイト名や記事タイトルを記載してください。
+   - 可能な限り、情報の正確なURLを含めることを強く推奨します（アクセス可能な場合）。
+   - 例：「The Verge: [製品名] Review」「Reddit: [製品名] Discussion Thread」「価格.com: [製品名] クチコミ」など。
 
 重要：Amazonの商品ページへのアクセスが拒否される（403エラー等）場合でも調査を諦めないでください。
 以下の「商品名」や「型番/仕様」を使用してGoogle検索を行い、ブログ記事、レビューサイト、YouTube動画、競合他社の販売ページなどから情報を収集してください。
@@ -397,8 +400,8 @@ ${Object.entries(product.specifications).map(([key, value]) => `  - ${key}: ${va
     "userImpression": "ユーザーの総評・全体的な感想のまとめ",
     "sources": [
       {
-        "name": "情報源の名前",
-        "url": "URL（もしあれば）",
+        "name": "具体的な記事タイトルまたはサイト名（例：The Verge Review）。抽象的な名称（Category Analysis等）は避けること。",
+        "url": "https://...（可能な限り具体的なURLを記載。ない場合のみnull）",
         "credibility": "信頼性評価"
       }
     ],
