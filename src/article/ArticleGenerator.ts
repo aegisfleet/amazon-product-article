@@ -196,8 +196,20 @@ export class ArticleGenerator {
     // モバイルファーストのレスポンシブデザイン対応
     let mobileContent = content;
 
-    // 長い段落を分割
+    // blockquoteを一時的にプレースホルダーで置換（段落分割から保護）
+    const blockquotes: string[] = [];
+    mobileContent = mobileContent.replace(/<blockquote>[\s\S]*?<\/blockquote>/g, (match) => {
+      blockquotes.push(match);
+      return `__BLOCKQUOTE_${blockquotes.length - 1}__`;
+    });
+
+    // 長い段落を分割（blockquote以外のテキストにのみ適用）
     mobileContent = mobileContent.replace(/(.{200,}?)([。！？])/g, '$1$2\n\n');
+
+    // blockquoteを復元
+    blockquotes.forEach((bq, i) => {
+      mobileContent = mobileContent.replace(`__BLOCKQUOTE_${i}__`, bq);
+    });
 
     // テーブルをモバイル対応形式に変換
     mobileContent = this.convertTablesToMobileFriendly(mobileContent);
@@ -470,14 +482,21 @@ ${specifications}
       .join('\n');
 
     // ユーザーストーリーの生成
-    const userStories = investigation.analysis.userStories && investigation.analysis.userStories.length > 0
-      ? `### 🗣️ 購入者の生の声（ユーザーストーリー）
-${investigation.analysis.userImpression ? this.formatUserImpressionAsBlockquote(investigation.analysis.userImpression) : ''}
-${investigation.analysis.userStories.map(story => `#### ${story.userType}の体験談 (${story.scenario})
+    const userImpressionBlock = investigation.analysis.userImpression
+      ? this.formatUserImpressionAsBlockquote(investigation.analysis.userImpression)
+      : '';
+
+    const userStoriesBlock = investigation.analysis.userStories
+      .map(story => `#### ${story.userType}の体験談 (${story.scenario})
 
 > ${story.experience}
 > 
-> (評価: ${story.sentiment === 'positive' ? '満足' : story.sentiment === 'negative' ? '不満' : '普通'})`).join('\n\n')}`
+> (評価: ${story.sentiment === 'positive' ? '満足' : story.sentiment === 'negative' ? '不満' : '普通'})`)
+      .join('\n\n');
+
+
+    const userStories = investigation.analysis.userStories && investigation.analysis.userStories.length > 0
+      ? `### 🗣️ 購入者の生の声（ユーザーストーリー）\n${userImpressionBlock}\n\n${userStoriesBlock}`
       : '';
 
     const content = `## ユーザーレビュー分析
@@ -921,13 +940,14 @@ ${score >= 80 ? '自信を持っておすすめできる商品です。' :
     // *text* 形式のイタリック記法も除去
     sanitized = sanitized.replace(/\*([^*]+)\*/g, '$1');
 
-    // 連続する改行を段落区切りに変換
-    sanitized = sanitized.replace(/\n{2,}/g, '</p><p>');
+    // 全ての改行をスペースに変換して1つの連続したテキストにする
+    // （Hugoが改行をMarkdownとして解釈して余計なタグを挿入するのを防ぐ）
+    sanitized = sanitized.replace(/\n+/g, ' ');
 
-    // 単一の改行は削除してテキストを連続させる
-    sanitized = sanitized.replace(/\n/g, ' ');
+    // 連続するスペースを1つに正規化
+    sanitized = sanitized.replace(/\s{2,}/g, ' ').trim();
 
-    // HTMLのblockquoteタグを使用して確実にスタイルを適用
-    return `\n<blockquote>\n<p>${sanitized}</p>\n</blockquote>\n`;
+    // HTMLのblockquoteタグを使用して確実にスタイルを適用（1行で出力）
+    return `<blockquote><p>${sanitized}</p></blockquote>`;
   }
 }
