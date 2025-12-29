@@ -25,10 +25,7 @@ describe('AffiliateLinkManager', () => {
      */
     describe('Property 13: Affiliate Link Generation and Compliance', () => {
         // 有効なASINの生成器
-        const validAsinArbitrary = fc.stringOf(
-            fc.constantFrom(...'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789'.split('')),
-            { minLength: 10, maxLength: 10 }
-        );
+        const validAsinArbitrary = fc.stringMatching(/^[A-Z0-9]{10}$/);
 
         it('should generate valid affiliate links for any valid ASIN', () => {
             fc.assert(
@@ -172,10 +169,7 @@ describe('AffiliateLinkManager', () => {
     });
 
     describe('Link format generation', () => {
-        const validAsinArbitrary = fc.stringOf(
-            fc.constantFrom(...'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789'.split('')),
-            { minLength: 10, maxLength: 10 }
-        );
+        const validAsinArbitrary = fc.stringMatching(/^[A-Z0-9]{10}$/);
 
         const textArbitrary = fc.string({ minLength: 1, maxLength: 50 });
 
@@ -199,10 +193,7 @@ describe('AffiliateLinkManager', () => {
     });
 
     describe('Content link updates', () => {
-        const validAsinArbitrary = fc.stringOf(
-            fc.constantFrom(...'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789'.split('')),
-            { minLength: 10, maxLength: 10 }
-        );
+        const validAsinArbitrary = fc.stringMatching(/^[A-Z0-9]{10}$/);
 
         it('should update links with new partner tag', () => {
             fc.assert(
