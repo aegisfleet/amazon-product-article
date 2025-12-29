@@ -68,8 +68,8 @@ describe('ArticleGenerator Affiliate Links', () => {
 
         const result = await generator.generateArticle(mockProduct, mockInvestigation);
 
-        // Check if the competitor section uses just the name
-        expect(result.content).toContain('### Competitor Bとの比較');
+        // Check if the competitor section uses just the name (new card format)
+        expect(result.content).toContain('<h4>Competitor B</h4>');
         // Should not contain affiliate link for competitor without ASIN
         expect(result.content).not.toContain('https://www.amazon.co.jp/dp/B00COMPETITORB');
     });
