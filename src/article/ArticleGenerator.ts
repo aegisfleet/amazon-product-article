@@ -224,7 +224,7 @@ export class ArticleGenerator {
     // 商品名の後にアフィリエイトリンクを挿入
     let contentWithLinks = content.replace(
       /(## 商品詳細・購入)/,
-      `$1\n\n<a href="${affiliateUrl}" class="affiliate-link mobile-friendly-button"><strong>${asin}をAmazonで確認する</strong></a>\n`
+      `$1\n\n<a href="${affiliateUrl}" class="affiliate-link mobile-friendly-button" target="_blank" rel="noopener noreferrer"><strong>${asin}をAmazonで確認する</strong></a>\n`
     );
 
     // 記事の最後にアフィリエイト開示を追加
@@ -329,7 +329,7 @@ ${scoreEmoji} 総合評価: <strong>${score}点</strong> (${scoreText})
 
 **価格**: ${product.price.formatted}
 
-<a href="${affiliateUrl}" class="btn-amazon-hero">🛒 Amazonで詳細を見る</a>
+<a href="${affiliateUrl}" class="btn-amazon-hero" target="_blank" rel="noopener noreferrer">🛒 Amazonで詳細を見る</a>
 
 </div>
 
@@ -532,7 +532,7 @@ ${reviewAnalysis ? this.generateSentimentAnalysis(reviewAnalysis) : ''}`;
 
         // ASINがある場合はアフィリエイトリンクを生成
         const competitorLink = competitor.asin
-          ? `<a href="https://www.amazon.co.jp/dp/${competitor.asin}?tag=${affiliateTag}" class="btn-amazon-small">🛒 Amazonで見る</a>`
+          ? `<a href="https://www.amazon.co.jp/dp/${competitor.asin}?tag=${affiliateTag}" class="btn-amazon-small" target="_blank" rel="noopener noreferrer">🛒 Amazonで見る</a>`
           : '';
 
         return `<div class="competitor-card">
@@ -650,7 +650,7 @@ ${score >= 80 ? '自信を持っておすすめできる商品です。' :
 | ASIN | ${product.asin} |
 | 現在価格 | ${product.price.formatted} |
 
-<a href="${affiliateUrl}" class="btn-amazon-large">🛒 Amazonで購入する</a>
+<a href="${affiliateUrl}" class="btn-amazon-large" target="_blank" rel="noopener noreferrer">🛒 Amazonで購入する</a>
 
 </div>
 
