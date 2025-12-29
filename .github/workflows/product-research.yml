@@ -17,6 +17,9 @@ on:
         description: 'Maximum results per category'
         required: false
         default: '10'
+      asins:
+        description: 'Specific ASINs to investigate (comma-separated, overrides categories)'
+        required: false
 
 jobs:
   product-search:
@@ -47,6 +50,7 @@ jobs:
         AMAZON_PARTNER_TAG: ${{ secrets.AMAZON_PARTNER_TAG }}
         PRODUCT_CATEGORIES: ${{ github.event.inputs.categories || 'Electronics,Home,Sports' }}
         MAX_RESULTS_PER_CATEGORY: ${{ github.event.inputs.max_results || '10' }}
+        INPUT_ASINS: ${{ github.event.inputs.asins }}
       run: npm run search:products
     
     - name: Upload product data

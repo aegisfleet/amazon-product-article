@@ -9,6 +9,7 @@
  *   AMAZON_PARTNER_TAG - Amazon アソシエイトパートナータグ
  *   PRODUCT_CATEGORIES - 検索カテゴリ（カンマ区切り、オプション）
  *   MAX_RESULTS_PER_CATEGORY - カテゴリあたりの最大結果数（オプション）
+ *   INPUT_ASINS - 直接指定するASIN（カンマ区切り、オプション）
  */
 
 import fs from 'fs/promises';
@@ -25,6 +26,7 @@ interface CLIOptions {
     partnerTag: string;
     categories: string[];
     maxResults: number;
+    asins?: string[];
 }
 
 function getOptions(): CLIOptions {
@@ -43,13 +45,23 @@ function getOptions(): CLIOptions {
 
     const maxResults = parseInt(process.env.MAX_RESULTS_PER_CATEGORY || '10', 10);
 
-    return {
+    // Manual ASIN input from GitHub Actions input or environment variable
+    const inputAsinsEnv = process.env.INPUT_ASINS;
+    const asins = inputAsinsEnv ? inputAsinsEnv.split(',').map(a => a.trim()).filter(Boolean) : undefined;
+
+    const result: CLIOptions = {
         accessKey,
         secretKey,
         partnerTag,
         categories,
-        maxResults,
+        maxResults
     };
+
+    if (asins) {
+        result.asins = asins;
+    }
+
+    return result;
 }
 
 async function ensureOutputDirectories(): Promise<void> {
@@ -84,6 +96,11 @@ async function main(): Promise<void> {
         logger.info(`Categories: ${options.categories.join(', ')}`);
         logger.info(`Max results per category: ${options.maxResults}`);
 
+        if (options.asins && options.asins.length > 0) {
+            logger.info(`Manual ASIN mode: investigating ${options.asins.length} products`);
+            logger.info(`Target ASINs: ${options.asins.join(', ')}`);
+        }
+
         await ensureOutputDirectories();
 
         // PA-API クライアントを初期化
@@ -99,7 +116,15 @@ async function main(): Promise<void> {
         const searcher = new ProductSearcher(papiClient);
         await searcher.initialize();
 
-        const session: SearchSession = await searcher.searchAllCategories();
+        let session: SearchSession;
+
+        if (options.asins && options.asins.length > 0) {
+            // Manual ASIN Search
+            session = await searcher.searchByAsins(options.asins);
+        } else {
+            // Category Search (with randomization and exclusion)
+            session = await searcher.searchAllCategories();
+        }
 
         logger.info(`Search completed: ${session.totalProducts} products found`);
 
