@@ -477,7 +477,7 @@ ${specifications}
 ${investigation.analysis.userImpression ? this.formatUserImpressionAsBlockquote(investigation.analysis.userImpression) : ''}
 ${investigation.analysis.userStories.map(story => `#### ${story.userType}の体験談 (${story.scenario})
 
-> "${story.experience}"
+> ${story.experience}
 > 
 > (評価: ${story.sentiment === 'positive' ? '満足' : story.sentiment === 'negative' ? '不満' : '普通'})`).join('\n\n')}`
       : '';
