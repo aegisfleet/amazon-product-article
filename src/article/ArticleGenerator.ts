@@ -697,6 +697,73 @@ ${score >= 80 ? '自信を持っておすすめできる商品です。' :
   private async generatePurchaseSection(product: Product, affiliateTag: string): Promise<ArticleSection> {
     const affiliateUrl = `https://www.amazon.co.jp/dp/${product.asin}?tag=${affiliateTag}`;
 
+    // ProductDetail型の追加フィールドを取得（存在すれば）
+    const productDetail = product as any;
+
+    // 商品情報の行を動的に構築
+    const infoRows: string[] = [];
+    infoRows.push(`| ASIN | ${product.asin} |`);
+    infoRows.push(`| 現在価格 | ${product.price.formatted} |`);
+
+    // カテゴリ
+    if (product.category) {
+      infoRows.push(`| カテゴリ | ${product.category} |`);
+    }
+
+    // ブランド
+    if (productDetail.brand) {
+      infoRows.push(`| ブランド | ${productDetail.brand} |`);
+    } else if (productDetail.manufacturer) {
+      infoRows.push(`| メーカー | ${productDetail.manufacturer} |`);
+    }
+
+    // モデル
+    if (productDetail.model) {
+      infoRows.push(`| モデル | ${productDetail.model} |`);
+    }
+
+    // 在庫状況
+    if (productDetail.availability) {
+      infoRows.push(`| 在庫状況 | ${productDetail.availability} |`);
+    }
+
+    // Prime対応
+    if (productDetail.isPrimeEligible !== undefined) {
+      infoRows.push(`| Prime対応 | ${productDetail.isPrimeEligible ? '✓ 対応' : '✗ 非対応'} |`);
+    }
+
+    // 発売日
+    if (productDetail.releaseDate) {
+      infoRows.push(`| 発売日 | ${productDetail.releaseDate} |`);
+    }
+
+    // 外部ID（EAN/ISBN/UPC）
+    if (productDetail.externalIds) {
+      if (productDetail.externalIds.ean) {
+        infoRows.push(`| EAN | ${productDetail.externalIds.ean} |`);
+      }
+      if (productDetail.externalIds.isbn) {
+        infoRows.push(`| ISBN | ${productDetail.externalIds.isbn} |`);
+      }
+      if (productDetail.externalIds.upc) {
+        infoRows.push(`| UPC | ${productDetail.externalIds.upc} |`);
+      }
+    }
+
+    // 言語
+    if (productDetail.languages && productDetail.languages.length > 0) {
+      infoRows.push(`| 言語 | ${productDetail.languages.join(', ')} |`);
+    }
+
+    // 著者/出演者
+    if (productDetail.contributors && productDetail.contributors.length > 0) {
+      const contributorList = productDetail.contributors
+        .slice(0, 3) // 上位3人まで
+        .map((c: { name: string; role: string }) => `${c.name} (${c.role})`)
+        .join(', ');
+      infoRows.push(`| 著者/出演者 | ${contributorList} |`);
+    }
+
     const content = `## 🛒 商品詳細・購入
 
 <div class="purchase-card">
@@ -705,8 +772,7 @@ ${score >= 80 ? '自信を持っておすすめできる商品です。' :
 
 | 項目 | 内容 |
 |:-----|:-----|
-| ASIN | ${product.asin} |
-| 現在価格 | ${product.price.formatted} |
+${infoRows.join('\n')}
 
 <a href="${affiliateUrl}" class="btn-amazon-large" target="_blank" rel="noopener noreferrer">🛒 Amazonで購入する</a>
 
