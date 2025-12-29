@@ -7,6 +7,17 @@
 import * as fc from 'fast-check';
 import { ConfigManager, SystemConfig } from '../ConfigManager';
 
+// Helper: Generate non-empty alphanumeric string
+const nonEmptyAlphanumericString = (minLength: number, maxLength: number) =>
+  fc.stringMatching(new RegExp(`^[a-zA-Z0-9]{${minLength},${maxLength}}$`));
+
+// Helper: Generate string that contains '/' for repository format
+const repositoryString = () =>
+  fc.tuple(
+    fc.stringMatching(/^[a-zA-Z0-9]{1,20}$/),
+    fc.stringMatching(/^[a-zA-Z0-9]{1,20}$/)
+  ).map(([user, repo]) => `${user}/${repo}`);
+
 describe('ConfigManager Property-Based Tests', () => {
   let originalEnv: NodeJS.ProcessEnv;
   let consoleErrorSpy: jest.SpyInstance;
@@ -62,23 +73,23 @@ describe('ConfigManager Property-Based Tests', () => {
       fc.asyncProperty(
         // Generate valid configuration data
         fc.record({
-          amazonAccessKey: fc.string({ minLength: 10, maxLength: 50 }),
-          amazonSecretKey: fc.string({ minLength: 20, maxLength: 100 }),
-          amazonPartnerTag: fc.string({ minLength: 5, maxLength: 20 }),
+          amazonAccessKey: nonEmptyAlphanumericString(10, 50),
+          amazonSecretKey: nonEmptyAlphanumericString(20, 100),
+          amazonPartnerTag: nonEmptyAlphanumericString(5, 20),
           amazonRegion: fc.constantFrom('us-east-1', 'us-west-2', 'eu-west-1'),
-          julesApiKey: fc.string({ minLength: 20, maxLength: 100 }),
+          julesApiKey: nonEmptyAlphanumericString(20, 100),
           julesBaseUrl: fc.webUrl(),
           julesTimeout: fc.integer({ min: 1000, max: 60000 }),
-          githubToken: fc.string({ minLength: 20, maxLength: 100 }),
-          githubRepository: fc.string({ minLength: 5, maxLength: 50 }).filter(s => s.includes('/')),
+          githubToken: nonEmptyAlphanumericString(20, 100),
+          githubRepository: repositoryString(),
           githubBranch: fc.constantFrom('main', 'master', 'develop'),
           logLevel: fc.constantFrom('error', 'warn', 'info', 'debug'),
           retryAttempts: fc.integer({ min: 0, max: 10 }),
           retryDelay: fc.integer({ min: 100, max: 60000 }),
           maxConcurrentRequests: fc.integer({ min: 1, max: 20 }),
-          productCategories: fc.array(fc.string({ minLength: 3, maxLength: 20 }), { minLength: 1, maxLength: 10 }),
+          productCategories: fc.array(nonEmptyAlphanumericString(3, 20), { minLength: 1, maxLength: 10 }),
           maxResultsPerCategory: fc.integer({ min: 1, max: 50 }),
-          searchKeywords: fc.array(fc.string({ minLength: 2, maxLength: 15 }), { minLength: 1, maxLength: 10 }),
+          searchKeywords: fc.array(nonEmptyAlphanumericString(2, 15), { minLength: 1, maxLength: 10 }),
           minWordCount: fc.integer({ min: 500, max: 10000 }),
           includeImages: fc.boolean(),
         }),
@@ -134,32 +145,32 @@ describe('ConfigManager Property-Based Tests', () => {
           fc.record({
             scenario: fc.constant('missing_amazon_key'),
             // Don't generate amazonAccessKey - it will be missing entirely
-            amazonSecretKey: fc.string({ minLength: 20, maxLength: 100 }),
-            amazonPartnerTag: fc.string({ minLength: 5, maxLength: 20 }),
-            julesApiKey: fc.string({ minLength: 20, maxLength: 100 }),
-            githubToken: fc.string({ minLength: 20, maxLength: 100 }),
-            githubRepository: fc.string({ minLength: 5, maxLength: 50 }).filter(s => s.includes('/')),
+            amazonSecretKey: nonEmptyAlphanumericString(20, 100),
+            amazonPartnerTag: nonEmptyAlphanumericString(5, 20),
+            julesApiKey: nonEmptyAlphanumericString(20, 100),
+            githubToken: nonEmptyAlphanumericString(20, 100),
+            githubRepository: repositoryString(),
           }),
           // Invalid numeric ranges
           fc.record({
             scenario: fc.constant('invalid_retry_attempts'),
-            amazonAccessKey: fc.string({ minLength: 10, maxLength: 50 }),
-            amazonSecretKey: fc.string({ minLength: 20, maxLength: 100 }),
-            amazonPartnerTag: fc.string({ minLength: 5, maxLength: 20 }),
-            julesApiKey: fc.string({ minLength: 20, maxLength: 100 }),
-            githubToken: fc.string({ minLength: 20, maxLength: 100 }),
-            githubRepository: fc.string({ minLength: 5, maxLength: 50 }).filter(s => s.includes('/')),
+            amazonAccessKey: nonEmptyAlphanumericString(10, 50),
+            amazonSecretKey: nonEmptyAlphanumericString(20, 100),
+            amazonPartnerTag: nonEmptyAlphanumericString(5, 20),
+            julesApiKey: nonEmptyAlphanumericString(20, 100),
+            githubToken: nonEmptyAlphanumericString(20, 100),
+            githubRepository: repositoryString(),
             retryAttempts: fc.integer({ min: 11, max: 100 }), // Invalid: > 10
           }),
           // Invalid word count
           fc.record({
             scenario: fc.constant('invalid_word_count'),
-            amazonAccessKey: fc.string({ minLength: 10, maxLength: 50 }),
-            amazonSecretKey: fc.string({ minLength: 20, maxLength: 100 }),
-            amazonPartnerTag: fc.string({ minLength: 5, maxLength: 20 }),
-            julesApiKey: fc.string({ minLength: 20, maxLength: 100 }),
-            githubToken: fc.string({ minLength: 20, maxLength: 100 }),
-            githubRepository: fc.string({ minLength: 5, maxLength: 50 }).filter(s => s.includes('/')),
+            amazonAccessKey: nonEmptyAlphanumericString(10, 50),
+            amazonSecretKey: nonEmptyAlphanumericString(20, 100),
+            amazonPartnerTag: nonEmptyAlphanumericString(5, 20),
+            julesApiKey: nonEmptyAlphanumericString(20, 100),
+            githubToken: nonEmptyAlphanumericString(20, 100),
+            githubRepository: repositoryString(),
             minWordCount: fc.integer({ min: 10001, max: 50000 }), // Invalid: > 10000
           })
         ),
