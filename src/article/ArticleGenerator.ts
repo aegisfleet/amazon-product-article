@@ -564,7 +564,6 @@ ${specifications}
 > (評価: ${story.sentiment === 'positive' ? '満足' : story.sentiment === 'negative' ? '不満' : '普通'})`)
       .join('\n\n');
 
-
     const userStories = investigation.analysis.userStories && investigation.analysis.userStories.length > 0
       ? `### 🗣️ 購入者の生の声（ユーザーストーリー）\n${userImpressionBlock}\n\n${userStoriesBlock}`
       : '';
@@ -607,23 +606,6 @@ ${reviewAnalysis ? this.generateSentimentAnalysis(reviewAnalysis) : ''}`;
   ): Promise<ArticleSection> {
     let competitors = investigation.analysis.competitiveAnalysis;
 
-    // PA-API が利用可能で競合商品情報がある場合、取得できた商品のみにフィルタリング
-    // これにより、amazon.co.jp で販売されていない商品は非表示になる
-    if (competitorDetails && competitorDetails.size > 0) {
-      const originalCount = competitors.length;
-      competitors = competitors.filter(competitor => {
-        // ASINがない場合、または PA-API で取得できた場合のみ表示
-        if (!competitor.asin) {
-          return true; // ASINがない競合商品は表示（リンクなし）
-        }
-        return competitorDetails.has(competitor.asin);
-      });
-
-      if (competitors.length < originalCount) {
-        this.logger.info(`Filtered out ${originalCount - competitors.length} competitor(s) not available on amazon.co.jp`);
-      }
-    }
-
     // 各競合商品をカード形式で表示
     const competitorCards = competitors
       .map(competitor => {
@@ -657,8 +639,12 @@ ${primeText ? `<span class="competitor-prime">${primeText}</span>` : ''}
 </div>`;
         }
 
-        // ASINがある場合はアフィリエイトリンクを生成
-        const competitorLink = competitor.asin
+        // PA-APIが実行された場合（competitorDetailsが存在する場合）、
+        // ASINが存在しても詳細情報が取得できなかった（エラーになった）商品はリンクを表示しない
+        const shouldShowLink = competitor.asin && (!competitorDetails || competitorDetails.has(competitor.asin));
+
+        // アフィリエイトリンクを生成
+        const competitorLink = shouldShowLink
           ? `<a href="https://www.amazon.co.jp/dp/${competitor.asin}?tag=${affiliateTag}" class="btn-amazon-small" target="_blank" rel="noopener noreferrer">🛒 Amazonで見る</a>`
           : '';
 

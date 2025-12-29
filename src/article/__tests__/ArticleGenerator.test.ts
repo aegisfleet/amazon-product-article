@@ -4,7 +4,7 @@
 
 import { ReviewAnalysisResult } from '../../analysis/ReviewAnalyzer';
 import { InvestigationResult } from '../../types/JulesTypes';
-import { Product } from '../../types/Product';
+import { Product, ProductDetail } from '../../types/Product';
 import { ArticleGenerator } from '../ArticleGenerator';
 
 describe('ArticleGenerator', () => {
@@ -208,6 +208,42 @@ describe('ArticleGenerator', () => {
       expect(result).toBeDefined();
       expect(result.content).toContain('<div class="product-hero-card">');
       expect(result.sections).toHaveLength(7);
+    });
+    it('should keep items but hide links for competitors with failed PA-API lookup', async () => {
+      const mockCompetitorDetails = new Map<string, ProductDetail>();
+
+      const result = await generator.generateArticle(
+        mockProduct,
+        mockInvestigation,
+        undefined,
+        undefined,
+        undefined,
+        mockCompetitorDetails
+      );
+
+      expect(result.content).toContain('競合商品A');
+      expect(result.content).not.toContain('amazon.co.jp/dp/B08COMPETITOR1');
+    });
+
+    it('should show links for competitors with successful PA-API lookup', async () => {
+      const mockDetail: ProductDetail = {
+        ...mockProduct,
+        asin: 'B08COMPETITOR1',
+      } as any;
+      const mockCompetitorDetails = new Map<string, ProductDetail>();
+      mockCompetitorDetails.set('B08COMPETITOR1', mockDetail);
+
+      const result = await generator.generateArticle(
+        mockProduct,
+        mockInvestigation,
+        undefined,
+        undefined,
+        undefined,
+        mockCompetitorDetails
+      );
+
+      expect(result.content).toContain('競合商品A');
+      expect(result.content).toContain('amazon.co.jp/dp/B08COMPETITOR1');
     });
   });
 
