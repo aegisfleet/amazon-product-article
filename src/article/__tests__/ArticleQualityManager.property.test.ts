@@ -175,7 +175,6 @@ category: Electronics
                 thumbnails: fc.array(fc.webUrl(), { maxLength: 5 })
             }),
             specifications: fc.dictionary(fc.string(), fc.string()),
-            availability: fc.constantFrom('在庫あり', '在庫切れ'),
             rating: fc.record({
                 average: fc.float({ min: 1, max: 5 }),
                 count: fc.integer({ min: 0, max: 10000 })

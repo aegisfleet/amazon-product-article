@@ -88,7 +88,6 @@ export class PAAPIClient {
         'ItemInfo.ManufactureInfo',
         'ItemInfo.ProductInfo',
         'Offers.Listings.Price',
-        'Offers.Listings.Availability.Type',
         'Offers.Summaries.HighestPrice',
         'Offers.Summaries.LowestPrice',
         'BrowseNodeInfo.BrowseNodes',
@@ -138,7 +137,6 @@ export class PAAPIClient {
         'ItemInfo.ManufactureInfo',
         'ItemInfo.ProductInfo',
         'Offers.Listings.Price',
-        'Offers.Listings.Availability.Type',
         'Offers.Summaries.HighestPrice',
         'Offers.Summaries.LowestPrice',
         'BrowseNodeInfo.BrowseNodes',
@@ -356,7 +354,6 @@ export class PAAPIClient {
       price,
       images,
       specifications: this.extractSpecifications(item),
-      availability: item.Offers?.Listings?.[0]?.Availability?.Message || 'Unknown',
       rating
     };
   }

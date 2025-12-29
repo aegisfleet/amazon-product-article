@@ -54,11 +54,6 @@ describe('JulesInvestigator Property Tests', () => {
             fc.string({ minLength: 3, maxLength: 50 }),
             { minKeys: 1, maxKeys: 10 }
           ),
-          availability: fc.oneof(
-            fc.constant('In Stock'),
-            fc.constant('Out of Stock'),
-            fc.constant('Limited Stock')
-          ),
           rating: fc.record({
             average: fc.float({ min: 1, max: 5 }),
             count: fc.integer({ min: 0, max: 10000 })
@@ -162,7 +157,6 @@ describe('JulesInvestigator Property Tests', () => {
             fc.string({ minLength: 2, maxLength: 20 }),
             { minKeys: 0, maxKeys: 5 }
           ),
-          availability: fc.string({ minLength: 5, maxLength: 20 }),
           rating: fc.record({
             average: fc.float({ min: 1, max: 5 }),
             count: fc.integer({ min: 0, max: 1000 })

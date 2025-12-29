@@ -34,7 +34,6 @@ describe('ArticleGenerator', () => {
         'ストレージ': '128GB',
         'カメラ': '12MP'
       },
-      availability: '在庫あり',
       rating: {
         average: 4.2,
         count: 150
@@ -336,7 +335,6 @@ describe('ArticleGenerator', () => {
         price: { amount: 1000, currency: 'JPY', formatted: '¥1,000' },
         images: { primary: '', thumbnails: [] },
         specifications: {},
-        availability: '不明',
         rating: { average: 0, count: 0 }
       };
 

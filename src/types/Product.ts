@@ -16,7 +16,6 @@ export interface Product {
     thumbnails: string[];
   };
   specifications: Record<string, string>;
-  availability: string;
   rating: {
     average: number;
     count: number;
