@@ -17,7 +17,6 @@ describe('ArticleGenerator Affiliate Links', () => {
             price: { amount: 1000, currency: 'JPY', formatted: '¥1,000' },
             images: { primary: 'img.jpg', thumbnails: [] },
             specifications: {},
-            availability: 'In Stock',
             rating: { average: 4.5, count: 100 }
         };
 

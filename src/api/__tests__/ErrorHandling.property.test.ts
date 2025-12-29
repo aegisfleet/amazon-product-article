@@ -48,7 +48,6 @@ class NetworkErrorMockClient extends PAAPIClient {
         price: { amount: 10, currency: 'USD', formatted: '$10.00' },
         images: { primary: 'test.jpg', thumbnails: [] },
         specifications: {},
-        availability: 'In Stock',
         rating: { average: 4.0, count: 100 }
       }],
       totalResults: 1,

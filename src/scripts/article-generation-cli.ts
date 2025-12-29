@@ -126,7 +126,6 @@ async function loadInvestigationResults(): Promise<InvestigationData[]> {
                     price: { amount: 0, currency: 'JPY', formatted: '' },
                     images: { primary: '', thumbnails: [] },
                     specifications: {},
-                    availability: '',
                     rating: { average: 0, count: 0 },
                 };
 

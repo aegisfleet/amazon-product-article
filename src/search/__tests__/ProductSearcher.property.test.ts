@@ -32,7 +32,6 @@ class MockPAAPIClient extends PAAPIClient {
         brand: `Brand${i + 1}`,
         model: `Model${i + 1}`
       },
-      availability: 'In Stock',
       rating: {
         average: 4.0 + (i * 0.2),
         count: 100 + i * 10
@@ -112,7 +111,6 @@ describe('ProductSearcher Property Tests', () => {
               expect(product).toHaveProperty('price');
               expect(product).toHaveProperty('images');
               expect(product).toHaveProperty('specifications');
-              expect(product).toHaveProperty('availability');
               expect(product).toHaveProperty('rating');
 
               // Verify field types and structure

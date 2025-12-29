@@ -50,7 +50,6 @@ describe('ReviewAnalyzer Property Tests', () => {
               fc.string({ minLength: 3, maxLength: 30 }),
               { minKeys: 1, maxKeys: 5 }
             ),
-            availability: fc.string({ minLength: 5, maxLength: 20 }),
             rating: fc.record({
               average: fc.float({ min: 1, max: 5, noNaN: true }),
               count: fc.integer({ min: 0, max: 1000 })

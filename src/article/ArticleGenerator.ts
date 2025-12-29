@@ -321,8 +321,7 @@ ${productDescription}
 ${scoreEmoji} 総合評価: <strong>${score}点</strong> (${scoreText})
 </div>
 
-**価格**: ${product.price.formatted}<br>
-**在庫**: ${product.availability}
+**価格**: ${product.price.formatted}
 
 <a href="${affiliateUrl}" class="btn-amazon-hero">🛒 Amazonで詳細を見る</a>
 
@@ -431,7 +430,6 @@ ${usageSection}`;
 - **価格**: ${product.price.formatted}
 - **カテゴリ**: ${product.category}
 - **平均評価**: 外部情報源を参照
-- **在庫状況**: ${product.availability}
 - **調査日**: ${investigation.analysis.lastInvestigated || '不明'}
 
 ### 主な仕様
@@ -652,13 +650,12 @@ ${score >= 80 ? '自信を持っておすすめできる商品です。' :
 |:-----|:-----|
 | ASIN | ${product.asin} |
 | 現在価格 | ${product.price.formatted} |
-| 在庫状況 | ${product.availability} |
 
 <a href="${affiliateUrl}" class="btn-amazon-large">🛒 Amazonで購入する</a>
 
 </div>
 
-*最新の価格や在庫状況は、購入前に必ずAmazonの商品ページでご確認ください。*`;
+*最新の価格は、購入前に必ずAmazonの商品ページでご確認ください。*`;
 
     return {
       title: '商品詳細・購入',
