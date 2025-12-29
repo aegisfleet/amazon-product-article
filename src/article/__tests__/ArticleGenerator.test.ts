@@ -45,6 +45,7 @@ describe('ArticleGenerator', () => {
       sessionId: 'test-session-123',
       product: mockProduct,
       analysis: {
+        productName: 'テスト商品 スマートフォン',
         positivePoints: [
           '画質が非常に鮮明で美しい',
           'バッテリー持ちが良好',
@@ -317,12 +318,14 @@ describe('ArticleGenerator', () => {
           userStories: [],
           userImpression: '',
           sources: []
+          // Note: productName is intentionally omitted to test ASIN fallback
         }
       };
 
       const result = await generator.generateArticle(mockProduct, emptyInvestigation);
       expect(result).toBeDefined();
-      expect(result.content).toContain('# テスト商品 スマートフォン');
+      // When productName is not set, should fallback to "Product {ASIN}"
+      expect(result.content).toContain('# Product B08N5WRWNW');
     });
 
     it('should handle products with minimal information', async () => {
