@@ -193,10 +193,10 @@ export class ArticleGenerator {
     // テーブルをモバイル対応形式に変換
     mobileContent = this.convertTablesToMobileFriendly(mobileContent);
 
-    // 画像にモバイル対応クラスを追加
+    // 画像をモバイル対応のHTML形式に変換
     mobileContent = mobileContent.replace(
       /!\[([^\]]*)\]\(([^)]+)\)/g,
-      '![${1}](${2}){: .mobile-responsive-image}'
+      '<img src="$2" alt="$1" class="mobile-responsive-image">'
     );
 
     // リストアイテムを読みやすく調整
@@ -215,7 +215,7 @@ export class ArticleGenerator {
     // 商品名の後にアフィリエイトリンクを挿入
     let contentWithLinks = content.replace(
       /(## 商品詳細・購入)/,
-      `$1\n\n[**${asin}をAmazonで確認する**](${affiliateUrl}){: .affiliate-link .mobile-friendly-button}\n`
+      `$1\n\n<a href="${affiliateUrl}" class="affiliate-link mobile-friendly-button"><strong>${asin}をAmazonで確認する</strong></a>\n`
     );
 
     // 記事の最後にアフィリエイト開示を追加
@@ -436,7 +436,7 @@ ${usageSection}`;
 
 ${specifications}
 
-![${product.title}](${product.images.primary}){: .product-main-image .mobile-responsive}`;
+<img src="${product.images.primary}" alt="${product.title}" class="product-main-image mobile-responsive">`;
 
     return {
       title: '商品概要',
