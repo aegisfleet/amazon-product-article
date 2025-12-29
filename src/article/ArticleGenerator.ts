@@ -604,7 +604,7 @@ ${reviewAnalysis ? this.generateSentimentAnalysis(reviewAnalysis) : ''}`;
     affiliateTag: string,
     competitorDetails?: Map<string, ProductDetail>
   ): Promise<ArticleSection> {
-    let competitors = investigation.analysis.competitiveAnalysis;
+    const competitors = investigation.analysis.competitiveAnalysis;
 
     // 各競合商品をカード形式で表示
     const competitorCards = competitors
