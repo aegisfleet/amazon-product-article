@@ -208,14 +208,14 @@ export class PAAPIClient {
             const detail = this.parseProductDetail(item);
             result.set(item.ASIN, detail);
           } catch (error) {
-            this.logger.warn(`Failed to parse product detail for ASIN ${item.ASIN}: ${error}`);
+            this.logger.warn(`Failed to parse product detail for ASIN ${item.ASIN}: ${error instanceof Error ? error.message : String(error)}`);
           }
         }
       }
 
       this.logger.info(`Successfully fetched ${result.size}/${validAsins.length} competitor product details`);
     } catch (error) {
-      this.logger.warn(`Failed to fetch competitor product details: ${error}`);
+      this.logger.warn(`Failed to fetch competitor product details: ${error instanceof Error ? error.message : String(error)}`);
       // Return empty map on failure (graceful degradation)
     }
 
