@@ -53,8 +53,9 @@
 }
 
 /* Dark Mode (System Preference) */
+/* Dark Mode (System Preference) */
 @media (prefers-color-scheme: dark) {
-    :root {
+    :root:not([data-theme="light"]) {
         --color-bg-body: #111827;
         /* Gray 900 */
         --color-bg-card: #1F2937;
@@ -71,4 +72,23 @@
         --color-primary-dark: #818CF8;
         /* Indigo 400 */
     }
+}
+
+/* Dark Mode (Manual Override) */
+[data-theme="dark"] {
+    --color-bg-body: #111827;
+    /* Gray 900 */
+    --color-bg-card: #1F2937;
+    /* Gray 800 */
+    --color-text-main: #F9FAFB;
+    /* Gray 50 */
+    --color-text-muted: #9CA3AF;
+    /* Gray 400 */
+    --color-border: #374151;
+    /* Gray 700 */
+
+    --color-primary: #6366F1;
+    /* Indigo 500 */
+    --color-primary-dark: #818CF8;
+    /* Indigo 400 */
 }

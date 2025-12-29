@@ -62,9 +62,9 @@ a:hover {
 
 .header-content {
   display: flex;
-  justify-content: space-between;
   align-items: center;
   height: 4rem;
+  gap: var(--spacing-md);
 }
 
 .brand {
@@ -74,10 +74,56 @@ a:hover {
   display: flex;
   align-items: center;
   gap: var(--spacing-sm);
+  margin-right: auto;
 }
 
 .brand-icon {
   color: var(--color-amazon-orange);
+}
+
+/* Theme Toggle */
+.theme-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: var(--radius-md);
+  color: var(--color-text-main);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition-base);
+}
+
+.theme-toggle:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+[data-theme="dark"] .theme-toggle:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.theme-toggle-icon {
+  font-size: 1.25rem;
+  line-height: 1;
+}
+
+.theme-toggle-icon::before {
+  content: '🌙';
+}
+
+@media (prefers-color-scheme: dark) {
+  html:not([data-theme="light"]) .theme-toggle-icon::before {
+    content: '🌞';
+  }
+}
+
+[data-theme="light"] .theme-toggle-icon::before {
+  content: '🌙';
+}
+
+[data-theme="dark"] .theme-toggle-icon::before {
+  content: '🌞';
 }
 
 /* Navigation */
@@ -100,6 +146,7 @@ a:hover {
   color: var(--color-text-main);
   font-size: 1.5rem;
   cursor: pointer;
+  padding: 0.25rem;
 }
 
 @media (min-width: 768px) {
