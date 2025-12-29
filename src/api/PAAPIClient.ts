@@ -163,6 +163,7 @@ export class PAAPIClient {
    * Get detailed product information for multiple ASINs (up to 10)
    * Returns a Map where keys are ASINs and values are ProductDetail objects
    * Failed lookups are silently omitted from the result
+   * If batch request fails (e.g., due to invalid ASINs), falls back to individual requests
    */
   async getMultipleProductDetails(asins: string[]): Promise<Map<string, ProductDetail>> {
     this.validateAuthentication();
@@ -199,6 +200,8 @@ export class PAAPIClient {
       ]
     };
 
+    let batchFailed = false;
+
     try {
       const response = await this.makeRequest(request);
 
@@ -214,9 +217,37 @@ export class PAAPIClient {
       }
 
       this.logger.info(`Successfully fetched ${result.size}/${validAsins.length} competitor product details`);
+
+      // Log which ASINs were not found
+      const foundAsins = new Set(result.keys());
+      const notFoundAsins = validAsins.filter(asin => !foundAsins.has(asin));
+      if (notFoundAsins.length > 0) {
+        this.logger.warn(`The following ASINs were not found via PA-API: ${notFoundAsins.join(', ')}`);
+      }
     } catch (error) {
-      this.logger.warn(`Failed to fetch competitor product details: ${error instanceof Error ? error.message : String(error)}`);
-      // Return empty map on failure (graceful degradation)
+      const errorMessage = error instanceof Error ? error.message : String(error);
+      this.logger.warn(`Batch request failed: ${errorMessage}`);
+
+      // Check if the error is due to invalid ASIN(s) - fall back to individual requests
+      if (errorMessage.includes('InvalidParameterValue') || errorMessage.includes('ItemIds')) {
+        batchFailed = true;
+        this.logger.info('Falling back to individual ASIN requests...');
+      }
+    }
+
+    // Fallback: If batch failed due to invalid ASINs, try fetching each ASIN individually
+    if (batchFailed) {
+      for (const asin of validAsins) {
+        try {
+          const detail = await this.getProductDetails(asin);
+          result.set(asin, detail);
+          this.logger.debug(`Successfully fetched product detail for ASIN ${asin}`);
+        } catch (error) {
+          // Individual ASIN not found or invalid - skip silently
+          this.logger.debug(`ASIN ${asin} not available: ${error instanceof Error ? error.message : String(error)}`);
+        }
+      }
+      this.logger.info(`Fallback completed: fetched ${result.size}/${validAsins.length} competitor product details`);
     }
 
     return result;
