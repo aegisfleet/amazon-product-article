@@ -222,7 +222,7 @@ export class ArticleGenerator {
     const affiliateUrl = `https://www.amazon.co.jp/dp/${asin}?tag=${affiliateTag}`;
 
     // 商品名の後にアフィリエイトリンクを挿入
-    let contentWithLinks = content.replace(
+    const contentWithLinks = content.replace(
       /(## 商品詳細・購入)/,
       `$1\n\n<a href="${affiliateUrl}" class="affiliate-link mobile-friendly-button" target="_blank" rel="noopener noreferrer"><strong>${asin}をAmazonで確認する</strong></a>\n`
     );
