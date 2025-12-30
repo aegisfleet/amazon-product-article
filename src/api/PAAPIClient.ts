@@ -627,6 +627,7 @@ export class PAAPIClient {
       /SnS May Promo Code Campaign Grocery/,
       /Grocery_over2000_BFW24/,
       /Winter Sale/i,
+      /家電 ストア/i,
       /[0-9]+[%％](\s*以上)?\s*OFF/i,
     ];
 

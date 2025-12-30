@@ -20,7 +20,8 @@ describe('PAAPIClient Category Extraction', () => {
             'SnS Engagement Test Grocery ASINs',
             'SnS May Promo Code Campaign Grocery',
             'Grocery_over2000_BFW24',
-            'ホーム＆キッチン Winter Sale'
+            'ホーム＆キッチン Winter Sale',
+            '家電 ストア'
         ];
 
         invalidCategories.forEach(cat => {
