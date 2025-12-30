@@ -12,6 +12,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}</title>
 <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
+<link rel="canonical" href="{{ .Permalink }}">
 
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="{{ if .IsHome }}website{{ else }}article{{ end }}">
@@ -59,3 +60,83 @@
     })();
 </script>
 <script src="{{ `js/theme.js` | relURL }}" defer></script>
+
+<!-- Structured Data (JSON-LD) -->
+<!-- WebSite Schema (Home) -->
+{{ if .IsHome }}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "{{ .Site.Title }}",
+  "url": "{{ .Site.BaseURL }}",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "{{ .Site.BaseURL }}search/?q={search_term_string}",
+    "query-input": "required name=search_term_string"
+  }
+}
+</script>
+{{ end }}
+
+<!-- Product Schema (Single Pages with ASIN) -->
+{{ if and .IsPage .Params.asin }}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "{{ .Title }}",
+  "image": [
+    {{ range $i, $e := .Params.images }}{{ if $i }},{{ end }}"{{ $e | absURL }}"{{ end }}
+   ],
+  "description": "{{ .Description }}",
+  "brand": {
+    "@type": "Brand",
+    "name": "{{ .Params.brand | default "Unknown" }}"
+  },
+  "sku": "{{ .Params.asin }}",
+  {{ if .Params.rating }}
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "{{ .Params.rating }}",
+    "reviewCount": "100"
+  },
+  {{ end }}
+  "offers": {
+    "@type": "Offer",
+    "url": "{{ .Permalink }}",
+    "priceCurrency": "JPY",
+    "price": "{{ .Params.price | default 0 }}",
+    "availability": "https://schema.org/InStock"
+  }
+}
+</script>
+{{ end }}
+
+<!-- BreadcrumbList Schema (All Pages) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+    "@type": "ListItem",
+    "position": 1,
+    "name": "Home",
+    "item": "{{ .Site.BaseURL }}"
+  }
+  {{ if .IsPage }}
+  ,{
+    "@type": "ListItem",
+    "position": 2,
+    "name": "{{ .Section }}",
+    "item": "{{ .Site.BaseURL }}{{ .Section | urlize }}"
+  },{
+    "@type": "ListItem",
+    "position": 3,
+    "name": "{{ .Title }}",
+    "item": "{{ .Permalink }}"
+  }
+  {{ end }}
+  ]
+}
+</script>

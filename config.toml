@@ -14,11 +14,12 @@ description = "このサイトでは、GoogleのJulesが調べた調査レポー
 hasCJKLanguage = true
 
 # Disable unused features for faster builds
-disableKinds = ["RSS", "sitemap", "robotsTXT"]
+# Disable unused features for faster builds
+# disableKinds = ["RSS", "sitemap", "robotsTXT"]
 
 # Output configuration
 [outputs]
-  home = ["HTML"]
+  home = ["HTML", "RSS", "Robots"]
   section = ["HTML"]
   page = ["HTML"]
 
