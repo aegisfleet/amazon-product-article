@@ -191,12 +191,22 @@ export class PAAPIClient {
       Resources: [
         'Images.Primary.Large',
         'Images.Primary.Medium',
+        'Images.Variants.Large',
         'ItemInfo.Title',
+        'ItemInfo.Features',
+        'ItemInfo.ManufactureInfo',
+        'ItemInfo.ProductInfo',
         'ItemInfo.ByLineInfo',
+        'ItemInfo.ContentInfo',
+        'ItemInfo.TechnicalInfo',
+        'ItemInfo.ExternalIds',
         'Offers.Listings.Price',
         'Offers.Listings.Availability.Message',
         'Offers.Listings.DeliveryInfo.IsPrimeEligible',
-        'Offers.Summaries.LowestPrice'
+        'Offers.Summaries.HighestPrice',
+        'Offers.Summaries.LowestPrice',
+        'BrowseNodeInfo.BrowseNodes',
+        'ParentASIN'
       ]
     };
 
