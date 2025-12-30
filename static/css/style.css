@@ -558,7 +558,7 @@ a:hover {
 }
 
 .pros-card h4 {
-  color: #059669;
+  color: var(--text-pros-title);
   margin-bottom: var(--spacing-md);
   font-size: 1.125rem;
 }
@@ -571,7 +571,7 @@ a:hover {
 }
 
 .cons-card h4 {
-  color: #dc2626;
+  color: var(--text-cons-title);
   margin-bottom: var(--spacing-md);
   font-size: 1.125rem;
 }
