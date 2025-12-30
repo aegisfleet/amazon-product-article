@@ -2,10 +2,21 @@
  * Product data types for Amazon PA-API v5
  */
 
+/**
+ * 階層カテゴリ情報
+ * PA-API BrowseNodesから抽出されたメイン/サブカテゴリを保持
+ */
+export interface CategoryInfo {
+  main: string;          // メインカテゴリ（上位カテゴリ）
+  sub?: string;          // サブカテゴリ（詳細カテゴリ）
+  browseNodeId?: string; // PA-API BrowseNode ID（将来の拡張用）
+}
+
 export interface Product {
   asin: string;
   title: string;
-  category: string;
+  category: string;           // 後方互換性のため維持（メインカテゴリ）
+  categoryInfo?: CategoryInfo; // 新規: 階層カテゴリ情報
   price: {
     amount: number;
     currency: string;

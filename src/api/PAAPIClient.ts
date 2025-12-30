@@ -12,7 +12,7 @@ import {
   PAAPIResponse,
   RateLimitConfig
 } from '../types/PAAPITypes';
-import { Product, ProductDetail, ProductSearchParams, ProductSearchResult } from '../types/Product';
+import { CategoryInfo, Product, ProductDetail, ProductSearchParams, ProductSearchResult } from '../types/Product';
 import { Logger } from '../utils/Logger';
 
 interface PAAPIErrorData {
@@ -446,11 +446,13 @@ export class PAAPIClient {
     const price = this.extractPrice(item);
     const images = this.extractImages(item);
     const rating = this.extractRating(item);
+    const categoryInfo = this.extractCategoryInfo(item);
 
     return {
       asin: item.ASIN,
       title: item.ItemInfo?.Title?.DisplayValue || 'Unknown Title',
-      category: this.extractCategory(item),
+      category: categoryInfo.main, // 後方互換性のためメインカテゴリを設定
+      categoryInfo,
       price,
       images,
       specifications: this.extractSpecifications(item),
@@ -591,10 +593,79 @@ export class PAAPIClient {
   }
 
   /**
-   * Extract category from PA-API item
+   * Check if a browse node name is a valid product category
+   * Filters out promotional, shipping, and store-related nodes
+   */
+  private isValidCategoryNode(displayName: string): boolean {
+    const invalidPatterns = [
+      /ブラックフライデー/i,
+      /サイバーマンデー/i,
+      /プライムデー/i,
+      /セール/i,
+      /Deal/i,
+      /AmazonGlobal/i,
+      /free shipping/i,
+      /新商品$/,
+      /ストア$/,
+      /^yobi$/i,
+      /特集/,
+      /おすすめ/,
+      /キャンペーン/,
+    ];
+
+    return !invalidPatterns.some(pattern => pattern.test(displayName));
+  }
+
+  /**
+   * Extract hierarchical category info from PA-API BrowseNodes
+   * BrowseNodes are typically ordered from specific (child) to general (parent)
+   * Filters out promotional and non-category nodes
+   */
+  private extractCategoryInfo(item: PAAPIItem): CategoryInfo {
+    const browseNodes = item.BrowseNodeInfo?.BrowseNodes || [];
+
+    // Filter to only valid category nodes
+    const validNodes = browseNodes.filter(node =>
+      node.DisplayName && this.isValidCategoryNode(node.DisplayName)
+    );
+
+    if (validNodes.length === 0) {
+      // Fall back to ContextFreeName if DisplayName is invalid
+      const contextFreeNode = browseNodes.find(node =>
+        node.ContextFreeName && this.isValidCategoryNode(node.ContextFreeName)
+      );
+      if (contextFreeNode) {
+        return {
+          main: contextFreeNode.ContextFreeName,
+          browseNodeId: contextFreeNode.Id
+        };
+      }
+      return { main: 'その他' };
+    }
+
+    if (validNodes.length === 1) {
+      const firstNode = validNodes[0]!;
+      return {
+        main: firstNode.DisplayName,
+        browseNodeId: firstNode.Id
+      };
+    }
+
+    // 複数ノードがある場合: [0]=詳細(サブ), [1]=上位(メイン)
+    const firstNode = validNodes[0]!;
+    const secondNode = validNodes[1];
+    return {
+      main: secondNode?.DisplayName || firstNode.DisplayName,
+      sub: firstNode.DisplayName,
+      browseNodeId: firstNode.Id
+    };
+  }
+
+  /**
+   * Extract category from PA-API item (backward compatibility)
    */
   private extractCategory(item: PAAPIItem): string {
-    return item.BrowseNodeInfo?.BrowseNodes?.[0]?.DisplayName || 'Unknown';
+    return this.extractCategoryInfo(item).main;
   }
 
   /**
