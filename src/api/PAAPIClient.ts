@@ -606,7 +606,6 @@ export class PAAPIClient {
       /AmazonGlobal/i,
       /free shipping/i,
       /新商品$/,
-      /ストア$/,
       /^yobi$/i,
       /特集/,
       /おすすめ/,
