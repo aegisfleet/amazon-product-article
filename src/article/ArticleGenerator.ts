@@ -2,7 +2,9 @@
  * Article_Generator - 調査結果からMarkdown記事として生成するコンポーネント
  */
 
+import { AffiliateLinkManager } from '../affiliate/AffiliateLinkManager';
 import { ReviewAnalysisResult } from '../analysis/ReviewAnalyzer';
+import { AffiliateLink } from '../types/AffiliateTypes';
 import { InvestigationResult } from '../types/JulesTypes';
 import { Product, ProductDetail } from '../types/Product';
 import { Logger } from '../utils/Logger';
@@ -70,20 +72,16 @@ export interface ArticleSection {
   requiredElements: string[];
 }
 
-export interface AffiliateLink {
-  asin: string;
-  url: string;
-  text: string;
-  position: number;
-}
 
 export class ArticleGenerator {
   private logger: Logger;
   private defaultTemplate: ArticleTemplate;
+  private affiliateManager: AffiliateLinkManager;
 
   constructor() {
     this.logger = Logger.getInstance();
     this.defaultTemplate = this.createDefaultTemplate();
+    this.affiliateManager = new AffiliateLinkManager();
   }
 
   /**
@@ -117,10 +115,18 @@ export class ArticleGenerator {
 
       const content = this.assembleArticle(sections, metadata);
       const mobileOptimizedContent = this.createMobileOptimizedLayout(content);
-      const contentWithAffiliateLinks = this.insertAffiliateLinks(mobileOptimizedContent, product.asin, affiliatePartnerTag);
+
+      // AffiliateLinkManagerを使用してリンクを管理
+      const contentWithAffiliateLinks = this.insertAffiliateLinks(mobileOptimizedContent, product, affiliatePartnerTag);
 
       const affiliateLinks = this.extractAffiliateLinks(contentWithAffiliateLinks);
       const wordCount = this.calculateWordCount(contentWithAffiliateLinks);
+
+      // 最後に関連コンプライアンスチェックを実行
+      const compliance = this.affiliateManager.checkCompliance(contentWithAffiliateLinks);
+      if (!compliance.isCompliant) {
+        this.logger.warn('Article generation completed with compliance issues', { issues: compliance.issues });
+      }
 
       const article: GeneratedArticle = {
         content: contentWithAffiliateLinks,
@@ -248,17 +254,22 @@ export class ArticleGenerator {
   /**
    * アフィリエイトリンクを挿入
    */
-  insertAffiliateLinks(content: string, asin: string, partnerTag?: string): string {
-    const affiliateTag = partnerTag || process.env.AMAZON_PARTNER_TAG || 'your-affiliate-tag';
-    const affiliateUrl = (asin === asin && (content as any).detailPageUrl) || `https://www.amazon.co.jp/dp/${asin}?tag=${affiliateTag}`;
+  insertAffiliateLinks(content: string, product: Product, partnerTag?: string): string {
+    if (partnerTag) {
+      this.affiliateManager.updateConfig({ partnerTag });
+    }
+
+    const affiliateLink = this.affiliateManager.generateLinkFromProduct(product);
+    const affiliateUrl = affiliateLink.url;
 
     // 商品名の後にアフィリエイトリンクを挿入
     const contentWithLinks = content.replace(
       /(## 商品詳細・購入)/,
-      `$1\n\n<a href="${affiliateUrl}" class="affiliate-link mobile-friendly-button" target="_blank" rel="noopener noreferrer"><strong>${asin}をAmazonで確認する</strong></a>\n`
+      `$1\n\n<a href="${affiliateUrl}" class="affiliate-link mobile-friendly-button" target="_blank" rel="noopener noreferrer"><strong>${product.asin}をAmazonで確認する</strong></a>\n`
     );
 
-    return contentWithLinks;
+    // 最後に開示文を挿入
+    return this.affiliateManager.insertDisclosure(contentWithLinks, 'bottom');
   }
 
   /**
@@ -285,7 +296,9 @@ export class ArticleGenerator {
     sections.push(await this.generateUserReviewsSection(investigation, reviewAnalysis, template.sections.userReviews));
 
     // 競合商品との比較（表形式）
-    sections.push(await this.generateCompetitiveAnalysisSection(investigation, template.sections.competitiveAnalysis, affiliateTag, competitorDetails));
+    if (competitorDetails) {
+      sections.push(await this.generateCompetitiveAnalysisSection(investigation, template.sections.competitiveAnalysis, affiliateTag, competitorDetails));
+    }
 
     // 購入推奨度
     sections.push(await this.generateRecommendationSection(investigation, template.sections.recommendation));
@@ -363,7 +376,8 @@ ${sourcesList}`;
     investigation: InvestigationResult,
     affiliateTag: string
   ): Promise<ArticleSection> {
-    const affiliateUrl = product.detailPageUrl || `https://www.amazon.co.jp/dp/${product.asin}?tag=${affiliateTag}`;
+    const affiliateLink = this.affiliateManager.generateLinkFromProduct(product);
+    const affiliateUrl = affiliateLink.url;
     const productDescription = investigation.analysis.productDescription ||
       `${product.title}は、${product.category}カテゴリの商品です。`;
 
@@ -647,7 +661,7 @@ ${primeText ? `<span class="competitor-prime">${primeText}</span>` : ''}
 
         // アフィリエイトリンクを生成
         const competitorLink = shouldShowLink
-          ? `<a href="${detail?.detailPageUrl || `https://www.amazon.co.jp/dp/${competitor.asin}?tag=${affiliateTag}`}" class="btn-amazon-small" target="_blank" rel="noopener noreferrer">🛒 Amazonで見る</a>`
+          ? `<a href="${detail?.detailPageUrl || this.affiliateManager.generateAffiliateLink(competitor.asin || '').url}" class="btn-amazon-small" target="_blank" rel="noopener noreferrer">🛒 Amazonで見る</a>`
           : '';
 
         return `<div class="competitor-card">
@@ -753,7 +767,8 @@ ${score >= 80 ? '自信を持っておすすめできる商品です。' :
    * 購入セクションを生成（下部）
    */
   private async generatePurchaseSection(product: Product, affiliateTag: string): Promise<ArticleSection> {
-    const affiliateUrl = product.detailPageUrl || `https://www.amazon.co.jp/dp/${product.asin}?tag=${affiliateTag}`;
+    const affiliateLink = this.affiliateManager.generateLinkFromProduct(product);
+    const affiliateUrl = affiliateLink.url;
 
     // ProductDetail型の追加フィールドを取得（存在すれば）
     const productDetail = product as any;
@@ -1047,7 +1062,7 @@ ${infoRows.join('\n')}
       const linkText = match[1];
       const linkUrl = match[2];
 
-      if (linkText && linkUrl && linkUrl.includes('amazon.co.jp') && linkUrl.includes('tag=')) {
+      if (linkText && linkUrl && linkUrl.includes('amazon.co.jp') && (linkUrl.includes('tag=') || linkUrl.includes('/dp/'))) {
         const asinMatch = linkUrl.match(/\/dp\/([A-Z0-9]{10})/);
         if (asinMatch && asinMatch[1]) {
           links.push({
