@@ -82,6 +82,24 @@
     margin-bottom: 0.25rem;
 }
 
+.result-meta {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 0.25rem;
+    font-size: 0.85rem;
+}
+
+.result-price {
+    color: var(--color-text-primary);
+    font-weight: 700;
+}
+
+.result-score {
+    color: #eab308;
+    /* Yellow-500 */
+    font-weight: 600;
+}
+
 .result-summary {
     display: block;
     font-size: 0.9rem;
@@ -103,6 +121,13 @@
 }
 
 @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(-10px); }
-    to { opacity: 1; transform: translateY(0); }
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
