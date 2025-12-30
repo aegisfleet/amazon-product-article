@@ -623,6 +623,8 @@ export class PAAPIClient {
       /^カテゴリー別$/,  // Amazon navigation node
       /Amazonビジネス/,
       /法人価格/,
+      /SnS Engagement Test Grocery ASINs/,
+      /Grocery_over2000_BFW24/,
       /[0-9]+[%％](\s*以上)?\s*OFF/i,
     ];
 
