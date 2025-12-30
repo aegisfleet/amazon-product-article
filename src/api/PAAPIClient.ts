@@ -611,6 +611,7 @@ export class PAAPIClient {
       /特集/,
       /おすすめ/,
       /キャンペーン/,
+      /^カテゴリー別$/,  // Amazon navigation node
     ];
 
     return !invalidPatterns.some(pattern => pattern.test(displayName));
