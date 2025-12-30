@@ -89,6 +89,10 @@ document.addEventListener('DOMContentLoaded', function () {
             return `
                 <a href="${item.permalink}" class="search-result-item">
                     <span class="result-title">${item.title}</span>
+                    <div class="result-meta">
+                        ${item.price ? `<span class="result-price">${item.price}</span>` : ''}
+                        ${item.score ? `<span class="result-score">🏆 ${item.score}点</span>` : ''}
+                    </div>
                     <span class="result-summary">${item.summary}</span>
                     ${item.categories ? `<span class="result-category">${item.categories[0]}</span>` : ''}
                 </a>
