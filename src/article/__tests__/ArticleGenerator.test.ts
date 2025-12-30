@@ -316,7 +316,7 @@ describe('ArticleGenerator', () => {
   describe('insertAffiliateLinks', () => {
     it('should insert affiliate links with proper format', () => {
       const content = '## 商品詳細・購入\n\n商品の詳細情報です。';
-      const result = generator.insertAffiliateLinks(content, 'B08N5WRWNW');
+      const result = generator.insertAffiliateLinks(content, mockProduct);
 
       expect(result).toContain('amazon.co.jp/dp/B08N5WRWNW');
       expect(result).toContain('class="affiliate-link');
@@ -327,7 +327,7 @@ describe('ArticleGenerator', () => {
     it('should use environment affiliate tag when available', () => {
       process.env.AMAZON_PARTNER_TAG = 'test-affiliate-tag';
       const content = '## 商品詳細・購入\n\n商品の詳細情報です。';
-      const result = generator.insertAffiliateLinks(content, 'B08N5WRWNW');
+      const result = generator.insertAffiliateLinks(content, mockProduct);
 
       expect(result).toContain('tag=test-affiliate-tag');
 
