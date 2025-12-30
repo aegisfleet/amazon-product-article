@@ -33,14 +33,14 @@
             {{ .Description | default (.Summary | truncate 100) }}
         </p>
         <div class="card-meta-ext">
-            {{ if .Params.score }}
-            <span class="card-rating">
-                ★ {{ .Params.score }}
-            </span>
-            {{ end }}
             {{ if .Params.price }}
             <span class="card-price">
-                {{ .Params.price }}
+                💰 {{ .Params.price }}
+            </span>
+            {{ end }}
+            {{ if .Params.score }}
+            <span class="card-score">
+                🏆 {{ .Params.score }}点
             </span>
             {{ end }}
         </div>

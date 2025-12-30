@@ -330,9 +330,18 @@ a:hover {
   font-size: 0.9em;
 }
 
-.card-rating {
-  color: #f59e0b;
-  font-weight: bold;
+.card-score {
+  color: #ca8a04;
+  font-weight: 700;
+  font-size: 0.9em;
+  background: #fef9c3;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+[data-theme="dark"] .card-score {
+  color: #fde047;
+  background: rgba(234, 179, 8, 0.2);
 }
 
 .card-price {
