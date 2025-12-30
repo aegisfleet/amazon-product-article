@@ -24,10 +24,17 @@ export class AffiliateLinkManager {
 
     constructor(config?: Partial<AffiliateLinkConfig>) {
         this.logger = Logger.getInstance();
-        const systemConfig = ConfigManager.getInstance().getConfig();
+
+        let partnerTag = '';
+        try {
+            partnerTag = ConfigManager.getInstance().getConfig().amazon.partnerTag;
+        } catch (error) {
+            // ConfigManager might not be initialized (e.g. in CLI or tests)
+            // This is acceptable as long as config.partnerTag is provided or updated later
+        }
 
         this.config = {
-            partnerTag: config?.partnerTag || systemConfig.amazon.partnerTag || '',
+            partnerTag: config?.partnerTag || partnerTag || '',
             marketplace: config?.marketplace || 'amazon.co.jp',
             linkStyle: config?.linkStyle || 'text',
             enableShortLink: config?.enableShortLink ?? true
