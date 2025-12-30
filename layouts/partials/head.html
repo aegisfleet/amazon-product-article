@@ -1,11 +1,11 @@
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-5TLPZJ1M1D"></script>
 <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+  gtag('js', new Date());
 
-    gtag('config', 'G-5TLPZJ1M1D');
+  gtag('config', 'G-5TLPZJ1M1D');
 </script>
 
 <meta charset="UTF-8">
@@ -18,11 +18,11 @@
 <meta property="og:type" content="{{ if .IsHome }}website{{ else }}article{{ end }}">
 <meta property="og:url" content="{{ .Permalink }}">
 <meta property="og:title"
-    content="{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}">
+  content="{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}">
 <meta property="og:description"
-    content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
+  content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
 <meta property="og:image"
-    content="{{ with .Params.images }}{{ index . 0 }}{{ else }}{{ `images/default-ogp.png` | absURL }}{{ end }}">
+  content="{{ with .Params.images }}{{ index . 0 }}{{ else }}{{ `images/default-ogp.png` | absURL }}{{ end }}">
 <meta property="og:site_name" content="{{ .Site.Title }}">
 <meta property="og:locale" content="ja_JP">
 
@@ -30,11 +30,11 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:url" content="{{ .Permalink }}">
 <meta name="twitter:title"
-    content="{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}">
+  content="{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}">
 <meta name="twitter:description"
-    content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
+  content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
 <meta name="twitter:image"
-    content="{{ with .Params.images }}{{ index . 0 }}{{ else }}{{ `images/default-ogp.png` | absURL }}{{ end }}">
+  content="{{ with .Params.images }}{{ index . 0 }}{{ else }}{{ `images/default-ogp.png` | absURL }}{{ end }}">
 
 <!-- Favicon -->
 <link rel="icon" type="image/png" href="{{ `favicon.png` | relURL }}">
@@ -44,20 +44,23 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Noto+Sans+JP:wght@400;500;700&display=swap"
-    rel="stylesheet">
+  href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Noto+Sans+JP:wght@400;500;700&display=swap"
+  rel="stylesheet">
 
 <!-- CSS -->
 <link rel="stylesheet" href="{{ `css/variables.css` | relURL }}">
 <link rel="stylesheet" href="{{ `css/style.css` | relURL }}">
+{{ if .IsHome }}
+<link rel="stylesheet" href="{{ `css/search.css` | relURL }}">
+{{ end }}
 
 <script>
-    (function () {
-        const savedTheme = localStorage.getItem('theme');
-        if (savedTheme) {
-            document.documentElement.setAttribute('data-theme', savedTheme);
-        }
-    })();
+  (function () {
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme) {
+      document.documentElement.setAttribute('data-theme', savedTheme);
+    }
+  })();
 </script>
 <script src="{{ `js/theme.js` | relURL }}" defer></script>
 

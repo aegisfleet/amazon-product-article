@@ -10,3 +10,6 @@
         </p>
     </div>
 </footer>
+{{ if .IsHome }}
+<script src="{{ `js/search.js` | relURL }}"></script>
+{{ end }}

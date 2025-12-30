@@ -1,0 +1,11 @@
+{{- $.Scratch.Add "index" slice -}}
+{{- range where .Site.RegularPages "Section" "articles" -}}
+    {{- $image := "" -}}
+    {{- with .Params.images -}}
+        {{- $image = index . 0 | relURL -}}
+    {{- end -}}
+    {{- $product_name := .Params.product_name | default .Title -}}
+    {{- $dict := dict "title" $product_name "permalink" .RelPermalink "categories" .Params.categories "summary" .Summary "image" $image "contents" .Plain -}}
+    {{- $.Scratch.Add "index" $dict -}}
+{{- end -}}
+{{- $.Scratch.Get "index" | jsonify -}}
