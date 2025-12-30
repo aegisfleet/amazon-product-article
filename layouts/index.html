@@ -33,7 +33,7 @@
     <div class="card-grid">
         {{ $articles := where .Site.RegularPages "Section" "articles" }}
         {{ $sorted := sort $articles ".Params.last_investigated" "desc" }}
-        {{ range first 6 $sorted }}
+        {{ range first 15 $sorted }}
         {{ partial "product-card.html" . }}
         {{ end }}
     </div>
