@@ -319,6 +319,26 @@ export class JulesInvestigator {
     const prompt = `【重要：出力言語の指定】
 すべての出力（productName、productDescription、productUsage、positivePoints、negativePoints、useCases、userStories、userImpression、sources、competitiveAnalysis、recommendationの各フィールドのテキスト）は、必ず日本語で記述してください。英語やその他の言語での出力は避けてください。
 
+【PA-API（Product Advertising API）の利用について】
+環境変数に設定された認証情報を使用して、Amazon PA-API v5から商品情報を取得してください：
+- AMAZON_ACCESS_KEY: PA-APIアクセスキー
+- AMAZON_SECRET_KEY: PA-APIシークレットキー  
+- AMAZON_PARTNER_TAG: アソシエイトタグ
+
+⚠️ **セキュリティ上の重要な注意事項**:
+- 認証情報（ACCESS_KEY、SECRET_KEY）は絶対にログ、コンソール出力、ファイル、コミットメッセージ、PRの説明文に含めないでください
+- 認証情報をハードコードしたり、プレーンテキストで保存したりしないでください
+- エラーメッセージにも認証情報を含めないでください
+
+PA-APIを使用して以下の情報を取得・活用してください：
+- 商品の詳細情報（タイトル、ブランド、価格、画像URL）
+- 商品の仕様・特徴
+- カテゴリ情報
+- 関連商品情報（競合分析用）
+
+PA-APIのエンドポイント: https://webservices.amazon.co.jp/paapi5/getitems
+リージョン: us-west-2（日本向けPA-API）
+
 商品「${product.title}」について以下の観点で詳細調査を実施してください：
 現在の日付: ${today}
 ${updateInstruction}
@@ -368,6 +388,7 @@ ${updateInstruction}
    - 価格、機能、品質の比較
    - 差別化ポイントの特定
    - **【必須】各競合商品のASINを必ず特定してください**（アフィリエイトリンク生成に使用）
+   - **PA-APIのSearchItemsエンドポイントを使用して競合商品を検索し、ASINを取得してください**
    - ASINが見つからない場合は "asin": null と記載
 
 4. 購買推奨度
