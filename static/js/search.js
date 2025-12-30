@@ -26,8 +26,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
         console.log('Search initialized');
 
-        // Fetch index.json
-        fetch('/amazon-product-article/index.json')
+        // Fetch index.json dynamically from data attribute
+        const searchIndexUrl = searchInput.dataset.searchIndexUrl || '/index.json';
+        fetch(searchIndexUrl)
             .then(response => response.json())
             .then(data => {
                 const searchIndex = data;
@@ -88,7 +89,7 @@ document.addEventListener('DOMContentLoaded', function () {
             const item = result.item;
             const priceDisplay = item.price ? `<span class="result-price">💰 ${item.price}</span>` : '';
             const scoreDisplay = item.score ? `<span class="result-score">🏆 ${item.score}点</span>` : '';
-            
+
             return `
                 <a href="${item.permalink}" class="search-result-item">
                     <div class="result-content">
