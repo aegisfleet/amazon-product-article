@@ -286,6 +286,13 @@ a:hover {
   font-weight: 600;
   margin-bottom: var(--spacing-sm);
   width: fit-content;
+  text-decoration: none;
+  transition: var(--transition-base);
+}
+
+.card-tag:hover {
+  background-color: var(--color-primary);
+  color: white;
 }
 
 .card-title {

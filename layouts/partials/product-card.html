@@ -12,10 +12,12 @@
     </div>
     <div class="card-content">
         <div class="card-header">
-            {{ if .Params.categories }}
-            <span class="card-tag">{{ index .Params.categories 0 }}</span>
-            {{ else }}
-            {{ with .Params.category }}<span class="card-tag">{{ . }}</span>{{ end }}
+            {{ $categories := .GetTerms "categories" }}
+            {{ if $categories }}
+            {{ $firstCat := index $categories 0 }}
+            <a href="{{ $firstCat.RelPermalink }}" class="card-tag">{{ $firstCat.LinkTitle }}</a>
+            {{ else if .Params.category }}
+            <span class="card-tag">{{ .Params.category }}</span>
             {{ end }}
             <h3 class="card-title">
                 <a href="{{ .RelPermalink }}">{{ .Title }}</a>
