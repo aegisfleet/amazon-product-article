@@ -621,6 +621,9 @@ export class PAAPIClient {
       /おすすめ/,
       /キャンペーン/,
       /^カテゴリー別$/,  // Amazon navigation node
+      /Amazonビジネス/,
+      /法人価格/,
+      /[0-9]+[%％](\s*以上)?\s*OFF/i,
     ];
 
     return !invalidPatterns.some(pattern => pattern.test(displayName));
