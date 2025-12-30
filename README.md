@@ -130,6 +130,7 @@ hugo
 | `AMAZON_SECRET_KEY` | Amazon PA-API シークレットキー |
 | `AMAZON_PARTNER_TAG` | Amazonアソシエイトタグ |
 | `JULES_API_KEY` | Google Jules APIキー |
+| `JULES_SOURCE` | Jules ソース名（例: sources/github/owner/repo） |
 | `GITHUB_TOKEN` | GitHub API トークン |
 | `GITHUB_REPOSITORY` | リポジトリ（owner/repo形式） |
 
