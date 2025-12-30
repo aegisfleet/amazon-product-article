@@ -22,7 +22,11 @@ describe('PAAPIClient Category Extraction', () => {
             'Grocery_over2000_BFW24',
             'ホーム＆キッチン Winter Sale',
             '家電 ストア',
-            'キッチン ストア'
+            'キッチン ストア',
+            'ホームストア',
+            'パソコン ストア',
+            'ドラッグストア', // Should be excluded based on user request "exclude EVERYTHING ending in store"
+            'Androidアプリストア'
         ];
 
         invalidCategories.forEach(cat => {
