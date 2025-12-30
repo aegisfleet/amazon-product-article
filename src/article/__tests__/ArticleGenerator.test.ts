@@ -7,6 +7,27 @@ import { InvestigationResult } from '../../types/JulesTypes';
 import { Product, ProductDetail } from '../../types/Product';
 import { ArticleGenerator } from '../ArticleGenerator';
 
+// Mock ConfigManager
+jest.mock('../../config/ConfigManager', () => {
+  return {
+    ConfigManager: {
+      getInstance: jest.fn().mockReturnValue({
+        getConfig: jest.fn().mockImplementation(() => ({
+          amazon: {
+            partnerTag: process.env.AMAZON_PARTNER_TAG || 'test-tag',
+            accessKey: 'test-access-key',
+            secretKey: 'test-secret-key'
+          },
+          jules: {
+            apiKey: 'test-api-key'
+          }
+        }))
+      }),
+      resetInstance: jest.fn()
+    }
+  };
+});
+
 describe('ArticleGenerator', () => {
   let generator: ArticleGenerator;
   let mockProduct: Product;
@@ -62,7 +83,7 @@ describe('ArticleGenerator', () => {
         competitiveAnalysis: [
           {
             name: '競合商品A',
-            asin: 'B08COMPETITOR1',
+            asin: 'B08COMPET1',
             priceComparison: '約10,000円安価',
             featureComparison: ['カメラ性能は同等', 'バッテリー容量が少ない'],
             differentiators: ['ブランド力', '品質の安定性']
@@ -170,7 +191,9 @@ describe('ArticleGenerator', () => {
 
   describe('generateArticle', () => {
     it('should generate a complete article with all required sections', async () => {
-      const result = await generator.generateArticle(mockProduct, mockInvestigation, mockReviewAnalysis);
+      const mockCompetitorDetails = new Map<string, ProductDetail>();
+      mockCompetitorDetails.set('B08COMPET1', { ...mockProduct, asin: 'B08COMPET1' } as any);
+      const result = await generator.generateArticle(mockProduct, mockInvestigation, mockReviewAnalysis, undefined, undefined, mockCompetitorDetails);
 
       expect(result).toBeDefined();
       expect(result.content).toContain('<div class="product-hero-card">');
@@ -203,7 +226,9 @@ describe('ArticleGenerator', () => {
     });
 
     it('should handle products without review analysis', async () => {
-      const result = await generator.generateArticle(mockProduct, mockInvestigation);
+      const mockCompetitorDetails = new Map<string, ProductDetail>();
+      mockCompetitorDetails.set('B08COMPET1', { ...mockProduct, asin: 'B08COMPET1' } as any);
+      const result = await generator.generateArticle(mockProduct, mockInvestigation, undefined, undefined, undefined, mockCompetitorDetails);
 
       expect(result).toBeDefined();
       expect(result.content).toContain('<div class="product-hero-card">');
@@ -222,16 +247,16 @@ describe('ArticleGenerator', () => {
       );
 
       expect(result.content).toContain('競合商品A');
-      expect(result.content).not.toContain('amazon.co.jp/dp/B08COMPETITOR1');
+      expect(result.content).not.toContain('amazon.co.jp/dp/B08COMPET1');
     });
 
     it('should show links for competitors with successful PA-API lookup', async () => {
       const mockDetail: ProductDetail = {
         ...mockProduct,
-        asin: 'B08COMPETITOR1',
+        asin: 'B08COMPET1',
       } as any;
       const mockCompetitorDetails = new Map<string, ProductDetail>();
-      mockCompetitorDetails.set('B08COMPETITOR1', mockDetail);
+      mockCompetitorDetails.set('B08COMPET1', mockDetail);
 
       const result = await generator.generateArticle(
         mockProduct,
@@ -243,7 +268,7 @@ describe('ArticleGenerator', () => {
       );
 
       expect(result.content).toContain('競合商品A');
-      expect(result.content).toContain('amazon.co.jp/dp/B08COMPETITOR1');
+      expect(result.content).toContain('amazon.co.jp/dp/B08COMPET1');
     });
   });
 
@@ -326,8 +351,9 @@ describe('ArticleGenerator', () => {
 
     it('should use environment affiliate tag when available', () => {
       process.env.AMAZON_PARTNER_TAG = 'test-affiliate-tag';
+      const localGenerator = new ArticleGenerator();
       const content = '## 商品詳細・購入\n\n商品の詳細情報です。';
-      const result = generator.insertAffiliateLinks(content, mockProduct);
+      const result = localGenerator.insertAffiliateLinks(content, mockProduct);
 
       expect(result).toContain('tag=test-affiliate-tag');
 
