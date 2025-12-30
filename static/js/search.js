@@ -84,17 +84,24 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         }
 
-        const html = uniqueResults.slice(0, 5).map(result => {
+        const html = uniqueResults.slice(0, 8).map(result => {
             const item = result.item;
+            const priceDisplay = item.price ? `<span class="result-price">💰 ${item.price}</span>` : '';
+            const scoreDisplay = item.score ? `<span class="result-score">🏆 ${item.score}点</span>` : '';
+            
             return `
                 <a href="${item.permalink}" class="search-result-item">
-                    <span class="result-title">${item.title}</span>
-                    <div class="result-meta">
-                        ${item.price ? `<span class="result-price">${item.price}</span>` : ''}
-                        ${item.score ? `<span class="result-score">🏆 ${item.score}点</span>` : ''}
+                    <div class="result-content">
+                        <div class="result-header">
+                            <span class="result-title">${item.title}</span>
+                            <div class="result-metrics">
+                                ${priceDisplay}
+                                ${scoreDisplay}
+                            </div>
+                        </div>
+                        <span class="result-summary">${item.summary || ''}</span>
+                        ${item.categories ? `<div class="result-categories">${item.categories.map(c => `<span class="category-tag">${c}</span>`).join('')}</div>` : ''}
                     </div>
-                    <span class="result-summary">${item.summary}</span>
-                    ${item.categories ? `<span class="result-category">${item.categories[0]}</span>` : ''}
                 </a>
             `;
         }).join('');
