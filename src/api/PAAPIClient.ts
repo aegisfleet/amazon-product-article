@@ -624,6 +624,7 @@ export class PAAPIClient {
       /Amazonビジネス/,
       /法人価格/,
       /SnS Engagement Test Grocery ASINs/,
+      /SnS May Promo Code Campaign Grocery/,
       /Grocery_over2000_BFW24/,
       /[0-9]+[%％](\s*以上)?\s*OFF/i,
     ];
