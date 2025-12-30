@@ -162,7 +162,9 @@ export class ArticleGenerator {
     const priceRange = this.determinePriceRange(product.price.amount);
     const price = product.price.formatted;
     const score = investigation.analysis.recommendation.score;
-    const subcategory = this.determineSubcategory(product);
+
+    // 階層カテゴリ: PA-APIのcategoryInfoがあればそれを使用
+    const subcategory = product.categoryInfo?.sub || this.determineSubcategory(product);
     const manufacturer = this.extractManufacturer(product);
 
     // Product images for Hugo front matter (filter out empty strings)
@@ -171,7 +173,7 @@ export class ArticleGenerator {
     const metadata: ArticleMetadata = {
       title,
       description,
-      category: product.category,
+      category: product.categoryInfo?.main || product.category,
       tags,
       publishDate: new Date(),
       asin: product.asin,

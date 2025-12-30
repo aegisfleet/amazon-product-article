@@ -16,8 +16,10 @@
             {{ if $categories }}
             {{ $firstCat := index $categories 0 }}
             <a href="{{ $firstCat.RelPermalink }}" class="card-tag">{{ $firstCat.LinkTitle }}</a>
+            {{ with .Params.subcategory }}<span class="card-tag-sub">{{ . }}</span>{{ end }}
             {{ else if .Params.category }}
             <span class="card-tag">{{ .Params.category }}</span>
+            {{ with .Params.subcategory }}<span class="card-tag-sub">{{ . }}</span>{{ end }}
             {{ end }}
             <h3 class="card-title">
                 <a href="{{ .RelPermalink }}">{{ .Title }}</a>
