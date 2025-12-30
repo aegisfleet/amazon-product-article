@@ -38,6 +38,9 @@
     --text-competitor-price: #b91c1c;
     --text-competitor-availability: #059669;
 
+    --text-pros-title: #059669; /* Emerald 600 */
+    --text-cons-title: #dc2626; /* Red 600 */
+
     /* Amazon Specific */
     --color-amazon-orange: #FF9900;
     --color-amazon-blue: #232F3E;
@@ -84,10 +87,10 @@
         --color-border: #374151;
         /* Gray 700 */
 
-        --color-primary: #6366F1;
-        /* Indigo 500 */
-        --color-primary-dark: #818CF8;
+        --color-primary: #818CF8;
         /* Indigo 400 */
+        --color-primary-dark: #A5B4FC;
+        /* Indigo 300 */
 
         /* Dark Mode Components */
         --bg-header: rgba(31, 41, 55, 0.8);
@@ -105,6 +108,9 @@
         --bg-competitor-img: #1e293b;
         --text-competitor-price: #fca5a5;
         --text-competitor-availability: #6ee7b7;
+
+        --text-pros-title: #6EE7B7; /* Emerald 300 to stand out on dark green bg */
+        --text-cons-title: #FCA5A5; /* Red 300 to stand out on dark red bg */
     }
 }
 
@@ -121,10 +127,10 @@
     --color-border: #374151;
     /* Gray 700 */
 
-    --color-primary: #6366F1;
-    /* Indigo 500 */
-    --color-primary-dark: #818CF8;
+    --color-primary: #818CF8;
     /* Indigo 400 */
+    --color-primary-dark: #A5B4FC;
+    /* Indigo 300 */
 
     /* Dark Mode Components */
     --bg-header: rgba(31, 41, 55, 0.8);
@@ -142,4 +148,7 @@
     --bg-competitor-img: #1e293b;
     --text-competitor-price: #fca5a5;
     --text-competitor-availability: #6ee7b7;
+    
+    --text-pros-title: #6EE7B7;
+    --text-cons-title: #FCA5A5;
 }
