@@ -12,11 +12,12 @@
 import dotenv from 'dotenv';
 import fs from 'fs/promises';
 import path from 'path';
+import { PAAPICache } from '../api/PAAPICache';
 import { PAAPIClient } from '../api/PAAPIClient';
 import { ArticleGenerator, GeneratedArticle } from '../article/ArticleGenerator';
 import { GitHubPublisher } from '../github/GitHubPublisher';
 import { InvestigationResult } from '../types/JulesTypes';
-import { Product } from '../types/Product';
+import { Product, ProductDetail } from '../types/Product';
 import { Logger } from '../utils/Logger';
 
 const logger = Logger.getInstance();
@@ -223,64 +224,117 @@ async function main(): Promise<void> {
             });
         }
 
-        // 各調査結果から記事を生成
-        let generatedCount = 0;
-        const generatedArticles: string[] = [];
-
-        // Initialize PA-API Client
+        // Initialize PA-API Client & Cache
         const paapiClient = new PAAPIClient();
-        if (options.accessKey && options.secretKey && options.partnerTag) {
+        const paapiCache = new PAAPICache();
+        const usePaapi = options.accessKey && options.secretKey && options.partnerTag;
+
+        if (usePaapi) {
             try {
                 paapiClient.authenticate(options.accessKey, options.secretKey, options.partnerTag);
             } catch (error) {
                 logger.error('Failed to authenticate with PA-API:', error);
-                // Continue? Or exit? If we demand prices, we should probably warn strongly or fail.
-                // For now, let's proceed but we won't get live data.
+                // Continue without PA-API
             }
         }
+
+        // --- BATCH FETCHING STRATEGY START ---
+        // 1. Collect all unique ASINs needed (Main products + Competitors)
+        const allAsins = new Set<string>();
+        for (const data of investigations) {
+            allAsins.add(data.product.asin);
+            for (const comp of data.investigation.analysis.competitiveAnalysis) {
+                if (comp.asin) {
+                    allAsins.add(comp.asin);
+                }
+            }
+        }
+
+        logger.info(`Total unique ASINs to process: ${allAsins.size}`);
+
+        // 2. Identify missing ASINs (not in cache or expired, and NOT marked invalid)
+        const asinsArray = Array.from(allAsins);
+        const missingAsins = paapiCache.getMissingAsins(asinsArray);
+        const invalidAsins = asinsArray.filter(asin => paapiCache.isInvalid(asin));
+
+        logger.info(`ASINs stats: Total: ${asinsArray.length}, Cache Hit: ${asinsArray.length - missingAsins.length - invalidAsins.length}, Known Invalid: ${invalidAsins.length}, To Fetch: ${missingAsins.length}`);
+
+        // 3. Fetch missing ASINs in batches if PA-API is enabled
+        if (usePaapi && missingAsins.length > 0) {
+            // Process in chunks of 10
+            const chunkSize = 10;
+            for (let i = 0; i < missingAsins.length; i += chunkSize) {
+                const chunk = missingAsins.slice(i, i + chunkSize);
+                try {
+                    logger.info(`Fetching batch ${Math.floor(i / chunkSize) + 1}/${Math.ceil(missingAsins.length / chunkSize)} (${chunk.length} items)...`);
+                    const results = await paapiClient.getMultipleProductDetails(chunk);
+
+                    // Update cache for found items
+                    for (const [asin, detail] of results.entries()) {
+                        paapiCache.set(asin, detail);
+                    }
+
+                    // Identify ASINs that were requested but NOT returned => Invalid/Not Found
+                    for (const asin of chunk) {
+                        if (!results.has(asin)) {
+                            logger.info(`Marking ASIN ${asin} as invalid (not found in PA-API)`);
+                            paapiCache.markInvalid(asin);
+                        }
+                    }
+
+                    // Save incrementally to prevent data loss on crash
+                    paapiCache.save();
+
+                    // Respect rate limits - wait a bit between batches if needed
+                    if (i + chunkSize < missingAsins.length) {
+                        await new Promise(resolve => setTimeout(resolve, 1000));
+                    }
+                } catch (error) {
+                    logger.warn(`Failed to fetch batch starting with ${chunk[0]}:`, error);
+                    // On batch error (e.g. network), we DO NOT mark as invalid, we just skip
+                }
+            }
+        } else if (!usePaapi && missingAsins.length > 0) {
+            logger.warn('PA-API credentials missing, skipping fetch for missing ASINs');
+        }
+        // --- BATCH FETCHING STRATEGY END ---
+
+        // 各調査結果から記事を生成
+        let generatedCount = 0;
+        const generatedArticles: string[] = [];
 
         for (const data of investigations) {
             try {
                 logger.info(`Processing article for: ${data.product.asin}`);
 
-                // Fetch live product data if possible
-                if (options.accessKey && options.secretKey && options.partnerTag) {
-                    try {
-                        logger.info(`Fetching live data from PA-API for ${data.product.asin}...`);
-                        const liveProduct = await paapiClient.getProductDetails(data.product.asin);
-                        // Merge live data into the product object
-                        data.product = {
-                            ...data.product,
-                            ...liveProduct,
-                            // Preserve fields that might not be in PA-API detail if needed, but getProductDetails returns a full ProductDetail which extends Product
-                        };
-                        // Update investigation product reference as well
-                        data.investigation.product = data.product;
-                        logger.info(`Successfully updated product data for ${data.product.asin}`);
-                    } catch (error) {
-                        // PA-APIで商品が見つからない = amazon.co.jpで販売されていない可能性
-                        logger.warn(`商品 ${data.product.asin} はamazon.co.jpで取得できませんでした。記事生成をスキップします:`, error);
-                        continue; // この商品の記事生成をスキップ
-                    }
+                // Get fresh product data from Cache
+                const cachedProduct = paapiCache.get(data.product.asin);
+
+                if (cachedProduct) {
+                    // Merge live data into the product object
+                    data.product = {
+                        ...data.product,
+                        ...cachedProduct,
+                    };
+                    data.investigation.product = data.product;
+                    logger.info(`Used cached product data for ${data.product.asin}`);
+                } else if (usePaapi) {
+                    // Only warn if we sought it but failed to get it
+                    logger.warn(`Product data not found for ${data.product.asin}, proceeding with basic info`);
                 }
 
-                // 競合商品のASINを抽出してPA-APIで情報取得
-                let competitorDetails: Map<string, import('../types/Product').ProductDetail> | undefined;
-                if (options.accessKey && options.secretKey && options.partnerTag) {
-                    const competitorAsins = data.investigation.analysis.competitiveAnalysis
-                        .filter(c => c.asin)
-                        .map(c => c.asin!);
+                // Get competitor details from Cache
+                const competitorDetails = new Map<string, ProductDetail>();
+                const competitorAsins = data.investigation.analysis.competitiveAnalysis
+                    .filter(c => c.asin)
+                    .map(c => c.asin!);
 
-                    if (competitorAsins.length > 0) {
-                        try {
-                            logger.info(`Fetching competitor product details for ${competitorAsins.length} ASINs...`);
-                            competitorDetails = await paapiClient.getMultipleProductDetails(competitorAsins);
-                            logger.info(`Successfully fetched ${competitorDetails.size} competitor product details`);
-                        } catch (error) {
-                            logger.warn('Failed to fetch competitor product details, continuing without:', error);
-                            // フォールバック: 競合商品情報なしで続行
-                        }
+                if (competitorAsins.length > 0) {
+                    const cachedCompetitors = paapiCache.getMultiple(competitorAsins);
+                    for (const [asin, detail] of cachedCompetitors.entries()) {
+                        competitorDetails.set(asin, detail);
                     }
+                    logger.info(`Retrieved ${competitorDetails.size}/${competitorAsins.length} competitor details from cache`);
                 }
 
                 logger.info(`Generating article for: ${data.product.title}`);
