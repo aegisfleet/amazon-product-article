@@ -596,25 +596,22 @@ a:hover {
   border-collapse: collapse;
   margin: var(--spacing-lg) 0;
   font-size: 0.95rem;
+  table-layout: auto;
 }
 
-/* モバイル向けスクロール対応 */
+/* モバイル向けスクロール対応 - テーブル全体をラップする形式 */
 @media (max-width: 640px) {
   .content table {
-    display: block;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
+    display: table;
+    width: max-content;
+    min-width: 100%;
     font-size: 0.85rem;
   }
 
-  .content table thead,
-  .content table tbody {
-    display: table;
-    min-width: 100%;
-  }
-
-  .content table tr {
-    display: table-row;
+  /* purchase-card内のテーブルはスクロール可能に */
+  .purchase-card {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
   }
 }
 
@@ -630,7 +627,8 @@ a:hover {
 .content th:first-child,
 .content td:first-child {
   white-space: nowrap;
-  min-width: 80px;
+  width: 120px;
+  min-width: 120px;
 }
 
 /* 内容列（2番目以降の列）は適切に折り返す */
