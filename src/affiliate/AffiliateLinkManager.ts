@@ -28,7 +28,7 @@ export class AffiliateLinkManager {
         let partnerTag = '';
         try {
             partnerTag = ConfigManager.getInstance().getConfig().amazon.partnerTag;
-        } catch (error) {
+        } catch (_error) {
             // ConfigManager might not be initialized (e.g. in CLI or tests)
             // This is acceptable as long as config.partnerTag is provided or updated later
         }
