@@ -629,6 +629,7 @@ export class PAAPIClient {
       /Winter Sale/i,
       /ストア$/i,
       /[0-9]+[%％](\s*以上)?\s*OFF/i,
+      /^Panasonic-HA-PersonalCare$/i,
     ];
 
     return !invalidPatterns.some(pattern => pattern.test(displayName));
