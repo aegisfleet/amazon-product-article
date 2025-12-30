@@ -10,7 +10,8 @@
     content="{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}">
 <meta property="og:description"
     content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
-<meta property="og:image" content="{{ `images/default-ogp.png` | absURL }}">
+<meta property="og:image"
+    content="{{ with .Params.images }}{{ index . 0 }}{{ else }}{{ `images/default-ogp.png` | absURL }}{{ end }}">
 <meta property="og:site_name" content="{{ .Site.Title }}">
 <meta property="og:locale" content="ja_JP">
 
@@ -21,7 +22,8 @@
     content="{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}">
 <meta name="twitter:description"
     content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
-<meta name="twitter:image" content="{{ `images/default-ogp.png` | absURL }}">
+<meta name="twitter:image"
+    content="{{ with .Params.images }}{{ index . 0 }}{{ else }}{{ `images/default-ogp.png` | absURL }}{{ end }}">
 
 <!-- Favicon -->
 <link rel="icon" type="image/png" href="{{ `favicon.png` | relURL }}">
