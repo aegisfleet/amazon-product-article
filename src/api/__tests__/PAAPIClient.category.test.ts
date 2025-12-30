@@ -21,7 +21,8 @@ describe('PAAPIClient Category Extraction', () => {
             'SnS May Promo Code Campaign Grocery',
             'Grocery_over2000_BFW24',
             'ホーム＆キッチン Winter Sale',
-            '家電 ストア'
+            '家電 ストア',
+            'キッチン ストア'
         ];
 
         invalidCategories.forEach(cat => {
