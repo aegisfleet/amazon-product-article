@@ -628,6 +628,7 @@ export class PAAPIClient {
       /Grocery_over2000_BFW24/,
       /Winter Sale/i,
       /家電 ストア/i,
+      /キッチン ストア/i,
       /[0-9]+[%％](\s*以上)?\s*OFF/i,
     ];
 
