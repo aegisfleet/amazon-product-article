@@ -16,7 +16,9 @@ describe('PAAPIClient Category Extraction', () => {
             'AmazonGlobal',
             'カテゴリー別',
             '10% OFF',
-            'Prime Day セール'
+            'Prime Day セール',
+            'SnS Engagement Test Grocery ASINs',
+            'Grocery_over2000_BFW24'
         ];
 
         invalidCategories.forEach(cat => {
