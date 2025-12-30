@@ -1,0 +1,132 @@
+name: Daily Maintenance
+
+permissions:
+  contents: write
+  pull-requests: write
+
+on:
+  schedule:
+    # Run daily at 17:00 JST (08:00 UTC)
+    - cron: '0 8 * * *'
+  workflow_dispatch:
+
+jobs:
+  cache-clean:
+    name: Clean Product Cache
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v6
+    
+    - name: Use Node.js
+      uses: actions/setup-node@v6
+      with:
+        node-version: '20.x'
+        cache: 'npm'
+    
+    - name: Install dependencies
+      run: npm ci
+    
+    - name: Clean cache
+      run: npx ts-node src/scripts/maintenance-clean-cache.ts
+      
+    - name: Commit changes
+      run: |
+        git config --global user.name 'github-actions[bot]'
+        git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+        git add data/cache/paapi-product-cache.json
+        # Only commit if there are changes
+        if ! git diff --staged --quiet; then
+          git commit -m "chore: clean paapi product cache"
+          git push
+        else
+          echo "No changes to commit"
+        fi
+
+  product-update:
+    name: Update Oldest Product
+    needs: cache-clean
+    runs-on: ubuntu-latest
+    outputs:
+      products-found: ${{ steps.search.outputs.products-found }}
+    
+    steps:
+    - uses: actions/checkout@v6
+    
+    - name: Use Node.js
+      uses: actions/setup-node@v6
+      with:
+        node-version: '20.x'
+        cache: 'npm'
+    
+    - name: Install dependencies
+      run: npm ci
+      
+    - name: Build project
+      run: npm run build
+
+    - name: Find oldest product
+      id: find-oldest
+      run: |
+        OLD_ASIN=$(npx ts-node src/scripts/maintenance-find-oldest.ts)
+        echo "Found oldest ASIN: $OLD_ASIN"
+        echo "asin=$OLD_ASIN" >> $GITHUB_OUTPUT
+
+    - name: Run product search
+      id: search
+      if: steps.find-oldest.outputs.asin != ''
+      env:
+        AMAZON_ACCESS_KEY: ${{ secrets.AMAZON_ACCESS_KEY }}
+        AMAZON_SECRET_KEY: ${{ secrets.AMAZON_SECRET_KEY }}
+        AMAZON_PARTNER_TAG: ${{ secrets.AMAZON_PARTNER_TAG }}
+        INPUT_ASINS: ${{ steps.find-oldest.outputs.asin }}
+      run: npm run search:products
+    
+    - name: Upload product data
+      if: steps.search.outputs.products-found == 'true'
+      uses: actions/upload-artifact@v6
+      with:
+        name: product-data
+        path: data/products/
+        retention-days: 7
+
+  jules-investigation:
+    name: Jules Investigation
+    needs: product-update
+    if: needs.product-update.outputs.products-found == 'true'
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v6
+    
+    - name: Use Node.js
+      uses: actions/setup-node@v6
+      with:
+        node-version: '20.x'
+        cache: 'npm'
+    
+    - name: Install dependencies
+      run: npm ci
+    
+    - name: Build project
+      run: npm run build
+    
+    - name: Download product data
+      uses: actions/download-artifact@v7
+      with:
+        name: product-data
+        path: data/products/
+    
+    - name: Start Jules investigation sessions
+      env:
+        JULES_API_KEY: ${{ secrets.JULES_API_KEY }}
+        JULES_SOURCE: sources/github/${{ github.repository }}
+        JULES_STARTING_BRANCH: ${{ github.ref_name }}
+        MAX_INVESTIGATION_PRODUCTS: '5'
+      run: npm run investigate
+    
+    - name: Upload session data
+      uses: actions/upload-artifact@v6
+      with:
+        name: session-data
+        path: data/sessions/
+        retention-days: 30
