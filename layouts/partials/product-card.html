@@ -37,7 +37,8 @@
             {{ end }}
         </div>
         <div class="card-footer">
-            <span class="article-meta">{{ .Date.Format "2006年01月02日" }}</span>
+            <span class="article-meta">{{ with .Params.last_investigated }}{{ time . | dateFormat "2006年01月02日" }}{{
+                else }}{{ .Date.Format "2006年01月02日" }}{{ end }}</span>
             <a href="{{ .RelPermalink }}" class="read-more">レビューを読む →</a>
         </div>
     </div>
