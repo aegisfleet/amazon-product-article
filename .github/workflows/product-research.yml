@@ -4,9 +4,9 @@ permissions:
   contents: read
 
 on:
-  # schedule:
-    # Run daily at 2 AM UTC
-    # - cron: '0 2 * * *'
+  schedule:
+    # Run daily at 5 AM JST (20:00 UTC)
+    - cron: '0 20 * * *'
   workflow_dispatch:
     inputs:
       categories:
