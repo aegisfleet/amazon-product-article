@@ -5,9 +5,23 @@ permissions:
 
 on:
   push:
-    branches: [ main, develop ]
+    branches: [ main ]
+    paths-ignore:
+      - 'data/**'
+      - 'content/**'
+      - 'static/**'
+      - '**.md'
+      - 'LICENSE'
+      - '.gitignore'
   pull_request:
     branches: [ main ]
+    paths-ignore:
+      - 'data/**'
+      - 'content/**'
+      - 'static/**'
+      - '**.md'
+      - 'LICENSE'
+      - '.gitignore'
 
 jobs:
   test:
