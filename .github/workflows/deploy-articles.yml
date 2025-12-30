@@ -5,6 +5,13 @@ on:
     branches: [main]
     paths:
       - 'data/**'
+      - 'layouts/**'
+      - 'static/**'
+      - 'content/**'
+      - 'config.toml'
+      - 'src/**'
+      - 'package.json'
+      - 'package-lock.json'
   workflow_dispatch:
 
 # GitHub Pages へのデプロイ権限
