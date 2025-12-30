@@ -11,40 +11,8 @@ on:
   workflow_dispatch:
 
 jobs:
-  cache-clean:
-    name: Clean Product Cache
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v6
-    
-    - name: Use Node.js
-      uses: actions/setup-node@v6
-      with:
-        node-version: '20.x'
-        cache: 'npm'
-    
-    - name: Install dependencies
-      run: npm ci
-    
-    - name: Clean cache
-      run: npx ts-node src/scripts/maintenance-clean-cache.ts
-      
-    - name: Commit changes
-      run: |
-        git config --global user.name 'github-actions[bot]'
-        git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-        git add data/cache/paapi-product-cache.json
-        # Only commit if there are changes
-        if ! git diff --staged --quiet; then
-          git commit -m "chore: clean paapi product cache"
-          git push
-        else
-          echo "No changes to commit"
-        fi
-
   product-update:
     name: Update Oldest Product
-    needs: cache-clean
     runs-on: ubuntu-latest
     outputs:
       products-found: ${{ steps.search.outputs.products-found }}
