@@ -374,7 +374,7 @@ ${sourcesList}`;
   private async generateProductHeroSection(
     product: Product,
     investigation: InvestigationResult,
-    affiliateTag: string
+    _affiliateTag: string
   ): Promise<ArticleSection> {
     const affiliateLink = this.affiliateManager.generateLinkFromProduct(product);
     const affiliateUrl = affiliateLink.url;
@@ -766,7 +766,7 @@ ${score >= 80 ? '自信を持っておすすめできる商品です。' :
   /**
    * 購入セクションを生成（下部）
    */
-  private async generatePurchaseSection(product: Product, affiliateTag: string): Promise<ArticleSection> {
+  private async generatePurchaseSection(product: Product, _affiliateTag: string): Promise<ArticleSection> {
     const affiliateLink = this.affiliateManager.generateLinkFromProduct(product);
     const affiliateUrl = affiliateLink.url;
 
