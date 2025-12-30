@@ -596,30 +596,25 @@ a:hover {
   border-collapse: collapse;
   margin: var(--spacing-lg) 0;
   font-size: 0.95rem;
-  display: block;
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
 }
 
-.content table thead,
-.content table tbody,
-.content table tr {
-  display: table;
-  width: 100%;
-  table-layout: fixed;
-}
-
+/* モバイル向けスクロール対応 */
 @media (max-width: 640px) {
   .content table {
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
     font-size: 0.85rem;
   }
 
   .content table thead,
-  .content table tbody,
-  .content table tr {
-    display: block;
-    width: max-content;
+  .content table tbody {
+    display: table;
     min-width: 100%;
+  }
+
+  .content table tr {
+    display: table-row;
   }
 }
 
@@ -628,16 +623,20 @@ a:hover {
   padding: var(--spacing-sm) var(--spacing-md);
   border: 1px solid var(--color-border);
   text-align: left;
-  white-space: nowrap;
+  word-break: break-word;
 }
 
-@media (max-width: 640px) {
+/* 項目列（最初の列）は幅を固定 */
+.content th:first-child,
+.content td:first-child {
+  white-space: nowrap;
+  min-width: 80px;
+}
 
-  .content th,
-  .content td {
-    white-space: normal;
-    min-width: 100px;
-  }
+/* 内容列（2番目以降の列）は適切に折り返す */
+.content th:not(:first-child),
+.content td:not(:first-child) {
+  min-width: 150px;
 }
 
 .content th {
