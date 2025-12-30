@@ -5,10 +5,12 @@
 export interface AffiliateLink {
     asin: string;
     url: string;
-    shortUrl: string;
+    shortUrl?: string; // Made optional as PA-API might not provide it
     text: string;
-    trackingId: string;
-    createdAt: Date;
+    trackingId?: string;
+    createdAt?: Date;
+    position?: number; // Added to match ArticleGenerator usage
+    type?: 'text' | 'button' | 'image'; // Added for flexibility
 }
 
 export interface AffiliateLinkConfig {

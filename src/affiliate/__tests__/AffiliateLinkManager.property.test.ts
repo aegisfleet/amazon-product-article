@@ -6,10 +6,24 @@
  */
 
 import * as fc from 'fast-check';
+import { ConfigManager } from '../../config/ConfigManager';
 import { AffiliateLinkManager } from '../AffiliateLinkManager';
 
 describe('AffiliateLinkManager', () => {
     let linkManager: AffiliateLinkManager;
+
+    beforeAll(async () => {
+        // Set dummy environment variables for testing
+        process.env.AMAZON_ACCESS_KEY = 'test-access-key';
+        process.env.AMAZON_SECRET_KEY = 'test-secret-key';
+        process.env.AMAZON_PARTNER_TAG = 'test-tag-21';
+        process.env.JULES_API_KEY = 'test-jules-key';
+        process.env.GITHUB_TOKEN = 'test-token';
+        process.env.GITHUB_REPOSITORY = 'test/repo';
+
+        const config = ConfigManager.getInstance();
+        await config.initialize();
+    });
 
     beforeEach(() => {
         linkManager = new AffiliateLinkManager({

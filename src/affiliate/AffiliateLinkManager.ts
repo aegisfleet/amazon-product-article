@@ -2,6 +2,7 @@
  * Affiliate_Link_Manager - Amazonアフィリエイトリンクの生成と管理
  */
 
+import { ConfigManager } from '../config/ConfigManager';
 import {
     AffiliateLink,
     AffiliateLinkConfig,
@@ -13,6 +14,7 @@ import {
     DisclosureConfig,
     LinkValidationResult
 } from '../types/AffiliateTypes';
+import { Product } from '../types/Product';
 import { Logger } from '../utils/Logger';
 
 export class AffiliateLinkManager {
@@ -22,8 +24,10 @@ export class AffiliateLinkManager {
 
     constructor(config?: Partial<AffiliateLinkConfig>) {
         this.logger = Logger.getInstance();
+        const systemConfig = ConfigManager.getInstance().getConfig();
+
         this.config = {
-            partnerTag: config?.partnerTag || process.env.AMAZON_PARTNER_TAG || '',
+            partnerTag: config?.partnerTag || systemConfig.amazon.partnerTag || '',
             marketplace: config?.marketplace || 'amazon.co.jp',
             linkStyle: config?.linkStyle || 'text',
             enableShortLink: config?.enableShortLink ?? true
@@ -37,19 +41,48 @@ export class AffiliateLinkManager {
     }
 
     /**
+     * 商品情報からアフィリエイトリンクを生成
+     * PA-APIから取得したdetailPageUrlがある場合はそれを優先する
+     */
+    generateLinkFromProduct(product: Product, text?: string): AffiliateLink {
+        this.logger.info(`Generating affiliate link from product: ${product.asin}`);
+
+        return this.generateAffiliateLink(
+            product.asin,
+            text || product.title,
+            product.detailPageUrl
+        );
+    }
+
+    /**
      * アフィリエイトリンクを生成
      */
-    generateAffiliateLink(asin: string, text?: string): AffiliateLink {
+    generateAffiliateLink(asin: string, text?: string, existingUrl?: string): AffiliateLink {
         this.logger.info(`Generating affiliate link for ASIN: ${asin}`);
 
         if (!this.validateASIN(asin)) {
             throw new Error(`Invalid ASIN format: ${asin}`);
         }
 
-        const baseUrl = this.getMarketplaceUrl();
-        const fullUrl = `${baseUrl}/dp/${asin}?tag=${this.config.partnerTag}`;
+        // 既存のURL（PA-API提供）がある場合はそれを使用し、tagを確実に付与/更新
+        let fullUrl: string;
+        if (existingUrl) {
+            try {
+                const url = new URL(existingUrl);
+                url.searchParams.set('tag', this.config.partnerTag);
+                fullUrl = url.toString();
+            } catch {
+                const baseUrl = this.getMarketplaceUrl();
+                fullUrl = `${baseUrl}/dp/${asin}?tag=${this.config.partnerTag}`;
+            }
+        } else {
+            const baseUrl = this.getMarketplaceUrl();
+            fullUrl = `${baseUrl}/dp/${asin}?tag=${this.config.partnerTag}`;
+        }
+
+        const baseUrlObj = new URL(fullUrl);
         const shortUrl = this.config.enableShortLink
-            ? `${baseUrl.replace('www.', '')}/dp/${asin}?tag=${this.config.partnerTag}`
+            ? `${baseUrlObj.protocol}//${baseUrlObj.hostname.replace('www.', '')}/dp/${asin}?tag=${this.config.partnerTag}`
             : fullUrl;
 
         return {
@@ -58,7 +91,8 @@ export class AffiliateLinkManager {
             shortUrl,
             text: text || 'Amazonで購入する',
             trackingId: this.config.partnerTag,
-            createdAt: new Date()
+            createdAt: new Date(),
+            type: this.config.linkStyle
         };
     }
 
