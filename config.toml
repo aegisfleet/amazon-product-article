@@ -19,7 +19,7 @@ hasCJKLanguage = true
 
 # Output configuration
 [outputs]
-  home = ["HTML", "RSS", "Robots"]
+  home = ["HTML", "RSS", "Robots", "JSON"]
   section = ["HTML"]
   page = ["HTML"]
 
