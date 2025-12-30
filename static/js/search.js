@@ -89,9 +89,19 @@ document.addEventListener('DOMContentLoaded', function () {
             const item = result.item;
             const priceDisplay = item.price ? `<span class="result-price">💰 ${item.price}</span>` : '';
             const scoreDisplay = item.score ? `<span class="result-score">🏆 ${item.score}点</span>` : '';
+            const thumbnailHtml = item.image ? `
+                <div class="result-thumbnail">
+                    <img src="${item.image}" alt="${item.title}" loading="lazy">
+                </div>
+            ` : `
+                <div class="result-thumbnail no-image">
+                    <span>No Image</span>
+                </div>
+            `;
 
             return `
                 <a href="${item.permalink}" class="search-result-item">
+                    ${thumbnailHtml}
                     <div class="result-content">
                         <div class="result-header">
                             <span class="result-title">${item.title}</span>
