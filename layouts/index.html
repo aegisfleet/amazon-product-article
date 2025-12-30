@@ -25,11 +25,11 @@
     </div>
     <div class="category-grid"
         style="display: flex; gap: var(--spacing-md); flex-wrap: wrap; margin-bottom: var(--spacing-xl);">
-        {{ range $name, $taxonomy := .Site.Taxonomies.categories }}
-        {{ with $.Site.GetPage (printf "categories/%s" $name) }}
+        {{ range $name, $items := .Site.Taxonomies.categories }}
+        {{ with $.Site.GetPage (printf "/categories/%s" $name) }}
         <a href="{{ .RelPermalink }}"
             style="padding: 0.75rem 1.5rem; background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: 9999px; text-decoration: none; color: var(--color-text-primary); font-weight: 600; box-shadow: var(--shadow-sm); transition: all 0.2s ease;">
-            {{ $name }}
+            {{ .LinkTitle }}
         </a>
         {{ end }}
         {{ end }}
