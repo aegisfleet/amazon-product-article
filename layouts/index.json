@@ -1,1 +1,37 @@
-{{- $.Scratch.Add "index" slice -}}{{- range where .Site.RegularPages "Section" "articles" -}}{{- $image := "" -}}{{- with .Params.images -}}{{- $image = index . 0 | relURL -}}{{- end -}}{{- $product_name := .Params.product_name | default .Title -}}{{- $dict := dict "title" $product_name "permalink" .RelPermalink "categories" .Params.categories "summary" .Summary "image" $image "contents" .Plain "price" .Params.price "score" .Params.score -}}{{- $.Scratch.Add "index" $dict -}}{{- end -}}{{- $.Scratch.Get "index" | jsonify -}}
+{
+    {- $.Scratch.Add "index" slice -
+    }
+}{
+    {- range where .Site.RegularPages "Section""articles" -
+    }
+}{
+    {- $image := "" -
+    }
+}{
+    {- with .Params.images -
+    }
+}{
+    {- $image = index . 0 | relURL -
+    }
+}{
+    {- end -
+    }
+}{
+    {- $product_name := .Params.product_name | default .Title -
+    }
+}{
+    {- $summary := .Params.description | default (.Summary | plainify | truncate 200) -
+    }
+}{
+    {- $dict := dict "title" $product_name "permalink" .RelPermalink "categories" .Params.categories "summary" $summary "image" $image "contents" .Plain "price" .Params.price "score" .Params.score -
+    }
+}{
+    {- $.Scratch.Add "index" $dict -
+    }
+}{
+    {- end -
+    }
+}{
+    {- $.Scratch.Get "index" | jsonify -
+    }
+}
