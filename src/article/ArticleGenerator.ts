@@ -250,7 +250,7 @@ export class ArticleGenerator {
    */
   insertAffiliateLinks(content: string, asin: string, partnerTag?: string): string {
     const affiliateTag = partnerTag || process.env.AMAZON_PARTNER_TAG || 'your-affiliate-tag';
-    const affiliateUrl = `https://www.amazon.co.jp/dp/${asin}?tag=${affiliateTag}`;
+    const affiliateUrl = (asin === asin && (content as any).detailPageUrl) || `https://www.amazon.co.jp/dp/${asin}?tag=${affiliateTag}`;
 
     // 商品名の後にアフィリエイトリンクを挿入
     const contentWithLinks = content.replace(
@@ -363,7 +363,7 @@ ${sourcesList}`;
     investigation: InvestigationResult,
     affiliateTag: string
   ): Promise<ArticleSection> {
-    const affiliateUrl = `https://www.amazon.co.jp/dp/${product.asin}?tag=${affiliateTag}`;
+    const affiliateUrl = product.detailPageUrl || `https://www.amazon.co.jp/dp/${product.asin}?tag=${affiliateTag}`;
     const productDescription = investigation.analysis.productDescription ||
       `${product.title}は、${product.category}カテゴリの商品です。`;
 
@@ -647,7 +647,7 @@ ${primeText ? `<span class="competitor-prime">${primeText}</span>` : ''}
 
         // アフィリエイトリンクを生成
         const competitorLink = shouldShowLink
-          ? `<a href="https://www.amazon.co.jp/dp/${competitor.asin}?tag=${affiliateTag}" class="btn-amazon-small" target="_blank" rel="noopener noreferrer">🛒 Amazonで見る</a>`
+          ? `<a href="${detail?.detailPageUrl || `https://www.amazon.co.jp/dp/${competitor.asin}?tag=${affiliateTag}`}" class="btn-amazon-small" target="_blank" rel="noopener noreferrer">🛒 Amazonで見る</a>`
           : '';
 
         return `<div class="competitor-card">
@@ -753,7 +753,7 @@ ${score >= 80 ? '自信を持っておすすめできる商品です。' :
    * 購入セクションを生成（下部）
    */
   private async generatePurchaseSection(product: Product, affiliateTag: string): Promise<ArticleSection> {
-    const affiliateUrl = `https://www.amazon.co.jp/dp/${product.asin}?tag=${affiliateTag}`;
+    const affiliateUrl = product.detailPageUrl || `https://www.amazon.co.jp/dp/${product.asin}?tag=${affiliateTag}`;
 
     // ProductDetail型の追加フィールドを取得（存在すれば）
     const productDetail = product as any;
