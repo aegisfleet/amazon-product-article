@@ -73,7 +73,9 @@
 
 /* Result Item */
 .search-result-item {
-    display: block;
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
     padding: 0.75rem 1rem;
     border-left: 3px solid transparent;
     text-decoration: none;
@@ -89,6 +91,40 @@
     display: flex;
     flex-direction: column;
     gap: 0.25rem;
+    flex: 1;
+    min-width: 0; /* Prevent overflow issues in flex */
+}
+
+/* Thumbnail Styling */
+.result-thumbnail {
+    flex-shrink: 0;
+    width: 64px;
+    height: 64px;
+    border-radius: 8px;
+    overflow: hidden;
+    background: var(--color-bg-secondary);
+    border: 1px solid var(--color-border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.result-thumbnail img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.2s ease;
+}
+
+.search-result-item:hover .result-thumbnail img {
+    transform: scale(1.05);
+}
+
+.result-thumbnail.no-image {
+    font-size: 0.7rem;
+    color: var(--color-text-secondary);
+    text-align: center;
+    padding: 4px;
 }
 
 /* Header Row: Title + Metrics */
