@@ -5,10 +5,25 @@
         {{ with .Description }}<p class="article-meta">{{ . }}</p>{{ end }}
     </div>
 
-    <div class="card-grid">
+    <div class="sorting-controls"
+        style="margin-bottom: var(--spacing-lg); display: flex; justify-content: flex-end; align-items: center; gap: var(--spacing-sm);">
+        <label for="sort-select"
+            style="font-weight: 600; font-size: 0.875rem; color: var(--color-text-secondary);">並び替え:</label>
+        <select id="sort-select" class="sort-select"
+            style="padding: 0.5rem 2rem 0.5rem 1rem; border: 1px solid var(--color-border); border-radius: 8px; background-color: var(--color-bg-card); color: var(--color-text-primary); font-family: inherit; font-size: 0.875rem; cursor: pointer; appearance: none; background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%20fill%3D%22none%22%20stroke%3D%22currentColor%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpolyline%20points%3D%226%209%2012%2015%2018%209%22%3E%3C/polyline%3E%3C/svg%3E'); background-repeat: no-repeat; background-position: right 0.5rem center; background-size: 1.25rem;">
+            <option value="date-desc">新着順</option>
+            <option value="price-asc">価格の安い順</option>
+            <option value="price-desc">価格の高い順</option>
+            <option value="score-desc">評価の高い順</option>
+        </select>
+    </div>
+
+    <div id="product-grid" class="card-grid">
         {{ range .Pages }}
         {{ partial "product-card.html" . }}
         {{ end }}
     </div>
 </div>
+
+<script src="{{ `js/category-features.js` | relURL }}"></script>
 {{ end }}
