@@ -15,6 +15,7 @@ describe('PAAPIClient Category Extraction', () => {
             '【5％以上OFF】ホーム&キッチン用品 法人価格 | Amazonビジネス',
             'Amazon.co.jp: Panasonic(パナソニック) の家電商品',
             'Amazon.co.jp: 家電',
+            'PB_Home&Kitchen_9999',
             'AmazonGlobal',
             'カテゴリー別',
             '10% OFF',
