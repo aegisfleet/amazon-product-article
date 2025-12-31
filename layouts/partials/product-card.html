@@ -1,4 +1,11 @@
-<article class="card">
+{{ $priceRaw := 0 }}
+{{ if .Params.price }}
+{{ $priceRaw = index (findRE "[0-9]+" (replace .Params.price "," "")) 0 | default 0 }}
+{{ end }}
+{{ $dateRaw := .Date.Unix }}
+{{ with .Params.last_investigated }}{{ $dateRaw = (time .).Unix }}{{ end }}
+<article class="card" data-price="{{ $priceRaw }}" data-score="{{ .Params.score | default 0 }}"
+    data-date="{{ $dateRaw }}">
     <div class="card-image">
         <a href="{{ .RelPermalink }}" aria-label="{{ .Title }}のレビューを読む"
             style="display: block; width: 100%; height: 100%;">
