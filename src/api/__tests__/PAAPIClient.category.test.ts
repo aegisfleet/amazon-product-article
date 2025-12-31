@@ -13,6 +13,8 @@ describe('PAAPIClient Category Extraction', () => {
 
         const invalidCategories = [
             '【5％以上OFF】ホーム&キッチン用品 法人価格 | Amazonビジネス',
+            'Amazon.co.jp: Panasonic(パナソニック) の家電商品',
+            'Amazon.co.jp: 家電',
             'AmazonGlobal',
             'カテゴリー別',
             '10% OFF',

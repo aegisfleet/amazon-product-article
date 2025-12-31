@@ -631,6 +631,7 @@ export class PAAPIClient {
       /[0-9]+[%％](\s*以上)?\s*OFF/i,
       /^Panasonic-HA-PersonalCare$/i,
       /^N&N_Gadget_9999$/i,
+      /^Amazon/i,
       /^服$/,
     ];
 
