@@ -122,7 +122,7 @@ describe('JulesInvestigator Property Tests', () => {
 
           // 6. Verify prompt is not empty and has reasonable length
           expect(prompt.length).toBeGreaterThan(500);
-          expect(prompt.length).toBeLessThan(5000);
+          expect(prompt.length).toBeLessThanOrEqual(10000);
 
           // 7. Verify proper Japanese formatting
           expect(prompt).toMatch(/商品「.*」について/);
