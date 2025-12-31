@@ -268,8 +268,7 @@ export class ArticleGenerator {
       `$1\n\n<a href="${affiliateUrl}" class="affiliate-link mobile-friendly-button" target="_blank" rel="noopener noreferrer"><strong>${product.asin}をAmazonで確認する</strong></a>\n`
     );
 
-    // 最後に開示文を挿入
-    return this.affiliateManager.insertDisclosure(contentWithLinks, 'bottom');
+    return contentWithLinks;
   }
 
   /**
