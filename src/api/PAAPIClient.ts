@@ -629,7 +629,6 @@ export class PAAPIClient {
       /ストア$/i,
       /[0-9]+[%％](\s*以上)?\s*OFF/i,
       /^Panasonic-HA-PersonalCare$/i,
-      /9999$/,
       /^Amazon/i,
       /^服$/,
       /^HPC/i,  // Exclude all categories starting with "HPC" (e.g., HPC Recommendation Widget, HPC_CreatorInfoHub_xxx)
@@ -637,6 +636,7 @@ export class PAAPIClient {
       /大塚HPC_イオンサンプリング/i,
       /Coupon/i,  // Exclude all categories containing "Coupon" (e.g., "プロテイン・サプリメント祭り | Coupon | 大塚製薬")
       /スポーツプレイヤーのサポートアイテム/,
+      /_\d{4}$/,  // Exclude categories ending with "_" followed by 4 digits (e.g., "B637c621-7397-4d82-A4ba-A3e8942deb88_4401")
     ];
 
     return !invalidPatterns.some(pattern => pattern.test(displayName));
