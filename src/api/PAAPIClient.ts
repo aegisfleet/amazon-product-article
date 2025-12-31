@@ -636,6 +636,7 @@ export class PAAPIClient {
       /ネイチャーメイド/i,
       /大塚HPC_イオンサンプリング/i,
       /Coupon/i,  // Exclude all categories containing "Coupon" (e.g., "プロテイン・サプリメント祭り | Coupon | 大塚製薬")
+      /スポーツプレイヤーのサポートアイテム/,
     ];
 
     return !invalidPatterns.some(pattern => pattern.test(displayName));
