@@ -634,6 +634,7 @@ export class PAAPIClient {
       /^HPC/i,  // Exclude all categories starting with "HPC" (e.g., HPC Recommendation Widget, HPC_CreatorInfoHub_xxx)
       /ネイチャーメイド/i,
       /大塚HPC_イオンサンプリング/i,
+      /3P HPC/i,
       /Coupon/i,  // Exclude all categories containing "Coupon" (e.g., "プロテイン・サプリメント祭り | Coupon | 大塚製薬")
       /スポーツプレイヤーのサポートアイテム/,
       /_\d{4}$/,  // Exclude categories ending with "_" followed by 4 digits (e.g., "B637c621-7397-4d82-A4ba-A3e8942deb88_4401")
