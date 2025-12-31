@@ -339,6 +339,16 @@ PA-APIを使用して以下の情報を取得・活用してください：
 PA-APIのエンドポイント: https://webservices.amazon.co.jp/paapi5/getitems
 リージョン: us-west-2（日本向けPA-API）
 
+【調査用Pythonスクリプトについて】
+リポジトリ内に \`scripts/paapi_get_item.py\` というPA-API調査用のPythonスクリプトを用意しています。
+このスクリプトを使って商品情報を取得することができます：
+1. 必要なら \`pip install requests\` で依存関係をインストール
+2. スクリプト内の \`ItemIds\` を調査対象商品のASIN（${product.asin}）に変更
+3. \`python scripts/paapi_get_item.py\` を実行
+4. 結果は \`product_info.json\` に保存されます
+
+スクリプトは環境変数（AMAZON_ACCESS_KEY, AMAZON_SECRET_KEY, AMAZON_PARTNER_TAG）を使用して認証を行います。
+
 商品「${product.title}」について以下の観点で詳細調査を実施してください：
 現在の日付: ${today}
 ${updateInstruction}

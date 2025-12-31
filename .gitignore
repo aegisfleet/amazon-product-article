@@ -79,6 +79,13 @@ tmp/
 articles/
 content/articles/
 
+# PA-API output files
+product_info.json
+
+# Python cache
+__pycache__/
+*.pyc
+
 # Generated site (deployed via GitHub Pages)
 _site/
 public/
