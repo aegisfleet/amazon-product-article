@@ -630,6 +630,8 @@ export class PAAPIClient {
       /ストア$/i,
       /[0-9]+[%％](\s*以上)?\s*OFF/i,
       /^Panasonic-HA-PersonalCare$/i,
+      /^N&N_Gadget_9999$/i,
+      /^服$/,
     ];
 
     return !invalidPatterns.some(pattern => pattern.test(displayName));
