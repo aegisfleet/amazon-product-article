@@ -620,6 +620,8 @@ export class PAAPIClient {
       /特集/,
       /おすすめ/,
       /キャンペーン/,
+      /父の日/,
+      /母の日/,
       /^カテゴリー別$/,  // Amazon navigation node
       /Amazonビジネス/,
       /法人価格/,
