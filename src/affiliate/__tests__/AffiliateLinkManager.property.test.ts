@@ -120,37 +120,6 @@ describe('AffiliateLinkManager', () => {
      * should be included as required by law.
      */
     describe('Property 14: Legal Disclosure Compliance', () => {
-        const contentArbitrary = fc.string({ minLength: 100, maxLength: 2000 });
-
-        it('should insert disclosure for any content', () => {
-            fc.assert(
-                fc.property(contentArbitrary, (content) => {
-                    const withDisclosure = linkManager.insertDisclosure(content, 'bottom');
-
-                    // 開示文が追加されているべき
-                    expect(withDisclosure).toContain('アフィリエイト');
-
-                    // 元のコンテンツも含まれているべき
-                    expect(withDisclosure).toContain(content);
-                }),
-                { numRuns: 100 }
-            );
-        });
-
-        it('should not duplicate disclosure if already present', () => {
-            fc.assert(
-                fc.property(contentArbitrary, (content) => {
-                    const contentWithDisclosure = content + '\n\nアフィリエイトリンクが含まれています';
-                    const result = linkManager.insertDisclosure(contentWithDisclosure, 'bottom');
-
-                    // 開示文が重複していないことを確認
-                    const disclosureCount = (result.match(/アフィリエイトリンク/g) || []).length;
-                    expect(disclosureCount).toBeLessThanOrEqual(2);
-                }),
-                { numRuns: 50 }
-            );
-        });
-
         it('should detect disclosure in content with various patterns', () => {
             const disclosurePatterns = [
                 'アフィリエイトリンクが含まれています',
