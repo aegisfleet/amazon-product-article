@@ -55,10 +55,13 @@ export class ConfigManager {
   private static instance: ConfigManager;
   private config: SystemConfig | null = null;
   private logger = Logger.getInstance();
+  private static skipDotenv = false;
 
   private constructor() {
-    // Load environment variables
-    dotenv.config();
+    // Skip loading .env file in test environment to avoid overwriting test-defined env vars
+    if (!ConfigManager.skipDotenv && process.env.NODE_ENV !== 'test') {
+      dotenv.config();
+    }
   }
 
   public static getInstance(): ConfigManager {
