@@ -343,9 +343,13 @@ PA-APIのエンドポイント: https://webservices.amazon.co.jp/paapi5/getitems
 リポジトリ内に \`scripts/paapi_get_item.py\` というPA-API調査用のPythonスクリプトを用意しています。
 このスクリプトを使って商品情報を取得することができます：
 1. 必要なら \`pip install requests\` で依存関係をインストール
-2. スクリプト内の \`ItemIds\` を調査対象商品のASIN（${product.asin}）に変更
-3. \`python scripts/paapi_get_item.py\` を実行
-4. 結果は \`product_info.json\` に保存されます
+2. \`python scripts/paapi_get_item.py ${product.asin}\` を実行（ASINを引数として渡す）
+3. 結果は \`product_info.json\` に保存されます
+
+⚠️ **重要：スクリプトファイルの変更はコミットしないでください**
+スクリプトはコマンドライン引数でASINを受け取るため、スクリプト自体を編集する必要はありません。
+万が一スクリプトを変更した場合でも、その変更をコミット対象に含めないでください。
+コミットすべきファイルは \`data/investigations/${product.asin}.json\` のみです。
 
 スクリプトは環境変数（AMAZON_ACCESS_KEY, AMAZON_SECRET_KEY, AMAZON_PARTNER_TAG）を使用して認証を行います。
 

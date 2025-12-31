@@ -6,7 +6,8 @@ This script retrieves product information from Amazon Product Advertising API (P
 and saves it to a JSON file for use by Jules or other automated processes.
 
 Usage:
-    python paapi_get_item.py
+    python paapi_get_item.py <ASIN>
+    python paapi_get_item.py B06WRS9737
 
 Required Environment Variables:
     - AMAZON_ACCESS_KEY: Your PA-API access key
@@ -14,6 +15,7 @@ Required Environment Variables:
     - AMAZON_PARTNER_TAG: Your Amazon Associates partner tag
 """
 
+import argparse
 import datetime
 import hashlib
 import hmac
@@ -66,6 +68,17 @@ def get_signed_headers(access_key, secret_key, region, service, host, payload):
     return headers
 
 if __name__ == '__main__':
+    # Parse command line arguments
+    parser = argparse.ArgumentParser(
+        description='Retrieve product information from Amazon PA-API'
+    )
+    parser.add_argument(
+        'asin',
+        type=str,
+        help='Amazon Standard Identification Number (ASIN) of the product'
+    )
+    args = parser.parse_args()
+
     access_key = os.environ.get("AMAZON_ACCESS_KEY")
     secret_key = os.environ.get("AMAZON_SECRET_KEY")
     partner_tag = os.environ.get("AMAZON_PARTNER_TAG")
@@ -75,7 +88,7 @@ if __name__ == '__main__':
     service = 'ProductAdvertisingAPI'
 
     payload_dict = {
-        "ItemIds": ["B06WRS9737"],
+        "ItemIds": [args.asin],
         "PartnerTag": partner_tag,
         "PartnerType": "Associates",
         "Resources": [
@@ -107,7 +120,7 @@ if __name__ == '__main__':
             }
             with open("product_info.json", "w", encoding="utf-8") as f:
                 json.dump(data, f, indent=2, ensure_ascii=False)
-            print("Product information saved to product_info.json")
+            print(f"Product information for {args.asin} saved to product_info.json")
         else:
             print("Could not find item in response:")
             print(json.dumps(response_json, indent=2))
