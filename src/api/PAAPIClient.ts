@@ -634,6 +634,7 @@ export class PAAPIClient {
       /^服$/,
       /^HPC/i,  // Exclude all categories starting with "HPC" (e.g., HPC Recommendation Widget, HPC_CreatorInfoHub_xxx)
       /ネイチャーメイド/i,
+      /大塚HPC_イオンサンプリング/i,
     ];
 
     return !invalidPatterns.some(pattern => pattern.test(displayName));
