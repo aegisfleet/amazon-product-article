@@ -416,7 +416,7 @@ a:hover {
 .content blockquote {
   border-left: 4px solid var(--color-primary);
   padding-left: var(--spacing-lg);
-  font-style: italic;
+  font-style: normal;
   color: var(--color-text-muted);
   margin: var(--spacing-lg) 0;
 }
