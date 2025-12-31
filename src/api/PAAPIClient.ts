@@ -633,6 +633,7 @@ export class PAAPIClient {
       /9999$/,
       /^Amazon/i,
       /^服$/,
+      /^HPC Recommendation Widget$/i,
     ];
 
     return !invalidPatterns.some(pattern => pattern.test(displayName));
