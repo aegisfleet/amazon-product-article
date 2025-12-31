@@ -623,8 +623,7 @@ export class PAAPIClient {
       /^カテゴリー別$/,  // Amazon navigation node
       /Amazonビジネス/,
       /法人価格/,
-      /SnS Engagement Test Grocery ASINs/,
-      /SnS May Promo Code Campaign Grocery/,
+      /^SnS /i,  // Exclude all categories starting with "SnS" (e.g., SnS Engagement Test, SnS May Promo Code Campaign)
       /Grocery_over2000_BFW24/,
       /Winter Sale/i,
       /ストア$/i,
