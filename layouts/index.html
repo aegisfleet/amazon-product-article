@@ -14,8 +14,13 @@
     <!-- Search Section -->
     <div class="search-container">
         <div class="search-input-wrapper">
-            <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
-            <input type="text" id="search-input" class="search-input" placeholder="キーワードで探す..." autocomplete="off" data-search-index-url="{{ "index.json" | relURL }}">
+            <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+            <input type="text" id="search-input" class="search-input" placeholder="キーワードで探す..." autocomplete="off"
+                data-search-index-url="{{ " index.json" | relURL }}">
         </div>
         <div id="search-results"></div>
     </div>
@@ -39,12 +44,20 @@
         <h2>最新のレビュー</h2>
     </div>
 
-    <div class="card-grid">
+    <div class="card-grid" id="product-grid">
         {{ $articles := where .Site.RegularPages "Section" "articles" }}
         {{ $sorted := sort $articles ".Params.last_investigated" "desc" }}
-        {{ range first 15 $sorted }}
-        {{ partial "product-card.html" . }}
+        {{ range $index, $element := $sorted }}
+        <div class="card-wrapper{{ if ge $index 15 }} card-hidden{{ end }}">
+            {{ partial "product-card.html" . }}
+        </div>
         {{ end }}
     </div>
+
+    {{ if gt (len $sorted) 15 }}
+    <div class="load-more-container" id="load-more-container">
+        <button id="load-more-button" class="btn-load-more">もっと見る</button>
+    </div>
+    {{ end }}
 </section>
 {{ end }}
