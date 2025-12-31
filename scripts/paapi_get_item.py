@@ -75,7 +75,7 @@ if __name__ == '__main__':
     service = 'ProductAdvertisingAPI'
 
     payload_dict = {
-        "ItemIds": ["B07NFGJTQZ"],
+        "ItemIds": ["B06WRS9737"],
         "PartnerTag": partner_tag,
         "PartnerType": "Associates",
         "Resources": [
