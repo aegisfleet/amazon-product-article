@@ -1,3 +1,6 @@
+// Set NODE_ENV to test to prevent dotenv from loading .env file
+process.env.NODE_ENV = 'test';
+
 module.exports = {
   preset: 'ts-jest',
   testEnvironment: 'node',
