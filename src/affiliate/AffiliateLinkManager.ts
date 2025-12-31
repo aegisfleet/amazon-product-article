@@ -9,9 +9,6 @@ import {
     AmazonMarketplace,
     ComplianceCheckResult,
     ComplianceIssue,
-    DEFAULT_DISCLOSURE_EN,
-    DEFAULT_DISCLOSURE_JA,
-    DisclosureConfig,
     LinkValidationResult
 } from '../types/AffiliateTypes';
 import { Product } from '../types/Product';
@@ -20,7 +17,6 @@ import { Logger } from '../utils/Logger';
 export class AffiliateLinkManager {
     private logger: Logger;
     private config: AffiliateLinkConfig;
-    private disclosureConfig: DisclosureConfig;
 
     constructor(config?: Partial<AffiliateLinkConfig>) {
         this.logger = Logger.getInstance();
@@ -38,12 +34,6 @@ export class AffiliateLinkManager {
             marketplace: config?.marketplace || 'amazon.co.jp',
             linkStyle: config?.linkStyle || 'text',
             enableShortLink: config?.enableShortLink ?? true
-        };
-        this.disclosureConfig = {
-            style: 'footer',
-            text: DEFAULT_DISCLOSURE_JA,
-            language: 'ja',
-            includeInEveryPage: true
         };
     }
 
@@ -153,27 +143,7 @@ export class AffiliateLinkManager {
         };
     }
 
-    /**
-     * 開示文を挿入
-     */
-    insertDisclosure(content: string, position: 'top' | 'bottom' | 'both' = 'bottom'): string {
-        this.logger.info('Inserting affiliate disclosure');
 
-        const disclosure = this.formatDisclosure();
-
-        if (position === 'top' || position === 'both') {
-            content = disclosure + '\n\n' + content;
-        }
-
-        if (position === 'bottom' || position === 'both') {
-            // 既に開示文がある場合は追加しない
-            if (!content.includes('アフィリエイトリンク')) {
-                content = content + '\n\n---\n' + disclosure;
-            }
-        }
-
-        return content;
-    }
 
     /**
      * コンプライアンスチェック
@@ -288,13 +258,7 @@ export class AffiliateLinkManager {
         this.logger.info('Affiliate link config updated');
     }
 
-    /**
-     * 開示文設定を更新
-     */
-    updateDisclosureConfig(config: Partial<DisclosureConfig>): void {
-        this.disclosureConfig = { ...this.disclosureConfig, ...config };
-        this.logger.info('Disclosure config updated');
-    }
+
 
     // === Private methods ===
 
@@ -344,17 +308,7 @@ export class AffiliateLinkManager {
         return 'amazon.co.jp'; // デフォルト
     }
 
-    /**
-     * 開示文をフォーマット
-     */
-    private formatDisclosure(): string {
-        if (this.disclosureConfig.text) {
-            return this.disclosureConfig.text;
-        }
-        return this.disclosureConfig.language === 'ja'
-            ? DEFAULT_DISCLOSURE_JA
-            : DEFAULT_DISCLOSURE_EN;
-    }
+
 
     /**
      * 開示文があるかチェック
