@@ -10,13 +10,16 @@ Amazon PA-API v5とGoogle Julesを活用した商品調査記事の自動生成�
 
 ```
 amazon-product-article/
+├── scripts/                  # 調査用スクリプト（Python）
+│   ├── paapi_get_item.py     # 商品詳細取得
+│   └── paapi_search_items.py # 商品検索
 ├── src/                      # TypeScriptソースコード
 │   ├── api/                  # Amazon PA-API クライアント
 │   │   └── PAAPIClient.ts    # PA-API v5 通信処理
 │   ├── article/              # 記事生成モジュール
 │   │   ├── ArticleGenerator.ts       # Hugo記事生成
 │   │   └── ArticleQualityManager.ts  # 記事品質管理
-│   ├── scripts/              # CLIスクリプト
+│   ├── scripts/              # CLIエントリポイント（TypeScript）
 │   │   ├── product-search-cli.ts     # 商品検索
 │   │   ├── jules-investigation-cli.ts # Jules調査依頼
 │   │   ├── article-generation-cli.ts # 記事生成

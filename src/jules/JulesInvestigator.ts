@@ -340,14 +340,20 @@ PA-APIのエンドポイント: https://webservices.amazon.co.jp/paapi5/getitems
 リージョン: us-west-2（日本向けPA-API）
 
 【調査用Pythonスクリプトについて】
-リポジトリ内に \`scripts/paapi_get_item.py\` というPA-API調査用のPythonスクリプトを用意しています。
-このスクリプトを使って商品情報を取得することができます：
-1. 必要なら \`pip install requests\` で依存関係をインストール
-2. \`python scripts/paapi_get_item.py ${product.asin}\` を実行（ASINを引数として渡す）
-3. 結果は \`product_info.json\` に保存されます
+リポジトリ内に PA-API 調査用のPythonスクリプトを用意しています。これらを使って効率的に情報を取得してください：
+
+1. **商品詳細取得**: \`scripts/paapi_get_item.py\`
+   - 使い方: \`python scripts/paapi_get_item.py ${product.asin}\`
+   - 結果は \`product_info.json\` に保存されます。
+
+2. **商品検索（競合調査用）**: \`scripts/paapi_search_items.py\`
+   - 使い方: \`python scripts/paapi_search_items.py "検索キーワード"\`
+   - 結果は \`search_results.json\` に保存されます。競合商品のASIN特定に活用してください。
+
+※ 必要なら \`pip install requests\` で依存関係をインストールしてください。
 
 ⚠️ **重要：スクリプトファイルの変更はコミットしないでください**
-スクリプトはコマンドライン引数でASINを受け取るため、スクリプト自体を編集する必要はありません。
+スクリプトはコマンドライン引数でASINやキーワードを受け取るため、スクリプト自体を編集する必要はありません。
 万が一スクリプトを変更した場合でも、その変更をコミット対象に含めないでください。
 コミットすべきファイルは \`data/investigations/${product.asin}.json\` のみです。
 
@@ -429,9 +435,9 @@ ${brandInfo}
 - 仕様・詳細:
 ${Object.entries(product.specifications).map(([key, value]) => `  - ${key}: ${value}`).join('\n')}
 
-調査結果は以下のJSON形式で構造化して提供してください。
-なお、ファイル名は "data/investigations/${product.asin}.json" としてください：
-\`\`\`json
+    調査結果は以下のJSON形式で構造化して提供してください。
+    なお、ファイル名は "data/investigations/${product.asin}.json" としてください：
+    \`\`\`json
 {
   "analysis": {
     "productName": "正式な製品名（検索タグを除いた簡潔な名前）",

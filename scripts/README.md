@@ -2,9 +2,7 @@
 
 このディレクトリにはAmazon PA-APIを使用した調査用スクリプトが含まれています。
 
-## paapi_get_item.py
-
-Amazon Product Advertising API (PA-API) を使用して商品情報を取得するPythonスクリプトです。
+## 共通の準備
 
 ### 必要な環境変数
 
@@ -20,10 +18,15 @@ AMAZON_PARTNER_TAG=your_partner_tag
 pip install requests
 ```
 
+## paapi_get_item.py
+
+Amazon Product Advertising API (PA-API) を使用して指定したASINの商品情報を取得するPythonスクリプトです。
+
 ### 使い方
 
 ```bash
-python scripts/paapi_get_item.py
+python scripts/paapi_get_item.py <ASIN>
+# 例: python scripts/paapi_get_item.py B06WRS9737
 ```
 
 ### 出力
@@ -40,12 +43,22 @@ python scripts/paapi_get_item.py
 }
 ```
 
-### カスタマイズ
+## paapi_search_items.py
 
-- `ItemIds`: 取得したい商品のASINを配列で指定
-- `Resources`: 取得したい情報のリソースを指定
+Amazon PA-API を使用してキーワードで商品を検索するPythonスクリプトです。競合調査やASINの特定に使用します。
 
-### Julesでの使用
+### 使い方
 
-Julesで商品調査を行う際、このスクリプトを実行することで商品情報を取得できます。
+```bash
+python scripts/paapi_search_items.py "<検索キーワード>"
+# 例: python scripts/paapi_search_items.py "アテックス ルルド ふくらはぎゅ"
+```
+
+### 出力
+
+成功すると、PA-APIからの生のレスポンスが `search_results.json` に保存されます。
+
+## Julesでの使用
+
+Julesで商品調査を行う際、これらのスクリプトを実行することで商品情報の取得や競合商品の検索が可能です。
 環境変数を設定した上で実行してください。
