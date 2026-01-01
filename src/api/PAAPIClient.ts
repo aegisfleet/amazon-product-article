@@ -623,6 +623,7 @@ export class PAAPIClient {
       /父の日/,
       /母の日/,
       /新生活ギフト/,
+      /特選品/,
       /^カテゴリー別$/,  // Amazon navigation node
       /Amazonビジネス/,
       /法人価格/,
@@ -635,6 +636,7 @@ export class PAAPIClient {
       /[0-9]+[%％](\s*以上)?\s*OFF/i,
       /^Panasonic-HA-PersonalCare$/i,
       /^Headset & Earphones$/i,
+      /^YA-MAN$/i,
       /^Amazon/i,
       /^Customers/i,
       /^服$/,
