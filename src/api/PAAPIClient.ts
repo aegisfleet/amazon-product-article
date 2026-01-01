@@ -659,6 +659,15 @@ export class PAAPIClient {
   }
 
   /**
+   * Normalize category name to fix variations from PA-API
+   * e.g., "スポーツ＆アウトドア" → "スポーツ・アウトドア"
+   */
+  private normalizeCategoryName(name: string): string {
+    // Replace full-width ampersand with middle dot for consistency
+    return name.replace(/＆/g, '・');
+  }
+
+  /**
    * Extract hierarchical category info from PA-API BrowseNodes
    * BrowseNodes are typically ordered from specific (child) to general (parent)
    * Filters out promotional and non-category nodes
@@ -678,7 +687,7 @@ export class PAAPIClient {
       );
       if (contextFreeNode) {
         return {
-          main: contextFreeNode.ContextFreeName,
+          main: this.normalizeCategoryName(contextFreeNode.ContextFreeName),
           browseNodeId: contextFreeNode.Id
         };
       }
@@ -688,7 +697,7 @@ export class PAAPIClient {
     if (validNodes.length === 1) {
       const firstNode = validNodes[0]!;
       return {
-        main: firstNode.DisplayName,
+        main: this.normalizeCategoryName(firstNode.DisplayName),
         browseNodeId: firstNode.Id
       };
     }
@@ -697,8 +706,8 @@ export class PAAPIClient {
     const firstNode = validNodes[0]!;
     const secondNode = validNodes[1];
     return {
-      main: secondNode?.DisplayName || firstNode.DisplayName,
-      sub: firstNode.DisplayName,
+      main: this.normalizeCategoryName(secondNode?.DisplayName || firstNode.DisplayName),
+      sub: this.normalizeCategoryName(firstNode.DisplayName),
       browseNodeId: firstNode.Id
     };
   }
