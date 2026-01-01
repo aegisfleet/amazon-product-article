@@ -684,6 +684,7 @@ export class PAAPIClient {
       /新商品$/,
       /インターネット経由で動くパワフルなAI/,
       /こんなところでもAMD/,
+      /Ryzen CPUラインナップ/,
       /^服$/
     ];
 
