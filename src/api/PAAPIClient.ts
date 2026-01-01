@@ -650,6 +650,7 @@ export class PAAPIClient {
       /スポーツプレイヤーのサポートアイテム/,
       /（サービス紐づけ用）/,
       /予約注文における注意事項/,
+      /インチ/i,
       /_\d{4}$/,  // Exclude categories ending with "_" followed by 4 digits (e.g., "B637c621-7397-4d82-A4ba-A3e8942deb88_4401")
       /_\d{3}$/,  // Exclude categories ending with "_" followed by 3 digits (e.g., "B637c621-7397-4d82-A4ba-A3e8942deb88_701
       /万円台$/,  // Exclude price-range categories (e.g., "1万円台", "2万円台")
@@ -660,6 +661,8 @@ export class PAAPIClient {
       /テスト$/,
       /選び方$/,
       /祝い$/i,
+      /ハイパフォーマンス$/i,
+      /お買い得$/i,
       /あわせ買い/i,
       /おうちで機種変更/,  // Exclude carrier device change promotion category
       /シリーズ$/,  // Exclude categories ending with "シリーズ" (e.g., "Bose ノイズキャンセリング QuietComfortシリーズ")
