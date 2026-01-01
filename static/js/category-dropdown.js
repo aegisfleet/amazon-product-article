@@ -171,8 +171,43 @@
         }
     }
 
+    function populateGroupedView() {
+        const groupedView = document.getElementById('category-grouped-view');
+        if (!groupedView) return;
+
+        const groups = getFilteredGroups();
+        const urls = getCategoryUrls();
+
+        groupedView.innerHTML = '';
+
+        Object.entries(groups).forEach(([groupName, categories]) => {
+            const groupSection = document.createElement('div');
+            groupSection.className = 'category-group-section';
+
+            const heading = document.createElement('h3');
+            heading.className = 'category-group-heading';
+            heading.textContent = groupName;
+            groupSection.appendChild(heading);
+
+            const tagsContainer = document.createElement('div');
+            tagsContainer.className = 'category-tags-container';
+
+            categories.forEach(category => {
+                const tag = document.createElement('a');
+                tag.href = urls[category];
+                tag.className = 'category-tag-link';
+                tag.textContent = category;
+                tagsContainer.appendChild(tag);
+            });
+
+            groupSection.appendChild(tagsContainer);
+            groupedView.appendChild(groupSection);
+        });
+    }
+
     function init() {
         populateGroupSelect();
+        populateGroupedView();
     }
 
     // Use event delegation on document for reliable event handling
