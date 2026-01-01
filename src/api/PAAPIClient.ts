@@ -633,6 +633,7 @@ export class PAAPIClient {
       /ストア$/i,
       /[0-9]+[%％](\s*以上)?\s*OFF/i,
       /^Panasonic-HA-PersonalCare$/i,
+      /^Headset & Earphones$/i,
       /^Amazon/i,
       /^Customers/i,
       /^服$/,
