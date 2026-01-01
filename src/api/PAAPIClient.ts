@@ -622,6 +622,7 @@ export class PAAPIClient {
       /キャンペーン/,
       /父の日/,
       /母の日/,
+      /新生活ギフト/,
       /^カテゴリー別$/,  // Amazon navigation node
       /Amazonビジネス/,
       /法人価格/,
