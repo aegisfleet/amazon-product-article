@@ -637,6 +637,7 @@ export class PAAPIClient {
       /^Panasonic-HA-PersonalCare$/i,
       /^Headset & Earphones$/i,
       /^YA-MAN$/i,
+      /^Fireタブレット$/i,
       /^Amazon/i,
       /^Customers/i,
       /^T-Fal/i,
