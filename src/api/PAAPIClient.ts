@@ -652,6 +652,7 @@ export class PAAPIClient {
       /ASIN$/,  // Exclude categories ending with "ASIN" (e.g., "Logicool壁紙配信対象ASIN")
       /TEST$/,
       /テスト$/,
+      /選び方$/,
     ];
 
     return !invalidPatterns.some(pattern => pattern.test(displayName));
