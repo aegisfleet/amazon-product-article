@@ -630,8 +630,6 @@ export class PAAPIClient {
       /Winter Sale/i,
       /Big Sale/i,
       /Favorites/i,
-      /結婚祝い/i,
-      /出産祝い/i,
       /ストア$/i,
       /[0-9]+[%％](\s*以上)?\s*OFF/i,
       /^Panasonic-HA-PersonalCare$/i,
@@ -655,6 +653,7 @@ export class PAAPIClient {
       /Test$/,
       /テスト$/,
       /選び方$/,
+      /祝い$/i,
     ];
 
     return !invalidPatterns.some(pattern => pattern.test(displayName));
