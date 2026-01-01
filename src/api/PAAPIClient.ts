@@ -608,71 +608,79 @@ export class PAAPIClient {
    */
   private isValidCategoryNode(displayName: string): boolean {
     const invalidPatterns = [
+      // --- プロモーション & イベント ---
       /ブラックフライデー/i,
       /サイバーマンデー/i,
       /プライムデー/i,
       /セール/i,
       /Deal/i,
-      /AmazonGlobal/i,
-      /free shipping/i,
-      /新商品$/,
-      /^yobi$/i,
+      /Winter Sale/i,
+      /Big Sale/i,
+      /キャンペーン/,
       /特集/,
       /おすすめ/,
-      /キャンペーン/,
+      /特選品/,
       /父の日/,
       /母の日/,
       /新生活ギフト/,
-      /特選品/,
+
+      // --- システム & 内部管理用 ---
+      /^yobi$/i,
       /^カテゴリー別$/,  // Amazon navigation node
-      /Amazonビジネス/,
-      /法人価格/,
-      /^SnS /i,  // Exclude all categories starting with "SnS" (e.g., SnS Engagement Test, SnS May Promo Code Campaign)
+      /_\d{4}$/,        // カテゴリ末尾がアンダースコア+4桁数字
+      /_\d{3}$/,        // カテゴリ末尾がアンダースコア+3桁数字
+      /Test$/,
+      /テスト$/,
+      /^SnS /i,         // 定期おトク便 (Subscribe & Save) 関連
       /Grocery_over2000_BFW24/,
-      /Winter Sale/i,
-      /Big Sale/i,
       /Favorites/i,
+      /（サービス紐づけ用）/,
+      /予約注文における注意事項/,
+      /ASIN$/,          // ASINリスト用のノード
+
+      // --- ブランド & ショップ専用 ---
       /ストア$/i,
-      /[0-9]+[%％](\s*以上)?\s*OFF/i,
+      /メーカー主催/,
+      /特設ページ/,
+      /^Amazon/i,
       /^Panasonic-HA-PersonalCare$/i,
       /^Headset & Earphones$/i,
       /^YA-MAN$/i,
       /^Fireタブレット$/i,
-      /^Amazon/i,
       /^Customers/i,
       /^T-Fal/i,
       /^Bose/i,
       /^IO DATA/i,
-      /^服$/,
-      /^HPC/i,  // Exclude all categories starting with "HPC" (e.g., HPC Recommendation Widget, HPC_CreatorInfoHub_xxx)
       /ネイチャーメイド/i,
       /大塚HPC_イオンサンプリング/i,
-      /3P HPC/i,
-      /Coupon/i,  // Exclude all categories containing "Coupon" (e.g., "プロテイン・サプリメント祭り | Coupon | 大塚製薬")
-      /スポーツプレイヤーのサポートアイテム/,
-      /（サービス紐づけ用）/,
-      /予約注文における注意事項/,
+
+      // --- 価格 & スペック関連 ---
+      /万円台$/,        // 1万円台, 2万円台 など
+      /万円以上$/,
+      /円~.*円$/,       // 10,001円~15,000円 など
+      /[0-9]+[%％](\s*以上)?\s*OFF/i,
       /インチ/i,
       /フルHD/i,
+
+      // --- その他（広範すぎる、またはカテゴリではないもの） ---
+      /^yobi$/i,
+      /^Amazonビジネス/,
+      /法人価格/,
+      /^HPC/i,          // HPC (Health & Personal Care) の推奨ウィジェット等
+      /3P HPC/i,
+      /Coupon/i,
+      /スポーツプレイヤーのサポートアイテム/,
       /ノートPC、ディスプレイ・モニター/i,
       /家電・PC・周辺機器/i,
-      /_\d{4}$/,  // Exclude categories ending with "_" followed by 4 digits (e.g., "B637c621-7397-4d82-A4ba-A3e8942deb88_4401")
-      /_\d{3}$/,  // Exclude categories ending with "_" followed by 3 digits (e.g., "B637c621-7397-4d82-A4ba-A3e8942deb88_701
-      /万円台$/,  // Exclude price-range categories (e.g., "1万円台", "2万円台")
-      /万円以上$/,
-      /円~.*円$/,  // Exclude price range categories (e.g., "10,001円~15,000円")
-      /ASIN$/,  // Exclude categories ending with "ASIN" (e.g., "Logicool壁紙配信対象ASIN")
-      /Test$/,
-      /テスト$/,
       /選び方$/,
       /祝い$/i,
       /ハイパフォーマンス$/i,
       /お買い得$/i,
       /あわせ買い/i,
-      /おうちで機種変更/,  // Exclude carrier device change promotion category
-      /シリーズ$/,  // Exclude categories ending with "シリーズ" (e.g., "Bose ノイズキャンセリング QuietComfortシリーズ")
-      /メーカー主催/,  // Exclude categories containing "メーカー主催" (e.g., "【メーカー主催】音楽のためのひとつ上の、静寂。WF-1000X5")
-      /特設ページ/,  // Exclude categories containing "特設ページ" (e.g., "モニ研_特設ページ")
+      /おうちで機種変更/,
+      /シリーズ$/,
+      /新商品$/,
+      /^服$/
     ];
 
     return !invalidPatterns.some(pattern => pattern.test(displayName));
