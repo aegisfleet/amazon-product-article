@@ -656,6 +656,9 @@ export class PAAPIClient {
       /祝い$/i,
       /あわせ買い/i,
       /おうちで機種変更/,  // Exclude carrier device change promotion category
+      /シリーズ$/,  // Exclude categories ending with "シリーズ" (e.g., "Bose ノイズキャンセリング QuietComfortシリーズ")
+      /メーカー主催/,  // Exclude categories containing "メーカー主催" (e.g., "【メーカー主催】音楽のためのひとつ上の、静寂。WF-1000X5")
+      /特設ページ/,  // Exclude categories containing "特設ページ" (e.g., "モニ研_特設ページ")
     ];
 
     return !invalidPatterns.some(pattern => pattern.test(displayName));
