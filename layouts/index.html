@@ -20,7 +20,7 @@
                 <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
             </svg>
             <input type="text" id="search-input" class="search-input" placeholder="キーワードで探す..." autocomplete="off"
-                data-search-index-url="{{ "index.json" | relURL }}">
+                data-search-index-url="{{ " index.json" | relURL }}">
         </div>
         <div id="search-results"></div>
     </div>
@@ -28,6 +28,27 @@
     <div class="header-content" style="margin-bottom: var(--spacing-md);">
         <h2>カテゴリから探す</h2>
     </div>
+
+    <!-- Mobile: Dropdown UI -->
+    {{ $urlMap := dict }}{{ range $name, $items := .Site.Taxonomies.categories }}{{ with $.Site.GetPage (printf
+    "/categories/%s" $name) }}{{ $urlMap = merge $urlMap (dict .LinkTitle .RelPermalink) }}{{ end }}{{ end }}
+    <script id="category-url-data" type="application/json">{{ $urlMap | jsonify | safeJS }}</script>
+    <div class="category-dropdown-container" id="category-dropdown-container">
+        <div class="category-dropdown-group">
+            <label for="category-group-select" class="category-dropdown-label">グループ</label>
+            <select id="category-group-select" class="category-dropdown-select">
+                <option value="">グループを選択...</option>
+            </select>
+        </div>
+        <div class="category-dropdown-group">
+            <label for="category-sub-select" class="category-dropdown-label">カテゴリ</label>
+            <select id="category-sub-select" class="category-dropdown-select" disabled>
+                <option value="">カテゴリを選択...</option>
+            </select>
+        </div>
+    </div>
+
+    <!-- Desktop: Tag UI -->
     <div class="category-grid"
         style="display: flex; gap: var(--spacing-md); flex-wrap: wrap; margin-bottom: var(--spacing-xl);">
         {{ range $name, $items := .Site.Taxonomies.categories }}
