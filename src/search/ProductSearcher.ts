@@ -20,7 +20,7 @@ export interface CategoryConfig {
   searchIndex: string;
   keywords: string[];
   maxResults: number;
-  sortBy?: 'relevance' | 'price' | 'rating';
+  sortBy?: 'relevance' | 'price' | 'rating' | 'featured' | 'newest';
   enabled: boolean;
 }
 
@@ -399,7 +399,7 @@ export class ProductSearcher {
         enabled: true,
         keywords: ['おすすめ', '人気', 'ランキング'], // Default Japanese keywords
         maxResults: 10,
-        sortBy: 'rating'
+        sortBy: 'featured'
       }));
       return categoryConfigs.length > 0 ? categoryConfigs : this.getDefaultCategories();
     } catch (_error) {
@@ -415,7 +415,7 @@ export class ProductSearcher {
         searchIndex: 'Electronics',
         keywords: ['スマートフォン', 'ワイヤレスイヤホン', 'モバイルバッテリー', 'スマートウォッチ', 'タブレット'],
         maxResults: 10,
-        sortBy: 'rating',
+        sortBy: 'featured',
         enabled: true
       },
       {
@@ -423,7 +423,7 @@ export class ProductSearcher {
         searchIndex: 'Computers',
         keywords: ['ノートパソコン', 'ゲーミングマウス', 'キーボード', 'モニター', '外付けSSD'],
         maxResults: 10,
-        sortBy: 'rating',
+        sortBy: 'featured',
         enabled: true
       },
       {
@@ -431,7 +431,7 @@ export class ProductSearcher {
         searchIndex: 'Kitchen',
         keywords: ['コーヒーメーカー', 'フライパン', '弁当箱', '水筒', '包丁'],
         maxResults: 10,
-        sortBy: 'rating',
+        sortBy: 'featured',
         enabled: true
       },
       {
@@ -439,7 +439,7 @@ export class ProductSearcher {
         searchIndex: 'HomeAndKitchen',
         keywords: ['掃除機', '空気清浄機', '加湿器', '枕', '収納'],
         maxResults: 10,
-        sortBy: 'rating',
+        sortBy: 'featured',
         enabled: true
       },
       {
@@ -447,7 +447,7 @@ export class ProductSearcher {
         searchIndex: 'Appliances', // 'LargeAppliances' in some regions, checking map
         keywords: ['冷蔵庫', '洗濯機', '電子レンジ', '炊飯器', 'ドライヤー'],
         maxResults: 10,
-        sortBy: 'rating',
+        sortBy: 'featured',
         enabled: true
       }
     ];
@@ -467,7 +467,7 @@ export class ProductSearcher {
         enabled: true,
         keywords: ['おすすめ', '人気'],
         maxResults: 10,
-        sortBy: 'rating'
+        sortBy: 'featured'
       }));
 
       const allCategories = categoryConfigs.length > 0 ? categoryConfigs : this.getDefaultCategories();
