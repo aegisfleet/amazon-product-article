@@ -79,6 +79,8 @@ export class PAAPIClient {
       Keywords: params.keywords.join(' '),
       SearchIndex: this.mapCategoryToSearchIndex(params.category),
       ItemCount: Math.min(params.maxResults, 10), // PA-API limit
+      Merchant: 'Amazon', // Amazon直販商品のみを取得
+      SortBy: this.mapSortBy(params.sortBy || 'featured'), // デフォルトはFeatured（おすすめ順）
       Resources: [
         'Images.Primary.Large',
         'Images.Primary.Medium',
@@ -100,9 +102,7 @@ export class PAAPIClient {
     if (params.maxPrice) {
       request.MaxPrice = params.maxPrice * 100; // Convert to cents
     }
-    if (params.sortBy) {
-      request.SortBy = this.mapSortBy(params.sortBy);
-    }
+    // SortBy is now always set in the request object above
 
     const response = await this.makeRequest(request);
     const products = this.parseSearchResponse(response);
@@ -784,10 +784,13 @@ export class PAAPIClient {
     const sortMap: Record<string, string> = {
       'relevance': 'Relevance',
       'price': 'Price:LowToHigh',
-      'rating': 'AvgCustomerReviews'
+      'price_desc': 'Price:HighToLow',
+      'rating': 'AvgCustomerReviews',
+      'featured': 'Featured',
+      'newest': 'NewestArrivals'
     };
 
-    return sortMap[sortBy] || 'Relevance';
+    return sortMap[sortBy] || 'Featured';
   }
 
   private sleep(ms: number): Promise<void> {

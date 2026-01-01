@@ -68,7 +68,7 @@ export interface ProductSearchParams {
   maxResults: number;
   minPrice?: number;
   maxPrice?: number;
-  sortBy?: 'relevance' | 'price' | 'rating';
+  sortBy?: 'relevance' | 'price' | 'rating' | 'featured' | 'newest';
 }
 
 export interface ProductSearchResult {
