@@ -650,7 +650,7 @@ export class PAAPIClient {
       /万円以上$/,
       /円~.*円$/,  // Exclude price range categories (e.g., "10,001円~15,000円")
       /ASIN$/,  // Exclude categories ending with "ASIN" (e.g., "Logicool壁紙配信対象ASIN")
-      /TEST$/,
+      /Test$/,
       /テスト$/,
       /選び方$/,
     ];
