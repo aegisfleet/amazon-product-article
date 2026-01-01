@@ -654,6 +654,7 @@ export class PAAPIClient {
       /テスト$/,
       /選び方$/,
       /祝い$/i,
+      /あわせ買い/i,
     ];
 
     return !invalidPatterns.some(pattern => pattern.test(displayName));
