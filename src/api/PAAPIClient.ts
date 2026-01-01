@@ -679,6 +679,7 @@ export class PAAPIClient {
       /あわせ買い/i,
       /おうちで機種変更/,
       /AMD Ryzen搭載ノートパソコン/,
+      /iPhone\/iPad\/iPod用/i,
       /シリーズ$/,
       /新商品$/,
       /^服$/
