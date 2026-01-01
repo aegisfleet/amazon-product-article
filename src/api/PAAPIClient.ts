@@ -641,6 +641,7 @@ export class PAAPIClient {
       /^Customers/i,
       /^T-Fal/i,
       /^Bose/i,
+      /^IO DATA/i,
       /^服$/,
       /^HPC/i,  // Exclude all categories starting with "HPC" (e.g., HPC Recommendation Widget, HPC_CreatorInfoHub_xxx)
       /ネイチャーメイド/i,
