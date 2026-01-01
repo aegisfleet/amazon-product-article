@@ -632,6 +632,7 @@ export class PAAPIClient {
       /[0-9]+[%％](\s*以上)?\s*OFF/i,
       /^Panasonic-HA-PersonalCare$/i,
       /^Amazon/i,
+      /^Customers/i,
       /^服$/,
       /^HPC/i,  // Exclude all categories starting with "HPC" (e.g., HPC Recommendation Widget, HPC_CreatorInfoHub_xxx)
       /ネイチャーメイド/i,
