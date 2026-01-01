@@ -642,6 +642,7 @@ export class PAAPIClient {
       /3P HPC/i,
       /Coupon/i,  // Exclude all categories containing "Coupon" (e.g., "プロテイン・サプリメント祭り | Coupon | 大塚製薬")
       /スポーツプレイヤーのサポートアイテム/,
+      /（サービス紐づけ用）/,
       /_\d{4}$/,  // Exclude categories ending with "_" followed by 4 digits (e.g., "B637c621-7397-4d82-A4ba-A3e8942deb88_4401")
       /_\d{3}$/,  // Exclude categories ending with "_" followed by 3 digits (e.g., "B637c621-7397-4d82-A4ba-A3e8942deb88_701
       /万円台$/,  // Exclude price-range categories (e.g., "1万円台", "2万円台")
