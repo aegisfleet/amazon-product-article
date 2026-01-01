@@ -29,7 +29,8 @@ describe('PAAPIClient Category Extraction', () => {
             'ホームストア',
             'パソコン ストア',
             'ドラッグストア', // Should be excluded based on user request "exclude EVERYTHING ending in store"
-            'Androidアプリストア'
+            'Androidアプリストア',
+            'インターネット経由で動くパワフルなAI'
         ];
 
         invalidCategories.forEach(cat => {

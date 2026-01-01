@@ -682,6 +682,7 @@ export class PAAPIClient {
       /iPhone\/iPad\/iPod用/i,
       /シリーズ$/,
       /新商品$/,
+      /インターネット経由で動くパワフルなAI/,
       /^服$/
     ];
 
