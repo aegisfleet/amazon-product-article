@@ -655,6 +655,7 @@ export class PAAPIClient {
       /選び方$/,
       /祝い$/i,
       /あわせ買い/i,
+      /おうちで機種変更/,  // Exclude carrier device change promotion category
     ];
 
     return !invalidPatterns.some(pattern => pattern.test(displayName));
