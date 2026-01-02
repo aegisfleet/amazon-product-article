@@ -5,8 +5,8 @@ permissions:
 
 on:
   schedule:
-    # Run daily at 5 AM JST (20:00 UTC)
-    - cron: '0 20 * * *'
+    # Run daily at 17:00 JST (08:00 UTC)
+    - cron: '0 8 * * *'
   workflow_dispatch:
     inputs:
       categories:
