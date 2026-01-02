@@ -261,30 +261,54 @@
 
         Object.entries(groups).forEach(([groupName, categories]) => {
             const groupSection = document.createElement('div');
-            groupSection.className = 'category-group-section';
+            groupSection.className = 'category-group-section category-collapsed';
 
-            // Create heading as a clickable link to parent category page
+            // Build parent category URL
+            const slug = parentCategoryUrls[groupName];
+            const basePathMatch = window.location.pathname.match(/^(\/[^/]+\/)?/);
+            const basePath = basePathMatch ? basePathMatch[0] : '/';
+            const parentUrl = slug ? `${basePath}parent-category/${slug}/` : null;
+
+            // Create heading wrapper (clickable to toggle)
+            const headingWrapper = document.createElement('div');
+            headingWrapper.className = 'category-heading-wrapper';
+            headingWrapper.style.cursor = 'pointer';
+            headingWrapper.setAttribute('role', 'button');
+            headingWrapper.setAttribute('aria-expanded', 'false');
+            headingWrapper.setAttribute('aria-label', `${groupName}を展開`);
+            headingWrapper.addEventListener('click', function () {
+                const section = this.closest('.category-group-section');
+                const isCollapsed = section.classList.contains('category-collapsed');
+                section.classList.toggle('category-collapsed');
+                this.setAttribute('aria-expanded', isCollapsed ? 'true' : 'false');
+                this.setAttribute('aria-label', isCollapsed ? `${groupName}を折り畳む` : `${groupName}を展開`);
+            });
+
+            // Create toggle icon
+            const toggleIcon = document.createElement('span');
+            toggleIcon.className = 'category-toggle-icon';
+            toggleIcon.textContent = '▶';
+
+            // Create heading (display only, not a link)
             const heading = document.createElement('h3');
             heading.className = 'category-group-heading';
+            heading.textContent = groupName;
 
-            const headingLink = document.createElement('a');
-            headingLink.className = 'category-group-link';
-            headingLink.textContent = groupName;
-
-            // Build parent category URL using the base path from existing category URLs
-            const slug = parentCategoryUrls[groupName];
-            if (slug) {
-                // Get the base path from document
-                const basePathMatch = window.location.pathname.match(/^(\/[^/]+\/)?/);
-                const basePath = basePathMatch ? basePathMatch[0] : '/';
-                headingLink.href = `${basePath}parent-category/${slug}/`;
-            }
-
-            heading.appendChild(headingLink);
-            groupSection.appendChild(heading);
+            headingWrapper.appendChild(toggleIcon);
+            headingWrapper.appendChild(heading);
+            groupSection.appendChild(headingWrapper);
 
             const tagsContainer = document.createElement('div');
             tagsContainer.className = 'category-tags-container';
+
+            // Add "View All" link at the top of child categories
+            if (parentUrl) {
+                const viewAllTag = document.createElement('a');
+                viewAllTag.href = parentUrl;
+                viewAllTag.className = 'category-tag-link category-view-all';
+                viewAllTag.textContent = `📁 ${groupName}のすべてを見る`;
+                tagsContainer.appendChild(viewAllTag);
+            }
 
             categories.forEach(category => {
                 const tag = document.createElement('a');
