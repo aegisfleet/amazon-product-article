@@ -5,36 +5,8 @@
             {{ .Site.Title }}
         </a>
 
-        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Dark Mode">
+        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Dark Mode" style="margin-left: auto;">
             <span class="theme-toggle-icon"></span>
         </button>
-
-        <button class="mobile-menu-btn" aria-label="Menu"
-            onclick="document.querySelector('.nav-links').classList.toggle('active')">
-            ☰
-        </button>
-
-        <nav class="nav-links">
-            <a href="{{ `` | relURL }}">ホーム</a>
-            <!-- Add more links here later -->
-        </nav>
     </div>
-
-    <style>
-        /* Mobile Menu Toggle Logic (Inline for simplicity, ideally in JS file) */
-        @media (max-width: 767px) {
-            .nav-links.active {
-                display: flex;
-                flex-direction: column;
-                position: absolute;
-                top: 4rem;
-                left: 0;
-                right: 0;
-                background: var(--color-bg-card);
-                padding: var(--spacing-lg);
-                border-bottom: 1px solid var(--color-border);
-                box-shadow: var(--shadow-lg);
-            }
-        }
-    </style>
 </header>
