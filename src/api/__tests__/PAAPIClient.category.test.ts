@@ -51,6 +51,8 @@ describe('PAAPIClient Category Extraction', () => {
             'マッサージャーほか健康家電',
             'シャープ 家電 全商品',
             'Arborist Merchandising Root',
+            'プロテイン・サプリメント祭り | DHC',
+            'らくらくベビー Birth Day企画',
             'おうちでヘアケアカーリングアイロン・2WAYアイロン',
             'Beauty Recommendation Widget',
             '対象のSALONIA製品購入でクーポンプレゼント'
