@@ -693,7 +693,7 @@ export class PAAPIClient {
       /IsWhiteGloveRequired/,
       /コーヒーの日 パーソナルコーヒーを楽しもう/,
       /高評価ブランド/,
-      /毎日の料理をサポート　時短キッチングッズ/,
+      /毎日の料理をサポート/,
       /KCAllBrand/,
       /[【】]/,
       /秋の味覚を楽しむ/,
