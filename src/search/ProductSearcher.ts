@@ -119,7 +119,7 @@ export class ProductSearcher {
 
     // Get exclusion list (products already investigated)
     const exclusionList = await this.getExclusionList();
-    this.logger.info(`Found ${exclusionList.size} existing products to exclude`);
+    this.logger.info(`Found ${exclusionList.asins.size} existing products to exclude`);
 
     this.logger.info(`Starting product search session ${sessionId} for ${categories.length} categories`);
 
@@ -144,10 +144,37 @@ export class ProductSearcher {
 
         // Filter out excluded products
         const initialCount = result.products.length;
-        result.products = result.products.filter(p => !exclusionList.has(p.asin));
+        const seenParentAsins = new Set<string>();
+
+        result.products = result.products.filter(p => {
+          // 1. ASINによる除外
+          if (exclusionList.asins.has(p.asin)) {
+            return false;
+          }
+
+          // 2. 親ASINによる除外（既存の調査済み商品との重複回避）
+          if (p.parentAsin) {
+            if (exclusionList.parentAsins.has(p.parentAsin)) {
+              return false;
+            }
+            // 親ASIN自体が単体で調査済みの可能性も考慮
+            if (exclusionList.asins.has(p.parentAsin)) {
+              return false;
+            }
+          }
+
+          // 3. 同一検索セッション内でのバリエーション重複回避
+          const parentKey = p.parentAsin || p.asin;
+          if (seenParentAsins.has(parentKey)) {
+            return false;
+          }
+          seenParentAsins.add(parentKey);
+
+          return true;
+        });
 
         if (initialCount !== result.products.length) {
-          this.logger.info(`Filtered ${initialCount - result.products.length} existing products from results`);
+          this.logger.info(`Filtered ${initialCount - result.products.length} products (already investigated or variations) from ${category.name}`);
         }
 
         if (result.products.length > 0) {
@@ -596,11 +623,17 @@ export class ProductSearcher {
   }
 
   /**
-   * Get a set of ASINs that have already been investigated/generated
-   * Scans the content/articles directory for existing article bundles
+   * Get a detailed exclusion list containing ASINs, Parent ASINs, and Product Names
+   * that have already been investigated/generated.
    */
-  private async getExclusionList(): Promise<Set<string>> {
-    const exclusionList = new Set<string>();
+  private async getExclusionList(): Promise<{
+    asins: Set<string>;
+    parentAsins: Set<string>;
+    productNames: Set<string>;
+  }> {
+    const asins = new Set<string>();
+    const parentAsins = new Set<string>();
+    const productNames = new Set<string>();
 
     // 1. Check content directory (already published articles)
     try {
@@ -608,34 +641,52 @@ export class ProductSearcher {
       await fs.access(normalizedContentDir);
       const files = await fs.readdir(normalizedContentDir);
       for (const file of files) {
-        if (/^[A-Z0-9]{10}$/.test(file)) {
-          exclusionList.add(file);
+        const asin = file.endsWith('.md') ? path.basename(file, '.md') : file;
+        if (/^[A-Z0-9]{10}$/.test(asin)) {
+          asins.add(asin);
         }
       }
     } catch {
       this.logger.debug('Content directory not found or inaccessible');
     }
 
-    // 2. Check investigations directory (already researched but not yet published)
+    // 2. Check investigations directory (already researched)
     try {
       const investigationsDir = path.normalize(path.join(process.cwd(), 'data', 'investigations'));
       await fs.access(investigationsDir);
+
       const files = await fs.readdir(investigationsDir);
-      for (const file of files) {
-        // Filename is ASIN.json
-        if (file.endsWith('.json')) {
-          const asin = path.basename(file, '.json');
-          if (/^[A-Z0-9]{10}$/.test(asin)) {
-            exclusionList.add(asin);
+      const jsonFiles = files.filter(f => f.endsWith('.json'));
+
+      for (const file of jsonFiles) {
+        const asin = path.basename(file, '.json');
+        if (/^[A-Z0-9]{10}$/.test(asin)) {
+          asins.add(asin);
+        }
+
+        const filePath = path.join(investigationsDir, file);
+        try {
+          const content = await fs.readFile(filePath, 'utf-8');
+          const data = JSON.parse(content);
+
+          if (data.analysis) {
+            if (data.analysis.parentAsin) {
+              parentAsins.add(data.analysis.parentAsin);
+            }
+            if (data.analysis.productName) {
+              productNames.add(data.analysis.productName);
+            }
           }
+        } catch (e) {
+          this.logger.warn(`Failed to read/parse investigation file ${file}:`, e);
         }
       }
     } catch {
       this.logger.debug('Investigations directory not found or inaccessible');
     }
 
-    this.logger.info(`Total products excluded from search: ${exclusionList.size}`);
-    return exclusionList;
+    this.logger.info(`Exclusion list: ${asins.size} ASINs, ${parentAsins.size} Parent ASINs, ${productNames.size} Product Names`);
+    return { asins, parentAsins, productNames };
   }
 
   /**

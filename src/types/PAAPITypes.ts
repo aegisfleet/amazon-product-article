@@ -161,6 +161,7 @@ export interface PAAPIItem {
       ContextFreeName: string;
     }>;
   };
+  ParentASIN?: string;
 }
 
 export interface PAAPIError {
