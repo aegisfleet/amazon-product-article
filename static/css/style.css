@@ -120,35 +120,6 @@ a:hover {
   content: '🌞';
 }
 
-/* Navigation */
-.nav-links {
-  display: none;
-  /* Mobile first hidden */
-}
-
-@media (min-width: 768px) {
-  .nav-links {
-    display: flex;
-    gap: var(--spacing-lg);
-  }
-}
-
-.mobile-menu-btn {
-  display: block;
-  background: none;
-  border: none;
-  color: var(--color-text-main);
-  font-size: 1.5rem;
-  cursor: pointer;
-  padding: 0.25rem;
-}
-
-@media (min-width: 768px) {
-  .mobile-menu-btn {
-    display: none;
-  }
-}
-
 /* Hero Section */
 .hero {
   padding: var(--spacing-xl) 0;
