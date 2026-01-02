@@ -170,6 +170,7 @@ export interface InvestigationResult {
   product: Product;
   analysis: {
     productName?: string;           // 正式な製品名（検索タグ等を除いた簡潔な名前）
+    parentAsin?: string;           // 親ASIN（バリエーション商品の識引用）
     positivePoints: string[];
     negativePoints: string[];
     useCases: string[];

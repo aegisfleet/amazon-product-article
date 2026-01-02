@@ -314,6 +314,7 @@ export class JulesInvestigator {
     // ブランド情報の取得（ProductDetail型の場合）
     const brand = 'brand' in product ? (product as any).brand : undefined;
     const brandInfo = brand ? `- ブランド: ${brand}` : '';
+    const parentAsinInfo = product.parentAsin ? `- 親ASIN: ${product.parentAsin}` : '';
 
     // PA-API v5ではレビューデータ取得不可のため外部収集を依頼
     const prompt = `【重要：出力言語の指定】
@@ -430,6 +431,7 @@ ${updateInstruction}
 - ASIN: ${product.asin}
 - 商品名: ${product.title}
 ${brandInfo}
+${parentAsinInfo}
 - カテゴリ: ${product.category}
 - 価格: ${product.price.formatted}
 - 仕様・詳細:
@@ -441,6 +443,7 @@ ${Object.entries(product.specifications).map(([key, value]) => `  - ${key}: ${va
 {
   "analysis": {
     "productName": "正式な製品名（検索タグを除いた簡潔な名前）",
+    "parentAsin": "${product.parentAsin || product.asin}",
     "productDescription": "この商品が何かを1-2文で簡潔に説明",
     "productUsage": ["使い方1", "使い方2", "使い方3"],
     "positivePoints": ["具体的な良い点1", "具体的な良い点2"],

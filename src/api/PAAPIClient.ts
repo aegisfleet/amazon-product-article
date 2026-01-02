@@ -457,7 +457,7 @@ export class PAAPIClient {
     const rating = this.extractRating(item);
     const categoryInfo = this.extractCategoryInfo(item);
 
-    return {
+    const product: Product = {
       asin: item.ASIN,
       title: item.ItemInfo?.Title?.DisplayValue || 'Unknown Title',
       category: categoryInfo.main, // 後方互換性のためメインカテゴリを設定
@@ -468,6 +468,12 @@ export class PAAPIClient {
       rating,
       detailPageUrl: item.DetailPageURL
     };
+
+    if (item.ParentASIN) {
+      product.parentAsin = item.ParentASIN;
+    }
+
+    return product;
   }
 
   /**

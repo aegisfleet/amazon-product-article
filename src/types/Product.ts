@@ -17,6 +17,7 @@ export interface Product {
   title: string;
   category: string;           // 後方互換性のため維持（メインカテゴリ）
   categoryInfo?: CategoryInfo; // 新規: 階層カテゴリ情報
+  parentAsin?: string;        // 親ASIN（バリエーション商品の識引用）
   detailPageUrl?: string;     // Amazon DetailPageURL (affiliate link)
   price: {
     amount: number;
