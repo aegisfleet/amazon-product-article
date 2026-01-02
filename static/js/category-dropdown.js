@@ -64,6 +64,22 @@
         ]
     };
 
+    // Parent category URL slugs mapping
+    const parentCategoryUrls = {
+        'PC・周辺機器': 'pc-peripherals',
+        'スマートフォン': 'smartphone',
+        'オーディオ': 'audio',
+        'ケーブル・ネットワーク': 'cable-network',
+        '家電': 'home-appliances',
+        'キッチン・食品': 'kitchen-food',
+        '収納・オフィス': 'storage-office',
+        '美容・健康': 'beauty-health',
+        'サプリメント': 'supplements',
+        'ファッション': 'fashion',
+        'アウトドア・車': 'outdoor-car',
+        'その他': 'others'
+    };
+
     let categoryUrls = {};
     let filteredGroups = {};
 
@@ -186,9 +202,24 @@
             const groupSection = document.createElement('div');
             groupSection.className = 'category-group-section';
 
+            // Create heading as a clickable link to parent category page
             const heading = document.createElement('h3');
             heading.className = 'category-group-heading';
-            heading.textContent = groupName;
+
+            const headingLink = document.createElement('a');
+            headingLink.className = 'category-group-link';
+            headingLink.textContent = groupName;
+
+            // Build parent category URL using the base path from existing category URLs
+            const slug = parentCategoryUrls[groupName];
+            if (slug) {
+                // Get the base path from document
+                const basePathMatch = window.location.pathname.match(/^(\/[^/]+\/)?/);
+                const basePath = basePathMatch ? basePathMatch[0] : '/';
+                headingLink.href = `${basePath}parent-category/${slug}/`;
+            }
+
+            heading.appendChild(headingLink);
             groupSection.appendChild(heading);
 
             const tagsContainer = document.createElement('div');
