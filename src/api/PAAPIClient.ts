@@ -680,7 +680,7 @@ export class PAAPIClient {
       /ハイパフォーマンス$/i,
       /お買い得$/i,
       /あわせ買い/i,
-      /おうちで機種変更/,
+      /おうちで/,
       /AMD Ryzen搭載ノートパソコン/,
       /iPhone\/iPad\/iPod用/i,
       /シリーズ$/,
@@ -705,6 +705,7 @@ export class PAAPIClient {
       /マッサージャーほか健康家電/,
       /話題のコスメ急上昇/,
       /Arborist Merchandising Root/,
+      /Beauty Recommendation Widget/i,
       /クーポン/
     ];
 
