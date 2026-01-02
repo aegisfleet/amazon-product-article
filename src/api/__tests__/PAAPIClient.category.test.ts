@@ -37,6 +37,8 @@ describe('PAAPIClient Category Extraction', () => {
             'HQP用',
             'IsWhiteGloveRequired',
             'コーヒーの日 パーソナルコーヒーを楽しもう',
+            '【介護施設で選ばれています】プラズマクラスター空気清浄機',
+            '高評価ブランド：ホーム・キッチン V2',
             'シャープ 家電 全商品'
         ];
 

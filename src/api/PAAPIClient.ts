@@ -622,6 +622,7 @@ export class PAAPIClient {
       /特選品/,
       /父の日/,
       /母の日/,
+      /誕生日/,
       /新生活ギフト/,
       /^Amazonビジネス/,
       /法人価格/,
@@ -690,7 +691,9 @@ export class PAAPIClient {
       /Shipping$/i,
       /HQP用/,
       /IsWhiteGloveRequired/,
-      /コーヒーの日 パーソナルコーヒーを楽しもう/
+      /コーヒーの日 パーソナルコーヒーを楽しもう/,
+      /介護施設で選ばれています/,
+      /高評価ブランド/
     ];
 
     return !invalidPatterns.some(pattern => pattern.test(displayName));
