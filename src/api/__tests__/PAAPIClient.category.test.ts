@@ -57,7 +57,11 @@ describe('PAAPIClient Category Extraction', () => {
             'らくらくベビー Birth Day企画',
             'おうちでヘアケアカーリングアイロン・2WAYアイロン',
             'Beauty Recommendation Widget',
-            '対象のSALONIA製品購入でクーポンプレゼント'
+            '対象のSALONIA製品購入でクーポンプレゼント',
+            'Drugstore - Amazon Global',
+            'Amazon Global',
+            '※PBS用',
+            '※カテゴリ'
         ];
 
         invalidCategories.forEach(cat => {

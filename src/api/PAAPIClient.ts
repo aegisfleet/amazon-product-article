@@ -720,7 +720,9 @@ export class PAAPIClient {
       /今旬コスメ/,
       /クーポン/,
       /ギフトセット・ギフト商品/,
-      /スッキリ片づける・収納する/
+      /スッキリ片づける・収納する/,
+      /Amazon Global/,
+      /※/
     ];
 
     return !invalidPatterns.some(pattern => pattern.test(displayName));
