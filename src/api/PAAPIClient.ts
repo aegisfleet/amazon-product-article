@@ -623,6 +623,8 @@ export class PAAPIClient {
       /父の日/,
       /母の日/,
       /新生活ギフト/,
+      /^Amazonビジネス/,
+      /法人価格/,
 
       // --- システム & 内部管理用 ---
       /^yobi$/i,
@@ -653,6 +655,7 @@ export class PAAPIClient {
       /^IO DATA/i,
       /ネイチャーメイド/i,
       /大塚HPC_イオンサンプリング/i,
+      /シャープ/i,
 
       // --- 価格 & スペック関連 ---
       /万円台$/,        // 1万円台, 2万円台 など
@@ -664,8 +667,6 @@ export class PAAPIClient {
 
       // --- その他（広範すぎる、またはカテゴリではないもの） ---
       /^yobi$/i,
-      /^Amazonビジネス/,
-      /法人価格/,
       /^HPC/i,          // HPC (Health & Personal Care) の推奨ウィジェット等
       /3P HPC/i,
       /Coupon/i,
@@ -685,7 +686,11 @@ export class PAAPIClient {
       /インターネット経由で動くパワフルなAI/,
       /こんなところでもAMD/,
       /Ryzen CPUラインナップ/,
-      /^服$/
+      /^服$/,
+      /Shipping$/i,
+      /HQP用/,
+      /IsWhiteGloveRequired/,
+      /コーヒーの日 パーソナルコーヒーを楽しもう/
     ];
 
     return !invalidPatterns.some(pattern => pattern.test(displayName));
