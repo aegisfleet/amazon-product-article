@@ -119,7 +119,7 @@
 </script>
 {{ end }}
 
-<!-- BreadcrumbList Schema (All Pages) -->
+<!-- BreadcrumbList Schema (All Pages) with Parent Category Support -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -127,21 +127,60 @@
   "itemListElement": [{
     "@type": "ListItem",
     "position": 1,
-    "name": "Home",
+    "name": "ホーム",
     "item": "{{ .Site.BaseURL }}"
   }
   {{ if .IsPage }}
-  ,{
-    "@type": "ListItem",
-    "position": 2,
-    "name": "{{ .Section }}",
-    "item": "{{ .Site.BaseURL }}{{ .Section | urlize }}"
-  },{
-    "@type": "ListItem",
-    "position": 3,
-    "name": "{{ .Title }}",
-    "item": "{{ .Permalink }}"
-  }
+    {{ $category := "" }}
+    {{ if .Params.categories }}
+      {{ $category = index .Params.categories 0 }}
+    {{ else if .Params.category }}
+      {{ $category = .Params.category }}
+    {{ end }}
+
+    {{ $parentName := "" }}
+    {{ $parentSlug := "" }}
+    {{ $position := 2 }}
+
+    {{ if $category }}
+      {{/* 親カテゴリを検索 */}}
+      {{ range $parent, $data := site.Data.categorygroups }}
+        {{ range $data.categories }}
+          {{ if eq . $category }}
+            {{ $parentName = $parent }}
+            {{ $parentSlug = $data.slug }}
+          {{ end }}
+        {{ end }}
+      {{ end }}
+
+      {{/* 親カテゴリがある場合 */}}
+      {{ if $parentName }}
+      ,{
+        "@type": "ListItem",
+        "position": {{ $position }},
+        "name": "{{ $parentName }}",
+        "item": "{{ .Site.BaseURL }}parent-category/{{ $parentSlug }}/"
+      }
+      {{ $position = 3 }}
+      {{ end }}
+
+      {{/* 子カテゴリ */}}
+      ,{
+        "@type": "ListItem",
+        "position": {{ $position }},
+        "name": "{{ $category }}",
+        "item": "{{ .Site.BaseURL }}categories/{{ $category | urlize }}/"
+      }
+      {{ if $parentName }}{{ $position = 4 }}{{ else }}{{ $position = 3 }}{{ end }}
+    {{ end }}
+
+    {{/* 現在のページ */}}
+    ,{
+      "@type": "ListItem",
+      "position": {{ if $parentName }}4{{ else if $category }}3{{ else }}2{{ end }},
+      "name": "{{ .Title }}",
+      "item": "{{ .Permalink }}"
+    }
   {{ end }}
   ]
 }
