@@ -449,6 +449,46 @@ export class ProductSearcher {
         maxResults: 10,
         sortBy: 'featured',
         enabled: true
+      },
+      {
+        name: 'women_beauty',
+        searchIndex: 'Beauty',
+        keywords: ['クレンジング', '美容液', 'ファンデーション', 'ヘアオイル', 'プチプラコスメ'],
+        maxResults: 10,
+        sortBy: 'featured',
+        enabled: true
+      },
+      {
+        name: 'women_fashion',
+        searchIndex: 'Fashion',
+        keywords: ['レディース トートバッグ', 'ピアス', 'ネックレス', 'ワンピース', 'スニーカー レディース'],
+        maxResults: 10,
+        sortBy: 'featured',
+        enabled: true
+      },
+      {
+        name: 'women_appliances',
+        searchIndex: 'Beauty',
+        keywords: ['ヘアドライヤー', 'ヘアアイロン', '美顔器', 'マッサージガン', 'スチーマー'],
+        maxResults: 10,
+        sortBy: 'featured',
+        enabled: true
+      },
+      {
+        name: 'women_health',
+        searchIndex: 'HealthPersonalCare',
+        keywords: ['ヨガマット', 'プロテイン 女性', 'サプリメント マルチビタミン', '着圧ソックス', 'フォームローラー'],
+        maxResults: 10,
+        sortBy: 'featured',
+        enabled: true
+      },
+      {
+        name: 'relaxation',
+        searchIndex: 'HomeAndKitchen',
+        keywords: ['アロマディフューザー', '入浴剤 ギフト', 'ホットアイマスク', 'キャンドル', 'ルームウェア'],
+        maxResults: 10,
+        sortBy: 'featured',
+        enabled: true
       }
     ];
   }
@@ -545,7 +585,12 @@ export class ProductSearcher {
       'computers': 'Computers',
       'music': 'Music',
       'videogames': 'VideoGames',
-      'appliances': 'Appliances'
+      'appliances': 'Appliances',
+      'women_beauty': 'Beauty',
+      'women_fashion': 'Fashion',
+      'women_appliances': 'Beauty',
+      'women_health': 'HealthPersonalCare',
+      'relaxation': 'HomeAndKitchen'
     };
     return categoryMap[categoryName.toLowerCase()] || 'All';
   }
