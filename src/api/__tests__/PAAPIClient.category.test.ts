@@ -65,7 +65,9 @@ describe('PAAPIClient Category Extraction', () => {
             'チャイルドシート 1歳頃から',
             'チャイルドシート 新生児から',
             '除外Node(薬事)',
-            'サンプリング除外Node3'
+            'サンプリング除外Node3',
+            '売れ筋ランキング',
+            'オーディオランキング'
         ];
 
         invalidCategories.forEach(cat => {

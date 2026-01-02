@@ -725,7 +725,9 @@ export class PAAPIClient {
       /※/,
       /頃から/,
       /新生児から/,
-      /除外/
+      /除外/,
+      /ランキング/,
+      /売れ筋/
     ];
 
     return !invalidPatterns.some(pattern => pattern.test(displayName));
