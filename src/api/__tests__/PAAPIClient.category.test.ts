@@ -61,7 +61,11 @@ describe('PAAPIClient Category Extraction', () => {
             'Drugstore - Amazon Global',
             'Amazon Global',
             '※PBS用',
-            '※カテゴリ'
+            '※カテゴリ',
+            'チャイルドシート 1歳頃から',
+            'チャイルドシート 新生児から',
+            '除外Node(薬事)',
+            'サンプリング除外Node3'
         ];
 
         invalidCategories.forEach(cat => {
