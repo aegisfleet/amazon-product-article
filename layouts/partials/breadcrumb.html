@@ -39,11 +39,7 @@
         {{/* 子カテゴリ表示 */}}
         <li class="breadcrumb-item">
             <span class="breadcrumb-separator">›</span>
-            {{ with site.GetPage (printf "categories/%s" $category) }}
-            <a href="{{ .RelPermalink }}">{{ $category }}</a>
-            {{ else }}
-            <span>{{ $category }}</span>
-            {{ end }}
+            <a href="{{ (printf `/categories/%s/` ($category | urlize)) | relURL }}">{{ $category }}</a>
         </li>
         {{ end }}
 
