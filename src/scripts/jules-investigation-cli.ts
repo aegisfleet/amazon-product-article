@@ -137,9 +137,16 @@ async function main(): Promise<void> {
 
         logger.info(`Loaded ${products.length} products`);
 
+        // 調査対象をランダム化して多様性を確保
+        const shuffledProducts = [...products];
+        for (let i = shuffledProducts.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [shuffledProducts[i], shuffledProducts[j]] = [shuffledProducts[j]!, shuffledProducts[i]!];
+        }
+
         // 調査対象を制限
-        const productsToInvestigate = products.slice(0, options.maxProducts);
-        logger.info(`Investigating ${productsToInvestigate.length} products`);
+        const productsToInvestigate = shuffledProducts.slice(0, options.maxProducts);
+        logger.info(`Investigating ${productsToInvestigate.length} products (shuffled from ${products.length} found)`);
 
         // Jules Investigator を初期化
         const credentials: JulesCredentials = {
