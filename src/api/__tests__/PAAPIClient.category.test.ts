@@ -30,7 +30,14 @@ describe('PAAPIClient Category Extraction', () => {
             'パソコン ストア',
             'ドラッグストア', // Should be excluded based on user request "exclude EVERYTHING ending in store"
             'Androidアプリストア',
-            'インターネット経由で動くパワフルなAI'
+            'インターネット経由で動くパワフルなAI',
+            'Home & Kitchen - AmazonGlobal Free Shipping',
+            'Musical Instruments - AmazonGlobal free shipping',
+            'Office Products - AmazonGlobal free shipping',
+            'HQP用',
+            'IsWhiteGloveRequired',
+            'コーヒーの日 パーソナルコーヒーを楽しもう',
+            'シャープ 家電 全商品'
         ];
 
         invalidCategories.forEach(cat => {
