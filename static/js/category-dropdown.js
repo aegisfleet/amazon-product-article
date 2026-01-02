@@ -186,6 +186,19 @@
         }
     }
 
+    function safeNavigate(url) {
+        if (!url) return;
+        try {
+            const targetUrl = new URL(url, window.location.origin);
+            if (targetUrl.origin === window.location.origin &&
+                (targetUrl.protocol === 'http:' || targetUrl.protocol === 'https:')) {
+                window.location.href = targetUrl.toString();
+            }
+        } catch (e) {
+            // Invalid URL; do not navigate
+        }
+    }
+
     function handleSubChange(e) {
         if (e.target.id !== 'category-sub-select') return;
 
@@ -198,12 +211,12 @@
             // Build parent category URL
             const basePathMatch = window.location.pathname.match(/^(\/[^/]+\/)?/);
             const basePath = basePathMatch ? basePathMatch[0] : '/';
-            window.location.href = `${basePath}parent-category/${slug}/`;
+            safeNavigate(`${basePath}parent-category/${slug}/`);
             return;
         }
 
         if (selectedCategory && urls[selectedCategory]) {
-            window.location.href = urls[selectedCategory];
+            safeNavigate(urls[selectedCategory]);
         }
     }
 
