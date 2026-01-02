@@ -30,6 +30,31 @@
     {{ end }}
     {{ end }}
 
+    {{/* Special handling for "その他" - also include uncategorized articles */}}
+    {{ if eq $parentCategory "その他" }}
+    {{/* Collect ALL categories from ALL parent groups */}}
+    {{ $allCategorizedItems := slice }}
+    {{ range $groupName, $groupData := $categoryGroups }}
+    {{ range $groupData.categories }}
+    {{ $allCategorizedItems = $allCategorizedItems | append . }}
+    {{ end }}
+    {{ end }}
+
+    {{/* Find articles whose categories are NOT in any parent group */}}
+    {{ range where $.Site.RegularPages "Section" "articles" }}
+    {{ $article := . }}
+    {{ $isCategorized := false }}
+    {{ range $article.Params.categories }}
+    {{ if in $allCategorizedItems . }}
+    {{ $isCategorized = true }}
+    {{ end }}
+    {{ end }}
+    {{ if not $isCategorized }}
+    {{ $articles = $articles | append $article }}
+    {{ end }}
+    {{ end }}
+    {{ end }}
+
     {{/* Remove duplicates by using a map */}}
     {{ $uniqueArticles := slice }}
     {{ $seenPaths := slice }}
@@ -58,9 +83,24 @@
     </div>
 
     {{/* Show child category pills */}}
+    {{/* For "その他", collect categories from displayed articles instead of just predefined list */}}
+    {{ $displayCategories := $childCategories }}
+    {{ if eq $parentCategory "その他" }}
+    {{ $displayCategories = slice }}
+    {{ $seenCats := slice }}
+    {{ range $uniqueArticles }}
+    {{ range .Params.categories }}
+    {{ if not (in $seenCats .) }}
+    {{ $displayCategories = $displayCategories | append . }}
+    {{ $seenCats = $seenCats | append . }}
+    {{ end }}
+    {{ end }}
+    {{ end }}
+    {{ end }}
+
     <div class="category-pills-container" style="margin-bottom: var(--spacing-lg);">
         <div style="display: flex; flex-wrap: wrap; gap: var(--spacing-sm);">
-            {{ range $childCategories }}
+            {{ range $displayCategories }}
             {{ $cat := . }}
             {{ range $name, $taxonomy := $.Site.Taxonomies.categories }}
             {{ $catPage := $.Site.GetPage (printf "/categories/%s" $name) }}
