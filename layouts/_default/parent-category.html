@@ -62,9 +62,11 @@
         <div style="display: flex; flex-wrap: wrap; gap: var(--spacing-sm);">
             {{ range $childCategories }}
             {{ $cat := . }}
-            {{ $catPage := $.Site.GetPage (printf "/categories/%s" .) }}
-            {{ if $catPage }}
-            <a href="{{ $catPage.RelPermalink }}" class="category-pill">{{ . }}</a>
+            {{ range $name, $taxonomy := $.Site.Taxonomies.categories }}
+            {{ $catPage := $.Site.GetPage (printf "/categories/%s" $name) }}
+            {{ if and $catPage (eq $catPage.LinkTitle $cat) }}
+            <a href="{{ $catPage.RelPermalink }}" class="category-pill">{{ $cat }}</a>
+            {{ end }}
             {{ end }}
             {{ end }}
         </div>
