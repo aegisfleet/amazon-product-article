@@ -718,7 +718,8 @@ export class PAAPIClient {
       /企画$/,
       /祭り/,
       /今旬コスメ/,
-      /クーポン/
+      /クーポン/,
+      /ギフトセット・ギフト商品/
     ];
 
     return !invalidPatterns.some(pattern => pattern.test(displayName));
