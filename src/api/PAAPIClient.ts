@@ -692,11 +692,10 @@ export class PAAPIClient {
       /HQP用/,
       /IsWhiteGloveRequired/,
       /コーヒーの日 パーソナルコーヒーを楽しもう/,
-      /介護施設で選ばれています/,
       /高評価ブランド/,
       /毎日の料理をサポート　時短キッチングッズ/,
-      /ペットとの暮らしに/,
-      /KCAllBrand/
+      /KCAllBrand/,
+      /[【】]/
     ];
 
     return !invalidPatterns.some(pattern => pattern.test(displayName));
