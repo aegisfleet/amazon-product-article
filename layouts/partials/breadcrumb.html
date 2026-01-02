@@ -7,6 +7,7 @@
         </li>
 
         {{ if .IsPage }}
+        {{/* 商品ページの場合 */}}
         {{ $category := "" }}
         {{ if .Params.categories }}
         {{ $category = index .Params.categories 0 }}
@@ -52,7 +53,38 @@
             <span>{{ .Title | truncate 40 }}</span>
         </li>
 
+        {{ else if eq .Kind "term" }}
+        {{/* カテゴリ一覧ページ（子カテゴリページ）の場合 */}}
+        {{ $categoryName := .Title }}
+
+        {{/* 親カテゴリを検索 */}}
+        {{ $parentName := "" }}
+        {{ $parentSlug := "" }}
+        {{ range $parent, $data := site.Data.categorygroups }}
+        {{ range $data.categories }}
+        {{ if eq . $categoryName }}
+        {{ $parentName = $parent }}
+        {{ $parentSlug = $data.slug }}
+        {{ end }}
+        {{ end }}
+        {{ end }}
+
+        {{/* 親カテゴリ表示 */}}
+        {{ if $parentName }}
+        <li class="breadcrumb-item">
+            <span class="breadcrumb-separator">›</span>
+            <a href="{{ (printf `/parent-category/%s/` $parentSlug) | relURL }}">{{ $parentName }}</a>
+        </li>
+        {{ end }}
+
+        {{/* 現在のカテゴリ */}}
+        <li class="breadcrumb-item current">
+            <span class="breadcrumb-separator">›</span>
+            <span>{{ .Title }}</span>
+        </li>
+
         {{ else if .IsSection }}
+        {{/* セクションページの場合 */}}
         <li class="breadcrumb-item current">
             <span class="breadcrumb-separator">›</span>
             <span>{{ .Title }}</span>

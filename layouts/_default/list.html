@@ -1,5 +1,7 @@
 {{ define "main" }}
 <div class="container" style="padding-top: var(--spacing-xl);">
+    {{ partial "breadcrumb.html" . }}
+
     <div class="article-header">
         <h1>{{ .Title }}</h1>
         {{ with .Description }}<p class="article-meta">{{ . }}</p>{{ end }}
