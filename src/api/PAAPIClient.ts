@@ -706,6 +706,8 @@ export class PAAPIClient {
       /話題のコスメ急上昇/,
       /Arborist Merchandising Root/,
       /Beauty Recommendation Widget/i,
+      /企画$/,
+      /祭り/,
       /クーポン/
     ];
 
