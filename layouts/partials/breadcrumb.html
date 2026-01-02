@@ -1,0 +1,62 @@
+{{/* Breadcrumb Navigation with Parent-Child Category Support */}}
+<nav class="breadcrumb" aria-label="パンくずリスト">
+    <ol class="breadcrumb-list">
+        {{/* ホーム */}}
+        <li class="breadcrumb-item">
+            <a href="{{ `/` | relURL }}">🏠 ホーム</a>
+        </li>
+
+        {{ if .IsPage }}
+        {{ $category := "" }}
+        {{ if .Params.categories }}
+        {{ $category = index .Params.categories 0 }}
+        {{ else if .Params.category }}
+        {{ $category = .Params.category }}
+        {{ end }}
+
+        {{ if $category }}
+        {{/* 親カテゴリを検索 */}}
+        {{ $parentName := "" }}
+        {{ $parentSlug := "" }}
+        {{ range $parent, $data := site.Data.categorygroups }}
+        {{ range $data.categories }}
+        {{ if eq . $category }}
+        {{ $parentName = $parent }}
+        {{ $parentSlug = $data.slug }}
+        {{ end }}
+        {{ end }}
+        {{ end }}
+
+        {{/* 親カテゴリ表示 */}}
+        {{ if $parentName }}
+        <li class="breadcrumb-item">
+            <span class="breadcrumb-separator">›</span>
+            <a href="{{ (printf `/parent-category/%s/` $parentSlug) | relURL }}">{{ $parentName }}</a>
+        </li>
+        {{ end }}
+
+        {{/* 子カテゴリ表示 */}}
+        <li class="breadcrumb-item">
+            <span class="breadcrumb-separator">›</span>
+            {{ with site.GetPage (printf "categories/%s" $category) }}
+            <a href="{{ .RelPermalink }}">{{ $category }}</a>
+            {{ else }}
+            <span>{{ $category }}</span>
+            {{ end }}
+        </li>
+        {{ end }}
+
+        {{/* 現在のページ（商品名） */}}
+        <li class="breadcrumb-item current">
+            <span class="breadcrumb-separator">›</span>
+            <span>{{ .Title | truncate 40 }}</span>
+        </li>
+
+        {{ else if .IsSection }}
+        <li class="breadcrumb-item current">
+            <span class="breadcrumb-separator">›</span>
+            <span>{{ .Title }}</span>
+        </li>
+        {{ end }}
+    </ol>
+</nav>
