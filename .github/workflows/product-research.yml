@@ -25,22 +25,22 @@ jobs:
     runs-on: ubuntu-latest
     outputs:
       products-found: ${{ steps.search.outputs.products-found }}
-    
+
     steps:
     - uses: actions/checkout@v6
-    
+
     - name: Use Node.js
       uses: actions/setup-node@v6
       with:
         node-version: '20.x'
         cache: 'npm'
-    
+
     - name: Install dependencies
       run: npm ci
-    
+
     - name: Build project
       run: npm run build
-    
+
     - name: Run product search
       id: search
       env:
@@ -51,7 +51,7 @@ jobs:
         MAX_RESULTS_PER_CATEGORY: ${{ github.event.inputs.max_results || '10' }}
         INPUT_ASINS: ${{ github.event.inputs.asins }}
       run: npm run search:products
-    
+
     - name: Upload product data
       uses: actions/upload-artifact@v6
       with:
@@ -63,36 +63,36 @@ jobs:
     needs: product-search
     if: needs.product-search.outputs.products-found == 'true'
     runs-on: ubuntu-latest
-    
+
     steps:
     - uses: actions/checkout@v6
-    
+
     - name: Use Node.js
       uses: actions/setup-node@v6
       with:
         node-version: '20.x'
         cache: 'npm'
-    
+
     - name: Install dependencies
       run: npm ci
-    
+
     - name: Build project
       run: npm run build
-    
+
     - name: Download product data
       uses: actions/download-artifact@v7
       with:
         name: product-data
         path: data/products/
-    
+
     - name: Start Jules investigation sessions
       env:
         JULES_API_KEY: ${{ secrets.JULES_API_KEY }}
         JULES_SOURCE: sources/github/${{ github.repository }}
         JULES_STARTING_BRANCH: ${{ github.ref_name }}
-        MAX_INVESTIGATION_PRODUCTS: '30'
+        MAX_INVESTIGATION_PRODUCTS: '15'
       run: npm run investigate
-    
+
     - name: Upload session data
       uses: actions/upload-artifact@v6
       with:
