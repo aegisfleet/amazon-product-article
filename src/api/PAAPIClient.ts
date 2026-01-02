@@ -643,6 +643,8 @@ export class PAAPIClient {
       /テスト$/,
       /^SnS /i,         // 定期おトク便 (Subscribe & Save) 関連
       /Grocery_over2000_BFW24/,
+      /L2_02_StorageItems_01Cat/,
+      /VFE-JPOP/,
       /Favorites/i,
       /（サービス紐づけ用）/,
       /予約注文における注意事項/,
