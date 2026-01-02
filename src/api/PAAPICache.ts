@@ -20,6 +20,10 @@ export class PAAPICache {
     private logger = Logger.getInstance();
     private isLoaded = false;
 
+    // Regex to match invisible Unicode control characters
+    // Includes: LRM (U+200E), RLM (U+200F), zero-width chars (U+200B-U+200D, U+FEFF), etc.
+    private static readonly INVISIBLE_CHARS_REGEX = /[\u200B-\u200F\u2028-\u202F\uFEFF]/g;
+
     constructor(ttlHours: number = 24, cacheDir: string = 'data/cache') {
         this.ttl = ttlHours * 60 * 60 * 1000;
         this.cachePath = path.join(process.cwd(), cacheDir, 'paapi-product-cache.json');
@@ -126,11 +130,46 @@ export class PAAPICache {
     }
 
     /**
+     * Sanitize string by removing invisible Unicode control characters
+     */
+    private sanitizeString(str: string): string {
+        return str.replace(PAAPICache.INVISIBLE_CHARS_REGEX, '');
+    }
+
+    /**
+     * Recursively sanitize all string values in an object
+     */
+    private sanitizeData<T>(data: T): T {
+        if (data === null || data === undefined) {
+            return data;
+        }
+
+        if (typeof data === 'string') {
+            return this.sanitizeString(data) as unknown as T;
+        }
+
+        if (Array.isArray(data)) {
+            return data.map(item => this.sanitizeData(item)) as unknown as T;
+        }
+
+        if (typeof data === 'object') {
+            const result: Record<string, unknown> = {};
+            for (const [key, value] of Object.entries(data)) {
+                result[key] = this.sanitizeData(value);
+            }
+            return result as T;
+        }
+
+        return data;
+    }
+
+    /**
      * Set item in cache as valid
      */
     public set(asin: string, data: ProductDetail): void {
+        const sanitizedData = this.sanitizeData(data);
         this.cache[asin] = {
-            data,
+            data: sanitizedData,
             timestamp: Date.now(),
             status: 'valid'
         };
