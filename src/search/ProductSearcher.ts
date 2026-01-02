@@ -557,31 +557,39 @@ export class ProductSearcher {
   private async getExclusionList(): Promise<Set<string>> {
     const exclusionList = new Set<string>();
 
+    // 1. Check content directory (already published articles)
     try {
-      // Check if content directory exists
-      try {
-        await fs.access(this.contentDir);
-      } catch {
-        return exclusionList;
-      }
-
-      const files = await fs.readdir(this.contentDir);
-
-      // Assuming article directories are named by ASIN or contain ASIN
-      // Based on user workspace, articles might be in subfolders like /ASIN/index.md or just matched by name
-      // Standard pattern in this project seems to be /ASIN/ or similar
-
+      const normalizedContentDir = path.normalize(this.contentDir);
+      await fs.access(normalizedContentDir);
+      const files = await fs.readdir(normalizedContentDir);
       for (const file of files) {
-        // Simple heuristic: if the folder name looks like an ASIN (10 alphanumeric chars), exclude it
         if (/^[A-Z0-9]{10}$/.test(file)) {
           exclusionList.add(file);
         }
       }
-
-    } catch (error) {
-      this.logger.warn('Failed to generate exclusion list:', error);
+    } catch {
+      this.logger.debug('Content directory not found or inaccessible');
     }
 
+    // 2. Check investigations directory (already researched but not yet published)
+    try {
+      const investigationsDir = path.normalize(path.join(process.cwd(), 'data', 'investigations'));
+      await fs.access(investigationsDir);
+      const files = await fs.readdir(investigationsDir);
+      for (const file of files) {
+        // Filename is ASIN.json
+        if (file.endsWith('.json')) {
+          const asin = path.basename(file, '.json');
+          if (/^[A-Z0-9]{10}$/.test(asin)) {
+            exclusionList.add(asin);
+          }
+        }
+      }
+    } catch {
+      this.logger.debug('Investigations directory not found or inaccessible');
+    }
+
+    this.logger.info(`Total products excluded from search: ${exclusionList.size}`);
     return exclusionList;
   }
 
