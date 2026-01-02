@@ -448,7 +448,7 @@ export class ProductSearcher {
       {
         name: 'computers',
         searchIndex: 'Computers',
-        keywords: ['ノートパソコン', 'ゲーミングマウス', 'キーボード', 'モニター', '外付けSSD'],
+        keywords: ['ノートパソコン', 'ミニPC', 'マウス', 'トラックボール', 'キーボード', 'モニター', '外付けSSD'],
         maxResults: 10,
         sortBy: 'featured',
         enabled: true
@@ -612,6 +612,14 @@ export class ProductSearcher {
         maxResults: 10,
         sortBy: 'featured',
         enabled: true
+      },
+      {
+        name: 'telework',
+        searchIndex: 'Electronics',
+        keywords: ['マイク', 'オーディオインターフェース', 'Webカメラ', 'ヘッドセット', 'デスクライト', 'モニターアーム'],
+        maxResults: 10,
+        sortBy: 'featured',
+        enabled: true
       }
     ];
   }
@@ -722,7 +730,8 @@ export class ProductSearcher {
       'outdoor': 'SportsAndOutdoors',
       'diy': 'DIY',
       'gaming': 'VideoGames',
-      'watches': 'Watches'
+      'watches': 'Watches',
+      'telework': 'Electronics'
     };
     return categoryMap[categoryName.toLowerCase()] || 'All';
   }
