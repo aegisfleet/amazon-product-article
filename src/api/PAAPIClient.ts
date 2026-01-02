@@ -722,7 +722,10 @@ export class PAAPIClient {
       /ギフトセット・ギフト商品/,
       /スッキリ片づける・収納する/,
       /Amazon Global/,
-      /※/
+      /※/,
+      /頃から/,
+      /新生児から/,
+      /除外/
     ];
 
     return !invalidPatterns.some(pattern => pattern.test(displayName));
