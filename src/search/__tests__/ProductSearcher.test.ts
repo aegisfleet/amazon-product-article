@@ -1,13 +1,13 @@
 
 import fs from 'fs/promises';
-import { PAAPIClient } from '../api/PAAPIClient';
-import { Product, ProductSearchResult } from '../types/Product';
-import { ProductSearcher } from './ProductSearcher';
+import { PAAPIClient } from '../../api/PAAPIClient';
+import { Product, ProductSearchResult } from '../../types/Product';
+import { ProductSearcher } from '../ProductSearcher';
 
 // Mock dependencies
-jest.mock('../api/PAAPIClient');
+jest.mock('../../api/PAAPIClient');
 jest.mock('fs/promises');
-jest.mock('../utils/Logger', () => {
+jest.mock('../../utils/Logger', () => {
     return {
         Logger: {
             getInstance: jest.fn().mockReturnValue({
