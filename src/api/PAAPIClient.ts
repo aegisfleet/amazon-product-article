@@ -655,6 +655,7 @@ export class PAAPIClient {
       /^T-Fal/i,
       /^Bose/i,
       /^IO DATA/i,
+      /^DHC$/,
       /ネイチャーメイド/i,
       /大塚HPC_イオンサンプリング/i,
       /シャープ/i,
@@ -708,6 +709,7 @@ export class PAAPIClient {
       /Beauty Recommendation Widget/i,
       /企画$/,
       /祭り/,
+      /今旬コスメ/,
       /クーポン/
     ];
 
