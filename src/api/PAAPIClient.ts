@@ -681,6 +681,7 @@ export class PAAPIClient {
       /ハイパフォーマンス$/i,
       /お買い得$/i,
       /あわせ買い/i,
+      /まとめ買い/i,
       /おうちで/,
       /AMD Ryzen搭載ノートパソコン/,
       /iPhone\/iPad\/iPod用/i,
