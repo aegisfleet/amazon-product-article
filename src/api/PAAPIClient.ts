@@ -702,7 +702,8 @@ export class PAAPIClient {
       /人気の家電/,
       /肌・髪のお悩み/,
       /食品・飲料・お酒のみ/,
-      /マッサージャーほか健康家電/
+      /マッサージャーほか健康家電/,
+      /話題のコスメ急上昇/
     ];
 
     return !invalidPatterns.some(pattern => pattern.test(displayName));
