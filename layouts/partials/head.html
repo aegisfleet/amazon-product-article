@@ -11,7 +11,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}</title>
-<meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
+<meta name="description"
+  content="{{ if .Description }}{{ .Description }}{{ else if .IsPage }}{{ .Summary | truncate 160 }}{{ else }}{{ .Site.Params.description }}{{ end }}">
 <link rel="canonical" href="{{ .Permalink }}">
 
 <!-- Open Graph / Facebook -->
@@ -98,18 +99,20 @@
     "name": "{{ .Params.brand | default "Unknown" }}"
   },
   "sku": "{{ .Params.asin }}",
-  {{ if .Params.rating }}
+  {{ if and .Params.rating (ne (string .Params.rating) "0") }}
   "aggregateRating": {
     "@type": "AggregateRating",
     "ratingValue": "{{ .Params.rating }}",
-    "reviewCount": "100"
+    "bestRating": "5",
+    "worstRating": "1",
+    "ratingCount": "1"
   },
   {{ end }}
   "offers": {
     "@type": "Offer",
     "url": "{{ .Permalink }}",
     "priceCurrency": "JPY",
-    "price": "{{ .Params.price | default 0 }}",
+    "price": "{{ index (findRE "[0-9]+" (replace .Params.price "," "")) 0 | default 0 }}",
     "availability": "https://schema.org/InStock"
   }
 }
