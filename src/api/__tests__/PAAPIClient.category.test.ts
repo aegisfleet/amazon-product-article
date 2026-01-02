@@ -48,6 +48,7 @@ describe('PAAPIClient Category Extraction', () => {
             '人気の家電',
             '肌・髪のお悩み',
             '食品・飲料・お酒のみ',
+            'マッサージャーほか健康家電',
             'シャープ 家電 全商品'
         ];
 
