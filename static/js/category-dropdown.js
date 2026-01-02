@@ -97,6 +97,23 @@
         return categoryUrls;
     }
 
+    function safeCategoryUrl(rawUrl) {
+        if (!rawUrl || typeof rawUrl !== 'string') {
+            return '#';
+        }
+        try {
+            var parsed = new URL(rawUrl, window.location.origin);
+            // Allow only HTTP(S) URLs and enforce same-origin paths
+            if ((parsed.protocol === 'http:' || parsed.protocol === 'https:') &&
+                parsed.origin === window.location.origin) {
+                return parsed.href;
+            }
+        } catch (e) {
+            // fall through to safe default
+        }
+        return '#';
+    }
+
     function getFilteredGroups() {
         if (Object.keys(filteredGroups).length === 0) {
             const urls = getCategoryUrls();
@@ -271,7 +288,7 @@
 
             categories.forEach(category => {
                 const tag = document.createElement('a');
-                tag.href = urls[category];
+                tag.href = safeCategoryUrl(urls[category]);
                 tag.className = 'category-tag-link';
                 tag.textContent = category;
                 tagsContainer.appendChild(tag);
