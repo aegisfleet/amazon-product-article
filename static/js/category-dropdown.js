@@ -155,6 +155,23 @@
         subSelect.disabled = true;
 
         if (selectedGroup && groups[selectedGroup]) {
+            // Add "View All" option at the top
+            const slug = parentCategoryUrls[selectedGroup];
+            if (slug) {
+                const viewAllOption = document.createElement('option');
+                viewAllOption.value = `__all__:${slug}`;
+                viewAllOption.textContent = `📁 ${selectedGroup}のすべてを見る`;
+                viewAllOption.style.fontWeight = 'bold';
+                subSelect.appendChild(viewAllOption);
+            }
+
+            // Add separator
+            const separator = document.createElement('option');
+            separator.disabled = true;
+            separator.textContent = '──────────';
+            subSelect.appendChild(separator);
+
+            // Add individual categories
             groups[selectedGroup].forEach(category => {
                 const option = document.createElement('option');
                 option.value = category;
@@ -170,6 +187,16 @@
 
         const selectedCategory = e.target.value;
         const urls = getCategoryUrls();
+
+        // Check if "View All" option was selected
+        if (selectedCategory && selectedCategory.startsWith('__all__:')) {
+            const slug = selectedCategory.replace('__all__:', '');
+            // Build parent category URL
+            const basePathMatch = window.location.pathname.match(/^(\/[^/]+\/)?/);
+            const basePath = basePathMatch ? basePathMatch[0] : '/';
+            window.location.href = `${basePath}parent-category/${slug}/`;
+            return;
+        }
 
         if (selectedCategory && urls[selectedCategory]) {
             window.location.href = urls[selectedCategory];
