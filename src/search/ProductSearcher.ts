@@ -516,6 +516,102 @@ export class ProductSearcher {
         maxResults: 10,
         sortBy: 'featured',
         enabled: true
+      },
+      {
+        name: 'storage',
+        searchIndex: 'HomeAndKitchen',
+        keywords: ['収納ボックス', '収納ケース', '衣類収納', 'クローゼット収納', '本棚'],
+        maxResults: 10,
+        sortBy: 'featured',
+        enabled: true
+      },
+      {
+        name: 'furniture',
+        searchIndex: 'HomeAndKitchen',
+        keywords: ['デスク', 'オフィスチェア', 'ラック', 'テーブル', '棚'],
+        maxResults: 10,
+        sortBy: 'featured',
+        enabled: true
+      },
+      {
+        name: 'office',
+        searchIndex: 'OfficeProducts',
+        keywords: ['文房具', 'ノート', 'ペン', 'ファイル', '事務用品'],
+        maxResults: 10,
+        sortBy: 'featured',
+        enabled: true
+      },
+      {
+        name: 'baby',
+        searchIndex: 'Baby',
+        keywords: ['ベビーカー', 'チャイルドシート', '抱っこ紐', 'ベビー服', 'おむつ'],
+        maxResults: 10,
+        sortBy: 'featured',
+        enabled: true
+      },
+      {
+        name: 'pet',
+        searchIndex: 'PetSupplies',
+        keywords: ['ペットフード', '猫用品', '犬用品', 'キャットタワー', 'ペットベッド'],
+        maxResults: 10,
+        sortBy: 'featured',
+        enabled: true
+      },
+      {
+        name: 'outdoor',
+        searchIndex: 'SportsAndOutdoors',
+        keywords: ['キャンプ用品', 'テント', '登山', 'アウトドアチェア', 'ランタン'],
+        maxResults: 10,
+        sortBy: 'featured',
+        enabled: true
+      },
+      {
+        name: 'automotive',
+        searchIndex: 'Automotive',
+        keywords: ['カー用品', 'ドライブレコーダー', 'カーナビ', '車載ホルダー', 'カーアクセサリー'],
+        maxResults: 10,
+        sortBy: 'featured',
+        enabled: true
+      },
+      {
+        name: 'diy',
+        searchIndex: 'DIY',
+        keywords: ['工具セット', '電動ドリル', 'DIY', 'ハンドツール', '工具箱'],
+        maxResults: 10,
+        sortBy: 'featured',
+        enabled: true
+      },
+      {
+        name: 'toys',
+        searchIndex: 'Toys',
+        keywords: ['知育玩具', 'ボードゲーム', 'ブロック', 'プラモデル', 'ぬいぐるみ'],
+        maxResults: 10,
+        sortBy: 'featured',
+        enabled: true
+      },
+      {
+        name: 'gaming',
+        searchIndex: 'VideoGames',
+        keywords: ['PS5', 'Switch', 'ゲームソフト', 'ゲーミングチェア', 'コントローラー'],
+        maxResults: 10,
+        sortBy: 'featured',
+        enabled: true
+      },
+      {
+        name: 'music',
+        searchIndex: 'MusicalInstruments',
+        keywords: ['ギター', 'ピアノ', '電子キーボード', 'ウクレレ', '楽器'],
+        maxResults: 10,
+        sortBy: 'featured',
+        enabled: true
+      },
+      {
+        name: 'watches',
+        searchIndex: 'Watches',
+        keywords: ['腕時計 メンズ', '腕時計 レディース', 'スマートウォッチ', 'G-SHOCK', 'セイコー'],
+        maxResults: 10,
+        sortBy: 'featured',
+        enabled: true
       }
     ];
   }
@@ -610,14 +706,23 @@ export class ProductSearcher {
       'beauty': 'Beauty',
       'health': 'HealthPersonalCare',
       'computers': 'Computers',
-      'music': 'Music',
+      'music': 'MusicalInstruments',
       'videogames': 'VideoGames',
       'appliances': 'Appliances',
       'women_beauty': 'Beauty',
       'women_fashion': 'Fashion',
       'women_appliances': 'Beauty',
       'women_health': 'HealthPersonalCare',
-      'relaxation': 'HomeAndKitchen'
+      'relaxation': 'HomeAndKitchen',
+      'storage': 'HomeAndKitchen',
+      'furniture': 'HomeAndKitchen',
+      'office': 'OfficeProducts',
+      'baby': 'Baby',
+      'pet': 'PetSupplies',
+      'outdoor': 'SportsAndOutdoors',
+      'diy': 'DIY',
+      'gaming': 'VideoGames',
+      'watches': 'Watches'
     };
     return categoryMap[categoryName.toLowerCase()] || 'All';
   }
