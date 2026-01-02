@@ -91,8 +91,9 @@ describe('ProductSearcher', () => {
             mockPapiClient.searchProducts.mockResolvedValue(mockResult);
 
             // Mock fs.readdir to return the existing ASIN folder in content/articles
-            (fs.readdir as jest.Mock).mockImplementation((path: string) => {
-                if (path.includes('articles')) {
+            (fs.readdir as jest.Mock).mockImplementation((pathStr: string) => {
+                const normalizedPath = pathStr.replace(/\\/g, '/');
+                if (normalizedPath.includes('/content/articles') || normalizedPath.endsWith('articles')) {
                     return Promise.resolve([existingAsin]);
                 }
                 return Promise.resolve([]);
@@ -110,7 +111,7 @@ describe('ProductSearcher', () => {
             // @ts-expect-error - Accessing private method for testing
             searcher.sleep = jest.fn().mockResolvedValue(undefined);
 
-            const existingAsin = 'B0INVEST';
+            const existingAsin = 'B0INVESTIG';
             const newAsin = 'B0NEW00001';
 
             const mockResult: ProductSearchResult = {
@@ -131,7 +132,7 @@ describe('ProductSearcher', () => {
             // Mock fs.readdir to return the existing ASIN.json in investigations
             (fs.readdir as jest.Mock).mockImplementation((pathStr: string) => {
                 const normalizedPath = pathStr.replace(/\\/g, '/');
-                if (normalizedPath.endsWith('data/investigations')) {
+                if (normalizedPath.includes('/data/investigations') || normalizedPath.endsWith('investigations')) {
                     return Promise.resolve([`${existingAsin}.json`]);
                 }
                 return Promise.resolve([]);
