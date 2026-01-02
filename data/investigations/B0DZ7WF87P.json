@@ -20,7 +20,7 @@
     "negativePoints": [
       "ディスプレイが上位モデルと比較して廉価（フルラミネーション非対応、反射防止コーティングなし）",
       "リフレッシュレートが60Hzであり、120HzのProMotionテクノロジーには非対応",
-      "Appleの最新AI機能「Apple Intelligence」には非対応",
+      "A16チップのメモリ不足により、Appleの最新AI機能「Apple Intelligence」には非対応",
       "USB-CポートがUSB 2.0規格のため、データ転送速度が遅い（最大480Mb/s）",
       "Apple Pencil（第2世代）やProには対応しておらず、ペアリングと充電にケーブルが必要なモデルのみ対応"
     ],
@@ -44,7 +44,7 @@
         "sentiment": "mixed"
       }
     ],
-    "userImpression": "iPad (A16)は、多くのユーザーにとって「これで十分」と感じさせる、非常にバランスの取れた製品である。プロレベルの性能を求めない限り、A16チップのパワーは日常生活や一般的な作業において快適そのもの。特に、最小ストレージが128GBになったことで、価格を抑えつつも容量不足の心配なく使えるようになった点が評価されている。ディスプレイ品質やUSBの転送速度など、上位モデルとの差別化点はあるものの、それを理解した上で購入するなら、極めて満足度の高いコストパフォーマンスに優れたタブレットと言える。",
+    "userImpression": "iPad (A16)は、多くのユーザーにとって「これで十分」と感じさせる、非常にバランスの取れた製品である。プロレベルの性能を求めない限り、A16チップのパワーは日常生活や一般的な作業において快適そのもの。特に、最小ストレージが128GBになったことで、価格を抑えつつも容量不足の心配なく使えるようになった点が評価されている。ディスプレイ品質やUSBの転送速度、そして最新のApple Intelligenceに非対応である点など、上位モデルとの差別化点はあるものの、それを理解した上で購入するなら、極めて満足度の高いコストパフォーマンスに優れたタブレットと言える。",
     "sources": [
       {
         "name": "Amazon PA-API 商品情報",
@@ -57,17 +57,22 @@
         "credibility": "High"
       },
       {
-        "name": "PC Watch: 1万円台までのおすすめ格安タブレット。高解像度ディスプレイやSIM対応も選べる",
-        "url": "https://pc.watch.impress.co.jp/docs/topic/feature/2071775.html",
-        "credibility": "Medium"
+        "name": "Business Insider: 「iPad（A16）」の実力を試す。「Apple Intelligence」なしでも十分使える11インチタブレット",
+        "url": "https://www.businessinsider.jp/article/2505-apple-ipad-a16-review/",
+        "credibility": "High"
+      },
+      {
+        "name": "こぼねみ: 新型iPad、やはりApple Intelligenceをサポートしていないことが判明",
+        "url": "https://www.kobonemi.com/entry/2025/03/05/Apple-New-iPad-A16-no-Apple-Intelligence",
+        "credibility": "High"
       }
     ],
-    "lastInvestigated": "2026-01-01",
+    "lastInvestigated": "2026-01-02",
     "competitiveAnalysis": [
       {
         "name": "Kingrid T90 Android16 タブレット 11インチ",
         "asin": "B0FKY8NMLQ",
-        "priceComparison": "iPad（約5.8万円）に対し、Kingrid T90は約1.7万円と非常に安価。さらにキーボード、マウス、ペンなどのアクセサリーが標準で付属しており、初期投資を大幅に抑えられる。",
+        "priceComparison": "iPad（約5.8万円）に対し、Kingrid T90は非常に安価な価格帯（※価格は変動）で提供される。キーボード、マウス、ペンなどのアクセサリーが標準で付属しており、初期投資を大幅に抑えられる。",
         "featureComparison": [
           "OS: iPadは独自のiPadOSを搭載し、Appleエコシステムとの連携が強み。T90はAndroid 16を搭載し、カスタマイズ性が高い。",
           "パフォーマンス: iPadのA16 Bionicチップは、T90のUnisoc T615より遥かに高性能で、アプリの動作やゲームの快適性で大きく勝る。",
@@ -83,7 +88,7 @@
       {
         "name": "TECLAST T60 AI Android 15 タブレット 12インチ",
         "asin": "B0DPKXBPHB",
-        "priceComparison": "iPad（約5.8万円）に対し、TECLAST T60AIは約1.8万円台と非常に安価。画面サイズは一回り大きい。",
+        "priceComparison": "iPad（約5.8万円）に対し、TECLAST T60AIは非常に安価な価格帯（※価格は変動）で提供される。画面サイズは一回り大きい。",
         "featureComparison": [
           "OS: iPadOS対Android 15。Appleのエコシステムか、Androidのオープン性かの選択となる。",
           "パフォーマンス: iPadのA16 Bionicは、T60AIのAllwinner A733を凌駕する。特にグラフィック性能や高負荷時の安定性で差が出る。",
@@ -99,7 +104,7 @@
       {
         "name": "DOOGEE U10 Android 15 タブレット 10.1インチ",
         "asin": "B0FNM7W3B8",
-        "priceComparison": "iPad（約5.8万円）に対し、DOOGEE U10は1万円を切る価格設定で、エントリーモデルの中でも特に安価。",
+        "priceComparison": "iPad（約5.8万円）に対し、DOOGEE U10は1万円前後の価格設定（※価格は変動）で、エントリーモデルの中でも特に安価。",
         "featureComparison": [
           "OS: iPadOS対Android 15。基本的な違いは他と同様。",
           "パフォーマンス: U10に搭載されているRockchip RK3562は、ウェブ閲覧などの軽量なタスクを想定したもので、iPadのA16 Bionicとは比較にならない。",
@@ -128,7 +133,7 @@
       "cons": [
         "プロのクリエイターやヘビーユーザーには物足りないディスプレイ性能（特にリフレッシュレート）",
         "USB-Cポートのデータ転送速度が遅い",
-        "最新のAI機能など、一部のソフトウェア機能が制限されている"
+        "最新のAI機能「Apple Intelligence」が非対応である点"
       ],
       "score": 85
     }
