@@ -626,6 +626,7 @@ export class PAAPIClient {
       /新生活ギフト/,
       /^Amazonビジネス/,
       /法人価格/,
+      /定期おトク便/,
 
       // --- システム & 内部管理用 ---
       /^yobi$/i,
