@@ -49,7 +49,9 @@ describe('PAAPIClient Category Extraction', () => {
             '肌・髪のお悩み',
             '食品・飲料・お酒のみ',
             'マッサージャーほか健康家電',
-            'シャープ 家電 全商品'
+            'シャープ 家電 全商品',
+            'Arborist Merchandising Root',
+            '対象のSALONIA製品購入でクーポンプレゼント'
         ];
 
         invalidCategories.forEach(cat => {
