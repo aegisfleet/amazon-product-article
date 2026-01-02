@@ -35,5 +35,25 @@
         </div>
 
     </article>
+
+    {{ $currentAsin := .Params.asin }}
+    {{ $categories := .Params.categories }}
+    {{ $related := where (where .Site.RegularPages "Section" "articles") "Params.asin" "!=" $currentAsin }}
+    {{ if $categories }}
+    {{ $firstCat := index $categories 0 }}
+    {{ $related = where $related "Params.categories" "intersect" (slice $firstCat) }}
+    {{ end }}
+
+    {{ if gt (len $related) 0 }}
+    <section class="related-articles"
+        style="margin-top: var(--spacing-xl); border-top: 1px solid var(--color-border); padding-top: var(--spacing-lg);">
+        <h2 style="margin-bottom: var(--spacing-md);">同じカテゴリーの最新記事</h2>
+        <div class="product-grid">
+            {{ range first 3 $related }}
+            {{ partial "product-card.html" . }}
+            {{ end }}
+        </div>
+    </section>
+    {{ end }}
 </div>
 {{ end }}
