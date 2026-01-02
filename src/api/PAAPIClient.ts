@@ -699,7 +699,7 @@ export class PAAPIClient {
       /Ryzen CPUラインナップ/,
       /^服$/,
       /Shipping$/i,
-      /HQP用/,
+      /HQP/,
       /IsWhiteGloveRequired/,
       /コーヒーの日 パーソナルコーヒーを楽しもう/,
       /高評価ブランド/,
