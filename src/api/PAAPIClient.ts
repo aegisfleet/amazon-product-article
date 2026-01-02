@@ -665,6 +665,7 @@ export class PAAPIClient {
       /^IO DATA/i,
       /^DHC/,
       /^Xiaomi/,
+      /^Dyson/,
       /ネイチャーメイド/i,
       /大塚HPC_イオンサンプリング/i,
       /シャープ/i,
