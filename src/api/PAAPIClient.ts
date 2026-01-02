@@ -696,7 +696,9 @@ export class PAAPIClient {
       /毎日の料理をサポート　時短キッチングッズ/,
       /KCAllBrand/,
       /[【】]/,
-      /秋の味覚を楽しむ/
+      /秋の味覚を楽しむ/,
+      /時短で便利/,
+      /人気の家電/
     ];
 
     return !invalidPatterns.some(pattern => pattern.test(displayName));
