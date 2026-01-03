@@ -242,7 +242,7 @@ export class ArticleGenerator {
     // 画像をモバイル対応のHTML形式に変換
     mobileContent = mobileContent.replace(
       /!\[([^\]]*)\]\(([^)]+)\)/g,
-      '<img src="$2" alt="$1" class="mobile-responsive-image">'
+      '<img src="$2" alt="$1" class="mobile-responsive-image" onerror="this.onerror=null;this.src=\'https://aegisfleet.github.io/amazon-product-article/images/no-image.svg\';this.classList.add(\'image-failed\');">'
     );
 
     // リストアイテムを読みやすく調整
@@ -415,7 +415,7 @@ ${sourcesList}`;
 
 <div class="product-hero-image">
 
-![${product.title}](${product.images.primary})
+![${product.title}](${product.images.primary}){onerror="this.onerror=null;this.src='https://aegisfleet.github.io/amazon-product-article/images/no-image.svg';this.classList.add('image-failed');"}
 
 </div>
 
@@ -645,7 +645,7 @@ ${reviewAnalysis ? this.generateSentimentAnalysis(reviewAnalysis) : ''}`;
 
           productPreview = `
 <div class="competitor-preview">
-<img src="${imageUrl}" alt="${competitor.name}" class="competitor-preview-img">
+<img src="${imageUrl}" alt="${competitor.name}" class="competitor-preview-img" onerror="this.onerror=null;this.src='https://aegisfleet.github.io/amazon-product-article/images/no-image.svg';this.classList.add('image-failed');">
 <div class="competitor-preview-info">
 ${priceText ? `<span class="competitor-actual-price">${priceText}</span>` : ''}
 ${availabilityText ? `<span class="competitor-availability">📦 ${availabilityText}</span>` : ''}
