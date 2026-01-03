@@ -613,9 +613,10 @@ export class PAAPIClient {
    * Filters out promotional, shipping, and store-related nodes
    */
   private isValidCategoryNode(displayName: string): boolean {
-    // Exclude all categories containing any spaces (including full-width), hyphens, or pipes
+    // Exclude all categories containing any spaces (including full-width), hyphens, pipes, middle dots, or ampersands
     if (displayName.includes(' ') || displayName.includes('　') || displayName.includes('-') ||
-      displayName.includes('|') || displayName.includes('｜')) {
+      displayName.includes('|') || displayName.includes('｜') || displayName.includes('・') ||
+      displayName.includes('＆')) {
       return false;
     }
 
@@ -756,14 +757,6 @@ export class PAAPIClient {
     return !invalidPatterns.some(pattern => pattern.test(displayName));
   }
 
-  /**
-   * Normalize category name to fix variations from PA-API
-   * e.g., "スポーツ＆アウトドア" → "スポーツ・アウトドア"
-   */
-  private normalizeCategoryName(name: string): string {
-    // Replace full-width ampersand with middle dot for consistency
-    return name.replace(/＆/g, '・');
-  }
 
   /**
    * Extract hierarchical category info from PA-API BrowseNodes
@@ -785,7 +778,7 @@ export class PAAPIClient {
       );
       if (contextFreeNode) {
         return {
-          main: this.normalizeCategoryName(contextFreeNode.ContextFreeName),
+          main: contextFreeNode.ContextFreeName,
           browseNodeId: contextFreeNode.Id
         };
       }
@@ -795,7 +788,7 @@ export class PAAPIClient {
     if (validNodes.length === 1) {
       const firstNode = validNodes[0]!;
       return {
-        main: this.normalizeCategoryName(firstNode.DisplayName),
+        main: firstNode.DisplayName,
         browseNodeId: firstNode.Id
       };
     }
@@ -804,8 +797,8 @@ export class PAAPIClient {
     const firstNode = validNodes[0]!;
     const secondNode = validNodes[1];
     return {
-      main: this.normalizeCategoryName(secondNode?.DisplayName || firstNode.DisplayName),
-      sub: this.normalizeCategoryName(firstNode.DisplayName),
+      main: secondNode?.DisplayName || firstNode.DisplayName,
+      sub: firstNode.DisplayName,
       browseNodeId: firstNode.Id
     };
   }
