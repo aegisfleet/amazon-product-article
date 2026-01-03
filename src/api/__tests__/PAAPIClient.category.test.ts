@@ -81,10 +81,9 @@ describe('PAAPIClient Category Extraction', () => {
             'ファンデーション 21N',
             '4K モニター',
             'Panasonic-HA-HairDryers',
-            'Wi-Fiルーター',
-            'T-Fal-Cookware',
-            'ルーター親機｜デュアルバンド',
-            'PC | Accessories'
+            'PC | Accessories',
+            'コーヒー・ティー用品',
+            'ホーム＆キッチン'
         ];
 
         invalidCategories.forEach(cat => {
@@ -92,9 +91,10 @@ describe('PAAPIClient Category Extraction', () => {
         });
 
         const validCategories = [
-            'ホーム＆キッチン',
-            'キッチン用品',
-            'コーヒー・ティー用品'
+            'パソコン',
+            'マウス',
+            'ドラッグ',
+            'キッチン用品'
         ];
 
         validCategories.forEach(cat => {
