@@ -142,7 +142,7 @@
                         return true;
                     }
                     return false;
-                }).sort((a, b) => a.localeCompare('ja'));
+                }).filter(Boolean);
                 if (available.length > 0) {
                     filteredGroups[group] = available;
                 }
@@ -154,7 +154,7 @@
                 if (!filteredGroups['その他']) {
                     filteredGroups['その他'] = [];
                 }
-                filteredGroups['その他'] = [...filteredGroups['その他'], ...uncategorized].sort((a, b) => a.localeCompare('ja'));
+                filteredGroups['その他'] = [...filteredGroups['その他'], ...uncategorized];
             }
         }
         return filteredGroups;
