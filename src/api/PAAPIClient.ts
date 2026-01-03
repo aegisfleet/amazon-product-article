@@ -751,7 +751,8 @@ export class PAAPIClient {
       /\//,
       /ホワイト/,
       /Audio Interfaces/i,
-      /[[\]]/
+      /[[\]]/,
+      /[「」]/  // 鉤括弧を含むカテゴリは除外（例：「なるほど家電」はアイリスオーヤマ）
     ];
 
     return !invalidPatterns.some(pattern => pattern.test(displayName));
