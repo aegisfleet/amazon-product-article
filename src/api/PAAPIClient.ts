@@ -679,7 +679,6 @@ export class PAAPIClient {
       /フルHD/i,
 
       // --- その他（広範すぎる、またはカテゴリではないもの） ---
-      /^yobi$/i,
       /^HPC/i,          // HPC (Health & Personal Care) の推奨ウィジェット等
       /3P HPC/i,
       /Coupon/i,
