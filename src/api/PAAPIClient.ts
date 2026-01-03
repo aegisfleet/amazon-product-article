@@ -641,7 +641,7 @@ export class PAAPIClient {
     /^Panasonic-HA-PersonalCare$/i, /^Headset & Earphones$/i,
     /^YA-MAN$/i, /^Fireタブレット$/i, /^Customers/i,
     /^T-Fal/i, /^Bose/i, /^IO DATA/i, /^DHC/, /^Xiaomi/, /^Huawei/,
-    /^Dyson/, /^Logicool/, /Housewarming/, /ネイチャーメイド/i,
+    /^Dyson/, /^Logicool/, /housewarming/, /ネイチャーメイド/i,
     /大塚HPC_イオンサンプリング/i, /シャープ/i, /高評価ブランド/
   ];
 
