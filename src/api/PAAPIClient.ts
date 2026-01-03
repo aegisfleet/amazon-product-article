@@ -753,7 +753,8 @@ export class PAAPIClient {
       /Audio Interfaces/i,
       /[[\]]/,
       /[「」]/,  // 鉤括弧を含むカテゴリは除外（例：「なるほど家電」はアイリスオーヤマ）
-      /大型家電/  // 「大型家電」を含むカテゴリは除外（例：アイリスオーヤマ大型家電）
+      /大型家電/,  // 「大型家電」を含むカテゴリは除外（例：アイリスオーヤマ大型家電）
+      /限定商品/  // 「限定商品」を含むカテゴリは除外（例：スポーツ&アウトドアAmazon.co.jp限定商品）
     ];
 
     return !invalidPatterns.some(pattern => pattern.test(displayName));
