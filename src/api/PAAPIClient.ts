@@ -736,7 +736,8 @@ export class PAAPIClient {
       /型テレビ/,
       /おまかせ/,
       /話題の/,
-      /Brand Week/i
+      /Brand Week/i,
+      /_/
     ];
 
     return !invalidPatterns.some(pattern => pattern.test(displayName));
