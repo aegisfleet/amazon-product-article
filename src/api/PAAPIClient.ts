@@ -706,6 +706,20 @@ export class PAAPIClient {
       node.DisplayName && this.isValidCategoryNode(node.DisplayName)
     );
 
+    // SalesRankを持つノードを最優先（これが本来のAmazon商品カテゴリ）
+    // ストア用ノード（家電・PC・周辺機器等）はSalesRankを持たないため除外される
+    const nodeWithSalesRank = validNodes.find(node => node.SalesRank !== undefined);
+    if (nodeWithSalesRank) {
+      // SalesRankを持つノード以外で有効なノードをサブカテゴリ候補とする
+      const otherValidNode = validNodes.find(n => n.Id !== nodeWithSalesRank.Id);
+      return {
+        main: nodeWithSalesRank.DisplayName,
+        ...(otherValidNode && { sub: otherValidNode.DisplayName }),
+        browseNodeId: nodeWithSalesRank.Id
+      };
+    }
+
+    // 以下はフォールバック（SalesRankがない場合）
     if (validNodes.length === 0) {
       // Fall back to ContextFreeName if DisplayName is invalid
       const contextFreeNode = browseNodes.find(node =>

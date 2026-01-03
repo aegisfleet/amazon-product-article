@@ -113,7 +113,9 @@ describe('PAAPIClient Category Extraction', () => {
             { category: 'キッチン用品', reason: '通常のカテゴリ' },
             { category: 'コーヒー・ティー用品', reason: '「・」は有効' },
             { category: '鍼・灸', reason: '「・」は有効' },
-            { category: '家電・PC・周辺機器', reason: '「・」は有効' }
+            { category: '家電・PC・周辺機器', reason: '「・」は有効' },
+            { category: '無線・有線LANルーター', reason: '「・」は有効' },
+            { category: '無線・有線LAN中継器', reason: '「・」は有効' }
         ];
 
         test.each(validCategories)(
@@ -122,5 +124,66 @@ describe('PAAPIClient Category Extraction', () => {
                 expect(clientAny.isValidCategoryNode(category)).toBe(true);
             }
         );
+    });
+
+    // SalesRank優先ロジックのテスト
+    describe('extractCategoryInfo with SalesRank priority', () => {
+        test('should prioritize node with SalesRank over first valid node', () => {
+            // Wi-Fiルーターの実際のPA-APIレスポンスを模したテストデータ
+            const mockItem = {
+                ASIN: 'B0F5B58YV8',
+                DetailPageURL: 'https://example.com',
+                BrowseNodeInfo: {
+                    BrowseNodes: [
+                        { Id: '214332128051', DisplayName: '家電・PC・周辺機器', ContextFreeName: '家電・PC・周辺機器' },
+                        { Id: '207342683051', DisplayName: 'Wi-Fiルーター', ContextFreeName: 'Wi-Fiルーター' },
+                        { Id: '2151996051', DisplayName: '無線・有線LANルーター', ContextFreeName: '無線・有線LANルーター', SalesRank: 1 }
+                    ]
+                }
+            };
+
+            const result = clientAny.extractCategoryInfo(mockItem);
+
+            // SalesRankを持つノードがメインカテゴリになるべき
+            expect(result.main).toBe('無線・有線LANルーター');
+            expect(result.browseNodeId).toBe('2151996051');
+        });
+
+        test('should use first valid node as sub when SalesRank node is main', () => {
+            const mockItem = {
+                ASIN: 'B0D2NXKK3X',
+                DetailPageURL: 'https://example.com',
+                BrowseNodeInfo: {
+                    BrowseNodes: [
+                        { Id: '214332128051', DisplayName: '家電・PC・周辺機器', ContextFreeName: '家電・PC・周辺機器' },
+                        { Id: '5334402051', DisplayName: '無線・有線LAN中継器', ContextFreeName: '無線・有線LAN中継器', SalesRank: 1 }
+                    ]
+                }
+            };
+
+            const result = clientAny.extractCategoryInfo(mockItem);
+
+            expect(result.main).toBe('無線・有線LAN中継器');
+            expect(result.sub).toBe('家電・PC・周辺機器');
+        });
+
+        test('should fall back to first valid node if no SalesRank exists', () => {
+            const mockItem = {
+                ASIN: 'TEST123',
+                DetailPageURL: 'https://example.com',
+                BrowseNodeInfo: {
+                    BrowseNodes: [
+                        { Id: '1', DisplayName: 'カテゴリA', ContextFreeName: 'カテゴリA' },
+                        { Id: '2', DisplayName: 'カテゴリB', ContextFreeName: 'カテゴリB' }
+                    ]
+                }
+            };
+
+            const result = clientAny.extractCategoryInfo(mockItem);
+
+            // フォールバック: 最初の有効なノードを使用
+            expect(result.main).toBe('カテゴリA');
+            expect(result.sub).toBe('カテゴリB');
+        });
     });
 });
