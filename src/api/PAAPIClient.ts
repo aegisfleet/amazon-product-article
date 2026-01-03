@@ -613,8 +613,8 @@ export class PAAPIClient {
    * Filters out promotional, shipping, and store-related nodes
    */
   private isValidCategoryNode(displayName: string): boolean {
-    // Exclude all categories containing any spaces (including full-width)
-    if (displayName.includes(' ') || displayName.includes('　')) {
+    // Exclude all categories containing any spaces (including full-width) or hyphens
+    if (displayName.includes(' ') || displayName.includes('　') || displayName.includes('-')) {
       return false;
     }
 

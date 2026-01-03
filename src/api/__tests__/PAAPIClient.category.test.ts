@@ -79,7 +79,10 @@ describe('PAAPIClient Category Extraction', () => {
             'おまかせ設定',
             'メイ ク',
             'ファンデーション 21N',
-            '4K モニター'
+            '4K モニター',
+            'Panasonic-HA-HairDryers',
+            'Wi-Fiルーター',
+            'T-Fal-Cookware'
         ];
 
         invalidCategories.forEach(cat => {
