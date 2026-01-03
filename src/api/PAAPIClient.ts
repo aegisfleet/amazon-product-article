@@ -742,7 +742,8 @@ export class PAAPIClient {
       /^Music Album CDs$/,
       /発売日/,
       /お届け/,
-      /\//
+      /\//,
+      /ホワイト/
     ];
 
     return !invalidPatterns.some(pattern => pattern.test(displayName));
