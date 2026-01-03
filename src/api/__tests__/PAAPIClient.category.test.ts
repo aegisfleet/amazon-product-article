@@ -67,7 +67,9 @@ describe('PAAPIClient Category Extraction', () => {
             '除外Node(薬事)',
             'サンプリング除外Node3',
             '売れ筋ランキング',
-            'オーディオランキング'
+            'オーディオランキング',
+            '45~59型テレビ',
+            '32型テレビ'
         ];
 
         invalidCategories.forEach(cat => {
