@@ -743,7 +743,9 @@ export class PAAPIClient {
       /発売日/,
       /お届け/,
       /\//,
-      /ホワイト/
+      /ホワイト/,
+      /Audio Interfaces/i,
+      /[\[\]]/
     ];
 
     return !invalidPatterns.some(pattern => pattern.test(displayName));
