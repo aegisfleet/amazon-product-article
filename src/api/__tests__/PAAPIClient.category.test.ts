@@ -69,7 +69,9 @@ describe('PAAPIClient Category Extraction', () => {
             '売れ筋ランキング',
             'オーディオランキング',
             '45~59型テレビ',
-            '32型テレビ'
+            '32型テレビ',
+            '大型家具・家電おまかせサービス対象テレビ',
+            'おまかせ設定'
         ];
 
         invalidCategories.forEach(cat => {
