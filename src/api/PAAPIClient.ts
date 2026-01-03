@@ -660,7 +660,7 @@ export class PAAPIClient {
   /** 除外パターン: その他（構文・記号・特殊表現） */
   private static readonly OTHER_PATTERNS: RegExp[] = [
     /、/, /\(.*\)/, /[（）]/, /[【】]/, /[[\]]/, /[「」]/, /※/, /\//,
-    /選び方$/, /祝い$/i, /シリーズ$/, /新商品$/, /企画$/, /祭り/,
+    /選び方$/, /祝い$/i, /シリーズ$/, /新商品$/, /企画$/, /祭/,
     /^服$/, /^CERO/, /Shipping$/i, /^Music Album CDs$/,
     /ハイパフォーマンス$/i, /おうちで/, /おまかせ/, /話題の/,
     /AMD Ryzen搭載ノートパソコン/, /iPhone\/iPad\/iPod用/i,
