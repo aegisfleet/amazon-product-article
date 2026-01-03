@@ -738,7 +738,8 @@ export class PAAPIClient {
       /話題の/,
       /Brand Week/i,
       /_/,
-      / - /
+      / - /,
+      /^Music Album CDs$/
     ];
 
     return !invalidPatterns.some(pattern => pattern.test(displayName));
