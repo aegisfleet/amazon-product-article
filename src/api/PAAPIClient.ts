@@ -665,6 +665,7 @@ export class PAAPIClient {
       /^IO DATA/i,
       /^DHC/,
       /^Xiaomi/,
+      /^Huawei/,
       /^Dyson/,
       /ネイチャーメイド/i,
       /大塚HPC_イオンサンプリング/i,
@@ -732,7 +733,8 @@ export class PAAPIClient {
       /ランキング/,
       /売れ筋/,
       /型テレビ/,
-      /おまかせ/
+      /おまかせ/,
+      /話題の/
     ];
 
     return !invalidPatterns.some(pattern => pattern.test(displayName));
