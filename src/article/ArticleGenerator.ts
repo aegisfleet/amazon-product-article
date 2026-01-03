@@ -408,7 +408,7 @@ ${sourcesList}`;
 
     // 発売日情報
     const releaseDateInfo = releaseDate
-      ? `**発売日**: ${releaseDate}`
+      ? `発売日: ${this.formatDateToJST(releaseDate)}`
       : '';
 
     const content = `<div class="product-hero-card">
@@ -806,7 +806,7 @@ ${score >= 80 ? '自信を持っておすすめできる商品です。' :
 
     // 発売日
     if (productDetail.releaseDate) {
-      infoRows.push(`| 発売日 | ${productDetail.releaseDate} |`);
+      infoRows.push(`| 発売日 | ${this.formatDateToJST(productDetail.releaseDate)} |`);
     }
 
     // 外部ID（EAN/ISBN/UPC）
@@ -1131,5 +1131,26 @@ ${infoRows.join('\n')}
 
     // Markdownのblockquote記法「>」を使用
     return `> ${sanitized}`;
+  }
+
+  /**
+   * 日付を日本時間（JST）の形式にフォーマット
+   * 入力例: 2025-12-17T00:00:01Z -> 2025年12月17日
+   */
+  private formatDateToJST(dateString: string): string {
+    try {
+      const date = new Date(dateString);
+      if (isNaN(date.getTime())) {
+        return dateString;
+      }
+
+      const year = date.getFullYear();
+      const month = date.getMonth() + 1;
+      const day = date.getDate();
+
+      return `${year}年${month}月${day}日`;
+    } catch (error) {
+      return dateString;
+    }
   }
 }
