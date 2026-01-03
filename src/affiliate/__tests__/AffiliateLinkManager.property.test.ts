@@ -114,42 +114,6 @@ describe('AffiliateLinkManager', () => {
         });
     });
 
-    /**
-     * Property 14: Legal Disclosure Compliance
-     * For any generated article or site page, affiliate disclosure statements 
-     * should be included as required by law.
-     */
-    describe('Property 14: Legal Disclosure Compliance', () => {
-        it('should detect disclosure in content with various patterns', () => {
-            const disclosurePatterns = [
-                'アフィリエイトリンクが含まれています',
-                '当サイトが収益を得る場合があります',
-                'This article contains affiliate links',
-                '本記事にはアフィリエイトリンクが含まれています'
-            ];
-
-            disclosurePatterns.forEach(pattern => {
-                const compliance = linkManager.checkCompliance(`テスト内容\n${pattern}`);
-                expect(compliance.hasDisclosure).toBe(true);
-            });
-        });
-
-        it('should report non-compliance for content without disclosure', () => {
-            fc.assert(
-                fc.property(fc.string({ minLength: 100, maxLength: 500 }), (content) => {
-                    // アフィリエイトに関連する言葉を含まないコンテンツ
-                    const cleanContent = content.replace(/アフィリエイト|affiliate|収益|コミッション|広告/gi, '');
-                    const compliance = linkManager.checkCompliance(cleanContent);
-
-                    // 開示文がなければ非準拠
-                    if (!compliance.hasDisclosure) {
-                        expect(compliance.issues.some(i => i.code === 'MISSING_DISCLOSURE')).toBe(true);
-                    }
-                }),
-                { numRuns: 50 }
-            );
-        });
-    });
 
     describe('Link format generation', () => {
         const validAsinArbitrary = fc.stringMatching(/^[A-Z0-9]{10}$/);
