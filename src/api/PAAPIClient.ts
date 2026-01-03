@@ -608,155 +608,87 @@ export class PAAPIClient {
     };
   }
 
+  // === カテゴリ除外パターン定義 ===
+
+  /** 除外対象の特殊文字（スペース、ハイフン、パイプ、中黒、アンパサンド） */
+  private static readonly EXCLUDED_CHARS = [' ', '　', '-', '|', '｜', '・', '＆'];
+
+  /** 除外パターン: プロモーション＆イベント */
+  private static readonly PROMOTIONAL_PATTERNS: RegExp[] = [
+    /ブラックフライデー/i, /サイバーマンデー/i, /プライムデー/i,
+    /セール/i, /Deal/i, /Winter Sale/i, /Big Sale/i,
+    /キャンペーン/, /特集/, /おすすめ/, /特選品/,
+    /父の日/, /母の日/, /誕生日/, /新生活ギフト/,
+    /^Amazonビジネス/, /法人価格/, /定期おトク便/,
+    /クーポン/, /Coupon/i, /お買い得$/i, /あわせ買い/i, /まとめ買い/i,
+    /Brand Week/i, /限定商品/, /割引/
+  ];
+
+  /** 除外パターン: システム＆内部管理用 */
+  private static readonly SYSTEM_PATTERNS: RegExp[] = [
+    /^yobi$/i, /^カテゴリー別$/,
+    /_\d{3,4}$/, /Test$/, /テスト$/,
+    /^SnS /i, /Grocery_over2000_BFW24/, /L2_02_StorageItems_01Cat/,
+    /VFE-JPOP/, /Favorites/i, /（サービス紐づけ用）/, /予約注文における注意事項/,
+    /ASIN$/, /Arborist Merchandising Root/, /^HPC/i, /3P HPC/i,
+    /KCAllBrand/, /IsWhiteGloveRequired/, /HQP/, /_/
+  ];
+
+  /** 除外パターン: ブランド＆ショップ専用 */
+  private static readonly BRAND_PATTERNS: RegExp[] = [
+    /ストア$/i, /メーカー主催/, /特設ページ/,
+    /^Amazon/i, /Amazon Global/,
+    /^Panasonic-HA-PersonalCare$/i, /^Headset & Earphones$/i,
+    /^YA-MAN$/i, /^Fireタブレット$/i, /^Customers/i,
+    /^T-Fal/i, /^Bose/i, /^IO DATA/i, /^DHC/, /^Xiaomi/, /^Huawei/,
+    /^Dyson/, /^Logicool/, /Housewarming/, /ネイチャーメイド/i,
+    /大塚HPC_イオンサンプリング/i, /シャープ/i, /高評価ブランド/
+  ];
+
+  /** 除外パターン: 価格＆スペック関連 */
+  private static readonly PRICE_SPEC_PATTERNS: RegExp[] = [
+    /万円台$/, /万円以上$/, /円~.*円$/,
+    /[0-9]+[%％](\s*以上)?\s*OFF/i,
+    /インチ/i, /フルHD/i, /型テレビ/
+  ];
+
+  /** 除外パターン: その他（構文・記号・特殊表現） */
+  private static readonly OTHER_PATTERNS: RegExp[] = [
+    /、/, /\(.*\)/, /[（）]/, /[【】]/, /[[\]]/, /[「」]/, /※/, /\//,
+    /選び方$/, /祝い$/i, /シリーズ$/, /新商品$/, /企画$/, /祭り/,
+    /^服$/, /^CERO/, /Shipping$/i, /^Music Album CDs$/,
+    /ハイパフォーマンス$/i, /おうちで/, /おまかせ/, /話題の/,
+    /AMD Ryzen搭載ノートパソコン/, /iPhone\/iPad\/iPod用/i,
+    /インターネット経由で動くパワフルなAI/, /こんなところでもAMD/, /Ryzen CPUラインナップ/,
+    /コーヒーの日 パーソナルコーヒーを楽しもう/, /毎日の料理をサポート/,
+    /秋の味覚を楽しむ/, /時短で便利/, /人気の家電/, /マッサージャーほか健康家電/,
+    /話題のコスメ急上昇/, /Beauty Recommendation Widget/i, /今旬コスメ/,
+    /頃から/, /新生児から/, /除外/, /ランキング/, /売れ筋/, /発売日/, /お届け/,
+    /ホワイト/, /Audio Interfaces/i, /大型家電/,
+    /スポーツプレイヤーのサポートアイテム/
+  ];
+
+  /** 全除外パターン（結合済み） */
+  private static readonly ALL_EXCLUSION_PATTERNS: RegExp[] = [
+    ...PAAPIClient.PROMOTIONAL_PATTERNS,
+    ...PAAPIClient.SYSTEM_PATTERNS,
+    ...PAAPIClient.BRAND_PATTERNS,
+    ...PAAPIClient.PRICE_SPEC_PATTERNS,
+    ...PAAPIClient.OTHER_PATTERNS
+  ];
+
   /**
    * Check if a browse node name is a valid product category
    * Filters out promotional, shipping, and store-related nodes
    */
   private isValidCategoryNode(displayName: string): boolean {
-    // Exclude all categories containing any spaces (including full-width), hyphens, pipes, middle dots, or ampersands
-    if (displayName.includes(' ') || displayName.includes('　') || displayName.includes('-') ||
-      displayName.includes('|') || displayName.includes('｜') || displayName.includes('・') ||
-      displayName.includes('＆')) {
+    // 特殊文字を含む場合は除外
+    if (PAAPIClient.EXCLUDED_CHARS.some(char => displayName.includes(char))) {
       return false;
     }
 
-    const invalidPatterns = [
-      // --- プロモーション & イベント ---
-      /ブラックフライデー/i,
-      /サイバーマンデー/i,
-      /プライムデー/i,
-      /セール/i,
-      /Deal/i,
-      /Winter Sale/i,
-      /Big Sale/i,
-      /キャンペーン/,
-      /特集/,
-      /おすすめ/,
-      /特選品/,
-      /父の日/,
-      /母の日/,
-      /誕生日/,
-      /新生活ギフト/,
-      /^Amazonビジネス/,
-      /法人価格/,
-      /定期おトク便/,
-
-      // --- システム & 内部管理用 ---
-      /^yobi$/i,
-      /^カテゴリー別$/,  // Amazon navigation node
-      /_\d{4}$/,        // カテゴリ末尾がアンダースコア+4桁数字
-      /_\d{3}$/,        // カテゴリ末尾がアンダースコア+3桁数字
-      /Test$/,
-      /テスト$/,
-      /^SnS /i,         // 定期おトク便 (Subscribe & Save) 関連
-      /Grocery_over2000_BFW24/,
-      /L2_02_StorageItems_01Cat/,
-      /VFE-JPOP/,
-      /Favorites/i,
-      /（サービス紐づけ用）/,
-      /予約注文における注意事項/,
-      /ASIN$/,          // ASINリスト用のノード
-
-      // --- ブランド & ショップ専用 ---
-      /ストア$/i,
-      /メーカー主催/,
-      /特設ページ/,
-      /^Amazon/i,
-      /^Panasonic-HA-PersonalCare$/i,
-      /^Headset & Earphones$/i,
-      /^YA-MAN$/i,
-      /^Fireタブレット$/i,
-      /^Customers/i,
-      /^T-Fal/i,
-      /^Bose/i,
-      /^IO DATA/i,
-      /^DHC/,
-      /^Xiaomi/,
-      /^Huawei/,
-      /^Dyson/,
-      /^Logicool/,
-      /Housewarming/,
-      /ネイチャーメイド/i,
-      /大塚HPC_イオンサンプリング/i,
-      /シャープ/i,
-
-      // --- 価格 & スペック関連 ---
-      /万円台$/,        // 1万円台, 2万円台 など
-      /万円以上$/,
-      /円~.*円$/,       // 10,001円~15,000円 など
-      /[0-9]+[%％](\s*以上)?\s*OFF/i,
-      /インチ/i,
-      /フルHD/i,
-
-      // --- その他（広範すぎる、またはカテゴリではないもの） ---
-      /^HPC/i,          // HPC (Health & Personal Care) の推奨ウィジェット等
-      /3P HPC/i,
-      /Coupon/i,
-      /スポーツプレイヤーのサポートアイテム/,
-      /、/,  // 読点を含むカテゴリは除外
-      /\(.*\)/,  // 括弧を含むカテゴリは除外
-      /選び方$/,
-      /祝い$/i,
-      /ハイパフォーマンス$/i,
-      /お買い得$/i,
-      /あわせ買い/i,
-      /まとめ買い/i,
-      /おうちで/,
-      /AMD Ryzen搭載ノートパソコン/,
-      /iPhone\/iPad\/iPod用/i,
-      /シリーズ$/,
-      /新商品$/,
-      /インターネット経由で動くパワフルなAI/,
-      /こんなところでもAMD/,
-      /Ryzen CPUラインナップ/,
-      /^服$/,
-      /^CERO/,
-      /Shipping$/i,
-      /HQP/,
-      /IsWhiteGloveRequired/,
-      /コーヒーの日 パーソナルコーヒーを楽しもう/,
-      /高評価ブランド/,
-      /毎日の料理をサポート/,
-      /KCAllBrand/,
-      /[【】]/,
-      /秋の味覚を楽しむ/,
-      /時短で便利/,
-      /人気の家電/,
-      /マッサージャーほか健康家電/,
-      /話題のコスメ急上昇/,
-      /Arborist Merchandising Root/,
-      /Beauty Recommendation Widget/i,
-      /企画$/,
-      /祭り/,
-      /今旬コスメ/,
-      /クーポン/,
-      /Amazon Global/,
-      /※/,
-      /頃から/,
-      /新生児から/,
-      /除外/,
-      /ランキング/,
-      /売れ筋/,
-      /型テレビ/,
-      /おまかせ/,
-      /話題の/,
-      /Brand Week/i,
-      /_/,
-      /^Music Album CDs$/,
-      /発売日/,
-      /お届け/,
-      /\//,
-      /ホワイト/,
-      /Audio Interfaces/i,
-      /[[\]]/,
-      /[「」]/,  // 鉤括弧を含むカテゴリは除外（例：「なるほど家電」はアイリスオーヤマ）
-      /大型家電/,  // 「大型家電」を含むカテゴリは除外（例：アイリスオーヤマ大型家電）
-      /限定商品/,  // 「限定商品」を含むカテゴリは除外（例：スポーツ&アウトドアAmazon.co.jp限定商品）
-      /割引/,  // 「割引」を含むカテゴリは除外（例：割引対象製品）
-      /[（）]/  // 全角括弧を含むカテゴリは除外（例：食欲の秋（調理））
-    ];
-
-    return !invalidPatterns.some(pattern => pattern.test(displayName));
+    // 除外パターンにマッチする場合は除外
+    return !PAAPIClient.ALL_EXCLUSION_PATTERNS.some(pattern => pattern.test(displayName));
   }
 
 
