@@ -159,6 +159,8 @@ export interface PAAPIItem {
       Id: string;
       DisplayName: string;
       ContextFreeName: string;
+      IsRoot?: boolean;
+      SalesRank?: number;
     }>;
   };
   ParentASIN?: string;
