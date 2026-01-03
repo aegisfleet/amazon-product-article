@@ -76,7 +76,10 @@ describe('PAAPIClient Category Extraction', () => {
             '45~59型テレビ',
             '32型テレビ',
             '大型家具・家電おまかせサービス対象テレビ',
-            'おまかせ設定'
+            'おまかせ設定',
+            'メイ ク',
+            'ファンデーション 21N',
+            '4K モニター'
         ];
 
         invalidCategories.forEach(cat => {
