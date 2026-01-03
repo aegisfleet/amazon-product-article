@@ -642,7 +642,8 @@ export class PAAPIClient {
     /^YA-MAN$/i, /^Fireタブレット$/i, /^Customers/i,
     /^T-Fal/i, /^Bose/i, /^IO DATA/i, /^DHC/, /^Xiaomi/, /^Huawei/,
     /^Dyson/, /^Logicool/, /housewarming/, /ネイチャーメイド/i,
-    /大塚HPC_イオンサンプリング/i, /シャープ/i, /高評価ブランド/
+    /大塚HPC_イオンサンプリング/i, /シャープ/i, /高評価ブランド/i,
+    /エレコム/
   ];
 
   /** 除外パターン: 価格＆スペック関連 */
@@ -665,7 +666,7 @@ export class PAAPIClient {
     /話題のコスメ急上昇/, /Beauty Recommendation Widget/i, /今旬コスメ/,
     /頃から/, /新生児から/, /除外/, /ランキング/, /売れ筋/, /発売日/, /お届け/,
     /ホワイト/, /Audio Interfaces/i, /大型家電/,
-    /スポーツプレイヤーのサポートアイテム/
+    /スポーツプレイヤーのサポートアイテム/, /研究開発用品/, /すべてのゲーム/
   ];
 
   /** 全除外パターン（結合済み） */
