@@ -730,7 +730,8 @@ export class PAAPIClient {
       /新生児から/,
       /除外/,
       /ランキング/,
-      /売れ筋/
+      /売れ筋/,
+      /型テレビ/
     ];
 
     return !invalidPatterns.some(pattern => pattern.test(displayName));
