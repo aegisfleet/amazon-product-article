@@ -675,6 +675,7 @@ export class PAAPIClient {
       /^Huawei/,
       /^Dyson/,
       /^Logicool/,
+      /Housewarming/,
       /ネイチャーメイド/i,
       /大塚HPC_イオンサンプリング/i,
       /シャープ/i,
@@ -694,7 +695,6 @@ export class PAAPIClient {
       /スポーツプレイヤーのサポートアイテム/,
       /、/,  // 読点を含むカテゴリは除外
       /\(.*\)/,  // 括弧を含むカテゴリは除外
-      /家電・PC・周辺機器/i,
       /選び方$/,
       /祝い$/i,
       /ハイパフォーマンス$/i,
@@ -721,8 +721,6 @@ export class PAAPIClient {
       /秋の味覚を楽しむ/,
       /時短で便利/,
       /人気の家電/,
-      /肌・髪のお悩み/,
-      /食品・飲料・お酒のみ/,
       /マッサージャーほか健康家電/,
       /話題のコスメ急上昇/,
       /Arborist Merchandising Root/,
@@ -731,8 +729,6 @@ export class PAAPIClient {
       /祭り/,
       /今旬コスメ/,
       /クーポン/,
-      /ギフトセット・ギフト商品/,
-      /スッキリ片づける・収納する/,
       /Amazon Global/,
       /※/,
       /頃から/,
