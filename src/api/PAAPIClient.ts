@@ -710,6 +710,7 @@ export class PAAPIClient {
       /こんなところでもAMD/,
       /Ryzen CPUラインナップ/,
       /^服$/,
+      /^CERO/,
       /Shipping$/i,
       /HQP/,
       /IsWhiteGloveRequired/,
