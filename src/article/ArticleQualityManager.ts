@@ -218,14 +218,6 @@ export class ArticleQualityManager {
                 example: '短い段落と適切な余白',
                 validator: () => true // モバイル対応は別途チェック
             },
-            {
-                rule: 'affiliate-disclosure',
-                description: 'アフィリエイト開示を含める',
-                example: '*本記事にはアフィリエイトリンクが含まれています。*',
-                validator: (content) => {
-                    return content.includes('アフィリエイト');
-                }
-            }
         ];
     }
 
@@ -344,15 +336,6 @@ export class ArticleQualityManager {
             });
         }
 
-        // アフィリエイト開示チェック
-        if (!article.includes('アフィリエイト')) {
-            errors.push({
-                type: 'error',
-                category: 'compliance',
-                message: 'アフィリエイト開示がありません',
-                suggestion: '記事末尾にアフィリエイト開示文を追加してください'
-            });
-        }
 
         // リンクチェック
         const affiliateLinkPattern = /\[.*?\]\(https:\/\/.*?amazon.*?\)/;
@@ -514,9 +497,8 @@ export class ArticleQualityManager {
     private checkRequiredElements(article: string): boolean {
         const hasFrontMatter = article.match(/^---\n[\s\S]*?\n---/) !== null;
         const hasAffiliateLink = article.includes('amazon') || article.includes('amzn');
-        const hasDisclosure = article.includes('アフィリエイト');
 
-        return hasFrontMatter && hasAffiliateLink && hasDisclosure;
+        return hasFrontMatter && hasAffiliateLink;
     }
 
     /**

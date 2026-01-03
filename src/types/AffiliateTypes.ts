@@ -44,7 +44,6 @@ export interface DisclosureConfig {
 
 export interface ComplianceCheckResult {
     isCompliant: boolean;
-    hasDisclosure: boolean;
     hasValidLinks: boolean;
     issues: ComplianceIssue[];
 }

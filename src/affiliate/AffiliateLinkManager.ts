@@ -153,17 +153,6 @@ export class AffiliateLinkManager {
 
         const issues: ComplianceIssue[] = [];
 
-        // 開示文のチェック
-        const hasDisclosure = this.checkDisclosure(content);
-        if (!hasDisclosure) {
-            issues.push({
-                type: 'error',
-                code: 'MISSING_DISCLOSURE',
-                message: 'アフィリエイト開示文がありません',
-                suggestion: '記事末尾にアフィリエイト開示文を追加してください'
-            });
-        }
-
         // アフィリエイトリンクの検出と検証
         const links = this.extractAffiliateLinks(content);
         let hasValidLinks = true;
@@ -206,7 +195,6 @@ export class AffiliateLinkManager {
 
         return {
             isCompliant: issues.filter(i => i.type === 'error').length === 0,
-            hasDisclosure,
             hasValidLinks,
             issues
         };
@@ -310,20 +298,6 @@ export class AffiliateLinkManager {
 
 
 
-    /**
-     * 開示文があるかチェック
-     */
-    private checkDisclosure(content: string): boolean {
-        const disclosurePatterns = [
-            /アフィリエイト(リンク)?が含まれ/,
-            /affiliate links?/i,
-            /当サイトが収益を得る/,
-            /コミッション/,
-            /広告/
-        ];
-
-        return disclosurePatterns.some(pattern => pattern.test(content));
-    }
 
     /**
      * コンテンツからアフィリエイトリンクを抽出
