@@ -82,7 +82,9 @@ describe('PAAPIClient Category Extraction', () => {
             '4K モニター',
             'Panasonic-HA-HairDryers',
             'Wi-Fiルーター',
-            'T-Fal-Cookware'
+            'T-Fal-Cookware',
+            'ルーター親機｜デュアルバンド',
+            'PC | Accessories'
         ];
 
         invalidCategories.forEach(cat => {
