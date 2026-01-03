@@ -145,6 +145,8 @@ export class PAAPIClient {
         'Offers.Summaries.HighestPrice',
         'Offers.Summaries.LowestPrice',
         'BrowseNodeInfo.BrowseNodes',
+        'BrowseNodeInfo.BrowseNodes.Ancestor',
+        'BrowseNodeInfo.BrowseNodes.SalesRank',
         'ParentASIN'
       ]
     };
@@ -205,6 +207,8 @@ export class PAAPIClient {
         'Offers.Summaries.HighestPrice',
         'Offers.Summaries.LowestPrice',
         'BrowseNodeInfo.BrowseNodes',
+        'BrowseNodeInfo.BrowseNodes.Ancestor',
+        'BrowseNodeInfo.BrowseNodes.SalesRank',
         'ParentASIN'
       ]
     };
