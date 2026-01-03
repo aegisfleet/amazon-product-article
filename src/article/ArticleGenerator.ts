@@ -1149,7 +1149,7 @@ ${infoRows.join('\n')}
       const day = date.getDate();
 
       return `${year}年${month}月${day}日`;
-    } catch (error) {
+    } catch (_error) {
       return dateString;
     }
   }
