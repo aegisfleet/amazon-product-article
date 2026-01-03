@@ -37,19 +37,19 @@ export class PAAPICache {
         try {
             if (fs.existsSync(this.cachePath)) {
                 const rawData = fs.readFileSync(this.cachePath, 'utf-8');
-                const parsed = JSON.parse(rawData);
+                const parsed = JSON.parse(rawData) as Record<string, unknown>;
 
                 // Migration check: if old format (without status), assume valid
                 this.cache = {};
                 for (const [key, value] of Object.entries(parsed)) {
-                    const entry = value as any;
-                    if (!entry.status) {
+                    const entry = value as Partial<CacheEntry> & Record<string, unknown>;
+                    if (entry && typeof entry === 'object' && !entry.status) {
                         this.cache[key] = {
-                            data: entry.data,
-                            timestamp: entry.timestamp,
+                            data: (entry.data as ProductDetail | null) || null,
+                            timestamp: typeof entry.timestamp === 'number' ? entry.timestamp : Date.now(),
                             status: 'valid'
                         };
-                    } else {
+                    } else if (entry && entry.status) {
                         this.cache[key] = entry as CacheEntry;
                     }
                 }
@@ -149,7 +149,7 @@ export class PAAPICache {
         }
 
         if (Array.isArray(data)) {
-            return data.map(item => this.sanitizeData(item)) as unknown as T;
+            return (data as unknown[]).map(item => this.sanitizeData(item)) as unknown as T;
         }
 
         if (typeof data === 'object') {
