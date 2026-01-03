@@ -745,7 +745,7 @@ export class PAAPIClient {
       /\//,
       /ホワイト/,
       /Audio Interfaces/i,
-      /[\[\]]/
+      /[[\]]/
     ];
 
     return !invalidPatterns.some(pattern => pattern.test(displayName));
