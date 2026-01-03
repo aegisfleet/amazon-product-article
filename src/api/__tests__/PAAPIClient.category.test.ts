@@ -20,6 +20,8 @@ describe('PAAPIClient Category Extraction', () => {
             'Panasonic-HE/CE-Audio',
             'Testing/Slash',
             'モバイルバッテリー ホワイト',
+            'Audio Interfaces',
+            '充電器・チャージャー [128191011]',
             'カテゴリー別',
             '10% OFF',
             'Prime Day セール',
