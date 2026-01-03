@@ -611,7 +611,7 @@ export class PAAPIClient {
   // === カテゴリ除外パターン定義 ===
 
   /** 除外対象の特殊文字（スペース、ハイフン、パイプ、中黒、アンパサンド） */
-  private static readonly EXCLUDED_CHARS = [' ', '　', '-', '|', '｜', '・', '＆'];
+  private static readonly EXCLUDED_CHARS = [' ', '　', '-', '|', '｜', '＆'];
 
   /** 除外パターン: プロモーション＆イベント */
   private static readonly PROMOTIONAL_PATTERNS: RegExp[] = [
@@ -727,12 +727,13 @@ export class PAAPIClient {
       };
     }
 
-    // 複数ノードがある場合: [0]=詳細(サブ), [1]=上位(メイン)
+    // 複数ノードがある場合: [0]=詳細(メイン), [1]=上位(親カテゴリ)
+    // より詳細なカテゴリを優先して商品に付与する
     const firstNode = validNodes[0]!;
     const secondNode = validNodes[1];
     return {
-      main: secondNode?.DisplayName || firstNode.DisplayName,
-      sub: firstNode.DisplayName,
+      main: firstNode.DisplayName,
+      ...(secondNode && { sub: secondNode.DisplayName }),
       browseNodeId: firstNode.Id
     };
   }
