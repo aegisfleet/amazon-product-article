@@ -1,7 +1,8 @@
 {
   "analysis": {
     "productName": "DHC マルチビタミン 90日分",
-    "productDescription": "DHC マルチビタミンは、11種類のビタミン類を1粒に凝縮し、毎日の健康維持を手軽にサポートする栄養機能食品です。",
+    "parentAsin": "B06XMY966P",
+    "productDescription": "DHC マルチビタミンは、12種類のビタミンを1粒に凝縮し、毎日の健康維持を手軽にサポートする栄養機能食品です。",
     "productUsage": [
       "毎日の食事で不足しがちなビタミンを手軽に補給したいときに。",
       "外食が多く、栄養バランスが偏りがちな方の健康管理に。",
@@ -12,7 +13,8 @@
       "1日1粒で済む手軽さで、継続しやすい。",
       "90日分という大容量でコストパフォーマンスが非常に高い。",
       "国内大手メーカーであるDHCの製品という安心感がある。",
-      "ソフトカプセルで飲みやすいという意見が多い。"
+      "ソフトカプセルで飲みやすいという意見が多い。",
+      "コンビニやドラッグストアなど、全国どこでも入手しやすい。"
     ],
     "negativePoints": [
       "ビタミン特有の匂いが少し気になるという声がある。",
@@ -43,31 +45,26 @@
     "sources": [
       {
         "name": "DHC公式サイト 商品レビュー",
-        "url": "https://www.dhc.co.jp/goods/commentview.jsp?goods_code=2230",
+        "url": "https://www.dhc.co.jp/goods/commentview.jsp?goods_code=2144",
         "credibility": "高"
-      },
-      {
-        "name": "楽天市場 DHC マルチビタミン レビュー",
-        "url": "https://review.rakuten.co.jp/review/item/1/193677_10998288/1.1/",
-        "credibility": "中"
       },
       {
         "name": "マルチビタミンおすすめの完全ガイド｜効果や選び方と人気サプリランキング比較",
         "url": "https://eye-serina.net/column/2025/12/21/%E3%83%9E%E3%83%AB%E3%83%81%E3%83%93%E3%82%BF%E3%83%9F%E3%83%B3%E3%81%8A%E3%81%99%E3%81%99%E3%82%81%E3%81%AE%E5%AE%8C%E5%85%A8%E3%82%AC%E3%82%A4%E3%83%89%EF%BD%9C%E5%8A%B9%E6%9E%9C%E3%82%84%E9%81%B8-2/",
         "credibility": "中"
       },
-       {
+      {
         "name": "General Market Knowledge",
         "url": null,
         "credibility": "中"
       }
     ],
-    "lastInvestigated": "2025-12-31",
+    "lastInvestigated": "2026-01-05",
     "competitiveAnalysis": [
       {
         "name": "ディアナチュラ ストロング39アミノ マルチビタミン&ミネラル",
         "asin": "B00I4NW6WK",
-        "priceComparison": "DHCよりも高価だが、1日あたりのコストは同程度。内容量が多いため初期投資は高い。",
+        "priceComparison": "DHCより高価（約2,645円/100日）。ただし、1日あたりのコストはDHCより安価になる場合がある。",
         "featureComparison": [
           "アミノ酸やミネラルも豊富に含まれており、より包括的な栄養補給が可能。",
           "1日の摂取目安量が多い（3粒）。"
@@ -78,11 +75,11 @@
         ]
       },
       {
-        "name": "ネイチャーメイド マルチビタミン",
-        "asin": "B000BTA5G4",
-        "priceComparison": "DHCより高価格帯。1日あたりのコストもやや高め。",
+        "name": "ネイチャーメイド スーパーマルチビタミン&ミネラル",
+        "asin": "B00516RULK",
+        "priceComparison": "DHCより高価格帯（約2,036円/120日）。1日あたりのコストもやや高め。",
         "featureComparison": [
-          "アメリカでの実績とブランド力がある。",
+          "12種のビタミンと7種のミネラルをバランス良く配合。",
           "着色料、香料、保存料が無添加。"
         ],
         "differentiators": [
@@ -93,7 +90,7 @@
       {
         "name": "ディアナチュラ マルチビタミン&ミネラル",
         "asin": "B000QVX3U2",
-        "priceComparison": "DHCと同程度の価格帯。1日あたりのコストも非常に近い。",
+        "priceComparison": "DHCと同程度の価格帯（約982円/50日）。1日あたりのコストはDHCより高くなる傾向。",
         "featureComparison": [
           "DHCにはないミネラル成分が含まれている。",
           "1日の摂取目安量が多い（4粒）。"
@@ -103,10 +100,10 @@
           "DHCの直接的な競合製品。"
         ]
       },
-       {
+      {
         "name": "ディアナチュラスタイル マルチビタミン",
         "asin": "B0BK7X8FV5",
-        "priceComparison": "DHCと同等の価格帯で、直接的な競合製品。",
+        "priceComparison": "DHCとほぼ同価格（約899円/90日）で、直接的な競合製品。",
         "featureComparison": [
           "1日1粒で手軽に摂取できる点がDHCと共通。",
           "ビタミンの配合種類はDHCとほぼ同じ。"
@@ -133,7 +130,7 @@
         "高機能なマルチビタミンを求める人には成分が物足りない可能性がある。",
         "ミネラル類は含まれていないため、別途摂取する必要がある。"
       ],
-      "score": 80
+      "score": 82
     }
   }
 }
