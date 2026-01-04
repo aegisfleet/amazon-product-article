@@ -36,10 +36,10 @@ amazon-product-article/
 ├── content/                  # Hugo記事コンテンツ（生成）
 ├── static/                   # 静的ファイル（画像、CSS等）
 │   └── js/
-│       └── category-dropdown.js  # カテゴリドロップダウン（※1）
+│       └── category-dropdown.js  # カテゴリドロップダウン（categorygroups.jsonから動的読み込み）
 ├── data/                     # データファイル
 │   ├── investigations/       # Jules調査結果（JSON）
-│   └── categorygroups.json   # カテゴリグループ定義（※1）
+│   └── categorygroups.json   # カテゴリグループ定義
 ├── .github/workflows/        # GitHub Actions
 │   ├── build-and-test.yml    # ビルド・テスト
 │   ├── product-research.yml  # 商品調査ワークフロー
@@ -49,8 +49,6 @@ amazon-product-article/
 ├── package.json              # npm設定
 ├── tsconfig.json             # TypeScript設定
 └── jest.config.js            # Jest設定
-
-※1: category-dropdown.js と categorygroups.json は同期必須
 ```
 
 ## 主要ファイル
@@ -63,10 +61,8 @@ amazon-product-article/
 | `src/scripts/*.ts` | CLIエントリポイント。npm scriptsから呼び出される |
 | `config.toml` | Hugoの設定（サイトURL、言語、パーマリンク等） |
 | `data/investigations/{ASIN}.json` | 各商品のJules調査結果データ |
-| `data/categorygroups.json` | カテゴリの親グループ定義（⚠️ 下記と同期必須） |
-| `static/js/category-dropdown.js` | フロントエンドのカテゴリドロップダウン（⚠️ 上記と同期必須）|
-
-> **⚠️ 注意**: `data/categorygroups.json` と `static/js/category-dropdown.js` は同一のカテゴリグループ定義を維持する必要があります。片方を更新する際は必ず両方を更新してください。詳細は `AGENTS.md` を参照。
+| `data/categorygroups.json` | カテゴリの親グループ定義 |
+| `static/js/category-dropdown.js` | フロントエンドのカテゴリドロップダウン（categorygroups.jsonから動的読み込み）|
 
 ## コマンド
 

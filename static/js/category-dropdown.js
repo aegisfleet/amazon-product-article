@@ -1,102 +1,49 @@
 /**
  * Category Dropdown - Hierarchical category navigation for mobile
  * Uses event delegation for reliable behavior after bfcache restoration
+ * 
+ * カテゴリデータは /data/categorygroups.json から動的に読み込まれます。
+ * カテゴリの追加・変更はJSONファイルのみを編集してください。
  */
 (function () {
-    // Category group mapping - Parent groups to child categories
-    // ⚠️ 重要: このリストを更新する際は data/categorygroups.json も同時に更新してください
-    // 両ファイルは同一の内容を維持する必要があります（詳細は AGENTS.md を参照）
-    const categoryGroups = {
-        // --- IT & デバイス ---
-        'PC・周辺機器': [
-            'ウェブカメラ', 'ゲーミングモニター', 'スタンダードモニター', 'スマートモニター', 'スリーブ', 'セキュリティロック', 'ディスプレイ',
-            'トラックボール', 'ドッキングステーション', 'パソコン', 'パソコン用キーボード', 'マウス', 'マウスパッド', 'ミニ', 'メディアドライブ',
-            'リストレスト', '標準型ノートパソコン'
-        ],
-        'スマートフォン': [
-            'AC式充電器', 'Androidタブレット', 'ケース', 'スクリーンプロテクター', 'スタンド', 'スマホ本体', 'スマートウォッチ',
-            'スマートフォン本体', 'スマートフォン関連製品', 'タブレット', 'モバイルバッテリー', '交換用ベルト', '携帯電話ホルダー'
-        ],
-        'オーディオ': [
-            'PC用マイク', 'イヤホン', 'イヤホン・ヘッドホン', 'オーディオインターフェイス', 'オーバーイヤーヘッドホン', 'オープンイヤーヘッドホン',
-            'ゲーミングヘッドセット', 'ゲーム用ヘッドセット', 'コンデンサ', 'ステレオケーブル', 'ヘッドセット', 'ヘッドホン延長ケーブル', '外付サウンドカード'
-        ],
-        'ケーブル・ネットワーク': [
-            'USBケーブル', 'ケーブルオーガナイザーバッグ', '無線・有線LANルーター', '無線・有線LAN中継器', '電源タップ'
-        ],
+    // Category data loaded from JSON - initialized asynchronously
+    let categoryGroups = {};
+    let parentCategoryUrls = {};
+    let dataLoaded = false;
 
-        // --- 生活 & 家電 ---
-        '家電': [
-            'HEPA空気清浄機', 'エアブローガン', 'スチームオーブン・レンジ', 'スチーム方式', 'スティッククリーナー', 'テレビ', 'ハンディクリーナー',
-            'ホームプロジェクター', 'ロボット型クリーナー', 'ワンルーム用加湿器', '一酸化炭素検知器', '冷蔵庫', '加湿器', '加湿器用フィルタ', '大型家電',
-            '家全体用加湿器', '据付脚', '掃除機用部品・アクセサリ', '洗濯乾燥機', '洗濯機', '炊飯器', '生活家電', '空気清浄機用アクセサリ',
-            '空気清浄機用フィルタ', '足温器', '静電式空気清浄機'
-        ],
-        'ホーム・キッチン・食品': [
-            'ちりとり', 'インスタント・スティック', 'キッチンクリーナー剤', 'キッチン家電', 'キッチン用品', 'コーヒーメーカー', 'コーヒー用品', 'タオル',
-            'タンブラーグラス', 'ティーサンプラー', 'トイレットペーパー', 'ドリップバッグ', 'ドリンク', 'ハンガー', 'ハーブティー', 'フェイスタオル',
-            'ホーム・日用品', 'リビング', '仏前ろうそく', '使い捨てコーヒーフィルター', '保存容器', '保存容器・キャニスター', '保存用バッグ・ポリ袋',
-            '保温ランチジャー', '味噌汁', '圧力鍋', '弁当箱', '時短キッチングッズ', '水筒・マグボトル', '直火式エスプレッソメーカー', '真空断熱タンブラー',
-            '置き型', '調理小物', '鍋', '鍋・フライパンミックスセット', '電子レンジ調理用品', '食品'
-        ],
-        '収納・オフィス': [
-            'オフィスワークテーブル', 'キッチンワゴン・収納カート', 'ジュエリー収納', 'スチールラック本体', 'デスクチェア', '屋内防犯カメラ'
-        ],
+    /**
+     * Load category data from JSON file
+     * @returns {Promise<boolean>} Success status
+     */
+    async function loadCategoryData() {
+        if (dataLoaded) return true;
 
-        // --- 美容 & ファッション ---
-        '美容・健康': [
-            'おしゃれカラコン', 'アイクリーム', 'アイブロウ', 'クレンジング', 'クレンジングオイル', 'コンシーラー', 'サポーター', 'スキンケア',
-            'スキンケア・ボディケア', 'スペシャルケア', 'スポーツケア用品', 'ソフトコンタクトレンズ', 'テカリ対策', 'ビューティー', 'ファンデーション',
-            'フィットネス', 'フェイスケア', 'フェイススチーマー', 'フェイスパウダー', 'フォームローラー', 'フットマッサージャー', 'ヘアアイロン',
-            'ヘアウォーター・ミスト', 'ヘアケア', 'ヘアストレートナー', 'ヘアドライヤー', 'ヘア美容液', 'ベースメイク', 'ボディケア',
-            'マッサージ・ツボ押しグッズ', 'メイクアップ', 'メイクアップフィニッシャー', 'リキッドファンデーション', '保湿ミスト・スプレー', '化粧水',
-            '炭酸入浴剤', '理美容家電', '磁気・チタン・ゲルマニウムアクセサリー', '精製水', '美容液', '鍼・灸'
-        ],
-        'サプリメント': [
-            'ビタミンC', 'プロテイン', 'ホエイプロテイン', 'マルチビタミン', 'マルチビタミン&ミネラル', 'マルチミネラル', 'マルチ脂肪酸', '亜鉛'
-        ],
-        'ファッション': [
-            'Tシャツ', 'アスレティックウェア', 'インソール', 'エコバッグ', 'エコバッグ・買い物バッグ', 'コンプレッションソックス', 'スニーカー',
-            'チャイルドシート', 'トートバッグ', 'ベスト', 'ベビーおむつ', 'ベビーハンガー', 'ベビー家具', 'ボーイズ', 'マット', 'メンズシューズ',
-            'ルームウェア', '生活雑貨'
-        ],
+        try {
+            // Determine base path for the JSON file
+            const basePathMatch = window.location.pathname.match(/^(\/[^/]+\/)?/);
+            const basePath = basePathMatch ? basePathMatch[0] : '/';
+            const jsonPath = `${basePath}data/categorygroups.json`;
 
-        // --- ゲーム & エンタメ ---
-        'ゲーム・おもちゃ': [
-            'ゲームソフト', 'ゲーム機本体', 'ハンドル・ジョイスティック', '知育・学習玩具'
-        ],
-        '音楽・エンタメ': [
-            'アニメ', 'アニメ・ゲーム', 'エレキギター弦', 'ギターアクセサリ', 'ビクターエンタテインメント', 'ミュージックCD・レコード',
-            'ユニバーサルミュージック', 'ロック', 'ワーナーミュージック・ジャパン', '初心者楽器'
-        ],
+            const response = await fetch(jsonPath);
+            if (!response.ok) {
+                throw new Error(`HTTP ${response.status}`);
+            }
 
-        // --- レジャー & その他 ---
-        'アウトドア・車': [
-            'LEDランタン', 'アウトドア用エアーマット', 'エアーマット・エアーベッド', 'ドライブレコーダー本体', 'ドライブ便利アイテム', 'ハンディライト',
-            'フライボックス', 'ライト・アクセサリ', 'ライト・ランタン', '乗用車スノーチェーン', '燃料', '着火剤', '釣り'
-        ],
-        'その他': [
-            'トイレ袋・スコップ', 'ワイヤレス'
-        ]
-    };
+            const data = await response.json();
 
-    // Parent category URL slugs mapping
-    const parentCategoryUrls = {
-        'PC・周辺機器': 'pc-peripherals',
-        'スマートフォン': 'smartphone',
-        'オーディオ': 'audio',
-        'ケーブル・ネットワーク': 'cable-network',
-        '家電': 'home-appliances',
-        'ホーム・キッチン・食品': 'home-kitchen-food',
-        '収納・オフィス': 'storage-office',
-        '美容・健康': 'beauty-health',
-        'サプリメント': 'supplements',
-        'ファッション': 'fashion',
-        'ゲーム・おもちゃ': 'games-toys',
-        '音楽・エンタメ': 'music-entertainment',
-        'アウトドア・車': 'outdoor-car',
-        'その他': 'others'
-    };
+            // Transform JSON data into the required structures
+            for (const [groupName, groupData] of Object.entries(data)) {
+                categoryGroups[groupName] = groupData.categories;
+                parentCategoryUrls[groupName] = groupData.slug;
+            }
+
+            dataLoaded = true;
+            return true;
+        } catch (error) {
+            console.error('Failed to load category data:', error);
+            return false;
+        }
+    }
 
     let categoryUrls = {};
     let filteredGroups = {};
@@ -337,7 +284,14 @@
         });
     }
 
-    function init() {
+    async function init() {
+        // Load category data from JSON before initializing UI
+        const success = await loadCategoryData();
+        if (!success) {
+            console.error('Category dropdown initialization failed: could not load data');
+            return;
+        }
+
         populateGroupSelect();
         populateGroupedView();
     }
