@@ -48,18 +48,18 @@ Amazon PA-APIの認証情報の取り扱いには、最優先でセキュリテ�
 
 ## 6. カテゴリグループ管理
 
-カテゴリを親グループに整理する際は、**以下の2つのファイルを必ず同時に更新**してください：
+カテゴリを親グループに整理する際は、**`data/categorygroups.json` のみ編集**してください。
 
 | ファイル | 用途 |
 |---|---|
-| `static/js/category-dropdown.js` | フロントエンドのドロップダウンメニュー表示用 |
-| `data/categorygroups.json` | Hugo テンプレートでの親カテゴリページ生成用 |
+| `data/categorygroups.json` | カテゴリ定義の唯一の情報源（Hugo テンプレート・フロントエンド共用） |
+| `static/js/category-dropdown.js` | 実行時にJSONを動的読み込み（カテゴリデータのハードコード不要） |
 
-両ファイルの `categoryGroups` / カテゴリリストは同一の内容を維持する必要があります。片方だけ更新すると、UIとページ生成で不整合が発生します。
+> **Note**: `static/data/categorygroups.json` はビルド時に `npm run prebuild:hugo` で自動生成されます（Gitには含まれません）。
 
 ### 新規親カテゴリの追加
 
-新しい親カテゴリを作成する場合は、上記2ファイルに加えて **親カテゴリページ用のMarkdownファイル** も作成する必要があります：
+新しい親カテゴリを作成する場合は、`data/categorygroups.json` に加えて **親カテゴリページ用のMarkdownファイル** も作成する必要があります：
 
 | ファイル | 用途 |
 |---|---|

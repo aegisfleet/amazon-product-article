@@ -71,6 +71,9 @@ jobs:
         hugo-version: 'latest'
         extended: true
     
+    - name: Prepare static data
+      run: npm run prebuild:hugo
+    
     - name: Build site with Hugo
       run: hugo --minify
     

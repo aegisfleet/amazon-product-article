@@ -4,6 +4,7 @@
   "description": "Amazon PA-API v5とGoogle Julesを活用した商品調査記事の自動生成・公開システム",
   "main": "dist/index.js",
   "scripts": {
+    "prebuild:hugo": "mkdir -p static/data && cp data/categorygroups.json static/data/",
     "build": "tsc",
     "dev": "ts-node src/index.ts",
     "test": "jest",
