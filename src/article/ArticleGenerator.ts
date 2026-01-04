@@ -343,10 +343,13 @@ export class ArticleGenerator {
     }
 
     // URLがあればリンク、なければプレーンテキスト
+    // ただし、PAAPIのURLはユーザーには不要なためリンクを貼らない
     const sourcesList = validSources
       .map(source => {
         const credibility = source.credibility ? ` (${source.credibility})` : '';
-        if (source.url) {
+        const paapiBaseUrl = 'https://webservices.amazon.co.jp/paapi5/getitems';
+        
+        if (source.url && source.url !== paapiBaseUrl) {
           return `- [${source.name}](${source.url})${credibility}`;
         }
         return `- ${source.name}${credibility}`;
