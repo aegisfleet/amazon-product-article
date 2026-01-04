@@ -20,6 +20,11 @@ interface InvestigationData {
 async function main(): Promise<void> {
     const investigationsDir = path.join(process.cwd(), 'data', 'investigations');
 
+    const args = process.argv.slice(2);
+    const countIndex = args.indexOf('--count');
+    const limitValue = countIndex !== -1 ? args[countIndex + 1] : undefined;
+    const limit = limitValue ? parseInt(limitValue, 10) : 1;
+
     try {
         const files = await fs.readdir(investigationsDir);
         const jsonFiles = files.filter(f => f.endsWith('.json'));
@@ -29,8 +34,7 @@ async function main(): Promise<void> {
             return;
         }
 
-        let oldestAsin: string | null = null;
-        let oldestDate: Date | null = null;
+        const entries: Array<{ asin: string, date: Date }> = [];
 
         for (const file of jsonFiles) {
             const filePath = path.join(investigationsDir, file);
@@ -40,22 +44,29 @@ async function main(): Promise<void> {
 
                 if (data.analysis && data.analysis.lastInvestigated) {
                     const date = new Date(data.analysis.lastInvestigated);
-
-                    if (!oldestDate || date < oldestDate) {
-                        oldestDate = date;
-                        oldestAsin = path.basename(file, '.json');
-                    }
+                    entries.push({
+                        asin: path.basename(file, '.json'),
+                        date: date
+                    });
                 }
             } catch (err) {
                 logger.error(`Failed to read or parse ${file}:`, err);
             }
         }
 
-        if (oldestAsin) {
-            // GitHub Actions のステップ出力用にASINのみを標準出力に出力
-            console.log(oldestAsin);
+        if (entries.length > 0) {
+            // 日付が古い順にソート
+            entries.sort((a, b) => a.date.getTime() - b.date.getTime());
+
+            // 指定された件数分取得
+            const selectedEntries = entries.slice(0, limit);
+            const asins = selectedEntries.map(e => e.asin);
+
+            // GitHub Actions のステップ出力用にASINをカンマ区切りで標準出力に出力
+            console.log(asins.join(','));
+
             // ログは標準エラー出力に出して、標準出力を汚さないようにする
-            console.error(`Found oldest product: ${oldestAsin} (Last investigated: ${oldestDate?.toISOString().split('T')[0]})`);
+            console.error(`Found ${asins.length} oldest products: ${asins.join(', ')}`);
         } else {
             logger.warn('No valid investigation data found.');
         }
