@@ -647,7 +647,7 @@ export class PAAPIClient {
     /^T-Fal/i, /^Bose/i, /^IO DATA/i, /^DHC/, /^Xiaomi/, /^Huawei/,
     /^Dyson/, /^Logicool/, /housewarming/, /ネイチャーメイド/i,
     /大塚HPC_イオンサンプリング/i, /シャープ/i, /高評価ブランド/i,
-    /エレコム/
+    /エレコム/, /^A$/i
   ];
 
   /** 除外パターン: 価格＆スペック関連 */
