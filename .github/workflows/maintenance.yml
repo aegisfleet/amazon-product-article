@@ -6,8 +6,8 @@ permissions:
 
 on:
   schedule:
-    # Run daily at 17:00 JST (08:00 UTC)
-    - cron: '0 8 * * *'
+    # Run daily at 05:00 JST (20:00 UTC)
+    - cron: '0 20 * * *'
   workflow_dispatch:
 
 jobs:
@@ -35,7 +35,7 @@ jobs:
     - name: Find oldest product
       id: find-oldest
       run: |
-        OLD_ASIN=$(npx ts-node src/scripts/maintenance-find-oldest.ts)
+        OLD_ASIN=$(npx ts-node src/scripts/maintenance-find-oldest.ts --count 15)
         echo "Found oldest ASIN: $OLD_ASIN"
         echo "asin=$OLD_ASIN" >> $GITHUB_OUTPUT
 
@@ -89,7 +89,7 @@ jobs:
         JULES_API_KEY: ${{ secrets.JULES_API_KEY }}
         JULES_SOURCE: sources/github/${{ github.repository }}
         JULES_STARTING_BRANCH: ${{ github.ref_name }}
-        MAX_INVESTIGATION_PRODUCTS: '5'
+        MAX_INVESTIGATION_PRODUCTS: '15'
       run: npm run investigate
     
     - name: Upload session data
