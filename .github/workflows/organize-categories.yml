@@ -1,0 +1,65 @@
+name: Organize Categories
+
+# 毎日18:00 JSTに「その他」カテゴリを整理するワークフロー
+# categorygroups.jsonに未登録のカテゴリをJulesが適切な親カテゴリに分類
+
+permissions:
+  contents: write
+  pull-requests: write
+
+on:
+  schedule:
+    # 18:00 JST = 09:00 UTC
+    - cron: '0 9 * * *'
+  workflow_dispatch:
+
+jobs:
+  organize-categories:
+    name: Organize Categories
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v6
+
+    - name: Use Node.js
+      uses: actions/setup-node@v6
+      with:
+        node-version: '20.x'
+        cache: 'npm'
+
+    - name: Install dependencies
+      run: npm ci
+
+    - name: Build project
+      run: npm run build
+
+    - name: Check for unregistered categories
+      id: check
+      run: |
+        # categorygroups.jsonに登録されていないカテゴリをカウント
+        CACHE_CATS=$(cat data/cache/paapi-product-cache.json | jq -r 'to_entries[] | .value.data.categoryInfo.main' | sort | uniq | grep -v null)
+        JSON_CATS=$(cat data/categorygroups.json | jq -r '.[].categories[]' | sort | uniq)
+        UNREGISTERED=$(comm -23 <(echo "$CACHE_CATS") <(echo "$JSON_CATS") | wc -l)
+        echo "Unregistered categories: $UNREGISTERED"
+        echo "count=$UNREGISTERED" >> $GITHUB_OUTPUT
+
+    - name: Start Jules category organization
+      if: steps.check.outputs.count != '0'
+      id: organize
+      env:
+        JULES_API_KEY: ${{ secrets.JULES_API_KEY }}
+        JULES_SOURCE: sources/github/${{ github.repository }}
+        JULES_STARTING_BRANCH: ${{ github.ref_name }}
+      run: npm run organize:categories
+
+    - name: Upload session data
+      if: steps.check.outputs.count != '0'
+      uses: actions/upload-artifact@v6
+      with:
+        name: category-organization-session
+        path: data/sessions/category-organization-*.json
+        retention-days: 30
+
+    - name: Skip notification
+      if: steps.check.outputs.count == '0'
+      run: echo "No unregistered categories found. Skipping organization."
