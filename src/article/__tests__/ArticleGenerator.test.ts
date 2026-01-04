@@ -193,6 +193,14 @@ describe('ArticleGenerator', () => {
     it('should generate a complete article with all required sections', async () => {
       const mockCompetitorDetails = new Map<string, ProductDetail>();
       mockCompetitorDetails.set('B08COMPET1', { ...mockProduct, asin: 'B08COMPET1' } as any);
+
+      // Add PAAPI source to verify it's not rendered as a link
+      mockInvestigation.analysis.sources.push({
+        name: 'Amazon Product Advertising API',
+        url: 'https://webservices.amazon.co.jp/paapi5/getitems',
+        credibility: 'High'
+      });
+
       const result = await generator.generateArticle(mockProduct, mockInvestigation, mockReviewAnalysis, undefined, undefined, mockCompetitorDetails);
 
       expect(result).toBeDefined();
@@ -207,6 +215,11 @@ describe('ArticleGenerator', () => {
       expect(result.content).toContain('会社員の体験談 (通勤・通学)');
       expect(result.content).toContain('多くのユーザーが満足感を得ている');
       expect(result.content).toContain('[Amazonレビュー](https://amazon.co.jp)');
+      // Verify PAAPI is rendered as plain text, not a link
+      // Note: optimizeListsForMobile wraps list items in a span
+      expect(result.content).toContain('<span class="mobile-list-item">Amazon Product Advertising API (High)</span>');
+      expect(result.content).not.toContain('[Amazon Product Advertising API](https://webservices.amazon.co.jp/paapi5/getitems)');
+
       expect(result.wordCount).toBeGreaterThan(0);
       expect(result.sections).toHaveLength(7);
     });
