@@ -19,6 +19,9 @@ on:
       asins:
         description: 'Specific ASINs to investigate (comma-separated, overrides categories)'
         required: false
+      keywords:
+        description: 'Search keywords (comma-separated, overrides categories)'
+        required: false
 
 jobs:
   product-search:
@@ -50,6 +53,7 @@ jobs:
         PRODUCT_CATEGORIES: ${{ github.event.inputs.categories }}
         MAX_RESULTS_PER_CATEGORY: ${{ github.event.inputs.max_results || '10' }}
         INPUT_ASINS: ${{ github.event.inputs.asins }}
+        SEARCH_KEYWORDS: ${{ github.event.inputs.keywords }}
       run: npm run search:products
 
     - name: Upload product data
