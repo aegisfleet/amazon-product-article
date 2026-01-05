@@ -70,6 +70,7 @@ export interface ProductSearchParams {
   minPrice?: number;
   maxPrice?: number;
   sortBy?: 'relevance' | 'price' | 'rating' | 'featured' | 'newest';
+  merchant?: 'Amazon' | 'All';
 }
 
 export interface ProductSearchResult {

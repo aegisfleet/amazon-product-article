@@ -29,6 +29,7 @@ interface CLIOptions {
     maxResults: number;
     asins?: string[];
     keywords?: string[];
+    merchant?: 'Amazon' | 'All';
 }
 
 function getOptions(): CLIOptions {
@@ -55,6 +56,8 @@ function getOptions(): CLIOptions {
     const keywordsEnv = process.env.SEARCH_KEYWORDS;
     const keywords = keywordsEnv ? keywordsEnv.split(',').map(k => k.trim()).filter(Boolean) : undefined;
 
+    const merchant = process.env.SEARCH_MERCHANT as 'Amazon' | 'All' | undefined;
+
     const result: CLIOptions = {
         accessKey,
         secretKey,
@@ -69,6 +72,10 @@ function getOptions(): CLIOptions {
 
     if (keywords) {
         result.keywords = keywords;
+    }
+
+    if (merchant) {
+        result.merchant = merchant;
     }
 
     return result;
@@ -133,8 +140,8 @@ async function main(): Promise<void> {
             session = await searcher.searchByAsins(options.asins);
         } else if (options.keywords && options.keywords.length > 0) {
             // Keyword Search
-            logger.info(`Keyword mode: searching for keywords: ${options.keywords.join(', ')}`);
-            session = await searcher.searchByKeywords(options.keywords, options.maxResults);
+            logger.info(`Keyword mode: searching for keywords: ${options.keywords.join(', ')} (Merchant: ${options.merchant || 'Default'})`);
+            session = await searcher.searchByKeywords(options.keywords, options.maxResults, options.merchant);
         } else {
             // Category Search (with randomization and exclusion)
             session = await searcher.searchAllCategories();

@@ -214,7 +214,7 @@ export class ProductSearcher {
   /**
    * Search products by specific keywords across all categories
    */
-  async searchByKeywords(keywords: string[], maxResults = 10): Promise<SearchSession> {
+  async searchByKeywords(keywords: string[], maxResults = 10, merchant?: 'Amazon' | 'All'): Promise<SearchSession> {
     const sessionId = this.generateSessionId();
     const results: ProductSearchResult[] = [];
     let totalProducts = 0;
@@ -231,7 +231,8 @@ export class ProductSearcher {
           category: 'All', // Search all categories
           keywords: [keyword],
           maxResults: maxResults,
-          sortBy: 'featured'
+          sortBy: 'featured',
+          ...(merchant ? { merchant } : {})
         };
 
         const result = await this.papiClient.searchProducts(searchParams);
