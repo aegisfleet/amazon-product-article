@@ -743,11 +743,15 @@ ${investigation.analysis.recommendation.cons.map(con => `- ${con}`).join('\n')}
     const score = investigation.analysis.recommendation.score;
     const scoreText = this.getScoreDescription(score);
 
+    const formattedRationale = investigation.analysis.recommendation.scoreRationale
+      ? investigation.analysis.recommendation.scoreRationale.split('\n').join('  \n')
+      : '';
+
     const content = `## 購入推奨度
 
 ### 総合評価: ${score}点/100点 (${scoreText})
 
-${investigation.analysis.recommendation.scoreRationale ? `**評価の理由**:\n${investigation.analysis.recommendation.scoreRationale}\n` : ''}
+${formattedRationale ? `**評価の理由**:\n${formattedRationale}\n` : ''}
 
 ### こんな方におすすめ
 
