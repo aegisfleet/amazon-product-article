@@ -554,6 +554,41 @@ export class PAAPIClient {
       }
     }
 
+    // ProductInfo: 寸法・重量・カラー
+    const productInfo = item.ItemInfo?.ProductInfo;
+    if (productInfo) {
+      const itemDimensions = productInfo.ItemDimensions;
+      if (itemDimensions) {
+        result.dimensions = {};
+        if (itemDimensions.Height) {
+          result.dimensions.height = `${itemDimensions.Height.DisplayValue} ${itemDimensions.Height.Unit}`;
+        }
+        if (itemDimensions.Width) {
+          result.dimensions.width = `${itemDimensions.Width.DisplayValue} ${itemDimensions.Width.Unit}`;
+        }
+        if (itemDimensions.Length) {
+          result.dimensions.length = `${itemDimensions.Length.DisplayValue} ${itemDimensions.Length.Unit}`;
+        }
+        if (itemDimensions.Weight) {
+          result.dimensions.weight = `${itemDimensions.Weight.DisplayValue} ${itemDimensions.Weight.Unit}`;
+        }
+      }
+      // カラー情報
+      if (productInfo.Color?.DisplayValue) {
+        result.specifications = {
+          ...result.specifications,
+          color: productInfo.Color.DisplayValue
+        };
+      }
+      // サイズ情報
+      if (productInfo.Size?.DisplayValue) {
+        result.specifications = {
+          ...result.specifications,
+          size: productInfo.Size.DisplayValue
+        };
+      }
+    }
+
     return result;
   }
 

@@ -494,7 +494,35 @@ ${Object.entries(product.specifications).map(([key, value]) => `  - ${key}: ${va
     }
   }
 }
-\`\`\`;`;
+\`\`\`
+
+**【technicalSpecs: 詳細スペック抽出】**
+上記JSONの "recommendation" の後に "technicalSpecs" フィールドも追加してください。
+商品カテゴリに応じて、以下のような詳細スペック情報を収集・構造化してください。
+PA-APIの features テキストとWeb調査を組み合わせて情報を取得し、該当しない項目は null を設定してください。
+
+出力例（スマートフォンの場合）:
+\`\`\`json
+"technicalSpecs": {
+  "os": "Android 14",
+  "cpu": "Snapdragon 8 Gen 3",
+  "ram": "8GB",
+  "storage": "256GB",
+  "display": { "size": "6.7インチ", "resolution": "2796×1290", "type": "OLED" },
+  "battery": { "capacity": "4600mAh", "charging": "25W急速充電" },
+  "camera": { "main": "48MP", "ultrawide": "12MP" },
+  "dimensions": { "height": "160.9mm", "width": "77.6mm", "depth": "8.25mm", "weight": "221g" },
+  "connectivity": ["5G", "Wi-Fi 6E", "Bluetooth 5.3"],
+  "other": ["防水IP68", "FeliCa"]
+}
+\`\`\`
+
+カテゴリ別の収集項目:
+- スマートフォン/タブレット: os, cpu, ram, storage, display, battery, camera, connectivity
+- PC/ノートパソコン: cpu, ram, storage, display, battery, gpu
+- イヤホン/ヘッドホン: driver, codec, battery, connectivity, noiseCancel
+- 家電製品: dimensions, power, capacity, その他機能
+`;
 
     return prompt;
   }
