@@ -119,6 +119,12 @@ describe('JulesInvestigator Property Tests', () => {
           expect(prompt).toContain('"sources"');
           expect(prompt).toContain('"competitiveAnalysis"');
           expect(prompt).toContain('"recommendation"');
+          expect(prompt).toContain('"scoreRationale"');
+
+          // 8. Scoring criteria (New Requirement)
+          expect(prompt).toContain('スコア算出について');
+          expect(prompt).toContain('なぜその点数になったのか');
+          expect(prompt).toContain('理由を明確に記述すること');
 
           // 6. Verify prompt is not empty and has reasonable length
           expect(prompt.length).toBeGreaterThan(500);

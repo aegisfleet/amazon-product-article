@@ -318,7 +318,7 @@ export class JulesInvestigator {
 
     // PA-API v5ではレビューデータ取得不可のため外部収集を依頼
     const prompt = `【重要：出力言語の指定】
-すべての出力（productName、productDescription、productUsage、positivePoints、negativePoints、useCases、userStories、userImpression、sources、competitiveAnalysis、recommendationの各フィールドのテキスト）は、必ず日本語で記述してください。英語やその他の言語での出力は避けてください。
+所有すべての出力（productName、productDescription、productUsage、positivePoints、negativePoints、useCases、userStories、userImpression、sources、competitiveAnalysis、recommendationの各フィールドのテキスト）は、必ず日本語で記述してください。英語やその他の言語での出力は避けてください。
 
 【PA-API（Product Advertising API）の利用について】
 環境変数に設定された認証情報を使用して、Amazon PA-API v5から商品情報を取得してください：
@@ -417,6 +417,7 @@ ${updateInstruction}
    - どのようなユーザーに適しているか
    - 購入時の注意点
    - コストパフォーマンス評価
+   - スコア算出（後述の基準に従うこと）
 
 5. 情報ソース
    - 調査に使用した情報の出典を具体的にリストアップしてください。
@@ -437,6 +438,13 @@ ${parentAsinInfo}
 - 価格: ${product.price.formatted}
 - 仕様・詳細:
 ${Object.entries(product.specifications).map(([key, value]) => `  - ${key}: ${value}`).join('\n')}
+
+【スコア算出について】
+総合評価スコア（0-100点）は、あなたの分析に基づき自由に採点してください。
+ただし、**なぜその点数になったのか、加点・減点の理由を明確に記述すること**を必須とします。
+- 85点や80点といった「無難な点数」に固執する必要はありません。
+- 素晴らしい製品には95点以上、問題がある製品には厳しく低い点数をつけても構いません。
+- 「価格に見合っているか」「競合より優れているか」「ユーザー満足度は高いか」を総合的に判断してください。
 
     調査結果は以下のJSON形式で構造化して提供してください。
     なお、ファイル名は "data/investigations/${product.asin}.json" としてください：
@@ -480,11 +488,12 @@ ${Object.entries(product.specifications).map(([key, value]) => `  - ${key}: ${va
       "targetUsers": ["推奨ユーザー1", "推奨ユーザー2"],
       "pros": ["購入メリット1", "購入メリット2"],
       "cons": ["購入時の注意点1", "購入時の注意点2"],
-      "score": 85
+      "score": 0,
+      "scoreRationale": "ここになぜこのスコアにしたのか、加点・減点の理由を具体的に記述してください（例：機能は完璧だが価格が高すぎるため-10点、など）"
     }
   }
 }
-\`\`\``;
+\`\`\`;`;
 
     return prompt;
   }
