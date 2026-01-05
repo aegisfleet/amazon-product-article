@@ -348,7 +348,7 @@ export class ArticleGenerator {
       .map(source => {
         const credibility = source.credibility ? ` (${source.credibility})` : '';
         const paapiBaseUrl = 'https://webservices.amazon.co.jp/paapi5/getitems';
-        
+
         if (source.url && source.url !== paapiBaseUrl) {
           return `- [${source.name}](${source.url})${credibility}`;
         }
@@ -740,6 +740,8 @@ ${investigation.analysis.recommendation.cons.map(con => `- ${con}`).join('\n')}
     const content = `## 購入推奨度
 
 ### 総合評価: ${score}点/100点 (${scoreText})
+
+${investigation.analysis.recommendation.scoreRationale ? `**評価の理由**:\n${investigation.analysis.recommendation.scoreRationale}\n` : ''}
 
 ### こんな方におすすめ
 

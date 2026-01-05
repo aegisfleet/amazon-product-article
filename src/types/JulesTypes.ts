@@ -186,6 +186,7 @@ export interface InvestigationResult {
       pros: string[];
       cons: string[];
       score: number;
+      scoreRationale?: string;
     };
   };
   generatedAt: Date;

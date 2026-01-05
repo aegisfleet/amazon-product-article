@@ -284,7 +284,8 @@ export class JulesInvestigator {
         targetUsers: [],
         pros: [],
         cons: [],
-        score: 0
+        score: 0,
+        scoreRationale: ''
       }
     };
   }
