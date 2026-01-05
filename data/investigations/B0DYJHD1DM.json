@@ -8,21 +8,22 @@
       "LINEやメールなどのメッセージングアプリでのコミュニケーション",
       "簡単な写真撮影や動画鑑賞",
       "通話やSMSなどの基本的な電話機能",
-      "子供用の初めてのスマートフォンとして"
+      "NFCを利用したキャッシュレス決済（おサイフケータイは非対応）"
     ],
     "positivePoints": [
-      "1万5千円以下という非常にリーズナブルな価格設定",
+      "1万5千円以下という圧倒的なコストパフォーマンス",
       "価格を感じさせないヴィーガンレザーとゴリラガラスによる高級感のあるデザイン",
       "5,200mAhの大容量バッテリーによる長時間のバッテリー駆動",
       "90Hzリフレッシュレート対応の滑らかなディスプレイ",
-      "RAMブースト機能により、メモリを最大8GBまで拡張可能"
+      "RAMブースト機能により、物理メモリ8GBを拡張して利用可能",
+      "NFC対応で、Google Payなどのタッチ決済が利用できる"
     ],
     "negativePoints": [
       "カメラ性能は基本的なレベルで、特に暗い場所や動きのあるシーンでは力不足",
-      "充電速度が遅く、急いでいる時には不便を感じる可能性がある",
+      "充電速度に関する情報が少なく、急速充電には対応していない可能性が高い",
       "プロセッサの処理性能が高くないため、高度な3Dゲームや重いアプリケーションには不向き",
       "5G通信に非対応",
-      "eSIMに非対応"
+      "eSIMに非対応で、物理SIMスロットも1つのみ"
     ],
     "useCases": [
       "スマートフォン初心者や高齢者の方向けのシンプルな一台として",
@@ -57,35 +58,35 @@
         "credibility": "中"
       },
       {
-        "name": "my-best 検証レビュー",
-        "url": "https://my-best.com/products/7729292",
-        "credibility": "高い"
-      },
-      {
         "name": "YouTube: This Phone Costs Under £100! | Motorola Moto G05 Unboxing & Tour",
         "url": "https://www.youtube.com/watch?v=N4cHPr6DF4U",
         "credibility": "中"
+      },
+      {
+        "name": "ASCII.jp：Amazonセールで「moto g05」が24％オフ",
+        "url": "https://weekly.ascii.jp/elem/000/004/363/4363749/",
+        "credibility": "中"
       }
     ],
-    "lastInvestigated": "2026-01-01",
+    "lastInvestigated": "2026-01-05",
     "competitiveAnalysis": [
       {
         "name": "Samsung Galaxy A25",
         "asin": "B0FXKX5TNZ",
-        "priceComparison": "moto g05より約4,000円高い。",
+        "priceComparison": "moto g05より高価だが、ブランド信頼性が高い。",
         "featureComparison": [
           "ブランドの信頼性と知名度で優位。",
-          "有機ELディスプレイを搭載している可能性が高い（一般的傾向）。"
+          "有機ELディスプレイを搭載している可能性が高く、表示品質で勝る。"
         ],
         "differentiators": [
-          "moto g05は価格の安さとバッテリー容量で勝る。",
+          "moto g05は圧倒的な価格の安さとバッテリー容量で勝る。",
           "Galaxy A25はブランドイメージとディスプレイ品質で差別化。"
         ]
       },
       {
         "name": "Xiaomi POCO M7 Pro 5G",
         "asin": "B0DYF4KF65",
-        "priceComparison": "moto g05の約2倍の価格。",
+        "priceComparison": "moto g05の約2倍の価格帯。",
         "featureComparison": [
           "5G通信に対応している。",
           "より高性能なプロセッサと有機ELディスプレイを搭載している。"
@@ -98,7 +99,7 @@
       {
         "name": "OSCAL Flat2C",
         "asin": "B0F4D65H8B",
-        "priceComparison": "moto g05より約3,500円安い、さらに低価格帯のモデル。",
+        "priceComparison": "moto g05よりさらに低価格なエントリーモデル。",
         "featureComparison": [
           "スペック（特にプロセッサ性能やビルドクオリティ）でmoto g05に劣る可能性が高い。",
           "ブランドの知名度が低く、サポート面での懸念がある。"
@@ -125,7 +126,20 @@
         "重いゲームやアプリの利用には不向き",
         "将来性を考えると5G非対応がネックになる可能性がある"
       ],
-      "score": 78
+      "score": 82,
+      "scoreRationale": "基本点を50点として評価。まず、1.5万円以下という圧倒的な価格設定を最大の強みとして+20点。価格に見合わない高級感のあるデザイン（ヴィーガンレザー、ゴリラガラス）に+10点。5,200mAhの大容量バッテリーと90Hzディスプレイも評価し+10点。合計90点。一方で、カメラ性能が限定的である点（-3点）、プロセッサ性能が低くゲームに不向きな点（-3点）、5GやeSIMに非対応という将来性の懸念（-2点）を減点し、最終スコアを82点としました。ライトユーザーにとっては90点以上の価値がありますが、汎用性を考慮して調整しました。"
+    },
+    "technicalSpecs": {
+      "os": "Android 14",
+      "cpu": "Unisoc T606",
+      "ram": "8GB",
+      "storage": "128GB",
+      "display": { "size": "約6.7インチ", "resolution": "1612x720 (HD+)", "type": "LCD" },
+      "battery": { "capacity": "5,200mAh", "charging": null },
+      "camera": { "main": "50MP", "ultrawide": null },
+      "dimensions": { "height": "約165.67mm", "width": "約75.98mm", "depth": "約8.17mm", "weight": "約188.8g" },
+      "connectivity": ["Wi-Fi 5 (802.11ac)", "Bluetooth 5.4", "NFC"],
+      "other": ["IP52防水防塵", "3.5mmイヤホンジャック", "nanoSIM (eSIM非対応)"]
     }
   }
 }
