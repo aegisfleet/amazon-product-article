@@ -246,6 +246,8 @@ export interface TechnicalSpecs {
   // その他
   countryOfOrigin?: string | null;
   heelHeight?: string | null;
+  loadCapacity?: string | { [key: string]: string } | null; // e.g., "5kg" or { rack: "5kg", hook: "500g" }
+  attachments?: string | string[] | null;                    // e.g., "フック×2" or ["フック×2", "マグネット"]
 }
 
 export interface InvestigationResult {
