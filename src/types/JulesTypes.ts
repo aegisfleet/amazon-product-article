@@ -172,6 +172,7 @@ export interface DisplaySpec {
   size?: string;          // e.g., "6.7インチ"
   resolution?: string;    // e.g., "2796×1290"
   type?: string;          // e.g., "OLED", "液晶"
+  refreshRate?: string;   // e.g., "120Hz"
 }
 
 export interface BatterySpec {
@@ -184,6 +185,7 @@ export interface CameraSpec {
   main?: string;          // e.g., "48MP"
   ultrawide?: string;     // e.g., "12MP"
   telephoto?: string;     // e.g., "12MP"
+  front?: string;         // e.g., "12MP"
 }
 
 export interface DimensionsSpec {
@@ -216,6 +218,19 @@ export interface TechnicalSpecs {
   capacity?: string | null;            // e.g., "3L"
 
   other?: string[] | null;             // e.g., ["防水IP68", "FeliCa", "eSIM対応"]
+
+  // 靴（シューズ）
+  width?: string | null;               // e.g., "2E", "4E"
+  weight?: string | null;              // e.g., "270g"
+  material?: string | {
+    upper?: string;
+    outsole?: string;
+    insole?: string;
+  } | null;
+  midsole?: string | null;
+  cushioningTech?: string[] | null;
+  heelCounter?: string | null;
+  modelNumber?: string | null;
 }
 
 export interface InvestigationResult {
