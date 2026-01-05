@@ -231,6 +231,21 @@ export interface TechnicalSpecs {
   cushioningTech?: string[] | null;
   heelCounter?: string | null;
   modelNumber?: string | null;
+  model?: string | null;               // Alias for modelNumber
+  category?: string | null;            // Category within specs
+
+  // 素材の詳細（各名称のバリエーションに対応）
+  upperMaterial?: string | null;
+  midsoleMaterial?: string | null;
+  outsoleMaterial?: string | null;
+  outerSole?: string | null;           // Alias for outsoleMaterial
+  insoleMaterial?: string | null;
+  innerSole?: string | null;           // Alias for insoleMaterial
+  insole?: string | null;
+
+  // その他
+  countryOfOrigin?: string | null;
+  heelHeight?: string | null;
 }
 
 export interface InvestigationResult {
