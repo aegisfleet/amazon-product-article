@@ -5,7 +5,7 @@
 import { AffiliateLinkManager } from '../affiliate/AffiliateLinkManager';
 import { ReviewAnalysisResult } from '../analysis/ReviewAnalyzer';
 import { AffiliateLink } from '../types/AffiliateTypes';
-import { InvestigationResult } from '../types/JulesTypes';
+import { InvestigationResult, TechnicalSpecs } from '../types/JulesTypes';
 import { Product, ProductDetail } from '../types/Product';
 import { Logger } from '../utils/Logger';
 
@@ -27,6 +27,7 @@ export interface ArticleMetadata {
   seoKeywords: string[];
   lastInvestigated?: string;
   images?: string[];  // Product image URLs for Hugo front matter
+  technicalSpecs?: TechnicalSpecs;  // 詳細スペック情報（カテゴリ依存）
 }
 
 export interface ArticleTemplate {
@@ -200,6 +201,11 @@ export class ArticleGenerator {
 
     if (manufacturer) {
       metadata.manufacturer = manufacturer;
+    }
+
+    // 詳細スペック情報（technicalSpecs）があれば追加
+    if (investigation.analysis.technicalSpecs) {
+      metadata.technicalSpecs = investigation.analysis.technicalSpecs;
     }
 
     return metadata;
@@ -907,6 +913,69 @@ ${infoRows.join('\n')}
     // Add images for Hugo template (used on home page)
     if (metadata.images && metadata.images.length > 0) {
       lines.push(`images: [${metadata.images.map(img => `"${img}"`).join(', ')}]`);
+    }
+
+    // Add technical specs (flattened for Hugo template)
+    if (metadata.technicalSpecs) {
+      const specs = metadata.technicalSpecs;
+      lines.push('specs:');
+
+      // 基本スペック
+      if (specs.os) lines.push(`  os: "${specs.os}"`);
+      if (specs.cpu) lines.push(`  cpu: "${specs.cpu}"`);
+      if (specs.gpu) lines.push(`  gpu: "${specs.gpu}"`);
+      if (specs.ram) lines.push(`  ram: "${specs.ram}"`);
+      if (specs.storage) lines.push(`  storage: "${specs.storage}"`);
+
+      // ディスプレイ
+      if (specs.display) {
+        if (specs.display.size) lines.push(`  display_size: "${specs.display.size}"`);
+        if (specs.display.resolution) lines.push(`  display_resolution: "${specs.display.resolution}"`);
+        if (specs.display.type) lines.push(`  display_type: "${specs.display.type}"`);
+      }
+
+      // バッテリー
+      if (specs.battery) {
+        if (specs.battery.capacity) lines.push(`  battery_capacity: "${specs.battery.capacity}"`);
+        if (specs.battery.charging) lines.push(`  battery_charging: "${specs.battery.charging}"`);
+        if (specs.battery.playbackTime) lines.push(`  battery_playback_time: "${specs.battery.playbackTime}"`);
+      }
+
+      // カメラ
+      if (specs.camera) {
+        if (specs.camera.main) lines.push(`  camera_main: "${specs.camera.main}"`);
+        if (specs.camera.ultrawide) lines.push(`  camera_ultrawide: "${specs.camera.ultrawide}"`);
+        if (specs.camera.telephoto) lines.push(`  camera_telephoto: "${specs.camera.telephoto}"`);
+      }
+
+      // 寸法・重量
+      if (specs.dimensions) {
+        if (specs.dimensions.height) lines.push(`  height: "${specs.dimensions.height}"`);
+        if (specs.dimensions.width) lines.push(`  width: "${specs.dimensions.width}"`);
+        if (specs.dimensions.depth) lines.push(`  depth: "${specs.dimensions.depth}"`);
+        if (specs.dimensions.weight) lines.push(`  weight: "${specs.dimensions.weight}"`);
+      }
+
+      // イヤホン・ヘッドホン
+      if (specs.driver) lines.push(`  driver: "${specs.driver}"`);
+      if (specs.codec && specs.codec.length > 0) {
+        lines.push(`  codec: [${specs.codec.map(c => `"${c}"`).join(', ')}]`);
+      }
+      if (specs.noiseCancel) lines.push(`  noise_cancel: "${specs.noiseCancel}"`);
+
+      // 家電
+      if (specs.power) lines.push(`  power: "${specs.power}"`);
+      if (specs.capacity) lines.push(`  capacity: "${specs.capacity}"`);
+
+      // 接続性
+      if (specs.connectivity && specs.connectivity.length > 0) {
+        lines.push(`  connectivity: [${specs.connectivity.map(c => `"${c}"`).join(', ')}]`);
+      }
+
+      // その他
+      if (specs.other && specs.other.length > 0) {
+        lines.push(`  other_specs: [${specs.other.map(o => `"${o}"`).join(', ')}]`);
+      }
     }
 
     lines.push('---');
