@@ -936,6 +936,7 @@ ${score >= 80 ? '自信を持っておすすめできる商品です。' :
 
       // 靴（シューズ）
       if (specs.width) infoRows.push(`| 幅（ワイズ） | ${specs.width} |`);
+      if (specs.weight) infoRows.push(`| 重量 | ${specs.weight} |`);
       if (specs.midsole) infoRows.push(`| ミッドソール | ${specs.midsole} |`);
       if (specs.cushioningTech && specs.cushioningTech.length > 0) {
         infoRows.push(`| クッショニング | ${specs.cushioningTech.join(', ')} |`);
@@ -1091,6 +1092,7 @@ ${infoRows.join('\n')}
 
       // 靴（シューズ）
       if (specs.width) lines.push(`  width: "${specs.width}"`);
+      if (specs.weight) lines.push(`  weight: "${specs.weight}"`);
       if (specs.midsole) lines.push(`  midsole: "${specs.midsole}"`);
       if (specs.cushioningTech && specs.cushioningTech.length > 0) {
         lines.push(`  cushioning_tech: [${specs.cushioningTech.map(c => `"${c}"`).join(', ')}]`);
