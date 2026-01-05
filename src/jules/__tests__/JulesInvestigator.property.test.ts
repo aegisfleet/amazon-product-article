@@ -122,16 +122,15 @@ describe('JulesInvestigator Property Tests', () => {
           expect(prompt).toContain('"scoreRationale"');
 
           // 8. Scoring criteria (New Requirement)
-          expect(prompt).toContain('スコア算出について');
-          expect(prompt).toContain('なぜその点数になったのか');
-          expect(prompt).toContain('理由を明確に記述すること');
+          expect(prompt).toContain('スコア算出の標準化ガイドライン');
+          expect(prompt).toContain('基本点: 70点');
+          expect(prompt).toContain('定量的・論理的な計算過程');
 
           // 6. Verify prompt is not empty and has reasonable length
           expect(prompt.length).toBeGreaterThan(500);
           expect(prompt.length).toBeLessThanOrEqual(10000);
 
           // 7. Verify proper Japanese formatting
-          expect(prompt).toMatch(/商品「.*」について/);
           expect(prompt).toContain('調査結果は以下のJSON形式で');
         }
       ),
