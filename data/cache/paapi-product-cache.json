@@ -461,42 +461,42 @@
   },
   "B0058A783S": {
     "data": null,
-    "timestamp": 1767533362182,
+    "timestamp": 1767620272510,
     "status": "invalid"
   },
   "B075S1L8L3": {
     "data": null,
-    "timestamp": 1767533362182,
+    "timestamp": 1767620272510,
     "status": "invalid"
   },
   "B0062AIJ2S": {
     "data": null,
-    "timestamp": 1767533362182,
+    "timestamp": 1767620272510,
     "status": "invalid"
   },
   "B0CZ8J4QZR": {
     "data": null,
-    "timestamp": 1767533389532,
+    "timestamp": 1767620301410,
     "status": "invalid"
   },
   "B08B7V8S2H": {
     "data": null,
-    "timestamp": 1767533389532,
+    "timestamp": 1767620301410,
     "status": "invalid"
   },
   "B0C9S6X24Z": {
     "data": null,
-    "timestamp": 1767533389532,
+    "timestamp": 1767620301410,
     "status": "invalid"
   },
   "B0B915P296": {
     "data": null,
-    "timestamp": 1767533416000,
+    "timestamp": 1767620329351,
     "status": "invalid"
   },
   "B07V9Y1G9R": {
     "data": null,
-    "timestamp": 1767533416000,
+    "timestamp": 1767620329351,
     "status": "invalid"
   },
   "B08H5351L1": {
@@ -616,32 +616,32 @@
   },
   "B0C6Q2P7H5": {
     "data": null,
-    "timestamp": 1767533362182,
+    "timestamp": 1767620272510,
     "status": "invalid"
   },
   "B0C9M235G2": {
     "data": null,
-    "timestamp": 1767533362182,
+    "timestamp": 1767620272510,
     "status": "invalid"
   },
   "B08P138P2K": {
     "data": null,
-    "timestamp": 1767533362182,
+    "timestamp": 1767620272510,
     "status": "invalid"
   },
   "B01MYYS56G": {
     "data": null,
-    "timestamp": 1767533389532,
+    "timestamp": 1767620301410,
     "status": "invalid"
   },
   "B005S0I17Y": {
     "data": null,
-    "timestamp": 1767533389532,
+    "timestamp": 1767620301410,
     "status": "invalid"
   },
   "B08P55296T": {
     "data": null,
-    "timestamp": 1767533389532,
+    "timestamp": 1767620301410,
     "status": "invalid"
   },
   "B01B786L50": {
@@ -651,7 +651,7 @@
   },
   "B0B5V73M51": {
     "data": null,
-    "timestamp": 1767533416000,
+    "timestamp": 1767620329351,
     "status": "invalid"
   },
   "B004W1K48M": {
@@ -44593,9 +44593,9 @@
         "browseNodeId": "392384011"
       },
       "price": {
-        "amount": 3.08,
+        "amount": 3.26,
         "currency": "JPY",
-        "formatted": "￥308"
+        "formatted": "￥326"
       },
       "images": {
         "primary": "https://m.media-amazon.com/images/I/41IJA3n75CL._SL500_.jpg",
@@ -44611,7 +44611,9 @@
         ]
       },
       "specifications": {
-        "model": "facetowel-atsude"
+        "model": "facetowel-atsude",
+        "color": "ブルー",
+        "size": "ワンサイズ"
       },
       "rating": {
         "average": 0,
@@ -44631,9 +44633,15 @@
         "ean": "4562355182269"
       },
       "availability": "在庫あり。",
-      "isPrimeEligible": true
+      "isPrimeEligible": true,
+      "dimensions": {
+        "height": "3.1496 インチ",
+        "width": "8.07085 インチ",
+        "length": "4.01574 インチ",
+        "weight": "0.4629707502 ポンド"
+      }
     },
-    "timestamp": 1767533362182,
+    "timestamp": 1767620272510,
     "status": "valid"
   },
   "B0BZTMBM8P": {
@@ -44661,7 +44669,9 @@
           "https://m.media-amazon.com/images/I/41nJJqkksPL._SL500_.jpg"
         ]
       },
-      "specifications": {},
+      "specifications": {
+        "size": "240シート (x 5)"
+      },
       "rating": {
         "average": 0,
         "count": 0
@@ -44680,9 +44690,12 @@
         "ean": "4904740656694"
       },
       "availability": "在庫あり。",
-      "isPrimeEligible": true
+      "isPrimeEligible": true,
+      "dimensions": {
+        "weight": "2.2487150724 ポンド"
+      }
     },
-    "timestamp": 1767533362182,
+    "timestamp": 1767620272510,
     "status": "valid"
   },
   "B0FMJXQSQG": {
@@ -44713,7 +44726,9 @@
         ]
       },
       "specifications": {
-        "model": "A001001A-10"
+        "model": "A001001A-10",
+        "color": "90枚入",
+        "size": "3個セット"
       },
       "rating": {
         "average": 0,
@@ -44736,7 +44751,7 @@
       "availability": "通常2～3日以内に発送します。",
       "isPrimeEligible": false
     },
-    "timestamp": 1767533362182,
+    "timestamp": 1767620272510,
     "status": "valid"
   },
   "B0BNKZW5NT": {
@@ -44749,9 +44764,9 @@
         "browseNodeId": "392384011"
       },
       "price": {
-        "amount": 3.08,
+        "amount": 3.26,
         "currency": "JPY",
-        "formatted": "￥308"
+        "formatted": "￥326"
       },
       "images": {
         "primary": "https://m.media-amazon.com/images/I/41jlVEwsbZL._SL500_.jpg",
@@ -44766,7 +44781,10 @@
           "https://m.media-amazon.com/images/I/511qAIIFk0L._SL500_.jpg"
         ]
       },
-      "specifications": {},
+      "specifications": {
+        "color": "ブルー",
+        "size": "ワンサイズ"
+      },
       "rating": {
         "average": 0,
         "count": 0
@@ -44784,9 +44802,12 @@
         "ean": "4562355182276"
       },
       "availability": "在庫あり。",
-      "isPrimeEligible": true
+      "isPrimeEligible": true,
+      "dimensions": {
+        "weight": "0.3968320716 ポンド"
+      }
     },
-    "timestamp": 1767533362182,
+    "timestamp": 1767620272510,
     "status": "valid"
   },
   "B0CKWSG2BG": {
@@ -44815,7 +44836,9 @@
         ]
       },
       "specifications": {
-        "model": "PMG-T179-W"
+        "model": "PMG-T179-W",
+        "color": "17L ホワイトク(ターン)",
+        "size": "17L ホワイト(ターン)"
       },
       "rating": {
         "average": 0,
@@ -44836,9 +44859,15 @@
         "ean": "4967576679442"
       },
       "availability": "在庫あり。",
-      "isPrimeEligible": true
+      "isPrimeEligible": true,
+      "dimensions": {
+        "height": "10.3937007768 インチ",
+        "width": "17.9133858085 インチ",
+        "length": "12.204724397 インチ",
+        "weight": "25.132697868 ポンド"
+      }
     },
-    "timestamp": 1767533389532,
+    "timestamp": 1767620301410,
     "status": "valid"
   },
   "B0DLGR99V1": {
@@ -44857,20 +44886,19 @@
         "formatted": "￥7,199"
       },
       "images": {
-        "primary": "https://m.media-amazon.com/images/I/41G3fUn8-QL._SL500_.jpg",
+        "primary": "https://m.media-amazon.com/images/I/41wxLso+SRL._SL500_.jpg",
         "thumbnails": [
           "https://m.media-amazon.com/images/I/51LjXzKjzaL._SL500_.jpg",
           "https://m.media-amazon.com/images/I/51l02EMv7xL._SL500_.jpg",
           "https://m.media-amazon.com/images/I/51fQNfzpcuL._SL500_.jpg",
-          "https://m.media-amazon.com/images/I/51eQRkJzyzL._SL500_.jpg",
           "https://m.media-amazon.com/images/I/51fS56Ko96L._SL500_.jpg",
-          "https://m.media-amazon.com/images/I/41tywq7vvFL._SL500_.jpg",
-          "https://m.media-amazon.com/images/I/41tywq7vvFL._SL500_.jpg",
-          "https://m.media-amazon.com/images/I/419dzb4LL5L._SL500_.jpg"
+          "https://m.media-amazon.com/images/I/41tywq7vvFL._SL500_.jpg"
         ]
       },
       "specifications": {
-        "model": "CF-AM202-BK"
+        "model": "CF-AM202-BK",
+        "color": "ブラック",
+        "size": "a)17L (ターンテーブ/ 光るダイヤル式)"
       },
       "rating": {
         "average": 0,
@@ -44891,9 +44919,14 @@
         "ean": "6944271681558"
       },
       "availability": "在庫あり。",
-      "isPrimeEligible": true
+      "isPrimeEligible": true,
+      "dimensions": {
+        "height": "10.1968503833 インチ",
+        "width": "17.322834628 インチ",
+        "length": "14.0944881746 インチ"
+      }
     },
-    "timestamp": 1767533389532,
+    "timestamp": 1767620301410,
     "status": "valid"
   },
   "B08Q7KLLCD": {
@@ -44907,15 +44940,17 @@
         "browseNodeId": "15691411"
       },
       "price": {
-        "amount": 125,
+        "amount": 122,
         "currency": "JPY",
-        "formatted": "￥12,500"
+        "formatted": "￥12,200"
       },
       "images": {
         "primary": "https://m.media-amazon.com/images/I/41EaFpGAHxL._SL500_.jpg",
         "thumbnails": []
       },
-      "specifications": {},
+      "specifications": {
+        "color": "ブラック"
+      },
       "rating": {
         "average": 0,
         "count": 0
@@ -44927,9 +44962,12 @@
         "ean": "4974019174761"
       },
       "availability": "在庫あり。",
-      "isPrimeEligible": false
+      "isPrimeEligible": false,
+      "dimensions": {
+        "weight": "30.86471668 ポンド"
+      }
     },
-    "timestamp": 1767533389532,
+    "timestamp": 1767620301410,
     "status": "valid"
   },
   "B0D9XYCJWL": {
@@ -44959,7 +44997,9 @@
         ]
       },
       "specifications": {
-        "model": "JOQ-351"
+        "model": "JOQ-351",
+        "color": "スモークブラック",
+        "size": "350 ml"
       },
       "rating": {
         "average": 0,
@@ -44980,9 +45020,15 @@
         "ean": "4562344400275"
       },
       "availability": "在庫あり。",
-      "isPrimeEligible": true
+      "isPrimeEligible": true,
+      "dimensions": {
+        "height": "6.692913379 インチ",
+        "width": "2.5590551155 インチ",
+        "length": "2.5590551155 インチ",
+        "weight": "0.440924524 ポンド"
+      }
     },
-    "timestamp": 1767533389532,
+    "timestamp": 1767620301410,
     "status": "valid"
   },
   "B0FH1LGCY5": {
@@ -45003,7 +45049,9 @@
         "primary": "https://m.media-amazon.com/images/I/41WVGiH9t8L._SL500_.jpg",
         "thumbnails": []
       },
-      "specifications": {},
+      "specifications": {
+        "color": "だだんだん"
+      },
       "rating": {
         "average": 0,
         "count": 0
@@ -45021,9 +45069,14 @@
         "ean": "4979750824012"
       },
       "availability": "在庫あり。",
-      "isPrimeEligible": true
+      "isPrimeEligible": true,
+      "dimensions": {
+        "height": "7.086614166 インチ",
+        "width": "4.330708657 インチ",
+        "length": "3.3464566895 インチ"
+      }
     },
-    "timestamp": 1767533416000,
+    "timestamp": 1767620329351,
     "status": "valid"
   },
   "B0FPLY3S3K": {
@@ -45060,7 +45113,10 @@
           "https://m.media-amazon.com/images/I/41l+U5-f4nL._SL500_.jpg"
         ]
       },
-      "specifications": {},
+      "specifications": {
+        "color": "グレー",
+        "size": "12mm"
+      },
       "rating": {
         "average": 0,
         "count": 0
@@ -45078,9 +45134,15 @@
         "ean": "4571607691107"
       },
       "availability": "在庫あり。",
-      "isPrimeEligible": true
+      "isPrimeEligible": true,
+      "dimensions": {
+        "height": "1.2992125971 インチ",
+        "width": "1.2992125971 インチ",
+        "length": "7.5590551104 インチ",
+        "weight": "0.3858089585 ポンド"
+      }
     },
-    "timestamp": 1767533416000,
+    "timestamp": 1767620329351,
     "status": "valid"
   },
   "B0FX2DZS8N": {
@@ -45111,7 +45173,9 @@
           "https://m.media-amazon.com/images/I/41LpoHAhr4L._SL500_.jpg"
         ]
       },
-      "specifications": {},
+      "specifications": {
+        "color": "ホワイト"
+      },
       "rating": {
         "average": 0,
         "count": 0
@@ -45127,9 +45191,14 @@
       ],
       "brand": "Zimaka",
       "availability": "在庫あり。",
-      "isPrimeEligible": true
+      "isPrimeEligible": true,
+      "dimensions": {
+        "height": "1.181102361 インチ",
+        "width": "1.181102361 インチ",
+        "length": "9.055118101 インチ"
+      }
     },
-    "timestamp": 1767533416000,
+    "timestamp": 1767620329351,
     "status": "valid"
   },
   "B0FCC68MCV": {
@@ -45158,7 +45227,10 @@
           "https://m.media-amazon.com/images/I/41pgyv0SzsL._SL500_.jpg"
         ]
       },
-      "specifications": {},
+      "specifications": {
+        "color": "ブラック",
+        "size": "18.0 ミリメートル"
+      },
       "rating": {
         "average": 0,
         "count": 0
@@ -45174,24 +45246,30 @@
       ],
       "brand": "Kiboer",
       "availability": "在庫あり。",
-      "isPrimeEligible": true
+      "isPrimeEligible": true,
+      "dimensions": {
+        "height": "1.1023622036 インチ",
+        "width": "1.1023622036 インチ",
+        "length": "8.267716527 インチ",
+        "weight": "0.440924524 ポンド"
+      }
     },
-    "timestamp": 1767533416000,
+    "timestamp": 1767620329351,
     "status": "valid"
   },
   "B09SH6PXG2": {
     "data": null,
-    "timestamp": 1767533416000,
+    "timestamp": 1767620329351,
     "status": "invalid"
   },
   "B09SH79L5D": {
     "data": null,
-    "timestamp": 1767533416000,
+    "timestamp": 1767620329351,
     "status": "invalid"
   },
   "B075L2DX8L": {
     "data": null,
-    "timestamp": 1767533416000,
+    "timestamp": 1767620329351,
     "status": "invalid"
   },
   "B0DPQ2CPVG": {
@@ -45220,7 +45298,9 @@
           "https://m.media-amazon.com/images/I/3133WHjHelL._SL500_.jpg"
         ]
       },
-      "specifications": {},
+      "specifications": {
+        "color": "ブラック"
+      },
       "rating": {
         "average": 0,
         "count": 0
@@ -45237,9 +45317,14 @@
       ],
       "brand": "mod's hair",
       "availability": "在庫あり。",
-      "isPrimeEligible": true
+      "isPrimeEligible": true,
+      "dimensions": {
+        "height": "1.968503935 インチ",
+        "width": "1.968503935 インチ",
+        "length": "9.448818888 インチ"
+      }
     },
-    "timestamp": 1767533441030,
+    "timestamp": 1767620355589,
     "status": "valid"
   },
   "B0FPWTHH32": {
@@ -45271,7 +45356,8 @@
         ]
       },
       "specifications": {
-        "model": "HVT55T"
+        "model": "HVT55T",
+        "color": "ブラウン"
       },
       "rating": {
         "average": 0,
@@ -45292,9 +45378,12 @@
         "ean": "4550556140652"
       },
       "availability": "在庫あり。",
-      "isPrimeEligible": true
+      "isPrimeEligible": true,
+      "dimensions": {
+        "weight": "11.464037624 ポンド"
+      }
     },
-    "timestamp": 1767533441030,
+    "timestamp": 1767620355589,
     "status": "valid"
   },
   "B0FT25WR82": {
@@ -45323,7 +45412,10 @@
           "https://m.media-amazon.com/images/I/41izYUt-C0L._SL500_.jpg"
         ]
       },
-      "specifications": {},
+      "specifications": {
+        "color": "ホワイト",
+        "size": "32mm"
+      },
       "rating": {
         "average": 0,
         "count": 0
@@ -45341,10 +45433,15 @@
       "externalIds": {
         "ean": "4571607696683"
       },
-      "availability": "在庫あり。",
-      "isPrimeEligible": true
+      "isPrimeEligible": true,
+      "dimensions": {
+        "height": "4.724409444 インチ",
+        "width": "4.724409444 インチ",
+        "length": "13.779527545 インチ",
+        "weight": "0.8157103694 ポンド"
+      }
     },
-    "timestamp": 1767533441030,
+    "timestamp": 1767620355589,
     "status": "valid"
   },
   "B0FD8RXXRS": {
@@ -45375,7 +45472,10 @@
           "https://m.media-amazon.com/images/I/41dOm1EHLhL._SL500_.jpg"
         ]
       },
-      "specifications": {},
+      "specifications": {
+        "color": "ホワイト",
+        "size": "パイプ径:32(mm)+オリジナルミラーセット"
+      },
       "rating": {
         "average": 0,
         "count": 0
@@ -45390,9 +45490,15 @@
       ],
       "brand": "クレイツ(Create)",
       "availability": "在庫あり。",
-      "isPrimeEligible": true
+      "isPrimeEligible": true,
+      "dimensions": {
+        "height": "1.968503935 インチ",
+        "width": "1.968503935 インチ",
+        "length": "13.385826758 インチ",
+        "weight": "0.9479877266 ポンド"
+      }
     },
-    "timestamp": 1767533441031,
+    "timestamp": 1767620355589,
     "status": "valid"
   },
   "B0FZ9VHLK4": {
@@ -45433,32 +45539,32 @@
       "availability": "在庫あり。",
       "isPrimeEligible": true
     },
-    "timestamp": 1767533441031,
+    "timestamp": 1767620355589,
     "status": "valid"
   },
   "B0CF4T47L6": {
     "data": null,
-    "timestamp": 1767533441031,
+    "timestamp": 1767620355589,
     "status": "invalid"
   },
   "B0CLVBRRFL": {
     "data": null,
-    "timestamp": 1767533441031,
+    "timestamp": 1767620355589,
     "status": "invalid"
   },
   "B07W42W42Y": {
     "data": null,
-    "timestamp": 1767533441031,
+    "timestamp": 1767620355589,
     "status": "invalid"
   },
   "B08K3B2V7X": {
     "data": null,
-    "timestamp": 1767533441031,
+    "timestamp": 1767620355589,
     "status": "invalid"
   },
   "B09J8Y6J7Y": {
     "data": null,
-    "timestamp": 1767533441031,
+    "timestamp": 1767620355589,
     "status": "invalid"
   },
   "B00A78ER2C": {
