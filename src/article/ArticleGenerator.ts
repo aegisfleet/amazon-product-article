@@ -744,14 +744,14 @@ ${investigation.analysis.recommendation.cons.map(con => `- ${con}`).join('\n')}
     const scoreText = this.getScoreDescription(score);
 
     const formattedRationale = investigation.analysis.recommendation.scoreRationale
-      ? investigation.analysis.recommendation.scoreRationale.split('\n').join('  \n')
+      ? this.formatScoreRationaleAsCard(investigation.analysis.recommendation.scoreRationale)
       : '';
 
     const content = `## 購入推奨度
 
 ### 総合評価: ${score}点/100点 (${scoreText})
 
-${formattedRationale ? `**評価の理由**:\n${formattedRationale}\n` : ''}
+${formattedRationale ? `### 評価の理由\n\n${formattedRationale}\n` : ''}
 
 ### こんな方におすすめ
 
@@ -1411,6 +1411,56 @@ ${infoRows.join('\n')}
 
     // Markdownのblockquote記法「>」を使用
     return `> ${sanitized}`;
+  }
+
+  /**
+   * scoreRationaleをカード形式のHTMLにフォーマット
+   * 基本点・加点・減点・合計を識別して、絵文字とスタイリングで視覚的に表示
+   */
+  private formatScoreRationaleAsCard(rationale: string): string {
+    const lines = rationale.split('\n').filter(line => line.trim());
+    const parts: string[] = [];
+
+    for (const line of lines) {
+      // 基本点: [基本点: 70]
+      const baseMatch = line.match(/\[基本点:\s*(\d+)\]/);
+      if (baseMatch) {
+        parts.push(`<div class="score-base">📊 基本点: <strong>${baseMatch[1]}</strong>点</div>`);
+        continue;
+      }
+
+      // 加点: [加点: +13] 説明 または (説明)
+      const plusMatch = line.match(/\[加点:\s*\+(\d+)\]\s*(.*)/);
+      if (plusMatch) {
+        const [, points, desc = ''] = plusMatch;
+        const cleanDesc = desc.replace(/^[\(（]/, '').replace(/[\)）]$/, '').trim();
+        parts.push(`<div class="score-item score-plus">✅ <span class="score-points">+${points}</span> ${cleanDesc}</div>`);
+        continue;
+      }
+
+      // 減点: [減点: -5] 説明 または (説明)
+      const minusMatch = line.match(/\[減点:\s*-(\d+)\]\s*(.*)/);
+      if (minusMatch) {
+        const [, points, desc = ''] = minusMatch;
+        const cleanDesc = desc.replace(/^[\(（]/, '').replace(/[\)）]$/, '').trim();
+        parts.push(`<div class="score-item score-minus">⚠️ <span class="score-points">-${points}</span> ${cleanDesc}</div>`);
+        continue;
+      }
+
+      // 合計: [合計: 88]
+      const totalMatch = line.match(/\[合計:\s*(\d+)\]/);
+      if (totalMatch) {
+        parts.push(`<div class="score-total">🎯 合計: <strong>${totalMatch[1]}</strong>点</div>`);
+        continue;
+      }
+
+      // パースできない行はそのまま表示
+      if (line.trim()) {
+        parts.push(`<div class="score-item">${line}</div>`);
+      }
+    }
+
+    return `<div class="score-rationale-card">\n${parts.join('\n')}\n</div>`;
   }
 
   /**
