@@ -94,6 +94,8 @@ if __name__ == '__main__':
         "SearchIndex": "HealthPersonalCare",
         "Resources": [
             "ItemInfo.Title",
+            "ItemInfo.ByLineInfo",
+            "BrowseNodeInfo.BrowseNodes",
             "Offers.Listings.Price"
         ]
     }

@@ -96,6 +96,9 @@ if __name__ == '__main__':
             "ItemInfo.Title",
             "ItemInfo.Features",
             "ItemInfo.ByLineInfo",
+            "ItemInfo.ProductInfo",
+            "ItemInfo.TechnicalInfo",
+            "ItemInfo.ManufactureInfo",
             "Offers.Listings.Price"
         ]
     }
@@ -111,13 +114,48 @@ if __name__ == '__main__':
         
         if 'ItemsResult' in response_json and 'Items' in response_json['ItemsResult']:
             item = response_json['ItemsResult']['Items'][0]
+            item_info = item.get('ItemInfo', {})
+            
             data = {
-                "productName": item['ItemInfo']['Title']['DisplayValue'],
-                "brand": item['ItemInfo']['ByLineInfo']['Brand']['DisplayValue'],
-                "price": item['Offers']['Listings'][0]['Price']['Amount'],
-                "imageUrl": item['Images']['Primary']['Large']['URL'],
-                "features": item['ItemInfo']['Features']['DisplayValues']
+                "productName": item_info.get('Title', {}).get('DisplayValue'),
+                "brand": item_info.get('ByLineInfo', {}).get('Brand', {}).get('DisplayValue'),
+                "manufacturer": item_info.get('ByLineInfo', {}).get('Manufacturer', {}).get('DisplayValue'),
+                "price": item['Offers']['Listings'][0]['Price']['Amount'] if 'Offers' in item else None,
+                "imageUrl": item.get('Images', {}).get('Primary', {}).get('Large', {}).get('URL'),
+                "features": item_info.get('Features', {}).get('DisplayValues', []),
+                "specifications": {},
+                "dimensions": {}
             }
+
+            # ManufactureInfo (Model number etc.)
+            if 'ManufactureInfo' in item_info:
+                m_info = item_info['ManufactureInfo']
+                if 'ItemModelNumber' in m_info:
+                    data["modelNumber"] = m_info['ItemModelNumber']['DisplayValue']
+
+            # ProductInfo (Dimensions, Weight, Color, Size)
+            if 'ProductInfo' in item_info:
+                p_info = item_info['ProductInfo']
+                if 'ItemDimensions' in p_info:
+                    dims = p_info['ItemDimensions']
+                    for dim_type in ['Height', 'Length', 'Width', 'Weight']:
+                        if dim_type in dims:
+                            data["dimensions"][dim_type.lower()] = {
+                                "value": dims[dim_type]['DisplayValue'],
+                                "unit": dims[dim_type]['Unit']
+                            }
+                if 'Color' in p_info:
+                    data["specifications"]["color"] = p_info['Color']['DisplayValue']
+                if 'Size' in p_info:
+                    data["specifications"]["size"] = p_info['Size']['DisplayValue']
+
+            # TechnicalInfo
+            if 'TechnicalInfo' in item_info:
+                t_info = item_info['TechnicalInfo']
+                for key, value in t_info.items():
+                    if isinstance(value, dict) and 'DisplayValue' in value:
+                        data["specifications"][key] = value['DisplayValue']
+
             with open("product_info.json", "w", encoding="utf-8") as f:
                 json.dump(data, f, indent=2, ensure_ascii=False)
             print(f"Product information for {args.asin} saved to product_info.json")
