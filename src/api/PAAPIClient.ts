@@ -77,9 +77,9 @@ export class PAAPIClient {
       PartnerType: 'Associates',
       Marketplace: this.getMarketplace(),
       Keywords: params.keywords.join(' '),
-      SearchIndex: this.mapCategoryToSearchIndex(params.category),
+      SearchIndex: params.category === 'All' ? this.inferIndexFromKeywords(params.keywords) : this.mapCategoryToSearchIndex(params.category),
       ItemCount: Math.min(params.maxResults, 10), // PA-API limit
-      Merchant: 'Amazon', // Amazon直販商品のみを取得
+      Merchant: params.merchant || (params.category === 'All' ? 'All' : 'Amazon'), // キーワード検索(All)時はマーケットプレイスを含める
       SortBy: this.mapSortBy(params.sortBy || 'featured'), // デフォルトはFeatured（おすすめ順）
       Resources: [
         'Images.Primary.Large',
@@ -822,6 +822,35 @@ export class PAAPIClient {
     };
 
     return categoryMap[category.toLowerCase()] || 'All';
+  }
+
+  /**
+   * キーワードから最適なSearchIndexを推論する
+   */
+  private inferIndexFromKeywords(keywords: string[]): string {
+    const keywordStr = keywords.join(' ').toLowerCase();
+
+    // マッピング定義
+    const mappings: Array<{ patterns: string[]; index: string }> = [
+      { patterns: ['靴', 'シューズ', 'スニーカー', 'サンダル', 'パンプス', 'ブーツ'], index: 'Shoes' },
+      { patterns: ['服', '衣類', 'シャツ', 'パンツ', 'スカート', 'コート', 'ファッション'], index: 'Fashion' },
+      { patterns: ['本', '雑誌', 'コミック', '書籍', '文庫', '新書'], index: 'Books' },
+      { patterns: ['ゲーム', 'ps5', 'switch', 'xbox', 'nintendo'], index: 'VideoGames' },
+      { patterns: ['家電', '冷蔵庫', '洗濯機', 'テレビ', 'レンジ'], index: 'Electronics' },
+      { patterns: ['pc', 'パソコン', 'モニター', 'キーボード', 'マウス'], index: 'Computers' },
+      { patterns: ['時計', '腕時計', 'ウォッチ'], index: 'Watches' },
+      { patterns: ['おもちゃ', '玩具', 'フィギュア', 'プラモデル'], index: 'Toys' },
+      { patterns: ['スポーツ', 'アウトドア', 'キャンプ', '釣り'], index: 'SportsAndOutdoors' },
+      { patterns: ['コスメ', '美容', '化粧品', 'スキンケア'], index: 'Beauty' }
+    ];
+
+    for (const mapping of mappings) {
+      if (mapping.patterns.some(pattern => keywordStr.includes(pattern))) {
+        return mapping.index;
+      }
+    }
+
+    return 'All';
   }
 
   private mapSortBy(sortBy: string): string {
