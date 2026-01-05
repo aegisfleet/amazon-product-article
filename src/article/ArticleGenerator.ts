@@ -929,6 +929,9 @@ ${score >= 80 ? '自信を持っておすすめできる商品です。' :
       if (specs.power) infoRows.push(`| 消費電力 | ${specs.power} |`);
       if (specs.capacity) infoRows.push(`| 容量 | ${specs.capacity} |`);
 
+      // カテゴリ（スペック内）
+      if (specs.category) infoRows.push(`| カテゴリ | ${specs.category} |`);
+
       // 接続性
       if (specs.connectivity && specs.connectivity.length > 0) {
         infoRows.push(`| 接続 | ${specs.connectivity.join(', ')} |`);
@@ -942,20 +945,35 @@ ${score >= 80 ? '自信を持っておすすめできる商品です。' :
         infoRows.push(`| クッショニング | ${specs.cushioningTech.join(', ')} |`);
       }
       if (specs.heelCounter) infoRows.push(`| ヒールカウンター | ${specs.heelCounter} |`);
+      if (specs.heelHeight) infoRows.push(`| ヒール高 | ${specs.heelHeight} |`);
+
+      // 素材の統合表示
+      const matParts = [];
       if (specs.material) {
         if (typeof specs.material === 'string') {
-          infoRows.push(`| 素材 | ${specs.material} |`);
+          matParts.push(specs.material);
         } else {
-          const matParts = [];
           if (specs.material.upper) matParts.push(`アッパー: ${specs.material.upper}`);
           if (specs.material.outsole) matParts.push(`アウトソール: ${specs.material.outsole}`);
           if (specs.material.insole) matParts.push(`インソール: ${specs.material.insole}`);
-          if (matParts.length > 0) {
-            infoRows.push(`| 素材 | ${matParts.join(' / ')} |`);
-          }
         }
       }
-      if (specs.modelNumber) infoRows.push(`| 型番 | ${specs.modelNumber} |`);
+      // 個別フィールドの追加（エイリアスも考慮）
+      if (specs.upperMaterial) matParts.push(`アッパー: ${specs.upperMaterial}`);
+      if (specs.midsoleMaterial) matParts.push(`ミッドソール: ${specs.midsoleMaterial}`);
+      const outsole = specs.outsoleMaterial || specs.outerSole;
+      if (outsole) matParts.push(`アウトソール: ${outsole}`);
+      const insole = specs.insoleMaterial || specs.innerSole || specs.insole;
+      if (insole) matParts.push(`インソール: ${insole}`);
+
+      if (matParts.length > 0) {
+        infoRows.push(`| 素材 | ${matParts.join(' / ')} |`);
+      }
+
+      const model = specs.modelNumber || specs.model;
+      if (model) infoRows.push(`| 型番 | ${model} |`);
+
+      if (specs.countryOfOrigin) infoRows.push(`| 原産国 | ${specs.countryOfOrigin} |`);
 
       // その他スペック
       if (specs.other && specs.other.length > 0) {
@@ -1084,6 +1102,7 @@ ${infoRows.join('\n')}
       // 家電
       if (specs.power) lines.push(`  power: "${specs.power}"`);
       if (specs.capacity) lines.push(`  capacity: "${specs.capacity}"`);
+      if (specs.category) lines.push(`  spec_category: "${specs.category}"`);
 
       // 接続性
       if (specs.connectivity && specs.connectivity.length > 0) {
@@ -1098,6 +1117,7 @@ ${infoRows.join('\n')}
         lines.push(`  cushioning_tech: [${specs.cushioningTech.map(c => `"${c}"`).join(', ')}]`);
       }
       if (specs.heelCounter) lines.push(`  heel_counter: "${specs.heelCounter}"`);
+      if (specs.heelHeight) lines.push(`  heel_height: "${specs.heelHeight}"`);
       if (specs.material) {
         if (typeof specs.material === 'string') {
           lines.push(`  material: "${specs.material}"`);
@@ -1108,7 +1128,17 @@ ${infoRows.join('\n')}
           if (specs.material.insole) lines.push(`    insole: "${specs.material.insole}"`);
         }
       }
+      if (specs.upperMaterial) lines.push(`  upper_material: "${specs.upperMaterial}"`);
+      if (specs.midsoleMaterial) lines.push(`  midsole_material: "${specs.midsoleMaterial}"`);
+      if (specs.outsoleMaterial) lines.push(`  outsole_material: "${specs.outsoleMaterial}"`);
+      if (specs.outerSole) lines.push(`  outer_sole: "${specs.outerSole}"`);
+      if (specs.insoleMaterial) lines.push(`  insole_material: "${specs.insoleMaterial}"`);
+      if (specs.innerSole) lines.push(`  inner_sole: "${specs.innerSole}"`);
+      if (specs.insole) lines.push(`  insole: "${specs.insole}"`);
+
       if (specs.modelNumber) lines.push(`  model_number: "${specs.modelNumber}"`);
+      if (specs.model) lines.push(`  model: "${specs.model}"`);
+      if (specs.countryOfOrigin) lines.push(`  country_of_origin: "${specs.countryOfOrigin}"`);
 
       // その他
       if (specs.other && specs.other.length > 0) {
