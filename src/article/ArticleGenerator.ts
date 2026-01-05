@@ -975,6 +975,23 @@ ${score >= 80 ? '自信を持っておすすめできる商品です。' :
 
       if (specs.countryOfOrigin) infoRows.push(`| 原産国 | ${specs.countryOfOrigin} |`);
 
+      // 家具・収納・その他追加
+      if (specs.loadCapacity) {
+        if (typeof specs.loadCapacity === 'string') {
+          infoRows.push(`| 耐荷重 | ${specs.loadCapacity} |`);
+        } else {
+          const capacityParts = Object.entries(specs.loadCapacity).map(([key, value]) => {
+            const label = key === 'rack' ? '本体' : key === 'hook' ? 'フック' : key;
+            return `${label}: ${value}`;
+          });
+          infoRows.push(`| 耐荷重 | ${capacityParts.join(' / ')} |`);
+        }
+      }
+      if (specs.attachments) {
+        const attach = Array.isArray(specs.attachments) ? specs.attachments.join(', ') : specs.attachments;
+        infoRows.push(`| 付属品 | ${attach} |`);
+      }
+
       // その他スペック
       if (specs.other && specs.other.length > 0) {
         infoRows.push(`| その他 | ${specs.other.join(', ')} |`);
@@ -1139,6 +1156,27 @@ ${infoRows.join('\n')}
       if (specs.modelNumber) lines.push(`  model_number: "${specs.modelNumber}"`);
       if (specs.model) lines.push(`  model: "${specs.model}"`);
       if (specs.countryOfOrigin) lines.push(`  country_of_origin: "${specs.countryOfOrigin}"`);
+
+      // 耐荷重
+      if (specs.loadCapacity) {
+        if (typeof specs.loadCapacity === 'string') {
+          lines.push(`  load_capacity: "${specs.loadCapacity}"`);
+        } else {
+          lines.push('  load_capacity:');
+          for (const [key, value] of Object.entries(specs.loadCapacity)) {
+            lines.push(`    ${key}: "${value}"`);
+          }
+        }
+      }
+
+      // 付属品
+      if (specs.attachments) {
+        if (Array.isArray(specs.attachments)) {
+          lines.push(`  attachments: [${specs.attachments.map(a => `"${a}"`).join(', ')}]`);
+        } else {
+          lines.push(`  attachments: "${specs.attachments}"`);
+        }
+      }
 
       // その他
       if (specs.other && specs.other.length > 0) {
