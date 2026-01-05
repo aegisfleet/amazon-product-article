@@ -875,6 +875,7 @@ ${score >= 80 ? '自信を持っておすすめできる商品です。' :
         if (specs.display.size) displayParts.push(specs.display.size);
         if (specs.display.type) displayParts.push(specs.display.type);
         if (specs.display.resolution) displayParts.push(specs.display.resolution);
+        if (specs.display.refreshRate) displayParts.push(`リフレッシュレート: ${specs.display.refreshRate}`);
         if (displayParts.length > 0) {
           infoRows.push(`| 画面 | ${displayParts.join(' / ')} |`);
         }
@@ -897,6 +898,7 @@ ${score >= 80 ? '自信を持っておすすめできる商品です。' :
         if (specs.camera.main) cameraParts.push(`メイン: ${specs.camera.main}`);
         if (specs.camera.ultrawide) cameraParts.push(`超広角: ${specs.camera.ultrawide}`);
         if (specs.camera.telephoto) cameraParts.push(`望遠: ${specs.camera.telephoto}`);
+        if (specs.camera.front) cameraParts.push(`前面: ${specs.camera.front}`);
         if (cameraParts.length > 0) {
           infoRows.push(`| カメラ | ${cameraParts.join(' / ')} |`);
         }
@@ -931,6 +933,28 @@ ${score >= 80 ? '自信を持っておすすめできる商品です。' :
       if (specs.connectivity && specs.connectivity.length > 0) {
         infoRows.push(`| 接続 | ${specs.connectivity.join(', ')} |`);
       }
+
+      // 靴（シューズ）
+      if (specs.width) infoRows.push(`| 幅（ワイズ） | ${specs.width} |`);
+      if (specs.midsole) infoRows.push(`| ミッドソール | ${specs.midsole} |`);
+      if (specs.cushioningTech && specs.cushioningTech.length > 0) {
+        infoRows.push(`| クッショニング | ${specs.cushioningTech.join(', ')} |`);
+      }
+      if (specs.heelCounter) infoRows.push(`| ヒールカウンター | ${specs.heelCounter} |`);
+      if (specs.material) {
+        if (typeof specs.material === 'string') {
+          infoRows.push(`| 素材 | ${specs.material} |`);
+        } else {
+          const matParts = [];
+          if (specs.material.upper) matParts.push(`アッパー: ${specs.material.upper}`);
+          if (specs.material.outsole) matParts.push(`アウトソール: ${specs.material.outsole}`);
+          if (specs.material.insole) matParts.push(`インソール: ${specs.material.insole}`);
+          if (matParts.length > 0) {
+            infoRows.push(`| 素材 | ${matParts.join(' / ')} |`);
+          }
+        }
+      }
+      if (specs.modelNumber) infoRows.push(`| 型番 | ${specs.modelNumber} |`);
 
       // その他スペック
       if (specs.other && specs.other.length > 0) {
@@ -1023,6 +1047,7 @@ ${infoRows.join('\n')}
         if (specs.display.size) lines.push(`  display_size: "${specs.display.size}"`);
         if (specs.display.resolution) lines.push(`  display_resolution: "${specs.display.resolution}"`);
         if (specs.display.type) lines.push(`  display_type: "${specs.display.type}"`);
+        if (specs.display.refreshRate) lines.push(`  display_refresh_rate: "${specs.display.refreshRate}"`);
       }
 
       // バッテリー
@@ -1037,6 +1062,7 @@ ${infoRows.join('\n')}
         if (specs.camera.main) lines.push(`  camera_main: "${specs.camera.main}"`);
         if (specs.camera.ultrawide) lines.push(`  camera_ultrawide: "${specs.camera.ultrawide}"`);
         if (specs.camera.telephoto) lines.push(`  camera_telephoto: "${specs.camera.telephoto}"`);
+        if (specs.camera.front) lines.push(`  camera_front: "${specs.camera.front}"`);
       }
 
       // 寸法・重量
@@ -1062,6 +1088,25 @@ ${infoRows.join('\n')}
       if (specs.connectivity && specs.connectivity.length > 0) {
         lines.push(`  connectivity: [${specs.connectivity.map(c => `"${c}"`).join(', ')}]`);
       }
+
+      // 靴（シューズ）
+      if (specs.width) lines.push(`  width: "${specs.width}"`);
+      if (specs.midsole) lines.push(`  midsole: "${specs.midsole}"`);
+      if (specs.cushioningTech && specs.cushioningTech.length > 0) {
+        lines.push(`  cushioning_tech: [${specs.cushioningTech.map(c => `"${c}"`).join(', ')}]`);
+      }
+      if (specs.heelCounter) lines.push(`  heel_counter: "${specs.heelCounter}"`);
+      if (specs.material) {
+        if (typeof specs.material === 'string') {
+          lines.push(`  material: "${specs.material}"`);
+        } else {
+          lines.push('  material:');
+          if (specs.material.upper) lines.push(`    upper: "${specs.material.upper}"`);
+          if (specs.material.outsole) lines.push(`    outsole: "${specs.material.outsole}"`);
+          if (specs.material.insole) lines.push(`    insole: "${specs.material.insole}"`);
+        }
+      }
+      if (specs.modelNumber) lines.push(`  model_number: "${specs.modelNumber}"`);
 
       // その他
       if (specs.other && specs.other.length > 0) {
