@@ -212,6 +212,98 @@ export class ProductSearcher {
   }
 
   /**
+   * Search products by specific keywords across all categories
+   */
+  async searchByKeywords(keywords: string[], maxResults = 10): Promise<SearchSession> {
+    const sessionId = this.generateSessionId();
+    const results: ProductSearchResult[] = [];
+    let totalProducts = 0;
+
+    // Get exclusion list
+    const exclusionList = await this.getExclusionList();
+    this.logger.info(`Starting keyword search session ${sessionId} for keywords: ${keywords.join(', ')}`);
+
+    for (const keyword of keywords) {
+      try {
+        this.logger.info(`Searching for keyword: ${keyword}`);
+
+        const searchParams: ProductSearchParams = {
+          category: 'All', // Search all categories
+          keywords: [keyword],
+          maxResults: maxResults,
+          sortBy: 'featured'
+        };
+
+        const result = await this.papiClient.searchProducts(searchParams);
+
+        // Filter out excluded products
+        const initialCount = result.products.length;
+        const seenParentAsins = new Set<string>();
+
+        result.products = result.products.filter(p => {
+          // 1. ASINによる除外
+          if (exclusionList.asins.has(p.asin)) {
+            return false;
+          }
+
+          // 2. 親ASINによる除外（既存の調査済み商品との重複回避）
+          if (p.parentAsin) {
+            if (exclusionList.parentAsins.has(p.parentAsin)) {
+              return false;
+            }
+            if (exclusionList.asins.has(p.parentAsin)) {
+              return false;
+            }
+          }
+
+          // 3. 同一検索セッション内でのバリエーション重複回避
+          const parentKey = p.parentAsin || p.asin;
+          if (seenParentAsins.has(parentKey)) {
+            return false;
+          }
+          seenParentAsins.add(parentKey);
+
+          return true;
+        });
+
+        if (initialCount !== result.products.length) {
+          this.logger.info(`Filtered ${initialCount - result.products.length} products for keyword ${keyword}`);
+        }
+
+        if (result.products.length > 0) {
+          results.push(result);
+          totalProducts += result.products.length;
+
+          // Save results with a special name to avoid collisions
+          await this.saveCategoryResults(sessionId, `keyword_${keyword.replace(/[^a-zA-Z0-9]/g, '_')}`, result);
+          this.logger.info(`Found ${result.products.length} new products for keyword ${keyword}`);
+        } else {
+          this.logger.info(`No new products found for keyword ${keyword}`);
+        }
+
+        // Rate limiting delay between keywords
+        await this.sleep(1000);
+
+      } catch (error) {
+        this.logger.error(`Failed to search keyword ${keyword}:`, error);
+      }
+    }
+
+    const session: SearchSession = {
+      id: sessionId,
+      timestamp: new Date(),
+      categories: keywords.map(k => `Keyword: ${k}`),
+      totalProducts,
+      results
+    };
+
+    await this.saveSearchSession(session);
+
+    this.logger.info(`Keyword search session ${sessionId} completed: ${totalProducts} total products`);
+    return session;
+  }
+
+  /**
    * Search products in a specific category
    */
   async searchCategory(categoryName: string, customKeywords?: string[]): Promise<ProductSearchResult> {
