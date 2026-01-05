@@ -273,9 +273,22 @@ ${unregisteredList}
 
 ## 重要な注意事項
 
-- \`data/categorygroups.json\` 以外のファイルは変更しないでください
-- JSONの構文エラーに注意してください
+### 絶対に守るべきルール
+
+> **警告: \`data/categorygroups.json\` 以外のファイルは絶対に変更しないでください。**
+> - \`config.toml\`、\`.github/workflows/\`、\`src/\`、その他すべてのファイルに触れてはいけません
+> - 変更が許可されているファイルは \`data/categorygroups.json\` のみです
+
+### JSONの編集ルール
+
+- JSONの構文エラーに注意してください（カンマ、ブラケットの確認）
 - すべてのカテゴリは必ずいずれかの親カテゴリに分類してください（「その他」含む）
+
+### 動作確認について
+
+- ビルド（\`npm run build\`）やテスト（\`npm test\`）の実行は**不要です**
+- PRを作成すればGitHub ActionsのCIが自動で検証を行います
+- JSONファイルの編集とPR作成のみに集中してください
 `;
     }
 
