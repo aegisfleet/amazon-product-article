@@ -165,6 +165,59 @@ export interface SourceReference {
   credibility?: string;
 }
 
+/**
+ * 詳細スペック情報（スマートフォン、PC、イヤホン等の技術仕様）
+ */
+export interface DisplaySpec {
+  size?: string;          // e.g., "6.7インチ"
+  resolution?: string;    // e.g., "2796×1290"
+  type?: string;          // e.g., "OLED", "液晶"
+}
+
+export interface BatterySpec {
+  capacity?: string;      // e.g., "4600mAh"
+  charging?: string;      // e.g., "25W急速充電対応"
+  playbackTime?: string;  // For earphones: e.g., "8時間"
+}
+
+export interface CameraSpec {
+  main?: string;          // e.g., "48MP"
+  ultrawide?: string;     // e.g., "12MP"
+  telephoto?: string;     // e.g., "12MP"
+}
+
+export interface DimensionsSpec {
+  height?: string;
+  width?: string;
+  depth?: string;
+  weight?: string;
+}
+
+export interface TechnicalSpecs {
+  // スマートフォン・タブレット・PC
+  os?: string | null;                  // e.g., "Android 14", "iOS 17"
+  cpu?: string | null;                 // e.g., "Snapdragon 8 Gen 3", "A17 Pro"
+  gpu?: string | null;                 // e.g., "NVIDIA RTX 4070"
+  ram?: string | null;                 // e.g., "8GB"
+  storage?: string | null;             // e.g., "256GB"
+  display?: DisplaySpec | null;
+  battery?: BatterySpec | null;
+  camera?: CameraSpec | null;
+  dimensions?: DimensionsSpec | null;
+  connectivity?: string[] | null;      // e.g., ["5G", "Wi-Fi 6E", "Bluetooth 5.3"]
+
+  // イヤホン・ヘッドホン
+  driver?: string | null;              // e.g., "10mm ダイナミック"
+  codec?: string[] | null;             // e.g., ["SBC", "AAC", "LDAC"]
+  noiseCancel?: string | null;         // e.g., "ANC対応"
+
+  // 家電・その他
+  power?: string | null;               // e.g., "1200W"
+  capacity?: string | null;            // e.g., "3L"
+
+  other?: string[] | null;             // e.g., ["防水IP68", "FeliCa", "eSIM対応"]
+}
+
 export interface InvestigationResult {
   sessionId: string;
   product: Product;
@@ -188,6 +241,7 @@ export interface InvestigationResult {
       score: number;
       scoreRationale?: string;
     };
+    technicalSpecs?: TechnicalSpecs;  // 詳細スペック情報（カテゴリ依存）
   };
   generatedAt: Date;
   rawResponse?: string;

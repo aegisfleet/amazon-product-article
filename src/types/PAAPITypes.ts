@@ -88,6 +88,36 @@ export interface PAAPIItem {
         DisplayValue: string;
       };
     };
+    ProductInfo?: {
+      Color?: {
+        DisplayValue: string;
+      };
+      ItemDimensions?: {
+        Height?: {
+          DisplayValue: number;
+          Unit: string;
+        };
+        Length?: {
+          DisplayValue: number;
+          Unit: string;
+        };
+        Width?: {
+          DisplayValue: number;
+          Unit: string;
+        };
+        Weight?: {
+          DisplayValue: number;
+          Unit: string;
+        };
+      };
+      Size?: {
+        DisplayValue: string;
+      };
+      UnitCount?: {
+        DisplayValue: number;
+        Type: string;
+      };
+    };
     ExternalIds?: {
       EANs?: {
         DisplayValues: string[];
