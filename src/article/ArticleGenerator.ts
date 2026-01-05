@@ -309,7 +309,7 @@ export class ArticleGenerator {
     sections.push(await this.generateRecommendationSection(investigation, template.sections.recommendation));
 
     // 商品詳細・購入（下部）
-    sections.push(await this.generatePurchaseSection(product, affiliateTag));
+    sections.push(await this.generatePurchaseSection(product, affiliateTag, investigation));
 
     // 情報ソース（もしあれば）
     if (investigation.analysis.sources && investigation.analysis.sources.length > 0) {
@@ -776,7 +776,11 @@ ${score >= 80 ? '自信を持っておすすめできる商品です。' :
   /**
    * 購入セクションを生成（下部）
    */
-  private async generatePurchaseSection(product: Product, _affiliateTag: string): Promise<ArticleSection> {
+  private async generatePurchaseSection(
+    product: Product,
+    _affiliateTag: string,
+    investigation?: InvestigationResult
+  ): Promise<ArticleSection> {
     const affiliateLink = this.affiliateManager.generateLinkFromProduct(product);
     const affiliateUrl = affiliateLink.url;
 
@@ -845,6 +849,89 @@ ${score >= 80 ? '自信を持っておすすめできる商品です。' :
         .map((c: { name: string; role: string }) => `${c.name} (${c.role})`)
         .join(', ');
       infoRows.push(`| 著者/出演者 | ${contributorList} |`);
+    }
+
+    // 詳細スペック情報（technicalSpecs）を追加
+    if (investigation?.analysis.technicalSpecs) {
+      const specs = investigation.analysis.technicalSpecs;
+
+      // 区切り行を追加
+      infoRows.push(`| **--- スペック ---** | |`);
+
+      // 基本スペック
+      if (specs.os) infoRows.push(`| OS | ${specs.os} |`);
+      if (specs.cpu) infoRows.push(`| CPU | ${specs.cpu} |`);
+      if (specs.gpu) infoRows.push(`| GPU | ${specs.gpu} |`);
+      if (specs.ram) infoRows.push(`| メモリ | ${specs.ram} |`);
+      if (specs.storage) infoRows.push(`| ストレージ | ${specs.storage} |`);
+
+      // ディスプレイ
+      if (specs.display) {
+        const displayParts = [];
+        if (specs.display.size) displayParts.push(specs.display.size);
+        if (specs.display.type) displayParts.push(specs.display.type);
+        if (specs.display.resolution) displayParts.push(specs.display.resolution);
+        if (displayParts.length > 0) {
+          infoRows.push(`| 画面 | ${displayParts.join(' / ')} |`);
+        }
+      }
+
+      // バッテリー
+      if (specs.battery) {
+        const batteryParts = [];
+        if (specs.battery.capacity) batteryParts.push(specs.battery.capacity);
+        if (specs.battery.charging) batteryParts.push(specs.battery.charging);
+        if (specs.battery.playbackTime) batteryParts.push(`再生時間: ${specs.battery.playbackTime}`);
+        if (batteryParts.length > 0) {
+          infoRows.push(`| バッテリー | ${batteryParts.join(' / ')} |`);
+        }
+      }
+
+      // カメラ
+      if (specs.camera) {
+        const cameraParts = [];
+        if (specs.camera.main) cameraParts.push(`メイン: ${specs.camera.main}`);
+        if (specs.camera.ultrawide) cameraParts.push(`超広角: ${specs.camera.ultrawide}`);
+        if (specs.camera.telephoto) cameraParts.push(`望遠: ${specs.camera.telephoto}`);
+        if (cameraParts.length > 0) {
+          infoRows.push(`| カメラ | ${cameraParts.join(' / ')} |`);
+        }
+      }
+
+      // 寸法・重量
+      if (specs.dimensions) {
+        if (specs.dimensions.weight) {
+          infoRows.push(`| 重量 | ${specs.dimensions.weight} |`);
+        }
+        const dimParts = [];
+        if (specs.dimensions.height) dimParts.push(`高さ: ${specs.dimensions.height}`);
+        if (specs.dimensions.width) dimParts.push(`幅: ${specs.dimensions.width}`);
+        if (specs.dimensions.depth) dimParts.push(`奥行: ${specs.dimensions.depth}`);
+        if (dimParts.length > 0) {
+          infoRows.push(`| サイズ | ${dimParts.join(' / ')} |`);
+        }
+      }
+
+      // イヤホン・ヘッドホン
+      if (specs.driver) infoRows.push(`| ドライバー | ${specs.driver} |`);
+      if (specs.codec && specs.codec.length > 0) {
+        infoRows.push(`| 対応コーデック | ${specs.codec.join(', ')} |`);
+      }
+      if (specs.noiseCancel) infoRows.push(`| ノイズキャンセル | ${specs.noiseCancel} |`);
+
+      // 家電
+      if (specs.power) infoRows.push(`| 消費電力 | ${specs.power} |`);
+      if (specs.capacity) infoRows.push(`| 容量 | ${specs.capacity} |`);
+
+      // 接続性
+      if (specs.connectivity && specs.connectivity.length > 0) {
+        infoRows.push(`| 接続 | ${specs.connectivity.join(', ')} |`);
+      }
+
+      // その他スペック
+      if (specs.other && specs.other.length > 0) {
+        infoRows.push(`| その他 | ${specs.other.join(', ')} |`);
+      }
     }
 
     const content = `## 🛒 商品詳細・購入
