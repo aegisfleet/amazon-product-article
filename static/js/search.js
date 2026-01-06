@@ -48,6 +48,20 @@ document.addEventListener('DOMContentLoaded', function () {
             })
             .catch(err => console.error('Error loading search index:', err));
 
+        // Debounce function to limit search frequency
+        function debounce(func, wait) {
+            let timeout;
+            return function (...args) {
+                clearTimeout(timeout);
+                timeout = setTimeout(() => func.apply(this, args), wait);
+            };
+        }
+
+        const handleSearch = debounce((query) => {
+            const results = fuse.search(query);
+            displayResults(results);
+        }, 300);
+
         // Event Listeners
         searchInput.addEventListener('input', (e) => {
             if (!fuse) return;
@@ -59,8 +73,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 return;
             }
 
-            const results = fuse.search(query);
-            displayResults(results);
+            handleSearch(query);
         });
 
         // Close results when clicking outside
