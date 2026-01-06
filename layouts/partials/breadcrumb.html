@@ -3,7 +3,7 @@
     <ol class="breadcrumb-list">
         {{/* ホーム */}}
         <li class="breadcrumb-item">
-            <a href="{{ "" | relURL }}">🏠 ホーム</a>
+            <a href="{{ `` | relURL }}">🏠 ホーム</a>
         </li>
 
         {{ if .IsPage }}
@@ -32,14 +32,14 @@
         {{ if $parentName }}
         <li class="breadcrumb-item">
             <span class="breadcrumb-separator">›</span>
-            <a href="{{ printf "parent-category/%s/" $parentSlug | relURL }}">{{ $parentName }}</a>
+            <a href="{{ printf `parent-category/%s/` $parentSlug | relURL }}">{{ $parentName }}</a>
         </li>
         {{ end }}
 
         {{/* 子カテゴリ表示 */}}
         <li class="breadcrumb-item">
             <span class="breadcrumb-separator">›</span>
-            <a href="{{ printf "categories/%s/" ($category | urlize) | relURL }}">{{ $category }}</a>
+            <a href="{{ printf `categories/%s/` ($category | urlize) | relURL }}">{{ $category }}</a>
         </li>
         {{ end }}
 
@@ -69,7 +69,7 @@
         {{ if $parentName }}
         <li class="breadcrumb-item">
             <span class="breadcrumb-separator">›</span>
-            <a href="{{ printf "parent-category/%s/" $parentSlug | relURL }}">{{ $parentName }}</a>
+            <a href="{{ printf `parent-category/%s/` $parentSlug | relURL }}">{{ $parentName }}</a>
         </li>
         {{ end }}
 
