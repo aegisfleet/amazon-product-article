@@ -102,7 +102,9 @@ export class PAAPIClient {
     if (params.maxPrice) {
       request.MaxPrice = params.maxPrice * 100; // Convert to cents
     }
-    // SortBy is now always set in the request object above
+    if (params.itemPage) {
+      request.ItemPage = params.itemPage;
+    }
 
     const response = await this.makeRequest(request);
     const products = this.parseSearchResponse(response);

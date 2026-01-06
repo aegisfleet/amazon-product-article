@@ -214,72 +214,117 @@ export class ProductSearcher {
   /**
    * Search products by specific keywords across all categories
    */
-  async searchByKeywords(keywords: string[], maxResults = 10, merchant?: 'Amazon' | 'All'): Promise<SearchSession> {
+  async searchByKeywords(
+    keywords: string[],
+    maxResults = 10,
+    merchant?: 'Amazon' | 'All',
+    ignoreExclusion = false,
+    maxPages = 3
+  ): Promise<SearchSession> {
     const sessionId = this.generateSessionId();
     const results: ProductSearchResult[] = [];
     let totalProducts = 0;
 
     // Get exclusion list
     const exclusionList = await this.getExclusionList();
-    this.logger.info(`Starting keyword search session ${sessionId} for keywords: ${keywords.join(', ')}`);
+    this.logger.info(`Starting keyword search session ${sessionId} for keywords: ${keywords.join(', ')} (IgnoreExclusion: ${ignoreExclusion}, MaxPages: ${maxPages})`);
 
     for (const keyword of keywords) {
       try {
-        this.logger.info(`Searching for keyword: ${keyword}`);
+        let keywordProducts: Product[] = [];
+        let currentPage = 1;
 
-        const searchParams: ProductSearchParams = {
-          category: 'All', // Search all categories
-          keywords: [keyword],
-          maxResults: maxResults,
-          sortBy: 'featured',
-          ...(merchant ? { merchant } : {})
-        };
+        while (keywordProducts.length < maxResults && currentPage <= maxPages) {
+          this.logger.info(`Searching for keyword: ${keyword} (Page: ${currentPage})`);
 
-        const result = await this.papiClient.searchProducts(searchParams);
+          const searchParams: ProductSearchParams = {
+            category: 'All', // Search all categories
+            keywords: [keyword],
+            maxResults: maxResults,
+            sortBy: 'featured',
+            itemPage: currentPage,
+            ...(merchant ? { merchant } : {})
+          };
 
-        // Filter out excluded products
-        const initialCount = result.products.length;
-        const seenParentAsins = new Set<string>();
+          const result = await this.papiClient.searchProducts(searchParams);
 
-        result.products = result.products.filter(p => {
-          // 1. ASINによる除外
-          if (exclusionList.asins.has(p.asin)) {
-            return false;
+          if (result.products.length === 0) {
+            break; // これ以上結果がない
           }
 
-          // 2. 親ASINによる除外（既存の調査済み商品との重複回避）
-          if (p.parentAsin) {
-            if (exclusionList.parentAsins.has(p.parentAsin)) {
+          // Filter out excluded products
+          const initialCount = result.products.length;
+          const seenParentAsins = new Set<string>();
+
+          const filteredProducts = ignoreExclusion ? result.products : result.products.filter(p => {
+            // 1. ASINによる除外
+            if (exclusionList.asins.has(p.asin)) {
               return false;
             }
-            if (exclusionList.asins.has(p.parentAsin)) {
+
+            // 2. 親ASINによる除外（既存の調査済み商品との重複回避）
+            if (p.parentAsin) {
+              if (exclusionList.parentAsins.has(p.parentAsin)) {
+                return false;
+              }
+              if (exclusionList.asins.has(p.parentAsin)) {
+                return false;
+              }
+            }
+
+            // 3. 同一検索セッション内でのバリエーション重複回避
+            const parentKey = p.parentAsin || p.asin;
+            if (seenParentAsins.has(parentKey)) {
               return false;
+            }
+            seenParentAsins.add(parentKey);
+
+            return true;
+          });
+
+          if (!ignoreExclusion && initialCount !== filteredProducts.length) {
+            this.logger.info(`Filtered ${initialCount - filteredProducts.length} products for keyword ${keyword} on page ${currentPage}`);
+          }
+
+          // 重複を避けて追加
+          for (const p of filteredProducts) {
+            if (keywordProducts.length < maxResults && !keywordProducts.find(kp => kp.asin === p.asin)) {
+              keywordProducts.push(p);
             }
           }
 
-          // 3. 同一検索セッション内でのバリエーション重複回避
-          const parentKey = p.parentAsin || p.asin;
-          if (seenParentAsins.has(parentKey)) {
-            return false;
+          if (keywordProducts.length >= maxResults) {
+            break;
           }
-          seenParentAsins.add(parentKey);
 
-          return true;
-        });
-
-        if (initialCount !== result.products.length) {
-          this.logger.info(`Filtered ${initialCount - result.products.length} products for keyword ${keyword}`);
+          currentPage++;
+          // Rate limiting delay between pages
+          await this.sleep(500);
         }
 
-        if (result.products.length > 0) {
+        if (keywordProducts.length > 0) {
+          const result: ProductSearchResult = {
+            products: keywordProducts,
+            totalResults: keywordProducts.length,
+            searchParams: {
+              category: 'All',
+              keywords: [keyword],
+              maxResults: maxResults,
+              sortBy: 'featured',
+              ...(merchant ? { merchant } : {}),
+              ignoreExclusion
+            },
+            timestamp: new Date()
+          };
+
           results.push(result);
-          totalProducts += result.products.length;
+          totalProducts += keywordProducts.length;
 
           // Save results with a special name to avoid collisions
           await this.saveCategoryResults(sessionId, `keyword_${keyword.replace(/[^a-zA-Z0-9]/g, '_')}`, result);
-          this.logger.info(`Found ${result.products.length} new products for keyword ${keyword}`);
+          this.logger.info(`Found ${keywordProducts.length} new products for keyword ${keyword} across ${currentPage} pages`);
         } else {
-          this.logger.info(`No new products found for keyword ${keyword}`);
+          this.logger.info(`No new products found for keyword ${keyword} after searching ${currentPage - 1} pages`);
         }
 
         // Rate limiting delay between keywords

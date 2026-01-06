@@ -30,6 +30,8 @@ interface CLIOptions {
     asins?: string[];
     keywords?: string[];
     merchant?: 'Amazon' | 'All';
+    ignoreExclusion: boolean;
+    maxPages: number;
 }
 
 function getOptions(): CLIOptions {
@@ -58,12 +60,17 @@ function getOptions(): CLIOptions {
 
     const merchant = process.env.SEARCH_MERCHANT as 'Amazon' | 'All' | undefined;
 
+    const ignoreExclusion = process.env.SEARCH_IGNORE_EXCLUSION === 'true';
+    const maxPages = parseInt(process.env.SEARCH_MAX_PAGES || '3', 10);
+
     const result: CLIOptions = {
         accessKey,
         secretKey,
         partnerTag,
         categories,
-        maxResults
+        maxResults,
+        ignoreExclusion,
+        maxPages
     };
 
     if (asins) {
@@ -140,8 +147,8 @@ async function main(): Promise<void> {
             session = await searcher.searchByAsins(options.asins);
         } else if (options.keywords && options.keywords.length > 0) {
             // Keyword Search
-            logger.info(`Keyword mode: searching for keywords: ${options.keywords.join(', ')} (Merchant: ${options.merchant || 'Default'})`);
-            session = await searcher.searchByKeywords(options.keywords, options.maxResults, options.merchant);
+            logger.info(`Keyword mode: searching for keywords: ${options.keywords.join(', ')} (Merchant: ${options.merchant || 'Default'}, IgnoreExclusion: ${options.ignoreExclusion}, MaxPages: ${options.maxPages})`);
+            session = await searcher.searchByKeywords(options.keywords, options.maxResults, options.merchant, options.ignoreExclusion, options.maxPages);
         } else {
             // Category Search (with randomization and exclusion)
             session = await searcher.searchAllCategories();
