@@ -154,6 +154,134 @@ function getOptions(): CLIOptions {
     };
 }
 
+/**
+ * JSONの修復を試みる
+ */
+function tryRepairJson(content: string): string | null {
+    // 前後の空白を削除
+    let repaired = content.trim();
+
+    // Markdownコードブロックの除去
+    const codeBlockMatch = repaired.match(/^```json\s*([\s\S]*?)\s*```$/i);
+    if (codeBlockMatch && codeBlockMatch[1]) {
+        repaired = codeBlockMatch[1].trim();
+    }
+
+    // パースを試行
+    try {
+        JSON.parse(repaired);
+        return repaired;
+    } catch {
+        return null;
+    }
+}
+
+/**
+ * 修正されたJSONをリポジトリにPushする
+ */
+async function repairAndPushJson(
+    octokit: Octokit,
+    owner: string,
+    repo: string,
+    branch: string,
+    path: string,
+    content: string,
+    sha: string
+): Promise<void> {
+    logger.info(`  Repairing ${path}...`);
+    await octokit.repos.createOrUpdateFileContents({
+        owner,
+        repo,
+        path,
+        message: `chore: repair invalid JSON format in ${path} [skip ci]`,
+        content: Buffer.from(content).toString('base64'),
+        branch,
+        sha,
+    });
+    logger.info(`  Successfully repaired and pushed: ${path}`);
+}
+
+/**
+ * PRに含まれるJSONファイルの妥当性を検証（および必要に応じて修復）する
+ */
+async function validateJsonFiles(
+    octokit: Octokit,
+    owner: string,
+    repo: string,
+    branch: string,
+    files: string[]
+): Promise<{ passed: boolean; repaired?: boolean; message?: string }> {
+    const jsonFiles = files.filter(f => f.endsWith('.json'));
+
+    if (jsonFiles.length === 0) {
+        return { passed: true };
+    }
+
+    logger.info(`Validating ${jsonFiles.length} JSON file(s)...`);
+
+    let anyRepaired = false;
+
+    for (const file of jsonFiles) {
+        try {
+            logger.info(`  Checking: ${file}`);
+            const { data } = await octokit.repos.getContent({
+                owner,
+                repo,
+                path: file,
+                ref: branch,
+            });
+
+            if ('content' in data && typeof data.content === 'string') {
+                const content = Buffer.from(data.content, 'base64').toString('utf-8');
+
+                try {
+                    JSON.parse(content);
+                } catch (parseError) {
+                    // 自動修復を試みる
+                    const repairedContent = tryRepairJson(content);
+
+                    if (repairedContent) {
+                        await repairAndPushJson(
+                            octokit,
+                            owner,
+                            repo,
+                            branch,
+                            file,
+                            repairedContent,
+                            data.sha
+                        );
+                        anyRepaired = true;
+                    } else {
+                        throw parseError; // 修復不能な場合はそのままエラースロー
+                    }
+                }
+            } else {
+                return {
+                    passed: false,
+                    message: `Could not retrieve content for ${file}`
+                };
+            }
+        } catch (error) {
+            const errorMessage = error instanceof Error ? error.message : String(error);
+            return {
+                passed: false,
+                message: `JSON syntax error in ${file}: ${errorMessage}`
+            };
+        }
+    }
+
+    if (anyRepaired) {
+        return {
+            passed: false, // 修復が行われた場合、一度処理を中断して再試行されるのを待つ（またはエラー通知で知らせる）
+            repaired: true,
+            message: 'Invalid JSON was found and automatically repaired.'
+        };
+    }
+
+    logger.info('All JSON files are valid');
+    return { passed: true };
+}
+
 async function main(): Promise<void> {
     logger.info('Starting PR merge CLI...');
 
@@ -258,6 +386,43 @@ async function main(): Promise<void> {
                 logger.info(`  ${result.check}: ${result.passed ? 'PASSED' : 'FAILED'} - ${result.message}`);
             }
             process.exit(0);
+        }
+
+        // JSONファイルの妥当性をチェック
+        const jsonValidation = await validateJsonFiles(
+            octokit,
+            options.owner,
+            options.repo,
+            pr.head,
+            pr.changedFiles
+        );
+
+        if (!jsonValidation.passed) {
+            if (jsonValidation.repaired) {
+                logger.info('Auto-repair completed. PR will be reconsidered in the next trigger.');
+
+                // 修復成功のコメントを残す
+                await octokit.issues.createComment({
+                    owner: options.owner,
+                    repo: options.repo,
+                    issue_number: options.prNumber,
+                    body: `🛠 **JSON Auto-Repair Completed**\n\n不正な形式の JSON が検出されましたが、自動的に修復して更新しました。次回の実行をお待ちください。`
+                });
+
+                process.exit(0); // 修復は成功したので正常終了（次回のトリガーを待つ）
+            }
+
+            logger.error(`JSON validation failed: ${jsonValidation.message}`);
+
+            // コメントを残して異常終了
+            await octokit.issues.createComment({
+                owner: options.owner,
+                repo: options.repo,
+                issue_number: options.prNumber,
+                body: `❌ **JSON Validation Failed**\n\n${jsonValidation.message}\n\nこのエラーを修正するまで自動マージは行われません。`
+            });
+
+            process.exit(1);
         }
 
         // PRをマージ（リトライ付き）
