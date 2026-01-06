@@ -36,8 +36,10 @@ document.addEventListener('DOMContentLoaded', function () {
                     keys: [
                         { name: "title", weight: 0.7 },
                         { name: "contents", weight: 0.2 },
-                        { name: "categories", weight: 0.1 }
+                        { name: "categories", weight: 0.1 },
+                        { name: "specs", weight: 0.3 }
                     ],
+
                     threshold: 0.4,
                     includeScore: true,
                     ignoreLocation: true // Search in entire text
