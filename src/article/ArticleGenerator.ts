@@ -74,6 +74,120 @@ export interface ArticleSection {
 }
 
 
+/**
+ * スペックフィールド名から日本語ラベルへのマッピング
+ * 動的レンダリングで使用
+ */
+const SPEC_LABEL_MAP: Record<string, string> = {
+  // 基本情報
+  dimensions: 'サイズ',
+  weight: '重量',
+  material: '素材',
+  color: 'カラー',
+  model: '型番',
+  modelNumber: '型番',
+  countryOfOrigin: '原産国',
+  category: 'カテゴリ',
+  productType: '商品タイプ',
+
+  // 電子機器
+  os: 'OS',
+  cpu: 'CPU',
+  gpu: 'GPU',
+  ram: 'メモリ',
+  storage: 'ストレージ',
+  display: 'ディスプレイ',
+  battery: 'バッテリー',
+  camera: 'カメラ',
+  connectivity: '接続',
+
+  // 電源関連
+  power: '電力/電源',
+  capacity: '容量',
+  output: '出力',
+  input: '入力',
+  cableLength: 'ケーブル長',
+  ports: 'ポート',
+
+  // オーディオ
+  driver: 'ドライバー',
+  codec: 'コーデック',
+  noiseCancel: 'ノイズキャンセル',
+
+  // 靴（シューズ）
+  width: '幅（ワイズ）',
+  midsole: 'ミッドソール',
+  cushioningTech: 'クッショニング',
+  heelCounter: 'ヒールカウンター',
+  heelHeight: 'ヒール高',
+  upperMaterial: 'アッパー素材',
+  midsoleMaterial: 'ミッドソール素材',
+  outsoleMaterial: 'アウトソール素材',
+  outerSole: 'アウトソール',
+  insoleMaterial: 'インソール素材',
+  innerSole: 'インソール',
+  insole: 'インソール',
+
+  // その他
+  features: '特徴',
+  ingredients: '成分',
+  certifications: '認証',
+  compatibility: '互換性',
+  compatibleDevices: '対応機器',
+  compatibleModels: '対応モデル',
+  packageContents: '同梱物',
+  attachments: '付属品',
+  loadCapacity: '耐荷重',
+  other: 'その他',
+
+  // Webカメラ・映像機器
+  resolution: '解像度',
+  focusType: 'フォーカス',
+  fieldOfView: '視野角',
+  microphone: 'マイク',
+
+  // 充電器・電源
+  safetyFeatures: '安全機能',
+
+  // 食品・サプリ
+  origin: '産地',
+  type: 'タイプ',
+  allergens: 'アレルゲン',
+  storageMethod: '保存方法',
+  proteinType: 'プロテイン種類',
+  servingSize: '1食分量',
+  quantity: '内容量',
+  content: '内容量',
+
+  // 化粧品
+  fragrance: '香り',
+  scent: '香り',
+  skinType: '対象肌タイプ',
+
+  // ケーブル・コネクタ
+  cable: 'ケーブル',
+  materials: '素材',
+};
+
+/**
+ * 既知のフィールド（既存ロジックで処理済み）
+ * これらは動的レンダリングから除外される
+ */
+const HANDLED_SPEC_FIELDS = new Set([
+  // 基本スペック
+  'os', 'cpu', 'gpu', 'ram', 'storage', 'display', 'battery', 'camera', 'dimensions', 'connectivity',
+  // イヤホン・ヘッドホン
+  'driver', 'codec', 'noiseCancel',
+  // 家電
+  'power', 'capacity', 'category',
+  // 靴（シューズ）
+  'width', 'weight', 'material', 'midsole', 'cushioningTech', 'heelCounter', 'heelHeight',
+  'upperMaterial', 'midsoleMaterial', 'outsoleMaterial', 'outerSole', 'insoleMaterial', 'innerSole', 'insole',
+  // その他（既存）
+  'modelNumber', 'model', 'countryOfOrigin', 'loadCapacity', 'attachments', 'other',
+]);
+
+
 export class ArticleGenerator {
   private logger: Logger;
   private defaultTemplate: ArticleTemplate;
@@ -996,6 +1110,13 @@ ${score >= 80 ? '自信を持っておすすめできる商品です。' :
       if (specs.other && specs.other.length > 0) {
         infoRows.push(`| その他 | ${specs.other.join(', ')} |`);
       }
+
+      // 動的レンダリング: 未処理のフィールドを自動表示
+      const additionalRows = this.renderDynamicSpecs(specs);
+      if (additionalRows.length > 0) {
+        infoRows.push(`| **--- 追加スペック ---** | |`);
+        infoRows.push(...additionalRows);
+      }
     }
 
     const content = `## 🛒 商品詳細・購入
@@ -1020,6 +1141,100 @@ ${infoRows.join('\n')}
       wordCount: this.calculateWordCount(content),
       requiredElements: ['商品情報', '購入リンク']
     };
+  }
+
+  /**
+   * 動的スペックレンダリング
+   * 既存ロジックで処理されていないフィールドを自動的に表示
+   */
+  private renderDynamicSpecs(specs: TechnicalSpecs): string[] {
+    const rows: string[] = [];
+
+    for (const [key, value] of Object.entries(specs)) {
+      // 既に処理済みのフィールドはスキップ
+      if (HANDLED_SPEC_FIELDS.has(key)) continue;
+      // nullまたはundefinedはスキップ
+      if (value === null || value === undefined) continue;
+
+      const label = SPEC_LABEL_MAP[key] || this.formatFieldName(key);
+      const formattedValue = this.formatSpecValue(value);
+
+      if (formattedValue) {
+        rows.push(`| ${label} | ${formattedValue} |`);
+      }
+    }
+
+    return rows;
+  }
+
+  /**
+   * フィールド名をフォーマット（camelCase → スペース区切り）
+   */
+  private formatFieldName(fieldName: string): string {
+    // camelCaseをスペース区切りに変換
+    return fieldName
+      .replace(/([A-Z])/g, ' $1')
+      .replace(/^./, str => str.toUpperCase())
+      .trim();
+  }
+
+  /**
+   * スペック値を表示用にフォーマット
+   */
+  private formatSpecValue(value: unknown): string {
+    if (value === null || value === undefined) {
+      return '';
+    }
+
+    if (typeof value === 'string') {
+      return value;
+    }
+
+    if (typeof value === 'number' || typeof value === 'boolean') {
+      return String(value);
+    }
+
+    if (Array.isArray(value)) {
+      // 配列内の各要素をフォーマット
+      const formatted = value.map(item => {
+        if (typeof item === 'string') return item;
+        if (typeof item === 'object' && item !== null) {
+          return this.formatObjectValue(item as Record<string, unknown>);
+        }
+        return String(item);
+      });
+      return formatted.join(', ');
+    }
+
+    if (typeof value === 'object') {
+      return this.formatObjectValue(value as Record<string, unknown>);
+    }
+
+    return String(value);
+  }
+
+  /**
+   * オブジェクト値をフォーマット
+   */
+  private formatObjectValue(obj: Record<string, unknown>): string {
+    const parts: string[] = [];
+
+    for (const [key, val] of Object.entries(obj)) {
+      if (val === null || val === undefined) continue;
+
+      const label = SPEC_LABEL_MAP[key] || this.formatFieldName(key);
+
+      if (typeof val === 'string' || typeof val === 'number' || typeof val === 'boolean') {
+        parts.push(`${label}: ${val}`);
+      } else if (Array.isArray(val)) {
+        parts.push(`${label}: ${val.join(', ')}`);
+      } else if (typeof val === 'object') {
+        // ネストされたオブジェクトは再帰的に処理
+        parts.push(`${label}: ${this.formatObjectValue(val as Record<string, unknown>)}`);
+      }
+    }
+
+    return parts.join(' / ');
   }
 
   /**
