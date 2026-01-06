@@ -1,7 +1,7 @@
-
 {
   "analysis": {
     "productName": "Amcove The Shining Overlook ホテルカーペット 長方形マウスパッド",
+    "parentAsin": "B08CZR8RGV",
     "productDescription": "映画『シャイニング』に登場するオーバールック・ホテルの象徴的なカーペット柄をデザインした、デスクを個性的に彩るための長方形マウスパッドです。",
     "productUsage": [
       "日常的なPC作業やオフィスでの使用",
@@ -19,9 +19,9 @@
     ],
     "negativePoints": [
       "デザインの好みがはっきりと分かれるため、万人向けではない。",
-      "一般的な無地のマウスパッドと比較して価格がやや高め。",
+      "一般的な無地のマウスパッドと比較して価格がやや高めである可能性が高い。",
       "長期使用による印刷の色褪せや表面の摩耗など、耐久性に関する客観的な情報が少ない。",
-      "ブランドの知名度が低く、品質に対する信頼性の判断が難しい。"
+      "ブランド「Amcove」の知名度が低く、品質に対する信頼性の判断が難しい。"
     ],
     "useCases": [
       "在宅勤務のデスク環境を、お気に入りの映画のテーマで統一したい時。",
@@ -43,25 +43,39 @@
         "sentiment": "mixed"
       }
     ],
-    "userImpression": "このマウスパッドは、実用的なPCアクセサリーというよりも、映画『シャイニング』ファンに向けたコレクションアイテムとしての性格が強い商品です。デザインの再現性や独自性は高く評価できますが、その分、価格は高めに設定されています。品質は一般的なデザインマウスパッドの標準レベルと推測され、日常使用には問題ないでしょう。購入者は機能性よりも、自分のデスクを好きな世界観で満たすという体験価値に重きを置く人だと言えます。",
+    "userImpression": "このマウスパッドは、実用的なPCアクセサリーというよりも、映画『シャイニング』ファンに向けたコレクションアイテムとしての性格が強い商品です。デザインの再現性や独自性は高く評価できますが、その分、価格は高めに設定されていると推測されます。品質はPA-APIの情報に基づくと一般的なデザインマウスパッドの標準レベルであり、日常使用には問題ないでしょう。購入者は機能性よりも、自分のデスクを好きな世界観で満たすという体験価値に重きを置く人だと言えます。",
     "sources": [
       {
-        "name": "Similar Product Page (Inked Gaming)",
-        "url": "https://www.inkedgaming.com/products/the-shining-typewriter-mousepad",
-        "credibility": "Medium"
+        "name": "Amazon Product Advertising API",
+        "url": null,
+        "credibility": "High"
       },
       {
-        "name": "General Market Knowledge for Design Mousepads",
-        "url": null,
-        "credibility": "Low"
+        "name": "Etsy: The Shining Mouse Pad (Similar Product)",
+        "url": "https://www.etsy.com/listing/1504591498/the-shining-mouse-pad-overlook-hotel",
+        "credibility": "Medium"
       }
     ],
-    "lastInvestigated": "2026-01-01",
+    "lastInvestigated": "2026-01-07",
     "competitiveAnalysis": [
+      {
+        "name": "The Shining Mouse Pad: Overlook Hotel Carpet Pattern (Etsy)",
+        "asin": null,
+        "priceComparison": "同程度の価格帯と推測されるが、個人出品のため変動あり。",
+        "featureComparison": [
+          "同じ『シャイニング』のオーバールック・ホテルのカーペット柄をテーマにしている。",
+          "複数のサイズ展開がある可能性が高い。",
+          "手作り品や個人デザイナーによる製品である可能性が高い。"
+        ],
+        "differentiators": [
+          "最も直接的な競合品。デザインの独自性で差別化。",
+          "Amazon以外の販路で購入する必要がある。"
+        ]
+      },
       {
         "name": "Beaupretty ネイルアートテーブルマット 大きめ デスクマット",
         "asin": "B0CZW7JHKZ",
-        "priceComparison": "約半額と非常に安価。ただし、特定のデザインではなく汎用的なもの。",
+        "priceComparison": "非常に安価。ただし、特定のデザインではなく汎用的なもの。",
         "featureComparison": [
           "両面使用可能で、異なる色や質感を楽しめる。",
           "ネイルアート用としても使える多用途性を謳っている。"
@@ -74,27 +88,14 @@
       {
         "name": "OSOLADY ネイルマット",
         "asin": "B0G4LMG49S",
-        "priceComparison": "最も安価な価格帯。",
+        "priceComparison": "安価な価格帯。",
         "featureComparison": [
           "70x35cmと、より大きなデスクマットとして利用できるサイズ。",
           "折りたたみ可能で、持ち運びの利便性も考慮されている。"
         ],
         "differentiators": [
           "価格の安さと、より広範囲をカバーできるサイズ感。",
-          "ネイルサロンなど、プロの現場での使用も想定されている点。"
-        ]
-      },
-      {
-        "name": "Inked Gaming The Shining Typewriter Mousepad",
-        "asin": null,
-        "priceComparison": "同程度の価格帯と推測されるが、正確な価格は不明。",
-        "featureComparison": [
-          "同じ『シャイニング』をテーマにしているが、タイプライターをモチーフにした異なるデザイン。",
-          "複数のサイズ展開（Classic, Large, XL）がある。"
-        ],
-        "differentiators": [
-          "同じ映画をテーマにした、デザインのバリエーション。",
-          "用途に応じてサイズを選べる選択肢の多さ。"
+          "プロの現場での使用も想定されている点。"
         ]
       }
     ],
@@ -111,11 +112,30 @@
         "基本的なマウスパッドとしての性能は備えている。"
       ],
       "cons": [
-        "デザインの付加価値分、価格が高めである点。",
+        "デザインの付加価値分、価格が高めである可能性が高い点。",
         "映画に興味がない人にとっては価値が分かりにくい。",
         "長期的な耐久性に関しては未知数であること。"
       ],
-      "score": 85
+      "score": 82,
+      "scoreRationale": "[基本点: 70]\n[加点: +10] (独自の強み・先進性: 映画ファンにとって唯一無二のデザイン価値と所有欲を満たす点)\n[加点: +5] (品質・デザイン: アイコニックなデザインの再現性を評価)\n[減点: -3] (ユーザー満足度: ブランドの知名度が低く、レビュー情報が不足しているため信頼性に懸念)\n[合計: 82]"
+    },
+    "technicalSpecs": {
+      "dimensions": {
+        "height": "3mm",
+        "width": "200mm",
+        "length": "240mm",
+        "weight": "約68g"
+      },
+      "material": {
+        "surface": "シルクのような布",
+        "base": "天然ゴム"
+      },
+      "thickness": "3mm",
+      "features": [
+        "滑り止めベース"
+      ],
+      "model": "Amcove-MP-3442",
+      "color": "Am20"
     }
   }
 }
