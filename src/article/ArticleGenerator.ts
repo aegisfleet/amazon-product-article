@@ -1210,7 +1210,8 @@ ${infoRows.join('\n')}
       return this.formatObjectValue(value as Record<string, unknown>);
     }
 
-    return String(value);
+    // primitiveとして安全に文字列化（symbol, bigintなど）
+    return typeof value === 'symbol' ? value.toString() : String(value as string | number | boolean);
   }
 
   /**
@@ -1648,7 +1649,7 @@ ${infoRows.join('\n')}
       const plusMatch = line.match(/\[加点:\s*\+(\d+)\]\s*(.*)/);
       if (plusMatch) {
         const [, points, desc = ''] = plusMatch;
-        const cleanDesc = desc.replace(/^[\(（]/, '').replace(/[\)）]$/, '').trim();
+        const cleanDesc = desc.replace(/^[(（]/, '').replace(/[)）]$/, '').trim();
         parts.push(`<div class="score-item score-plus">✅ <span class="score-points">+${points}</span> ${cleanDesc}</div>`);
         continue;
       }
@@ -1657,7 +1658,7 @@ ${infoRows.join('\n')}
       const minusMatch = line.match(/\[減点:\s*-(\d+)\]\s*(.*)/);
       if (minusMatch) {
         const [, points, desc = ''] = minusMatch;
-        const cleanDesc = desc.replace(/^[\(（]/, '').replace(/[\)）]$/, '').trim();
+        const cleanDesc = desc.replace(/^[(（]/, '').replace(/[)）]$/, '').trim();
         parts.push(`<div class="score-item score-minus">⚠️ <span class="score-points">-${points}</span> ${cleanDesc}</div>`);
         continue;
       }
