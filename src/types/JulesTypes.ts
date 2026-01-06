@@ -248,6 +248,24 @@ export interface TechnicalSpecs {
   heelHeight?: string | null;
   loadCapacity?: string | { [key: string]: string } | null; // e.g., "5kg" or { rack: "5kg", hook: "500g" }
   attachments?: string | string[] | null;                    // e.g., "フック×2" or ["フック×2", "マグネット"]
+
+  // 高頻度出現フィールド（動的調査結果より）
+  features?: string[] | null;            // e.g., ["クルエルティフリー", "防水"]
+  color?: string | null;                 // e.g., "ブラック"
+  productType?: string | null;           // e.g., "おしゃれ着用洗濯洗剤"
+  output?: string | { [key: string]: string } | null;   // 電源出力
+  input?: string | { [key: string]: string } | null;    // 電源入力
+  cableLength?: string | null;           // e.g., "1.5m"
+  packageContents?: string | string[] | null;  // 同梱物
+  ports?: string | string[] | { [key: string]: unknown } | null;  // ポート情報
+  certifications?: string[] | null;      // e.g., ["PSE", "MFi"]
+  ingredients?: string | string[] | null;  // 成分
+  compatibility?: string | string[] | null;  // 互換性情報
+  compatibleDevices?: string | string[] | null;  // 対応機器
+  compatibleModels?: string | string[] | null;   // 対応モデル
+
+  // 未知のフィールドを許容（動的レンダリング対応）
+  [key: string]: unknown;
 }
 
 export interface InvestigationResult {
