@@ -105,8 +105,13 @@ export class PAAPICache {
         }
 
         // Check expiration
-        const ttl = entry.status === 'invalid' ? this.invalidTtl : this.ttl;
-        if (Date.now() - entry.timestamp > ttl) {
+        let effectiveTtl = this.ttl;
+        if (entry.status === 'invalid') {
+            // Only use the shorter invalidTtl if we have an investigation result for this ASIN
+            effectiveTtl = this.isInvestigationFileExists(asin) ? this.invalidTtl : this.ttl;
+        }
+
+        if (Date.now() - entry.timestamp > effectiveTtl) {
             return null;
         }
 
@@ -127,11 +132,22 @@ export class PAAPICache {
 
         if (entry.status !== 'invalid') return false;
 
-        if (Date.now() - entry.timestamp > this.invalidTtl) {
+        // Only use the shorter invalidTtl if we have an investigation result for this ASIN
+        const effectiveTtl = this.isInvestigationFileExists(asin) ? this.invalidTtl : this.ttl;
+
+        if (Date.now() - entry.timestamp > effectiveTtl) {
             return false; // Expired, so re-check validity
         }
 
         return true;
+    }
+
+    /**
+     * Check if investigation result file exists for the given ASIN
+     */
+    private isInvestigationFileExists(asin: string): boolean {
+        const filePath = path.join(process.cwd(), 'data/investigations', `${asin}.json`);
+        return fs.existsSync(filePath);
     }
 
     /**
