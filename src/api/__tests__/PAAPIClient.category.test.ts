@@ -68,7 +68,7 @@ describe('PAAPIClient Category Extraction', () => {
             { category: 'らくらくベビー Birth Day企画', reason: 'スペースと企画パターン' },
             { category: 'おうちでヘアケアカーリングアイロン・2WAYアイロン', reason: 'おうちでパターン' },
             { category: 'Beauty Recommendation Widget', reason: 'Beauty Recommendationパターン' },
-            { category: '対象のSALONIA製品購入でクーポンプレゼント', reason: 'クーポンパターン' },
+            { category: '対象のSALONIA商品購入でクーポンプレゼント', reason: 'クーポンパターン' },
 
             // AmazonGlobal
             { category: 'Home & Kitchen - AmazonGlobal Free Shipping', reason: 'スペースと-を含む' },
