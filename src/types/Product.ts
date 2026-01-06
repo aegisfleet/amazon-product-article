@@ -71,6 +71,8 @@ export interface ProductSearchParams {
   maxPrice?: number;
   sortBy?: 'relevance' | 'price' | 'rating' | 'featured' | 'newest';
   merchant?: 'Amazon' | 'All';
+  ignoreExclusion?: boolean;
+  itemPage?: number;
 }
 
 export interface ProductSearchResult {
