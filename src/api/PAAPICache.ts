@@ -16,7 +16,8 @@ interface CacheStore {
 export class PAAPICache {
     private cachePath: string;
     private cache: CacheStore = {};
-    private ttl: number; // Time to live in milliseconds
+    private ttl: number; // Time to live in milliseconds for valid entries
+    private invalidTtl: number; // Time to live in milliseconds for invalid entries
     private logger = Logger.getInstance();
     private isLoaded = false;
 
@@ -24,8 +25,9 @@ export class PAAPICache {
     // Includes: LRM (U+200E), RLM (U+200F), zero-width chars (U+200B-U+200D, U+FEFF), etc.
     private static readonly INVISIBLE_CHARS_REGEX = /[\u200B-\u200F\u2028-\u202F\uFEFF]/g;
 
-    constructor(ttlHours: number = 24, cacheDir: string = 'data/cache') {
+    constructor(ttlHours: number = 24, invalidTtlHours: number = 1, cacheDir: string = 'data/cache') {
         this.ttl = ttlHours * 60 * 60 * 1000;
+        this.invalidTtl = invalidTtlHours * 60 * 60 * 1000;
         this.cachePath = path.join(process.cwd(), cacheDir, 'paapi-product-cache.json');
         this.load();
     }
@@ -103,7 +105,8 @@ export class PAAPICache {
         }
 
         // Check expiration
-        if (Date.now() - entry.timestamp > this.ttl) {
+        const ttl = entry.status === 'invalid' ? this.invalidTtl : this.ttl;
+        if (Date.now() - entry.timestamp > ttl) {
             return null;
         }
 
@@ -122,11 +125,13 @@ export class PAAPICache {
         const entry = this.cache[asin];
         if (!entry) return false;
 
-        if (Date.now() - entry.timestamp > this.ttl) {
+        if (entry.status !== 'invalid') return false;
+
+        if (Date.now() - entry.timestamp > this.invalidTtl) {
             return false; // Expired, so re-check validity
         }
 
-        return entry.status === 'invalid';
+        return true;
     }
 
     /**
