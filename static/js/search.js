@@ -76,6 +76,16 @@ document.addEventListener('DOMContentLoaded', function () {
             handleSearch(query);
         });
 
+        searchInput.addEventListener('focus', (e) => {
+            if (!fuse) return;
+
+            const query = e.target.value.replace(/　/g, ' ');
+            if (query.trim().length >= 2) {
+                const results = fuse.search(query);
+                displayResults(results);
+            }
+        });
+
         // Close results when clicking outside
         document.addEventListener('click', (e) => {
             if (!searchInput.contains(e.target) && !searchResults.contains(e.target)) {
