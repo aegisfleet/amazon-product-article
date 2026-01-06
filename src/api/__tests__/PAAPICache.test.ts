@@ -58,12 +58,14 @@ describe('PAAPICache', () => {
     });
 
     test('should return true for fresh invalid entries', () => {
+        // Mock file exists to use shortened invalidTtl
+        (fs.existsSync as jest.Mock).mockReturnValue(true);
         cache.markInvalid('B003');
         expect(cache.isInvalid('B003')).toBe(true);
         expect(cache.get('B003')).toBeNull();
     });
 
-    test('should return false for expired invalid entries (re-check needed)', () => {
+    test('should use invalidTtl (short) when investigation file exists', () => {
         const now = Date.now();
         const past = now - (2 * 60 * 60 * 1000); // 2 hours ago (invalid TTL is 1 hour)
 
@@ -73,22 +75,40 @@ describe('PAAPICache', () => {
             status: 'invalid'
         };
 
+        // File exists => should use invalidTtl (1h) => should be expired (false)
+        (fs.existsSync as jest.Mock).mockImplementation((p: string) => p.includes('B004.json'));
         expect(cache.isInvalid('B004')).toBe(false);
     });
 
-    test('getMissingAsins should include expired invalid entries', () => {
+    test('should use standard ttl (long) when investigation file DOES NOT exist', () => {
         const now = Date.now();
-        const pastValid = now - (25 * 60 * 60 * 1000);
-        const pastInvalid = now - (2 * 60 * 60 * 1000);
+        const past = now - (2 * 60 * 60 * 1000); // 2 hours ago (invalid TTL is 1 hour, standard is 24h)
 
-        (cache as any).cache['VALID_EXPIRED'] = { data: mockProduct, timestamp: pastValid, status: 'valid' };
-        (cache as any).cache['INVALID_EXPIRED'] = { data: null, timestamp: pastInvalid, status: 'invalid' };
-        (cache as any).cache['INVALID_FRESH'] = { data: null, timestamp: now, status: 'invalid' };
+        (cache as any).cache['B005'] = {
+            data: null,
+            timestamp: past,
+            status: 'invalid'
+        };
 
-        const missing = cache.getMissingAsins(['VALID_EXPIRED', 'INVALID_EXPIRED', 'INVALID_FRESH']);
+        // File DOES NOT exist => should use standard ttl (24h) => should NOT be expired (true)
+        (fs.existsSync as jest.Mock).mockReturnValue(false);
+        expect(cache.isInvalid('B005')).toBe(true);
+    });
 
-        expect(missing).toContain('VALID_EXPIRED');
-        expect(missing).toContain('INVALID_EXPIRED');
-        expect(missing).not.toContain('INVALID_FRESH');
+    test('getMissingAsins should respect selective TTL logic', () => {
+        const now = Date.now();
+        const pastInvalid = now - (2 * 60 * 60 * 1000); // 2h ago
+
+        // ASIN with file: should be expired (missing: true)
+        (cache as any).cache['WITH_FILE'] = { data: null, timestamp: pastInvalid, status: 'invalid' };
+        // ASIN without file: should NOT be expired (missing: false)
+        (cache as any).cache['WITHOUT_FILE'] = { data: null, timestamp: pastInvalid, status: 'invalid' };
+
+        (fs.existsSync as jest.Mock).mockImplementation((p: string) => p.includes('WITH_FILE.json'));
+
+        const missing = cache.getMissingAsins(['WITH_FILE', 'WITHOUT_FILE']);
+
+        expect(missing).toContain('WITH_FILE');
+        expect(missing).not.toContain('WITHOUT_FILE');
     });
 });
