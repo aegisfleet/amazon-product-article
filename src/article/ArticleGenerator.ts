@@ -977,11 +977,11 @@ ${score >= 80 ? '自信を持っておすすめできる商品です。' :
       infoRows.push(`| **--- スペック ---** | |`);
 
       // 基本スペック
-      if (specs.os) infoRows.push(`| OS | ${specs.os} |`);
-      if (specs.cpu) infoRows.push(`| CPU | ${specs.cpu} |`);
-      if (specs.gpu) infoRows.push(`| GPU | ${specs.gpu} |`);
-      if (specs.ram) infoRows.push(`| メモリ | ${specs.ram} |`);
-      if (specs.storage) infoRows.push(`| ストレージ | ${specs.storage} |`);
+      if (specs.os) infoRows.push(`| OS | ${this.formatSpecValue(specs.os)} |`);
+      if (specs.cpu) infoRows.push(`| CPU | ${this.formatSpecValue(specs.cpu)} |`);
+      if (specs.gpu) infoRows.push(`| GPU | ${this.formatSpecValue(specs.gpu)} |`);
+      if (specs.ram) infoRows.push(`| メモリ | ${this.formatSpecValue(specs.ram)} |`);
+      if (specs.storage) infoRows.push(`| ストレージ | ${this.formatSpecValue(specs.storage)} |`);
 
       // ディスプレイ
       if (specs.display) {
@@ -1033,18 +1033,18 @@ ${score >= 80 ? '自信を持っておすすめできる商品です。' :
       }
 
       // イヤホン・ヘッドホン
-      if (specs.driver) infoRows.push(`| ドライバー | ${specs.driver} |`);
+      if (specs.driver) infoRows.push(`| ドライバー | ${this.formatSpecValue(specs.driver)} |`);
       if (specs.codec && specs.codec.length > 0) {
         infoRows.push(`| 対応コーデック | ${specs.codec.join(', ')} |`);
       }
-      if (specs.noiseCancel) infoRows.push(`| ノイズキャンセル | ${specs.noiseCancel} |`);
+      if (specs.noiseCancel) infoRows.push(`| ノイズキャンセル | ${this.formatSpecValue(specs.noiseCancel)} |`);
 
       // 家電
-      if (specs.power) infoRows.push(`| 消費電力 | ${specs.power} |`);
-      if (specs.capacity) infoRows.push(`| 容量 | ${specs.capacity} |`);
+      if (specs.power) infoRows.push(`| 消費電力 | ${this.formatSpecValue(specs.power)} |`);
+      if (specs.capacity) infoRows.push(`| 容量 | ${this.formatSpecValue(specs.capacity)} |`);
 
       // カテゴリ（スペック内）
-      if (specs.category) infoRows.push(`| カテゴリ | ${specs.category} |`);
+      if (specs.category) infoRows.push(`| カテゴリ | ${this.formatSpecValue(specs.category)} |`);
 
       // 接続性
       if (specs.connectivity && specs.connectivity.length > 0) {
@@ -1052,14 +1052,14 @@ ${score >= 80 ? '自信を持っておすすめできる商品です。' :
       }
 
       // 靴（シューズ）
-      if (specs.width) infoRows.push(`| 幅（ワイズ） | ${specs.width} |`);
-      if (specs.weight) infoRows.push(`| 重量 | ${specs.weight} |`);
-      if (specs.midsole) infoRows.push(`| ミッドソール | ${specs.midsole} |`);
+      if (specs.width) infoRows.push(`| 幅（ワイズ） | ${this.formatSpecValue(specs.width)} |`);
+      if (specs.weight) infoRows.push(`| 重量 | ${this.formatSpecValue(specs.weight)} |`);
+      if (specs.midsole) infoRows.push(`| ミッドソール | ${this.formatSpecValue(specs.midsole)} |`);
       if (specs.cushioningTech && specs.cushioningTech.length > 0) {
         infoRows.push(`| クッショニング | ${specs.cushioningTech.join(', ')} |`);
       }
-      if (specs.heelCounter) infoRows.push(`| ヒールカウンター | ${specs.heelCounter} |`);
-      if (specs.heelHeight) infoRows.push(`| ヒール高 | ${specs.heelHeight} |`);
+      if (specs.heelCounter) infoRows.push(`| ヒールカウンター | ${this.formatSpecValue(specs.heelCounter)} |`);
+      if (specs.heelHeight) infoRows.push(`| ヒール高 | ${this.formatSpecValue(specs.heelHeight)} |`);
 
       // 素材の統合表示
       const matParts = [];
@@ -1085,9 +1085,9 @@ ${score >= 80 ? '自信を持っておすすめできる商品です。' :
       }
 
       const model = specs.modelNumber || specs.model;
-      if (model) infoRows.push(`| 型番 | ${model} |`);
+      if (model) infoRows.push(`| 型番 | ${this.formatSpecValue(model)} |`);
 
-      if (specs.countryOfOrigin) infoRows.push(`| 原産国 | ${specs.countryOfOrigin} |`);
+      if (specs.countryOfOrigin) infoRows.push(`| 原産国 | ${this.formatSpecValue(specs.countryOfOrigin)} |`);
 
       // 家具・収納・その他追加
       if (specs.loadCapacity) {
@@ -1288,11 +1288,11 @@ ${infoRows.join('\n')}
       lines.push('specs:');
 
       // 基本スペック
-      if (specs.os) lines.push(`  os: "${specs.os}"`);
-      if (specs.cpu) lines.push(`  cpu: "${specs.cpu}"`);
-      if (specs.gpu) lines.push(`  gpu: "${specs.gpu}"`);
-      if (specs.ram) lines.push(`  ram: "${specs.ram}"`);
-      if (specs.storage) lines.push(`  storage: "${specs.storage}"`);
+      if (specs.os) lines.push(`  os: "${this.formatSpecValue(specs.os)}"`);
+      if (specs.cpu) lines.push(`  cpu: "${this.formatSpecValue(specs.cpu)}"`);
+      if (specs.gpu) lines.push(`  gpu: "${this.formatSpecValue(specs.gpu)}"`);
+      if (specs.ram) lines.push(`  ram: "${this.formatSpecValue(specs.ram)}"`);
+      if (specs.storage) lines.push(`  storage: "${this.formatSpecValue(specs.storage)}"`);
 
       // ディスプレイ
       if (specs.display) {
@@ -1326,16 +1326,16 @@ ${infoRows.join('\n')}
       }
 
       // イヤホン・ヘッドホン
-      if (specs.driver) lines.push(`  driver: "${specs.driver}"`);
+      if (specs.driver) lines.push(`  driver: "${this.formatSpecValue(specs.driver)}"`);
       if (specs.codec && specs.codec.length > 0) {
         lines.push(`  codec: [${specs.codec.map(c => `"${c}"`).join(', ')}]`);
       }
-      if (specs.noiseCancel) lines.push(`  noise_cancel: "${specs.noiseCancel}"`);
+      if (specs.noiseCancel) lines.push(`  noise_cancel: "${this.formatSpecValue(specs.noiseCancel)}"`);
 
       // 家電
-      if (specs.power) lines.push(`  power: "${specs.power}"`);
-      if (specs.capacity) lines.push(`  capacity: "${specs.capacity}"`);
-      if (specs.category) lines.push(`  spec_category: "${specs.category}"`);
+      if (specs.power) lines.push(`  power: "${this.formatSpecValue(specs.power)}"`);
+      if (specs.capacity) lines.push(`  capacity: "${this.formatSpecValue(specs.capacity)}"`);
+      if (specs.category) lines.push(`  spec_category: "${this.formatSpecValue(specs.category)}"`);
 
       // 接続性
       if (specs.connectivity && specs.connectivity.length > 0) {
@@ -1343,14 +1343,14 @@ ${infoRows.join('\n')}
       }
 
       // 靴（シューズ）
-      if (specs.width) lines.push(`  width: "${specs.width}"`);
-      if (specs.weight) lines.push(`  weight: "${specs.weight}"`);
-      if (specs.midsole) lines.push(`  midsole: "${specs.midsole}"`);
+      if (specs.width) lines.push(`  width: "${this.formatSpecValue(specs.width)}"`);
+      if (specs.weight) lines.push(`  weight: "${this.formatSpecValue(specs.weight)}"`);
+      if (specs.midsole) lines.push(`  midsole: "${this.formatSpecValue(specs.midsole)}"`);
       if (specs.cushioningTech && specs.cushioningTech.length > 0) {
         lines.push(`  cushioning_tech: [${specs.cushioningTech.map(c => `"${c}"`).join(', ')}]`);
       }
-      if (specs.heelCounter) lines.push(`  heel_counter: "${specs.heelCounter}"`);
-      if (specs.heelHeight) lines.push(`  heel_height: "${specs.heelHeight}"`);
+      if (specs.heelCounter) lines.push(`  heel_counter: "${this.formatSpecValue(specs.heelCounter)}"`);
+      if (specs.heelHeight) lines.push(`  heel_height: "${this.formatSpecValue(specs.heelHeight)}"`);
       if (specs.material) {
         if (typeof specs.material === 'string') {
           lines.push(`  material: "${specs.material}"`);
@@ -1369,9 +1369,9 @@ ${infoRows.join('\n')}
       if (specs.innerSole) lines.push(`  inner_sole: "${specs.innerSole}"`);
       if (specs.insole) lines.push(`  insole: "${specs.insole}"`);
 
-      if (specs.modelNumber) lines.push(`  model_number: "${specs.modelNumber}"`);
-      if (specs.model) lines.push(`  model: "${specs.model}"`);
-      if (specs.countryOfOrigin) lines.push(`  country_of_origin: "${specs.countryOfOrigin}"`);
+      if (specs.modelNumber) lines.push(`  model_number: "${this.formatSpecValue(specs.modelNumber)}"`);
+      if (specs.model) lines.push(`  model: "${this.formatSpecValue(specs.model)}"`);
+      if (specs.countryOfOrigin) lines.push(`  country_of_origin: "${this.formatSpecValue(specs.countryOfOrigin)}"`);
 
       // 耐荷重
       if (specs.loadCapacity) {
