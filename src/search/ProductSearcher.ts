@@ -231,7 +231,7 @@ export class ProductSearcher {
 
     for (const keyword of keywords) {
       try {
-        let keywordProducts: Product[] = [];
+        const keywordProducts: Product[] = [];
         let currentPage = 1;
 
         while (keywordProducts.length < maxResults && currentPage <= maxPages) {
