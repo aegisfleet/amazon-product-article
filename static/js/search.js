@@ -67,9 +67,13 @@ document.addEventListener('DOMContentLoaded', function () {
             if (!fuse) return;
 
             const query = e.target.value.replace(/　/g, ' ');
+            if (query.trim().length === 0) {
+                displaySearchTips();
+                return;
+            }
+
             if (query.trim().length < 2) {
-                searchResults.innerHTML = '';
-                searchResults.classList.remove('active');
+                // Keep the tips visible while typing the first character
                 return;
             }
 
@@ -80,7 +84,9 @@ document.addEventListener('DOMContentLoaded', function () {
             if (!fuse) return;
 
             const query = e.target.value.replace(/　/g, ' ');
-            if (query.trim().length >= 2) {
+            if (query.trim().length < 2) {
+                displaySearchTips();
+            } else {
                 const results = fuse.search(query);
                 displayResults(results);
             }
@@ -144,6 +150,40 @@ document.addEventListener('DOMContentLoaded', function () {
         }).join('');
 
         searchResults.innerHTML = html;
+        searchResults.classList.add('active');
+    }
+
+    function displaySearchTips() {
+        const tipsHtml = `
+            <div class="search-tips-container">
+                <div class="search-tips-header">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <line x1="12" y1="16" x2="12" y2="12"></line>
+                        <line x1="12" y1="8" x2="12.01" y2="8"></line>
+                    </svg>
+                    <span>検索のヒント</span>
+                </div>
+                <div class="search-tips-list">
+                    <div class="search-tip-item">
+                        <span class="search-tip-icon">⚙️</span>
+                        <div class="search-tip-content">
+                            <span class="search-tip-title">スペック検索</span>
+                            <span class="search-tip-description">「8GB」「軽量」「防水」など、商品の仕様でも検索できます。</span>
+                        </div>
+                    </div>
+                    <div class="search-tip-item">
+                        <span class="search-tip-icon">🔍</span>
+                        <div class="search-tip-content">
+                            <span class="search-tip-title">AND検索</span>
+                            <span class="search-tip-description">キーワードをスペースで区切ると、複数条件で絞り込めます。</span>
+                            <div>例: <span class="search-tip-example">モニター 4K</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        `;
+        searchResults.innerHTML = tipsHtml;
         searchResults.classList.add('active');
     }
 });
