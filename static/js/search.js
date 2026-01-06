@@ -42,7 +42,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
                     threshold: 0.4,
                     includeScore: true,
-                    ignoreLocation: true // Search in entire text
+                    ignoreLocation: true, // Search in entire text
+                    useExtendedSearch: true
                 });
             })
             .catch(err => console.error('Error loading search index:', err));
@@ -51,8 +52,8 @@ document.addEventListener('DOMContentLoaded', function () {
         searchInput.addEventListener('input', (e) => {
             if (!fuse) return;
 
-            const query = e.target.value;
-            if (query.length < 2) {
+            const query = e.target.value.replace(/　/g, ' ');
+            if (query.trim().length < 2) {
                 searchResults.innerHTML = '';
                 searchResults.classList.remove('active');
                 return;
