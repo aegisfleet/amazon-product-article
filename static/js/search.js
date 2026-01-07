@@ -98,6 +98,14 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         });
 
+        // 検索窓クリック時もヒント表示（focusが発火しない場合に対応）
+        searchInput.addEventListener('click', (e) => {
+            const query = e.target.value.replace(/　/g, ' ');
+            if (query.trim().length < 2 && !searchResults.classList.contains('active')) {
+                displaySearchTips();
+            }
+        });
+
         // Close results when clicking outside
         document.addEventListener('click', (e) => {
             if (!searchInput.contains(e.target) && !searchResults.contains(e.target)) {
