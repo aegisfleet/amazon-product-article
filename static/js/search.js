@@ -83,6 +83,12 @@ document.addEventListener('DOMContentLoaded', function () {
         searchInput.addEventListener('focus', (e) => {
             if (!fuse) return;
 
+            // 検索窓を画面上部にスクロール
+            const container = document.querySelector('.search-container');
+            if (container) {
+                container.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+
             const query = e.target.value.replace(/　/g, ' ');
             if (query.trim().length < 2) {
                 displaySearchTips();
