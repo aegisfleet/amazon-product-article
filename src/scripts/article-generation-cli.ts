@@ -307,8 +307,8 @@ async function main(): Promise<void> {
             try {
                 logger.info(`Processing article for: ${data.product.asin}`);
 
-                // Get fresh product data from Cache
-                const cachedProduct = paapiCache.get(data.product.asin);
+                // Get fresh product data from Cache (fallback to expired if fetch failed)
+                const cachedProduct = paapiCache.get(data.product.asin, { ignoreExpiration: true });
 
                 if (cachedProduct) {
                     // Merge live data into the product object
@@ -330,7 +330,7 @@ async function main(): Promise<void> {
                     .map(c => c.asin!);
 
                 if (competitorAsins.length > 0) {
-                    const cachedCompetitors = paapiCache.getMultiple(competitorAsins);
+                    const cachedCompetitors = paapiCache.getMultiple(competitorAsins, { ignoreExpiration: true });
                     for (const [asin, detail] of cachedCompetitors.entries()) {
                         competitorDetails.set(asin, detail);
                     }

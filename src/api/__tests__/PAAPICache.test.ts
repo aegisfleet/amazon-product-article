@@ -57,12 +57,34 @@ describe('PAAPICache', () => {
         expect(cache.get('B002')).toEqual(mockProduct);
     });
 
+    test('should return expired valid entries when ignoreExpiration is true', () => {
+        const now = Date.now();
+        const past = now - (25 * 60 * 60 * 1000); // 25 hours ago
+
+        (cache as any).cache['B001_FALLBACK'] = {
+            data: mockProduct,
+            timestamp: past,
+            status: 'valid'
+        };
+
+        expect(cache.get('B001_FALLBACK', { ignoreExpiration: true })).toEqual(mockProduct);
+    });
+
     test('should return true for fresh invalid entries', () => {
         // Mock file exists to use shortened invalidTtl
         (fs.existsSync as jest.Mock).mockReturnValue(true);
         cache.markInvalid('B003');
         expect(cache.isInvalid('B003')).toBe(true);
         expect(cache.get('B003')).toBeNull();
+    });
+
+    test('markInvalid should NOT overwrite existing valid entry', () => {
+        cache.set('B006', mockProduct);
+        cache.markInvalid('B006');
+
+        // Should still be valid
+        expect((cache as any).cache['B006'].status).toBe('valid');
+        expect(cache.get('B006')).toEqual(mockProduct);
     });
 
     test('should use invalidTtl (short) when investigation file exists', () => {
