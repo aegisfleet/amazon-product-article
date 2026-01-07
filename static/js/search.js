@@ -140,7 +140,7 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         }
 
-        const html = uniqueResults.slice(0, 8).map(result => {
+        const html = uniqueResults.slice(0, 20).map(result => {
             const item = result.item;
             const priceDisplay = item.price ? `<span class="result-price">💰 ${item.price}</span>` : '';
             const scoreDisplay = item.score ? `<span class="result-score">🏆 ${item.score}点</span>` : '';
