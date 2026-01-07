@@ -719,6 +719,10 @@ a:hover {
   font-size: 1.125rem;
 }
 
+.pros-card> :last-child {
+  margin-bottom: 0;
+}
+
 .cons-card {
   background: var(--bg-gradient-cons);
   border: 1px solid #ef4444;
@@ -732,6 +736,10 @@ a:hover {
   font-size: 1.125rem;
 }
 
+.cons-card> :last-child {
+  margin-bottom: 0;
+}
+
 /* Purchase Card */
 .purchase-card {
   background: var(--bg-gradient-purchase);
@@ -743,7 +751,12 @@ a:hover {
 }
 
 .purchase-card h3 {
+  margin-top: 0;
   margin-bottom: var(--spacing-md);
+}
+
+.purchase-card> :last-child {
+  margin-bottom: 0;
 }
 
 /* Tables in Content - Mobile Responsive */
