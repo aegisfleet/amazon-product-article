@@ -17,7 +17,7 @@
         </header>
 
         {{ if .TableOfContents }}
-        <nav class="table-of-contents">
+        <nav class="table-of-contents" id="toc" style="display: none;">
             <details open>
                 <summary>📑 目次</summary>
                 {{ .TableOfContents }}
@@ -28,6 +28,19 @@
         <div class="content">
             {{ .Content }}
         </div>
+
+        <script>
+            (function () {
+                var toc = document.getElementById('toc');
+                if (toc) {
+                    var firstH2 = document.querySelector('.content h2');
+                    if (firstH2) {
+                        firstH2.parentNode.insertBefore(toc, firstH2);
+                    }
+                    toc.style.display = 'block';
+                }
+            })();
+        </script>
 
     </article>
 
