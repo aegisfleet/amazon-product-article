@@ -24,8 +24,6 @@ document.addEventListener('DOMContentLoaded', function () {
     function initializeSearch() {
         if (fuse) return; // Already initialized
 
-        console.log('Search initialized');
-
         // Fetch index.json dynamically from data attribute
         const searchIndexUrl = searchInput.dataset.searchIndexUrl || '/index.json';
         fetch(searchIndexUrl)
@@ -102,14 +100,6 @@ document.addEventListener('DOMContentLoaded', function () {
                 // 検索実行はfuse初期化後のみ
                 const results = fuse.search(query);
                 displayResults(results);
-            }
-        });
-
-        // 検索窓クリック時もヒント表示（focusが発火しない場合に対応）
-        searchInput.addEventListener('click', (e) => {
-            const query = e.target.value.replace(/　/g, ' ');
-            if (query.trim().length < 2 && !searchResults.classList.contains('active')) {
-                displaySearchTips();
             }
         });
 
