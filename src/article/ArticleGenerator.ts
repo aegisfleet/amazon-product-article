@@ -861,7 +861,7 @@ ${investigation.analysis.recommendation.cons.map(con => `- ${con}`).join('\n')}
       ? this.formatScoreRationaleAsCard(investigation.analysis.recommendation.scoreRationale)
       : '';
 
-    const content = `## 📈 購入推奨度
+    const content = `## ✅ 購入推奨度
 
 ### 総合評価: ${score}点/100点 (${scoreText})
 
@@ -884,7 +884,7 @@ ${score >= 80 ? '自信を持っておすすめできる商品です。' :
           '購入前に他の選択肢も検討することをおすすめします。'}`;
 
     return {
-      title: '📈 購入推奨度',
+      title: '✅ 購入推奨度',
       content,
       wordCount: this.calculateWordCount(content),
       requiredElements: template.requiredElements
@@ -1125,9 +1125,13 @@ ${score >= 80 ? '自信を持っておすすめできる商品です。' :
 
 ### 商品情報
 
+<div class="table-wrapper">
+
 | 項目 | 内容 |
 |:-----|:-----|
 ${infoRows.join('\n')}
+
+</div>
 
 <a href="${affiliateUrl}" class="btn-amazon-large" target="_blank" rel="noopener noreferrer">🛒 Amazonで購入する</a>
 
