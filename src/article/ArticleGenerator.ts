@@ -254,6 +254,72 @@ const SPEC_LABEL_MAP: Record<string, string> = {
   soleMaterial: 'ソール素材',
   cushioning: 'クッション性',
   outsole: 'アウトソール',
+
+  // 寸法・形状（詳細）
+  height: '高さ',
+  depth: '奥行き',
+  diameter: '直径',
+  upper: 'アッパー',
+  base: 'ベース/底面',
+  surface: '表面素材',
+  lid: '蓋',
+
+  // 電源・バッテリー詳細
+  charging: '充電',
+  consumption: '消費電力',
+  cordLength: 'コード長',
+
+  source: '電源',
+  ac: 'AC出力/入力',
+  adapter: 'アダプター',
+  continuousUsageTime: '連続使用時間',
+
+  // 食品・成分詳細
+  protein: 'タンパク質',
+  fat: '脂質',
+  carbohydrates: '炭水化物',
+  saltEquivalent: '食塩相当量',
+  contentVolume: '内容量',
+  body: 'ボディ/コク',
+
+  // PC・モニター詳細
+  refreshRate: 'リフレッシュレート',
+  responseTime: '応答速度',
+  viewingAngle: '視野角',
+  brightness: '輝度',
+  contrastRatio: 'コントラスト比',
+  vesaMount: 'VESAマウント',
+  tilt: 'チルト',
+  swivel: 'スイベル',
+  heightAdjustment: '高さ調節',
+
+  // オーディオ・機能詳細
+  audio: 'オーディオ',
+  backlight: 'バックライト',
+  withCase: 'ケース併用時',
+  earbud: 'イヤホン単体',
+  playtime: '再生時間',
+  playTime: 'プレイ時間',
+
+  // その他
+  releaseDate: '発売日',
+  total: '合計',
+  security: 'セキュリティ',
+  warranty: '保証',
+  claspType: '留め具タイプ',
+  closureType: '留め具',
+  components: 'コンポーネント',
+  media: 'メディア',
+  case: 'ケース',
+  mist: 'ミスト',
+
+  // 掃除機・家電
+  suctionPower: '吸引力',
+  filterType: 'フィルタータイプ',
+
+  dustCapacity: '集塵容量',
+  cleaningWidth: '清掃幅',
+  noiseLevel: '騒音レベル',
 };
 
 /**
