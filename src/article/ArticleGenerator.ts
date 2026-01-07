@@ -167,6 +167,29 @@ const SPEC_LABEL_MAP: Record<string, string> = {
   // ケーブル・コネクタ
   cable: 'ケーブル',
   materials: '素材',
+
+  // ゲーム・おもちゃ
+  gameType: 'ゲームタイプ',
+  players: 'プレイ人数',
+  targetAge: '対象年齢',
+  cardCount: 'カード枚数',
+  publisher: '出版社/メーカー',
+  
+  // 文房具
+  holes: '穴数',
+  count: '穴数',
+  spacing: '穴間隔',
+  coverThickness: '表紙厚',
+  
+  // 家電・時計
+  clock: '時計機能',
+  alarm: 'アラーム',
+  sensors: 'センサー',
+  timer: 'タイマー',
+  functions: '機能',
+  supportedSize: '対応サイズ',
+  range: '測定範囲',
+  accuracy: '精度',
 };
 
 /**
@@ -1114,7 +1137,7 @@ ${score >= 80 ? '自信を持っておすすめできる商品です。' :
       // 動的レンダリング: 未処理のフィールドを自動表示
       const additionalRows = this.renderDynamicSpecs(specs);
       if (additionalRows.length > 0) {
-        infoRows.push(`| **--- 追加スペック ---** | |`);
+        // 追加スペックもメインの表に統合
         infoRows.push(...additionalRows);
       }
     }
