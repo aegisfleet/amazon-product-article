@@ -535,31 +535,24 @@ ${sourcesList}`;
       : '';
 
     const content = `<div class="product-hero-card">
-
 <div class="product-hero-image">
-
 <div class="product-image-carousel" id="carousel-${product.asin}">
   <div class="carousel-track">
     <img src="${product.images.primary}" alt="${product.title}" class="carousel-image">
     ${product.images.thumbnails.map(url => `<img src="${url}" alt="${product.title}" class="carousel-image" loading="lazy">`).join('\n    ')}
   </div>
   ${product.images.thumbnails.length > 0 ? `
-  <button class="carousel-button prev" aria-label="前へ" onclick="this.parentElement.scrollBy({left: -this.parentElement.offsetWidth, behavior: 'smooth'})">❮</button>
-  <button class="carousel-button next" aria-label="次へ" onclick="this.parentElement.scrollBy({left: this.parentElement.offsetWidth, behavior: 'smooth'})">❯</button>
+  <button class="carousel-button prev" aria-label="前へ">❮</button>
+  <button class="carousel-button next" aria-label="次へ">❯</button>
   <div class="carousel-dots"></div>
   ` : ''}
 </div>
-
 </div>
-
 <div class="product-hero-info">
-
 ${productDescription}
-
 <div class="product-score-badge">
 ${scoreEmoji} 総合評価: <strong>${score}点</strong> (${scoreText})
 </div>
-
 <div class="product-meta">
 ${availabilityInfo ? `<p>${availabilityInfo}</p>` : ''}
 <p><strong>価格</strong>: ${product.price.formatted}
@@ -567,11 +560,8 @@ ${brandInfo ? ` <strong>ブランド</strong>: ${brand}` : ''}${productDetail.mo
 ${primeBadge ? `<p>${primeBadge}</p>` : ''}
 ${releaseDateInfo ? `<p>${releaseDateInfo}</p>` : ''}
 </div>
-
 <a href="${affiliateUrl}" class="btn-amazon-hero" target="_blank" rel="noopener noreferrer">🛒 Amazonで詳細を見る</a>
-
 </div>
-
 </div>`;
 
     return {
