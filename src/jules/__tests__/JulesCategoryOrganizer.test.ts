@@ -46,8 +46,9 @@ describe('JulesCategoryOrganizer', () => {
 
             const result = organizer.getUnregisteredCategories();
 
-            // Should be ["アイロン", "カメラ", "電子レンジ"] sorted alphabetically
-            // 'アイロン' (a-i-ro-n), 'カメラ' (ka-me-ra), '電子レンジ' (de-n-shi-re-n-ji)
+            // Unicode順（デフォルトのsort）で並び替える
+            // 'アイロン' (カタカナ), 'カメラ' (カタカナ), '電子レンジ' (漢字)
+            // カタカナ間は読み順（Unicode順）で並ぶ
             expect(result).toEqual(["アイロン", "カメラ", "電子レンジ"]);
         });
     });
