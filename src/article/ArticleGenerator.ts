@@ -288,8 +288,8 @@ export class ArticleGenerator {
     const subcategory = product.categoryInfo?.sub || this.determineSubcategory(product);
     const manufacturer = this.extractManufacturer(product);
 
-    // Product images for Hugo front matter (filter out empty strings)
-    const images = product.images.primary ? [product.images.primary] : [];
+    // Product images for Hugo front matter (primary + thumbnails)
+    const images = [product.images.primary, ...product.images.thumbnails].filter(Boolean);
 
     const metadata: ArticleMetadata = {
       title,
@@ -538,7 +538,17 @@ ${sourcesList}`;
 
 <div class="product-hero-image">
 
-![${product.title}](${product.images.primary})
+<div class="product-image-carousel" id="carousel-${product.asin}">
+  <div class="carousel-track">
+    <img src="${product.images.primary}" alt="${product.title}" class="carousel-image">
+    ${product.images.thumbnails.map(url => `<img src="${url}" alt="${product.title}" class="carousel-image" loading="lazy">`).join('\n    ')}
+  </div>
+  ${product.images.thumbnails.length > 0 ? `
+  <button class="carousel-button prev" aria-label="前へ" onclick="this.parentElement.scrollBy({left: -this.parentElement.offsetWidth, behavior: 'smooth'})">❮</button>
+  <button class="carousel-button next" aria-label="次へ" onclick="this.parentElement.scrollBy({left: this.parentElement.offsetWidth, behavior: 'smooth'})">❯</button>
+  <div class="carousel-dots"></div>
+  ` : ''}
+</div>
 
 </div>
 
