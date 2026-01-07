@@ -584,6 +584,14 @@ export class ProductSearcher {
         enabled: true
       },
       {
+        name: 'wired_earphones',
+        searchIndex: 'Electronics',
+        keywords: ['有線イヤホン', 'リケーブル イヤホン', '有線イヤホン リケーブル', '中華イヤホン リケーブル', 'イヤホン ハイレゾ 有線'],
+        maxResults: 10,
+        sortBy: 'featured',
+        enabled: true
+      },
+      {
         name: 'computers',
         searchIndex: 'Computers',
         keywords: ['ノートパソコン', 'ミニPC', 'マウス', 'トラックボール', 'キーボード', 'モニター', '外付けSSD'],
