@@ -763,10 +763,11 @@ a:hover {
     font-size: 0.85rem;
   }
 
-  /* purchase-card内のテーブルはスクロール可能に */
-  .purchase-card {
+  /* テーブルのみスクロール可能にするためのラッパー */
+  .table-wrapper {
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
+    margin-bottom: var(--spacing-md);
   }
 }
 
