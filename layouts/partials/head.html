@@ -64,6 +64,9 @@
   })();
 </script>
 <script src="{{ `js/theme.js` | relURL }}" defer></script>
+{{ if .Params.asin }}
+<script src="{{ `js/carousel.js` | relURL }}" defer></script>
+{{ end }}
 
 <!-- Structured Data (JSON-LD) -->
 <!-- WebSite Schema (Home) -->
