@@ -86,6 +86,18 @@ document.addEventListener('DOMContentLoaded', function () {
         });
 
         searchInput.addEventListener('focus', (e) => {
+            // 検索窓を画面上部へスクロール（キーボード表示後のレイアウト安定を待つ）
+            setTimeout(() => {
+                const container = document.querySelector('.search-container');
+                const header = document.querySelector('.site-header');
+                const headerHeight = header ? header.offsetHeight : 0;
+
+                if (container) {
+                    const y = container.getBoundingClientRect().top + window.pageYOffset - headerHeight - 10; // ヘッダー分と余白を引く
+                    window.scrollTo({ top: y, behavior: 'smooth' });
+                }
+            }, 300);
+
             const query = e.target.value.replace(/　/g, ' ');
             if (query.trim().length < 2) {
                 // ヒント表示はfuse初期化前でも可能
