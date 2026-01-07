@@ -476,14 +476,14 @@ export class ArticleGenerator {
       })
       .join('\n');
 
-    const content = `## 参考情報ソース
+    const content = `## 🔗 参考情報ソース
 
 本記事の作成にあたり、以下の情報を参照しました：
 
 ${sourcesList}`;
 
     return {
-      title: '参考情報ソース',
+      title: '🔗 参考情報ソース',
       content,
       wordCount: this.calculateWordCount(content),
       requiredElements: ['情報ソース一覧']
@@ -706,7 +706,7 @@ ${specifications}
       ? `### 🗣️ 購入者の生の声（ユーザーストーリー）\n${userImpressionBlock}\n\n${userStoriesBlock}`
       : '';
 
-    const content = `## ユーザーレビュー分析
+    const content = `## 📊 ユーザーレビュー分析
 
 ### 👍 ユーザーが評価している点
 
@@ -725,7 +725,7 @@ ${userStories}
 ${reviewAnalysis ? this.generateSentimentAnalysis(reviewAnalysis) : ''}`;
 
     return {
-      title: 'ユーザーレビュー分析',
+      title: '📊 ユーザーレビュー分析',
       content,
       wordCount: this.calculateWordCount(content),
       requiredElements: template.requiredElements
@@ -861,7 +861,7 @@ ${investigation.analysis.recommendation.cons.map(con => `- ${con}`).join('\n')}
       ? this.formatScoreRationaleAsCard(investigation.analysis.recommendation.scoreRationale)
       : '';
 
-    const content = `## 購入推奨度
+    const content = `## ✅ 購入推奨度
 
 ### 総合評価: ${score}点/100点 (${scoreText})
 
@@ -884,7 +884,7 @@ ${score >= 80 ? '自信を持っておすすめできる商品です。' :
           '購入前に他の選択肢も検討することをおすすめします。'}`;
 
     return {
-      title: '購入推奨度',
+      title: '✅ 購入推奨度',
       content,
       wordCount: this.calculateWordCount(content),
       requiredElements: template.requiredElements
