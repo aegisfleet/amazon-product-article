@@ -174,13 +174,13 @@ const SPEC_LABEL_MAP: Record<string, string> = {
   targetAge: '対象年齢',
   cardCount: 'カード枚数',
   publisher: '出版社/メーカー',
-  
+
   // 文房具
   holes: '穴数',
   count: '穴数',
   spacing: '穴間隔',
   coverThickness: '表紙厚',
-  
+
   // 家電・時計
   clock: '時計機能',
   alarm: 'アラーム',
@@ -190,6 +190,68 @@ const SPEC_LABEL_MAP: Record<string, string> = {
   supportedSize: '対応サイズ',
   range: '測定範囲',
   accuracy: '精度',
+
+  // 食品・サプリ・医薬品
+  activeIngredients: '有効成分',
+  activeIngredient: '有効成分',
+  additives: '添加物',
+  dosage: '用法・用量',
+  calories: 'カロリー',
+  shelfLife: '消費期限/賞味期限',
+  processing: '製法',
+  recommendedFor: '推奨用途/対象',
+  mainIngredients: '主な成分',
+  keyIngredients: '主要成分',
+  form: '形状',
+
+  // 美容・健康
+  tankCapacity: 'タンク容量',
+  steamType: 'スチーム種類',
+  steamTemperature: 'スチーム温度',
+  texture: 'テクスチャー',
+
+  specialFeatures: '特殊機能',
+  modes: 'モード',
+  waterResistance: '防水性能',
+  waterproof: '防水',
+
+  // PC・ガジェット
+  interface: 'インターフェース',
+  connectorType: 'コネクタタイプ',
+  length: '長さ',
+  maxPower: '最大出力',
+  dataTransferSpeed: 'データ転送速度',
+  durability: '耐久性',
+  supportedOS: '対応OS',
+  rotation: '回転角度',
+  frequencyResponse: '周波数特性',
+  impedance: 'インピーダンス',
+  compatibleDevice: '対応機種',
+  powerConsumption: '消費電力',
+  monitor: 'モニター',
+  ergonomics: 'エルゴノミクス',
+
+  // 音楽・メディア
+  format: 'フォーマット',
+  label: 'レーベル',
+  numberOfDiscs: 'ディスク枚数',
+
+  // 生活雑貨
+  dishwasherSafe: '食洗機対応',
+  adjustability: '調整機能',
+  coating: 'コーティング',
+  thickness: '厚さ',
+  volume: '容量',
+  powerSource: '電源',
+  accessories: '付属品',
+  includedItems: '同梱物',
+  contents: '内容物',
+  size: 'サイズ',
+
+  // その他一般的
+  soleMaterial: 'ソール素材',
+  cushioning: 'クッション性',
+  outsole: 'アウトソール',
 };
 
 /**
