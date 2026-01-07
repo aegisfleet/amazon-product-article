@@ -38,7 +38,8 @@ document.addEventListener('DOMContentLoaded', function () {
                         { name: "specs", weight: 0.3 }
                     ],
 
-                    threshold: 0.4,
+                    threshold: 0.2, // 0.4から0.2へ厳格化。日本語の短いワードでの誤一致を抑制。
+                    distance: 100,
                     includeScore: true,
                     ignoreLocation: true, // Search in entire text
                     useExtendedSearch: true
