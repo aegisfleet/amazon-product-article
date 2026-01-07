@@ -96,8 +96,9 @@ export class PAAPICache {
     /**
      * Get item from cache if it exists and is valid
      * Returns null if not found, expired, or marked invalid
+     * @param options.ignoreExpiration If true, returns valid data even if expired
      */
-    public get(asin: string): ProductDetail | null {
+    public get(asin: string, options: { ignoreExpiration?: boolean } = {}): ProductDetail | null {
         const entry = this.cache[asin];
 
         if (!entry) {
@@ -111,7 +112,7 @@ export class PAAPICache {
             effectiveTtl = this.isInvestigationFileExists(asin) ? this.invalidTtl : this.ttl;
         }
 
-        if (Date.now() - entry.timestamp > effectiveTtl) {
+        if (!options.ignoreExpiration && Date.now() - entry.timestamp > effectiveTtl) {
             return null;
         }
 
@@ -196,10 +197,17 @@ export class PAAPICache {
         };
     }
 
-    /**
+     /**
      * Mark item as invalid (e.g. not found in PA-API)
+     * If there's already a 'valid' entry, do not overwrite it to prevent data loss on transient errors
      */
     public markInvalid(asin: string): void {
+        const existing = this.cache[asin];
+        if (existing && existing.status === 'valid') {
+            this.logger.info(`Not marking ASIN ${asin} as invalid because a valid cache entry already exists.`);
+            return;
+        }
+
         this.cache[asin] = {
             data: null,
             timestamp: Date.now(),
@@ -207,15 +215,15 @@ export class PAAPICache {
         };
     }
 
-    /**
+     /**
      * Get multiple items from cache
      * Returns a map of found valid items
      */
-    public getMultiple(asins: string[]): Map<string, ProductDetail> {
+    public getMultiple(asins: string[], options: { ignoreExpiration?: boolean } = {}): Map<string, ProductDetail> {
         const result = new Map<string, ProductDetail>();
 
         for (const asin of asins) {
-            const data = this.get(asin);
+            const data = this.get(asin, options);
             if (data) {
                 result.set(asin, data);
             }
