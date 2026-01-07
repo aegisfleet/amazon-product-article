@@ -620,9 +620,23 @@ export class ArticleGenerator {
     const sourcesList = validSources
       .map(source => {
         const credibility = source.credibility ? ` (${source.credibility})` : '';
-        const paapiBaseUrl = 'https://webservices.amazon.co.jp/paapi5';
+        const paapiHost = 'webservices.amazon.co.jp';
+        const paapiPathPrefix = '/paapi5';
 
-        if (source.url && !source.url.includes(paapiBaseUrl)) {
+        const isPaapiUrl = (urlString: string): boolean => {
+          try {
+            const parsed = new URL(urlString);
+            return (
+              parsed.hostname === paapiHost &&
+              parsed.pathname.startsWith(paapiPathPrefix)
+            );
+          } catch {
+            // URLとして解釈できない場合はPAAPIとはみなさない（従来動作に近づける）
+            return false;
+          }
+        };
+
+        if (source.url && !isPaapiUrl(source.url)) {
           return `- [${source.name}](${source.url})${credibility}`;
         }
         return `- ${source.name}${credibility}`;
