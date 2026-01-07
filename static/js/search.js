@@ -80,6 +80,13 @@ document.addEventListener('DOMContentLoaded', function () {
             handleSearch(query);
         });
 
+        // スクロール中のクリック誤判定を防ぐためのフラグ
+        let isSearchInputMouseDown = false;
+
+        searchInput.addEventListener('mousedown', () => {
+            isSearchInputMouseDown = true;
+        });
+
         searchInput.addEventListener('focus', (e) => {
             // 検索窓を画面上部にスクロール
             const container = document.querySelector('.search-container');
@@ -108,6 +115,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
         // Close results when clicking outside
         document.addEventListener('click', (e) => {
+            // スクロール中にmouseupがずれた場合を考慮
+            if (isSearchInputMouseDown) {
+                isSearchInputMouseDown = false;
+                return;
+            }
             if (!searchInput.contains(e.target) && !searchResults.contains(e.target)) {
                 searchResults.classList.remove('active');
             }
