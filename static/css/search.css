@@ -134,10 +134,18 @@
 /* Header Row: Title + Metrics */
 .result-header {
     display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    gap: 1rem;
-    margin-bottom: 0.2rem;
+    flex-direction: column;
+    gap: 0.4rem;
+    margin-bottom: 0.3rem;
+}
+
+@media (min-width: 640px) {
+    .result-header {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 1rem;
+    }
 }
 
 .result-title {
