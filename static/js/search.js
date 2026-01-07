@@ -81,8 +81,6 @@ document.addEventListener('DOMContentLoaded', function () {
         });
 
         searchInput.addEventListener('focus', (e) => {
-            if (!fuse) return;
-
             // 検索窓を画面上部にスクロール
             const container = document.querySelector('.search-container');
             if (container) {
@@ -91,8 +89,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
             const query = e.target.value.replace(/　/g, ' ');
             if (query.trim().length < 2) {
+                // ヒント表示はfuse初期化前でも可能
                 displaySearchTips();
-            } else {
+            } else if (fuse) {
+                // 検索実行はfuse初期化後のみ
                 const results = fuse.search(query);
                 displayResults(results);
             }
