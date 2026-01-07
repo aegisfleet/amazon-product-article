@@ -195,6 +195,8 @@ const SPEC_LABEL_MAP: Record<string, string> = {
   activeIngredients: '有効成分',
   activeIngredient: '有効成分',
   additives: '添加物',
+  ingredientDetails: '成分分量',
+  indications: '効能・効果',
   dosage: '用法・用量',
   calories: 'カロリー',
   shelfLife: '消費期限/賞味期限',
