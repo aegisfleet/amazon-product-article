@@ -815,7 +815,7 @@ ${competitorCards}
 
 </div>
 
-### ✅ 総合的な競合優位性
+### ⚔️ 総合的な競合優位性
 
 <div class="pros-cons-grid">
 
@@ -861,7 +861,7 @@ ${investigation.analysis.recommendation.cons.map(con => `- ${con}`).join('\n')}
       ? this.formatScoreRationaleAsCard(investigation.analysis.recommendation.scoreRationale)
       : '';
 
-    const content = `## ✅ 購入推奨度
+    const content = `## 📈 購入推奨度
 
 ### 総合評価: ${score}点/100点 (${scoreText})
 
@@ -884,7 +884,7 @@ ${score >= 80 ? '自信を持っておすすめできる商品です。' :
           '購入前に他の選択肢も検討することをおすすめします。'}`;
 
     return {
-      title: '✅ 購入推奨度',
+      title: '📈 購入推奨度',
       content,
       wordCount: this.calculateWordCount(content),
       requiredElements: template.requiredElements
