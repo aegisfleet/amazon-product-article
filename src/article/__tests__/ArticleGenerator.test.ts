@@ -206,11 +206,11 @@ describe('ArticleGenerator', () => {
       expect(result).toBeDefined();
       expect(result.content).toContain('<div class="product-hero-card">');
       expect(result.content).toContain('## 📦 商品の特徴');
-      expect(result.content).toContain('## ユーザーレビュー分析');
+      expect(result.content).toContain('## 📊 ユーザーレビュー分析');
       expect(result.content).toContain('## 🥊 競合商品との比較');
-      expect(result.content).toContain('## 購入推奨度');
+      expect(result.content).toContain('## ✅ 購入推奨度');
       expect(result.content).toContain('## 🛒 商品詳細・購入');
-      expect(result.content).toContain('## 参考情報ソース');
+      expect(result.content).toContain('## 🔗 参考情報ソース');
       expect(result.content).toContain('購入者の生の声');
       expect(result.content).toContain('会社員の体験談 (通勤・通学)');
       expect(result.content).toContain('多くのユーザーが満足感を得ている');
