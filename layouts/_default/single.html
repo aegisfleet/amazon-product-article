@@ -16,6 +16,15 @@
             </div>
         </header>
 
+        {{ if .TableOfContents }}
+        <nav class="table-of-contents">
+            <details open>
+                <summary>📑 目次</summary>
+                {{ .TableOfContents }}
+            </details>
+        </nav>
+        {{ end }}
+
         <div class="content">
             {{ .Content }}
         </div>

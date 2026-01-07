@@ -39,6 +39,10 @@ hasCJKLanguage = true
       [markup.goldmark.parser.attribute]
         block = true
         title = true
+  [markup.tableOfContents]
+    startLevel = 2
+    endLevel = 2
+    ordered = false
 
 # URL settings - keep article URLs at root level like /B07DZZJ2B9/
 [permalinks]
