@@ -620,9 +620,9 @@ export class ArticleGenerator {
     const sourcesList = validSources
       .map(source => {
         const credibility = source.credibility ? ` (${source.credibility})` : '';
-        const paapiBaseUrl = 'https://webservices.amazon.co.jp/paapi5/getitems';
+        const paapiBaseUrl = 'https://webservices.amazon.co.jp/paapi5';
 
-        if (source.url && source.url !== paapiBaseUrl) {
+        if (source.url && !source.url.includes(paapiBaseUrl)) {
           return `- [${source.name}](${source.url})${credibility}`;
         }
         return `- ${source.name}${credibility}`;
