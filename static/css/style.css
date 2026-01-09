@@ -604,52 +604,62 @@ a:hover {
 }
 
 /* Amazon Buttons */
-.btn-amazon-hero {
+/* 共通スタイル：すべてのAmazonボタンで統一感を持たせる */
+.btn-amazon-hero,
+.btn-amazon-large,
+.btn-amazon-small {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: var(--spacing-sm);
-  background: linear-gradient(135deg, #ff9900, #e68a00);
+  background: linear-gradient(180deg, #ff9900 0%, #e68a00 100%);
   color: #232f3e;
+  border: none;
+  text-decoration: none;
+  font-weight: 700;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+.btn-amazon-hero:hover,
+.btn-amazon-large:hover,
+.btn-amazon-small:hover {
+  background: linear-gradient(180deg, #ffad33 0%, #ff9900 100%);
+  color: #232f3e;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(255, 153, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+.btn-amazon-hero:active,
+.btn-amazon-large:active,
+.btn-amazon-small:active {
+  transform: translateY(0);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+/* サイズ別スタイル */
+.btn-amazon-hero {
   padding: var(--spacing-md) var(--spacing-xl);
   border-radius: var(--radius-lg);
-  font-weight: 700;
   font-size: 1.125rem;
-  text-decoration: none;
-  transition: var(--transition-base);
-  box-shadow: var(--shadow-md);
   margin-top: var(--spacing-md);
 }
 
-.btn-amazon-hero:hover {
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-lg);
-  background: linear-gradient(135deg, #ffad33, #ff9900);
-  color: #232f3e;
-}
-
 .btn-amazon-large {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: var(--spacing-sm);
-  background: linear-gradient(135deg, #ff9900, #e68a00);
-  color: #232f3e;
-  padding: var(--spacing-lg) var(--spacing-lg);
+  padding: var(--spacing-lg) var(--spacing-xl);
   border-radius: var(--radius-lg);
-  font-weight: 700;
   font-size: 1.25rem;
-  text-decoration: none;
-  transition: var(--transition-base);
-  box-shadow: var(--shadow-lg);
   width: 100%;
   text-align: center;
 }
 
-.btn-amazon-large:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 10px 20px rgba(255, 153, 0, 0.3);
-  color: #232f3e;
+.btn-amazon-small {
+  padding: var(--spacing-sm) var(--spacing-md);
+  border-radius: var(--radius-md);
+  font-size: 0.875rem;
+  font-weight: 600;
+  gap: var(--spacing-xs);
+  margin-top: var(--spacing-sm);
 }
 
 /* Feature Grid */
@@ -981,28 +991,6 @@ a:hover {
   font-weight: 700;
   color: var(--color-primary);
   margin: 0 0.1rem;
-}
-
-.btn-amazon-small {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: var(--spacing-xs);
-  background: linear-gradient(135deg, #ff9900, #e68a00);
-  color: #232f3e;
-  padding: var(--spacing-sm) var(--spacing-md);
-  border-radius: var(--radius-md);
-  font-weight: 600;
-  font-size: 0.875rem;
-  text-decoration: none;
-  transition: var(--transition-base);
-  margin-top: var(--spacing-sm);
-}
-
-.btn-amazon-small:hover {
-  transform: translateY(-1px);
-  box-shadow: var(--shadow-sm);
-  color: #232f3e;
 }
 
 /* Competitor Preview (PA-API Product Info) */
