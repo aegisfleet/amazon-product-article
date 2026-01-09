@@ -64,7 +64,7 @@ document.addEventListener('DOMContentLoaded', function () {
             const j = Math.floor(Math.random() * (i + 1));
             [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
         }
-        const selected = shuffled.slice(0, 5);
+        const selected = shuffled.slice(0, 6);
 
         // Regenerate HTML using safe DOM APIs
         // Clear existing content

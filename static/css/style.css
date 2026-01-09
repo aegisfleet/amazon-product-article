@@ -1764,7 +1764,9 @@ a:hover {
 
 /* ミニカード */
 .pickup-card {
-  flex: 0 0 140px;
+  flex: 1 1 0;
+  min-width: 100px;
+  max-width: 180px;
   scroll-snap-align: start;
   background: white;
   border-radius: var(--radius-lg);
@@ -1872,10 +1874,33 @@ a:hover {
   color: var(--color-text-muted);
 }
 
-/* レスポンシブ対応 */
-@media (min-width: 640px) {
+/* レスポンシブ対応 - モバイルでグリッド表示 */
+@media (max-width: 767px) {
+  .pickup-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    overflow-x: visible;
+    scroll-snap-type: none;
+  }
+
   .pickup-card {
-    flex: 0 0 160px;
+    flex: none;
+    width: 100%;
+    min-width: unset;
+    max-width: unset;
+  }
+
+  .pickup-card-image {
+    height: 100px;
+  }
+}
+
+/* タブレット以上: flexレイアウトで6件表示 */
+@media (min-width: 768px) {
+  .pickup-card {
+    flex: 1 1 0;
+    min-width: 120px;
+    max-width: none;
   }
 
   .pickup-card-image {
@@ -1884,10 +1909,6 @@ a:hover {
 }
 
 @media (min-width: 1024px) {
-  .pickup-card {
-    flex: 0 0 180px;
-  }
-
   .pickup-card-image {
     height: 130px;
   }

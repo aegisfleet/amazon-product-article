@@ -34,7 +34,7 @@
     {{ $highScoreArticles := where (where .Site.RegularPages "Section" "articles") ".Params.score" "ge" 90 }}
     {{ if gt (len $highScoreArticles) 0 }}
     {{ $shuffled := shuffle $highScoreArticles }}
-    {{ $pickupItems := first 5 $shuffled }}
+    {{ $pickupItems := first 6 $shuffled }}
     <div class="pickup-section">
         <div class="pickup-header">
             <h3 class="pickup-title">🏆 高評価おすすめ</h3>
