@@ -156,6 +156,11 @@ document.addEventListener('DOMContentLoaded', function () {
                     const y = container.getBoundingClientRect().top + window.pageYOffset - headerHeight - 10;
                     window.scrollTo({ top: y, behavior: 'smooth' });
                 }
+
+                // スクロール完了後に高さを再計算
+                setTimeout(() => {
+                    updateSearchResultsHeight();
+                }, 500);
             }, 100);
 
             // スクロール完了後にフラグをリセット
@@ -176,6 +181,11 @@ document.addEventListener('DOMContentLoaded', function () {
                     const y = container.getBoundingClientRect().top + window.pageYOffset - headerHeight - 10; // ヘッダー分と余白を引く
                     window.scrollTo({ top: y, behavior: 'smooth' });
                 }
+
+                // スクロール完了後に高さを再計算（smooth scrollの完了を待つ）
+                setTimeout(() => {
+                    updateSearchResultsHeight();
+                }, 500);
             }, 300);
 
             const query = e.target.value.replace(/　/g, ' ');
