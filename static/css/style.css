@@ -742,17 +742,44 @@ a:hover {
 
 /* Purchase Card */
 .purchase-card {
-  background: var(--bg-gradient-purchase);
-  border: 2px solid #f59e0b;
+  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+  border: 2px solid var(--color-border);
   border-radius: var(--radius-xl);
   padding: var(--spacing-xl);
   margin: var(--spacing-lg) 0;
   text-align: center;
+  box-shadow: var(--shadow-md);
+  position: relative;
+}
+
+/* 上部にアクセントライン */
+.purchase-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #ff9900, #ffad33);
+  border-radius: var(--radius-xl) var(--radius-xl) 0 0;
+}
+
+[data-theme="dark"] .purchase-card {
+  background: linear-gradient(135deg, #1f2937 0%, #374151 100%);
+  border-color: var(--color-border);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .purchase-card {
+    background: linear-gradient(135deg, #1f2937 0%, #374151 100%);
+    border-color: var(--color-border);
+  }
 }
 
 .purchase-card h3 {
   margin-top: 0;
   margin-bottom: var(--spacing-md);
+  color: var(--color-text-main);
 }
 
 .purchase-card> :last-child {
@@ -1705,9 +1732,17 @@ a:hover {
 }
 
 @keyframes shuffle-rotate {
-  0% { transform: rotate(0deg); }
-  50% { transform: rotate(180deg) scale(1.1); }
-  100% { transform: rotate(360deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+
+  50% {
+    transform: rotate(180deg) scale(1.1);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 /* ピックアップグリッド（横スクロール） */
@@ -1854,7 +1889,7 @@ a:hover {
   .pickup-card {
     flex: 0 0 160px;
   }
-  
+
   .pickup-card-image {
     height: 120px;
   }
@@ -1864,19 +1899,19 @@ a:hover {
   .pickup-card {
     flex: 0 0 180px;
   }
-  
+
   .pickup-card-image {
     height: 130px;
   }
-  
+
   .pickup-card-title {
     font-size: 0.8rem;
   }
-  
+
   .pickup-card-score {
     font-size: 0.75rem;
   }
-  
+
   .pickup-card-price {
     font-size: 0.7rem;
   }
