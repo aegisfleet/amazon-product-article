@@ -47,24 +47,74 @@ document.addEventListener('DOMContentLoaded', function () {
         }
         const selected = shuffled.slice(0, 5);
 
-        // Regenerate HTML
-        pickupGrid.innerHTML = selected.map(item => `
-            <a href="${item.url}" class="pickup-card" data-score="${item.score}" data-price="${item.price}">
-                <div class="pickup-card-image">
-                    ${item.image 
-                        ? `<img src="${item.image}" alt="${item.title}" loading="lazy">`
-                        : `<div class="pickup-card-noimage">画像なし</div>`
-                    }
-                </div>
-                <div class="pickup-card-content">
-                    <p class="pickup-card-title">${item.title}</p>
-                    <div class="pickup-card-meta">
-                        <span class="pickup-card-score">🏆 ${item.score}点</span>
-                        ${item.price ? `<span class="pickup-card-price">${item.price}</span>` : ''}
-                    </div>
-                </div>
-            </a>
-        `).join('');
+        // Regenerate HTML using safe DOM APIs
+        // Clear existing content
+        pickupGrid.innerHTML = '';
+
+        selected.forEach(item => {
+            // Create anchor card
+            const cardLink = document.createElement('a');
+            cardLink.href = item.url;
+            cardLink.className = 'pickup-card';
+            if (item.score !== undefined && item.score !== null) {
+                cardLink.setAttribute('data-score', String(item.score));
+            }
+            if (item.price) {
+                cardLink.setAttribute('data-price', String(item.price));
+            }
+
+            // Image container
+            const imageContainer = document.createElement('div');
+            imageContainer.className = 'pickup-card-image';
+            if (item.image) {
+                const img = document.createElement('img');
+                img.src = item.image;
+                img.alt = item.title != null ? String(item.title) : '';
+                img.loading = 'lazy';
+                imageContainer.appendChild(img);
+            } else {
+                const noImageDiv = document.createElement('div');
+                noImageDiv.className = 'pickup-card-noimage';
+                noImageDiv.textContent = '画像なし';
+                imageContainer.appendChild(noImageDiv);
+            }
+
+            // Content container
+            const contentContainer = document.createElement('div');
+            contentContainer.className = 'pickup-card-content';
+
+            const titleP = document.createElement('p');
+            titleP.className = 'pickup-card-title';
+            if (item.title != null) {
+                titleP.textContent = String(item.title);
+            }
+            contentContainer.appendChild(titleP);
+
+            const metaDiv = document.createElement('div');
+            metaDiv.className = 'pickup-card-meta';
+
+            const scoreSpan = document.createElement('span');
+            scoreSpan.className = 'pickup-card-score';
+            if (item.score !== undefined && item.score !== null) {
+                scoreSpan.textContent = `🏆 ${item.score}点`;
+            }
+            metaDiv.appendChild(scoreSpan);
+
+            if (item.price) {
+                const priceSpan = document.createElement('span');
+                priceSpan.className = 'pickup-card-price';
+                priceSpan.textContent = String(item.price);
+                metaDiv.appendChild(priceSpan);
+            }
+
+            contentContainer.appendChild(metaDiv);
+
+            // Assemble card
+            cardLink.appendChild(imageContainer);
+            cardLink.appendChild(contentContainer);
+
+            pickupGrid.appendChild(cardLink);
+        });
 
         // Animation for button
         shuffleBtn.classList.add('shuffle-animation');
