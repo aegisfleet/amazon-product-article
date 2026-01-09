@@ -55,6 +55,14 @@
     padding: 0.5rem 0;
 }
 
+/* スマートフォン: 検索結果の高さはJSで動的に設定（キーボード表示状態に応じて調整）
+   JSが動作しない場合のフォールバック値 */
+@media (max-width: 640px) {
+    #search-results {
+        max-height: 60vh;
+    }
+}
+
 #search-results.active {
     display: block;
     animation: slideDown 0.2s ease-out;

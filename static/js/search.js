@@ -11,6 +11,41 @@ document.addEventListener('DOMContentLoaded', function () {
     }
     searchInput.dataset.searchInitialized = 'true';
 
+    // スマートフォンでの検索結果の高さを動的に調整（仮想キーボード対応）
+    function updateSearchResultsHeight() {
+        // モバイル判定（640px以下）
+        if (window.innerWidth > 640) {
+            searchResults.style.maxHeight = '';
+            return;
+        }
+
+        // Visual Viewport APIが利用可能な場合
+        if (window.visualViewport) {
+            const viewport = window.visualViewport;
+            const searchContainer = document.querySelector('.search-container');
+            if (!searchContainer) return;
+
+            // 検索コンテナの下端からvisual viewportの下端までの高さを計算
+            const containerRect = searchContainer.getBoundingClientRect();
+            const searchInputHeight = searchInput.offsetHeight;
+            const containerBottom = containerRect.top + searchInputHeight + 8; // 8px = 検索結果のtop margin
+            const availableHeight = viewport.height - containerBottom - 20; // 20px = 下部余白
+
+            // 最小200px、最大none
+            const maxHeight = Math.max(200, availableHeight);
+            searchResults.style.maxHeight = `${maxHeight}px`;
+        }
+    }
+
+    // Visual Viewport resize イベントで高さを動的に更新
+    if (window.visualViewport) {
+        window.visualViewport.addEventListener('resize', updateSearchResultsHeight);
+        window.visualViewport.addEventListener('scroll', updateSearchResultsHeight);
+    }
+
+    // ウィンドウリサイズ時も更新
+    window.addEventListener('resize', updateSearchResultsHeight);
+
     // Load Fuse.js if not already loaded
     if (window.Fuse) {
         initializeSearch();
@@ -212,6 +247,7 @@ document.addEventListener('DOMContentLoaded', function () {
         if (results.length === 0) {
             searchResults.innerHTML = '<div class="search-result-item"><span class="result-summary">検索結果が見つかりませんでした</span></div>';
             searchResults.classList.add('active');
+            updateSearchResultsHeight();
             return;
         }
 
@@ -259,6 +295,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         searchResults.innerHTML = html;
         searchResults.classList.add('active');
+        updateSearchResultsHeight();
     }
 
     function displaySearchTips() {
@@ -293,5 +330,6 @@ document.addEventListener('DOMContentLoaded', function () {
         `;
         searchResults.innerHTML = tipsHtml;
         searchResults.classList.add('active');
+        updateSearchResultsHeight();
     }
 });
