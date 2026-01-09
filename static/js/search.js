@@ -82,8 +82,52 @@ document.addEventListener('DOMContentLoaded', function () {
         // スクロール中のクリック誤判定を防ぐためのフラグ
         let isSearchInputMouseDown = false;
 
+        // スクロール時に検索結果をフェードアウト（モバイル対応）
+        let lastScrollY = window.scrollY;
+        let scrollTimeout;
+        let isProgramScrolling = false; // プログラムによるスクロール中フラグ
+
+        function updateScrollPosition() {
+            lastScrollY = window.scrollY;
+        }
+
         searchInput.addEventListener('mousedown', () => {
             isSearchInputMouseDown = true;
+        });
+
+        // 検索窓クリック時に検索結果を再表示（フェードアウト後やフォーカス済みの場合）
+        searchInput.addEventListener('click', (e) => {
+            // 既に表示されている場合は何もしない
+            if (searchResults.classList.contains('active')) {
+                return;
+            }
+
+            const query = e.target.value.replace(/　/g, ' ');
+            if (query.trim().length < 2) {
+                displaySearchTips();
+            } else if (fuse) {
+                const results = fuse.search(query);
+                displayResults(results);
+            }
+
+            // 再クリック時も自動スクロールを実行
+            isProgramScrolling = true;
+            setTimeout(() => {
+                const container = document.querySelector('.search-container');
+                const header = document.querySelector('.site-header');
+                const headerHeight = header ? header.offsetHeight : 0;
+
+                if (container) {
+                    const y = container.getBoundingClientRect().top + window.pageYOffset - headerHeight - 10;
+                    window.scrollTo({ top: y, behavior: 'smooth' });
+                }
+            }, 100);
+
+            // スクロール完了後にフラグをリセット
+            setTimeout(() => {
+                isProgramScrolling = false;
+                updateScrollPosition();
+            }, 800);
         });
 
         searchInput.addEventListener('focus', (e) => {
@@ -120,6 +164,47 @@ document.addEventListener('DOMContentLoaded', function () {
             if (!searchInput.contains(e.target) && !searchResults.contains(e.target)) {
                 searchResults.classList.remove('active');
             }
+        });
+
+
+
+        window.addEventListener('scroll', () => {
+            // プログラムによるスクロール中は無視
+            if (isProgramScrolling) {
+                return;
+            }
+
+            if (!searchResults.classList.contains('active')) {
+                updateScrollPosition();
+                return;
+            }
+
+            const scrollDelta = Math.abs(window.scrollY - lastScrollY);
+
+            // 100px以上スクロールしたらフェードアウト
+            if (scrollDelta > 100) {
+                searchResults.classList.add('fade-out');
+
+                // フェードアウト完了後にactiveクラスを削除
+                clearTimeout(scrollTimeout);
+                scrollTimeout = setTimeout(() => {
+                    searchResults.classList.remove('active', 'fade-out');
+                    updateScrollPosition();
+                }, 200);
+            }
+        }, { passive: true });
+
+        // フォーカス時にプログラムスクロールのフラグを設定
+        searchInput.addEventListener('focus', () => {
+            // プログラムスクロール中フラグをセット
+            isProgramScrolling = true;
+
+            // スクロール完了後にフラグをリセットしてスクロール位置を更新
+            // (フォーカス時のsetTimeoutスクロール300ms + smoothスクロール完了猶予500ms)
+            setTimeout(() => {
+                isProgramScrolling = false;
+                updateScrollPosition();
+            }, 1000);
         });
     }
 
