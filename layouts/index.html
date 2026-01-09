@@ -30,6 +30,54 @@
         </div>
     </div>
 
+    <!-- High Score Pickup Section (90点以上) -->
+    {{ $highScoreArticles := where (where .Site.RegularPages "Section" "articles") ".Params.score" "ge" 90 }}
+    {{ if gt (len $highScoreArticles) 0 }}
+    {{ $shuffled := shuffle $highScoreArticles }}
+    {{ $pickupItems := first 5 $shuffled }}
+    <div class="pickup-section">
+        <div class="pickup-header">
+            <h3 class="pickup-title">🏆 高評価おすすめ</h3>
+            <span class="pickup-subtitle">90点以上の厳選商品</span>
+            <button id="shuffle-pickup" class="shuffle-btn" aria-label="表示商品をシャッフル">
+                🔀 シャッフル
+            </button>
+        </div>
+        <div class="pickup-grid" id="pickup-grid">
+            {{ range $pickupItems }}
+            <a href="{{ .RelPermalink }}" class="pickup-card" data-score="{{ .Params.score }}" data-price="{{ .Params.price }}">
+                <div class="pickup-card-image">
+                    {{ if .Params.images }}
+                    <img src="{{ index .Params.images 0 }}" alt="{{ .Title }}" loading="lazy">
+                    {{ else }}
+                    <div class="pickup-card-noimage">画像なし</div>
+                    {{ end }}
+                </div>
+                <div class="pickup-card-content">
+                    <p class="pickup-card-title">{{ .Title | truncate 30 }}</p>
+                    <div class="pickup-card-meta">
+                        <span class="pickup-card-score">🏆 {{ .Params.score }}点</span>
+                        {{ if .Params.price }}
+                        <span class="pickup-card-price">{{ .Params.price }}</span>
+                        {{ end }}
+                    </div>
+                </div>
+            </a>
+            {{ end }}
+        </div>
+    </div>
+    <!-- Pickup Data for Shuffle -->
+    <script id="pickup-data" type="application/json">
+    [{{ range $index, $item := $highScoreArticles }}{{ if $index }},{{ end }}{
+        "url": "{{ $item.RelPermalink }}",
+        "title": "{{ $item.Title | truncate 30 }}",
+        "image": "{{ with $item.Params.images }}{{ index . 0 }}{{ end }}",
+        "score": {{ $item.Params.score | default 0 }},
+        "price": "{{ $item.Params.price }}"
+    }{{ end }}]
+    </script>
+    {{ end }}
+
     <!-- Search Section -->
     <div class="search-container">
         <div class="search-input-wrapper">

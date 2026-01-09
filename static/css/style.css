@@ -1602,3 +1602,282 @@ a:hover {
     padding: var(--spacing-xs) var(--spacing-sm);
   }
 }
+
+/* =====================================================
+   HIGH SCORE PICKUP SECTION
+   ===================================================== */
+
+.pickup-section {
+  background: linear-gradient(135deg, #fef3c7 0%, #fcd34d 100%);
+  border: 2px solid #f59e0b;
+  border-radius: var(--radius-xl);
+  padding: var(--spacing-lg);
+  margin-bottom: var(--spacing-xl);
+  box-shadow: 0 4px 15px rgba(245, 158, 11, 0.15);
+}
+
+[data-theme="dark"] .pickup-section {
+  background: linear-gradient(135deg, #78350f 0%, #92400e 100%);
+  border-color: #d97706;
+  box-shadow: 0 4px 15px rgba(217, 119, 6, 0.2);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .pickup-section {
+    background: linear-gradient(135deg, #78350f 0%, #92400e 100%);
+    border-color: #d97706;
+    box-shadow: 0 4px 15px rgba(217, 119, 6, 0.2);
+  }
+}
+
+.pickup-header {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  margin-bottom: var(--spacing-md);
+  flex-wrap: wrap;
+}
+
+.pickup-title {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: #92400e;
+  margin: 0;
+}
+
+[data-theme="dark"] .pickup-title {
+  color: #fcd34d;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .pickup-title {
+    color: #fcd34d;
+  }
+}
+
+.pickup-subtitle {
+  font-size: 0.8rem;
+  color: #a16207;
+  background: rgba(255, 255, 255, 0.6);
+  padding: 0.2rem 0.6rem;
+  border-radius: 9999px;
+  font-weight: 500;
+}
+
+[data-theme="dark"] .pickup-subtitle {
+  color: #fde68a;
+  background: rgba(0, 0, 0, 0.25);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .pickup-subtitle {
+    color: #fde68a;
+    background: rgba(0, 0, 0, 0.25);
+  }
+}
+
+/* シャッフルボタン */
+.shuffle-btn {
+  margin-left: auto;
+  background: linear-gradient(135deg, #f59e0b, #d97706);
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: var(--transition-base);
+  box-shadow: 0 2px 6px rgba(217, 119, 6, 0.3);
+}
+
+.shuffle-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(217, 119, 6, 0.4);
+}
+
+.shuffle-btn:active {
+  transform: scale(0.98);
+}
+
+.shuffle-btn.shuffle-animation {
+  animation: shuffle-rotate 0.3s ease-out;
+}
+
+@keyframes shuffle-rotate {
+  0% { transform: rotate(0deg); }
+  50% { transform: rotate(180deg) scale(1.1); }
+  100% { transform: rotate(360deg); }
+}
+
+/* ピックアップグリッド（横スクロール） */
+.pickup-grid {
+  display: flex;
+  gap: var(--spacing-md);
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: var(--spacing-sm);
+  scrollbar-width: thin;
+  scrollbar-color: rgba(0, 0, 0, 0.2) transparent;
+}
+
+.pickup-grid::-webkit-scrollbar {
+  height: 6px;
+}
+
+.pickup-grid::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.pickup-grid::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 3px;
+}
+
+.pickup-grid::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+/* ミニカード */
+.pickup-card {
+  flex: 0 0 140px;
+  scroll-snap-align: start;
+  background: white;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition-base);
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+}
+
+.pickup-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+}
+
+[data-theme="dark"] .pickup-card {
+  background: var(--color-bg-card);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .pickup-card {
+    background: var(--color-bg-card);
+  }
+}
+
+.pickup-card-image {
+  width: 100%;
+  height: 100px;
+  overflow: hidden;
+  background: #f9fafb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pickup-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.pickup-card-noimage {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #9ca3af;
+  font-size: 0.75rem;
+  background: #f3f4f6;
+}
+
+.pickup-card-content {
+  padding: var(--spacing-sm);
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.pickup-card-title {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--color-text-main);
+  margin: 0 0 var(--spacing-xs) 0;
+  line-height: 1.3;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.pickup-card-meta {
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.pickup-card-score {
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: #ca8a04;
+  background: #fef9c3;
+  padding: 2px 6px;
+  border-radius: 4px;
+  width: fit-content;
+}
+
+[data-theme="dark"] .pickup-card-score {
+  color: #fde047;
+  background: rgba(234, 179, 8, 0.2);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .pickup-card-score {
+    color: #fde047;
+    background: rgba(234, 179, 8, 0.2);
+  }
+}
+
+.pickup-card-price {
+  font-size: 0.65rem;
+  font-weight: 600;
+  color: var(--color-text-muted);
+}
+
+/* レスポンシブ対応 */
+@media (min-width: 640px) {
+  .pickup-card {
+    flex: 0 0 160px;
+  }
+  
+  .pickup-card-image {
+    height: 120px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .pickup-card {
+    flex: 0 0 180px;
+  }
+  
+  .pickup-card-image {
+    height: 130px;
+  }
+  
+  .pickup-card-title {
+    font-size: 0.8rem;
+  }
+  
+  .pickup-card-score {
+    font-size: 0.75rem;
+  }
+  
+  .pickup-card-price {
+    font-size: 0.7rem;
+  }
+}
