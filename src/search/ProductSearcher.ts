@@ -766,6 +766,22 @@ export class ProductSearcher {
         maxResults: 10,
         sortBy: 'featured',
         enabled: true
+      },
+      {
+        name: 'kindle_books',
+        searchIndex: 'KindleStore',
+        keywords: ['ビジネス本', '自己啓発', '投資', '技術書', 'Kindle本 おすすめ'],
+        maxResults: 10,
+        sortBy: 'featured',
+        enabled: true
+      },
+      {
+        name: 'novels',
+        searchIndex: 'Books',
+        keywords: ['ミステリー小説', 'ライトノベル', '時代小説', 'SF 小説', 'ベストセラー 小説'],
+        maxResults: 10,
+        sortBy: 'featured',
+        enabled: true
       }
     ];
   }
@@ -877,7 +893,9 @@ export class ProductSearcher {
       'diy': 'DIY',
       'gaming': 'VideoGames',
       'watches': 'Watches',
-      'telework': 'Electronics'
+      'telework': 'Electronics',
+      'kindle_books': 'KindleStore',
+      'novels': 'Books'
     };
     return categoryMap[categoryName.toLowerCase()] || 'All';
   }
