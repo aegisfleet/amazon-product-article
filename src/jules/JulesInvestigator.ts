@@ -295,17 +295,12 @@ export class JulesInvestigator {
    */
   formatInvestigationPrompt(product: Product, existingData?: InvestigationResult['analysis']): string {
     // JSTで現在の日付を取得 (YYYY-MM-DD)
-    const formatter = new Intl.DateTimeFormat('ja-JP', {
+    const today = new Date().toLocaleDateString('ja-JP', {
       timeZone: 'Asia/Tokyo',
       year: 'numeric',
       month: '2-digit',
-      day: '2-digit',
-    });
-    const parts = formatter.formatToParts(new Date());
-    const year = parts.find(p => p.type === 'year')?.value;
-    const month = parts.find(p => p.type === 'month')?.value;
-    const day = parts.find(p => p.type === 'day')?.value;
-    const today = `${year}-${month}-${day}`;
+      day: '2-digit'
+    }).replace(/\//g, '-');
 
     // 既存データがある場合の追加指示
     const updateInstruction = existingData
