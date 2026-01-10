@@ -137,26 +137,28 @@ document.addEventListener('DOMContentLoaded', function () {
 
             // 位置をチェックして必要ならスクロール実行
             function checkAndScroll() {
-                // ヘッダーの高さは毎回取得（IME表示でヘッダーが隠れる場合に対応）
-                const headerHeight = header ? header.offsetHeight : 0;
-                const targetPosition = headerHeight + 10;
+                // ヘッダーが画面内に見えているかチェック
+                const headerRect = header ? header.getBoundingClientRect() : null;
+                const isHeaderVisible = headerRect && headerRect.bottom > 0;
+
+                // ヘッダーが見える場合はヘッダー直下を基準に、見えない場合は画面上端を基準に
+                const targetPosition = isHeaderVisible ? (headerRect.bottom + 10) : 10;
+                const offsetForScroll = isHeaderVisible ? (header.offsetHeight + 10) : 10;
+
                 const containerTop = container.getBoundingClientRect().top;
 
-                // 検索窓が適正位置（ヘッダー+10px ～ ヘッダー+60px）にあればスクロール不要
+                // 検索窓が適正位置にあればスクロール不要
                 if (containerTop >= targetPosition && containerTop <= targetPosition + 50) {
                     return false;
                 }
 
                 // 目標スクロール位置を計算
-                const y = containerTop + window.pageYOffset - headerHeight - 10;
+                const y = containerTop + window.pageYOffset - offsetForScroll;
 
-                // 上がりすぎている場合（containerTop < targetPosition）は即座にスクロール
-                // 下にある場合はスムーススクロール
+                // 上がりすぎている場合は即座にスクロール、下にある場合はスムーススクロール
                 if (containerTop < targetPosition) {
-                    // 上がりすぎ → 即座に下げる
                     window.scrollTo({ top: y, behavior: 'instant' });
                 } else {
-                    // 下にある → スムーススクロールで上げる
                     window.scrollTo({ top: y, behavior: 'smooth' });
                 }
                 return true;
