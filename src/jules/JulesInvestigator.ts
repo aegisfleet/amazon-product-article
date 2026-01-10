@@ -354,6 +354,9 @@ PA-APIのエンドポイント: https://webservices.amazon.co.jp/paapi5/getitems
 万が一スクリプトを変更した場合でも、その変更をコミット対象に含めないでください。
 コミットすべきファイルは \`data/investigations/${product.asin}.json\` のみです。
 
+**【重要：変更の反映（Git Add）】**
+ファイル \`data/investigations/${product.asin}.json\` を作成・更新した後は、必ず \`git add data/investigations/${product.asin}.json\` を実行して変更をステージングしてください。これにより、作成されるPull Requestに変更が含まれるようになります。
+
 スクリプトは環境変数（AMAZON_ACCESS_KEY, AMAZON_SECRET_KEY, AMAZON_PARTNER_TAG）を使用して認証を行います。
 
 商品「${product.title}」について以下の観点で詳細調査を実施してください：
