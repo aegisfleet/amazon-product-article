@@ -179,31 +179,45 @@ function getOptions(): CLIOptions {
 }
 
 /**
- * JSONの修復を試みる
+ * コンテンツの修復を試みる（JSON/日付形式など）
  */
-function tryRepairJson(content: string): string | null {
-    // 前後の空白を削除
+function tryRepairContent(content: string, fileName: string): string | null {
     let repaired = content.trim();
+    let modified = false;
 
-    // Markdownコードブロックの除去
-    const codeBlockMatch = repaired.match(/^```json\s*([\s\S]*?)\s*```$/i);
-    if (codeBlockMatch && codeBlockMatch[1]) {
-        repaired = codeBlockMatch[1].trim();
+    // JSON かつ Markdownコードブロックに含まれている場合の除去
+    if (fileName.endsWith('.json')) {
+        const codeBlockMatch = repaired.match(/^```json\s*([\s\S]*?)\s*```$/i);
+        if (codeBlockMatch && codeBlockMatch[1]) {
+            repaired = codeBlockMatch[1].trim();
+            modified = true;
+        }
     }
 
-    // パースを試行
-    try {
-        JSON.parse(repaired);
-        return repaired;
-    } catch {
-        return null;
+    // 不正な日付形式の修正 (e.g., 2026-001-07 -> 2026-01-07)
+    // 今回発生した 00X 形式の月を 0X に修正する
+    const invalidDatePattern = /(\d{4}-)00(\d-\d{2})/g;
+    if (invalidDatePattern.test(repaired)) {
+        repaired = repaired.replace(invalidDatePattern, '$10$2');
+        modified = true;
     }
+
+    // JSONの場合は最後にパースチェック
+    if (fileName.endsWith('.json')) {
+        try {
+            JSON.parse(repaired);
+        } catch {
+            return null;
+        }
+    }
+
+    return modified ? repaired : null;
 }
 
 /**
- * 修正されたJSONをリポジトリにPushする
+ * 修正されたコンテンツをリポジトリにPushする
  */
-async function repairAndPushJson(
+async function repairAndPushContent(
     octokit: Octokit,
     owner: string,
     repo: string,
@@ -217,7 +231,7 @@ async function repairAndPushJson(
         owner,
         repo,
         path,
-        message: `chore: repair invalid JSON format in ${path} [skip ci]`,
+        message: `chore: repair invalid format/date in ${path} [skip ci]`,
         content: Buffer.from(content).toString('base64'),
         branch,
         sha,
@@ -262,10 +276,10 @@ async function validateJsonFiles(
                     JSON.parse(content);
                 } catch (parseError) {
                     // 自動修復を試みる
-                    const repairedContent = tryRepairJson(content);
+                    const repairedContent = tryRepairContent(content, file);
 
                     if (repairedContent) {
-                        await repairAndPushJson(
+                        await repairAndPushContent(
                             octokit,
                             owner,
                             repo,
@@ -303,6 +317,84 @@ async function validateJsonFiles(
     }
 
     logger.info('All JSON files are valid');
+    return { passed: true };
+}
+
+/**
+ * PRに含まれるMarkdownファイルの日付妥当性を検証（および必要に応じて修復）する
+ */
+async function validateMarkdownFiles(
+    octokit: Octokit,
+    owner: string,
+    repo: string,
+    branch: string,
+    files: string[]
+): Promise<{ passed: boolean; repaired?: boolean; message?: string }> {
+    const mdFiles = files.filter(f => f.endsWith('.md'));
+
+    if (mdFiles.length === 0) {
+        return { passed: true };
+    }
+
+    logger.info(`Validating ${mdFiles.length} Markdown file(s)...`);
+
+    let anyRepaired = false;
+
+    for (const file of mdFiles) {
+        try {
+            const { data } = await octokit.repos.getContent({
+                owner,
+                repo,
+                path: file,
+                ref: branch,
+            });
+
+            if ('content' in data && typeof data.content === 'string') {
+                const content = Buffer.from(data.content, 'base64').toString('utf-8');
+
+                // 日付の形式チェック ( Hugo が受け付けない形式を検出 )
+                // last_investigated: "2026-001-07" など
+                const invalidDatePattern = /(\d{4}-)00(\d-\d{2})/;
+                if (invalidDatePattern.test(content)) {
+                    logger.warn(`  Invalid date detected in ${file}`);
+                    const repairedContent = tryRepairContent(content, file);
+
+                    if (repairedContent) {
+                        await repairAndPushContent(
+                            octokit,
+                            owner,
+                            repo,
+                            branch,
+                            file,
+                            repairedContent,
+                            data.sha
+                        );
+                        anyRepaired = true;
+                    } else {
+                        return {
+                            passed: false,
+                            message: `Invalid date format in ${file} that could not be auto-repaired.`
+                        };
+                    }
+                }
+            }
+        } catch (error) {
+            const errorMessage = error instanceof Error ? error.message : String(error);
+            return {
+                passed: false,
+                message: `Error validating ${file}: ${errorMessage}`
+            };
+        }
+    }
+
+    if (anyRepaired) {
+        return {
+            passed: false,
+            repaired: true,
+            message: 'Invalid date formats were found and automatically repaired.'
+        };
+    }
+
     return { passed: true };
 }
 
@@ -427,17 +519,17 @@ async function main(): Promise<void> {
 
         if (!jsonValidation.passed) {
             if (jsonValidation.repaired) {
-                logger.info('Auto-repair completed. PR will be reconsidered in the next trigger.');
+                logger.info('Auto-repair completed for JSON. PR will be reconsidered in the next trigger.');
 
                 // 修復成功のコメントを残す
                 await octokit.issues.createComment({
                     owner: options.owner,
                     repo: options.repo,
                     issue_number: options.prNumber,
-                    body: `🛠 **JSON Auto-Repair Completed**\n\n不正な形式の JSON が検出されましたが、自動的に修復して更新しました。次回の実行をお待ちください。`
+                    body: `🛠 **Data Auto-Repair Completed**\n\n不正な形式の JSON または日付が検出されましたが、自動的に修復して更新しました。次回の実行をお待ちください。`
                 });
 
-                process.exit(0); // 修復は成功したので正常終了（次回のトリガーを待つ）
+                process.exit(0);
             }
 
             logger.error(`JSON validation failed: ${jsonValidation.message}`);
@@ -450,6 +542,39 @@ async function main(): Promise<void> {
                 body: `❌ **JSON Validation Failed**\n\n${jsonValidation.message}\n\nこのエラーを修正するまで自動マージは行われません。`
             });
 
+            process.exit(1);
+        }
+
+        // Markdownファイルの日付をチェック
+        const mdValidation = await validateMarkdownFiles(
+            octokit,
+            options.owner,
+            options.repo,
+            pr.head,
+            pr.changedFiles
+        );
+
+        if (!mdValidation.passed) {
+            if (mdValidation.repaired) {
+                logger.info('Auto-repair completed for Markdown. PR will be reconsidered in the next trigger.');
+
+                await octokit.issues.createComment({
+                    owner: options.owner,
+                    repo: options.repo,
+                    issue_number: options.prNumber,
+                    body: `🛠 **Markdown Auto-Repair Completed**\n\n日付形式の異常が検出されましたが、自動的に修復して更新しました。次回の実行をお待ちください。`
+                });
+
+                process.exit(0);
+            }
+
+            logger.error(`Markdown validation failed: ${mdValidation.message}`);
+            await octokit.issues.createComment({
+                owner: options.owner,
+                repo: options.repo,
+                issue_number: options.prNumber,
+                body: `❌ **Markdown Validation Failed**\n\n${mdValidation.message}`
+            });
             process.exit(1);
         }
 
