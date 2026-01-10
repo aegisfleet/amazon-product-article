@@ -72,9 +72,8 @@ describe('JulesInvestigator Property Tests', () => {
 
           // 2. User stories and experiences (New Requirement)
           expect(prompt).toContain('ユーザーストーリーと実体験');
-          expect(prompt).toContain('実際のユーザーがどのような背景で商品を購入し');
-          expect(prompt).toContain('具体的なエピソードや感想');
-          expect(prompt).toContain('良い体験だけでなく、失敗談や苦労した点も含める');
+          expect(prompt).toContain('購入背景・生活変化・具体的エピソード');
+          expect(prompt).toContain('出典明記');
 
           // 3. Competitive comparison requirements (Requirements 2.2, 2.4)
           expect(prompt).toContain('競合商品との比較');
@@ -90,7 +89,7 @@ describe('JulesInvestigator Property Tests', () => {
 
           // 5. Information sources (New Requirement)
           expect(prompt).toContain('情報ソース');
-          expect(prompt).toContain('調査に使用した情報の出典');
+          expect(prompt).toContain('具体的サイト名・記事タイトル・URL');
 
           // 6. Product information inclusion (Requirements 2.1)
           expect(prompt).toContain(product.title);
@@ -100,13 +99,9 @@ describe('JulesInvestigator Property Tests', () => {
 
 
           // Verify prompt enrichment (fallback instructions)
-          expect(prompt).toContain('重要：Amazonの商品ページへのアクセスが拒否される');
-          expect(prompt).toContain('Google検索を行い');
+          expect(prompt).toContain('レビューや情報が見つからなくても');
+          expect(prompt).toContain('Amazon 403エラー時もGoogle検索で継続');
           expect(prompt).toContain(`商品名: ${product.title}`);
-
-          // Verify external data collection instructions (PA-API v5 limitation)
-          expect(prompt).toContain('PA-APIの制限により');
-          expect(prompt).toContain('外部の情報源');
 
           // 7. Structured format requirements (Requirements 2.2)
           expect(prompt).toContain('JSON形式で構造化');
