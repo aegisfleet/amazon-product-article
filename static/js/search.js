@@ -140,7 +140,6 @@ document.addEventListener('DOMContentLoaded', function () {
             const targetPosition = headerHeight + 10;
 
             // 検索窓が既にヘッダー直下の適正位置にあればスクロール不要
-            // （ヘッダー+10px から ヘッダー+60px の範囲内）
             if (containerTop >= targetPosition && containerTop <= targetPosition + 50) {
                 isProgramScrolling = false;
                 updateScrollPosition();
@@ -153,7 +152,7 @@ document.addEventListener('DOMContentLoaded', function () {
             const y = containerTop + window.pageYOffset - headerHeight - 10;
             window.scrollTo({ top: y, behavior: 'smooth' });
 
-            // スクロール完了後の処理（smooth scrollは約500ms）
+            // スクロール完了後の処理
             setTimeout(() => {
                 isProgramScrolling = false;
                 updateScrollPosition();
@@ -188,15 +187,15 @@ document.addEventListener('DOMContentLoaded', function () {
 
         // 検索窓フォーカス時: スクロール＋検索結果表示
         searchInput.addEventListener('focus', (e) => {
-            // キーボード表示を待ってからスクロール
-            // 300ms待つ間はプログラムスクロール扱いにする
+            // IME（仮想キーボード）の起動を待ってからスクロール
+            // 500ms待つ間はプログラムスクロール扱いにする
             isProgramScrolling = true;
 
             setTimeout(() => {
                 scrollSearchIntoView(() => {
                     updateSearchResultsHeight();
                 });
-            }, 300);
+            }, 500);
 
             // 検索結果を表示
             const query = e.target.value.replace(/　/g, ' ');
