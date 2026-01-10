@@ -135,11 +135,11 @@ document.addEventListener('DOMContentLoaded', function () {
                 return;
             }
 
-            const headerHeight = header ? header.offsetHeight : 0;
-            const targetPosition = headerHeight + 10;
-
             // 位置をチェックして必要ならスクロール実行
             function checkAndScroll() {
+                // ヘッダーの高さは毎回取得（IME表示でヘッダーが隠れる場合に対応）
+                const headerHeight = header ? header.offsetHeight : 0;
+                const targetPosition = headerHeight + 10;
                 const containerTop = container.getBoundingClientRect().top;
 
                 // 検索窓が適正位置（ヘッダー+10px ～ ヘッダー+60px）にあればスクロール不要
