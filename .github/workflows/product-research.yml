@@ -10,8 +10,38 @@ on:
   workflow_dispatch:
     inputs:
       categories:
-        description: 'Product categories to search (comma-separated, default: all)'
-        required: false
+        description: 'Product category to search'
+        required: true
+        type: choice
+        default: 'all'
+        options:
+          - all
+          - electronics
+          - wired_earphones
+          - computers
+          - kitchen
+          - home
+          - appliances
+          - women_beauty
+          - women_fashion
+          - women_appliances
+          - women_health
+          - relaxation
+          - storage
+          - furniture
+          - office
+          - baby
+          - pet
+          - outdoor
+          - automotive
+          - diy
+          - toys
+          - gaming
+          - music
+          - watches
+          - telework
+          - kindle_books
+          - novels
       max_results:
         description: 'Maximum results per category'
         required: false
