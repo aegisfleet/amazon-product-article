@@ -117,15 +117,15 @@ document.addEventListener('DOMContentLoaded', function () {
         // === スクロール関連の状態管理 ===
         let isSearchInputMouseDown = false;
         let lastScrollY = window.scrollY;
-        let scrollTimeout;
+        let fadeOutTimeout; // 検索結果フェードアウト用
+        let focusScrollTimeout; // フォーカス時のスクロール遅延用
         let isProgramScrolling = false;
+        let calibrationInterval = null;
 
         // 現在のスクロール位置を記録
         function updateScrollPosition() {
             lastScrollY = window.scrollY;
         }
-
-        let calibrationInterval = null;
 
         // 検索窓を見える位置にスクロールする共通関数
         function scrollSearchIntoView(callback) {
@@ -145,30 +145,38 @@ document.addEventListener('DOMContentLoaded', function () {
 
             // 位置をチェックして必要ならスクロール実行
             function checkAndScroll(isCalibration = false) {
-                const headerRect = header ? header.getBoundingClientRect() : null;
-                const isHeaderVisible = headerRect && headerRect.bottom > 0;
+                // ヘッダーの高さを取得（stickyなのでoffsetHeightが安定）
+                const headerHeight = header ? header.offsetHeight : 0;
 
-                // ヘッダーが見える場合はヘッダー直下、見えない場合は画面上端を基準に
-                const targetPosition = isHeaderVisible ? (headerRect.bottom + 10) : 10;
-                const offsetForScroll = isHeaderVisible ? (header.offsetHeight + 10) : 10;
+                // ターゲットとなるコンテナの上端位置（ヘッダー下 10px）
+                const targetTop = headerHeight + 10;
+
+                // 現在のコンテナの位置（layout viewport相対）
                 const containerTop = container.getBoundingClientRect().top;
 
                 // 許容範囲内なら何もしない（微振動防止）
-                const tolerance = isCalibration ? 20 : 50;
-                if (containerTop >= targetPosition && containerTop <= targetPosition + tolerance) {
+                // 1回目の実行では少し広め（30px）、キャリブレーション中は厳密に（5px）
+                const tolerance = isCalibration ? 5 : 30;
+                if (Math.abs(containerTop - targetTop) <= tolerance) {
                     return false;
                 }
 
-                // 目標位置へスクロール（上がりすぎている場合は即時補正）
-                const y = containerTop + window.pageYOffset - offsetForScroll;
+                // 目標位置へスクロール
+                const y = containerTop + window.pageYOffset - targetTop;
+
+                // behaviorの決定:
+                // 初回のみ、かつターゲットより下にある（下にスクロールする）場合のみスムーズ
+                // 上にスクロールする場合やキャリブレーション中は、正確性を期して即時
+                const behavior = (!isCalibration && containerTop > targetTop) ? 'smooth' : 'instant';
+
                 window.scrollTo({
                     top: y,
-                    behavior: (isCalibration || containerTop < targetPosition) ? 'instant' : 'smooth'
+                    behavior: behavior
                 });
                 return true;
             }
 
-            // 初回スクロール
+            // 初回スクロール実行
             isProgramScrolling = true;
             checkAndScroll(false);
 
@@ -196,12 +204,21 @@ document.addEventListener('DOMContentLoaded', function () {
             const stopOnInteraction = () => {
                 if (calibrationInterval) {
                     stopAndFinish();
-                    window.removeEventListener('touchstart', stopOnInteraction);
-                    window.removeEventListener('wheel', stopOnInteraction);
                 }
+                window.removeEventListener('touchstart', stopOnInteraction);
+                window.removeEventListener('wheel', stopOnInteraction);
             };
             window.addEventListener('touchstart', stopOnInteraction, { passive: true });
             window.addEventListener('wheel', stopOnInteraction, { passive: true });
+        }
+
+        // スクロール処理をトリガーする共通関数
+        function triggerScroll() {
+            if (calibrationInterval) return; // すでに実行中なら重複させない
+
+            scrollSearchIntoView(() => {
+                updateSearchResultsHeight();
+            });
         }
 
         // === イベントリスナー ===
@@ -212,7 +229,15 @@ document.addEventListener('DOMContentLoaded', function () {
 
         // 検索窓クリック時: 検索結果が非表示なら再表示
         searchInput.addEventListener('click', (e) => {
+            // フォーカス時の遅延実行をキャンセル
+            if (focusScrollTimeout) {
+                clearTimeout(focusScrollTimeout);
+                focusScrollTimeout = null;
+            }
+
             if (searchResults.classList.contains('active')) {
+                // すでにアクティブでも位置がずれていれば補正
+                triggerScroll();
                 return;
             }
 
@@ -223,22 +248,18 @@ document.addEventListener('DOMContentLoaded', function () {
                 displayResults(fuse.search(query));
             }
 
-            // スクロール処理（検索結果表示後に高さ計算）
-            scrollSearchIntoView(() => {
-                updateSearchResultsHeight();
-            });
+            triggerScroll();
         });
 
         // 検索窓フォーカス時: スクロール＋検索結果表示
         searchInput.addEventListener('focus', (e) => {
-            // IME（仮想キーボード）の起動を待ってからスクロール
-            // 500ms待つ間はプログラムスクロール扱いにする
             isProgramScrolling = true;
 
-            setTimeout(() => {
-                scrollSearchIntoView(() => {
-                    updateSearchResultsHeight();
-                });
+            // IME（仮想キーボード）の起動を待ってからスクロール
+            // clickイベントが後に続く場合はそちらでキャンセルされる
+            focusScrollTimeout = setTimeout(() => {
+                triggerScroll();
+                focusScrollTimeout = null;
             }, 500);
 
             // 検索結果を表示
@@ -272,8 +293,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
             if (Math.abs(window.scrollY - lastScrollY) > 100) {
                 searchResults.classList.add('fade-out');
-                clearTimeout(scrollTimeout);
-                scrollTimeout = setTimeout(() => {
+                clearTimeout(fadeOutTimeout);
+                fadeOutTimeout = setTimeout(() => {
                     searchResults.classList.remove('active', 'fade-out');
                     updateScrollPosition();
                 }, 200);
