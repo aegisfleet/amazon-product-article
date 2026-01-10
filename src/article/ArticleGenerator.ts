@@ -1201,8 +1201,8 @@ ${score >= 80 ? '自信を持っておすすめできる商品です。' :
 
       // イヤホン・ヘッドホン
       if (specs.driver) infoRows.push(`| ドライバー | ${this.formatSpecValue(specs.driver)} |`);
-      if (specs.codec && specs.codec.length > 0) {
-        infoRows.push(`| 対応コーデック | ${specs.codec.join(', ')} |`);
+      if (specs.codec) {
+        infoRows.push(`| 対応コーデック | ${this.formatSpecValue(specs.codec)} |`);
       }
       if (specs.noiseCancel) infoRows.push(`| ノイズキャンセル | ${this.formatSpecValue(specs.noiseCancel)} |`);
 
@@ -1214,16 +1214,16 @@ ${score >= 80 ? '自信を持っておすすめできる商品です。' :
       if (specs.category) infoRows.push(`| カテゴリ | ${this.formatSpecValue(specs.category)} |`);
 
       // 接続性
-      if (specs.connectivity && specs.connectivity.length > 0) {
-        infoRows.push(`| 接続 | ${specs.connectivity.join(', ')} |`);
+      if (specs.connectivity) {
+        infoRows.push(`| 接続 | ${this.formatSpecValue(specs.connectivity)} |`);
       }
 
       // 靴（シューズ）
       if (specs.width) infoRows.push(`| 幅（ワイズ） | ${this.formatSpecValue(specs.width)} |`);
       if (specs.weight) infoRows.push(`| 重量 | ${this.formatSpecValue(specs.weight)} |`);
       if (specs.midsole) infoRows.push(`| ミッドソール | ${this.formatSpecValue(specs.midsole)} |`);
-      if (specs.cushioningTech && specs.cushioningTech.length > 0) {
-        infoRows.push(`| クッショニング | ${specs.cushioningTech.join(', ')} |`);
+      if (specs.cushioningTech) {
+        infoRows.push(`| クッショニング | ${this.formatSpecValue(specs.cushioningTech)} |`);
       }
       if (specs.heelCounter) infoRows.push(`| ヒールカウンター | ${this.formatSpecValue(specs.heelCounter)} |`);
       if (specs.heelHeight) infoRows.push(`| ヒール高 | ${this.formatSpecValue(specs.heelHeight)} |`);
@@ -1269,13 +1269,12 @@ ${score >= 80 ? '自信を持っておすすめできる商品です。' :
         }
       }
       if (specs.attachments) {
-        const attach = Array.isArray(specs.attachments) ? specs.attachments.join(', ') : specs.attachments;
-        infoRows.push(`| 付属品 | ${attach} |`);
+        infoRows.push(`| 付属品 | ${this.formatSpecValue(specs.attachments)} |`);
       }
 
       // その他スペック
-      if (specs.other && specs.other.length > 0) {
-        infoRows.push(`| その他 | ${specs.other.join(', ')} |`);
+      if (specs.other) {
+        infoRows.push(`| その他 | ${this.formatSpecValue(specs.other)} |`);
       }
 
       // 動的レンダリング: 未処理のフィールドを自動表示
@@ -1497,9 +1496,10 @@ ${infoRows.join('\n')}
       }
 
       // イヤホン・ヘッドホン
-      if (specs.driver) lines.push(`  driver: "${this.formatSpecValue(specs.driver)}"`);
-      if (specs.codec && specs.codec.length > 0) {
-        lines.push(`  codec: [${specs.codec.map(c => `"${c}"`).join(', ')}]`);
+      if (specs.driver) lines.push(`| ドライバー | ${this.formatSpecValue(specs.driver)} |`);
+      if (specs.codec) {
+        const codecVal = Array.isArray(specs.codec) ? `[${specs.codec.map(c => `"${c}"`).join(', ')}]` : `"${specs.codec}"`;
+        lines.push(`  codec: ${codecVal}`);
       }
       if (specs.noiseCancel) lines.push(`  noise_cancel: "${this.formatSpecValue(specs.noiseCancel)}"`);
 
@@ -1509,16 +1509,18 @@ ${infoRows.join('\n')}
       if (specs.category) lines.push(`  spec_category: "${this.formatSpecValue(specs.category)}"`);
 
       // 接続性
-      if (specs.connectivity && specs.connectivity.length > 0) {
-        lines.push(`  connectivity: [${specs.connectivity.map(c => `"${c}"`).join(', ')}]`);
+      if (specs.connectivity) {
+        const connectVal = Array.isArray(specs.connectivity) ? `[${specs.connectivity.map(c => `"${c}"`).join(', ')}]` : `"${specs.connectivity}"`;
+        lines.push(`  connectivity: ${connectVal}`);
       }
 
       // 靴（シューズ）
       if (specs.width) lines.push(`  width: "${this.formatSpecValue(specs.width)}"`);
       if (specs.weight) lines.push(`  weight: "${this.formatSpecValue(specs.weight)}"`);
       if (specs.midsole) lines.push(`  midsole: "${this.formatSpecValue(specs.midsole)}"`);
-      if (specs.cushioningTech && specs.cushioningTech.length > 0) {
-        lines.push(`  cushioning_tech: [${specs.cushioningTech.map(c => `"${c}"`).join(', ')}]`);
+      if (specs.cushioningTech) {
+        const cushVal = Array.isArray(specs.cushioningTech) ? `[${specs.cushioningTech.map(c => `"${c}"`).join(', ')}]` : `"${specs.cushioningTech}"`;
+        lines.push(`  cushioning_tech: ${cushVal}`);
       }
       if (specs.heelCounter) lines.push(`  heel_counter: "${this.formatSpecValue(specs.heelCounter)}"`);
       if (specs.heelHeight) lines.push(`  heel_height: "${this.formatSpecValue(specs.heelHeight)}"`);
@@ -1566,8 +1568,9 @@ ${infoRows.join('\n')}
       }
 
       // その他
-      if (specs.other && specs.other.length > 0) {
-        lines.push(`  other_specs: [${specs.other.map(o => `"${o}"`).join(', ')}]`);
+      if (specs.other) {
+        const otherVal = Array.isArray(specs.other) ? `[${specs.other.map(o => `"${o}"`).join(', ')}]` : `"${specs.other}"`;
+        lines.push(`  other_specs: ${otherVal}`);
       }
     }
 
@@ -1804,8 +1807,9 @@ ${infoRows.join('\n')}
    * scoreRationaleをカード形式のHTMLにフォーマット
    * 基本点・加点・減点・合計を識別して、絵文字とスタイリングで視覚的に表示
    */
-  private formatScoreRationaleAsCard(rationale: string): string {
-    const lines = rationale.split('\n').filter(line => line.trim());
+  private formatScoreRationaleAsCard(rationale: string | string[]): string {
+    const rawRationale = Array.isArray(rationale) ? rationale.join('\n') : rationale;
+    const lines = rawRationale.split('\n').filter(line => line.trim());
     const parts: string[] = [];
 
     for (const line of lines) {
