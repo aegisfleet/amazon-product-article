@@ -143,35 +143,41 @@ document.addEventListener('DOMContentLoaded', function () {
                 calibrationInterval = null;
             }
 
+            // ネイティブスクロールとの競合を防ぐため、現在のスクロールを一度即時停止させる
+            window.scrollTo({
+                top: window.pageYOffset,
+                behavior: 'instant'
+            });
+
             // 位置をチェックして必要ならスクロール実行
             function checkAndScroll(isCalibration = false) {
-                // ヘッダーの高さを取得（stickyなのでoffsetHeightが安定）
-                const headerHeight = header ? header.offsetHeight : 0;
+                // ヘッダーの高さを取得（4rem=64pxをベースに、取得できればその値を使用）
+                const headerHeight = (header && header.offsetHeight > 0) ? header.offsetHeight : 64;
 
                 // ターゲットとなるコンテナの上端位置（ヘッダー下 10px）
                 const targetTop = headerHeight + 10;
 
-                // 現在のコンテナの位置（layout viewport相対）
-                const containerTop = container.getBoundingClientRect().top;
+                // 現在のコンテナの絶対位置（Body最上部からの距離）を算出
+                // これにより、移動中であっても常に正しい目的地を固定できる
+                const currentScrollY = window.pageYOffset;
+                const containerRect = container.getBoundingClientRect();
+                const containerAbsoluteTop = containerRect.top + currentScrollY;
 
-                // 許容範囲内なら何もしない（微振動防止）
-                // 1回目の実行では少し広め（30px）、キャリブレーション中は厳密に（5px）
-                const tolerance = isCalibration ? 5 : 30;
-                if (Math.abs(containerTop - targetTop) <= tolerance) {
+                const targetScrollY = Math.max(0, containerAbsoluteTop - targetTop);
+
+                // 許容範囲内なら何もしない
+                // 初回から厳密（5px）に判定することで、中途半端な位置での停止を防ぐ
+                const tolerance = 5;
+                if (Math.abs(currentScrollY - targetScrollY) <= tolerance) {
                     return false;
                 }
 
                 // 目標位置へスクロール
-                const y = containerTop + window.pageYOffset - targetTop;
-
-                // behaviorの決定:
-                // 初回のみ、かつターゲットより下にある（下にスクロールする）場合のみスムーズ
-                // 上にスクロールする場合やキャリブレーション中は、正確性を期して即時
-                const behavior = (!isCalibration && containerTop > targetTop) ? 'smooth' : 'instant';
-
+                // behavior: 'smooth' はキャリブレーションと干渉して「戻り」現象を作るため、
+                // 全て instant に統一して正確な貼り付きを優先する
                 window.scrollTo({
-                    top: y,
-                    behavior: behavior
+                    top: targetScrollY,
+                    behavior: 'instant'
                 });
                 return true;
             }
@@ -260,7 +266,7 @@ document.addEventListener('DOMContentLoaded', function () {
             focusScrollTimeout = setTimeout(() => {
                 triggerScroll();
                 focusScrollTimeout = null;
-            }, 500);
+            }, 100);
 
             // 検索結果を表示
             const query = e.target.value.replace(/　/g, ' ');
