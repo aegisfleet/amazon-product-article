@@ -125,6 +125,8 @@ document.addEventListener('DOMContentLoaded', function () {
             lastScrollY = window.scrollY;
         }
 
+        let calibrationInterval = null;
+
         // 検索窓を見える位置にスクロールする共通関数
         function scrollSearchIntoView(callback) {
             const container = document.querySelector('.search-container');
@@ -135,61 +137,71 @@ document.addEventListener('DOMContentLoaded', function () {
                 return;
             }
 
+            // 既存の校正処理があれば停止
+            if (calibrationInterval) {
+                clearInterval(calibrationInterval);
+                calibrationInterval = null;
+            }
+
             // 位置をチェックして必要ならスクロール実行
             function checkAndScroll(isCalibration = false) {
-                // ヘッダーが画面内に見えているかチェック
                 const headerRect = header ? header.getBoundingClientRect() : null;
                 const isHeaderVisible = headerRect && headerRect.bottom > 0;
 
-                // ヘッダーが見える場合はヘッダー直下を基準に、見えない場合は画面上端を基準に
+                // ヘッダーが見える場合はヘッダー直下、見えない場合は画面上端を基準に
                 const targetPosition = isHeaderVisible ? (headerRect.bottom + 10) : 10;
                 const offsetForScroll = isHeaderVisible ? (header.offsetHeight + 10) : 10;
-
                 const containerTop = container.getBoundingClientRect().top;
 
-                // 検索窓が適正位置にあればスクロール不要
-                // キャリブレーション中の場合は許容範囲を少し広めにする（微振動防止）
+                // 許容範囲内なら何もしない（微振動防止）
                 const tolerance = isCalibration ? 20 : 50;
                 if (containerTop >= targetPosition && containerTop <= targetPosition + tolerance) {
                     return false;
                 }
 
-                // 目標スクロール位置を計算
+                // 目標位置へスクロール（上がりすぎている場合は即時補正）
                 const y = containerTop + window.pageYOffset - offsetForScroll;
-
-                // 1. キャリブレーション中の補正
-                // 2. 適正位置より上にある場合（上がりすぎ）
-                // これらの場合は behavior: 'instant' で即座に補正
-                if (isCalibration || containerTop < targetPosition) {
-                    window.scrollTo({ top: y, behavior: 'instant' });
-                } else {
-                    // 通常の初回スクロールはスムース
-                    window.scrollTo({ top: y, behavior: 'smooth' });
-                }
+                window.scrollTo({
+                    top: y,
+                    behavior: (isCalibration || containerTop < targetPosition) ? 'instant' : 'smooth'
+                });
                 return true;
             }
 
-            // 初回チェック
+            // 初回スクロール
             isProgramScrolling = true;
             checkAndScroll(false);
 
-            // 100ms周期で最大20回（合計2秒間）リトライ・キャリブレーションを行う
-            // AndroidのIME自動スクロールや、その後のガクつきに対応
-            let retryCount = 0;
-            const maxRetries = 20;
-            const calibrationInterval = setInterval(() => {
-                retryCount++;
-
-                // 常に位置をチェックし、必要なら即時補正
-                checkAndScroll(true);
-
-                if (retryCount >= maxRetries) {
-                    clearInterval(calibrationInterval);
-                    isProgramScrolling = false;
-                    updateScrollPosition();
-                    if (callback) callback();
+            // 100ms周期で最大20回（合計2秒間）キャリブレーションを行う
+            let count = 0;
+            calibrationInterval = setInterval(() => {
+                if (++count >= 20) {
+                    stopAndFinish();
+                    return;
                 }
+                checkAndScroll(true);
             }, 100);
+
+            function stopAndFinish() {
+                if (calibrationInterval) {
+                    clearInterval(calibrationInterval);
+                    calibrationInterval = null;
+                }
+                isProgramScrolling = false;
+                updateScrollPosition();
+                if (callback) callback();
+            }
+
+            // ユーザーの手動操作（タッチ/スクロール）を検知して停止する
+            const stopOnInteraction = () => {
+                if (calibrationInterval) {
+                    stopAndFinish();
+                    window.removeEventListener('touchstart', stopOnInteraction);
+                    window.removeEventListener('wheel', stopOnInteraction);
+                }
+            };
+            window.addEventListener('touchstart', stopOnInteraction, { passive: true });
+            window.addEventListener('wheel', stopOnInteraction, { passive: true });
         }
 
         // === イベントリスナー ===
