@@ -206,18 +206,18 @@ export interface TechnicalSpecs {
   battery?: BatterySpec | null;
   camera?: CameraSpec | null;
   dimensions?: DimensionsSpec | null;
-  connectivity?: string[] | null;      // e.g., ["5G", "Wi-Fi 6E", "Bluetooth 5.3"]
+  connectivity?: string | string[] | null;      // e.g., ["5G", "Wi-Fi 6E", "Bluetooth 5.3"]
 
   // イヤホン・ヘッドホン
   driver?: string | null;              // e.g., "10mm ダイナミック"
-  codec?: string[] | null;             // e.g., ["SBC", "AAC", "LDAC"]
+  codec?: string | string[] | null;             // e.g., ["SBC", "AAC", "LDAC"]
   noiseCancel?: string | null;         // e.g., "ANC対応"
 
   // 家電・その他
   power?: string | null;               // e.g., "1200W"
   capacity?: string | null;            // e.g., "3L"
 
-  other?: string[] | null;             // e.g., ["防水IP68", "FeliCa", "eSIM対応"]
+  other?: string | string[] | null;             // e.g., ["防水IP68", "FeliCa", "eSIM対応"]
 
   // 靴（シューズ）
   width?: string | null;               // e.g., "2E", "4E"
@@ -228,7 +228,7 @@ export interface TechnicalSpecs {
     insole?: string;
   } | null;
   midsole?: string | null;
-  cushioningTech?: string[] | null;
+  cushioningTech?: string | string[] | null;
   heelCounter?: string | null;
   modelNumber?: string | null;
   model?: string | null;               // Alias for modelNumber
@@ -250,7 +250,7 @@ export interface TechnicalSpecs {
   attachments?: string | string[] | null;                    // e.g., "フック×2" or ["フック×2", "マグネット"]
 
   // 高頻度出現フィールド（動的調査結果より）
-  features?: string[] | null;            // e.g., ["クルエルティフリー", "防水"]
+  features?: string | string[] | null;            // e.g., ["クルエルティフリー", "防水"]
   color?: string | null;                 // e.g., "ブラック"
   productType?: string | null;           // e.g., "おしゃれ着用洗濯洗剤"
   output?: string | { [key: string]: string } | null;   // 電源出力
@@ -258,7 +258,7 @@ export interface TechnicalSpecs {
   cableLength?: string | null;           // e.g., "1.5m"
   packageContents?: string | string[] | null;  // 同梱物
   ports?: string | string[] | { [key: string]: unknown } | null;  // ポート情報
-  certifications?: string[] | null;      // e.g., ["PSE", "MFi"]
+  certifications?: string | string[] | null;      // e.g., ["PSE", "MFi"]
   ingredients?: string | string[] | null;  // 成分
   compatibility?: string | string[] | null;  // 互換性情報
   compatibleDevices?: string | string[] | null;  // 対応機器
