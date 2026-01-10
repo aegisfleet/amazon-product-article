@@ -1496,7 +1496,7 @@ ${infoRows.join('\n')}
       }
 
       // イヤホン・ヘッドホン
-      if (specs.driver) lines.push(`| ドライバー | ${this.formatSpecValue(specs.driver)} |`);
+      if (specs.driver) lines.push(`  driver: "${this.formatSpecValue(specs.driver)}"`);
       if (specs.codec) {
         const codecVal = Array.isArray(specs.codec) ? `[${specs.codec.map(c => `"${c}"`).join(', ')}]` : `"${specs.codec}"`;
         lines.push(`  codec: ${codecVal}`);
