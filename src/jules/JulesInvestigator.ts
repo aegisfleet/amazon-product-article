@@ -6,8 +6,6 @@
  */
 
 import axios, { AxiosError, AxiosInstance } from 'axios';
-import * as fs from 'fs';
-import * as path from 'path';
 import {
   ActivitiesResponse,
   InvestigationContext,
@@ -293,7 +291,7 @@ export class JulesInvestigator {
   /**
    * 調査プロンプトを生成
    */
-  formatInvestigationPrompt(product: Product, existingData?: InvestigationResult['analysis']): string {
+  formatInvestigationPrompt(product: Product): string {
     // JSTで現在の日付を取得 (YYYY-MM-DD)
     const today = new Date().toLocaleDateString('ja-JP', {
       timeZone: 'Asia/Tokyo',
@@ -301,11 +299,6 @@ export class JulesInvestigator {
       month: '2-digit',
       day: '2-digit'
     }).replace(/\//g, '-');
-
-    // 既存データがある場合の追加指示
-    const updateInstruction = existingData
-      ? `\n【既存データの更新】\n以下に以前の調査データがあります。この内容をベースに、最新の情報でアップデートしてください。\n- 既存の「良い点」「悪い点」が現在も有効か検証し、維持または更新してください。\n- 新しいレビューや競合商品の情報を追加してください。\n- "lastInvestigated" フィールドを "${today}" に更新してください。\n\n既存データ:\n\`\`\`json\n${JSON.stringify(existingData, null, 2)}\n\`\`\`\n`
-      : '';
 
     // ブランド情報の取得（ProductDetail型の場合）
     const brand = 'brand' in product ? (product as any).brand : undefined;
@@ -318,6 +311,26 @@ export class JulesInvestigator {
 - コミット対象は \`data/investigations/${product.asin}.json\` のみ
 - ファイル作成後は必ず \`git add data/investigations/${product.asin}.json\` を実行
 
+---
+
+## 作業開始前の必須手順
+
+**以下の手順を必ず最初に実行してください：**
+
+1. **既存の調査データを確認**
+   \`\`\`bash
+   cat data/investigations/${product.asin}.json 2>/dev/null || echo "新規調査"
+   \`\`\`
+   - ファイルが存在する場合: 既存データをベースに更新してください
+   - ファイルが存在しない場合: 新規調査を行ってください
+
+2. **既存データがある場合の更新ルール**
+   - 既存の「良い点」「悪い点」が現在も有効か検証し、維持または更新
+   - 新しいレビューや競合商品の情報を追加
+   - \`lastInvestigated\` フィールドを \`${today}\` に更新
+
+---
+
 【PA-API利用】
 環境変数（AMAZON_ACCESS_KEY, AMAZON_SECRET_KEY, AMAZON_PARTNER_TAG）で認証。
 エンドポイント: https://webservices.amazon.co.jp/paapi5/getitems（リージョン: us-west-2）
@@ -328,7 +341,7 @@ export class JulesInvestigator {
 
 **調査対象**: 商品「${product.title}」
 現在の日付: ${today}
-${updateInstruction}
+
 【最優先事項：調査の継続と完了】
 レビューや情報が見つからなくても**絶対に調査を中断しないこと**。Amazon 403エラー時もGoogle検索で継続。
 禁止: 「調査不能」報告、カテゴリ一般論、「〇〇市場の分析」のようなタイトル
@@ -490,24 +503,6 @@ PA-APIの features テキストとWeb調査を組み合わせて情報を取得�
 
     return prompt;
   }
-
-  /**
-   * 既存の調査データを読み込む
-   */
-  private readExistingInvestigation(asin: string): InvestigationResult['analysis'] | undefined {
-    try {
-      const filePath = path.join(process.cwd(), 'data', 'investigations', `${asin}.json`);
-      if (fs.existsSync(filePath)) {
-        const fileContent = fs.readFileSync(filePath, 'utf-8');
-        const data = JSON.parse(fileContent);
-        return data.analysis;
-      }
-    } catch (error) {
-      this.logger.warn(`Failed to read existing investigation for ${asin}`, error);
-    }
-    return undefined;
-  }
-
   /**
    * 調査セッションを開始（非同期用：即座にセッションIDを返す）
    * GitHub Actions ワークフローで使用 - Julesが非同期でPRを作成する
@@ -523,16 +518,14 @@ PA-APIの features テキストとWeb調査を組み合わせて情報を取得�
       includeCompetitors: true
     };
 
-    const existingData = this.readExistingInvestigation(product.asin);
-    const prompt = this.formatInvestigationPrompt(product, existingData);
+    const prompt = this.formatInvestigationPrompt(product);
     const sessionId = await this.createSession(prompt, context, sourceContext);
     const session = await this.getSession(sessionId);
 
     this.logger.info('Investigation session started (async mode)', {
       sessionId,
       sessionName: session.name,
-      productAsin: product.asin,
-      hasExistingData: !!existingData
+      productAsin: product.asin
     });
 
     return {
@@ -558,8 +551,7 @@ PA-APIの features テキストとWeb調査を組み合わせて情報を取得�
       includeCompetitors: true
     };
 
-    const existingData = this.readExistingInvestigation(product.asin);
-    const prompt = this.formatInvestigationPrompt(product, existingData);
+    const prompt = this.formatInvestigationPrompt(product);
     const sessionId = await this.createSession(prompt, context, sourceContext);
 
     // セッション完了まで待機
