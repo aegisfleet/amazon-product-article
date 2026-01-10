@@ -181,16 +181,6 @@ export class JulesCategoryOrganizer {
      * カテゴリ整理用のプロンプトを生成
      */
     formatOrganizationPrompt(unregisteredCategories: string[]): string {
-        const groups = this.loadCategoryGroups();
-
-        // 親カテゴリ一覧を作成
-        const parentCategoryList = Object.entries(groups)
-            .map(([name, group]) => {
-                const examples = group.categories.slice(0, 3).join('、');
-                return `- **${name}** (slug: ${group.slug}): 例）${examples}`;
-            })
-            .join('\n');
-
         // 未登録カテゴリ一覧
         const unregisteredList = unregisteredCategories.map(c => `- ${c}`).join('\n');
 
@@ -217,9 +207,25 @@ export class JulesCategoryOrganizer {
 
 ---
 
-## 現在の親カテゴリ一覧
+## 作業開始前の必須手順
 
-${parentCategoryList}
+**以下の手順を必ず最初に実行してください：**
+
+1. **リポジトリの構造を確認**
+   \`\`\`bash
+   ls -la data/
+   \`\`\`
+
+2. **現在のcategorygroups.jsonを確認**
+   \`\`\`bash
+   cat data/categorygroups.json
+   \`\`\`
+   ※ このファイルの内容を理解してから作業を開始してください。
+
+3. **親カテゴリ一覧を把握**
+   - JSONファイルのトップレベルキーが親カテゴリ名です
+   - 各親カテゴリには \`slug\` と \`categories\` 配列があります
+   - 既存のカテゴリを参考に、新しいカテゴリの分類先を決定してください
 
 ---
 
