@@ -141,12 +141,24 @@ document.addEventListener('DOMContentLoaded', function () {
             // 位置をチェックして必要ならスクロール実行
             function checkAndScroll() {
                 const containerTop = container.getBoundingClientRect().top;
-                // 検索窓が適正位置（ヘッダー直下）にあればスクロール不要
+
+                // 検索窓が適正位置（ヘッダー+10px ～ ヘッダー+60px）にあればスクロール不要
                 if (containerTop >= targetPosition && containerTop <= targetPosition + 50) {
                     return false;
                 }
+
+                // 目標スクロール位置を計算
                 const y = containerTop + window.pageYOffset - headerHeight - 10;
-                window.scrollTo({ top: y, behavior: 'smooth' });
+
+                // 上がりすぎている場合（containerTop < targetPosition）は即座にスクロール
+                // 下にある場合はスムーススクロール
+                if (containerTop < targetPosition) {
+                    // 上がりすぎ → 即座に下げる
+                    window.scrollTo({ top: y, behavior: 'instant' });
+                } else {
+                    // 下にある → スムーススクロールで上げる
+                    window.scrollTo({ top: y, behavior: 'smooth' });
+                }
                 return true;
             }
 
