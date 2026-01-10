@@ -136,28 +136,47 @@ document.addEventListener('DOMContentLoaded', function () {
             }
 
             const headerHeight = header ? header.offsetHeight : 0;
-            const containerTop = container.getBoundingClientRect().top;
             const targetPosition = headerHeight + 10;
 
-            // 検索窓が既にヘッダー直下の適正位置にあればスクロール不要
-            if (containerTop >= targetPosition && containerTop <= targetPosition + 50) {
+            // 位置をチェックして必要ならスクロール実行
+            function checkAndScroll() {
+                const containerTop = container.getBoundingClientRect().top;
+                // 検索窓が適正位置（ヘッダー直下）にあればスクロール不要
+                if (containerTop >= targetPosition && containerTop <= targetPosition + 50) {
+                    return false;
+                }
+                const y = containerTop + window.pageYOffset - headerHeight - 10;
+                window.scrollTo({ top: y, behavior: 'smooth' });
+                return true;
+            }
+
+            // 初回チェック
+            isProgramScrolling = true;
+            const needsScroll = checkAndScroll();
+
+            if (!needsScroll) {
                 isProgramScrolling = false;
                 updateScrollPosition();
                 if (callback) callback();
                 return;
             }
 
-            // スクロール実行
-            isProgramScrolling = true;
-            const y = containerTop + window.pageYOffset - headerHeight - 10;
-            window.scrollTo({ top: y, behavior: 'smooth' });
+            // 200ms周期で最大10回リトライして位置を調整
+            // （AndroidのIME自動スクロール機能との競合に対応）
+            let retryCount = 0;
+            const maxRetries = 10;
+            const retryInterval = setInterval(() => {
+                retryCount++;
+                const stillNeeds = checkAndScroll();
 
-            // スクロール完了後の処理
-            setTimeout(() => {
-                isProgramScrolling = false;
-                updateScrollPosition();
-                if (callback) callback();
-            }, 600);
+                // 位置が適正になった、または最大リトライ回数に達したら終了
+                if (!stillNeeds || retryCount >= maxRetries) {
+                    clearInterval(retryInterval);
+                    isProgramScrolling = false;
+                    updateScrollPosition();
+                    if (callback) callback();
+                }
+            }, 200);
         }
 
         // === イベントリスナー ===
