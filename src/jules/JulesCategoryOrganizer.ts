@@ -287,9 +287,26 @@ ${unregisteredList}
 
 ---
 
-## 出力
+## 出力手順（厳守）
 
-\`data/categorygroups.json\` を直接編集してコミットしてください。
+### 1. ファイル編集
+\`data/categorygroups.json\` を直接編集してください。
+
+### 2. 変更をステージング（必須）
+ファイル編集後、以下のコマンドを**必ず**実行してください：
+\`\`\`bash
+git add data/categorygroups.json
+\`\`\`
+
+### 3. 変更を確認
+\`\`\`bash
+git status
+git diff --staged
+\`\`\`
+※ 変更が正しくステージングされていることを確認してください。
+
+### 4. PRの作成
+コミットとPR作成を行ってください。
 
 **PRタイトル**: [Bot] カテゴリ整理: ${today}
 
