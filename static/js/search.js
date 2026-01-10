@@ -114,25 +114,61 @@ document.addEventListener('DOMContentLoaded', function () {
             handleSearch(query);
         });
 
-        // スクロール中のクリック誤判定を防ぐためのフラグ
+        // === スクロール関連の状態管理 ===
         let isSearchInputMouseDown = false;
-
-        // スクロール時に検索結果をフェードアウト（モバイル対応）
         let lastScrollY = window.scrollY;
         let scrollTimeout;
-        let isProgramScrolling = false; // プログラムによるスクロール中フラグ
+        let isProgramScrolling = false;
 
+        // 現在のスクロール位置を記録
         function updateScrollPosition() {
             lastScrollY = window.scrollY;
         }
+
+        // 検索窓を見える位置にスクロールする共通関数
+        function scrollSearchIntoView(callback) {
+            const container = document.querySelector('.search-container');
+            const header = document.querySelector('.site-header');
+            if (!container) {
+                isProgramScrolling = false;
+                if (callback) callback();
+                return;
+            }
+
+            const headerHeight = header ? header.offsetHeight : 0;
+            const containerTop = container.getBoundingClientRect().top;
+            const targetPosition = headerHeight + 10;
+
+            // 検索窓が既にヘッダー直下の適正位置にあればスクロール不要
+            // （ヘッダー+10px から ヘッダー+60px の範囲内）
+            if (containerTop >= targetPosition && containerTop <= targetPosition + 50) {
+                isProgramScrolling = false;
+                updateScrollPosition();
+                if (callback) callback();
+                return;
+            }
+
+            // スクロール実行
+            isProgramScrolling = true;
+            const y = containerTop + window.pageYOffset - headerHeight - 10;
+            window.scrollTo({ top: y, behavior: 'smooth' });
+
+            // スクロール完了後の処理（smooth scrollは約500ms）
+            setTimeout(() => {
+                isProgramScrolling = false;
+                updateScrollPosition();
+                if (callback) callback();
+            }, 600);
+        }
+
+        // === イベントリスナー ===
 
         searchInput.addEventListener('mousedown', () => {
             isSearchInputMouseDown = true;
         });
 
-        // 検索窓クリック時に検索結果を再表示（フェードアウト後やフォーカス済みの場合）
+        // 検索窓クリック時: 検索結果が非表示なら再表示
         searchInput.addEventListener('click', (e) => {
-            // 既に表示されている場合は何もしない
             if (searchResults.classList.contains('active')) {
                 return;
             }
@@ -141,67 +177,38 @@ document.addEventListener('DOMContentLoaded', function () {
             if (query.trim().length < 2) {
                 displaySearchTips();
             } else if (fuse) {
-                const results = fuse.search(query);
-                displayResults(results);
+                displayResults(fuse.search(query));
             }
 
-            // 再クリック時も自動スクロールを実行
-            isProgramScrolling = true;
-            setTimeout(() => {
-                const container = document.querySelector('.search-container');
-                const header = document.querySelector('.site-header');
-                const headerHeight = header ? header.offsetHeight : 0;
-
-                if (container) {
-                    const y = container.getBoundingClientRect().top + window.pageYOffset - headerHeight - 10;
-                    window.scrollTo({ top: y, behavior: 'smooth' });
-                }
-
-                // スクロール完了後に高さを再計算
-                setTimeout(() => {
-                    updateSearchResultsHeight();
-                }, 500);
-            }, 100);
-
-            // スクロール完了後にフラグをリセット
-            setTimeout(() => {
-                isProgramScrolling = false;
-                updateScrollPosition();
-            }, 800);
+            // スクロール処理（検索結果表示後に高さ計算）
+            scrollSearchIntoView(() => {
+                updateSearchResultsHeight();
+            });
         });
 
+        // 検索窓フォーカス時: スクロール＋検索結果表示
         searchInput.addEventListener('focus', (e) => {
-            // 検索窓を画面上部へスクロール（キーボード表示後のレイアウト安定を待つ）
+            // キーボード表示を待ってからスクロール
+            // 300ms待つ間はプログラムスクロール扱いにする
+            isProgramScrolling = true;
+
             setTimeout(() => {
-                const container = document.querySelector('.search-container');
-                const header = document.querySelector('.site-header');
-                const headerHeight = header ? header.offsetHeight : 0;
-
-                if (container) {
-                    const y = container.getBoundingClientRect().top + window.pageYOffset - headerHeight - 10; // ヘッダー分と余白を引く
-                    window.scrollTo({ top: y, behavior: 'smooth' });
-                }
-
-                // スクロール完了後に高さを再計算（smooth scrollの完了を待つ）
-                setTimeout(() => {
+                scrollSearchIntoView(() => {
                     updateSearchResultsHeight();
-                }, 500);
+                });
             }, 300);
 
+            // 検索結果を表示
             const query = e.target.value.replace(/　/g, ' ');
             if (query.trim().length < 2) {
-                // ヒント表示はfuse初期化前でも可能
                 displaySearchTips();
             } else if (fuse) {
-                // 検索実行はfuse初期化後のみ
-                const results = fuse.search(query);
-                displayResults(results);
+                displayResults(fuse.search(query));
             }
         });
 
-        // Close results when clicking outside
+        // 外側クリック時: 検索結果を閉じる
         document.addEventListener('click', (e) => {
-            // スクロール中にmouseupがずれた場合を考慮
             if (isSearchInputMouseDown) {
                 isSearchInputMouseDown = false;
                 return;
@@ -211,26 +218,17 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         });
 
-
-
+        // 手動スクロール時: 100px以上で検索結果をフェードアウト
         window.addEventListener('scroll', () => {
-            // プログラムによるスクロール中は無視
-            if (isProgramScrolling) {
-                return;
-            }
+            if (isProgramScrolling) return;
 
             if (!searchResults.classList.contains('active')) {
                 updateScrollPosition();
                 return;
             }
 
-            const scrollDelta = Math.abs(window.scrollY - lastScrollY);
-
-            // 100px以上スクロールしたらフェードアウト
-            if (scrollDelta > 100) {
+            if (Math.abs(window.scrollY - lastScrollY) > 100) {
                 searchResults.classList.add('fade-out');
-
-                // フェードアウト完了後にactiveクラスを削除
                 clearTimeout(scrollTimeout);
                 scrollTimeout = setTimeout(() => {
                     searchResults.classList.remove('active', 'fade-out');
@@ -238,19 +236,6 @@ document.addEventListener('DOMContentLoaded', function () {
                 }, 200);
             }
         }, { passive: true });
-
-        // フォーカス時にプログラムスクロールのフラグを設定
-        searchInput.addEventListener('focus', () => {
-            // プログラムスクロール中フラグをセット
-            isProgramScrolling = true;
-
-            // スクロール完了後にフラグをリセットしてスクロール位置を更新
-            // (フォーカス時のsetTimeoutスクロール300ms + smoothスクロール完了猶予500ms)
-            setTimeout(() => {
-                isProgramScrolling = false;
-                updateScrollPosition();
-            }, 1000);
-        });
     }
 
     function displayResults(results) {
