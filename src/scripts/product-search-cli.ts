@@ -46,7 +46,9 @@ function getOptions(): CLIOptions {
     }
 
     const categoriesEnv = process.env.PRODUCT_CATEGORIES || '';
-    const categories = categoriesEnv.split(',').map(c => c.trim());
+    const categories = (categoriesEnv === 'all' || categoriesEnv === '')
+        ? []
+        : categoriesEnv.split(',').map(c => c.trim());
 
     const maxResults = parseInt(process.env.MAX_RESULTS_PER_CATEGORY || '10', 10);
 
