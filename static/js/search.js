@@ -136,7 +136,7 @@ document.addEventListener('DOMContentLoaded', function () {
             }
 
             // 位置をチェックして必要ならスクロール実行
-            function checkAndScroll() {
+            function checkAndScroll(isCalibration = false) {
                 // ヘッダーが画面内に見えているかチェック
                 const headerRect = header ? header.getBoundingClientRect() : null;
                 const isHeaderVisible = headerRect && headerRect.bottom > 0;
@@ -148,17 +148,22 @@ document.addEventListener('DOMContentLoaded', function () {
                 const containerTop = container.getBoundingClientRect().top;
 
                 // 検索窓が適正位置にあればスクロール不要
-                if (containerTop >= targetPosition && containerTop <= targetPosition + 50) {
+                // キャリブレーション中の場合は許容範囲を少し広めにする（微振動防止）
+                const tolerance = isCalibration ? 20 : 50;
+                if (containerTop >= targetPosition && containerTop <= targetPosition + tolerance) {
                     return false;
                 }
 
                 // 目標スクロール位置を計算
                 const y = containerTop + window.pageYOffset - offsetForScroll;
 
-                // 上がりすぎている場合は即座にスクロール、下にある場合はスムーススクロール
-                if (containerTop < targetPosition) {
+                // 1. キャリブレーション中の補正
+                // 2. 適正位置より上にある場合（上がりすぎ）
+                // これらの場合は behavior: 'instant' で即座に補正
+                if (isCalibration || containerTop < targetPosition) {
                     window.scrollTo({ top: y, behavior: 'instant' });
                 } else {
+                    // 通常の初回スクロールはスムース
                     window.scrollTo({ top: y, behavior: 'smooth' });
                 }
                 return true;
@@ -166,31 +171,25 @@ document.addEventListener('DOMContentLoaded', function () {
 
             // 初回チェック
             isProgramScrolling = true;
-            const needsScroll = checkAndScroll();
+            checkAndScroll(false);
 
-            if (!needsScroll) {
-                isProgramScrolling = false;
-                updateScrollPosition();
-                if (callback) callback();
-                return;
-            }
-
-            // 200ms周期で最大10回リトライして位置を調整
-            // （AndroidのIME自動スクロール機能との競合に対応）
+            // 100ms周期で最大20回（合計2秒間）リトライ・キャリブレーションを行う
+            // AndroidのIME自動スクロールや、その後のガクつきに対応
             let retryCount = 0;
-            const maxRetries = 10;
-            const retryInterval = setInterval(() => {
+            const maxRetries = 20;
+            const calibrationInterval = setInterval(() => {
                 retryCount++;
-                const stillNeeds = checkAndScroll();
 
-                // 位置が適正になった、または最大リトライ回数に達したら終了
-                if (!stillNeeds || retryCount >= maxRetries) {
-                    clearInterval(retryInterval);
+                // 常に位置をチェックし、必要なら即時補正
+                checkAndScroll(true);
+
+                if (retryCount >= maxRetries) {
+                    clearInterval(calibrationInterval);
                     isProgramScrolling = false;
                     updateScrollPosition();
                     if (callback) callback();
                 }
-            }, 200);
+            }, 100);
         }
 
         // === イベントリスナー ===
