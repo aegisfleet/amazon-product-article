@@ -153,7 +153,7 @@ async function main(): Promise<void> {
             session = await searcher.searchByKeywords(options.keywords, options.maxResults, options.merchant, options.ignoreExclusion, options.maxPages);
         } else {
             // Category Search (with randomization and exclusion)
-            session = await searcher.searchAllCategories();
+            session = await searcher.searchAllCategories(options.categories);
         }
 
         logger.info(`Search completed: ${session.totalProducts} products found`);

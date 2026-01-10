@@ -107,9 +107,16 @@ export class ProductSearcher {
 
   /**
    * Search products across all enabled categories
+   * @param targetCategoryNames Optional list of category names to search. If provided, only these categories will be searched.
    */
-  async searchAllCategories(): Promise<SearchSession> {
-    const categories = this.getEnabledCategories();
+  async searchAllCategories(targetCategoryNames?: string[]): Promise<SearchSession> {
+    let categories = this.getEnabledCategories();
+
+    if (targetCategoryNames && targetCategoryNames.length > 0) {
+      categories = categories.filter(c => targetCategoryNames.includes(c.name));
+      this.logger.info(`Filtering categories: ${targetCategoryNames.join(', ')}. Result: ${categories.length} categories found.`);
+    }
+
     // Shuffle categories to vary the starting point
     this.shuffleArray(categories);
 
