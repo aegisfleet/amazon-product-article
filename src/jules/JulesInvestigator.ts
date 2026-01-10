@@ -312,74 +312,27 @@ export class JulesInvestigator {
     const brandInfo = brand ? `- ブランド: ${brand}` : '';
     const parentAsinInfo = product.parentAsin ? `- 親ASIN: ${product.parentAsin}` : '';
 
-    // PA-API v5ではレビューデータ取得不可のため外部収集を依頼
-    const prompt = `【重要：出力言語の指定】
-所有すべての出力（productName、productDescription、productUsage、positivePoints、negativePoints、useCases、userStories、userImpression、sources、competitiveAnalysis、recommendationの各フィールドのテキスト）は、必ず日本語で記述してください。英語やその他の言語での出力は避けてください。
+    const prompt = `【基本ルール】
+- 全ての出力は日本語で記述すること
+- 認証情報は絶対にログ・ファイル・コミット・PR説明文に含めないこと
+- コミット対象は \`data/investigations/${product.asin}.json\` のみ
+- ファイル作成後は必ず \`git add data/investigations/${product.asin}.json\` を実行
 
-【PA-API（Product Advertising API）の利用について】
-環境変数に設定された認証情報を使用して、Amazon PA-API v5から商品情報を取得してください：
-- AMAZON_ACCESS_KEY: PA-APIアクセスキー
-- AMAZON_SECRET_KEY: PA-APIシークレットキー  
-- AMAZON_PARTNER_TAG: アソシエイトタグ
+【PA-API利用】
+環境変数（AMAZON_ACCESS_KEY, AMAZON_SECRET_KEY, AMAZON_PARTNER_TAG）で認証。
+エンドポイント: https://webservices.amazon.co.jp/paapi5/getitems（リージョン: us-west-2）
 
-⚠️ **セキュリティ上の重要な注意事項**:
-- 認証情報（ACCESS_KEY、SECRET_KEY）は絶対にログ、コンソール出力、ファイル、コミットメッセージ、PRの説明文に含めないでください
-- 認証情報をハードコードしたり、プレーンテキストで保存したりしないでください
-- エラーメッセージにも認証情報を含めないでください
+調査用スクリプト（編集・コミット不要）:
+- 商品詳細: \`python scripts/paapi_get_item.py ${product.asin}\` → product_info.json
+- 競合検索: \`python scripts/paapi_search_items.py "キーワード"\` → search_results.json
 
-PA-APIを使用して以下の情報を取得・活用してください：
-- 商品の詳細情報（タイトル、ブランド、価格、画像URL）
-- 商品の仕様・特徴
-- カテゴリ情報
-- 関連商品情報（競合分析用）
-
-PA-APIのエンドポイント: https://webservices.amazon.co.jp/paapi5/getitems
-リージョン: us-west-2（日本向けPA-API）
-
-【調査用Pythonスクリプトについて】
-リポジトリ内に PA-API 調査用のPythonスクリプトを用意しています。これらを使って効率的に情報を取得してください：
-
-1. **商品詳細取得**: \`scripts/paapi_get_item.py\`
-   - 使い方: \`python scripts/paapi_get_item.py ${product.asin}\`
-   - 結果は \`product_info.json\` に保存されます。
-
-2. **商品検索（競合調査用）**: \`scripts/paapi_search_items.py\`
-   - 使い方: \`python scripts/paapi_search_items.py "検索キーワード"\`
-   - 結果は \`search_results.json\` に保存されます。競合商品のASIN特定に活用してください。
-
-※ 必要なら \`pip install requests\` で依存関係をインストールしてください。
-
-⚠️ **重要：スクリプトファイルの変更はコミットしないでください**
-スクリプトはコマンドライン引数でASINやキーワードを受け取るため、スクリプト自体を編集する必要はありません。
-万が一スクリプトを変更した場合でも、その変更をコミット対象に含めないでください。
-コミットすべきファイルは \`data/investigations/${product.asin}.json\` のみです。
-
-**【重要：変更の反映（Git Add）】**
-ファイル \`data/investigations/${product.asin}.json\` を作成・更新した後は、必ず \`git add data/investigations/${product.asin}.json\` を実行して変更をステージングしてください。これにより、作成されるPull Requestに変更が含まれるようになります。
-
-スクリプトは環境変数（AMAZON_ACCESS_KEY, AMAZON_SECRET_KEY, AMAZON_PARTNER_TAG）を使用して認証を行います。
-
-商品「${product.title}」について以下の観点で詳細調査を実施してください：
+**調査対象**: 商品「${product.title}」
 現在の日付: ${today}
 ${updateInstruction}
-⚠️ 重要：Amazon PA-APIの制限により、評価・レビュー数データは取得できていません。
-外部の情報源（価格.com、レビューブログ、SNS等）から実際のユーザーレビューを収集・分析してください。
-
 【最優先事項：調査の継続と完了】
-もし特定の商品（型番: ${(product as any).asins ? (product as any).asins.join('/') : product.asin}）に関する具体的なレビューや情報が見つからない場合でも、
-**絶対に調査を中断したり、商品と無関係な「市場調査」や「カテゴリの一般論」を出力したりしないでください。**
-
-その場合は、商品の仕様、公式説明文、機能、シリーズの背景（前作がある場合など）、またはそのブランドの商品としての特徴に基づき、**「この商品そのものに特化した分析」**を深めてください。
-具体的には：
-1. 商品タイトルに含まれるキーワードや公式の機能リストから、この商品独自のメリット・デメリットを推測・分析する
-2. 同価格帯の具体的な競合商品と比較した際、この商品のスペックがどのような立ち位置にあるか分析する
-3. 前作やシリーズ商品がある場合、それらとの違いや進化点を含めてこの商品の価値を記述する
-4. \`productName\` には、必ず「調査対象の商品名」そのものを記載してください。決して「〇〇市場の分析」のようなタイトルにしないでください。
-5. 不足している具体的レビューについては、「一般的傾向」としてではなく、「この商品の特性から予想されるユーザー像や懸念点」として記述してください。
-
-**あなたの出力は、最終的に必ず指定されたJSON形式である必要があります。**
-「調査できませんでした」という報告のみや、商品と関係のない一般的な解説で終わることは避けてください。
-不完全な情報であっても、可能な限り推測や具体的仕様を交えて、指定されたJSON構造を商品固有の情報で埋めてください。
+レビューや情報が見つからなくても**絶対に調査を中断しないこと**。Amazon 403エラー時もGoogle検索で継続。
+禁止: 「調査不能」報告、カテゴリ一般論、「〇〇市場の分析」のようなタイトル
+必須: 商品仕様・機能からの推測分析、競合比較による立ち位置分析、JSON形式での出力
 
 ----
 
@@ -400,15 +353,9 @@ ${updateInstruction}
    - 使用シーン：どのような場面で活用されているか
 
 2. ユーザーストーリーと実体験
-   **【重要：userStoriesの出典明記と整合性】**
-   - 実際のレビューから収集した場合：具体的なレビュー出典を示し、negativePoints/consには「レビューが存在しない」等の記載はしないでください
-   - 外部レビューが見つからず商品情報から推測する場合：experienceフィールドの末尾に「（商品説明と利用シーンからの推測）」と明記し、
-     negativePoints/consに「外部レビューが確認できないため、性能の客観的評価が困難」等と記載してください
-   - **userStoriesに実体験を記載しながら、同時に「レビューが存在しない」と記載するのは矛盾するため絶対に避けてください**
-   
-   - 実際のユーザーがどのような背景で商品を購入し、どのように生活が変わったか
-   - 具体的なエピソードや感想（「通勤時間が楽しくなった」「家事が楽になった」など）
-   - 良い体験だけでなく、失敗談や苦労した点も含める
+   - 購入背景・生活変化・具体的エピソード（成功・失敗両方）
+   - 出典明記: 実レビュー→出典記載 / 推測→experienceに「（推測）」明記
+   - **userStoriesに実体験記載＆「レビュー不在」記載は矛盾 → 絶対禁止**
 
 3. 競合商品との比較
    - 同カテゴリの主要競合商品3-5点
@@ -425,14 +372,8 @@ ${updateInstruction}
    - スコア算出（後述の基準に従うこと）
 
 5. 情報ソース
-   - 調査に使用した情報の出典を具体的にリストアップしてください。
-   - 「Category Analysis」や「Market Research」のような抽象的な名称ではなく、具体的なWebサイト名や記事タイトルを記載してください。
-   - 可能な限り、情報の正確なURLを含めることを強く推奨します（アクセス可能な場合）。
-   - 例：「The Verge: [商品名] Review」「Reddit: [商品名] Discussion Thread」「価格.com: [商品名] クチコミ」など。
-
-重要：Amazonの商品ページへのアクセスが拒否される（403エラー等）場合でも調査を諦めないでください。
-以下の「商品名」や「型番/仕様」を使用してGoogle検索を行い、ブログ記事、レビューサイト、YouTube動画、競合他社の販売ページなどから情報を収集してください。
-「Amazonにアクセスできなかったため調査不能」という結論は避けてください。
+   - 具体的サイト名・記事タイトル・URL（「Category Analysis」等の抽象名は禁止）
+   - 例：「価格.com: [商品名] クチコミ」「The Verge Review」など
 
 商品情報：
 - ASIN: ${product.asin}
