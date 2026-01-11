@@ -309,36 +309,15 @@ export class JulesInvestigator {
 - 全ての出力は日本語で記述すること
 - 認証情報は絶対にログ・ファイル・コミット・PR説明文に含めないこと
 - コミット対象は \`data/investigations/${product.asin}.json\` のみ
-- 作業前に必ずブランチを確認し、 \`main\` ブランチにいる場合は適切な作業用ブランチ（例: \`investigate-${product.asin}\`）を自身で作成・選別して切り替えること
-- **重要：状態の消失を防ぐため、ファイル作成からステージングまでは \`&&\` で連結して一気に実行すること**
-  - 例：\`python [調査スクリプト] > data/investigations/${product.asin}.json && git add data/investigations/${product.asin}.json && git status\`
-- ファイル作成後は以下の順序で操作すること：
-  1. \`git diff data/investigations/${product.asin}.json\` （add前）または \`git diff --staged\` （add後）で内容を確認
-  2. \`git status\` でファイルが "Changes to be committed" に含まれていることを確認
-- **提出（作業完了）の直前には必ず再度 \`git status\` を実行し、意図した変更がステージングされていることを目視で最終確認すること**
 
 ---
 
-## 作業開始前の必須手順
-
-**以下の手順を必ず最初に実行してください：**
-
-1. **現在の状態を確認し、必要に応じてブランチを切り替える**
-   \`\`\`bash
-   git branch --show-current
-   \`\`\`
-   - \`main\` ブランチにいる場合、または既存の適切なブランチがない場合は、直ちに新しいブランチを作成して切り替えてください：
-     \`\`\`bash
-     git checkout -b investigate-${product.asin}
-     \`\`\`
-   - すでに作業用ブランチにいる場合は、そのまま継続してください。
-
-2. **既存の調査データを確認**
-   \`\`\`bash
-   cat data/investigations/${product.asin}.json 2>/dev/null || echo "新規調査"
-   \`\`\`
-   - ファイルが存在する場合: 既存データをベースに更新してください
-   - ファイルが存在しない場合: 新規調査を行ってください
+## 既存の調査データを確認
+\`\`\`bash
+cat data/investigations/${product.asin}.json 2>/dev/null || echo "新規調査"
+\`\`\`
+- ファイルが存在する場合: 既存データをベースに更新してください
+- ファイルが存在しない場合: 新規調査を行ってください
 
 2. **既存データがある場合の更新ルール**
    - 既存の「良い点」「悪い点」が現在も有効か検証し、維持または更新
