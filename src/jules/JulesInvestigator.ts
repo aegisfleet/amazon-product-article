@@ -309,7 +309,7 @@ export class JulesInvestigator {
 - 全ての出力は日本語で記述すること
 - 認証情報は絶対にログ・ファイル・コミット・PR説明文に含めないこと
 - コミット対象は \`data/investigations/${product.asin}.json\` のみ
-- 作業前に必ず \`git branch --show-current\` で \`main\` 以外の適切なブランチにいることを確認すること
+- 作業前に必ずブランチを確認し、 \`main\` ブランチにいる場合は適切な作業用ブランチ（例: \`investigate-${product.asin}\`）を自身で作成・選別して切り替えること
 - **重要：状態の消失を防ぐため、ファイル作成からステージングまでは \`&&\` で連結して一気に実行すること**
   - 例：\`python [調査スクリプト] > data/investigations/${product.asin}.json && git add data/investigations/${product.asin}.json && git status\`
 - ファイル作成後は以下の順序で操作すること：
@@ -323,12 +323,15 @@ export class JulesInvestigator {
 
 **以下の手順を必ず最初に実行してください：**
 
-1. **現在の状態を確認**
+1. **現在の状態を確認し、必要に応じてブランチを切り替える**
    \`\`\`bash
    git branch --show-current
-   git status
    \`\`\`
-   - \`main\` ブランチにいる場合は、直ちに作業を停止し適切なブランチ（例: \`investigate-${product.asin}\`）への切り替えを要求してください。
+   - \`main\` ブランチにいる場合、または既存の適切なブランチがない場合は、直ちに新しいブランチを作成して切り替えてください：
+     \`\`\`bash
+     git checkout -b investigate-${product.asin}
+     \`\`\`
+   - すでに作業用ブランチにいる場合は、そのまま継続してください。
 
 2. **既存の調査データを確認**
    \`\`\`bash
