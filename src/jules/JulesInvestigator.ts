@@ -309,7 +309,12 @@ export class JulesInvestigator {
 - 全ての出力は日本語で記述すること
 - 認証情報は絶対にログ・ファイル・コミット・PR説明文に含めないこと
 - コミット対象は \`data/investigations/${product.asin}.json\` のみ
-- ファイル作成後は必ず \`git add data/investigations/${product.asin}.json\` を実行
+- 作業前に必ず \`git branch --show-current\` で \`main\` 以外の適切なブランチにいることを確認すること
+- ファイル作成後は以下の順序で操作すること：
+  1. \`git diff data/investigations/${product.asin}.json\` で変更内容を確認
+  2. \`git add data/investigations/${product.asin}.json\` を実行
+  3. \`git diff --staged\` で追加された内容を最終確認
+  4. \`git status\` でファイルがステージングされていることを確認（「変更なし」と出てもステージングされていればOK）
 
 ---
 
@@ -317,7 +322,14 @@ export class JulesInvestigator {
 
 **以下の手順を必ず最初に実行してください：**
 
-1. **既存の調査データを確認**
+1. **現在の状態を確認**
+   \`\`\`bash
+   git branch --show-current
+   git status
+   \`\`\`
+   - \`main\` ブランチにいる場合は、直ちに作業を停止し適切なブランチ（例: \`investigate-${product.asin}\`）への切り替えを要求してください。
+
+2. **既存の調査データを確認**
    \`\`\`bash
    cat data/investigations/${product.asin}.json 2>/dev/null || echo "新規調査"
    \`\`\`

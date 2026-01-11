@@ -81,7 +81,12 @@ describe('JulesInvestigator Property Tests', () => {
           expect(prompt).toContain('価格、機能、品質の比較');
           expect(prompt).toContain('差別化ポイントの特定');
 
-          // 4. Market positioning focus (Requirements 2.4)
+          // 4. Git operations and branch management (New Requirement)
+          expect(prompt).toContain('git branch --show-current');
+          expect(prompt).toContain('git diff --staged');
+          expect(prompt).toContain('main` 以外の適切なブランチ');
+
+          // 5. Market positioning focus (Requirements 2.4)
           expect(prompt).toContain('購買推奨度');
           expect(prompt).toContain('どのようなユーザーに適しているか');
           expect(prompt).toContain('購入時の注意点');
@@ -174,6 +179,10 @@ describe('JulesInvestigator Property Tests', () => {
           expect(prompt1).toContain(product.asin);
           expect(prompt1).toContain(product.title);
           expect(prompt1).toContain(product.category);
+
+          // Prompt should contain git-related safety instructions
+          expect(prompt1).toContain('git branch --show-current');
+          expect(prompt1).toContain('git diff --staged');
         }
       ),
       { numRuns: 50 }
