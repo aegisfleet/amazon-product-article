@@ -310,11 +310,12 @@ export class JulesInvestigator {
 - 認証情報は絶対にログ・ファイル・コミット・PR説明文に含めないこと
 - コミット対象は \`data/investigations/${product.asin}.json\` のみ
 - 作業前に必ず \`git branch --show-current\` で \`main\` 以外の適切なブランチにいることを確認すること
+- **重要：状態の消失を防ぐため、ファイル作成からステージングまでは \`&&\` で連結して一気に実行すること**
+  - 例：\`python [調査スクリプト] > data/investigations/${product.asin}.json && git add data/investigations/${product.asin}.json && git status\`
 - ファイル作成後は以下の順序で操作すること：
-  1. \`git diff data/investigations/${product.asin}.json\` で変更内容を確認
-  2. \`git add data/investigations/${product.asin}.json\` を実行
-  3. \`git diff --staged\` で追加された内容を最終確認
-  4. \`git status\` でファイルがステージングされていることを確認（「変更なし」と出てもステージングされていればOK）
+  1. \`git diff data/investigations/${product.asin}.json\` （add前）または \`git diff --staged\` （add後）で内容を確認
+  2. \`git status\` でファイルが "Changes to be committed" に含まれていることを確認
+- **提出（作業完了）の直前には必ず再度 \`git status\` を実行し、意図した変更がステージングされていることを目視で最終確認すること**
 
 ---
 
