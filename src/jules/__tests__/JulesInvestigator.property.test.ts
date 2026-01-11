@@ -84,7 +84,8 @@ describe('JulesInvestigator Property Tests', () => {
           // 4. Git operations and branch management (New Requirement)
           expect(prompt).toContain('git branch --show-current');
           expect(prompt).toContain('git diff --staged');
-          expect(prompt).toContain('main` 以外の適切なブランチ');
+          expect(prompt).toContain('main` ブランチにいる場合は');
+          expect(prompt).toContain('git checkout -b');
           expect(prompt).toContain('&& git add');
           expect(prompt).toContain('Changes to be committed');
           expect(prompt).toContain('最終確認');
