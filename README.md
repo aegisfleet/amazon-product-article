@@ -157,4 +157,4 @@ hugo
 - **テスト**: Jest
 - **Lint**: ESLint
 - **CI/CD**: GitHub Actions
-- **ホスティング**: GitHub Pages
+- **ホスティング**: GitHub Pages\n# Test change
