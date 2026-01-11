@@ -85,6 +85,9 @@ describe('JulesInvestigator Property Tests', () => {
           expect(prompt).toContain('git branch --show-current');
           expect(prompt).toContain('git diff --staged');
           expect(prompt).toContain('main` 以外の適切なブランチ');
+          expect(prompt).toContain('&& git add');
+          expect(prompt).toContain('Changes to be committed');
+          expect(prompt).toContain('最終確認');
 
           // 5. Market positioning focus (Requirements 2.4)
           expect(prompt).toContain('購買推奨度');
@@ -183,6 +186,7 @@ describe('JulesInvestigator Property Tests', () => {
           // Prompt should contain git-related safety instructions
           expect(prompt1).toContain('git branch --show-current');
           expect(prompt1).toContain('git diff --staged');
+          expect(prompt1).toContain('&& git add');
         }
       ),
       { numRuns: 50 }
