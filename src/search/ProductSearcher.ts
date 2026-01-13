@@ -615,6 +615,14 @@ export class ProductSearcher {
         enabled: true
       },
       {
+        name: 'electric_kettles',
+        searchIndex: 'Kitchen',
+        keywords: ['電気ケトル', 'ドリップケトル', '温度調節ケトル', '電気ポット'],
+        maxResults: 10,
+        sortBy: 'featured',
+        enabled: true
+      },
+      {
         name: 'home',
         searchIndex: 'HomeAndKitchen',
         keywords: ['掃除機', '空気清浄機', '加湿器', '枕', '収納'],
@@ -902,7 +910,8 @@ export class ProductSearcher {
       'watches': 'Watches',
       'telework': 'Electronics',
       'kindle_books': 'KindleStore',
-      'novels': 'Books'
+      'novels': 'Books',
+      'electric_kettles': 'Kitchen'
     };
     return categoryMap[categoryName.toLowerCase()] || 'All';
   }
