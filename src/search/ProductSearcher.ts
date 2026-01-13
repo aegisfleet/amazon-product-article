@@ -147,7 +147,19 @@ export class ProductSearcher {
           ...(category.sortBy ? { sortBy: category.sortBy } : {})
         };
 
-        const result = await this.papiClient.searchProducts(searchParams);
+        let result: ProductSearchResult;
+        try {
+          result = await this.papiClient.searchProducts(searchParams);
+        } catch (error) {
+          this.logger.warn(`Failed to search category ${category.name} with specific index, retrying with 'All' index. Error: ${error instanceof Error ? error.message : String(error)}`);
+
+          // Retry with 'All' index - this is a more robust fallback
+          const fallbackParams: ProductSearchParams = {
+            ...searchParams,
+            category: 'All'
+          };
+          result = await this.papiClient.searchProducts(fallbackParams);
+        }
 
         // Filter out excluded products
         const initialCount = result.products.length;
@@ -800,7 +812,7 @@ export class ProductSearcher {
       },
       {
         name: 'frozen_bento',
-        searchIndex: 'Grocery',
+        searchIndex: 'All',
         keywords: ['冷凍弁当', '宅配弁当', '宅食', '冷凍おかず', '糖質制限 弁当'],
         maxResults: 10,
         sortBy: 'featured',
@@ -808,7 +820,7 @@ export class ProductSearcher {
       },
       {
         name: 'meal_kits',
-        searchIndex: 'Grocery',
+        searchIndex: 'All',
         keywords: ['ミールキット', 'おかずセット', '手作りキット', '時短料理', '調理済食品'],
         maxResults: 10,
         sortBy: 'featured',
@@ -816,7 +828,7 @@ export class ProductSearcher {
       },
       {
         name: 'emergency_foods',
-        searchIndex: 'Grocery',
+        searchIndex: 'All',
         keywords: ['非常食セット', '保存食', 'レトルト食品', '備蓄', '常備食'],
         maxResults: 10,
         sortBy: 'featured',

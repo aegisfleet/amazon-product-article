@@ -856,10 +856,10 @@ export class PAAPIClient {
       'computers': 'Computers',
       'music': 'Music',
       'videogames': 'VideoGames',
-      'grocery': 'Grocery',
-      'frozen_bento': 'Grocery',
-      'meal_kits': 'Grocery',
-      'emergency_foods': 'Grocery'
+      'grocery': 'All',
+      'frozen_bento': 'All',
+      'meal_kits': 'All',
+      'emergency_foods': 'All'
     };
 
     return categoryMap[category.toLowerCase()] || 'All';
