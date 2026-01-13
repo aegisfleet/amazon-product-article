@@ -232,10 +232,14 @@ export class JulesCategoryOrganizer {
    - 新しい親カテゴリは作成しないでください。
 
 3. **ソートの実行**
-   - 編集が完了したら、以下のコマンドを実行して終了してください：
+   - 編集が完了したら、以下のコマンドを実行してください：
      \`\`\`bash
      npm run sort:categories
      \`\`\`
+
+4. **コミットの実行**
+   - ソート完了後、\`data/categorygroups.json\` を \`git add\` し、コミットしてください。
+   - コミットメッセージは「chore: organize categories」としてください。
 
 ---
 
