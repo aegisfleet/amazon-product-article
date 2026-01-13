@@ -320,6 +320,72 @@ const SPEC_LABEL_MAP: Record<string, string> = {
   dustCapacity: '集塵容量',
   cleaningWidth: '清掃幅',
   noiseLevel: '騒音レベル',
+
+  // 書籍・メディア
+  pages: 'ページ数',
+  publicationDate: '出版日',
+  isbn: 'ISBN',
+  language: '言語',
+  binding: '製本',
+  genre: 'ジャンル',
+  author: '著者',
+  discCount: 'ディスク枚数',
+  trackList: '曲目リスト',
+  regionCode: 'リージョンコード',
+  subtitles: '字幕',
+
+  // キッチン・家電・生活用品
+  heatingMethod: '加熱方式',
+  temperature: '温度',
+  heatResistance: '耐熱温度',
+  coldResistance: '耐冷温度',
+  compatibleHeatSources: '対応熱源',
+  innerPot: '内釜',
+  roastLevel: '焙煎度',
+  acidity: '酸味',
+  bitterness: '苦味',
+  beanOrigin: '生豆生産国',
+  controls: '操作',
+  duration: '期間/時間',
+  design: 'デザイン',
+  colorOptions: 'カラー展開',
+  setContents: 'セット内容',
+  assembly_required: '組み立て',
+
+  // AV・音響機器
+  polarPattern: '指向性',
+  sensitivity: '感度',
+  bitDepth: 'ビット深度',
+  sampleRate: 'サンプリングレート',
+  microphoneType: 'マイクタイプ',
+  snRatio: 'S/N比',
+  maxSPL: '最大音圧レベル',
+
+  // PC・ネットワーク
+  wifiStandard: 'Wi-Fi規格',
+  frequencyBands: '周波数帯',
+  antennas: 'アンテナ数',
+  processor: 'プロセッサー',
+  usbPorts: 'USBポート',
+  transferSpeed: '転送速度',
+  connector: 'コネクタ',
+  supportedDrives: '対応ドライブ',
+
+  // 食品・ヘルスケア
+  dosageForm: '剤形',
+  guaranteedAnalysis: '成分保証値',
+  servingsPerContainer: '総回数',
+  inactiveIngredients: '添加物/非有効成分',
+  contraindications: '禁忌',
+  dailyDosage: '1日の摂取目安',
+  flavor: '味',
+
+  // その他
+  load_capacity: '耐荷重',
+  country_of_origin: '原産国',
+  compatibleTireSizes: '適合サイズ',
+  recommendedAge: '推奨年齢',
+  uvProtection: 'UVカット',
 };
 
 /**
