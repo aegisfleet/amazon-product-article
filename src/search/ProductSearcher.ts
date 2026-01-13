@@ -737,7 +737,7 @@ export class ProductSearcher {
       {
         name: 'toys',
         searchIndex: 'Toys',
-        keywords: ['知育玩具', 'ボードゲーム', 'ブロック', 'プラモデル', 'ぬいぐるみ'],
+        keywords: ['知育玩具', 'ボードゲーム', 'ブロック', 'プラモデル'],
         maxResults: 10,
         sortBy: 'featured',
         enabled: true
@@ -761,7 +761,7 @@ export class ProductSearcher {
       {
         name: 'watches',
         searchIndex: 'Watches',
-        keywords: ['腕時計 メンズ', '腕時計 レディース', 'スマートウォッチ', 'G-SHOCK', 'セイコー'],
+        keywords: ['腕時計 メンズ', '腕時計 レディース', 'スマートウォッチ'],
         maxResults: 10,
         sortBy: 'featured',
         enabled: true
