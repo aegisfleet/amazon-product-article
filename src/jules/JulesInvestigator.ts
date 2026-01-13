@@ -334,7 +334,11 @@ cat data/investigations/${product.asin}.json 2>/dev/null || echo "新規調査"
 - 商品詳細: \`python scripts/paapi_get_item.py <ASIN>\` → tmp/product_info.json
 - 競合検索: \`python scripts/paapi_search_items.py "キーワード" --search-index <カテゴリ>\` → tmp/search_results.json
 
-※ --search-index オプションでカテゴリ指定可能: All(デフォルト), Electronics, HomeAndKitchen, HealthPersonalCare, Sports, Books 等
+※ --search-index オプションでカテゴリ指定可能:
+   - Electronics (家電), HomeAndKitchen (キッチン/家具), Appliances (冷蔵庫等)
+   - GroceryAndGourmetFood (食品/飲料/冷凍弁当), HealthPersonalCare (漢方/ドラッグストア)
+   - Fashion (服), ToolsAndHomeImprovement (DIY/電動工具), Toys, Books, SportsAndOutdoors 等
+   - 不明な場合は All を使用
 ※ tmp/ 内のファイルは .gitignore 対象のため、調査完了後のクリーンアップ不要
 
 **調査対象**: 商品「${product.title}」

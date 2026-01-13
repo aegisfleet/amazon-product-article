@@ -120,8 +120,16 @@ python scripts/paapi_get_item.py B09BZ59Y51
 python scripts/paapi_search_items.py "枕カバー フランネル" --search-index HomeAndKitchen
 ```
 
-### 利用可能な SearchIndex
-- `All` (デフォルト)
-- `Electronics`, `HomeAndKitchen`, `HealthPersonalCare`, `Sports`, `Books` 等
+### 利用可能な SearchIndex (Japan)
+- `All` (デフォルト/フォールバック用)
+- `Electronics` (家電・カメラ・AV機器)
+- `HomeAndKitchen` (キッチン・日用品・家具・ペット)
+- `HealthPersonalCare` (ドラッグストア/漢方・ビューティー)
+- `GroceryAndGourmetFood` (食品・飲料・お酒)
+- `Fashion` (服＆ファッション小物)
+- `ToolsAndHomeImprovement` (DIY・工具)
+- `Appliances` (大型家電)
+- `Toys` (おもちゃ)
+- `Books` (本)
 
 > **注意**: `tmp/` ディレクトリは `.gitignore` 対象です。調査結果ファイルはコミットしないでください。
