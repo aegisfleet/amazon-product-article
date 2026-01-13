@@ -577,15 +577,25 @@ export class ProductSearcher {
       // if categories are just strings. 
       // Ideally config would support detailed category config.
 
-      const categoryConfigs: CategoryConfig[] = categories.map(cat => ({
-        name: cat,
-        searchIndex: this.getSearchIndexForCategory(cat),
-        enabled: true,
-        keywords: ['おすすめ', '人気', 'ランキング'], // Default Japanese keywords
-        maxResults: 10,
-        sortBy: 'featured'
-      }));
-      return categoryConfigs.length > 0 ? categoryConfigs : this.getDefaultCategories();
+
+      const defaultCategories = this.getDefaultCategories();
+
+      const categoryConfigs: CategoryConfig[] = categories.map(cat => {
+        const found = defaultCategories.find(d => d.name === cat);
+        if (found) {
+          return found;
+        }
+
+        return {
+          name: cat,
+          searchIndex: this.getSearchIndexForCategory(cat),
+          enabled: true,
+          keywords: ['おすすめ', '人気', 'ランキング'], // Default Japanese keywords
+          maxResults: 10,
+          sortBy: 'featured'
+        };
+      });
+      return categoryConfigs.length > 0 ? categoryConfigs : defaultCategories;
     } catch (_error) {
       return this.getDefaultCategories();
     }
@@ -841,6 +851,14 @@ export class ProductSearcher {
         maxResults: 10,
         sortBy: 'featured',
         enabled: true
+      },
+      {
+        name: 'tea_leaves',
+        searchIndex: 'Grocery',
+        keywords: ['紅茶 茶葉', '緑茶 茶葉', '日本茶 茶葉', '煎茶 茶葉', 'アールグレイ 茶葉', 'リーフティー', '茶葉 ギフト'],
+        maxResults: 10,
+        sortBy: 'featured',
+        enabled: true
       }
     ];
   }
@@ -959,7 +977,8 @@ export class ProductSearcher {
       'electric_kettles': 'Kitchen',
       'frozen_bento': 'Grocery',
       'meal_kits': 'Grocery',
-      'emergency_foods': 'Grocery'
+      'emergency_foods': 'Grocery',
+      'tea_leaves': 'Grocery'
     };
     return categoryMap[categoryName.toLowerCase()] || 'All';
   }
