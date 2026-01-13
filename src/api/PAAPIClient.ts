@@ -855,7 +855,11 @@ export class PAAPIClient {
       'garden': 'ToolsAndHomeImprovement',
       'computers': 'Computers',
       'music': 'Music',
-      'videogames': 'VideoGames'
+      'videogames': 'VideoGames',
+      'grocery': 'Grocery',
+      'frozen_bento': 'Grocery',
+      'meal_kits': 'Grocery',
+      'emergency_foods': 'Grocery'
     };
 
     return categoryMap[category.toLowerCase()] || 'All';

@@ -797,6 +797,30 @@ export class ProductSearcher {
         maxResults: 10,
         sortBy: 'featured',
         enabled: true
+      },
+      {
+        name: 'frozen_bento',
+        searchIndex: 'Grocery',
+        keywords: ['冷凍弁当', '宅配弁当', '宅食', '冷凍おかず', '糖質制限 弁当'],
+        maxResults: 10,
+        sortBy: 'featured',
+        enabled: true
+      },
+      {
+        name: 'meal_kits',
+        searchIndex: 'Grocery',
+        keywords: ['ミールキット', 'おかずセット', '手作りキット', '時短料理', '調理済食品'],
+        maxResults: 10,
+        sortBy: 'featured',
+        enabled: true
+      },
+      {
+        name: 'emergency_foods',
+        searchIndex: 'Grocery',
+        keywords: ['非常食セット', '保存食', 'レトルト食品', '備蓄', '常備食'],
+        maxResults: 10,
+        sortBy: 'featured',
+        enabled: true
       }
     ];
   }
@@ -911,7 +935,10 @@ export class ProductSearcher {
       'telework': 'Electronics',
       'kindle_books': 'KindleStore',
       'novels': 'Books',
-      'electric_kettles': 'Kitchen'
+      'electric_kettles': 'Kitchen',
+      'frozen_bento': 'Grocery',
+      'meal_kits': 'Grocery',
+      'emergency_foods': 'Grocery'
     };
     return categoryMap[categoryName.toLowerCase()] || 'All';
   }
