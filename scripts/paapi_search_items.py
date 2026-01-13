@@ -91,7 +91,7 @@ if __name__ == '__main__':
         "Keywords": args.keywords,
         "PartnerTag": partner_tag,
         "PartnerType": "Associates",
-        "SearchIndex": "HealthPersonalCare",
+        "SearchIndex": "HomeAndKitchen",
         "Resources": [
             "ItemInfo.Title",
             "ItemInfo.ByLineInfo",
