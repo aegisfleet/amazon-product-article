@@ -1256,7 +1256,7 @@ ${score >= 80 ? '自信を持っておすすめできる商品です。' :
 
       if (specs.countryOfOrigin) infoRows.push(`| 原産国 | ${this.formatSpecValue(specs.countryOfOrigin)} |`);
 
-      // 家具・収納・その他追加
+      // 家具・オフィス・収納・その他追加
       if (specs.loadCapacity) {
         if (typeof specs.loadCapacity === 'string') {
           infoRows.push(`| 耐荷重 | ${specs.loadCapacity} |`);
