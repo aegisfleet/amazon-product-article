@@ -308,7 +308,7 @@ export class JulesInvestigator {
     const prompt = `【基本ルール】
 - 全ての出力は日本語で記述すること
 - 認証情報は絶対にログ・ファイル・コミット・PR説明文に含めないこと
-- コミット対象は \`data/investigations/${product.asin}.json\` のみ
+- ファイルを \`data/investigations/${product.asin}.json\` に保存した後、必ず \`git add\` と \`git commit\` を実行し、コミットメッセージに商品ASINを含めること
 
 ---
 
