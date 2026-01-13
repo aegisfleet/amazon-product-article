@@ -116,6 +116,12 @@ npm run generate:articles
 
 # PRマージ
 npm run merge:pr
+
+# カテゴリの整理
+npm run organize:categories
+
+# カテゴリのソート
+npm run sort:categories
 ```
 
 ### Hugo（静的サイト生成）
