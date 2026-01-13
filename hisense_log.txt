@@ -1,0 +1,2 @@
+/app/scripts/paapi_search_items.py:40: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  t = datetime.datetime.utcnow()
