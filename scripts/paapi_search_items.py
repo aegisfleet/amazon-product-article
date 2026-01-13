@@ -77,6 +77,18 @@ if __name__ == '__main__':
         type=str,
         help='Keywords to search for'
     )
+    parser.add_argument(
+        '--search-index', '-s',
+        type=str,
+        default='All',
+        help='Amazon search index (default: All). Examples: Electronics, HomeAndKitchen, HealthPersonalCare, Sports, Books'
+    )
+    parser.add_argument(
+        '--output', '-o',
+        type=str,
+        default='tmp/search_results.json',
+        help='Output file path (default: tmp/search_results.json)'
+    )
     args = parser.parse_args()
 
     access_key = os.environ.get("AMAZON_ACCESS_KEY")
@@ -91,7 +103,7 @@ if __name__ == '__main__':
         "Keywords": args.keywords,
         "PartnerTag": partner_tag,
         "PartnerType": "Associates",
-        "SearchIndex": "HealthPersonalCare",
+        "SearchIndex": args.search_index,
         "Resources": [
             "ItemInfo.Title",
             "ItemInfo.ByLineInfo",
@@ -109,9 +121,14 @@ if __name__ == '__main__':
         r = requests.post(endpoint, data=payload, headers=headers)
         response_json = r.json()
 
-        with open("search_results.json", "w", encoding="utf-8") as f:
+        # Create output directory if needed
+        output_dir = os.path.dirname(args.output)
+        if output_dir and not os.path.exists(output_dir):
+            os.makedirs(output_dir)
+
+        with open(args.output, "w", encoding="utf-8") as f:
             json.dump(response_json, f, indent=2, ensure_ascii=False)
-        print(f"Search results for '{args.keywords}' saved to search_results.json")
+        print(f"Search results for '{args.keywords}' saved to {args.output}")
 
     except Exception as e:
         print(f"Request failed: {e}")

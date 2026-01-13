@@ -77,6 +77,12 @@ if __name__ == '__main__':
         type=str,
         help='Amazon Standard Identification Number (ASIN) of the product'
     )
+    parser.add_argument(
+        '--output', '-o',
+        type=str,
+        default='tmp/product_info.json',
+        help='Output file path (default: tmp/product_info.json)'
+    )
     args = parser.parse_args()
 
     access_key = os.environ.get("AMAZON_ACCESS_KEY")
@@ -156,9 +162,14 @@ if __name__ == '__main__':
                     if isinstance(value, dict) and 'DisplayValue' in value:
                         data["specifications"][key] = value['DisplayValue']
 
-            with open("product_info.json", "w", encoding="utf-8") as f:
+            # Create output directory if needed
+            output_dir = os.path.dirname(args.output)
+            if output_dir and not os.path.exists(output_dir):
+                os.makedirs(output_dir)
+
+            with open(args.output, "w", encoding="utf-8") as f:
                 json.dump(data, f, indent=2, ensure_ascii=False)
-            print(f"Product information for {args.asin} saved to product_info.json")
+            print(f"Product information for {args.asin} saved to {args.output}")
         else:
             print("Could not find item in response:")
             print(json.dumps(response_json, indent=2))

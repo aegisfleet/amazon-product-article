@@ -100,3 +100,28 @@ parent_category: "カテゴリ名"
 - 積極的に提案を行いつつも、既存のパターンに従ってください。
 - 要件が曖昧な場合は、実装を進める前にユーザーに確認を行ってください。
 - 変更内容は `walkthrough.md` に明確に記録してください。
+
+## 8. PA-API 調査ツールの使用
+
+商品調査時に以下のスクリプトを使用できます。**これらのスクリプトは編集せずに使用してください。**
+
+| スクリプト | 用途 | 出力先 |
+|---|---|---|
+| `scripts/paapi_get_item.py` | 商品詳細取得 | `tmp/product_info.json` |
+| `scripts/paapi_search_items.py` | 競合商品検索 | `tmp/search_results.json` |
+
+### 使用例
+
+```bash
+# 商品詳細の取得
+python scripts/paapi_get_item.py B09BZ59Y51
+
+# 競合商品の検索（SearchIndex指定可能）
+python scripts/paapi_search_items.py "枕カバー フランネル" --search-index HomeAndKitchen
+```
+
+### 利用可能な SearchIndex
+- `All` (デフォルト)
+- `Electronics`, `HomeAndKitchen`, `HealthPersonalCare`, `Sports`, `Books` 等
+
+> **注意**: `tmp/` ディレクトリは `.gitignore` 対象です。調査結果ファイルはコミットしないでください。
