@@ -683,6 +683,14 @@ export class ProductSearcher {
         enabled: true
       },
       {
+        name: 'kanpo',
+        searchIndex: 'HealthPersonalCare',
+        keywords: ['漢方', '漢方薬', '第2類医薬品 漢方', '第3類医薬品 漢方', '生薬'],
+        maxResults: 10,
+        sortBy: 'featured',
+        enabled: true
+      },
+      {
         name: 'relaxation',
         searchIndex: 'HomeAndKitchen',
         keywords: ['アロマディフューザー', '入浴剤 ギフト', 'ホットアイマスク', 'キャンドル', 'ルームウェア'],
@@ -947,6 +955,7 @@ export class ProductSearcher {
       'telework': 'Electronics',
       'kindle_books': 'KindleStore',
       'novels': 'Books',
+      'kanpo': 'HealthPersonalCare',
       'electric_kettles': 'Kitchen',
       'frozen_bento': 'Grocery',
       'meal_kits': 'Grocery',
