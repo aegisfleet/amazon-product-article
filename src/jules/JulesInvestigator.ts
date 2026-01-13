@@ -330,9 +330,12 @@ cat data/investigations/${product.asin}.json 2>/dev/null || echo "新規調査"
 環境変数（AMAZON_ACCESS_KEY, AMAZON_SECRET_KEY, AMAZON_PARTNER_TAG）で認証。
 エンドポイント: https://webservices.amazon.co.jp/paapi5/getitems（リージョン: us-west-2）
 
-調査用スクリプト（編集・コミット不要）:
-- 商品詳細: \`python scripts/paapi_get_item.py ${product.asin}\` → product_info.json
-- 競合検索: \`python scripts/paapi_search_items.py "キーワード"\` → search_results.json
+調査用スクリプト（**編集は絶対禁止・そのまま使用すること**）:
+- 商品詳細: \`python scripts/paapi_get_item.py <ASIN>\` → tmp/product_info.json
+- 競合検索: \`python scripts/paapi_search_items.py "キーワード" --search-index <カテゴリ>\` → tmp/search_results.json
+
+※ --search-index オプションでカテゴリ指定可能: All(デフォルト), Electronics, HomeAndKitchen, HealthPersonalCare, Sports, Books 等
+※ tmp/ 内のファイルは .gitignore 対象のため、調査完了後のクリーンアップ不要
 
 **調査対象**: 商品「${product.title}」
 現在の日付: ${today}
