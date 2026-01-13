@@ -445,13 +445,120 @@ export class PAAPIClient {
 
   /**
    * Parse search response into Product objects
+   * Filters out mobile apps, zero-price items, and other unwanted product types
    */
   private parseSearchResponse(response: PAAPIResponse): Product[] {
     if (!response.SearchResult?.Items) {
       return [];
     }
 
-    return response.SearchResult.Items.map(item => this.parseProduct(item));
+    const totalItems = response.SearchResult.Items.length;
+    let mobileAppCount = 0;
+    let zeroPriceCount = 0;
+
+    // Filter out mobile apps and zero-price items before parsing
+    const filteredItems = response.SearchResult.Items.filter(item => {
+      // 1. モバイルアプリを除外
+      if (this.isMobileApp(item)) {
+        mobileAppCount++;
+        return false;
+      }
+
+      // 2. 価格が0円の商品を除外（無料アプリなど）
+      if (this.isZeroPriceItem(item)) {
+        zeroPriceCount++;
+        return false;
+      }
+
+      return true;
+    });
+
+    const filteredCount = totalItems - filteredItems.length;
+    if (filteredCount > 0) {
+      this.logger.debug(`Filtered out ${filteredCount} items (${mobileAppCount} mobile apps, ${zeroPriceCount} zero-price items)`);
+    }
+
+    return filteredItems.map(item => this.parseProduct(item));
+  }
+
+  /**
+   * Check if a PA-API item has zero price (free apps, etc.)
+   */
+  private isZeroPriceItem(item: PAAPIItem): boolean {
+    const listing = item.Offers?.Listings?.[0];
+    const summary = item.Offers?.Summaries?.[0];
+
+    // Check listing price
+    if (listing?.Price?.Amount !== undefined && listing.Price.Amount === 0) {
+      this.logger.debug(`Excluded zero-price item: ${item.ItemInfo?.Title?.DisplayValue}`);
+      return true;
+    }
+
+    // Check summary lowest price
+    if (summary?.LowestPrice?.Amount !== undefined && summary.LowestPrice.Amount === 0) {
+      this.logger.debug(`Excluded zero-price item (summary): ${item.ItemInfo?.Title?.DisplayValue}`);
+      return true;
+    }
+
+    return false;
+  }
+
+  /**
+   * Check if a PA-API item is a mobile app
+   * Mobile apps should be excluded from product research
+   */
+  private isMobileApp(item: PAAPIItem): boolean {
+    // 1. カテゴリ名（BrowseNode）による判定
+    const browseNodes = item.BrowseNodeInfo?.BrowseNodes || [];
+    const categoryPatterns = [
+      /^アプリ$/i,
+      /^Androidアプリ$/i,
+      /^iOSアプリ$/i,
+      /^Appストア$/i,
+      /^モバイルアプリ$/i,
+      /^Mobile Apps$/i,
+      /^Apps for Android$/i,
+      /^Apps for iOS$/i,
+      /^App$/i,
+      /^スマホアプリ$/i
+    ];
+
+    for (const node of browseNodes) {
+      const displayName = node.DisplayName || '';
+      const contextFreeName = node.ContextFreeName || '';
+
+      if (categoryPatterns.some(pattern => pattern.test(displayName) || pattern.test(contextFreeName))) {
+        this.logger.debug(`Excluded mobile app by category: ${item.ItemInfo?.Title?.DisplayValue} (category: ${displayName})`);
+        return true;
+      }
+    }
+
+    // 2. タイトルによる判定（フォールバック）
+    const title = item.ItemInfo?.Title?.DisplayValue || '';
+    const titlePatterns = [
+      /\[Androidアプリ\]/i,
+      /\[iOSアプリ\]/i,
+      /\(アプリ\)/i,
+      /【アプリ】/i,
+      /for Android$/i,
+      /for iOS$/i
+    ];
+
+    if (titlePatterns.some(pattern => pattern.test(title))) {
+      this.logger.debug(`Excluded mobile app by title: ${title}`);
+      return true;
+    }
+
+    // 3. URLによる判定（Amazonアプリストア固有のURL構造）
+    const detailPageUrl = item.DetailPageURL || '';
+    if (detailPageUrl.includes('/dp/B0') && detailPageUrl.includes('/ref=mas_')) {
+      // Amazonアプリストアの商品URL形式をチェック
+      // 注: これはヒューリスティックな判定なので、より確実なカテゴリ判定を優先
+      this.logger.debug(`Possible mobile app by URL pattern: ${title}`);
+      // URL判定だけでは誤除外の可能性があるため、return しない
+    }
+
+    return false;
   }
 
   /**
