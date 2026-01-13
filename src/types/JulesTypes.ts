@@ -264,6 +264,70 @@ export interface TechnicalSpecs {
   compatibleDevices?: string | string[] | null;  // 対応機器
   compatibleModels?: string | string[] | null;   // 対応モデル
 
+  // 書籍・メディア
+  pages?: string | number | null;
+  publicationDate?: string | null;
+  isbn?: string | null;
+  language?: string | null;
+  binding?: string | null;
+  genre?: string | null;
+  author?: string | null;
+  discCount?: string | number | null;
+  trackList?: string | string[] | null;
+  regionCode?: string | null;
+  subtitles?: string | string[] | null;
+
+  // キッチン・家電・生活用品
+  heatingMethod?: string | null;
+  temperature?: string | null;
+  heatResistance?: string | null;
+  coldResistance?: string | null;
+  compatibleHeatSources?: string | string[] | null;
+  innerPot?: string | null;
+  roastLevel?: string | null;
+  acidity?: string | null;
+  bitterness?: string | null;
+  beanOrigin?: string | null;
+  controls?: string | string[] | null;
+  duration?: string | null;
+  design?: string | null;
+  colorOptions?: string | string[] | null;
+  setContents?: string | string[] | null;
+  assembly_required?: string | boolean | null;
+
+  // AV・音響機器
+  polarPattern?: string | null;
+  sensitivity?: string | null;
+  bitDepth?: string | null;
+  sampleRate?: string | null;
+  microphoneType?: string | null;
+  snRatio?: string | null;
+  maxSPL?: string | null;
+
+  // PC・ネットワーク
+  wifiStandard?: string | null;
+  frequencyBands?: string | string[] | null;
+  antennas?: string | number | null;
+  processor?: string | null;
+  usbPorts?: string | string[] | null;
+  transferSpeed?: string | null;
+  connector?: string | null;
+  supportedDrives?: string | string[] | null;
+
+  // 食品・ヘルスケア
+  dosageForm?: string | null;
+  guaranteedAnalysis?: string | null;
+  servingsPerContainer?: string | number | null;
+  inactiveIngredients?: string | string[] | null;
+  contraindications?: string | string[] | null;
+  dailyDosage?: string | null;
+  flavor?: string | null;
+
+  // その他
+  compatibleTireSizes?: string | null;
+  recommendedAge?: string | null;
+  uvProtection?: string | null;
+
   // 未知のフィールドを許容（動的レンダリング対応）
   [key: string]: unknown;
 }
