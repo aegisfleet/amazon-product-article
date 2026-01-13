@@ -32,11 +32,11 @@ function getOptions(): CLIOptions {
     const startingBranch = process.env.JULES_STARTING_BRANCH || 'main';
 
     if (!apiKey) {
-        throw new Error('Missing required environment variable: JULES_API_KEY');
+        throw new Error('Missing required environment variable: JULES_API_KEY. Please set it in your .env file or environment.');
     }
 
     if (!source) {
-        throw new Error('Missing required environment variable: JULES_SOURCE (e.g., sources/github/owner/repo)');
+        throw new Error('Missing required environment variable: JULES_SOURCE (e.g., sources/github/owner/repo). Please ensure it is correctly configured.');
     }
 
     return {
