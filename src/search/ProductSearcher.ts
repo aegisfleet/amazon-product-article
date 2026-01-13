@@ -854,7 +854,7 @@ export class ProductSearcher {
       },
       {
         name: 'tea_leaves',
-        searchIndex: 'Grocery',
+        searchIndex: 'GroceryAndGourmetFood',
         keywords: ['紅茶 茶葉', '緑茶 茶葉', '日本茶 茶葉', '煎茶 茶葉', 'アールグレイ 茶葉', 'リーフティー', '茶葉 ギフト'],
         maxResults: 10,
         sortBy: 'featured',
@@ -975,10 +975,10 @@ export class ProductSearcher {
       'novels': 'Books',
       'kanpo': 'HealthPersonalCare',
       'electric_kettles': 'Kitchen',
-      'frozen_bento': 'Grocery',
-      'meal_kits': 'Grocery',
-      'emergency_foods': 'Grocery',
-      'tea_leaves': 'Grocery'
+      'frozen_bento': 'GroceryAndGourmetFood',
+      'meal_kits': 'GroceryAndGourmetFood',
+      'emergency_foods': 'GroceryAndGourmetFood',
+      'tea_leaves': 'GroceryAndGourmetFood'
     };
     return categoryMap[categoryName.toLowerCase()] || 'All';
   }
