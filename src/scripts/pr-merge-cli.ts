@@ -398,6 +398,84 @@ async function validateMarkdownFiles(
     return { passed: true };
 }
 
+/**
+ * PRのステータスチェック（CI/CodeQL等）が完了するのを待機する
+ */
+async function waitForChecks(
+    octokit: Octokit,
+    owner: string,
+    repo: string,
+    prNumber: number,
+    timeoutMs: number = 15 * 60 * 1000 // 15分
+): Promise<void> {
+    const startTime = Date.now();
+    const intervalMs = 30000; // 30秒
+
+    logger.info(`Waiting for PR checks to complete (timeout: ${Math.ceil(timeoutMs / 60000)}m)...`);
+
+    while (Date.now() - startTime < timeoutMs) {
+        // PRの最新状態を取得
+        const { data: pr } = await octokit.pulls.get({
+            owner,
+            repo,
+            pull_number: prNumber,
+        });
+
+        // マージ可能な状態であれば即OK
+        if (pr.mergeable_state === 'clean') {
+            logger.info('PR is ready to merge (mergeable_state: clean)');
+            return;
+        }
+
+        if (pr.mergeable_state === 'dirty') {
+            throw new Error('PR has conflicts (mergeable_state: dirty)');
+        }
+
+        // チェックの実走状態を確認
+        const { data: checkRuns } = await octokit.checks.listForRef({
+            owner,
+            repo,
+            ref: pr.head.sha,
+        });
+
+        // コミットステータスも確認
+        const { data: combinedStatus } = await octokit.repos.getCombinedStatusForRef({
+            owner,
+            repo,
+            ref: pr.head.sha
+        });
+
+        // 実行中またはキュー待ちのチェックがあるか
+        const pendingChecks = checkRuns.check_runs.filter(run => run.status === 'in_progress' || run.status === 'queued');
+        const pendingStatuses = combinedStatus.statuses.filter(status => status.state === 'pending');
+
+        if (pendingChecks.length > 0 || pendingStatuses.length > 0 || combinedStatus.state === 'pending') {
+            const pendingNames = [
+                ...pendingChecks.map(run => run.name),
+                ...pendingStatuses.map(status => status.context)
+            ];
+            logger.info(`Checks in progress... (${pendingChecks.length + pendingStatuses.length} pending: ${pendingNames.slice(0, 3).join(', ')}...)`);
+        } else {
+            // ペンディングはないが clean でもない場合
+            // 失敗しているチェックがあるか確認
+            const failedChecks = checkRuns.check_runs.filter(run => run.conclusion === 'failure' || run.conclusion === 'timed_out');
+            const failedStatuses = combinedStatus.statuses.filter(status => status.state === 'failure' || status.state === 'error');
+
+            if (failedChecks.length > 0 || failedStatuses.length > 0 || combinedStatus.state === 'failure') {
+                const failedNames = [...failedChecks.map(r => r.name), ...failedStatuses.map(s => s.context)];
+                throw new Error(`Checks completed with failures: ${failedNames.join(', ')}`);
+            }
+
+            // チェックは全てパスしているが、まだ blocked/unknown の場合（GitHub側の計算待ちなど）
+            logger.info(`PR state is ${pr.mergeable_state}, waiting for checks/calculation...`);
+        }
+
+        await sleep(intervalMs);
+    }
+
+    throw new Error('Timed out waiting for checks to complete');
+}
+
 async function main(): Promise<void> {
     logger.info('Starting PR merge CLI...');
 
@@ -579,6 +657,9 @@ async function main(): Promise<void> {
         }
 
         // PRをマージ（リトライ付き）
+        // その前にステータスチェックの完了を待機
+        await waitForChecks(octokit, options.owner, options.repo, options.prNumber);
+
         await mergeWithRetry(
             octokit,
             options.owner,
