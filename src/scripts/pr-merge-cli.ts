@@ -16,51 +16,6 @@ import { Logger } from '../utils/Logger';
 
 const logger = Logger.getInstance();
 
-// リトライ設定
-const MAX_MERGE_RETRIES = 3;
-const INITIAL_RETRY_DELAY_MS = 2000;  // 2秒
-
-/**
- * 指定時間待機する
- */
-async function sleep(ms: number): Promise<void> {
-    return new Promise(resolve => setTimeout(resolve, ms));
-}
-
-/**
- * Base branch変更エラーかどうかを判定
- */
-function isBaseBranchModifiedError(error: unknown): boolean {
-    if (error && typeof error === 'object' && 'message' in error) {
-        const message = String((error as { message: string }).message);
-        return message.includes('Base branch was modified');
-    }
-    return false;
-}
-
-/**
- * PRブランチをbase branchから更新する
- */
-async function updatePullRequestBranch(
-    octokit: Octokit,
-    owner: string,
-    repo: string,
-    pullNumber: number
-): Promise<boolean> {
-    try {
-        logger.info(`Updating PR branch from base branch...`);
-        await octokit.pulls.updateBranch({
-            owner,
-            repo,
-            pull_number: pullNumber,
-        });
-        logger.info('PR branch updated successfully');
-        return true;
-    } catch (error) {
-        logger.warn('Failed to update PR branch:', error);
-        return false;
-    }
-}
 
 /**
  * リポジトリのブランチを削除する
