@@ -28,35 +28,6 @@ async function sleep(ms: number): Promise<void> {
 }
 
 /**
- * 一時的なエラー（500, 502, 503, 504）が発生した場合にリトライする
- */
-async function callWithRetry<T>(
-    operation: () => Promise<T>,
-    maxRetries: number = 3,
-    initialDelayMs: number = 2000
-): Promise<T> {
-    let lastError: any;
-    for (let attempt = 1; attempt <= maxRetries + 1; attempt++) {
-        try {
-            return await operation();
-        } catch (error: any) {
-            lastError = error;
-            const status = error.status;
-            
-            // 一時的なサーバーエラー（500, 502, 503, 504）の場合のみリトライ
-            if (attempt <= maxRetries && [500, 502, 503, 504].includes(status)) {
-                const delayMs = initialDelayMs * Math.pow(2, attempt - 1);
-                logger.warn(`Transient API error (${status}). Retrying in ${delayMs}ms... (attempt ${attempt}/${maxRetries})`);
-                await sleep(delayMs);
-                continue;
-            }
-            throw error;
-        }
-    }
-    throw lastError;
-}
-
-/**
  * Base branch変更エラーかどうかを判定
  */
 function isBaseBranchModifiedError(error: unknown): boolean {
@@ -115,61 +86,6 @@ async function deleteBranch(
     }
 }
 
-/**
- * リトライ付きでPRをマージする
- */
-async function mergeWithRetry(
-    octokit: Octokit,
-    owner: string,
-    repo: string,
-    pullNumber: number,
-    commitTitle: string
-): Promise<void> {
-    let lastError: unknown;
-
-    for (let attempt = 1; attempt <= MAX_MERGE_RETRIES; attempt++) {
-        try {
-            logger.info(`Attempting to merge PR (attempt ${attempt}/${MAX_MERGE_RETRIES})...`);
-            await octokit.pulls.merge({
-                owner,
-                repo,
-                pull_number: pullNumber,
-                merge_method: 'squash',
-                commit_title: commitTitle,
-            });
-            logger.info(`PR #${pullNumber} merged successfully`);
-            return;
-        } catch (error) {
-            lastError = error;
-
-            if (isBaseBranchModifiedError(error)) {
-                logger.warn(`Merge failed: Base branch was modified (attempt ${attempt}/${MAX_MERGE_RETRIES})`);
-
-                if (attempt < MAX_MERGE_RETRIES) {
-                    // 指数バックオフで待機
-                    const delayMs = INITIAL_RETRY_DELAY_MS * Math.pow(2, attempt - 1);
-                    logger.info(`Waiting ${delayMs}ms before retry...`);
-                    await sleep(delayMs);
-
-                    // PRブランチを更新
-                    const updated = await updatePullRequestBranch(octokit, owner, repo, pullNumber);
-                    if (!updated) {
-                        logger.warn('Branch update failed, but will still retry merge');
-                    }
-
-                    // 更新後の状態が安定するまで待機
-                    await sleep(1000);
-                }
-            } else {
-                // Base branch変更以外のエラーはリトライしない
-                throw error;
-            }
-        }
-    }
-
-    // 全リトライ失敗
-    throw lastError;
-}
 
 interface CLIOptions {
     token: string;
@@ -427,83 +343,6 @@ async function validateMarkdownFiles(
     return { passed: true };
 }
 
-/**
- * PRのステータスチェック（CI/CodeQL等）が完了するのを待機する
- */
-async function waitForChecks(
-    octokit: Octokit,
-    owner: string,
-    repo: string,
-    prNumber: number,
-    timeoutMs: number = 15 * 60 * 1000 // 15分
-): Promise<void> {
-    const startTime = Date.now();
-    const intervalMs = 30000; // 30秒
-
-    logger.info(`Waiting for PR checks to complete (timeout: ${Math.ceil(timeoutMs / 60000)}m)...`);
-
-    while (Date.now() - startTime < timeoutMs) {
-        // PRの最新状態を取得
-        const { data: pr } = await callWithRetry(() => octokit.pulls.get({
-            owner,
-            repo,
-            pull_number: prNumber,
-        }));
-
-        // マージ可能な状態であれば即OK
-        if (pr.mergeable_state === 'clean') {
-            logger.info('PR is ready to merge (mergeable_state: clean)');
-            return;
-        }
-
-        if (pr.mergeable_state === 'dirty') {
-            throw new Error('PR has conflicts (mergeable_state: dirty)');
-        }
-
-        // チェックの実走状態を確認
-        const { data: checkRuns } = await callWithRetry(() => octokit.checks.listForRef({
-            owner,
-            repo,
-            ref: pr.head.sha,
-        }));
-
-        // コミットステータスも確認
-        const { data: combinedStatus } = await callWithRetry(() => octokit.repos.getCombinedStatusForRef({
-            owner,
-            repo,
-            ref: pr.head.sha
-        }));
-
-        // 実行中またはキュー待ちのチェックがあるか
-        const pendingChecks = checkRuns.check_runs.filter(run => run.status === 'in_progress' || run.status === 'queued');
-        const pendingStatuses = combinedStatus.statuses.filter(status => status.state === 'pending');
-
-        if (pendingChecks.length > 0 || pendingStatuses.length > 0 || combinedStatus.state === 'pending') {
-            const pendingNames = [
-                ...pendingChecks.map(run => run.name),
-                ...pendingStatuses.map(status => status.context)
-            ];
-            logger.info(`Checks in progress... (${pendingChecks.length + pendingStatuses.length} pending: ${pendingNames.slice(0, 3).join(', ')}...)`);
-        } else {
-            // ペンディングはないが clean でもない場合
-            // 失敗しているチェックがあるか確認
-            const failedChecks = checkRuns.check_runs.filter(run => run.conclusion === 'failure' || run.conclusion === 'timed_out');
-            const failedStatuses = combinedStatus.statuses.filter(status => status.state === 'failure' || status.state === 'error');
-
-            if (failedChecks.length > 0 || failedStatuses.length > 0 || combinedStatus.state === 'failure') {
-                const failedNames = [...failedChecks.map(r => r.name), ...failedStatuses.map(s => s.context)];
-                throw new Error(`Checks completed with failures: ${failedNames.join(', ')}`);
-            }
-
-            // チェックは全てパスしているが、まだ blocked/unknown の場合（GitHub側の計算待ちなど）
-            logger.info(`PR state is ${pr.mergeable_state}, waiting for checks/calculation...`);
-        }
-
-        await sleep(intervalMs);
-    }
-
-    throw new Error('Timed out waiting for checks to complete');
-}
 
 async function main(): Promise<void> {
     logger.info('Starting PR merge CLI...');
@@ -516,18 +355,18 @@ async function main(): Promise<void> {
         const octokit = new Octokit({ auth: options.token });
 
         // PR情報を取得
-        const { data: prData } = await callWithRetry(() => octokit.pulls.get({
+        const { data: prData } = await octokit.pulls.get({
             owner: options.owner,
             repo: options.repo,
             pull_number: options.prNumber,
-        }));
+        });
 
         // 変更ファイル一覧を取得
-        const { data: filesData } = await callWithRetry(() => octokit.pulls.listFiles({
+        const { data: filesData } = await octokit.pulls.listFiles({
             owner: options.owner,
             repo: options.repo,
             pull_number: options.prNumber,
-        }));
+        });
 
         const pr: PullRequest = {
             number: prData.number,
@@ -685,20 +524,32 @@ async function main(): Promise<void> {
             process.exit(1);
         }
 
-        // PRをマージ（リトライ付き）
-        // その前にステータスチェックの完了を待機
-        await waitForChecks(octokit, options.owner, options.repo, options.prNumber);
 
-        await mergeWithRetry(
-            octokit,
-            options.owner,
-            options.repo,
-            options.prNumber,
-            `[Jules] ${prData.title}`
-        );
+        // PRを自動マージに設定
+        // GitHub CLI (gh) を使用して auto-merge を有効化
+        // 検証が済んでいるので、後はGitHubプラットフォームに任せる
+        logger.info('Enabling auto-merge for the PR...');
 
-        // マージ完了後、ブランチを削除（GitHubの設定で自動削除されない場合の保険）
-        await deleteBranch(octokit, options.owner, options.repo, pr.head);
+        const { execSync } = await import('child_process');
+        try {
+            // gh pr merge <number> --squash --auto --delete-branch --subject "<title>"
+            // Note: GITHUB_TOKEN is usually automatically picked up by gh if set in env as GH_TOKEN or GITHUB_TOKEN
+            // We ensure GH_TOKEN is set to options.token
+            const command = `gh pr merge ${options.prNumber} --squash --auto --delete-branch --subject "${prData.title}"`;
+
+            execSync(command, {
+                stdio: 'inherit',
+                env: { ...process.env, GH_TOKEN: options.token }
+            });
+
+            logger.info(`Auto-merge enabled for PR #${options.prNumber}`);
+        } catch (error) {
+            logger.error('Failed to enable auto-merge:', error);
+            // 失敗しても検証自体はパスしているので、プロセスは成功として終了させるか検討の余地があるが
+            // マージ設定ができないのはCIとしては失敗なので exit 1 とする
+            process.exit(1);
+        }
+
         process.exit(0);
 
     } catch (error) {
