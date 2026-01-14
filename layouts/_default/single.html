@@ -1,4 +1,14 @@
 {{ define "main" }}
+{{/* Variable Definitions moved to top */}}
+{{ $currentAsin := .Params.asin }}
+{{ $categories := .Params.categories }}
+{{ $currentPrice := 0 }}
+{{ if .Params.price }}
+{{ $currentPrice = index (findRE "[0-9]+" (replace .Params.price "," "")) 0 | int }}
+{{ end }}
+{{ $currentScore := .Params.score | default 0 }}
+{{ $allArticles := where (where .Site.RegularPages "Section" "articles") "Params.asin" "!=" $currentAsin }}
+
 <div class="container" style="padding-top: var(--spacing-xl);">
     {{ partial "breadcrumb.html" . }}
 
@@ -16,6 +26,43 @@
             </div>
         </header>
 
+        {{/* 同じカテゴリの記事 */}}
+        {{ $related := $allArticles }}
+        {{ if $categories }}
+        {{ $firstCat := index $categories 0 }}
+        {{ $related = where $related "Params.categories" "intersect" (slice $firstCat) }}
+        {{ end }}
+
+        <div id="related-products-section" style="display: none; margin-top: -1rem;">
+            {{ if gt (len $related) 0 }}
+            <section class="related-section">
+                <h3 class="related-section-title">📂 同じカテゴリの商品</h3>
+                <div class="related-grid">
+                    {{ range first 4 $related }}
+                    <a href="{{ .RelPermalink }}" class="pickup-card">
+                        <div class="pickup-card-image">
+                            {{ if .Params.images }}
+                            <img src="{{ index .Params.images 0 }}" alt="{{ .Title }}" loading="lazy">
+                            {{ else }}
+                            <div class="pickup-card-noimage">画像なし</div>
+                            {{ end }}
+                        </div>
+                        <div class="pickup-card-content">
+                            <p class="pickup-card-title">{{ .Title | truncate 30 }}</p>
+                            <div class="pickup-card-meta">
+                                {{ if .Params.score }}<span class="pickup-card-score">🏆 {{ .Params.score }}点</span>{{
+                                end }}
+                                {{ if .Params.price }}<span class="pickup-card-price">{{ .Params.price }}</span>{{ end
+                                }}
+                            </div>
+                        </div>
+                    </a>
+                    {{ end }}
+                </div>
+            </section>
+            {{ end }}
+        </div>
+
         {{ if .TableOfContents }}
         <nav class="table-of-contents" id="toc" style="display: none;">
             <details open>
@@ -32,6 +79,9 @@
         <script>
             (function () {
                 var toc = document.getElementById('toc');
+                var relatedSection = document.getElementById('related-products-section');
+
+                // Move TOC to before first H2
                 if (toc) {
                     var firstH2 = document.querySelector('.content h2');
                     if (firstH2) {
@@ -39,53 +89,28 @@
                     }
                     toc.style.display = 'block';
                 }
+
+                // Move Related Section to after Product Hero Card
+                if (relatedSection) {
+                    var heroCard = document.querySelector('.product-hero-card');
+                    if (heroCard) {
+                        // Insert after hero card
+                        heroCard.parentNode.insertBefore(relatedSection, heroCard.nextSibling);
+                    } else if (toc) {
+                        // Fallback: Insert before TOC
+                        toc.parentNode.insertBefore(relatedSection, toc);
+                    } else {
+                        var firstH2 = document.querySelector('.content h2');
+                        if (firstH2) {
+                            firstH2.parentNode.insertBefore(relatedSection, firstH2);
+                        }
+                    }
+                    relatedSection.style.display = 'block';
+                }
             })();
         </script>
 
     </article>
-
-    {{ $currentAsin := .Params.asin }}
-    {{ $categories := .Params.categories }}
-    {{ $currentPrice := 0 }}
-    {{ if .Params.price }}
-    {{ $currentPrice = index (findRE "[0-9]+" (replace .Params.price "," "")) 0 | int }}
-    {{ end }}
-    {{ $currentScore := .Params.score | default 0 }}
-    {{ $allArticles := where (where .Site.RegularPages "Section" "articles") "Params.asin" "!=" $currentAsin }}
-
-    {{/* 同じカテゴリの記事 */}}
-    {{ $related := $allArticles }}
-    {{ if $categories }}
-    {{ $firstCat := index $categories 0 }}
-    {{ $related = where $related "Params.categories" "intersect" (slice $firstCat) }}
-    {{ end }}
-
-    {{ if gt (len $related) 0 }}
-    <section class="related-section"
-        style="margin-top: var(--spacing-xl); border-top: 1px solid var(--color-border); padding-top: var(--spacing-lg);">
-        <h3 class="related-section-title">📂 同じカテゴリの商品</h3>
-        <div class="related-grid">
-            {{ range first 4 $related }}
-            <a href="{{ .RelPermalink }}" class="pickup-card">
-                <div class="pickup-card-image">
-                    {{ if .Params.images }}
-                    <img src="{{ index .Params.images 0 }}" alt="{{ .Title }}" loading="lazy">
-                    {{ else }}
-                    <div class="pickup-card-noimage">画像なし</div>
-                    {{ end }}
-                </div>
-                <div class="pickup-card-content">
-                    <p class="pickup-card-title">{{ .Title | truncate 30 }}</p>
-                    <div class="pickup-card-meta">
-                        {{ if .Params.score }}<span class="pickup-card-score">🏆 {{ .Params.score }}点</span>{{ end }}
-                        {{ if .Params.price }}<span class="pickup-card-price">{{ .Params.price }}</span>{{ end }}
-                    </div>
-                </div>
-            </a>
-            {{ end }}
-        </div>
-    </section>
-    {{ end }}
 
     {{/* 同価格帯の商品（±20%範囲、別カテゴリ優先） */}}
     {{ if gt $currentPrice 0 }}
