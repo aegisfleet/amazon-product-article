@@ -10,7 +10,7 @@
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}</title>
+<title>{{ if .IsHome }}{{ .Site.Title }}{{ else if .Params.score }}{{ .Title }} レビュー【{{ .Params.score }}点】 | {{ .Site.Title }}{{ else }}{{ .Title }} レビュー | {{ .Site.Title }}{{ end }}</title>
 <meta name="description"
   content="{{ if .Description }}{{ .Description }}{{ else if .IsPage }}{{ .Summary | truncate 160 }}{{ else }}{{ .Site.Params.description }}{{ end }}">
 <link rel="canonical" href="{{ .Permalink }}">

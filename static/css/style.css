@@ -1925,3 +1925,48 @@ a:hover {
     font-size: 0.7rem;
   }
 }
+
+/* =====================================================
+   RELATED SECTIONS (商品ページ下部の関連セクション)
+   ===================================================== */
+
+.related-section {
+  margin-bottom: var(--spacing-lg);
+}
+
+.related-section-title {
+  font-size: 1.125rem;
+  font-weight: 700;
+  margin-bottom: var(--spacing-md);
+  color: var(--color-text-main);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+/* 関連セクション用グリッド - デスクトップ: 4列横並び */
+.related-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--spacing-md);
+}
+
+/* タブレット: 4列維持 */
+@media (max-width: 1023px) {
+  .related-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--spacing-sm);
+  }
+}
+
+/* スマホ: 2x2グリッド */
+@media (max-width: 767px) {
+  .related-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-sm);
+  }
+
+  .related-section-title {
+    font-size: 1rem;
+  }
+}
