@@ -28,6 +28,35 @@ async function sleep(ms: number): Promise<void> {
 }
 
 /**
+ * 一時的なエラー（500, 502, 503, 504）が発生した場合にリトライする
+ */
+async function callWithRetry<T>(
+    operation: () => Promise<T>,
+    maxRetries: number = 3,
+    initialDelayMs: number = 2000
+): Promise<T> {
+    let lastError: any;
+    for (let attempt = 1; attempt <= maxRetries + 1; attempt++) {
+        try {
+            return await operation();
+        } catch (error: any) {
+            lastError = error;
+            const status = error.status;
+            
+            // 一時的なサーバーエラー（500, 502, 503, 504）の場合のみリトライ
+            if (attempt <= maxRetries && [500, 502, 503, 504].includes(status)) {
+                const delayMs = initialDelayMs * Math.pow(2, attempt - 1);
+                logger.warn(`Transient API error (${status}). Retrying in ${delayMs}ms... (attempt ${attempt}/${maxRetries})`);
+                await sleep(delayMs);
+                continue;
+            }
+            throw error;
+        }
+    }
+    throw lastError;
+}
+
+/**
  * Base branch変更エラーかどうかを判定
  */
 function isBaseBranchModifiedError(error: unknown): boolean {
@@ -415,11 +444,11 @@ async function waitForChecks(
 
     while (Date.now() - startTime < timeoutMs) {
         // PRの最新状態を取得
-        const { data: pr } = await octokit.pulls.get({
+        const { data: pr } = await callWithRetry(() => octokit.pulls.get({
             owner,
             repo,
             pull_number: prNumber,
-        });
+        }));
 
         // マージ可能な状態であれば即OK
         if (pr.mergeable_state === 'clean') {
@@ -432,18 +461,18 @@ async function waitForChecks(
         }
 
         // チェックの実走状態を確認
-        const { data: checkRuns } = await octokit.checks.listForRef({
+        const { data: checkRuns } = await callWithRetry(() => octokit.checks.listForRef({
             owner,
             repo,
             ref: pr.head.sha,
-        });
+        }));
 
         // コミットステータスも確認
-        const { data: combinedStatus } = await octokit.repos.getCombinedStatusForRef({
+        const { data: combinedStatus } = await callWithRetry(() => octokit.repos.getCombinedStatusForRef({
             owner,
             repo,
             ref: pr.head.sha
-        });
+        }));
 
         // 実行中またはキュー待ちのチェックがあるか
         const pendingChecks = checkRuns.check_runs.filter(run => run.status === 'in_progress' || run.status === 'queued');
@@ -487,18 +516,18 @@ async function main(): Promise<void> {
         const octokit = new Octokit({ auth: options.token });
 
         // PR情報を取得
-        const { data: prData } = await octokit.pulls.get({
+        const { data: prData } = await callWithRetry(() => octokit.pulls.get({
             owner: options.owner,
             repo: options.repo,
             pull_number: options.prNumber,
-        });
+        }));
 
         // 変更ファイル一覧を取得
-        const { data: filesData } = await octokit.pulls.listFiles({
+        const { data: filesData } = await callWithRetry(() => octokit.pulls.listFiles({
             owner: options.owner,
             repo: options.repo,
             pull_number: options.prNumber,
-        });
+        }));
 
         const pr: PullRequest = {
             number: prData.number,
