@@ -998,7 +998,8 @@ export class PAAPIClient {
       { patterns: ['時計', '腕時計', 'ウォッチ'], index: 'Watches' },
       { patterns: ['おもちゃ', '玩具', 'フィギュア', 'プラモデル'], index: 'Toys' },
       { patterns: ['スポーツ', 'アウトドア', 'キャンプ', '釣り'], index: 'SportsAndOutdoors' },
-      { patterns: ['コスメ', '美容', '化粧品', 'スキンケア'], index: 'Beauty' }
+      { patterns: ['コスメ', '美容', '化粧品', 'スキンケア'], index: 'Beauty' },
+      { patterns: ['冷凍', '食品', '弁当', '餃子', 'レトルト', '備蓄', '非常食', 'グルメ', 'おかず', '牛丼', '宅食'], index: 'GroceryAndGourmetFood' }
     ];
 
     for (const mapping of mappings) {
