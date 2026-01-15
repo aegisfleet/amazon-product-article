@@ -375,6 +375,10 @@ async function main(): Promise<void> {
                 logger.error('Failed to convert draft PR to ready:', error);
                 throw error;
             }
+
+            // GitHub APIが安定するまで追加で待機
+            logger.info('Waiting for GitHub API to stabilize after draft conversion...');
+            await new Promise(resolve => setTimeout(resolve, 3000));
         }
 
         // 変更ファイルがない場合はPRをクローズ
