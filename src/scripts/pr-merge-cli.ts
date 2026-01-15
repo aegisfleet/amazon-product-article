@@ -491,7 +491,7 @@ async function main(): Promise<void> {
 
         const { execSync } = await import('child_process');
         const maxRetries = 3;
-        const retryDelayMs = 3000;
+        const retryDelayMs = 10000;
         let lastError: Error | null = null;
 
         for (let attempt = 1; attempt <= maxRetries; attempt++) {
