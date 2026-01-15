@@ -508,7 +508,17 @@ export class PAAPIClient {
    * Mobile apps should be excluded from product research
    */
   private isMobileApp(item: PAAPIItem): boolean {
-    // 1. カテゴリ名（BrowseNode）による判定
+    const title = item.ItemInfo?.Title?.DisplayValue || '';
+
+    // 1. 在庫メッセージによる判定（最も確実）
+    // アプリは「対応端末ですぐにご利用いただけます」という特有のメッセージを持つ
+    const availability = item.Offers?.Listings?.[0]?.Availability?.Message || '';
+    if (availability.includes('対応端末ですぐにご利用いただけます')) {
+      this.logger.debug(`Excluded mobile app by availability: ${title}`);
+      return true;
+    }
+
+    // 2. カテゴリ名（BrowseNode）による判定
     const browseNodes = item.BrowseNodeInfo?.BrowseNodes || [];
     const categoryPatterns = [
       /^アプリ$/i,
@@ -533,8 +543,7 @@ export class PAAPIClient {
       }
     }
 
-    // 2. タイトルによる判定（フォールバック）
-    const title = item.ItemInfo?.Title?.DisplayValue || '';
+    // 3. タイトルによる判定（フォールバック）
     const titlePatterns = [
       /\[Androidアプリ\]/i,
       /\[iOSアプリ\]/i,
@@ -549,7 +558,7 @@ export class PAAPIClient {
       return true;
     }
 
-    // 3. URLによる判定（Amazonアプリストア固有のURL構造）
+    // 4. URLによる判定（Amazonアプリストア固有のURL構造）
     const detailPageUrl = item.DetailPageURL || '';
     if (detailPageUrl.includes('/dp/B0') && detailPageUrl.includes('/ref=mas_')) {
       // Amazonアプリストアの商品URL形式をチェック
