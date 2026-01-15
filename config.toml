@@ -46,7 +46,7 @@ hasCJKLanguage = true
 
 # URL settings - keep article URLs at root level like /B07DZZJ2B9/
 [permalinks]
-  articles = "/:filename/"
+  articles = "/:contentbasename/"
 
 # Minify output
 [minify]
