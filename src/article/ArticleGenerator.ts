@@ -1522,121 +1522,135 @@ ${infoRows.join('\n')}
     if (metadata.technicalSpecs) {
       const specs = metadata.technicalSpecs;
       lines.push('specs:');
+      const addedKeys = new Set<string>();
+
+      const addSpec = (key: string, value: string): void => {
+        if (!addedKeys.has(key)) {
+          lines.push(`  ${key}: ${value}`);
+          addedKeys.add(key);
+        }
+      };
 
       // 基本スペック
-      if (specs.os) lines.push(`  os: "${this.formatSpecValue(specs.os)}"`);
-      if (specs.cpu) lines.push(`  cpu: "${this.formatSpecValue(specs.cpu)}"`);
-      if (specs.gpu) lines.push(`  gpu: "${this.formatSpecValue(specs.gpu)}"`);
-      if (specs.ram) lines.push(`  ram: "${this.formatSpecValue(specs.ram)}"`);
-      if (specs.storage) lines.push(`  storage: "${this.formatSpecValue(specs.storage)}"`);
+      if (specs.os) addSpec('os', `"${this.formatSpecValue(specs.os)}"`);
+      if (specs.cpu) addSpec('cpu', `"${this.formatSpecValue(specs.cpu)}"`);
+      if (specs.gpu) addSpec('gpu', `"${this.formatSpecValue(specs.gpu)}"`);
+      if (specs.ram) addSpec('ram', `"${this.formatSpecValue(specs.ram)}"`);
+      if (specs.storage) addSpec('storage', `"${this.formatSpecValue(specs.storage)}"`);
 
       // ディスプレイ
       if (specs.display) {
-        if (specs.display.size) lines.push(`  display_size: "${specs.display.size}"`);
-        if (specs.display.resolution) lines.push(`  display_resolution: "${specs.display.resolution}"`);
-        if (specs.display.type) lines.push(`  display_type: "${specs.display.type}"`);
-        if (specs.display.refreshRate) lines.push(`  display_refresh_rate: "${specs.display.refreshRate}"`);
+        if (specs.display.size) addSpec('display_size', `"${specs.display.size}"`);
+        if (specs.display.resolution) addSpec('display_resolution', `"${specs.display.resolution}"`);
+        if (specs.display.type) addSpec('display_type', `"${specs.display.type}"`);
+        if (specs.display.refreshRate) addSpec('display_refresh_rate', `"${specs.display.refreshRate}"`);
       }
 
       // バッテリー
       if (specs.battery) {
-        if (specs.battery.capacity) lines.push(`  battery_capacity: "${specs.battery.capacity}"`);
-        if (specs.battery.charging) lines.push(`  battery_charging: "${specs.battery.charging}"`);
-        if (specs.battery.playbackTime) lines.push(`  battery_playback_time: "${specs.battery.playbackTime}"`);
+        if (specs.battery.capacity) addSpec('battery_capacity', `"${specs.battery.capacity}"`);
+        if (specs.battery.charging) addSpec('battery_charging', `"${specs.battery.charging}"`);
+        if (specs.battery.playbackTime) addSpec('battery_playback_time', `"${specs.battery.playbackTime}"`);
       }
 
       // カメラ
       if (specs.camera) {
-        if (specs.camera.main) lines.push(`  camera_main: "${specs.camera.main}"`);
-        if (specs.camera.ultrawide) lines.push(`  camera_ultrawide: "${specs.camera.ultrawide}"`);
-        if (specs.camera.telephoto) lines.push(`  camera_telephoto: "${specs.camera.telephoto}"`);
-        if (specs.camera.front) lines.push(`  camera_front: "${specs.camera.front}"`);
+        if (specs.camera.main) addSpec('camera_main', `"${specs.camera.main}"`);
+        if (specs.camera.ultrawide) addSpec('camera_ultrawide', `"${specs.camera.ultrawide}"`);
+        if (specs.camera.telephoto) addSpec('camera_telephoto', `"${specs.camera.telephoto}"`);
+        if (specs.camera.front) addSpec('camera_front', `"${specs.camera.front}"`);
       }
 
       // 寸法・重量
       if (specs.dimensions) {
-        if (specs.dimensions.height) lines.push(`  height: "${specs.dimensions.height}"`);
-        if (specs.dimensions.width) lines.push(`  width: "${specs.dimensions.width}"`);
-        if (specs.dimensions.depth) lines.push(`  depth: "${specs.dimensions.depth}"`);
-        if (specs.dimensions.weight) lines.push(`  weight: "${specs.dimensions.weight}"`);
+        if (specs.dimensions.height) addSpec('height', `"${specs.dimensions.height}"`);
+        if (specs.dimensions.width) addSpec('width', `"${specs.dimensions.width}"`);
+        if (specs.dimensions.depth) addSpec('depth', `"${specs.dimensions.depth}"`);
+        if (specs.dimensions.weight) addSpec('weight', `"${specs.dimensions.weight}"`);
       }
 
       // イヤホン・ヘッドホン
-      if (specs.driver) lines.push(`  driver: "${this.formatSpecValue(specs.driver)}"`);
+      if (specs.driver) addSpec('driver', `"${this.formatSpecValue(specs.driver)}"`);
       if (specs.codec) {
         const codecVal = Array.isArray(specs.codec) ? `[${specs.codec.map(c => `"${c}"`).join(', ')}]` : `"${specs.codec}"`;
-        lines.push(`  codec: ${codecVal}`);
+        addSpec('codec', codecVal);
       }
-      if (specs.noiseCancel) lines.push(`  noise_cancel: "${this.formatSpecValue(specs.noiseCancel)}"`);
+      if (specs.noiseCancel) addSpec('noise_cancel', `"${this.formatSpecValue(specs.noiseCancel)}"`);
 
       // 家電
-      if (specs.power) lines.push(`  power: "${this.formatSpecValue(specs.power)}"`);
-      if (specs.capacity) lines.push(`  capacity: "${this.formatSpecValue(specs.capacity)}"`);
-      if (specs.category) lines.push(`  spec_category: "${this.formatSpecValue(specs.category)}"`);
+      if (specs.power) addSpec('power', `"${this.formatSpecValue(specs.power)}"`);
+      if (specs.capacity) addSpec('capacity', `"${this.formatSpecValue(specs.capacity)}"`);
+      if (specs.category) addSpec('spec_category', `"${this.formatSpecValue(specs.category)}"`);
 
       // 接続性
       if (specs.connectivity) {
         const connectVal = Array.isArray(specs.connectivity) ? `[${specs.connectivity.map(c => `"${c}"`).join(', ')}]` : `"${specs.connectivity}"`;
-        lines.push(`  connectivity: ${connectVal}`);
+        addSpec('connectivity', connectVal);
       }
 
       // 靴（シューズ）
-      if (specs.width) lines.push(`  width: "${this.formatSpecValue(specs.width)}"`);
-      if (specs.weight) lines.push(`  weight: "${this.formatSpecValue(specs.weight)}"`);
-      if (specs.midsole) lines.push(`  midsole: "${this.formatSpecValue(specs.midsole)}"`);
+      if (specs.width) addSpec('width', `"${this.formatSpecValue(specs.width)}"`);
+      if (specs.weight) addSpec('weight', `"${this.formatSpecValue(specs.weight)}"`);
+      if (specs.midsole) addSpec('midsole', `"${this.formatSpecValue(specs.midsole)}"`);
       if (specs.cushioningTech) {
         const cushVal = Array.isArray(specs.cushioningTech) ? `[${specs.cushioningTech.map(c => `"${c}"`).join(', ')}]` : `"${specs.cushioningTech}"`;
-        lines.push(`  cushioning_tech: ${cushVal}`);
+        addSpec('cushioning_tech', cushVal);
       }
-      if (specs.heelCounter) lines.push(`  heel_counter: "${this.formatSpecValue(specs.heelCounter)}"`);
-      if (specs.heelHeight) lines.push(`  heel_height: "${this.formatSpecValue(specs.heelHeight)}"`);
+      if (specs.heelCounter) addSpec('heel_counter', `"${this.formatSpecValue(specs.heelCounter)}"`);
+      if (specs.heelHeight) addSpec('heel_height', `"${this.formatSpecValue(specs.heelHeight)}"`);
       if (specs.material) {
-        if (typeof specs.material === 'string') {
-          lines.push(`  material: "${specs.material}"`);
-        } else {
-          lines.push('  material:');
-          if (specs.material.upper) lines.push(`    upper: "${specs.material.upper}"`);
-          if (specs.material.outsole) lines.push(`    outsole: "${specs.material.outsole}"`);
-          if (specs.material.insole) lines.push(`    insole: "${specs.material.insole}"`);
+        if (!addedKeys.has('material')) {
+          if (typeof specs.material === 'string') {
+            lines.push(`  material: "${specs.material}"`);
+          } else {
+            lines.push('  material:');
+            if (specs.material.upper) lines.push(`    upper: "${specs.material.upper}"`);
+            if (specs.material.outsole) lines.push(`    outsole: "${specs.material.outsole}"`);
+            if (specs.material.insole) lines.push(`    insole: "${specs.material.insole}"`);
+          }
+          addedKeys.add('material');
         }
       }
-      if (specs.upperMaterial) lines.push(`  upper_material: "${specs.upperMaterial}"`);
-      if (specs.midsoleMaterial) lines.push(`  midsole_material: "${specs.midsoleMaterial}"`);
-      if (specs.outsoleMaterial) lines.push(`  outsole_material: "${specs.outsoleMaterial}"`);
-      if (specs.outerSole) lines.push(`  outer_sole: "${specs.outerSole}"`);
-      if (specs.insoleMaterial) lines.push(`  insole_material: "${specs.insoleMaterial}"`);
-      if (specs.innerSole) lines.push(`  inner_sole: "${specs.innerSole}"`);
-      if (specs.insole) lines.push(`  insole: "${specs.insole}"`);
+      if (specs.upperMaterial) addSpec('upper_material', `"${specs.upperMaterial}"`);
+      if (specs.midsoleMaterial) addSpec('midsole_material', `"${specs.midsoleMaterial}"`);
+      if (specs.outsoleMaterial) addSpec('outsole_material', `"${specs.outsoleMaterial}"`);
+      if (specs.outerSole) addSpec('outer_sole', `"${specs.outerSole}"`);
+      if (specs.insoleMaterial) addSpec('insole_material', `"${specs.insoleMaterial}"`);
+      if (specs.innerSole) addSpec('inner_sole', `"${specs.innerSole}"`);
+      if (specs.insole) addSpec('insole', `"${specs.insole}"`);
 
-      if (specs.modelNumber) lines.push(`  model_number: "${this.formatSpecValue(specs.modelNumber)}"`);
-      if (specs.model) lines.push(`  model: "${this.formatSpecValue(specs.model)}"`);
-      if (specs.countryOfOrigin) lines.push(`  country_of_origin: "${this.formatSpecValue(specs.countryOfOrigin)}"`);
+      if (specs.modelNumber) addSpec('model_number', `"${this.formatSpecValue(specs.modelNumber)}"`);
+      if (specs.model) addSpec('model', `"${this.formatSpecValue(specs.model)}"`);
+      if (specs.countryOfOrigin) addSpec('country_of_origin', `"${this.formatSpecValue(specs.countryOfOrigin)}"`);
 
       // 耐荷重
       if (specs.loadCapacity) {
-        if (typeof specs.loadCapacity === 'string') {
-          lines.push(`  load_capacity: "${specs.loadCapacity}"`);
-        } else {
-          lines.push('  load_capacity:');
-          for (const [key, value] of Object.entries(specs.loadCapacity)) {
-            lines.push(`    ${key}: "${value}"`);
+        if (!addedKeys.has('load_capacity')) {
+          if (typeof specs.loadCapacity === 'string') {
+            lines.push(`  load_capacity: "${specs.loadCapacity}"`);
+          } else {
+            lines.push('  load_capacity:');
+            for (const [key, value] of Object.entries(specs.loadCapacity)) {
+              lines.push(`    ${key}: "${value}"`);
+            }
           }
+          addedKeys.add('load_capacity');
         }
       }
 
       // 付属品
       if (specs.attachments) {
         if (Array.isArray(specs.attachments)) {
-          lines.push(`  attachments: [${specs.attachments.map(a => `"${a}"`).join(', ')}]`);
+          addSpec('attachments', `[${specs.attachments.map(a => `"${a}"`).join(', ')}]`);
         } else {
-          lines.push(`  attachments: "${specs.attachments}"`);
+          addSpec('attachments', `"${specs.attachments}"`);
         }
       }
 
       // その他
       if (specs.other) {
         const otherVal = Array.isArray(specs.other) ? `[${specs.other.map(o => `"${o}"`).join(', ')}]` : `"${specs.other}"`;
-        lines.push(`  other_specs: ${otherVal}`);
+        addSpec('other_specs', otherVal);
       }
     }
 

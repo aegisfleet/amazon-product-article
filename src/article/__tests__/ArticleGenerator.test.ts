@@ -283,6 +283,46 @@ describe('ArticleGenerator', () => {
       expect(result.content).toContain('競合商品A');
       expect(result.content).toContain('amazon.co.jp/dp/B08COMPET1');
     });
+
+    it('should not generate duplicate keys in front matter', async () => {
+      // Create investigation result with potentially conflicting specs
+      const conflictInvestigation: InvestigationResult = {
+        ...mockInvestigation,
+        analysis: {
+          ...mockInvestigation.analysis,
+          technicalSpecs: {
+            dimensions: {
+              weight: '100g',
+              width: '10cm'
+            },
+            // Duplicate keys at top level
+            weight: '200g',
+            width: '20cm'
+          }
+        }
+      };
+
+      const result = await generator.generateArticle(mockProduct, conflictInvestigation);
+
+      // Check for duplicate 'weight:' keys in specs section
+      const content = result.content;
+      const specsMatch = content.match(/specs:[\s\S]*?---/);
+
+      expect(specsMatch).not.toBeNull();
+      if (specsMatch) {
+        const specsSection = specsMatch[0];
+        const weightMatches = specsSection.match(/^\s+weight:/gm);
+        const widthMatches = specsSection.match(/^\s+width:/gm);
+
+        // Should only appear once
+        expect(weightMatches?.length).toBe(1);
+        expect(widthMatches?.length).toBe(1);
+
+        // Should use the first value encountered (from dimensions block)
+        // Note: dimensions.weight is processed before top-level weight in generateFrontMatter
+        expect(specsSection).toContain('weight: "100g"');
+      }
+    });
   });
 
   describe('generateSEOMetadata', () => {
