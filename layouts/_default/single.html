@@ -132,7 +132,7 @@
         style="margin-top: var(--spacing-lg); border-top: 1px solid var(--color-border); padding-top: var(--spacing-lg);">
         <h3 class="related-section-title">💰 同価格帯のおすすめ</h3>
         <div class="related-grid">
-            {{ range first 4 $samePriceRange }}
+            {{ range first 4 (shuffle $samePriceRange) }}
             <a href="{{ .RelPermalink }}" class="pickup-card">
                 <div class="pickup-card-image">
                     {{ if .Params.images }}
@@ -167,7 +167,7 @@
         style="margin-top: var(--spacing-lg); border-top: 1px solid var(--color-border); padding-top: var(--spacing-lg);">
         <h3 class="related-section-title">⭐ 同スコア帯の人気商品</h3>
         <div class="related-grid">
-            {{ range first 4 $sameScoreRange }}
+            {{ range first 4 (shuffle $sameScoreRange) }}
             <a href="{{ .RelPermalink }}" class="pickup-card">
                 <div class="pickup-card-image">
                     {{ if .Params.images }}
