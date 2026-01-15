@@ -486,24 +486,41 @@ async function main(): Promise<void> {
         logger.info('Enabling auto-merge for the PR...');
 
         const { execSync } = await import('child_process');
-        try {
-            // gh pr merge <number> --squash --auto --delete-branch --subject "<title>"
-            // Note: GITHUB_TOKEN is usually automatically picked up by gh if set in env as GH_TOKEN or GITHUB_TOKEN
-            // We ensure GH_TOKEN is set to options.token
-            const command = `gh pr merge ${options.prNumber} --squash --auto --delete-branch --subject "${prData.title}"`;
+        const maxRetries = 3;
+        const retryDelayMs = 3000;
+        let lastError: Error | null = null;
 
-            execSync(command, {
-                stdio: 'inherit',
-                env: { ...process.env, GH_TOKEN: options.token }
-            });
+        for (let attempt = 1; attempt <= maxRetries; attempt++) {
+            try {
+                // gh pr merge <number> --squash --auto --delete-branch --subject "<title>"
+                // Note: GITHUB_TOKEN is usually automatically picked up by gh if set in env as GH_TOKEN or GITHUB_TOKEN
+                // We ensure GH_TOKEN is set to options.token
+                const command = `gh pr merge ${options.prNumber} --squash --auto --delete-branch --subject "${prData.title}"`;
 
-            logger.info(`Auto-merge enabled for PR #${options.prNumber}`);
-        } catch (error) {
-            logger.error('Failed to enable auto-merge:', error);
+                execSync(command, {
+                    stdio: 'inherit',
+                    env: { ...process.env, GH_TOKEN: options.token }
+                });
+
+                logger.info(`Auto-merge enabled for PR #${options.prNumber}`);
+                lastError = null;
+                break;
+            } catch (error) {
+                lastError = error as Error;
+                if (attempt < maxRetries) {
+                    logger.warn(`Auto-merge failed (attempt ${attempt}/${maxRetries}), retrying in ${retryDelayMs / 1000}s...`);
+                    await new Promise(resolve => setTimeout(resolve, retryDelayMs));
+                }
+            }
+        }
+
+        if (lastError) {
+            logger.error('Failed to enable auto-merge after retries:', lastError);
             // 失敗しても検証自体はパスしているので、プロセスは成功として終了させるか検討の余地があるが
             // マージ設定ができないのはCIとしては失敗なので exit 1 とする
             process.exit(1);
         }
+
 
         process.exit(0);
 
