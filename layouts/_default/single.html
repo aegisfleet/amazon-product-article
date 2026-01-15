@@ -38,7 +38,7 @@
             <section class="related-section">
                 <h3 class="related-section-title">📂 同じカテゴリの商品</h3>
                 <div class="related-grid">
-                    {{ range first 4 $related }}
+                    {{ range first 4 (shuffle $related) }}
                     <a href="{{ .RelPermalink }}" class="pickup-card">
                         <div class="pickup-card-image">
                             {{ if .Params.images }}
