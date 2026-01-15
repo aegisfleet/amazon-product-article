@@ -18,6 +18,43 @@ describe('PAAPIClient Mobile App Filtering', () => {
     };
 
     describe('isMobileApp', () => {
+        it('should identify mobile apps by availability message (most reliable)', () => {
+            const mobileAppItem: PAAPIItem = {
+                ASIN: 'B007XVSQL2L',
+                DetailPageURL: 'https://www.amazon.co.jp/dp/B007XVSQL2L',
+                ItemInfo: {
+                    Title: {
+                        DisplayValue: 'アイススラッシュ冷凍食品メーカー'
+                    }
+                },
+                BrowseNodeInfo: {
+                    BrowseNodes: [
+                        {
+                            Id: '4153099051',
+                            DisplayName: '教育・学習',
+                            ContextFreeName: 'Education'
+                        }
+                    ]
+                },
+                Offers: {
+                    Listings: [
+                        {
+                            Availability: {
+                                Message: '対応端末ですぐにご利用いただけます。'
+                            },
+                            Price: {
+                                Amount: 323,
+                                Currency: 'JPY',
+                                DisplayAmount: '￥323'
+                            }
+                        }
+                    ]
+                }
+            };
+
+            expect(isMobileApp(mobileAppItem)).toBe(true);
+        });
+
         it('should identify mobile apps by BrowseNode category name', () => {
             const mobileAppItem: PAAPIItem = {
                 ASIN: 'B001234567',
