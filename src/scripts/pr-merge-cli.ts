@@ -490,7 +490,7 @@ async function main(): Promise<void> {
         logger.info('Enabling auto-merge for the PR...');
 
         const { execSync } = await import('child_process');
-        const maxRetries = 3;
+        const maxRetries = 10;
         const retryDelayMs = 10000;
         let lastError: Error | null = null;
 
