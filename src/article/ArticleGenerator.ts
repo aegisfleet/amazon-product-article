@@ -724,7 +724,7 @@ ${sourcesList}`;
   }
 
   /**
-   * 商品ヒーローセクションを生成（商品概要 + 購入リンク）
+   * 商品ヒーローセクションを生成（商品概要 + 評価サマリー + 購入リンク）
    */
   private async generateProductHeroSection(
     product: Product,
@@ -739,59 +739,90 @@ ${sourcesList}`;
     const score = investigation.analysis.recommendation.score;
     const scoreText = this.getScoreDescription(score);
     const scoreEmoji = score >= 80 ? '🏆' : score >= 60 ? '👍' : '📝';
+    const scoreClass = score >= 80 ? 'score-excellent' : score >= 60 ? 'score-good' : 'score-fair';
 
     // ProductDetail型の追加フィールドを取得（存在すれば）
     const productDetail = product as any;
     const isPrimeEligible = productDetail.isPrimeEligible;
     const availability = productDetail.availability;
     const brand = productDetail.brand;
-    const releaseDate = productDetail.releaseDate;
+
+    // おすすめ対象と注意点（最大3件ずつ）
+    const targetUsers = investigation.analysis.recommendation.targetUsers.slice(0, 3);
+    const warnings = investigation.analysis.recommendation.cons.slice(0, 3);
 
     // Prime対応バッジ
     const primeBadge = isPrimeEligible
-      ? '<span class="prime-badge">✓ Prime対応</span>'
+      ? '<span class="hero-tag hero-tag-prime">✓ Prime</span>'
       : '';
 
-    // 在庫状況
-    const availabilityInfo = availability
-      ? `<span class="availability-info">📦 ${availability}</span>`
+    // 在庫タグ
+    const availabilityTag = availability
+      ? `<span class="hero-tag hero-tag-stock">📦 ${availability.replace(/\.$/, '')}</span>`
       : '';
 
-    // ブランド情報
-    const brandInfo = brand
-      ? `**ブランド**: ${brand}`
+    // ブランド・モデルタグ
+    const brandTag = brand
+      ? `<span class="hero-tag">${brand}</span>`
+      : '';
+    const modelTag = productDetail.model
+      ? `<span class="hero-tag">${productDetail.model}</span>`
       : '';
 
-    // 発売日情報
-    const releaseDateInfo = releaseDate
-      ? `発売日: ${this.formatDateToJST(releaseDate)}`
+    // おすすめリスト生成
+    const targetUsersHtml = targetUsers.length > 0
+      ? `<div class="hero-eval-block hero-eval-pros">
+<span class="hero-eval-title">👍 こんな方におすすめ</span>
+<ul>
+${targetUsers.map(u => `<li>${u}</li>`).join('\n')}
+</ul>
+</div>`
+      : '';
+
+    // 注意点リスト生成
+    const warningsHtml = warnings.length > 0
+      ? `<div class="hero-eval-block hero-eval-cons">
+<span class="hero-eval-title">⚠️ 購入時の注意点</span>
+<ul>
+${warnings.map(w => `<li>${w}</li>`).join('\n')}
+</ul>
+</div>`
       : '';
 
     const content = `<div class="product-hero-card">
 <div class="product-hero-image">
 <div class="product-image-carousel" id="carousel-${product.asin}">
-  <div class="carousel-track">
-    <img src="${product.images.primary}" alt="${product.title}" class="carousel-image">
-    ${product.images.thumbnails.map(url => `<img src="${url}" alt="${product.title}" class="carousel-image" loading="lazy">`).join('\n    ')}
-  </div>
-  ${product.images.thumbnails.length > 0 ? `
-  <button class="carousel-button prev" aria-label="前へ">❮</button>
-  <button class="carousel-button next" aria-label="次へ">❯</button>
-  <div class="carousel-dots"></div>
-  ` : ''}
+<div class="carousel-track">
+  <img src="${product.images.primary}" alt="${product.title}" class="carousel-image">
+  ${product.images.thumbnails.map(url => `<img src="${url}" alt="${product.title}" class="carousel-image" loading="lazy">`).join('\n    ')}
+</div>
+${product.images.thumbnails.length > 0 ? `
+<button class="carousel-button prev" aria-label="前へ">❮</button>
+<button class="carousel-button next" aria-label="次へ">❯</button>
+<div class="carousel-dots"></div>
+` : ''}
 </div>
 </div>
 <div class="product-hero-info">
-${productDescription}
-<div class="product-score-badge">
-${scoreEmoji} 総合評価: <strong>${score}点</strong> (${scoreText})
+<p class="hero-description">${productDescription}</p>
+<div class="hero-score-bar ${scoreClass}">
+<div class="hero-score-main">
+<span class="hero-score-emoji">${scoreEmoji}</span>
+<span class="hero-score-number">${score}</span>
+<span class="hero-score-unit">点</span>
+<span class="hero-score-text">${scoreText}</span>
 </div>
-<div class="product-meta">
-${availabilityInfo ? `<p>${availabilityInfo}</p>` : ''}
-<p><strong>価格</strong>: ${product.price.formatted}
-${brandInfo ? ` <strong>ブランド</strong>: ${brand}` : ''}${productDetail.model ? ` <strong>モデル</strong>: ${productDetail.model}` : ''}</p>
-${primeBadge ? `<p>${primeBadge}</p>` : ''}
-${releaseDateInfo ? `<p>${releaseDateInfo}</p>` : ''}
+<div class="hero-score-price">${product.price.formatted}</div>
+${primeBadge}
+</div>
+<div class="hero-evaluation-section">
+${targetUsersHtml}
+${warningsHtml}
+</div>
+<div class="hero-meta-tags">
+${availabilityTag}
+${brandTag}
+${modelTag}
 </div>
 <a href="${affiliateUrl}" class="btn-amazon-hero" target="_blank" rel="noopener noreferrer">🛒 Amazonで詳細を見る</a>
 </div>
@@ -801,7 +832,7 @@ ${releaseDateInfo ? `<p>${releaseDateInfo}</p>` : ''}
       title: '商品ヒーロー',
       content,
       wordCount: this.calculateWordCount(content),
-      requiredElements: ['商品画像', '商品説明', '購入リンク', '評価', 'Prime対応', '在庫状況']
+      requiredElements: ['商品画像', '商品説明', '購入リンク', '評価', 'Prime対応', '在庫状況', 'おすすめ', '注意点']
     };
   }
 
