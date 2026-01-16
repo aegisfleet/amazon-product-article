@@ -1,6 +1,7 @@
 {
   "analysis": {
     "productName": "Apple 11インチ iPad Air (M3)",
+    "parentAsin": "B0F4XHKV9Q",
     "productDescription": "Appleの11インチiPad Air (M3)は、パワフルなM3チップを搭載し、美しいLiquid Retinaディスプレイを備えた、仕事からエンターテイメントまで幅広く活躍する高性能タブレットです。",
     "productUsage": [
       "M3チップの性能を活かした高負荷なゲームやクリエイティブ作業",
@@ -12,7 +13,7 @@
     "positivePoints": [
       "M3チップ搭載による圧倒的な処理性能で、高負荷なゲームや専門的なアプリも快適に動作する。",
       "Apple Intelligenceに対応し、文章作成支援や進化したSiriなど、最新のAI機能を活用できる。",
-      "薄型軽量（460g）で持ち運びやすく、スペースグレイ、スターライト、パープル、ブルーの4色展開でデザイン性が高い。",
+      "薄型軽量（462g）で持ち運びやすく、スペースグレイ、スターライト、パープル、ブルーの4色展開でデザイン性が高い。",
       "Apple Pencil ProやMagic Keyboardに対応し、クリエイティブ作業からPCライクな使い方まで拡張性が高い。",
       "旧モデル（M2）からCPU、特にGPU性能が向上しており、価格は据え置きのためコストパフォーマンスが向上した。"
     ],
@@ -67,21 +68,21 @@
         "credibility": "実際の購入者による複数のユーザーレビューと口コミ"
       },
       {
-          "name": "Sペンが使えて手頃なGalaxy Tab S9 FEをレビュー！仕事に普段使いにおすすめの端末！ - ためセル！",
-          "url": "https://tamecell.net/galaxy-tab-s9-fe/",
-          "credibility": "ガジェットレビューブログによる競合商品の詳細な実機レビュー"
+        "name": "Sペンが使えて手頃なGalaxy Tab S9 FEをレビュー！仕事に普段使いにおすすめの端末！ - ためセル！",
+        "url": "https://tamecell.net/galaxy-tab-s9-fe/",
+        "credibility": "ガジェットレビューブログによる競合商品の詳細な実機レビュー"
       },
       {
-          "name": "「Surface Pro 9」登場！プロニーズに応える超高性能タブレットPCを徹底解説 - note",
-          "url": "https://note.com/juku_support/n/n9ef92ee90158",
-          "credibility": "商品解説ブログによる競合商品の詳細な機能紹介"
+        "name": "「Surface Pro 9」登場！プロニーズに応える超高性能タブレットPCを徹底解説 - note",
+        "url": "https://note.com/juku_support/n/n9ef92ee90158",
+        "credibility": "商品解説ブログによる競合商品の詳細な機能紹介"
       }
     ],
-    "lastInvestigated": "2026-01-02",
+    "lastInvestigated": "2026-01-17",
     "competitiveAnalysis": [
       {
         "name": "Samsung Galaxy Tab S9 FE",
-        "asin": "B0CH9P1R3Z",
+        "asin": "B0CKGZS1MN",
         "priceComparison": "約6万円台からとiPad Airより安価。さらに高性能なSペンが標準で付属しており、コストパフォーマンスが非常に高い。",
         "featureComparison": [
           "iPad Air (M3)の方が処理性能で圧倒的に優れており、高負荷な作業やゲームに適している。",
@@ -143,7 +144,42 @@
         "周辺機器（キーボード、ペンシル）が高価で、一式揃えるとノートPC並の価格と重さになる。",
         "防水性能がないため、風呂場など水回りでの使用には注意が必要。"
       ],
-      "score": 85
+      "score": 85,
+      "scoreRationale": "[基本点: 70]\n[加点: +10] M3チップによるクラス最高峰の性能とApple Intelligenceへの対応\n[加点: +5] Apple製品ならではの高品質なビルドクオリティと優れたデザイン\n[加点: +5] クリエイターや既存ユーザーからの高い満足度と、強力なアプリエコシステム\n[減点: -5] 60Hzのリフレッシュレートと高価な周辺機器によるコストパフォーマンスの低下\n[合計: 85]"
+    },
+    "technicalSpecs": {
+      "os": "iPadOS 18",
+      "cpu": "Apple M3チップ (8コアCPU, 10コアGPU)",
+      "ram": "8GB",
+      "storage": "128GB",
+      "display": {
+        "size": "11インチ",
+        "resolution": "2360 x 1640",
+        "type": "Liquid Retinaディスプレイ (IPSテクノロジー搭載)"
+      },
+      "battery": {
+        "capacity": "28.93Wh",
+        "charging": "USB-C"
+      },
+      "camera": {
+        "main": "12MP広角カメラ",
+        "ultrawide": "12MP超広角フロントカメラ"
+      },
+      "dimensions": {
+        "height": "247.6mm",
+        "width": "178.5mm",
+        "depth": "6.1mm",
+        "weight": "462g"
+      },
+      "connectivity": [
+        "Wi-Fi 6E (802.11ax)",
+        "Bluetooth 5.3"
+      ],
+      "other": [
+        "Touch ID",
+        "Apple Pencil Pro対応",
+        "Magic Keyboard対応"
+      ]
     }
   }
 }
