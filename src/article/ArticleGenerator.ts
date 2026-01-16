@@ -805,18 +805,18 @@ ${product.images.thumbnails.length > 0 ? `
 </div>
 <div class="product-hero-info">
 <p class="hero-description">${productDescription}</p>
-      <div class="hero-score-bar ${scoreClass}">
-        <div class="hero-score-main">
-          <span class="hero-score-emoji">${scoreEmoji}</span>
-          <span class="hero-score-number">${score}</span>
-          <span class="hero-score-unit">点</span>
-          <span class="hero-score-text">${scoreText}</span>
-        </div>
-        <div class="hero-score-side">
-          <div class="hero-score-price">${product.price.formatted}</div>
-          ${primeBadge}
-        </div>
-      </div>
+<div class="hero-score-bar ${scoreClass}">
+<div class="hero-score-main">
+<span class="hero-score-emoji">${scoreEmoji}</span>
+<span class="hero-score-number">${score}</span>
+<span class="hero-score-unit">点</span>
+<span class="hero-score-text">${scoreText}</span>
+</div>
+<div class="hero-score-side">
+<div class="hero-score-price">${product.price.formatted}</div>
+${primeBadge}
+</div>
+</div>
 <div class="hero-evaluation-section">
 ${targetUsersHtml}
 ${warningsHtml}
