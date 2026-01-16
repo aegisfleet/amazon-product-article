@@ -2292,10 +2292,23 @@ a:hover {
   opacity: 0.9;
 }
 
+.hero-score-side {
+  margin-left: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 2px;
+}
+
 .hero-score-price {
   font-size: 1.5rem;
   font-weight: 800;
-  margin-left: auto;
+  line-height: 1.1;
+}
+
+.hero-tag-prime {
+  margin: 0;
+  white-space: nowrap;
 }
 
 /* Meta Tags */
@@ -2366,18 +2379,23 @@ a:hover {
     font-size: 1.25rem;
   }
 
-  .hero-score-price {
+  .hero-score-side {
     grid-column: 2;
-    grid-row: 1;
-    justify-self: end;
+    grid-row: 1 / 3;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-end;
+    margin-left: 0;
+  }
+
+  .hero-score-price {
     font-size: 1.25rem;
     font-weight: 800;
   }
 
   .hero-tag-prime {
-    grid-column: 2;
-    grid-row: 2;
-    justify-self: end;
+    margin: 0;
   }
 
   .hero-meta-tags {
