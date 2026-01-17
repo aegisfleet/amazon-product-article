@@ -29,7 +29,7 @@ describe('ConfigManager Property-Based Tests', () => {
       'JULES_API_KEY', 'JULES_BASE_URL', 'JULES_TIMEOUT',
       'GITHUB_TOKEN', 'GITHUB_REPOSITORY', 'GITHUB_BRANCH',
       'LOG_LEVEL', 'RETRY_ATTEMPTS', 'RETRY_DELAY', 'MAX_CONCURRENT_REQUESTS',
-      'PRODUCT_CATEGORIES', 'MAX_RESULTS_PER_CATEGORY', 'SEARCH_KEYWORDS',
+      'PRODUCT_CATEGORIES', 'MAX_RESULTS_PER_CATEGORY',
       'MIN_WORD_COUNT', 'INCLUDE_IMAGES', 'ARTICLE_OUTPUT_PATH'
     ];
     for (const envVar of configEnvVars) {
@@ -89,7 +89,6 @@ describe('ConfigManager Property-Based Tests', () => {
           maxConcurrentRequests: fc.integer({ min: 1, max: 20 }),
           productCategories: fc.array(nonEmptyAlphanumericString(3, 20), { minLength: 1, maxLength: 10 }),
           maxResultsPerCategory: fc.integer({ min: 1, max: 50 }),
-          searchKeywords: fc.array(nonEmptyAlphanumericString(2, 15), { minLength: 1, maxLength: 10 }),
           minWordCount: fc.integer({ min: 500, max: 10000 }),
           includeImages: fc.boolean(),
         }),
@@ -115,7 +114,6 @@ describe('ConfigManager Property-Based Tests', () => {
           process.env.MAX_CONCURRENT_REQUESTS = validConfig.maxConcurrentRequests.toString();
           process.env.PRODUCT_CATEGORIES = validConfig.productCategories.join(',');
           process.env.MAX_RESULTS_PER_CATEGORY = validConfig.maxResultsPerCategory.toString();
-          process.env.SEARCH_KEYWORDS = validConfig.searchKeywords.join(',');
           process.env.MIN_WORD_COUNT = validConfig.minWordCount.toString();
           process.env.INCLUDE_IMAGES = validConfig.includeImages.toString();
 
