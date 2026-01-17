@@ -4,8 +4,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
     if (!sortSelect || !productGrid) return;
 
-    sortSelect.addEventListener('change', function () {
-        const sortValue = this.value;
+    /**
+     * Sort cards based on the given sort value
+     * @param {string} sortValue - The sort criteria
+     */
+    function sortCards(sortValue) {
         const cards = Array.from(productGrid.querySelectorAll('.card'));
 
         const sortedCards = cards.sort((a, b) => {
@@ -33,11 +36,24 @@ document.addEventListener('DOMContentLoaded', function () {
         });
 
         // Re-append sorted cards
-        // Clear grid first (optional, appending also moves them)
         productGrid.innerHTML = '';
         sortedCards.forEach(card => productGrid.appendChild(card));
-        
-        // Add subtle animation or scroll to top if needed
-        console.log(`Sorted by: ${sortValue}`);
+    }
+
+    // Handle sort selection change
+    sortSelect.addEventListener('change', function () {
+        sortCards(this.value);
+    });
+
+    // Handle bfcache restoration: re-apply sort when page is restored from back/forward cache
+    // The browser preserves form values but restores the original DOM order
+    // Note: We check on every pageshow (not just persisted) because some browsers
+    // may not set persisted=true even when restoring state
+    window.addEventListener('pageshow', function (event) {
+        const currentValue = sortSelect.value;
+        if (currentValue && currentValue !== 'date-desc') {
+            // Re-apply the sort to match the preserved select value
+            sortCards(currentValue);
+        }
     });
 });
