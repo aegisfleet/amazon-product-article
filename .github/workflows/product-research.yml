@@ -27,6 +27,7 @@ on:
           - women_fashion
           - women_appliances
           - women_health
+          - kanpo
           - relaxation
           - storage
           - furniture
@@ -46,6 +47,8 @@ on:
           - frozen_bento
           - meal_kits
           - emergency_foods
+          - tea_leaves
+          - smartphones
       max_results:
         description: 'Maximum results per category'
         required: false
