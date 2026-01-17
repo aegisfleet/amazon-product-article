@@ -789,6 +789,19 @@ ${warnings.map(w => `<li>${w}</li>`).join('\n')}
 </div>`
       : '';
 
+    // スコア根拠から最大加点・減点を抽出
+    const { topPlus, topMinus } = this.extractTopRationaleItems(
+      investigation.analysis.recommendation.scoreRationale
+    );
+
+    // スコアバー内の加点・減点表示HTML
+    const topPlusHtml = topPlus
+      ? `<div class="hero-score-item hero-score-plus"><span class="hero-score-item-points">+${topPlus.points}</span><span class="hero-score-item-desc">${topPlus.desc}</span></div>`
+      : '';
+    const topMinusHtml = topMinus
+      ? `<div class="hero-score-item hero-score-minus"><span class="hero-score-item-points">-${topMinus.points}</span><span class="hero-score-item-desc">${topMinus.desc}</span></div>`
+      : '';
+
     const content = `<div class="product-hero-card">
 <div class="product-hero-image">
 <div class="product-image-carousel" id="carousel-${product.asin}">
@@ -812,10 +825,14 @@ ${product.images.thumbnails.length > 0 ? `
 <span class="hero-score-unit">点</span>
 <span class="hero-score-text">${scoreText}</span>
 </div>
-<div class="hero-score-side">
-<div class="hero-score-price">${product.price.formatted}</div>
-${primeBadge}
+<div class="hero-score-rationale">
+${topPlusHtml}
+${topMinusHtml}
 </div>
+</div>
+<div class="hero-price-section">
+<div class="hero-price">${product.price.formatted}</div>
+${primeBadge}
 </div>
 <div class="hero-evaluation-section">
 ${targetUsersHtml}
@@ -1965,6 +1982,55 @@ ${infoRows.join('\n')}
     }
 
     return `<div class="score-rationale-card">\n${parts.join('\n')}\n</div>`;
+  }
+
+  /**
+   * scoreRationaleから最大加点項目と最大減点項目を抽出
+   * スコアバーに表示するためのサマリー情報
+   */
+  private extractTopRationaleItems(rationale: string | string[] | undefined): {
+    topPlus: { points: number; desc: string } | null;
+    topMinus: { points: number; desc: string } | null;
+  } {
+    if (!rationale) {
+      return { topPlus: null, topMinus: null };
+    }
+
+    const rawRationale = Array.isArray(rationale) ? rationale.join('\n') : rationale;
+    const lines = rawRationale.split('\n').filter(line => line.trim());
+
+    let topPlus: { points: number; desc: string } | null = null;
+    let topMinus: { points: number; desc: string } | null = null;
+
+    for (const line of lines) {
+      // 加点: [加点: +13] (説明)
+      const plusMatch = line.match(/\[加点:\s*\+(\d+)\]\s*(.*)/);
+      if (plusMatch) {
+        const points = parseInt(plusMatch[1] ?? '0', 10);
+        let desc = plusMatch[2] || '';
+        // 括弧を除去して説明文全体を使用
+        desc = desc.replace(/^[(（]/, '').replace(/[)）]$/, '').trim();
+
+        if (!topPlus || points > topPlus.points) {
+          topPlus = { points, desc };
+        }
+      }
+
+      // 減点: [減点: -5] (説明)
+      const minusMatch = line.match(/\[減点:\s*-(\d+)\]\s*(.*)/);
+      if (minusMatch) {
+        const points = parseInt(minusMatch[1] ?? '0', 10);
+        let desc = minusMatch[2] || '';
+        // 括弧を除去して説明文全体を使用
+        desc = desc.replace(/^[(（]/, '').replace(/[)）]$/, '').trim();
+
+        if (!topMinus || points > topMinus.points) {
+          topMinus = { points, desc };
+        }
+      }
+    }
+
+    return { topPlus, topMinus };
   }
 
   /**
