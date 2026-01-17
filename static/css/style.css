@@ -134,7 +134,7 @@ a:hover {
   text-align: center;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 960px) {
   .hero-content {
     flex-direction: row;
     align-items: center;
@@ -473,7 +473,7 @@ a:hover {
   box-shadow: var(--shadow-lg);
 }
 
-@media (min-width: 768px) {
+@media (min-width: 960px) {
   .product-hero-card {
     grid-template-columns: 400px 1fr;
   }
@@ -2465,7 +2465,7 @@ a:hover {
 }
 
 /* Mobile adjustments for score bar */
-@media (max-width: 767px) {
+@media (max-width: 959px) {
   .hero-score-bar {
     flex-direction: column;
     align-items: flex-start;
