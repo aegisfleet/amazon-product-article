@@ -830,16 +830,20 @@ ${topPlusHtml}
 ${topMinusHtml}
 </div>
 </div>
-<div class="hero-price-section">
-<div class="hero-price">${product.price.formatted}</div>
+<div class="hero-price-bar">
+<div class="hero-price-main">
+<span class="hero-price">${product.price.formatted}</span>
+</div>
+<div class="hero-price-info">
 ${primeBadge}
+${availabilityTag}
+</div>
 </div>
 <div class="hero-evaluation-section">
 ${targetUsersHtml}
 ${warningsHtml}
 </div>
 <div class="hero-meta-tags">
-${availabilityTag}
 ${brandTag}
 ${modelTag}
 </div>
