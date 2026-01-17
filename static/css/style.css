@@ -1366,8 +1366,6 @@ a:hover {
   padding: var(--spacing-sm) var(--spacing-md);
   margin-bottom: var(--spacing-lg);
   font-size: 0.875rem;
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
 }
 
 .breadcrumb-list {
@@ -1378,12 +1376,6 @@ a:hover {
   margin: 0;
   padding: 0;
   gap: var(--spacing-xs);
-}
-
-@media (max-width: 640px) {
-  .breadcrumb-list {
-    flex-wrap: nowrap;
-  }
 }
 
 .breadcrumb-item {
