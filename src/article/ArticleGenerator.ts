@@ -1954,8 +1954,9 @@ ${infoRows.join('\n')}
         continue;
       }
 
-      // 加点: [加点: +13] 説明 または (説明)
-      const plusMatch = line.match(/\[加点:\s*\+(\d+)\]\s*(.*)/);
+      // 加点: [任意のラベル: +13] 説明 または (説明)
+      // 「加点」固定ではなく、+数字をトリガーにして加点を識別
+      const plusMatch = line.match(/\[[^\]]+:\s*\+(\d+)\]\s*(.*)/);
       if (plusMatch) {
         const [, points, desc = ''] = plusMatch;
         const cleanDesc = desc.replace(/^[(（]/, '').replace(/[)）]$/, '').trim();
@@ -1963,8 +1964,9 @@ ${infoRows.join('\n')}
         continue;
       }
 
-      // 減点: [減点: -5] 説明 または (説明)
-      const minusMatch = line.match(/\[減点:\s*-(\d+)\]\s*(.*)/);
+      // 減点: [任意のラベル: -5] 説明 または (説明)
+      // 「減点」固定ではなく、-数字をトリガーにして減点を識別
+      const minusMatch = line.match(/\[[^\]]+:\s*-(\d+)\]\s*(.*)/);
       if (minusMatch) {
         const [, points, desc = ''] = minusMatch;
         const cleanDesc = desc.replace(/^[(（]/, '').replace(/[)）]$/, '').trim();
@@ -2007,8 +2009,9 @@ ${infoRows.join('\n')}
     let topMinus: { points: number; desc: string } | null = null;
 
     for (const line of lines) {
-      // 加点: [加点: +13] (説明)
-      const plusMatch = line.match(/\[加点:\s*\+(\d+)\]\s*(.*)/);
+      // 加点: [任意のラベル: +13] (説明)
+      // 「加点」固定ではなく、+数字をトリガーにして加点を識別
+      const plusMatch = line.match(/\[[^\]]+:\s*\+(\d+)\]\s*(.*)/);
       if (plusMatch) {
         const points = parseInt(plusMatch[1] ?? '0', 10);
         let desc = plusMatch[2] || '';
@@ -2020,8 +2023,9 @@ ${infoRows.join('\n')}
         }
       }
 
-      // 減点: [減点: -5] (説明)
-      const minusMatch = line.match(/\[減点:\s*-(\d+)\]\s*(.*)/);
+      // 減点: [任意のラベル: -5] (説明)
+      // 「減点」固定ではなく、-数字をトリガーにして減点を識別
+      const minusMatch = line.match(/\[[^\]]+:\s*-(\d+)\]\s*(.*)/);
       if (minusMatch) {
         const points = parseInt(minusMatch[1] ?? '0', 10);
         let desc = minusMatch[2] || '';
