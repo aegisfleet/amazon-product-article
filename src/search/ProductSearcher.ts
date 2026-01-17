@@ -859,6 +859,14 @@ export class ProductSearcher {
         maxResults: 10,
         sortBy: 'featured',
         enabled: true
+      },
+      {
+        name: 'smartphones',
+        searchIndex: 'Electronics',
+        keywords: ['スマートフォン本体', 'SIMフリー スマホ', 'Android スマートフォン', 'スマホ 本体 SIMフリー', 'SIMフリー端末'],
+        maxResults: 10,
+        sortBy: 'featured',
+        enabled: true
       }
     ];
   }
@@ -978,7 +986,8 @@ export class ProductSearcher {
       'frozen_bento': 'GroceryAndGourmetFood',
       'meal_kits': 'GroceryAndGourmetFood',
       'emergency_foods': 'GroceryAndGourmetFood',
-      'tea_leaves': 'GroceryAndGourmetFood'
+      'tea_leaves': 'GroceryAndGourmetFood',
+      'smartphones': 'Electronics'
     };
     return categoryMap[categoryName.toLowerCase()] || 'All';
   }
