@@ -171,7 +171,7 @@ a:hover {
 
 .hero-description {
   max-width: 600px;
-  font-size: 1rem;
+  font-size: 0.875rem;
   line-height: 1.8;
   color: var(--color-text-main);
 }
@@ -192,9 +192,15 @@ a:hover {
 }
 
 .hero p {
-  font-size: 1.125rem;
+  font-size: 0.875rem;
   color: var(--color-text-muted);
   max-width: 600px;
+}
+
+@media (min-width: 768px) {
+  .hero p {
+    font-size: 1.05rem;
+  }
 }
 
 /* Cards */
@@ -2229,7 +2235,7 @@ a:hover {
    ===================================================== */
 
 .hero-description {
-  font-size: 1rem;
+  font-size: 0.95rem;
   line-height: 1.6;
   color: var(--color-text-main);
   margin-bottom: var(--spacing-md);
@@ -2529,7 +2535,7 @@ a:hover {
   }
 
   .hero-description {
-    font-size: 1rem;
+    font-size: 0.9rem;
     margin-bottom: var(--spacing-xs);
   }
 
