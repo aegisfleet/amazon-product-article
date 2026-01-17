@@ -40,7 +40,6 @@ export interface SystemConfig {
   productSearch: {
     categories: string[];
     maxResultsPerCategory: number;
-    searchKeywords: string[];
   };
 
   // Article Generation Configuration
@@ -124,7 +123,6 @@ export class ConfigManager {
       productSearch: {
         categories: this.parseListEnvVar('PRODUCT_CATEGORIES', ''),
         maxResultsPerCategory: parseInt(this.getEnvVar('MAX_RESULTS_PER_CATEGORY', '10'), 10),
-        searchKeywords: this.parseListEnvVar('SEARCH_KEYWORDS', 'best,top,review'),
       },
       articleGeneration: {
         outputPath: this.getEnvVar('ARTICLE_OUTPUT_PATH', './articles'),

@@ -10,7 +10,6 @@
  *   PRODUCT_CATEGORIES - 検索カテゴリ（カンマ区切り、オプション）
  *   MAX_RESULTS_PER_CATEGORY - カテゴリあたりの最大結果数（オプション）
  *   INPUT_ASINS - 直接指定するASIN（カンマ区切り、オプション）
- *   SEARCH_KEYWORDS - 検索キーワード（カンマ区切り、オプション）
  */
 
 import fs from 'fs/promises';
@@ -28,10 +27,6 @@ interface CLIOptions {
     categories: string[];
     maxResults: number;
     asins?: string[];
-    keywords?: string[];
-    merchant?: 'Amazon' | 'All';
-    ignoreExclusion: boolean;
-    maxPages: number;
 }
 
 function getOptions(): CLIOptions {
@@ -56,35 +51,16 @@ function getOptions(): CLIOptions {
     const inputAsinsEnv = process.env.INPUT_ASINS;
     const asins = inputAsinsEnv ? inputAsinsEnv.split(',').map(a => a.trim()).filter(Boolean) : undefined;
 
-    // Keyword input from GitHub Actions input or environment variable
-    const keywordsEnv = process.env.SEARCH_KEYWORDS;
-    const keywords = keywordsEnv ? keywordsEnv.split(',').map(k => k.trim()).filter(Boolean) : undefined;
-
-    const merchant = process.env.SEARCH_MERCHANT as 'Amazon' | 'All' | undefined;
-
-    const ignoreExclusion = process.env.SEARCH_IGNORE_EXCLUSION === 'true';
-    const maxPages = parseInt(process.env.SEARCH_MAX_PAGES || '3', 10);
-
     const result: CLIOptions = {
         accessKey,
         secretKey,
         partnerTag,
         categories,
-        maxResults,
-        ignoreExclusion,
-        maxPages
+        maxResults
     };
 
     if (asins) {
         result.asins = asins;
-    }
-
-    if (keywords) {
-        result.keywords = keywords;
-    }
-
-    if (merchant) {
-        result.merchant = merchant;
     }
 
     return result;
@@ -147,10 +123,6 @@ async function main(): Promise<void> {
         if (options.asins && options.asins.length > 0) {
             // Manual ASIN Search
             session = await searcher.searchByAsins(options.asins);
-        } else if (options.keywords && options.keywords.length > 0) {
-            // Keyword Search
-            logger.info(`Keyword mode: searching for keywords: ${options.keywords.join(', ')} (Merchant: ${options.merchant || 'Default'}, IgnoreExclusion: ${options.ignoreExclusion}, MaxPages: ${options.maxPages})`);
-            session = await searcher.searchByKeywords(options.keywords, options.maxResults, options.merchant, options.ignoreExclusion, options.maxPages);
         } else {
             // Category Search (with randomization and exclusion)
             session = await searcher.searchAllCategories(options.categories);
