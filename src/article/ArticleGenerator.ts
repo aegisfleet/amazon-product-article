@@ -87,8 +87,11 @@ const SPEC_LABEL_MAP: Record<string, string> = {
   model: '型番',
   modelNumber: '型番',
   countryOfOrigin: '原産国',
+  country_of_origin: '原産国',
   category: 'カテゴリ',
   productType: '商品タイプ',
+  brand: 'ブランド',
+  manufacturer: 'メーカー',
 
   // 電子機器
   os: 'OS',
@@ -100,21 +103,40 @@ const SPEC_LABEL_MAP: Record<string, string> = {
   battery: 'バッテリー',
   camera: 'カメラ',
   connectivity: '接続',
+  interface: 'インターフェース',
+  connectorType: 'コネクタタイプ',
+  transferSpeed: '転送速度',
+  dataTransferSpeed: 'データ転送速度',
+  resolution: '解像度',
+  refreshRate: 'リフレッシュレート',
+  responseTime: '応答速度',
 
-  // 電源関連
+  // 電源・家電関連
   power: '電力/電源',
+  powerConsumption: '消費電力',
+  consumption: '消費電力',
   capacity: '容量',
+  tankCapacity: 'タンク容量',
+  dustCapacity: '集塵容量',
   output: '出力',
   input: '入力',
+  maxPower: '最大出力',
   cableLength: 'ケーブル長',
+  cordLength: 'コード長',
   ports: 'ポート',
+  voltage: '電圧',
+  frequency: '周波数',
 
   // オーディオ
   driver: 'ドライバー',
   codec: 'コーデック',
   noiseCancel: 'ノイズキャンセル',
+  microphone: 'マイク',
+  frequencyResponse: '周波数特性',
+  impedance: 'インピーダンス',
+  sensitivity: '感度',
 
-  // 靴（シューズ）
+  // 靴（シューズ）・アパレル
   width: '幅（ワイズ）',
   midsole: 'ミッドソール',
   cushioningTech: 'クッショニング',
@@ -127,265 +149,70 @@ const SPEC_LABEL_MAP: Record<string, string> = {
   insoleMaterial: 'インソール素材',
   innerSole: 'インソール',
   insole: 'インソール',
+  soleMaterial: 'ソール素材',
+  claspType: '留め具タイプ',
+  closureType: '留め具',
 
-  // その他
-  features: '特徴',
-  ingredients: '成分',
-  certifications: '認証',
-  compatibility: '互換性',
-  compatibleDevices: '対応機器',
-  compatibleModels: '対応モデル',
-  packageContents: '同梱物',
-  attachments: '付属品',
-  loadCapacity: '耐荷重',
-  other: 'その他',
-
-  // Webカメラ・映像機器
-  resolution: '解像度',
-  focusType: 'フォーカス',
-  fieldOfView: '視野角',
-  microphone: 'マイク',
-
-  // 充電器・電源
-  safetyFeatures: '安全機能',
-
-  // 食品・サプリ
-  origin: '産地',
-  type: 'タイプ',
-  allergens: 'アレルゲン',
-  storageMethod: '保存方法',
-  proteinType: 'プロテイン種類',
-  servingSize: '1食分量',
+  // 食品・サプリ・美容・健康
   quantity: '内容量',
   content: '内容量',
-
-  // 化粧品
-  fragrance: '香り',
-  scent: '香り',
-  skinType: '対象肌タイプ',
-
-  // ケーブル・コネクタ
-  cable: 'ケーブル',
-  materials: '素材',
-
-  // ゲーム・おもちゃ
-  gameType: 'ゲームタイプ',
-  players: 'プレイ人数',
-  targetAge: '対象年齢',
-  cardCount: 'カード枚数',
-  publisher: '出版社/メーカー',
-
-  // 文房具
-  holes: '穴数',
-  count: '穴数',
-  spacing: '穴間隔',
-  coverThickness: '表紙厚',
-
-  // 家電・時計
-  clock: '時計機能',
-  alarm: 'アラーム',
-  sensors: 'センサー',
-  timer: 'タイマー',
-  functions: '機能',
-  supportedSize: '対応サイズ',
-  range: '測定範囲',
-  accuracy: '精度',
-
-  // 食品・サプリ・医薬品
+  contentVolume: '内容量',
+  servingSize: '1食分量',
   activeIngredients: '有効成分',
-  activeIngredient: '有効成分',
-  additives: '添加物',
-  ingredientDetails: '成分分量',
-  indications: '効能・効果',
-  dosage: '用法・用量',
-  calories: 'カロリー',
-  shelfLife: '消費期限/賞味期限',
-  processing: '製法',
-  recommendedFor: '推奨用途/対象',
   mainIngredients: '主な成分',
-  keyIngredients: '主要成分',
-  form: '形状',
-
-  // 美容・健康
-  tankCapacity: 'タンク容量',
-  steamType: 'スチーム種類',
-  steamTemperature: 'スチーム温度',
-  texture: 'テクスチャー',
-
-  specialFeatures: '特殊機能',
-  modes: 'モード',
-  waterResistance: '防水性能',
-  waterproof: '防水',
-
-  // PC・ガジェット
-  interface: 'インターフェース',
-  connectorType: 'コネクタタイプ',
-  length: '長さ',
-  maxPower: '最大出力',
-  dataTransferSpeed: 'データ転送速度',
-  durability: '耐久性',
-  supportedOS: '対応OS',
-  rotation: '回転角度',
-  frequencyResponse: '周波数特性',
-  impedance: 'インピーダンス',
-  compatibleDevice: '対応機種',
-  powerConsumption: '消費電力',
-  monitor: 'モニター',
-  ergonomics: 'エルゴノミクス',
-
-  // 音楽・メディア
-  format: 'フォーマット',
-  label: 'レーベル',
-  numberOfDiscs: 'ディスク枚数',
-
-  // 生活雑貨
-  dishwasherSafe: '食洗機対応',
-  adjustability: '調整機能',
-  coating: 'コーティング',
-  thickness: '厚さ',
-  volume: '容量',
-  powerSource: '電源',
-  accessories: '付属品',
-  includedItems: '同梱物',
-  contents: '内容物',
-  size: 'サイズ',
-
-  // その他一般的
-  soleMaterial: 'ソール素材',
-  cushioning: 'クッション性',
-  outsole: 'アウトソール',
-
-  // 寸法・形状（詳細）
-  height: '高さ',
-  depth: '奥行き',
-  diameter: '直径',
-  upper: 'アッパー',
-  base: 'ベース/底面',
-  surface: '表面素材',
-  lid: '蓋',
-
-  // 電源・バッテリー詳細
-  charging: '充電',
-  consumption: '消費電力',
-  cordLength: 'コード長',
-
-  source: '電源',
-  ac: 'AC出力/入力',
-  adapter: 'アダプター',
-  continuousUsageTime: '連続使用時間',
-
-  // 食品・成分詳細
+  ingredients: '成分',
+  allergens: 'アレルゲン',
+  calories: 'カロリー',
   protein: 'タンパク質',
   fat: '脂質',
   carbohydrates: '炭水化物',
   saltEquivalent: '食塩相当量',
-  contentVolume: '内容量',
-  body: 'ボディ/コク',
+  dosage: '用法・用量',
+  dailyDosage: '1日の摂取目安',
+  origin: '産地',
+  shelfLife: '期限',
+  flavor: '味',
+  fragrance: '香り',
+  scent: '香り',
+  skinType: '対象肌タイプ',
 
-  // PC・モニター詳細
-  refreshRate: 'リフレッシュレート',
-  responseTime: '応答速度',
-  viewingAngle: '視野角',
-  brightness: '輝度',
-  contrastRatio: 'コントラスト比',
-  vesaMount: 'VESAマウント',
-  tilt: 'チルト',
-  swivel: 'スイベル',
-  heightAdjustment: '高さ調節',
-
-  // オーディオ・機能詳細
-  audio: 'オーディオ',
-  backlight: 'バックライト',
-  withCase: 'ケース併用時',
-  earbud: 'イヤホン単体',
-  playtime: '再生時間',
-  playTime: 'プレイ時間',
-
-  // その他
-  releaseDate: '発売日',
-  total: '合計',
-  security: 'セキュリティ',
-  warranty: '保証',
-  claspType: '留め具タイプ',
-  closureType: '留め具',
-  components: 'コンポーネント',
-  media: 'メディア',
-  case: 'ケース',
-  mist: 'ミスト',
-
-  // 掃除機・家電
-  suctionPower: '吸引力',
-  filterType: 'フィルタータイプ',
-
-  dustCapacity: '集塵容量',
-  cleaningWidth: '清掃幅',
-  noiseLevel: '騒音レベル',
-
-  // 書籍・メディア
+  // 文房具・書籍・メディア
   pages: 'ページ数',
   publicationDate: '出版日',
-  isbn: 'ISBN',
-  language: '言語',
+  publisher: '出版社',
   binding: '製本',
   genre: 'ジャンル',
-  author: '著者',
+  language: '言語',
+  isbn: 'ISBN',
+  numberOfDiscs: 'ディスク枚数',
   discCount: 'ディスク枚数',
-  trackList: '曲目リスト',
-  regionCode: 'リージョンコード',
-  subtitles: '字幕',
 
-  // キッチン・家電・生活用品
-  heatingMethod: '加熱方式',
-  temperature: '温度',
-  heatResistance: '耐熱温度',
-  coldResistance: '耐冷温度',
-  compatibleHeatSources: '対応熱源',
-  innerPot: '内釜',
-  roastLevel: '焙煎度',
-  acidity: '酸味',
-  bitterness: '苦味',
-  beanOrigin: '生豆生産国',
-  controls: '操作',
-  duration: '期間/時間',
-  design: 'デザイン',
-  colorOptions: 'カラー展開',
-  setContents: 'セット内容',
-  assembly_required: '組み立て',
-
-  // AV・音響機器
-  polarPattern: '指向性',
-  sensitivity: '感度',
-  bitDepth: 'ビット深度',
-  sampleRate: 'サンプリングレート',
-  microphoneType: 'マイクタイプ',
-  snRatio: 'S/N比',
-  maxSPL: '最大音圧レベル',
-
-  // PC・ネットワーク
-  wifiStandard: 'Wi-Fi規格',
-  frequencyBands: '周波数帯',
-  antennas: 'アンテナ数',
-  processor: 'プロセッサー',
-  usbPorts: 'USBポート',
-  transferSpeed: '転送速度',
-  connector: 'コネクタ',
-  supportedDrives: '対応ドライブ',
-
-  // 食品・ヘルスケア
-  dosageForm: '剤形',
-  guaranteedAnalysis: '成分保証値',
-  servingsPerContainer: '総回数',
-  inactiveIngredients: '添加物/非有効成分',
-  contraindications: '禁忌',
-  dailyDosage: '1日の摂取目安',
-  flavor: '味',
-
-  // その他
+  // その他・共通
+  loadCapacity: '耐荷重',
   load_capacity: '耐荷重',
-  country_of_origin: '原産国',
-  compatibleTireSizes: '適合サイズ',
+  attachments: '付属品',
+  accessories: '付属品',
+  includedItems: '同梱物',
+  packageContents: '同梱物',
+  other: 'その他',
+  features: '特徴',
+  specialFeatures: '特殊機能',
+  compatibility: '互換性',
+  compatibleDevices: '対応機器',
+  compatibleModels: '対応モデル',
+  releaseDate: '発売日',
+  warranty: '保証',
+  targetAge: '対象年齢',
   recommendedAge: '推奨年齢',
   uvProtection: 'UVカット',
+
+  // コンタクトレンズ
+  dia: 'レンズ直径(DIA)',
+  bc: 'ベースカーブ(BC)',
+  coloredDiameter: '着色直径',
+  waterContent: '含水率',
+  lensType: 'レンズタイプ',
+  medicalApprovalNumber: '医療機器承認番号',
 };
 
 /**
@@ -397,8 +224,8 @@ const HANDLED_SPEC_FIELDS = new Set([
   'os', 'cpu', 'gpu', 'ram', 'storage', 'display', 'battery', 'camera', 'dimensions', 'connectivity',
   // イヤホン・ヘッドホン
   'driver', 'codec', 'noiseCancel',
-  // 家電
-  'power', 'capacity', 'category',
+  // 家電（power, capacity は動的に処理するため除外から外す）
+  // その他
   // 靴（シューズ）
   'width', 'weight', 'material', 'midsole', 'cushioningTech', 'heelCounter', 'heelHeight',
   'upperMaterial', 'midsoleMaterial', 'outsoleMaterial', 'outerSole', 'insoleMaterial', 'innerSole', 'insole',
@@ -653,6 +480,74 @@ export class ArticleGenerator {
     }
 
     return sections;
+  }
+
+  /**
+   * 購入セクションを生成
+   */
+  private async generatePurchaseSection(
+    product: Product,
+    affiliateTag: string,
+    investigation: InvestigationResult
+  ): Promise<ArticleSection> {
+    const affiliateLink = this.affiliateManager.generateLinkFromProduct(product);
+    const affiliateUrl = affiliateLink.url;
+
+    // 基本情報行
+    const infoRows: string[] = [
+      `| ASIN | ${product.asin} |`,
+      `| 現在価格 | ${product.price.formatted} |`,
+      `| カテゴリ | ${product.categoryInfo?.main || product.category} |`
+    ];
+
+    // 追加プロパティ（ブランドなど）
+    const productDetail = product as ProductDetail;
+    if (productDetail.brand) {
+      infoRows.push(`| ブランド | ${productDetail.brand} |`);
+    }
+
+    // 在庫・Prime情報
+    if (productDetail.availability) {
+      infoRows.push(`| 在庫状況 | ${productDetail.availability} |`);
+    }
+    if (productDetail.isPrimeEligible) {
+      infoRows.push(`| Prime対応 | ✓ 対応 |`);
+    }
+
+    // EAN/ISBN/UPC
+    if (productDetail.externalIds?.ean) {
+      infoRows.push(`| EAN | ${productDetail.externalIds.ean} |`);
+    } else if (productDetail.externalIds?.isbn) {
+      infoRows.push(`| ISBN | ${productDetail.externalIds.isbn} |`);
+    }
+
+    // 詳細スペック（TechnicalSpecs）がある場合
+    if (investigation.analysis.technicalSpecs) {
+      const specs = investigation.analysis.technicalSpecs;
+      const category = product.categoryInfo?.main || product.category;
+
+      // 動的レンダリング: 未処理のフィールドを自動表示
+      const additionalRows = this.renderDynamicSpecs(specs, category);
+      if (additionalRows.length > 0) {
+        // 追加スペックもメインの表に統合
+        infoRows.push(...additionalRows);
+      }
+    }
+
+    const content = `## 🛒 商品詳細・購入
+
+| 項目 | 詳細 |
+| :--- | :--- |
+${infoRows.join('\n')}
+
+<a href="${affiliateUrl}" class="btn-amazon-purchase" target="_blank" rel="noopener noreferrer">Amazonで詳細を見る</a>`;
+
+    return {
+      title: '商品詳細・購入',
+      content,
+      wordCount: this.calculateWordCount(content),
+      requiredElements: ['商品詳細表', '購入リンク']
+    };
   }
 
   /**
@@ -1178,266 +1073,12 @@ ${score >= 80 ? '自信を持っておすすめできる商品です。' :
     };
   }
 
-  /**
-   * 購入セクションを生成（下部）
-   */
-  private async generatePurchaseSection(
-    product: Product,
-    _affiliateTag: string,
-    investigation?: InvestigationResult
-  ): Promise<ArticleSection> {
-    const affiliateLink = this.affiliateManager.generateLinkFromProduct(product);
-    const affiliateUrl = affiliateLink.url;
-
-    // ProductDetail型の追加フィールドを取得（存在すれば）
-    const productDetail = product as any;
-
-    // 商品情報の行を動的に構築
-    const infoRows: string[] = [];
-    infoRows.push(`| ASIN | ${product.asin} |`);
-    infoRows.push(`| 現在価格 | ${product.price.formatted} |`);
-
-    // カテゴリ
-    if (product.category) {
-      infoRows.push(`| カテゴリ | ${product.category} |`);
-    }
-
-    // ブランド
-    if (productDetail.brand) {
-      infoRows.push(`| ブランド | ${productDetail.brand} |`);
-    } else if (productDetail.manufacturer) {
-      infoRows.push(`| メーカー | ${productDetail.manufacturer} |`);
-    }
-
-    // モデル
-    if (productDetail.model) {
-      infoRows.push(`| モデル | ${productDetail.model} |`);
-    }
-
-    // 在庫状況
-    if (productDetail.availability) {
-      infoRows.push(`| 在庫状況 | ${productDetail.availability} |`);
-    }
-
-    // Prime対応
-    if (productDetail.isPrimeEligible !== undefined) {
-      infoRows.push(`| Prime対応 | ${productDetail.isPrimeEligible ? '✓ 対応' : '✗ 非対応'} |`);
-    }
-
-    // 発売日
-    if (productDetail.releaseDate) {
-      infoRows.push(`| 発売日 | ${this.formatDateToJST(productDetail.releaseDate)} |`);
-    }
-
-    // 外部ID（EAN/ISBN/UPC）
-    if (productDetail.externalIds) {
-      if (productDetail.externalIds.ean) {
-        infoRows.push(`| EAN | ${productDetail.externalIds.ean} |`);
-      }
-      if (productDetail.externalIds.isbn) {
-        infoRows.push(`| ISBN | ${productDetail.externalIds.isbn} |`);
-      }
-      if (productDetail.externalIds.upc) {
-        infoRows.push(`| UPC | ${productDetail.externalIds.upc} |`);
-      }
-    }
-
-    // 言語
-    if (productDetail.languages && productDetail.languages.length > 0) {
-      infoRows.push(`| 言語 | ${productDetail.languages.join(', ')} |`);
-    }
-
-    // 著者/出演者
-    if (productDetail.contributors && productDetail.contributors.length > 0) {
-      const contributorList = productDetail.contributors
-        .slice(0, 3) // 上位3人まで
-        .map((c: { name: string; role: string }) => `${c.name} (${c.role})`)
-        .join(', ');
-      infoRows.push(`| 著者/出演者 | ${contributorList} |`);
-    }
-
-    // 詳細スペック情報（technicalSpecs）を追加
-    if (investigation?.analysis.technicalSpecs) {
-      const specs = investigation.analysis.technicalSpecs;
-
-      // 区切り行を追加
-      infoRows.push(`| **--- スペック ---** | |`);
-
-      // 基本スペック
-      if (specs.os) infoRows.push(`| OS | ${this.formatSpecValue(specs.os)} |`);
-      if (specs.cpu) infoRows.push(`| CPU | ${this.formatSpecValue(specs.cpu)} |`);
-      if (specs.gpu) infoRows.push(`| GPU | ${this.formatSpecValue(specs.gpu)} |`);
-      if (specs.ram) infoRows.push(`| メモリ | ${this.formatSpecValue(specs.ram)} |`);
-      if (specs.storage) infoRows.push(`| ストレージ | ${this.formatSpecValue(specs.storage)} |`);
-
-      // ディスプレイ
-      if (specs.display) {
-        const displayParts = [];
-        if (specs.display.size) displayParts.push(specs.display.size);
-        if (specs.display.type) displayParts.push(specs.display.type);
-        if (specs.display.resolution) displayParts.push(specs.display.resolution);
-        if (specs.display.refreshRate) displayParts.push(`リフレッシュレート: ${specs.display.refreshRate}`);
-        if (displayParts.length > 0) {
-          infoRows.push(`| 画面 | ${displayParts.join(' / ')} |`);
-        }
-      }
-
-      // バッテリー
-      if (specs.battery) {
-        const batteryParts = [];
-        if (specs.battery.capacity) batteryParts.push(specs.battery.capacity);
-        if (specs.battery.charging) batteryParts.push(specs.battery.charging);
-        if (specs.battery.playbackTime) batteryParts.push(`再生時間: ${specs.battery.playbackTime}`);
-        if (batteryParts.length > 0) {
-          infoRows.push(`| バッテリー | ${batteryParts.join(' / ')} |`);
-        }
-      }
-
-      // カメラ
-      if (specs.camera) {
-        const cameraParts = [];
-        if (specs.camera.main) cameraParts.push(`メイン: ${specs.camera.main}`);
-        if (specs.camera.ultrawide) cameraParts.push(`超広角: ${specs.camera.ultrawide}`);
-        if (specs.camera.telephoto) cameraParts.push(`望遠: ${specs.camera.telephoto}`);
-        if (specs.camera.front) cameraParts.push(`前面: ${specs.camera.front}`);
-        if (cameraParts.length > 0) {
-          infoRows.push(`| カメラ | ${cameraParts.join(' / ')} |`);
-        }
-      }
-
-      // 寸法・重量
-      if (specs.dimensions) {
-        if (specs.dimensions.weight) {
-          infoRows.push(`| 重量 | ${specs.dimensions.weight} |`);
-        }
-        const dimParts = [];
-        if (specs.dimensions.height) dimParts.push(`高さ: ${specs.dimensions.height}`);
-        if (specs.dimensions.width) dimParts.push(`幅: ${specs.dimensions.width}`);
-        if (specs.dimensions.depth) dimParts.push(`奥行: ${specs.dimensions.depth}`);
-        if (dimParts.length > 0) {
-          infoRows.push(`| サイズ | ${dimParts.join(' / ')} |`);
-        }
-      }
-
-      // イヤホン・ヘッドホン
-      if (specs.driver) infoRows.push(`| ドライバー | ${this.formatSpecValue(specs.driver)} |`);
-      if (specs.codec) {
-        infoRows.push(`| 対応コーデック | ${this.formatSpecValue(specs.codec)} |`);
-      }
-      if (specs.noiseCancel) infoRows.push(`| ノイズキャンセル | ${this.formatSpecValue(specs.noiseCancel)} |`);
-
-      // 家電
-      if (specs.power) infoRows.push(`| 消費電力 | ${this.formatSpecValue(specs.power)} |`);
-      if (specs.capacity) infoRows.push(`| 容量 | ${this.formatSpecValue(specs.capacity)} |`);
-
-      // カテゴリ（スペック内）
-      if (specs.category) infoRows.push(`| カテゴリ | ${this.formatSpecValue(specs.category)} |`);
-
-      // 接続性
-      if (specs.connectivity) {
-        infoRows.push(`| 接続 | ${this.formatSpecValue(specs.connectivity)} |`);
-      }
-
-      // 靴（シューズ）
-      if (specs.width) infoRows.push(`| 幅（ワイズ） | ${this.formatSpecValue(specs.width)} |`);
-      if (specs.weight) infoRows.push(`| 重量 | ${this.formatSpecValue(specs.weight)} |`);
-      if (specs.midsole) infoRows.push(`| ミッドソール | ${this.formatSpecValue(specs.midsole)} |`);
-      if (specs.cushioningTech) {
-        infoRows.push(`| クッショニング | ${this.formatSpecValue(specs.cushioningTech)} |`);
-      }
-      if (specs.heelCounter) infoRows.push(`| ヒールカウンター | ${this.formatSpecValue(specs.heelCounter)} |`);
-      if (specs.heelHeight) infoRows.push(`| ヒール高 | ${this.formatSpecValue(specs.heelHeight)} |`);
-
-      // 素材の統合表示
-      const matParts = [];
-      if (specs.material) {
-        if (typeof specs.material === 'string') {
-          matParts.push(specs.material);
-        } else {
-          if (specs.material.upper) matParts.push(`アッパー: ${specs.material.upper}`);
-          if (specs.material.outsole) matParts.push(`アウトソール: ${specs.material.outsole}`);
-          if (specs.material.insole) matParts.push(`インソール: ${specs.material.insole}`);
-        }
-      }
-      // 個別フィールドの追加（エイリアスも考慮）
-      if (specs.upperMaterial) matParts.push(`アッパー: ${specs.upperMaterial}`);
-      if (specs.midsoleMaterial) matParts.push(`ミッドソール: ${specs.midsoleMaterial}`);
-      const outsole = specs.outsoleMaterial || specs.outerSole;
-      if (outsole) matParts.push(`アウトソール: ${outsole}`);
-      const insole = specs.insoleMaterial || specs.innerSole || specs.insole;
-      if (insole) matParts.push(`インソール: ${insole}`);
-
-      if (matParts.length > 0) {
-        infoRows.push(`| 素材 | ${matParts.join(' / ')} |`);
-      }
-
-      const model = specs.modelNumber || specs.model;
-      if (model) infoRows.push(`| 型番 | ${this.formatSpecValue(model)} |`);
-
-      if (specs.countryOfOrigin) infoRows.push(`| 原産国 | ${this.formatSpecValue(specs.countryOfOrigin)} |`);
-
-      // 家具・オフィス・収納・その他追加
-      if (specs.loadCapacity) {
-        if (typeof specs.loadCapacity === 'string') {
-          infoRows.push(`| 耐荷重 | ${specs.loadCapacity} |`);
-        } else {
-          const capacityParts = Object.entries(specs.loadCapacity).map(([key, value]) => {
-            const label = key === 'rack' ? '本体' : key === 'hook' ? 'フック' : key;
-            return `${label}: ${value}`;
-          });
-          infoRows.push(`| 耐荷重 | ${capacityParts.join(' / ')} |`);
-        }
-      }
-      if (specs.attachments) {
-        infoRows.push(`| 付属品 | ${this.formatSpecValue(specs.attachments)} |`);
-      }
-
-      // その他スペック
-      if (specs.other) {
-        infoRows.push(`| その他 | ${this.formatSpecValue(specs.other)} |`);
-      }
-
-      // 動的レンダリング: 未処理のフィールドを自動表示
-      const additionalRows = this.renderDynamicSpecs(specs);
-      if (additionalRows.length > 0) {
-        // 追加スペックもメインの表に統合
-        infoRows.push(...additionalRows);
-      }
-    }
-
-    const content = `## 🛒 商品詳細・購入
-
-<div class="purchase-card">
-
-### 商品情報
-
-<div class="table-wrapper">
-
-| 項目 | 内容 |
-|:-----|:-----|
-${infoRows.join('\n')}
-
-</div>
-
-<a href="${affiliateUrl}" class="btn-amazon-large" target="_blank" rel="noopener noreferrer">🛒 Amazonで購入する</a>
-
-</div>
-
-*最新の価格は、購入前に必ずAmazonの商品ページでご確認ください。*`;
-
-    return {
-      title: '商品詳細・購入',
-      content,
-      wordCount: this.calculateWordCount(content),
-      requiredElements: ['商品情報', '購入リンク']
-    };
-  }
 
   /**
    * 動的スペックレンダリング
    * 既存ロジックで処理されていないフィールドを自動的に表示
    */
-  private renderDynamicSpecs(specs: TechnicalSpecs): string[] {
+  private renderDynamicSpecs(specs: TechnicalSpecs, category?: string): string[] {
     const rows: string[] = [];
 
     for (const [key, value] of Object.entries(specs)) {
@@ -1446,8 +1087,16 @@ ${infoRows.join('\n')}
       // nullまたはundefinedはスキップ
       if (value === null || value === undefined) continue;
 
-      const label = SPEC_LABEL_MAP[key] || this.formatFieldName(key);
-      const formattedValue = this.formatSpecValue(value);
+      let label = SPEC_LABEL_MAP[key] || this.formatFieldName(key);
+
+      // カテゴリに応じたラベルの調整
+      if (key === 'power') {
+        if (category === 'ソフトコンタクトレンズ' || category === 'コンタクトレンズ・ケア用品') {
+          label = '度数';
+        }
+      }
+
+      const formattedValue = this.formatSpecValue(value, category);
 
       if (formattedValue) {
         rows.push(`| ${label} | ${formattedValue} |`);
@@ -1471,7 +1120,7 @@ ${infoRows.join('\n')}
   /**
    * スペック値を表示用にフォーマット
    */
-  private formatSpecValue(value: unknown): string {
+  private formatSpecValue(value: unknown, category?: string): string {
     if (value === null || value === undefined) {
       return '';
     }
@@ -1489,7 +1138,7 @@ ${infoRows.join('\n')}
       const formatted = value.map(item => {
         if (typeof item === 'string') return item;
         if (typeof item === 'object' && item !== null) {
-          return this.formatObjectValue(item as Record<string, unknown>);
+          return this.formatObjectValue(item as Record<string, unknown>, category);
         }
         return String(item);
       });
@@ -1497,7 +1146,7 @@ ${infoRows.join('\n')}
     }
 
     if (typeof value === 'object') {
-      return this.formatObjectValue(value as Record<string, unknown>);
+      return this.formatObjectValue(value as Record<string, unknown>, category);
     }
 
     // primitiveとして安全に文字列化（symbol, bigintなど）
@@ -1507,13 +1156,20 @@ ${infoRows.join('\n')}
   /**
    * オブジェクト値をフォーマット
    */
-  private formatObjectValue(obj: Record<string, unknown>): string {
+  private formatObjectValue(obj: Record<string, unknown>, category?: string): string {
     const parts: string[] = [];
 
     for (const [key, val] of Object.entries(obj)) {
       if (val === null || val === undefined) continue;
 
-      const label = SPEC_LABEL_MAP[key] || this.formatFieldName(key);
+      let label = SPEC_LABEL_MAP[key] || this.formatFieldName(key);
+
+      // カテゴリに応じたラベルの調整
+      if (key === 'power') {
+        if (category === 'ソフトコンタクトレンズ' || category === 'コンタクトレンズ・ケア用品') {
+          label = '度数';
+        }
+      }
 
       if (typeof val === 'string' || typeof val === 'number' || typeof val === 'boolean') {
         parts.push(`${label}: ${val}`);
@@ -1521,7 +1177,7 @@ ${infoRows.join('\n')}
         parts.push(`${label}: ${val.join(', ')}`);
       } else if (typeof val === 'object') {
         // ネストされたオブジェクトは再帰的に処理
-        parts.push(`${label}: ${this.formatObjectValue(val as Record<string, unknown>)}`);
+        parts.push(`${label}: ${this.formatObjectValue(val as Record<string, unknown>, category)}`);
       }
     }
 
