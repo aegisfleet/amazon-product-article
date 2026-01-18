@@ -97,6 +97,10 @@ describe('PAAPIClient Property Tests', () => {
     it('should not expose sensitive credentials in error messages or logs', async () => {
       // Simplified test to avoid timeout issues
       const client = new PAAPIClient();
+
+      // Reduce maxRetries for testing to avoid long wait times
+      (client as any).rateLimitConfig.maxRetries = 2;
+
       const credentials = {
         accessKey: 'test-access-key',
         secretKey: 'test-secret-key',
