@@ -267,18 +267,23 @@ async function main(): Promise<void> {
                 const chunk = missingAsins.slice(i, i + chunkSize);
                 try {
                     logger.info(`Fetching batch ${Math.floor(i / chunkSize) + 1}/${Math.ceil(missingAsins.length / chunkSize)} (${chunk.length} items)...`);
-                    const results = await paapiClient.getMultipleProductDetails(chunk);
+                    const { results, permanentFailures } = await paapiClient.getMultipleProductDetails(chunk);
 
                     // Update cache for found items
                     for (const [asin, detail] of results.entries()) {
                         paapiCache.set(asin, detail);
                     }
 
-                    // Identify ASINs that were requested but NOT returned => Invalid/Not Found
+                    // Identify ASINs that were requested but NOT returned
                     for (const asin of chunk) {
                         if (!results.has(asin)) {
-                            logger.info(`Marking ASIN ${asin} as invalid (not found in PA-API)`);
-                            paapiCache.markInvalid(asin);
+                            if (permanentFailures.has(asin)) {
+                                logger.info(`Marking ASIN ${asin} as permanent_invalid (not found in PA-API)`);
+                                paapiCache.markPermanentInvalid(asin);
+                            } else {
+                                logger.info(`Marking ASIN ${asin} as invalid (temporary failure)`);
+                                paapiCache.markInvalid(asin);
+                            }
                         }
                     }
 

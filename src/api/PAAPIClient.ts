@@ -163,18 +163,20 @@ export class PAAPIClient {
   }
 
   /**
-   * Get detailed product information for multiple ASINs (up to 10)
-   * Returns a Map where keys are ASINs and values are ProductDetail objects
-   * Failed lookups are silently omitted from the result
-   * If batch request fails (e.g., due to invalid ASINs), falls back to individual requests
+   * Fetch details for multiple ASINs (max 10)
+   * Returns a results map and a set of ASINs that are permanently invalid
    */
-  async getMultipleProductDetails(asins: string[]): Promise<Map<string, ProductDetail>> {
+  async getMultipleProductDetails(asins: string[]): Promise<{
+    results: Map<string, ProductDetail>;
+    permanentFailures: Set<string>;
+  }> {
     this.validateAuthentication();
 
     const result = new Map<string, ProductDetail>();
+    const permanentFailures = new Set<string>();
 
     if (asins.length === 0) {
-      return result;
+      return { results: result, permanentFailures };
     }
 
     // PA-API allows max 10 items per request
@@ -182,7 +184,7 @@ export class PAAPIClient {
 
     if (validAsins.length === 0) {
       this.logger.warn('No valid ASINs provided for batch lookup');
-      return result;
+      return { results: result, permanentFailures };
     }
 
     const request: PAAPIRequest = {
@@ -263,13 +265,19 @@ export class PAAPIClient {
           this.logger.debug(`Successfully fetched product detail for ASIN ${asin}`);
         } catch (error) {
           // Individual ASIN not found or invalid - skip silently
-          this.logger.debug(`ASIN ${asin} not available: ${error instanceof Error ? error.message : String(error)}`);
+          const errorMessage = error instanceof Error ? error.message : String(error);
+          this.logger.debug(`ASIN ${asin} not available: ${errorMessage}`);
+
+          // Check for permanent failures
+          if (errorMessage.includes('InvalidParameterValue') || errorMessage.includes('ItemNotAccessible')) {
+            permanentFailures.add(asin);
+          }
         }
       }
       this.logger.info(`Fallback completed: fetched ${result.size}/${validAsins.length} competitor product details`);
     }
 
-    return result;
+    return { results: result, permanentFailures };
   }
 
   /**
