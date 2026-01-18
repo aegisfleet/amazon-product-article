@@ -413,12 +413,24 @@ export class ArticleGenerator {
       return `__BLOCKQUOTE_${blockquotes.length - 1}__`;
     });
 
+    // ヒーローカードのごく短い説明文（span内）も段落分割から保護
+    const heroDescriptions: string[] = [];
+    mobileContent = mobileContent.replace(/<span class="hero-score-item-desc">[\s\S]*?<\/span>/g, (match) => {
+      heroDescriptions.push(match);
+      return `__HERODESC_${heroDescriptions.length - 1}__`;
+    });
+
     // 長い段落を分割（blockquote以外のテキストにのみ適用）
     mobileContent = mobileContent.replace(/(.{200,}?)([。！？])/g, '$1$2\n\n');
 
     // blockquoteを復元
     blockquotes.forEach((bq, i) => {
       mobileContent = mobileContent.replace(`__BLOCKQUOTE_${i}__`, bq);
+    });
+
+    // ヒーロー説明文を復元
+    heroDescriptions.forEach((bq, i) => {
+      mobileContent = mobileContent.replace(`__HERODESC_${i}__`, bq);
     });
 
     // テーブルをモバイル対応形式に変換
@@ -1638,7 +1650,8 @@ ${score >= 80 ? '自信を持っておすすめできる商品です。' :
       const plusMatch = line.match(/\[[^\]]+:\s*\+(\d+)\]\s*(.*)/);
       if (plusMatch) {
         const [, points, desc = ''] = plusMatch;
-        const cleanDesc = desc.replace(/^[(（]/, '').replace(/[)）]$/, '').trim();
+        // HTMLタグを除去してから整形
+        const cleanDesc = desc.replace(/<[^>]*>/g, ' ').replace(/\s+/g, ' ').replace(/^[(（]/, '').replace(/[)）]$/, '').trim();
         parts.push(`<div class="score-item score-plus">✅ <span class="score-points">+${points}</span> ${cleanDesc}</div>`);
         continue;
       }
@@ -1648,7 +1661,8 @@ ${score >= 80 ? '自信を持っておすすめできる商品です。' :
       const minusMatch = line.match(/\[[^\]]+:\s*-(\d+)\]\s*(.*)/);
       if (minusMatch) {
         const [, points, desc = ''] = minusMatch;
-        const cleanDesc = desc.replace(/^[(（]/, '').replace(/[)）]$/, '').trim();
+        // HTMLタグを除去してから整形
+        const cleanDesc = desc.replace(/<[^>]*>/g, ' ').replace(/\s+/g, ' ').replace(/^[(（]/, '').replace(/[)）]$/, '').trim();
         parts.push(`<div class="score-item score-minus">⚠️ <span class="score-points">-${points}</span> ${cleanDesc}</div>`);
         continue;
       }
@@ -1694,6 +1708,10 @@ ${score >= 80 ? '自信を持っておすすめできる商品です。' :
       if (plusMatch) {
         const points = parseInt(plusMatch[1] ?? '0', 10);
         let desc = plusMatch[2] || '';
+        // HTMLタグを除去（<p>などが含まれるとレイアウト崩れの原因になるため）
+        desc = desc.replace(/<[^>]*>/g, ' ');
+        // 改行を含むあらゆる空白文字をスペースに置換
+        desc = desc.replace(/\s+/g, ' ');
         // 括弧を除去して説明文全体を使用
         desc = desc.replace(/^[(（]/, '').replace(/[)）]$/, '').trim();
 
@@ -1708,6 +1726,10 @@ ${score >= 80 ? '自信を持っておすすめできる商品です。' :
       if (minusMatch) {
         const points = parseInt(minusMatch[1] ?? '0', 10);
         let desc = minusMatch[2] || '';
+        // HTMLタグを除去
+        desc = desc.replace(/<[^>]*>/g, ' ');
+        // 改行を含むあらゆる空白文字をスペースに置換
+        desc = desc.replace(/\s+/g, ' ');
         // 括弧を除去して説明文全体を使用
         desc = desc.replace(/^[(（]/, '').replace(/[)）]$/, '').trim();
 
