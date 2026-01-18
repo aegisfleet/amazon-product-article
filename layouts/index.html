@@ -45,7 +45,8 @@
         </div>
         <div class="pickup-grid" id="pickup-grid">
             {{ range $pickupItems }}
-            <a href="{{ .RelPermalink }}" class="pickup-card" data-score="{{ .Params.score }}" data-price="{{ .Params.price }}">
+            <a href="{{ .RelPermalink }}" class="pickup-card" data-score="{{ .Params.score }}"
+                data-price="{{ .Params.price }}">
                 <div class="pickup-card-image">
                     {{ if .Params.images }}
                     <img src="{{ index .Params.images 0 }}" alt="{{ .Title }}" loading="lazy">
@@ -56,7 +57,14 @@
                 <div class="pickup-card-content">
                     <p class="pickup-card-title">{{ .Title | truncate 30 }}</p>
                     <div class="pickup-card-meta">
-                        <span class="pickup-card-score">🏆 {{ .Params.score }}点</span>
+                        {{ $score := .Params.score | int }}
+                        {{ $scoreClass := "score-fair" }}
+                        {{ if ge $score 80 }}
+                        {{ $scoreClass = "score-excellent" }}
+                        {{ else if ge $score 60 }}
+                        {{ $scoreClass = "score-good" }}
+                        {{ end }}
+                        <span class="pickup-card-score {{ $scoreClass }}">🏆 {{ .Params.score }}点</span>
                         {{ if .Params.price }}
                         <span class="pickup-card-price">{{ .Params.price }}</span>
                         {{ end }}

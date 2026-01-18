@@ -116,6 +116,14 @@ document.addEventListener('DOMContentLoaded', function () {
             const scoreSpan = document.createElement('span');
             scoreSpan.className = 'pickup-card-score';
             if (item.score !== undefined && item.score !== null) {
+                const scoreVal = Number(item.score);
+                if (scoreVal >= 80) {
+                    scoreSpan.classList.add('score-excellent');
+                } else if (scoreVal >= 60) {
+                    scoreSpan.classList.add('score-good');
+                } else {
+                    scoreSpan.classList.add('score-fair');
+                }
                 scoreSpan.textContent = `🏆 ${item.score}点`;
             }
             metaDiv.appendChild(scoreSpan);

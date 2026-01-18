@@ -309,17 +309,74 @@ a:hover {
 }
 
 .card-score {
-  color: #ca8a04;
   font-weight: 700;
   font-size: 0.9em;
-  background: #fef9c3;
   padding: 2px 6px;
   border-radius: 4px;
+  /* Default styling (fallback) */
+  color: #ca8a04;
+  background: #fef9c3;
 }
 
 [data-theme="dark"] .card-score {
   color: #fde047;
   background: rgba(234, 179, 8, 0.2);
+}
+
+/* Dynamic Score Colors */
+.card-score.score-excellent {
+  background: linear-gradient(135deg, #10b981, #059669);
+  color: white;
+  box-shadow: 0 1px 2px rgba(16, 185, 129, 0.2);
+}
+
+.card-score.score-good {
+  background: linear-gradient(135deg, #f59e0b, #d97706);
+  color: white;
+  box-shadow: 0 1px 2px rgba(245, 158, 11, 0.2);
+}
+
+.card-score.score-fair {
+  background: linear-gradient(135deg, #6b7280, #4b5563);
+  color: white;
+  box-shadow: 0 1px 2px rgba(107, 114, 128, 0.2);
+}
+
+/* Pickup Card specific overrides if needed (currently sharing same class) */
+.pickup-card-score {
+  /* inherit from card-score conceptually, but currently duplicate styles were used. 
+     We should ensure pickup-card-score also gets these modifiers if it uses them, 
+     or just map these modifiers to pickup-card-score as well. 
+     For now, let's treat pickup-card-score as a separate class that might need similar rules 
+     OR we will update the HTML to use card-score everywhere. 
+     The HTML analysis showed pickup-card-score is used in index.html.
+     Let's add rules for pickup-card-score as well for safety. */
+  font-weight: 700;
+  font-size: 0.9em;
+  padding: 2px 6px;
+  border-radius: 4px;
+  color: #ca8a04;
+  background: #fef9c3;
+}
+
+[data-theme="dark"] .pickup-card-score {
+  color: #fde047;
+  background: rgba(234, 179, 8, 0.2);
+}
+
+.pickup-card-score.score-excellent {
+  background: linear-gradient(135deg, #10b981, #059669);
+  color: white;
+}
+
+.pickup-card-score.score-good {
+  background: linear-gradient(135deg, #f59e0b, #d97706);
+  color: white;
+}
+
+.pickup-card-score.score-fair {
+  background: linear-gradient(135deg, #6b7280, #4b5563);
+  color: white;
 }
 
 .card-price {
