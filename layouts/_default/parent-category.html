@@ -68,21 +68,6 @@
     {{/* Sort by last_investigated desc */}}
     {{ $sorted := sort $uniqueArticles ".Params.last_investigated" "desc" }}
 
-    <div class="sorting-controls"
-        style="margin-bottom: var(--spacing-lg); display: flex; justify-content: flex-end; align-items: center; gap: var(--spacing-sm);">
-        <span style="font-size: 0.875rem; color: var(--color-text-secondary);">{{ len $sorted }} 件の商品</span>
-        <label for="sort-select"
-            style="font-weight: 600; font-size: 0.875rem; color: var(--color-text-secondary);">並び替え:</label>
-        <select id="sort-select" class="sort-select"
-            style="padding: 0.5rem 2rem 0.5rem 1rem; border: 1px solid var(--color-border); border-radius: 8px; background-color: var(--color-bg-card); color: var(--color-text-primary); font-family: inherit; font-size: 0.875rem; cursor: pointer; appearance: none; background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%20fill%3D%22none%22%20stroke%3D%22currentColor%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpolyline%20points%3D%226%209%2012%2015%2018%209%22%3E%3C/polyline%3E%3C/svg%3E'); background-repeat: no-repeat; background-position: right 0.5rem center; background-size: 1.25rem;">
-            <option value="date-desc">新着順</option>
-            <option value="price-asc">価格の安い順</option>
-            <option value="price-desc">価格の高い順</option>
-            <option value="score-desc">評価の高い順</option>
-        </select>
-    </div>
-
-    {{/* Show child category pills */}}
     {{/* For "その他", collect categories from displayed articles instead of just predefined list */}}
     {{ $displayCategories := $childCategories }}
     {{ if eq $parentCategory "その他" }}
@@ -98,6 +83,148 @@
     {{ end }}
     {{ end }}
 
+    {{/* Count categories for filter */}}
+    {{ $catCounts := dict }}
+    {{ range $sorted }}
+    {{ $article := . }}
+    {{ range .Params.categories }}
+    {{ $cat := . }}
+    {{ if in $displayCategories $cat }}
+    {{ $currentCount := index $catCounts $cat | default 0 }}
+    {{ $catCounts = merge $catCounts (dict $cat (add $currentCount 1)) }}
+    {{ end }}
+    {{ end }}
+    {{ end }}
+
+    {{/* Filter Section */}}
+    <div class="filter-section" id="filter-section">
+        <div class="filter-header">
+            <span class="filter-toggle" id="filter-toggle">
+                <span class="filter-icon">🔍</span>
+                <span>フィルター</span>
+                <span class="filter-arrow">▼</span>
+            </span>
+            <button type="button" class="filter-reset-btn" id="filter-reset">リセット</button>
+        </div>
+        <div class="filter-content" id="filter-content">
+            {{/* Category Filter */}}
+            <div class="filter-group">
+                <h4 class="filter-group-title">カテゴリ</h4>
+                <div class="filter-options category-filters" id="category-filters">
+                    {{ range $displayCategories }}
+                    {{ $cat := . }}
+                    {{ $count := index $catCounts $cat | default 0 }}
+                    {{ if gt $count 0 }}
+                    <label class="filter-checkbox">
+                        <input type="checkbox" name="category" value="{{ $cat }}">
+                        <span class="filter-label">{{ $cat }} <span class="filter-count">({{ $count }})</span></span>
+                    </label>
+                    {{ end }}
+                    {{ end }}
+                </div>
+            </div>
+
+            {{/* Price Filter */}}
+            <div class="filter-group">
+                <h4 class="filter-group-title">価格帯</h4>
+                <div class="filter-options">
+                    <label class="filter-radio">
+                        <input type="radio" name="price-filter" value="all" checked>
+                        <span class="filter-label">すべて</span>
+                    </label>
+                    <label class="filter-radio">
+                        <input type="radio" name="price-filter" value="0-5000">
+                        <span class="filter-label">¥5,000以下</span>
+                    </label>
+                    <label class="filter-radio">
+                        <input type="radio" name="price-filter" value="5000-20000">
+                        <span class="filter-label">¥5,000〜¥20,000</span>
+                    </label>
+                    <label class="filter-radio">
+                        <input type="radio" name="price-filter" value="20000-50000">
+                        <span class="filter-label">¥20,000〜¥50,000</span>
+                    </label>
+                    <label class="filter-radio">
+                        <input type="radio" name="price-filter" value="50000-">
+                        <span class="filter-label">¥50,000以上</span>
+                    </label>
+                </div>
+            </div>
+
+            {{/* Score Filter */}}
+            <div class="filter-group">
+                <h4 class="filter-group-title">評価スコア</h4>
+                <div class="filter-options">
+                    <label class="filter-radio">
+                        <input type="radio" name="score-filter" value="all" checked>
+                        <span class="filter-label">すべて</span>
+                    </label>
+                    <label class="filter-radio">
+                        <input type="radio" name="score-filter" value="90-100">
+                        <span class="filter-label">90点以上</span>
+                    </label>
+                    <label class="filter-radio">
+                        <input type="radio" name="score-filter" value="80-90">
+                        <span class="filter-label">80〜90点</span>
+                    </label>
+                    <label class="filter-radio">
+                        <input type="radio" name="score-filter" value="70-80">
+                        <span class="filter-label">70〜80点</span>
+                    </label>
+                    <label class="filter-radio">
+                        <input type="radio" name="score-filter" value="0-70">
+                        <span class="filter-label">70点以下</span>
+                    </label>
+                </div>
+            </div>
+
+            {{/* Specs Filters - Only show for smartphone parent category */}}
+            {{ if eq $parentCategory "スマートフォン" }}
+            <div class="filter-group">
+                <h4 class="filter-group-title">スペック</h4>
+                <div class="filter-options spec-filters" id="spec-filters">
+                    <label class="filter-checkbox">
+                        <input type="checkbox" name="spec" value="5g">
+                        <span class="filter-label">5G対応</span>
+                    </label>
+                    <label class="filter-checkbox">
+                        <input type="checkbox" name="spec" value="amoled">
+                        <span class="filter-label">有機EL (AMOLED)</span>
+                    </label>
+                    <label class="filter-checkbox">
+                        <input type="checkbox" name="spec" value="gps">
+                        <span class="filter-label">GPS内蔵</span>
+                    </label>
+                    <label class="filter-checkbox">
+                        <input type="checkbox" name="spec" value="felica">
+                        <span class="filter-label">FeliCa/おサイフケータイ</span>
+                    </label>
+                    <label class="filter-checkbox">
+                        <input type="checkbox" name="spec" value="waterproof">
+                        <span class="filter-label">防水対応</span>
+                    </label>
+                </div>
+            </div>
+            {{ end }}
+        </div>
+    </div>
+
+    <div class="sorting-controls"
+        style="margin-bottom: var(--spacing-lg); display: flex; justify-content: flex-end; align-items: center; gap: var(--spacing-sm);">
+        <span id="product-count" style="font-size: 0.875rem; color: var(--color-text-secondary);">{{ len $sorted }}
+            件の商品</span>
+        <label for="sort-select"
+            style="font-weight: 600; font-size: 0.875rem; color: var(--color-text-secondary);">並び替え:</label>
+        <select id="sort-select" class="sort-select"
+            style="padding: 0.5rem 2rem 0.5rem 1rem; border: 1px solid var(--color-border); border-radius: 8px; background-color: var(--color-bg-card); color: var(--color-text-primary); font-family: inherit; font-size: 0.875rem; cursor: pointer; appearance: none; background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%20fill%3D%22none%22%20stroke%3D%22currentColor%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpolyline%20points%3D%226%209%2012%2015%2018%209%22%3E%3C/polyline%3E%3C/svg%3E'); background-repeat: no-repeat; background-position: right 0.5rem center; background-size: 1.25rem;">
+            <option value="date-desc">新着順</option>
+            <option value="price-asc">価格の安い順</option>
+            <option value="price-desc">価格の高い順</option>
+            <option value="score-desc">評価の高い順</option>
+        </select>
+    </div>
+
+    {{/* Show child category pills */}}
     <div class="category-pills-container" style="margin-bottom: var(--spacing-lg);">
         <div style="display: flex; flex-wrap: wrap; gap: var(--spacing-sm);">
             {{ range $displayCategories }}
@@ -114,10 +241,263 @@
 
     <div id="product-grid" class="card-grid">
         {{ range $sorted }}
-        {{ partial "product-card.html" . }}
+        {{/* Build category list for data attribute */}}
+        {{ $cats := slice }}
+        {{ range .Params.categories }}
+        {{ $cats = $cats | append . }}
+        {{ end }}
+        {{ $catString := delimit $cats "," }}
+
+        {{/* Get price as number */}}
+        {{ $priceRaw := 0 }}
+        {{ if .Params.price }}
+        {{ $priceRaw = index (findRE "[0-9]+" (replace .Params.price "," "")) 0 | default 0 }}
+        {{ end }}
+        {{ $dateRaw := .Date.Unix }}
+        {{ with .Params.last_investigated }}{{ $dateRaw = (time .).Unix }}{{ end }}
+
+        {{/* Extract specs for filtering */}}
+        {{ $specs := slice }}
+        {{ with .Params.specs }}
+        {{/* Check for 5G, GPS, NFC in connectivity - handle both array and string */}}
+        {{ with .connectivity }}
+        {{ if reflect.IsSlice . }}
+        {{ range . }}
+        {{ if in (. | lower) "5g" }}{{ $specs = $specs | append "5g" }}{{ end }}
+        {{ if in (. | lower) "gps" }}{{ $specs = $specs | append "gps" }}{{ end }}
+        {{ if or (in (. | lower) "felica") (in (. | lower) "nfc") }}{{ $specs = $specs | append "felica" }}{{ end }}
+        {{ end }}
+        {{ else }}
+        {{ $connStr := . | lower }}
+        {{ if in $connStr "5g" }}{{ $specs = $specs | append "5g" }}{{ end }}
+        {{ if in $connStr "gps" }}{{ $specs = $specs | append "gps" }}{{ end }}
+        {{ if or (in $connStr "felica") (in $connStr "nfc") }}{{ $specs = $specs | append "felica" }}{{ end }}
+        {{ end }}
+        {{ end }}
+        {{/* Check for AMOLED/OLED display */}}
+        {{ with .display_type }}
+        {{ if or (in (. | lower) "amoled") (in (. | lower) "oled") (in (. | lower) "有機el") }}{{ $specs = $specs | append
+        "amoled" }}{{ end }}
+        {{ end }}
+        {{/* Check for waterproof in other_specs - handle both array and string */}}
+        {{ with .other_specs }}
+        {{ if reflect.IsSlice . }}
+        {{ range . }}
+        {{ if or (in (. | lower) "防水") (in (. | lower) "ip6") (in (. | lower) "ip5") (in (. | lower) "atm") }}{{ $specs
+        = $specs | append "waterproof" }}{{ end }}
+        {{ if or (in (. | lower) "felica") (in (. | lower) "suica") (in (. | lower) "おサイフ") }}{{ $specs = $specs |
+        append "felica" }}{{ end }}
+        {{ if in (. | lower) "gps" }}{{ $specs = $specs | append "gps" }}{{ end }}
+        {{ end }}
+        {{ else }}
+        {{ $specStr := . | lower }}
+        {{ if or (in $specStr "防水") (in $specStr "ip6") (in $specStr "ip5") (in $specStr "atm") }}{{ $specs = $specs |
+        append "waterproof" }}{{ end }}
+        {{ if or (in $specStr "felica") (in $specStr "suica") (in $specStr "おサイフ") }}{{ $specs = $specs | append
+        "felica" }}{{ end }}
+        {{ if in $specStr "gps" }}{{ $specs = $specs | append "gps" }}{{ end }}
+        {{ end }}
+        {{ end }}
+        {{ end }}
+        {{ $specsString := delimit ($specs | uniq) "," }}
+
+        <article class="card" data-price="{{ $priceRaw }}" data-score="{{ .Params.score | default 0 }}"
+            data-date="{{ $dateRaw }}" data-categories="{{ $catString }}" data-specs="{{ $specsString }}">
+            <div class="card-image">
+                <a href="{{ .RelPermalink }}" aria-label="{{ .Title }}のレビューを読む"
+                    style="display: block; width: 100%; height: 100%;">
+                    {{ if .Params.images }}
+                    <img src="{{ index .Params.images 0 }}" alt="{{ .Title }}" landing="lazy"
+                        style="width:100%; height:100%; object-fit:contain;" loading="lazy">
+                    {{ else }}
+                    <div
+                        style="width:100%; height:100%; display:flex; align-items:center; justify-content:center; background:#f3f4f6; color:#9ca3af;">
+                        画像なし
+                    </div>
+                    {{ end }}
+                </a>
+            </div>
+            <div class="card-content">
+                <div class="card-header">
+                    {{ $categories := .GetTerms "categories" }}
+                    {{ if $categories }}
+                    {{ $firstCat := index $categories 0 }}
+                    <a href="{{ $firstCat.RelPermalink }}" class="card-tag">{{ $firstCat.LinkTitle }}</a>
+                    {{ with .Params.subcategory }}<span class="card-tag-sub">{{ . }}</span>{{ end }}
+                    {{ else if .Params.category }}
+                    <span class="card-tag">{{ .Params.category }}</span>
+                    {{ with .Params.subcategory }}<span class="card-tag-sub">{{ . }}</span>{{ end }}
+                    {{ end }}
+                    <h3 class="card-title">
+                        <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+                    </h3>
+                </div>
+                <p class="card-excerpt">
+                    {{ .Description | default (.Summary | truncate 100) }}
+                </p>
+                <div class="card-meta-ext">
+                    {{ if .Params.price }}
+                    <span class="card-price">
+                        💰 {{ .Params.price }}
+                    </span>
+                    {{ end }}
+                    {{ if .Params.score }}
+                    {{ $score := .Params.score | int }}
+                    {{ $scoreClass := "score-fair" }}
+                    {{ if ge $score 80 }}
+                    {{ $scoreClass = "score-excellent" }}
+                    {{ else if ge $score 60 }}
+                    {{ $scoreClass = "score-good" }}
+                    {{ end }}
+                    <span class="card-score {{ $scoreClass }}">
+                        🏆 {{ .Params.score }}点
+                    </span>
+                    {{ end }}
+                </div>
+                <div class="card-footer">
+                    <span class="article-meta">{{ with .Params.last_investigated }}{{ time . | dateFormat "2006年01月02日"
+                        }}{{
+                        else }}{{ .Date.Format "2006年01月02日" }}{{ end }}</span>
+                    <a href="{{ .RelPermalink }}" class="read-more">レビューを読む →</a>
+                </div>
+            </div>
+        </article>
         {{ end }}
     </div>
 </div>
+
+<style>
+    /* Filter Section Styles */
+    .filter-section {
+        background: var(--color-bg-card);
+        border: 1px solid var(--color-border);
+        border-radius: 12px;
+        margin-bottom: var(--spacing-lg);
+        overflow: hidden;
+    }
+
+    .filter-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: var(--spacing-md) var(--spacing-lg);
+        cursor: pointer;
+        user-select: none;
+    }
+
+    .filter-toggle {
+        display: flex;
+        align-items: center;
+        gap: var(--spacing-sm);
+        font-weight: 600;
+        color: var(--color-text-primary);
+    }
+
+    .filter-icon {
+        font-size: 1.1rem;
+    }
+
+    .filter-arrow {
+        font-size: 0.75rem;
+        transition: transform 0.2s ease;
+    }
+
+    .filter-section.collapsed .filter-arrow {
+        transform: rotate(-90deg);
+    }
+
+    .filter-section.collapsed .filter-content {
+        display: none;
+    }
+
+    .filter-reset-btn {
+        background: transparent;
+        border: 1px solid var(--color-border);
+        border-radius: 6px;
+        padding: 0.375rem 0.75rem;
+        font-size: 0.8125rem;
+        color: var(--color-text-secondary);
+        cursor: pointer;
+        transition: all 0.2s ease;
+    }
+
+    .filter-reset-btn:hover {
+        background: var(--color-bg-secondary);
+        color: var(--color-text-primary);
+    }
+
+    .filter-content {
+        padding: 0 var(--spacing-lg) var(--spacing-lg);
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: var(--spacing-lg);
+    }
+
+    .filter-group {
+        min-width: 0;
+    }
+
+    .filter-group-title {
+        font-size: 0.875rem;
+        font-weight: 600;
+        color: var(--color-text-secondary);
+        margin: 0 0 var(--spacing-sm) 0;
+        padding-bottom: var(--spacing-xs);
+        border-bottom: 1px solid var(--color-border);
+    }
+
+    .filter-options {
+        display: flex;
+        flex-direction: column;
+        gap: var(--spacing-xs);
+    }
+
+    .category-filters {
+        max-height: 200px;
+        overflow-y: auto;
+        padding-right: var(--spacing-xs);
+    }
+
+    .filter-checkbox,
+    .filter-radio {
+        display: flex;
+        align-items: center;
+        gap: var(--spacing-xs);
+        cursor: pointer;
+        padding: var(--spacing-xs) 0;
+    }
+
+    .filter-checkbox input,
+    .filter-radio input {
+        accent-color: var(--color-primary);
+        margin: 0;
+        width: 16px;
+        height: 16px;
+        flex-shrink: 0;
+    }
+
+    .filter-label {
+        font-size: 0.875rem;
+        color: var(--color-text-primary);
+        line-height: 1.3;
+    }
+
+    .filter-count {
+        color: var(--color-text-secondary);
+        font-size: 0.8125rem;
+    }
+
+    /* Mobile responsive */
+    @media (max-width: 768px) {
+        .filter-content {
+            grid-template-columns: 1fr;
+        }
+
+        .category-filters {
+            max-height: 150px;
+        }
+    }
+</style>
 
 <script src="{{ `js/category-features.js` | relURL }}"></script>
 {{ end }}
