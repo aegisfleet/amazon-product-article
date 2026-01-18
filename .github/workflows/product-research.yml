@@ -49,6 +49,7 @@ on:
           - emergency_foods
           - tea_leaves
           - smartphones
+          - color_contacts
       max_results:
         description: 'Maximum results per category'
         required: false

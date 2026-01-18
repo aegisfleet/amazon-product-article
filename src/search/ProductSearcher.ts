@@ -729,6 +729,14 @@ export class ProductSearcher {
         maxResults: 10,
         sortBy: 'featured',
         enabled: true
+      },
+      {
+        name: 'color_contacts',
+        searchIndex: 'Beauty',
+        keywords: ['カラコン', 'カラーコンタクト', 'カラーコンタクトレンズ', 'カラコン ワンデー', 'カラコン 1ヶ月'],
+        maxResults: 10,
+        sortBy: 'featured',
+        enabled: true
       }
     ];
   }
@@ -849,7 +857,8 @@ export class ProductSearcher {
       'meal_kits': 'GroceryAndGourmetFood',
       'emergency_foods': 'GroceryAndGourmetFood',
       'tea_leaves': 'GroceryAndGourmetFood',
-      'smartphones': 'Electronics'
+      'smartphones': 'Electronics',
+      'color_contacts': 'Beauty'
     };
     return categoryMap[categoryName.toLowerCase()] || 'All';
   }
