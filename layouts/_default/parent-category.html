@@ -97,6 +97,21 @@
     {{ end }}
 
     {{/* Filter Section */}}
+    {{/* Show child category pills */}}
+    <div class="category-pills-container" style="margin-bottom: var(--spacing-lg);">
+        <div style="display: flex; flex-wrap: wrap; gap: var(--spacing-sm);">
+            {{ range $displayCategories }}
+            {{ $cat := . }}
+            {{ range $name, $taxonomy := $.Site.Taxonomies.categories }}
+            {{ $catPage := $.Site.GetPage (printf "/categories/%s" $name) }}
+            {{ if and $catPage (eq $catPage.LinkTitle $cat) }}
+            <a href="{{ $catPage.RelPermalink }}" class="category-pill">{{ $cat }}</a>
+            {{ end }}
+            {{ end }}
+            {{ end }}
+        </div>
+    </div>
+
     <div class="filter-section" id="filter-section">
         <div class="filter-header">
             <span class="filter-toggle" id="filter-toggle">
@@ -224,20 +239,7 @@
         </select>
     </div>
 
-    {{/* Show child category pills */}}
-    <div class="category-pills-container" style="margin-bottom: var(--spacing-lg);">
-        <div style="display: flex; flex-wrap: wrap; gap: var(--spacing-sm);">
-            {{ range $displayCategories }}
-            {{ $cat := . }}
-            {{ range $name, $taxonomy := $.Site.Taxonomies.categories }}
-            {{ $catPage := $.Site.GetPage (printf "/categories/%s" $name) }}
-            {{ if and $catPage (eq $catPage.LinkTitle $cat) }}
-            <a href="{{ $catPage.RelPermalink }}" class="category-pill">{{ $cat }}</a>
-            {{ end }}
-            {{ end }}
-            {{ end }}
-        </div>
-    </div>
+
 
     <div id="product-grid" class="card-grid">
         {{ range $sorted }}
