@@ -15,9 +15,11 @@
     <article class="article-content">
         <header class="article-header">
             {{ if .Params.categories }}
-            <span class="card-tag">{{ index .Params.categories 0 }}</span>
+            {{ $category := index .Params.categories 0 }}
+            <a href="{{ printf `categories/%s/` ($category | urlize) | relURL }}" class="card-tag">{{ $category }}</a>
             {{ else }}
-            {{ with .Params.category }}<span class="card-tag">{{ . }}</span>{{ end }}
+            {{ with .Params.category }}<a href="{{ printf `categories/%s/` (. | urlize) | relURL }}" class="card-tag">{{
+                . }}</a>{{ end }}
             {{ end }}
             <h1 class="hero-title" style="margin-top: var(--spacing-sm);">{{ .Title }}</h1>
             <div class="article-meta">
