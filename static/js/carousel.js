@@ -1,8 +1,98 @@
 /**
  * Product Image Carousel Controller
- * Handles swipe/scroll synchronization and navigation buttons/dots
+ * Handles swipe/scroll synchronization, navigation buttons/dots, and image modal (lightbox)
  */
 document.addEventListener('DOMContentLoaded', () => {
+    // Create modal element once
+    const modal = document.createElement('div');
+    modal.className = 'image-modal';
+    modal.innerHTML = `
+        <button class="image-modal-close" aria-label="閉じる">✕</button>
+        <button class="image-modal-nav prev" aria-label="前の画像">❮</button>
+        <div class="image-modal-content">
+            <img class="image-modal-img" src="" alt="">
+        </div>
+        <button class="image-modal-nav next" aria-label="次の画像">❯</button>
+        <div class="image-modal-counter"></div>
+    `;
+    document.body.appendChild(modal);
+
+    const modalImg = modal.querySelector('.image-modal-img');
+    const modalClose = modal.querySelector('.image-modal-close');
+    const modalPrev = modal.querySelector('.image-modal-nav.prev');
+    const modalNext = modal.querySelector('.image-modal-nav.next');
+    const modalCounter = modal.querySelector('.image-modal-counter');
+
+    let currentImages = [];
+    let currentIndex = 0;
+
+    function openModal(images, index) {
+        currentImages = images;
+        currentIndex = index;
+        updateModalImage();
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal() {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+
+    function updateModalImage() {
+        if (currentImages.length === 0) return;
+        modalImg.src = currentImages[currentIndex].src;
+        modalImg.alt = currentImages[currentIndex].alt || '';
+        
+        // Update counter
+        if (currentImages.length > 1) {
+            modalCounter.textContent = `${currentIndex + 1} / ${currentImages.length}`;
+            modalCounter.style.display = 'block';
+            modalPrev.style.display = 'flex';
+            modalNext.style.display = 'flex';
+        } else {
+            modalCounter.style.display = 'none';
+            modalPrev.style.display = 'none';
+            modalNext.style.display = 'none';
+        }
+    }
+
+    function showPrev() {
+        if (currentImages.length <= 1) return;
+        currentIndex = (currentIndex - 1 + currentImages.length) % currentImages.length;
+        updateModalImage();
+    }
+
+    function showNext() {
+        if (currentImages.length <= 1) return;
+        currentIndex = (currentIndex + 1) % currentImages.length;
+        updateModalImage();
+    }
+
+    // Modal event listeners
+    modalClose.addEventListener('click', closeModal);
+    modalPrev.addEventListener('click', showPrev);
+    modalNext.addEventListener('click', showNext);
+    
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+            closeModal();
+        }
+    });
+
+    document.addEventListener('keydown', (e) => {
+        if (!modal.classList.contains('active')) return;
+        
+        if (e.key === 'Escape') {
+            closeModal();
+        } else if (e.key === 'ArrowLeft') {
+            showPrev();
+        } else if (e.key === 'ArrowRight') {
+            showNext();
+        }
+    });
+
+    // Initialize carousels
     const carousels = document.querySelectorAll('.product-image-carousel');
 
     carousels.forEach(carousel => {
@@ -18,8 +108,16 @@ document.addEventListener('DOMContentLoaded', () => {
             if (prevBtn) prevBtn.style.display = 'none';
             if (nextBtn) nextBtn.style.display = 'none';
             if (dotsContainer) dotsContainer.style.display = 'none';
-            return;
         }
+
+        // Add click handler for modal on each image
+        images.forEach((img, i) => {
+            img.addEventListener('click', () => {
+                openModal(Array.from(images), i);
+            });
+        });
+
+        if (images.length <= 1) return;
 
         // Create dots if container exists
         if (dotsContainer) {
@@ -80,3 +178,4 @@ document.addEventListener('DOMContentLoaded', () => {
         if (prevBtn) prevBtn.style.opacity = '0';
     });
 });
+
