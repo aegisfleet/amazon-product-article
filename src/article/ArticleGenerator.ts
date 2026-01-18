@@ -137,7 +137,7 @@ const SPEC_LABEL_MAP: Record<string, string> = {
   sensitivity: '感度',
 
   // 靴（シューズ）・アパレル
-  width: '幅（ワイズ）',
+  width: '幅',
   midsole: 'ミッドソール',
   cushioningTech: 'クッショニング',
   heelCounter: 'ヒールカウンター',
@@ -213,6 +213,25 @@ const SPEC_LABEL_MAP: Record<string, string> = {
   waterContent: '含水率',
   lensType: 'レンズタイプ',
   medicalApprovalNumber: '医療機器承認番号',
+
+  // 寸法・重量（ネストされたプロパティ用）
+  height: '高さ',
+  depth: '奥行き',
+  thickness: '厚さ',
+
+  // ディスプレイ・その他（ネストされたプロパティ用）
+  size: 'サイズ',
+  type: 'タイプ',
+
+  // バッテリー（ネストされたプロパティ用）
+  charging: '充電',
+  playbackTime: '再生時間',
+
+  // カメラ（ネストされたプロパティ用）
+  main: 'メイン',
+  ultrawide: '超広角',
+  telephoto: '望遠',
+  front: 'フロント',
 };
 
 /**
@@ -220,17 +239,17 @@ const SPEC_LABEL_MAP: Record<string, string> = {
  * これらは動的レンダリングから除外される
  */
 const HANDLED_SPEC_FIELDS = new Set([
-  // 基本スペック
-  'os', 'cpu', 'gpu', 'ram', 'storage', 'display', 'battery', 'camera', 'dimensions', 'connectivity',
-  // イヤホン・ヘッドホン
-  'driver', 'codec', 'noiseCancel',
-  // 家電（power, capacity は動的に処理するため除外から外す）
-  // その他
-  // 靴（シューズ）
-  'width', 'weight', 'material', 'midsole', 'cushioningTech', 'heelCounter', 'heelHeight',
-  'upperMaterial', 'midsoleMaterial', 'outsoleMaterial', 'outerSole', 'insoleMaterial', 'innerSole', 'insole',
-  // その他（既存）
-  'modelNumber', 'model', 'countryOfOrigin', 'loadCapacity', 'attachments', 'other',
+  // これらのフィールドは renderDynamicSpecs で自動表示しない（別途手動で表示するため）
+  'asin',
+  'price',
+  'brand',
+  'category',
+  'availability',
+  'isPrimeEligible',
+  'externalIds',
+  'images',
+  'title',
+  'url'
 ]);
 
 
