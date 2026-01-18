@@ -25,9 +25,9 @@ export class PAAPICache {
     // Includes: LRM (U+200E), RLM (U+200F), zero-width chars (U+200B-U+200D, U+FEFF), etc.
     private static readonly INVISIBLE_CHARS_REGEX = /[\u200B-\u200F\u2028-\u202F\uFEFF]/g;
 
-    constructor(ttlHours: number = 24, invalidTtlHours: number = 1, cacheDir: string = 'data/cache') {
+    constructor(ttlHours: number = 24, invalidTtlMinutes: number = 5, cacheDir: string = 'data/cache') {
         this.ttl = ttlHours * 60 * 60 * 1000;
-        this.invalidTtl = invalidTtlHours * 60 * 60 * 1000;
+        this.invalidTtl = invalidTtlMinutes * 60 * 1000;  // 5分（一時的な失敗からの早期回復用）
         this.cachePath = path.join(process.cwd(), cacheDir, 'paapi-product-cache.json');
         this.load();
     }
@@ -197,10 +197,10 @@ export class PAAPICache {
         };
     }
 
-     /**
-     * Mark item as invalid (e.g. not found in PA-API)
-     * If there's already a 'valid' entry, do not overwrite it to prevent data loss on transient errors
-     */
+    /**
+    * Mark item as invalid (e.g. not found in PA-API)
+    * If there's already a 'valid' entry, do not overwrite it to prevent data loss on transient errors
+    */
     public markInvalid(asin: string): void {
         const existing = this.cache[asin];
         if (existing && existing.status === 'valid') {
@@ -215,10 +215,10 @@ export class PAAPICache {
         };
     }
 
-     /**
-     * Get multiple items from cache
-     * Returns a map of found valid items
-     */
+    /**
+    * Get multiple items from cache
+    * Returns a map of found valid items
+    */
     public getMultiple(asins: string[], options: { ignoreExpiration?: boolean } = {}): Map<string, ProductDetail> {
         const result = new Map<string, ProductDetail>();
 
