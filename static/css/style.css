@@ -2522,6 +2522,7 @@ a:hover {
 .hero-price-main {
   display: flex;
   align-items: baseline;
+  line-height: 1;
 }
 
 .hero-price {
@@ -2530,6 +2531,7 @@ a:hover {
   color: white;
   margin-right: var(--spacing-md);
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  line-height: 1;
 }
 
 .hero-price-info {
@@ -2538,6 +2540,11 @@ a:hover {
   align-items: center;
   gap: var(--spacing-sm);
   flex-wrap: wrap;
+  line-height: 1;
+}
+
+.hero-price-info p {
+  margin-bottom: 0;
 }
 
 .hero-price-bar .hero-tag-prime {
