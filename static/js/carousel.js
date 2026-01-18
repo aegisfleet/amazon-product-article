@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (currentImages.length === 0) return;
         modalImg.src = currentImages[currentIndex].src;
         modalImg.alt = currentImages[currentIndex].alt || '';
-        
+
         // Update counter
         if (currentImages.length > 1) {
             modalCounter.textContent = `${currentIndex + 1} / ${currentImages.length}`;
@@ -73,7 +73,7 @@ document.addEventListener('DOMContentLoaded', () => {
     modalClose.addEventListener('click', closeModal);
     modalPrev.addEventListener('click', showPrev);
     modalNext.addEventListener('click', showNext);
-    
+
     modal.addEventListener('click', (e) => {
         if (e.target === modal) {
             closeModal();
@@ -82,7 +82,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     document.addEventListener('keydown', (e) => {
         if (!modal.classList.contains('active')) return;
-        
+
         if (e.key === 'Escape') {
             closeModal();
         } else if (e.key === 'ArrowLeft') {
@@ -91,6 +91,28 @@ document.addEventListener('DOMContentLoaded', () => {
             showNext();
         }
     });
+
+    // Touch swipe support for modal
+    let touchStartX = 0;
+    let touchEndX = 0;
+    const minSwipeDistance = 50;
+
+    modal.addEventListener('touchstart', (e) => {
+        touchStartX = e.changedTouches[0].screenX;
+    }, { passive: true });
+
+    modal.addEventListener('touchend', (e) => {
+        touchEndX = e.changedTouches[0].screenX;
+        const swipeDistance = touchEndX - touchStartX;
+
+        if (Math.abs(swipeDistance) > minSwipeDistance) {
+            if (swipeDistance > 0) {
+                showPrev(); // Swipe right -> previous image
+            } else {
+                showNext(); // Swipe left -> next image
+            }
+        }
+    }, { passive: true });
 
     // Initialize carousels
     const carousels = document.querySelectorAll('.product-image-carousel');
