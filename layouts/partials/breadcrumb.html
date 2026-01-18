@@ -46,7 +46,7 @@
         {{/* 現在のページ（商品名） */}}
         <li class="breadcrumb-item current">
             <span class="breadcrumb-separator">›</span>
-            <span>{{ .Title | truncate 40 }}</span>
+            <span>{{ .Title }}</span>
         </li>
 
         {{ else if eq .Kind "term" }}
