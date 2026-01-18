@@ -35,7 +35,7 @@ export class PAAPIClient {
       requestsPerSecond: 1, // PA-API v5 limit
       burstLimit: 5,
       retryDelay: 1000,
-      maxRetries: 3
+      maxRetries: 5
     };
 
     this.httpClient = axios.create({
@@ -243,8 +243,10 @@ export class PAAPIClient {
       const errorMessage = error instanceof Error ? error.message : String(error);
       this.logger.warn(`Batch request failed: ${errorMessage}`);
 
-      // Check if the error is due to invalid ASIN(s) - fall back to individual requests
-      if (errorMessage.includes('InvalidParameterValue') || errorMessage.includes('ItemIds')) {
+      // Check if the error is due to invalid ASIN(s) or inaccessible items - fall back to individual requests
+      if (errorMessage.includes('InvalidParameterValue') ||
+        errorMessage.includes('ItemIds') ||
+        errorMessage.includes('ItemNotAccessible')) {
         batchFailed = true;
         this.logger.info('Falling back to individual ASIN requests...');
       }
@@ -254,6 +256,8 @@ export class PAAPIClient {
     if (batchFailed) {
       for (const asin of validAsins) {
         try {
+          // Rate limit対策: 個別リクエスト間に待機
+          await this.sleep(1500);
           const detail = await this.getProductDetails(asin);
           result.set(asin, detail);
           this.logger.debug(`Successfully fetched product detail for ASIN ${asin}`);
@@ -332,7 +336,10 @@ export class PAAPIClient {
               lastError = error as Error;
 
               if (attempt < this.rateLimitConfig.maxRetries) {
-                const delay = this.rateLimitConfig.retryDelay * Math.pow(2, attempt - 1);
+                // 429エラーは待機時間を長くする
+                const is429 = lastError.message.includes('429');
+                const baseDelay = is429 ? 5000 : this.rateLimitConfig.retryDelay;
+                const delay = baseDelay * Math.pow(2, attempt - 1);
                 this.logger.warn(`Request failed (attempt ${attempt}), retrying in ${delay}ms: ${lastError.message}`);
                 await this.sleep(delay);
               }

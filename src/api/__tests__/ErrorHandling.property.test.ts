@@ -269,6 +269,9 @@ describe('Error Handling Property Tests', () => {
       // Simplified timeout test to avoid Jest timeout issues
       const client = new PAAPIClient();
 
+      // Reduce maxRetries for testing to avoid long wait times
+      (client as any).rateLimitConfig.maxRetries = 2;
+
       // Mock the HTTP client to simulate timeout
       const originalHttpClient = (client as any).httpClient;
       (client as any).httpClient = {
@@ -292,7 +295,7 @@ describe('Error Handling Property Tests', () => {
 
         // Should timeout within reasonable time
         expect(endTime - startTime).toBeGreaterThan(80);
-        expect(endTime - startTime).toBeLessThan(5000); // Allow more time for retry logic
+        expect(endTime - startTime).toBeLessThan(5000); // Allow time for retry logic (maxRetries: 2 in test)
 
         // Should be a proper timeout error
         expect(error).toBeInstanceOf(Error);

@@ -287,7 +287,7 @@ async function main(): Promise<void> {
 
                     // Respect rate limits - wait a bit between batches if needed
                     if (i + chunkSize < missingAsins.length) {
-                        await new Promise(resolve => setTimeout(resolve, 1000));
+                        await new Promise(resolve => setTimeout(resolve, 2000));
                     }
                 } catch (error) {
                     logger.warn(`Failed to fetch batch starting with ${chunk[0]}:`, error);
