@@ -334,6 +334,15 @@ export class PAAPIClient {
               }
 
               lastError = error as Error;
+              const currentError = error as Error;
+
+              // リトライしても回復しないエラーは即座に終了
+              const nonRetryableErrors = ['InvalidParameterValue', 'ItemNotAccessible'];
+              const isNonRetryable = nonRetryableErrors.some(e => currentError.message.includes(e));
+              if (isNonRetryable) {
+                this.logger.debug(`Non-retryable error detected, skipping retries: ${currentError.message}`);
+                break;
+              }
 
               if (attempt < this.rateLimitConfig.maxRetries) {
                 // 429エラーは待機時間を長くする
