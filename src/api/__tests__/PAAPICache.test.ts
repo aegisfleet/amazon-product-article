@@ -87,6 +87,34 @@ describe('PAAPICache', () => {
         expect(cache.get('B006')).toEqual(mockProduct);
     });
 
+    test('should return true for fresh permanent_invalid entries', () => {
+        cache.markPermanentInvalid('B007');
+        expect(cache.isInvalid('B007')).toBe(true);
+        expect(cache.get('B007')).toBeNull();
+        expect((cache as any).cache['B007'].status).toBe('permanent_invalid');
+    });
+
+    test('should respect permanentInvalidTtl (7 days by default)', () => {
+        const now = Date.now();
+        const past = now - (6 * 24 * 60 * 60 * 1000); // 6 days ago
+        const wayPast = now - (8 * 24 * 60 * 60 * 1000); // 8 days ago
+
+        (cache as any).cache['FRESH_PERM'] = {
+            data: null,
+            timestamp: past,
+            status: 'permanent_invalid'
+        };
+
+        (cache as any).cache['EXPIRED_PERM'] = {
+            data: null,
+            timestamp: wayPast,
+            status: 'permanent_invalid'
+        };
+
+        expect(cache.isInvalid('FRESH_PERM')).toBe(true);
+        expect(cache.isInvalid('EXPIRED_PERM')).toBe(false);
+    });
+
     test('should use invalidTtl (short) when investigation file exists', () => {
         const now = Date.now();
         const past = now - (2 * 60 * 60 * 1000); // 2 hours ago (invalid TTL is 1 hour)

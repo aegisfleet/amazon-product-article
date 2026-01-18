@@ -6,7 +6,7 @@ import { Logger } from '../utils/Logger';
 interface CacheEntry {
     data: ProductDetail | null;
     timestamp: number;
-    status: 'valid' | 'invalid';
+    status: 'valid' | 'invalid' | 'permanent_invalid';
 }
 
 interface CacheStore {
@@ -18,6 +18,7 @@ export class PAAPICache {
     private cache: CacheStore = {};
     private ttl: number; // Time to live in milliseconds for valid entries
     private invalidTtl: number; // Time to live in milliseconds for invalid entries
+    private permanentInvalidTtl: number; // Time to live in milliseconds for permanent invalid entries (1 week)
     private logger = Logger.getInstance();
     private isLoaded = false;
 
@@ -25,9 +26,10 @@ export class PAAPICache {
     // Includes: LRM (U+200E), RLM (U+200F), zero-width chars (U+200B-U+200D, U+FEFF), etc.
     private static readonly INVISIBLE_CHARS_REGEX = /[\u200B-\u200F\u2028-\u202F\uFEFF]/g;
 
-    constructor(ttlHours: number = 24, invalidTtlMinutes: number = 5, cacheDir: string = 'data/cache') {
+    constructor(ttlHours: number = 24, invalidTtlMinutes: number = 5, cacheDir: string = 'data/cache', permanentInvalidTtlDays: number = 7) {
         this.ttl = ttlHours * 60 * 60 * 1000;
         this.invalidTtl = invalidTtlMinutes * 60 * 1000;  // 5分（一時的な失敗からの早期回復用）
+        this.permanentInvalidTtl = permanentInvalidTtlDays * 24 * 60 * 60 * 1000; // 1週間
         this.cachePath = path.join(process.cwd(), cacheDir, 'paapi-product-cache.json');
         this.load();
     }
@@ -117,7 +119,7 @@ export class PAAPICache {
         }
 
         // Return data only if status is valid
-        if (entry.status === 'invalid') {
+        if (entry.status !== 'valid') {
             return null;
         }
 
@@ -131,10 +133,15 @@ export class PAAPICache {
         const entry = this.cache[asin];
         if (!entry) return false;
 
-        if (entry.status !== 'invalid') return false;
+        if (entry.status === 'valid') return false;
 
-        // Only use the shorter invalidTtl if we have an investigation result for this ASIN
-        const effectiveTtl = this.isInvestigationFileExists(asin) ? this.invalidTtl : this.ttl;
+        // Check expiration
+        let effectiveTtl = this.ttl;
+        if (entry.status === 'invalid') {
+            effectiveTtl = this.isInvestigationFileExists(asin) ? this.invalidTtl : this.ttl;
+        } else if (entry.status === 'permanent_invalid') {
+            effectiveTtl = this.permanentInvalidTtl;
+        }
 
         if (Date.now() - entry.timestamp > effectiveTtl) {
             return false; // Expired, so re-check validity
@@ -212,6 +219,23 @@ export class PAAPICache {
             data: null,
             timestamp: Date.now(),
             status: 'invalid'
+        };
+    }
+
+    /**
+     * Mark item as permanently invalid (e.g. InvalidParameterValue - re-check only once a week)
+     */
+    public markPermanentInvalid(asin: string): void {
+        const existing = this.cache[asin];
+        if (existing && existing.status === 'valid') {
+            this.logger.info(`Not marking ASIN ${asin} as permanent_invalid because a valid cache entry already exists.`);
+            return;
+        }
+
+        this.cache[asin] = {
+            data: null,
+            timestamp: Date.now(),
+            status: 'permanent_invalid'
         };
     }
 
