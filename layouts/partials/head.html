@@ -88,6 +88,7 @@
 
 <!-- Product Schema (Single Pages with ASIN) -->
 {{ if and .IsPage .Params.asin }}
+{{ $priceValidUntil := now.AddDate 1 0 0 | time.Format "2006-01-02" }}
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -102,7 +103,7 @@
     "name": "{{ .Params.brand | default "Unknown" }}"
   },
   "sku": "{{ .Params.asin }}",
-  {{ if and .Params.rating (ne (string .Params.rating) "0") }}
+  {{ if isset .Params "rating" }}
   "aggregateRating": {
     "@type": "AggregateRating",
     "ratingValue": "{{ .Params.rating }}",
@@ -116,7 +117,42 @@
     "url": "{{ .Permalink }}",
     "priceCurrency": "JPY",
     "price": "{{ index (findRE "[0-9]+" (replace .Params.price "," "")) 0 | default 0 }}",
-    "availability": "https://schema.org/InStock"
+    "priceValidUntil": "{{ $priceValidUntil }}",
+    "availability": "https://schema.org/InStock",
+    "seller": {
+      "@type": "Organization",
+      "name": "Amazon.co.jp"
+    },
+    "shippingDetails": {
+      "@type": "OfferShippingDetails",
+      "shippingDestination": {
+        "@type": "DefinedRegion",
+        "addressCountry": "JP"
+      },
+      "deliveryTime": {
+        "@type": "ShippingDeliveryTime",
+        "handlingTime": {
+          "@type": "QuantitativeValue",
+          "minValue": 0,
+          "maxValue": 1,
+          "unitCode": "DAY"
+        },
+        "transitTime": {
+          "@type": "QuantitativeValue",
+          "minValue": 1,
+          "maxValue": 3,
+          "unitCode": "DAY"
+        }
+      }
+    },
+    "hasMerchantReturnPolicy": {
+      "@type": "MerchantReturnPolicy",
+      "applicableCountry": "JP",
+      "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
+      "merchantReturnDays": 30,
+      "returnMethod": "https://schema.org/ReturnByMail",
+      "returnFees": "https://schema.org/FreeReturn"
+    }
   }
 }
 </script>
