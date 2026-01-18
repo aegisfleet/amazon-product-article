@@ -536,11 +536,15 @@ export class ArticleGenerator {
 
     const content = `## 🛒 商品詳細・購入
 
+<div class="product-comparison">
+
 | 項目 | 詳細 |
 | :--- | :--- |
 ${infoRows.join('\n')}
 
-<a href="${affiliateUrl}" class="btn-amazon-purchase" target="_blank" rel="noopener noreferrer">Amazonで詳細を見る</a>`;
+</div>
+
+<a href="${affiliateUrl}" class="btn-amazon-large" target="_blank" rel="noopener noreferrer">Amazonで詳細を見る</a>`;
 
     return {
       title: '商品詳細・購入',
