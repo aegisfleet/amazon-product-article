@@ -50,8 +50,16 @@
                         <div class="pickup-card-content">
                             <p class="pickup-card-title">{{ .Title | truncate 30 }}</p>
                             <div class="pickup-card-meta">
-                                {{ if .Params.score }}<span class="pickup-card-score">🏆 {{ .Params.score }}点</span>{{
-                                end }}
+                                {{ if .Params.score }}
+                                {{ $score := .Params.score | int }}
+                                {{ $scoreClass := "score-fair" }}
+                                {{ if ge $score 80 }}
+                                {{ $scoreClass = "score-excellent" }}
+                                {{ else if ge $score 60 }}
+                                {{ $scoreClass = "score-good" }}
+                                {{ end }}
+                                <span class="pickup-card-score {{ $scoreClass }}">🏆 {{ .Params.score }}点</span>
+                                {{ end }}
                                 {{ if .Params.price }}<span class="pickup-card-price">{{ .Params.price }}</span>{{ end
                                 }}
                             </div>
@@ -144,7 +152,16 @@
                 <div class="pickup-card-content">
                     <p class="pickup-card-title">{{ .Title | truncate 30 }}</p>
                     <div class="pickup-card-meta">
-                        {{ if .Params.score }}<span class="pickup-card-score">🏆 {{ .Params.score }}点</span>{{ end }}
+                        {{ if .Params.score }}
+                        {{ $score := .Params.score | int }}
+                        {{ $scoreClass := "score-fair" }}
+                        {{ if ge $score 80 }}
+                        {{ $scoreClass = "score-excellent" }}
+                        {{ else if ge $score 60 }}
+                        {{ $scoreClass = "score-good" }}
+                        {{ end }}
+                        <span class="pickup-card-score {{ $scoreClass }}">🏆 {{ .Params.score }}点</span>
+                        {{ end }}
                         {{ if .Params.price }}<span class="pickup-card-price">{{ .Params.price }}</span>{{ end }}
                     </div>
                 </div>
@@ -179,7 +196,16 @@
                 <div class="pickup-card-content">
                     <p class="pickup-card-title">{{ .Title | truncate 30 }}</p>
                     <div class="pickup-card-meta">
-                        {{ if .Params.score }}<span class="pickup-card-score">🏆 {{ .Params.score }}点</span>{{ end }}
+                        {{ if .Params.score }}
+                        {{ $score := .Params.score | int }}
+                        {{ $scoreClass := "score-fair" }}
+                        {{ if ge $score 80 }}
+                        {{ $scoreClass = "score-excellent" }}
+                        {{ else if ge $score 60 }}
+                        {{ $scoreClass = "score-good" }}
+                        {{ end }}
+                        <span class="pickup-card-score {{ $scoreClass }}">🏆 {{ .Params.score }}点</span>
+                        {{ end }}
                         {{ if .Params.price }}<span class="pickup-card-price">{{ .Params.price }}</span>{{ end }}
                     </div>
                 </div>

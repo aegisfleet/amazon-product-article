@@ -2067,6 +2067,22 @@ a:hover {
   }
 }
 
+/* Force dynamic score colors to override defaults and dark mode specifics */
+.pickup-card-score.score-excellent {
+  background: linear-gradient(135deg, #10b981, #059669) !important;
+  color: white !important;
+}
+
+.pickup-card-score.score-good {
+  background: linear-gradient(135deg, #f59e0b, #d97706) !important;
+  color: white !important;
+}
+
+.pickup-card-score.score-fair {
+  background: linear-gradient(135deg, #6b7280, #4b5563) !important;
+  color: white !important;
+}
+
 .pickup-card-price {
   font-size: 0.65rem;
   font-weight: 600;
