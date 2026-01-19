@@ -1,0 +1,164 @@
+{
+  "analysis": {
+    "productName": "山善 キュリオム QA15-101 タブレット",
+    "parentAsin": "B0FTK7BVD3",
+    "productDescription": "Android 15と5種類のセンサー（GPS・ジャイロ等）を搭載した、山善の10.1インチ高コスパタブレット。",
+    "productUsage": [
+      "YouTubeやNetflixなどの動画視聴",
+      "カーナビ利用（GPS搭載）",
+      "位置情報ゲーム（ジャイロセンサー搭載）",
+      "Webブラウジング・SNS",
+      "電子書籍の閲覧"
+    ],
+    "positivePoints": [
+      "日本メーカー（山善）による安心のサポートと日本語説明書",
+      "1万円台でジャイロセンサーを含む5つのセンサーをフル搭載",
+      "最新OS Android 15を搭載し、セキュリティや機能が新しい",
+      "10.1インチの丁度よいサイズ感とIPS液晶の視認性の良さ",
+      "ワイドFM対応で災害時の情報収集にも役立つ"
+    ],
+    "negativePoints": [
+      "画面解像度が1280x800 (WXGA) とFHDではない",
+      "SoC (Unisoc T606) はエントリー向けで、重い3Dゲームには不向き",
+      "ストレージが64GBと少なめ（microSDで拡張は可能）",
+      "急速充電に関する記載がなく、充電に時間がかかる可能性がある"
+    ],
+    "useCases": [
+      "子供の学習用や動画視聴用タブレットとして",
+      "高齢者の初めてのタブレット（日本語サポートで安心）",
+      "車載してカーナビ代わりに使用",
+      "防災用（ワイドFM対応）としての備蓄"
+    ],
+    "userStories": [
+      {
+        "userType": "シニア層（推測）",
+        "scenario": "初めてのタブレット購入",
+        "experience": "海外製タブレットは不安だったが、山善の製品なので安心して購入できた。説明書も日本語で分かりやすく、サポートも期待できるので、機械が苦手でも使い始められた。",
+        "sentiment": "positive"
+      },
+      {
+        "userType": "車所有者（推測）",
+        "scenario": "カーナビとしての利用",
+        "experience": "GPSとジャイロセンサーが搭載されているため、地図アプリの挙動がスムーズ。10インチの大画面で見やすく、安価なので車に積みっぱなしにできるのが良い。",
+        "sentiment": "positive"
+      },
+      {
+        "userType": "購入者（価格.comレビュー参照）",
+        "scenario": "日常的な利用とカスタマイズ",
+        "experience": "右利き用にボタンが配置されており使いやすい。メモリ拡張で動作も速く、ゲームやSNSも快適。コスパが良いと感じている。",
+        "sentiment": "positive"
+      }
+    ],
+    "userImpression": "日本メーカーの安心感と、価格以上の機能（特にセンサー類と最新OS）を備えた高コスパモデルとして評価されている。スペックはエントリークラスだが、用途を限定すれば満足度は高い。",
+    "sources": [
+      {
+        "name": "価格.com キュリオム QA15-101 レビュー",
+        "url": "https://review.kakaku.com/review/K0001713679/",
+        "credibility": "高"
+      },
+      {
+        "name": "Amazon商品ページ",
+        "url": "https://www.amazon.co.jp/dp/B0FDKKV9N7",
+        "credibility": "高"
+      }
+    ],
+    "lastInvestigated": "2026-01-19",
+    "competitiveAnalysis": [
+      {
+        "name": "TECLAST P30",
+        "asin": "B0FRM7B32F",
+        "priceComparison": "山善より約6,000円安い（9,000円台）",
+        "featureComparison": [
+          "Android 14 (山善は15)",
+          "GPS搭載だがジャイロの明記なし",
+          "6000mAhバッテリー、Wi-Fi 6対応"
+        ],
+        "differentiators": [
+          "価格の安さではTECLAST P30が圧倒的",
+          "山善は日本メーカーサポートとジャイロセンサーで差別化"
+        ]
+      },
+      {
+        "name": "TECLAST P50",
+        "asin": "B09FKYRD22",
+        "priceComparison": "山善より約1,500円安い（14,000円台）",
+        "featureComparison": [
+          "11インチ 90Hzディスプレイ (山善は10インチ 60Hz)",
+          "128GBストレージ (山善は64GB)",
+          "Unisoc T606搭載（同等）"
+        ],
+        "differentiators": [
+          "スペック（画面・容量）はP50が上",
+          "山善はコンパクトな10インチと信頼性で勝負"
+        ]
+      },
+      {
+        "name": "ALLDOCUBE iPlay 60S",
+        "asin": "B0FX8KGT89",
+        "priceComparison": "山善より約2,000円安い（13,999円）",
+        "featureComparison": [
+          "Widevine L1 Netflix対応",
+          "128GBストレージ (山善は64GB)",
+          "デュアルスピーカー"
+        ],
+        "differentiators": [
+          "エンタメ性能（画質・音質）はALLDOCUBEが有利",
+          "山善はセンサー充実と国内サポートが強み"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "初めてタブレットを購入する人",
+        "日本メーカーの安心感を重視する人",
+        "位置情報ゲームやカーナビに使いたい人",
+        "子供や高齢者へのプレゼントを探している人"
+      ],
+      "pros": [
+        "日本メーカー（山善）のサポートと日本語説明書",
+        "ジャイロセンサー搭載でゲームやナビが快適",
+        "最新Android 15搭載で長く使える"
+      ],
+      "cons": [
+        "3Dゲームなどの重い処理には向かない",
+        "画面解像度がHDクラスで、FHD動画の視聴には物足りない",
+        "充電速度が遅い可能性がある"
+      ],
+      "score": 80,
+      "scoreRationale": "[基本点: 70]\n[加点: +5] 日本メーカーの安心感と日本語サポート体制\n[加点: +5] この価格帯でジャイロセンサーを含む5センサーをフル搭載\n[加点: +5] 最新OS Android 15を搭載\n[減点: -5] 解像度がWXGA (1280x800) と低め\n[合計: 80]"
+    },
+    "technicalSpecs": {
+      "os": "Android 15",
+      "cpu": "Unisoc T606 (8コア)",
+      "ram": "4GB (+仮想8GB)",
+      "storage": "64GB (microSD最大1TB)",
+      "display": {
+        "size": "10.1インチ",
+        "resolution": "1280x800",
+        "type": "IPS"
+      },
+      "battery": {
+        "capacity": "6000mAh",
+        "charging": null
+      },
+      "camera": {
+        "main": "8MP",
+        "front": "5MP"
+      },
+      "connectivity": [
+        "Wi-Fi (ac/a/b/g/n)",
+        "Bluetooth 5.0",
+        "USB Type-C",
+        "3.5mmイヤホンジャック"
+      ],
+      "other": [
+        "GPS",
+        "ジャイロセンサー",
+        "加速度センサー",
+        "照度センサー",
+        "近接センサー",
+        "ワイドFM対応"
+      ]
+    }
+  }
+}
