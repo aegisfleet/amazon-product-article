@@ -67,51 +67,88 @@ export class PAAPIClient {
 
   /**
    * Search for products by category and keywords
+   * Supports pagination for maxResults > 10
    */
   async searchProducts(params: ProductSearchParams): Promise<ProductSearchResult> {
     this.validateAuthentication();
 
-    const request: PAAPIRequest = {
-      Operation: 'SearchItems',
-      PartnerTag: this.credentials!.partnerTag,
-      PartnerType: 'Associates',
-      Marketplace: this.getMarketplace(),
-      Keywords: params.keywords.join(' '),
-      SearchIndex: params.category === 'All' ? this.inferIndexFromKeywords(params.keywords) : this.mapCategoryToSearchIndex(params.category),
-      ItemCount: Math.min(params.maxResults, 10), // PA-API limit
-      Merchant: params.merchant || (params.category === 'All' ? 'All' : 'Amazon'), // キーワード検索(All)時はマーケットプレイスを含める
-      SortBy: this.mapSortBy(params.sortBy || 'featured'), // デフォルトはFeatured（おすすめ順）
-      Resources: [
-        'Images.Primary.Large',
-        'Images.Primary.Medium',
-        'Images.Variants.Large',
-        'ItemInfo.Title',
-        'ItemInfo.Features',
-        'ItemInfo.ManufactureInfo',
-        'ItemInfo.ProductInfo',
-        'Offers.Listings.Price',
-        'Offers.Summaries.HighestPrice',
-        'Offers.Summaries.LowestPrice',
-        'ParentASIN'
-      ]
-    };
+    const allProducts: Product[] = [];
+    const maxResultsPerPage = 10; // PA-API limit per request
+    const totalPagesNeeded = Math.ceil(params.maxResults / maxResultsPerPage);
+    let totalResultCount = 0;
 
-    if (params.minPrice) {
-      request.MinPrice = params.minPrice * 100; // Convert to cents
-    }
-    if (params.maxPrice) {
-      request.MaxPrice = params.maxPrice * 100; // Convert to cents
-    }
-    if (params.itemPage) {
-      request.ItemPage = params.itemPage;
-    }
+    for (let page = 1; page <= totalPagesNeeded; page++) {
+      const remainingResults = params.maxResults - allProducts.length;
+      if (remainingResults <= 0) break;
 
-    const response = await this.makeRequest(request);
-    const products = this.parseSearchResponse(response);
+      const itemCount = Math.min(remainingResults, maxResultsPerPage);
+
+      const request: PAAPIRequest = {
+        Operation: 'SearchItems',
+        PartnerTag: this.credentials!.partnerTag,
+        PartnerType: 'Associates',
+        Marketplace: this.getMarketplace(),
+        Keywords: params.keywords.join(' '),
+        SearchIndex: params.category === 'All' ? this.inferIndexFromKeywords(params.keywords) : this.mapCategoryToSearchIndex(params.category),
+        ItemCount: itemCount,
+        ItemPage: page,
+        Merchant: params.merchant || (params.category === 'All' ? 'All' : 'Amazon'), // キーワード検索(All)時はマーケットプレイスを含める
+        SortBy: this.mapSortBy(params.sortBy || 'featured'), // デフォルトはFeatured（おすすめ順）
+        Resources: [
+          'Images.Primary.Large',
+          'Images.Primary.Medium',
+          'Images.Variants.Large',
+          'ItemInfo.Title',
+          'ItemInfo.Features',
+          'ItemInfo.ManufactureInfo',
+          'ItemInfo.ProductInfo',
+          'Offers.Listings.Price',
+          'Offers.Summaries.HighestPrice',
+          'Offers.Summaries.LowestPrice',
+          'ParentASIN'
+        ]
+      };
+
+      if (params.minPrice) {
+        request.MinPrice = params.minPrice * 100; // Convert to cents
+      }
+      if (params.maxPrice) {
+        request.MaxPrice = params.maxPrice * 100; // Convert to cents
+      }
+
+      try {
+        const response = await this.makeRequest(request);
+        const products = this.parseSearchResponse(response);
+        allProducts.push(...products);
+
+        // Store total result count from first response
+        if (page === 1) {
+          totalResultCount = response.SearchResult?.TotalResultCount || 0;
+        }
+
+        this.logger.debug(`Page ${page}/${totalPagesNeeded}: fetched ${products.length} products (total: ${allProducts.length})`);
+
+        // Check if there are more pages available
+        const totalPages = Math.ceil((response.SearchResult?.TotalResultCount || 0) / maxResultsPerPage);
+        if (page >= totalPages) {
+          this.logger.debug(`No more pages available (total pages: ${totalPages})`);
+          break;
+        }
+
+        // Rate limiting between page requests
+        if (page < totalPagesNeeded) {
+          await this.sleep(1100); // Slightly over 1 second to respect rate limits
+        }
+      } catch (error) {
+        this.logger.warn(`Failed to fetch page ${page}: ${error instanceof Error ? error.message : String(error)}`);
+        // Continue with what we have if a page fails
+        break;
+      }
+    }
 
     return {
-      products,
-      totalResults: response.SearchResult?.TotalResultCount || 0,
+      products: allProducts,
+      totalResults: totalResultCount,
       searchParams: params,
       timestamp: new Date()
     };
