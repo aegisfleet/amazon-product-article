@@ -77,9 +77,11 @@ const main = async () => {
 
         if (!article.metadata.affiliate_url) missing.push('Affiliate URL');
         if (!article.metadata.hero.warnings) missing.push('Warnings (cons)');
+        if (article.metadata.is_prime === undefined) missing.push('Prime Status');
+        if (!article.metadata.availability) missing.push('Availability');
 
         if (missing.length === 0) {
-            console.log("\nSUCCESS: All required specs, warnings, and affiliate URL are present in metadata.");
+            console.log("\nSUCCESS: All required specs, warnings, affiliate URL, Prime, and Availability are present in metadata.");
         } else {
             console.error("\nFAILURE: Missing metadata:", missing.join(', '));
         }
