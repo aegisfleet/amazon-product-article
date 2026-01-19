@@ -23,7 +23,7 @@ permissions:
 # 同時実行を防止
 concurrency:
   group: "deploy-articles-${{ github.ref }}"
-  cancel-in-progress: false
+  cancel-in-progress: true
 
 jobs:
   build:
