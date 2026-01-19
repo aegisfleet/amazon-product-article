@@ -39,6 +39,17 @@
         <p class="card-excerpt">
             {{ .Description | default (.Summary | truncate 100) }}
         </p>
+        {{ if .Params.specs }}
+        <div class="card-specs">
+            {{ with .Params.specs.os }}<span class="card-spec-tag">OS: {{ . }}</span>{{ end }}
+            {{ with .Params.specs.cpu }}<span class="card-spec-tag">CPU: {{ . }}</span>{{ end }}
+            {{ with .Params.specs.ram }}<span class="card-spec-tag">RAM: {{ . }}</span>{{ end }}
+            {{ with .Params.specs.storage }}<span class="card-spec-tag">ROM: {{ . }}</span>{{ end }}
+            {{ with .Params.specs.display_size }}<span class="card-spec-tag">画面: {{ . }}</span>{{ end }}
+            {{ with .Params.specs.battery_capacity }}<span class="card-spec-tag">バッテリー: {{ . }}</span>{{ end }}
+            {{ with .Params.specs.weight }}<span class="card-spec-tag">重量: {{ . }}</span>{{ end }}
+        </div>
+        {{ end }}
         <div class="card-meta-ext">
             {{ if .Params.price }}
             <span class="card-price">

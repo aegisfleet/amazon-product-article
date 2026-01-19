@@ -286,6 +286,24 @@ a:hover {
   margin-bottom: var(--spacing-sm);
 }
 
+/* Specs in Card */
+.card-specs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-xs);
+  margin-bottom: var(--spacing-sm);
+}
+
+.card-spec-tag {
+  font-size: 0.75rem;
+  padding: 0.15rem 0.5rem;
+  background: var(--bg-tag);
+  color: var(--color-text-muted);
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--color-border);
+  white-space: nowrap;
+}
+
 .card-title {
   font-size: 1.25rem;
   font-weight: 700;
