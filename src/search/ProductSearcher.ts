@@ -108,8 +108,9 @@ export class ProductSearcher {
   /**
    * Search products across all enabled categories
    * @param targetCategoryNames Optional list of category names to search. If provided, only these categories will be searched.
+   * @param maxResultsOverride Optional override for maxResults per category (uses category default if not provided)
    */
-  async searchAllCategories(targetCategoryNames?: string[]): Promise<SearchSession> {
+  async searchAllCategories(targetCategoryNames?: string[], maxResultsOverride?: number): Promise<SearchSession> {
     let categories = this.getEnabledCategories();
 
     if (targetCategoryNames && targetCategoryNames.length > 0) {
@@ -140,10 +141,13 @@ export class ProductSearcher {
         const keyword = category.keywords[Math.floor(Math.random() * category.keywords.length)] || category.keywords[0] || 'popular';
         this.logger.info(`Searching category: ${category.name} with keyword: ${keyword}`);
 
+        // Use override if provided, otherwise use category's configured maxResults
+        const effectiveMaxResults = maxResultsOverride ?? category.maxResults;
+
         const searchParams: ProductSearchParams = {
           category: category.name,
           keywords: [keyword], // Use the single random keyword
-          maxResults: category.maxResults,
+          maxResults: effectiveMaxResults,
           ...(category.sortBy ? { sortBy: category.sortBy } : {})
         };
 
