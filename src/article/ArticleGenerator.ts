@@ -719,6 +719,25 @@ ${warnings.map(w => `<li>${w}</li>`).join('\n')}
 </div>`
       : '';
 
+    // スペック情報の抽出と表示（新規追加）
+    const specs = investigation.analysis.technicalSpecs;
+    const specTags: string[] = [];
+
+    if (specs) {
+      if (specs.os) specTags.push(`<span class="hero-tag">OS: ${specs.os}</span>`);
+      if (specs.cpu) specTags.push(`<span class="hero-tag">CPU: ${specs.cpu}</span>`);
+      if (specs.ram) specTags.push(`<span class="hero-tag">RAM: ${specs.ram}</span>`);
+      if (specs.storage) specTags.push(`<span class="hero-tag">ROM: ${specs.storage}</span>`);
+      if (specs.display?.size) specTags.push(`<span class="hero-tag">画面: ${specs.display.size}</span>`);
+      if (specs.battery?.capacity) specTags.push(`<span class="hero-tag">バッテリー: ${specs.battery.capacity}</span>`);
+      
+      const weight = specs.dimensions?.weight || specs.weight;
+      if (weight) specTags.push(`<span class="hero-tag">重量: ${weight}</span>`);
+    }
+    
+    // スペックタグをHTMLに変換
+    const specsHtml = specTags.join('\n');
+
     // スコア根拠から最大加点・減点を抽出
     const { topPlus, topMinus } = this.extractTopRationaleItems(
       investigation.analysis.recommendation.scoreRationale
@@ -776,6 +795,7 @@ ${warningsHtml}
 <div class="hero-meta-tags">
 ${brandTag}
 ${modelTag}
+${specsHtml}
 </div>
 <a href="${affiliateUrl}" class="btn-amazon-hero" target="_blank" rel="noopener noreferrer">🛒 Amazonで詳細を見る</a>
 </div>
