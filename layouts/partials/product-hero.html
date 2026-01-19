@@ -104,7 +104,7 @@
             {{/* Model is not always available in standard params, might need check */}}
 
             {{/* Specs Display */}}
-            {{ with $hero.specs }}
+            {{ with $product.specs }}
             {{ with .os }}<span class="hero-tag">OS: {{ . }}</span>{{ end }}
             {{ with .cpu }}<span class="hero-tag">CPU: {{ . }}</span>{{ end }}
             {{ with .ram }}<span class="hero-tag">RAM: {{ . }}</span>{{ end }}

@@ -1329,19 +1329,7 @@ ${score >= 80 ? '自信を持っておすすめできる商品です。' :
         lines.push(`  warnings: [${metadata.hero.warnings.map(w => `"${w.replace(/"/g, '\\"')}"`).join(', ')}]`);
       }
 
-      // Hero Specs (Subset for display)
-      if (metadata.hero.specs) {
-        lines.push('  specs:');
-        const hSpecs = metadata.hero.specs;
-        if (hSpecs.os) lines.push(`    os: "${hSpecs.os}"`);
-        if (hSpecs.cpu) lines.push(`    cpu: "${hSpecs.cpu}"`);
-        if (hSpecs.ram) lines.push(`    ram: "${hSpecs.ram}"`);
-        if (hSpecs.storage) lines.push(`    storage: "${hSpecs.storage}"`);
-        if (hSpecs.display?.size) lines.push(`    display_size: "${hSpecs.display.size}"`);
-        if (hSpecs.battery?.capacity) lines.push(`    battery_capacity: "${hSpecs.battery.capacity}"`);
-        const weight = hSpecs.dimensions?.weight || hSpecs.weight;
-        if (weight) lines.push(`    weight: "${weight}"`);
-      }
+
     }
 
     lines.push('---');

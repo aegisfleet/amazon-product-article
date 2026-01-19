@@ -98,10 +98,21 @@ describe('ArticleGenerator', () => {
         },
         userStories: [],
         userImpression: '',
+        technicalSpecs: {
+          os: 'Android 11',
+          cpu: 'Snapdragon 888',
+          ram: '8GB',
+          storage: '128GB',
+          display: { size: '6.1インチ' },
+          battery: { capacity: '4000mAh' },
+          weight: '160g',
+          dimensions: { weight: '160g' }
+        },
         sources: []
       },
       generatedAt: new Date('2025-01-01T00:00:00Z')
     };
+
 
     // Add new fields for tests
     mockInvestigation.analysis.userStories = [
@@ -205,7 +216,7 @@ describe('ArticleGenerator', () => {
 
       expect(result).toBeDefined();
       expect(result.content).toContain('hero:');
-      expect(result.content).toContain('hero:');
+
       expect(result.content).toContain('score_rationale:');
       expect(result.content).toContain('target_users:');
       expect(result.content).toContain('warnings:');

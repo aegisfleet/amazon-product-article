@@ -60,20 +60,19 @@ const main = async () => {
         console.log("\nGenerated Hero Metadata:");
         console.log(JSON.stringify(article.metadata.hero, null, 2));
 
-        const heroSpecs = article.metadata.hero.specs;
         const missing: string[] = [];
 
-        if (!heroSpecs.os) missing.push('OS');
-        if (!heroSpecs.cpu) missing.push('CPU');
-        if (!heroSpecs.ram) missing.push('RAM');
-        if (!heroSpecs.storage) missing.push('ROM');
-        if (!heroSpecs.display?.size) missing.push('Display Size');
-        if (!heroSpecs.battery?.capacity) missing.push('Battery');
-
-        const weight = heroSpecs.dimensions?.weight || heroSpecs.weight;
-        if (!weight) missing.push('Weight');
-
-        if (!weight) missing.push('Weight');
+        // Verify Global Specs explicitly
+        if (article.metadata.technicalSpecs) {
+            const specs = article.metadata.technicalSpecs;
+            if (!specs.os) missing.push('OS');
+            if (!specs.cpu) missing.push('CPU');
+            const weight = specs.dimensions?.weight || specs.weight;
+            if (!weight) missing.push('Weight');
+            // Other specs are optional/dependent on category, but these are key for hero
+        } else {
+            missing.push('Global Technical Specs');
+        }
 
         if (!article.metadata.affiliate_url) missing.push('Affiliate URL');
         if (!article.metadata.hero.warnings) missing.push('Warnings (cons)');
