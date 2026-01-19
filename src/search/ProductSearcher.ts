@@ -741,6 +741,14 @@ export class ProductSearcher {
         maxResults: 10,
         sortBy: 'featured',
         enabled: true
+      },
+      {
+        name: 'tablets',
+        searchIndex: 'Electronics',
+        keywords: ['タブレット', 'iPad', 'Android タブレット', 'Fire HD', 'タブレット端末', 'Androidタブレット 10インチ', 'Kindle', 'タブレット 7インチ', 'タブレット 8インチ', 'キッズタブレット'],
+        maxResults: 10,
+        sortBy: 'featured',
+        enabled: true
       }
     ];
   }
