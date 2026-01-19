@@ -27,7 +27,17 @@ export interface ArticleMetadata {
   seoKeywords: string[];
   lastInvestigated?: string;
   images?: string[];  // Product image URLs for Hugo front matter
+  affiliate_url?: string; // Affiliate link for the hero button
   technicalSpecs?: TechnicalSpecs;  // 詳細スペック情報（カテゴリ依存）
+  hero?: {
+    score_rationale: {
+      top_plus: { points: number; desc: string } | null;
+      top_minus: { points: number; desc: string } | null;
+    };
+    target_users: string[];
+    warnings: string[];
+    specs: TechnicalSpecs;
+  };
 }
 
 export interface ArticleTemplate {
@@ -356,6 +366,10 @@ export class ArticleGenerator {
     // Product images for Hugo front matter (primary + thumbnails)
     const images = [product.images.primary, ...product.images.thumbnails].filter(Boolean);
 
+    // Affiliate URL generation
+    const affiliateLink = this.affiliateManager.generateLinkFromProduct(product);
+    const affiliateUrl = affiliateLink.url;
+
     const metadata: ArticleMetadata = {
       title,
       description,
@@ -370,6 +384,7 @@ export class ArticleGenerator {
       featured: this.shouldBeFeatured(product, investigation),
       mobileOptimized: true,
       seoKeywords,
+      affiliate_url: affiliateUrl,
       ...(investigation.analysis.lastInvestigated && { lastInvestigated: investigation.analysis.lastInvestigated }),
       ...(images.length > 0 && { images })
     };
@@ -386,6 +401,21 @@ export class ArticleGenerator {
     if (investigation.analysis.technicalSpecs) {
       metadata.technicalSpecs = investigation.analysis.technicalSpecs;
     }
+
+    // Hero Front Matter Data
+    const { topPlus, topMinus } = this.extractTopRationaleItems(
+      investigation.analysis.recommendation.scoreRationale
+    );
+
+    metadata.hero = {
+      score_rationale: {
+        top_plus: topPlus,
+        top_minus: topMinus
+      },
+      target_users: investigation.analysis.recommendation.targetUsers,
+      warnings: investigation.analysis.recommendation.cons || [],
+      specs: investigation.analysis.technicalSpecs || {}
+    };
 
     return metadata;
   }
@@ -483,7 +513,9 @@ export class ArticleGenerator {
     const affiliateTag = affiliatePartnerTag || process.env.AMAZON_PARTNER_TAG || 'your-affiliate-tag';
 
     // 商品ヒーローセクション（商品概要 + 購入リンク）
-    sections.push(await this.generateProductHeroSection(product, investigation, affiliateTag));
+    // NOTE: Refactored to Front Matter + Hugo Partial.
+    // sections.push(await this.generateProductHeroSection(product, investigation, affiliateTag));
+
 
     // 商品の特徴と使い方
     sections.push(await this.generateFeaturesSection(product, investigation));
@@ -653,161 +685,7 @@ ${sourcesList}`;
     };
   }
 
-  /**
-   * 商品ヒーローセクションを生成（商品概要 + 評価サマリー + 購入リンク）
-   */
-  private async generateProductHeroSection(
-    product: Product,
-    investigation: InvestigationResult,
-    _affiliateTag: string
-  ): Promise<ArticleSection> {
-    const affiliateLink = this.affiliateManager.generateLinkFromProduct(product);
-    const affiliateUrl = affiliateLink.url;
-    const productDescription = investigation.analysis.productDescription ||
-      `${product.title}は、${product.category}カテゴリの商品です。`;
 
-    const score = investigation.analysis.recommendation.score;
-    const scoreText = this.getScoreDescription(score);
-    const scoreEmoji = score >= 80 ? '🏆' : score >= 60 ? '👍' : '📝';
-    const scoreClass = score >= 80 ? 'score-excellent' : score >= 60 ? 'score-good' : 'score-fair';
-
-    // ProductDetail型の追加フィールドを取得（存在すれば）
-    const productDetail = product as any;
-    const isPrimeEligible = productDetail.isPrimeEligible;
-    const availability = productDetail.availability;
-    const brand = productDetail.brand;
-
-    // おすすめ対象と注意点（最大3件ずつ）
-    const targetUsers = investigation.analysis.recommendation.targetUsers.slice(0, 3);
-    const warnings = investigation.analysis.recommendation.cons.slice(0, 3);
-
-    // Prime対応バッジ
-    const primeBadge = isPrimeEligible
-      ? '<span class="hero-tag hero-tag-prime">✓ Prime</span>'
-      : '';
-
-    // 在庫タグ
-    const availabilityTag = availability
-      ? `<span class="hero-tag hero-tag-stock">📦 ${availability.replace(/\.$/, '')}</span>`
-      : '';
-
-    // ブランド・モデルタグ
-    const brandTag = brand
-      ? `<span class="hero-tag">${brand}</span>`
-      : '';
-    const modelTag = productDetail.model
-      ? `<span class="hero-tag">${productDetail.model}</span>`
-      : '';
-
-    // おすすめリスト生成
-    const targetUsersHtml = targetUsers.length > 0
-      ? `<div class="hero-eval-block hero-eval-pros">
-<span class="hero-eval-title">👍 こんな方におすすめ</span>
-<ul>
-${targetUsers.map(u => `<li>${u}</li>`).join('\n')}
-</ul>
-</div>`
-      : '';
-
-    // 注意点リスト生成
-    const warningsHtml = warnings.length > 0
-      ? `<div class="hero-eval-block hero-eval-cons">
-<span class="hero-eval-title">⚠️ 購入時の注意点</span>
-<ul>
-${warnings.map(w => `<li>${w}</li>`).join('\n')}
-</ul>
-</div>`
-      : '';
-
-    // スペック情報の抽出と表示（新規追加）
-    const specs = investigation.analysis.technicalSpecs;
-    const specTags: string[] = [];
-
-    if (specs) {
-      if (specs.os) specTags.push(`<span class="hero-tag">OS: ${specs.os}</span>`);
-      if (specs.cpu) specTags.push(`<span class="hero-tag">CPU: ${specs.cpu}</span>`);
-      if (specs.ram) specTags.push(`<span class="hero-tag">RAM: ${specs.ram}</span>`);
-      if (specs.storage) specTags.push(`<span class="hero-tag">ROM: ${specs.storage}</span>`);
-      if (specs.display?.size) specTags.push(`<span class="hero-tag">画面: ${specs.display.size}</span>`);
-      if (specs.battery?.capacity) specTags.push(`<span class="hero-tag">バッテリー: ${specs.battery.capacity}</span>`);
-      
-      const weight = specs.dimensions?.weight || specs.weight;
-      if (weight) specTags.push(`<span class="hero-tag">重量: ${weight}</span>`);
-    }
-    
-    // スペックタグをHTMLに変換
-    const specsHtml = specTags.join('\n');
-
-    // スコア根拠から最大加点・減点を抽出
-    const { topPlus, topMinus } = this.extractTopRationaleItems(
-      investigation.analysis.recommendation.scoreRationale
-    );
-
-    // スコアバー内の加点・減点表示HTML
-    const topPlusHtml = topPlus
-      ? `<div class="hero-score-item hero-score-plus"><span class="hero-score-item-points">+${topPlus.points}</span><span class="hero-score-item-desc">${topPlus.desc}</span></div>`
-      : '';
-    const topMinusHtml = topMinus
-      ? `<div class="hero-score-item hero-score-minus"><span class="hero-score-item-points">-${topMinus.points}</span><span class="hero-score-item-desc">${topMinus.desc}</span></div>`
-      : '';
-
-    const content = `<div class="product-hero-card">
-<div class="product-hero-image">
-<div class="product-image-carousel" id="carousel-${product.asin}">
-<div class="carousel-track">
-  <img src="${product.images.primary}" alt="${product.title}" class="carousel-image">
-  ${product.images.thumbnails.map(url => `<img src="${url}" alt="${product.title}" class="carousel-image" loading="lazy">`).join('\n    ')}
-</div>
-${product.images.thumbnails.length > 0 ? `
-<button class="carousel-button prev" aria-label="前へ">❮</button>
-<button class="carousel-button next" aria-label="次へ">❯</button>
-<div class="carousel-dots"></div>
-` : ''}
-</div>
-</div>
-<div class="product-hero-info">
-<p class="hero-description">${productDescription}</p>
-<div class="hero-score-bar ${scoreClass}">
-<div class="hero-score-main">
-<span class="hero-score-emoji">${scoreEmoji}</span>
-<span class="hero-score-number">${score}</span>
-<span class="hero-score-unit">点</span>
-<span class="hero-score-text">${scoreText}</span>
-</div>
-<div class="hero-score-rationale">
-${topPlusHtml}
-${topMinusHtml}
-</div>
-</div>
-<div class="hero-price-bar">
-<div class="hero-price-main">
-<span class="hero-price">${product.price.formatted}</span>
-</div>
-<div class="hero-price-info">
-${primeBadge}
-${availabilityTag}
-</div>
-</div>
-<div class="hero-evaluation-section">
-${targetUsersHtml}
-${warningsHtml}
-</div>
-<div class="hero-meta-tags">
-${brandTag}
-${modelTag}
-${specsHtml}
-</div>
-<a href="${affiliateUrl}" class="btn-amazon-hero" target="_blank" rel="noopener noreferrer">🛒 Amazonで詳細を見る</a>
-</div>
-</div>`;
-
-    return {
-      title: '商品ヒーロー',
-      content,
-      wordCount: this.calculateWordCount(content),
-      requiredElements: ['商品画像', '商品説明', '購入リンク', '評価', 'Prime対応', '在庫状況', 'おすすめ', '注意点']
-    };
-  }
 
   /**
    * 商品の特徴と使い方セクションを生成
@@ -1274,9 +1152,10 @@ ${score >= 80 ? '自信を持っておすすめできる商品です。' :
 
     lines.push(`tags: [${metadata.tags.map(tag => `"${tag}"`).join(', ')}]`);
     lines.push(`keywords: [${metadata.seoKeywords.map(keyword => `"${keyword}"`).join(', ')}]`);
-    lines.push(`featured: ${metadata.featured}`);
-    lines.push(`mobile_optimized: ${metadata.mobileOptimized}`);
-    lines.push(`last_investigated: "${metadata.lastInvestigated || ''}"`);
+    if (metadata.featured) lines.push(`featured: ${metadata.featured}`);
+    if (typeof metadata.mobileOptimized === 'boolean') lines.push(`mobile_optimized: ${metadata.mobileOptimized}`);
+    if (metadata.lastInvestigated) lines.push(`last_investigated: "${metadata.lastInvestigated}"`);
+    if (metadata.affiliate_url) lines.push(`affiliate_url: "${metadata.affiliate_url}"`);
 
     // Add images for Hugo template (used on home page)
     if (metadata.images && metadata.images.length > 0) {
@@ -1416,6 +1295,46 @@ ${score >= 80 ? '自信を持っておすすめできる商品です。' :
       if (specs.other) {
         const otherVal = Array.isArray(specs.other) ? `[${specs.other.map(o => `"${o}"`).join(', ')}]` : `"${specs.other}"`;
         addSpec('other_specs', otherVal);
+      }
+    }
+
+    // Add Hero Data
+    if (metadata.hero) {
+      lines.push('hero:');
+      if (metadata.hero.score_rationale) {
+        lines.push('  score_rationale:');
+        if (metadata.hero.score_rationale.top_plus) {
+          lines.push('    top_plus:');
+          lines.push(`      points: ${metadata.hero.score_rationale.top_plus.points}`);
+          lines.push(`      desc: "${metadata.hero.score_rationale.top_plus.desc.replace(/"/g, '\\"')}"`);
+        }
+        if (metadata.hero.score_rationale.top_minus) {
+          lines.push('    top_minus:');
+          lines.push(`      points: ${metadata.hero.score_rationale.top_minus.points}`);
+          lines.push(`      desc: "${metadata.hero.score_rationale.top_minus.desc.replace(/"/g, '\\"')}"`);
+        }
+      }
+
+      if (metadata.hero.target_users && metadata.hero.target_users.length > 0) {
+        lines.push(`  target_users: [${metadata.hero.target_users.map(u => `"${u.replace(/"/g, '\\"')}"`).join(', ')}]`);
+      }
+
+      if (metadata.hero.warnings && metadata.hero.warnings.length > 0) {
+        lines.push(`  warnings: [${metadata.hero.warnings.map(w => `"${w.replace(/"/g, '\\"')}"`).join(', ')}]`);
+      }
+
+      // Hero Specs (Subset for display)
+      if (metadata.hero.specs) {
+        lines.push('  specs:');
+        const hSpecs = metadata.hero.specs;
+        if (hSpecs.os) lines.push(`    os: "${hSpecs.os}"`);
+        if (hSpecs.cpu) lines.push(`    cpu: "${hSpecs.cpu}"`);
+        if (hSpecs.ram) lines.push(`    ram: "${hSpecs.ram}"`);
+        if (hSpecs.storage) lines.push(`    storage: "${hSpecs.storage}"`);
+        if (hSpecs.display?.size) lines.push(`    display_size: "${hSpecs.display.size}"`);
+        if (hSpecs.battery?.capacity) lines.push(`    battery_capacity: "${hSpecs.battery.capacity}"`);
+        const weight = hSpecs.dimensions?.weight || hSpecs.weight;
+        if (weight) lines.push(`    weight: "${weight}"`);
       }
     }
 

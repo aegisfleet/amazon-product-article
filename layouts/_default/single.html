@@ -28,6 +28,11 @@
             </div>
         </header>
 
+        <!-- Product Hero Card (generated from Front Matter) -->
+        {{ if .Params.hero }}
+        {{ partial "product-hero.html" . }}
+        {{ end }}
+
         {{/* 同じカテゴリの記事 */}}
         {{ $related := $allArticles }}
         {{ if $categories }}
