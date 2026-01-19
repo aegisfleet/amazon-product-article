@@ -28,6 +28,8 @@ export interface ArticleMetadata {
   lastInvestigated?: string;
   images?: string[];  // Product image URLs for Hugo front matter
   affiliate_url?: string; // Affiliate link for the hero button
+  is_prime?: boolean;
+  availability?: string;
   technicalSpecs?: TechnicalSpecs;  // 詳細スペック情報（カテゴリ依存）
   hero?: {
     score_rationale: {
@@ -385,6 +387,8 @@ export class ArticleGenerator {
       mobileOptimized: true,
       seoKeywords,
       affiliate_url: affiliateUrl,
+      is_prime: (product as any).isPrimeEligible, // Cast to any to access potentially missing property or fix type definition
+      availability: (product as any).availability,
       ...(investigation.analysis.lastInvestigated && { lastInvestigated: investigation.analysis.lastInvestigated }),
       ...(images.length > 0 && { images })
     };
@@ -1147,6 +1151,8 @@ ${score >= 80 ? '自信を持っておすすめできる商品です。' :
 
     if (metadata.price) lines.push(`price: "${metadata.price}"`);
     if (metadata.score) lines.push(`score: ${metadata.score}`);
+    if (metadata.is_prime !== undefined) lines.push(`is_prime: ${metadata.is_prime}`);
+    if (metadata.availability) lines.push(`availability: "${metadata.availability}"`);
 
     if (metadata.rating) lines.push(`rating: ${metadata.rating}`);
 

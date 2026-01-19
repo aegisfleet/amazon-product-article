@@ -70,8 +70,8 @@
                 <span class="hero-price">{{ $product.price }}</span>
             </div>
             <div class="hero-price-info">
-                {{ if $product.is_prime }}<span class="hero-badge-prime">Prime</span>{{ end }}
-                {{ with $product.availability }}<span class="hero-badge-stock">{{ . }}</span>{{ end }}
+                {{ if $product.is_prime }}<span class="hero-tag hero-tag-prime">Prime</span>{{ end }}
+                {{ with $product.availability }}<span class="hero-tag hero-tag-stock">{{ . }}</span>{{ end }}
             </div>
         </div>
 

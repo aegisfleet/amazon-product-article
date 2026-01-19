@@ -2658,18 +2658,7 @@ a:hover {
   margin-bottom: 0;
 }
 
-.hero-price-bar .hero-tag-prime {
-  background: rgba(255, 255, 255, 0.25);
-  border-color: rgba(255, 255, 255, 0.5);
-  color: white;
-  font-weight: 700;
-}
 
-.hero-price-bar .hero-tag-stock {
-  background: rgba(255, 255, 255, 0.2);
-  border-color: rgba(255, 255, 255, 0.4);
-  color: white;
-}
 
 /* Meta Tags */
 .hero-meta-tags {
@@ -2712,11 +2701,7 @@ a:hover {
   color: #34d399;
 }
 
-[data-theme="dark"] .hero-price-bar .hero-tag-stock {
-  background: rgba(255, 255, 255, 0.2);
-  border-color: rgba(255, 255, 255, 0.4);
-  color: white;
-}
+
 
 /* Mobile adjustments for score bar */
 @media (max-width: 959px) {
