@@ -141,9 +141,10 @@ python scripts/paapi_search_items.py "枕カバー フランネル" --search-ind
 
 | 場所 | 実装ファイル | 役割 |
 |---|---|---|
-| **商品詳細 (ヒーローカード)** | `src/article/ArticleGenerator.ts` | 記事冒頭のメインカード (TSによるHTML生成) |
+| **商品詳細 (ヒーローカード)** | `layouts/partials/product-hero.html` | 記事冒頭のメインカード (Hugo partial, データはArticleGeneratorがFront Matterへ出力) |
 | **カテゴリ一覧 (インライン)** | `layouts/_default/list.html` | 商品一覧ページのリスト項目 |
 | **検索/ウィジェット (カード)** | `layouts/partials/product-card.html` | その他の箇所で使われるカード部品 |
 
 **重要なルール**:
-今回のように「スペック表示」や「バッジ」、「価格表示」などの新しい要素を追加する場合は、**これら3ファイルすべて**に対して実装を行い、ユーザー体験を統一してください。特に TypeScript (バックエンド生成) と Hugo (フロントエンド生成) の両方の修正が必要になる点に注意してください。
+今回のように「スペック表示」や「バッジ」、「価格表示」などの新しい要素を追加する場合は、**これら3ファイルすべて**に対して実装を行い、ユーザー体験を統一してください。
+以前は TypeScript で HTML を生成していましたが、リファクタリングにより **全て Hugo テンプレート側で HTML を生成する** アーキテクチャに統一されました。`ArticleGenerator.ts` は Front Matter へのデータ出力のみを担当します。
