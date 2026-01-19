@@ -22,7 +22,7 @@ permissions:
 
 # 同時実行を防止
 concurrency:
-  group: "pages"
+  group: "deploy-articles-${{ github.ref }}"
   cancel-in-progress: false
 
 jobs:
