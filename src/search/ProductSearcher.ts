@@ -473,7 +473,7 @@ export class ProductSearcher {
       {
         name: 'electronics',
         searchIndex: 'Electronics',
-        keywords: ['スマートフォン', 'ワイヤレスイヤホン', 'モバイルバッテリー', 'スマートウォッチ', 'タブレット'],
+        keywords: ['ワイヤレスイヤホン', 'モバイルバッテリー', 'スマートウォッチ', 'Bluetoothスピーカー', 'ポータブル電源', '急速充電器', 'プロジェクター', 'アクションカメラ', 'ICレコーダー', '電子辞書'],
         maxResults: 10,
         sortBy: 'featured',
         enabled: true
