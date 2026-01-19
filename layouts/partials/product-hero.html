@@ -1,0 +1,123 @@
+{{/* Hero Card Partial */}}
+{{ $product := .Params }}
+{{ $hero := .Params.hero }}
+
+<div class="product-hero-card">
+    <div class="product-hero-image">
+        <div class="product-image-carousel" id="carousel-{{ $product.asin }}">
+            <div class="carousel-track">
+                {{ if $product.images }}
+                <img src="{{ index $product.images 0 }}" alt="{{ $product.title }}" class="carousel-image">
+                {{ range after 1 $product.images }}
+                <img src="{{ . }}" alt="{{ $product.title }}" class="carousel-image" loading="lazy">
+                {{ end }}
+                {{ end }}
+            </div>
+            {{ if gt (len $product.images) 1 }}
+            <button class="carousel-button prev" aria-label="前へ">❮</button>
+            <button class="carousel-button next" aria-label="次へ">❯</button>
+            <div class="carousel-dots"></div>
+            {{ end }}
+        </div>
+    </div>
+
+    <div class="product-hero-info">
+        <p class="hero-description">
+            {{/* Description logic needs to be handled in front matter or passed directly */}}
+            {{ $product.description | default ($product.summary | truncate 200) }}
+        </p>
+
+        {{ $score := $product.score | int }}
+        {{ $scoreClass := "score-fair" }}
+        {{ $scoreEmoji := "😐" }}
+        {{ $scoreText := "普通" }}
+
+        {{ if ge $score 80 }}
+        {{ $scoreClass = "score-excellent" }}
+        {{ $scoreEmoji = "😍" }}
+        {{ $scoreText = "最高" }}
+        {{ else if ge $score 60 }}
+        {{ $scoreClass = "score-good" }}
+        {{ $scoreEmoji = "😊" }}
+        {{ $scoreText = "良い" }}
+        {{ end }}
+
+        <div class="hero-score-bar {{ $scoreClass }}">
+            <div class="hero-score-main">
+                <span class="hero-score-emoji">{{ $scoreEmoji }}</span>
+                <span class="hero-score-number">{{ $score }}</span>
+                <span class="hero-score-unit">点</span>
+                <span class="hero-score-text">{{ $scoreText }}</span>
+            </div>
+            <div class="hero-score-rationale">
+                {{ with $hero.score_rationale.top_plus }}
+                <div class="hero-score-item hero-score-plus">
+                    <span class="hero-score-item-points">+{{ .points }}</span>
+                    <span class="hero-score-item-desc">{{ .desc }}</span>
+                </div>
+                {{ end }}
+                {{ with $hero.score_rationale.top_minus }}
+                <div class="hero-score-item hero-score-minus">
+                    <span class="hero-score-item-points">-{{ .points }}</span>
+                    <span class="hero-score-item-desc">{{ .desc }}</span>
+                </div>
+                {{ end }}
+            </div>
+        </div>
+
+        <div class="hero-price-bar">
+            <div class="hero-price-main">
+                <span class="hero-price">{{ $product.price }}</span>
+            </div>
+            <div class="hero-price-info">
+                {{ if $product.is_prime }}<span class="hero-badge-prime">Prime</span>{{ end }}
+                {{ with $product.availability }}<span class="hero-badge-stock">{{ . }}</span>{{ end }}
+            </div>
+        </div>
+
+        <div class="hero-evaluation-section">
+            {{ if $hero.target_users }}
+            <div class="hero-eval-block hero-eval-pros">
+                <span class="hero-eval-title">👍 こんな方におすすめ</span>
+                <ul>
+                    {{ range $hero.target_users }}
+                    <li>{{ . }}</li>
+                    {{ end }}
+                </ul>
+            </div>
+            {{ end }}
+
+            {{ if $hero.warnings }}
+            <div class="hero-eval-block hero-eval-cons">
+                <span class="hero-eval-title">⚠️ 購入時の注意点</span>
+                <ul>
+                    {{ range $hero.warnings }}
+                    <li>{{ . }}</li>
+                    {{ end }}
+                </ul>
+            </div>
+            {{ end }}
+        </div>
+
+        <div class="hero-meta-tags">
+            {{ with $product.brand }}<span class="hero-tag">{{ . }}</span>{{ end }}
+            {{/* Model is not always available in standard params, might need check */}}
+
+            {{/* Specs Display */}}
+            {{ with $hero.specs }}
+            {{ with .os }}<span class="hero-tag">OS: {{ . }}</span>{{ end }}
+            {{ with .cpu }}<span class="hero-tag">CPU: {{ . }}</span>{{ end }}
+            {{ with .ram }}<span class="hero-tag">RAM: {{ . }}</span>{{ end }}
+            {{ with .storage }}<span class="hero-tag">ROM: {{ . }}</span>{{ end }}
+            {{ with .display_size }}<span class="hero-tag">画面: {{ . }}</span>{{ end }}
+            {{ with .battery_capacity }}<span class="hero-tag">バッテリー: {{ . }}</span>{{ end }}
+            {{ with .weight }}<span class="hero-tag">重量: {{ . }}</span>{{ end }}
+            {{ end }}
+        </div>
+
+        {{ if $product.affiliate_url }}
+        <a href="{{ $product.affiliate_url }}" class="btn-amazon-hero" target="_blank" rel="noopener noreferrer">🛒
+            Amazonで詳細を見る</a>
+        {{ end }}
+    </div>
+</div>

@@ -55,26 +55,44 @@ const main = async () => {
     const generator = new ArticleGenerator();
     const article = await generator.generateArticle(product, investigation);
 
-    // Extract hero card (simplified regex)
-    // The hero card is wrapped in <div class="product-hero-card">
-    if (article.content.includes('<div class="hero-meta-tags">')) {
-        const start = article.content.indexOf('<div class="hero-meta-tags">');
-        const end = article.content.indexOf('</div>', start);
-        const metaTagsHtml = article.content.substring(start, end + 6);
-        console.log("\nGenerated Meta Tags Section:");
-        console.log(metaTagsHtml);
+    // Verify Hero Metadata
+    if (article.metadata.hero) {
+        console.log("\nGenerated Hero Metadata:");
+        console.log(JSON.stringify(article.metadata.hero, null, 2));
 
-        // Validation
-        const requiredSpecs = ['OS:', 'CPU:', 'RAM:', 'ROM:', '画面:', 'バッテリー:', '重量:'];
-        const missing = requiredSpecs.filter(spec => !metaTagsHtml.includes(spec));
+        const heroSpecs = article.metadata.hero.specs;
+        const missing: string[] = [];
+
+        if (!heroSpecs.os) missing.push('OS');
+        if (!heroSpecs.cpu) missing.push('CPU');
+        if (!heroSpecs.ram) missing.push('RAM');
+        if (!heroSpecs.storage) missing.push('ROM');
+        if (!heroSpecs.display?.size) missing.push('Display Size');
+        if (!heroSpecs.battery?.capacity) missing.push('Battery');
+
+        const weight = heroSpecs.dimensions?.weight || heroSpecs.weight;
+        if (!weight) missing.push('Weight');
+
+        if (!weight) missing.push('Weight');
+
+        if (!article.metadata.affiliate_url) missing.push('Affiliate URL');
+        if (!article.metadata.hero.warnings) missing.push('Warnings (cons)');
 
         if (missing.length === 0) {
-            console.log("\nSUCCESS: All required specs are present.");
+            console.log("\nSUCCESS: All required specs, warnings, and affiliate URL are present in metadata.");
         } else {
-            console.error("\nFAILURE: Missing specs:", missing.join(', '));
+            console.error("\nFAILURE: Missing metadata:", missing.join(', '));
         }
+
+        // Verify that content DOES NOT contain duplicate HTML
+        if (article.content.includes('<div class="product-hero-card">')) {
+            console.error("\nFAILURE: Content still contains hero card HTML!");
+        } else {
+            console.log("\nSUCCESS: Content does not contain hero card HTML (clean separation).");
+        }
+
     } else {
-        console.error("Hero meta tags section not found in generated content.");
+        console.error("Hero metadata not found in generated article.");
     }
 };
 
