@@ -50,6 +50,7 @@ on:
           - tea_leaves
           - smartphones
           - color_contacts
+          - tablets
       max_results:
         description: 'Maximum results per category'
         required: false
