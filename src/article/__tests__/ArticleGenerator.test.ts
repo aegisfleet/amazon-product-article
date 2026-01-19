@@ -204,7 +204,12 @@ describe('ArticleGenerator', () => {
       const result = await generator.generateArticle(mockProduct, mockInvestigation, mockReviewAnalysis, undefined, undefined, mockCompetitorDetails);
 
       expect(result).toBeDefined();
-      expect(result.content).toContain('<div class="product-hero-card">');
+      expect(result.content).toContain('hero:');
+      expect(result.content).toContain('hero:');
+      expect(result.content).toContain('score_rationale:');
+      expect(result.content).toContain('target_users:');
+      expect(result.content).toContain('warnings:');
+      expect(result.content).toContain('specs:');
       expect(result.content).toContain('## 📦 商品の特徴');
       expect(result.content).toContain('## 📊 ユーザーレビュー分析');
       expect(result.content).toContain('## 🥊 競合商品との比較');
@@ -221,7 +226,7 @@ describe('ArticleGenerator', () => {
       expect(result.content).not.toContain('[Amazon Product Advertising API](https://webservices.amazon.co.jp/paapi5/getitems)');
 
       expect(result.wordCount).toBeGreaterThan(0);
-      expect(result.sections).toHaveLength(7);
+      expect(result.sections).toHaveLength(6);
     });
 
     it('should include affiliate disclosure', async () => {
@@ -244,8 +249,8 @@ describe('ArticleGenerator', () => {
       const result = await generator.generateArticle(mockProduct, mockInvestigation, undefined, undefined, undefined, mockCompetitorDetails);
 
       expect(result).toBeDefined();
-      expect(result.content).toContain('<div class="product-hero-card">');
-      expect(result.sections).toHaveLength(7);
+      expect(result.content).toContain('hero:');
+      expect(result.sections).toHaveLength(6);
     });
     it('should keep items but hide links for competitors with failed PA-API lookup', async () => {
       const mockCompetitorDetails = new Map<string, ProductDetail>();
@@ -306,7 +311,7 @@ describe('ArticleGenerator', () => {
 
       // Check for duplicate 'weight:' keys in specs section
       const content = result.content;
-      const specsMatch = content.match(/specs:[\s\S]*?---/);
+      const specsMatch = content.match(/specs:[\s\S]*?(?=hero:|---)/);
 
       expect(specsMatch).not.toBeNull();
       if (specsMatch) {
@@ -439,7 +444,7 @@ describe('ArticleGenerator', () => {
       const result = await generator.generateArticle(mockProduct, emptyInvestigation);
       expect(result).toBeDefined();
       // When productName is not set, should still have product-hero-card
-      expect(result.content).toContain('<div class="product-hero-card">');
+      expect(result.content).toContain('hero:');
     });
 
     it('should handle products with minimal information', async () => {
