@@ -291,6 +291,9 @@ function initCategoryFeatures() {
 
     // Initial count update
     updateProductCount();
+
+    // Initial sort to ensure display matches the default "Newest" selection
+    sortCards(sortSelect.value);
 }
 
 // Initialize when DOM is ready, or immediately if already loaded
