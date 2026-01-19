@@ -62,7 +62,20 @@ jobs:
         # Only commit if there are changes
         if ! git diff --staged --quiet; then
           git commit -m "Update PA-API product cache [skip ci]"
-          git push
+          # Retry push with rebase if it fails (handles concurrent workflow conflicts)
+          for i in 1 2 3; do
+            if git push; then
+              echo "Push succeeded on attempt $i"
+              break
+            else
+              echo "Push failed on attempt $i, pulling with rebase and retrying..."
+              git pull --rebase origin main
+              if [ $i -eq 3 ]; then
+                echo "Push failed after 3 attempts"
+                exit 1
+              fi
+            fi
+          done
         fi
     
     - name: Setup Hugo
