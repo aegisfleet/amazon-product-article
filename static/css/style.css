@@ -593,7 +593,7 @@ a:hover {
   object-fit: contain;
   scroll-snap-align: center;
   scroll-snap-stop: always;
-  padding: var(--spacing-sm);
+  padding: var(--spacing-sm) var(--spacing-sm) var(--spacing-xl) var(--spacing-sm);
 }
 
 .carousel-button {
