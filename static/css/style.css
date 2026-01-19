@@ -2544,27 +2544,39 @@ a:hover {
   font-weight: 600;
   padding: 2px 8px;
   border-radius: var(--radius-sm);
-  background: rgba(255, 255, 255, 0.2);
+  /* background handled by specific classes */
 }
 
 [data-theme="dark"] .hero-score-item {
-  background: rgba(255, 255, 255, 0.15);
+  /* background handled by specific classes */
 }
 
 .hero-score-plus {
-  color: #d1fae5;
+  background: #ecfdf5;
+  /* Light Green */
+  color: #065f46;
+  /* Dark Green */
+  border-left: 3px solid #10b981;
 }
 
 [data-theme="dark"] .hero-score-plus {
+  background: rgba(16, 185, 129, 0.2);
   color: #a7f3d0;
+  border-left: 3px solid #10b981;
 }
 
 .hero-score-minus {
-  color: #fef3c7;
+  background: #fffbeb;
+  /* Light Orange/Yellow */
+  color: #92400e;
+  /* Dark Orange */
+  border-left: 3px solid #f59e0b;
 }
 
 [data-theme="dark"] .hero-score-minus {
+  background: rgba(245, 158, 11, 0.2);
   color: #fde68a;
+  border-left: 3px solid #f59e0b;
 }
 
 .hero-score-item-points {
@@ -2573,7 +2585,7 @@ a:hover {
 }
 
 .hero-score-item-desc {
-  opacity: 0.95;
+  opacity: 1;
   flex: 1;
   min-width: 0;
   word-break: break-word;
