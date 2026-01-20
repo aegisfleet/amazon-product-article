@@ -749,6 +749,30 @@ export class ProductSearcher {
         maxResults: 10,
         sortBy: 'featured',
         enabled: true
+      },
+      {
+        name: 'eye_care',
+        searchIndex: 'HealthPersonalCare',
+        keywords: ['アイマッサージャー', 'ホットアイマスク', '目元マッサージャー', 'アイウォーマー', '目元ケア', 'アイマスク 電動', '目の疲れ', 'アイリラックス'],
+        maxResults: 10,
+        sortBy: 'featured',
+        enabled: true
+      },
+      {
+        name: 'neck_massager',
+        searchIndex: 'HealthPersonalCare',
+        keywords: ['ネックマッサージャー', '首マッサージャー', '肩マッサージャー', 'ネックリラックス', '首こり マッサージ', 'EMS ネック', '首 温熱', 'ネック マッサージ器'],
+        maxResults: 10,
+        sortBy: 'featured',
+        enabled: true
+      },
+      {
+        name: 'scalp_care',
+        searchIndex: 'Beauty',
+        keywords: ['電動頭皮ブラシ', 'ヘッドスパ', 'ヘッドマッサージャー', '頭皮マッサージ', 'スカルプブラシ', 'ヘッドケア', '頭皮ケア 電動', 'ヘッドマッサージ機'],
+        maxResults: 10,
+        sortBy: 'featured',
+        enabled: true
       }
     ];
   }
@@ -870,7 +894,11 @@ export class ProductSearcher {
       'emergency_foods': 'GroceryAndGourmetFood',
       'tea_leaves': 'GroceryAndGourmetFood',
       'smartphones': 'Electronics',
-      'color_contacts': 'Beauty'
+      'color_contacts': 'Beauty',
+      'tablets': 'Electronics',
+      'eye_care': 'HealthPersonalCare',
+      'neck_massager': 'HealthPersonalCare',
+      'scalp_care': 'Beauty'
     };
     return categoryMap[categoryName.toLowerCase()] || 'All';
   }
