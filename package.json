@@ -5,7 +5,7 @@
   "main": "dist/index.js",
   "scripts": {
     "sanitize:frontmatter": "node scripts/sanitize-frontmatter.js",
-    "prebuild:hugo": "node scripts/sanitize-frontmatter.js && mkdir -p static/data && cp data/categorygroups.json static/data/",
+    "prebuild:hugo": "mkdir -p static/data && cp data/categorygroups.json static/data/",
     "build": "tsc",
     "dev": "ts-node src/index.ts",
     "test": "jest",
@@ -16,7 +16,7 @@
     "clean": "rimraf dist",
     "search:products": "ts-node src/scripts/product-search-cli.ts",
     "investigate": "ts-node src/scripts/jules-investigation-cli.ts",
-    "generate:articles": "ts-node src/scripts/article-generation-cli.ts",
+    "generate:articles": "ts-node src/scripts/article-generation-cli.ts && node scripts/sanitize-frontmatter.js",
     "merge:pr": "ts-node src/scripts/pr-merge-cli.ts",
     "organize:categories": "ts-node src/scripts/organize-categories-cli.ts",
     "sort:categories": "node scripts/sort_categories.js"
