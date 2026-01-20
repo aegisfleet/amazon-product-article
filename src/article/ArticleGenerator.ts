@@ -1134,6 +1134,12 @@ ${score >= 80 ? '自信を持っておすすめできる商品です。' :
   /**
    * フロントマターを生成
    */
+  private escapeForFrontMatter(value: string): string {
+    return value
+      .replace(/\\/g, '\\\\')
+      .replace(/"/g, '\\"');
+  }
+
   private generateFrontMatter(metadata: ArticleMetadata): string {
     const lines = [
       '---',
@@ -1312,21 +1318,21 @@ ${score >= 80 ? '自信を持っておすすめできる商品です。' :
         if (metadata.hero.score_rationale.top_plus) {
           lines.push('    top_plus:');
           lines.push(`      points: ${metadata.hero.score_rationale.top_plus.points}`);
-          lines.push(`      desc: "${metadata.hero.score_rationale.top_plus.desc.replace(/"/g, '\\"')}"`);
+          lines.push(`      desc: "${this.escapeForFrontMatter(metadata.hero.score_rationale.top_plus.desc)}"`);
         }
         if (metadata.hero.score_rationale.top_minus) {
           lines.push('    top_minus:');
           lines.push(`      points: ${metadata.hero.score_rationale.top_minus.points}`);
-          lines.push(`      desc: "${metadata.hero.score_rationale.top_minus.desc.replace(/"/g, '\\"')}"`);
+          lines.push(`      desc: "${this.escapeForFrontMatter(metadata.hero.score_rationale.top_minus.desc)}"`);
         }
       }
 
       if (metadata.hero.target_users && metadata.hero.target_users.length > 0) {
-        lines.push(`  target_users: [${metadata.hero.target_users.map(u => `"${u.replace(/"/g, '\\"')}"`).join(', ')}]`);
+        lines.push(`  target_users: [${metadata.hero.target_users.map(u => `"${this.escapeForFrontMatter(u)}"`).join(', ')}]`);
       }
 
       if (metadata.hero.warnings && metadata.hero.warnings.length > 0) {
-        lines.push(`  warnings: [${metadata.hero.warnings.map(w => `"${w.replace(/"/g, '\\"')}"`).join(', ')}]`);
+        lines.push(`  warnings: [${metadata.hero.warnings.map(w => `"${this.escapeForFrontMatter(w)}"`).join(', ')}]`);
       }
 
 
