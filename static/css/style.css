@@ -2786,3 +2786,68 @@ a:hover {
     font-size: 0.95rem;
   }
 }
+
+/* =====================================================
+   KEEPA PRICE GRAPH SECTION
+   ===================================================== */
+
+.keepa-section {
+  margin: var(--spacing-xl) 0;
+  padding: var(--spacing-lg);
+  background: var(--color-bg-card);
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-sm);
+}
+
+.keepa-section-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: var(--spacing-md);
+  color: var(--color-text-main);
+}
+
+.keepa-graph-container {
+  text-align: center;
+}
+
+.keepa-graph-container a {
+  display: block;
+  transition: var(--transition-base);
+}
+
+.keepa-graph-container a:hover {
+  opacity: 0.9;
+  transform: scale(1.01);
+}
+
+.keepa-graph-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  background: #fff;
+  display: block;
+  margin: 0 auto;
+}
+
+.keepa-note {
+  margin-top: var(--spacing-sm);
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+}
+
+@media (max-width: 768px) {
+  .keepa-section {
+    padding: var(--spacing-md);
+    margin: var(--spacing-md) 0;
+  }
+
+  .keepa-section-title {
+    font-size: 1.1rem;
+  }
+
+  .keepa-note {
+    font-size: 0.75rem;
+  }
+}
