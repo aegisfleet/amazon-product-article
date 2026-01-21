@@ -2171,6 +2171,17 @@ a:hover {
   margin-bottom: var(--spacing-lg);
 }
 
+/* Keepaセクション直後の関連セクションの余白調整 */
+#related-products-section .related-section {
+  margin-top: calc(-1 * var(--spacing-md));
+}
+
+@media (max-width: 767px) {
+  #related-products-section .related-section {
+    margin-top: var(--spacing-sm);
+  }
+}
+
 .related-section-title {
   font-size: 1.125rem;
   font-weight: 700;

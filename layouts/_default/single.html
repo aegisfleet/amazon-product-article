@@ -54,7 +54,7 @@
         {{ $related = where $related "Params.categories" "intersect" (slice $firstCat) }}
         {{ end }}
 
-        <div id="related-products-section" style="display: none; margin-top: -1rem;">
+        <div id="related-products-section" style="display: none;">
             {{ if gt (len $related) 0 }}
             <section class="related-section">
                 <h3 class="related-section-title">📂 同じカテゴリの商品</h3>
