@@ -43,7 +43,7 @@ jobs:
 
         if [ -n "$CHANGED_FILES" ]; then
           echo "Found changed files: $CHANGED_FILES"
-          npx ts-node src/scripts/article-generation-cli.ts $CHANGED_FILES
+          npx ts-node src/scripts/article-generation-cli.ts --skip-paapi $CHANGED_FILES
         else
           echo "No investigation files changed. Skipping article generation."
         fi
