@@ -1,0 +1,153 @@
+{
+  "analysis": {
+    "productName": "オーディオテクニカ AT2020 コンデンサーマイク",
+    "parentAsin": "B0FCXY3LK2",
+    "productDescription": "エントリークラスながらスタジオクオリティの音質を実現した、世界標準のカーディオイド・コンデンサーマイクです。",
+    "productUsage": [
+      "自宅でのボーカル・楽器レコーディング（宅録）",
+      "ポッドキャストやYouTubeなどの動画配信・実況",
+      "テレワークやオンライン会議での高音質通話",
+      "DTM（デスクトップミュージック）制作"
+    ],
+    "positivePoints": [
+      "価格を超えたフラットでクリアな高音質",
+      "堅牢な金属筐体による高い耐久性と高級感",
+      "特定の帯域に偏りがないため、後編集（EQ等）がしやすい",
+      "エントリーモデルとしての圧倒的な実績と信頼性"
+    ],
+    "negativePoints": [
+      "XLRケーブルやショックマウントが別売り",
+      "使用にはファンタム電源（48V）対応のオーディオインターフェースが必須",
+      "感度が高いため、周囲の環境音（エアコンやキーボード音）を拾いやすい"
+    ],
+    "useCases": [
+      "歌ってみた動画の録音",
+      "ゲーム実況・ライブ配信",
+      "ナレーション収録",
+      "オンライン商談"
+    ],
+    "userStories": [
+      {
+        "userType": "歌ってみた初心者（学生）",
+        "scenario": "初めての本格的なレコーディングマイクとして購入",
+        "experience": "スマホのマイクとは次元の違うクリアな音に感動した。自分の声がプロのように聞こえてモチベーションが上がったが、最初はインターフェースの使い方がわからず苦労した。",
+        "sentiment": "positive"
+      },
+      {
+        "userType": "在宅ワーク会社員",
+        "scenario": "Zoom会議の音質改善",
+        "experience": "ヘッドセットのマイクから乗り換えたところ、取引先から「声が非常に聞き取りやすい」と褒められた。アームスタンドと組み合わせて快適に使えている。",
+        "sentiment": "positive"
+      },
+      {
+        "userType": "ゲーム実況者",
+        "scenario": "配信中のボイスチャット",
+        "experience": "音質は最高だが、キーボードの打鍵音やマウスのクリック音まで拾ってしまうため、ノイズゲートの設定やマイク位置の調整に試行錯誤が必要だった。",
+        "sentiment": "mixed"
+      }
+    ],
+    "userImpression": "「最初の1本ならこれ」と誰もが口を揃える定番モデル。音質への不満は皆無に近いが、XLR接続のハードル（機材・知識）が初心者には唯一の壁となっている。",
+    "sources": [
+      {
+        "name": "Audio-Technica 公式製品ページ",
+        "url": "https://www.audio-technica.co.jp/product/AT2020",
+        "credibility": "High"
+      },
+      {
+        "name": "Amazon カスタマーレビュー",
+        "url": "https://www.amazon.co.jp/product-reviews/B0006H92QK",
+        "credibility": "Medium"
+      }
+    ],
+    "lastInvestigated": "2026-01-21",
+    "competitiveAnalysis": [
+      {
+        "name": "Marantz Professional MPM-1000",
+        "asin": "B01C05AL4C",
+        "priceComparison": "AT2020の半額以下（約6,000円）で購入可能",
+        "featureComparison": [
+          "ショックマウントとXLRケーブルが付属しておりコスパが高い",
+          "音質はAT2020に比べるとやや高域に癖がある"
+        ],
+        "differentiators": [
+          "付属品の充実度と圧倒的な安さ",
+          "AT2020の方が音の解像度とフラットさで勝る"
+        ]
+      },
+      {
+        "name": "Audio-Technica AT2035",
+        "asin": "B002T45X1G",
+        "priceComparison": "AT2020の約1.7倍（約23,000円）",
+        "featureComparison": [
+          "専用ショックマウントが付属",
+          "ローカットスイッチとパッドスイッチ（-10dB）を搭載"
+        ],
+        "differentiators": [
+          "ノイズ軽減機能と付属品の充実",
+          "予算に余裕があるならAT2035の方が長期的に使いやすい"
+        ]
+      },
+      {
+        "name": "Sony ECM-PCV80U",
+        "asin": "B005M2HDA6",
+        "priceComparison": "非常に安価（約3,500円）",
+        "featureComparison": [
+          "PCに直接接続できるUSBオーディオボックス付属",
+          "エレクトレットコンデンサー型で、音質はAT2020に遠く及ばない"
+        ],
+        "differentiators": [
+          "オーディオインターフェース不要の手軽さ",
+          "音質を求めるならAT2020一択"
+        ]
+      },
+      {
+        "name": "AKG P120",
+        "asin": "B00M9CUOKI",
+        "priceComparison": "同価格帯（約10,000〜12,000円）",
+        "featureComparison": [
+          "ローカットとパッドスイッチを搭載している点がAT2020より有利",
+          "音質はAKGらしいきらびやかさがある"
+        ],
+        "differentiators": [
+          "スイッチ類の有無（P120はあり、AT2020はなし）",
+          "AT2020の方がフラットで汎用性が高いとされることが多い"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "本格的なレコーディングや配信を始めたい初心者",
+        "安価なUSBマイクからのステップアップを考えている人",
+        "長く使える信頼性の高いマイクを求めている人"
+      ],
+      "pros": [
+        "価格以上のプロフェッショナルな音質",
+        "癖のない音で編集や加工がしやすい",
+        "頑丈で壊れにくい"
+      ],
+      "cons": [
+        "別途オーディオインターフェースとXLRケーブルが必要",
+        "ショックマウントが付属しない",
+        "環境音対策が必要"
+      ],
+      "score": 90,
+      "scoreRationale": "[基本点: 70]\n[加点: +10] (1万円台前半ながらプロの現場でも通用する驚異的な音質性能)\n[加点: +10] (圧倒的なコストパフォーマンスと長年の信頼性)\n[加点: +5] (堅牢な金属筐体と洗練されたデザイン)\n[減点: -5] (ショックマウントやXLRケーブルが別売りで、初心者は追加出費が必要)\n[合計: 90]"
+    },
+    "technicalSpecs": {
+      "type": "バックエレクトレット・コンデンサー型",
+      "polarPattern": "単一指向性 (Cardioid)",
+      "frequencyResponse": "20～20,000Hz",
+      "sensitivity": "-37dB (14.1mV) re 1V at 1 Pa",
+      "impedance": "100Ω",
+      "maxInputSoundPressure": "144dB SPL",
+      "snRatio": "74dB",
+      "phantomPower": "48V DC",
+      "connector": "3ピンXLRM",
+      "dimensions": {
+        "length": "162.0mm",
+        "diameter": "52.0mm",
+        "weight": "345g"
+      }
+    }
+  }
+}
