@@ -149,3 +149,8 @@ python scripts/paapi_search_items.py "枕カバー フランネル" --search-ind
 **重要なルール**:
 今回のように「スペック表示」や「バッジ」、「価格表示」などの新しい要素を追加する場合は、**これら4ファイルすべて**に対して実装を行い、ユーザー体験を統一してください。
 以前は TypeScript で HTML を生成していましたが、リファクタリングにより **全て Hugo テンプレート側で HTML を生成する** アーキテクチャに統一されました。`ArticleGenerator.ts` は Front Matter へのデータ出力のみを担当します。
+
+## 10. 開発環境
+
+- **ローカルサーバーURL**: `http://localhost:1313/amazon-product-article/`
+  - Hugoサーバーを起動 (`hugo server`) した際のデフォルト確認用URLです。
