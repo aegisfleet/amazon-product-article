@@ -17,6 +17,8 @@ jobs:
 
     steps:
     - uses: actions/checkout@v6
+      with:
+        fetch-depth: 0
 
     - name: Use Node.js
       uses: actions/setup-node@v6
@@ -35,7 +37,18 @@ jobs:
         AMAZON_PARTNER_TAG: ${{ secrets.AMAZON_PARTNER_TAG }}
         AMAZON_ACCESS_KEY: ${{ secrets.AMAZON_ACCESS_KEY }}
         AMAZON_SECRET_KEY: ${{ secrets.AMAZON_SECRET_KEY }}
-      run: npm run generate:articles
+      run: |
+        git fetch origin ${{ github.base_ref }}
+        CHANGED_FILES=$(git diff --name-only origin/${{ github.base_ref }} HEAD -- 'data/investigations/*.json' | tr '\n' ' ')
+
+        if [ -n "$CHANGED_FILES" ]; then
+          echo "Found changed files: $CHANGED_FILES"
+          npx ts-node src/scripts/article-generation-cli.ts $CHANGED_FILES
+        else
+          echo "No investigation files changed. Skipping article generation."
+        fi
+
+        node scripts/sanitize-frontmatter.js
 
     - name: Setup Hugo
       uses: peaceiris/actions-hugo@v3
