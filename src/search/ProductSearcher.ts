@@ -673,7 +673,7 @@ export class ProductSearcher {
       {
         name: 'telework',
         searchIndex: 'Electronics',
-        keywords: ['マイク', 'オーディオインターフェース', 'Webカメラ', 'ヘッドセット', 'デスクライト', 'モニターアーム'],
+        keywords: ['マイク', 'オーディオインターフェース', 'Webカメラ', 'ヘッドセット', 'デスクライト', 'モニターライト', 'モニターアーム'],
         maxResults: 10,
         sortBy: 'featured',
         enabled: true
