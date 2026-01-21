@@ -219,7 +219,12 @@ async function main(): Promise<void> {
 
         // Parse arguments
         const args = process.argv.slice(2);
+        const skipPaapi = args.includes('--skip-paapi');
         const targetFiles = args.filter(arg => arg.endsWith('.json'));
+
+        if (skipPaapi) {
+            logger.info('--skip-paapi flag detected, will skip PA-API calls and use cache only');
+        }
         if (targetFiles.length > 0) {
             logger.info(`Targeting ${targetFiles.length} specific files.`);
         }
@@ -254,7 +259,7 @@ async function main(): Promise<void> {
         // Initialize PA-API Client & Cache
         const paapiClient = new PAAPIClient();
         const paapiCache = new PAAPICache();
-        const usePaapi = options.accessKey && options.secretKey && options.partnerTag;
+        const usePaapi = !skipPaapi && options.accessKey && options.secretKey && options.partnerTag;
 
         if (usePaapi) {
             try {
