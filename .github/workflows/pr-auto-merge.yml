@@ -35,8 +35,6 @@ jobs:
     - name: Generate articles
       env:
         AMAZON_PARTNER_TAG: ${{ secrets.AMAZON_PARTNER_TAG }}
-        AMAZON_ACCESS_KEY: ${{ secrets.AMAZON_ACCESS_KEY }}
-        AMAZON_SECRET_KEY: ${{ secrets.AMAZON_SECRET_KEY }}
       run: |
         git fetch origin ${{ github.base_ref }}
         CHANGED_FILES=$(git diff --name-only origin/${{ github.base_ref }} HEAD -- 'data/investigations/*.json' | tr '\n' ' ')
