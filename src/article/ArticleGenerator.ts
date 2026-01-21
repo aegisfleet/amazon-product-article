@@ -1613,6 +1613,24 @@ ${score >= 80 ? '自信を持っておすすめできる商品です。' :
         continue;
       }
 
+      // 加点: 0 のパターン（プラス記号なし）: [加点: 0] 説明
+      const zeroAddMatch = line.match(/\[加点:\s*0\]\s*(.*)/);
+      if (zeroAddMatch) {
+        const [, desc = ''] = zeroAddMatch;
+        const cleanDesc = desc.replace(/<[^>]*>/g, ' ').replace(/\s+/g, ' ').replace(/^[(（]/, '').replace(/[)）]$/, '').trim();
+        parts.push(`<div class="score-item score-plus">✅ <span class="score-points">±0</span> ${cleanDesc}</div>`);
+        continue;
+      }
+
+      // 減点: 0 のパターン（マイナス記号なし）: [減点: 0] 説明
+      const zeroSubMatch = line.match(/\[減点:\s*0\]\s*(.*)/);
+      if (zeroSubMatch) {
+        const [, desc = ''] = zeroSubMatch;
+        const cleanDesc = desc.replace(/<[^>]*>/g, ' ').replace(/\s+/g, ' ').replace(/^[(（]/, '').replace(/[)）]$/, '').trim();
+        parts.push(`<div class="score-item score-minus">⚠️ <span class="score-points">±0</span> ${cleanDesc}</div>`);
+        continue;
+      }
+
       // パースできない行はそのまま表示
       if (line.trim()) {
         parts.push(`<div class="score-item">${line}</div>`);
