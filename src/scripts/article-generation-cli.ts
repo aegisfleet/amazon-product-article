@@ -2,7 +2,7 @@
 /**
  * Article Generation CLI Script
  * GitHub Actions から実行される記事生成・公開スクリプト
- * 
+ *
  * 環境変数:
  *   AMAZON_PARTNER_TAG - Amazon アソシエイトパートナータグ
  *   GITHUB_TOKEN - GitHub トークン（コミット用）
@@ -103,57 +103,77 @@ function getOptions(): CLIOptions {
 /**
  * ファイル名からASINを抽出し、JSON構造を変換してInvestigationDataを構築
  */
-async function loadInvestigationResults(): Promise<InvestigationData[]> {
+async function loadInvestigationResults(targetFiles?: string[]): Promise<InvestigationData[]> {
     const investigationsDir = path.join(process.cwd(), 'data', 'investigations');
+    let filesToProcess: string[] = [];
 
-    try {
-        const files = await fs.readdir(investigationsDir);
-        const jsonFiles = files.filter(f => f.endsWith('.json') && f !== 'latest-summary.json');
-
-        const results: InvestigationData[] = [];
-        for (const file of jsonFiles) {
-            try {
-                const filePath = path.join(investigationsDir, file);
-                const rawData = await fs.readFile(filePath, 'utf-8');
-                const parsed: RawInvestigationFile = JSON.parse(rawData);
-
-                // ファイル名からASINを抽出 (e.g., "B07DZZJ2B9.json" -> "B07DZZJ2B9")
-                const asin = path.basename(file, '.json');
-
-                // 最小限のProduct情報を構築（ASINのみ必須、他はプレースホルダー）
-                const product: Product = {
-                    asin,
-                    title: `Product ${asin}`,  // タイトルは後で記事生成時に更新可能
-                    category: '',
-                    price: { amount: 0, currency: 'JPY', formatted: '' },
-                    images: { primary: '', thumbnails: [] },
-                    specifications: {},
-                    rating: { average: 0, count: 0 },
-                };
-
-                // InvestigationResultを構築
-                const investigation: InvestigationResult = {
-                    sessionId: `file-${asin}`,
-                    product,
-                    analysis: parsed.analysis,
-                    generatedAt: new Date(),
-                };
-
-                results.push({
-                    product,
-                    investigation,
-                    timestamp: new Date().toISOString(),
-                });
-            } catch (error) {
-                logger.warn(`Failed to load investigation file ${file}:`, error);
-            }
+    if (targetFiles && targetFiles.length > 0) {
+        filesToProcess = targetFiles;
+    } else {
+        try {
+            const files = await fs.readdir(investigationsDir);
+            filesToProcess = files
+                .filter(f => f.endsWith('.json') && f !== 'latest-summary.json')
+                .map(f => path.join(investigationsDir, f));
+        } catch (error) {
+            logger.error('Failed to read investigations directory:', error);
+            return [];
         }
-
-        return results;
-    } catch (error) {
-        logger.error('Failed to load investigation results:', error);
-        return [];
     }
+
+    const results: InvestigationData[] = [];
+    for (const filePath of filesToProcess) {
+        try {
+            // Check if file exists
+            try {
+                await fs.access(filePath);
+            } catch {
+                logger.warn(`File not found: ${filePath}, skipping`);
+                continue;
+            }
+
+            const rawData = await fs.readFile(filePath, 'utf-8');
+            const parsed: RawInvestigationFile = JSON.parse(rawData);
+
+            const fileName = path.basename(filePath);
+            // Skip if not a JSON file or is summary
+            if (!fileName.endsWith('.json') || fileName === 'latest-summary.json') {
+                continue;
+            }
+
+            // ファイル名からASINを抽出 (e.g., "B07DZZJ2B9.json" -> "B07DZZJ2B9")
+            const asin = path.basename(fileName, '.json');
+
+            // 最小限のProduct情報を構築（ASINのみ必須、他はプレースホルダー）
+            const product: Product = {
+                asin,
+                title: `Product ${asin}`,  // タイトルは後で記事生成時に更新可能
+                category: '',
+                price: { amount: 0, currency: 'JPY', formatted: '' },
+                images: { primary: '', thumbnails: [] },
+                specifications: {},
+                rating: { average: 0, count: 0 },
+            };
+
+            // InvestigationResultを構築
+            const investigation: InvestigationResult = {
+                sessionId: `file-${asin}`,
+                product,
+                analysis: parsed.analysis,
+                generatedAt: new Date(),
+            };
+
+            results.push({
+                product,
+                investigation,
+                timestamp: new Date().toISOString(),
+            });
+        } catch (error) {
+            logger.warn(`Failed to load investigation file ${filePath}:`, error);
+        }
+    }
+
+    return results;
 }
 
 async function ensureOutputDirectories(): Promise<void> {
@@ -197,10 +217,17 @@ async function main(): Promise<void> {
         const options = getOptions();
         logger.info(`Partner tag: ${options.partnerTag || '(not set)'}`);
 
+        // Parse arguments
+        const args = process.argv.slice(2);
+        const targetFiles = args.filter(arg => arg.endsWith('.json'));
+        if (targetFiles.length > 0) {
+            logger.info(`Targeting ${targetFiles.length} specific files.`);
+        }
+
         await ensureOutputDirectories();
 
         // 調査結果を読み込み
-        const investigations = await loadInvestigationResults();
+        const investigations = await loadInvestigationResults(targetFiles);
         if (investigations.length === 0) {
             logger.warn('No investigation results found');
             await setGitHubOutput('articles-generated', '0');
