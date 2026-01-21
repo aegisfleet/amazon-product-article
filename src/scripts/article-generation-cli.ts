@@ -355,6 +355,22 @@ async function main(): Promise<void> {
                     };
                     data.investigation.product = data.product;
                     logger.info(`Used cached product data for ${data.product.asin}`);
+                } else if (skipPaapi) {
+                    // Skip PA-API mode: Insert dummy data for Hugo build validation
+                    logger.info(`Using dummy data for ${data.product.asin} (skip-paapi mode)`);
+                    data.product = {
+                        ...data.product,
+                        title: `商品調査中 (${data.product.asin})`,
+                        category: 'その他',
+                        price: { amount: 9999, currency: 'JPY', formatted: '¥9,999' },
+                        images: {
+                            primary: 'https://via.placeholder.com/500x500.png?text=No+Image',
+                            thumbnails: []
+                        },
+                        specifications: {},
+                        rating: { average: 4.0, count: 100 },
+                    };
+                    data.investigation.product = data.product;
                 } else if (usePaapi) {
                     // Only warn if we sought it but failed to get it
                     logger.warn(`Product data not found for ${data.product.asin}, proceeding with basic info`);
