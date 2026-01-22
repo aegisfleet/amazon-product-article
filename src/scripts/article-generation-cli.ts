@@ -9,9 +9,11 @@
  *   GITHUB_REPOSITORY - GitHubリポジトリ（owner/repo形式）
  */
 
+import { exec } from 'child_process';
 import dotenv from 'dotenv';
 import fs from 'fs/promises';
 import path from 'path';
+import { promisify } from 'util';
 import { PAAPICache } from '../api/PAAPICache';
 import { PAAPIClient } from '../api/PAAPIClient';
 import { ArticleGenerator, GeneratedArticle } from '../article/ArticleGenerator';
@@ -19,6 +21,7 @@ import { GitHubPublisher } from '../github/GitHubPublisher';
 import { InvestigationResult } from '../types/JulesTypes';
 import { Product, ProductDetail } from '../types/Product';
 import { Logger } from '../utils/Logger';
+const execAsync = promisify(exec);
 
 const logger = Logger.getInstance();
 
@@ -221,6 +224,17 @@ async function main(): Promise<void> {
         const args = process.argv.slice(2);
         const skipPaapi = args.includes('--skip-paapi');
         const targetFiles = args.filter(arg => arg.endsWith('.json'));
+
+        // Handle --asin flag
+        const asinIndex = args.indexOf('--asin');
+        if (asinIndex !== -1 && asinIndex + 1 < args.length) {
+            const asin = args[asinIndex + 1];
+            if (asin && !asin.startsWith('-')) {
+                const asinFile = path.join(process.cwd(), 'data', 'investigations', `${asin}.json`);
+                targetFiles.push(asinFile);
+                logger.info(`Targeting ASIN via flag: ${asin}`);
+            }
+        }
 
         if (skipPaapi) {
             logger.info('--skip-paapi flag detected, will skip PA-API calls and use cache only');
@@ -436,6 +450,17 @@ async function main(): Promise<void> {
         // GitHub Actions 出力を設定
         await setGitHubOutput('articles-generated', generatedCount.toString());
         await setGitHubOutput('total-investigations', investigations.length.toString());
+
+        // Sanitize Frontmatter
+        try {
+            logger.info('Running frontmatter sanitization...');
+            const { stdout, stderr } = await execAsync('node scripts/sanitize-frontmatter.js');
+            if (stdout) console.log(stdout);
+            if (stderr) console.error(stderr);
+        } catch (error) {
+            logger.warn('Frontmatter sanitization failed:', error);
+            // Don't fail the build, just warn
+        }
 
         logger.info(`Article generation completed: ${generatedCount}/${investigations.length} articles`);
         process.exit(0);
