@@ -211,10 +211,17 @@
     {{ end }}
     {{ end }}
 
-    {{/* 同スコア帯の人気商品（±10点範囲、別カテゴリ優先） */}}
+    {{/* 同スコア帯の人気商品（10の位ベースの範囲: 90点以上は90-100、80点台は80-89、等） */}}
     {{ if gt $currentScore 0 }}
-    {{ $minScore := sub $currentScore 10 }}
-    {{ $maxScore := add $currentScore 10 }}
+    {{/* 90点以上は90-100、それ以外は10の位で区切る (例: 83→80-89, 77→70-79) */}}
+    {{ $decade := div $currentScore 10 }}
+    {{ $minScore := mul $decade 10 }}
+    {{ $maxScore := 0 }}
+    {{ if ge $currentScore 90 }}
+    {{ $maxScore = 99999 }}
+    {{ else }}
+    {{ $maxScore = sub (add $minScore 10) 1 }}
+    {{ end }}
     {{ $sameScoreRange := where $allArticles "Params.score" "ge" $minScore }}
     {{ $sameScoreRange = where $sameScoreRange "Params.score" "le" $maxScore }}
 
