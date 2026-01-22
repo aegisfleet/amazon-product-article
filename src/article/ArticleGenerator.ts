@@ -912,7 +912,7 @@ ${primeText ? `<span class="competitor-prime">${primeText}</span>` : ''}
         if (competitor.asin) {
           const investigationPath = path.join(process.cwd(), 'data', 'investigations', `${competitor.asin}.json`);
           if (fs.existsSync(investigationPath)) {
-            internalLink = `<a href="/${competitor.asin}/" class="btn-internal-small">📄 詳細レビュー</a>`;
+            internalLink = `<a href="../${competitor.asin}/" class="btn-internal-small">📄 サイト内レビュー</a>`;
           }
         }
 

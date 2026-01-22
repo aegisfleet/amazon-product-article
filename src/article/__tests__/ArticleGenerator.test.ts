@@ -329,8 +329,8 @@ describe('ArticleGenerator', () => {
         mockCompetitorDetails
       );
 
-      expect(result.content).toContain('href="/B08COMPET1/"');
-      expect(result.content).toContain('詳細レビュー');
+      expect(result.content).toContain('href="../B08COMPET1/"');
+      expect(result.content).toContain('サイト内レビュー');
       expect(result.content).toContain('class="btn-internal-small"');
     });
 
@@ -354,8 +354,8 @@ describe('ArticleGenerator', () => {
         mockCompetitorDetails
       );
 
-      expect(result.content).not.toContain('href="/B08COMPET1/"');
-      expect(result.content).not.toContain('詳細レビュー');
+      expect(result.content).not.toContain('href="../B08COMPET1/"');
+      expect(result.content).not.toContain('サイト内レビュー');
     });
 
     it('should not generate duplicate keys in front matter', async () => {
