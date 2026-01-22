@@ -332,6 +332,10 @@ describe('ArticleGenerator', () => {
       expect(result.content).toContain('href="../B08COMPET1/"');
       expect(result.content).toContain('サイト内レビュー');
       expect(result.content).toContain('class="btn-internal-small"');
+
+      // Verify wrapping in a tag
+      expect(result.content).toContain('<a href="../B08COMPET1/" class="competitor-preview">');
+      expect(result.content).not.toContain('<div class="competitor-preview">');
     });
 
     it('should NOT show internal link if investigation file does not exist', async () => {

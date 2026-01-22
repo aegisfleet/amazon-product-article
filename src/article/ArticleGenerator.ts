@@ -879,6 +879,17 @@ ${reviewAnalysis ? this.generateSentimentAnalysis(reviewAnalysis) : ''}`;
         // PA-APIから取得した競合商品の詳細情報
         const detail = competitor.asin ? competitorDetails?.get(competitor.asin) : undefined;
 
+        // 調査済み記事が存在するかチェック
+        let internalLink = '';
+        let hasInternalReview = false;
+        if (competitor.asin) {
+          const investigationPath = path.join(process.cwd(), 'data', 'investigations', `${competitor.asin}.json`);
+          if (fs.existsSync(investigationPath)) {
+            hasInternalReview = true;
+            internalLink = `<a href="../${competitor.asin}/" class="btn-internal-small">📄 サイト内レビュー</a>`;
+          }
+        }
+
         // 商品プレビュー（PA-API情報がある場合）
         let productPreview = '';
         if (detail) {
@@ -887,15 +898,18 @@ ${reviewAnalysis ? this.generateSentimentAnalysis(reviewAnalysis) : ''}`;
           const availabilityText = detail.availability || '';
           const primeText = detail.isPrimeEligible ? '⭐ Prime対応' : '';
 
+          const previewTag = hasInternalReview ? 'a' : 'div';
+          const previewAttrs = hasInternalReview ? ` href="../${competitor.asin}/"` : '';
+
           productPreview = `
-<div class="competitor-preview">
+<${previewTag}${previewAttrs} class="competitor-preview">
 <img src="${imageUrl}" alt="${competitor.name}" class="competitor-preview-img">
 <div class="competitor-preview-info">
 ${priceText ? `<span class="competitor-actual-price">${priceText}</span>` : ''}
 ${availabilityText ? `<span class="competitor-availability">📦 ${availabilityText}</span>` : ''}
 ${primeText ? `<span class="competitor-prime">${primeText}</span>` : ''}
 </div>
-</div>`;
+</${previewTag}>`;
         }
 
         // PA-APIが実行された場合（competitorDetailsが存在する場合）、
@@ -906,15 +920,6 @@ ${primeText ? `<span class="competitor-prime">${primeText}</span>` : ''}
         const competitorLink = shouldShowLink
           ? `<a href="${detail?.detailPageUrl || this.affiliateManager.generateAffiliateLink(competitor.asin || '').url}" class="btn-amazon-small" target="_blank" rel="noopener noreferrer">🛒 Amazonで見る</a>`
           : '';
-
-        // 調査済み記事が存在するかチェック
-        let internalLink = '';
-        if (competitor.asin) {
-          const investigationPath = path.join(process.cwd(), 'data', 'investigations', `${competitor.asin}.json`);
-          if (fs.existsSync(investigationPath)) {
-            internalLink = `<a href="../${competitor.asin}/" class="btn-internal-small">📄 サイト内レビュー</a>`;
-          }
-        }
 
         return `<div class="competitor-card">
 <h4>${competitor.name}</h4>
