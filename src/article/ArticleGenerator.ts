@@ -2,6 +2,8 @@
  * Article_Generator - 調査結果からMarkdown記事として生成するコンポーネント
  */
 
+import fs from 'fs';
+import path from 'path';
 import { AffiliateLinkManager } from '../affiliate/AffiliateLinkManager';
 import { ReviewAnalysisResult } from '../analysis/ReviewAnalyzer';
 import { AffiliateLink } from '../types/AffiliateTypes';
@@ -905,6 +907,15 @@ ${primeText ? `<span class="competitor-prime">${primeText}</span>` : ''}
           ? `<a href="${detail?.detailPageUrl || this.affiliateManager.generateAffiliateLink(competitor.asin || '').url}" class="btn-amazon-small" target="_blank" rel="noopener noreferrer">🛒 Amazonで見る</a>`
           : '';
 
+        // 調査済み記事が存在するかチェック
+        let internalLink = '';
+        if (competitor.asin) {
+          const investigationPath = path.join(process.cwd(), 'data', 'investigations', `${competitor.asin}.json`);
+          if (fs.existsSync(investigationPath)) {
+            internalLink = `<a href="/${competitor.asin}/" class="btn-internal-small">📄 詳細レビュー</a>`;
+          }
+        }
+
         return `<div class="competitor-card">
 <h4>${competitor.name}</h4>
 <p class="competitor-price">💰 ${competitor.priceComparison}</p>
@@ -921,7 +932,10 @@ ${differentiators}
 </ul>
 </div>
 ${productPreview}
+<div class="competitor-links">
 ${competitorLink}
+${internalLink}
+</div>
 </div>`;
       })
       .join('\n\n');

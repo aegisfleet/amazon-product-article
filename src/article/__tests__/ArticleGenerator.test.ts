@@ -2,10 +2,17 @@
  * Unit tests for ArticleGenerator
  */
 
+import fs from 'fs';
 import { ReviewAnalysisResult } from '../../analysis/ReviewAnalyzer';
 import { InvestigationResult } from '../../types/JulesTypes';
 import { Product, ProductDetail } from '../../types/Product';
 import { ArticleGenerator } from '../ArticleGenerator';
+
+// Mock fs
+jest.mock('fs', () => ({
+  ...jest.requireActual('fs'),
+  existsSync: jest.fn(),
+}));
 
 // Mock ConfigManager
 jest.mock('../../config/ConfigManager', () => {
@@ -298,6 +305,57 @@ describe('ArticleGenerator', () => {
 
       expect(result.content).toContain('競合商品A');
       expect(result.content).toContain('amazon.co.jp/dp/B08COMPET1');
+    });
+
+    it('should show internal link for competitors with existing investigation file', async () => {
+      // Mock fs.existsSync to return true for the competitor
+      (fs.existsSync as jest.Mock).mockImplementation((pathStr: string) => {
+        return pathStr.includes('B08COMPET1');
+      });
+
+      const mockDetail: ProductDetail = {
+        ...mockProduct,
+        asin: 'B08COMPET1',
+      } as any;
+      const mockCompetitorDetails = new Map<string, ProductDetail>();
+      mockCompetitorDetails.set('B08COMPET1', mockDetail);
+
+      const result = await generator.generateArticle(
+        mockProduct,
+        mockInvestigation,
+        undefined,
+        undefined,
+        undefined,
+        mockCompetitorDetails
+      );
+
+      expect(result.content).toContain('href="/B08COMPET1/"');
+      expect(result.content).toContain('詳細レビュー');
+      expect(result.content).toContain('class="btn-internal-small"');
+    });
+
+    it('should NOT show internal link if investigation file does not exist', async () => {
+      // Mock fs.existsSync to return false
+      (fs.existsSync as jest.Mock).mockReturnValue(false);
+
+      const mockDetail: ProductDetail = {
+        ...mockProduct,
+        asin: 'B08COMPET1',
+      } as any;
+      const mockCompetitorDetails = new Map<string, ProductDetail>();
+      mockCompetitorDetails.set('B08COMPET1', mockDetail);
+
+      const result = await generator.generateArticle(
+        mockProduct,
+        mockInvestigation,
+        undefined,
+        undefined,
+        undefined,
+        mockCompetitorDetails
+      );
+
+      expect(result.content).not.toContain('href="/B08COMPET1/"');
+      expect(result.content).not.toContain('詳細レビュー');
     });
 
     it('should not generate duplicate keys in front matter', async () => {
