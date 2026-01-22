@@ -1,0 +1,125 @@
+{
+  "analysis": {
+    "productName": "Amazon Basics 6-in-1 USB-C 3.2 (10G) ハブ",
+    "parentAsin": "B0CP58HPYH",
+    "productDescription": "USB-Cポートを拡張し、HDMI 4K出力、有線LAN、複数のUSB機器接続を可能にする多機能ハブです。",
+    "productUsage": [
+      "ノートPCのポート拡張（MacBook, Windows等）",
+      "外付けSSDなどの高速データ転送（10Gbps対応）",
+      "4K 60Hzでの外部モニター出力",
+      "安定した有線LANインターネット接続"
+    ],
+    "positivePoints": [
+      "USB-A/Cポート共に最大10Gbpsの高速転送に対応",
+      "HDMIポートが4K 60Hzの高リフレッシュレートに対応",
+      "最大100WのUSB PDパススルー充電が可能",
+      "有線LANポート搭載で安定した通信が可能"
+    ],
+    "negativePoints": [
+      "同等スペックの競合製品に比べて価格が高い",
+      "SDカードリーダーが非搭載",
+      "使用中に表面温度が高くなる場合がある（50℃程度）",
+      "ユーザーレビューが少なく、実使用での信頼性が未知数"
+    ],
+    "useCases": [
+      "動画編集など大容量データを扱うクリエイティブ作業",
+      "4Kモニターを使用したデスクワーク環境の構築",
+      "Wi-Fiが不安定な場所での有線LAN接続"
+    ],
+    "userStories": [
+      {
+        "userType": "リモートワーカー",
+        "scenario": "自宅でのデスク環境構築",
+        "experience": "（推測）ノートPC 1台でモニター、キーボード、マウス、有線LANを一括接続でき、デスク周りがスッキリする体験。",
+        "sentiment": "positive"
+      },
+      {
+        "userType": "クリエイター",
+        "scenario": "大容量データの移動",
+        "experience": "（推測）10Gbps対応のSSDを接続した際、従来のハブ（5Gbps）よりも高速にファイルをコピーでき、作業効率が向上する。",
+        "sentiment": "positive"
+      },
+      {
+        "userType": "ガジェット比較検討者",
+        "scenario": "購入前の価格比較",
+        "experience": "（推測）機能は申し分ないが、UGREENなどの他社製品と比較すると価格が倍近くするため、購入を躊躇してしまう。",
+        "sentiment": "negative"
+      }
+    ],
+    "userImpression": "10Gbps転送と4K60Hz出力に対応した高性能なハブですが、価格設定が競合他社と比較して高めであるため、コストパフォーマンスを重視するユーザーには選びにくい製品です。",
+    "sources": [
+      {
+        "name": "Amazon商品ページ仕様詳細",
+        "url": "https://www.amazon.co.jp/dp/B0CP58HPYH",
+        "credibility": "高"
+      }
+    ],
+    "lastInvestigated": "2026-01-22",
+    "competitiveAnalysis": [
+      {
+        "name": "UGREEN Revodok 6-in-1 (10Gbps)",
+        "asin": "B0D1XN2LF1",
+        "priceComparison": "約2,800円（本製品の半額以下）",
+        "featureComparison": [
+          "USB 3.2 Gen 2 (10Gbps) 対応で同等",
+          "HDMI 4K@60Hz 対応で同等"
+        ],
+        "differentiators": [
+          "圧倒的なコストパフォーマンス",
+          "セール頻度が高い"
+        ]
+      },
+      {
+        "name": "Anker PowerExpand 6-in-1",
+        "asin": "B08C74W2QK",
+        "priceComparison": "約4,000円（本製品より安い）",
+        "featureComparison": [
+          "USB 3.0 (5Gbps) で本製品より遅い",
+          "HDMI 4K@30Hz で本製品より劣る"
+        ],
+        "differentiators": [
+          "Ankerブランドの信頼性とサポート",
+          "知名度が高い"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "Amazon Basicsブランドで周辺機器を統一したいユーザー",
+        "10Gbps転送と4K60Hz出力の両方が必須なユーザー"
+      ],
+      "pros": [
+        "USB 3.2 Gen 2 (10Gbps) による高速データ転送",
+        "4K 60Hzの滑らかな映像出力",
+        "Amazonブランドの安心感（返品対応など）"
+      ],
+      "cons": [
+        "機能に対して価格が割高",
+        "SDカードスロットがないため写真取り込みには不向き"
+      ],
+      "score": 60,
+      "scoreRationale": "[基本点: 70]\n[加点: +5] (10Gbpsポートと4K60Hz対応は高性能)\n[減点: -15] (同等スペックの競合製品が半額以下で購入可能)\n[合計: 60]"
+    },
+    "technicalSpecs": {
+      "dimensions": {
+        "height": "1.5 cm",
+        "width": "11.94 cm",
+        "depth": "4.6 cm",
+        "weight": "約80g"
+      },
+      "power": "PD 100W入力 (85W出力)",
+      "connectivity": [
+        "USB-C (PD Input) x1",
+        "USB-C (10Gbps Data) x1",
+        "USB-A (10Gbps Data) x2",
+        "HDMI (4K@60Hz) x1",
+        "Ethernet (1Gbps) x1"
+      ],
+      "other": [
+        "SDカードリーダー非搭載",
+        "ケーブル長 15cm",
+        "筐体材質: プラスチック（推定）"
+      ]
+    }
+  }
+}
