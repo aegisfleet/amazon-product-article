@@ -956,8 +956,8 @@ ${differentiators}
 </div>
 ${productPreview}
 <div class="competitor-links">
-${competitorLink}
 ${internalLink}
+${competitorLink}
 </div>
 </div>`;
       })
