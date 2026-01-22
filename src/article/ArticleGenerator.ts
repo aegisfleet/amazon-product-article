@@ -2,6 +2,8 @@
  * Article_Generator - 調査結果からMarkdown記事として生成するコンポーネント
  */
 
+import fs from 'fs';
+import path from 'path';
 import { AffiliateLinkManager } from '../affiliate/AffiliateLinkManager';
 import { ReviewAnalysisResult } from '../analysis/ReviewAnalyzer';
 import { AffiliateLink } from '../types/AffiliateTypes';
@@ -877,6 +879,17 @@ ${reviewAnalysis ? this.generateSentimentAnalysis(reviewAnalysis) : ''}`;
         // PA-APIから取得した競合商品の詳細情報
         const detail = competitor.asin ? competitorDetails?.get(competitor.asin) : undefined;
 
+        // 調査済み記事が存在するかチェック
+        let internalLink = '';
+        let hasInternalReview = false;
+        if (competitor.asin) {
+          const investigationPath = path.join(process.cwd(), 'data', 'investigations', `${competitor.asin}.json`);
+          if (fs.existsSync(investigationPath)) {
+            hasInternalReview = true;
+            internalLink = `<a href="../${competitor.asin.toLowerCase()}/" class="btn-internal-small">📄 サイト内レビュー</a>`;
+          }
+        }
+
         // 商品プレビュー（PA-API情報がある場合）
         let productPreview = '';
         if (detail) {
@@ -885,15 +898,18 @@ ${reviewAnalysis ? this.generateSentimentAnalysis(reviewAnalysis) : ''}`;
           const availabilityText = detail.availability || '';
           const primeText = detail.isPrimeEligible ? '⭐ Prime対応' : '';
 
+          const previewTag = hasInternalReview ? 'a' : 'div';
+          const previewAttrs = (hasInternalReview && competitor.asin) ? ` href="../${competitor.asin.toLowerCase()}/"` : '';
+
           productPreview = `
-<div class="competitor-preview">
+<${previewTag}${previewAttrs} class="competitor-preview">
 <img src="${imageUrl}" alt="${competitor.name}" class="competitor-preview-img">
 <div class="competitor-preview-info">
 ${priceText ? `<span class="competitor-actual-price">${priceText}</span>` : ''}
 ${availabilityText ? `<span class="competitor-availability">📦 ${availabilityText}</span>` : ''}
 ${primeText ? `<span class="competitor-prime">${primeText}</span>` : ''}
 </div>
-</div>`;
+</${previewTag}>`;
         }
 
         // PA-APIが実行された場合（competitorDetailsが存在する場合）、
@@ -921,7 +937,10 @@ ${differentiators}
 </ul>
 </div>
 ${productPreview}
+<div class="competitor-links">
 ${competitorLink}
+${internalLink}
+</div>
 </div>`;
       })
       .join('\n\n');
