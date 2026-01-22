@@ -329,12 +329,12 @@ describe('ArticleGenerator', () => {
         mockCompetitorDetails
       );
 
-      expect(result.content).toContain('href="../B08COMPET1/"');
+      expect(result.content).toContain('href="../b08compet1/"');
       expect(result.content).toContain('サイト内レビュー');
       expect(result.content).toContain('class="btn-internal-small"');
 
       // Verify wrapping in a tag
-      expect(result.content).toContain('<a href="../B08COMPET1/" class="competitor-preview">');
+      expect(result.content).toContain('<a href="../b08compet1/" class="competitor-preview">');
       expect(result.content).not.toContain('<div class="competitor-preview">');
     });
 

@@ -886,7 +886,7 @@ ${reviewAnalysis ? this.generateSentimentAnalysis(reviewAnalysis) : ''}`;
           const investigationPath = path.join(process.cwd(), 'data', 'investigations', `${competitor.asin}.json`);
           if (fs.existsSync(investigationPath)) {
             hasInternalReview = true;
-            internalLink = `<a href="../${competitor.asin}/" class="btn-internal-small">📄 サイト内レビュー</a>`;
+            internalLink = `<a href="../${competitor.asin.toLowerCase()}/" class="btn-internal-small">📄 サイト内レビュー</a>`;
           }
         }
 
@@ -899,7 +899,7 @@ ${reviewAnalysis ? this.generateSentimentAnalysis(reviewAnalysis) : ''}`;
           const primeText = detail.isPrimeEligible ? '⭐ Prime対応' : '';
 
           const previewTag = hasInternalReview ? 'a' : 'div';
-          const previewAttrs = hasInternalReview ? ` href="../${competitor.asin}/"` : '';
+          const previewAttrs = (hasInternalReview && competitor.asin) ? ` href="../${competitor.asin.toLowerCase()}/"` : '';
 
           productPreview = `
 <${previewTag}${previewAttrs} class="competitor-preview">
