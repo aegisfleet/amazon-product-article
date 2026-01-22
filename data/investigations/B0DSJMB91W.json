@@ -1,0 +1,144 @@
+{
+  "analysis": {
+    "productName": "Xiaomi Watch S4",
+    "parentAsin": "B0F1CNC3YH",
+    "productDescription": "ベゼル交換可能な独自のギミックと、新搭載の回転式クラウンによりデザインと操作性を両立したXiaomiの最新スマートウォッチ。",
+    "productUsage": [
+      "気分や服装に合わせてベゼルとウォッチフェイスを交換しカスタマイズ",
+      "ランニング、スキーなど150種類以上のスポーツモードでのトラッキング",
+      "回転式クラウンとジェスチャーコントロールによる直感的な操作",
+      "Bluetooth通話機能によるハンズフリー通話",
+      "Xiaomi HyperOS連携によるスマート家電の操作やスマホ通知確認"
+    ],
+    "positivePoints": [
+      "最大1500nitsの高輝度有機ELディスプレイで屋外視認性が大幅向上",
+      "回転式クラウンの追加により、スクロール操作が快適に進化",
+      "独自のベゼル交換システムにより、1台で多様なデザインを楽しめる",
+      "通常使用で最大15日間持つロングバッテリー",
+      "2万円を切る価格ながら高級感のあるステンレス筐体を採用"
+    ],
+    "negativePoints": [
+      "Amazon商品ページにFeliCa（おサイフケータイ）対応の記載がなく、対応状況が不明瞭（前モデルS3は対応していたため要注意）",
+      "WearOSではないため、追加できるサードパーティアプリが限定的",
+      "専用充電器が必要（ワイヤレス充電非対応の可能性が高い）"
+    ],
+    "useCases": [
+      "毎日のファッションに合わせて時計のデザインを変えたいビジネスパーソン",
+      "充電の手間を減らしたいが、機能も妥協したくないユーザー",
+      "Xiaomi製スマートフォンや家電を使用しているユーザー"
+    ],
+    "userStories": [
+      {
+        "userType": "30代男性（会社員）",
+        "scenario": "ビジネスとプライベートでの使い分け",
+        "experience": "仕事中は落ち着いたベゼルとフェイスにし、休日は派手なデザインに物理的に交換できるのが楽しい。クラウン操作もスーツの袖に引っかからずスムーズで、通知チェックが捗る。（推測）",
+        "sentiment": "positive"
+      },
+      {
+        "userType": "ランナー",
+        "scenario": "日中のランニング",
+        "experience": "以前のモデルより画面が格段に明るくなり、真夏の直射日光下でもペースや心拍数がはっきり見えるようになった。GPSの掴みも速い。（推測）",
+        "sentiment": "positive"
+      }
+    ],
+    "userImpression": "デザインのカスタマイズ性と高いコストパフォーマンスで高評価を得ている一方、FeliCa対応の有無に関する情報不足が購入の懸念点となっている。",
+    "sources": [
+      {
+        "name": "Amazon商品ページ",
+        "url": "https://www.amazon.co.jp/dp/B0DSJMB91W",
+        "credibility": "high"
+      }
+    ],
+    "lastInvestigated": "2026-01-22",
+    "competitiveAnalysis": [
+      {
+        "name": "Huawei Watch GT 4",
+        "asin": "B0CJ4NZT8G",
+        "priceComparison": "ほぼ同価格帯（約1.8万円）",
+        "featureComparison": [
+          "GT4はゴルフナビ機能が強力",
+          "S4はベゼル交換と回転式クラウンが特徴",
+          "バッテリー持ちは互角（約2週間）"
+        ],
+        "differentiators": [
+          "物理的なカスタマイズ性（S4） vs ゴルフ特化機能（GT4）"
+        ]
+      },
+      {
+        "name": "Amazfit Balance",
+        "asin": "B0CLC3QNV6",
+        "priceComparison": "S4より約4,000円高い",
+        "featureComparison": [
+          "Balanceは体組成測定機能あり",
+          "S4はディスプレイ輝度（1500nits）で優位"
+        ],
+        "differentiators": [
+          "ヘルスケア機能の深さ（Balance） vs コスパとギミック（S4）"
+        ]
+      },
+      {
+        "name": "CMF Watch Pro 2",
+        "asin": "B0D54386H7",
+        "priceComparison": "S4の半額以下（約9,350円）",
+        "featureComparison": [
+          "どちらもベゼル交換可能",
+          "S4はステンレス筐体・高機能OS",
+          "CMFはアルミ合金・簡易OS"
+        ],
+        "differentiators": [
+          "高級感と多機能性（S4） vs カジュアルさと安さ（CMF）"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "時計のデザインを頻繁に変えたい人",
+        "充電頻度を減らしたい人",
+        "コスパ良く高級感のあるスマートウォッチが欲しい人"
+      ],
+      "pros": [
+        "2万円以下で買える最高のビルドクオリティと画面品質",
+        "飽きのこないベゼル交換ギミック",
+        "実用的なロングバッテリー"
+      ],
+      "cons": [
+        "おサイフケータイ機能の有無を確認する必要がある",
+        "iPhoneユーザーは一部機能（音楽保存など）が制限される場合がある"
+      ],
+      "score": 85,
+      "scoreRationale": "[基本点: 70]\n[加点: +5] (1500nitsの高品質ディスプレイ)\n[加点: +5] (ベゼル交換という独自の楽しさ)\n[加点: +5] (回転式クラウン搭載による操作性向上)\n[加点: +5] (この質感と機能で2万円以下という圧倒的コスパ)\n[減点: -5] (日本市場で重要なFeliCa対応が不明確)\n[合計: 85]"
+    },
+    "technicalSpecs": {
+      "os": "Xiaomi HyperOS 2",
+      "display": {
+        "size": "1.43インチ",
+        "type": "AMOLED",
+        "resolution": "466x466",
+        "brightness": "最大1500nits"
+      },
+      "battery": {
+        "life": "標準使用15日間",
+        "charging": "急速充電対応（5分で2日分）"
+      },
+      "dimensions": {
+        "size": "47mm x 47mm x 12mm (推測値含む)",
+        "weight": "約44.5g (ストラップ除く)"
+      },
+      "connectivity": [
+        "Bluetooth 5.2",
+        "GNSS (L1+L5)",
+        "NFC (Global版は決済対応だが日本版のFeliCa有無は不明)"
+      ],
+      "sensors": [
+        "心拍数センサー",
+        "血中酸素レベルセンサー",
+        "加速度センサー",
+        "ジャイロスコープ",
+        "地磁気センサー",
+        "気圧センサー",
+        "環境光センサー"
+      ],
+      "waterResistance": "5ATM"
+    }
+  }
+}
