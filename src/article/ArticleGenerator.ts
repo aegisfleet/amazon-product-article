@@ -882,11 +882,19 @@ ${reviewAnalysis ? this.generateSentimentAnalysis(reviewAnalysis) : ''}`;
         // 調査済み記事が存在するかチェック
         let internalLink = '';
         let hasInternalReview = false;
+        let competitorScore: number | undefined;
         if (competitor.asin) {
           const investigationPath = path.join(process.cwd(), 'data', 'investigations', `${competitor.asin}.json`);
           if (fs.existsSync(investigationPath)) {
             hasInternalReview = true;
             internalLink = `<a href="../${competitor.asin.toLowerCase()}/" class="btn-internal-small">📄 サイト内レビュー</a>`;
+            // 競合商品のスコアを取得
+            try {
+              const competitorInvestigation = JSON.parse(fs.readFileSync(investigationPath, 'utf-8'));
+              competitorScore = competitorInvestigation.analysis?.recommendation?.score;
+            } catch {
+              // スコア取得に失敗した場合は無視
+            }
           }
         }
 
@@ -898,6 +906,18 @@ ${reviewAnalysis ? this.generateSentimentAnalysis(reviewAnalysis) : ''}`;
           const availabilityText = detail.availability || '';
           const primeText = detail.isPrimeEligible ? '⭐ Prime対応' : '';
 
+          // スコア表示のHTML生成
+          let scoreHtml = '';
+          if (competitorScore !== undefined) {
+            let scoreClass = 'score-fair';
+            if (competitorScore >= 80) {
+              scoreClass = 'score-excellent';
+            } else if (competitorScore >= 60) {
+              scoreClass = 'score-good';
+            }
+            scoreHtml = `<div class="competitor-score-container"><span class="pickup-card-score ${scoreClass}">🏆 ${competitorScore}点</span></div>`;
+          }
+
           const previewTag = hasInternalReview ? 'a' : 'div';
           const previewAttrs = (hasInternalReview && competitor.asin) ? ` href="../${competitor.asin.toLowerCase()}/"` : '';
 
@@ -905,9 +925,7 @@ ${reviewAnalysis ? this.generateSentimentAnalysis(reviewAnalysis) : ''}`;
 <${previewTag}${previewAttrs} class="competitor-preview">
 <img src="${imageUrl}" alt="${competitor.name}" class="competitor-preview-img">
 <div class="competitor-preview-info">
-${priceText ? `<span class="competitor-actual-price">${priceText}</span>` : ''}
-${availabilityText ? `<span class="competitor-availability">📦 ${availabilityText}</span>` : ''}
-${primeText ? `<span class="competitor-prime">${primeText}</span>` : ''}
+${scoreHtml}${priceText ? `<span class="competitor-actual-price">${priceText}</span>` : ''}${primeText ? `<span class="competitor-prime">${primeText}</span>` : ''}${availabilityText ? `<span class="competitor-availability">📦 ${availabilityText}</span>` : ''}
 </div>
 </${previewTag}>`;
         }
