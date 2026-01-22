@@ -114,6 +114,10 @@ npm run investigate
 # 記事生成
 npm run generate:articles
 
+# オプションをつけて記事生成
+# --asin <ASIN>: 指定したASINのみ処理（例: npm run generate:articles -- --asin B0007TT7I0）
+# --skip-paapi: PA-API呼び出しをスキップ（例: npm run generate:articles -- --skip-paapi）
+
 # PRマージ
 npm run merge:pr
 
