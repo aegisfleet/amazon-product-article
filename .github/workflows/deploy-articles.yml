@@ -34,6 +34,13 @@ jobs:
       with:
         fetch-depth: 0
     
+    - name: Sync with latest main
+      run: |
+        git config --global user.name "github-actions[bot]"
+        git config --global user.email "github-actions[bot]@users.noreply.github.com"
+        git checkout -B main
+        git pull --rebase origin main
+
     - name: Use Node.js
       uses: actions/setup-node@v6
       with:
