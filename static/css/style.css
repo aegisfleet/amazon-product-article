@@ -1308,9 +1308,25 @@ a.competitor-preview:hover {
 
 .competitor-preview-info {
   display: flex;
-  flex-direction: column;
-  gap: var(--spacing-xs);
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  column-gap: var(--spacing-sm);
+  row-gap: var(--spacing-xs);
   font-size: 0.875rem;
+}
+
+/* Score container forces a line break */
+.competitor-score-container {
+  flex-basis: 100%;
+  width: 100%;
+  margin-bottom: 0;
+}
+
+/* Ensure score badge inside container keeps its natural size */
+.competitor-preview-info .pickup-card-score {
+  display: inline-block;
+  width: auto;
 }
 
 .competitor-actual-price {
