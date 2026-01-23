@@ -1809,6 +1809,11 @@ a.competitor-preview:hover {
   border-left: 3px solid #f59e0b;
 }
 
+.score-neutral {
+  background: linear-gradient(to right, rgba(107, 114, 128, 0.1), transparent);
+  border-left: 3px solid #6b7280;
+}
+
 .score-points {
   font-weight: 700;
   padding: 0.15rem 0.5rem;
@@ -1825,6 +1830,11 @@ a.competitor-preview:hover {
 .score-minus .score-points {
   color: #92400e;
   background: rgba(245, 158, 11, 0.2);
+}
+
+.score-neutral .score-points {
+  color: #374151;
+  background: rgba(107, 114, 128, 0.2);
 }
 
 .score-total {
@@ -1848,6 +1858,10 @@ a.competitor-preview:hover {
   background: linear-gradient(to right, rgba(245, 158, 11, 0.15), transparent);
 }
 
+[data-theme="dark"] .score-neutral {
+  background: linear-gradient(to right, rgba(107, 114, 128, 0.15), transparent);
+}
+
 [data-theme="dark"] .score-plus .score-points {
   color: #34d399;
   background: rgba(16, 185, 129, 0.3);
@@ -1856,6 +1870,11 @@ a.competitor-preview:hover {
 [data-theme="dark"] .score-minus .score-points {
   color: #fbbf24;
   background: rgba(245, 158, 11, 0.3);
+}
+
+[data-theme="dark"] .score-neutral .score-points {
+  color: #9ca3af;
+  background: rgba(107, 114, 128, 0.3);
 }
 
 /* Mobile responsive */
