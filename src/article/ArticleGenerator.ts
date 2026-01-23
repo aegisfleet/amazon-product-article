@@ -1668,6 +1668,16 @@ ${score >= 80 ? '自信を持っておすすめできる商品です。' :
         continue;
       }
 
+      // 任意のラベルでゼロ点のパターン: [任意のラベル: 0] 説明
+      // 加点でも減点でもない中立的な評価項目
+      const zeroNeutralMatch = line.match(/\[[^\]]+:\s*0\]\s*(.*)/);
+      if (zeroNeutralMatch) {
+        const [, desc = ''] = zeroNeutralMatch;
+        const cleanDesc = desc.replace(/<[^>]*>/g, ' ').replace(/\s+/g, ' ').replace(/^[(（]/, '').replace(/[)）]$/, '').trim();
+        parts.push(`<div class="score-item score-neutral">➖ <span class="score-points">±0</span> ${cleanDesc}</div>`);
+        continue;
+      }
+
       // パースできない行はそのまま表示
       if (line.trim()) {
         parts.push(`<div class="score-item">${line}</div>`);
