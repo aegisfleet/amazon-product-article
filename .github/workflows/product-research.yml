@@ -54,6 +54,11 @@ on:
           - eye_care
           - neck_massager
           - scalp_care
+          - cosmetics
+          - face_wash
+          - shampoo
+          - conditioner
+          - hair_treatment
       max_results:
         description: 'Maximum results per category'
         required: false
