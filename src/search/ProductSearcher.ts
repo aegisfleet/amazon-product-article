@@ -773,6 +773,46 @@ export class ProductSearcher {
         maxResults: 10,
         sortBy: 'featured',
         enabled: true
+      },
+      {
+        name: 'cosmetics',
+        searchIndex: 'Beauty',
+        keywords: ['化粧品', 'コスメ', 'メイクアップ', 'リップ', 'アイシャドウ', 'チーク', 'コンシーラー', 'マスカラ'],
+        maxResults: 10,
+        sortBy: 'featured',
+        enabled: true
+      },
+      {
+        name: 'face_wash',
+        searchIndex: 'Beauty',
+        keywords: ['洗顔', '洗顔料', '洗顔フォーム', '洗顔石鹸', 'クレンジング洗顔', '毛穴 洗顔', '泡洗顔'],
+        maxResults: 10,
+        sortBy: 'featured',
+        enabled: true
+      },
+      {
+        name: 'shampoo',
+        searchIndex: 'Beauty',
+        keywords: ['シャンプー', 'ノンシリコンシャンプー', 'アミノ酸シャンプー', 'スカルプシャンプー', 'ボタニカルシャンプー', 'シャンプー サロン'],
+        maxResults: 10,
+        sortBy: 'featured',
+        enabled: true
+      },
+      {
+        name: 'conditioner',
+        searchIndex: 'Beauty',
+        keywords: ['コンディショナー', 'リンス', 'ノンシリコンコンディショナー', 'ダメージケア コンディショナー', 'コンディショナー サロン'],
+        maxResults: 10,
+        sortBy: 'featured',
+        enabled: true
+      },
+      {
+        name: 'hair_treatment',
+        searchIndex: 'Beauty',
+        keywords: ['ヘアトリートメント', 'トリートメント 洗い流さない', 'ヘアマスク', 'ヘアパック', 'ダメージケア トリートメント', 'トリートメント サロン'],
+        maxResults: 10,
+        sortBy: 'featured',
+        enabled: true
       }
     ];
   }
