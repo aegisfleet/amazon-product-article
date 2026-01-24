@@ -70,7 +70,7 @@ amazon-product-article/
 
 ```bash
 # 依存関係インストール
-npm install
+npm ci
 
 # TypeScriptビルド
 npm run build
