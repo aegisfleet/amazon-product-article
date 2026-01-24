@@ -813,6 +813,14 @@ export class ProductSearcher {
         maxResults: 10,
         sortBy: 'featured',
         enabled: true
+      },
+      {
+        name: 'toner',
+        searchIndex: 'Beauty',
+        keywords: ['化粧水', '保湿 化粧水', '美白 化粧水', '敏感肌 化粧水', 'メンズ 化粧水', '導入化粧水', 'ふきとり化粧水', '韓国コスメ 化粧水'],
+        maxResults: 10,
+        sortBy: 'featured',
+        enabled: true
       }
     ];
   }
@@ -938,7 +946,8 @@ export class ProductSearcher {
       'tablets': 'Electronics',
       'eye_care': 'HealthPersonalCare',
       'neck_massager': 'HealthPersonalCare',
-      'scalp_care': 'Beauty'
+      'scalp_care': 'Beauty',
+      'toner': 'Beauty'
     };
     return categoryMap[categoryName.toLowerCase()] || 'All';
   }
