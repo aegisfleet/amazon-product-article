@@ -379,7 +379,7 @@ export class ArticleGenerator {
       description,
       category: product.categoryInfo?.main || product.category,
       tags,
-      publishDate: new Date(),
+      publishDate: investigation.generatedAt || new Date(),
       asin: product.asin,
       priceRange,
       price,
