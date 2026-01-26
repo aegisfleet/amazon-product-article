@@ -1,0 +1,129 @@
+{
+  "analysis": {
+    "productName": "EarFun UA100",
+    "parentAsin": "B0DQSMRL1G",
+    "productDescription": "Shanlingとの共同開発による、高性能DACチップ「ES9038Q2M」を搭載したスティック型USB DAC/ヘッドホンアンプです。",
+    "productUsage": [
+      "スマートフォンのUSB-C端子に接続し、有線ヘッドホンで高音質な音楽を楽しむ",
+      "PCやタブレットに接続し、ハイレゾ音源（最大32bit/768kHz, DSD512）を再生する",
+      "4.4mmバランス接続対応のイヤホン/ヘッドホンを使用する",
+      "Shanling「Eddict Player」アプリを使用して、ゲインやフィルター設定をカスタマイズする"
+    ],
+    "positivePoints": [
+      "高性能DACチップ「ES9038Q2M」を搭載しながら1万円を切る圧倒的なコストパフォーマンス",
+      "3.5mmシングルエンドと4.4mmバランス出力の両方に対応",
+      "中身は名機「Shanling UA2 Plus」とほぼ同一で、音質と機能性が保証されている",
+      "専用アプリでゲイン調整や省電力設定が可能",
+      "10.6gと非常に軽量で持ち運びに便利"
+    ],
+    "negativePoints": [
+      "【重要】初期設定のゲインがHigh、音量が90%になっており、初回接続時に爆音が鳴る危険性がある（アプリでの設定変更推奨）",
+      "付属のUSBケーブルはノイズ耐性が低く、音質向上のためには別途高品質なケーブルへの交換が推奨される",
+      "本体側で物理的な音量調節ができない",
+      "iPhoneで使用する場合、Lightningケーブルは別売り（OTG対応必須）"
+    ],
+    "useCases": [
+      "通勤・通学時にスマホで高音質なストリーミング音楽を楽しむ",
+      "カフェや外出先でラップトップPCに接続し、集中して作業する際のオーディオ環境として",
+      "初めてのバランス接続（4.4mm）を試すエントリー機として"
+    ],
+    "userStories": [
+      {
+        "userType": "オーディオ初心者",
+        "scenario": "スマホ直挿しの音質に不満を持ち、初めてDACを購入",
+        "experience": "最初は半信半疑だったが、接続した瞬間に音の厚みと解像度の違いに驚いた。特にボーカルの息遣いまで聞こえるようになり、いつもの曲が別物に聞こえる。ただ、最初に繋いだ時に音が大きすぎてびっくりしたので、注意書きを見ておいてよかった。",
+        "sentiment": "positive"
+      },
+      {
+        "userType": "ポータブルオーディオ愛好家",
+        "scenario": "サブ機として手軽に持ち運べるDACを探していた",
+        "experience": "Shanling UA2 PlusのOEMと聞いて購入。音質は確かにShanling譲りの暖かみのあるサウンドで、この価格なら文句なし。付属ケーブルはチープなので手持ちのOTGケーブルに変えたらノイズが減った。アプリで設定できるのも便利。",
+        "sentiment": "positive"
+      },
+      {
+        "userType": "PCユーザー",
+        "scenario": "ノートPCでの動画鑑賞用に使用",
+        "experience": "PCのジャックよりノイズが少なくクリアだが、Windowsでドライバを入れる手間が少しあった。本体でボリューム調整できないのが少し不便。",
+        "sentiment": "mixed"
+      }
+    ],
+    "userImpression": "「Shanling UA2 Plusの廉価版」としてオーディオマニアから高い評価を受けている。音質は価格以上という声が圧倒的だが、初期設定の音量問題と付属ケーブルの質に関しては注意喚起が多く見られる。コスパ重視のユーザーには最適解の一つ。",
+    "sources": [
+      {
+        "name": "Abusan's Journey: EarFun UA100 レビュー",
+        "url": "https://abusan3225.jp/entry/earfun_ua100_review_20240219",
+        "credibility": "高"
+      }
+    ],
+    "lastInvestigated": "2026-01-27",
+    "competitiveAnalysis": [
+      {
+        "name": "Fosi Audio DS2",
+        "asin": "B0CTHN2QB3",
+        "priceComparison": "約7,300円とEarFun UA100より若干安い",
+        "featureComparison": [
+          "DACチップはCirrus Logic CS43131デュアル構成（EarFunはESS）",
+          "3.5mm + 4.4mm出力対応は同じ",
+          "出力パワーが高い（バランス 250mW vs EarFun ?）"
+        ],
+        "differentiators": [
+          "音質の傾向が異なる（Fosiはクリアで寒色系、EarFunは暖色系）",
+          "EarFunはShanlingアプリ対応という強みがある"
+        ]
+      },
+      {
+        "name": "iBasso Jr. Macaron",
+        "asin": "B0DMDWDKXD",
+        "priceComparison": "約9,400円と少し高い",
+        "featureComparison": [
+          "VGP2025金賞受賞の最新モデル",
+          "CS43131デュアル構成",
+          "非常にコンパクトでおしゃれなデザイン"
+        ],
+        "differentiators": [
+          "最新の設計とデザイン性",
+          "EarFunの方が安価"
+        ]
+      },
+      {
+        "name": "Shanling UA2 Plus",
+        "asin": null,
+        "priceComparison": "市場価格1万円以上でEarFunより高い",
+        "featureComparison": [
+          "ハードウェア構成はEarFun UA100とほぼ同一",
+          "本家Shanlingブランドの信頼性"
+        ],
+        "differentiators": [
+          "EarFun UA100はこれのOEM版であり、安価に入手できる点が最大のメリット"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "スマホで手軽に高音質を楽しみたいエントリーユーザー",
+        "安価に4.4mmバランス接続を試してみたい人",
+        "コストパフォーマンスを最優先する人"
+      ],
+      "pros": [
+        "1万円以下でES9038Q2M搭載＆4.4mmバランス対応という破格のスペック",
+        "Shanlingの技術ベースによる確かな音質",
+        "軽量コンパクト"
+      ],
+      "cons": [
+        "初期設定の音量が非常に大きいため、使用前にアプリでの設定変更が必須",
+        "付属ケーブルの品質が低く、買い替え推奨"
+      ],
+      "score": 90,
+      "scoreRationale": "[基本点: 70]\n[性能・機能: +8] (ES9038Q2M搭載、3.5mm+4.4mm両対応、アプリ連携)\n[コストパフォーマンス: +12] (同等スペックのShanling UA2 Plusより安価)\n[品質・デザイン: +2] (アルミ筐体、軽量)\n[ユーザー満足度: -5] (初期音量の危険性、付属ケーブルの質)\n[独自の強み: +3] (VGP金賞、OEMによる高コスパ)\n[合計: 90]"
+    },
+    "technicalSpecs": {
+      "driver": "ESS ES9038Q2M DAC + Ricore RT6863 Amp x2",
+      "codec": "PCM 32bit/768kHz, DSD512",
+      "battery": null,
+      "connectivity": ["USB Type-C入力", "3.5mmシングルエンド出力", "4.4mmバランス出力"],
+      "noiseCancel": null,
+      "dimensions": { "weight": "10.6g", "size": "50 x 18 x 10 mm" },
+      "other": ["Shanling Eddict Playerアプリ対応", "ハイレゾ認証"]
+    }
+  }
+}
