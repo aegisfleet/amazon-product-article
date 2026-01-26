@@ -1,0 +1,140 @@
+{
+  "analysis": {
+    "productName": "HiBy FC1",
+    "parentAsin": "B0CW378GVC",
+    "productDescription": "スマートフォンやPCの音質を手軽に向上させる、ケーブル着脱式のスティック型USB DACヘッドホンアンプ。",
+    "productUsage": [
+      "スマートフォンのUSB端子に接続し、有線イヤホンで高音質な音楽を楽しむ",
+      "PCやタブレットに接続して内蔵ジャックよりもクリアでノイズの少ない音質を得る",
+      "マイク付きイヤホンを使用して、高品質な音声通話やオンライン会議を行う",
+      "本体のハードウェアボタンで、細かい音量調整を行う"
+    ],
+    "positivePoints": [
+      "ケーブル着脱式のため、ケーブル断線時も交換可能で長く使える",
+      "本体にハードウェアボリュームボタンがあり、スマホ本体とは独立して音量調整が可能",
+      "マイク付きイヤホンに対応しており、通話やゲームのボイスチャットにも利用可能（非排他モード時）",
+      "ES9270 DACチップを搭載し、低消費電力ながら高音質を実現",
+      "非常にコンパクトで軽量（8.4g）"
+    ],
+    "negativePoints": [
+      "3.5mmシングルエンド出力のみで、4.4mmバランス接続には非対応",
+      "DSD再生はDSD128まで（一部競合はDSD256対応）",
+      "出力パワー（70mW+70mW）は必要十分だが、高インピーダンスのヘッドホンには不足する場合がある"
+    ],
+    "useCases": [
+      "通勤・通学時のスマートフォンでの音楽鑑賞",
+      "カフェや出先でのPC作業時の高音質リスニング",
+      "オンライン会議や通話でのマイク利用",
+      "スマートフォンでのリズムゲームやFPS（遅延のない有線接続）"
+    ],
+    "userStories": [
+      {
+        "userType": "スマホで音楽を聴く学生",
+        "scenario": "通学中にスマホでサブスク音楽を聴く",
+        "experience": "スマホに直挿ししていた時よりも音がクリアになり、楽器の音がはっきり聞こえるようになった。音ゲーをする時も遅延がなく快適。（推測）",
+        "sentiment": "positive"
+      },
+      {
+        "userType": "リモートワーカー",
+        "scenario": "Web会議での使用",
+        "experience": "PCの内蔵ジャックはノイズが酷かったが、これを使うと無音時のノイズが消えた。マイクもそのまま使えるのでヘッドセットを買い替える必要がなくて良かった。（推測）",
+        "sentiment": "positive"
+      }
+    ],
+    "userImpression": "低価格ながらHiByブランドの信頼性と実用的な機能（音量ボタン、マイク対応）を兼ね備えた、エントリー向けUSB DACの決定版。",
+    "sources": [
+      {
+        "name": "HiBy Official Store Specs",
+        "url": "https://store.hiby.com/pages/fc1-specs",
+        "credibility": "high"
+      },
+      {
+        "name": "Amazon Product Page",
+        "url": "https://www.amazon.co.jp/dp/B0CW378GVC",
+        "credibility": "medium"
+      }
+    ],
+    "lastInvestigated": "2026-01-27",
+    "competitiveAnalysis": [
+      {
+        "name": "FIIO KA11",
+        "asin": "B09NXJG3VX",
+        "priceComparison": "同価格帯（約5,400円）。",
+        "featureComparison": [
+          "KA11はケーブル一体型だが、FC1は着脱式",
+          "KA11は音量ボタンなし、FC1はあり",
+          "KA11の方が最大出力は高い場合がある"
+        ],
+        "differentiators": [
+          "ケーブル着脱による耐久性の高さ",
+          "ハードウェアボリュームによる操作性"
+        ]
+      },
+      {
+        "name": "TRN BlackPearl",
+        "asin": "B0FNK5NCTV",
+        "priceComparison": "同価格帯（約5,700円）。",
+        "featureComparison": [
+          "BlackPearlも低価格だが、FC1の方がブランドの信頼感（DAPメーカー）がある",
+          "BlackPearlは詳細なマイク対応状況などが不明確"
+        ],
+        "differentiators": [
+          "HiBy Musicアプリとの連携（公式推奨）",
+          "明確なマイク対応"
+        ]
+      },
+      {
+        "name": "Fosi Audio DS2",
+        "asin": "B0CTHN2QB3",
+        "priceComparison": "FC1より約2,300円高い。",
+        "featureComparison": [
+          "DS2は4.4mmバランス接続に対応",
+          "DS2はデュアル出力（3.5mm + 4.4mm）"
+        ],
+        "differentiators": [
+          "FC1はより安価でコンパクト",
+          "シングルエンド特化による割り切った仕様"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "初めてUSB DACを購入するスマートフォンユーザー",
+        "有線イヤホンで通話やゲームもしたい人",
+        "ケーブル断線が心配な人"
+      ],
+      "pros": [
+        "ケーブル着脱式で長く使える",
+        "ハードウェアボリュームボタンが便利",
+        "マイク対応で用途が広い",
+        "5,000円を切る価格でコスパが高い"
+      ],
+      "cons": [
+        "バランス接続（4.4mm/2.5mm）はできない",
+        "大型ヘッドホンを鳴らすにはパワー不足の可能性がある"
+      ],
+      "score": 85,
+      "scoreRationale": "[基本点: 70]\n[加点: +10] (5000円以下でケーブル着脱式・音量ボタン・マイク対応という高いコストパフォーマンス)\n[加点: +5] (実用的なハードウェアボリュームとマイク対応機能)\n[合計: 85]"
+    },
+    "technicalSpecs": {
+      "dac": "ESS ES9270",
+      "outputPower": "70mW + 70mW @ 32Ω",
+      "pcm": "Up to 32bit/384kHz",
+      "dsd": "DSD128 (DoP)",
+      "output": "3.5mm Single-ended (CTIA Standard)",
+      "input": "USB Type-C",
+      "dimensions": {
+        "height": "45mm",
+        "width": "13mm",
+        "depth": "9mm",
+        "weight": "8.4g"
+      },
+      "features": [
+        "Hardware Volume Control",
+        "RGB Status Indicator",
+        "Microphone Support",
+        "Detachable Cable"
+      ]
+    }
+  }
+}
