@@ -158,13 +158,24 @@ async function loadInvestigationResults(targetFiles?: string[]): Promise<Investi
                 rating: { average: 0, count: 0 },
             };
 
-            // InvestigationResultを構築
-            const investigation: InvestigationResult = {
-                sessionId: `file-${asin}`,
-                product,
-                analysis: parsed.analysis,
-                generatedAt: new Date(),
-            };
+                // ファイルの更新日時を取得（作成日時の代用）
+                const stats = await fs.stat(filePath);
+                
+                // lastInvestigatedがあればそれを優先、なければファイルの更新日時、それもなければ現在時刻
+                let generatedAt = new Date();
+                if (parsed.analysis.lastInvestigated) {
+                    generatedAt = new Date(parsed.analysis.lastInvestigated);
+                } else {
+                    generatedAt = stats.mtime;
+                }
+
+                // InvestigationResultを構築
+                const investigation: InvestigationResult = {
+                    sessionId: `file-${asin}`,
+                    product,
+                    analysis: parsed.analysis,
+                    generatedAt: generatedAt,
+                };
 
             results.push({
                 product,

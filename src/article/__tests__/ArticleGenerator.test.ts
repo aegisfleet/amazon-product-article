@@ -261,6 +261,19 @@ describe('ArticleGenerator', () => {
       expect(result.content).toContain('mobile_optimized: true');
     });
 
+    it('should use investigation.generatedAt for publishDate', async () => {
+      const result = await generator.generateArticle(mockProduct, mockInvestigation);
+      // mockInvestigation.generatedAt is set to 2025-01-01T00:00:00Z in beforeEach
+      // The output format in frontmatter matches how Date.toString() or similar is used, 
+      // but ArticleGenerator uses standard Date object which yaml serializer handles.
+      // We expect the date object to remain, but since we check content string, let's see how it's serialized.
+      // Usually it's ISO string or similar.
+      // Based on previous code, it might just be the date object.
+      // Let's check metadata directly if possible, but generateArticle returns GeneratedArticle which has metadata.
+
+      expect(result.metadata.publishDate).toEqual(mockInvestigation.generatedAt);
+    });
+
     it('should handle products without review analysis', async () => {
       const mockCompetitorDetails = new Map<string, ProductDetail>();
       mockCompetitorDetails.set('B08COMPET1', { ...mockProduct, asin: 'B08COMPET1' } as any);
