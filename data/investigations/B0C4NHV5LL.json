@@ -1,0 +1,113 @@
+{
+  "analysis": {
+    "productName": "HiBy FC4 ポータブルUSB DACアンプ",
+    "parentAsin": "B0C4NHV5LL",
+    "productDescription": "ES9219デュアルDACと高出力アンプ回路を搭載した、MQA 16x対応のポータブルUSB DAC。スマホやPCで手軽にハイレゾ音源を楽しめる。",
+    "productUsage": [
+      "スマートフォンでのハイレゾストリーミング再生（Apple Music, Amazon Music HD等）",
+      "PC/Macと接続しての高音質音楽鑑賞",
+      "4.4mmバランス接続による高インピーダンスヘッドホンの駆動"
+    ],
+    "positivePoints": [
+      "同クラス最高レベルの340mW+340mW（32Ω）の高出力",
+      "MQA 16x展開に対応し、Tidal等の音源をフルに楽しめる",
+      "ハードウェアボリュームボタン搭載で細かい音量調整が可能",
+      "LEDインジケーターで再生中のサンプリングレートが一目でわかる"
+    ],
+    "negativePoints": [
+      "高出力ゆえにスマホのバッテリー消費が比較的早い",
+      "使用中に筐体が温かくなりやすい",
+      "付属のケーブルが少し硬めで取り回しにくい場合がある"
+    ],
+    "useCases": [
+      "通勤・通学中の高音質リスニング",
+      "カフェや出張先でのPCオーディオ環境の構築"
+    ],
+    "userStories": [
+      {
+        "userType": "30代男性・オーディオファン",
+        "scenario": "外出先でも有線イヤホンの本領を発揮させたい",
+        "experience": "スマホ直挿しとは次元の違う駆動力に驚いた。特に低音の締まりと音場の広がりが素晴らしい。バッテリー消費は早いが、音質のためなら許容範囲。（推測）",
+        "sentiment": "positive"
+      },
+      {
+        "userType": "20代学生",
+        "scenario": "PCでゲームや動画を高音質で楽しみたい",
+        "experience": "PCに繋ぐだけで音がクリアになった。FPSゲームでの足音も聞き取りやすくなった気がする。LEDの色が変わるのもカッコいい。（推測）",
+        "sentiment": "positive"
+      }
+    ],
+    "userImpression": "高出力と高音質を両立したコスパの高いDACとして評価されている。特にパワーが必要なイヤホンやヘッドホンを持っているユーザーからの支持が厚い。",
+    "sources": [
+      {
+        "name": "HiBy Official Product Page",
+        "url": null,
+        "credibility": "High"
+      },
+      {
+        "name": "Amazon Customer Reviews (Verified Purchase)",
+        "url": "https://www.amazon.co.jp/dp/B0C4NHV5LL",
+        "credibility": "Medium"
+      }
+    ],
+    "lastInvestigated": "2026-01-27",
+    "competitiveAnalysis": [
+      {
+        "name": "EarFun UA100",
+        "asin": "B0CZ8P2233",
+        "priceComparison": "約1,600円安価",
+        "featureComparison": [
+          "DSD512対応（FC4はDSD256）",
+          "出力はFC4の方が強力な可能性が高い"
+        ],
+        "differentiators": [
+          "価格の安さ",
+          "軽量コンパクト"
+        ]
+      },
+      {
+        "name": "iBasso Jr. Macchiato",
+        "asin": "B0G346QBP6",
+        "priceComparison": "約3,000円高価",
+        "featureComparison": [
+          "CS43131デュアルDAC",
+          "OLEDディスプレイ搭載",
+          "580mWの高出力"
+        ],
+        "differentiators": [
+          "視認性の高いディスプレイ",
+          "圧倒的なパワー"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "スマホで手軽に高音質を楽しみたいが、パワーも妥協したくない人",
+        "MQA音源をネイティブ再生したいTidalユーザー",
+        "4.4mmバランス接続対応のイヤホンを持っている人"
+      ],
+      "pros": [
+        "クラスを超えた高い駆動力",
+        "MQA 16x対応",
+        "高級感のあるデザイン"
+      ],
+      "cons": [
+        "スマホのバッテリー消費",
+        "発熱"
+      ],
+      "score": 85,
+      "scoreRationale": "[基本点: 70]\n[性能・機能: +5] (340mWの高出力、MQA 16x対応)\n[コストパフォーマンス: +5] (1万円以下でこのスペックと駆動力は優秀)\n[品質・デザイン: +0] (標準的)\n[ユーザー満足度: +0] (標準的)\n[独自の強み: +5] (HiByのオーディオ設計ノウハウ)\n[合計: 85]"
+    },
+    "technicalSpecs": {
+      "driver": "ES9219 x2 (Dual DAC)",
+      "codec": "PCM 768kHz/32bit, DSD256, MQA 16x",
+      "battery": null,
+      "connectivity": [
+        "USB Type-C",
+        "3.5mm Single Ended",
+        "4.4mm Balanced"
+      ],
+      "noiseCancel": null
+    }
+  }
+}
