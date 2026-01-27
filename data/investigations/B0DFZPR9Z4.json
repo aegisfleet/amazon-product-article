@@ -62,32 +62,32 @@
         "credibility": "中"
       }
     ],
-    "lastInvestigated": "2026-01-05",
+    "lastInvestigated": "2026-01-28",
     "competitiveAnalysis": [
       {
         "name": "Xiaomi Smart Band 9 Active",
         "asin": "B0DSZMYR53",
-        "priceComparison": "調査対象より約1,000円〜2,000円高価だが、同じXiaomiブランドの商品。こちらはよりスリムで軽量なバンド型。",
+        "priceComparison": "調査対象と同等かやや安価な価格帯（3,000円台後半）。同じXiaomiブランド。",
         "featureComparison": [
           "画面サイズはRedmi Watch 5 Active(2インチ)の方が大きいが、こちらはより軽量で装着感が少ない。",
-          "基本的な健康管理機能はほぼ同等。"
+          "基本的な健康管理機能はほぼ同等。こちらはBluetooth通話機能はない（通知のみ）。"
         ],
         "differentiators": [
-          "Redmi Watch 5 Activeは腕時計型のデザインと大画面による視認性が特徴。",
+          "Redmi Watch 5 Activeは腕時計型のデザイン、大画面、通話機能が強み。",
           "Smart Band 9 Activeは軽量・スリムなバンド型で、睡眠中などの長時間装着に適している。"
         ]
       },
       {
-        "name": "Lively Life QX7 Pro",
-        "asin": null,
-        "priceComparison": "同程度の価格帯（約4,000円台）で販売されていることが多い。",
+        "name": "KAKA スマートウォッチ",
+        "asin": "B0FY1PRMF2",
+        "priceComparison": "ほぼ同価格帯（約4,400円）。",
         "featureComparison": [
-          "こちらもBluetooth通話に対応している点が共通。",
-          "ワークアウトモードは100種類と、Redmi Watch 5 Active(140種類以上)よりは少ない。"
+          "こちらもBluetooth通話、1.83インチ大画面を搭載。",
+          "AIアシスタントやチャット機能を謳っているが、Xiaomiほどのブランド信頼性やソフトウェアの安定性は未知数。"
         ],
         "differentiators": [
-          "Redmi Watch 5 Activeは大手Xiaomiブランドという信頼性と、より大きな2インチ画面が強み。",
-          "Lively Life QX7 Proは、同様の機能を通話に特化してアピールしていることが多い。"
+          "Redmi Watch 5 ActiveはXiaomiエコシステムの安定性とバッテリー性能(18日 vs 一般的な7-10日)で勝る。",
+          "KAKAは多機能さをアピールしているが、実用面での信頼性に課題がある可能性がある。"
         ]
       },
       {
@@ -120,7 +120,20 @@
         "単体での位置情報記録ができない（GPS非搭載）",
         "細かな通知機能（特にLINE着信）の作り込みの甘さ"
       ],
-      "score": 85
+      "score": 85,
+      "scoreRationale": "[基本点: 70]\n[加点: +15] (4,000円台前半でBluetooth通話と18日間のバッテリー持ちは破格のコストパフォーマンス)\n[加点: +5] (2インチ大画面の見やすさと必要十分な健康管理機能)\n[減点: -5] (Alexaの接続不安定やLINE通知の仕様など、ソフトウェア面に一部不満あり)\n[合計: 85]"
+    },
+    "technicalSpecs": {
+      "os": "Xiaomi HyperOS",
+      "cpu": null,
+      "ram": null,
+      "storage": null,
+      "display": { "size": "2.0インチ", "resolution": "320×385", "type": "LCD" },
+      "battery": { "capacity": "470mAh", "charging": "マグネット式充電" },
+      "camera": null,
+      "dimensions": { "height": "49.1mm", "width": "40.4mm", "depth": "11.4mm", "weight": "42.2g(ストラップ含む)" },
+      "connectivity": ["Bluetooth 5.3 BLE"],
+      "other": ["5ATM防水", "心拍数センサー", "血中酸素レベルセンサー", "加速度センサー"]
     }
   }
 }
