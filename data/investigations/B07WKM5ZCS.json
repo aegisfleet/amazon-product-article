@@ -1,0 +1,125 @@
+{
+  "analysis": {
+    "productName": "Marantz Professional M4U USBコンデンサーマイク",
+    "parentAsin": "B09JKLKBCH",
+    "productDescription": "PCやMacに簡単に接続できる、USB A/Dアダプター付属の単一指向性コンデンサーマイクです。",
+    "productUsage": [
+      "オンライン会議・ビデオ通話 (Zoom, Skypeなど)",
+      "ポッドキャスト・ナレーションの録音",
+      "ゲーム実況・ボイスチャット",
+      "ボーカルや楽器の簡易レコーディング"
+    ],
+    "positivePoints": [
+      "必要なアクセサリ（マイクケーブル、USBアダプター、卓上スタンド）が全て揃っている",
+      "音響機器の老舗ブランドMarantz Professionalによる信頼性",
+      "USBアダプター経由で手軽にデジタル録音が可能",
+      "低遅延のヘッドフォン出力によるモニタリング機能",
+      "単一指向性により、周囲の雑音を拾いにくい設計"
+    ],
+    "negativePoints": [
+      "マイク本体にミュートボタンやゲイン調整機能がない",
+      "価格相応の質感（プラスチック筐体など）の可能性がある",
+      "USBアダプターを使用するため、接続が少し煩雑になる場合がある"
+    ],
+    "useCases": [
+      "在宅勤務でのWeb会議",
+      "これから配信を始める初心者のエントリー機材"
+    ],
+    "userStories": [
+      {
+        "userType": "会社員（リモートワーク）",
+        "scenario": "Web会議での音質改善",
+        "experience": "（推測）PC内蔵マイクの音質が悪く、相手に聞き返されることが多かったため導入。USBアダプターで簡単に接続でき、クリアな音声で会議ができるようになった。",
+        "sentiment": "positive"
+      },
+      {
+        "userType": "ゲーム実況初心者",
+        "scenario": "初めての配信環境構築",
+        "experience": "（推測）低予算でマイクを探しており、Marantzブランドに惹かれて購入。スタンドも付属しており、すぐに実況を始められた。ミュートボタンがないのが少し不便だが、音質には満足している。",
+        "sentiment": "mixed"
+      }
+    ],
+    "userImpression": "エントリーモデルとして必要な機能を備え、コストパフォーマンスに優れた製品と評価されている。",
+    "sources": [
+      {
+        "name": "Amazon Product Page",
+        "url": "https://www.amazon.co.jp/dp/B07WKM5ZCS",
+        "credibility": "high"
+      }
+    ],
+    "lastInvestigated": "2026-01-27",
+    "competitiveAnalysis": [
+      {
+        "name": "ZealSound USBマイク",
+        "asin": "B092JB6XR3",
+        "priceComparison": "ほぼ同価格帯（約3,600円）",
+        "featureComparison": [
+          "エコー機能搭載",
+          "ボリュームノブあり"
+        ],
+        "differentiators": [
+          "機能の多さはZealSoundだが、ブランド信頼性はMarantz"
+        ]
+      },
+      {
+        "name": "ELECOM HS-MC14UBK",
+        "asin": "B0BTGLP2G5",
+        "priceComparison": "若干安い（約3,300円）",
+        "featureComparison": [
+          "タッチミュート機能",
+          "LEDインジケーター"
+        ],
+        "differentiators": [
+          "Web会議での利便性（ミュート機能）はELECOMが優れる"
+        ]
+      },
+      {
+        "name": "UGREEN コンデンサーマイク",
+        "asin": "B0FG7DVV62",
+        "priceComparison": "安い（約3,000円）",
+        "featureComparison": [
+          "RGBライティング",
+          "ノイズキャンセリング機能"
+        ],
+        "differentiators": [
+          "ゲーミング向けの派手なデザインに対し、M4Uはシンプルで落ち着いたデザイン"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "初めてマイクを購入するPCユーザー",
+        "ブランドへの信頼感を重視する人",
+        "シンプルな機材構成を好む人"
+      ],
+      "pros": [
+        "オールインワンパッケージですぐに使える",
+        "信頼のMarantzブランド",
+        "低価格ながら本格的なコンデンサーマイクの入り口として最適"
+      ],
+      "cons": [
+        "手元でのミュートやボリューム調整ができない",
+        "本格的な音楽制作にはスペック不足の可能性がある"
+      ],
+      "score": 75,
+      "scoreRationale": "[基本点: 70]\n[コストパフォーマンス: +5] (3,500円で必要なものが全て揃い、ブランド品である点は高評価)\n[機能・性能: -5] (本体にミュートやゲイン調整などの便利機能がない)\n[品質・デザイン: +5] (Marantzブランドへの信頼感)\n[合計: 75]"
+    },
+    "technicalSpecs": {
+      "dimensions": {
+        "height": "18.6cm",
+        "width": "4.9cm",
+        "depth": "4.9cm",
+        "weight": "約0.52kg"
+      },
+      "connectivity": [
+        "USB Type-A (アダプタ)",
+        "XLR"
+      ],
+      "other": [
+        "単一指向性",
+        "エレクトレットコンデンサー",
+        "ヘッドホン出力あり"
+      ]
+    }
+  }
+}
