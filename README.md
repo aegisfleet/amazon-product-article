@@ -168,3 +168,7 @@ hugo
 - **Lint**: ESLint
 - **CI/CD**: GitHub Actions
 - **ホスティング**: GitHub Pages
+
+## キャラクター
+
+![キャラクター](static/images/character.png)
