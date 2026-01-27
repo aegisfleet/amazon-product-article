@@ -108,7 +108,8 @@ export class AutoMergeManager {
     verifyJulesAuthor(pr: PullRequest): boolean {
         const isJules = pr.author === this.conditions.requiredAuthor ||
             pr.author.toLowerCase().includes('jules') ||
-            pr.author === 'jules[bot]';
+            pr.author === 'jules[bot]' ||
+            pr.author === 'aegisfleet';
 
         if (isJules) {
             this.logger.info(`PR author ${pr.author} is verified as Jules`);
