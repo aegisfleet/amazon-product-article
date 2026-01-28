@@ -63,12 +63,13 @@ a:hover {
 
 .brand {
   font-weight: 800;
-  font-size: 1.25rem;
+  font-size: clamp(0.8rem, 3.5vw, 1.25rem);
   color: var(--color-text-main);
   display: flex;
   align-items: center;
   gap: var(--spacing-sm);
   margin-right: auto;
+  white-space: nowrap;
 }
 
 .brand-icon {
