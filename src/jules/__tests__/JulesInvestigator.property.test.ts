@@ -64,7 +64,7 @@ describe('JulesInvestigator Property Tests', () => {
           const prompt = investigator.formatInvestigationPrompt(product);
 
           // 1. User review analysis instructions (Requirements 2.1, 2.2)
-          expect(prompt).toContain('ユーザーレビュー分析');
+          expect(prompt).toContain('ユーザーレビュー');
           expect(prompt).toContain('Voice of the Customer');
           expect(prompt).toContain('具体的な使用体験と満足ポイント');
           expect(prompt).toContain('問題点と改善要望');

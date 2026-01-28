@@ -400,7 +400,7 @@ cat data/investigations/${product.asin}.json 2>/dev/null || echo "新規調査"
    - **productUsage**: 主な使い方・用途を3-5項目で箇条書き
    - これはサイトの最上部に表示される情報なので、ユーザーが商品を理解しやすい説明にしてください
 
-1. ユーザーレビュー分析（"Voice of the Customer"）
+1. ユーザーレビュー（"Voice of the Customer"）
    ⇒ Amazon以外のレビューサイト（価格.com、みんなのレビュー等）も積極的に調査
    - 具体的な使用体験と満足ポイント（単なる機能列挙ではなく、体験として記述）
    - 問題点と改善要望

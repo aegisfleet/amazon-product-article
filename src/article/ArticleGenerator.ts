@@ -526,7 +526,7 @@ export class ArticleGenerator {
     // 商品の特徴と使い方
     sections.push(await this.generateFeaturesSection(product, investigation));
 
-    // ユーザーレビュー分析
+    // ユーザーレビュー
     sections.push(await this.generateUserReviewsSection(investigation, reviewAnalysis, template.sections.userReviews));
 
     // 競合商品との比較（表形式）
@@ -827,7 +827,7 @@ ${specifications}
       ? `### 🗣️ 購入者の生の声（ユーザーストーリー）\n${userImpressionBlock}\n\n${userStoriesBlock}`
       : '';
 
-    const content = `## 📊 ユーザーレビュー分析
+    const content = `## 📊 ユーザーレビュー
 
 ### 👍 ユーザーが評価している点
 
@@ -846,7 +846,7 @@ ${userStories}
 ${reviewAnalysis ? this.generateSentimentAnalysis(reviewAnalysis) : ''}`;
 
     return {
-      title: '📊 ユーザーレビュー分析',
+      title: '📊 ユーザーレビュー',
       content,
       wordCount: this.calculateWordCount(content),
       requiredElements: template.requiredElements
@@ -1393,7 +1393,7 @@ ${score >= 80 ? '自信を持っておすすめできる商品です。' :
           structure: '商品紹介 → 記事の目的 → 読者メリット'
         },
         userReviews: {
-          title: 'ユーザーレビュー分析',
+          title: 'ユーザーレビュー',
           minWordCount: 800,
           requiredElements: ['ポジティブポイント', 'ネガティブポイント', '使用シーン'],
           structure: '良い点 → 気になる点 → 実際の使用例'
@@ -1421,7 +1421,7 @@ ${score >= 80 ? '自信を持っておすすめできる商品です。' :
         minWordCount: 2000,
         requiredElements: [
           '商品概要',
-          'ユーザーレビュー分析',
+          'ユーザーレビュー',
           '競合比較',
           '購入推奨度',
           'アフィリエイト開示'
