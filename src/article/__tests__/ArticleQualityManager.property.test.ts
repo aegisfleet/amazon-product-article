@@ -190,7 +190,7 @@ category: Electronics
                     structure: '導入文と商品概要'
                 },
                 userReviews: {
-                    title: 'ユーザーレビュー分析',
+                    title: 'ユーザーレビュー',
                     minWordCount: 800,
                     requiredElements: ['良い点', '気になる点'],
                     structure: 'レビュー分析'

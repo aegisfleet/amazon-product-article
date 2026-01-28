@@ -229,7 +229,7 @@ describe('ArticleGenerator', () => {
       expect(result.content).toContain('warnings:');
       expect(result.content).toContain('specs:');
       expect(result.content).toContain('## 📦 商品の特徴');
-      expect(result.content).toContain('## 📊 ユーザーレビュー分析');
+      expect(result.content).toContain('## 📊 ユーザーレビュー');
       expect(result.content).toContain('## 🥊 競合商品との比較');
       expect(result.content).toContain('## ✅ 購入推奨度');
       expect(result.content).toContain('## 🛒 商品詳細・購入');
