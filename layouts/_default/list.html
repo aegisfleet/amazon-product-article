@@ -168,7 +168,12 @@
                     <span class="article-meta">{{ with .Params.last_investigated }}{{ time . | dateFormat "2006年01月02日"
                         }}{{
                         else }}{{ .Date.Format "2006年01月02日" }}{{ end }}</span>
+                    {{ if .Params.affiliate_url }}
+                    <a href="{{ .Params.affiliate_url }}" class="btn-amazon-small" target="_blank"
+                        rel="noopener noreferrer">🛒 Amazonで見る</a>
+                    {{ else }}
                     <a href="{{ .RelPermalink }}" class="read-more">レビューを読む →</a>
+                    {{ end }}
                 </div>
             </div>
         </article>

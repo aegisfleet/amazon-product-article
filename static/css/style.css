@@ -420,6 +420,12 @@ a:hover {
   gap: 0.25rem;
 }
 
+/* Card Footer Amazon Button */
+.card-footer .btn-amazon-small {
+  margin-top: 0;
+  flex-shrink: 0;
+}
+
 /* Article Page */
 .article-header {
   text-align: center;
