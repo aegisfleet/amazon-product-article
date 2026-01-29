@@ -249,7 +249,7 @@ a:hover {
 }
 
 .card-content {
-  padding: var(--spacing-lg);
+  padding: 1.0rem;
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -424,6 +424,7 @@ a:hover {
 .card-footer .btn-amazon-small {
   margin-top: 0;
   flex-shrink: 0;
+  padding: var(--spacing-xs) var(--spacing-sm);
 }
 
 /* Article Page */
