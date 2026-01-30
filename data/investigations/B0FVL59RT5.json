@@ -1,0 +1,135 @@
+{
+  "analysis": {
+    "productName": "ORICO 20-in-1 USB-C ドッキングステーション",
+    "parentAsin": "B0FVL59RT5",
+    "productDescription": "WindowsノートPCの機能を極限まで拡張する、20ポート搭載の多機能ドッキングステーションです。最大4台の外部モニターへの同時出力が可能で、デスクトップ並みの作業環境を構築できます。",
+    "productUsage": [
+      "WindowsノートPCでの最大4画面マルチモニター環境の構築",
+      "多数のUSB機器（マウス、キーボード、HDDなど）の一括接続",
+      "有線LANによる安定したネットワーク接続とSD/TFカードの読み書き"
+    ],
+    "positivePoints": [
+      "圧倒的なコストパフォーマンス（1.2万円台で4画面出力・20ポート）",
+      "HDMI、DisplayPort、VGAを含む多彩な映像出力端子",
+      "合計6つのUSB-Aポートと2つのUSB-Cポートで周辺機器を大量に接続可能"
+    ],
+    "negativePoints": [
+      "macOSではMST非対応のため、複数画面への拡張（個別の画面表示）ができない（ミラーリングのみ）",
+      "電源アダプターが付属しておらず、別途PD充電器やケーブルの用意が必要",
+      "VGA端子は現代の環境では使用頻度が低く、スペースを占有している"
+    ],
+    "useCases": [
+      "金融トレーダーやプログラマーによる多画面環境の構築（Windows）",
+      "旧型のプロジェクター（VGA）を使用するオフィス環境でのプレゼンテーション"
+    ],
+    "userStories": [
+      {
+        "userType": "Windowsユーザー（在宅ワーク）",
+        "scenario": "ノートPC 1台でデスクトップ並みの作業効率を求めて購入",
+        "experience": "1万円台でトリプルディスプレイ環境が構築でき、作業効率が劇的に向上した。USBポートも多いのでハブを買い足す必要がない。（スペックに基づく推測）",
+        "sentiment": "positive"
+      },
+      {
+        "userType": "MacBookユーザー",
+        "scenario": "M1/M2 MacBookでのマルチモニター化を期待して購入",
+        "experience": "Macではすべての外部モニターが同じ画面（ミラーリング）になってしまい、期待した拡張デスクトップ環境が作れなかった。DisplayLink対応機を買うべきだった。（スペックに基づく推測）",
+        "sentiment": "negative"
+      }
+    ],
+    "userImpression": "Windowsユーザーにとっては「コスパ最強の多画面ドック」となり得るが、Macユーザーにとっては仕様制限（MST）により期待外れとなる可能性が高い商品。電源アダプター別売りには注意が必要。",
+    "sources": [
+      {
+        "name": "Amazon Product Specifications (B0FVL59RT5)",
+        "url": "https://www.amazon.co.jp/dp/B0FVL59RT5",
+        "credibility": "high"
+      },
+      {
+        "name": "Anker 564 Product Page (Comparison)",
+        "url": "https://www.amazon.co.jp/dp/B0BP69VJPZ",
+        "credibility": "high"
+      }
+    ],
+    "lastInvestigated": "2026-01-31",
+    "competitiveAnalysis": [
+      {
+        "name": "Anker 564 USB-C Docking Station",
+        "asin": "B0BP69VJPZ",
+        "priceComparison": "約3.2万円（ORICOの約2.5倍）",
+        "featureComparison": [
+          "DisplayLink搭載でMacでも4画面拡張可能",
+          "180W ACアダプタ付属"
+        ],
+        "differentiators": [
+          "Mac対応",
+          "充実した付属品",
+          "信頼性の高いブランド"
+        ]
+      },
+      {
+        "name": "UGREEN Revodok Pro 314",
+        "asin": "B0DYTVVLH4",
+        "priceComparison": "約1.4万円（ORICOと同価格帯）",
+        "featureComparison": [
+          "3画面出力",
+          "DisplayLink非搭載（推定）"
+        ],
+        "differentiators": [
+          "バランスの良いスペックだがポート数はORICOに劣る"
+        ]
+      },
+      {
+        "name": "WAVLINK DisplayLink Dock",
+        "asin": "B0FYNHHVXN",
+        "priceComparison": "約2.4万円（ORICOの約2倍）",
+        "featureComparison": [
+          "DisplayLink搭載",
+          "トリプル4K対応"
+        ],
+        "differentiators": [
+          "Mac対応",
+          "Intel/M1/M2チップ正式対応"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "コストを抑えて多画面環境を作りたいWindowsユーザー",
+        "大量のUSB周辺機器を使用するユーザー"
+      ],
+      "pros": [
+        "圧倒的な低価格",
+        "20-in-1の豊富なポート数",
+        "Windowsでの柔軟な画面出力"
+      ],
+      "cons": [
+        "Macではマルチ画面拡張不可",
+        "電源アダプター別売り"
+      ],
+      "score": 79,
+      "scoreRationale": "[基本点: 70]\n[コストパフォーマンス: +12] (競合の半額近くで20ポート・4画面対応は破格)\n[機能・性能: +5] (ポート数の多さと多画面対応)\n[機能・性能(減点): -8] (MacでのMST制限とACアダプタ別売りは大きなマイナス)\n[合計: 79]"
+    },
+    "technicalSpecs": {
+      "dimensions": {
+        "height": "3.8cm",
+        "width": "21cm",
+        "depth": "8.6cm"
+      },
+      "power": "90W DC入力 (60W PD出力パススルー対応)",
+      "connectivity": [
+        "USB-C 3.2 Gen2 x2",
+        "USB-A 3.0 x3",
+        "USB-A 2.0 x3",
+        "HDMI x1",
+        "DP x2",
+        "VGA x1",
+        "Ethernet (RJ45)",
+        "SD/TF Card Slot",
+        "Audio Jack x3"
+      ],
+      "other": [
+        "MST (Multi-Stream Transport) 対応",
+        "Kensington Lock Slot"
+      ]
+    }
+  }
+}
