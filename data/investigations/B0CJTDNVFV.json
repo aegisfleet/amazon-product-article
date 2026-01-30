@@ -1,0 +1,127 @@
+{
+  "analysis": {
+    "productName": "Anker HDMI Switch (2-in-1 Out, 4K)",
+    "parentAsin": "B0CJTDNVFV",
+    "productDescription": "HDMI機器の入力を手動で切り替える、または1つの映像ソースを2つのディスプレイ（選択式）に出力できる双方向HDMIセレクターです。",
+    "productUsage": [
+      "ゲーム機とPCの画面をボタン一つで切り替える",
+      "1台のPCを、作業用モニターと映画用プロジェクターで使い分ける",
+      "ケーブルの抜き差しによる端子の劣化を防ぐ"
+    ],
+    "positivePoints": [
+      "Ankerブランドの安心感と長期保証",
+      "電源不要で接続するだけですぐに使える手軽さ",
+      "シンプルでデスク上で邪魔にならないコンパクトなデザイン",
+      "4K 60Hz対応で、PS5やゲーミングPCの映像も美しく出力"
+    ],
+    "negativePoints": [
+      "リモコンや自動切り替え機能はない（手動ボタンのみ）",
+      "HDMIケーブルが別途必要（本体のみの販売）",
+      "2画面同時出力（分配機能）には非対応"
+    ],
+    "useCases": [
+      "リモートワークで会社PCと私用PCを同じモニターで共有",
+      "リビングのテレビにSwitchとPS5を接続して切り替え",
+      "プロジェクターとテレビの使い分け"
+    ],
+    "userStories": [
+      {
+        "userType": "30代在宅ワーカー",
+        "scenario": "仕事用PCと私物Macのモニター共有",
+        "experience": "以前は毎回ケーブルを差し替えていましたが、これを導入してからはボタン一つで切り替えられ、ストレスが激減しました。Anker製なので挙動も安定しており、画面のちらつきもありません。（推測）",
+        "sentiment": "positive"
+      },
+      {
+        "userType": "ゲーマー",
+        "scenario": "PS5とSwitchの切り替え",
+        "experience": "安物の切替器を使っていましたがブラックアウトすることがあり、Ankerに買い替えました。今のところ映像の乱れもなく快適です。電源不要なのが配線周りをスッキリさせてくれます。（推測）",
+        "sentiment": "positive"
+      }
+    ],
+    "userImpression": "多くの安価なノーブランド品が存在する中で、Ankerを選ぶ理由は「信頼性」と「サポート」。機能はシンプルですが、画質の劣化や接続不良の不安なく使える点が評価されています。",
+    "sources": [
+      {
+        "name": "Amazon商品ページ",
+        "url": "https://www.amazon.co.jp/dp/B0CJTDNVFV",
+        "credibility": "high"
+      }
+    ],
+    "lastInvestigated": "2026-01-31",
+    "competitiveAnalysis": [
+      {
+        "name": "GANA HDMI切替器",
+        "asin": "B0BJ6YY6RH",
+        "priceComparison": "約30%安価（1,000円以下）",
+        "featureComparison": [
+          "同等の双方向機能",
+          "アルミニウム合金筐体"
+        ],
+        "differentiators": [
+          "価格の安さ",
+          "ブランド信頼性はAnkerに劣る"
+        ]
+      },
+      {
+        "name": "UGREEN HDMI切替器",
+        "asin": "B08R868KSZ",
+        "priceComparison": "同価格帯",
+        "featureComparison": [
+          "ケーブル一体型",
+          "4K 60Hz対応"
+        ],
+        "differentiators": [
+          "ケーブル一体型のため、別途ケーブル購入不要だが長さの調整は不可"
+        ]
+      },
+      {
+        "name": "avedio links HDMI切替器",
+        "asin": "B0F18R7YG5",
+        "priceComparison": "同価格帯",
+        "featureComparison": [
+          "8K 60Hz / 4K 120Hz対応",
+          "USB給電対応"
+        ],
+        "differentiators": [
+          "より高いリフレッシュレートと解像度に対応"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "HDMI端子が足りないモニターやテレビを使っている人",
+        "安定した通信品質を求める人",
+        "安価な中華製品の耐久性に不安がある人"
+      ],
+      "pros": [
+        "信頼のAnkerブランド",
+        "4K 60Hzの安定した映像出力",
+        "電源不要のシンプル設計"
+      ],
+      "cons": [
+        "HDMIケーブルが付属しない",
+        "リモコン操作はできない"
+      ],
+      "score": 75,
+      "scoreRationale": "[基本点: 70]\n[加点: +5] (品質・デザイン: Ankerのビルドクオリティと信頼性)\n[加点: +5] (ユーザー満足度: 長期保証とサポート体制)\n[減点: -5] (コストパフォーマンス: 競合他社より若干割高かつケーブル別売り)\n[合計: 75]"
+    },
+    "technicalSpecs": {
+      "dimensions": {
+        "width": "5.5cm",
+        "depth": "5.5cm",
+        "height": "1.5cm",
+        "weight": "30g"
+      },
+      "resolution": "4K (60Hz), 1080p (120Hz)",
+      "connectivity": [
+        "HDMI入力 x 2 / 出力 x 1 (または逆)",
+        "双方向対応"
+      ],
+      "power": "バスパワー (外部電源不要)",
+      "other": [
+        "HDCP対応",
+        "3Dコンテンツ対応",
+        "HDR対応"
+      ]
+    }
+  }
+}
