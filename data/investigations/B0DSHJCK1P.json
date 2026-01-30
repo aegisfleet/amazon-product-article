@@ -1,0 +1,138 @@
+{
+  "analysis": {
+    "productName": "Lemorele 13-in-1 USB-C ドッキングステーション (TC100)",
+    "parentAsin": "B0GH5QY7YY",
+    "productDescription": "圧倒的なコストパフォーマンスを誇る13-in-1多機能ハブ。3,000円台という価格ながらトリプルディスプレイ出力やPD100W充電に対応。",
+    "productUsage": [
+      "USB-Cポート1つで13機能に拡張（HDMI x2, VGA, LAN, USB x4, SD/TF, Audio）",
+      "最大3画面の同時出力（MST対応、Windowsで拡張モード可）",
+      "PD 100W急速充電対応でPCを充電しながら使用可能"
+    ],
+    "positivePoints": [
+      "他社を圧倒する低価格（13ポートで約3,000円）",
+      "VGAポート搭載で古いプロジェクターやモニターにも対応",
+      "軽量コンパクトなデザインで持ち運びに便利"
+    ],
+    "negativePoints": [
+      "HDMI出力が4K@30Hzに制限される（動きの速い映像には不向き）",
+      "プラスチック筐体のため、負荷が高い時の放熱性に懸念がある",
+      "USBデータ転送速度が最大5Gbpsに留まる（競合上位は10Gbps）"
+    ],
+    "useCases": [
+      "在宅勤務でのデスク環境構築（モニター、LAN、周辺機器の一括接続）",
+      "VGA端子が必要なプレゼンテーション環境",
+      "ポート数が極端に少ないモバイルノートPCの拡張"
+    ],
+    "userStories": [
+      {
+        "userType": "会社員（在宅勤務）",
+        "scenario": "毎日のPC持ち帰りと自宅デスクでの接続",
+        "experience": "（推測）ケーブル1本でモニター2台と有線LAN、キーボード類に一瞬で接続でき、準備時間が大幅に短縮された。安価だが問題なく動作している。",
+        "sentiment": "positive"
+      },
+      {
+        "userType": "学生",
+        "scenario": "大学でのプレゼンテーション",
+        "experience": "（推測）古いプロジェクターしかない教室でVGAポートが役立った。HDMIとVGAを同時に使えるので柔軟に対応できる。",
+        "sentiment": "positive"
+      }
+    ],
+    "userImpression": "驚異的なコストパフォーマンスで基本的なドッキングステーションの機能を網羅している。4K@60Hzや高速データ転送を求めない一般的な事務作業用途であれば十分な性能を持つ。",
+    "sources": [
+      {
+        "name": "Amazon商品ページ (Features & Specs)",
+        "url": "https://www.amazon.co.jp/dp/B0DSHJCK1P",
+        "credibility": "high"
+      }
+    ],
+    "lastInvestigated": "2026-01-31",
+    "competitiveAnalysis": [
+      {
+        "name": "UGREEN Revodok 12-in-1 (B0CR6J2HCK)",
+        "asin": "B0CR6J2HCK",
+        "priceComparison": "約4,959円（+約1,900円）",
+        "featureComparison": [
+          "HDMI 4K@60Hz対応（Lemoreleは30Hz）",
+          "USB転送速度 10Gbps（Lemoreleは5Gbps）"
+        ],
+        "differentiators": [
+          "UGREENは基本性能（画質・速度）が高い",
+          "Lemoreleは価格最優先の選択肢"
+        ]
+      },
+      {
+        "name": "Anker USB-C Hub 14-in-1 (B0CG5CF9GF)",
+        "asin": "B0CG5CF9GF",
+        "priceComparison": "約8,990円（約3倍）",
+        "featureComparison": [
+          "4K@60Hz対応",
+          "ブランド信頼性とビルドクオリティが高い"
+        ],
+        "differentiators": [
+          "Ankerは長期的な信頼性と安定性重視",
+          "Lemoreleはコスト重視"
+        ]
+      },
+      {
+        "name": "UGREEN Revodok 7-in-1 (B0D1XSKZRJ)",
+        "asin": "B0D1XSKZRJ",
+        "priceComparison": "約3,849円（同価格帯）",
+        "featureComparison": [
+          "ポート数が7つと少ない（VGAやLANなしの場合あり）",
+          "4K@60Hz対応"
+        ],
+        "differentiators": [
+          "ポート数ならLemorele、画質ならUGREEN 7-in-1"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "とにかく安く多機能ハブを手に入れたい人",
+        "4K@60Hzの高画質を必要としない事務作業ユーザー",
+        "VGA端子を必要とするユーザー"
+      ],
+      "pros": [
+        "圧倒的なコストパフォーマンス",
+        "13ポートという高い拡張性",
+        "レガシーなVGAポートを搭載"
+      ],
+      "cons": [
+        "HDMIが4K@30Hzまでの対応",
+        "データ転送速度が5Gbps止まり",
+        "プラスチック筐体の質感と放熱性"
+      ],
+      "score": 75,
+      "scoreRationale": "[基本点: 70]\n[加点: +15] (競合の半額以下という圧倒的なコストパフォーマンス)\n[減点: -5] (HDMI 30Hz、USB 5Gbpsという一世代前のスペック)\n[減点: -5] (プラスチック筐体による質感と放熱性の懸念)\n[合計: 75]"
+    },
+    "technicalSpecs": {
+      "dimensions": {
+        "width": "1.7インチ",
+        "height": "0.63インチ",
+        "length": "6.7インチ",
+        "weight": "0.22ポンド"
+      },
+      "connectivity": [
+        "USB-C (Host)",
+        "2 x HDMI (4K@30Hz)",
+        "1 x VGA (1080P)",
+        "2 x USB-A 3.0 (5Gbps)",
+        "2 x USB-A 2.0",
+        "1 x USB-C Data (5Gbps)",
+        "1 x USB-C PD (100W)",
+        "1 x RJ45 (1Gbps)",
+        "SD/TF Card Slots",
+        "3.5mm Audio"
+      ],
+      "power": "PD 100W Pass-through",
+      "display": {
+        "maxResolution": "4K@30Hz (Single/Dual HDMI)",
+        "mstSupport": true
+      },
+      "other": [
+        "Material: Plastic",
+        "Color: Black"
+      ]
+    }
+  }
+}
