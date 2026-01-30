@@ -201,6 +201,99 @@ function initCategoryFeatures() {
     }
 
     /**
+     * Update URL with current filter/sort state
+     */
+    function updateUrl() {
+        const params = new URLSearchParams();
+        
+        // Sort
+        if (sortSelect.value && sortSelect.value !== 'date-desc') {
+            params.set('sort', sortSelect.value);
+        }
+
+        // Price
+        const selectedPrice = document.querySelector('input[name="price-filter"]:checked');
+        if (selectedPrice && selectedPrice.value !== 'all') {
+            params.set('price', selectedPrice.value);
+        }
+
+        // Score
+        const selectedScore = document.querySelector('input[name="score-filter"]:checked');
+        if (selectedScore && selectedScore.value !== 'all') {
+            params.set('score', selectedScore.value);
+        }
+
+        // Categories
+        const selectedCats = getSelectedCategories();
+        if (selectedCats.length > 0) {
+            params.set('categories', selectedCats.join(','));
+        }
+
+        // Specs
+        const selectedSpecs = getSelectedSpecs();
+        if (selectedSpecs.length > 0) {
+            params.set('specs', selectedSpecs.join(','));
+        }
+
+        const newUrl = window.location.pathname + (params.toString() ? '?' + params.toString() : '');
+        window.history.replaceState({ path: newUrl }, '', newUrl);
+    }
+
+    /**
+     * Apply filter/sort state from URL
+     */
+    function applyUrlState() {
+        const params = new URLSearchParams(window.location.search);
+
+        // Sort
+        if (params.has('sort')) {
+            sortSelect.value = params.get('sort');
+        }
+
+        // Price
+        if (params.has('price')) {
+            const radio = document.querySelector(`input[name="price-filter"][value="${params.get('price')}"]`);
+            if (radio) {
+                document.querySelectorAll('input[name="price-filter"]').forEach(r => r.checked = false);
+                radio.checked = true;
+            }
+        }
+
+        // Score
+        if (params.has('score')) {
+            const radio = document.querySelector(`input[name="score-filter"][value="${params.get('score')}"]`);
+            if (radio) {
+                document.querySelectorAll('input[name="score-filter"]').forEach(r => r.checked = false);
+                radio.checked = true;
+            }
+        }
+
+        // Categories
+        if (params.has('categories') && categoryFilters) {
+            const cats = params.get('categories').split(',');
+            categoryFilters.querySelectorAll('input[name="category"]').forEach(cb => {
+                cb.checked = cats.includes(cb.value);
+            });
+        }
+
+        // Specs
+        if (params.has('specs')) {
+            const specFilters = document.getElementById('spec-filters');
+            if (specFilters) {
+                const specs = params.get('specs').split(',');
+                specFilters.querySelectorAll('input[name="spec"]').forEach(cb => {
+                    cb.checked = specs.includes(cb.value);
+                });
+            }
+        }
+
+        // If any filters are active, ensure the filter section is expanded
+        if (params.toString()) {
+            filterSection.classList.remove('collapsed');
+        }
+    }
+
+    /**
      * Reset all filters to default state
      */
     function resetFilters() {
@@ -227,11 +320,13 @@ function initCategoryFeatures() {
 
         // Apply filters
         filterCards();
+        updateUrl();
     }
 
     // Handle sort selection change
     sortSelect.addEventListener('change', function () {
         sortCards(this.value);
+        updateUrl();
     });
 
     // Handle filter toggle (expand/collapse)
@@ -253,17 +348,24 @@ function initCategoryFeatures() {
     if (categoryFilters) {
         categoryFilters.addEventListener('change', function () {
             filterCards();
+            updateUrl();
         });
     }
 
     // Handle price filter changes
     document.querySelectorAll('input[name="price-filter"]').forEach(radio => {
-        radio.addEventListener('change', filterCards);
+        radio.addEventListener('change', () => {
+            filterCards();
+            updateUrl();
+        });
     });
 
     // Handle score filter changes
     document.querySelectorAll('input[name="score-filter"]').forEach(radio => {
-        radio.addEventListener('change', filterCards);
+        radio.addEventListener('change', () => {
+            filterCards();
+            updateUrl();
+        });
     });
 
     // Handle spec filter changes
@@ -271,6 +373,7 @@ function initCategoryFeatures() {
     if (specFilters) {
         specFilters.addEventListener('change', function () {
             filterCards();
+             updateUrl();
         });
     }
 
@@ -278,6 +381,9 @@ function initCategoryFeatures() {
     window.addEventListener('pageshow', function (event) {
         // Re-store all cards reference
         allCards = Array.from(productGrid.querySelectorAll('.card'));
+
+        // Re-apply the URL state in case it was modified
+        applyUrlState();
 
         // Re-apply the sort to match the preserved select value
         const currentValue = sortSelect.value;
@@ -289,11 +395,17 @@ function initCategoryFeatures() {
         filterCards();
     });
 
+    // Initial load from URL
+    applyUrlState();
+
     // Initial count update
     updateProductCount();
 
     // Initial sort to ensure display matches the default "Newest" selection
     sortCards(sortSelect.value);
+
+    // Initial filter application
+    filterCards();
 }
 
 // Initialize when DOM is ready, or immediately if already loaded
