@@ -1,0 +1,118 @@
+{
+  "analysis": {
+    "productName": "Newmight 7-in-1 USB-C ドッキングステーション (Dual 4K HDMI)",
+    "parentAsin": "B0FLDL2GCW",
+    "productDescription": "USB-Cポート1つからHDMI×2、USB-A×3、USB-C×1、PD充電×1の計7ポートに拡張できる多機能ハブです。",
+    "productUsage": [
+      "ノートPCの画面を2台の外部モニターに拡張出力（Windowsのみ）",
+      "マウス、キーボード、USBメモリなどの周辺機器をまとめて接続",
+      "PD対応ノートPCへ最大100Wの急速充電（パススルー充電）"
+    ],
+    "positivePoints": [
+      "4,000円以下の低価格でデュアルHDMI出力を実現",
+      "USB-Aポートを3基搭載しており、既存のUSB機器を多数接続可能",
+      "最大4K@60Hzの高解像度出力に対応（スペック上）"
+    ],
+    "negativePoints": [
+      "USBデータ転送速度が5Gbps（USB 3.0）に留まり、競合の10Gbpsモデルより遅い",
+      "macOSではMST（マルチストリームトランスポート）非対応のため、2画面出力時はミラーリングになる",
+      "知名度の低いブランドであり、長期的な信頼性は未知数"
+    ],
+    "useCases": [
+      "テレワークでのマルチモニター環境構築（ExcelとWeb会議の同時表示など）",
+      "ポート数が少ないモバイルノートPC（MacBook Airなど）の拡張"
+    ],
+    "userStories": [
+      {
+        "userType": "30代会社員（テレワーク）",
+        "scenario": "自宅のデスク環境改善",
+        "experience": "会社のWindowsノートPCにモニターを2台繋ぎたくて購入しました。ケーブル1本で全部繋がるので、PCを持ち出す時も楽です。画質も問題なく綺麗に映っています。（機能に基づく推測）",
+        "sentiment": "positive"
+      },
+      {
+        "userType": "フリーランス（Macユーザー）",
+        "scenario": "外出先での作業",
+        "experience": "MacBook Airで使用。HDMIが2つあるので便利かと思いましたが、Macでは2つの外部モニターに別々の画面を出せない（ミラーリングになる）ことを後で知りました。Windows機では問題ないようです。（機能に基づく推測）",
+        "sentiment": "mixed"
+      }
+    ],
+    "userImpression": "安価にデュアルディスプレイ環境を構築したいWindowsユーザーにとってはコストパフォーマンスの高い選択肢ですが、Macユーザーや高速データ転送を求める層には不向きな側面があります。",
+    "sources": [
+      {
+        "name": "Amazon Product Page (Feature Analysis)",
+        "url": "https://www.amazon.co.jp/dp/B0FLDL2GCW",
+        "credibility": "High"
+      }
+    ],
+    "lastInvestigated": "2026-01-31",
+    "competitiveAnalysis": [
+      {
+        "name": "UGREEN Revodok Pro 7-in-1",
+        "asin": "B0D1XSKZRJ",
+        "priceComparison": "3,849円（セール時）。Newmightとほぼ同価格帯だが、スペックが高い。",
+        "featureComparison": [
+          "USB転送速度: 最大10Gbps（Newmightは5Gbps）",
+          "HDMI x2 (4K@60Hz) は同等"
+        ],
+        "differentiators": [
+          "USBデータ転送速度が速い",
+          "USB-Cデータポートが2つある（Newmightは1つ）"
+        ]
+      },
+      {
+        "name": "Anker USB-C ハブ (7-in-1, Dual Display)",
+        "asin": "B0D52GVLDP",
+        "priceComparison": "4,990円。Newmightより約1,000円高い。",
+        "featureComparison": [
+          "USB転送速度: 最大10Gbps",
+          "HDMI出力: 4K@30Hz / 1080p@60Hz（Newmightは4K@60Hzを謳う）"
+        ],
+        "differentiators": [
+          "大手ブランドの信頼性",
+          "価格は高いが安心感がある"
+        ]
+      },
+      {
+        "name": "UGREEN Revodok 107 7-in-1",
+        "asin": "B093FKT9BF",
+        "priceComparison": "3,449円。Newmightより安価だがHDMIは1ポートのみ。",
+        "featureComparison": [
+          "HDMI出力: 1ポート (4K@60Hz) (Newmightは2ポート)",
+          "有線LANポート搭載 (Newmightは非搭載)",
+          "SD/microSDカードスロット搭載 (Newmightは非搭載)"
+        ],
+        "differentiators": [
+          "有線LANとSDカードが必要なユーザー向け",
+          "デュアルディスプレイ不要ならこちらの方が機能バランスが良い"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "WindowsノートPCを使用していて、安価にマルチモニター環境を作りたい人",
+        "マウスやキーボードなどUSB-A接続の周辺機器を多く持っている人"
+      ],
+      "pros": [
+        "圧倒的なコストパフォーマンス",
+        "USB-Aポートが3つありレガシー機器に強い"
+      ],
+      "cons": [
+        "USBデータ転送が5Gbpsとやや遅い",
+        "macOSではデュアルディスプレイ拡張（A-B-C）ができない"
+      ],
+      "score": 75,
+      "scoreRationale": "[基本点: 70]\n[加点: +5] (機能: 4,000円以下でHDMI×2ポート搭載は貴重)\n[加点: +5] (コスパ: 競合と比較しても十分安い)\n[減点: -5] (性能: USB転送速度が5Gbpsであり、同価格帯の競合(10Gbps)に見劣りする)\n[合計: 75]"
+    },
+    "technicalSpecs": {
+      "ports": "HDMI x2, USB-A 3.0 x3, USB-C 3.0 x1, USB-C PD x1",
+      "hdmi_resolution": "Max 4K@60Hz (Single/Dual depending on OS/Source)",
+      "usb_speed": "5Gbps (USB 3.0)",
+      "pd_charging": "Max 100W (Pass-through)",
+      "compatibility": "Windows (MST supported), macOS (MST not supported), iPadOS",
+      "dimensions": {
+        "weight": "約60g (推測)",
+        "size": "詳細不明"
+      }
+    }
+  }
+}
