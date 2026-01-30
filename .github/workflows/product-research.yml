@@ -60,6 +60,9 @@ on:
           - conditioner
           - hair_treatment
           - toner
+          - docking_station
+          - monitor_arm
+          - desk_setup
       max_results:
         description: 'Maximum results per category'
         required: false

@@ -821,6 +821,30 @@ export class ProductSearcher {
         maxResults: 10,
         sortBy: 'featured',
         enabled: true
+      },
+      {
+        name: 'docking_station',
+        searchIndex: 'Computers',
+        keywords: ['ドッキングステーション', 'USB-C ドッキングステーション', 'Thunderbolt 4 ドッキングステーション', 'ノートPC ドッキングステーション'],
+        maxResults: 10,
+        sortBy: 'featured',
+        enabled: true
+      },
+      {
+        name: 'monitor_arm',
+        searchIndex: 'Computers',
+        keywords: ['モニターアーム', 'デュアル モニターアーム', 'モニターアーム ガス圧式', 'エルゴトロン モニターアーム'],
+        maxResults: 10,
+        sortBy: 'featured',
+        enabled: true
+      },
+      {
+        name: 'desk_setup',
+        searchIndex: 'OfficeProducts',
+        keywords: ['デスク周り 便利グッズ', 'ケーブルホルダー', 'デスクオーガナイザー', 'ノートパソコンスタンド', 'フットレスト'],
+        maxResults: 10,
+        sortBy: 'featured',
+        enabled: true
       }
     ];
   }
@@ -947,7 +971,10 @@ export class ProductSearcher {
       'eye_care': 'HealthPersonalCare',
       'neck_massager': 'HealthPersonalCare',
       'scalp_care': 'Beauty',
-      'toner': 'Beauty'
+      'toner': 'Beauty',
+      'docking_station': 'Computers',
+      'monitor_arm': 'Computers',
+      'desk_setup': 'OfficeProducts'
     };
     return categoryMap[categoryName.toLowerCase()] || 'All';
   }
