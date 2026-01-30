@@ -1,0 +1,139 @@
+{
+  "analysis": {
+    "productName": "Anker PowerExpand Elite 13-in-1 Thunderbolt 3 Dock",
+    "parentAsin": "B087JKDD4M",
+    "productDescription": "Thunderbolt 3対応のMacBook ProやWindowsノートPCに、ケーブル1本で13のポート拡張と最大85Wの急速充電を提供する高性能ドッキングステーション。",
+    "productUsage": [
+      "ケーブル1本でモニター、外付けHDD、有線LANなどを一括接続",
+      "最大85W出力でノートPCをフルスピード充電しながら作業",
+      "Thunderbolt 3ポートを使用した超高速データ転送と5K映像出力"
+    ],
+    "positivePoints": [
+      "13ポートという圧倒的な拡張性（USB-A, USB-C, HDMI, LAN, SDなど）",
+      "最大85WのPD充電に対応し、ハイエンドノートPCも充電可能",
+      "高級感のあるアルミニウムデザインと堅牢な作り",
+      "Thunderbolt 3ポートによる最大40Gbpsの高速データ転送"
+    ],
+    "negativePoints": [
+      "使用中に本体がかなり熱くなる（Thunderboltドック特有の現象）",
+      "ACアダプターが巨大で場所を取る",
+      "HDMIポートが4K/60Hz対応だが1つしかない（デュアルディスプレイにはThunderboltポートの使用が必要）"
+    ],
+    "useCases": [
+      "MacBook Proを使用するクリエイターのデスク環境構築",
+      "テレワークで自宅のマルチモニター環境を効率化したいユーザー",
+      "大量の周辺機器を一括管理したいパワーユーザー"
+    ],
+    "userStories": [
+      {
+        "userType": "在宅勤務のエンジニア",
+        "scenario": "毎日のPC接続の手間を減らしたい",
+        "experience": "以前はハブを複数繋いでいたが、これ1台ですべて解決した。出社時もケーブル1本抜くだけで済むので非常に楽。ただし本体は結構熱くなるので置き場所には気を使っている。",
+        "sentiment": "positive"
+      },
+      {
+        "userType": "映像クリエイター",
+        "scenario": "大容量データの転送と充電を同時に行いたい",
+        "experience": "SDカードスロットが前面にあるのが便利。転送速度も速く、MacBook Pro 16インチへの給電も十分。ただACアダプタがレンガのように大きいので、デスク裏の配線整理が必要だった。",
+        "sentiment": "mixed"
+      }
+    ],
+    "userImpression": "ポートの豊富さと85W給電の実用性で非常に評価が高い。一方で、発熱の高さとACアダプターの巨大さは多くのユーザーが指摘する共通の懸念点となっている。",
+    "sources": [
+      {
+        "name": "Amazon製品ページ",
+        "url": "https://www.amazon.co.jp/dp/B087JKDD4M",
+        "credibility": "high"
+      },
+      {
+        "name": "The Verge (General Thunderbolt Dock Reviews)",
+        "url": null,
+        "credibility": "medium"
+      }
+    ],
+    "lastInvestigated": "2026-01-31",
+    "competitiveAnalysis": [
+      {
+        "name": "Belkin Thunderbolt 3 Dock Pro",
+        "asin": "B085CSK9JQ",
+        "priceComparison": "約40,950円とAnkerより1.4万円ほど高価。",
+        "featureComparison": [
+          "信頼性の高いBelkin製、Apple Store取り扱いあり",
+          "ポート数は12個（Ankerは13個）"
+        ],
+        "differentiators": [
+          "価格は高いが、より洗練されたデザインとブランド信頼性",
+          "Ankerの方がポート構成がわずかに豊富でコスパが高い"
+        ]
+      },
+      {
+        "name": "Anker Prime ドッキングステーション (14-in-1)",
+        "asin": "B0F8VNSTYC",
+        "priceComparison": "約31,990円と本製品より高い。",
+        "featureComparison": [
+          "最大140W出力対応",
+          "ステータス確認用ディスプレイ搭載",
+          "ThunderboltではなくDisplayLinkチップ採用"
+        ],
+        "differentiators": [
+          "最新のGaN技術とディスプレイ搭載だが、DisplayLinkドライバが必要",
+          "本製品はドライバ不要のThunderbolt 3ネイティブ対応"
+        ]
+      },
+      {
+        "name": "Kensington SD2480T",
+        "asin": "B09ZNVR6BH",
+        "priceComparison": "約16,393円と本製品より1万円安い。",
+        "featureComparison": [
+          "60W給電のみ（Ankerは85W）",
+          "ポート数が少ない"
+        ],
+        "differentiators": [
+          "安価だが、MacBook Pro 15/16インチクラスの充電には出力不足",
+          "ライトユーザー向け"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "MacBook Pro 13/14/15/16インチユーザー",
+        "ケーブル1本ですべてを完結させたいデスクワーカー",
+        "高速なデータ転送とマルチモニター環境が必要なクリエイター"
+      ],
+      "pros": [
+        "13ポートの圧倒的な拡張性",
+        "85Wの高出力PD充電",
+        "競合（Belkin等）と比較して高いコストパフォーマンス"
+      ],
+      "cons": [
+        "使用中の発熱が大きい",
+        "ACアダプターが非常に大きく重い",
+        "HDMIポートは1つのみ（2画面目はThunderbolt 3経由）"
+      ],
+      "score": 80,
+      "scoreRationale": "[基本点: 70]\n[性能・機能: +8] (13ポートの拡張性、Thunderbolt 3の高速転送、85W給電)\n[コストパフォーマンス: +5] (2万円台半ばでこの機能は優秀)\n[品質・デザイン: +2] (堅実な金属筐体)\n[ユーザー満足度: -5] (発熱に関する報告が多い)\n[合計: 80]"
+    },
+    "technicalSpecs": {
+      "dimensions": {
+        "height": "125.8 mm",
+        "width": "88.6 mm",
+        "depth": "41.6 mm",
+        "weight": "490 g"
+      },
+      "power": "最大85W (アップストリーム), 180W (ACアダプタ)",
+      "connectivity": [
+        "Thunderbolt 3 x 2",
+        "USB-A 3.0 x 4",
+        "USB-C x 2",
+        "HDMI 2.0",
+        "Gigabit Ethernet",
+        "SD / microSD Slot",
+        "3.5mm Audio"
+      ],
+      "other": [
+        "4K 60Hz対応",
+        "5K対応 (Thunderbolt 3)"
+      ]
+    }
+  }
+}
