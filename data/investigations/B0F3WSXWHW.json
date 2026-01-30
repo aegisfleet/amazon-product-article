@@ -1,0 +1,88 @@
+{
+  "analysis": {
+    "productName": "UGREEN HDMI 2.1 切替器 2入力1出力",
+    "parentAsin": "B0F3WSXWHW",
+    "productDescription": "8K@60Hzや4K@120Hzに対応した、2台のHDMI機器を1台のモニターに切り替えて出力できる手動式セレクターです。",
+    "productUsage": [
+      "PS5やXbox Series Xなどの最新ゲーム機を1つのHDMIポートで切り替えて使用",
+      "PCとゲーム機で同じモニターを共有",
+      "テレビのHDMIポート不足を解消"
+    ],
+    "positivePoints": [
+      "HDMI 2.1対応で8K@60Hz/4K@120Hzの高解像度・高リフレッシュレートをサポート",
+      "USB-C給電ケーブル付属で安定した動作が可能",
+      "手動スイッチによる確実な切り替え操作",
+      "UGREENブランドによる一定の品質信頼性",
+      "競合製品と比較して安価な価格設定"
+    ],
+    "negativePoints": [
+      "自動切り替え機能がない",
+      "リモコンが付属していないため本体での操作が必要",
+      "単方向仕様のため1入力2出力の分配器としては使用不可"
+    ],
+    "useCases": [
+      "ハイエンドゲーミング環境の構築",
+      "リビングのAV機器配線の整理"
+    ],
+    "userStories": [
+      {
+        "userType": "ゲーマー",
+        "scenario": "PS5とXbox Series Xの両方を所有",
+        "experience": "（推測）これまではケーブルを差し替えていたが、ボタン一つで切り替えられるようになり手間が減った。4K120Hzでも遅延を感じない。",
+        "sentiment": "positive"
+      },
+      {
+        "userType": "PCユーザー",
+        "scenario": "仕事用PCとゲーム機を同じモニターで使用",
+        "experience": "（推測）デスク上のケーブルがすっきりした。手動切り替えなので勝手に画面が変わることがなくて良い。",
+        "sentiment": "positive"
+      }
+    ],
+    "userImpression": "HDMI 2.1対応の安価なセレクターとして、特にゲーマー層からの需要が見込まれる。手動操作の手間はあるが、その分安定性とコストパフォーマンスに優れる。",
+    "sources": [
+      {
+        "name": "Amazon Product Page",
+        "url": "https://www.amazon.co.jp/dp/B0F3WSXWHW",
+        "credibility": "high"
+      }
+    ],
+    "lastInvestigated": "2026-01-31",
+    "competitiveAnalysis": [
+      {
+        "name": "エレコム DH-SW8KBD21BK/E",
+        "asin": "B0DP46LYZ6",
+        "priceComparison": "3330円（本製品より約1400円高い）",
+        "featureComparison": ["双方向対応（本製品は単方向）", "薄型設計", "国内メーカーサポート"],
+        "differentiators": ["双方向機能が必要ならエレコムだが、単なる切替ならUGREENの方がコスパが良い"]
+      },
+      {
+        "name": "サンワサプライ SW-HDR8K21L",
+        "asin": "B0C9CZX29D",
+        "priceComparison": "3364円（本製品より約1400円高い）",
+        "featureComparison": ["2入力1出力", "国内メーカーサポート"],
+        "differentiators": ["機能は同等だが価格差が大きい"]
+      },
+      {
+        "name": "avedio links HDMI切替器",
+        "asin": "B0F18R7YG5",
+        "priceComparison": "1227円（本製品より約700円安い）",
+        "featureComparison": ["双方向対応", "より小型"],
+        "differentiators": ["さらに安価だが、ブランド信頼性と安定性でUGREENを選ぶ余地がある"]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": ["PS5/Xbox Series Xユーザー", "4K/120Hzモニター利用者", "コスパ重視の人"],
+      "pros": ["最新規格HDMI 2.1対応", "圧倒的なコストパフォーマンス", "安定動作のための外部電源対応"],
+      "cons": ["手動切り替えのみ", "リモコンなし"],
+      "score": 80,
+      "scoreRationale": "[基本点: 70]\n[加点: +5] (HDMI 2.1対応、8K/4K120Hzサポート、USB-C給電による安定性)\n[加点: +5] (競合他社製品と比較して安価でありながら十分な機能を持つ)\n[合計: 80]"
+    },
+    "technicalSpecs": {
+      "dimensions": { "height": "3cm (約1.18インチ)", "width": "7.2cm (約2.83インチ)", "depth": "15.7cm (約6.18インチ)" },
+      "power": "USB-C給電 (ケーブル付属)",
+      "capacity": "48Gbps帯域幅",
+      "connectivity": ["HDMI 2.1", "HDCP 2.3", "VRR", "HDR10+"],
+      "other": ["手動スイッチ", "LEDインジケーター"]
+    }
+  }
+}
