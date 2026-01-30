@@ -1,0 +1,135 @@
+{
+  "analysis": {
+    "productName": "PULWTOP 11-in-1 縦置きUSB-Cドッキングステーション (BD216C)",
+    "parentAsin": "B0F1K6TPKW",
+    "productDescription": "ノートPC用の縦置きスタンドと11ポートのハブ機能を一体化した、省スペース型のドッキングステーションです。",
+    "productUsage": [
+      "USB-Cケーブル1本でモニター2台、周辺機器、電源を一括接続",
+      "ノートPCを縦置きしてデスクスペースを有効活用（クラムシェルモード）",
+      "USB 3.2 Gen2による高速データ転送（SSDなど）"
+    ],
+    "positivePoints": [
+      "縦置きスタンド一体型により、デスク上の占有面積を最小限に抑えられる",
+      "USB-A/Cともに10Gbps対応ポートを搭載し、高速転送が可能",
+      "HDMIポートを2基搭載し、最大4K@60Hz（単画面時）の出力に対応"
+    ],
+    "negativePoints": [
+      "ACアダプタが付属しておらず、別途PD対応充電器（65W以上推奨）が必要",
+      "macOSではMST（画面拡張）モードに非対応で、2画面出力時はミラーリングになる",
+      "SD/microSDカードスロットが非搭載"
+    ],
+    "useCases": [
+      "狭いデスク環境でのマルチモニター構築",
+      "ノートPCを持ち運ぶ頻度が高いビジネスマンの自宅/オフィス環境",
+      "Windows PCでのトリプルディスプレイ環境（本体画面+外部2画面）"
+    ],
+    "userStories": [
+      {
+        "userType": "在宅勤務の会社員",
+        "scenario": "デスクが狭く、ノートPCとモニターを置くとスペースがない",
+        "experience": "（推測）ノートPCを立てて収納できるため、デスクが驚くほど広くなり、作業スペースを確保できた。",
+        "sentiment": "positive"
+      },
+      {
+        "userType": "WindowsノートPCユーザー",
+        "scenario": "外出先から帰宅後、すぐに作業を再開したい",
+        "experience": "（推測）ケーブル1本挿すだけで、充電・モニター・キーボードが一瞬で繋がり、非常に快適になった。",
+        "sentiment": "positive"
+      },
+      {
+        "userType": "MacBookユーザー",
+        "scenario": "外部モニター2台に別々の画面を表示したい",
+        "experience": "（推測）Macでは2台のモニターに同じ画面しか映らない（ミラーリング）仕様だと後で知り、期待外れだった。",
+        "sentiment": "negative"
+      }
+    ],
+    "userImpression": "縦置きスタンドとしての機能性とハブの拡張性を兼ね備えたユニークな製品として評価される一方、ACアダプタ別売やMacでの制約には注意が必要。",
+    "sources": [
+      {
+        "name": "Amazon Product Features (B0DLMW6Y7L)",
+        "url": "https://www.amazon.co.jp/dp/B0DLMW6Y7L",
+        "credibility": "high"
+      }
+    ],
+    "lastInvestigated": "2026-01-31",
+    "competitiveAnalysis": [
+      {
+        "name": "UGREEN Revodok Pro 11-in-1 (B0DRNZFYC9)",
+        "asin": "B0DRNZFYC9",
+        "priceComparison": "約5,600円と、本製品の半額近い価格。",
+        "featureComparison": [
+          "平置きタイプでスタンド機能なし",
+          "ポート構成は類似（HDMIx2, USB-Cx2等）",
+          "4K@120Hz出力に対応（DPポートあり）"
+        ],
+        "differentiators": [
+          "圧倒的なコストパフォーマンス",
+          "縦置き機能がないため設置面積をとる"
+        ]
+      },
+      {
+        "name": "WAVLINK 11-in-1 (B0DRHVQH3Q)",
+        "asin": "B0DRHVQH3Q",
+        "priceComparison": "約14,800円と本製品より高い。",
+        "featureComparison": [
+          "140W充電器が付属している",
+          "最大3画面出力に対応"
+        ],
+        "differentiators": [
+          "フルスペックだが価格が高い",
+          "充電器付属ですぐ使える"
+        ]
+      },
+      {
+        "name": "PULWTOP SSDスロット付きモデル (B0D9L726CQ)",
+        "asin": "B0D9L726CQ",
+        "priceComparison": "約10,000円と同価格帯。",
+        "featureComparison": [
+          "M.2 SSDスロットを搭載している",
+          "HDMIは1ポートのみ"
+        ],
+        "differentiators": [
+          "ストレージ拡張か、デュアルHDMIかの選択になる"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "デスク上のスペースを節約したいWindowsユーザー",
+        "ノートPCをクラムシェルモード（閉じた状態）で使いたい人",
+        "すでに高出力のUSB-C充電器を持っている人"
+      ],
+      "pros": [
+        "縦置きスタンドとドックの一体化による省スペース性",
+        "10Gbps対応のUSBポートによる高速データ転送",
+        "ケーブル1本での整理整頓"
+      ],
+      "cons": [
+        "ACアダプタを別途用意する必要がある（コスト増）",
+        "SDカードリーダーがないため、写真取り込み等には不便",
+        "Macユーザーには画面拡張の制限がある"
+      ],
+      "score": 77,
+      "scoreRationale": "[基本点: 70]\n[加点: +5] (縦置きスタンド機能による独自の省スペース価値)\n[加点: +5] (USB 3.2 Gen2 10Gbpsポート搭載)\n[加点: +2] (アルミ筐体の質感とデザイン)\n[減点: -5] (ACアダプタ別売かつSDスロットなしで1万円超えは、競合比でコスパがやや劣る)\n[合計: 77]"
+    },
+    "technicalSpecs": {
+      "dimensions": {
+        "description": "縦型スタンド形状",
+        "note": "具体的なミリメートル寸法は不明だが、商品画像と梱包サイズ(15x11x10cm程度)から推測可能"
+      },
+      "ports": {
+        "hdmi": "2x HDMI (最大4K@60Hz, 2画面時は4K@30Hz)",
+        "usb_c": "1x USB-C 3.2 Gen2 (10Gbps, データのみ), 1x Host, 1x PD Input (100W)",
+        "usb_a": "1x USB-A 3.2 Gen2 (10Gbps), 2x USB-A 3.2 Gen1 (5Gbps), 1x USB-A 2.0",
+        "ethernet": "1x RJ45 (1Gbps)",
+        "audio": null,
+        "sd_card": null
+      },
+      "power": {
+        "input": "USB-C PD 3.0 (最大100W)",
+        "output": "最大85W (ホストへの給電)"
+      },
+      "compatibility": "Windows (MST対応), macOS (SSTのみ), Thunderbolt 3/4, USB-C (DP Alt Mode対応必須)"
+    }
+  }
+}
