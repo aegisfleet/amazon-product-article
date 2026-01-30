@@ -1,0 +1,120 @@
+{
+  "analysis": {
+    "productName": "Anker PowerExpand 13-in-1 USB-C Dock",
+    "parentAsin": "B088FMRW7L",
+    "productDescription": "USB-C接続で13のポートを拡張できるドッキングステーション。最大85WのPD充電と3画面出力に対応しています。",
+    "productUsage": [
+      "ノートPCのポート拡張（USB-A, HDMI, SDカード等）",
+      "デスク据え置きでのマルチモニター環境構築",
+      "ノートPCへの給電（最大85W）と周辺機器の同時接続"
+    ],
+    "positivePoints": [
+      "13ポートという圧倒的な拡張性",
+      "Ankerブランドの信頼性と安定した動作",
+      "最大85WのPD充電で高性能ノートPCにも給電可能",
+      "SD/microSDカードスロット同時使用可能"
+    ],
+    "negativePoints": [
+      "ACアダプタが非常に大きく重い（レンガサイズ）",
+      "映像出力スペックが古く、4K 60Hzや高解像度マルチモニタに弱い",
+      "価格が発売当時から下がっておらず、最新機種と比較して割高",
+      "縦置き不可でデスク上の占有面積が大きい"
+    ],
+    "useCases": [
+      "テレワークでの自宅デスク環境構築",
+      "ポートの少ないMacBook等の拡張",
+      "クリエイター用途（SDカード多用など）"
+    ],
+    "userStories": [
+      {
+        "userType": "在宅勤務の会社員",
+        "scenario": "ノートPC1台で仕事を完結させたい",
+        "experience": "ケーブル1本でモニター、キーボード、マウス、充電が全て繋がり非常に快適。ただしACアダプタが机の下で邪魔になるのが難点。（推測）",
+        "sentiment": "mixed"
+      },
+      {
+        "userType": "MacBook Proユーザー",
+        "scenario": "クラムシェルモードでの使用",
+        "experience": "安定して動作するが、デュアルモニターにするとリフレッシュレートが落ちるのが気になる。最新のドックに買い替えを検討中。（推測）",
+        "sentiment": "negative"
+      }
+    ],
+    "userImpression": "発売当時は決定版とも言える製品だったが、現在はスペックの古さが目立つ。安定性は高いが、巨大なACアダプタと価格がネックとなり、指名買いする理由は薄れている。",
+    "sources": [
+      {
+        "name": "Anker Japan公式サイト",
+        "url": "https://www.ankerjapan.com/products/a8392",
+        "credibility": "高"
+      },
+      {
+        "name": "Amazonカスタマーレビュー",
+        "url": "https://www.amazon.co.jp/dp/B088FMRW7L",
+        "credibility": "中"
+      }
+    ],
+    "lastInvestigated": "2026-01-31",
+    "competitiveAnalysis": [
+      {
+        "name": "UGREEN Revodok Pro 314",
+        "asin": "B0DYTVVLH4",
+        "priceComparison": "約6,000円安い（13,990円）",
+        "featureComparison": [
+          "HDMI 4K@60Hz対応（Ankerは条件による）",
+          "データ転送10Gbps（Ankerは5Gbps想定）"
+        ],
+        "differentiators": [
+          "コストパフォーマンスが高い",
+          "最新スペック搭載"
+        ]
+      },
+      {
+        "name": "Belkin Connect 11-in-1 GaN Dock",
+        "asin": "B0DM1TWPDY",
+        "priceComparison": "約2,000円高い（22,464円）",
+        "featureComparison": [
+          "GaN電源内蔵でACアダプタ不要",
+          "HDMI 2.1 / 4K@120Hz対応"
+        ],
+        "differentiators": [
+          "デスク周りが圧倒的にスッキリする",
+          "最新の映像出力規格に対応"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "安定性重視でAnker製品で統一したいユーザー",
+        "古い規格のモニターを使用していて高リフレッシュレートを求めないユーザー"
+      ],
+      "pros": [
+        "長期間販売されており動作実績が豊富",
+        "ポートの種類と数が豊富"
+      ],
+      "cons": [
+        "今から買うにはスペック対価格比（コスパ）が悪い",
+        "ACアダプタが巨大で設置場所に困る"
+      ],
+      "score": 60,
+      "scoreRationale": "[基本点: 70]\n[加点: +5] (Ankerブランドの信頼性とビルドクオリティ)\n[減点: -5] (映像出力スペックが古く4K60Hzマルチなどに弱い)\n[減点: -10] (競合の最新機種と比較して価格が高く、ACアダプタも巨大で取り回しが悪い)\n[合計: 60]"
+    },
+    "technicalSpecs": {
+      "dimensions": {
+        "width": "125mm",
+        "depth": "88mm",
+        "height": "41mm",
+        "weight": "370g"
+      },
+      "power": "85W (PD pass-through to host), 18W (PD port)",
+      "capacity": null,
+      "other": [
+        "USB-A 3.0 x3",
+        "USB-C 3.0 x1",
+        "HDMI 2.0 x2",
+        "DisplayPort 1.4 x1",
+        "SD/microSD (UHS-I)",
+        "Ethernet (1Gbps)",
+        "Audio Jack"
+      ]
+    }
+  }
+}
