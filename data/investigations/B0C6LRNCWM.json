@@ -1,0 +1,127 @@
+{
+  "analysis": {
+    "productName": "Belkin Connect Thunderbolt 4 5-in-1 Core Hub",
+    "parentAsin": "B0FGPG1KGY",
+    "productDescription": "Thunderbolt 4ポートを3基増設し、最大96WでPCを充電できる、コンパクトで高性能なドッキングステーションです。",
+    "productUsage": [
+      "Thunderbolt 4対応機器の増設とデイジーチェーン接続",
+      "最大96Wの電力供給によるノートPCの急速充電",
+      "デュアル4Kまたはシングル8Kディスプレイへの映像出力"
+    ],
+    "positivePoints": [
+      "コンパクトなデザインでデスク上の占有スペースが少ない",
+      "Thunderbolt 4ポートを3つ搭載し、高速データ転送と柔軟な拡張性を実現",
+      "最大96WのPD給電に対応し、MacBook Pro 16インチクラスも充電可能",
+      "USB-Aポート（10Gbps）も1つ搭載しており、旧来の機器も接続可能"
+    ],
+    "negativePoints": [
+      "150WのACアダプタが本体よりも大きく重いため、持ち運びには不向き",
+      "HDMIやSDカードスロット、LANポートは非搭載（別途変換が必要）",
+      "高負荷時には本体が熱を持つことがある"
+    ],
+    "useCases": [
+      "MacBook Pro/Airなどポート数が少ないPCの拡張",
+      "Thunderboltモニターやストレージを複数接続するクリエイティブワーク",
+      "デスク周りをすっきりさせたいホームオフィス環境"
+    ],
+    "userStories": [
+      {
+        "userType": "MacBook Proユーザー",
+        "scenario": "動画編集作業",
+        "experience": "Thunderbolt接続のSSDと4Kモニターを接続するために導入しました。ケーブル1本でPCの充電と高速データ転送が同時にでき、作業効率が上がりました。（推測）",
+        "sentiment": "positive"
+      },
+      {
+        "userType": "在宅勤務の会社員",
+        "scenario": "デスク整理",
+        "experience": "本体は非常にコンパクトで高級感がありますが、付属の電源アダプタがレンガのように巨大で、デスク裏の配線整理に苦労しました。（推測）",
+        "sentiment": "mixed"
+      }
+    ],
+    "userImpression": "Thunderbolt 4ポートを純粋に増やしたいユーザーには最適解の一つです。HDMIやLANポートが必要な場合は他の多機能ドックを選ぶべきですが、拡張性と通信速度、充電能力のバランスが高く評価されています。ただし、ACアダプタの巨大さは覚悟が必要です。",
+    "sources": [
+      {
+        "name": "Belkin 公式サイト",
+        "url": "https://www.belkin.com/jp/",
+        "credibility": "高"
+      }
+    ],
+    "lastInvestigated": "2026-01-31",
+    "competitiveAnalysis": [
+      {
+        "name": "Belkin 5-in-1 (Amazon限定版)",
+        "asin": "B0F4VNMK9P",
+        "priceComparison": "本製品より約1,500円安価（調査時）",
+        "featureComparison": [
+          "機能・仕様は本製品と同一",
+          "Amazon限定の壁紙特典などが付属する場合がある"
+        ],
+        "differentiators": [
+          "価格メリットがある場合はこちらが推奨される"
+        ]
+      },
+      {
+        "name": "Anker 778 Thunderbolt ドッキングステーション",
+        "asin": "B0BN1HMD38",
+        "priceComparison": "本製品より約18,000円高い",
+        "featureComparison": [
+          "HDMI、DisplayPort、LANポートを搭載",
+          "12ポートの多機能モデル"
+        ],
+        "differentiators": [
+          "ポートの種類の豊富さ",
+          "HDMI等を直接接続したいニーズに対応"
+        ]
+      },
+      {
+        "name": "エレコム ドッキングステーション 14in1 DST-W13",
+        "asin": "B0CM2WKGLC",
+        "priceComparison": "本製品より約8,000円高い",
+        "featureComparison": [
+          "14ポートの多機能モデル",
+          "3画面出力対応"
+        ],
+        "differentiators": [
+          "国内メーカーの安心感",
+          "圧倒的なポート数"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "Thunderbolt接続の周辺機器を複数持っているユーザー",
+        "MacBook ProなどでPD充電と高速データ転送を両立したい人",
+        "デスクをシンプルに保ちたいミニマリスト"
+      ],
+      "pros": [
+        "Thunderbolt 4ポートを3基増設できる希少なハブ",
+        "最大96Wのパワフルな給電能力",
+        "デスクに馴染む洗練されたデザイン"
+      ],
+      "cons": [
+        "ACアダプタが大きく場所を取る",
+        "HDMIやLANポートが必要な場合は別途アダプタが必要"
+      ],
+      "score": 85,
+      "scoreRationale": "[基本点: 70]\n[加点: +5] Thunderbolt 4ハブとして必要十分な機能を備え、96W給電も優秀。\n[加点: +5] 競合のTB4ドックと比較して2万円台半ばとコストパフォーマンスが良い。\n[加点: +5] Belkinらしい高いビルドクオリティと信頼性。\n[合計: 85]"
+    },
+    "technicalSpecs": {
+      "dimensions": {
+        "width": "135mm",
+        "depth": "74mm",
+        "height": "18mm",
+        "weight": "245g"
+      },
+      "power": "PD 96W (Host), AC 150W",
+      "connectivity": [
+        "Thunderbolt 4 x 4 (Upstream x1, Downstream x3)",
+        "USB-A 3.2 Gen 2 x 1"
+      ],
+      "other": [
+        "Dual 4K@60Hz",
+        "Single 8K@30Hz",
+        "40Gbps Data Transfer"
+      ]
+    }
+  }
+}
