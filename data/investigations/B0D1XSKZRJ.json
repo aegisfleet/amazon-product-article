@@ -1,0 +1,138 @@
+{
+  "analysis": {
+    "productName": "UGREEN Revodok Pro 7-in-1 USB-C ドッキングステーション (45365)",
+    "parentAsin": "B0D1XSKZRJ",
+    "productDescription": "2つのHDMIポートによる4Kデュアルディスプレイ出力と、10Gbpsの高速データ転送に対応したUSB-Cドッキングステーション。SDカードやLANポートを省き、映像出力とデータ転送性能に特化したモデル。",
+    "productUsage": [
+      "WindowsノートPCでのデュアルモニター環境の構築（拡張モード）",
+      "外付けSSDなどへの10Gbps高速データ転送",
+      "USB PD 100Wパススルー充電によるPCへの給電"
+    ],
+    "positivePoints": [
+      "最大4K@60Hzの高解像度で2画面同時出力が可能（Windows MST対応）",
+      "USB-A/C共に10Gbps（USB 3.2 Gen 2相当）の高速データ転送に対応",
+      "同等スペック（Dual HDMI, 10Gbps）の競合製品と比較して価格が非常に安い",
+      "コンパクトな筐体で持ち運びに便利"
+    ],
+    "negativePoints": [
+      "macOSではMST非対応のため、2つの外部モニターには同じ画面しか出力できない（ミラーリングのみ）",
+      "SDカードスロットと有線LANポートが非搭載",
+      "高負荷時（デュアル出力＋高速転送時）に筐体が熱くなりやすい傾向がある"
+    ],
+    "useCases": [
+      "在宅勤務でのマルチモニター環境構築（ExcelとZoomの同時表示など）",
+      "動画編集素材の高速転送（SSD利用）",
+      "ポートの少ないモバイルノートPC（SurfaceやXPSなど）の拡張"
+    ],
+    "userStories": [
+      {
+        "userType": "30代 リモートワーカー（Windows利用）",
+        "scenario": "自宅のデスク環境を拡張したい",
+        "experience": "会社支給のDell XPSに接続して使用。これ1つで電源、モニター2枚、マウスを接続でき、ケーブルの抜き差しが楽になった。4Kモニターでも遅延なく表示され、作業効率が格段に上がった。",
+        "sentiment": "positive"
+      },
+      {
+        "userType": "大学生（MacBook Air利用）",
+        "scenario": "デュアルディスプレイにしたくて購入",
+        "experience": "MacBook Air M1で使用したが、2枚のモニターに同じ画面しか映らない。調べたらMacはMST非対応とのこと。商品説明には書いてあったが、見落としていた。WindowsPCを使っている友人に譲った。",
+        "sentiment": "negative"
+      },
+      {
+        "userType": "映像クリエイター",
+        "scenario": "外出先でのデータバックアップ",
+        "experience": "撮影現場でSSDからPCへデータを移す際に使用。以前使っていた5Gbpsのハブよりも明らかに転送が速く、待ち時間が短縮された。SDカードスロットがないのは惜しいが、速度優先で選んだので満足。",
+        "sentiment": "mixed"
+      }
+    ],
+    "userImpression": "Windowsユーザーにとっては、低価格でデュアル4K環境と高速転送が手に入る「高コスパの正解」。一方でMacユーザーにとっては仕様制限（ミラーのみ）が致命的であり、注意が必要。機能を取捨選択（SD/LANなし）した尖った製品。",
+    "sources": [
+      {
+        "name": "Amazon商品ページ仕様解説",
+        "url": "https://www.amazon.co.jp/dp/B0D1XSKZRJ",
+        "credibility": "High"
+      },
+      {
+        "name": "競合他社（Anker/Baseus）仕様比較",
+        "url": null,
+        "credibility": "Medium"
+      }
+    ],
+    "lastInvestigated": "2026-01-31",
+    "competitiveAnalysis": [
+      {
+        "name": "Anker PowerExpand 6-in-1 (B08C9HZ5YT)",
+        "asin": "B08C9HZ5YT",
+        "priceComparison": "ほぼ同価格帯（Ankerの方が若干高い傾向）",
+        "featureComparison": [
+          "AnkerはHDMI×1、5Gbps転送、LANあり",
+          "UGREENはHDMI×2、10Gbps転送、LANなし"
+        ],
+        "differentiators": [
+          "UGREENは「映像2画面」「転送速度」で優れる",
+          "Ankerは「LANポート搭載」と「ブランドの安心感」で優れる"
+        ]
+      },
+      {
+        "name": "Baseus 7-in-1 (B0CWS5ZHQ8)",
+        "asin": "B0CWS5ZHQ8",
+        "priceComparison": "Baseusの方が圧倒的に安い（約半額）",
+        "featureComparison": [
+          "Baseusは5Gbps、SDカードスロットあり",
+          "UGREENは10Gbps、HDMI×2"
+        ],
+        "differentiators": [
+          "Baseusはライトユーザー向け（SDあり、安い）",
+          "UGREENはパワーユーザー向け（高速転送、デュアルディスプレイ）"
+        ]
+      },
+      {
+        "name": "UGREEN Revodok 1071 (B0BLNDNBG1)",
+        "asin": "B0BLNDNBG1",
+        "priceComparison": "下位モデルのため1000円ほど安い",
+        "featureComparison": [
+          "下位モデルはHDMI×1、5Gbps、SDあり",
+          "本製品はHDMI×2、10Gbps"
+        ],
+        "differentiators": [
+          "SDカードが必要なら下位モデル、デュアル画面と速度なら本製品"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "WindowsノートPCでデュアルディスプレイ環境を構築したい人",
+        "外付けSSDなどで大容量データを頻繁に転送する人",
+        "有線LANやSDカードスロットを必要としない人"
+      ],
+      "pros": [
+        "Windows環境での4K@60Hzデュアル出力対応",
+        "USB-A/C全ポートが10Gbpsの高速転送に対応",
+        "機能を絞ったことによる高いコストパフォーマンス"
+      ],
+      "cons": [
+        "MacではOSの仕様上、デュアルディスプレイ拡張ができない（ミラーのみ）",
+        "SDカードリーダーと有線LANポートがない",
+        "使用中に発熱しやすい"
+      ],
+      "score": 85,
+      "scoreRationale": "[基本点: 70]\n[加点: +5] (WindowsでのDual HDMI 4K@60Hz対応)\n[加点: +5] (全USBポートが10Gbps対応)\n[加点: +10] (同スペック帯で群を抜く低価格)\n[減点: -5] (Macでの制約とSD/LANなしによる汎用性の欠如)\n[合計: 85]"
+    },
+    "technicalSpecs": {
+      "dimensions": {
+        "width": "3.1インチ",
+        "height": "0.49インチ",
+        "depth": "0.8インチ",
+        "weight": "約90g"
+      },
+      "power": "PD 100W入力 (パススルー最大85W)",
+      "capacity": null,
+      "other": [
+        "HDMI x 2 (最大4K@60Hz)",
+        "USB-A x 2 (10Gbps)",
+        "USB-C x 2 (10Gbps, データのみ)",
+        "MST対応 (Windowsのみ)",
+        "アルミ筐体"
+      ]
+    }
+  }
+}
