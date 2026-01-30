@@ -1,0 +1,132 @@
+{
+  "analysis": {
+    "productName": "エレコム Thunderbolt 4 ドッキングステーション 14-in-1 (DST-W07)",
+    "parentAsin": "B0D541FBZJ",
+    "productDescription": "Thunderbolt 4ケーブル1本で、映像出力、データ転送、PCへの給電(最大60W)など14の機能を拡張できる高性能ドッキングステーション。",
+    "productUsage": [
+      "Thunderbolt 4ケーブルでPCと接続し、デスクトップ環境を一括構築・拡張",
+      "最大3台の外部モニターへの同時映像出力（HDMI / DisplayPort）",
+      "多数のUSB周辺機器（マウス、キーボード、外付けHDD等）の集約接続",
+      "付属のマグネットスタンドを使用して、デスク環境に合わせて縦置き・横置きを選択"
+    ],
+    "positivePoints": [
+      "次世代規格Thunderbolt 4に対応し、最大40Gbpsの高速転送が可能",
+      "14ポートもの豊富なインターフェースを搭載し、高い拡張性を実現",
+      "マグネット着脱式のスタンドにより、設置スペースに合わせて縦置き・横置きを選べる",
+      "安心の日本国内メーカー製（エレコム）"
+    ],
+    "negativePoints": [
+      "PCへのPD給電が最大60Wに留まり、消費電力の高いハイエンドノートPCには不足する場合がある（競合は90W前後が多い）",
+      "価格が約3万円と高価であり、コストパフォーマンス面では海外メーカー製に劣る場合がある",
+      "発売後の情報が少なく、長期使用の信頼性や詳細な互換性情報が不足している"
+    ],
+    "useCases": [
+      "マルチモニター環境で効率的に作業したいクリエイターやエンジニア",
+      "ノートPCを持ち運ぶ頻度が高く、デスクに戻った際にケーブル1本で環境を復帰させたいビジネスパーソン",
+      "デスク上のケーブルを整理し、スッキリとした作業環境を構築したいユーザー"
+    ],
+    "userStories": [
+      {
+        "userType": "在宅勤務の会社員",
+        "scenario": "毎日のPC接続の手間を減らしたい",
+        "experience": "（推測）これまではモニターや電源、USBハブなど複数のケーブルを抜き差ししていたが、このドックを導入してからはThunderboltケーブル1本で完結。出社時の持ち出しも非常にスムーズになった。",
+        "sentiment": "positive"
+      },
+      {
+        "userType": "映像クリエイター",
+        "scenario": "大容量データの転送とマルチモニター",
+        "experience": "（推測）Thunderbolt 4の帯域幅のおかげで、外付けSSDへのデータ転送が高速。3画面出力も安定しており作業効率が上がったが、MacBook Pro 16インチへの給電が60Wだと高負荷時にバッテリーが減ることがあるのが惜しい。",
+        "sentiment": "mixed"
+      }
+    ],
+    "userImpression": "日本メーカー製のThunderbolt 4ドックとして貴重な選択肢。機能性は非常に高いが、PD 60Wという仕様がハイエンドユーザーにはネックになる可能性がある。",
+    "sources": [
+      {
+        "name": "Amazon商品ページ",
+        "url": "https://www.amazon.co.jp/dp/B0D541FBZJ",
+        "credibility": "high"
+      }
+    ],
+    "lastInvestigated": "2026-01-31",
+    "competitiveAnalysis": [
+      {
+        "name": "UGREEN Revodok Max 213",
+        "asin": "B0DQWJNJ21",
+        "priceComparison": "同価格帯（約32,000円）だが、セール時はUGREENの方が安くなる傾向がある。",
+        "featureComparison": [
+          "PD給電が90W対応でエレコム(60W)より強力",
+          "2.5Gbpsイーサネットポート搭載（エレコムは詳細不明だが恐らく1Gbps）"
+        ],
+        "differentiators": [
+          "給電能力とネットワーク速度でUGREENが優位",
+          "エレコムは国内メーカーの安心感と縦置きスタンドが強み"
+        ]
+      },
+      {
+        "name": "Belkin Connect 5-in-1 Thunderbolt 4",
+        "asin": "B0C6LRNCWM",
+        "priceComparison": "約25,000円とエレコムより5,000円ほど安価。",
+        "featureComparison": [
+          "ポート数は5つと少ない（エレコムは14ポート）",
+          "PCへの給電は最大96W対応で強力"
+        ],
+        "differentiators": [
+          "Belkinはコンパクトさと給電能力重視",
+          "エレコムはポート数と拡張性重視"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "日本メーカーの製品サポートや信頼性を重視するユーザー",
+        "多数のUSB機器を使用しており、ポート数を最優先するユーザー",
+        "デスクの配置に合わせて縦置き設置を行いたいユーザー"
+      ],
+      "pros": [
+        "Thunderbolt 4による圧倒的な拡張性と高速転送",
+        "14ポート搭載でハブの買い足しが不要",
+        "設置の自由度が高いマグネットスタンド"
+      ],
+      "cons": [
+        "PD 60W給電のため、高スペックなゲーミングノートやMacBook Pro 16インチ等では給電不足の可能性がある",
+        "競合の海外メーカー製品と比較して価格設定がやや高め"
+      ],
+      "score": 78,
+      "scoreRationale": "[基本点: 70]\n[加点: +5] (Thunderbolt 4対応、14ポートの豊富な拡張性、3画面出力対応)\n[加点: +5] (国内メーカーであるエレコムブランドの安心感、マグネットスタンドの実用性)\n[加点: +3] (独自の縦置き・横置き両対応スタンド機構)\n[減点: -5] (競合が90W-100W給電に対応する中、60W給電は価格帯を考えると物足りない)\n[合計: 78]"
+    },
+    "technicalSpecs": {
+      "cpu": null,
+      "ram": null,
+      "storage": null,
+      "display": {
+        "size": null,
+        "resolution": "最大8K/30Hz (シングル出力時)",
+        "type": "HDMI / DisplayPort"
+      },
+      "battery": null,
+      "gpu": null,
+      "dimensions": {
+        "height": "約40mm",
+        "width": "約125mm",
+        "depth": "約92mm",
+        "weight": "不明"
+      },
+      "power": "PD給電 最大60W",
+      "connectivity": [
+        "Thunderbolt 4 (PC接続用)",
+        "Thunderbolt 4 (ダウンストリーム)",
+        "USB-A x3",
+        "USB-C x2",
+        "HDMI",
+        "DisplayPort",
+        "LAN (RJ45)",
+        "SD/microSDカードスロット",
+        "3.5mmオーディオジャック"
+      ],
+      "other": [
+        "マグネットスタンド付属",
+        "セキュリティスロット搭載"
+      ]
+    }
+  }
+}
