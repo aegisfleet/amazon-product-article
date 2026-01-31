@@ -1,5 +1,4 @@
 import fs from 'fs';
-import path from 'path';
 import { ProductDetail } from '../../types/Product';
 import { PAAPICache } from '../PAAPICache';
 
@@ -17,7 +16,6 @@ jest.mock('../../utils/Logger', () => ({
 
 describe('PAAPICache', () => {
     const mockCacheDir = 'data/cache/test';
-    const mockCachePath = path.join(process.cwd(), mockCacheDir, 'paapi-product-cache.json');
     let cache: PAAPICache;
 
     beforeEach(() => {

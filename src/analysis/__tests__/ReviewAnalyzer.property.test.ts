@@ -4,7 +4,7 @@
  */
 
 import * as fc from 'fast-check';
-import { InvestigationResult, UserStory } from '../../types/JulesTypes';
+import { InvestigationResult } from '../../types/JulesTypes';
 import { ReviewAnalyzer } from '../ReviewAnalyzer';
 
 describe('ReviewAnalyzer Property Tests', () => {
@@ -78,7 +78,7 @@ describe('ReviewAnalyzer Property Tests', () => {
               userType: fc.string({ minLength: 5, maxLength: 20 }),
               scenario: fc.string({ minLength: 10, maxLength: 50 }),
               experience: fc.string({ minLength: 10, maxLength: 100 }),
-              sentiment: fc.constantFrom('positive', 'negative', 'mixed') as fc.Arbitrary<UserStory['sentiment']>
+              sentiment: fc.constantFrom('positive', 'negative', 'mixed')
             }), { minLength: 1, maxLength: 5 }),
             userImpression: fc.string({ minLength: 20, maxLength: 200 }),
             sources: fc.array(fc.record({

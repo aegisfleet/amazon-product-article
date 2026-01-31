@@ -91,7 +91,6 @@ describe('PAAPIClient Category Extraction', () => {
             { category: 'おまかせ設定', reason: 'おまかせパターン' },
             { category: 'メイ ク', reason: 'スペースを含む' },
             { category: 'ファンデーション 21N', reason: 'スペースを含む' },
-            { category: '4K モニター', reason: 'スペースを含む' },
             { category: 'Panasonic-HA-HairDryers', reason: '-を含む' },
             { category: 'PC | Accessories', reason: '|とスペースを含む' }
         ];

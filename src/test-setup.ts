@@ -13,6 +13,7 @@ beforeAll(() => {
 
 // Global test utilities
 declare global {
+  // eslint-disable-next-line @typescript-eslint/no-namespace
   namespace jest {
     interface Matchers<R> {
       toBeValidConfig(): R;
@@ -22,11 +23,11 @@ declare global {
 
 // Custom Jest matchers
 expect.extend({
-  toBeValidConfig(received: unknown) {
-    const pass = received !== null && 
-                 typeof received === 'object' && 
-                 received !== undefined;
-    
+  toBeValidConfig(received: unknown): jest.CustomMatcherResult {
+    const pass = received !== null &&
+      typeof received === 'object' &&
+      received !== undefined;
+
     if (pass) {
       return {
         message: () => `expected ${JSON.stringify(received)} not to be a valid config`,
