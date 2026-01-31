@@ -1,0 +1,126 @@
+{
+  "analysis": {
+    "productName": "UGREEN Revodok 7-in-1 USB-C ハブ (CM639)",
+    "parentAsin": "B0F29L7PZC",
+    "productDescription": "HDMI×2とDisplayPortを搭載し、最大3画面の同時出力が可能なUSB-Cドッキングステーション。全USBポートが10Gbpsの高速転送に対応。",
+    "productUsage": [
+      "ノートPCの画面を最大3台の外部モニターに拡張（Windows）",
+      "USBメモリや外付けSSDとの10Gbps高速データ転送",
+      "PD 100WによるノートPCへのパススルー急速充電"
+    ],
+    "positivePoints": [
+      "5,000円以下の価格でトリプルディスプレイ出力（HDMI x2 + DP）に対応",
+      "USB-A/Cポートすべてが10Gbpsの高速転送に対応",
+      "100W PD急速充電対応でハイエンドノートPCも充電可能"
+    ],
+    "negativePoints": [
+      "SDカードスロットと有線LANポートがない",
+      "macOSではMST非対応のため、複数モニタへの拡張出力ができずミラーリングになる"
+    ],
+    "useCases": [
+      "WindowsノートPCでのマルチモニター環境構築",
+      "大容量データの頻繁な移動が必要なクリエイティブ作業"
+    ],
+    "userStories": [
+      {
+        "userType": "在宅勤務のエンジニア",
+        "scenario": "効率的な作業環境の構築",
+        "experience": "以前は画面切り替えが面倒だったが、このハブで3画面環境を構築し、コード、仕様書、チャットを別々に表示できるようになり生産性が向上した。（推測）",
+        "sentiment": "positive"
+      },
+      {
+        "userType": "MacBookユーザー",
+        "scenario": "外部モニター拡張の試み",
+        "experience": "3画面出力を期待して購入したが、macOSの制限で全て同じ画面しか映らずがっかりした。Windows機では問題なく使えている。（推測）",
+        "sentiment": "negative"
+      }
+    ],
+    "userImpression": "映像出力とデータ転送速度に特化した高コスパモデル。必要な機能がマッチすれば非常に満足度が高いが、Macユーザーやオールインワン（LAN/SD込み）を求める層には不向き。",
+    "sources": [
+      {
+        "name": "Amazon商品ページ",
+        "url": "https://www.amazon.co.jp/dp/B0CR6J2HCK",
+        "credibility": "high"
+      }
+    ],
+    "lastInvestigated": "2026-01-31",
+    "competitiveAnalysis": [
+      {
+        "name": "Selore 13-in-1 ドッキングステーション",
+        "asin": "B0CX59NVY2",
+        "priceComparison": "約1,400円高い",
+        "featureComparison": [
+          "SDカード、有線LAN、VGAポートあり",
+          "ポート数が多い"
+        ],
+        "differentiators": [
+          "オールインワンだが価格が高い",
+          "サイズが大きい"
+        ]
+      },
+      {
+        "name": "Anker PowerExpand 8-in-1",
+        "asin": "B0D7PXM8D6",
+        "priceComparison": "同価格帯（約200円高い）",
+        "featureComparison": [
+          "SDカードスロットあり",
+          "HDMIは1ポートのみ"
+        ],
+        "differentiators": [
+          "Ankerブランドの安心感",
+          "3画面出力は非対応"
+        ]
+      },
+      {
+        "name": "UGREEN Revodok Pro 209",
+        "asin": "B0D1XSKZRJ",
+        "priceComparison": "約1,100円安い",
+        "featureComparison": [
+          "DPポートなし",
+          "HDMI x2のみ"
+        ],
+        "differentiators": [
+          "DP不要ならこちらがコスパ良し"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "WindowsノートPCで3画面出力を安価に実現したいユーザー",
+        "高速データ転送が必要なユーザー"
+      ],
+      "pros": [
+        "圧倒的なコストパフォーマンス",
+        "10Gbpsの転送速度"
+      ],
+      "cons": [
+        "Macユーザーには不向き（MST非対応）",
+        "SDカード/LANが必要な場合は別途アダプタが必要"
+      ],
+      "score": 92,
+      "scoreRationale": "[基本点: 70]\n[加点: +7] (3画面4K対応かつ全ポート10Gbpsという高性能)\n[加点: +12] (競合他社と比較して圧倒的に安価)\n[加点: +3] (UGREENブランドのビルドクオリティ)\n[合計: 92]"
+    },
+    "technicalSpecs": {
+      "dimensions": {
+        "height": "2.3cm",
+        "width": "19.5cm",
+        "depth": "11.0cm",
+        "weight": "240g"
+      },
+      "ports": {
+        "hdmi": "2x (Max 4K@60Hz)",
+        "displayPort": "1x (Max 4K@60Hz)",
+        "usb_a": "2x USB 3.2 Gen 2 (10Gbps)",
+        "usb_c": "1x USB 3.2 Gen 2 (10Gbps)",
+        "pd_input": "1x USB-C (Max 100W)"
+      },
+      "compatibility": [
+        "Windows 10/11",
+        "macOS (Mirror only for multi-display)",
+        "Linux",
+        "Android"
+      ],
+      "material": "Aluminum Alloy"
+    }
+  }
+}
