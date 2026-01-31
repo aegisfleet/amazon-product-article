@@ -1,0 +1,131 @@
+{
+  "analysis": {
+    "productName": "エレコム DST-W01 USB-C ハブ 5-in-1",
+    "parentAsin": "B0DZ2NXN7W",
+    "productDescription": "USB Type-Cポート搭載のノートパソコンに、ケーブル1本でHDMI映像出力、USB機器接続、PD充電を一括で行える5-in-1ドッキングステーション。",
+    "productUsage": [
+      "ノートパソコンへのPDパススルー給電（最大100W入力対応）",
+      "HDMIケーブルによる外部モニターやプロジェクターへの映像出力（4K 30Hz）",
+      "USBメモリやマウス、キーボードなどのUSB機器接続（USB-A/C）",
+      "USB Type-Cデータ転送（5Gbps）"
+    ],
+    "positivePoints": [
+      "2,000円台の手頃な価格で基本的な拡張機能を網羅",
+      "USB-CデータポートとUSB-Aポートの両方を搭載し、新旧の機器に対応",
+      "厚さ約10mmのスリム設計で持ち運びに最適",
+      "最大100WのPD入力に対応し、高出力なノートPCも充電可能"
+    ],
+    "negativePoints": [
+      "HDMI出力が4K 30Hzまでの対応で、60Hzのスムーズな映像には非対応",
+      "ケーブル長が短めでデスクトップ等では使いにくい可能性",
+      "イーサネット（LAN）ポートは非搭載"
+    ],
+    "useCases": [
+      "外出先や会議室でのプレゼンテーション（HDMI出力）",
+      "ポート数の少ない薄型ノートPC（MacBook Air等）での周辺機器接続",
+      "テレワーク時のデスク環境構築（充電ケーブルと周辺機器の一括着脱）"
+    ],
+    "userStories": [
+      {
+        "userType": "ビジネスマン（推測）",
+        "scenario": "出張先での作業",
+        "experience": "ホテルのテレビにHDMIで画面を映しながら、PCを充電しつつUSBメモリのデータを扱えるため、荷物が減って助かっている。（推測）",
+        "sentiment": "positive"
+      },
+      {
+        "userType": "学生（推測）",
+        "scenario": "大学でのレポート作成",
+        "experience": "MacBook Airのポートが足りないので購入。マウスとスマホの充電ケーブルを同時に繋げられるのが便利。安くて助かった。（推測）",
+        "sentiment": "positive"
+      }
+    ],
+    "userImpression": "エントリーモデルとして必要十分な機能を備え、コストパフォーマンスに優れた製品。4K60Hzや有線LANが不要なユーザーにとっては最適な選択肢。",
+    "sources": [
+      {
+        "name": "Amazon商品ページ (PA-API)",
+        "url": "https://www.amazon.co.jp/dp/B0CQ29L3RM",
+        "credibility": "High"
+      }
+    ],
+    "lastInvestigated": "2026-01-31",
+    "competitiveAnalysis": [
+      {
+        "name": "Anker PowerExpand+ 5-in-1 USB-C イーサネットハブ",
+        "asin": "B07X7VQ9HN",
+        "priceComparison": "約4,190円（+1,700円程度高い）",
+        "featureComparison": [
+          "有線LANポート搭載",
+          "HDMI 4K 30Hz",
+          "USB-A x3"
+        ],
+        "differentiators": [
+          "有線LANが必要な場合はAnker",
+          "安さとUSB-Cデータポートが必要ならエレコム"
+        ]
+      },
+      {
+        "name": "Belkin Connect 5-in-1 USB-C ハブ",
+        "asin": "B0FP5LDM48",
+        "priceComparison": "約4,242円（+1,750円程度高い）",
+        "featureComparison": [
+          "HDMI 4K 60Hz対応",
+          "100W PDパススルー"
+        ],
+        "differentiators": [
+          "映像出力を重視するならBelkin（60Hz対応）",
+          "価格重視ならエレコム"
+        ]
+      },
+      {
+        "name": "IDEATOR USB C ハブ 5in1",
+        "asin": "B0C4SLVW1V",
+        "priceComparison": "約1,980円（さらに安い）",
+        "featureComparison": [
+          "VGAポート搭載",
+          "HDMI 4K対応"
+        ],
+        "differentiators": [
+          "VGAが必要ならIDEATOR",
+          "国内ブランドの安心感ならエレコム"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "ポートの少ないノートPC（MacBook Air/Pro, Surface等）を使用している人",
+        "安価にHDMI出力とUSBポート拡張を行いたい人",
+        "持ち運び用のサブドックを探している人"
+      ],
+      "pros": [
+        "圧倒的なコストパフォーマンス",
+        "USB-Cデータポート搭載による将来性",
+        "軽量コンパクト"
+      ],
+      "cons": [
+        "4Kモニタで60Hz表示を求める場合は不適",
+        "有線LANポートがないためネットワーク環境に注意"
+      ],
+      "score": 75,
+      "scoreRationale": "[基本点: 70]\n[加点: +10] (2,490円という非常に優れたコストパフォーマンス)\n[減点: -5] (HDMIが30Hz止まりであり、現在の基準では最低限のスペック)\n[合計: 75]"
+    },
+    "technicalSpecs": {
+      "dimensions": {
+        "height": "10mm",
+        "width": "122mm",
+        "depth": "41mm",
+        "weight": null
+      },
+      "ports": [
+        "USB Type-C (Upstream, PC接続用)",
+        "USB Type-C (Downstream, USB 3.2 Gen1 5Gbps, Data Only)",
+        "USB Type-C (PD 3.0 Input, Max 100W)",
+        "USB Type-A (USB 3.2 Gen1 5Gbps) x 2",
+        "HDMI (4K 30Hz / 1080p 60Hz)"
+      ],
+      "other": [
+        "ケーブル長: 約0.3m (推測)",
+        "筐体材質: プラスチック (推測)"
+      ]
+    }
+  }
+}
