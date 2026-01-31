@@ -1,0 +1,106 @@
+{
+  "analysis": {
+    "productName": "CIO SMARTCOBY ULTRA SLIM 3K",
+    "parentAsin": "B0FTZ6GBVS",
+    "productDescription": "厚さわずか4.98mmのステンレス筐体を採用した、MagSafe対応・Find My搭載の超薄型モバイルバッテリー。",
+    "productUsage": [
+      "外出時のiPhoneのバッテリー切れ対策（ちょい足し充電）",
+      "MagSafeによるケーブルレス充電",
+      "Appleの「探す」ネットワークを利用した紛失防止タグとしての活用"
+    ],
+    "positivePoints": [
+      "圧倒的な薄さ(4.98mm)で、iPhoneに装着したまま操作しても邪魔にならない",
+      "高級感のあるステンレス筐体と鏡面加工",
+      "Find My（探す）機能対応で、置き忘れや紛失時も追跡可能",
+      "パススルー充電対応で、バッテリーとスマホを同時に充電可能"
+    ],
+    "negativePoints": [
+      "容量が3000mAhと少なく、iPhoneをフル充電するには足りない（約40-50%程度）",
+      "価格が約9,000円と、同容量帯の製品と比較して高価",
+      "ワイヤレス出力7.5W、有線出力10Wと充電速度は控えめ"
+    ],
+    "useCases": [
+      "荷物を極限まで減らしたいミニマリストの外出",
+      "財布や胸ポケットに入れての予備電源としての携帯",
+      "よく物を置き忘れる人のためのトラッカー兼バッテリー"
+    ],
+    "userStories": [
+      {
+        "userType": "30代ビジネスマン",
+        "scenario": "大事な商談前のカフェでの待機中、スマホの充電が20%を切っていることに気づく",
+        "experience": "スーツのポケットに入れておいたこのバッテリーを取り出し、マグネットで装着。非常に薄いため、装着したまま通話しても違和感がなく、スマートにバッテリーを持たせることができた。「探す」対応なので、忙しい移動中の置き忘れの不安もない。（推測）",
+        "sentiment": "positive"
+      }
+    ],
+    "userImpression": "ユーザーレビューはまだ少ないが、スペックからは「容量よりも携帯性とデザイン、安心感（Find My）を最優先するユーザー」に向けた製品と推測される。日常的な『あと少し』を補うためのラグジュアリーなツール。",
+    "sources": [
+      {
+        "name": "Amazon商品ページ",
+        "url": "https://www.amazon.co.jp/dp/B0FTZ596XR",
+        "credibility": "High"
+      }
+    ],
+    "lastInvestigated": "2026-01-31",
+    "competitiveAnalysis": [
+      {
+        "name": "CIO SMARTCOBY SLIM 5K",
+        "asin": "B0DSKFTHMV",
+        "priceComparison": "本製品より容量が多い(5000mAh)が、本製品の方が高価（Find My機能とステンレス筐体代と推測）",
+        "featureComparison": [
+          "容量: 5000mAh vs 3000mAh (本製品)",
+          "厚さ: 8.7mm vs 4.98mm (本製品)",
+          "Find My機能なし"
+        ],
+        "differentiators": [
+          "本製品は圧倒的に薄く、Find Myに対応している点が独自"
+        ]
+      },
+      {
+        "name": "Generic MagSafe 8000mAh (充電の達人)",
+        "asin": "B0FPF4LLN4",
+        "priceComparison": "約3,000円と本製品の1/3以下の価格",
+        "featureComparison": [
+          "容量: 8000mAh vs 3000mAh (本製品)",
+          "厚さ: 具体値不明だが本製品より厚い",
+          "信頼性や質感が低い"
+        ],
+        "differentiators": [
+          "価格と容量では勝るが、携帯性と所有欲を満たすデザイン性で本製品が優る"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "ガジェットの薄さとデザインにこだわるミニマリスト",
+        "荷物を極限まで減らしたい人",
+        "よく物をなくすためFind My機能に魅力を感じる人"
+      ],
+      "pros": [
+        "極薄4.98mmの圧倒的な携帯性",
+        "Find My内蔵で紛失防止タグとしても使える",
+        "美しいステンレス筐体"
+      ],
+      "cons": [
+        "容量が3000mAhと少ない（フル充電不可）",
+        "価格が高い（コストパフォーマンス重視には不向き）"
+      ],
+      "score": 78,
+      "scoreRationale": "[基本点: 70]\n[加点: +5] 極薄4.98mmの実用性とFind My対応の利便性\n[加点: +10] ステンレス筐体と鏡面加工の高い質感・ビルドクオリティ\n[加点: +5] モバイルバッテリーにFind Myを内蔵するという独自の強み\n[減点: -7] 3000mAhで約9,000円は高価（AirTag機能込みとしても割高感あり）\n[減点: -5] 容量不足を感じるシーンが想定される\n[合計: 78]"
+    },
+    "technicalSpecs": {
+      "dimensions": {
+        "height": "約104mm",
+        "width": "約70mm",
+        "depth": "4.98mm",
+        "weight": "約82g"
+      },
+      "capacity": "3000mAh",
+      "power": {
+        "wireless": "Max 7.5W",
+        "wired": "Max 10W (Input/Output)"
+      },
+      "connectivity": ["MagSafe", "USB-C"],
+      "other": ["Find My対応", "パススルー充電", "ステンレス筐体"]
+    }
+  }
+}
