@@ -1,0 +1,121 @@
+{
+  "analysis": {
+    "productName": "MSL FORCE USB-C マグネット変換アダプタ L字 100W PD",
+    "parentAsin": "B0DMDR6MDN",
+    "productDescription": "USB-Cケーブルをマグネット着脱式に変換し、機器のポート保護と利便性を向上させるL字型アダプタです。",
+    "productUsage": [
+      "ノートPCやスマートフォンの充電ポート保護（抜き差しによる摩耗防止）",
+      "MagSafeのようにケーブルを近づけるだけで接続できるようにする",
+      "L字型コネクタによる省スペースな配線整理"
+    ],
+    "positivePoints": [
+      "最大100WのPD急速充電に対応し、ノートPCも充電可能",
+      "L字型デザインでデバイス横のスペースを有効活用できる",
+      "日本の中小企業ブランドによる安心感と手頃な価格設定"
+    ],
+    "negativePoints": [
+      "映像出力には非対応",
+      "データ転送速度が480Mbps（USB 2.0相当）と遅い",
+      "マグネット式のため、横方向の力で意図せず外れる場合がある"
+    ],
+    "useCases": [
+      "MacBook Air/Proの充電ケーブルのMagSafe化",
+      "スマートフォンの充電時のケーブル破損防止",
+      "デスク周りの配線をスッキリさせたい場合"
+    ],
+    "userStories": [
+      {
+        "userType": "ノートPCユーザー",
+        "scenario": "毎日の持ち運びでケーブルの抜き差しが頻繁",
+        "experience": "以前はケーブルを挿すのが面倒だったが、マグネット式にしてから近づけるだけで繋がり、非常に楽になった。ポートの傷も気にならなくなった。（推測）",
+        "sentiment": "positive"
+      },
+      {
+        "userType": "デスクワーカー",
+        "scenario": "充電しながらの使用",
+        "experience": "L字型なのでケーブルが横に飛び出さず、マウス操作の邪魔にならないのが良い。ただしデータ転送は遅いので充電専用にしている。（推測）",
+        "sentiment": "mixed"
+      }
+    ],
+    "userImpression": "充電用途に特化したコストパフォーマンスの良い製品。映像出力や高速転送を求めないユーザーには適している。",
+    "sources": [
+      {
+        "name": "Amazon商品ページ",
+        "url": "https://www.amazon.co.jp/dp/B0DMDG924Z",
+        "credibility": "高"
+      }
+    ],
+    "lastInvestigated": "2026-01-31",
+    "competitiveAnalysis": [
+      {
+        "name": "Akkerds マグネット USB C L字 変換 アダプタ",
+        "asin": "B0DB5SYPCH",
+        "priceComparison": "約749円（本製品より安い）",
+        "featureComparison": [
+          "40Gbps転送",
+          "8K映像出力",
+          "100W PD"
+        ],
+        "differentiators": [
+          "スペックが非常に高いが価格が安く、信頼性に懸念が残る可能性がある"
+        ]
+      },
+      {
+        "name": "CIO マグネット変換アダプタ",
+        "asin": "B0D542J918",
+        "priceComparison": "約1480円（本製品より高い）",
+        "featureComparison": [
+          "100W PD",
+          "480Mbps転送",
+          "映像非対応"
+        ],
+        "differentiators": [
+          "国内人気ブランドの信頼性とデザイン性",
+          "スペックは本製品と同等"
+        ]
+      },
+      {
+        "name": "エレコム マグネット 変換アダプタ",
+        "asin": "B0FJ1ZK4SL",
+        "priceComparison": "約1150円（本製品より高い）",
+        "featureComparison": [
+          "100W PD",
+          "L字型"
+        ],
+        "differentiators": [
+          "国内大手メーカーの安心感"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "充電メインで安価にマグネット化したいユーザー",
+        "「日本の中小企業」ブランドを選びたいがコストも抑えたい人",
+        "L字コネクタで配線をスッキリさせたい人"
+      ],
+      "pros": [
+        "100W充電対応でPCにも使える",
+        "882円と手頃な価格",
+        "ポート保護に役立つ"
+      ],
+      "cons": [
+        "映像出力はできない",
+        "高速データ転送には向かない"
+      ],
+      "score": 70,
+      "scoreRationale": "[基本点: 70]\n[コスパ: +5] 国内ブランド(CIO)の同等品より約40%安く、充電用途ならコスパ良好。\n[性能: -5] 映像出力非対応かつデータ転送がUSB2.0相当(480Mbps)のため、用途が限定される。\n[合計: 70]"
+    },
+    "technicalSpecs": {
+      "interface": "USB-C to USB-C",
+      "max_power": "100W (PD対応)",
+      "data_transfer": "480Mbps",
+      "video_output": "非対応",
+      "connector_type": "L字型 / マグネット着脱式",
+      "compatibility": "PC, Tablet, Smartphone (USB-C搭載機)",
+      "dimensions": null,
+      "other": [
+        "LEDインジケーター搭載"
+      ]
+    }
+  }
+}
