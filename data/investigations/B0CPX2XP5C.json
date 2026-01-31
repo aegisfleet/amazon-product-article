@@ -1,0 +1,124 @@
+{
+  "analysis": {
+    "productName": "エレコム USB Type-C 延長ケーブル 1m USB3.2(Gen1) PD 60W対応",
+    "parentAsin": "B0CQQMTMFQ",
+    "productDescription": "USB Type-Cポートを搭載した機器の接続距離を延長できる、USB 3.2 (Gen1) 対応の延長ケーブルです。",
+    "productUsage": [
+      "PC背面のアクセスしにくいUSB-Cポートを手元に延長して使用",
+      "短すぎる充電ケーブルや周辺機器のケーブル長を延長",
+      "USBハブやドッキングステーションの接続位置を調整"
+    ],
+    "positivePoints": [
+      "日本メーカー（エレコム）製である安心感と品質管理",
+      "2重シールドケーブル採用による外部ノイズへの強さ",
+      "USB PD (Power Delivery) 60W対応で、ノートPCやスマホの充電にも十分対応",
+      "サビに強く信号劣化を抑える金メッキピンを採用",
+      "難燃性の素材を使用しており、安全性に配慮されている"
+    ],
+    "negativePoints": [
+      "USB 3.2 Gen 1 (5Gbps) までの対応であり、10Gbps転送や高度な映像出力にはスペック不足の可能性がある",
+      "延長ケーブルという性質上、接続する機器やケーブルの組み合わせによっては電圧降下や認識不良が起きるリスクがある（規格外の使用法となるため）",
+      "コネクタ部分が比較的大きめである可能性がある（干渉注意）"
+    ],
+    "useCases": [
+      "デスクトップPCの背面ポートへのアクセス改善",
+      "カフェやデスクで電源が遠い場合の充電ケーブル延長",
+      "Webカメラやマイクの設置位置調整"
+    ],
+    "userStories": [
+      {
+        "userType": "30代 リモートワーカー",
+        "scenario": "デスクトップPCの背面ポート活用",
+        "experience": "PC背面のUSB-Cポートにいちいち手を回すのが面倒で購入しました。机の上にポートを持ってこれたので、USBメモリやスマホの接続が劇的に楽になりました。速度も安定しています。（推測）",
+        "sentiment": "positive"
+      },
+      {
+        "userType": "20代 学生",
+        "scenario": "スマホの充電",
+        "experience": "ベッドで寝ながらスマホを充電したかったのですが、付属のケーブルが短くて届きませんでした。この延長ケーブルを使って快適に操作できるようになりました。充電速度も落ちていないようです。（推測）",
+        "sentiment": "positive"
+      }
+    ],
+    "userImpression": "レビュー情報は限定的ですが、エレコム製というブランドへの信頼感から選ばれる傾向があります。特に安価な海外製ケーブルに対する不安を持つユーザーにとって、確実なシールド処理や安全性への配慮が評価ポイントとなります。",
+    "sources": [
+      {
+        "name": "Amazon商品ページ",
+        "url": "https://www.amazon.co.jp/dp/B0CPX2XP5C",
+        "credibility": "high"
+      }
+    ],
+    "lastInvestigated": "2026-01-31",
+    "competitiveAnalysis": [
+      {
+        "name": "UGREEN USB Type C延長ケーブル 1M (B08MXL8JGF)",
+        "asin": "B08MXL8JGF",
+        "priceComparison": "約1,300円（本製品より約300円高い）",
+        "featureComparison": [
+          "USB 3.2 Gen 2 (10Gbps) 対応（本製品は5Gbps）",
+          "PD 100W対応（本製品は60W）",
+          "4K60Hz映像出力対応"
+        ],
+        "differentiators": [
+          "スペック重視ならUGREENが圧倒的に有利",
+          "コスト重視ならエレコム"
+        ]
+      },
+      {
+        "name": "エレコム USB Type C 延長ケーブル 1m USB2.0 (B0CPX2V7XC)",
+        "asin": "B0CPX2V7XC",
+        "priceComparison": "約650円（本製品より安い）",
+        "featureComparison": [
+          "USB 2.0 (480Mbps) 止まり",
+          "PD 60Wは同じ"
+        ],
+        "differentiators": [
+          "充電専用やマウス接続なら安いこちらで十分",
+          "HDDや高速データ転送が必要なら本製品（Gen1）を選ぶべき"
+        ]
+      },
+      {
+        "name": "サンワサプライ USB5Gbps Type-C延長ケーブル (B0DSJ658XD)",
+        "asin": "B0DSJ658XD",
+        "priceComparison": "約2,400円（非常に高い）",
+        "featureComparison": [
+          "L型コネクタ採用",
+          "PD 100W対応"
+        ],
+        "differentiators": [
+          "L型が必要な特殊な環境向け",
+          "価格差が大きいため通常の延長なら本製品が有利"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "日本メーカーの安心感を重視するユーザー",
+        "データ転送（USBメモリ等）も行うが、10Gbpsまでの超高速は不要なユーザー",
+        "ノートPC（60W以下）の充電ケーブルを延長したいユーザー"
+      ],
+      "pros": [
+        "信頼性の高いエレコム製で、2重シールドなどのノイズ対策がしっかりしている",
+        "UGREEN等の高スペック品より安価で、普段使いにちょうど良いスペック",
+        "難燃性素材や金メッキピンなど、安全面・耐久面への配慮"
+      ],
+      "cons": [
+        "10Gbps転送や4K映像出力を求めるならスペック不足",
+        "PD 100W充電が必要なハイスペックPCには不向き"
+      ],
+      "score": 80,
+      "scoreRationale": "[基本点: 70]\n[加点: +5] 国内メーカー製かつ2重シールド採用など、品質面での信頼性が高い\n[加点: +5] 競合（UGREEN）より安価で、USB 2.0版より高速というバランスの取れた価格設定\n[合計: 80]"
+    },
+    "technicalSpecs": {
+      "os": null,
+      "cpu": null,
+      "ram": null,
+      "storage": null,
+      "display": null,
+      "battery": null,
+      "camera": null,
+      "connectivity": ["USB 3.2 Gen 1 (5Gbps)", "USB PD (60W)"],
+      "dimensions": { "length": "1.0m", "weight": null },
+      "other": ["2重シールド", "金メッキピン", "難燃性素材"]
+    }
+  }
+}
