@@ -1,0 +1,106 @@
+{
+  "analysis": {
+    "productName": "エレコム マグネット変換アダプタ USB Type-C 100W PD (MPA-CECMAADBK)",
+    "parentAsin": "B0FNZZWLRW",
+    "productDescription": "USB Type-Cケーブルをマグネット式に変換するアダプタです。ケーブルの頻繁な抜き差しによるコネクタの劣化を防ぎ、足を引っ掛けた際なども安全に外れる設計です。",
+    "productUsage": [
+      "ノートPCやタブレットの充電ポートをマグネット着脱式にする",
+      "頻繁なケーブルの抜き差しから端末の充電口を保護する",
+      "ケーブルに足を引っ掛けた際の落下事故を防止する"
+    ],
+    "positivePoints": [
+      "国内メーカー（エレコム）製である安心感",
+      "ブレーカー内蔵（Thermal Protection）による発火防止機能",
+      "100W USB PD対応でノートPCも急速充電可能",
+      "マグネット式で着脱が簡単"
+    ],
+    "negativePoints": [
+      "データ転送速度が遅い（映像出力不可、USB2.0相当の可能性大）",
+      "マグネット接続部が外れやすい場合がある（一般的なマグネット製品の弱点）",
+      "競合の海外製アダプタに比べて高価な場合がある"
+    ],
+    "useCases": [
+      "MacBookやWindowsノートPCの充電",
+      "タブレット端末の充電スタンド化",
+      "子供やペットがいる家庭での安全対策"
+    ],
+    "userStories": [
+      {
+        "userType": "30代 リモートワーカー",
+        "scenario": "自宅でのPC作業",
+        "experience": "以前は中華製の無名ブランドを使っていたが、発熱が怖くてエレコム製に買い替えた。ブレーカー搭載という点が安心材料。（推測）",
+        "sentiment": "positive"
+      },
+      {
+        "userType": "40代 主婦",
+        "scenario": "リビングでのタブレット充電",
+        "experience": "子供がケーブルに引っかかってタブレットを落としそうになったことがあるが、マグネット式にしてからはケーブルだけが外れるので安心。（推測）",
+        "sentiment": "positive"
+      }
+    ],
+    "userImpression": "信頼性の高い国内メーカー製で、特に安全機能（発火防止）が評価されている。映像出力や高速データ転送はできないが、充電専用と割り切れば安心して使える製品。",
+    "sources": [
+      {
+        "name": "Amazon.co.jp 商品ページ",
+        "url": "https://www.amazon.co.jp/dp/B0FJ22NG8D",
+        "credibility": "High"
+      }
+    ],
+    "lastInvestigated": "2026-01-31",
+    "competitiveAnalysis": [
+      {
+        "name": "CIO マグネット変換アダプタ (B0DK7BS8N1)",
+        "asin": "B0DK7BS8N1",
+        "priceComparison": "やや高い (￥1,480)",
+        "featureComparison": ["100W PD対応", "USB2.0", "映像出力不可"],
+        "differentiators": ["CIOブランドのデザイン性", "L字型などバリエーション豊富"]
+      },
+      {
+        "name": "MSL FORCE マグネットアダプタ (B0DMDG924Z)",
+        "asin": "B0DMDG924Z",
+        "priceComparison": "安い (￥882)",
+        "featureComparison": ["100W PD対応", "480Mbps"],
+        "differentiators": ["圧倒的な安さ", "L字型"]
+      },
+      {
+        "name": "EC-GOOD 24ピン マグネットアダプタ (B0D8XN5XKJ)",
+        "asin": "B0D8XN5XKJ",
+        "priceComparison": "同等 (￥1,280)",
+        "featureComparison": ["100W PD対応", "10Gbps転送", "4K映像出力対応"],
+        "differentiators": ["映像出力が可能", "高スペック"]
+      },
+      {
+        "name": "Akkerds 40Gbps マグネットアダプタ (B0DB5SYPCH)",
+        "asin": "B0DB5SYPCH",
+        "priceComparison": "非常に安い (￥749)",
+        "featureComparison": ["100W PD対応", "40Gbps転送", "8K映像出力対応"],
+        "differentiators": ["オーバースペックなほどの高性能", "安価だが信頼性は未知数"]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "ノートPCの充電をMagSafeのようにしたい人",
+        "無名メーカーの製品を使うのが怖い人",
+        "充電専用で安全性を最優先したい人"
+      ],
+      "pros": [
+        "エレコム製という信頼感",
+        "発火を防ぐブレーカー機能搭載",
+        "100W PD対応"
+      ],
+      "cons": [
+        "映像出力に対応していない",
+        "データ転送が遅い",
+        "他社製品より割高に感じる場合がある"
+      ],
+      "score": 75,
+      "scoreRationale": "[基本点: 70]\n[加点: +5] 国内メーカー製かつブレーカー搭載の安全性\n[減点: -5] 映像出力不可・USB2.0相当の低速転送\n[加点: +5] 100W PD対応の実用性\n[合計: 75]"
+    },
+    "technicalSpecs": {
+      "dimensions": null,
+      "power": "100W (20V/5A)",
+      "capacity": null,
+      "other": ["USB PD対応", "Thermal Protection (ブレーカー搭載)", "USB2.0相当(推定)"]
+    }
+  }
+}
