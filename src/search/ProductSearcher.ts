@@ -437,31 +437,28 @@ export class ProductSearcher {
   private getEnabledCategories(): CategoryConfig[] {
     try {
       const config = this.config.getConfig();
-      const categories = config.productSearch?.categories || [];
-      // Convert string categories to CategoryConfig objects
-      // Note: Config override is not fully implemented for randomize, for now we fall back to defaults effectively 
-      // if categories are just strings. 
-      // Ideally config would support detailed category config.
-
-
+      const enabledCategoryNames = config.productSearch?.categories || [];
       const defaultCategories = this.getDefaultCategories();
 
-      const categoryConfigs: CategoryConfig[] = categories.map(cat => {
-        const found = defaultCategories.find(d => d.name === cat);
+      if (enabledCategoryNames.length === 0) {
+        return defaultCategories;
+      }
+
+      return enabledCategoryNames.map(name => {
+        const found = defaultCategories.find(d => d.name === name);
         if (found) {
           return found;
         }
 
         return {
-          name: cat,
-          searchIndex: this.getSearchIndexForCategory(cat),
+          name,
+          searchIndex: this.getSearchIndexForCategory(name),
           enabled: true,
-          keywords: ['おすすめ', '人気', 'ランキング'], // Default Japanese keywords
-          maxResults: 10,
+          keywords: ['おすすめ', '人気', 'ランキング'],
+          maxResults: config.productSearch?.maxResultsPerCategory || 10,
           sortBy: 'featured'
         };
       });
-      return categoryConfigs.length > 0 ? categoryConfigs : defaultCategories;
     } catch (_error) {
       return this.getDefaultCategories();
     }
@@ -851,26 +848,31 @@ export class ProductSearcher {
 
   private getCategoryConfig(categoryName: string): CategoryConfig | undefined {
     try {
+      const defaultCategories = this.getDefaultCategories();
+      const defaultCat = defaultCategories.find(c => c.name === categoryName);
+
+      if (defaultCat) {
+        return defaultCat;
+      }
+
+      // If not in defaults, check if it's in config (even if with generic settings)
       const config = this.config.getConfig();
       const categories = config.productSearch?.categories || [];
-      // This part is simplified, ideally we merge config with defaults
-      // For now, if we have dynamic user config, we use generic keywords
-      // If we use defaults, we get the rich keyword lists
 
-      const categoryConfigs: CategoryConfig[] = categories.map(cat => ({
-        name: cat,
-        searchIndex: this.getSearchIndexForCategory(cat),
-        enabled: true,
-        keywords: ['おすすめ', '人気'],
-        maxResults: 10,
-        sortBy: 'featured'
-      }));
+      if (categories.includes(categoryName)) {
+        return {
+          name: categoryName,
+          searchIndex: this.getSearchIndexForCategory(categoryName),
+          enabled: true,
+          keywords: ['おすすめ', '人気', 'ランキング'],
+          maxResults: config.productSearch?.maxResultsPerCategory || 10,
+          sortBy: 'featured'
+        };
+      }
 
-      const allCategories = categoryConfigs.length > 0 ? categoryConfigs : this.getDefaultCategories();
-      return allCategories.find(c => c.name === categoryName);
+      return undefined;
     } catch (_error) {
-      const defaultCategories = this.getDefaultCategories();
-      return defaultCategories.find(c => c.name === categoryName);
+      return this.getDefaultCategories().find(c => c.name === categoryName);
     }
   }
 

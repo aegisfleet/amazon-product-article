@@ -828,8 +828,8 @@ export class PAAPIClient {
 
   // === カテゴリ除外パターン定義 ===
 
-  /** 除外対象の特殊文字（スペース、ハイフン、パイプ、中黒、アンパサンド） */
-  private static readonly EXCLUDED_CHARS = [' ', '　', '-', '|', '｜', '＆'];
+  /** 除外対象の特殊文字（パイプ、中黒、アンパサンド） */
+  private static readonly EXCLUDED_CHARS = ['|', '｜', '＆'];
 
   /** 除外パターン: プロモーション＆イベント */
   private static readonly PROMOTIONAL_PATTERNS: RegExp[] = [
@@ -1020,10 +1020,11 @@ export class PAAPIClient {
     // See: https://webservices.amazon.co.jp/paapi5/documentation/locale-reference/japan.html
     const categoryMap: Record<string, string> = {
       'electronics': 'Electronics',
+      'wired_earphones': 'Electronics',
       'books': 'Books',
-      'clothing': 'Fashion',
+      'clothing': 'Apparel',
       'home': 'HomeAndKitchen',
-      'sports': 'SportsAndOutdoors',
+      'sports': 'Sports',
       'toys': 'Toys',
       'automotive': 'Automotive',
       'beauty': 'Beauty',
@@ -1031,12 +1032,40 @@ export class PAAPIClient {
       'kitchen': 'HomeAndKitchen',
       'garden': 'ToolsAndHomeImprovement',
       'computers': 'Computers',
-      'music': 'Music',
+      'music': 'MusicalInstruments',
       'videogames': 'VideoGames',
-      'grocery': 'All',
-      'frozen_bento': 'All',
-      'meal_kits': 'All',
-      'emergency_foods': 'All'
+      'grocery': 'GroceryAndGourmetFood',
+      'frozen_bento': 'GroceryAndGourmetFood',
+      'meal_kits': 'GroceryAndGourmetFood',
+      'emergency_foods': 'GroceryAndGourmetFood',
+      'tea_leaves': 'GroceryAndGourmetFood',
+      'smartphones': 'Electronics',
+      'tablets': 'Electronics',
+      'docking_station': 'Computers',
+      'monitor_arm': 'Computers',
+      'watches': 'Watches',
+      'baby': 'Baby',
+      'pet': 'PetSupplies',
+      'appliances': 'Appliances',
+      'office': 'OfficeProducts',
+      'diy': 'ToolsAndHomeImprovement',
+      'gaming': 'VideoGames',
+      'telework': 'Electronics',
+      'kindle_books': 'KindleStore',
+      'novels': 'Books',
+      'kanpo': 'HealthPersonalCare',
+      'electric_kettles': 'HomeAndKitchen',
+      'color_contacts': 'Beauty',
+      'eye_care': 'HealthPersonalCare',
+      'neck_massager': 'HealthPersonalCare',
+      'scalp_care': 'Beauty',
+      'cosmetics': 'Beauty',
+      'face_wash': 'Beauty',
+      'shampoo': 'Beauty',
+      'conditioner': 'Beauty',
+      'hair_treatment': 'Beauty',
+      'toner': 'Beauty',
+      'desk_setup': 'OfficeProducts'
     };
 
     return categoryMap[category.toLowerCase()] || 'All';

@@ -15,6 +15,17 @@ class PAAPIClient:
     """
 
     def __init__(self, access_key: Optional[str] = None, secret_key: Optional[str] = None, partner_tag: Optional[str] = None, region: str = 'us-west-2', host: str = 'webservices.amazon.co.jp'):
+        # Try to load .env manually if it exists
+        env_path = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), '.env')
+        if os.path.exists(env_path):
+            with open(env_path, 'r', encoding='utf-8') as f:
+                for line in f:
+                    line = line.strip()
+                    if line and not line.startswith('#') and '=' in line:
+                        key, value = line.split('=', 1)
+                        if key not in os.environ:
+                            os.environ[key] = value
+
         self.access_key = access_key or os.environ.get("AMAZON_ACCESS_KEY")
         self.secret_key = secret_key or os.environ.get("AMAZON_SECRET_KEY")
         self.partner_tag = partner_tag or os.environ.get("AMAZON_PARTNER_TAG")
