@@ -14,7 +14,7 @@ describe('Category Groups Sorting', () => {
                 const sortedCategories = [...categories].sort();
                 try {
                     expect(categories).toEqual(sortedCategories);
-                } catch (error) {
+                } catch (_error) {
                     throw new Error(`Group "${groupName}" is not sorted correctly.\nExpected: ${JSON.stringify(sortedCategories, null, 2)}\nActual: ${JSON.stringify(categories, null, 2)}`);
                 }
             }

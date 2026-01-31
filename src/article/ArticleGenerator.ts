@@ -1165,7 +1165,7 @@ ${score >= 80 ? '自信を持っておすすめできる商品です。' :
     const frontMatter = this.generateFrontMatter(metadata);
     const sectionsContent = sections.map(section => section.content).join('\n\n');
 
-    return `${frontMatter}\n\n${sectionsContent}`;
+    return `${frontMatter}\n\n${sectionsContent}\n\n---\n*本記事にはアフィリエイトリンクが含まれています。*`;
   }
 
   /**

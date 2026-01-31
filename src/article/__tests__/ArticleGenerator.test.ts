@@ -249,7 +249,7 @@ describe('ArticleGenerator', () => {
 
     it('should include affiliate disclosure', async () => {
       const result = await generator.generateArticle(mockProduct, mockInvestigation);
-
+      expect(result.content).toContain('アフィリエイト');
     });
 
     it('should generate proper front matter', async () => {

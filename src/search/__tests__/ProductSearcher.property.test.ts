@@ -70,7 +70,7 @@ describe('ProductSearcher Property Tests', () => {
     // Clean up test data
     try {
       await fs.rm(testDataDir, { recursive: true, force: true });
-    } catch (error) {
+    } catch (_error) {
       // Ignore cleanup errors
     }
   });
@@ -202,6 +202,7 @@ describe('ProductSearcher Property Tests', () => {
 
     it('should handle empty search results gracefully', async () => {
       // Mock empty results
+      // eslint-disable-next-line @typescript-eslint/unbound-method
       const originalSearchProducts = mockClient.searchProducts;
       mockClient.searchProducts = async (params) => ({
         products: [],
@@ -287,7 +288,7 @@ describe('ProductSearcher Property Tests', () => {
         maxResults: 1
       };
 
-      const result = await searcher.customSearch(searchParams);
+      await searcher.customSearch(searchParams);
 
       // Wait a bit for session data to be written
       await new Promise(resolve => setTimeout(resolve, 100));

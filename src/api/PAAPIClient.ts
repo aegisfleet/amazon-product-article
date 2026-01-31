@@ -902,9 +902,18 @@ export class PAAPIClient {
    * Filters out promotional, shipping, and store-related nodes
    */
   private isValidCategoryNode(displayName: string): boolean {
-    // 特殊文字を含む場合は除外
+    // 特殊文字（パイプ、アンパサンド）を含む場合は除外
     if (PAAPIClient.EXCLUDED_CHARS.some(char => displayName.includes(char))) {
       return false;
+    }
+
+    // ハイフンやスペースが含まれる場合、技術用語（USB-C等）以外は除外
+    // これにより「メイ ク」や内部管理用ノードを弾きつつ、有効なカテゴリを残す
+    if (displayName.includes('-') || displayName.includes(' ') || displayName.includes('　')) {
+      const isTechnicalTerm = /(USB|Thunderbolt|Type-C|Gen\d|4K|Wi-Fi|Type A|Type B|IPS|HDMI|VGA|DP|VESA)/i.test(displayName);
+      if (!isTechnicalTerm) {
+        return false;
+      }
     }
 
     // 除外パターンにマッチする場合は除外
