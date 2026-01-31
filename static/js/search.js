@@ -329,7 +329,14 @@ document.addEventListener('DOMContentLoaded', function () {
         const html = uniqueResults.slice(0, 20).map(result => {
             const item = result.item;
             const priceDisplay = item.price ? `<span class="result-price">💰 ${item.price}</span>` : '';
-            const scoreDisplay = item.score ? `<span class="result-score">🏆 ${item.score}点</span>` : '';
+            let scoreClass = 'score-fair';
+            const score = parseInt(item.score) || 0;
+            if (score >= 80) {
+                scoreClass = 'score-excellent';
+            } else if (score >= 60) {
+                scoreClass = 'score-good';
+            }
+            const scoreDisplay = item.score ? `<span class="result-score ${scoreClass}">🏆 ${item.score}点</span>` : '';
             const thumbnailHtml = item.image ? `
                 <div class="result-thumbnail">
                     <img src="${item.image}" alt="${item.title}" loading="lazy">

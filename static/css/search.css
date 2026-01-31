@@ -197,6 +197,25 @@
     background: rgba(234, 179, 8, 0.2);
 }
 
+/* Dynamic Score Colors to match home cards */
+.result-score.score-excellent {
+    background: linear-gradient(135deg, #10b981, #059669);
+    color: white;
+    box-shadow: 0 1px 2px rgba(16, 185, 129, 0.2);
+}
+
+.result-score.score-good {
+    background: linear-gradient(135deg, #f59e0b, #d97706);
+    color: white;
+    box-shadow: 0 1px 2px rgba(245, 158, 11, 0.2);
+}
+
+.result-score.score-fair {
+    background: linear-gradient(135deg, #6b7280, #4b5563);
+    color: white;
+    box-shadow: 0 1px 2px rgba(107, 114, 128, 0.2);
+}
+
 /* Summary */
 .result-summary {
     font-size: 0.85rem;
