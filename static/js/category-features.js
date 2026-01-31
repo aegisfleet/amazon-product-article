@@ -7,6 +7,7 @@ function initCategoryFeatures() {
     const filterToggle = document.getElementById('filter-toggle');
     const filterReset = document.getElementById('filter-reset');
     const categoryFilters = document.getElementById('category-filters');
+    const keywordSearch = document.getElementById('keyword-search');
 
     if (!sortSelect || !productGrid) return;
 
@@ -99,9 +100,21 @@ function initCategoryFeatures() {
         const selectedCategories = getSelectedCategories();
         const priceRange = getSelectedPriceRange();
         const scoreRange = getScoreRange();
+        const searchQuery = keywordSearch ? keywordSearch.value.trim().toLowerCase() : '';
 
         allCards.forEach(card => {
             let visible = true;
+
+            // Keyword search filter
+            if (searchQuery) {
+                const title = card.querySelector('.card-title')?.textContent.toLowerCase() || '';
+                const excerpt = card.querySelector('.card-excerpt')?.textContent.toLowerCase() || '';
+                const specs = Array.from(card.querySelectorAll('.card-spec-tag')).map(tag => tag.textContent.toLowerCase()).join(' ');
+                
+                if (!title.includes(searchQuery) && !excerpt.includes(searchQuery) && !specs.includes(searchQuery)) {
+                    visible = false;
+                }
+            }
 
             // Category filter
             if (selectedCategories.length > 0) {
@@ -235,6 +248,11 @@ function initCategoryFeatures() {
             params.set('specs', selectedSpecs.join(','));
         }
 
+        // Search Query
+        if (keywordSearch && keywordSearch.value.trim()) {
+            params.set('q', keywordSearch.value.trim());
+        }
+
         const newUrl = window.location.pathname + (params.toString() ? '?' + params.toString() : '');
         window.history.replaceState({ path: newUrl }, '', newUrl);
     }
@@ -289,7 +307,16 @@ function initCategoryFeatures() {
 
         // If any filters are active, ensure the filter section is expanded
         if (params.toString()) {
-            filterSection.classList.remove('collapsed');
+            // Only expand if there are filters OTHER than sort and query
+            const hasOtherFilters = params.has('price') || params.has('score') || params.has('categories') || params.has('specs');
+            if (hasOtherFilters && filterSection) {
+                filterSection.classList.remove('collapsed');
+            }
+        }
+
+        // Search Query
+        if (params.has('q') && keywordSearch) {
+            keywordSearch.value = params.get('q');
         }
     }
 
@@ -316,6 +343,11 @@ function initCategoryFeatures() {
         if (specFilters) {
             const specCheckboxes = specFilters.querySelectorAll('input[name="spec"]');
             specCheckboxes.forEach(cb => cb.checked = false);
+        }
+
+        // Reset keyword search
+        if (keywordSearch) {
+            keywordSearch.value = '';
         }
 
         // Apply filters
@@ -374,6 +406,18 @@ function initCategoryFeatures() {
         specFilters.addEventListener('change', function () {
             filterCards();
              updateUrl();
+        });
+    }
+
+    // Handle keyword search input
+    if (keywordSearch) {
+        let debounceTimer;
+        keywordSearch.addEventListener('input', function() {
+            clearTimeout(debounceTimer);
+            debounceTimer = setTimeout(() => {
+                filterCards();
+                updateUrl();
+            }, 300);
         });
     }
 
