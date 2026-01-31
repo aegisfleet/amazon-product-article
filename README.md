@@ -133,7 +133,12 @@ npm run sort:categories
 ```bash
 # 開発サーバー起動
 hugo server -D
+```
 
+開発サーバーを起動した際は、以下のURLでサイトを確認できます：
+[http://localhost:1313/amazon-product-article/](http://localhost:1313/amazon-product-article/)
+
+```bash
 # 静的サイトビルド
 hugo
 ```
