@@ -1,0 +1,128 @@
+{
+  "analysis": {
+    "productName": "VAFOTON 240W マグネット USB-C 変換アダプタ 540°回転 (2個セット)",
+    "parentAsin": "B0F3BWZYWD",
+    "productDescription": "USB-Cケーブルをマグネット着脱式に変換し、最大240Wの急速充電とデータ転送を可能にするアダプタです。コネクタ部が540度回転し、ケーブルの取り回しを改善します。",
+    "productUsage": [
+      "スマートフォンの充電ポート保護（防塵・摩耗防止）",
+      "ゲームや動画視聴時のケーブルの干渉回避（540度回転）",
+      "デスク周りのケーブル着脱の簡素化"
+    ],
+    "positivePoints": [
+      "最大240WのPD急速充電に対応し、ノートPCからスマホまで幅広く対応",
+      "540度（180度+360度）回転により、デバイス使用中のケーブルの突っ張りを軽減",
+      "強力なマグネット接続で近づけるだけで接続可能"
+    ],
+    "negativePoints": [
+      "データ転送速度がUSB 2.0（480Mbps）に制限されており、大容量転送には不向き",
+      "映像出力には非対応",
+      "9Pin端子は独自規格の可能性があり、他社製マグネットアダプタとの互換性が保証されない",
+      "競合製品と比較して価格がやや割高"
+    ],
+    "useCases": [
+      "充電しながらスマートフォンでゲームをプレイする際のケーブル配線改善",
+      "頻繁に持ち運ぶMacBook等の充電ポートの摩耗防止",
+      "暗い場所での充電ケーブル接続の補助"
+    ],
+    "userStories": [
+      {
+        "userType": "モバイルゲーマー",
+        "scenario": "横持ちでゲームをしながら充電",
+        "experience": "（推測）L字型かつ回転するコネクタのおかげで、充電ケーブルが手に当たらず快適に操作できた。ただし、磁石が外れやすい場面もあったかもしれない。",
+        "sentiment": "positive"
+      },
+      {
+        "userType": "ノートPCユーザー",
+        "scenario": "デスクでの毎日の充電",
+        "experience": "（推測）MagSafeのような手軽さで充電できるのが便利。しかし、データ転送をしようとしたら遅くて使い物にならなかったため、充電専用と割り切っている。",
+        "sentiment": "mixed"
+      }
+    ],
+    "userImpression": "充電の利便性とポート保護を目的とするユーザーには有用だが、データ転送や映像出力を期待するユーザーには不向き。機能は標準的だが価格面で競合に見劣りする。",
+    "sources": [
+      {
+        "name": "Amazon商品ページ仕様",
+        "url": "https://www.amazon.co.jp/dp/B0DMVSZSD6",
+        "credibility": "High"
+      }
+    ],
+    "lastInvestigated": "2026-01-31",
+    "competitiveAnalysis": [
+      {
+        "name": "xuanli 240W マグネットアダプタ",
+        "asin": "B0DTCTYRLL",
+        "priceComparison": "948円（VAFOTONより約380円安い）",
+        "featureComparison": [
+          "240W充電対応",
+          "540度回転",
+          "480Mbps転送"
+        ],
+        "differentiators": [
+          "機能は同等だが圧倒的に低価格"
+        ]
+      },
+      {
+        "name": "MoKo 240W マグネットアダプタ",
+        "asin": "B0FM78XDKF",
+        "priceComparison": "1258円（VAFOTONより約70円安い）",
+        "featureComparison": [
+          "240W充電対応",
+          "540度回転",
+          "480Mbps転送"
+        ],
+        "differentiators": [
+          "機能・形状がほぼ同一で若干安い"
+        ]
+      },
+      {
+        "name": "MUXER USB4 マグネットアダプタ",
+        "asin": "B0FMX93M7W",
+        "priceComparison": "1590円（VAFOTONより約260円高い）",
+        "featureComparison": [
+          "80Gbps高速転送",
+          "8K映像出力",
+          "240W充電"
+        ],
+        "differentiators": [
+          "映像出力と高速データ転送に対応した高機能モデル"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "充電中のデバイス操作が多いゲーマー",
+        "端子の摩耗を気にするデバイス愛用者",
+        "充電専用のケーブルを使いやすくしたい人"
+      ],
+      "pros": [
+        "ケーブルの向きを自由に調整できる540度回転機構",
+        "240W対応でハイスペックなノートPCも充電可能",
+        "着脱が容易でポートへの負荷が少ない"
+      ],
+      "cons": [
+        "映像出力不可",
+        "データ転送が遅い（USB 2.0）",
+        "同等機能の他社製品より価格が高い"
+      ],
+      "score": 60,
+      "scoreRationale": "[基本点: 70]\n[加点: +0] (機能は標準的。240W対応は評価できるが競合も対応)\n[減点: -10] (コストパフォーマンス: 競合のxuanliやMoKoと同スペックながら価格が高いため)\n[合計: 60]"
+    },
+    "technicalSpecs": {
+      "dimensions": {
+        "size": "2個セット"
+      },
+      "power": "最大240W (48V/5A)",
+      "connectivity": [
+        "USB Type-C",
+        "9Pin Magnet"
+      ],
+      "transferSpeed": "480Mbps (USB 2.0)",
+      "videoOutput": null,
+      "other": [
+        "540度回転 (180+360)",
+        "LEDインジケータ",
+        "防塵機能"
+      ]
+    }
+  }
+}
