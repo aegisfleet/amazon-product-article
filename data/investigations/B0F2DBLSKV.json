@@ -1,0 +1,124 @@
+{
+  "analysis": {
+    "productName": "IODATA EX-CQ270SA 27インチ WQHDモニター",
+    "parentAsin": "B0FRG467H6",
+    "productDescription": "USB Type-Cケーブル1本で給電と映像出力が可能な、27インチWQHD解像度の高生産性ビジネスモニター。",
+    "productUsage": [
+      "ノートPCとUSB-C接続して、給電しながらのマルチディスプレイ環境構築",
+      "WQHDの広大な作業領域を活用した、複数ウィンドウでの効率的な事務作業",
+      "USBハブ機能を活用し、マウスやキーボードをモニターに常時接続してドッキングステーション代わりに使用"
+    ],
+    "positivePoints": [
+      "2万円台後半でWQHD、USB-C給電(65W)、100Hzリフレッシュレートを実現した圧倒的なコストパフォーマンス",
+      "USBハブポートが3つ搭載されており、周辺機器の接続に便利",
+      "日本メーカーによる土日サポート対応で、万が一の際も安心"
+    ],
+    "negativePoints": [
+      "スタンド機能が限定的である可能性が高い（昇降機能なしなど、詳細は要確認だが競合PHILIPSと比較して弱点となりうる）",
+      "内蔵スピーカーの音質は簡易的なもので、高音質を求める用途には向かない可能性がある",
+      "デザインは質実剛健で、インテリアとしての高級感には欠ける"
+    ],
+    "useCases": [
+      "在宅勤務・テレワークでのメインモニター",
+      "オフィスでのフリーアドレス席用ドッキングモニター"
+    ],
+    "userStories": [
+      {
+        "userType": "30代 リモートワーカー",
+        "scenario": "自宅のデスク環境改善",
+        "experience": "（推測）これまではFHDモニターを使っていたが、Excelの行数やブラウザの表示範囲が狭く感じていた。このWQHDモニターに変えてから、2つのウィンドウを並べても快適に作業できるようになった。USB-Cケーブル1本でPCの充電もできるので、デスク周りの配線がスッキリして気持ちが良い。",
+        "sentiment": "positive"
+      }
+    ],
+    "userImpression": "（推測）スペック対価格比が非常に高く、実用性を重視するユーザーから高い評価が得られると予想される。特にUSB-C接続の利便性とWQHDの作業効率の良さが評価の中心となるだろう。",
+    "sources": [
+      {
+        "name": "Amazon Product Page Details",
+        "url": "https://www.amazon.co.jp/dp/B0F2DBLSKV",
+        "credibility": "High"
+      }
+    ],
+    "lastInvestigated": "2026-02-01",
+    "competitiveAnalysis": [
+      {
+        "name": "PHILIPS 27E1N2600AE/11",
+        "asin": "B0FCQRM46V",
+        "priceComparison": "ほぼ同価格帯（約2.8万円）。",
+        "featureComparison": [
+          "PHILIPSは昇降・高さ調節機能付きスタンドを搭載",
+          "IODATAはUSBハブポート数が3つと充実（PHILIPSの詳細は不明だが通常2つ程度）"
+        ],
+        "differentiators": [
+          "PHILIPSの強み: エルゴノミクス（スタンド性能）",
+          "IODATAの強み: 日本メーカーサポート、USBポート数"
+        ]
+      },
+      {
+        "name": "Dell S2725DS-A",
+        "asin": "B0CXXKGVYK",
+        "priceComparison": "約2.4万円とIODATAより約4,000円安い。",
+        "featureComparison": [
+          "DellはUSB Type-C給電非搭載（HDMI/DPのみ）",
+          "リフレッシュレートは同じ100Hz"
+        ],
+        "differentiators": [
+          "USB-C給電が不要ならDellがコスパ最強",
+          "USB-C必須ならIODATAが選択肢となる"
+        ]
+      },
+      {
+        "name": "Acer SA272UEwmiipx",
+        "asin": "B0CL6JZD98",
+        "priceComparison": "約2.4万円で最安クラス。",
+        "featureComparison": [
+          "USB Type-C非搭載",
+          "スピーカー搭載、100Hz対応は共通"
+        ],
+        "differentiators": [
+          "徹底的な低価格重視ならAcer"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "USB-C搭載のノートPCを使用しており、ケーブル1本でスッキリ接続したい人",
+        "FHDでは狭いと感じているが、4Kモニターは高すぎると感じている人",
+        "日本メーカーのサポートを重視する人"
+      ],
+      "pros": [
+        "WQHD解像度とUSB-C給電対応で3万円以下という圧倒的な安さ",
+        "100Hzリフレッシュレートでスクロールや映像が滑らか",
+        "USBハブx3搭載で周辺機器の接続性が高い"
+      ],
+      "cons": [
+        "スタンドの調整機能が限定的である可能性がある（必要ならVESAアームを検討）"
+      ],
+      "score": 90,
+      "scoreRationale": "[基本点: 70]\n[加点: +10] (コストパフォーマンス: WQHD/USB-C/100Hzで2万円台後半は市場最安クラス)\n[加点: +5] (性能・機能: USB-C 65W給電とUSBハブx3の実用性が高い)\n[加点: +5] (ユーザー満足度: 日本メーカーによる土日サポートの安心感)\n[合計: 90]"
+    },
+    "technicalSpecs": {
+      "display": {
+        "size": "27インチ",
+        "resolution": "WQHD (2560x1440)",
+        "type": "AAS (非光沢)",
+        "refreshRate": "100Hz"
+      },
+      "connectivity": [
+        "HDMI x1",
+        "DisplayPort x1",
+        "USB Type-C x1 (65W給電)"
+      ],
+      "usbHub": "USB-A x3",
+      "audio": "スピーカー搭載",
+      "dimensions": {
+        "width": "約61.3cm",
+        "height": "約44.4cm",
+        "depth": "約19.7cm"
+      },
+      "other": [
+        "VESA対応",
+        "土日サポート"
+      ]
+    }
+  }
+}
