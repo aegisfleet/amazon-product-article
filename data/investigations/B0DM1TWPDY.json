@@ -1,0 +1,143 @@
+{
+  "analysis": {
+    "productName": "Belkin Connect 11-in-1 GaNドック Pro",
+    "parentAsin": "B0FGQ9FG8S",
+    "productDescription": "巨大な電源アダプターを本体に内蔵し、コンセントから直接給電できるGaN（窒化ガリウム）採用のドッキングステーション。デスク上の配線を極限まで減らし、PC環境をスマートに拡張します。",
+    "productUsage": [
+      "MacBookやWindowsノートPCのポート拡張（USB-A, HDMI, SDなど）",
+      "PCへの最大96W急速充電と周辺機器への給電",
+      "最大3画面のマルチモニター環境の構築（Windows MST対応時）",
+      "SD/microSDカードによる写真・動画データの取り込み"
+    ],
+    "positivePoints": [
+      "電源ユニット内蔵のため、邪魔なACアダプター（レンガ）が不要でデスク裏がスッキリする",
+      "GaN技術採用により、高出力ながら筐体が比較的コンパクト",
+      "最大96WのPD出力で、16インチクラスのハイスペックノートPCもフルスピード充電可能",
+      "HDMI 2.1対応ポートを搭載し、最大8K/30Hzまたは4K/120Hzの高画質出力に対応",
+      "Belkinならではの洗練されたデザインとApple製品との高い親和性"
+    ],
+    "negativePoints": [
+      "価格が2万円台前半と、一般的なUSB-Cハブと比較して高価",
+      "電源内蔵型のため、長時間の高負荷使用時には本体が熱を持つ可能性がある",
+      "Thunderbolt 4非対応のため、転送速度は最大10Gbps（USB 3.2 Gen 2）に留まる"
+    ],
+    "useCases": [
+      "ホームオフィスでのデスク環境整理（ケーブル一本でPC接続完了）",
+      "映像クリエイターのマルチモニター編集作業",
+      "フリーアドレスのオフィスでの共有ドックとして"
+    ],
+    "userStories": [
+      {
+        "userType": "在宅勤務のエンジニア",
+        "scenario": "デスク周りの配線整理",
+        "experience": "以前はドッキングステーションの巨大なACアダプターがデスクの下で邪魔になっていたが、この製品に変えてから電源ケーブル1本だけで済み、足元が劇的にスッキリした。MacBook Proへの給電も十分で、モニター出力も安定している。（推測）",
+        "sentiment": "positive"
+      },
+      {
+        "userType": "映像編集者",
+        "scenario": "外部モニターへの出力",
+        "experience": "4Kモニターを2枚接続して作業している。HDMIポートが2つあるのでアダプタなしでデュアルディスプレイ環境が作れ、SDカードスロットも前面にあるのでカメラからのデータ取り込みがスムーズ。ただ、長時間作業すると本体が少し温かくなるのが気になる。（推測）",
+        "sentiment": "mixed"
+      }
+    ],
+    "userImpression": "「ACアダプター内蔵」という点が最大の特徴であり、デスクの見た目にこだわるユーザーから熱烈に支持されると予想される。機能面では必要十分だが、Thunderbolt 4などの超高速転送を求めない層に向けた、実用性とデザイン性のバランスが良い製品。",
+    "sources": [
+      {
+        "name": "Belkin Official Product Page",
+        "url": "https://www.belkin.com/",
+        "credibility": "high"
+      },
+      {
+        "name": "Amazon.co.jp Product Page",
+        "url": "https://www.amazon.co.jp/dp/B0DM1TWPDY",
+        "credibility": "high"
+      }
+    ],
+    "lastInvestigated": "2026-02-02",
+    "competitiveAnalysis": [
+      {
+        "name": "Anker 563 USB-C ドッキングステーション (10-in-1)",
+        "asin": "B09XHKHZZH",
+        "priceComparison": "約2.4万円。本製品（約2.2万円）とほぼ同価格帯。",
+        "featureComparison": [
+          "Ankerは10ポート、Belkinは11ポート",
+          "Ankerは巨大な外付けACアダプターが必要、Belkinは電源内蔵",
+          "両者とも最大3画面出力対応"
+        ],
+        "differentiators": [
+          "Belkinの最大の強みは「電源内蔵」による省スペース性",
+          "Ankerはモニタースタンド一体型などバリエーションが豊富"
+        ]
+      },
+      {
+        "name": "UGREEN Revodok Max 208",
+        "asin": "B0CM2WKGLC",
+        "priceComparison": "約2.6万円。本製品より少し高い。",
+        "featureComparison": [
+          "UGREENはThunderbolt 4対応で転送速度40Gbps（Belkinは10Gbps）",
+          "UGREENは8-in-1でポート数は少なめ",
+          "UGREENも電源アダプターは外付け"
+        ],
+        "differentiators": [
+          "速度重視ならUGREEN（Thunderbolt 4）",
+          "ポート数とデスクの整理整頓重視ならBelkin"
+        ]
+      },
+      {
+        "name": "PULWTOP 11 in 1 USB C ドッキングステーション",
+        "asin": "B0DYNPJDYT",
+        "priceComparison": "約1万円。本製品の半額以下。",
+        "featureComparison": [
+          "ポート構成は似ているが、電源アダプターが別売り",
+          "PCへの給電能力は使用する充電器に依存する"
+        ],
+        "differentiators": [
+          "圧倒的な安さだが、別途100Wクラスの充電器を用意すると価格差は縮まる",
+          "信頼性とビルドクオリティでBelkinに分がある"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "MacBook Pro/Airユーザーで、デスク周りを美しく保ちたい人",
+        "巨大なACアダプターの置き場所に困っている人",
+        "複数のモニターと周辺機器をケーブル1本でまとめたい人"
+      ],
+      "pros": [
+        "電源アダプター内蔵で配線が最小限",
+        "GaN採用による省スペース・高出力",
+        "安定した96W給電能力"
+      ],
+      "cons": [
+        "絶対的な価格は安くない",
+        "Thunderbolt 4には非対応（データ転送速度重視の人は注意）"
+      ],
+      "score": 85,
+      "scoreRationale": "[基本点: 70]\n[加点: +5] GaN採用と150W電源内蔵による実用性と技術力\n[減点: -5] USBハブとしては高価な部類\n[加点: +5] Belkinブランドの信頼性とApple製品との親和性\n[加点: +10] 「電源内蔵」という独自性が、デスク整理において他社にない強力なメリットとなる\n[合計: 85]"
+    },
+    "technicalSpecs": {
+      "cpu": null,
+      "ram": null,
+      "storage": null,
+      "display": null,
+      "battery": null,
+      "connectivity": [
+        "USB-C (Host, PD 96W)",
+        "USB-C 3.2 Gen 2",
+        "2x USB-A 3.2",
+        "2x USB-A 2.0",
+        "2x HDMI 2.1 (4K/60Hz, 8K/30Hz)",
+        "Ethernet (1Gbps)",
+        "SD/MicroSD Card Slot",
+        "3.5mm Audio Jack"
+      ],
+      "power": "150W Internal Power Supply (GaN)",
+      "dimensions": null,
+      "other": [
+        "Kensington Lock Slot",
+        "Support up to 3 extended displays (Windows)",
+        "Support up to 2 extended displays (macOS)"
+      ]
+    }
+  }
+}
