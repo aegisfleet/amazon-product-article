@@ -1,0 +1,114 @@
+{
+  "analysis": {
+    "productName": "エレコム モバイルバッテリー 5000mAh (EC-C12WH) & Lightningケーブル 0.1m セット",
+    "parentAsin": "B0DHYZHZLZ",
+    "productDescription": "薄型軽量の5000mAhモバイルバッテリーと、持ち運びに最適な0.1mのLightningケーブルを組み合わせたiPhoneユーザー向け充電セット。",
+    "productUsage": [
+      "外出時のiPhoneの予備電源として",
+      "移動中、スマートフォンとバッテリーを重ね持ちして使用",
+      "小さなバッグやポーチに入れて常備"
+    ],
+    "positivePoints": [
+      "厚さ約13.5mmの薄型設計で、バッグのポケットにもすっきり収まる",
+      "0.1mのショートケーブルが付属しており、充電中にケーブルが絡まるストレスがない",
+      "MFi認証取得済みのApple正規認定ケーブルで、OSアップデート後も安心して使用可能",
+      "接続機器を自動で見分けて最適な出力で充電する「おまかせ充電」に対応"
+    ],
+    "negativePoints": [
+      "最大出力が12W（ケーブル規格）/15W（バッテリー規格）のため、PD 20W等の急速充電と比較すると充電速度は控えめ",
+      "容量5000mAhは、iPhoneを約1回充電できる程度であり、ヘビーユーザーには物足りない場合がある",
+      "USB-A to Lightning接続であり、最新のUSB-C中心の環境とは異なる"
+    ],
+    "useCases": [
+      "通勤・通学中の電車内での充電",
+      "荷物を極力減らしたい旅行やイベント時"
+    ],
+    "userStories": [
+      {
+        "userType": "会社員（推測）",
+        "scenario": "通勤中の電車内",
+        "experience": "以前は長いケーブルを使っていたため、カバンの中で絡まったり、充電しながらスマホを持つのが不便だった。このセットにしてからは、バッテリーとスマホを重ねて片手で持てるようになり、移動中のニュースチェックも快適になった。",
+        "sentiment": "positive"
+      },
+      {
+        "userType": "学生（推測）",
+        "scenario": "外出先での緊急充電",
+        "experience": "夕方になると充電が切れそうになるが、重いバッテリーは持ち歩きたくない。この製品は軽くて薄いので、毎日の通学カバンに入れても気にならない。充電スピードは爆速ではないが、帰り道を持たせるには十分。",
+        "sentiment": "positive"
+      }
+    ],
+    "userImpression": "具体的なレビューデータは不足しているが、仕様から判断すると、充電スピードよりも携帯性と取り回しの良さを重視するユーザーに適した製品である。",
+    "sources": [
+      {
+        "name": "Amazon商品ページ (B0DJV1L6B4)",
+        "url": "https://www.amazon.co.jp/dp/B0DJV1L6B4",
+        "credibility": "high"
+      }
+    ],
+    "lastInvestigated": "2026-02-02",
+    "competitiveAnalysis": [
+      {
+        "name": "CIO SMARTCOBY SLIM 5000mAh",
+        "asin": "B0CHVXW6FV",
+        "priceComparison": "本製品より若干高価だが、PD 20W出力に対応。",
+        "featureComparison": [
+          "出力: PD 20W (CIO) vs 15W/12W (本製品)",
+          "厚さ: 12mm (CIO) vs 13.5mm (本製品)"
+        ],
+        "differentiators": [
+          "CIOは急速充電重視、本製品はケーブル付属のすぐ使える手軽さが売り"
+        ]
+      },
+      {
+        "name": "Anker Nano Power Bank (22.5W, Built-In USB-C Connector)",
+        "asin": "B0CCJFY2V4",
+        "priceComparison": "本製品と同価格帯〜若干高い。",
+        "featureComparison": [
+          "形状: 直挿しタイプ (Anker) vs ケーブル接続 (本製品)",
+          "出力: 22.5W (Anker) vs 15W (本製品)"
+        ],
+        "differentiators": [
+          "Ankerはケーブル不要だが断線時に本体ごと交換が必要。本製品はケーブル交換が可能で汎用性が高い"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "iPhone 14/13/SEなどのLightning搭載モデルユーザー",
+        "荷物を軽くしたいが、バッテリー切れは防ぎたい人",
+        "ケーブルの絡まりにストレスを感じている人"
+      ],
+      "pros": [
+        "重ね持ちしやすいサイズ感とケーブル長",
+        "信頼のエレコムブランドとMFi認証",
+        "リーズナブルなセット価格"
+      ],
+      "cons": [
+        "急速充電(PD)には非対応",
+        "USB-C to Lightningへの移行を考えている場合は不向き"
+      ],
+      "score": 75,
+      "scoreRationale": "[基本点: 70]\n[加点: +5] (0.1mケーブル付属による携帯性と利便性の向上)\n[加点: +5] (セット価格としてのコストパフォーマンス)\n[減点: -5] (PD急速充電非対応による充電速度の遅さ)\n[合計: 75]"
+    },
+    "technicalSpecs": {
+      "dimensions": {
+        "thickness": "約13.5mm"
+      },
+      "capacity": "5000mAh",
+      "power": {
+        "output": "最大15W (USB-Aポート使用時はケーブル仕様により最大12W)",
+        "input": "5V/3A (Type-C)"
+      },
+      "connectivity": [
+        "USB Type-C (入出力)",
+        "USB-A (出力)",
+        "Lightning (付属ケーブル)"
+      ],
+      "other": [
+        "おまかせ充電対応",
+        "MFi認証ケーブル付属",
+        "電気用品安全法(PSE)適合"
+      ]
+    }
+  }
+}
