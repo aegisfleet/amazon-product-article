@@ -61,11 +61,11 @@
         "credibility": "中（競合商品との比較情報）"
       }
     ],
-    "lastInvestigated": "2026-01-07",
+    "lastInvestigated": "2026-02-04",
     "competitiveAnalysis": [
       {
         "name": "Synology DiskStation DS223j (NAS)",
-        "asin": "B0C536W7C3",
+        "asin": "B0FH962ZFY",
         "priceComparison": "本体価格は同程度だが、別途HDDの購入が必要なため総額は高くなる傾向。月額費用はかからない。",
         "featureComparison": [
           "写真管理専用アプリ（Synology Photos）があり、自動整理や共有機能が充実している",
@@ -75,6 +75,20 @@
         "differentiators": [
           "（おもいでばこ比）設定や操作が複雑で、一定のIT知識が必要",
           "（おもいでばこ比）テレビに直接HDMIで接続できず、視聴には別の機器（スマホ、PC、メディアプレーヤー等）が必要"
+        ]
+      },
+      {
+        "name": "Maktar Qubii Power",
+        "asin": "B0DMSMJ48H",
+        "priceComparison": "本体価格は安価だが、別途microSDカードが必要。充電しながら使えるため追加コスト感は低い。",
+        "featureComparison": [
+          "スマホの充電時に自動でバックアップが行われるため、意識的な操作が不要",
+          "非常にコンパクトで持ち運びが容易",
+          "PCやスマホアプリでデータの閲覧・復元が可能"
+        ],
+        "differentiators": [
+          "（おもいでばこ比）テレビに接続してスライドショーを楽しむ機能はない",
+          "（おもいでばこ比）基本的には「個人のバックアップ」向けで、家族共有のハブとしては機能しにくい"
         ]
       },
       {
@@ -90,19 +104,6 @@
           "（おもいでばこ比）プライバシーの懸念や、サービス終了・仕様変更のリスクがある",
           "（おもいでばこ比）大容量のデータをアップロード/ダウンロードする際に時間がかかる",
           "（おもいでばこ比）オフライン環境では利用できない"
-        ]
-      },
-      {
-        "name": "まごチャンネル",
-        "asin": "B07226T96W",
-        "priceComparison": "本体価格に加え、月額のサービス利用料が必要。",
-        "featureComparison": [
-          "スマートフォンから送った写真や動画を、実家のテレビで自動再生する機能に特化",
-          "受信側の実家はインターネット回線が不要（本体にSIM内蔵）"
-        ],
-        "differentiators": [
-          "（おもいでばこ比）写真や動画の保存・整理（ストレージ）機能がメインではなく、あくまで「共有」に特化している",
-          "（おもいでばこ比）双方向ではなく、送信側から受信側への一方通行の共有"
         ]
       }
     ],
@@ -132,26 +133,28 @@
       "capacity": "最大1,000,000コンテンツ",
       "connectivity": [
         "Wi-Fi 6 (IEEE 802.11ax)",
-        "Gigabit Ethernet (1000BASE-T)"
+        "Gigabit Ethernet (1000BASE-T)",
+        "Bluetooth 5.0"
       ],
       "ports": [
-        "HDMI 2.0b (4K対応)",
-        "USB 3.2 (Gen 1)",
-        "SD Card Slot"
+        "HDMI (Type-A)",
+        "USB 3.2 Gen1 Type-A",
+        "SDカードスロット"
       ],
       "dimensions": {
-        "width": "190mm",
-        "height": "44mm",
-        "depth": "157mm",
-        "weight": "約747g"
+        "width": "156mm",
+        "height": "37mm",
+        "depth": "103mm",
+        "weight": "約410g"
       },
       "power": {
-        "consumption": "最大36W",
-        "adapter": "AC100V 50/60Hz"
+        "consumption": "最大24W",
+        "adapter": "ACアダプター"
       },
       "other": [
-        "Bluetooth/赤外線リモコン付属",
-        "専用アプリ対応 (iOS, Android, Windows, Mac)"
+        "4K動画対応",
+        "HEIF/HEVC対応",
+        "PD-2000シリーズ"
       ]
     }
   }
