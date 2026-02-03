@@ -82,24 +82,18 @@ jobs:
                   # 複数のフィールドパスを試行
                   SESSION_REPO=""
                   
-                  # パターン1: .source.gitHubRepository
+                  # パターン1: .sourceContext.source (メイン: "sources/github/owner/repo" 形式)
+                  if [ -z "$SESSION_REPO" ] || [ "$SESSION_REPO" = "/" ] || [ "$SESSION_REPO" = "null" ] || [ "$SESSION_REPO" = "" ]; then
+                    SOURCE_PATH=$(echo "$SESSION_DETAIL" | jq -r '.sourceContext.source // ""' 2>/dev/null || echo "")
+                    if [ -n "$SOURCE_PATH" ]; then
+                      # "sources/github/owner/repo" から "owner/repo" を抽出
+                      SESSION_REPO=$(echo "$SOURCE_PATH" | sed 's|^sources/github/||')
+                    fi
+                  fi
+                  
+                  # パターン2: .source.gitHubRepository (フォールバック)
                   if [ -z "$SESSION_REPO" ] || [ "$SESSION_REPO" = "/" ] || [ "$SESSION_REPO" = "null" ]; then
                     SESSION_REPO=$(echo "$SESSION_DETAIL" | jq -r '(.source.gitHubRepository.owner // "") + "/" + (.source.gitHubRepository.name // "")' 2>/dev/null || echo "")
-                  fi
-                  
-                  # パターン2: .gitHubRepository (直接)
-                  if [ -z "$SESSION_REPO" ] || [ "$SESSION_REPO" = "/" ] || [ "$SESSION_REPO" = "null" ]; then
-                    SESSION_REPO=$(echo "$SESSION_DETAIL" | jq -r '(.gitHubRepository.owner // "") + "/" + (.gitHubRepository.name // "")' 2>/dev/null || echo "")
-                  fi
-                  
-                  # パターン3: .repository (フルネーム)
-                  if [ -z "$SESSION_REPO" ] || [ "$SESSION_REPO" = "/" ] || [ "$SESSION_REPO" = "null" ]; then
-                    SESSION_REPO=$(echo "$SESSION_DETAIL" | jq -r '.repository // ""' 2>/dev/null || echo "")
-                  fi
-                  
-                  # パターン4: .sourceId から抽出
-                  if [ -z "$SESSION_REPO" ] || [ "$SESSION_REPO" = "/" ] || [ "$SESSION_REPO" = "null" ]; then
-                    SESSION_REPO=$(echo "$SESSION_DETAIL" | jq -r '.sourceId // ""' 2>/dev/null || echo "")
                   fi
                   
                   if [ "$SESSION_REPO" != "$TARGET_REPO" ]; then
