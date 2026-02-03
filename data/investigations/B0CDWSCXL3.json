@@ -1,0 +1,138 @@
+{
+  "analysis": {
+    "productName": "Elgato Wave XLR",
+    "parentAsin": "B0CDWSCXL3",
+    "productDescription": "XLRマイクをUSB-C接続でPCに繋ぎ、配信向けの強力なデジタルミキシング機能を提供するオーディオインターフェース。",
+    "productUsage": [
+      "ライブ配信での音声ミキシング（マイク、ゲーム音、ボイスチャット等の統合）",
+      "高品質なXLRマイクを使用したレコーディングやボイスチャット",
+      "手元での即座のマイクミュートとゲイン調整"
+    ],
+    "positivePoints": [
+      "Wave Linkソフトウェアが非常に優秀で、配信音声とモニター音声を個別に制御可能",
+      "Clipguardテクノロジーにより、叫び声などの突発的な大音量でも音割れを防ぐ",
+      "最大75dBの強力なプリアンプを搭載し、Shure SM7B等の低感度マイクもブースター無しで駆動可能",
+      "本体上部の静電容量式ミュートボタンが便利で、操作音が入りにくい"
+    ],
+    "negativePoints": [
+      "物理フェーダーがなく、細かいミキシング操作はマウスやStream Deckが必要",
+      "ヘッドホン端子が背面にあり、頻繁な抜き差しには不便",
+      "XLR入力が1つのみのため、複数マイクを使用する対談などには不向き"
+    ],
+    "useCases": [
+      "TwitchやYouTube Liveでのゲーム配信",
+      "高音質なポッドキャスト収録",
+      "DiscordやZoomでのクリアな音声通話"
+    ],
+    "userStories": [
+      {
+        "userType": "ゲーム配信者",
+        "scenario": "配信中の絶叫シーン",
+        "experience": "ホラーゲーム配信で思わず叫んでしまったが、Clipguard機能のおかげで視聴者の耳を破壊せずに済んだ。音割れ全く無しで感動。",
+        "sentiment": "positive"
+      },
+      {
+        "userType": "在宅ワーカー",
+        "scenario": "Web会議と音楽鑑賞",
+        "experience": "Wave Linkソフトで会議ソフトにはマイク音だけ送り、自分は裏で音楽を聴くというルーティングが簡単にできた。",
+        "sentiment": "positive"
+      },
+      {
+        "userType": "DTM初心者",
+        "scenario": "楽器録音",
+        "experience": "ギターとマイクを同時に録りたかったが、入力が1つしかないので出来なかった。あくまで配信用と割り切る必要あり。",
+        "sentiment": "mixed"
+      }
+    ],
+    "userImpression": "ハードウェアはシンプルだが、付属のWave Linkソフトウェアが配信者にとって「神機能」と評されることが多い。Shure SM7Bユーザーからの支持も厚い。",
+    "sources": [
+      {
+        "name": "Elgato公式サイト",
+        "url": "https://www.elgato.com/jp/ja/p/wave-xlr",
+        "credibility": "high"
+      },
+      {
+        "name": "Amazonカスタマーレビュー",
+        "url": "https://www.amazon.co.jp/dp/B0CDWSCXL3",
+        "credibility": "medium"
+      }
+    ],
+    "lastInvestigated": "2026-02-03",
+    "competitiveAnalysis": [
+      {
+        "name": "Roland BRIDGE CAST",
+        "asin": "B0BR7JFHZ7",
+        "priceComparison": "Wave XLRより高価",
+        "featureComparison": [
+          "物理フェーダー搭載で直感的な操作が可能",
+          "ゲーミングDACアンプとしての機能も強化されている"
+        ],
+        "differentiators": [
+          "Wave XLRは省スペースでシンプル、BRIDGE CASTは物理操作重視",
+          "Wave XLRはWave Linkソフトとの連携が強み"
+        ]
+      },
+      {
+        "name": "Audio-Technica AT-UMX3",
+        "asin": "B0CS6S8GBH",
+        "priceComparison": "Wave XLRより安価",
+        "featureComparison": [
+          "機能はよりシンプルでコンパクト",
+          "ソフトウェア制御よりもハードウェアでの完結を重視"
+        ],
+        "differentiators": [
+          "Wave XLRはソフトウェアによる拡張性が高い",
+          "AT-UMX3は接続してすぐ使える手軽さが売り"
+        ]
+      },
+      {
+        "name": "Universal Audio Volt 1",
+        "asin": "B09J1V6R6N",
+        "priceComparison": "同価格帯",
+        "featureComparison": [
+          "ビンテージマイクプリアンプモード搭載で音楽的な音質",
+          "配信向け機能（ループバック等）はWave XLRの方が使いやすい"
+        ],
+        "differentiators": [
+          "Volt 1は音楽制作（DTM）向き",
+          "Wave XLRはライブ配信（ストリーミング）向き"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "XLRマイクを使って音質を向上させたいゲーム配信者",
+        "Shure SM7Bなどの低感度ダイナミックマイクを使いたい人",
+        "PC内の音声を細かく分けたい（ゲーム音、VC、音楽など）こだわり派"
+      ],
+      "pros": [
+        "超低ノイズかつハイゲイン（75dB）なプリアンプ",
+        "音割れを防ぐClipguard機能",
+        "強力なミキシングソフトWave Linkが付属"
+      ],
+      "cons": [
+        "入力は1チャンネルのみ",
+        "物理的な調整項目は少ない（ソフト依存）"
+      ],
+      "score": 85,
+      "scoreRationale": "[基本点: 70]\n[加点: +10] (Wave Linkソフトウェアの配信向け機能が極めて優秀)\n[加点: +5] (Clipguardやハイゲインプリアンプなど、配信者の悩みを解決する機能)\n[減点: 0] (価格は機能相応)\n[合計: 85]"
+    },
+    "technicalSpecs": {
+      "interface": "USB-C",
+      "sampleRate": "48kHz / 96kHz",
+      "bitDepth": "24-bit",
+      "frequencyResponse": "20Hz - 20kHz",
+      "dynamicRange": "100dB (120dB with Clipguard)",
+      "gainRange": "0 - 75 dB",
+      "phantomPower": "48V DC",
+      "input": "XLR (balanced)",
+      "output": "3.5mm headphone jack",
+      "dimensions": {
+        "width": "112 mm",
+        "height": "118 mm",
+        "depth": "88 mm",
+        "weight": "300 g"
+      }
+    }
+  }
+}
