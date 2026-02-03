@@ -194,14 +194,31 @@ export class PAAPICache {
 
     /**
      * Set item in cache as valid
+     * If new data has no price info but existing cache has valid price, preserve it
      */
     public set(asin: string, data: ProductDetail): void {
         const sanitizedData = this.sanitizeData(data);
+        
+        // Check if new data has "価格情報なし" and existing cache has valid price
+        const existingEntry = this.cache[asin];
+        if (this.isNoPriceData(sanitizedData) && existingEntry?.data && !this.isNoPriceData(existingEntry.data)) {
+            // Preserve existing price information
+            this.logger.info(`Preserving existing price for ASIN ${asin}: ${existingEntry.data.price.formatted} (new data has no price)`);
+            sanitizedData.price = existingEntry.data.price;
+        }
+        
         this.cache[asin] = {
             data: sanitizedData,
             timestamp: Date.now(),
             status: 'valid'
         };
+    }
+
+    /**
+     * Check if product data has no price information
+     */
+    private isNoPriceData(data: ProductDetail): boolean {
+        return data.price.amount === 0 && data.price.formatted === '価格情報なし';
     }
 
     /**
