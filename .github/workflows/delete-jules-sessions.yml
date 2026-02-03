@@ -1,0 +1,116 @@
+name: Delete Jules Sessions
+
+on:
+  schedule:
+    # 毎日午前3時（JST）= UTC 18:00 に実行
+    - cron: '0 18 * * *'
+  workflow_dispatch:
+    inputs:
+      delete_all:
+        description: '全リポジトリのセッションを削除する'
+        required: false
+        type: boolean
+        default: false
+
+jobs:
+  delete-sessions:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Delete Jules sessions
+        env:
+          JULES_API_KEY: ${{ secrets.JULES_API_KEY }}
+          DELETE_ALL: ${{ inputs.delete_all || 'false' }}
+          TARGET_REPO: ${{ github.repository }}
+        run: |
+          set -e
+          
+          TOTAL_DELETED=0
+          TOTAL_SKIPPED=0
+          PAGE_TOKEN=""
+          
+          if [ "$DELETE_ALL" = "true" ]; then
+            echo "🗑️ 全リポジトリのJulesセッション削除を開始します..."
+          else
+            echo "🗑️ リポジトリ '$TARGET_REPO' のJulesセッション削除を開始します..."
+          fi
+          
+          while true; do
+            # セッション一覧を取得
+            if [ -z "$PAGE_TOKEN" ]; then
+              RESPONSE=$(curl -s -H "x-goog-api-key: $JULES_API_KEY" \
+                "https://jules.googleapis.com/v1alpha/sessions?pageSize=100")
+            else
+              RESPONSE=$(curl -s -H "x-goog-api-key: $JULES_API_KEY" \
+                "https://jules.googleapis.com/v1alpha/sessions?pageSize=100&pageToken=$PAGE_TOKEN")
+            fi
+            
+            # セッションをJSONとして処理
+            SESSIONS_JSON=$(echo "$RESPONSE" | jq -c '.sessions[]? // empty' 2>/dev/null || echo "")
+            
+            if [ -z "$SESSIONS_JSON" ]; then
+              echo "✅ 削除対象のセッションがありません"
+              break
+            fi
+            
+            # 各セッションを処理
+            echo "$SESSIONS_JSON" | while IFS= read -r session; do
+              if [ -n "$session" ]; then
+                session_name=$(echo "$session" | jq -r '.name')
+                
+                # リポジトリフィルタリング（DELETE_ALLがfalseの場合）
+                if [ "$DELETE_ALL" != "true" ]; then
+                  # セッションの詳細を取得してリポジトリを確認
+                  SESSION_DETAIL=$(curl -s -H "x-goog-api-key: $JULES_API_KEY" \
+                    "https://jules.googleapis.com/v1alpha/$session_name")
+                  
+                  # sourceIdまたはrepository情報からリポジトリ名を抽出
+                  SESSION_REPO=$(echo "$SESSION_DETAIL" | jq -r '.source.gitHubRepository.owner + "/" + .source.gitHubRepository.name // empty' 2>/dev/null || echo "")
+                  
+                  if [ -z "$SESSION_REPO" ]; then
+                    # 別の形式で試行
+                    SESSION_REPO=$(echo "$SESSION_DETAIL" | jq -r '.repository // empty' 2>/dev/null || echo "")
+                  fi
+                  
+                  if [ "$SESSION_REPO" != "$TARGET_REPO" ]; then
+                    echo "  スキップ: $session_name (リポジトリ: $SESSION_REPO)"
+                    continue
+                  fi
+                fi
+                
+                echo "  削除中: $session_name"
+                DELETE_RESPONSE=$(curl -s -X DELETE \
+                  -H "x-goog-api-key: $JULES_API_KEY" \
+                  "https://jules.googleapis.com/v1alpha/$session_name" \
+                  -w "\n%{http_code}")
+                
+                HTTP_CODE=$(echo "$DELETE_RESPONSE" | tail -n1)
+                
+                if [ "$HTTP_CODE" = "200" ] || [ "$HTTP_CODE" = "204" ]; then
+                  echo "DELETED" >> /tmp/deleted_count.txt
+                else
+                  echo "  ⚠️ 削除失敗 (HTTP $HTTP_CODE): $session_name"
+                fi
+                
+                # レート制限対策
+                sleep 0.5
+              fi
+            done
+            
+            # 次のページトークンを取得
+            PAGE_TOKEN=$(echo "$RESPONSE" | jq -r '.nextPageToken // empty' 2>/dev/null || echo "")
+            
+            if [ -z "$PAGE_TOKEN" ]; then
+              break
+            fi
+            
+            echo "📄 次のページを取得中..."
+          done
+          
+          # 削除数をカウント
+          if [ -f /tmp/deleted_count.txt ]; then
+            TOTAL_DELETED=$(wc -l < /tmp/deleted_count.txt)
+          fi
+          
+          echo ""
+          echo "🎉 完了！削除されたセッション数: $TOTAL_DELETED"
