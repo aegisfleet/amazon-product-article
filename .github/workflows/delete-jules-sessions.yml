@@ -100,6 +100,13 @@ jobs:
                     echo "  スキップ: $session_name (リポジトリ: $SESSION_REPO)"
                     continue
                   fi
+                  
+                  # 実行中のセッションは削除しない
+                  SESSION_STATE=$(echo "$SESSION_DETAIL" | jq -r '.state // ""' 2>/dev/null || echo "")
+                  if [ "$SESSION_STATE" = "RUNNING" ] || [ "$SESSION_STATE" = "PENDING" ] || [ "$SESSION_STATE" = "STARTED" ]; then
+                    echo "  スキップ: $session_name (実行中: $SESSION_STATE)"
+                    continue
+                  fi
                 fi
                 
                 echo "  削除中: $session_name"
