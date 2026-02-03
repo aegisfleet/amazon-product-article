@@ -59,33 +59,64 @@
         "credibility": "高"
       },
       {
-        "name": "HDD/SSDスタンドおすすめ６選 HDDやSSDのクローン作成や換装が簡単にできます。 - パソカメチャンネル",
+        "name": "HDD/SSDスタンドおすすめ６選 - パソカメチャンネル",
         "url": "https://www.pc-photo-daisuki.com/?p=3703",
         "credibility": "中"
       }
     ],
-    "lastInvestigated": "2026-01-07",
+    "lastInvestigated": "2026-02-04",
     "competitiveAnalysis": [
       {
-        "name": "センチュリー 裸族のお立ち台DJクローンプラス SATA 6G Ver.2",
-        "asin": "B01M04Y61L",
-        "priceComparison": "玄人志向より高価だが、安定性や信頼性で定評があるブランド。",
-        "featureComparison": ["エラースキップ機能を搭載している点は共通。", "USB3.0(UASP対応)で高速転送が可能。"],
-        "differentiators": ["業界での実績が長く、信頼性を重視するユーザーに選ばれやすい。", "価格は高いが、その分サポートや品質への安心感がある。"]
+        "name": "ロジテック HDDスタンド 2ベイ USB3.0 LHR-2BDPU3ES",
+        "asin": "B0752BQHMN",
+        "priceComparison": "玄人志向とほぼ同価格帯。",
+        "featureComparison": [
+          "クローン機能に加え、ドライブのデータを完全に消去する「イレース機能」を搭載。",
+          "Win/Mac/テレビ録画機など幅広い対応。"
+        ],
+        "differentiators": [
+          "データ消去機能が搭載されており、ドライブの破棄や再利用時に便利。",
+          "国内メーカーとしての信頼性とサポート。"
+        ]
       },
       {
-        "name": "ロジテック HDDスタンド 2ベイ USB3.0 LGB-2BDPU3ES",
-        "asin": "B0756C3D6Y",
-        "priceComparison": "玄人志向とほぼ同価格帯で、直接的な競合製品。",
-        "featureComparison": ["クローン機能に加え、ドライブのデータを完全に消去する「イレース機能」を搭載。", "動作状況を示すLEDが見やすいと評判。"],
-        "differentiators": ["データ消去機能が搭載されており、ドライブの破棄や再利用時に便利。", "大手周辺機器メーカーとしてのブランド力がある。"]
+        "name": "FIDECO USB3.0 HDDドッキングステーション",
+        "asin": "B08291CB6J",
+        "priceComparison": "玄人志向より安価な場合が多い。",
+        "featureComparison": [
+          "オフラインクローン対応。",
+          "UASPサポートによる高速転送。"
+        ],
+        "differentiators": [
+          "非常に安価でコストパフォーマンスが高い。",
+          "海外ブランドだが基本機能は充実。"
+        ]
       },
       {
-        "name": "ORICO 2BAY HDDスタンド 6629US3-C",
-        "asin": "B07T22T55B",
-        "priceComparison": "玄人志向よりやや高価な価格設定。",
-        "featureComparison": ["UASPプロトコルに対応しており、対応環境ではより高速なデータ転送が期待できる。", "デザイン性が高く、複数のカラーバリエーションがある。"],
-        "differentiators": ["デザイン性の高さと、UASP対応による高速転送の可能性。", "海外での販売実績も豊富。"]
+        "name": "ORICO HDDスタンド 2ベイ USB Type-C DD28C3-C",
+        "asin": "B0C2HD949J",
+        "priceComparison": "玄人志向よりやや高価。",
+        "featureComparison": [
+          "USB Type-C接続に対応しており、最新のPCやMacとの親和性が高い。",
+          "PS5などゲーム機への対応も謳っている。"
+        ],
+        "differentiators": [
+          "Type-Cインターフェース採用。",
+          "デザインがシンプル。"
+        ]
+      },
+      {
+        "name": "WAVLINK デュアルベイ HDDスタンド",
+        "asin": "B018FTE87S",
+        "priceComparison": "玄人志向と同等かやや高価。",
+        "featureComparison": [
+          "Mac M1チップ対応を明記。",
+          "UASP対応。"
+        ],
+        "differentiators": [
+          "Macユーザーへの訴求力が強い。",
+          "独特なデザイン。"
+        ]
       }
     ],
     "recommendation": {
@@ -105,7 +136,7 @@
         "付属のACアダプタが比較的大きく、設置場所を選ぶ可能性がある点。"
       ],
       "score": 80,
-      "scoreRationale": "[基本点: 70]\n[加点: +12] (クローン機能付きスタンドとして非常に安価で、コストパフォーマンスが極めて高い)\n[加点: +3] (PCレスでのクローンやエラースキップ機能は便利だが、動作の不安定さが評価を下げる)\n[減点: -5] (クローンが失敗したという致命的なレビューが複数あり、信頼性に懸念があるため)\n[合計: 80]"
+      "scoreRationale": "[基本点: 70]\n[加点: +10] (クローン機能付きスタンドとして非常に安価で、コストパフォーマンスが高い)\n[加点: +5] (PCレスでのクローンやエラースキップ機能の実用性が高い)\n[減点: -5] (クローン失敗や相性問題の報告が散見され、信頼性に若干の懸念がある)\n[合計: 80]"
     },
     "technicalSpecs": {
       "interface": "USB3.2 Gen1 (USB3.0)",
