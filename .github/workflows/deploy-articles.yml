@@ -13,6 +13,12 @@ on:
       - 'package.json'
       - 'package-lock.json'
   workflow_dispatch:
+    inputs:
+      refresh_no_price:
+        description: '「価格情報なし」のデータを強制的に再取得する'
+        required: false
+        type: boolean
+        default: false
 
 # GitHub Pages へのデプロイ権限
 permissions:
@@ -52,6 +58,10 @@ jobs:
     
     - name: Build project
       run: npm run build
+    
+    - name: Refresh no-price cache entries
+      if: ${{ github.event.inputs.refresh_no_price == 'true' }}
+      run: npm run refresh:no-price
     
     - name: Generate articles
       env:
