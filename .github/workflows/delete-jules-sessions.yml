@@ -11,6 +11,11 @@ on:
         required: false
         type: boolean
         default: false
+      debug_mode:
+        description: 'デバッグモード（最初の1件のAPIレスポンスを出力）'
+        required: false
+        type: boolean
+        default: false
 
 jobs:
   delete-sessions:
@@ -21,6 +26,7 @@ jobs:
         env:
           JULES_API_KEY: ${{ secrets.JULES_API_KEY }}
           DELETE_ALL: ${{ inputs.delete_all || 'false' }}
+          DEBUG_MODE: ${{ inputs.debug_mode || 'false' }}
           TARGET_REPO: ${{ github.repository }}
         run: |
           set -e
@@ -28,6 +34,7 @@ jobs:
           TOTAL_DELETED=0
           TOTAL_SKIPPED=0
           PAGE_TOKEN=""
+          DEBUG_DONE=false
           
           if [ "$DELETE_ALL" = "true" ]; then
             echo "🗑️ 全リポジトリのJulesセッション削除を開始します..."
@@ -64,12 +71,35 @@ jobs:
                   SESSION_DETAIL=$(curl -s -H "x-goog-api-key: $JULES_API_KEY" \
                     "https://jules.googleapis.com/v1alpha/$session_name")
                   
-                  # sourceIdまたはrepository情報からリポジトリ名を抽出
-                  SESSION_REPO=$(echo "$SESSION_DETAIL" | jq -r '.source.gitHubRepository.owner + "/" + .source.gitHubRepository.name // empty' 2>/dev/null || echo "")
+                  # デバッグモード: 最初のセッションのJSON構造を出力
+                  if [ "$DEBUG_MODE" = "true" ] && [ ! -f /tmp/debug_done.txt ]; then
+                    echo "🔍 デバッグ: セッション詳細のJSON構造"
+                    echo "$SESSION_DETAIL" | jq '.'
+                    echo "---"
+                    touch /tmp/debug_done.txt
+                  fi
                   
-                  if [ -z "$SESSION_REPO" ]; then
-                    # 別の形式で試行
-                    SESSION_REPO=$(echo "$SESSION_DETAIL" | jq -r '.repository // empty' 2>/dev/null || echo "")
+                  # 複数のフィールドパスを試行
+                  SESSION_REPO=""
+                  
+                  # パターン1: .source.gitHubRepository
+                  if [ -z "$SESSION_REPO" ] || [ "$SESSION_REPO" = "/" ] || [ "$SESSION_REPO" = "null" ]; then
+                    SESSION_REPO=$(echo "$SESSION_DETAIL" | jq -r '(.source.gitHubRepository.owner // "") + "/" + (.source.gitHubRepository.name // "")' 2>/dev/null || echo "")
+                  fi
+                  
+                  # パターン2: .gitHubRepository (直接)
+                  if [ -z "$SESSION_REPO" ] || [ "$SESSION_REPO" = "/" ] || [ "$SESSION_REPO" = "null" ]; then
+                    SESSION_REPO=$(echo "$SESSION_DETAIL" | jq -r '(.gitHubRepository.owner // "") + "/" + (.gitHubRepository.name // "")' 2>/dev/null || echo "")
+                  fi
+                  
+                  # パターン3: .repository (フルネーム)
+                  if [ -z "$SESSION_REPO" ] || [ "$SESSION_REPO" = "/" ] || [ "$SESSION_REPO" = "null" ]; then
+                    SESSION_REPO=$(echo "$SESSION_DETAIL" | jq -r '.repository // ""' 2>/dev/null || echo "")
+                  fi
+                  
+                  # パターン4: .sourceId から抽出
+                  if [ -z "$SESSION_REPO" ] || [ "$SESSION_REPO" = "/" ] || [ "$SESSION_REPO" = "null" ]; then
+                    SESSION_REPO=$(echo "$SESSION_DETAIL" | jq -r '.sourceId // ""' 2>/dev/null || echo "")
                   fi
                   
                   if [ "$SESSION_REPO" != "$TARGET_REPO" ]; then
