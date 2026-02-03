@@ -19,8 +19,7 @@
     "generate:articles": "ts-node src/scripts/article-generation-cli.ts",
     "merge:pr": "ts-node src/scripts/pr-merge-cli.ts",
     "organize:categories": "ts-node src/scripts/organize-categories-cli.ts",
-    "sort:categories": "node scripts/sort_categories.js",
-    "refresh:no-price": "ts-node src/scripts/refresh-no-price-cache.ts"
+    "sort:categories": "node scripts/sort_categories.js"
   },
   "keywords": [
     "amazon",
