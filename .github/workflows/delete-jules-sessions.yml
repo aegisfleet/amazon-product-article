@@ -1,4 +1,6 @@
 name: Delete Jules Sessions
+permissions:
+  contents: read
 
 on:
   schedule:
