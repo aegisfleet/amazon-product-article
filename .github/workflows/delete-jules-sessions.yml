@@ -1,6 +1,4 @@
 name: Delete Jules Sessions
-permissions:
-  contents: read
 
 on:
   schedule:
@@ -18,6 +16,9 @@ on:
         required: false
         type: boolean
         default: false
+
+permissions:
+  contents: read
 
 jobs:
   delete-sessions:
