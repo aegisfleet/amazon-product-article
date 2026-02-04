@@ -364,7 +364,7 @@ export class CreatorsAPIClient {
           const url = `${this.API_BASE_URL}${endpoint}`;
 
           // Remove internal field 'operation' from payload
-          const { operation, ...payload } = request;
+          const { operation: _operation, ...payload } = request;
 
           const headers = {
             'Content-Type': 'application/json',
@@ -531,7 +531,7 @@ export class CreatorsAPIClient {
     };
 
     // Check strict match first
-    if (mapping[cat]) return mapping[cat] as string;
+    if (mapping[cat]) return mapping[cat];
 
     // Partial match fallback
     for (const [key, value] of Object.entries(mapping)) {
@@ -597,7 +597,7 @@ export class CreatorsAPIClient {
     });
 
     const mainNode = validNodes[0];
-    const subNode = validNodes.length > 1 ? validNodes[1] : (mainNode!.ancestor as any);
+    const subNode = validNodes.length > 1 ? validNodes[1] : mainNode!.ancestor;
 
     return {
       category: mainNode!.displayName,

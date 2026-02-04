@@ -16,7 +16,11 @@ export default tseslint.config(
             },
         },
         rules: {
-            '@typescript-eslint/no-unused-vars': ['error', { argsIgnorePattern: '^_', caughtErrorsIgnorePattern: '^_' }],
+            '@typescript-eslint/no-unused-vars': ['error', {
+                argsIgnorePattern: '^_',
+                caughtErrorsIgnorePattern: '^_',
+                varsIgnorePattern: '^_'
+            }],
             '@typescript-eslint/explicit-function-return-type': 'warn',
             '@typescript-eslint/no-explicit-any': 'warn',
             '@typescript-eslint/no-unsafe-assignment': 'warn',
