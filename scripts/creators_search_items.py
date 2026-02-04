@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """
-PA-API Item Search Script
+Creators API Item Search Script
 
-This script searches for products on Amazon using the Product Advertising API (PA-API)
+This script searches for products on Amazon using the Creators API
 and saves the results to a JSON file.
 
 Usage:
@@ -10,8 +10,9 @@ Usage:
     python paapi_search_items.py "アテックス ルルド ふくらはぎゅ"
 
 Required Environment Variables:
-    - AMAZON_ACCESS_KEY: Your PA-API access key
-    - AMAZON_SECRET_KEY: Your PA-API secret key
+    - AMAZON_CREATORS_APPLICATION_ID: Your Creators API application ID
+    - AMAZON_CREATORS_CREDENTIAL_ID: Your Creators API credential ID
+    - AMAZON_CREATORS_CREDENTIAL_SECRET: Your Creators API credential secret
     - AMAZON_PARTNER_TAG: Your Amazon Associates partner tag
 """
 
@@ -23,7 +24,7 @@ import sys
 # Ensure script can import from current directory
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 
-from paapi_client import PAAPIClient
+from creators_api_client import PAAPIClient
 
 if __name__ == '__main__':
     # Parse command line arguments

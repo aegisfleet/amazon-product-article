@@ -1,13 +1,13 @@
 /**
- * Property-based tests for PA-API Client authentication and credential management
+ * Property-based tests for Creators API Client authentication and credential management
  * Feature: amazon-product-research-system, Property 1: Secure Authentication and Credential Management
  * Validates: Requirements 1.1, 4.3
  */
 
 import * as fc from 'fast-check';
-import { PAAPIClient } from '../PAAPIClient';
+import { PAAPIClient } from '../CreatorsAPIClient';
 
-describe('PAAPIClient Property Tests', () => {
+describe('CreatorsAPIClient Property Tests', () => {
   describe('Property 1: Secure Authentication and Credential Management', () => {
     /**
      * For any API authentication request, the system should successfully authenticate 
@@ -18,8 +18,9 @@ describe('PAAPIClient Property Tests', () => {
       await fc.assert(
         fc.asyncProperty(
           fc.record({
-            accessKey: fc.string({ minLength: 1, maxLength: 50 }),
-            secretKey: fc.string({ minLength: 1, maxLength: 100 }),
+            applicationId: fc.string({ minLength: 1, maxLength: 50 }),
+            credentialId: fc.string({ minLength: 1, maxLength: 100 }),
+            credentialSecret: fc.string({ minLength: 1, maxLength: 100 }),
             partnerTag: fc.string({ minLength: 1, maxLength: 30 })
           }),
           async (credentials) => {
@@ -28,8 +29,9 @@ describe('PAAPIClient Property Tests', () => {
             // Test authentication with generated credentials
             try {
               client.authenticate(
-                credentials.accessKey,
-                credentials.secretKey,
+                credentials.applicationId,
+                credentials.credentialId,
+                credentials.credentialSecret,
                 credentials.partnerTag
               );
 
@@ -52,8 +54,9 @@ describe('PAAPIClient Property Tests', () => {
       await fc.assert(
         fc.asyncProperty(
           fc.record({
-            accessKey: fc.oneof(fc.constant(''), fc.constant(null), fc.constant(undefined)),
-            secretKey: fc.oneof(fc.constant(''), fc.constant(null), fc.constant(undefined)),
+            applicationId: fc.oneof(fc.constant(''), fc.constant(null), fc.constant(undefined)),
+            credentialId: fc.oneof(fc.constant(''), fc.constant(null), fc.constant(undefined)),
+            credentialSecret: fc.oneof(fc.constant(''), fc.constant(null), fc.constant(undefined)),
             partnerTag: fc.oneof(fc.constant(''), fc.constant(null), fc.constant(undefined))
           }),
           async (invalidCredentials) => {
@@ -62,11 +65,12 @@ describe('PAAPIClient Property Tests', () => {
             // Should throw error for invalid credentials
             expect(() =>
               client.authenticate(
-                invalidCredentials.accessKey as any,
-                invalidCredentials.secretKey as any,
+                invalidCredentials.applicationId as any,
+                invalidCredentials.credentialId as any,
+                invalidCredentials.credentialSecret as any,
                 invalidCredentials.partnerTag as any
               )
-            ).toThrow('Missing required PA-API credentials');
+            ).toThrow('Missing required Creators API credentials');
           }
         ),
         { numRuns: 100 }
@@ -87,7 +91,7 @@ describe('PAAPIClient Property Tests', () => {
             // Should throw error when trying to search without authentication
             await expect(
               client.searchProducts(searchParams)
-            ).rejects.toThrow('PA-API client not authenticated');
+            ).rejects.toThrow(/Authenticated|authenticated/i);
           }
         ),
         { numRuns: 100 }
@@ -98,18 +102,25 @@ describe('PAAPIClient Property Tests', () => {
       // Simplified test to avoid timeout issues
       const client = new PAAPIClient();
 
+      // Mock httpClient to prevent actual network calls and force an error
+      (client as any).httpClient = {
+        post: () => Promise.reject(new Error('Simulated API Error'))
+      };
+
       // Reduce maxRetries for testing to avoid long wait times
-      (client as any).rateLimitConfig.maxRetries = 2;
+      // (client as any).rateLimitConfig.maxRetries = 2;
 
       const credentials = {
-        accessKey: 'test-access-key',
-        secretKey: 'test-secret-key',
+        applicationId: 'test-app-id',
+        credentialId: 'test-credential-id',
+        credentialSecret: 'test-credential-secret',
         partnerTag: 'test-partner-tag'
       };
 
       client.authenticate(
-        credentials.accessKey,
-        credentials.secretKey,
+        credentials.applicationId,
+        credentials.credentialId,
+        credentials.credentialSecret,
         credentials.partnerTag
       );
 
@@ -123,8 +134,9 @@ describe('PAAPIClient Property Tests', () => {
       } catch (error) {
         // Verify error message doesn't contain sensitive information
         const errorMessage = error instanceof Error ? error.message : String(error);
-        expect(errorMessage).not.toContain(credentials.accessKey);
-        expect(errorMessage).not.toContain(credentials.secretKey);
+        expect(errorMessage).not.toContain(credentials.applicationId);
+        expect(errorMessage).not.toContain(credentials.credentialId);
+        expect(errorMessage).not.toContain(credentials.credentialSecret);
         expect(errorMessage).not.toContain(credentials.partnerTag);
       }
     }, 15000);
@@ -133,8 +145,9 @@ describe('PAAPIClient Property Tests', () => {
       await fc.assert(
         fc.asyncProperty(
           fc.record({
-            accessKey: fc.string({ minLength: 10, maxLength: 50 }),
-            secretKey: fc.string({ minLength: 20, maxLength: 100 }),
+            applicationId: fc.string({ minLength: 10, maxLength: 50 }),
+            credentialId: fc.string({ minLength: 20, maxLength: 100 }),
+            credentialSecret: fc.string({ minLength: 20, maxLength: 100 }),
             partnerTag: fc.string({ minLength: 5, maxLength: 30 })
           }),
           async (credentials) => {
@@ -143,8 +156,9 @@ describe('PAAPIClient Property Tests', () => {
             // Japan marketplace is fixed, no region parameter needed
             expect(() =>
               client.authenticate(
-                credentials.accessKey,
-                credentials.secretKey,
+                credentials.applicationId,
+                credentials.credentialId,
+                credentials.credentialSecret,
                 credentials.partnerTag
               )
             ).not.toThrow();

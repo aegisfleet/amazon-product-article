@@ -7,7 +7,7 @@
 import * as fc from 'fast-check';
 import { ProductSearcher } from '../../search/ProductSearcher';
 import { ProductSearchParams } from '../../types/Product';
-import { PAAPIClient } from '../PAAPIClient';
+import { PAAPIClient } from '../CreatorsAPIClient';
 
 // Mock network errors for testing
 class NetworkErrorMockClient extends PAAPIClient {
@@ -76,7 +76,7 @@ describe('Error Handling Property Tests', () => {
             const mockClient = new NetworkErrorMockClient(maxFailures, 'rate_limit');
 
             // Mock authentication to avoid actual API calls
-            mockClient.authenticate('test-key', 'test-secret', 'test-tag');
+            mockClient.authenticate('test-app-id', 'test-credential-id', 'test-credential-secret', 'test-tag');
 
             const searchParams: ProductSearchParams = {
               category,
@@ -124,7 +124,7 @@ describe('Error Handling Property Tests', () => {
           async ({ errorType, retryCount, category }) => {
             const mockClient = new NetworkErrorMockClient(retryCount, errorType);
 
-            mockClient.authenticate('test-key', 'test-secret', 'test-tag');
+            mockClient.authenticate('test-app-id', 'test-credential-id', 'test-credential-secret', 'test-tag');
 
             const searchParams: ProductSearchParams = {
               category,
@@ -176,7 +176,7 @@ describe('Error Handling Property Tests', () => {
               const mockClient = new NetworkErrorMockClient(2, scenario.errorType);
               const searcher = new ProductSearcher(mockClient);
 
-              mockClient.authenticate('test-key', 'test-secret', 'test-tag');
+              mockClient.authenticate('test-app-id', 'test-credential-id', 'test-credential-secret', 'test-tag');
 
               const searchParams: ProductSearchParams = {
                 category: scenario.category,
@@ -229,7 +229,7 @@ describe('Error Handling Property Tests', () => {
             console.warn = (...args) => logs.push(`WARN: ${args.join(' ')}`);
 
             try {
-              mockClient.authenticate('test-key', 'test-secret', 'test-tag');
+              mockClient.authenticate('test-app-id', 'test-credential-id', 'test-credential-secret', 'test-tag');
 
               const searchParams: ProductSearchParams = {
                 category,
@@ -270,7 +270,7 @@ describe('Error Handling Property Tests', () => {
       const client = new PAAPIClient();
 
       // Reduce maxRetries for testing to avoid long wait times
-      (client as any).rateLimitConfig.maxRetries = 2;
+      // (client as any).rateLimitConfig.maxRetries = 2;
 
       // Mock the HTTP client to simulate timeout
       const originalHttpClient = (client as any).httpClient;
@@ -280,7 +280,7 @@ describe('Error Handling Property Tests', () => {
         })
       };
 
-      client.authenticate('test-key', 'test-secret', 'test-tag');
+      client.authenticate('test-app-id', 'test-credential-id', 'test-credential-secret', 'test-tag');
 
       const startTime = Date.now();
 
@@ -310,7 +310,7 @@ describe('Error Handling Property Tests', () => {
       const client = new PAAPIClient();
 
       try {
-        client.authenticate('', '', '');
+        client.authenticate('', '', '', '');
 
         // If authentication doesn't throw, search should fail securely
         await client.searchProducts({

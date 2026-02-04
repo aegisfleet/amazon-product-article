@@ -14,8 +14,8 @@ import dotenv from 'dotenv';
 import fs from 'fs/promises';
 import path from 'path';
 import { promisify } from 'util';
-import { PAAPICache } from '../api/PAAPICache';
-import { PAAPIClient } from '../api/PAAPIClient';
+import { PAAPICache } from '../api/CreatorsAPICache';
+import { PAAPIClient } from '../api/CreatorsAPIClient';
 import { ArticleGenerator, GeneratedArticle } from '../article/ArticleGenerator';
 import { GitHubPublisher } from '../github/GitHubPublisher';
 import { InvestigationResult } from '../types/JulesTypes';
@@ -30,8 +30,9 @@ dotenv.config();
 
 interface CLIOptions {
     partnerTag: string;
-    accessKey: string;
-    secretKey: string;
+    applicationId: string;
+    credentialId: string;
+    credentialSecret: string;
     githubToken: string | undefined;
     githubRepository: string | undefined;
 }
@@ -81,8 +82,9 @@ interface InvestigationData {
 
 function getOptions(): CLIOptions {
     const partnerTag = process.env.AMAZON_PARTNER_TAG || '';
-    const accessKey = process.env.AMAZON_ACCESS_KEY || '';
-    const secretKey = process.env.AMAZON_SECRET_KEY || '';
+    const applicationId = process.env.AMAZON_CREATORS_APPLICATION_ID || '';
+    const credentialId = process.env.AMAZON_CREATORS_CREDENTIAL_ID || '';
+    const credentialSecret = process.env.AMAZON_CREATORS_CREDENTIAL_SECRET || '';
     const githubToken = process.env.GITHUB_TOKEN;
     const githubRepository = process.env.GITHUB_REPOSITORY;
 
@@ -90,14 +92,15 @@ function getOptions(): CLIOptions {
         logger.warn('AMAZON_PARTNER_TAG not set, affiliate links will be incomplete');
     }
 
-    if (!accessKey || !secretKey) {
-        logger.warn('AMAZON_ACCESS_KEY or AMAZON_SECRET_KEY not set, live product data will not be fetched');
+    if (!applicationId || !credentialId || !credentialSecret) {
+        logger.warn('Creators API credentials not set, live product data will not be fetched');
     }
 
     return {
         partnerTag,
-        accessKey,
-        secretKey,
+        applicationId,
+        credentialId,
+        credentialSecret,
         githubToken,
         githubRepository,
     };
@@ -158,24 +161,24 @@ async function loadInvestigationResults(targetFiles?: string[]): Promise<Investi
                 rating: { average: 0, count: 0 },
             };
 
-                // ファイルの更新日時を取得（作成日時の代用）
-                const stats = await fs.stat(filePath);
-                
-                // lastInvestigatedがあればそれを優先、なければファイルの更新日時、それもなければ現在時刻
-                let generatedAt = new Date();
-                if (parsed.analysis.lastInvestigated) {
-                    generatedAt = new Date(parsed.analysis.lastInvestigated);
-                } else {
-                    generatedAt = stats.mtime;
-                }
+            // ファイルの更新日時を取得（作成日時の代用）
+            const stats = await fs.stat(filePath);
 
-                // InvestigationResultを構築
-                const investigation: InvestigationResult = {
-                    sessionId: `file-${asin}`,
-                    product,
-                    analysis: parsed.analysis,
-                    generatedAt: generatedAt,
-                };
+            // lastInvestigatedがあればそれを優先、なければファイルの更新日時、それもなければ現在時刻
+            let generatedAt = new Date();
+            if (parsed.analysis.lastInvestigated) {
+                generatedAt = new Date(parsed.analysis.lastInvestigated);
+            } else {
+                generatedAt = stats.mtime;
+            }
+
+            // InvestigationResultを構築
+            const investigation: InvestigationResult = {
+                sessionId: `file-${asin}`,
+                product,
+                analysis: parsed.analysis,
+                generatedAt: generatedAt,
+            };
 
             results.push({
                 product,
@@ -284,14 +287,14 @@ async function main(): Promise<void> {
         // Initialize PA-API Client & Cache
         const paapiClient = new PAAPIClient();
         const paapiCache = new PAAPICache();
-        const usePaapi = !skipPaapi && options.accessKey && options.secretKey && options.partnerTag;
+        const usePaapi = !skipPaapi && options.applicationId && options.credentialId && options.credentialSecret && options.partnerTag;
 
         if (usePaapi) {
             try {
-                paapiClient.authenticate(options.accessKey, options.secretKey, options.partnerTag);
+                paapiClient.authenticate(options.applicationId, options.credentialId, options.credentialSecret, options.partnerTag);
             } catch (error) {
-                logger.error('Failed to authenticate with PA-API:', error);
-                // Continue without PA-API
+                logger.error('Failed to authenticate with Creators API:', error);
+                // Continue without API
             }
         }
 

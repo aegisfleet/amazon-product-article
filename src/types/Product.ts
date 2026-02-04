@@ -65,6 +65,7 @@ export interface ProductDetail extends Product {
 
 export interface ProductSearchParams {
   category: string;
+  searchIndex?: string;
   keywords: string[];
   maxResults: number;
   minPrice?: number;
