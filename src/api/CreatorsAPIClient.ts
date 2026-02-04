@@ -147,9 +147,7 @@ export class CreatorsAPIClient {
         'itemInfo.features',
         'itemInfo.productInfo', // for color, size
         'offersV2.listings.price',
-        'offersV2.summaries.highestPrice',
-        'offersV2.summaries.lowestPrice',
-        'parentASIN'
+        'browseNodeInfo.browseNodes',
       ];
 
       // Note: ManufactureInfo is often not available in search, removed to reduce payload size
@@ -455,8 +453,8 @@ export class CreatorsAPIClient {
     const product: Product = {
       asin: item.asin,
       title: item.itemInfo?.title?.displayValue || 'Unknown Title',
-      category: 'Unknown', // Need category parsing logic
-      categoryInfo: { main: 'Unknown', sub: 'Unknown' },
+      // Parse category info
+      ...this.extractCategoryInfo(item),
       price,
       images,
       specifications: {}, // Simplification
@@ -556,6 +554,77 @@ export class CreatorsAPIClient {
       'featured': 'Featured'
     };
     return mapping[sort] || 'Relevance';
+  }
+
+  // Category Parsing Logic
+  private extractCategoryInfo(item: CreatorsAPIItem): { category: string; categoryInfo: { main: string; sub: string; browseNodeId?: string } } {
+    const defaultResult = {
+      category: 'Unknown',
+      categoryInfo: { main: 'Unknown', sub: 'Unknown' }
+    };
+
+    if (!item.browseNodeInfo?.browseNodes || item.browseNodeInfo.browseNodes.length === 0) {
+      return defaultResult;
+    }
+
+    const nodes = item.browseNodeInfo.browseNodes;
+
+    // Filter valid nodes
+    const validNodes = nodes.filter(node => this.isValidCategoryName(node.displayName));
+
+    if (validNodes.length === 0) {
+      // Fallback to first node if all are invalid, stripping invalid chars if possible
+      const firstNode = nodes[0];
+      if (firstNode) {
+        return {
+          category: this.sanitizeCategoryName(firstNode.displayName),
+          categoryInfo: {
+            main: this.sanitizeCategoryName(firstNode.displayName),
+            sub: firstNode.ancestor?.displayName ? this.sanitizeCategoryName(firstNode.ancestor.displayName) : 'Unknown',
+            browseNodeId: firstNode.id
+          }
+        };
+      }
+      return defaultResult;
+    }
+
+    // Sort by SalesRank (if available) -> low rank is better (1 is best)
+    // Nodes without SalesRank come last
+    validNodes.sort((a, b) => {
+      const rankA = a.salesRank ?? Number.MAX_SAFE_INTEGER;
+      const rankB = b.salesRank ?? Number.MAX_SAFE_INTEGER;
+      return rankA - rankB;
+    });
+
+    const mainNode = validNodes[0];
+    const subNode = validNodes.length > 1 ? validNodes[1] : (mainNode!.ancestor as any);
+
+    return {
+      category: mainNode!.displayName,
+      categoryInfo: {
+        main: mainNode!.displayName,
+        sub: subNode?.displayName || 'Unknown',
+        browseNodeId: mainNode!.id
+      }
+    };
+  }
+
+  private isValidCategoryName(name: string): boolean {
+    if (!name) return false;
+
+    const invalidPatterns = [
+      /Amazon/i,
+      /ストア$|Store$/i, // Ends with Store
+      /[【】|()_※]/, // Special chars
+      /Sale|Off|Coupon|Ranking|Best|Week|Fair|Event|Campaign/i,
+      /セール|オフ|クーポン|ランキング|おすすめ|ウィーク|フェア|イベント|キャンペーン/
+    ];
+
+    return !invalidPatterns.some(pattern => pattern.test(name));
+  }
+
+  private sanitizeCategoryName(name: string): string {
+    return name.replace(/[【】|()_※]/g, '').trim();
   }
 }
 
