@@ -156,9 +156,11 @@ export interface CreatorsAPIItem {
   offersV2?: {
     listings?: Array<{
       price?: {
-        amount: number;
-        currency: string;
-        displayAmount: string; // Check exact casing, usually displayAmount
+        money?: {
+          amount: number;
+          currency: string;
+          displayAmount: string;
+        };
       };
       availability?: {
         message: string;
@@ -169,14 +171,18 @@ export interface CreatorsAPIItem {
     }>;
     summaries?: Array<{
       highestPrice?: {
-        amount: number;
-        currency: string;
-        displayAmount: string;
+        money?: {
+          amount: number;
+          currency: string;
+          displayAmount: string;
+        };
       };
       lowestPrice?: {
-        amount: number;
-        currency: string;
-        displayAmount: string;
+        money?: {
+          amount: number;
+          currency: string;
+          displayAmount: string;
+        };
       };
     }>;
   };
@@ -194,6 +200,10 @@ export interface CreatorsAPIItem {
     }>;
   };
   parentASIN?: string;
+  customerReviews?: {
+    count?: number;
+    starRating?: number;
+  };
 }
 
 export interface CreatorsAPIError {

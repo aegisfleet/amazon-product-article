@@ -292,10 +292,10 @@ export class CreatorsAPIClient {
         'itemInfo.technicalInfo',
         'itemInfo.externalIds',
         'offersV2.listings.price',
-        'offersV2.listings.availability.message',
-        'offersV2.listings.deliveryInfo.isPrimeEligible',
-        'offersV2.summaries.highestPrice',
-        'offersV2.summaries.lowestPrice',
+        'offersV2.listings.availability',
+        'offersV2.listings.merchantInfo',
+        'customerReviews.count',
+        'customerReviews.starRating',
         'browseNodeInfo.browseNodes',
         'parentASIN'
       ]
@@ -322,9 +322,14 @@ export class CreatorsAPIClient {
       if (notFoundAsins.length > 0) {
         this.logger.warn(`The following ASINs were not found: ${notFoundAsins.join(', ')}`);
       }
-    } catch (error) {
+    } catch (error: any) {
       const errorMessage = error instanceof Error ? error.message : String(error);
       this.logger.warn(`Batch request failed: ${errorMessage}`);
+
+      if (error.response?.data) {
+        this.logger.error(`API Error Response: ${JSON.stringify(error.response.data, null, 2)}`);
+      }
+
       batchFailed = true;
     }
 
@@ -458,7 +463,10 @@ export class CreatorsAPIClient {
       price,
       images,
       specifications: {}, // Simplification
-      rating: { average: 0, count: 0 },
+      rating: {
+        average: item.customerReviews?.starRating || 0,
+        count: item.customerReviews?.count || 0
+      },
       detailPageUrl: item.detailPageURL
     };
 
@@ -479,18 +487,18 @@ export class CreatorsAPIClient {
     const listing = item.offersV2?.listings?.[0];
     const summary = item.offersV2?.summaries?.[0];
 
-    if (listing?.price) {
+    if (listing?.price?.money) {
       return {
-        amount: listing.price.amount,
-        currency: listing.price.currency,
-        formatted: listing.price.displayAmount
+        amount: listing.price.money.amount,
+        currency: listing.price.money.currency,
+        formatted: listing.price.money.displayAmount
       };
     }
-    if (summary?.lowestPrice) {
+    if (summary?.lowestPrice?.money) {
       return {
-        amount: summary.lowestPrice.amount,
-        currency: summary.lowestPrice.currency,
-        formatted: summary.lowestPrice.displayAmount
+        amount: summary.lowestPrice.money.amount,
+        currency: summary.lowestPrice.money.currency,
+        formatted: summary.lowestPrice.money.displayAmount
       };
     }
     return { amount: 0, currency: 'JPY', formatted: '価格情報なし' };
