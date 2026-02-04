@@ -46,65 +46,72 @@ if __name__ == '__main__':
     try:
         client = CreatorsAPIClient()
         
-        payload_dict = {
-            "ItemIds": [args.asin],
-            "Resources": [
-                "Images.Primary.Large",
-                "ItemInfo.Title",
-                "ItemInfo.Features",
-                "ItemInfo.ByLineInfo",
-                "ItemInfo.ProductInfo",
-                "ItemInfo.TechnicalInfo",
-                "ItemInfo.ManufactureInfo",
-                "Offers.Listings.Price"
-            ]
-        }
+        resources = [
+            "images.primary.large",
+            "images.primary.small",
+            "images.variants.medium",
+            "itemInfo.title",
+            "itemInfo.features",
+            "itemInfo.byLineInfo",
+            "itemInfo.productInfo",
+            "itemInfo.technicalInfo",
+            "itemInfo.manufactureInfo",
+            "offersV2.listings.price",
+            "browseNodeInfo.browseNodes"
+        ]
         
-        response_json = client.request("GetItems", payload_dict)
+        response_json = client.get_items([args.asin], resources=resources)
         
-        if 'ItemsResult' in response_json and 'Items' in response_json['ItemsResult']:
-            item = response_json['ItemsResult']['Items'][0]
-            item_info = item.get('ItemInfo', {})
+        if 'itemsResult' in response_json and 'items' in response_json['itemsResult']:
+            item = response_json['itemsResult']['items'][0]
+            item_info = item.get('itemInfo', {})
             
             data = {
-                "productName": item_info.get('Title', {}).get('DisplayValue'),
-                "brand": item_info.get('ByLineInfo', {}).get('Brand', {}).get('DisplayValue'),
-                "manufacturer": item_info.get('ByLineInfo', {}).get('Manufacturer', {}).get('DisplayValue'),
-                "price": item['Offers']['Listings'][0]['Price']['Amount'] if 'Offers' in item and item['Offers'].get('Listings') and item['Offers']['Listings'][0].get('Price') else None,
-                "imageUrl": item.get('Images', {}).get('Primary', {}).get('Large', {}).get('URL'),
-                "features": item_info.get('Features', {}).get('DisplayValues', []),
+                "productName": item_info.get('title', {}).get('displayValue'),
+                "brand": item_info.get('byLineInfo', {}).get('brand', {}).get('displayValue'),
+                "manufacturer": item_info.get('byLineInfo', {}).get('manufacturer', {}).get('displayValue'),
+                "price": None,
+                "imageUrl": item.get('images', {}).get('primary', {}).get('large', {}).get('url'),
+                "features": item_info.get('features', {}).get('displayValues', []),
                 "specifications": {},
                 "dimensions": {}
             }
 
+            # Extract price from offersV2
+            if 'offersV2' in item and item['offersV2'].get('listings'):
+                listings = item['offersV2']['listings']
+                if listings and listings[0].get('price', {}).get('money'):
+                    money = listings[0]['price']['money']
+                    data["price"] = money.get('amount')
+
             # ManufactureInfo (Model number etc.)
-            if 'ManufactureInfo' in item_info:
-                m_info = item_info['ManufactureInfo']
-                if 'ItemModelNumber' in m_info:
-                    data["modelNumber"] = m_info['ItemModelNumber']['DisplayValue']
+            if 'manufactureInfo' in item_info:
+                m_info = item_info['manufactureInfo']
+                if 'itemModelNumber' in m_info:
+                    data["modelNumber"] = m_info['itemModelNumber'].get('displayValue')
 
             # ProductInfo (Dimensions, Weight, Color, Size)
-            if 'ProductInfo' in item_info:
-                p_info = item_info['ProductInfo']
-                if 'ItemDimensions' in p_info:
-                    dims = p_info['ItemDimensions']
-                    for dim_type in ['Height', 'Length', 'Width', 'Weight']:
+            if 'productInfo' in item_info:
+                p_info = item_info['productInfo']
+                if 'itemDimensions' in p_info:
+                    dims = p_info['itemDimensions']
+                    for dim_type in ['height', 'length', 'width', 'weight']:
                         if dim_type in dims:
                             data["dimensions"][dim_type.lower()] = {
-                                "value": dims[dim_type]['DisplayValue'],
-                                "unit": dims[dim_type]['Unit']
+                                "value": dims[dim_type].get('displayValue'),
+                                "unit": dims[dim_type].get('unit')
                             }
-                if 'Color' in p_info:
-                    data["specifications"]["color"] = p_info['Color']['DisplayValue']
-                if 'Size' in p_info:
-                    data["specifications"]["size"] = p_info['Size']['DisplayValue']
+                if 'color' in p_info:
+                    data["specifications"]["color"] = p_info['color'].get('displayValue')
+                if 'size' in p_info:
+                    data["specifications"]["size"] = p_info['size'].get('displayValue')
 
             # TechnicalInfo
-            if 'TechnicalInfo' in item_info:
-                t_info = item_info['TechnicalInfo']
+            if 'technicalInfo' in item_info:
+                t_info = item_info['technicalInfo']
                 for key, value in t_info.items():
-                    if isinstance(value, dict) and 'DisplayValue' in value:
-                        data["specifications"][key] = value['DisplayValue']
+                    if isinstance(value, dict) and 'displayValue' in value:
+                        data["specifications"][key] = value['displayValue']
 
             # Create output directory if needed
             output_dir = os.path.dirname(args.output)
