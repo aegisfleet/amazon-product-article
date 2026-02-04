@@ -219,7 +219,7 @@ class CreatorsAPIClient:
 
 
 # Legacy alias for backward compatibility
-PAAPIClient = CreatorsAPIClient
+# PAAPIClient = CreatorsAPIClient # Legacy alias removed
 
 
 if __name__ == "__main__":

@@ -22,11 +22,11 @@ jest.mock('../../utils/Logger', () => {
 
 describe('ProductSearcher', () => {
     let searcher: ProductSearcher;
-    let mockPapiClient: jest.Mocked<CreatorsAPIClient>;
+    let mockCreatorsClient: jest.Mocked<CreatorsAPIClient>;
 
     beforeEach(() => {
-        mockPapiClient = new CreatorsAPIClient() as jest.Mocked<CreatorsAPIClient>;
-        searcher = new ProductSearcher(mockPapiClient);
+        mockCreatorsClient = new CreatorsAPIClient() as jest.Mocked<CreatorsAPIClient>;
+        searcher = new ProductSearcher(mockCreatorsClient);
         jest.clearAllMocks();
 
         // Default mocks
@@ -51,16 +51,16 @@ describe('ProductSearcher', () => {
 
             // Mock getProductDetails to return mock product
             // eslint-disable-next-line @typescript-eslint/no-explicit-any, @typescript-eslint/no-unsafe-argument
-            mockPapiClient.getProductDetails.mockResolvedValue(mockProduct as any);
+            mockCreatorsClient.getProductDetails.mockResolvedValue(mockProduct as any);
 
             const session = await searcher.searchByAsins(asins);
 
             // eslint-disable-next-line @typescript-eslint/unbound-method
-            expect(mockPapiClient.getProductDetails).toHaveBeenCalledTimes(2);
+            expect(mockCreatorsClient.getProductDetails).toHaveBeenCalledTimes(2);
             // eslint-disable-next-line @typescript-eslint/unbound-method
-            expect(mockPapiClient.getProductDetails).toHaveBeenCalledWith('B000000001');
+            expect(mockCreatorsClient.getProductDetails).toHaveBeenCalledWith('B000000001');
             // eslint-disable-next-line @typescript-eslint/unbound-method
-            expect(mockPapiClient.getProductDetails).toHaveBeenCalledWith('B000000002');
+            expect(mockCreatorsClient.getProductDetails).toHaveBeenCalledWith('B000000002');
             expect(session.results.length).toBe(1); // One result batch
             expect(session.results?.[0]?.products.length).toBe(2);
             expect(session.categories).toContain('Manual');
@@ -88,7 +88,7 @@ describe('ProductSearcher', () => {
                 timestamp: new Date()
             };
 
-            mockPapiClient.searchProducts.mockResolvedValue(mockResult);
+            mockCreatorsClient.searchProducts.mockResolvedValue(mockResult);
 
             // Mock fs.readdir to return the existing ASIN folder in content/articles
             (fs.readdir as jest.Mock).mockImplementation((pathStr: string) => {
@@ -124,7 +124,7 @@ describe('ProductSearcher', () => {
                 timestamp: new Date()
             };
 
-            mockPapiClient.searchProducts.mockResolvedValue(mockResult);
+            mockCreatorsClient.searchProducts.mockResolvedValue(mockResult);
 
             // Mock fs.access to succeed for investigations
             (fs.access as jest.Mock).mockResolvedValue(undefined);

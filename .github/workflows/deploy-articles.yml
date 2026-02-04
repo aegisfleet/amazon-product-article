@@ -61,7 +61,7 @@ jobs:
         AMAZON_CREATORS_CREDENTIAL_SECRET: ${{ secrets.AMAZON_CREATORS_CREDENTIAL_SECRET }}
       run: npm run generate:articles
     
-    - name: Commit PA-API Cache
+    - name: Commit Creators API Cache
       if: always()
       run: |
         git config --global user.name "github-actions[bot]"
@@ -69,7 +69,7 @@ jobs:
         git add data/cache/paapi-product-cache.json
         # Only commit if there are changes
         if ! git diff --staged --quiet; then
-          git commit -m "Update PA-API product cache [skip ci]"
+          git commit -m "Update Creators API product cache [skip ci]"
           # Retry push with rebase if it fails (handles concurrent workflow conflicts)
           for i in 1 2 3; do
             if git push; then

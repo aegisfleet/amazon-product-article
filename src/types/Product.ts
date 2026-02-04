@@ -1,15 +1,15 @@
 /**
- * Product data types for Amazon PA-API v5
+ * Product data types for Amazon Creators API v1
  */
 
 /**
  * 階層カテゴリ情報
- * PA-API BrowseNodesから抽出されたメイン/サブカテゴリを保持
+ * Creators API BrowseNodesから抽出されたメイン/サブカテゴリを保持
  */
 export interface CategoryInfo {
   main: string;          // メインカテゴリ（上位カテゴリ）
   sub?: string;          // サブカテゴリ（詳細カテゴリ）
-  browseNodeId?: string; // PA-API BrowseNode ID（将来の拡張用）
+  browseNodeId?: string; // Creators API BrowseNode ID（将来の拡張用）
 }
 
 export interface Product {
@@ -46,7 +46,7 @@ export interface ProductDetail extends Product {
   };
   manufacturer?: string;
   model?: string;
-  // 新規追加フィールド（PA-API拡張）
+  // 新規追加フィールド（Creators API拡張）
   brand?: string;
   releaseDate?: string;
   isPrimeEligible?: boolean;

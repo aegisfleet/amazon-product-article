@@ -5,7 +5,7 @@
 export interface AffiliateLink {
     asin: string;
     url: string;
-    shortUrl?: string; // Made optional as PA-API might not provide it
+    shortUrl?: string; // Made optional as Creators API might not provide it
     text: string;
     trackingId?: string;
     createdAt?: Date;

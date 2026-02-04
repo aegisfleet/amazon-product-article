@@ -11,11 +11,11 @@ Amazon PA-API v5とGoogle Julesを活用した商品調査記事の自動生成�
 ```
 amazon-product-article/
 ├── scripts/                  # 調査用スクリプト（Python）
-│   ├── paapi_get_item.py     # 商品詳細取得
-│   └── paapi_search_items.py # 商品検索
+│   ├── creators_get_item.py     # 商品詳細取得
+│   └── creators_search_items.py # 商品検索
 ├── src/                      # TypeScriptソースコード
 │   ├── api/                  # Amazon PA-API クライアント
-│   │   └── PAAPIClient.ts    # PA-API v5 通信処理
+│   │   └── CreatorsAPIClient.ts    # Creators API v1 通信処理
 │   ├── article/              # 記事生成モジュール
 │   │   ├── ArticleGenerator.ts       # Hugo記事生成
 │   │   └── ArticleQualityManager.ts  # 記事品質管理
@@ -55,7 +55,7 @@ amazon-product-article/
 
 | ファイル | 説明 |
 |---------|------|
-| `src/api/PAAPIClient.ts` | Amazon PA-API v5との通信を担当。商品情報取得、カテゴリ抽出、アフィリエイトリンク生成 |
+| `src/api/CreatorsAPIClient.ts` | Amazon Creators API v1との通信を担当。商品情報取得、カテゴリ抽出、アフィリエイトリンク生成 |
 | `src/article/ArticleGenerator.ts` | 調査データからHugo記事（Markdown）を生成。Front matterと本文構成を担当 |
 | `src/article/ArticleQualityManager.ts` | 記事の品質チェックと最適化 |
 | `src/scripts/*.ts` | CLIエントリポイント。npm scriptsから呼び出される |
@@ -116,7 +116,7 @@ npm run generate:articles
 
 # オプションをつけて記事生成
 # --asin <ASIN>: 指定したASINのみ処理（例: npm run generate:articles -- --asin B0007TT7I0）
-# --skip-paapi: PA-API呼び出しをスキップ（例: npm run generate:articles -- --skip-paapi）
+# --skip-creators-api: Creators API呼び出しをスキップ（例: npm run generate:articles -- --skip-creators-api）
 
 # PRマージ
 npm run merge:pr
