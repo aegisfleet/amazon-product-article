@@ -363,7 +363,7 @@ export class ArticleGenerator {
     const price = product.price.formatted;
     const score = investigation.analysis.recommendation.score;
 
-    // 階層カテゴリ: PA-APIのcategoryInfoがあればそれを使用
+    // 階層カテゴリ: Creators APIのcategoryInfoがあればそれを使用
     const subcategory = product.categoryInfo?.sub || this.determineSubcategory(product);
     const manufacturer = this.extractManufacturer(product);
 
@@ -384,7 +384,7 @@ export class ArticleGenerator {
       priceRange,
       price,
       score,
-      // PA-API v5ではレビューデータ取得不可のためrating不使用
+      // Creators API v1ではレビューデータ取得不可のためrating不使用
       featured: this.shouldBeFeatured(product, investigation),
       mobileOptimized: true,
       seoKeywords,
@@ -855,7 +855,7 @@ ${reviewAnalysis ? this.generateSentimentAnalysis(reviewAnalysis) : ''}`;
 
   /**
    * 競合分析セクションを生成（カード形式で競合商品リンク付き）
-   * PA-APIで情報が取得できなかった競合商品は非表示にする
+   * Creators APIで情報が取得できなかった競合商品は非表示にする
    */
   private async generateCompetitiveAnalysisSection(
     investigation: InvestigationResult,
@@ -876,7 +876,7 @@ ${reviewAnalysis ? this.generateSentimentAnalysis(reviewAnalysis) : ''}`;
           .map(diff => `<li>${diff}</li>`)
           .join('\n');
 
-        // PA-APIから取得した競合商品の詳細情報
+        // Creators APIから取得した競合商品の詳細情報
         const detail = competitor.asin ? competitorDetails?.get(competitor.asin) : undefined;
 
         // 調査済み記事が存在するかチェック
@@ -898,7 +898,7 @@ ${reviewAnalysis ? this.generateSentimentAnalysis(reviewAnalysis) : ''}`;
           }
         }
 
-        // 商品プレビュー（PA-API情報がある場合）
+        // 商品プレビュー（Creators API情報がある場合）
         let productPreview = '';
         if (detail) {
           const imageUrl = detail.images?.primary || '';
@@ -930,7 +930,7 @@ ${scoreHtml}${priceText ? `<span class="competitor-actual-price">${priceText}</s
 </${previewTag}>`;
         }
 
-        // PA-APIが実行された場合（competitorDetailsが存在する場合）、
+        // Creators APIが実行された場合（competitorDetailsが存在する場合）、
         // ASINが存在しても詳細情報が取得できなかった（エラーになった）商品はリンクを表示しない
         const shouldShowLink = competitor.asin && (!competitorDetails || competitorDetails.has(competitor.asin));
 
@@ -1504,7 +1504,7 @@ ${score >= 80 ? '自信を持っておすすめできる商品です。' :
   }
 
   private shouldBeFeatured(_product: Product, investigation: InvestigationResult): boolean {
-    // Jules調査の推奨スコアのみで判定（PA-API v5ではレビューデータ取得不可）
+    // Jules調査の推奨スコアのみで判定（Creators API v1ではレビューデータ取得不可）
     return investigation.analysis.recommendation.score >= 80;
   }
 

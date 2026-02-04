@@ -28,7 +28,7 @@ from creators_api_client import CreatorsAPIClient
 if __name__ == '__main__':
     # Parse command line arguments
     parser = argparse.ArgumentParser(
-        description='Search for products on Amazon using PA-API'
+        description='Search for products on Amazon using Creators API'
     )
     parser.add_argument(
         'keywords',

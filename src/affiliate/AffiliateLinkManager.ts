@@ -25,7 +25,6 @@ export class AffiliateLinkManager {
         try {
             partnerTag = ConfigManager.getInstance().getConfig().amazon.partnerTag;
         } catch (_error) {
-            // ConfigManager might not be initialized (e.g. in CLI or tests)
             // This is acceptable as long as config.partnerTag is provided or updated later
         }
 
@@ -39,7 +38,7 @@ export class AffiliateLinkManager {
 
     /**
      * 商品情報からアフィリエイトリンクを生成
-     * PA-APIから取得したdetailPageUrlがある場合はそれを優先する
+     * Creators APIから取得したdetailPageUrlがある場合はそれを優先する
      */
     generateLinkFromProduct(product: Product, text?: string): AffiliateLink {
         this.logger.info(`Generating affiliate link from product: ${product.asin}`);
@@ -61,7 +60,7 @@ export class AffiliateLinkManager {
             throw new Error(`Invalid ASIN format: ${asin}`);
         }
 
-        // 既存のURL（PA-API提供）がある場合はそれを使用し、tagを確実に付与/更新
+        // 既存のURL（Creators API提供）がある場合はそれを使用し、tagを確実に付与/更新
         let fullUrl: string;
         if (existingUrl) {
             try {
