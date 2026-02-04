@@ -212,10 +212,10 @@ describe('ArticleGenerator', () => {
       const mockCompetitorDetails = new Map<string, ProductDetail>();
       mockCompetitorDetails.set('B08COMPET1', { ...mockProduct, asin: 'B08COMPET1' } as any);
 
-      // Add PAAPI source to verify it's not rendered as a link
+      // Add Creators API source to verify it's not rendered as a link
       mockInvestigation.analysis.sources.push({
-        name: 'Amazon Product Advertising API',
-        url: 'https://webservices.amazon.co.jp/paapi5/getitems',
+        name: 'Amazon Creators API',
+        url: 'https://webservices.amazon.co.jp/creators/v1/items',
         credibility: 'High'
       });
 
@@ -238,10 +238,10 @@ describe('ArticleGenerator', () => {
       expect(result.content).toContain('会社員の体験談 (通勤・通学)');
       expect(result.content).toContain('多くのユーザーが満足感を得ている');
       expect(result.content).toContain('[Amazonレビュー](https://amazon.co.jp)');
-      // Verify PAAPI is rendered as plain text, not a link
+      // Verify Creators API is rendered as plain text, not a link
       // Note: optimizeListsForMobile wraps list items in a span
-      expect(result.content).toContain('<span class="mobile-list-item">Amazon Product Advertising API (High)</span>');
-      expect(result.content).not.toContain('[Amazon Product Advertising API](https://webservices.amazon.co.jp/paapi5/getitems)');
+      expect(result.content).toContain('<span class="mobile-list-item">Amazon Creators API (High)</span>');
+      expect(result.content).not.toContain('[Amazon Creators API](https://webservices.amazon.co.jp/creators/v1/items)');
 
       expect(result.wordCount).toBeGreaterThan(0);
       expect(result.sections).toHaveLength(6);
@@ -283,7 +283,7 @@ describe('ArticleGenerator', () => {
       expect(result.content).toContain('hero:');
       expect(result.sections).toHaveLength(6);
     });
-    it('should keep items but hide links for competitors with failed PA-API lookup', async () => {
+    it('should keep items but hide links for competitors with failed Creators API lookup', async () => {
       const mockCompetitorDetails = new Map<string, ProductDetail>();
 
       const result = await generator.generateArticle(
@@ -299,7 +299,7 @@ describe('ArticleGenerator', () => {
       expect(result.content).not.toContain('amazon.co.jp/dp/B08COMPET1');
     });
 
-    it('should show links for competitors with successful PA-API lookup', async () => {
+    it('should show links for competitors with successful Creators API lookup', async () => {
       const mockDetail: ProductDetail = {
         ...mockProduct,
         asin: 'B08COMPET1',
@@ -424,7 +424,7 @@ describe('ArticleGenerator', () => {
       expect(metadata.asin).toBe('B08N5WRWNW');
       expect(metadata.category).toBe('Electronics');
       expect(metadata.priceRange).toBe('premium');
-      // PA-API v5ではレビューデータ取得不可のためrating未設定
+      // Creators API v1ではレビューデータ取得不可のためrating未設定
       expect(metadata.mobileOptimized).toBe(true);
       expect(metadata.tags).toContain('商品レビュー');
       expect(metadata.seoKeywords).toContain('レビュー');

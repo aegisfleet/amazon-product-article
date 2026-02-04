@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 """
-PA-API BrowseNodes Investigation Script
+Creators API BrowseNodes Investigation Script
 
 Retrieves product information including BrowseNodeInfo to understand
-the category hierarchy returned by PA-API.
+the category hierarchy returned by Creators API.
 """
 
 import argparse
@@ -19,11 +19,11 @@ except ImportError:
 # Ensure script can import from current directory
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 
-from paapi_client import PAAPIClient
+from creators_api_client import CreatorsAPIClient
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(
-        description='Investigate BrowseNodes structure from Amazon PA-API'
+        description='Investigate BrowseNodes structure from Amazon Creators API'
     )
     parser.add_argument(
         'asin',
@@ -50,7 +50,7 @@ if __name__ == '__main__':
         
         # Print the full response for investigation
         print("=" * 60)
-        print(f"PA-API Response for ASIN: {args.asin}")
+        print(f"Creators API Response for ASIN: {args.asin}")
         print("=" * 60)
         print(json.dumps(response_json, indent=2, ensure_ascii=False))
         

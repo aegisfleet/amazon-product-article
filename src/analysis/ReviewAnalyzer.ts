@@ -201,7 +201,7 @@ export class ReviewAnalyzer {
    */
   private calculateUseCaseSuitability(useCase: string, product: Product): number {
     // 商品カテゴリと使用ケースの関連性を評価
-    // PA-API v5ではレビューデータ取得不可のためカテゴリ関連性のみで計算
+    // Creators API v1ではレビューデータ取得不可のためカテゴリ関連性のみで計算
     const categoryRelevance = this.assessCategoryRelevance(useCase, product.category);
 
     return Math.min(Math.max(categoryRelevance, 0), 100);

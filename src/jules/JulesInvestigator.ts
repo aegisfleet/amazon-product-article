@@ -365,8 +365,8 @@ cat data/investigations/${product.asin}.json 2>/dev/null || echo "新規調査"
 
 ---
 
-【PA-API利用】
-環境変数（AMAZON_ACCESS_KEY, AMAZON_SECRET_KEY, AMAZON_PARTNER_TAG）で認証。
+【Creators API利用】
+環境変数（AMAZON_CREATORS_APPLICATION_ID, AMAZON_CREATORS_CREDENTIAL_ID, AMAZON_CREATORS_CREDENTIAL_SECRET, AMAZON_PARTNER_TAG）で認証。
 エンドポイント: https://webservices.amazon.co.jp/creators/v1/items（日本リージョン）
 
 調査用スクリプト（**編集は絶対禁止・そのまま使用すること**）:
@@ -416,7 +416,7 @@ cat data/investigations/${product.asin}.json 2>/dev/null || echo "新規調査"
    - 価格、機能、品質の比較
    - 差別化ポイントの特定
    - **【必須】各競合商品のASINを必ず特定してください**（アフィリエイトリンク生成に使用）
-   - **PA-APIのSearchItemsエンドポイントを使用して競合商品を検索し、ASINを取得してください**
+   - **Creators APIのSearchItemsエンドポイントを使用して競合商品を検索し、ASINを取得してください**
    - ASINが見つからない場合は "asin": null と記載
 
 4. 購買推奨度
@@ -512,7 +512,7 @@ ${scoringRubric}
 **【technicalSpecs: 詳細スペック抽出】**
 上記JSONの "recommendation" の後に "technicalSpecs" フィールドも追加してください。
 商品カテゴリに応じて、以下のような詳細スペック情報を収集・構造化してください。
-PA-APIの features テキストとWeb調査を組み合わせて情報を取得し、該当しない項目は null を設定してください。
+Creators APIの features テキストとWeb調査を組み合わせて情報を取得し、該当しない項目は null を設定してください。
 
 出力例（スマートフォンの場合）:
 \`\`\`json

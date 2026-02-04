@@ -1,6 +1,6 @@
 # Amazon Product Research System
 
-Amazon PA-API v5とGoogle Julesを活用した商品調査記事の自動生成・公開システム
+Amazon Creators APIとGoogle Julesを活用した商品調査記事の自動生成・公開システム
 
 ## 概要
 
@@ -14,7 +14,7 @@ amazon-product-article/
 │   ├── creators_get_item.py     # 商品詳細取得
 │   └── creators_search_items.py # 商品検索
 ├── src/                      # TypeScriptソースコード
-│   ├── api/                  # Amazon PA-API クライアント
+│   ├── api/                  # Amazon Creators API クライアント
 │   │   └── CreatorsAPIClient.ts    # Creators API v1 通信処理
 │   ├── article/              # 記事生成モジュール
 │   │   ├── ArticleGenerator.ts       # Hugo記事生成
@@ -149,8 +149,9 @@ hugo
 
 | 変数名 | 説明 |
 |-------|------|
-| `AMAZON_ACCESS_KEY` | Amazon PA-API アクセスキー |
-| `AMAZON_SECRET_KEY` | Amazon PA-API シークレットキー |
+| `AMAZON_CREATORS_APPLICATION_ID` | Amazon Creators API アプリケーションID |
+| `AMAZON_CREATORS_CREDENTIAL_ID` | Amazon Creators API クレデンシャルID |
+| `AMAZON_CREATORS_CREDENTIAL_SECRET` | Amazon Creators API クレデンシャルシークレット |
 | `AMAZON_PARTNER_TAG` | Amazonアソシエイトタグ |
 | `JULES_API_KEY` | Google Jules APIキー |
 | `JULES_SOURCE` | Jules ソース名（例: sources/github/owner/repo） |

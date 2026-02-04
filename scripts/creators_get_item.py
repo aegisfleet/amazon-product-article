@@ -28,7 +28,7 @@ from creators_api_client import CreatorsAPIClient
 if __name__ == '__main__':
     # Parse command line arguments
     parser = argparse.ArgumentParser(
-        description='Retrieve product information from Amazon PA-API'
+        description='Retrieve product information from Amazon Creators API'
     )
     parser.add_argument(
         'asin',

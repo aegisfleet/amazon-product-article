@@ -1,14 +1,15 @@
 # Scripts
 
-このディレクトリにはAmazon PA-APIを使用した調査用スクリプトが含まれています。
+このディレクトリにはAmazon Creators APIを使用した調査用スクリプトが含まれています。
 
 ## 共通の準備
 
 ### 必要な環境変数
 
 ```bash
-AMAZON_ACCESS_KEY=your_access_key
-AMAZON_SECRET_KEY=your_secret_key
+AMAZON_CREATORS_APPLICATION_ID=your_app_id
+AMAZON_CREATORS_CREDENTIAL_ID=your_credential_id
+AMAZON_CREATORS_CREDENTIAL_SECRET=your_credential_secret
 AMAZON_PARTNER_TAG=your_partner_tag
 ```
 
@@ -18,15 +19,15 @@ AMAZON_PARTNER_TAG=your_partner_tag
 pip install requests
 ```
 
-## paapi_get_item.py
+## creators_get_item.py
 
-Amazon Product Advertising API (PA-API) を使用して指定したASINの商品情報を取得するPythonスクリプトです。
+Amazon Creators API を使用して指定したASINの商品情報を取得するPythonスクリプトです。
 
 ### 使い方
 
 ```bash
-python scripts/paapi_get_item.py <ASIN>
-# 例: python scripts/paapi_get_item.py B06WRS9737
+python scripts/creators_get_item.py <ASIN>
+# 例: python scripts/creators_get_item.py B06WRS9737
 ```
 
 ### 出力
@@ -43,20 +44,20 @@ python scripts/paapi_get_item.py <ASIN>
 }
 ```
 
-## paapi_search_items.py
+## creators_search_items.py
 
-Amazon PA-API を使用してキーワードで商品を検索するPythonスクリプトです。競合調査やASINの特定に使用します。
+Amazon Creators API を使用してキーワードで商品を検索するPythonスクリプトです。競合調査やASINの特定に使用します。
 
 ### 使い方
 
 ```bash
-python scripts/paapi_search_items.py "<検索キーワード>"
-# 例: python scripts/paapi_search_items.py "アテックス ルルド ふくらはぎゅ"
+python scripts/creators_search_items.py "<検索キーワード>"
+# 例: python scripts/creators_search_items.py "アテックス ルルド ふくらはぎゅ"
 ```
 
 ### 出力
 
-成功すると、PA-APIからの生のレスポンスが `search_results.json` に保存されます。
+成功すると、Creators APIからの生のレスポンスが `search_results.json` に保存されます。
 
 ## Julesでの使用
 
