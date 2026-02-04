@@ -7,10 +7,11 @@ import * as dotenv from 'dotenv';
 import { Logger } from '../utils/Logger';
 
 export interface SystemConfig {
-  // Amazon PA-API Configuration (Japan marketplace)
+  // Amazon Creators API Configuration (Japan marketplace)
   amazon: {
-    accessKey: string;
-    secretKey: string;
+    applicationId: string;
+    credentialId: string;
+    credentialSecret: string;
     partnerTag: string;
   };
 
@@ -100,8 +101,9 @@ export class ConfigManager {
   private async loadConfiguration(): Promise<SystemConfig> {
     return {
       amazon: {
-        accessKey: this.getRequiredEnvVar('AMAZON_ACCESS_KEY'),
-        secretKey: this.getRequiredEnvVar('AMAZON_SECRET_KEY'),
+        applicationId: this.getRequiredEnvVar('AMAZON_CREATORS_APPLICATION_ID'),
+        credentialId: this.getRequiredEnvVar('AMAZON_CREATORS_CREDENTIAL_ID'),
+        credentialSecret: this.getRequiredEnvVar('AMAZON_CREATORS_CREDENTIAL_SECRET'),
         partnerTag: this.getRequiredEnvVar('AMAZON_PARTNER_TAG')
       },
       jules: {
@@ -135,9 +137,9 @@ export class ConfigManager {
   private validateConfiguration(config: SystemConfig): void {
     const errors: string[] = [];
 
-    // Validate Amazon configuration
-    if (!config.amazon.accessKey || !config.amazon.secretKey || !config.amazon.partnerTag) {
-      errors.push('Amazon PA-API credentials are incomplete');
+    // Validate Amazon Creators API configuration
+    if (!config.amazon.applicationId || !config.amazon.credentialId || !config.amazon.credentialSecret || !config.amazon.partnerTag) {
+      errors.push('Amazon Creators API credentials are incomplete');
     }
 
     // Validate Jules configuration

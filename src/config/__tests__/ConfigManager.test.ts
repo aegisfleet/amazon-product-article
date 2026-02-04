@@ -25,7 +25,7 @@ describe('ConfigManager Property-Based Tests', () => {
   const clearAllConfigEnvVars = () => {
     // Clear all config-related environment variables
     const configEnvVars = [
-      'AMAZON_ACCESS_KEY', 'AMAZON_SECRET_KEY', 'AMAZON_PARTNER_TAG', 'AMAZON_REGION',
+      'AMAZON_CREATORS_APPLICATION_ID', 'AMAZON_CREATORS_CREDENTIAL_ID', 'AMAZON_CREATORS_CREDENTIAL_SECRET', 'AMAZON_PARTNER_TAG',
       'JULES_API_KEY', 'JULES_BASE_URL', 'JULES_TIMEOUT',
       'GITHUB_TOKEN', 'GITHUB_REPOSITORY', 'GITHUB_BRANCH',
       'LOG_LEVEL', 'RETRY_ATTEMPTS', 'RETRY_DELAY', 'MAX_CONCURRENT_REQUESTS',
@@ -73,10 +73,10 @@ describe('ConfigManager Property-Based Tests', () => {
       fc.asyncProperty(
         // Generate valid configuration data
         fc.record({
-          amazonAccessKey: nonEmptyAlphanumericString(10, 50),
-          amazonSecretKey: nonEmptyAlphanumericString(20, 100),
+          amazonApplicationId: nonEmptyAlphanumericString(10, 50),
+          amazonCredentialId: nonEmptyAlphanumericString(20, 100),
+          amazonCredentialSecret: nonEmptyAlphanumericString(20, 100),
           amazonPartnerTag: nonEmptyAlphanumericString(5, 20),
-          amazonRegion: fc.constantFrom('us-east-1', 'us-west-2', 'eu-west-1'),
           julesApiKey: nonEmptyAlphanumericString(20, 100),
           julesBaseUrl: fc.webUrl(),
           julesTimeout: fc.integer({ min: 1000, max: 60000 }),
@@ -98,10 +98,10 @@ describe('ConfigManager Property-Based Tests', () => {
           clearAllConfigEnvVars();
 
           // Set up valid environment variables
-          process.env.AMAZON_ACCESS_KEY = validConfig.amazonAccessKey;
-          process.env.AMAZON_SECRET_KEY = validConfig.amazonSecretKey;
+          process.env.AMAZON_CREATORS_APPLICATION_ID = validConfig.amazonApplicationId;
+          process.env.AMAZON_CREATORS_CREDENTIAL_ID = validConfig.amazonCredentialId;
+          process.env.AMAZON_CREATORS_CREDENTIAL_SECRET = validConfig.amazonCredentialSecret;
           process.env.AMAZON_PARTNER_TAG = validConfig.amazonPartnerTag;
-          process.env.AMAZON_REGION = validConfig.amazonRegion;
           process.env.JULES_API_KEY = validConfig.julesApiKey;
           process.env.JULES_BASE_URL = validConfig.julesBaseUrl;
           process.env.JULES_TIMEOUT = validConfig.julesTimeout.toString();
@@ -125,7 +125,7 @@ describe('ConfigManager Property-Based Tests', () => {
           // Should be able to get the configuration
           const config = configManager.getConfig();
           expect(config).toBeDefined();
-          expect(config.amazon.accessKey).toBe(validConfig.amazonAccessKey);
+          expect(config.amazon.applicationId).toBe(validConfig.amazonApplicationId);
           expect(config.jules.apiKey).toBe(validConfig.julesApiKey);
           expect(config.github.token).toBe(validConfig.githubToken);
         }
@@ -141,9 +141,10 @@ describe('ConfigManager Property-Based Tests', () => {
         fc.oneof(
           // Missing required fields - environment variable not set at all
           fc.record({
-            scenario: fc.constant('missing_amazon_key'),
-            // Don't generate amazonAccessKey - it will be missing entirely
-            amazonSecretKey: nonEmptyAlphanumericString(20, 100),
+            scenario: fc.constant('missing_amazon_app_id'),
+            // Don't generate amazonApplicationId - it will be missing entirely
+            amazonCredentialId: nonEmptyAlphanumericString(20, 100),
+            amazonCredentialSecret: nonEmptyAlphanumericString(20, 100),
             amazonPartnerTag: nonEmptyAlphanumericString(5, 20),
             julesApiKey: nonEmptyAlphanumericString(20, 100),
             githubToken: nonEmptyAlphanumericString(20, 100),
@@ -152,8 +153,9 @@ describe('ConfigManager Property-Based Tests', () => {
           // Invalid numeric ranges
           fc.record({
             scenario: fc.constant('invalid_retry_attempts'),
-            amazonAccessKey: nonEmptyAlphanumericString(10, 50),
-            amazonSecretKey: nonEmptyAlphanumericString(20, 100),
+            amazonApplicationId: nonEmptyAlphanumericString(10, 50),
+            amazonCredentialId: nonEmptyAlphanumericString(20, 100),
+            amazonCredentialSecret: nonEmptyAlphanumericString(20, 100),
             amazonPartnerTag: nonEmptyAlphanumericString(5, 20),
             julesApiKey: nonEmptyAlphanumericString(20, 100),
             githubToken: nonEmptyAlphanumericString(20, 100),
@@ -163,8 +165,9 @@ describe('ConfigManager Property-Based Tests', () => {
           // Invalid word count
           fc.record({
             scenario: fc.constant('invalid_word_count'),
-            amazonAccessKey: nonEmptyAlphanumericString(10, 50),
-            amazonSecretKey: nonEmptyAlphanumericString(20, 100),
+            amazonApplicationId: nonEmptyAlphanumericString(10, 50),
+            amazonCredentialId: nonEmptyAlphanumericString(20, 100),
+            amazonCredentialSecret: nonEmptyAlphanumericString(20, 100),
             amazonPartnerTag: nonEmptyAlphanumericString(5, 20),
             julesApiKey: nonEmptyAlphanumericString(20, 100),
             githubToken: nonEmptyAlphanumericString(20, 100),
@@ -178,13 +181,14 @@ describe('ConfigManager Property-Based Tests', () => {
           clearAllConfigEnvVars();
 
           // Set up environment with invalid configuration
-          // For missing_amazon_key scenario, don't set AMAZON_ACCESS_KEY at all
-          if (invalidConfig.scenario !== 'missing_amazon_key') {
-            process.env.AMAZON_ACCESS_KEY = (invalidConfig as any).amazonAccessKey;
+          // For missing_amazon_app_id scenario, don't set AMAZON_CREATORS_APPLICATION_ID at all
+          if (invalidConfig.scenario !== 'missing_amazon_app_id') {
+            process.env.AMAZON_CREATORS_APPLICATION_ID = (invalidConfig as any).amazonApplicationId;
           }
 
           // Set other required environment variables
-          process.env.AMAZON_SECRET_KEY = invalidConfig.amazonSecretKey;
+          process.env.AMAZON_CREATORS_CREDENTIAL_ID = invalidConfig.amazonCredentialId;
+          process.env.AMAZON_CREATORS_CREDENTIAL_SECRET = invalidConfig.amazonCredentialSecret;
           process.env.AMAZON_PARTNER_TAG = invalidConfig.amazonPartnerTag;
           process.env.JULES_API_KEY = invalidConfig.julesApiKey;
           process.env.GITHUB_TOKEN = invalidConfig.githubToken;
@@ -208,10 +212,11 @@ describe('ConfigManager Property-Based Tests', () => {
           clearAllConfigEnvVars();
 
           // Re-set the same invalid config
-          if (invalidConfig.scenario !== 'missing_amazon_key') {
-            process.env.AMAZON_ACCESS_KEY = (invalidConfig as any).amazonAccessKey;
+          if (invalidConfig.scenario !== 'missing_amazon_app_id') {
+            process.env.AMAZON_CREATORS_APPLICATION_ID = (invalidConfig as any).amazonApplicationId;
           }
-          process.env.AMAZON_SECRET_KEY = invalidConfig.amazonSecretKey;
+          process.env.AMAZON_CREATORS_CREDENTIAL_ID = invalidConfig.amazonCredentialId;
+          process.env.AMAZON_CREATORS_CREDENTIAL_SECRET = invalidConfig.amazonCredentialSecret;
           process.env.AMAZON_PARTNER_TAG = invalidConfig.amazonPartnerTag;
           process.env.JULES_API_KEY = invalidConfig.julesApiKey;
           process.env.GITHUB_TOKEN = invalidConfig.githubToken;
@@ -235,8 +240,8 @@ describe('ConfigManager Property-Based Tests', () => {
             expect(errorMessage.length).toBeGreaterThan(10);
 
             // Should contain relevant context about what failed
-            if (invalidConfig.scenario === 'missing_amazon_key') {
-              expect(errorMessage.toLowerCase()).toContain('amazon_access_key');
+            if (invalidConfig.scenario === 'missing_amazon_app_id') {
+              expect(errorMessage.toLowerCase()).toContain('amazon_creators_application_id');
             } else if (invalidConfig.scenario === 'invalid_retry_attempts') {
               expect(errorMessage.toLowerCase()).toContain('retry');
             } else if (invalidConfig.scenario === 'invalid_word_count') {
@@ -266,8 +271,9 @@ describe('ConfigManager Property-Based Tests', () => {
           clearAllConfigEnvVars();
 
           // Set up initial valid environment
-          process.env.AMAZON_ACCESS_KEY = 'test_access_key_12345';
-          process.env.AMAZON_SECRET_KEY = 'test_secret_key_1234567890';
+          process.env.AMAZON_CREATORS_APPLICATION_ID = 'test_app_id_12345';
+          process.env.AMAZON_CREATORS_CREDENTIAL_ID = 'test_credential_id_123456';
+          process.env.AMAZON_CREATORS_CREDENTIAL_SECRET = 'test_credential_secret_123';
           process.env.AMAZON_PARTNER_TAG = 'test_tag';
           process.env.JULES_API_KEY = 'test_jules_key_1234567890';
           process.env.GITHUB_TOKEN = 'test_github_token_1234567890';

@@ -4,8 +4,9 @@
  * GitHub Actions から実行される商品検索スクリプト
  * 
  * 環境変数:
- *   AMAZON_ACCESS_KEY - Amazon PA-API アクセスキー
- *   AMAZON_SECRET_KEY - Amazon PA-API シークレットキー
+ *   AMAZON_CREATORS_APPLICATION_ID - Amazon Creators API アプリケーションID
+ *   AMAZON_CREATORS_CREDENTIAL_ID - Amazon Creators API クレデンシャルID
+ *   AMAZON_CREATORS_CREDENTIAL_SECRET - Amazon Creators API クレデンシャルシークレット
  *   AMAZON_PARTNER_TAG - Amazon アソシエイトパートナータグ
  *   PRODUCT_CATEGORIES - 検索カテゴリ（カンマ区切り、オプション）
  *   MAX_RESULTS_PER_CATEGORY - カテゴリあたりの最大結果数（オプション）
@@ -14,15 +15,16 @@
 
 import fs from 'fs/promises';
 import path from 'path';
-import { PAAPIClient } from '../api/PAAPIClient';
+import { PAAPIClient } from '../api/CreatorsAPIClient';
 import { ProductSearcher, SearchSession } from '../search/ProductSearcher';
 import { Logger } from '../utils/Logger';
 
 const logger = Logger.getInstance();
 
 interface CLIOptions {
-    accessKey: string;
-    secretKey: string;
+    applicationId: string;
+    credentialId: string;
+    credentialSecret: string;
     partnerTag: string;
     categories: string[];
     maxResults: number;
@@ -30,13 +32,14 @@ interface CLIOptions {
 }
 
 function getOptions(): CLIOptions {
-    const accessKey = process.env.AMAZON_ACCESS_KEY;
-    const secretKey = process.env.AMAZON_SECRET_KEY;
+    const applicationId = process.env.AMAZON_CREATORS_APPLICATION_ID;
+    const credentialId = process.env.AMAZON_CREATORS_CREDENTIAL_ID;
+    const credentialSecret = process.env.AMAZON_CREATORS_CREDENTIAL_SECRET;
     const partnerTag = process.env.AMAZON_PARTNER_TAG;
 
-    if (!accessKey || !secretKey || !partnerTag) {
+    if (!applicationId || !credentialId || !credentialSecret || !partnerTag) {
         throw new Error(
-            'Missing required environment variables: AMAZON_ACCESS_KEY, AMAZON_SECRET_KEY, AMAZON_PARTNER_TAG'
+            'Missing required environment variables: AMAZON_CREATORS_APPLICATION_ID, AMAZON_CREATORS_CREDENTIAL_ID, AMAZON_CREATORS_CREDENTIAL_SECRET, AMAZON_PARTNER_TAG'
         );
     }
 
@@ -52,8 +55,9 @@ function getOptions(): CLIOptions {
     const asins = inputAsinsEnv ? inputAsinsEnv.split(',').map(a => a.trim()).filter(Boolean) : undefined;
 
     const result: CLIOptions = {
-        accessKey,
-        secretKey,
+        applicationId,
+        credentialId,
+        credentialSecret,
         partnerTag,
         categories,
         maxResults
@@ -105,14 +109,15 @@ async function main(): Promise<void> {
 
         await ensureOutputDirectories();
 
-        // PA-API クライアントを初期化
+        // Creators API クライアントを初期化
         const papiClient = new PAAPIClient();
         papiClient.authenticate(
-            options.accessKey,
-            options.secretKey,
+            options.applicationId,
+            options.credentialId,
+            options.credentialSecret,
             options.partnerTag
         );
-        logger.info('PA-API client authenticated');
+        logger.info('Creators API client authenticated');
 
         // 商品検索を実行
         const searcher = new ProductSearcher(papiClient);

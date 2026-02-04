@@ -6,7 +6,7 @@
 import crypto from 'crypto';
 import fs from 'fs/promises';
 import path from 'path';
-import { PAAPIClient } from '../api/PAAPIClient';
+import { PAAPIClient } from '../api/CreatorsAPIClient';
 import { ConfigManager } from '../config/ConfigManager';
 import {
   Product,
@@ -146,6 +146,7 @@ export class ProductSearcher {
 
         const searchParams: ProductSearchParams = {
           category: category.name,
+          searchIndex: category.searchIndex,
           keywords: [keyword], // Use the single random keyword
           maxResults: effectiveMaxResults,
           ...(category.sortBy ? { sortBy: category.sortBy } : {})
@@ -245,6 +246,7 @@ export class ProductSearcher {
 
     const searchParams: ProductSearchParams = {
       category: category.name,
+      searchIndex: category.searchIndex,
       keywords: customKeywords || category.keywords,
       maxResults: category.maxResults,
       ...(category.sortBy ? { sortBy: category.sortBy } : {})

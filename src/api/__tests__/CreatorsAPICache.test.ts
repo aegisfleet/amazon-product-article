@@ -1,6 +1,6 @@
 import fs from 'fs';
 import { ProductDetail } from '../../types/Product';
-import { PAAPICache } from '../PAAPICache';
+import { PAAPICache } from '../CreatorsAPICache';
 
 jest.mock('fs');
 jest.mock('../../utils/Logger', () => ({
