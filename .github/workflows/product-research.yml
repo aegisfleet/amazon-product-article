@@ -95,8 +95,9 @@ jobs:
     - name: Run product search
       id: search
       env:
-        AMAZON_ACCESS_KEY: ${{ secrets.AMAZON_ACCESS_KEY }}
-        AMAZON_SECRET_KEY: ${{ secrets.AMAZON_SECRET_KEY }}
+        AMAZON_CREATORS_APPLICATION_ID: ${{ secrets.AMAZON_CREATORS_APPLICATION_ID }}
+        AMAZON_CREATORS_CREDENTIAL_ID: ${{ secrets.AMAZON_CREATORS_CREDENTIAL_ID }}
+        AMAZON_CREATORS_CREDENTIAL_SECRET: ${{ secrets.AMAZON_CREATORS_CREDENTIAL_SECRET }}
         AMAZON_PARTNER_TAG: ${{ secrets.AMAZON_PARTNER_TAG }}
         PRODUCT_CATEGORIES: ${{ github.event.inputs.categories }}
         MAX_RESULTS_PER_CATEGORY: ${{ github.event.inputs.max_results || '10' }}
