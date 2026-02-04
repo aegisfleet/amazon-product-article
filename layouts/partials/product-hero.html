@@ -13,7 +13,7 @@
                 {{ end }}
                 {{ end }}
             </div>
-            {{ if gt (len $product.images) 1 }}
+            {{ if and $product.images (gt (len $product.images) 1) }}
             <button class="carousel-button prev" aria-label="前へ">❮</button>
             <button class="carousel-button next" aria-label="次へ">❯</button>
             <div class="carousel-dots"></div>
