@@ -1,0 +1,139 @@
+
+import { CreatorsAPIItem } from '../../types/CreatorsAPITypes';
+import { PAAPIClient } from '../CreatorsAPIClient';
+
+describe('CreatorsAPIClient Category Parsing', () => {
+    let client: PAAPIClient;
+    let clientAny: any;
+
+    beforeEach(() => {
+        client = new PAAPIClient();
+        clientAny = client as any;
+    });
+
+    // Test isValidCategoryName private method
+    describe('isValidCategoryName', () => {
+        const invalidNames = [
+            'Amazon.co.jp Ranking',
+            'Kindle Store',
+            'Category (Special)',
+            'Home & Kitchen [Sale]',
+            'Best Sellers',
+            'Coupons',
+            '【New】Item',
+            'Testing | Pipe',
+            'Category_with_underscore',
+            '※Note'
+        ];
+
+        const validNames = [
+            'Books',
+            'Electronics',
+            'Kitchen',
+            'Computers',
+            'Video Games',
+            'Toys & Games'
+        ];
+
+        test.each(invalidNames)('should return false for invalid name: %s', (name) => {
+            expect(clientAny.isValidCategoryName(name)).toBe(false);
+        });
+
+        test.each(validNames)('should return true for valid name: %s', (name) => {
+            expect(clientAny.isValidCategoryName(name)).toBe(true);
+        });
+    });
+
+    // Test extractCategoryInfo private method
+    describe('extractCategoryInfo', () => {
+        test('should extract simple valid category', () => {
+            const item: Partial<CreatorsAPIItem> = {
+                browseNodeInfo: {
+                    browseNodes: [
+                        { id: '1', displayName: 'Electronics', contextFreeName: 'Electronics' }
+                    ]
+                }
+            };
+
+            const result = clientAny.extractCategoryInfo(item as CreatorsAPIItem);
+            expect(result.category).toBe('Electronics');
+            expect(result.categoryInfo.main).toBe('Electronics');
+            expect(result.categoryInfo.browseNodeId).toBe('1');
+        });
+
+        test('should prioritize SalesRank', () => {
+            const item: Partial<CreatorsAPIItem> = {
+                browseNodeInfo: {
+                    browseNodes: [
+                        { id: '1', displayName: 'General Electronics', contextFreeName: 'General', salesRank: 100 },
+                        { id: '2', displayName: 'Headphones', contextFreeName: 'Headphones', salesRank: 1 },
+                        { id: '3', displayName: 'Audio', contextFreeName: 'Audio', salesRank: 50 }
+                    ]
+                }
+            };
+
+            const result = clientAny.extractCategoryInfo(item as CreatorsAPIItem);
+            expect(result.category).toBe('Headphones');
+        });
+
+        test('should filter out invalid categories', () => {
+            const item: Partial<CreatorsAPIItem> = {
+                browseNodeInfo: {
+                    browseNodes: [
+                        { id: '1', displayName: 'Amazon Devices', contextFreeName: 'Amazon' }, // Invalid
+                        { id: '2', displayName: 'Smart Home', contextFreeName: 'Smart Home', salesRank: 10 }
+                    ]
+                }
+            };
+
+            const result = clientAny.extractCategoryInfo(item as CreatorsAPIItem);
+            expect(result.category).toBe('Smart Home');
+        });
+
+        test('should use ancestor as sub category', () => {
+            const item: Partial<CreatorsAPIItem> = {
+                browseNodeInfo: {
+                    browseNodes: [
+                        {
+                            id: '2',
+                            displayName: 'Wireless Headphones',
+                            contextFreeName: 'Wireless',
+                            ancestor: { id: '1', displayName: 'Headphones', contextFreeName: 'Headphones' }
+                        }
+                    ]
+                }
+            };
+
+            const result = clientAny.extractCategoryInfo(item as CreatorsAPIItem);
+            expect(result.category).toBe('Wireless Headphones');
+            expect(result.categoryInfo.sub).toBe('Headphones');
+        });
+
+        test('should fallback if all nodes are invalid', () => {
+            const item: Partial<CreatorsAPIItem> = {
+                browseNodeInfo: {
+                    browseNodes: [
+                        { id: '1', displayName: 'Amazon Basic', contextFreeName: 'Amazon' }
+                    ]
+                }
+            };
+
+            const result = clientAny.extractCategoryInfo(item as CreatorsAPIItem);
+            // Should still return it but sanitized if possible, or maybe unknown?
+            // Implementation logic: if validNodes empty, sanitizes first node.
+            // "Amazon Basic" -> contains "Amazon" -> sanitized? No, invalid check regex matches "Amazon".
+            // sanitizeCategoryName removes special chars. 
+            // "Amazon Basic" contains "Amazon" pattern? /Amazon/i matches.
+            // The sanitize function only removes special chars.
+            // So it returns "Amazon Basic".
+
+            expect(result.category).toBe('Amazon Basic');
+        });
+
+        test('should handle missing browseNodes', () => {
+            const item: Partial<CreatorsAPIItem> = {};
+            const result = clientAny.extractCategoryInfo(item as CreatorsAPIItem);
+            expect(result.category).toBe('Unknown');
+        });
+    });
+});
