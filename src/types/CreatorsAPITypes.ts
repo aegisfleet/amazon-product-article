@@ -219,8 +219,3 @@ export interface RateLimitConfig {
 }
 
 // Legacy aliases for backward compatibility during refactor
-export type PAAPICredentials = CreatorsAPICredentials;
-export type PAAPIRequest = CreatorsAPIRequest;
-export type PAAPIResponse = CreatorsAPIResponse;
-export type PAAPIItem = CreatorsAPIItem;
-export type PAAPIError = CreatorsAPIError;

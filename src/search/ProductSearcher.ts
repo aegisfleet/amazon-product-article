@@ -34,13 +34,13 @@ export interface SearchSession {
 
 export class ProductSearcher {
   private logger = Logger.getInstance();
-  private papiClient: CreatorsAPIClient;
+  private creatorsClient: CreatorsAPIClient;
   private config = ConfigManager.getInstance();
   private dataDir: string;
   private contentDir: string;
 
-  constructor(papiClient: CreatorsAPIClient) {
-    this.papiClient = papiClient;
+  constructor(creatorsClient: CreatorsAPIClient) {
+    this.creatorsClient = creatorsClient;
     this.dataDir = path.join(process.cwd(), 'data', 'products');
     this.contentDir = path.join(process.cwd(), 'content', 'articles');
   }
@@ -65,7 +65,7 @@ export class ProductSearcher {
 
     for (const asin of asins) {
       try {
-        const productDetail = await this.papiClient.getProductDetails(asin);
+        const productDetail = await this.creatorsClient.getProductDetails(asin);
         // Convert ProductDetail to Product (ProductDetail extends Product, so this is safe)
         products.push(productDetail);
         this.logger.info(`Found product: ${productDetail.title} (${asin})`);
@@ -154,7 +154,7 @@ export class ProductSearcher {
 
         let result: ProductSearchResult;
         try {
-          result = await this.papiClient.searchProducts(searchParams);
+          result = await this.creatorsClient.searchProducts(searchParams);
         } catch (error) {
           this.logger.warn(`Failed to search category ${category.name} with specific index, retrying with 'All' index. Error: ${error instanceof Error ? error.message : String(error)}`);
 
@@ -163,7 +163,7 @@ export class ProductSearcher {
             ...searchParams,
             category: 'All'
           };
-          result = await this.papiClient.searchProducts(fallbackParams);
+          result = await this.creatorsClient.searchProducts(fallbackParams);
         }
 
         // Filter out excluded products
@@ -254,7 +254,7 @@ export class ProductSearcher {
 
     this.logger.info(`Searching category ${categoryName} with keywords: ${searchParams.keywords.join(', ')}`);
 
-    const result = await this.papiClient.searchProducts(searchParams);
+    const result = await this.creatorsClient.searchProducts(searchParams);
 
     // Save results
     const sessionId = this.generateSessionId();
@@ -317,7 +317,7 @@ export class ProductSearcher {
   async customSearch(params: ProductSearchParams): Promise<ProductSearchResult> {
     this.logger.info(`Custom search: ${params.category} - ${params.keywords.join(', ')}`);
 
-    const result = await this.papiClient.searchProducts(params);
+    const result = await this.creatorsClient.searchProducts(params);
 
     // Save custom search results
     const sessionId = this.generateSessionId();

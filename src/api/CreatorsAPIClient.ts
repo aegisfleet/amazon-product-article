@@ -636,6 +636,3 @@ export class CreatorsAPIClient {
   }
 }
 
-// Aliases
-export const PAAPIClient = CreatorsAPIClient;
-export type PAAPIClient = CreatorsAPIClient;

@@ -30,7 +30,7 @@ export class CreatorsAPICache {
         this.ttl = ttlHours * 60 * 60 * 1000;
         this.invalidTtl = invalidTtlMinutes * 60 * 1000;  // 5分（一時的な失敗からの早期回復用）
         this.permanentInvalidTtl = permanentInvalidTtlDays * 24 * 60 * 60 * 1000; // 1週間
-        this.cachePath = path.join(process.cwd(), cacheDir, 'paapi-product-cache.json');
+        this.cachePath = path.join(process.cwd(), cacheDir, 'paapi-product-cache.json'); // Keep same filename for cache compatibility
         this.load();
     }
 
@@ -59,15 +59,15 @@ export class CreatorsAPICache {
                 }
 
                 this.isLoaded = true;
-                this.logger.info(`PA-API Cache loaded: ${Object.keys(this.cache).length} entries`);
+                this.logger.info(`Creators API Cache loaded: ${Object.keys(this.cache).length} entries`);
             } else {
                 this.ensureDirectory();
                 this.cache = {};
                 this.isLoaded = true;
-                this.logger.info('PA-API Cache initialized (new)');
+                this.logger.info('Creators API Cache initialized (new)');
             }
         } catch (error) {
-            this.logger.warn('Failed to load PA-API Cache:', error);
+            this.logger.warn('Failed to load Creators API Cache:', error);
             this.cache = {}; // Start fresh on error
         }
     }
@@ -89,9 +89,9 @@ export class CreatorsAPICache {
         try {
             this.ensureDirectory();
             fs.writeFileSync(this.cachePath, JSON.stringify(this.cache, null, 2), 'utf-8');
-            this.logger.info('PA-API Cache saved to disk');
+            this.logger.info('Creators API Cache saved to disk');
         } catch (error) {
-            this.logger.error('Failed to save PA-API Cache:', error);
+            this.logger.error('Failed to save Creators API Cache:', error);
         }
     }
 
@@ -222,7 +222,7 @@ export class CreatorsAPICache {
     }
 
     /**
-    * Mark item as invalid (e.g. not found in PA-API)
+    * Mark item as invalid (e.g. not found in Creators API)
     * If there's already a 'valid' entry, do not overwrite it to prevent data loss on transient errors
     */
     public markInvalid(asin: string): void {

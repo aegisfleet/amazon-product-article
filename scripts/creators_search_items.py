@@ -6,8 +6,7 @@ This script searches for products on Amazon using the Creators API
 and saves the results to a JSON file.
 
 Usage:
-    python paapi_search_items.py <Keywords>
-    python paapi_search_items.py "アテックス ルルド ふくらはぎゅ"
+    python creators_search_items.py "アテックス ルルド ふくらはぎゅ"
 
 Required Environment Variables:
     - AMAZON_CREATORS_APPLICATION_ID: Your Creators API application ID
@@ -24,7 +23,7 @@ import sys
 # Ensure script can import from current directory
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 
-from creators_api_client import PAAPIClient
+from creators_api_client import CreatorsAPIClient
 
 if __name__ == '__main__':
     # Parse command line arguments
@@ -51,7 +50,7 @@ if __name__ == '__main__':
     args = parser.parse_args()
 
     try:
-        client = PAAPIClient()
+        client = CreatorsAPIClient()
         
         payload_dict = {
             "Keywords": args.keywords,

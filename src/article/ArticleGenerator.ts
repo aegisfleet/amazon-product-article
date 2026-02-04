@@ -650,27 +650,27 @@ ${infoRows.join('\n')}
     }
 
     // URLがあればリンク、なければプレーンテキスト
-    // ただし、PAAPIのURLはユーザーには不要なためリンクを貼らない
+    // ただし、Creators APIのURLはユーザーには不要なためリンクを貼らない
     const sourcesList = validSources
       .map(source => {
         const credibility = source.credibility ? ` (${source.credibility})` : '';
-        const paapiHost = 'webservices.amazon.co.jp';
-        const paapiPathPrefix = '/paapi5';
+        const creatorsApiHost = 'webservices.amazon.co.jp';
+        const creatorsApiPathPrefix = '/creators/v1';
 
-        const isPaapiUrl = (urlString: string): boolean => {
+        const isCreatorsApiUrl = (urlString: string): boolean => {
           try {
             const parsed = new URL(urlString);
             return (
-              parsed.hostname === paapiHost &&
-              parsed.pathname.startsWith(paapiPathPrefix)
+              parsed.hostname === creatorsApiHost &&
+              parsed.pathname.startsWith(creatorsApiPathPrefix)
             );
           } catch {
-            // URLとして解釈できない場合はPAAPIとはみなさない（従来動作に近づける）
+            // URLとして解釈できない場合はCreators APIとはみなさない（従来動作に近づける）
             return false;
           }
         };
 
-        if (source.url && !isPaapiUrl(source.url)) {
+        if (source.url && !isCreatorsApiUrl(source.url)) {
           return `- [${source.name}](${source.url})${credibility}`;
         }
         return `- ${source.name}${credibility}`;

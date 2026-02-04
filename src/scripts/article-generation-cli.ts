@@ -236,7 +236,7 @@ async function main(): Promise<void> {
 
         // Parse arguments
         const args = process.argv.slice(2);
-        const skipPaapi = args.includes('--skip-paapi');
+        const skipCreatorsApi = args.includes('--skip-creators-api') || args.includes('--skip-paapi');
         const targetFiles = args.filter(arg => arg.endsWith('.json'));
 
         // Handle --asin flag
@@ -250,8 +250,8 @@ async function main(): Promise<void> {
             }
         }
 
-        if (skipPaapi) {
-            logger.info('--skip-paapi flag detected, will skip PA-API calls and use cache only');
+        if (skipCreatorsApi) {
+            logger.info('--skip-creators-api flag detected, will skip Creators API calls and use cache only');
         }
         if (targetFiles.length > 0) {
             logger.info(`Targeting ${targetFiles.length} specific files.`);
@@ -284,17 +284,18 @@ async function main(): Promise<void> {
             });
         }
 
-        // Initialize PA-API Client & Cache
-        const paapiClient = new CreatorsAPIClient();
-        const paapiCache = new CreatorsAPICache();
-        const usePaapi = !skipPaapi && options.applicationId && options.credentialId && options.credentialSecret && options.partnerTag;
+        // Initialize Creators API Client & Cache
+        const creatorsClient = new CreatorsAPIClient();
+        const creatorsCache = new CreatorsAPICache();
+        const useCreatorsApi = !skipCreatorsApi && options.applicationId && options.credentialId && options.credentialSecret && options.partnerTag;
 
-        if (usePaapi) {
+        if (useCreatorsApi) {
             try {
-                paapiClient.authenticate(options.applicationId, options.credentialId, options.credentialSecret, options.partnerTag);
+                creatorsClient.authenticate(options.applicationId, options.credentialId, options.credentialSecret, options.partnerTag);
+                logger.info('Creators API client authenticated');
             } catch (error) {
-                logger.error('Failed to authenticate with Creators API:', error);
-                // Continue without API
+                logger.error('Failed to authenticate Creators API client:', error);
+                throw error;
             }
         }
 
@@ -314,41 +315,41 @@ async function main(): Promise<void> {
 
         // 2. Identify missing ASINs (not in cache or expired, and NOT marked invalid)
         const asinsArray = Array.from(allAsins);
-        const missingAsins = paapiCache.getMissingAsins(asinsArray);
-        const invalidAsins = asinsArray.filter(asin => paapiCache.isInvalid(asin));
+        const missingAsins = creatorsCache.getMissingAsins(asinsArray);
+        const invalidAsins = asinsArray.filter(asin => creatorsCache.isInvalid(asin));
 
         logger.info(`ASINs stats: Total: ${asinsArray.length}, Cache Hit: ${asinsArray.length - missingAsins.length - invalidAsins.length}, Known Invalid: ${invalidAsins.length}, To Fetch: ${missingAsins.length}`);
 
-        // 3. Fetch missing ASINs in batches if PA-API is enabled
-        if (usePaapi && missingAsins.length > 0) {
+        // 3. Fetch missing ASINs in batches if Creators API is enabled
+        if (useCreatorsApi && missingAsins.length > 0) {
             // Process in chunks of 10
             const chunkSize = 10;
             for (let i = 0; i < missingAsins.length; i += chunkSize) {
                 const chunk = missingAsins.slice(i, i + chunkSize);
                 try {
                     logger.info(`Fetching batch ${Math.floor(i / chunkSize) + 1}/${Math.ceil(missingAsins.length / chunkSize)} (${chunk.length} items)...`);
-                    const { results, permanentFailures } = await paapiClient.getMultipleProductDetails(chunk);
+                    const { results, permanentFailures } = await creatorsClient.getMultipleProductDetails(chunk);
 
                     // Update cache for found items
                     for (const [asin, detail] of results.entries()) {
-                        paapiCache.set(asin, detail);
+                        creatorsCache.set(asin, detail);
                     }
 
                     // Identify ASINs that were requested but NOT returned
                     for (const asin of chunk) {
                         if (!results.has(asin)) {
                             if (permanentFailures.has(asin)) {
-                                logger.info(`Marking ASIN ${asin} as permanent_invalid (not found in PA-API)`);
-                                paapiCache.markPermanentInvalid(asin);
+                                logger.info(`Marking ASIN ${asin} as permanent_invalid (not found in Creators API)`);
+                                creatorsCache.markPermanentInvalid(asin);
                             } else {
                                 logger.info(`Marking ASIN ${asin} as invalid (temporary failure)`);
-                                paapiCache.markInvalid(asin);
+                                creatorsCache.markInvalid(asin);
                             }
                         }
                     }
 
                     // Save incrementally to prevent data loss on crash
-                    paapiCache.save();
+                    creatorsCache.save();
 
                     // Respect rate limits - wait a bit between batches if needed
                     if (i + chunkSize < missingAsins.length) {
@@ -359,8 +360,8 @@ async function main(): Promise<void> {
                     // On batch error (e.g. network), we DO NOT mark as invalid, we just skip
                 }
             }
-        } else if (!usePaapi && missingAsins.length > 0) {
-            logger.warn('PA-API credentials missing, skipping fetch for missing ASINs');
+        } else if (!useCreatorsApi && missingAsins.length > 0) {
+            logger.warn('Creators API credentials missing, skipping fetch for missing ASINs');
         }
         // --- BATCH FETCHING STRATEGY END ---
 
@@ -373,7 +374,7 @@ async function main(): Promise<void> {
                 logger.info(`Processing article for: ${data.product.asin}`);
 
                 // Get fresh product data from Cache (fallback to expired if fetch failed)
-                const cachedProduct = paapiCache.get(data.product.asin, { ignoreExpiration: true });
+                const cachedProduct = creatorsCache.get(data.product.asin, { ignoreExpiration: true });
 
                 if (cachedProduct) {
                     // Merge live data into the product object
@@ -383,9 +384,9 @@ async function main(): Promise<void> {
                     };
                     data.investigation.product = data.product;
                     logger.info(`Used cached product data for ${data.product.asin}`);
-                } else if (skipPaapi) {
-                    // Skip PA-API mode: Insert dummy data for Hugo build validation
-                    logger.info(`Using dummy data for ${data.product.asin} (skip-paapi mode)`);
+                } else if (skipCreatorsApi) {
+                    // Skip Creators API mode: Insert dummy data for Hugo build validation
+                    logger.info(`Using dummy data for ${data.product.asin} (skip-creators-api mode)`);
                     data.product = {
                         ...data.product,
                         title: `商品調査中 (${data.product.asin})`,
@@ -399,7 +400,7 @@ async function main(): Promise<void> {
                         rating: { average: 4.0, count: 100 },
                     };
                     data.investigation.product = data.product;
-                } else if (usePaapi) {
+                } else if (useCreatorsApi) {
                     // Only warn if we sought it but failed to get it
                     logger.warn(`Product data not found for ${data.product.asin}, proceeding with basic info`);
                 }
@@ -411,7 +412,7 @@ async function main(): Promise<void> {
                     .map(c => c.asin!);
 
                 if (competitorAsins.length > 0) {
-                    const cachedCompetitors = paapiCache.getMultiple(competitorAsins, { ignoreExpiration: true });
+                    const cachedCompetitors = creatorsCache.getMultiple(competitorAsins, { ignoreExpiration: true });
                     for (const [asin, detail] of cachedCompetitors.entries()) {
                         competitorDetails.set(asin, detail);
                     }

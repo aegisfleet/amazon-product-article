@@ -12,7 +12,7 @@ import { Product, ProductSearchParams } from '../../types/Product';
 import { ProductSearcher } from '../ProductSearcher';
 
 // Mock CreatorsAPIClient for testing
-class MockPAAPIClient extends CreatorsAPIClient {
+class MockCreatorsAPIClient extends CreatorsAPIClient {
   async searchProducts(params: ProductSearchParams) {
     // Return mock products with all required fields
     const mockProducts: Product[] = Array.from({ length: Math.min(params.maxResults, 5) }, (_, i) => ({
@@ -48,12 +48,12 @@ class MockPAAPIClient extends CreatorsAPIClient {
 }
 
 describe('ProductSearcher Property Tests', () => {
-  let mockClient: MockPAAPIClient;
+  let mockClient: MockCreatorsAPIClient;
   let searcher: ProductSearcher;
   let testDataDir: string;
 
   beforeEach(async () => {
-    mockClient = new MockPAAPIClient();
+    mockClient = new MockCreatorsAPIClient();
     searcher = new ProductSearcher(mockClient);
 
     // Use a test-specific data directory
