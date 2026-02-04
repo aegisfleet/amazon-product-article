@@ -216,26 +216,17 @@ export class CreatorsAPIClient {
       itemIds: [asin],
       itemIdType: 'ASIN',
       resources: [
+        'images.primary.small',
         'images.primary.large',
-        'images.primary.medium',
-        'images.variants.large',
+        'images.variants.medium',
         'itemInfo.title',
         'itemInfo.features',
-        'itemInfo.manufactureInfo',
         'itemInfo.productInfo',
         'itemInfo.byLineInfo',
-        'itemInfo.contentInfo',
         'itemInfo.technicalInfo',
-        'itemInfo.externalIds',
         'offersV2.listings.price',
-        'offersV2.listings.availability.message',
-        'offersV2.listings.deliveryInfo.isPrimeEligible',
-        'offersV2.summaries.highestPrice',
-        'offersV2.summaries.lowestPrice',
-        'browseNodeInfo.browseNodes',
-        // 'browseNodeInfo.browseNodes.ancestor', // Recursive can be heavy
-        // 'browseNodeInfo.browseNodes.salesRank',
-        'parentASIN'
+        'offersV2.listings.availability',
+        'browseNodeInfo.browseNodes'
       ]
     };
 
@@ -399,7 +390,13 @@ export class CreatorsAPIClient {
                   // Could implement retry with fresh token here immediately
                 }
                 const errorData = error.response?.data as CreatorsAPIErrorData;
-                this.logger.debug(`API Error Response: ${JSON.stringify(errorData)}`);
+                this.logger.error(`API Error Response (${error.response?.status}): ${JSON.stringify(errorData, null, 2)}`);
+                
+                // Log request details for debugging 400 errors
+                if (error.response?.status === 400) {
+                  this.logger.error(`Request URL: ${url}`);
+                  this.logger.error(`Request Headers: ${JSON.stringify({ ...headers, Authorization: '[REDACTED]' }, null, 2)}`);
+                }
               }
               lastError = error as Error;
 
