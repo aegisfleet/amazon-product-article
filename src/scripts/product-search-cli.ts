@@ -15,7 +15,7 @@
 
 import fs from 'fs/promises';
 import path from 'path';
-import { PAAPIClient } from '../api/CreatorsAPIClient';
+import { CreatorsAPIClient } from '../api/CreatorsAPIClient';
 import { ProductSearcher, SearchSession } from '../search/ProductSearcher';
 import { Logger } from '../utils/Logger';
 
@@ -109,9 +109,9 @@ async function main(): Promise<void> {
 
         await ensureOutputDirectories();
 
-        // Creators API クライアントを初期化
-        const papiClient = new PAAPIClient();
-        papiClient.authenticate(
+        // Initialize client and searcher
+        const client = new CreatorsAPIClient();
+        client.authenticate(
             options.applicationId,
             options.credentialId,
             options.credentialSecret,
@@ -120,7 +120,7 @@ async function main(): Promise<void> {
         logger.info('Creators API client authenticated');
 
         // 商品検索を実行
-        const searcher = new ProductSearcher(papiClient);
+        const searcher = new ProductSearcher(client);
         await searcher.initialize();
 
         let session: SearchSession;

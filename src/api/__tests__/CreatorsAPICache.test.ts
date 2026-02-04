@@ -1,6 +1,6 @@
 import fs from 'fs';
 import { ProductDetail } from '../../types/Product';
-import { PAAPICache } from '../CreatorsAPICache';
+import { CreatorsAPICache } from '../CreatorsAPICache';
 
 jest.mock('fs');
 jest.mock('../../utils/Logger', () => ({
@@ -14,14 +14,14 @@ jest.mock('../../utils/Logger', () => ({
     }
 }));
 
-describe('PAAPICache', () => {
+describe('CreatorsAPICache', () => {
     const mockCacheDir = 'data/cache/test';
-    let cache: PAAPICache;
+    let cache: CreatorsAPICache;
 
     beforeEach(() => {
         jest.clearAllMocks();
         (fs.existsSync as jest.Mock).mockReturnValue(false);
-        cache = new PAAPICache(24, 1, mockCacheDir);
+        cache = new CreatorsAPICache(24, 1, mockCacheDir);
     });
 
     const mockProduct: ProductDetail = {

@@ -1,11 +1,11 @@
 
 import fs from 'fs/promises';
-import { PAAPIClient } from '../../api/PAAPIClient';
+import { CreatorsAPIClient } from '../../api/CreatorsAPIClient';
 import { Product, ProductSearchResult } from '../../types/Product';
 import { ProductSearcher } from '../ProductSearcher';
 
 // Mock dependencies
-jest.mock('../../api/PAAPIClient');
+jest.mock('../../api/CreatorsAPIClient');
 jest.mock('fs/promises');
 jest.mock('../../utils/Logger', () => {
     return {
@@ -22,10 +22,10 @@ jest.mock('../../utils/Logger', () => {
 
 describe('ProductSearcher', () => {
     let searcher: ProductSearcher;
-    let mockPapiClient: jest.Mocked<PAAPIClient>;
+    let mockPapiClient: jest.Mocked<CreatorsAPIClient>;
 
     beforeEach(() => {
-        mockPapiClient = new PAAPIClient() as jest.Mocked<PAAPIClient>;
+        mockPapiClient = new CreatorsAPIClient() as jest.Mocked<CreatorsAPIClient>;
         searcher = new ProductSearcher(mockPapiClient);
         jest.clearAllMocks();
 

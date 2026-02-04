@@ -7,12 +7,12 @@
 import * as fc from 'fast-check';
 import fs from 'fs/promises';
 import path from 'path';
-import { PAAPIClient } from '../../api/PAAPIClient';
+import { CreatorsAPIClient } from '../../api/CreatorsAPIClient';
 import { Product, ProductSearchParams } from '../../types/Product';
 import { ProductSearcher } from '../ProductSearcher';
 
-// Mock PAAPIClient for testing
-class MockPAAPIClient extends PAAPIClient {
+// Mock CreatorsAPIClient for testing
+class MockPAAPIClient extends CreatorsAPIClient {
   async searchProducts(params: ProductSearchParams) {
     // Return mock products with all required fields
     const mockProducts: Product[] = Array.from({ length: Math.min(params.maxResults, 5) }, (_, i) => ({

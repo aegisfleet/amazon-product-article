@@ -5,7 +5,7 @@
  */
 
 import * as fc from 'fast-check';
-import { PAAPIClient } from '../CreatorsAPIClient';
+import { CreatorsAPIClient } from '../CreatorsAPIClient';
 
 describe('CreatorsAPIClient Property Tests', () => {
   describe('Property 1: Secure Authentication and Credential Management', () => {
@@ -24,7 +24,7 @@ describe('CreatorsAPIClient Property Tests', () => {
             partnerTag: fc.string({ minLength: 1, maxLength: 30 })
           }),
           async (credentials) => {
-            const client = new PAAPIClient();
+            const client = new CreatorsAPIClient();
 
             // Test authentication with generated credentials
             try {
@@ -60,7 +60,7 @@ describe('CreatorsAPIClient Property Tests', () => {
             partnerTag: fc.oneof(fc.constant(''), fc.constant(null), fc.constant(undefined))
           }),
           async (invalidCredentials) => {
-            const client = new PAAPIClient();
+            const client = new CreatorsAPIClient();
 
             // Should throw error for invalid credentials
             expect(() =>
@@ -86,7 +86,7 @@ describe('CreatorsAPIClient Property Tests', () => {
             maxResults: fc.integer({ min: 1, max: 10 })
           }),
           async (searchParams) => {
-            const client = new PAAPIClient();
+            const client = new CreatorsAPIClient();
 
             // Should throw error when trying to search without authentication
             await expect(
@@ -100,7 +100,7 @@ describe('CreatorsAPIClient Property Tests', () => {
 
     it('should not expose sensitive credentials in error messages or logs', async () => {
       // Simplified test to avoid timeout issues
-      const client = new PAAPIClient();
+      const client = new CreatorsAPIClient();
 
       // Mock httpClient to prevent actual network calls and force an error
       (client as any).httpClient = {
@@ -151,7 +151,7 @@ describe('CreatorsAPIClient Property Tests', () => {
             partnerTag: fc.string({ minLength: 5, maxLength: 30 })
           }),
           async (credentials) => {
-            const client = new PAAPIClient();
+            const client = new CreatorsAPIClient();
 
             // Japan marketplace is fixed, no region parameter needed
             expect(() =>

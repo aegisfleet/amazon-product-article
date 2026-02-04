@@ -6,7 +6,7 @@
 import crypto from 'crypto';
 import fs from 'fs/promises';
 import path from 'path';
-import { PAAPIClient } from '../api/CreatorsAPIClient';
+import { CreatorsAPIClient } from '../api/CreatorsAPIClient';
 import { ConfigManager } from '../config/ConfigManager';
 import {
   Product,
@@ -34,12 +34,12 @@ export interface SearchSession {
 
 export class ProductSearcher {
   private logger = Logger.getInstance();
-  private papiClient: PAAPIClient;
+  private papiClient: CreatorsAPIClient;
   private config = ConfigManager.getInstance();
   private dataDir: string;
   private contentDir: string;
 
-  constructor(papiClient: PAAPIClient) {
+  constructor(papiClient: CreatorsAPIClient) {
     this.papiClient = papiClient;
     this.dataDir = path.join(process.cwd(), 'data', 'products');
     this.contentDir = path.join(process.cwd(), 'content', 'articles');

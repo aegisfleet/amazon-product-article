@@ -13,7 +13,7 @@ interface CacheStore {
     [asin: string]: CacheEntry;
 }
 
-export class PAAPICache {
+export class CreatorsAPICache {
     private cachePath: string;
     private cache: CacheStore = {};
     private ttl: number; // Time to live in milliseconds for valid entries
@@ -162,7 +162,7 @@ export class PAAPICache {
      * Sanitize string by removing invisible Unicode control characters
      */
     private sanitizeString(str: string): string {
-        return str.replace(PAAPICache.INVISIBLE_CHARS_REGEX, '');
+        return str.replace(CreatorsAPICache.INVISIBLE_CHARS_REGEX, '');
     }
 
     /**
@@ -198,7 +198,7 @@ export class PAAPICache {
      */
     public set(asin: string, data: ProductDetail): void {
         const sanitizedData = this.sanitizeData(data);
-        
+
         // Check if new data has "価格情報なし" and existing cache has valid price
         const existingEntry = this.cache[asin];
         if (this.isNoPriceData(sanitizedData) && existingEntry?.data && !this.isNoPriceData(existingEntry.data)) {
@@ -206,7 +206,7 @@ export class PAAPICache {
             this.logger.info(`Preserving existing price for ASIN ${asin}: ${existingEntry.data.price.formatted} (new data has no price)`);
             sanitizedData.price = existingEntry.data.price;
         }
-        
+
         this.cache[asin] = {
             data: sanitizedData,
             timestamp: Date.now(),

@@ -14,8 +14,9 @@ describe('AffiliateLinkManager', () => {
 
     beforeAll(async () => {
         // Set dummy environment variables for testing
-        process.env.AMAZON_ACCESS_KEY = 'test-access-key';
-        process.env.AMAZON_SECRET_KEY = 'test-secret-key';
+        process.env.AMAZON_CREATORS_APPLICATION_ID = 'test-app-id';
+        process.env.AMAZON_CREATORS_CREDENTIAL_ID = 'test-cred-id';
+        process.env.AMAZON_CREATORS_CREDENTIAL_SECRET = 'test-cred-secret';
         process.env.AMAZON_PARTNER_TAG = 'test-tag-21';
         process.env.JULES_API_KEY = 'test-jules-key';
         process.env.GITHUB_TOKEN = 'test-token';
