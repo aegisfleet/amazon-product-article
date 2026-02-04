@@ -14,8 +14,8 @@ import dotenv from 'dotenv';
 import fs from 'fs/promises';
 import path from 'path';
 import { promisify } from 'util';
-import { PAAPICache } from '../api/CreatorsAPICache';
-import { PAAPIClient } from '../api/CreatorsAPIClient';
+import { CreatorsAPICache } from '../api/CreatorsAPICache';
+import { CreatorsAPIClient } from '../api/CreatorsAPIClient';
 import { ArticleGenerator, GeneratedArticle } from '../article/ArticleGenerator';
 import { GitHubPublisher } from '../github/GitHubPublisher';
 import { InvestigationResult } from '../types/JulesTypes';
@@ -285,8 +285,8 @@ async function main(): Promise<void> {
         }
 
         // Initialize PA-API Client & Cache
-        const paapiClient = new PAAPIClient();
-        const paapiCache = new PAAPICache();
+        const paapiClient = new CreatorsAPIClient();
+        const paapiCache = new CreatorsAPICache();
         const usePaapi = !skipPaapi && options.applicationId && options.credentialId && options.credentialSecret && options.partnerTag;
 
         if (usePaapi) {

@@ -1,13 +1,13 @@
 
 import { CreatorsAPIItem } from '../../types/CreatorsAPITypes';
-import { PAAPIClient } from '../CreatorsAPIClient';
+import { CreatorsAPIClient } from '../CreatorsAPIClient';
 
 describe('CreatorsAPIClient Category Parsing', () => {
-    let client: PAAPIClient;
+    let client: CreatorsAPIClient;
     let clientAny: any;
 
     beforeEach(() => {
-        client = new PAAPIClient();
+        client = new CreatorsAPIClient();
         clientAny = client as any;
     });
 

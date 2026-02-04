@@ -7,10 +7,10 @@
 import * as fc from 'fast-check';
 import { ProductSearcher } from '../../search/ProductSearcher';
 import { ProductSearchParams } from '../../types/Product';
-import { PAAPIClient } from '../CreatorsAPIClient';
+import { CreatorsAPIClient } from '../CreatorsAPIClient';
 
 // Mock network errors for testing
-class NetworkErrorMockClient extends PAAPIClient {
+class NetworkErrorMockClient extends CreatorsAPIClient {
   private failureCount = 0;
   private maxFailures: number;
   private errorType: string;
@@ -267,7 +267,7 @@ describe('Error Handling Property Tests', () => {
 
     it('should implement proper timeout handling', async () => {
       // Simplified timeout test to avoid Jest timeout issues
-      const client = new PAAPIClient();
+      const client = new CreatorsAPIClient();
 
       // Reduce maxRetries for testing to avoid long wait times
       // (client as any).rateLimitConfig.maxRetries = 2;
@@ -307,7 +307,7 @@ describe('Error Handling Property Tests', () => {
 
     it('should handle authentication errors securely', async () => {
       // Simplified test to avoid timeout issues
-      const client = new PAAPIClient();
+      const client = new CreatorsAPIClient();
 
       try {
         client.authenticate('', '', '', '');
