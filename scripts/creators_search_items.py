@@ -52,18 +52,18 @@ if __name__ == '__main__':
     try:
         client = CreatorsAPIClient()
         
-        payload_dict = {
-            "Keywords": args.keywords,
-            "SearchIndex": args.search_index,
-            "Resources": [
-                "ItemInfo.Title",
-                "ItemInfo.ByLineInfo",
-                "BrowseNodeInfo.BrowseNodes",
-                "Offers.Listings.Price"
-            ]
-        }
+        resources = [
+            "itemInfo.title",
+            "itemInfo.byLineInfo",
+            "browseNodeInfo.browseNodes",
+            "offersV2.listings.price"
+        ]
         
-        response_json = client.request("SearchItems", payload_dict)
+        response_json = client.search_items(
+            keywords=args.keywords,
+            search_index=args.search_index,
+            resources=resources
+        )
 
         # Create output directory if needed
         output_dir = os.path.dirname(args.output)
