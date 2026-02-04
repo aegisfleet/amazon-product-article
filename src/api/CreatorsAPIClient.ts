@@ -41,12 +41,16 @@ export class CreatorsAPIClient {
   private readonly CREDENTIAL_VERSION = '2.3';
 
   constructor() {
+    // Rate limit configuration - can be adjusted via environment variables
+    // Creators API Japan: 1 request per second, burst of 5
     this.rateLimitConfig = {
-      requestsPerSecond: 1,
-      burstLimit: 5,
-      retryDelay: 1000,
-      maxRetries: 5
+      requestsPerSecond: parseFloat(process.env.CREATORS_API_REQUESTS_PER_SECOND || '0.8'), // Conservative: 0.8 req/sec
+      burstLimit: parseInt(process.env.CREATORS_API_BURST_LIMIT || '5', 10),
+      retryDelay: parseInt(process.env.CREATORS_API_RETRY_DELAY || '1000', 10),
+      maxRetries: parseInt(process.env.CREATORS_API_MAX_RETRIES || '5', 10)
     };
+
+    this.logger.debug(`Rate limit config: ${this.rateLimitConfig.requestsPerSecond} req/sec, max ${this.rateLimitConfig.maxRetries} retries`);
 
     this.httpClient = axios.create({
       timeout: 30000,
@@ -317,14 +321,113 @@ export class CreatorsAPIClient {
 
       if (error.response?.data) {
         this.logger.error(`API Error Response: ${JSON.stringify(error.response.data, null, 2)}`);
+        
+        // Check if error indicates a specific ASIN is invalid
+        const errorData = error.response.data;
+        if (errorData.resourceId && errorData.type === 'ResourceNotFoundException') {
+          // Specific ASIN not found - mark as permanent failure
+          permanentFailures.add(errorData.resourceId);
+          this.logger.warn(`ASIN ${errorData.resourceId} marked as permanent failure (ResourceNotFoundException)`);
+          
+          // Retry batch without the problematic ASIN
+          const remainingAsins = validAsins.filter(asin => asin !== errorData.resourceId);
+          if (remainingAsins.length > 0) {
+            this.logger.info(`Retrying batch without problematic ASIN ${errorData.resourceId}`);
+            try {
+              const retryRequest = { ...request, itemIds: remainingAsins };
+              const retryResponse = await this.makeRequest(retryRequest);
+              
+              if (retryResponse.itemsResult?.items) {
+                for (const item of retryResponse.itemsResult.items) {
+                  try {
+                    const detail = this.parseProductDetail(item);
+                    result.set(item.asin, detail);
+                  } catch (parseError) {
+                    this.logger.warn(`Failed to parse product detail for ASIN ${item.asin}: ${parseError instanceof Error ? parseError.message : String(parseError)}`);
+                  }
+                }
+              }
+              
+              // Successfully recovered from batch error
+              batchFailed = false;
+            } catch (retryError) {
+              this.logger.warn(`Retry batch also failed: ${retryError instanceof Error ? retryError.message : String(retryError)}`);
+              batchFailed = true;
+            }
+          }
+        } else if (errorMessage.includes('InvalidParameterValue')) {
+          // Try to extract which ASIN is invalid from error message
+          const invalidAsinMatch = errorMessage.match(/ItemIds ([A-Z0-9]{10})/);
+          if (invalidAsinMatch && invalidAsinMatch[1]) {
+            const invalidAsin = invalidAsinMatch[1];
+            permanentFailures.add(invalidAsin);
+            this.logger.warn(`ASIN ${invalidAsin} marked as permanent failure (InvalidParameterValue)`);
+            
+            // Retry batch without the invalid ASIN
+            const remainingAsins = validAsins.filter(asin => asin !== invalidAsin);
+            if (remainingAsins.length > 0) {
+              this.logger.info(`Retrying batch without invalid ASIN ${invalidAsin}`);
+              try {
+                const retryRequest = { ...request, itemIds: remainingAsins };
+                const retryResponse = await this.makeRequest(retryRequest);
+                
+                if (retryResponse.itemsResult?.items) {
+                  for (const item of retryResponse.itemsResult.items) {
+                    try {
+                      const detail = this.parseProductDetail(item);
+                      result.set(item.asin, detail);
+                    } catch (parseError) {
+                      this.logger.warn(`Failed to parse product detail for ASIN ${item.asin}: ${parseError instanceof Error ? parseError.message : String(parseError)}`);
+                    }
+                  }
+                }
+                
+                // Successfully recovered from batch error
+                batchFailed = false;
+              } catch (retryError) {
+                this.logger.warn(`Retry batch also failed: ${retryError instanceof Error ? retryError.message : String(retryError)}`);
+                batchFailed = true;
+              }
+            }
+          }
+        }
       }
 
       batchFailed = true;
     }
 
     if (batchFailed) {
-      // Fallback strategies logic kept simplified here for brevity
-      // Ideally implement sequential fallback like original
+      // Fallback: Try fetching each ASIN individually
+      this.logger.info(`Batch request failed, falling back to individual requests for ${validAsins.length} ASINs`);
+      
+      for (const asin of validAsins) {
+        try {
+          this.logger.debug(`Fetching individual ASIN: ${asin}`);
+          const detail = await this.getProductDetails(asin);
+          result.set(asin, detail);
+          this.logger.debug(`Successfully fetched ${asin}`);
+        } catch (error: any) {
+          const errorMessage = error instanceof Error ? error.message : String(error);
+          
+          // Check if it's a permanent failure
+          if (
+            errorMessage.includes('InvalidParameterValue') ||
+            errorMessage.includes('not found') ||
+            errorMessage.includes('404') ||
+            errorMessage.includes('ResourceNotFoundException')
+          ) {
+            permanentFailures.add(asin);
+            this.logger.warn(`ASIN ${asin} marked as permanent failure: ${errorMessage}`);
+          } else {
+            // Temporary failure - don't add to results or permanentFailures
+            // The caller will mark it as invalid with short TTL
+            this.logger.warn(`ASIN ${asin} temporary failure: ${errorMessage}`);
+          }
+        }
+        
+        // Rate limiting between individual requests
+        await this.sleep(1200);
+      }
     }
 
     return { results: result, permanentFailures };
@@ -384,34 +487,66 @@ export class CreatorsAPIClient {
               return resolve(response.data);
             } catch (error: unknown) {
               if (axios.isAxiosError(error)) {
-                if (error.response?.status === 401) {
+                const statusCode = error.response?.status;
+                
+                if (statusCode === 401) {
                   // Token might be expired or invalid
                   this.accessToken = undefined;
-                  // Could implement retry with fresh token here immediately
                 }
+                
                 const errorData = error.response?.data as CreatorsAPIErrorData;
-                this.logger.error(`API Error Response (${error.response?.status}): ${JSON.stringify(errorData, null, 2)}`);
+                this.logger.error(`API Error Response (${statusCode}): ${JSON.stringify(errorData, null, 2)}`);
                 
                 // Log request details for debugging 400 errors
-                if (error.response?.status === 400) {
+                if (statusCode === 400) {
                   this.logger.error(`Request URL: ${url}`);
                   this.logger.error(`Request Headers: ${JSON.stringify({ ...headers, Authorization: '[REDACTED]' }, null, 2)}`);
+                }
+                
+                // Handle rate limiting (429)
+                if (statusCode === 429) {
+                  const retryAfter = error.response?.headers['retry-after'];
+                  let waitTime: number;
+                  
+                  if (retryAfter) {
+                    // Use Retry-After header if available (in seconds)
+                    waitTime = parseInt(retryAfter, 10) * 1000;
+                  } else {
+                    // Exponential backoff with jitter for rate limiting
+                    const baseDelay = 2000; // 2 seconds base
+                    const exponentialDelay = baseDelay * Math.pow(2, attempt - 1);
+                    const jitter = Math.random() * 1000; // 0-1 second jitter
+                    waitTime = Math.min(exponentialDelay + jitter, 60000); // Max 60 seconds
+                  }
+                  
+                  this.logger.warn(`Rate limited (429), waiting ${Math.round(waitTime / 1000)}s before retry (attempt ${attempt}/${this.rateLimitConfig.maxRetries})`);
+                  lastError = error as Error;
+                  
+                  if (attempt < this.rateLimitConfig.maxRetries) {
+                    await this.sleep(waitTime);
+                    continue;
+                  } else {
+                    break;
+                  }
                 }
               }
               lastError = error as Error;
 
-              // Non-retryable
+              // Non-retryable errors
               if (lastError && (lastError.message.includes('400') || lastError.message.includes('404'))) {
                 // 404 is valid result (no items) but throws in axios usually.
                 break;
               }
 
               if (attempt < this.rateLimitConfig.maxRetries) {
+                // Standard exponential backoff for other errors
                 const delay = 1000 * Math.pow(2, attempt - 1);
+                this.logger.debug(`Retrying after ${delay}ms (attempt ${attempt}/${this.rateLimitConfig.maxRetries})`);
                 await this.sleep(delay);
 
                 // If 401, refresh token
                 if (lastError && axios.isAxiosError(lastError) && lastError.response?.status === 401) {
+                  this.logger.info('Refreshing access token after 401 error');
                   const newToken = await this.getAccessToken();
                   headers['Authorization'] = `Bearer ${newToken}, Version ${this.CREDENTIAL_VERSION}`;
                 }
