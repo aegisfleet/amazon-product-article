@@ -155,7 +155,6 @@ export class CreatorsAPIClient {
       const request: CreatorsAPIRequest = {
         operation: 'searchItems',
         partnerTag: this.credentials!.partnerTag,
-        partnerType: 'Associates',
         marketplace: this.MARKETPLACE,
         resources: resources,
         keywords: params.keywords.join(' '),
@@ -213,7 +212,6 @@ export class CreatorsAPIClient {
     const request: CreatorsAPIRequest = {
       operation: 'getItems',
       partnerTag: this.credentials!.partnerTag,
-      partnerType: 'Associates',
       marketplace: this.MARKETPLACE,
       itemIds: [asin],
       itemIdType: 'ASIN',

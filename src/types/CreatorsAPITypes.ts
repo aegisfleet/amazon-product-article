@@ -13,7 +13,6 @@ export interface CreatorsAPICredentials {
 export interface CreatorsAPIRequest {
   operation?: string; // Not sent in body for Creators API, but used internally
   partnerTag: string;
-  partnerType: string;
   marketplace: string;
   resources: string[];
   [key: string]: any;
