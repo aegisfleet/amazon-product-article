@@ -13,11 +13,16 @@
  *   INPUT_ASINS - 直接指定するASIN（カンマ区切り、オプション）
  */
 
+import dotenv from 'dotenv';
 import fs from 'fs/promises';
+
 import path from 'path';
 import { CreatorsAPIClient } from '../api/CreatorsAPIClient';
 import { ProductSearcher, SearchSession } from '../search/ProductSearcher';
 import { Logger } from '../utils/Logger';
+
+// Load environment variables
+dotenv.config();
 
 const logger = Logger.getInstance();
 
