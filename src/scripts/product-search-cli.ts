@@ -37,9 +37,22 @@ function getOptions(): CLIOptions {
     const credentialSecret = process.env.AMAZON_CREATORS_CREDENTIAL_SECRET;
     const partnerTag = process.env.AMAZON_PARTNER_TAG;
 
-    if (!applicationId || !credentialId || !credentialSecret || !partnerTag) {
+    // Log environment variable status for debugging (without revealing values)
+    logger.info('Checking environment variables...');
+    logger.info(`AMAZON_CREATORS_APPLICATION_ID: ${applicationId ? 'SET' : 'MISSING'}`);
+    logger.info(`AMAZON_CREATORS_CREDENTIAL_ID: ${credentialId ? 'SET' : 'MISSING'}`);
+    logger.info(`AMAZON_CREATORS_CREDENTIAL_SECRET: ${credentialSecret ? 'SET' : 'MISSING'}`);
+    logger.info(`AMAZON_PARTNER_TAG: ${partnerTag ? 'SET' : 'MISSING'}`);
+
+    const missingVars: string[] = [];
+    if (!applicationId) missingVars.push('AMAZON_CREATORS_APPLICATION_ID');
+    if (!credentialId) missingVars.push('AMAZON_CREATORS_CREDENTIAL_ID');
+    if (!credentialSecret) missingVars.push('AMAZON_CREATORS_CREDENTIAL_SECRET');
+    if (!partnerTag) missingVars.push('AMAZON_PARTNER_TAG');
+
+    if (missingVars.length > 0) {
         throw new Error(
-            'Missing required environment variables: AMAZON_CREATORS_APPLICATION_ID, AMAZON_CREATORS_CREDENTIAL_ID, AMAZON_CREATORS_CREDENTIAL_SECRET, AMAZON_PARTNER_TAG'
+            `Missing required environment variables: ${missingVars.join(', ')}`
         );
     }
 
@@ -55,10 +68,10 @@ function getOptions(): CLIOptions {
     const asins = inputAsinsEnv ? inputAsinsEnv.split(',').map(a => a.trim()).filter(Boolean) : undefined;
 
     const result: CLIOptions = {
-        applicationId,
-        credentialId,
-        credentialSecret,
-        partnerTag,
+        applicationId: applicationId!,
+        credentialId: credentialId!,
+        credentialSecret: credentialSecret!,
+        partnerTag: partnerTag!,
         categories,
         maxResults
     };
@@ -86,7 +99,8 @@ async function ensureOutputDirectories(): Promise<void> {
 async function setGitHubOutput(name: string, value: string): Promise<void> {
     const outputFile = process.env.GITHUB_OUTPUT;
     if (outputFile) {
-        await fs.appendFile(outputFile, `${name}=${value}\n`);
+        await fs.appendFile(outputFile, `${name}=${value}
+`);
         logger.info(`Set GitHub output: ${name}=${value}`);
     } else {
         // ローカル実行時はコンソールに出力
