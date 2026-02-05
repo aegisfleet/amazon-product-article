@@ -128,7 +128,10 @@ export class CategoryNormalizer {
             "PB_Home&Kitchen",
             "家電",
             "新生活ギフト",
-            "YA-MAN"
+            "YA-MAN",
+            "Others",
+            "PB_Beauty",
+            "パントリー"
         ];
 
         if (blockList.some(block => name.toLowerCase().includes(block.toLowerCase()))) {
