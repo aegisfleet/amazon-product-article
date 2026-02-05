@@ -702,39 +702,49 @@ export class CreatorsAPIClient {
       categoryInfo: { main: 'その他', sub: 'Unknown' }
     };
 
-    if (!item.browseNodeInfo?.browseNodes || item.browseNodeInfo.browseNodes.length === 0) {
-      return defaultResult;
-    }
-
-    const nodes = item.browseNodeInfo.browseNodes;
+    const nodes = item.browseNodeInfo?.browseNodes || [];
 
     // Sort by SalesRank (if available) -> low rank is better
     // Nodes without SalesRank come last
-    const sortedNodes = [...nodes].sort((a, b) => {
-      const rankA = a.salesRank ?? Number.MAX_SAFE_INTEGER;
-      const rankB = b.salesRank ?? Number.MAX_SAFE_INTEGER;
+    const sortedNodes = [...nodes].sort((a: any, b: any) => {
+      const rankA = a.salesRank ?? a.SalesRank ?? Number.MAX_SAFE_INTEGER;
+      const rankB = b.salesRank ?? b.SalesRank ?? Number.MAX_SAFE_INTEGER;
       return rankA - rankB;
     });
 
-    // Use the best ranked node for normalization
-    const bestNode = sortedNodes[0];
-
-    if (!bestNode) {
-      return defaultResult;
+    // Try to find the first valid category from the list of nodes
+    // The "best" ranked node might be a campaign or invalid category that fails normalization,
+    // so we should check others if the first one returns "Other".
+    for (const node of sortedNodes) {
+      const normalized = CategoryNormalizer.normalize(node as any);
+      if (normalized.main !== 'その他') {
+        return {
+          category: normalized.main,
+          categoryInfo: {
+            main: normalized.main,
+            sub: normalized.sub,
+            browseNodeId: (node as any).id || (node as any).Id
+          }
+        };
+      }
     }
 
-    // Convert API node to specific BrowseNode interface if needed, or pass directly if compatible
-    // The structure is compatible enough for our Normalizer
-    const normalized = CategoryNormalizer.normalize(bestNode as any);
+    // If no valid category found in any nodes, fallback to the best node's result (which is likely Other)
+    // or normalized result of the first node if we have one
+    const bestNode = sortedNodes[0];
+    if (bestNode) {
+      const normalized = CategoryNormalizer.normalize(bestNode as any);
+      return {
+        category: normalized.main,
+        categoryInfo: {
+          main: normalized.main,
+          sub: normalized.sub,
+          browseNodeId: (bestNode as any).id || (bestNode as any).Id
+        }
+      };
+    }
 
-    return {
-      category: normalized.main,
-      categoryInfo: {
-        main: normalized.main,
-        sub: normalized.sub,
-        browseNodeId: bestNode.id
-      }
-    };
+    return defaultResult;
   }
 
 

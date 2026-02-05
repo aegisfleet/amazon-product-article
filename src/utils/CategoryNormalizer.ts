@@ -21,31 +21,32 @@ export class CategoryNormalizer {
             return { main: 'その他', sub: 'Unknown' };
         }
 
-        // Traverse up the tree to find the first valid category
-        let currentNode: BrowseNode | undefined = node;
+        // Collect all valid display names up the tree
+        const validNames: string[] = [];
+        let currentNode: any = node;
 
         while (currentNode) {
-            if (CategoryNormalizer.isValidCategoryName(currentNode.displayName)) {
-                // Found a valid category
-                // For sub-category, we try to use the original node's name if valid, 
-                // otherwise the same as main
-                const sub = CategoryNormalizer.isValidCategoryName(node.displayName)
-                    ? node.displayName
-                    : currentNode.displayName;
-
-                return {
-                    main: CategoryNormalizer.sanitizeCategoryName(currentNode.displayName),
-                    sub: CategoryNormalizer.sanitizeCategoryName(sub)
-                };
+            const displayName = currentNode.displayName || currentNode.DisplayName;
+            if (displayName && CategoryNormalizer.isValidCategoryName(displayName)) {
+                validNames.push(CategoryNormalizer.sanitizeCategoryName(displayName));
             }
+            currentNode = currentNode.ancestor || currentNode.Ancestor;
+        }
 
-            currentNode = currentNode.ancestor;
+        if (validNames.length > 0) {
+            // main is the broadest (last in the list if collected from leaf up)
+            // sub is the most specific (first in the list)
+            const main = validNames[validNames.length - 1]!;
+            const sub = validNames.length > 1 ? validNames[0]! : '一般';
+
+            return { main, sub };
         }
 
         // If no valid category found in the tree, fallback to Other
+        const fallbackName = (node as any).displayName || (node as any).DisplayName || 'Unknown';
         return {
             main: 'その他',
-            sub: CategoryNormalizer.sanitizeCategoryName(node.displayName)
+            sub: CategoryNormalizer.sanitizeCategoryName(fallbackName)
         };
     }
 
@@ -57,7 +58,6 @@ export class CategoryNormalizer {
 
         const invalidPatterns = [
             /Amazon/i,
-            /ストア$|Store$/i, // Ends with Store
             /Sale|Off|Coupon|Ranking|Best|Week|Fair|Event|Campaign/i,
             /セール|オフ|クーポン|ランキング|おすすめ|ウィーク|フェア|イベント|キャンペーン/,
             /特集/,
@@ -70,6 +70,26 @@ export class CategoryNormalizer {
 
         if (invalidPatterns.some(pattern => pattern.test(name))) {
             return false;
+        }
+
+        // Specifically block "Store" or "ストア" only if it's a generic campaign/ranking store
+        // but ALLOW "ドラッグストア", "ペット用品ストア" etc.
+        const genericStorePatterns = [
+            /ストア$|Store$/i,
+        ];
+        const allowedStoreExceptions = [
+            "ドラッグストア",
+            "ペット用品ストア",
+            "ビューティーストア",
+            "食品ストア",
+            "飲料ストア",
+            "お酒ストア"
+        ];
+
+        if (genericStorePatterns.some(pattern => pattern.test(name))) {
+            if (!allowedStoreExceptions.some(exception => name.includes(exception))) {
+                return false;
+            }
         }
 
         // Check for specific nonsense categories reported
