@@ -9,6 +9,7 @@ export interface BrowseNode {
 export interface NormalizedCategory {
     main: string;
     sub: string;
+    nameCount: number;
 }
 
 export class CategoryNormalizer {
@@ -18,7 +19,7 @@ export class CategoryNormalizer {
      */
     public static normalize(node?: BrowseNode): NormalizedCategory {
         if (!node) {
-            return { main: 'その他', sub: 'Unknown' };
+            return { main: 'その他', sub: 'Unknown', nameCount: 0 };
         }
 
         // Collect all valid display names up the tree
@@ -34,19 +35,20 @@ export class CategoryNormalizer {
         }
 
         if (validNames.length > 0) {
-            // main is the broadest (last in the list if collected from leaf up)
-            // sub is the most specific (first in the list)
-            const main = validNames[validNames.length - 1]!;
-            const sub = validNames.length > 1 ? validNames[0]! : '一般';
+            // Updated logic: Main is Specific, Sub is Parent
+            // validNames is collected from leaf up, so [leaf, parent, grandparent, ...]
+            const main = validNames[0]!;
+            const sub = validNames.length > 1 ? validNames[1]! : '一般';
 
-            return { main, sub };
+            return { main, sub, nameCount: validNames.length };
         }
 
         // If no valid category found in the tree, fallback to Other
         const fallbackName = (node as any).displayName || (node as any).DisplayName || 'Unknown';
         return {
             main: 'その他',
-            sub: CategoryNormalizer.sanitizeCategoryName(fallbackName)
+            sub: CategoryNormalizer.sanitizeCategoryName(fallbackName),
+            nameCount: 0
         };
     }
 
@@ -114,7 +116,7 @@ export class CategoryNormalizer {
             "卒園式・入学式の撮影テクニック"
         ];
 
-        if (blockList.some(block => name.includes(block))) {
+        if (blockList.some(block => name.toLowerCase().includes(block.toLowerCase()))) {
             return false;
         }
 
