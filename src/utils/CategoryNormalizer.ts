@@ -118,7 +118,10 @@ export class CategoryNormalizer {
             "yobi",
             "P&G",
             "定期おトク便",
-            "Diapers"
+            "Diapers",
+            "Panasonic-HA-PersonalCare",
+            "PB_Home&Kitchen",
+            "家電"
         ];
 
         if (blockList.some(block => name.toLowerCase().includes(block.toLowerCase()))) {

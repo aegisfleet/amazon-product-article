@@ -704,7 +704,6 @@ export class CreatorsAPIClient {
 
     const nodes = item.browseNodeInfo?.browseNodes || [];
 
-
     // We prioritize specific categories (deeper hierarchy) over generic ones, even if generic ones have better rank.
     const sortedNodes = [...nodes].sort((a: any, b: any) => {
       const normA = CategoryNormalizer.normalize(a);
