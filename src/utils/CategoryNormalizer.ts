@@ -85,7 +85,13 @@ export class CategoryNormalizer {
             "PBHome&Kitchen9999",
             "Panasonic-HA-HotAirStylers",
             "UMall",
-            "SnS Acquisition Test HPC ASINs"
+            "SnS Acquisition Test HPC ASINs",
+            "シャープの家電がお買い得",
+            "ジュニアシート 3歳頃から",
+            "チャイルドシート 1歳頃から",
+            "チャイルドシート 新生児から",
+            "カテゴリー別",
+            "卒園式・入学式の撮影テクニック"
         ];
 
         if (blockList.some(block => name.includes(block))) {
