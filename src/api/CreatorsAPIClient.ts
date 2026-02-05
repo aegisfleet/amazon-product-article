@@ -1,3 +1,5 @@
+import fs from 'fs/promises';
+import path from 'path';
 /**
  * Amazon Creators API Client
  * Handles OAuth 2.0 authentication, rate limiting, and product data retrieval
@@ -31,6 +33,7 @@ export class CreatorsAPIClient {
   private lastRequestTime = 0;
   private requestQueue: Array<() => Promise<void>> = [];
   private isProcessingQueue = false;
+  private validCategories: Set<string> | null = null;
 
   // OAuth Token Management
   private accessToken: string | undefined;
@@ -78,6 +81,52 @@ export class CreatorsAPIClient {
     };
 
     this.logger.info('Creators API client authenticated successfully (Japan marketplace)');
+  }
+
+  /**
+   * Set valid categories for testing or manual injection
+   */
+  public setValidCategories(categories: string[]): void {
+    this.validCategories = new Set(categories);
+  }
+
+  /**
+   * Get the count of valid categories currently loaded
+   */
+  public getValidCategoriesCount(): number {
+    return this.validCategories ? this.validCategories.size : 0;
+  }
+
+  /**
+   * Load valid categories from data/categorygroups.json
+   */
+  private async loadValidCategories(): Promise<void> {
+    if (this.validCategories) return;
+
+    try {
+      const filePath = path.join(process.cwd(), 'data', 'categorygroups.json');
+      const data = await fs.readFile(filePath, 'utf-8');
+      const groups = JSON.parse(data);
+
+      const categories = new Set<string>();
+
+      for (const group of Object.values(groups)) {
+        const cats = (group as any).categories;
+        if (Array.isArray(cats)) {
+          for (const cat of cats) {
+            categories.add(cat);
+          }
+        }
+      }
+
+      this.validCategories = categories;
+      this.logger.info(`Loaded ${categories.size} valid categories from ${filePath}`);
+    } catch (error) {
+      // File might not exist or be readable in all contexts (e.g. basic tests)
+      // Only log warn if we expect it to be there, but debug is safer to avoid noise in tests
+      this.logger.debug(`Could not load category groups: ${error instanceof Error ? error.message : String(error)}`);
+      this.validCategories = new Set(); // Empty set prevents retry
+    }
   }
 
   /**
@@ -130,6 +179,7 @@ export class CreatorsAPIClient {
    */
   async searchProducts(params: ProductSearchParams): Promise<ProductSearchResult> {
     this.validateAuthentication();
+    await this.loadValidCategories();
 
     const allProducts: Product[] = [];
     const maxResultsPerPage = 10;
@@ -212,6 +262,7 @@ export class CreatorsAPIClient {
    */
   async getProductDetails(asin: string): Promise<ProductDetail> {
     this.validateAuthentication();
+    await this.loadValidCategories();
 
     const request: CreatorsAPIRequest = {
       operation: 'getItems',
@@ -251,6 +302,7 @@ export class CreatorsAPIClient {
     permanentFailures: Set<string>;
   }> {
     this.validateAuthentication();
+    await this.loadValidCategories();
 
     const result = new Map<string, ProductDetail>();
     const permanentFailures = new Set<string>();
@@ -734,6 +786,26 @@ export class CreatorsAPIClient {
       return rankA - rankB;
     });
 
+    // Try to find a node in validCategories by traversing ancestors
+    if (this.validCategories && this.validCategories.size > 0) {
+      for (const node of validNodes) {
+        let current: typeof node | undefined = node;
+        while (current) {
+           if (this.validCategories.has(current.displayName)) {
+             return {
+               category: current.displayName,
+               categoryInfo: {
+                 main: current.displayName,
+                 sub: node.displayName,
+                 browseNodeId: current.id
+               }
+             };
+           }
+           current = current.ancestor;
+        }
+      }
+    }
+
     const mainNode = validNodes[0];
     const subNode = validNodes.length > 1 ? validNodes[1] : mainNode!.ancestor;
 
@@ -765,4 +837,3 @@ export class CreatorsAPIClient {
     return name.replace(/[【】|()_※]/g, '').trim();
   }
 }
-
