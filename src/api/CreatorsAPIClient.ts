@@ -704,50 +704,52 @@ export class CreatorsAPIClient {
 
     const nodes = item.browseNodeInfo?.browseNodes || [];
 
-    // Sort by SalesRank (if available) -> low rank is better
-    // Nodes without SalesRank come last
+
+    // We prioritize specific categories (deeper hierarchy) over generic ones, even if generic ones have better rank.
     const sortedNodes = [...nodes].sort((a: any, b: any) => {
+      const normA = CategoryNormalizer.normalize(a);
+      const normB = CategoryNormalizer.normalize(b);
+
+      // 1. Depth Descending (More specific is better)
+      if (normA.nameCount !== normB.nameCount) {
+        return normB.nameCount - normA.nameCount;
+      }
+
+      // 2. SalesRank Ascending (Lower is better)
       const rankA = a.salesRank ?? a.SalesRank ?? Number.MAX_SAFE_INTEGER;
       const rankB = b.salesRank ?? b.SalesRank ?? Number.MAX_SAFE_INTEGER;
       return rankA - rankB;
     });
 
-    // Evaluate all nodes and find the "best" one
-    // Best is defined as: 
-    // 1. Minimum SalesRank
-    // 2. Maximum nameCount (depth of hierarchy) if ranks are tied
-    let bestResult: any = null;
-    let minRank = Number.MAX_SAFE_INTEGER;
-    let maxNameCount = -1;
-
+    // Pick the first valid category from the sorted list
     for (const node of sortedNodes) {
-      const currentRank = (node as any).salesRank ?? (node as any).SalesRank ?? Number.MAX_SAFE_INTEGER;
-
-      // If we found nodes with significantly worse rank than what we already have, we can stop
-      // (since sortedNodes is sorted by rank)
-      if (currentRank > minRank && bestResult !== null) {
-        break;
-      }
-
       const normalized = CategoryNormalizer.normalize(node as any);
-      if (normalized.main !== 'その他') {
-        if (currentRank < minRank || (currentRank === minRank && normalized.nameCount > maxNameCount)) {
-          minRank = currentRank;
-          maxNameCount = normalized.nameCount;
-          bestResult = {
-            category: normalized.main,
-            categoryInfo: {
-              main: normalized.main,
-              sub: normalized.sub,
-              browseNodeId: (node as any).id || (node as any).Id
-            }
-          };
-        }
-      }
-    }
 
-    if (bestResult) {
-      return bestResult;
+      if (normalized.main !== 'その他') {
+        // Fallback: If sub is empty or '一般' (missing hierarchy), try to find another valid node in the list to use as sub
+        if (!normalized.sub || normalized.sub === '一般') {
+          const subCandidate = sortedNodes.find((n: any) => {
+            const sn = CategoryNormalizer.normalize(n);
+            return sn.main !== 'その他' && sn.main !== normalized.main;
+          });
+
+          if (subCandidate) {
+            const subNorm = CategoryNormalizer.normalize(subCandidate as any);
+            normalized.sub = subNorm.main;
+          } else {
+            normalized.sub = '';
+          }
+        }
+
+        return {
+          category: normalized.main,
+          categoryInfo: {
+            main: normalized.main,
+            sub: normalized.sub,
+            browseNodeId: (node as any).id || (node as any).Id
+          }
+        };
+      }
     }
 
     // Fallback to the first node's result if no "valid" category found
