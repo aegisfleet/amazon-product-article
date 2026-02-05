@@ -64,6 +64,7 @@ export class CategoryNormalizer {
             /セール|オフ|クーポン|ランキング|おすすめ|ウィーク|フェア|イベント|キャンペーン/,
             /特集/,
             /新着/,
+            /新規発売/,
             /予約/,
             /限定/,
             /^All /i,
@@ -120,6 +121,10 @@ export class CategoryNormalizer {
             "定期おトク便",
             "Diapers",
             "Panasonic-HA-PersonalCare",
+            "Panasonic-HA-HotAirStylers",
+            "Panasonic ヘアケア",
+            "パナソニック ヘアケア",
+            "パナソニック ヘアードライヤー",
             "PB_Home&Kitchen",
             "家電"
         ];
