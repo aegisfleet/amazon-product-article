@@ -55,7 +55,7 @@ export class CategoryNormalizer {
     /**
      * Check if a category name is valid (legacy logic from PAAPIClient)
      */
-    private static isValidCategoryName(name: string): boolean {
+    public static isValidCategoryName(name: string): boolean {
         if (!name) return false;
 
         const invalidPatterns = [
@@ -67,7 +67,8 @@ export class CategoryNormalizer {
             /予約/,
             /限定/,
             /^All /i,
-            /^Prime /i
+            /^Prime /i,
+            /[【】|()_※]/
         ];
 
         if (invalidPatterns.some(pattern => pattern.test(name))) {

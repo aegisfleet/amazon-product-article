@@ -1,5 +1,6 @@
 
 import { CreatorsAPIItem } from '../../types/CreatorsAPITypes';
+import { CategoryNormalizer } from '../../utils/CategoryNormalizer';
 import { CreatorsAPIClient } from '../CreatorsAPIClient';
 
 describe('CreatorsAPIClient Category Parsing', () => {
@@ -11,7 +12,7 @@ describe('CreatorsAPIClient Category Parsing', () => {
         clientAny = client as any;
     });
 
-    // Test isValidCategoryName private method
+    // Test isValidCategoryName static method (moved to CategoryNormalizer)
     describe('isValidCategoryName', () => {
         const invalidNames = [
             'Amazon.co.jp Ranking',
@@ -36,11 +37,11 @@ describe('CreatorsAPIClient Category Parsing', () => {
         ];
 
         test.each(invalidNames)('should return false for invalid name: %s', (name) => {
-            expect(clientAny.isValidCategoryName(name)).toBe(false);
+            expect(CategoryNormalizer.isValidCategoryName(name)).toBe(false);
         });
 
         test.each(validNames)('should return true for valid name: %s', (name) => {
-            expect(clientAny.isValidCategoryName(name)).toBe(true);
+            expect(CategoryNormalizer.isValidCategoryName(name)).toBe(true);
         });
     });
 
@@ -105,6 +106,7 @@ describe('CreatorsAPIClient Category Parsing', () => {
             };
 
             const result = clientAny.extractCategoryInfo(item as CreatorsAPIItem);
+            // In the new logic, Wireless Headphones is main (index 0), Headphones is sub (index 1)
             expect(result.category).toBe('Wireless Headphones');
             expect(result.categoryInfo.sub).toBe('Headphones');
         });
@@ -119,21 +121,15 @@ describe('CreatorsAPIClient Category Parsing', () => {
             };
 
             const result = clientAny.extractCategoryInfo(item as CreatorsAPIItem);
-            // Should still return it but sanitized if possible, or maybe unknown?
-            // Implementation logic: if validNodes empty, sanitizes first node.
-            // "Amazon Basic" -> contains "Amazon" -> sanitized? No, invalid check regex matches "Amazon".
-            // sanitizeCategoryName removes special chars. 
-            // "Amazon Basic" contains "Amazon" pattern? /Amazon/i matches.
-            // The sanitize function only removes special chars.
-            // So it returns "Amazon Basic".
-
-            expect(result.category).toBe('Amazon Basic');
+            // new logic: fallback to "その他"
+            expect(result.category).toBe('その他');
         });
 
         test('should handle missing browseNodes', () => {
             const item: Partial<CreatorsAPIItem> = {};
             const result = clientAny.extractCategoryInfo(item as CreatorsAPIItem);
-            expect(result.category).toBe('Unknown');
+            expect(result.category).toBe('その他');
         });
     });
 });
+
