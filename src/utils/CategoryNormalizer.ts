@@ -77,10 +77,15 @@ export class CategoryNormalizer {
             "Arborist Merchandising Root",
             "Babel 6-2",
             "Calendar Test",
-            "HPC Recommendation Widget",
             "Test",
             "テスト",
-            "面だし用ASIN"
+            "面だし用ASIN",
+            "Hair Care",
+            "HPC recommendation widget",
+            "PBHome&Kitchen9999",
+            "Panasonic-HA-HotAirStylers",
+            "UMall",
+            "SnS Acquisition Test HPC ASINs"
         ];
 
         if (blockList.some(block => name.includes(block))) {
