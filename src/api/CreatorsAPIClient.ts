@@ -712,25 +712,45 @@ export class CreatorsAPIClient {
       return rankA - rankB;
     });
 
-    // Try to find the first valid category from the list of nodes
-    // The "best" ranked node might be a campaign or invalid category that fails normalization,
-    // so we should check others if the first one returns "Other".
+    // Evaluate all nodes and find the "best" one
+    // Best is defined as: 
+    // 1. Minimum SalesRank
+    // 2. Maximum nameCount (depth of hierarchy) if ranks are tied
+    let bestResult: any = null;
+    let minRank = Number.MAX_SAFE_INTEGER;
+    let maxNameCount = -1;
+
     for (const node of sortedNodes) {
+      const currentRank = (node as any).salesRank ?? (node as any).SalesRank ?? Number.MAX_SAFE_INTEGER;
+
+      // If we found nodes with significantly worse rank than what we already have, we can stop
+      // (since sortedNodes is sorted by rank)
+      if (currentRank > minRank && bestResult !== null) {
+        break;
+      }
+
       const normalized = CategoryNormalizer.normalize(node as any);
       if (normalized.main !== 'その他') {
-        return {
-          category: normalized.main,
-          categoryInfo: {
-            main: normalized.main,
-            sub: normalized.sub,
-            browseNodeId: (node as any).id || (node as any).Id
-          }
-        };
+        if (currentRank < minRank || (currentRank === minRank && normalized.nameCount > maxNameCount)) {
+          minRank = currentRank;
+          maxNameCount = normalized.nameCount;
+          bestResult = {
+            category: normalized.main,
+            categoryInfo: {
+              main: normalized.main,
+              sub: normalized.sub,
+              browseNodeId: (node as any).id || (node as any).Id
+            }
+          };
+        }
       }
     }
 
-    // If no valid category found in any nodes, fallback to the best node's result (which is likely Other)
-    // or normalized result of the first node if we have one
+    if (bestResult) {
+      return bestResult;
+    }
+
+    // Fallback to the first node's result if no "valid" category found
     const bestNode = sortedNodes[0];
     if (bestNode) {
       const normalized = CategoryNormalizer.normalize(bestNode as any);
