@@ -77,6 +77,27 @@ describe('CreatorsAPIClient Category Parsing', () => {
             expect(result.category).toBe('Headphones');
         });
 
+        test('should prioritize Depth over SalesRank (Specific > Generic)', () => {
+            const item: Partial<CreatorsAPIItem> = {
+                browseNodeInfo: {
+                    browseNodes: [
+                        { id: '1', displayName: 'Home', contextFreeName: 'Home', salesRank: 1 }, // Rank 1, Depth 1
+                        {
+                            id: '2',
+                            displayName: 'Pillow',
+                            contextFreeName: 'Pillow',
+                            salesRank: 9999,
+                            ancestor: { id: '1', displayName: 'Home', contextFreeName: 'Home' }
+                        } // Rank 9999, Depth 2
+                    ]
+                }
+            };
+
+            const result = clientAny.extractCategoryInfo(item as CreatorsAPIItem);
+            // Even though Home has rank 1, Pillow has depth 2. Pillow should win.
+            expect(result.category).toBe('Pillow');
+        });
+
         test('should filter out invalid categories', () => {
             const item: Partial<CreatorsAPIItem> = {
                 browseNodeInfo: {

@@ -38,7 +38,7 @@ export class CategoryNormalizer {
             // Updated logic: Main is Specific, Sub is Parent
             // validNames is collected from leaf up, so [leaf, parent, grandparent, ...]
             const main = validNames[0]!;
-            const sub = validNames.length > 1 ? validNames[1]! : '一般';
+            const sub = validNames.length > 1 ? validNames[1]! : '';
 
             return { main, sub, nameCount: validNames.length };
         }
@@ -75,24 +75,24 @@ export class CategoryNormalizer {
             return false;
         }
 
-        // Specifically block "Store" or "ストア" only if it's a generic campaign/ranking store
-        // but ALLOW "ドラッグストア", "ペット用品ストア" etc.
+        // Check for generic "Store" suffix
+        // User requested to exclude categories ending with "Store" (e.g., Drugstore)
         const genericStorePatterns = [
             /ストア$|Store$/i,
         ];
-        const allowedStoreExceptions = [
-            "ドラッグストア",
-            "ペット用品ストア",
-            "ビューティーストア",
-            "食品ストア",
-            "飲料ストア",
-            "お酒ストア"
-        ];
+        // const allowedStoreExceptions = [
+        //     "ドラッグストア",
+        //     "ペット用品ストア",
+        //     "ビューティーストア",
+        //     "食品ストア",
+        //     "飲料ストア",
+        //     "お酒ストア"
+        // ];
 
         if (genericStorePatterns.some(pattern => pattern.test(name))) {
-            if (!allowedStoreExceptions.some(exception => name.includes(exception))) {
-                return false;
-            }
+            // if (!allowedStoreExceptions.some(exception => name.includes(exception))) {
+            return false;
+            // }
         }
 
         // Check for specific nonsense categories reported
@@ -114,7 +114,11 @@ export class CategoryNormalizer {
             "チャイルドシート 1歳頃から",
             "チャイルドシート 新生児から",
             "カテゴリー別",
-            "卒園式・入学式の撮影テクニック"
+            "卒園式・入学式の撮影テクニック",
+            "yobi",
+            "P&G",
+            "定期おトク便",
+            "Diapers"
         ];
 
         if (blockList.some(block => name.toLowerCase().includes(block.toLowerCase()))) {
