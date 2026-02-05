@@ -126,7 +126,9 @@ export class CategoryNormalizer {
             "パナソニック ヘアケア",
             "パナソニック ヘアードライヤー",
             "PB_Home&Kitchen",
-            "家電"
+            "家電",
+            "新生活ギフト",
+            "YA-MAN"
         ];
 
         if (blockList.some(block => name.toLowerCase().includes(block.toLowerCase()))) {
