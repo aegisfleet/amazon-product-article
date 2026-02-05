@@ -134,7 +134,9 @@ export class CategoryNormalizer {
             "パントリー",
             "対象ASIN",
             "面出し用ASIN",
-            "Internal"
+            "Internal",
+            "サンワサプライ",
+            "PB_PC"
         ];
 
         if (blockList.some(block => name.toLowerCase().includes(block.toLowerCase()))) {
