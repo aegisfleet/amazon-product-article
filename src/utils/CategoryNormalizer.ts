@@ -129,9 +129,12 @@ export class CategoryNormalizer {
             "家電",
             "新生活ギフト",
             "YA-MAN",
-            "Others",
+            "others",
             "PB_Beauty",
-            "パントリー"
+            "パントリー",
+            "対象ASIN",
+            "面出し用ASIN",
+            "Internal"
         ];
 
         if (blockList.some(block => name.toLowerCase().includes(block.toLowerCase()))) {
