@@ -14,6 +14,7 @@ import {
   RateLimitConfig
 } from '../types/CreatorsAPITypes';
 import { Product, ProductDetail, ProductSearchParams, ProductSearchResult } from '../types/Product';
+import { CategoryNormalizer } from '../utils/CategoryNormalizer';
 import { Logger } from '../utils/Logger';
 
 interface CreatorsAPIErrorData {
@@ -321,14 +322,14 @@ export class CreatorsAPIClient {
 
       if (error.response?.data) {
         this.logger.error(`API Error Response: ${JSON.stringify(error.response.data, null, 2)}`);
-        
+
         // Check if error indicates a specific ASIN is invalid
         const errorData = error.response.data;
         if (errorData.resourceId && errorData.type === 'ResourceNotFoundException') {
           // Specific ASIN not found - mark as permanent failure
           permanentFailures.add(errorData.resourceId);
           this.logger.warn(`ASIN ${errorData.resourceId} marked as permanent failure (ResourceNotFoundException)`);
-          
+
           // Retry batch without the problematic ASIN
           const remainingAsins = validAsins.filter(asin => asin !== errorData.resourceId);
           if (remainingAsins.length > 0) {
@@ -336,7 +337,7 @@ export class CreatorsAPIClient {
             try {
               const retryRequest = { ...request, itemIds: remainingAsins };
               const retryResponse = await this.makeRequest(retryRequest);
-              
+
               if (retryResponse.itemsResult?.items) {
                 for (const item of retryResponse.itemsResult.items) {
                   try {
@@ -347,7 +348,7 @@ export class CreatorsAPIClient {
                   }
                 }
               }
-              
+
               // Successfully recovered from batch error
               batchFailed = false;
             } catch (retryError) {
@@ -362,7 +363,7 @@ export class CreatorsAPIClient {
             const invalidAsin = invalidAsinMatch[1];
             permanentFailures.add(invalidAsin);
             this.logger.warn(`ASIN ${invalidAsin} marked as permanent failure (InvalidParameterValue)`);
-            
+
             // Retry batch without the invalid ASIN
             const remainingAsins = validAsins.filter(asin => asin !== invalidAsin);
             if (remainingAsins.length > 0) {
@@ -370,7 +371,7 @@ export class CreatorsAPIClient {
               try {
                 const retryRequest = { ...request, itemIds: remainingAsins };
                 const retryResponse = await this.makeRequest(retryRequest);
-                
+
                 if (retryResponse.itemsResult?.items) {
                   for (const item of retryResponse.itemsResult.items) {
                     try {
@@ -381,7 +382,7 @@ export class CreatorsAPIClient {
                     }
                   }
                 }
-                
+
                 // Successfully recovered from batch error
                 batchFailed = false;
               } catch (retryError) {
@@ -399,7 +400,7 @@ export class CreatorsAPIClient {
     if (batchFailed) {
       // Fallback: Try fetching each ASIN individually
       this.logger.info(`Batch request failed, falling back to individual requests for ${validAsins.length} ASINs`);
-      
+
       for (const asin of validAsins) {
         try {
           this.logger.debug(`Fetching individual ASIN: ${asin}`);
@@ -408,7 +409,7 @@ export class CreatorsAPIClient {
           this.logger.debug(`Successfully fetched ${asin}`);
         } catch (error: any) {
           const errorMessage = error instanceof Error ? error.message : String(error);
-          
+
           // Check if it's a permanent failure
           if (
             errorMessage.includes('InvalidParameterValue') ||
@@ -424,7 +425,7 @@ export class CreatorsAPIClient {
             this.logger.warn(`ASIN ${asin} temporary failure: ${errorMessage}`);
           }
         }
-        
+
         // Rate limiting between individual requests
         await this.sleep(1200);
       }
@@ -488,26 +489,26 @@ export class CreatorsAPIClient {
             } catch (error: unknown) {
               if (axios.isAxiosError(error)) {
                 const statusCode = error.response?.status;
-                
+
                 if (statusCode === 401) {
                   // Token might be expired or invalid
                   this.accessToken = undefined;
                 }
-                
+
                 const errorData = error.response?.data as CreatorsAPIErrorData;
                 this.logger.error(`API Error Response (${statusCode}): ${JSON.stringify(errorData, null, 2)}`);
-                
+
                 // Log request details for debugging 400 errors
                 if (statusCode === 400) {
                   this.logger.error(`Request URL: ${url}`);
                   this.logger.error(`Request Headers: ${JSON.stringify({ ...headers, Authorization: '[REDACTED]' }, null, 2)}`);
                 }
-                
+
                 // Handle rate limiting (429)
                 if (statusCode === 429) {
                   const retryAfter = error.response?.headers['retry-after'];
                   let waitTime: number;
-                  
+
                   if (retryAfter) {
                     // Use Retry-After header if available (in seconds)
                     waitTime = parseInt(retryAfter, 10) * 1000;
@@ -518,10 +519,10 @@ export class CreatorsAPIClient {
                     const jitter = Math.random() * 1000; // 0-1 second jitter
                     waitTime = Math.min(exponentialDelay + jitter, 60000); // Max 60 seconds
                   }
-                  
+
                   this.logger.warn(`Rate limited (429), waiting ${Math.round(waitTime / 1000)}s before retry (attempt ${attempt}/${this.rateLimitConfig.maxRetries})`);
                   lastError = error as Error;
-                  
+
                   if (attempt < this.rateLimitConfig.maxRetries) {
                     await this.sleep(waitTime);
                     continue;
@@ -697,8 +698,8 @@ export class CreatorsAPIClient {
   // Category Parsing Logic
   private extractCategoryInfo(item: CreatorsAPIItem): { category: string; categoryInfo: { main: string; sub: string; browseNodeId?: string } } {
     const defaultResult = {
-      category: 'Unknown',
-      categoryInfo: { main: 'Unknown', sub: 'Unknown' }
+      category: 'その他',
+      categoryInfo: { main: 'その他', sub: 'Unknown' }
     };
 
     if (!item.browseNodeInfo?.browseNodes || item.browseNodeInfo.browseNodes.length === 0) {
@@ -707,62 +708,35 @@ export class CreatorsAPIClient {
 
     const nodes = item.browseNodeInfo.browseNodes;
 
-    // Filter valid nodes
-    const validNodes = nodes.filter(node => this.isValidCategoryName(node.displayName));
-
-    if (validNodes.length === 0) {
-      // Fallback to first node if all are invalid, stripping invalid chars if possible
-      const firstNode = nodes[0];
-      if (firstNode) {
-        return {
-          category: this.sanitizeCategoryName(firstNode.displayName),
-          categoryInfo: {
-            main: this.sanitizeCategoryName(firstNode.displayName),
-            sub: firstNode.ancestor?.displayName ? this.sanitizeCategoryName(firstNode.ancestor.displayName) : 'Unknown',
-            browseNodeId: firstNode.id
-          }
-        };
-      }
-      return defaultResult;
-    }
-
-    // Sort by SalesRank (if available) -> low rank is better (1 is best)
+    // Sort by SalesRank (if available) -> low rank is better
     // Nodes without SalesRank come last
-    validNodes.sort((a, b) => {
+    const sortedNodes = [...nodes].sort((a, b) => {
       const rankA = a.salesRank ?? Number.MAX_SAFE_INTEGER;
       const rankB = b.salesRank ?? Number.MAX_SAFE_INTEGER;
       return rankA - rankB;
     });
 
-    const mainNode = validNodes[0];
-    const subNode = validNodes.length > 1 ? validNodes[1] : mainNode!.ancestor;
+    // Use the best ranked node for normalization
+    const bestNode = sortedNodes[0];
+
+    if (!bestNode) {
+      return defaultResult;
+    }
+
+    // Convert API node to specific BrowseNode interface if needed, or pass directly if compatible
+    // The structure is compatible enough for our Normalizer
+    const normalized = CategoryNormalizer.normalize(bestNode as any);
 
     return {
-      category: mainNode!.displayName,
+      category: normalized.main,
       categoryInfo: {
-        main: mainNode!.displayName,
-        sub: subNode?.displayName || 'Unknown',
-        browseNodeId: mainNode!.id
+        main: normalized.main,
+        sub: normalized.sub,
+        browseNodeId: bestNode.id
       }
     };
   }
 
-  private isValidCategoryName(name: string): boolean {
-    if (!name) return false;
 
-    const invalidPatterns = [
-      /Amazon/i,
-      /ストア$|Store$/i, // Ends with Store
-      /[【】|()_※]/, // Special chars
-      /Sale|Off|Coupon|Ranking|Best|Week|Fair|Event|Campaign/i,
-      /セール|オフ|クーポン|ランキング|おすすめ|ウィーク|フェア|イベント|キャンペーン/
-    ];
-
-    return !invalidPatterns.some(pattern => pattern.test(name));
-  }
-
-  private sanitizeCategoryName(name: string): string {
-    return name.replace(/[【】|()_※]/g, '').trim();
-  }
 }
 
