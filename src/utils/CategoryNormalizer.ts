@@ -61,7 +61,7 @@ export class CategoryNormalizer {
         const invalidPatterns = [
             /Amazon/i,
             /Sale|Off|Coupon|Ranking|Best|Week|Fair|Event|Campaign/i,
-            /セール|オフ|クーポン|ランキング|おすすめ|ウィーク|フェア|イベント|キャンペーン/,
+            /セール|オフ(?!ィス)|クーポン|ランキング|おすすめ|ウィーク|フェア|イベント|キャンペーン/,
             /特集/,
             /新着/,
             /新規発売/,
@@ -72,7 +72,13 @@ export class CategoryNormalizer {
             /[【】|()_※]/
         ];
 
-        if (invalidPatterns.some(pattern => pattern.test(name))) {
+        if (invalidPatterns.some(pattern => {
+            if (pattern.test(name)) {
+                // console.log(`Category rejected by pattern ${pattern}: ${name}`);
+                return true;
+            }
+            return false;
+        })) {
             return false;
         }
 
@@ -91,7 +97,7 @@ export class CategoryNormalizer {
         // ];
 
         if (genericStorePatterns.some(pattern => pattern.test(name))) {
-            // if (!allowedStoreExceptions.some(exception => name.includes(exception))) {
+            // console.log(`Category rejected by Store pattern: ${name}`);
             return false;
             // }
         }
@@ -121,7 +127,6 @@ export class CategoryNormalizer {
             "定期おトク便",
             "Diapers",
             "Panasonic-HA-PersonalCare",
-            "Panasonic-HA-PersonalCare",
             "Panasonic-HA-HotAirStylers",
             "Panasonic-HA-HairDryers",
             "Panasonic Beauty",
@@ -129,6 +134,10 @@ export class CategoryNormalizer {
             "Panasonic ヘアケア",
             "パナソニック ヘアケア",
             "パナソニック ヘアードライヤー",
+            "おうちでヘアケア",
+            "アウトドア用品",
+            "HPC_CreatorInfoHub",
+            "Drugstore - AmazonGlobal",
             "PB_Home&Kitchen",
             "家電",
             "新生活ギフト",
@@ -143,7 +152,13 @@ export class CategoryNormalizer {
             "PB_PC"
         ];
 
-        if (blockList.some(block => name.toLowerCase().includes(block.toLowerCase()))) {
+        if (blockList.some(block => {
+            if (name.toLowerCase().includes(block.toLowerCase())) {
+                // console.log(`Category rejected by blocklist '${block}': ${name}`);
+                return true;
+            }
+            return false;
+        })) {
             return false;
         }
 
