@@ -98,7 +98,7 @@ export class ConfigManager {
     return this.config;
   }
 
-  private async loadConfiguration(): Promise<SystemConfig> {
+  private loadConfiguration(): SystemConfig {
     return {
       amazon: {
         applicationId: this.getRequiredEnvVar('AMAZON_CREATORS_APPLICATION_ID'),

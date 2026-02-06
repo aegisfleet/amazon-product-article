@@ -51,9 +51,9 @@ export class JulesInvestigator {
         });
         return config;
       },
-      (error) => {
+      (error: unknown) => {
         this.logger.error('Jules API Request Error', error);
-        return Promise.reject(error as Error);
+        return Promise.reject(error instanceof Error ? error : new Error(String(error)));
       }
     );
 
@@ -65,13 +65,17 @@ export class JulesInvestigator {
         });
         return response;
       },
-      (error) => {
-        this.logger.error('Jules API Response Error', {
-          status: error.response?.status,
-          statusText: error.response?.statusText,
-          data: error.response?.data
-        });
-        return Promise.reject(error as Error);
+      (error: unknown) => {
+        if (axios.isAxiosError(error)) {
+          this.logger.error('Jules API Response Error', {
+            status: error.response?.status,
+            statusText: error.response?.statusText,
+            data: error.response?.data as unknown
+          });
+        } else {
+          this.logger.error('Jules API Response Unexpected Error', error);
+        }
+        return Promise.reject(error instanceof Error ? error : new Error(String(error)));
       }
     );
   }
@@ -300,8 +304,8 @@ export class JulesInvestigator {
       day: '2-digit'
     }).replace(/\//g, '-');
 
-    // ブランド情報の取得（ProductDetail型の場合）
-    const brand = 'brand' in product ? (product as any).brand : undefined;
+    // ブランド情報の取得
+    const brand = product.brand;
     const brandInfo = brand ? `- ブランド: ${brand}` : '';
     const parentAsinInfo = product.parentAsin ? `- 親ASIN: ${product.parentAsin}` : '';
 
@@ -614,14 +618,14 @@ Creators APIの features テキストとWeb調査を組み合わせて情報を�
   private handleApiError(error: unknown): JulesError {
     if (error instanceof AxiosError) {
       const status = error.response?.status;
-      const data = error.response?.data;
+      const data = error.response?.data as unknown;
 
       // レート制限エラー
       if (status === 429) {
         return {
           code: 'RATE_LIMIT_EXCEEDED',
           message: 'Jules API rate limit exceeded',
-          details: data,
+          details: data as Record<string, unknown>,
           retryable: true
         };
       }
@@ -631,7 +635,7 @@ Creators APIの features テキストとWeb調査を組み合わせて情報を�
         return {
           code: 'AUTHENTICATION_ERROR',
           message: 'Jules API authentication failed. Check your API key.',
-          details: data,
+          details: data as Record<string, unknown>,
           retryable: false
         };
       }
@@ -641,7 +645,7 @@ Creators APIの features テキストとWeb調査を組み合わせて情報を�
         return {
           code: 'SERVER_ERROR',
           message: 'Jules API server error',
-          details: data,
+          details: data as Record<string, unknown>,
           retryable: true
         };
       }
@@ -650,7 +654,7 @@ Creators APIの features テキストとWeb調査を組み合わせて情報を�
       return {
         code: 'HTTP_ERROR',
         message: `Jules API HTTP error: ${status}`,
-        details: data,
+        details: data as Record<string, unknown>,
         retryable: false
       };
     }

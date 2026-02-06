@@ -510,7 +510,7 @@ export class CreatorsAPIClient {
                   const retryAfter = error.response?.headers['retry-after'];
                   let waitTime: number;
 
-                  if (retryAfter) {
+                  if (retryAfter && typeof retryAfter === 'string') {
                     // Use Retry-After header if available (in seconds)
                     waitTime = parseInt(retryAfter, 10) * 1000;
                   } else {

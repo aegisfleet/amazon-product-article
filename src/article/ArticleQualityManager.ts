@@ -141,7 +141,8 @@ export class ArticleQualityManager {
 
         // 各スタイルルールを適用
         for (const rule of this.defaultStyleRules) {
-            if (rule.validator && !rule.validator(enforced)) {
+            const validator = rule.validator;
+            if (typeof validator === 'function' && !validator(enforced)) {
                 enforced = this.applyStyleFix(enforced, rule);
             }
         }
@@ -296,12 +297,13 @@ export class ArticleQualityManager {
         // セクションの順序チェック
         const sectionOrder = this.checkSectionOrder(sections);
         if (!sectionOrder.isCorrect) {
-            warnings.push({
+            const warningIssue: QualityIssue = {
                 type: 'warning',
                 category: 'structure',
                 message: 'セクションの順序が推奨順序と異なります',
                 suggestion: sectionOrder.suggestedOrder
-            });
+            };
+            warnings.push(warningIssue);
         }
 
         return { errors, warnings, suggestions };
