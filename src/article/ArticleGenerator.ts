@@ -388,12 +388,15 @@ export class ArticleGenerator {
       featured: this.shouldBeFeatured(product, investigation),
       mobileOptimized: true,
       seoKeywords,
-      affiliate_url: affiliateUrl,
-      is_prime: (product as any).isPrimeEligible, // Cast to any to access potentially missing property or fix type definition
-      availability: (product as any).availability,
-      ...(investigation.analysis.lastInvestigated && { lastInvestigated: investigation.analysis.lastInvestigated }),
-      ...(images.length > 0 && { images })
+      affiliate_url: affiliateUrl
     };
+
+    if (product.isPrimeEligible !== undefined) {
+      metadata.is_prime = product.isPrimeEligible;
+    }
+    if (product.availability !== undefined) {
+      metadata.availability = product.availability;
+    }
 
     if (subcategory) {
       metadata.subcategory = subcategory;
@@ -401,6 +404,13 @@ export class ArticleGenerator {
 
     if (manufacturer) {
       metadata.manufacturer = manufacturer;
+    }
+
+    if (investigation.analysis.lastInvestigated) {
+      metadata.lastInvestigated = investigation.analysis.lastInvestigated;
+    }
+    if (images.length > 0) {
+      metadata.images = images;
     }
 
     // 詳細スペック情報（technicalSpecs）があれば追加
@@ -524,7 +534,7 @@ export class ArticleGenerator {
 
 
     // 商品の特徴と使い方
-    sections.push(await this.generateFeaturesSection(product, investigation));
+    sections.push(this.generateFeaturesSection(product, investigation));
 
     // ユーザーレビュー
     sections.push(await this.generateUserReviewsSection(investigation, reviewAnalysis, template.sections.userReviews));
@@ -535,14 +545,14 @@ export class ArticleGenerator {
     }
 
     // 購入推奨度
-    sections.push(await this.generateRecommendationSection(investigation, template.sections.recommendation));
+    sections.push(this.generateRecommendationSection(investigation, template.sections.recommendation));
 
     // 商品詳細・購入（下部）
-    sections.push(await this.generatePurchaseSection(product, affiliateTag, investigation));
+    sections.push(this.generatePurchaseSection(product, affiliateTag, investigation));
 
     // 情報ソース（もしあれば）
     if (investigation.analysis.sources && investigation.analysis.sources.length > 0) {
-      const sourcesSection = await this.generateSourcesSection(investigation);
+      const sourcesSection = this.generateSourcesSection(investigation);
       if (sourcesSection) {
         sections.push(sourcesSection);
       }
@@ -554,11 +564,11 @@ export class ArticleGenerator {
   /**
    * 購入セクションを生成
    */
-  private async generatePurchaseSection(
+  private generatePurchaseSection(
     product: Product,
     affiliateTag: string,
     investigation: InvestigationResult
-  ): Promise<ArticleSection> {
+  ): ArticleSection {
     const affiliateLink = this.affiliateManager.generateLinkFromProduct(product);
     const affiliateUrl = affiliateLink.url;
 
@@ -627,7 +637,7 @@ ${infoRows.join('\n')}
    * 情報ソースセクションを生成
    * 意味のないソース（抽象的な名前）はフィルタリング、URLなしはプレーンテキスト
    */
-  private async generateSourcesSection(investigation: InvestigationResult): Promise<ArticleSection | null> {
+  private generateSourcesSection(investigation: InvestigationResult): ArticleSection | null {
     // 除外するソース名のリスト（意味のない抽象的なソース）
     const excludedPatterns = [
       'category analysis',
@@ -696,10 +706,10 @@ ${sourcesList}`;
   /**
    * 商品の特徴と使い方セクションを生成
    */
-  private async generateFeaturesSection(
+  private generateFeaturesSection(
     _product: Product,
     investigation: InvestigationResult
-  ): Promise<ArticleSection> {
+  ): ArticleSection {
     // 使用シーン
     const useCases = investigation.analysis.useCases
       .slice(0, 4)  // 上位4つに制限
@@ -1002,10 +1012,10 @@ ${investigation.analysis.recommendation.cons.map(con => `- ${con}`).join('\n')}
   /**
    * 推奨度セクションを生成
    */
-  private async generateRecommendationSection(
+  private generateRecommendationSection(
     investigation: InvestigationResult,
     template: TemplateSection
-  ): Promise<ArticleSection> {
+  ): ArticleSection {
     const targetUsers = investigation.analysis.recommendation.targetUsers
       .map(user => `- ${user}`)
       .join('\n');

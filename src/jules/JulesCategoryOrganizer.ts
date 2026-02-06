@@ -5,7 +5,7 @@
  * 適切な親カテゴリに分類するためのJulesセッションを作成する
  */
 
-import axios, { AxiosError, AxiosInstance } from 'axios';
+import axios, { AxiosInstance } from 'axios';
 import * as fs from 'fs';
 import * as path from 'path';
 import {
@@ -99,11 +99,15 @@ export class JulesCategoryOrganizer {
                 return response;
             },
             (error) => {
-                this.logger.error('Jules API Response Error', {
-                    status: error.response?.status,
-                    statusText: error.response?.statusText,
-                    data: error.response?.data
-                });
+                if (axios.isAxiosError(error)) {
+                    this.logger.error('Jules API Response Error', {
+                        status: error.response?.status,
+                        statusText: error.response?.statusText,
+                        data: error.response?.data
+                    });
+                } else {
+                    this.logger.error('Jules API Response Error (Non-Axios)', error);
+                }
                 return Promise.reject(error as Error);
             }
         );
@@ -340,7 +344,7 @@ ${unregisteredList}
      * APIエラーを処理
      */
     private handleApiError(error: unknown): JulesError {
-        if (error instanceof AxiosError) {
+        if (axios.isAxiosError(error)) {
             const status = error.response?.status;
             const data = error.response?.data;
 
