@@ -201,7 +201,9 @@ export class CategoryNormalizer {
             "ビューティーストア",
             "食品ストア",
             "飲料ストア",
-            "お酒ストア"
+            "お酒ストア",
+            "アクセサリ",
+            "アクセサリー"
         ];
 
         if (blockList.some(block => {

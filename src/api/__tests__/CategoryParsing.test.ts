@@ -28,7 +28,9 @@ describe('CreatorsAPIClient Category Parsing', () => {
             '子育て支援施設向けページ',
             'らくらくベビー Birth Day企画',
             'ベビー＆マタニティ',
-            'ホーム＆キッチン'
+            'ホーム＆キッチン',
+            'アクセサリ',
+            'アクセサリー'
         ];
 
         const validNames = [
