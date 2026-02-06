@@ -61,7 +61,7 @@ export class CategoryNormalizer {
         const invalidPatterns = [
             /Amazon/i,
             /Sale|Off|Coupon|Ranking|Best|Week|Fair|Event|Campaign/i,
-            /セール|オフ(?!ィス)|クーポン|ランキング|おすすめ|ウィーク|フェア|イベント|キャンペーン|ほか$|など$|新商品/,
+            /セール|オフ(?!ィス)|クーポン|ランキング|おすすめ|ウィーク|フェア|イベント|キャンペーン|ほか$|など$|新商品|すべて$/,
             /特集/,
             /新着/,
             /新規発売/,
@@ -138,6 +138,8 @@ export class CategoryNormalizer {
             "アウトドア用品",
             "スポーツ＆アウトドア",
             "Sports & Outdoors",
+            "日用品・生活必需品：おもちゃ",
+            "和書（アダルト除く）",
             "HPC_CreatorInfoHub",
             "Drugstore - AmazonGlobal",
             "PB_Home&Kitchen",
