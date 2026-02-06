@@ -30,7 +30,6 @@ export class CategoryNormalizer {
 
         while (currentNode) {
             const displayName = currentNode.displayName || currentNode.DisplayName;
-            const id = currentNode.id || currentNode.Id;
             const valid = CategoryNormalizer.isValidCategoryName(displayName);
 
 
