@@ -14,13 +14,15 @@ import {
   RateLimitConfig
 } from '../types/CreatorsAPITypes';
 import { Product, ProductDetail, ProductSearchParams, ProductSearchResult } from '../types/Product';
-import { CategoryNormalizer } from '../utils/CategoryNormalizer';
+import { BrowseNode, CategoryNormalizer } from '../utils/CategoryNormalizer';
 import { Logger } from '../utils/Logger';
 
 interface CreatorsAPIErrorData {
   errors?: Array<{ code: string; message: string }>;
   message?: string; // Some errors return message directly
   __type?: string;
+  type?: string;
+  resourceId?: string;
   [key: string]: unknown;
 }
 
@@ -104,7 +106,7 @@ export class CreatorsAPIClient {
       params.append('grant_type', 'client_credentials');
       params.append('scope', 'creatorsapi/default');
 
-      const response = await axios.post(this.OAUTH_TOKEN_URL, params.toString(), {
+      const response = await axios.post<{ access_token: string; expires_in: number }>(this.OAUTH_TOKEN_URL, params.toString(), {
         headers: {
           'Content-Type': 'application/x-www-form-urlencoded',
           'Authorization': authHeader
@@ -118,7 +120,7 @@ export class CreatorsAPIClient {
 
       this.logger.debug(`OAuth token obtained, expires in ${response.data.expires_in}s`);
 
-      return this.accessToken!;
+      return this.accessToken;
     } catch (error) {
       const msg = error instanceof Error ? error.message : String(error);
       this.logger.error(`Failed to get OAuth token: ${msg}`);
@@ -315,15 +317,15 @@ export class CreatorsAPIClient {
       if (notFoundAsins.length > 0) {
         this.logger.warn(`The following ASINs were not found: ${notFoundAsins.join(', ')}`);
       }
-    } catch (error: any) {
+    } catch (error: unknown) {
       const errorMessage = error instanceof Error ? error.message : String(error);
       this.logger.warn(`Batch request failed: ${errorMessage}`);
 
-      if (error.response?.data) {
+      if (axios.isAxiosError(error) && error.response?.data) {
         this.logger.error(`API Error Response: ${JSON.stringify(error.response.data, null, 2)}`);
 
         // Check if error indicates a specific ASIN is invalid
-        const errorData = error.response.data;
+        const errorData = error.response.data as CreatorsAPIErrorData;
         if (errorData.resourceId && errorData.type === 'ResourceNotFoundException') {
           // Specific ASIN not found - mark as permanent failure
           permanentFailures.add(errorData.resourceId);
@@ -406,7 +408,7 @@ export class CreatorsAPIClient {
           const detail = await this.getProductDetails(asin);
           result.set(asin, detail);
           this.logger.debug(`Successfully fetched ${asin}`);
-        } catch (error: any) {
+        } catch (error: unknown) {
           const errorMessage = error instanceof Error ? error.message : String(error);
 
           // Check if it's a permanent failure
@@ -641,11 +643,11 @@ export class CreatorsAPIClient {
   }
 
   // Helpers
-  private validateAuthentication() {
+  private validateAuthentication(): void {
     if (!this.credentials) throw new Error('Not authenticated');
   }
 
-  private sleep(ms: number) { return new Promise(r => setTimeout(r, ms)); }
+  private sleep(ms: number): Promise<void> { return new Promise(r => setTimeout(r, ms)); }
 
   // Mappers
   private mapCategoryToSearchIndex(cat: string): string {
@@ -705,7 +707,7 @@ export class CreatorsAPIClient {
 
 
     // We prioritize specific categories (deeper hierarchy) over generic ones, even if generic ones have better rank.
-    const sortedNodes = [...nodes].sort((a: any, b: any) => {
+    const sortedNodes = [...nodes].sort((a: BrowseNode, b: BrowseNode) => {
       const normA = CategoryNormalizer.normalize(a);
       const normB = CategoryNormalizer.normalize(b);
 
@@ -727,47 +729,59 @@ export class CreatorsAPIClient {
 
     // Pick the first valid category from the sorted list
     for (const node of sortedNodes) {
-      const normalized = CategoryNormalizer.normalize(node as any);
+      const normalized = CategoryNormalizer.normalize(node);
 
       if (normalized.main !== 'その他') {
         // Fallback: If sub is empty or '一般' (missing hierarchy), try to find another valid node in the list to use as sub
         if (!normalized.sub || normalized.sub === '一般') {
-          const subCandidate = sortedNodes.find((n: any) => {
+          const subCandidate = sortedNodes.find((n: BrowseNode) => {
             const sn = CategoryNormalizer.normalize(n);
             return sn.main !== 'その他' && sn.main !== normalized.main;
           });
 
           if (subCandidate) {
-            const subNorm = CategoryNormalizer.normalize(subCandidate as any);
+            const subNorm = CategoryNormalizer.normalize(subCandidate);
             normalized.sub = subNorm.main;
           } else {
             normalized.sub = '';
           }
         }
 
-        return {
+        const result: { category: string; categoryInfo: { main: string; sub: string; browseNodeId?: string } } = {
           category: normalized.main,
           categoryInfo: {
             main: normalized.main,
-            sub: normalized.sub,
-            browseNodeId: (node as any).id || (node as any).Id
+            sub: normalized.sub
           }
         };
+
+        const nodeId = node.id || node.Id;
+        if (nodeId) {
+          result.categoryInfo.browseNodeId = nodeId;
+        }
+
+        return result;
       }
     }
 
     // Fallback to the first node's result if no "valid" category found
     const bestNode = sortedNodes[0];
     if (bestNode) {
-      const normalized = CategoryNormalizer.normalize(bestNode as any);
-      return {
+      const normalized = CategoryNormalizer.normalize(bestNode);
+      const result: { category: string; categoryInfo: { main: string; sub: string; browseNodeId?: string } } = {
         category: normalized.main,
         categoryInfo: {
           main: normalized.main,
-          sub: normalized.sub,
-          browseNodeId: (bestNode as any).id || (bestNode as any).Id
+          sub: normalized.sub
         }
       };
+
+      const nodeId = bestNode.id || bestNode.Id;
+      if (nodeId) {
+        result.categoryInfo.browseNodeId = nodeId;
+      }
+
+      return result;
     }
 
     return defaultResult;

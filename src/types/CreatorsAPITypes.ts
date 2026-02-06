@@ -15,7 +15,7 @@ export interface CreatorsAPIRequest {
   partnerTag: string;
   marketplace: string;
   resources: string[];
-  [key: string]: any;
+  [key: string]: unknown;
 }
 
 export interface CreatorsAPIResponse {
@@ -29,10 +29,24 @@ export interface CreatorsAPIResponse {
   errors?: CreatorsAPIError[];
 }
 
+export interface CreatorsAPIBrowseNode {
+  id?: string;
+  Id?: string;
+  displayName?: string;
+  DisplayName?: string;
+  contextFreeName?: string;
+  isRoot?: boolean;
+  salesRank?: number;
+  SalesRank?: number;
+  ancestor?: CreatorsAPIBrowseNode;
+  Ancestor?: CreatorsAPIBrowseNode;
+}
+
 export interface CreatorsAPIItem {
   asin: string;
   detailPageURL: string;
   itemInfo?: {
+    // ... itemInfo fields ...
     title?: {
       displayValue: string;
     };
@@ -186,17 +200,10 @@ export interface CreatorsAPIItem {
     }>;
   };
   // Deprecated Offers for backward compatibility if needed, but likely unused
-  offers?: any;
+  offers?: unknown;
 
   browseNodeInfo?: {
-    browseNodes?: Array<{
-      id: string;
-      displayName: string;
-      contextFreeName: string;
-      isRoot?: boolean;
-      salesRank?: number;
-      ancestor?: any; // Recursive definition simplified
-    }>;
+    browseNodes?: CreatorsAPIBrowseNode[];
   };
   parentASIN?: string;
   customerReviews?: {
