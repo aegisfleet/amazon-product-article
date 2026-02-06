@@ -900,7 +900,7 @@ ${reviewAnalysis ? this.generateSentimentAnalysis(reviewAnalysis) : ''}`;
             internalLink = `<a href="../${competitor.asin.toLowerCase()}/" class="btn-internal-small">📄 サイト内レビュー</a>`;
             // 競合商品のスコアを取得
             try {
-              const competitorInvestigation = JSON.parse(fs.readFileSync(investigationPath, 'utf-8'));
+              const competitorInvestigation = JSON.parse(fs.readFileSync(investigationPath, 'utf-8')) as InvestigationResult;
               competitorScore = competitorInvestigation.analysis?.recommendation?.score;
             } catch {
               // スコア取得に失敗した場合は無視

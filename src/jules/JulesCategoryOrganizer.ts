@@ -84,9 +84,9 @@ export class JulesCategoryOrganizer {
                 });
                 return config;
             },
-            (error) => {
+            (error: unknown) => {
                 this.logger.error('Jules API Request Error', error);
-                return Promise.reject(error as Error);
+                return Promise.reject(error instanceof Error ? error : new Error(String(error)));
             }
         );
 
@@ -98,7 +98,7 @@ export class JulesCategoryOrganizer {
                 });
                 return response;
             },
-            (error) => {
+            (error: unknown) => {
                 if (axios.isAxiosError(error)) {
                     this.logger.error('Jules API Response Error', {
                         status: error.response?.status,
@@ -108,7 +108,7 @@ export class JulesCategoryOrganizer {
                 } else {
                     this.logger.error('Jules API Response Error (Non-Axios)', error);
                 }
-                return Promise.reject(error as Error);
+                return Promise.reject(error instanceof Error ? error : new Error(String(error)));
             }
         );
     }
