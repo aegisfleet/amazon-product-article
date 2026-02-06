@@ -1,10 +1,6 @@
-export interface BrowseNode {
-    id: string;
-    displayName: string;
-    contextFreeName?: string;
-    ancestor?: BrowseNode;
-    salesRank?: number;
-}
+import { CreatorsAPIBrowseNode } from '../types/CreatorsAPITypes';
+
+export type BrowseNode = CreatorsAPIBrowseNode;
 
 export interface NormalizedCategory {
     main: string;
@@ -26,11 +22,11 @@ export class CategoryNormalizer {
 
         // Collect all valid display names up the tree
         const validNames: string[] = [];
-        let currentNode: any = node;
+        let currentNode: BrowseNode | undefined = node;
 
         while (currentNode) {
             const displayName = currentNode.displayName || currentNode.DisplayName;
-            const valid = CategoryNormalizer.isValidCategoryName(displayName);
+            const valid = displayName ? CategoryNormalizer.isValidCategoryName(displayName) : false;
 
 
             if (displayName && valid) {
@@ -61,7 +57,7 @@ export class CategoryNormalizer {
         }
 
         // If no valid category found in the tree, fallback to Other
-        const fallbackName = (node as any).displayName || (node as any).DisplayName || 'Unknown';
+        const fallbackName = node.displayName || node.DisplayName || 'Unknown';
         return {
             main: 'その他',
             sub: CategoryNormalizer.sanitizeCategoryName(fallbackName),
