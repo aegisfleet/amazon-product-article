@@ -1,0 +1,42 @@
+name: Update Cache Order
+
+on:
+  schedule:
+    # Run daily at 19:00 JST (10:00 UTC)
+    - cron: '0 10 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update-cache:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v6
+    
+    - name: Use Node.js
+      uses: actions/setup-node@v6
+      with:
+        node-version: '20.x'
+        cache: 'npm'
+    
+    - name: Install dependencies
+      run: npm ci
+    
+    - name: Sort cache by status
+      run: npx ts-node scripts/sort-cache-by-status.ts
+      
+    - name: Commit sorted cache
+      run: |
+        git config --global user.name "github-actions[bot]"
+        git config --global user.email "github-actions[bot]@users.noreply.github.com"
+        git add data/cache/paapi-product-cache.json
+        # Only commit if there are changes (which there should be if the sort order changed)
+        if ! git diff --staged --quiet; then
+          git commit -m "chore: Sort product cache by status [skip ci]"
+          git push
+        else
+          echo "No changes to cache order."
+        fi
