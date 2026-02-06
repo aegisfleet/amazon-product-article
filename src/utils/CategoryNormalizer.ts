@@ -61,7 +61,7 @@ export class CategoryNormalizer {
         const invalidPatterns = [
             /Amazon/i,
             /Sale|Off|Coupon|Ranking|Best|Week|Fair|Event|Campaign/i,
-            /セール|オフ(?!ィス)|クーポン|ランキング|おすすめ|ウィーク|フェア|イベント|キャンペーン/,
+            /セール|オフ(?!ィス)|クーポン|ランキング|おすすめ|ウィーク|フェア|イベント|キャンペーン|ほか$|など$/,
             /特集/,
             /新着/,
             /新規発売/,
