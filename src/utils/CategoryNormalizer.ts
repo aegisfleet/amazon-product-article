@@ -72,6 +72,16 @@ export class CategoryNormalizer {
             /[【】|()_※]/
         ];
 
+        // Specific whitelist for valid multi-dot categories
+        const allowedMultiDot = [
+            "磁気・チタン・ゲルマニウムアクセサリー",
+            "周辺機器・アクセサリ",
+            "キーボード・マウス・入力機器"
+        ];
+        if (allowedMultiDot.some(allowed => name.includes(allowed))) {
+            return true;
+        }
+
         if (invalidPatterns.some(pattern => {
             if (pattern.test(name)) {
                 // console.log(`Category rejected by pattern ${pattern}: ${name}`);
