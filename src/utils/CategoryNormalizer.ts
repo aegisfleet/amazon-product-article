@@ -47,7 +47,8 @@ export class CategoryNormalizer {
                 'ボードゲーム', 'アナログゲーム', 'カードゲーム',
                 'おもちゃ', 'ホビー', 'フィギュア', 'プラモデル',
                 'ゲーム', 'Video Games', 'Toys', 'Child Seat', 'Child Safety Seat',
-                'チャイルドシート', 'ジュニアシート', 'ベビーカー', '抱っこ紐'
+                'チャイルドシート', 'ジュニアシート', 'ベビーカー', '抱っこ紐',
+                'おむつ', '紙おむつ', 'ベビーおむつ'
             ];
 
             if (preferredKeywords.some(k => main.includes(k) || sub.includes(k))) {
@@ -156,7 +157,8 @@ export class CategoryNormalizer {
             "yobi",
             "P&G",
             "定期おトク便",
-            "Diapers",
+            "介護用品・生理用品",
+            "花王",
             "Panasonic-HA-PersonalCare",
             "Panasonic-HA-HotAirStylers",
             "Panasonic-HA-HairDryers",
@@ -203,7 +205,10 @@ export class CategoryNormalizer {
             "飲料ストア",
             "お酒ストア",
             "アクセサリ",
-            "アクセサリー"
+            "アクセサリー",
+            "介護用品・生理用品",
+            "花王",
+            "Diapers"
         ];
 
         if (blockList.some(block => {
