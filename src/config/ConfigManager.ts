@@ -82,7 +82,7 @@ export class ConfigManager {
     this.logger.info('Initializing configuration manager');
 
     try {
-      this.config = await this.loadConfiguration();
+      this.config = this.loadConfiguration();
       this.validateConfiguration(this.config);
       this.logger.info('Configuration loaded and validated successfully');
     } catch (error) {
