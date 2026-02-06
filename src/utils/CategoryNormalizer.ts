@@ -76,7 +76,8 @@ export class CategoryNormalizer {
         const allowedMultiDot = [
             "磁気・チタン・ゲルマニウムアクセサリー",
             "周辺機器・アクセサリ",
-            "キーボード・マウス・入力機器"
+            "キーボード・マウス・入力機器",
+            "体重・体脂肪・体組成計"
         ];
         if (allowedMultiDot.some(allowed => name.includes(allowed))) {
             return true;
@@ -85,6 +86,7 @@ export class CategoryNormalizer {
         if (invalidPatterns.some(pattern => {
             if (pattern.test(name)) {
                 // console.log(`Category rejected by pattern ${pattern}: ${name}`);
+                // require('fs').appendFileSync('debug_rejections.log', `[PATTERN] ${name} matched ${pattern}\n`);
                 return true;
             }
             return false;
@@ -172,6 +174,7 @@ export class CategoryNormalizer {
         if (blockList.some(block => {
             if (name.toLowerCase().includes(block.toLowerCase())) {
                 // console.log(`Category rejected by blocklist '${block}': ${name}`);
+                // require('fs').appendFileSync('debug_rejections.log', `[BLOCKLIST] ${name} matched ${block}\n`);
                 return true;
             }
             return false;
