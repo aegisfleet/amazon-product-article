@@ -30,7 +30,10 @@ describe('CreatorsAPIClient Category Parsing', () => {
             'ベビー＆マタニティ',
             'ホーム＆キッチン',
             'アクセサリ',
-            'アクセサリー'
+            'アクセサリー',
+            '介護用品・生理用品',
+            '花王',
+            'Diapers'
         ];
 
         const validNames = [
@@ -184,6 +187,21 @@ describe('CreatorsAPIClient Category Parsing', () => {
             // "ベビー＆マタニティ" is blocked, so "チャイルドシート" (ancestor) becomes the leaf of the path.
             expect(result.category).toBe('チャイルドシート');
             expect(result.categoryInfo.main).toBe('チャイルドシート');
+        });
+
+        test('should prioritize "おむつ" over generic categories', () => {
+            const item: Partial<CreatorsAPIItem> = {
+                browseNodeInfo: {
+                    browseNodes: [
+                        { id: '1', displayName: '介護用品・生理用品', contextFreeName: 'Health' },
+                        { id: '2', displayName: 'おむつ', contextFreeName: 'Diapers' }
+                    ]
+                }
+            };
+
+            const result = clientAny.extractCategoryInfo(item as CreatorsAPIItem);
+            // "介護用品・生理用品" is blocked, so only "おむつ" remains.
+            expect(result.category).toBe('おむつ');
         });
     });
 });
