@@ -136,6 +136,8 @@ export class CategoryNormalizer {
             "パナソニック ヘアードライヤー",
             "おうちでヘアケア",
             "アウトドア用品",
+            "スポーツ＆アウトドア",
+            "Sports & Outdoors",
             "HPC_CreatorInfoHub",
             "Drugstore - AmazonGlobal",
             "PB_Home&Kitchen",
