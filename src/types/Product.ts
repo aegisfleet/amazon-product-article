@@ -33,6 +33,8 @@ export interface Product {
     average: number;
     count: number;
   };
+  isPrimeEligible?: boolean;
+  availability?: string;
 }
 
 export interface ProductDetail extends Product {
