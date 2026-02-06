@@ -10,6 +10,7 @@ export interface NormalizedCategory {
     main: string;
     sub: string;
     nameCount: number;
+    score: number;
 }
 
 export class CategoryNormalizer {
@@ -19,8 +20,9 @@ export class CategoryNormalizer {
      */
     public static normalize(node?: BrowseNode): NormalizedCategory {
         if (!node) {
-            return { main: 'その他', sub: 'Unknown', nameCount: 0 };
+            return { main: 'その他', sub: 'Unknown', nameCount: 0, score: -1 };
         }
+
 
         // Collect all valid display names up the tree
         const validNames: string[] = [];
@@ -28,7 +30,11 @@ export class CategoryNormalizer {
 
         while (currentNode) {
             const displayName = currentNode.displayName || currentNode.DisplayName;
-            if (displayName && CategoryNormalizer.isValidCategoryName(displayName)) {
+            const id = currentNode.id || currentNode.Id;
+            const valid = CategoryNormalizer.isValidCategoryName(displayName);
+
+
+            if (displayName && valid) {
                 validNames.push(CategoryNormalizer.sanitizeCategoryName(displayName));
             }
             currentNode = currentNode.ancestor || currentNode.Ancestor;
@@ -40,7 +46,19 @@ export class CategoryNormalizer {
             const main = validNames[0]!;
             const sub = validNames.length > 1 ? validNames[1]! : '';
 
-            return { main, sub, nameCount: validNames.length };
+            // Calculate score based on preferred keywords
+            let score = 0;
+            const preferredKeywords = [
+                'ボードゲーム', 'アナログゲーム', 'カードゲーム',
+                'おもちゃ', 'ホビー', 'フィギュア', 'プラモデル',
+                'ゲーム', 'Video Games', 'Toys'
+            ];
+
+            if (preferredKeywords.some(k => main.includes(k) || sub.includes(k))) {
+                score = 10;
+            }
+
+            return { main, sub, nameCount: validNames.length, score };
         }
 
         // If no valid category found in the tree, fallback to Other
@@ -48,7 +66,8 @@ export class CategoryNormalizer {
         return {
             main: 'その他',
             sub: CategoryNormalizer.sanitizeCategoryName(fallbackName),
-            nameCount: 0
+            nameCount: 0,
+            score: -1
         };
     }
 

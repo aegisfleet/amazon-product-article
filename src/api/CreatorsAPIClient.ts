@@ -709,6 +709,11 @@ export class CreatorsAPIClient {
       const normA = CategoryNormalizer.normalize(a);
       const normB = CategoryNormalizer.normalize(b);
 
+      // 0. Priority Score Descending (Preferred categories first)
+      if (normA.score !== normB.score) {
+        return normB.score - normA.score;
+      }
+
       // 1. Depth Descending (More specific is better)
       if (normA.nameCount !== normB.nameCount) {
         return normB.nameCount - normA.nameCount;
