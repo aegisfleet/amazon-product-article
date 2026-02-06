@@ -139,7 +139,6 @@ export class CreatorsAPIClient {
 
     for (let page = 1; page <= totalPagesNeeded; page++) {
       const remainingResults = params.maxResults - allProducts.length;
-      if (remainingResults <= 0) break;
 
       const itemCount = Math.min(remainingResults, maxResultsPerPage);
 
@@ -703,6 +702,7 @@ export class CreatorsAPIClient {
     };
 
     const nodes = item.browseNodeInfo?.browseNodes || [];
+
 
     // We prioritize specific categories (deeper hierarchy) over generic ones, even if generic ones have better rank.
     const sortedNodes = [...nodes].sort((a: any, b: any) => {
