@@ -35,6 +35,7 @@ export interface Product {
   };
   isPrimeEligible?: boolean;
   availability?: string;
+  brand?: string;
 }
 
 export interface ProductDetail extends Product {

@@ -129,7 +129,7 @@ export class SiteNavigationManager {
     /**
      * ナビゲーションメニューを更新
      */
-    async updateNavigationMenu(newArticle: ArticleMetadata): Promise<NavigationMenuItem[]> {
+    updateNavigationMenu(newArticle: ArticleMetadata): NavigationMenuItem[] {
         this.logger.info(`Updating navigation menu for article: ${newArticle.title}`);
 
         // 記事リストに追加
@@ -147,7 +147,7 @@ export class SiteNavigationManager {
     /**
      * サイトマップを生成
      */
-    async generateSitemap(): Promise<string> {
+    generateSitemap(): string {
         this.logger.info('Generating sitemap');
 
         const baseUrl = 'https://example.github.io/amazon-product-article';

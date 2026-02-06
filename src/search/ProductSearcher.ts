@@ -8,6 +8,7 @@ import fs from 'fs/promises';
 import path from 'path';
 import { CreatorsAPIClient } from '../api/CreatorsAPIClient';
 import { ConfigManager } from '../config/ConfigManager';
+import { InvestigationResult } from '../types/JulesTypes';
 import {
   Product,
   ProductSearchParams,
@@ -274,7 +275,7 @@ export class ProductSearcher {
       if (sessionId) {
         const filePath = path.join(categoryDir, `${sessionId}.json`);
         const data = await fs.readFile(filePath, 'utf-8');
-        const result: ProductSearchResult = JSON.parse(data);
+        const result = JSON.parse(data) as ProductSearchResult;
         return result.products;
       }
 
@@ -288,11 +289,11 @@ export class ProductSearcher {
 
       const latestFile = path.join(categoryDir, jsonFiles[0]!);
       const data = await fs.readFile(latestFile, 'utf-8');
-      const result: ProductSearchResult = JSON.parse(data);
+      const result = JSON.parse(data) as ProductSearchResult;
       return result.products;
 
-    } catch (error) {
-      this.logger.warn(`Failed to load stored products for ${categoryName}:`, error);
+    } catch (error: unknown) {
+      this.logger.warn(`Failed to load stored products for ${categoryName}:`, error instanceof Error ? error.message : String(error));
       return [];
     }
   }
@@ -357,7 +358,7 @@ export class ProductSearcher {
       for (const sessionFile of sessions) {
         const sessionPath = path.join(sessionsDir, sessionFile);
         const data = await fs.readFile(sessionPath, 'utf-8');
-        const session: SearchSession = JSON.parse(data);
+        const session = JSON.parse(data) as SearchSession;
 
         totalProducts += session.totalProducts;
 
@@ -378,8 +379,8 @@ export class ProductSearcher {
         ...(lastSearchDate && { lastSearchDate })
       };
 
-    } catch (error) {
-      this.logger.warn('Failed to get search statistics:', error);
+    } catch (error: unknown) {
+      this.logger.warn('Failed to get search statistics:', error instanceof Error ? error.message : String(error));
       return {
         totalSessions: 0,
         totalProducts: 0,
@@ -1028,7 +1029,7 @@ export class ProductSearcher {
         const filePath = path.join(investigationsDir, file);
         try {
           const content = await fs.readFile(filePath, 'utf-8');
-          const data = JSON.parse(content);
+          const data = JSON.parse(content) as InvestigationResult;
 
           if (data.analysis) {
             if (data.analysis.parentAsin) {
@@ -1053,10 +1054,12 @@ export class ProductSearcher {
   /**
    * Shuffle an array in place
    */
-  private shuffleArray(array: any[]): void {
+  private shuffleArray(array: unknown[]): void {
     for (let i = array.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
-      [array[i], array[j]] = [array[j], array[i]];
+      const temp = array[i];
+      array[i] = array[j];
+      array[j] = temp;
     }
   }
 
