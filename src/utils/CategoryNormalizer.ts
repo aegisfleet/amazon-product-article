@@ -46,7 +46,8 @@ export class CategoryNormalizer {
             const preferredKeywords = [
                 'ボードゲーム', 'アナログゲーム', 'カードゲーム',
                 'おもちゃ', 'ホビー', 'フィギュア', 'プラモデル',
-                'ゲーム', 'Video Games', 'Toys'
+                'ゲーム', 'Video Games', 'Toys', 'Child Seat', 'Child Safety Seat',
+                'チャイルドシート', 'ジュニアシート', 'ベビーカー', '抱っこ紐'
             ];
 
             if (preferredKeywords.some(k => main.includes(k) || sub.includes(k))) {
@@ -75,7 +76,7 @@ export class CategoryNormalizer {
         const invalidPatterns = [
             /Amazon/i,
             /Sale|Off|Coupon|Ranking|Best|Week|Fair|Event|Campaign/i,
-            /セール|オフ(?!ィス)|クーポン|ランキング|おすすめ|ウィーク|フェア|イベント|キャンペーン|ほか$|など$|新商品|すべて$|・.*・|特設ページ|発売日お届け|父の日|割引|利用シーン|あわせ買い|全商品$|関連製品$|新製品$/,
+            /セール|オフ(?!ィス)|クーポン|ランキング|おすすめ|ウィーク|フェア|イベント|キャンペーン|企画|向けページ|ほか$|など$|新商品|すべて$|・.*・|特設ページ|発売日お届け|父の日|割引|利用シーン|あわせ買い|全商品$|関連製品$|新製品$/,
             /特集/,
             /新着/,
             /新規発売/,
@@ -190,7 +191,17 @@ export class CategoryNormalizer {
             "面出し用ASIN",
             "Internal",
             "サンワサプライ",
-            "PB_PC"
+            "PB_PC",
+            "ベビー＆マタニティ",
+            "ホーム＆キッチン",
+            "食品・飲料・お酒",
+            "服＆ファッション小物",
+            "ドラッグストアストア",
+            "Beauty Store",
+            "ビューティーストア",
+            "食品ストア",
+            "飲料ストア",
+            "お酒ストア"
         ];
 
         if (blockList.some(block => {

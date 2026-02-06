@@ -24,7 +24,11 @@ describe('CreatorsAPIClient Category Parsing', () => {
             '【New】Item',
             'Testing | Pipe',
             'Category_with_underscore',
-            '※Note'
+            '※Note',
+            '子育て支援施設向けページ',
+            'らくらくベビー Birth Day企画',
+            'ベビー＆マタニティ',
+            'ホーム＆キッチン'
         ];
 
         const validNames = [
@@ -146,10 +150,38 @@ describe('CreatorsAPIClient Category Parsing', () => {
             expect(result.category).toBe('その他');
         });
 
-        test('should handle missing browseNodes', () => {
-            const item: Partial<CreatorsAPIItem> = {};
+        test('should prioritize preferred categories (e.g. Child Seat)', () => {
+            const item: Partial<CreatorsAPIItem> = {
+                browseNodeInfo: {
+                    browseNodes: [
+                        { id: '1', displayName: 'Kitchen', contextFreeName: 'Kitchen' },
+                        { id: '2', displayName: 'チャイルドシート', contextFreeName: 'ChildSeat' }
+                    ]
+                }
+            };
+
             const result = clientAny.extractCategoryInfo(item as CreatorsAPIItem);
-            expect(result.category).toBe('その他');
+            expect(result.category).toBe('チャイルドシート');
+        });
+
+        test('should skip blocked top-level category and use more specific parent', () => {
+            const item: Partial<CreatorsAPIItem> = {
+                browseNodeInfo: {
+                    browseNodes: [
+                        {
+                            id: '2',
+                            displayName: 'ベビー＆マタニティ', // Blocked leaf
+                            contextFreeName: 'Baby',
+                            ancestor: { id: '1', displayName: 'チャイルドシート', contextFreeName: 'ChildSeat' }
+                        }
+                    ]
+                }
+            };
+
+            const result = clientAny.extractCategoryInfo(item as CreatorsAPIItem);
+            // "ベビー＆マタニティ" is blocked, so "チャイルドシート" (ancestor) becomes the leaf of the path.
+            expect(result.category).toBe('チャイルドシート');
+            expect(result.categoryInfo.main).toBe('チャイルドシート');
         });
     });
 });
