@@ -89,7 +89,10 @@ export class CategoryNormalizer {
             /smartphones/i,
             /^All /i,
             /^Prime /i,
-            /[【】|()_※]/
+            /[【】|()_※]/,
+            /^家電$/,
+            /^アクセサリ$/,
+            /^アクセサリー$/
         ];
 
         // Specific whitelist for valid multi-dot categories
@@ -183,7 +186,6 @@ export class CategoryNormalizer {
             "HPC_CreatorInfoHub",
             "Drugstore - AmazonGlobal",
             "PB_Home&Kitchen",
-            "家電",
             "新生活ギフト",
             "YA-MAN",
             "others",
@@ -198,14 +200,7 @@ export class CategoryNormalizer {
             "ホーム＆キッチン",
             "食品・飲料・お酒",
             "服＆ファッション小物",
-            "ドラッグストアストア",
             "Beauty Store",
-            "ビューティーストア",
-            "食品ストア",
-            "飲料ストア",
-            "お酒ストア",
-            "アクセサリ",
-            "アクセサリー",
             "介護用品・生理用品",
             "花王",
             "Diapers",
