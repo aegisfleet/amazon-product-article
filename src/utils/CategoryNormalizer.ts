@@ -28,7 +28,6 @@ export class CategoryNormalizer {
             const displayName = currentNode.displayName || currentNode.DisplayName;
             const valid = displayName ? CategoryNormalizer.isValidCategoryName(displayName) : false;
 
-
             if (displayName && valid) {
                 validNames.push(CategoryNormalizer.sanitizeCategoryName(displayName));
             }
@@ -48,10 +47,11 @@ export class CategoryNormalizer {
                 'おもちゃ', 'ホビー', 'フィギュア', 'プラモデル',
                 '画材', '文房具', '絵具', 'オフィス用品',
                 'チャイルドシート', 'ジュニアシート', 'ベビーカー', '抱っこ紐',
-                'おむつ', '紙おむつ', 'ベビーおむつ'
+                'おむつ', '紙おむつ', 'ベビーおむつ',
+                'Kindle', 'Fire', 'Echo', 'Alexa', 'Ring', 'Amazonデバイス'
             ];
 
-            if (preferredKeywords.some(k => main.includes(k) || sub.includes(k))) {
+            if (preferredKeywords.some(k => main.toLowerCase().includes(k.toLowerCase()) || sub.toLowerCase().includes(k.toLowerCase()))) {
                 score = 10;
             }
 
@@ -75,7 +75,6 @@ export class CategoryNormalizer {
         if (!name) return false;
 
         const invalidPatterns = [
-            /Amazon/i,
             /Sale|Off|Coupon|Ranking|Best|Week|Fair|Event|Campaign/i,
             /セール|オフ(?!ィス)|クーポン|ランキング|おすすめ|ウィーク|フェア|イベント|キャンペーン|企画|向け|ほか$|など$|新商品|すべて$|・.*・|特設ページ|発売日お届け|父の日|割引|お買い得|利用シーン|あわせ買い|全商品$|関連製品$|新製品$/,
             /特集/,
@@ -208,7 +207,10 @@ export class CategoryNormalizer {
             "Diapers",
             "シャープ",
             "Special Features Stores",
-            "Self Service"
+            "Self Service",
+            "Amazon Global",
+            "Amazon Basics",
+            "Amazon Store"
         ];
 
         if (blockList.some(block => {
