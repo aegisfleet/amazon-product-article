@@ -58,48 +58,48 @@
         "credibility": "高（一般的なPC市場の動向と商品カテゴリの知見に基づく分析）"
       }
     ],
-    "lastInvestigated": "2026-01-09",
+    "lastInvestigated": "2026-02-08",
     "competitiveAnalysis": [
       {
-        "name": "Dell XPS 13",
-        "asin": null,
-        "priceComparison": "同程度の性能構成であれば、MacBook Airよりわずかに安価な場合が多い。",
+        "name": "Dell XPS 13 (9340)",
+        "asin": "B0CY5G1TY8",
+        "priceComparison": "同程度のスペック構成ではMacBook Airに近い価格帯だが、時折セールで安くなることがある。",
         "featureComparison": [
-          "Windows OSを搭載し、幅広いソフトウェア互換性を持つ。",
-          "オプションでOLEDディスプレイを選択でき、より高いコントラストを実現。",
-          "ポート数が多く、SDカードリーダーを搭載するモデルもある。"
+          "Windows 11 Home搭載",
+          "Core Ultra 7 155Hプロセッサによる高いAI性能",
+          "OLEDディスプレイオプションあり"
         ],
         "differentiators": [
-          "OS（macOS vs Windows）の操作性やエコシステムの違い。",
-          "MacBook AirのMシリーズチップによる電力効率とパフォーマンスの最適化。"
+          "極薄ベゼルのInfinityEdgeディスプレイ",
+          "シームレスなガラス製タッチパッドと機能キー"
         ]
       },
       {
-        "name": "HP Spectre x360 14",
-        "asin": null,
-        "priceComparison": "MacBook Airと同等か、やや高価な価格帯。",
+        "name": "HP Spectre x360 14 (2024)",
+        "asin": "B0FL7634MW",
+        "priceComparison": "MacBook Airより高価な場合が多いが、2-in-1機能が含まれる。",
         "featureComparison": [
-          "360度回転するヒンジにより、タブレットとしても使用可能な2-in-1デザイン。",
-          "多くの場合、MacBook Airよりも多くのポートを搭載している。",
-          "アクティブペンが付属し、手書き入力に対応。"
+          "360度回転ヒンジでタブレットモードに変形可能",
+          "9MPの高解像度Webカメラ",
+          "タッチパネルとスタイラスペン標準対応"
         ],
         "differentiators": [
-          "2-in-1デザインによる多様な利用シーンへの対応力。",
-          "デザインの美学とブランドイメージの違い。"
+          "多様な使用モード（テント、スタンド、タブレット）",
+          "プライバシーカメラシャッターなどの物理セキュリティ機能"
         ]
       },
       {
-        "name": "Microsoft Surface Laptop 5",
-        "asin": null,
-        "priceComparison": "MacBook Airと同等の価格帯。",
+        "name": "Microsoft Surface Laptop 7 (13.8 inch)",
+        "asin": "B0DPJR9JHT",
+        "priceComparison": "MacBook Airとほぼ同価格帯で競合。",
         "featureComparison": [
-          "Windows OSとMicrosoft 365の親和性が非常に高い。",
-          "タッチスクリーンとSurface Penに対応（ペンは別売）。",
-          "Alcantara素材のパームレストなど、ユニークなデザイン選択肢。"
+          "Snapdragon X Elite/Plus搭載によるARMベースのWindows体験",
+          "タッチスクリーン対応PixelSenseディスプレイ",
+          "AI機能（Copilot+ PC）に特化した設計"
         ],
         "differentiators": [
-          "ハードウェアとソフトウェア（Windows）を同じ会社が開発していることによる高い統合性。",
-          "PixelSenseディスプレイによるアスペクト比の違い（3:2）。"
+          "Microsoft純正のハードウェアとソフトウェア統合",
+          "交換可能なSSDなど、メンテナンス性の向上"
         ]
       }
     ],
@@ -124,36 +124,38 @@
       "scoreRationale": "[基本点: 70]\n[加点: +10] (M4チップによる圧倒的な性能と電力効率)\n[加点: +10] (Apple Intelligenceという先進的なAI機能の搭載)\n[加点: +5] (業界最高水準のビルドクオリティとデザイン)\n[減点: -3] (限定的なポートによる拡張性の低さ)\n[減点: -3] (競合製品と比較した場合のコストパフォーマンス)\n[合計: 89]"
     },
     "technicalSpecs": {
-      "cpu": "Apple M4 (10コアCPU)",
+      "cpu": "Apple M4 (8コアCPU / 10コアGPU)",
       "ram": "16GB ユニファイドメモリ",
       "storage": "256GB SSD",
       "display": {
         "size": "13.6インチ",
-        "resolution": null,
-        "type": "Liquid Retina"
+        "resolution": "2560 x 1664",
+        "type": "Liquid Retina display"
       },
       "battery": {
-        "capacity": "最大18時間駆動",
-        "charging": "MagSafe充電ポート"
+        "capacity": "52.6Wh (最大18時間駆動)",
+        "charging": "30W USB-C電源アダプタ (MagSafe 3対応)"
       },
-      "gpu": "Apple M4 (8コアGPU)",
+      "gpu": "Apple M4 (10コアGPU)",
       "camera": {
         "main": "12MP センターフレームカメラ"
       },
       "dimensions": {
-        "height": null,
-        "width": null,
-        "depth": null,
-        "weight": "1.24 kg"
+        "height": "11.3mm",
+        "width": "304.1mm",
+        "depth": "215mm",
+        "weight": "1.24kg"
       },
       "connectivity": [
-        "Thunderbolt 4 x 2",
-        "ヘッドフォンジャック",
-        "Wi-Fi 6E",
-        "Bluetooth 5.3"
+        "Wi-Fi 6E (802.11ax)",
+        "Bluetooth 5.3",
+        "MagSafe 3充電ポート",
+        "Thunderbolt / USB 4ポート x 2",
+        "3.5mmヘッドフォンジャック"
       ],
       "other": [
-        "空間オーディオ対応4スピーカー",
+        "Touch ID",
+        "空間オーディオ対応4スピーカーサウンドシステム",
         "3マイクアレイ"
       ]
     }
