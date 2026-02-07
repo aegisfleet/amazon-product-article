@@ -5,7 +5,7 @@ import { CreatorsAPIBrowseNode } from '../src/types/CreatorsAPITypes';
 import { CategoryNormalizer } from '../src/utils/CategoryNormalizer';
 
 // Read the debug output from the current directory
-const debugOutputPath = path.resolve('debug_output.json');
+const debugOutputPath = path.resolve('tmp', 'debug_output.json');
 
 try {
     const debugOutput = JSON.parse(fs.readFileSync(debugOutputPath, 'utf8'));

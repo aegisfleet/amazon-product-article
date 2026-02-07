@@ -148,7 +148,10 @@ export class CreatorsAPIClient {
       const resources = [
         'images.primary.large',
         'images.primary.medium',
+        'images.primary.small',
         'images.variants.large',
+        'images.variants.medium',
+        'images.variants.small',
         'itemInfo.title',
         'itemInfo.features',
         'itemInfo.productInfo', // for color, size
@@ -223,8 +226,11 @@ export class CreatorsAPIClient {
       itemIdType: 'ASIN',
       resources: [
         'images.primary.small',
+        'images.primary.medium',
         'images.primary.large',
+        'images.variants.small',
         'images.variants.medium',
+        'images.variants.large',
         'itemInfo.title',
         'itemInfo.features',
         'itemInfo.productInfo',
@@ -275,9 +281,9 @@ export class CreatorsAPIClient {
       itemIds: validAsins,
       itemIdType: 'ASIN',
       resources: [
-        'images.primary.large',
-        'images.primary.medium',
-        'images.variants.large',
+        'Images.Primary.Large',
+        'Images.Primary.Medium',
+        'Images.Variants.Large',
         'itemInfo.title',
         'itemInfo.features',
         'itemInfo.manufactureInfo',
@@ -637,6 +643,7 @@ export class CreatorsAPIClient {
   }
 
   private extractImages(item: CreatorsAPIItem): Product['images'] {
+
     const primary = item.images?.primary?.large?.url || item.images?.primary?.medium?.url || '';
     const thumbnails = item.images?.variants?.map(v => v.large?.url).filter((u): u is string => !!u) || [];
     return { primary, thumbnails };
