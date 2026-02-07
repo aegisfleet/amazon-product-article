@@ -16,15 +16,18 @@ try {
         browseNodes.push(...debugOutput.itemsResult.items[0].browseNodeInfo.browseNodes);
     }
 
-    console.log(`Found ${browseNodes.length} browse nodes.`);
+    let output = `Found ${browseNodes.length} browse nodes.\n`;
 
     browseNodes.forEach((node, index) => {
-        console.log(`\n--- Node ${index} ---`);
-        console.log(`Input: ${node.displayName} (ID: ${node.id})`);
+        output += `\n--- Node ${index} ---\n`;
+        output += `Input: ${node.displayName} (ID: ${node.id})\n`;
 
         const normalized = CategoryNormalizer.normalize(node);
-        console.log(`Normalized: Main="${normalized.main}", Sub="${normalized.sub}", Score=${normalized.score}`);
+        output += `Normalized: Main="${normalized.main}", Sub="${normalized.sub}", Score=${normalized.score}\n`;
     });
+
+    fs.writeFileSync('tmp/normalization_results.txt', output, 'utf8');
+    console.log('Results written to tmp/normalization_results.txt');
 } catch (error) {
     console.error(`Error reading debug output file at ${debugOutputPath}: ${error}`);
 }
