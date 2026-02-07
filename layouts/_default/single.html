@@ -63,7 +63,8 @@
                     <a href="{{ .RelPermalink }}" class="pickup-card">
                         <div class="pickup-card-image">
                             {{ if .Params.images }}
-                            <img src="{{ index .Params.images 0 }}" alt="{{ .Title }}" loading="lazy">
+                            <img src="{{ index .Params.images 0 }}" alt="{{ .Title }}" loading="lazy"
+                                onerror="this.onerror=null;this.src='https://placehold.jp/ffffff/000000/300x300.png?text=No%20Image';">
                             {{ else }}
                             <div class="pickup-card-noimage">画像なし</div>
                             {{ end }}
@@ -183,7 +184,8 @@
             <a href="{{ .RelPermalink }}" class="pickup-card">
                 <div class="pickup-card-image">
                     {{ if .Params.images }}
-                    <img src="{{ index .Params.images 0 }}" alt="{{ .Title }}" loading="lazy">
+                    <img src="{{ index .Params.images 0 }}" alt="{{ .Title }}" loading="lazy"
+                        onerror="this.onerror=null;this.src='https://placehold.jp/ffffff/000000/300x300.png?text=No%20Image';">
                     {{ else }}
                     <div class="pickup-card-noimage">画像なし</div>
                     {{ end }}
@@ -234,7 +236,8 @@
             <a href="{{ .RelPermalink }}" class="pickup-card">
                 <div class="pickup-card-image">
                     {{ if .Params.images }}
-                    <img src="{{ index .Params.images 0 }}" alt="{{ .Title }}" loading="lazy">
+                    <img src="{{ index .Params.images 0 }}" alt="{{ .Title }}" loading="lazy"
+                        onerror="this.onerror=null;this.src='https://placehold.jp/ffffff/000000/300x300.png?text=No%20Image';">
                     {{ else }}
                     <div class="pickup-card-noimage">画像なし</div>
                     {{ end }}
