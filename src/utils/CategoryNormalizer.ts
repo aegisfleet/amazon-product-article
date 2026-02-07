@@ -69,6 +69,74 @@ export class CategoryNormalizer {
     }
 
     /**
+     * Select the best category from a list of BrowseNodes
+     * Prioritizes specific categories (depth) and preferred keywords
+     */
+    public static selectBestCategory(nodes: BrowseNode[]): NormalizedCategory & { browseNodeId?: string } {
+        if (!nodes || nodes.length === 0) {
+            return { main: 'その他', sub: 'Unknown', nameCount: 0, score: -1 };
+        }
+
+        // 1. Normalize and Sort nodes
+        const sortedNodes = [...nodes].sort((a: BrowseNode, b: BrowseNode) => {
+            const normA = CategoryNormalizer.normalize(a);
+            const normB = CategoryNormalizer.normalize(b);
+
+            // Priority 0: Score (Preferred keywords)
+            if (normA.score !== normB.score) {
+                return normB.score - normA.score;
+            }
+
+            // Priority 1: Depth (Specificity)
+            if (normA.nameCount !== normB.nameCount) {
+                return normB.nameCount - normA.nameCount;
+            }
+
+            // Priority 2: SalesRank (Lower is better)
+            const rankA = a.salesRank ?? a.SalesRank ?? Number.MAX_SAFE_INTEGER;
+            const rankB = b.salesRank ?? b.SalesRank ?? Number.MAX_SAFE_INTEGER;
+            return rankA - rankB;
+        });
+
+        // 2. Pick the first valid category
+        for (const node of sortedNodes) {
+            const normalized = CategoryNormalizer.normalize(node);
+
+            if (normalized.main !== 'その他') {
+                // Handle sub-category fallback if empty or too generic
+                if (!normalized.sub || normalized.sub === '一般') {
+                    const subCandidate = sortedNodes.find((n: BrowseNode) => {
+                        const sn = CategoryNormalizer.normalize(n);
+                        return sn.main !== 'その他' && sn.main !== normalized.main;
+                    });
+
+                    if (subCandidate) {
+                        normalized.sub = CategoryNormalizer.normalize(subCandidate).main;
+                    } else {
+                        normalized.sub = '';
+                    }
+                }
+
+                const result: NormalizedCategory & { browseNodeId?: string } = { ...normalized };
+                const nodeId = node.id || node.Id;
+                if (nodeId) {
+                    result.browseNodeId = nodeId;
+                }
+                return result;
+            }
+        }
+
+        // 3. Fallback to best available node even if it's "Other"
+        const bestNode = sortedNodes[0]!;
+        const result: NormalizedCategory & { browseNodeId?: string } = { ...CategoryNormalizer.normalize(bestNode) };
+        const nodeId = bestNode.id || bestNode.Id;
+        if (nodeId) {
+            result.browseNodeId = nodeId;
+        }
+        return result;
+    }
+
+    /**
      * Check if a category name is valid (legacy logic from PAAPIClient)
      */
     public static isValidCategoryName(name: string): boolean {
@@ -76,7 +144,7 @@ export class CategoryNormalizer {
 
         const invalidPatterns = [
             /Sale|Off|Coupon|Ranking|Best|Week|Fair|Event|Campaign/i,
-            /セール|オフ(?!ィス)|クーポン|ランキング|おすすめ|ウィーク|フェア|イベント|キャンペーン|企画|向け|ほか$|など$|新商品|すべて$|・.*・|特設ページ|発売日お届け|父の日|割引|お買い得|利用シーン|あわせ買い|全商品$|関連製品$|新製品$/,
+            /セール|オフ(?!ィス)|クーポン|ランキング|おすすめ|ウィーク|フェア|イベント|キャンペーン|企画|向け|ほか$|など$|新商品|すべて$|^・.*・$|特設ページ|発売日お届け|父の日|割引|お買い得|利用シーン|あわせ買い|全商品$|関連製品$|新製品$/,
             /特集/,
             /新着/,
             /新規発売/,

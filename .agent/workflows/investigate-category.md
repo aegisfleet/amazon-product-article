@@ -22,13 +22,27 @@ python scripts/debug_dump.py <ASIN>
 
 ## 2. 正規化ロジックのテスト
 現在の `CategoryNormalizer.ts` のロジックで、取得した生データがどのように処理されるかを確認します。
+
+### 2.1 個別の BrowseNode の正規化確認
+各ノードがどのような文字列に変換され、どのようなスコアが付与されるかを確認します。
 `scripts/test_normalization.ts` は `tmp/debug_output.json` を読み込んでテストします。
 
 ```bash
 npx ts-node scripts/test_normalization.ts
 ```
 
-出力結果を確認し、どのノードが選ばれているか、意図したノードが除外（フィルタリング）されていないかを確認します。
+出力結果を確認し、意図したノードが除外（フィルタリング）されていないかを確認します。
+
+### 2.2 最終的なカテゴリ選択のシミュレーション
+複数の BrowseNode 候補の中から、最終的にどのノードが「カテゴリ」として選ばれるかのシミュレーションを行います。
+これは `CreatorsAPIClient` が使用する優先順位付けロジックを含めたテストです。
+
+```bash
+npx ts-node scripts/test_asin_category.ts
+```
+
+`Final Selection` として出力される内容が、生成される記事のフロントマターに反映されます。
+もし意図しないノードが選ばれている場合は、優先順位ロジック（深度や売上ランキング）、または正規表現によるフィルタリングを見直します。
 
 ## 3. ロジックの修正
 必要に応じて `src/utils/CategoryNormalizer.ts` を修正します。
