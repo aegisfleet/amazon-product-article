@@ -144,7 +144,9 @@ export class CategoryNormalizer {
 
         const invalidPatterns = [
             /Sale|Off|Coupon|Ranking|Best|Week|Fair|Event|Campaign/i,
-            /セール|オフ(?!ィス)|クーポン|ランキング|おすすめ|ウィーク|フェア|イベント|キャンペーン|企画|向け|ほか$|など$|新商品|すべて$|^・.*・$|特設ページ|発売日お届け|父の日|割引|お買い得|利用シーン|あわせ買い|全商品$|関連製品$|新製品$/,
+            /セール|オフ(?!ィス)|クーポン|ランキング|おすすめ|ウィーク|フェア|イベント|キャンペーン|企画|向け|ほか$|など$|新商品|すべて$|^・.*・$|特設ページ|発売日お届け|父の日|割引|お買い得|利用シーン|あわせ買い|全商品$|関連製品$|新製品$|まとめ買い|まとめでお得/,
+            /non\s*manga/i,
+            /^KOS_/i,
             /特集/,
             /新着/,
             /新規発売/,
@@ -279,7 +281,15 @@ export class CategoryNormalizer {
             "Amazon Global",
             "Amazon Basics",
             "Amazon Basic",
-            "Amazon Store"
+            "Amazon Store",
+            "Kindle本",
+            "ジャンル別",
+            "Custom Stores",
+            "Custom Stores Navigation",
+            "無料本",
+            "キャンペーン",
+            "まとめ買い",
+            "期間限定ポイント"
         ];
 
         if (blockList.some(block => {
