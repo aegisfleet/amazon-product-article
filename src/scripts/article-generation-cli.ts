@@ -469,7 +469,7 @@ async function main(): Promise<void> {
         // Sanitize Frontmatter
         try {
             logger.info('Running frontmatter sanitization...');
-            const { stdout, stderr } = await execAsync('node scripts/sanitize-frontmatter.js');
+            const { stdout, stderr } = await execAsync('npm run sanitize:frontmatter');
             if (stdout) console.log(stdout);
             if (stderr) console.error(stderr);
         } catch (error) {

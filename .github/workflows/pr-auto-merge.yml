@@ -46,7 +46,7 @@ jobs:
           echo "No investigation files changed. Skipping article generation."
         fi
 
-        node scripts/sanitize-frontmatter.js
+        npm run sanitize:frontmatter
 
     - name: Setup Hugo
       uses: peaceiris/actions-hugo@v3
