@@ -266,6 +266,7 @@ const HANDLED_SPEC_FIELDS = new Set([
   'url'
 ]);
 
+const DEFAULT_IMAGE_URL = 'https://placehold.jp/ffffff/000000/300x300.png?text=No%20Image';
 
 export class ArticleGenerator {
   private logger: Logger;
@@ -369,6 +370,11 @@ export class ArticleGenerator {
 
     // Product images for Hugo front matter (primary + thumbnails)
     const images = [product.images.primary, ...product.images.thumbnails].filter(Boolean);
+
+    // Fallback to default image if no images are available
+    if (images.length === 0) {
+      images.push(DEFAULT_IMAGE_URL);
+    }
 
     // Affiliate URL generation
     const affiliateLink = this.affiliateManager.generateLinkFromProduct(product);
@@ -482,10 +488,10 @@ export class ArticleGenerator {
     // テーブルをモバイル対応形式に変換
     mobileContent = this.convertTablesToMobileFriendly(mobileContent);
 
-    // 画像をモバイル対応のHTML形式に変換
+    // 画像をモバイル対応のHTML形式に変換（onerrorハンドラを追加）
     mobileContent = mobileContent.replace(
       /!\[([^\]]*)\]\(([^)]+)\)/g,
-      '<img src="$2" alt="$1" class="mobile-responsive-image">'
+      `<img src="$2" alt="$1" class="mobile-responsive-image" onerror="this.onerror=null;this.src='${DEFAULT_IMAGE_URL}';">`
     );
 
     // リストアイテムを読みやすく調整

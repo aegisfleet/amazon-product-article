@@ -7,9 +7,11 @@
         <div class="product-image-carousel" id="carousel-{{ $product.asin }}">
             <div class="carousel-track">
                 {{ if $product.images }}
-                <img src="{{ index $product.images 0 }}" alt="{{ $product.title }}" class="carousel-image">
+                <img src="{{ index $product.images 0 }}" alt="{{ $product.title }}" class="carousel-image"
+                    onerror="this.onerror=null;this.src='https://placehold.jp/ffffff/000000/300x300.png?text=No%20Image';">
                 {{ range after 1 $product.images }}
-                <img src="{{ . }}" alt="{{ $product.title }}" class="carousel-image" loading="lazy">
+                <img src="{{ . }}" alt="{{ $product.title }}" class="carousel-image" loading="lazy"
+                    onerror="this.onerror=null;this.src='https://placehold.jp/ffffff/000000/300x300.png?text=No%20Image';">
                 {{ end }}
                 {{ end }}
             </div>
