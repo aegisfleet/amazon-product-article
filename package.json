@@ -4,7 +4,7 @@
   "description": "Amazon Creators APIとGoogle Julesを活用した商品調査記事の自動生成・公開システム",
   "main": "dist/index.js",
   "scripts": {
-    "sanitize:frontmatter": "node scripts/sanitize-frontmatter.js",
+    "sanitize:frontmatter": "ts-node src/scripts/sanitize-frontmatter.ts",
     "prebuild:hugo": "mkdir -p static/data && cp data/categorygroups.json static/data/",
     "build": "tsc",
     "dev": "ts-node src/index.ts",
@@ -19,7 +19,7 @@
     "generate:articles": "ts-node src/scripts/article-generation-cli.ts",
     "merge:pr": "ts-node src/scripts/pr-merge-cli.ts",
     "organize:categories": "ts-node src/scripts/organize-categories-cli.ts",
-    "sort:categories": "node scripts/sort_categories.js"
+    "sort:categories": "ts-node src/scripts/sort-categories.ts"
   },
   "keywords": [
     "amazon",
