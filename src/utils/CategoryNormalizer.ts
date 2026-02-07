@@ -208,7 +208,8 @@ export class CategoryNormalizer {
             "アクセサリー",
             "介護用品・生理用品",
             "花王",
-            "Diapers"
+            "Diapers",
+            "シャープ"
         ];
 
         if (blockList.some(block => {
