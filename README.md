@@ -10,7 +10,7 @@ Amazon Creators APIとGoogle Julesを活用した商品調査記事の自動生�
 
 ```
 amazon-product-article/
-├── scripts/                  # 調査用スクリプト（Python）
+├── scripts/                  # 調査・ユーティリティスクリプト（TypeScript/Python）
 │   ├── creators_get_item.py     # 商品詳細取得
 │   └── creators_search_items.py # 商品検索
 ├── src/                      # TypeScriptソースコード

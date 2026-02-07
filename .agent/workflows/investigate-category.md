@@ -25,10 +25,10 @@ python scripts/debug_dump.py <ASIN>
 
 ### 2.1 個別の BrowseNode の正規化確認
 各ノードがどのような文字列に変換され、どのようなスコアが付与されるかを確認します。
-`scripts/test_normalization.ts` は `tmp/debug_output.json` を読み込んでテストします。
+`scripts/test-normalization.ts` は `tmp/debug_output.json` を読み込んでテストします。
 
 ```bash
-npx ts-node scripts/test_normalization.ts
+npx ts-node scripts/test-normalization.ts
 ```
 
 出力結果を確認し、意図したノードが除外（フィルタリング）されていないかを確認します。
@@ -38,7 +38,7 @@ npx ts-node scripts/test_normalization.ts
 これは `CreatorsAPIClient` が使用する優先順位付けロジックを含めたテストです。
 
 ```bash
-npx ts-node scripts/test_asin_category.ts
+npx ts-node scripts/test-asin-category.ts
 ```
 
 `Final Selection` として出力される内容が、生成される記事のフロントマターに反映されます。
@@ -55,10 +55,10 @@ npx ts-node scripts/test_asin_category.ts
 ## 4. キャッシュの強制更新
 修正が確認できたら、対象ASINのキャッシュを無効化（タイムスタンプをリセット）して、次回の生成時に最新のロジックが適用されるようにします。
 
-`scripts/reset_cache_timestamp.ts` を実行して対象のASINを指定します。
+`scripts/reset-cache-timestamp.ts` を実行して対象のASINを指定します。
 
 ```bash
-npx ts-node scripts/reset_cache_timestamp.ts <ASIN>
+npx ts-node scripts/reset-cache-timestamp.ts <ASIN>
 ```
 
 ## 5. 記事の再生成
