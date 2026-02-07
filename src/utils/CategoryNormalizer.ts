@@ -278,6 +278,7 @@ export class CategoryNormalizer {
             "Self Service",
             "Amazon Global",
             "Amazon Basics",
+            "Amazon Basic",
             "Amazon Store"
         ];
 
