@@ -22,12 +22,18 @@ if __name__ == '__main__':
         "itemInfo.title",
         "browseNodeInfo.browseNodes",
         "browseNodeInfo.browseNodes.ancestor",
-        "browseNodeInfo.browseNodes.salesRank"
+        "browseNodeInfo.browseNodes.salesRank",
+        "images.primary.large",
+        "images.primary.medium",
+        "images.variants.large"
     ]
     
     response = client.get_items([asin], resources=resources)
     
-    with open('debug_output.json', 'w', encoding='utf-8') as f:
+    output_path = os.path.join(os.getcwd(), 'tmp', 'debug_output.json')
+    os.makedirs(os.path.dirname(output_path), exist_ok=True)
+
+    with open(output_path, 'w', encoding='utf-8') as f:
         json.dump(response, f, indent=2, ensure_ascii=False)
     
-    print("Done writing to debug_output.json")
+    print(f"Done writing to {output_path}")

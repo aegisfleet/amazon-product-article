@@ -92,7 +92,9 @@ export class CategoryNormalizer {
             /[【】|()_※]/,
             /^家電$/,
             /^アクセサリ$/,
-            /^アクセサリー$/
+            /^アクセサリー$/,
+            // Block UUID-like patterns often used for internal nodes
+            /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}/i
         ];
 
         // Specific whitelist for valid multi-dot categories
@@ -204,7 +206,9 @@ export class CategoryNormalizer {
             "介護用品・生理用品",
             "花王",
             "Diapers",
-            "シャープ"
+            "シャープ",
+            "Special Features Stores",
+            "Self Service"
         ];
 
         if (blockList.some(block => {

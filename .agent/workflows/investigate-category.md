@@ -18,11 +18,11 @@ Creators APIから返される生のBrowseNode情報を確認します。
 python scripts/debug_dump.py <ASIN>
 ```
 ※ `<ASIN>` は調査対象のASINに置き換えてください。
-実行すると `debug_output.json` カレントディレクトリに生成されます。
+実行すると `tmp/debug_output.json` に生成されます。
 
 ## 2. 正規化ロジックのテスト
 現在の `CategoryNormalizer.ts` のロジックで、取得した生データがどのように処理されるかを確認します。
-`scripts/test_normalization.ts` は `debug_output.json` を読み込んでテストします。
+`scripts/test_normalization.ts` は `tmp/debug_output.json` を読み込んでテストします。
 
 ```bash
 npx ts-node scripts/test_normalization.ts
