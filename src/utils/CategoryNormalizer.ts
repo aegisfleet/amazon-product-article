@@ -311,7 +311,9 @@ export class CategoryNormalizer {
             "Kindle Popup",
             "Kindle書籍 5冊購入で15%ポイント還元",
             "Kindle電子書籍リーダー",
-            "文房具図鑑"
+            "文房具図鑑",
+            "受験対策文房具",
+            "コクヨの文房具・事務用品"
         ];
 
         if (blockList.some(block => {
