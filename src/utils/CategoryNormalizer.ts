@@ -308,7 +308,7 @@ export class CategoryNormalizer {
             "h&s",
             "Panasonic-HA-",
             "Amazonベーシック",
-            "AmazonGlobal Free Shipping",
+
             "Kindle Popup",
             "Kindle書籍 5冊購入で15%ポイント還元",
             "Kindle電子書籍リーダー",
@@ -319,7 +319,8 @@ export class CategoryNormalizer {
             "理美容家電",
             "Kindle書籍",
             "Kindle Unlimited",
-            "おせちHQP紐付用"
+            "おせちHQP紐付用",
+            "AmazonGlobal"
         ];
 
         if (blockList.some(block => {
