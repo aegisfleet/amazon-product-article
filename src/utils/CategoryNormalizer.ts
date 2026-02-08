@@ -182,6 +182,16 @@ export class CategoryNormalizer {
             return true;
         }
 
+        // Check for multiple dots (2 or more) which usually indicates a breadcrumb-like category
+        // e.g. "日用品・生活必需品 - 文房具・オフィス用品" (contains 2 dots if we consider the full path, but here we check individual node name)
+        // The user example "日用品・生活必需品 - 文房具・オフィス用品" actually contains "・" and "-"
+        // If the node name itself contains multiple "・", it's likely a composite junk category.
+        const dotCount = (name.match(/・/g) || []).length;
+        if (dotCount >= 2) {
+            // console.log(`Category rejected by multi-dot rule: ${name}`);
+            return false;
+        }
+
         if (invalidPatterns.some(pattern => {
             if (pattern.test(name)) {
                 // console.log(`Category rejected by pattern ${pattern}: ${name}`);
