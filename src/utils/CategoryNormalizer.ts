@@ -293,7 +293,12 @@ export class CategoryNormalizer {
             "まとめ買い",
             "期間限定ポイント",
             "h&s",
-            "Panasonic-HA-"
+            "Panasonic-HA-",
+            "Amazonベーシック",
+            "AmazonGlobal Free Shipping",
+            "Kindle Popup",
+            "Kindle書籍 5冊購入で15%ポイント還元",
+            "Kindle電子書籍リーダー"
         ];
 
         if (blockList.some(block => {
