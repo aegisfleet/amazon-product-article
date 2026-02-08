@@ -11,8 +11,11 @@ import { AffiliateLinkManager } from '../AffiliateLinkManager';
 
 describe('AffiliateLinkManager', () => {
     let linkManager: AffiliateLinkManager;
+    let originalEnv: NodeJS.ProcessEnv;
 
     beforeAll(async () => {
+        originalEnv = { ...process.env };
+
         // Set dummy environment variables for testing
         process.env.AMAZON_CREATORS_APPLICATION_ID = 'test-app-id';
         process.env.AMAZON_CREATORS_CREDENTIAL_ID = 'test-cred-id';
@@ -24,6 +27,12 @@ describe('AffiliateLinkManager', () => {
 
         const config = ConfigManager.getInstance();
         await config.initialize();
+    });
+
+    afterAll(() => {
+        // Restore original environment variables
+        process.env = originalEnv;
+        ConfigManager.resetInstance();
     });
 
     beforeEach(() => {
