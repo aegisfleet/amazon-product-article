@@ -313,7 +313,8 @@ export class CategoryNormalizer {
             "Kindle電子書籍リーダー",
             "文房具図鑑",
             "受験対策文房具",
-            "コクヨの文房具・事務用品"
+            "コクヨの文房具・事務用品",
+            "美容・健康家電"
         ];
 
         if (blockList.some(block => {
