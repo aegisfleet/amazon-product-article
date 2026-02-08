@@ -209,7 +209,7 @@ export class CategoryNormalizer {
         // Check for generic "Store" suffix
         // User requested to exclude categories ending with "Store" (e.g., Drugstore)
         const genericStorePatterns = [
-            /ストア$|Store$|ストア\s*[\(（].*[\)）]$/i,
+            /ストア$|Store$|ストア\s*[(（].*[)）]$/i,
         ];
         // const allowedStoreExceptions = [
         //     "ドラッグストア",
