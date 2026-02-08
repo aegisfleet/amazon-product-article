@@ -14,64 +14,68 @@ if (!(Test-Path tmp)) { New-Item -ItemType Directory tmp }
 
 ## 1. 失敗した実行の特定
 
-失敗したワークフローのURL（`https://github.com/.../actions/runs/12345`）から、実行ID（`12345`）を取得します。
-ローカルのターミナルで以下のコマンドを使用して、失敗したジョブの一覧を確認できます。
+URLがわかっている場合はそのID（末尾の数字）を使います。
+不明な場合や直近の失敗を調査する場合は、以下のコマンドで最新の失敗した実行IDを取得できます。
 
+// turbo
+### 直近の失敗した実行を表示
+```powershell
+gh run list --status failure --limit 1
+```
+
+特定の実行の詳細（ジョブ一覧など）を確認するには：
 ```powershell
 gh run view <実行ID>
 ```
 
-## 2. 失敗メッセージの取得
+## 2. 失敗メッセージの素早い取得
 
-失敗した個所が判明している場合、その詳細ログを取得します。
+もっとも効率的な方法は、実行全体の「失敗した箇所のログだけ」を表示することです。ジョブIDを指定する必要はありません。
 
 // turbo
-### 失敗したジョブのログを表示
+### 失敗した箇所のログのみを表示
 ```powershell
-gh run view --job <ジョブID> --log-failed
+gh run view <実行ID> --log-failed
 ```
 
-ジョブIDがわからない場合や、全体から探す場合は以下が便利です。
-
-// turbo
-### 失敗した実行全体のログからキーワード検索（例: "FAIL", "Error"）
+ログが膨大な場合や、ブラウザでUIを使って確認したい場合は：
 ```powershell
-gh run view <実行ID> --log | Select-String -Pattern "FAIL|Error|Exception" -Context 5, 20
+gh run view <実行ID> --web
 ```
 
-> [!TIP]
-> Windows環境（PowerShell）では `Select-String` を使用します。Linux/Mac環境では `grep` を使用してください。
+## 3. ローカルでの再現と原因の切り分け
 
-## 3. ローカルでの再現
+ログから原因（Lintエラーか、テスト失敗かなど）を推測し、ローカルで実行します。
 
-エラーがテストの失敗である場合は、ローカルでテストを実行して詳細を確認します。
-
-// turbo
-### すべてのテストを実行
+### Lintエラーの場合
 ```powershell
+# 修正も同時に試みる場合
+npm run lint:fix
+
+# エラー箇所のみを確認
+npm run lint -- --quiet
+```
+
+### テスト失敗の場合
+```powershell
+# すべてのテストを実行
 npm test
-```
 
-// turbo
-### 特定のファイルのみ実行
-```powershell
+# 特定のファイルのみ実行（高速）
 npx jest path/to/failing_test.ts
 ```
 
-## 4. 調査ログの整理
+## 4. 調査ログの整理（必要に応じて）
 
-調査のためにログをファイルに出力する場合は、`tmp/` ディレクトリ配下に出力し、文字化けを防ぐためにUTF-8エンコーディングを指定することをお勧めします。
+`tmp/` ディレクトリ配下に出力して詳細に分析します。
 
 ```powershell
 # ジョブ全体のログを保存
 gh run view --job <ジョブID> --log | Out-File -FilePath tmp/workflow_log.txt -Encoding utf8
-
-# ローカルテストの結果を保存
-npm test 2>&1 | Out-File -FilePath tmp/local_test_result.txt -Encoding utf8
 ```
 
 ## 5. 修正と検証
 
 1. 原因を特定したらコードを修正します。
-2. ローカルでテストがパスすることを確認します。
+2. ローカルでテスト/Lintがパスすることを確認します。
 3. 修正をコミット・プッシュし、GitHub Actionsでパスすることを確認します。
