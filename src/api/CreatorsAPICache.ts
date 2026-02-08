@@ -151,6 +151,28 @@ export class CreatorsAPICache {
     }
 
     /**
+     * Check if ASIN is marked as permanent_invalid and has expired
+     * distinct from generic isInvalid which returns true for ANY invalid/missing item
+     */
+    public isExpiredPermanentInvalid(asin: string): boolean {
+        const entry = this.cache[asin];
+        // If no entry, it's not a permanent_invalid entry (it's just missing)
+        if (!entry) return false;
+
+        // Must be permanent_invalid
+        if (entry.status !== 'permanent_invalid') return false;
+
+        // Check if expired
+        const effectiveTtl = this.permanentInvalidTtl;
+        if (Date.now() - entry.timestamp > effectiveTtl) {
+            return true;
+        }
+
+        return false;
+    }
+
+
+    /**
      * Check if investigation result file exists for the given ASIN
      */
     private isInvestigationFileExists(asin: string): boolean {

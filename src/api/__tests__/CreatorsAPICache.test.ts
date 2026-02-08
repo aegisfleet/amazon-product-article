@@ -109,9 +109,38 @@ describe('CreatorsAPICache', () => {
             status: 'permanent_invalid'
         };
 
-        expect(cache.isInvalid('FRESH_PERM')).toBe(true);
         expect(cache.isInvalid('EXPIRED_PERM')).toBe(false);
     });
+
+    test('isExpiredPermanentInvalid should correctly identify expired permanent items', () => {
+        const now = Date.now();
+        const past = now - (6 * 24 * 60 * 60 * 1000); // 6 days ago (not expired)
+        const wayPast = now - (8 * 24 * 60 * 60 * 1000); // 8 days ago (expired)
+
+        (cache as any).cache['FRESH_PERM'] = {
+            data: null,
+            timestamp: past,
+            status: 'permanent_invalid'
+        };
+
+        (cache as any).cache['EXPIRED_PERM'] = {
+            data: null,
+            timestamp: wayPast,
+            status: 'permanent_invalid'
+        };
+
+        (cache as any).cache['NORMAL_INVALID'] = {
+            data: null,
+            timestamp: wayPast,
+            status: 'invalid'
+        };
+
+        expect(cache.isExpiredPermanentInvalid('FRESH_PERM')).toBe(false);
+        expect(cache.isExpiredPermanentInvalid('EXPIRED_PERM')).toBe(true);
+        expect(cache.isExpiredPermanentInvalid('NORMAL_INVALID')).toBe(false);
+        expect(cache.isExpiredPermanentInvalid('NON_EXISTENT')).toBe(false);
+    });
+
 
     test('should use invalidTtl (short) when investigation file exists', () => {
         const now = Date.now();
