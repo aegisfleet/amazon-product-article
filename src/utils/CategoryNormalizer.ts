@@ -48,7 +48,8 @@ export class CategoryNormalizer {
                 '画材', '文房具', '絵具', 'オフィス用品',
                 'チャイルドシート', 'ジュニアシート', 'ベビーカー', '抱っこ紐',
                 'おむつ', '紙おむつ', 'ベビーおむつ',
-                'Kindle', 'Fire', 'Echo', 'Alexa', 'Ring', 'Amazonデバイス'
+                'Kindle', 'Fire', 'Echo', 'Alexa', 'Ring', 'Amazonデバイス',
+                'タイヤ', 'カー用品', '車＆バイク', '自動車', 'バイク用品'
             ];
 
             if (preferredKeywords.some(k => main.toLowerCase().includes(k.toLowerCase()) || sub.toLowerCase().includes(k.toLowerCase()))) {
@@ -144,7 +145,7 @@ export class CategoryNormalizer {
 
         const invalidPatterns = [
             /Sale|Off|Coupon|Ranking|Best|Week|Fair|Event|Campaign/i,
-            /セール|オフ(?!ィス)|クーポン|ランキング|おすすめ|ウィーク|フェア|イベント|キャンペーン|企画|向け|ほか$|など$|新商品|すべて$|^・.*・$|特設ページ|発売日お届け|父の日|割引|お買い得|利用シーン|あわせ買い|全商品$|関連製品$|新製品$|まとめ買い|まとめでお得/,
+            /セール|オフ(?!ィス)|クーポン|ランキング|おすすめ|ウィーク|フェア|イベント|キャンペーン|企画|向け|ほか$|など$|新商品|すべて$|^・.*・$|特設ページ|発売日お届け|父の日|割引|お買い得|利用シーン|あわせ買い|全商品$|関連製品$|新製品$|まとめ買い|まとめでお得|中止|HQP|紐付/,
             /non\s*manga/i,
             /^KOS_/i,
             /Winter Favorites/i,
@@ -208,7 +209,7 @@ export class CategoryNormalizer {
         // Check for generic "Store" suffix
         // User requested to exclude categories ending with "Store" (e.g., Drugstore)
         const genericStorePatterns = [
-            /ストア$|Store$/i,
+            /ストア$|Store$|ストア\s*[\(（].*[\)）]$/i,
         ];
         // const allowedStoreExceptions = [
         //     "ドラッグストア",
