@@ -316,7 +316,7 @@ export class CategoryNormalizer {
             "コクヨの文房具・事務用品",
             "美容・健康家電",
             "理美容家電",
-            "Kindle書籍タイトル 600円～"
+            "Kindle書籍"
         ];
 
         if (blockList.some(block => {
