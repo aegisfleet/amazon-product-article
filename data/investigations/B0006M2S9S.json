@@ -1,0 +1,107 @@
+{
+  "analysis": {
+    "productName": "象印 クールピッチャー 1.7L DGB-17C",
+    "parentAsin": "B0006M2S9S",
+    "productDescription": "結露しにくい二重構造で、冷たさをキープする大容量1.7Lの保冷ピッチャー。広口設計で手入れも簡単。",
+    "productUsage": [
+      "冷たい飲み物（麦茶、水など）の保冷・保存",
+      "食卓での使用（結露防止機能によりコースター不要）",
+      "冷蔵庫での保管（サイズ確認が必要）",
+      "ホームパーティーやオフィスでの水分補給"
+    ],
+    "positivePoints": [
+      "結露しないためテーブルが濡れない",
+      "保冷力が高く、飲み頃を長くキープできる",
+      "大容量1.7Lで、家族や来客時にも十分",
+      "広口で氷を入れやすく、手入れもしやすい",
+      "軽量（0.47kg）で満水時でも扱いやすい"
+    ],
+    "negativePoints": [
+      "サイズが大きく、冷蔵庫のドアポケットに入らない場合がある",
+      "密閉性が不明なため、横置きは推奨されない可能性が高い",
+      "注ぎ口の構造によっては液垂れする可能性がある（レビュー未確認だが一般的懸念）"
+    ],
+    "useCases": [
+      "夏場の食卓での使用",
+      "オフィスでの水分補給",
+      "ホームパーティーでのドリンク提供"
+    ],
+    "userStories": [
+      {
+        "userType": "30代主婦",
+        "scenario": "夏の夕食時",
+        "experience": "以前使っていたピッチャーは結露が酷くテーブルがびしょ濡れになっていたが、これに変えてからはコースター不要になり、掃除の手間が減った。（推測）",
+        "sentiment": "positive"
+      },
+      {
+        "userType": "40代会社員",
+        "scenario": "オフィスでの使用",
+        "experience": "デスクに置いておいても結露しないので、書類が濡れる心配がなく、冷たいお茶をいつでも飲めるのが良い。（推測）",
+        "sentiment": "positive"
+      }
+    ],
+    "userImpression": "象印ブランドの信頼性と「結露しない」という実用的な機能が高く評価されると推測される。特に夏場の悩みである結露を解消できる点が最大の強み。",
+    "sources": [
+      {
+        "name": "Amazon Product Page (B0006M2S9S)",
+        "url": "https://www.amazon.co.jp/dp/B0006M2S9S",
+        "credibility": "High"
+      },
+      {
+        "name": "Amazon Product Page (Competitor: Fonowx B0C61GRQH7)",
+        "url": "https://www.amazon.co.jp/dp/B0C61GRQH7",
+        "credibility": "High"
+      }
+    ],
+    "lastInvestigated": "2026-02-08",
+    "competitiveAnalysis": [
+      {
+        "name": "Fonowx ウォーターピッチャー 1.7L",
+        "asin": "B0C61GRQH7",
+        "priceComparison": "象印（2156円）より高い（2960円）。容量は同じ。",
+        "featureComparison": ["二重構造で結露しにくい点は同じ", "デザイン性が高い"],
+        "differentiators": ["価格が高い", "ブランド認知度が低い"]
+      },
+      {
+        "name": "パール金属 冷水筒 1.2L",
+        "asin": "B0DQ4WZJHZ",
+        "priceComparison": "象印より安い（1442円）。",
+        "featureComparison": ["容量が1.2Lと小さい", "結露しにくい"],
+        "differentiators": ["容量が小さい", "価格が安い"]
+      },
+      {
+        "name": "ORANGE APRON ダブルウォールカラフェ 1L (2本セット)",
+        "asin": "B0G6L1QC4N",
+        "priceComparison": "象印より高い（3300円）。",
+        "featureComparison": ["1L×2本なので小分けにできる", "二重構造"],
+        "differentiators": ["2本セット", "単体容量は小さい"]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "夏場の結露に悩んでいる人",
+        "家族が多い家庭",
+        "オフィスで冷たい飲み物を飲みたい人"
+      ],
+      "pros": [
+        "結露しないのでテーブルが濡れない",
+        "1.7Lの大容量",
+        "象印ブランドの安心感",
+        "広口で手入れが楽"
+      ],
+      "cons": [
+        "サイズが大きく冷蔵庫を選ぶ",
+        "横置きできない可能性が高い"
+      ],
+      "score": 80,
+      "scoreRationale": "[基本点: 70]\n[加点: +5] (1.7Lの大容量、結露防止、広口、軽量)\n[加点: +5] (競合Fonowxより安く、コスパ良好)\n[加点: +0] (デザインは普通)\n[加点: +0] (レビュー不足だがブランド信頼性あり)\n[加点: +0] (特筆すべき先進機能はない)\n[合計: 80]"
+    },
+    "technicalSpecs": {
+      "dimensions": { "width": "13.5cm", "depth": "19cm", "height": "25cm", "weight": "0.47kg" },
+      "capacity": "1.7L",
+      "material": null,
+      "heatResistance": null,
+      "other": ["結露防止二重構造", "広口設計"]
+    }
+  }
+}
