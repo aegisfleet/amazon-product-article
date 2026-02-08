@@ -315,10 +315,57 @@ async function main(): Promise<void> {
 
         // 2. Identify missing ASINs (not in cache or expired, and NOT marked invalid)
         const asinsArray = Array.from(allAsins);
-        const missingAsins = creatorsCache.getMissingAsins(asinsArray);
-        const invalidAsins = asinsArray.filter(asin => creatorsCache.isInvalid(asin));
 
-        logger.info(`ASINs stats: Total: ${asinsArray.length}, Cache Hit: ${asinsArray.length - missingAsins.length - invalidAsins.length}, Known Invalid: ${invalidAsins.length}, To Fetch: ${missingAsins.length}`);
+        // Split ASINs into categories for better control
+        const validMissingAsins: string[] = [];
+        const expiredPermanentInvalidAsins: string[] = [];
+        const ignoredAsins: string[] = []; // Valid (cached) or Invalid (not expired)
+
+        for (const asin of asinsArray) {
+            if (creatorsCache.get(asin)) {
+                // Valid cache hit
+                ignoredAsins.push(asin);
+                continue;
+            }
+
+            if (creatorsCache.isExpiredPermanentInvalid(asin)) {
+                // Permanent invalid but expired - candidate for retry
+                expiredPermanentInvalidAsins.push(asin);
+                continue;
+            }
+
+            if (creatorsCache.isInvalid(asin)) {
+                // Invalid but NOT expired (standard invalid or permanent invalid within TTL)
+                ignoredAsins.push(asin);
+                continue;
+            }
+
+            // Normal missing (never fetched or expired valid/invalid)
+            validMissingAsins.push(asin);
+        }
+
+        // Limit the number of expired permanent invalid ASINs to retry
+        // This prevents the job from timing out if there are thousands of permanent invalid items
+        const PERMANENT_INVALID_RETRY_LIMIT = 100;
+        let asinsToFetch = [...validMissingAsins];
+
+        if (expiredPermanentInvalidAsins.length > 0) {
+            logger.info(`Found ${expiredPermanentInvalidAsins.length} expired permanent_invalid ASINs. Limiting retry to ${PERMANENT_INVALID_RETRY_LIMIT}.`);
+
+            // Take the first N
+            const retries = expiredPermanentInvalidAsins.slice(0, PERMANENT_INVALID_RETRY_LIMIT);
+            asinsToFetch = asinsToFetch.concat(retries);
+
+            if (expiredPermanentInvalidAsins.length > PERMANENT_INVALID_RETRY_LIMIT) {
+                logger.info(`Skipping ${expiredPermanentInvalidAsins.length - PERMANENT_INVALID_RETRY_LIMIT} expired permanent_invalid ASINs in this run.`);
+            }
+        }
+
+        const missingAsins = asinsToFetch;
+        // invalidAsins for stats (approximate, excluding the ones we decided to fetch)
+        const invalidAsins = ignoredAsins.filter(asin => creatorsCache.isInvalid(asin) && !expiredPermanentInvalidAsins.slice(0, PERMANENT_INVALID_RETRY_LIMIT).includes(asin));
+
+        logger.info(`ASINs stats: Total: ${asinsArray.length}, Cache Hit: ${ignoredAsins.length - invalidAsins.length}, Known Invalid (Skipped): ${invalidAsins.length}, To Fetch: ${missingAsins.length} (New/Expired: ${validMissingAsins.length}, Retry Perm: ${Math.min(expiredPermanentInvalidAsins.length, PERMANENT_INVALID_RETRY_LIMIT)})`);
 
         // 3. Fetch missing ASINs in batches if Creators API is enabled
         if (useCreatorsApi && missingAsins.length > 0) {
