@@ -1,4 +1,3 @@
-
 {
   "analysis": {
     "productName": "Western Digital WD Blue 内蔵HDD 12TB WD120EAGZ-AJP + 玄人志向 HDDスタンド",
@@ -57,45 +56,48 @@
         "credibility": "日本の主要なECサイトやレビューサイト（価格.com等）を広範に調査したが、当製品（WD120EAGZ-AJP）に関する個別のユーザーレビューや詳細な評価記事は、調査時点では確認できなかった。"
       }
     ],
-    "lastInvestigated": "2026-01-09",
+    "lastInvestigated": "2026-02-09",
     "competitiveAnalysis": [
       {
-        "name": "Seagate IronWolf / IronWolf Pro 12TB (NAS向けHDD)",
-        "asin": "B09V55F2A3",
-        "priceComparison": "一般的にWD Blueシリーズより高価な傾向がある。価格差は、NAS向けのファームウェアや高耐久設計、より長い保証期間によるもの。",
+        "name": "Toshiba N300 12TB",
+        "asin": "B0DJCNQ3HK",
+        "priceComparison": "価格は￥55,380。WD Blueセットより安価で、コストパフォーマンスに優れる。",
         "featureComparison": [
-          "NAS向けに最適化されたファームウェア「AgileArray」を搭載し、RAID環境でのパフォーマンスを向上。",
-          "WD Blueより高い年間作業負荷率（Workload Rate）に対応し、常時稼働を想定している。"
+          "24時間365日の連続稼働に対応したNAS向けHDD。",
+          "RVセンサー搭載で振動を抑制。",
+          "7200rpmの高速回転モデル。"
         ],
         "differentiators": [
-          "24時間365日の連続稼働を前提とした高信頼設計。",
-          "複数台のHDDを搭載するNAS筐体内での振動を抑制する回転振動（RV）センサーを搭載（Proモデル）。"
+          "東芝製という信頼性とコストのバランス。",
+          "NAS用途に特化した堅牢な設計。"
         ]
       },
       {
-        "name": "Toshiba N300 / X300シリーズ 12TB (NAS/パフォーマンスHDD)",
-        "asin": "B084G531KC",
-        "priceComparison": "モデルによるが、WD Blueと同等かやや高価な価格帯で競合する。パフォーマンスと価格のバランスが良い製品が多い。",
+        "name": "WD Red Plus 12TB",
+        "asin": "B0F4R6SNJG",
+        "priceComparison": "価格は￥53,998。WD Blueセットより安く、NAS向けHDDとしての信頼性が高い。",
         "featureComparison": [
-          "東芝独自のキャッシュ技術「Dynamic Cache Technology」により、アクセス性能を最適化。",
-          "N300シリーズはNAS向けにRVセンサーを搭載し、安定した動作を実現。"
+          "NASウェア3.0テクノロジー搭載でRAID環境に最適化。",
+          "CMR方式採用で安定した書き込み性能。",
+          "静音性と発熱抑制に配慮された設計。"
         ],
         "differentiators": [
-          "高いパフォーマンスと信頼性を両立したモデルが多く、クリエイティブ用途でも評価が高い。",
-          "コンシューマー向けのハイパフォーマンスモデルからNAS向け高信頼性モデルまで、幅広い選択肢を提供。"
+          "WDのNAS向けスタンダードモデルとしての実績。",
+          "RAID環境での信頼性が高く評価されている。"
         ]
       },
       {
-        "name": "Western Digital WD Red / Black / Gold 12TB (自社上位モデル)",
-        "asin": null,
-        "priceComparison": "調査対象のWD Blueはコンシューマー向けで価格が抑えられているのに対し、NAS向けのRed、パフォーマンス向けのBlack、データセンター向けのGoldは用途特化している分、より高価。",
+        "name": "Seagate IronWolf 12TB",
+        "asin": "B0BGSCSVVR",
+        "priceComparison": "価格は￥62,609。WD Blueセットとほぼ同価格帯だが、こちらはHDD単体価格。",
         "featureComparison": [
-          "各用途に特化したファームウェアと機械設計が施されている（NAS、ゲーミング、エンタープライズ）。",
-          "WD Blueよりも長期間の製品保証（3年～5年）が提供されることが一般的。"
+          "NAS向けに最適化されたAgileArray技術搭載。",
+          "3年間のデータ復旧サービスが付帯。",
+          "MTBF 100万時間、RVセンサー搭載。"
         ],
         "differentiators": [
-          "ユーザーの用途に合わせて最適化された明確な製品ラインナップ。",
-          "WD Blueと比較して、より過酷な環境（常時稼働、高負荷）での使用を想定した設計になっている。"
+          "データ復旧サービス標準付帯による安心感。",
+          "24時間365日の稼働を前提とした高耐久設計。"
         ]
       }
     ],
@@ -115,25 +117,25 @@
         "NAS専用HDDと比較した場合、24時間365日の連続稼働における耐久性や保証内容で見劣りする可能性がある。",
         "セット商品のため、高性能なHDDのみを求めるユーザーにはスタンドが不要な投資となる場合がある。"
       ],
-      "score": 87,
-      "scoreRationale": "[基本点: 70]\n[加点: +8] (12TBの大容量に加え、書き込み性能が安定するCMR方式、7200rpm、512MBキャッシュという優れた基本性能)\n[加点: +12] (HDD単体だけでなく、クローン機能付きの多機能スタンドが付属しており、極めてコストパフォーマンスが高い)\n[加点: +5] (HDDとスタンドのセットは、PC換装やデータ移行のニーズにワンストップで応える独自の強みがある)\n[減点: -8] (ユーザーレビューが皆無に等しく、実際の長期信頼性や静音性が全くの未知数であるため、購入にはリスクが伴う)"
+      "score": 90,
+      "scoreRationale": "[基本点: 70]\n[性能・機能: +8] (12TBの大容量、CMR方式、7200rpmという基本性能の高さ)\n[コストパフォーマンス: +12] (HDD単体価格に近い価格で高機能スタンドが付属するお得感)\n[ユーザー満足度: -5] (発売後のレビューが少なく、長期的な信頼性評価が確立していない)\n[独自の強み: +5] (PCレスでクローン作成が可能なスタンドとのセットは、データ移行用途に最適)\n[合計: 90]"
     },
     "technicalSpecs": {
       "driveType": "内蔵HDD (Internal Hard Drive)",
       "formFactor": "3.5インチ",
       "capacity": "12TB",
       "interface": "SATA 6Gb/s",
-      "recordingTechnology": "CMR (Conventional Magnetic Recording)",
-      "spindleSpeed": "7200 rpm",
-      "cache": "512MB",
+      "recordingTechnology": "CMR",
+      "spindleSpeed": "7200 RPM",
+      "cache": "256MB",
       "bundledItem": {
         "name": "玄人志向 KURO-DACHI/CLONE/CRU3",
         "type": "SSD/HDDスタンド",
         "features": [
           "2.5型 & 3.5型対応",
           "USB3.2 Gen1接続",
-          "クローン機能",
-          "エラースキップ機能"
+          "PCレスでのクローン機能",
+          "エラースキップ機能搭載"
         ]
       }
     }
