@@ -1,0 +1,123 @@
+{
+  "analysis": {
+    "productName": "ティファール ジャスティン ロック 1.2L ブラック",
+    "parentAsin": "B0F93N3W1J",
+    "productDescription": "1.2Lの大容量で、転倒お湯もれロック機能を備えた安心設計の電気ケトル。",
+    "productUsage": [
+      "コーヒー・紅茶・緑茶の抽出",
+      "カップ麺のお湯",
+      "料理用のお湯（パスタなど）"
+    ],
+    "positivePoints": [
+      "大容量1.2L",
+      "転倒お湯もれロック機能で安心",
+      "カップ1杯(140ml)約70秒のスピード沸騰",
+      "注ぎ口カバーでほこりが入りにくい"
+    ],
+    "negativePoints": [
+      "本体が熱くなりやすい（プラスチック製）",
+      "保温機能がない",
+      "完全な蒸気レスではない（省スチーム設計）"
+    ],
+    "useCases": [
+      "大家族での利用",
+      "料理での大量のお湯沸かし",
+      "一人暮らしのまとめ沸かし"
+    ],
+    "userStories": [
+      {
+        "userType": "主婦",
+        "scenario": "朝食の準備",
+        "experience": "忙しい朝に一度で家族全員分のお茶を淹れられるので助かる。子供がうっかり倒してもお湯がこぼれにくいので安心感がある。",
+        "sentiment": "positive"
+      },
+      {
+        "userType": "学生",
+        "scenario": "夜食作り",
+        "experience": "夜食のカップ麺を作るとき、すぐにお湯が沸くので便利。大容量なので友達が来たときも一度で済む。",
+        "sentiment": "positive"
+      }
+    ],
+    "userImpression": "使い勝手が良く、大容量で安心感がある。特に転倒防止機能は高評価だが、本体が熱くなる点には注意が必要。",
+    "sources": [
+      {
+        "name": "Amazon商品ページ",
+        "url": "https://www.amazon.co.jp/dp/B0F93N3W1J",
+        "credibility": "高"
+      }
+    ],
+    "lastInvestigated": "2026-02-08",
+    "competitiveAnalysis": [
+      {
+        "name": "象印 電気ケトル CK-AX10",
+        "asin": "B07VJL1Q8S",
+        "priceComparison": "約6,000円〜と高価だが機能が豊富",
+        "featureComparison": [
+          "蒸気レス構造",
+          "転倒湯もれ防止構造",
+          "1.0L容量"
+        ],
+        "differentiators": [
+          "蒸気が出ない",
+          "本体が熱くなりにくい構造"
+        ]
+      },
+      {
+        "name": "タイガー 電気ケトル PCM-A080",
+        "asin": "B07MV5J1R6",
+        "priceComparison": "約4,000円〜と同価格帯だが容量が少ない",
+        "featureComparison": [
+          "省スチーム設計",
+          "転倒流水防止構造",
+          "0.8L容量"
+        ],
+        "differentiators": [
+          "コンパクトサイズ",
+          "デザイン性"
+        ]
+      },
+      {
+        "name": "ティファール ジャスティン プラス ロック 1.0L",
+        "asin": "B06W9K1C9K",
+        "priceComparison": "約3,500円〜と少し安い",
+        "featureComparison": [
+          "転倒お湯もれロック",
+          "1.0L容量"
+        ],
+        "differentiators": [
+          "容量の違い（こちらは1.0L、本商品は1.2L）"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "大家族",
+        "料理にお湯を使う人",
+        "安全性を重視する人"
+      ],
+      "pros": [
+        "大容量1.2L",
+        "転倒防止機能",
+        "コスパが良い"
+      ],
+      "cons": [
+        "本体が熱くなる",
+        "蒸気が出る"
+      ],
+      "score": 85,
+      "scoreRationale": "[基本点: 70]\n[加点: +5] (大容量1.2Lと転倒防止機能)\n[加点: +10] (競合と比較してコスパが良い)\n[合計: 85]"
+    },
+    "technicalSpecs": {
+      "capacity": "1.2L",
+      "power": "1250W",
+      "boilingTime": "カップ1杯(140ml)約70秒",
+      "dimensions": "不明 (重量約1.2kg)",
+      "other": [
+        "転倒お湯もれロック",
+        "空焚き防止",
+        "オートオフ",
+        "注ぎ口カバー"
+      ]
+    }
+  }
+}
