@@ -308,7 +308,8 @@ export class CategoryNormalizer {
             "AmazonGlobal Free Shipping",
             "Kindle Popup",
             "Kindle書籍 5冊購入で15%ポイント還元",
-            "Kindle電子書籍リーダー"
+            "Kindle電子書籍リーダー",
+            "文房具図鑑"
         ];
 
         if (blockList.some(block => {
