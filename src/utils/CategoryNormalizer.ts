@@ -318,7 +318,8 @@ export class CategoryNormalizer {
             "美容・健康家電",
             "理美容家電",
             "Kindle書籍",
-            "Kindle Unlimited"
+            "Kindle Unlimited",
+            "おせちHQP紐付用"
         ];
 
         if (blockList.some(block => {
