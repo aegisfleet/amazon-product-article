@@ -314,7 +314,8 @@ export class CategoryNormalizer {
             "文房具図鑑",
             "受験対策文房具",
             "コクヨの文房具・事務用品",
-            "美容・健康家電"
+            "美容・健康家電",
+            "理美容家電"
         ];
 
         if (blockList.some(block => {
