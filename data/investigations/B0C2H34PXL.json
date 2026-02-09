@@ -1,0 +1,126 @@
+{
+  "analysis": {
+    "productName": "ハイセンス 冷蔵庫 87L HR-K91HB (2ドア・小型)",
+    "parentAsin": "B0C2H34PXL",
+    "productDescription": "一人暮らしや寝室のサブ冷蔵庫に最適な、静音性とコンパクトさを兼ね備えた87L冷蔵庫です。",
+    "productUsage": [
+      "一人暮らしのメイン冷蔵庫（自炊控えめ）",
+      "寝室や書斎のセカンド冷蔵庫",
+      "オフィスや休憩室のドリンク専用"
+    ],
+    "positivePoints": [
+      "静音設計（約23dB）で、就寝時も気にならない。",
+      "幅47.5cmのスリムボディで、場所を取らずに設置可能。",
+      "シンプルでモダンなブラックデザイン。",
+      "省エネ基準達成率100%（2021年度目標）。"
+    ],
+    "negativePoints": [
+      "容量87Lは自炊派には少し物足りない（特に冷凍室26L）。",
+      "直冷式のため、定期的な霜取りが必要になる場合がある。",
+      "ドアポケットの収納力が大型冷蔵庫に比べると限定的。"
+    ],
+    "useCases": [
+      "新生活を始める大学生や単身赴任者",
+      "テレワーク中のデスク周りのサブ冷蔵庫"
+    ],
+    "userStories": [
+      {
+        "userType": "20代学生",
+        "scenario": "初めての一人暮らし",
+        "experience": "狭いワンルームでも圧迫感がなく、音も静かで快適です。（推測）",
+        "sentiment": "positive"
+      },
+      {
+        "userType": "30代会社員",
+        "scenario": "寝室のサブ冷蔵庫",
+        "experience": "寝室に置いてますが、モーター音が気にならずよく眠れます。（推測）",
+        "sentiment": "positive"
+      }
+    ],
+    "userImpression": "全体的にコンパクトさと静音性が評価されており、デザインのシンプルさも好評です。ただし容量不足を感じるユーザーもいると推測されます。",
+    "sources": [
+      {
+        "name": "Amazon商品ページ",
+        "url": "https://www.amazon.co.jp/dp/B0C2H34PXL",
+        "credibility": "medium"
+      }
+    ],
+    "lastInvestigated": "2026-02-09",
+    "competitiveAnalysis": [
+      {
+        "name": "COMFEE' 冷蔵庫 90L RCD90BL1JP(E)",
+        "asin": "B0FMK57N2B",
+        "priceComparison": "ほぼ同価格帯（約16,800円前後）",
+        "featureComparison": [
+          "容量90L（ハイセンスは87L）",
+          "インバーター搭載を謳っている（省エネ期待）"
+        ],
+        "differentiators": [
+          "COMFEE'の方がわずかに容量が大きい",
+          "ハイセンスは国内サポート体制への安心感がある（東芝グループ）"
+        ]
+      },
+      {
+        "name": "simplus 冷蔵庫 90L SP-90LD2",
+        "asin": "B0D9LQF55V",
+        "priceComparison": "やや安価（約15,000円〜17,000円）",
+        "featureComparison": [
+          "容量90L",
+          "左右ドア開き対応モデルがある場合も"
+        ],
+        "differentiators": [
+          "simplusは低価格重視",
+          "ハイセンスはデザインと静音性重視"
+        ]
+      },
+      {
+        "name": "アイリスオーヤマ 冷蔵庫 90L IRSD-9B",
+        "asin": "B08PY1SHTK",
+        "priceComparison": "高価格帯（約25,000円）",
+        "featureComparison": [
+          "容量90L",
+          "静音設計"
+        ],
+        "differentiators": [
+          "アイリスオーヤマは知名度と信頼性が高い",
+          "ハイセンスの方がコストパフォーマンスに優れる"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "自炊をあまりしない一人暮らしの方",
+        "寝室に置く静かな冷蔵庫を探している方",
+        "初期費用を抑えたい学生や単身赴任者"
+      ],
+      "pros": [
+        "圧倒的な静音性（約23dB）",
+        "スリムで場所を取らない",
+        "手頃な価格"
+      ],
+      "cons": [
+        "霜取りの手間（直冷式の可能性）",
+        "冷凍食品の買いだめには向かない容量"
+      ],
+      "score": 75,
+      "scoreRationale": "[基本点: 70]\n[加点: +5] (静音性23dBとスリムなデザイン)\n[加点: +5] (1万円台で購入可能なコストパフォーマンス)\n[減点: -5] (87Lという容量の限界と直冷式の手間)\n[合計: 75]"
+    },
+    "technicalSpecs": {
+      "dimensions": {
+        "width": "475mm",
+        "height": "890mm",
+        "depth": "500mm",
+        "weight": "約24.5kg"
+      },
+      "capacity": {
+        "total": "87L",
+        "fridge": "61L",
+        "freezer": "26L"
+      },
+      "power": "電動機定格消費電力: 65/65W (50/60Hz)",
+      "noise": "約23dB",
+      "cooling": "直冷式 (推測)",
+      "energy": "年間消費電力量: 約202kWh/年 (2021年基準)"
+    }
+  }
+}
