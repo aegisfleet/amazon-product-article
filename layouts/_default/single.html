@@ -47,6 +47,15 @@
         </div>
         {{ end }}
 
+        {{/* Rakuten Affiliate Widget */}}
+        <div id="rakuten-affiliate-section" class="rakuten-section"
+            style="display: none; margin-bottom: var(--spacing-lg); text-align: center;">
+            <script
+                type="text/javascript">rakuten_design = "slide"; rakuten_affiliateId = "01080f82.44ae7157.08eb9599.98758834"; rakuten_items = "ctsmatch"; rakuten_genreId = "0"; rakuten_size = "300x250"; rakuten_target = "_blank"; rakuten_theme = "gray"; rakuten_border = "off"; rakuten_auto_mode = "on"; rakuten_genre_title = "off"; rakuten_recommend = "on"; rakuten_ts = "1770644946223";</script>
+            <script type="text/javascript"
+                src="https://xml.affiliate.rakuten.co.jp/widget/js/rakuten_widget.js?20230106"></script>
+        </div>
+
         {{/* 同じカテゴリの記事 */}}
         {{ $related := $allArticles }}
         {{ if $categories }}
@@ -111,6 +120,7 @@
                 var toc = document.getElementById('toc');
                 var relatedSection = document.getElementById('related-products-section');
                 var keepaSection = document.getElementById('keepa-graph-section');
+                var rakutenSection = document.getElementById('rakuten-affiliate-section');
 
                 // Move TOC to before first H2
                 if (toc) {
@@ -139,9 +149,23 @@
                     keepaSection.style.display = 'block';
                 }
 
-                // Insert Related Section after Keepa graph (or after hero card if no Keepa)
-                if (relatedSection) {
+                // Insert Rakuten section after Keepa (or hero card)
+                if (rakutenSection) {
                     if (keepaSection && keepaSection.parentNode) {
+                        keepaSection.parentNode.insertBefore(rakutenSection, keepaSection.nextSibling);
+                    } else if (heroCard) {
+                        heroCard.parentNode.insertBefore(rakutenSection, heroCard.nextSibling);
+                    } else if (toc) {
+                        toc.parentNode.insertBefore(rakutenSection, toc);
+                    }
+                    rakutenSection.style.display = 'block';
+                }
+
+                // Insert Related Section after Rakuten (or Keepa or hero card)
+                if (relatedSection) {
+                    if (rakutenSection && rakutenSection.parentNode) {
+                        rakutenSection.parentNode.insertBefore(relatedSection, rakutenSection.nextSibling);
+                    } else if (keepaSection && keepaSection.parentNode) {
                         keepaSection.parentNode.insertBefore(relatedSection, keepaSection.nextSibling);
                     } else if (heroCard) {
                         heroCard.parentNode.insertBefore(relatedSection, heroCard.nextSibling);
