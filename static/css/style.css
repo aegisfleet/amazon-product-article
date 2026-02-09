@@ -243,9 +243,11 @@ a:hover {
 
 .card-image {
   aspect-ratio: 16 / 9;
-  object-fit: cover;
   background-color: #ffffff;
   height: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .card-content {
