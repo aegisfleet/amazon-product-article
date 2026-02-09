@@ -8,11 +8,11 @@
     data-date="{{ $dateRaw }}">
     <div class="card-image">
         <a href="{{ .RelPermalink }}" aria-label="{{ .Title }}のレビューを読む"
-            style="display: block; width: 100%; height: 100%;">
+            style="display: flex; justify-content: center; align-items: center; width: 100%; height: 100%;">
             <!-- Placeholder for product image integration later -->
             {{ if .Params.images }}
             <img src="{{ index .Params.images 0 }}" alt="{{ .Title }}"
-                style="width:100%; height:100%; object-fit:contain; object-position:center;" loading="lazy"
+                style="width:100%; height:100%; object-fit:contain; object-position:center; margin:auto;" loading="lazy"
                 onerror="this.onerror=null;this.src='https://placehold.jp/ffffff/000000/300x300.png?text=No%20Image';">
             {{ else }}
             <div
@@ -74,7 +74,8 @@
             <span class="article-meta">{{ with .Params.last_investigated }}{{ time . | dateFormat "2006年01月02日" }}{{
                 else }}{{ .Date.Format "2006年01月02日" }}{{ end }}</span>
             {{ if .Params.affiliate_url }}
-            <a href="{{ .Params.affiliate_url }}" class="btn-amazon-small" target="_blank" rel="noopener noreferrer">🛒 Amazonで見る</a>
+            <a href="{{ .Params.affiliate_url }}" class="btn-amazon-small" target="_blank" rel="noopener noreferrer">🛒
+                Amazonで見る</a>
             {{ else }}
             <a href="{{ .RelPermalink }}" class="read-more">レビューを読む →</a>
             {{ end }}
