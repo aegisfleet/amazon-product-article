@@ -48,8 +48,7 @@ export class CategoryNormalizer {
                 '画材', '文房具', '絵具', 'オフィス用品',
                 'チャイルドシート', 'ジュニアシート', 'ベビーカー', '抱っこ紐',
                 'おむつ', '紙おむつ', 'ベビーおむつ',
-                'Kindle', 'Fire', 'Echo', 'Alexa', 'Ring', 'Amazonデバイス',
-                'タイヤ', 'カー用品', '車＆バイク', '自動車', 'バイク用品'
+                'Kindle', 'Fire', 'Echo', 'Alexa', 'Ring', 'Amazonデバイス'
             ];
 
             if (preferredKeywords.some(k => main.toLowerCase().includes(k.toLowerCase()) || sub.toLowerCase().includes(k.toLowerCase()))) {
@@ -320,7 +319,9 @@ export class CategoryNormalizer {
             "Kindle書籍",
             "Kindle Unlimited",
             "おせちHQP紐付用",
-            "AmazonGlobal"
+            "AmazonGlobal",
+            "カー＆バイク用品",
+            "車＆バイク"
         ];
 
         if (blockList.some(block => {
