@@ -207,6 +207,11 @@ async function saveArticle(
     article: GeneratedArticle,
     asin: string
 ): Promise<string> {
+    // Validate ASIN format to prevent path traversal
+    if (!/^[A-Z0-9]{10}$/i.test(asin)) {
+        throw new Error(`Invalid ASIN format: ${asin}`);
+    }
+
     const articlesDir = path.join(process.cwd(), 'content', 'articles');
     const filename = `${asin}.md`;
     const filePath = path.join(articlesDir, filename);
