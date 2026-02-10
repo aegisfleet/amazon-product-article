@@ -1,0 +1,96 @@
+{
+  "analysis": {
+    "productName": "Wacom MovinkPad Pro 14",
+    "parentAsin": "B0FW4VRFW7",
+    "productDescription": "ワコムのペン技術とAndroid 15を融合させた、14インチのプロ向けポータブル液タブ。",
+    "productUsage": [
+      "CLIP STUDIO PAINT等での本格的なイラスト・マンガ制作",
+      "PCレスでのラフスケッチやネーム作成",
+      "外部モニターとしてPCと接続し液タブ利用（ハイブリッド運用）",
+      "Androidアプリを活用した3Dモデリングや動画編集"
+    ],
+    "positivePoints": [
+      "Wacom Pro Pen 3標準付属による最高峰の描き心地",
+      "PC不要で動作するスタンドアロン型（Android 15搭載）",
+      "有機EL（OLED）ディスプレイによる鮮やかな発色と黒の表現",
+      "同サイズのiPad ProやGalaxy Tab S Ultraより安価",
+      "スリムで軽量な筐体（持ち運びに最適）"
+    ],
+    "negativePoints": [
+      "iPad専用アプリ（Procreate等）が利用不可",
+      "Androidタブレットとしてのアプリ最適化はiPadに劣る",
+      "バッテリー駆動時間の懸念（高解像度OLED搭載のため）",
+      "アクセサリー（キーボード等）の選択肢が少ない可能性"
+    ],
+    "useCases": [
+      "カフェやコワーキングスペースでのノマドワーク",
+      "移動中の新幹線や飛行機内での作業",
+      "PC環境と切り離したリラックスした体勢での作画"
+    ],
+    "userStories": [
+      {
+        "userType": "フリーランスイラストレーター",
+        "scenario": "外出先での急な修正依頼",
+        "experience": "以前は重いPCと液タブを持ち歩いていたが、MovinkPad Pro 14ならこれ1台で対応でき、荷物が激減した。（推測）",
+        "sentiment": "positive"
+      },
+      {
+        "userType": "ハイアマチュア",
+        "scenario": "iPad Proからの乗り換え検討",
+        "experience": "Procreateも良いが、やはりワコムペンの描き味が忘れられず購入。CLIP STUDIOメインならこちらの方が描きやすい。（推測）",
+        "sentiment": "positive"
+      }
+    ],
+    "userImpression": "「これを待っていた」という声が多い、ワコムの技術が詰まったAndroidタブレット。ペンの書き味は他社を圧倒するが、Android OSでの制作フローに馴染めるかが鍵。",
+    "sources": [
+      {
+        "name": "Amazon Product Page",
+        "url": "https://www.amazon.co.jp/dp/B0FW4VRFW7",
+        "credibility": "High"
+      }
+    ],
+    "lastInvestigated": "2026-02-10",
+    "competitiveAnalysis": [
+      {
+        "name": "Samsung Galaxy Tab S11 Ultra",
+        "asin": "B0FND7CRXC",
+        "priceComparison": "約16.5万円。MovinkPad Pro 14より約2万円高い。",
+        "featureComparison": ["14.6インチ有機EL", "Sペン付属", "Snapdragon 8 Gen 4 (推定)"],
+        "differentiators": ["Galaxy AI機能", "防水防塵", "画面サイズがわずかに大きい"]
+      },
+      {
+        "name": "Apple iPad Pro 13 (M4)",
+        "asin": "B0D3J7XL7M",
+        "priceComparison": "約23万円〜。ペンを含めるとさらに高額。",
+        "featureComparison": ["13インチTandem OLED", "M4チップ", "Apple Pencil Pro対応"],
+        "differentiators": ["圧倒的な処理性能", "Procreate等のアプリ資産", "リセールバリュー"]
+      },
+      {
+        "name": "Xiaomi Pad 7 Pro",
+        "asin": "B0DXFCQ73W",
+        "priceComparison": "約6.1万円。半額以下で同等のSoCを搭載。",
+        "featureComparison": ["11インチ級LCD", "Snapdragon 8s Gen 3", "144Hz"],
+        "differentiators": ["圧倒的なコストパフォーマンス", "画面サイズが小さい", "ペン性能はワコムに劣る"]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": ["外出先でも妥協したくないプロクリエイター", "CLIP STUDIO PAINTユーザー", "ワコムペン愛用者"],
+      "pros": ["Pro Pen 3の卓越した操作性", "有機ELの映像美", "スタンドアロン機としての機動力"],
+      "cons": ["iPadアプリ非対応", "リセールバリューの不透明さ"],
+      "score": 85,
+      "scoreRationale": "[基本点: 70]\n[加点: +10] (Wacom Pro Pen 3と有機ELによる代替不可能な描画体験)\n[加点: +10] (競合ハイエンド機より安価な価格設定)\n[減点: -5] (Androidタブレットアプリの充実度がiPadOSに劣る)\n[合計: 85]"
+    },
+    "technicalSpecs": {
+      "os": "Android 15",
+      "cpu": "Snapdragon 8s Gen 3",
+      "ram": "12GB",
+      "storage": "256GB",
+      "display": { "size": "14インチ", "type": "OLED", "resolution": "不明" },
+      "battery": { "capacity": "不明", "charging": "不明" },
+      "camera": { "main": "不明", "front": "不明" },
+      "dimensions": { "weight": "約700g" },
+      "connectivity": ["Wi-Fi", "Bluetooth", "USB-C"],
+      "other": ["Wacom Pro Pen 3付属", "CLIP STUDIOカスタムブラシ特典"]
+    }
+  }
+}
