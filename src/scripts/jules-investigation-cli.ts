@@ -90,6 +90,11 @@ async function saveSessionInfo(
     product: Product,
     sessionInfo: { sessionId: string; sessionName: string }
 ): Promise<void> {
+    // Validate ASIN format to prevent path traversal
+    if (!/^[A-Z0-9]{10}$/i.test(product.asin)) {
+        throw new Error(`Invalid ASIN format: ${product.asin}`);
+    }
+
     const sessionsDir = path.join(process.cwd(), 'data', 'sessions');
     await fs.mkdir(sessionsDir, { recursive: true });
 
