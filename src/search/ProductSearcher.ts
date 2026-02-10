@@ -400,7 +400,7 @@ export class ProductSearcher {
       const sessionsDir = path.join(this.dataDir, 'sessions');
       const sessionFiles = await fs.readdir(sessionsDir);
 
-      for (const sessionFile of sessionFiles) {
+      await Promise.all(sessionFiles.map(async (sessionFile) => {
         const sessionPath = path.join(sessionsDir, sessionFile);
         const stats = await fs.stat(sessionPath);
 
@@ -408,17 +408,17 @@ export class ProductSearcher {
           await fs.unlink(sessionPath);
           this.logger.info(`Cleaned old session file: ${sessionFile}`);
         }
-      }
+      }));
 
       // Clean category data older than cutoff
       const categoriesDir = path.join(this.dataDir, 'categories');
       const categories = await fs.readdir(categoriesDir);
 
-      for (const category of categories) {
+      await Promise.all(categories.map(async (category) => {
         const categoryDir = path.join(categoriesDir, category);
         const categoryFiles = await fs.readdir(categoryDir);
 
-        for (const file of categoryFiles) {
+        await Promise.all(categoryFiles.map(async (file) => {
           const filePath = path.join(categoryDir, file);
           const stats = await fs.stat(filePath);
 
@@ -426,8 +426,8 @@ export class ProductSearcher {
             await fs.unlink(filePath);
             this.logger.info(`Cleaned old category file: ${category}/${file}`);
           }
-        }
-      }
+        }));
+      }));
 
     } catch (error) {
       this.logger.error('Failed to clean old data:', error);
