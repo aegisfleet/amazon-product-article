@@ -281,9 +281,9 @@ export class CreatorsAPIClient {
       itemIds: validAsins,
       itemIdType: 'ASIN',
       resources: [
-        'Images.Primary.Large',
-        'Images.Primary.Medium',
-        'Images.Variants.Large',
+        'images.primary.large',
+        'images.primary.medium',
+        'images.variants.large',
         'itemInfo.title',
         'itemInfo.features',
         'itemInfo.manufactureInfo',
