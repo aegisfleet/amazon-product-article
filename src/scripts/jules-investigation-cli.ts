@@ -14,6 +14,7 @@
 import fs from 'fs/promises';
 import path from 'path';
 import { JulesInvestigator } from '../jules/JulesInvestigator';
+import { saveSessionInfo } from '../jules/SessionManager';
 import { JulesCredentials, SourceContext } from '../types/JulesTypes';
 import { Product } from '../types/Product';
 import { Logger } from '../utils/Logger';
@@ -84,31 +85,6 @@ async function ensureOutputDirectories(): Promise<void> {
     for (const dir of dirs) {
         await fs.mkdir(dir, { recursive: true });
     }
-}
-
-async function saveSessionInfo(
-    product: Product,
-    sessionInfo: { sessionId: string; sessionName: string }
-): Promise<void> {
-    // Validate ASIN format to prevent path traversal
-    if (!/^[A-Z0-9]{10}$/i.test(product.asin)) {
-        throw new Error(`Invalid ASIN format: ${product.asin}`);
-    }
-
-    const sessionsDir = path.join(process.cwd(), 'data', 'sessions');
-    await fs.mkdir(sessionsDir, { recursive: true });
-
-    const filename = `${product.asin}-${Date.now()}.json`;
-    const filePath = path.join(sessionsDir, filename);
-
-    await fs.writeFile(filePath, JSON.stringify({
-        product,
-        session: sessionInfo,
-        status: 'started',
-        timestamp: new Date().toISOString(),
-    }, null, 2));
-
-    logger.info(`Session info saved: ${filename}`);
 }
 
 async function setGitHubOutput(name: string, value: string): Promise<void> {
