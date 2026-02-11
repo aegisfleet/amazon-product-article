@@ -127,70 +127,72 @@ async function loadInvestigationResults(targetFiles?: string[]): Promise<Investi
         }
     }
 
-    const results: InvestigationData[] = [];
-    for (const filePath of filesToProcess) {
-        try {
-            // Check if file exists
+    const results = await Promise.all(
+        filesToProcess.map(async (filePath) => {
             try {
-                await fs.access(filePath);
-            } catch {
-                logger.warn(`File not found: ${filePath}, skipping`);
-                continue;
+                // Check if file exists
+                try {
+                    await fs.access(filePath);
+                } catch {
+                    logger.warn(`File not found: ${filePath}, skipping`);
+                    return null;
+                }
+
+                const rawData = await fs.readFile(filePath, 'utf-8');
+                const parsed: RawInvestigationFile = JSON.parse(rawData);
+
+                const fileName = path.basename(filePath);
+                // Skip if not a JSON file or is summary
+                if (!fileName.endsWith('.json') || fileName === 'latest-summary.json') {
+                    return null;
+                }
+
+                // ファイル名からASINを抽出 (e.g., "B07DZZJ2B9.json" -> "B07DZZJ2B9")
+                const asin = path.basename(fileName, '.json');
+
+                // 最小限のProduct情報を構築（ASINのみ必須、他はプレースホルダー）
+                const product: Product = {
+                    asin,
+                    title: `Product ${asin}`,  // タイトルは後で記事生成時に更新可能
+                    category: '',
+                    price: { amount: 0, currency: 'JPY', formatted: '' },
+                    images: { primary: '', thumbnails: [] },
+                    specifications: {},
+                    rating: { average: 0, count: 0 },
+                };
+
+                // ファイルの更新日時を取得（作成日時の代用）
+                const stats = await fs.stat(filePath);
+
+                // lastInvestigatedがあればそれを優先、なければファイルの更新日時、それもなければ現在時刻
+                let generatedAt = new Date();
+                if (parsed.analysis.lastInvestigated) {
+                    generatedAt = new Date(parsed.analysis.lastInvestigated);
+                } else {
+                    generatedAt = stats.mtime;
+                }
+
+                // InvestigationResultを構築
+                const investigation: InvestigationResult = {
+                    sessionId: `file-${asin}`,
+                    product,
+                    analysis: parsed.analysis,
+                    generatedAt: generatedAt,
+                };
+
+                return {
+                    product,
+                    investigation,
+                    timestamp: new Date().toISOString(),
+                } as InvestigationData;
+            } catch (error) {
+                logger.warn(`Failed to load investigation file ${filePath}:`, error);
+                return null;
             }
+        })
+    );
 
-            const rawData = await fs.readFile(filePath, 'utf-8');
-            const parsed: RawInvestigationFile = JSON.parse(rawData);
-
-            const fileName = path.basename(filePath);
-            // Skip if not a JSON file or is summary
-            if (!fileName.endsWith('.json') || fileName === 'latest-summary.json') {
-                continue;
-            }
-
-            // ファイル名からASINを抽出 (e.g., "B07DZZJ2B9.json" -> "B07DZZJ2B9")
-            const asin = path.basename(fileName, '.json');
-
-            // 最小限のProduct情報を構築（ASINのみ必須、他はプレースホルダー）
-            const product: Product = {
-                asin,
-                title: `Product ${asin}`,  // タイトルは後で記事生成時に更新可能
-                category: '',
-                price: { amount: 0, currency: 'JPY', formatted: '' },
-                images: { primary: '', thumbnails: [] },
-                specifications: {},
-                rating: { average: 0, count: 0 },
-            };
-
-            // ファイルの更新日時を取得（作成日時の代用）
-            const stats = await fs.stat(filePath);
-
-            // lastInvestigatedがあればそれを優先、なければファイルの更新日時、それもなければ現在時刻
-            let generatedAt = new Date();
-            if (parsed.analysis.lastInvestigated) {
-                generatedAt = new Date(parsed.analysis.lastInvestigated);
-            } else {
-                generatedAt = stats.mtime;
-            }
-
-            // InvestigationResultを構築
-            const investigation: InvestigationResult = {
-                sessionId: `file-${asin}`,
-                product,
-                analysis: parsed.analysis,
-                generatedAt: generatedAt,
-            };
-
-            results.push({
-                product,
-                investigation,
-                timestamp: new Date().toISOString(),
-            });
-        } catch (error) {
-            logger.warn(`Failed to load investigation file ${filePath}:`, error);
-        }
-    }
-
-    return results;
+    return results.filter((result): result is InvestigationData => result !== null);
 }
 
 async function ensureOutputDirectories(): Promise<void> {
