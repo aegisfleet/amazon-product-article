@@ -12,6 +12,10 @@ import { ArticleGenerator } from '../ArticleGenerator';
 jest.mock('fs', () => ({
   ...jest.requireActual('fs'),
   existsSync: jest.fn(),
+  promises: {
+    ...jest.requireActual('fs').promises,
+    readFile: jest.fn(),
+  }
 }));
 
 // Mock ConfigManager
@@ -321,6 +325,13 @@ describe('ArticleGenerator', () => {
     });
 
     it('should show internal link for competitors with existing investigation file', async () => {
+      // Mock fs.promises.readFile to return valid JSON
+      (fs.promises.readFile as jest.Mock).mockImplementation((pathStr: string) => {
+        if (pathStr.includes('B08COMPET1')) {
+            return Promise.resolve(JSON.stringify({ analysis: { recommendation: { score: 85 } } }));
+        }
+        return Promise.reject(new Error('File not found'));
+      });
       // Mock fs.existsSync to return true for the competitor
       (fs.existsSync as jest.Mock).mockImplementation((pathStr: string) => {
         return pathStr.includes('B08COMPET1');
@@ -345,16 +356,15 @@ describe('ArticleGenerator', () => {
       expect(result.content).toContain('href="../b08compet1/"');
       expect(result.content).toContain('サイト内レビュー');
       expect(result.content).toContain('class="btn-internal-small"');
-
-      // Verify wrapping in a tag
+      // Mock fs.promises.readFile to reject
       expect(result.content).toContain('<a href="../b08compet1/" class="competitor-preview">');
       expect(result.content).not.toContain('<div class="competitor-preview">');
     });
 
     it('should NOT show internal link if investigation file does not exist', async () => {
       // Mock fs.existsSync to return false
-      (fs.existsSync as jest.Mock).mockReturnValue(false);
-
+      // Mock fs.promises.readFile to reject
+      (fs.promises.readFile as jest.Mock).mockRejectedValue(new Error("File not found"));
       const mockDetail: ProductDetail = {
         ...mockProduct,
         asin: 'B08COMPET1',

@@ -882,8 +882,7 @@ ${reviewAnalysis ? this.generateSentimentAnalysis(reviewAnalysis) : ''}`;
     const competitors = investigation.analysis.competitiveAnalysis;
 
     // 各競合商品をカード形式で表示
-    const competitorCards = competitors
-      .map(competitor => {
+    const competitorCards = (await Promise.all(competitors.map(async competitor => {
         const features = competitor.featureComparison
           .map(feature => `<li>${feature}</li>`)
           .join('\n');
@@ -901,16 +900,15 @@ ${reviewAnalysis ? this.generateSentimentAnalysis(reviewAnalysis) : ''}`;
         let competitorScore: number | undefined;
         if (competitor.asin) {
           const investigationPath = path.join(process.cwd(), 'data', 'investigations', `${competitor.asin}.json`);
-          if (fs.existsSync(investigationPath)) {
+          try {
+            const fileContent = await fs.promises.readFile(investigationPath, 'utf-8');
             hasInternalReview = true;
             internalLink = `<a href="../${competitor.asin.toLowerCase()}/" class="btn-internal-small">📄 サイト内レビュー</a>`;
             // 競合商品のスコアを取得
-            try {
-              const competitorInvestigation = JSON.parse(fs.readFileSync(investigationPath, 'utf-8')) as InvestigationResult;
-              competitorScore = competitorInvestigation.analysis?.recommendation?.score;
-            } catch {
-              // スコア取得に失敗した場合は無視
-            }
+            const competitorInvestigation = JSON.parse(fileContent) as InvestigationResult;
+            competitorScore = competitorInvestigation.analysis?.recommendation?.score;
+          } catch {
+            // スコア取得に失敗した場合は無視（ファイルが存在しない場合もここに来る）
           }
         }
 
@@ -976,7 +974,7 @@ ${internalLink}
 ${competitorLink}
 </div>
 </div>`;
-      })
+      })))
       .join('\n\n');
 
     const content = `## 🥊 競合商品との比較
