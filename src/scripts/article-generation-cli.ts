@@ -403,7 +403,7 @@ async function main(): Promise<void> {
                     }
 
                     // Save incrementally to prevent data loss on crash
-                    creatorsCache.save();
+                    await creatorsCache.save();
 
                     // Respect rate limits - wait a bit between batches if needed
                     if (i + chunkSize < missingAsins.length) {

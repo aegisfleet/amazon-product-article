@@ -85,10 +85,10 @@ export class CreatorsAPICache {
     /**
      * Save cache to disk
      */
-    public save(): void {
+    public async save(): Promise<void> {
         try {
             this.ensureDirectory();
-            fs.writeFileSync(this.cachePath, JSON.stringify(this.cache, null, 2), 'utf-8');
+            await fs.promises.writeFile(this.cachePath, JSON.stringify(this.cache, null, 2), 'utf-8');
             this.logger.info('Creators API Cache saved to disk');
         } catch (error) {
             this.logger.error('Failed to save Creators API Cache:', error);
