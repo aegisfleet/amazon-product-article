@@ -1,0 +1,118 @@
+{
+  "analysis": {
+    "productName": "ロジクール Signature M650 ワイヤレスマウス",
+    "parentAsin": "B09Q5SHDR3",
+    "productDescription": "静音クリックとSmartWheel機能を搭載し、快適な操作性と集中力を高める環境を提供するワイヤレスマウスです。",
+    "productUsage": [
+      "オフィスや自宅でのデスクワーク",
+      "長時間の文書作成やWeb閲覧",
+      "静かな場所でのPC操作"
+    ],
+    "positivePoints": [
+      "クリック音が気にならない静音設計（SilentTouch技術）",
+      "勢いよく回すと高速スクロールに切り替わるSmartWheel機能",
+      "手にフィットする形状とラバーサイドグリップによる快適な握り心地",
+      "BluetoothとLogi Boltの両方の接続方式に対応",
+      "カスタマイズ可能なサイドボタン（Logi Options+使用）"
+    ],
+    "negativePoints": [
+      "Unifyingレシーバーには非対応",
+      "電池式のため充電式を好むユーザーには不向き（ただし電池寿命は長い）",
+      "安価な静音マウスと比較すると価格がやや高め"
+    ],
+    "useCases": [
+      "静かなオフィス環境での使用",
+      "深夜の自宅での作業",
+      "カフェや図書館など公共の場での利用",
+      "長時間のスプレッドシート操作"
+    ],
+    "userStories": [
+      {
+        "userType": "30代会社員（リモートワーク）",
+        "scenario": "自宅での長時間作業",
+        "experience": "（推測）これまではクリック音が気になっていたが、M650に変えてから家族に気を使わずに作業できるようになった。特に長いWebページのスクロールがSmartWheelのおかげで快適になり、作業効率が上がったと感じている。",
+        "sentiment": "positive"
+      },
+      {
+        "userType": "大学生",
+        "scenario": "図書館でのレポート作成",
+        "experience": "（推測）図書館のような静かな場所でもカチカチという音がしないので安心して使える。Bluetooth接続も安定しており、iPadとPCの両方で使い分けられるのが便利。",
+        "sentiment": "positive"
+      }
+    ],
+    "userImpression": "静音性と操作性のバランスが取れた良質なマウスとして評価されています。特にSmartWheelの利便性と手に馴染むデザインが好評です。",
+    "sources": [],
+    "lastInvestigated": "2026-02-11",
+    "competitiveAnalysis": [
+      {
+        "name": "Logicool Signature M750",
+        "asin": "B0BKPL1VKW",
+        "priceComparison": "M650より高価格（約4,290円）",
+        "featureComparison": [
+          "最大3台のデバイス切り替え機能（Easy-Switch）搭載",
+          "DPI切り替えボタン搭載",
+          "Logi Flow対応"
+        ],
+        "differentiators": [
+          "複数デバイスを頻繁に切り替えるユーザー向け"
+        ]
+      },
+      {
+        "name": "Logicool Pebble Mouse 2 M350s",
+        "asin": "B0CJR5HBMN",
+        "priceComparison": "M650と同程度（約3,551円）",
+        "featureComparison": [
+          "薄型デザインで持ち運びに便利",
+          "クリック感は静かだが、ホールド感はM650に劣る"
+        ],
+        "differentiators": [
+          "携帯性とデザイン重視"
+        ]
+      },
+      {
+        "name": "バッファロー BSMBW325BK",
+        "asin": "B06WRN4VGJ",
+        "priceComparison": "M650より大幅に安価（約1,389円）",
+        "featureComparison": [
+          "基本的な静音機能と5ボタン搭載",
+          "質感やスクロール性能はM650に及ばない"
+        ],
+        "differentiators": [
+          "コスト重視のエントリーモデル"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "静音性を重視しつつ、操作性も妥協したくないユーザー",
+        "長時間のデスクワークを行うビジネスパーソン",
+        "Logi Bolt対応の環境を整えたいユーザー"
+      ],
+      "pros": [
+        "優れた静音性とクリック感",
+        "状況に応じて切り替わるスマートなスクロール機能",
+        "安定した接続性と長い電池寿命"
+      ],
+      "cons": [
+        "充電式ではない（単3電池1本使用）",
+        "Unifyingレシーバーを使用している既存環境とは互換性がない"
+      ],
+      "score": 80,
+      "scoreRationale": "[基本点: 70]\n[加点: +5] (SmartWheel機能とSilentTouch技術による快適な操作性)\n[加点: +2] (手に馴染むデザインと質感の良さ)\n[加点: +3] (独自のSmartWheel機能による差別化)\n[合計: 80]"
+    },
+    "technicalSpecs": {
+      "dimensions": {
+        "height": "37.8mm",
+        "width": "61.8mm",
+        "depth": "107.19mm",
+        "weight": "101.2g"
+      },
+      "connectivity": ["Bluetooth Low Energy", "Logi Bolt USBレシーバー"],
+      "battery": { "type": "単三形乾電池×1", "life": "最大24ヶ月" },
+      "sensor": { "technology": "ロジクール アドバンス オプティカル トラッキング", "dpi": "400-4000" },
+      "buttons": 5,
+      "scrollWheel": "SmartWheel",
+      "compatibility": ["Windows", "macOS", "iPadOS", "Chrome OS", "Android", "Linux"]
+    }
+  }
+}
