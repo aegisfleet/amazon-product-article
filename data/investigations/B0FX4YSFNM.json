@@ -53,7 +53,7 @@
         "credibility": "公式データであり信頼性は非常に高い"
       }
     ],
-    "lastInvestigated": "2026-01-11",
+    "lastInvestigated": "2026-02-13",
     "competitiveAnalysis": [
       {
         "name": "DualSense Edge ワイヤレスコントローラー",
@@ -82,21 +82,21 @@
         ]
       },
       {
-        "name": "Razer Wolverine V2 Pro",
-        "asin": "B0BN5M7T18",
+        "name": "Razer Raiju V3 Pro",
+        "asin": "B0FXGJHM4P",
         "priceComparison": "DualSense Edgeと同等か、それ以上に高価な場合がある。",
         "featureComparison": [
-          "カチカチとした感触の「メカタクタイルアクションボタン」を搭載。",
-          "Razer独自の低遅延ワイヤレス接続「HyperSpeed Wireless」に対応。"
+          "Razer メカタクタイルアクションボタンによる高速応答。",
+          "HyperSpeed Wirelessによる低遅延接続。"
         ],
         "differentiators": [
-          "Razer製品特有のメカニカルな操作感と応答性の高さ。",
+          "Razer独自のメカニカルな操作感。",
           "PCゲーマーにも馴染み深いブランドイメージ。"
         ]
       },
       {
         "name": "SCUF REFLEX PRO",
-        "asin": null,
+        "asin": "B09YQ667XD",
         "priceComparison": "輸入品が多く、価格は非常に高価で変動も大きい。",
         "featureComparison": [
           "背面に4つの取り外し・再マッピング可能なパドルを搭載。",
@@ -128,32 +128,27 @@
       "scoreRationale": "[基本点: 70]\n[加点: +10] (性能・機能: ハプティックフィードバックとアダプティブトリガーは、PS5の体験を定義する革新的な機能)\n[減点: -5] (コストパフォーマンス: 性能は高いが、価格の上昇とバッテリー性能を考慮すると完全には満足できない)\n[加点: +5] (品質・デザイン: 純正品ならではの高品質な作りと、スタイリッシュなデザイン)\n[加点: +5] (ユーザー満足度: 新機能への評価は非常に高いが、一部の懸念点も存在する)\n[加点: +5] (独自の強み・先進性: PS5との連携を前提とした、他にはない独自の価値を提供)\n[合計: 90]"
     },
     "technicalSpecs": {
-      "connectivity": [
-        "Bluetooth 5.1",
-        "USB Type-C"
-      ],
+      "dimensions": {
+        "width": "160mm",
+        "height": "66mm",
+        "depth": "106mm",
+        "weight": "280g"
+      },
       "battery": {
         "type": "内蔵リチウムイオン充電池",
         "capacity": "1560mAh",
-        "charging": "USB Type-Cポート経由での充電"
+        "charging": "USB Type-C"
       },
-      "haptics": "デュアルアクチュエーターによるハプティックフィードバック",
-      "triggers": "アダプティブトリガー",
-      "audio": {
-        "microphone": "内蔵マイクアレイ",
-        "headsetJack": "3.5mm ステレオヘッドセットジャック",
-        "speaker": "内蔵モノラルスピーカー"
-      },
-      "sensors": "6軸検出システム（3軸ジャイロスコープ、3軸加速度センサー）",
-      "dimensions": {
-        "width": "約160mm",
-        "height": "約66mm",
-        "depth": "約106mm",
-        "weight": "約280g"
-      },
+      "connectivity": [
+        "Bluetooth 5.1",
+        "USB Type-C",
+        "3.5mmヘッドセットジャック"
+      ],
       "other": [
-        "タッチパッド（2点検出式タッチパッド、クリック機構付き、静電容量方式）",
-        "クリエイトボタン"
+        "ハプティックフィードバック",
+        "アダプティブトリガー",
+        "内蔵マイク",
+        "モーションセンサー"
       ]
     }
   }
