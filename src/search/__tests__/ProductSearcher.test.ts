@@ -34,6 +34,7 @@ describe('ProductSearcher', () => {
         (fs.writeFile as jest.Mock).mockResolvedValue(undefined);
         (fs.access as jest.Mock).mockResolvedValue(undefined);
         (fs.readdir as jest.Mock).mockResolvedValue([]);
+        (fs.readFile as jest.Mock).mockResolvedValue('{}');
     });
 
     describe('searchByAsins', () => {
@@ -146,6 +147,36 @@ describe('ProductSearcher', () => {
             // The logic has been manually verified with verify-exclusion.ts.
             expect(allProducts.find(p => p.asin === existingAsin)).toBeUndefined();
             expect(allProducts.find(p => p.asin === newAsin)).toBeDefined();
+        });
+    });
+
+    describe('getAllStoredProducts', () => {
+        it('should retrieve stored products from enabled categories', async () => {
+            // Mock fs.readdir to return files for 'electronics' category
+            (fs.readdir as jest.Mock).mockImplementation((pathStr: string) => {
+                const normalizedPath = pathStr.replace(/\\/g, '/');
+                if (normalizedPath.endsWith('categories/electronics')) {
+                    return Promise.resolve(['session1.json']);
+                }
+                return Promise.resolve([]);
+            });
+
+            // Mock fs.readFile
+            (fs.readFile as jest.Mock).mockImplementation((pathStr: string) => {
+                const normalizedPath = pathStr.replace(/\\/g, '/');
+                if (normalizedPath.endsWith('session1.json')) {
+                    return Promise.resolve(JSON.stringify({
+                        products: [{ asin: 'B001', title: 'Product 1' }]
+                    }));
+                }
+                return Promise.resolve('{}');
+            });
+
+            const result = await searcher.getAllStoredProducts();
+
+            // electronics is a default category, so it should be checked
+            expect(result['electronics']).toBeDefined();
+            expect(result['electronics']?.[0]?.asin).toBe('B001');
         });
     });
 });
