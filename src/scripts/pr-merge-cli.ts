@@ -13,6 +13,7 @@ import { Octokit } from '@octokit/rest';
 import { AutoMergeManager } from '../github/AutoMergeManager';
 import { PullRequest } from '../types/GitHubTypes';
 import { Logger } from '../utils/Logger';
+import { runGhCommand } from '../utils/GitCommandRunner';
 
 const logger = Logger.getInstance();
 
@@ -346,12 +347,14 @@ async function main(): Promise<void> {
         if (pr.draft) {
             logger.info('PR is a draft, converting to ready for review...');
 
-            const { execSync } = await import('child_process');
             try {
-                execSync(`gh pr ready ${options.prNumber}`, {
-                    stdio: 'pipe',
-                    env: { ...process.env, GH_TOKEN: options.token }
-                });
+                runGhCommand(
+                    ['pr', 'ready', options.prNumber.toString()],
+                    {
+                        stdio: 'pipe',
+                        env: { ...process.env, GH_TOKEN: options.token }
+                    }
+                );
                 logger.info('Successfully converted draft PR to ready for review');
 
                 // 状態が更新されるまで待機
@@ -489,7 +492,6 @@ async function main(): Promise<void> {
         // 検証が済んでいるので、後はGitHubプラットフォームに任せる
         logger.info('Enabling auto-merge for the PR...');
 
-        const { execSync } = await import('child_process');
         const maxRetries = 10;
         const retryDelayMs = 10000;
         let lastError: Error | null = null;
@@ -499,12 +501,18 @@ async function main(): Promise<void> {
                 // gh pr merge <number> --squash --auto --delete-branch --subject "<title>"
                 // Note: GITHUB_TOKEN is usually automatically picked up by gh if set in env as GH_TOKEN or GITHUB_TOKEN
                 // We ensure GH_TOKEN is set to options.token
-                const command = `gh pr merge ${options.prNumber} --squash --auto --delete-branch --subject "${prData.title}"`;
 
-                execSync(command, {
-                    stdio: 'inherit',
-                    env: { ...process.env, GH_TOKEN: options.token }
-                });
+                runGhCommand(
+                    [
+                        'pr', 'merge', options.prNumber.toString(),
+                        '--squash', '--auto', '--delete-branch',
+                        '--subject', prData.title
+                    ],
+                    {
+                        stdio: 'inherit',
+                        env: { ...process.env, GH_TOKEN: options.token }
+                    }
+                );
 
                 logger.info(`Auto-merge enabled for PR #${options.prNumber}`);
                 lastError = null;
