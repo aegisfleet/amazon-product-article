@@ -213,7 +213,7 @@ async function ensureOutputDirectories(): Promise<void> {
     }
 }
 
-async function saveArticle(
+export async function saveArticle(
     article: GeneratedArticle,
     asin: string
 ): Promise<string> {
