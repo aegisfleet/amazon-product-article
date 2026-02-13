@@ -103,7 +103,7 @@ export class JulesCategoryOrganizer {
                     this.logger.error('Jules API Response Error', {
                         status: error.response?.status,
                         statusText: error.response?.statusText,
-                        data: error.response?.data
+                        data: error.response?.data as unknown
                     });
                 } else {
                     this.logger.error('Jules API Response Error (Non-Axios)', error);
@@ -346,7 +346,7 @@ ${unregisteredList}
     private handleApiError(error: unknown): JulesError {
         if (axios.isAxiosError(error)) {
             const status = error.response?.status;
-            const data = error.response?.data;
+            const data: unknown = error.response?.data;
 
             if (status === 429) {
                 return {

@@ -183,7 +183,7 @@ export class ArticleQualityManager {
                 rule: 'sentence-length',
                 description: '一文は80文字以内に収める',
                 example: '長い文章は分割して読みやすくします',
-                validator: (content) => {
+                validator: (content: string): boolean => {
                     const sentences = content.split(/[。！？]/);
                     return sentences.every(s => s.length <= 80);
                 }
@@ -192,7 +192,7 @@ export class ArticleQualityManager {
                 rule: 'paragraph-length',
                 description: '段落は300文字以内に収める',
                 example: '長い段落は分割します',
-                validator: (content) => {
+                validator: (content: string): boolean => {
                     const paragraphs = content.split(/\n\n/);
                     return paragraphs.every(p => p.length <= 300);
                 }
@@ -201,7 +201,7 @@ export class ArticleQualityManager {
                 rule: 'heading-hierarchy',
                 description: '見出しは階層順に使用する',
                 example: 'h1 > h2 > h3 の順序を守る',
-                validator: (content) => {
+                validator: (content: string): boolean => {
                     const headings = content.match(/^#+\s/gm);
                     if (!headings) return true;
                     let lastLevel = 0;
