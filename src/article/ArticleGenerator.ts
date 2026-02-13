@@ -764,6 +764,7 @@ ${usageSection}`;
     _investigation: InvestigationResult,
     template: TemplateSection
   ): Promise<ArticleSection> {
+    await Promise.resolve();
     const content = `# ${product.title}の詳細レビュー`;
 
     return {
@@ -778,6 +779,7 @@ ${usageSection}`;
    * 商品概要セクションを生成（後方互換性のため保持、現在は未使用）
    */
   private async generateProductOverviewSection(product: Product, investigation: InvestigationResult): Promise<ArticleSection> {
+    await Promise.resolve();
     const specifications = Object.entries(product.specifications)
       .map(([key, value]) => `- **${key}**: ${value}`)
       .join('\n');
@@ -814,6 +816,7 @@ ${specifications}
     reviewAnalysis: ReviewAnalysisResult | undefined,
     template: TemplateSection
   ): Promise<ArticleSection> {
+    await Promise.resolve();
     const positivePoints = investigation.analysis.positivePoints
       .map(point => `- ${point}`)
       .join('\n');
