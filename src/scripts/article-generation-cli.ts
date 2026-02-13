@@ -74,7 +74,7 @@ interface RawInvestigationFile {
     };
 }
 
-interface InvestigationData {
+export interface InvestigationData {
     product: Product;
     investigation: InvestigationResult;
     timestamp: string;
@@ -109,7 +109,7 @@ function getOptions(): CLIOptions {
 /**
  * ファイル名からASINを抽出し、JSON構造を変換してInvestigationDataを構築
  */
-async function loadInvestigationResults(targetFiles?: string[]): Promise<InvestigationData[]> {
+export async function loadInvestigationResults(targetFiles?: string[]): Promise<InvestigationData[]> {
     const investigationsDir = path.join(process.cwd(), 'data', 'investigations');
     let filesToProcess: string[] = [];
 
@@ -127,72 +127,80 @@ async function loadInvestigationResults(targetFiles?: string[]): Promise<Investi
         }
     }
 
-    const results = await Promise.all(
-        filesToProcess.map(async (filePath) => {
-            try {
-                // Check if file exists
+    const results: InvestigationData[] = [];
+    const chunkSize = 50;
+
+    for (let i = 0; i < filesToProcess.length; i += chunkSize) {
+        const chunk = filesToProcess.slice(i, i + chunkSize);
+        const chunkResults = await Promise.all(
+            chunk.map(async (filePath) => {
                 try {
-                    await fs.access(filePath);
-                } catch {
-                    logger.warn(`File not found: ${filePath}, skipping`);
+                    // Check if file exists
+                    try {
+                        await fs.access(filePath);
+                    } catch {
+                        logger.warn(`File not found: ${filePath}, skipping`);
+                        return null;
+                    }
+
+                    const rawData = await fs.readFile(filePath, 'utf-8');
+                    const parsed: RawInvestigationFile = JSON.parse(rawData);
+
+                    const fileName = path.basename(filePath);
+                    // Skip if not a JSON file or is summary
+                    if (!fileName.endsWith('.json') || fileName === 'latest-summary.json') {
+                        return null;
+                    }
+
+                    // ファイル名からASINを抽出 (e.g., "B07DZZJ2B9.json" -> "B07DZZJ2B9")
+                    const asin = path.basename(fileName, '.json');
+
+                    // 最小限のProduct情報を構築（ASINのみ必須、他はプレースホルダー）
+                    const product: Product = {
+                        asin,
+                        title: `Product ${asin}`,  // タイトルは後で記事生成時に更新可能
+                        category: '',
+                        price: { amount: 0, currency: 'JPY', formatted: '' },
+                        images: { primary: '', thumbnails: [] },
+                        specifications: {},
+                        rating: { average: 0, count: 0 },
+                    };
+
+                    // ファイルの更新日時を取得（作成日時の代用）
+                    const stats = await fs.stat(filePath);
+
+                    // lastInvestigatedがあればそれを優先、なければファイルの更新日時、それもなければ現在時刻
+                    let generatedAt = new Date();
+                    if (parsed.analysis.lastInvestigated) {
+                        generatedAt = new Date(parsed.analysis.lastInvestigated);
+                    } else {
+                        generatedAt = stats.mtime;
+                    }
+
+                    // InvestigationResultを構築
+                    const investigation: InvestigationResult = {
+                        sessionId: `file-${asin}`,
+                        product,
+                        analysis: parsed.analysis,
+                        generatedAt: generatedAt,
+                    };
+
+                    return {
+                        product,
+                        investigation,
+                        timestamp: new Date().toISOString(),
+                    } as InvestigationData;
+                } catch (error) {
+                    logger.warn(`Failed to load investigation file ${filePath}:`, error);
                     return null;
                 }
+            })
+        );
 
-                const rawData = await fs.readFile(filePath, 'utf-8');
-                const parsed: RawInvestigationFile = JSON.parse(rawData);
+        results.push(...chunkResults.filter((result): result is InvestigationData => result !== null));
+    }
 
-                const fileName = path.basename(filePath);
-                // Skip if not a JSON file or is summary
-                if (!fileName.endsWith('.json') || fileName === 'latest-summary.json') {
-                    return null;
-                }
-
-                // ファイル名からASINを抽出 (e.g., "B07DZZJ2B9.json" -> "B07DZZJ2B9")
-                const asin = path.basename(fileName, '.json');
-
-                // 最小限のProduct情報を構築（ASINのみ必須、他はプレースホルダー）
-                const product: Product = {
-                    asin,
-                    title: `Product ${asin}`,  // タイトルは後で記事生成時に更新可能
-                    category: '',
-                    price: { amount: 0, currency: 'JPY', formatted: '' },
-                    images: { primary: '', thumbnails: [] },
-                    specifications: {},
-                    rating: { average: 0, count: 0 },
-                };
-
-                // ファイルの更新日時を取得（作成日時の代用）
-                const stats = await fs.stat(filePath);
-
-                // lastInvestigatedがあればそれを優先、なければファイルの更新日時、それもなければ現在時刻
-                let generatedAt = new Date();
-                if (parsed.analysis.lastInvestigated) {
-                    generatedAt = new Date(parsed.analysis.lastInvestigated);
-                } else {
-                    generatedAt = stats.mtime;
-                }
-
-                // InvestigationResultを構築
-                const investigation: InvestigationResult = {
-                    sessionId: `file-${asin}`,
-                    product,
-                    analysis: parsed.analysis,
-                    generatedAt: generatedAt,
-                };
-
-                return {
-                    product,
-                    investigation,
-                    timestamp: new Date().toISOString(),
-                } as InvestigationData;
-            } catch (error) {
-                logger.warn(`Failed to load investigation file ${filePath}:`, error);
-                return null;
-            }
-        })
-    );
-
-    return results.filter((result): result is InvestigationData => result !== null);
+    return results;
 }
 
 async function ensureOutputDirectories(): Promise<void> {
@@ -234,7 +242,7 @@ async function setGitHubOutput(name: string, value: string): Promise<void> {
     }
 }
 
-async function main(): Promise<void> {
+export async function main(): Promise<void> {
     logger.info('Starting article generation CLI...');
 
     try {
@@ -423,82 +431,105 @@ async function main(): Promise<void> {
         let generatedCount = 0;
         const generatedArticles: string[] = [];
 
-        for (const data of investigations) {
-            try {
-                logger.info(`Processing article for: ${data.product.asin}`);
+        // 並列処理のためのチャンク分割 (サイズ: 10)
+        const chunkSize = 10;
+        const chunks = [];
+        for (let i = 0; i < investigations.length; i += chunkSize) {
+            chunks.push(investigations.slice(i, i + chunkSize));
+        }
 
-                // Get fresh product data from Cache (fallback to expired if fetch failed)
-                const cachedProduct = creatorsCache.get(data.product.asin, { ignoreExpiration: true });
+        for (const chunk of chunks) {
+            // Step 1: Generate articles in parallel
+            const chunkResults = await Promise.all(chunk.map(async (data) => {
+                try {
+                    logger.info(`Processing article for: ${data.product.asin}`);
 
-                if (cachedProduct) {
-                    // Merge live data into the product object
-                    data.product = {
-                        ...data.product,
-                        ...cachedProduct,
-                    };
-                    data.investigation.product = data.product;
-                    logger.info(`Used cached product data for ${data.product.asin}`);
-                } else if (skipCreatorsApi) {
-                    // Skip Creators API mode: Insert dummy data for Hugo build validation
-                    logger.info(`Using dummy data for ${data.product.asin} (skip-creators-api mode)`);
-                    data.product = {
-                        ...data.product,
-                        title: `商品調査中 (${data.product.asin})`,
-                        category: 'その他',
-                        price: { amount: 9999, currency: 'JPY', formatted: '¥9,999' },
-                        images: {
-                            primary: 'https://via.placeholder.com/500x500.png?text=No+Image',
-                            thumbnails: []
-                        },
-                        specifications: {},
-                        rating: { average: 4.0, count: 100 },
-                    };
-                    data.investigation.product = data.product;
-                } else if (useCreatorsApi) {
-                    // Only warn if we sought it but failed to get it
-                    logger.warn(`Product data not found for ${data.product.asin}, proceeding with basic info`);
-                }
+                    // Get fresh product data from Cache (fallback to expired if fetch failed)
+                    const cachedProduct = creatorsCache.get(data.product.asin, { ignoreExpiration: true });
 
-                // Get competitor details from Cache
-                const competitorDetails = new Map<string, ProductDetail>();
-                const competitorAsins = data.investigation.analysis.competitiveAnalysis
-                    .filter(c => c.asin)
-                    .map(c => c.asin!);
-
-                if (competitorAsins.length > 0) {
-                    const cachedCompetitors = creatorsCache.getMultiple(competitorAsins, { ignoreExpiration: true });
-                    for (const [asin, detail] of cachedCompetitors.entries()) {
-                        competitorDetails.set(asin, detail);
+                    if (cachedProduct) {
+                        // Merge live data into the product object
+                        data.product = {
+                            ...data.product,
+                            ...cachedProduct,
+                        };
+                        data.investigation.product = data.product;
+                        logger.info(`Used cached product data for ${data.product.asin}`);
+                    } else if (skipCreatorsApi) {
+                        // Skip Creators API mode: Insert dummy data for Hugo build validation
+                        logger.info(`Using dummy data for ${data.product.asin} (skip-creators-api mode)`);
+                        data.product = {
+                            ...data.product,
+                            title: `商品調査中 (${data.product.asin})`,
+                            category: 'その他',
+                            price: { amount: 9999, currency: 'JPY', formatted: '¥9,999' },
+                            images: {
+                                primary: 'https://via.placeholder.com/500x500.png?text=No+Image',
+                                thumbnails: []
+                            },
+                            specifications: {},
+                            rating: { average: 4.0, count: 100 },
+                        };
+                        data.investigation.product = data.product;
+                    } else if (useCreatorsApi) {
+                        // Only warn if we sought it but failed to get it
+                        logger.warn(`Product data not found for ${data.product.asin}, proceeding with basic info`);
                     }
-                    logger.info(`Retrieved ${competitorDetails.size}/${competitorAsins.length} competitor details from cache`);
+
+                    // Get competitor details from Cache
+                    const competitorDetails = new Map<string, ProductDetail>();
+                    const competitorAsins = data.investigation.analysis.competitiveAnalysis
+                        .filter(c => c.asin)
+                        .map(c => c.asin!);
+
+                    if (competitorAsins.length > 0) {
+                        const cachedCompetitors = creatorsCache.getMultiple(competitorAsins, { ignoreExpiration: true });
+                        for (const [asin, detail] of cachedCompetitors.entries()) {
+                            competitorDetails.set(asin, detail);
+                        }
+                        logger.info(`Retrieved ${competitorDetails.size}/${competitorAsins.length} competitor details from cache`);
+                    }
+
+                    logger.info(`Generating article for: ${data.product.title}`);
+
+                    const article = await generator.generateArticle(
+                        data.product,
+                        data.investigation,
+                        undefined,
+                        undefined,
+                        options.partnerTag,
+                        competitorDetails
+                    );
+
+                    const articlePath = await saveArticle(article, data.product.asin);
+
+                    return { data, article, articlePath };
+
+                } catch (error) {
+                    logger.error(`Failed to generate article for ${data.product.asin}:`, error);
+                    return null;
                 }
+            }));
 
-                logger.info(`Generating article for: ${data.product.title}`);
+            // Step 2: Commit sequentially to avoid race conditions
+            for (const result of chunkResults) {
+                if (!result) continue;
+                const { data, article, articlePath } = result;
 
-                const article = await generator.generateArticle(
-                    data.product,
-                    data.investigation,
-                    undefined,
-                    undefined,
-                    options.partnerTag,
-                    competitorDetails
-                );
+                try {
+                    generatedArticles.push(articlePath);
 
-                const articlePath = await saveArticle(article, data.product.asin);
-                generatedArticles.push(articlePath);
+                    // GitHub Publisher でコミット（利用可能な場合）
+                    if (publisher) {
+                        await publisher.commitArticle(article.content, article.metadata);
+                        logger.info(`Article committed for ${data.product.asin}`);
+                    }
 
-                // GitHub Publisher でコミット（利用可能な場合）
-                if (publisher) {
-                    await publisher.commitArticle(article.content, article.metadata);
-                    logger.info(`Article committed for ${data.product.asin}`);
+                    generatedCount++;
+                    logger.info(`Article generated for ${data.product.asin}`);
+                } catch (error) {
+                    logger.error(`Failed to commit article for ${data.product.asin}:`, error);
                 }
-
-                generatedCount++;
-                logger.info(`Article generated for ${data.product.asin}`);
-
-            } catch (error) {
-                logger.error(`Failed to generate article for ${data.product.asin}:`, error);
-                // 個別の失敗は継続
             }
         }
 
@@ -541,7 +572,9 @@ async function main(): Promise<void> {
     }
 }
 
-main().catch((error) => {
-    console.error('Unhandled error:', error);
-    process.exit(1);
-});
+if (require.main === module) {
+    main().catch((error) => {
+        console.error('Unhandled error:', error);
+        process.exit(1);
+    });
+}
