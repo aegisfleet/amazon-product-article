@@ -355,11 +355,19 @@ export class ProductSearcher {
       const categoryCounts: Record<string, number> = {};
       let lastSearchDate: Date | undefined;
 
-      for (const sessionFile of sessions) {
-        const sessionPath = path.join(sessionsDir, sessionFile);
-        const data = await fs.readFile(sessionPath, 'utf-8');
-        const session = JSON.parse(data) as SearchSession;
+      const loadedSessions: SearchSession[] = [];
+      const CONCURRENCY = 50;
+      for (let i = 0; i < sessions.length; i += CONCURRENCY) {
+        const batch = sessions.slice(i, i + CONCURRENCY);
+        const batchSessions = await Promise.all(batch.map(async (sessionFile) => {
+          const sessionPath = path.join(sessionsDir, sessionFile);
+          const data = await fs.readFile(sessionPath, 'utf-8');
+          return JSON.parse(data) as SearchSession;
+        }));
+        loadedSessions.push(...batchSessions);
+      }
 
+      for (const session of loadedSessions) {
         totalProducts += session.totalProducts;
 
         if (!lastSearchDate || new Date(session.timestamp) > new Date(lastSearchDate)) {
