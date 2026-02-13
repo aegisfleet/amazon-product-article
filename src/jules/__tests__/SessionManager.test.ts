@@ -66,4 +66,16 @@ describe('SessionManager', () => {
         await expect(saveSessionInfo(invalidProduct, mockSessionInfo)).rejects.toThrow('Invalid ASIN format');
         expect(fs.writeFile).not.toHaveBeenCalled();
     });
+
+    it('should throw error for invalid ASIN (Absolute path attempt)', async () => {
+        const invalidProduct = { ...mockProduct, asin: '/tmp/evil' } as Product;
+        await expect(saveSessionInfo(invalidProduct, mockSessionInfo)).rejects.toThrow('Invalid ASIN format');
+        expect(fs.writeFile).not.toHaveBeenCalled();
+    });
+
+    it('should throw error for invalid ASIN (Null byte injection)', async () => {
+        const invalidProduct = { ...mockProduct, asin: 'B000000000\0' } as Product;
+        await expect(saveSessionInfo(invalidProduct, mockSessionInfo)).rejects.toThrow('Invalid ASIN format');
+        expect(fs.writeFile).not.toHaveBeenCalled();
+    });
 });
