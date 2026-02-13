@@ -87,12 +87,20 @@ export class CreatorsAPICache {
      */
     public async save(): Promise<void> {
         try {
-            this.ensureDirectory();
+            await this.ensureDirectoryAsync();
             await fs.promises.writeFile(this.cachePath, JSON.stringify(this.cache, null, 2), 'utf-8');
             this.logger.info('Creators API Cache saved to disk');
         } catch (error) {
             this.logger.error('Failed to save Creators API Cache:', error);
         }
+    }
+
+    /**
+     * Ensure cache directory exists asynchronously
+     */
+    private async ensureDirectoryAsync(): Promise<void> {
+        const dir = path.dirname(this.cachePath);
+        await fs.promises.mkdir(dir, { recursive: true });
     }
 
     /**
