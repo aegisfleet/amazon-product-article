@@ -34,6 +34,7 @@ describe('ProductSearcher', () => {
         (fs.writeFile as jest.Mock).mockResolvedValue(undefined);
         (fs.access as jest.Mock).mockResolvedValue(undefined);
         (fs.readdir as jest.Mock).mockResolvedValue([]);
+        (fs.readFile as jest.Mock).mockResolvedValue('{}');
     });
 
     describe('searchByAsins', () => {
