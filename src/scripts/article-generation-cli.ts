@@ -144,7 +144,7 @@ export async function loadInvestigationResults(targetFiles?: string[]): Promise<
                     }
 
                     const rawData = await fs.readFile(filePath, 'utf-8');
-                    const parsed: RawInvestigationFile = JSON.parse(rawData);
+                    const parsed = JSON.parse(rawData) as RawInvestigationFile;
 
                     const fileName = path.basename(filePath);
                     // Skip if not a JSON file or is summary
