@@ -355,11 +355,13 @@ export class ProductSearcher {
       const categoryCounts: Record<string, number> = {};
       let lastSearchDate: Date | undefined;
 
-      for (const sessionFile of sessions) {
+      const loadedSessions = await Promise.all(sessions.map(async (sessionFile) => {
         const sessionPath = path.join(sessionsDir, sessionFile);
         const data = await fs.readFile(sessionPath, 'utf-8');
-        const session = JSON.parse(data) as SearchSession;
+        return JSON.parse(data) as SearchSession;
+      }));
 
+      for (const session of loadedSessions) {
         totalProducts += session.totalProducts;
 
         if (!lastSearchDate || new Date(session.timestamp) > new Date(lastSearchDate)) {
