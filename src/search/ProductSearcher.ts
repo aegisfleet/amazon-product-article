@@ -40,10 +40,10 @@ export class ProductSearcher {
   private dataDir: string;
   private contentDir: string;
 
-  constructor(creatorsClient: CreatorsAPIClient, options?: { dataDir?: string; contentDir?: string }) {
+  constructor(creatorsClient: CreatorsAPIClient, dataDir?: string, contentDir?: string) {
     this.creatorsClient = creatorsClient;
-    this.dataDir = options?.dataDir || path.join(process.cwd(), 'data', 'products');
-    this.contentDir = options?.contentDir || path.join(process.cwd(), 'content', 'articles');
+    this.dataDir = dataDir || path.join(process.cwd(), 'data', 'products');
+    this.contentDir = contentDir || path.join(process.cwd(), 'content', 'articles');
   }
 
   /**
@@ -357,11 +357,19 @@ export class ProductSearcher {
       const categoryCounts: Record<string, number> = {};
       let lastSearchDate: Date | undefined;
 
-      for (const sessionFile of sessions) {
-        const sessionPath = path.join(sessionsDir, sessionFile);
-        const data = await fs.readFile(sessionPath, 'utf-8');
-        const session = JSON.parse(data) as SearchSession;
+      const loadedSessions: SearchSession[] = [];
+      const CONCURRENCY = 50;
+      for (let i = 0; i < sessions.length; i += CONCURRENCY) {
+        const batch = sessions.slice(i, i + CONCURRENCY);
+        const batchSessions = await Promise.all(batch.map(async (sessionFile) => {
+          const sessionPath = path.join(sessionsDir, sessionFile);
+          const data = await fs.readFile(sessionPath, 'utf-8');
+          return JSON.parse(data) as SearchSession;
+        }));
+        loadedSessions.push(...batchSessions);
+      }
 
+      for (const session of loadedSessions) {
         totalProducts += session.totalProducts;
 
         if (!lastSearchDate || new Date(session.timestamp) > new Date(lastSearchDate)) {
@@ -402,7 +410,8 @@ export class ProductSearcher {
       const sessionsDir = path.join(this.dataDir, 'sessions');
       const sessionFiles = await fs.readdir(sessionsDir);
 
-      await Promise.all(sessionFiles.map(async (sessionFile) => {
+      // Process session files in batches to prevent EMFILE errors
+      await this.processInBatches(sessionFiles, 50, async (sessionFile) => {
         const sessionPath = path.join(sessionsDir, sessionFile);
         const stats = await fs.stat(sessionPath);
 
@@ -410,17 +419,19 @@ export class ProductSearcher {
           await fs.unlink(sessionPath);
           this.logger.info(`Cleaned old session file: ${sessionFile}`);
         }
-      }));
+      });
 
       // Clean category data older than cutoff
       const categoriesDir = path.join(this.dataDir, 'categories');
       const categories = await fs.readdir(categoriesDir);
 
-      await Promise.all(categories.map(async (category) => {
+      // Process categories in small batches
+      await this.processInBatches(categories, 5, async (category) => {
         const categoryDir = path.join(categoriesDir, category);
         const categoryFiles = await fs.readdir(categoryDir);
 
-        await Promise.all(categoryFiles.map(async (file) => {
+        // Process files in each category in batches
+        await this.processInBatches(categoryFiles, 50, async (file) => {
           const filePath = path.join(categoryDir, file);
           const stats = await fs.stat(filePath);
 
@@ -428,11 +439,21 @@ export class ProductSearcher {
             await fs.unlink(filePath);
             this.logger.info(`Cleaned old category file: ${category}/${file}`);
           }
-        }));
-      }));
+        });
+      });
 
     } catch (error) {
       this.logger.error('Failed to clean old data:', error);
+    }
+  }
+
+  /**
+   * Helper to process items in batches
+   */
+  private async processInBatches<T>(items: T[], batchSize: number, task: (item: T) => Promise<void>): Promise<void> {
+    for (let i = 0; i < items.length; i += batchSize) {
+      const batch = items.slice(i, i + batchSize);
+      await Promise.all(batch.map(item => task(item)));
     }
   }
 

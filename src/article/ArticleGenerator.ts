@@ -880,6 +880,7 @@ ${reviewAnalysis ? this.generateSentimentAnalysis(reviewAnalysis) : ''}`;
     competitorDetails?: Map<string, ProductDetail>
   ): Promise<ArticleSection> {
     const competitors = investigation.analysis.competitiveAnalysis;
+    const cwd = process.cwd();
 
     // 各競合商品をカード形式で表示
     const competitorCards = (await Promise.all(competitors.map(async competitor => {
@@ -899,7 +900,7 @@ ${reviewAnalysis ? this.generateSentimentAnalysis(reviewAnalysis) : ''}`;
         let hasInternalReview = false;
         let competitorScore: number | undefined;
         if (competitor.asin) {
-          const investigationPath = path.join(process.cwd(), 'data', 'investigations', `${competitor.asin}.json`);
+          const investigationPath = path.join(cwd, 'data', 'investigations', `${competitor.asin}.json`);
           try {
             const fileContent = await fs.promises.readFile(investigationPath, 'utf-8');
             hasInternalReview = true;
@@ -907,8 +908,12 @@ ${reviewAnalysis ? this.generateSentimentAnalysis(reviewAnalysis) : ''}`;
             // 競合商品のスコアを取得
             const competitorInvestigation = JSON.parse(fileContent) as InvestigationResult;
             competitorScore = competitorInvestigation.analysis?.recommendation?.score;
-          } catch {
+          } catch (error) {
             // スコア取得に失敗した場合は無視（ファイルが存在しない場合もここに来る）
+            // ENOENT以外のエラー（パースエラーなど）はデバッグログに残す
+            if (error instanceof Error && (error as NodeJS.ErrnoException).code !== 'ENOENT') {
+              this.logger.debug(`Failed to load competitor investigation for ${competitor.asin}`, error);
+            }
           }
         }
 
