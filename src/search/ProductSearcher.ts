@@ -40,10 +40,10 @@ export class ProductSearcher {
   private dataDir: string;
   private contentDir: string;
 
-  constructor(creatorsClient: CreatorsAPIClient) {
+  constructor(creatorsClient: CreatorsAPIClient, options?: { dataDir?: string; contentDir?: string }) {
     this.creatorsClient = creatorsClient;
-    this.dataDir = path.join(process.cwd(), 'data', 'products');
-    this.contentDir = path.join(process.cwd(), 'content', 'articles');
+    this.dataDir = options?.dataDir || path.join(process.cwd(), 'data', 'products');
+    this.contentDir = options?.contentDir || path.join(process.cwd(), 'content', 'articles');
   }
 
   /**
@@ -303,13 +303,15 @@ export class ProductSearcher {
    */
   async getAllStoredProducts(): Promise<Record<string, Product[]>> {
     const categories = this.getEnabledCategories();
-    const allProducts: Record<string, Product[]> = {};
 
-    for (const category of categories) {
-      allProducts[category.name] = await this.getStoredProducts(category.name);
-    }
+    const entries = await Promise.all(
+      categories.map(async (category) => {
+        const products = await this.getStoredProducts(category.name);
+        return [category.name, products] as const;
+      })
+    );
 
-    return allProducts;
+    return Object.fromEntries(entries);
   }
 
   /**
