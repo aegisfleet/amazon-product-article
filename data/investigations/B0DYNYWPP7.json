@@ -1,0 +1,126 @@
+{
+  "analysis": {
+    "productName": "Tangle Teezer ザ・アルティメットディタングラー",
+    "parentAsin": "B0DYNYWPP7",
+    "productDescription": "濡れた髪の絡まりを瞬時に解きほぐすために開発された、濡れ髪専用のヘアブラシ。",
+    "productUsage": [
+      "お風呂上がりの濡れた髪のブラッシング",
+      "トリートメントを髪全体に行き渡らせる",
+      "ドライヤー前のブロードライ準備"
+    ],
+    "positivePoints": [
+      "濡れた髪でも引っかからずスルスルとかせる",
+      "髪がサラサラになる",
+      "持ち手があって使いやすい",
+      "丸洗いできて衛生的"
+    ],
+    "negativePoints": [
+      "乾いた髪に使うと静電気が起きやすい",
+      "ブラシのピンが曲がりやすい",
+      "毛量が多いと地肌まで届かないことがある"
+    ],
+    "useCases": [
+      "入浴中のトリートメントコームとして",
+      "アウトバスのドライヤー前",
+      "朝の寝癖直し（ミストなどで濡らしてから使用）"
+    ],
+    "userStories": [
+      {
+        "userType": "ロングヘアの女性",
+        "scenario": "毎晩のお風呂上がり",
+        "experience": "以前はタオルドライ後のブラッシングで髪が絡まり、無理やりとかして切れ毛になっていたが、これを使ってからはスルスルとけるようになり、ドライヤーの時間も短縮された。（一般的評価に基づく）",
+        "sentiment": "positive"
+      },
+      {
+        "userType": "小学生の娘を持つ母親",
+        "scenario": "子供の髪をとかす時",
+        "experience": "子供が痛がるので髪をとかすのが大変だったが、このブラシだと痛がらずに大人しくさせてくれるようになった。（一般的評価に基づく）",
+        "sentiment": "positive"
+      }
+    ],
+    "userImpression": "「魔法のブラシ」と呼ばれるほどデタングル性能が高く、特に濡れ髪への効果は絶大と評価されている。持ち手がついたことで使い勝手が向上した点も好評。",
+    "sources": [
+      {
+        "name": "Amazon Product Page (Feature Inference)",
+        "url": "https://www.amazon.co.jp/dp/B0DYNYWPP7",
+        "credibility": "High"
+      },
+      {
+        "name": "General Market Knowledge (Tangle Teezer Brand)",
+        "url": null,
+        "credibility": "Medium"
+      }
+    ],
+    "lastInvestigated": "2026-02-13",
+    "competitiveAnalysis": [
+      {
+        "name": "WetBrush オリジナルディタングラー",
+        "asin": "B0874PDWSG",
+        "priceComparison": "1,696円とタングルティーザーより約600円安い。",
+        "featureComparison": [
+          "ピンが非常に柔らかく頭皮に優しい",
+          "デタングル性能は同等だが、ピンの強度はタングルティーザーの方がやや上か"
+        ],
+        "differentiators": [
+          "圧倒的な安さ",
+          "ピンの柔らかさ（頭皮への優しさ）"
+        ]
+      },
+      {
+        "name": "AVEDA パドルブラシ",
+        "asin": "B00CHLEZ92",
+        "priceComparison": "2,120円とほぼ同価格帯。",
+        "featureComparison": [
+          "クッション性があり頭皮マッサージに優れる",
+          "面積が広くブローが早い"
+        ],
+        "differentiators": [
+          "頭皮ケア機能（マッサージ）",
+          "濡れ髪使用は非推奨（カビの原因になるため）"
+        ]
+      },
+      {
+        "name": "マペペ つやつや天然毛のミックスブラシ",
+        "asin": "B00B1ZM7X6",
+        "priceComparison": "1,485円と安価。",
+        "featureComparison": [
+          "天然毛ミックスで髪にツヤを出す",
+          "濡れ髪には使えない"
+        ],
+        "differentiators": [
+          "ツヤ出し効果",
+          "ドライヘア専用"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "髪が細くて絡まりやすい人",
+        "ダメージヘアで切れ毛が気になる人",
+        "お風呂でヘアケアをしたい人"
+      ],
+      "pros": [
+        "濡れた髪への負担を最小限に抑える",
+        "トリートメントの効果を高める",
+        "丸洗い可能で清潔"
+      ],
+      "cons": [
+        "乾いた髪への使用は静電気に注意",
+        "熱に弱いためドライヤーの温風を近付けすぎないこと"
+      ],
+      "score": 90,
+      "scoreRationale": "[基本点: 70]\n[加点: +10] (濡れ髪デタングルという明確な課題解決と高い機能性)\n[加点: +5] (競合と比較しても独自の価値があり、価格も許容範囲)\n[加点: +5] (Amazonベストセラー常連の信頼性とユーザー満足度)\n[合計: 90]"
+    },
+    "technicalSpecs": {
+      "dimensions": {
+        "height": "22.0cm",
+        "width": "6.5cm",
+        "depth": "3.0cm",
+        "weight": "50g"
+      },
+      "material": "本体：ポリプロピレン、ブラシ：熱可塑性ポリエーテルエステルエラストマー",
+      "color": "ミッドナイトプラム",
+      "type": "ノーマル（デタングリング）"
+    }
+  }
+}
