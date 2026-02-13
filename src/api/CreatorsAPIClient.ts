@@ -513,7 +513,7 @@ export class CreatorsAPIClient {
 
                 // Handle rate limiting (429)
                 if (statusCode === 429) {
-                  const retryAfter = error.response?.headers['retry-after'];
+                  const retryAfter = error.response?.headers['retry-after'] as string | undefined;
                   let waitTime: number;
 
                   if (retryAfter && typeof retryAfter === 'string') {

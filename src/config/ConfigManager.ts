@@ -80,6 +80,7 @@ export class ConfigManager {
 
   public async initialize(): Promise<void> {
     this.logger.info('Initializing configuration manager');
+    await Promise.resolve();
 
     try {
       this.config = this.loadConfiguration();
