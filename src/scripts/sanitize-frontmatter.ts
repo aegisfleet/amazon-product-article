@@ -92,7 +92,7 @@ function processFile(filePath: string): boolean {
 /**
  * Main function
  */
-function main() {
+function main(): void {
     console.log('Sanitizing frontmatter in content/articles...');
 
     if (!fs.existsSync(CONTENT_DIR)) {

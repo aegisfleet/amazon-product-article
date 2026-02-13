@@ -4,12 +4,12 @@ import * as path from 'path';
 interface CategoryData {
     [key: string]: {
         categories?: string[];
-        [key: string]: any;
+        [key: string]: unknown;
     };
 }
 
 const filePath = path.join(process.cwd(), 'data', 'categorygroups.json');
-const data: CategoryData = JSON.parse(fs.readFileSync(filePath, 'utf8'));
+const data = JSON.parse(fs.readFileSync(filePath, 'utf8')) as CategoryData;
 
 for (const key in data) {
     if (Object.prototype.hasOwnProperty.call(data, key)) {
