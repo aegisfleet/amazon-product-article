@@ -104,12 +104,10 @@ async function ensureOutputDirectories(): Promise<void> {
 async function setGitHubOutput(name: string, value: string): Promise<void> {
     const outputFile = process.env.GITHUB_OUTPUT;
     if (outputFile) {
-        await fs.appendFile(outputFile, `${name}=${value}
-`);
+        await fs.appendFile(outputFile, `${name}=${value}\n`);
         logger.info(`Set GitHub output: ${name}=${value}`);
     } else {
-        // ローカル実行時はコンソールに出力
-        console.log(`::set-output name=${name}::${value}`);
+        logger.warn(`GITHUB_OUTPUT environment variable not set. Output skipped: ${name}=${value}`);
     }
 }
 

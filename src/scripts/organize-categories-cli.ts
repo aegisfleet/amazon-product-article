@@ -74,7 +74,7 @@ async function setGitHubOutput(name: string, value: string): Promise<void> {
         await fs.appendFile(outputFile, `${name}=${value}\n`);
         logger.info(`Set GitHub output: ${name}=${value}`);
     } else {
-        console.log(`::set-output name=${name}::${value}`);
+        logger.warn(`GITHUB_OUTPUT environment variable not set. Output skipped: ${name}=${value}`);
     }
 }
 
