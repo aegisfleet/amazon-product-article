@@ -294,12 +294,6 @@ export class JulesInvestigator {
   }
 
   /**
-   * 調査プロンプトを生成
-   */
-  formatInvestigationPrompt(product: Product): string {
-    return formatInvestigationPrompt(product);
-  }
-  /**
    * 調査セッションを開始（非同期用：即座にセッションIDを返す）
    * GitHub Actions ワークフローで使用 - Julesが非同期でPRを作成する
    */
@@ -314,7 +308,7 @@ export class JulesInvestigator {
       includeCompetitors: true
     };
 
-    const prompt = this.formatInvestigationPrompt(product);
+    const prompt = formatInvestigationPrompt(product);
     const sessionId = await this.createSession(prompt, context, sourceContext);
     const session = await this.getSession(sessionId);
 
@@ -347,7 +341,7 @@ export class JulesInvestigator {
       includeCompetitors: true
     };
 
-    const prompt = this.formatInvestigationPrompt(product);
+    const prompt = formatInvestigationPrompt(product);
     const sessionId = await this.createSession(prompt, context, sourceContext);
 
     // セッション完了まで待機
