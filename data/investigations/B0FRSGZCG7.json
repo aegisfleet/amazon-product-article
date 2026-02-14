@@ -1,0 +1,120 @@
+{
+  "analysis": {
+    "productName": "Belkin SoundForm ANC 有線イヤホン USB-C",
+    "parentAsin": "B0FRSGZCG7",
+    "productDescription": "アクティブノイズキャンセリング(ANC)機能を搭載し、USB-C接続で充電不要・遅延なしの音楽体験を提供するカナル型イヤホンです。",
+    "productUsage": [
+      "USB-C端子に接続して音楽や動画を視聴（充電不要）",
+      "アクティブノイズキャンセリングで周囲の騒音をカット",
+      "3つのEQプリセット（Bass Boost, Balanced, Belkin Signature）で音質調整",
+      "マイク付きリモコンで通話や音量調整"
+    ],
+    "positivePoints": [
+      "手頃な価格（￥3,490）でANC機能を搭載",
+      "USB-C接続で充電不要、遅延なし",
+      "ハイレゾ認定の高音質",
+      "3種類のイヤーチップとIPX5の耐水性能で快適なフィット感と耐久性"
+    ],
+    "negativePoints": [
+      "フィードフォワード方式のANCのため、ハイブリッド式に比べるとキャンセリング性能は限定的（推測）",
+      "有線のためケーブルの煩わしさがある",
+      "詳細なスペック（ドライバーサイズ等）が非公開"
+    ],
+    "useCases": [
+      "通勤・通学時の電車内での音楽鑑賞（ANC活用）",
+      "WEB会議やオンライン授業（マイク活用、有線の安定性）",
+      "動画視聴やゲームプレイ（遅延なし）"
+    ],
+    "userStories": [
+      {
+        "userType": "カフェで作業するフリーランス",
+        "scenario": "周囲の話し声が気になるカフェでの作業中",
+        "experience": "（推測）充電を気にせず長時間使用でき、ANCで周囲の雑音を低減して集中力を維持できた。",
+        "sentiment": "positive"
+      },
+      {
+        "userType": "学生",
+        "scenario": "通学中の電車内で動画視聴",
+        "experience": "（推測）ワイヤレスイヤホンのような遅延がなく、口の動きと音声が完全に一致して快適。接続も安定している。",
+        "sentiment": "positive"
+      }
+    ],
+    "userImpression": "レビュー不在のため推測となるが、手軽に高音質と静寂を手に入れたいユーザーにとって、コストパフォーマンスの高い選択肢となることが期待される。",
+    "sources": [
+      {
+        "name": "Amazon Product Page",
+        "url": "https://www.amazon.co.jp/dp/B0FRSGZCG7",
+        "credibility": "High"
+      }
+    ],
+    "lastInvestigated": "2026-02-14",
+    "competitiveAnalysis": [
+      {
+        "name": "Audio Technica ATH-CKS330NC",
+        "asin": "B0DLNXY1VW",
+        "priceComparison": "約1.5倍の価格（￥5,400）",
+        "featureComparison": [
+          "重低音重視のSOLID BASSサウンド",
+          "ANC搭載だが価格が高い"
+        ],
+        "differentiators": [
+          "Belkinは安価でEQ調整が可能",
+          "Audio Technicaは重低音とブランド力"
+        ]
+      },
+      {
+        "name": "UGREEN USB-C イヤホン",
+        "asin": "B08TQKNC62",
+        "priceComparison": "約1/3の価格（￥1,199）",
+        "featureComparison": [
+          "ANCなし（通話用ノイズ低減のみ）",
+          "DAC内蔵"
+        ],
+        "differentiators": [
+          "BelkinはANC搭載で音楽鑑賞向き",
+          "UGREENはとにかく安く済ませたい人向け"
+        ]
+      },
+      {
+        "name": "JVCケンウッド Victor HA-FR29UC-A",
+        "asin": "B0DK4GJXC7",
+        "priceComparison": "同価格帯（￥3,600）",
+        "featureComparison": [
+          "ANCなし",
+          "ハイレゾ対応"
+        ],
+        "differentiators": [
+          "BelkinはANC搭載",
+          "JVCは音質へのこだわり（Victorブランド）"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "充電や遅延を気にしたくない人",
+        "安価にANCを試したい人",
+        "USB-C接続のデバイス（スマホ、PC）をメインで使用している人"
+      ],
+      "pros": [
+        "コスパ最強のANC搭載機",
+        "充電不要・遅延なし",
+        "ハイレゾ対応の高音質"
+      ],
+      "cons": [
+        "ケーブルの取り回し",
+        "ANC性能の限界（推測）"
+      ],
+      "score": 85,
+      "scoreRationale": "[基本点: 70]\n[加点: +5] (ANC、EQ、IPX5などの機能性)\n[加点: +10] (3000円台でANC搭載はコスパ高い)\n[合計: 85]"
+    },
+    "technicalSpecs": {
+      "driver": null,
+      "codec": "Hi-Res Audio Certified",
+      "battery": "None (USB-C Powered)",
+      "connectivity": ["USB-C"],
+      "noiseCancel": "Active Noise Cancelling (Feedforward)",
+      "waterResistance": "IPX5",
+      "eq": "3 Presets (Bass Boost, Balanced, Belkin Signature)"
+    }
+  }
+}
