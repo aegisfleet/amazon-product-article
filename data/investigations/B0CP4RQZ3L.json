@@ -1,0 +1,125 @@
+{
+  "analysis": {
+    "productName": "Anker Soundcore P40i",
+    "parentAsin": "B0CP4RQZ3L",
+    "productDescription": "Anker Soundcore P40iは、ウルトラノイズキャンセリング2.0と最大60時間の長時間再生を実現した完全ワイヤレスイヤホンです。",
+    "productUsage": [
+      "通勤・通学時の音楽鑑賞や動画視聴",
+      "カフェやオフィスでの集中作業",
+      "Web会議や通話（マルチポイント接続活用）"
+    ],
+    "positivePoints": [
+      "環境に合わせて強度を自動調整するウルトラノイズキャンセリング2.0搭載",
+      "イヤホン本体12時間、ケース込み最大60時間の圧倒的な長時間再生",
+      "スマホやPCなど2台同時接続可能なマルチポイント対応",
+      "10分の充電で約5時間再生可能な急速充電機能",
+      "11mm大型ドライバーによる迫力のサウンドとBassUp技術"
+    ],
+    "negativePoints": [
+      "高音質コーデック（LDAC等）への対応については記載がなく、標準的なAAC/SBCのみの可能性あり（推測）",
+      "ワイヤレス充電への対応有無が不明（記載なし）",
+      "詳細なアプリ機能やイコライザー設定の使い勝手については実機レビューが必要"
+    ],
+    "useCases": [
+      "長時間の移動中もバッテリー切れを気にせず使用したい場合",
+      "騒がしい環境で集中したい時",
+      "仕事用PCと個人用スマホを同時に待ち受けたいビジネスパーソン"
+    ],
+    "userStories": [
+      {
+        "userType": "ビジネスパーソン",
+        "scenario": "外出先でのWeb会議参加",
+        "experience": "カフェでのリモートワーク時、周囲の雑音を気にせずWeb会議に参加できた。（推測）",
+        "sentiment": "positive"
+      },
+      {
+        "userType": "学生",
+        "scenario": "通学中の動画視聴",
+        "experience": "満員電車の中でもノイズキャンセリングのおかげで動画の音声がクリアに聞こえ、通学時間が快適になった。（推測）",
+        "sentiment": "positive"
+      }
+    ],
+    "userImpression": "ユーザーレビューを直接確認できませんでしたが、スペックと機能から、高いコストパフォーマンスと長時間バッテリー、実用的なノイズキャンセリング機能が評価されると予想されます。",
+    "sources": [
+      {
+        "name": "Amazon Product Page (via Creators API)",
+        "url": "https://www.amazon.co.jp/dp/B0CP4RQZ3L",
+        "credibility": "High"
+      }
+    ],
+    "lastInvestigated": "2026-02-14",
+    "competitiveAnalysis": [
+      {
+        "name": "Sony WF-C510",
+        "asin": "B0DDKHF9XY",
+        "priceComparison": "約9,000円とP40iより約1,000円高い",
+        "featureComparison": [
+          "軽量小型",
+          "外音取り込み対応",
+          "マルチポイント対応"
+        ],
+        "differentiators": [
+          "Sonyブランドの信頼性",
+          "軽量設計"
+        ]
+      },
+      {
+        "name": "JBL WAVE BUDS 2",
+        "asin": "B0DJNXX51D",
+        "priceComparison": "約6,200円とP40iより安い",
+        "featureComparison": [
+          "アクティブノイズキャンセリング",
+          "IP54防塵防水"
+        ],
+        "differentiators": [
+          "低価格",
+          "JBLらしいパワフルなサウンド"
+        ]
+      },
+      {
+        "name": "Sony WF-C700N",
+        "asin": "B0BZGTFF9L",
+        "priceComparison": "約10,000円前後とP40iより高い",
+        "featureComparison": [
+          "高性能ノイズキャンセリング",
+          "軽量設計"
+        ],
+        "differentiators": [
+          "高いノイズキャンセリング性能",
+          "装着感の良さ"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "コストパフォーマンスを重視するユーザー",
+        "長時間連続で使用したいユーザー",
+        "複数のデバイスを使い分けるビジネスパーソン"
+      ],
+      "pros": [
+        "圧倒的なバッテリー寿命",
+        "環境適応型ノイズキャンセリング",
+        "手頃な価格"
+      ],
+      "cons": [
+        "ハイレゾコーデック非対応の可能性",
+        "詳細な音質調整機能の有無"
+      ],
+      "score": 90,
+      "scoreRationale": "[基本点: 70]\n[加点: +5] (ウルトラノイズキャンセリング2.0、マルチポイント接続)\n[加点: +10] (同クラスの競合と比較して圧倒的なバッテリー寿命と価格の安さ)\n[加点: +5] (急速充電機能と基本性能の高さ)\n[合計: 90]"
+    },
+    "technicalSpecs": {
+      "driver": "11mm",
+      "codec": null,
+      "battery": {
+        "case": "60時間",
+        "earbud": "12時間"
+      },
+      "connectivity": [
+        "Bluetooth 5.3",
+        "Multipoint"
+      ],
+      "noiseCancel": "Ultra Noise Canceling 2.0"
+    }
+  }
+}
