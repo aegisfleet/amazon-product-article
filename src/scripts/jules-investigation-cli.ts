@@ -152,6 +152,12 @@ async function main(): Promise<void> {
 
         for (const product of productsToInvestigate) {
             try {
+                // Validate ASIN to prevent path traversal and ensure data integrity
+                if (!/^[A-Z0-9]{10}$/i.test(product.asin)) {
+                    logger.warn(`Skipping product with invalid ASIN: ${product.asin}`);
+                    continue;
+                }
+
                 logger.info(`Starting investigation for: ${product.title} (ASIN: ${product.asin})`);
 
                 // 非同期でセッションを開始（Julesが非同期でPRを作成）
