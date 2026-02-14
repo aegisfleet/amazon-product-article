@@ -320,6 +320,8 @@ export class CategoryNormalizer {
             "Kindle Unlimited",
             "おせちHQP紐付用",
             "AmazonGlobal",
+            "クリスマスギフト･コフレ",
+            "日用品・生活必需品 - ビューティー",
             "カー＆バイク用品",
             "車＆バイク"
         ];
