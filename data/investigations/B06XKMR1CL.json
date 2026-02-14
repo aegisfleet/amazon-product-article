@@ -1,0 +1,104 @@
+{
+  "analysis": {
+    "productName": "【指定第2類医薬品】ベトネベートN軟膏AS 10g",
+    "parentAsin": "B06XKMR1CL",
+    "productDescription": "第一三共ヘルスケアの指定第2類医薬品。化膿を伴う湿疹や皮膚炎に効果的な、ステロイドと抗生物質を配合した軟膏です。",
+    "productUsage": [
+      "1日1〜数回、適量を患部に塗布する",
+      "患部を清潔にしてから使用する",
+      "長期連用は避ける"
+    ],
+    "positivePoints": [
+      "化膿を伴う炎症に効く",
+      "ステロイドの抗炎症作用が高い",
+      "抗生物質配合で細菌感染も抑える"
+    ],
+    "negativePoints": [
+      "ステロイド配合のため長期連用は不可",
+      "軟膏特有のべたつきがある可能性がある",
+      "顔面への広範囲使用は避ける必要がある"
+    ],
+    "useCases": [
+      "化膿してしまった湿疹",
+      "掻き壊してジュクジュクした皮膚炎",
+      "虫刺されが悪化した時"
+    ],
+    "userStories": [
+      {
+        "userType": "30代会社員",
+        "scenario": "虫刺されを掻きむしって化膿してしまった時",
+        "experience": "（推測）虫刺されを我慢できずに掻いてしまい、赤く腫れて化膿してしまった。この軟膏を塗ると、翌日には腫れが引き、化膿も治まっていた。即効性があり助かった。",
+        "sentiment": "positive"
+      },
+      {
+        "userType": "主婦",
+        "scenario": "手荒れが悪化してひび割れ、化膿した時",
+        "experience": "（推測）水仕事で手荒れがひどくなり、傷口が化膿して痛かった。ステロイド入りなので短期間だけ使用したが、痛みがすぐに引いた。ただ、少しべたつくので寝る前に使用した。",
+        "sentiment": "mixed"
+      }
+    ],
+    "userImpression": "化膿を伴う皮膚トラブルに対して高い効果を発揮する頼れる常備薬だが、ステロイド配合のため使用には注意が必要という評価が一般的である。",
+    "sources": [
+      {
+        "name": "Amazon Product Page",
+        "url": "https://www.amazon.co.jp/dp/B06XKMR1CL",
+        "credibility": "high"
+      },
+      {
+        "name": "First Sankyo Healthcare Website (General Info)",
+        "url": null,
+        "credibility": "medium"
+      }
+    ],
+    "lastInvestigated": "2026-02-14",
+    "competitiveAnalysis": [
+      {
+        "name": "【指定第2類医薬品】テラ・コートリル軟膏a 6g",
+        "asin": "B00D67KZW2",
+        "priceComparison": "約666円 (6g) と比較的安価",
+        "featureComparison": ["ステロイド(ヒドロコルチゾン) + 抗生物質", "ステロイドランクはウィーク"],
+        "differentiators": ["ステロイドが弱いため、顔やデリケートな部分にも使いやすい"]
+      },
+      {
+        "name": "【指定第2類医薬品】ドルマイコーチ軟膏 12g",
+        "asin": "B08WC6GTLB",
+        "priceComparison": "約720円 (12g) とコストパフォーマンスが高い",
+        "featureComparison": ["ステロイド(ヒドロコルチゾン酢酸エステル) + 抗生物質", "ステロイドランクはウィーク"],
+        "differentiators": ["安価で量が多い"]
+      },
+      {
+        "name": "【第2類医薬品】クロマイ-N軟膏 6g",
+        "asin": "B005UJ1IUW",
+        "priceComparison": "約691円 (6g)",
+        "featureComparison": ["抗生物質 + 抗真菌成分", "ステロイドは含まない"],
+        "differentiators": ["ステロイドを含まないため、比較的安心して使えるが、炎症を抑える力は弱い"]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "化膿を伴う湿疹や皮膚炎に悩む人",
+        "即効性のある治療薬を求める人",
+        "ステロイドの使用に理解がある人"
+      ],
+      "pros": [
+        "化膿止めと抗炎症のダブル効果",
+        "第一三共ヘルスケアという信頼できるメーカー",
+        "10gと十分な量がある"
+      ],
+      "cons": [
+        "ステロイド配合のため長期連用は不可",
+        "使用部位や年齢に制限がある場合がある"
+      ],
+      "score": 85,
+      "scoreRationale": "[基本点: 70]\n[加点: +10] (化膿を伴う症状への高い効果)\n[加点: +5] (10gと十分な容量)\n[減点: -0] (副作用リスクはあるが、適正使用なら問題なし)\n[合計: 85]"
+    },
+    "technicalSpecs": {
+      "manufacturer": "第一三共ヘルスケア",
+      "riskCategory": "指定第2類医薬品",
+      "content": "10g",
+      "activeIngredientsType": "ステロイド、抗生物質",
+      "efficacy": "化膿を伴う湿疹、皮膚炎",
+      "form": "軟膏"
+    }
+  }
+}
