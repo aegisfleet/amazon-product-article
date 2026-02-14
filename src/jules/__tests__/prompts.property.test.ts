@@ -1,22 +1,13 @@
 /**
- * Property-based tests for JulesInvestigator
+ * Property-based tests for Investigation Prompts
  * **Feature: amazon-product-research-system, Property 4: Jules Investigation Request Formatting**
  */
 
 import * as fc from 'fast-check';
-import { JulesCredentials } from '../../types/JulesTypes';
 import { Product } from '../../types/Product';
-import { JulesInvestigator } from '../JulesInvestigator';
+import { formatInvestigationPrompt } from '../prompts';
 
-describe('JulesInvestigator Property Tests', () => {
-  let investigator: JulesInvestigator;
-
-  beforeAll(() => {
-    const mockCredentials: JulesCredentials = {
-      apiKey: 'test-api-key'
-    };
-    investigator = new JulesInvestigator(mockCredentials);
-  });
+describe('Investigation Prompt Property Tests', () => {
 
   /**
    * Property 4: Jules Investigation Request Formatting
@@ -61,7 +52,7 @@ describe('JulesInvestigator Property Tests', () => {
         }),
         (product: Product) => {
           // Generate investigation prompt
-          const prompt = investigator.formatInvestigationPrompt(product);
+          const prompt = formatInvestigationPrompt(product);
 
           // 1. User review analysis instructions (Requirements 2.1, 2.2)
           expect(prompt).toContain('ユーザーレビュー');
@@ -167,8 +158,8 @@ describe('JulesInvestigator Property Tests', () => {
         }),
         (product: Product) => {
           // Generate prompt multiple times for same product
-          const prompt1 = investigator.formatInvestigationPrompt(product);
-          const prompt2 = investigator.formatInvestigationPrompt(product);
+          const prompt1 = formatInvestigationPrompt(product);
+          const prompt2 = formatInvestigationPrompt(product);
 
           // Prompts should be identical for same product (deterministic)
           expect(prompt1).toBe(prompt2);
