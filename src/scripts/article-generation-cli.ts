@@ -111,7 +111,7 @@ function getOptions(): CLIOptions {
  */
 export async function loadInvestigationResults(targetFiles?: string[]): Promise<InvestigationData[]> {
     const investigationsDir = path.join(process.cwd(), 'data', 'investigations');
-    let filesToProcess: string[] = [];
+    let filesToProcess: string[];
 
     if (targetFiles && targetFiles.length > 0) {
         filesToProcess = targetFiles;

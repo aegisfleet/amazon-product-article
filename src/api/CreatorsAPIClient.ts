@@ -326,6 +326,7 @@ export class CreatorsAPIClient {
     } catch (error: unknown) {
       const errorMessage = error instanceof Error ? error.message : String(error);
       this.logger.warn(`Batch request failed: ${errorMessage}`);
+      batchFailed = true;
 
       if (axios.isAxiosError(error) && error.response?.data) {
         this.logger.error(`API Error Response: ${JSON.stringify(error.response.data, null, 2)}`);
@@ -360,7 +361,7 @@ export class CreatorsAPIClient {
               batchFailed = false;
             } catch (retryError) {
               this.logger.warn(`Retry batch also failed: ${retryError instanceof Error ? retryError.message : String(retryError)}`);
-              batchFailed = true;
+              // batchFailed is already true
             }
           }
         } else if (errorMessage.includes('InvalidParameterValue')) {
@@ -394,14 +395,14 @@ export class CreatorsAPIClient {
                 batchFailed = false;
               } catch (retryError) {
                 this.logger.warn(`Retry batch also failed: ${retryError instanceof Error ? retryError.message : String(retryError)}`);
-                batchFailed = true;
+                // batchFailed is already true
               }
             }
           }
         }
       }
 
-      batchFailed = true;
+      // batchFailed = true; // Removed to allow successful retries to persist
     }
 
     if (batchFailed) {
