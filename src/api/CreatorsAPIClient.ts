@@ -124,7 +124,7 @@ export class CreatorsAPIClient {
     } catch (error) {
       const msg = error instanceof Error ? error.message : String(error);
       this.logger.error(`Failed to get OAuth token: ${msg}`);
-      throw new Error(`Authentication failed: ${msg}`);
+      throw new Error(`Authentication failed: ${msg}`, { cause: error });
     }
   }
 
@@ -563,7 +563,7 @@ export class CreatorsAPIClient {
           }
           reject(lastError || new Error('Request failed'));
         } catch (error) {
-          reject(error as Error);
+          reject(error instanceof Error ? error : new Error(String(error), { cause: error }));
         }
       });
       void this.processQueue();
