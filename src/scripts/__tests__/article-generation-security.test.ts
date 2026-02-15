@@ -1,5 +1,4 @@
 import fs from 'fs/promises';
-import path from 'path';
 import { GeneratedArticle } from '../../article/ArticleGenerator';
 import { saveArticle } from '../article-generation-cli';
 
@@ -17,11 +16,11 @@ jest.mock('../../utils/Logger', () => ({
 // Mock fs and path
 jest.mock('fs/promises');
 jest.mock('path', () => {
-    const originalPath = jest.requireActual('path');
-    return {
-        ...originalPath,
-        join: jest.fn((...args) => originalPath.join(...args)),
-    };
+  const originalPath = jest.requireActual('path');
+  return {
+    ...originalPath,
+    join: jest.fn((...args) => originalPath.join(...args)),
+  };
 });
 
 describe('saveArticle Security', () => {
