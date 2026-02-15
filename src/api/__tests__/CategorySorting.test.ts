@@ -1,11 +1,11 @@
-import * as fs from 'fs';
-import * as path from 'path';
+import { readFileSync } from 'fs';
+import { join } from 'path';
 
 describe('Category Groups Sorting', () => {
-    const filePath = path.join(process.cwd(), 'data', 'categorygroups.json');
+    const filePath = join(process.cwd(), 'data', 'categorygroups.json');
 
     it('should have all categories sorted by Unicode code point within each group', () => {
-        const content = fs.readFileSync(filePath, 'utf-8');
+        const content = readFileSync(filePath, 'utf-8');
         const data = JSON.parse(content);
 
         for (const [groupName, groupData] of Object.entries(data)) {
@@ -15,7 +15,7 @@ describe('Category Groups Sorting', () => {
                 try {
                     expect(categories).toEqual(sortedCategories);
                 } catch (_error) {
-                    throw new Error(`Group "${groupName}" is not sorted correctly.\nExpected: ${JSON.stringify(sortedCategories, null, 2)}\nActual: ${JSON.stringify(categories, null, 2)}`);
+                    throw new Error(`Group "${groupName}" is not sorted correctly.\nExpected: ${JSON.stringify(sortedCategories, null, 2)}\nActual: ${JSON.stringify(categories, null, 2)}`, { cause: _error });
                 }
             }
         }

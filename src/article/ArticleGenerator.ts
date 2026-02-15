@@ -163,7 +163,7 @@ export class ArticleGenerator {
       return article;
     } catch (error) {
       this.logger.error('Failed to generate article', error);
-      throw new Error(`Article generation failed: ${error instanceof Error ? error.message : 'Unknown error'}`);
+      throw new Error(`Article generation failed: ${error instanceof Error ? error.message : 'Unknown error'}`, { cause: error });
     }
   }
 
@@ -709,81 +709,83 @@ ${reviewAnalysis ? this.generateSentimentAnalysis(reviewAnalysis) : ''}`;
 
     // 各競合商品をカード形式で表示
     const competitorCards = (await Promise.all(competitors.map(async competitor => {
-        const features = competitor.featureComparison
-          .map(feature => `<li>${feature}</li>`)
-          .join('\n');
+      const features = competitor.featureComparison
+        .map(feature => `<li>${feature}</li>`)
+        .join('\n');
 
-        const differentiators = competitor.differentiators
-          .map(diff => `<li>${diff}</li>`)
-          .join('\n');
+      const differentiators = competitor.differentiators
+        .map(diff => `<li>${diff}</li>`)
+        .join('\n');
 
-        // Creators APIから取得した競合商品の詳細情報
-        const detail = competitor.asin ? competitorDetails?.get(competitor.asin) : undefined;
+      // Creators APIから取得した競合商品の詳細情報
+      const isValidAsin = typeof competitor.asin === 'string' && /^[A-Z0-9]{10}$/i.test(competitor.asin);
+      const normalizedAsin = isValidAsin && competitor.asin ? competitor.asin.toUpperCase() : undefined;
+      const detail = normalizedAsin ? competitorDetails?.get(normalizedAsin) : undefined;
 
-        // 調査済み記事が存在するかチェック
-        let internalLink = '';
-        let hasInternalReview = false;
-        let competitorScore: number | undefined;
-        if (competitor.asin) {
-          const investigationPath = path.join(cwd, 'data', 'investigations', `${competitor.asin}.json`);
-          try {
-            const fileContent = await fs.promises.readFile(investigationPath, 'utf-8');
-            hasInternalReview = true;
-            internalLink = `<a href="../${competitor.asin.toLowerCase()}/" class="btn-internal-small">📄 サイト内レビュー</a>`;
-            // 競合商品のスコアを取得
-            const competitorInvestigation = JSON.parse(fileContent) as InvestigationResult;
-            competitorScore = competitorInvestigation.analysis?.recommendation?.score;
-          } catch (error) {
-            // スコア取得に失敗した場合は無視（ファイルが存在しない場合もここに来る）
-            // ENOENT以外のエラー（パースエラーなど）はデバッグログに残す
-            if (error instanceof Error && (error as NodeJS.ErrnoException).code !== 'ENOENT') {
-              this.logger.debug(`Failed to load competitor investigation for ${competitor.asin}`, error);
-            }
+      // 調査済み記事が存在するかチェック
+      let internalLink = '';
+      let hasInternalReview = false;
+      let competitorScore: number | undefined;
+      if (normalizedAsin) {
+        const investigationPath = path.join(cwd, 'data', 'investigations', `${normalizedAsin}.json`);
+        try {
+          const fileContent = await fs.promises.readFile(investigationPath, 'utf-8');
+          hasInternalReview = true;
+          internalLink = `<a href="../${normalizedAsin.toLowerCase()}/" class="btn-internal-small">📄 サイト内レビュー</a>`;
+          // 競合商品のスコアを取得
+          const competitorInvestigation = JSON.parse(fileContent) as InvestigationResult;
+          competitorScore = competitorInvestigation.analysis?.recommendation?.score;
+        } catch (error) {
+          // スコア取得に失敗した場合は無視（ファイルが存在しない場合もここに来る）
+          // ENOENT以外のエラー（パースエラーなど）はデバッグログに残す
+          if (error instanceof Error && (error as NodeJS.ErrnoException).code !== 'ENOENT') {
+            this.logger.debug(`Failed to load competitor investigation for ${competitor.asin}`, error);
           }
         }
+      }
 
-        // 商品プレビュー（Creators API情報がある場合）
-        let productPreview = '';
-        if (detail) {
-          const imageUrl = detail.images?.primary || '';
-          const priceText = detail.price?.formatted || '';
-          const availabilityText = detail.availability || '';
-          const primeText = detail.isPrimeEligible ? '⭐ Prime対応' : '';
+      // 商品プレビュー（Creators API情報がある場合）
+      let productPreview = '';
+      if (detail) {
+        const imageUrl = detail.images?.primary || '';
+        const priceText = detail.price?.formatted || '';
+        const availabilityText = detail.availability || '';
+        const primeText = detail.isPrimeEligible ? '⭐ Prime対応' : '';
 
-          // スコア表示のHTML生成
-          let scoreHtml = '';
-          if (competitorScore !== undefined) {
-            let scoreClass = 'score-fair';
-            if (competitorScore >= 80) {
-              scoreClass = 'score-excellent';
-            } else if (competitorScore >= 60) {
-              scoreClass = 'score-good';
-            }
-            scoreHtml = `<div class="competitor-score-container"><span class="pickup-card-score ${scoreClass}">🏆 ${competitorScore}点</span></div>`;
+        // スコア表示のHTML生成
+        let scoreHtml = '';
+        if (competitorScore !== undefined) {
+          let scoreClass = 'score-fair';
+          if (competitorScore >= 80) {
+            scoreClass = 'score-excellent';
+          } else if (competitorScore >= 60) {
+            scoreClass = 'score-good';
           }
+          scoreHtml = `<div class="competitor-score-container"><span class="pickup-card-score ${scoreClass}">🏆 ${competitorScore}点</span></div>`;
+        }
 
-          const previewTag = hasInternalReview ? 'a' : 'div';
-          const previewAttrs = (hasInternalReview && competitor.asin) ? ` href="../${competitor.asin.toLowerCase()}/"` : '';
+        const previewTag = hasInternalReview ? 'a' : 'div';
+        const previewAttrs = (hasInternalReview && normalizedAsin) ? ` href="../${normalizedAsin.toLowerCase()}/"` : '';
 
-          productPreview = `
+        productPreview = `
 <${previewTag}${previewAttrs} class="competitor-preview">
 <img src="${imageUrl}" alt="${competitor.name}" class="competitor-preview-img">
 <div class="competitor-preview-info">
 ${scoreHtml}${priceText ? `<span class="competitor-actual-price">${priceText}</span>` : ''}${primeText ? `<span class="competitor-prime">${primeText}</span>` : ''}${availabilityText ? `<span class="competitor-availability">📦 ${availabilityText}</span>` : ''}
 </div>
 </${previewTag}>`;
-        }
+      }
 
-        // Creators APIが実行された場合（competitorDetailsが存在する場合）、
-        // ASINが存在しても詳細情報が取得できなかった（エラーになった）商品はリンクを表示しない
-        const shouldShowLink = competitor.asin && (!competitorDetails || competitorDetails.has(competitor.asin));
+      // Creators APIが実行された場合（competitorDetailsが存在する場合）、
+      // ASINが存在しても詳細情報が取得できなかった（エラーになった）商品はリンクを表示しない
+      const shouldShowLink = normalizedAsin && (!competitorDetails || competitorDetails.has(normalizedAsin));
 
-        // アフィリエイトリンクを生成
-        const competitorLink = shouldShowLink
-          ? `<a href="${detail?.detailPageUrl || this.affiliateManager.generateAffiliateLink(competitor.asin || '').url}" class="btn-amazon-small" target="_blank" rel="noopener noreferrer">🛒 Amazonで見る</a>`
-          : '';
+      // アフィリエイトリンクを生成
+      const competitorLink = shouldShowLink
+        ? `<a href="${detail?.detailPageUrl || this.affiliateManager.generateAffiliateLink(normalizedAsin).url}" class="btn-amazon-small" target="_blank" rel="noopener noreferrer">🛒 Amazonで見る</a>`
+        : '';
 
-        return `<div class="competitor-card">
+      return `<div class="competitor-card">
 <h4>${competitor.name}</h4>
 <p class="competitor-price">💰 ${competitor.priceComparison}</p>
 <div class="competitor-features">
@@ -804,7 +806,7 @@ ${internalLink}
 ${competitorLink}
 </div>
 </div>`;
-      })))
+    })))
       .join('\n\n');
 
     const content = `## 🥊 競合商品との比較

@@ -100,7 +100,7 @@ export class ReviewAnalyzer {
       return analysis;
     } catch (error) {
       this.logger.error('Failed to analyze investigation result', error);
-      throw new Error(`Investigation result analysis failed: ${error instanceof Error ? error.message : 'Unknown error'}`);
+      throw new Error(`Investigation result analysis failed: ${error instanceof Error ? error.message : 'Unknown error'}`, { cause: error });
     }
   }
 

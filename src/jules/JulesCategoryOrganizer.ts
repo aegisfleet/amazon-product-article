@@ -293,7 +293,7 @@ ${unregisteredList}
         } catch (error) {
             const julesError = this.handleApiError(error);
             this.logger.error('Failed to create Jules session', julesError);
-            throw new Error(`Jules session creation failed: ${julesError.message}`);
+            throw new Error(`Jules session creation failed: ${julesError.message}`, { cause: error });
         }
     }
 
@@ -309,7 +309,7 @@ ${unregisteredList}
         } catch (error) {
             const julesError = this.handleApiError(error);
             this.logger.error('Failed to get session', { sessionId, error: julesError });
-            throw new Error(`Failed to get session: ${julesError.message}`);
+            throw new Error(`Failed to get session: ${julesError.message}`, { cause: error });
         }
     }
 

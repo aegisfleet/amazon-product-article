@@ -124,7 +124,7 @@ export class CreatorsAPIClient {
     } catch (error) {
       const msg = error instanceof Error ? error.message : String(error);
       this.logger.error(`Failed to get OAuth token: ${msg}`);
-      throw new Error(`Authentication failed: ${msg}`);
+      throw new Error(`Authentication failed: ${msg}`, { cause: error });
     }
   }
 
@@ -326,6 +326,7 @@ export class CreatorsAPIClient {
     } catch (error: unknown) {
       const errorMessage = error instanceof Error ? error.message : String(error);
       this.logger.warn(`Batch request failed: ${errorMessage}`);
+      batchFailed = true;
 
       if (axios.isAxiosError(error) && error.response?.data) {
         this.logger.error(`API Error Response: ${JSON.stringify(error.response.data, null, 2)}`);
@@ -360,7 +361,7 @@ export class CreatorsAPIClient {
               batchFailed = false;
             } catch (retryError) {
               this.logger.warn(`Retry batch also failed: ${retryError instanceof Error ? retryError.message : String(retryError)}`);
-              batchFailed = true;
+              // batchFailed is already true
             }
           }
         } else if (errorMessage.includes('InvalidParameterValue')) {
@@ -394,14 +395,14 @@ export class CreatorsAPIClient {
                 batchFailed = false;
               } catch (retryError) {
                 this.logger.warn(`Retry batch also failed: ${retryError instanceof Error ? retryError.message : String(retryError)}`);
-                batchFailed = true;
+                // batchFailed is already true
               }
             }
           }
         }
       }
 
-      batchFailed = true;
+      // batchFailed = true; // Removed to allow successful retries to persist
     }
 
     if (batchFailed) {
@@ -563,7 +564,7 @@ export class CreatorsAPIClient {
           }
           reject(lastError || new Error('Request failed'));
         } catch (error) {
-          reject(error as Error);
+          reject(error instanceof Error ? error : new Error(String(error), { cause: error }));
         }
       });
       void this.processQueue();

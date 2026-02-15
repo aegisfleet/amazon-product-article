@@ -92,7 +92,7 @@ export class JulesInvestigator {
     } catch (error) {
       const julesError = this.handleApiError(error);
       this.logger.error('Failed to list Jules sources', julesError);
-      throw new Error(`Failed to list sources: ${julesError.message}`);
+      throw new Error(`Failed to list sources: ${julesError.message}`, { cause: error });
     }
   }
 
@@ -121,7 +121,7 @@ export class JulesInvestigator {
     } catch (error) {
       const julesError = this.handleApiError(error);
       this.logger.error('Failed to create Jules session', julesError);
-      throw new Error(`Jules session creation failed: ${julesError.message}`);
+      throw new Error(`Jules session creation failed: ${julesError.message}`, { cause: error });
     }
   }
 
@@ -137,7 +137,7 @@ export class JulesInvestigator {
     } catch (error) {
       const julesError = this.handleApiError(error);
       this.logger.error('Failed to get session', { sessionId, error: julesError });
-      throw new Error(`Failed to get session: ${julesError.message}`);
+      throw new Error(`Failed to get session: ${julesError.message}`, { cause: error });
     }
   }
 
@@ -154,7 +154,7 @@ export class JulesInvestigator {
     } catch (error) {
       const julesError = this.handleApiError(error);
       this.logger.error('Failed to list activities', { sessionId, error: julesError });
-      throw new Error(`Failed to list activities: ${julesError.message}`);
+      throw new Error(`Failed to list activities: ${julesError.message}`, { cause: error });
     }
   }
 
@@ -171,7 +171,7 @@ export class JulesInvestigator {
     } catch (error) {
       const julesError = this.handleApiError(error);
       this.logger.error('Failed to send message', { sessionId, error: julesError });
-      throw new Error(`Failed to send message: ${julesError.message}`);
+      throw new Error(`Failed to send message: ${julesError.message}`, { cause: error });
     }
   }
 
@@ -185,7 +185,7 @@ export class JulesInvestigator {
     } catch (error) {
       const julesError = this.handleApiError(error);
       this.logger.error('Failed to approve plan', { sessionId, error: julesError });
-      throw new Error(`Failed to approve plan: ${julesError.message}`);
+      throw new Error(`Failed to approve plan: ${julesError.message}`, { cause: error });
     }
   }
 
@@ -218,7 +218,7 @@ export class JulesInvestigator {
     } catch (error) {
       const julesError = this.handleApiError(error);
       this.logger.error('Failed to get session status', { sessionId, error: julesError });
-      throw new Error(`Session status retrieval failed: ${julesError.message}`);
+      throw new Error(`Session status retrieval failed: ${julesError.message}`, { cause: error });
     }
   }
 
@@ -253,7 +253,7 @@ export class JulesInvestigator {
     } catch (error) {
       const julesError = this.handleApiError(error);
       this.logger.error('Failed to retrieve investigation results', { sessionId, error: julesError });
-      throw new Error(`Results retrieval failed: ${julesError.message}`);
+      throw new Error(`Results retrieval failed: ${julesError.message}`, { cause: error });
     }
   }
 

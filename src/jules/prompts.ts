@@ -10,41 +10,41 @@ import { Product } from '../types/Product';
  * 調査プロンプトを生成
  */
 export function formatInvestigationPrompt(product: Product): string {
-    // JSTで現在の日付を取得 (YYYY-MM-DD)
-    const today = new Date().toLocaleDateString('ja-JP', {
-      timeZone: 'Asia/Tokyo',
-      year: 'numeric',
-      month: '2-digit',
-      day: '2-digit'
-    }).replace(/\//g, '-');
+  // JSTで現在の日付を取得 (YYYY-MM-DD)
+  const today = new Date().toLocaleDateString('ja-JP', {
+    timeZone: 'Asia/Tokyo',
+    year: 'numeric',
+    month: '2-digit',
+    day: '2-digit'
+  }).replace(/\//g, '-');
 
-    // ブランド情報の取得
-    const brand = product.brand;
-    const brandInfo = brand ? `- ブランド: ${brand}` : '';
-    const parentAsinInfo = product.parentAsin ? `- 親ASIN: ${product.parentAsin}` : '';
+  // ブランド情報の取得
+  const brand = product.brand;
+  const brandInfo = brand ? `- ブランド: ${brand}` : '';
+  const parentAsinInfo = product.parentAsin ? `- 親ASIN: ${product.parentAsin}` : '';
 
-    // 安全性・信頼性が重要なカテゴリ判定
-    const safetySensitiveCategories = [
-      '美容', 'beauty',
-      '健康', 'health',
-      'サプリメント', 'supplements',
-      '食品', 'food',
-      'ベビー', 'baby',
-      'スキンケア', 'skincare',
-      '医薬品', 'medicine',
-      'ペット用品', 'pet',
-      'コンタクト', 'contact lens'
-    ];
+  // 安全性・信頼性が重要なカテゴリ判定
+  const safetySensitiveCategories = [
+    '美容', 'beauty',
+    '健康', 'health',
+    'サプリメント', 'supplements',
+    '食品', 'food',
+    'ベビー', 'baby',
+    'スキンケア', 'skincare',
+    '医薬品', 'medicine',
+    'ペット用品', 'pet',
+    'コンタクト', 'contact lens'
+  ];
 
-    const isSafetySensitive = safetySensitiveCategories.some(cat =>
-      product.category.toLowerCase().includes(cat) ||
-      product.title.toLowerCase().includes(cat)
-    );
+  const isSafetySensitive = safetySensitiveCategories.some(cat =>
+    product.category.toLowerCase().includes(cat) ||
+    product.title.toLowerCase().includes(cat)
+  );
 
-    let scoringRubric = '';
+  let scoringRubric: string;
 
-    if (isSafetySensitive) {
-      scoringRubric = `
+  if (isSafetySensitive) {
+    scoringRubric = `
 2. **加減点カテゴリと配分幅 (美容・健康・食品用)**:
    - **安全性・信頼性 (-20 〜 +10点)**: 【最重要】成分、製造品質、ブランド信頼性、副作用リスク。不安要素がある場合は大きく減点。
    - **コストパフォーマンス (-10 〜 +10点)**: 安全性が確保された上での価格対効果。安くても怪しい商品は評価しない。
@@ -52,17 +52,17 @@ export function formatInvestigationPrompt(product: Product): string {
    - **品質・デザイン (-5 〜 +5点)**: パッケージ、質感、使いやすさ。
    - **ユーザー満足度 (-10 〜 +10点)**: レビュー、リピート率、サポート体制。
    - **独自の強み・先進性 (0 〜 +10点)**: 他にない成分、革新的な技術。`;
-    } else {
-      scoringRubric = `
+  } else {
+    scoringRubric = `
 2. **加減点カテゴリと配分幅**:
    - **性能・機能 (-10 〜 +10点)**: スペック、実用性、使い勝手
    - **コストパフォーマンス (-15 〜 +15点)**: 価格対性能、競合との価格差（最重視）
    - **品質・デザイン (-5 〜 +5点)**: ビルドクオリティ、質感、美しさ
    - **ユーザー満足度 (-10 〜 +10点)**: レビュー、信頼性、サポート体制
    - **独自の強み・先進性 (0 〜 +10点)**: 他にない革新的な機能、独自の価値`;
-    }
+  }
 
-    const prompt = `【基本ルール】
+  const prompt = `【基本ルール】
 - 全ての出力は日本語で記述すること
 - 認証情報は絶対にログ・ファイル・コミット・PR説明文に含めないこと
 - コミット対象は \`data/investigations/${product.asin}.json\` のみ
@@ -255,5 +255,5 @@ Creators APIの features テキストとWeb調査を組み合わせて情報を�
 - 家電商品: dimensions, power, capacity, その他機能
 `;
 
-    return prompt;
-  }
+  return prompt;
+}
