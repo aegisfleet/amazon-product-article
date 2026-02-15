@@ -718,18 +718,20 @@ ${reviewAnalysis ? this.generateSentimentAnalysis(reviewAnalysis) : ''}`;
         .join('\n');
 
       // Creators APIから取得した競合商品の詳細情報
-      const detail = competitor.asin ? competitorDetails?.get(competitor.asin) : undefined;
+      const isValidAsin = typeof competitor.asin === 'string' && /^[A-Z0-9]{10}$/i.test(competitor.asin);
+      const normalizedAsin = isValidAsin && competitor.asin ? competitor.asin.toUpperCase() : undefined;
+      const detail = normalizedAsin ? competitorDetails?.get(normalizedAsin) : undefined;
 
       // 調査済み記事が存在するかチェック
       let internalLink = '';
       let hasInternalReview = false;
       let competitorScore: number | undefined;
-      if (competitor.asin) {
-        const investigationPath = path.join(cwd, 'data', 'investigations', `${competitor.asin}.json`);
+      if (normalizedAsin) {
+        const investigationPath = path.join(cwd, 'data', 'investigations', `${normalizedAsin}.json`);
         try {
           const fileContent = await fs.promises.readFile(investigationPath, 'utf-8');
           hasInternalReview = true;
-          internalLink = `<a href="../${competitor.asin.toLowerCase()}/" class="btn-internal-small">📄 サイト内レビュー</a>`;
+          internalLink = `<a href="../${normalizedAsin.toLowerCase()}/" class="btn-internal-small">📄 サイト内レビュー</a>`;
           // 競合商品のスコアを取得
           const competitorInvestigation = JSON.parse(fileContent) as InvestigationResult;
           competitorScore = competitorInvestigation.analysis?.recommendation?.score;
@@ -763,7 +765,7 @@ ${reviewAnalysis ? this.generateSentimentAnalysis(reviewAnalysis) : ''}`;
         }
 
         const previewTag = hasInternalReview ? 'a' : 'div';
-        const previewAttrs = (hasInternalReview && competitor.asin) ? ` href="../${competitor.asin.toLowerCase()}/"` : '';
+        const previewAttrs = (hasInternalReview && normalizedAsin) ? ` href="../${normalizedAsin.toLowerCase()}/"` : '';
 
         productPreview = `
 <${previewTag}${previewAttrs} class="competitor-preview">
@@ -776,11 +778,11 @@ ${scoreHtml}${priceText ? `<span class="competitor-actual-price">${priceText}</s
 
       // Creators APIが実行された場合（competitorDetailsが存在する場合）、
       // ASINが存在しても詳細情報が取得できなかった（エラーになった）商品はリンクを表示しない
-      const shouldShowLink = competitor.asin && (!competitorDetails || competitorDetails.has(competitor.asin));
+      const shouldShowLink = normalizedAsin && (!competitorDetails || competitorDetails.has(normalizedAsin));
 
       // アフィリエイトリンクを生成
       const competitorLink = shouldShowLink
-        ? `<a href="${detail?.detailPageUrl || this.affiliateManager.generateAffiliateLink(competitor.asin || '').url}" class="btn-amazon-small" target="_blank" rel="noopener noreferrer">🛒 Amazonで見る</a>`
+        ? `<a href="${detail?.detailPageUrl || this.affiliateManager.generateAffiliateLink(normalizedAsin).url}" class="btn-amazon-small" target="_blank" rel="noopener noreferrer">🛒 Amazonで見る</a>`
         : '';
 
       return `<div class="competitor-card">
