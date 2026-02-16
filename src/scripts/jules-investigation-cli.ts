@@ -17,6 +17,7 @@ import { JulesInvestigator } from '../jules/JulesInvestigator';
 import { saveSessionInfo } from '../jules/SessionManager';
 import { JulesCredentials, SourceContext } from '../types/JulesTypes';
 import { Product } from '../types/Product';
+import { setGitHubOutput } from '../utils/github-actions';
 import { Logger } from '../utils/Logger';
 
 const logger = Logger.getInstance();
@@ -84,16 +85,6 @@ async function ensureOutputDirectories(): Promise<void> {
 
     for (const dir of dirs) {
         await fs.mkdir(dir, { recursive: true });
-    }
-}
-
-async function setGitHubOutput(name: string, value: string): Promise<void> {
-    const outputFile = process.env.GITHUB_OUTPUT;
-    if (outputFile) {
-        await fs.appendFile(outputFile, `${name}=${value}\n`);
-        logger.info(`Set GitHub output: ${name}=${value}`);
-    } else {
-        logger.warn(`GITHUB_OUTPUT environment variable not set. Output skipped: ${name}=${value}`);
     }
 }
 
