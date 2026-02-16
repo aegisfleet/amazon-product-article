@@ -13,9 +13,21 @@ jobs:
       - uses: actions/github-script@v8
         with:
           script: |
-            github.rest.issues.createComment({
+            const files = await github.paginate(github.rest.pulls.listFiles, {
               owner: context.repo.owner,
               repo: context.repo.repo,
-              issue_number: context.issue.number,
-              body: '@coderabbitai review'
-            })
+              pull_number: context.issue.number,
+            });
+
+            const allDataFiles = files.every(file => file.filename.startsWith('data/'));
+
+            if (!allDataFiles) {
+              await github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: context.issue.number,
+                body: '@coderabbitai review'
+              });
+            } else {
+              console.log('Skipping CodeRabbit review for data-only changes.');
+            }
