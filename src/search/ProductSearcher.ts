@@ -361,8 +361,7 @@ export class ProductSearcher {
       const categoryCounts: Record<string, number> = {};
       let lastSearchDate: Date | undefined;
 
-      const CONCURRENCY = 50;
-      await this.processInBatches(sessions, CONCURRENCY, async (sessionFile) => {
+      await Promise.all(sessions.map(async (sessionFile) => {
         try {
           const sessionPath = path.join(sessionsDir, sessionFile);
           const data = await fs.readFile(sessionPath, 'utf-8');
@@ -381,7 +380,7 @@ export class ProductSearcher {
         } catch (e) {
           this.logger.warn(`Failed to process session file ${sessionFile}:`, e);
         }
-      });
+      }));
 
       return {
         totalSessions: sessions.length,
