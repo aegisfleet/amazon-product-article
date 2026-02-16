@@ -16,6 +16,7 @@ import fs from 'fs/promises';
 import path from 'path';
 import { JulesCategoryOrganizer, OrganizationSession } from '../jules/JulesCategoryOrganizer';
 import { JulesCredentials, SourceContext } from '../types/JulesTypes';
+import { setGitHubOutput } from '../utils/github-actions';
 import { Logger } from '../utils/Logger';
 
 const logger = Logger.getInstance();
@@ -66,16 +67,6 @@ async function saveSessionInfo(session: OrganizationSession): Promise<void> {
     }, null, 2));
 
     logger.info(`Session info saved: ${filename}`);
-}
-
-async function setGitHubOutput(name: string, value: string): Promise<void> {
-    const outputFile = process.env.GITHUB_OUTPUT;
-    if (outputFile) {
-        await fs.appendFile(outputFile, `${name}=${value}\n`);
-        logger.info(`Set GitHub output: ${name}=${value}`);
-    } else {
-        logger.warn(`GITHUB_OUTPUT environment variable not set. Output skipped: ${name}=${value}`);
-    }
 }
 
 async function main(): Promise<void> {

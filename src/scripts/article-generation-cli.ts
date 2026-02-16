@@ -20,6 +20,7 @@ import { ArticleGenerator, GeneratedArticle } from '../article/ArticleGenerator'
 import { GitHubPublisher } from '../github/GitHubPublisher';
 import { InvestigationResult } from '../types/JulesTypes';
 import { Product, ProductDetail } from '../types/Product';
+import { setGitHubOutput } from '../utils/github-actions';
 import { Logger } from '../utils/Logger';
 const execAsync = promisify(exec);
 
@@ -230,16 +231,6 @@ export async function saveArticle(
     logger.info(`Article saved: ${filename}`);
 
     return filePath;
-}
-
-async function setGitHubOutput(name: string, value: string): Promise<void> {
-    const outputFile = process.env.GITHUB_OUTPUT;
-    if (outputFile) {
-        await fs.appendFile(outputFile, `${name}=${value}\n`);
-        logger.info(`Set GitHub output: ${name}=${value}`);
-    } else {
-        logger.warn(`GITHUB_OUTPUT environment variable not set. Output skipped: ${name}=${value}`);
-    }
 }
 
 export async function main(): Promise<void> {
