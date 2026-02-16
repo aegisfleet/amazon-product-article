@@ -161,10 +161,16 @@ export async function loadInvestigationResults(targetFiles?: string[]): Promise<
                     };
 
                     // lastInvestigatedがあればそれを優先、なければファイルの更新日時（fs.stat）を取得
-                    let generatedAt = new Date();
+                    let generatedAt: Date | null = null;
                     if (parsed.analysis.lastInvestigated) {
-                        generatedAt = new Date(parsed.analysis.lastInvestigated);
-                    } else {
+                        const parsedDate = new Date(parsed.analysis.lastInvestigated);
+                        // Check if the date is valid
+                        if (!isNaN(parsedDate.getTime())) {
+                            generatedAt = parsedDate;
+                        }
+                    }
+
+                    if (!generatedAt) {
                         // ファイルの更新日時を取得（作成日時の代用）
                         const stats = await fs.stat(filePath);
                         generatedAt = stats.mtime;

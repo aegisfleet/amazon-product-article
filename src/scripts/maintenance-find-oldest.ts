@@ -24,7 +24,13 @@ async function main(): Promise<void> {
     const limit = limitValue ? parseInt(limitValue, 10) : 1;
 
     const dirIndex = args.indexOf('--dir');
-    const dirValue = dirIndex !== -1 ? args[dirIndex + 1] : undefined;
+    let dirValue: string | undefined;
+    if (dirIndex !== -1 && dirIndex + 1 < args.length) {
+        const nextArg = args[dirIndex + 1];
+        if (nextArg && !nextArg.startsWith('-')) {
+            dirValue = nextArg;
+        }
+    }
     const investigationsDir = dirValue ? path.resolve(dirValue) : path.join(process.cwd(), 'data', 'investigations');
 
     try {

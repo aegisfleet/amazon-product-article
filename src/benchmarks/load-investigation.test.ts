@@ -94,6 +94,30 @@ describe('loadInvestigationResults Performance', () => {
         expect(fs.stat).toHaveBeenCalledTimes(mockFiles.length);
     });
 
+    it('should fallback to fs.stat if lastInvestigated is invalid', async () => {
+        // Mock fs.readFile to return valid JSON with INVALID lastInvestigated
+        (fs.readFile as jest.Mock).mockResolvedValue(JSON.stringify({
+            analysis: {
+                positivePoints: [],
+                negativePoints: [],
+                useCases: [],
+                userStories: [],
+                userImpression: 'Good',
+                sources: [],
+                competitiveAnalysis: [],
+                recommendation: { targetUsers: [], pros: [], cons: [], score: 5 },
+                lastInvestigated: 'invalid-date-string'
+            }
+        }));
+
+        const results = await loadInvestigationResults();
+
+        expect(results).toHaveLength(mockFiles.length);
+
+        // Verify fs.stat IS called because lastInvestigated is invalid
+        expect(fs.stat).toHaveBeenCalledTimes(mockFiles.length);
+    });
+
     it('should handle file read errors gracefully', async () => {
         // Make the first file fail with ENOENT
         const failingFile = mockFiles[0];
