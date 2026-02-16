@@ -10,85 +10,8 @@ import { AffiliateLink } from '../types/AffiliateTypes';
 import { InvestigationResult, TechnicalSpecs } from '../types/JulesTypes';
 import { Product, ProductDetail } from '../types/Product';
 import { Logger } from '../utils/Logger';
-import { DEFAULT_IMAGE_URL, HANDLED_SPEC_FIELDS, SPEC_LABEL_MAP } from './ArticleConstants';
-
-export interface ArticleMetadata {
-  title: string;
-  description: string;
-  category: string;
-  subcategory?: string;
-  manufacturer?: string;
-  tags: string[];
-  publishDate: Date;
-  asin: string;
-  priceRange: string;
-  price?: string;
-  score?: number;
-  rating?: number;
-  featured: boolean;
-  mobileOptimized: boolean;
-  seoKeywords: string[];
-  lastInvestigated?: string;
-  images?: string[];  // Product image URLs for Hugo front matter
-  affiliate_url?: string; // Affiliate link for the hero button
-  is_prime?: boolean;
-  availability?: string;
-  technicalSpecs?: TechnicalSpecs;  // 詳細スペック情報（カテゴリ依存）
-  hero?: {
-    score_rationale: {
-      top_plus: { points: number; desc: string } | null;
-      top_minus: { points: number; desc: string } | null;
-    };
-    target_users: string[];
-    warnings: string[];
-    specs: TechnicalSpecs;
-  };
-}
-
-export interface ArticleTemplate {
-  sections: {
-    introduction: TemplateSection;
-    userReviews: TemplateSection;
-    competitiveAnalysis: TemplateSection;
-    recommendation: TemplateSection;
-    conclusion: TemplateSection;
-  };
-  qualityRequirements: {
-    minWordCount: number;
-    requiredElements: string[];
-    styleGuidelines: StyleRule[];
-  };
-}
-
-export interface TemplateSection {
-  title: string;
-  minWordCount: number;
-  requiredElements: string[];
-  structure: string;
-}
-
-export interface StyleRule {
-  rule: string;
-  description: string;
-  example?: string;
-}
-
-export interface GeneratedArticle {
-  content: string;
-  metadata: ArticleMetadata;
-  wordCount: number;
-  sections: ArticleSection[];
-  affiliateLinks: AffiliateLink[];
-}
-
-export interface ArticleSection {
-  title: string;
-  content: string;
-  wordCount: number;
-  requiredElements: string[];
-}
-
-
+import { ArticleMetadata, ArticleSection, ArticleTemplate, GeneratedArticle, StyleRule, TemplateSection } from '../types/ArticleTypes';
+import { DEFAULT_ARTICLE_TEMPLATE, DEFAULT_IMAGE_URL, HANDLED_SPEC_FIELDS, SPEC_LABEL_MAP } from './ArticleConstants';
 
 export class ArticleGenerator {
   private logger: Logger;
@@ -97,7 +20,7 @@ export class ArticleGenerator {
 
   constructor() {
     this.logger = Logger.getInstance();
-    this.defaultTemplate = this.createDefaultTemplate();
+    this.defaultTemplate = DEFAULT_ARTICLE_TEMPLATE;
     this.affiliateManager = new AffiliateLinkManager();
   }
 
@@ -1224,73 +1147,6 @@ ${score >= 80 ? '自信を持っておすすめできる商品です。' :
     lines.push('---');
 
     return lines.join('\n');
-  }
-
-  /**
-   * デフォルトテンプレートを作成
-   */
-  private createDefaultTemplate(): ArticleTemplate {
-    return {
-      sections: {
-        introduction: {
-          title: '導入部',
-          minWordCount: 200,
-          requiredElements: ['商品名', '記事の目的', '読者への価値提案'],
-          structure: '商品紹介 → 記事の目的 → 読者メリット'
-        },
-        userReviews: {
-          title: 'ユーザーレビュー',
-          minWordCount: 800,
-          requiredElements: ['ポジティブポイント', 'ネガティブポイント', '使用シーン'],
-          structure: '良い点 → 気になる点 → 実際の使用例'
-        },
-        competitiveAnalysis: {
-          title: '競合商品との比較',
-          minWordCount: 600,
-          requiredElements: ['競合商品', '機能比較', '差別化ポイント'],
-          structure: '競合商品紹介 → 機能比較 → 優位性分析'
-        },
-        recommendation: {
-          title: '購入推奨度',
-          minWordCount: 400,
-          requiredElements: ['推奨ユーザー', '注意点', 'コスパ評価'],
-          structure: '総合評価 → 推奨ユーザー → 購入判断'
-        },
-        conclusion: {
-          title: '商品詳細・購入',
-          minWordCount: 200,
-          requiredElements: ['商品情報', '購入リンク', 'チェックリスト'],
-          structure: '商品詳細 → 購入案内 → 注意事項'
-        }
-      },
-      qualityRequirements: {
-        minWordCount: 2000,
-        requiredElements: [
-          '商品概要',
-          'ユーザーレビュー',
-          '競合比較',
-          '購入推奨度',
-          'アフィリエイト開示'
-        ],
-        styleGuidelines: [
-          {
-            rule: 'mobile_first',
-            description: 'モバイルファーストのレスポンシブデザイン',
-            example: '短い段落、読みやすいフォント、タップしやすいボタン'
-          },
-          {
-            rule: 'seo_optimized',
-            description: 'SEO最適化されたコンテンツ構造',
-            example: '適切な見出し構造、キーワード配置、メタデータ'
-          },
-          {
-            rule: 'user_focused',
-            description: 'ユーザーの購買判断を支援する内容',
-            example: '具体的な使用例、明確な推奨理由、注意点の明示'
-          }
-        ]
-      }
-    };
   }
 
   // Helper methods

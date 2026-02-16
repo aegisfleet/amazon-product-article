@@ -2,7 +2,7 @@
  * Site_Navigation_Manager - サイトナビゲーションとフィルタリング機能の管理
  */
 
-import { ArticleMetadata } from '../article/ArticleGenerator';
+import { ArticleMetadata } from '../types/ArticleTypes';
 import {
     Breadcrumb,
     Category,

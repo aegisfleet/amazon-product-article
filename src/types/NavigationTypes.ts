@@ -2,7 +2,7 @@
  * Navigation types for site navigation and filtering
  */
 
-import { ArticleMetadata } from '../article/ArticleGenerator';
+import { ArticleMetadata } from '../types/ArticleTypes';
 
 export interface Category {
     id: string;

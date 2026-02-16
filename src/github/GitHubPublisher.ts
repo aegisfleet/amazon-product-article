@@ -2,7 +2,7 @@
  * GitHub_Publisher - GitHub Pagesへの記事公開とサイト管理
  */
 
-import { ArticleMetadata } from '../article/ArticleGenerator';
+import { ArticleMetadata } from '../types/ArticleTypes';
 import {
   ArticleCommit,
   ArticleIndexEntry,
