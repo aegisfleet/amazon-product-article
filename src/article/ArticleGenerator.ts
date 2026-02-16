@@ -10,7 +10,7 @@ import { AffiliateLink } from '../types/AffiliateTypes';
 import { InvestigationResult, TechnicalSpecs } from '../types/JulesTypes';
 import { Product, ProductDetail } from '../types/Product';
 import { Logger } from '../utils/Logger';
-import { ArticleMetadata, ArticleSection, ArticleTemplate, GeneratedArticle, StyleRule, TemplateSection } from '../types/ArticleTypes';
+import { ArticleMetadata, ArticleSection, ArticleTemplate, GeneratedArticle, TemplateSection } from '../types/ArticleTypes';
 import { DEFAULT_ARTICLE_TEMPLATE, DEFAULT_IMAGE_URL, HANDLED_SPEC_FIELDS, SPEC_LABEL_MAP } from './ArticleConstants';
 
 export class ArticleGenerator {
