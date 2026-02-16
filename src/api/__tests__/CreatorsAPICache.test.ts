@@ -188,4 +188,32 @@ describe('CreatorsAPICache', () => {
         expect(missing).toContain('WITH_FILE');
         expect(missing).not.toContain('WITHOUT_FILE');
     });
+
+    test('save should write to disk asynchronously', async () => {
+        // Ensure fs.promises exists for mocking
+        if (!fs.promises) {
+            (fs as any).promises = {
+                writeFile: jest.fn(),
+                mkdir: jest.fn()
+            };
+        }
+
+        // Use spies to restore original implementation after test
+        const writeFileSpy = jest.spyOn(fs.promises, 'writeFile').mockResolvedValue(undefined);
+        const mkdirSpy = jest.spyOn(fs.promises, 'mkdir').mockResolvedValue(undefined as any);
+
+        try {
+            await cache.save();
+
+            expect(mkdirSpy).toHaveBeenCalledWith(expect.stringContaining(mockCacheDir), { recursive: true });
+            expect(writeFileSpy).toHaveBeenCalledWith(
+                expect.stringContaining('paapi-product-cache.json'),
+                expect.any(String),
+                'utf-8'
+            );
+        } finally {
+            writeFileSpy.mockRestore();
+            mkdirSpy.mockRestore();
+        }
+    });
 });
