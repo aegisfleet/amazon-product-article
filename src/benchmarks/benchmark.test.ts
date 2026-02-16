@@ -2,7 +2,7 @@
 import fs from 'fs/promises';
 import { CreatorsAPIClient } from '../api/CreatorsAPIClient';
 import { ProductSearcher } from '../search/ProductSearcher';
-import { ProductSearchResult } from '../types/Product';
+import { Product, ProductSearchResult } from '../types/Product';
 
 // Mock dependencies
 jest.mock('../api/CreatorsAPIClient');
@@ -55,9 +55,8 @@ describe('ProductSearcher Performance Benchmark', () => {
         jest.clearAllMocks();
 
         // Mock getEnabledCategories to return our large list
-        // We can't easily mock a private method, so we'll mock the config import or just override the property if possible.
-        // Or we can cast to any.
-        (searcher as any).getEnabledCategories = jest.fn().mockReturnValue(CATEGORIES);
+        // Cast to unknown then to a type with the method to avoid 'any'
+        (searcher as unknown as { getEnabledCategories: () => typeof CATEGORIES }).getEnabledCategories = jest.fn().mockReturnValue(CATEGORIES);
 
         // Mock fs.readdir to simulate finding session files
         (fs.readdir as jest.Mock).mockImplementation(async () => {
@@ -83,7 +82,7 @@ describe('ProductSearcher Performance Benchmark', () => {
 
         // 1. Sequential (Simulated)
         const startSeq = Date.now();
-        const resultsSeq: Record<string, any> = {};
+        const resultsSeq: Record<string, Product[]> = {};
         for (const category of CATEGORIES) {
              resultsSeq[category.name] = await searcher.getStoredProducts(category.name);
         }
