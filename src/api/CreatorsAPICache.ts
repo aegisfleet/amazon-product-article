@@ -88,6 +88,7 @@ export class CreatorsAPICache {
     public async save(): Promise<void> {
         try {
             await this.ensureDirectoryAsync();
+            // Use fs.promises.writeFile to avoid blocking the event loop
             await fs.promises.writeFile(this.cachePath, JSON.stringify(this.cache, null, 2), 'utf-8');
             this.logger.info('Creators API Cache saved to disk');
         } catch (error) {
