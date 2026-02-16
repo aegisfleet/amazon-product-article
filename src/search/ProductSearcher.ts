@@ -361,30 +361,27 @@ export class ProductSearcher {
       const categoryCounts: Record<string, number> = {};
       let lastSearchDate: Date | undefined;
 
-      const loadedSessions: SearchSession[] = [];
       const CONCURRENCY = 50;
-      for (let i = 0; i < sessions.length; i += CONCURRENCY) {
-        const batch = sessions.slice(i, i + CONCURRENCY);
-        const batchSessions = await Promise.all(batch.map(async (sessionFile) => {
+      await this.processInBatches(sessions, CONCURRENCY, async (sessionFile) => {
+        try {
           const sessionPath = path.join(sessionsDir, sessionFile);
           const data = await fs.readFile(sessionPath, 'utf-8');
-          return JSON.parse(data) as SearchSession;
-        }));
-        loadedSessions.push(...batchSessions);
-      }
+          const session = JSON.parse(data) as SearchSession;
 
-      for (const session of loadedSessions) {
-        totalProducts += session.totalProducts;
+          totalProducts += session.totalProducts;
 
-        if (!lastSearchDate || new Date(session.timestamp) > new Date(lastSearchDate)) {
-          lastSearchDate = new Date(session.timestamp);
+          if (!lastSearchDate || new Date(session.timestamp) > new Date(lastSearchDate)) {
+            lastSearchDate = new Date(session.timestamp);
+          }
+
+          for (const result of session.results) {
+            const category = result.searchParams.category;
+            categoryCounts[category] = (categoryCounts[category] || 0) + result.products.length;
+          }
+        } catch (e) {
+          this.logger.warn(`Failed to process session file ${sessionFile}:`, e);
         }
-
-        for (const result of session.results) {
-          const category = result.searchParams.category;
-          categoryCounts[category] = (categoryCounts[category] || 0) + result.products.length;
-        }
-      }
+      });
 
       return {
         totalSessions: sessions.length,
