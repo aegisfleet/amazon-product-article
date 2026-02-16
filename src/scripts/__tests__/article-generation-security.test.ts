@@ -1,5 +1,5 @@
 import fs from 'fs/promises';
-import { GeneratedArticle } from '../../article/ArticleGenerator';
+import { GeneratedArticle } from '../../types/ArticleTypes';
 import { saveArticle } from '../article-generation-cli';
 
 // Mock Logger to prevent console noise
