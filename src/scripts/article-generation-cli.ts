@@ -137,14 +137,6 @@ export async function loadInvestigationResults(targetFiles?: string[]): Promise<
         const chunkResults = await Promise.all(
             chunk.map(async (filePath) => {
                 try {
-                    // Check if file exists
-                    try {
-                        await fs.access(filePath);
-                    } catch {
-                        logger.warn(`File not found: ${filePath}, skipping`);
-                        return null;
-                    }
-
                     const rawData = await fs.readFile(filePath, 'utf-8');
                     const parsed = JSON.parse(rawData) as RawInvestigationFile;
 
@@ -193,6 +185,10 @@ export async function loadInvestigationResults(targetFiles?: string[]): Promise<
                         timestamp: new Date().toISOString(),
                     } as InvestigationData;
                 } catch (error) {
+                    if ((error as { code?: string }).code === 'ENOENT') {
+                        logger.warn(`File not found: ${filePath}, skipping`);
+                        return null;
+                    }
                     logger.warn(`Failed to load investigation file ${filePath}:`, error);
                     return null;
                 }
