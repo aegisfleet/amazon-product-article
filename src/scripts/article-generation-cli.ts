@@ -160,14 +160,13 @@ export async function loadInvestigationResults(targetFiles?: string[]): Promise<
                         rating: { average: 0, count: 0 },
                     };
 
-                    // ファイルの更新日時を取得（作成日時の代用）
-                    const stats = await fs.stat(filePath);
-
-                    // lastInvestigatedがあればそれを優先、なければファイルの更新日時、それもなければ現在時刻
+                    // lastInvestigatedがあればそれを優先、なければファイルの更新日時（fs.stat）を取得
                     let generatedAt = new Date();
                     if (parsed.analysis.lastInvestigated) {
                         generatedAt = new Date(parsed.analysis.lastInvestigated);
                     } else {
+                        // ファイルの更新日時を取得（作成日時の代用）
+                        const stats = await fs.stat(filePath);
                         generatedAt = stats.mtime;
                     }
 

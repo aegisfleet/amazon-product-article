@@ -18,12 +18,14 @@ interface InvestigationData {
 }
 
 async function main(): Promise<void> {
-    const investigationsDir = path.join(process.cwd(), 'data', 'investigations');
-
     const args = process.argv.slice(2);
     const countIndex = args.indexOf('--count');
     const limitValue = countIndex !== -1 ? args[countIndex + 1] : undefined;
     const limit = limitValue ? parseInt(limitValue, 10) : 1;
+
+    const dirIndex = args.indexOf('--dir');
+    const dirValue = dirIndex !== -1 ? args[dirIndex + 1] : undefined;
+    const investigationsDir = dirValue ? path.resolve(dirValue) : path.join(process.cwd(), 'data', 'investigations');
 
     try {
         const files = await fs.readdir(investigationsDir);
@@ -35,23 +37,30 @@ async function main(): Promise<void> {
         }
 
         const entries: Array<{ asin: string, date: Date }> = [];
+        const chunkSize = 50;
 
-        for (const file of jsonFiles) {
-            const filePath = path.join(investigationsDir, file);
-            try {
-                const content = await fs.readFile(filePath, 'utf-8');
-                const data = JSON.parse(content) as InvestigationData;
+        for (let i = 0; i < jsonFiles.length; i += chunkSize) {
+            const chunk = jsonFiles.slice(i, i + chunkSize);
+            const chunkEntries = await Promise.all(chunk.map(async (file) => {
+                const filePath = path.join(investigationsDir, file);
+                try {
+                    const content = await fs.readFile(filePath, 'utf-8');
+                    const data = JSON.parse(content) as InvestigationData;
 
-                if (data.analysis && data.analysis.lastInvestigated) {
-                    const date = new Date(data.analysis.lastInvestigated);
-                    entries.push({
-                        asin: path.basename(file, '.json'),
-                        date: date
-                    });
+                    if (data.analysis && data.analysis.lastInvestigated) {
+                        const date = new Date(data.analysis.lastInvestigated);
+                        return {
+                            asin: path.basename(file, '.json'),
+                            date: date
+                        };
+                    }
+                } catch (err) {
+                    logger.error(`Failed to read or parse ${file}:`, err);
                 }
-            } catch (err) {
-                logger.error(`Failed to read or parse ${file}:`, err);
-            }
+                return null;
+            }));
+
+            entries.push(...chunkEntries.filter((e): e is { asin: string, date: Date } => e !== null));
         }
 
         if (entries.length > 0) {
