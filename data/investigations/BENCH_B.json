@@ -1,0 +1,76 @@
+{
+  "sessionId": "bench-BENCH_B",
+  "product": {
+    "asin": "BENCH_B",
+    "title": "Benchmark Product BENCH_B",
+    "category": "Benchmark",
+    "price": {
+      "amount": 1000,
+      "currency": "JPY",
+      "formatted": "¥1,000"
+    },
+    "images": {
+      "primary": "http://example.com/image.jpg",
+      "thumbnails": []
+    },
+    "specifications": {},
+    "rating": {
+      "average": 4.5,
+      "count": 100
+    }
+  },
+  "analysis": {
+    "productName": "Product BENCH_B",
+    "positivePoints": [
+      "Good"
+    ],
+    "negativePoints": [
+      "Bad"
+    ],
+    "useCases": [
+      "Testing"
+    ],
+    "userStories": [],
+    "userImpression": "Good impression",
+    "sources": [],
+    "lastInvestigated": "2026-02-16T12:42:42.797Z",
+    "competitiveAnalysis": [
+      {
+        "name": "Competitor BENCH_C",
+        "asin": "BENCH_C",
+        "priceComparison": "Same",
+        "featureComparison": [
+          "Feature A"
+        ],
+        "differentiators": [
+          "Diff A"
+        ]
+      },
+      {
+        "name": "Competitor BENCH_D",
+        "asin": "BENCH_D",
+        "priceComparison": "Same",
+        "featureComparison": [
+          "Feature A"
+        ],
+        "differentiators": [
+          "Diff A"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "Testers"
+      ],
+      "pros": [
+        "Fast"
+      ],
+      "cons": [
+        "None"
+      ],
+      "score": 85,
+      "scoreRationale": "[基本点: 85]"
+    }
+  },
+  "generatedAt": "2026-02-16T12:42:42.797Z"
+}

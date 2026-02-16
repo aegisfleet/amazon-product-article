@@ -17,11 +17,14 @@ export class ArticleGenerator {
   private logger: Logger;
   private defaultTemplate: ArticleTemplate;
   private affiliateManager: AffiliateLinkManager;
+  // 調査結果ファイルのキャッシュ（記事生成プロセス中、同じ競合商品が何度も参照されるのを防ぐ）
+  private investigationCache: Map<string, InvestigationResult | null>;
 
   constructor() {
     this.logger = Logger.getInstance();
     this.defaultTemplate = DEFAULT_ARTICLE_TEMPLATE;
     this.affiliateManager = new AffiliateLinkManager();
+    this.investigationCache = new Map();
   }
 
   /**
@@ -650,20 +653,33 @@ ${reviewAnalysis ? this.generateSentimentAnalysis(reviewAnalysis) : ''}`;
       let hasInternalReview = false;
       let competitorScore: number | undefined;
       if (normalizedAsin) {
-        const investigationPath = path.join(cwd, 'data', 'investigations', `${normalizedAsin}.json`);
-        try {
-          const fileContent = await fs.promises.readFile(investigationPath, 'utf-8');
+        let competitorInvestigation: InvestigationResult | null = null;
+
+        // キャッシュを確認
+        if (this.investigationCache.has(normalizedAsin)) {
+          competitorInvestigation = this.investigationCache.get(normalizedAsin) || null;
+        } else {
+          const investigationPath = path.join(cwd, 'data', 'investigations', `${normalizedAsin}.json`);
+          try {
+            const fileContent = await fs.promises.readFile(investigationPath, 'utf-8');
+            competitorInvestigation = JSON.parse(fileContent) as InvestigationResult;
+            if (this.investigationCache.size >= 1000) this.investigationCache.clear();
+            this.investigationCache.set(normalizedAsin, competitorInvestigation);
+          } catch (error) {
+            // スコア取得に失敗した場合は無視（ファイルが存在しない場合もここに来る）
+            if (this.investigationCache.size >= 1000) this.investigationCache.clear();
+            this.investigationCache.set(normalizedAsin, null);
+            // ENOENT以外のエラー（パースエラーなど）はデバッグログに残す
+            if (error instanceof Error && (error as NodeJS.ErrnoException).code !== 'ENOENT') {
+              this.logger.debug(`Failed to load competitor investigation for ${competitor.asin}`, error);
+            }
+          }
+        }
+
+        if (competitorInvestigation) {
           hasInternalReview = true;
           internalLink = `<a href="../${normalizedAsin.toLowerCase()}/" class="btn-internal-small">📄 サイト内レビュー</a>`;
-          // 競合商品のスコアを取得
-          const competitorInvestigation = JSON.parse(fileContent) as InvestigationResult;
           competitorScore = competitorInvestigation.analysis?.recommendation?.score;
-        } catch (error) {
-          // スコア取得に失敗した場合は無視（ファイルが存在しない場合もここに来る）
-          // ENOENT以外のエラー（パースエラーなど）はデバッグログに残す
-          if (error instanceof Error && (error as NodeJS.ErrnoException).code !== 'ENOENT') {
-            this.logger.debug(`Failed to load competitor investigation for ${competitor.asin}`, error);
-          }
         }
       }
 
