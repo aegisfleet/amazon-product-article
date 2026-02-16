@@ -453,13 +453,21 @@ export class ProductSearcher {
   }
 
   /**
-   * Helper to process items in batches
+   * Helper to process items with concurrency limit
    */
-  private async processInBatches<T>(items: T[], batchSize: number, task: (item: T) => Promise<void>): Promise<void> {
-    for (let i = 0; i < items.length; i += batchSize) {
-      const batch = items.slice(i, i + batchSize);
-      await Promise.all(batch.map(item => task(item)));
-    }
+  private async processInBatches<T>(items: T[], concurrency: number, task: (item: T) => Promise<void>): Promise<void> {
+    let index = 0;
+    const workers = new Array(Math.min(items.length, concurrency)).fill(null).map(async () => {
+      while (index < items.length) {
+        const i = index++;
+        if (i >= items.length) break;
+        const item = items[i];
+        if (item !== undefined) {
+          await task(item);
+        }
+      }
+    });
+    await Promise.all(workers);
   }
 
   /**
