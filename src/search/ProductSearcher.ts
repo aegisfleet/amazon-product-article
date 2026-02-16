@@ -9,7 +9,7 @@ import path from 'path';
 import { CreatorsAPIClient } from '../api/CreatorsAPIClient';
 import categories from '../config/categories.json';
 import categoryMapping from '../config/categoryMapping.json';
-import { ConfigManager } from '../config/ConfigManager';
+import { ConfigManager, SystemConfig } from '../config/ConfigManager';
 import { InvestigationResult } from '../types/JulesTypes';
 import {
   Product,
@@ -17,6 +17,9 @@ import {
   ProductSearchResult
 } from '../types/Product';
 import { Logger } from '../utils/Logger';
+
+const DEFAULT_KEYWORDS = ['おすすめ', '人気', 'ランキング'];
+const DEFAULT_MAX_RESULTS = 10;
 
 export interface CategoryConfig {
   name: string;
@@ -478,14 +481,7 @@ export class ProductSearcher {
           return found;
         }
 
-        return {
-          name,
-          searchIndex: this.getSearchIndexForCategory(name),
-          enabled: true,
-          keywords: ['おすすめ', '人気', 'ランキング'],
-          maxResults: config.productSearch?.maxResultsPerCategory || 10,
-          sortBy: 'featured'
-        };
+        return this.createFallbackCategoryConfig(name, config);
       });
     } catch (_error) {
       return this.getDefaultCategories();
@@ -511,14 +507,7 @@ export class ProductSearcher {
       const categories = config.productSearch?.categories || [];
 
       if (categories.includes(categoryName)) {
-        return {
-          name: categoryName,
-          searchIndex: this.getSearchIndexForCategory(categoryName),
-          enabled: true,
-          keywords: ['おすすめ', '人気', 'ランキング'],
-          maxResults: config.productSearch?.maxResultsPerCategory || 10,
-          sortBy: 'featured'
-        };
+        return this.createFallbackCategoryConfig(categoryName, config);
       }
 
       return undefined;
@@ -663,4 +652,14 @@ export class ProductSearcher {
     }
   }
 
+  private createFallbackCategoryConfig(name: string, config: SystemConfig): CategoryConfig {
+    return {
+      name,
+      searchIndex: this.getSearchIndexForCategory(name),
+      enabled: true,
+      keywords: DEFAULT_KEYWORDS,
+      maxResults: config.productSearch?.maxResultsPerCategory || DEFAULT_MAX_RESULTS,
+      sortBy: 'featured'
+    };
+  }
 }
