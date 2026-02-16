@@ -12,7 +12,7 @@ import {
     ValidationResult
 } from '../types/QualityTypes';
 import { Logger } from '../utils/Logger';
-import { ArticleTemplate } from './ArticleGenerator';
+import { ArticleTemplate } from '../types/ArticleTypes';
 
 export class ArticleQualityManager {
     private logger: Logger;

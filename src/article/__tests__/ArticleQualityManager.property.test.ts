@@ -6,7 +6,7 @@
 
 import * as fc from 'fast-check';
 import { Product } from '../../types/Product';
-import { ArticleTemplate } from '../ArticleGenerator';
+import { ArticleTemplate } from '../../types/ArticleTypes';
 import { ArticleQualityManager } from '../ArticleQualityManager';
 
 describe('ArticleQualityManager', () => {
