@@ -32,8 +32,10 @@ describe('loadInvestigationResults Performance', () => {
         (fs.stat as jest.Mock).mockResolvedValue({
             mtime: new Date('2023-01-01')
         });
+    });
 
-        // Mock fs.readFile to return valid JSON
+    it('should load results efficiently and verify parallel execution (optimized: skip fs.stat)', async () => {
+        // Mock fs.readFile to return valid JSON WITH lastInvestigated
         (fs.readFile as jest.Mock).mockResolvedValue(JSON.stringify({
             analysis: {
                 positivePoints: [],
@@ -47,9 +49,7 @@ describe('loadInvestigationResults Performance', () => {
                 lastInvestigated: '2023-01-01T00:00:00.000Z'
             }
         }));
-    });
 
-    it('should load results efficiently and verify parallel execution', async () => {
         const start = Date.now();
         const results = await loadInvestigationResults();
         const end = Date.now();
@@ -64,7 +64,58 @@ describe('loadInvestigationResults Performance', () => {
         // Verify fs.access is NOT called (optimization)
         expect(fs.access).not.toHaveBeenCalled();
 
+        // Verify fs.stat is NOT called because lastInvestigated is present
+        expect(fs.stat).not.toHaveBeenCalled();
+
         console.log(`Test loaded ${results.length} files in ${end - start}ms`);
+    });
+
+    it('should fallback to fs.stat if lastInvestigated is missing', async () => {
+        // Mock fs.readFile to return valid JSON WITHOUT lastInvestigated
+        (fs.readFile as jest.Mock).mockResolvedValue(JSON.stringify({
+            analysis: {
+                positivePoints: [],
+                negativePoints: [],
+                useCases: [],
+                userStories: [],
+                userImpression: 'Good',
+                sources: [],
+                competitiveAnalysis: [],
+                recommendation: { targetUsers: [], pros: [], cons: [], score: 5 },
+                // lastInvestigated missing
+            }
+        }));
+
+        const results = await loadInvestigationResults();
+
+        expect(results).toHaveLength(mockFiles.length);
+
+        // Verify fs.stat IS called because lastInvestigated is missing
+        expect(fs.stat).toHaveBeenCalledTimes(mockFiles.length);
+    });
+
+    it('should fallback to fs.stat if lastInvestigated is invalid', async () => {
+        // Mock fs.readFile to return valid JSON with INVALID lastInvestigated
+        (fs.readFile as jest.Mock).mockResolvedValue(JSON.stringify({
+            analysis: {
+                positivePoints: [],
+                negativePoints: [],
+                useCases: [],
+                userStories: [],
+                userImpression: 'Good',
+                sources: [],
+                competitiveAnalysis: [],
+                recommendation: { targetUsers: [], pros: [], cons: [], score: 5 },
+                lastInvestigated: 'invalid-date-string'
+            }
+        }));
+
+        const results = await loadInvestigationResults();
+
+        expect(results).toHaveLength(mockFiles.length);
+
+        // Verify fs.stat IS called because lastInvestigated is invalid
+        expect(fs.stat).toHaveBeenCalledTimes(mockFiles.length);
     });
 
     it('should handle file read errors gracefully', async () => {
