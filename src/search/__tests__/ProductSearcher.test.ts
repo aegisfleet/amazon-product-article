@@ -202,4 +202,59 @@ describe('ProductSearcher', () => {
             expect(result['electronics']?.[0]?.asin).toBe('B001');
         });
     });
+
+    describe('getSearchStatistics', () => {
+        it('should correctly calculate search statistics from session files', async () => {
+            // Mock fs.readdir to return session files
+            (fs.readdir as jest.Mock).mockImplementation((pathStr: string) => {
+                const normalizedPath = pathStr.replace(/\\/g, '/');
+                if (normalizedPath.endsWith('sessions')) {
+                    return Promise.resolve(['session1.json', 'session2.json']);
+                }
+                return Promise.resolve([]);
+            });
+
+            // Mock fs.readFile to return session content
+            (fs.readFile as jest.Mock).mockImplementation((pathStr: string) => {
+                const normalizedPath = pathStr.replace(/\\/g, '/');
+                if (normalizedPath.endsWith('session1.json')) {
+                    return Promise.resolve(JSON.stringify({
+                        totalProducts: 10,
+                        timestamp: '2023-01-01T10:00:00Z',
+                        results: [
+                            {
+                                products: new Array(5).fill({}),
+                                searchParams: { category: 'Electronics' }
+                            },
+                            {
+                                products: new Array(5).fill({}),
+                                searchParams: { category: 'Books' }
+                            }
+                        ]
+                    }));
+                }
+                if (normalizedPath.endsWith('session2.json')) {
+                    return Promise.resolve(JSON.stringify({
+                        totalProducts: 20,
+                        timestamp: '2023-01-02T10:00:00Z',
+                        results: [
+                            {
+                                products: new Array(20).fill({}),
+                                searchParams: { category: 'Electronics' }
+                            }
+                        ]
+                    }));
+                }
+                return Promise.resolve('{}');
+            });
+
+            const stats = await searcher.getSearchStatistics();
+
+            expect(stats.totalSessions).toBe(2);
+            expect(stats.totalProducts).toBe(30);
+            expect(stats.categoryCounts['Electronics']).toBe(25);
+            expect(stats.categoryCounts['Books']).toBe(5);
+            expect(stats.lastSearchDate).toEqual(new Date('2023-01-02T10:00:00Z'));
+        });
+    });
 });
