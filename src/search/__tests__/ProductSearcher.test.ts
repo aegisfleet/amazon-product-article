@@ -150,6 +150,29 @@ describe('ProductSearcher', () => {
         });
     });
 
+    describe('searchCategory', () => {
+        it('should search a specific category', async () => {
+            const mockResult: ProductSearchResult = {
+                products: [],
+                totalResults: 0,
+                searchParams: { category: 'electronics', keywords: ['test'], maxResults: 10 },
+                timestamp: new Date()
+            };
+
+            mockCreatorsClient.searchProducts.mockResolvedValue(mockResult);
+
+            await searcher.searchCategory('electronics');
+
+            expect(mockCreatorsClient.searchProducts).toHaveBeenCalledWith(expect.objectContaining({
+                category: 'electronics'
+            }));
+        });
+
+        it('should throw error for unknown category', async () => {
+            await expect(searcher.searchCategory('unknown_category')).rejects.toThrow("Category 'unknown_category' not found in configuration");
+        });
+    });
+
     describe('getAllStoredProducts', () => {
         it('should retrieve stored products from enabled categories', async () => {
             // Mock fs.readdir to return files for 'electronics' category
