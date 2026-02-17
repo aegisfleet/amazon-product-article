@@ -625,7 +625,8 @@ export class ProductSearcher {
       const files = await fs.readdir(investigationsDir);
       const jsonFiles = files.filter(f => f.endsWith('.json'));
 
-      await this.processInBatches(jsonFiles, 50, async (file) => {
+      // Use batches to avoid EMFILE errors while maintaining parallelism
+      await this.processInBatches(jsonFiles, 200, async (file) => {
         const asin = path.basename(file, '.json');
         if (/^[A-Z0-9]{10}$/.test(asin)) {
           asins.add(asin);
