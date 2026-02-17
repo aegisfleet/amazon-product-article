@@ -309,11 +309,12 @@ export class ProductSearcher {
   async getAllStoredProducts(): Promise<Record<string, Product[]>> {
     const categories = this.getEnabledCategories();
 
-    // Use batch processing to prevent EMFILE errors with large number of categories
-    const entries = await this.mapInBatches(categories, 20, async (category) => {
+    // Parallelize all file reads using Promise.all
+    // Since we typically have <100 categories, this won't cause EMFILE issues
+    const entries = await Promise.all(categories.map(async (category) => {
       const products = await this.getStoredProducts(category.name);
       return [category.name, products] as const;
-    });
+    }));
 
     return Object.fromEntries(entries);
   }
@@ -465,18 +466,6 @@ export class ProductSearcher {
     await Promise.all(workers);
   }
 
-  /**
-   * Helper to map items in batches with concurrency control
-   */
-  private async mapInBatches<T, R>(items: T[], batchSize: number, task: (item: T) => Promise<R>): Promise<R[]> {
-    const results: R[] = [];
-    for (let i = 0; i < items.length; i += batchSize) {
-      const batch = items.slice(i, i + batchSize);
-      const batchResults = await Promise.all(batch.map(item => task(item)));
-      results.push(...batchResults);
-    }
-    return results;
-  }
 
   /**
    * Private helper methods
