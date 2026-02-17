@@ -116,7 +116,7 @@
         </div>
 
         <script>
-            (function () {
+            (() => {
                 var toc = document.getElementById('toc');
                 var relatedSection = document.getElementById('related-products-section');
                 var keepaSection = document.getElementById('keepa-graph-section');
@@ -151,7 +151,7 @@
 
                 // Insert Rakuten section after Keepa (or hero card)
                 if (rakutenSection) {
-                    if (keepaSection && keepaSection.parentNode) {
+                    if (keepaSection?.parentNode) {
                         keepaSection.parentNode.insertBefore(rakutenSection, keepaSection.nextSibling);
                     } else if (heroCard) {
                         heroCard.parentNode.insertBefore(rakutenSection, heroCard.nextSibling);
@@ -163,9 +163,9 @@
 
                 // Insert Related Section after Rakuten (or Keepa or hero card)
                 if (relatedSection) {
-                    if (rakutenSection && rakutenSection.parentNode) {
+                    if (rakutenSection?.parentNode) {
                         rakutenSection.parentNode.insertBefore(relatedSection, rakutenSection.nextSibling);
-                    } else if (keepaSection && keepaSection.parentNode) {
+                    } else if (keepaSection?.parentNode) {
                         keepaSection.parentNode.insertBefore(relatedSection, keepaSection.nextSibling);
                     } else if (heroCard) {
                         heroCard.parentNode.insertBefore(relatedSection, heroCard.nextSibling);

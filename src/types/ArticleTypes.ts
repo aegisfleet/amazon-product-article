@@ -1,5 +1,5 @@
-import { AffiliateLink } from './AffiliateTypes';
-import { TechnicalSpecs } from './JulesTypes';
+import type { AffiliateLink } from './AffiliateTypes';
+import type { TechnicalSpecs } from './JulesTypes';
 import { StyleRule, TemplateSection } from './QualityTypes';
 
 export { StyleRule, TemplateSection };
@@ -21,11 +21,11 @@ export interface ArticleMetadata {
   mobileOptimized: boolean;
   seoKeywords: string[];
   lastInvestigated?: string;
-  images?: string[];  // Product image URLs for Hugo front matter
+  images?: string[]; // Product image URLs for Hugo front matter
   affiliate_url?: string; // Affiliate link for the hero button
   is_prime?: boolean;
   availability?: string;
-  technicalSpecs?: TechnicalSpecs;  // 詳細スペック情報（カテゴリ依存）
+  technicalSpecs?: TechnicalSpecs; // 詳細スペック情報（カテゴリ依存）
   hero?: {
     score_rationale: {
       top_plus: { points: number; desc: string } | null;

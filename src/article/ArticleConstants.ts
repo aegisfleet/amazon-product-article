@@ -1,4 +1,4 @@
-import { ArticleTemplate } from '../types/ArticleTypes';
+import type { ArticleTemplate } from '../types/ArticleTypes';
 
 /**
  * スペックフィールド名から日本語ラベルへのマッピング
@@ -175,7 +175,7 @@ export const HANDLED_SPEC_FIELDS = new Set([
   'externalIds',
   'images',
   'title',
-  'url'
+  'url',
 ]);
 
 export const DEFAULT_IMAGE_URL = 'https://placehold.jp/ffffff/000000/300x300.png?text=No%20Image';
@@ -186,58 +186,52 @@ export const DEFAULT_ARTICLE_TEMPLATE: ArticleTemplate = {
       title: '導入部',
       minWordCount: 200,
       requiredElements: ['商品名', '記事の目的', '読者への価値提案'],
-      structure: '商品紹介 → 記事の目的 → 読者メリット'
+      structure: '商品紹介 → 記事の目的 → 読者メリット',
     },
     userReviews: {
       title: 'ユーザーレビュー',
       minWordCount: 800,
       requiredElements: ['ポジティブポイント', 'ネガティブポイント', '使用シーン'],
-      structure: '良い点 → 気になる点 → 実際の使用例'
+      structure: '良い点 → 気になる点 → 実際の使用例',
     },
     competitiveAnalysis: {
       title: '競合商品との比較',
       minWordCount: 600,
       requiredElements: ['競合商品', '機能比較', '差別化ポイント'],
-      structure: '競合商品紹介 → 機能比較 → 優位性分析'
+      structure: '競合商品紹介 → 機能比較 → 優位性分析',
     },
     recommendation: {
       title: '購入推奨度',
       minWordCount: 400,
       requiredElements: ['推奨ユーザー', '注意点', 'コスパ評価'],
-      structure: '総合評価 → 推奨ユーザー → 購入判断'
+      structure: '総合評価 → 推奨ユーザー → 購入判断',
     },
     conclusion: {
       title: '商品詳細・購入',
       minWordCount: 200,
       requiredElements: ['商品情報', '購入リンク', 'チェックリスト'],
-      structure: '商品詳細 → 購入案内 → 注意事項'
-    }
+      structure: '商品詳細 → 購入案内 → 注意事項',
+    },
   },
   qualityRequirements: {
     minWordCount: 2000,
-    requiredElements: [
-      '商品概要',
-      'ユーザーレビュー',
-      '競合比較',
-      '購入推奨度',
-      'アフィリエイト開示'
-    ],
+    requiredElements: ['商品概要', 'ユーザーレビュー', '競合比較', '購入推奨度', 'アフィリエイト開示'],
     styleGuidelines: [
       {
         rule: 'mobile_first',
         description: 'モバイルファーストのレスポンシブデザイン',
-        example: '短い段落、読みやすいフォント、タップしやすいボタン'
+        example: '短い段落、読みやすいフォント、タップしやすいボタン',
       },
       {
         rule: 'seo_optimized',
         description: 'SEO最適化されたコンテンツ構造',
-        example: '適切な見出し構造、キーワード配置、メタデータ'
+        example: '適切な見出し構造、キーワード配置、メタデータ',
       },
       {
         rule: 'user_focused',
         description: 'ユーザーの購買判断を支援する内容',
-        example: '具体的な使用例、明確な推奨理由、注意点の明示'
-      }
-    ]
-  }
+        example: '具体的な使用例、明確な推奨理由、注意点の明示',
+      },
+    ],
+  },
 };

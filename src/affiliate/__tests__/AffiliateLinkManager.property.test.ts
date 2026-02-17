@@ -10,160 +10,159 @@ import { ConfigManager } from '../../config/ConfigManager';
 import { AffiliateLinkManager } from '../AffiliateLinkManager';
 
 describe('AffiliateLinkManager', () => {
-    let linkManager: AffiliateLinkManager;
-    let originalEnv: NodeJS.ProcessEnv;
+  let linkManager: AffiliateLinkManager;
+  let originalEnv: NodeJS.ProcessEnv;
 
-    beforeAll(async () => {
-        originalEnv = { ...process.env };
+  beforeAll(async () => {
+    originalEnv = { ...process.env };
 
-        // Set dummy environment variables for testing
-        process.env.AMAZON_CREATORS_APPLICATION_ID = 'test-app-id';
-        process.env.AMAZON_CREATORS_CREDENTIAL_ID = 'test-cred-id';
-        process.env.AMAZON_CREATORS_CREDENTIAL_SECRET = 'test-cred-secret';
-        process.env.AMAZON_PARTNER_TAG = 'test-tag-21';
-        process.env.JULES_API_KEY = 'test-jules-key';
-        process.env.GITHUB_TOKEN = 'test-token';
-        process.env.GITHUB_REPOSITORY = 'test/repo';
+    // Set dummy environment variables for testing
+    process.env.AMAZON_CREATORS_APPLICATION_ID = 'test-app-id';
+    process.env.AMAZON_CREATORS_CREDENTIAL_ID = 'test-cred-id';
+    process.env.AMAZON_CREATORS_CREDENTIAL_SECRET = 'test-cred-secret';
+    process.env.AMAZON_PARTNER_TAG = 'test-tag-21';
+    process.env.JULES_API_KEY = 'test-jules-key';
+    process.env.GITHUB_TOKEN = 'test-token';
+    process.env.GITHUB_REPOSITORY = 'test/repo';
 
-        const config = ConfigManager.getInstance();
-        await config.initialize();
+    const config = ConfigManager.getInstance();
+    await config.initialize();
+  });
+
+  afterAll(() => {
+    // Restore original environment variables
+    process.env = originalEnv;
+    ConfigManager.resetInstance();
+  });
+
+  beforeEach(() => {
+    linkManager = new AffiliateLinkManager({
+      partnerTag: 'test-tag-21',
+      marketplace: 'amazon.co.jp',
+    });
+  });
+
+  /**
+   * Property 13: Affiliate Link Generation and Compliance
+   * For any product, the system should generate properly formatted Amazon affiliate links
+   * with correct tracking parameters and validate them against Amazon Associates requirements.
+   */
+  describe('Property 13: Affiliate Link Generation and Compliance', () => {
+    // 有効なASINの生成器
+    const validAsinArbitrary = fc.stringMatching(/^[A-Z0-9]{10}$/);
+
+    it('should generate valid affiliate links for any valid ASIN', () => {
+      fc.assert(
+        fc.property(validAsinArbitrary, (asin) => {
+          const link = linkManager.generateAffiliateLink(asin);
+
+          // リンクにはASINが含まれるべき
+          expect(link.url).toContain(asin);
+          expect(link.asin).toBe(asin);
+
+          // リンクにはトラッキングIDが含まれるべき
+          expect(link.url).toContain('tag=');
+          expect(link.trackingId).toBe('test-tag-21');
+
+          // リンクはAmazonドメインであるべき
+          expect(link.url).toContain('amazon.co.jp');
+
+          // 生成日時が設定されているべき
+          expect(link.createdAt).toBeInstanceOf(Date);
+        }),
+        { numRuns: 100 },
+      );
     });
 
-    afterAll(() => {
-        // Restore original environment variables
-        process.env = originalEnv;
-        ConfigManager.resetInstance();
+    it('should validate its own generated links', () => {
+      fc.assert(
+        fc.property(validAsinArbitrary, (asin) => {
+          const link = linkManager.generateAffiliateLink(asin);
+          const validation = linkManager.validateLink(link.url);
+
+          // 自分で生成したリンクは必ず有効であるべき
+          expect(validation.isValid).toBe(true);
+          expect(validation.asin.toUpperCase()).toBe(asin.toUpperCase());
+          expect(validation.hasTrackingId).toBe(true);
+          expect(validation.issues).toHaveLength(0);
+        }),
+        { numRuns: 100 },
+      );
     });
 
-    beforeEach(() => {
-        linkManager = new AffiliateLinkManager({
-            partnerTag: 'test-tag-21',
-            marketplace: 'amazon.co.jp'
-        });
+    it('should reject invalid ASIN formats', () => {
+      const invalidAsinArbitrary = fc.oneof(
+        fc.string({ minLength: 1, maxLength: 9 }), // 短すぎる
+        fc.string({ minLength: 11, maxLength: 20 }), // 長すぎる
+        fc.constant(''), // 空文字
+        fc.constant('ASIN!@#$%^'), // 特殊文字を含む
+      );
+
+      fc.assert(
+        fc.property(invalidAsinArbitrary, (asin) => {
+          expect(() => {
+            linkManager.generateAffiliateLink(asin);
+          }).toThrow();
+        }),
+        { numRuns: 50 },
+      );
     });
 
-    /**
-     * Property 13: Affiliate Link Generation and Compliance
-     * For any product, the system should generate properly formatted Amazon affiliate links
-     * with correct tracking parameters and validate them against Amazon Associates requirements.
-     */
-    describe('Property 13: Affiliate Link Generation and Compliance', () => {
-        // 有効なASINの生成器
-        const validAsinArbitrary = fc.stringMatching(/^[A-Z0-9]{10}$/);
+    it('should detect missing tracking IDs in URLs', () => {
+      fc.assert(
+        fc.property(validAsinArbitrary, (asin) => {
+          const urlWithoutTag = `https://www.amazon.co.jp/dp/${asin}`;
+          const validation = linkManager.validateLink(urlWithoutTag);
 
-        it('should generate valid affiliate links for any valid ASIN', () => {
-            fc.assert(
-                fc.property(validAsinArbitrary, (asin) => {
-                    const link = linkManager.generateAffiliateLink(asin);
-
-                    // リンクにはASINが含まれるべき
-                    expect(link.url).toContain(asin);
-                    expect(link.asin).toBe(asin);
-
-                    // リンクにはトラッキングIDが含まれるべき
-                    expect(link.url).toContain('tag=');
-                    expect(link.trackingId).toBe('test-tag-21');
-
-                    // リンクはAmazonドメインであるべき
-                    expect(link.url).toContain('amazon.co.jp');
-
-                    // 生成日時が設定されているべき
-                    expect(link.createdAt).toBeInstanceOf(Date);
-                }),
-                { numRuns: 100 }
-            );
-        });
-
-        it('should validate its own generated links', () => {
-            fc.assert(
-                fc.property(validAsinArbitrary, (asin) => {
-                    const link = linkManager.generateAffiliateLink(asin);
-                    const validation = linkManager.validateLink(link.url);
-
-                    // 自分で生成したリンクは必ず有効であるべき
-                    expect(validation.isValid).toBe(true);
-                    expect(validation.asin.toUpperCase()).toBe(asin.toUpperCase());
-                    expect(validation.hasTrackingId).toBe(true);
-                    expect(validation.issues).toHaveLength(0);
-                }),
-                { numRuns: 100 }
-            );
-        });
-
-        it('should reject invalid ASIN formats', () => {
-            const invalidAsinArbitrary = fc.oneof(
-                fc.string({ minLength: 1, maxLength: 9 }),  // 短すぎる
-                fc.string({ minLength: 11, maxLength: 20 }), // 長すぎる
-                fc.constant(''),  // 空文字
-                fc.constant('ASIN!@#$%^')  // 特殊文字を含む
-            );
-
-            fc.assert(
-                fc.property(invalidAsinArbitrary, (asin) => {
-                    expect(() => {
-                        linkManager.generateAffiliateLink(asin);
-                    }).toThrow();
-                }),
-                { numRuns: 50 }
-            );
-        });
-
-        it('should detect missing tracking IDs in URLs', () => {
-            fc.assert(
-                fc.property(validAsinArbitrary, (asin) => {
-                    const urlWithoutTag = `https://www.amazon.co.jp/dp/${asin}`;
-                    const validation = linkManager.validateLink(urlWithoutTag);
-
-                    // トラッキングIDがないリンクは無効
-                    expect(validation.isValid).toBe(false);
-                    expect(validation.hasTrackingId).toBe(false);
-                    expect(validation.issues.some(i => i.includes('tag'))).toBe(true);
-                }),
-                { numRuns: 50 }
-            );
-        });
+          // トラッキングIDがないリンクは無効
+          expect(validation.isValid).toBe(false);
+          expect(validation.hasTrackingId).toBe(false);
+          expect(validation.issues.some((i) => i.includes('tag'))).toBe(true);
+        }),
+        { numRuns: 50 },
+      );
     });
+  });
 
+  describe('Link format generation', () => {
+    const validAsinArbitrary = fc.stringMatching(/^[A-Z0-9]{10}$/);
 
-    describe('Link format generation', () => {
-        const validAsinArbitrary = fc.stringMatching(/^[A-Z0-9]{10}$/);
+    const textArbitrary = fc.string({ minLength: 1, maxLength: 50 });
 
-        const textArbitrary = fc.string({ minLength: 1, maxLength: 50 });
+    it('should generate valid Markdown links for any ASIN and text', () => {
+      fc.assert(
+        fc.property(validAsinArbitrary, textArbitrary, (asin, text) => {
+          const markdown = linkManager.generateMarkdownLink(asin, text);
 
-        it('should generate valid Markdown links for any ASIN and text', () => {
-            fc.assert(
-                fc.property(validAsinArbitrary, textArbitrary, (asin, text) => {
-                    const markdown = linkManager.generateMarkdownLink(asin, text);
+          // Markdown形式であるべき
+          expect(markdown).toMatch(/\[.*\]\(.*\)/);
 
-                    // Markdown形式であるべき
-                    expect(markdown).toMatch(/\[.*\]\(.*\)/);
+          // ASINが含まれるべき
+          expect(markdown).toContain(asin);
 
-                    // ASINが含まれるべき
-                    expect(markdown).toContain(asin);
-
-                    // トラッキングIDが含まれるべき
-                    expect(markdown).toContain('tag=');
-                }),
-                { numRuns: 100 }
-            );
-        });
+          // トラッキングIDが含まれるべき
+          expect(markdown).toContain('tag=');
+        }),
+        { numRuns: 100 },
+      );
     });
+  });
 
-    describe('Content link updates', () => {
-        const validAsinArbitrary = fc.stringMatching(/^[A-Z0-9]{10}$/);
+  describe('Content link updates', () => {
+    const validAsinArbitrary = fc.stringMatching(/^[A-Z0-9]{10}$/);
 
-        it('should update links with new partner tag', () => {
-            fc.assert(
-                fc.property(validAsinArbitrary, (asin) => {
-                    const content = `Check out [this product](https://www.amazon.co.jp/dp/${asin}?tag=old-tag-21)`;
-                    const updated = linkManager.updateLinksInContent(content, 'new-tag-21');
+    it('should update links with new partner tag', () => {
+      fc.assert(
+        fc.property(validAsinArbitrary, (asin) => {
+          const content = `Check out [this product](https://www.amazon.co.jp/dp/${asin}?tag=old-tag-21)`;
+          const updated = linkManager.updateLinksInContent(content, 'new-tag-21');
 
-                    // 新しいタグが設定されているべき
-                    expect(updated).toContain('tag=new-tag-21');
-                    expect(updated).not.toContain('tag=old-tag-21');
-                }),
-                { numRuns: 50 }
-            );
-        });
+          // 新しいタグが設定されているべき
+          expect(updated).toContain('tag=new-tag-21');
+          expect(updated).not.toContain('tag=old-tag-21');
+        }),
+        { numRuns: 50 },
+      );
     });
+  });
 });

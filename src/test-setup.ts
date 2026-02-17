@@ -24,9 +24,7 @@ declare global {
 // Custom Jest matchers
 expect.extend({
   toBeValidConfig(received: unknown): jest.CustomMatcherResult {
-    const pass = received !== null &&
-      typeof received === 'object' &&
-      received !== undefined;
+    const pass = received !== null && typeof received === 'object' && received !== undefined;
 
     if (pass) {
       return {

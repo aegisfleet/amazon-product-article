@@ -1,5 +1,5 @@
-import fs from 'fs/promises';
-import { GeneratedArticle } from '../../types/ArticleTypes';
+import fs from 'node:fs/promises';
+import type { GeneratedArticle } from '../../types/ArticleTypes';
 import { saveArticle } from '../article-generation-cli';
 
 // Mock Logger to prevent console noise
@@ -39,45 +39,35 @@ describe('saveArticle Security', () => {
 
   it('should reject ASIN with path traversal characters (../)', async () => {
     const maliciousAsin = '../etc/passwd';
-    await expect(saveArticle(mockArticle, maliciousAsin))
-      .rejects
-      .toThrow('Invalid ASIN format');
+    await expect(saveArticle(mockArticle, maliciousAsin)).rejects.toThrow('Invalid ASIN format');
 
     expect(fs.writeFile).not.toHaveBeenCalled();
   });
 
   it('should reject ASIN with path traversal characters (..\\)', async () => {
     const maliciousAsin = '..\\windows\\system32';
-    await expect(saveArticle(mockArticle, maliciousAsin))
-      .rejects
-      .toThrow('Invalid ASIN format');
+    await expect(saveArticle(mockArticle, maliciousAsin)).rejects.toThrow('Invalid ASIN format');
 
     expect(fs.writeFile).not.toHaveBeenCalled();
   });
 
   it('should reject ASIN that is too long', async () => {
     const longAsin = 'A'.repeat(11);
-    await expect(saveArticle(mockArticle, longAsin))
-      .rejects
-      .toThrow('Invalid ASIN format');
+    await expect(saveArticle(mockArticle, longAsin)).rejects.toThrow('Invalid ASIN format');
 
     expect(fs.writeFile).not.toHaveBeenCalled();
   });
 
   it('should reject ASIN that is too short', async () => {
     const shortAsin = 'A'.repeat(9);
-    await expect(saveArticle(mockArticle, shortAsin))
-      .rejects
-      .toThrow('Invalid ASIN format');
+    await expect(saveArticle(mockArticle, shortAsin)).rejects.toThrow('Invalid ASIN format');
 
     expect(fs.writeFile).not.toHaveBeenCalled();
   });
 
   it('should reject ASIN with non-alphanumeric characters', async () => {
     const invalidAsin = 'B07DZZJ2B.';
-    await expect(saveArticle(mockArticle, invalidAsin))
-      .rejects
-      .toThrow('Invalid ASIN format');
+    await expect(saveArticle(mockArticle, invalidAsin)).rejects.toThrow('Invalid ASIN format');
 
     expect(fs.writeFile).not.toHaveBeenCalled();
   });

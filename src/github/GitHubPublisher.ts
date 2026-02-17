@@ -2,14 +2,8 @@
  * GitHub_Publisher - GitHub Pagesへの記事公開とサイト管理
  */
 
-import { ArticleMetadata } from '../types/ArticleTypes';
-import {
-  ArticleCommit,
-  ArticleIndexEntry,
-  DeploymentStatus,
-  GitHubConfig,
-  SiteIndex
-} from '../types/GitHubTypes';
+import type { ArticleMetadata } from '../types/ArticleTypes';
+import type { ArticleCommit, ArticleIndexEntry, DeploymentStatus, GitHubConfig, SiteIndex } from '../types/GitHubTypes';
 import { Logger } from '../utils/Logger';
 
 export class GitHubPublisher {
@@ -24,12 +18,12 @@ export class GitHubPublisher {
       owner: config?.owner || process.env.GITHUB_REPOSITORY_OWNER || '',
       repo: config?.repo || process.env.GITHUB_REPOSITORY?.split('/')[1] || '',
       branch: config?.branch || 'main',
-      ...(token !== undefined && { token })
+      ...(token !== undefined && { token }),
     };
     this.siteIndex = {
       articles: [],
       categories: [],
-      lastUpdated: new Date()
+      lastUpdated: new Date(),
     };
   }
 
@@ -45,7 +39,7 @@ export class GitHubPublisher {
     const commit: ArticleCommit = {
       path,
       content: article,
-      message
+      message,
     };
 
     try {
@@ -74,7 +68,7 @@ export class GitHubPublisher {
       description: newArticle.description,
       category: newArticle.category,
       asin: newArticle.asin,
-      publishDate: newArticle.publishDate
+      publishDate: newArticle.publishDate,
     };
 
     this.siteIndex.articles.push(entry);
@@ -96,7 +90,7 @@ export class GitHubPublisher {
     const status: DeploymentStatus = {
       status: 'pending',
       environment: 'github-pages',
-      createdAt: new Date()
+      createdAt: new Date(),
     };
 
     try {
@@ -415,19 +409,19 @@ a:hover, a:active {
   async updateCategoryPages(category: string): Promise<void> {
     this.logger.info(`Updating category page: ${category}`);
 
-    const categoryEntry = this.siteIndex.categories.find(c => c.name === category);
+    const categoryEntry = this.siteIndex.categories.find((c) => c.name === category);
     if (!categoryEntry) {
       this.logger.warn(`Category ${category} not found in index`);
       return;
     }
 
-    const categoryArticles = this.siteIndex.articles.filter(a => a.category === category);
+    const categoryArticles = this.siteIndex.articles.filter((a) => a.category === category);
     const categoryPage = this.generateCategoryPage(category, categoryArticles);
 
     await this.simulateCommit({
       path: `categories/${this.slugify(category)}/index.md`,
       content: categoryPage,
-      message: `Update category page: ${category}`
+      message: `Update category page: ${category}`,
     });
   }
 
@@ -451,12 +445,14 @@ description: "厳選されたAmazon商品の詳細レビュー・比較記事"
 <div id="filter-container">
   <select id="category-filter" class="filter-select">
     <option value="">すべてのカテゴリ</option>
-${categories.map(c => `    <option value="${c.slug}">${c.name} (${c.count})</option>`).join('\n')}
+${categories.map((c) => `    <option value="${c.slug}">${c.name} (${c.count})</option>`).join('\n')}
   </select>
 </div>
 
 <div id="articles-list">
-${articles.map(a => `
+${articles
+  .map(
+    (a) => `
 ## [${a.title}](${a.path})
 
 ${a.description}
@@ -464,7 +460,9 @@ ${a.description}
 カテゴリ: ${a.category} | 公開日: ${a.publishDate.toISOString().split('T')[0]}
 
 ---
-`).join('\n')}
+`,
+  )
+  .join('\n')}
 </div>
 
 <script>
@@ -480,7 +478,7 @@ document.getElementById('category-filter').addEventListener('change', function()
     await this.simulateCommit({
       path: 'index.md',
       content: indexContent,
-      message: 'Update filterable index'
+      message: 'Update filterable index',
     });
 
     return indexContent;
@@ -497,29 +495,33 @@ document.getElementById('category-filter').addEventListener('change', function()
 
     const urls = [
       { loc: baseUrl, priority: '1.0' },
-      ...this.siteIndex.categories.map(c => ({
+      ...this.siteIndex.categories.map((c) => ({
         loc: `${baseUrl}/categories/${c.slug}/`,
-        priority: '0.8'
+        priority: '0.8',
       })),
-      ...this.siteIndex.articles.map(a => ({
+      ...this.siteIndex.articles.map((a) => ({
         loc: `${baseUrl}/${a.path.replace('.md', '.html')}`,
-        priority: '0.6'
-      }))
+        priority: '0.6',
+      })),
     ];
 
     const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-${urls.map(u => `  <url>
+${urls
+  .map(
+    (u) => `  <url>
     <loc>${u.loc}</loc>
     <lastmod>${now}</lastmod>
     <priority>${u.priority}</priority>
-  </url>`).join('\n')}
+  </url>`,
+  )
+  .join('\n')}
 </urlset>`;
 
     await this.simulateCommit({
       path: 'sitemap.xml',
       content: sitemap,
-      message: 'Update sitemap'
+      message: 'Update sitemap',
     });
 
     return sitemap;
@@ -547,14 +549,14 @@ ${urls.map(u => `  <url>
    * カテゴリカウントを更新
    */
   private updateCategoryCount(category: string, subcategory?: string): void {
-    let categoryEntry = this.siteIndex.categories.find(c => c.name === category);
+    let categoryEntry = this.siteIndex.categories.find((c) => c.name === category);
 
     if (!categoryEntry) {
       categoryEntry = {
         name: category,
         slug: this.slugify(category),
         count: 0,
-        subcategories: []
+        subcategories: [],
       };
       this.siteIndex.categories.push(categoryEntry);
     }
@@ -562,12 +564,12 @@ ${urls.map(u => `  <url>
     categoryEntry.count++;
 
     if (subcategory && categoryEntry.subcategories) {
-      let subEntry = categoryEntry.subcategories.find(s => s.name === subcategory);
+      let subEntry = categoryEntry.subcategories.find((s) => s.name === subcategory);
       if (!subEntry) {
         subEntry = {
           name: subcategory,
           slug: this.slugify(subcategory),
-          count: 0
+          count: 0,
         };
         categoryEntry.subcategories.push(subEntry);
       }
@@ -583,7 +585,7 @@ ${urls.map(u => `  <url>
     await this.simulateCommit({
       path: 'data/site-index.json',
       content,
-      message: 'Update site index'
+      message: 'Update site index',
     });
   }
 
@@ -602,13 +604,17 @@ category: "${category}"
 
 ${articles.length}件の商品レビューがあります。
 
-${articles.map(a => `
+${articles
+  .map(
+    (a) => `
 ## [${a.title}](/${a.path.replace('.md', '.html')})
 
 ${a.description}
 
 公開日: ${a.publishDate.toISOString().split('T')[0]}
-`).join('\n---\n')}
+`,
+  )
+  .join('\n---\n')}
 `;
   }
 
@@ -628,7 +634,7 @@ ${a.description}
    */
   private async simulateCommit(commit: ArticleCommit): Promise<void> {
     this.logger.debug(`Simulating commit: ${commit.path}`);
-    await new Promise(resolve => setTimeout(resolve, 50));
+    await new Promise((resolve) => setTimeout(resolve, 50));
   }
 
   /**
@@ -636,7 +642,7 @@ ${a.description}
    */
   private async triggerDeployment(): Promise<void> {
     this.logger.debug('Triggering deployment');
-    await new Promise(resolve => setTimeout(resolve, 100));
+    await new Promise((resolve) => setTimeout(resolve, 100));
   }
 
   /**
@@ -644,6 +650,6 @@ ${a.description}
    */
   private async waitForDeployment(): Promise<void> {
     this.logger.debug('Waiting for deployment');
-    await new Promise(resolve => setTimeout(resolve, 200));
+    await new Promise((resolve) => setTimeout(resolve, 200));
   }
 }

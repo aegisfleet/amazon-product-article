@@ -7,18 +7,18 @@
  * Creators API BrowseNodesから抽出されたメイン/サブカテゴリを保持
  */
 export interface CategoryInfo {
-  main: string;          // メインカテゴリ（上位カテゴリ）
-  sub?: string;          // サブカテゴリ（詳細カテゴリ）
+  main: string; // メインカテゴリ（上位カテゴリ）
+  sub?: string; // サブカテゴリ（詳細カテゴリ）
   browseNodeId?: string; // Creators API BrowseNode ID（将来の拡張用）
 }
 
 export interface Product {
   asin: string;
   title: string;
-  category: string;           // 後方互換性のため維持（メインカテゴリ）
+  category: string; // 後方互換性のため維持（メインカテゴリ）
   categoryInfo?: CategoryInfo; // 新規: 階層カテゴリ情報
-  parentAsin?: string;        // 親ASIN（バリエーション商品の識引用）
-  detailPageUrl?: string;     // Amazon DetailPageURL (affiliate link)
+  parentAsin?: string; // 親ASIN（バリエーション商品の識引用）
+  detailPageUrl?: string; // Amazon DetailPageURL (affiliate link)
   price: {
     amount: number;
     currency: string;

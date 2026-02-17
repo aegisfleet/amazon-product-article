@@ -1,0 +1,27 @@
+name: Biome Check
+
+permissions:
+  contents: read
+
+on:
+  pull_request:
+    branches: [ main ]
+    paths-ignore:
+      - 'data/**'
+      - 'content/**'
+      - 'static/**'
+      - '**.md'
+      - 'LICENSE'
+      - '.gitignore'
+
+jobs:
+  biome:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+
+      - name: Setup Biome
+        uses: biomejs/setup-biome@v2
+
+      - name: Run Biome CI
+        run: biome ci .

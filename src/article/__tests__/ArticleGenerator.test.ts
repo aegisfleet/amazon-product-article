@@ -2,10 +2,10 @@
  * Unit tests for ArticleGenerator
  */
 
-import fs from 'fs';
-import { ReviewAnalysisResult } from '../../analysis/ReviewAnalyzer';
-import { InvestigationResult } from '../../types/JulesTypes';
-import { Product, ProductDetail } from '../../types/Product';
+import fs from 'node:fs';
+import type { ReviewAnalysisResult } from '../../analysis/ReviewAnalyzer';
+import type { InvestigationResult } from '../../types/JulesTypes';
+import type { Product, ProductDetail } from '../../types/Product';
 import { ArticleGenerator } from '../ArticleGenerator';
 
 // Mock fs
@@ -15,7 +15,7 @@ jest.mock('fs', () => ({
   promises: {
     ...jest.requireActual('fs').promises,
     readFile: jest.fn(),
-  }
+  },
 }));
 
 // Mock ConfigManager
@@ -27,15 +27,15 @@ jest.mock('../../config/ConfigManager', () => {
           amazon: {
             partnerTag: process.env.AMAZON_PARTNER_TAG || 'test-tag',
             accessKey: 'test-access-key',
-            secretKey: 'test-secret-key'
+            secretKey: 'test-secret-key',
           },
           jules: {
-            apiKey: 'test-api-key'
-          }
-        }))
+            apiKey: 'test-api-key',
+          },
+        })),
       }),
-      resetInstance: jest.fn()
-    }
+      resetInstance: jest.fn(),
+    },
   };
 });
 
@@ -55,21 +55,21 @@ describe('ArticleGenerator', () => {
       price: {
         amount: 50000,
         currency: 'JPY',
-        formatted: '¥50,000'
+        formatted: '¥50,000',
       },
       images: {
         primary: 'https://example.com/image.jpg',
-        thumbnails: ['https://example.com/thumb1.jpg']
+        thumbnails: ['https://example.com/thumb1.jpg'],
       },
       specifications: {
-        'ディスプレイ': '6.1インチ',
-        'ストレージ': '128GB',
-        'カメラ': '12MP'
+        ディスプレイ: '6.1インチ',
+        ストレージ: '128GB',
+        カメラ: '12MP',
       },
       rating: {
         average: 4.2,
-        count: 150
-      }
+        count: 150,
+      },
     };
 
     mockInvestigation = {
@@ -77,35 +77,24 @@ describe('ArticleGenerator', () => {
       product: mockProduct,
       analysis: {
         productName: 'テスト商品 スマートフォン',
-        positivePoints: [
-          '画質が非常に鮮明で美しい',
-          'バッテリー持ちが良好',
-          '操作が直感的で使いやすい'
-        ],
-        negativePoints: [
-          '価格がやや高め',
-          '重量が気になる場合がある'
-        ],
-        useCases: [
-          '写真撮影を重視するユーザー',
-          'ビジネス用途での利用',
-          '動画視聴やゲーム用途'
-        ],
+        positivePoints: ['画質が非常に鮮明で美しい', 'バッテリー持ちが良好', '操作が直感的で使いやすい'],
+        negativePoints: ['価格がやや高め', '重量が気になる場合がある'],
+        useCases: ['写真撮影を重視するユーザー', 'ビジネス用途での利用', '動画視聴やゲーム用途'],
         competitiveAnalysis: [
           {
             name: '競合商品A',
             asin: 'B08COMPET1',
             priceComparison: '約10,000円安価',
             featureComparison: ['カメラ性能は同等', 'バッテリー容量が少ない'],
-            differentiators: ['ブランド力', '品質の安定性']
-          }
+            differentiators: ['ブランド力', '品質の安定性'],
+          },
         ],
 
         recommendation: {
           targetUsers: ['写真愛好家', 'ビジネスユーザー'],
           pros: ['高品質なカメラ', '安定した性能'],
           cons: ['価格が高い', '重量がある'],
-          score: 85
+          score: 85,
         },
         userStories: [],
         userImpression: '',
@@ -117,13 +106,12 @@ describe('ArticleGenerator', () => {
           display: { size: '6.1インチ' },
           battery: { capacity: '4000mAh' },
           weight: '160g',
-          dimensions: { weight: '160g' }
+          dimensions: { weight: '160g' },
         },
-        sources: []
+        sources: [],
       },
-      generatedAt: new Date('2025-01-01T00:00:00Z')
+      generatedAt: new Date('2025-01-01T00:00:00Z'),
     };
-
 
     // Add new fields for tests
     mockInvestigation.analysis.userStories = [
@@ -131,27 +119,27 @@ describe('ArticleGenerator', () => {
         userType: '会社員',
         scenario: '通勤・通学',
         experience: '通勤中のストレスが減った',
-        sentiment: 'positive'
+        sentiment: 'positive',
       },
       {
         userType: '学生',
         scenario: '勉強中',
         experience: '集中力が高まった',
-        sentiment: 'positive'
-      }
+        sentiment: 'positive',
+      },
     ];
     mockInvestigation.analysis.userImpression = '多くのユーザーが満足感を得ている';
     mockInvestigation.analysis.sources = [
       {
         name: 'Amazonレビュー',
         url: 'https://amazon.co.jp',
-        credibility: 'High'
+        credibility: 'High',
       },
       {
         name: 'Tech Blog',
         url: 'https://example.com/blog',
-        credibility: 'Medium'
-      }
+        credibility: 'Medium',
+      },
     ];
 
     mockReviewAnalysis = {
@@ -161,8 +149,8 @@ describe('ArticleGenerator', () => {
           insight: '画質が非常に鮮明で美しい',
           frequency: 8,
           impact: 'high',
-          examples: ['画質が非常に鮮明で美しい']
-        }
+          examples: ['画質が非常に鮮明で美しい'],
+        },
       ],
       negativeInsights: [
         {
@@ -170,8 +158,8 @@ describe('ArticleGenerator', () => {
           insight: '価格がやや高め',
           frequency: 5,
           impact: 'medium',
-          examples: ['価格がやや高め']
-        }
+          examples: ['価格がやや高め'],
+        },
       ],
       useCaseAnalysis: [
         {
@@ -179,8 +167,8 @@ describe('ArticleGenerator', () => {
           suitability: 90,
           userTypes: ['写真愛好家'],
           scenarios: ['旅行での撮影', '日常の記録'],
-          limitations: ['暗所での撮影には限界がある']
-        }
+          limitations: ['暗所での撮影には限界がある'],
+        },
       ],
       competitivePositioning: {
         strengths: ['高品質なカメラ', '安定した性能'],
@@ -192,9 +180,9 @@ describe('ArticleGenerator', () => {
             advantage: 'ブランド力',
             significance: 'important',
             sustainability: 'high',
-            competitorComparison: '競合商品Aとの比較: ブランド力'
-          }
-        ]
+            competitorComparison: '競合商品Aとの比較: ブランド力',
+          },
+        ],
       },
       overallSentiment: {
         overall: 0.6,
@@ -203,11 +191,11 @@ describe('ArticleGenerator', () => {
           value: -0.2,
           usability: 0.7,
           support: 0.5,
-          reliability: 0.9
+          reliability: 0.9,
         },
-        confidence: 0.8
+        confidence: 0.8,
       },
-      keyThemes: ['品質', '価格', '使いやすさ']
+      keyThemes: ['品質', '価格', '使いやすさ'],
     };
   });
 
@@ -220,10 +208,17 @@ describe('ArticleGenerator', () => {
       mockInvestigation.analysis.sources.push({
         name: 'Amazon Creators API',
         url: 'https://webservices.amazon.co.jp/creators/v1/items',
-        credibility: 'High'
+        credibility: 'High',
       });
 
-      const result = await generator.generateArticle(mockProduct, mockInvestigation, mockReviewAnalysis, undefined, undefined, mockCompetitorDetails);
+      const result = await generator.generateArticle(
+        mockProduct,
+        mockInvestigation,
+        mockReviewAnalysis,
+        undefined,
+        undefined,
+        mockCompetitorDetails,
+      );
 
       expect(result).toBeDefined();
       expect(result.content).toContain('hero:');
@@ -268,7 +263,7 @@ describe('ArticleGenerator', () => {
     it('should use investigation.generatedAt for publishDate', async () => {
       const result = await generator.generateArticle(mockProduct, mockInvestigation);
       // mockInvestigation.generatedAt is set to 2025-01-01T00:00:00Z in beforeEach
-      // The output format in frontmatter matches how Date.toString() or similar is used, 
+      // The output format in frontmatter matches how Date.toString() or similar is used,
       // but ArticleGenerator uses standard Date object which yaml serializer handles.
       // We expect the date object to remain, but since we check content string, let's see how it's serialized.
       // Usually it's ISO string or similar.
@@ -281,7 +276,14 @@ describe('ArticleGenerator', () => {
     it('should handle products without review analysis', async () => {
       const mockCompetitorDetails = new Map<string, ProductDetail>();
       mockCompetitorDetails.set('B08COMPET1', { ...mockProduct, asin: 'B08COMPET1' } as any);
-      const result = await generator.generateArticle(mockProduct, mockInvestigation, undefined, undefined, undefined, mockCompetitorDetails);
+      const result = await generator.generateArticle(
+        mockProduct,
+        mockInvestigation,
+        undefined,
+        undefined,
+        undefined,
+        mockCompetitorDetails,
+      );
 
       expect(result).toBeDefined();
       expect(result.content).toContain('hero:');
@@ -296,7 +298,7 @@ describe('ArticleGenerator', () => {
         undefined,
         undefined,
         undefined,
-        mockCompetitorDetails
+        mockCompetitorDetails,
       );
 
       expect(result.content).toContain('競合商品A');
@@ -317,7 +319,7 @@ describe('ArticleGenerator', () => {
         undefined,
         undefined,
         undefined,
-        mockCompetitorDetails
+        mockCompetitorDetails,
       );
 
       expect(result.content).toContain('競合商品A');
@@ -328,7 +330,7 @@ describe('ArticleGenerator', () => {
       // Mock fs.promises.readFile to return valid JSON
       (fs.promises.readFile as jest.Mock).mockImplementation((pathStr: string) => {
         if (pathStr.includes('B08COMPET1')) {
-            return Promise.resolve(JSON.stringify({ analysis: { recommendation: { score: 85 } } }));
+          return Promise.resolve(JSON.stringify({ analysis: { recommendation: { score: 85 } } }));
         }
         return Promise.reject(new Error('File not found'));
       });
@@ -350,7 +352,7 @@ describe('ArticleGenerator', () => {
         undefined,
         undefined,
         undefined,
-        mockCompetitorDetails
+        mockCompetitorDetails,
       );
 
       expect(result.content).toContain('href="../b08compet1/"');
@@ -364,7 +366,7 @@ describe('ArticleGenerator', () => {
     it('should NOT show internal link if investigation file does not exist', async () => {
       // Mock fs.existsSync to return false
       // Mock fs.promises.readFile to reject
-      (fs.promises.readFile as jest.Mock).mockRejectedValue(new Error("File not found"));
+      (fs.promises.readFile as jest.Mock).mockRejectedValue(new Error('File not found'));
       const mockDetail: ProductDetail = {
         ...mockProduct,
         asin: 'B08COMPET1',
@@ -378,7 +380,7 @@ describe('ArticleGenerator', () => {
         undefined,
         undefined,
         undefined,
-        mockCompetitorDetails
+        mockCompetitorDetails,
       );
 
       expect(result.content).not.toContain('href="../B08COMPET1/"');
@@ -394,13 +396,13 @@ describe('ArticleGenerator', () => {
           technicalSpecs: {
             dimensions: {
               weight: '100g',
-              width: '10cm'
+              width: '10cm',
             },
             // Duplicate keys at top level
             weight: '200g',
-            width: '20cm'
-          }
-        }
+            width: '20cm',
+          },
+        },
       };
 
       const result = await generator.generateArticle(mockProduct, conflictInvestigation);
@@ -457,7 +459,7 @@ describe('ArticleGenerator', () => {
     it('should set featured flag correctly', () => {
       const featuredProduct = {
         ...mockProduct,
-        rating: { average: 4.5, count: 200 }
+        rating: { average: 4.5, count: 200 },
       };
       const featuredInvestigation = {
         ...mockInvestigation,
@@ -465,9 +467,9 @@ describe('ArticleGenerator', () => {
           ...mockInvestigation.analysis,
           recommendation: {
             ...mockInvestigation.analysis.recommendation,
-            score: 90
-          }
-        }
+            score: 90,
+          },
+        },
       };
 
       const metadata = generator.generateSEOMetadata(featuredProduct, featuredInvestigation);
@@ -477,7 +479,7 @@ describe('ArticleGenerator', () => {
 
   describe('createMobileOptimizedLayout', () => {
     it('should optimize content for mobile', () => {
-      const content = 'これは長い文章です。' + '文字'.repeat(200) + '。次の文章です。';
+      const content = `これは長い文章です。${'文字'.repeat(200)}。次の文章です。`;
       const optimized = generator.createMobileOptimizedLayout(content);
 
       expect(optimized).toContain('\n\n');
@@ -528,7 +530,7 @@ describe('ArticleGenerator', () => {
           asin: `COMPETITOR${i}`,
           priceComparison: '安い',
           featureComparison: ['機能'],
-          differentiators: ['差別化']
+          differentiators: ['差別化'],
         });
       }
 
@@ -536,20 +538,27 @@ describe('ArticleGenerator', () => {
         ...mockInvestigation,
         analysis: {
           ...mockInvestigation.analysis,
-          competitiveAnalysis: competitors
-        }
+          competitiveAnalysis: competitors,
+        },
       };
 
       // Mock readFile to simulate delay
       // Since fs is already mocked, we need to override the implementation for this test
       (fs.promises.readFile as jest.Mock).mockImplementation(async (_pathStr: string) => {
-        await new Promise(resolve => setTimeout(resolve, delay));
+        await new Promise((resolve) => setTimeout(resolve, delay));
         return JSON.stringify({ analysis: { recommendation: { score: 85 } } });
       });
 
       const startTime = Date.now();
       // Pass an empty map for competitorDetails to enable the section generation
-      await generator.generateArticle(mockProduct, perfInvestigation, mockReviewAnalysis, undefined, undefined, new Map());
+      await generator.generateArticle(
+        mockProduct,
+        perfInvestigation,
+        mockReviewAnalysis,
+        undefined,
+        undefined,
+        new Map(),
+      );
       const endTime = Date.now();
       const duration = endTime - startTime;
 
@@ -586,13 +595,13 @@ describe('ArticleGenerator', () => {
             targetUsers: [],
             pros: [],
             cons: [],
-            score: 0
+            score: 0,
           },
           userStories: [],
           userImpression: '',
-          sources: []
+          sources: [],
           // Note: productName is intentionally omitted to test ASIN fallback
-        }
+        },
       };
 
       const result = await generator.generateArticle(mockProduct, emptyInvestigation);
@@ -609,7 +618,7 @@ describe('ArticleGenerator', () => {
         price: { amount: 1000, currency: 'JPY', formatted: '¥1,000' },
         images: { primary: '', thumbnails: [] },
         specifications: {},
-        rating: { average: 0, count: 0 }
+        rating: { average: 0, count: 0 },
       };
 
       const result = await generator.generateArticle(minimalProduct, mockInvestigation);

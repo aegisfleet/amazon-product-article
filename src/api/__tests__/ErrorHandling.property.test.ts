@@ -6,7 +6,7 @@
 
 import * as fc from 'fast-check';
 import { ProductSearcher } from '../../search/ProductSearcher';
-import { ProductSearchParams } from '../../types/Product';
+import type { ProductSearchParams } from '../../types/Product';
 import { CreatorsAPIClient } from '../CreatorsAPIClient';
 
 // Mock network errors for testing
@@ -41,18 +41,20 @@ class NetworkErrorMockClient extends CreatorsAPIClient {
 
     // Success after failures
     return {
-      products: [{
-        asin: 'B000000TEST',
-        title: 'Test Product',
-        category: params.category,
-        price: { amount: 10, currency: 'USD', formatted: '$10.00' },
-        images: { primary: 'test.jpg', thumbnails: [] },
-        specifications: {},
-        rating: { average: 4.0, count: 100 }
-      }],
+      products: [
+        {
+          asin: 'B000000TEST',
+          title: 'Test Product',
+          category: params.category,
+          price: { amount: 10, currency: 'USD', formatted: '$10.00' },
+          images: { primary: 'test.jpg', thumbnails: [] },
+          specifications: {},
+          rating: { average: 4.0, count: 100 },
+        },
+      ],
       totalResults: 1,
       searchParams: params,
-      timestamp: new Date()
+      timestamp: new Date(),
     };
   }
 }
@@ -60,8 +62,8 @@ class NetworkErrorMockClient extends CreatorsAPIClient {
 describe('Error Handling Property Tests', () => {
   describe('Property 3: Comprehensive Error Handling and Retry Logic', () => {
     /**
-     * For any API failure scenario (rate limits, network errors, service unavailable), 
-     * the system should implement appropriate retry strategies with exponential backoff 
+     * For any API failure scenario (rate limits, network errors, service unavailable),
+     * the system should implement appropriate retry strategies with exponential backoff
      * and detailed error logging.
      */
     it('should handle rate limit errors with proper retry logic', async () => {
@@ -70,7 +72,7 @@ describe('Error Handling Property Tests', () => {
           fc.record({
             maxFailures: fc.integer({ min: 1, max: 3 }),
             category: fc.constantFrom('electronics', 'books', 'clothing'),
-            keywords: fc.array(fc.string({ minLength: 1, maxLength: 10 }), { minLength: 1, maxLength: 2 })
+            keywords: fc.array(fc.string({ minLength: 1, maxLength: 10 }), { minLength: 1, maxLength: 2 }),
           }),
           async ({ maxFailures, category, keywords }) => {
             const mockClient = new NetworkErrorMockClient(maxFailures, 'rate_limit');
@@ -81,7 +83,7 @@ describe('Error Handling Property Tests', () => {
             const searchParams: ProductSearchParams = {
               category,
               keywords,
-              maxResults: 1
+              maxResults: 1,
             };
 
             const startTime = Date.now();
@@ -98,7 +100,6 @@ describe('Error Handling Property Tests', () => {
               if (maxFailures > 1) {
                 expect(endTime - startTime).toBeGreaterThan(1000); // At least 1 second for retries
               }
-
             } catch (error) {
               // If it fails after all retries, should be a proper error
               expect(error).toBeInstanceOf(Error);
@@ -107,9 +108,9 @@ describe('Error Handling Property Tests', () => {
                 expect(error.message).toContain('Rate limit');
               }
             }
-          }
+          },
         ),
-        { numRuns: 50 }
+        { numRuns: 50 },
       );
     });
 
@@ -119,7 +120,7 @@ describe('Error Handling Property Tests', () => {
           fc.record({
             errorType: fc.constantFrom('network', 'service', 'auth'),
             retryCount: fc.integer({ min: 1, max: 2 }),
-            category: fc.constantFrom('electronics', 'books')
+            category: fc.constantFrom('electronics', 'books'),
           }),
           async ({ errorType, retryCount, category }) => {
             const mockClient = new NetworkErrorMockClient(retryCount, errorType);
@@ -129,7 +130,7 @@ describe('Error Handling Property Tests', () => {
             const searchParams: ProductSearchParams = {
               category,
               keywords: ['test'],
-              maxResults: 1
+              maxResults: 1,
             };
 
             const startTime = Date.now();
@@ -143,10 +144,9 @@ describe('Error Handling Property Tests', () => {
 
               // Should implement exponential backoff (time increases with retry count)
               if (retryCount > 1) {
-                const expectedMinTime = 1000 * (Math.pow(2, retryCount) - 1); // Exponential backoff
+                const expectedMinTime = 1000 * (2 ** retryCount - 1); // Exponential backoff
                 expect(endTime - startTime).toBeGreaterThan(expectedMinTime * 0.8); // Allow some variance
               }
-
             } catch (error) {
               // Should be a proper error after max retries
               expect(error).toBeInstanceOf(Error);
@@ -154,9 +154,9 @@ describe('Error Handling Property Tests', () => {
                 expect(error.message).toBeTruthy();
               }
             }
-          }
+          },
         ),
-        { numRuns: 30 }
+        { numRuns: 30 },
       );
     });
 
@@ -167,9 +167,9 @@ describe('Error Handling Property Tests', () => {
             fc.record({
               errorType: fc.constantFrom('rate_limit', 'network', 'service'),
               category: fc.constantFrom('electronics', 'books', 'clothing'),
-              keywords: fc.array(fc.string({ minLength: 1, maxLength: 8 }), { minLength: 1, maxLength: 2 })
+              keywords: fc.array(fc.string({ minLength: 1, maxLength: 8 }), { minLength: 1, maxLength: 2 }),
             }),
-            { minLength: 1, maxLength: 3 }
+            { minLength: 1, maxLength: 3 },
           ),
           async (errorScenarios) => {
             for (const scenario of errorScenarios) {
@@ -181,7 +181,7 @@ describe('Error Handling Property Tests', () => {
               const searchParams: ProductSearchParams = {
                 category: scenario.category,
                 keywords: scenario.keywords,
-                maxResults: 1
+                maxResults: 1,
               };
 
               try {
@@ -193,7 +193,6 @@ describe('Error Handling Property Tests', () => {
                   expect(result.products[0]).toHaveProperty('asin');
                   expect(result.products[0]).toHaveProperty('title');
                 }
-
               } catch (error) {
                 // Errors should be properly typed and informative
                 expect(error).toBeInstanceOf(Error);
@@ -203,9 +202,9 @@ describe('Error Handling Property Tests', () => {
                 }
               }
             }
-          }
+          },
         ),
-        { numRuns: 20 }
+        { numRuns: 20 },
       );
     });
 
@@ -215,7 +214,7 @@ describe('Error Handling Property Tests', () => {
           fc.record({
             errorType: fc.constantFrom('rate_limit', 'network', 'auth', 'service'),
             category: fc.constantFrom('electronics', 'books'),
-            keywords: fc.array(fc.string({ minLength: 1, maxLength: 6 }), { minLength: 1, maxLength: 2 })
+            keywords: fc.array(fc.string({ minLength: 1, maxLength: 6 }), { minLength: 1, maxLength: 2 }),
           }),
           async ({ errorType, category, keywords }) => {
             const mockClient = new NetworkErrorMockClient(5, errorType); // Will always fail
@@ -234,11 +233,10 @@ describe('Error Handling Property Tests', () => {
               const searchParams: ProductSearchParams = {
                 category,
                 keywords,
-                maxResults: 1
+                maxResults: 1,
               };
 
               await mockClient.searchProducts(searchParams);
-
             } catch (error) {
               // Should have logged error details
               const allLogs = logs.join(' ');
@@ -246,22 +244,27 @@ describe('Error Handling Property Tests', () => {
               // Should contain error information but not sensitive data
               expect(error).toBeInstanceOf(Error);
               if (error instanceof Error) {
-                expect(error.message).toContain(errorType === 'rate_limit' ? 'Rate limit' :
-                  errorType === 'network' ? 'Network' :
-                    errorType === 'auth' ? 'Authentication' : 'Service');
+                expect(error.message).toContain(
+                  errorType === 'rate_limit'
+                    ? 'Rate limit'
+                    : errorType === 'network'
+                      ? 'Network'
+                      : errorType === 'auth'
+                        ? 'Authentication'
+                        : 'Service',
+                );
               }
 
               // Logs should not contain sensitive information
               expect(allLogs).not.toContain('test-secret');
-
             } finally {
               // Restore console methods
               console.error = originalError;
               console.warn = originalWarn;
             }
-          }
+          },
         ),
-        { numRuns: 25 }
+        { numRuns: 25 },
       );
     });
 
@@ -275,9 +278,10 @@ describe('Error Handling Property Tests', () => {
       // Mock the HTTP client to simulate timeout
       const originalHttpClient = (client as any).httpClient;
       (client as any).httpClient = {
-        post: () => new Promise((_, reject) => {
-          setTimeout(() => reject(new Error('Request timeout')), 100);
-        })
+        post: () =>
+          new Promise((_, reject) => {
+            setTimeout(() => reject(new Error('Request timeout')), 100);
+          }),
       };
 
       client.authenticate('test-app-id', 'test-credential-id', 'test-credential-secret', 'test-tag');
@@ -288,7 +292,7 @@ describe('Error Handling Property Tests', () => {
         await client.searchProducts({
           category: 'electronics',
           keywords: ['test'],
-          maxResults: 1
+          maxResults: 1,
         });
       } catch (error) {
         const endTime = Date.now();
@@ -316,9 +320,8 @@ describe('Error Handling Property Tests', () => {
         await client.searchProducts({
           category: 'electronics',
           keywords: ['test'],
-          maxResults: 1
+          maxResults: 1,
         });
-
       } catch (error) {
         // Should fail with appropriate error message
         expect(error).toBeInstanceOf(Error);

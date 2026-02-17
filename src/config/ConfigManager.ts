@@ -105,7 +105,7 @@ export class ConfigManager {
         applicationId: this.getRequiredEnvVar('AMAZON_CREATORS_APPLICATION_ID'),
         credentialId: this.getRequiredEnvVar('AMAZON_CREATORS_CREDENTIAL_ID'),
         credentialSecret: this.getRequiredEnvVar('AMAZON_CREATORS_CREDENTIAL_SECRET'),
-        partnerTag: this.getRequiredEnvVar('AMAZON_PARTNER_TAG')
+        partnerTag: this.getRequiredEnvVar('AMAZON_PARTNER_TAG'),
       },
       jules: {
         apiKey: this.getRequiredEnvVar('JULES_API_KEY'),
@@ -139,7 +139,12 @@ export class ConfigManager {
     const errors: string[] = [];
 
     // Validate Amazon Creators API configuration
-    if (!config.amazon.applicationId || !config.amazon.credentialId || !config.amazon.credentialSecret || !config.amazon.partnerTag) {
+    if (
+      !config.amazon.applicationId ||
+      !config.amazon.credentialId ||
+      !config.amazon.credentialSecret ||
+      !config.amazon.partnerTag
+    ) {
       errors.push('Amazon Creators API credentials are incomplete');
     }
 
@@ -192,7 +197,10 @@ export class ConfigManager {
     if (!value) {
       return [];
     }
-    return value.split(',').map(item => item.trim()).filter(Boolean);
+    return value
+      .split(',')
+      .map((item) => item.trim())
+      .filter(Boolean);
   }
 
   public updateConfig(updates: Partial<SystemConfig>): void {
