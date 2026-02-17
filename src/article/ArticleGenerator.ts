@@ -1197,7 +1197,7 @@ ${
   private extractAffiliateLinks(content: string): AffiliateLink[] {
     const links: AffiliateLink[] = [];
     const linkRegex = /\[([^\]]+)\]\(([^)]+)\)/g;
-    let match: RegExpExecArray | null = null;
+    let match: RegExpExecArray | null;
     let position = 0;
 
     while ((match = linkRegex.exec(content)) !== null) {

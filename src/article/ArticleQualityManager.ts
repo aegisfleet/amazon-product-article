@@ -468,7 +468,7 @@ export class ArticleQualityManager {
     const sections: Array<{ title: string; content: string }> = [];
     const sectionPattern = /^##\s+(.+)$/gm;
 
-    let match: RegExpExecArray | null = null;
+    let match: RegExpExecArray | null;
     let lastIndex = 0;
     let lastTitle = '';
 
