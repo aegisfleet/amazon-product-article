@@ -1,0 +1,134 @@
+{
+  "analysis": {
+    "productName": "UGREEN Revodok USB-C ハブ 6in1 10Gbps",
+    "parentAsin": "B0D1XLNWP2",
+    "productDescription": "USB-CとUSB-Aのデータポートを各2つ搭載し、いずれも最大10Gbpsの高速転送に対応した6-in-1 USB-Cハブです。",
+    "productUsage": [
+      "MacBookやiPadなどのUSB-Cポート拡張",
+      "外付けSSDなどの高速データ転送（最大10Gbps）",
+      "4K 60Hz対応モニターへの高画質映像出力",
+      "最大100WのUSB PDパススルー充電"
+    ],
+    "positivePoints": [
+      "USB-CとUSB-Aの両方で10Gbpsの高速転送に対応している",
+      "4K 60HzのHDMI出力に対応し、滑らかな映像を楽しめる",
+      "2,000円台という非常に高いコストパフォーマンス",
+      "コンパクトで持ち運びに便利なサイズ感"
+    ],
+    "negativePoints": [
+      "有線LANポート（Ethernet）が搭載されていない",
+      "高速データ転送時に本体が発熱する場合がある",
+      "SDカードスロットが搭載されていない"
+    ],
+    "useCases": [
+      "外出先でのプレゼンテーションや会議（HDMI出力）",
+      "大容量データの高速バックアップ（10Gbps転送）",
+      "ポート数が少ないノートPC（MacBook Air等）の機能拡張"
+    ],
+    "userStories": [
+      {
+        "userType": "映像クリエイター（推測）",
+        "scenario": "外出先での動画編集作業",
+        "experience": "撮影した大容量の動画データを外付けSSDからPCに転送する際、10Gbpsの速度が出るため待ち時間が大幅に短縮された。USB-Cポートが2つあるのも助かる。",
+        "sentiment": "positive"
+      },
+      {
+        "userType": "ビジネスパーソン（推測）",
+        "scenario": "オフィスでのデスクワーク",
+        "experience": "4Kモニターに接続して作業しているが、60Hz対応なのでマウスの動きが滑らかで目が疲れにくい。充電しながら使えるのでバッテリーの心配もない。",
+        "sentiment": "positive"
+      }
+    ],
+    "userImpression": "ユーザーレビューはまだ少ないものの、スペックに対する価格の安さとUGREENブランドへの信頼から、データ転送速度を重視するユーザーにとって非常に魅力的な選択肢となっている。",
+    "sources": [
+      {
+        "name": "Amazon商品ページ",
+        "url": "https://www.amazon.co.jp/dp/B0D1XLNWP2",
+        "credibility": "high"
+      }
+    ],
+    "lastInvestigated": "2026-02-17",
+    "competitiveAnalysis": [
+      {
+        "name": "UGREEN Revodok 1061 (B0BW2TLQ8S)",
+        "asin": "B0BW2TLQ8S",
+        "priceComparison": "約2,800円（本製品より高い）",
+        "featureComparison": [
+          "USBポートは5Gbps止まり",
+          "有線LANポート搭載",
+          "HDMIは4K 30Hz"
+        ],
+        "differentiators": [
+          "LANポートが必要ならRevodok 1061、速度と画質重視なら本製品"
+        ]
+      },
+      {
+        "name": "Anker PowerExpand 6-in-1 (B08C74W2QK)",
+        "asin": "B08C74W2QK",
+        "priceComparison": "約5,000円（本製品の倍以上）",
+        "featureComparison": [
+          "USBポートは5Gbps",
+          "有線LANポート搭載",
+          "信頼性の高いブランド"
+        ],
+        "differentiators": [
+          "価格差が大きく、スペック面でも本製品が優位な点が多い"
+        ]
+      },
+      {
+        "name": "UGREEN Uno 6 in 1 (B0D2Q5XJY9)",
+        "asin": "B0D2Q5XJY9",
+        "priceComparison": "約4,300円（本製品より高い）",
+        "featureComparison": [
+          "10Gbps対応",
+          "ディスプレイ付きのユニークなデザイン",
+          "HDMI 4K 60Hz"
+        ],
+        "differentiators": [
+          "デザインとギミック重視ならUno、コスパ重視なら本製品"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "動画編集など大容量データを扱うユーザー",
+        "MacBook Air/Proを使用しているユーザー",
+        "安価に高性能なハブを探しているユーザー"
+      ],
+      "pros": [
+        "USB-C/A両方で10Gbpsの高速転送が可能",
+        "4K 60Hzの高画質出力",
+        "圧倒的なコストパフォーマンス"
+      ],
+      "cons": [
+        "有線LANポートがない",
+        "SDカードリーダーがない"
+      ],
+      "score": 91,
+      "scoreRationale": "[基本点: 70]\n[加点: +8] (USB-C/A 10Gbps x2ずつ搭載、4K 60Hz出力)\n[加点: +10] (2,000円という圧倒的なコストパフォーマンス)\n[加点: +3] (UGREENの信頼性と質感)\n[加点: +2] (他製品にはないUSBポート特化構成)\n[減点: -2] (高速転送時の発熱リスク)\n[合計: 91]"
+    },
+    "technicalSpecs": {
+      "dimensions": {
+        "length": "115mm",
+        "width": "35mm",
+        "height": "12.5mm",
+        "weight": "約180g"
+      },
+      "ports": {
+        "usb_c_data": "2x USB-C 3.2 Gen 2 (10Gbps)",
+        "usb_a_data": "2x USB-A 3.2 Gen 2 (10Gbps)",
+        "hdmi": "1x HDMI (4K@60Hz)",
+        "pd_input": "1x USB-C PD (100W Pass-through)"
+      },
+      "compatibility": [
+        "MacBook Pro/Air",
+        "iPad Pro",
+        "Surface",
+        "XPS",
+        "ThinkPad",
+        "Steam Deck",
+        "Rog Ally"
+      ]
+    }
+  }
+}
