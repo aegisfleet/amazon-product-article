@@ -26,12 +26,10 @@ import { formatInvestigationPrompt } from './prompts';
 const JULES_API_BASE_URL = 'https://jules.googleapis.com/v1alpha';
 
 export class JulesInvestigator {
-  private credentials: JulesCredentials;
   private client: AxiosInstance;
   private logger: Logger;
 
   constructor(credentials: JulesCredentials) {
-    this.credentials = credentials;
     this.logger = Logger.getInstance();
 
     this.client = axios.create({

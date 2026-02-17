@@ -4,8 +4,8 @@
  * Updated for Creators API (v1)
  */
 
-import axios, { type AxiosInstance, type AxiosResponse } from 'axios';
 import { URLSearchParams } from 'node:url';
+import axios, { type AxiosInstance, type AxiosResponse } from 'axios';
 import type {
   CreatorsAPICredentials,
   CreatorsAPIItem,
