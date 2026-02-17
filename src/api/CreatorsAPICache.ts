@@ -19,7 +19,6 @@ export class CreatorsAPICache {
   private ttl: number; // Time to live in milliseconds for valid entries
   private invalidTtl: number; // Time to live in milliseconds for invalid entries
   private permanentInvalidTtl: number; // Time to live in milliseconds for permanent invalid entries (1 week)
-  private isLoaded = false;
   private logger = Logger.getInstance();
 
   // Regex to match invisible Unicode control characters
@@ -63,12 +62,10 @@ export class CreatorsAPICache {
           }
         }
 
-        this.isLoaded = true;
         this.logger.info(`Creators API Cache loaded: ${Object.keys(this.cache).length} entries`);
       } else {
         this.ensureDirectory();
         this.cache = {};
-        this.isLoaded = true;
         this.logger.info('Creators API Cache initialized (new)');
       }
     } catch (error) {
