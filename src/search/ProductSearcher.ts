@@ -625,7 +625,7 @@ export class ProductSearcher {
       const files = await fs.readdir(investigationsDir);
       const jsonFiles = files.filter(f => f.endsWith('.json'));
 
-      await this.processInBatches(jsonFiles, 50, async (file) => {
+      await Promise.all(jsonFiles.map(async (file) => {
         const asin = path.basename(file, '.json');
         if (/^[A-Z0-9]{10}$/.test(asin)) {
           asins.add(asin);
@@ -647,7 +647,7 @@ export class ProductSearcher {
         } catch (e) {
           this.logger.warn(`Failed to read/parse investigation file ${file}:`, e);
         }
-      });
+      }));
     } catch {
       this.logger.debug('Investigations directory not found or inaccessible');
     }
