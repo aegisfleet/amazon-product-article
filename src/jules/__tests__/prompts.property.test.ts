@@ -4,17 +4,16 @@
  */
 
 import * as fc from 'fast-check';
-import { Product } from '../../types/Product';
+import type { Product } from '../../types/Product';
 import { formatInvestigationPrompt } from '../prompts';
 
 describe('Investigation Prompt Property Tests', () => {
-
   /**
    * Property 4: Jules Investigation Request Formatting
    * **Validates: Requirements 2.1, 2.2, 2.4**
-   * 
-   * For any product investigation request, the generated prompt should contain all required elements 
-   * (user review analysis instructions, competitive comparison requirements, market positioning focus) 
+   *
+   * For any product investigation request, the generated prompt should contain all required elements
+   * (user review analysis instructions, competitive comparison requirements, market positioning focus)
    * in the proper structured format.
    */
   test('Property 4: Jules Investigation Request Formatting', () => {
@@ -22,33 +21,33 @@ describe('Investigation Prompt Property Tests', () => {
       fc.property(
         // Generate arbitrary Product objects
         fc.record({
-          asin: fc.string({ minLength: 10, maxLength: 10 }).map(s => s.toUpperCase()),
+          asin: fc.string({ minLength: 10, maxLength: 10 }).map((s) => s.toUpperCase()),
           title: fc.string({ minLength: 10, maxLength: 100 }),
           category: fc.oneof(
             fc.constant('Electronics'),
             fc.constant('Home & Garden'),
             fc.constant('Sports & Outdoors'),
             fc.constant('Books'),
-            fc.constant('Clothing')
+            fc.constant('Clothing'),
           ),
           price: fc.record({
             amount: fc.float({ min: 1, max: 10000 }),
             currency: fc.constant('USD'),
-            formatted: fc.string({ minLength: 5, maxLength: 20 })
+            formatted: fc.string({ minLength: 5, maxLength: 20 }),
           }),
           images: fc.record({
             primary: fc.webUrl(),
-            thumbnails: fc.array(fc.webUrl(), { minLength: 0, maxLength: 5 })
+            thumbnails: fc.array(fc.webUrl(), { minLength: 0, maxLength: 5 }),
           }),
           specifications: fc.dictionary(
             fc.string({ minLength: 3, maxLength: 20 }),
             fc.string({ minLength: 3, maxLength: 50 }),
-            { minKeys: 1, maxKeys: 10 }
+            { minKeys: 1, maxKeys: 10 },
           ),
           rating: fc.record({
             average: fc.float({ min: 1, max: 5 }),
-            count: fc.integer({ min: 0, max: 10000 })
-          })
+            count: fc.integer({ min: 0, max: 10000 }),
+          }),
         }),
         (product: Product) => {
           // Generate investigation prompt
@@ -91,7 +90,6 @@ describe('Investigation Prompt Property Tests', () => {
           expect(prompt).toContain(product.category);
           expect(prompt).toContain(product.price.formatted);
 
-
           // Verify prompt enrichment (fallback instructions)
           expect(prompt).toContain('レビューや情報が見つからなくても');
           expect(prompt).toContain('Amazon 403エラー時もGoogle検索で継続');
@@ -121,9 +119,9 @@ describe('Investigation Prompt Property Tests', () => {
 
           // 7. Verify proper Japanese formatting
           expect(prompt).toContain('調査結果は以下のJSON形式で');
-        }
+        },
       ),
-      { numRuns: 100 }
+      { numRuns: 100 },
     );
   });
 
@@ -140,21 +138,21 @@ describe('Investigation Prompt Property Tests', () => {
           price: fc.record({
             amount: fc.float({ min: 1, max: 1000 }),
             currency: fc.constant('USD'),
-            formatted: fc.string({ minLength: 3, maxLength: 15 })
+            formatted: fc.string({ minLength: 3, maxLength: 15 }),
           }),
           images: fc.record({
             primary: fc.webUrl(),
-            thumbnails: fc.array(fc.webUrl(), { maxLength: 3 })
+            thumbnails: fc.array(fc.webUrl(), { maxLength: 3 }),
           }),
           specifications: fc.dictionary(
             fc.string({ minLength: 2, maxLength: 10 }),
             fc.string({ minLength: 2, maxLength: 20 }),
-            { minKeys: 0, maxKeys: 5 }
+            { minKeys: 0, maxKeys: 5 },
           ),
           rating: fc.record({
             average: fc.float({ min: 1, max: 5 }),
-            count: fc.integer({ min: 0, max: 1000 })
-          })
+            count: fc.integer({ min: 0, max: 1000 }),
+          }),
         }),
         (product: Product) => {
           // Generate prompt multiple times for same product
@@ -163,9 +161,9 @@ describe('Investigation Prompt Property Tests', () => {
 
           // Prompts should be identical for same product (deterministic)
           expect(prompt1).toBe(prompt2);
-        }
+        },
       ),
-      { numRuns: 50 }
+      { numRuns: 50 },
     );
   });
 });

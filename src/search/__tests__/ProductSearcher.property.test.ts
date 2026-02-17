@@ -4,11 +4,11 @@
  * Validates: Requirements 1.2, 1.3, 1.5
  */
 
+import fs from 'node:fs/promises';
+import path from 'node:path';
 import * as fc from 'fast-check';
-import fs from 'fs/promises';
-import path from 'path';
 import { CreatorsAPIClient } from '../../api/CreatorsAPIClient';
-import { Product, ProductSearchParams } from '../../types/Product';
+import type { Product, ProductSearchParams } from '../../types/Product';
 import { ProductSearcher } from '../ProductSearcher';
 
 // Mock CreatorsAPIClient for testing
@@ -22,27 +22,27 @@ class MockCreatorsAPIClient extends CreatorsAPIClient {
       price: {
         amount: 10 + i * 5,
         currency: 'USD',
-        formatted: `$${10 + i * 5}.00`
+        formatted: `$${10 + i * 5}.00`,
       },
       images: {
         primary: `https://example.com/image${i + 1}.jpg`,
-        thumbnails: [`https://example.com/thumb${i + 1}.jpg`]
+        thumbnails: [`https://example.com/thumb${i + 1}.jpg`],
       },
       specifications: {
         brand: `Brand${i + 1}`,
-        model: `Model${i + 1}`
+        model: `Model${i + 1}`,
       },
       rating: {
-        average: 4.0 + (i * 0.2),
-        count: 100 + i * 10
-      }
+        average: 4.0 + i * 0.2,
+        count: 100 + i * 10,
+      },
     }));
 
     return {
       products: mockProducts,
       totalResults: mockProducts.length,
       searchParams: params,
-      timestamp: new Date()
+      timestamp: new Date(),
     };
   }
 }
@@ -77,8 +77,8 @@ describe('ProductSearcher Property Tests', () => {
 
   describe('Property 2: Product Search and Data Extraction Completeness', () => {
     /**
-     * For any valid product category search, the system should return products 
-     * with all required fields (ASIN, title, price, specifications) properly 
+     * For any valid product category search, the system should return products
+     * with all required fields (ASIN, title, price, specifications) properly
      * extracted and stored in the expected structured format.
      */
     it('should return complete product data for all valid search parameters', async () => {
@@ -87,11 +87,11 @@ describe('ProductSearcher Property Tests', () => {
           fc.record({
             category: fc.constantFrom('electronics', 'books', 'clothing', 'home', 'sports'),
             keywords: fc.array(
-              fc.string({ minLength: 1, maxLength: 20 }).filter(s => s.trim().length > 0),
-              { minLength: 1, maxLength: 5 }
+              fc.string({ minLength: 1, maxLength: 20 }).filter((s) => s.trim().length > 0),
+              { minLength: 1, maxLength: 5 },
             ),
             maxResults: fc.integer({ min: 1, max: 10 }),
-            sortBy: fc.option(fc.constantFrom('relevance', 'price', 'rating'), { nil: undefined })
+            sortBy: fc.option(fc.constantFrom('relevance', 'price', 'rating'), { nil: undefined }),
           }),
           async (searchParams) => {
             const result = await searcher.customSearch(searchParams as ProductSearchParams);
@@ -157,9 +157,9 @@ describe('ProductSearcher Property Tests', () => {
             if (searchParams.sortBy) {
               expect(result.searchParams.sortBy).toBe(searchParams.sortBy);
             }
-          }
+          },
         ),
-        { numRuns: 100 }
+        { numRuns: 100 },
       );
     });
 
@@ -168,14 +168,14 @@ describe('ProductSearcher Property Tests', () => {
       const searchParams = {
         category: 'electronics',
         keywords: ['test'],
-        maxResults: 2
+        maxResults: 2,
       };
 
       // Perform search
       const originalResult = await searcher.customSearch(searchParams);
 
       // Wait a bit to ensure file is written
-      await new Promise(resolve => setTimeout(resolve, 200));
+      await new Promise((resolve) => setTimeout(resolve, 200));
 
       // Retrieve stored products
       const storedProducts = await searcher.getStoredProducts(`custom_${searchParams.category}`);
@@ -208,7 +208,7 @@ describe('ProductSearcher Property Tests', () => {
         products: [],
         totalResults: 0,
         searchParams: params,
-        timestamp: new Date()
+        timestamp: new Date(),
       });
 
       await fc.assert(
@@ -216,7 +216,7 @@ describe('ProductSearcher Property Tests', () => {
           fc.record({
             category: fc.constantFrom('electronics', 'books'),
             keywords: fc.array(fc.string({ minLength: 1, maxLength: 10 }), { minLength: 1, maxLength: 2 }),
-            maxResults: fc.integer({ min: 1, max: 5 })
+            maxResults: fc.integer({ min: 1, max: 5 }),
           }),
           async (searchParams) => {
             const result = await searcher.customSearch(searchParams);
@@ -226,9 +226,9 @@ describe('ProductSearcher Property Tests', () => {
             expect(result.totalResults).toBe(0);
             expect(result.searchParams).toEqual(searchParams);
             expect(result.timestamp).toBeInstanceOf(Date);
-          }
+          },
         ),
-        { numRuns: 20 }
+        { numRuns: 20 },
       );
 
       // Restore original method
@@ -242,9 +242,9 @@ describe('ProductSearcher Property Tests', () => {
             fc.record({
               category: fc.constantFrom('electronics', 'books', 'clothing'),
               keywords: fc.array(fc.string({ minLength: 1, maxLength: 10 }), { minLength: 1, maxLength: 2 }),
-              maxResults: fc.integer({ min: 1, max: 3 })
+              maxResults: fc.integer({ min: 1, max: 3 }),
             }),
-            { minLength: 1, maxLength: 3 }
+            { minLength: 1, maxLength: 3 },
           ),
           async (searchParamsArray) => {
             const results = [];
@@ -255,7 +255,7 @@ describe('ProductSearcher Property Tests', () => {
               results.push(result);
 
               // Small delay between searches
-              await new Promise(resolve => setTimeout(resolve, 50));
+              await new Promise((resolve) => setTimeout(resolve, 50));
             }
 
             // Verify each result maintains integrity
@@ -274,9 +274,9 @@ describe('ProductSearcher Property Tests', () => {
                 }
               }
             }
-          }
+          },
         ),
-        { numRuns: 30 }
+        { numRuns: 30 },
       );
     });
 
@@ -285,13 +285,13 @@ describe('ProductSearcher Property Tests', () => {
       const searchParams = {
         category: 'electronics',
         keywords: ['test', 'product'],
-        maxResults: 1
+        maxResults: 1,
       };
 
       await searcher.customSearch(searchParams);
 
       // Wait a bit for session data to be written
-      await new Promise(resolve => setTimeout(resolve, 100));
+      await new Promise((resolve) => setTimeout(resolve, 100));
 
       // Session ID should be generated and stored
       const stats = await searcher.getSearchStatistics();

@@ -8,14 +8,14 @@ import { Logger } from './utils/Logger';
 
 async function main(): Promise<void> {
   const logger = Logger.getInstance();
-  
+
   try {
     logger.info('Starting Amazon Product Research System');
-    
+
     // Initialize configuration
     const config = ConfigManager.getInstance();
     await config.initialize();
-    
+
     logger.info('System initialized successfully');
   } catch (error) {
     logger.error('Failed to initialize system', error);

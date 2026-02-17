@@ -5,15 +5,15 @@
  * 適切な親カテゴリに分類するためのJulesセッションを作成する
  */
 
-import axios, { AxiosInstance } from 'axios';
-import * as fs from 'fs';
-import * as path from 'path';
-import {
-    JulesCredentials,
-    JulesError,
-    JulesSessionRequest,
-    JulesSessionResponse,
-    SourceContext
+import * as fs from 'node:fs';
+import * as path from 'node:path';
+import axios, { type AxiosInstance } from 'axios';
+import type {
+  JulesCredentials,
+  JulesError,
+  JulesSessionRequest,
+  JulesSessionResponse,
+  SourceContext,
 } from '../types/JulesTypes';
 import { Logger } from '../utils/Logger';
 
@@ -23,185 +23,184 @@ const JULES_API_BASE_URL = 'https://jules.googleapis.com/v1alpha';
  * カテゴリグループの型定義
  */
 interface CategoryGroup {
-    slug: string;
-    categories: string[];
+  slug: string;
+  categories: string[];
 }
 
 interface CategoryGroups {
-    [parentCategory: string]: CategoryGroup;
+  [parentCategory: string]: CategoryGroup;
 }
 
 /**
  * キャッシュエントリの型定義
  */
 interface CacheEntry {
-    data: {
-        categoryInfo?: {
-            main: string;
-        };
+  data: {
+    categoryInfo?: {
+      main: string;
     };
-    status: string;
+  };
+  status: string;
 }
 
 interface ProductCache {
-    [asin: string]: CacheEntry;
+  [asin: string]: CacheEntry;
 }
 
 /**
  * 整理結果のセッション情報
  */
 export interface OrganizationSession {
-    sessionId: string;
-    sessionName: string;
-    unregisteredCategories: string[];
-    startedAt: Date;
+  sessionId: string;
+  sessionName: string;
+  unregisteredCategories: string[];
+  startedAt: Date;
 }
 
 export class JulesCategoryOrganizer {
-    private client: AxiosInstance;
-    private credentials: JulesCredentials;
-    private logger: Logger;
+  private client: AxiosInstance;
+  private logger: Logger;
 
-    constructor(credentials: JulesCredentials) {
-        this.credentials = credentials;
-        this.logger = Logger.getInstance();
+  constructor(credentials: JulesCredentials) {
+    this.credentials = credentials;
+    this.logger = Logger.getInstance();
 
-        this.client = axios.create({
-            baseURL: JULES_API_BASE_URL,
-            timeout: 30000,
-            headers: {
-                'X-Goog-Api-Key': credentials.apiKey,
-                'Content-Type': 'application/json'
-            }
+    this.client = axios.create({
+      baseURL: JULES_API_BASE_URL,
+      timeout: 30000,
+      headers: {
+        'X-Goog-Api-Key': credentials.apiKey,
+        'Content-Type': 'application/json',
+      },
+    });
+
+    // Add request/response interceptors for logging
+    this.client.interceptors.request.use(
+      (config) => {
+        this.logger.info('Jules API Request (CategoryOrganizer)', {
+          method: config.method,
+          url: config.url,
         });
+        return config;
+      },
+      (error: unknown) => {
+        this.logger.error('Jules API Request Error', error);
+        return Promise.reject(error instanceof Error ? error : new Error(String(error)));
+      },
+    );
 
-        // Add request/response interceptors for logging
-        this.client.interceptors.request.use(
-            (config) => {
-                this.logger.info('Jules API Request (CategoryOrganizer)', {
-                    method: config.method,
-                    url: config.url
-                });
-                return config;
-            },
-            (error: unknown) => {
-                this.logger.error('Jules API Request Error', error);
-                return Promise.reject(error instanceof Error ? error : new Error(String(error)));
-            }
-        );
-
-        this.client.interceptors.response.use(
-            (response) => {
-                this.logger.info('Jules API Response', {
-                    status: response.status,
-                    statusText: response.statusText
-                });
-                return response;
-            },
-            (error: unknown) => {
-                if (axios.isAxiosError(error)) {
-                    this.logger.error('Jules API Response Error', {
-                        status: error.response?.status,
-                        statusText: error.response?.statusText,
-                        data: error.response?.data as unknown
-                    });
-                } else {
-                    this.logger.error('Jules API Response Error (Non-Axios)', error);
-                }
-                return Promise.reject(error instanceof Error ? error : new Error(String(error)));
-            }
-        );
-    }
-
-    /**
-     * categorygroups.jsonを読み込む
-     */
-    loadCategoryGroups(): CategoryGroups {
-        const filePath = path.join(process.cwd(), 'data', 'categorygroups.json');
-        const content = fs.readFileSync(filePath, 'utf-8');
-        return JSON.parse(content) as CategoryGroups;
-    }
-
-    /**
-     * categorygroups.jsonに登録されている全カテゴリを取得
-     */
-    getRegisteredCategories(): Set<string> {
-        const groups = this.loadCategoryGroups();
-        const registered = new Set<string>();
-
-        for (const group of Object.values(groups)) {
-            for (const category of group.categories) {
-                registered.add(category);
-            }
-        }
-
-        return registered;
-    }
-
-    /**
-     * 商品キャッシュから全カテゴリを収集
-     */
-    collectCategoriesFromCache(): Set<string> {
-        const cachePath = path.join(process.cwd(), 'data', 'cache', 'paapi-product-cache.json');
-
-        if (!fs.existsSync(cachePath)) {
-            this.logger.warn('Product cache not found');
-            return new Set<string>();
-        }
-
-        const content = fs.readFileSync(cachePath, 'utf-8');
-        const cache = JSON.parse(content) as ProductCache;
-        const categories = new Set<string>();
-
-        for (const entry of Object.values(cache)) {
-            const category = entry.data?.categoryInfo?.main;
-            if (category && category !== 'その他' && category !== 'null') {
-                categories.add(category);
-            }
-        }
-
-        return categories;
-    }
-
-    /**
-     * categorygroups.jsonに未登録のカテゴリを取得
-     */
-    getUnregisteredCategories(): string[] {
-        const allCategories = this.collectCategoriesFromCache();
-        const registered = this.getRegisteredCategories();
-
-        const unregistered: string[] = [];
-        for (const category of allCategories) {
-            if (!registered.has(category)) {
-                unregistered.push(category);
-            }
-        }
-
-        // デフォルトのUnicode順でソート
-        return unregistered.sort();
-    }
-
-    /**
-     * カテゴリ整理用のプロンプトを生成
-     */
-    formatOrganizationPrompt(unregisteredCategories: string[]): string {
-        // 未登録カテゴリ一覧
-        const unregisteredList = unregisteredCategories.map(c => `- ${c}`).join('\n');
-
-        // JSTで現在の日付を取得
-        const formatter = new Intl.DateTimeFormat('ja-JP', {
-            timeZone: 'Asia/Tokyo',
-            year: 'numeric',
-            month: '2-digit',
-            day: '2-digit',
+    this.client.interceptors.response.use(
+      (response) => {
+        this.logger.info('Jules API Response', {
+          status: response.status,
+          statusText: response.statusText,
         });
-        const parts = formatter.formatToParts(new Date());
-        const year = parts.find(p => p.type === 'year')?.value;
-        const month = parts.find(p => p.type === 'month')?.value;
-        const day = parts.find(p => p.type === 'day')?.value;
-        const today = `${year}-${month}-${day}`;
+        return response;
+      },
+      (error: unknown) => {
+        if (axios.isAxiosError(error)) {
+          this.logger.error('Jules API Response Error', {
+            status: error.response?.status,
+            statusText: error.response?.statusText,
+            data: error.response?.data as unknown,
+          });
+        } else {
+          this.logger.error('Jules API Response Error (Non-Axios)', error);
+        }
+        return Promise.reject(error instanceof Error ? error : new Error(String(error)));
+      },
+    );
+  }
 
-        return `【カテゴリ整理タスク】
+  /**
+   * categorygroups.jsonを読み込む
+   */
+  loadCategoryGroups(): CategoryGroups {
+    const filePath = path.join(process.cwd(), 'data', 'categorygroups.json');
+    const content = fs.readFileSync(filePath, 'utf-8');
+    return JSON.parse(content) as CategoryGroups;
+  }
+
+  /**
+   * categorygroups.jsonに登録されている全カテゴリを取得
+   */
+  getRegisteredCategories(): Set<string> {
+    const groups = this.loadCategoryGroups();
+    const registered = new Set<string>();
+
+    for (const group of Object.values(groups)) {
+      for (const category of group.categories) {
+        registered.add(category);
+      }
+    }
+
+    return registered;
+  }
+
+  /**
+   * 商品キャッシュから全カテゴリを収集
+   */
+  collectCategoriesFromCache(): Set<string> {
+    const cachePath = path.join(process.cwd(), 'data', 'cache', 'paapi-product-cache.json');
+
+    if (!fs.existsSync(cachePath)) {
+      this.logger.warn('Product cache not found');
+      return new Set<string>();
+    }
+
+    const content = fs.readFileSync(cachePath, 'utf-8');
+    const cache = JSON.parse(content) as ProductCache;
+    const categories = new Set<string>();
+
+    for (const entry of Object.values(cache)) {
+      const category = entry.data?.categoryInfo?.main;
+      if (category && category !== 'その他' && category !== 'null') {
+        categories.add(category);
+      }
+    }
+
+    return categories;
+  }
+
+  /**
+   * categorygroups.jsonに未登録のカテゴリを取得
+   */
+  getUnregisteredCategories(): string[] {
+    const allCategories = this.collectCategoriesFromCache();
+    const registered = this.getRegisteredCategories();
+
+    const unregistered: string[] = [];
+    for (const category of allCategories) {
+      if (!registered.has(category)) {
+        unregistered.push(category);
+      }
+    }
+
+    // デフォルトのUnicode順でソート
+    return unregistered.sort();
+  }
+
+  /**
+   * カテゴリ整理用のプロンプトを生成
+   */
+  formatOrganizationPrompt(unregisteredCategories: string[]): string {
+    // 未登録カテゴリ一覧
+    const unregisteredList = unregisteredCategories.map((c) => `- ${c}`).join('\n');
+
+    // JSTで現在の日付を取得
+    const formatter = new Intl.DateTimeFormat('ja-JP', {
+      timeZone: 'Asia/Tokyo',
+      year: 'numeric',
+      month: '2-digit',
+      day: '2-digit',
+    });
+    const parts = formatter.formatToParts(new Date());
+    const year = parts.find((p) => p.type === 'year')?.value;
+    const month = parts.find((p) => p.type === 'month')?.value;
+    const day = parts.find((p) => p.type === 'day')?.value;
+    const today = `${year}-${month}-${day}`;
+
+    return `【カテゴリ整理タスク】
 
 あなたはプロフェッショナルな商品カテゴリ整理アシスタントです。
 リポジトリ内の \`data/categorygroups.json\` を編集し、未登録のカテゴリを適切な親カテゴリに分類してください。
@@ -263,140 +262,135 @@ ${unregisteredList}
 - \`npm run sort:categories\` が実行され、JSONが正規の順序でソートされている。
 - 不要なファイルが作成されていない。
 `;
+  }
+
+  /**
+   * カテゴリ整理セッションを作成
+   */
+  async createSession(prompt: string, sourceContext: SourceContext): Promise<string> {
+    try {
+      const request: JulesSessionRequest = {
+        prompt,
+        sourceContext,
+        title: `Category Organization: ${new Date().toISOString().split('T')[0]}`,
+        automationMode: 'AUTO_CREATE_PR',
+        requirePlanApproval: false,
+      };
+
+      const response = await this.client.post<JulesSessionResponse>('/sessions', request);
+
+      const sessionId = response.data.id;
+      this.logger.info('Jules category organization session created', {
+        sessionId,
+        name: response.data.name,
+      });
+
+      return sessionId;
+    } catch (error) {
+      const julesError = this.handleApiError(error);
+      this.logger.error('Failed to create Jules session', julesError);
+      throw new Error(`Jules session creation failed: ${julesError.message}`, { cause: error });
+    }
+  }
+
+  /**
+   * セッション情報を取得
+   */
+  async getSession(sessionId: string): Promise<JulesSessionResponse> {
+    try {
+      const response = await this.client.get<JulesSessionResponse>(`/sessions/${sessionId}`);
+      return response.data;
+    } catch (error) {
+      const julesError = this.handleApiError(error);
+      this.logger.error('Failed to get session', { sessionId, error: julesError });
+      throw new Error(`Failed to get session: ${julesError.message}`, { cause: error });
+    }
+  }
+
+  /**
+   * カテゴリ整理を開始（非同期）
+   */
+  async startOrganization(sourceContext: SourceContext): Promise<OrganizationSession> {
+    const unregisteredCategories = this.getUnregisteredCategories();
+
+    if (unregisteredCategories.length === 0) {
+      this.logger.info('No unregistered categories found');
+      throw new Error('No unregistered categories to organize');
     }
 
-    /**
-     * カテゴリ整理セッションを作成
-     */
-    async createSession(prompt: string, sourceContext: SourceContext): Promise<string> {
-        try {
-            const request: JulesSessionRequest = {
-                prompt,
-                sourceContext,
-                title: `Category Organization: ${new Date().toISOString().split('T')[0]}`,
-                automationMode: 'AUTO_CREATE_PR',
-                requirePlanApproval: false
-            };
+    this.logger.info(`Found ${unregisteredCategories.length} unregistered categories`, {
+      categories: unregisteredCategories.slice(0, 10), // Log first 10
+    });
 
-            const response = await this.client.post<JulesSessionResponse>(
-                '/sessions',
-                request
-            );
+    const prompt = this.formatOrganizationPrompt(unregisteredCategories);
+    const sessionId = await this.createSession(prompt, sourceContext);
+    const session = await this.getSession(sessionId);
 
-            const sessionId = response.data.id;
-            this.logger.info('Jules category organization session created', {
-                sessionId,
-                name: response.data.name
-            });
+    return {
+      sessionId,
+      sessionName: session.name,
+      unregisteredCategories,
+      startedAt: new Date(),
+    };
+  }
 
-            return sessionId;
-        } catch (error) {
-            const julesError = this.handleApiError(error);
-            this.logger.error('Failed to create Jules session', julesError);
-            throw new Error(`Jules session creation failed: ${julesError.message}`, { cause: error });
-        }
-    }
+  /**
+   * APIエラーを処理
+   */
+  private handleApiError(error: unknown): JulesError {
+    if (axios.isAxiosError(error)) {
+      const status = error.response?.status;
+      const data: unknown = error.response?.data;
 
-    /**
-     * セッション情報を取得
-     */
-    async getSession(sessionId: string): Promise<JulesSessionResponse> {
-        try {
-            const response = await this.client.get<JulesSessionResponse>(
-                `/sessions/${sessionId}`
-            );
-            return response.data;
-        } catch (error) {
-            const julesError = this.handleApiError(error);
-            this.logger.error('Failed to get session', { sessionId, error: julesError });
-            throw new Error(`Failed to get session: ${julesError.message}`, { cause: error });
-        }
-    }
-
-    /**
-     * カテゴリ整理を開始（非同期）
-     */
-    async startOrganization(sourceContext: SourceContext): Promise<OrganizationSession> {
-        const unregisteredCategories = this.getUnregisteredCategories();
-
-        if (unregisteredCategories.length === 0) {
-            this.logger.info('No unregistered categories found');
-            throw new Error('No unregistered categories to organize');
-        }
-
-        this.logger.info(`Found ${unregisteredCategories.length} unregistered categories`, {
-            categories: unregisteredCategories.slice(0, 10) // Log first 10
-        });
-
-        const prompt = this.formatOrganizationPrompt(unregisteredCategories);
-        const sessionId = await this.createSession(prompt, sourceContext);
-        const session = await this.getSession(sessionId);
-
+      if (status === 429) {
         return {
-            sessionId,
-            sessionName: session.name,
-            unregisteredCategories,
-            startedAt: new Date()
+          code: 'RATE_LIMIT_EXCEEDED',
+          message: 'Jules API rate limit exceeded',
+          details: data,
+          retryable: true,
         };
-    }
+      }
 
-    /**
-     * APIエラーを処理
-     */
-    private handleApiError(error: unknown): JulesError {
-        if (axios.isAxiosError(error)) {
-            const status = error.response?.status;
-            const data: unknown = error.response?.data;
-
-            if (status === 429) {
-                return {
-                    code: 'RATE_LIMIT_EXCEEDED',
-                    message: 'Jules API rate limit exceeded',
-                    details: data,
-                    retryable: true
-                };
-            }
-
-            if (status === 401 || status === 403) {
-                return {
-                    code: 'AUTHENTICATION_ERROR',
-                    message: 'Jules API authentication failed. Check your API key.',
-                    details: data,
-                    retryable: false
-                };
-            }
-
-            if (status && status >= 500) {
-                return {
-                    code: 'SERVER_ERROR',
-                    message: 'Jules API server error',
-                    details: data,
-                    retryable: true
-                };
-            }
-
-            return {
-                code: 'HTTP_ERROR',
-                message: `Jules API HTTP error: ${status}`,
-                details: data,
-                retryable: false
-            };
-        }
-
-        if (error instanceof Error) {
-            return {
-                code: 'UNKNOWN_ERROR',
-                message: error.message,
-                details: error,
-                retryable: false
-            };
-        }
-
+      if (status === 401 || status === 403) {
         return {
-            code: 'UNKNOWN_ERROR',
-            message: 'Unknown Jules API error',
-            details: error,
-            retryable: false
+          code: 'AUTHENTICATION_ERROR',
+          message: 'Jules API authentication failed. Check your API key.',
+          details: data,
+          retryable: false,
         };
+      }
+
+      if (status && status >= 500) {
+        return {
+          code: 'SERVER_ERROR',
+          message: 'Jules API server error',
+          details: data,
+          retryable: true,
+        };
+      }
+
+      return {
+        code: 'HTTP_ERROR',
+        message: `Jules API HTTP error: ${status}`,
+        details: data,
+        retryable: false,
+      };
     }
+
+    if (error instanceof Error) {
+      return {
+        code: 'UNKNOWN_ERROR',
+        message: error.message,
+        details: error,
+        retryable: false,
+      };
+    }
+
+    return {
+      code: 'UNKNOWN_ERROR',
+      message: 'Unknown Jules API error',
+      details: error,
+      retryable: false,
+    };
+  }
 }

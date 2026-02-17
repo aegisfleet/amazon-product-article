@@ -10,8 +10,8 @@ import { CreatorsAPIClient } from '../CreatorsAPIClient';
 describe('CreatorsAPIClient Property Tests', () => {
   describe('Property 1: Secure Authentication and Credential Management', () => {
     /**
-     * For any API authentication request, the system should successfully authenticate 
-     * with valid credentials and fail securely with invalid credentials, while never 
+     * For any API authentication request, the system should successfully authenticate
+     * with valid credentials and fail securely with invalid credentials, while never
      * exposing sensitive information in logs or outputs.
      */
     it('should handle authentication securely for all credential combinations', async () => {
@@ -21,7 +21,7 @@ describe('CreatorsAPIClient Property Tests', () => {
             applicationId: fc.string({ minLength: 1, maxLength: 50 }),
             credentialId: fc.string({ minLength: 1, maxLength: 100 }),
             credentialSecret: fc.string({ minLength: 1, maxLength: 100 }),
-            partnerTag: fc.string({ minLength: 1, maxLength: 30 })
+            partnerTag: fc.string({ minLength: 1, maxLength: 30 }),
           }),
           async (credentials) => {
             const client = new CreatorsAPIClient();
@@ -32,7 +32,7 @@ describe('CreatorsAPIClient Property Tests', () => {
                 credentials.applicationId,
                 credentials.credentialId,
                 credentials.credentialSecret,
-                credentials.partnerTag
+                credentials.partnerTag,
               );
 
               // Authentication should complete without throwing
@@ -44,9 +44,9 @@ describe('CreatorsAPIClient Property Tests', () => {
               // not due to system errors
               expect(error).toBeInstanceOf(Error);
             }
-          }
+          },
         ),
-        { numRuns: 100 }
+        { numRuns: 100 },
       );
     });
 
@@ -57,7 +57,7 @@ describe('CreatorsAPIClient Property Tests', () => {
             applicationId: fc.oneof(fc.constant(''), fc.constant(null), fc.constant(undefined)),
             credentialId: fc.oneof(fc.constant(''), fc.constant(null), fc.constant(undefined)),
             credentialSecret: fc.oneof(fc.constant(''), fc.constant(null), fc.constant(undefined)),
-            partnerTag: fc.oneof(fc.constant(''), fc.constant(null), fc.constant(undefined))
+            partnerTag: fc.oneof(fc.constant(''), fc.constant(null), fc.constant(undefined)),
           }),
           async (invalidCredentials) => {
             const client = new CreatorsAPIClient();
@@ -68,12 +68,12 @@ describe('CreatorsAPIClient Property Tests', () => {
                 invalidCredentials.applicationId as any,
                 invalidCredentials.credentialId as any,
                 invalidCredentials.credentialSecret as any,
-                invalidCredentials.partnerTag as any
-              )
+                invalidCredentials.partnerTag as any,
+              ),
             ).toThrow('Missing required Creators API credentials');
-          }
+          },
         ),
-        { numRuns: 100 }
+        { numRuns: 100 },
       );
     });
 
@@ -83,18 +83,16 @@ describe('CreatorsAPIClient Property Tests', () => {
           fc.record({
             category: fc.constantFrom('electronics', 'books', 'clothing'),
             keywords: fc.array(fc.string({ minLength: 1, maxLength: 20 }), { minLength: 1, maxLength: 3 }),
-            maxResults: fc.integer({ min: 1, max: 10 })
+            maxResults: fc.integer({ min: 1, max: 10 }),
           }),
           async (searchParams) => {
             const client = new CreatorsAPIClient();
 
             // Should throw error when trying to search without authentication
-            await expect(
-              client.searchProducts(searchParams)
-            ).rejects.toThrow(/Authenticated|authenticated/i);
-          }
+            await expect(client.searchProducts(searchParams)).rejects.toThrow(/Authenticated|authenticated/i);
+          },
         ),
-        { numRuns: 100 }
+        { numRuns: 100 },
       );
     });
 
@@ -104,7 +102,7 @@ describe('CreatorsAPIClient Property Tests', () => {
 
       // Mock httpClient to prevent actual network calls and force an error
       (client as any).httpClient = {
-        post: () => Promise.reject(new Error('Simulated API Error'))
+        post: () => Promise.reject(new Error('Simulated API Error')),
       };
 
       // Reduce maxRetries for testing to avoid long wait times
@@ -114,14 +112,14 @@ describe('CreatorsAPIClient Property Tests', () => {
         applicationId: 'test-app-id',
         credentialId: 'test-credential-id',
         credentialSecret: 'test-credential-secret',
-        partnerTag: 'test-partner-tag'
+        partnerTag: 'test-partner-tag',
       };
 
       client.authenticate(
         credentials.applicationId,
         credentials.credentialId,
         credentials.credentialSecret,
-        credentials.partnerTag
+        credentials.partnerTag,
       );
 
       // Try to make a request that will fail (no real API access)
@@ -129,7 +127,7 @@ describe('CreatorsAPIClient Property Tests', () => {
         await client.searchProducts({
           category: 'electronics',
           keywords: ['test'],
-          maxResults: 1
+          maxResults: 1,
         });
       } catch (error) {
         // Verify error message doesn't contain sensitive information
@@ -148,7 +146,7 @@ describe('CreatorsAPIClient Property Tests', () => {
             applicationId: fc.string({ minLength: 10, maxLength: 50 }),
             credentialId: fc.string({ minLength: 20, maxLength: 100 }),
             credentialSecret: fc.string({ minLength: 20, maxLength: 100 }),
-            partnerTag: fc.string({ minLength: 5, maxLength: 30 })
+            partnerTag: fc.string({ minLength: 5, maxLength: 30 }),
           }),
           async (credentials) => {
             const client = new CreatorsAPIClient();
@@ -159,12 +157,12 @@ describe('CreatorsAPIClient Property Tests', () => {
                 credentials.applicationId,
                 credentials.credentialId,
                 credentials.credentialSecret,
-                credentials.partnerTag
-              )
+                credentials.partnerTag,
+              ),
             ).not.toThrow();
-          }
+          },
         ),
-        { numRuns: 100 }
+        { numRuns: 100 },
       );
     });
   });

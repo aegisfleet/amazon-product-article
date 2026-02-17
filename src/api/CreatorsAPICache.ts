@@ -1,323 +1,328 @@
-import fs from 'fs';
-import path from 'path';
-import { ProductDetail } from '../types/Product';
+import fs from 'node:fs';
+import path from 'node:path';
+import type { ProductDetail } from '../types/Product';
 import { Logger } from '../utils/Logger';
 
 interface CacheEntry {
-    data: ProductDetail | null;
-    timestamp: number;
-    status: 'valid' | 'invalid' | 'permanent_invalid';
+  data: ProductDetail | null;
+  timestamp: number;
+  status: 'valid' | 'invalid' | 'permanent_invalid';
 }
 
 interface CacheStore {
-    [asin: string]: CacheEntry;
+  [asin: string]: CacheEntry;
 }
 
 export class CreatorsAPICache {
-    private cachePath: string;
-    private cache: CacheStore = {};
-    private ttl: number; // Time to live in milliseconds for valid entries
-    private invalidTtl: number; // Time to live in milliseconds for invalid entries
-    private permanentInvalidTtl: number; // Time to live in milliseconds for permanent invalid entries (1 week)
-    private logger = Logger.getInstance();
-    private isLoaded = false;
+  private cachePath: string;
+  private cache: CacheStore = {};
+  private ttl: number; // Time to live in milliseconds for valid entries
+  private invalidTtl: number; // Time to live in milliseconds for invalid entries
+  private permanentInvalidTtl: number; // Time to live in milliseconds for permanent invalid entries (1 week)
+  private logger = Logger.getInstance();
 
-    // Regex to match invisible Unicode control characters
-    // Includes: LRM (U+200E), RLM (U+200F), zero-width chars (U+200B-U+200D, U+FEFF), etc.
-    private static readonly INVISIBLE_CHARS_REGEX = /[\u200B-\u200F\u2028-\u202F\uFEFF]/g;
+  // Regex to match invisible Unicode control characters
+  // Includes: LRM (U+200E), RLM (U+200F), zero-width chars (U+200B-U+200D, U+FEFF), etc.
+  private static readonly INVISIBLE_CHARS_REGEX = /[\u200B-\u200F\u2028-\u202F\uFEFF]/g;
 
-    constructor(ttlHours: number = 24, invalidTtlMinutes: number = 5, cacheDir: string = 'data/cache', permanentInvalidTtlDays: number = 7) {
-        this.ttl = ttlHours * 60 * 60 * 1000;
-        this.invalidTtl = invalidTtlMinutes * 60 * 1000;  // 5分（一時的な失敗からの早期回復用）
-        this.permanentInvalidTtl = permanentInvalidTtlDays * 24 * 60 * 60 * 1000; // 1週間
-        this.cachePath = path.join(process.cwd(), cacheDir, 'paapi-product-cache.json'); // Keep same filename for cache compatibility
-        this.load();
+  constructor(
+    ttlHours: number = 24,
+    invalidTtlMinutes: number = 5,
+    cacheDir: string = 'data/cache',
+    permanentInvalidTtlDays: number = 7,
+  ) {
+    this.ttl = ttlHours * 60 * 60 * 1000;
+    this.invalidTtl = invalidTtlMinutes * 60 * 1000; // 5分（一時的な失敗からの早期回復用）
+    this.permanentInvalidTtl = permanentInvalidTtlDays * 24 * 60 * 60 * 1000; // 1週間
+    this.cachePath = path.join(process.cwd(), cacheDir, 'paapi-product-cache.json'); // Keep same filename for cache compatibility
+    this.load();
+  }
+
+  /**
+   * Load cache from disk
+   */
+  private load(): void {
+    try {
+      if (fs.existsSync(this.cachePath)) {
+        const rawData = fs.readFileSync(this.cachePath, 'utf-8');
+        const parsed = JSON.parse(rawData) as Record<string, unknown>;
+
+        // Migration check: if old format (without status), assume valid
+        this.cache = {};
+        for (const [key, value] of Object.entries(parsed)) {
+          const entry = value as Partial<CacheEntry> & Record<string, unknown>;
+          if (entry && typeof entry === 'object' && !entry.status) {
+            this.cache[key] = {
+              data: (entry.data as ProductDetail | null) || null,
+              timestamp: typeof entry.timestamp === 'number' ? entry.timestamp : Date.now(),
+              status: 'valid',
+            };
+          } else if (entry?.status) {
+            this.cache[key] = entry as CacheEntry;
+          }
+        }
+
+        this.isLoaded = true;
+        this.logger.info(`Creators API Cache loaded: ${Object.keys(this.cache).length} entries`);
+      } else {
+        this.ensureDirectory();
+        this.cache = {};
+        this.isLoaded = true;
+        this.logger.info('Creators API Cache initialized (new)');
+      }
+    } catch (error) {
+      this.logger.warn('Failed to load Creators API Cache:', error);
+      this.cache = {}; // Start fresh on error
+    }
+  }
+
+  /**
+   * Ensure cache directory exists
+   */
+  private ensureDirectory(): void {
+    const dir = path.dirname(this.cachePath);
+    if (!fs.existsSync(dir)) {
+      fs.mkdirSync(dir, { recursive: true });
+    }
+  }
+
+  /**
+   * Save cache to disk
+   */
+  public async save(): Promise<void> {
+    try {
+      await this.ensureDirectoryAsync();
+      // Use fs.promises.writeFile to avoid blocking the event loop
+      await fs.promises.writeFile(this.cachePath, JSON.stringify(this.cache, null, 2), 'utf-8');
+      this.logger.info('Creators API Cache saved to disk');
+    } catch (error) {
+      this.logger.error('Failed to save Creators API Cache:', error);
+    }
+  }
+
+  /**
+   * Ensure cache directory exists asynchronously
+   */
+  private async ensureDirectoryAsync(): Promise<void> {
+    const dir = path.dirname(this.cachePath);
+    await fs.promises.mkdir(dir, { recursive: true });
+  }
+
+  /**
+   * Get item from cache if it exists and is valid
+   * Returns null if not found, expired, or marked invalid
+   * @param options.ignoreExpiration If true, returns valid data even if expired
+   */
+  public get(asin: string, options: { ignoreExpiration?: boolean } = {}): ProductDetail | null {
+    const entry = this.cache[asin];
+
+    if (!entry) {
+      return null;
     }
 
-    /**
-     * Load cache from disk
-     */
-    private load(): void {
-        try {
-            if (fs.existsSync(this.cachePath)) {
-                const rawData = fs.readFileSync(this.cachePath, 'utf-8');
-                const parsed = JSON.parse(rawData) as Record<string, unknown>;
-
-                // Migration check: if old format (without status), assume valid
-                this.cache = {};
-                for (const [key, value] of Object.entries(parsed)) {
-                    const entry = value as Partial<CacheEntry> & Record<string, unknown>;
-                    if (entry && typeof entry === 'object' && !entry.status) {
-                        this.cache[key] = {
-                            data: (entry.data as ProductDetail | null) || null,
-                            timestamp: typeof entry.timestamp === 'number' ? entry.timestamp : Date.now(),
-                            status: 'valid'
-                        };
-                    } else if (entry && entry.status) {
-                        this.cache[key] = entry as CacheEntry;
-                    }
-                }
-
-                this.isLoaded = true;
-                this.logger.info(`Creators API Cache loaded: ${Object.keys(this.cache).length} entries`);
-            } else {
-                this.ensureDirectory();
-                this.cache = {};
-                this.isLoaded = true;
-                this.logger.info('Creators API Cache initialized (new)');
-            }
-        } catch (error) {
-            this.logger.warn('Failed to load Creators API Cache:', error);
-            this.cache = {}; // Start fresh on error
-        }
+    // Check expiration
+    let effectiveTtl = this.ttl;
+    if (entry.status === 'invalid') {
+      // Only use the shorter invalidTtl if we have an investigation result for this ASIN
+      effectiveTtl = this.isInvestigationFileExists(asin) ? this.invalidTtl : this.ttl;
     }
 
-    /**
-     * Ensure cache directory exists
-     */
-    private ensureDirectory(): void {
-        const dir = path.dirname(this.cachePath);
-        if (!fs.existsSync(dir)) {
-            fs.mkdirSync(dir, { recursive: true });
-        }
+    if (!options.ignoreExpiration && Date.now() - entry.timestamp > effectiveTtl) {
+      return null;
     }
 
-    /**
-     * Save cache to disk
-     */
-    public async save(): Promise<void> {
-        try {
-            await this.ensureDirectoryAsync();
-            // Use fs.promises.writeFile to avoid blocking the event loop
-            await fs.promises.writeFile(this.cachePath, JSON.stringify(this.cache, null, 2), 'utf-8');
-            this.logger.info('Creators API Cache saved to disk');
-        } catch (error) {
-            this.logger.error('Failed to save Creators API Cache:', error);
-        }
+    // Return data only if status is valid
+    if (entry.status !== 'valid') {
+      return null;
     }
 
-    /**
-     * Ensure cache directory exists asynchronously
-     */
-    private async ensureDirectoryAsync(): Promise<void> {
-        const dir = path.dirname(this.cachePath);
-        await fs.promises.mkdir(dir, { recursive: true });
+    return entry.data;
+  }
+
+  /**
+   * Check if ASIN is marked as invalid/not-found and is still within TTL
+   */
+  public isInvalid(asin: string): boolean {
+    const entry = this.cache[asin];
+    if (!entry) return false;
+
+    if (entry.status === 'valid') return false;
+
+    // Check expiration
+    let effectiveTtl = this.ttl;
+    if (entry.status === 'invalid') {
+      effectiveTtl = this.isInvestigationFileExists(asin) ? this.invalidTtl : this.ttl;
+    } else if (entry.status === 'permanent_invalid') {
+      effectiveTtl = this.permanentInvalidTtl;
     }
 
-    /**
-     * Get item from cache if it exists and is valid
-     * Returns null if not found, expired, or marked invalid
-     * @param options.ignoreExpiration If true, returns valid data even if expired
-     */
-    public get(asin: string, options: { ignoreExpiration?: boolean } = {}): ProductDetail | null {
-        const entry = this.cache[asin];
-
-        if (!entry) {
-            return null;
-        }
-
-        // Check expiration
-        let effectiveTtl = this.ttl;
-        if (entry.status === 'invalid') {
-            // Only use the shorter invalidTtl if we have an investigation result for this ASIN
-            effectiveTtl = this.isInvestigationFileExists(asin) ? this.invalidTtl : this.ttl;
-        }
-
-        if (!options.ignoreExpiration && Date.now() - entry.timestamp > effectiveTtl) {
-            return null;
-        }
-
-        // Return data only if status is valid
-        if (entry.status !== 'valid') {
-            return null;
-        }
-
-        return entry.data;
+    if (Date.now() - entry.timestamp > effectiveTtl) {
+      return false; // Expired, so re-check validity
     }
 
-    /**
-     * Check if ASIN is marked as invalid/not-found and is still within TTL
-     */
-    public isInvalid(asin: string): boolean {
-        const entry = this.cache[asin];
-        if (!entry) return false;
+    return true;
+  }
 
-        if (entry.status === 'valid') return false;
+  /**
+   * Check if ASIN is marked as permanent_invalid and has expired
+   * distinct from generic isInvalid which returns true for ANY invalid/missing item
+   */
+  public isExpiredPermanentInvalid(asin: string): boolean {
+    const entry = this.cache[asin];
+    // If no entry, it's not a permanent_invalid entry (it's just missing)
+    if (!entry) return false;
 
-        // Check expiration
-        let effectiveTtl = this.ttl;
-        if (entry.status === 'invalid') {
-            effectiveTtl = this.isInvestigationFileExists(asin) ? this.invalidTtl : this.ttl;
-        } else if (entry.status === 'permanent_invalid') {
-            effectiveTtl = this.permanentInvalidTtl;
-        }
+    // Must be permanent_invalid
+    if (entry.status !== 'permanent_invalid') return false;
 
-        if (Date.now() - entry.timestamp > effectiveTtl) {
-            return false; // Expired, so re-check validity
-        }
-
-        return true;
+    // Check if expired
+    const effectiveTtl = this.permanentInvalidTtl;
+    if (Date.now() - entry.timestamp > effectiveTtl) {
+      return true;
     }
 
-    /**
-     * Check if ASIN is marked as permanent_invalid and has expired
-     * distinct from generic isInvalid which returns true for ANY invalid/missing item
-     */
-    public isExpiredPermanentInvalid(asin: string): boolean {
-        const entry = this.cache[asin];
-        // If no entry, it's not a permanent_invalid entry (it's just missing)
-        if (!entry) return false;
+    return false;
+  }
 
-        // Must be permanent_invalid
-        if (entry.status !== 'permanent_invalid') return false;
+  /**
+   * Check if investigation result file exists for the given ASIN
+   */
+  private isInvestigationFileExists(asin: string): boolean {
+    const filePath = path.join(process.cwd(), 'data/investigations', `${asin}.json`);
+    return fs.existsSync(filePath);
+  }
 
-        // Check if expired
-        const effectiveTtl = this.permanentInvalidTtl;
-        if (Date.now() - entry.timestamp > effectiveTtl) {
-            return true;
-        }
+  /**
+   * Sanitize string by removing invisible Unicode control characters
+   */
+  private sanitizeString(str: string): string {
+    return str.replace(CreatorsAPICache.INVISIBLE_CHARS_REGEX, '');
+  }
 
-        return false;
+  /**
+   * Recursively sanitize all string values in an object
+   */
+  private sanitizeData<T>(data: T): T {
+    if (data === null || data === undefined) {
+      return data;
     }
 
-
-    /**
-     * Check if investigation result file exists for the given ASIN
-     */
-    private isInvestigationFileExists(asin: string): boolean {
-        const filePath = path.join(process.cwd(), 'data/investigations', `${asin}.json`);
-        return fs.existsSync(filePath);
+    if (typeof data === 'string') {
+      return this.sanitizeString(data) as unknown as T;
     }
 
-    /**
-     * Sanitize string by removing invisible Unicode control characters
-     */
-    private sanitizeString(str: string): string {
-        return str.replace(CreatorsAPICache.INVISIBLE_CHARS_REGEX, '');
+    if (Array.isArray(data)) {
+      return (data as unknown[]).map((item) => this.sanitizeData(item)) as unknown as T;
     }
 
-    /**
-     * Recursively sanitize all string values in an object
-     */
-    private sanitizeData<T>(data: T): T {
-        if (data === null || data === undefined) {
-            return data;
-        }
-
-        if (typeof data === 'string') {
-            return this.sanitizeString(data) as unknown as T;
-        }
-
-        if (Array.isArray(data)) {
-            return (data as unknown[]).map(item => this.sanitizeData(item)) as unknown as T;
-        }
-
-        if (typeof data === 'object') {
-            const result: Record<string, unknown> = {};
-            for (const [key, value] of Object.entries(data)) {
-                result[key] = this.sanitizeData(value);
-            }
-            return result as T;
-        }
-
-        return data;
+    if (typeof data === 'object') {
+      const result: Record<string, unknown> = {};
+      for (const [key, value] of Object.entries(data)) {
+        result[key] = this.sanitizeData(value);
+      }
+      return result as T;
     }
 
-    /**
-     * Set item in cache as valid
-     * If new data has no price info but existing cache has valid price, preserve it
-     */
-    public set(asin: string, data: ProductDetail): void {
-        const sanitizedData = this.sanitizeData(data);
+    return data;
+  }
 
-        // Check if new data has "価格情報なし" and existing cache has valid price
-        const existingEntry = this.cache[asin];
-        if (this.isNoPriceData(sanitizedData) && existingEntry?.data && !this.isNoPriceData(existingEntry.data)) {
-            // Preserve existing price information
-            this.logger.info(`Preserving existing price for ASIN ${asin}: ${existingEntry.data.price.formatted} (new data has no price)`);
-            sanitizedData.price = existingEntry.data.price;
-        }
+  /**
+   * Set item in cache as valid
+   * If new data has no price info but existing cache has valid price, preserve it
+   */
+  public set(asin: string, data: ProductDetail): void {
+    const sanitizedData = this.sanitizeData(data);
 
-        this.cache[asin] = {
-            data: sanitizedData,
-            timestamp: Date.now(),
-            status: 'valid'
-        };
+    // Check if new data has "価格情報なし" and existing cache has valid price
+    const existingEntry = this.cache[asin];
+    if (this.isNoPriceData(sanitizedData) && existingEntry?.data && !this.isNoPriceData(existingEntry.data)) {
+      // Preserve existing price information
+      this.logger.info(
+        `Preserving existing price for ASIN ${asin}: ${existingEntry.data.price.formatted} (new data has no price)`,
+      );
+      sanitizedData.price = existingEntry.data.price;
     }
 
-    /**
-     * Check if product data has no price information
-     */
-    private isNoPriceData(data: ProductDetail): boolean {
-        return data.price.amount === 0 && data.price.formatted === '価格情報なし';
+    this.cache[asin] = {
+      data: sanitizedData,
+      timestamp: Date.now(),
+      status: 'valid',
+    };
+  }
+
+  /**
+   * Check if product data has no price information
+   */
+  private isNoPriceData(data: ProductDetail): boolean {
+    return data.price.amount === 0 && data.price.formatted === '価格情報なし';
+  }
+
+  /**
+   * Mark item as invalid (e.g. not found in Creators API)
+   * If there's already a 'valid' entry, do not overwrite it to prevent data loss on transient errors
+   */
+  public markInvalid(asin: string): void {
+    const existing = this.cache[asin];
+    if (existing && existing.status === 'valid') {
+      this.logger.info(`Not marking ASIN ${asin} as invalid because a valid cache entry already exists.`);
+      return;
     }
 
-    /**
-    * Mark item as invalid (e.g. not found in Creators API)
-    * If there's already a 'valid' entry, do not overwrite it to prevent data loss on transient errors
-    */
-    public markInvalid(asin: string): void {
-        const existing = this.cache[asin];
-        if (existing && existing.status === 'valid') {
-            this.logger.info(`Not marking ASIN ${asin} as invalid because a valid cache entry already exists.`);
-            return;
-        }
+    this.cache[asin] = {
+      data: null,
+      timestamp: Date.now(),
+      status: 'invalid',
+    };
+  }
 
-        this.cache[asin] = {
-            data: null,
-            timestamp: Date.now(),
-            status: 'invalid'
-        };
+  /**
+   * Mark item as permanently invalid (e.g. InvalidParameterValue - re-check only once a week)
+   */
+  public markPermanentInvalid(asin: string): void {
+    const existing = this.cache[asin];
+    if (existing && existing.status === 'valid') {
+      this.logger.info(`Not marking ASIN ${asin} as permanent_invalid because a valid cache entry already exists.`);
+      return;
     }
 
-    /**
-     * Mark item as permanently invalid (e.g. InvalidParameterValue - re-check only once a week)
-     */
-    public markPermanentInvalid(asin: string): void {
-        const existing = this.cache[asin];
-        if (existing && existing.status === 'valid') {
-            this.logger.info(`Not marking ASIN ${asin} as permanent_invalid because a valid cache entry already exists.`);
-            return;
-        }
+    this.cache[asin] = {
+      data: null,
+      timestamp: Date.now(),
+      status: 'permanent_invalid',
+    };
+  }
 
-        this.cache[asin] = {
-            data: null,
-            timestamp: Date.now(),
-            status: 'permanent_invalid'
-        };
+  /**
+   * Get multiple items from cache
+   * Returns a map of found valid items
+   */
+  public getMultiple(asins: string[], options: { ignoreExpiration?: boolean } = {}): Map<string, ProductDetail> {
+    const result = new Map<string, ProductDetail>();
+
+    for (const asin of asins) {
+      const data = this.get(asin, options);
+      if (data) {
+        result.set(asin, data);
+      }
     }
 
-    /**
-    * Get multiple items from cache
-    * Returns a map of found valid items
-    */
-    public getMultiple(asins: string[], options: { ignoreExpiration?: boolean } = {}): Map<string, ProductDetail> {
-        const result = new Map<string, ProductDetail>();
+    return result;
+  }
 
-        for (const asin of asins) {
-            const data = this.get(asin, options);
-            if (data) {
-                result.set(asin, data);
-            }
-        }
+  /**
+   * Helper to determine which asins are missing from cache or expired
+   * Also filters out ASINs known to be invalid so we don't re-fetch them
+   */
+  public getMissingAsins(asins: string[]): string[] {
+    return asins.filter((asin) => {
+      // If we have valid data, it's not missing
+      if (this.get(asin)) return false;
 
-        return result;
-    }
+      // If it's known invalid (and fresh), we don't want to fetch it, so it's not "missing" for the purpose of fetching
+      if (this.isInvalid(asin)) return false;
 
-    /**
-     * Helper to determine which asins are missing from cache or expired
-     * Also filters out ASINs known to be invalid so we don't re-fetch them
-     */
-    public getMissingAsins(asins: string[]): string[] {
-        return asins.filter(asin => {
-            // If we have valid data, it's not missing
-            if (this.get(asin)) return false;
-
-            // If it's known invalid (and fresh), we don't want to fetch it, so it's not "missing" for the purpose of fetching
-            if (this.isInvalid(asin)) return false;
-
-            // Otherwise (not in cache, expired, or invalid-but-expired), it is missing
-            return true;
-        });
-    }
+      // Otherwise (not in cache, expired, or invalid-but-expired), it is missing
+      return true;
+    });
+  }
 }

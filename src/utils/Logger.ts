@@ -70,13 +70,13 @@ export class Logger {
     if (data) {
       logEntry.data = data;
     }
-    
+
     if (error) {
       logEntry.error = error;
     }
 
     const logString = this.formatLogEntry(logEntry);
-    
+
     if (level === LogLevel.ERROR) {
       console.error(logString);
     } else if (level === LogLevel.WARN) {
@@ -87,11 +87,7 @@ export class Logger {
   }
 
   private formatLogEntry(entry: LogEntry): string {
-    const parts = [
-      `[${entry.timestamp}]`,
-      `[${entry.level}]`,
-      entry.message,
-    ];
+    const parts = [`[${entry.timestamp}]`, `[${entry.level}]`, entry.message];
 
     if (entry.data) {
       parts.push(`Data: ${JSON.stringify(entry.data)}`);

@@ -1,12 +1,12 @@
 /**
  * Jules_Investigator - Google Jules APIを使用した商品調査の実行
- * 
+ *
  * 公式APIドキュメント: https://jules.google/docs/api/reference/
  * ※ 迷ったら上記ドキュメントを参照してください
  */
 
-import axios, { AxiosError, AxiosInstance } from 'axios';
-import {
+import axios, { AxiosError, type AxiosInstance } from 'axios';
+import type {
   ActivitiesResponse,
   InvestigationContext,
   InvestigationResult,
@@ -17,9 +17,9 @@ import {
   JulesSourcesResponse,
   SessionActivity,
   SessionStatus,
-  SourceContext
+  SourceContext,
 } from '../types/JulesTypes';
-import { Product } from '../types/Product';
+import type { Product } from '../types/Product';
 import { Logger } from '../utils/Logger';
 import { formatInvestigationPrompt } from './prompts';
 
@@ -27,7 +27,6 @@ const JULES_API_BASE_URL = 'https://jules.googleapis.com/v1alpha';
 
 export class JulesInvestigator {
   private client: AxiosInstance;
-  private credentials: JulesCredentials;
   private logger: Logger;
 
   constructor(credentials: JulesCredentials) {
@@ -39,8 +38,8 @@ export class JulesInvestigator {
       timeout: 30000,
       headers: {
         'X-Goog-Api-Key': credentials.apiKey,
-        'Content-Type': 'application/json'
-      }
+        'Content-Type': 'application/json',
+      },
     });
 
     // Add request/response interceptors for logging
@@ -48,21 +47,21 @@ export class JulesInvestigator {
       (config) => {
         this.logger.info('Jules API Request', {
           method: config.method,
-          url: config.url
+          url: config.url,
         });
         return config;
       },
       (error: unknown) => {
         this.logger.error('Jules API Request Error', error);
         return Promise.reject(error instanceof Error ? error : new Error(String(error)));
-      }
+      },
     );
 
     this.client.interceptors.response.use(
       (response) => {
         this.logger.info('Jules API Response', {
           status: response.status,
-          statusText: response.statusText
+          statusText: response.statusText,
         });
         return response;
       },
@@ -71,13 +70,13 @@ export class JulesInvestigator {
           this.logger.error('Jules API Response Error', {
             status: error.response?.status,
             statusText: error.response?.statusText,
-            data: error.response?.data as unknown
+            data: error.response?.data as unknown,
           });
         } else {
           this.logger.error('Jules API Response Unexpected Error', error);
         }
         return Promise.reject(error instanceof Error ? error : new Error(String(error)));
-      }
+      },
     );
   }
 
@@ -106,13 +105,10 @@ export class JulesInvestigator {
         sourceContext,
         title: `Product Investigation: ${context.product.title}`,
         automationMode: 'AUTO_CREATE_PR',
-        requirePlanApproval: false  // 自動承認
+        requirePlanApproval: false, // 自動承認
       };
 
-      const response = await this.client.post<JulesSessionResponse>(
-        '/sessions',
-        request
-      );
+      const response = await this.client.post<JulesSessionResponse>('/sessions', request);
 
       const sessionId = response.data.id;
       this.logger.info('Jules session created successfully', { sessionId, name: response.data.name });
@@ -130,9 +126,7 @@ export class JulesInvestigator {
    */
   async getSession(sessionId: string): Promise<JulesSessionResponse> {
     try {
-      const response = await this.client.get<JulesSessionResponse>(
-        `/sessions/${sessionId}`
-      );
+      const response = await this.client.get<JulesSessionResponse>(`/sessions/${sessionId}`);
       return response.data;
     } catch (error) {
       const julesError = this.handleApiError(error);
@@ -146,10 +140,9 @@ export class JulesInvestigator {
    */
   async listActivities(sessionId: string, pageSize = 30): Promise<SessionActivity[]> {
     try {
-      const response = await this.client.get<ActivitiesResponse>(
-        `/sessions/${sessionId}/activities`,
-        { params: { pageSize } }
-      );
+      const response = await this.client.get<ActivitiesResponse>(`/sessions/${sessionId}/activities`, {
+        params: { pageSize },
+      });
       return response.data.activities;
     } catch (error) {
       const julesError = this.handleApiError(error);
@@ -163,10 +156,7 @@ export class JulesInvestigator {
    */
   async sendMessage(sessionId: string, prompt: string): Promise<void> {
     try {
-      await this.client.post(
-        `/sessions/${sessionId}:sendMessage`,
-        { prompt }
-      );
+      await this.client.post(`/sessions/${sessionId}:sendMessage`, { prompt });
       this.logger.info('Message sent to session', { sessionId });
     } catch (error) {
       const julesError = this.handleApiError(error);
@@ -213,7 +203,7 @@ export class JulesInvestigator {
       return {
         sessionId,
         status,
-        currentStep: latestActivity?.content?.substring(0, 100) ?? undefined
+        currentStep: latestActivity?.content?.substring(0, 100) ?? undefined,
       };
     } catch (error) {
       const julesError = this.handleApiError(error);
@@ -231,8 +221,8 @@ export class JulesInvestigator {
 
       // エージェントメッセージから分析結果を抽出
       const agentMessages = activities
-        .filter(a => a.type === 'AGENT_MESSAGE')
-        .map(a => a.content || '')
+        .filter((a) => a.type === 'AGENT_MESSAGE')
+        .map((a) => a.content || '')
         .join('\n');
 
       // 簡易的な分析結果パース（実際にはより洗練されたパースが必要）
@@ -241,12 +231,12 @@ export class JulesInvestigator {
         product,
         analysis: this.parseAnalysisFromContent(agentMessages),
         generatedAt: new Date(),
-        rawResponse: agentMessages
+        rawResponse: agentMessages,
       };
 
       this.logger.info('Investigation results retrieved successfully', {
         sessionId,
-        analysisPoints: result.analysis.positivePoints.length + result.analysis.negativePoints.length
+        analysisPoints: result.analysis.positivePoints.length + result.analysis.negativePoints.length,
       });
 
       return result;
@@ -263,7 +253,7 @@ export class JulesInvestigator {
   private parseAnalysisFromContent(content: string): InvestigationResult['analysis'] {
     // JSONブロックを抽出して解析を試みる
     const jsonMatch = content.match(/```json\s*([\s\S]*?)\s*```/);
-    if (jsonMatch && jsonMatch[1]) {
+    if (jsonMatch?.[1]) {
       try {
         const parsed = JSON.parse(jsonMatch[1]) as { analysis?: InvestigationResult['analysis'] };
         if (parsed.analysis) {
@@ -288,8 +278,8 @@ export class JulesInvestigator {
         pros: [],
         cons: [],
         score: 0,
-        scoreRationale: ''
-      }
+        scoreRationale: '',
+      },
     };
   }
 
@@ -299,13 +289,13 @@ export class JulesInvestigator {
    */
   async startInvestigation(
     product: Product,
-    sourceContext: SourceContext
+    sourceContext: SourceContext,
   ): Promise<{ sessionId: string; sessionName: string; product: Product }> {
     const context: InvestigationContext = {
       product,
       focusAreas: ['user_reviews', 'competitive_analysis', 'purchase_recommendation'],
       analysisDepth: 'detailed',
-      includeCompetitors: true
+      includeCompetitors: true,
     };
 
     const prompt = formatInvestigationPrompt(product);
@@ -315,13 +305,13 @@ export class JulesInvestigator {
     this.logger.info('Investigation session started (async mode)', {
       sessionId,
       sessionName: session.name,
-      productAsin: product.asin
+      productAsin: product.asin,
     });
 
     return {
       sessionId,
       sessionName: session.name,
-      product
+      product,
     };
   }
 
@@ -332,13 +322,13 @@ export class JulesInvestigator {
   async conductInvestigation(
     product: Product,
     sourceContext: SourceContext,
-    maxWaitTime: number = 300000
+    maxWaitTime: number = 300000,
   ): Promise<InvestigationResult> {
     const context: InvestigationContext = {
       product,
       focusAreas: ['user_reviews', 'competitive_analysis', 'purchase_recommendation'],
       analysisDepth: 'detailed',
-      includeCompetitors: true
+      includeCompetitors: true,
     };
 
     const prompt = formatInvestigationPrompt(product);
@@ -356,7 +346,7 @@ export class JulesInvestigator {
       }
 
       // 10秒待機してから再チェック
-      await new Promise(resolve => setTimeout(resolve, 10000));
+      await new Promise((resolve) => setTimeout(resolve, 10000));
     }
 
     throw new Error(`Investigation timeout after ${maxWaitTime}ms`);
@@ -376,7 +366,7 @@ export class JulesInvestigator {
           code: 'RATE_LIMIT_EXCEEDED',
           message: 'Jules API rate limit exceeded',
           details: data as Record<string, unknown>,
-          retryable: true
+          retryable: true,
         };
       }
 
@@ -386,7 +376,7 @@ export class JulesInvestigator {
           code: 'AUTHENTICATION_ERROR',
           message: 'Jules API authentication failed. Check your API key.',
           details: data as Record<string, unknown>,
-          retryable: false
+          retryable: false,
         };
       }
 
@@ -396,7 +386,7 @@ export class JulesInvestigator {
           code: 'SERVER_ERROR',
           message: 'Jules API server error',
           details: data as Record<string, unknown>,
-          retryable: true
+          retryable: true,
         };
       }
 
@@ -405,7 +395,7 @@ export class JulesInvestigator {
         code: 'HTTP_ERROR',
         message: `Jules API HTTP error: ${status}`,
         details: data as Record<string, unknown>,
-        retryable: false
+        retryable: false,
       };
     }
 
@@ -416,7 +406,7 @@ export class JulesInvestigator {
           code: 'NETWORK_ERROR',
           message: 'Network error connecting to Jules API',
           details: error.message,
-          retryable: true
+          retryable: true,
         };
       }
 
@@ -424,7 +414,7 @@ export class JulesInvestigator {
         code: 'UNKNOWN_ERROR',
         message: error.message,
         details: error,
-        retryable: false
+        retryable: false,
       };
     }
 
@@ -433,7 +423,7 @@ export class JulesInvestigator {
       code: 'UNKNOWN_ERROR',
       message: 'Unknown Jules API error',
       details: error,
-      retryable: false
+      retryable: false,
     };
   }
 }

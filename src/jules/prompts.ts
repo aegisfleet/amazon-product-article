@@ -1,4 +1,4 @@
-import { Product } from '../types/Product';
+import type { Product } from '../types/Product';
 import { InvestigationPromptBuilder } from './InvestigationPromptBuilder';
 
 /**

@@ -1,23 +1,23 @@
-import * as fs from 'fs';
-import * as path from 'path';
+import * as fs from 'node:fs';
+import * as path from 'node:path';
 
 interface CategoryData {
-    [key: string]: {
-        categories?: string[];
-        [key: string]: unknown;
-    };
+  [key: string]: {
+    categories?: string[];
+    [key: string]: unknown;
+  };
 }
 
 const filePath = path.join(process.cwd(), 'data', 'categorygroups.json');
 const data = JSON.parse(fs.readFileSync(filePath, 'utf8')) as CategoryData;
 
 for (const key in data) {
-    if (Object.prototype.hasOwnProperty.call(data, key)) {
-        const group = data[key];
-        if (group && group.categories && Array.isArray(group.categories)) {
-            group.categories.sort();
-        }
+  if (Object.hasOwn(data, key)) {
+    const group = data[key];
+    if (group?.categories && Array.isArray(group.categories)) {
+      group.categories.sort();
     }
+  }
 }
 
 fs.writeFileSync(filePath, JSON.stringify(data, null, 4), 'utf8');

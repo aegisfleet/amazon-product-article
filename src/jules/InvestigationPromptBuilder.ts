@@ -1,30 +1,41 @@
-import { Product } from '../types/Product';
+import type { Product } from '../types/Product';
 
 export class InvestigationPromptBuilder {
   private readonly product: Product;
   private readonly today: string;
 
   private static readonly SAFETY_SENSITIVE_CATEGORIES = [
-    '美容', 'beauty',
-    '健康', 'health',
-    'サプリメント', 'supplements',
-    '食品', 'food',
-    'ベビー', 'baby',
-    'スキンケア', 'skincare',
-    '医薬品', 'medicine',
-    'ペット用品', 'pet',
-    'コンタクト', 'contact lens'
+    '美容',
+    'beauty',
+    '健康',
+    'health',
+    'サプリメント',
+    'supplements',
+    '食品',
+    'food',
+    'ベビー',
+    'baby',
+    'スキンケア',
+    'skincare',
+    '医薬品',
+    'medicine',
+    'ペット用品',
+    'pet',
+    'コンタクト',
+    'contact lens',
   ];
 
   constructor(product: Product) {
     this.product = product;
     // JSTで現在の日付を取得 (YYYY-MM-DD)
-    this.today = new Date().toLocaleDateString('ja-JP', {
-      timeZone: 'Asia/Tokyo',
-      year: 'numeric',
-      month: '2-digit',
-      day: '2-digit'
-    }).replace(/\//g, '-');
+    this.today = new Date()
+      .toLocaleDateString('ja-JP', {
+        timeZone: 'Asia/Tokyo',
+        year: 'numeric',
+        month: '2-digit',
+        day: '2-digit',
+      })
+      .replace(/\//g, '-');
   }
 
   public build(): string {
@@ -37,9 +48,8 @@ export class InvestigationPromptBuilder {
   }
 
   private isSafetySensitive(): boolean {
-    return InvestigationPromptBuilder.SAFETY_SENSITIVE_CATEGORIES.some(cat =>
-      this.product.category.toLowerCase().includes(cat) ||
-      this.product.title.toLowerCase().includes(cat)
+    return InvestigationPromptBuilder.SAFETY_SENSITIVE_CATEGORIES.some(
+      (cat) => this.product.category.toLowerCase().includes(cat) || this.product.title.toLowerCase().includes(cat),
     );
   }
 

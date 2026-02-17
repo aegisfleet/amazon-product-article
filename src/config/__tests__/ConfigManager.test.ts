@@ -5,7 +5,7 @@
  */
 
 import * as fc from 'fast-check';
-import { ConfigManager, SystemConfig } from '../ConfigManager';
+import { ConfigManager, type SystemConfig } from '../ConfigManager';
 
 // Helper: Generate non-empty alphanumeric string
 const nonEmptyAlphanumericString = (minLength: number, maxLength: number) =>
@@ -13,10 +13,9 @@ const nonEmptyAlphanumericString = (minLength: number, maxLength: number) =>
 
 // Helper: Generate string that contains '/' for repository format
 const repositoryString = () =>
-  fc.tuple(
-    fc.stringMatching(/^[a-zA-Z0-9]{1,20}$/),
-    fc.stringMatching(/^[a-zA-Z0-9]{1,20}$/)
-  ).map(([user, repo]) => `${user}/${repo}`);
+  fc
+    .tuple(fc.stringMatching(/^[a-zA-Z0-9]{1,20}$/), fc.stringMatching(/^[a-zA-Z0-9]{1,20}$/))
+    .map(([user, repo]) => `${user}/${repo}`);
 
 describe('ConfigManager Property-Based Tests', () => {
   let originalEnv: NodeJS.ProcessEnv;
@@ -25,12 +24,25 @@ describe('ConfigManager Property-Based Tests', () => {
   const clearAllConfigEnvVars = () => {
     // Clear all config-related environment variables
     const configEnvVars = [
-      'AMAZON_CREATORS_APPLICATION_ID', 'AMAZON_CREATORS_CREDENTIAL_ID', 'AMAZON_CREATORS_CREDENTIAL_SECRET', 'AMAZON_PARTNER_TAG',
-      'JULES_API_KEY', 'JULES_BASE_URL', 'JULES_TIMEOUT',
-      'GITHUB_TOKEN', 'GITHUB_REPOSITORY', 'GITHUB_BRANCH',
-      'LOG_LEVEL', 'RETRY_ATTEMPTS', 'RETRY_DELAY', 'MAX_CONCURRENT_REQUESTS',
-      'PRODUCT_CATEGORIES', 'MAX_RESULTS_PER_CATEGORY',
-      'MIN_WORD_COUNT', 'INCLUDE_IMAGES', 'ARTICLE_OUTPUT_PATH'
+      'AMAZON_CREATORS_APPLICATION_ID',
+      'AMAZON_CREATORS_CREDENTIAL_ID',
+      'AMAZON_CREATORS_CREDENTIAL_SECRET',
+      'AMAZON_PARTNER_TAG',
+      'JULES_API_KEY',
+      'JULES_BASE_URL',
+      'JULES_TIMEOUT',
+      'GITHUB_TOKEN',
+      'GITHUB_REPOSITORY',
+      'GITHUB_BRANCH',
+      'LOG_LEVEL',
+      'RETRY_ATTEMPTS',
+      'RETRY_DELAY',
+      'MAX_CONCURRENT_REQUESTS',
+      'PRODUCT_CATEGORIES',
+      'MAX_RESULTS_PER_CATEGORY',
+      'MIN_WORD_COUNT',
+      'INCLUDE_IMAGES',
+      'ARTICLE_OUTPUT_PATH',
     ];
     for (const envVar of configEnvVars) {
       delete process.env[envVar];
@@ -48,7 +60,7 @@ describe('ConfigManager Property-Based Tests', () => {
     clearAllConfigEnvVars();
 
     // Suppress expected error logs during testing
-    consoleErrorSpy = jest.spyOn(console, 'error').mockImplementation(() => { });
+    consoleErrorSpy = jest.spyOn(console, 'error').mockImplementation(() => {});
   });
 
   afterEach(() => {
@@ -64,8 +76,8 @@ describe('ConfigManager Property-Based Tests', () => {
 
   /**
    * Property 12: Configuration Management and Validation
-   * For any system configuration change (categories, templates, schedules), 
-   * the system should validate the new settings and provide clear error messages 
+   * For any system configuration change (categories, templates, schedules),
+   * the system should validate the new settings and provide clear error messages
    * for invalid configurations while applying valid changes correctly.
    */
   test('Property 12: Configuration validation should accept valid configs and reject invalid ones', async () => {
@@ -128,9 +140,9 @@ describe('ConfigManager Property-Based Tests', () => {
           expect(config.amazon.applicationId).toBe(validConfig.amazonApplicationId);
           expect(config.jules.apiKey).toBe(validConfig.julesApiKey);
           expect(config.github.token).toBe(validConfig.githubToken);
-        }
+        },
       ),
-      { numRuns: 20 }
+      { numRuns: 20 },
     );
   });
 
@@ -173,7 +185,7 @@ describe('ConfigManager Property-Based Tests', () => {
             githubToken: nonEmptyAlphanumericString(20, 100),
             githubRepository: repositoryString(),
             minWordCount: fc.integer({ min: 10001, max: 50000 }), // Invalid: > 10000
-          })
+          }),
         ),
         async (invalidConfig) => {
           // Reset singleton for each property test iteration
@@ -248,9 +260,9 @@ describe('ConfigManager Property-Based Tests', () => {
               expect(errorMessage.toLowerCase()).toContain('word count');
             }
           }
-        }
+        },
       ),
-      { numRuns: 20 }
+      { numRuns: 20 },
     );
   });
 
@@ -294,7 +306,7 @@ describe('ConfigManager Property-Based Tests', () => {
               ...initialConfig.system,
               retryAttempts: testData.newRetryAttempts,
               retryDelay: testData.newRetryDelay,
-            }
+            },
           };
 
           // Valid updates should succeed
@@ -303,9 +315,9 @@ describe('ConfigManager Property-Based Tests', () => {
           const updatedConfig = configManager.getConfig();
           expect(updatedConfig.system.retryAttempts).toBe(testData.newRetryAttempts);
           expect(updatedConfig.system.retryDelay).toBe(testData.newRetryDelay);
-        }
+        },
       ),
-      { numRuns: 20 }
+      { numRuns: 20 },
     );
   });
 });

@@ -2,15 +2,21 @@
  * Article_Generator - 調査結果からMarkdown記事として生成するコンポーネント
  */
 
-import fs from 'fs';
-import path from 'path';
+import fs from 'node:fs';
+import path from 'node:path';
 import { AffiliateLinkManager } from '../affiliate/AffiliateLinkManager';
-import { ReviewAnalysisResult } from '../analysis/ReviewAnalyzer';
-import { AffiliateLink } from '../types/AffiliateTypes';
-import { InvestigationResult, TechnicalSpecs } from '../types/JulesTypes';
-import { Product, ProductDetail } from '../types/Product';
+import type { ReviewAnalysisResult } from '../analysis/ReviewAnalyzer';
+import type { AffiliateLink } from '../types/AffiliateTypes';
+import type {
+  ArticleMetadata,
+  ArticleSection,
+  ArticleTemplate,
+  GeneratedArticle,
+  TemplateSection,
+} from '../types/ArticleTypes';
+import type { InvestigationResult, TechnicalSpecs } from '../types/JulesTypes';
+import type { Product, ProductDetail } from '../types/Product';
 import { Logger } from '../utils/Logger';
-import { ArticleMetadata, ArticleSection, ArticleTemplate, GeneratedArticle, TemplateSection } from '../types/ArticleTypes';
 import { DEFAULT_ARTICLE_TEMPLATE, DEFAULT_IMAGE_URL, HANDLED_SPEC_FIELDS, SPEC_LABEL_MAP } from './ArticleConstants';
 
 export class ArticleGenerator {
@@ -36,11 +42,11 @@ export class ArticleGenerator {
     reviewAnalysis?: ReviewAnalysisResult,
     template?: ArticleTemplate,
     affiliatePartnerTag?: string,
-    competitorDetails?: Map<string, ProductDetail>
+    competitorDetails?: Map<string, ProductDetail>,
   ): Promise<GeneratedArticle> {
     this.logger.info('Starting article generation', {
       productAsin: product.asin,
-      sessionId: investigation.sessionId
+      sessionId: investigation.sessionId,
     });
 
     try {
@@ -53,7 +59,7 @@ export class ArticleGenerator {
         reviewAnalysis,
         articleTemplate,
         affiliatePartnerTag,
-        competitorDetails
+        competitorDetails,
       );
 
       const content = this.assembleArticle(sections, metadata);
@@ -76,20 +82,22 @@ export class ArticleGenerator {
         metadata,
         wordCount,
         sections,
-        affiliateLinks
+        affiliateLinks,
       };
 
       this.logger.info('Article generation completed', {
         productAsin: product.asin,
         wordCount,
         sectionsCount: sections.length,
-        affiliateLinksCount: affiliateLinks.length
+        affiliateLinksCount: affiliateLinks.length,
       });
 
       return article;
     } catch (error) {
       this.logger.error('Failed to generate article', error);
-      throw new Error(`Article generation failed: ${error instanceof Error ? error.message : 'Unknown error'}`, { cause: error });
+      throw new Error(`Article generation failed: ${error instanceof Error ? error.message : 'Unknown error'}`, {
+        cause: error,
+      });
     }
   }
 
@@ -103,7 +111,8 @@ export class ArticleGenerator {
     const title = displayName;
 
     // card-excerpt用にproductDescriptionを使用（なければ従来の生成ロジックへフォールバック）
-    const description = investigation.analysis.productDescription ||
+    const description =
+      investigation.analysis.productDescription ||
       `${displayName}の実際のユーザーレビューを分析し、競合商品との比較を通じて購買判断をサポート`;
 
     const tags = this.generateTags(product, investigation);
@@ -142,7 +151,7 @@ export class ArticleGenerator {
       featured: this.shouldBeFeatured(product, investigation),
       mobileOptimized: true,
       seoKeywords,
-      affiliate_url: affiliateUrl
+      affiliate_url: affiliateUrl,
     };
 
     if (product.isPrimeEligible !== undefined) {
@@ -173,18 +182,16 @@ export class ArticleGenerator {
     }
 
     // Hero Front Matter Data
-    const { topPlus, topMinus } = this.extractTopRationaleItems(
-      investigation.analysis.recommendation.scoreRationale
-    );
+    const { topPlus, topMinus } = this.extractTopRationaleItems(investigation.analysis.recommendation.scoreRationale);
 
     metadata.hero = {
       score_rationale: {
         top_plus: topPlus,
-        top_minus: topMinus
+        top_minus: topMinus,
       },
       target_users: investigation.analysis.recommendation.targetUsers,
       warnings: investigation.analysis.recommendation.cons || [],
-      specs: investigation.analysis.technicalSpecs || {}
+      specs: investigation.analysis.technicalSpecs || {},
     };
 
     return metadata;
@@ -239,7 +246,7 @@ export class ArticleGenerator {
     // 画像をモバイル対応のHTML形式に変換（onerrorハンドラを追加）
     mobileContent = mobileContent.replace(
       /!\[([^\]]*)\]\(([^)]+)\)/g,
-      `<img src="$2" alt="$1" class="mobile-responsive-image" onerror="this.onerror=null;this.src='${DEFAULT_IMAGE_URL}';">`
+      `<img src="$2" alt="$1" class="mobile-responsive-image" onerror="this.onerror=null;this.src='${DEFAULT_IMAGE_URL}';">`,
     );
 
     // リストアイテムを読みやすく調整
@@ -262,7 +269,7 @@ export class ArticleGenerator {
     // 商品名の後にアフィリエイトリンクを挿入
     const contentWithLinks = content.replace(
       /(## 商品詳細・購入)/,
-      `$1\n\n<a href="${affiliateUrl}" class="affiliate-link mobile-friendly-button" target="_blank" rel="noopener noreferrer"><strong>${product.asin}をAmazonで確認する</strong></a>\n`
+      `$1\n\n<a href="${affiliateUrl}" class="affiliate-link mobile-friendly-button" target="_blank" rel="noopener noreferrer"><strong>${product.asin}をAmazonで確認する</strong></a>\n`,
     );
 
     return contentWithLinks;
@@ -277,7 +284,7 @@ export class ArticleGenerator {
     reviewAnalysis: ReviewAnalysisResult | undefined,
     template: ArticleTemplate,
     affiliatePartnerTag?: string,
-    competitorDetails?: Map<string, ProductDetail>
+    competitorDetails?: Map<string, ProductDetail>,
   ): Promise<ArticleSection[]> {
     const sections: ArticleSection[] = [];
     const affiliateTag = affiliatePartnerTag || process.env.AMAZON_PARTNER_TAG || 'your-affiliate-tag';
@@ -285,7 +292,6 @@ export class ArticleGenerator {
     // 商品ヒーローセクション（商品概要 + 購入リンク）
     // NOTE: Refactored to Front Matter + Hugo Partial.
     // sections.push(await this.generateProductHeroSection(product, investigation, affiliateTag));
-
 
     // 商品の特徴と使い方
     sections.push(this.generateFeaturesSection(product, investigation));
@@ -295,7 +301,14 @@ export class ArticleGenerator {
 
     // 競合商品との比較（表形式）
     if (competitorDetails) {
-      sections.push(await this.generateCompetitiveAnalysisSection(investigation, template.sections.competitiveAnalysis, affiliateTag, competitorDetails));
+      sections.push(
+        await this.generateCompetitiveAnalysisSection(
+          investigation,
+          template.sections.competitiveAnalysis,
+          affiliateTag,
+          competitorDetails,
+        ),
+      );
     }
 
     // 購入推奨度
@@ -320,8 +333,8 @@ export class ArticleGenerator {
    */
   private generatePurchaseSection(
     product: Product,
-    affiliateTag: string,
-    investigation: InvestigationResult
+    _affiliateTag: string,
+    investigation: InvestigationResult,
   ): ArticleSection {
     const affiliateLink = this.affiliateManager.generateLinkFromProduct(product);
     const affiliateUrl = affiliateLink.url;
@@ -330,7 +343,7 @@ export class ArticleGenerator {
     const infoRows: string[] = [
       `| ASIN | ${product.asin} |`,
       `| 現在価格 | ${product.price.formatted} |`,
-      `| カテゴリ | ${product.categoryInfo?.main || product.category} |`
+      `| カテゴリ | ${product.categoryInfo?.main || product.category} |`,
     ];
 
     // 追加プロパティ（ブランドなど）
@@ -383,7 +396,7 @@ ${infoRows.join('\n')}
       title: '商品詳細・購入',
       content,
       wordCount: this.calculateWordCount(content),
-      requiredElements: ['商品詳細表', '購入リンク']
+      requiredElements: ['商品詳細表', '購入リンク'],
     };
   }
 
@@ -399,13 +412,13 @@ ${infoRows.join('\n')}
       'market analysis',
       'product specifications',
       'internal analysis',
-      'market research'
+      'market research',
     ];
 
     // 有効なソースのみフィルタリング
-    const validSources = investigation.analysis.sources.filter(source => {
+    const validSources = investigation.analysis.sources.filter((source) => {
       const nameLower = source.name.toLowerCase();
-      return !excludedPatterns.some(pattern => nameLower.includes(pattern));
+      return !excludedPatterns.some((pattern) => nameLower.includes(pattern));
     });
 
     // 有効なソースがなければnullを返す（セクション非表示）
@@ -416,7 +429,7 @@ ${infoRows.join('\n')}
     // URLがあればリンク、なければプレーンテキスト
     // ただし、Creators APIのURLはユーザーには不要なためリンクを貼らない
     const sourcesList = validSources
-      .map(source => {
+      .map((source) => {
         const credibility = source.credibility ? ` (${source.credibility})` : '';
         const creatorsApiHost = 'webservices.amazon.co.jp';
         const creatorsApiPathPrefix = '/creators/v1';
@@ -424,10 +437,7 @@ ${infoRows.join('\n')}
         const isCreatorsApiUrl = (urlString: string): boolean => {
           try {
             const parsed = new URL(urlString);
-            return (
-              parsed.hostname === creatorsApiHost &&
-              parsed.pathname.startsWith(creatorsApiPathPrefix)
-            );
+            return parsed.hostname === creatorsApiHost && parsed.pathname.startsWith(creatorsApiPathPrefix);
           } catch {
             // URLとして解釈できない場合はCreators APIとはみなさない（従来動作に近づける）
             return false;
@@ -451,22 +461,17 @@ ${sourcesList}`;
       title: '🔗 参考情報ソース',
       content,
       wordCount: this.calculateWordCount(content),
-      requiredElements: ['情報ソース一覧']
+      requiredElements: ['情報ソース一覧'],
     };
   }
-
-
 
   /**
    * 商品の特徴と使い方セクションを生成
    */
-  private generateFeaturesSection(
-    _product: Product,
-    investigation: InvestigationResult
-  ): ArticleSection {
+  private generateFeaturesSection(_product: Product, investigation: InvestigationResult): ArticleSection {
     // 使用シーン
     const useCases = investigation.analysis.useCases
-      .slice(0, 4)  // 上位4つに制限
+      .slice(0, 4) // 上位4つに制限
       .map((useCase, i) => {
         const icons = ['💡', '🎯', '✨', '🔧'];
         return `<div class="feature-card">
@@ -478,11 +483,12 @@ ${sourcesList}`;
 
     // 使い方（productUsageがあれば使用）
     const productUsage = investigation.analysis.productUsage;
-    const usageSection = productUsage && productUsage.length > 0
-      ? `### 🔧 使い方
+    const usageSection =
+      productUsage && productUsage.length > 0
+        ? `### 🔧 使い方
 
 ${productUsage.map((usage, i) => `${i + 1}. ${usage}`).join('\n')}`
-      : '';
+        : '';
 
     const content = `## 📦 商品の特徴
 
@@ -500,59 +506,7 @@ ${usageSection}`;
       title: '商品の特徴',
       content,
       wordCount: this.calculateWordCount(content),
-      requiredElements: ['仕様', '使用シーン']
-    };
-  }
-
-  /**
-   * 導入部セクションを生成（後方互換性のため保持、現在は未使用）
-   */
-  private async generateIntroductionSection(
-    product: Product,
-    _investigation: InvestigationResult,
-    template: TemplateSection
-  ): Promise<ArticleSection> {
-    await Promise.resolve();
-    const content = `# ${product.title}の詳細レビュー`;
-
-    return {
-      title: '導入部',
-      content,
-      wordCount: this.calculateWordCount(content),
-      requiredElements: template.requiredElements
-    };
-  }
-
-  /**
-   * 商品概要セクションを生成（後方互換性のため保持、現在は未使用）
-   */
-  private async generateProductOverviewSection(product: Product, investigation: InvestigationResult): Promise<ArticleSection> {
-    await Promise.resolve();
-    const specifications = Object.entries(product.specifications)
-      .map(([key, value]) => `- **${key}**: ${value}`)
-      .join('\n');
-
-    const content = `## 商品概要
-
-### 基本情報
-
-- **商品名**: ${product.title}
-- **価格**: ${product.price.formatted}
-- **カテゴリ**: ${product.category}
-- **平均評価**: 外部情報源を参照
-- **調査日**: ${investigation.analysis.lastInvestigated || '不明'}
-
-### 主な仕様
-
-${specifications}
-
-<img src="${product.images.primary}" alt="${product.title}" class="product-main-image mobile-responsive">`;
-
-    return {
-      title: '商品概要',
-      content,
-      wordCount: this.calculateWordCount(content),
-      requiredElements: ['基本情報', '仕様', '画像']
+      requiredElements: ['仕様', '使用シーン'],
     };
   }
 
@@ -562,20 +516,14 @@ ${specifications}
   private async generateUserReviewsSection(
     investigation: InvestigationResult,
     reviewAnalysis: ReviewAnalysisResult | undefined,
-    template: TemplateSection
+    template: TemplateSection,
   ): Promise<ArticleSection> {
     await Promise.resolve();
-    const positivePoints = investigation.analysis.positivePoints
-      .map(point => `- ${point}`)
-      .join('\n');
+    const positivePoints = investigation.analysis.positivePoints.map((point) => `- ${point}`).join('\n');
 
-    const negativePoints = investigation.analysis.negativePoints
-      .map(point => `- ${point}`)
-      .join('\n');
+    const negativePoints = investigation.analysis.negativePoints.map((point) => `- ${point}`).join('\n');
 
-    const useCases = investigation.analysis.useCases
-      .map(useCase => `- ${useCase}`)
-      .join('\n');
+    const useCases = investigation.analysis.useCases.map((useCase) => `- ${useCase}`).join('\n');
 
     // ユーザーストーリーの生成
     const userImpressionBlock = investigation.analysis.userImpression
@@ -583,16 +531,19 @@ ${specifications}
       : '';
 
     const userStoriesBlock = investigation.analysis.userStories
-      .map(story => `#### ${story.userType}の体験談 (${story.scenario})
+      .map(
+        (story) => `#### ${story.userType}の体験談 (${story.scenario})
 
 > ${story.experience}
 > 
-> (評価: ${story.sentiment === 'positive' ? '満足' : story.sentiment === 'negative' ? '不満' : '普通'})`)
+> (評価: ${story.sentiment === 'positive' ? '満足' : story.sentiment === 'negative' ? '不満' : '普通'})`,
+      )
       .join('\n\n');
 
-    const userStories = investigation.analysis.userStories && investigation.analysis.userStories.length > 0
-      ? `### 🗣️ 購入者の生の声（ユーザーストーリー）\n${userImpressionBlock}\n\n${userStoriesBlock}`
-      : '';
+    const userStories =
+      investigation.analysis.userStories && investigation.analysis.userStories.length > 0
+        ? `### 🗣️ 購入者の生の声（ユーザーストーリー）\n${userImpressionBlock}\n\n${userStoriesBlock}`
+        : '';
 
     const content = `## 📊 ユーザーレビュー
 
@@ -616,7 +567,7 @@ ${reviewAnalysis ? this.generateSentimentAnalysis(reviewAnalysis) : ''}`;
       title: '📊 ユーザーレビュー',
       content,
       wordCount: this.calculateWordCount(content),
-      requiredElements: template.requiredElements
+      requiredElements: template.requiredElements,
     };
   }
 
@@ -627,104 +578,103 @@ ${reviewAnalysis ? this.generateSentimentAnalysis(reviewAnalysis) : ''}`;
   private async generateCompetitiveAnalysisSection(
     investigation: InvestigationResult,
     template: TemplateSection,
-    affiliateTag: string,
-    competitorDetails?: Map<string, ProductDetail>
+    _affiliateTag: string,
+    competitorDetails?: Map<string, ProductDetail>,
   ): Promise<ArticleSection> {
     const competitors = investigation.analysis.competitiveAnalysis;
     const cwd = process.cwd();
 
     // 各競合商品をカード形式で表示
-    const competitorCards = (await Promise.all(competitors.map(async competitor => {
-      const features = competitor.featureComparison
-        .map(feature => `<li>${feature}</li>`)
-        .join('\n');
+    const competitorCards = (
+      await Promise.all(
+        competitors.map(async (competitor) => {
+          const features = competitor.featureComparison.map((feature) => `<li>${feature}</li>`).join('\n');
 
-      const differentiators = competitor.differentiators
-        .map(diff => `<li>${diff}</li>`)
-        .join('\n');
+          const differentiators = competitor.differentiators.map((diff) => `<li>${diff}</li>`).join('\n');
 
-      // Creators APIから取得した競合商品の詳細情報
-      const isValidAsin = typeof competitor.asin === 'string' && /^[A-Z0-9]{10}$/i.test(competitor.asin);
-      const normalizedAsin = isValidAsin && competitor.asin ? competitor.asin.toUpperCase() : undefined;
-      const detail = normalizedAsin ? competitorDetails?.get(normalizedAsin) : undefined;
+          // Creators APIから取得した競合商品の詳細情報
+          const isValidAsin = typeof competitor.asin === 'string' && /^[A-Z0-9]{10}$/i.test(competitor.asin);
+          const normalizedAsin = isValidAsin && competitor.asin ? competitor.asin.toUpperCase() : undefined;
+          const detail = normalizedAsin ? competitorDetails?.get(normalizedAsin) : undefined;
 
-      // 調査済み記事が存在するかチェック
-      let internalLink = '';
-      let hasInternalReview = false;
-      let competitorScore: number | undefined;
-      if (normalizedAsin) {
-        let competitorInvestigation: InvestigationResult | null = null;
+          // 調査済み記事が存在するかチェック
+          let internalLink = '';
+          let hasInternalReview = false;
+          let competitorScore: number | undefined;
+          if (normalizedAsin) {
+            let competitorInvestigation: InvestigationResult | null = null;
 
-        // キャッシュを確認
-        if (this.investigationCache.has(normalizedAsin)) {
-          competitorInvestigation = this.investigationCache.get(normalizedAsin) || null;
-        } else {
-          const investigationPath = path.join(cwd, 'data', 'investigations', `${normalizedAsin}.json`);
-          try {
-            const fileContent = await fs.promises.readFile(investigationPath, 'utf-8');
-            competitorInvestigation = JSON.parse(fileContent) as InvestigationResult;
-            if (this.investigationCache.size >= 1000) this.investigationCache.clear();
-            this.investigationCache.set(normalizedAsin, competitorInvestigation);
-          } catch (error) {
-            // スコア取得に失敗した場合は無視（ファイルが存在しない場合もここに来る）
-            if (this.investigationCache.size >= 1000) this.investigationCache.clear();
-            this.investigationCache.set(normalizedAsin, null);
-            // ENOENT以外のエラー（パースエラーなど）はデバッグログに残す
-            if (error instanceof Error && (error as NodeJS.ErrnoException).code !== 'ENOENT') {
-              this.logger.debug(`Failed to load competitor investigation for ${competitor.asin}`, error);
+            // キャッシュを確認
+            if (this.investigationCache.has(normalizedAsin)) {
+              competitorInvestigation = this.investigationCache.get(normalizedAsin) || null;
+            } else {
+              const investigationPath = path.join(cwd, 'data', 'investigations', `${normalizedAsin}.json`);
+              try {
+                const fileContent = await fs.promises.readFile(investigationPath, 'utf-8');
+                competitorInvestigation = JSON.parse(fileContent) as InvestigationResult;
+                if (this.investigationCache.size >= 1000) this.investigationCache.clear();
+                this.investigationCache.set(normalizedAsin, competitorInvestigation);
+              } catch (error) {
+                // スコア取得に失敗した場合は無視（ファイルが存在しない場合もここに来る）
+                if (this.investigationCache.size >= 1000) this.investigationCache.clear();
+                this.investigationCache.set(normalizedAsin, null);
+                // ENOENT以外のエラー（パースエラーなど）はデバッグログに残す
+                if (error instanceof Error && (error as NodeJS.ErrnoException).code !== 'ENOENT') {
+                  this.logger.debug(`Failed to load competitor investigation for ${competitor.asin}`, error);
+                }
+              }
+            }
+
+            if (competitorInvestigation) {
+              hasInternalReview = true;
+              internalLink = `<a href="../${normalizedAsin.toLowerCase()}/" class="btn-internal-small">📄 サイト内レビュー</a>`;
+              competitorScore = competitorInvestigation.analysis?.recommendation?.score;
             }
           }
-        }
 
-        if (competitorInvestigation) {
-          hasInternalReview = true;
-          internalLink = `<a href="../${normalizedAsin.toLowerCase()}/" class="btn-internal-small">📄 サイト内レビュー</a>`;
-          competitorScore = competitorInvestigation.analysis?.recommendation?.score;
-        }
-      }
+          // 商品プレビュー（Creators API情報がある場合）
+          let productPreview = '';
+          if (detail) {
+            const imageUrl = detail.images?.primary || '';
+            const priceText = detail.price?.formatted || '';
+            const availabilityText = detail.availability || '';
+            const primeText = detail.isPrimeEligible ? '⭐ Prime対応' : '';
 
-      // 商品プレビュー（Creators API情報がある場合）
-      let productPreview = '';
-      if (detail) {
-        const imageUrl = detail.images?.primary || '';
-        const priceText = detail.price?.formatted || '';
-        const availabilityText = detail.availability || '';
-        const primeText = detail.isPrimeEligible ? '⭐ Prime対応' : '';
+            // スコア表示のHTML生成
+            let scoreHtml = '';
+            if (competitorScore !== undefined) {
+              let scoreClass = 'score-fair';
+              if (competitorScore >= 80) {
+                scoreClass = 'score-excellent';
+              } else if (competitorScore >= 60) {
+                scoreClass = 'score-good';
+              }
+              scoreHtml = `<div class="competitor-score-container"><span class="pickup-card-score ${scoreClass}">🏆 ${competitorScore}点</span></div>`;
+            }
 
-        // スコア表示のHTML生成
-        let scoreHtml = '';
-        if (competitorScore !== undefined) {
-          let scoreClass = 'score-fair';
-          if (competitorScore >= 80) {
-            scoreClass = 'score-excellent';
-          } else if (competitorScore >= 60) {
-            scoreClass = 'score-good';
-          }
-          scoreHtml = `<div class="competitor-score-container"><span class="pickup-card-score ${scoreClass}">🏆 ${competitorScore}点</span></div>`;
-        }
+            const previewTag = hasInternalReview ? 'a' : 'div';
+            const previewAttrs =
+              hasInternalReview && normalizedAsin ? ` href="../${normalizedAsin.toLowerCase()}/"` : '';
 
-        const previewTag = hasInternalReview ? 'a' : 'div';
-        const previewAttrs = (hasInternalReview && normalizedAsin) ? ` href="../${normalizedAsin.toLowerCase()}/"` : '';
-
-        productPreview = `
+            productPreview = `
 <${previewTag}${previewAttrs} class="competitor-preview">
 <img src="${imageUrl}" alt="${competitor.name}" class="competitor-preview-img">
 <div class="competitor-preview-info">
 ${scoreHtml}${priceText ? `<span class="competitor-actual-price">${priceText}</span>` : ''}${primeText ? `<span class="competitor-prime">${primeText}</span>` : ''}${availabilityText ? `<span class="competitor-availability">📦 ${availabilityText}</span>` : ''}
 </div>
 </${previewTag}>`;
-      }
+          }
 
-      // Creators APIが実行された場合（competitorDetailsが存在する場合）、
-      // ASINが存在しても詳細情報が取得できなかった（エラーになった）商品はリンクを表示しない
-      const shouldShowLink = normalizedAsin && (!competitorDetails || competitorDetails.has(normalizedAsin));
+          // Creators APIが実行された場合（competitorDetailsが存在する場合）、
+          // ASINが存在しても詳細情報が取得できなかった（エラーになった）商品はリンクを表示しない
+          const shouldShowLink = normalizedAsin && (!competitorDetails || competitorDetails.has(normalizedAsin));
 
-      // アフィリエイトリンクを生成
-      const competitorLink = shouldShowLink
-        ? `<a href="${detail?.detailPageUrl || this.affiliateManager.generateAffiliateLink(normalizedAsin).url}" class="btn-amazon-small" target="_blank" rel="noopener noreferrer">🛒 Amazonで見る</a>`
-        : '';
+          // アフィリエイトリンクを生成
+          const competitorLink = shouldShowLink
+            ? `<a href="${detail?.detailPageUrl || this.affiliateManager.generateAffiliateLink(normalizedAsin).url}" class="btn-amazon-small" target="_blank" rel="noopener noreferrer">🛒 Amazonで見る</a>`
+            : '';
 
-      return `<div class="competitor-card">
+          return `<div class="competitor-card">
 <h4>${competitor.name}</h4>
 <p class="competitor-price">💰 ${competitor.priceComparison}</p>
 <div class="competitor-features">
@@ -745,8 +695,9 @@ ${internalLink}
 ${competitorLink}
 </div>
 </div>`;
-    })))
-      .join('\n\n');
+        }),
+      )
+    ).join('\n\n');
 
     const content = `## 🥊 競合商品との比較
 
@@ -763,14 +714,14 @@ ${competitorCards}
 <div class="pros-card">
 <h4>👍 良い点</h4>
 
-${investigation.analysis.recommendation.pros.map(pro => `- ${pro}`).join('\n')}
+${investigation.analysis.recommendation.pros.map((pro) => `- ${pro}`).join('\n')}
 
 </div>
 
 <div class="cons-card">
 <h4>👎 気になる点</h4>
 
-${investigation.analysis.recommendation.cons.map(con => `- ${con}`).join('\n')}
+${investigation.analysis.recommendation.cons.map((con) => `- ${con}`).join('\n')}
 
 </div>
 
@@ -780,20 +731,15 @@ ${investigation.analysis.recommendation.cons.map(con => `- ${con}`).join('\n')}
       title: '競合商品との比較',
       content,
       wordCount: this.calculateWordCount(content),
-      requiredElements: template.requiredElements
+      requiredElements: template.requiredElements,
     };
   }
 
   /**
    * 推奨度セクションを生成
    */
-  private generateRecommendationSection(
-    investigation: InvestigationResult,
-    template: TemplateSection
-  ): ArticleSection {
-    const targetUsers = investigation.analysis.recommendation.targetUsers
-      .map(user => `- ${user}`)
-      .join('\n');
+  private generateRecommendationSection(investigation: InvestigationResult, template: TemplateSection): ArticleSection {
+    const targetUsers = investigation.analysis.recommendation.targetUsers.map((user) => `- ${user}`).join('\n');
 
     const score = investigation.analysis.recommendation.score;
     const scoreText = this.getScoreDescription(score);
@@ -814,24 +760,27 @@ ${targetUsers}
 
 ### 購入時の注意点
 
-${investigation.analysis.recommendation.cons.map(con => `- ⚠️ ${con}`).join('\n')}
+${investigation.analysis.recommendation.cons.map((con) => `- ⚠️ ${con}`).join('\n')}
 
 ### コストパフォーマンス評価
 
 この商品は${scoreText}の評価となりました。特に${investigation.analysis.recommendation.pros[0] || '品質面'}での優位性が認められます。
 
-${score >= 80 ? '自信を持っておすすめできる商品です。' :
-        score >= 60 ? '用途を限定すれば良い選択肢となります。' :
-          '購入前に他の選択肢も検討することをおすすめします。'}`;
+${
+  score >= 80
+    ? '自信を持っておすすめできる商品です。'
+    : score >= 60
+      ? '用途を限定すれば良い選択肢となります。'
+      : '購入前に他の選択肢も検討することをおすすめします。'
+}`;
 
     return {
       title: '✅ 購入推奨度',
       content,
       wordCount: this.calculateWordCount(content),
-      requiredElements: template.requiredElements
+      requiredElements: template.requiredElements,
     };
   }
-
 
   /**
    * 動的スペックレンダリング
@@ -872,7 +821,7 @@ ${score >= 80 ? '自信を持っておすすめできる商品です。' :
     // camelCaseをスペース区切りに変換
     return fieldName
       .replace(/([A-Z])/g, ' $1')
-      .replace(/^./, str => str.toUpperCase())
+      .replace(/^./, (str) => str.toUpperCase())
       .trim();
   }
 
@@ -894,7 +843,7 @@ ${score >= 80 ? '自信を持っておすすめできる商品です。' :
 
     if (Array.isArray(value)) {
       // 配列内の各要素をフォーマット
-      const formatted = value.map(item => {
+      const formatted = value.map((item) => {
         if (typeof item === 'string') return item;
         if (typeof item === 'object' && item !== null) {
           return this.formatObjectValue(item as Record<string, unknown>, category);
@@ -948,7 +897,7 @@ ${score >= 80 ? '自信を持っておすすめできる商品です。' :
    */
   private assembleArticle(sections: ArticleSection[], metadata: ArticleMetadata): string {
     const frontMatter = this.generateFrontMatter(metadata);
-    const sectionsContent = sections.map(section => section.content).join('\n\n');
+    const sectionsContent = sections.map((section) => section.content).join('\n\n');
 
     return `${frontMatter}\n\n${sectionsContent}\n\n---\n*本記事にはアフィリエイトリンクが含まれています。*`;
   }
@@ -957,9 +906,7 @@ ${score >= 80 ? '自信を持っておすすめできる商品です。' :
    * フロントマターを生成
    */
   private escapeForFrontMatter(value: string): string {
-    return value
-      .replace(/\\/g, '\\\\')
-      .replace(/"/g, '\\"');
+    return value.replace(/\\/g, '\\\\').replace(/"/g, '\\"');
   }
 
   private generateFrontMatter(metadata: ArticleMetadata): string {
@@ -968,7 +915,7 @@ ${score >= 80 ? '自信を持っておすすめできる商品です。' :
       `title: "${metadata.title}"`,
       `description: "${metadata.description}"`,
       `date: ${metadata.publishDate.toISOString().split('T')[0]}`,
-      `categories: ["${metadata.category}"]`
+      `categories: ["${metadata.category}"]`,
     ];
 
     if (metadata.subcategory) lines.push(`subcategory: "${metadata.subcategory}"`);
@@ -984,8 +931,8 @@ ${score >= 80 ? '自信を持っておすすめできる商品です。' :
 
     if (metadata.rating) lines.push(`rating: ${metadata.rating}`);
 
-    lines.push(`tags: [${metadata.tags.map(tag => `"${tag}"`).join(', ')}]`);
-    lines.push(`keywords: [${metadata.seoKeywords.map(keyword => `"${keyword}"`).join(', ')}]`);
+    lines.push(`tags: [${metadata.tags.map((tag) => `"${tag}"`).join(', ')}]`);
+    lines.push(`keywords: [${metadata.seoKeywords.map((keyword) => `"${keyword}"`).join(', ')}]`);
     if (metadata.featured) lines.push(`featured: ${metadata.featured}`);
     if (typeof metadata.mobileOptimized === 'boolean') lines.push(`mobile_optimized: ${metadata.mobileOptimized}`);
     if (metadata.lastInvestigated) lines.push(`last_investigated: "${metadata.lastInvestigated}"`);
@@ -993,7 +940,7 @@ ${score >= 80 ? '自信を持っておすすめできる商品です。' :
 
     // Add images for Hugo template (used on home page)
     if (metadata.images && metadata.images.length > 0) {
-      lines.push(`images: [${metadata.images.map(img => `"${img}"`).join(', ')}]`);
+      lines.push(`images: [${metadata.images.map((img) => `"${img}"`).join(', ')}]`);
     }
 
     // Add technical specs (flattened for Hugo template)
@@ -1050,7 +997,9 @@ ${score >= 80 ? '自信を持っておすすめできる商品です。' :
       // イヤホン・ヘッドホン
       if (specs.driver) addSpec('driver', `"${this.formatSpecValue(specs.driver)}"`);
       if (specs.codec) {
-        const codecVal = Array.isArray(specs.codec) ? `[${specs.codec.map(c => `"${c}"`).join(', ')}]` : `"${specs.codec}"`;
+        const codecVal = Array.isArray(specs.codec)
+          ? `[${specs.codec.map((c) => `"${c}"`).join(', ')}]`
+          : `"${specs.codec}"`;
         addSpec('codec', codecVal);
       }
       if (specs.noiseCancel) addSpec('noise_cancel', `"${this.formatSpecValue(specs.noiseCancel)}"`);
@@ -1062,7 +1011,9 @@ ${score >= 80 ? '自信を持っておすすめできる商品です。' :
 
       // 接続性
       if (specs.connectivity) {
-        const connectVal = Array.isArray(specs.connectivity) ? `[${specs.connectivity.map(c => `"${c}"`).join(', ')}]` : `"${specs.connectivity}"`;
+        const connectVal = Array.isArray(specs.connectivity)
+          ? `[${specs.connectivity.map((c) => `"${c}"`).join(', ')}]`
+          : `"${specs.connectivity}"`;
         addSpec('connectivity', connectVal);
       }
 
@@ -1071,7 +1022,9 @@ ${score >= 80 ? '自信を持っておすすめできる商品です。' :
       if (specs.weight) addSpec('weight', `"${this.formatSpecValue(specs.weight)}"`);
       if (specs.midsole) addSpec('midsole', `"${this.formatSpecValue(specs.midsole)}"`);
       if (specs.cushioningTech) {
-        const cushVal = Array.isArray(specs.cushioningTech) ? `[${specs.cushioningTech.map(c => `"${c}"`).join(', ')}]` : `"${specs.cushioningTech}"`;
+        const cushVal = Array.isArray(specs.cushioningTech)
+          ? `[${specs.cushioningTech.map((c) => `"${c}"`).join(', ')}]`
+          : `"${specs.cushioningTech}"`;
         addSpec('cushioning_tech', cushVal);
       }
       if (specs.heelCounter) addSpec('heel_counter', `"${this.formatSpecValue(specs.heelCounter)}"`);
@@ -1119,7 +1072,7 @@ ${score >= 80 ? '自信を持っておすすめできる商品です。' :
       // 付属品
       if (specs.attachments) {
         if (Array.isArray(specs.attachments)) {
-          addSpec('attachments', `[${specs.attachments.map(a => `"${a}"`).join(', ')}]`);
+          addSpec('attachments', `[${specs.attachments.map((a) => `"${a}"`).join(', ')}]`);
         } else {
           addSpec('attachments', `"${specs.attachments}"`);
         }
@@ -1127,7 +1080,9 @@ ${score >= 80 ? '自信を持っておすすめできる商品です。' :
 
       // その他
       if (specs.other) {
-        const otherVal = Array.isArray(specs.other) ? `[${specs.other.map(o => `"${o}"`).join(', ')}]` : `"${specs.other}"`;
+        const otherVal = Array.isArray(specs.other)
+          ? `[${specs.other.map((o) => `"${o}"`).join(', ')}]`
+          : `"${specs.other}"`;
         addSpec('other_specs', otherVal);
       }
     }
@@ -1150,14 +1105,16 @@ ${score >= 80 ? '自信を持っておすすめできる商品です。' :
       }
 
       if (metadata.hero.target_users && metadata.hero.target_users.length > 0) {
-        lines.push(`  target_users: [${metadata.hero.target_users.map(u => `"${this.escapeForFrontMatter(u)}"`).join(', ')}]`);
+        lines.push(
+          `  target_users: [${metadata.hero.target_users.map((u) => `"${this.escapeForFrontMatter(u)}"`).join(', ')}]`,
+        );
       }
 
       if (metadata.hero.warnings && metadata.hero.warnings.length > 0) {
-        lines.push(`  warnings: [${metadata.hero.warnings.map(w => `"${this.escapeForFrontMatter(w)}"`).join(', ')}]`);
+        lines.push(
+          `  warnings: [${metadata.hero.warnings.map((w) => `"${this.escapeForFrontMatter(w)}"`).join(', ')}]`,
+        );
       }
-
-
     }
 
     lines.push('---');
@@ -1189,7 +1146,7 @@ ${score >= 80 ? '自信を持っておすすめできる商品です。' :
       'レビュー',
       '比較',
       product.category,
-      '口コミ'
+      '口コミ',
     ];
   }
 
@@ -1234,30 +1191,32 @@ ${score >= 80 ? '自信を持っておすすめできる商品です。' :
 
   private optimizeListsForMobile(content: string): string {
     // リストアイテムにモバイル対応クラスを追加
-    return content.replace(
-      /^- (.+)$/gm,
-      '- <span class="mobile-list-item">$1</span>'
-    );
+    return content.replace(/^- (.+)$/gm, '- <span class="mobile-list-item">$1</span>');
   }
 
   private extractAffiliateLinks(content: string): AffiliateLink[] {
     const links: AffiliateLink[] = [];
     const linkRegex = /\[([^\]]+)\]\(([^)]+)\)/g;
-    let match;
+    let match: RegExpExecArray | null = null;
     let position = 0;
 
     while ((match = linkRegex.exec(content)) !== null) {
       const linkText = match[1];
       const linkUrl = match[2];
 
-      if (linkText && linkUrl && linkUrl.includes('amazon.co.jp') && (linkUrl.includes('tag=') || linkUrl.includes('/dp/'))) {
+      if (
+        linkText &&
+        linkUrl &&
+        linkUrl.includes('amazon.co.jp') &&
+        (linkUrl.includes('tag=') || linkUrl.includes('/dp/'))
+      ) {
         const asinMatch = linkUrl.match(/\/dp\/([A-Z0-9]{10})/);
-        if (asinMatch && asinMatch[1]) {
+        if (asinMatch?.[1]) {
           links.push({
             asin: asinMatch[1],
             url: linkUrl,
             text: linkText,
-            position: position++
+            position: position++,
           });
         }
       }
@@ -1273,8 +1232,7 @@ ${score >= 80 ? '自信を持っておすすめできる商品です。' :
 
   private generateSentimentAnalysis(reviewAnalysis: ReviewAnalysisResult): string {
     const sentiment = reviewAnalysis.overallSentiment;
-    const sentimentText = sentiment.overall > 0.3 ? 'ポジティブ' :
-      sentiment.overall < -0.3 ? 'ネガティブ' : '中立';
+    const sentimentText = sentiment.overall > 0.3 ? 'ポジティブ' : sentiment.overall < -0.3 ? 'ネガティブ' : '中立';
 
     return `
 ### 📊 レビュー傾向分析
@@ -1328,7 +1286,7 @@ ${score >= 80 ? '自信を持っておすすめできる商品です。' :
    */
   private formatScoreRationaleAsCard(rationale: string | string[]): string {
     const rawRationale = Array.isArray(rationale) ? rationale.join('\n') : rationale;
-    const lines = rawRationale.split('\n').filter(line => line.trim());
+    const lines = rawRationale.split('\n').filter((line) => line.trim());
     const parts: string[] = [];
 
     for (const line of lines) {
@@ -1345,8 +1303,15 @@ ${score >= 80 ? '自信を持っておすすめできる商品です。' :
       if (plusMatch) {
         const [, points, desc = ''] = plusMatch;
         // HTMLタグを除去してから整形
-        const cleanDesc = desc.replace(/<[^>]*>/g, ' ').replace(/\s+/g, ' ').replace(/^[(（]/, '').replace(/[)）]$/, '').trim();
-        parts.push(`<div class="score-item score-plus">✅ <span class="score-points">+${points}</span> ${cleanDesc}</div>`);
+        const cleanDesc = desc
+          .replace(/<[^>]*>/g, ' ')
+          .replace(/\s+/g, ' ')
+          .replace(/^[(（]/, '')
+          .replace(/[)）]$/, '')
+          .trim();
+        parts.push(
+          `<div class="score-item score-plus">✅ <span class="score-points">+${points}</span> ${cleanDesc}</div>`,
+        );
         continue;
       }
 
@@ -1356,8 +1321,15 @@ ${score >= 80 ? '自信を持っておすすめできる商品です。' :
       if (minusMatch) {
         const [, points, desc = ''] = minusMatch;
         // HTMLタグを除去してから整形
-        const cleanDesc = desc.replace(/<[^>]*>/g, ' ').replace(/\s+/g, ' ').replace(/^[(（]/, '').replace(/[)）]$/, '').trim();
-        parts.push(`<div class="score-item score-minus">⚠️ <span class="score-points">-${points}</span> ${cleanDesc}</div>`);
+        const cleanDesc = desc
+          .replace(/<[^>]*>/g, ' ')
+          .replace(/\s+/g, ' ')
+          .replace(/^[(（]/, '')
+          .replace(/[)）]$/, '')
+          .trim();
+        parts.push(
+          `<div class="score-item score-minus">⚠️ <span class="score-points">-${points}</span> ${cleanDesc}</div>`,
+        );
         continue;
       }
 
@@ -1372,7 +1344,12 @@ ${score >= 80 ? '自信を持っておすすめできる商品です。' :
       const zeroAddMatch = line.match(/\[加点:\s*0\]\s*(.*)/);
       if (zeroAddMatch) {
         const [, desc = ''] = zeroAddMatch;
-        const cleanDesc = desc.replace(/<[^>]*>/g, ' ').replace(/\s+/g, ' ').replace(/^[(（]/, '').replace(/[)）]$/, '').trim();
+        const cleanDesc = desc
+          .replace(/<[^>]*>/g, ' ')
+          .replace(/\s+/g, ' ')
+          .replace(/^[(（]/, '')
+          .replace(/[)）]$/, '')
+          .trim();
         parts.push(`<div class="score-item score-plus">✅ <span class="score-points">±0</span> ${cleanDesc}</div>`);
         continue;
       }
@@ -1381,7 +1358,12 @@ ${score >= 80 ? '自信を持っておすすめできる商品です。' :
       const zeroSubMatch = line.match(/\[減点:\s*0\]\s*(.*)/);
       if (zeroSubMatch) {
         const [, desc = ''] = zeroSubMatch;
-        const cleanDesc = desc.replace(/<[^>]*>/g, ' ').replace(/\s+/g, ' ').replace(/^[(（]/, '').replace(/[)）]$/, '').trim();
+        const cleanDesc = desc
+          .replace(/<[^>]*>/g, ' ')
+          .replace(/\s+/g, ' ')
+          .replace(/^[(（]/, '')
+          .replace(/[)）]$/, '')
+          .trim();
         parts.push(`<div class="score-item score-minus">⚠️ <span class="score-points">±0</span> ${cleanDesc}</div>`);
         continue;
       }
@@ -1391,7 +1373,12 @@ ${score >= 80 ? '自信を持っておすすめできる商品です。' :
       const zeroNeutralMatch = line.match(/\[[^\]]+:\s*0\]\s*(.*)/);
       if (zeroNeutralMatch) {
         const [, desc = ''] = zeroNeutralMatch;
-        const cleanDesc = desc.replace(/<[^>]*>/g, ' ').replace(/\s+/g, ' ').replace(/^[(（]/, '').replace(/[)）]$/, '').trim();
+        const cleanDesc = desc
+          .replace(/<[^>]*>/g, ' ')
+          .replace(/\s+/g, ' ')
+          .replace(/^[(（]/, '')
+          .replace(/[)）]$/, '')
+          .trim();
         parts.push(`<div class="score-item score-neutral">➖ <span class="score-points">±0</span> ${cleanDesc}</div>`);
         continue;
       }
@@ -1418,7 +1405,7 @@ ${score >= 80 ? '自信を持っておすすめできる商品です。' :
     }
 
     const rawRationale = Array.isArray(rationale) ? rationale.join('\n') : rationale;
-    const lines = rawRationale.split('\n').filter(line => line.trim());
+    const lines = rawRationale.split('\n').filter((line) => line.trim());
 
     let topPlus: { points: number; desc: string } | null = null;
     let topMinus: { points: number; desc: string } | null = null;
@@ -1435,7 +1422,10 @@ ${score >= 80 ? '自信を持っておすすめできる商品です。' :
         // 改行を含むあらゆる空白文字をスペースに置換
         desc = desc.replace(/\s+/g, ' ');
         // 括弧を除去して説明文全体を使用
-        desc = desc.replace(/^[(（]/, '').replace(/[)）]$/, '').trim();
+        desc = desc
+          .replace(/^[(（]/, '')
+          .replace(/[)）]$/, '')
+          .trim();
 
         if (!topPlus || points > topPlus.points) {
           topPlus = { points, desc };
@@ -1453,7 +1443,10 @@ ${score >= 80 ? '自信を持っておすすめできる商品です。' :
         // 改行を含むあらゆる空白文字をスペースに置換
         desc = desc.replace(/\s+/g, ' ');
         // 括弧を除去して説明文全体を使用
-        desc = desc.replace(/^[(（]/, '').replace(/[)）]$/, '').trim();
+        desc = desc
+          .replace(/^[(（]/, '')
+          .replace(/[)）]$/, '')
+          .trim();
 
         if (!topMinus || points > topMinus.points) {
           topMinus = { points, desc };
@@ -1462,26 +1455,5 @@ ${score >= 80 ? '自信を持っておすすめできる商品です。' :
     }
 
     return { topPlus, topMinus };
-  }
-
-  /**
-   * 日付を日本時間（JST）の形式にフォーマット
-   * 入力例: 2025-12-17T00:00:01Z -> 2025年12月17日
-   */
-  private formatDateToJST(dateString: string): string {
-    try {
-      const date = new Date(dateString);
-      if (isNaN(date.getTime())) {
-        return dateString;
-      }
-
-      const year = date.getFullYear();
-      const month = date.getMonth() + 1;
-      const day = date.getDate();
-
-      return `${year}年${month}月${day}日`;
-    } catch (_error) {
-      return dateString;
-    }
   }
 }

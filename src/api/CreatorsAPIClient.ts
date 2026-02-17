@@ -4,16 +4,16 @@
  * Updated for Creators API (v1)
  */
 
-import axios, { AxiosInstance, AxiosResponse } from 'axios';
-import { URLSearchParams } from 'url';
-import {
+import { URLSearchParams } from 'node:url';
+import axios, { type AxiosInstance, type AxiosResponse } from 'axios';
+import type {
   CreatorsAPICredentials,
   CreatorsAPIItem,
   CreatorsAPIRequest,
   CreatorsAPIResponse,
-  RateLimitConfig
+  RateLimitConfig,
 } from '../types/CreatorsAPITypes';
-import { Product, ProductDetail, ProductSearchParams, ProductSearchResult } from '../types/Product';
+import type { Product, ProductDetail, ProductSearchParams, ProductSearchResult } from '../types/Product';
 import { CategoryNormalizer } from '../utils/CategoryNormalizer';
 import { Logger } from '../utils/Logger';
 
@@ -50,17 +50,19 @@ export class CreatorsAPIClient {
       requestsPerSecond: parseFloat(process.env.CREATORS_API_REQUESTS_PER_SECOND || '0.8'), // Conservative: 0.8 req/sec
       burstLimit: parseInt(process.env.CREATORS_API_BURST_LIMIT || '5', 10),
       retryDelay: parseInt(process.env.CREATORS_API_RETRY_DELAY || '1000', 10),
-      maxRetries: parseInt(process.env.CREATORS_API_MAX_RETRIES || '5', 10)
+      maxRetries: parseInt(process.env.CREATORS_API_MAX_RETRIES || '5', 10),
     };
 
-    this.logger.debug(`Rate limit config: ${this.rateLimitConfig.requestsPerSecond} req/sec, max ${this.rateLimitConfig.maxRetries} retries`);
+    this.logger.debug(
+      `Rate limit config: ${this.rateLimitConfig.requestsPerSecond} req/sec, max ${this.rateLimitConfig.maxRetries} retries`,
+    );
 
     this.httpClient = axios.create({
       timeout: 30000,
       headers: {
         'Content-Type': 'application/json; charset=utf-8',
-        'User-Agent': 'amazon-product-research-system/1.0.0'
-      }
+        'User-Agent': 'amazon-product-research-system/1.0.0',
+      },
     });
   }
 
@@ -77,7 +79,7 @@ export class CreatorsAPIClient {
       applicationId,
       credentialId,
       credentialSecret,
-      partnerTag
+      partnerTag,
     };
 
     this.logger.info('Creators API client authenticated successfully (Japan marketplace)');
@@ -106,17 +108,21 @@ export class CreatorsAPIClient {
       params.append('grant_type', 'client_credentials');
       params.append('scope', 'creatorsapi/default');
 
-      const response = await axios.post<{ access_token: string; expires_in: number }>(this.OAUTH_TOKEN_URL, params.toString(), {
-        headers: {
-          'Content-Type': 'application/x-www-form-urlencoded',
-          'Authorization': authHeader
+      const response = await axios.post<{ access_token: string; expires_in: number }>(
+        this.OAUTH_TOKEN_URL,
+        params.toString(),
+        {
+          headers: {
+            'Content-Type': 'application/x-www-form-urlencoded',
+            Authorization: authHeader,
+          },
+          timeout: 10000,
         },
-        timeout: 10000
-      });
+      );
 
       this.accessToken = response.data.access_token;
       // expires_in is in seconds
-      this.tokenExpiresAt = Date.now() + (response.data.expires_in * 1000);
+      this.tokenExpiresAt = Date.now() + response.data.expires_in * 1000;
 
       this.logger.debug(`OAuth token obtained, expires in ${response.data.expires_in}s`);
 
@@ -163,22 +169,26 @@ export class CreatorsAPIClient {
 
       const request: CreatorsAPIRequest = {
         operation: 'searchItems',
-        partnerTag: this.credentials!.partnerTag,
+        partnerTag: this.credentials?.partnerTag,
         marketplace: this.MARKETPLACE,
         resources: resources,
         keywords: params.keywords.join(' '),
-        searchIndex: params.searchIndex || (params.category === 'All' ? this.inferIndexFromKeywords(params.keywords) : this.mapCategoryToSearchIndex(params.category)),
+        searchIndex:
+          params.searchIndex ||
+          (params.category === 'All'
+            ? this.inferIndexFromKeywords(params.keywords)
+            : this.mapCategoryToSearchIndex(params.category)),
         itemCount: itemCount,
         itemPage: page,
         // Merchant: params.merchant ... (Verify if creators API supports Merchant param, typically yes)
-        sortBy: this.mapSortBy(params.sortBy || 'featured')
+        sortBy: this.mapSortBy(params.sortBy || 'featured'),
       };
 
       if (params.minPrice) {
-        request['minPrice'] = params.minPrice * 100;
+        request.minPrice = params.minPrice * 100;
       }
       if (params.maxPrice) {
-        request['maxPrice'] = params.maxPrice * 100;
+        request.maxPrice = params.maxPrice * 100;
       }
 
       try {
@@ -208,7 +218,7 @@ export class CreatorsAPIClient {
       products: allProducts,
       totalResults: totalResultCount,
       searchParams: params,
-      timestamp: new Date()
+      timestamp: new Date(),
     };
   }
 
@@ -220,7 +230,7 @@ export class CreatorsAPIClient {
 
     const request: CreatorsAPIRequest = {
       operation: 'getItems',
-      partnerTag: this.credentials!.partnerTag,
+      partnerTag: this.credentials?.partnerTag,
       marketplace: this.MARKETPLACE,
       itemIds: [asin],
       itemIdType: 'ASIN',
@@ -238,8 +248,8 @@ export class CreatorsAPIClient {
         'itemInfo.technicalInfo',
         'offersV2.listings.price',
         'offersV2.listings.availability',
-        'browseNodeInfo.browseNodes'
-      ]
+        'browseNodeInfo.browseNodes',
+      ],
     };
 
     const response = await this.makeRequest(request);
@@ -267,7 +277,7 @@ export class CreatorsAPIClient {
       return { results: result, permanentFailures };
     }
 
-    const validAsins = asins.filter(asin => /^[A-Z0-9]{10}$/.test(asin)).slice(0, 10);
+    const validAsins = asins.filter((asin) => /^[A-Z0-9]{10}$/.test(asin)).slice(0, 10);
 
     if (validAsins.length === 0) {
       return { results: result, permanentFailures };
@@ -275,7 +285,7 @@ export class CreatorsAPIClient {
 
     const request: CreatorsAPIRequest = {
       operation: 'getItems',
-      partnerTag: this.credentials!.partnerTag,
+      partnerTag: this.credentials?.partnerTag,
       partnerType: 'Associates',
       marketplace: this.MARKETPLACE,
       itemIds: validAsins,
@@ -298,8 +308,8 @@ export class CreatorsAPIClient {
         'customerReviews.count',
         'customerReviews.starRating',
         'browseNodeInfo.browseNodes',
-        'parentASIN'
-      ]
+        'parentASIN',
+      ],
     };
 
     let batchFailed = false;
@@ -313,13 +323,15 @@ export class CreatorsAPIClient {
             const detail = this.parseProductDetail(item);
             result.set(item.asin, detail);
           } catch (error) {
-            this.logger.warn(`Failed to parse product detail for ASIN ${item.asin}: ${error instanceof Error ? error.message : String(error)}`);
+            this.logger.warn(
+              `Failed to parse product detail for ASIN ${item.asin}: ${error instanceof Error ? error.message : String(error)}`,
+            );
           }
         }
       }
 
       const foundAsins = new Set(result.keys());
-      const notFoundAsins = validAsins.filter(asin => !foundAsins.has(asin));
+      const notFoundAsins = validAsins.filter((asin) => !foundAsins.has(asin));
       if (notFoundAsins.length > 0) {
         this.logger.warn(`The following ASINs were not found: ${notFoundAsins.join(', ')}`);
       }
@@ -339,7 +351,7 @@ export class CreatorsAPIClient {
           this.logger.warn(`ASIN ${errorData.resourceId} marked as permanent failure (ResourceNotFoundException)`);
 
           // Retry batch without the problematic ASIN
-          const remainingAsins = validAsins.filter(asin => asin !== errorData.resourceId);
+          const remainingAsins = validAsins.filter((asin) => asin !== errorData.resourceId);
           if (remainingAsins.length > 0) {
             this.logger.info(`Retrying batch without problematic ASIN ${errorData.resourceId}`);
             try {
@@ -352,7 +364,9 @@ export class CreatorsAPIClient {
                     const detail = this.parseProductDetail(item);
                     result.set(item.asin, detail);
                   } catch (parseError) {
-                    this.logger.warn(`Failed to parse product detail for ASIN ${item.asin}: ${parseError instanceof Error ? parseError.message : String(parseError)}`);
+                    this.logger.warn(
+                      `Failed to parse product detail for ASIN ${item.asin}: ${parseError instanceof Error ? parseError.message : String(parseError)}`,
+                    );
                   }
                 }
               }
@@ -360,20 +374,22 @@ export class CreatorsAPIClient {
               // Successfully recovered from batch error
               batchFailed = false;
             } catch (retryError) {
-              this.logger.warn(`Retry batch also failed: ${retryError instanceof Error ? retryError.message : String(retryError)}`);
+              this.logger.warn(
+                `Retry batch also failed: ${retryError instanceof Error ? retryError.message : String(retryError)}`,
+              );
               // batchFailed is already true
             }
           }
         } else if (errorMessage.includes('InvalidParameterValue')) {
           // Try to extract which ASIN is invalid from error message
           const invalidAsinMatch = errorMessage.match(/ItemIds ([A-Z0-9]{10})/);
-          if (invalidAsinMatch && invalidAsinMatch[1]) {
+          if (invalidAsinMatch?.[1]) {
             const invalidAsin = invalidAsinMatch[1];
             permanentFailures.add(invalidAsin);
             this.logger.warn(`ASIN ${invalidAsin} marked as permanent failure (InvalidParameterValue)`);
 
             // Retry batch without the invalid ASIN
-            const remainingAsins = validAsins.filter(asin => asin !== invalidAsin);
+            const remainingAsins = validAsins.filter((asin) => asin !== invalidAsin);
             if (remainingAsins.length > 0) {
               this.logger.info(`Retrying batch without invalid ASIN ${invalidAsin}`);
               try {
@@ -386,7 +402,9 @@ export class CreatorsAPIClient {
                       const detail = this.parseProductDetail(item);
                       result.set(item.asin, detail);
                     } catch (parseError) {
-                      this.logger.warn(`Failed to parse product detail for ASIN ${item.asin}: ${parseError instanceof Error ? parseError.message : String(parseError)}`);
+                      this.logger.warn(
+                        `Failed to parse product detail for ASIN ${item.asin}: ${parseError instanceof Error ? parseError.message : String(parseError)}`,
+                      );
                     }
                   }
                 }
@@ -394,7 +412,9 @@ export class CreatorsAPIClient {
                 // Successfully recovered from batch error
                 batchFailed = false;
               } catch (retryError) {
-                this.logger.warn(`Retry batch also failed: ${retryError instanceof Error ? retryError.message : String(retryError)}`);
+                this.logger.warn(
+                  `Retry batch also failed: ${retryError instanceof Error ? retryError.message : String(retryError)}`,
+                );
                 // batchFailed is already true
               }
             }
@@ -474,9 +494,9 @@ export class CreatorsAPIClient {
 
           const headers = {
             'Content-Type': 'application/json',
-            'Authorization': `Bearer ${token}, Version ${this.CREDENTIAL_VERSION}`,
+            Authorization: `Bearer ${token}, Version ${this.CREDENTIAL_VERSION}`,
             'x-marketplace': this.MARKETPLACE,
-            'x-amz-application-id': this.credentials!.applicationId // Include if available
+            'x-amz-application-id': this.credentials?.applicationId, // Include if available
           };
 
           let lastError: Error | null = null;
@@ -484,7 +504,9 @@ export class CreatorsAPIClient {
           for (let attempt = 1; attempt <= this.rateLimitConfig.maxRetries; attempt++) {
             try {
               this.logger.debug(`Making API request (attempt ${attempt})`);
-              const response: AxiosResponse<CreatorsAPIResponse> = await this.httpClient.post(url, payload, { headers });
+              const response: AxiosResponse<CreatorsAPIResponse> = await this.httpClient.post(url, payload, {
+                headers,
+              });
 
               if (response.data.errors && response.data.errors.length > 0) {
                 const firstError = response.data.errors[0];
@@ -509,7 +531,9 @@ export class CreatorsAPIClient {
                 // Log request details for debugging 400 errors
                 if (statusCode === 400) {
                   this.logger.error(`Request URL: ${url}`);
-                  this.logger.error(`Request Headers: ${JSON.stringify({ ...headers, Authorization: '[REDACTED]' }, null, 2)}`);
+                  this.logger.error(
+                    `Request Headers: ${JSON.stringify({ ...headers, Authorization: '[REDACTED]' }, null, 2)}`,
+                  );
                 }
 
                 // Handle rate limiting (429)
@@ -523,12 +547,14 @@ export class CreatorsAPIClient {
                   } else {
                     // Exponential backoff with jitter for rate limiting
                     const baseDelay = 2000; // 2 seconds base
-                    const exponentialDelay = baseDelay * Math.pow(2, attempt - 1);
+                    const exponentialDelay = baseDelay * 2 ** (attempt - 1);
                     const jitter = Math.random() * 1000; // 0-1 second jitter
                     waitTime = Math.min(exponentialDelay + jitter, 60000); // Max 60 seconds
                   }
 
-                  this.logger.warn(`Rate limited (429), waiting ${Math.round(waitTime / 1000)}s before retry (attempt ${attempt}/${this.rateLimitConfig.maxRetries})`);
+                  this.logger.warn(
+                    `Rate limited (429), waiting ${Math.round(waitTime / 1000)}s before retry (attempt ${attempt}/${this.rateLimitConfig.maxRetries})`,
+                  );
                   lastError = error as Error;
 
                   if (attempt < this.rateLimitConfig.maxRetries) {
@@ -549,7 +575,7 @@ export class CreatorsAPIClient {
 
               if (attempt < this.rateLimitConfig.maxRetries) {
                 // Standard exponential backoff for other errors
-                const delay = 1000 * Math.pow(2, attempt - 1);
+                const delay = 1000 * 2 ** (attempt - 1);
                 this.logger.debug(`Retrying after ${delay}ms (attempt ${attempt}/${this.rateLimitConfig.maxRetries})`);
                 await this.sleep(delay);
 
@@ -557,7 +583,7 @@ export class CreatorsAPIClient {
                 if (lastError && axios.isAxiosError(lastError) && lastError.response?.status === 401) {
                   this.logger.info('Refreshing access token after 401 error');
                   const newToken = await this.getAccessToken();
-                  headers['Authorization'] = `Bearer ${newToken}, Version ${this.CREDENTIAL_VERSION}`;
+                  headers.Authorization = `Bearer ${newToken}, Version ${this.CREDENTIAL_VERSION}`;
                 }
               }
             }
@@ -587,7 +613,7 @@ export class CreatorsAPIClient {
     if (!response.searchResult?.items) return [];
 
     // Filter logic... (Mobile apps, etc.) simplified for now
-    return response.searchResult.items.map(item => this.parseProduct(item));
+    return response.searchResult.items.map((item) => this.parseProduct(item));
   }
 
   private parseProduct(item: CreatorsAPIItem): Product {
@@ -604,9 +630,9 @@ export class CreatorsAPIClient {
       specifications: {}, // Simplification
       rating: {
         average: item.customerReviews?.starRating || 0,
-        count: item.customerReviews?.count || 0
+        count: item.customerReviews?.count || 0,
       },
-      detailPageUrl: item.detailPageURL
+      detailPageUrl: item.detailPageURL,
     };
 
     if (item.parentASIN) product.parentAsin = item.parentASIN;
@@ -617,7 +643,7 @@ export class CreatorsAPIClient {
     const product = this.parseProduct(item);
     return {
       ...product,
-      features: item.itemInfo?.features?.displayValues || []
+      features: item.itemInfo?.features?.displayValues || [],
       // ... extra fields (brand, releaseDate etc.) mapping
     };
   }
@@ -630,23 +656,22 @@ export class CreatorsAPIClient {
       return {
         amount: listing.price.money.amount,
         currency: listing.price.money.currency,
-        formatted: listing.price.money.displayAmount
+        formatted: listing.price.money.displayAmount,
       };
     }
     if (summary?.lowestPrice?.money) {
       return {
         amount: summary.lowestPrice.money.amount,
         currency: summary.lowestPrice.money.currency,
-        formatted: summary.lowestPrice.money.displayAmount
+        formatted: summary.lowestPrice.money.displayAmount,
       };
     }
     return { amount: 0, currency: 'JPY', formatted: '価格情報なし' };
   }
 
   private extractImages(item: CreatorsAPIItem): Product['images'] {
-
     const primary = item.images?.primary?.large?.url || item.images?.primary?.medium?.url || '';
-    const thumbnails = item.images?.variants?.map(v => v.large?.url).filter((u): u is string => !!u) || [];
+    const thumbnails = item.images?.variants?.map((v) => v.large?.url).filter((u): u is string => !!u) || [];
     return { primary, thumbnails };
   }
 
@@ -655,27 +680,29 @@ export class CreatorsAPIClient {
     if (!this.credentials) throw new Error('Not authenticated');
   }
 
-  private sleep(ms: number): Promise<void> { return new Promise(r => setTimeout(r, ms)); }
+  private sleep(ms: number): Promise<void> {
+    return new Promise((r) => setTimeout(r, ms));
+  }
 
   // Mappers
   private mapCategoryToSearchIndex(cat: string): string {
     // Map internal category names to Creators API SearchIndex
     const mapping: Record<string, string> = {
-      'electronics': 'Electronics',
-      'computers': 'Computers',
-      'kitchen': 'HomeAndKitchen',
-      'home': 'HomeAndKitchen',
-      'appliances': 'Appliances',
-      'beauty': 'Beauty',
-      'fashion': 'Fashion',
-      'health': 'HealthPersonalCare',
-      'grocery': 'GroceryAndGourmetFood',
-      'toys': 'Toys',
-      'games': 'VideoGames',
-      'music': 'MusicalInstruments',
-      'books': 'Books',
-      'automotive': 'Automotive',
-      'diy': 'ToolsAndHomeImprovement'
+      electronics: 'Electronics',
+      computers: 'Computers',
+      kitchen: 'HomeAndKitchen',
+      home: 'HomeAndKitchen',
+      appliances: 'Appliances',
+      beauty: 'Beauty',
+      fashion: 'Fashion',
+      health: 'HealthPersonalCare',
+      grocery: 'GroceryAndGourmetFood',
+      toys: 'Toys',
+      games: 'VideoGames',
+      music: 'MusicalInstruments',
+      books: 'Books',
+      automotive: 'Automotive',
+      diy: 'ToolsAndHomeImprovement',
     };
 
     // Check strict match first
@@ -695,22 +722,25 @@ export class CreatorsAPIClient {
 
   private mapSortBy(sort: string): string {
     const mapping: Record<string, string> = {
-      'relevance': 'Relevance',
-      'price_low': 'Price:LowToHigh',
-      'price_high': 'Price:HighToLow',
-      'newest': 'Date:NewestToOldest',
-      'featured': 'Featured'
+      relevance: 'Relevance',
+      price_low: 'Price:LowToHigh',
+      price_high: 'Price:HighToLow',
+      newest: 'Date:NewestToOldest',
+      featured: 'Featured',
     };
     return mapping[sort] || 'Relevance';
   }
 
   // Category Parsing Logic
-  private extractCategoryInfo(item: CreatorsAPIItem): { category: string; categoryInfo: { main: string; sub: string; browseNodeId?: string } } {
+  private extractCategoryInfo(item: CreatorsAPIItem): {
+    category: string;
+    categoryInfo: { main: string; sub: string; browseNodeId?: string };
+  } {
     const nodes = item.browseNodeInfo?.browseNodes || [];
     const normalized = CategoryNormalizer.selectBestCategory(nodes);
     const categoryInfo: { main: string; sub: string; browseNodeId?: string } = {
       main: normalized.main,
-      sub: normalized.sub
+      sub: normalized.sub,
     };
 
     if (normalized.browseNodeId) {
@@ -719,10 +749,7 @@ export class CreatorsAPIClient {
 
     return {
       category: normalized.main,
-      categoryInfo
+      categoryInfo,
     };
   }
-
-
 }
-

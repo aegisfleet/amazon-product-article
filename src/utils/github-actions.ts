@@ -1,4 +1,4 @@
-import fs from 'fs/promises';
+import fs from 'node:fs/promises';
 import { Logger } from './Logger';
 
 const logger = Logger.getInstance();
@@ -13,17 +13,17 @@ const logger = Logger.getInstance();
  * @param value The value of the output.
  */
 export async function setGitHubOutput(name: string, value: string): Promise<void> {
-    const outputFile = process.env.GITHUB_OUTPUT;
-    if (outputFile) {
-        const hasNewline = /[\r\n]/.test(value);
-        if (hasNewline) {
-            const delimiter = `EOF_${Date.now()}`;
-            await fs.appendFile(outputFile, `${name}<<${delimiter}\n${value}\n${delimiter}\n`);
-        } else {
-            await fs.appendFile(outputFile, `${name}=${value}\n`);
-        }
-        logger.info(`Set GitHub output: ${name}=${value}`);
+  const outputFile = process.env.GITHUB_OUTPUT;
+  if (outputFile) {
+    const hasNewline = /[\r\n]/.test(value);
+    if (hasNewline) {
+      const delimiter = `EOF_${Date.now()}`;
+      await fs.appendFile(outputFile, `${name}<<${delimiter}\n${value}\n${delimiter}\n`);
     } else {
-        logger.warn(`GITHUB_OUTPUT environment variable not set. Output skipped: ${name}=${value}`);
+      await fs.appendFile(outputFile, `${name}=${value}\n`);
     }
+    logger.info(`Set GitHub output: ${name}=${value}`);
+  } else {
+    logger.warn(`GITHUB_OUTPUT environment variable not set. Output skipped: ${name}=${value}`);
+  }
 }

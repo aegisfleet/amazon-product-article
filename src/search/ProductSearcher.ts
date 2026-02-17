@@ -3,19 +3,15 @@
  * Handles product search across multiple categories and structured data storage
  */
 
-import crypto from 'crypto';
-import fs from 'fs/promises';
-import path from 'path';
-import { CreatorsAPIClient } from '../api/CreatorsAPIClient';
+import crypto from 'node:crypto';
+import fs from 'node:fs/promises';
+import path from 'node:path';
+import type { CreatorsAPIClient } from '../api/CreatorsAPIClient';
+import { ConfigManager, type SystemConfig } from '../config/ConfigManager';
 import categories from '../config/categories.json';
 import categoryMapping from '../config/categoryMapping.json';
-import { ConfigManager, SystemConfig } from '../config/ConfigManager';
-import { InvestigationResult } from '../types/JulesTypes';
-import {
-  Product,
-  ProductSearchParams,
-  ProductSearchResult
-} from '../types/Product';
+import type { InvestigationResult } from '../types/JulesTypes';
+import type { Product, ProductSearchParams, ProductSearchResult } from '../types/Product';
 import { Logger } from '../utils/Logger';
 
 const DEFAULT_KEYWORDS = ['おすすめ', '人気', 'ランキング'];
@@ -90,9 +86,9 @@ export class ProductSearcher {
         searchParams: {
           category: 'Manual',
           keywords: asins,
-          maxResults: asins.length
+          maxResults: asins.length,
         },
-        timestamp: new Date()
+        timestamp: new Date(),
       };
 
       results.push(result);
@@ -104,7 +100,7 @@ export class ProductSearcher {
       timestamp: new Date(),
       categories: ['Manual'],
       totalProducts: products.length,
-      results
+      results,
     };
 
     await this.saveSearchSession(session);
@@ -120,8 +116,10 @@ export class ProductSearcher {
     let categories = this.getEnabledCategories();
 
     if (targetCategoryNames && targetCategoryNames.length > 0) {
-      categories = categories.filter(c => targetCategoryNames.includes(c.name));
-      this.logger.info(`Filtering categories: ${targetCategoryNames.join(', ')}. Result: ${categories.length} categories found.`);
+      categories = categories.filter((c) => targetCategoryNames.includes(c.name));
+      this.logger.info(
+        `Filtering categories: ${targetCategoryNames.join(', ')}. Result: ${categories.length} categories found.`,
+      );
     }
 
     // Shuffle categories to vary the starting point
@@ -144,7 +142,8 @@ export class ProductSearcher {
 
       try {
         // Pick a random keyword from the category's keyword list
-        const keyword = category.keywords[Math.floor(Math.random() * category.keywords.length)] || category.keywords[0] || 'popular';
+        const keyword =
+          category.keywords[Math.floor(Math.random() * category.keywords.length)] || category.keywords[0] || 'popular';
         this.logger.info(`Searching category: ${category.name} with keyword: ${keyword}`);
 
         // Use override if provided, otherwise use category's configured maxResults
@@ -155,19 +154,21 @@ export class ProductSearcher {
           searchIndex: category.searchIndex,
           keywords: [keyword], // Use the single random keyword
           maxResults: effectiveMaxResults,
-          ...(category.sortBy ? { sortBy: category.sortBy } : {})
+          ...(category.sortBy ? { sortBy: category.sortBy } : {}),
         };
 
         let result: ProductSearchResult;
         try {
           result = await this.creatorsClient.searchProducts(searchParams);
         } catch (error) {
-          this.logger.warn(`Failed to search category ${category.name} with specific index, retrying with 'All' index. Error: ${error instanceof Error ? error.message : String(error)}`);
+          this.logger.warn(
+            `Failed to search category ${category.name} with specific index, retrying with 'All' index. Error: ${error instanceof Error ? error.message : String(error)}`,
+          );
 
           // Retry with 'All' index - this is a more robust fallback
           const fallbackParams: ProductSearchParams = {
             ...searchParams,
-            category: 'All'
+            category: 'All',
           };
           result = await this.creatorsClient.searchProducts(fallbackParams);
         }
@@ -176,7 +177,7 @@ export class ProductSearcher {
         const initialCount = result.products.length;
         const seenParentAsins = new Set<string>();
 
-        result.products = result.products.filter(p => {
+        result.products = result.products.filter((p) => {
           // 1. ASINによる除外
           if (exclusionList.asins.has(p.asin)) {
             return false;
@@ -204,7 +205,9 @@ export class ProductSearcher {
         });
 
         if (initialCount !== result.products.length) {
-          this.logger.info(`Filtered ${initialCount - result.products.length} products (already investigated or variations) from ${category.name}`);
+          this.logger.info(
+            `Filtered ${initialCount - result.products.length} products (already investigated or variations) from ${category.name}`,
+          );
         }
 
         if (result.products.length > 0) {
@@ -220,7 +223,6 @@ export class ProductSearcher {
 
         // Rate limiting delay between categories
         await this.sleep(1000);
-
       } catch (error) {
         this.logger.error(`Failed to search category ${category.name}:`, error);
         // Continue with other categories
@@ -230,9 +232,9 @@ export class ProductSearcher {
     const session: SearchSession = {
       id: sessionId,
       timestamp: new Date(),
-      categories: categories.map(c => c.name),
+      categories: categories.map((c) => c.name),
       totalProducts,
-      results
+      results,
     };
 
     await this.saveSearchSession(session);
@@ -255,7 +257,7 @@ export class ProductSearcher {
       searchIndex: category.searchIndex,
       keywords: customKeywords || category.keywords,
       maxResults: category.maxResults,
-      ...(category.sortBy ? { sortBy: category.sortBy } : {})
+      ...(category.sortBy ? { sortBy: category.sortBy } : {}),
     };
 
     this.logger.info(`Searching category ${categoryName} with keywords: ${searchParams.keywords.join(', ')}`);
@@ -286,7 +288,10 @@ export class ProductSearcher {
 
       // Get latest session if no sessionId provided
       const files = await fs.readdir(categoryDir);
-      const jsonFiles = files.filter(f => f.endsWith('.json')).sort().reverse();
+      const jsonFiles = files
+        .filter((f) => f.endsWith('.json'))
+        .sort()
+        .reverse();
 
       if (jsonFiles.length === 0) {
         return [];
@@ -296,9 +301,11 @@ export class ProductSearcher {
       const data = await fs.readFile(latestFile, 'utf-8');
       const result = JSON.parse(data) as ProductSearchResult;
       return result.products;
-
     } catch (error: unknown) {
-      this.logger.warn(`Failed to load stored products for ${categoryName}:`, error instanceof Error ? error.message : String(error));
+      this.logger.warn(
+        `Failed to load stored products for ${categoryName}:`,
+        error instanceof Error ? error.message : String(error),
+      );
       return [];
     }
   }
@@ -311,10 +318,12 @@ export class ProductSearcher {
 
     // Parallelize all file reads using Promise.all
     // Since we typically have <100 categories, this won't cause EMFILE issues
-    const entries = await Promise.all(categories.map(async (category) => {
-      const products = await this.getStoredProducts(category.name);
-      return [category.name, products] as const;
-    }));
+    const entries = await Promise.all(
+      categories.map(async (category) => {
+        const products = await this.getStoredProducts(category.name);
+        return [category.name, products] as const;
+      }),
+    );
 
     return Object.fromEntries(entries);
   }
@@ -337,7 +346,7 @@ export class ProductSearcher {
       timestamp: new Date(),
       categories: [params.category],
       totalProducts: result.products.length,
-      results: [result]
+      results: [result],
     };
     await this.saveSearchSession(session);
 
@@ -356,46 +365,47 @@ export class ProductSearcher {
     try {
       const sessionsDir = path.join(this.dataDir, 'sessions');
       const sessionFiles = await fs.readdir(sessionsDir);
-      const sessions = sessionFiles.filter(f => f.endsWith('.json'));
+      const sessions = sessionFiles.filter((f) => f.endsWith('.json'));
 
       let totalProducts = 0;
       const categoryCounts: Record<string, number> = {};
       let lastSearchDate: Date | undefined;
 
-      await Promise.all(sessions.map(async (sessionFile) => {
-        try {
-          const sessionPath = path.join(sessionsDir, sessionFile);
-          const data = await fs.readFile(sessionPath, 'utf-8');
-          const session = JSON.parse(data) as SearchSession;
+      await Promise.all(
+        sessions.map(async (sessionFile) => {
+          try {
+            const sessionPath = path.join(sessionsDir, sessionFile);
+            const data = await fs.readFile(sessionPath, 'utf-8');
+            const session = JSON.parse(data) as SearchSession;
 
-          totalProducts += session.totalProducts;
+            totalProducts += session.totalProducts;
 
-          if (!lastSearchDate || new Date(session.timestamp) > new Date(lastSearchDate)) {
-            lastSearchDate = new Date(session.timestamp);
+            if (!lastSearchDate || new Date(session.timestamp) > new Date(lastSearchDate)) {
+              lastSearchDate = new Date(session.timestamp);
+            }
+
+            for (const result of session.results) {
+              const category = result.searchParams.category;
+              categoryCounts[category] = (categoryCounts[category] || 0) + result.products.length;
+            }
+          } catch (e) {
+            this.logger.warn(`Failed to process session file ${sessionFile}:`, e);
           }
-
-          for (const result of session.results) {
-            const category = result.searchParams.category;
-            categoryCounts[category] = (categoryCounts[category] || 0) + result.products.length;
-          }
-        } catch (e) {
-          this.logger.warn(`Failed to process session file ${sessionFile}:`, e);
-        }
-      }));
+        }),
+      );
 
       return {
         totalSessions: sessions.length,
         totalProducts,
         categoryCounts,
-        ...(lastSearchDate && { lastSearchDate })
+        ...(lastSearchDate && { lastSearchDate }),
       };
-
     } catch (error: unknown) {
       this.logger.warn('Failed to get search statistics:', error instanceof Error ? error.message : String(error));
       return {
         totalSessions: 0,
         totalProducts: 0,
-        categoryCounts: {}
+        categoryCounts: {},
       };
     }
   }
@@ -442,7 +452,6 @@ export class ProductSearcher {
           }
         });
       });
-
     } catch (error) {
       this.logger.error('Failed to clean old data:', error);
     }
@@ -466,7 +475,6 @@ export class ProductSearcher {
     await Promise.all(workers);
   }
 
-
   /**
    * Private helper methods
    */
@@ -480,8 +488,8 @@ export class ProductSearcher {
         return defaultCategories;
       }
 
-      return enabledCategoryNames.map(name => {
-        const found = defaultCategories.find(d => d.name === name);
+      return enabledCategoryNames.map((name) => {
+        const found = defaultCategories.find((d) => d.name === name);
         if (found) {
           return found;
         }
@@ -501,7 +509,7 @@ export class ProductSearcher {
   private getCategoryConfig(categoryName: string): CategoryConfig | undefined {
     try {
       const defaultCategories = this.getDefaultCategories();
-      const defaultCat = defaultCategories.find(c => c.name === categoryName);
+      const defaultCat = defaultCategories.find((c) => c.name === categoryName);
 
       if (defaultCat) {
         return defaultCat;
@@ -517,7 +525,7 @@ export class ProductSearcher {
 
       return undefined;
     } catch (_error) {
-      return this.getDefaultCategories().find(c => c.name === categoryName);
+      return this.getDefaultCategories().find((c) => c.name === categoryName);
     }
   }
 
@@ -528,11 +536,7 @@ export class ProductSearcher {
   }
 
   private async ensureDataDirectory(): Promise<void> {
-    const dirs = [
-      this.dataDir,
-      path.join(this.dataDir, 'sessions'),
-      path.join(this.dataDir, 'categories')
-    ];
+    const dirs = [this.dataDir, path.join(this.dataDir, 'sessions'), path.join(this.dataDir, 'categories')];
 
     for (const dir of dirs) {
       try {
@@ -543,14 +547,17 @@ export class ProductSearcher {
     }
   }
 
-  private async saveCategoryResults(sessionId: string, categoryName: string, result: ProductSearchResult): Promise<void> {
+  private async saveCategoryResults(
+    sessionId: string,
+    categoryName: string,
+    result: ProductSearchResult,
+  ): Promise<void> {
     try {
       const categoryDir = path.join(this.dataDir, 'categories', categoryName);
       await fs.mkdir(categoryDir, { recursive: true });
 
       const filePath = path.join(categoryDir, `${sessionId}.json`);
       await fs.writeFile(filePath, JSON.stringify(result, null, 2));
-
     } catch (error) {
       this.logger.error(`Failed to save category results for ${categoryName}:`, error);
     }
@@ -563,14 +570,13 @@ export class ProductSearcher {
 
       const filePath = path.join(sessionsDir, `${session.id}.json`);
       await fs.writeFile(filePath, JSON.stringify(session, null, 2));
-
     } catch (error) {
       this.logger.error(`Failed to save search session ${session.id}:`, error);
     }
   }
 
   private sleep(ms: number): Promise<void> {
-    return new Promise(resolve => setTimeout(resolve, ms));
+    return new Promise((resolve) => setTimeout(resolve, ms));
   }
 
   private getSearchIndexForCategory(categoryName: string): string {
@@ -612,7 +618,7 @@ export class ProductSearcher {
       await fs.access(investigationsDir);
 
       const files = await fs.readdir(investigationsDir);
-      const jsonFiles = files.filter(f => f.endsWith('.json'));
+      const jsonFiles = files.filter((f) => f.endsWith('.json'));
 
       // Use batches to avoid EMFILE errors while maintaining parallelism
       await this.processInBatches(jsonFiles, 200, async (file) => {
@@ -642,7 +648,9 @@ export class ProductSearcher {
       this.logger.debug('Investigations directory not found or inaccessible');
     }
 
-    this.logger.info(`Exclusion list: ${asins.size} ASINs, ${parentAsins.size} Parent ASINs, ${productNames.size} Product Names`);
+    this.logger.info(
+      `Exclusion list: ${asins.size} ASINs, ${parentAsins.size} Parent ASINs, ${productNames.size} Product Names`,
+    );
     return { asins, parentAsins, productNames };
   }
 
@@ -665,7 +673,7 @@ export class ProductSearcher {
       enabled: true,
       keywords: DEFAULT_KEYWORDS,
       maxResults: config.productSearch?.maxResultsPerCategory || DEFAULT_MAX_RESULTS,
-      sortBy: 'featured'
+      sortBy: 'featured',
     };
   }
 }
