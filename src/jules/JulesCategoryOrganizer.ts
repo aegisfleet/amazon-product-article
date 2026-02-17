@@ -5,9 +5,9 @@
  * 適切な親カテゴリに分類するためのJulesセッションを作成する
  */
 
+import axios, { type AxiosInstance } from 'axios';
 import * as fs from 'node:fs';
 import * as path from 'node:path';
-import axios, { type AxiosInstance } from 'axios';
 import type {
   JulesCredentials,
   JulesError,
@@ -58,6 +58,7 @@ export interface OrganizationSession {
 }
 
 export class JulesCategoryOrganizer {
+  private credentials: JulesCredentials;
   private client: AxiosInstance;
   private logger: Logger;
 
