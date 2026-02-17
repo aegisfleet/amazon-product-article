@@ -4,8 +4,8 @@
  * Updated for Creators API (v1)
  */
 
-import { URLSearchParams } from 'node:url';
 import axios, { type AxiosInstance, type AxiosResponse } from 'axios';
+import { URLSearchParams } from 'node:url';
 import type {
   CreatorsAPICredentials,
   CreatorsAPIItem,
@@ -169,7 +169,7 @@ export class CreatorsAPIClient {
 
       const request: CreatorsAPIRequest = {
         operation: 'searchItems',
-        partnerTag: this.credentials?.partnerTag,
+        partnerTag: this.credentials!.partnerTag,
         marketplace: this.MARKETPLACE,
         resources: resources,
         keywords: params.keywords.join(' '),
@@ -230,7 +230,7 @@ export class CreatorsAPIClient {
 
     const request: CreatorsAPIRequest = {
       operation: 'getItems',
-      partnerTag: this.credentials?.partnerTag,
+      partnerTag: this.credentials!.partnerTag,
       marketplace: this.MARKETPLACE,
       itemIds: [asin],
       itemIdType: 'ASIN',
@@ -285,7 +285,7 @@ export class CreatorsAPIClient {
 
     const request: CreatorsAPIRequest = {
       operation: 'getItems',
-      partnerTag: this.credentials?.partnerTag,
+      partnerTag: this.credentials!.partnerTag,
       partnerType: 'Associates',
       marketplace: this.MARKETPLACE,
       itemIds: validAsins,

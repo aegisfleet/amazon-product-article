@@ -19,6 +19,7 @@ export class CreatorsAPICache {
   private ttl: number; // Time to live in milliseconds for valid entries
   private invalidTtl: number; // Time to live in milliseconds for invalid entries
   private permanentInvalidTtl: number; // Time to live in milliseconds for permanent invalid entries (1 week)
+  private isLoaded = false;
   private logger = Logger.getInstance();
 
   // Regex to match invisible Unicode control characters
