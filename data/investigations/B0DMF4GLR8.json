@@ -1,0 +1,117 @@
+{
+  "analysis": {
+    "productName": "OBSBOT Tiny SE",
+    "parentAsin": "B0DMF4GLR8",
+    "productDescription": "AI追跡とジェスチャー操作を備えたフルHDウェブカメラ。2軸ジンバルにより、プレゼンやライブ配信時に話者の動きを滑らかに自動追尾します。",
+    "productUsage": [
+      "オンライン会議・授業での話者追尾",
+      "動きのあるライブ配信（フィットネス、料理、ダンス）",
+      "ジェスチャー操作によるカメラコントロール"
+    ],
+    "positivePoints": [
+      "物理ジンバルによる非常にスムーズなAI自動追跡",
+      "PCやリモコンに触れずに操作できるジェスチャー機能（手のひら/指差し）",
+      "フルHDながら100fpsの高フレームレート対応で動きが滑らか",
+      "プライバシーモード対応（カメラを下向きに収納可能）",
+      "USB Type-Cケーブル1本で接続可能"
+    ],
+    "negativePoints": [
+      "最大解像度が1080p（4K非対応）",
+      "センサーサイズが1/2.8インチと標準的（競合の上位モデルは1/2インチ以上が多い）",
+      "数千円の追加で4K対応の競合モデル（Insta360 Linkなど）が購入できるため、コストパフォーマンスは低い"
+    ],
+    "useCases": [
+      "ホワイトボードを使った講義やセミナー配信",
+      "自宅でのフィットネスレッスン配信",
+      "ZoomやTeamsを使った日常的なビデオ会議"
+    ],
+    "userStories": [
+      {
+        "userType": "オンライン講師（推測）",
+        "scenario": "ホワイトボードを使って授業を行う際、カメラが自動で自分を追尾してくれる。",
+        "experience": "以前は固定カメラだったため、画角から外れないように気を使っていたが、Tiny SEなら自由に動き回りながら説明できるため、生徒への伝わりやすさが向上した。（推測）",
+        "sentiment": "positive"
+      },
+      {
+        "userType": "在宅勤務の会社員（推測）",
+        "scenario": "Zoom会議中に立ち上がって資料を取りに行く。",
+        "experience": "ジェスチャーで簡単に追尾をオンオフできるので、会議中に席を立つ際もカメラアングルを気にしなくて済むのが便利。（推測）",
+        "sentiment": "positive"
+      }
+    ],
+    "userImpression": "ユーザーレビューはまだ少ないが、スペックからは「物理ジンバルによる追跡機能」を安価に提供する製品と推測される。画質よりも動きへの追従性を重視する層に向けた製品。",
+    "sources": [
+      {
+        "name": "Amazon Product Page",
+        "url": "https://www.amazon.co.jp/dp/B0DMF4GLR8",
+        "credibility": "high"
+      }
+    ],
+    "lastInvestigated": "2026-02-18",
+    "competitiveAnalysis": [
+      {
+        "name": "OBSBOT Tiny 2 Lite",
+        "asin": "B0CZ6XY78Y",
+        "priceComparison": "約+8,000円で4K対応、1/2インチセンサー搭載。",
+        "featureComparison": ["4K解像度", "1/2インチ大型センサー", "より高度なAI追跡"],
+        "differentiators": ["画質とセンサーサイズで大きく上回る"]
+      },
+      {
+        "name": "Insta360 Link",
+        "asin": "B0C2CFW1QV",
+        "priceComparison": "約+5,600円で4K対応、ジンバル搭載。",
+        "featureComparison": ["4K解像度", "3軸ジンバル（Tiny SEは2軸の可能性が高い）", "1/2インチセンサー"],
+        "differentiators": ["4K画質とジンバル性能で優位"]
+      },
+      {
+        "name": "EMEET PIXY",
+        "asin": "B0F9N8RBF3",
+        "priceComparison": "約+4,000円で4K対応。",
+        "featureComparison": ["4K解像度", "AI追跡"],
+        "differentiators": ["4K対応だがジンバル性能はOBSBOTの方が評判が良いことが多い"]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "予算を抑えつつ、物理的な自動追跡機能が欲しいユーザー",
+        "4K画質は不要だが、滑らかな動き（60fps/100fps）を重視する配信者",
+        "オンライン授業やプレゼンで動き回る講師"
+      ],
+      "pros": [
+        "設定不要で使えるAI追跡機能",
+        "直感的なジェスチャー操作",
+        "高フレームレート対応（1080p/100fps）"
+      ],
+      "cons": [
+        "画質重視なら数千円プラスして4Kモデルを買うべき",
+        "センサーサイズが小さいため暗所性能は標準的"
+      ],
+      "score": 70,
+      "scoreRationale": "[基本点: 70]\n[加点: +5] (物理ジンバルによるAI追跡とジェスチャー操作は非常に便利)\n[減点: -5] (数千円の差で4K/大型センサー搭載の競合モデルが購入できるため、相対的なコスパはやや低い)\n[合計: 70] (機能は優秀だが、市場価格と比較すると「絶対買い」とは言い難い)"
+    },
+    "technicalSpecs": {
+      "os": "Windows 10+, macOS 11+",
+      "cpu": null,
+      "ram": null,
+      "storage": null,
+      "display": {
+          "size": null,
+          "resolution": "1920x1080 (Full HD)",
+          "type": null
+      },
+      "battery": null,
+      "camera": {
+          "main": "1080p/60fps, 1080p/100fps",
+          "ultrawide": null
+      },
+      "dimensions": {
+          "height": "1.5 in",
+          "width": "1.9 in",
+          "depth": "1.8 in",
+          "weight": null
+      },
+      "connectivity": ["USB Type-C"],
+      "other": ["2-Axis Gimbal", "AI Tracking", "Gesture Control", "Privacy Mode", "HDR"]
+    }
+  }
+}
