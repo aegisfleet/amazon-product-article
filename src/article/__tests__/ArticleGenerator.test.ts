@@ -626,4 +626,131 @@ describe('ArticleGenerator', () => {
       expect(result.content).toContain('ミニマル商品');
     });
   });
+
+  describe('Helper Methods', () => {
+    describe('extractTopRationaleItems', () => {
+      it('should return nulls for undefined input', () => {
+        const result = (generator as any).extractTopRationaleItems(undefined);
+        expect(result).toEqual({ topPlus: null, topMinus: null });
+      });
+
+      it('should extract top plus and minus items from string input', () => {
+        const rationale = '[加点: +10] Plus Item 1\n[減点: -5] Minus Item 1';
+        const result = (generator as any).extractTopRationaleItems(rationale);
+        expect(result.topPlus).toEqual({ points: 10, desc: 'Plus Item 1' });
+        expect(result.topMinus).toEqual({ points: 5, desc: 'Minus Item 1' });
+      });
+
+      it('should extract top plus and minus items from array input', () => {
+        const rationale = ['[加点: +10] Plus Item 1', '[減点: -5] Minus Item 1'];
+        const result = (generator as any).extractTopRationaleItems(rationale);
+        expect(result.topPlus).toEqual({ points: 10, desc: 'Plus Item 1' });
+        expect(result.topMinus).toEqual({ points: 5, desc: 'Minus Item 1' });
+      });
+
+      it('should select the item with maximum points', () => {
+        const rationale = [
+          '[加点: +5] Small Plus',
+          '[加点: +20] Big Plus',
+          '[減点: -2] Small Minus',
+          '[減点: -15] Big Minus',
+        ];
+        const result = (generator as any).extractTopRationaleItems(rationale);
+        expect(result.topPlus).toEqual({ points: 20, desc: 'Big Plus' });
+        expect(result.topMinus).toEqual({ points: 15, desc: 'Big Minus' });
+      });
+
+      it('should clean descriptions (remove HTML, parens)', () => {
+        const rationale = ['[加点: +10] (<b>Bold</b>)', '[減点: -5] (<i>Italic</i>)'];
+        const result = (generator as any).extractTopRationaleItems(rationale);
+        expect(result.topPlus).toEqual({ points: 10, desc: 'Bold' });
+        expect(result.topMinus).toEqual({ points: 5, desc: 'Italic' });
+      });
+
+      it('should ignore items that do not match the pattern', () => {
+        const rationale = ['Just some text', '[Invalid: 10] No sign'];
+        const result = (generator as any).extractTopRationaleItems(rationale);
+        expect(result).toEqual({ topPlus: null, topMinus: null });
+      });
+    });
+
+    describe('formatScoreRationaleAsCard', () => {
+      it('should format base score correctly', () => {
+        const rationale = '[基本点: 70]';
+        const result = (generator as any).formatScoreRationaleAsCard(rationale);
+        expect(result).toContain('<div class="score-base">');
+        expect(result).toContain('70');
+      });
+
+      it('should format plus items correctly', () => {
+        const rationale = '[加点: +10] Good Point';
+        const result = (generator as any).formatScoreRationaleAsCard(rationale);
+        expect(result).toContain('<div class="score-item score-plus">');
+        expect(result).toContain('+10');
+        expect(result).toContain('Good Point');
+      });
+
+      it('should format minus items correctly', () => {
+        const rationale = '[減点: -5] Bad Point';
+        const result = (generator as any).formatScoreRationaleAsCard(rationale);
+        expect(result).toContain('<div class="score-item score-minus">');
+        expect(result).toContain('-5');
+        expect(result).toContain('Bad Point');
+      });
+
+      it('should format total score correctly', () => {
+        const rationale = '[合計: 75]';
+        const result = (generator as any).formatScoreRationaleAsCard(rationale);
+        expect(result).toContain('<div class="score-total">');
+        expect(result).toContain('75');
+      });
+
+      it('should format zero points correctly', () => {
+        let result = (generator as any).formatScoreRationaleAsCard('[加点: 0] Zero Plus');
+        expect(result).toContain('score-plus');
+        expect(result).toContain('±0');
+
+        result = (generator as any).formatScoreRationaleAsCard('[減点: 0] Zero Minus');
+        expect(result).toContain('score-minus');
+        expect(result).toContain('±0');
+
+        result = (generator as any).formatScoreRationaleAsCard('[Info: 0] Zero Neutral');
+        expect(result).toContain('score-neutral');
+        expect(result).toContain('±0');
+      });
+
+      it('should handle array input', () => {
+        const rationale = ['[基本点: 50]', '[合計: 50]'];
+        const result = (generator as any).formatScoreRationaleAsCard(rationale);
+        expect(result).toContain('score-base');
+        expect(result).toContain('score-total');
+      });
+    });
+
+    describe('calculateWordCount', () => {
+      it('should count Japanese characters', () => {
+        const text = 'こんにちは世界'; // 7 chars
+        const count = (generator as any).calculateWordCount(text);
+        expect(count).toBe(7);
+      });
+
+      it('should return 0 for English text', () => {
+        const text = 'Hello World';
+        const count = (generator as any).calculateWordCount(text);
+        expect(count).toBe(0);
+      });
+
+      it('should count only Japanese characters in mixed text', () => {
+        const text = 'Hello こんにちは World 世界';
+        // 'こんにちは' (5) + '世界' (2) = 7
+        const count = (generator as any).calculateWordCount(text);
+        expect(count).toBe(7);
+      });
+
+      it('should return 0 for empty string', () => {
+        const count = (generator as any).calculateWordCount('');
+        expect(count).toBe(0);
+      });
+    });
+  });
 });
