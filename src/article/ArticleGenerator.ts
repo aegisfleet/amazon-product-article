@@ -20,11 +20,11 @@ import { Logger } from '../utils/Logger';
 import { DEFAULT_ARTICLE_TEMPLATE, DEFAULT_IMAGE_URL, HANDLED_SPEC_FIELDS, SPEC_LABEL_MAP } from './ArticleConstants';
 
 export class ArticleGenerator {
-  private logger: Logger;
-  private defaultTemplate: ArticleTemplate;
-  private affiliateManager: AffiliateLinkManager;
+  private readonly logger: Logger;
+  private readonly defaultTemplate: ArticleTemplate;
+  private readonly affiliateManager: AffiliateLinkManager;
   // 調査結果ファイルのキャッシュ（記事生成プロセス中、同じ競合商品が何度も参照されるのを防ぐ）
-  private investigationCache: Map<string, InvestigationResult | null>;
+  private readonly investigationCache: Map<string, InvestigationResult | null>;
 
   constructor() {
     this.logger = Logger.getInstance();
@@ -209,26 +209,26 @@ export class ArticleGenerator {
     const blockquotes: string[] = [];
 
     // HTML形式の<blockquote>タグを保護
-    mobileContent = mobileContent.replace(/<blockquote>[\s\S]*?<\/blockquote>/g, (match) => {
+    mobileContent = mobileContent.replaceAll(/<blockquote>[\s\S]*?<\/blockquote>/g, (match) => {
       blockquotes.push(match);
       return `__BLOCKQUOTE_${blockquotes.length - 1}__`;
     });
 
     // Markdown形式の「>」で始まる行を保護（連続する引用行をまとめて保護）
-    mobileContent = mobileContent.replace(/^> .+$/gm, (match) => {
+    mobileContent = mobileContent.replaceAll(/^> .+$/gm, (match) => {
       blockquotes.push(match);
       return `__BLOCKQUOTE_${blockquotes.length - 1}__`;
     });
 
     // ヒーローカードのごく短い説明文（span内）も段落分割から保護
     const heroDescriptions: string[] = [];
-    mobileContent = mobileContent.replace(/<span class="hero-score-item-desc">[\s\S]*?<\/span>/g, (match) => {
+    mobileContent = mobileContent.replaceAll(/<span class="hero-score-item-desc">[\s\S]*?<\/span>/g, (match) => {
       heroDescriptions.push(match);
       return `__HERODESC_${heroDescriptions.length - 1}__`;
     });
 
     // 長い段落を分割（blockquote以外のテキストにのみ適用）
-    mobileContent = mobileContent.replace(/(.{200,}?)([。！？])/g, '$1$2\n\n');
+    mobileContent = mobileContent.replaceAll(/(.{200,}?)([。！？])/g, '$1$2\n\n');
 
     // blockquoteを復元
     blockquotes.forEach((bq, i) => {
@@ -244,7 +244,7 @@ export class ArticleGenerator {
     mobileContent = this.convertTablesToMobileFriendly(mobileContent);
 
     // 画像をモバイル対応のHTML形式に変換（onerrorハンドラを追加）
-    mobileContent = mobileContent.replace(
+    mobileContent = mobileContent.replaceAll(
       /!\[([^\]]*)\]\(([^)]+)\)/g,
       `<img src="$2" alt="$1" class="mobile-responsive-image" onerror="this.onerror=null;this.src='${DEFAULT_IMAGE_URL}';">`,
     );
@@ -483,12 +483,11 @@ ${sourcesList}`;
 
     // 使い方（productUsageがあれば使用）
     const productUsage = investigation.analysis.productUsage;
-    const usageSection =
-      productUsage && productUsage.length > 0
-        ? `### 🔧 使い方
-
-${productUsage.map((usage, i) => `${i + 1}. ${usage}`).join('\n')}`
-        : '';
+    let usageSection = '';
+    if (productUsage && productUsage.length > 0) {
+      const usageList = productUsage.map((usage, i) => `${i + 1}. ${usage}`).join('\n');
+      usageSection = `### 🔧 使い方\n\n${usageList}`;
+    }
 
     const content = `## 📦 商品の特徴
 
@@ -531,13 +530,20 @@ ${usageSection}`;
       : '';
 
     const userStoriesBlock = investigation.analysis.userStories
-      .map(
-        (story) => `#### ${story.userType}の体験談 (${story.scenario})
+      .map((story) => {
+        let sentimentLabel = '普通';
+        if (story.sentiment === 'positive') {
+          sentimentLabel = '満足';
+        } else if (story.sentiment === 'negative') {
+          sentimentLabel = '不満';
+        }
+
+        return `#### ${story.userType}の体験談 (${story.scenario})
 
 > ${story.experience}
 > 
-> (評価: ${story.sentiment === 'positive' ? '満足' : story.sentiment === 'negative' ? '不満' : '普通'})`,
-      )
+> (評価: ${sentimentLabel})`;
+      })
       .join('\n\n');
 
     const userStories =
@@ -748,6 +754,15 @@ ${investigation.analysis.recommendation.cons.map((con) => `- ${con}`).join('\n')
       ? this.formatScoreRationaleAsCard(investigation.analysis.recommendation.scoreRationale)
       : '';
 
+    let recommendationMessage = '';
+    if (score >= 80) {
+      recommendationMessage = '自信を持っておすすめできる商品です。';
+    } else if (score >= 60) {
+      recommendationMessage = '用途を限定すれば良い選択肢となります。';
+    } else {
+      recommendationMessage = '購入前に他の選択肢も検討することをおすすめします。';
+    }
+
     const content = `## ✅ 購入推奨度
 
 ### 総合評価: ${score}点/100点 (${scoreText})
@@ -766,13 +781,7 @@ ${investigation.analysis.recommendation.cons.map((con) => `- ⚠️ ${con}`).joi
 
 この商品は${scoreText}の評価となりました。特に${investigation.analysis.recommendation.pros[0] || '品質面'}での優位性が認められます。
 
-${
-  score >= 80
-    ? '自信を持っておすすめできる商品です。'
-    : score >= 60
-      ? '用途を限定すれば良い選択肢となります。'
-      : '購入前に他の選択肢も検討することをおすすめします。'
-}`;
+${recommendationMessage}`;
 
     return {
       title: '✅ 購入推奨度',
@@ -1439,9 +1448,9 @@ ${
         const points = parseInt(minusMatch[1] ?? '0', 10);
         let desc = minusMatch[2] || '';
         // HTMLタグを除去
-        desc = desc.replace(/<[^>]*>/g, ' ');
+        desc = desc.replaceAll(/<[^>]*>/g, ' ');
         // 改行を含むあらゆる空白文字をスペースに置換
-        desc = desc.replace(/\s+/g, ' ');
+        desc = desc.replaceAll(/\s+/g, ' ');
         // 括弧を除去して説明文全体を使用
         desc = desc
           .replace(/^[(（]/, '')
