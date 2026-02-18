@@ -5,7 +5,7 @@
  * 適切な親カテゴリに分類するためのJulesセッションを作成する
  */
 
-import * as fs from 'node:fs';
+import * as fs from 'node:fs/promises';
 import * as path from 'node:path';
 import axios, { type AxiosInstance } from 'axios';
 import type {
@@ -114,17 +114,17 @@ export class JulesCategoryOrganizer {
   /**
    * categorygroups.jsonを読み込む
    */
-  loadCategoryGroups(): CategoryGroups {
+  async loadCategoryGroups(): Promise<CategoryGroups> {
     const filePath = path.join(process.cwd(), 'data', 'categorygroups.json');
-    const content = fs.readFileSync(filePath, 'utf-8');
+    const content = await fs.readFile(filePath, 'utf-8');
     return JSON.parse(content) as CategoryGroups;
   }
 
   /**
    * categorygroups.jsonに登録されている全カテゴリを取得
    */
-  getRegisteredCategories(): Set<string> {
-    const groups = this.loadCategoryGroups();
+  async getRegisteredCategories(): Promise<Set<string>> {
+    const groups = await this.loadCategoryGroups();
     const registered = new Set<string>();
 
     for (const group of Object.values(groups)) {
@@ -139,15 +139,17 @@ export class JulesCategoryOrganizer {
   /**
    * 商品キャッシュから全カテゴリを収集
    */
-  collectCategoriesFromCache(): Set<string> {
+  async collectCategoriesFromCache(): Promise<Set<string>> {
     const cachePath = path.join(process.cwd(), 'data', 'cache', 'paapi-product-cache.json');
 
-    if (!fs.existsSync(cachePath)) {
+    try {
+      await fs.access(cachePath);
+    } catch {
       this.logger.warn('Product cache not found');
       return new Set<string>();
     }
 
-    const content = fs.readFileSync(cachePath, 'utf-8');
+    const content = await fs.readFile(cachePath, 'utf-8');
     const cache = JSON.parse(content) as ProductCache;
     const categories = new Set<string>();
 
@@ -164,9 +166,9 @@ export class JulesCategoryOrganizer {
   /**
    * categorygroups.jsonに未登録のカテゴリを取得
    */
-  getUnregisteredCategories(): string[] {
-    const allCategories = this.collectCategoriesFromCache();
-    const registered = this.getRegisteredCategories();
+  async getUnregisteredCategories(): Promise<string[]> {
+    const allCategories = await this.collectCategoriesFromCache();
+    const registered = await this.getRegisteredCategories();
 
     const unregistered: string[] = [];
     for (const category of allCategories) {
@@ -310,7 +312,7 @@ ${unregisteredList}
    * カテゴリ整理を開始（非同期）
    */
   async startOrganization(sourceContext: SourceContext): Promise<OrganizationSession> {
-    const unregisteredCategories = this.getUnregisteredCategories();
+    const unregisteredCategories = await this.getUnregisteredCategories();
 
     if (unregisteredCategories.length === 0) {
       this.logger.info('No unregistered categories found');
