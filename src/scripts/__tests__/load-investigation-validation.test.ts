@@ -115,4 +115,57 @@ describe('loadInvestigationResults Validation', () => {
     expect(results).toHaveLength(1);
     expect(results[0]?.investigation.analysis.positivePoints).toEqual(['p1']);
   });
+
+  it('should preserve extra fields like productName and scoreRationale', async () => {
+    (fs.readdir as jest.Mock).mockResolvedValue(['extra_fields.json']);
+    const dataWithExtraFields = {
+      analysis: {
+        productName: 'テスト商品名',
+        parentAsin: 'B00PARENT',
+        productDescription: '素晴らしい商品です',
+        productUsage: ['日常利用', 'ビジネス'],
+        positivePoints: ['良い点'],
+        negativePoints: ['悪い点'],
+        useCases: ['用途'],
+        userStories: [
+          {
+            userType: 'ユーザー',
+            scenario: 'シナリオ',
+            experience: '体験',
+            sentiment: 'positive' as const,
+          },
+        ],
+        userImpression: '印象',
+        sources: [{ name: 'ソース' }],
+        competitiveAnalysis: [
+          {
+            name: '競合',
+            priceComparison: '安い',
+            featureComparison: ['機能'],
+            differentiators: ['差別化'],
+          },
+        ],
+        recommendation: {
+          targetUsers: ['ターゲット'],
+          pros: ['長所'],
+          cons: ['短所'],
+          score: 85,
+          scoreRationale: '[基本点: 70]\n[加点: +15] 高品質',
+        },
+      },
+    };
+    (fs.readFile as jest.Mock).mockResolvedValue(JSON.stringify(dataWithExtraFields));
+
+    const results = await loadInvestigationResults();
+    expect(results).toHaveLength(1);
+
+    const analysis = results[0]?.investigation.analysis as Record<string, unknown>;
+    expect(analysis.productName).toBe('テスト商品名');
+    expect(analysis.parentAsin).toBe('B00PARENT');
+    expect(analysis.productDescription).toBe('素晴らしい商品です');
+    expect(analysis.productUsage).toEqual(['日常利用', 'ビジネス']);
+
+    const recommendation = analysis.recommendation as Record<string, unknown>;
+    expect(recommendation.scoreRationale).toBe('[基本点: 70]\n[加点: +15] 高品質');
+  });
 });
