@@ -1,4 +1,5 @@
 #!/usr/bin/env ts-node
+
 /**
  * Article Generation CLI Script
  * GitHub Actions から実行される記事生成・公開スクリプト
@@ -45,7 +46,7 @@ interface CLIOptions {
  * JSONファイルの実際の構造（analysisのみを含む）
  */
 const InvestigationFileSchema = z.object({
-  analysis: z.object({
+  analysis: z.looseObject({
     positivePoints: z.array(z.string()),
     negativePoints: z.array(z.string()),
     useCases: z.array(z.string()),
@@ -74,7 +75,7 @@ const InvestigationFileSchema = z.object({
         differentiators: z.array(z.string()),
       }),
     ),
-    recommendation: z.object({
+    recommendation: z.looseObject({
       targetUsers: z.array(z.string()),
       pros: z.array(z.string()),
       cons: z.array(z.string()),
