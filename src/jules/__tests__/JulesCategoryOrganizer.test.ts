@@ -1,7 +1,7 @@
-import * as fs from 'node:fs';
+import * as fs from 'node:fs/promises';
 import { JulesCategoryOrganizer } from '../JulesCategoryOrganizer';
 
-jest.mock('fs');
+jest.mock('node:fs/promises');
 jest.mock('axios', () => ({
   create: jest.fn(() => ({
     interceptors: {
@@ -23,7 +23,7 @@ describe('JulesCategoryOrganizer', () => {
   });
 
   describe('getUnregisteredCategories', () => {
-    it('should sort unregistered categories alphabetically', () => {
+    it('should sort unregistered categories alphabetically', async () => {
       // Mock categorygroups.json
       const mockGroups = {
         家電: { slug: 'appliances', categories: ['冷蔵庫'] },
@@ -37,14 +37,14 @@ describe('JulesCategoryOrganizer', () => {
         ASIN4: { data: { categoryInfo: { main: 'カメラ' } }, status: 'valid' },
       };
 
-      (fs.readFileSync as jest.Mock).mockImplementation((path: string) => {
+      (fs.readFile as jest.Mock).mockImplementation(async (path: string) => {
         if (path.endsWith('categorygroups.json')) return JSON.stringify(mockGroups);
         if (path.endsWith('paapi-product-cache.json')) return JSON.stringify(mockCache);
         return '';
       });
-      (fs.existsSync as jest.Mock).mockReturnValue(true);
+      (fs.access as jest.Mock).mockResolvedValue(undefined);
 
-      const result = organizer.getUnregisteredCategories();
+      const result = await organizer.getUnregisteredCategories();
 
       // Unicode順（デフォルトのsort）で並び替える
       // 'アイロン' (カタカナ), 'カメラ' (カタカナ), '電子レンジ' (漢字)

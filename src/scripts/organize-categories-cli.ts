@@ -95,7 +95,7 @@ async function main(): Promise<void> {
     const organizer = new JulesCategoryOrganizer(credentials);
 
     // 未登録カテゴリの確認
-    const unregisteredCategories = organizer.getUnregisteredCategories();
+    const unregisteredCategories = await organizer.getUnregisteredCategories();
 
     if (unregisteredCategories.length === 0) {
       logger.info('No unregistered categories found. Nothing to organize.');
