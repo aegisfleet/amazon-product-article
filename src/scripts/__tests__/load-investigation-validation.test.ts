@@ -1,6 +1,4 @@
-
 import fs from 'node:fs/promises';
-import path from 'node:path';
 import { loadInvestigationResults } from '../article-generation-cli';
 
 // Mock Logger
@@ -33,12 +31,14 @@ describe('loadInvestigationResults Validation', () => {
 
   it('should filter out files with missing required analysis fields', async () => {
     (fs.readdir as jest.Mock).mockResolvedValue(['missing_fields.json']);
-    (fs.readFile as jest.Mock).mockResolvedValue(JSON.stringify({
-      analysis: {
-        // Missing positivePoints, negativePoints, etc.
-        userImpression: 'Good',
-      }
-    }));
+    (fs.readFile as jest.Mock).mockResolvedValue(
+      JSON.stringify({
+        analysis: {
+          // Missing positivePoints, negativePoints, etc.
+          userImpression: 'Good',
+        },
+      }),
+    );
 
     const results = await loadInvestigationResults();
 
@@ -52,23 +52,25 @@ describe('loadInvestigationResults Validation', () => {
 
   it('should filter out files with wrong types', async () => {
     (fs.readdir as jest.Mock).mockResolvedValue(['wrong_types.json']);
-    (fs.readFile as jest.Mock).mockResolvedValue(JSON.stringify({
-      analysis: {
-        positivePoints: 'should be an array', // Wrong type
-        negativePoints: [],
-        useCases: [],
-        userStories: [],
-        userImpression: 'Good',
-        sources: [],
-        competitiveAnalysis: [],
-        recommendation: {
-          targetUsers: [],
-          pros: [],
-          cons: [],
-          score: 10
-        }
-      }
-    }));
+    (fs.readFile as jest.Mock).mockResolvedValue(
+      JSON.stringify({
+        analysis: {
+          positivePoints: 'should be an array', // Wrong type
+          negativePoints: [],
+          useCases: [],
+          userStories: [],
+          userImpression: 'Good',
+          sources: [],
+          competitiveAnalysis: [],
+          recommendation: {
+            targetUsers: [],
+            pros: [],
+            cons: [],
+            score: 10,
+          },
+        },
+      }),
+    );
 
     const results = await loadInvestigationResults();
     expect(results).toHaveLength(0);
@@ -81,27 +83,31 @@ describe('loadInvestigationResults Validation', () => {
         positivePoints: ['p1'],
         negativePoints: ['n1'],
         useCases: ['u1'],
-        userStories: [{
-          userType: 'type1',
-          scenario: 'scenario1',
-          experience: 'exp1',
-          sentiment: 'positive'
-        }],
+        userStories: [
+          {
+            userType: 'type1',
+            scenario: 'scenario1',
+            experience: 'exp1',
+            sentiment: 'positive',
+          },
+        ],
         userImpression: 'Good',
         sources: [{ name: 's1' }],
-        competitiveAnalysis: [{
-          name: 'comp1',
-          priceComparison: 'cheaper',
-          featureComparison: ['f1'],
-          differentiators: ['d1']
-        }],
+        competitiveAnalysis: [
+          {
+            name: 'comp1',
+            priceComparison: 'cheaper',
+            featureComparison: ['f1'],
+            differentiators: ['d1'],
+          },
+        ],
         recommendation: {
           targetUsers: ['t1'],
           pros: ['p1'],
           cons: ['c1'],
-          score: 10
-        }
-      }
+          score: 10,
+        },
+      },
     };
     (fs.readFile as jest.Mock).mockResolvedValue(JSON.stringify(validData));
 
