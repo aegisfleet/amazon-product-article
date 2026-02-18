@@ -219,14 +219,11 @@ describe('CategoryNormalizer', () => {
             expect(result.score).toBe(10);
             expect(result.main).toBe('ボードゲーム');
 
-            const node2: BrowseNode = { displayName: 'Office Supplies', id: '456' };
-             // 'Office Supplies' doesn't match 'オフィス用品' directly unless translated or mapped?
-             // The code does: main.toLowerCase().includes(k.toLowerCase())
-             // So 'Office Supplies' won't match 'オフィス用品'.
-             // Let's use a matching keyword.
-             const node3: BrowseNode = { displayName: 'オフィス用品', id: '789' };
-             const result3 = CategoryNormalizer.normalize(node3);
-             expect(result3.score).toBe(10);
+            // 'Office Supplies' won't match 'オフィス用品' directly.
+            // Let's use a matching keyword.
+            const node3: BrowseNode = { displayName: 'オフィス用品', id: '789' };
+            const result3 = CategoryNormalizer.normalize(node3);
+            expect(result3.score).toBe(10);
         });
 
         it('should skip invalid categories in the chain', () => {
@@ -258,10 +255,9 @@ describe('CategoryNormalizer', () => {
         });
 
         it('should handle both camelCase and PascalCase properties', () => {
-            const node: BrowseNode = { DisplayName: 'Test Category', Id: '123' }; // PascalCase
-            const result = CategoryNormalizer.normalize(node);
-            // 'Test Category' contains 'Test' which is blocked.
-            // Let's use a valid name.
+            // 'Test Category' contains 'Test' which is blocked, but we're testing property access here.
+            // The normalization logic should still read DisplayName correctly even if it rejects the name later.
+            // However, to verify it read it, let's use a valid name.
             const validNode: BrowseNode = { DisplayName: 'Valid Category', Id: '456' };
             const result2 = CategoryNormalizer.normalize(validNode);
             expect(result2.main).toBe('Valid Category');
