@@ -26,8 +26,8 @@ import { formatInvestigationPrompt } from './prompts';
 const JULES_API_BASE_URL = 'https://jules.googleapis.com/v1alpha';
 
 export class JulesInvestigator {
-  private client: AxiosInstance;
-  private logger: Logger;
+  private readonly client: AxiosInstance;
+  private readonly logger: Logger;
 
   constructor(credentials: JulesCredentials) {
     this.logger = Logger.getInstance();
@@ -190,13 +190,11 @@ export class JulesInvestigator {
       const hasOutput = session.outputs && session.outputs.length > 0;
 
       // 最新のアクティビティを確認
-      const latestActivity = activities[activities.length - 1];
+      const latestActivity = activities.at(-1);
 
       let status: SessionStatus['status'] = 'processing';
       if (hasOutput) {
         status = 'completed';
-      } else if (latestActivity?.type === 'AGENT_MESSAGE') {
-        status = 'processing';
       }
 
       return {
@@ -251,7 +249,8 @@ export class JulesInvestigator {
    */
   private parseAnalysisFromContent(content: string): InvestigationResult['analysis'] {
     // JSONブロックを抽出して解析を試みる
-    const jsonMatch = content.match(/```json\s*([\s\S]*?)\s*```/);
+    const jsonRegex = /```json\s*([\s\S]*?)\s*```/;
+    const jsonMatch = jsonRegex.exec(content);
     if (jsonMatch?.[1]) {
       try {
         const parsed = JSON.parse(jsonMatch[1]) as { analysis?: InvestigationResult['analysis'] };
