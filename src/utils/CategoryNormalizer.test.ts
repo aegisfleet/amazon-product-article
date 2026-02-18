@@ -12,9 +12,9 @@ describe('CategoryNormalizer', () => {
 
         it('should return false for empty or undefined names', () => {
             expect(CategoryNormalizer.isValidCategoryName('')).toBe(false);
-            // @ts-ignore
+            // @ts-expect-error - Testing undefined input
             expect(CategoryNormalizer.isValidCategoryName(undefined)).toBe(false);
-            // @ts-ignore
+            // @ts-expect-error - Testing null input
             expect(CategoryNormalizer.isValidCategoryName(null)).toBe(false);
         });
 
