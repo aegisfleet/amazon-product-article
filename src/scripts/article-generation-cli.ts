@@ -62,14 +62,14 @@ const InvestigationFileSchema = z.object({
     sources: z.array(
       z.object({
         name: z.string(),
-        url: z.string().optional(),
+        url: z.string().nullable().optional(),
         credibility: z.string().optional(),
       }),
     ),
     competitiveAnalysis: z.array(
       z.object({
         name: z.string(),
-        asin: z.string().optional(),
+        asin: z.string().nullable().optional(),
         priceComparison: z.string(),
         featureComparison: z.array(z.string()),
         differentiators: z.array(z.string()),
