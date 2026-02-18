@@ -14,6 +14,7 @@ import fs from 'node:fs/promises';
 import path from 'node:path';
 import { promisify } from 'node:util';
 import dotenv from 'dotenv';
+import { z } from 'zod';
 import { CreatorsAPICache } from '../api/CreatorsAPICache';
 import { CreatorsAPIClient } from '../api/CreatorsAPIClient';
 import { ArticleGenerator } from '../article/ArticleGenerator';
@@ -43,39 +44,45 @@ interface CLIOptions {
 /**
  * JSONファイルの実際の構造（analysisのみを含む）
  */
-interface RawInvestigationFile {
-  analysis: {
-    positivePoints: string[];
-    negativePoints: string[];
-    useCases: string[];
-    userStories: Array<{
-      userType: string;
-      scenario: string;
-      experience: string;
-      sentiment: 'positive' | 'negative' | 'mixed';
-    }>;
-    userImpression: string;
-    sources: Array<{
-      name: string;
-      url?: string;
-      credibility?: string;
-    }>;
-    competitiveAnalysis: Array<{
-      name: string;
-      asin?: string;
-      priceComparison: string;
-      featureComparison: string[];
-      differentiators: string[];
-    }>;
-    recommendation: {
-      targetUsers: string[];
-      pros: string[];
-      cons: string[];
-      score: number;
-    };
-    lastInvestigated?: string;
-  };
-}
+const InvestigationFileSchema = z.object({
+  analysis: z.object({
+    positivePoints: z.array(z.string()),
+    negativePoints: z.array(z.string()),
+    useCases: z.array(z.string()),
+    userStories: z.array(
+      z.object({
+        userType: z.string(),
+        scenario: z.string(),
+        experience: z.string(),
+        sentiment: z.enum(['positive', 'negative', 'mixed']),
+      }),
+    ),
+    userImpression: z.string(),
+    sources: z.array(
+      z.object({
+        name: z.string(),
+        url: z.string().optional(),
+        credibility: z.string().optional(),
+      }),
+    ),
+    competitiveAnalysis: z.array(
+      z.object({
+        name: z.string(),
+        asin: z.string().optional(),
+        priceComparison: z.string(),
+        featureComparison: z.array(z.string()),
+        differentiators: z.array(z.string()),
+      }),
+    ),
+    recommendation: z.object({
+      targetUsers: z.array(z.string()),
+      pros: z.array(z.string()),
+      cons: z.array(z.string()),
+      score: z.number(),
+    }),
+    lastInvestigated: z.string().optional(),
+  }),
+});
 
 export interface InvestigationData {
   product: Product;
@@ -139,7 +146,15 @@ export async function loadInvestigationResults(targetFiles?: string[]): Promise<
       chunk.map(async (filePath) => {
         try {
           const rawData = await fs.readFile(filePath, 'utf-8');
-          const parsed = JSON.parse(rawData) as RawInvestigationFile;
+          const jsonParsed: unknown = JSON.parse(rawData);
+          const validation = InvestigationFileSchema.safeParse(jsonParsed);
+
+          if (!validation.success) {
+            logger.warn(`Invalid investigation file format ${filePath}:`, validation.error);
+            return null;
+          }
+
+          const parsed = validation.data;
 
           const fileName = path.basename(filePath);
           // Skip if not a JSON file or is summary
@@ -181,7 +196,7 @@ export async function loadInvestigationResults(targetFiles?: string[]): Promise<
           const investigation: InvestigationResult = {
             sessionId: `file-${asin}`,
             product,
-            analysis: parsed.analysis,
+            analysis: parsed.analysis as unknown as InvestigationResult['analysis'],
             generatedAt: generatedAt,
           };
 
