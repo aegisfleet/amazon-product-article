@@ -9,11 +9,11 @@
  *   GITHUB_REPOSITORY - GitHubリポジトリ（owner/repo形式）
  */
 
+import dotenv from 'dotenv';
 import { exec } from 'node:child_process';
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import { promisify } from 'node:util';
-import dotenv from 'dotenv';
 import { z } from 'zod';
 import { CreatorsAPICache } from '../api/CreatorsAPICache';
 import { CreatorsAPIClient } from '../api/CreatorsAPIClient';
@@ -45,7 +45,7 @@ interface CLIOptions {
  * JSONファイルの実際の構造（analysisのみを含む）
  */
 const InvestigationFileSchema = z.object({
-  analysis: z.object({
+  analysis: z.looseObject({
     positivePoints: z.array(z.string()),
     negativePoints: z.array(z.string()),
     useCases: z.array(z.string()),
@@ -74,7 +74,7 @@ const InvestigationFileSchema = z.object({
         differentiators: z.array(z.string()),
       }),
     ),
-    recommendation: z.object({
+    recommendation: z.looseObject({
       targetUsers: z.array(z.string()),
       pros: z.array(z.string()),
       cons: z.array(z.string()),
