@@ -5,9 +5,9 @@
  * 適切な親カテゴリに分類するためのJulesセッションを作成する
  */
 
+import axios, { type AxiosInstance } from 'axios';
 import * as fs from 'node:fs/promises';
 import * as path from 'node:path';
-import axios, { type AxiosInstance } from 'axios';
 import type {
   JulesCredentials,
   JulesError,
@@ -58,8 +58,8 @@ export interface OrganizationSession {
 }
 
 export class JulesCategoryOrganizer {
-  private client: AxiosInstance;
-  private logger: Logger;
+  private readonly client: AxiosInstance;
+  private readonly logger: Logger;
 
   constructor(credentials: JulesCredentials) {
     this.logger = Logger.getInstance();
@@ -177,8 +177,8 @@ export class JulesCategoryOrganizer {
       }
     }
 
-    // デフォルトのUnicode順でソート
-    return unregistered.sort();
+    // 日本語ロケールでソート
+    return unregistered.sort((a, b) => a.localeCompare(b, 'ja'));
   }
 
   /**
