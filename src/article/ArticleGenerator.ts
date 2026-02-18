@@ -754,7 +754,7 @@ ${investigation.analysis.recommendation.cons.map((con) => `- ${con}`).join('\n')
       ? this.formatScoreRationaleAsCard(investigation.analysis.recommendation.scoreRationale)
       : '';
 
-    let recommendationMessage = '';
+    let recommendationMessage: string;
     if (score >= 80) {
       recommendationMessage = '自信を持っておすすめできる商品です。';
     } else if (score >= 60) {
