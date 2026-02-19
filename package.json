@@ -62,6 +62,9 @@
   },
   "overrides": {
     "crypto-js": "^4.2.0",
+    "test-exclude": {
+      "minimatch": "^3.1.2"
+    },
     "minimatch": "^10.2.1"
   }
 }
