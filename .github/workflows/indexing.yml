@@ -1,0 +1,32 @@
+name: Google Indexing
+
+permissions:
+  contents: read
+
+on:
+  schedule:
+    - cron: '0 15 * * *' # UTC 15:00 = JST 00:00
+  workflow_dispatch: # Allow manual trigger
+
+jobs:
+  index:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: '22'
+
+      - name: Install dependencies
+        run: npm install googleapis
+
+      - name: Run Indexing Script
+        env:
+          GCP_SA_KEY: ${{ secrets.GCP_SA_KEY }} # Load key from Secrets
+          # You might want to pass specific URLs here if possible, 
+          # otherwise the script currently indexes a hardcoded list or empty list if no args.
+          # To make this useful for *changed* files, we'd need a way to detect changed files and pass them as args.
+          # For now, it runs the script as-is, which is the requested base structure.
+        run: npx ts-node scripts/index-api.ts

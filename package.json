@@ -37,6 +37,7 @@
     "@eslint/js": "^10.0.1",
     "@types/jest": "^30.0.0",
     "@types/node": "^25.2.3",
+    "@types/xml2js": "^0.4.14",
     "@typescript-eslint/eslint-plugin": "8.55.1-alpha.4",
     "@typescript-eslint/parser": "8.55.1-alpha.4",
     "eslint": "^10.0.0",
@@ -55,6 +56,8 @@
     "axios": "^1.13.5",
     "dotenv": "^17.3.1",
     "fuse.js": "^7.1.0",
+    "googleapis": "^171.4.0",
+    "xml2js": "^0.6.2",
     "zod": "^4.3.6"
   },
   "overrides": {
