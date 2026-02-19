@@ -20,7 +20,7 @@ jobs:
           node-version: '22'
 
       - name: Install dependencies
-        run: npm install googleapis
+        run: npm ci
 
       - name: Run Indexing Script
         env:
