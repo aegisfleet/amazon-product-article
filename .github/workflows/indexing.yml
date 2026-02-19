@@ -29,4 +29,4 @@ jobs:
           # otherwise the script currently indexes a hardcoded list or empty list if no args.
           # To make this useful for *changed* files, we'd need a way to detect changed files and pass them as args.
           # For now, it runs the script as-is, which is the requested base structure.
-        run: npx ts-node scripts/index-api.ts
+        run: npx ts-node scripts/index-api.mts
