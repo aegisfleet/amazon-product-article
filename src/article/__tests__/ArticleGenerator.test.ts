@@ -236,7 +236,7 @@ describe('ArticleGenerator', () => {
       expect(result.content).toContain('購入者の生の声');
       expect(result.content).toContain('会社員の体験談 (通勤・通学)');
       expect(result.content).toContain('多くのユーザーが満足感を得ている');
-      expect(result.content).toContain('[Amazonレビュー](https://amazon.co.jp)');
+      expect(result.content).toContain('<a href="https://amazon.co.jp" target="_blank" rel="noopener noreferrer">Amazonレビュー</a>');
       // Verify Creators API is rendered as plain text, not a link
       // Note: optimizeListsForMobile wraps list items in a span
       expect(result.content).toContain('<span class="mobile-list-item">Amazon Creators API (High)</span>');
