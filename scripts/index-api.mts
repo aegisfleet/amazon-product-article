@@ -1,5 +1,7 @@
 import axios from 'axios';
 import { google } from 'googleapis';
+import fs from 'node:fs';
+import path from 'node:path';
 import { parseStringPromise } from 'xml2js';
 
 // Environment variable check
@@ -22,6 +24,59 @@ const jwtClient = new google.auth.JWT({
     key: key.private_key,
     scopes: ['https://www.googleapis.com/auth/indexing'],
 });
+
+const STATE_FILE = path.join(process.cwd(), 'data', 'indexing-state.json');
+
+interface IndexingState {
+    lastIndexed: { [url: string]: string }; // ISO date string
+}
+
+const loadState = (): IndexingState => {
+    if (fs.existsSync(STATE_FILE)) {
+        try {
+            return JSON.parse(fs.readFileSync(STATE_FILE, 'utf-8'));
+        } catch (e) {
+            console.warn('Failed to parse state file, starting fresh.', e);
+        }
+    }
+    return { lastIndexed: {} };
+};
+
+const saveState = (state: IndexingState) => {
+    try {
+        const dir = path.dirname(STATE_FILE);
+        if (!fs.existsSync(dir)) {
+            fs.mkdirSync(dir, { recursive: true });
+        }
+        fs.writeFileSync(STATE_FILE, JSON.stringify(state, null, 2), 'utf-8');
+    } catch (e) {
+        console.error('Failed to save state file.', e);
+    }
+};
+
+const sleep = (ms: number) => new Promise(resolve => setTimeout(resolve, ms));
+
+// Sort URLs by staleness (least recently indexed first)
+// URLs never indexed will appear first (undefined date < any date)
+const getCandidateUrls = (urls: string[], state: IndexingState): string[] => {
+    const uniqueUrls = [...new Set(urls)];
+    const now = new Date();
+    const THREE_DAYS_MS = 3 * 24 * 60 * 60 * 1000;
+
+    const sortedUrls = uniqueUrls.sort((a, b) => {
+        const dateA = state.lastIndexed[a] ? new Date(state.lastIndexed[a]).getTime() : 0;
+        const dateB = state.lastIndexed[b] ? new Date(state.lastIndexed[b]).getTime() : 0;
+        return dateA - dateB;
+    });
+
+    // Filter out recently indexed URLs
+    return sortedUrls.filter(url => {
+        const lastIndexedStr = state.lastIndexed[url];
+        if (!lastIndexedStr) return true;
+        const lastIndexed = new Date(lastIndexedStr).getTime();
+        return (now.getTime() - lastIndexed) > THREE_DAYS_MS;
+    });
+};
 
 const batch = async () => {
     try {
@@ -56,27 +111,76 @@ const batch = async () => {
             return;
         }
 
-        // Filter duplicates
-        const uniqueUrls = [...new Set(urls)];
+        const state = loadState();
+        const candidates = getCandidateUrls(urls, state);
 
-        for (const url of uniqueUrls) {
+        console.log(`Candidates for indexing (older than 3 days or new): ${candidates.length}`);
+
+        // Limit to 180 requests per run to respect 200/day quota with buffer
+        const batchSize = 180;
+        const toIndex = candidates.slice(0, batchSize);
+
+        if (toIndex.length === 0) {
+            console.log('No URLs need indexing at this time.');
+            return;
+        }
+
+        console.log(`Processing top ${toIndex.length} URLs...`);
+
+        for (const url of toIndex) {
             console.log(`Requesting indexing for: ${url}`);
-            try {
-                const result = await google.indexing('v3').urlNotifications.publish({
-                    auth: jwtClient,
-                    requestBody: {
-                        url: url,
-                        type: 'URL_UPDATED',
-                    },
-                });
-                console.log(`Success: ${result.status}`);
-            } catch (err: any) {
-                console.error(`Error indexing ${url}:`, err.message);
-                if (err.response) {
-                    console.error(err.response.data);
+
+            let retries = 3;
+            let success = false;
+
+            while (retries > 0 && !success) {
+                try {
+                    const result = await google.indexing('v3').urlNotifications.publish({
+                        auth: jwtClient,
+                        requestBody: {
+                            url: url,
+                            type: 'URL_UPDATED',
+                        },
+                    });
+                    console.log(`Success: ${result.status}`);
+                    state.lastIndexed[url] = new Date().toISOString();
+                    success = true;
+                } catch (err: any) {
+                    const status = err.code || err.response?.status;
+                    const message = err.message || JSON.stringify(err.response?.data);
+
+                    console.error(`Error indexing ${url}: ${status} - ${message}`);
+
+                    if (status === 429) {
+                        if (message.includes('Publish requests per day')) {
+                            console.error('Daily quota exceeded. Stopping execution and saving state.');
+                            saveState(state);
+                            return; // Stop immediately
+                        } else {
+                            console.log(`Rate limit exceeded (backoff). Retrying... (${retries} left)`);
+                            await sleep(2000 * (4 - retries)); // Exponential backoff: 2s, 4s, 6s
+                        }
+                    } else if (status >= 500) {
+                        console.log(`Server error ${status}. Retrying... (${retries} left)`);
+                        await sleep(2000 * (4 - retries));
+                    } else {
+                        // 403, 404, etc. - Do not retry
+                        console.error(`Non-retriable error for ${url}. Skipping.`);
+                        break;
+                    }
+                    retries--;
                 }
             }
+
+            if (success) {
+                // Rate limiting: sleep 1.5s between successful requests
+                await sleep(1500);
+            }
         }
+
+        saveState(state);
+        console.log('Batch processing complete.');
+
     } catch (error: any) {
         console.error('Fatal Error:', error.message);
         process.exit(1);
