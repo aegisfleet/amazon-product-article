@@ -78,33 +78,73 @@ const getCandidateUrls = (urls: string[], state: IndexingState): string[] => {
     });
 };
 
+const fetchSitemapUrls = async (): Promise<string[]> => {
+    const sitemapUrl = 'https://aegisfleet.github.io/amazon-product-article/sitemap.xml';
+    const urls: string[] = [];
+    try {
+        console.log(`Fetching sitemap from: ${sitemapUrl}`);
+        const response = await axios.get(sitemapUrl);
+        const result = await parseStringPromise(response.data);
+        if (result.urlset && result.urlset.url) {
+            const sitemapUrls = result.urlset.url.map((entry: any) => entry.loc[0]);
+            console.log(`Found ${sitemapUrls.length} URLs in sitemap.`);
+            urls.push(...sitemapUrls);
+        }
+    } catch (error: any) {
+        console.error(`Warning: Failed to fetch or parse sitemap: ${error.message}`);
+    }
+    return urls;
+};
+
+const processUrl = async (jwtClient: any, url: string): Promise<'SUCCESS' | 'QUOTA_EXCEEDED' | 'SKIPPED' | 'FAILED'> => {
+    let retries = 3;
+    while (retries > 0) {
+        try {
+            const result = await google.indexing('v3').urlNotifications.publish({
+                auth: jwtClient,
+                requestBody: { url: url, type: 'URL_UPDATED' },
+            });
+            console.log(`Success: ${result.status}`);
+            return 'SUCCESS';
+        } catch (err: any) {
+            const status = err.code || err.response?.status;
+            const message = err.message || JSON.stringify(err.response?.data);
+
+            console.error(`Error indexing ${url}: ${status} - ${message}`);
+
+            if (status === 429) {
+                if (message.includes('Publish requests per day')) {
+                    console.error('Daily quota exceeded. Stopping execution.');
+                    return 'QUOTA_EXCEEDED';
+                }
+                console.log(`Rate limit exceeded (backoff). Retrying... (${retries} left)`);
+                await sleep(2000 * (4 - retries));
+            } else if (status >= 500) {
+                console.log(`Server error ${status}. Retrying... (${retries} left)`);
+                await sleep(2000 * (4 - retries));
+            } else {
+                console.error(`Non-retriable error for ${url}. Skipping.`);
+                return 'SKIPPED';
+            }
+        }
+        retries--;
+    }
+    return 'FAILED';
+};
+
 const batch = async () => {
     try {
         await jwtClient.authorize();
         console.log('Successfully authorized with Google Indexing API.');
 
         const urls: string[] = [];
-
-        // Example of fetching URLs from command line arguments
         const args = process.argv.slice(2);
         if (args.length > 0) {
             urls.push(...args);
         }
 
-        // --- Sitemap Parsing ---
-        const sitemapUrl = 'https://aegisfleet.github.io/amazon-product-article/sitemap.xml';
-        try {
-            console.log(`Fetching sitemap from: ${sitemapUrl}`);
-            const response = await axios.get(sitemapUrl);
-            const result = await parseStringPromise(response.data);
-            if (result.urlset && result.urlset.url) {
-                const sitemapUrls = result.urlset.url.map((entry: any) => entry.loc[0]);
-                console.log(`Found ${sitemapUrls.length} URLs in sitemap.`);
-                urls.push(...sitemapUrls);
-            }
-        } catch (error: any) {
-            console.error(`Warning: Failed to fetch or parse sitemap: ${error.message}`);
-        }
+        const sitemapUrls = await fetchSitemapUrls();
+        urls.push(...sitemapUrls);
 
         if (urls.length === 0) {
             console.log('No URLs provided for indexing.');
@@ -113,10 +153,8 @@ const batch = async () => {
 
         const state = loadState();
         const candidates = getCandidateUrls(urls, state);
-
         console.log(`Candidates for indexing (older than 3 days or new): ${candidates.length}`);
 
-        // Limit to 180 requests per run to respect 200/day quota with buffer
         const batchSize = 180;
         const toIndex = candidates.slice(0, batchSize);
 
@@ -129,52 +167,14 @@ const batch = async () => {
 
         for (const url of toIndex) {
             console.log(`Requesting indexing for: ${url}`);
+            const result = await processUrl(jwtClient, url);
 
-            let retries = 3;
-            let success = false;
-
-            while (retries > 0 && !success) {
-                try {
-                    const result = await google.indexing('v3').urlNotifications.publish({
-                        auth: jwtClient,
-                        requestBody: {
-                            url: url,
-                            type: 'URL_UPDATED',
-                        },
-                    });
-                    console.log(`Success: ${result.status}`);
-                    state.lastIndexed[url] = new Date().toISOString();
-                    success = true;
-                } catch (err: any) {
-                    const status = err.code || err.response?.status;
-                    const message = err.message || JSON.stringify(err.response?.data);
-
-                    console.error(`Error indexing ${url}: ${status} - ${message}`);
-
-                    if (status === 429) {
-                        if (message.includes('Publish requests per day')) {
-                            console.error('Daily quota exceeded. Stopping execution and saving state.');
-                            saveState(state);
-                            return; // Stop immediately
-                        } else {
-                            console.log(`Rate limit exceeded (backoff). Retrying... (${retries} left)`);
-                            await sleep(2000 * (4 - retries)); // Exponential backoff: 2s, 4s, 6s
-                        }
-                    } else if (status >= 500) {
-                        console.log(`Server error ${status}. Retrying... (${retries} left)`);
-                        await sleep(2000 * (4 - retries));
-                    } else {
-                        // 403, 404, etc. - Do not retry
-                        console.error(`Non-retriable error for ${url}. Skipping.`);
-                        break;
-                    }
-                    retries--;
-                }
-            }
-
-            if (success) {
-                // Rate limiting: sleep 1.5s between successful requests
+            if (result === 'SUCCESS') {
+                state.lastIndexed[url] = new Date().toISOString();
                 await sleep(1500);
+            } else if (result === 'QUOTA_EXCEEDED') {
+                saveState(state);
+                return;
             }
         }
 
