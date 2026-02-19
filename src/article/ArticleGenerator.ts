@@ -445,7 +445,7 @@ ${infoRows.join('\n')}
         };
 
         if (source.url && !isCreatorsApiUrl(source.url)) {
-          return `- [${source.name}](${source.url})${credibility}`;
+          return `- <a href="${source.url}" target="_blank" rel="noopener noreferrer">${source.name}</a>${credibility}`;
         }
         return `- ${source.name}${credibility}`;
       })
