@@ -1,5 +1,8 @@
 name: Google Indexing
 
+permissions:
+  contents: read
+
 on:
   schedule:
     - cron: '0 15 * * *' # UTC 15:00 = JST 00:00
