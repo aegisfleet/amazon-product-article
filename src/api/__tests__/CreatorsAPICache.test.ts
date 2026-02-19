@@ -1,4 +1,5 @@
 import fs from 'node:fs';
+import path from 'node:path';
 import type { ProductDetail } from '../../types/Product';
 import { CreatorsAPICache } from '../CreatorsAPICache';
 
@@ -204,7 +205,10 @@ describe('CreatorsAPICache', () => {
     try {
       await cache.save();
 
-      expect(mkdirSpy).toHaveBeenCalledWith(expect.stringContaining(mockCacheDir), { recursive: true });
+      // Normalize path for cross-platform compatibility (Windows uses backslash)
+      const expectedPathChunk = path.normalize(mockCacheDir);
+
+      expect(mkdirSpy).toHaveBeenCalledWith(expect.stringContaining(expectedPathChunk), { recursive: true });
       expect(writeFileSpy).toHaveBeenCalledWith(
         expect.stringContaining('paapi-product-cache.json'),
         expect.any(String),
