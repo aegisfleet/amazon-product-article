@@ -1,0 +1,117 @@
+{
+  "analysis": {
+    "productName": "UnionSine 500GB ポータブルHDD HD2510",
+    "parentAsin": "B091FS79T8",
+    "productDescription": "USB 3.0対応の超薄型2.5インチポータブルハードディスク。PC、Mac、PS4、Xbox、テレビ録画など幅広い機器に対応し、手軽にデータ保存が可能。",
+    "productUsage": [
+      "PCやMacのデータバックアップ",
+      "PS4やXboxのゲームデータ保存・容量拡張",
+      "テレビ番組の録画用ストレージ",
+      "持ち運びに便利な大容量データの移動"
+    ],
+    "positivePoints": [
+      "薄型かつ軽量で持ち運びに便利",
+      "新品のHDDとしては非常に安価でコストパフォーマンスが良い",
+      "USB 3.0対応で実用的な転送速度",
+      "Windows/Mac/Linux/Android/PS4/Xbox/TVと幅広い互換性",
+      "指紋が目立ちにくいストライプデザイン"
+    ],
+    "negativePoints": [
+      "SSDに比べて転送速度が遅い（HDDの物理的限界）",
+      "耐衝撃性がSSDより劣るため取り扱いに注意が必要",
+      "有名メーカー製に比べてブランドの信頼性が未知数",
+      "500GBという容量は現代の基準では少なめ"
+    ],
+    "useCases": [
+      "出張や旅行時のデータ持ち運び",
+      "古いPCのデータ移行用",
+      "予算を抑えたい場合のテレビ録画用",
+      "ゲーム機のサブストレージ"
+    ],
+    "userStories": [
+      {
+        "userType": "学生",
+        "scenario": "課題データのバックアップ",
+        "experience": "（推測）PCの容量が足りなくなったため購入。USBメモリより大容量で安価な点が魅力。速度はそこそこだが、写真や文書の保存には十分使える。",
+        "sentiment": "positive"
+      },
+      {
+        "userType": "ゲーマー",
+        "scenario": "PS4の容量拡張",
+        "experience": "（推測）PS4のゲームをインストールするために使用。ロード時間は内蔵HDDと変わらないが、安く容量を増やせたので満足している。",
+        "sentiment": "positive"
+      },
+      {
+        "userType": "一般ユーザー",
+        "scenario": "テレビ録画",
+        "experience": "（推測）テレビの録画用として購入。たまに認識しないことがあるという噂を聞いて不安だったが、今のところ問題なく録画できている。",
+        "sentiment": "mixed"
+      }
+    ],
+    "userImpression": "コストパフォーマンスを最優先するユーザーに適した製品。ブランド知名度は低いが、基本的な機能は備えており、安価にストレージを追加したい場合の選択肢となる。ただし、重要なデータの長期保存には有名メーカー製やSSDを検討すべき。",
+    "sources": [
+      {
+        "name": "Amazon商品ページ",
+        "url": "https://www.amazon.co.jp/dp/B091FS79T8",
+        "credibility": "高"
+      }
+    ],
+    "lastInvestigated": "2026-02-20",
+    "competitiveAnalysis": [
+      {
+        "name": "I-O DATA ポータブルHDD 500GB HDPC-UT500KE",
+        "asin": "B00S8RXZLI",
+        "priceComparison": "約3,000円とUnionSineよりさらに安い（旧モデル特価の可能性あり）。",
+        "featureComparison": ["信頼性の高い日本製メーカー", "USB 3.0対応", "コンパクトサイズ"],
+        "differentiators": ["圧倒的な安さ", "メーカーの信頼性"]
+      },
+      {
+        "name": "BUFFALO ポータブルSSD 480GB SSD-PG480U3-B/NL",
+        "asin": "B07S9X55BX",
+        "priceComparison": "約8,100円とUnionSineの約2倍。",
+        "featureComparison": ["SSDなので高速", "耐衝撃性に優れる", "日本製メーカー"],
+        "differentiators": ["速度", "耐久性", "静音性"]
+      },
+      {
+        "name": "HCMA 外付けHDD 500GB",
+        "asin": "B0FP9T7KKK",
+        "priceComparison": "約5,000円とUnionSineより若干高い。",
+        "featureComparison": ["UnionSineとほぼ同等のスペック", "中華系ブランド"],
+        "differentiators": ["特になし（価格でUnionSineが有利）"]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "とにかく安く外付けストレージが欲しい人",
+        "データの持ち運びが多い人",
+        "ゲーム機やテレビの容量を少し増やしたい人"
+      ],
+      "pros": [
+        "非常に安価",
+        "薄型で軽量",
+        "多機種対応"
+      ],
+      "cons": [
+        "SSDに比べて速度が遅い",
+        "耐衝撃性が低い",
+        "ブランドの信頼性が不透明"
+      ],
+      "score": 65,
+      "scoreRationale": "[基本点: 70]\n[加点: +5] (新品HDDとしては安価な部類)\n[減点: -5] (SSD全盛の時代にHDDの速度は物足りない)\n[減点: -5] (ブランド知名度が低く、信頼性に不安が残る)\n[合計: 65]"
+    },
+    "technicalSpecs": {
+      "capacity": "500GB",
+      "interface": "USB 3.0 / USB 2.0",
+      "dimensions": {
+        "height": "1.3cm",
+        "width": "8.0cm",
+        "depth": "11.6cm",
+        "weight": "約220g"
+      },
+      "compatibility": ["Windows", "Mac", "Linux", "Android", "PS4", "Xbox", "TV"],
+      "speed": "最大書き込み速度 103MB/s（理論値）",
+      "material": "アルミニウム混信防止層、ABSプラスチック",
+      "rpm": "不明（通常5400rpm）"
+    }
+  }
+}
