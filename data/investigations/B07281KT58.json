@@ -1,0 +1,141 @@
+{
+  "analysis": {
+    "productName": "エレコム TK-TDM017BK ワイヤレス テンキー",
+    "parentAsin": "B07281KT58",
+    "productDescription": "2.4GHz無線接続を採用したスタンダードなメンブレン式テンキーです。1000万回の高耐久キーと、Excel作業に便利なTabキーや00キーを搭載しています。",
+    "productUsage": [
+      "Excelでのデータ入力作業",
+      "ノートPCでの数字入力補助",
+      "会計・事務処理業務"
+    ],
+    "positivePoints": [
+      "安定した2.4GHzワイヤレス接続",
+      "NumLock非連動でノートPCのキーボードと干渉しない",
+      "Tabキーと00キーがあり、数字入力がスムーズ",
+      "電源スイッチと電池残量表示がある",
+      "安価でコストパフォーマンスが高い"
+    ],
+    "negativePoints": [
+      "メンブレン式特有の打鍵音が気になる場合がある",
+      "USBポートを1つ占有する（Bluetoothではない）",
+      "キーピッチが広いため、コンパクトさを求める人には大きすぎるかも"
+    ],
+    "useCases": [
+      "オフィスでの事務作業（特にExcel）",
+      "リモートワークでのノートPC拡張",
+      "出張時のデータ入力用"
+    ],
+    "userStories": [
+      {
+        "userType": "事務職",
+        "scenario": "日々の売上入力",
+        "experience": "Excelでの入力作業が格段に楽になりました。特にTabキーと00キーがあるおかげで、マウスに持ち替える回数が減りました。",
+        "sentiment": "positive"
+      },
+      {
+        "userType": "学生",
+        "scenario": "レポート作成",
+        "experience": "ノートPCのキーボード配置に慣れず購入しましたが、数字入力が早くなり、レポート作成の効率が上がりました。",
+        "sentiment": "positive"
+      },
+      {
+        "userType": "在宅勤務者",
+        "scenario": "自宅での仕事",
+        "experience": "安くて丈夫そうですが、深夜に作業すると打鍵音が少し響くのが気になります。",
+        "sentiment": "mixed"
+      }
+    ],
+    "userImpression": "コスパ重視の実用的なテンキーとして評価されています。機能は必要十分で、耐久性も期待できるため、事務作業の効率化に貢献します。",
+    "sources": [
+      {
+        "name": "エレコム公式サイト",
+        "url": "https://www.elecom.co.jp/products/TK-TDM017BK.html",
+        "credibility": "高"
+      },
+      {
+        "name": "Amazon商品ページ",
+        "url": "https://www.amazon.co.jp/dp/B07281KT58",
+        "credibility": "中"
+      }
+    ],
+    "lastInvestigated": "2026-02-21",
+    "competitiveAnalysis": [
+      {
+        "name": "エレコム TK-TBP020BK",
+        "asin": "B07FR4ZRX4",
+        "priceComparison": "約1,000円高い（2,681円）",
+        "featureComparison": [
+          "Bluetooth接続",
+          "パンタグラフ式キー",
+          "薄型デザイン"
+        ],
+        "differentiators": [
+          "USBポートを塞がないBluetooth接続",
+          "ノートPCと同じパンタグラフ式で軽いタッチ",
+          "持ち運びに便利な薄型設計"
+        ]
+      },
+      {
+        "name": "iClever IC-KP10",
+        "asin": "B0B6J4Q3KH",
+        "priceComparison": "約2,200円高い（3,799円）",
+        "featureComparison": [
+          "Bluetooth接続",
+          "充電式バッテリー",
+          "34キー搭載"
+        ],
+        "differentiators": [
+          "電池交換不要の充電式",
+          "多機能キー搭載で効率アップ",
+          "高級感のあるデザイン"
+        ]
+      },
+      {
+        "name": "サンワサプライ NT-WL27BK",
+        "asin": "B0DMVQR1W7",
+        "priceComparison": "約3,200円高い（4,836円）",
+        "featureComparison": [
+          "ワイヤレス接続",
+          "表計算特化キー配置",
+          "高価格帯"
+        ],
+        "differentiators": [
+          "表計算ソフトでの使用を想定した特殊キー配置",
+          "しっかりとした打鍵感",
+          "プロ向けの仕様"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "Excel作業が多い事務職",
+        "ノートPCユーザー",
+        "コストパフォーマンス重視の人"
+      ],
+      "pros": [
+        "安価で手に入れやすい",
+        "安定した2.4GHz無線接続",
+        "Tabキーと00キーが便利"
+      ],
+      "cons": [
+        "USBポートを占有する",
+        "打鍵音が気になる場合がある",
+        "Bluetooth非対応"
+      ],
+      "score": 85,
+      "scoreRationale": "[基本点: 70]\n[加点: +5] (Tabキー、00キー、NumLock非連動など実用的な機能を搭載)\n[加点: +10] (競合と比較しても非常に安価でコストパフォーマンスが高い)\n[合計: 85]"
+    },
+    "technicalSpecs": {
+      "connection": "2.4GHzワイヤレス (USB-Aレシーバー)",
+      "keySwitch": "メンブレン",
+      "keyPitch": "19mm",
+      "keyStroke": "深め",
+      "battery": "単3形乾電池×1",
+      "batteryLife": "約1.3年 (想定)",
+      "size": "幅90×奥行140×高さ27mm",
+      "weight": "約107g (電池含まず)",
+      "os": "Windows 10/8.1/7/XP",
+      "other": "NumLock非連動, Tabキー, 00キー, 電源スイッチ, 電池残量表示"
+    }
+  }
+}
