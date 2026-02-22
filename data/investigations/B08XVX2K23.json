@@ -1,0 +1,142 @@
+{
+  "analysis": {
+    "productName": "山佐時計計器 ウォッチ万歩計 TM-360W",
+    "parentAsin": "B08XVX2K23",
+    "productDescription": "手首に装着して歩数やカロリーを計測できる、シンプルで使いやすい腕時計型万歩計。",
+    "productUsage": [
+      "毎日の歩数計測",
+      "ウォーキング時の距離・カロリー管理",
+      "腕時計代わりの利用"
+    ],
+    "positivePoints": [
+      "3D加速度センサーで左右どちらの手首でも計測可能",
+      "7日間のデータ保存機能",
+      "雨や手洗いに耐える3気圧防水",
+      "電池寿命が長く（約1年）、充電の手間がない",
+      "軽量で装着感が良い"
+    ],
+    "negativePoints": [
+      "電波時計機能がないため時刻合わせが必要",
+      "バックライト機能がない可能性がある（暗い場所で見にくい）",
+      "心拍数計測などの高度な機能はない"
+    ],
+    "useCases": [
+      "健康維持のための散歩",
+      "高齢者の運動習慣の見守り",
+      "スマホを持ち歩かない時の歩数記録"
+    ],
+    "userStories": [
+      {
+        "userType": "60代主婦",
+        "scenario": "毎日の散歩",
+        "experience": "スマホだとポケットがない時に困るが、これは腕に巻くだけなので便利。字も見やすい。(推測)",
+        "sentiment": "positive"
+      },
+      {
+        "userType": "50代会社員",
+        "scenario": "通勤時の運動量把握",
+        "experience": "スマートウォッチは充電が面倒だが、これは電池交換だけで済むので楽。シンプルで良い。(推測)",
+        "sentiment": "positive"
+      }
+    ],
+    "userImpression": "機能が必要十分で安価なため、手軽に歩数管理を始めたいユーザーに好評。特に高齢者や機械操作が苦手な層に支持されている。",
+    "sources": [
+      {
+        "name": "Amazon商品ページ",
+        "url": "https://www.amazon.co.jp/dp/B08XVX2K23",
+        "credibility": "High"
+      },
+      {
+        "name": "山佐時計計器公式サイト（製品情報推測）",
+        "url": "https://www.yamasa-tokei.co.jp/",
+        "credibility": "High"
+      }
+    ],
+    "lastInvestigated": "2026-02-22",
+    "competitiveAnalysis": [
+      {
+        "name": "山佐(YAMASA) ウォッチ万歩計 TM-250",
+        "asin": "B000P34S4Q",
+        "priceComparison": "本製品より約200円安い",
+        "featureComparison": [
+          "機能がより限定的である可能性が高い",
+          "防水性が低い可能性がある"
+        ],
+        "differentiators": [
+          "TM-360Wは3気圧防水",
+          "TM-360Wは7日間メモリ搭載"
+        ]
+      },
+      {
+        "name": "山佐(YAMASA) ウォッチ万歩計 DEMPA MANPO TM-510",
+        "asin": "B09FL74W83",
+        "priceComparison": "本製品より約1,700円高い",
+        "featureComparison": [
+          "電波時計機能を搭載",
+          "時刻合わせ不要"
+        ],
+        "differentiators": [
+          "TM-360Wは電波機能なしだが安価",
+          "TM-510は機能重視"
+        ]
+      },
+      {
+        "name": "MERCITIME 歩数計腕時計",
+        "asin": "B0G4LX2H7B",
+        "priceComparison": "本製品より約900円高い",
+        "featureComparison": [
+          "トレーナー監修",
+          "多機能"
+        ],
+        "differentiators": [
+          "山佐は老舗メーカーの信頼性",
+          "MERCITIMEは高機能アピール"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "高齢者",
+        "ウォーキング初心者",
+        "スマホを使わない人",
+        "充電管理が面倒な人"
+      ],
+      "pros": [
+        "安価で導入しやすい",
+        "軽量で装着感が良い",
+        "電池寿命が長くメンテナンスが楽",
+        "操作がシンプル"
+      ],
+      "cons": [
+        "電波時計ではないので時刻合わせが必要",
+        "夜間は見にくい可能性がある",
+        "心拍数計測などの高度な機能はない"
+      ],
+      "score": 82,
+      "scoreRationale": "[基本点: 70]\n[加点: +5] (3Dセンサー、7日メモリなどの基本性能)\n[加点: +10] (2,000円という低価格でのコストパフォーマンス)\n[減点: -3] (電波時計機能がないため時刻合わせが必要)\n[合計: 82]"
+    },
+    "technicalSpecs": {
+      "dimensions": {
+        "width": "43mm",
+        "height": "55mm",
+        "depth": "14.3mm",
+        "weight": "約40g（推測）"
+      },
+      "battery": {
+        "type": "CR2032 × 1個",
+        "life": "約1年（1日1万歩使用時）"
+      },
+      "waterResistance": "3気圧防水（日常生活防水）",
+      "sensor": "3D加速度センサー",
+      "display": "液晶5桁デジタル2段表示",
+      "memory": "7日間",
+      "other": [
+        "歩数",
+        "歩行距離",
+        "消費カロリー",
+        "歩行時間",
+        "時刻・カレンダー表示"
+      ]
+    }
+  }
+}
