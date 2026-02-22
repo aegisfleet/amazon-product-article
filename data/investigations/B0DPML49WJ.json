@@ -1,0 +1,102 @@
+{
+  "analysis": {
+    "productName": "DNIO Type-C 有線イヤホン マイク・リモコン付き",
+    "parentAsin": "B0DPML49WJ",
+    "productDescription": "USB Type-Cポートに直接接続できる、マイク・リモコン付きのインナーイヤー型有線イヤホンです。",
+    "productUsage": [
+      "USB Type-Cポート搭載のスマートフォンやタブレットでの音楽鑑賞",
+      "マイクを使用したハンズフリー通話・Web会議",
+      "手元のリモコンでの音量調整・再生操作"
+    ],
+    "positivePoints": [
+      "746円という圧倒的な低価格で購入できる",
+      "変換アダプタ不要でUSB Type-Cポートに直接挿して使える",
+      "マイクとリモコンを搭載し、通話や操作が手元で可能",
+      "インナーイヤー型で、カナル型特有の圧迫感が苦手な人に適している"
+    ],
+    "negativePoints": [
+      "ブランドの信頼性が不明で、長期的な耐久性に不安がある",
+      "商品説明に「自動巻き取り機能」とあるが、製品画像は通常のケーブルであり、誤記の可能性が高い",
+      "「HiFi」「ハイレゾ」等の表記があるが、価格相応の音質である可能性が高い",
+      "防水性能の具体的な等級（IPXなど）が明記されていない"
+    ],
+    "useCases": [
+      "メインのイヤホンが故障した際の緊急用・予備用",
+      "紛失リスクのある外出時や、子供用のイヤホンとして",
+      "Web会議やオンライン授業での一時的な利用"
+    ],
+    "userStories": [
+      {
+        "userType": "学生",
+        "scenario": "通学中の利用",
+        "experience": "高価なワイヤレスイヤホンは充電切れや紛失が心配だが、この価格ならカバンに雑に入れておいても気にならない。（推測）",
+        "sentiment": "positive"
+      },
+      {
+        "userType": "ビジネスマン",
+        "scenario": "急なWeb会議",
+        "experience": "Bluetoothイヤホンの接続トラブル時に、有線で確実に繋がるバックアップとして役立つ。（推測）",
+        "sentiment": "positive"
+      }
+    ],
+    "userImpression": "具体的なユーザーレビューは見当たらないが、スペックと価格から判断すると「とにかく安くType-Cイヤホンが欲しい」というニーズに応える、割り切った製品であると言える。",
+    "sources": [
+      {
+        "name": "Amazon商品ページ",
+        "url": "https://www.amazon.co.jp/dp/B0DPML49WJ",
+        "credibility": "medium"
+      }
+    ],
+    "lastInvestigated": "2026-02-22",
+    "competitiveAnalysis": [
+      {
+        "name": "KARLTUFOU Type-C イヤホン",
+        "asin": "B0DMRPKPJN",
+        "priceComparison": "同価格帯（746円）。機能・デザインも酷似しており、同じOEM元の可能性もある。",
+        "featureComparison": ["Type-C接続", "マイク付き", "インナーイヤー型"],
+        "differentiators": ["ブランド名以外に大きな差は見られない"]
+      },
+      {
+        "name": "JVC HA-FR17UC-W",
+        "asin": "B0CDZM9BR4",
+        "priceComparison": "約2,500円と3倍以上の価格。",
+        "featureComparison": ["信頼できる国内メーカー製", "開放型でクリアな音質", "防滴仕様"],
+        "differentiators": ["ビルドクオリティ", "メーカーサポート", "安心感"]
+      },
+      {
+        "name": "JBL TUNE 305C",
+        "asin": "B0D4F2Z8N6",
+        "priceComparison": "約3,500円と4倍以上の価格。",
+        "featureComparison": ["ハイレゾ対応（96kHz/24bit）", "JBLサウンド", "フラットケーブル"],
+        "differentiators": ["音質へのこだわり", "ブランドの信頼性", "耐久性"]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "とにかく安くType-Cイヤホンを手に入れたい人",
+        "予備用・緊急用のイヤホンを探している人",
+        "カナル型（耳栓型）が苦手な人"
+      ],
+      "pros": [
+        "圧倒的なコストパフォーマンス",
+        "充電不要ですぐに使える有線接続",
+        "マイク・リモコン付きで利便性が高い"
+      ],
+      "cons": [
+        "音質や耐久性は価格なりである可能性が高い",
+        "商品説明の一部（自動巻き取りなど）に疑義がある",
+        "サポート体制が不明瞭"
+      ],
+      "score": 65,
+      "scoreRationale": "[基本点: 70]\n[加点: +15] (圧倒的な低価格)\n[減点: -10] (ブランド信頼性と耐久性の不安)\n[減点: -5] (商品説明の不正確さ・誤記の疑い)\n[減点: -5] (音質への期待値の低さ)\n[合計: 65]"
+    },
+    "technicalSpecs": {
+      "driver": "14mmダイナミックドライバー",
+      "codec": null,
+      "battery": null,
+      "connectivity": "USB Type-C (有線)",
+      "noiseCancel": "通話ノイズ低減 (ANCではない)",
+      "other": ["インナーイヤー型", "マイク内蔵", "3ボタンリモコン"]
+    }
+  }
+}
