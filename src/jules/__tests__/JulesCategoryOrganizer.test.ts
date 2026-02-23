@@ -51,5 +51,32 @@ describe('JulesCategoryOrganizer', () => {
       // カタカナ間は読み順（Unicode順）で並ぶ
       expect(result).toEqual(['アイロン', 'カメラ', '電子レンジ']);
     });
+
+    it('should use cached data on subsequent calls', async () => {
+      const mockGroups = {
+        家電: { slug: 'appliances', categories: ['冷蔵庫'] },
+      };
+      const mockCache = {
+        ASIN1: { data: { categoryInfo: { main: '電子レンジ' } }, status: 'valid' },
+      };
+
+      (fs.readFile as jest.Mock).mockImplementation(async (path: string) => {
+        if (path.endsWith('categorygroups.json')) return JSON.stringify(mockGroups);
+        if (path.endsWith('paapi-product-cache.json')) return JSON.stringify(mockCache);
+        return '';
+      });
+      (fs.access as jest.Mock).mockResolvedValue(undefined);
+
+      // First call
+      await organizer.getUnregisteredCategories();
+
+      // Second call
+      await organizer.getUnregisteredCategories();
+
+      // fs.readFile should be called twice (once for categorygroups, once for cache)
+      // NOT 4 times (2 for each call).
+      expect(fs.readFile).toHaveBeenCalledTimes(2);
+      expect(fs.access).toHaveBeenCalledTimes(1);
+    });
   });
 });
