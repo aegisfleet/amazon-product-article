@@ -211,15 +211,12 @@ export class CategoryNormalizer {
     // If the node name itself contains multiple "・", it's likely a composite junk category.
     const dotCount = (name.match(/・/g) || []).length;
     if (dotCount >= 2) {
-      // console.log(`Category rejected by multi-dot rule: ${name}`);
       return false;
     }
 
     if (
       invalidPatterns.some((pattern) => {
         if (pattern.test(name)) {
-          // console.log(`Category rejected by pattern ${pattern}: ${name}`);
-          // require('fs').appendFileSync('debug_rejections.log', `[PATTERN] ${name} matched ${pattern}\n`);
           return true;
         }
         return false;
@@ -241,9 +238,7 @@ export class CategoryNormalizer {
     // ];
 
     if (genericStorePatterns.some((pattern) => pattern.test(name))) {
-      // console.log(`Category rejected by Store pattern: ${name}`);
       return false;
-      // }
     }
 
     // Check for specific nonsense categories reported
@@ -350,8 +345,6 @@ export class CategoryNormalizer {
     if (
       blockList.some((block) => {
         if (name.toLowerCase().includes(block.toLowerCase())) {
-          // console.log(`Category rejected by blocklist '${block}': ${name}`);
-          // require('fs').appendFileSync('debug_rejections.log', `[BLOCKLIST] ${name} matched ${block}\n`);
           return true;
         }
         return false;
