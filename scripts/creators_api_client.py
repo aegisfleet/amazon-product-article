@@ -23,7 +23,6 @@ try:
 except ImportError:
     pass  # dotenv not installed, rely on system env vars
 
-
 class CreatorsAPIClient:
     """Amazon Creators API Client with OAuth 2.0 authentication."""
     
@@ -216,7 +215,6 @@ class CreatorsAPIClient:
         }
         
         return self._make_request(self.SEARCH_ITEMS_ENDPOINT, payload)
-
 
 if __name__ == "__main__":
     import sys
