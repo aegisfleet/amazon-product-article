@@ -1,8 +1,8 @@
 {
   "analysis": {
-    "productName": "エレコム ヘッドセット USBフレキシブルマイク",
-    "parentAsin": "B0BVR4KX79",
-    "productDescription": "USB接続で手軽に使える、軽量な有線ヘッドセットです。オンライン会議やテレワークでの使用に適しています。",
+    "productName": "エレコム ヘッドセット USBフレキシブルマイク HS-FBE01USV",
+    "parentAsin": "B01HGGWOTK",
+    "productDescription": "USB接続で手軽に使える、軽量な有線ヘッドセット。オンライン会議やテレワークでの使用に適したモデル。",
     "productUsage": [
       "ウェブ会議（Zoom, Teams, Skypeなど）",
       "オンラインゲームのボイスチャット",
@@ -47,12 +47,12 @@
         "credibility": "High"
       }
     ],
-    "lastInvestigated": "2026-01-16",
+    "lastInvestigated": "2026-02-24",
     "competitiveAnalysis": [
       {
-        "name": "Logicool H340 ステレオUSBヘッドセット",
-        "asin": "B00N3V429U",
-        "priceComparison": "エレコム製より若干高価だが、同価格帯。",
+        "name": "Logicool H340r ステレオUSBヘッドセット",
+        "asin": "B079PTGNTW",
+        "priceComparison": "エレコム製より高価（約2,800円）。",
         "featureComparison": [
           "USB接続、ノイズキャンセリングマイク搭載。",
           "音質面で定評があるブランド。"
@@ -63,28 +63,29 @@
         ]
       },
       {
-        "name": "サンワサプライ USBヘッドセット MM-HSU03BK",
-        "asin": "B079GNX1S6",
-        "priceComparison": "同価格帯。",
+        "name": "Audio-Technica ATH-102USB ヘッドセット",
+        "asin": "B0989HTQ32",
+        "priceComparison": "エレコム製よりかなり高価（約3,600円）。",
         "featureComparison": [
-          "USB接続、ミュート機能付き。",
-          "軽量設計を特徴としている。"
+          "USB接続、抗菌・消臭加工。",
+          "手元コントローラー搭載。"
         ],
         "differentiators": [
-          "手元で操作可能なミュート・音量コントロール機能"
+          "抗菌・消臭加工による清潔感",
+          "手元で操作できる便利さ"
         ]
       },
       {
-        "name": "Razer BlackShark V2 X USB ゲーミングヘッドセット",
-        "asin": "B0C9D8361B",
-        "priceComparison": "エレコム製よりかなり高価。",
+        "name": "Sanwa Supply USBヘッドセット MM-HSU09BK",
+        "asin": "B07JMM71SF",
+        "priceComparison": "エレコム製とほぼ同価格帯（約1,600円）。",
         "featureComparison": [
-          "7.1chサラウンドサウンド対応。",
-          "高性能な単一指向性マイク搭載。"
+          "断線しにくいファブリックケーブル採用。",
+          "無(全)指向性マイク。"
         ],
         "differentiators": [
-          "ゲームに特化した高音質とサラウンド機能",
-          "eスポーツグレードの高性能マイク"
+          "耐久性の高いファブリックケーブル",
+          "同価格帯での直接的な競合"
         ]
       }
     ],
@@ -106,26 +107,26 @@
         "ワイヤレスのような自由度はない"
       ],
       "score": 75,
-      "scoreRationale": "[基本点: 70]\n[加点: +15] (競合製品と比較しても非常に安価で、基本的な機能を十分に満たしているため、コストパフォーマンスが極めて高い)\n[減点: -5] (レビュー情報が乏しく、実際のユーザー満足度が不明確)\n[減点: -5] (音質や付加機能の面で、上位製品に見劣りする)\n[合計: 75]"
+      "scoreRationale": "[基本点: 70]\n[加点: +15] (Logicool等の上位機種より大幅に安価で、Sanwa Supplyの同等品と比較しても軽量さが際立つため、コストパフォーマンスが高い)\n[減点: -5] (レビュー情報が乏しく、実際のユーザー満足度が不明確)\n[減点: -5] (音質や付加機能の面で、上位製品に見劣りする)\n[合計: 75]"
     },
     "technicalSpecs": {
-      "driver": null,
+      "driver": "30mm (推定)",
       "codec": null,
       "battery": null,
       "connectivity": "USB Type-A",
       "noiseCancel": false,
       "dimensions": {
-        "height": "165mm",
-        "width": "150mm",
-        "depth": "75mm",
-        "weight": "約102g（ケーブル含まず）"
+        "height": "165mm (推定)",
+        "width": "150mm (推定)",
+        "depth": "75mm (推定)",
+        "weight": "軽量（約100g前後推定）"
       },
       "other": [
         "ケーブル長: 1.8m",
         "マイク方式: エレクトレットコンデンサー方式",
-        "マイクアーム長さ: 120mm",
-        "周波数帯域（ヘッドホン）: 20～20,000Hz",
-        "周波数帯域（マイク）: 100～10,000Hz"
+        "マイクアーム長さ: フレキシブルアーム",
+        "周波数帯域（ヘッドホン）: 20～20,000Hz (推定)",
+        "周波数帯域（マイク）: 100～10,000Hz (推定)"
       ]
     }
   }
