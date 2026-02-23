@@ -60,6 +60,8 @@ export interface OrganizationSession {
 export class JulesCategoryOrganizer {
   private readonly client: AxiosInstance;
   private readonly logger: Logger;
+  private categoryGroupsCache: CategoryGroups | null = null;
+  private productCacheCache: Set<string> | null = null;
 
   constructor(credentials: JulesCredentials) {
     this.logger = Logger.getInstance();
@@ -115,9 +117,15 @@ export class JulesCategoryOrganizer {
    * categorygroups.jsonを読み込む
    */
   async loadCategoryGroups(): Promise<CategoryGroups> {
+    if (this.categoryGroupsCache) {
+      return this.categoryGroupsCache;
+    }
+
     const filePath = path.join(process.cwd(), 'data', 'categorygroups.json');
     const content = await fs.readFile(filePath, 'utf-8');
-    return JSON.parse(content) as CategoryGroups;
+    this.categoryGroupsCache = JSON.parse(content) as CategoryGroups;
+
+    return this.categoryGroupsCache;
   }
 
   /**
@@ -140,13 +148,18 @@ export class JulesCategoryOrganizer {
    * 商品キャッシュから全カテゴリを収集
    */
   async collectCategoriesFromCache(): Promise<Set<string>> {
+    if (this.productCacheCache) {
+      return this.productCacheCache;
+    }
+
     const cachePath = path.join(process.cwd(), 'data', 'cache', 'paapi-product-cache.json');
 
     try {
       await fs.access(cachePath);
     } catch {
       this.logger.warn('Product cache not found');
-      return new Set<string>();
+      this.productCacheCache = new Set<string>();
+      return this.productCacheCache;
     }
 
     const content = await fs.readFile(cachePath, 'utf-8');
@@ -160,6 +173,7 @@ export class JulesCategoryOrganizer {
       }
     }
 
+    this.productCacheCache = categories;
     return categories;
   }
 
