@@ -218,10 +218,6 @@ class CreatorsAPIClient:
         return self._make_request(self.SEARCH_ITEMS_ENDPOINT, payload)
 
 
-# Legacy alias for backward compatibility
-# PAAPIClient = CreatorsAPIClient # Legacy alias removed
-
-
 if __name__ == "__main__":
     import sys
     
