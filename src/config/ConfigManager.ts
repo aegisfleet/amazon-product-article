@@ -138,26 +138,6 @@ export class ConfigManager {
   private validateConfiguration(config: SystemConfig): void {
     const errors: string[] = [];
 
-    // Validate Amazon Creators API configuration
-    if (
-      !config.amazon.applicationId ||
-      !config.amazon.credentialId ||
-      !config.amazon.credentialSecret ||
-      !config.amazon.partnerTag
-    ) {
-      errors.push('Amazon Creators API credentials are incomplete');
-    }
-
-    // Validate Jules configuration
-    if (!config.jules.apiKey) {
-      errors.push('Jules API key is missing');
-    }
-
-    // Validate GitHub configuration
-    if (!config.github.token || !config.github.repository) {
-      errors.push('GitHub configuration is incomplete');
-    }
-
     // Validate numeric values
     if (config.system.retryAttempts < 0 || config.system.retryAttempts > 10) {
       errors.push('Retry attempts must be between 0 and 10');
