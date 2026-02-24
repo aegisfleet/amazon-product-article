@@ -19,10 +19,10 @@ import { CreatorsAPICache } from '../api/CreatorsAPICache';
 import { CreatorsAPIClient } from '../api/CreatorsAPIClient';
 import { ArticleGenerator } from '../article/ArticleGenerator';
 import { GitHubPublisher } from '../github/GitHubPublisher';
+import { InvestigationFileSchema } from '../schemas/InvestigationSchema';
 import type { GeneratedArticle } from '../types/ArticleTypes';
 import type { InvestigationResult } from '../types/JulesTypes';
 import type { Product, ProductDetail } from '../types/Product';
-import { InvestigationFileSchema } from '../schemas/InvestigationSchema';
 import { setGitHubOutput } from '../utils/github-actions';
 import { Logger } from '../utils/Logger';
 
