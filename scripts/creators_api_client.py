@@ -3,6 +3,7 @@
 Amazon Creators API Client
 
 Creators API用クライアント。OAuth 2.0 Client Credentials認証を使用。
+(Legacy: PAAPIClient)
 
 環境変数:
     AMAZON_CREATORS_CREDENTIAL_ID: クレデンシャルID (OAuth client_id)
