@@ -139,7 +139,11 @@ export class ConfigManager {
     const errors: string[] = [];
 
     // Validate numeric values
-    if (Number.isNaN(config.system.retryAttempts) || config.system.retryAttempts < 0 || config.system.retryAttempts > 10) {
+    if (
+      Number.isNaN(config.system.retryAttempts) ||
+      config.system.retryAttempts < 0 ||
+      config.system.retryAttempts > 10
+    ) {
       errors.push('Retry attempts must be a number between 0 and 10');
     }
 
@@ -147,11 +151,19 @@ export class ConfigManager {
       errors.push('Retry delay must be a number between 100ms and 60s');
     }
 
-    if (Number.isNaN(config.productSearch.maxResultsPerCategory) || config.productSearch.maxResultsPerCategory < 1 || config.productSearch.maxResultsPerCategory > 50) {
+    if (
+      Number.isNaN(config.productSearch.maxResultsPerCategory) ||
+      config.productSearch.maxResultsPerCategory < 1 ||
+      config.productSearch.maxResultsPerCategory > 50
+    ) {
       errors.push('Max results per category must be a number between 1 and 50');
     }
 
-    if (Number.isNaN(config.articleGeneration.minWordCount) || config.articleGeneration.minWordCount < 500 || config.articleGeneration.minWordCount > 10000) {
+    if (
+      Number.isNaN(config.articleGeneration.minWordCount) ||
+      config.articleGeneration.minWordCount < 500 ||
+      config.articleGeneration.minWordCount > 10000
+    ) {
       errors.push('Min word count must be a number between 500 and 10000');
     }
 
