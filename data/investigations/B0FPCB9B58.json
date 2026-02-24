@@ -1,0 +1,140 @@
+{
+  "analysis": {
+    "productName": "GetPairr Vista 2.0 11インチ ポータブルディスプレイオーディオ",
+    "parentAsin": "B0FPCB9B58",
+    "productDescription": "11インチIPSパネルを搭載し、Android 15システムでナビや動画視聴が可能なポータブルディスプレイオーディオ。ワイヤレスCarPlay/Android Autoに対応し、工事不要で簡単に設置できる。",
+    "productUsage": [
+      "車載用ナビゲーション（Google Maps等）",
+      "YouTube/Netflix等の動画視聴",
+      "ハンズフリー通話・音声操作（Gemini）",
+      "スマホ画面のミラーリング"
+    ],
+    "positivePoints": [
+      "最新OS Android 15搭載",
+      "11インチの大画面IPSパネル（1920×720）",
+      "Gemini音声アシスタント対応",
+      "GPS内蔵で単独ナビが可能"
+    ],
+    "negativePoints": [
+      "メモリ容量が3GBと少なめ（競合は4GBが主流）",
+      "CPUが5コア（競合は8コア）",
+      "バックカメラ等の付属品が明記されていない",
+      "価格が競合製品より割高"
+    ],
+    "useCases": [
+      "古い車のカーナビ機能拡張",
+      "レンタカーでのナビ・エンタメ利用",
+      "長距離ドライブでの子供向け動画再生"
+    ],
+    "userStories": [
+      {
+        "userType": "30代会社員",
+        "scenario": "毎日の通勤",
+        "experience": "古いカーナビの代わりに設置。スマホのナビアプリを大画面で使えるので視認性が向上した。Geminiに話しかけてニュースを聞くのが日課。（推測）",
+        "sentiment": "positive"
+      },
+      {
+        "userType": "ファミリー層",
+        "scenario": "週末のドライブ",
+        "experience": "後部座席の子供のためにYouTubeを流している。画面は綺麗だが、アプリの起動や切り替えに少し時間がかかることがあるのが気になる。（推測）",
+        "sentiment": "mixed"
+      }
+    ],
+    "userImpression": "Android 15という最新OSを搭載している点は魅力的だが、メモリ3GBというスペックが懸念点。競合製品と比較して価格設定が高めであり、付属品（バックカメラ等）の情報も不足しているため、コスパ重視のユーザーには選択肢に入りづらい可能性がある。",
+    "sources": [
+      {
+        "name": "Amazon Product Page",
+        "url": "https://www.amazon.co.jp/dp/B0FPCB9B58",
+        "credibility": "High"
+      }
+    ],
+    "lastInvestigated": "2026-02-24",
+    "competitiveAnalysis": [
+      {
+        "name": "Accfly 11インチ (B0GGXJGNV9)",
+        "asin": "B0GGXJGNV9",
+        "priceComparison": "約1,600円安い",
+        "featureComparison": [
+          "8コアCPU / 4GB RAM",
+          "1080Pバックカメラ付属",
+          "Android 15"
+        ],
+        "differentiators": [
+          "スペックが高い",
+          "付属品が充実",
+          "コスパが良い"
+        ]
+      },
+      {
+        "name": "VANBAR 11インチ (B0F9WWG8XK)",
+        "asin": "B0F9WWG8XK",
+        "priceComparison": "約6,600円安い",
+        "featureComparison": [
+          "8コアCPU / 4GB RAM",
+          "4Kドラレコ機能",
+          "Android 14"
+        ],
+        "differentiators": [
+          "ドラレコ一体型",
+          "価格が圧倒的に安い"
+        ]
+      },
+      {
+        "name": "Accfly 11インチ (B0GCJ162D3)",
+        "asin": "B0GCJ162D3",
+        "priceComparison": "約10,600円安い",
+        "featureComparison": [
+          "4Kドラレコ機能",
+          "バックカメラ付属",
+          "CarPlay対応"
+        ],
+        "differentiators": [
+          "価格重視のエントリーモデル",
+          "ドラレコ機能付き"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "Android 15の新機能を試したい方",
+        "Google系サービス（Gemini等）を多用する方",
+        "設置の手軽さを重視する方"
+      ],
+      "pros": [
+        "最新のAndroid 15システム",
+        "Gemini音声アシスタント",
+        "11インチの大画面"
+      ],
+      "cons": [
+        "メモリ3GBによる動作のもたつき懸念",
+        "競合に比べて割高",
+        "バックカメラ等の付属品なし"
+      ],
+      "score": 60,
+      "scoreRationale": "[基本点: 70]\n[加点: +5] (最新OS Android 15とGemini音声アシスタント搭載)\n[減点: -10] (メモリ3GB・5コアCPUで競合よりスペックが劣る)\n[減点: -5] (競合より高価格で付属品も少ないためコスパが悪い)\n[合計: 60]"
+    },
+    "technicalSpecs": {
+      "os": "Android 15",
+      "cpu": "5コア",
+      "ram": "3GB",
+      "storage": "64GB",
+      "display": {
+        "size": "11インチ",
+        "resolution": "1920×720",
+        "type": "IPS"
+      },
+      "connectivity": [
+        "Wi-Fi",
+        "Bluetooth",
+        "FMトランスミッター",
+        "AUX"
+      ],
+      "dimensions": null,
+      "other": [
+        "Gemini音声アシスタント",
+        "GPS内蔵",
+        "技適認証取得済"
+      ]
+    }
+  }
+}
