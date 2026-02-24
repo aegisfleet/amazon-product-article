@@ -1,4 +1,3 @@
-
 import { ConfigManager } from '../ConfigManager';
 
 describe('ConfigManager Validation Improvements', () => {
@@ -29,7 +28,9 @@ describe('ConfigManager Validation Improvements', () => {
   test('should throw if Amazon credentials are missing (confirming implicit validation works)', async () => {
     delete process.env.AMAZON_CREATORS_APPLICATION_ID;
     const configManager = ConfigManager.getInstance();
-    await expect(configManager.initialize()).rejects.toThrow('Required environment variable AMAZON_CREATORS_APPLICATION_ID is not set');
+    await expect(configManager.initialize()).rejects.toThrow(
+      'Required environment variable AMAZON_CREATORS_APPLICATION_ID is not set',
+    );
   });
 
   test('should throw if numeric values are NaN', async () => {
