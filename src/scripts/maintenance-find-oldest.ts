@@ -7,15 +7,10 @@
 
 import fs from 'node:fs/promises';
 import path from 'node:path';
+import { InvestigationFileSchema } from '../schemas/InvestigationSchema';
 import { Logger } from '../utils/Logger';
 
 const logger = Logger.getInstance();
-
-interface InvestigationData {
-  analysis: {
-    lastInvestigated: string; // YYYY-MM-DD
-  };
-}
 
 async function main(): Promise<void> {
   const args = process.argv.slice(2);
@@ -52,10 +47,10 @@ async function main(): Promise<void> {
           const filePath = path.join(investigationsDir, file);
           try {
             const content = await fs.readFile(filePath, 'utf-8');
-            const data = JSON.parse(content) as InvestigationData;
+            const parsed = InvestigationFileSchema.safeParse(JSON.parse(content));
 
-            if (data.analysis?.lastInvestigated) {
-              const date = new Date(data.analysis.lastInvestigated);
+            if (parsed.success && parsed.data.analysis.lastInvestigated) {
+              const date = new Date(parsed.data.analysis.lastInvestigated);
               return {
                 asin: path.basename(file, '.json'),
                 date: date,
