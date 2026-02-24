@@ -165,7 +165,12 @@ export class JulesCategoryOrganizer {
       content = await fs.readFile(cachePath, 'utf-8');
     } catch (error) {
       // Check for ENOENT (file not found)
-      if (typeof error === 'object' && error !== null && 'code' in error && (error as { code: string }).code === 'ENOENT') {
+      if (
+        typeof error === 'object' &&
+        error !== null &&
+        'code' in error &&
+        (error as { code: string }).code === 'ENOENT'
+      ) {
         this.logger.warn('Product cache not found');
         this.productCacheCache = new Set<string>();
         return this.productCacheCache;
