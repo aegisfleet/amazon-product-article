@@ -214,28 +214,13 @@ export class CategoryNormalizer {
       return false;
     }
 
-    if (
-      invalidPatterns.some((pattern) => {
-        if (pattern.test(name)) {
-          return true;
-        }
-        return false;
-      })
-    ) {
+    if (invalidPatterns.some((pattern) => pattern.test(name))) {
       return false;
     }
 
     // Check for generic "Store" suffix
     // User requested to exclude categories ending with "Store" (e.g., Drugstore)
     const genericStorePatterns = [/ストア$|Store$|ストア\s*[(（].*[)）]$/i];
-    // const allowedStoreExceptions = [
-    //     "ドラッグストア",
-    //     "ペット用品ストア",
-    //     "ビューティーストア",
-    //     "食品ストア",
-    //     "飲料ストア",
-    //     "お酒ストア"
-    // ];
 
     if (genericStorePatterns.some((pattern) => pattern.test(name))) {
       return false;
