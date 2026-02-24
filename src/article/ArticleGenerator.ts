@@ -6,6 +6,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { AffiliateLinkManager } from '../affiliate/AffiliateLinkManager';
 import type { ReviewAnalysisResult } from '../analysis/ReviewAnalyzer';
+import { InvestigationFileSchema } from '../schemas/InvestigationSchema';
 import type { AffiliateLink } from '../types/AffiliateTypes';
 import type {
   ArticleMetadata,
@@ -617,7 +618,8 @@ ${reviewAnalysis ? this.generateSentimentAnalysis(reviewAnalysis) : ''}`;
               const investigationPath = path.join(cwd, 'data', 'investigations', `${normalizedAsin}.json`);
               try {
                 const fileContent = await fs.promises.readFile(investigationPath, 'utf-8');
-                competitorInvestigation = JSON.parse(fileContent) as InvestigationResult;
+                const parsed = InvestigationFileSchema.parse(JSON.parse(fileContent));
+                competitorInvestigation = parsed as unknown as InvestigationResult;
                 if (this.investigationCache.size >= 1000) this.investigationCache.clear();
                 this.investigationCache.set(normalizedAsin, competitorInvestigation);
               } catch (error) {
