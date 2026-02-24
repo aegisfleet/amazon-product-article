@@ -107,17 +107,17 @@ parent_category: "カテゴリ名"
 
 | スクリプト | 用途 | 出力先 |
 |---|---|---|
-| `scripts/paapi_get_item.py` | 商品詳細取得 | `tmp/product_info.json` |
-| `scripts/paapi_search_items.py` | 競合商品検索 | `tmp/search_results.json` |
+| `scripts/creators_get_item.py` | 商品詳細取得 | `tmp/product_info.json` |
+| `scripts/creators_search_items.py` | 競合商品検索 | `tmp/search_results.json` |
 
 ### 使用例
 
 ```bash
 # 商品詳細の取得
-python scripts/paapi_get_item.py B09BZ59Y51
+python scripts/creators_get_item.py B09BZ59Y51
 
 # 競合商品の検索（SearchIndex指定可能）
-python scripts/paapi_search_items.py "枕カバー フランネル" --search-index HomeAndKitchen
+python scripts/creators_search_items.py "枕カバー フランネル" --search-index HomeAndKitchen
 ```
 
 ### 利用可能な SearchIndex (Japan)
