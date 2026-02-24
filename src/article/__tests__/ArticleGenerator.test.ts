@@ -332,7 +332,20 @@ describe('ArticleGenerator', () => {
       // Mock fs.promises.readFile to return valid JSON
       (fs.promises.readFile as jest.Mock).mockImplementation((pathStr: string) => {
         if (pathStr.includes('B08COMPET1')) {
-          return Promise.resolve(JSON.stringify({ analysis: { recommendation: { score: 85 } } }));
+          return Promise.resolve(
+            JSON.stringify({
+              analysis: {
+                positivePoints: [],
+                negativePoints: [],
+                useCases: [],
+                userStories: [],
+                userImpression: '',
+                sources: [],
+                competitiveAnalysis: [],
+                recommendation: { score: 85, targetUsers: [], pros: [], cons: [] },
+              },
+            }),
+          );
         }
         return Promise.reject(new Error('File not found'));
       });
@@ -548,7 +561,18 @@ describe('ArticleGenerator', () => {
       // Since fs is already mocked, we need to override the implementation for this test
       (fs.promises.readFile as jest.Mock).mockImplementation(async (_pathStr: string) => {
         await new Promise((resolve) => setTimeout(resolve, delay));
-        return JSON.stringify({ analysis: { recommendation: { score: 85 } } });
+        return JSON.stringify({
+          analysis: {
+            positivePoints: [],
+            negativePoints: [],
+            useCases: [],
+            userStories: [],
+            userImpression: '',
+            sources: [],
+            competitiveAnalysis: [],
+            recommendation: { score: 85, targetUsers: [], pros: [], cons: [] },
+          },
+        });
       });
 
       const startTime = Date.now();

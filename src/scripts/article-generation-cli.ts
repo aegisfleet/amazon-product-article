@@ -15,7 +15,6 @@ import fs from 'node:fs/promises';
 import path from 'node:path';
 import { promisify } from 'node:util';
 import dotenv from 'dotenv';
-import { z } from 'zod';
 import { CreatorsAPICache } from '../api/CreatorsAPICache';
 import { CreatorsAPIClient } from '../api/CreatorsAPIClient';
 import { ArticleGenerator } from '../article/ArticleGenerator';
@@ -23,6 +22,7 @@ import { GitHubPublisher } from '../github/GitHubPublisher';
 import type { GeneratedArticle } from '../types/ArticleTypes';
 import type { InvestigationResult } from '../types/JulesTypes';
 import type { Product, ProductDetail } from '../types/Product';
+import { InvestigationFileSchema } from '../schemas/InvestigationSchema';
 import { setGitHubOutput } from '../utils/github-actions';
 import { Logger } from '../utils/Logger';
 
@@ -41,49 +41,6 @@ interface CLIOptions {
   githubToken: string | undefined;
   githubRepository: string | undefined;
 }
-
-/**
- * JSONファイルの実際の構造（analysisのみを含む）
- */
-const InvestigationFileSchema = z.object({
-  analysis: z.looseObject({
-    positivePoints: z.array(z.string()),
-    negativePoints: z.array(z.string()),
-    useCases: z.array(z.string()),
-    userStories: z.array(
-      z.object({
-        userType: z.string(),
-        scenario: z.string(),
-        experience: z.string(),
-        sentiment: z.enum(['positive', 'negative', 'mixed']),
-      }),
-    ),
-    userImpression: z.string(),
-    sources: z.array(
-      z.object({
-        name: z.string(),
-        url: z.string().nullable().optional(),
-        credibility: z.string().optional(),
-      }),
-    ),
-    competitiveAnalysis: z.array(
-      z.object({
-        name: z.string(),
-        asin: z.string().nullable().optional(),
-        priceComparison: z.string(),
-        featureComparison: z.array(z.string()),
-        differentiators: z.array(z.string()),
-      }),
-    ),
-    recommendation: z.looseObject({
-      targetUsers: z.array(z.string()),
-      pros: z.array(z.string()),
-      cons: z.array(z.string()),
-      score: z.number(),
-    }),
-    lastInvestigated: z.string().optional(),
-  }),
-});
 
 export interface InvestigationData {
   product: Product;
