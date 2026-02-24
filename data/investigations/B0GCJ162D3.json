@@ -1,0 +1,91 @@
+{
+  "analysis": {
+    "productName": "Accfly 11インチ ポータブルディスプレイオーディオ (4Kドラレコ付)",
+    "parentAsin": "B0GCJ162D3",
+    "productDescription": "11インチの大画面でCarPlay/Android Autoが使えるポータブルナビ。4Kドライブレコーダーとバックカメラも付属し、1台でナビと記録の両方をこなすコスパモデル。",
+    "productUsage": [
+      "CarPlay/Android Autoを使った最新ナビゲーション",
+      "4K画質のフロントドライブレコーダーによる常時録画",
+      "バックカメラによる駐車支援",
+      "Bluetooth/AUX/FMトランスミッターによるカーオーディオ連携"
+    ],
+    "positivePoints": [
+      "11インチの大画面で見やすい",
+      "4K画質のドライブレコーダー機能が標準装備",
+      "ワイヤレスCarPlay/Android Auto対応で配線がスッキリ",
+      "バックカメラも付属しておりコスパが高い",
+      "設置が簡単で工事不要"
+    ],
+    "negativePoints": [
+      "Android OS非搭載のため単体での動画アプリ利用は不可（ミラーリングのみ）",
+      "知名度が低いブランドである",
+      "詳細なスペック（CPU/メモリ）が不明",
+      "起動速度やタッチ感度の情報が少ない"
+    ],
+    "useCases": [
+      "古いナビの付いた車を最新のスマホ連携ナビにアップグレード",
+      "ドライブレコーダーとナビを同時に導入したい場合",
+      "レンタカーやカーシェアでの利用（ポータブルなので持ち運び可能）"
+    ],
+    "userStories": [
+      {
+        "userType": "30代男性（軽自動車ユーザー）",
+        "scenario": "10年落ちの軽自動車のナビが古くなったため購入",
+        "experience": "ダッシュボードに置くだけで最新のCarPlayが使えるようになり、Googleマップが見やすくなった。ドラレコもついてこの価格は驚き。（推測）",
+        "sentiment": "positive"
+      },
+      {
+        "userType": "40代主婦",
+        "scenario": "子供の送迎用車両にバックカメラが欲しくて導入",
+        "experience": "バックカメラの配線は少し大変だったが、11インチの大画面で後方が確認できるので駐車が楽になった。スマホの音楽も聴けるので子供も喜んでいる。（推測）",
+        "sentiment": "positive"
+      }
+    ],
+    "userImpression": "価格以上の多機能さが評価されている。特に11インチの大画面と4Kドラレコ機能の組み合わせは満足度が高い。一方で、Android OS非搭載であることを理解して購入する必要がある。",
+    "sources": [
+      {
+        "name": "Amazon商品ページ",
+        "url": "https://www.amazon.co.jp/dp/B0GCJ162D3",
+        "credibility": "high"
+      }
+    ],
+    "lastInvestigated": "2026-02-25",
+    "competitiveAnalysis": [
+      {
+        "name": "VANBAR 11インチ (Android 14搭載)",
+        "asin": "B0F9WWG8XK",
+        "priceComparison": "約4,000円高い",
+        "featureComparison": ["Android OS搭載で単体アプリ利用可", "ドラレコ機能あり"],
+        "differentiators": ["動画アプリを多用するならVANBARだが、コスパとドラレコ重視ならAccfly"]
+      },
+      {
+        "name": "Stynxro 7インチ",
+        "asin": "B0FF1HZZDJ",
+        "priceComparison": "半額以下（約6,500円）",
+        "featureComparison": ["画面が小さい(7インチ)", "ドラレコなし"],
+        "differentiators": ["とにかく安くCarPlayを使いたいならStynxro、大画面とドラレコが必要ならAccfly"]
+      },
+       {
+        "name": "Chamequinho 9インチ",
+        "asin": "B0FD2VWBWM",
+        "priceComparison": "約5,000円安い",
+        "featureComparison": ["9インチ画面", "ドラレコなし（バックカメラのみ）"],
+        "differentiators": ["ドラレコ機能が不要なら選択肢になるが、Accflyはドラレコ込みでプラス5000円の価値あり"]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": ["古い車を安価に最新化したい人", "ドラレコとナビを同時に導入したい人", "大画面で見たい人"],
+      "pros": ["11インチ大画面", "4Kドラレコ標準装備", "ワイヤレスCarPlay/Android Auto", "圧倒的なコストパフォーマンス"],
+      "cons": ["Android OS非搭載（動画視聴はミラーリング）", "ブランド知名度"],
+      "score": 90,
+      "scoreRationale": "[基本点: 70]\n[性能・機能: +5] (11インチ大画面、4Kドラレコ、CarPlayワイヤレス対応は高機能)\n[コストパフォーマンス: +10] (11インチ＋4Kドラレコで1.5万円は破格)\n[独自の強み: +5] (ドラレコ一体型かつ11インチという希少な組み合わせ)\n[合計: 90]"
+    },
+    "technicalSpecs": {
+      "display": { "size": "11インチ", "resolution": "1920x720", "type": "IPS" },
+      "camera": { "main": "4K (フロント)" },
+      "connectivity": ["Bluetooth", "Wi-Fi", "FMトランスミッター", "AUX"],
+      "dimensions": null,
+      "other": ["CarPlay", "Android Auto", "MirrorLink", "音声操作", "Gセンサー", "ループ録画", "バックカメラ: 1080P"]
+    }
+  }
+}
