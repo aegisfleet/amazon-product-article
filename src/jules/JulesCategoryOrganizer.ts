@@ -122,8 +122,14 @@ export class JulesCategoryOrganizer {
     }
 
     const filePath = path.join(process.cwd(), 'data', 'categorygroups.json');
-    const content = await fs.readFile(filePath, 'utf-8');
-    this.categoryGroupsCache = JSON.parse(content) as CategoryGroups;
+
+    try {
+      const content = await fs.readFile(filePath, 'utf-8');
+      this.categoryGroupsCache = JSON.parse(content) as CategoryGroups;
+    } catch (error) {
+      this.logger.error('Failed to load category groups', error);
+      throw error;
+    }
 
     return this.categoryGroupsCache;
   }
@@ -154,19 +160,32 @@ export class JulesCategoryOrganizer {
 
     const cachePath = path.join(process.cwd(), 'data', 'cache', 'paapi-product-cache.json');
 
+    let content: string;
     try {
-      await fs.access(cachePath);
-    } catch {
-      this.logger.warn('Product cache not found');
-      this.productCacheCache = new Set<string>();
-      return this.productCacheCache;
+      content = await fs.readFile(cachePath, 'utf-8');
+    } catch (error) {
+      // Check for ENOENT (file not found)
+      if (
+        typeof error === 'object' &&
+        error !== null &&
+        'code' in error &&
+        (error as { code: string }).code === 'ENOENT'
+      ) {
+        this.logger.warn('Product cache not found');
+        this.productCacheCache = new Set<string>();
+        return this.productCacheCache;
+      }
+      throw error;
     }
 
-    const content = await fs.readFile(cachePath, 'utf-8');
     const cache = JSON.parse(content) as ProductCache;
     const categories = new Set<string>();
 
-    for (const entry of Object.values(cache)) {
+    // Use for...in loop instead of Object.values to avoid creating a large intermediate array
+    for (const key in cache) {
+      const entry = cache[key];
+      if (!entry) continue;
+
       const category = entry.data?.categoryInfo?.main;
       if (category && category !== 'その他' && category !== 'null') {
         categories.add(category);
