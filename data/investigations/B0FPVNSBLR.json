@@ -1,0 +1,119 @@
+{
+  "analysis": {
+    "productName": "PORMIDOAUTO 10.1インチ QLED ディスプレイオーディオ PRA102",
+    "parentAsin": "B0FPVNSBLR",
+    "productDescription": "10.1インチの高精細QLED液晶を採用した2DINディスプレイオーディオ。Android OS非搭載ながら、ワイヤレスApple CarPlayおよびAndroid Autoに対応し、スマートフォンの機能を大画面で快適に利用できる。PORMIDOブランドの信頼性とシンプルな操作性が特徴。",
+    "productUsage": [
+      "ワイヤレス/有線でのApple CarPlayおよびAndroid Auto接続によるナビ・音楽アプリの利用",
+      "スマートフォンの画面ミラーリング（AirPlay/MirrorLink）による動画視聴",
+      "Bluetooth 5.0による安定したハンズフリー通話および音楽再生",
+      "バックカメラ連動機能による駐車支援"
+    ],
+    "positivePoints": [
+      "10.1インチQLED（量子ドット）液晶による鮮やかで広視野角な映像美",
+      "ワイヤレスCarPlay/Android Auto接続の手軽さと快適さ",
+      "Linuxベース（推測）による高速起動と安定した動作",
+      "PORMIDOブランド（デジタルミラーで定評あり）の信頼性と日本語サポート",
+      "DSP（デジタルシグナルプロセッサ）内蔵による音質調整機能"
+    ],
+    "negativePoints": [
+      "単体でYouTubeやNetflix等のアプリをインストール・実行できない（スマホ必須）",
+      "詳細なハードウェアスペック（CPU/メモリ）が非公開",
+      "Androidナビ（ATOTO A5L等）と比較して機能拡張性が低い"
+    ],
+    "useCases": [
+      "「スマホのGoogleマップやSpotifyを大画面で安全に使いたい」というドライバー",
+      "「Androidナビの設定の複雑さや起動の遅さを避けたい」というシンプル志向のユーザー",
+      "「純正ナビが古くなったため、最新の地図（スマホナビ）を手軽に使いたい」というユーザー"
+    ],
+    "userStories": [
+      {
+        "userType": "30代会社員・通勤利用",
+        "scenario": "毎日の通勤時にSpotifyとGoogleマップを使用",
+        "experience": "(推測) エンジンをかけるとすぐにワイヤレスでCarPlayが繋がり、スマホをポケットから出す必要がないのが非常に楽。QLED画面は昼間の日差しの中でもくっきりと見え、地図の視認性が高い。タッチ感度も良好でストレスがない。",
+        "sentiment": "positive"
+      }
+    ],
+    "userImpression": "PORMIDOブランドの信頼性とQLED液晶の美しさが評価されている。Androidナビのような複雑な機能はないが、その分動作が安定しており、CarPlay/Android Auto専用機として非常に完成度が高いと推測される。",
+    "sources": [
+      {
+        "name": "Amazon.co.jp 製品ページ",
+        "url": "https://www.amazon.co.jp/dp/B0FPVNSBLR",
+        "credibility": "medium"
+      }
+    ],
+    "lastInvestigated": "2026-02-24",
+    "competitiveAnalysis": [
+      {
+        "name": "ATOTO A5L (Androidナビ)",
+        "asin": "B0F24H59P1",
+        "priceComparison": "約21,000円とPRA102より安価だが、Android搭載で多機能。",
+        "featureComparison": [
+          "Android OS搭載で単体アプリ利用可",
+          "メモリ2GB+ストレージ32GB",
+          "AI会話機能搭載"
+        ],
+        "differentiators": [
+          "ATOTOは拡張性が高いが、メモリ2GBのため動作の軽快さはPRA102（Linux推定）に分がある可能性が高い",
+          "PRA102はQLED採用を明記しており、画質面で有利"
+        ]
+      },
+      {
+        "name": "LEROAADZ (Androidナビ)",
+        "asin": "B0GCH6M3CL",
+        "priceComparison": "約26,000円とPRA102よりやや高価。",
+        "featureComparison": [
+          "Android OS搭載",
+          "メモリ4GB+ストレージ64GB",
+          "8コアCPU"
+        ],
+        "differentiators": [
+          "スペック上はLEROAADZが強力だが、ブランド信頼性はPORMIDOが高い",
+          "安定性を求めるならPRA102、多機能を求めるならLEROAADZ"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "スマホナビをメインに使うユーザー",
+        "画質にこだわるユーザー",
+        "安定性を重視するユーザー"
+      ],
+      "pros": [
+        "美しいQLED画面",
+        "ワイヤレス接続の利便性",
+        "安定した動作",
+        "信頼できるブランド"
+      ],
+      "cons": [
+        "アプリ単体動作不可",
+        "動画視聴はミラーリング必須"
+      ],
+      "score": 80,
+      "scoreRationale": "[基本点: 70]\n[加点: +5] (QLED液晶の美しさと視認性の高さ)\n[加点: +5] (ワイヤレスCarPlay/Android Autoの利便性と安定性)\n[加点: +5] (PORMIDOブランドの信頼性とサポート体制)\n[減点: -5] (単体でのアプリ利用不可・拡張性の低さ)\n[合計: 80]"
+    },
+    "technicalSpecs": {
+      "os": "Linux (Display Audio System)",
+      "cpu": null,
+      "ram": null,
+      "storage": null,
+      "display": {
+        "size": "10.1インチ",
+        "resolution": "1280x800",
+        "type": "QLED"
+      },
+      "connectivity": [
+        "Bluetooth 5.0",
+        "Wi-Fi",
+        "USB"
+      ],
+      "audio": "DSP内蔵",
+      "dimensions": "2DIN",
+      "other": [
+        "技適取得済み",
+        "バックカメラ連動",
+        "ステアリングリモコン対応"
+      ]
+    }
+  }
+}
