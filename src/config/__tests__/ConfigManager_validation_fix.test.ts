@@ -1,3 +1,4 @@
+
 import { ConfigManager } from '../ConfigManager';
 
 describe('ConfigManager Validation Improvements', () => {
@@ -28,9 +29,7 @@ describe('ConfigManager Validation Improvements', () => {
   test('should throw if Amazon credentials are missing (confirming implicit validation works)', async () => {
     delete process.env.AMAZON_CREATORS_APPLICATION_ID;
     const configManager = ConfigManager.getInstance();
-    await expect(configManager.initialize()).rejects.toThrow(
-      'Required environment variable AMAZON_CREATORS_APPLICATION_ID is not set',
-    );
+    await expect(configManager.initialize()).rejects.toThrow('Required environment variable AMAZON_CREATORS_APPLICATION_ID is not set');
   });
 
   test('should throw if numeric values are NaN', async () => {
@@ -38,6 +37,6 @@ describe('ConfigManager Validation Improvements', () => {
     const configManager = ConfigManager.getInstance();
 
     // This is expected to fail before the fix is implemented because NaN checks are missing
-    await expect(configManager.initialize()).rejects.toThrow('Configuration validation failed');
+    await expect(configManager.initialize()).rejects.toThrow('Retry attempts must be a number between 0 and 10');
   });
 });
