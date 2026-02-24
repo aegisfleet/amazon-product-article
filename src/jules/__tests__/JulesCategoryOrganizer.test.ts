@@ -76,7 +76,25 @@ describe('JulesCategoryOrganizer', () => {
       // fs.readFile should be called twice (once for categorygroups, once for cache)
       // NOT 4 times (2 for each call).
       expect(fs.readFile).toHaveBeenCalledTimes(2);
-      expect(fs.access).toHaveBeenCalledTimes(1);
+    });
+
+    it('should handle missing product cache gracefully', async () => {
+      const mockGroups = {
+        家電: { slug: 'appliances', categories: ['冷蔵庫'] },
+      };
+
+      (fs.readFile as jest.Mock).mockImplementation(async (path: string) => {
+        if (path.endsWith('categorygroups.json')) return JSON.stringify(mockGroups);
+        if (path.endsWith('paapi-product-cache.json')) {
+          const error: any = new Error('ENOENT: no such file or directory');
+          error.code = 'ENOENT';
+          throw error;
+        }
+        return '';
+      });
+
+      const result = await organizer.getUnregisteredCategories();
+      expect(result).toEqual([]);
     });
   });
 });
