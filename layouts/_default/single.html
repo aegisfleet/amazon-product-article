@@ -51,7 +51,7 @@
         <div id="rakuten-affiliate-section" class="rakuten-section"
             style="display: none; margin-bottom: var(--spacing-lg); text-align: center;">
             <script
-                type="text/javascript">rakuten_design = "slide"; rakuten_affiliateId = "01080f82.44ae7157.08eb9599.98758834"; rakuten_items = "ctsmatch"; rakuten_genreId = "0"; rakuten_size = "300x250"; rakuten_target = "_blank"; rakuten_theme = "gray"; rakuten_border = "off"; rakuten_auto_mode = "on"; rakuten_genre_title = "off"; rakuten_recommend = "on"; rakuten_ts = "1770644946223";</script>
+                type="text/javascript">var rakuten_design = "slide"; var rakuten_affiliateId = "01080f82.44ae7157.08eb9599.98758834"; var rakuten_items = "ctsmatch"; var rakuten_genreId = "0"; var rakuten_size = "300x250"; var rakuten_target = "_blank"; var rakuten_theme = "gray"; var rakuten_border = "off"; var rakuten_auto_mode = "on"; var rakuten_genre_title = "off"; var rakuten_recommend = "on"; var rakuten_ts = "1770644946223";</script>
             <script type="text/javascript"
                 src="https://xml.affiliate.rakuten.co.jp/widget/js/rakuten_widget.js?20230106"></script>
         </div>
@@ -121,10 +121,11 @@
                 var relatedSection = document.getElementById('related-products-section');
                 var keepaSection = document.getElementById('keepa-graph-section');
                 var rakutenSection = document.getElementById('rakuten-affiliate-section');
+                var firstH2 = document.querySelector('.content h2');
 
                 // Move TOC to before first H2
                 if (toc) {
-                    var firstH2 = document.querySelector('.content h2');
+                    firstH2 = document.querySelector('.content h2');
                     if (firstH2) {
                         firstH2.parentNode.insertBefore(toc, firstH2);
                     }
@@ -141,7 +142,7 @@
                     } else if (toc) {
                         toc.parentNode.insertBefore(keepaSection, toc);
                     } else {
-                        var firstH2 = document.querySelector('.content h2');
+                        firstH2 = document.querySelector('.content h2');
                         if (firstH2) {
                             firstH2.parentNode.insertBefore(keepaSection, firstH2);
                         }
@@ -172,7 +173,7 @@
                     } else if (toc) {
                         toc.parentNode.insertBefore(relatedSection, toc);
                     } else {
-                        var firstH2 = document.querySelector('.content h2');
+                        firstH2 = document.querySelector('.content h2');
                         if (firstH2) {
                             firstH2.parentNode.insertBefore(relatedSection, firstH2);
                         }
