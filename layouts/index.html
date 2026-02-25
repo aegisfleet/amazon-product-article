@@ -39,8 +39,8 @@
         <div class="pickup-header">
             <h3 class="pickup-title">🏆 高評価おすすめ</h3>
             <span class="pickup-subtitle">90点以上の厳選商品</span>
-            <button id="shuffle-pickup" class="shuffle-btn" aria-label="表示商品をシャッフル">
-                🔀 シャッフル
+            <button id="shuffle-pickup" class="shuffle-btn" aria-label="シャッフル">
+                <span aria-hidden="true">🔀</span> シャッフル
             </button>
         </div>
         <div class="pickup-grid" id="pickup-grid">
@@ -49,8 +49,7 @@
                 data-price="{{ .Params.price }}">
                 <div class="pickup-card-image">
                     {{ if .Params.images }}
-                    <img src="{{ index .Params.images 0 }}" alt="{{ .Title }}" loading="lazy"
-                        onerror="this.onerror=null;this.src='https://placehold.jp/ffffff/000000/300x300.png?text=No%20Image';">
+                    <img src="{{ index .Params.images 0 }}" alt="{{ .Title }}" loading="lazy">
                     {{ else }}
                     <div class="pickup-card-noimage">画像なし</div>
                     {{ end }}

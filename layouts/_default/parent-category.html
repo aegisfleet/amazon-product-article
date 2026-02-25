@@ -316,16 +316,15 @@
         <article class="card" data-price="{{ $priceRaw }}" data-score="{{ .Params.score | default 0 }}"
             data-date="{{ $dateRaw }}" data-categories="{{ $catString }}" data-specs="{{ $specsString }}">
             <div class="card-image">
-                <a href="{{ .RelPermalink }}" aria-label="{{ .Title }}"
-                    style="display: block; width: 100%; height: 100%;">
+                <a href="{{ .RelPermalink }}" style="display: block; width: 100%; height: 100%;">
                     {{ if .Params.images }}
                     <img src="{{ index .Params.images 0 }}" alt="{{ .Title }}"
-                        style="width:100%; height:100%; object-fit:contain;" loading="lazy"
-                        onerror="this.onerror=null;this.src='https://placehold.jp/ffffff/000000/300x300.png?text=No%20Image';">
+                        style="width:100%; height:100%; object-fit:contain;" loading="lazy">
                     {{ else }}
-                    <div aria-hidden="true"
-                        style="width:100%; height:100%; display:flex; align-items:center; justify-content:center; background:#f3f4f6; color:#9ca3af;">
-                        画像なし
+                    <div
+                        style="width:100%; height:100%; display:flex; align-items:center; justify-content:center; background:#f3f4f6; color:var(--color-text-muted);">
+                        <span class="sr-only">{{ .Title }}</span>
+                        <span aria-hidden="true">画像なし</span>
                     </div>
                     {{ end }}
                 </a>
