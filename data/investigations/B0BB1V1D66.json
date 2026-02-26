@@ -1,7 +1,7 @@
 {
   "analysis": {
     "productName": "リズム(RHYTHM) MAGCASE S",
-    "parentAsin": "B0FNQSJ3T2",
+    "parentAsin": "B0BB1V1D66",
     "productDescription": "お風呂やキッチンなどの水回りでスマートフォンを快適に使用するための、日本製防水ハードケースです。",
     "productUsage": [
       "お風呂の壁にマグネットで貼り付けて動画鑑賞",
@@ -53,28 +53,28 @@
         "credibility": "中"
       }
     ],
-    "lastInvestigated": "2026-01-17",
+    "lastInvestigated": "2026-02-27",
     "competitiveAnalysis": [
       {
-        "name": "Lamicall スマホ防水ケース",
+        "name": "Lamicall スマホ防水ケース (回転式)",
         "asin": "B0DY7QRY8L",
-        "priceComparison": "約1,999円と、MAGCASE Sより約1,000円安い。",
+        "priceComparison": "約1,699円と、MAGCASE Sより約800円安い。",
         "featureComparison": ["360度回転機能あり", "伸縮アームあり", "IPX6防水"],
-        "differentiators": ["価格の安さ", "回転・伸縮機能の多さ", "MAGCASE Sは完全防水(IPX7)だがLamicallはIPX6"]
+        "differentiators": ["回転・伸縮機能があり角度調整が柔軟", "MAGCASE Sは完全防水(IPX7)だがLamicallはIPX6（防滴寄り）"]
       },
       {
-        "name": "Trywon スマホ防水ケース",
-        "asin": "B09H5Q42QS",
-        "priceComparison": "約1,497円と、半額近い価格設定。",
-        "featureComparison": ["高さ調整機能", "360度回転", "貼り付けシール式（マグネットではない場合がある）"],
-        "differentiators": ["圧倒的なコストパフォーマンス", "MAGCASE Sはマグネット脱着が容易"]
+        "name": "Alloom スマホ防水ケース (ソフトタイプ)",
+        "asin": "B0F7XV53SB",
+        "priceComparison": "約899円と、MAGCASE Sの半額以下。",
+        "featureComparison": ["ソフトケース（バッグ型）", "IPX8防水", "ネックストラップ付き"],
+        "differentiators": ["圧倒的な安さとIPX8の高い防水性", "ソフトタイプなので出し入れの手間や画面操作性はハードケース(MAGCASE S)に劣る"]
       },
       {
-        "name": "エレコム スマホ防水ケース ウォータープルーフ",
-        "asin": "B0C6LV1TCD",
-        "priceComparison": "約1,010円と非常に安価。",
-        "featureComparison": ["ソフトケース（バッグ型）", "IPX8防水", "吸盤付き"],
-        "differentiators": ["ソフトタイプなので操作性は劣るが汎用性が高い", "MAGCASE Sはハードケースで見やすさと操作性を重視"]
+        "name": "Lamicall スマホ防水ケース (ソフトタイプ)",
+        "asin": "B0BQRCN4B1",
+        "priceComparison": "約1,000円と非常に安価。",
+        "featureComparison": ["ソフトケース", "IPX8防水", "2枚セット"],
+        "differentiators": ["コストパフォーマンスが高い", "ハードケースのようなスタンド・マグネット固定機能はない"]
       }
     ],
     "recommendation": {
@@ -93,17 +93,17 @@
         "ホームボタンや顔認証が使えない",
         "音がこもる"
       ],
-      "score": 80,
-      "scoreRationale": "[基本点: 70]\n[加点: +5] (IPX7防水、2WAY設置、気泡防止シートの実用性)\n[減点: -5] (競合と比較して価格が高め)\n[加点: +5] (日本製の品質と信頼感、ハードケースの利便性)\n[加点: +5] (独自の気泡防止加工による視認性向上)\n[合計: 80]"
+      "score": 78,
+      "scoreRationale": "[基本点: 70]\n[加点: +5] (IPX7防水、2WAY設置、気泡防止シートの実用性)\n[減点: -7] (Lamicall等の高機能かつ安価な競合の存在)\n[加点: +5] (日本製の品質と信頼感、ハードケースの利便性)\n[加点: +5] (独自の気泡防止加工による視認性向上)\n[合計: 78]"
     },
     "technicalSpecs": {
       "dimensions": { "height": "223mm", "width": "143mm", "depth": "32mm" },
-      "weight": "約300g (対応スマホ重量)",
       "waterproof": "IPX7相当",
       "compatibleSize": "高さ170×幅90×厚さ7～11mm以内",
-      "material": "プラスチック（ハードケース）",
+      "material": "プラスチック（ハードケース）、PET、シリコーンゴム",
       "mounting": ["マグネット", "スタンド"],
-      "origin": "日本"
+      "origin": "日本",
+      "other": ["3点式バックル", "通話可能（音声こもりあり）", "タッチ操作可能"]
     }
   }
 }
