@@ -46,7 +46,7 @@ interface CLIOptions {
 
 function getOptions(): CLIOptions {
   const token = process.env.GITHUB_TOKEN;
-  const prNumber = parseInt(process.env.PR_NUMBER || '0', 10);
+  const prNumber = Number.parseInt(process.env.PR_NUMBER || '0', 10);
   const prAuthor = process.env.PR_AUTHOR || '';
   const repository = process.env.GITHUB_REPOSITORY || '';
 
@@ -92,7 +92,7 @@ function tryRepairContent(content: string, fileName: string): string | null {
   // 今回発生した 00X 形式の月を 0X に修正する
   const invalidDatePattern = /(\d{4}-)00(\d-\d{2})/g;
   if (invalidDatePattern.test(repaired)) {
-    repaired = repaired.replace(invalidDatePattern, '$10$2');
+    repaired = repaired.replaceAll(invalidDatePattern, '$10$2');
     modified = true;
   }
 
@@ -454,7 +454,7 @@ async function main(): Promise<void> {
 
     const maxRetries = 10;
     const retryDelayMs = 10000;
-    let lastError: Error | null = null;
+    let lastError: any = null;
 
     for (let attempt = 1; attempt <= maxRetries; attempt++) {
       try {
@@ -462,6 +462,7 @@ async function main(): Promise<void> {
         // Note: GITHUB_TOKEN is usually automatically picked up by gh if set in env as GH_TOKEN or GITHUB_TOKEN
         // We ensure GH_TOKEN is set to options.token
 
+        // Capture output to detect specific GraphQL errors
         runGhCommand(
           [
             'pr',
@@ -474,7 +475,7 @@ async function main(): Promise<void> {
             prData.title,
           ],
           {
-            stdio: 'inherit',
+            stdio: 'pipe',
             env: { ...process.env, GH_TOKEN: options.token },
           },
         );
@@ -482,8 +483,43 @@ async function main(): Promise<void> {
         logger.info(`Auto-merge enabled for PR #${options.prNumber}`);
         lastError = null;
         break;
-      } catch (error) {
-        lastError = error as Error;
+      } catch (error: any) {
+        lastError = error;
+        const stderr = error.stderr || '';
+
+        // Check for "Protected branch rules not configured" error
+        // This happens when auto-merge is requested but no protection rules exist on the base branch.
+        // In this case, we can safely fallback to immediate merge since we've already done our own validation.
+        if (stderr.includes('Protected branch rules not configured')) {
+          logger.warn('Auto-merge is not available because no branch protection rules are configured.');
+          logger.info('Falling back to immediate merge...');
+
+          try {
+            runGhCommand(
+              [
+                'pr',
+                'merge',
+                options.prNumber.toString(),
+                '--squash',
+                '--delete-branch',
+                '--subject',
+                prData.title,
+              ],
+              {
+                stdio: 'inherit',
+                env: { ...process.env, GH_TOKEN: options.token },
+              },
+            );
+            logger.info(`PR #${options.prNumber} merged immediately (fallback)`);
+            lastError = null;
+            break;
+          } catch (mergeError) {
+            logger.error('Fallback immediate merge failed:', mergeError);
+            lastError = mergeError;
+            // Fallback failure is considered fatal for this attempt
+          }
+        }
+
         if (attempt < maxRetries) {
           logger.warn(`Auto-merge failed (attempt ${attempt}/${maxRetries}), retrying in ${retryDelayMs / 1000}s...`);
           await new Promise((resolve) => setTimeout(resolve, retryDelayMs));

@@ -15,7 +15,7 @@ export interface RunCommandOptions {
  * @param args The arguments to pass to the gh command
  * @param options Options for execution (env, stdio)
  */
-export function runGhCommand(args: string[], options: RunCommandOptions = {}): void {
+export function runGhCommand(args: string[], options: RunCommandOptions = {}): string {
   const { env = process.env, stdio = 'inherit' } = options;
 
   // Log the command for debugging purposes
@@ -36,15 +36,21 @@ export function runGhCommand(args: string[], options: RunCommandOptions = {}): v
 
   if (result.status !== 0) {
     let errorMessage = `Command failed with exit code ${result.status}`;
+    let stderr = '';
 
     // If we captured output (pipe), include stderr in the error message
-    if (stdio === 'pipe' && result.stderr) {
-      const stderr = result.stderr.toString().trim();
+    if (result.stderr) {
+      stderr = result.stderr.toString().trim();
       if (stderr) {
         errorMessage += `: ${stderr}`;
       }
     }
 
-    throw new Error(errorMessage);
+    const error = new Error(errorMessage);
+    (error as any).stderr = stderr;
+    (error as any).status = result.status;
+    throw error;
   }
+
+  return result.stdout ? result.stdout.toString() : '';
 }
