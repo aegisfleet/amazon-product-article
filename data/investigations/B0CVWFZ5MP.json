@@ -1,8 +1,8 @@
 {
   "analysis": {
     "productName": "Garmin Forerunner 165 Music",
-    "parentAsin": "B0CWGDKY6T",
-    "productDescription": "鮮やかなAMOLEDディスプレイと音楽再生機能を搭載した、ランニング特化型GPSウォッチです。",
+    "parentAsin": "B0CVWFZ5MP",
+    "productDescription": "鮮やかなAMOLEDディスプレイと音楽保存機能を搭載した、ランニング特化型GPSウォッチです。",
     "productUsage": [
       "日々のランニングやウォーキングの計測・記録",
       "AMOLEDタッチディスプレイによるスマートな操作とデータ確認",
@@ -12,16 +12,16 @@
     ],
     "positivePoints": [
       "鮮やかで視認性の高いAMOLEDディスプレイ",
-      "タッチ操作とボタン操作の両対応で使い勝手が良い",
+      "タッチ操作と5つの物理ボタン操作の両対応で使い勝手が良い",
       "ランニングウォッチとしては非常に軽量（39g）",
       "Suica対応でランニング中の買い物や移動がスムーズ",
-      "Garminならではの豊富なトレーニング指標（モーニングレポート等）"
+      "Spotify、Amazon Music、LINE MUSICなどの音楽配信サービスからプレイリストを同期可能"
     ],
     "negativePoints": [
-      "上位機種（265等）にあるマルチバンドGNSSに非対応",
+      "上位機種（265等）にあるマルチバンドGNSS（2周波GPS）に非対応",
       "地図表示機能は搭載していない（ルートナビのみ）",
-      "バッテリー稼働時間はMIP液晶モデル（PACE 3等）に比べると短い",
-      "常時表示モードにするとバッテリー消費が早くなる"
+      "バッテリー稼働時間はMIP液晶モデル（PACE 4等）に比べると短い",
+      "トライアスロンモードは非搭載"
     ],
     "useCases": [
       "スマートフォンを持たずに音楽を聴きながら走りたい時",
@@ -43,33 +43,47 @@
         "sentiment": "positive"
       }
     ],
-    "userImpression": "AMOLEDの美しさと軽量な装着感が高く評価されており、ランニング機能とスマートウォッチ機能のバランスが良いモデルとして好意的に受け入れられている。上位機種との機能差（マルチバンドGNSSなし）を許容できる層にとっては最適な選択肢。",
+    "userImpression": "AMOLEDの美しさと軽量な装着感が高く評価されており、ランニング機能とスマートウォッチ機能のバランスが良いモデルとして好意的に受け入れられている。マルチバンドGNSS非対応は一部の上級者には不満点だが、大半のユーザーには十分な精度と評価されている。",
     "sources": [
+      {
+        "name": "Garmin Forerunner 165 Review (DC Rainmaker)",
+        "url": "https://www.dcrainmaker.com/2024/02/garmin-forerunner-165-in-depth-review.html",
+        "credibility": "High"
+      },
       {
         "name": "Garmin Forerunner 165 vs. Coros Pace 3 (YouTube Review)",
         "url": "https://www.youtube.com/watch?v=zK2muXqjGGk",
         "credibility": "High"
-      },
-      {
-        "name": "T3 Review: Garmin Forerunner 165 vs Coros Pace 3",
-        "url": "https://www.t3.com/features/garmin-forerunner-165-vs-coros-pace-3",
-        "credibility": "High"
       }
     ],
-    "lastInvestigated": "2026-01-17",
+    "lastInvestigated": "2026-02-27",
     "competitiveAnalysis": [
       {
         "name": "COROS PACE 4",
-        "asin": "B0G14B7V63",
+        "asin": "B0G14KQB27",
         "priceComparison": "約36,300円。Forerunner 165 Musicより約4,000円安い。",
         "featureComparison": [
-          "バッテリー持ちはCOROSが圧倒的に有利（通常使用で長期間持つ）",
-          "COROSは2周波高精度GPSを搭載している場合がある（商品ページ記載より）",
-          "画面はForerunner 165のAMOLEDの方が鮮やかで見やすい"
+          "バッテリー持ちはCOROSが圧倒的に有利（通常使用最大19日 vs 11日）",
+          "COROSは2周波高精度GPS（マルチバンド）を搭載",
+          "Forerunner 165はSuica対応と音楽ストリーミングサービス対応が強み"
         ],
         "differentiators": [
-          "Forerunner 165はAMOLEDとSuica対応が強み",
-          "COROSはバッテリー寿命とコストパフォーマンス、軽量性で勝負"
+          "Suicaと音楽サブスク対応ならForerunner 165",
+          "バッテリー寿命とGPS精度、コストパフォーマンスならPACE 4"
+        ]
+      },
+      {
+        "name": "Garmin vivoactive 5",
+        "asin": "B0CJFQ7RTX",
+        "priceComparison": "約27,000円。165 Musicより1万円以上安い。",
+        "featureComparison": [
+          "どちらもAMOLED、Suica、音楽対応",
+          "vivoactive 5はボタンが2つでタッチ操作メイン、気圧高度計なし",
+          "165は5ボタン操作でランニング中の操作性が良く、ランニングダイナミクス機能が豊富"
+        ],
+        "differentiators": [
+          "ランニング特化ならForerunner 165",
+          "フィットネス・ライフログ中心で安さを求めるならvivoactive 5"
         ]
       },
       {
@@ -85,51 +99,42 @@
           "スマートウォッチとしての総合力ならApple Watch",
           "ランニングとバッテリー持ちならGarmin"
         ]
-      },
-      {
-        "name": "Garmin ForeAthlete 55",
-        "asin": "B096KJL2DS",
-        "priceComparison": "約21,000円。約半額で購入可能。",
-        "featureComparison": [
-          "機能は必要最小限で、画面はMIP液晶",
-          "タッチ操作やSuica、音楽保存機能はない",
-          "軽量でバッテリー持ちはそこそこ良い"
-        ],
-        "differentiators": [
-          "コスト重視なら55",
-          "画面の美しさと機能性重視なら165"
-        ]
       }
     ],
     "recommendation": {
       "targetUsers": [
-        "本格的にランニングを楽しみたいが、6万円以上の上位モデルには手が出ない人",
+        "本格的にランニングを楽しみたいが、5-6万円以上の上位モデルには手が出ない人",
         "画面の綺麗さ（AMOLED）を重視する人",
-        "音楽をウォッチ単体で聴きたい人",
+        "Amazon MusicやSpotifyをウォッチ単体で聴きたい人",
         "Suica機能を活用したい人"
       ],
       "pros": [
-        "4万円台で手に入るAMOLED搭載Garminウォッチ",
-        "軽量でフィット感が良い",
-        "音楽＆Suica対応でスマホレスランニングが可能"
+        "4万円台で手に入るAMOLED搭載Garminランニングウォッチ",
+        "軽量でフィット感が良く、睡眠時も気にならない",
+        "音楽＆Suica対応で完全スマホレスランニングが可能"
       ],
       "cons": [
         "マルチバンドGNSSが必要なシビアな精度を求める人には不向き",
         "バッテリー持ち重視ならMIP液晶モデルの方が良い"
       ],
-      "score": 90,
-      "scoreRationale": "[基本点: 70]\n[性能・機能: +5] (AMOLEDの視認性とタッチ操作、Music/Suica対応を評価)\n[コストパフォーマンス: +5] (この価格帯でAMOLED搭載は魅力的)\n[品質・デザイン: +5] (軽量かつ洗練されたデザイン)\n[ユーザー満足度: +5] (Garminの信頼性とアプリの使い勝手)\n[合計: 90]"
+      "score": 85,
+      "scoreRationale": "[基本点: 70]\n[性能・機能: +5] (AMOLEDの視認性とタッチ操作、Music/Suica対応を評価)\n[コストパフォーマンス: 0] (競合のPACE 4やvivoactive 5が安価で高性能なため、割安感は薄れた)\n[品質・デザイン: +5] (軽量かつ洗練されたデザイン)\n[ユーザー満足度: +5] (Garminの信頼性とアプリの使い勝手)\n[合計: 85]"
     },
     "technicalSpecs": {
+      "os": "Garmin OS",
+      "cpu": null,
+      "ram": null,
+      "storage": "4GB (音楽保存用)",
       "display": {
         "size": "1.2インチ",
         "resolution": "390 x 390 ピクセル",
         "type": "AMOLED"
       },
       "battery": {
-        "capacity": "スマートウォッチモード: 約11日間",
-        "charging": "独自規格充電ケーブル"
+        "capacity": "スマートウォッチモード: 約11日間 / GPSモード: 約19時間",
+        "charging": "Garmin独自の充電ケーブル"
       },
+      "camera": null,
       "dimensions": {
         "height": "43 mm",
         "width": "43 mm",
@@ -150,13 +155,9 @@
         "Suica対応",
         "Garmin Pay",
         "音楽保存可能",
-        "タッチスクリーン"
-      ],
-      "os": null,
-      "cpu": null,
-      "ram": null,
-      "storage": "4GB (音楽保存用)",
-      "camera": null
+        "タッチスクリーン",
+        "光学式心拍計"
+      ]
     }
   }
 }
