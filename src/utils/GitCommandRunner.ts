@@ -9,6 +9,20 @@ export interface RunCommandOptions {
 }
 
 /**
+ * Error thrown when a git command fails
+ */
+export class GitCommandError extends Error {
+  constructor(
+    message: string,
+    public readonly stderr: string,
+    public readonly status: number | null,
+  ) {
+    super(message);
+    this.name = 'GitCommandError';
+  }
+}
+
+/**
  * Runs a GitHub CLI (gh) command safely using spawnSync.
  * This prevents shell injection vulnerabilities by passing arguments as an array.
  *
@@ -46,10 +60,7 @@ export function runGhCommand(args: string[], options: RunCommandOptions = {}): s
       }
     }
 
-    const error = new Error(errorMessage);
-    (error as any).stderr = stderr;
-    (error as any).status = result.status;
-    throw error;
+    throw new GitCommandError(errorMessage, stderr, result.status);
   }
 
   return result.stdout ? result.stdout.toString() : '';

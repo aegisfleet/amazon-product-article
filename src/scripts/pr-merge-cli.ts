@@ -12,7 +12,7 @@
 import { Octokit } from '@octokit/rest';
 import { AutoMergeManager } from '../github/AutoMergeManager';
 import type { PullRequest } from '../types/GitHubTypes';
-import { runGhCommand } from '../utils/GitCommandRunner';
+import { GitCommandError, runGhCommand } from '../utils/GitCommandRunner';
 import { Logger } from '../utils/Logger';
 
 const logger = Logger.getInstance();
@@ -454,7 +454,7 @@ async function main(): Promise<void> {
 
     const maxRetries = 10;
     const retryDelayMs = 10000;
-    let lastError: any = null;
+    let lastError: Error | null = null;
 
     for (let attempt = 1; attempt <= maxRetries; attempt++) {
       try {
@@ -483,9 +483,9 @@ async function main(): Promise<void> {
         logger.info(`Auto-merge enabled for PR #${options.prNumber}`);
         lastError = null;
         break;
-      } catch (error: any) {
-        lastError = error;
-        const stderr = error.stderr || '';
+      } catch (error) {
+        lastError = error instanceof Error ? error : new Error(String(error));
+        const stderr = error instanceof GitCommandError ? error.stderr : '';
 
         // Check for "Protected branch rules not configured" error
         // This happens when auto-merge is requested but no protection rules exist on the base branch.
@@ -515,8 +515,7 @@ async function main(): Promise<void> {
             break;
           } catch (mergeError) {
             logger.error('Fallback immediate merge failed:', mergeError);
-            lastError = mergeError;
-            // Fallback failure is considered fatal for this attempt
+            lastError = mergeError instanceof Error ? mergeError : new Error(String(mergeError));
           }
         }
 

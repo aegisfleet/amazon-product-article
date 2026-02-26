@@ -62,10 +62,11 @@ describe('runGhCommand', () => {
     try {
       runGhCommand(['pr', 'ready', '123'], { stdio: 'pipe' });
       fail('Should have thrown an error');
-    } catch (error: any) {
-      expect(error.message).toContain('Command failed with exit code 1: Error: Something went wrong');
-      expect(error.stderr).toBe('Error: Something went wrong');
-      expect(error.status).toBe(1);
+    } catch (error) {
+      const gitError = error as import('./GitCommandRunner').GitCommandError;
+      expect(gitError.message).toContain('Command failed with exit code 1: Error: Something went wrong');
+      expect(gitError.stderr).toBe('Error: Something went wrong');
+      expect(gitError.status).toBe(1);
     }
   });
 
@@ -79,9 +80,10 @@ describe('runGhCommand', () => {
     try {
       runGhCommand(['pr', 'ready', '123'], { stdio: 'inherit' });
       fail('Should have thrown an error');
-    } catch (error: any) {
-      expect(error.message).toContain('Command failed with exit code 1: Error output');
-      expect(error.stderr).toBe('Error output');
+    } catch (error) {
+      const gitError = error as import('./GitCommandRunner').GitCommandError;
+      expect(gitError.message).toContain('Command failed with exit code 1: Error output');
+      expect(gitError.stderr).toBe('Error output');
     }
   });
 
