@@ -1,0 +1,109 @@
+{
+  "analysis": {
+    "productName": "ヤマハ(YAMAHA) ゲーム/配信用オーディオミキサー ZG01",
+    "parentAsin": "B09WQN5QP2",
+    "productDescription": "ゲーム/配信に特化したHDMI搭載オーディオミキサー。PC、Switch、スマホの音声をまとめて管理し、没入感の高いオーディオ体験と快適なボイスチャット環境を提供する。",
+    "productUsage": [
+      "PCゲームの音声とボイスチャットの音量を個別に調整",
+      "Switchなどのコンソールゲーム機とPCの音声をミックス",
+      "スマホでのDiscord通話をミックスしてゲームプレイ",
+      "配信時の音声ミックスとエフェクト付加",
+      "ボイスチェンジャーや効果音をボタン一つで実行"
+    ],
+    "positivePoints": [
+      "HDMI入力があり、Switchなどのゲーム音を簡単にPCに取り込める",
+      "ボイスチャットとゲーム音のバランス調整が物理ノブで直感的",
+      "専用ソフト「ZG Controller」で詳細なEQ設定が可能",
+      "ファンタム電源対応で高品質マイクが使える",
+      "ボイスチェンジャー機能が手軽で面白い"
+    ],
+    "negativePoints": [
+      "マイク入力のノイズゲート設定が必要（初期設定では環境音を拾いやすい）",
+      "バーチャルサラウンドの効果には個人差がある",
+      "HDMIパススルーは120Hz/VRR非対応の可能性がある（4K/60Hzまで）"
+    ],
+    "useCases": [
+      "PCでのFPSゲームプレイ（Apex Legends, Valorant等）",
+      "Switchでのスプラトゥーンなどのチームプレイ",
+      "ゲーム実況配信（OBS等との連携）"
+    ],
+    "userStories": [
+      {
+        "userType": "FPSゲーマー（20代男性）",
+        "scenario": "足音を聞きやすくしたい",
+        "experience": "ZG01の設定で低音を強調し、敵の位置が分かりやすくなった。ボイスチャットの声もクリアに聞こえる。",
+        "sentiment": "positive"
+      },
+      {
+        "userType": "Switchユーザー（10代女性）",
+        "scenario": "スプラトゥーン3での通話プレイ",
+        "experience": "以前はスマホとイヤホンを別々に使っていたが、ZG01のおかげでゲーム音と通話音声を一つのヘッドセットで聞けるようになり快適。",
+        "sentiment": "positive"
+      },
+      {
+        "userType": "配信初心者（30代男性）",
+        "scenario": "初めてのゲーム実況",
+        "experience": "OBSの設定が複雑だったが、ZG01を使うことで音声周りの配線がスッキリし、トラブルが減った。",
+        "sentiment": "positive"
+      }
+    ],
+    "userImpression": "総じて高評価だが、マイク設定の細かさやHDMIの仕様に関しては一部不満も見られる。しかし、機能性と使い勝手の良さは多くのユーザーに支持されている。",
+    "sources": [
+      {
+        "name": "AV Watch レビュー",
+        "url": "https://av.watch.impress.co.jp/docs/review/review/1438568.html",
+        "credibility": "high"
+      },
+      {
+        "name": "GIGAZINE レビュー",
+        "url": "https://gigazine.net/news/20220513-yamaha-zg01/",
+        "credibility": "high"
+      },
+      {
+        "name": "Amazon カスタマーレビュー（推測）",
+        "url": "https://www.amazon.co.jp/dp/B09WQN5QP2",
+        "credibility": "medium"
+      }
+    ],
+    "lastInvestigated": "2026-02-26",
+    "competitiveAnalysis": [
+      {
+        "name": "Logicool G ASTRO MixAmp Pro TR",
+        "asin": "B07SR8LZ12",
+        "priceComparison": "ZG01より安価（約1.5万円程度）",
+        "featureComparison": ["PS4/PS5特化", "デイジーチェーン対応", "HDMI入力なし（光デジタル）"],
+        "differentiators": ["コンソールゲーマーに圧倒的な知名度", "価格の安さ"]
+      },
+      {
+        "name": "Audio Technica AT-UMX3",
+        "asin": "B0CS6S8GBH",
+        "priceComparison": "ZG01より安価（約2万円程度）",
+        "featureComparison": ["USB接続のみ", "シンプル設計", "ループバック機能"],
+        "differentiators": ["初心者向けの使いやすさ", "コンパクトさ"]
+      },
+      {
+        "name": "FIFINE AmpliGame SC8W",
+        "asin": "B0FRN1K1VX",
+        "priceComparison": "非常に安価（約1.2万円程度）",
+        "featureComparison": ["XLR対応", "RGBライティング", "ボイスチェンジャー"],
+        "differentiators": ["コストパフォーマンス", "デザイン性"]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": ["ゲーム配信初心者～中級者", "Switchなどのコンソールゲーマー", "ボイスチャットを重視するユーザー"],
+      "pros": ["HDMI入力の手軽さ", "直感的な操作性", "ヤマハの音響技術"],
+      "cons": ["高リフレッシュレートモニター利用者（HDMIパススルー制限の可能性）", "詳細設定にはPCが必要"],
+      "score": 85,
+      "scoreRationale": "[基本点: 70]\n[加点: +10] (HDMI入力搭載という独自の強み)\n[加点: +5] (直感的な操作性とボイスチャット機能の充実)\n[加点: +5] (ヤマハブランドの信頼性と音質)\n[減点: -5] (価格が競合よりやや高め)\n[合計: 85]"
+    },
+    "technicalSpecs": {
+      "dimensions": { "width": "195mm", "height": "47.5mm", "depth": "110mm", "weight": "0.8kg" },
+      "power": "USBバスパワー (USB-C)",
+      "inputs": ["HDMI x 2", "USB-C", "AUX (3.5mm)", "Mic (XLR/TRS, 3.5mm)"],
+      "outputs": ["HDMI (Pass-through)", "Headphone (3.5mm)", "Speaker (3.5mm)"],
+      "audioQuality": "24-bit/48kHz",
+      "phantomPower": "+48V対応",
+      "other": ["ボイスチェンジャー", "ゲーム/ボイスチャットバランス調整", "専用ソフトZG Controller"]
+    }
+  }
+}
