@@ -192,6 +192,10 @@ export class CategoryNormalizer {
       /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}/i,
       // Block "Name [ID]" pattern (e.g. "家電 [124048011]")
       /.+ \[\d+\]/,
+      /Managed Stores/i,
+      /Custom Stores Navigation/i,
+      /Special Features Stores/i,
+      /Arborist Merchandising Root/i,
     ];
 
     // Specific whitelist for valid multi-dot categories
@@ -308,7 +312,6 @@ export class CategoryNormalizer {
       'h&s',
       'Panasonic-HA-',
       'Amazonベーシック',
-
       'Kindle Popup',
       'Kindle書籍 5冊購入で15%ポイント還元',
       'Kindle電子書籍リーダー',
@@ -324,7 +327,21 @@ export class CategoryNormalizer {
       'クリスマスギフト･コフレ',
       '日用品・生活必需品 - ビューティー',
       'カー＆バイク用品',
-      '車＆バイク',
+      'Kindleオーナー ライブラリー',
+      'Kindle本 (電子書籍) まとめ買いキャンペーン',
+      'Kindle本 ポイントアップチャンスキャンペーン',
+      'Kindle本はじめての購入に使える70%OFFクーポン',
+      'Kindle Events',
+      'ポイントフェア',
+      'まとめ買い(期間限定ポイント)',
+      '冬の読書応援',
+      '秋',
+      '冬',
+      '春',
+      '夏',
+      'GT Managed Stores',
+      'nonmanga_',
+      'new release non manga',
     ];
 
     if (
