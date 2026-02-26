@@ -30,9 +30,15 @@ describe('runGhCommand', () => {
     });
   });
 
-  it('should call spawnSync with correct arguments', () => {
+  it('should call spawnSync with correct arguments and return stdout', () => {
+    (spawnSync as jest.Mock).mockReturnValue({
+      status: 0,
+      stdout: 'success output',
+      stderr: '',
+    });
+
     const args = ['pr', 'merge', '123', '--squash'];
-    runGhCommand(args);
+    const result = runGhCommand(args);
 
     expect(spawnSync).toHaveBeenCalledWith(
       'gh',
@@ -42,6 +48,7 @@ describe('runGhCommand', () => {
         encoding: 'utf-8',
       }),
     );
+    expect(result).toBe('success output');
     expect(mockLogger.debug).toHaveBeenCalled();
   });
 
@@ -52,19 +59,30 @@ describe('runGhCommand', () => {
       stderr: Buffer.from('Error: Something went wrong'),
     });
 
-    expect(() => runGhCommand(['pr', 'ready', '123'], { stdio: 'pipe' })).toThrow(
-      'Command failed with exit code 1: Error: Something went wrong',
-    );
+    try {
+      runGhCommand(['pr', 'ready', '123'], { stdio: 'pipe' });
+      fail('Should have thrown an error');
+    } catch (error: any) {
+      expect(error.message).toContain('Command failed with exit code 1: Error: Something went wrong');
+      expect(error.stderr).toBe('Error: Something went wrong');
+      expect(error.status).toBe(1);
+    }
   });
 
   it('should throw error if command fails without pipe (inherit)', () => {
     (spawnSync as jest.Mock).mockReturnValue({
       status: 1,
       stdout: '',
-      stderr: Buffer.from('Error output'), // Should be ignored in error message for inherit
+      stderr: Buffer.from('Error output'),
     });
 
-    expect(() => runGhCommand(['pr', 'ready', '123'], { stdio: 'inherit' })).toThrow('Command failed with exit code 1');
+    try {
+      runGhCommand(['pr', 'ready', '123'], { stdio: 'inherit' });
+      fail('Should have thrown an error');
+    } catch (error: any) {
+      expect(error.message).toContain('Command failed with exit code 1: Error output');
+      expect(error.stderr).toBe('Error output');
+    }
   });
 
   it('should pass environment variables', () => {
