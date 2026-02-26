@@ -173,6 +173,21 @@ describe('CategoryNormalizer', () => {
         '日用品・生活必需品 - ビューティー',
         'カー＆バイク用品',
         '車＆バイク',
+        'Kindleオーナー ライブラリー',
+        'Kindle本 (電子書籍) まとめ買いキャンペーン',
+        'Kindle本 ポイントアップチャンスキャンペーン',
+        'Kindle本はじめての購入に使える70%OFFクーポン',
+        'Kindle Events',
+        'ポイントフェア',
+        'まとめ買い(期間限定ポイント)',
+        '冬の読書応援',
+        '秋',
+        '冬',
+        '春',
+        '夏',
+        'GT Managed Stores',
+        'nonmanga_',
+        'new release non manga',
       ];
 
       blockedNames.forEach((name) => {
