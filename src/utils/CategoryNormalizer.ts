@@ -24,11 +24,18 @@ export class CategoryNormalizer {
     let currentNode: BrowseNode | undefined = node;
 
     while (currentNode) {
-      const displayName = currentNode.displayName || currentNode.DisplayName;
-      const valid = displayName ? CategoryNormalizer.isValidCategoryName(displayName) : false;
+      const namesToCheck = [
+        currentNode.displayName || currentNode.DisplayName,
+        currentNode.contextFreeName,
+      ].filter((n): n is string => !!n);
 
-      if (displayName && valid) {
-        validNames.push(CategoryNormalizer.sanitizeCategoryName(displayName));
+      let foundValid = false;
+      for (const name of namesToCheck) {
+        if (CategoryNormalizer.isValidCategoryName(name)) {
+          validNames.push(CategoryNormalizer.sanitizeCategoryName(name));
+          foundValid = true;
+          break; // Stop at first valid name for this node
+        }
       }
       currentNode = currentNode.ancestor || currentNode.Ancestor;
     }
@@ -66,6 +73,8 @@ export class CategoryNormalizer {
         'Alexa',
         'Ring',
         'Amazonデバイス',
+        '本',
+        '書籍',
       ];
 
       if (
