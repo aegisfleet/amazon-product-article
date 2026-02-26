@@ -29,11 +29,9 @@ export class CategoryNormalizer {
         currentNode.contextFreeName,
       ].filter((n): n is string => !!n);
 
-      let foundValid = false;
       for (const name of namesToCheck) {
         if (CategoryNormalizer.isValidCategoryName(name)) {
           validNames.push(CategoryNormalizer.sanitizeCategoryName(name));
-          foundValid = true;
           break; // Stop at first valid name for this node
         }
       }
@@ -349,6 +347,9 @@ export class CategoryNormalizer {
       '冬',
       '春',
       '夏',
+      'Amazon',
+      'Baby',
+      'ベビー',
       'GT Managed Stores',
       'nonmanga_',
       'new release non manga',
