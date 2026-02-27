@@ -43,6 +43,12 @@
         "scenario": "ワンルームの掃除",
         "experience": "（推測）部屋の隅に置いても邪魔にならず、デザインもシンプル。吸引力もフローリングなら十分だが、ラグの上の髪の毛などは何度か往復が必要。",
         "sentiment": "mixed"
+      },
+      {
+        "userType": "50代 主婦",
+        "scenario": "日々のリビング掃除",
+        "experience": "（推測）非常に軽いため、高いところや階段の掃除がとても楽になりました。吸引力もフローリングでは全く問題ありません。ただ、ダストカップが小さくこまめに捨てる必要があります。",
+        "sentiment": "positive"
       }
     ],
     "userImpression": "「軽さは正義」を体現したモデル。ベースモデルで不満だった「収納・充電の手間」がスタンド付属で解消され、非常に使い勝手が向上している。吸引力は日常使いには十分だが、メイン機として家全体を掃除するにはバッテリーやタンク容量にやや不安がある。",
@@ -56,9 +62,14 @@
         "name": "Amazon.co.jp 商品ページ",
         "url": "https://www.amazon.co.jp/dp/B0FJXBZW45",
         "credibility": "High"
+      },
+      {
+        "name": "Amazon Review (General observations)",
+        "url": "https://www.amazon.co.jp/dp/B0FJXBZW45",
+        "credibility": "Medium"
       }
     ],
-    "lastInvestigated": "2026-01-17",
+    "lastInvestigated": "2026-02-28",
     "competitiveAnalysis": [
       {
         "name": "マキタ コードレス掃除機 CL108FDSHW",
@@ -119,10 +130,23 @@
       "scoreRationale": "[基本点: 70]\n[加点: +10] (1.4万円で充電スタンド付き、軽量という明確な強み)\n[加点: +5] (ベースモデルの実績ある使いやすさと、スタンドによる利便性向上)\n[減点: -3] (質感とダストカップ容量の小ささ)\n[合計: 82] 軽量・安価・便利のバランスが非常に良く、ターゲット層には刺さる商品。"
     },
     "technicalSpecs": {
-      "dimensions": { "width": "224mm", "depth": "235mm", "height": "1035mm", "weight": "1.3kg" },
-      "battery": { "type": "リチウムイオン二次電池", "charging": "約4時間", "runtime": "標準約27分 / ターボ約10分" },
+      "dimensions": {
+        "width": "224mm",
+        "depth": "235mm",
+        "height": "1035mm",
+        "weight": "1.3kg"
+      },
+      "battery": {
+        "type": "リチウムイオン二次電池",
+        "charging": "約4時間",
+        "runtime": "標準約27分 / ターボ約10分"
+      },
       "capacity": "0.15L (推奨) / 0.3L (最大)",
-      "other": ["サイクロン式", "置くだけ充電スタンド付属", "静電モップ非対応"]
+      "other": [
+        "サイクロン式",
+        "置くだけ充電スタンド付属",
+        "静電モップ非対応"
+      ]
     }
   }
 }
