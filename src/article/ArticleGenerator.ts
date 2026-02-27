@@ -1018,6 +1018,7 @@ ${recommendationMessage}`;
       // 家電
       if (specs.power) addSpec('power', `"${this.formatSpecValue(specs.power)}"`);
       if (specs.capacity) addSpec('capacity', `"${this.formatSpecValue(specs.capacity)}"`);
+      if (specs.contentVolume) addSpec('capacity', `"${this.formatSpecValue(specs.contentVolume)}"`);
       if (specs.category) addSpec('spec_category', `"${this.formatSpecValue(specs.category)}"`);
 
       // 接続性

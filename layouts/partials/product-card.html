@@ -49,8 +49,12 @@
             {{ with .Params.specs.display_size }}<span class="card-spec-tag">画面: {{ . }}</span>{{ end }}
             {{ with .Params.specs.battery_capacity }}<span class="card-spec-tag">バッテリー: {{ . }}</span>{{ end }}
             {{ with .Params.specs.weight }}<span class="card-spec-tag">重量: {{ . }}</span>{{ end }}
+            {{ with .Params.specs.capacity }}<span class="card-spec-tag">容量: {{ . }}</span>{{ end }}
             {{ if or .Params.specs.height .Params.specs.width .Params.specs.depth }}
-            <span class="card-spec-tag">サイズ: {{ with .Params.specs.height }}{{ . }}{{ end }}{{ if and .Params.specs.height (or .Params.specs.width .Params.specs.depth) }} × {{ end }}{{ with .Params.specs.width }}{{ . }}{{ end }}{{ if and .Params.specs.width .Params.specs.depth }} × {{ end }}{{ with .Params.specs.depth }}{{ . }}{{ end }}</span>
+            <span class="card-spec-tag">サイズ: {{ with .Params.specs.height }}{{ . }}{{ end }}{{ if and
+                .Params.specs.height (or .Params.specs.width .Params.specs.depth) }} × {{ end }}{{ with
+                .Params.specs.width }}{{ . }}{{ end }}{{ if and .Params.specs.width .Params.specs.depth }} × {{ end }}{{
+                with .Params.specs.depth }}{{ . }}{{ end }}</span>
             {{ end }}
         </div>
         {{ end }}
