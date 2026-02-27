@@ -1,7 +1,7 @@
 {
   "analysis": {
     "productName": "HUAWEI Band 10",
-    "parentAsin": "B0FH9526G7",
+    "parentAsin": "B0DZH1XVYN",
     "productDescription": "薄型軽量で快適な装着感を実現した、HUAWEIの最新スマートウォッチ。新機能「情緒モニタリング」を搭載し、心身の健康を24時間サポートします。",
     "productUsage": [
       "24時間の心拍数・睡眠・ストレスモニタリング",
@@ -57,12 +57,12 @@
         "credibility": "中"
       }
     ],
-    "lastInvestigated": "2026-01-17",
+    "lastInvestigated": "2026-02-28",
     "competitiveAnalysis": [
       {
         "name": "Xiaomi Smart Band 10",
-        "asin": "B0DYF64BV2",
-        "priceComparison": "約6,000円とHUAWEIより若干高い",
+        "asin": "B0F2JHZCQQ",
+        "priceComparison": "約8,319円とHUAWEIより高価（パールホワイトモデル等）",
         "featureComparison": [
           "1.72インチの大画面（HUAWEIは1.47インチ）",
           "輝度1500nitsで屋外視認性が高い"
@@ -74,8 +74,8 @@
       },
       {
         "name": "Xiaomi Band 9 Active",
-        "asin": "B0DK6ZC5ZC",
-        "priceComparison": "約3,000円と非常に安価",
+        "asin": "B0DKFM5S5R",
+        "priceComparison": "約2,980円と非常に安価",
         "featureComparison": [
           "機能は基本的",
           "ディスプレイ解像度が低い"
@@ -87,8 +87,8 @@
       },
       {
         "name": "Xiaomi Band 9 Pro",
-        "asin": "B0DK71CTCK",
-        "priceComparison": "約8,500円と高価",
+        "asin": "B0DK6YL89L",
+        "priceComparison": "約8,280円と高価",
         "featureComparison": [
           "GPS（GNSS）内蔵",
           "さらに大きな1.74インチ画面"
@@ -117,35 +117,37 @@
       "scoreRationale": "[基本点: 70]\n[加点: +5] (9軸センサーによる高精度計測と情緒モニタリング機能)\n[加点: +10] (5,500円という圧倒的なコストパフォーマンス)\n[加点: +3] (8.99mm、15gの薄型軽量設計)\n[加点: +5] (他社にない情緒モニタリング機能の独自性)\n[合計: 93]"
     },
     "technicalSpecs": {
-      "os": "HarmonyOS",
+      "os": "iOS/Android対応",
       "cpu": null,
       "ram": null,
       "storage": null,
       "display": {
         "size": "1.47インチ",
         "resolution": "194 x 368",
-        "type": "AMOLED"
+        "type": "フルオロエラストマーベルト使用、カスタマイズ可能な情報表示"
       },
       "battery": {
         "capacity": "通常使用14日間",
-        "charging": "急速充電対応（45分でフル充電）"
+        "charging": "5分充電で2日間使用、約45分でフル充電"
       },
       "camera": null,
       "dimensions": {
-        "height": "43.45mm",
+        "height": "厚さ約8.99mm",
         "width": "24.86mm",
         "depth": "8.99mm",
-        "weight": "約15g（ベルト含まず）"
+        "weight": "重さ約15g"
       },
       "connectivity": [
         "Bluetooth 5.0",
         "BLE"
       ],
       "other": [
-        "5ATM防水",
-        "9軸IMUセンサー",
-        "光学式心拍センサー",
-        "情緒モニタリング"
+        "5ATM防水相当（推測）",
+        "9軸センサー（水泳データ用）",
+        "情緒モニタリング",
+        "24時間睡眠管理",
+        "睡眠時呼吸乱れ検知",
+        "LINE通知"
       ]
     }
   }
