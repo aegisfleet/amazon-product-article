@@ -24,10 +24,9 @@ export class CategoryNormalizer {
     let currentNode: BrowseNode | undefined = node;
 
     while (currentNode) {
-      const namesToCheck = [
-        currentNode.displayName || currentNode.DisplayName,
-        currentNode.contextFreeName,
-      ].filter((n): n is string => !!n);
+      const namesToCheck = [currentNode.displayName || currentNode.DisplayName, currentNode.contextFreeName].filter(
+        (n): n is string => !!n,
+      );
 
       for (const name of namesToCheck) {
         if (CategoryNormalizer.isValidCategoryName(name)) {
