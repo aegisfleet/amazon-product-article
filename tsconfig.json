@@ -22,6 +22,13 @@
     "noUncheckedIndexedAccess": true,
     "exactOptionalPropertyTypes": true
   },
-  "include": ["src/**/*"],
-  "exclude": ["node_modules", "dist", "**/*.test.ts", "**/*.spec.ts"]
+  "include": ["src/**/*", "scripts/**/*"],
+  "exclude": ["node_modules", "dist", "**/*.test.ts", "**/*.spec.ts"],
+  "ts-node": {
+    "files": true,
+    "compilerOptions": {
+      "module": "commonjs",
+      "rootDir": "."
+    }
+  }
 }
