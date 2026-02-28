@@ -11,19 +11,18 @@
     ],
     "positivePoints": [
       "2つのHDMIポートを搭載し、安価にマルチモニター環境を構築可能",
-      "最大4K@60Hzの高解像度出力に対応（単ポート使用時など条件あり）",
-      "100W PD充電に対応しており、ハブ経由でPCへの給電が可能",
-      "8つのポートをコンパクトに集約し、持ち運びにも適している"
+      "最大4K@60Hzの高解像度出力に対応",
+      "100W PD急速充電に対応しており、ハブ経由でPCへの給電が可能",
+      "8つのポートをコンパクトに集約し、抜き差しの手間を大幅に削減"
     ],
     "negativePoints": [
-      "macOSではMST（マルチストリーム転送）非対応のため、2つの外部モニターに異なる画面を出力できない（ミラーリングになる）",
+      "macOSではMST（マルチストリーム転送）非対応のため、2つの外部モニターに異なる画面を出力できない（A+BCモード未対応）",
       "USBデータ転送速度が5Gbpsにとどまり、競合他社の10Gbpsモデルと比較して遅い",
-      "ケーブルの長さや配置によっては、取り回しがしにくい場合がある",
-      "高負荷時の発熱が気になる場合がある（この種のハブの一般的特性）"
+      "充電器やケーブルは同梱されていないため、別途用意が必要"
     ],
     "useCases": [
       "在宅勤務での効率的なデュアルモニター/トリプルモニター環境の構築",
-      "ポートの少ないノートPC（SurfaceやDell XPSなど）の拡張性向上",
+      "デザイン作業時の素材確認や動画編集時のタイムライン分離",
       "出張先や外出先でのプレゼンテーション（HDMI接続）"
     ],
     "userStories": [
@@ -48,39 +47,38 @@
         "credibility": "high"
       }
     ],
-    "lastInvestigated": "2026-01-17",
+    "lastInvestigated": "2026-03-01",
     "competitiveAnalysis": [
       {
-        "name": "UGREEN Uno 6 in 1 (B0D2Q5XJY9)",
-        "asin": "B0D2Q5XJY9",
-        "priceComparison": "約4,000円（ORICOより安い）",
+        "name": "UGREEN 7 in 1 Revodok Pro USB C ドッキングステーション",
+        "asin": "B0D1XSKZRJ",
+        "priceComparison": "約5,499円（ORICOとほぼ同水準）",
         "featureComparison": [
-          "HDMI x1",
-          "USB-C 10Gbps対応",
-          "ユニークなディスプレイ表示機能付き"
+          "HDMI x2",
+          "USB-C & USB-A 10Gbps対応"
         ],
         "differentiators": [
           "データ転送速度が速い（10Gbps）",
-          "デザインが特徴的",
-          "HDMIは1つのみ"
+          "価格帯が近いがデータ転送速度で優位"
         ]
       },
       {
-        "name": "エレコム DST-W10 (B0DSZGR9BC)",
-        "asin": "B0DSZGR9BC",
-        "priceComparison": "約4,760円（ORICOより少し安い）",
+        "name": "UGREEN Revodok Pro 210 10 in 1 USB-Cドッキングステーション",
+        "asin": "B0BXDQS4BD",
+        "priceComparison": "約8,490円（ORICOより高い）",
         "featureComparison": [
-          "HDMI x1",
-          "USB 10Gbps対応",
-          "国内メーカーの信頼性"
+          "HDMI x2",
+          "LANポート(1Gbps)搭載",
+          "USB-A x3"
         ],
         "differentiators": [
-          "10Gbpsの高速転送",
-          "HDMIは1つのみ"
+          "LANポート搭載で有線ネットワーク接続が可能",
+          "ポート数が多く、より多くの機器を接続可能",
+          "価格が高め"
         ]
       },
       {
-        "name": "BENFEI 7-in-1 (B0DC7144W1)",
+        "name": "BENFEI 7-in-1",
         "asin": "B0DC7144W1",
         "priceComparison": "約2,500円（半額以下）",
         "featureComparison": [
@@ -99,7 +97,7 @@
         "多くのUSB機器やSDカードを同時に使いたい人"
       ],
       "pros": [
-        "希少なデュアルHDMIポート搭載",
+        "希少なデュアルHDMIポート搭載で安価",
         "8つのポートによる高い拡張性"
       ],
       "cons": [
@@ -107,14 +105,14 @@
         "データ転送速度が5Gbpsと平凡"
       ],
       "score": 75,
-      "scoreRationale": "[基本点: 70]\n[加点: +10] (Dual HDMI搭載により、Windowsでのトリプルディスプレイ環境構築が可能)\n[減点: -5] (データ転送速度が5Gbpsと、最新の競合[10Gbps]に見劣りする)\n[減点: -5] (macOSではMST非対応のため、Dual HDMIの真価を発揮できない)\n[加点: +5] (8ポートという拡張性の高さに対して価格が手頃)\n[合計: 75]"
+      "scoreRationale": "[基本点: 70]\n[加点: +10] (Dual HDMI搭載により、Windowsでのトリプルディスプレイ環境構築が可能)\n[減点: -5] (データ転送速度が5Gbpsと、同価格帯の競合[10Gbps]に見劣りする)\n[減点: -5] (macOSではMST非対応のため、Dual HDMIの真価を発揮できない)\n[加点: +5] (8ポートという拡張性の高さに対して価格が手頃)\n[合計: 75]"
     },
     "technicalSpecs": {
       "dimensions": {
-        "width": "約115mm",
-        "depth": "約45mm",
-        "height": "約17mm",
-        "weight": "約100g"
+        "width": "1.77インチ",
+        "depth": "4.52インチ",
+        "height": "0.66インチ",
+        "weight": "0.22ポンド"
       },
       "power": "PD 100W (パススルー充電)",
       "connectivity": [
