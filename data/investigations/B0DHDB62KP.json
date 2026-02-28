@@ -1,7 +1,7 @@
 {
   "analysis": {
     "productName": "Xiaomi Redmi 14C",
-    "parentAsin": "B0DHRZBFJW",
+    "parentAsin": "B0DHDB62KP",
     "productDescription": "6.88インチのクラス最大級ディスプレイと5160mAh大容量バッテリーを搭載した、エンターテインメント重視のエントリースマートフォン。",
     "productUsage": [
       "大画面での動画視聴（YouTube, Netflix等）",
@@ -18,8 +18,8 @@
     "negativePoints": [
       "RAM 4GBは複数のアプリを同時に開くと動作が重くなる可能性がある",
       "18Wの充電速度は、大容量バッテリーを満充電にするのに時間がかかる",
-      "同価格帯の競合製品（Motorola等）と比較してメモリ容量が少ない",
-      "解像度がHD+クラスの場合、6.88インチでは画面の粗さが気になる場合がある"
+      "同価格帯の競合製品と比較してメモリ容量が少ない",
+      "解像度がHD+クラスのため、6.88インチでは画面の粗さが気になる場合がある"
     ],
     "useCases": [
       "通勤・通学時間の動画鑑賞用デバイス",
@@ -38,6 +38,12 @@
         "scenario": "サブ機としての運用",
         "experience": "メインスマホの充電温存のため、テザリングとナビ用として購入。画面が大きいのでカーナビ代わりに見やすいが、動作は少しもっさりすることがある。（推測）",
         "sentiment": "mixed"
+      },
+      {
+        "userType": "シニア層",
+        "scenario": "日常の連絡用",
+        "experience": "画面が大きくて文字が見やすいので、LINEや電話が使いやすい。重い作業はしないので動作に不満はない。（推測）",
+        "sentiment": "positive"
       }
     ],
     "userImpression": "ユーザーレビューはまだ少ないが、スペックからは「画面の大きさ」と「バッテリー持ち」に特化したモデルと言える。1万円台でこのサイズ感は貴重だが、パフォーマンス（特にメモリ）については価格相応の割り切りが必要。",
@@ -48,36 +54,36 @@
         "credibility": "high"
       }
     ],
-    "lastInvestigated": "2026-01-17",
+    "lastInvestigated": "2026-03-01",
     "competitiveAnalysis": [
       {
-        "name": "Motorola moto g24",
-        "asin": "B0CX44RPSF",
-        "priceComparison": "約2,000円安い (￥13,800)",
+        "name": "UMIDIGI F3SE",
+        "asin": "B0B1ZX36Q1",
+        "priceComparison": "約5,400円安い (￥12,300)",
         "featureComparison": [
-          "RAM 8GB搭載でマルチタスクに強い",
-          "画面サイズは6.6インチと少し小さい"
+          "画面サイズは6.7インチと少し小さい",
+          "バッテリー容量は5150mAhとほぼ同等"
         ],
         "differentiators": [
-          "価格の安さとメモリ容量の多さ"
+          "価格の安さ"
         ]
       },
       {
-        "name": "Motorola moto g05",
-        "asin": "B0DYJSQ5K5",
-        "priceComparison": "ほぼ同価格 (￥16,450)",
+        "name": "DOOGEE Note56X Pro",
+        "asin": "B0GFNP6VXL",
+        "priceComparison": "約1,800円安い (￥15,900)",
         "featureComparison": [
-          "RAM 8GB搭載",
-          "ヴィーガンレザー仕上げの背面"
+          "バッテリー容量は6150mAhとより大容量",
+          "画面サイズは6.56インチと小さい"
         ],
         "differentiators": [
-          "質感とスペックのバランス"
+          "圧倒的なバッテリー容量"
         ]
       },
       {
-        "name": "OPPO A5x",
-        "asin": "B0FMRZ3QQD",
-        "priceComparison": "少し高い (￥17,820)",
+        "name": "OPPO A54 5G",
+        "asin": "B0CWWF5SPM",
+        "priceComparison": "約900円安い (￥16,800)",
         "featureComparison": [
           "OPPO独自の使いやすいColorOS",
           "バランスの取れたスペック"
@@ -91,20 +97,21 @@
       "targetUsers": [
         "とにかく大きい画面で動画を見たい人",
         "バッテリー持ちを最優先する人",
-        "重いゲームはせず、SNSやWeb閲覧が中心の人"
+        "重いゲームはせず、SNSやWeb閲覧が中心の人",
+        "安価で大画面のサブ端末を探している人"
       ],
       "pros": [
         "クラス最大級の6.88インチ画面",
         "滑らかな120Hz駆動",
-        "安心の大容量バッテリー"
+        "安心の大容量バッテリー(5160mAh)"
       ],
       "cons": [
         "RAM 4GBによる将来的な動作不足の懸念",
-        "充電速度が控えめ",
-        "競合機種に比べてコスパ（メモリ単価）で劣る"
+        "18W充電は少し遅く感じる可能性",
+        "HD+解像度は大画面ゆえに粗く見える可能性"
       ],
       "score": 75,
-      "scoreRationale": "[基本点: 70]\n[加点: +3] (6.88インチのクラス最大級ディスプレイ)\n[加点: +5] (120Hz駆動と大容量バッテリー)\n[加点: +2] (Xiaomiのデザイン品質)\n[減点: -5] (RAM 4GBは同価格帯の競合8GBに劣る)\n[合計: 75]"
+      "scoreRationale": "[基本点: 70]\n[加点: +3] (6.88インチのクラス最大級ディスプレイ)\n[加点: +5] (120Hz駆動と大容量バッテリー)\n[加点: +2] (Xiaomiのデザイン品質)\n[減点: -5] (RAM 4GBは同価格帯の競合と比べて特筆する点がない)\n[合計: 75]"
     },
     "technicalSpecs": {
       "os": "Android 14 (HyperOS)",
@@ -113,8 +120,8 @@
       "storage": "128GB",
       "display": {
         "size": "6.88インチ",
-        "resolution": "HD+ (1640 x 720, 推定)",
-        "type": "LCD"
+        "resolution": "1640 x 720 (HD+)",
+        "type": "LCD (最大120Hz)"
       },
       "battery": {
         "capacity": "5160mAh",
