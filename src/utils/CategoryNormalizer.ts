@@ -130,33 +130,41 @@ export class CategoryNormalizer {
       const normalized = CategoryNormalizer.normalize(node);
 
       if (normalized.main !== 'その他') {
-        // Handle sub-category fallback if empty or too generic
-        if (!normalized.sub || normalized.sub === '一般') {
-          const subCandidate = sortedNodes.find((n: BrowseNode) => {
-            const sn = CategoryNormalizer.normalize(n);
-            return sn.main !== 'その他' && sn.main !== normalized.main;
-          });
-
-          if (subCandidate) {
-            normalized.sub = CategoryNormalizer.normalize(subCandidate).main;
-          } else {
-            normalized.sub = '';
-          }
-        }
-
-        const result: NormalizedCategory & { browseNodeId?: string } = { ...normalized };
-        const nodeId = node.id || node.Id;
-        if (nodeId) {
-          result.browseNodeId = nodeId;
-        }
-        return result;
+        CategoryNormalizer.resolveSubCategory(normalized, sortedNodes);
+        return CategoryNormalizer.attachBrowseNodeId(normalized, node);
       }
     }
 
     // 3. Fallback to best available node even if it's "Other"
     const bestNode = sortedNodes[0]!;
-    const result: NormalizedCategory & { browseNodeId?: string } = { ...CategoryNormalizer.normalize(bestNode) };
-    const nodeId = bestNode.id || bestNode.Id;
+    return CategoryNormalizer.attachBrowseNodeId(CategoryNormalizer.normalize(bestNode), bestNode);
+  }
+
+  /**
+   * Resolve sub-category when empty or too generic
+   */
+  private static resolveSubCategory(normalized: NormalizedCategory, sortedNodes: BrowseNode[]): void {
+    if (normalized.sub && normalized.sub !== '一般') {
+      return;
+    }
+
+    const subCandidate = sortedNodes.find((n: BrowseNode) => {
+      const sn = CategoryNormalizer.normalize(n);
+      return sn.main !== 'その他' && sn.main !== normalized.main;
+    });
+
+    normalized.sub = subCandidate ? CategoryNormalizer.normalize(subCandidate).main : '';
+  }
+
+  /**
+   * Attach browseNodeId to normalized category result
+   */
+  private static attachBrowseNodeId(
+    normalized: NormalizedCategory,
+    node: BrowseNode,
+  ): NormalizedCategory & { browseNodeId?: string } {
+    const result: NormalizedCategory & { browseNodeId?: string } = { ...normalized };
+    const nodeId = node.id || node.Id;
     if (nodeId) {
       result.browseNodeId = nodeId;
     }
