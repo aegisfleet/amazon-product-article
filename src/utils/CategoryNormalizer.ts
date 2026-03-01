@@ -383,6 +383,6 @@ export class CategoryNormalizer {
 
   private static sanitizeCategoryName(name: string): string {
     // Remove special characters sometimes found in browse nodes
-    return name.replace(/[【】|()_※]/g, '').trim();
+    return name.replaceAll(/[【】|()_※]/g, '').trim();
   }
 }
