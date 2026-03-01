@@ -143,7 +143,7 @@ export class ProductSearcher {
       try {
         // Pick a random keyword from the category's keyword list
         const keyword =
-          category.keywords[Math.floor(Math.random() * category.keywords.length)] || category.keywords[0] || 'popular';
+          category.keywords[crypto.randomInt(0, category.keywords.length)] || category.keywords[0] || 'popular';
         this.logger.info(`Searching category: ${category.name} with keyword: ${keyword}`);
 
         // Use override if provided, otherwise use category's configured maxResults
@@ -659,7 +659,7 @@ export class ProductSearcher {
    */
   private shuffleArray(array: unknown[]): void {
     for (let i = array.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
+      const j = crypto.randomInt(0, i + 1);
       const temp = array[i];
       array[i] = array[j];
       array[j] = temp;

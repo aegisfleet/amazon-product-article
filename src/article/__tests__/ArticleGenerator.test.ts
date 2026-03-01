@@ -424,7 +424,7 @@ describe('ArticleGenerator', () => {
 
       // Check for duplicate 'weight:' keys in specs section
       const content = result.content;
-      const specsMatch = content.match(/specs:[\s\S]*?(?=hero:|---)/);
+      const specsMatch = content.match(/specs:(?:(?!(?:hero:|---))[\s\S])*/);
 
       expect(specsMatch).not.toBeNull();
       if (specsMatch) {

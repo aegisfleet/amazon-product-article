@@ -11,6 +11,7 @@
  *   JULES_STARTING_BRANCH - 開始ブランチ (デフォルト: main)
  */
 
+import crypto from 'node:crypto';
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import { JulesInvestigator } from '../jules/JulesInvestigator';
@@ -104,7 +105,7 @@ async function main(): Promise<void> {
     // 調査対象をランダム化して多様性を確保
     const shuffledProducts = [...products];
     for (let i = shuffledProducts.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
+      const j = crypto.randomInt(0, i + 1);
       [shuffledProducts[i], shuffledProducts[j]] = [shuffledProducts[j]!, shuffledProducts[i]!];
     }
 

@@ -58,10 +58,12 @@ document.addEventListener('DOMContentLoaded', function () {
     if (!allPickupData || allPickupData.length === 0) return;
 
     shuffleBtn.addEventListener('click', function () {
-        // Fisher-Yates shuffle
+        // Fisher-Yates shuffle with crypto
         const shuffled = [...allPickupData];
+        const array = new Uint32Array(1);
         for (let i = shuffled.length - 1; i > 0; i--) {
-            const j = Math.floor(Math.random() * (i + 1));
+            window.crypto.getRandomValues(array);
+            const j = Math.floor((array[0] / 4294967296) * (i + 1));
             [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
         }
         const selected = shuffled.slice(0, 6);

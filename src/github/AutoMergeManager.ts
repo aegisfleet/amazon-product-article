@@ -2,6 +2,7 @@
  * Auto_Merge_Manager - JulesプルリクエストのCondutional自動マージ
  */
 
+import crypto from 'node:crypto';
 import {
   DEFAULT_MERGE_CONDITIONS,
   type MergeConditions,
@@ -208,6 +209,6 @@ export class AutoMergeManager {
    * モックSHAの生成
    */
   private generateMockSha(): string {
-    return Math.random().toString(36).substring(2, 42).padStart(40, '0');
+    return crypto.randomBytes(20).toString('hex');
   }
 }

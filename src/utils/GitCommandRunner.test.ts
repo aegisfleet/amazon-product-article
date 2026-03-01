@@ -95,7 +95,10 @@ describe('runGhCommand', () => {
       'gh',
       ['pr', 'merge', '123'],
       expect.objectContaining({
-        env: env,
+        env: {
+          ...env,
+          PATH: '/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/homebrew/bin',
+        },
       }),
     );
   });

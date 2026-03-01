@@ -34,12 +34,12 @@ describe('setGitHubOutput', () => {
   });
 
   it('should write to GITHUB_OUTPUT file if env var is set', async () => {
-    process.env.GITHUB_OUTPUT = '/tmp/github_output';
+    process.env.GITHUB_OUTPUT = '/var/tmp/github_output';
     const appendFileMock = fs.appendFile as jest.Mock;
 
     await setGitHubOutput('test-name', 'test-value');
 
-    expect(appendFileMock).toHaveBeenCalledWith('/tmp/github_output', 'test-name=test-value\n');
+    expect(appendFileMock).toHaveBeenCalledWith('/var/tmp/github_output', 'test-name=test-value\n');
     expect(loggerInfoSpy).toHaveBeenCalledWith('Set GitHub output: test-name=test-value');
   });
 
