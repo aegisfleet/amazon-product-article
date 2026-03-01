@@ -496,15 +496,7 @@ async function main(): Promise<void> {
 
           try {
             runGhCommand(
-              [
-                'pr',
-                'merge',
-                options.prNumber.toString(),
-                '--squash',
-                '--delete-branch',
-                '--subject',
-                prData.title,
-              ],
+              ['pr', 'merge', options.prNumber.toString(), '--squash', '--delete-branch', '--subject', prData.title],
               {
                 stdio: 'inherit',
                 env: { ...process.env, GH_TOKEN: options.token },
