@@ -197,7 +197,8 @@ export class CategoryNormalizer {
       // Block UUID-like patterns often used for internal nodes
       /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}/i,
       // Block "Name [ID]" pattern (e.g. "家電 [124048011]")
-      /[^[\]]+ \[\d+\]/,
+      // ReDoS対策: 非欲張りの繰り返しの重複を避ける
+      /^[^[\]]+ \[\d+\]$/,
       /Managed Stores/i,
       /Custom Stores Navigation/i,
       /Special Features Stores/i,

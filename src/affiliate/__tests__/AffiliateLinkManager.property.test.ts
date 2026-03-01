@@ -135,7 +135,8 @@ describe('AffiliateLinkManager', () => {
           const markdown = linkManager.generateMarkdownLink(asin, text);
 
           // Markdown形式であるべき
-          expect(markdown).toMatch(/\[.*\]\([^)]*\)/);
+          // ReDoS対策: 非欲張りの繰り返しの重複を避ける
+          expect(markdown).toMatch(/^\[[^\]]+\]\([^)]+\)$/);
 
           // ASINが含まれるべき
           expect(markdown).toContain(asin);

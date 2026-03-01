@@ -229,7 +229,8 @@ export class ArticleGenerator {
     });
 
     // 長い段落を分割（blockquote以外のテキストにのみ適用）
-    mobileContent = mobileContent.replaceAll(/(.{200}[^。！？]*?[。！？])/g, '$1\n\n');
+    // ReDoS対策: 非欲張りの繰り返しかつ、区切り文字をより厳格に
+    mobileContent = mobileContent.replaceAll(/(.{200,300}?[。！？])/g, '$1\n\n');
 
     // blockquoteを復元
     blockquotes.forEach((bq, i) => {
@@ -1208,7 +1209,8 @@ ${recommendationMessage}`;
 
   private extractAffiliateLinks(content: string): AffiliateLink[] {
     const links: AffiliateLink[] = [];
-    const linkRegex = /\[([^\]]*?)\]\(([^)]*?)\)/g;
+    // ReDoS対策: [ ] 内の繰り返しの重複を避け、より単純なパターンにする
+    const linkRegex = /\[([^\]]+)\]\(([^)]+)\)/g;
     let match: RegExpExecArray | null;
     let position = 0;
 
@@ -1311,7 +1313,8 @@ ${recommendationMessage}`;
 
       // 加点: [任意のラベル: +13] 説明 または (説明)
       // 「加点」固定ではなく、+数字をトリガーにして加点を識別
-      const plusMatch = line.match(/\[[^\]]+:\s*\+(\d+)\]\s*(.*)/);
+      // ReDoS対策: 非貪欲なマッチを最小限にする
+      const plusMatch = line.match(/^\[[^\]]+:\s*\+(\d+)\]\s*(.*)$/);
       if (plusMatch) {
         const [, points, desc = ''] = plusMatch;
         // HTMLタグを除去してから整形
@@ -1329,7 +1332,8 @@ ${recommendationMessage}`;
 
       // 減点: [任意のラベル: -5] 説明 または (説明)
       // 「減点」固定ではなく、-数字をトリガーにして減点を識別
-      const minusMatch = line.match(/\[[^\]]+:\s*-(\d+)\]\s*(.*)/);
+      // ReDoS対策: 非貪欲なマッチを最小限にする
+      const minusMatch = line.match(/^\[[^\]]+:\s*-(\d+)\]\s*(.*)$/);
       if (minusMatch) {
         const [, points, desc = ''] = minusMatch;
         // HTMLタグを除去してから整形

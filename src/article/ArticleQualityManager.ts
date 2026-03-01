@@ -343,7 +343,8 @@ export class ArticleQualityManager {
     }
 
     // リンクチェック
-    const affiliateLinkPattern = /\[[^\]]*\]\(https:\/\/[^)]*?amazon[^)]*?\)/;
+    // ReDoS対策: 重複する量指定子を避け、パス部分をより具体的に絞り込む
+    const affiliateLinkPattern = /\[[^\]]+\]\(https?:\/\/(?:www\.)?(?:amazon\.co\.jp|amzn\.to)\/[^)]+\)/;
     if (!affiliateLinkPattern.test(article)) {
       warnings.push({
         type: 'warning',

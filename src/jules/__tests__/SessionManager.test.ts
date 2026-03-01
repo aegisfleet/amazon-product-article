@@ -54,7 +54,6 @@ describe('SessionManager', () => {
     expect(parsedContent.product.asin).toBe(mockProduct.asin);
     expect(parsedContent.session.sessionId).toBe(mockSessionInfo.sessionId);
   });
-
   it('should throw error for invalid ASIN (Path Traversal attempt)', async () => {
     const invalidProduct = { ...mockProduct, asin: '../invalid' } as Product;
     await expect(saveSessionInfo(invalidProduct, mockSessionInfo)).rejects.toThrow('Invalid ASIN format');

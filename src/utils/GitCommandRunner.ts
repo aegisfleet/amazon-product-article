@@ -39,7 +39,7 @@ export function runGhCommand(args: string[], options: RunCommandOptions = {}): s
   // Ensure PATH is restricted to standard binary locations
   const safeEnv = {
     ...env,
-    PATH: '/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/homebrew/bin',
+    PATH: '/usr/bin:/bin:/usr/sbin:/sbin',
   };
 
   const spawnOptions: SpawnSyncOptions = {
