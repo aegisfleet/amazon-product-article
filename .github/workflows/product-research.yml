@@ -132,7 +132,7 @@ jobs:
       run: npm run build
 
     - name: Download product data
-      uses: actions/download-artifact@v7
+      uses: actions/download-artifact@v8
       with:
         name: product-data
         path: data/products/
