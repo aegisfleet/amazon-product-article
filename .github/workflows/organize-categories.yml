@@ -54,7 +54,7 @@ jobs:
 
     - name: Upload session data
       if: steps.check.outputs.count != '0'
-      uses: actions/upload-artifact@v6
+      uses: actions/upload-artifact@v7
       with:
         name: category-organization-session
         path: data/sessions/category-organization-*.json
