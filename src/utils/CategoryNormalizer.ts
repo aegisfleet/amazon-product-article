@@ -352,6 +352,7 @@ export class CategoryNormalizer {
       'GT Managed Stores',
       'nonmanga_',
       'new release non manga',
+      'ブランド別インテリアコーディネート',
     ];
 
     if (
