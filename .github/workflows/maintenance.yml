@@ -52,7 +52,7 @@ jobs:
     
     - name: Upload product data
       if: steps.search.outputs.products-found == 'true'
-      uses: actions/upload-artifact@v6
+      uses: actions/upload-artifact@v7
       with:
         name: product-data
         path: data/products/
@@ -94,7 +94,7 @@ jobs:
       run: npm run investigate
     
     - name: Upload session data
-      uses: actions/upload-artifact@v6
+      uses: actions/upload-artifact@v7
       with:
         name: session-data
         path: data/sessions/
