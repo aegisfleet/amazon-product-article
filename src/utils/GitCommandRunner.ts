@@ -37,9 +37,14 @@ export function runGhCommand(args: string[], options: RunCommandOptions = {}): s
   logger.debug(`Running command: gh ${args.join(' ')}`);
 
   // Ensure PATH is restricted to standard binary locations
+  const isWindows = process.platform === 'win32';
+  const defaultPath = isWindows
+    ? 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\'
+    : '/usr/bin:/bin:/usr/sbin:/sbin';
+
   const safeEnv = {
     ...env,
-    PATH: '/usr/bin:/bin:/usr/sbin:/sbin',
+    PATH: defaultPath,
   };
 
   const spawnOptions: SpawnSyncOptions = {
