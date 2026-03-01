@@ -200,6 +200,69 @@ function processFile(filePath: string): void {
   }
 }
 
+function printTopLevelFields(): void {
+  console.log('📋 トップレベルフィールドの出現頻度（降順）');
+  console.log('============================================\n');
+
+  const sortedFields = Array.from(fieldStats.values()).sort((a, b) => b.count - a.count);
+
+  for (const field of sortedFields) {
+    const isDefined = definedFields.has(field.fieldName) ? '✓' : '✗';
+    const typesStr = Array.from(field.types).join(', ');
+    console.log(`  ${isDefined} ${field.fieldName}: ${field.count}件`);
+    console.log(`      型: ${typesStr}`);
+    console.log(`      例: ${field.examples.slice(0, 2).join(', ')}`);
+    console.log('');
+  }
+}
+
+function printNestedFields(): void {
+  if (nestedStats.size === 0) return;
+
+  console.log('\n📋 ネストされたフィールドの詳細');
+  console.log('================================\n');
+
+  for (const [parentField, parent] of nestedStats.entries()) {
+    console.log(`  🔹 ${parentField}:`);
+    const sortedChildren = Array.from(parent.childFields.values()).sort((a, b) => b.count - a.count);
+    for (const child of sortedChildren) {
+      const nestedDefined = nestedDefinedFields[parentField];
+      const isDefined = nestedDefined?.has(child.fieldName) ? '✓' : '✗';
+      console.log(`      ${isDefined} ${child.fieldName}: ${child.count}件`);
+      console.log(`          例: ${child.examples.slice(0, 2).join(', ')}`);
+    }
+    console.log('');
+  }
+}
+
+function printUndefinedFields(): void {
+  if (undefinedFields.size === 0) return;
+
+  console.log('\n⚠️  JulesTypes.ts で未定義のフィールド');
+  console.log('=====================================\n');
+
+  const sortedUndefined = Array.from(undefinedFields.entries()).sort((a, b) => b[1].count - a[1].count);
+
+  for (const [fieldName, info] of sortedUndefined) {
+    console.log(`  ❌ ${fieldName}: ${info.count}件`);
+    console.log(`      例: ${info.examples.slice(0, 2).join(', ')}`);
+    console.log(`      ファイル: ${info.files.slice(0, 3).join(', ')}${info.files.length > 3 ? '...' : ''}`);
+    console.log('');
+  }
+}
+
+function printUnusedFields(): void {
+  console.log('\n📊 定義済みだが未使用のフィールド');
+  console.log('==================================\n');
+  const usedFields = new Set(fieldStats.keys());
+  const unusedFields = Array.from(definedFields).filter((f) => !usedFields.has(f));
+  if (unusedFields.length > 0) {
+    console.log(`  ${unusedFields.join(', ')}`);
+  } else {
+    console.log('  なし');
+  }
+}
+
 function main(): void {
   console.log('================================================================================');
   console.log('  technicalSpecs フィールド分析レポート');
@@ -218,64 +281,10 @@ function main(): void {
   console.log(`  ユニークフィールド数: ${fieldStats.size}`);
   console.log('');
 
-  // トップレベルフィールドの集計
-  console.log('📋 トップレベルフィールドの出現頻度（降順）');
-  console.log('============================================\n');
-
-  const sortedFields = Array.from(fieldStats.values()).sort((a, b) => b.count - a.count);
-
-  for (const field of sortedFields) {
-    const isDefined = definedFields.has(field.fieldName) ? '✓' : '✗';
-    const typesStr = Array.from(field.types).join(', ');
-    console.log(`  ${isDefined} ${field.fieldName}: ${field.count}件`);
-    console.log(`      型: ${typesStr}`);
-    console.log(`      例: ${field.examples.slice(0, 2).join(', ')}`);
-    console.log('');
-  }
-
-  // ネストされたフィールドの集計
-  if (nestedStats.size > 0) {
-    console.log('\n📋 ネストされたフィールドの詳細');
-    console.log('================================\n');
-
-    for (const [parentField, parent] of nestedStats.entries()) {
-      console.log(`  🔹 ${parentField}:`);
-      const sortedChildren = Array.from(parent.childFields.values()).sort((a, b) => b.count - a.count);
-      for (const child of sortedChildren) {
-        const nestedDefined = nestedDefinedFields[parentField];
-        const isDefined = nestedDefined?.has(child.fieldName) ? '✓' : '✗';
-        console.log(`      ${isDefined} ${child.fieldName}: ${child.count}件`);
-        console.log(`          例: ${child.examples.slice(0, 2).join(', ')}`);
-      }
-      console.log('');
-    }
-  }
-
-  // 未定義フィールドのリスト
-  if (undefinedFields.size > 0) {
-    console.log('\n⚠️  JulesTypes.ts で未定義のフィールド');
-    console.log('=====================================\n');
-
-    const sortedUndefined = Array.from(undefinedFields.entries()).sort((a, b) => b[1].count - a[1].count);
-
-    for (const [fieldName, info] of sortedUndefined) {
-      console.log(`  ❌ ${fieldName}: ${info.count}件`);
-      console.log(`      例: ${info.examples.slice(0, 2).join(', ')}`);
-      console.log(`      ファイル: ${info.files.slice(0, 3).join(', ')}${info.files.length > 3 ? '...' : ''}`);
-      console.log('');
-    }
-  }
-
-  // 定義済みだが未使用のフィールド
-  console.log('\n📊 定義済みだが未使用のフィールド');
-  console.log('==================================\n');
-  const usedFields = new Set(fieldStats.keys());
-  const unusedFields = Array.from(definedFields).filter((f) => !usedFields.has(f));
-  if (unusedFields.length > 0) {
-    console.log(`  ${unusedFields.join(', ')}`);
-  } else {
-    console.log('  なし');
-  }
+  printTopLevelFields();
+  printNestedFields();
+  printUndefinedFields();
+  printUnusedFields();
 }
 
 main();
