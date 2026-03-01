@@ -497,6 +497,8 @@ a:hover {
 .product-comparison {
   overflow-x: auto;
   margin: var(--spacing-lg) 0;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
 }
 
 /* Buttons */
