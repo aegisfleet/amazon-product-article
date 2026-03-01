@@ -24,10 +24,9 @@ export class CategoryNormalizer {
     let currentNode: BrowseNode | undefined = node;
 
     while (currentNode) {
-      const namesToCheck = [
-        currentNode.displayName || currentNode.DisplayName,
-        currentNode.contextFreeName,
-      ].filter((n): n is string => !!n);
+      const namesToCheck = [currentNode.displayName || currentNode.DisplayName, currentNode.contextFreeName].filter(
+        (n): n is string => !!n,
+      );
 
       for (const name of namesToCheck) {
         if (CategoryNormalizer.isValidCategoryName(name)) {
@@ -198,7 +197,7 @@ export class CategoryNormalizer {
       // Block UUID-like patterns often used for internal nodes
       /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}/i,
       // Block "Name [ID]" pattern (e.g. "家電 [124048011]")
-      /.+ \[\d+\]/,
+      /[^[\]]+ \[\d+\]/,
       /Managed Stores/i,
       /Custom Stores Navigation/i,
       /Special Features Stores/i,

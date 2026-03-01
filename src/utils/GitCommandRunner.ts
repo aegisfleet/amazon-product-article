@@ -36,10 +36,16 @@ export function runGhCommand(args: string[], options: RunCommandOptions = {}): s
   // Note: We avoid logging the full environment or token
   logger.debug(`Running command: gh ${args.join(' ')}`);
 
+  // Ensure PATH is restricted to standard binary locations
+  const safeEnv = {
+    ...env,
+    PATH: '/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/homebrew/bin',
+  };
+
   const spawnOptions: SpawnSyncOptions = {
     stdio: stdio,
     encoding: 'utf-8',
-    env: env,
+    env: safeEnv,
   };
 
   const result = spawnSync('gh', args, spawnOptions);

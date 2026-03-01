@@ -343,7 +343,7 @@ export class ArticleQualityManager {
     }
 
     // リンクチェック
-    const affiliateLinkPattern = /\[.*?\]\(https:\/\/.*?amazon.*?\)/;
+    const affiliateLinkPattern = /\[[^\]]*\]\(https:\/\/[^)]*?amazon[^)]*?\)/;
     if (!affiliateLinkPattern.test(article)) {
       warnings.push({
         type: 'warning',
@@ -466,7 +466,7 @@ export class ArticleQualityManager {
    */
   private extractSections(article: string): Array<{ title: string; content: string }> {
     const sections: Array<{ title: string; content: string }> = [];
-    const sectionPattern = /^##\s+(.+)$/gm;
+    const sectionPattern = /^##\s+([^\n]+)$/gm;
 
     let match: RegExpExecArray | null;
     let lastIndex = 0;
@@ -555,7 +555,7 @@ export class ArticleQualityManager {
     const content = article.replace(/^---\n[\s\S]*?\n---/, '').trim();
     // Markdown記法を除外してカウント
     const plainText = content
-      .replace(/```[\s\S]*?```/g, '')
+      .replace(/```[^`]*```/g, '')
       .replace(/`[^`]+`/g, '')
       .replace(/\[([^\]]+)\]\([^)]+\)/g, '$1')
       .replace(/[#*_~]/g, '')
