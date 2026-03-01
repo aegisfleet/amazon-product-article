@@ -1,7 +1,7 @@
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-5TLPZJ1M1D"></script>
 <script>
-  window.dataLayer = window.dataLayer || [];
+  globalThis.dataLayer = globalThis.dataLayer || [];
   function gtag() { dataLayer.push(arguments); }
   gtag('js', new Date());
 
@@ -61,7 +61,7 @@
   (() => {
     const savedTheme = localStorage.getItem('theme');
     if (savedTheme) {
-      document.documentElement.setAttribute('data-theme', savedTheme);
+      document.documentElement.dataset.theme = savedTheme;
     }
   })();
 </script>
