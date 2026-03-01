@@ -229,7 +229,7 @@ export class ArticleGenerator {
     });
 
     // 長い段落を分割（blockquote以外のテキストにのみ適用）
-    mobileContent = mobileContent.replaceAll(/(.{200}[^。！？]*?[。！？])/g, '$1\n\n');
+    mobileContent = mobileContent.replaceAll(/(.{200}[^。！？]{0,100}[。！？])/g, '$1\n\n');
 
     // blockquoteを復元
     blockquotes.forEach((bq, i) => {
