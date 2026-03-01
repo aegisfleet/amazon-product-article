@@ -229,7 +229,7 @@ export class ArticleGenerator {
     });
 
     // 長い段落を分割（blockquote以外のテキストにのみ適用）
-    mobileContent = mobileContent.replaceAll(/(.{200,}?)([。！？])/g, '$1$2\n\n');
+    mobileContent = mobileContent.replaceAll(/(.{200}[^。！？]*?[。！？])/g, '$1\n\n');
 
     // blockquoteを復元
     blockquotes.forEach((bq, i) => {
@@ -1208,7 +1208,7 @@ ${recommendationMessage}`;
 
   private extractAffiliateLinks(content: string): AffiliateLink[] {
     const links: AffiliateLink[] = [];
-    const linkRegex = /\[([^\]]+)\]\(([^)]+)\)/g;
+    const linkRegex = /\[([^\]]*?)\]\(([^)]*?)\)/g;
     let match: RegExpExecArray | null;
     let position = 0;
 
@@ -1316,7 +1316,7 @@ ${recommendationMessage}`;
         const [, points, desc = ''] = plusMatch;
         // HTMLタグを除去してから整形
         const cleanDesc = desc
-          .replace(/<[^>]*>/g, ' ')
+          .replace(/<[^>]+>/g, ' ')
           .replace(/\s+/g, ' ')
           .replace(/^[(（]/, '')
           .replace(/[)）]$/, '')
@@ -1334,7 +1334,7 @@ ${recommendationMessage}`;
         const [, points, desc = ''] = minusMatch;
         // HTMLタグを除去してから整形
         const cleanDesc = desc
-          .replace(/<[^>]*>/g, ' ')
+          .replace(/<[^>]+>/g, ' ')
           .replace(/\s+/g, ' ')
           .replace(/^[(（]/, '')
           .replace(/[)）]$/, '')
@@ -1357,7 +1357,7 @@ ${recommendationMessage}`;
       if (zeroAddMatch) {
         const [, desc = ''] = zeroAddMatch;
         const cleanDesc = desc
-          .replace(/<[^>]*>/g, ' ')
+          .replace(/<[^>]+>/g, ' ')
           .replace(/\s+/g, ' ')
           .replace(/^[(（]/, '')
           .replace(/[)）]$/, '')
@@ -1371,7 +1371,7 @@ ${recommendationMessage}`;
       if (zeroSubMatch) {
         const [, desc = ''] = zeroSubMatch;
         const cleanDesc = desc
-          .replace(/<[^>]*>/g, ' ')
+          .replace(/<[^>]+>/g, ' ')
           .replace(/\s+/g, ' ')
           .replace(/^[(（]/, '')
           .replace(/[)）]$/, '')
@@ -1386,7 +1386,7 @@ ${recommendationMessage}`;
       if (zeroNeutralMatch) {
         const [, desc = ''] = zeroNeutralMatch;
         const cleanDesc = desc
-          .replace(/<[^>]*>/g, ' ')
+          .replace(/<[^>]+>/g, ' ')
           .replace(/\s+/g, ' ')
           .replace(/^[(（]/, '')
           .replace(/[)）]$/, '')
@@ -1430,7 +1430,7 @@ ${recommendationMessage}`;
         const points = parseInt(plusMatch[1] ?? '0', 10);
         let desc = plusMatch[2] || '';
         // HTMLタグを除去（<p>などが含まれるとレイアウト崩れの原因になるため）
-        desc = desc.replace(/<[^>]*>/g, ' ');
+        desc = desc.replace(/<[^>]+>/g, ' ');
         // 改行を含むあらゆる空白文字をスペースに置換
         desc = desc.replace(/\s+/g, ' ');
         // 括弧を除去して説明文全体を使用
@@ -1451,7 +1451,7 @@ ${recommendationMessage}`;
         const points = parseInt(minusMatch[1] ?? '0', 10);
         let desc = minusMatch[2] || '';
         // HTMLタグを除去
-        desc = desc.replaceAll(/<[^>]*>/g, ' ');
+        desc = desc.replaceAll(/<[^>]+>/g, ' ');
         // 改行を含むあらゆる空白文字をスペースに置換
         desc = desc.replaceAll(/\s+/g, ' ');
         // 括弧を除去して説明文全体を使用

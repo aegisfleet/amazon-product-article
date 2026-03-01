@@ -249,7 +249,7 @@ export class JulesInvestigator {
    */
   private parseAnalysisFromContent(content: string): InvestigationResult['analysis'] {
     // JSONブロックを抽出して解析を試みる
-    const jsonRegex = /```json\s*([\s\S]*?)\s*```/;
+    const jsonRegex = /```json\n([\s\S]*?)```/;
     const jsonMatch = jsonRegex.exec(content);
     if (jsonMatch?.[1]) {
       try {

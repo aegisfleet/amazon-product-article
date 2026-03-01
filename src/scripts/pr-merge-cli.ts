@@ -81,7 +81,7 @@ function tryRepairContent(content: string, fileName: string): string | null {
 
   // JSON かつ Markdownコードブロックに含まれている場合の除去
   if (fileName.endsWith('.json')) {
-    const codeBlockMatch = repaired.match(/^```json\s*([\s\S]*?)\s*```$/i);
+    const codeBlockMatch = repaired.match(/^```json\n([\s\S]*?)```$/i);
     if (codeBlockMatch?.[1]) {
       repaired = codeBlockMatch[1].trim();
       modified = true;

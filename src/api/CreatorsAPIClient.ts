@@ -4,6 +4,7 @@
  * Updated for Creators API (v1)
  */
 
+import crypto from 'node:crypto';
 import { URLSearchParams } from 'node:url';
 import axios, { type AxiosInstance, type AxiosResponse } from 'axios';
 import type {
@@ -548,7 +549,7 @@ export class CreatorsAPIClient {
                     // Exponential backoff with jitter for rate limiting
                     const baseDelay = 2000; // 2 seconds base
                     const exponentialDelay = baseDelay * 2 ** (attempt - 1);
-                    const jitter = Math.random() * 1000; // 0-1 second jitter
+                    const jitter = crypto.randomInt(0, 1000); // 0-1 second jitter
                     waitTime = Math.min(exponentialDelay + jitter, 60000); // Max 60 seconds
                   }
 
