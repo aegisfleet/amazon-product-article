@@ -1,8 +1,8 @@
 {
   "analysis": {
     "productName": "HUAWEI WATCH FIT 4",
-    "parentAsin": "B0FY5MW3SF",
-    "productDescription": "大画面1.82インチAMOLEDを搭載しながら、厚さ9.5mm・重量約27gという薄型軽量を実現したスマートウォッチです。新たに気圧計や高度計を搭載し、アウトドア用途にも対応しました。",
+    "parentAsin": "B0F5WNVHH7",
+    "productDescription": "大画面1.82インチAMOLEDを搭載しながら、厚さ約9.5mm・重量約27gという薄型軽量を実現したスマートウォッチです。新たに気圧計や高度計を搭載し、アウトドア用途にも対応しました。",
     "productUsage": [
       "毎日の健康管理（心拍数、睡眠、血中酸素レベル、ストレス測定）",
       "ランニングやウォーキングなどのワークアウト記録（GPS内蔵）",
@@ -11,7 +11,7 @@
     ],
     "positivePoints": [
       "1.82インチの大画面で見やすく、操作性が高い",
-      "着けていることを忘れるほどの薄さと軽さ（9.5mm, 約27g）",
+      "着けていることを忘れるほどの薄さと軽さ（厚み約9.5mm, 約27g）",
       "気圧計と高度計を搭載し、アウトドアでの実用性が向上",
       "通常使用で約10日間持つ長寿命バッテリー",
       "AndroidとiOSの両方に対応し、機能制限が少ない"
@@ -46,7 +46,7 @@
         "sentiment": "positive"
       }
     ],
-    "userImpression": "「薄型軽量」と「大画面」の両立が高く評価されています。FIT 3からの正統進化として、気圧計の追加などアウトドア機能の強化も好評です。一方で、日本市場特有のFeliCa対応を望む声も依然としてあります。",
+    "userImpression": "「薄型軽量」と「大画面」の両立が高く評価されています。前モデルからの正統進化として、気圧計の追加などアウトドア機能の強化も好評です。一方で、日本市場特有のFeliCa対応を望む声も依然としてあります。",
     "sources": [
       {
         "name": "Gadgets360: Huawei Watch Fit 4 vs Xiaomi Smart Band 9 Pro",
@@ -54,7 +54,7 @@
         "credibility": "high"
       }
     ],
-    "lastInvestigated": "2026-01-18",
+    "lastInvestigated": "2026-03-03",
     "competitiveAnalysis": [
       {
         "name": "Xiaomi Smart Band 10",
@@ -101,14 +101,20 @@
         "さらに安価な選択肢（Xiaomi等）が存在する"
       ],
       "score": 90,
-      "scoreRationale": "[基本点: 70]\n[性能・機能: +5] (気圧計、GPS、通話、AMOLED大画面は優秀。FeliCaなしだが機能豊富)\n[コストパフォーマンス: +5] (2.1万円は機能に対して妥当)\n[品質・デザイン: +5] (9.5mmの薄型メタルボディ、回転クラウンなどの質感は高い)\n[ユーザー満足度: +5] (FITシリーズの実績と正統進化への評価)\n[合計: 90]"
+      "scoreRationale": "[基本点: 70]\n[加点: +5] 性能・機能：気圧計、GPS内蔵、Bluetooth通話、AMOLED大画面と充実。FeliCa非対応だが基本性能は優秀\n[加点: +5] コストパフォーマンス：2万円以下の価格帯（約16,799円）でこの機能・品質は優れている\n[加点: +5] 品質・デザイン：9.5mmの薄型ボディと約27gの軽さで装着感が非常に高い\n[加点: +5] ユーザー満足度：FITシリーズの実績と大画面・薄型の両立による高い評価\n[合計: 90]"
     },
     "technicalSpecs": {
+      "dimensions": {
+        "height": null,
+        "width": null,
+        "depth": "9.5mm",
+        "weight": "約27g (ベルト含まず)"
+      },
       "os": "HarmonyOS",
       "display": {
         "size": "1.82インチ",
-        "type": "AMOLED",
-        "resolution": "480 x 408"
+        "resolution": "480 x 408",
+        "type": "AMOLED"
       },
       "battery": {
         "capacity": "400mAh (推定)",
@@ -125,10 +131,6 @@
         "気圧計",
         "環境光センサー"
       ],
-      "dimensions": {
-        "thickness": "9.5mm",
-        "weight": "約27g (ベルト含まず)"
-      },
       "other": [
         "5ATM防水",
         "Bluetooth通話対応",
