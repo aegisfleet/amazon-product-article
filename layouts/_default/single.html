@@ -120,6 +120,7 @@
                 var relatedSection = document.getElementById('related-products-section');
                 var keepaSection = document.getElementById('keepa-graph-section');
                 var rakutenSection = document.getElementById('rakuten-affiliate-section');
+                var heroCard = document.querySelector('.product-hero-card');
                 var firstH2 = document.querySelector('.content h2');
 
                 // Move TOC to before first H2
@@ -131,54 +132,26 @@
                     toc.style.display = 'block';
                 }
 
-                // Move Keepa and Related Section to after Product Hero Card
-                var heroCard = document.querySelector('.product-hero-card');
-
-                // Insert Keepa graph after hero card
-                if (keepaSection) {
-                    if (heroCard) {
-                        heroCard.parentNode.insertBefore(keepaSection, heroCard.nextSibling);
-                    } else if (toc) {
-                        toc.parentNode.insertBefore(keepaSection, toc);
+                // Helper to insert an element after another, or before a fallback
+                function insertElement(elem, prevSibling, fallbackElem) {
+                    if (!elem) return;
+                    if (prevSibling?.parentNode) {
+                        prevSibling.parentNode.insertBefore(elem, prevSibling.nextSibling);
+                    } else if (fallbackElem?.parentNode) {
+                        fallbackElem.parentNode.insertBefore(elem, fallbackElem);
                     } else {
-                        firstH2 = document.querySelector('.content h2');
-                        if (firstH2) {
-                            firstH2.parentNode.insertBefore(keepaSection, firstH2);
+                        var h2 = document.querySelector('.content h2');
+                        if (h2?.parentNode) {
+                            h2.parentNode.insertBefore(elem, h2);
                         }
                     }
-                    keepaSection.style.display = 'block';
+                    elem.style.display = 'block';
                 }
 
-                // Insert Rakuten section after Keepa (or hero card)
-                if (rakutenSection) {
-                    if (keepaSection?.parentNode) {
-                        keepaSection.parentNode.insertBefore(rakutenSection, keepaSection.nextSibling);
-                    } else if (heroCard) {
-                        heroCard.parentNode.insertBefore(rakutenSection, heroCard.nextSibling);
-                    } else if (toc) {
-                        toc.parentNode.insertBefore(rakutenSection, toc);
-                    }
-                    rakutenSection.style.display = 'block';
-                }
-
-                // Insert Related Section after Rakuten (or Keepa or hero card)
-                if (relatedSection) {
-                    if (rakutenSection?.parentNode) {
-                        rakutenSection.parentNode.insertBefore(relatedSection, rakutenSection.nextSibling);
-                    } else if (keepaSection?.parentNode) {
-                        keepaSection.parentNode.insertBefore(relatedSection, keepaSection.nextSibling);
-                    } else if (heroCard) {
-                        heroCard.parentNode.insertBefore(relatedSection, heroCard.nextSibling);
-                    } else if (toc) {
-                        toc.parentNode.insertBefore(relatedSection, toc);
-                    } else {
-                        firstH2 = document.querySelector('.content h2');
-                        if (firstH2) {
-                            firstH2.parentNode.insertBefore(relatedSection, firstH2);
-                        }
-                    }
-                    relatedSection.style.display = 'block';
-                }
+                // Sequence of insertions
+                insertElement(keepaSection, heroCard, toc);
+                insertElement(rakutenSection, keepaSection || heroCard, toc);
+                insertElement(relatedSection, rakutenSection || keepaSection || heroCard, toc);
             })();
         </script>
 
