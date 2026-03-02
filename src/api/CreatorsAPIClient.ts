@@ -28,12 +28,12 @@ interface CreatorsAPIErrorData {
 }
 
 export class CreatorsAPIClient {
-  private logger = Logger.getInstance();
+  private readonly logger = Logger.getInstance();
   private credentials?: CreatorsAPICredentials;
-  private httpClient: AxiosInstance;
-  private rateLimitConfig: RateLimitConfig;
+  private readonly httpClient: AxiosInstance;
+  private readonly rateLimitConfig: RateLimitConfig;
   private lastRequestTime = 0;
-  private requestQueue: Array<() => Promise<void>> = [];
+  private readonly requestQueue: Array<() => Promise<void>> = [];
   private isProcessingQueue = false;
 
   // OAuth Token Management
