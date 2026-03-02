@@ -248,7 +248,6 @@ export class CategoryNormalizer {
       return false;
     }
 
-    // Check for specific nonsense categories reported
     const blockList = [
       'Arborist Merchandising Root',
       'Babel 6-2',
@@ -282,6 +281,7 @@ export class CategoryNormalizer {
       'アウトドア用品',
       'スポーツ＆アウトドア',
       'Sports & Outdoors',
+      'ホーム・日用品',
       '日用品・生活必需品：おもちゃ',
       '和書（アダルト除く）',
       'Featured Categories',
