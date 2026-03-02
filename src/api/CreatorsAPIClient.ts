@@ -491,91 +491,13 @@ export class CreatorsAPIClient {
                 headers,
               });
 
-              if (response.data.errors && response.data.errors.length > 0) {
-                const firstError = response.data.errors[0];
-                if (firstError) {
-                  throw new Error(`API Error: ${firstError.code} - ${firstError.message}`);
-                }
-              }
+              this.checkResponseErrors(response);
 
               return resolve(response.data);
             } catch (error: unknown) {
-              if (axios.isAxiosError(error)) {
-                const statusCode = error.response?.status;
-
-                if (statusCode === 401) {
-                  // Token might be expired or invalid
-                  this.accessToken = undefined;
-                }
-
-                const errorData = error.response?.data as CreatorsAPIErrorData;
-                this.logger.error(`API Error Response (${statusCode}): ${JSON.stringify(errorData, null, 2)}`);
-
-                // Log request details for debugging 400 errors
-                if (statusCode === 400) {
-                  this.logger.error(`Request URL: ${url}`);
-                  this.logger.error(
-                    `Request Headers: ${JSON.stringify({ ...headers, Authorization: '[REDACTED]' }, null, 2)}`,
-                  );
-                }
-
-                // Handle rate limiting (429)
-                if (statusCode === 429) {
-                  const retryAfter = error.response?.headers['retry-after'] as string | undefined;
-                  let waitTime: number;
-
-                  if (retryAfter && typeof retryAfter === 'string') {
-                    // Use Retry-After header if available (in seconds)
-                    waitTime = Number.parseInt(retryAfter, 10) * 1000;
-                  } else {
-                    // Exponential backoff with jitter for rate limiting
-                    const baseDelay = 2000; // 2 seconds base
-                    const exponentialDelay = baseDelay * 2 ** (attempt - 1);
-                    const jitter = crypto.randomInt(0, 1000); // 0-1 second jitter
-                    waitTime = Math.min(exponentialDelay + jitter, 60000); // Max 60 seconds
-                  }
-
-                  this.logger.warn(
-                    `Rate limited (429), waiting ${Math.round(waitTime / 1000)}s before retry (attempt ${attempt}/${this.rateLimitConfig.maxRetries})`,
-                  );
-                  lastError = error as Error;
-
-                  if (attempt < this.rateLimitConfig.maxRetries) {
-                    await this.sleep(waitTime);
-                    continue;
-                  } else {
-                    break;
-                  }
-                }
-              }
               lastError = error as Error;
-
-              // Non-retryable errors
-              if (
-                lastError &&
-                (lastError.message.includes('400') ||
-                  lastError.message.includes('404') ||
-                  lastError.message.includes('InvalidParameterValue') ||
-                  lastError.message.includes('ResourceNotFoundException') ||
-                  lastError.message.includes('not found'))
-              ) {
-                // 404 is valid result (no items) but throws in axios usually.
-                break;
-              }
-
-              if (attempt < this.rateLimitConfig.maxRetries) {
-                // Standard exponential backoff for other errors
-                const delay = 1000 * 2 ** (attempt - 1);
-                this.logger.debug(`Retrying after ${delay}ms (attempt ${attempt}/${this.rateLimitConfig.maxRetries})`);
-                await this.sleep(delay);
-
-                // If 401, refresh token
-                if (lastError && axios.isAxiosError(lastError) && lastError.response?.status === 401) {
-                  this.logger.info('Refreshing access token after 401 error');
-                  const newToken = await this.getAccessToken();
-                  headers.Authorization = `Bearer ${newToken}, Version ${this.CREDENTIAL_VERSION}`;
-                }
-              }
+              const shouldRetry = await this.handleApiError(error, attempt, url, headers);
+              if (!shouldRetry) break;
             }
           }
           reject(lastError || new Error('Request failed'));
@@ -585,6 +507,96 @@ export class CreatorsAPIClient {
       });
       void this.processQueue();
     });
+  }
+
+  private async handleApiError(
+    error: unknown,
+    attempt: number,
+    url: string,
+    headers: Record<string, string | undefined>,
+  ): Promise<boolean> {
+    if (axios.isAxiosError(error)) {
+      const statusCode = error.response?.status;
+
+      if (statusCode === 401) {
+        this.accessToken = undefined;
+      }
+
+      const errorData = error.response?.data as CreatorsAPIErrorData;
+      this.logger.error(`API Error Response (${statusCode}): ${JSON.stringify(errorData, null, 2)}`);
+
+      if (statusCode === 400) {
+        this.logger.error(`Request URL: ${url}`);
+        this.logger.error(`Request Headers: ${JSON.stringify({ ...headers, Authorization: '[REDACTED]' }, null, 2)}`);
+      }
+
+      if (statusCode === 429) {
+        return this.handleRateLimitError(error, attempt);
+      }
+    }
+
+    const lastError = error as Error;
+
+    // Non-retryable errors
+    if (
+      lastError &&
+      (lastError.message.includes('400') ||
+        lastError.message.includes('404') ||
+        lastError.message.includes('InvalidParameterValue') ||
+        lastError.message.includes('ResourceNotFoundException') ||
+        lastError.message.includes('not found'))
+    ) {
+      return false; // Break loop
+    }
+
+    if (attempt < this.rateLimitConfig.maxRetries) {
+      const delay = 1000 * 2 ** (attempt - 1);
+      this.logger.debug(`Retrying after ${delay}ms (attempt ${attempt}/${this.rateLimitConfig.maxRetries})`);
+      await this.sleep(delay);
+
+      if (lastError && axios.isAxiosError(lastError) && lastError.response?.status === 401) {
+        this.logger.info('Refreshing access token after 401 error');
+        const newToken = await this.getAccessToken();
+        headers.Authorization = `Bearer ${newToken}, Version ${this.CREDENTIAL_VERSION}`;
+      }
+      return true; // Continue loop
+    }
+    return false; // Break loop
+  }
+
+  private async handleRateLimitError(error: unknown, attempt: number): Promise<boolean> {
+    if (!axios.isAxiosError(error)) return false;
+
+    const retryAfter = error.response?.headers['retry-after'] as string | undefined;
+    let waitTime: number;
+
+    if (retryAfter && typeof retryAfter === 'string') {
+      waitTime = Number.parseInt(retryAfter, 10) * 1000;
+    } else {
+      const baseDelay = 2000;
+      const exponentialDelay = baseDelay * 2 ** (attempt - 1);
+      const jitter = crypto.randomInt(0, 1000);
+      waitTime = Math.min(exponentialDelay + jitter, 60000);
+    }
+
+    this.logger.warn(
+      `Rate limited (429), waiting ${Math.round(waitTime / 1000)}s before retry (attempt ${attempt}/${this.rateLimitConfig.maxRetries})`,
+    );
+
+    if (attempt < this.rateLimitConfig.maxRetries) {
+      await this.sleep(waitTime);
+      return true; // Continue loop
+    }
+    return false; // Break loop
+  }
+
+  private checkResponseErrors(response: AxiosResponse<CreatorsAPIResponse>): void {
+    if (response.data.errors && response.data.errors.length > 0) {
+      const firstError = response.data.errors[0];
+      if (firstError) {
+        throw new Error(`API Error: ${firstError.code} - ${firstError.message}`);
+      }
+    }
   }
 
   private async processQueue(): Promise<void> {
