@@ -2,6 +2,9 @@
 <html lang="{{ .Site.LanguageCode | default " ja" }}">
 
 <head>
+  <title>{{ if .IsHome }}{{ .Site.Title }}{{ else if .Params.score }}{{ .Title }}{{ if .Params.price }} {{ .Params.price
+    }}{{ end }} レビュー【{{ .Params.score }}点】 | {{ .Site.Title }}{{ else }}{{ .Title }} レビュー | {{ .Site.Title }}{{ end }}
+  </title>
   {{ partial "head.html" . }}
 </head>
 
