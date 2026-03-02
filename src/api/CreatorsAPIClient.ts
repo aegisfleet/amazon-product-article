@@ -148,62 +148,23 @@ export class CreatorsAPIClient {
 
     for (let page = 1; page <= totalPagesNeeded; page++) {
       const remainingResults = params.maxResults - allProducts.length;
-
       const itemCount = Math.min(remainingResults, maxResultsPerPage);
 
-      // Use lowerCamelCase resource names for Creators API
-      const resources = [
-        'images.primary.large',
-        'images.primary.medium',
-        'images.primary.small',
-        'images.variants.large',
-        'images.variants.medium',
-        'images.variants.small',
-        'itemInfo.title',
-        'itemInfo.features',
-        'itemInfo.productInfo', // for color, size
-        'offersV2.listings.price',
-        'browseNodeInfo.browseNodes',
-      ];
-
-      // Note: ManufactureInfo is often not available in search, removed to reduce payload size
-
-      const request: CreatorsAPIRequest = {
-        operation: 'searchItems',
-        partnerTag: this.credentials!.partnerTag,
-        marketplace: this.MARKETPLACE,
-        resources: resources,
-        keywords: params.keywords.join(' '),
-        searchIndex:
-          params.searchIndex ||
-          (params.category === 'All'
-            ? this.inferIndexFromKeywords(params.keywords)
-            : this.mapCategoryToSearchIndex(params.category)),
-        itemCount: itemCount,
-        itemPage: page,
-        // Merchant: params.merchant ... (Verify if creators API supports Merchant param, typically yes)
-        sortBy: this.mapSortBy(params.sortBy || 'featured'),
-      };
-
-      if (params.minPrice) {
-        request.minPrice = params.minPrice * 100;
-      }
-      if (params.maxPrice) {
-        request.maxPrice = params.maxPrice * 100;
-      }
+      const request = this.buildSearchRequest(params, page, itemCount);
 
       try {
         const response = await this.makeRequest(request);
         const products = this.parseSearchResponse(response);
         allProducts.push(...products);
 
+        const pageTotalResultCount = response.searchResult?.totalResultCount || 0;
         if (page === 1) {
-          totalResultCount = response.searchResult?.totalResultCount || 0;
+          totalResultCount = pageTotalResultCount;
         }
 
         this.logger.debug(`Page ${page}/${totalPagesNeeded}: fetched ${products.length} products`);
 
-        const totalPages = Math.ceil((response.searchResult?.totalResultCount || 0) / maxResultsPerPage);
+        const totalPages = Math.ceil(pageTotalResultCount / maxResultsPerPage);
         if (page >= totalPages) break;
 
         if (page < totalPagesNeeded) {
@@ -221,6 +182,47 @@ export class CreatorsAPIClient {
       searchParams: params,
       timestamp: new Date(),
     };
+  }
+
+  private buildSearchRequest(params: ProductSearchParams, page: number, itemCount: number): CreatorsAPIRequest {
+    const resources = [
+      'images.primary.large',
+      'images.primary.medium',
+      'images.primary.small',
+      'images.variants.large',
+      'images.variants.medium',
+      'images.variants.small',
+      'itemInfo.title',
+      'itemInfo.features',
+      'itemInfo.productInfo',
+      'offersV2.listings.price',
+      'browseNodeInfo.browseNodes',
+    ];
+
+    const request: CreatorsAPIRequest = {
+      operation: 'searchItems',
+      partnerTag: this.credentials!.partnerTag,
+      marketplace: this.MARKETPLACE,
+      resources: resources,
+      keywords: params.keywords.join(' '),
+      searchIndex:
+        params.searchIndex ||
+        (params.category === 'All'
+          ? this.inferIndexFromKeywords(params.keywords)
+          : this.mapCategoryToSearchIndex(params.category)),
+      itemCount: itemCount,
+      itemPage: page,
+      sortBy: this.mapSortBy(params.sortBy || 'featured'),
+    };
+
+    if (params.minPrice) {
+      request.minPrice = params.minPrice * 100;
+    }
+    if (params.maxPrice) {
+      request.maxPrice = params.maxPrice * 100;
+    }
+
+    return request;
   }
 
   /**
