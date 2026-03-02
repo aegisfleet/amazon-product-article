@@ -48,10 +48,10 @@ export class CreatorsAPIClient {
     // Rate limit configuration - can be adjusted via environment variables
     // Creators API Japan: 1 request per second, burst of 5
     this.rateLimitConfig = {
-      requestsPerSecond: parseFloat(process.env.CREATORS_API_REQUESTS_PER_SECOND || '0.8'), // Conservative: 0.8 req/sec
-      burstLimit: parseInt(process.env.CREATORS_API_BURST_LIMIT || '5', 10),
-      retryDelay: parseInt(process.env.CREATORS_API_RETRY_DELAY || '1000', 10),
-      maxRetries: parseInt(process.env.CREATORS_API_MAX_RETRIES || '5', 10),
+      requestsPerSecond: Number.parseFloat(process.env.CREATORS_API_REQUESTS_PER_SECOND || '0.8'), // Conservative: 0.8 req/sec
+      burstLimit: Number.parseInt(process.env.CREATORS_API_BURST_LIMIT || '5', 10),
+      retryDelay: Number.parseInt(process.env.CREATORS_API_RETRY_DELAY || '1000', 10),
+      maxRetries: Number.parseInt(process.env.CREATORS_API_MAX_RETRIES || '5', 10),
     };
 
     this.logger.debug(
@@ -319,16 +319,7 @@ export class CreatorsAPIClient {
       const response = await this.makeRequest(request);
 
       if (response.itemsResult?.items) {
-        for (const item of response.itemsResult.items) {
-          try {
-            const detail = this.parseProductDetail(item);
-            result.set(item.asin, detail);
-          } catch (error) {
-            this.logger.warn(
-              `Failed to parse product detail for ASIN ${item.asin}: ${error instanceof Error ? error.message : String(error)}`,
-            );
-          }
-        }
+        this.parseBatchResults(response.itemsResult.items, result);
       }
 
       const foundAsins = new Set(result.keys());
@@ -337,130 +328,119 @@ export class CreatorsAPIClient {
         this.logger.warn(`The following ASINs were not found: ${notFoundAsins.join(', ')}`);
       }
     } catch (error: unknown) {
-      const errorMessage = error instanceof Error ? error.message : String(error);
-      this.logger.warn(`Batch request failed: ${errorMessage}`);
-      batchFailed = true;
-
-      if (axios.isAxiosError(error) && error.response?.data) {
-        this.logger.error(`API Error Response: ${JSON.stringify(error.response.data, null, 2)}`);
-
-        // Check if error indicates a specific ASIN is invalid
-        const errorData = error.response.data as CreatorsAPIErrorData;
-        if (errorData.resourceId && errorData.type === 'ResourceNotFoundException') {
-          // Specific ASIN not found - mark as permanent failure
-          permanentFailures.add(errorData.resourceId);
-          this.logger.warn(`ASIN ${errorData.resourceId} marked as permanent failure (ResourceNotFoundException)`);
-
-          // Retry batch without the problematic ASIN
-          const remainingAsins = validAsins.filter((asin) => asin !== errorData.resourceId);
-          if (remainingAsins.length > 0) {
-            this.logger.info(`Retrying batch without problematic ASIN ${errorData.resourceId}`);
-            try {
-              const retryRequest = { ...request, itemIds: remainingAsins };
-              const retryResponse = await this.makeRequest(retryRequest);
-
-              if (retryResponse.itemsResult?.items) {
-                for (const item of retryResponse.itemsResult.items) {
-                  try {
-                    const detail = this.parseProductDetail(item);
-                    result.set(item.asin, detail);
-                  } catch (parseError) {
-                    this.logger.warn(
-                      `Failed to parse product detail for ASIN ${item.asin}: ${parseError instanceof Error ? parseError.message : String(parseError)}`,
-                    );
-                  }
-                }
-              }
-
-              // Successfully recovered from batch error
-              batchFailed = false;
-            } catch (retryError) {
-              this.logger.warn(
-                `Retry batch also failed: ${retryError instanceof Error ? retryError.message : String(retryError)}`,
-              );
-              // batchFailed is already true
-            }
-          }
-        } else if (errorMessage.includes('InvalidParameterValue')) {
-          // Try to extract which ASIN is invalid from error message
-          const invalidAsinMatch = errorMessage.match(/ItemIds ([A-Z0-9]{10})/);
-          if (invalidAsinMatch?.[1]) {
-            const invalidAsin = invalidAsinMatch[1];
-            permanentFailures.add(invalidAsin);
-            this.logger.warn(`ASIN ${invalidAsin} marked as permanent failure (InvalidParameterValue)`);
-
-            // Retry batch without the invalid ASIN
-            const remainingAsins = validAsins.filter((asin) => asin !== invalidAsin);
-            if (remainingAsins.length > 0) {
-              this.logger.info(`Retrying batch without invalid ASIN ${invalidAsin}`);
-              try {
-                const retryRequest = { ...request, itemIds: remainingAsins };
-                const retryResponse = await this.makeRequest(retryRequest);
-
-                if (retryResponse.itemsResult?.items) {
-                  for (const item of retryResponse.itemsResult.items) {
-                    try {
-                      const detail = this.parseProductDetail(item);
-                      result.set(item.asin, detail);
-                    } catch (parseError) {
-                      this.logger.warn(
-                        `Failed to parse product detail for ASIN ${item.asin}: ${parseError instanceof Error ? parseError.message : String(parseError)}`,
-                      );
-                    }
-                  }
-                }
-
-                // Successfully recovered from batch error
-                batchFailed = false;
-              } catch (retryError) {
-                this.logger.warn(
-                  `Retry batch also failed: ${retryError instanceof Error ? retryError.message : String(retryError)}`,
-                );
-                // batchFailed is already true
-              }
-            }
-          }
-        }
-      }
-
-      // batchFailed = true; // Removed to allow successful retries to persist
+      batchFailed = await this.handleBatchError(error, request, validAsins, result, permanentFailures);
     }
 
     if (batchFailed) {
-      // Fallback: Try fetching each ASIN individually
-      this.logger.info(`Batch request failed, falling back to individual requests for ${validAsins.length} ASINs`);
-
-      for (const asin of validAsins) {
-        try {
-          this.logger.debug(`Fetching individual ASIN: ${asin}`);
-          const detail = await this.getProductDetails(asin);
-          result.set(asin, detail);
-          this.logger.debug(`Successfully fetched ${asin}`);
-        } catch (error: unknown) {
-          const errorMessage = error instanceof Error ? error.message : String(error);
-
-          // Check if it's a permanent failure
-          if (
-            errorMessage.includes('InvalidParameterValue') ||
-            errorMessage.includes('not found') ||
-            errorMessage.includes('404') ||
-            errorMessage.includes('ResourceNotFoundException')
-          ) {
-            permanentFailures.add(asin);
-            this.logger.warn(`ASIN ${asin} marked as permanent failure: ${errorMessage}`);
-          } else {
-            // Temporary failure - don't add to results or permanentFailures
-            // The caller will mark it as invalid with short TTL
-            this.logger.warn(`ASIN ${asin} temporary failure: ${errorMessage}`);
-          }
-        }
-
-        // Rate limiting between individual requests
-        await this.sleep(1200);
-      }
+      await this.fetchIndividualAsinsFallback(validAsins, result, permanentFailures);
     }
 
     return { results: result, permanentFailures };
+  }
+
+  private parseBatchResults(items: CreatorsAPIItem[], result: Map<string, ProductDetail>): void {
+    for (const item of items) {
+      try {
+        const detail = this.parseProductDetail(item);
+        result.set(item.asin, detail);
+      } catch (error) {
+        this.logger.warn(
+          `Failed to parse product detail for ASIN ${item.asin}: ${error instanceof Error ? error.message : String(error)}`,
+        );
+      }
+    }
+  }
+
+  private async retryBatchWithoutAsin(
+    invalidAsin: string,
+    request: CreatorsAPIRequest,
+    validAsins: string[],
+    result: Map<string, ProductDetail>,
+  ): Promise<boolean> {
+    const remainingAsins = validAsins.filter((asin) => asin !== invalidAsin);
+    if (remainingAsins.length === 0) return false;
+
+    this.logger.info(`Retrying batch without problematic ASIN ${invalidAsin}`);
+    try {
+      const retryRequest = { ...request, itemIds: remainingAsins };
+      const retryResponse = await this.makeRequest(retryRequest);
+      if (retryResponse.itemsResult?.items) {
+        this.parseBatchResults(retryResponse.itemsResult.items, result);
+      }
+      return true; // Successfully recovered
+    } catch (retryError) {
+      this.logger.warn(
+        `Retry batch also failed: ${retryError instanceof Error ? retryError.message : String(retryError)}`,
+      );
+      return false; // Failed again
+    }
+  }
+
+  private async handleBatchError(
+    error: unknown,
+    request: CreatorsAPIRequest,
+    validAsins: string[],
+    result: Map<string, ProductDetail>,
+    permanentFailures: Set<string>,
+  ): Promise<boolean> {
+    const errorMessage = error instanceof Error ? error.message : String(error);
+    this.logger.warn(`Batch request failed: ${errorMessage}`);
+    let recovered = false;
+
+    if (axios.isAxiosError(error) && error.response?.data) {
+      this.logger.error(`API Error Response: ${JSON.stringify(error.response.data, null, 2)}`);
+
+      // Check if error indicates a specific ASIN is invalid
+      const errorData = error.response.data as CreatorsAPIErrorData;
+      if (errorData.resourceId && errorData.type === 'ResourceNotFoundException') {
+        const invalidAsin = errorData.resourceId;
+        permanentFailures.add(invalidAsin);
+        this.logger.warn(`ASIN ${invalidAsin} marked as permanent failure (ResourceNotFoundException)`);
+        recovered = await this.retryBatchWithoutAsin(invalidAsin, request, validAsins, result);
+      } else if (errorMessage.includes('InvalidParameterValue')) {
+        const invalidAsinMatch = /ItemIds ([A-Z0-9]{10})/.exec(errorMessage);
+        if (invalidAsinMatch?.[1]) {
+          const invalidAsin = invalidAsinMatch[1];
+          permanentFailures.add(invalidAsin);
+          this.logger.warn(`ASIN ${invalidAsin} marked as permanent failure (InvalidParameterValue)`);
+          recovered = await this.retryBatchWithoutAsin(invalidAsin, request, validAsins, result);
+        }
+      }
+    }
+    return !recovered; // batchFailed = true if not recovered
+  }
+
+  private async fetchIndividualAsinsFallback(
+    validAsins: string[],
+    result: Map<string, ProductDetail>,
+    permanentFailures: Set<string>,
+  ): Promise<void> {
+    this.logger.info(`Batch request failed, falling back to individual requests for ${validAsins.length} ASINs`);
+    for (const asin of validAsins) {
+      try {
+        this.logger.debug(`Fetching individual ASIN: ${asin}`);
+        const detail = await this.getProductDetails(asin);
+        result.set(asin, detail);
+        this.logger.debug(`Successfully fetched ${asin}`);
+      } catch (error: unknown) {
+        const errorMessage = error instanceof Error ? error.message : String(error);
+
+        // Check if it's a permanent failure
+        if (
+          errorMessage.includes('InvalidParameterValue') ||
+          errorMessage.includes('not found') ||
+          errorMessage.includes('404') ||
+          errorMessage.includes('ResourceNotFoundException')
+        ) {
+          permanentFailures.add(asin);
+          this.logger.warn(`ASIN ${asin} marked as permanent failure: ${errorMessage}`);
+        } else {
+          // Temporary failure - don't add to results or permanentFailures
+          this.logger.warn(`ASIN ${asin} temporary failure: ${errorMessage}`);
+        }
+      }
+      await this.sleep(1200);
+    }
   }
 
   // ... handleRateLimit logic ...
@@ -544,7 +524,7 @@ export class CreatorsAPIClient {
 
                   if (retryAfter && typeof retryAfter === 'string') {
                     // Use Retry-After header if available (in seconds)
-                    waitTime = parseInt(retryAfter, 10) * 1000;
+                    waitTime = Number.parseInt(retryAfter, 10) * 1000;
                   } else {
                     // Exponential backoff with jitter for rate limiting
                     const baseDelay = 2000; // 2 seconds base
