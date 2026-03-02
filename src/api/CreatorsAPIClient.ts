@@ -4,9 +4,9 @@
  * Updated for Creators API (v1)
  */
 
+import axios, { type AxiosInstance, type AxiosResponse } from 'axios';
 import crypto from 'node:crypto';
 import { URLSearchParams } from 'node:url';
-import axios, { type AxiosInstance, type AxiosResponse } from 'axios';
 import type {
   CreatorsAPICredentials,
   CreatorsAPIItem,
@@ -569,7 +569,14 @@ export class CreatorsAPIClient {
               lastError = error as Error;
 
               // Non-retryable errors
-              if (lastError && (lastError.message.includes('400') || lastError.message.includes('404'))) {
+              if (
+                lastError &&
+                (lastError.message.includes('400') ||
+                  lastError.message.includes('404') ||
+                  lastError.message.includes('InvalidParameterValue') ||
+                  lastError.message.includes('ResourceNotFoundException') ||
+                  lastError.message.includes('not found'))
+              ) {
                 // 404 is valid result (no items) but throws in axios usually.
                 break;
               }
