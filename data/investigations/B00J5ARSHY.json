@@ -1,7 +1,7 @@
 {
   "analysis": {
     "productName": "アマノフーズ いつものおみそ汁 なす 9.5g×10個",
-    "parentAsin": "B0D8J6MFVN",
+    "parentAsin": "B00J5ARSHY",
     "productDescription": "お湯を注ぐだけで揚げなすのジューシーな食感と旨味が広がる、高品質なフリーズドライ味噌汁です。",
     "productUsage": [
       "お椀に中身を入れ、熱湯を約160ml注いで軽くかき混ぜるだけで完成",
@@ -59,15 +59,28 @@
         "credibility": "high"
       }
     ],
-    "lastInvestigated": "2026-01-19",
+    "lastInvestigated": "2026-03-04",
     "competitiveAnalysis": [
+      {
+        "name": "マルコメ フリーズドライ 顆粒 大満足 みそ汁なすと野菜 具だくさん",
+        "asin": "B0B9G5K4RG",
+        "priceComparison": "10食入りで約1,455円(1食あたり約146円)。アマノフーズ(1食約108円)よりやや高価格。",
+        "featureComparison": [
+          "顆粒タイプで溶けやすい",
+          "なすだけでなく野菜も入った具だくさん仕様"
+        ],
+        "differentiators": [
+          "複数種類の野菜を一度に摂取可能",
+          "パッケージにボリューム感がある"
+        ]
+      },
       {
         "name": "神州一味噌 フリーズドライ みそ汁食堂 味噌屋の一杯",
         "asin": "B09DFB7QVT",
         "priceComparison": "1食あたり約85円と、アマノフーズより2割ほど安い",
         "featureComparison": [
           "コストパフォーマンス重視",
-          "具材の大きさや食感の再現度はアマノフーズに劣る傾向"
+          "具材の大きさや食感の再現度はアマノフーズにやや劣る傾向"
         ],
         "differentiators": [
           "日常的に飲みやすい価格設定",
@@ -85,18 +98,6 @@
         "differentiators": [
           "圧倒的な安さと手軽さ",
           "ゴミが少ない"
-        ]
-      },
-      {
-        "name": "ひかり味噌 毎日食べたいおみそ汁",
-        "asin": "B07WVXVDR6",
-        "priceComparison": "1食あたり約59円と非常に安価",
-        "featureComparison": [
-          "大容量パックで経済的",
-          "日常使いに特化"
-        ],
-        "differentiators": [
-          "毎日飲んでも飽きないシンプルな味と価格"
         ]
       }
     ],
@@ -122,10 +123,31 @@
     "technicalSpecs": {
       "contents": "9.5g × 10個",
       "calories": "41kcal (1食あたり推定)",
-      "ingredients": ["揚げなす", "米みそ", "調合みそ", "ねぎ", "かつお風味調味料"],
+      "ingredients": [
+        "揚げなす",
+        "米みそ",
+        "調合みそ",
+        "ねぎ",
+        "風味調味料(かつお)",
+        "デキストリン",
+        "みりん",
+        "わかめ",
+        "オニオンエキスパウダー",
+        "酵母エキスパウダー",
+        "こんぶエキスパウダー",
+        "調味料(アミノ酸等)",
+        "酸化防止剤(ビタミンE)",
+        "酸味料"
+      ],
       "preservation": "常温保存",
       "method": "フリーズドライ製法",
-      "dimensions": { "height": "120mm", "width": "75mm", "depth": "250mm" }
+      "dimensions": {
+        "height": "120mm",
+        "width": "75mm",
+        "depth": "250mm"
+      },
+      "power": null,
+      "capacity": null
     }
   }
 }
