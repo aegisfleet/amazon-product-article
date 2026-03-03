@@ -1,8 +1,19 @@
 {
     "name": "ポちのAmazon商品徹底比較サイト",
     "short_name": "商品比較",
-    "theme_color": "#F9FAFB",
     "background_color": "#F9FAFB",
+    "user_preferences": {
+        "color_scheme": {
+            "dark": {
+                "theme_color": "#111827",
+                "background_color": "#111827"
+            },
+            "light": {
+                "theme_color": "#F9FAFB",
+                "background_color": "#F9FAFB"
+            }
+        }
+    },
     "display": "standalone",
     "start_url": "/amazon-product-article/",
     "scope": "/amazon-product-article/",
