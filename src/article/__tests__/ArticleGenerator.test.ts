@@ -693,6 +693,46 @@ describe('ArticleGenerator', () => {
   });
 
   describe('Helper Methods', () => {
+    describe('formatSpecValue', () => {
+      it('should format string values correctly', () => {
+        expect((generator as any).formatSpecValue('Test')).toBe('Test');
+        expect((generator as any).formatSpecValue('  Leading Space')).toBe('  Leading Space');
+      });
+
+      it('should filter out invalid placeholders', () => {
+        expect((generator as any).formatSpecValue('null')).toBe('');
+        expect((generator as any).formatSpecValue('none')).toBe('');
+        expect((generator as any).formatSpecValue('unknown')).toBe('');
+        expect((generator as any).formatSpecValue('不明')).toBe('');
+        expect((generator as any).formatSpecValue('-')).toBe('');
+        expect((generator as any).formatSpecValue('なし')).toBe('');
+        expect((generator as any).formatSpecValue('NULL')).toBe('');
+      });
+
+      it('should handle numbers and booleans', () => {
+        expect((generator as any).formatSpecValue(100)).toBe('100');
+        expect((generator as any).formatSpecValue(true)).toBe('true');
+      });
+
+      it('should handle nested objects including placeholders', () => {
+        const specs = {
+          height: '10cm',
+          weight: 'null',
+          depth: 'unknown'
+        };
+        const result = (generator as any).formatSpecValue(specs);
+        expect(result).toContain('高さ: 10cm');
+        expect(result).not.toContain('重量');
+        expect(result).not.toContain('奥行き');
+      });
+
+      it('should handle arrays with placeholders', () => {
+        const array = ['Valid', 'null', 'none', 'Also Valid'];
+        const result = (generator as any).formatSpecValue(array);
+        expect(result).toBe('Valid, Also Valid');
+      });
+    });
+
     describe('extractTopRationaleItems', () => {
       it('should return nulls for undefined input', () => {
         const result = (generator as any).extractTopRationaleItems(undefined);
