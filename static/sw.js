@@ -1,12 +1,12 @@
 const CACHE_NAME = 'apa-cache-v1';
 const urlsToCache = [
-    '/',
-    '/css/variables.css',
-    '/css/style.css',
-    '/css/search.css',
-    '/js/theme.js',
-    '/favicon.png',
-    '/apple-touch-icon.png'
+    '/amazon-product-article/',
+    '/amazon-product-article/css/variables.css',
+    '/amazon-product-article/css/style.css',
+    '/amazon-product-article/css/search.css',
+    '/amazon-product-article/js/theme.js',
+    '/amazon-product-article/favicon.png',
+    '/amazon-product-article/apple-touch-icon.png'
 ];
 
 self.addEventListener('install', event => {
