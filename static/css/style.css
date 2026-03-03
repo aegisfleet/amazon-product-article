@@ -236,8 +236,8 @@ a:hover {
 }
 
 .card:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-lg);
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 10px 25px rgba(var(--color-primary-rgb), 0.25);
   border-color: var(--color-primary);
 }
 
@@ -611,21 +611,21 @@ a:hover {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: rgba(0, 0, 0, 0.4);
-  backdrop-filter: blur(4px);
-  border: none;
-  width: 36px;
-  height: 36px;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  width: 44px;
+  height: 44px;
   border-radius: 50%;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1rem;
-  color: #fff;
-  transition: var(--transition-base);
+  color: var(--color-text-main);
+  transition: all 0.3s ease;
   z-index: 10;
   opacity: 0;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .product-image-carousel:hover .carousel-button {
@@ -634,13 +634,25 @@ a:hover {
 
 @media (max-width: 768px) {
   .carousel-button {
-    opacity: 0.7;
+    opacity: 0.9;
     /* Mobile should show buttons as touch area */
   }
 }
 
 .carousel-button:hover {
-  background: rgba(0, 0, 0, 0.7);
+  background: #ffffff;
+  transform: translateY(-50%) scale(1.1);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+}
+
+[data-theme="dark"] .carousel-button {
+  background: rgba(31, 41, 55, 0.8);
+  border-color: rgba(255, 255, 255, 0.1);
+  color: #fff;
+}
+
+[data-theme="dark"] .carousel-button:hover {
+  background: #1f2937;
 }
 
 .carousel-button.prev {
@@ -3028,4 +3040,123 @@ a.competitor-preview:hover {
   .keepa-note {
     font-size: 0.75rem;
   }
+}
+
+/* =====================================================
+   SCROLL TO TOP BUTTON
+   ===================================================== */
+.scroll-to-top {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  width: 56px;
+  height: 56px;
+  background-color: var(--color-bg-card);
+  color: var(--color-primary);
+  border: 1px solid var(--color-border);
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-md);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 90;
+}
+
+[data-theme="dark"] .scroll-to-top {
+  background-color: var(--color-bg-card);
+  border-color: rgba(255, 255, 255, 0.1);
+  color: var(--color-primary);
+}
+
+.scroll-to-top.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.scroll-to-top:hover {
+  background-color: var(--color-primary);
+  color: white;
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: 0 10px 25px rgba(var(--color-primary-rgb), 0.3);
+  border-color: transparent;
+}
+
+[data-theme="dark"] .scroll-to-top:hover {
+  background-color: var(--color-primary);
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .scroll-to-top {
+    bottom: 16px;
+    right: 16px;
+    width: 48px;
+    height: 48px;
+  }
+}
+
+/* =====================================================
+   SEARCH UI UX
+   ===================================================== */
+.search-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 1rem;
+  color: var(--color-text-muted);
+}
+
+.search-loading .spinner {
+  width: 32px;
+  height: 32px;
+  border: 3px solid var(--color-border);
+  border-top-color: var(--color-primary);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 1rem;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.loading-text {
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.search-empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 1rem;
+  text-align: center;
+  color: var(--color-text-muted);
+}
+
+.empty-icon {
+  color: var(--color-primary);
+  opacity: 0.5;
+  margin-bottom: 1rem;
+}
+
+.empty-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--color-text-main);
+  margin-bottom: 0.5rem;
+}
+
+.empty-desc {
+  font-size: 0.9rem;
 }
