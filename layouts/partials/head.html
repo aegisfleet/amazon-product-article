@@ -40,6 +40,7 @@
 <!-- Favicon -->
 <link rel="icon" type="image/png" href="{{ `favicon.png` | relURL }}">
 <link rel="apple-touch-icon" href="{{ `apple-touch-icon.png` | relURL }}">
+<link rel="manifest" href="{{ `manifest.json` | relURL }}">
 
 <!-- Google Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -223,4 +224,17 @@
   {{ end }}
   ]
 }
+</script>
+
+<!-- Service Worker Registration -->
+<script>
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('/sw.js').then(registration => {
+        console.log('ServiceWorker registration successful with scope: ', registration.scope);
+      }, err => {
+        console.log('ServiceWorker registration failed: ', err);
+      });
+    });
+  }
 </script>
