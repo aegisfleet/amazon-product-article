@@ -10,11 +10,11 @@
  *   GITHUB_REPOSITORY - GitHubリポジトリ（owner/repo形式）
  */
 
+import dotenv from 'dotenv';
 import { exec } from 'node:child_process';
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import { promisify } from 'node:util';
-import dotenv from 'dotenv';
 import { CreatorsAPICache } from '../api/CreatorsAPICache';
 import { CreatorsAPIClient } from '../api/CreatorsAPIClient';
 import { ArticleGenerator } from '../article/ArticleGenerator';
@@ -429,8 +429,11 @@ export async function main(): Promise<void> {
           try {
             logger.info(`Processing article for: ${data.product.asin}`);
 
-            // Get fresh product data from Cache (fallback to expired if fetch failed)
-            const cachedProduct = creatorsCache.get(data.product.asin, { ignoreExpiration: true });
+            // Get fresh product data from Cache (fallback to expired if fetch failed, or invalid if exists)
+            const cachedProduct = creatorsCache.get(data.product.asin, {
+              ignoreExpiration: true,
+              allowInvalid: true,
+            });
 
             if (cachedProduct) {
               // Merge live data into the product object
@@ -468,7 +471,10 @@ export async function main(): Promise<void> {
               .map((c) => c.asin!);
 
             if (competitorAsins.length > 0) {
-              const cachedCompetitors = creatorsCache.getMultiple(competitorAsins, { ignoreExpiration: true });
+              const cachedCompetitors = creatorsCache.getMultiple(competitorAsins, {
+                ignoreExpiration: true,
+                allowInvalid: true,
+              });
               for (const [asin, detail] of cachedCompetitors.entries()) {
                 competitorDetails.set(asin, detail);
               }

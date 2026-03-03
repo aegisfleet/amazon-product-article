@@ -14,12 +14,12 @@ interface CacheStore {
 }
 
 export class CreatorsAPICache {
-  private cachePath: string;
+  private readonly cachePath: string;
   private cache: CacheStore = {};
-  private ttl: number; // Time to live in milliseconds for valid entries
-  private invalidTtl: number; // Time to live in milliseconds for invalid entries
-  private permanentInvalidTtl: number; // Time to live in milliseconds for permanent invalid entries (1 week)
-  private logger = Logger.getInstance();
+  private readonly ttl: number; // Time to live in milliseconds for valid entries
+  private readonly invalidTtl: number; // Time to live in milliseconds for invalid entries
+  private readonly permanentInvalidTtl: number; // Time to live in milliseconds for permanent invalid entries (1 week)
+  private readonly logger = Logger.getInstance();
 
   // Regex to match invisible Unicode control characters
   // Includes: LRM (U+200E), RLM (U+200F), zero-width chars (U+200B-U+200D, U+FEFF), etc.
@@ -111,7 +111,10 @@ export class CreatorsAPICache {
    * Returns null if not found, expired, or marked invalid
    * @param options.ignoreExpiration If true, returns valid data even if expired
    */
-  public get(asin: string, options: { ignoreExpiration?: boolean } = {}): ProductDetail | null {
+  public get(
+    asin: string,
+    options: { ignoreExpiration?: boolean; allowInvalid?: boolean } = {},
+  ): ProductDetail | null {
     const entry = this.cache[asin];
 
     if (!entry) {
@@ -123,14 +126,16 @@ export class CreatorsAPICache {
     if (entry.status === 'invalid') {
       // Only use the shorter invalidTtl if we have an investigation result for this ASIN
       effectiveTtl = this.isInvestigationFileExists(asin) ? this.invalidTtl : this.ttl;
+    } else if (entry.status === 'permanent_invalid') {
+      effectiveTtl = this.permanentInvalidTtl;
     }
 
     if (!options.ignoreExpiration && Date.now() - entry.timestamp > effectiveTtl) {
       return null;
     }
 
-    // Return data only if status is valid
-    if (entry.status !== 'valid') {
+    // Return data only if status is valid, unless allowInvalid is true
+    if (entry.status !== 'valid' && !options.allowInvalid) {
       return null;
     }
 
@@ -261,13 +266,16 @@ export class CreatorsAPICache {
    */
   public markInvalid(asin: string): void {
     const existing = this.cache[asin];
-    if (existing && existing.status === 'valid') {
-      this.logger.info(`Not marking ASIN ${asin} as invalid because a valid cache entry already exists.`);
+    // If there's already a 'valid' entry that is NOT expired, do not overwrite it
+    // to prevent performance degradation on transient errors.
+    // However, if it's expired, we MUST update the status to prevent infinite retries.
+    if (existing?.status === 'valid' && Date.now() - existing.timestamp <= this.ttl) {
+      this.logger.info(`Not marking ASIN ${asin} as invalid because a non-expired valid cache entry already exists.`);
       return;
     }
 
     this.cache[asin] = {
-      data: null,
+      data: existing?.data || null, // Preserve data for fallback if available
       timestamp: Date.now(),
       status: 'invalid',
     };
@@ -278,13 +286,20 @@ export class CreatorsAPICache {
    */
   public markPermanentInvalid(asin: string): void {
     const existing = this.cache[asin];
-    if (existing && existing.status === 'valid') {
-      this.logger.info(`Not marking ASIN ${asin} as permanent_invalid because a valid cache entry already exists.`);
+    // Same logic as markInvalid: if not expired, don't overwrite.
+    // If expired, overwrite status but preserve data.
+    if (
+      existing?.status === 'valid' &&
+      Date.now() - existing.timestamp <= this.ttl
+    ) {
+      this.logger.info(
+        `Not marking ASIN ${asin} as permanent_invalid because a non-expired valid cache entry already exists.`,
+      );
       return;
     }
 
     this.cache[asin] = {
-      data: null,
+      data: existing?.data || null, // Preserve data for fallback if available
       timestamp: Date.now(),
       status: 'permanent_invalid',
     };
@@ -294,7 +309,10 @@ export class CreatorsAPICache {
    * Get multiple items from cache
    * Returns a map of found valid items
    */
-  public getMultiple(asins: string[], options: { ignoreExpiration?: boolean } = {}): Map<string, ProductDetail> {
+  public getMultiple(
+    asins: string[],
+    options: { ignoreExpiration?: boolean; allowInvalid?: boolean } = {},
+  ): Map<string, ProductDetail> {
     const result = new Map<string, ProductDetail>();
 
     for (const asin of asins) {
