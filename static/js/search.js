@@ -111,6 +111,10 @@ document.addEventListener('DOMContentLoaded', function () {
                 return;
             }
 
+            searchResults.innerHTML = '<div class="search-loading"><div class="spinner"></div><span class="loading-text">検索中...</span></div>';
+            searchResults.classList.add('active');
+            updateSearchResultsHeight();
+
             handleSearch(query);
         });
 
@@ -310,7 +314,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function displayResults(results) {
         if (results.length === 0) {
-            searchResults.innerHTML = '<div class="search-result-item"><span class="result-summary">検索結果が見つかりませんでした</span></div>';
+            searchResults.innerHTML = `
+                <div class="search-empty-state">
+                    <svg class="empty-icon" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+                    <span class="empty-title">見つかりませんでした</span>
+                    <span class="empty-desc">別のキーワードでもう一度お試しください。</span>
+                </div>
+            `;
             searchResults.classList.add('active');
             updateSearchResultsHeight();
             return;

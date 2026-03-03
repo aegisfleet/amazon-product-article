@@ -14,8 +14,12 @@
                 {{ end }}
             </div>
             {{ if and $product.images (gt (len $product.images) 1) }}
-            <button class="carousel-button prev" aria-label="前へ">❮</button>
-            <button class="carousel-button next" aria-label="次へ">❯</button>
+            <button class="carousel-button prev" aria-label="前へ">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+            </button>
+            <button class="carousel-button next" aria-label="次へ">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </button>
             <div class="carousel-dots"></div>
             {{ end }}
         </div>
