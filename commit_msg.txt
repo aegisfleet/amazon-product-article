@@ -1,8 +1,11 @@
-﻿UI/UX デザインのブラッシュアップ（プレミアム感の演出）
+﻿Issue #3050対応: 画像の読み込み最適化を実装
 
-- 商品カードのホバー時にプライマリカラーのモダンシャドウを追加
-- カルーセルの矢印ボタンをSVGアイコンに変更し、すりガラス効果を追加
-- 全ページに「トップに戻る」ボタンを実装
-- 検索入力時のローディングとEmpty State（結果0件時）の表示を追加
-
-Fixes #3051
+* ファーストビューの画像に fetchpriority="high" を追加し、loading="lazy" を除外
+* サムネイルなどサイト内のすべての <img> タグに decoding="async" を追加し、表示を最適化
+* 対象ファイル:
+  * layouts/index.html
+  * layouts/_default/single.html
+  * layouts/_default/parent-category.html
+  * layouts/_default/list.html
+  * layouts/partials/product-hero.html
+  * layouts/partials/product-card.html
