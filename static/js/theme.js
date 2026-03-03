@@ -2,10 +2,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const toggleBtn = document.getElementById('theme-toggle');
 
     toggleBtn.addEventListener('click', () => {
-        const currentTheme = document.documentElement.getAttribute('data-theme');
-        const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        const currentTheme = document.documentElement.dataset.theme;
+        const systemDark = globalThis.matchMedia('(prefers-color-scheme: dark)').matches;
 
-        let targetTheme = 'light';
+        let targetTheme;
 
         // If currently dark (explicit or system), go light
         if (currentTheme === 'dark') {
@@ -17,9 +17,32 @@ document.addEventListener('DOMContentLoaded', () => {
             targetTheme = systemDark ? 'light' : 'dark';
         }
 
-        document.documentElement.setAttribute('data-theme', targetTheme);
+        document.documentElement.dataset.theme = targetTheme;
         localStorage.setItem('theme', targetTheme);
+        updateThemeColor(targetTheme);
     });
+
+    function updateThemeColor(theme) {
+        const themeColorMeta = document.querySelectorAll('meta[name="theme-color"]');
+        const systemDark = globalThis.matchMedia('(prefers-color-scheme: dark)').matches;
+
+        let color = '#F9FAFB'; // Light mode fallback
+
+        if (theme === 'dark' || (theme === null && systemDark)) {
+            color = '#111827'; // Dark mode background
+        }
+
+        themeColorMeta.forEach(meta => {
+            // メディアクエリ無しのタグがある場合や、動的に上書きしたい場合
+            meta.setAttribute('content', color);
+        });
+    }
+
+    // 初期読み込み時にも適用（必要に応じて）
+    const initialTheme = document.documentElement.dataset.theme;
+    if (initialTheme) {
+        updateThemeColor(initialTheme);
+    }
 
     // Scroll to Top functionality
     const scrollToTopBtn = document.getElementById('scroll-to-top');
