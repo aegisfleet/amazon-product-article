@@ -10,11 +10,12 @@
     {{/* Filter Section */}}
     <div class="filter-section" id="filter-section">
         <div class="filter-header">
-            <span class="filter-toggle" id="filter-toggle">
-                <span class="filter-icon">🔍</span>
+            <button type="button" class="filter-toggle" id="filter-toggle" aria-controls="filter-content"
+                aria-expanded="true">
+                <span class="filter-icon" aria-hidden="true">🔍</span>
                 <span>フィルター</span>
-                <span class="filter-arrow">▼</span>
-            </span>
+                <span class="filter-arrow" aria-hidden="true">▼</span>
+            </button>
             <button type="button" class="filter-reset-btn" id="filter-reset">リセット</button>
         </div>
         <div class="filter-content" id="filter-content">
@@ -82,7 +83,8 @@
                 <input type="text" id="keyword-search" placeholder="商品名、スペックで検索..."
                     style="width: 100%; padding: 0.5rem 1rem 0.5rem 2.5rem; border: 1px solid var(--color-border); border-radius: 8px; background-color: var(--color-bg-card); color: var(--color-text-primary); font-family: inherit; font-size: 0.875rem;">
                 <span
-                    style="position: absolute; left: 0.875rem; top: 50%; transform: translateY(-50%); color: var(--color-text-secondary); pointer-events: none;">🔍</span>
+                    style="position: absolute; left: 0.875rem; top: 50%; transform: translateY(-50%); color: var(--color-text-secondary); pointer-events: none;"
+                    aria-hidden="true">🔍</span>
             </div>
             <div style="display: flex; align-items: center; gap: var(--spacing-sm);">
                 <label for="sort-select"
@@ -156,7 +158,7 @@
                 <div class="card-meta-ext">
                     {{ if .Params.price }}
                     <span class="card-price">
-                        💰 {{ .Params.price }}
+                        <span aria-hidden="true">💰</span> {{ .Params.price }}
                     </span>
                     {{ end }}
                     {{ if .Params.score }}
@@ -168,7 +170,7 @@
                     {{ $scoreClass = "score-good" }}
                     {{ end }}
                     <span class="card-score {{ $scoreClass }}">
-                        🏆 {{ .Params.score }}点
+                        <span aria-hidden="true">🏆</span> {{ .Params.score }}点
                     </span>
                     {{ end }}
                 </div>
@@ -178,7 +180,7 @@
                         else }}{{ .Date.Format "2006年01月02日" }}{{ end }}</span>
                     {{ if .Params.affiliate_url }}
                     <a href="{{ .Params.affiliate_url }}" class="btn-amazon-small" target="_blank"
-                        rel="noopener noreferrer">🛒 Amazonで見る</a>
+                        rel="noopener noreferrer"><span aria-hidden="true">🛒</span> Amazonで見る</a>
                     {{ else }}
                     <a href="{{ .RelPermalink }}" class="read-more">レビューを読む →</a>
                     {{ end }}
@@ -214,6 +216,12 @@
         gap: var(--spacing-sm);
         font-weight: 600;
         color: var(--color-text-primary);
+        background: transparent;
+        border: none;
+        padding: 0;
+        font-family: inherit;
+        font-size: inherit;
+        cursor: pointer;
     }
 
     .filter-icon {
