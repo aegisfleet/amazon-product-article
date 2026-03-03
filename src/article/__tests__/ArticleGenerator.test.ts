@@ -441,6 +441,45 @@ describe('ArticleGenerator', () => {
         expect(specsSection).toContain('weight: "100g"');
       }
     });
+
+    it('should exclude invalid placeholder values like "null", "none", "unknown"', async () => {
+      const invalidInvestigation: InvestigationResult = {
+        ...mockInvestigation,
+        analysis: {
+          ...mockInvestigation.analysis,
+          technicalSpecs: {
+            os: 'null',
+            cpu: 'none',
+            ram: 'unknown',
+            storage: '不明',
+            dimensions: {
+              weight: 'n/a',
+              height: '-',
+              width: 'なし',
+              depth: '10cm',
+            },
+          },
+        },
+      };
+
+      const result = await generator.generateArticle(mockProduct, invalidInvestigation);
+      const content = result.content;
+      const specsMatch = content.match(/specs:(?:(?!(?:hero:|---))[\s\S])*/);
+
+      expect(specsMatch).not.toBeNull();
+      if (specsMatch) {
+        const specsSection = specsMatch[0];
+        // Only depth should remain
+        expect(specsSection).toContain('depth: "10cm"');
+        expect(specsSection).not.toContain('os:');
+        expect(specsSection).not.toContain('cpu:');
+        expect(specsSection).not.toContain('ram:');
+        expect(specsSection).not.toContain('storage:');
+        expect(specsSection).not.toContain('weight:');
+        expect(specsSection).not.toContain('height:');
+        expect(specsSection).not.toContain('width:');
+      }
+    });
   });
 
   describe('generateSEOMetadata', () => {
