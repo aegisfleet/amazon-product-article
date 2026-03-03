@@ -792,14 +792,10 @@ ${recommendationMessage}`;
     }
 
     if (Array.isArray(value)) {
-      // 配列内の各要素をフォーマット
-      const formatted = value.map((item) => {
-        if (typeof item === 'string') return item;
-        if (typeof item === 'object' && item !== null) {
-          return this.formatObjectValue(item as Record<string, unknown>, category);
-        }
-        return String(item);
-      });
+      // 配列内の各要素をフォーマットし、空（プレースホルダー等）を除外
+      const formatted = value
+        .map((item) => this.formatSpecValue(item, category))
+        .filter((item) => item !== '');
       return formatted.join(', ');
     }
 
@@ -830,9 +826,17 @@ ${recommendationMessage}`;
       }
 
       if (typeof val === 'string' || typeof val === 'number' || typeof val === 'boolean') {
-        parts.push(`${label}: ${val}`);
+        const formattedVal = this.formatSpecValue(val, category);
+        if (formattedVal !== '' && formattedVal !== 'null') {
+          parts.push(`${label}: ${formattedVal}`);
+        }
       } else if (Array.isArray(val)) {
-        parts.push(`${label}: ${val.join(', ')}`);
+        const formattedArray = val
+          .map((v) => this.formatSpecValue(v, category))
+          .filter((v) => v !== '' && v !== 'null');
+        if (formattedArray.length > 0) {
+          parts.push(`${label}: ${formattedArray.join(', ')}`);
+        }
       } else if (typeof val === 'object') {
         // ネストされたオブジェクトは再帰的に処理
         parts.push(`${label}: ${this.formatObjectValue(val as Record<string, unknown>, category)}`);
