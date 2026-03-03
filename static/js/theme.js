@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     function updateThemeColor(theme) {
-        const themeColorMeta = document.querySelectorAll('meta[name="theme-color"]');
+        const themeColorMeta = document.getElementById('pwa-theme-color');
         const systemDark = globalThis.matchMedia('(prefers-color-scheme: dark)').matches;
 
         let color = '#F9FAFB'; // Light mode fallback
@@ -32,10 +32,9 @@ document.addEventListener('DOMContentLoaded', () => {
             color = '#111827'; // Dark mode background
         }
 
-        themeColorMeta.forEach(meta => {
-            // メディアクエリ無しのタグがある場合や、動的に上書きしたい場合
-            meta.setAttribute('content', color);
-        });
+        if (themeColorMeta) {
+            themeColorMeta.setAttribute('content', color);
+        }
     }
 
     // 初期読み込み時にも適用（必要に応じて）
