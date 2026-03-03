@@ -816,8 +816,7 @@ ${recommendationMessage}`;
       }
 
       const formattedValue = this.formatSpecValue(value, category);
-
-      if (formattedValue) {
+      if (formattedValue && formattedValue !== 'null') {
         rows.push(`| ${label} | ${formattedValue} |`);
       }
     }
@@ -845,6 +844,11 @@ ${recommendationMessage}`;
     }
 
     if (typeof value === 'string') {
+      const lowerValue = value.toLowerCase().trim();
+      const invalidPlaceholders = ['null', 'none', 'unknown', '不明', 'n/a', '-', 'なし'];
+      if (invalidPlaceholders.includes(lowerValue)) {
+        return '';
+      }
       return value;
     }
 
@@ -962,8 +966,13 @@ ${recommendationMessage}`;
 
       const addSpec = (key: string, value: string): void => {
         if (!addedKeys.has(key)) {
-          lines.push(`  ${key}: ${value}`);
-          addedKeys.add(key);
+          // formatSpecValue already handles placeholders, but we need to check the result
+          // If the value is just "", don't add it.
+          // Note: value here is often already quoted like '"val"', so we check for '""'
+          if (value !== '""' && value !== '') {
+            lines.push(`  ${key}: ${value}`);
+            addedKeys.add(key);
+          }
         }
       };
 
@@ -999,10 +1008,15 @@ ${recommendationMessage}`;
 
       // 寸法・重量
       if (specs.dimensions) {
-        if (specs.dimensions.height) addSpec('height', `"${specs.dimensions.height}"`);
-        if (specs.dimensions.width) addSpec('width', `"${specs.dimensions.width}"`);
-        if (specs.dimensions.depth) addSpec('depth', `"${specs.dimensions.depth}"`);
-        if (specs.dimensions.weight) addSpec('weight', `"${specs.dimensions.weight}"`);
+        const height = this.formatSpecValue(specs.dimensions.height);
+        const width = this.formatSpecValue(specs.dimensions.width);
+        const depth = this.formatSpecValue(specs.dimensions.depth);
+        const weight = this.formatSpecValue(specs.dimensions.weight);
+
+        if (height) addSpec('height', `"${height}"`);
+        if (width) addSpec('width', `"${width}"`);
+        if (depth) addSpec('depth', `"${depth}"`);
+        if (weight) addSpec('weight', `"${weight}"`);
       }
 
       // イヤホン・ヘッドホン
