@@ -40,7 +40,8 @@
             <div class="keepa-graph-container">
                 <a href="https://keepa.com/#!product/5-{{ .Params.asin }}" target="_blank" rel="noopener noreferrer">
                     <img src="https://graph.keepa.com/pricehistory.png?asin={{ .Params.asin }}&domain=5&amazon=1&new=1&used=1&salesrank=1&bb=1&range=365&width=700&height=350"
-                        alt="価格履歴グラフ" class="keepa-graph-image" loading="lazy" referrerpolicy="no-referrer">
+                        alt="価格履歴グラフ" class="keepa-graph-image" loading="lazy" decoding="async"
+                        referrerpolicy="no-referrer">
                 </a>
                 <p class="keepa-note">※ クリックで Keepa の詳細ページを開きます</p>
             </div>
@@ -72,7 +73,7 @@
                     <a href="{{ .RelPermalink }}" class="pickup-card">
                         <div class="pickup-card-image">
                             {{ if .Params.images }}
-                            <img src="{{ index .Params.images 0 }}" alt="{{ .Title }}" loading="lazy">
+                            <img src="{{ index .Params.images 0 }}" alt="{{ .Title }}" loading="lazy" decoding="async">
                             {{ else }}
                             <div class="pickup-card-noimage">画像なし</div>
                             {{ end }}
@@ -181,7 +182,7 @@
             <a href="{{ .RelPermalink }}" class="pickup-card">
                 <div class="pickup-card-image">
                     {{ if .Params.images }}
-                    <img src="{{ index .Params.images 0 }}" alt="{{ .Title }}" loading="lazy">
+                    <img src="{{ index .Params.images 0 }}" alt="{{ .Title }}" loading="lazy" decoding="async">
                     {{ else }}
                     <div class="pickup-card-noimage">画像なし</div>
                     {{ end }}
@@ -232,7 +233,7 @@
             <a href="{{ .RelPermalink }}" class="pickup-card">
                 <div class="pickup-card-image">
                     {{ if .Params.images }}
-                    <img src="{{ index .Params.images 0 }}" alt="{{ .Title }}" loading="lazy">
+                    <img src="{{ index .Params.images 0 }}" alt="{{ .Title }}" loading="lazy" decoding="async">
                     {{ else }}
                     <div class="pickup-card-noimage">画像なし</div>
                     {{ end }}

@@ -2,7 +2,8 @@
 <section class="hero">
     <div class="container hero-content">
         <div class="hero-image">
-            <img src="{{ `images/default-ogp.png` | relURL }}" alt="スマートな商品リサーチ" width="400" height="300">
+            <img src="{{ `images/default-ogp.png` | relURL }}" alt="スマートな商品リサーチ" width="400" height="300"
+                fetchpriority="high">
         </div>
         <p class="hero-description">
             このサイトでは、<b>GoogleのJules</b>が調べた調査レポートを閲覧できます。各商品の特徴、使用方法を把握し、目的に応じた最適な商品の比較検討にお役立てください。なお、<u>AIエージェントの調査が間違っている可能性があること</u>に留意してください。
@@ -49,7 +50,7 @@
                 data-price="{{ .Params.price }}">
                 <div class="pickup-card-image">
                     {{ if .Params.images }}
-                    <img src="{{ index .Params.images 0 }}" alt="{{ .Title }}" loading="lazy">
+                    <img src="{{ index .Params.images 0 }}" alt="{{ .Title }}" loading="lazy" decoding="async">
                     {{ else }}
                     <div class="pickup-card-noimage">画像なし</div>
                     {{ end }}
