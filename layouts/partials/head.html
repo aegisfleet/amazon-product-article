@@ -10,8 +10,7 @@
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#F9FAFB" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#111827" media="(prefers-color-scheme: dark)">
+<meta id="pwa-theme-color" name="theme-color" content="#F9FAFB">
 
 <meta name="description"
   content="{{ if .Description }}{{ .Description }}{{ else if .IsPage }}{{ .Summary | truncate 160 }}{{ else }}{{ .Site.Params.description }}{{ end }}">
@@ -61,8 +60,15 @@
 <script>
   (() => {
     const savedTheme = localStorage.getItem('theme');
-    if (savedTheme) {
-      document.documentElement.dataset.theme = savedTheme;
+    const systemDark = globalThis.matchMedia('(prefers-color-scheme: dark)').matches;
+    const theme = savedTheme || (systemDark ? 'dark' : 'light');
+
+    document.documentElement.dataset.theme = theme;
+
+    // スクリプト読み込み前にステータスバーの色を設定
+    const meta = document.getElementById('pwa-theme-color');
+    if (meta) {
+      meta.setAttribute('content', theme === 'dark' ? '#111827' : '#F9FAFB');
     }
   })();
 </script>
