@@ -309,8 +309,10 @@ function initCategoryFeatures() {
         if (params.toString()) {
             // Only expand if there are filters OTHER than sort and query
             const hasOtherFilters = params.has('price') || params.has('score') || params.has('categories') || params.has('specs');
-            if (hasOtherFilters && filterSection) {
+            // フィルターが適用されている場合はフィルターセクションを開く
+            if (filterSection && filterSection.classList.contains('collapsed')) {
                 filterSection.classList.remove('collapsed');
+                if (filterToggle) filterToggle.setAttribute('aria-expanded', 'true');
             }
         }
 
@@ -361,12 +363,13 @@ function initCategoryFeatures() {
         updateUrl();
     });
 
-    // Handle filter toggle (expand/collapse)
-    if (filterToggle && filterSection) {
-        filterToggle.addEventListener('click', function () {
-            filterSection.classList.toggle('collapsed');
-        });
-    }
+    // Handle filter toggle        // フィルターヘッダーのクリックイベント（スマホ開閉用）
+        if (filterToggle && filterSection) {
+            filterToggle.addEventListener('click', () => {
+                const isCollapsed = filterSection.classList.toggle('collapsed');
+                filterToggle.setAttribute('aria-expanded', !isCollapsed);
+            });
+        }
 
     // Handle filter reset
     if (filterReset) {
