@@ -9,7 +9,9 @@ const urlsToCache = [
     '/amazon-product-article/apple-touch-icon.png'
 ];
 
-self.addEventListener('install', event => {
+// インストール時に初期リソースをキャッシュ
+globalThis.addEventListener('install', event => {
+    globalThis.skipWaiting(); // 新しいSWをすぐに待機状態から移行
     event.waitUntil(
         caches.open(CACHE_NAME)
             .then(cache => {
@@ -18,47 +20,49 @@ self.addEventListener('install', event => {
     );
 });
 
-self.addEventListener('fetch', event => {
-    event.respondWith(
-        caches.match(event.request)
-            .then(response => {
-                // キャッシュヒットした場合はそのまま返す
-                if (response) {
-                    return response;
-                }
-
-                const fetchRequest = event.request.clone();
-
-                return fetch(fetchRequest).then(
-                    response => {
-                        // 有効なレスポンスの場合のみキャッシュに追加する
-                        if (response && response.status === 200 && response.type === 'basic') {
-                            const responseToCache = response.clone();
-                            caches.open(CACHE_NAME)
-                                .then(cache => {
-                                    cache.put(event.request, responseToCache);
-                                });
+// アクティベート時に古いキャッシュを削除し、すぐに制御を開始
+globalThis.addEventListener('activate', event => {
+    const cacheWhitelist = [CACHE_NAME];
+    event.waitUntil(
+        Promise.all([
+            caches.keys().then(cacheNames => {
+                return Promise.all(
+                    cacheNames.map(cacheName => {
+                        if (cacheWhitelist.indexOf(cacheName) === -1) {
+                            return caches.delete(cacheName);
                         }
-
-                        // キャッシュの有無にかかわらず、レスポンスは常に返す
-                        return response;
-                    }
+                    })
                 );
-            })
+            }),
+            globalThis.clients.claim() // すぐに全てのクライアントを制御下に置く
+        ])
     );
 });
 
-self.addEventListener('activate', event => {
-    const cacheWhitelist = [CACHE_NAME];
-    event.waitUntil(
-        caches.keys().then(cacheNames => {
-            return Promise.all(
-                cacheNames.map(cacheName => {
-                    if (cacheWhitelist.indexOf(cacheName) === -1) {
-                        return caches.delete(cacheName);
+// Stale-While-Revalidate 戦略
+globalThis.addEventListener('fetch', event => {
+    // 外部オリジン（Google Fonts等）へのリクエストはネットワーク優先（任意でキャッシュも可能）
+    if (!event.request.url.startsWith(globalThis.location.origin)) {
+        return;
+    }
+
+    event.respondWith(
+        caches.open(CACHE_NAME).then(cache => {
+            return cache.match(event.request).then(cachedResponse => {
+                const fetchPromise = fetch(event.request).then(networkResponse => {
+                    // 有効なレスポンスのみキャッシュを更新
+                    if (networkResponse && networkResponse.status === 200 && networkResponse.type === 'basic') {
+                        cache.put(event.request, networkResponse.clone());
                     }
-                })
-            );
+                    return networkResponse;
+                }).catch(() => {
+                    // ネットワークエラー時はキャッシュがあればそれを返す（既に返しているはずだが念のため）
+                    return cachedResponse;
+                });
+
+                // キャッシュがあればそれを返し、バックグラウンドで更新。なければネットワークを待つ。
+                return cachedResponse || fetchPromise;
+            });
         })
     );
 });
