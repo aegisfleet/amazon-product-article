@@ -1,7 +1,7 @@
 {
   "analysis": {
-    "productName": "Xiaomi Redmi Pad 2 Pro",
-    "parentAsin": "B0FVG296VN",
+    "productName": "Xiaomi REDMI Pad 2 Pro",
+    "parentAsin": "B08N65TPYD",
     "productDescription": "12000mAhの超大容量バッテリーと12.1インチ2.5Kディスプレイを搭載した、エンターテインメント特化のハイコストパフォーマンス・タブレット。",
     "productUsage": [
       "NetflixやYouTubeなどの長時間動画視聴",
@@ -54,7 +54,7 @@
         "credibility": "Medium"
       }
     ],
-    "lastInvestigated": "2026-01-19",
+    "lastInvestigated": "2026-03-04",
     "competitiveAnalysis": [
       {
         "name": "Xiaomi Pad 7",
@@ -96,6 +96,20 @@
         "differentiators": [
           "正統進化によるスペック全体の底上げ"
         ]
+      },
+      {
+        "name": "Xiaomi POCO Pad",
+        "asin": "B0D48PX2XH",
+        "priceComparison": "ほぼ同価格帯（39,000円）",
+        "featureComparison": [
+          "POCO PadはSnapdragon 7s Gen 2、REDMI Pad 2 Proはより新しいSnapdragon 7s Gen 4を搭載し基本性能が高い",
+          "POCO Padは10000mAhバッテリー、REDMI Pad 2 Proは12000mAhバッテリーと持ち時間が向上",
+          "どちらも12.1インチ2.5K 120Hzのディスプレイを備える点は共通"
+        ],
+        "differentiators": [
+          "最新チップ搭載によるパフォーマンスと省電力性の向上",
+          "20%増量された超大容量バッテリーによる圧倒的な稼働時間"
+        ]
       }
     ],
     "recommendation": {
@@ -113,22 +127,22 @@
         "ハイエンドゲームを最高設定で遊ぶには力不足の可能性",
         "長時間片手で持つには少し重い"
       ],
-      "score": 95,
-      "scoreRationale": "[基本点: 70]\n[加点: +15] (39,980円で12.1インチ2.5K、12000mAhという破格のスペック)\n[加点: +5] (Snapdragon 7s Gen 4搭載で日常用途に死角なし)\n[加点: +5] (リバース充電や相互接続など、独自の付加価値が高い)\n[合計: 95] (エンタメ用タブレットの決定版)"
+      "score": 92,
+      "scoreRationale": "[基本点: 70]\n[加点: +10] (39,980円で12.1インチ2.5K、120Hzという優れたディスプレイ性能)\n[加点: +10] (12000mAhという圧倒的なバッテリー容量とリバース充電対応)\n[加点: +5] (Snapdragon 7s Gen 4による必要十分な処理能力)\n[減点: -3] (大容量バッテリー故の重量増とハイエンドゲームでの力不足)\n[合計: 92]"
     },
     "technicalSpecs": {
-      "os": "Android (HyperOS)",
+      "os": "Android 14ベース (Xiaomi HyperOS)",
       "cpu": "Snapdragon 7s Gen 4",
       "ram": "6GB",
-      "storage": "128GB (Max 2TB MicroSD)",
+      "storage": "128GB (MicroSD 2TBまで拡張可能)",
       "display": {
         "size": "12.1インチ",
-        "resolution": "2.5K (2560x1600想定)",
-        "type": "LCD, 120Hz"
+        "resolution": "2.5K (2560x1600推定)",
+        "type": "LCD, 120Hzリフレッシュレート"
       },
       "battery": {
         "capacity": "12000mAh",
-        "charging": "27Wリバース充電対応"
+        "charging": "27W有線リバース充電対応"
       },
       "camera": {
         "main": "8MP (推定)",
@@ -141,7 +155,7 @@
       ],
       "other": [
         "Dolby Atmos対応クアッドスピーカー",
-        "Xiaomi Interconnectivity"
+        "Xiaomi相互接続機能対応"
       ]
     }
   }
