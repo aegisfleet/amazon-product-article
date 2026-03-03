@@ -77,13 +77,34 @@ describe('CreatorsAPICache', () => {
     expect(cache.get('B003')).toBeNull();
   });
 
-  test('markInvalid should NOT overwrite existing valid entry', () => {
-    cache.set('B006', mockProduct);
+  test('markInvalid should update status but PRESERVE existing data if expired', () => {
+    const now = Date.now();
+    const expiredTime = now - 25 * 60 * 60 * 1000; // 25h ago (expired)
+
+    (cache as any).cache.B006 = {
+      data: mockProduct,
+      timestamp: expiredTime,
+      status: 'valid',
+    };
+
     cache.markInvalid('B006');
 
-    // Should still be valid
-    expect((cache as any).cache.B006.status).toBe('valid');
-    expect(cache.get('B006')).toEqual(mockProduct);
+    // Should now be invalid
+    expect((cache as any).cache.B006.status).toBe('invalid');
+    // But data should be preserved
+    expect((cache as any).cache.B006.data).toEqual(mockProduct);
+    // Standard get should return null
+    expect(cache.get('B006')).toBeNull();
+    // get with allowInvalid should return data
+    expect(cache.get('B006', { allowInvalid: true })).toEqual(mockProduct);
+  });
+
+  test('markInvalid should NOT overwrite status if NOT expired', () => {
+    cache.set('B006_FRESH', mockProduct);
+    cache.markInvalid('B006_FRESH');
+
+    // Should still be valid because it's fresh
+    expect((cache as any).cache.B006_FRESH.status).toBe('valid');
   });
 
   test('should return true for fresh permanent_invalid entries', () => {
@@ -91,6 +112,23 @@ describe('CreatorsAPICache', () => {
     expect(cache.isInvalid('B007')).toBe(true);
     expect(cache.get('B007')).toBeNull();
     expect((cache as any).cache.B007.status).toBe('permanent_invalid');
+  });
+
+  test('markPermanentInvalid should update status but PRESERVE existing data if expired', () => {
+    const now = Date.now();
+    const expiredTime = now - 25 * 60 * 60 * 1000; // 25h ago
+
+    (cache as any).cache.B007_EXPIRED = {
+      data: mockProduct,
+      timestamp: expiredTime,
+      status: 'valid',
+    };
+
+    cache.markPermanentInvalid('B007_EXPIRED');
+
+    expect((cache as any).cache.B007_EXPIRED.status).toBe('permanent_invalid');
+    expect((cache as any).cache.B007_EXPIRED.data).toEqual(mockProduct);
+    expect(cache.get('B007_EXPIRED', { allowInvalid: true })).toEqual(mockProduct);
   });
 
   test('should respect permanentInvalidTtl (7 days by default)', () => {
