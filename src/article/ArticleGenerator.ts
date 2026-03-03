@@ -287,20 +287,13 @@ export class ArticleGenerator {
     affiliatePartnerTag?: string,
     competitorDetails?: Map<string, ProductDetail>,
   ): Promise<ArticleSection[]> {
-    const sections: ArticleSection[] = [];
     const affiliateTag = affiliatePartnerTag || process.env.AMAZON_PARTNER_TAG || 'your-affiliate-tag';
 
-    // 商品ヒーローセクション（商品概要 + 購入リンク）
-    // NOTE: Refactored to Front Matter + Hugo Partial.
-    // sections.push(await this.generateProductHeroSection(product, investigation, affiliateTag));
+    const sections: ArticleSection[] = [
+      this.generateFeaturesSection(product, investigation),
+      await this.generateUserReviewsSection(investigation, reviewAnalysis, template.sections.userReviews),
+    ];
 
-    // 商品の特徴と使い方
-    sections.push(this.generateFeaturesSection(product, investigation));
-
-    // ユーザーレビュー
-    sections.push(await this.generateUserReviewsSection(investigation, reviewAnalysis, template.sections.userReviews));
-
-    // 競合商品との比較（表形式）
     if (competitorDetails) {
       sections.push(
         await this.generateCompetitiveAnalysisSection(
@@ -312,11 +305,10 @@ export class ArticleGenerator {
       );
     }
 
-    // 購入推奨度
-    sections.push(this.generateRecommendationSection(investigation, template.sections.recommendation));
-
-    // 商品詳細・購入（下部）
-    sections.push(this.generatePurchaseSection(product, affiliateTag, investigation));
+    sections.push(
+      this.generateRecommendationSection(investigation, template.sections.recommendation),
+      this.generatePurchaseSection(product, affiliateTag, investigation),
+    );
 
     // 情報ソース（もしあれば）
     if (investigation.analysis.sources && investigation.analysis.sources.length > 0) {
@@ -589,98 +581,41 @@ ${reviewAnalysis ? this.generateSentimentAnalysis(reviewAnalysis) : ''}`;
     competitorDetails?: Map<string, ProductDetail>,
   ): Promise<ArticleSection> {
     const competitors = investigation.analysis.competitiveAnalysis;
-    const cwd = process.cwd();
 
     // 各競合商品をカード形式で表示
     const competitorCards = (
       await Promise.all(
         competitors.map(async (competitor) => {
-          const features = competitor.featureComparison.map((feature) => `<li>${feature}</li>`).join('\n');
-
-          const differentiators = competitor.differentiators.map((diff) => `<li>${diff}</li>`).join('\n');
-
           // Creators APIから取得した競合商品の詳細情報
           const isValidAsin = typeof competitor.asin === 'string' && /^[A-Z0-9]{10}$/i.test(competitor.asin);
           const normalizedAsin = isValidAsin && competitor.asin ? competitor.asin.toUpperCase() : undefined;
           const detail = normalizedAsin ? competitorDetails?.get(normalizedAsin) : undefined;
 
           // 調査済み記事が存在するかチェック
-          let internalLink = '';
-          let hasInternalReview = false;
-          let competitorScore: number | undefined;
+          let competitorInvestigation: InvestigationResult | null = null;
           if (normalizedAsin) {
-            let competitorInvestigation: InvestigationResult | null = null;
-
-            // キャッシュを確認
-            if (this.investigationCache.has(normalizedAsin)) {
-              competitorInvestigation = this.investigationCache.get(normalizedAsin) || null;
-            } else {
-              const investigationPath = path.join(cwd, 'data', 'investigations', `${normalizedAsin}.json`);
-              try {
-                const fileContent = await fs.promises.readFile(investigationPath, 'utf-8');
-                const parsed = InvestigationFileSchema.parse(JSON.parse(fileContent));
-                competitorInvestigation = parsed as unknown as InvestigationResult;
-                if (this.investigationCache.size >= 1000) this.investigationCache.clear();
-                this.investigationCache.set(normalizedAsin, competitorInvestigation);
-              } catch (error) {
-                // スコア取得に失敗した場合は無視（ファイルが存在しない場合もここに来る）
-                if (this.investigationCache.size >= 1000) this.investigationCache.clear();
-                this.investigationCache.set(normalizedAsin, null);
-                // ENOENT以外のエラー（パースエラーなど）はデバッグログに残す
-                if (error instanceof Error && (error as NodeJS.ErrnoException).code !== 'ENOENT') {
-                  this.logger.debug(`Failed to load competitor investigation for ${competitor.asin}`, error);
-                }
-              }
-            }
-
-            if (competitorInvestigation) {
-              hasInternalReview = true;
-              internalLink = `<a href="../${normalizedAsin.toLowerCase()}/" class="btn-internal-small">📄 サイト内レビュー</a>`;
-              competitorScore = competitorInvestigation.analysis?.recommendation?.score;
-            }
+            competitorInvestigation = await this.loadCompetitorInvestigation(normalizedAsin);
           }
+
+          const hasInternalReview = !!competitorInvestigation;
+          const competitorScore = competitorInvestigation?.analysis?.recommendation?.score;
+          const internalLink = hasInternalReview
+            ? `<a href="../${normalizedAsin?.toLowerCase()}/" class="btn-internal-small">📄 サイト内レビュー</a>`
+            : '';
 
           // 商品プレビュー（Creators API情報がある場合）
-          let productPreview = '';
-          if (detail) {
-            const imageUrl = detail.images?.primary || '';
-            const priceText = detail.price?.formatted || '';
-            const availabilityText = detail.availability || '';
-            const primeText = detail.isPrimeEligible ? '⭐ Prime対応' : '';
-
-            // スコア表示のHTML生成
-            let scoreHtml = '';
-            if (competitorScore !== undefined) {
-              let scoreClass = 'score-fair';
-              if (competitorScore >= 80) {
-                scoreClass = 'score-excellent';
-              } else if (competitorScore >= 60) {
-                scoreClass = 'score-good';
-              }
-              scoreHtml = `<div class="competitor-score-container"><span class="pickup-card-score ${scoreClass}">🏆 ${competitorScore}点</span></div>`;
-            }
-
-            const previewTag = hasInternalReview ? 'a' : 'div';
-            const previewAttrs =
-              hasInternalReview && normalizedAsin ? ` href="../${normalizedAsin.toLowerCase()}/"` : '';
-
-            productPreview = `
-<${previewTag}${previewAttrs} class="competitor-preview">
-<img src="${imageUrl}" alt="${competitor.name}" class="competitor-preview-img">
-<div class="competitor-preview-info">
-${scoreHtml}${priceText ? `<span class="competitor-actual-price">${priceText}</span>` : ''}${primeText ? `<span class="competitor-prime">${primeText}</span>` : ''}${availabilityText ? `<span class="competitor-availability">📦 ${availabilityText}</span>` : ''}
-</div>
-</${previewTag}>`;
-          }
-
-          // Creators APIが実行された場合（competitorDetailsが存在する場合）、
-          // ASINが存在しても詳細情報が取得できなかった（エラーになった）商品はリンクを表示しない
-          const shouldShowLink = normalizedAsin && (!competitorDetails || competitorDetails.has(normalizedAsin));
+          const productPreview = detail
+            ? this.renderCompetitorPreview(competitor.name, detail, competitorScore, hasInternalReview, normalizedAsin)
+            : '';
 
           // アフィリエイトリンクを生成
+          const shouldShowLink = normalizedAsin && (!competitorDetails || competitorDetails.has(normalizedAsin));
           const competitorLink = shouldShowLink
             ? `<a href="${detail?.detailPageUrl || this.affiliateManager.generateAffiliateLink(normalizedAsin).url}" class="btn-amazon-small" target="_blank" rel="noopener noreferrer">🛒 Amazonで見る</a>`
             : '';
+
+          const features = competitor.featureComparison.map((feature) => `<li>${feature}</li>`).join('\n');
+          const differentiators = competitor.differentiators.map((diff) => `<li>${diff}</li>`).join('\n');
 
           return `<div class="competitor-card">
 <h4>${competitor.name}</h4>
@@ -830,7 +765,7 @@ ${recommendationMessage}`;
   private formatFieldName(fieldName: string): string {
     // camelCaseをスペース区切りに変換
     return fieldName
-      .replace(/([A-Z])/g, ' $1')
+      .replaceAll(/([A-Z])/g, ' $1')
       .replace(/^./, (str) => str.toUpperCase())
       .trim();
   }
@@ -921,7 +856,7 @@ ${recommendationMessage}`;
    * フロントマターを生成
    */
   private escapeForFrontMatter(value: string): string {
-    return value.replace(/\\/g, '\\\\').replace(/"/g, '\\"');
+    return value.replaceAll('\\', '\\\\').replaceAll('"', '\\"');
   }
 
   private generateFrontMatter(metadata: ArticleMetadata): string {
@@ -946,8 +881,11 @@ ${recommendationMessage}`;
 
     if (metadata.rating) lines.push(`rating: ${metadata.rating}`);
 
-    lines.push(`tags: [${metadata.tags.map((tag) => `"${tag}"`).join(', ')}]`);
-    lines.push(`keywords: [${metadata.seoKeywords.map((keyword) => `"${keyword}"`).join(', ')}]`);
+    lines.push(
+      `tags: [${metadata.tags.map((tag) => `"${tag}"`).join(', ')}]`,
+      `keywords: [${metadata.seoKeywords.map((keyword) => `"${keyword}"`).join(', ')}]`,
+    );
+
     if (metadata.featured) lines.push(`featured: ${metadata.featured}`);
     if (typeof metadata.mobileOptimized === 'boolean') lines.push(`mobile_optimized: ${metadata.mobileOptimized}`);
     if (metadata.lastInvestigated) lines.push(`last_investigated: "${metadata.lastInvestigated}"`);
@@ -1119,14 +1057,18 @@ ${recommendationMessage}`;
       if (metadata.hero.score_rationale) {
         lines.push('  score_rationale:');
         if (metadata.hero.score_rationale.top_plus) {
-          lines.push('    top_plus:');
-          lines.push(`      points: ${metadata.hero.score_rationale.top_plus.points}`);
-          lines.push(`      desc: "${this.escapeForFrontMatter(metadata.hero.score_rationale.top_plus.desc)}"`);
+          lines.push(
+            '    top_plus:',
+            `      points: ${metadata.hero.score_rationale.top_plus.points}`,
+            `      desc: "${this.escapeForFrontMatter(metadata.hero.score_rationale.top_plus.desc)}"`,
+          );
         }
         if (metadata.hero.score_rationale.top_minus) {
-          lines.push('    top_minus:');
-          lines.push(`      points: ${metadata.hero.score_rationale.top_minus.points}`);
-          lines.push(`      desc: "${this.escapeForFrontMatter(metadata.hero.score_rationale.top_minus.desc)}"`);
+          lines.push(
+            '    top_minus:',
+            `      points: ${metadata.hero.score_rationale.top_minus.points}`,
+            `      desc: "${this.escapeForFrontMatter(metadata.hero.score_rationale.top_minus.desc)}"`,
+          );
         }
       }
 
@@ -1217,7 +1159,7 @@ ${recommendationMessage}`;
 
   private optimizeListsForMobile(content: string): string {
     // リストアイテムにモバイル対応クラスを追加
-    return content.replace(/^- (.+)$/gm, '- <span class="mobile-list-item">$1</span>');
+    return content.replaceAll(/^- (.+)$/gm, '- <span class="mobile-list-item">$1</span>');
   }
 
   private extractAffiliateLinks(content: string): AffiliateLink[] {
@@ -1253,7 +1195,7 @@ ${recommendationMessage}`;
 
   private calculateWordCount(content: string): number {
     // 日本語文字数カウント（簡易実装）
-    return content.replace(/[^\u3040-\u309F\u30A0-\u30FF\u4E00-\u9FAF\u3400-\u4DBF]/g, '').length;
+    return content.replaceAll(/[^\u3040-\u309F\u30A0-\u30FF\u4E00-\u9FAF\u3400-\u4DBF]/g, '').length;
   }
 
   private generateSentimentAnalysis(reviewAnalysis: ReviewAnalysisResult): string {
@@ -1291,16 +1233,16 @@ ${recommendationMessage}`;
    */
   private formatUserImpressionAsBlockquote(userImpression: string): string {
     // Markdownの強調記法（**text**）を除去
-    let sanitized = userImpression.replace(/\*\*([^*]+)\*\*/g, '$1');
+    let sanitized = userImpression.replaceAll(/\*\*([^*]+)\*\*/g, '$1');
 
     // *text* 形式のイタリック記法も除去
-    sanitized = sanitized.replace(/\*([^*]+)\*/g, '$1');
+    sanitized = sanitized.replaceAll(/\*([^*]+)\*/g, '$1');
 
     // 全ての改行をスペースに変換して1つの連続したテキストにする
-    sanitized = sanitized.replace(/\n+/g, ' ');
+    sanitized = sanitized.replaceAll(/\n+/g, ' ');
 
     // 連続するスペースを1つに正規化
-    sanitized = sanitized.replace(/\s{2,}/g, ' ').trim();
+    sanitized = sanitized.replaceAll(/\s{2,}/g, ' ').trim();
 
     // Markdownのblockquote記法「>」を使用
     return `> ${sanitized}`;
@@ -1327,16 +1269,9 @@ ${recommendationMessage}`;
       // 「加点」固定ではなく、+数字をトリガーにして加点を識別
       const plusMatch = line.match(/\[[^\]]+:\s*\+(\d+)\]\s*(.*)/);
       if (plusMatch) {
-        const [, points, desc = ''] = plusMatch;
-        // HTMLタグを除去してから整形
-        const cleanDesc = desc
-          .replace(/<[^>]+>/g, ' ')
-          .replace(/\s+/g, ' ')
-          .replace(/^[(（]/, '')
-          .replace(/[)）]$/, '')
-          .trim();
+        const cleanDesc = this.cleanRationaleDesc(plusMatch[2] || '');
         parts.push(
-          `<div class="score-item score-plus">✅ <span class="score-points">+${points}</span> ${cleanDesc}</div>`,
+          `<div class="score-item score-plus">✅ <span class="score-points">+${plusMatch[1]}</span> ${cleanDesc}</div>`,
         );
         continue;
       }
@@ -1345,16 +1280,9 @@ ${recommendationMessage}`;
       // 「減点」固定ではなく、-数字をトリガーにして減点を識別
       const minusMatch = line.match(/\[[^\]]+:\s*-(\d+)\]\s*(.*)/);
       if (minusMatch) {
-        const [, points, desc = ''] = minusMatch;
-        // HTMLタグを除去してから整形
-        const cleanDesc = desc
-          .replace(/<[^>]+>/g, ' ')
-          .replace(/\s+/g, ' ')
-          .replace(/^[(（]/, '')
-          .replace(/[)）]$/, '')
-          .trim();
+        const cleanDesc = this.cleanRationaleDesc(minusMatch[2] || '');
         parts.push(
-          `<div class="score-item score-minus">⚠️ <span class="score-points">-${points}</span> ${cleanDesc}</div>`,
+          `<div class="score-item score-minus">⚠️ <span class="score-points">-${minusMatch[1]}</span> ${cleanDesc}</div>`,
         );
         continue;
       }
@@ -1369,13 +1297,7 @@ ${recommendationMessage}`;
       // 加点: 0 のパターン（プラス記号なし）: [加点: 0] 説明
       const zeroAddMatch = line.match(/\[加点:\s*0\]\s*(.*)/);
       if (zeroAddMatch) {
-        const [, desc = ''] = zeroAddMatch;
-        const cleanDesc = desc
-          .replace(/<[^>]+>/g, ' ')
-          .replace(/\s+/g, ' ')
-          .replace(/^[(（]/, '')
-          .replace(/[)）]$/, '')
-          .trim();
+        const cleanDesc = this.cleanRationaleDesc(zeroAddMatch[1] || '');
         parts.push(`<div class="score-item score-plus">✅ <span class="score-points">±0</span> ${cleanDesc}</div>`);
         continue;
       }
@@ -1383,13 +1305,7 @@ ${recommendationMessage}`;
       // 減点: 0 のパターン（マイナス記号なし）: [減点: 0] 説明
       const zeroSubMatch = line.match(/\[減点:\s*0\]\s*(.*)/);
       if (zeroSubMatch) {
-        const [, desc = ''] = zeroSubMatch;
-        const cleanDesc = desc
-          .replace(/<[^>]+>/g, ' ')
-          .replace(/\s+/g, ' ')
-          .replace(/^[(（]/, '')
-          .replace(/[)）]$/, '')
-          .trim();
+        const cleanDesc = this.cleanRationaleDesc(zeroSubMatch[1] || '');
         parts.push(`<div class="score-item score-minus">⚠️ <span class="score-points">±0</span> ${cleanDesc}</div>`);
         continue;
       }
@@ -1398,13 +1314,7 @@ ${recommendationMessage}`;
       // 加点でも減点でもない中立的な評価項目
       const zeroNeutralMatch = line.match(/\[[^\]]+:\s*0\]\s*(.*)/);
       if (zeroNeutralMatch) {
-        const [, desc = ''] = zeroNeutralMatch;
-        const cleanDesc = desc
-          .replace(/<[^>]+>/g, ' ')
-          .replace(/\s+/g, ' ')
-          .replace(/^[(（]/, '')
-          .replace(/[)）]$/, '')
-          .trim();
+        const cleanDesc = this.cleanRationaleDesc(zeroNeutralMatch[1] || '');
         parts.push(`<div class="score-item score-neutral">➖ <span class="score-points">±0</span> ${cleanDesc}</div>`);
         continue;
       }
@@ -1442,16 +1352,7 @@ ${recommendationMessage}`;
       const plusMatch = line.match(/\[[^\]]+:\s*\+(\d+)\]\s*(.*)/);
       if (plusMatch) {
         const points = parseInt(plusMatch[1] ?? '0', 10);
-        let desc = plusMatch[2] || '';
-        // HTMLタグを除去（<p>などが含まれるとレイアウト崩れの原因になるため）
-        desc = desc.replace(/<[^>]+>/g, ' ');
-        // 改行を含むあらゆる空白文字をスペースに置換
-        desc = desc.replace(/\s+/g, ' ');
-        // 括弧を除去して説明文全体を使用
-        desc = desc
-          .replace(/^[(（]/, '')
-          .replace(/[)）]$/, '')
-          .trim();
+        const desc = this.cleanRationaleDesc(plusMatch[2] || '');
 
         if (!topPlus || points > topPlus.points) {
           topPlus = { points, desc };
@@ -1463,16 +1364,7 @@ ${recommendationMessage}`;
       const minusMatch = line.match(/\[[^\]]+:\s*-(\d+)\]\s*(.*)/);
       if (minusMatch) {
         const points = parseInt(minusMatch[1] ?? '0', 10);
-        let desc = minusMatch[2] || '';
-        // HTMLタグを除去
-        desc = desc.replaceAll(/<[^>]+>/g, ' ');
-        // 改行を含むあらゆる空白文字をスペースに置換
-        desc = desc.replaceAll(/\s+/g, ' ');
-        // 括弧を除去して説明文全体を使用
-        desc = desc
-          .replace(/^[(（]/, '')
-          .replace(/[)）]$/, '')
-          .trim();
+        const desc = this.cleanRationaleDesc(minusMatch[2] || '');
 
         if (!topMinus || points > topMinus.points) {
           topMinus = { points, desc };
@@ -1481,5 +1373,78 @@ ${recommendationMessage}`;
     }
 
     return { topPlus, topMinus };
+  }
+
+  /**
+   * Rationaleの説明文をクリーンアップ（HTMLタグ除去、括弧除去、空白正規化）
+   */
+  private cleanRationaleDesc(desc: string): string {
+    return desc
+      .replaceAll(/<[^>]+>/g, ' ')
+      .replaceAll(/\s+/g, ' ')
+      .replace(/^[(（]/, '')
+      .replace(/[)）]$/, '')
+      .trim();
+  }
+
+  /**
+   * 競合商品の調査結果をロード（キャッシュ管理込み）
+   */
+  private async loadCompetitorInvestigation(asin: string): Promise<InvestigationResult | null> {
+    if (this.investigationCache.has(asin)) {
+      return this.investigationCache.get(asin) || null;
+    }
+
+    const investigationPath = path.join(process.cwd(), 'data', 'investigations', `${asin}.json`);
+    try {
+      const fileContent = await fs.promises.readFile(investigationPath, 'utf-8');
+      const parsed = InvestigationFileSchema.parse(JSON.parse(fileContent));
+      const investigation = parsed as unknown as InvestigationResult;
+
+      if (this.investigationCache.size >= 1000) this.investigationCache.clear();
+      this.investigationCache.set(asin, investigation);
+      return investigation;
+    } catch (error) {
+      if (this.investigationCache.size >= 1000) this.investigationCache.clear();
+      this.investigationCache.set(asin, null);
+
+      if (error instanceof Error && (error as any).code !== 'ENOENT') {
+        this.logger.debug(`Failed to load competitor investigation for ${asin}`, error);
+      }
+      return null;
+    }
+  }
+
+  /**
+   * 競合商品のプレビューHTMLを生成
+   */
+  private renderCompetitorPreview(
+    name: string,
+    detail: ProductDetail,
+    score?: number,
+    hasInternalReview?: boolean,
+    asin?: string,
+  ): string {
+    const imageUrl = detail.images?.primary || '';
+    const priceText = detail.price?.formatted || '';
+    const availabilityText = detail.availability || '';
+    const primeText = detail.isPrimeEligible ? '⭐ Prime対応' : '';
+
+    let scoreHtml = '';
+    if (score !== undefined) {
+      const scoreClass = score >= 80 ? 'score-excellent' : score >= 60 ? 'score-good' : 'score-fair';
+      scoreHtml = `<div class="competitor-score-container"><span class="pickup-card-score ${scoreClass}">🏆 ${score}点</span></div>`;
+    }
+
+    const previewTag = hasInternalReview ? 'a' : 'div';
+    const previewAttrs = hasInternalReview && asin ? ` href="../${asin.toLowerCase()}/"` : '';
+
+    return `
+<${previewTag}${previewAttrs} class="competitor-preview">
+<img src="${imageUrl}" alt="${name}" class="competitor-preview-img">
+<div class="competitor-preview-info">
+${scoreHtml}${priceText ? `<span class="competitor-actual-price">${priceText}</span>` : ''}${primeText ? `<span class="competitor-prime">${primeText}</span>` : ''}${availabilityText ? `<span class="competitor-availability">📦 ${availabilityText}</span>` : ''}
+</div>
+</${previewTag}>`;
   }
 }
