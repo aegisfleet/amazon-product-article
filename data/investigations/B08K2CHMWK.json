@@ -1,8 +1,8 @@
 {
   "analysis": {
-    "productName": "ロジクール ワイヤレスキーボード K295GP (サイレント)",
+    "productName": "ロジクール ワイヤレスキーボード K295GP",
     "parentAsin": "B0FSR2751H",
-    "productDescription": "ベストセラーモデルK270の使い勝手はそのままに、独自のSilentTouchテクノロジーで操作音を90%削減した静音ワイヤレスキーボードです。",
+    "productDescription": "独自のSilentTouchテクノロジーにより操作音を90%削減した、耐水設計の静音ワイヤレスキーボードです。",
     "productUsage": [
       "Web会議中や深夜など静かな環境でのタイピング",
       "Unifyingレシーバーによるマウスとの同時接続（USBポート節約）",
@@ -44,7 +44,7 @@
       {
         "userType": "40代 プログラマー",
         "scenario": "メイン機でのコーディング",
-        "experience": "静音性は素晴らしいが、キータッチが少しフニャッとしていて、長時間のコーディングだと指に違和感を感じることがある。しっかりした打鍵感が欲しい人には物足りないかもしれない。",
+        "experience": "静音性は素晴らしいが、キータッチが少しフニャッとしていて、長時間のコーディングだと指に違和感を感じることがある。しっかりした打鍵感が欲しい人には物足りないかもしれない。（推測）",
         "sentiment": "mixed"
       }
     ],
@@ -66,7 +66,7 @@
         "credibility": "購入者レビュー"
       }
     ],
-    "lastInvestigated": "2026-01-19",
+    "lastInvestigated": "2026-03-04",
     "competitiveAnalysis": [
       {
         "name": "バッファロー BSKBW345BK (静音)",
@@ -131,16 +131,24 @@
       "scoreRationale": "[基本点: 70]\n[加点: +8] (静音性は同価格帯でトップクラス、会議や深夜作業に最適)\n[加点: +10] (3,000円強でこの機能・品質・保証期間はコスパが非常に高い)\n[加点: +5] (Unifying対応によりマウスとレシーバーを共有できる利便性)\n[減点: -3] (インジケーターランプの省略や、高級感に欠けるプラスチック筐体)\n[減点: -2] (メンブレン特有の柔らかい打鍵感は好みが分かれる)\n[合計: 88]"
     },
     "technicalSpecs": {
-      "connectivity": ["2.4GHzワイヤレス (Unifying)"],
+      "os": "Windows / ChromeOS (対応)",
+      "cpu": null,
+      "ram": null,
+      "storage": null,
+      "display": null,
+      "battery": {
+        "capacity": "最大24ヶ月",
+        "charging": "単4形乾電池 x 2"
+      },
+      "camera": null,
+      "connectivity": [
+        "2.4GHzワイヤレス (Unifying)"
+      ],
       "dimensions": {
+        "height": "18mm",
         "width": "441mm",
         "depth": "149mm",
-        "height": "18mm",
         "weight": "498g"
-      },
-      "battery": {
-        "type": "単4形乾電池 x 2",
-        "life": "最大24ヶ月"
       },
       "other": [
         "耐水設計",
@@ -148,13 +156,7 @@
         "キー配列: 108キー日本語レイアウト",
         "キーストローク: 3.2mm",
         "押下圧: 60g"
-      ],
-      "os": null,
-      "cpu": null,
-      "ram": null,
-      "storage": null,
-      "display": null,
-      "camera": null
+      ]
     }
   }
 }
