@@ -245,6 +245,13 @@
       }, err => {
         console.log('ServiceWorker registration failed: ', err);
       });
+
+      navigator.serviceWorker.addEventListener('message', event => {
+        if (event.data && event.data.type === 'UPDATE_AVAILABLE') {
+          console.log('New content available, reloading...');
+          window.location.reload();
+        }
+      });
     });
   }
 </script>

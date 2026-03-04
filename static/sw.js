@@ -52,7 +52,26 @@ globalThis.addEventListener('fetch', event => {
                 const fetchPromise = fetch(event.request).then(networkResponse => {
                     // 有効なレスポンスのみキャッシュを更新
                     if (networkResponse && networkResponse.status === 200 && networkResponse.type === 'basic') {
-                        cache.put(event.request, networkResponse.clone());
+                        const responseToCache = networkResponse.clone();
+                        cache.put(event.request, responseToCache);
+
+                        // HTMLリクエストの場合、更新があればクライアントに通知する
+                        if (cachedResponse && (event.request.mode === 'navigate' || (event.request.headers.get('accept') && event.request.headers.get('accept').includes('text/html')))) {
+                            Promise.all([
+                                cachedResponse.clone().text(),
+                                networkResponse.clone().text()
+                            ]).then(([cachedText, networkText]) => {
+                                if (cachedText !== networkText) {
+                                    globalThis.clients.matchAll().then(clients => {
+                                        clients.forEach(client => {
+                                            if (client.url === event.request.url) {
+                                                client.postMessage({ type: 'UPDATE_AVAILABLE' });
+                                            }
+                                        });
+                                    });
+                                }
+                            }).catch(err => console.error('Error comparing responses:', err));
+                        }
                     }
                     return networkResponse;
                 }).catch(() => {
