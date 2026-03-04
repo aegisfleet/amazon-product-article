@@ -1,7 +1,7 @@
 {
   "analysis": {
-    "productName": "Lenovo IdeaPad Flex 3i Gen8 Chromebook (12.2インチ/N100)",
-    "parentAsin": "B0FTSH5PJ9",
+    "productName": "Lenovo IdeaPad Flex 3i Gen8 Chromebook",
+    "parentAsin": "B0CCV3Q5V3",
     "productDescription": "インテル® プロセッサー N100を搭載し、大幅に性能向上した12.2インチの2-in-1 Chromebookです。",
     "productUsage": [
       "大学生や社会人のサブノートPC（レポート作成、資料作成）",
@@ -54,11 +54,11 @@
         "credibility": "中"
       }
     ],
-    "lastInvestigated": "2026-01-19",
+    "lastInvestigated": "2026-03-05",
     "competitiveAnalysis": [
       {
         "name": "HP Chromebook 14a (N100)",
-        "asin": "B0DBKY4WPY",
+        "asin": "B0DBL166YF",
         "priceComparison": "本機より約6,000円高い",
         "featureComparison": [
           "14インチの大画面だが解像度は一般的",
@@ -101,42 +101,36 @@
         "充電ポートが片側にしかなく取り回しに制限がある"
       ],
       "score": 97,
-      "scoreRationale": "[基本点: 70]\n[性能・機能: +3] (N100搭載で快適動作(+5)、WUXGA液晶(+3)、メモリ4GB(-3)、USI非対応(-2))\n[コストパフォーマンス: +15] (3万円台でこのスペックは競合を圧倒しており最高評価)\n[品質・デザイン: +2] (ビルドクオリティ良好、グレア液晶の反射はマイナスだが許容範囲)\n[ユーザー満足度: +5] (レビュー評価4.67と非常に高く、ユーザーの期待を超えている)\n[独自の強み: +2] (12.2インチ 16:10という絶妙なサイズ感と2-in-1の利便性)\n[合計: 97]"
+      "scoreRationale": "[基本点: 70]\n[加点: +5] (N100搭載で快適動作)\n[加点: +3] (WUXGA液晶で高画質)\n[減点: -3] (メモリ4GB)\n[減点: -2] (USI非対応)\n[加点: +15] (3万円台でこのスペックは競合を圧倒しており最高評価)\n[加点: +2] (ビルドクオリティ良好、グレア液晶の反射はマイナスだが許容範囲)\n[加点: +5] (レビュー評価4.67と非常に高く、ユーザーの期待を超えている)\n[加点: +2] (12.2インチ 16:10という絶妙なサイズ感と2-in-1の利便性)\n[合計: 97]"
     },
     "technicalSpecs": {
-      "cpu": "Intel Processor N100 (4コア/4スレッド)",
+      "os": "Chrome OS",
+      "cpu": "Intel Processor N100",
       "ram": "4GB LPDDR5",
       "storage": "64GB eMMC",
       "display": {
         "size": "12.2インチ",
-        "resolution": "1920x1200 (WUXGA)",
-        "type": "IPS液晶 (光沢/マルチタッチ対応)"
+        "resolution": "1920x1200",
+        "type": "IPS液晶"
       },
       "battery": {
-        "capacity": "約12.0時間駆動"
+        "capacity": "12.0時間",
+        "charging": null
       },
       "gpu": "Intel UHD Graphics",
       "connectivity": [
-        "Wi-Fi 6 (IEEE802.11ax)",
+        "Wi-Fi 6",
         "Bluetooth 5.1"
       ],
       "dimensions": {
+        "height": "18.4mm",
         "width": "284mm",
         "depth": "210mm",
-        "height": "18.4mm",
         "weight": "1.25kg"
       },
-      "ports": [
-        "USB 3.2 Gen2 Type-C x1 (PD/DisplayPort出力対応)",
-        "USB 3.2 Gen1 Type-A x2",
-        "HDMI",
-        "microSDメディアカードリーダー",
-        "マイクロホン/ヘッドホン・コンボ・ジャック"
-      ],
       "other": [
-        "360度回転ヒンジ (2-in-1)",
-        "プライバシーシャッター付きWebカメラ",
-        "自動更新ポリシー: 2033年6月まで"
+        "360度回転ヒンジ",
+        "USB 3.2 Gen2 Type-C (PD/DP対応) x1"
       ]
     }
   }
