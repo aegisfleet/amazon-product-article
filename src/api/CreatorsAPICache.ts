@@ -111,7 +111,10 @@ export class CreatorsAPICache {
    * Returns null if not found, expired, or marked invalid
    * @param options.ignoreExpiration If true, returns valid data even if expired
    */
-  public get(asin: string, options: { ignoreExpiration?: boolean; allowInvalid?: boolean } = {}): ProductDetail | null {
+  public get(
+    asin: string,
+    options: { ignoreExpiration?: boolean; allowInvalid?: boolean } = {},
+  ): ProductDetail | null {
     const entry = this.cache[asin];
 
     if (!entry) {
@@ -285,7 +288,10 @@ export class CreatorsAPICache {
     const existing = this.cache[asin];
     // Same logic as markInvalid: if not expired, don't overwrite.
     // If expired, overwrite status but preserve data.
-    if (existing?.status === 'valid' && Date.now() - existing.timestamp <= this.ttl) {
+    if (
+      existing?.status === 'valid' &&
+      Date.now() - existing.timestamp <= this.ttl
+    ) {
       this.logger.info(
         `Not marking ASIN ${asin} as permanent_invalid because a non-expired valid cache entry already exists.`,
       );

@@ -793,7 +793,9 @@ ${recommendationMessage}`;
 
     if (Array.isArray(value)) {
       // 配列内の各要素をフォーマットし、空（プレースホルダー等）を除外
-      const formatted = value.map((item) => this.formatSpecValue(item, category)).filter((item) => item !== '');
+      const formatted = value
+        .map((item) => this.formatSpecValue(item, category))
+        .filter((item) => item !== '');
       return formatted.join(', ');
     }
 

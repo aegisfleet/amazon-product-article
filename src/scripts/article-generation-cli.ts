@@ -10,11 +10,11 @@
  *   GITHUB_REPOSITORY - GitHubリポジトリ（owner/repo形式）
  */
 
+import dotenv from 'dotenv';
 import { exec } from 'node:child_process';
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import { promisify } from 'node:util';
-import dotenv from 'dotenv';
 import { CreatorsAPICache } from '../api/CreatorsAPICache';
 import { CreatorsAPIClient } from '../api/CreatorsAPIClient';
 import { ArticleGenerator } from '../article/ArticleGenerator';
