@@ -110,7 +110,7 @@ export class ConfigManager {
       jules: {
         apiKey: this.getRequiredEnvVar('JULES_API_KEY'),
         baseUrl: this.getEnvVar('JULES_BASE_URL', 'https://api.jules.google.com'),
-        timeout: parseInt(this.getEnvVar('JULES_TIMEOUT', '30000'), 10),
+        timeout: Number.parseInt(this.getEnvVar('JULES_TIMEOUT', '30000'), 10),
       },
       github: {
         token: this.getRequiredEnvVar('GITHUB_TOKEN'),
@@ -119,17 +119,17 @@ export class ConfigManager {
       },
       system: {
         logLevel: this.getEnvVar('LOG_LEVEL', 'info'),
-        retryAttempts: parseInt(this.getEnvVar('RETRY_ATTEMPTS', '3'), 10),
-        retryDelay: parseInt(this.getEnvVar('RETRY_DELAY', '1000'), 10),
-        maxConcurrentRequests: parseInt(this.getEnvVar('MAX_CONCURRENT_REQUESTS', '5'), 10),
+        retryAttempts: Number.parseInt(this.getEnvVar('RETRY_ATTEMPTS', '3'), 10),
+        retryDelay: Number.parseInt(this.getEnvVar('RETRY_DELAY', '1000'), 10),
+        maxConcurrentRequests: Number.parseInt(this.getEnvVar('MAX_CONCURRENT_REQUESTS', '5'), 10),
       },
       productSearch: {
         categories: this.parseListEnvVar('PRODUCT_CATEGORIES', ''),
-        maxResultsPerCategory: parseInt(this.getEnvVar('MAX_RESULTS_PER_CATEGORY', '10'), 10),
+        maxResultsPerCategory: Number.parseInt(this.getEnvVar('MAX_RESULTS_PER_CATEGORY', '10'), 10),
       },
       articleGeneration: {
         outputPath: this.getEnvVar('ARTICLE_OUTPUT_PATH', './articles'),
-        minWordCount: parseInt(this.getEnvVar('MIN_WORD_COUNT', '2000'), 10),
+        minWordCount: Number.parseInt(this.getEnvVar('MIN_WORD_COUNT', '2000'), 10),
         includeImages: this.getEnvVar('INCLUDE_IMAGES', 'true') === 'true',
       },
     };

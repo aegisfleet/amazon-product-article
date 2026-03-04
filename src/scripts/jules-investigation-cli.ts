@@ -43,7 +43,7 @@ function getOptions(): CLIOptions {
     throw new Error('Missing required environment variable: JULES_SOURCE (e.g., sources/github/owner/repo)');
   }
 
-  const maxProducts = parseInt(process.env.MAX_INVESTIGATION_PRODUCTS || '30', 10);
+  const maxProducts = Number.parseInt(process.env.MAX_INVESTIGATION_PRODUCTS || '30', 10);
 
   return {
     apiKey,
