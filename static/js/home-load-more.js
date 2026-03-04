@@ -26,7 +26,7 @@ function sanitizeUrl(url) {
     const str = String(url).trim();
     if (!str) return null;
     try {
-        const parsed = new URL(str, window.location.origin);
+        const parsed = new URL(str, globalThis.location.origin);
         const protocol = parsed.protocol.toLowerCase();
         // Allow only http and https URLs
         if (protocol === 'http:' || protocol === 'https:') {
@@ -34,6 +34,7 @@ function sanitizeUrl(url) {
         }
     } catch (e) {
         // If URL construction fails, treat as invalid
+        console.warn('URL sanitization failed:', e);
         return null;
     }
     return null;
@@ -57,12 +58,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
     if (!allPickupData || allPickupData.length === 0) return;
 
-    shuffleBtn.addEventListener('click', function () {
+    function shuffleAndRenderPickup(animateButton = false) {
         // Fisher-Yates shuffle with crypto
         const shuffled = [...allPickupData];
         const array = new Uint32Array(1);
         for (let i = shuffled.length - 1; i > 0; i--) {
-            window.crypto.getRandomValues(array);
+            globalThis.crypto.getRandomValues(array);
             const j = Math.floor((array[0] / 4294967296) * (i + 1));
             [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
         }
@@ -79,10 +80,10 @@ document.addEventListener('DOMContentLoaded', function () {
             cardLink.href = safeUrl || '#';
             cardLink.className = 'pickup-card';
             if (item.score !== undefined && item.score !== null) {
-                cardLink.setAttribute('data-score', String(item.score));
+                cardLink.dataset.score = String(item.score);
             }
             if (item.price) {
-                cardLink.setAttribute('data-price', String(item.price));
+                cardLink.dataset.price = String(item.price);
             }
 
             // Image container
@@ -91,7 +92,7 @@ document.addEventListener('DOMContentLoaded', function () {
             if (item.image) {
                 const img = document.createElement('img');
                 img.src = item.image;
-                img.alt = item.title != null ? String(item.title) : '';
+                img.alt = item.title == null ? '' : String(item.title);
                 img.loading = 'lazy';
                 imageContainer.appendChild(img);
             } else {
@@ -146,8 +147,17 @@ document.addEventListener('DOMContentLoaded', function () {
             pickupGrid.appendChild(cardLink);
         });
 
-        // Animation for button
-        shuffleBtn.classList.add('shuffle-animation');
-        setTimeout(() => shuffleBtn.classList.remove('shuffle-animation'), 300);
+        if (animateButton && shuffleBtn) {
+            // Animation for button
+            shuffleBtn.classList.add('shuffle-animation');
+            setTimeout(() => shuffleBtn.classList.remove('shuffle-animation'), 300);
+        }
+    }
+
+    shuffleBtn.addEventListener('click', function () {
+        shuffleAndRenderPickup(true);
     });
+
+    // PWA等でキャッシュ表示された際にも毎回オススメが変わるよう、初回表示時に自動シャッフル
+    shuffleAndRenderPickup(false);
 });
