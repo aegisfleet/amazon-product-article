@@ -373,6 +373,13 @@ export class CategoryNormalizer {
     if (
       blockList.some((block) => {
         if (name.toLowerCase().includes(block.toLowerCase())) {
+          // Exception: "ベビーカー" is valid even if "ベビー" is blocked
+          if (block === 'ベビー' && name === 'ベビーカー') {
+            return false;
+          }
+          if (block === 'Baby' && name === 'Baby Strollers') {
+            return false;
+          }
           return true;
         }
         return false;
