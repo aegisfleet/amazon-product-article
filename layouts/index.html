@@ -85,6 +85,76 @@
         "price": "{{ $item.Params.price }}"
     }{{ end }}]
     </script>
+    <script>
+        (function () {
+            const grid = document.getElementById('pickup-grid');
+            const dataEl = document.getElementById('pickup-data');
+            if (!grid || !dataEl) return;
+
+            let allPickupData;
+            try {
+                allPickupData = JSON.parse(dataEl.textContent);
+            } catch {
+                return;
+            }
+            if (!allPickupData || allPickupData.length === 0) return;
+
+            function escapeHtml(unsafe) {
+                return String(unsafe || '').replaceAll(/[&<"'>]/g, function (m) {
+                    return {
+                        '&': '&amp;',
+                        '<': '&lt;',
+                        '>': '&gt;',
+                        '"': '&quot;',
+                        "'": '&#039;'
+                    }[m];
+                });
+            }
+
+            globalThis.shuffleAndRenderPickup = function () {
+                const shuffled = [...allPickupData];
+                const array = new Uint32Array(1);
+                for (let i = shuffled.length - 1; i > 0; i--) {
+                    globalThis.crypto.getRandomValues(array);
+                    const j = Math.floor((array[0] / 4294967296) * (i + 1));
+                    [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+                }
+                const selected = shuffled.slice(0, 6);
+
+                let htmlContent = '';
+                for (const item of selected) {
+                    const score = Number(item.score);
+                    let scoreClass = 'score-fair';
+                    if (score >= 80) scoreClass = 'score-excellent';
+                    else if (score >= 60) scoreClass = 'score-good';
+
+                    const imageHtml = item.image
+                        ? `<img src="${escapeHtml(item.image)}" alt="${escapeHtml(item.title)}" loading="lazy" decoding="async">`
+                        : `<div class="pickup-card-noimage">画像なし</div>`;
+
+                    const priceHtml = item.price
+                        ? `<span class="pickup-card-price">${escapeHtml(item.price)}</span>`
+                        : '';
+
+                    htmlContent += `
+                    <a href="${escapeHtml(item.url)}" class="pickup-card" data-score="${score}" data-price="${escapeHtml(item.price)}">
+                        <div class="pickup-card-image">${imageHtml}</div>
+                        <div class="pickup-card-content">
+                            <p class="pickup-card-title">${escapeHtml(item.title)}</p>
+                            <div class="pickup-card-meta">
+                                <span class="pickup-card-score ${scoreClass}">🏆 ${score}点</span>
+                                ${priceHtml}
+                            </div>
+                        </div>
+                    </a>`;
+                }
+                grid.innerHTML = htmlContent;
+            };
+
+            // 初回表示時に同期的にシャッフルして再描画（ちらつき防止）
+            globalThis.shuffleAndRenderPickup();
+        })();
+    </script>
     {{ end }}
 
     <!-- Search Section -->
