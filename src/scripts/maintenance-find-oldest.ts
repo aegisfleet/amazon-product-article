@@ -16,7 +16,7 @@ async function main(): Promise<void> {
   const args = process.argv.slice(2);
   const countIndex = args.indexOf('--count');
   const limitValue = countIndex !== -1 ? args[countIndex + 1] : undefined;
-  const limit = limitValue ? parseInt(limitValue, 10) : 1;
+  const limit = limitValue ? Number.parseInt(limitValue, 10) : 1;
 
   const dirIndex = args.indexOf('--dir');
   let dirValue: string | undefined;

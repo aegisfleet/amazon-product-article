@@ -1204,7 +1204,12 @@ ${recommendationMessage}`;
 
   private generateSentimentAnalysis(reviewAnalysis: ReviewAnalysisResult): string {
     const sentiment = reviewAnalysis.overallSentiment;
-    const sentimentText = sentiment.overall > 0.3 ? 'ポジティブ' : sentiment.overall < -0.3 ? 'ネガティブ' : '中立';
+    let sentimentText = '中立';
+    if (sentiment.overall > 0.3) {
+      sentimentText = 'ポジティブ';
+    } else if (sentiment.overall < -0.3) {
+      sentimentText = 'ネガティブ';
+    }
 
     return `
 ### 📊 レビュー傾向分析
@@ -1355,7 +1360,7 @@ ${recommendationMessage}`;
       // 「加点」固定ではなく、+数字をトリガーにして加点を識別
       const plusMatch = line.match(/\[[^\]]+:\s*\+(\d+)\]\s*(.*)/);
       if (plusMatch) {
-        const points = parseInt(plusMatch[1] ?? '0', 10);
+        const points = Number.parseInt(plusMatch[1] ?? '0', 10);
         const desc = this.cleanRationaleDesc(plusMatch[2] || '');
 
         if (!topPlus || points > topPlus.points) {
@@ -1367,7 +1372,7 @@ ${recommendationMessage}`;
       // 「減点」固定ではなく、-数字をトリガーにして減点を識別
       const minusMatch = line.match(/\[[^\]]+:\s*-(\d+)\]\s*(.*)/);
       if (minusMatch) {
-        const points = parseInt(minusMatch[1] ?? '0', 10);
+        const points = Number.parseInt(minusMatch[1] ?? '0', 10);
         const desc = this.cleanRationaleDesc(minusMatch[2] || '');
 
         if (!topMinus || points > topMinus.points) {
@@ -1436,18 +1441,27 @@ ${recommendationMessage}`;
 
     let scoreHtml = '';
     if (score !== undefined) {
-      const scoreClass = score >= 80 ? 'score-excellent' : score >= 60 ? 'score-good' : 'score-fair';
+      let scoreClass = 'score-fair';
+      if (score >= 80) {
+        scoreClass = 'score-excellent';
+      } else if (score >= 60) {
+        scoreClass = 'score-good';
+      }
       scoreHtml = `<div class="competitor-score-container"><span class="pickup-card-score ${scoreClass}">🏆 ${score}点</span></div>`;
     }
 
     const previewTag = hasInternalReview ? 'a' : 'div';
     const previewAttrs = hasInternalReview && asin ? ` href="../${asin.toLowerCase()}/"` : '';
 
+    const actualPriceHtml = priceText ? `<span class="competitor-actual-price">${priceText}</span>` : '';
+    const primeHtml = primeText ? `<span class="competitor-prime">${primeText}</span>` : '';
+    const availabilityHtml = availabilityText ? `<span class="competitor-availability">📦 ${availabilityText}</span>` : '';
+
     return `
 <${previewTag}${previewAttrs} class="competitor-preview">
 <img src="${imageUrl}" alt="${name}" class="competitor-preview-img">
 <div class="competitor-preview-info">
-${scoreHtml}${priceText ? `<span class="competitor-actual-price">${priceText}</span>` : ''}${primeText ? `<span class="competitor-prime">${primeText}</span>` : ''}${availabilityText ? `<span class="competitor-availability">📦 ${availabilityText}</span>` : ''}
+${scoreHtml}${actualPriceHtml}${primeHtml}${availabilityHtml}
 </div>
 </${previewTag}>`;
   }

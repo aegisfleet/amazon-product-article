@@ -14,9 +14,9 @@
  *   INPUT_ASINS - 直接指定するASIN（カンマ区切り、オプション）
  */
 
+import dotenv from 'dotenv';
 import fs from 'node:fs/promises';
 import path from 'node:path';
-import dotenv from 'dotenv';
 import { CreatorsAPIClient } from '../api/CreatorsAPIClient';
 import { ProductSearcher, type SearchSession } from '../search/ProductSearcher';
 import { setGitHubOutput } from '../utils/github-actions';
@@ -64,15 +64,15 @@ function getOptions(): CLIOptions {
   const categories =
     categoriesEnv === 'all' || categoriesEnv === '' ? [] : categoriesEnv.split(',').map((c) => c.trim());
 
-  const maxResults = parseInt(process.env.MAX_RESULTS_PER_CATEGORY || '10', 10);
+  const maxResults = Number.parseInt(process.env.MAX_RESULTS_PER_CATEGORY || '10', 10);
 
   // Manual ASIN input from GitHub Actions input or environment variable
   const inputAsinsEnv = process.env.INPUT_ASINS;
   const asins = inputAsinsEnv
     ? inputAsinsEnv
-        .split(',')
-        .map((a) => a.trim())
-        .filter(Boolean)
+      .split(',')
+      .map((a) => a.trim())
+      .filter(Boolean)
     : undefined;
 
   const result: CLIOptions = {
