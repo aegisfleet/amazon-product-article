@@ -239,7 +239,7 @@
 <!-- Service Worker Registration -->
 <script>
   if ('serviceWorker' in navigator) {
-    window.addEventListener('load', () => {
+    globalThis.addEventListener('load', () => {
       navigator.serviceWorker.register('/amazon-product-article/sw.js').then(registration => {
         console.log('ServiceWorker registration successful with scope: ', registration.scope);
       }, err => {
@@ -249,7 +249,7 @@
       navigator.serviceWorker.addEventListener('message', event => {
         if (event.data && event.data.type === 'UPDATE_AVAILABLE') {
           console.log('New content available, reloading...');
-          window.location.reload();
+          globalThis.location.reload();
         }
       });
     });
