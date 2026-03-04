@@ -165,9 +165,7 @@ async function main(): Promise<void> {
   }
 }
 
-try {
-  await main();
-} catch (error) {
+main().catch((error) => {
   console.error('Unhandled error:', error);
   process.exit(1);
-}
+});

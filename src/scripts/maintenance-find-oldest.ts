@@ -15,7 +15,7 @@ const logger = Logger.getInstance();
 async function main(): Promise<void> {
   const args = process.argv.slice(2);
   const countIndex = args.indexOf('--count');
-  const limitValue = countIndex === -1 ? undefined : args[countIndex + 1];
+  const limitValue = countIndex !== -1 ? args[countIndex + 1] : undefined;
   const limit = limitValue ? Number.parseInt(limitValue, 10) : 1;
 
   const dirIndex = args.indexOf('--dir');
@@ -88,9 +88,7 @@ async function main(): Promise<void> {
   }
 }
 
-try {
-  await main();
-} catch (error) {
+main().catch((error) => {
   console.error('Unhandled error:', error);
   process.exit(1);
-}
+});
