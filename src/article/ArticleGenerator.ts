@@ -1417,7 +1417,7 @@ ${recommendationMessage}`;
       if (this.investigationCache.size >= 1000) this.investigationCache.clear();
       this.investigationCache.set(asin, null);
 
-      if (error instanceof Error && (error as any).code !== 'ENOENT') {
+      if (error instanceof Error && (error as { code?: string }).code !== 'ENOENT') {
         this.logger.debug(`Failed to load competitor investigation for ${asin}`, error);
       }
       return null;
