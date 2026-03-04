@@ -1,4 +1,4 @@
-const CACHE_NAME = 'apa-cache-v1';
+const CACHE_NAME = 'apa-cache-v2';
 const urlsToCache = [
     '/amazon-product-article/',
     '/amazon-product-article/css/variables.css',
@@ -35,36 +35,57 @@ globalThis.addEventListener('activate', event => {
 });
 
 /**
- * HTMLレスポンスを比較し、変更があればクライアントに通知する
+ * HTMLリクエストかどうかを判定する
  */
-async function notifyClientsIfUpdate(request, cachedResponse, networkResponse) {
-    if (!cachedResponse) return;
+function isNavigationRequest(request) {
+    return request.mode === 'navigate' ||
+        (request.headers.get('accept')?.includes('text/html') ?? false);
+}
 
-    const isHtml = request.mode === 'navigate' ||
-        (request.headers.get('accept') && request.headers.get('accept').includes('text/html'));
-
-    if (!isHtml) return;
-
+/**
+ * Network First 戦略（HTMLページ用）
+ * ネットワークを優先し、失敗時のみキャッシュにフォールバック
+ */
+async function networkFirst(request, cache) {
     try {
-        const [cachedText, networkText] = await Promise.all([
-            cachedResponse.clone().text(),
-            networkResponse.clone().text()
-        ]);
-
-        if (cachedText !== networkText) {
-            const clients = await globalThis.clients.matchAll();
-            clients.forEach(client => {
-                if (client.url === request.url) {
-                    client.postMessage({ type: 'UPDATE_AVAILABLE' });
-                }
-            });
+        const networkResponse = await fetch(request);
+        if (networkResponse && networkResponse.status === 200 && networkResponse.type === 'basic') {
+            await cache.put(request, networkResponse.clone());
         }
+        return networkResponse;
     } catch {
-        // 例外を無視または適切に処理
+        // ネットワークエラー時はキャッシュにフォールバック
+        const cachedResponse = await cache.match(request);
+        return cachedResponse || new Response('オフラインです', {
+            status: 503,
+            headers: { 'Content-Type': 'text/html; charset=UTF-8' }
+        });
     }
 }
 
-// Stale-While-Revalidate 戦略
+/**
+ * Stale-While-Revalidate 戦略（静的リソース用）
+ * キャッシュを即座に返し、バックグラウンドでネットワークから更新
+ */
+async function staleWhileRevalidate(request, cache) {
+    const cachedResponse = await cache.match(request);
+
+    const fetchPromise = (async () => {
+        try {
+            const networkResponse = await fetch(request);
+            if (networkResponse && networkResponse.status === 200 && networkResponse.type === 'basic') {
+                await cache.put(request, networkResponse.clone());
+            }
+            return networkResponse;
+        } catch {
+            return cachedResponse;
+        }
+    })();
+
+    // キャッシュがあればそれを返し、バックグラウンドで更新。なければネットワークを待つ。
+    return cachedResponse || fetchPromise;
+}
+
 globalThis.addEventListener('fetch', event => {
     // 外部オリジン（Google Fonts等）へのリクエストはネットワーク優先
     if (!event.request.url.startsWith(globalThis.location.origin)) {
@@ -73,27 +94,12 @@ globalThis.addEventListener('fetch', event => {
 
     event.respondWith((async () => {
         const cache = await caches.open(CACHE_NAME);
-        const cachedResponse = await cache.match(event.request);
 
-        const fetchPromise = (async () => {
-            try {
-                const networkResponse = await fetch(event.request);
-
-                // 有効なレスポンスのみキャッシュを更新
-                if (networkResponse && networkResponse.status === 200 && networkResponse.type === 'basic') {
-                    await cache.put(event.request, networkResponse.clone());
-
-                    // HTMLリクエストの場合、更新チェックを実行（非同期）
-                    notifyClientsIfUpdate(event.request, cachedResponse, networkResponse);
-                }
-                return networkResponse;
-            } catch {
-                // ネットワークエラー時はキャッシュを返す
-                return cachedResponse;
-            }
-        })();
-
-        // キャッシュがあればそれを返し、バックグラウンドで更新。なければネットワークを待つ。
-        return cachedResponse || fetchPromise;
+        // HTMLページ: Network First（常に最新コンテンツを表示）
+        // 静的リソース: Stale-While-Revalidate（高速表示を優先）
+        if (isNavigationRequest(event.request)) {
+            return networkFirst(event.request, cache);
+        }
+        return staleWhileRevalidate(event.request, cache);
     })());
 });
