@@ -54,8 +54,8 @@ export interface SystemConfig {
 export class ConfigManager {
   private static instance: ConfigManager;
   private config: SystemConfig | null = null;
-  private logger = Logger.getInstance();
-  private static skipDotenv = false;
+  private readonly logger = Logger.getInstance();
+  private static readonly skipDotenv = false;
 
   private constructor() {
     // Skip loading .env file in test environment to avoid overwriting test-defined env vars
