@@ -48,116 +48,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
     if (!shuffleBtn || !pickupGrid || !pickupDataElement) return;
 
-    let allPickupData;
-    try {
-        allPickupData = JSON.parse(pickupDataElement.textContent);
-    } catch (e) {
-        console.error('Failed to parse pickup data:', e);
-        return;
-    }
-
-    if (!allPickupData || allPickupData.length === 0) return;
-
-    function shuffleAndRenderPickup(animateButton = false) {
-        // Fisher-Yates shuffle with crypto
-        const shuffled = [...allPickupData];
-        const array = new Uint32Array(1);
-        for (let i = shuffled.length - 1; i > 0; i--) {
-            globalThis.crypto.getRandomValues(array);
-            const j = Math.floor((array[0] / 4294967296) * (i + 1));
-            [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
-        }
-        const selected = shuffled.slice(0, 6);
-
-        // Regenerate HTML using safe DOM APIs
-        // Clear existing content
-        pickupGrid.innerHTML = '';
-
-        selected.forEach(item => {
-            // Create anchor card
-            const cardLink = document.createElement('a');
-            const safeUrl = sanitizeUrl(item.url);
-            cardLink.href = safeUrl || '#';
-            cardLink.className = 'pickup-card';
-            if (item.score !== undefined && item.score !== null) {
-                cardLink.dataset.score = String(item.score);
-            }
-            if (item.price) {
-                cardLink.dataset.price = String(item.price);
-            }
-
-            // Image container
-            const imageContainer = document.createElement('div');
-            imageContainer.className = 'pickup-card-image';
-            if (item.image) {
-                const img = document.createElement('img');
-                img.src = item.image;
-                img.alt = item.title == null ? '' : String(item.title);
-                img.loading = 'lazy';
-                imageContainer.appendChild(img);
-            } else {
-                const noImageDiv = document.createElement('div');
-                noImageDiv.className = 'pickup-card-noimage';
-                noImageDiv.textContent = '画像なし';
-                imageContainer.appendChild(noImageDiv);
-            }
-
-            // Content container
-            const contentContainer = document.createElement('div');
-            contentContainer.className = 'pickup-card-content';
-
-            const titleP = document.createElement('p');
-            titleP.className = 'pickup-card-title';
-            if (item.title != null) {
-                titleP.textContent = String(item.title);
-            }
-            contentContainer.appendChild(titleP);
-
-            const metaDiv = document.createElement('div');
-            metaDiv.className = 'pickup-card-meta';
-
-            const scoreSpan = document.createElement('span');
-            scoreSpan.className = 'pickup-card-score';
-            if (item.score !== undefined && item.score !== null) {
-                const scoreVal = Number(item.score);
-                if (scoreVal >= 80) {
-                    scoreSpan.classList.add('score-excellent');
-                } else if (scoreVal >= 60) {
-                    scoreSpan.classList.add('score-good');
-                } else {
-                    scoreSpan.classList.add('score-fair');
-                }
-                scoreSpan.textContent = `🏆 ${item.score}点`;
-            }
-            metaDiv.appendChild(scoreSpan);
-
-            if (item.price) {
-                const priceSpan = document.createElement('span');
-                priceSpan.className = 'pickup-card-price';
-                priceSpan.textContent = String(item.price);
-                metaDiv.appendChild(priceSpan);
-            }
-
-            contentContainer.appendChild(metaDiv);
-
-            // Assemble card
-            cardLink.appendChild(imageContainer);
-            cardLink.appendChild(contentContainer);
-
-            pickupGrid.appendChild(cardLink);
-        });
-
-        if (animateButton && shuffleBtn) {
-            // Animation for button
-            shuffleBtn.classList.add('shuffle-animation');
-            setTimeout(() => shuffleBtn.classList.remove('shuffle-animation'), 300);
-        }
-    }
-
     shuffleBtn.addEventListener('click', function () {
-        shuffleAndRenderPickup(true);
-    });
+        if (typeof globalThis.shuffleAndRenderPickup === 'function') {
+            globalThis.shuffleAndRenderPickup();
+        }
 
-    // PWA等でキャッシュ表示された際にも毎回オススメが変わるよう、初回表示時に自動シャッフル
-    shuffleAndRenderPickup(false);
+        // Animation for button
+        shuffleBtn.classList.add('shuffle-animation');
+        setTimeout(() => shuffleBtn.classList.remove('shuffle-animation'), 300);
+    });
 });
