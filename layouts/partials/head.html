@@ -11,8 +11,6 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <meta name="color-scheme" content="light dark">
-<meta id="pwa-theme-color" name="theme-color" content="#F9FAFB" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#111827" media="(prefers-color-scheme: dark)">
 
 <meta name="description"
   content="{{ if .Description }}{{ .Description }}{{ else if .IsPage }}{{ .Summary | truncate 160 }}{{ else }}{{ .Site.Params.description }}{{ end }}">
@@ -43,7 +41,6 @@
 <!-- Favicon -->
 <link rel="icon" type="image/png" href="{{ `favicon.png` | relURL }}">
 <link rel="apple-touch-icon" href="{{ `apple-touch-icon.png` | relURL }}">
-<link rel="manifest" href="{{ `manifest.json` | relURL }}">
 
 <!-- Google Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -66,12 +63,6 @@
     const theme = savedTheme || (systemDark ? 'dark' : 'light');
 
     document.documentElement.dataset.theme = theme;
-
-    // スクリプト読み込み前にステータスバーの色を設定
-    const metas = document.querySelectorAll('meta[name="theme-color"]');
-    metas.forEach(meta => {
-      meta.setAttribute('content', theme === 'dark' ? '#111827' : '#F9FAFB');
-    });
   })();
 </script>
 <script src="{{ `js/theme.js` | relURL }}" defer></script>
@@ -234,17 +225,4 @@
   {{ end }}
   ]
 }
-</script>
-
-<!-- Service Worker Registration -->
-<script>
-  if ('serviceWorker' in navigator) {
-    globalThis.addEventListener('load', () => {
-      navigator.serviceWorker.register('/amazon-product-article/sw.js').then(registration => {
-        console.log('ServiceWorker registration successful with scope: ', registration.scope);
-      }, err => {
-        console.log('ServiceWorker registration failed: ', err);
-      });
-    });
-  }
 </script>
