@@ -36,7 +36,7 @@ export function runGhCommand(args: string[], options: RunCommandOptions = {}): s
   // Note: We avoid logging the full environment or token
   logger.debug(`Running command: gh ${args.join(' ')}`);
 
-  // Ensure PATH is restricted to standard binary locations but includes common tools
+  // Prioritize safe standard binary locations but preserve the existing PATH
   const isWindows = process.platform === 'win32';
   const systemPath = isWindows
     ? `${process.env.SystemRoot}\\system32;${process.env.SystemRoot}`
