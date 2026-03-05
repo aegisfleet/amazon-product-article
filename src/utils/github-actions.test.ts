@@ -1,4 +1,6 @@
 import fs from 'node:fs/promises';
+import os from 'node:os';
+import path from 'node:path';
 import { setGitHubOutput } from './github-actions';
 import { Logger } from './Logger';
 
@@ -34,12 +36,13 @@ describe('setGitHubOutput', () => {
   });
 
   it('should write to GITHUB_OUTPUT file if env var is set', async () => {
-    process.env.GITHUB_OUTPUT = '/var/tmp/github_output';
+    const tempFile = path.join(os.tmpdir(), 'github_output');
+    process.env.GITHUB_OUTPUT = tempFile;
     const appendFileMock = fs.appendFile as jest.Mock;
 
     await setGitHubOutput('test-name', 'test-value');
 
-    expect(appendFileMock).toHaveBeenCalledWith('/var/tmp/github_output', 'test-name=test-value\n');
+    expect(appendFileMock).toHaveBeenCalledWith(tempFile, 'test-name=test-value\n');
     expect(loggerInfoSpy).toHaveBeenCalledWith('Set GitHub output: test-name=test-value');
   });
 

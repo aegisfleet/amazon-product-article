@@ -88,8 +88,18 @@ describe('runGhCommand', () => {
   });
 
   it('should pass environment variables', () => {
-    const env = { ...process.env, TEST_VAR: '1' };
+    const env = { ...process.env, TEST_VAR: '1', PATH: process.env.PATH || '' };
     runGhCommand(['pr', 'merge', '123'], { env });
+
+    const isWindows = process.platform === 'win32';
+    let expectedPath = '';
+    if (isWindows) {
+      const systemPath = `${process.env.SystemRoot}\\system32;${process.env.SystemRoot}`;
+      const commonPaths = ['C:\\Program Files\\GitHub CLI', 'C:\\Program Files (x86)\\GitHub CLI'];
+      expectedPath = [systemPath, ...commonPaths, env.PATH].filter(Boolean).join(';');
+    } else {
+      expectedPath = '/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/homebrew/bin';
+    }
 
     expect(spawnSync).toHaveBeenCalledWith(
       'gh',
@@ -97,7 +107,7 @@ describe('runGhCommand', () => {
       expect.objectContaining({
         env: {
           ...env,
-          PATH: '/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/homebrew/bin',
+          PATH: expectedPath,
         },
       }),
     );
