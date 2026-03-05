@@ -91,13 +91,18 @@ describe('runGhCommand', () => {
     const env = { ...process.env, TEST_VAR: '1' };
     runGhCommand(['pr', 'merge', '123'], { env });
 
+    const isWindows = process.platform === 'win32';
+    const expectedPath = isWindows
+      ? `${process.env.SystemRoot}\\system32;${process.env.SystemRoot}`
+      : '/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/homebrew/bin';
+
     expect(spawnSync).toHaveBeenCalledWith(
       'gh',
       ['pr', 'merge', '123'],
       expect.objectContaining({
         env: {
           ...env,
-          PATH: '/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/homebrew/bin',
+          PATH: expectedPath,
         },
       }),
     );

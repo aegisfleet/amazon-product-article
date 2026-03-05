@@ -1168,7 +1168,7 @@ ${recommendationMessage}`;
 
   private extractAffiliateLinks(content: string): AffiliateLink[] {
     const links: AffiliateLink[] = [];
-    const linkRegex = /\[([^\]]*?)\]\(([^)]*?)\)/g;
+    const linkRegex = /\[([^\]]+)\]\(([^)]+)\)/g;
     let match: RegExpExecArray | null;
     let position = 0;
 
@@ -1276,7 +1276,7 @@ ${recommendationMessage}`;
 
       // 加点: [任意のラベル: +13] 説明 または (説明)
       // 「加点」固定ではなく、+数字をトリガーにして加点を識別
-      const plusMatch = line.match(/\[[^\]]+:\s*\+(\d+)\]\s*(.*)/);
+      const plusMatch = line.match(/\[[^\]]{1,100}:\s*\+(\d+)\]\s*(.*)/);
       if (plusMatch) {
         const cleanDesc = this.cleanRationaleDesc(plusMatch[2] || '');
         parts.push(
@@ -1287,7 +1287,7 @@ ${recommendationMessage}`;
 
       // 減点: [任意のラベル: -5] 説明 または (説明)
       // 「減点」固定ではなく、-数字をトリガーにして減点を識別
-      const minusMatch = line.match(/\[[^\]]+:\s*-(\d+)\]\s*(.*)/);
+      const minusMatch = line.match(/\[[^\]]{1,100}:\s*-(\d+)\]\s*(.*)/);
       if (minusMatch) {
         const cleanDesc = this.cleanRationaleDesc(minusMatch[2] || '');
         parts.push(
@@ -1321,7 +1321,7 @@ ${recommendationMessage}`;
 
       // 任意のラベルでゼロ点のパターン: [任意のラベル: 0] 説明
       // 加点でも減点でもない中立的な評価項目
-      const zeroNeutralMatch = line.match(/\[[^\]]+:\s*0\]\s*(.*)/);
+      const zeroNeutralMatch = line.match(/\[[^\]]{1,100}:\s*0\]\s*(.*)/);
       if (zeroNeutralMatch) {
         const cleanDesc = this.cleanRationaleDesc(zeroNeutralMatch[1] || '');
         parts.push(`<div class="score-item score-neutral">➖ <span class="score-points">±0</span> ${cleanDesc}</div>`);
@@ -1358,7 +1358,7 @@ ${recommendationMessage}`;
     for (const line of lines) {
       // 加点: [任意のラベル: +13] (説明)
       // 「加点」固定ではなく、+数字をトリガーにして加点を識別
-      const plusMatch = line.match(/\[[^\]]+:\s*\+(\d+)\]\s*(.*)/);
+      const plusMatch = line.match(/\[[^\]]{1,100}:\s*\+(\d+)\]\s*(.*)/);
       if (plusMatch) {
         const points = Number.parseInt(plusMatch[1] ?? '0', 10);
         const desc = this.cleanRationaleDesc(plusMatch[2] || '');
@@ -1370,7 +1370,7 @@ ${recommendationMessage}`;
 
       // 減点: [任意のラベル: -5] (説明)
       // 「減点」固定ではなく、-数字をトリガーにして減点を識別
-      const minusMatch = line.match(/\[[^\]]+:\s*-(\d+)\]\s*(.*)/);
+      const minusMatch = line.match(/\[[^\]]{1,100}:\s*-(\d+)\]\s*(.*)/);
       if (minusMatch) {
         const points = Number.parseInt(minusMatch[1] ?? '0', 10);
         const desc = this.cleanRationaleDesc(minusMatch[2] || '');
@@ -1390,7 +1390,7 @@ ${recommendationMessage}`;
   private cleanRationaleDesc(desc: string): string {
     return desc
       .replaceAll(/<[^>]+>/g, ' ')
-      .replaceAll(/\s+/g, ' ')
+      .replaceAll(/\s+(?=\s)/g, '')
       .replace(/^[(（]/, '')
       .replace(/[)）]$/, '')
       .trim();

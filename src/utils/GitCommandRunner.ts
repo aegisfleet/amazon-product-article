@@ -37,9 +37,14 @@ export function runGhCommand(args: string[], options: RunCommandOptions = {}): s
   logger.debug(`Running command: gh ${args.join(' ')}`);
 
   // Ensure PATH is restricted to standard binary locations
+  const isWindows = process.platform === 'win32';
+  const safePath = isWindows
+    ? `${process.env.SystemRoot}\\system32;${process.env.SystemRoot}`
+    : '/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/homebrew/bin';
+
   const safeEnv = {
     ...env,
-    PATH: '/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/homebrew/bin',
+    PATH: safePath,
   };
 
   const spawnOptions: SpawnSyncOptions = {
