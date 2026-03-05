@@ -1,7 +1,7 @@
 {
   "analysis": {
-    "productName": "Amazon Kindle Colorsoft 16GB (2025)",
-    "parentAsin": "B0FTP6C1D2",
+    "productName": "Amazon Kindle Colorsoft 16GB (2025年発売)",
+    "parentAsin": "B0CX8MT2M2",
     "productDescription": "Kindle初のカラーディスプレイを搭載した電子書籍リーダーの16GB標準モデルです。コミックや雑誌、書籍の表紙をカラーで楽しめるほか、IPX8防水や色調調節ライトを備えています。",
     "productUsage": [
       "カラー版のマンガやウェブトゥーンの閲覧",
@@ -12,7 +12,7 @@
     ],
     "positivePoints": [
       "待望のカラーE-Inkディスプレイ搭載で表紙や挿絵が鮮やかに",
-      "Signature Edition(2024)で問題となった画面下部の黄ばみが解消されている",
+      "発売初期（2024年モデル）で問題となった画面下部の黄ばみが解消されている",
       "IPX8等級の防水対応で場所を選ばず使える",
       "ページめくりが高速で動作がスムーズ",
       "目に優しいフロントライトと色調調節機能"
@@ -51,12 +51,12 @@
         "credibility": "High"
       }
     ],
-    "lastInvestigated": "2026-01-19",
+    "lastInvestigated": "2026-03-06",
     "competitiveAnalysis": [
       {
         "name": "Kobo Libra Colour",
-        "asin": "B0DDXD92XC",
-        "priceComparison": "ほぼ同価格（約39,800円）だが、こちらは32GBでペンと物理ボタン付き",
+        "asin": "B0D5HSRM75",
+        "priceComparison": "同価格帯だが、こちらは32GBでペンと物理ボタン付き",
         "featureComparison": [
           "物理ページめくりボタンあり",
           "スタイラスペン（Kobo Stylus 2）による書き込み対応",
@@ -69,30 +69,30 @@
         ]
       },
       {
-        "name": "BOOX Go Color 7",
-        "asin": null,
-        "priceComparison": "価格は近いが、Android搭載で多機能",
+        "name": "Kobo Clara Colour",
+        "asin": "B0D5D1DXZY",
+        "priceComparison": "Colorsoftより安価（約26,800円）",
         "featureComparison": [
-          "Android OS搭載でKindle以外のアプリも利用可能",
-          "物理ページめくりボタンあり",
-          "MicroSDカードによるストレージ拡張が可能"
+          "6インチとやや小型",
+          "ストレージは同じ16GB",
+          "防水・色調調節ライト搭載"
         ],
         "differentiators": [
-          "アプリの自由度と拡張性",
-          "特定のエコシステムに縛られない"
+          "カラー表示に対応しながら手に取りやすい価格",
+          "よりコンパクトで軽量な本体"
         ]
       },
       {
-        "name": "Kindle Paperwhite (第12世代)",
-        "asin": null,
-        "priceComparison": "Colorsoftより安価",
+        "name": "Amazon Kindle Paperwhite (16GB)",
+        "asin": "B0CFPL6CFY",
+        "priceComparison": "Colorsoftより大幅に安価（約18,980円）",
         "featureComparison": [
           "白黒表示だがコントラストが高く文字が読みやすい",
-          "バッテリー持ちがさらに長い"
+          "バッテリー持ちが最大12週間とさらに長い"
         ],
         "differentiators": [
           "純粋な読書体験（文字中心）における優位性",
-          "コストパフォーマンス"
+          "圧倒的なコストパフォーマンス"
         ]
       }
     ],
@@ -113,28 +113,28 @@
         "ワイヤレス充電非対応"
       ],
       "score": 65,
-      "scoreRationale": "[基本点: 70]\n[加点: +5] (待望のカラー化と黄ばみ不具合の修正)\n[加点: +5] (Amazonエコシステムの利便性と防水性能)\n[減点: -10] (同価格帯の競合Koboと比較して機能・容量・操作性で見劣りする)\n[減点: -5] (白黒テキストの視認性が低下しており、読書専用機としての品質に妥協がある)\n[合計: 65]"
+      "scoreRationale": "[基本点: 70]\n[加点: +5] (待望のカラー化と初期ロットの黄ばみ不具合修正)\n[加点: +5] (Amazonエコシステムの利便性と防水性能)\n[減点: -10] (同価格帯の競合Kobo Libra Colourと比較して機能・容量・操作性で見劣りする)\n[減点: -5] (白黒テキストの視認性が低下しており、読書専用機としての品質に妥協がある)\n[合計: 65]"
     },
     "technicalSpecs": {
       "os": "Linuxベース (Kindle独自OS)",
       "cpu": "MediaTek Dual-core 2GHz",
       "ram": "1GB",
-      "storage": "16GB (ユーザー使用可能領域は約12-14GB)",
+      "storage": "16GB",
       "display": {
         "size": "7インチ",
         "resolution": "白黒300ppi / カラー150ppi",
         "type": "E Ink Kaleido 3 Color"
       },
       "battery": {
-        "capacity": "2310mAh",
+        "capacity": "2310mAh (推測値)",
         "charging": "USB-C (最大8週間持続)"
       },
       "camera": null,
       "dimensions": {
-        "height": "176.7mm",
+        "height": "176.8mm",
         "width": "127.5mm",
-        "depth": "7.8mm",
-        "weight": "215g (推測値)"
+        "depth": "7.9mm",
+        "weight": "213g"
       },
       "connectivity": [
         "Wi-Fi (2.4GHz/5GHz)",
