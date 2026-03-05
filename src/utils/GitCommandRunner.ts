@@ -44,11 +44,10 @@ export function runGhCommand(args: string[], options: RunCommandOptions = {}): s
 
   let safePath = systemPath;
   if (isWindows) {
-    // Add common GitHub CLI installation paths and include existing PATH
-    // while keeping system paths first for security
+    // Add common GitHub CLI installation paths
+    // Keep system paths first for security, then common installation paths
     const commonPaths = ['C:\\Program Files\\GitHub CLI', 'C:\\Program Files (x86)\\GitHub CLI'];
-    const existingPath = env.PATH || '';
-    safePath = [systemPath, ...commonPaths, existingPath].filter(Boolean).join(';');
+    safePath = [systemPath, ...commonPaths].filter(Boolean).join(';');
   }
 
   const safeEnv = {
