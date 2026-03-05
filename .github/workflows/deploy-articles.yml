@@ -99,10 +99,10 @@ jobs:
       run: hugo --minify
     
     - name: Setup Pages
-      uses: actions/configure-pages@983d7736d90e0b7366965287f3945398a65c9703 # v5.0.0
+      uses: actions/configure-pages@983d7736d9b0ae728b81ab479565c72886d7745b # v5.0.0
     
     - name: Upload artifact
-      uses: actions/upload-pages-artifact@450a1ca02717ec6e340798e13f412ef174828b14 # v3.0.1
+      uses: actions/upload-pages-artifact@56afc609e74202658d3ffba0e8f6dda462b719fa # v3.0.1
       with:
         path: 'public'
 
@@ -116,4 +116,4 @@ jobs:
     steps:
     - name: Deploy to GitHub Pages
       id: deployment
-      uses: actions/deploy-pages@d6db90164ad5cdad87edf826c8bb9007b0822601 # v4.0.5
+      uses: actions/deploy-pages@d6db90164ac5ed86f2b6aed7e0febac5b3c0c03e # v4.0.5
