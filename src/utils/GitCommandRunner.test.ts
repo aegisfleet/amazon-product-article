@@ -95,13 +95,8 @@ describe('runGhCommand', () => {
     let expectedPath = '';
     if (isWindows) {
       const systemPath = `${process.env.SystemRoot}\\system32;${process.env.SystemRoot}`;
-      const commonPaths = [
-        'C:\\Program Files\\GitHub CLI',
-        'C:\\Program Files (x86)\\GitHub CLI',
-      ];
-      expectedPath = [systemPath, ...commonPaths, env.PATH]
-        .filter(Boolean)
-        .join(';');
+      const commonPaths = ['C:\\Program Files\\GitHub CLI', 'C:\\Program Files (x86)\\GitHub CLI'];
+      expectedPath = [systemPath, ...commonPaths, env.PATH].filter(Boolean).join(';');
     } else {
       expectedPath = '/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/homebrew/bin';
     }

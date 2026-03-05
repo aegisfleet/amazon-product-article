@@ -1451,7 +1451,9 @@ ${recommendationMessage}`;
     const previewTag = hasInternalReview ? 'a' : 'div';
     const previewAttrs = hasInternalReview && asin ? ` href="../${asin.toLowerCase()}/"` : '';
 
-    const actualPriceHtml = priceText ? `<span class="competitor-actual-price">${this.escapeHtml(priceText)}</span>` : '';
+    const actualPriceHtml = priceText
+      ? `<span class="competitor-actual-price">${this.escapeHtml(priceText)}</span>`
+      : '';
     const primeHtml = primeText ? `<span class="competitor-prime">${this.escapeHtml(primeText)}</span>` : '';
     const availabilityHtml = availabilityText
       ? `<span class="competitor-availability">📦 ${this.escapeHtml(availabilityText)}</span>`
