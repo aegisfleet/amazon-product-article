@@ -1387,7 +1387,7 @@ ${recommendationMessage}`;
    */
   private cleanRationaleDesc(desc: string): string {
     return desc
-      .replaceAll(/<[^>\s]+>/g, ' ')
+      .replaceAll(/<[^>]*>/g, ' ')
       .replaceAll(/\s+(?=\s)/g, '')
       .replace(/^[(（]/, '')
       .replace(/[)）]$/, '')

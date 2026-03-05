@@ -50,9 +50,13 @@ export function runGhCommand(args: string[], options: RunCommandOptions = {}): s
     safePath = [systemPath, ...commonPaths].filter(Boolean).join(';');
   }
 
+  const delimiter = isWindows ? ';' : ':';
+  const originalPath = env.PATH || '';
+  const finalPath = [safePath, originalPath].filter(Boolean).join(delimiter);
+
   const safeEnv = {
     ...env,
-    PATH: safePath,
+    PATH: finalPath,
   };
 
   const spawnOptions: SpawnSyncOptions = {
