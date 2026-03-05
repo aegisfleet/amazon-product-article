@@ -1166,7 +1166,7 @@ ${recommendationMessage}`;
 
   private extractAffiliateLinks(content: string): AffiliateLink[] {
     const links: AffiliateLink[] = [];
-    const linkRegex = /\[([^\]]+)\]\(([^)]+)\)/g;
+    const linkRegex = /\[([^\]]+)\]\(([^)\s]+)\)/g;
     let match: RegExpExecArray | null;
     let position = 0;
 
@@ -1387,7 +1387,7 @@ ${recommendationMessage}`;
    */
   private cleanRationaleDesc(desc: string): string {
     return desc
-      .replaceAll(/<[^>]+>/g, ' ')
+      .replaceAll(/<[^>]*>/g, ' ')
       .replaceAll(/\s+(?=\s)/g, '')
       .replace(/^[(（]/, '')
       .replace(/[)）]$/, '')
