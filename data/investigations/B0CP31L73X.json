@@ -1,8 +1,8 @@
 {
   "analysis": {
-    "productName": "Amazon Kindle (第11世代) 2024年発売モデル 16GB ブラック",
-    "parentAsin": "B0DFFLN16X",
-    "productDescription": "Amazonの電子書籍リーダーKindleシリーズの中で最も軽量・コンパクトなエントリーモデル。2024年にリニューアルされ、ディスプレイの輝度とコントラストが向上した第11世代の最新版。",
+    "productName": "Amazon Kindle (16GB) 6インチディスプレイ ブラック 広告なし",
+    "parentAsin": "B0CP31L73X",
+    "productDescription": "Amazonの電子書籍リーダーKindleシリーズで最も軽量・コンパクトなエントリーモデル。300ppiの高解像度ディスプレイを搭載し、紙のように読みやすい読書専用端末。",
     "productUsage": [
       "通勤・通学時の読書（軽量で片手操作が容易）",
       "就寝前の読書（ダークモード対応で目に優しい）",
@@ -59,12 +59,12 @@
         "credibility": "Medium"
       }
     ],
-    "lastInvestigated": "2026-01-19",
+    "lastInvestigated": "2026-03-06",
     "competitiveAnalysis": [
       {
         "name": "Kobo Clara BW",
         "asin": "B0D4978BWY",
-        "priceComparison": "約22,800円（Kindleより約3,000円高い）",
+        "priceComparison": "約22,800円（Kindleより高価）",
         "featureComparison": [
           "防水機能 (IPX8) あり",
           "色調調節ライト (ComfortLight PRO) あり",
@@ -77,31 +77,31 @@
         ]
       },
       {
-        "name": "Kindle Paperwhite (第12世代)",
+        "name": "Amazon Kindle Paperwhite (16GB)",
         "asin": "B0CFPL6CFY",
-        "priceComparison": "約27,980円（Kindleより約8,000円高い）",
+        "priceComparison": "約27,980円（Kindleより高価）",
         "featureComparison": [
           "7インチディスプレイ",
           "防水機能あり",
           "色調調節ライトあり",
-          "ページめくり速度がさらに高速"
+          "ページめくり速度が高速"
         ],
         "differentiators": [
           "より大きな画面で読みやすい",
-          "防水と暖色ライトの全部入り"
+          "防水と暖色ライトを備えた上位モデル"
         ]
       },
       {
-        "name": "Kobo Clara Colour",
-        "asin": "B0FRSDQ9JN",
-        "priceComparison": "約26,800円",
+        "name": "Amazon Kindle Colorsoft シグニチャーエディション",
+        "asin": "B0CX8Y3CMG",
+        "priceComparison": "約43,980円（Kindleより大幅に高価）",
         "featureComparison": [
-          "カラーE Inkディスプレイ",
+          "7インチカラーディスプレイ",
           "防水あり",
-          "色調調節あり"
+          "色調調節ライトあり"
         ],
         "differentiators": [
-          "カラーで表紙や挿絵を楽しめる"
+          "カラーE Inkディスプレイで表紙や挿絵をカラーで楽しめる"
         ]
       }
     ],
@@ -121,8 +121,8 @@
         "色調調節（暖色）がない",
         "競合と比べてコスパがやや劣る"
       ],
-      "score": 72,
-      "scoreRationale": "[基本点: 70]\n[性能・機能: -2] (防水・色調調節がないため減点だが、ディスプレイ品質向上で一部相殺)\n[コストパフォーマンス: -3] (値上がりし、防水ありの競合Koboとの価格差が小さい)\n[品質・デザイン: +4] (ビルドクオリティが高く、非常に軽量コンパクト)\n[ユーザー満足度: +3] (携帯性を重視するユーザーからの評価が高い)\n[合計: 72]"
+      "score": 85,
+      "scoreRationale": "[基本点: 70]\n[性能・機能: +5] (300ppiの高解像度ディスプレイと圧倒的な軽さを評価。防水・色調調節なしで一部減点)\n[コストパフォーマンス: +3] (値上がり傾向にあるものの、エントリーモデルとして手頃な価格帯)\n[品質・デザイン: +4] (ビルドクオリティが高く、非常に軽量コンパクトで持ち歩きやすい)\n[ユーザー満足度: +3] (携帯性を重視するユーザーや読書に集中したいユーザーからの評価が高い)\n[合計: 85]"
     },
     "technicalSpecs": {
       "os": "Kindle OS",
@@ -132,7 +132,7 @@
       "display": {
         "size": "6インチ",
         "resolution": "300ppi",
-        "type": "Amazonディスプレイ (反射抑制)"
+        "type": "E Ink 反射抑制ディスプレイ"
       },
       "battery": {
         "capacity": "最大6週間",
@@ -146,7 +146,7 @@
         "weight": "158g"
       },
       "connectivity": [
-        "Wi-Fi (2.4GHz/5GHz)"
+        "Wi-Fi"
       ],
       "other": [
         "防水非対応",
