@@ -1,8 +1,5 @@
 name: Product Research Pipeline
 
-permissions:
-  contents: read
-
 on:
   schedule:
     # Run daily at 17:00 JST (08:00 UTC)
@@ -74,6 +71,8 @@ on:
 jobs:
   product-search:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
     outputs:
       products-found: ${{ steps.search.outputs.products-found }}
 
@@ -115,6 +114,8 @@ jobs:
     needs: product-search
     if: needs.product-search.outputs.products-found == 'true'
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
 
     steps:
     - uses: actions/checkout@v6
