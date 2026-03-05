@@ -51,7 +51,7 @@
         "credibility": "高"
       }
     ],
-    "lastInvestigated": "2026-01-19",
+    "lastInvestigated": "2026-03-06",
     "competitiveAnalysis": [
       {
         "name": "UGREEN モバイルバッテリー 20000mAh 45W ケーブル内蔵",
@@ -112,16 +112,24 @@
         "ケーブル内蔵などのトレンド機能がない"
       ],
       "score": 70,
-      "scoreRationale": "[基本点: 70]\n[加点: +8] (20000mAhで3,000円台半ばという価格は、国内ブランド品として非常に安価)\n[減点: -8] (約480gという重量は競合と比較しても重く、20W出力は現在の基準では控えめ)\n[合計: 70] (安さと信頼性は魅力的だが、重さとスペックの低さが相殺し、標準的な評価にとどまる)"
+      "scoreRationale": "[基本点: 70]\n[加点: +8] (20000mAhで3000円台という圧倒的な価格の安さ)\n[減点: -8] (約480gという重量の重さと、最大20Wの低出力)\n[合計: 70] (安さと信頼性は魅力的だが、重さとスペックの低さが相殺し、標準的な評価にとどまる)"
     },
     "technicalSpecs": {
+      "dimensions": {
+        "height": null,
+        "width": null,
+        "depth": null,
+        "weight": "約480g"
+      },
+      "power": "最大20W (USB PD)",
       "capacity": "20000mAh",
-      "output": "最大20W (USB PD)",
-      "ports": "USB-C x 1, USB-A x 1",
-      "weight": "約480g (1.05lb)",
-      "dimensions": null,
-      "chargingTime": "約6時間 (20W PD充電器使用時)",
-      "features": ["おまかせ充電", "まとめて充電", "低電流モード", "強制出力モード", "PSE適合"]
+      "その他機能": [
+        "おまかせ充電",
+        "まとめて充電",
+        "低電流モード",
+        "強制出力モード",
+        "PSE適合"
+      ]
     }
   }
 }
