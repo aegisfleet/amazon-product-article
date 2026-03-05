@@ -857,5 +857,27 @@ describe('ArticleGenerator', () => {
         expect(count).toBe(0);
       });
     });
+
+    describe('escapeHtml', () => {
+      it('should escape HTML special characters', () => {
+        const input = '<b>"Me & You"</b>';
+        const expected = '&lt;b&gt;&quot;Me &amp; You&quot;&lt;/b&gt;';
+        const result = (generator as any).escapeHtml(input);
+        expect(result).toBe(expected);
+      });
+
+      it('should escape single quotes', () => {
+        const input = "It's a test";
+        const expected = 'It&#039;s a test';
+        const result = (generator as any).escapeHtml(input);
+        expect(result).toBe(expected);
+      });
+
+      it('should return empty string for null/undefined/empty input', () => {
+        expect((generator as any).escapeHtml(null)).toBe('');
+        expect((generator as any).escapeHtml(undefined)).toBe('');
+        expect((generator as any).escapeHtml('')).toBe('');
+      });
+    });
   });
 });

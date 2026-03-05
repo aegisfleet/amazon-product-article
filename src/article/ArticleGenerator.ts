@@ -270,7 +270,7 @@ export class ArticleGenerator {
     // 商品名の後にアフィリエイトリンクを挿入
     const contentWithLinks = content.replace(
       /(## 商品詳細・購入)/,
-      `$1\n\n<a href="${affiliateUrl}" class="affiliate-link mobile-friendly-button" target="_blank" rel="noopener noreferrer"><strong>${product.asin}をAmazonで確認する</strong></a>\n`,
+      `$1\n\n<a href="${this.escapeHtml(affiliateUrl)}" class="affiliate-link mobile-friendly-button" target="_blank" rel="noopener noreferrer"><strong>${this.escapeHtml(product.asin)}をAmazonで確認する</strong></a>\n`,
     );
 
     return contentWithLinks;
@@ -347,7 +347,7 @@ export class ArticleGenerator {
 
     // 在庫・Prime情報
     if (productDetail.availability) {
-      infoRows.push(`| 在庫状況 | ${productDetail.availability} |`);
+      infoRows.push(`| 在庫状況 | ${this.escapeHtml(productDetail.availability)} |`);
     }
     if (productDetail.isPrimeEligible) {
       infoRows.push(`| Prime対応 | ✓ 対応 |`);
@@ -383,7 +383,7 @@ ${infoRows.join('\n')}
 
 </div>
 
-<a href="${affiliateUrl}" class="btn-amazon-large" target="_blank" rel="noopener noreferrer">Amazonで詳細を見る</a>`;
+<a href="${this.escapeHtml(affiliateUrl)}" class="btn-amazon-large" target="_blank" rel="noopener noreferrer">Amazonで詳細を見る</a>`;
 
     return {
       title: '商品詳細・購入',
@@ -438,9 +438,9 @@ ${infoRows.join('\n')}
         };
 
         if (source.url && !isCreatorsApiUrl(source.url)) {
-          return `- <a href="${source.url}" target="_blank" rel="noopener noreferrer">${source.name}</a>${credibility}`;
+          return `- <a href="${this.escapeHtml(source.url)}" target="_blank" rel="noopener noreferrer">${this.escapeHtml(source.name)}</a>${this.escapeHtml(credibility)}`;
         }
-        return `- ${source.name}${credibility}`;
+        return `- ${this.escapeHtml(source.name)}${this.escapeHtml(credibility)}`;
       })
       .join('\n');
 
@@ -469,7 +469,7 @@ ${sourcesList}`;
         const icons = ['💡', '🎯', '✨', '🔧'];
         return `<div class="feature-card">
 <span class="feature-icon">${icons[i] || '📌'}</span>
-<span class="feature-text">${useCase}</span>
+<span class="feature-text">${this.escapeHtml(useCase)}</span>
 </div>`;
       })
       .join('\n');
@@ -531,11 +531,11 @@ ${usageSection}`;
           sentimentLabel = '不満';
         }
 
-        return `#### ${story.userType}の体験談 (${story.scenario})
+        return `#### ${this.escapeHtml(story.userType)}の体験談 (${this.escapeHtml(story.scenario)})
 
-> ${story.experience}
-> 
-> (評価: ${sentimentLabel})`;
+> ${this.escapeHtml(story.experience)}
+>
+> (評価: ${this.escapeHtml(sentimentLabel)})`;
       })
       .join('\n\n');
 
@@ -611,15 +611,15 @@ ${reviewAnalysis ? this.generateSentimentAnalysis(reviewAnalysis) : ''}`;
           // アフィリエイトリンクを生成
           const shouldShowLink = normalizedAsin && (!competitorDetails || competitorDetails.has(normalizedAsin));
           const competitorLink = shouldShowLink
-            ? `<a href="${detail?.detailPageUrl || this.affiliateManager.generateAffiliateLink(normalizedAsin).url}" class="btn-amazon-small" target="_blank" rel="noopener noreferrer">🛒 Amazonで見る</a>`
+            ? `<a href="${this.escapeHtml(detail?.detailPageUrl || this.affiliateManager.generateAffiliateLink(normalizedAsin).url)}" class="btn-amazon-small" target="_blank" rel="noopener noreferrer">🛒 Amazonで見る</a>`
             : '';
 
           const features = competitor.featureComparison.map((feature) => `<li>${feature}</li>`).join('\n');
           const differentiators = competitor.differentiators.map((diff) => `<li>${diff}</li>`).join('\n');
 
           return `<div class="competitor-card">
-<h4>${competitor.name}</h4>
-<p class="competitor-price">💰 ${competitor.priceComparison}</p>
+<h4>${this.escapeHtml(competitor.name)}</h4>
+<p class="competitor-price">💰 ${this.escapeHtml(competitor.priceComparison)}</p>
 <div class="competitor-features">
 <strong>機能比較:</strong>
 <ul>
@@ -1451,18 +1451,31 @@ ${recommendationMessage}`;
     const previewTag = hasInternalReview ? 'a' : 'div';
     const previewAttrs = hasInternalReview && asin ? ` href="../${asin.toLowerCase()}/"` : '';
 
-    const actualPriceHtml = priceText ? `<span class="competitor-actual-price">${priceText}</span>` : '';
-    const primeHtml = primeText ? `<span class="competitor-prime">${primeText}</span>` : '';
+    const actualPriceHtml = priceText ? `<span class="competitor-actual-price">${this.escapeHtml(priceText)}</span>` : '';
+    const primeHtml = primeText ? `<span class="competitor-prime">${this.escapeHtml(primeText)}</span>` : '';
     const availabilityHtml = availabilityText
-      ? `<span class="competitor-availability">📦 ${availabilityText}</span>`
+      ? `<span class="competitor-availability">📦 ${this.escapeHtml(availabilityText)}</span>`
       : '';
 
     return `
 <${previewTag}${previewAttrs} class="competitor-preview">
-<img src="${imageUrl}" alt="${name}" class="competitor-preview-img">
+<img src="${this.escapeHtml(imageUrl)}" alt="${this.escapeHtml(name)}" class="competitor-preview-img">
 <div class="competitor-preview-info">
 ${scoreHtml}${actualPriceHtml}${primeHtml}${availabilityHtml}
 </div>
 </${previewTag}>`;
+  }
+
+  /**
+   * HTML エスケープ処理
+   */
+  private escapeHtml(text: string): string {
+    if (!text) return '';
+    return text
+      .replaceAll('&', '&amp;')
+      .replaceAll('<', '&lt;')
+      .replaceAll('>', '&gt;')
+      .replaceAll('"', '&quot;')
+      .replaceAll("'", '&#039;');
   }
 }

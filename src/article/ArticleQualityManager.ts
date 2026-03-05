@@ -557,7 +557,7 @@ export class ArticleQualityManager {
     const plainText = content
       .replace(/```[^`]*```/g, '')
       .replace(/`[^`]+`/g, '')
-      .replace(/\[[^\]]+\]\([^)]+\)/g, '$1')
+      .replace(/\[([^\]]+)\]\([^)]+\)/g, '$1')
       .replace(/[#*_~]/g, '')
       .trim();
     return plainText.length;
