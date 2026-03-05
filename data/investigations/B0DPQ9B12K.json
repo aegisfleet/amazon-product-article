@@ -1,8 +1,8 @@
 {
   "analysis": {
-    "productName": "VECELO 折りたたみサイドテーブル 幅50cm (高さ70cm)",
-    "parentAsin": "B0DR8QPKBP",
-    "productDescription": "幅50×奥行45cmのコンパクトな折りたたみ式テーブル。高さ70cmでデスクワークや簡易ダイニングテーブルとして使用可能。軽量で持ち運びやすく、使わないときは隙間に収納できます。",
+    "productName": "VECELO 折りたたみサイドテーブル 幅50cm",
+    "parentAsin": "B0DPQ9B12K",
+    "productDescription": "幅50×奥行45cm、高さ70cmのコンパクトな折りたたみ式テーブルです。PC作業や簡易なダイニングテーブルとして利用できます。",
     "productUsage": [
       "在宅勤務・テレワーク用の簡易デスク",
       "ソファサイドやベッドサイドでの補助テーブル",
@@ -32,7 +32,7 @@
         "experience": "部屋が狭いため常設のデスクは置けないが、仕事をする時だけサッと広げて使えるこのテーブルは便利。安価だがPC作業には十分な広さがある。(推測)",
         "sentiment": "positive"
       },
-       {
+      {
         "userType": "主婦 (推測)",
         "scenario": "子供のリビング学習用",
         "experience": "子供がリビングで宿題をする際に出して使っている。汚れても拭けばすぐ落ちる素材なので気兼ねなく使える。(推測)",
@@ -42,22 +42,47 @@
     "userImpression": "ユーザーレビューはまだないが、スペックとブランドの他製品の評判から、実用性とコスパを重視した製品と推測される。特に「安さ」と「扱いやすさ（軽さ・汚れへの強さ）」が評価されるポイントになりそうだ。",
     "sources": [
       {
-        "name": "Amazon商品ページ (詳細仕様)",
+        "name": "Amazon商品ページ",
         "url": "https://www.amazon.co.jp/dp/B0DPQ9B12K",
         "credibility": "high"
       },
       {
-         "name": "Home Depot (ブランド他製品レビュー)",
-         "url": "https://www.homedepot.com/p/reviews/1VECELO-Folding-Card-Table-20-1-in-Portable-Square-Black-Long-Metal-Desk-with-Collapsible-Legs-and-Vinyl-Upholstery-KHD-XJM-CFT05/326728343/1",
-         "credibility": "medium"
+        "name": "Home Depot",
+        "url": "https://www.homedepot.com/p/reviews/1VECELO-Folding-Card-Table-20-1-in-Portable-Square-Black-Long-Metal-Desk-with-Collapsible-Legs-and-Vinyl-Upholstery-KHD-XJM-CFT05/326728343/1",
+        "credibility": "medium"
       }
     ],
-    "lastInvestigated": "2026-01-19",
+    "lastInvestigated": "2026-03-06",
     "competitiveAnalysis": [
       {
+        "name": "山善 YST-5040H",
+        "asin": "B0013UAYP2",
+        "priceComparison": "約2,680円 (本製品より約150円高い)",
+        "featureComparison": [
+          "サイズはほぼ同じ(幅50×奥行48×高さ70cm)",
+          "木目調のデザイン"
+        ],
+        "differentiators": [
+          "山善のロングセラーモデルで信頼性が高い",
+          "VECELOは天板がPP製でより水や汚れに強いと推測される"
+        ]
+      },
+      {
+        "name": "パール金属 N-7081",
+        "asin": "B0C898SNWJ",
+        "priceComparison": "約2,663円 (本製品より約130円高い)",
+        "featureComparison": [
+          "幅60×奥行50×高さ70cmで本製品より少し大きい",
+          "木目調の天板"
+        ],
+        "differentiators": [
+          "作業スペースの広さを求めるならパール金属、コンパクトさを求めるならVECELO"
+        ]
+      },
+      {
         "name": "山善 RYST5040H",
-        "asin": "B08B3PWS83",
-        "priceComparison": "約3,145円 (本製品より約600円高い)",
+        "asin": "B08HLC2KGL",
+        "priceComparison": "約3,776円 (本製品より約1,200円高い)",
         "featureComparison": [
           "天板がメラミン樹脂加工で傷・熱・水分に強い",
           "木目調の高級感あるデザイン",
@@ -66,31 +91,6 @@
         "differentiators": [
           "山善は「家具のような質感と耐久性」重視",
           "VECELOは「安さと軽さ、汚れへの強さ」重視"
-        ]
-      },
-      {
-        "name": "エイアイテック FT-09S",
-        "asin": "B0C23ST6VN",
-        "priceComparison": "約1,998円 (本製品より約500円安い)",
-        "featureComparison": [
-          "高さ35cmのローテーブル（座卓）",
-          "椅子に座って使う用途には適さない"
-        ],
-        "differentiators": [
-          "使用スタイルが異なる（ロータイプ vs ハイタイプ）"
-        ]
-      },
-      {
-        "name": "山善 YST-5040H",
-        "asin": "B0040V5X1Q",
-        "priceComparison": "約3,500円 (本製品より約1,000円高い)",
-        "featureComparison": [
-          "サイズは幅50×奥行48×高さ70cmとほぼ同じ",
-          "長年販売されている定番モデル"
-        ],
-        "differentiators": [
-          "山善のロングセラーモデルで信頼性が高い",
-          "価格差が大きく、VECELOの安さが際立つ"
         ]
       }
     ],
@@ -110,15 +110,22 @@
         "耐熱性に不安がある（熱い鍋などは不可）"
       ],
       "score": 75,
-      "scoreRationale": "[基本点: 70]\n[加点: +10] 競合の同サイズ品（約3000円〜）と比較して2500円台とコストパフォーマンスが高い\n[加点: +5] 軽量(4.2kg)で扱いやすく、汚れに強いPP素材はメンテナンス性が良い\n[減点: -5] 天板がポリプロピレン製のため、木製やメラミン加工の競合品と比較して質感や耐熱性が劣る可能性がある\n[減点: -5] ブランド認知度が日本ではまだ低く、長期的耐久性の実績が不明\n[合計: 75]"
+      "scoreRationale": "[基本点: 70]\n[加点: +10] 競合の同サイズ品（2600円〜3700円台）と比較して2531円とコストパフォーマンスが高い\n[加点: +5] 軽量(4.2kg)で扱いやすく、汚れに強いPP素材はメンテナンス性が良い\n[減点: -5] 天板がポリプロピレン製のため、木製やメラミン加工の競合品と比較して質感や耐熱性が劣る可能性がある\n[減点: -5] ブランド認知度が日本ではまだ低く、長期的耐久性の実績が不明\n[合計: 75]"
     },
     "technicalSpecs": {
-      "dimensions": { "width": "50cm", "depth": "45cm", "height": "70cm", "weight": "4.2kg" },
+      "dimensions": {
+        "width": "50cm",
+        "depth": "45cm",
+        "height": "70cm",
+        "weight": "4.2kg"
+      },
       "material": "フレーム: 鉄(粉体塗装), 天板: ポリプロピレン(PP)",
       "load_capacity": "10kg",
       "color": "ナチュラル (フレーム: 白/ベージュ系)",
       "assembly": "完成品（組み立て不要）",
-      "other": ["折りたたみ可能", "脚裏クッション付き(推測)"]
+      "other": [
+        "折りたたみ可能"
+      ]
     }
   }
 }
