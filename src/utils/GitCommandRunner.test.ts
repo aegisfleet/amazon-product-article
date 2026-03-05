@@ -92,14 +92,12 @@ describe('runGhCommand', () => {
     runGhCommand(['pr', 'merge', '123'], { env });
 
     const isWindows = process.platform === 'win32';
-    let expectedPath = '';
-    if (isWindows) {
-      const systemPath = `${process.env.SystemRoot}\\system32;${process.env.SystemRoot}`;
-      const commonPaths = ['C:\\Program Files\\GitHub CLI', 'C:\\Program Files (x86)\\GitHub CLI'];
-      expectedPath = [systemPath, ...commonPaths, env.PATH].filter(Boolean).join(';');
-    } else {
-      expectedPath = '/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/homebrew/bin';
-    }
+    const delimiter = isWindows ? ';' : ':';
+    const safePath = isWindows
+      ? `${process.env.SystemRoot}/system32;${process.env.SystemRoot};C:/Program Files/GitHub CLI;C:/Program Files (x86)/GitHub CLI`
+      : '/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/homebrew/bin';
+
+    const expectedPath = [safePath, env.PATH].filter(Boolean).join(delimiter);
 
     expect(spawnSync).toHaveBeenCalledWith(
       'gh',

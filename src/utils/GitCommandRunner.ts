@@ -39,14 +39,14 @@ export function runGhCommand(args: string[], options: RunCommandOptions = {}): s
   // Prioritize safe standard binary locations but preserve the existing PATH
   const isWindows = process.platform === 'win32';
   const systemPath = isWindows
-    ? `${process.env.SystemRoot}\\system32;${process.env.SystemRoot}`
+    ? `${process.env.SystemRoot}/system32;${process.env.SystemRoot}`
     : '/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/homebrew/bin';
 
   let safePath = systemPath;
   if (isWindows) {
     // Add common GitHub CLI installation paths
     // Keep system paths first for security, then common installation paths
-    const commonPaths = ['C:\\Program Files\\GitHub CLI', 'C:\\Program Files (x86)\\GitHub CLI'];
+    const commonPaths = ['C:/Program Files/GitHub CLI', 'C:/Program Files (x86)/GitHub CLI'];
     safePath = [systemPath, ...commonPaths].filter(Boolean).join(';');
   }
 
