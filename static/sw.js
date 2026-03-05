@@ -1,4 +1,4 @@
-const CACHE_NAME = 'apa-cache-v2';
+const CACHE_NAME = 'apa-cache-v3';
 const urlsToCache = [
     '/amazon-product-article/',
     '/amazon-product-article/css/variables.css',
@@ -47,15 +47,22 @@ function isNavigationRequest(request) {
  * ネットワークを優先し、失敗時のみキャッシュにフォールバック
  */
 async function networkFirst(request, cache) {
+    const timeoutPromise = new Promise((_, reject) => {
+        setTimeout(() => reject(new Error('Network timeout')), 3000);
+    });
+
     try {
-        const networkResponse = await fetch(request);
+        const networkResponse = await Promise.race([
+            fetch(request),
+            timeoutPromise
+        ]);
         if (networkResponse && networkResponse.status === 200 && networkResponse.type === 'basic') {
             await cache.put(request, networkResponse.clone());
         }
         return networkResponse;
     } catch {
-        // ネットワークエラー時はキャッシュにフォールバック
-        const cachedResponse = await cache.match(request);
+        // ネットワークエラーまたはタイムアウト時はキャッシュにフォールバック
+        const cachedResponse = await cache.match(request, { ignoreSearch: true });
         return cachedResponse || new Response('オフラインです', {
             status: 503,
             headers: { 'Content-Type': 'text/html; charset=UTF-8' }
