@@ -53,28 +53,59 @@
         "credibility": "high"
       }
     ],
-    "lastInvestigated": "2026-01-19",
+    "lastInvestigated": "2026-03-06",
     "competitiveAnalysis": [
       {
-        "name": "Lifeinnotech 保護フィルム (ブルーライトカット)",
-        "asin": "B0FJXJGRJT",
-        "priceComparison": "990円と本製品より安価だが、枚数が不明（おそらく1枚）。",
-        "featureComparison": ["ブルーライトカット機能あり", "アンチグレア"],
-        "differentiators": ["ブルーライトカットが必要なユーザー向け", "価格重視"]
+        "name": "FILMEXT フィルム Kindle Colorsoft/Paperwhite 保護フィルム ブルーライトカット 反射低減",
+        "asin": "B0DKF9K6FJ",
+        "priceComparison": "1,590円で本製品と同価格帯。こちらは1枚入りの可能性が高いが、ブルーライトカット機能を備えている。",
+        "featureComparison": [
+          "ブルーライトカット",
+          "反射低減"
+        ],
+        "differentiators": [
+          "ブルーライトカット機能を求めるユーザー向け"
+        ]
+      },
+      {
+        "name": "Lifeinnotech Kindle Colorsoft/Paperwhite 保護フィルム ARフィルム 反射防止",
+        "asin": "B0FJX3KML5",
+        "priceComparison": "1,266円と本製品より安価。",
+        "featureComparison": [
+          "アンチリフレクション(AR)フィルム",
+          "反射防止",
+          "指紋防止"
+        ],
+        "differentiators": [
+          "価格を抑えつつARフィルムを試したいユーザー向け",
+          "価格重視"
+        ]
+      },
+      {
+        "name": "FILMEXT フィルム Kindle Colorsoft/Paperwhite 保護フィルム 9H (強化ガラス同等) 超透明 日本製",
+        "asin": "B0FJXYY5P8",
+        "priceComparison": "1,390円と本製品よりやや安価。",
+        "featureComparison": [
+          "9H高硬度(強化ガラス同等)",
+          "超透明"
+        ],
+        "differentiators": [
+          "ガラスのような硬度と透明度を求めるユーザー向け",
+          "傷つきにくさ重視"
+        ]
       },
       {
         "name": "TiMOVO 保護フィルム (3枚セット)",
         "asin": "B0FL23X9D3",
         "priceComparison": "1,199円で3枚入りと、圧倒的に単価が安い。",
-        "featureComparison": ["PET素材", "アンチグレア"],
-        "differentiators": ["とにかく安さと枚数を求めるユーザー向け", "海外ブランド"]
-      },
-      {
-        "name": "FILMEXT フィルム (日本製・高機能)",
-        "asin": "B0DKF9K6FJ",
-        "priceComparison": "1,590円で本製品と同価格帯だが、こちらは1枚入りの可能性が高い。",
-        "featureComparison": ["ブルーライトカット", "反射低減", "日本製"],
-        "differentiators": ["高機能・高品質を求めるユーザー向け", "ブルーライトカット"]
+        "featureComparison": [
+          "PET素材",
+          "アンチグレア"
+        ],
+        "differentiators": [
+          "とにかく安さと枚数を求めるユーザー向け",
+          "海外ブランド"
+        ]
       }
     ],
     "recommendation": {
@@ -96,10 +127,29 @@
       "scoreRationale": "[基本点: 70]\n[加点: +5] フッ素コーティングによる防汚・操作性向上\n[加点: +5] 2枚入りで1,580円（1枚790円）という良好なコストパフォーマンス\n[合計: 80]"
     },
     "technicalSpecs": {
-      "dimensions": { "height": "約170mm", "width": "約121mm", "depth": null, "weight": null },
+      "dimensions": {
+        "height": "約170mm",
+        "width": "約121mm",
+        "depth": null,
+        "weight": null
+      },
+      "os": null,
+      "cpu": null,
+      "ram": null,
+      "storage": null,
+      "display": null,
+      "battery": null,
+      "camera": null,
+      "connectivity": null,
       "power": null,
       "capacity": null,
-      "other": ["PET素材(フッ素コーティング)", "反射防止(AG)", "抗菌", "気泡レス", "2枚入り"]
+      "other": [
+        "PET素材(フッ素コーティング)",
+        "反射防止(AG)",
+        "抗菌(99.9%)",
+        "気泡レス",
+        "2枚入り"
+      ]
     }
   }
 }
