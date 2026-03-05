@@ -36,24 +36,27 @@ export function runGhCommand(args: string[], options: RunCommandOptions = {}): s
   // Note: We avoid logging the full environment or token
   logger.debug(`Running command: gh ${args.join(' ')}`);
 
-  // Ensure PATH is restricted to standard binary locations but includes common tools
+  // Prioritize safe standard binary locations but preserve the existing PATH
   const isWindows = process.platform === 'win32';
   const systemPath = isWindows
-    ? `${process.env.SystemRoot}\\system32;${process.env.SystemRoot}`
+    ? `${process.env.SystemRoot}/system32;${process.env.SystemRoot}`
     : '/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/homebrew/bin';
 
   let safePath = systemPath;
   if (isWindows) {
-    // Add common GitHub CLI installation paths and include existing PATH
-    // while keeping system paths first for security
-    const commonPaths = ['C:\\Program Files\\GitHub CLI', 'C:\\Program Files (x86)\\GitHub CLI'];
-    const existingPath = env.PATH || '';
-    safePath = [systemPath, ...commonPaths, existingPath].filter(Boolean).join(';');
+    // Add common GitHub CLI installation paths
+    // Keep system paths first for security, then common installation paths
+    const commonPaths = ['C:/Program Files/GitHub CLI', 'C:/Program Files (x86)/GitHub CLI'];
+    safePath = [systemPath, ...commonPaths].filter(Boolean).join(';');
   }
+
+  const delimiter = isWindows ? ';' : ':';
+  const originalPath = env.PATH || '';
+  const finalPath = [safePath, originalPath].filter(Boolean).join(delimiter);
 
   const safeEnv = {
     ...env,
-    PATH: safePath,
+    PATH: finalPath,
   };
 
   const spawnOptions: SpawnSyncOptions = {

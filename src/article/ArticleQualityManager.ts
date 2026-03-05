@@ -343,7 +343,7 @@ export class ArticleQualityManager {
     }
 
     // リンクチェック
-    const affiliateLinkPattern = /\[[^\]]+\]\(https?:\/\/[^)]*?amazon[^)]*?\)/;
+    const affiliateLinkPattern = /\[[^\]]+\]\(https?:\/\/[^)\s]*?amazon[^)\s]*?\)/;
     if (!affiliateLinkPattern.test(article)) {
       warnings.push({
         type: 'warning',
@@ -466,7 +466,7 @@ export class ArticleQualityManager {
    */
   private extractSections(article: string): Array<{ title: string; content: string }> {
     const sections: Array<{ title: string; content: string }> = [];
-    const sectionPattern = /^##\s+([^\n\r]+)$/gm;
+    const sectionPattern = /^##\s+(\S[^\n\r]*)$/gm;
 
     let match: RegExpExecArray | null;
     let lastIndex = 0;
@@ -557,7 +557,7 @@ export class ArticleQualityManager {
     const plainText = content
       .replace(/```[^`]*```/g, '')
       .replace(/`[^`]+`/g, '')
-      .replace(/\[([^\]]+)\]\([^)]+\)/g, '$1')
+      .replace(/\[([^\]]+)\]\([^)\s]*?\)/g, '$1')
       .replace(/[#*_~]/g, '')
       .trim();
     return plainText.length;
