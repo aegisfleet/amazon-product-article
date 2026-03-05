@@ -1,7 +1,7 @@
 {
   "analysis": {
     "productName": "Amazon純正 ファブリックカバー (ブラック)",
-    "parentAsin": "B0DFZV5BH5",
+    "parentAsin": "B0CM7X424T",
     "productDescription": "Kindle Paperwhite (第12世代) および Kindle Colorsoft 専用に設計されたAmazon純正の保護カバーです。水に強いファブリック素材を採用し、薄型軽量で端末のデザインを損なうことなく保護します。",
     "productUsage": [
       "Kindle本体の画面および背面の保護",
@@ -17,9 +17,9 @@
       "Amazonロゴ入りのシンプルで洗練されたデザイン"
     ],
     "negativePoints": [
-      "サードパーティ製競合商品（2,000円前後）と比較して価格が高い（4,980円）",
+      "サードパーティ製競合商品（1,500円〜2,500円前後）と比較して価格が高い",
       "背面まで覆うため、Kindle本体の色（特にColorsoftなど）は見えなくなる",
-      "カラーバリエーションがブラックとヒスイの2色展開と比較的少ない"
+      "カラーバリエーションがブラックとヒスイの2色展開と少ない"
     ],
     "useCases": [
       "通勤・通学時のバッグ内での画面保護",
@@ -40,56 +40,70 @@
         "sentiment": "positive"
       }
     ],
-    "userImpression": "価格は高めですが、純正ならではの「安心感」「フィット感」「質感」を評価するユーザーに適しています。特にサイズが変更された新モデルにおいては、サードパーティ製の精度に不安がある場合、確実にフィットする純正品が選ばれる傾向にあります。",
+    "userImpression": "価格は高めですが、純正ならではの「安心感」「フィット感」「質感」を評価するユーザーに適しています。特にサイズが変更された新モデルにおいては、確実な保護と動作を求める場合、純正品が選ばれる傾向にあります。",
     "sources": [
       {
-        "name": "Amazon商品ページ (詳細情報)",
+        "name": "Amazon商品ページ",
         "url": "https://www.amazon.co.jp/dp/B0CM7X424T",
         "credibility": "高"
       }
     ],
-    "lastInvestigated": "2026-01-19",
+    "lastInvestigated": "2026-03-06",
     "competitiveAnalysis": [
       {
-        "name": "MoKo Kindle Paperwhite 第12世代 ケース",
-        "asin": "B0FWJZGF1Z",
-        "priceComparison": "約2,100円（純正の半額以下）",
+        "name": "TiMOVO Kindle Paperwhite 第12世代 ケース",
+        "asin": "B0DL5RG5L8",
+        "priceComparison": "約1,700円（純正の約1/3）",
         "featureComparison": [
-          "ハンドストラップ内蔵",
-          "手帳型デザイン",
-          "オートスリープ対応"
-        ],
-        "differentiators": [
-          "片手持ちに便利なハンドストラップが付いている",
-          "デザインのバリエーションが豊富"
-        ]
-      },
-      {
-        "name": "CM Tech レザーケース",
-        "asin": "B0DM7BJ5XJ",
-        "priceComparison": "約2,300円（純正の半額以下）",
-        "featureComparison": [
-          "PUレザー素材",
-          "軽量設計",
-          "全面保護"
-        ],
-        "differentiators": [
-          "ファブリックではなくレザー調の質感が楽しめる",
-          "カラーバリエーションが異なる"
-        ]
-      },
-      {
-        "name": "Fintie 保護ケース",
-        "asin": "B0FMRY9NKK",
-        "priceComparison": "約1,300円（純正の約1/4）",
-        "featureComparison": [
-          "超薄型・軽量",
-          "ハードバックシェル",
-          "オートスリープ対応"
+          "軽量薄型保護",
+          "オートスリープ対応",
+          "PU素材"
         ],
         "differentiators": [
           "圧倒的なコストパフォーマンス",
-          "シンプルなハードケース構造"
+          "石紋など独自のデザインバリエーション"
+        ]
+      },
+      {
+        "name": "Fintie for Kindle Paperwhite 第12世代 ケース",
+        "asin": "B0FMRY9NKK",
+        "priceComparison": "約1,480円（純正の約1/3以下）",
+        "featureComparison": [
+          "超薄型・軽量",
+          "耐衝撃",
+          "オートスリープ対応"
+        ],
+        "differentiators": [
+          "シンプルで非常に安価",
+          "ハードバックシェル構造"
+        ]
+      },
+      {
+        "name": "MoKo Kindle Paperwhite 第12世代 手帳型ケース",
+        "asin": "B0GKFKD8RC",
+        "priceComparison": "約2,188円（純正の半額以下）",
+        "featureComparison": [
+          "ハンドホルダー内蔵",
+          "手帳型保護ケース",
+          "オートスリープ対応"
+        ],
+        "differentiators": [
+          "片手読書をサポートするハンドホルダー搭載",
+          "カラーバリエーションが豊富"
+        ]
+      },
+      {
+        "name": "Amazon純正 植物性レザーカバー (ヒスイ)",
+        "asin": "B0CM82H71F",
+        "priceComparison": "5,980円（本製品より1,000円高い）",
+        "featureComparison": [
+          "植物性レザー素材",
+          "純正クオリティ",
+          "オートスリープ対応"
+        ],
+        "differentiators": [
+          "ファブリックではなく高級感のあるレザー素材",
+          "質感が異なる"
         ]
       }
     ],
@@ -102,22 +116,26 @@
       "pros": [
         "端末に完璧にフィットする純正クオリティ",
         "水に強い素材で安心して使える",
-        "確実なオートスリープ機能"
+        "確実なオートスリープ・マグネット機能"
       ],
       "cons": [
         "競合製品に比べて価格が大幅に高い",
         "機能面（スタンドやハンドストラップ等）ではシンプルすぎる場合がある"
       ],
       "score": 75,
-      "scoreRationale": "[基本点: 70]\n[品質・デザイン: +5] (純正ならではの質感と完璧なフィット感)\n[機能・性能: +5] (水に強い素材と確実なオートスリープ)\n[コストパフォーマンス: -10] (機能に対して価格が競合の2倍以上と割高)\n[ユーザー満足度: +5] (「失敗したくない」というニーズに応える信頼性)\n[合計: 75]"
+      "scoreRationale": "[基本点: 70]\n[品質・デザイン: +5] (純正ならではの質感と完璧なフィット感)\n[性能・機能: +5] (水に強い素材と確実なオートスリープ)\n[コストパフォーマンス: -10] (機能に対して価格が競合の2倍以上と割高)\n[ユーザー満足度: +5] (「失敗したくない」というニーズに応える信頼性)\n[合計: 75]"
     },
     "technicalSpecs": {
       "dimensions": null,
       "weight": null,
-      "material": "耐水性ファブリック",
-      "compatibility": "Kindle Paperwhite (第12世代), Kindle Colorsoft",
+      "material": "水に強いファブリック",
+      "compatibility": "Kindle Paperwhite (第12世代), Kindle Paperwhite シグニチャーエディション (第12世代), Kindle Colorsoft, Kindle Colorsoft シグニチャーエディション",
       "color": "ブラック",
-      "features": ["オートスリープ/ウェイク", "マグネット閉鎖", "ワイヤレス充電対応(推定)"]
+      "features": [
+        "オートスリープ/スリープ解除",
+        "マグネット閉鎖",
+        "装着したまま充電可能"
+      ]
     }
   }
 }
