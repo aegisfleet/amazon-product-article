@@ -718,7 +718,7 @@ describe('ArticleGenerator', () => {
         const specs = {
           height: '10cm',
           weight: 'null',
-          depth: 'unknown'
+          depth: 'unknown',
         };
         const result = (generator as any).formatSpecValue(specs);
         expect(result).toContain('高さ: 10cm');

@@ -127,7 +127,9 @@ describe('AffiliateLinkManager', () => {
   describe('Link format generation', () => {
     const validAsinArbitrary = fc.stringMatching(/^[A-Z0-9]{10}$/);
 
-    const textArbitrary = fc.string({ minLength: 1, maxLength: 50 }).filter(s => !s.includes('[') && !s.includes(']'));
+    const textArbitrary = fc
+      .string({ minLength: 1, maxLength: 50 })
+      .filter((s) => !s.includes('[') && !s.includes(']'));
 
     it('should generate valid Markdown links for any ASIN and text', () => {
       fc.assert(

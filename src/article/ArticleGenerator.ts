@@ -793,9 +793,7 @@ ${recommendationMessage}`;
 
     if (Array.isArray(value)) {
       // 配列内の各要素をフォーマットし、空（プレースホルダー等）を除外
-      const formatted = value
-        .map((item) => this.formatSpecValue(item, category))
-        .filter((item) => item !== '');
+      const formatted = value.map((item) => this.formatSpecValue(item, category)).filter((item) => item !== '');
       return formatted.join(', ');
     }
 
@@ -1455,7 +1453,9 @@ ${recommendationMessage}`;
 
     const actualPriceHtml = priceText ? `<span class="competitor-actual-price">${priceText}</span>` : '';
     const primeHtml = primeText ? `<span class="competitor-prime">${primeText}</span>` : '';
-    const availabilityHtml = availabilityText ? `<span class="competitor-availability">📦 ${availabilityText}</span>` : '';
+    const availabilityHtml = availabilityText
+      ? `<span class="competitor-availability">📦 ${availabilityText}</span>`
+      : '';
 
     return `
 <${previewTag}${previewAttrs} class="competitor-preview">
