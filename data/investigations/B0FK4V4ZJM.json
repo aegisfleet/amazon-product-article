@@ -1,7 +1,7 @@
 {
   "analysis": {
     "productName": "NEC LAVIE T8 (TAB08/H05) 8.7インチ Androidタブレット",
-    "parentAsin": "B0FT2RYTKQ",
+    "parentAsin": "B0FK4V4ZJM",
     "productDescription": "片手で持てるコンパクトな8.7インチAndroidタブレット。NECブランドの安心感と充実したサポートが特徴で、電子書籍の閲覧や動画視聴、お子様の学習用端末として最適です。",
     "productUsage": [
       "電子書籍・コミックの閲覧（片手持ちサイズ）",
@@ -63,11 +63,11 @@
         "credibility": "High"
       }
     ],
-    "lastInvestigated": "2026-01-19",
+    "lastInvestigated": "2026-03-07",
     "competitiveAnalysis": [
       {
         "name": "Lenovo Tab One",
-        "asin": "B0F8VH24JF",
+        "asin": "B0F8VC313L",
         "priceComparison": "約2万円で同価格帯だが、クーポン等でより安価になることが多い",
         "featureComparison": [
           "SoCは同じHelio G85",
@@ -123,8 +123,8 @@
         "ストレージが64GBと少なく、アプリを大量に入れるには不向き",
         "3Dゲームなど高負荷な用途には適さない"
       ],
-      "score": 65,
-      "scoreRationale": "[基本点: 70]\n[加点: +5] (NECブランドの信頼性とサポート体制)\n[加点: +5] (Dolby Atmos対応など動画視聴向きの機能)\n[減点: -10] (同価格帯の競合と比較してストレージが半分)\n[減点: -5] (解像度がFHDではなくHD+に留まる)\n[合計: 65]"
+      "score": 70,
+      "scoreRationale": "[基本点: 70]\n[加点: +5] (NECブランドの信頼性と充実したサポート体制)\n[加点: +5] (Dolby Atmos対応ステレオスピーカーで良好な音質)\n[加点: +5] (片手で持ちやすい8.7インチの軽量・コンパクト設計)\n[減点: -10] (同価格帯の競合と比較してストレージが64GBと少ない)\n[減点: -5] (ディスプレイ解像度がHD+（1340×800）にとどまる)\n[合計: 70]"
     },
     "technicalSpecs": {
       "os": "Android 14",
@@ -134,7 +134,7 @@
       "display": {
         "size": "8.7インチ",
         "resolution": "1340×800",
-        "type": "LED広視野角液晶"
+        "type": "LED 広視野角液晶"
       },
       "battery": {
         "capacity": "5100mAh",
@@ -148,17 +148,19 @@
         "height": "211mm",
         "width": "124.8mm",
         "depth": "8.5mm",
-        "weight": "320g"
+        "weight": "約320g"
       },
       "connectivity": [
-        "Wi-Fi 5 (ac)",
-        "Bluetooth 5.3"
+        "無線LAN(IEEE802.11ac/a/b/g/n準拠)",
+        "Bluetooth Ver5.3"
       ],
       "other": [
-        "顔認証",
         "GPS",
-        "Dolby Atmos対応ステレオスピーカー",
-        "microSDスロット"
+        "加速度センサ",
+        "光センサ",
+        "近接センサ",
+        "Hallセンサ",
+        "Dolby Atmos対応ステレオスピーカー"
       ]
     }
   }
