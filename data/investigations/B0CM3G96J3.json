@@ -62,50 +62,46 @@
         "credibility": "中（一般ユーザーの意見）"
       }
     ],
-    "lastInvestigated": "2026-01-19",
+    "lastInvestigated": "2026-03-07",
     "competitiveAnalysis": [
       {
-        "name": "Syncora LEDランタン (2026新モデル)",
-        "asin": "B0FW462RC2",
-        "priceComparison": "約2,000円とコールマンより1,000円以上安い。",
+        "name": "Coleman(コールマン) ハンギングEライト (別カラーモデル)",
+        "asin": "B08P57HNCJ",
+        "priceComparison": "同価格帯（約2,865円）。",
         "featureComparison": [
-          "2600mAhバッテリー搭載。",
-          "白光・赤光など4つの点灯モード。",
-          "防水機能付き。"
+          "カラーがレッドである以外は同一の仕様。",
+          "最大250ルーメン、モバイルバッテリー機能搭載。"
         ],
         "differentiators": [
-          "圧倒的なコストパフォーマンス。",
-          "機能の多さ（色温度変更など）。",
-          "ブランド力ではコールマンに劣る。"
+          "カラーバリエーションの違いのみ。テントやギアの雰囲気に合わせて選択可能。"
         ]
       },
       {
-        "name": "Luvian キャンプライト 電球型",
-        "asin": "B0FX9N1SBZ",
-        "priceComparison": "約600円と激安。",
+        "name": "Codexy キャンプランタン",
+        "asin": "B0GG9ZLQTN",
+        "priceComparison": "約2,300円とコールマンより少し安い。",
         "featureComparison": [
-          "ソーラー充電とUSB-C充電に対応。",
-          "クリップフック付き。",
-          "非常に安価な作り。"
+          "3200mAhの大容量バッテリー搭載。",
+          "側面パネルが90度開く変形機構で広範囲を照らせる。",
+          "緊急SOSモードなど多機能。"
         ],
         "differentiators": [
-          "価格破壊的な安さ。",
-          "ソーラー充電機能。",
-          "品質や耐久性は未知数。"
+          "バッテリー容量が大きく給電機能として実用的。",
+          "デザインはコールマンほどの洗練さはないが機能性が高い。"
         ]
       },
       {
-        "name": "aninako COBライト",
-        "asin": "B0DWK8K67D",
-        "priceComparison": "約1,000円と非常に安価。",
+        "name": "YIBOOOM COBライト",
+        "asin": "B0FH22M11N",
+        "priceComparison": "約995円と非常に安価。",
         "featureComparison": [
-          "COBライトで1000ルーメンと非常に明るい。",
-          "キーホルダーサイズで携帯性抜群。",
-          "栓抜き機能などツール的側面が強い。"
+          "1000ルーメンと圧倒的な明るさ。",
+          "Type-C充電式で1200mAh。",
+          "IPX4防水仕様。"
         ],
         "differentiators": [
-          "圧倒的なコンパクトさと明るさ。",
-          "ランタンというよりは投光器/作業灯に近い光の質。"
+          "圧倒的なコストパフォーマンスと明るさ。",
+          "ランタンというよりは投光器/作業灯に近い光の質とデザイン。"
         ]
       }
     ],
@@ -130,15 +126,27 @@
       "scoreRationale": "[基本点: 70]\n[加点: +8] (コンパクトで250lm、マグネット・フック・置きの3way、給電機能、暖色LEDと機能バランスが非常に良い)\n[減点: -5] (競合が非常に安価になっており、3000円台は機能に対してやや割高。Micro-USBである点もマイナス)\n[加点: +8] (コールマンブランドの信頼性、メタリックグリーンのデザイン、ビルドクオリティ)\n[加点: +7] (レビューや記事での評価が高い)\n[合計: 88]"
     },
     "technicalSpecs": {
-      "dimensions": "直径7×高さ5cm",
-      "weight": "約130g",
+      "dimensions": {
+        "height": "5cm",
+        "width": "7cm",
+        "depth": "7cm",
+        "weight": "約130g"
+      },
+      "power": "充電式リチウムイオン電池（内蔵・交換不可）",
+      "capacity": "充電時間目安:約5時間",
       "brightness": "High: 250lm / Middle: 100lm / Low: 30lm",
-      "battery": "リチウムイオン電池（内蔵・交換不可）",
-      "charging": "Micro-USB, 充電時間約5時間",
-      "runtime": "High: 10H / Middle: 20H / Low: 40H",
+      "runtime": "High:約10H / Middle:20H / Low:約40H",
       "waterproof": null,
-      "modes": "High / Middle / Low / Flash",
-      "other": ["給電機能付き", "マグネット内蔵", "カラビナフック"]
+      "connectivity": [
+        "Micro-USB (充電用)",
+        "USB-A (給電用)"
+      ],
+      "other": [
+        "マグネット内蔵",
+        "カラビナフック",
+        "暖色系LED",
+        "モバイルバッテリー機能"
+      ]
     }
   }
 }
