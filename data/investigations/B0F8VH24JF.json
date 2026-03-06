@@ -1,6 +1,6 @@
 {
   "analysis": {
-    "productName": "Lenovo Tab One (8.7インチ / Helio G85)",
+    "productName": "Lenovo Tab One 8.7インチ",
     "parentAsin": "B0FDGNXWW5",
     "productDescription": "LenovoがAmazon限定で展開する、8.7インチのコンパクトなAndroidタブレット。持ち運びに最適なサイズ感と、同クラスとしては大容量の128GBストレージを備え、電子書籍や動画鑑賞に適したエントリーモデルです。",
     "productUsage": [
@@ -55,7 +55,7 @@
         "credibility": "高"
       }
     ],
-    "lastInvestigated": "2026-01-19",
+    "lastInvestigated": "2026-03-07",
     "competitiveAnalysis": [
       {
         "name": "ALLDOCUBE iPlay 60 mini Turbo",
@@ -87,7 +87,7 @@
       },
       {
         "name": "Samsung Galaxy Tab A9 (並行輸入)",
-        "asin": "B0D43M7686",
+        "asin": "B0CKKK44GN",
         "priceComparison": "約3.4万円（LTE版）",
         "featureComparison": [
           "CPU: Helio G99 (Lenovoより高性能)",
@@ -116,7 +116,7 @@
         "急速充電などの付加機能が弱い可能性がある"
       ],
       "score": 70,
-      "scoreRationale": "[基本点: 70]\n[性能・機能: -5] (SoCのHelio G85は現行のエントリークラスとしても控えめ。画面解像度がFHDでない点もマイナス)\n[コストパフォーマンス: 0] (1.9万円は安価だが、競合の中華タブレットが非常に強力なため、特筆するほどのコスパではない)\n[品質・デザイン: +5] (Lenovo製であることの信頼性とビルドクオリティへの期待)\n[独自の強み: 0] (Amazon限定でストレージ増量は良いが、決定的な差別化とまでは言えない)\n[合計: 70]"
+      "scoreRationale": "[基本点: 70]\n[性能・機能: -5] (SoCのHelio G85は現行のエントリークラスとしても控えめで、画面解像度がFHDでない点がマイナス)\n[コストパフォーマンス: 0] (1.9万円は安価だが、競合の安価な中華タブレットと比較すると特筆するほどのコスパではない)\n[品質・デザイン: +5] (Lenovo製であることの信頼性とビルドクオリティへの期待)\n[合計: 70]"
     },
     "technicalSpecs": {
       "os": "Android 14",
@@ -126,23 +126,29 @@
       "display": {
         "size": "8.7インチ",
         "resolution": "1340x800",
-        "type": "ワイドパネル (IPS推測)"
+        "type": "ワイドパネル"
       },
       "battery": {
-        "capacity": "不明 (Tab M9ベースなら5100mAh)",
+        "capacity": null,
         "charging": "USB Type-C"
       },
       "camera": {
-        "main": "8MP",
+        "main": "800万画素",
         "ultrawide": null
       },
       "connectivity": [
         "Wi-Fi",
         "Bluetooth"
       ],
-      "dimensions": null,
+      "dimensions": {
+        "height": null,
+        "width": null,
+        "depth": null,
+        "weight": "0.705ポンド(約320g)"
+      },
       "other": [
-        "microSDスロット (最大1TB)"
+        "microSDメディアカードリーダー（最大1TB対応）",
+        "マイクロホン/ヘッドホン・コンボ・ジャック"
       ]
     }
   }
