@@ -1,7 +1,7 @@
 {
   "analysis": {
     "productName": "アイリスオーヤマ LUCA 10.1インチ Androidタブレット (TA10E1W63-V1H)",
-    "parentAsin": "B0FDQ5V62P",
+    "parentAsin": "B0FBGKN82Z",
     "productDescription": "最新OS Android 15を搭載した、アイリスオーヤマ製の10.1インチエントリー向けタブレット。必要十分な性能と国内メーカーならではの安心サポートを兼ね備えています。",
     "productUsage": [
       "YouTubeや動画配信サービスの視聴",
@@ -30,13 +30,13 @@
       {
         "userType": "60代男性（推測）",
         "scenario": "初めてのタブレット購入",
-        "experience": "海外製の安いタブレットは設定や故障時の対応が不安だったが、知っているメーカーのアイリスオーヤマなら安心して購入できた。ニュースを見たりYouTubeを見る分には問題なく使えている。（推測に基づく）",
+        "experience": "海外製の安いタブレットは設定や故障時の対応が不安だったが、知っているメーカーのアイリスオーヤマなら安心して購入できた。ニュースを見たりYouTubeを見る分には問題なく使えている。（推測）",
         "sentiment": "positive"
       },
       {
         "userType": "30代主婦（推測）",
         "scenario": "子供の動画視聴用",
-        "experience": "子供がYouTubeを見るために購入。高価なiPadは必要ないが、あまりに怪しいメーカーも避けたかったのでこれを選んだ。画質はそこそこだが、子供が使うには十分。保護フィルム済みで手間が省けた。（推測に基づく）",
+        "experience": "子供がYouTubeを見るために購入。高価なiPadは必要ないが、あまりに怪しいメーカーも避けたかったのでこれを選んだ。画質はそこそこだが、子供が使うには十分。保護フィルム済みで手間が省けた。（推測）",
         "sentiment": "mixed"
       }
     ],
@@ -46,53 +46,47 @@
         "name": "Amazon商品ページ",
         "url": "https://www.amazon.co.jp/dp/B0FBGKN82Z",
         "credibility": "high"
-      },
-      {
-        "name": "Rockchip RK3562 Benchmark Data",
-        "url": null,
-        "credibility": "medium"
       }
     ],
-    "lastInvestigated": "2026-01-19",
+    "lastInvestigated": "2026-03-07",
     "competitiveAnalysis": [
       {
-        "name": "TECLAST P30",
-        "asin": "B0G1GW8X94",
-        "priceComparison": "約8,900円（本製品より約5,000円安い）",
+        "name": "FUNSEDY タブレット 10インチ",
+        "asin": "B0GMGNTF9T",
+        "priceComparison": "約9,998円（本製品より約4,000円安い）",
         "featureComparison": [
-          "物理メモリ4GB（本製品は3GB）",
-          "Android 14/15搭載",
-          "Allwinner A523 8コアCPU（本製品は4コア）"
+          "高性能8コア CPU (A523)",
+          "GMS認証・Widevine L1対応"
         ],
         "differentiators": [
           "圧倒的なコストパフォーマンス",
-          "筐体の質感（メタルボディ）"
+          "Widevine L1対応で高画質ストリーミング再生が可能"
         ]
       },
       {
-        "name": "HiGrace 10インチタブレット",
-        "asin": "B0FPLLDL76",
-        "priceComparison": "約9,000円（本製品より約5,000円安い）",
+        "name": "Bvlary X50",
+        "asin": "B0GCXXMYRS",
+        "priceComparison": "約13,299円（本製品より約1,000円安い）",
         "featureComparison": [
-          "Android 15搭載（本製品と同じ）",
-          "Wi-Fi 6対応"
+          "メモリ24GB(16GB+8GB仮想)・128GBストレージ",
+          "8000mAh大容量バッテリー搭載"
         ],
         "differentiators": [
-          "価格の安さ",
-          "キーボード付きセットなどのバリエーション"
+          "キーボードやマウスなど9点がセットになっている点",
+          "大容量メモリとストレージ"
         ]
       },
       {
-        "name": "BMAX I9 Plus",
-        "asin": "B0FP5BK51X",
-        "priceComparison": "約12,900円（本製品より約1,300円安い）",
+        "name": "VASOUN TAB10MAX",
+        "asin": "B0FMDXHTVN",
+        "priceComparison": "約8,499円（本製品より約5,700円安い）",
         "featureComparison": [
-          "ストレージ128GB（本製品は64GB）",
-          "メモリ容量が大きい"
+          "RK3562搭載（本製品と同じ）",
+          "6000mAh大容量バッテリー"
         ],
         "differentiators": [
-          "ストレージ容量の多さ",
-          "スペック上の数値が高い"
+          "同じCPUを搭載しながら価格が非常に安い",
+          "バッテリー容量が本製品よりやや多い"
         ]
       }
     ],
@@ -113,11 +107,11 @@
         "メモリ3GBはマルチタスクには少々心許ない"
       ],
       "score": 65,
-      "scoreRationale": "[基本点: 70]\n[加点: +5] 国内メーカーによるサポート体制と日本語マニュアルの安心感\n[加点: +2] 最新OS Android 15を搭載\n[減点: -10] 同等の性能を持つ競合製品（約9,000円）と比較して価格（約1.4万円）が割高\n[減点: -2] 物理メモリ3GB、4コアCPUというエントリースペックの制約\n[合計: 65]"
+      "scoreRationale": "[基本点: 70]\n[加点: +5] 国内メーカーによるサポート体制と日本語マニュアルの安心感\n[加点: +2] 最新OS Android 15を搭載\n[減点: -10] 同等の性能を持つ競合製品（約8,500円〜10,000円）と比較して価格（約1.4万円）が割高\n[減点: -2] 物理メモリ3GB、4コアCPUというエントリースペックの制約\n[合計: 65]"
     },
     "technicalSpecs": {
       "os": "Android 15",
-      "cpu": "Rockchip RK3562 (Quad-core Cortex-A53 2.0GHz)",
+      "cpu": "Rockchip RK3562",
       "ram": "3GB (物理) + 6GB (仮想)",
       "storage": "64GB",
       "display": {
