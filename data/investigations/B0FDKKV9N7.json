@@ -2,7 +2,7 @@
   "analysis": {
     "productName": "山善 キュリオム QA15-101 タブレット",
     "parentAsin": "B0FTK7BVD3",
-    "productDescription": "Android 15と5種類のセンサー（GPS・ジャイロ等）を搭載した、山善の10.1インチ高コスパタブレット。",
+    "productDescription": "Android 15と5種類のセンサー（GPS・ジャイロ等）を搭載した、日本メーカー山善の10.1インチ高コスパタブレット。",
     "productUsage": [
       "YouTubeやNetflixなどの動画視聴",
       "カーナビ利用（GPS搭載）",
@@ -62,48 +62,48 @@
         "credibility": "高"
       }
     ],
-    "lastInvestigated": "2026-01-19",
+    "lastInvestigated": "2026-03-07",
     "competitiveAnalysis": [
       {
-        "name": "TECLAST P30",
-        "asin": "B0FRM7B32F",
-        "priceComparison": "山善より約6,000円安い（9,000円台）",
+        "name": "NEWISION 10インチ タブレット",
+        "asin": "B0GCNF7XPX",
+        "priceComparison": "山善より約5,000円安い（8,499円）",
         "featureComparison": [
-          "Android 14 (山善は15)",
-          "GPS搭載だがジャイロの明記なし",
-          "6000mAhバッテリー、Wi-Fi 6対応"
+          "Android 15 (同等)",
+          "RAM 8GB / 32GB (山善はRAM 4GB+仮想8GB / 64GB)",
+          "5コアCPU (山善は8コアCPU T606)"
         ],
         "differentiators": [
-          "価格の安さではTECLAST P30が圧倒的",
-          "山善は日本メーカーサポートとジャイロセンサーで差別化"
+          "価格はNEWISIONが圧倒的に安いが、ストレージ容量とCPU性能で山善が優れる",
+          "山善はジャイロ等のセンサー類が充実しており、日本メーカーのサポートがある"
         ]
       },
       {
-        "name": "TECLAST P50",
-        "asin": "B09FKYRD22",
-        "priceComparison": "山善より約1,500円安い（14,000円台）",
+        "name": "Bmax I10S",
+        "asin": "B0F4K7WNFV",
+        "priceComparison": "山善よりわずかに安い（12,999円）",
         "featureComparison": [
-          "11インチ 90Hzディスプレイ (山善は10インチ 60Hz)",
-          "128GBストレージ (山善は64GB)",
-          "Unisoc T606搭載（同等）"
+          "Android 15 (同等)",
+          "RAM 16GB / 64GB (山善はRAM 4GB+仮想8GB / 64GB)",
+          "T310 A75大コア (山善は8コアCPU T606)"
         ],
         "differentiators": [
-          "スペック（画面・容量）はP50が上",
-          "山善はコンパクトな10インチと信頼性で勝負"
+          "Widevine L1対応でBmax I10Sは動画視聴に強みがある",
+          "山善は多様なセンサー搭載で位置情報ゲームやナビ用途に向く"
         ]
       },
       {
-        "name": "ALLDOCUBE iPlay 60S",
-        "asin": "B0FX8KGT89",
-        "priceComparison": "山善より約2,000円安い（13,999円）",
+        "name": "JETAKu 10インチ タブレット",
+        "asin": "B0GDDNW33M",
+        "priceComparison": "山善より約4,000円安い（9,499円）",
         "featureComparison": [
-          "Widevine L1 Netflix対応",
-          "128GBストレージ (山善は64GB)",
-          "デュアルスピーカー"
+          "Android 15 (同等)",
+          "RAM 20GB / 64GB (山善はRAM 4GB+仮想8GB / 64GB)",
+          "A523 高性能8コア (山善はUnisoc T606 8コア)"
         ],
         "differentiators": [
-          "エンタメ性能（画質・音質）はALLDOCUBEが有利",
-          "山善はセンサー充実と国内サポートが強み"
+          "価格とWidevine L1対応でJETAKuがエンタメ用途に強い",
+          "山善は日本ブランドの信頼性とジャイロセンサーなど実用的な機能で差別化"
         ]
       }
     ],
@@ -124,8 +124,8 @@
         "画面解像度がHDクラスで、FHD動画の視聴には物足りない",
         "充電速度が遅い可能性がある"
       ],
-      "score": 80,
-      "scoreRationale": "[基本点: 70]\n[加点: +5] 日本メーカーの安心感と日本語サポート体制\n[加点: +5] この価格帯でジャイロセンサーを含む5センサーをフル搭載\n[加点: +5] 最新OS Android 15を搭載\n[減点: -5] 解像度がWXGA (1280x800) と低め\n[合計: 80]"
+      "score": 79,
+      "scoreRationale": "[基本点: 70]\n[加点: +5] 日本メーカー（山善）の安心感と日本語サポート体制\n[加点: +5] 1万円台でジャイロセンサーを含む5センサーをフル搭載\n[加点: +4] 最新OS Android 15を搭載\n[減点: -5] 解像度がWXGA (1280x800) と低め、Widevine L1非対応の可能性がある\n[合計: 79]"
     },
     "technicalSpecs": {
       "os": "Android 15",
