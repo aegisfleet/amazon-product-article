@@ -1,7 +1,7 @@
 {
   "analysis": {
     "productName": "Xiaomi Pad 7 Pro",
-    "parentAsin": "B0F12NXZ6F",
+    "parentAsin": "B0DXFBSH9G",
     "productDescription": "Snapdragon 8s Gen 3プロセッサと3.2K 144Hzディスプレイを搭載し、高度なAI機能も備えたハイエンドAndroidタブレット。",
     "productUsage": [
       "3.2K高精細ディスプレイでの映画鑑賞や電子書籍閲覧",
@@ -48,45 +48,44 @@
         "credibility": "高"
       }
     ],
-    "lastInvestigated": "2026-01-19",
+    "lastInvestigated": "2026-03-07",
     "competitiveAnalysis": [
       {
-        "name": "iPad Air 11インチ (M2)",
-        "asin": "B0DZ8LXH2K",
-        "priceComparison": "Xiaomi Pad 7 Proの方が約3万円安い。",
+        "name": "Xiaomi Pad 7",
+        "asin": "B0DXFC2WC9",
+        "priceComparison": "Xiaomi Pad 7の方が約1万円安い。",
         "featureComparison": [
-          "iPadはM2チップ、XiaomiはSnapdragon 8s Gen 3（共にハイエンド）",
-          "Xiaomiは144Hz画面、iPad Airは60Hz",
-          "iPadはクリエイティブアプリが充実"
+          "Pad 7はSnapdragon 7+ Gen 3、7 ProはSnapdragon 8s Gen 3（共にハイエンドだがProが上位）",
+          "充電速度はPad 7が45W、7 Proは67W",
+          "両方とも3.2K 144Hz画面、8850mAhバッテリー搭載"
         ],
         "differentiators": [
-          "圧倒的な価格メリット",
-          "画面のリフレッシュレートとアスペクト比",
-          "AI機能の統合度合い"
+          "チップセットの性能差と価格差のバランス",
+          "より高速な急速充電の必要性"
         ]
       },
       {
-        "name": "iPad (第10世代)",
-        "asin": "B0DZ8BQ2PB",
-        "priceComparison": "価格はほぼ同等（約7万円）。",
+        "name": "Headwolf Titan 1",
+        "asin": "B0FVF9MLBH",
+        "priceComparison": "Headwolf Titan 1の方が安価（約5万円）。",
         "featureComparison": [
-          "処理性能はXiaomiが大幅に上回る",
-          "画面品質（解像度・リフレッシュレート）もXiaomiが上",
-          "iPadはリセールバリューが高い"
+          "Titan 1はDimensity 8300搭載、7 ProはSnapdragon 8s Gen 3",
+          "Titan 1は8インチの小型タブレット、7 Proは11.2インチ",
+          "Titan 1はSIMフリー対応、7 ProはWi-Fiモデル"
         ],
         "differentiators": [
-          "同予算で得られるスペックの差",
-          "OSエコシステム（Android vs iPadOS）"
+          "画面サイズと携帯性の違い",
+          "LTE/5G通信が必要かどうか"
         ]
       },
       {
         "name": "Xiaomi Pad 6S Pro 12.4",
         "asin": "B0CZMRMQHR",
-        "priceComparison": "価格は近い（約6.5万円）。",
+        "priceComparison": "価格は近い（約6万円台）。",
         "featureComparison": [
-          "6S Proは12.4インチの大画面",
+          "6S Proは12.4インチの大画面、7 Proは11.2インチ",
           "充電速度は6S Proが120Wでより高速",
-          "7 Proは最新のAI機能を搭載"
+          "7 Proは最新のHyperOS 2やAI機能に最適化されている"
         ],
         "differentiators": [
           "画面サイズ（携帯性 vs 視認性）",
@@ -97,8 +96,8 @@
     "recommendation": {
       "targetUsers": [
         "コストパフォーマンスを重視するハイエンド志向のユーザー",
-        "Androidスマートフォンを利用している人",
-        "仕事とエンタメを一台で高レベルにこなしたい人"
+        "仕事とエンタメを一台で高レベルにこなしたい人",
+        "AI機能を活用して生産性を高めたいビジネスマンや学生"
       ],
       "pros": [
         "6万円台とは思えないフラッグシップ級の処理性能",
@@ -106,29 +105,29 @@
         "会議や学習に役立つAI機能の実装"
       ],
       "cons": [
-        "iPad専用のクリエイティブアプリは使用不可",
+        "microSDカードスロットやイヤホンジャックがない",
         "GPS非搭載のためカーナビ代わりにはならない"
       ],
-      "score": 95,
-      "scoreRationale": "[基本点: 70]\n[加点: +15] (Snapdragon 8s Gen 3と3.2K 144Hz画面で6万円台という圧倒的なコストパフォーマンス)\n[加点: +7] (最新のAI機能搭載と、作業に適した3:2アスペクト比)\n[加点: +3] (薄型軽量なメタルボディと急速充電の利便性)\n[合計: 95]"
+      "score": 93,
+      "scoreRationale": "[基本点: 70]\n[加点: +10] (Snapdragon 8s Gen 3搭載による同価格帯最高クラスの処理性能)\n[加点: +8] (3.2K 144Hz・800nitsの高品質ディスプレイと実用的な3:2アスペクト比)\n[加点: +5] (HyperOS 2による最新AI機能の実装とシームレスなデバイス間連携)\n[合計: 93]"
     },
     "technicalSpecs": {
-      "os": "Xiaomi HyperOS 2 (Androidベース)",
+      "os": "Xiaomi HyperOS 2",
       "cpu": "Snapdragon 8s Gen 3",
       "ram": "8GB",
       "storage": "128GB",
       "display": {
         "size": "11.2インチ",
-        "resolution": "3200 x 2136 (3.2K)",
-        "type": "LCD (144Hz, 800nits)"
+        "resolution": "3200×2136",
+        "type": "LCD (144Hz, 800nits, Dolby Vision対応)"
       },
       "battery": {
         "capacity": "8850mAh",
         "charging": "67W急速充電"
       },
       "camera": {
-        "main": "50MP",
-        "front": "32MP"
+        "main": "5000万画素",
+        "front": "3200万画素 (AONフロントカメラ)"
       },
       "dimensions": {
         "height": "不明",
@@ -142,9 +141,10 @@
         "USB Type-C"
       ],
       "other": [
-        "Dolby Vision対応",
         "Dolby Atmosクアッドスピーカー",
-        "Xiaomi HyperAI"
+        "Xiaomi HyperAI",
+        "Xiaomi HyperConnect",
+        "NFCタッチ共有"
       ]
     }
   }
