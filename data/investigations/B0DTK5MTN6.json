@@ -1,7 +1,7 @@
 {
   "analysis": {
     "productName": "Lenovo Tab M11 (10.1インチ ワイド パネル)",
-    "parentAsin": "B0FDGRBMWD",
+    "parentAsin": "B0DTK5MTN6",
     "productDescription": "鮮やかな10.1インチWUXGAディスプレイとDolby Atmos対応スピーカーを搭載した、動画視聴や学習に最適なエントリー向けAndroidタブレットです。",
     "productUsage": [
       "YouTubeやNetflixなどの高画質動画視聴",
@@ -20,7 +20,7 @@
     "negativePoints": [
       "4GBメモリのため、複数のアプリを同時に開くと動作が重くなる可能性がある",
       "Helio G85プロセッサーは3Dゲームには不向き",
-      "同スペック帯のXiaomiや中華メーカー製タブレットと比較して価格が割高",
+      "同スペック帯の中華メーカー製タブレットと比較して価格がやや高い",
       "充電速度やバッテリー持ちに関する詳細情報が少ない"
     ],
     "useCases": [
@@ -56,47 +56,44 @@
         "credibility": "高"
       }
     ],
-    "lastInvestigated": "2026-01-19",
+    "lastInvestigated": "2026-03-07",
     "competitiveAnalysis": [
       {
-        "name": "Xiaomi Redmi Pad SE 8.7",
-        "asin": "B0D97PST2K",
-        "priceComparison": "約3,000円安い (約19,980円)",
+        "name": "【Amazon.co.jp限定】Lenovo Tab M11 (ZAEH0157JP)",
+        "asin": "B0DVSP11PG",
+        "priceComparison": "本製品(17,900円)よりやや高い (約21,100円)",
         "featureComparison": [
-          "8.7インチで持ち運びやすい",
-          "90Hzリフレッシュレート対応",
-          "同等のHelio G85搭載"
+          "基本スペック(Helio G85, 4GB RAM)は同等",
+          "Amazon.co.jp限定モデル"
         ],
         "differentiators": [
-          "Xiaomi HyperOSによるスムーズな操作感",
-          "携帯性重視ならRedmi Pad SE 8.7が有利"
+          "本製品の方が価格が安く、コストパフォーマンスに優れる"
         ]
       },
       {
-        "name": "TECLAST P30",
-        "asin": "B0G1GW8X94",
-        "priceComparison": "半額以下 (約8,900円)",
+        "name": "Lenovo タブレット Tab M10 (3rd Gen) (ZAAE0037JP)",
+        "asin": "B0FBVZ36RG",
+        "priceComparison": "同等価格 (約17,800円)",
+        "featureComparison": [
+          "プロセッサーがUnisoc T610",
+          "メモリが3GB/32GBと本製品より少ない",
+          "Android 12搭載"
+        ],
+        "differentiators": [
+          "本製品(M11)の方がメモリ・ストレージ容量が多く(4GB/64GB)、OSも新しい(Android 14)ため優れている"
+        ]
+      },
+      {
+        "name": "JETAKu 10インチ Android 15 タブレット",
+        "asin": "B0GDDY1J5W",
+        "priceComparison": "本製品よりかなり安い (約9,499円)",
         "featureComparison": [
           "解像度が低い (1280x800)",
-          "CPU性能が低い",
-          "質感は価格なり"
+          "OSは新しい (Android 15)",
+          "ブランドの知名度は低い"
         ],
         "differentiators": [
-          "圧倒的な安さ",
-          "とりあえずタブレットが欲しい人向け"
-        ]
-      },
-      {
-        "name": "BMAX I10 Plus",
-        "asin": "B0FK9WCRWJ",
-        "priceComparison": "約1万円安い (約11,999円)",
-        "featureComparison": [
-          "Unisoc T606搭載で処理能力は同等以上",
-          "メモリ容量が多い表記があるが実効速度は不明",
-          "ブランド信頼性は劣る"
-        ],
-        "differentiators": [
-          "コストパフォーマンスの高さ"
+          "価格を最重視するならJETAKuだが、品質と画面解像度(1920x1200)ではLenovo M11が勝る"
         ]
       }
     ],
@@ -113,10 +110,10 @@
       ],
       "cons": [
         "重いゲームは動作が厳しい",
-        "競合他社と比較してコストパフォーマンスは低め"
+        "中華系格安タブレットと比較すると少し割高"
       ],
-      "score": 68,
-      "scoreRationale": "[基本点: 70]\n[加点: +5] 大手メーカーLenovoの信頼性とビルドクオリティ\n[加点: +3] 1920x1200の高解像度ディスプレイ\n[減点: -5] Helio G85チップセットは2026年時点では性能不足感が否めない\n[減点: -5] 同スペックの競合（Xiaomi等）と比較して価格が割高\n[合計: 68]"
+      "score": 73,
+      "scoreRationale": "[基本点: 70]\n[加点: +5] 大手メーカーLenovoの信頼性とビルドクオリティ\n[加点: +3] 1920x1200の高解像度ディスプレイによるメディア消費の快適さ\n[加点: +5] 同社旧モデルや類似モデルと比較しても、4GB/64GBで17,900円は大手製としては良好なコストパフォーマンス\n[減点: -5] Helio G85チップセットは2026年時点では性能不足感があり、マルチタスクやゲームに弱い\n[減点: -5] 中華系格安競合と比較すると価格競争力で劣る\n[合計: 73]"
     },
     "technicalSpecs": {
       "os": "Android 14",
@@ -140,11 +137,11 @@
         "3.5mmオーディオジャック"
       ],
       "dimensions": {
-        "weight": "約426g (推測)"
+        "weight": "約425g (0.936ポンド換算)"
       },
       "other": [
-        "GPS非搭載 (Wi-Fiモデルのため推測)",
-        "顔認証対応 (推測)"
+        "Dolby Atmos対応 (推測)",
+        "GPS非搭載 (Wi-Fiモデルのため推測)"
       ]
     }
   }
