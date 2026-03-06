@@ -1,7 +1,7 @@
 {
   "analysis": {
     "productName": "Lenovo Legion Tab (8.8\", 3)",
-    "parentAsin": "B0F1YLDZ8Y",
+    "parentAsin": "B0DTK4TMJH",
     "productDescription": "Snapdragon 8 Gen 3を搭載した8.8インチのハイエンドAndroidゲーミングタブレット。iPad miniに匹敵するサイズ感で、圧倒的な処理性能とデュアルUSB-Cポートを備える。",
     "productUsage": [
       "原神やゼンレスゾーンゼロなどの高負荷3Dゲームを最高設定・高フレームレートでプレイ",
@@ -55,12 +55,12 @@
         "credibility": "high"
       }
     ],
-    "lastInvestigated": "2026-01-19",
+    "lastInvestigated": "2026-03-07",
     "competitiveAnalysis": [
       {
         "name": "Apple iPad mini (A17 Pro)",
-        "asin": "B0DK467P86",
-        "priceComparison": "価格帯は近い（iPad mini 128GBと同等、256GBモデルと比較するとLegion Tabの方が割安）。",
+        "asin": "B0DK43L4K3",
+        "priceComparison": "Legion Tab(64,780円)は、iPad mini(78,800円〜)と比較して価格競争力が高い。",
         "featureComparison": [
           "iPad miniはiOS、Legion TabはAndroid",
           "iPad miniは60Hz画面だが、Legion Tabは最大165Hz",
@@ -74,17 +74,31 @@
         ]
       },
       {
-        "name": "Headwolf FPad7",
-        "asin": "B0G338K9WJ",
-        "priceComparison": "約2.7万円とLegion Tabの3分の1近い価格。",
+        "name": "Xiaomi POCO Pad",
+        "asin": "B0D48PX2XH",
+        "priceComparison": "POCO Pad(約39,000円)はLegion Tabの半額近い安価な設定。",
         "featureComparison": [
-          "CPU性能はLegion Tabが圧倒的（Snapdragon 8 Gen 3 vs Helio G99 Ultra相当）",
-          "FPad7は一般的な用途には十分だが、重い3Dゲームは厳しい",
-          "FPad7はSIMカード対応で通話可能だが、Legion TabはWi-Fiのみ"
+          "CPU性能はLegion Tabが圧倒的（Snapdragon 8 Gen 3 vs 7s Gen 2）",
+          "POCO Padは12.1インチの大型画面、Legion Tabは8.8インチのコンパクトサイズ",
+          "POCO PadはmicroSDでの拡張に対応"
         ],
         "differentiators": [
-          "圧倒的な性能差",
-          "Legion Tabはゲーミング特化の冷却機構や機能を搭載"
+          "持ち運びに適した8.8インチサイズ",
+          "ハイエンド3Dゲームも快適な圧倒的処理能力"
+        ]
+      },
+      {
+        "name": "REDMAGIC 10 Air",
+        "asin": "B0F6LTL7KP",
+        "priceComparison": "REDMAGIC 10 Air(約98,820円)よりもLegion Tab(64,780円)の方が安価。",
+        "featureComparison": [
+          "REDMAGICは6.8インチのスマートフォン、Legion Tabは8.8インチのタブレット",
+          "どちらもSnapdragon 8 Gen 3を搭載し、高いゲーミング性能を誇る",
+          "REDMAGICは冷却ファンを内蔵、Legion Tabはパッシブ冷却だが表面積が広い"
+        ],
+        "differentiators": [
+          "大画面による没入感と視認性の高さ",
+          "純粋なタブレットとしての運用に適したサイズ感"
         ]
       }
     ],
@@ -105,10 +119,10 @@
         "GPS非搭載のためナビ用途には使えない"
       ],
       "score": 92,
-      "scoreRationale": "[基本点: 70]\n[加点: +10] Snapdragon 8 Gen 3搭載の圧倒的な処理性能と165Hzディスプレイ\n[加点: +5] iPad mini 256GBモデルと比較して割安な価格設定\n[加点: +3] 質感の高い金属筐体と薄型ベゼル\n[加点: +8] 8インチAndroid市場における唯一無二のハイエンド機、デュアルUSB-Cポートの革新性\n[減点: -3] 指紋認証非搭載による利便性の低下\n[減点: -1] GPS非搭載\n[合計: 92]"
+      "scoreRationale": "[基本点: 70]\n[加点: +10] Snapdragon 8 Gen 3搭載の圧倒的な処理性能と165Hzディスプレイ\n[加点: +5] iPad miniと比較して割安な価格設定\n[加点: +3] 質感の高い金属筐体と薄型ベゼル\n[加点: +8] 8インチAndroid市場における唯一無二のハイエンド機、デュアルUSB-Cポートの革新性\n[減点: -3] 指紋認証非搭載による利便性の低下\n[減点: -1] GPS非搭載\n[合計: 92]"
     },
     "technicalSpecs": {
-      "os": "Android 14 (ZUI)",
+      "os": "Android 14",
       "cpu": "Snapdragon 8 Gen 3",
       "ram": "12GB LPDDR5X",
       "storage": "256GB (SDカード非対応)",
