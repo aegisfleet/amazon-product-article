@@ -1,6 +1,6 @@
-import * as fc from 'fast-check';
 import * as fs from 'node:fs';
 import * as path from 'node:path';
+import * as fc from 'fast-check';
 import { CategoryManager } from '../CategoryManager';
 import { ProductCounter } from '../ProductCounter';
 

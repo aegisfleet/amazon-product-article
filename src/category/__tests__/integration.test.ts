@@ -37,7 +37,10 @@ describe('Integration Tests', () => {
   });
 
   test('生成されたJSONとYAMLが整合性を持つ', () => {
-    const jsonContent = JSON.parse(fs.readFileSync(outJson, 'utf-8')) as Record<string, { slug: string; categories: string[] }>;
+    const jsonContent = JSON.parse(fs.readFileSync(outJson, 'utf-8')) as Record<
+      string,
+      { slug: string; categories: string[] }
+    >;
     const yamlContent = fs.readFileSync(outYaml, 'utf-8');
 
     // Verify JSON is a mapped object and YAML is valid

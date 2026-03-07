@@ -1,6 +1,6 @@
-import * as yaml from 'js-yaml';
 import * as fs from 'node:fs';
 import * as path from 'node:path';
+import * as yaml from 'js-yaml';
 import type { ProductCounter } from './ProductCounter';
 import type { CategoryGroup, EnhancedCategoryGroup } from './types';
 
