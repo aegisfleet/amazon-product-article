@@ -9,7 +9,31 @@
     // Category data loaded from JSON - initialized asynchronously
     let categoryGroups = {};
     let parentCategoryUrls = {};
+    let categoryCounts = {}; // NEW: Store product counts for child categories
     let dataLoaded = false;
+
+    /**
+     * Sort category groups by priority
+     */
+    function sortCategoriesByPriority(groups) {
+        return [...groups].sort((a, b) => {
+            const priorityA = a.priority !== undefined ? a.priority : 999;
+            const priorityB = b.priority !== undefined ? b.priority : 999;
+            return priorityA - priorityB;
+        });
+    }
+
+    /**
+     * Filter visible categories based on visibility flag and product count
+     */
+    function filterVisibleCategories(groups) {
+        return groups.filter(group => {
+            if (group.visible === false) return false;
+            // 0 products are hidden unless it's "その他"
+            if (group.name !== 'その他' && group.productCount !== undefined && group.productCount === 0) return false;
+            return true;
+        });
+    }
 
     /**
      * Load category data from JSON file
@@ -32,9 +56,30 @@
             const data = await response.json();
 
             // Transform JSON data into the required structures
-            for (const [groupName, groupData] of Object.entries(data)) {
-                categoryGroups[groupName] = groupData.categories;
-                parentCategoryUrls[groupName] = groupData.slug;
+            if (data && Array.isArray(data.categoryGroups)) {
+                // New format: data.categoryGroups array
+                const sortedGroups = sortCategoriesByPriority(data.categoryGroups);
+                const visibleGroups = filterVisibleCategories(sortedGroups);
+
+                for (const group of visibleGroups) {
+                    const visibleChildren = group.childrenWithCounts
+                        ? group.childrenWithCounts.filter(child => child.productCount > 0)
+                        : [];
+
+                    if (visibleChildren.length > 0 || group.name === 'その他') {
+                        categoryGroups[group.name] = visibleChildren.map(child => child.name);
+                        visibleChildren.forEach(child => {
+                            categoryCounts[child.name] = child.productCount;
+                        });
+                        parentCategoryUrls[group.name] = group.slug;
+                    }
+                }
+            } else {
+                // Legacy format (fallback)
+                for (const [groupName, groupData] of Object.entries(data)) {
+                    categoryGroups[groupName] = groupData.categories || [];
+                    parentCategoryUrls[groupName] = groupData.slug;
+                }
             }
 
             dataLoaded = true;
@@ -157,7 +202,11 @@
             groups[selectedGroup].forEach(category => {
                 const option = document.createElement('option');
                 option.value = category;
-                option.textContent = category;
+
+                // Append product count if available
+                const count = categoryCounts[category];
+                option.textContent = count !== undefined ? `${category} (${count})` : category;
+
                 subSelect.appendChild(option);
             });
             subSelect.disabled = false;
@@ -275,7 +324,11 @@
                 const tag = document.createElement('a');
                 tag.href = safeCategoryUrl(urls[category]);
                 tag.className = 'category-tag-link';
-                tag.textContent = category;
+
+                // Append product count if available
+                const count = categoryCounts[category];
+                tag.textContent = count !== undefined ? `${category} (${count})` : category;
+
                 tagsContainer.appendChild(tag);
             });
 

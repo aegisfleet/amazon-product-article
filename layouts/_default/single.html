@@ -63,7 +63,12 @@
         {{ $related := $allArticles }}
         {{ if $categories }}
         {{ $firstCat := index $categories 0 }}
-        {{ $related = where $related "Params.categories" "intersect" (slice $firstCat) }}
+        {{ if $firstCat }}
+        {{ $relatedWithCats := where $related "Params.categories" "!=" nil }}
+        {{ $related = where $relatedWithCats "Params.categories" "intersect" (slice $firstCat) }}
+        {{ else }}
+        {{ $related = slice }}
+        {{ end }}
         {{ end }}
 
         <div id="related-products-section" style="display: none;">
