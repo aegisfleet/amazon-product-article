@@ -2,7 +2,7 @@ parents:
   パソコン・モニター・入力機器:
     name: パソコン・モニター・入力機器
     slug: pc-workstation
-    productCount: 101
+    productCount: 102
     isVisible: true
     childrenWithCounts:
       - name: 2 in 1ノートパソコン
@@ -35,6 +35,8 @@ parents:
         productCount: 8
       - name: マウスパッド
         productCount: 3
+      - name: ミニ
+        productCount: 1
       - name: モニターアーム
         productCount: 26
       - name: モニタースタンド
@@ -2784,7 +2786,7 @@ parents:
   その他:
     name: その他
     slug: others
-    productCount: 8
+    productCount: 7
     isVisible: true
     childrenWithCounts:
       - name: 2,000円以下・レビュー評価4以上の人気商品
@@ -2817,7 +2819,5 @@ parents:
         productCount: 0
       - name: デバイス
         productCount: 0
-      - name: ミニ
-        productCount: 1
       - name: 並行輸入品
         productCount: 0
