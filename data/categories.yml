@@ -71,6 +71,8 @@ parents:
         productCount: 1
       - name: ケーブル・アダプタ
         productCount: 1
+      - name: ケーブル・アダプター
+        productCount: 0
       - name: ゲーミングキーボード
         productCount: 5
       - name: ゲーミングマウス
@@ -787,6 +789,10 @@ parents:
         productCount: 1
       - name: 浴室・浴槽洗剤
         productCount: 3
+      - name: 浴室掃除用スポンジ
+        productCount: 0
+      - name: 浴室掃除用ブラシ
+        productCount: 0
       - name: 液体柔軟剤
         productCount: 4
       - name: 液体洗剤
@@ -1317,18 +1323,16 @@ parents:
         productCount: 1
       - name: 防犯カメラ
         productCount: 1
-  美容:
-    name: 美容
-    slug: beauty
-    productCount: 274
+  コスメ・スキンケア:
+    name: コスメ・スキンケア
+    slug: cosmetics-skincare
+    productCount: 156
     isVisible: true
     childrenWithCounts:
       - name: Skincare
         productCount: 0
       - name: おしゃれカラコン
         productCount: 0
-      - name: かっさプレート
-        productCount: 1
       - name: アイクリーム
         productCount: 1
       - name: アイシャドウ
@@ -1343,8 +1347,6 @@ parents:
         productCount: 0
       - name: オールインワン
         productCount: 0
-      - name: カーリングワンド
-        productCount: 1
       - name: ギフトセット
         productCount: 2
       - name: クリームファンデーション
@@ -1371,18 +1373,12 @@ parents:
         productCount: 0
       - name: ゴマージュ・ピーリング
         productCount: 0
-      - name: シャンプー
-        productCount: 23
-      - name: シャンプー・コンディショナーセット
-        productCount: 8
       - name: スキンケア
         productCount: 1
       - name: スキンケア・ボディケア
         productCount: 7
       - name: スキンケア・基礎化粧品
         productCount: 3
-      - name: スタイリング用品セット
-        productCount: 0
       - name: スタンダード
         productCount: 0
       - name: スペシャルケア
@@ -1398,8 +1394,6 @@ parents:
       - name: デオドラント・制汗剤
         productCount: 0
       - name: トラベルセット
-        productCount: 1
-      - name: ドライヤー・ヘアアイロンホルダー
         productCount: 1
       - name: ナイトケアクリーム
         productCount: 2
@@ -1425,17 +1419,11 @@ parents:
         productCount: 0
       - name: ファンデーション
         productCount: 0
-      - name: フィリップス ソニッケアー替えブラシ　定期お特便をはじめよう。
-        productCount: 0
-      - name: フェイスエクササイズ
-        productCount: 0
       - name: フェイスオイル
         productCount: 1
       - name: フェイスケア
         productCount: 20
       - name: フェイスケアセット
-        productCount: 0
-      - name: フェイススチーマー
         productCount: 0
       - name: フェイスパウダー
         productCount: 4
@@ -1443,10 +1431,104 @@ parents:
         productCount: 3
       - name: フェイスマスク
         productCount: 1
-      - name: フェイスローラー
-        productCount: 1
       - name: フレグランス
         productCount: 0
+      - name: ベースメイク
+        productCount: 0
+      - name: ボディオイル・ボディジェル
+        productCount: 0
+      - name: ボディクリーム
+        productCount: 1
+      - name: ボディケア
+        productCount: 2
+      - name: ボディソープ
+        productCount: 3
+      - name: ボディバター
+        productCount: 0
+      - name: ボディローション・ミルク
+        productCount: 0
+      - name: マスカラ
+        productCount: 1
+      - name: マニキュア・ネイルポリッシュ
+        productCount: 0
+      - name: メイクアップ
+        productCount: 0
+      - name: メイクアップフィニッシャー
+        productCount: 1
+      - name: ラグジュアリービューティー
+        productCount: 1
+      - name: リキッドファンデーション
+        productCount: 4
+      - name: 乳液・クリーム
+        productCount: 3
+      - name: 保湿ジェル
+        productCount: 1
+      - name: 保湿ソックス
+        productCount: 0
+      - name: 保湿ミスト・スプレー
+        productCount: 3
+      - name: 制汗デオドラント
+        productCount: 1
+      - name: 制汗剤
+        productCount: 0
+      - name: 化粧下地
+        productCount: 1
+      - name: 化粧水
+        productCount: 14
+      - name: 口紅
+        productCount: 1
+      - name: 日本
+        productCount: 0
+      - name: 泡洗顔料
+        productCount: 0
+      - name: 泡立てネット
+        productCount: 1
+      - name: 洗浄・保存液
+        productCount: 1
+      - name: 洗顔せっけん
+        productCount: 0
+      - name: 洗顔ジェル
+        productCount: 3
+      - name: 洗顔パウダー
+        productCount: 0
+      - name: 洗顔フォーム
+        productCount: 3
+      - name: 炭酸入浴剤
+        productCount: 3
+      - name: 男性化粧品・メンズアイテム
+        productCount: 0
+      - name: 精製水
+        productCount: 0
+      - name: 美容液
+        productCount: 12
+      - name: 顔用
+        productCount: 1
+  ヘアケア・理美容家電:
+    name: ヘアケア・理美容家電
+    slug: haircare-appliances
+    productCount: 118
+    isVisible: true
+    childrenWithCounts:
+      - name: かっさプレート
+        productCount: 1
+      - name: カーリングワンド
+        productCount: 1
+      - name: シャンプー
+        productCount: 23
+      - name: シャンプー・コンディショナーセット
+        productCount: 8
+      - name: スタイリング用品セット
+        productCount: 0
+      - name: ドライヤー・ヘアアイロンホルダー
+        productCount: 1
+      - name: フィリップス ソニッケアー替えブラシ　定期お特便をはじめよう。
+        productCount: 0
+      - name: フェイスエクササイズ
+        productCount: 0
+      - name: フェイススチーマー
+        productCount: 0
+      - name: フェイスローラー
+        productCount: 1
       - name: ブラシ
         productCount: 1
       - name: ヘアアイロン
@@ -1477,57 +1559,13 @@ parents:
         productCount: 1
       - name: ヘア美容液
         productCount: 2
-      - name: ベースメイク
-        productCount: 0
-      - name: ボディオイル・ボディジェル
-        productCount: 0
-      - name: ボディクリーム
-        productCount: 1
-      - name: ボディケア
-        productCount: 2
-      - name: ボディソープ
-        productCount: 3
-      - name: ボディバター
-        productCount: 0
-      - name: ボディローション・ミルク
-        productCount: 0
-      - name: マスカラ
-        productCount: 1
-      - name: マニキュア・ネイルポリッシュ
-        productCount: 0
-      - name: メイクアップ
-        productCount: 0
-      - name: メイクアップフィニッシャー
-        productCount: 1
       - name: メンズシェーバー
         productCount: 2
-      - name: ラグジュアリービューティー
-        productCount: 1
-      - name: リキッドファンデーション
-        productCount: 4
       - name: リンスインシャンプー
         productCount: 0
       - name: リンス・コンディショナー
         productCount: 4
       - name: レディースシェーバー
-        productCount: 1
-      - name: 乳液・クリーム
-        productCount: 3
-      - name: 保湿ジェル
-        productCount: 1
-      - name: 保湿ソックス
-        productCount: 0
-      - name: 保湿ミスト・スプレー
-        productCount: 3
-      - name: 制汗デオドラント
-        productCount: 1
-      - name: 制汗剤
-        productCount: 0
-      - name: 化粧下地
-        productCount: 1
-      - name: 化粧水
-        productCount: 14
-      - name: 口紅
         productCount: 1
       - name: 回転式
         productCount: 0
@@ -1535,40 +1573,16 @@ parents:
         productCount: 2
       - name: 大人用歯ブラシ
         productCount: 1
-      - name: 日本
-        productCount: 0
       - name: 替えブラシ
         productCount: 4
       - name: 櫛・コーム
         productCount: 1
       - name: 毛抜き
         productCount: 0
-      - name: 泡洗顔料
-        productCount: 0
-      - name: 泡立てネット
-        productCount: 1
-      - name: 洗浄・保存液
-        productCount: 1
-      - name: 洗顔せっけん
-        productCount: 0
-      - name: 洗顔ジェル
-        productCount: 3
-      - name: 洗顔パウダー
-        productCount: 0
-      - name: 洗顔フォーム
-        productCount: 3
-      - name: 炭酸入浴剤
-        productCount: 3
       - name: 爪やすり・バッファー
         productCount: 0
       - name: 爪切り
         productCount: 4
-      - name: 男性化粧品・メンズアイテム
-        productCount: 0
-      - name: 精製水
-        productCount: 0
-      - name: 美容液
-        productCount: 12
       - name: 美顔器・美容器
         productCount: 0
       - name: 育毛・養毛用コンディショナー
@@ -1585,8 +1599,6 @@ parents:
         productCount: 1
       - name: 頭皮マッサージブラシ
         productCount: 4
-      - name: 顔用
-        productCount: 1
   健康・サプリメント:
     name: 健康・サプリメント
     slug: health-supplements
@@ -2523,6 +2535,8 @@ parents:
         productCount: 0
       - name: 収納・キャリーケース
         productCount: 0
+      - name: 吸音材
+        productCount: 0
       - name: 固形燃料
         productCount: 0
       - name: 園芸用のこぎり
@@ -2587,6 +2601,8 @@ parents:
         productCount: 0
       - name: 給油ポンプ
         productCount: 1
+      - name: 絶縁テープ
+        productCount: 0
       - name: 緊急対応セット
         productCount: 0
       - name: 緊急対応用品
