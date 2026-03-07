@@ -157,7 +157,8 @@ describe('CategoryManager', () => {
     expect(fs.existsSync(outYaml)).toBe(true);
 
     const jsonOutput = JSON.parse(fs.readFileSync(outJson, 'utf-8'));
-    expect(jsonOutput.categoryGroups[0].name).toBe('TestCat');
-    expect(jsonOutput.categoryGroups[0].productCount).toBe(5); // Unique products count
+    expect(jsonOutput['TestCat']).toBeDefined();
+    expect(jsonOutput['TestCat'].slug).toBe('test-cat');
+    expect(jsonOutput['TestCat'].categories).toEqual(['ChildA']);
   });
 });

@@ -37,18 +37,18 @@ describe('Integration Tests', () => {
   });
 
   test('生成されたJSONとYAMLが整合性を持つ', () => {
-    const jsonContent = JSON.parse(fs.readFileSync(outJson, 'utf-8')) as { categoryGroups: { slug: string }[] };
+    const jsonContent = JSON.parse(fs.readFileSync(outJson, 'utf-8')) as Record<string, { slug: string; categories: string[] }>;
     const yamlContent = fs.readFileSync(outYaml, 'utf-8');
 
-    // Verify JSON and YAML basically have the same data (at least valid)
-    expect(Array.isArray(jsonContent.categoryGroups)).toBe(true);
+    // Verify JSON is a mapped object and YAML is valid
+    expect(typeof jsonContent).toBe('object');
     expect(yamlContent).toContain('parents:');
 
     // Verify Markdown files are generated
     const parentCategoryDir = path.join(rootDir, 'content/parent-category');
-    jsonContent.categoryGroups.forEach((group) => {
+    for (const [, group] of Object.entries(jsonContent)) {
       const mdPath = path.join(parentCategoryDir, `${group.slug}.md`);
       expect(fs.existsSync(mdPath)).toBe(true);
-    });
+    }
   });
 });

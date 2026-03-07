@@ -1,6 +1,6 @@
+import * as yaml from 'js-yaml';
 import * as fs from 'node:fs';
 import * as path from 'node:path';
-import * as yaml from 'js-yaml';
 import type { ProductCounter } from './ProductCounter';
 import type { CategoryGroup, EnhancedCategoryGroup } from './types';
 
@@ -152,7 +152,29 @@ export class CategoryManager {
   public exportToJSON(outputPath: string): void {
     const dir = path.dirname(outputPath);
     if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true });
-    fs.writeFileSync(outputPath, JSON.stringify({ categoryGroups: this.enhancedCategoryGroups }, null, 2));
+
+    const outputData: Record<
+      string,
+      {
+        slug: string;
+        categories: string[];
+        description?: string;
+        visible?: boolean;
+        priority?: number;
+      }
+    > = {};
+
+    for (const group of this.enhancedCategoryGroups) {
+      outputData[group.name] = {
+        slug: group.slug,
+        categories: group.children,
+        ...(group.description !== undefined && { description: group.description }),
+        ...(group.visible !== undefined && { visible: group.visible }),
+        ...(group.priority !== undefined && { priority: group.priority }),
+      };
+    }
+
+    fs.writeFileSync(outputPath, JSON.stringify(outputData, null, 4));
   }
 
   public exportToYAML(outputPath: string): void {
