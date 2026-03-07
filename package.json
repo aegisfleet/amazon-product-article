@@ -5,7 +5,7 @@
   "main": "dist/index.js",
   "scripts": {
     "sanitize:frontmatter": "ts-node src/scripts/sanitize-frontmatter.ts",
-    "prebuild:hugo": "mkdir -p static/data && cp data/categorygroups.json static/data/",
+    "prebuild:hugo": "ts-node src/scripts/enhance-categories.ts",
     "build": "tsc",
     "dev": "ts-node src/index.ts",
     "test": "jest",
@@ -36,6 +36,7 @@
     "@biomejs/biome": "^2.4.6",
     "@eslint/js": "^10.0.1",
     "@types/jest": "^30.0.0",
+    "@types/js-yaml": "^4.0.9",
     "@types/node": "^25.3.3",
     "@types/xml2js": "^0.4.14",
     "@typescript-eslint/eslint-plugin": "8.56.1",
@@ -57,6 +58,8 @@
     "dotenv": "^17.3.1",
     "fuse.js": "^7.1.0",
     "googleapis": "^171.4.0",
+    "gray-matter": "^4.0.3",
+    "js-yaml": "^4.1.1",
     "xml2js": "^0.6.2",
     "zod": "^4.3.6"
   },

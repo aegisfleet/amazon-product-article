@@ -1,21 +1,37 @@
 {{ define "main" }}
+{{/* Get parent category name from front matter */}}
+{{ $parentCategory := .Params.parent_category | default "" }}
+{{ $categoryData := "" }}
+{{ if ne $parentCategory "" }}
+{{ $categoryData = index .Site.Data.categories.parents $parentCategory }}
+{{ end }}
+
+{{/* Error if no products (excluding "その他") */}}
+{{ if and (ne $parentCategory "その他") (or (not $categoryData) (eq $categoryData.productCount 0)) }}
+<div class="container" style="padding-top: var(--spacing-xl);">
+    <div class="article-header">
+        <h1>カテゴリが見つかりません</h1>
+        <p>このカテゴリには現在商品が登録されていません。</p>
+        <a href="/"
+            style="display:inline-block; margin-top:1rem; color:var(--color-primary); text-decoration:underline;">トップページに戻る</a>
+    </div>
+</div>
+{{ return }}
+{{ end }}
+
 <div class="container" style="padding-top: var(--spacing-xl);">
     <div class="article-header">
         <h1>{{ .Title }}</h1>
         {{ with .Description }}<p class="article-meta">{{ . }}</p>{{ end }}
     </div>
 
-    {{/* Get parent category name from front matter */}}
-    {{ $parentCategory := .Params.parent_category }}
-
-    {{/* Get category groups data */}}
-    {{ $categoryGroups := .Site.Data.categorygroups }}
-
     {{/* Get child categories for this parent */}}
     {{ $childCategories := slice }}
-    {{ if and $categoryGroups $parentCategory }}
-    {{ with index $categoryGroups $parentCategory }}
-    {{ $childCategories = .categories }}
+    {{ if $categoryData }}
+    {{ range $categoryData.childrenWithCounts }}
+    {{ if gt .productCount 0 }}
+    {{ $childCategories = $childCategories | append .name }}
+    {{ end }}
     {{ end }}
     {{ end }}
 
@@ -34,9 +50,9 @@
     {{ if eq $parentCategory "その他" }}
     {{/* Collect ALL categories from ALL parent groups */}}
     {{ $allCategorizedItems := slice }}
-    {{ range $groupName, $groupData := $categoryGroups }}
-    {{ range $groupData.categories }}
-    {{ $allCategorizedItems = $allCategorizedItems | append . }}
+    {{ range $groupName, $groupData := .Site.Data.categories.parents }}
+    {{ range $groupData.childrenWithCounts }}
+    {{ $allCategorizedItems = $allCategorizedItems | append .name }}
     {{ end }}
     {{ end }}
 
