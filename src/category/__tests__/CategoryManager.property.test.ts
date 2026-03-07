@@ -1,6 +1,6 @@
+import * as fc from 'fast-check';
 import * as fs from 'node:fs';
 import * as path from 'node:path';
-import * as fc from 'fast-check';
 import { CategoryManager } from '../CategoryManager';
 import { ProductCounter } from '../ProductCounter';
 
@@ -26,14 +26,14 @@ describe('CategoryManager Properties', () => {
         fc.record({
           name: fc.string({ minLength: 1 }).filter((s) => /^[a-zA-Z0-9_-]+$/.test(s)),
           slug: fc.string({ minLength: 1 }).filter((s) => /^[a-zA-Z0-9_-]+$/.test(s)),
-          description: fc.option(fc.string()),
-          visible: fc.option(fc.boolean()),
-          priority: fc.option(fc.integer({ min: 0, max: 999 })),
+          description: fc.option(fc.string(), { nil: undefined }),
+          visible: fc.option(fc.boolean(), { nil: undefined }),
+          priority: fc.option(fc.integer({ min: 0, max: 999 }), { nil: undefined }),
           children: fc.array(fc.string({ minLength: 1 }).filter((s) => /^[a-zA-Z0-9_-]+$/.test(s))),
         }),
         (categoryGroup) => {
           const manager = new CategoryManager('dummy.json');
-          manager.addCategoryGroup(categoryGroup as any);
+          manager.addCategoryGroup(categoryGroup);
 
           const mockCounter = new ProductCounter(tempDir);
           const output = manager.enhanceCategoryGroups(mockCounter);

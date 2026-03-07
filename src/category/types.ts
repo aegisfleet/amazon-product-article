@@ -1,9 +1,9 @@
 export interface CategoryGroup {
   name: string;
   slug: string;
-  description?: string;
-  visible?: boolean;
-  priority?: number;
+  description?: string | undefined;
+  visible?: boolean | undefined;
+  priority?: number | undefined;
   children: string[];
 }
 
