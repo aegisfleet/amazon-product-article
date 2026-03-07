@@ -73,27 +73,24 @@ Amazon Creators APIの認証情報の取り扱いには、最優先でセキュ�
 | `static/js/category-dropdown.js` | 実行時にJSONを動的読み込み（カテゴリデータのハードコード不要） |
 
 > **Note**: `static/data/categorygroups.json` はビルド時に `npm run prebuild:hugo` で自動生成されます（Gitには含まれません）。
+> 同時に Hugo 用の `data/categories.yml` および `content/parent-category/*.md` も自動生成され、親カテゴリページの動的生成に利用されます。
 
-### 新規親カテゴリの追加
+### 6.1 新規親カテゴリの追加
 
-新しい親カテゴリを作成する場合は、`data/categorygroups.json` に加えて **親カテゴリページ用のMarkdownファイル** も作成する必要があります：
+`data/categorygroups.json` に新しい親カテゴリを追加する際は、以下の手順を必ず実行してください：
 
-| ファイル | 用途 |
-|---|---|
-| `content/parent-category/{slug}.md` | 親カテゴリ一覧ページ（Hugo用） |
+1. **`data/categorygroups.json` を編集する**
+   - `categoryGroups` 配列に新しいオブジェクトを追加します。オブジェクトには以下のプロパティを指定します：
+     - **必須**: `name`（親カテゴリ名）、`slug`（URLスラッグ）、`children`（子カテゴリ名の配列）
+     - **任意**: `visible`（表示フラグ、デフォルト `true`）、`priority`（ソート優先度、デフォルト `999`）
 
-**ファイル形式** (`{slug}` は `categorygroups.json` で定義した slug 値)：
-
-```markdown
----
-title: "カテゴリ名"
-description: "カテゴリ名カテゴリの商品一覧"
-layout: "parent-category"
-parent_category: "カテゴリ名"
----
-```
-
-このファイルが欠けていると、該当親カテゴリへのアクセス時に404エラーが発生します。
+2. **ビルドして確認する**
+   - `npm run prebuild:hugo` を実行すると、以下のファイルが**常に**生成・更新されます：
+     - `data/categories.yml`（Hugo用データ）
+     - `static/data/categorygroups.json`（フロントエンド用データ）
+     - `content/parent-category/*.md`（親カテゴリ用ページ本体）
+   - ただし、商品数が0のカテゴリおよび親カテゴリは、フロントエンドのナビゲーションや一覧では**非表示**扱いになります（例外：「その他」カテゴリは商品数0でも表示されます）。
+   - `hugo server` で新しい親カテゴリページの表示・ナビゲーション反映を確認してください。
 
 ## 7. コミュニケーション
 

@@ -103,8 +103,8 @@
     - **Property 3: 商品追加・削除による表示状態の更新**
     - **Validates: Requirements 2.3**
 
-- [ ] 9. Hugo テンプレートの拡張
-  - [ ] 9.1 parent-category.html テンプレートを拡張
+- [x] 9. Hugo テンプレートの拡張
+  - [x] 9.1 parent-category.html テンプレートを拡張
     - `layouts/_default/parent-category.html` を編集
     - `data/categories.yml` からカテゴリデータを読み込む
     - 商品数が0の場合は404ページを表示するロジックを追加
@@ -112,19 +112,19 @@
     - 商品数の表示を追加
     - _Requirements: 1.2, 1.3, 2.1, 2.2_
 
-  - [ ] 9.2 Hugo テンプレートの動作確認
+  - [x] 9.2 Hugo テンプレートの動作確認
     - `hugo server` を起動してローカルで確認
     - 親カテゴリページが正しく表示されることを確認
     - 商品数が0のカテゴリが非表示になることを確認
     - _Requirements: 1.3, 2.1, 2.2_
 
-- [ ] 10. Checkpoint - Hugo テンプレートの検証
+- [x] 10. Checkpoint - Hugo テンプレートの検証
   - すべての親カテゴリページがアクセス可能であることを確認
   - レイアウトが崩れていないことを確認
   - 問題があれば修正し、ユーザーに質問する
 
-- [ ] 11. category-dropdown.js の拡張
-  - [ ] 11.1 category-dropdown.js を拡張
+- [x] 11. category-dropdown.js の拡張
+  - [x] 11.1 category-dropdown.js を拡張
     - `static/js/category-dropdown.js` を編集
     - filterVisibleCategories 関数を追加（isVisible と productCount をチェック）
     - sortCategoriesByPriority 関数を追加
@@ -132,40 +132,40 @@
     - エラーハンドリング（JSONの読み込み失敗、要素が見つからない）
     - _Requirements: 2.1, 2.2, 4.3_
 
-  - [ ]* 11.2 category-dropdown.js のプロパティテストを作成
+  - [x]* 11.2 category-dropdown.js のプロパティテストを作成
     - **Property 6: 既存機能との互換性**
     - **Validates: Requirements 4.3**
 
-  - [ ] 11.3 クライアントサイドの動作確認
+  - [x] 11.3 クライアントサイドの動作確認
     - ブラウザでドロップダウンが正しく動作することを確認
     - 商品数が0のカテゴリが除外されることを確認
     - 優先度順にソートされることを確認
     - _Requirements: 2.1, 2.2, 4.3_
 
-- [ ] 12. Checkpoint - クライアントサイドの検証
+- [x] 12. Checkpoint - クライアントサイドの検証
   - ドロップダウンが正常に動作することを確認
   - コンソールにエラーが表示されていないことを確認
   - 問題があれば修正し、ユーザーに質問する
 
-- [ ] 13. 最終検証とドキュメント更新
-  - [ ] 13.1 すべてのテストを実行
+- [x] 13. 最終検証とドキュメント更新
+  - [x] 13.1 すべてのテストを実行
     - `npm test` を実行してすべてのテストがパスすることを確認
     - `npm run lint` を実行してESLintエラーが0件であることを確認
     - `npm run build` を実行してコンパイルエラーがないことを確認
     - _Requirements: すべて_
 
-  - [ ] 13.2 AGENTS.md の更新（必要に応じて）
+  - [x] 13.2 AGENTS.md の更新（必要に応じて）
     - カテゴリグループ管理のセクションを更新
     - 新しいビルドプロセスの説明を追加
     - 動的カテゴリ生成の説明を追加
 
-  - [ ] 13.3 移行ガイドの作成
+  - [x] 13.3 移行ガイドの作成
     - `.kiro/specs/dynamic-category-control/migration-guide.md` を作成
     - 段階的な移行手順を記載
     - ロールバック手順を記載
     - トラブルシューティングを記載
 
-- [ ] 14. Final Checkpoint - プロジェクト全体の健全性確認
+- [x] 14. Final Checkpoint - プロジェクト全体の健全性確認
   - `npm run lint` が成功することを確認（ESLintエラー0件）
   - `npm run build` が成功することを確認（TypeScriptコンパイルエラーなし）
   - `npm test` が成功することを確認（すべてのテストがパス）
