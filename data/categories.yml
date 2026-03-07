@@ -2,115 +2,141 @@ parents:
   パソコン・モニター・入力機器:
     name: パソコン・モニター・入力機器
     slug: pc-workstation
-    productCount: 97
+    productCount: 101
     isVisible: true
     childrenWithCounts:
       - name: 2 in 1ノートパソコン
         productCount: 1
-      - name: 標準型ノートパソコン
-        productCount: 12
-      - name: パソコン本体
-        productCount: 0
-      - name: ディスプレイ
-        productCount: 31
-      - name: スタンダードモニター
-        productCount: 0
-      - name: ゲーミングモニター
-        productCount: 0
-      - name: モニターアーム
-        productCount: 26
-      - name: モニタースタンド
-        productCount: 3
       - name: キーボード
         productCount: 0
-      - name: マウス
-        productCount: 8
-      - name: パソコン用キーボード
-        productCount: 3
+      - name: キーボード・マウス・入力機器
+        productCount: 1
       - name: ゲーミングキーボード
         productCount: 5
       - name: ゲーミングマウス
         productCount: 2
-      - name: トラックボール
-        productCount: 2
+      - name: ゲーミングモニター
+        productCount: 0
+      - name: スタンダードモニター
+        productCount: 0
       - name: テンキー
         productCount: 1
+      - name: ディスプレイ
+        productCount: 31
+      - name: トラックボール
+        productCount: 2
+      - name: パソコン本体
+        productCount: 0
+      - name: パソコン用キーボード
+        productCount: 3
+      - name: ペンタブレット
+        productCount: 2
+      - name: マウス
+        productCount: 8
       - name: マウスパッド
         productCount: 3
+      - name: モニターアーム
+        productCount: 26
+      - name: モニタースタンド
+        productCount: 3
+      - name: リストレスト
+        productCount: 1
+      - name: 標準型ノートパソコン
+        productCount: 12
   PC周辺機器:
     name: PC周辺機器
     slug: pc-peripheral
-    productCount: 85
+    productCount: 94
     isVisible: true
     childrenWithCounts:
+      - name: 3Dプリンタ本体
+        productCount: 2
+      - name: AVセレクター
+        productCount: 1
+      - name: DVI-HDMIアダプタ
+        productCount: 0
+      - name: HDMIケーブル
+        productCount: 1
+      - name: OTGアダプター
+        productCount: 0
+      - name: PCソフト
+        productCount: 0
+      - name: PCソフト ダウンロード
+        productCount: 0
+      - name: PCバッグ・ケース・スリーブ
+        productCount: 0
+      - name: Primeday2023 ブラザーのプリンター
+        productCount: 0
+      - name: USBアダプタ
+        productCount: 8
+      - name: USBハブ
+        productCount: 18
+      - name: USBメモリ・フラッシュドライブ
+        productCount: 1
+      - name: USBライト
+        productCount: 4
+      - name: Wi-Fiルーター
+        productCount: 1
+      - name: インクジェットインクカートリッジ
+        productCount: 1
+      - name: エアダスター
+        productCount: 1
+      - name: エレコム USB充電・データ転送ケーブル
+        productCount: 0
+      - name: クリーニングクロス
+        productCount: 2
+      - name: クリーニングリキッド
+        productCount: 0
+      - name: ケーブル
+        productCount: 0
+      - name: ケーブルアクセサリ
+        productCount: 1
+      - name: ケーブル・アダプタ
+        productCount: 1
+      - name: ケーブル・アダプター
+        productCount: 1
+      - name: スクリーンクリーナー
+        productCount: 0
+      - name: スリーブ
+        productCount: 6
+      - name: セキュリティロック
+        productCount: 1
+      - name: ダスタ
+        productCount: 0
+      - name: ドッキングステーション
+        productCount: 21
+      - name: ノートパソコンスタンド
+        productCount: 2
+      - name: プリンタクリーナー
+        productCount: 1
+      - name: メディアドライブ
+        productCount: 1
+      - name: メモリ・ハードドライブ
+        productCount: 0
       - name: 内蔵SSD
         productCount: 1
       - name: 内蔵ハードディスク
         productCount: 1
+      - name: 切替器
+        productCount: 2
+      - name: 変換コネクタ
+        productCount: 0
       - name: 外付SSD
         productCount: 5
       - name: 外付ハードディスクドライブ
         productCount: 3
-      - name: メモリ・ハードドライブ
-        productCount: 0
       - name: 外付メモリカードリーダー
         productCount: 0
-      - name: USBメモリ・フラッシュドライブ
-        productCount: 1
-      - name: Wi-Fiルーター
-        productCount: 1
       - name: 無線・有線LANルーター
         productCount: 1
       - name: 無線・有線LAN中継器
-        productCount: 1
-      - name: USBハブ
-        productCount: 18
-      - name: ドッキングステーション
-        productCount: 21
-      - name: USBアダプタ
-        productCount: 8
-      - name: OTGアダプター
-        productCount: 0
-      - name: 変換コネクタ
-        productCount: 0
-      - name: 切替器
-        productCount: 2
-      - name: AVセレクター
-        productCount: 1
-      - name: HDMIケーブル
-        productCount: 1
-      - name: DVI-HDMIアダプタ
-        productCount: 0
-      - name: 3Dプリンタ本体
-        productCount: 2
-      - name: インクジェットインクカートリッジ
-        productCount: 1
-      - name: プリンタクリーナー
         productCount: 1
       - name: 超小型カメラ
         productCount: 0
       - name: 防犯・監視カメラアクセサリ
         productCount: 1
-      - name: PCバッグ・ケース・スリーブ
-        productCount: 0
-      - name: スリーブ
-        productCount: 6
       - name: 電源タップ
         productCount: 4
-      - name: エアダスター
-        productCount: 1
-      - name: クリーニングクロス
-        productCount: 2
-      - name: クリーニングリキッド
-        productCount: 0
-      - name: スクリーンクリーナー
-        productCount: 0
-      - name: ノートパソコンスタンド
-        productCount: 2
-      - name: PCソフト
-        productCount: 0
-      - name: PCソフト ダウンロード
-        productCount: 0
   スマートフォン:
     name: スマートフォン
     slug: smartphone
@@ -243,12 +269,12 @@ parents:
         productCount: 1
       - name: インナーイヤーモニター
         productCount: 0
-      - name: ウェブカメラ
-        productCount: 16
       - name: ウェアラブルカメラ・アクションカム
         productCount: 0
       - name: ウェアラブルカメラ用アクセサリ
         productCount: 1
+      - name: ウェブカメラ
+        productCount: 16
       - name: エンクロージャ
         productCount: 1
       - name: エンタメ・オーディオ祭
@@ -263,6 +289,12 @@ parents:
         productCount: 6
       - name: カメラ
         productCount: 0
+      - name: カメラストラップ
+        productCount: 0
+      - name: カメラバッグアクセサリ
+        productCount: 0
+      - name: カメラ用アクセサリ
+        productCount: 0
       - name: ゲーミングヘッドセット
         productCount: 3
       - name: ゲーム用ヘッドセット
@@ -271,6 +303,8 @@ parents:
         productCount: 9
       - name: コンパクト
         productCount: 1
+      - name: コンパクトカメラケース
+        productCount: 0
       - name: ショックマウント
         productCount: 1
       - name: ステレオケーブル
@@ -1030,7 +1064,7 @@ parents:
   家具・オフィス・収納:
     name: 家具・オフィス・収納
     slug: furniture-storage
-    productCount: 95
+    productCount: 110
     isVisible: true
     childrenWithCounts:
       - name: Chest
@@ -1127,6 +1161,8 @@ parents:
         productCount: 2
       - name: デスクチェア
         productCount: 8
+      - name: デスクライト
+        productCount: 14
       - name: デスク上置棚
         productCount: 1
       - name: ドキュメントファイル
@@ -1155,6 +1191,8 @@ parents:
         productCount: 0
       - name: ベッドサイドランプ
         productCount: 0
+      - name: ベッドスタンド・デスクマウント
+        productCount: 1
       - name: ペンケース
         productCount: 2
       - name: ホテル用金庫
@@ -2068,7 +2106,7 @@ parents:
   ゲーム・おもちゃ:
     name: ゲーム・おもちゃ
     slug: games-toys
-    productCount: 44
+    productCount: 45
     isVisible: true
     childrenWithCounts:
       - name: Black Friday 2024 TVゲーム周辺機器がお買い得
@@ -2159,6 +2197,8 @@ parents:
         productCount: 0
       - name: 動物
         productCount: 0
+      - name: 単体型VR・アクセサリ
+        productCount: 1
       - name: 女の子のおもちゃ
         productCount: 0
       - name: 宇宙船
@@ -2744,7 +2784,7 @@ parents:
   その他:
     name: その他
     slug: others
-    productCount: 7
+    productCount: 8
     isVisible: true
     childrenWithCounts:
       - name: 2,000円以下・レビュー評価4以上の人気商品
@@ -2775,5 +2815,9 @@ parents:
         productCount: 0
       - name: セット・パック品
         productCount: 0
+      - name: デバイス
+        productCount: 0
+      - name: ミニ
+        productCount: 1
       - name: 並行輸入品
         productCount: 0
