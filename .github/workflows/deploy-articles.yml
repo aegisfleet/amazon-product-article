@@ -61,15 +61,25 @@ jobs:
         AMAZON_CREATORS_CREDENTIAL_SECRET: ${{ secrets.AMAZON_CREATORS_CREDENTIAL_SECRET }}
       run: npm run generate:articles
     
-    - name: Commit Creators API Cache
+    
+    - name: Setup Hugo
+      uses: peaceiris/actions-hugo@75d2e84710de30f6ff7268e08f310b60ef14033f # v3.0.0
+      with:
+        hugo-version: 'latest'
+        extended: true
+    
+    - name: Prepare static data
+      run: npm run prebuild:hugo
+    
+    - name: Commit build artifacts
       if: always()
       run: |
         git config --global user.name "github-actions[bot]"
         git config --global user.email "github-actions[bot]@users.noreply.github.com"
-        git add data/cache/paapi-product-cache.json
+        git add data/cache/paapi-product-cache.json data/categories.yml
         # Only commit if there are changes
         if ! git diff --staged --quiet; then
-          git commit -m "Update Creators API product cache [skip ci]"
+          git commit -m "Update build artifacts [skip ci]"
           # Retry push with rebase if it fails (handles concurrent workflow conflicts)
           for i in 1 2 3; do
             if git push; then
@@ -85,15 +95,6 @@ jobs:
             fi
           done
         fi
-    
-    - name: Setup Hugo
-      uses: peaceiris/actions-hugo@75d2e84710de30f6ff7268e08f310b60ef14033f # v3.0.0
-      with:
-        hugo-version: 'latest'
-        extended: true
-    
-    - name: Prepare static data
-      run: npm run prebuild:hugo
     
     - name: Build site with Hugo
       run: hugo --minify
