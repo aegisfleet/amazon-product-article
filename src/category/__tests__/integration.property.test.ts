@@ -94,7 +94,14 @@ describe('Integration Properties', () => {
                     createProducts(finalProductCount);
                     const finalCounter = new ProductCounter(contentDir);
                     finalCounter.countProductsByCategory();
-                    const finalEnhanced = manager.enhanceCategoryGroups(finalCounter);
+
+                    const finalManager = new CategoryManager('dummy.json');
+                    finalManager.addCategoryGroup({
+                        name: categoryName,
+                        slug: 'test',
+                        children: []
+                    });
+                    const finalEnhanced = finalManager.enhanceCategoryGroups(finalCounter);
 
                     expect(finalEnhanced.length).toBeGreaterThan(0);
                     const finalVisible = finalEnhanced[0]?.isVisible;

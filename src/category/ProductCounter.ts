@@ -4,22 +4,28 @@ import * as path from 'node:path';
 
 export class ProductCounter {
     private readonly contentPath: string;
-    private readonly categoryCountMap: Map<string, number>;
+    private readonly categoryProductMap: Map<string, Set<string>>;
 
     constructor(contentPath: string) {
         this.contentPath = contentPath;
-        this.categoryCountMap = new Map<string, number>();
+        this.categoryProductMap = new Map<string, Set<string>>();
     }
 
     public countProductsByCategory(): Map<string, number> {
-        this.categoryCountMap.clear();
+        this.categoryProductMap.clear();
 
         if (!fs.existsSync(this.contentPath)) {
-            return this.categoryCountMap;
+            return new Map();
         }
 
         this.scanDirectory(this.contentPath);
-        return this.categoryCountMap;
+
+        // Return a count map for compatibility if needed
+        const result = new Map<string, number>();
+        for (const [category, products] of this.categoryProductMap.entries()) {
+            result.set(category, products.size);
+        }
+        return result;
     }
 
     private scanDirectory(dir: string): void {
@@ -34,15 +40,25 @@ export class ProductCounter {
             } else if (stat.isFile() && file.endsWith('.md')) {
                 const categories = this.extractCategories(filePath);
                 for (const category of categories) {
-                    const currentCount = this.categoryCountMap.get(category) || 0;
-                    this.categoryCountMap.set(category, currentCount + 1);
+                    if (!this.categoryProductMap.has(category)) {
+                        this.categoryProductMap.set(category, new Set());
+                    }
+                    this.categoryProductMap.get(category)!.add(filePath);
                 }
             }
         }
     }
 
     public getProductCount(category: string): number {
-        return this.categoryCountMap.get(category.trim()) || 0;
+        return this.categoryProductMap.get(ProductCounter.normalizeCategory(category))?.size || 0;
+    }
+
+    public getProductIds(category: string): Set<string> {
+        return this.categoryProductMap.get(ProductCounter.normalizeCategory(category)) || new Set();
+    }
+
+    private static normalizeCategory(category: string): string {
+        return category.trim().replace(/\s+/g, ' ');
     }
 
     private extractCategories(filePath: string): string[] {
@@ -52,12 +68,13 @@ export class ProductCounter {
 
             if (parsed.data && Array.isArray(parsed.data.categories)) {
                 const normalizedCategories = parsed.data.categories
-                    .map((c: any) => String(c).trim())
+                    .map((c: any) => ProductCounter.normalizeCategory(String(c)))
                     .filter((s: string) => s.length > 0);
                 return Array.from(new Set(normalizedCategories));
             }
-        } catch (e: any) {
-            console.warn(`Failed to parse frontmatter for ${filePath}: ${e?.message ?? 'parse error'}`);
+        } catch (e: unknown) {
+            const message = e instanceof Error ? e.message : String(e);
+            console.warn(`Failed to parse frontmatter for ${filePath}: ${message}`);
         }
         return [];
     }

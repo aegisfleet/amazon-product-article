@@ -20,7 +20,10 @@ function main() {
         manager.exportToJSON(outJsonPath);
         manager.exportToYAML(outYamlPath);
 
-        console.log(`Successfully enhanced ${enhanced.length} parent categories.`);
+        const parentCategoryDir = path.join(contentPath, 'parent-category');
+        manager.syncParentCategoryMarkdown(parentCategoryDir);
+
+        console.log(`Successfully enhanced ${enhanced.length} parent categories and synced markdown files.`);
     } catch (e) {
         console.error('Error during category enhancement:', e);
         process.exit(1);

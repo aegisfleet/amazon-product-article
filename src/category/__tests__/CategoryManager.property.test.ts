@@ -1,6 +1,6 @@
 import * as fc from 'fast-check';
-import * as fs from 'fs';
-import * as path from 'path';
+import * as fs from 'node:fs';
+import * as path from 'node:path';
 import { CategoryManager } from '../CategoryManager';
 import { ProductCounter } from '../ProductCounter';
 
@@ -38,11 +38,12 @@ describe('CategoryManager Properties', () => {
                     const mockCounter = new ProductCounter(tempDir);
                     const output = manager.enhanceCategoryGroups(mockCounter);
 
-                    expect(output[0]!.name).toBe(categoryGroup.name);
-                    expect(output[0]!.slug).toBe(categoryGroup.slug);
-                    expect(output[0]!.description).toBe(categoryGroup.description);
-                    expect(output[0]!.visible).toBe(categoryGroup.visible ?? true);
-                    expect(output[0]!.priority).toBe(categoryGroup.priority ?? 999);
+                    expect(output.length).toBeGreaterThan(0);
+                    expect(output[0].name).toBe(categoryGroup.name);
+                    expect(output[0].slug).toBe(categoryGroup.slug);
+                    expect(output[0].description).toBe(categoryGroup.description);
+                    expect(output[0].visible).toBe(categoryGroup.visible ?? true);
+                    expect(output[0].priority).toBe(categoryGroup.priority ?? 999);
                 }
             ),
             { numRuns: 100 }
@@ -65,9 +66,10 @@ describe('CategoryManager Properties', () => {
                     const mockCounter = new ProductCounter(tempDir);
                     const output = manager.enhanceCategoryGroups(mockCounter);
 
-                    expect(output[0]!.visible).toBe(true);
-                    expect(output[0]!.priority).toBe(999);
-                    expect(output[0]!.description).toBeUndefined();
+                    expect(output.length).toBeGreaterThan(0);
+                    expect(output[0].visible).toBe(true);
+                    expect(output[0].priority).toBe(999);
+                    expect(output[0].description).toBeUndefined();
                 }
             ),
             { numRuns: 100 }

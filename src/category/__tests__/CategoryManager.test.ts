@@ -129,6 +129,8 @@ describe('CategoryManager', () => {
 
         // Stub out ProductCounter to avoid scanning
         const mockCounter = new ProductCounter(tempDir);
+        const mockIds = new Set(['p1', 'p2', 'p3', 'p4', 'p5']);
+        jest.spyOn(mockCounter, 'getProductIds').mockReturnValue(mockIds);
         jest.spyOn(mockCounter, 'getProductCount').mockReturnValue(5);
 
         manager.enhanceCategoryGroups(mockCounter);
@@ -144,6 +146,6 @@ describe('CategoryManager', () => {
 
         const jsonOutput = JSON.parse(fs.readFileSync(outJson, 'utf-8'));
         expect(jsonOutput.categoryGroups[0].name).toBe('TestCat');
-        expect(jsonOutput.categoryGroups[0].productCount).toBe(10); // ChildA: 5 + TestCat: 5
+        expect(jsonOutput.categoryGroups[0].productCount).toBe(5); // Unique products count
     });
 });

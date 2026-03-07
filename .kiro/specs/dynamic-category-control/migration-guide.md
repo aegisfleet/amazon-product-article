@@ -22,7 +22,7 @@
 ### 既存のMarkdownファイルのクリーンアップ（推奨）
 
 過去に手動で作成した `content/parent-category/*.md` は、安全に削除することができます。
-（新しい仕組みでは、`data/categories.yml` を参照して Hugo 側で動的にリストページがレンダリングされるためです。URLは `categories/...` ではなく、設定された `parent-category/{slug}` が維持されます）。
+（新しい仕組みでは、`data/categorygroups.json` を参照して Hugo 側で動的にリストページがレンダリングされるためです。URLは `categories/...` ではなく、設定された `parent-category/{slug}` が維持されます）。
 もし現在 `content/parent-category/` 内に既存のファイルがある場合、削除をおすすめします。
 
 ## 新機能の活用方法

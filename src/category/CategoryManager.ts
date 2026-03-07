@@ -96,19 +96,24 @@ export class CategoryManager {
     }
 
     public enhanceCategoryGroups(productCounter: ProductCounter): EnhancedCategoryGroup[] {
+        // Clear previous results to ensure idempotency
+        this.enhancedCategoryGroups = [];
         this.enhancedCategoryGroups = this.categoryGroups.map(group => {
-            let totalProductCount = 0;
+            const allProductIds = new Set<string>();
+
             const childrenWithCounts = group.children.map(childName => {
-                const count = productCounter.getProductCount(childName);
-                totalProductCount += count;
+                const ids = productCounter.getProductIds(childName);
+                ids.forEach(id => allProductIds.add(id));
                 return {
                     name: childName,
-                    productCount: count
+                    productCount: ids.size
                 };
             });
 
-            const parentCount = productCounter.getProductCount(group.name);
-            totalProductCount += parentCount;
+            const parentIds = productCounter.getProductIds(group.name);
+            parentIds.forEach(id => allProductIds.add(id));
+
+            const totalProductCount = allProductIds.size;
 
             const visible = group.visible ?? true;
             const isVisible = visible && totalProductCount > 0;
@@ -158,5 +163,57 @@ export class CategoryManager {
         }
 
         fs.writeFileSync(outputPath, yaml.dump(yamlData));
+    }
+
+    /**
+     * EnhancedCategoryGroup の情報に基づいて content/parent-category/*.md を同期（生成・削除）する
+     */
+    public syncParentCategoryMarkdown(parentCategoryDir: string): void {
+        if (!fs.existsSync(parentCategoryDir)) {
+            fs.mkdirSync(parentCategoryDir, { recursive: true });
+        }
+
+        const activeSlugs = new Set<string>();
+
+        for (const group of this.enhancedCategoryGroups) {
+            // 表示非表示にかかわらず、カテゴリとして存在するならファイルは作成しておく
+            // (Hugoのナビゲーションやパス解決のために、定義されたカテゴリは実体を持つべき)
+            const fileName = `${group.slug}.md`;
+            activeSlugs.add(fileName);
+
+            const filePath = path.join(parentCategoryDir, fileName);
+            const frontMatter = {
+                title: group.name,
+                description: group.description || `${group.name}カテゴリの商品一覧`,
+                layout: "parent-category",
+                parent_category: group.name
+            };
+
+            const content = `---\n${yaml.dump(frontMatter)}---\n`;
+
+            // 内容が変わっている場合のみ書き込む（または常に書き込んでも良いが、Hugoの検知を考慮）
+            let shouldWrite = true;
+            if (fs.existsSync(filePath)) {
+                const existing = fs.readFileSync(filePath, 'utf-8');
+                if (existing === content) {
+                    shouldWrite = false;
+                }
+            }
+
+            if (shouldWrite) {
+                fs.writeFileSync(filePath, content);
+                console.log(`Generated: ${filePath}`);
+            }
+        }
+
+        // 不要なファイルの削除
+        const files = fs.readdirSync(parentCategoryDir);
+        for (const file of files) {
+            if (file.endsWith('.md') && !activeSlugs.has(file)) {
+                const surplusPath = path.join(parentCategoryDir, file);
+                fs.unlinkSync(surplusPath);
+                console.log(`Deleted surplus category file: ${surplusPath}`);
+            }
+        }
     }
 }
