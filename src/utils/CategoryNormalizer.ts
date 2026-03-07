@@ -398,7 +398,7 @@ export class CategoryNormalizer {
 
   private static sanitizeCategoryName(name: string): string {
     // Remove internal prefixes like PJ_
-    let sanitized = name.replace(/^PJ_/i, '');
+    const sanitized = name.replace(/^PJ_/i, '');
     // Remove special characters sometimes found in browse nodes
     return sanitized.replaceAll(/[【】|()_※]/g, '').trim();
   }
