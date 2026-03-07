@@ -39,11 +39,11 @@ describe('CategoryManager Properties', () => {
                     const output = manager.enhanceCategoryGroups(mockCounter);
 
                     expect(output.length).toBeGreaterThan(0);
-                    expect(output[0].name).toBe(categoryGroup.name);
-                    expect(output[0].slug).toBe(categoryGroup.slug);
-                    expect(output[0].description).toBe(categoryGroup.description);
-                    expect(output[0].visible).toBe(categoryGroup.visible ?? true);
-                    expect(output[0].priority).toBe(categoryGroup.priority ?? 999);
+                    expect(output[0]?.name).toBe(categoryGroup.name);
+                    expect(output[0]?.slug).toBe(categoryGroup.slug);
+                    expect(output[0]?.description).toBe(categoryGroup.description);
+                    expect(output[0]?.visible).toBe(categoryGroup.visible ?? true);
+                    expect(output[0]?.priority).toBe(categoryGroup.priority ?? 999);
                 }
             ),
             { numRuns: 100 }
@@ -67,9 +67,9 @@ describe('CategoryManager Properties', () => {
                     const output = manager.enhanceCategoryGroups(mockCounter);
 
                     expect(output.length).toBeGreaterThan(0);
-                    expect(output[0].visible).toBe(true);
-                    expect(output[0].priority).toBe(999);
-                    expect(output[0].description).toBeUndefined();
+                    expect(output[0]?.visible).toBe(true);
+                    expect(output[0]?.priority).toBe(999);
+                    expect(output[0]?.description).toBeUndefined();
                 }
             ),
             { numRuns: 100 }
