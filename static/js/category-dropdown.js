@@ -66,12 +66,15 @@
                         ? group.childrenWithCounts.filter(child => child.productCount > 0)
                         : [];
 
-                    if (visibleChildren.length > 0 || group.name === 'その他') {
+                    if (visibleChildren.length > 0 || group.name === 'その他' || (group.productCount !== undefined && group.productCount > 0)) {
                         categoryGroups[group.name] = visibleChildren.map(child => child.name);
                         visibleChildren.forEach(child => {
                             categoryCounts[child.name] = child.productCount;
                         });
                         parentCategoryUrls[group.name] = group.slug;
+                        if (group.productCount !== undefined) {
+                            categoryCounts[group.name] = group.productCount;
+                        }
                     }
                 }
             } else {
@@ -135,7 +138,7 @@
                     }
                     return false;
                 }).filter(Boolean);
-                if (available.length > 0) {
+                if (available.length > 0 || parentCategoryUrls[group]) {
                     filteredGroups[group] = available;
                 }
             }
