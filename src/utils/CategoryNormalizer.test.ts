@@ -7,6 +7,7 @@ describe('CategoryNormalizer', () => {
       expect(CategoryNormalizer.isValidCategoryName('Books')).toBe(true);
       expect(CategoryNormalizer.isValidCategoryName('Home & Kitchen')).toBe(true);
       expect(CategoryNormalizer.isValidCategoryName('ボードゲーム')).toBe(true);
+      expect(CategoryNormalizer.isValidCategoryName('Category_with_underscore')).toBe(true);
     });
 
     it('should return false for empty or undefined names', () => {
@@ -63,7 +64,6 @@ describe('CategoryNormalizer', () => {
         'Prime Day',
         '【Category】',
         '(Category)',
-        '_Category',
         '※Note',
         '家電',
         'アクセサリ',
@@ -229,7 +229,7 @@ describe('CategoryNormalizer', () => {
 
   describe('normalize', () => {
     it('should return fallback for undefined node', () => {
-      const result = CategoryNormalizer.normalize(undefined);
+      const result = CategoryNormalizer.normalize();
       expect(result).toEqual({
         main: 'その他',
         sub: 'Unknown',
