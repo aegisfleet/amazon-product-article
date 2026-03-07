@@ -5,9 +5,9 @@
  * 適切な親カテゴリに分類するためのJulesセッションを作成する
  */
 
+import axios, { type AxiosInstance } from 'axios';
 import * as fs from 'node:fs/promises';
 import * as path from 'node:path';
-import axios, { type AxiosInstance } from 'axios';
 import type {
   JulesCredentials,
   JulesError,
@@ -162,9 +162,6 @@ export class JulesCategoryOrganizer {
     return this.categoryGroupsCache;
   }
 
-  /**
-   * categorygroups.jsonに登録されている全カテゴリを取得
-   */
   /**
    * categorygroups.jsonに登録されている全カテゴリを取得
    */
