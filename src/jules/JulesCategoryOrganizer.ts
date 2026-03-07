@@ -5,9 +5,9 @@
  * 適切な親カテゴリに分類するためのJulesセッションを作成する
  */
 
+import axios, { type AxiosInstance } from 'axios';
 import * as fs from 'node:fs/promises';
 import * as path from 'node:path';
-import axios, { type AxiosInstance } from 'axios';
 import type {
   JulesCredentials,
   JulesError,
@@ -22,13 +22,24 @@ const JULES_API_BASE_URL = 'https://jules.googleapis.com/v1alpha';
 /**
  * カテゴリグループの型定義
  */
+/**
+ * カテゴリグループの型定義
+ */
 interface CategoryGroup {
+  name?: string; // 新形式用
   slug: string;
-  categories: string[];
+  categories?: string[]; // 旧形式用
+  children?: string[]; // 新形式用
+  visible?: boolean;
+  priority?: number;
 }
 
 interface CategoryGroups {
   [parentCategory: string]: CategoryGroup;
+}
+
+interface StandardCategoryGroups {
+  categoryGroups: CategoryGroup[];
 }
 
 /**
@@ -60,7 +71,7 @@ export interface OrganizationSession {
 export class JulesCategoryOrganizer {
   private readonly client: AxiosInstance;
   private readonly logger: Logger;
-  private categoryGroupsCache: CategoryGroups | null = null;
+  private categoryGroupsCache: CategoryGroup[] | null = null;
   private productCacheCache: Set<string> | null = null;
 
   constructor(credentials: JulesCredentials) {
@@ -116,7 +127,10 @@ export class JulesCategoryOrganizer {
   /**
    * categorygroups.jsonを読み込む
    */
-  async loadCategoryGroups(): Promise<CategoryGroups> {
+  /**
+   * categorygroups.jsonを読み込む
+   */
+  async loadCategoryGroups(): Promise<CategoryGroup[]> {
     if (this.categoryGroupsCache) {
       return this.categoryGroupsCache;
     }
@@ -125,7 +139,21 @@ export class JulesCategoryOrganizer {
 
     try {
       const content = await fs.readFile(filePath, 'utf-8');
-      this.categoryGroupsCache = JSON.parse(content) as CategoryGroups;
+      const data = JSON.parse(content) as CategoryGroups | StandardCategoryGroups | CategoryGroup[];
+
+      let groups: CategoryGroup[] = [];
+      if (Array.isArray(data)) {
+        groups = data;
+      } else if ('categoryGroups' in data && Array.isArray(data.categoryGroups)) {
+        groups = data.categoryGroups;
+      } else {
+        // Legacy format: { "ParentName": { "slug": "...", "categories": [...] } }
+        groups = Object.entries(data as CategoryGroups).map(([name, group]) => ({
+          name,
+          ...group
+        }));
+      }
+      this.categoryGroupsCache = groups;
     } catch (error) {
       this.logger.error('Failed to load category groups', error);
       throw error;
@@ -137,12 +165,16 @@ export class JulesCategoryOrganizer {
   /**
    * categorygroups.jsonに登録されている全カテゴリを取得
    */
+  /**
+   * categorygroups.jsonに登録されている全カテゴリを取得
+   */
   async getRegisteredCategories(): Promise<Set<string>> {
     const groups = await this.loadCategoryGroups();
     const registered = new Set<string>();
 
-    for (const group of Object.values(groups)) {
-      for (const category of group.categories) {
+    for (const group of groups) {
+      const categories = group.children || group.categories || [];
+      for (const category of categories) {
         registered.add(category);
       }
     }
@@ -264,7 +296,7 @@ export class JulesCategoryOrganizer {
    - \`cat data/categorygroups.json\` で現在の内容を把握してください。
 
 2. **カテゴリの分類**
-   - 以下の未登録カテゴリ（${unregisteredCategories.length}件）を、\`data/categorygroups.json\` 内の適切な親カテゴリの \`categories\` 配列に追加してください。
+   - 以下の未登録カテゴリ（${unregisteredCategories.length}件）を、\`data/categorygroups.json\` 内の適切な親カテゴリの \`children\` 配列（古い形式の場合は \`categories\` 配列）に追加してください。
    - 適した親カテゴリがない場合は「その他」に追加してください。
    - 新しい親カテゴリは作成しないでください。
 
