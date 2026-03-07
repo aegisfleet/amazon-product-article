@@ -144,7 +144,7 @@ parents:
   スマートフォン:
     name: スマートフォン
     slug: smartphone
-    productCount: 180
+    productCount: 186
     isVisible: true
     childrenWithCounts:
       - name: AC式充電器
@@ -245,6 +245,8 @@ parents:
         productCount: 0
       - name: 粘着カードホルダー
         productCount: 5
+      - name: 電子書籍リーダー
+        productCount: 6
       - name: 電話・携帯電話
         productCount: 0
   音響・映像機材:
@@ -354,7 +356,7 @@ parents:
   家電:
     name: 家電
     slug: home-appliances
-    productCount: 116
+    productCount: 110
     isVisible: true
     childrenWithCounts:
       - name: HEPA空気清浄機
@@ -505,10 +507,6 @@ parents:
         productCount: 1
       - name: 電子レンジ
         productCount: 3
-      - name: 電子書籍リーダー
-        productCount: 6
-      - name: 電池 [3483451]
-        productCount: 0
       - name: 静電式空気清浄機
         productCount: 1
       - name: 風呂水ポンプ
