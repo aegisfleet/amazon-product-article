@@ -20,7 +20,7 @@ describe('Integration Properties', () => {
 
     const clearDirs = () => {
         if (fs.existsSync(contentDir)) {
-            fs.readdirSync(contentDir).forEach(file => fs.unlinkSync(path.join(contentDir, file)));
+            fs.readdirSync(contentDir).forEach((file) => { fs.unlinkSync(path.join(contentDir, file)); });
         }
     };
 
@@ -38,7 +38,7 @@ describe('Integration Properties', () => {
                 (categoryGroups) => {
                     clearDirs();
                     const manager = new CategoryManager('dummy.json');
-                    categoryGroups.forEach(group => manager.addCategoryGroup(group));
+                    categoryGroups.forEach((group) => { manager.addCategoryGroup(group); });
 
                     const counter = new ProductCounter(contentDir); // empty dir
                     counter.countProductsByCategory();

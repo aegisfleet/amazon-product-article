@@ -103,7 +103,7 @@ export class CategoryManager {
 
             const childrenWithCounts = group.children.map(childName => {
                 const ids = productCounter.getProductIds(childName);
-                ids.forEach(id => allProductIds.add(id));
+                ids.forEach((id) => { allProductIds.add(id); });
                 return {
                     name: childName,
                     productCount: ids.size
@@ -111,7 +111,7 @@ export class CategoryManager {
             });
 
             const parentIds = productCounter.getProductIds(group.name);
-            parentIds.forEach(id => allProductIds.add(id));
+            parentIds.forEach((id) => { allProductIds.add(id); });
 
             const totalProductCount = allProductIds.size;
 
@@ -156,13 +156,14 @@ export class CategoryManager {
                 description?: string;
                 productCount: number;
                 isVisible: boolean;
+                childrenWithCounts: { name: string; productCount: number; }[];
             }>
         };
         for (const group of this.enhancedCategoryGroups) {
             yamlData.parents[group.name] = {
                 name: group.name,
                 slug: group.slug,
-                description: group.description,
+                ...((group.description !== undefined) && { description: group.description }),
                 productCount: group.productCount,
                 isVisible: group.isVisible,
                 childrenWithCounts: group.childrenWithCounts
