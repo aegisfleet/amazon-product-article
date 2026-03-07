@@ -77,6 +77,10 @@ export class CategoryNormalizer {
         'Amazonデバイス',
         '本',
         '書籍',
+        'コントローラー',
+        'ヘッドセット',
+        'マウス',
+        'キーボード',
       ];
 
       if (
