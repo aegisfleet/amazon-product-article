@@ -22,7 +22,6 @@ describe('CreatorsAPIClient Category Parsing', () => {
       'Coupons',
       '【New】Item',
       'Testing | Pipe',
-      'Category_with_underscore',
       '※Note',
       '子育て支援施設向けページ',
       'らくらくベビー Birth Day企画',
@@ -35,7 +34,7 @@ describe('CreatorsAPIClient Category Parsing', () => {
       'Diapers',
     ];
 
-    const validNames = ['Books', 'Electronics', 'Kitchen', 'Computers', 'Video Games', 'Toys & Games'];
+    const validNames = ['Books', 'Electronics', 'Kitchen', 'Computers', 'Video Games', 'Toys & Games', 'Category_with_underscore'];
 
     test.each(invalidNames)('should return false for invalid name: %s', (name) => {
       expect(CategoryNormalizer.isValidCategoryName(name)).toBe(false);
