@@ -24,12 +24,12 @@ describe('CategoryManager Properties', () => {
         fc.assert(
             fc.property(
                 fc.record({
-                    name: fc.string({ minLength: 1 }).filter(s => /^[a-zA-Z0-9_-]+$/.test(s)),
-                    slug: fc.string({ minLength: 1 }).filter(s => /^[a-zA-Z0-9_-]+$/.test(s)),
+                    name: fc.string({ minLength: 1 }).filter((s) => /^[a-zA-Z0-9_-]+$/.test(s)),
+                    slug: fc.string({ minLength: 1 }).filter((s) => /^[a-zA-Z0-9_-]+$/.test(s)),
                     description: fc.option(fc.string()),
                     visible: fc.option(fc.boolean()),
                     priority: fc.option(fc.integer({ min: 0, max: 999 })),
-                    children: fc.array(fc.string({ minLength: 1 }).filter(s => /^[a-zA-Z0-9_-]+$/.test(s)))
+                    children: fc.array(fc.string({ minLength: 1 }).filter((s) => /^[a-zA-Z0-9_-]+$/.test(s))),
                 }),
                 (categoryGroup) => {
                     const manager = new CategoryManager('dummy.json');
@@ -55,9 +55,9 @@ describe('CategoryManager Properties', () => {
         fc.assert(
             fc.property(
                 fc.record({
-                    name: fc.string({ minLength: 1 }).filter(s => /^[a-zA-Z0-9_-]+$/.test(s)),
-                    slug: fc.string({ minLength: 1 }).filter(s => /^[a-zA-Z0-9_-]+$/.test(s)),
-                    children: fc.array(fc.string({ minLength: 1 }).filter(s => /^[a-zA-Z0-9_-]+$/.test(s)))
+                    name: fc.string({ minLength: 1 }).filter((s) => /^[a-zA-Z0-9_-]+$/.test(s)),
+                    slug: fc.string({ minLength: 1 }).filter((s) => /^[a-zA-Z0-9_-]+$/.test(s)),
+                    children: fc.array(fc.string({ minLength: 1 }).filter((s) => /^[a-zA-Z0-9_-]+$/.test(s))),
                 }),
                 (legacyCategoryGroup) => {
                     const manager = new CategoryManager('dummy.json');
