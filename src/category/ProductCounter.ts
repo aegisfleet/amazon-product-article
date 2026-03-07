@@ -68,7 +68,7 @@ export class ProductCounter {
 
             if (parsed.data && Array.isArray(parsed.data.categories)) {
                 const normalizedCategories = parsed.data.categories
-                    .map((c: any) => ProductCounter.normalizeCategory(String(c)))
+                    .map((c: unknown) => ProductCounter.normalizeCategory(String(c)))
                     .filter((s: string) => s.length > 0);
                 return Array.from(new Set(normalizedCategories));
             }

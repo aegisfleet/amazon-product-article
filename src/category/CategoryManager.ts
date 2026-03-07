@@ -32,8 +32,8 @@ export class CategoryManager {
         let data: unknown;
         try {
             data = JSON.parse(fileContent);
-        } catch (e) {
-            throw new Error(`Invalid JSON format in ${this.categoryGroupsPath}`, { cause: e } as any);
+        } catch (e: unknown) {
+            throw new Error(`Invalid JSON format in ${this.categoryGroupsPath}`, { cause: e });
         }
 
         const seenNames = new Set<string>();
@@ -118,8 +118,7 @@ export class CategoryManager {
             const visible = group.visible ?? true;
             const isVisible = visible && totalProductCount > 0;
             const priority = group.priority ?? 999;
-
-            let enhancedGroup: EnhancedCategoryGroup = {
+            const enhancedGroup: EnhancedCategoryGroup = {
                 name: group.name,
                 slug: group.slug,
                 visible,
@@ -150,7 +149,15 @@ export class CategoryManager {
         const dir = path.dirname(outputPath);
         if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true });
 
-        const yamlData = { parents: {} as Record<string, any> };
+        const yamlData = {
+            parents: {} as Record<string, {
+                name: string;
+                slug: string;
+                description?: string;
+                productCount: number;
+                isVisible: boolean;
+            }>
+        };
         for (const group of this.enhancedCategoryGroups) {
             yamlData.parents[group.name] = {
                 name: group.name,

@@ -7,7 +7,7 @@ const contentPath = path.resolve(process.cwd(), 'content');
 const outJsonPath = path.resolve(process.cwd(), 'static/data/categorygroups.json');
 const outYamlPath = path.resolve(process.cwd(), 'data/categories.yml');
 
-function main() {
+function main(): void {
     try {
         console.log('Starting category enhancement...');
         const manager = new CategoryManager(categoryGroupsPath);
