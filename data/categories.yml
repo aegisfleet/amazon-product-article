@@ -250,7 +250,7 @@ parents:
   音響・映像機材:
     name: 音響・映像機材
     slug: audio-video-equipment
-    productCount: 138
+    productCount: 139
     isVisible: true
     childrenWithCounts:
       - name: DAコンバーター
@@ -267,6 +267,8 @@ parents:
         productCount: 36
       - name: イヤホン・ヘッドホン
         productCount: 6
+      - name: イヤホン・ヘッドホン本体
+        productCount: 1
       - name: イヤーパッド
         productCount: 1
       - name: イヤーピース
@@ -352,15 +354,13 @@ parents:
   家電:
     name: 家電
     slug: home-appliances
-    productCount: 117
+    productCount: 116
     isVisible: true
     childrenWithCounts:
       - name: HEPA空気清浄機
         productCount: 2
       - name: あんか・かいろ
         productCount: 0
-      - name: イヤホン・ヘッドホン本体
-        productCount: 1
       - name: エアブローガン
         productCount: 1
       - name: オーブンレンジ
