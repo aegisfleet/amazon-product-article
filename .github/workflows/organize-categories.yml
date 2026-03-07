@@ -38,7 +38,7 @@ jobs:
       run: |
         # categorygroups.jsonに登録されていないカテゴリをカウント
         CACHE_CATS=$(cat data/cache/paapi-product-cache.json | jq -r 'to_entries[] | .value.data.categoryInfo.main' | sort | uniq | grep -v null)
-        JSON_CATS=$(cat data/categorygroups.json | jq -r 'if type == "array" or (.categoryGroups | type == "array") then (if type == "array" then .[] else .categoryGroups[] end | .categories[] // .children[]) else .[].categories[] end' | sort | uniq)
+        JSON_CATS=$(cat data/categorygroups.json | jq -r '(if type == "array" then . elif type == "object" then (.categoryGroups // (to_entries | map(.value))) else [] end)[] | (.categories // .children // [])[]' | sort | uniq)
         UNREGISTERED=$(comm -23 <(echo "$CACHE_CATS") <(echo "$JSON_CATS") | wc -l)
         echo "Unregistered categories: $UNREGISTERED"
         echo "count=$UNREGISTERED" >> $GITHUB_OUTPUT
