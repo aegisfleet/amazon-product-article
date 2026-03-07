@@ -5,9 +5,9 @@
  * 適切な親カテゴリに分類するためのJulesセッションを作成する
  */
 
-import axios, { type AxiosInstance } from 'axios';
 import * as fs from 'node:fs/promises';
 import * as path from 'node:path';
+import axios, { type AxiosInstance } from 'axios';
 import type {
   JulesCredentials,
   JulesError,
@@ -150,7 +150,7 @@ export class JulesCategoryOrganizer {
         // Legacy format: { "ParentName": { "slug": "...", "categories": [...] } }
         groups = Object.entries(data as CategoryGroups).map(([name, group]) => ({
           name,
-          ...group
+          ...group,
         }));
       }
       this.categoryGroupsCache = groups;

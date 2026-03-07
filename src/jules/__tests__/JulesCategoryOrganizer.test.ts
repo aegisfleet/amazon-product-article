@@ -99,9 +99,7 @@ describe('JulesCategoryOrganizer', () => {
 
     it('should handle new data format (categoryGroups as array)', async () => {
       const mockGroups = {
-        categoryGroups: [
-          { name: '家電', slug: 'appliances', children: ['冷蔵庫'] },
-        ],
+        categoryGroups: [{ name: '家電', slug: 'appliances', children: ['冷蔵庫'] }],
       };
       const mockCache = {
         ASIN1: { data: { categoryInfo: { main: '電子レンジ' } }, status: 'valid' },
