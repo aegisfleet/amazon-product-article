@@ -17,7 +17,7 @@
 ### 新しく親カテゴリを追加する場合
 
 1. `data/categorygroups.json` のみを編集します。
-2. ローカルサーバーを起動するか（`npm run build:hugo` または `npm run prebuild:hugo && hugo server`）、GitHubにPushするだけで完了です。
+2. ローカルサーバーを起動するか（`npm run prebuild:hugo` または `npm run prebuild:hugo && hugo server`）、GitHubにPushするだけで完了です。
 
 ### 既存のMarkdownファイルのクリーンアップ（推奨）
 
