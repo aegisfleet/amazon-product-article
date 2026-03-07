@@ -282,6 +282,17 @@ describe('CategoryNormalizer', () => {
       expect(result3.score).toBe(10);
     });
 
+    it('should assign score to newly added peripheral keywords', () => {
+      const peripheralKeywords = ['コントローラー', 'ヘッドセット', 'マウス', 'キーボード'];
+
+      peripheralKeywords.forEach(keyword => {
+        const node: BrowseNode = { displayName: `PS5用${keyword}`, id: '123' };
+        const result = CategoryNormalizer.normalize(node);
+        expect(result.score).toBe(10);
+        expect(result.main).toContain(keyword);
+      });
+    });
+
     it('should skip invalid categories in the chain', () => {
       const grandParent: BrowseNode = { displayName: 'Toys', id: '1' };
       const parent: BrowseNode = { displayName: 'Sale', id: '2', ancestor: grandParent }; // Invalid
