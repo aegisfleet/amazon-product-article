@@ -47,10 +47,10 @@ parents:
         productCount: 3
       - name: PC用マイク
         productCount: 3
-  PC周辺機器・ストレージ・ネットワーク:
-    name: PC周辺機器・ストレージ・ネットワーク
-    slug: pc-peripheral-storage-network
-    productCount: 102
+  PC周辺機器:
+    name: PC周辺機器
+    slug: pc-peripheral
+    productCount: 85
     isVisible: true
     childrenWithCounts:
       - name: 内蔵SSD
@@ -96,12 +96,6 @@ parents:
       - name: インクジェットインクカートリッジ
         productCount: 1
       - name: プリンタクリーナー
-        productCount: 1
-      - name: ウェブカメラ
-        productCount: 16
-      - name: ウェアラブルカメラ・アクションカム
-        productCount: 0
-      - name: ウェアラブルカメラ用アクセサリ
         productCount: 1
       - name: 超小型カメラ
         productCount: 0
@@ -236,7 +230,7 @@ parents:
   音響・映像機材:
     name: 音響・映像機材
     slug: audio-video-equipment
-    productCount: 121
+    productCount: 138
     isVisible: true
     childrenWithCounts:
       - name: DAコンバーター
@@ -259,6 +253,12 @@ parents:
         productCount: 1
       - name: インナーイヤーモニター
         productCount: 0
+      - name: ウェブカメラ
+        productCount: 16
+      - name: ウェアラブルカメラ・アクションカム
+        productCount: 0
+      - name: ウェアラブルカメラ用アクセサリ
+        productCount: 1
       - name: エンクロージャ
         productCount: 1
       - name: エンタメ・オーディオ祭
