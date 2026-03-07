@@ -2,11 +2,13 @@ parents:
   パソコン・モニター・入力機器:
     name: パソコン・モニター・入力機器
     slug: pc-workstation
-    productCount: 102
+    productCount: 120
     isVisible: true
     childrenWithCounts:
       - name: 2 in 1ノートパソコン
         productCount: 1
+      - name: USBライト
+        productCount: 4
       - name: キーボード
         productCount: 0
       - name: キーボード・マウス・入力機器
@@ -23,6 +25,8 @@ parents:
         productCount: 1
       - name: ディスプレイ
         productCount: 31
+      - name: デスクライト
+        productCount: 14
       - name: トラックボール
         productCount: 2
       - name: パソコン本体
@@ -48,7 +52,7 @@ parents:
   PC周辺機器:
     name: PC周辺機器
     slug: pc-peripheral
-    productCount: 94
+    productCount: 90
     isVisible: true
     childrenWithCounts:
       - name: 3Dプリンタ本体
@@ -75,8 +79,6 @@ parents:
         productCount: 18
       - name: USBメモリ・フラッシュドライブ
         productCount: 1
-      - name: USBライト
-        productCount: 4
       - name: Wi-Fiルーター
         productCount: 1
       - name: インクジェットインクカートリッジ
@@ -1066,7 +1068,7 @@ parents:
   家具・オフィス・収納:
     name: 家具・オフィス・収納
     slug: furniture-storage
-    productCount: 110
+    productCount: 96
     isVisible: true
     childrenWithCounts:
       - name: Chest
@@ -1163,8 +1165,6 @@ parents:
         productCount: 2
       - name: デスクチェア
         productCount: 8
-      - name: デスクライト
-        productCount: 14
       - name: デスク上置棚
         productCount: 1
       - name: ドキュメントファイル
