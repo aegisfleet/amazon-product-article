@@ -96,5 +96,24 @@ describe('JulesCategoryOrganizer', () => {
       const result = await organizer.getUnregisteredCategories();
       expect(result).toEqual([]);
     });
+
+    it('should handle new data format (categoryGroups as array)', async () => {
+      const mockGroups = {
+        categoryGroups: [{ name: '家電', slug: 'appliances', children: ['冷蔵庫'] }],
+      };
+      const mockCache = {
+        ASIN1: { data: { categoryInfo: { main: '電子レンジ' } }, status: 'valid' },
+        ASIN2: { data: { categoryInfo: { main: '冷蔵庫' } }, status: 'valid' },
+      };
+
+      (fs.readFile as jest.Mock).mockImplementation(async (path: string) => {
+        if (path.endsWith('categorygroups.json')) return JSON.stringify(mockGroups);
+        if (path.endsWith('paapi-product-cache.json')) return JSON.stringify(mockCache);
+        return '';
+      });
+
+      const result = await organizer.getUnregisteredCategories();
+      expect(result).toEqual(['電子レンジ']);
+    });
   });
 });
