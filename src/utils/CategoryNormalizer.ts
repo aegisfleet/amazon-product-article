@@ -64,6 +64,11 @@ export class CategoryNormalizer {
         'おむつ',
         '紙おむつ',
         'ベビーおむつ',
+        'ゲーミングチェア',
+        'デスクチェア',
+        'パソコンチェア',
+        'オフィスチェア',
+        'ワークチェア',
         'Kindle',
         'Fire',
         'Echo',
@@ -202,7 +207,7 @@ export class CategoryNormalizer {
       /smartphones/i,
       /^All /i,
       /^Prime /i,
-      /[【】|()_※]/,
+      /[【】|()※]/,
       /^家電$/,
       /^アクセサリ$/,
       /^アクセサリー$/,
@@ -392,7 +397,9 @@ export class CategoryNormalizer {
   }
 
   private static sanitizeCategoryName(name: string): string {
+    // Remove internal prefixes like PJ_
+    let sanitized = name.replace(/^PJ_/i, '');
     // Remove special characters sometimes found in browse nodes
-    return name.replaceAll(/[【】|()_※]/g, '').trim();
+    return sanitized.replaceAll(/[【】|()_※]/g, '').trim();
   }
 }
