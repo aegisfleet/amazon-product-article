@@ -187,10 +187,10 @@ export class CategoryNormalizer {
     if (!name) return false;
 
     const invalidPatterns = [
-      /Sale|Off|Coupon|Ranking|Best|Week|Fair|Event|Campaign/i,
+      /Off|Coupon|Ranking|Best|Week|Fair|Event|Campaign/i,
       /セール|オフ(?!ィス)|クーポン|ランキング|おすすめ|ウィーク|フェア|イベント|キャンペーン/,
       /企画|向け|ほか$|など$|新商品|すべて$|特設ページ|発売日お届け|父の日/,
-      /割引|お買い得|利用シーン|あわせ買い|全商品$|関連製品$|新製品$/,
+      /割引|お買い得|利用シーン|あわせ買い|合わせ買い|全商品$|関連製品$|新製品$/,
       /まとめ買い|まとめでお得|中止|HQP|紐付/,
       /^・.*・$/,
       /non\s*manga/i,
@@ -209,6 +209,8 @@ export class CategoryNormalizer {
       /eligible/i,
       /widget/i,
       /smartphones/i,
+      // Internal ID patterns like L2_01_StorageItems_01Cat or L201Skincare01Cat
+      /L\d+[_A-Z].*Cat$/i,
       /^All /i,
       /^Prime /i,
       /[【】|()※]/,
