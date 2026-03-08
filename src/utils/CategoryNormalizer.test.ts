@@ -29,6 +29,9 @@ describe('CategoryNormalizer', () => {
         'お得なブラックフライデーセール',
         '文房具・オフィス用品ヤスいいね対象商品2',
         '文房具・オフィス用品ヤスいいね対象外商品1',
+        'UMall',
+        '文具・事務用品（その他）',
+        '日本ヒルズ・コルゲート199T',
       ];
       invalidNames.forEach((name) => {
         expect(CategoryNormalizer.isValidCategoryName(name)).toBe(false);
