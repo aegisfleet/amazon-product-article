@@ -44,7 +44,7 @@ it('should return false for junk category', () => {
 > [!WARNING]
 > **躓きポイント（よくある落とし穴）**
 > 1. **広範なキーワードの除外**: 「Home」や「under」などを `invalidPatterns` に追加する場合、意図せず正常なカテゴリ（例：「Home & Kitchen」）まで除外してしまう可能性があります。追加するキーワードの影響範囲には注意し、必要に応じてテストを見直してください。
-> 2. **テストケース名との意図しない一致**: `src/utils/CategoryNormalizer.test.ts` 内の正常系テストで使われるダミー文字列（例：`category_with_underscore`）に、新しく追加した除外キーワード（`under`など）が含まれていると、関係ないテストが失敗します。除外ルール追加時は既存テストのダミー文字列も確認・修正してください。
+> 2. **テストケース名との意図しない一致**: `src/utils/CategoryNormalizer.test.ts` や `src/api/__tests__/CategoryParsing.test.ts` 内の正常・異常想定のダミー文字列（例：`category_with_underscore` や `sale`）が、新旧の除外ルールと意図せず一致してしまい、関係ないテストが失敗することがあります。除外ルールの更新後は既存テストのダミー文字列も確認し、必要なら抽象的な文字列（`test` や `dash`）などに修正してください。
 
 ### 2.3 検証
 ユニットテストを実行して、修正が正しいこと、および他のカテゴリに影響がないことを確認します。

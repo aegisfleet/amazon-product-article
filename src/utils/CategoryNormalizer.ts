@@ -226,12 +226,13 @@ export class CategoryNormalizer {
 
     // 2. Structural & General Invalid Patterns (Regex)
     const invalidPatterns = [
-      /sale|off|coupon|ranking|best|week|fair|event|campaign|spring|free shipping|home|under/i,
+      /bauhutte|free shipping|test/i,
       /セール|オフ(?!ィス)|クーポン|ランキング|おすすめ|ウィーク|フェア|イベント|キャンペーン/,
       /企画|向け|ほか$|など$|新商品|すべて$|特設ページ|発売日お届け|父の日/,
       /替えブラシ[_＿\s]*[sｓ]/i,
       /割引|お買い得|利用シーン|あわせ買い|合わせ買い|全商品$|関連製品$|新製品$|ヤスいいね|対象商品|人気商品|レビュー評価/,
       /まとめ買い|まとめでお得|中止|hqp|紐付|新生活|入園入学/,
+      /定期おトク便/,
       /^・.*・$/,
       /non\s*manga/i,
       /^kos_/i,
