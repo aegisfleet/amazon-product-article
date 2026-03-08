@@ -17,6 +17,7 @@ try {
         const cache = JSON.parse(fs.readFileSync(cachePath, 'utf8'));
         let resetCount = 0;
 
+        // 1. Scan Articles (Old approach preserved for article-specific metadata if needed)
         const files = fs.readdirSync(articlesDir);
         for (const file of files) {
             if (file.endsWith('.md')) {
@@ -26,15 +27,33 @@ try {
                 // Check if the article has the target category
                 if (content.includes(`categories: ["${targetCategory}"]`)) {
                     const asinMatch = content.match(/asin:\s*"([^"]+)"/);
-                    if (asinMatch && asinMatch[1]) {
+                    if (asinMatch?.[1]) {
                         const asin = asinMatch[1];
-                        if (cache[asin]) {
+                        if (cache[asin]?.timestamp !== 0) {
                             cache[asin].timestamp = 0;
-                            console.log(`Reset cache for ASIN: ${asin}`);
+                            console.log(`Reset cache for ASIN (from article): ${asin}`);
                             resetCount++;
                         }
                     }
                 }
+            }
+        }
+
+        // 2. Scan Cache Directly (New approach for items without articles)
+        for (const asin in cache) {
+            const item = cache[asin];
+            const data = item.data;
+            if (!data) continue;
+
+            const matches =
+                data.category === targetCategory ||
+                data.categoryInfo?.main === targetCategory ||
+                data.categoryInfo?.sub === targetCategory;
+
+            if (matches && item.timestamp !== 0) {
+                item.timestamp = 0;
+                console.log(`Reset cache for ASIN (from cache scan): ${asin}`);
+                resetCount++;
             }
         }
 
