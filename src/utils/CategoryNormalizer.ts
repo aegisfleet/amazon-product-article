@@ -378,6 +378,7 @@ export class CategoryNormalizer {
       'amazonglobal',
       'クリスマスギフト･コフレ',
       '日用品・生活必需品 - ビューティー',
+      'スッキリ片づける・収納する',
       'カー＆バイク用品',
       '車＆バイク',
       'kindleオーナー ライブラリー',
