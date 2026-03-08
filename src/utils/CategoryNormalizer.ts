@@ -40,8 +40,8 @@ export class CategoryNormalizer {
     if (validNames.length > 0) {
       // Updated logic: Main is Specific, Sub is Parent
       // validNames is collected from leaf up, so [leaf, parent, grandparent, ...]
-      const main = validNames[0]!;
-      const sub = validNames.length > 1 ? validNames[1]! : '';
+      const main = validNames[0] as string;
+      const sub = (validNames.length > 1 ? validNames[1] : '') as string;
 
       // Calculate score based on preferred keywords
       let score = 0;
@@ -94,13 +94,15 @@ export class CategoryNormalizer {
 
       if (
         preferredKeywords.some(
-          (k) => main.toLowerCase().includes(k.toLowerCase()) || sub.toLowerCase().includes(k.toLowerCase()),
+          (k) =>
+            (main as string).toLowerCase().includes(k.toLowerCase()) ||
+            (sub as string).toLowerCase().includes(k.toLowerCase()),
         )
       ) {
         score = 10;
       }
 
-      return { main, sub, nameCount: validNames.length, score };
+      return { main: main as string, sub: sub as string, nameCount: validNames.length, score };
     }
 
     // If no valid category found in the tree, fallback to Other
@@ -158,7 +160,7 @@ export class CategoryNormalizer {
     }
 
     // 3. Fallback to best available node even if it's "Other"
-    const bestNode = sortedNodes[0]!;
+    const bestNode = sortedNodes[0] as BrowseNode;
     return CategoryNormalizer.attachBrowseNodeId(CategoryNormalizer.normalize(bestNode), bestNode);
   }
 
@@ -194,27 +196,53 @@ export class CategoryNormalizer {
   }
 
   /**
-   * Check if a category name is valid (legacy logic from PAAPIClient)
+   * Get a normalized name for comparison
    */
-  public static isValidCategoryName(name: string): boolean {
-    if (!name) return false;
+  private static getComparisonName(name: string): string {
+    return name
+      .toLowerCase()
+      .replaceAll(/[＿_]/g, ' ') // アンダースコアをスペースに
+      .replaceAll(/\s+/g, ' ') // 連続スペースを1つに
+      .trim();
+  }
 
+  /**
+   * Check if a category name is valid
+   */
+  public static isValidCategoryName(originalName: string): boolean {
+    if (!originalName) return false;
+
+    const name = CategoryNormalizer.getComparisonName(originalName);
+
+    // 1. Whitelist (Highest Priority)
+    const whitelist = [
+      '磁気・チタン・ゲルマニウムアクセサリー',
+      '周辺機器・アクセサリ',
+      'キーボード・マウス・入力機器',
+      '体重・体脂肪・体組成計',
+      'ベビーカー',
+    ];
+    if (whitelist.some((item) => name.includes(CategoryNormalizer.getComparisonName(item)))) {
+      return true;
+    }
+
+    // 2. Structural & General Invalid Patterns (Regex)
     const invalidPatterns = [
-      /Sale|Off|Coupon|Ranking|Best|Week|Fair|Event|Campaign/i,
+      /sale|off|coupon|ranking|best|week|fair|event|campaign/i,
       /セール|オフ(?!ィス)|クーポン|ランキング|おすすめ|ウィーク|フェア|イベント|キャンペーン/,
       /企画|向け|ほか$|など$|新商品|すべて$|特設ページ|発売日お届け|父の日/,
-      /替えブラシ[_＿\s]*[SＳ]/i,
+      /替えブラシ[_＿\s]*[sｓ]/i,
       /割引|お買い得|利用シーン|あわせ買い|合わせ買い|全商品$|関連製品$|新製品$|ヤスいいね|対象商品|人気商品|レビュー評価/,
-      /まとめ買い|まとめでお得|中止|HQP|紐付|新生活|入園入学/,
+      /まとめ買い|まとめでお得|中止|hqp|紐付|新生活|入園入学/,
       /^・.*・$/,
       /non\s*manga/i,
-      /^KOS_/i,
-      /Winter Favorites/i,
+      /^kos_/i,
+      /winter favorites/i,
       /高評価ブランド/,
       /今旬/,
       /サンプリング除外/,
-      /おもちゃ\d+column/i,
-      /Node\d+/i,
+      /おもちゃ.*column/i,
+      /node\d+/i,
       /特集/,
       /新着/,
       /新規発売/,
@@ -224,69 +252,47 @@ export class CategoryNormalizer {
       /eligible/i,
       /widget/i,
       /smartphones/i,
-      // Internal ID patterns like L2_01_StorageItems_01Cat or L201Skincare01Cat
-      /L\d+[_A-Z].*Cat$/i,
-      /^All /i,
-      /^Prime /i,
+      /l\d+[_a-z].*cat$/i,
+      /^all /i,
+      /^prime /i,
       /[【】|()※]/,
       /^家電$/,
       /^アクセサリ$/,
       /^アクセサリー$/,
-      // Block UUID-like patterns often used for internal nodes
       /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}/i,
       // Block "Name [ID]" pattern (e.g. "家電 [124048011]")
       /[^[\]]{1,200} \[\d+\]/,
-      /Managed Stores/i,
-      /Custom Stores Navigation/i,
-      /Special Features Stores/i,
-      /Arborist Merchandising Root/i,
+      /managed stores/i,
+      /custom stores navigation/i,
+      /special features stores/i,
+      /arborist merchandising root/i,
+      /ストア$|store$|ストア\s*[(（].*[)）]$/i,
     ];
-
-    // Specific whitelist for valid multi-dot categories
-    const allowedMultiDot = [
-      '磁気・チタン・ゲルマニウムアクセサリー',
-      '周辺機器・アクセサリ',
-      'キーボード・マウス・入力機器',
-      '体重・体脂肪・体組成計',
-    ];
-    if (allowedMultiDot.some((allowed) => name.includes(allowed))) {
-      return true;
-    }
-
-    // Check for multiple dots (2 or more) which usually indicates a breadcrumb-like category
-    // e.g. "日用品・生活必需品 - 文房具・オフィス用品" (contains 2 dots if we consider the full path, but here we check individual node name)
-    // The user example "日用品・生活必需品 - 文房具・オフィス用品" actually contains "・" and "-"
-    // If the node name itself contains multiple "・", it's likely a composite junk category.
-    const dotCount = (name.match(/・/g) || []).length;
-    if (dotCount >= 2) {
-      return false;
-    }
 
     if (invalidPatterns.some((pattern) => pattern.test(name))) {
       return false;
     }
 
-    // Check for generic "Store" suffix
-    // User requested to exclude categories ending with "Store" (e.g., Drugstore)
-    const genericStorePatterns = [/ストア$|Store$|ストア\s*[(（].*[)）]$/i];
-
-    if (genericStorePatterns.some((pattern) => pattern.test(name))) {
+    // 3. Dot Count Check
+    const dotCount = (name.match(/・/g) || []).length;
+    if (dotCount >= 2) {
       return false;
     }
 
-    const blockList = [
-      'Arborist Merchandising Root',
-      'Babel 6-2',
-      'Calendar Test',
-      'Test',
+    // 4. Blacklist (Full Match after normalization)
+    const blacklist = [
+      'arborist merchandising root',
+      'babel 6-2',
+      'calendar test',
+      'test',
       'テスト',
-      '面だし用ASIN',
-      'Hair Care',
-      'HPC recommendation widget',
-      'PBHome&Kitchen9999',
-      'Panasonic-HA-HotAirStylers',
-      'UMall',
-      'SnS Acquisition Test HPC ASINs',
+      '面だし用asin',
+      'hair care',
+      'hpc recommendation widget',
+      'pbhome&kitchen9999',
+      'panasonic-ha-hotairstylers',
+      'umall',
+      'sns acquisition test hpc asins',
       'シャープの家電がお買い得',
       'ジュニアシート 3歳頃から',
       'チャイルドシート 1歳頃から',
@@ -294,89 +300,87 @@ export class CategoryNormalizer {
       'カテゴリー別',
       '卒園式・入学式の撮影テクニック',
       'yobi',
-      'P&G',
+      'p&g',
       '定期おトク便',
       '介護用品・生理用品',
       '花王',
-      'Panasonic Beauty',
-      'TWINBIRD',
-      'Panasonic ヘアケア',
+      'panasonic beauty',
+      'twinbird',
+      'panasonic ヘアケア',
       'パナソニック ヘアケア',
       'パナソニック ヘアードライヤー',
       'おうちでヘアケア',
       'アウトドア用品',
       'スポーツ＆アウトドア',
-      'Sports & Outdoors',
+      'sports & outdoors',
       'ホーム・日用品',
       '日用品・生活必需品：おもちゃ',
       '和書（アダルト除く）',
-      'Featured Categories',
-      'OMRON（オムロン）',
+      'featured categories',
+      'omron（オムロン）',
       '電池利用商品',
-      'IO DATA',
-      'Logicool',
-      'CASIO',
-      'Lenovo',
-      'HPC_CreatorInfoHub',
-      'Drugstore - AmazonGlobal',
-      'PB_Home&Kitchen',
+      'io data',
+      'logicool',
+      'casio',
+      'lenovo',
+      'hpc_creatorinfohub',
+      'drugstore - amazonglobal',
+      'pb_home&kitchen',
       '新生活ギフト',
-      'YA-MAN',
+      'ya-man',
       'others',
-      'PB_Beauty',
+      'pb_beauty',
       'パントリー',
-      '対象ASIN',
-      '面出し用ASIN',
-      'Internal',
+      '対象asin',
+      '面出し用asin',
+      'internal',
       'サンワサプライ',
-      'PB_PC',
+      'pb_pc',
       'ベビー＆マタニティ',
       'ホーム＆キッチン',
       '食品・飲料・お酒',
       '服＆ファッション小物',
-      'Beauty Store',
-      '介護用品・生理用品',
-      '花王',
-      'Diapers',
+      'beauty store',
+      'diapers',
       'シャープ',
-      'Special Features Stores',
-      'Self Service',
-      'Amazon Global',
-      'Amazon Basics',
-      'Amazon Basic',
-      'Amazon Store',
-      'Kindle本',
+      'special features stores',
+      'self service',
+      'amazon global',
+      'amazon basics',
+      'amazon basic',
+      'amazon store',
+      'kindle本',
       'ジャンル別',
-      'Custom Stores',
-      'Custom Stores Navigation',
+      'custom stores',
+      'custom stores navigation',
       '無料本',
       'キャンペーン',
       'まとめ買い',
       '期間限定ポイント',
       'h&s',
-      'Panasonic-HA-',
-      'Amazonベーシック',
-      'Kindle Popup',
-      'Kindle書籍 5冊購入で15%ポイント還元',
-      'Kindle電子書籍リーダー',
+      'panasonic-ha-',
+      'amazonベーシック',
+      'kindle popup',
+      'kindle書籍 5冊購入で15%ポイント還元',
+      'kindle電子書籍リーダー',
       '文房具図鑑',
       '受験対策文房具',
       'コクヨの文房具・事務用品',
       '美容・健康家電',
       '理美容家電',
-      'Kindle書籍',
-      'Kindle Unlimited',
-      'おせちHQP紐付用',
-      'AmazonGlobal',
+      'kindle書籍',
+      'kindle unlimited',
+      'おせちhqp紐付用',
+      'amazonglobal',
       'クリスマスギフト･コフレ',
       '日用品・生活必需品 - ビューティー',
       'カー＆バイク用品',
       '車＆バイク',
-      'Kindleオーナー ライブラリー',
-      'Kindle本 (電子書籍) まとめ買いキャンペーン',
-      'Kindle本 ポイントアップチャンスキャンペーン',
-      'Kindle本はじめての購入に使える70%OFFクーポン',
-      'Kindle Events',
+      'kindleオーナー ライブラリー',
+      'kindle本 (電子書籍) まとめ買いキャンペーン',
+      'kindle本 ポイントアップチャンスキャンペーン',
+      'kindle本はじめての購入に使える70%offクーポン',
+      'kindle events',
       'ポイントフェア',
       'まとめ買い(期間限定ポイント)',
       '冬の読書応援',
@@ -384,33 +388,32 @@ export class CategoryNormalizer {
       '冬',
       '春',
       '夏',
-      'Amazon',
-      'Baby',
+      'amazon',
+      'baby',
       'ベビー',
-      'GT Managed Stores',
+      'gt managed stores',
       'スポーツ・アウトドア',
-      'Sports - AmazonGlobal free shipping',
-      'Babel',
+      'sports - amazonglobal free shipping',
+      'babel',
       'nonmanga_',
       'new release non manga',
       'ブランド別インテリアコーディネート',
-      'BauhutteYAMAHABXGY',
-      'CMLDeals on Most Home&Kitchen9999',
-      'HPCAFC2409under2000',
-      'L201Skincare01Cat',
-      'L202StorageItems01Cat',
-      'L205HairBodyCare01Cat',
-      'Nthamzfundcontrol',
-      'Nthamzfundtreatment',
-      'UMall',
+      'bauhutteyamahabxgy',
+      'cmldeals on most home&kitchen9999',
+      'hpcafc2409under2000',
+      'l201skincare01cat',
+      'l202storageitems01cat',
+      'l205hairbodycare01cat',
+      'nthamzfundcontrol',
+      'nthamzfundtreatment',
       '「なるほど家電」はアイリスオーヤマ',
       'おもちゃ2column',
-      'ソニー2025SpringCamera',
-      'ソニー2026SpringVlog',
+      'ソニー2025springcamera',
+      'ソニー2026springvlog',
       'ピアノ・キーボード｜ヘッドホン',
-      'ブラックフライデーDealElectronics',
-      'ブラックフライデーDealHome Improvement',
-      'ブラックフライデーDealKitchen',
+      'ブラックフライデーdealelectronics',
+      'ブラックフライデーdealhome improvement',
+      'ブラックフライデーdealkitchen',
       'プライム感謝祭ポイントアップ商品',
       'ホーム&キッチン用品ポイントアップ+1% 1',
       '文房具・オフィス用品ヤスいいね対象商品2',
@@ -418,31 +421,17 @@ export class CategoryNormalizer {
       '文房具・オフィス用品ヤスいいね対象外商品2',
       '文房具・オフィス用品ヤスいいね対象外商品4',
       '新学期文具',
-      '替えブラシS',
-      '家電　本体',
-      '家電　新商品',
-      '理美容家電　新商品',
+      '替えブラシs',
+      '家電 本体',
+      '家電 新商品',
+      '理美容家電 新商品',
       '理美容家電新商品特集',
       'スキンケア他美容家電新商品',
       '白系家電特集',
       '母の日特集',
     ];
 
-    if (
-      blockList.some((block) => {
-        if (name.toLowerCase().includes(block.toLowerCase())) {
-          // Exception: "ベビーカー" is valid even if "ベビー" is blocked
-          if (block === 'ベビー' && name === 'ベビーカー') {
-            return false;
-          }
-          if (block === 'Baby' && name === 'Baby Strollers') {
-            return false;
-          }
-          return true;
-        }
-        return false;
-      })
-    ) {
+    if (blacklist.includes(name)) {
       return false;
     }
 
