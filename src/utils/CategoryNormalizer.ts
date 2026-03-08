@@ -84,6 +84,8 @@ export class CategoryNormalizer {
         'マウス',
         'キーボード',
         '替えブラシ',
+        'マッサージ機',
+        '健康家電',
       ];
 
       if (
