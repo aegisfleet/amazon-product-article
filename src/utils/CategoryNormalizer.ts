@@ -187,7 +187,7 @@ export class CategoryNormalizer {
     if (!name) return false;
 
     const invalidPatterns = [
-      /Off|Coupon|Ranking|Best|Week|Fair|Event|Campaign/i,
+      /Sale|Off|Coupon|Ranking|Best|Week|Fair|Event|Campaign/i,
       /セール|オフ(?!ィス)|クーポン|ランキング|おすすめ|ウィーク|フェア|イベント|キャンペーン/,
       /企画|向け|ほか$|など$|新商品|すべて$|特設ページ|発売日お届け|父の日/,
       /割引|お買い得|利用シーン|あわせ買い|合わせ買い|全商品$|関連製品$|新製品$/,
