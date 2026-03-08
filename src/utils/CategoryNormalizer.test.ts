@@ -32,6 +32,11 @@ describe('CategoryNormalizer', () => {
         'UMall',
         '文具・事務用品（その他）',
         '日本ヒルズ・コルゲート199T',
+        '引っ越し祝い',
+        'Home Gift（ホームギフト）',
+        'BrandName変更確認',
+        'ブラックフライデー_Deal_Kitchen',
+        'BF_Deal',
       ];
       invalidNames.forEach((name) => {
         expect(CategoryNormalizer.isValidCategoryName(name)).toBe(false);
