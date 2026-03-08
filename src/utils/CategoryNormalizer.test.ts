@@ -315,7 +315,7 @@ describe('CategoryNormalizer', () => {
       const result = CategoryNormalizer.normalize(node);
       expect(result).toEqual({
         main: 'その他',
-        sub: 'Sale', // Falls back to sanitizeCategoryName(node.displayName)
+        sub: '一般', // 'Sale' is invalid, so it falls back to '一般'
         nameCount: 0,
         score: -1,
       });
