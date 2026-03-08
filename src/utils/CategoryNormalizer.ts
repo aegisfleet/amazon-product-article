@@ -43,7 +43,7 @@ export class CategoryNormalizer {
       const main = validNames[0] as string;
       const sub = (validNames.length > 1 ? validNames[1] : '') as string;
 
-      // Calculate score based on preferred keywords
+      // Calculate score based on preferred keywords across all valid hierarchy names
       let score = 0;
       const preferredKeywords = [
         'ボードゲーム',
@@ -93,13 +93,16 @@ export class CategoryNormalizer {
         'ブロック',
         'レゴ',
         'Lego',
+        'ベビー',
+        'マタニティ',
       ];
 
-      if (
-        preferredKeywords.some(
-          (k) => main.toLowerCase().includes(k.toLowerCase()) || sub.toLowerCase().includes(k.toLowerCase()),
-        )
-      ) {
+      // Check all valid names in the hierarchy for preferred keywords
+      const hasPreferredKeyword = validNames.some((name) =>
+        preferredKeywords.some((keyword) => name.toLowerCase().includes(keyword.toLowerCase())),
+      );
+
+      if (hasPreferredKeyword) {
         score = 10;
       }
 
@@ -134,17 +137,16 @@ export class CategoryNormalizer {
       const normA = CategoryNormalizer.normalize(a);
       const normB = CategoryNormalizer.normalize(b);
 
-      // Priority 0: Score (Preferred keywords)
-      if (normA.score !== normB.score) {
-        return normB.score - normA.score;
-      }
-
-      // Priority 1: Depth (Specificity)
-      if (normA.nameCount !== normB.nameCount) {
+      // Priority: Depth (nameCount) -> Score -> SalesRank
+      // 1. Depth (Specificity)
+      if (normB.nameCount !== normA.nameCount) {
         return normB.nameCount - normA.nameCount;
       }
-
-      // Priority 2: SalesRank (Lower is better)
+      // 2. Score (Domain preference)
+      if (normB.score !== normA.score) {
+        return normB.score - normA.score;
+      }
+      // 3. Sales Rank
       const rankA = a.salesRank ?? a.SalesRank ?? Number.MAX_SAFE_INTEGER;
       const rankB = b.salesRank ?? b.SalesRank ?? Number.MAX_SAFE_INTEGER;
       return rankA - rankB;
