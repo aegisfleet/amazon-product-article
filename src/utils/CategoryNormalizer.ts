@@ -94,9 +94,7 @@ export class CategoryNormalizer {
 
       if (
         preferredKeywords.some(
-          (k) =>
-            main.toLowerCase().includes(k.toLowerCase()) ||
-            sub.toLowerCase().includes(k.toLowerCase()),
+          (k) => main.toLowerCase().includes(k.toLowerCase()) || sub.toLowerCase().includes(k.toLowerCase()),
         )
       ) {
         score = 10;
