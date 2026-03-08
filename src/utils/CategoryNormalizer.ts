@@ -86,6 +86,8 @@ export class CategoryNormalizer {
         '替えブラシ',
         'マッサージ機',
         '健康家電',
+        'ロボット',
+        'ガンダム',
       ];
 
       if (
