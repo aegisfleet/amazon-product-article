@@ -194,10 +194,10 @@ describe('CategoryNormalizer', () => {
         expect(CategoryNormalizer.isValidCategoryName(name)).toBe(false);
       });
     });
-
     it('should distinguish between "替えブラシ" and "替えブラシS"', () => {
       expect(CategoryNormalizer.isValidCategoryName('替えブラシ')).toBe(true);
       expect(CategoryNormalizer.isValidCategoryName('替えブラシS')).toBe(false);
+      expect(CategoryNormalizer.isValidCategoryName('替えブラシ_S')).toBe(false);
     });
 
     it.each([
@@ -303,6 +303,7 @@ describe('CategoryNormalizer', () => {
       expect(CategoryNormalizer.isValidCategoryName('替えブラシS')).toBe(false);
       expect(CategoryNormalizer.isValidCategoryName('替えブラシＳ')).toBe(false);
       expect(CategoryNormalizer.isValidCategoryName('替えブラシ Ｓ')).toBe(false);
+      expect(CategoryNormalizer.isValidCategoryName('替えブラシ_Ｓ')).toBe(false);
       expect(CategoryNormalizer.isValidCategoryName('替えブラシ s')).toBe(false);
     });
 
