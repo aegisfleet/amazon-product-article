@@ -17,6 +17,8 @@ try {
         const cache = JSON.parse(fs.readFileSync(cachePath, 'utf8'));
         let resetCount = 0;
 
+        const targetLower = targetCategory.toLowerCase();
+
         // 1. Scan Articles (Old approach preserved for article-specific metadata if needed)
         const files = fs.readdirSync(articlesDir);
         for (const file of files) {
@@ -25,7 +27,8 @@ try {
                 const content = fs.readFileSync(filePath, 'utf8');
 
                 // Check if the article has the target category
-                if (content.includes(`categories: ["${targetCategory}"]`)) {
+                const categoryMatch = content.match(/categories:\s*\[([^\]]+)\]/);
+                if (categoryMatch?.[1]?.toLowerCase().includes(targetLower)) {
                     const asinMatch = content.match(/asin:\s*"([^"]+)"/);
                     if (asinMatch?.[1]) {
                         const asin = asinMatch[1];
@@ -45,10 +48,14 @@ try {
             const data = item.data;
             if (!data) continue;
 
+            const category = data.category?.toLowerCase() || '';
+            const mainCat = data.categoryInfo?.main?.toLowerCase() || '';
+            const subCat = data.categoryInfo?.sub?.toLowerCase() || '';
+
             const matches =
-                data.category === targetCategory ||
-                data.categoryInfo?.main === targetCategory ||
-                data.categoryInfo?.sub === targetCategory;
+                category.includes(targetLower) ||
+                mainCat.includes(targetLower) ||
+                subCat.includes(targetLower);
 
             if (matches && item.timestamp !== 0) {
                 item.timestamp = 0;
