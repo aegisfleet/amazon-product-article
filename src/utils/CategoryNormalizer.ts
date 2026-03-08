@@ -95,14 +95,14 @@ export class CategoryNormalizer {
       if (
         preferredKeywords.some(
           (k) =>
-            (main as string).toLowerCase().includes(k.toLowerCase()) ||
-            (sub as string).toLowerCase().includes(k.toLowerCase()),
+            main.toLowerCase().includes(k.toLowerCase()) ||
+            sub.toLowerCase().includes(k.toLowerCase()),
         )
       ) {
         score = 10;
       }
 
-      return { main: main as string, sub: sub as string, nameCount: validNames.length, score };
+      return { main: main, sub: sub, nameCount: validNames.length, score };
     }
 
     // If no valid category found in the tree, fallback to Other
