@@ -1,13 +1,13 @@
 {
   "analysis": {
-    "productName": "Flos ホットアイマスク",
-    "parentAsin": "B0D4CRK4VG",
-    "productDescription": "睡眠専門医と共同開発された、6A高級シルク使用のコードレスホットアイマスク。ヒートリペアシステムにより目元を温め、リラックス効果を提供します。",
+    "productName": "[Flos] ホットアイマスク",
+    "parentAsin": "B0CNSTD9J8",
+    "productDescription": "睡眠専門医と共同開発された、6A高級シルク使用のコードレスホットアイマスクです。ヒートリペアシステムにより目元を温め、リラックス効果を提供します。",
     "productUsage": [
-      "付属のUSBケーブルで充電を行う",
+      "付属のUSBケーブルで充電を行う（ACアダプタは非付属）",
       "スイッチを3秒長押しして電源をONにし、目元エステを開始",
       "30分後に自動で電源がOFFになるため、そのまま就寝可能",
-      "使用後はカバーを取り外して洗濯し、清潔に保つことが可能"
+      "使用後はカバーを取り外して洗濯し、清潔に保つ"
     ],
     "positivePoints": [
       "睡眠専門医監修という安心感と信頼性",
@@ -48,43 +48,79 @@
         "credibility": "High"
       }
     ],
-    "lastInvestigated": "2026-01-20",
+    "lastInvestigated": "2026-03-09",
     "competitiveAnalysis": [
       {
-        "name": "Dearan ホットアイマスク",
-        "asin": "B09TWC7YZW",
-        "priceComparison": "ほぼ同価格帯（約2,999円）",
-        "featureComparison": ["温度調節機能あり", "シルク素材"],
-        "differentiators": ["同価格帯だが温度調節が可能である点がFlosに対する機能的な優位点"]
-      },
-      {
-        "name": "Salua ホットアイマスク",
+        "name": "ホットアイマスク USB 充電式 アイマスク",
         "asin": "B08Z75MTYP",
-        "priceComparison": "Flosより約1,000円高い（3,980円）",
-        "featureComparison": ["デザイン重視", "人気ブランド"],
-        "differentiators": ["ブランド認知度が高いが、機能差が少なければFlosの方がコスパが良い"]
+        "priceComparison": "Flosより約200円高い",
+        "featureComparison": [
+          "2段階の温度調節",
+          "シルク100%"
+        ],
+        "differentiators": [
+          "温度調節が可能である点がFlosに対する機能的な優位点"
+        ]
       },
       {
-        "name": "La Curie ホットアイマスク",
-        "asin": "B0CMC25NFN",
-        "priceComparison": "Flosより少し高い（3,480円）",
-        "featureComparison": ["3段階温度調節", "自動タイマー"],
-        "differentiators": ["細かい温度設定ができる点が強み"]
+        "name": "RELX",
+        "asin": "B0DT9BQFRF",
+        "priceComparison": "Flosと同価格(2980円)",
+        "featureComparison": [
+          "3段階の温度調節",
+          "シルク100%"
+        ],
+        "differentiators": [
+          "同価格でありながら温度調節が3段階ある点"
+        ]
+      },
+      {
+        "name": "nerugoo[ネルグー]公式ストア限定パッケージ ホットアイマスク 充電式 睡眠用",
+        "asin": "B0FP8TKZM6",
+        "priceComparison": "Flosより高い(3852円)",
+        "featureComparison": [
+          "3段階の温度調節",
+          "独自素材"
+        ],
+        "differentiators": [
+          "価格が高いが独自素材とベストバイ受賞の実績がある点"
+        ]
       }
     ],
     "recommendation": {
-      "targetUsers": ["目の疲れを感じている人", "安価で高品質なアイマスクを探している人", "衛生面を気にする人"],
-      "pros": ["専門医監修の安心感", "高級シルクの肌触り", "洗濯可能で衛生的", "高コスパ"],
-      "cons": ["温度調節機能がない可能性がある", "知名度が大手ブランドに比べると低い"],
+      "targetUsers": [
+        "目の疲れを感じている人",
+        "安価で高品質なアイマスクを探している人",
+        "衛生面を気にする人"
+      ],
+      "pros": [
+        "専門医監修の安心感",
+        "高級シルクの肌触り",
+        "洗濯可能で衛生的",
+        "高コスパ"
+      ],
+      "cons": [
+        "温度調節機能がない",
+        "ACアダプタが付属しない"
+      ],
       "score": 80,
-      "scoreRationale": "[基本点: 70]\n[加点: +10] (競合と比較して安価でありながらシルク素材・コードレスを実現しておりコスパが高い)\n[加点: +5] (睡眠専門医監修と6Aシルク使用による品質への期待)\n[減点: -5] (温度調節機能の記載がなく、機能面で競合の一部に劣る可能性がある)\n[合計: 80]"
+      "scoreRationale": "[基本点: 70]\n[加点: +10] (3,000円を切る価格で高級シルクとコードレスを実現しておりコスパが高い)\n[加点: +5] (睡眠専門医監修とカバー洗濯可能で衛生的)\n[減点: -5] (温度調節機能の記載がなく、同価格帯の競合商品に機能面で劣る)\n[合計: 80]"
     },
     "technicalSpecs": {
-      "dimensions": { "size": "24cm x 11cm x 厚さ2.5cm" },
-      "weight": null,
+      "dimensions": {
+        "height": "8.66インチ",
+        "length": "4.33インチ",
+        "width": "0.78インチ"
+      },
       "power": "USB充電式",
+      "capacity": null,
       "material": "6A高級シルク",
-      "features": ["コードレス", "30分自動オフ", "カバー洗濯可能", "睡眠専門医監修"]
+      "features": [
+        "コードレス",
+        "30分自動オフ",
+        "カバー洗濯可能",
+        "睡眠専門医監修"
+      ]
     }
   }
 }
