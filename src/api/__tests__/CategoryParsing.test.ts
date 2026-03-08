@@ -41,7 +41,7 @@ describe('CreatorsAPIClient Category Parsing', () => {
       'Computers',
       'Video Games',
       'Toys & Games',
-      'Category_with_underscore',
+      'Category_with_dash',
     ];
 
     test.each(invalidNames)('should return false for invalid name: %s', (name) => {
@@ -109,13 +109,13 @@ describe('CreatorsAPIClient Category Parsing', () => {
         browseNodeInfo: {
           browseNodes: [
             { id: '1', displayName: 'Amazon Devices', contextFreeName: 'Amazon' }, // Invalid
-            { id: '2', displayName: 'Smart Home', contextFreeName: 'Smart Home', salesRank: 10 },
+            { id: '2', displayName: 'Smart Watch', contextFreeName: 'Smart Watch', salesRank: 10 },
           ],
         },
       };
 
       const result = clientAny.extractCategoryInfo(item as CreatorsAPIItem);
-      expect(result.category).toBe('Smart Home');
+      expect(result.category).toBe('Smart Watch');
     });
 
     test('should use ancestor as sub category', () => {
