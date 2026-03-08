@@ -226,7 +226,7 @@ export class CategoryNormalizer {
 
     // 2. Structural & General Invalid Patterns (Regex)
     const invalidPatterns = [
-      /sale|off|coupon|ranking|best|week|fair|event|campaign/i,
+      /sale|off|coupon|ranking|best|week|fair|event|campaign|spring|free shipping|home|under/i,
       /セール|オフ(?!ィス)|クーポン|ランキング|おすすめ|ウィーク|フェア|イベント|キャンペーン/,
       /企画|向け|ほか$|など$|新商品|すべて$|特設ページ|発売日お届け|父の日/,
       /替えブラシ[_＿\s]*[sｓ]/i,

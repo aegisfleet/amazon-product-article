@@ -5,9 +5,8 @@ describe('CategoryNormalizer', () => {
     it('should return true for valid category names', () => {
       expect(CategoryNormalizer.isValidCategoryName('electronics')).toBe(true);
       expect(CategoryNormalizer.isValidCategoryName('books')).toBe(true);
-      expect(CategoryNormalizer.isValidCategoryName('home & kitchen')).toBe(true);
       expect(CategoryNormalizer.isValidCategoryName('ボードゲーム')).toBe(true);
-      expect(CategoryNormalizer.isValidCategoryName('category_with_underscore')).toBe(true);
+      expect(CategoryNormalizer.isValidCategoryName('category_with_dash')).toBe(true);
     });
 
     it('should return false for empty or undefined names', () => {
@@ -37,6 +36,15 @@ describe('CategoryNormalizer', () => {
         'BrandName変更確認',
         'ブラックフライデー_Deal_Kitchen',
         'BF_Deal',
+        'BauhutteYAMAHABXGY',
+        'Beauty - AmazonGlobal Free Shipping',
+        'CMLHome9999',
+        'Drugstore - AmazonGlobal Free Shipping',
+        'HPCAFC2409under2000',
+        'Home & Kitchen - AmazonGlobal Free Shipping',
+        'Toys - AmazonGlobal Free Shipping',
+        'ソニー2025SpringCamera',
+        'ソニー2026SpringVlog',
       ];
       invalidNames.forEach((name) => {
         expect(CategoryNormalizer.isValidCategoryName(name)).toBe(false);
