@@ -285,7 +285,7 @@ describe('CategoryNormalizer', () => {
     it('should assign score to newly added peripheral keywords', () => {
       const peripheralKeywords = ['コントローラー', 'ヘッドセット', 'マウス', 'キーボード'];
 
-      peripheralKeywords.forEach(keyword => {
+      peripheralKeywords.forEach((keyword) => {
         const node: BrowseNode = { displayName: `PS5用${keyword}`, id: '123' };
         const result = CategoryNormalizer.normalize(node);
         expect(result.score).toBe(10);
