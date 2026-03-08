@@ -41,6 +41,11 @@ describe('CategoryNormalizer', () => {
         'Toys - AmazonGlobal Free Shipping',
         '定期おトク便初回最大30%OFF',
         '定期おトク便',
+        'HPCAFC2409under2000',
+        'HPCAFC2410under3000',
+        'HPCCreatorInfoHubベビーケア・おむつ',
+        'hpc recommendation widget',
+        'hpc_creatorinfohub',
       ];
       invalidNames.forEach((name) => {
         expect(CategoryNormalizer.isValidCategoryName(name)).toBe(false);
