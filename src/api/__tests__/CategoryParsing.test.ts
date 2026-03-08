@@ -34,7 +34,15 @@ describe('CreatorsAPIClient Category Parsing', () => {
       'Diapers',
     ];
 
-    const validNames = ['Books', 'Electronics', 'Kitchen', 'Computers', 'Video Games', 'Toys & Games', 'Category_with_underscore'];
+    const validNames = [
+      'Books',
+      'Electronics',
+      'Kitchen',
+      'Computers',
+      'Video Games',
+      'Toys & Games',
+      'Category_with_underscore',
+    ];
 
     test.each(invalidNames)('should return false for invalid name: %s', (name) => {
       expect(CategoryNormalizer.isValidCategoryName(name)).toBe(false);
