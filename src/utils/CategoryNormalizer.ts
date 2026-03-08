@@ -269,6 +269,8 @@ export class CategoryNormalizer {
       /ストア$|store$|ストア\s*[(（].*[)）]$/i,
       /ブラックフライデー/i,
       /文房具・オフィス用品ヤスいいね対象/,
+      /日本ヒルズ・コルゲート/i,
+      /umall/i,
     ];
 
     if (invalidPatterns.some((pattern) => pattern.test(name))) {
