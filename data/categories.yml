@@ -2,7 +2,7 @@ parents:
   パソコン・モニター・入力機器:
     name: パソコン・モニター・入力機器
     slug: pc-workstation
-    productCount: 124
+    productCount: 125
     isVisible: true
     childrenWithCounts:
       - name: 2 in 1ノートパソコン
@@ -30,7 +30,7 @@ parents:
       - name: ディスプレイ
         productCount: 32
       - name: デスクライト
-        productCount: 13
+        productCount: 14
       - name: トラックボール
         productCount: 1
       - name: パソコン本体
@@ -58,13 +58,13 @@ parents:
   PC周辺機器:
     name: PC周辺機器
     slug: pc-peripheral
-    productCount: 90
+    productCount: 91
     isVisible: true
     childrenWithCounts:
       - name: 3Dプリンタ本体
         productCount: 2
       - name: AVセレクター
-        productCount: 0
+        productCount: 1
       - name: DVI-HDMIアダプタ
         productCount: 0
       - name: HDMIケーブル
@@ -154,7 +154,7 @@ parents:
   スマートフォン:
     name: スマートフォン
     slug: smartphone
-    productCount: 186
+    productCount: 187
     isVisible: true
     childrenWithCounts:
       - name: AC式充電器
@@ -170,7 +170,7 @@ parents:
       - name: RCAケーブル
         productCount: 0
       - name: USBケーブル
-        productCount: 5
+        productCount: 6
       - name: XiaomiAll
         productCount: 0
       - name: ウェアラブルテクノロジー
@@ -264,7 +264,7 @@ parents:
   音響・映像機材:
     name: 音響・映像機材
     slug: audio-video-equipment
-    productCount: 135
+    productCount: 136
     isVisible: true
     childrenWithCounts:
       - name: DAコンバーター
@@ -316,7 +316,7 @@ parents:
       - name: カメラ用アクセサリ
         productCount: 0
       - name: ゲーミングヘッドセット
-        productCount: 3
+        productCount: 4
       - name: ゲーム用ヘッドセット
         productCount: 0
       - name: コンデンサ
@@ -368,11 +368,11 @@ parents:
   家電:
     name: 家電
     slug: home-appliances
-    productCount: 95
+    productCount: 109
     isVisible: true
     childrenWithCounts:
       - name: HEPA空気清浄機
-        productCount: 1
+        productCount: 2
       - name: あんか・かいろ
         productCount: 0
       - name: エアブローガン
@@ -392,11 +392,11 @@ parents:
       - name: スチームオーブン・レンジ
         productCount: 0
       - name: スチームクリーナー
-        productCount: 0
+        productCount: 1
       - name: スチーム方式
         productCount: 0
       - name: スティッククリーナー
-        productCount: 3
+        productCount: 6
       - name: ストリングライト
         productCount: 1
       - name: スポットエアコン
@@ -412,7 +412,7 @@ parents:
       - name: ドラム式洗濯乾燥機
         productCount: 0
       - name: ハンガースチーマー
-        productCount: 0
+        productCount: 1
       - name: ハンディクリーナー
         productCount: 2
       - name: ハンドミキサー
@@ -426,13 +426,13 @@ parents:
       - name: ホームプロジェクター
         productCount: 2
       - name: ポータブル空気清浄機
-        productCount: 0
+        productCount: 2
       - name: モニターヘッドホン
         productCount: 3
       - name: ロボット型クリーナー
-        productCount: 4
+        productCount: 6
       - name: ロープライト
-        productCount: 1
+        productCount: 2
       - name: ワンルーム用加湿器
         productCount: 7
       - name: 一酸化炭素検知器
@@ -440,7 +440,7 @@ parents:
       - name: 乾燥フィルター
         productCount: 1
       - name: 乾電池
-        productCount: 2
+        productCount: 3
       - name: 人気の家電
         productCount: 0
       - name: 全自動洗濯機
@@ -460,7 +460,7 @@ parents:
       - name: 大型家電
         productCount: 0
       - name: 家全体用加湿器
-        productCount: 4
+        productCount: 5
       - name: 家電＆カメラ
         productCount: 0
       - name: 小型・ポータブル洗濯機
@@ -494,7 +494,7 @@ parents:
       - name: 洗濯機用ホース
         productCount: 1
       - name: 炊飯器
-        productCount: 6
+        productCount: 7
       - name: 煙・一酸化炭素検知器
         productCount: 0
       - name: 理美容以外の本体
@@ -530,7 +530,7 @@ parents:
   ホーム・キッチン:
     name: ホーム・キッチン
     slug: home-kitchen
-    productCount: 168
+    productCount: 178
     isVisible: true
     childrenWithCounts:
       - name: おしゃれ着洗剤
@@ -564,7 +564,7 @@ parents:
       - name: ウォータードリッパー
         productCount: 0
       - name: エアフライヤー
-        productCount: 5
+        productCount: 6
       - name: エプロン
         productCount: 1
       - name: エントランス
@@ -612,7 +612,7 @@ parents:
       - name: コーヒーフィルター
         productCount: 0
       - name: コーヒーメーカー
-        productCount: 5
+        productCount: 6
       - name: コーヒー用品
         productCount: 0
       - name: シャワー・バス用品
@@ -676,7 +676,7 @@ parents:
       - name: フライパン
         productCount: 2
       - name: フライパンセット
-        productCount: 0
+        productCount: 1
       - name: フロアモップ・フロアワイパー
         productCount: 0
       - name: フードウォーマー
@@ -712,7 +712,7 @@ parents:
       - name: ロックグラス
         productCount: 0
       - name: ワイパー・ダスター取替シート
-        productCount: 0
+        productCount: 1
       - name: ワインデカンタ
         productCount: 1
       - name: 三徳包丁
@@ -756,7 +756,7 @@ parents:
       - name: 季節用品
         productCount: 0
       - name: 弁当箱
-        productCount: 2
+        productCount: 3
       - name: 弁当箱・水筒
         productCount: 0
       - name: 急須
@@ -792,7 +792,7 @@ parents:
       - name: 浄水ポット
         productCount: 0
       - name: 浄水器
-        productCount: 0
+        productCount: 1
       - name: 浴室・浴槽洗剤
         productCount: 3
       - name: 浴室掃除用スポンジ
@@ -826,7 +826,7 @@ parents:
       - name: 花王
         productCount: 0
       - name: 蛇口用カートリッジ
-        productCount: 0
+        productCount: 1
       - name: 衣類用染料
         productCount: 0
       - name: 調味料・スパイスラック
@@ -848,11 +848,11 @@ parents:
       - name: 電子レンジ調理用品
         productCount: 3
       - name: 電気ケトル
-        productCount: 14
+        productCount: 15
       - name: 電気ポット
         productCount: 2
       - name: 電気圧力鍋
-        productCount: 1
+        productCount: 3
       - name: 風呂ふた
         productCount: 0
       - name: 食器用洗剤
@@ -1098,7 +1098,7 @@ parents:
   家具・オフィス・収納:
     name: 家具・オフィス・収納
     slug: furniture-storage
-    productCount: 100
+    productCount: 102
     isVisible: true
     childrenWithCounts:
       - name: Chest
@@ -1166,7 +1166,7 @@ parents:
       - name: システム手帳アクセサリ
         productCount: 0
       - name: シャープペン芯
-        productCount: 0
+        productCount: 1
       - name: シンク下収納
         productCount: 0
       - name: シール・ステッカー
@@ -1226,7 +1226,7 @@ parents:
       - name: フラットファイル
         productCount: 1
       - name: フロアスタンド・ランプ
-        productCount: 0
+        productCount: 1
       - name: ブックエンド･本立て
         productCount: 1
       - name: ブランド別インテリアコーディネート
@@ -1552,7 +1552,7 @@ parents:
   ヘアケア・理美容家電:
     name: ヘアケア・理美容家電
     slug: haircare-appliances
-    productCount: 119
+    productCount: 123
     isVisible: true
     childrenWithCounts:
       - name: かっさプレート
@@ -1632,7 +1632,7 @@ parents:
       - name: 爪切り
         productCount: 4
       - name: 理美容・健康家電
-        productCount: 2
+        productCount: 5
       - name: 美顔器・美容器
         productCount: 0
       - name: 育毛・養毛用コンディショナー
@@ -1644,7 +1644,7 @@ parents:
       - name: 電動歯ブラシ
         productCount: 0
       - name: 電動頭皮ブラシ
-        productCount: 7
+        productCount: 8
       - name: 頭皮トリートメント
         productCount: 1
       - name: 頭皮マッサージブラシ
@@ -1652,7 +1652,7 @@ parents:
   健康・サプリメント:
     name: 健康・サプリメント
     slug: health-supplements
-    productCount: 173
+    productCount: 182
     isVisible: true
     childrenWithCounts:
       - name: B1
@@ -1676,7 +1676,7 @@ parents:
       - name: アイピロー・アイマスク
         productCount: 13
       - name: アイマッサージャー
-        productCount: 4
+        productCount: 6
       - name: アスタキサンチン
         productCount: 1
       - name: エクササイズマット
@@ -1720,9 +1720,9 @@ parents:
       - name: ネックピロー
         productCount: 0
       - name: ネックマッサージャー
-        productCount: 12
+        productCount: 15
       - name: ハンディマッサージャー
-        productCount: 9
+        productCount: 10
       - name: バランスボール
         productCount: 0
       - name: ビタミン
@@ -1742,7 +1742,7 @@ parents:
       - name: フォームローラー
         productCount: 12
       - name: フットマッサージャー
-        productCount: 1
+        productCount: 2
       - name: プロテイン
         productCount: 0
       - name: ホエイプロテイン
@@ -1788,7 +1788,7 @@ parents:
       - name: 介護用品・生理用品
         productCount: 0
       - name: 体重・体脂肪・体組成計
-        productCount: 0
+        productCount: 1
       - name: 使い捨てカイロ
         productCount: 4
       - name: 健康衣類・アクセサリー
@@ -1816,7 +1816,7 @@ parents:
       - name: 振動マシン
         productCount: 1
       - name: 携帯枕
-        productCount: 0
+        productCount: 1
       - name: 整腸剤
         productCount: 2
       - name: 日本品牌 狮王药品
@@ -2060,7 +2060,7 @@ parents:
   ベビー:
     name: ベビー
     slug: baby
-    productCount: 36
+    productCount: 45
     isVisible: true
     childrenWithCounts:
       - name: 3輪ベビーカー
@@ -2074,7 +2074,7 @@ parents:
       - name: おしりふき
         productCount: 1
       - name: おむつ
-        productCount: 2
+        productCount: 3
       - name: おむつ・トイレ
         productCount: 0
       - name: おむつ処理袋・スペアカセット
@@ -2104,17 +2104,17 @@ parents:
       - name: ビデオモニター
         productCount: 3
       - name: ブースターシート
-        productCount: 0
+        productCount: 1
       - name: ベビーおむつ
-        productCount: 0
+        productCount: 4
       - name: ベビーカー
         productCount: 1
       - name: ベビーカー・チャイルドシート
         productCount: 0
       - name: ベビーカー用フック
-        productCount: 0
+        productCount: 1
       - name: ベビーキャリア
-        productCount: 0
+        productCount: 2
       - name: ベビークリーム
         productCount: 0
       - name: ベビーケア・おむつ
@@ -2150,7 +2150,7 @@ parents:
   ペット:
     name: ペット
     slug: pet-supplies
-    productCount: 21
+    productCount: 22
     isVisible: true
     childrenWithCounts:
       - name: お手入れ用品
@@ -2170,7 +2170,7 @@ parents:
       - name: トイレシート
         productCount: 2
       - name: トイレ袋・スコップ
-        productCount: 1
+        productCount: 2
       - name: ドライ
         productCount: 7
       - name: ロール
@@ -2192,7 +2192,7 @@ parents:
   ゲーム・おもちゃ:
     name: ゲーム・おもちゃ
     slug: games-toys
-    productCount: 30
+    productCount: 41
     isVisible: true
     childrenWithCounts:
       - name: Black Friday 2024 TVゲーム周辺機器がお買い得
@@ -2204,7 +2204,7 @@ parents:
       - name: Xbox
         productCount: 0
       - name: おもちゃ
-        productCount: 1
+        productCount: 2
       - name: おもちゃ（在庫ありまたは注文可能）
         productCount: 0
       - name: すごろく
@@ -2214,7 +2214,7 @@ parents:
       - name: アクションゲーム
         productCount: 0
       - name: アナログゲーム
-        productCount: 0
+        productCount: 1
       - name: カードゲーム・トランプ
         productCount: 0
       - name: カードゲーム専用デッキ
@@ -2258,7 +2258,7 @@ parents:
       - name: ブロック
         productCount: 0
       - name: ブロックセット
-        productCount: 0
+        productCount: 4
       - name: プレイステーション4
         productCount: 0
       - name: プログラミング・ロボティクス
@@ -2278,7 +2278,7 @@ parents:
       - name: ラジコン
         productCount: 0
       - name: ロボット
-        productCount: 2
+        productCount: 5
       - name: 乗り物おもちゃ
         productCount: 0
       - name: 乗り物プレイセット
@@ -2298,7 +2298,7 @@ parents:
       - name: 機動戦士Vガンダム
         productCount: 0
       - name: 機動戦士ガンダム
-        productCount: 0
+        productCount: 1
       - name: 機種別
         productCount: 0
       - name: 知育・学習玩具
@@ -2310,11 +2310,11 @@ parents:
       - name: 食玩
         productCount: 2
       - name: 麻雀
-        productCount: 0
+        productCount: 1
   音楽・エンタメ:
     name: 音楽・エンタメ
     slug: music-entertainment
-    productCount: 27
+    productCount: 29
     isVisible: true
     childrenWithCounts:
       - name: Dynamic COOP J-POP
@@ -2324,7 +2324,7 @@ parents:
       - name: J-POP・日本の音楽
         productCount: 1
       - name: UMall
-        productCount: 1
+        productCount: 3
       - name: その他の音楽
         productCount: 0
       - name: アコースティックギターセット
@@ -2888,7 +2888,7 @@ parents:
   その他:
     name: その他
     slug: others
-    productCount: 80
+    productCount: 1
     isVisible: true
     childrenWithCounts:
       - name: 2,000円以下・レビュー評価4以上の人気商品
