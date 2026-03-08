@@ -19,7 +19,17 @@ describe('CategoryNormalizer', () => {
     });
 
     it('should return false for names matching invalid patterns', () => {
-      const invalidNames = ['sale', 'off', 'coupon'];
+      const invalidNames = [
+        'sale',
+        'off',
+        'coupon',
+        'ブラックフライデー',
+        'ブラックフライデーDealKitchen',
+        'ブラックフライデーdealelectronics',
+        'お得なブラックフライデーセール',
+        '文房具・オフィス用品ヤスいいね対象商品2',
+        '文房具・オフィス用品ヤスいいね対象外商品1',
+      ];
       invalidNames.forEach((name) => {
         expect(CategoryNormalizer.isValidCategoryName(name)).toBe(false);
       });
