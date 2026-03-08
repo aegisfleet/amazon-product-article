@@ -137,8 +137,8 @@ export class CategoryNormalizer {
       const normA = CategoryNormalizer.normalize(a);
       const normB = CategoryNormalizer.normalize(b);
 
-      // Priority: Depth (nameCount) -> Score -> SalesRank
-      // 1. Depth (Specificity)
+      // Priority Policy: Depth (Specificity) > Score (Domain preference) > SalesRank
+      // 1. Depth (Specificity): Prefer most specific leaf categories
       if (normB.nameCount !== normA.nameCount) {
         return normB.nameCount - normA.nameCount;
       }

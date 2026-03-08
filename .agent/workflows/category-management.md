@@ -24,6 +24,14 @@ python scripts/debug_dump.py <ASIN>
 ```
 実行すると `tmp/debug_output.json` に生成されます。
 
+### 1.3 正規化プロセスの詳細確認
+現在のロジックでどのBrowseNodeが選ばれ、どのようなスコア・深さ（Depth）になっているかを詳しく確認します。
+
+```bash
+npx ts-node tmp/repro_issue.ts <ASIN>
+```
+実行すると `tmp/repro_results.txt` に詳細な判定プロセスが出力されます。どのノードが `Depth` や `Score` で競り合っているかを特定するのに非常に有効です。
+
 ## 2. 正規化ロジックの修正 (Correction)
 
 ### 2.1 テストケースの追加 (TDD)
@@ -38,8 +46,17 @@ it('should return false for junk category', () => {
 ### 2.2 ロジックの更新
 `src/utils/CategoryNormalizer.ts` を修正します。
 
-- **`blacklist`**: 完全一致で除外する場合。
-- **`invalidPatterns`**: 正規表現で除外する場合（表記揺れや部分一致に対応できるため、こちらが推奨されます）。
+- **`blacklist` / `invalidPatterns`**: 不適切なカテゴリ（ジャンクカテゴリ）を除外する場合。
+- **`preferredKeywords`**: 特定のドメイン（おもちゃ、ベビー、家電など）を優先したい場合。キーワードは、そのノードの**全親階層**を対象にマッチングされます。
+
+> [!IMPORTANT]
+> **優先順位のポリシー (Architecture)**
+> 現在の判定ロジックは以下の優先順位で最適なカテゴリを選択します：
+> 1. **カテゴリ階層の深さ (Depth/nameCount)**: 最も具体的（深い）な末端カテゴリを最優先します。
+> 2. **キーワードスコア (Score)**: 深さが同じ場合、`preferredKeywords` に一致するドメインを優先します。
+> 3. **売上順位 (SalesRank)**: 深さもスコアも同じ場合、Amazonでの売上順位が高いものを優先します。
+>
+> 以前はスコアが深さより優先されていましたが、特定の詳細なカテゴリが一般的なカテゴリに負けてしまう問題を防ぐため、現在は**深さ優先**となっています。
 
 > [!WARNING]
 > **躓きポイント（よくある落とし穴）**
