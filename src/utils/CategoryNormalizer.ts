@@ -273,6 +273,7 @@ export class CategoryNormalizer {
       /祝い|ギフト/i,
       /brandname変更/i,
       /deal/i,
+      /^hpc/i,
     ];
 
     if (invalidPatterns.some((pattern) => pattern.test(name))) {
@@ -294,7 +295,6 @@ export class CategoryNormalizer {
       'テスト',
       '面だし用asin',
       'hair care',
-      'hpc recommendation widget',
       'pbhome&kitchen9999',
       'panasonic-ha-hotairstylers',
       'umall',
@@ -329,7 +329,6 @@ export class CategoryNormalizer {
       'logicool',
       'casio',
       'lenovo',
-      'hpc_creatorinfohub',
       'drugstore - amazonglobal',
       'pb_home&kitchen',
       '新生活ギフト',
@@ -405,9 +404,7 @@ export class CategoryNormalizer {
       'nonmanga_',
       'new release non manga',
       'ブランド別インテリアコーディネート',
-      'bauhutteyamahabxgy',
       'cmldeals on most home&kitchen9999',
-      'hpcafc2409under2000',
       'l201skincare01cat',
       'l202storageitems01cat',
       'l205hairbodycare01cat',
