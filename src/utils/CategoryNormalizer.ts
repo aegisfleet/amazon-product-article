@@ -90,6 +90,9 @@ export class CategoryNormalizer {
         'ガンダム',
         '美顔器',
         '美容家電',
+        'ブロック',
+        'レゴ',
+        'Lego',
       ];
 
       if (
