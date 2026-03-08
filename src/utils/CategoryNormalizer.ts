@@ -98,9 +98,13 @@ export class CategoryNormalizer {
 
     // If no valid category found in the tree, fallback to Other
     const fallbackName = node.displayName || node.DisplayName || 'Unknown';
+    const subName = CategoryNormalizer.isValidCategoryName(fallbackName)
+      ? CategoryNormalizer.sanitizeCategoryName(fallbackName)
+      : '一般';
+
     return {
       main: 'その他',
-      sub: CategoryNormalizer.sanitizeCategoryName(fallbackName),
+      sub: subName,
       nameCount: 0,
       score: -1,
     };
