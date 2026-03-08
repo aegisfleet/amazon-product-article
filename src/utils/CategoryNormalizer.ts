@@ -267,6 +267,8 @@ export class CategoryNormalizer {
       /special features stores/i,
       /arborist merchandising root/i,
       /ストア$|store$|ストア\s*[(（].*[)）]$/i,
+      /ブラックフライデー/i,
+      /文房具・オフィス用品ヤスいいね対象/,
     ];
 
     if (invalidPatterns.some((pattern) => pattern.test(name))) {
@@ -411,15 +413,8 @@ export class CategoryNormalizer {
       'ソニー2025springcamera',
       'ソニー2026springvlog',
       'ピアノ・キーボード｜ヘッドホン',
-      'ブラックフライデーdealelectronics',
-      'ブラックフライデーdealhome improvement',
-      'ブラックフライデーdealkitchen',
       'プライム感謝祭ポイントアップ商品',
       'ホーム&キッチン用品ポイントアップ+1% 1',
-      '文房具・オフィス用品ヤスいいね対象商品2',
-      '文房具・オフィス用品ヤスいいね対象外商品1',
-      '文房具・オフィス用品ヤスいいね対象外商品2',
-      '文房具・オフィス用品ヤスいいね対象外商品4',
       '新学期文具',
       '替えブラシs',
       '家電 本体',
