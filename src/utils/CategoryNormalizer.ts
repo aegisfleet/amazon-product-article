@@ -213,6 +213,7 @@ export class CategoryNormalizer {
       /高評価ブランド/,
       /今旬/,
       /サンプリング除外/,
+      /おもちゃ\d+column/i,
       /Node\d+/i,
       /特集/,
       /新着/,
