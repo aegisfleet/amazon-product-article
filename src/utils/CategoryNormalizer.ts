@@ -94,9 +94,7 @@ export class CategoryNormalizer {
 
       if (
         preferredKeywords.some(
-          (k) =>
-            main.toLowerCase().includes(k.toLowerCase()) ||
-            sub.toLowerCase().includes(k.toLowerCase()),
+          (k) => main.toLowerCase().includes(k.toLowerCase()) || sub.toLowerCase().includes(k.toLowerCase()),
         )
       ) {
         score = 10;
@@ -271,6 +269,9 @@ export class CategoryNormalizer {
       /文房具・オフィス用品ヤスいいね対象/,
       /日本ヒルズ・コルゲート/i,
       /umall/i,
+      /祝い|ギフト/i,
+      /brandname変更/i,
+      /deal/i,
     ];
 
     if (invalidPatterns.some((pattern) => pattern.test(name))) {
