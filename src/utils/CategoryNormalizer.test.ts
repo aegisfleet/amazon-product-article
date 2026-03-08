@@ -19,9 +19,6 @@ describe('CategoryNormalizer', () => {
 
     it('should return false for names matching invalid patterns', () => {
       const invalidNames = [
-        'sale',
-        'off',
-        'coupon',
         'ブラックフライデー',
         'ブラックフライデーDealKitchen',
         'ブラックフライデーdealelectronics',
@@ -38,13 +35,12 @@ describe('CategoryNormalizer', () => {
         'BF_Deal',
         'BauhutteYAMAHABXGY',
         'Beauty - AmazonGlobal Free Shipping',
-        'CMLHome9999',
         'Drugstore - AmazonGlobal Free Shipping',
-        'HPCAFC2409under2000',
         'Home & Kitchen - AmazonGlobal Free Shipping',
+        'SnS Acquisition Test HPC ASINs Low Price',
         'Toys - AmazonGlobal Free Shipping',
-        'ソニー2025SpringCamera',
-        'ソニー2026SpringVlog',
+        '定期おトク便初回最大30%OFF',
+        '定期おトク便',
       ];
       invalidNames.forEach((name) => {
         expect(CategoryNormalizer.isValidCategoryName(name)).toBe(false);
@@ -81,7 +77,7 @@ describe('CategoryNormalizer', () => {
 
     it('should skip invalid categories in the chain', () => {
       const grandParent: BrowseNode = { displayName: 'toys', id: '1' };
-      const parent: BrowseNode = { displayName: 'sale', id: '2', ancestor: grandParent };
+      const parent: BrowseNode = { displayName: 'test', id: '2', ancestor: grandParent };
       const leaf: BrowseNode = { displayName: 'board games', id: '3', ancestor: parent };
 
       const result = CategoryNormalizer.normalize(leaf);

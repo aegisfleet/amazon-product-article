@@ -21,7 +21,7 @@ describe('CreatorsAPIClient Category Parsing', () => {
       'Best Sellers',
       'Coupons',
       '【New】Item',
-      'Testing | Pipe',
+      'Trial | Pipe',
       '※Note',
       '子育て支援施設向けページ',
       'らくらくベビー Birth Day企画',
