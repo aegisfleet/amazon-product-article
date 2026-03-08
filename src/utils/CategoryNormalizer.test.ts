@@ -195,6 +195,11 @@ describe('CategoryNormalizer', () => {
       });
     });
 
+    it('should distinguish between "替えブラシ" and "替えブラシS"', () => {
+      expect(CategoryNormalizer.isValidCategoryName('替えブラシ')).toBe(true);
+      expect(CategoryNormalizer.isValidCategoryName('替えブラシS')).toBe(false);
+    });
+
     it.each([
       'Drugstore',
       'Pet Supplies Store',
@@ -282,15 +287,23 @@ describe('CategoryNormalizer', () => {
       expect(result3.score).toBe(10);
     });
 
-    it('should assign score to newly added peripheral keywords', () => {
-      const peripheralKeywords = ['コントローラー', 'ヘッドセット', 'マウス', 'キーボード'];
+    it('should assign score to newly added keywords', () => {
+      const keywords = ['コントローラー', 'ヘッドセット', 'マウス', 'キーボード', '替えブラシ'];
 
-      peripheralKeywords.forEach(keyword => {
-        const node: BrowseNode = { displayName: `PS5用${keyword}`, id: '123' };
+      keywords.forEach(keyword => {
+        const node: BrowseNode = { displayName: `対応${keyword}`, id: '123' };
         const result = CategoryNormalizer.normalize(node);
         expect(result.score).toBe(10);
         expect(result.main).toContain(keyword);
       });
+    });
+
+    it('should distinguish between "替えブラシ" and "替えブラシS" (including full-width)', () => {
+      expect(CategoryNormalizer.isValidCategoryName('替えブラシ')).toBe(true);
+      expect(CategoryNormalizer.isValidCategoryName('替えブラシS')).toBe(false);
+      expect(CategoryNormalizer.isValidCategoryName('替えブラシＳ')).toBe(false);
+      expect(CategoryNormalizer.isValidCategoryName('替えブラシ Ｓ')).toBe(false);
+      expect(CategoryNormalizer.isValidCategoryName('替えブラシ s')).toBe(false);
     });
 
     it('should skip invalid categories in the chain', () => {
