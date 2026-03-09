@@ -50,6 +50,11 @@ describe('CategoryNormalizer', () => {
         'マッサージャーほか健康家電特集',
         'Home > Kitchen',
         'テスト用カテゴリ',
+        'Kindle書籍タイトル 600円～',
+        'Drugstore - Amazon Global',
+        'L201Skincare01Cat',
+        'L205HairBodyCare01Cat',
+        'カテゴリ＞収納棚・ボックス',
       ];
       invalidNames.forEach((name) => {
         expect(CategoryNormalizer.isValidCategoryName(name)).toBe(false);

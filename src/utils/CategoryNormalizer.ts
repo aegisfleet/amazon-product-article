@@ -256,7 +256,7 @@ export class CategoryNormalizer {
       /eligible/i,
       /widget/i,
       /smartphones/i,
-      /l\d+[_a-z].*cat$/i,
+      /l\d+.*cat$/i,
       /^all /i,
       /^prime /i,
       /[【】|()※]/,
@@ -279,7 +279,7 @@ export class CategoryNormalizer {
       /brandname変更/i,
       /deal/i,
       /^hpc/i,
-      /kindle書籍|テスト|マッサージャーほか健康家電|>/i,
+      /kindle書籍|テスト|マッサージャーほか健康家電|[>＞]|amazon\s*global/i,
     ];
 
     if (invalidPatterns.some((pattern) => pattern.test(name))) {
