@@ -55,6 +55,7 @@ describe('CategoryNormalizer', () => {
         'L201Skincare01Cat',
         'L205HairBodyCare01Cat',
         'カテゴリ＞収納棚・ボックス',
+        'J-POP・日本の音楽',
       ];
       invalidNames.forEach((name) => {
         expect(CategoryNormalizer.isValidCategoryName(name)).toBe(false);
