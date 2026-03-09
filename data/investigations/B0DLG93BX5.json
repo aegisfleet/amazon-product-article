@@ -55,7 +55,7 @@
         "credibility": "中"
       }
     ],
-    "lastInvestigated": "2026-01-20",
+    "lastInvestigated": "2026-03-10",
     "competitiveAnalysis": [
       {
         "name": "ILIFE V9 Pro",
@@ -73,7 +73,7 @@
       },
       {
         "name": "SwitchBot ロボット掃除機 K10+",
-        "asin": "B0CFDW1513",
+        "asin": "B0BYZ4FFLJ",
         "priceComparison": "約5~6万円台。C10より高価。",
         "featureComparison": [
           "本体直径が世界最小クラスで、椅子の脚の間など狭所への侵入能力が高い",
@@ -86,17 +86,17 @@
         ]
       },
       {
-        "name": "Roborock S7 Max Ultra",
-        "asin": "B0D6BZC3WG",
-        "priceComparison": "約4.5万円（セール時）。C10より高価。",
+        "name": "ルンバ コンボ j9+",
+        "asin": "B0CH7F9RMZ",
+        "priceComparison": "約10万円以上。C10より圧倒的に高価。",
         "featureComparison": [
-          "水拭き、自動モップ洗浄、乾燥まで全自動",
-          "吸引力5500Paと強力",
-          "障害物回避性能が高い"
+          "水拭き自動リフトアップ機能",
+          "吸引力は業界最高レベル",
+          "高度な障害物回避性能（カメラ搭載）"
         ],
         "differentiators": [
-          "水拭きを含めた完全自動化。",
-          "C10は「吸引のみ・低価格」という明確な立ち位置。"
+          "すべてを全自動化するフラッグシップモデル。",
+          "C10は「吸引のみ・低価格」と割り切ったエントリーモデル。"
         ]
       }
     ],
@@ -122,14 +122,29 @@
       "scoreRationale": "[基本点: 70]\n[加点: +10] (コストパフォーマンス: 3万円以下で自動ゴミ収集・レーザーマッピング・4000Pa吸引は破格)\n[加点: +5] (性能・機能: 高さ7.2cmの薄型設計と伸縮サイドブラシによる清掃範囲の広さ)\n[加点: +5] (ユーザー満足度: Ankerブランドの信頼性とアプリの使い勝手の良さ)\n[減点: -2] (品質・デザイン: 自動ゴミ収集時の騒音が大きいという指摘あり)\n[合計: 88]"
     },
     "technicalSpecs": {
-      "dimensions": { "height": "約7.2cm", "width": "不明", "depth": "不明", "weight": "不明" },
+      "dimensions": {
+        "height": "約7.2cm",
+        "width": "不明",
+        "depth": "不明",
+        "weight": "不明"
+      },
       "suctionPower": "最大4000Pa",
       "navigation": "iPathレーザーナビゲーション",
-      "battery": { "capacity": "不明", "runtime": "不明" },
+      "battery": {
+        "capacity": "不明",
+        "runtime": "不明"
+      },
       "dustCollection": "自動ゴミ収集ステーション付き",
       "mopping": "非対応",
-      "connectivity": ["Wi-Fi", "Eufy Cleanアプリ"],
-      "other": ["伸縮サイドブラシ", "毛絡み除去システム", "落下防止機能"]
+      "connectivity": [
+        "Wi-Fi",
+        "Eufy Cleanアプリ"
+      ],
+      "other": [
+        "伸縮サイドブラシ",
+        "毛絡み除去システム",
+        "落下防止機能"
+      ]
     }
   }
 }
