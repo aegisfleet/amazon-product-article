@@ -61,6 +61,10 @@ describe('CategoryNormalizer', () => {
         'ベビー家具・収納',
         'コクヨ　「文房具図鑑 その文具のいい所から悪い所まで最強解説」 掲載文房具',
         'コクヨの文房具・事務用品',
+        'PBBeauty9999',
+        '3P beauty',
+        'CMLBeauty9999',
+        'Beautyover2000B',
       ];
       invalidNames.forEach((name) => {
         expect(CategoryNormalizer.isValidCategoryName(name)).toBe(false);
