@@ -95,6 +95,7 @@ export class CategoryNormalizer {
         'Lego',
         'ベビー',
         'マタニティ',
+        'ビジネス',
       ];
 
       // Check all valid names in the hierarchy for preferred keywords
@@ -434,6 +435,7 @@ export class CategoryNormalizer {
       'スキンケア他美容家電新商品',
       '白系家電特集',
       '母の日特集',
+      'j-pop・日本の音楽',
     ];
 
     if (blacklist.includes(name)) {
