@@ -65,6 +65,9 @@ describe('CategoryNormalizer', () => {
         '3P beauty',
         'CMLBeauty9999',
         'Beautyover2000B',
+        '本日の特選品　非常用品・家具や家電の転倒防止用品',
+        '本日のセール商品',
+        '特選タイムセール',
       ];
       invalidNames.forEach((name) => {
         expect(CategoryNormalizer.isValidCategoryName(name)).toBe(false);
