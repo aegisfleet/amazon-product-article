@@ -279,6 +279,7 @@ export class CategoryNormalizer {
       /brandname変更/i,
       /deal/i,
       /^hpc/i,
+      /kindle書籍|テスト|マッサージャーほか健康家電|>/i,
     ];
 
     if (invalidPatterns.some((pattern) => pattern.test(name))) {

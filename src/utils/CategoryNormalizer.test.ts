@@ -46,6 +46,10 @@ describe('CategoryNormalizer', () => {
         'HPCCreatorInfoHubベビーケア・おむつ',
         'hpc recommendation widget',
         'hpc_creatorinfohub',
+        'Kindle書籍・本',
+        'マッサージャーほか健康家電特集',
+        'Home > Kitchen',
+        'テスト用カテゴリ',
       ];
       invalidNames.forEach((name) => {
         expect(CategoryNormalizer.isValidCategoryName(name)).toBe(false);
