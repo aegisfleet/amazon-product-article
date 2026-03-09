@@ -65,6 +65,8 @@ describe('CategoryNormalizer', () => {
         '3P beauty',
         'CMLBeauty9999',
         'Beautyover2000B',
+        'パントリー事務用品テープ・結束具',
+        'ベビー・幼児用おもちゃ',
       ];
       invalidNames.forEach((name) => {
         expect(CategoryNormalizer.isValidCategoryName(name)).toBe(false);

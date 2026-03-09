@@ -40,8 +40,8 @@ export class CategoryNormalizer {
     if (validNames.length > 0) {
       // Updated logic: Main is Specific, Sub is Parent
       // validNames is collected from leaf up, so [leaf, parent, grandparent, ...]
-      const main = validNames[0] as string;
-      const sub = (validNames.length > 1 ? validNames[1] : '') as string;
+      const main = validNames[0]!;
+      const sub = (validNames.length > 1 ? validNames[1] : '')!;
 
       // Calculate score based on preferred keywords across all valid hierarchy names
       let score = 0;
@@ -164,7 +164,7 @@ export class CategoryNormalizer {
     }
 
     // 3. Fallback to best available node even if it's "Other"
-    const bestNode = sortedNodes[0] as BrowseNode;
+    const bestNode = sortedNodes[0]!;
     return CategoryNormalizer.attachBrowseNodeId(CategoryNormalizer.normalize(bestNode), bestNode);
   }
 
@@ -280,7 +280,7 @@ export class CategoryNormalizer {
       /brandname変更/i,
       /deal/i,
       /^hpc/i,
-      /kindle書籍|テスト|マッサージャーほか健康家電|[>＞]|amazon\s*global|コクヨ|beauty/i,
+      /kindle書籍|テスト|マッサージャーほか健康家電|[>＞]|amazon\s*global|コクヨ|beauty|パントリー/i,
     ];
 
     if (invalidPatterns.some((pattern) => pattern.test(name))) {
