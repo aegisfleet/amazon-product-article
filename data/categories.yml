@@ -7,6 +7,8 @@ parents:
     childrenWithCounts:
       - name: 2 in 1ノートパソコン
         productCount: 1
+      - name: PBPC9999
+        productCount: 0
       - name: USBライト
         productCount: 4
       - name: キーボード
@@ -368,7 +370,7 @@ parents:
   家電:
     name: 家電
     slug: home-appliances
-    productCount: 112
+    productCount: 113
     isVisible: true
     childrenWithCounts:
       - name: HEPA空気清浄機
@@ -495,6 +497,8 @@ parents:
         productCount: 1
       - name: 炊飯器
         productCount: 9
+      - name: 炊飯器用交換部品
+        productCount: 1
       - name: 煙・一酸化炭素検知器
         productCount: 0
       - name: 照明器具
@@ -535,6 +539,8 @@ parents:
     productCount: 177
     isVisible: true
     childrenWithCounts:
+      - name: PBHome&Kitchen9999
+        productCount: 0
       - name: おしゃれ着洗剤
         productCount: 2
       - name: お弁当箱・水筒
@@ -862,7 +868,7 @@ parents:
   食品:
     name: 食品
     slug: food
-    productCount: 128
+    productCount: 129
     isVisible: true
     childrenWithCounts:
       - name: うどん
@@ -959,6 +965,8 @@ parents:
         productCount: 3
       - name: ビスケット・クッキー・スナック
         productCount: 0
+      - name: フルーツティー
+        productCount: 1
       - name: ブラウニー
         productCount: 1
       - name: ブレッドミックス
@@ -1100,7 +1108,7 @@ parents:
   家具・オフィス・収納:
     name: 家具・オフィス・収納
     slug: furniture-storage
-    productCount: 105
+    productCount: 107
     isVisible: true
     childrenWithCounts:
       - name: O型リングファイル
@@ -1109,6 +1117,8 @@ parents:
         productCount: 7
       - name: つっぱり棒・つっぱり棚
         productCount: 1
+      - name: アイリス 人気収納
+        productCount: 0
       - name: アクセサリパーツ
         productCount: 1
       - name: アルバム・ファイル
@@ -1147,6 +1157,8 @@ parents:
         productCount: 0
       - name: クリアホルダー
         productCount: 2
+      - name: クローゼット・収納HOME
+        productCount: 0
       - name: ケースファイル・キャリングケース
         productCount: 0
       - name: ゲーミングチェア
@@ -1211,6 +1223,8 @@ parents:
         productCount: 1
       - name: ドキュメントファイル
         productCount: 1
+      - name: ナカバヤシのノート・文具で5% Amazonポイント還元
+        productCount: 0
       - name: ノート
         productCount: 1
       - name: ハンガーラック
@@ -1283,9 +1297,15 @@ parents:
         productCount: 0
       - name: 収納ケース・ボックス
         productCount: 9
+      - name: 収納ハンガーラック
+        productCount: 0
       - name: 収納ボックス
         productCount: 1
       - name: 収納・アクセサリ
+        productCount: 1
+      - name: 収納・ケース
+        productCount: 1
+      - name: 収納・ホルダー
         productCount: 1
       - name: 収納・生活雑貨
         productCount: 1
@@ -1559,6 +1579,8 @@ parents:
     productCount: 143
     isVisible: true
     childrenWithCounts:
+      - name: Panasonic-HA-HairDryers
+        productCount: 0
       - name: かっさプレート
         productCount: 1
       - name: カーリングワンド
@@ -1795,10 +1817,14 @@ parents:
         productCount: 1
       - name: 介護用品・生理用品
         productCount: 0
+      - name: 低周波治療器
+        productCount: 0
       - name: 体重・体脂肪・体組成計
         productCount: 1
       - name: 使い捨てカイロ
         productCount: 4
+      - name: 健康家電
+        productCount: 0
       - name: 健康衣類・アクセサリー
         productCount: 1
       - name: 健康食品
@@ -1849,6 +1875,8 @@ parents:
         productCount: 0
       - name: 漢方・生薬
         productCount: 15
+      - name: 特選健康家電 オムロン、タニタ、ルルド、スライブ
+        productCount: 0
       - name: 生活習慣病改善
         productCount: 0
       - name: 痛み止め
@@ -1899,6 +1927,8 @@ parents:
     productCount: 88
     isVisible: true
     childrenWithCounts:
+      - name: 08ビジネス
+        productCount: 0
       - name: Spring Must Haves Womens
         productCount: 1
       - name: Tシャツ
@@ -2121,6 +2151,8 @@ parents:
         productCount: 0
       - name: ベビーケア・おむつ
         productCount: 0
+      - name: ベビーケア・バス
+        productCount: 0
       - name: ベビーシャンプー
         productCount: 1
       - name: ベビーソファ
@@ -2129,11 +2161,15 @@ parents:
         productCount: 0
       - name: ベビーハンガー
         productCount: 1
+      - name: ベビーモニター
+        productCount: 0
       - name: ベビーラック・ハイローベッド
         productCount: 0
       - name: ベビー家具
         productCount: 1
       - name: ベビー＆マタニティ
+        productCount: 0
+      - name: マタニティ・ママ用品
         productCount: 0
       - name: メリーズ
         productCount: 0
@@ -2734,10 +2770,12 @@ parents:
   本・書籍:
     name: 本・書籍
     slug: books
-    productCount: 42
+    productCount: 43
     isVisible: true
     childrenWithCounts:
       - name: IT
+        productCount: 0
+      - name: Kindle Unlimited:読み放題 ジャンル
         productCount: 0
       - name: Kindleオーナー ライブラリー
         productCount: 0
@@ -2746,6 +2784,8 @@ parents:
       - name: Kindleマンガスタンプカード
         productCount: 0
       - name: Kindle本 まとめでお得秋25
+        productCount: 0
+      - name: Kindle本マンガフェス第2弾
         productCount: 0
       - name: Kindle電子書籍対象タイトル
         productCount: 0
@@ -2771,6 +2811,8 @@ parents:
         productCount: 0
       - name: ビジネス実用
         productCount: 2
+      - name: ビジネス教育
+        productCount: 1
       - name: プレゼンテーション
         productCount: 0
       - name: ポイント還元本
@@ -2851,6 +2893,8 @@ parents:
         productCount: 0
       - name: 法律
         productCount: 0
+      - name: 無料本（文学・評論）
+        productCount: 0
       - name: 猫関連本
         productCount: 1
       - name: 生活の知恵
@@ -2890,6 +2934,8 @@ parents:
     isVisible: true
     childrenWithCounts:
       - name: 2,000円以下・レビュー評価4以上の人気商品
+        productCount: 0
+      - name: 2022BFSPRGSSilver
         productCount: 0
       - name: 3P grocery
         productCount: 0
