@@ -61,7 +61,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         // Fetch index.json dynamically from data attribute
         const searchIndexUrl = searchInput.dataset.searchIndexUrl || '/index.json';
-        fetch(searchIndexUrl)
+        fetch(searchIndexUrl, { cache: 'no-cache' })
             .then(response => response.json())
             .then(data => {
                 const searchIndex = data;
