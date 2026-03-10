@@ -60,29 +60,30 @@
         "credibility": "高い"
       }
     ],
-    "lastInvestigated": "2026-01-20",
+    "lastInvestigated": "2026-03-11",
     "competitiveAnalysis": [
       {
-        "name": "ALLDOCUBE iPlay60 Pro",
-        "asin": "B0DRFR6B7D",
-        "priceComparison": "約20,300円。PHILIPSより約8,000円安い。",
+        "name": "LZF ZPad3 タブレット",
+        "asin": "B0FWR62JYH",
+        "priceComparison": "約19,999円。PHILIPSより約10,000円安い。",
         "featureComparison": [
           "Widevine L1対応で高画質再生可能。",
-          "メモリ8GB搭載（PHILIPSは6GB）。",
-          "4スピーカー搭載。"
+          "20GB(仮想含む)+256GBの大容量。",
+          "120Hz高リフレッシュレート対応。"
         ],
         "differentiators": [
-          "圧倒的なコストパフォーマンス。",
-          "動画視聴に最適な機能（L1, 4スピーカー）が充実。"
+          "圧倒的なコストパフォーマンスと高スペック。",
+          "ストレージ容量が大きい。"
         ]
       },
       {
         "name": "Alphawolf PPad2",
         "asin": "B0FY5YV8G7",
-        "priceComparison": "約17,000円。PHILIPSより1万円以上安い。",
+        "priceComparison": "約17,999円。PHILIPSより約12,000円安い。",
         "featureComparison": [
           "同じHelio G99搭載。",
-          "Widevine L1対応。"
+          "Widevine L1対応。",
+          "20GB(仮想含む)+128GB。"
         ],
         "differentiators": [
           "最安クラスのG99タブレット。",
@@ -90,15 +91,16 @@
         ]
       },
       {
-        "name": "AvidPad A90SL",
-        "asin": "B0F545SK7Z",
-        "priceComparison": "約29,000円。PHILIPSとほぼ同価格。",
+        "name": "AvidPad A90S",
+        "asin": "B0FLY39NK7",
+        "priceComparison": "約39,980円。PHILIPSより約10,000円高い。",
         "featureComparison": [
+          "Helio G99搭載。",
           "Widevine L1対応。",
-          "軽量かつメタルボディで質感が良い。"
+          "24GB(仮想含む)+128GB。"
         ],
         "differentiators": [
-          "同価格帯でのビルドクオリティとスペックのバランスが良い。"
+          "大容量メモリ搭載。"
         ]
       }
     ],
@@ -118,13 +120,13 @@
         "同性能の競合より価格が高い。",
         "充電器が付属しない。"
       ],
-      "score": 60,
-      "scoreRationale": "[基本点: 70]\n[減点: -10] 同スペックの競合（2万円前後）に比べ割高でコスパが悪い\n[減点: -5] Widevine L3制限により、Netflix等で高画質再生不可\n[減点: -5] RAM 6GBや充電器別売りなど、スペック面での不足\n[加点: +10] PHILIPSブランドの信頼性と安心感\n[合計: 60]"
+      "score": 65,
+      "scoreRationale": "[基本点: 70]\n[減点: -10] 同スペックの競合（2万円前後）に比べ割高でコスパが悪い\n[減点: -5] RAM 6GBや充電器別売りなど、スペック面での不足\n[加点: +10] PHILIPSブランドの信頼性と安心感、堅牢なサポート体制\n[合計: 65]"
     },
     "technicalSpecs": {
       "os": "Android 15",
       "cpu": "MediaTek Helio G99 (6nm)",
-      "ram": "6GB",
+      "ram": "6GB (最大10GBの仮想メモリ拡張)",
       "storage": "128GB (microSD拡張最大1TB)",
       "display": {
         "size": "11インチ",
@@ -147,7 +149,8 @@
       "other": [
         "Widevine L3",
         "顔認証",
-        "ワイヤレス投影"
+        "ワイヤレス投影",
+        "デュアルスピーカー"
       ]
     }
   }
