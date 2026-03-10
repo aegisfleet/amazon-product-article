@@ -10,7 +10,7 @@
  *   GITHUB_REPOSITORY - GitHubリポジトリ（owner/repo形式）
  */
 
-import { exec } from 'node:child_process';
+import { execFile } from 'node:child_process';
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import { promisify } from 'node:util';
@@ -26,7 +26,7 @@ import type { Product, ProductDetail } from '../types/Product';
 import { setGitHubOutput } from '../utils/github-actions';
 import { Logger } from '../utils/Logger';
 
-const execAsync = promisify(exec);
+const execFileAsync = promisify(execFile);
 
 const logger = Logger.getInstance();
 
@@ -549,7 +549,7 @@ export async function main(): Promise<void> {
     // Sanitize Frontmatter
     try {
       logger.info('Running frontmatter sanitization...');
-      const { stdout, stderr } = await execAsync('npm run sanitize:frontmatter');
+      const { stdout, stderr } = await execFileAsync('npm', ['run', 'sanitize:frontmatter']);
       if (stdout) console.log(stdout);
       if (stderr) console.error(stderr);
     } catch (error) {
