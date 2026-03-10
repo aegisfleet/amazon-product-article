@@ -1,14 +1,10 @@
 
 import { ProductSearcher } from '../src/search/ProductSearcher';
 import { CreatorsAPIClient } from '../src/api/CreatorsAPIClient';
-import { Logger } from '../src/utils/Logger';
 
 // Mock CreatorsAPIClient
-class MockCreatorsAPIClient extends CreatorsAPIClient {
-  constructor() {
-    super();
-  }
-  async getProductDetails(asin: string): Promise<any> {
+const mockClient = {
+  getProductDetails: async (asin: string) => {
     // Simulate API call delay
     await new Promise(resolve => setTimeout(resolve, 100));
     return {
@@ -20,9 +16,9 @@ class MockCreatorsAPIClient extends CreatorsAPIClient {
       category: 'Test',
       specifications: {},
     };
-  }
+  },
 
-  async getMultipleProductDetails(asins: string[]): Promise<any> {
+  getMultipleProductDetails: async (asins: string[]) => {
     // Simulate API call delay
     await new Promise(resolve => setTimeout(resolve, 150));
     const results = new Map();
@@ -39,10 +35,9 @@ class MockCreatorsAPIClient extends CreatorsAPIClient {
     }
     return { results, permanentFailures: new Set() };
   }
-}
+} as unknown as CreatorsAPIClient;
 
 async function benchmark() {
-  const mockClient = new MockCreatorsAPIClient() as any;
   const searcher = new ProductSearcher(mockClient);
 
   const asins = Array.from({ length: 10 }, (_, i) => `B00000000${i}`);
@@ -56,4 +51,8 @@ async function benchmark() {
   console.log(`Average time per ASIN: ${(end - start) / asins.length}ms`);
 }
 
-benchmark().catch(console.error);
+try {
+  await benchmark();
+} catch (err) {
+  console.error(err);
+}

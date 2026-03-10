@@ -48,7 +48,14 @@ async function verifyBatching() {
     success = false;
   }
 
-  if (capturedBatches[0].length !== 10 || capturedBatches[1].length !== 10 || capturedBatches[2].length !== 5) {
+  if (capturedBatches.length < 3) {
+    console.error(`FAILED: Expected at least 3 captured batches, but got ${capturedBatches.length}`);
+    success = false;
+  } else if (
+    capturedBatches[0].length !== 10 ||
+    capturedBatches[1].length !== 10 ||
+    capturedBatches[2].length !== 5
+  ) {
     console.error('FAILED: Batch sizes are incorrect');
     console.error('Batches:', capturedBatches.map(b => b.length));
     success = false;
@@ -61,7 +68,9 @@ async function verifyBatching() {
   }
 }
 
-verifyBatching().catch(err => {
+try {
+  await verifyBatching();
+} catch (err) {
   console.error('Verification failed with error:', err);
   process.exit(1);
-});
+}
