@@ -280,7 +280,7 @@ export class CategoryNormalizer {
       /brandname変更/i,
       /deal/i,
       /^hpc/i,
-      /^\d{2}ビジネス/,
+      /^\d{2}\s*ビジネス/,
       /spring must haves/i,
       /(?:kindle書籍|テスト|マッサージャーほか健康家電|[>＞]|amazon\s*global|コクヨ|beauty|パントリー|本日の|特選品|cml|ソニー|9999$)/i,
     ];
