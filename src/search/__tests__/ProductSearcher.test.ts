@@ -37,30 +37,43 @@ describe('ProductSearcher', () => {
   });
 
   describe('searchByAsins', () => {
-    it('should fetch specific ASINs', async () => {
+    it('should fetch specific ASINs using batching', async () => {
       const asins = ['B000000001', 'B000000002'];
-      const mockProduct: Product = {
+      const mockProduct1: Product = {
         asin: 'B000000001',
-        title: 'Test Product',
+        title: 'Test Product 1',
         price: { amount: 1000, currency: 'JPY', formatted: '¥1,000' },
         rating: { average: 4.5, count: 100 },
         images: { primary: '', thumbnails: [] },
         category: 'Electronics',
         specifications: {},
       };
+      const mockProduct2: Product = {
+        asin: 'B000000002',
+        title: 'Test Product 2',
+        price: { amount: 2000, currency: 'JPY', formatted: '¥2,000' },
+        rating: { average: 4.0, count: 50 },
+        images: { primary: '', thumbnails: [] },
+        category: 'Electronics',
+        specifications: {},
+      };
 
-      // Mock getProductDetails to return mock product
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any, @typescript-eslint/no-unsafe-argument
-      mockCreatorsClient.getProductDetails.mockResolvedValue(mockProduct as any);
+      const results = new Map();
+      results.set('B000000001', mockProduct1);
+      results.set('B000000002', mockProduct2);
+
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      mockCreatorsClient.getMultipleProductDetails.mockResolvedValue({
+        results,
+        permanentFailures: new Set(),
+      } as any);
 
       const session = await searcher.searchByAsins(asins);
 
       // eslint-disable-next-line @typescript-eslint/unbound-method
-      expect(mockCreatorsClient.getProductDetails).toHaveBeenCalledTimes(2);
+      expect(mockCreatorsClient.getMultipleProductDetails).toHaveBeenCalledTimes(1);
       // eslint-disable-next-line @typescript-eslint/unbound-method
-      expect(mockCreatorsClient.getProductDetails).toHaveBeenCalledWith('B000000001');
-      // eslint-disable-next-line @typescript-eslint/unbound-method
-      expect(mockCreatorsClient.getProductDetails).toHaveBeenCalledWith('B000000002');
+      expect(mockCreatorsClient.getMultipleProductDetails).toHaveBeenCalledWith(asins);
       expect(session.results.length).toBe(1); // One result batch
       expect(session.results?.[0]?.products.length).toBe(2);
       expect(session.categories).toContain('Manual');
