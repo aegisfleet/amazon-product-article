@@ -72,6 +72,10 @@ describe('CategoryNormalizer', () => {
         'CMLSports9999',
         'ソニー2025SpringCamera',
         'ソニー2026SpringVlog',
+        'PBPC9999',
+        'PBHome&Kitchen9999',
+        'N&NBeauty9999',
+        'PBSports&Outdoor9999',
       ];
       invalidNames.forEach((name) => {
         expect(CategoryNormalizer.isValidCategoryName(name)).toBe(false);
