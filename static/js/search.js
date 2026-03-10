@@ -1,3 +1,13 @@
+function escapeHTML(str) {
+    if (typeof str !== 'string') return str;
+    return str
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#039;');
+}
+
 document.addEventListener('DOMContentLoaded', function () {
     const searchInput = document.getElementById('search-input');
     const searchResults = document.getElementById('search-results');
@@ -338,7 +348,19 @@ document.addEventListener('DOMContentLoaded', function () {
 
         const html = uniqueResults.slice(0, 20).map(result => {
             const item = result.item;
-            const priceDisplay = item.price ? `<span class="result-price">💰 ${item.price}</span>` : '';
+            const escapedTitle = escapeHTML(item.title);
+            const escapedSummary = escapeHTML(item.summary || '');
+            const escapedImage = escapeHTML(item.image);
+            const escapedPrice = escapeHTML(item.price);
+
+            let permalink = item.permalink || '';
+            if (permalink && !permalink.startsWith('http') && !permalink.startsWith('/')) {
+                permalink = '/';
+            }
+            const escapedPermalink = escapeHTML(permalink);
+            const escapedScore = escapeHTML(String(item.score || ''));
+
+            const priceDisplay = item.price ? `<span class="result-price">💰 ${escapedPrice}</span>` : '';
             let scoreClass = 'score-fair';
             const score = parseInt(item.score) || 0;
             if (score >= 80) {
@@ -346,10 +368,10 @@ document.addEventListener('DOMContentLoaded', function () {
             } else if (score >= 60) {
                 scoreClass = 'score-good';
             }
-            const scoreDisplay = item.score ? `<span class="result-score ${scoreClass}">🏆 ${item.score}点</span>` : '';
+            const scoreDisplay = item.score ? `<span class="result-score ${scoreClass}">🏆 ${escapedScore}点</span>` : '';
             const thumbnailHtml = item.image ? `
                 <div class="result-thumbnail">
-                    <img src="${item.image}" alt="${item.title}" loading="lazy">
+                    <img src="${escapedImage}" alt="${escapedTitle}" loading="lazy">
                 </div>
             ` : `
                 <div class="result-thumbnail no-image">
@@ -358,18 +380,18 @@ document.addEventListener('DOMContentLoaded', function () {
             `;
 
             return `
-                <a href="${item.permalink}" class="search-result-item">
+                <a href="${escapedPermalink}" class="search-result-item">
                     ${thumbnailHtml}
                     <div class="result-content">
                         <div class="result-header">
-                            <span class="result-title">${item.title}</span>
+                            <span class="result-title">${escapedTitle}</span>
                             <div class="result-metrics">
                                 ${priceDisplay}
                                 ${scoreDisplay}
                             </div>
                         </div>
-                        <span class="result-summary">${item.summary || ''}</span>
-                        ${item.categories ? `<div class="result-categories">${item.categories.map(c => `<span class="category-tag">${c}</span>`).join('')}</div>` : ''}
+                        <span class="result-summary">${escapedSummary}</span>
+                        ${item.categories ? `<div class="result-categories">${item.categories.map(c => `<span class="category-tag">${escapeHTML(c)}</span>`).join('')}</div>` : ''}
                     </div>
                 </a>
             `;
