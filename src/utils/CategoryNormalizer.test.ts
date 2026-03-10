@@ -76,6 +76,8 @@ describe('CategoryNormalizer', () => {
         'PBHome&Kitchen9999',
         'N&NBeauty9999',
         'PBSports&Outdoor9999',
+        '08ビジネス',
+        'Spring Must Haves Womens',
       ];
       invalidNames.forEach((name) => {
         expect(CategoryNormalizer.isValidCategoryName(name)).toBe(false);
