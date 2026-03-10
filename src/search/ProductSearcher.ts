@@ -65,18 +65,25 @@ export class ProductSearcher {
 
     this.logger.info(`Starting manual product search session ${sessionId} for ${asins.length} ASINs`);
 
-    for (const asin of asins) {
+    // Process in batches of 10 (API limit)
+    const batchSize = 10;
+    for (let i = 0; i < asins.length; i += batchSize) {
+      const batch = asins.slice(i, i + batchSize);
       try {
-        const productDetail = await this.creatorsClient.getProductDetails(asin);
-        // Convert ProductDetail to Product (ProductDetail extends Product, so this is safe)
-        products.push(productDetail);
-        this.logger.info(`Found product: ${productDetail.title} (${asin})`);
-      } catch (error) {
-        this.logger.error(`Failed to fetch product for ASIN ${asin}:`, error);
-      }
+        const { results: batchResults } = await this.creatorsClient.getMultipleProductDetails(batch);
 
-      // Rate limiting
-      await this.sleep(200);
+        for (const asin of batch) {
+          const productDetail = batchResults.get(asin);
+          if (productDetail) {
+            products.push(productDetail);
+            this.logger.info(`Found product: ${productDetail.title} (${asin})`);
+          } else {
+            this.logger.warn(`Product not found for ASIN ${asin}`);
+          }
+        }
+      } catch (error) {
+        this.logger.error(`Failed to fetch product batch starting with ${batch[0]}:`, error);
+      }
     }
 
     if (products.length > 0) {
