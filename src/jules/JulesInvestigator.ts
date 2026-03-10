@@ -5,7 +5,7 @@
  * ※ 迷ったら上記ドキュメントを参照してください
  */
 
-import axios, { AxiosError, type AxiosInstance } from 'axios';
+import axios, { type AxiosInstance } from 'axios';
 import type {
   ActivitiesResponse,
   InvestigationContext,
@@ -51,7 +51,18 @@ export class JulesInvestigator {
         return config;
       },
       (error: unknown) => {
-        this.logger.error('Jules API Request Error', error);
+        if (axios.isAxiosError(error)) {
+          this.logger.error('Jules API Request Error', {
+            message: error.message,
+            code: error.code,
+            config: {
+              method: error.config?.method,
+              url: error.config?.url,
+            },
+          });
+        } else {
+          this.logger.error('Jules API Request Error', error);
+        }
         return Promise.reject(error instanceof Error ? error : new Error(String(error)));
       },
     );
@@ -354,7 +365,7 @@ export class JulesInvestigator {
    * APIエラーを処理
    */
   private handleApiError(error: unknown): JulesError {
-    if (error instanceof AxiosError) {
+    if (axios.isAxiosError(error)) {
       const status = error.response?.status;
       const data = error.response?.data as unknown;
 
@@ -411,7 +422,10 @@ export class JulesInvestigator {
       return {
         code: 'UNKNOWN_ERROR',
         message: error.message,
-        details: error,
+        details: {
+          name: error.name,
+          message: error.message,
+        },
         retryable: false,
       };
     }
@@ -420,7 +434,7 @@ export class JulesInvestigator {
     return {
       code: 'UNKNOWN_ERROR',
       message: 'Unknown Jules API error',
-      details: error,
+      details: String(error),
       retryable: false,
     };
   }
