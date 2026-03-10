@@ -5,10 +5,10 @@
     "productDescription": "Samsungの最新スマートウォッチで、AI「Gemini」との連携や高度な健康管理機能を搭載したハイエンドモデルです。",
     "productUsage": [
       "日々の健康管理・睡眠トラッキング",
-      "ランニングやトレーニングの記録（Dual GPS搭載）",
-      "Suica/iD/QUICPayなどでの電子決済（FeliCa対応）",
-      "Galaxyスマートフォンとの連携（通知確認、通話、カメラ操作）",
-      "AIアシスタントを活用した情報検索や翻訳"
+      "ランニングやトレーニングの記録",
+      "Suicaなどの電子決済",
+      "AIアシスタントを活用した情報検索や翻訳",
+      "スマートフォンとの連携（通知確認、通話など）"
     ],
     "positivePoints": [
       "洗練された新しいクッションデザインと高い質感",
@@ -61,12 +61,12 @@
         "credibility": "High"
       }
     ],
-    "lastInvestigated": "2026-01-20",
+    "lastInvestigated": "2026-03-11",
     "competitiveAnalysis": [
       {
-        "name": "Google Pixel Watch 4 (45mm)",
-        "asin": "B0FJWQP6LX",
-        "priceComparison": "約6万円と、Galaxy Watch8 (約5万円) より1万円程度高価。",
+        "name": "Google Pixel Watch 4 (41mm)",
+        "asin": "B0FJW36Y5Q",
+        "priceComparison": "約5.3万円と、Galaxy Watch8 (約6.1万円) よりやや安価。",
         "featureComparison": [
           "Google純正のAI機能統合",
           "Fitbit譲りの強力な健康管理",
@@ -79,9 +79,9 @@
         ]
       },
       {
-        "name": "Apple Watch Series 11 (42mm)",
-        "asin": "B0FQFJ5RTR",
-        "priceComparison": "約6.5万円〜と、Galaxy Watch8より1.5万円以上高い。",
+        "name": "Apple Watch Series 11 46mm",
+        "asin": "B0FQG2B81Z",
+        "priceComparison": "約7万円と、Galaxy Watch8より高価。",
         "featureComparison": [
           "iPhone専用（Galaxy WatchはAndroid専用）",
           "圧倒的なアプリ数とアクセサリーのエコシステム",
@@ -128,13 +128,13 @@
         "一部の独自機能はSamsung製スマホが必要"
       ],
       "score": 88,
-      "scoreRationale": "[基本点: 70]\n[加点: +2] (AI連携やFeliCa、Dual GPSなど機能は充実しているが、バッテリー30時間は競合と比較して革新的ではない)\n[加点: +8] (最新ハイエンドモデルでありながら5万円台前半と、PixelやAppleの競合機より安価でコスパが高い)\n[加点: +5] (洗練されたクッションデザインとSamsung純正のビルドクオリティ)\n[減点: -2] (バッテリー持続時間が短く、毎日の充電が必要な点はユーザーの負担になる)\n[加点: +5] (Galaxy AI / Geminiとの深い統合は独自の強み)\n[合計: 88]"
+      "scoreRationale": "[基本点: 70]\n[加点: +8] (最新ハイエンドモデルでありながら約6.1万円と、PixelやAppleの競合機より安価でコスパが高い)\n[加点: +5] (洗練されたクッションデザインとSamsung純正の高いビルドクオリティ)\n[加点: +5] (Galaxy AI / Geminiとの深い統合は独自の強み)\n[加点: +2] (AI連携やFeliCa、Dual GPSなど機能が充実)\n[減点: -2] (バッテリー最大30時間は競合と比較して短く、毎日の充電が必要な点がユーザー負担)\n[合計: 88]"
     },
     "technicalSpecs": {
       "os": "Wear OS Powered by Samsung",
-      "cpu": "Samsung Exynos (最新)",
-      "ram": null,
-      "storage": null,
+      "cpu": "Samsung Exynos W1000",
+      "ram": "2GB",
+      "storage": "32GB",
       "display": {
         "size": "44mm",
         "resolution": null,
