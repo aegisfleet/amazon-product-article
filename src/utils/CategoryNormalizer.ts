@@ -280,7 +280,7 @@ export class CategoryNormalizer {
       /brandname変更/i,
       /deal/i,
       /^hpc/i,
-      /kindle書籍|テスト|マッサージャーほか健康家電|[>＞]|amazon\s*global|コクヨ|beauty|パントリー|本日の|特選品/i,
+      /kindle書籍|テスト|マッサージャーほか健康家電|[>＞]|amazon\s*global|コクヨ|beauty|パントリー|本日の|特選品|cml|ソニー/i,
     ];
 
     if (invalidPatterns.some((pattern) => pattern.test(name))) {
