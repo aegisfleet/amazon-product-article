@@ -199,8 +199,6 @@ export interface CreatorsAPIItem {
       };
     }>;
   };
-  // Deprecated Offers for backward compatibility if needed, but likely unused
-  offers?: unknown;
 
   browseNodeInfo?: {
     browseNodes?: CreatorsAPIBrowseNode[];
