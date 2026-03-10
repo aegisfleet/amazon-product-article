@@ -68,6 +68,10 @@ describe('CategoryNormalizer', () => {
         '本日の特選品　非常用品・家具や家電の転倒防止用品',
         '本日のセール商品',
         '特選タイムセール',
+        'CMLHome9999',
+        'CMLSports9999',
+        'ソニー2025SpringCamera',
+        'ソニー2026SpringVlog',
       ];
       invalidNames.forEach((name) => {
         expect(CategoryNormalizer.isValidCategoryName(name)).toBe(false);
