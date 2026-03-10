@@ -534,7 +534,7 @@ parents:
   ホーム・キッチン:
     name: ホーム・キッチン
     slug: home-kitchen
-    productCount: 177
+    productCount: 178
     isVisible: true
     childrenWithCounts:
       - name: おしゃれ着洗剤
@@ -837,6 +837,8 @@ parents:
         productCount: 1
       - name: 調理小物
         productCount: 0
+      - name: 造花
+        productCount: 1
       - name: 鍋
         productCount: 0
       - name: 鍋・フライパンセット
@@ -874,6 +876,8 @@ parents:
       - name: おつまみ・珍味
         productCount: 1
       - name: おにぎり
+        productCount: 0
+      - name: お歳暮・お年賀
         productCount: 0
       - name: お茶・コーヒー飲料
         productCount: 0
@@ -1102,7 +1106,7 @@ parents:
   家具・オフィス・収納:
     name: 家具・オフィス・収納
     slug: furniture-storage
-    productCount: 107
+    productCount: 108
     isVisible: true
     childrenWithCounts:
       - name: O型リングファイル
@@ -1335,6 +1339,8 @@ parents:
         productCount: 0
       - name: 接着剤
         productCount: 2
+      - name: 文具・筆記用具
+        productCount: 1
       - name: 文房具
         productCount: 1
       - name: 文房具メーカー推奨
@@ -1532,6 +1538,8 @@ parents:
       - name: 口紅
         productCount: 1
       - name: 日本
+        productCount: 0
+      - name: 泡入浴剤
         productCount: 0
       - name: 泡洗顔料
         productCount: 1
@@ -1910,7 +1918,7 @@ parents:
   ファッション:
     name: ファッション
     slug: fashion
-    productCount: 86
+    productCount: 89
     isVisible: true
     childrenWithCounts:
       - name: Tシャツ
@@ -2003,6 +2011,8 @@ parents:
         productCount: 0
       - name: パジャマ・ルームウェアトップス
         productCount: 0
+      - name: ビジネスバッグ・リュック
+        productCount: 0
       - name: ピアス
         productCount: 1
       - name: ファッション
@@ -2043,6 +2053,10 @@ parents:
         productCount: 0
       - name: レディース
         productCount: 0
+      - name: レディースビジネス
+        productCount: 2
+      - name: レディースビジネスウェア
+        productCount: 1
       - name: ローファー・スリッポン
         productCount: 0
       - name: ワークアウトトップ＆ボトムセット
@@ -2326,7 +2340,7 @@ parents:
   音楽・エンタメ:
     name: 音楽・エンタメ
     slug: music-entertainment
-    productCount: 29
+    productCount: 30
     isVisible: true
     childrenWithCounts:
       - name: Dynamic COOP J-POP
@@ -2360,6 +2374,8 @@ parents:
       - name: エレキギター弦
         productCount: 1
       - name: カズー
+        productCount: 1
+      - name: カリンバ
         productCount: 1
       - name: キーボード・電子ピアノ
         productCount: 1
@@ -2787,12 +2803,20 @@ parents:
         productCount: 0
       - name: ノンフィクション
         productCount: 0
+      - name: ビジネスライフ
+        productCount: 0
       - name: ビジネス・経済
         productCount: 2
+      - name: ビジネス交渉・心理学
+        productCount: 0
       - name: ビジネス実用
         productCount: 4
       - name: ビジネス教育
         productCount: 2
+      - name: ビジネス書大賞
+        productCount: 0
+      - name: ビジネス法入門
+        productCount: 0
       - name: プレゼンテーション
         productCount: 0
       - name: ポイント還元本
@@ -2825,6 +2849,8 @@ parents:
         productCount: 0
       - name: 哲学
         productCount: 1
+      - name: 国際ビジネス
+        productCount: 0
       - name: 子育て
         productCount: 0
       - name: 実用・暮らし・スポーツ
