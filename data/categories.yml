@@ -7,8 +7,6 @@ parents:
     childrenWithCounts:
       - name: 2 in 1ノートパソコン
         productCount: 1
-      - name: PBPC9999
-        productCount: 0
       - name: USBライト
         productCount: 4
       - name: キーボード
@@ -60,7 +58,7 @@ parents:
   PC周辺機器:
     name: PC周辺機器
     slug: pc-peripheral
-    productCount: 90
+    productCount: 91
     isVisible: true
     childrenWithCounts:
       - name: 3Dプリンタ本体
@@ -118,7 +116,7 @@ parents:
       - name: ドッキングステーション
         productCount: 21
       - name: ノートパソコンスタンド
-        productCount: 1
+        productCount: 2
       - name: ハブ・マウス
         productCount: 1
       - name: プリンタクリーナー
@@ -156,7 +154,7 @@ parents:
   スマートフォン:
     name: スマートフォン
     slug: smartphone
-    productCount: 191
+    productCount: 192
     isVisible: true
     childrenWithCounts:
       - name: AC式充電器
@@ -218,7 +216,7 @@ parents:
       - name: スマートフォン本体
         productCount: 27
       - name: スマートフォン用カメラレンズ
-        productCount: 0
+        productCount: 1
       - name: スマートフォン関連商品
         productCount: 0
       - name: スマートフォン関連製品
@@ -266,7 +264,7 @@ parents:
   音響・映像機材:
     name: 音響・映像機材
     slug: audio-video-equipment
-    productCount: 136
+    productCount: 138
     isVisible: true
     childrenWithCounts:
       - name: DAコンバーター
@@ -324,7 +322,7 @@ parents:
       - name: コンデンサ
         productCount: 9
       - name: コンパクト
-        productCount: 0
+        productCount: 1
       - name: コンパクトカメラケース
         productCount: 0
       - name: ショックマウント
@@ -356,7 +354,7 @@ parents:
       - name: ミキサー
         productCount: 1
       - name: ミラーレス一眼
-        productCount: 0
+        productCount: 1
       - name: リケーブル
         productCount: 1
       - name: ワイヤレス
@@ -370,7 +368,7 @@ parents:
   家電:
     name: 家電
     slug: home-appliances
-    productCount: 115
+    productCount: 117
     isVisible: true
     childrenWithCounts:
       - name: HEPA空気清浄機
@@ -464,7 +462,7 @@ parents:
       - name: 家全体用加湿器
         productCount: 5
       - name: 家電＆カメラ
-        productCount: 0
+        productCount: 2
       - name: 小型・ポータブル洗濯機
         productCount: 1
       - name: 屋内照明
@@ -536,11 +534,9 @@ parents:
   ホーム・キッチン:
     name: ホーム・キッチン
     slug: home-kitchen
-    productCount: 178
+    productCount: 177
     isVisible: true
     childrenWithCounts:
-      - name: PBHome&Kitchen9999
-        productCount: 0
       - name: おしゃれ着洗剤
         productCount: 2
       - name: お弁当箱・水筒
@@ -608,7 +604,7 @@ parents:
       - name: クッション・座布団
         productCount: 0
       - name: クリーニング・整理用品
-        productCount: 1
+        productCount: 0
       - name: クロス・タオル
         productCount: 0
       - name: コーヒーカップ
@@ -1037,8 +1033,6 @@ parents:
         productCount: 2
       - name: 宅配弁当
         productCount: 0
-      - name: 定期おトク便　OLS Browse Test
-        productCount: 0
       - name: 小麦粉
         productCount: 1
       - name: 抹茶
@@ -1108,7 +1102,7 @@ parents:
   家具・オフィス・収納:
     name: 家具・オフィス・収納
     slug: furniture-storage
-    productCount: 108
+    productCount: 107
     isVisible: true
     childrenWithCounts:
       - name: O型リングファイル
@@ -1262,9 +1256,9 @@ parents:
       - name: ミーティングチェア
         productCount: 0
       - name: メモ帳
-        productCount: 2
-      - name: ラベル・オフィス用品
         productCount: 0
+      - name: ラベル・オフィス用品
+        productCount: 1
       - name: ランドリー収納
         productCount: 1
       - name: リングファイル
@@ -1349,10 +1343,6 @@ parents:
         productCount: 4
       - name: 書類トレー・レターケース
         productCount: 0
-      - name: 本日の特選品　非常用品・家具や家電の転倒防止用品
-        productCount: 0
-      - name: 本日（6/27）の特選品：アイリスオーヤマの収納グッズ
-        productCount: 0
       - name: 本棚
         productCount: 2
       - name: 本棚・書架
@@ -1386,11 +1376,9 @@ parents:
   コスメ・スキンケア:
     name: コスメ・スキンケア
     slug: cosmetics-skincare
-    productCount: 153
+    productCount: 152
     isVisible: true
     childrenWithCounts:
-      - name: N&NBeauty9999
-        productCount: 0
       - name: Skincare
         productCount: 0
       - name: おしゃれカラコン
@@ -1440,7 +1428,7 @@ parents:
       - name: スキンケア・ボディケア
         productCount: 10
       - name: スキンケア・基礎化粧品
-        productCount: 3
+        productCount: 1
       - name: スタンダード
         productCount: 0
       - name: スペシャルケア
@@ -1482,7 +1470,7 @@ parents:
       - name: パントリー スキンケア・ボディケア
         productCount: 0
       - name: ビューティー
-        productCount: 1
+        productCount: 2
       - name: ファンデーション
         productCount: 0
       - name: フェイスオイル
@@ -1576,7 +1564,7 @@ parents:
   ヘアケア・理美容家電:
     name: ヘアケア・理美容家電
     slug: haircare-appliances
-    productCount: 143
+    productCount: 144
     isVisible: true
     childrenWithCounts:
       - name: Panasonic-HA-HairDryers
@@ -1597,8 +1585,6 @@ parents:
         productCount: 1
       - name: パントリー オーラルケア
         productCount: 0
-      - name: フィリップス ソニッケアー替えブラシ　定期お特便をはじめよう。
-        productCount: 0
       - name: フェイスエクササイズ
         productCount: 0
       - name: フェイススチーマー
@@ -1616,7 +1602,7 @@ parents:
       - name: ヘアオイル
         productCount: 1
       - name: ヘアケア
-        productCount: 7
+        productCount: 8
       - name: ヘアジェル
         productCount: 0
       - name: ヘアストレートナー
@@ -1680,7 +1666,7 @@ parents:
   健康・サプリメント:
     name: 健康・サプリメント
     slug: health-supplements
-    productCount: 179
+    productCount: 180
     isVisible: true
     childrenWithCounts:
       - name: B1
@@ -1720,7 +1706,7 @@ parents:
       - name: サポーター
         productCount: 2
       - name: スポーツケア用品
-        productCount: 0
+        productCount: 1
       - name: スポーツ・ビタミン粉末ドリンク
         productCount: 0
       - name: スリムウォーク、生理用品などがお買い得
@@ -1742,7 +1728,7 @@ parents:
       - name: トレーニングベルト
         productCount: 1
       - name: ドラッグストア HOTW
-        productCount: 1
+        productCount: 0
       - name: ネックパッド
         productCount: 0
       - name: ネックピロー
@@ -1904,7 +1890,7 @@ parents:
       - name: 血圧計
         productCount: 0
       - name: 衛生用品
-        productCount: 0
+        productCount: 1
       - name: 足用
         productCount: 0
       - name: 車いす付属品
@@ -1924,13 +1910,9 @@ parents:
   ファッション:
     name: ファッション
     slug: fashion
-    productCount: 88
+    productCount: 86
     isVisible: true
     childrenWithCounts:
-      - name: 08ビジネス
-        productCount: 0
-      - name: Spring Must Haves Womens
-        productCount: 1
       - name: Tシャツ
         productCount: 0
       - name: アクセサリ
@@ -2080,7 +2062,7 @@ parents:
       - name: 着圧レギンス
         productCount: 0
       - name: 腕時計
-        productCount: 9
+        productCount: 8
       - name: 腹巻
         productCount: 0
       - name: 補正ショーツ・ガードル
@@ -2234,8 +2216,6 @@ parents:
     isVisible: true
     childrenWithCounts:
       - name: Xbox
-        productCount: 0
-      - name: testBNプログラミングロボット
         productCount: 0
       - name: おもちゃ
         productCount: 1
@@ -2438,7 +2418,7 @@ parents:
   アウトドア・車・DIY:
     name: アウトドア・車・DIY
     slug: outdoor-car-diy
-    productCount: 125
+    productCount: 124
     isVisible: true
     childrenWithCounts:
       - name: LEDランタン
@@ -2544,7 +2524,7 @@ parents:
       - name: ドライブレコーダーアクセサリ
         productCount: 0
       - name: ドライブレコーダー本体
-        productCount: 12
+        productCount: 11
       - name: ドライブ便利アイテム
         productCount: 0
       - name: ドリルドライバー
@@ -2612,7 +2592,7 @@ parents:
       - name: ライト・アクセサリ
         productCount: 1
       - name: ライト・ランタン
-        productCount: 0
+        productCount: 1
       - name: ラジエーターホース
         productCount: 0
       - name: ラチェットレンチ
@@ -2670,7 +2650,7 @@ parents:
       - name: 布テープ
         productCount: 2
       - name: 懐中電灯
-        productCount: 1
+        productCount: 0
       - name: 投光器・フラッドライト
         productCount: 0
       - name: 折りたたみチェア
@@ -2794,7 +2774,7 @@ parents:
       - name: アート・建築・デザイン
         productCount: 0
       - name: エントリーシート
-        productCount: 1
+        productCount: 0
       - name: コミック
         productCount: 1
       - name: コンピュータ・IT
@@ -2808,11 +2788,11 @@ parents:
       - name: ノンフィクション
         productCount: 0
       - name: ビジネス・経済
-        productCount: 1
+        productCount: 2
       - name: ビジネス実用
         productCount: 4
       - name: ビジネス教育
-        productCount: 1
+        productCount: 2
       - name: プレゼンテーション
         productCount: 0
       - name: ポイント還元本
@@ -2876,7 +2856,7 @@ parents:
       - name: 日本語
         productCount: 0
       - name: 書籍
-        productCount: 2
+        productCount: 1
       - name: 本
         productCount: 8
       - name: 本屋大賞
@@ -2930,9 +2910,11 @@ parents:
   その他:
     name: その他
     slug: others
-    productCount: 3
+    productCount: 5
     isVisible: true
     childrenWithCounts:
+      - name: 08ビジネス
+        productCount: 1
       - name: 2,000円以下・レビュー評価4以上の人気商品
         productCount: 0
       - name: 2022BFSPRGSSilver
@@ -2963,17 +2945,19 @@ parents:
         productCount: 0
       - name: NIKKEN
         productCount: 0
-      - name: PBSports&Outdoor9999
-        productCount: 0
       - name: SM
         productCount: 0
       - name: STEM Toys ~理系脳を育むおもちゃ~｜プログラミング・ロボット
         productCount: 0
+      - name: Spring Must Haves Womens
+        productCount: 1
       - name: Strollers
         productCount: 0
       - name: VAXPOT
         productCount: 0
       - name: miyako4stroller
+        productCount: 0
+      - name: testBNプログラミングロボット
         productCount: 0
       - name: ~5,000円
         productCount: 0
@@ -2991,11 +2975,19 @@ parents:
         productCount: 0
       - name: デバイス
         productCount: 0
+      - name: フィリップス ソニッケアー替えブラシ　定期お特便をはじめよう。
+        productCount: 0
       - name: ブラックフライデーDealElectronics
         productCount: 0
       - name: ブラックフライデーDealSporting Goods
         productCount: 0
       - name: 並行輸入品
+        productCount: 0
+      - name: 定期おトク便　OLS Browse Test
+        productCount: 0
+      - name: 本日の特選品　非常用品・家具や家電の転倒防止用品
+        productCount: 0
+      - name: 本日（6/27）の特選品：アイリスオーヤマの収納グッズ
         productCount: 0
       - name: 著作権
         productCount: 0
