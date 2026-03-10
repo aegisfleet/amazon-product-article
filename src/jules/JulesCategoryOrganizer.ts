@@ -96,7 +96,18 @@ export class JulesCategoryOrganizer {
         return config;
       },
       (error: unknown) => {
-        this.logger.error('Jules API Request Error', error);
+        if (axios.isAxiosError(error)) {
+          this.logger.error('Jules API Request Error', {
+            message: error.message,
+            code: error.code,
+            config: {
+              method: error.config?.method,
+              url: error.config?.url,
+            },
+          });
+        } else {
+          this.logger.error('Jules API Request Error', error);
+        }
         return Promise.reject(error instanceof Error ? error : new Error(String(error)));
       },
     );
@@ -441,7 +452,10 @@ ${unregisteredList}
       return {
         code: 'UNKNOWN_ERROR',
         message: error.message,
-        details: error,
+        details: {
+          name: error.name,
+          message: error.message,
+        },
         retryable: false,
       };
     }
@@ -449,7 +463,7 @@ ${unregisteredList}
     return {
       code: 'UNKNOWN_ERROR',
       message: 'Unknown Jules API error',
-      details: error,
+      details: String(error),
       retryable: false,
     };
   }
