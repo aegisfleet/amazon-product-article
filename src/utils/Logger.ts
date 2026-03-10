@@ -41,7 +41,11 @@ export class Logger {
   }
 
   public error(message: string, error?: unknown): void {
-    this.log(LogLevel.ERROR, message, undefined, error instanceof Error ? error : undefined);
+    if (error instanceof Error) {
+      this.log(LogLevel.ERROR, message, undefined, error);
+    } else {
+      this.log(LogLevel.ERROR, message, error);
+    }
   }
 
   public warn(message: string, data?: unknown): void {
