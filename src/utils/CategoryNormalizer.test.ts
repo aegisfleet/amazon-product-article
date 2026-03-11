@@ -78,6 +78,17 @@ describe('CategoryNormalizer', () => {
         'PBSports&Outdoor9999',
         '08ビジネス',
         'Spring Must Haves Womens',
+        'Kindle Unlimited:読み放題 ジャンル',
+        'Kindleオーナー ライブラリー',
+        'Kindleマンガ 10冊購入で15%ポイント還元',
+        'Kindleマンガスタンプカード',
+        'Kindle本 まとめでお得秋25',
+        'Kindle本マンガフェス第2弾',
+        'Kindle電子書籍対象タイトル',
+        '[書籍] 200円以下以下タイトル',
+        'カドカワのKindle本・Kindleコミック',
+        '無料本（文学・評論）',
+        '２万円以上の書籍',
       ];
       invalidNames.forEach((name) => {
         expect(CategoryNormalizer.isValidCategoryName(name)).toBe(false);
