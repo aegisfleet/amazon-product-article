@@ -58,7 +58,7 @@ parents:
   PC周辺機器:
     name: PC周辺機器
     slug: pc-peripheral
-    productCount: 92
+    productCount: 93
     isVisible: true
     childrenWithCounts:
       - name: 3Dプリンタ本体
@@ -144,6 +144,8 @@ parents:
       - name: 無線・有線LANルーター
         productCount: 1
       - name: 無線・有線LAN中継器
+        productCount: 1
+      - name: 結束バンド
         productCount: 1
       - name: 超小型カメラ
         productCount: 0
@@ -295,6 +297,8 @@ parents:
         productCount: 1
       - name: ウェブカメラ
         productCount: 14
+      - name: エフェクター・プロセッサー
+        productCount: 0
       - name: エンクロージャ
         productCount: 1
       - name: エンタメ・オーディオ祭
@@ -866,7 +870,7 @@ parents:
   食品:
     name: 食品
     slug: food
-    productCount: 130
+    productCount: 131
     isVisible: true
     childrenWithCounts:
       - name: うどん
@@ -1024,6 +1028,8 @@ parents:
       - name: 冷凍豚肉惣菜・おかず
         productCount: 2
       - name: 冷凍魚
+        productCount: 1
+      - name: 冷凍麺・パスタ
         productCount: 1
       - name: 味噌
         productCount: 0
@@ -2766,7 +2772,7 @@ parents:
   本・書籍:
     name: 本・書籍
     slug: books
-    productCount: 44
+    productCount: 45
     isVisible: true
     childrenWithCounts:
       - name: IT
@@ -2791,6 +2797,8 @@ parents:
         productCount: 0
       - name: エントリーシート
         productCount: 0
+      - name: カドカワのKindle本・Kindleコミック
+        productCount: 1
       - name: コミック
         productCount: 1
       - name: コンピュータ・IT
