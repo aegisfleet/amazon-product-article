@@ -282,9 +282,10 @@ export class CategoryNormalizer {
       /^hpc/i,
       /^\d{2}\s*ビジネス/,
       /spring must haves/i,
-      /(?:kindle書籍|テスト|マッサージャーほか健康家電|[>＞]|amazon\s*global|コクヨ|beauty|パントリー|本日の|特選品|cml|ソニー|9999$)/i,
+      /(?:kindle|無料|[0-9０-９]+万円|円|テスト|マッサージャーほか健康家電|[>＞])/i,
+      /(?:amazon\s*global|コクヨ|beauty|パントリー|本日の|特選品|cml|ソニー|9999$)/i,
     ];
-
+ 
     if (invalidPatterns.some((pattern) => pattern.test(name))) {
       return false;
     }
