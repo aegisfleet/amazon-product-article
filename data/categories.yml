@@ -156,7 +156,7 @@ parents:
   スマートフォン:
     name: スマートフォン
     slug: smartphone
-    productCount: 192
+    productCount: 190
     isVisible: true
     childrenWithCounts:
       - name: AC式充電器
@@ -168,7 +168,7 @@ parents:
       - name: Fitbit
         productCount: 0
       - name: Kindle用アクセサリ
-        productCount: 3
+        productCount: 0
       - name: RCAケーブル
         productCount: 0
       - name: USBケーブル
@@ -232,7 +232,7 @@ parents:
       - name: タブレットバッグ
         productCount: 0
       - name: タブレット用保護フィルム
-        productCount: 2
+        productCount: 3
       - name: バンパー
         productCount: 0
       - name: ホールド
@@ -2777,30 +2777,12 @@ parents:
     childrenWithCounts:
       - name: IT
         productCount: 0
-      - name: Kindle Unlimited:読み放題 ジャンル
-        productCount: 0
-      - name: Kindleオーナー ライブラリー
-        productCount: 0
-      - name: Kindleマンガ 10冊購入で15%ポイント還元
-        productCount: 0
-      - name: Kindleマンガスタンプカード
-        productCount: 0
-      - name: Kindle本 まとめでお得秋25
-        productCount: 0
-      - name: Kindle本マンガフェス第2弾
-        productCount: 0
-      - name: Kindle電子書籍対象タイトル
-        productCount: 0
-      - name: '[書籍] 200円以下以下タイトル'
-        productCount: 0
       - name: アート・建築・デザイン
         productCount: 0
       - name: エントリーシート
         productCount: 0
-      - name: カドカワのKindle本・Kindleコミック
-        productCount: 1
       - name: コミック
-        productCount: 1
+        productCount: 2
       - name: コンピュータ・IT
         productCount: 1
       - name: システム管理・監査
@@ -2810,7 +2792,7 @@ parents:
       - name: データベース・ネットワーク関連本
         productCount: 0
       - name: ノンフィクション
-        productCount: 0
+        productCount: 1
       - name: ビジネスライフ
         productCount: 0
       - name: ビジネス・経済
@@ -2907,8 +2889,6 @@ parents:
         productCount: 0
       - name: 法律
         productCount: 0
-      - name: 無料本（文学・評論）
-        productCount: 0
       - name: 猫関連本
         productCount: 1
       - name: 生活の知恵
@@ -2939,8 +2919,6 @@ parents:
         productCount: 1
       - name: 音楽一般
         productCount: 0
-      - name: ２万円以上の書籍
-        productCount: 1
   その他:
     name: その他
     slug: others
