@@ -89,6 +89,10 @@ describe('CategoryNormalizer', () => {
         'カドカワのKindle本・Kindleコミック',
         '無料本（文学・評論）',
         '２万円以上の書籍',
+        'ポイント還元本',
+        'ポイント還元本対象商品',
+        '書籍タイトル',
+        '[書籍] 読み放題タイトル（ポイント還元本）',
       ];
       invalidNames.forEach((name) => {
         expect(CategoryNormalizer.isValidCategoryName(name)).toBe(false);
