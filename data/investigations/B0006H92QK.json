@@ -59,58 +59,46 @@
         "credibility": "Medium"
       }
     ],
-    "lastInvestigated": "2026-01-21",
+    "lastInvestigated": "2026-03-12",
     "competitiveAnalysis": [
       {
-        "name": "Marantz Professional MPM-1000",
-        "asin": "B01C05AL4C",
-        "priceComparison": "AT2020の半額以下（約6,000円）で購入可能",
+        "name": "FIFINE K669C",
+        "asin": "B0C5XHQXMF",
+        "priceComparison": "AT2020の半額程度（約6,700円）",
         "featureComparison": [
-          "ショックマウントとXLRケーブルが付属しておりコスパが高い",
-          "音質はAT2020に比べるとやや高域に癖がある"
+          "マイクスタンドやマイクケーブルなど必要なものが一式付属する",
+          "16mmサイズのダイヤフラムを搭載し、高感度"
         ],
         "differentiators": [
-          "付属品の充実度と圧倒的な安さ",
-          "AT2020の方が音の解像度とフラットさで勝る"
+          "圧倒的な安さと付属品の充実度によるコストパフォーマンス",
+          "AT2020の方が音質の信頼性や耐久性で実績がある"
         ]
       },
       {
-        "name": "Audio-Technica AT2035",
-        "asin": "B002T45X1G",
-        "priceComparison": "AT2020の約1.7倍（約23,000円）",
+        "name": "MAONO AU-PM320S",
+        "asin": "B088FH47ZS",
+        "priceComparison": "AT2020より安価（約8,900円）",
         "featureComparison": [
-          "専用ショックマウントが付属",
-          "ローカットスイッチとパッドスイッチ（-10dB）を搭載"
+          "アームスタンド、XLRケーブル、ショックマウント、ポップガードなどが全て付属",
+          "16mmのダイアフラム搭載"
         ],
         "differentiators": [
-          "ノイズ軽減機能と付属品の充実",
-          "予算に余裕があるならAT2035の方が長期的に使いやすい"
+          "すぐに配信や録音を始められる充実のフルセット",
+          "AT2020の方がマイク本体の性能と音質への評価が安定している"
         ]
       },
       {
-        "name": "Sony ECM-PCV80U",
-        "asin": "B005M2HDA6",
-        "priceComparison": "非常に安価（約3,500円）",
+        "name": "Audio-Technica AT4040",
+        "asin": "B0002D0BQ8",
+        "priceComparison": "AT2020の3倍（約39,600円）",
         "featureComparison": [
-          "PCに直接接続できるUSBオーディオボックス付属",
-          "エレクトレットコンデンサー型で、音質はAT2020に遠く及ばない"
+          "1インチ大口径ダイアフラムを搭載し、より高音質",
+          "80Hzローカットフィルタースイッチと10dBパッドスイッチを装備",
+          "専用ショックマウントが付属"
         ],
         "differentiators": [
-          "オーディオインターフェース不要の手軽さ",
-          "音質を求めるならAT2020一択"
-        ]
-      },
-      {
-        "name": "AKG P120",
-        "asin": "B00M9CUOKI",
-        "priceComparison": "同価格帯（約10,000〜12,000円）",
-        "featureComparison": [
-          "ローカットとパッドスイッチを搭載している点がAT2020より有利",
-          "音質はAKGらしいきらびやかさがある"
-        ],
-        "differentiators": [
-          "スイッチ類の有無（P120はあり、AT2020はなし）",
-          "AT2020の方がフラットで汎用性が高いとされることが多い"
+          "上位モデルならではの圧倒的な解像度と高機能",
+          "予算を抑えたい初心者にはAT2020、本格的なプロ品質を求めるならAT4040"
         ]
       }
     ],
@@ -144,10 +132,19 @@
       "phantomPower": "48V DC",
       "connector": "3ピンXLRM",
       "dimensions": {
-        "length": "162.0mm",
-        "diameter": "52.0mm",
+        "height": "162.0mm",
+        "width": "52.0mm",
+        "depth": "52.0mm",
         "weight": "345g"
-      }
+      },
+      "connectivity": [
+        "XLR"
+      ],
+      "power": "ファンタム電源 48V",
+      "other": [
+        "専用スタンドマウント付属",
+        "マイクポーチ付属"
+      ]
     }
   }
 }
