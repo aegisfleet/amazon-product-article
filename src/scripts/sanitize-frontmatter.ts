@@ -18,20 +18,76 @@ function escapeQuotesInYamlValue(value: string): string {
   return value;
 }
 
-/**
- * Sanitize a single frontmatter line
- */
 function sanitizeFrontmatterLine(line: string): string {
-  // Match key: "value" pattern
-  const match = line.match(/^(\s*\w+:\s*)(".*)$/);
-  if (match) {
-    // Explicitly handle potential undefined checks for array access
-    const prefix = match[1];
-    const value = match[2];
-    if (prefix !== undefined && value !== undefined) {
-      return prefix + escapeQuotesInYamlValue(value);
+  // Match key: "value" pattern, or list items: - "value"
+  // 1. We match the start of the line up to the first double quote.
+  // 2. We match the quoted string itself.
+  // 3. We match any trailing characters (like `]`, `,`, etc).
+  
+  // Array items: `  - "value"` or `images: ["url1", "url2"]`
+  // We can use a regex replacement to find any `"..."` and sanitize the inside,
+  // but we must be careful not to break valid JSON/YAML.
+  // A safer approach: find all substrings that start with `"` and end with `"`,
+  // and manually escape inner quotes.
+  
+  // Let's use a regex that matches quoted strings where there might be unescaped quotes inside.
+  // This is tricky because `"` is both the delimiter and the character we want to escape.
+  // However, we know that frontmatter usually looks like `key: "val"`, `- "val"`, or `["val", "val"]`.
+  
+  // Here is a simpler approach that specifically targets the `key: "value"` pattern 
+  // and the array pattern `images: ["...", "..."]` that broke Hugo earlier.
+  
+  // Simple key: "value" match (allowing trailing characters or comments)
+  const kvMatch = line.match(/^(\s*-?\s*\w*:\s*)(".*)(".*)$/); // This might be too complex for simple regex.
+  
+  // Let's instead just use the existing regex for simple `key: "value"`
+  const simpleMatch = line.match(/^(\s*-?\s*\w*:\s*)(".*)$/);
+  if (simpleMatch) {
+    const prefix = simpleMatch[1];
+    let value = simpleMatch[2];
+    
+    if (prefix && value) {
+        // If it looks like an array, e.g. `["val1", "val2"]`
+        if (value.startsWith('["') && value.endsWith('"]')) {
+           // We'll roughly assume no internal escaped `\"]` for now, just split by `, ` and fix each
+           const inner = value.slice(1, -1);
+           const parts = inner.split(/,\s*/);
+           const fixedParts = parts.map(p => {
+               if(p.startsWith('"') && p.endsWith('"') && p.length >= 2) {
+                   return escapeQuotesInYamlValue(p);
+               }
+               return p;
+           });
+           return `${prefix}[${fixedParts.join(', ')}]`;
+        }
+        
+        // Check if there's trailing brace or nothing
+        if (value.startsWith('"')) {
+             // Find the last quote
+             const lastQuoteIdx = value.lastIndexOf('"');
+             if (lastQuoteIdx > 0) {
+                 const actualValue = value.substring(0, lastQuoteIdx + 1);
+                 const trailing = value.substring(lastQuoteIdx + 1);
+                 return prefix + escapeQuotesInYamlValue(actualValue) + trailing;
+             }
+        }
     }
   }
+  
+  // Fallback for list items like `  - "value"`
+  const listMatch = line.match(/^(\s*-\s*)(".*)$/);
+  if (listMatch && listMatch[1] && listMatch[2]) {
+      const prefix = listMatch[1];
+      const value = listMatch[2];
+      
+      const lastQuoteIdx = value.lastIndexOf('"');
+      if (lastQuoteIdx > 0) {
+            const actualValue = value.substring(0, lastQuoteIdx + 1);
+            const trailing = value.substring(lastQuoteIdx + 1);
+            return prefix + escapeQuotesInYamlValue(actualValue) + trailing;
+      }
+  }
+
   return line;
 }
 
