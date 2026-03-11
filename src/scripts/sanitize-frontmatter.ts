@@ -12,80 +12,58 @@ function escapeQuotesInYamlValue(value: string): string {
   if (value.startsWith('"') && value.endsWith('"')) {
     const inner = value.slice(1, -1);
     // Escape any unescaped double quotes inside
-    const escaped = inner.replace(/(?<!\\)"/g, '\\"');
+    const escaped = inner.replaceAll(/(?<!\\)"/g, String.raw`\"`);
     return `"${escaped}"`;
   }
   return value;
 }
 
-function sanitizeFrontmatterLine(line: string): string {
-  // Match key: "value" pattern, or list items: - "value"
-  // 1. We match the start of the line up to the first double quote.
-  // 2. We match the quoted string itself.
-  // 3. We match any trailing characters (like `]`, `,`, etc).
-  
-  // Array items: `  - "value"` or `images: ["url1", "url2"]`
-  // We can use a regex replacement to find any `"..."` and sanitize the inside,
-  // but we must be careful not to break valid JSON/YAML.
-  // A safer approach: find all substrings that start with `"` and end with `"`,
-  // and manually escape inner quotes.
-  
-  // Let's use a regex that matches quoted strings where there might be unescaped quotes inside.
-  // This is tricky because `"` is both the delimiter and the character we want to escape.
-  // However, we know that frontmatter usually looks like `key: "val"`, `- "val"`, or `["val", "val"]`.
-  
-  // Here is a simpler approach that specifically targets the `key: "value"` pattern 
-  // and the array pattern `images: ["...", "..."]` that broke Hugo earlier.
-  
-  // Simple key: "value" match (allowing trailing characters or comments)
-  const kvMatch = line.match(/^(\s*-?\s*\w*:\s*)(".*)(".*)$/); // This might be too complex for simple regex.
-  
-  // Let's instead just use the existing regex for simple `key: "value"`
-  const simpleMatch = line.match(/^(\s*-?\s*\w*:\s*)(".*)$/);
-  if (simpleMatch) {
-    const prefix = simpleMatch[1];
-    let value = simpleMatch[2];
-    
-    if (prefix && value) {
-        // If it looks like an array, e.g. `["val1", "val2"]`
-        if (value.startsWith('["') && value.endsWith('"]')) {
-           // We'll roughly assume no internal escaped `\"]` for now, just split by `, ` and fix each
-           const inner = value.slice(1, -1);
-           const parts = inner.split(/,\s*/);
-           const fixedParts = parts.map(p => {
-               if(p.startsWith('"') && p.endsWith('"') && p.length >= 2) {
-                   return escapeQuotesInYamlValue(p);
-               }
-               return p;
-           });
-           return `${prefix}[${fixedParts.join(', ')}]`;
-        }
-        
-        // Check if there's trailing brace or nothing
-        if (value.startsWith('"')) {
-             // Find the last quote
-             const lastQuoteIdx = value.lastIndexOf('"');
-             if (lastQuoteIdx > 0) {
-                 const actualValue = value.substring(0, lastQuoteIdx + 1);
-                 const trailing = value.substring(lastQuoteIdx + 1);
-                 return prefix + escapeQuotesInYamlValue(actualValue) + trailing;
-             }
-        }
+function processArrayValue(prefix: string, value: string): string | null {
+  if (!value.startsWith('["') || !value.endsWith('"]')) return null;
+  const inner = value.slice(1, -1);
+  const parts = inner.split(/,\s*/);
+  const fixedParts = parts.map(p => {
+    if(p.startsWith('"') && p.endsWith('"') && p.length >= 2) {
+      return escapeQuotesInYamlValue(p);
     }
+    return p;
+  });
+  return `${prefix}[${fixedParts.join(', ')}]`;
+}
+
+function processStringValue(prefix: string, value: string): string | null {
+  if (!value.startsWith('"')) return null;
+  const lastQuoteIdx = value.lastIndexOf('"');
+  if (lastQuoteIdx > 0) {
+    const actualValue = value.substring(0, lastQuoteIdx + 1);
+    const trailing = value.substring(lastQuoteIdx + 1);
+    return prefix + escapeQuotesInYamlValue(actualValue) + trailing;
+  }
+  return null;
+}
+
+function sanitizeFrontmatterLine(line: string): string {
+  // Simple key: "value" match (allowing trailing characters or comments)
+  const simpleMatch = /^(\s*-?\s*\w*:\s*)(".*)$/.exec(line);
+  const prefix = simpleMatch?.[1];
+  const value = simpleMatch?.[2];
+  
+  if (prefix && value) {
+    const arrayResult = processArrayValue(prefix, value);
+    if (arrayResult) return arrayResult;
+    
+    const stringResult = processStringValue(prefix, value);
+    if (stringResult) return stringResult;
   }
   
   // Fallback for list items like `  - "value"`
-  const listMatch = line.match(/^(\s*-\s*)(".*)$/);
-  if (listMatch && listMatch[1] && listMatch[2]) {
-      const prefix = listMatch[1];
-      const value = listMatch[2];
-      
-      const lastQuoteIdx = value.lastIndexOf('"');
-      if (lastQuoteIdx > 0) {
-            const actualValue = value.substring(0, lastQuoteIdx + 1);
-            const trailing = value.substring(lastQuoteIdx + 1);
-            return prefix + escapeQuotesInYamlValue(actualValue) + trailing;
-      }
+  const listMatch = /^(\s*-\s*)(".*)$/.exec(line);
+  const listPrefix = listMatch?.[1];
+  const listValue = listMatch?.[2];
+  
+  if (listPrefix && listValue) {
+    const stringResult = processStringValue(listPrefix, listValue);
+    if (stringResult) return stringResult;
   }
 
   return line;
@@ -102,8 +80,7 @@ function processFile(filePath: string): boolean {
   const lines = content.split('\n');
 
   // Check if file starts with frontmatter
-  const firstLine = lines[0];
-  if (firstLine === undefined || firstLine.trim() !== '---') {
+  if (lines[0]?.trim() !== '---') {
     return false;
   }
 
@@ -111,7 +88,7 @@ function processFile(filePath: string): boolean {
   let endIndex = -1;
   for (let i = 1; i < lines.length; i++) {
     const line = lines[i];
-    if (line !== undefined && line.trim() === '---') {
+    if (line?.trim() === '---') {
       endIndex = i;
       break;
     }
