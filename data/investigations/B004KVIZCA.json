@@ -66,12 +66,26 @@
         "credibility": "medium"
       }
     ],
-    "lastInvestigated": "2026-01-21",
+    "lastInvestigated": "2026-03-12",
     "competitiveAnalysis": [
+      {
+        "name": "FIFINE K669B",
+        "asin": "B075PJ7V3V",
+        "priceComparison": "約4,900円と、ECM-PC60の2倍以上の価格帯。",
+        "featureComparison": [
+          "単一指向性（環境音を拾いにくい）",
+          "USB接続プラグ＆プレイ",
+          "本体に音量調節つまみ搭載"
+        ],
+        "differentiators": [
+          "USB接続と単一指向性でより本格的なPC録音環境が構築可能",
+          "ECM-PC60のようなピンマイクとしての機動性はない"
+        ]
+      },
       {
         "name": "エレコム HS-MC06BK",
         "asin": "B01HGGWB7K",
-        "priceComparison": "約700円前後と、ECM-PC60の1/3以下の価格で非常に安価。",
+        "priceComparison": "約680円前後と、ECM-PC60の1/3以下の価格で非常に安価。",
         "featureComparison": [
           "クリップ式のみ（スタンドなし）",
           "プラスチック製ボディ",
@@ -94,20 +108,6 @@
         "differentiators": [
           "スマホやタブレットですぐに使える利便性",
           "ECM-PC60のようなスタンド利用は不可"
-        ]
-      },
-      {
-        "name": "サンワサプライ MM-MC32",
-        "asin": "B01M3YWBYL",
-        "priceComparison": "約2,900円前後と、ECM-PC60よりやや高価。",
-        "featureComparison": [
-          "スタンド専用型",
-          "フレキシブルアーム採用",
-          "ミュートスイッチ付き"
-        ],
-        "differentiators": [
-          "ミュート機能がある点が優位",
-          "ピンマイクとしては使えない（据え置き専用）"
         ]
       }
     ],
@@ -142,7 +142,7 @@
         "mic": "約8×19mm (最大径×全長)",
         "stand": "約50×100mm (ベース径×高さ)"
       },
-      "weight": "約12g (本体のみ), 約40g (スタンド含む)",
+      "weight": "約12g (本体・コード含む), 約40g (本体・コード・スタンド含む)",
       "material": "真鍮 (マイクボディ)",
       "power": "プラグインパワー方式",
       "accessories": ["ホルダークリップ", "小型スタンド", "延長コード"]
