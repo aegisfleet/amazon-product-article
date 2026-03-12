@@ -540,7 +540,7 @@ parents:
   ホーム・キッチン:
     name: ホーム・キッチン
     slug: home-kitchen
-    productCount: 182
+    productCount: 183
     isVisible: true
     childrenWithCounts:
       - name: おしゃれ着洗剤
@@ -559,6 +559,10 @@ parents:
         productCount: 0
       - name: はたき・ほこり取り
         productCount: 1
+      - name: まな板
+        productCount: 1
+      - name: まな板・カッティングボード
+        productCount: 0
       - name: やかん・ケトル
         productCount: 2
       - name: アイスクリームメーカー
@@ -911,6 +915,8 @@ parents:
         productCount: 1
       - name: ようかん
         productCount: 1
+      - name: インスタントごはん
+        productCount: 0
       - name: インスタント・スティック
         productCount: 3
       - name: ウーロン茶
@@ -1392,7 +1398,7 @@ parents:
   コスメ・スキンケア:
     name: コスメ・スキンケア
     slug: cosmetics-skincare
-    productCount: 155
+    productCount: 157
     isVisible: true
     childrenWithCounts:
       - name: Skincare
@@ -1486,7 +1492,7 @@ parents:
       - name: パントリー スキンケア・ボディケア
         productCount: 0
       - name: ビューティー
-        productCount: 3
+        productCount: 5
       - name: ファンデーション
         productCount: 0
       - name: フェイスオイル
@@ -1582,7 +1588,7 @@ parents:
   ヘアケア・理美容家電:
     name: ヘアケア・理美容家電
     slug: haircare-appliances
-    productCount: 144
+    productCount: 145
     isVisible: true
     childrenWithCounts:
       - name: Panasonic-HA-HairDryers
@@ -1651,6 +1657,8 @@ parents:
         productCount: 0
       - name: 回転式シェーバー
         productCount: 0
+      - name: 大人用ハミガキ粉
+        productCount: 1
       - name: 大人用歯ブラシ
         productCount: 1
       - name: 替えブラシ
@@ -1975,6 +1983,8 @@ parents:
         productCount: 0
       - name: シューズケース
         productCount: 1
+      - name: ショルダーバッグ
+        productCount: 0
       - name: ストッキング
         productCount: 1
       - name: スニーカー
@@ -2177,6 +2187,8 @@ parents:
         productCount: 0
       - name: ベビー家具
         productCount: 1
+      - name: ベビー用ハミガキ粉
+        productCount: 0
       - name: ベビー＆マタニティ
         productCount: 0
       - name: マタニティ・ママ用品
@@ -2448,7 +2460,7 @@ parents:
   アウトドア・車・DIY:
     name: アウトドア・車・DIY
     slug: outdoor-car-diy
-    productCount: 124
+    productCount: 126
     isVisible: true
     childrenWithCounts:
       - name: LEDランタン
@@ -2526,6 +2538,8 @@ parents:
       - name: チェア
         productCount: 6
       - name: チェーン
+        productCount: 1
+      - name: ツールチェスト
         productCount: 1
       - name: ツールボックス
         productCount: 1
@@ -2606,6 +2620,8 @@ parents:
       - name: ポップアップテント
         productCount: 0
       - name: ポータブルナビ・PND
+        productCount: 1
+      - name: ポータブル電源・蓄電池
         productCount: 1
       - name: ポール
         productCount: 1
@@ -2930,7 +2946,7 @@ parents:
   その他:
     name: その他
     slug: others
-    productCount: 5
+    productCount: 3
     isVisible: true
     childrenWithCounts:
       - name: 08ビジネス
