@@ -56,7 +56,7 @@
         "credibility": "medium"
       }
     ],
-    "lastInvestigated": "2026-01-21",
+    "lastInvestigated": "2026-03-13",
     "competitiveAnalysis": [
       {
         "name": "TP-Link Tapo C200",
@@ -115,20 +115,31 @@
         "セキュリティ面でクラウド保存（有料）を強く推奨されるUI"
       ],
       "score": 85,
-      "scoreRationale": "[基本点: 70]\n[加点: +9] (300万画素で3000円台前半という優れたコストパフォーマンス)\n[加点: +6] (360度首振り、暗視、双方向音声、Alexa対応と機能充実)\n[加点: +3] (長期間の販売実績と一定のユーザー満足度)\n[加点: +2] (シンプルで威圧感のないデザイン)\n[減点: -5] (Wi-Fi 2.4GHz限定の制約と、中華系サーバー利用への潜在的な懸念)\n[合計: 85]"
+      "scoreRationale": "[基本点: 70]\n[減点: -5] (安全性・信頼性: Wi-Fi 2.4GHz限定の制約と、中華系サーバー利用への潜在的な懸念)\n[加点: +10] (コストパフォーマンス: 300万画素で3000円台前半という非常に優れたコストパフォーマンス)\n[加点: +6] (性能・効果: 360度首振り、暗視、双方向音声、Alexa対応と機能充実)\n[加点: +2] (品質・デザイン: シンプルで威圧感のないデザイン)\n[加点: +2] (ユーザー満足度: 長期間の販売実績と一定のユーザー満足度)\n[合計: 85]"
     },
     "technicalSpecs": {
-      "dimensions": { "width": "72mm", "depth": "72mm", "height": "101mm" },
+      "dimensions": {
+        "width": "72mm",
+        "depth": "72mm",
+        "height": "101mm"
+      },
       "resolution": "3MP (2304x1296)",
       "viewingAngle": "105°",
       "panTilt": "水平320° / 垂直80°",
       "audio": "双方向音声",
       "nightVision": "赤外線LED (940nm, 最大5m)",
       "storage": "MicroSDカード (最大128GB), クラウド (有料)",
-      "connectivity": ["Wi-Fi (2.4GHzのみ)", "RTSP対応"],
+      "connectivity": [
+        "Wi-Fi (2.4GHzのみ)",
+        "RTSP対応"
+      ],
       "power": "USB給電",
       "app": "Wansview Cloud App",
-      "other": ["Alexa対応", "動体検知", "4倍デジタルズーム"]
+      "other": [
+        "Alexa対応",
+        "動体検知",
+        "4倍デジタルズーム"
+      ]
     }
   }
 }
