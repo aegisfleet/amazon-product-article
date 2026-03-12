@@ -53,12 +53,12 @@
         "credibility": "高"
       }
     ],
-    "lastInvestigated": "2026-01-21",
+    "lastInvestigated": "2026-03-13",
     "competitiveAnalysis": [
       {
         "name": "TP-Link Tapo C202",
         "asin": "B0D46SH9J6",
-        "priceComparison": "約3,880円（KJ-182より800円程度高い）",
+        "priceComparison": "約4,110円（KJ-182より1,000円程度高い）",
         "featureComparison": [
           "有線LANポート搭載で接続が安定",
           "3年保証が付帯",
@@ -72,7 +72,7 @@
       {
         "name": "Ring Indoor Cam (第2世代)",
         "asin": "B0CG2VN86V",
-        "priceComparison": "約4,980円〜（セール時変動あり、定価は高い）",
+        "priceComparison": "約4,980円〜（KJ-182より高価）",
         "featureComparison": [
           "Amazon Alexaデバイス（Echo Show等）との強力な連携",
           "プライバシーカバー付き"
@@ -84,8 +84,8 @@
       },
       {
         "name": "TP-Link Tapo C200",
-        "asin": "B082X254N6",
-        "priceComparison": "約3,600円（KJ-182より少し高い）",
+        "asin": "B07YG7RNF2",
+        "priceComparison": "約3,980円（KJ-182より少し高い）",
         "featureComparison": [
           "世界的にシェアの高い定番エントリーモデル",
           "最大128GBのSDカード対応（KJ-182と同じ）"
@@ -113,24 +113,25 @@
         "防水機能はないため屋外では使用できない"
       ],
       "score": 80,
-      "scoreRationale": "[基本点: 70]\n[加点: +10] (3000円台前半という圧倒的な低価格で首振りFHDを実現)\n[加点: +5] (国内メーカーのカシムラ製でサポートへの期待値が高い)\n[減点: -5] (ACアダプタ別売は購入後のトラブルになりやすい)\n[合計: 80]"
+      "scoreRationale": "[基本点: 70]\n[加点: +10] (3000円台という圧倒的な低価格で首振りFHDと基本機能を網羅した高コスパ)\n[加点: +5] (国内メーカーのカシムラ製でサポートやアプリの日本語対応に安心感がある)\n[減点: -5] (ACアダプタが別売であり、購入直後に使えないトラブルになりやすい)\n[合計: 80]"
     },
     "technicalSpecs": {
-      "resolution": "FHD (1920x1080) 200万画素",
-      "fieldOfView": "水平360° / 垂直270° (可動域: 水平355° / 垂直108°)",
-      "nightVision": "赤外線LED (最大約9m)",
-      "audio": "双方向通話対応 (マイク・スピーカー内蔵)",
-      "storage": "microSDカード (最大128GB, 別売)",
-      "connectivity": "Wi-Fi 2.4GHz (IEEE802.11b/g/n)",
-      "power": "DC 5V/1A microUSB (ケーブル付属, アダプタ別売)",
       "dimensions": {
         "width": "71mm",
         "height": "112mm",
         "depth": "71mm",
         "weight": "190g"
       },
-      "appSupport": "iOS 13以上 / Android 8.0以上",
-      "other": ["動体検知", "マルチ画面対応(最大4台)", "工事不要"]
+      "power": "DC 5V/1A microUSB (ケーブル付属, アダプタ別売)",
+      "capacity": "microSDカード (最大128GB, 別売)",
+      "その他機能": [
+        "FHD (1920x1080) 200万画素",
+        "可動域: 水平355° / 垂直108°",
+        "赤外線暗視モード",
+        "双方向通話対応",
+        "動体検知",
+        "Wi-Fi 2.4GHz (IEEE802.11b/g/n) 対応"
+      ]
     }
   }
 }
