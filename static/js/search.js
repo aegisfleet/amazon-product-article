@@ -102,10 +102,131 @@ document.addEventListener('DOMContentLoaded', function () {
         }
 
         const handleSearch = debounce((query) => {
-            const results = fuse.search(query);
+            const results = searchWithRerank(query);
             displayResults(results);
         }, 300);
 
+
+        function searchWithRerank(query) {
+            return rerankResults(fuse.search(query), query);
+        }
+
+        function rerankResults(results, query) {
+            if (!Array.isArray(results) || results.length === 0) return [];
+
+            const queryLength = query.trim().length;
+            const queryTerms = query.trim().split(/\s+/).filter(Boolean).length;
+            const intentStrength = Math.min(1, Math.max(0, ((queryLength - 2) / 10) + ((queryTerms - 1) * 0.08)));
+
+            const fuseScores = results.map(result => Number.isFinite(result.score) ? result.score : 1);
+            const minFuseScore = Math.min(...fuseScores);
+            const maxFuseScore = Math.max(...fuseScores);
+            const fuseScoreRange = maxFuseScore - minFuseScore;
+
+            const now = Date.now();
+            const dayMs = 24 * 60 * 60 * 1000;
+            const queryBudget = parseBudgetFromQuery(query);
+
+            const getNormalizedFuseScore = (rawFuseScore) => {
+                if (!Number.isFinite(rawFuseScore)) return 0;
+                if (fuseScoreRange === 0) return 1;
+                const normalized = (rawFuseScore - minFuseScore) / fuseScoreRange;
+                return 1 - normalized;
+            };
+
+            const getQualityScore = (item) => {
+                const quality = Number.parseFloat(item.score);
+                if (!Number.isFinite(quality)) return 0;
+                return Math.min(1, Math.max(0, quality / 100));
+            };
+
+            const getPriceScore = (item) => {
+                const numericPrice = Number.parseFloat(item.price_value);
+
+                if (queryBudget) {
+                    if (!Number.isFinite(numericPrice) || numericPrice <= 0) return 0;
+
+                    if (queryBudget.min && numericPrice < queryBudget.min) return 0;
+                    if (queryBudget.max && numericPrice > queryBudget.max) return 0;
+
+                    const center = queryBudget.max && queryBudget.min
+                        ? (queryBudget.min + queryBudget.max) / 2
+                        : (queryBudget.max || queryBudget.min || numericPrice);
+                    const distance = Math.abs(numericPrice - center);
+                    const tolerance = Math.max(center * 0.5, 1000);
+                    return Math.max(0, 1 - (distance / tolerance));
+                }
+
+                if (Number.isFinite(numericPrice) && numericPrice > 0) return 0.7;
+                return item.price ? 0.5 : 0;
+            };
+
+            const getFreshnessScore = (item) => {
+                if (!item.last_investigated) return 0;
+                const investigatedAt = Date.parse(item.last_investigated);
+                if (!Number.isFinite(investigatedAt)) return 0;
+                const ageDays = Math.max(0, (now - investigatedAt) / dayMs);
+                return Math.exp(-ageDays / 180);
+            };
+
+            const weights = {
+                text: 0.75 - (0.30 * intentStrength),
+                quality: 0.15 + (0.10 * intentStrength),
+                price: 0.05 + (0.10 * intentStrength),
+                freshness: 0.05 + (0.10 * intentStrength)
+            };
+
+            return results
+                .map(result => {
+                    const item = result.item || {};
+                    const textScore = getNormalizedFuseScore(result.score);
+                    const qualityScore = getQualityScore(item);
+                    const priceScore = getPriceScore(item);
+                    const freshnessScore = getFreshnessScore(item);
+
+                    const rerankScore =
+                        (textScore * weights.text) +
+                        (qualityScore * weights.quality) +
+                        (priceScore * weights.price) +
+                        (freshnessScore * weights.freshness);
+
+                    return {
+                        ...result,
+                        rerankScore
+                    };
+                })
+                .sort((a, b) => b.rerankScore - a.rerankScore);
+        }
+
+        function parseBudgetFromQuery(query) {
+            const normalizedQuery = query.replace(/\s+/g, '');
+            const rangeMatch = normalizedQuery.match(/(\d+(?:\.\d+)?)(万|千)?円?[~〜-](\d+(?:\.\d+)?)(万|千)?円?/);
+            if (rangeMatch) {
+                const min = toYen(rangeMatch[1], rangeMatch[2]);
+                const max = toYen(rangeMatch[3], rangeMatch[4]);
+                return { min: Math.min(min, max), max: Math.max(min, max) };
+            }
+
+            const upperMatch = normalizedQuery.match(/(\d+(?:\.\d+)?)(万|千)?円?(以下|未満|まで)/);
+            if (upperMatch) {
+                return { max: toYen(upperMatch[1], upperMatch[2]) };
+            }
+
+            const lowerMatch = normalizedQuery.match(/(\d+(?:\.\d+)?)(万|千)?円?(以上|超)/);
+            if (lowerMatch) {
+                return { min: toYen(lowerMatch[1], lowerMatch[2]) };
+            }
+
+            return null;
+        }
+
+        function toYen(value, unit) {
+            const num = Number.parseFloat(value);
+            if (!Number.isFinite(num)) return 0;
+            if (unit === '万') return num * 10000;
+            if (unit === '千') return num * 1000;
+            return num;
+        }
         // Event Listeners
         searchInput.addEventListener('input', (e) => {
             if (!fuse) return;
@@ -265,7 +386,7 @@ document.addEventListener('DOMContentLoaded', function () {
             if (query.trim().length < 2) {
                 displaySearchTips();
             } else if (fuse) {
-                displayResults(fuse.search(query));
+                displayResults(searchWithRerank(query));
             }
 
             triggerScroll();
@@ -287,7 +408,7 @@ document.addEventListener('DOMContentLoaded', function () {
             if (query.trim().length < 2) {
                 displaySearchTips();
             } else if (fuse) {
-                displayResults(fuse.search(query));
+                displayResults(searchWithRerank(query));
             }
         });
 
