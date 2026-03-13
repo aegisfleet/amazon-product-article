@@ -130,14 +130,20 @@
 
     <div class="filter-section" id="filter-section">
         <div class="filter-header">
-            <span class="filter-toggle" id="filter-toggle">
-                <span class="filter-icon">🔍</span>
+            <button type="button" class="filter-toggle" id="filter-toggle" aria-controls="filter-content" aria-expanded="true">
+                <span class="filter-icon" aria-hidden="true">🔍</span>
                 <span>フィルター</span>
-                <span class="filter-arrow">▼</span>
-            </span>
+                <span class="filter-arrow" aria-hidden="true">▼</span>
+            </button>
             <button type="button" class="filter-reset-btn" id="filter-reset">リセット</button>
         </div>
         <div class="filter-content" id="filter-content">
+        <div class="filter-presets" aria-label="おすすめプリセット">
+            <button type="button" class="filter-preset-btn" data-preset="cost-performance" aria-pressed="false">コスパ重視</button>
+            <button type="button" class="filter-preset-btn" data-preset="high-performance" aria-pressed="false">高性能</button>
+            <button type="button" class="filter-preset-btn" data-preset="beginner" aria-pressed="false">入門向け</button>
+            <button type="button" class="filter-preset-btn" data-preset="lightweight" aria-pressed="false">軽量・持ち運び</button>
+        </div>
             {{/* Category Filter */}}
             <div class="filter-group">
                 <h4 class="filter-group-title">カテゴリ</h4>
@@ -326,6 +332,14 @@
         {{ if in $specStr "gps" }}{{ $specs = $specs | append "gps" }}{{ end }}
         {{ end }}
         {{ end }}
+        {{ with .weight }}
+        {{ $weightLower := . | lower }}
+        {{ if or (in $weightLower "軽") (in $weightLower "light") }}{{ $specs = $specs | append "lightweight" }}{{ end }}
+        {{ if not (in $weightLower "kg") }}
+        {{ $weightValue := replaceRE "[^0-9]" "" $weightLower | int }}
+        {{ if and (gt $weightValue 0) (le $weightValue 200) }}{{ $specs = $specs | append "lightweight" }}{{ end }}
+        {{ end }}
+        {{ end }}
         {{ end }}
         {{ $specsString := delimit ($specs | uniq) "," }}
 
@@ -435,6 +449,12 @@
         gap: var(--spacing-sm);
         font-weight: 600;
         color: var(--color-text-primary);
+        background: transparent;
+        border: none;
+        padding: 0;
+        font-family: inherit;
+        font-size: inherit;
+        cursor: pointer;
     }
 
     .filter-icon {
@@ -468,6 +488,35 @@
     .filter-reset-btn:hover {
         background: var(--color-bg-secondary);
         color: var(--color-text-primary);
+    }
+
+    .filter-presets {
+        grid-column: 1 / -1;
+        display: flex;
+        flex-wrap: wrap;
+        gap: var(--spacing-xs);
+        align-items: center;
+    }
+
+    .filter-preset-btn {
+        border: 1px solid var(--color-border);
+        background: var(--color-bg-card);
+        color: var(--color-text-primary);
+        border-radius: 999px;
+        padding: 0.375rem 0.75rem;
+        font-size: 0.8125rem;
+        cursor: pointer;
+        transition: all 0.2s ease;
+    }
+
+    .filter-preset-btn:hover {
+        background: var(--color-bg-secondary);
+    }
+
+    .filter-preset-btn.is-active {
+        background: var(--color-primary);
+        border-color: var(--color-primary);
+        color: #fff;
     }
 
     .filter-content {

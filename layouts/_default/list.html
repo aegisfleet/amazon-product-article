@@ -19,6 +19,12 @@
             <button type="button" class="filter-reset-btn" id="filter-reset">リセット</button>
         </div>
         <div class="filter-content" id="filter-content">
+        <div class="filter-presets" aria-label="おすすめプリセット">
+            <button type="button" class="filter-preset-btn" data-preset="cost-performance" aria-pressed="false">コスパ重視</button>
+            <button type="button" class="filter-preset-btn" data-preset="high-performance" aria-pressed="false">高性能</button>
+            <button type="button" class="filter-preset-btn" data-preset="beginner" aria-pressed="false">入門向け</button>
+            <button type="button" class="filter-preset-btn" data-preset="lightweight" aria-pressed="false">軽量・持ち運び</button>
+        </div>
             {{/* Price Filter */}}
             <div class="filter-group">
                 <h4 class="filter-group-title">価格帯</h4>
@@ -109,9 +115,53 @@
         {{ end }}
         {{ $dateRaw := .Date.Unix }}
         {{ with .Params.last_investigated }}{{ $dateRaw = (time .).Unix }}{{ end }}
+        {{ $specTokens := slice }}
+        {{ with .Params.specs }}
+        {{ with .communication }}
+        {{ if reflect.IsSlice . }}
+        {{ range . }}
+        {{ $connStr := . | lower }}
+        {{ if in $connStr "5g" }}{{ $specTokens = $specTokens | append "5g" }}{{ end }}
+        {{ if in $connStr "gps" }}{{ $specTokens = $specTokens | append "gps" }}{{ end }}
+        {{ if or (in $connStr "felica") (in $connStr "nfc") }}{{ $specTokens = $specTokens | append "felica" }}{{ end }}
+        {{ end }}
+        {{ else }}
+        {{ $connStr := . | lower }}
+        {{ if in $connStr "5g" }}{{ $specTokens = $specTokens | append "5g" }}{{ end }}
+        {{ if in $connStr "gps" }}{{ $specTokens = $specTokens | append "gps" }}{{ end }}
+        {{ if or (in $connStr "felica") (in $connStr "nfc") }}{{ $specTokens = $specTokens | append "felica" }}{{ end }}
+        {{ end }}
+        {{ end }}
+        {{ with .display_type }}
+        {{ if or (in (. | lower) "amoled") (in (. | lower) "oled") (in (. | lower) "有機el") }}{{ $specTokens = $specTokens | append "amoled" }}{{ end }}
+        {{ end }}
+        {{ with .other_specs }}
+        {{ if reflect.IsSlice . }}
+        {{ range . }}
+        {{ if or (in (. | lower) "防水") (in (. | lower) "ip6") (in (. | lower) "ip5") (in (. | lower) "atm") }}{{ $specTokens = $specTokens | append "waterproof" }}{{ end }}
+        {{ if or (in (. | lower) "felica") (in (. | lower) "suica") (in (. | lower) "おサイフ") }}{{ $specTokens = $specTokens | append "felica" }}{{ end }}
+        {{ if in (. | lower) "gps" }}{{ $specTokens = $specTokens | append "gps" }}{{ end }}
+        {{ end }}
+        {{ else }}
+        {{ $specStr := . | lower }}
+        {{ if or (in $specStr "防水") (in $specStr "ip6") (in $specStr "ip5") (in $specStr "atm") }}{{ $specTokens = $specTokens | append "waterproof" }}{{ end }}
+        {{ if or (in $specStr "felica") (in $specStr "suica") (in $specStr "おサイフ") }}{{ $specTokens = $specTokens | append "felica" }}{{ end }}
+        {{ if in $specStr "gps" }}{{ $specTokens = $specTokens | append "gps" }}{{ end }}
+        {{ end }}
+        {{ end }}
+        {{ with .weight }}
+        {{ $weightLower := . | lower }}
+        {{ if or (in $weightLower "軽") (in $weightLower "light") }}{{ $specTokens = $specTokens | append "lightweight" }}{{ end }}
+        {{ if not (in $weightLower "kg") }}
+        {{ $weightValue := replaceRE "[^0-9]" "" $weightLower | int }}
+        {{ if and (gt $weightValue 0) (le $weightValue 200) }}{{ $specTokens = $specTokens | append "lightweight" }}{{ end }}
+        {{ end }}
+        {{ end }}
+        {{ end }}
+        {{ $specsString := delimit ($specTokens | uniq) "," }}
 
         <article class="card" data-price="{{ $priceRaw }}" data-score="{{ .Params.score | default 0 }}"
-            data-date="{{ $dateRaw }}">
+            data-date="{{ $dateRaw }}" data-specs="{{ $specsString }}">
             <div class="card-image">
                 <a href="{{ .RelPermalink }}" aria-hidden="true" tabindex="-1"
                     style="display: block; width: 100%; height: 100%;">
@@ -255,6 +305,35 @@
     .filter-reset-btn:hover {
         background: var(--color-bg-secondary);
         color: var(--color-text-primary);
+    }
+
+    .filter-presets {
+        grid-column: 1 / -1;
+        display: flex;
+        flex-wrap: wrap;
+        gap: var(--spacing-xs);
+        align-items: center;
+    }
+
+    .filter-preset-btn {
+        border: 1px solid var(--color-border);
+        background: var(--color-bg-card);
+        color: var(--color-text-primary);
+        border-radius: 999px;
+        padding: 0.375rem 0.75rem;
+        font-size: 0.8125rem;
+        cursor: pointer;
+        transition: all 0.2s ease;
+    }
+
+    .filter-preset-btn:hover {
+        background: var(--color-bg-secondary);
+    }
+
+    .filter-preset-btn.is-active {
+        background: var(--color-primary);
+        border-color: var(--color-primary);
+        color: #fff;
     }
 
     .filter-content {

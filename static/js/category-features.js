@@ -56,6 +56,30 @@ function matchesSpecs(card, requiredSpecs) {
     return requiredSpecs.every(spec => cardSpecs.has(spec));
 }
 
+
+/**
+ * Check if a card matches the active preset constraints
+ */
+function matchesPreset(card, presetKey, presetDefinitions) {
+    if (!presetKey) return true;
+    const preset = presetDefinitions[presetKey];
+    if (!preset) return true;
+
+    const price = Number.parseInt(card.dataset.price) || 0;
+    const score = Number.parseFloat(card.dataset.score) || 0;
+    const cardSpecs = (card.dataset.specs || '').toLowerCase();
+
+    if (typeof preset.minScore === 'number' && score < preset.minScore) return false;
+    if (typeof preset.maxPrice === 'number' && price > preset.maxPrice) return false;
+
+    if (Array.isArray(preset.requiredAnySpecs) && preset.requiredAnySpecs.length > 0) {
+        const hasAnySpec = preset.requiredAnySpecs.some(spec => cardSpecs.includes(spec.toLowerCase()));
+        if (!hasAnySpec) return false;
+    }
+
+    return true;
+}
+
 /**
  * Master check to see if a card should be visible
  */
@@ -65,6 +89,7 @@ function isCardVisible(card, filters) {
     if (!matchesPrice(card, filters.priceRange)) return false;
     if (!matchesScore(card, filters.scoreRange)) return false;
     if (!matchesSpecs(card, filters.requiredSpecs)) return false;
+    if (!matchesPreset(card, filters.activePreset, filters.presetDefinitions)) return false;
     return true;
 }
 
@@ -108,7 +133,7 @@ function updateCheckboxState(params, paramName, container, checkboxName) {
  */
 function updateFilterSectionState(params, filterSection, filterToggle) {
     if (params.toString()) {
-        const hasOtherFilters = params.has('price') || params.has('score') || params.has('categories') || params.has('specs');
+        const hasOtherFilters = params.has('price') || params.has('score') || params.has('categories') || params.has('specs') || params.has('preset');
         if (hasOtherFilters && filterSection && filterSection.classList.contains('collapsed')) {
             filterSection.classList.remove('collapsed');
             if (filterToggle) filterToggle.setAttribute('aria-expanded', 'true');
@@ -135,11 +160,30 @@ function initCategoryFeatures() {
     const filterReset = document.getElementById('filter-reset');
     const categoryFilters = document.getElementById('category-filters');
     const keywordSearch = document.getElementById('keyword-search');
+    const presetButtons = Array.from(document.querySelectorAll('.filter-preset-btn'));
 
     if (!sortSelect || !productGrid) return;
 
     // Store original cards for filtering
     let allCards = Array.from(productGrid.querySelectorAll('.card'));
+    let activePreset = '';
+
+    const presetDefinitions = {
+        'cost-performance': {
+            minScore: 80,
+            maxPrice: 20000
+        },
+        'high-performance': {
+            minScore: 90
+        },
+        beginner: {
+            maxPrice: 10000,
+            requiredAnySpecs: ['5g', 'gps', 'amoled']
+        },
+        lightweight: {
+            requiredAnySpecs: ['lightweight', 'portable', 'weight-light', 'weight', '軽量']
+        }
+    };
 
     /**
      * Get currently visible cards based on filters
@@ -220,6 +264,78 @@ function initCategoryFeatures() {
         return Array.from(checkboxes).map(cb => cb.value);
     }
 
+    function setActivePreset(presetKey) {
+        activePreset = presetKey;
+        presetButtons.forEach(button => {
+            const isActive = button.dataset.preset === presetKey;
+            button.classList.toggle('is-active', isActive);
+            button.setAttribute('aria-pressed', String(isActive));
+        });
+    }
+
+    function clearActivePreset() {
+        setActivePreset('');
+    }
+
+    function setRadioValue(groupName, value) {
+        const target = document.querySelector(`input[name="${groupName}"][value="${value}"]`);
+        if (target) {
+            document.querySelectorAll(`input[name="${groupName}"]`).forEach(input => {
+                input.checked = false;
+            });
+            target.checked = true;
+        }
+    }
+
+    function setSpecValues(specValues) {
+        const specFilters = document.getElementById('spec-filters');
+        if (!specFilters) return;
+
+        const checkboxes = Array.from(specFilters.querySelectorAll('input[name="spec"]'));
+        checkboxes.forEach(checkbox => {
+            checkbox.checked = false;
+        });
+
+        if (specValues.length === 0) return;
+
+        const loweredTargets = specValues.map(value => value.toLowerCase());
+        let hasMatched = false;
+
+        checkboxes.forEach(checkbox => {
+            const labelText = checkbox.closest('label')?.textContent.toLowerCase() || '';
+            const valueText = checkbox.value.toLowerCase();
+            const matched = loweredTargets.some(target => valueText.includes(target) || labelText.includes(target));
+            if (matched) {
+                checkbox.checked = true;
+                hasMatched = true;
+            }
+        });
+
+        if (!hasMatched && loweredTargets.includes('軽量')) {
+            const fallbackKeywords = ['weight', '軽量', '持ち運び'];
+            checkboxes.forEach(checkbox => {
+                const labelText = checkbox.closest('label')?.textContent.toLowerCase() || '';
+                const valueText = checkbox.value.toLowerCase();
+                const matched = fallbackKeywords.some(keyword => valueText.includes(keyword) || labelText.includes(keyword));
+                if (matched) {
+                    checkbox.checked = true;
+                }
+            });
+        }
+    }
+
+    function applyPreset(presetKey) {
+        const preset = presetDefinitions[presetKey];
+        if (!preset) return;
+
+        setRadioValue('price-filter', 'all');
+        setRadioValue('score-filter', 'all');
+        setSpecValues([]);
+        setActivePreset(presetKey);
+        filterCards();
+        updateUrl();
+    }
+
 
 
     /**
@@ -231,7 +347,9 @@ function initCategoryFeatures() {
             priceRange: getSelectedPriceRange(),
             scoreRange: getScoreRange(),
             searchQuery: keywordSearch ? keywordSearch.value.trim().toLowerCase() : '',
-            requiredSpecs: getSelectedSpecs()
+            requiredSpecs: getSelectedSpecs(),
+            activePreset,
+            presetDefinitions
         };
 
         allCards.forEach(card => {
@@ -318,6 +436,10 @@ function initCategoryFeatures() {
             params.set('q', keywordSearch.value.trim());
         }
 
+        if (activePreset) {
+            params.set('preset', activePreset);
+        }
+
         const newUrl = globalThis.location.pathname + (params.toString() ? '?' + params.toString() : '');
         globalThis.history.replaceState({ path: newUrl }, '', newUrl);
     }
@@ -327,6 +449,13 @@ function initCategoryFeatures() {
      */
     function applyUrlState() {
         const params = new URLSearchParams(globalThis.location.search);
+
+        if (params.has('preset')) {
+            const presetKey = params.get('preset');
+            if (presetKey && presetDefinitions[presetKey]) {
+                setActivePreset(presetKey);
+            }
+        }
 
         updateSortState(params, sortSelect);
         updateRadioState(params, 'price', 'price-filter');
@@ -370,6 +499,8 @@ function initCategoryFeatures() {
             keywordSearch.value = '';
         }
 
+        clearActivePreset();
+
         // Apply filters
         filterCards();
         updateUrl();
@@ -400,6 +531,7 @@ function initCategoryFeatures() {
     // Handle category filter changes
     if (categoryFilters) {
         categoryFilters.addEventListener('change', function () {
+            clearActivePreset();
             filterCards();
             updateUrl();
         });
@@ -408,6 +540,7 @@ function initCategoryFeatures() {
     // Handle price filter changes
     document.querySelectorAll('input[name="price-filter"]').forEach(radio => {
         radio.addEventListener('change', () => {
+            clearActivePreset();
             filterCards();
             updateUrl();
         });
@@ -416,6 +549,7 @@ function initCategoryFeatures() {
     // Handle score filter changes
     document.querySelectorAll('input[name="score-filter"]').forEach(radio => {
         radio.addEventListener('change', () => {
+            clearActivePreset();
             filterCards();
             updateUrl();
         });
@@ -425,6 +559,7 @@ function initCategoryFeatures() {
     const specFilters = document.getElementById('spec-filters');
     if (specFilters) {
         specFilters.addEventListener('change', function () {
+            clearActivePreset();
             filterCards();
             updateUrl();
         });
@@ -436,11 +571,28 @@ function initCategoryFeatures() {
         keywordSearch.addEventListener('input', function () {
             clearTimeout(debounceTimer);
             debounceTimer = setTimeout(() => {
+                clearActivePreset();
                 filterCards();
                 updateUrl();
             }, 300);
         });
     }
+
+    presetButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const presetKey = button.dataset.preset || '';
+            if (!presetKey) return;
+
+            if (activePreset === presetKey) {
+                clearActivePreset();
+                filterCards();
+                updateUrl();
+                return;
+            }
+
+            applyPreset(presetKey);
+        });
+    });
 
     // Handle bfcache restoration: re-apply sort and filters when page is restored
     globalThis.addEventListener('pageshow', function (event) {
@@ -462,6 +614,10 @@ function initCategoryFeatures() {
 
     // Initial load from URL
     applyUrlState();
+
+    if (activePreset) {
+        applyPreset(activePreset);
+    }
 
     // Initial count update
     updateProductCount();
