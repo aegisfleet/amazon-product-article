@@ -17,7 +17,7 @@
       "24W/2000Lxの高出力で非常に明るい"
     ],
     "negativePoints": [
-      "競合のダブル光源モデル（5,000円〜6,000円台）と比較して価格がやや高い",
+      "競合のダブル光源モデルと比較して価格がやや高い",
       "多機能ゆえにリモコン操作に慣れが必要な可能性がある（推測）",
       "ヘッドが非常に大きいため、設置場所に十分なスペースが必要"
     ],
@@ -48,48 +48,48 @@
         "credibility": "high"
       }
     ],
-    "lastInvestigated": "2026-01-21",
+    "lastInvestigated": "2026-03-14",
     "competitiveAnalysis": [
       {
-        "name": "Hapfish デスクライト (ダブル光源)",
-        "asin": "B0DRXVKWG2",
-        "priceComparison": "約5,000円〜6,000円（本製品より安価）",
+        "name": "BeaNet デスクライト LED BNT-DEL07 (幅800mm・ダブル光源)",
+        "asin": "B0DPZNQ5HM",
+        "priceComparison": "約4,997円（本製品より安価）",
         "featureComparison": [
           "ダブル光源（本製品は3光源）",
-          "幅広設計だが本製品ほどではない（一般的サイズ）",
-          "5色温度調整（本製品は4色）"
+          "幅80cm（本製品は98cm）",
+          "5段階調光調色（本製品は4段階）"
         ],
         "differentiators": [
           "価格の安さ",
-          "カラーバリエーションの多さ"
+          "少しコンパクトなサイズ"
         ]
       },
       {
-        "name": "Bravzurg デスクライト Pro版",
-        "asin": "B0DS1TNHP7",
-        "priceComparison": "約5,000円（本製品より安価）",
+        "name": "BeaNet デスクライト LED BNT-DEL09 (幅101.5cm・4光源)",
+        "asin": "B0DBHJC76H",
+        "priceComparison": "約7,121円（本製品より高価）",
         "featureComparison": [
-          "ダブル光源",
+          "4光源Ultra+版（本製品は3光源）",
+          "幅101.5cm（本製品は98cm）",
+          "5段階調光調色（本製品は4段階）"
+        ],
+        "differentiators": [
+          "さらなる広範囲照射と多光源",
+          "上位モデルとしてのスペック"
+        ]
+      },
+      {
+        "name": "Bravzurg デスクライト Pro版 (ダブル光源)",
+        "asin": "B0DS1TNHP7",
+        "priceComparison": "約3,999円（本製品より大幅に安価）",
+        "featureComparison": [
+          "ダブル光源（本製品は3光源）",
           "リモコン付き",
           "多軸可動"
         ],
         "differentiators": [
-          "コストパフォーマンス",
-          "よりコンパクトなダブルヘッド"
-        ]
-      },
-      {
-        "name": "Brihitra デスクライト BH-DL01",
-        "asin": "B0FBM96JF5",
-        "priceComparison": "約6,000円（本製品より安価）",
-        "featureComparison": [
-          "幅84cm（本製品は98cm）",
-          "ダブル光源",
-          "無線リモコン"
-        ],
-        "differentiators": [
-          "サイズ感（84cm vs 98cm）",
-          "価格"
+          "コストパフォーマンスの高さ",
+          "コンパクトなダブルヘッド"
         ]
       }
     ],
@@ -113,14 +113,21 @@
       "scoreRationale": "[基本点: 70]\n[加点: +8] (3光源・幅98cm・独立制御・無線リモコンという優れた機能性)\n[減点: -5] (競合製品と比較して価格が2000円以上高い)\n[加点: +2] (アルミニウム合金の質感とユニークなデザイン)\n[加点: +5] (98cmという圧倒的なサイズと3光源設計は独自の強み)\n[合計: 80]"
     },
     "technicalSpecs": {
-      "dimensions": { "width": "980mm", "clamp_max_thickness": "55mm" },
+      "dimensions": {
+        "width": "980mm",
+        "clamp_max_thickness": "55mm"
+      },
       "power": "24W",
       "brightness": "2000Lx",
       "color_temperature": "4段階 (2700K/4000K/4800K/5700K)",
       "control": "無線リモコン / 独立制御",
       "light_source": "LED (216個)",
       "cri": "Ra90",
-      "other": ["3光源設計", "環境補助光", "PSE認証済"]
+      "other": [
+        "3光源設計",
+        "環境補助光",
+        "PSE認証済"
+      ]
     }
   }
 }
