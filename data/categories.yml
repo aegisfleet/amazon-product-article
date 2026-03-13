@@ -540,7 +540,7 @@ parents:
   ホーム・キッチン:
     name: ホーム・キッチン
     slug: home-kitchen
-    productCount: 184
+    productCount: 185
     isVisible: true
     childrenWithCounts:
       - name: おしゃれ着洗剤
@@ -763,6 +763,8 @@ parents:
         productCount: 1
       - name: 吊り下げ型
         productCount: 1
+      - name: 固定シャワーヘッド
+        productCount: 1
       - name: 圧力鍋
         productCount: 1
       - name: 圧縮袋
@@ -779,6 +781,8 @@ parents:
         productCount: 1
       - name: 手動ナイフ研ぎ器
         productCount: 1
+      - name: 手持ち式シャワー
+        productCount: 0
       - name: 据置型・ビルトイン・水栓一体型用カートリッジ
         productCount: 0
       - name: 据置型・ビルトイン浄水器
@@ -1122,7 +1126,7 @@ parents:
   家具・オフィス・収納:
     name: 家具・オフィス・収納
     slug: furniture-storage
-    productCount: 109
+    productCount: 110
     isVisible: true
     childrenWithCounts:
       - name: O型リングファイル
@@ -1227,6 +1231,8 @@ parents:
         productCount: 2
       - name: テーブル・デスク
         productCount: 0
+      - name: ディスプレイケース
+        productCount: 0
       - name: デスク
         productCount: 1
       - name: デスクオーガナイザー
@@ -1246,6 +1252,8 @@ parents:
       - name: バインダー
         productCount: 1
       - name: パソコンデスク
+        productCount: 1
+      - name: ビジネス
         productCount: 1
       - name: ビーズ織りツール
         productCount: 0
@@ -1375,6 +1383,8 @@ parents:
         productCount: 1
       - name: 液体のり
         productCount: 1
+      - name: 物流コンテナ
+        productCount: 0
       - name: 物置・倉庫
         productCount: 1
       - name: 絵具
@@ -1588,7 +1598,7 @@ parents:
   ヘアケア・理美容家電:
     name: ヘアケア・理美容家電
     slug: haircare-appliances
-    productCount: 146
+    productCount: 147
     isVisible: true
     childrenWithCounts:
       - name: Panasonic-HA-HairDryers
@@ -1605,6 +1615,8 @@ parents:
         productCount: 13
       - name: スタイリング用品セット
         productCount: 0
+      - name: ディフューザー
+        productCount: 1
       - name: ドライヤー・ヘアアイロンホルダー
         productCount: 1
       - name: パントリー オーラルケア
@@ -2259,6 +2271,8 @@ parents:
         productCount: 0
       - name: おもちゃ
         productCount: 1
+      - name: お風呂用おもちゃ
+        productCount: 0
       - name: すごろく
         productCount: 0
       - name: たまごっち
@@ -2301,6 +2315,8 @@ parents:
         productCount: 0
       - name: ドール
         productCount: 0
+      - name: ハンドヘルドゲーム
+        productCount: 0
       - name: ハンドル・ジョイスティック
         productCount: 0
       - name: ビデオゲーム
@@ -2339,6 +2355,8 @@ parents:
         productCount: 0
       - name: 単体型VR・アクセサリ
         productCount: 1
+      - name: 地図・国旗
+        productCount: 0
       - name: 女の子のおもちゃ
         productCount: 0
       - name: 宇宙船
@@ -2378,6 +2396,8 @@ parents:
       - name: UMall
         productCount: 3
       - name: その他の音楽
+        productCount: 0
+      - name: アイドル・芸能人グッズ
         productCount: 0
       - name: アコースティックギターセット
         productCount: 0
@@ -2460,7 +2480,7 @@ parents:
   アウトドア・車・DIY:
     name: アウトドア・車・DIY
     slug: outdoor-car-diy
-    productCount: 126
+    productCount: 127
     isVisible: true
     childrenWithCounts:
       - name: LEDランタン
@@ -2482,6 +2502,8 @@ parents:
       - name: エアポンプ
         productCount: 0
       - name: エアーマット・エアーベッド
+        productCount: 1
+      - name: エギ・スッテ
         productCount: 1
       - name: オンダッシュモニター
         productCount: 1
@@ -2942,6 +2964,8 @@ parents:
       - name: 電気・通信
         productCount: 2
       - name: 音楽一般
+        productCount: 0
+      - name: 高評価・レビュー多数の書籍
         productCount: 0
   その他:
     name: その他
