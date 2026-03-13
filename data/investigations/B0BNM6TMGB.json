@@ -38,6 +38,12 @@
         "scenario": "子供のリビング学習用",
         "experience": "子供がダイニングテーブルで勉強する際、天井の照明だけでは暗いため購入。クランプを上から締められるので、着脱が楽で助かっている。教科書とノートを広げても端まで明るいのが良い。",
         "sentiment": "positive"
+      },
+      {
+        "userType": "PCゲーマー",
+        "scenario": "大型モニターでのゲーム環境",
+        "experience": "（推測）大型モニターを複数並べた環境でも、80cmのワイドな光源と3関節アームのおかげで、モニターの裏からライトを回して手元だけを明るく照らすことができそう。",
+        "sentiment": "positive"
       }
     ],
     "userImpression": "幅広のLEDによる均一な明るさと、上部から固定できるクランプの利便性が高く評価されている。特に広いデスク環境やマルチモニター環境での評価が高い。",
@@ -53,7 +59,7 @@
         "credibility": "medium"
       }
     ],
-    "lastInvestigated": "2026-01-21",
+    "lastInvestigated": "2026-03-14",
     "competitiveAnalysis": [
       {
         "name": "サンワダイレクト デスクライト 1100lm (800-LED080)",
@@ -69,26 +75,38 @@
       },
       {
         "name": "Hapfish LEDデスクライト 幅広24W",
-        "asin": "B0DRXVKWG2",
-        "priceComparison": "価格変動あり",
+        "asin": "B0D7YTQ8MQ",
+        "priceComparison": "安価（約4,299円）",
         "featureComparison": [
-          "ダブル光源",
-          "リモコン付き"
+          "ダブル光源照明・光センサー付",
+          "5色温度・5段階調光"
         ],
         "differentiators": [
-          "Hapfishはリモコン操作が可能で機能が豊富だが、サンワダイレクトは国内メーカー（ブランド）としての安心感がある"
+          "Hapfishは光センサーや豊富な機能があり安価だが、サンワダイレクトは国内メーカーとしてのサポート体制や安心感がある"
         ]
       },
       {
-        "name": "Bravzurg LEDデスクライト",
-        "asin": "B0D7ZRZ1P5",
-        "priceComparison": "非常に安価（約5,000円）",
+        "name": "イーサプライ LEDデスクライト ワイド EZ8-LED060W",
+        "asin": "B0C7MQDSV6",
+        "priceComparison": "同価格帯（約10,800円）",
         "featureComparison": [
-          "基本的な調光調色機能",
-          "光センサー搭載"
+          "横幅80cm、900ルーメン",
+          "色温度5段階、調光無段階、3関節アーム"
         ],
         "differentiators": [
-          "コスト重視ならBravzurgだが、質感やアームの安定性ではサンワダイレクトが優れる傾向にある"
+          "スペックや価格が非常に似ており、OEMや兄弟機種の可能性がある。機能面での差はほぼない。"
+        ]
+      },
+      {
+        "name": "ヒーリングライト研究所 自然光デスクライト ワイド",
+        "asin": "B0C1MJ6TC8",
+        "priceComparison": "高価（約14,980円）",
+        "featureComparison": [
+          "高演色Ra95で自然光に近い",
+          "5段階調光、周囲の明るさに合わせて光量を自動調節"
+        ],
+        "differentiators": [
+          "ヒーリングライト研究所は演色性や自動調光など目に優しい高度な機能を備えるが、価格が約1.5倍となる。サンワダイレクトはコストと機能のバランスが良い"
         ]
       }
     ],
@@ -112,20 +130,15 @@
     },
     "technicalSpecs": {
       "dimensions": {
-        "width": "80cm (セード幅)",
+        "width": "80cm",
         "armLength": "3関節アーム",
         "weight": "約1.7kg (推定)"
       },
-      "power": {
-        "source": "AC電源",
-        "consumption": "最大約18W (推定)"
-      },
-      "light": {
-        "dimming": "無段階調光",
-        "toning": "5段階調色 (昼白色〜電球色)",
-        "lumen": "非公開 (ワイドタイプのため広範囲)"
-      },
-      "features": [
+      "power": "AC電源",
+      "capacity": null,
+      "その他機能": [
+        "無段階調光",
+        "5段階調色",
         "上部固定式クランプ",
         "タッチセンサー",
         "メモリー機能"
