@@ -126,8 +126,40 @@
             {{ end }}
         </div>
 
+        {{ $trackingCategory := "" }}
+        {{ $terms := .GetTerms "categories" }}
+        {{ if $terms }}
+        {{ $trackingCategory = (index $terms 0).LinkTitle }}
+        {{ else if $product.categories }}
+        {{ $trackingCategory = index $product.categories 0 }}
+        {{ else if $product.category }}
+        {{ $trackingCategory = $product.category }}
+        {{ end }}
+
+        {{ $priceRaw := 0 }}
+        {{ if $product.price }}
+        {{ $priceRaw = index (findRE "[0-9]+" (replace $product.price "," "")) 0 | default 0 }}
+        {{ end }}
+
+        {{ $priceBucket := "unknown" }}
+        {{ if gt ($priceRaw | int) 0 }}
+        {{ if lt ($priceRaw | int) 3000 }}
+        {{ $priceBucket = "under-3000" }}
+        {{ else if lt ($priceRaw | int) 7000 }}
+        {{ $priceBucket = "3000-6999" }}
+        {{ else if lt ($priceRaw | int) 15000 }}
+        {{ $priceBucket = "7000-14999" }}
+        {{ else if lt ($priceRaw | int) 30000 }}
+        {{ $priceBucket = "15000-29999" }}
+        {{ else }}
+        {{ $priceBucket = "30000-plus" }}
+        {{ end }}
+        {{ end }}
+
         {{ if $product.affiliate_url }}
-        <a href="{{ $product.affiliate_url }}" class="btn-amazon-hero" target="_blank" rel="noopener noreferrer">🛒
+        <a href="{{ $product.affiliate_url }}" class="btn-amazon-hero" target="_blank" rel="noopener noreferrer"
+            data-track-product="1" data-asin="{{ $product.asin }}" data-category="{{ $trackingCategory }}"
+            data-price-bucket="{{ $priceBucket }}" data-price="{{ $product.price }}">🛒
             Amazonで詳細を見る</a>
         {{ end }}
     </div>
