@@ -1,6 +1,6 @@
 {
   "analysis": {
-    "productName": "BenQ ScreenBar Pro モニターライト",
+    "productName": "BenQ ScreenBar Pro",
     "parentAsin": "B0D2D2Q4Y5",
     "productDescription": "超広範囲を照らす高輝度モニターライト。人感センサーによる自動点灯・消灯機能と、湾曲モニターにも対応するクランプを備え、デスクワークの目の疲れを軽減します。",
     "productUsage": [
@@ -56,12 +56,12 @@
         "credibility": "中"
       }
     ],
-    "lastInvestigated": "2026-01-21",
+    "lastInvestigated": "2026-03-14",
     "competitiveAnalysis": [
       {
         "name": "BenQ ScreenBar (初代)",
         "asin": "B0785D93KD",
-        "priceComparison": "約4,000円安い",
+        "priceComparison": "約6,000円安い (13,992円)",
         "featureComparison": [
           "センサーなし",
           "照射範囲がProより狭い",
@@ -75,7 +75,7 @@
       {
         "name": "Xiaomi Miモニター掛け式ライト",
         "asin": "B08W2C5W59",
-        "priceComparison": "約1/4の価格（5,000円台）",
+        "priceComparison": "約1/3以下の価格（5,980円）",
         "featureComparison": [
           "ワイヤレスリモコン付き",
           "明るさと照射範囲は劣る",
@@ -98,19 +98,6 @@
           "価格優先ならQuntis",
           "品質と目の保護を重視ならBenQ"
         ]
-      },
-      {
-        "name": "Yeelight LEDスクリーンハンギングライト",
-        "asin": "B09NLQX33B",
-        "priceComparison": "約6,000円安い",
-        "featureComparison": [
-          "背面RGBバックライトあり",
-          "スマートホーム連携あり"
-        ],
-        "differentiators": [
-          "ゲーミング演出ならYeelight",
-          "作業効率と目の保護ならBenQ"
-        ]
       }
     ],
     "recommendation": {
@@ -132,14 +119,21 @@
       "scoreRationale": "[基本点: 70]\n[加点: +10] (市場最高クラスの照度、人感センサー、特許クランプの実用性が高い)\n[減点: -10] (価格が非常に高く、Xiaomiなどの低価格優秀製品と比べるとコスパは悪い)\n[加点: +5] (BenQブランドの信頼性とビルドクオリティ)\n[加点: +5] (ユーザー評価は非常に高く、失敗がない)\n[加点: +5] (人感センサーによる自動化は独自の強み)\n[合計: 85]"
     },
     "technicalSpecs": {
-      "dimensions": { "width": "50cm", "depth": "13.5cm", "height": "9.2cm" },
-      "weight": "0.62kg",
-      "power": "USB Type-C (5V/1.7A)",
-      "brightness": "中央1000lux以上 / 周辺500lux以上",
-      "colorTemperature": "2700K - 6500K",
-      "sensor": "超音波人感センサー (検知範囲60cm)",
-      "compatibility": "厚さ0.43-6.5cmのモニター (湾曲率1000R-1800R対応)",
-      "other": ["自動調光", "演色性Ra95", "非対称光学設計"]
+      "dimensions": {
+        "width": "50cm",
+        "depth": "13.32cm",
+        "height": "8.3cm"
+      },
+      "weight": "1.76ポンド",
+      "power": "USB Type-C",
+      "brightness": "中央1000lux以上 / 85cm x 50cmの範囲を均一に照射",
+      "colorTemperature": "色温度調整可能",
+      "sensor": "人感センサー (検知範囲直径60±10cm内)",
+      "compatibility": "平面・湾曲型・ウルトラワイド・厚みのあるモニター対応",
+      "other": [
+        "第三世代ASYM-LIGHT非対称光学技術",
+        "自動調光機能"
+      ]
     }
   }
 }
