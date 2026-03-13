@@ -336,7 +336,7 @@
         {{ $weightLower := . | lower }}
         {{ if or (in $weightLower "軽") (in $weightLower "light") }}{{ $specs = $specs | append "lightweight" }}{{ end }}
         {{ if not (in $weightLower "kg") }}
-        {{ $weightValue := replaceRE "[^0-9]" "" $weightLower | int }}
+        {{ $weightValue := replaceRE "[^0-9]" "" $weightLower | replaceRE "^0+" "" | int }}
         {{ if and (gt $weightValue 0) (le $weightValue 200) }}{{ $specs = $specs | append "lightweight" }}{{ end }}
         {{ end }}
         {{ end }}
