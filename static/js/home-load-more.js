@@ -60,6 +60,7 @@ function renderPickupItems(items, pickupGrid) {
         const scoreClass = getScoreClass(score);
         const price = typeof item.price === 'string' ? item.price : '';
         const image = typeof item.image === 'string' ? item.image.trim() : '';
+        const safeImageSrc = image ? sanitizeUrl(image) : '';
         const asin = typeof item.asin === 'string' ? item.asin : '';
         const category = typeof item.category === 'string' ? item.category : 'unknown';
         const priceBucket = typeof item.priceBucket === 'string' ? item.priceBucket : 'unknown';
@@ -79,9 +80,9 @@ function renderPickupItems(items, pickupGrid) {
         const imageContainer = document.createElement('div');
         imageContainer.className = 'pickup-card-image';
 
-        if (image) {
+        if (safeImageSrc) {
             const img = document.createElement('img');
-            img.src = image;
+            img.src = safeImageSrc;
             img.alt = shortTitle;
             img.loading = 'lazy';
             img.decoding = 'async';
