@@ -41,6 +41,7 @@
     {{ range $pickupCandidates }}
     {{ $pickupCategory := "" }}
     {{ if .Params.categories }}{{ $pickupCategory = index .Params.categories 0 }}{{ else if .Params.category }}{{ $pickupCategory = .Params.category }}{{ end }}
+    {{/* TODO: The price-bucketing logic here is duplicated below in the SSR rendering block. It must be kept in sync. Consider extracting to a shared partial in the future. */}}
     {{ $pickupPriceRaw := 0 }}
     {{ if .Params.price }}{{ $pickupPriceRaw = index (findRE "[0-9]+" (replace .Params.price "," "")) 0 | int }}{{ end }}
     {{ $pickupPriceBucket := "unknown" }}
@@ -74,6 +75,7 @@
             {{ range $pickupItems }}
             {{ $pickupCategory := "" }}
             {{ if .Params.categories }}{{ $pickupCategory = index .Params.categories 0 }}{{ else if .Params.category }}{{ $pickupCategory = .Params.category }}{{ end }}
+            {{/* TODO: The price-bucketing logic here is duplicated above in the JSON generation block. It must be kept in sync. Consider extracting to a shared partial in the future. */}}
             {{ $pickupPriceRaw := 0 }}
             {{ if .Params.price }}{{ $pickupPriceRaw = index (findRE "[0-9]+" (replace .Params.price "," "")) 0 | int }}{{ end }}
             {{ $pickupPriceBucket := "unknown" }}

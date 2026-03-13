@@ -171,7 +171,7 @@ document.addEventListener('DOMContentLoaded', function () {
         typeof globalThis.ProductPersonalization.getPreferences === 'function';
 
     const preferences = hasPersonalization ? globalThis.ProductPersonalization.getPreferences() : { events: [] };
-    const initialItems = preferences.events && preferences.events.length
+    const initialItems = preferences?.events?.length
         ? globalThis.ProductPersonalization.rankItems(pickupItems).slice(0, 6)
         : shuffleWithSeed(pickupItems, Date.now()).slice(0, 6);
 
