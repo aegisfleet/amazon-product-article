@@ -22,8 +22,8 @@ function processArrayValue(prefix: string, value: string): string | null {
   if (!value.startsWith('["') || !value.endsWith('"]')) return null;
   const inner = value.slice(1, -1);
   const parts = inner.split(/,\s*/);
-  const fixedParts = parts.map(p => {
-    if(p.startsWith('"') && p.endsWith('"') && p.length >= 2) {
+  const fixedParts = parts.map((p) => {
+    if (p.startsWith('"') && p.endsWith('"') && p.length >= 2) {
       return escapeQuotesInYamlValue(p);
     }
     return p;
@@ -47,20 +47,20 @@ function sanitizeFrontmatterLine(line: string): string {
   const simpleMatch = /^(\s*-?\s*\w*:\s*)(".*)$/.exec(line);
   const prefix = simpleMatch?.[1];
   const value = simpleMatch?.[2];
-  
+
   if (prefix && value) {
     const arrayResult = processArrayValue(prefix, value);
     if (arrayResult) return arrayResult;
-    
+
     const stringResult = processStringValue(prefix, value);
     if (stringResult) return stringResult;
   }
-  
+
   // Fallback for list items like `  - "value"`
   const listMatch = /^(\s*-\s*)(".*)$/.exec(line);
   const listPrefix = listMatch?.[1];
   const listValue = listMatch?.[2];
-  
+
   if (listPrefix && listValue) {
     const stringResult = processStringValue(listPrefix, listValue);
     if (stringResult) return stringResult;
