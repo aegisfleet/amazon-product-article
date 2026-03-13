@@ -70,39 +70,24 @@
         const allEvents = loadEvents();
         const max = toPositiveNumber(limit) || 30;
         const events = allEvents.slice(-max);
-        const categoryCounts = {};
-        const priceBucketCounts = {};
-        const seenAsins = new Set();
+        const categoryHistory = new Set();
+        const priceBucketHistory = new Set();
         const recentAsins = new Set();
 
-        // Calculate counts while deduplicating recent ASINs to avoid over-weighting a single product
-        // Also keep track of ALL asins in this window to penalize them
-        for (let i = 0; i < events.length; i++) {
-            const event = events[i];
+        // Keep track of any category or price bucket seen in the recent history
+        for (const event of events) {
             const asin = toText(event.asin);
-            const category = toText(event.category) || 'unknown';
-            const priceBucket = toText(event.priceBucket) || 'unknown';
-
+            const category = toText(event.category);
+            const priceBucket = toText(event.priceBucket);
             if (asin) recentAsins.add(asin);
-
-            // Weight: more recent events get slightly more weight
-            // Index 0 (oldest) gets weight 1, last index gets (1 + 0.5)
-            const recencyWeight = 1 + (i / events.length) * 0.5;
-
-            if (seenAsins.has(asin)) {
-                // If seen before, add much less weight
-                categoryCounts[category] = (categoryCounts[category] || 0) + 0.2 * recencyWeight;
-            } else {
-                categoryCounts[category] = (categoryCounts[category] || 0) + recencyWeight;
-                priceBucketCounts[priceBucket] = (priceBucketCounts[priceBucket] || 0) + recencyWeight;
-                seenAsins.add(asin);
-            }
+            if (category) categoryHistory.add(category);
+            if (priceBucket) priceBucketHistory.add(priceBucket);
         }
 
         return {
             events,
-            categoryCounts,
-            priceBucketCounts,
+            categoryHistory,
+            priceBucketHistory,
             recentAsins,
             recentCategory: events.length ? toText(events.at(-1).category) : ''
         };
@@ -111,23 +96,15 @@
     function rankItems(items) {
         if (!Array.isArray(items)) return [];
         const preferences = getPreferences();
-        if (!preferences.events.length) {
-            // Apply a small stable jitter even if no preferences to rotate high-score items
-            return [...items].sort(function (a, b) {
-                const scoreA = Number(a.score || 0) + (hashCode(a.asin) % 100) / 1000;
-                const scoreB = Number(b.score || 0) + (hashCode(b.asin) % 100) / 1000;
-                return scoreB - scoreA;
-            });
-        }
 
         return [...items].sort(function (a, b) {
             const scoreA = scoreItem(a, preferences);
             const scoreB = scoreItem(b, preferences);
-            if (Math.abs(scoreA - scoreB) < 0.1) {
-                // Use a mix of Hugo score and a small random jitter based on ASIN
-                // to prevent the same 100-score items from always winning ties
-                const jitterA = (Number(a.score || 0) * 0.1) + (hashCode(a.asin) % 100) / 200;
-                const jitterB = (Number(b.score || 0) * 0.1) + (hashCode(b.asin) % 100) / 200;
+
+            // If tiered scores are effectively the same, use Hugo score and stable jitter
+            if (Math.abs(scoreA - scoreB) < 1) {
+                const jitterA = (Number(a.score || 0)) + (hashCode(a.asin) % 100) / 1000;
+                const jitterB = (Number(b.score || 0)) + (hashCode(b.asin) % 100) / 1000;
                 return jitterB - jitterA;
             }
             return scoreB - scoreA;
@@ -153,19 +130,23 @@
         const priceBucket = toText(item.priceBucket) || derivePriceBucket(item.price);
         let score = 0;
 
-        // Base frequency scores
-        score += (preferences.categoryCounts[category] || 0) * 5;
-        score += (preferences.priceBucketCounts[priceBucket] || 0) * 2;
-
-        // Direct match with the very last viewed category gives a significant boost
+        // TIER 1: Match with the VERY LAST viewed category
         if (preferences.recentCategory && category === preferences.recentCategory) {
-            score += 10;
+            score += 2000;
+        }
+        // TIER 2: Match with ANY category in recent history
+        else if (preferences.categoryHistory.has(category)) {
+            score += 1000;
         }
 
-        // HEAVY penalty for items already in the recent history
-        // This promotes "discovery" and prevents the same items from sticking
+        // TIER 3: Match with any price bucket in history
+        if (preferences.priceBucketHistory.has(priceBucket)) {
+            score += 100;
+        }
+
+        // HEAVY PENALTY: Item already viewed recently
         if (asin && preferences.recentAsins.has(asin)) {
-            score -= 50;
+            score -= 5000;
         }
 
         return score;
