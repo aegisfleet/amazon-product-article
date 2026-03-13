@@ -151,3 +151,8 @@ python scripts/creators_search_items.py "枕カバー フランネル" --search-
 
 - **ローカルサーバーURL**: `http://localhost:1313/amazon-product-article/`
   - Hugoサーバーを起動 (`hugo server`) した際のデフォルト確認用URLです。
+
+## 11. コードレビューのガイドライン (Review Guidelines)
+
+- **`data/` ディレクトリ配下のファイルはレビュー対象外としてください。**
+  - 商品調査結果、キャッシュ、メタデータなどの自動生成ファイルが含まれるため、コード品質のレビューは不要です。
