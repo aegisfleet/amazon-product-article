@@ -1,3 +1,0 @@
-- `layouts/partials/product-composite-ranked-pages.html` を追加し、`Params.score` を基本に `Params.last_investigated`、`Params.price`、`Params.images` の有無を加味した合成スコアで降順ソートする共通ロジックを実装。
-- `layouts/index.html` の「高評価おすすめ」を `shuffle` から合成スコア順表示へ変更し、シャッフル用ボタンとクライアント側シャッフル再描画スクリプトを削除。
-- `layouts/_default/single.html` の「同じカテゴリの商品」「同価格帯のおすすめ」「同スコア帯の人気商品」を `shuffle` から合成スコア順に変更し、各セクションで `first 4` を切り出すよう統一。
