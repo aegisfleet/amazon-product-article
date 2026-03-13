@@ -36,7 +36,7 @@
     {{ if gt (len $highScoreArticles) 0 }}
     {{ $rankedHighScoreArticles := partial "product-composite-ranked-pages.html" (dict "pages" $highScoreArticles) }}
     {{ $pickupItems := first 6 $rankedHighScoreArticles }}
-    {{ $pickupCandidates := first 30 $rankedHighScoreArticles }}
+    {{ $pickupCandidates := first 60 $rankedHighScoreArticles }}
     {{ $pickupData := slice }}
     {{ range $pickupCandidates }}
     {{ $pickupCategory := "" }}

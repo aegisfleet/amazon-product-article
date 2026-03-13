@@ -72,12 +72,27 @@
         const events = allEvents.slice(-max);
         const categoryCounts = {};
         const priceBucketCounts = {};
+        const seenAsins = new Set();
 
-        for (const event of events) {
+        // Calculate counts while deduplicating recent ASINs to avoid over-weighting a single product
+        for (let i = 0; i < events.length; i++) {
+            const event = events[i];
+            const asin = toText(event.asin);
             const category = toText(event.category) || 'unknown';
             const priceBucket = toText(event.priceBucket) || 'unknown';
-            categoryCounts[category] = (categoryCounts[category] || 0) + 1;
-            priceBucketCounts[priceBucket] = (priceBucketCounts[priceBucket] || 0) + 1;
+
+            // Weight: more recent events get slightly more weight
+            // Index 0 (oldest) gets weight 1.0, last index gets (1.0 + 0.5)
+            const recencyWeight = 1.0 + (i / events.length) * 0.5;
+
+            if (!seenAsins.has(asin)) {
+                categoryCounts[category] = (categoryCounts[category] || 0) + recencyWeight;
+                priceBucketCounts[priceBucket] = (priceBucketCounts[priceBucket] || 0) + recencyWeight;
+                seenAsins.add(asin);
+            } else {
+                // If seen before, add much less weight
+                categoryCounts[category] = (categoryCounts[category] || 0) + 0.2 * recencyWeight;
+            }
         }
 
         return {
@@ -112,11 +127,13 @@
         const priceBucket = toText(item.priceBucket) || derivePriceBucket(item.price);
         let score = 0;
 
-        score += (preferences.categoryCounts[category] || 0) * 3;
+        // Base frequency scores
+        score += (preferences.categoryCounts[category] || 0) * 5;
         score += (preferences.priceBucketCounts[priceBucket] || 0) * 2;
 
+        // Direct match with the very last viewed category gives a significant boost
         if (preferences.recentCategory && category === preferences.recentCategory) {
-            score += 2;
+            score += 10;
         }
 
         return score;

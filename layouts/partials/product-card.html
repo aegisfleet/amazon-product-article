@@ -110,7 +110,9 @@
             <span class="article-meta">{{ with .Params.last_investigated }}{{ time . | dateFormat "2006年01月02日" }}{{
                 else }}{{ .Date.Format "2006年01月02日" }}{{ end }}</span>
             {{ if .Params.affiliate_url }}
-            <a href="{{ .Params.affiliate_url }}" class="btn-amazon-small" target="_blank" rel="noopener noreferrer">🛒
+            <a href="{{ .Params.affiliate_url }}" class="btn-amazon-small" target="_blank" rel="noopener noreferrer"
+                data-track-product="1" data-asin="{{ .Params.asin }}" data-category="{{ $trackingCategory }}"
+                data-price-bucket="{{ $priceBucket }}" data-price="{{ .Params.price }}">🛒
                 Amazonで見る</a>
             {{ else }}
             <a href="{{ .RelPermalink }}" class="read-more">レビューを読む →</a>
