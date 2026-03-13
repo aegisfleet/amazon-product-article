@@ -34,15 +34,12 @@
     <!-- High Score Pickup Section (90点以上) -->
     {{ $highScoreArticles := where (where .Site.RegularPages "Section" "articles") ".Params.score" "ge" 90 }}
     {{ if gt (len $highScoreArticles) 0 }}
-    {{ $shuffled := shuffle $highScoreArticles }}
-    {{ $pickupItems := first 6 $shuffled }}
+    {{ $rankedHighScoreArticles := partial "product-composite-ranked-pages.html" (dict "pages" $highScoreArticles) }}
+    {{ $pickupItems := first 6 $rankedHighScoreArticles }}
     <div class="pickup-section">
         <div class="pickup-header">
             <h3 class="pickup-title">🏆 高評価おすすめ</h3>
             <span class="pickup-subtitle">90点以上の厳選商品</span>
-            <button id="shuffle-pickup" class="shuffle-btn">
-                🔀 シャッフル
-            </button>
             <button type="button" class="shuffle-btn" data-reset-history="1">
                 🧹 閲覧履歴をリセット
             </button>
@@ -91,92 +88,6 @@
             {{ end }}
         </div>
     </div>
-    <!-- Pickup Data for Shuffle -->
-    <script id="pickup-data" type="application/json">
-    [{{ range $index, $item := $highScoreArticles }}{{ if $index }},{{ end }}{
-        "url": "{{ $item.RelPermalink }}",
-        "title": "{{ $item.Title | truncate 30 }}",
-        "image": "{{ with $item.Params.images }}{{ index . 0 }}{{ end }}",
-        "score": {{ $item.Params.score | default 0 }},
-        "price": "{{ $item.Params.price }}",
-        "asin": "{{ $item.Params.asin }}",
-        "category": "{{ if $item.Params.categories }}{{ index $item.Params.categories 0 }}{{ else }}{{ $item.Params.category }}{{ end }}",
-        "priceBucket": "{{ $rawPickupPrice := 0 }}{{ if $item.Params.price }}{{ $rawPickupPrice = index (findRE "[0-9]+" (replace $item.Params.price "," "")) 0 | int }}{{ end }}{{ if gt $rawPickupPrice 0 }}{{ if lt $rawPickupPrice 3000 }}under-3000{{ else if lt $rawPickupPrice 7000 }}3000-6999{{ else if lt $rawPickupPrice 15000 }}7000-14999{{ else if lt $rawPickupPrice 30000 }}15000-29999{{ else }}30000-plus{{ end }}{{ else }}unknown{{ end }}"
-    }{{ end }}]
-    </script>
-    <script>
-        (function () {
-            const grid = document.getElementById('pickup-grid');
-            const dataEl = document.getElementById('pickup-data');
-            if (!grid || !dataEl) return;
-
-            let allPickupData;
-            try {
-                allPickupData = JSON.parse(dataEl.textContent);
-            } catch {
-                return;
-            }
-            if (!allPickupData || allPickupData.length === 0) return;
-
-            function escapeHtml(unsafe) {
-                return String(unsafe || '').replaceAll(/[&<"'>]/g, function (m) {
-                    return {
-                        '&': '&amp;',
-                        '<': '&lt;',
-                        '>': '&gt;',
-                        '"': '&quot;',
-                        "'": '&#039;'
-                    }[m];
-                });
-            }
-
-            globalThis.shuffleAndRenderPickup = function () {
-                const shuffled = [...allPickupData];
-                const array = new Uint32Array(1);
-                for (let i = shuffled.length - 1; i > 0; i--) {
-                    globalThis.crypto.getRandomValues(array);
-                    const j = Math.floor((array[0] / 4294967296) * (i + 1));
-                    [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
-                }
-                const personalized = (globalThis.ProductPersonalization && typeof globalThis.ProductPersonalization.rankItems === 'function')
-                    ? globalThis.ProductPersonalization.rankItems(shuffled)
-                    : shuffled;
-                const selected = personalized.slice(0, 6);
-
-                let htmlContent = '';
-                for (const item of selected) {
-                    const score = Number(item.score);
-                    let scoreClass = 'score-fair';
-                    if (score >= 80) scoreClass = 'score-excellent';
-                    else if (score >= 60) scoreClass = 'score-good';
-
-                    const imageHtml = item.image
-                        ? `<img src="${escapeHtml(item.image)}" alt="${escapeHtml(item.title)}" loading="lazy" decoding="async">`
-                        : `<div class="pickup-card-noimage">画像なし</div>`;
-
-                    const priceHtml = item.price
-                        ? `<span class="pickup-card-price">${escapeHtml(item.price)}</span>`
-                        : '';
-
-                    htmlContent += `
-                    <a href="${escapeHtml(item.url)}" class="pickup-card" data-score="${score}" data-price="${escapeHtml(item.price)}" data-track-product="1" data-asin="${escapeHtml(item.asin)}" data-category="${escapeHtml(item.category)}" data-price-bucket="${escapeHtml(item.priceBucket || 'unknown')}">
-                        <div class="pickup-card-image">${imageHtml}</div>
-                        <div class="pickup-card-content">
-                            <p class="pickup-card-title">${escapeHtml(item.title)}</p>
-                            <div class="pickup-card-meta">
-                                <span class="pickup-card-score ${scoreClass}">🏆 ${score}点</span>
-                                ${priceHtml}
-                            </div>
-                        </div>
-                    </a>`;
-                }
-                grid.innerHTML = htmlContent;
-            };
-
-            // 初回表示時に同期的にシャッフルして再描画（ちらつき防止）
-            globalThis.shuffleAndRenderPickup();
-        })();
-    </script>
     {{ end }}
 
     <!-- Search Section -->

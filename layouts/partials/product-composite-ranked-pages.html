@@ -1,0 +1,28 @@
+{{ $pages := .pages | default (slice) }}
+{{ $rankedEntries := slice }}
+
+{{ range $pages }}
+{{ $score := int (.Params.score | default 0) }}
+{{ $investigatedUnix := 0 }}
+{{ with .Params.last_investigated }}
+{{ $investigatedUnix = (time .).Unix }}
+{{ end }}
+{{ $hasPriceBonus := 0 }}
+{{ if .Params.price }}
+{{ $hasPriceBonus = 70 }}
+{{ end }}
+{{ $hasImageBonus := 0 }}
+{{ if and .Params.images (gt (len .Params.images) 0) }}
+{{ $hasImageBonus = 30 }}
+{{ end }}
+{{ $compositeScore := add (mul $score 1000000000000) (add (mul $investigatedUnix 100) (add $hasPriceBonus $hasImageBonus)) }}
+{{ $rankedEntries = $rankedEntries | append (dict "page" . "compositeScore" $compositeScore) }}
+{{ end }}
+
+{{ $sortedEntries := sort $rankedEntries "compositeScore" "desc" }}
+{{ $rankedPages := slice }}
+{{ range $sortedEntries }}
+{{ $rankedPages = $rankedPages | append .page }}
+{{ end }}
+
+{{ return $rankedPages }}
