@@ -285,7 +285,7 @@ export class CategoryNormalizer {
       /(?:kindle|無料|[0-9０-９]+万円|円|テスト|マッサージャーほか健康家電|[>＞])/i,
       /(?:amazon\s*global|コクヨ|beauty|パントリー|本日の|特選品|cml|ソニー|9999$|ポイント還元本|書籍タイトル)/i,
     ];
- 
+
     if (invalidPatterns.some((pattern) => pattern.test(name))) {
       return false;
     }
