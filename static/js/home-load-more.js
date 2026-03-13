@@ -47,39 +47,84 @@ function getScoreClass(score) {
 }
 
 function renderPickupItems(items, pickupGrid) {
-    const html = items
-        .map(function (item) {
-            const safeHref = sanitizeUrl(item.url);
-            if (!safeHref) return '';
+    // Clear existing content
+    pickupGrid.textContent = '';
 
-            const title = typeof item.title === 'string' ? item.title : '';
-            const shortTitle = title.length > 30 ? `${title.slice(0, 30)}...` : title;
-            const score = Number(item.score || 0);
-            const scoreClass = getScoreClass(score);
-            const price = typeof item.price === 'string' ? item.price : '';
-            const image = typeof item.image === 'string' ? item.image.trim() : '';
-            const asin = typeof item.asin === 'string' ? item.asin : '';
-            const category = typeof item.category === 'string' ? item.category : 'unknown';
-            const priceBucket = typeof item.priceBucket === 'string' ? item.priceBucket : 'unknown';
+    items.forEach(function (item) {
+        const safeHref = sanitizeUrl(item.url);
+        if (!safeHref) return;
 
-            const imageHtml = image
-                ? `<img src="${image}" alt="${shortTitle}" loading="lazy" decoding="async">`
-                : '<div class="pickup-card-noimage">画像なし</div>';
+        const title = typeof item.title === 'string' ? item.title : '';
+        const shortTitle = title.length > 30 ? `${title.slice(0, 30)}...` : title;
+        const score = Number(item.score || 0);
+        const scoreClass = getScoreClass(score);
+        const price = typeof item.price === 'string' ? item.price : '';
+        const image = typeof item.image === 'string' ? item.image.trim() : '';
+        const asin = typeof item.asin === 'string' ? item.asin : '';
+        const category = typeof item.category === 'string' ? item.category : 'unknown';
+        const priceBucket = typeof item.priceBucket === 'string' ? item.priceBucket : 'unknown';
 
-            return `<a href="${safeHref}" class="pickup-card" data-score="${score}" data-price="${price}" data-track-product="1" data-asin="${asin}" data-category="${category}" data-price-bucket="${priceBucket}">\
-                        <div class="pickup-card-image">${imageHtml}</div>\
-                        <div class="pickup-card-content">\
-                            <p class="pickup-card-title">${shortTitle}</p>\
-                            <div class="pickup-card-meta">\
-                                <span class="pickup-card-score ${scoreClass}">🏆 ${score}点</span>\
-                                ${price ? `<span class="pickup-card-price">${price}</span>` : ''}\
-                            </div>\
-                        </div>\
-                    </a>`;
-        })
-        .join('');
+        // Root card link
+        const cardLink = document.createElement('a');
+        cardLink.href = safeHref;
+        cardLink.className = 'pickup-card';
+        cardLink.dataset.score = String(score);
+        cardLink.dataset.price = price;
+        cardLink.dataset.trackProduct = '1';
+        cardLink.dataset.asin = asin;
+        cardLink.dataset.category = category;
+        cardLink.dataset.priceBucket = priceBucket;
 
-    pickupGrid.innerHTML = html;
+        // Image container
+        const imageContainer = document.createElement('div');
+        imageContainer.className = 'pickup-card-image';
+
+        if (image) {
+            const img = document.createElement('img');
+            img.src = image;
+            img.alt = shortTitle;
+            img.loading = 'lazy';
+            img.decoding = 'async';
+            imageContainer.appendChild(img);
+        } else {
+            const noImage = document.createElement('div');
+            noImage.className = 'pickup-card-noimage';
+            noImage.textContent = '画像なし';
+            imageContainer.appendChild(noImage);
+        }
+
+        // Content container
+        const contentContainer = document.createElement('div');
+        contentContainer.className = 'pickup-card-content';
+
+        const titleElement = document.createElement('p');
+        titleElement.className = 'pickup-card-title';
+        titleElement.textContent = shortTitle;
+
+        const metaContainer = document.createElement('div');
+        metaContainer.className = 'pickup-card-meta';
+
+        const scoreSpan = document.createElement('span');
+        scoreSpan.className = 'pickup-card-score ' + scoreClass;
+        scoreSpan.textContent = '🏆 ' + score + '点';
+
+        metaContainer.appendChild(scoreSpan);
+
+        if (price) {
+            const priceSpan = document.createElement('span');
+            priceSpan.className = 'pickup-card-price';
+            priceSpan.textContent = price;
+            metaContainer.appendChild(priceSpan);
+        }
+
+        contentContainer.appendChild(titleElement);
+        contentContainer.appendChild(metaContainer);
+
+        cardLink.appendChild(imageContainer);
+        cardLink.appendChild(contentContainer);
+
+        pickupGrid.appendChild(cardLink);
+    });
 }
 
 function createSeededRandom(seed) {
