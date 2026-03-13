@@ -17,10 +17,10 @@ jobs:
       products-found: ${{ steps.search.outputs.products-found }}
     
     steps:
-    - uses: actions/checkout@v6
+    - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
     
     - name: Use Node.js
-      uses: actions/setup-node@v6.3.0
+      uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f # v6.3.0
       with:
         node-version: '22'
         cache: 'npm'
@@ -51,7 +51,7 @@ jobs:
     
     - name: Upload product data
       if: steps.search.outputs.products-found == 'true'
-      uses: actions/upload-artifact@4cedc5d8ad5e44981157ee0973b7d1627f108fd8 # v4.6.1
+      uses: actions/upload-artifact@bbbca2ddaa5d8feaa63e36b76fdaad77386f024f # v7.0.0
       with:
         name: product-data
         path: data/products/
@@ -70,7 +70,7 @@ jobs:
     - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
     
     - name: Use Node.js
-      uses: actions/setup-node@1d0ff469b7ec7b3cb9d8673fde0c81c483a26c91 # v4.2.1
+      uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f # v6.3.0
       with:
         node-version: '22'
         cache: 'npm'
@@ -82,7 +82,7 @@ jobs:
       run: npm run build
     
     - name: Download product data
-      uses: actions/download-artifact@fa0a91b85d4f404e444e00e005971372dc801d1c # v4.1.7
+      uses: actions/download-artifact@65a9edc5881444af0b9093a5e628f2fe47ea3b2e # v4.1.7
       with:
         name: product-data
         path: data/products/
@@ -96,7 +96,7 @@ jobs:
       run: npm run investigate
     
     - name: Upload session data
-      uses: actions/upload-artifact@4cedc5d8ad5e44981157ee0973b7d1627f108fd8 # v4.6.1
+      uses: actions/upload-artifact@bbbca2ddaa5d8feaa63e36b76fdaad77386f024f # v7.0.0
       with:
         name: session-data
         path: data/sessions/
