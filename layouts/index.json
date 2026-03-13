@@ -1,1 +1,47 @@
-{{- $.Scratch.Add "index" slice -}}{{- range where .Site.RegularPages "Section" "articles" -}}{{- $image := "" -}}{{- with .Params.images -}}{{- $image = index . 0 | relURL -}}{{- end -}}{{- $product_name := .Params.product_name | default .Title -}}{{- $summary := .Params.description | default (.Summary | plainify | truncate 200) -}}{{- $spec_text := "" -}}{{- with .Params.specs -}}{{- range $key, $value := . -}}{{- if (reflect.IsSlice $value) -}}{{- $spec_text = printf "%s %s:%s" $spec_text $key (delimit $value " ") -}}{{- else -}}{{- $spec_text = printf "%s %s:%s" $spec_text $key $value -}}{{- end -}}{{- end -}}{{- end -}}{{- $dict := dict "title" $product_name "permalink" .RelPermalink "categories" .Params.categories "summary" $summary "image" $image "contents" .Plain "price" .Params.price "score" .Params.score "specs" $spec_text -}}{{- $.Scratch.Add "index" $dict -}}{{- end -}}{{- $.Scratch.Get "index" | jsonify -}}
+{{- $.Scratch.Add "index" slice -}}
+{{- range where .Site.RegularPages "Section" "articles" -}}
+  {{- $image := "" -}}
+  {{- with .Params.images -}}
+    {{- $image = index . 0 | relURL -}}
+  {{- end -}}
+  {{- $product_name := .Params.product_name | default .Title -}}
+  {{- $summary := .Params.description | default (.Summary | plainify | truncate 200) -}}
+  {{- $spec_text := "" -}}
+  {{- with .Params.specs -}}
+    {{- range $key, $value := . -}}
+      {{- if (reflect.IsSlice $value) -}}
+        {{- $spec_text = printf "%s %s:%s" $spec_text $key (delimit $value " ") -}}
+      {{- else -}}
+        {{- $spec_text = printf "%s %s:%s" $spec_text $key $value -}}
+      {{- end -}}
+    {{- end -}}
+  {{- end -}}
+  {{- $priceText := .Params.price | default "" | string -}}
+  {{- $priceNumericText := replaceRE "[^0-9.]" "" $priceText -}}
+  {{- $priceValue := 0 -}}
+  {{- if gt (len $priceNumericText) 0 -}}
+    {{- $priceBase := float $priceNumericText -}}
+    {{- if in $priceText "万" -}}
+      {{- $priceValue = mul $priceBase 10000 -}}
+    {{- else if in $priceText "千" -}}
+      {{- $priceValue = mul $priceBase 1000 -}}
+    {{- else -}}
+      {{- $priceValue = $priceBase -}}
+    {{- end -}}
+  {{- end -}}
+  {{- $dict := dict
+      "title" $product_name
+      "permalink" .RelPermalink
+      "categories" .Params.categories
+      "summary" $summary
+      "image" $image
+      "contents" .Plain
+      "price" .Params.price
+      "price_value" $priceValue
+      "score" .Params.score
+      "last_investigated" .Params.last_investigated
+      "specs" $spec_text
+    -}}
+  {{- $.Scratch.Add "index" $dict -}}
+{{- end -}}
+{{- $.Scratch.Get "index" | jsonify -}}
