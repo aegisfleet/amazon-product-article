@@ -36,6 +36,32 @@
     {{ if gt (len $highScoreArticles) 0 }}
     {{ $rankedHighScoreArticles := partial "product-composite-ranked-pages.html" (dict "pages" $highScoreArticles) }}
     {{ $pickupItems := first 6 $rankedHighScoreArticles }}
+    {{ $pickupCandidates := first 30 $rankedHighScoreArticles }}
+    {{ $pickupData := slice }}
+    {{ range $pickupCandidates }}
+    {{ $pickupCategory := "" }}
+    {{ if .Params.categories }}{{ $pickupCategory = index .Params.categories 0 }}{{ else if .Params.category }}{{ $pickupCategory = .Params.category }}{{ end }}
+    {{ $pickupPriceRaw := 0 }}
+    {{ if .Params.price }}{{ $pickupPriceRaw = index (findRE "[0-9]+" (replace .Params.price "," "")) 0 | int }}{{ end }}
+    {{ $pickupPriceBucket := "unknown" }}
+    {{ if gt $pickupPriceRaw 0 }}
+    {{ if lt $pickupPriceRaw 3000 }}{{ $pickupPriceBucket = "under-3000" }}
+    {{ else if lt $pickupPriceRaw 7000 }}{{ $pickupPriceBucket = "3000-6999" }}
+    {{ else if lt $pickupPriceRaw 15000 }}{{ $pickupPriceBucket = "7000-14999" }}
+    {{ else if lt $pickupPriceRaw 30000 }}{{ $pickupPriceBucket = "15000-29999" }}
+    {{ else }}{{ $pickupPriceBucket = "30000-plus" }}{{ end }}
+    {{ end }}
+    {{ $pickupData = $pickupData | append (dict
+    "title" .Title
+    "url" .RelPermalink
+    "score" (.Params.score | default 0)
+    "price" (.Params.price | default "")
+    "asin" (.Params.asin | default "")
+    "category" $pickupCategory
+    "priceBucket" $pickupPriceBucket
+    "image" (cond (and .Params.images (gt (len .Params.images) 0)) (index .Params.images 0) "")
+    ) }}
+    {{ end }}
     <div class="pickup-section">
         <div class="pickup-header">
             <h3 class="pickup-title">🏆 高評価おすすめ</h3>
@@ -87,6 +113,7 @@
             </a>
             {{ end }}
         </div>
+        <script id="pickup-data" type="application/json">{{ $pickupData | jsonify | safeJS }}</script>
     </div>
     {{ end }}
 
