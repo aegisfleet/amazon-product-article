@@ -7,6 +7,26 @@
 {{ $currentPrice = index (findRE "[0-9]+" (replace .Params.price "," "")) 0 | int }}
 {{ end }}
 {{ $currentScore := .Params.score | default 0 }}
+{{ $currentCategory := "" }}
+{{ if and $categories (gt (len $categories) 0) }}
+{{ $currentCategory = index $categories 0 }}
+{{ else if .Params.category }}
+{{ $currentCategory = .Params.category }}
+{{ end }}
+{{ $currentPriceBucket := "unknown" }}
+{{ if gt $currentPrice 0 }}
+{{ if lt $currentPrice 3000 }}
+{{ $currentPriceBucket = "under-3000" }}
+{{ else if lt $currentPrice 7000 }}
+{{ $currentPriceBucket = "3000-6999" }}
+{{ else if lt $currentPrice 15000 }}
+{{ $currentPriceBucket = "7000-14999" }}
+{{ else if lt $currentPrice 30000 }}
+{{ $currentPriceBucket = "15000-29999" }}
+{{ else }}
+{{ $currentPriceBucket = "30000-plus" }}
+{{ end }}
+{{ end }}
 {{ $allArticles := where (where .Site.RegularPages "Section" "articles") "Params.asin" "!=" $currentAsin }}
 
 <div class="container" style="padding-top: var(--spacing-xl);">
@@ -75,7 +95,7 @@
                 <h3 class="related-section-title">📂 同じカテゴリの商品</h3>
                 <div class="related-grid">
                     {{ range first 4 (shuffle $related) }}
-                    <a href="{{ .RelPermalink }}" class="pickup-card">
+                    <a href="{{ .RelPermalink }}" class="pickup-card" data-track-product="1" data-asin="{{ .Params.asin }}" data-category="{{ if .Params.categories }}{{ index .Params.categories 0 }}{{ else }}{{ .Params.category }}{{ end }}" data-price-bucket="{{ if .Params.price }}{{ $itemPrice := index (findRE "[0-9]+" (replace .Params.price "," "")) 0 | int }}{{ if lt $itemPrice 3000 }}under-3000{{ else if lt $itemPrice 7000 }}3000-6999{{ else if lt $itemPrice 15000 }}7000-14999{{ else if lt $itemPrice 30000 }}15000-29999{{ else }}30000-plus{{ end }}{{ else }}unknown{{ end }}" data-price="{{ .Params.price }}">
                         <div class="pickup-card-image">
                             {{ if .Params.images }}
                             <img src="{{ index .Params.images 0 }}" alt="{{ .Title }}" loading="lazy" decoding="async">
@@ -184,7 +204,7 @@
         <h3 class="related-section-title">💰 同価格帯のおすすめ</h3>
         <div class="related-grid">
             {{ range first 4 (shuffle $samePriceRange) }}
-            <a href="{{ .RelPermalink }}" class="pickup-card">
+            <a href="{{ .RelPermalink }}" class="pickup-card" data-track-product="1" data-asin="{{ .Params.asin }}" data-category="{{ if .Params.categories }}{{ index .Params.categories 0 }}{{ else }}{{ .Params.category }}{{ end }}" data-price-bucket="{{ if .Params.price }}{{ $itemPrice := index (findRE "[0-9]+" (replace .Params.price "," "")) 0 | int }}{{ if lt $itemPrice 3000 }}under-3000{{ else if lt $itemPrice 7000 }}3000-6999{{ else if lt $itemPrice 15000 }}7000-14999{{ else if lt $itemPrice 30000 }}15000-29999{{ else }}30000-plus{{ end }}{{ else }}unknown{{ end }}" data-price="{{ .Params.price }}">
                 <div class="pickup-card-image">
                     {{ if .Params.images }}
                     <img src="{{ index .Params.images 0 }}" alt="{{ .Title }}" loading="lazy" decoding="async">
@@ -235,7 +255,7 @@
         <h3 class="related-section-title">⭐ 同スコア帯の人気商品</h3>
         <div class="related-grid">
             {{ range first 4 (shuffle $sameScoreRange) }}
-            <a href="{{ .RelPermalink }}" class="pickup-card">
+            <a href="{{ .RelPermalink }}" class="pickup-card" data-track-product="1" data-asin="{{ .Params.asin }}" data-category="{{ if .Params.categories }}{{ index .Params.categories 0 }}{{ else }}{{ .Params.category }}{{ end }}" data-price-bucket="{{ if .Params.price }}{{ $itemPrice := index (findRE "[0-9]+" (replace .Params.price "," "")) 0 | int }}{{ if lt $itemPrice 3000 }}under-3000{{ else if lt $itemPrice 7000 }}3000-6999{{ else if lt $itemPrice 15000 }}7000-14999{{ else if lt $itemPrice 30000 }}15000-29999{{ else }}30000-plus{{ end }}{{ else }}unknown{{ end }}" data-price="{{ .Params.price }}">
                 <div class="pickup-card-image">
                     {{ if .Params.images }}
                     <img src="{{ index .Params.images 0 }}" alt="{{ .Title }}" loading="lazy" decoding="async">
