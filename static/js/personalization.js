@@ -14,7 +14,7 @@
     function parsePrice(rawPrice) {
         if (rawPrice == null) return 0;
         const normalized = String(rawPrice).replaceAll(',', '');
-        const matched = normalized.match(/\d+/);
+        const matched = /\d+/.exec(normalized);
         return matched ? toPositiveNumber(matched[0]) : 0;
     }
 
@@ -73,25 +73,29 @@
         const categoryCounts = {};
         const priceBucketCounts = {};
         const seenAsins = new Set();
+        const recentAsins = new Set();
 
         // Calculate counts while deduplicating recent ASINs to avoid over-weighting a single product
+        // Also keep track of ALL asins in this window to penalize them
         for (let i = 0; i < events.length; i++) {
             const event = events[i];
             const asin = toText(event.asin);
             const category = toText(event.category) || 'unknown';
             const priceBucket = toText(event.priceBucket) || 'unknown';
 
-            // Weight: more recent events get slightly more weight
-            // Index 0 (oldest) gets weight 1.0, last index gets (1.0 + 0.5)
-            const recencyWeight = 1.0 + (i / events.length) * 0.5;
+            if (asin) recentAsins.add(asin);
 
-            if (!seenAsins.has(asin)) {
+            // Weight: more recent events get slightly more weight
+            // Index 0 (oldest) gets weight 1, last index gets (1 + 0.5)
+            const recencyWeight = 1 + (i / events.length) * 0.5;
+
+            if (seenAsins.has(asin)) {
+                // If seen before, add much less weight
+                categoryCounts[category] = (categoryCounts[category] || 0) + 0.2 * recencyWeight;
+            } else {
                 categoryCounts[category] = (categoryCounts[category] || 0) + recencyWeight;
                 priceBucketCounts[priceBucket] = (priceBucketCounts[priceBucket] || 0) + recencyWeight;
                 seenAsins.add(asin);
-            } else {
-                // If seen before, add much less weight
-                categoryCounts[category] = (categoryCounts[category] || 0) + 0.2 * recencyWeight;
             }
         }
 
@@ -99,7 +103,8 @@
             events,
             categoryCounts,
             priceBucketCounts,
-            recentCategory: events.length ? toText(events[events.length - 1].category) : ''
+            recentAsins,
+            recentCategory: events.length ? toText(events.at(-1).category) : ''
         };
     }
 
@@ -107,22 +112,43 @@
         if (!Array.isArray(items)) return [];
         const preferences = getPreferences();
         if (!preferences.events.length) {
-            return items;
+            // Apply a small stable jitter even if no preferences to rotate high-score items
+            return [...items].sort(function (a, b) {
+                const scoreA = Number(a.score || 0) + (hashCode(a.asin) % 100) / 1000;
+                const scoreB = Number(b.score || 0) + (hashCode(b.asin) % 100) / 1000;
+                return scoreB - scoreA;
+            });
         }
 
         return [...items].sort(function (a, b) {
             const scoreA = scoreItem(a, preferences);
             const scoreB = scoreItem(b, preferences);
-            if (scoreA === scoreB) {
-                return Number(b.score || 0) - Number(a.score || 0);
+            if (Math.abs(scoreA - scoreB) < 0.1) {
+                // Use a mix of Hugo score and a small random jitter based on ASIN
+                // to prevent the same 100-score items from always winning ties
+                const jitterA = (Number(a.score || 0) * 0.1) + (hashCode(a.asin) % 100) / 200;
+                const jitterB = (Number(b.score || 0) * 0.1) + (hashCode(b.asin) % 100) / 200;
+                return jitterB - jitterA;
             }
             return scoreB - scoreA;
         });
     }
 
+    function hashCode(str) {
+        let hash = 0;
+        for (let i = 0; i < str.length; i++) {
+            const charCode = str.codePointAt(i);
+            hash = (hash << 5) - hash + charCode;
+            hash = Math.trunc(hash);
+            if (charCode > 0xffff) i++; // Skip surrogate pair
+        }
+        return Math.abs(hash);
+    }
+
     function scoreItem(item, preferences) {
         if (!item || typeof item !== 'object') return 0;
 
+        const asin = toText(item.asin);
         const category = toText(item.category) || 'unknown';
         const priceBucket = toText(item.priceBucket) || derivePriceBucket(item.price);
         let score = 0;
@@ -134,6 +160,12 @@
         // Direct match with the very last viewed category gives a significant boost
         if (preferences.recentCategory && category === preferences.recentCategory) {
             score += 10;
+        }
+
+        // HEAVY penalty for items already in the recent history
+        // This promotes "discovery" and prevents the same items from sticking
+        if (asin && preferences.recentAsins.has(asin)) {
+            score -= 50;
         }
 
         return score;
