@@ -31,19 +31,22 @@
         </div>
     </div>
 
-    <!-- High Score Pickup Section (90点以上) -->
-    {{ $highScoreArticles := where (where .Site.RegularPages "Section" "articles") ".Params.score" "ge" 90 }}
+    <!-- High Score Pickup Section (80点以上) -->
+    {{ $highScoreArticles := where (where .Site.RegularPages "Section" "articles") ".Params.score" "ge" 80 }}
     {{ if gt (len $highScoreArticles) 0 }}
     {{ $rankedHighScoreArticles := partial "product-composite-ranked-pages.html" (dict "pages" $highScoreArticles) }}
     {{ $pickupItems := first 6 $rankedHighScoreArticles }}
-    {{ $pickupCandidates := first 60 $rankedHighScoreArticles }}
+    {{ $pickupCandidates := first 400 $rankedHighScoreArticles }}
     {{ $pickupData := slice }}
     {{ range $pickupCandidates }}
     {{ $pickupCategory := "" }}
-    {{ if .Params.categories }}{{ $pickupCategory = index .Params.categories 0 }}{{ else if .Params.category }}{{ $pickupCategory = .Params.category }}{{ end }}
-    {{/* TODO: The price-bucketing logic here is duplicated below in the SSR rendering block. It must be kept in sync. Consider extracting to a shared partial in the future. */}}
+    {{ if .Params.categories }}{{ $pickupCategory = index .Params.categories 0 }}{{ else if .Params.category }}{{
+    $pickupCategory = .Params.category }}{{ end }}
+    {{/* TODO: The price-bucketing logic here is duplicated below in the SSR rendering block. It must be kept in sync.
+    Consider extracting to a shared partial in the future. */}}
     {{ $pickupPriceRaw := 0 }}
-    {{ if .Params.price }}{{ $pickupPriceRaw = index (findRE "[0-9]+" (replace .Params.price "," "")) 0 | int }}{{ end }}
+    {{ if .Params.price }}{{ $pickupPriceRaw = index (findRE "[0-9]+" (replace .Params.price "," "")) 0 | int }}{{ end
+    }}
     {{ $pickupPriceBucket := "unknown" }}
     {{ if gt $pickupPriceRaw 0 }}
     {{ if lt $pickupPriceRaw 3000 }}{{ $pickupPriceBucket = "under-3000" }}
@@ -66,7 +69,7 @@
     <div class="pickup-section">
         <div class="pickup-header">
             <h3 class="pickup-title">🏆 高評価おすすめ</h3>
-            <span class="pickup-subtitle">90点以上の厳選商品</span>
+            <span class="pickup-subtitle">80点以上の厳選商品</span>
             <button type="button" class="shuffle-btn" data-reset-history="1">
                 🧹 閲覧履歴をリセット
             </button>
@@ -74,10 +77,13 @@
         <div class="pickup-grid" id="pickup-grid">
             {{ range $pickupItems }}
             {{ $pickupCategory := "" }}
-            {{ if .Params.categories }}{{ $pickupCategory = index .Params.categories 0 }}{{ else if .Params.category }}{{ $pickupCategory = .Params.category }}{{ end }}
-            {{/* TODO: The price-bucketing logic here is duplicated above in the JSON generation block. It must be kept in sync. Consider extracting to a shared partial in the future. */}}
+            {{ if .Params.categories }}{{ $pickupCategory = index .Params.categories 0 }}{{ else if .Params.category
+            }}{{ $pickupCategory = .Params.category }}{{ end }}
+            {{/* TODO: The price-bucketing logic here is duplicated above in the JSON generation block. It must be kept
+            in sync. Consider extracting to a shared partial in the future. */}}
             {{ $pickupPriceRaw := 0 }}
-            {{ if .Params.price }}{{ $pickupPriceRaw = index (findRE "[0-9]+" (replace .Params.price "," "")) 0 | int }}{{ end }}
+            {{ if .Params.price }}{{ $pickupPriceRaw = index (findRE "[0-9]+" (replace .Params.price "," "")) 0 | int
+            }}{{ end }}
             {{ $pickupPriceBucket := "unknown" }}
             {{ if gt $pickupPriceRaw 0 }}
             {{ if lt $pickupPriceRaw 3000 }}{{ $pickupPriceBucket = "under-3000" }}
