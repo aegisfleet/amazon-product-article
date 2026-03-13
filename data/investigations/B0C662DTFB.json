@@ -40,6 +40,12 @@
         "scenario": "海外旅行での記録",
         "experience": "軽くて小さいのでどこにでも持って行ける。スマホだと夜景がノイズだらけになるが、このカメラなら1インチセンサーのおかげで綺麗に撮れる。内蔵マイクの性能が良く、風切り音低減も付属のモフモフでバッチリ。",
         "sentiment": "positive"
+      },
+      {
+        "userType": "40代男性（家族の記録用）",
+        "scenario": "子供の行事や日常の記録",
+        "experience": "子供を追いかけながら動画を撮る際、手ブレ補正が電子式だけなのが少し不満。歩きながらだとカクつくことがある。ただ、画質や背景ボケはスマホより圧倒的に良く、軽くて持ち出しやすいので重宝している。",
+        "sentiment": "mixed"
       }
     ],
     "userImpression": "画質、AF性能、携帯性への評価は非常に高い。特に先代ZV-1で不満だった画角の狭さが解消された点が好評。一方で、バッテリー持ちの悪さと手ブレ補正の弱さ（特に歩き撮り時）は共通の悩みとして挙げられている。価格上昇に対する割高感を指摘する声もある。",
@@ -60,7 +66,7 @@
         "credibility": "high"
       }
     ],
-    "lastInvestigated": "2026-01-21",
+    "lastInvestigated": "2026-03-14",
     "competitiveAnalysis": [
       {
         "name": "DJI Osmo Pocket 3",
@@ -135,15 +141,37 @@
       "scoreRationale": "[基本点: 70]\n[加点: +5] 18mm広角レンズと内蔵NDフィルターによる撮影の柔軟性向上\n[加点: +5] 業界最高水準のAF性能と「シネマティックVlog設定」等の独自機能\n[加点: +3] 毎日持ち歩ける292gの軽量コンパクト設計\n[減点: -5] コンデジとしては高価な価格設定と競合（Pocket 3等）の存在\n[減点: -3] 光学式手ブレ補正非搭載による歩き撮り時の制約\n[減点: -2] バッテリー持続時間の短さ\n[加点: +2] ユーザーからの高い画質・AF評価\n[加点: +5] ZV-1からの正当進化としての独自の立ち位置（広角ズームコンデジ）\n[合計: 80]"
     },
     "technicalSpecs": {
-      "sensor": "1.0型 Exmor RS CMOS (約2010万画素)",
-      "lens": "18-50mm F1.8-4.0 (35mm判換算)",
-      "stabilization": "電子式 (アクティブモード対応)",
-      "display": "3.0型 バリアングル液晶 (タッチ対応)",
-      "battery": "NP-BX1 (実動画撮影 約45分)",
-      "dimensions": "約105.5 x 60.0 x 46.7 mm",
-      "weight": "約292g (バッテリー・メモリーカード含む)",
-      "microphone": "インテリジェント3カプセルマイク",
-      "connectivity": "USB Type-C, HDMIマイクロ, マイク端子 (ヘッドフォン端子なし)"
+      "os": null,
+      "cpu": null,
+      "ram": null,
+      "storage": null,
+      "display": {
+        "size": "3.0型",
+        "resolution": "約92.1万ドット",
+        "type": "TFT LCD バリアングル液晶 (タッチ対応)"
+      },
+      "battery": {
+        "capacity": "NP-BX1",
+        "charging": "USB充電対応"
+      },
+      "camera": {
+        "main": "1.0型 Exmor RS CMOSセンサー 約2010万画素",
+        "lens": "ZEISS Vario-Sonnar T* 18-50mm F1.8-4.0"
+      },
+      "dimensions": {
+        "height": "105.5mm",
+        "width": "60.0mm",
+        "depth": "46.7mm",
+        "weight": "約292g"
+      },
+      "connectivity": [
+        "Wi-Fi",
+        "Bluetooth"
+      ],
+      "other": [
+        "インテリジェント3カプセルマイク内蔵",
+        "電子式手ブレ補正（アクティブモード対応）"
+      ]
     }
   }
 }
