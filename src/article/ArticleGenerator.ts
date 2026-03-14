@@ -522,8 +522,7 @@ ${usageSection}`;
       (story) => !story.experience.includes('（推測）'),
     );
 
-    const userImpression = investigation.analysis.userImpression || '';
-    const filteredUserImpression = userImpression.includes('（推測）') ? '' : userImpression;
+    const filteredUserImpression = investigation.analysis.userImpression || '';
 
     // ユーザーストーリーの生成
     const userImpressionBlock = filteredUserImpression
@@ -548,7 +547,7 @@ ${usageSection}`;
       .join('\n\n');
 
     const userStories =
-      filteredUserStories.length > 0
+      filteredUserStories.length > 0 || filteredUserImpression
         ? `### 🗣️ 購入者の生の声（ユーザーストーリー）\n${userImpressionBlock}\n\n${userStoriesBlock}`
         : '';
 

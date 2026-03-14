@@ -248,7 +248,7 @@ describe('ArticleGenerator', () => {
       expect(result.sections).toHaveLength(6);
     });
 
-    it('should filter out user stories and impression containing "(推測)"', async () => {
+    it('should filter out user stories containing "(推測)" but keep impression', async () => {
       mockInvestigation.analysis.userStories = [
         {
           userType: '会社員',
@@ -269,11 +269,11 @@ describe('ArticleGenerator', () => {
 
       expect(result.content).toContain('実体験のレビューです');
       expect(result.content).not.toContain('この内容は（推測）です');
-      expect(result.content).not.toContain('全体の印象（推測）');
+      expect(result.content).toContain('全体の印象（推測）');
       expect(result.content).toContain('購入者の生の声');
     });
 
-    it('should hide the entire user stories section if all stories are filtered out', async () => {
+    it('should still show the section if impression exists even if all stories are filtered out', async () => {
       mockInvestigation.analysis.userStories = [
         {
           userType: '学生',
@@ -286,8 +286,18 @@ describe('ArticleGenerator', () => {
 
       const result = await generator.generateArticle(mockProduct, mockInvestigation);
 
-      expect(result.content).not.toContain('購入者の生の声');
+      expect(result.content).toContain('購入者の生の声');
+      expect(result.content).toContain('全体の印象（推測）');
       expect(result.content).not.toContain('体験談');
+    });
+
+    it('should hide the entire section only if both stories and impression are missing or empty', async () => {
+      mockInvestigation.analysis.userStories = [];
+      mockInvestigation.analysis.userImpression = '';
+
+      const result = await generator.generateArticle(mockProduct, mockInvestigation);
+
+      expect(result.content).not.toContain('購入者の生の声');
     });
 
 
