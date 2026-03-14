@@ -147,7 +147,7 @@ function shuffleWithSeed(items, seed) {
 }
 
 // High Score Pickup Personalization/Shuffle Feature
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', async function () {
     const pickupGrid = document.getElementById('pickup-grid');
     const pickupDataElement = document.getElementById('pickup-data');
 
@@ -165,14 +165,49 @@ document.addEventListener('DOMContentLoaded', function () {
 
     if (!pickupItems.length) return;
 
+    // Load category mapping (category -> parent group)
+    let categoryToGroup = {};
+    try {
+        const basePathMatch = /^(\/[^/]+\/)?/.exec(globalThis.location.pathname);
+        const basePath = basePathMatch ? basePathMatch[0] : '/';
+        const response = await fetch(`${basePath}data/categorygroups.json`);
+        if (response.ok) {
+            const data = await response.json();
+            // Handle both Array format (new) and Object format (legacy)
+            if (data?.categoryGroups && Array.isArray(data.categoryGroups)) {
+                data.categoryGroups.forEach(group => {
+                    if (group.children) {
+                        group.children.forEach(cat => {
+                            categoryToGroup[cat] = group.name;
+                        });
+                    }
+                    categoryToGroup[group.name] = group.name;
+                });
+            } else if (data) {
+                // Legacy format: Object where keys are group names
+                Object.entries(data).forEach(([groupName, groupData]) => {
+                    if (groupData.categories && Array.isArray(groupData.categories)) {
+                        groupData.categories.forEach(cat => {
+                            categoryToGroup[cat] = groupName;
+                        });
+                    }
+                    categoryToGroup[groupName] = groupName;
+                });
+            }
+            console.log('[Personalization] Loaded category mapping:', Object.keys(categoryToGroup).length, 'entries');
+        }
+    } catch (e) {
+        console.warn('Failed to load category mapping for personalization:', e);
+    }
+
     const hasPersonalization =
         typeof globalThis.ProductPersonalization === 'object' &&
         typeof globalThis.ProductPersonalization.rankItems === 'function' &&
         typeof globalThis.ProductPersonalization.getPreferences === 'function';
 
-    const preferences = hasPersonalization ? globalThis.ProductPersonalization.getPreferences() : { events: [] };
-    const initialItems = preferences?.events?.length
-        ? globalThis.ProductPersonalization.rankItems(pickupItems).slice(0, 6)
+    const preferences = hasPersonalization ? globalThis.ProductPersonalization.getPreferences(30, categoryToGroup) : { events: [] };
+    const initialItems = (preferences?.events?.length)
+        ? globalThis.ProductPersonalization.rankItems(pickupItems, categoryToGroup).slice(0, 6)
         : shuffleWithSeed(pickupItems, Date.now()).slice(0, 6);
 
     renderPickupItems(initialItems, pickupGrid);
