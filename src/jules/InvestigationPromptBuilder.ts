@@ -35,7 +35,7 @@ export class InvestigationPromptBuilder {
         month: '2-digit',
         day: '2-digit',
       })
-      .replace(/\//g, '-');
+      .replaceAll('/', '-');
   }
 
   public build(): string {
