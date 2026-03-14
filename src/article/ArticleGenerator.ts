@@ -941,6 +941,7 @@ ${recommendationMessage}`;
     if (specs.quantity) this.addFrontMatterSpec(lines, addedKeys, 'quantity', `"${this.formatSpecValue(specs.quantity)}"`);
     if (specs.content) this.addFrontMatterSpec(lines, addedKeys, 'content', `"${this.formatSpecValue(specs.content)}"`);
     if (specs.count) this.addFrontMatterSpec(lines, addedKeys, 'count', `"${this.formatSpecValue(specs.count)}"`);
+    if (specs.capacity) this.addFrontMatterSpec(lines, addedKeys, 'capacity', `"${this.formatSpecValue(specs.capacity)}"`);
   }
 
   private addDisplaySpecs(lines: string[], addedKeys: Set<string>, specs: TechnicalSpecs): void {
