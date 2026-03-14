@@ -851,7 +851,7 @@ ${recommendationMessage}`;
     const frontMatter = this.generateFrontMatter(metadata);
     const sectionsContent = sections.map((section) => section.content).join('\n\n');
 
-    return `${frontMatter}\n\n${sectionsContent}\n\n---\n*本記事にはアフィリエイトリンクが含まれています。*`;
+    return `${frontMatter}\n\n${sectionsContent}`;
   }
 
   /**
@@ -864,28 +864,28 @@ ${recommendationMessage}`;
   private generateFrontMatter(metadata: ArticleMetadata): string {
     const lines = [
       '---',
-      `title: "${metadata.title}"`,
-      `description: "${metadata.description}"`,
+      `title: "${this.escapeForFrontMatter(metadata.title)}"`,
+      `description: "${this.escapeForFrontMatter(metadata.description)}"`,
       `date: ${metadata.publishDate.toISOString().split('T')[0]}`,
-      `categories: ["${metadata.category}"]`,
+      `categories: ["${this.escapeForFrontMatter(metadata.category)}"]`,
     ];
 
-    if (metadata.subcategory) lines.push(`subcategory: "${metadata.subcategory}"`);
-    if (metadata.manufacturer) lines.push(`manufacturer: "${metadata.manufacturer}"`);
+    if (metadata.subcategory) lines.push(`subcategory: "${this.escapeForFrontMatter(metadata.subcategory)}"`);
+    if (metadata.manufacturer) lines.push(`manufacturer: "${this.escapeForFrontMatter(metadata.manufacturer)}"`);
 
     lines.push(`asin: "${metadata.asin}"`);
     lines.push(`price_range: "${metadata.priceRange}"`);
 
-    if (metadata.price) lines.push(`price: "${metadata.price}"`);
+    if (metadata.price) lines.push(`price: "${this.escapeForFrontMatter(metadata.price)}"`);
     if (metadata.score) lines.push(`score: ${metadata.score}`);
     if (metadata.is_prime !== undefined) lines.push(`is_prime: ${metadata.is_prime}`);
-    if (metadata.availability) lines.push(`availability: "${metadata.availability}"`);
+    if (metadata.availability) lines.push(`availability: "${this.escapeForFrontMatter(metadata.availability)}"`);
 
     if (metadata.rating) lines.push(`rating: ${metadata.rating}`);
 
     lines.push(
-      `tags: [${metadata.tags.map((tag) => `"${tag}"`).join(', ')}]`,
-      `keywords: [${metadata.seoKeywords.map((keyword) => `"${keyword}"`).join(', ')}]`,
+      `tags: [${metadata.tags.map((tag) => `"${this.escapeForFrontMatter(tag)}"`).join(', ')}]`,
+      `keywords: [${metadata.seoKeywords.map((keyword) => `"${this.escapeForFrontMatter(keyword)}"`).join(', ')}]`,
     );
 
     if (metadata.featured) lines.push(`featured: ${metadata.featured}`);
@@ -895,7 +895,7 @@ ${recommendationMessage}`;
 
     // Add images for Hugo template (used on home page)
     if (metadata.images && metadata.images.length > 0) {
-      lines.push(`images: [${metadata.images.map((img) => `"${img}"`).join(', ')}]`);
+      lines.push(`images: [${metadata.images.map((img) => `"${this.escapeForFrontMatter(img)}"`).join(', ')}]`);
     }
 
     // Add technical specs (flattened for Hugo template)
@@ -925,25 +925,25 @@ ${recommendationMessage}`;
 
       // ディスプレイ
       if (specs.display) {
-        if (specs.display.size) addSpec('display_size', `"${specs.display.size}"`);
-        if (specs.display.resolution) addSpec('display_resolution', `"${specs.display.resolution}"`);
-        if (specs.display.type) addSpec('display_type', `"${specs.display.type}"`);
-        if (specs.display.refreshRate) addSpec('display_refresh_rate', `"${specs.display.refreshRate}"`);
+        if (specs.display.size) addSpec('display_size', `"${this.escapeForFrontMatter(specs.display.size)}"`);
+        if (specs.display.resolution) addSpec('display_resolution', `"${this.escapeForFrontMatter(specs.display.resolution)}"`);
+        if (specs.display.type) addSpec('display_type', `"${this.escapeForFrontMatter(specs.display.type)}"`);
+        if (specs.display.refreshRate) addSpec('display_refresh_rate', `"${this.escapeForFrontMatter(specs.display.refreshRate)}"`);
       }
 
       // バッテリー
       if (specs.battery) {
-        if (specs.battery.capacity) addSpec('battery_capacity', `"${specs.battery.capacity}"`);
-        if (specs.battery.charging) addSpec('battery_charging', `"${specs.battery.charging}"`);
-        if (specs.battery.playbackTime) addSpec('battery_playback_time', `"${specs.battery.playbackTime}"`);
+        if (specs.battery.capacity) addSpec('battery_capacity', `"${this.escapeForFrontMatter(specs.battery.capacity)}"`);
+        if (specs.battery.charging) addSpec('battery_charging', `"${this.escapeForFrontMatter(specs.battery.charging)}"`);
+        if (specs.battery.playbackTime) addSpec('battery_playback_time', `"${this.escapeForFrontMatter(specs.battery.playbackTime)}"`);
       }
 
       // カメラ
       if (specs.camera) {
-        if (specs.camera.main) addSpec('camera_main', `"${specs.camera.main}"`);
-        if (specs.camera.ultrawide) addSpec('camera_ultrawide', `"${specs.camera.ultrawide}"`);
-        if (specs.camera.telephoto) addSpec('camera_telephoto', `"${specs.camera.telephoto}"`);
-        if (specs.camera.front) addSpec('camera_front', `"${specs.camera.front}"`);
+        if (specs.camera.main) addSpec('camera_main', `"${this.escapeForFrontMatter(specs.camera.main)}"`);
+        if (specs.camera.ultrawide) addSpec('camera_ultrawide', `"${this.escapeForFrontMatter(specs.camera.ultrawide)}"`);
+        if (specs.camera.telephoto) addSpec('camera_telephoto', `"${this.escapeForFrontMatter(specs.camera.telephoto)}"`);
+        if (specs.camera.front) addSpec('camera_front', `"${this.escapeForFrontMatter(specs.camera.front)}"`);
       }
 
       // 寸法・重量
