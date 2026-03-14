@@ -19,15 +19,6 @@ hugo server --bind 0.0.0.0 --port 1313 --disableFastRender &
 
 サーバー起動後、約3-5秒待機してからアクセスする。
 
-### 重要: URLについて
-
-このプロジェクトではbaseURLに `/amazon-product-article/` が設定されているため、ローカルでのアクセスURLは以下となる:
-
-- **ホーム画面**: `http://localhost:1313/amazon-product-article/`
-- **記事ページ**: `http://localhost:1313/amazon-product-article/B07DZZJ2B9/` など
-
-❌ `http://localhost:1313/` では404になるので注意。
-
 ## 使用方法
 
 ### 1. ページを開いてスクリーンショットを取得
@@ -36,7 +27,7 @@ hugo server --bind 0.0.0.0 --port 1313 --disableFastRender &
 // turbo
 python3 -c "
 from playwright.sync_api import sync_playwright
-URL = 'http://localhost:1313/amazon-product-article/'  # basepathを含める
+URL = 'http://localhost:1313/'
 OUTPUT = '/tmp/screenshot.png'
 
 with sync_playwright() as p:
@@ -59,7 +50,7 @@ with sync_playwright() as p:
 // turbo
 python3 -c "
 from playwright.sync_api import sync_playwright
-URL = 'http://localhost:1313/amazon-product-article/'
+URL = 'http://localhost:1313/'
 SELECTOR = 'h1'  # 確認する要素のセレクタ
 
 with sync_playwright() as p:
@@ -82,7 +73,7 @@ with sync_playwright() as p:
 python3 -c "
 from playwright.sync_api import sync_playwright
 import time
-URL = 'http://localhost:1313/amazon-product-article/'
+URL = 'http://localhost:1313/'
 CLICK_SELECTOR = '#search-input'  # クリックする要素
 
 with sync_playwright() as p:
@@ -102,7 +93,7 @@ with sync_playwright() as p:
 ```bash
 python3 -c "
 from playwright.sync_api import sync_playwright
-URL = 'http://localhost:1313/amazon-product-article/'
+URL = 'http://localhost:1313/'
 INPUT_SELECTOR = '#search-input'
 INPUT_VALUE = '検索テキスト'
 
@@ -132,4 +123,3 @@ pkill -f "hugo server"
 - `headless=False` にするとGUIあり（目視確認可能）
 - スクリーンショットは `/tmp/` 以下に保存される
 - アニメーションがある場合は `time.sleep()` で待機する
-- URLは必ず basepath `/amazon-product-article/` を含める

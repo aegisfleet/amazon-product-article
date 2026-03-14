@@ -58,7 +58,7 @@ export class ProductCounter {
   }
 
   private static normalizeCategory(category: string): string {
-    return category.trim().replace(/\s+/g, ' ');
+    return category.trim().replaceAll(/\s+/g, ' ');
   }
 
   private extractCategories(filePath: string): string[] {
