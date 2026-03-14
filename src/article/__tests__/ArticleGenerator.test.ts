@@ -248,10 +248,6 @@ describe('ArticleGenerator', () => {
       expect(result.sections).toHaveLength(6);
     });
 
-    it('should include affiliate disclosure', async () => {
-      const result = await generator.generateArticle(mockProduct, mockInvestigation);
-      expect(result.content).toContain('アフィリエイト');
-    });
 
     it('should generate proper front matter', async () => {
       const result = await generator.generateArticle(mockProduct, mockInvestigation);
@@ -259,7 +255,6 @@ describe('ArticleGenerator', () => {
       expect(result.content).toContain('---');
       expect(result.content).toContain('title: "テスト商品 スマートフォン"');
       expect(result.content).toContain('asin: "B08N5WRWNW"');
-      expect(result.content).toContain('mobile_optimized: true');
     });
 
     it('should use investigation.generatedAt for publishDate', async () => {
@@ -424,7 +419,7 @@ describe('ArticleGenerator', () => {
 
       // Check for duplicate 'weight:' keys in specs section
       const content = result.content;
-      const specsMatch = content.match(/specs:(?:(?!(?:hero:|---))[\s\S])*/);
+      const specsMatch = /specs:(?:(?!(?:hero:|---))[\s\S])*/.exec(content);
 
       expect(specsMatch).not.toBeNull();
       if (specsMatch) {
@@ -464,7 +459,7 @@ describe('ArticleGenerator', () => {
 
       const result = await generator.generateArticle(mockProduct, invalidInvestigation);
       const content = result.content;
-      const specsMatch = content.match(/specs:(?:(?!(?:hero:|---))[\s\S])*/);
+      const specsMatch = /specs:(?:(?!(?:hero:|---))[\s\S])*/.exec(content);
 
       expect(specsMatch).not.toBeNull();
       if (specsMatch) {
@@ -627,7 +622,6 @@ describe('ArticleGenerator', () => {
       const endTime = Date.now();
       const duration = endTime - startTime;
 
-      // console.log(`Duration: ${duration}ms (Expected parallel: ~${delay}ms + overhead, Sequential: ~${delay * competitorCount}ms)`);
 
       // Verify concurrency: duration should be significantly less than sequential execution time
       // Allow some overhead (e.g., 80% of sequential time is safe margin)

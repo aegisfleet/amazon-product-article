@@ -741,14 +741,7 @@ ${recommendationMessage}`;
       // nullまたはundefinedはスキップ
       if (value === null || value === undefined) continue;
 
-      let label = SPEC_LABEL_MAP[key] || this.formatFieldName(key);
-
-      // カテゴリに応じたラベルの調整
-      if (key === 'power') {
-        if (category === 'ソフトコンタクトレンズ' || category === 'コンタクトレンズ・ケア用品') {
-          label = '度数';
-        }
-      }
+      const label = this.getSpecLabel(key, category);
 
       const formattedValue = this.formatSpecValue(value, category);
       if (formattedValue && formattedValue !== 'null') {
@@ -809,39 +802,55 @@ ${recommendationMessage}`;
    * オブジェクト値をフォーマット
    */
   private formatObjectValue(obj: Record<string, unknown>, category?: string): string {
-    const parts: string[] = [];
+    return Object.entries(obj)
+      .filter(([, val]) => val !== null && val !== undefined)
+      .map(([key, val]) => {
+        const label = this.getSpecLabel(key, category);
+        return this.formatEntryForObject(label, val, category);
+      })
+      .filter((entry) => entry !== '')
+      .join(' / ');
+  }
 
-    for (const [key, val] of Object.entries(obj)) {
-      if (val === null || val === undefined) continue;
+  /**
+   * 個別のエントリをオブジェクト形式用にフォーマット
+   */
+  private formatEntryForObject(label: string, val: unknown, category?: string): string {
+    if (typeof val === 'string' || typeof val === 'number' || typeof val === 'boolean') {
+      const formattedVal = this.formatSpecValue(val, category);
+      return formattedVal !== '' && formattedVal !== 'null' ? `${label}: ${formattedVal}` : '';
+    }
 
-      let label = SPEC_LABEL_MAP[key] || this.formatFieldName(key);
+    if (Array.isArray(val)) {
+      const formattedArray = val
+        .map((v) => this.formatSpecValue(v, category))
+        .filter((v) => v !== '' && v !== 'null');
+      return formattedArray.length > 0 ? `${label}: ${formattedArray.join(', ')}` : '';
+    }
 
-      // カテゴリに応じたラベルの調整
-      if (key === 'power') {
-        if (category === 'ソフトコンタクトレンズ' || category === 'コンタクトレンズ・ケア用品') {
-          label = '度数';
-        }
-      }
+    if (typeof val === 'object' && val !== null) {
+      // ネストされたオブジェクトは再帰的に処理
+      return `${label}: ${this.formatObjectValue(val as Record<string, unknown>, category)}`;
+    }
 
-      if (typeof val === 'string' || typeof val === 'number' || typeof val === 'boolean') {
-        const formattedVal = this.formatSpecValue(val, category);
-        if (formattedVal !== '' && formattedVal !== 'null') {
-          parts.push(`${label}: ${formattedVal}`);
-        }
-      } else if (Array.isArray(val)) {
-        const formattedArray = val
-          .map((v) => this.formatSpecValue(v, category))
-          .filter((v) => v !== '' && v !== 'null');
-        if (formattedArray.length > 0) {
-          parts.push(`${label}: ${formattedArray.join(', ')}`);
-        }
-      } else if (typeof val === 'object') {
-        // ネストされたオブジェクトは再帰的に処理
-        parts.push(`${label}: ${this.formatObjectValue(val as Record<string, unknown>, category)}`);
+    return '';
+  }
+
+  /**
+   * スペックのラベル名を取得（マッピングとカテゴリ考慮）
+   */
+  private getSpecLabel(key: string, category?: string): string {
+    let label = SPEC_LABEL_MAP[key] || this.formatFieldName(key);
+
+    // カテゴリに応じたラベルの調整
+    if (key === 'power') {
+      const lensesCategories = ['ソフトコンタクトレンズ', 'コンタクトレンズ・ケア用品'];
+      if (category && lensesCategories.includes(category)) {
+        label = '度数';
       }
     }
 
-    return parts.join(' / ');
+    return label;
   }
 
   /**
@@ -862,229 +871,21 @@ ${recommendationMessage}`;
   }
 
   private generateFrontMatter(metadata: ArticleMetadata): string {
-    const lines = [
-      '---',
-      `title: "${this.escapeForFrontMatter(metadata.title)}"`,
-      `description: "${this.escapeForFrontMatter(metadata.description)}"`,
-      `date: ${metadata.publishDate.toISOString().split('T')[0]}`,
-      `categories: ["${this.escapeForFrontMatter(metadata.category)}"]`,
-    ];
+    const lines = ['---'];
 
-    if (metadata.subcategory) lines.push(`subcategory: "${this.escapeForFrontMatter(metadata.subcategory)}"`);
-    if (metadata.manufacturer) lines.push(`manufacturer: "${this.escapeForFrontMatter(metadata.manufacturer)}"`);
-
-    lines.push(`asin: "${metadata.asin}"`);
-    lines.push(`price_range: "${metadata.priceRange}"`);
-
-    if (metadata.price) lines.push(`price: "${this.escapeForFrontMatter(metadata.price)}"`);
-    if (metadata.score) lines.push(`score: ${metadata.score}`);
-    if (metadata.is_prime !== undefined) lines.push(`is_prime: ${metadata.is_prime}`);
-    if (metadata.availability) lines.push(`availability: "${this.escapeForFrontMatter(metadata.availability)}"`);
-
-    if (metadata.rating) lines.push(`rating: ${metadata.rating}`);
-
-    lines.push(
-      `tags: [${metadata.tags.map((tag) => `"${this.escapeForFrontMatter(tag)}"`).join(', ')}]`,
-      `keywords: [${metadata.seoKeywords.map((keyword) => `"${this.escapeForFrontMatter(keyword)}"`).join(', ')}]`,
-    );
-
-    if (metadata.featured) lines.push(`featured: ${metadata.featured}`);
-    if (typeof metadata.mobileOptimized === 'boolean') lines.push(`mobile_optimized: ${metadata.mobileOptimized}`);
-    if (metadata.lastInvestigated) lines.push(`last_investigated: "${metadata.lastInvestigated}"`);
-    if (metadata.affiliate_url) lines.push(`affiliate_url: "${metadata.affiliate_url}"`);
-
-    // Add images for Hugo template (used on home page)
-    if (metadata.images && metadata.images.length > 0) {
-      lines.push(`images: [${metadata.images.map((img) => `"${this.escapeForFrontMatter(img)}"`).join(', ')}]`);
-    }
+    this.addCoreMetadata(lines, metadata);
+    this.addProductIdentifiers(lines, metadata);
+    this.addMetricsMetadata(lines, metadata);
+    this.addSEOAndSocialMetadata(lines, metadata);
 
     // Add technical specs (flattened for Hugo template)
     if (metadata.technicalSpecs) {
-      const specs = metadata.technicalSpecs;
-      lines.push('specs:');
-      const addedKeys = new Set<string>();
-
-      const addSpec = (key: string, value: string): void => {
-        if (!addedKeys.has(key)) {
-          // formatSpecValue already handles placeholders, but we need to check the result
-          // If the value is just "", don't add it.
-          // Note: value here is often already quoted like '"val"', so we check for '""'
-          if (value !== '""' && value !== '') {
-            lines.push(`  ${key}: ${value}`);
-            addedKeys.add(key);
-          }
-        }
-      };
-
-      // 基本スペック
-      if (specs.os) addSpec('os', `"${this.formatSpecValue(specs.os)}"`);
-      if (specs.cpu) addSpec('cpu', `"${this.formatSpecValue(specs.cpu)}"`);
-      if (specs.gpu) addSpec('gpu', `"${this.formatSpecValue(specs.gpu)}"`);
-      if (specs.ram) addSpec('ram', `"${this.formatSpecValue(specs.ram)}"`);
-      if (specs.storage) addSpec('storage', `"${this.formatSpecValue(specs.storage)}"`);
-
-      // ディスプレイ
-      if (specs.display) {
-        if (specs.display.size) addSpec('display_size', `"${this.escapeForFrontMatter(specs.display.size)}"`);
-        if (specs.display.resolution) addSpec('display_resolution', `"${this.escapeForFrontMatter(specs.display.resolution)}"`);
-        if (specs.display.type) addSpec('display_type', `"${this.escapeForFrontMatter(specs.display.type)}"`);
-        if (specs.display.refreshRate) addSpec('display_refresh_rate', `"${this.escapeForFrontMatter(specs.display.refreshRate)}"`);
-      }
-
-      // バッテリー
-      if (specs.battery) {
-        if (specs.battery.capacity) addSpec('battery_capacity', `"${this.escapeForFrontMatter(specs.battery.capacity)}"`);
-        if (specs.battery.charging) addSpec('battery_charging', `"${this.escapeForFrontMatter(specs.battery.charging)}"`);
-        if (specs.battery.playbackTime) addSpec('battery_playback_time', `"${this.escapeForFrontMatter(specs.battery.playbackTime)}"`);
-      }
-
-      // カメラ
-      if (specs.camera) {
-        if (specs.camera.main) addSpec('camera_main', `"${this.escapeForFrontMatter(specs.camera.main)}"`);
-        if (specs.camera.ultrawide) addSpec('camera_ultrawide', `"${this.escapeForFrontMatter(specs.camera.ultrawide)}"`);
-        if (specs.camera.telephoto) addSpec('camera_telephoto', `"${this.escapeForFrontMatter(specs.camera.telephoto)}"`);
-        if (specs.camera.front) addSpec('camera_front', `"${this.escapeForFrontMatter(specs.camera.front)}"`);
-      }
-
-      // 寸法・重量
-      if (specs.dimensions) {
-        const height = this.formatSpecValue(specs.dimensions.height);
-        const width = this.formatSpecValue(specs.dimensions.width);
-        const depth = this.formatSpecValue(specs.dimensions.depth);
-        const weight = this.formatSpecValue(specs.dimensions.weight);
-
-        if (height) addSpec('height', `"${height}"`);
-        if (width) addSpec('width', `"${width}"`);
-        if (depth) addSpec('depth', `"${depth}"`);
-        if (weight) addSpec('weight', `"${weight}"`);
-      }
-
-      // イヤホン・ヘッドホン
-      if (specs.driver) addSpec('driver', `"${this.formatSpecValue(specs.driver)}"`);
-      if (specs.codec) {
-        const codecVal = Array.isArray(specs.codec)
-          ? `[${specs.codec.map((c) => `"${c}"`).join(', ')}]`
-          : `"${specs.codec}"`;
-        addSpec('codec', codecVal);
-      }
-      if (specs.noiseCancel) addSpec('noise_cancel', `"${this.formatSpecValue(specs.noiseCancel)}"`);
-
-      // 家電
-      if (specs.power) addSpec('power', `"${this.formatSpecValue(specs.power)}"`);
-      if (specs.capacity) addSpec('capacity', `"${this.formatSpecValue(specs.capacity)}"`);
-      if (specs.contentVolume) addSpec('capacity', `"${this.formatSpecValue(specs.contentVolume)}"`);
-      if (specs.category) addSpec('spec_category', `"${this.formatSpecValue(specs.category)}"`);
-
-      // 接続性
-      if (specs.connectivity) {
-        const connectVal = Array.isArray(specs.connectivity)
-          ? `[${specs.connectivity.map((c) => `"${c}"`).join(', ')}]`
-          : `"${specs.connectivity}"`;
-        addSpec('connectivity', connectVal);
-      }
-
-      // 靴（シューズ）
-      if (specs.width) addSpec('width', `"${this.formatSpecValue(specs.width)}"`);
-      if (specs.weight) addSpec('weight', `"${this.formatSpecValue(specs.weight)}"`);
-      if (specs.midsole) addSpec('midsole', `"${this.formatSpecValue(specs.midsole)}"`);
-      if (specs.cushioningTech) {
-        const cushVal = Array.isArray(specs.cushioningTech)
-          ? `[${specs.cushioningTech.map((c) => `"${c}"`).join(', ')}]`
-          : `"${specs.cushioningTech}"`;
-        addSpec('cushioning_tech', cushVal);
-      }
-      if (specs.heelCounter) addSpec('heel_counter', `"${this.formatSpecValue(specs.heelCounter)}"`);
-      if (specs.heelHeight) addSpec('heel_height', `"${this.formatSpecValue(specs.heelHeight)}"`);
-      if (specs.material) {
-        if (!addedKeys.has('material')) {
-          if (typeof specs.material === 'string') {
-            lines.push(`  material: "${specs.material}"`);
-          } else {
-            lines.push('  material:');
-            if (specs.material.upper) lines.push(`    upper: "${specs.material.upper}"`);
-            if (specs.material.outsole) lines.push(`    outsole: "${specs.material.outsole}"`);
-            if (specs.material.insole) lines.push(`    insole: "${specs.material.insole}"`);
-          }
-          addedKeys.add('material');
-        }
-      }
-      if (specs.upperMaterial) addSpec('upper_material', `"${specs.upperMaterial}"`);
-      if (specs.midsoleMaterial) addSpec('midsole_material', `"${specs.midsoleMaterial}"`);
-      if (specs.outsoleMaterial) addSpec('outsole_material', `"${specs.outsoleMaterial}"`);
-      if (specs.outerSole) addSpec('outer_sole', `"${specs.outerSole}"`);
-      if (specs.insoleMaterial) addSpec('insole_material', `"${specs.insoleMaterial}"`);
-      if (specs.innerSole) addSpec('inner_sole', `"${specs.innerSole}"`);
-      if (specs.insole) addSpec('insole', `"${specs.insole}"`);
-
-      if (specs.modelNumber) addSpec('model_number', `"${this.formatSpecValue(specs.modelNumber)}"`);
-      if (specs.model) addSpec('model', `"${this.formatSpecValue(specs.model)}"`);
-      if (specs.countryOfOrigin) addSpec('country_of_origin', `"${this.formatSpecValue(specs.countryOfOrigin)}"`);
-
-      // 耐荷重
-      if (specs.loadCapacity) {
-        if (!addedKeys.has('load_capacity')) {
-          if (typeof specs.loadCapacity === 'string') {
-            lines.push(`  load_capacity: "${specs.loadCapacity}"`);
-          } else {
-            lines.push('  load_capacity:');
-            for (const [key, value] of Object.entries(specs.loadCapacity)) {
-              lines.push(`    ${key}: "${value}"`);
-            }
-          }
-          addedKeys.add('load_capacity');
-        }
-      }
-
-      // 付属品
-      if (specs.attachments) {
-        if (Array.isArray(specs.attachments)) {
-          addSpec('attachments', `[${specs.attachments.map((a) => `"${a}"`).join(', ')}]`);
-        } else {
-          addSpec('attachments', `"${specs.attachments}"`);
-        }
-      }
-
-      // その他
-      if (specs.other) {
-        const otherVal = Array.isArray(specs.other)
-          ? `[${specs.other.map((o) => `"${o}"`).join(', ')}]`
-          : `"${specs.other}"`;
-        addSpec('other_specs', otherVal);
-      }
+      this.addTechnicalSpecs(lines, metadata.technicalSpecs);
     }
 
     // Add Hero Data
     if (metadata.hero) {
-      lines.push('hero:');
-      if (metadata.hero.score_rationale) {
-        lines.push('  score_rationale:');
-        if (metadata.hero.score_rationale.top_plus) {
-          lines.push(
-            '    top_plus:',
-            `      points: ${metadata.hero.score_rationale.top_plus.points}`,
-            `      desc: "${this.escapeForFrontMatter(metadata.hero.score_rationale.top_plus.desc)}"`,
-          );
-        }
-        if (metadata.hero.score_rationale.top_minus) {
-          lines.push(
-            '    top_minus:',
-            `      points: ${metadata.hero.score_rationale.top_minus.points}`,
-            `      desc: "${this.escapeForFrontMatter(metadata.hero.score_rationale.top_minus.desc)}"`,
-          );
-        }
-      }
-
-      if (metadata.hero.target_users && metadata.hero.target_users.length > 0) {
-        lines.push(
-          `  target_users: [${metadata.hero.target_users.map((u) => `"${this.escapeForFrontMatter(u)}"`).join(', ')}]`,
-        );
-      }
-
-      if (metadata.hero.warnings && metadata.hero.warnings.length > 0) {
-        lines.push(
-          `  warnings: [${metadata.hero.warnings.map((w) => `"${this.escapeForFrontMatter(w)}"`).join(', ')}]`,
-        );
-      }
+      this.addHeroData(lines, metadata.hero);
     }
 
     lines.push('---');
@@ -1092,7 +893,234 @@ ${recommendationMessage}`;
     return lines.join('\n');
   }
 
+  /**
+   * テキストスペック全体を追加
+   */
+  private addTechnicalSpecs(lines: string[], specs: TechnicalSpecs): void {
+    lines.push('specs:');
+    const addedKeys = new Set<string>();
+
+    this.addBasicSpecs(lines, addedKeys, specs);
+    this.addDisplaySpecs(lines, addedKeys, specs);
+    this.addBatterySpecs(lines, addedKeys, specs);
+    this.addCameraSpecs(lines, addedKeys, specs);
+    this.addDimensionSpecs(lines, addedKeys, specs);
+    this.addAudioSpecs(lines, addedKeys, specs);
+    this.addElectronicsSpecs(lines, addedKeys, specs);
+    this.addConnectivitySpecs(lines, addedKeys, specs);
+    this.addShoeSpecs(lines, addedKeys, specs);
+    this.addLoadCapacitySpecs(lines, addedKeys, specs);
+    this.addAttachmentSpecs(lines, addedKeys, specs);
+    this.addOtherSpecs(lines, addedKeys, specs);
+  }
+
+  /**
+   * フロントマターにスペック項目を追加（重複・空値チェック込み）
+   */
+  private addFrontMatterSpec(lines: string[], addedKeys: Set<string>, key: string, value: string): void {
+    if (addedKeys.has(key)) return;
+    if (value === '""' || value === '') return;
+
+    lines.push(`  ${key}: ${value}`);
+    addedKeys.add(key);
+  }
+
+  private addBasicSpecs(lines: string[], addedKeys: Set<string>, specs: TechnicalSpecs): void {
+    if (specs.os) this.addFrontMatterSpec(lines, addedKeys, 'os', `"${this.formatSpecValue(specs.os)}"`);
+    if (specs.cpu) this.addFrontMatterSpec(lines, addedKeys, 'cpu', `"${this.formatSpecValue(specs.cpu)}"`);
+    if (specs.gpu) this.addFrontMatterSpec(lines, addedKeys, 'gpu', `"${this.formatSpecValue(specs.gpu)}"`);
+    if (specs.ram) this.addFrontMatterSpec(lines, addedKeys, 'ram', `"${this.formatSpecValue(specs.ram)}"`);
+    if (specs.storage) this.addFrontMatterSpec(lines, addedKeys, 'storage', `"${this.formatSpecValue(specs.storage)}"`);
+  }
+
+  private addDisplaySpecs(lines: string[], addedKeys: Set<string>, specs: TechnicalSpecs): void {
+    if (!specs.display) return;
+    if (specs.display.size) this.addFrontMatterSpec(lines, addedKeys, 'display_size', `"${this.escapeForFrontMatter(specs.display.size)}"`);
+    if (specs.display.resolution) this.addFrontMatterSpec(lines, addedKeys, 'display_resolution', `"${this.escapeForFrontMatter(specs.display.resolution)}"`);
+    if (specs.display.type) this.addFrontMatterSpec(lines, addedKeys, 'display_type', `"${this.escapeForFrontMatter(specs.display.type)}"`);
+    if (specs.display.refreshRate) this.addFrontMatterSpec(lines, addedKeys, 'display_refresh_rate', `"${this.escapeForFrontMatter(specs.display.refreshRate)}"`);
+  }
+
+  private addBatterySpecs(lines: string[], addedKeys: Set<string>, specs: TechnicalSpecs): void {
+    if (!specs.battery) return;
+    if (specs.battery.capacity) this.addFrontMatterSpec(lines, addedKeys, 'battery_capacity', `"${this.escapeForFrontMatter(specs.battery.capacity)}"`);
+    if (specs.battery.charging) this.addFrontMatterSpec(lines, addedKeys, 'battery_charging', `"${this.escapeForFrontMatter(specs.battery.charging)}"`);
+    if (specs.battery.playbackTime) this.addFrontMatterSpec(lines, addedKeys, 'battery_playback_time', `"${this.escapeForFrontMatter(specs.battery.playbackTime)}"`);
+  }
+
+  private addCameraSpecs(lines: string[], addedKeys: Set<string>, specs: TechnicalSpecs): void {
+    if (!specs.camera) return;
+    if (specs.camera.main) this.addFrontMatterSpec(lines, addedKeys, 'camera_main', `"${this.escapeForFrontMatter(specs.camera.main)}"`);
+    if (specs.camera.ultrawide) this.addFrontMatterSpec(lines, addedKeys, 'camera_ultrawide', `"${this.escapeForFrontMatter(specs.camera.ultrawide)}"`);
+    if (specs.camera.telephoto) this.addFrontMatterSpec(lines, addedKeys, 'camera_telephoto', `"${this.escapeForFrontMatter(specs.camera.telephoto)}"`);
+    if (specs.camera.front) this.addFrontMatterSpec(lines, addedKeys, 'camera_front', `"${this.escapeForFrontMatter(specs.camera.front)}"`);
+  }
+
+  private addDimensionSpecs(lines: string[], addedKeys: Set<string>, specs: TechnicalSpecs): void {
+    if (!specs.dimensions) return;
+    const { height, width, depth, weight } = specs.dimensions;
+    if (height) this.addFrontMatterSpec(lines, addedKeys, 'height', `"${this.formatSpecValue(height)}"`);
+    if (width) this.addFrontMatterSpec(lines, addedKeys, 'width', `"${this.formatSpecValue(width)}"`);
+    if (depth) this.addFrontMatterSpec(lines, addedKeys, 'depth', `"${this.formatSpecValue(depth)}"`);
+    if (weight) this.addFrontMatterSpec(lines, addedKeys, 'weight', `"${this.formatSpecValue(weight)}"`);
+  }
+
+  private addAudioSpecs(lines: string[], addedKeys: Set<string>, specs: TechnicalSpecs): void {
+    if (specs.driver) this.addFrontMatterSpec(lines, addedKeys, 'driver', `"${this.formatSpecValue(specs.driver)}"`);
+    if (specs.codec) {
+      const codecVal = Array.isArray(specs.codec)
+        ? `[${specs.codec.map((c) => `"${c}"`).join(', ')}]`
+        : `"${specs.codec}"`;
+      this.addFrontMatterSpec(lines, addedKeys, 'codec', codecVal);
+    }
+    if (specs.noiseCancel) this.addFrontMatterSpec(lines, addedKeys, 'noise_cancel', `"${this.formatSpecValue(specs.noiseCancel)}"`);
+  }
+
+  private addElectronicsSpecs(lines: string[], addedKeys: Set<string>, specs: TechnicalSpecs): void {
+    if (specs.power) this.addFrontMatterSpec(lines, addedKeys, 'power', `"${this.formatSpecValue(specs.power)}"`);
+    if (specs.capacity) this.addFrontMatterSpec(lines, addedKeys, 'capacity', `"${this.formatSpecValue(specs.capacity)}"`);
+    if (specs.contentVolume) this.addFrontMatterSpec(lines, addedKeys, 'capacity', `"${this.formatSpecValue(specs.contentVolume)}"`);
+    if (specs.category) this.addFrontMatterSpec(lines, addedKeys, 'spec_category', `"${this.formatSpecValue(specs.category)}"`);
+  }
+
+  private addConnectivitySpecs(lines: string[], addedKeys: Set<string>, specs: TechnicalSpecs): void {
+    if (!specs.connectivity) return;
+    const connectVal = Array.isArray(specs.connectivity)
+      ? `[${specs.connectivity.map((c) => `"${c}"`).join(', ')}]`
+      : `"${specs.connectivity}"`;
+    this.addFrontMatterSpec(lines, addedKeys, 'connectivity', connectVal);
+  }
+
+  private addShoeSpecs(lines: string[], addedKeys: Set<string>, specs: TechnicalSpecs): void {
+    if (specs.width) this.addFrontMatterSpec(lines, addedKeys, 'width', `"${this.formatSpecValue(specs.width)}"`);
+    if (specs.weight) this.addFrontMatterSpec(lines, addedKeys, 'weight', `"${this.formatSpecValue(specs.weight)}"`);
+    if (specs.midsole) this.addFrontMatterSpec(lines, addedKeys, 'midsole', `"${this.formatSpecValue(specs.midsole)}"`);
+    if (specs.cushioningTech) {
+      const cushVal = Array.isArray(specs.cushioningTech)
+        ? `[${specs.cushioningTech.map((c) => `"${c}"`).join(', ')}]`
+        : `"${specs.cushioningTech}"`;
+      this.addFrontMatterSpec(lines, addedKeys, 'cushioning_tech', cushVal);
+    }
+    if (specs.heelCounter) this.addFrontMatterSpec(lines, addedKeys, 'heel_counter', `"${this.formatSpecValue(specs.heelCounter)}"`);
+    if (specs.heelHeight) this.addFrontMatterSpec(lines, addedKeys, 'heel_height', `"${this.formatSpecValue(specs.heelHeight)}"`);
+    if (specs.material) {
+      if (!addedKeys.has('material')) {
+        if (typeof specs.material === 'string') {
+          lines.push(`  material: "${specs.material}"`);
+        } else {
+          lines.push('  material:');
+          const { upper, outsole, insole } = specs.material;
+          if (upper) lines.push(`    upper: "${upper}"`);
+          if (outsole) lines.push(`    outsole: "${outsole}"`);
+          if (insole) lines.push(`    insole: "${insole}"`);
+        }
+        addedKeys.add('material');
+      }
+    }
+    if (specs.upperMaterial) this.addFrontMatterSpec(lines, addedKeys, 'upper_material', `"${specs.upperMaterial}"`);
+    if (specs.midsoleMaterial) this.addFrontMatterSpec(lines, addedKeys, 'midsole_material', `"${specs.midsoleMaterial}"`);
+    if (specs.outsoleMaterial) this.addFrontMatterSpec(lines, addedKeys, 'outsole_material', `"${specs.outsoleMaterial}"`);
+    if (specs.outerSole) this.addFrontMatterSpec(lines, addedKeys, 'outer_sole', `"${specs.outerSole}"`);
+    if (specs.insoleMaterial) this.addFrontMatterSpec(lines, addedKeys, 'insole_material', `"${specs.insoleMaterial}"`);
+    if (specs.innerSole) this.addFrontMatterSpec(lines, addedKeys, 'inner_sole', `"${specs.innerSole}"`);
+    if (specs.insole) this.addFrontMatterSpec(lines, addedKeys, 'insole', `"${specs.insole}"`);
+    if (specs.modelNumber) this.addFrontMatterSpec(lines, addedKeys, 'model_number', `"${this.formatSpecValue(specs.modelNumber)}"`);
+    if (specs.model) this.addFrontMatterSpec(lines, addedKeys, 'model', `"${this.formatSpecValue(specs.model)}"`);
+    if (specs.countryOfOrigin) this.addFrontMatterSpec(lines, addedKeys, 'country_of_origin', `"${this.formatSpecValue(specs.countryOfOrigin)}"`);
+  }
+
+  private addLoadCapacitySpecs(lines: string[], addedKeys: Set<string>, specs: TechnicalSpecs): void {
+    if (!specs.loadCapacity) return;
+    if (addedKeys.has('load_capacity')) return;
+
+    if (typeof specs.loadCapacity === 'string') {
+      lines.push(`  load_capacity: "${specs.loadCapacity}"`);
+    } else {
+      lines.push('  load_capacity:');
+      for (const [key, value] of Object.entries(specs.loadCapacity)) {
+        lines.push(`    ${key}: "${value}"`);
+      }
+    }
+    addedKeys.add('load_capacity');
+  }
+
+  private addAttachmentSpecs(lines: string[], addedKeys: Set<string>, specs: TechnicalSpecs): void {
+    if (!specs.attachments) return;
+    const attachVal = Array.isArray(specs.attachments)
+      ? `[${specs.attachments.map((a) => `"${a}"`).join(', ')}]`
+      : `"${specs.attachments}"`;
+    this.addFrontMatterSpec(lines, addedKeys, 'attachments', attachVal);
+  }
+
+  private addOtherSpecs(lines: string[], addedKeys: Set<string>, specs: TechnicalSpecs): void {
+    if (!specs.other) return;
+    const otherVal = Array.isArray(specs.other)
+      ? `[${specs.other.map((o) => `"${o}"`).join(', ')}]`
+      : `"${specs.other}"`;
+    this.addFrontMatterSpec(lines, addedKeys, 'other_specs', otherVal);
+  }
+
+  private addHeroData(lines: string[], hero: ArticleMetadata['hero']): void {
+    if (!hero) return;
+    lines.push('hero:');
+    if (hero.score_rationale) {
+      lines.push('  score_rationale:');
+      const { top_plus, top_minus } = hero.score_rationale;
+      if (top_plus) {
+        lines.push('    top_plus:', `      points: ${top_plus.points}`, `      desc: "${this.escapeForFrontMatter(top_plus.desc)}"`);
+      }
+      if (top_minus) {
+        lines.push('    top_minus:', `      points: ${top_minus.points}`, `      desc: "${this.escapeForFrontMatter(top_minus.desc)}"`);
+      }
+    }
+
+    if (hero.target_users && hero.target_users.length > 0) {
+      lines.push(`  target_users: [${hero.target_users.map((u) => `"${this.escapeForFrontMatter(u)}"`).join(', ')}]`);
+    }
+
+    if (hero.warnings && hero.warnings.length > 0) {
+      lines.push(`  warnings: [${hero.warnings.map((w) => `"${this.escapeForFrontMatter(w)}"`).join(', ')}]`);
+    }
+  }
+
+
   // Helper methods
+  private addCoreMetadata(lines: string[], metadata: ArticleMetadata): void {
+    lines.push(`title: "${this.escapeForFrontMatter(metadata.title)}"`);
+    lines.push(`description: "${this.escapeForFrontMatter(metadata.description)}"`);
+    lines.push(`date: ${metadata.publishDate.toISOString().split('T')[0]}`);
+    lines.push(`categories: ["${this.escapeForFrontMatter(metadata.category)}"]`);
+    if (metadata.subcategory) lines.push(`subcategory: "${this.escapeForFrontMatter(metadata.subcategory)}"`);
+    if (metadata.manufacturer) lines.push(`manufacturer: "${this.escapeForFrontMatter(metadata.manufacturer)}"`);
+  }
+
+  private addProductIdentifiers(lines: string[], metadata: ArticleMetadata): void {
+    lines.push(`asin: "${metadata.asin}"`);
+    lines.push(`price_range: "${metadata.priceRange}"`);
+    if (metadata.price) lines.push(`price: "${this.escapeForFrontMatter(metadata.price)}"`);
+  }
+
+  private addMetricsMetadata(lines: string[], metadata: ArticleMetadata): void {
+    if (metadata.score) lines.push(`score: ${metadata.score}`);
+    if (metadata.is_prime !== undefined) lines.push(`is_prime: ${metadata.is_prime}`);
+    if (metadata.availability) lines.push(`availability: "${this.escapeForFrontMatter(metadata.availability)}"`);
+    if (metadata.rating) lines.push(`rating: ${metadata.rating}`);
+  }
+
+  private addSEOAndSocialMetadata(lines: string[], metadata: ArticleMetadata): void {
+    lines.push(`tags: [${metadata.tags.map((tag) => `"${this.escapeForFrontMatter(tag)}"`).join(', ')}]`);
+    lines.push(`keywords: [${metadata.seoKeywords.map((keyword) => `"${this.escapeForFrontMatter(keyword)}"`).join(', ')}]`);
+
+    if (metadata.featured) lines.push(`featured: ${metadata.featured}`);
+    if (typeof metadata.mobileOptimized === 'boolean') lines.push(`mobile_optimized: ${metadata.mobileOptimized}`);
+    if (metadata.lastInvestigated) lines.push(`last_investigated: "${metadata.lastInvestigated}"`);
+    if (metadata.affiliate_url) lines.push(`affiliate_url: "${metadata.affiliate_url}"`);
+
+    if (metadata.images && metadata.images.length > 0) {
+      lines.push(`images: [${metadata.images.map((img) => `"${this.escapeForFrontMatter(img)}"`).join(', ')}]`);
+    }
+  }
+
   private generateTags(product: Product, investigation: InvestigationResult): string[] {
     const tags = ['商品レビュー', product.category];
 
@@ -1180,7 +1208,7 @@ ${recommendationMessage}`;
         linkUrl.includes('amazon.co.jp') &&
         (linkUrl.includes('tag=') || linkUrl.includes('/dp/'))
       ) {
-        const asinMatch = linkUrl.match(/\/dp\/([A-Z0-9]{10})/);
+        const asinMatch = /\/dp\/([A-Z0-9]{10})/.exec(linkUrl);
         if (asinMatch?.[1]) {
           links.push({
             asin: asinMatch[1],
@@ -1262,77 +1290,63 @@ ${recommendationMessage}`;
   private formatScoreRationaleAsCard(rationale: string | string[]): string {
     const rawRationale = Array.isArray(rationale) ? rationale.join('\n') : rationale;
     const lines = rawRationale.split('\n').filter((line) => line.trim());
-    const parts: string[] = [];
-
-    for (const line of lines) {
-      // 基本点: [基本点: 70]
-      const baseMatch = line.match(/\[基本点:\s*(\d+)\]/);
-      if (baseMatch) {
-        parts.push(`<div class="score-base">📊 基本点: <strong>${baseMatch[1]}</strong>点</div>`);
-        continue;
-      }
-
-      // 加点: [任意のラベル: +13] 説明 または (説明)
-      // 「加点」固定ではなく、+数字をトリガーにして加点を識別
-      const plusMatch = line.match(/\[[^\]]{1,100}:\s*\+(\d+)\]\s*(.*)/);
-      if (plusMatch) {
-        const cleanDesc = this.cleanRationaleDesc(plusMatch[2] || '');
-        parts.push(
-          `<div class="score-item score-plus">✅ <span class="score-points">+${plusMatch[1]}</span> ${cleanDesc}</div>`,
-        );
-        continue;
-      }
-
-      // 減点: [任意のラベル: -5] 説明 または (説明)
-      // 「減点」固定ではなく、-数字をトリガーにして減点を識別
-      const minusMatch = line.match(/\[[^\]]{1,100}:\s*-(\d+)\]\s*(.*)/);
-      if (minusMatch) {
-        const cleanDesc = this.cleanRationaleDesc(minusMatch[2] || '');
-        parts.push(
-          `<div class="score-item score-minus">⚠️ <span class="score-points">-${minusMatch[1]}</span> ${cleanDesc}</div>`,
-        );
-        continue;
-      }
-
-      // 合計: [合計: 88]
-      const totalMatch = line.match(/\[合計:\s*(\d+)\]/);
-      if (totalMatch) {
-        parts.push(`<div class="score-total">🎯 合計: <strong>${totalMatch[1]}</strong>点</div>`);
-        continue;
-      }
-
-      // 加点: 0 のパターン（プラス記号なし）: [加点: 0] 説明
-      const zeroAddMatch = line.match(/\[加点:\s*0\]\s*(.*)/);
-      if (zeroAddMatch) {
-        const cleanDesc = this.cleanRationaleDesc(zeroAddMatch[1] || '');
-        parts.push(`<div class="score-item score-plus">✅ <span class="score-points">±0</span> ${cleanDesc}</div>`);
-        continue;
-      }
-
-      // 減点: 0 のパターン（マイナス記号なし）: [減点: 0] 説明
-      const zeroSubMatch = line.match(/\[減点:\s*0\]\s*(.*)/);
-      if (zeroSubMatch) {
-        const cleanDesc = this.cleanRationaleDesc(zeroSubMatch[1] || '');
-        parts.push(`<div class="score-item score-minus">⚠️ <span class="score-points">±0</span> ${cleanDesc}</div>`);
-        continue;
-      }
-
-      // 任意のラベルでゼロ点のパターン: [任意のラベル: 0] 説明
-      // 加点でも減点でもない中立的な評価項目
-      const zeroNeutralMatch = line.match(/\[[^\]]{1,100}:\s*0\]\s*(.*)/);
-      if (zeroNeutralMatch) {
-        const cleanDesc = this.cleanRationaleDesc(zeroNeutralMatch[1] || '');
-        parts.push(`<div class="score-item score-neutral">➖ <span class="score-points">±0</span> ${cleanDesc}</div>`);
-        continue;
-      }
-
-      // パースできない行はそのまま表示
-      if (line.trim()) {
-        parts.push(`<div class="score-item">${line}</div>`);
-      }
-    }
+    const parts = lines.map((line) => this.convertRationaleLineToHtml(line));
 
     return `<div class="score-rationale-card">\n${parts.join('\n')}\n</div>`;
+  }
+
+  /**
+   * スコア理由の1行をHTML形式に変換
+   */
+  private convertRationaleLineToHtml(line: string): string {
+    // 基本点: [基本点: 70]
+    const baseMatch = /\[基本点:\s*(\d+)\]/.exec(line);
+    if (baseMatch) {
+      return `<div class="score-base">📊 基本点: <strong>${baseMatch[1]}</strong>点</div>`;
+    }
+
+    // 加点: [任意のラベル: +13] 説明 または (説明)
+    const plusMatch = /\[[^\]]{1,100}:\s*\+(\d+)\]\s*(.*)/.exec(line);
+    if (plusMatch) {
+      const cleanDesc = this.cleanRationaleDesc(plusMatch[2] || '');
+      return `<div class="score-item score-plus">✅ <span class="score-points">+${plusMatch[1]}</span> ${cleanDesc}</div>`;
+    }
+
+    // 減点: [任意のラベル: -5] 説明 または (説明)
+    const minusMatch = /\[[^\]]{1,100}:\s*-(\d+)\]\s*(.*)/.exec(line);
+    if (minusMatch) {
+      const cleanDesc = this.cleanRationaleDesc(minusMatch[2] || '');
+      return `<div class="score-item score-minus">⚠️ <span class="score-points">-${minusMatch[1]}</span> ${cleanDesc}</div>`;
+    }
+
+    // 合計: [合計: 88]
+    const totalMatch = /\[合計:\s*(\d+)\]/.exec(line);
+    if (totalMatch) {
+      return `<div class="score-total">🎯 合計: <strong>${totalMatch[1]}</strong>点</div>`;
+    }
+
+    // 加点・減点 0点（明示的なラベルあり）
+    const zeroAddMatch = /\[加点:\s*0\]\s*(.*)/.exec(line);
+    if (zeroAddMatch) {
+      const cleanDesc = this.cleanRationaleDesc(zeroAddMatch[1] || '');
+      return `<div class="score-item score-plus">✅ <span class="score-points">±0</span> ${cleanDesc}</div>`;
+    }
+
+    const zeroSubMatch = /\[減点:\s*0\]\s*(.*)/.exec(line);
+    if (zeroSubMatch) {
+      const cleanDesc = this.cleanRationaleDesc(zeroSubMatch[1] || '');
+      return `<div class="score-item score-minus">⚠️ <span class="score-points">±0</span> ${cleanDesc}</div>`;
+    }
+
+    // 任意のラベルでゼロ点のパターン
+    const zeroNeutralMatch = /\[[^\]]{1,100}:\s*0\]\s*(.*)/.exec(line);
+    if (zeroNeutralMatch) {
+      const cleanDesc = this.cleanRationaleDesc(zeroNeutralMatch[1] || '');
+      return `<div class="score-item score-neutral">➖ <span class="score-points">±0</span> ${cleanDesc}</div>`;
+    }
+
+    // パースできない行はそのままラップ
+    return `<div class="score-item">${line}</div>`;
   }
 
   /**
@@ -1356,7 +1370,7 @@ ${recommendationMessage}`;
     for (const line of lines) {
       // 加点: [任意のラベル: +13] (説明)
       // 「加点」固定ではなく、+数字をトリガーにして加点を識別
-      const plusMatch = line.match(/\[[^\]]{1,100}:\s*\+(\d+)\]\s*(.*)/);
+      const plusMatch = /\[[^\]]{1,100}:\s*\+(\d+)\]\s*(.*)/.exec(line);
       if (plusMatch) {
         const points = Number.parseInt(plusMatch[1] ?? '0', 10);
         const desc = this.cleanRationaleDesc(plusMatch[2] || '');
@@ -1368,7 +1382,7 @@ ${recommendationMessage}`;
 
       // 減点: [任意のラベル: -5] (説明)
       // 「減点」固定ではなく、-数字をトリガーにして減点を識別
-      const minusMatch = line.match(/\[[^\]]{1,100}:\s*-(\d+)\]\s*(.*)/);
+      const minusMatch = /\[[^\]]{1,100}:\s*-(\d+)\]\s*(.*)/.exec(line);
       if (minusMatch) {
         const points = Number.parseInt(minusMatch[1] ?? '0', 10);
         const desc = this.cleanRationaleDesc(minusMatch[2] || '');
