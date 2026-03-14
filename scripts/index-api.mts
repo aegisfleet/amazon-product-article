@@ -42,8 +42,29 @@ const loadState = (): IndexingState => {
     return { lastIndexed: {} };
 };
 
+const pruneState = (state: IndexingState) => {
+    const now = new Date();
+    const NINETY_DAYS_MS = 90 * 24 * 60 * 60 * 1000;
+    let prunedCount = 0;
+
+    for (const url in state.lastIndexed) {
+        const lastIndexedStr = state.lastIndexed[url];
+        if (lastIndexedStr) {
+            const lastIndexed = new Date(lastIndexedStr).getTime();
+            if ((now.getTime() - lastIndexed) > NINETY_DAYS_MS) {
+                delete state.lastIndexed[url];
+                prunedCount++;
+            }
+        }
+    }
+    if (prunedCount > 0) {
+        console.log(`Pruned ${prunedCount} old entries from indexing state.`);
+    }
+};
+
 const saveState = (state: IndexingState) => {
     try {
+        pruneState(state);
         const dir = path.dirname(STATE_FILE);
         if (!fs.existsSync(dir)) {
             fs.mkdirSync(dir, { recursive: true });
@@ -63,11 +84,12 @@ const getCandidateUrls = (urls: string[], state: IndexingState): string[] => {
     const now = new Date();
     const THREE_DAYS_MS = 3 * 24 * 60 * 60 * 1000;
 
-    const sortedUrls = uniqueUrls.sort((a, b) => {
+    uniqueUrls.sort((a, b) => {
         const dateA = state.lastIndexed[a] ? new Date(state.lastIndexed[a]).getTime() : 0;
         const dateB = state.lastIndexed[b] ? new Date(state.lastIndexed[b]).getTime() : 0;
         return dateA - dateB;
     });
+    const sortedUrls = uniqueUrls;
 
     // Filter out recently indexed URLs
     return sortedUrls.filter(url => {
@@ -79,14 +101,14 @@ const getCandidateUrls = (urls: string[], state: IndexingState): string[] => {
 };
 
 const fetchSitemapUrls = async (): Promise<string[]> => {
-    const sitemapUrl = 'https://aegisfleet.github.io/amazon-product-article/sitemap.xml';
+    const sitemapUrl = 'https://amazon-hikaku.com/sitemap.xml';
     const urls: string[] = [];
     try {
         console.log(`Fetching sitemap from: ${sitemapUrl}`);
         const response = await axios.get(sitemapUrl);
         const result = await parseStringPromise(response.data);
-        if (result.urlset && result.urlset.url) {
-            const sitemapUrls = result.urlset.url.map((entry: any) => entry.loc[0]);
+        const sitemapUrls = result?.urlset?.url?.map((entry: any) => entry.loc[0]);
+        if (sitemapUrls) {
             console.log(`Found ${sitemapUrls.length} URLs in sitemap.`);
             urls.push(...sitemapUrls);
         }
