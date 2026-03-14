@@ -2143,6 +2143,13 @@ a.competitor-preview:hover {
   padding-bottom: var(--spacing-sm);
   scrollbar-width: thin;
   scrollbar-color: rgba(0, 0, 0, 0.2) transparent;
+  opacity: 1;
+  transition: opacity 0.4s ease;
+}
+
+.pickup-grid.is-loading {
+  opacity: 0;
+  pointer-events: none;
 }
 
 .pickup-grid::-webkit-scrollbar {
