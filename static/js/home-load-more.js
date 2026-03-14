@@ -46,8 +46,96 @@ function getScoreClass(score) {
     return 'score-fair';
 }
 
+function createPickupCardImage(safeImageSrc, shortTitle) {
+    const container = document.createElement('div');
+    container.className = 'pickup-card-image';
+
+    if (safeImageSrc) {
+        const img = document.createElement('img');
+        img.src = safeImageSrc;
+        img.alt = shortTitle;
+        img.loading = 'lazy';
+        img.decoding = 'async';
+        container.appendChild(img);
+    } else {
+        const noImage = document.createElement('div');
+        noImage.className = 'pickup-card-noimage';
+        noImage.textContent = '画像なし';
+        container.appendChild(noImage);
+    }
+    return container;
+}
+
+function createPickupCardSpecs(item) {
+    const container = document.createElement('div');
+    container.className = 'card-specs';
+
+    if (!item.specs || typeof item.specs !== 'object') return container;
+
+    const specMap = [
+        { key: 'os', label: 'OS: ' },
+        { key: 'cpu', label: 'CPU: ' },
+        { key: 'ram', label: 'RAM: ' },
+        { key: 'storage', label: 'ROM: ' },
+        { key: 'display_size', label: '画面: ' },
+        { key: 'battery_capacity', label: 'バッテリー: ' },
+        { key: 'weight', label: '重量: ' },
+        { key: 'quantity', label: '内容量: ' },
+        { key: 'content', label: '内容量: ' },
+        { key: 'count', label: '個数: ' },
+        { key: 'capacity', label: '容量: ' }
+    ];
+
+    specMap.forEach(spec => {
+        const val = item.specs[spec.key];
+        if (val) {
+            const span = document.createElement('span');
+            span.className = 'card-spec-tag';
+            span.textContent = spec.label + val;
+            container.appendChild(span);
+        }
+    });
+
+    const material = item.specs.material;
+    if (material && typeof material === 'string') {
+        const span = document.createElement('span');
+        span.className = 'card-spec-tag';
+        span.textContent = '素材: ' + material;
+        container.appendChild(span);
+    }
+
+    const { height: h, width: w, depth: d } = item.specs;
+    if (h || w || d) {
+        const span = document.createElement('span');
+        span.className = 'card-spec-tag';
+        const parts = [h, w, d].filter(Boolean);
+        span.textContent = 'サイズ: ' + parts.join(' × ');
+        container.appendChild(span);
+    }
+
+    return container;
+}
+
+function createPickupCardMeta(score, scoreClass, price) {
+    const container = document.createElement('div');
+    container.className = 'pickup-card-meta';
+
+    const scoreSpan = document.createElement('span');
+    scoreSpan.className = 'pickup-card-score ' + scoreClass;
+    scoreSpan.textContent = '🏆 ' + score + '点';
+    container.appendChild(scoreSpan);
+
+    if (price) {
+        const priceSpan = document.createElement('span');
+        priceSpan.className = 'pickup-card-price';
+        priceSpan.textContent = price;
+        container.appendChild(priceSpan);
+    }
+
+    return container;
+}
+
 function renderPickupItems(items, pickupGrid) {
-    // Clear existing content
     pickupGrid.textContent = '';
 
     items.forEach(function (item) {
@@ -61,40 +149,18 @@ function renderPickupItems(items, pickupGrid) {
         const price = typeof item.price === 'string' ? item.price : '';
         const image = typeof item.image === 'string' ? item.image.trim() : '';
         const safeImageSrc = image ? sanitizeUrl(image) : '';
-        const asin = typeof item.asin === 'string' ? item.asin : '';
-        const category = typeof item.category === 'string' ? item.category : 'unknown';
-        const priceBucket = typeof item.priceBucket === 'string' ? item.priceBucket : 'unknown';
 
-        // Root card link
         const cardLink = document.createElement('a');
         cardLink.href = safeHref;
         cardLink.className = 'pickup-card';
         cardLink.dataset.score = String(score);
         cardLink.dataset.price = price;
         cardLink.dataset.trackProduct = '1';
-        cardLink.dataset.asin = asin;
-        cardLink.dataset.category = category;
-        cardLink.dataset.priceBucket = priceBucket;
+        cardLink.dataset.asin = typeof item.asin === 'string' ? item.asin : '';
+        cardLink.dataset.category = typeof item.category === 'string' ? item.category : 'unknown';
+        cardLink.dataset.priceBucket = typeof item.priceBucket === 'string' ? item.priceBucket : 'unknown';
 
-        // Image container
-        const imageContainer = document.createElement('div');
-        imageContainer.className = 'pickup-card-image';
-
-        if (safeImageSrc) {
-            const img = document.createElement('img');
-            img.src = safeImageSrc;
-            img.alt = shortTitle;
-            img.loading = 'lazy';
-            img.decoding = 'async';
-            imageContainer.appendChild(img);
-        } else {
-            const noImage = document.createElement('div');
-            noImage.className = 'pickup-card-noimage';
-            noImage.textContent = '画像なし';
-            imageContainer.appendChild(noImage);
-        }
-
-        // Content container
+        const imageContainer = createPickupCardImage(safeImageSrc, shortTitle);
         const contentContainer = document.createElement('div');
         contentContainer.className = 'pickup-card-content';
 
@@ -102,28 +168,15 @@ function renderPickupItems(items, pickupGrid) {
         titleElement.className = 'pickup-card-title';
         titleElement.textContent = shortTitle;
 
-        const metaContainer = document.createElement('div');
-        metaContainer.className = 'pickup-card-meta';
-
-        const scoreSpan = document.createElement('span');
-        scoreSpan.className = 'pickup-card-score ' + scoreClass;
-        scoreSpan.textContent = '🏆 ' + score + '点';
-
-        metaContainer.appendChild(scoreSpan);
-
-        if (price) {
-            const priceSpan = document.createElement('span');
-            priceSpan.className = 'pickup-card-price';
-            priceSpan.textContent = price;
-            metaContainer.appendChild(priceSpan);
-        }
+        const specsContainer = createPickupCardSpecs(item);
+        const metaContainer = createPickupCardMeta(score, scoreClass, price);
 
         contentContainer.appendChild(titleElement);
+        contentContainer.appendChild(specsContainer);
         contentContainer.appendChild(metaContainer);
 
         cardLink.appendChild(imageContainer);
         cardLink.appendChild(contentContainer);
-
         pickupGrid.appendChild(cardLink);
     });
 }

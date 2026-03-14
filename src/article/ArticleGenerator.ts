@@ -938,6 +938,9 @@ ${recommendationMessage}`;
     if (specs.gpu) this.addFrontMatterSpec(lines, addedKeys, 'gpu', `"${this.formatSpecValue(specs.gpu)}"`);
     if (specs.ram) this.addFrontMatterSpec(lines, addedKeys, 'ram', `"${this.formatSpecValue(specs.ram)}"`);
     if (specs.storage) this.addFrontMatterSpec(lines, addedKeys, 'storage', `"${this.formatSpecValue(specs.storage)}"`);
+    if (specs.quantity) this.addFrontMatterSpec(lines, addedKeys, 'quantity', `"${this.formatSpecValue(specs.quantity)}"`);
+    if (specs.content) this.addFrontMatterSpec(lines, addedKeys, 'content', `"${this.formatSpecValue(specs.content)}"`);
+    if (specs.count) this.addFrontMatterSpec(lines, addedKeys, 'count', `"${this.formatSpecValue(specs.count)}"`);
   }
 
   private addDisplaySpecs(lines: string[], addedKeys: Set<string>, specs: TechnicalSpecs): void {
