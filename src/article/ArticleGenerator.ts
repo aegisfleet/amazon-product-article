@@ -867,7 +867,7 @@ ${recommendationMessage}`;
    * フロントマターを生成
    */
   private escapeForFrontMatter(value: string): string {
-    return value.replaceAll('\\', '\\\\').replaceAll('"', '\\"');
+    return value.replaceAll('\\', String.raw`\\`).replaceAll('"', String.raw`\"`);
   }
 
   private generateFrontMatter(metadata: ArticleMetadata): string {
@@ -968,10 +968,7 @@ ${recommendationMessage}`;
   private addAudioSpecs(lines: string[], addedKeys: Set<string>, specs: TechnicalSpecs): void {
     if (specs.driver) this.addFrontMatterSpec(lines, addedKeys, 'driver', `"${this.formatSpecValue(specs.driver)}"`);
     if (specs.codec) {
-      const codecVal = Array.isArray(specs.codec)
-        ? `[${specs.codec.map((c) => `"${c}"`).join(', ')}]`
-        : `"${specs.codec}"`;
-      this.addFrontMatterSpec(lines, addedKeys, 'codec', codecVal);
+      this.addFrontMatterSpec(lines, addedKeys, 'codec', this.formatArrayForFrontMatter(specs.codec));
     }
     if (specs.noiseCancel) this.addFrontMatterSpec(lines, addedKeys, 'noise_cancel', `"${this.formatSpecValue(specs.noiseCancel)}"`);
   }
@@ -985,10 +982,7 @@ ${recommendationMessage}`;
 
   private addConnectivitySpecs(lines: string[], addedKeys: Set<string>, specs: TechnicalSpecs): void {
     if (!specs.connectivity) return;
-    const connectVal = Array.isArray(specs.connectivity)
-      ? `[${specs.connectivity.map((c) => `"${c}"`).join(', ')}]`
-      : `"${specs.connectivity}"`;
-    this.addFrontMatterSpec(lines, addedKeys, 'connectivity', connectVal);
+    this.addFrontMatterSpec(lines, addedKeys, 'connectivity', this.formatArrayForFrontMatter(specs.connectivity));
   }
 
   private addShoeSpecs(lines: string[], addedKeys: Set<string>, specs: TechnicalSpecs): void {
@@ -996,27 +990,20 @@ ${recommendationMessage}`;
     if (specs.weight) this.addFrontMatterSpec(lines, addedKeys, 'weight', `"${this.formatSpecValue(specs.weight)}"`);
     if (specs.midsole) this.addFrontMatterSpec(lines, addedKeys, 'midsole', `"${this.formatSpecValue(specs.midsole)}"`);
     if (specs.cushioningTech) {
-      const cushVal = Array.isArray(specs.cushioningTech)
-        ? `[${specs.cushioningTech.map((c) => `"${c}"`).join(', ')}]`
-        : `"${specs.cushioningTech}"`;
-      this.addFrontMatterSpec(lines, addedKeys, 'cushioning_tech', cushVal);
+      this.addFrontMatterSpec(lines, addedKeys, 'cushioning_tech', this.formatArrayForFrontMatter(specs.cushioningTech));
     }
     if (specs.heelCounter) this.addFrontMatterSpec(lines, addedKeys, 'heel_counter', `"${this.formatSpecValue(specs.heelCounter)}"`);
     if (specs.heelHeight) this.addFrontMatterSpec(lines, addedKeys, 'heel_height', `"${this.formatSpecValue(specs.heelHeight)}"`);
+
+    this.addMaterialSpecs(lines, addedKeys, specs);
+    this.addModelAndOriginSpecs(lines, addedKeys, specs);
+  }
+
+  private addMaterialSpecs(lines: string[], addedKeys: Set<string>, specs: TechnicalSpecs): void {
     if (specs.material) {
-      if (!addedKeys.has('material')) {
-        if (typeof specs.material === 'string') {
-          lines.push(`  material: "${specs.material}"`);
-        } else {
-          lines.push('  material:');
-          const { upper, outsole, insole } = specs.material;
-          if (upper) lines.push(`    upper: "${upper}"`);
-          if (outsole) lines.push(`    outsole: "${outsole}"`);
-          if (insole) lines.push(`    insole: "${insole}"`);
-        }
-        addedKeys.add('material');
-      }
+      this.addDetailedMaterialSpecs(lines, addedKeys, specs.material);
     }
+
     if (specs.upperMaterial) this.addFrontMatterSpec(lines, addedKeys, 'upper_material', `"${specs.upperMaterial}"`);
     if (specs.midsoleMaterial) this.addFrontMatterSpec(lines, addedKeys, 'midsole_material', `"${specs.midsoleMaterial}"`);
     if (specs.outsoleMaterial) this.addFrontMatterSpec(lines, addedKeys, 'outsole_material', `"${specs.outsoleMaterial}"`);
@@ -1024,6 +1011,27 @@ ${recommendationMessage}`;
     if (specs.insoleMaterial) this.addFrontMatterSpec(lines, addedKeys, 'insole_material', `"${specs.insoleMaterial}"`);
     if (specs.innerSole) this.addFrontMatterSpec(lines, addedKeys, 'inner_sole', `"${specs.innerSole}"`);
     if (specs.insole) this.addFrontMatterSpec(lines, addedKeys, 'insole', `"${specs.insole}"`);
+  }
+
+  private addDetailedMaterialSpecs(
+    lines: string[],
+    addedKeys: Set<string>,
+    material: Required<TechnicalSpecs>['material'],
+  ): void {
+    if (addedKeys.has('material')) return;
+
+    if (typeof material === 'string') {
+      lines.push(`  material: "${material}"`);
+    } else if (material) {
+      lines.push('  material:');
+      if (material.upper) lines.push(`    upper: "${material.upper}"`);
+      if (material.outsole) lines.push(`    outsole: "${material.outsole}"`);
+      if (material.insole) lines.push(`    insole: "${material.insole}"`);
+    }
+    addedKeys.add('material');
+  }
+
+  private addModelAndOriginSpecs(lines: string[], addedKeys: Set<string>, specs: TechnicalSpecs): void {
     if (specs.modelNumber) this.addFrontMatterSpec(lines, addedKeys, 'model_number', `"${this.formatSpecValue(specs.modelNumber)}"`);
     if (specs.model) this.addFrontMatterSpec(lines, addedKeys, 'model', `"${this.formatSpecValue(specs.model)}"`);
     if (specs.countryOfOrigin) this.addFrontMatterSpec(lines, addedKeys, 'country_of_origin', `"${this.formatSpecValue(specs.countryOfOrigin)}"`);
@@ -1046,18 +1054,12 @@ ${recommendationMessage}`;
 
   private addAttachmentSpecs(lines: string[], addedKeys: Set<string>, specs: TechnicalSpecs): void {
     if (!specs.attachments) return;
-    const attachVal = Array.isArray(specs.attachments)
-      ? `[${specs.attachments.map((a) => `"${a}"`).join(', ')}]`
-      : `"${specs.attachments}"`;
-    this.addFrontMatterSpec(lines, addedKeys, 'attachments', attachVal);
+    this.addFrontMatterSpec(lines, addedKeys, 'attachments', this.formatArrayForFrontMatter(specs.attachments));
   }
 
   private addOtherSpecs(lines: string[], addedKeys: Set<string>, specs: TechnicalSpecs): void {
     if (!specs.other) return;
-    const otherVal = Array.isArray(specs.other)
-      ? `[${specs.other.map((o) => `"${o}"`).join(', ')}]`
-      : `"${specs.other}"`;
-    this.addFrontMatterSpec(lines, addedKeys, 'other_specs', otherVal);
+    this.addFrontMatterSpec(lines, addedKeys, 'other_specs', this.formatArrayForFrontMatter(specs.other));
   }
 
   private addHeroData(lines: string[], hero: ArticleMetadata['hero']): void {
@@ -1075,28 +1077,32 @@ ${recommendationMessage}`;
     }
 
     if (hero.target_users && hero.target_users.length > 0) {
-      lines.push(`  target_users: [${hero.target_users.map((u) => `"${this.escapeForFrontMatter(u)}"`).join(', ')}]`);
+      lines.push(`  target_users: ${this.formatArrayForFrontMatter(hero.target_users)}`);
     }
 
     if (hero.warnings && hero.warnings.length > 0) {
-      lines.push(`  warnings: [${hero.warnings.map((w) => `"${this.escapeForFrontMatter(w)}"`).join(', ')}]`);
+      lines.push(`  warnings: ${this.formatArrayForFrontMatter(hero.warnings)}`);
     }
   }
 
 
   // Helper methods
   private addCoreMetadata(lines: string[], metadata: ArticleMetadata): void {
-    lines.push(`title: "${this.escapeForFrontMatter(metadata.title)}"`);
-    lines.push(`description: "${this.escapeForFrontMatter(metadata.description)}"`);
-    lines.push(`date: ${metadata.publishDate.toISOString().split('T')[0]}`);
-    lines.push(`categories: ["${this.escapeForFrontMatter(metadata.category)}"]`);
+    lines.push(
+      `title: "${this.escapeForFrontMatter(metadata.title)}"`,
+      `description: "${this.escapeForFrontMatter(metadata.description)}"`,
+      `date: ${metadata.publishDate.toISOString().split('T')[0]}`,
+      `categories: ["${this.escapeForFrontMatter(metadata.category)}"]`,
+    );
     if (metadata.subcategory) lines.push(`subcategory: "${this.escapeForFrontMatter(metadata.subcategory)}"`);
     if (metadata.manufacturer) lines.push(`manufacturer: "${this.escapeForFrontMatter(metadata.manufacturer)}"`);
   }
 
   private addProductIdentifiers(lines: string[], metadata: ArticleMetadata): void {
-    lines.push(`asin: "${metadata.asin}"`);
-    lines.push(`price_range: "${metadata.priceRange}"`);
+    lines.push(
+      `asin: "${metadata.asin}"`,
+      `price_range: "${metadata.priceRange}"`,
+    );
     if (metadata.price) lines.push(`price: "${this.escapeForFrontMatter(metadata.price)}"`);
   }
 
@@ -1108,8 +1114,10 @@ ${recommendationMessage}`;
   }
 
   private addSEOAndSocialMetadata(lines: string[], metadata: ArticleMetadata): void {
-    lines.push(`tags: [${metadata.tags.map((tag) => `"${this.escapeForFrontMatter(tag)}"`).join(', ')}]`);
-    lines.push(`keywords: [${metadata.seoKeywords.map((keyword) => `"${this.escapeForFrontMatter(keyword)}"`).join(', ')}]`);
+    lines.push(
+      `tags: ${this.formatArrayForFrontMatter(metadata.tags)}`,
+      `keywords: ${this.formatArrayForFrontMatter(metadata.seoKeywords)}`,
+    );
 
     if (metadata.featured) lines.push(`featured: ${metadata.featured}`);
     if (typeof metadata.mobileOptimized === 'boolean') lines.push(`mobile_optimized: ${metadata.mobileOptimized}`);
@@ -1117,8 +1125,17 @@ ${recommendationMessage}`;
     if (metadata.affiliate_url) lines.push(`affiliate_url: "${metadata.affiliate_url}"`);
 
     if (metadata.images && metadata.images.length > 0) {
-      lines.push(`images: [${metadata.images.map((img) => `"${this.escapeForFrontMatter(img)}"`).join(', ')}]`);
+      lines.push(`images: ${this.formatArrayForFrontMatter(metadata.images)}`);
     }
+  }
+
+  /**
+   * 配列をフロントマターの配列形式（[ "a", "b" ]）にフォーマット
+   */
+  private formatArrayForFrontMatter(arr: string | string[]): string {
+    const array = Array.isArray(arr) ? arr : [arr];
+    const escaped = array.map((item) => `"${this.escapeForFrontMatter(String(item))}"`);
+    return `[${escaped.join(', ')}]`;
   }
 
   private generateTags(product: Product, investigation: InvestigationResult): string[] {
