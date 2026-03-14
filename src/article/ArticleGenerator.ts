@@ -517,9 +517,9 @@ ${usageSection}`;
 
     const useCases = investigation.analysis.useCases.map((useCase) => `- ${useCase}`).join('\n');
 
-    // ユーザーストーリーのフィルタリング（「（推測）」を含む内容を除去）
+    // ユーザーストーリーのフィルタリング（「推測」という言葉を含む内容を除去）
     const filteredUserStories = (investigation.analysis.userStories || []).filter(
-      (story) => !story.experience.includes('（推測）'),
+      (story) => !story.experience.includes('推測'),
     );
 
     const filteredUserImpression = investigation.analysis.userImpression || '';
