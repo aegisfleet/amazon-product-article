@@ -1,7 +1,7 @@
 {
   "analysis": {
     "productName": "BenQ ScreenBar Halo 2",
-    "parentAsin": "B0FTRZS5TQ",
+    "parentAsin": "B0DK59YKRS",
     "productDescription": "BenQ ScreenBar Halo 2は、独自の非対称光学設計と3ゾーンバックライトを搭載した、ハイエンドなモニター掛け式ライトです。超音波センサーによる自動点灯機能や進化したワイヤレスリモコンを備え、没入感のあるデスク環境を実現します。",
     "productUsage": [
       "モニター上部に設置し、手元を明るく照らして目の疲れを軽減する",
@@ -29,19 +29,19 @@
       {
         "userType": "在宅勤務のエンジニア",
         "scenario": "深夜までのコーディング作業",
-        "experience": "部屋の電気を消してScreenBar Halo 2だけで作業しているが、手元だけが明るく画面への映り込みもないため、集中力が途切れない。席を立つと自動で消えるのがスマートで気に入っている。",
+        "experience": "部屋の電気を消してScreenBar Halo 2だけで作業しているが、手元だけが明るく画面への映り込みもないため、集中力が途切れない。席を立つと自動で消えるのがスマートで気に入っている。（推測）",
         "sentiment": "positive"
       },
       {
         "userType": "ゲーマー",
         "scenario": "PCゲーム環境の構築",
-        "experience": "Razer製品と迷ったが、演色性と光の質の良さでこちらを選択。バックライトが壁を照らす雰囲気が最高で、デスク全体の高級感が上がった。ただ、値段は高いと感じる。",
+        "experience": "演色性と光の質の良さでこちらを選択。バックライトが壁を照らす雰囲気が最高で、デスク全体の高級感が上がった。ただ、値段は高いと感じる。（推測）",
         "sentiment": "mixed"
       },
       {
         "userType": "デザイナー",
         "scenario": "色味にシビアなデザイン作業",
-        "experience": "Ra95以上の高演色性のおかげで、手元の資料の色が正しく見える。リモコンで色温度を即座に切り替えられるので、印刷物の確認もしやすい。",
+        "experience": "Ra95以上の高演色性のおかげで、手元の資料の色が正しく見える。リモコンで色温度を即座に切り替えられるので、印刷物の確認もしやすい。（推測）",
         "sentiment": "positive"
       }
     ],
@@ -53,22 +53,17 @@
         "credibility": "high"
       },
       {
-        "name": "Adam Talks Tech (YouTube Review)",
-        "url": "https://www.youtube.com/watch?v=6RGqUBmykPg",
-        "credibility": "medium"
-      },
-      {
         "name": "How-To Geek Review",
         "url": "https://www.howtogeek.com/benq-screenbar-halo-2-review/",
         "credibility": "high"
       }
     ],
-    "lastInvestigated": "2026-01-21",
+    "lastInvestigated": "2026-03-15",
     "competitiveAnalysis": [
       {
-        "name": "Xiaomi Mi Computer Monitor Light Bar",
+        "name": "Xiaomi Miモニター掛け式ライト",
         "asin": "B08W2C5W59",
-        "priceComparison": "約5,500円とHalo 2の5分の1以下の価格。圧倒的に安い。",
+        "priceComparison": "約5,980円とHalo 2の4分の1以下の価格。圧倒的に安い。",
         "featureComparison": [
           "無線リモコン付きだが数値表示なし",
           "バックライトなし",
@@ -80,16 +75,29 @@
         ]
       },
       {
-        "name": "Quntis Monitor Light Bar Basic (L205)",
+        "name": "Quntis モニターライト Basic L205-QU",
         "asin": "B0G5YPH9SG",
-        "priceComparison": "約4,700円と非常に安価。",
+        "priceComparison": "約4,680円と非常に安価。",
         "featureComparison": [
-          "有線給電のみ（リモコンなしの場合あり）",
+          "有線給電のみ",
           "バックライトなし",
           "基本的な調光・調色のみ"
         ],
         "differentiators": [
           "とにかく安くモニターライトを導入したい人向け"
+        ]
+      },
+      {
+        "name": "BenQ ScreenBar (初代)",
+        "asin": "B0785D93KD",
+        "priceComparison": "約13,992円。Halo 2より約1.3万円安い。",
+        "featureComparison": [
+          "有線接続（リモコンなし、本体操作）",
+          "バックライトなし",
+          "光学性能は同等レベル"
+        ],
+        "differentiators": [
+          "バックライトや無線リモコンが不要な場合の高品質な選択肢"
         ]
       },
       {
@@ -103,19 +111,6 @@
         ],
         "differentiators": [
           "派手なRGB演出とゲーミングエコシステムとの連携"
-        ]
-      },
-      {
-        "name": "BenQ ScreenBar (初代)",
-        "asin": "B0785D93KD",
-        "priceComparison": "約16,000円。Halo 2より1万円安い。",
-        "featureComparison": [
-          "有線接続（リモコンなし、本体操作）",
-          "バックライトなし",
-          "光学性能は同等レベル"
-        ],
-        "differentiators": [
-          "バックライトや無線リモコンが不要な場合の高品質な選択肢"
         ]
       }
     ],
@@ -131,18 +126,28 @@
         "使い勝手が向上した充電式無線リモコン"
       ],
       "cons": [
-        "モニターライトとしては非常に高価",
+        "モニターライトとしては非常に高価（約2.7万円）",
         "デスク配置によってはバックライトの効果が薄れる"
       ],
       "score": 85,
       "scoreRationale": "[基本点: 70]\n[加点: +10] (自動点灯、3ゾーンバックライト、高演色性、無線リモコンの完成度が極めて高い)\n[減点: -10] (競合他社製品と比較して価格が非常に高い)\n[加点: +5] (BenQ独自のビルドクオリティと洗練されたデザイン)\n[加点: +5] (ユーザー満足度が高く、機能面での不満が少ない)\n[加点: +5] (超音波センサーによる自動点灯などの先進性)\n[合計: 85]"
     },
     "technicalSpecs": {
-      "dimensions": { "width": "50cm", "weight": "約0.8kg (パッケージ重量)", "other": "適合モニター厚: 0.7cm - 6cm (湾曲モニター対応)" },
-      "power": { "source": "USB Type-C (5V/1.5A以上推奨)", "consumption": "最大6.5W" },
-      "light": { "flux": "中心照度1000 Lux (50cm)", "colorTemp": "2700K - 6500K (ANSI White)", "cri": "Ra>95" },
-      "control": { "type": "2.4GHz無線リモコン (充電式)", "features": "タッチパネル、数値表示、自動調光センサー" },
-      "features": ["自動点灯/消灯 (超音波センサー)", "3ゾーンバックライト", "非対称光学設計", "Webカメラアクセサリ付属"]
+      "dimensions": {
+        "height": "10.9cm",
+        "width": "50cm",
+        "depth": "14.3cm",
+        "weight": "約0.8kg (パッケージ重量)"
+      },
+      "power": "最大6.5W",
+      "capacity": null,
+      "その他機能": [
+        "自動点灯/消灯 (超音波センサー)",
+        "3ゾーンバックライト",
+        "非対称光学設計",
+        "無線リモコン",
+        "湾曲モニター対応"
+      ]
     }
   }
 }
