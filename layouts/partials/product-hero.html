@@ -82,11 +82,11 @@
             </div>
             <div class="hero-price-info">
                 {{ if $product.is_prime }}<span class="hero-tag hero-tag-prime">Prime</span>{{ end }}
-                {{ with .Params.specs.weight }}<span class="spec-item">⚖️ 重量: <strong>{{ . }}</strong></span>{{ end }}
-                {{ with .Params.specs.quantity }}<span class="spec-item">📦 内容量: <strong>{{ . }}</strong></span>{{ end }}
-                {{ with .Params.specs.content }}<span class="spec-item">📦 内容量: <strong>{{ . }}</strong></span>{{ end }}
-                {{ with .Params.specs.count }}<span class="spec-item">🔢 個数: <strong>{{ . }}</strong></span>{{ end }}
-                {{ with .Params.specs.capacity }}<span class="spec-item">🍶 容量: <strong>{{ . }}</strong></span>{{ end }}
+                {{ with .Params.specs.weight }}<span class="hero-tag">⚖️ 重量: <strong>{{ . }}</strong></span>{{ end }}
+                {{ with .Params.specs.quantity }}<span class="hero-tag">📦 内容量: <strong>{{ . }}</strong></span>{{ end }}
+                {{ with .Params.specs.content }}<span class="hero-tag">📦 内容量: <strong>{{ . }}</strong></span>{{ end }}
+                {{ with .Params.specs.count }}<span class="hero-tag">🔢 個数: <strong>{{ . }}</strong></span>{{ end }}
+                {{ with .Params.specs.capacity }}<span class="hero-tag">🍶 容量: <strong>{{ . }}</strong></span>{{ end }}
             </div>
         </div>
 
@@ -127,6 +127,10 @@
             {{ with .display_size }}<span class="hero-tag">画面: {{ . }}</span>{{ end }}
             {{ with .battery_capacity }}<span class="hero-tag">バッテリー: {{ . }}</span>{{ end }}
             {{ with .weight }}<span class="hero-tag">重量: {{ . }}</span>{{ end }}
+            {{ with .quantity }}<span class="hero-tag">内容量: {{ . }}</span>{{ end }}
+            {{ with .content }}<span class="hero-tag">内容量: {{ . }}</span>{{ end }}
+            {{ with .count }}<span class="hero-tag">個数: {{ . }}</span>{{ end }}
+            {{ with .capacity }}<span class="hero-tag">容量: {{ . }}</span>{{ end }}
             {{ end }}
         </div>
 
