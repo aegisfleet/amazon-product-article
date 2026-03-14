@@ -29,6 +29,13 @@
 {{ end }}
 {{ $allArticles := where (where .Site.RegularPages "Section" "articles") "Params.asin" "!=" $currentAsin }}
 
+<div id="product-tracking-info" 
+     data-asin="{{ .Params.asin }}" 
+     data-category="{{ $currentCategory }}" 
+     data-price-bucket="{{ $currentPriceBucket }}" 
+     data-price="{{ .Params.price }}" 
+     style="display: none;"></div>
+
 <div class="container" style="padding-top: var(--spacing-xl);">
     {{ partial "breadcrumb.html" . }}
 

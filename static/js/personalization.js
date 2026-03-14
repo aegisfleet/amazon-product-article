@@ -126,12 +126,12 @@
         if (!item || typeof item !== 'object') return 0;
 
         const asin = toText(item.asin);
-        const category = toText(item.category) || 'unknown';
+        const category = (toText(item.category) || 'unknown').trim();
         const priceBucket = toText(item.priceBucket) || derivePriceBucket(item.price);
         let score = 0;
 
         // TIER 1: Match with the VERY LAST viewed category
-        if (preferences.recentCategory && category === preferences.recentCategory) {
+        if (category === preferences.recentCategory?.trim()) {
             score += 2000;
         }
         // TIER 2: Match with ANY category in recent history
@@ -201,8 +201,21 @@
         });
     }
 
+    // NEW: Auto-track product if on a single product page via a hidden element
+    function autoTrack() {
+        const trackingInfo = document.getElementById('product-tracking-info');
+        if (trackingInfo?.dataset.asin) {
+            const asin = toText(trackingInfo.dataset.asin);
+            const category = toText(trackingInfo.dataset.category) || 'unknown';
+            const priceBucket = toText(trackingInfo.dataset.priceBucket) || derivePriceBucket(trackingInfo.dataset.price || '');
+            
+            saveEvent({ asin, category, priceBucket, ts: Date.now() });
+        }
+    }
+
     bindTracking();
     bindReset();
+    autoTrack();
 
     globalThis.ProductPersonalization = {
         derivePriceBucket,
