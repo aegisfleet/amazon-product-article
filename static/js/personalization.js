@@ -69,11 +69,12 @@
         saveEvents(events);
     }
 
-    function getPreferences(limit) {
+    function getPreferences(limit, categoryToGroup) {
         const allEvents = loadEvents();
         const max = toPositiveNumber(limit) || 30;
         const events = allEvents.slice(-max);
         const categoryHistory = new Set();
+        const groupHistory = new Set();
         const priceBucketHistory = new Set();
         const recentAsins = new Set();
 
@@ -83,65 +84,90 @@
             const category = normalizeText(event.category);
             const priceBucket = normalizeText(event.priceBucket);
             if (asin) recentAsins.add(asin);
-            if (category) categoryHistory.add(category);
+            if (category) {
+                categoryHistory.add(category);
+                if (categoryToGroup?.[category]) {
+                    groupHistory.add(categoryToGroup[category]);
+                }
+            }
             if (priceBucket) priceBucketHistory.add(priceBucket);
         }
 
         const lastEvent = events.at(-1) ?? null;
+        const recentCategory = lastEvent ? normalizeText(lastEvent.category) : '';
+        const recentGroup = (recentCategory && categoryToGroup) ? (categoryToGroup[recentCategory] || '') : '';
+
         return {
             events,
             categoryHistory,
+            groupHistory,
             priceBucketHistory,
             recentAsins,
-            recentCategory: lastEvent ? normalizeText(lastEvent.category) : ''
+            recentCategory,
+            recentGroup
         };
     }
 
-    function rankItems(items) {
+    function rankItems(items, categoryToGroup) {
         if (!Array.isArray(items)) return [];
-        const preferences = getPreferences();
+        const preferences = getPreferences(30, categoryToGroup);
 
-        return [...items].sort(function (a, b) {
-            const scoreA = scoreItem(a, preferences);
-            const scoreB = scoreItem(b, preferences);
+        // STAGE 1: Add initial randomized order to each item to facilitate stable but random tie-breaking
+        const itemsWithOrder = items.map((item, index) => ({
+            item,
+            originalIndex: index,
+            randomOrder: Math.random()
+        }));
 
-            // If tiered scores are effectively the same, use Hugo score and stable jitter
+        // STAGE 2: Perform the sort
+        itemsWithOrder.sort(function (a, b) {
+            const scoreA = scoreItem(a.item, preferences, categoryToGroup);
+            const scoreB = scoreItem(b.item, preferences, categoryToGroup);
+
+            // If tiered scores are effectively the same, use Hugo score and randomOrder jitter
             if (Math.abs(scoreA - scoreB) < 1) {
-                const jitterA = (Number(a.score || 0)) + (hashCode(a.asin) % 100) / 1000;
-                const jitterB = (Number(b.score || 0)) + (hashCode(b.asin) % 100) / 1000;
-                return jitterB - jitterA;
+                const baseA = Number(a.item.score || 0);
+                const baseB = Number(b.item.score || 0);
+                
+                if (Math.abs(baseA - baseB) < 1) {
+                    // Hugo score is also the same, use the stability-safe random order
+                    return b.randomOrder - a.randomOrder;
+                }
+                return baseB - baseA;
             }
             return scoreB - scoreA;
         });
+
+        // STAGE 3: Return original item objects
+        return itemsWithOrder.map(wrapper => wrapper.item);
     }
 
-    function hashCode(str) {
-        let hash = 0;
-        const normalized = String(str || '');
-        for (let i = 0; i < normalized.length; i++) {
-            const charCode = normalized.codePointAt(i);
-            hash = (hash << 5) - hash + charCode;
-            hash = Math.trunc(hash);
-            if (charCode > 0xffff) i++; // Skip surrogate pair
-        }
-        return Math.abs(hash);
-    }
+// hashCode function removed as it is no longer used for jitter
 
-    function scoreItem(item, preferences) {
+    function scoreItem(item, preferences, categoryToGroup) {
         if (!item || typeof item !== 'object') return 0;
 
         const asin = normalizeText(item.asin);
         const category = normalizeText(item.category) || 'unknown';
         const priceBucket = normalizeText(item.priceBucket) || derivePriceBucket(item.price);
+        const group = categoryToGroup?.[category] ?? '';
         let score = 0;
 
         // TIER 1: Match with the VERY LAST viewed category
         if (category && category === preferences.recentCategory) {
             score += 2000;
         }
+        // TIER 1.5: Match with the VERY LAST viewed GROUP (Parent Category)
+        else if (group && group === preferences.recentGroup) {
+            score += 1500;
+        }
         // TIER 2: Match with ANY category in recent history
         else if (preferences.categoryHistory.has(category)) {
             score += 1000;
+        }
+        // TIER 2.5: Match with ANY GROUP in recent history
+        else if (group && preferences.groupHistory.has(group)) {
+            score += 800;
         }
 
         // TIER 3: Match with any price bucket in history
@@ -150,7 +176,7 @@
         }
 
         // HEAVY PENALTY: Item already viewed recently
-        if (asin && preferences.recentAsins.has(asin)) {
+        if (asin && preferences.recentAsins?.has(asin)) {
             score -= 5000;
         }
 
