@@ -74,7 +74,7 @@
                 🧹 閲覧履歴をリセット
             </button>
         </div>
-        <div class="pickup-grid" id="pickup-grid">
+        <div class="pickup-grid is-loading" id="pickup-grid">
             {{ range $pickupItems }}
             {{ $pickupCategory := "" }}
             {{ if .Params.categories }}{{ $pickupCategory = index .Params.categories 0 }}{{ else if .Params.category

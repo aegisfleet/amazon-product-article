@@ -176,6 +176,7 @@ document.addEventListener('DOMContentLoaded', function () {
         : shuffleWithSeed(pickupItems, Date.now()).slice(0, 6);
 
     renderPickupItems(initialItems, pickupGrid);
+    pickupGrid.classList.remove('is-loading');
 
     document.addEventListener('click', function (event) {
         const target = event.target;
