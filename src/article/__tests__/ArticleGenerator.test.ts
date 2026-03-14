@@ -262,6 +262,12 @@ describe('ArticleGenerator', () => {
           experience: 'この内容は（推測）です',
           sentiment: 'positive',
         },
+        {
+          userType: '主婦',
+          scenario: '家事',
+          experience: 'この内容は（スペックからの推測体験）です',
+          sentiment: 'positive',
+        },
       ];
       mockInvestigation.analysis.userImpression = '全体の印象（推測）';
 
@@ -269,6 +275,7 @@ describe('ArticleGenerator', () => {
 
       expect(result.content).toContain('実体験のレビューです');
       expect(result.content).not.toContain('この内容は（推測）です');
+      expect(result.content).not.toContain('この内容は（スペックからの推測体験）です');
       expect(result.content).toContain('全体の印象（推測）');
       expect(result.content).toContain('購入者の生の声');
     });
