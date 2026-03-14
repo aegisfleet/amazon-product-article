@@ -63,10 +63,7 @@ ${content}
 
 ## 商品詳細・購入
 
-[Amazonで購入](https://amazon.co.jp/dp/B123456789)
-
----
-*本記事にはアフィリエイトリンクが含まれています。*`;
+[Amazonで購入](https://amazon.co.jp/dp/B123456789)`;
       });
 
     it('should validate article structure for any valid article', () => {
@@ -128,9 +125,9 @@ ${content}
       );
     });
 
-    // アフィリエイト開示がない記事はコンプライアンスエラーになるべき
-    it('should report compliance error for articles without affiliate disclosure', () => {
-      const articleWithoutDisclosure = fc.constant(`---
+    // アフィリエイトリンクがない記事は警告になるべき
+    it('should report warning for articles without affiliate links', () => {
+      const articleWithoutLinks = fc.constant(`---
 title: "テスト商品"
 description: "テスト説明"
 date: 2025-01-01
@@ -144,14 +141,14 @@ category: Electronics
 テストコンテンツ`);
 
       fc.assert(
-        fc.property(articleWithoutDisclosure, (article) => {
+        fc.property(articleWithoutLinks, (article) => {
           const result = qualityManager.validateArticleStructure(article);
 
-          // アフィリエイト開示がないためエラーまたは警告があるべき
-          const hasComplianceIssue = [...result.errors, ...result.warnings].some(
-            (e) => e.category === 'compliance' || e.message.includes('アフィリエイト'),
+          // アフィリエイトリンクがないため警告があるべき
+          const hasLinkWarning = result.warnings.some(
+            (w) => w.message.includes('アフィリエイトリンク'),
           );
-          expect(hasComplianceIssue).toBe(true);
+          expect(hasLinkWarning).toBe(true);
         }),
         { numRuns: 10 },
       );
