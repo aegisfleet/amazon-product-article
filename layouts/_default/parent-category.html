@@ -386,6 +386,10 @@
                     {{ with .Params.specs.display_size }}<span class="card-spec-tag">画面: {{ . }}</span>{{ end }}
                     {{ with .Params.specs.battery_capacity }}<span class="card-spec-tag">バッテリー: {{ . }}</span>{{ end }}
                     {{ with .Params.specs.weight }}<span class="card-spec-tag">重量: {{ . }}</span>{{ end }}
+                    {{ with .Params.specs.quantity }}<span class="card-spec-tag">内容量: {{ . }}</span>{{ end }}
+                    {{ with .Params.specs.content }}<span class="card-spec-tag">内容量: {{ . }}</span>{{ end }}
+                    {{ with .Params.specs.count }}<span class="card-spec-tag">個数: {{ . }}</span>{{ end }}
+                    {{ with .Params.specs.capacity }}<span class="card-spec-tag">容量: {{ . }}</span>{{ end }}
                 </div>
                 {{ end }}
                 <div class="card-meta-ext">

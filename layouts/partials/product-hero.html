@@ -82,7 +82,11 @@
             </div>
             <div class="hero-price-info">
                 {{ if $product.is_prime }}<span class="hero-tag hero-tag-prime">Prime</span>{{ end }}
-                {{ with $product.availability }}<span class="hero-tag hero-tag-stock">{{ . }}</span>{{ end }}
+                {{ with .Params.specs.weight }}<span class="spec-item">⚖️ 重量: <strong>{{ . }}</strong></span>{{ end }}
+                {{ with .Params.specs.quantity }}<span class="spec-item">📦 内容量: <strong>{{ . }}</strong></span>{{ end }}
+                {{ with .Params.specs.content }}<span class="spec-item">📦 内容量: <strong>{{ . }}</strong></span>{{ end }}
+                {{ with .Params.specs.count }}<span class="spec-item">🔢 個数: <strong>{{ . }}</strong></span>{{ end }}
+                {{ with .Params.specs.capacity }}<span class="spec-item">🍶 容量: <strong>{{ . }}</strong></span>{{ end }}
             </div>
         </div>
 
