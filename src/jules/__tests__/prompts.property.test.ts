@@ -67,7 +67,7 @@ describe('Investigation Prompt Property Tests', () => {
 
           // 3. Competitive comparison requirements (Requirements 2.2, 2.4)
           expect(prompt).toContain('競合商品との比較');
-          expect(prompt).toContain('同カテゴリの主要競合商品3-5点');
+          expect(prompt).toContain('同カテゴリの主要競合商品4-6点');
           expect(prompt).toContain('価格、機能、品質の比較');
           expect(prompt).toContain('差別化ポイントの特定');
 
