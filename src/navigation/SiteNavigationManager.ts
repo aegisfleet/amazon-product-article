@@ -20,7 +20,7 @@ import type {
 import { Logger } from '../utils/Logger';
 
 export class SiteNavigationManager {
-  private logger: Logger;
+  private readonly logger: Logger;
   private categoryIndex: CategoryIndex;
   private articles: ArticleMetadata[];
 
@@ -145,7 +145,7 @@ export class SiteNavigationManager {
   generateSitemap(): string {
     this.logger.info('Generating sitemap');
 
-    const baseUrl = 'https://example.github.io/amazon-product-article';
+    const baseUrl = 'https://amazon-hikaku.com/';
     const now = new Date().toISOString();
 
     const urls: Array<{ loc: string; priority: string; changefreq: string }> = [
@@ -272,7 +272,7 @@ ${urls
   generateBreadcrumbs(path: string): Breadcrumb[] {
     const breadcrumbs: Breadcrumb[] = [{ label: 'ホーム', url: '/' }];
 
-    const parts = path.split('/').filter((p) => p);
+    const parts = path.split('/').filter(Boolean);
     let currentPath = '';
 
     for (const part of parts) {
@@ -415,31 +415,27 @@ ${urls
    * ナビゲーションメニューを生成
    */
   private generateNavigationMenu(): NavigationMenuItem[] {
-    const menu: NavigationMenuItem[] = [{ id: 'home', label: 'ホーム', url: '/' }];
-
-    // カテゴリメニュー
-    const categoryMenu: NavigationMenuItem = {
-      id: 'categories',
-      label: 'カテゴリ',
-      url: '/categories/',
-      children: this.categoryIndex.categories.map((cat) => ({
-        id: cat.id,
-        label: cat.name,
-        url: `/categories/${cat.id}/`,
-        badge: String(cat.articleCount),
-        children: cat.subcategories.map((sub) => ({
-          id: sub.id,
-          label: sub.name,
-          url: `/categories/${cat.id}/${sub.id}/`,
+    return [
+      { id: 'home', label: 'ホーム', url: '/' },
+      {
+        id: 'categories',
+        label: 'カテゴリ',
+        url: '/categories/',
+        children: this.categoryIndex.categories.map((cat) => ({
+          id: cat.id,
+          label: cat.name,
+          url: `/categories/${cat.id}/`,
+          badge: String(cat.articleCount),
+          children: cat.subcategories.map((sub) => ({
+            id: sub.id,
+            label: sub.name,
+            url: `/categories/${cat.id}/${sub.id}/`,
+          })),
         })),
-      })),
-    };
-    menu.push(categoryMenu);
-
-    // その他のメニュー項目
-    menu.push({ id: 'new', label: '新着', url: '/new/' }, { id: 'featured', label: 'おすすめ', url: '/featured/' });
-
-    return menu;
+      },
+      { id: 'new', label: '新着', url: '/new/' },
+      { id: 'featured', label: 'おすすめ', url: '/featured/' },
+    ];
   }
 
   /**
@@ -496,7 +492,7 @@ ${urls
    */
   private formatBreadcrumbLabel(part: string): string {
     // スラッグから読みやすいラベルに変換
-    return part.replace(/-/g, ' ').replace(/\b\w/g, (c) => c.toUpperCase());
+    return part.replaceAll('-', ' ').replaceAll(/\b\w/g, (c) => c.toUpperCase());
   }
 
   /**
@@ -505,8 +501,8 @@ ${urls
   private slugify(text: string): string {
     return text
       .toLowerCase()
-      .replace(/[^a-z0-9ぁ-んァ-ン一-龥]/g, '-')
-      .replace(/-+/g, '-')
-      .replace(/^-|-$/g, '');
+      .replaceAll(/[^a-z0-9ぁ-んァ-ン一-龥]/g, '-')
+      .replaceAll(/-+/g, '-')
+      .replaceAll(/^-|-$/g, '');
   }
 }
