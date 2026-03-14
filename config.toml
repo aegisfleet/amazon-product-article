@@ -1,7 +1,8 @@
 # Hugo Configuration for Amazon Product Articles
 # https://gohugo.io/getting-started/configuration/
 
-baseURL = "https://aegisfleet.github.io/amazon-product-article/"
+baseURL = "https://amazon-hikaku.com/"
+relativeURLs = true
 languageCode = "ja"
 title = "ポちのAmazon商品徹底比較サイト"
 
