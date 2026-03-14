@@ -517,12 +517,20 @@ ${usageSection}`;
 
     const useCases = investigation.analysis.useCases.map((useCase) => `- ${useCase}`).join('\n');
 
+    // ユーザーストーリーのフィルタリング（「（推測）」を含む内容を除去）
+    const filteredUserStories = (investigation.analysis.userStories || []).filter(
+      (story) => !story.experience.includes('（推測）'),
+    );
+
+    const userImpression = investigation.analysis.userImpression || '';
+    const filteredUserImpression = userImpression.includes('（推測）') ? '' : userImpression;
+
     // ユーザーストーリーの生成
-    const userImpressionBlock = investigation.analysis.userImpression
-      ? this.formatUserImpressionAsBlockquote(investigation.analysis.userImpression)
+    const userImpressionBlock = filteredUserImpression
+      ? this.formatUserImpressionAsBlockquote(filteredUserImpression)
       : '';
 
-    const userStoriesBlock = investigation.analysis.userStories
+    const userStoriesBlock = filteredUserStories
       .map((story) => {
         let sentimentLabel = '普通';
         if (story.sentiment === 'positive') {
@@ -540,7 +548,7 @@ ${usageSection}`;
       .join('\n\n');
 
     const userStories =
-      investigation.analysis.userStories && investigation.analysis.userStories.length > 0
+      filteredUserStories.length > 0
         ? `### 🗣️ 購入者の生の声（ユーザーストーリー）\n${userImpressionBlock}\n\n${userStoriesBlock}`
         : '';
 
@@ -976,7 +984,7 @@ ${recommendationMessage}`;
   private addElectronicsSpecs(lines: string[], addedKeys: Set<string>, specs: TechnicalSpecs): void {
     if (specs.power) this.addFrontMatterSpec(lines, addedKeys, 'power', `"${this.formatSpecValue(specs.power)}"`);
     if (specs.capacity) this.addFrontMatterSpec(lines, addedKeys, 'capacity', `"${this.formatSpecValue(specs.capacity)}"`);
-    if (specs.contentVolume) this.addFrontMatterSpec(lines, addedKeys, 'capacity', `"${this.formatSpecValue(specs.contentVolume)}"`);
+    if (specs.contentVolume) this.addFrontMatterSpec(lines, addedKeys, 'content_volume', `"${this.formatSpecValue(specs.contentVolume)}"`);
     if (specs.category) this.addFrontMatterSpec(lines, addedKeys, 'spec_category', `"${this.formatSpecValue(specs.category)}"`);
   }
 
