@@ -113,6 +113,8 @@ parents:
         productCount: 1
       - name: ダスタ
         productCount: 0
+      - name: テレビ用HDD
+        productCount: 0
       - name: ドッキングステーション
         productCount: 21
       - name: ノートパソコンスタンド
@@ -540,7 +542,7 @@ parents:
   ホーム・キッチン:
     name: ホーム・キッチン
     slug: home-kitchen
-    productCount: 186
+    productCount: 187
     isVisible: true
     childrenWithCounts:
       - name: おしゃれ着洗剤
@@ -643,6 +645,8 @@ parents:
         productCount: 0
       - name: スポーツウォーターボトル
         productCount: 0
+      - name: スーツハンガー
+        productCount: 1
       - name: ソープ・シャンプー用ディスペンサー
         productCount: 1
       - name: タオル
@@ -847,6 +851,8 @@ parents:
         productCount: 0
       - name: 蛇口用カートリッジ
         productCount: 2
+      - name: 蛇口直結型浄水器
+        productCount: 0
       - name: 衣類用染料
         productCount: 0
       - name: 調味料・スパイスラック
@@ -882,7 +888,7 @@ parents:
   食品:
     name: 食品
     slug: food
-    productCount: 134
+    productCount: 135
     isVisible: true
     childrenWithCounts:
       - name: うどん
@@ -1044,6 +1050,8 @@ parents:
       - name: 冷凍魚
         productCount: 1
       - name: 冷凍麺・パスタ
+        productCount: 1
+      - name: 味付けのり
         productCount: 1
       - name: 味噌
         productCount: 0
@@ -2480,7 +2488,7 @@ parents:
   アウトドア・車・DIY:
     name: アウトドア・車・DIY
     slug: outdoor-car-diy
-    productCount: 129
+    productCount: 130
     isVisible: true
     childrenWithCounts:
       - name: LEDランタン
@@ -2639,6 +2647,8 @@ parents:
         productCount: 0
       - name: ホルスター
         productCount: 0
+      - name: ボクササイズ
+        productCount: 1
       - name: ポップアップテント
         productCount: 0
       - name: ポータブルナビ・PND
