@@ -12,6 +12,7 @@ export const SPEC_LABEL_MAP: Record<string, string> = {
   color: 'カラー',
   model: '型番',
   modelNumber: '型番',
+  count: '個数',
   countryOfOrigin: '原産国',
   country_of_origin: '原産国',
   category: 'カテゴリ',

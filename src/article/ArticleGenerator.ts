@@ -984,6 +984,9 @@ ${recommendationMessage}`;
     if (specs.power) this.addFrontMatterSpec(lines, addedKeys, 'power', `"${this.formatSpecValue(specs.power)}"`);
     if (specs.capacity) this.addFrontMatterSpec(lines, addedKeys, 'capacity', `"${this.formatSpecValue(specs.capacity)}"`);
     if (specs.contentVolume) this.addFrontMatterSpec(lines, addedKeys, 'content_volume', `"${this.formatSpecValue(specs.contentVolume)}"`);
+    if (specs.quantity) this.addFrontMatterSpec(lines, addedKeys, 'quantity', `"${this.formatSpecValue(specs.quantity)}"`);
+    if (specs.content) this.addFrontMatterSpec(lines, addedKeys, 'content', `"${this.formatSpecValue(specs.content)}"`);
+    if (specs.count) this.addFrontMatterSpec(lines, addedKeys, 'count', `"${this.formatSpecValue(specs.count)}"`);
     if (specs.category) this.addFrontMatterSpec(lines, addedKeys, 'spec_category', `"${this.formatSpecValue(specs.category)}"`);
   }
 
@@ -1089,6 +1092,15 @@ ${recommendationMessage}`;
 
     if (hero.warnings && hero.warnings.length > 0) {
       lines.push(`  warnings: ${this.formatArrayForFrontMatter(hero.warnings)}`);
+    }
+
+    if (hero.specs) {
+      lines.push('  specs:');
+      for (const [key, value] of Object.entries(hero.specs)) {
+        if (value) {
+          lines.push(`    ${key}: "${this.escapeForFrontMatter(String(value))}"`);
+        }
+      }
     }
   }
 
