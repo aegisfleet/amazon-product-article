@@ -1075,16 +1075,8 @@ ${recommendationMessage}`;
   private addHeroData(lines: string[], hero: ArticleMetadata['hero']): void {
     if (!hero) return;
     lines.push('hero:');
-    if (hero.score_rationale) {
-      lines.push('  score_rationale:');
-      const { top_plus, top_minus } = hero.score_rationale;
-      if (top_plus) {
-        lines.push('    top_plus:', `      points: ${top_plus.points}`, `      desc: "${this.escapeForFrontMatter(top_plus.desc)}"`);
-      }
-      if (top_minus) {
-        lines.push('    top_minus:', `      points: ${top_minus.points}`, `      desc: "${this.escapeForFrontMatter(top_minus.desc)}"`);
-      }
-    }
+
+    this.addHeroScoreRationale(lines, hero.score_rationale);
 
     if (hero.target_users && hero.target_users.length > 0) {
       lines.push(`  target_users: ${this.formatArrayForFrontMatter(hero.target_users)}`);
@@ -1094,16 +1086,30 @@ ${recommendationMessage}`;
       lines.push(`  warnings: ${this.formatArrayForFrontMatter(hero.warnings)}`);
     }
 
-    if (hero.specs) {
-      lines.push('  specs:');
-      for (const [key, value] of Object.entries(hero.specs)) {
-        if (value) {
-          lines.push(`    ${key}: "${this.escapeForFrontMatter(String(value))}"`);
-        }
-      }
+    this.addHeroSpecs(lines, hero.specs);
+  }
+
+  private addHeroScoreRationale(lines: string[], rationale: NonNullable<ArticleMetadata['hero']>['score_rationale']): void {
+    if (!rationale) return;
+    lines.push('  score_rationale:');
+    const { top_plus, top_minus } = rationale;
+    if (top_plus) {
+      lines.push('    top_plus:', `      points: ${top_plus.points}`, `      desc: "${this.escapeForFrontMatter(top_plus.desc)}"`);
+    }
+    if (top_minus) {
+      lines.push('    top_minus:', `      points: ${top_minus.points}`, `      desc: "${this.escapeForFrontMatter(top_minus.desc)}"`);
     }
   }
 
+  private addHeroSpecs(lines: string[], specs: TechnicalSpecs): void {
+    if (!specs) return;
+    lines.push('  specs:');
+    for (const [key, value] of Object.entries(specs)) {
+      if (value) {
+        lines.push(`    ${key}: "${this.escapeForFrontMatter(this.formatSpecValue(value))}"`);
+      }
+    }
+  }
 
   // Helper methods
   private addCoreMetadata(lines: string[], metadata: ArticleMetadata): void {
