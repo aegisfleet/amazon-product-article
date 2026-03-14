@@ -248,6 +248,48 @@ describe('ArticleGenerator', () => {
       expect(result.sections).toHaveLength(6);
     });
 
+    it('should filter out user stories and impression containing "(推測)"', async () => {
+      mockInvestigation.analysis.userStories = [
+        {
+          userType: '会社員',
+          scenario: '通勤',
+          experience: '実体験のレビューです',
+          sentiment: 'positive',
+        },
+        {
+          userType: '学生',
+          scenario: '学習',
+          experience: 'この内容は（推測）です',
+          sentiment: 'positive',
+        },
+      ];
+      mockInvestigation.analysis.userImpression = '全体の印象（推測）';
+
+      const result = await generator.generateArticle(mockProduct, mockInvestigation);
+
+      expect(result.content).toContain('実体験のレビューです');
+      expect(result.content).not.toContain('この内容は（推測）です');
+      expect(result.content).not.toContain('全体の印象（推測）');
+      expect(result.content).toContain('購入者の生の声');
+    });
+
+    it('should hide the entire user stories section if all stories are filtered out', async () => {
+      mockInvestigation.analysis.userStories = [
+        {
+          userType: '学生',
+          scenario: '学習',
+          experience: 'この内容は（推測）です',
+          sentiment: 'positive',
+        },
+      ];
+      mockInvestigation.analysis.userImpression = '全体の印象（推測）';
+
+      const result = await generator.generateArticle(mockProduct, mockInvestigation);
+
+      expect(result.content).not.toContain('購入者の生の声');
+      expect(result.content).not.toContain('体験談');
+    });
+
 
     it('should generate proper front matter', async () => {
       const result = await generator.generateArticle(mockProduct, mockInvestigation);
