@@ -9,7 +9,7 @@ Amazon Creators APIとGoogle Julesを活用した商品調査記事の自動生�
 ## ディレクトリ構成
 
 ```
-amazon-product-article/
+./
 ├── scripts/                  # 調査・ユーティリティスクリプト（TypeScript/Python）
 │   ├── creators_get_item.py     # 商品詳細取得
 │   └── creators_search_items.py # 商品検索
@@ -136,7 +136,7 @@ hugo server -D
 ```
 
 開発サーバーを起動した際は、以下のURLでサイトを確認できます：
-[http://localhost:1313/amazon-product-article/](http://localhost:1313/amazon-product-article/)
+[http://localhost:1313/](http://localhost:1313/)
 
 ```bash
 # 静的サイトビルド
