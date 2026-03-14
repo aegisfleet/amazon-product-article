@@ -2,8 +2,11 @@
     const STORAGE_KEY = 'apa-user-actions-v1';
     const MAX_EVENTS = 120;
 
-    function toText(value) {
-        return typeof value === 'string' ? value.trim() : '';
+    function normalizeText(value) {
+        if (typeof value !== 'string') return '';
+        // NFKC normalization handles full-width/half-width and other Japanese character inconsistencies
+        // Also remove all internal whitespace for robust matching
+        return value.normalize('NFKC').replaceAll(/\s+/g, '').trim();
     }
 
     function toPositiveNumber(value) {
@@ -51,13 +54,13 @@
     }
 
     function saveEvent(payload) {
-        const asin = toText(payload.asin);
+        const asin = normalizeText(payload.asin);
         if (!asin) return;
 
         const event = {
             asin,
-            category: toText(payload.category) || 'unknown',
-            priceBucket: toText(payload.priceBucket) || 'unknown',
+            category: normalizeText(payload.category) || 'unknown',
+            priceBucket: normalizeText(payload.priceBucket) || 'unknown',
             ts: toPositiveNumber(payload.ts) || Date.now()
         };
 
@@ -76,20 +79,21 @@
 
         // Keep track of any category or price bucket seen in the recent history
         for (const event of events) {
-            const asin = toText(event.asin);
-            const category = toText(event.category);
-            const priceBucket = toText(event.priceBucket);
+            const asin = normalizeText(event.asin);
+            const category = normalizeText(event.category);
+            const priceBucket = normalizeText(event.priceBucket);
             if (asin) recentAsins.add(asin);
             if (category) categoryHistory.add(category);
             if (priceBucket) priceBucketHistory.add(priceBucket);
         }
 
+        const lastEvent = events.at(-1) ?? null;
         return {
             events,
             categoryHistory,
             priceBucketHistory,
             recentAsins,
-            recentCategory: events.length ? toText(events.at(-1).category) : ''
+            recentCategory: lastEvent ? normalizeText(lastEvent.category) : ''
         };
     }
 
@@ -113,8 +117,9 @@
 
     function hashCode(str) {
         let hash = 0;
-        for (let i = 0; i < str.length; i++) {
-            const charCode = str.codePointAt(i);
+        const normalized = String(str || '');
+        for (let i = 0; i < normalized.length; i++) {
+            const charCode = normalized.codePointAt(i);
             hash = (hash << 5) - hash + charCode;
             hash = Math.trunc(hash);
             if (charCode > 0xffff) i++; // Skip surrogate pair
@@ -125,13 +130,13 @@
     function scoreItem(item, preferences) {
         if (!item || typeof item !== 'object') return 0;
 
-        const asin = toText(item.asin);
-        const category = (toText(item.category) || 'unknown').trim();
-        const priceBucket = toText(item.priceBucket) || derivePriceBucket(item.price);
+        const asin = normalizeText(item.asin);
+        const category = normalizeText(item.category) || 'unknown';
+        const priceBucket = normalizeText(item.priceBucket) || derivePriceBucket(item.price);
         let score = 0;
 
         // TIER 1: Match with the VERY LAST viewed category
-        if (category === preferences.recentCategory?.trim()) {
+        if (category && category === preferences.recentCategory) {
             score += 2000;
         }
         // TIER 2: Match with ANY category in recent history
@@ -162,10 +167,10 @@
     }
 
     function getLinkMeta(link) {
-        const asin = toText(link.dataset.asin);
+        const asin = normalizeText(link.dataset.asin);
         if (!asin) return null;
-        const category = toText(link.dataset.category) || 'unknown';
-        const priceBucket = toText(link.dataset.priceBucket) || derivePriceBucket(link.dataset.price || '');
+        const category = normalizeText(link.dataset.category) || 'unknown';
+        const priceBucket = normalizeText(link.dataset.priceBucket) || derivePriceBucket(link.dataset.price || '');
         return { asin, category, priceBucket, ts: Date.now() };
     }
 
@@ -205,9 +210,9 @@
     function autoTrack() {
         const trackingInfo = document.getElementById('product-tracking-info');
         if (trackingInfo?.dataset.asin) {
-            const asin = toText(trackingInfo.dataset.asin);
-            const category = toText(trackingInfo.dataset.category) || 'unknown';
-            const priceBucket = toText(trackingInfo.dataset.priceBucket) || derivePriceBucket(trackingInfo.dataset.price || '');
+            const asin = normalizeText(trackingInfo.dataset.asin);
+            const category = normalizeText(trackingInfo.dataset.category) || 'unknown';
+            const priceBucket = normalizeText(trackingInfo.dataset.priceBucket) || derivePriceBucket(trackingInfo.dataset.price || '');
             
             saveEvent({ asin, category, priceBucket, ts: Date.now() });
         }
