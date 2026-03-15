@@ -1591,8 +1591,15 @@ ${recommendationMessage}`;
     if (basePriceAmount > 0 && competitorPriceAmount > 0) {
       const diff = competitorPriceAmount - basePriceAmount;
       const diffFormatted = new Intl.NumberFormat('ja-JP').format(Math.abs(diff));
-      const sign = diff > 0 ? '+' : diff < 0 ? '-' : '±';
-      const diffClass = diff > 0 ? 'price-up' : diff < 0 ? 'price-down' : 'price-equal';
+      let sign = '±';
+      let diffClass = 'price-equal';
+      if (diff > 0) {
+        sign = '+';
+        diffClass = 'price-up';
+      } else if (diff < 0) {
+        sign = '-';
+        diffClass = 'price-down';
+      }
       priceDiffHtml = `<span class="competitor-price-diff ${diffClass}">(${sign}￥${diffFormatted})</span>`;
     }
 
