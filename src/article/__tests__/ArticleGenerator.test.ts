@@ -133,12 +133,22 @@ describe('ArticleGenerator', () => {
       {
         name: 'Amazonレビュー',
         url: 'https://amazon.co.jp',
-        credibility: 'High',
+        tier: 'high',
+        evidenceType: 'primary',
+        publishedAt: '2025-01-01',
+        author: '購入者レビュー',
+        conflictOfInterest: 'none',
+        notes: '第三者検証あり',
       },
       {
         name: 'Tech Blog',
         url: 'https://example.com/blog',
-        credibility: 'Medium',
+        tier: 'medium',
+        evidenceType: 'secondary',
+        publishedAt: '2024-12-15',
+        author: '編集部',
+        conflictOfInterest: 'possible',
+        notes: '比較検証あり',
       },
     ];
 
@@ -208,7 +218,12 @@ describe('ArticleGenerator', () => {
       mockInvestigation.analysis.sources.push({
         name: 'Amazon Creators API',
         url: 'https://webservices.amazon.co.jp/creators/v1/items',
-        credibility: 'High',
+        tier: 'high',
+        evidenceType: 'primary',
+        publishedAt: '2025-01-01',
+        author: 'Amazon公式',
+        conflictOfInterest: 'disclosed',
+        notes: '公式一次資料',
       });
 
       const result = await generator.generateArticle(
@@ -241,7 +256,9 @@ describe('ArticleGenerator', () => {
       );
       // Verify Creators API is rendered as plain text, not a link
       // Note: optimizeListsForMobile wraps list items in a span
-      expect(result.content).toContain('<span class="mobile-list-item">Amazon Creators API (High)</span>');
+      expect(result.content).toContain(
+        '<span class="mobile-list-item">Amazon Creators API （信頼度: 高 / 情報種別: 一次情報 / 公開日: 2025-01-01 / 執筆主体: Amazon公式 / 利害関係を開示 / 評価理由: 公式一次資料）</span>',
+      );
       expect(result.content).not.toContain('[Amazon Creators API](https://webservices.amazon.co.jp/creators/v1/items)');
 
       expect(result.wordCount).toBeGreaterThan(0);

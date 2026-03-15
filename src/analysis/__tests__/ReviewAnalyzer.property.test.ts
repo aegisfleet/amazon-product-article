@@ -88,7 +88,12 @@ describe('ReviewAnalyzer Property Tests', () => {
               fc.record({
                 name: fc.string({ minLength: 5, maxLength: 30 }),
                 url: fc.webUrl(),
-                credibility: fc.constantFrom('high', 'medium', 'low'),
+                tier: fc.constantFrom('high', 'medium', 'low'),
+                evidenceType: fc.constantFrom('primary', 'secondary'),
+                publishedAt: fc.date().map((d) => d.toISOString().slice(0, 10)),
+                author: fc.string({ minLength: 3, maxLength: 20 }),
+                conflictOfInterest: fc.constantFrom('none', 'possible', 'disclosed', 'unknown'),
+                notes: fc.string({ minLength: 3, maxLength: 40 }),
               }),
               { minLength: 0, maxLength: 3 },
             ),
