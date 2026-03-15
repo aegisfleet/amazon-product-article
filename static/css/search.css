@@ -204,16 +204,28 @@
     box-shadow: 0 1px 2px var(--shadow-score-excellent);
 }
 
+[data-theme="dark"] .result-score.score-excellent {
+    border: 1px solid var(--border-score-excellent);
+}
+
 .result-score.score-good {
     background: var(--gradient-score-good);
     color: white;
     box-shadow: 0 1px 2px var(--shadow-score-good);
 }
 
+[data-theme="dark"] .result-score.score-good {
+    border: 1px solid var(--border-score-good);
+}
+
 .result-score.score-fair {
     background: var(--gradient-score-fair);
     color: white;
     box-shadow: 0 1px 2px var(--shadow-score-fair);
+}
+
+[data-theme="dark"] .result-score.score-fair {
+    border: 1px solid var(--border-score-fair);
 }
 
 /* Summary */
