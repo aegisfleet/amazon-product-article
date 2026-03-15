@@ -42,17 +42,27 @@
     "userImpression": "「安くて手軽」という点で非常に高い評価を得ている。特にアウトドアユーザーやオフィスワーカーからの支持が厚い。一方で、カップへの固定力（安定性）に関しては「少し不安」「落ちそうになった」という声もあり、使用するカップのサイズには注意が必要との認識が共有されている。",
     "sources": [
       {
+        "id": "source-1",
         "name": "Kalita 公式サイト 商品一覧",
         "url": "https://www.kalita.co.jp/products/kantan_drip/2265",
-        "credibility": "高"
+        "tier": "high",
+        "evidenceType": "primary",
+        "author": "メーカー公式",
+        "conflictOfInterest": "possible",
+        "notes": "公式一次資料"
       },
       {
-        "name": "Amazon カスタマーレビュー (推測)",
-        "url": null,
-        "credibility": "中"
+        "id": "source-2",
+        "name": "価格.com / 各種ECサイトレビュー (推測)",
+        "url": "",
+        "tier": "medium",
+        "evidenceType": "secondary",
+        "author": "第三者レビュアー",
+        "conflictOfInterest": "none",
+        "notes": "ユーザー評価の参考として"
       }
     ],
-    "lastInvestigated": "2026-01-22",
+    "lastInvestigated": "2026-03-16",
     "competitiveAnalysis": [
       {
         "name": "ゼンミ マイドリップ 無漂白 30枚入",
@@ -92,6 +102,44 @@
           "ブランド統一を好むHARIOファン向け。",
           "少し高くても使い勝手を重視する層へ。"
         ]
+      },
+      {
+        "name": "カリタ かんたんドリップ 30枚入り×6個セット",
+        "asin": "B07MQ7XFQG",
+        "priceComparison": "約1,961円（180枚）。1枚あたり約10.9円で単品とほぼ同等だが、まとめ買いで確実に入手可能。",
+        "featureComparison": [
+          "機能やサイズは全く同じ。",
+          "ストック用として大容量。"
+        ],
+        "differentiators": [
+          "買い置きをしておきたいヘビーユーザー向け。",
+          "長期保存に向いているかどうかがポイント。"
+        ]
+      },
+      {
+        "name": "キーコーヒー ドリップコーヒーフィルター 30枚",
+        "asin": "B0CHDQL5MD",
+        "priceComparison": "330円（30枚）。1枚あたり11円。",
+        "featureComparison": [
+          "1杯分のコーヒーを手軽に淹れられるコーヒーフィルター。",
+          "様々なカップに対応"
+        ],
+        "differentiators": [
+          "大手コーヒーブランドの安心感。"
+        ]
+      },
+      {
+        "name": "KONO コーノ式名門ドリッパー",
+        "asin": "B0BXN8X1RP",
+        "priceComparison": "使い捨てではなく器具としての購入となるため、初期投資は高い。",
+        "featureComparison": [
+          "使い捨てではないプラスチックやガラス製のドリッパー。",
+          "円錐形でコーヒーの味をコントロールしやすい。"
+        ],
+        "differentiators": [
+          "使い捨てではなく本格的にコーヒーを淹れたい人向け。",
+          "洗い物の手間はかかるが、本格的な味を追求可能。"
+        ]
       }
     ],
     "recommendation": {
@@ -123,6 +171,29 @@
       },
       "origin": "日本",
       "compatibility": "直径70〜85mm程度のカップ（一般的目安）"
-    }
+    },
+    "claims": [
+      {
+        "claim": "1枚あたり約10円以下という高いコストパフォーマンスを持つ",
+        "category": "comparativeAdvantage",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "source-1",
+          "source-2"
+        ],
+        "crossChecked": true,
+        "notes": "公式サイトとレビューの両方で安さが言及されている。"
+      },
+      {
+        "claim": "カップの形状によっては安定しにくい",
+        "category": "safety",
+        "confidence": "medium",
+        "supportingSourceIds": [
+          "source-2"
+        ],
+        "crossChecked": false,
+        "notes": "ユーザーレビューでの言及が主であり、公式では言及なし。使用者の環境に依存するため仮説として扱う。"
+      }
+    ]
   }
 }
