@@ -162,6 +162,41 @@ export const SPEC_LABEL_MAP: Record<string, string> = {
 };
 
 /**
+ * 英語の値を日本語に変換するためのマッピング
+ */
+export const SPEC_VALUE_MAP: Record<string, string> = {
+  yes: 'あり',
+  no: 'なし',
+  true: 'あり',
+  false: 'なし',
+  available: '在庫あり',
+  'in stock': '在庫あり',
+  unavailable: '在庫なし',
+  'out of stock': '在庫なし',
+  black: 'ブラック',
+  white: 'ホワイト',
+  blue: 'ブルー',
+  red: 'レッド',
+  green: 'グリーン',
+  gray: 'グレー',
+  grey: 'グレー',
+  silver: 'シルバー',
+  gold: 'ゴールド',
+  pink: 'ピンク',
+  purple: 'パープル',
+  brown: 'ブラウン',
+  orange: 'オレンジ',
+  yellow: 'イエロー',
+  transparent: '透明',
+  clear: 'クリア',
+};
+
+/**
+ * 無効なプレースホルダー値のセット
+ */
+export const INVALID_PLACEHOLDERS = new Set(['null', 'none', 'unknown', '不明', 'n/a', '-', 'なし']);
+
+/**
  * 既知のフィールド（既存ロジックで処理済み）
  * これらは動的レンダリングから除外される
  */
