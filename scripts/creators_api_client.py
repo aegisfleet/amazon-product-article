@@ -24,6 +24,22 @@ try:
 except ImportError:
     pass  # dotenv not installed, rely on system env vars
 
+class CreatorsAPIError(Exception):
+    """Base exception class for Creators API client."""
+    pass
+
+class CreatorsAPITokenError(CreatorsAPIError):
+    """Exception raised when failing to get OAuth access token."""
+    pass
+
+class CreatorsAPIRequestError(CreatorsAPIError):
+    """Exception raised when an API request fails after retries or with specific error status."""
+    pass
+
+class CreatorsAPIMaxRetriesError(CreatorsAPIRequestError):
+    """Exception raised when maximum retry attempts are exceeded."""
+    pass
+
 class CreatorsAPIClient:
     """Amazon Creators API Client with OAuth 2.0 authentication."""
     
@@ -86,7 +102,7 @@ class CreatorsAPIClient:
         )
         
         if response.status_code != 200:
-            raise Exception(f"Failed to get access token: {response.status_code} - {response.text}")
+            raise CreatorsAPITokenError(f"Failed to get access token: {response.status_code} - {response.text}")
         
         token_data = response.json()
         self._access_token = token_data.get("access_token")
@@ -140,7 +156,7 @@ class CreatorsAPIClient:
                         delay = min(2 ** attempt, 30)
                         time.sleep(delay)
                         continue
-                    raise Exception(f"API request failed: {response.status_code} - {response.text}")
+                    raise CreatorsAPIRequestError(f"API request failed: {response.status_code} - {response.text}")
                     
             except requests.exceptions.RequestException as e:
                 if attempt < self.max_retries:
@@ -150,7 +166,7 @@ class CreatorsAPIClient:
                 else:
                     raise
         
-        raise Exception("Max retries exceeded")
+        raise CreatorsAPIMaxRetriesError("Max retries exceeded")
     
     def get_items(self, asins: list[str], resources: list[str] = None) -> dict:
         """Get item details by ASINs.
