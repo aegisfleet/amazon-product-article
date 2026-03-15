@@ -340,10 +340,10 @@ a:hover {
 
 /* Dynamic Score Colors */
 .card-score.score-excellent {
-  background: linear-gradient(135deg, #065f46, #064e3b);
-  /* Emerald 800 to 900 */
+  background: linear-gradient(135deg, #047857, #059669);
+  /* Emerald 700 to 600 */
   color: white;
-  box-shadow: 0 1px 2px rgba(6, 78, 59, 0.2);
+  box-shadow: 0 1px 2px rgba(5, 150, 105, 0.2);
 }
 
 [data-theme="dark"] .card-score.score-excellent {
@@ -353,10 +353,10 @@ a:hover {
 }
 
 .card-score.score-good {
-  background: linear-gradient(135deg, #92400e, #78350f);
-  /* Amber 800 to 900 */
+  background: linear-gradient(135deg, #b45309, #92400e);
+  /* Amber 700 to 800 */
   color: white;
-  box-shadow: 0 1px 2px rgba(120, 53, 15, 0.2);
+  box-shadow: 0 1px 2px rgba(146, 64, 14, 0.2);
 }
 
 [data-theme="dark"] .card-score.score-good {
@@ -366,10 +366,10 @@ a:hover {
 }
 
 .card-score.score-fair {
-  background: linear-gradient(135deg, #374151, #1f2937);
-  /* Gray 700 to 800 */
+  background: linear-gradient(135deg, #4b5563, #374151);
+  /* Gray 600 to 700 */
   color: white;
-  box-shadow: 0 1px 2px rgba(31, 41, 55, 0.2);
+  box-shadow: 0 1px 2px rgba(55, 65, 81, 0.2);
 }
 
 [data-theme="dark"] .card-score.score-fair {
@@ -843,7 +843,7 @@ a:hover {
   display: inline-flex;
   align-items: center;
   gap: var(--spacing-sm);
-  background: linear-gradient(135deg, #065f46, #064e3b); /* Emerald 800 to 900 */
+  background: linear-gradient(135deg, #047857, #059669); /* Emerald 700 to 600 */
   color: white;
   padding: var(--spacing-sm) var(--spacing-lg);
   border-radius: 9999px;
@@ -2307,8 +2307,8 @@ a.competitor-preview:hover {
 
 /* Force dynamic score colors to override defaults and dark mode specifics */
 .pickup-card-score.score-excellent {
-  background: linear-gradient(135deg, #065f46, #064e3b) !important;
-  /* Emerald 800 to 900 */
+  background: linear-gradient(135deg, #047857, #059669) !important;
+  /* Emerald 700 to 600 */
   color: white !important;
 }
 
@@ -2319,8 +2319,8 @@ a.competitor-preview:hover {
 }
 
 .pickup-card-score.score-good {
-  background: linear-gradient(135deg, #92400e, #78350f) !important;
-  /* Amber 800 to 900 */
+  background: linear-gradient(135deg, #b45309, #92400e) !important;
+  /* Amber 700 to 800 */
   color: white !important;
 }
 
@@ -2331,8 +2331,8 @@ a.competitor-preview:hover {
 }
 
 .pickup-card-score.score-fair {
-  background: linear-gradient(135deg, #374151, #1f2937) !important;
-  /* Gray 700 to 800 */
+  background: linear-gradient(135deg, #4b5563, #374151) !important;
+  /* Gray 600 to 700 */
   color: white !important;
 }
 
@@ -2762,8 +2762,8 @@ a.competitor-preview:hover {
 }
 
 .hero-score-bar.score-excellent {
-  background: linear-gradient(135deg, #065f46 0%, #064e3b 100%);
-  /* Emerald 800 to 900 */
+  background: linear-gradient(135deg, #047857 0%, #059669 100%);
+  /* Emerald 700 to 600 */
   color: white;
 }
 
@@ -2776,8 +2776,8 @@ a.competitor-preview:hover {
 }
 
 .hero-score-bar.score-good {
-  background: linear-gradient(135deg, #92400e 0%, #78350f 100%);
-  /* Amber 800 to 900 */
+  background: linear-gradient(135deg, #b45309 0%, #92400e 100%);
+  /* Amber 700 to 800 */
   color: white;
 }
 
@@ -2790,8 +2790,8 @@ a.competitor-preview:hover {
 }
 
 .hero-score-bar.score-fair {
-  background: linear-gradient(135deg, #374151 0%, #1f2937 100%);
-  /* Gray 700 to 800 */
+  background: linear-gradient(135deg, #4b5563 0%, #374151 100%);
+  /* Gray 600 to 700 */
   color: white;
 }
 
@@ -2828,7 +2828,6 @@ a.competitor-preview:hover {
 .hero-score-text {
   font-size: 1rem;
   font-weight: 500;
-  opacity: 0.9;
   margin-right: var(--spacing-md);
 }
 
