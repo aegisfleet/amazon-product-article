@@ -773,7 +773,7 @@ describe('ArticleGenerator', () => {
     describe('formatSpecValue', () => {
       it('should format string values correctly', () => {
         expect((generator as any).formatSpecValue('Test')).toBe('Test');
-        expect((generator as any).formatSpecValue('  Leading Space')).toBe('  Leading Space');
+        expect((generator as any).formatSpecValue('  Leading Space')).toBe('Leading Space');
       });
 
       it('should filter out invalid placeholders', () => {
@@ -788,7 +788,20 @@ describe('ArticleGenerator', () => {
 
       it('should handle numbers and booleans', () => {
         expect((generator as any).formatSpecValue(100)).toBe('100');
-        expect((generator as any).formatSpecValue(true)).toBe('true');
+        expect((generator as any).formatSpecValue(true)).toBe('あり');
+      });
+
+      it('should localize common english values', () => {
+        expect((generator as any).formatSpecValue('black')).toBe('ブラック');
+        expect((generator as any).formatSpecValue('in stock')).toBe('在庫あり');
+        expect((generator as any).formatSpecValue('true')).toBe('あり');
+        expect((generator as any).formatSpecValue(false)).toBe('なし');
+        expect((generator as any).formatSpecValue('black, white')).toBe('ブラック, ホワイト');
+      });
+
+      it('should preserve numeric values with internal commas (regression)', () => {
+        expect((generator as any).formatSpecValue('1,000mAh')).toBe('1,000mAh');
+        expect((generator as any).formatSpecValue('価格: 1,500円')).toBe('価格: 1,500円');
       });
 
       it('should handle nested objects including placeholders', () => {

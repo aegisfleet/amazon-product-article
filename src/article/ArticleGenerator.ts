@@ -18,7 +18,14 @@ import type {
 import type { InvestigationResult, TechnicalSpecs } from '../types/JulesTypes';
 import type { Product, ProductDetail } from '../types/Product';
 import { Logger } from '../utils/Logger';
-import { DEFAULT_ARTICLE_TEMPLATE, DEFAULT_IMAGE_URL, HANDLED_SPEC_FIELDS, SPEC_LABEL_MAP } from './ArticleConstants';
+import {
+  DEFAULT_ARTICLE_TEMPLATE,
+  DEFAULT_IMAGE_URL,
+  HANDLED_SPEC_FIELDS,
+  INVALID_PLACEHOLDERS,
+  SPEC_LABEL_MAP,
+  SPEC_VALUE_MAP,
+} from './ArticleConstants';
 
 export class ArticleGenerator {
   private readonly logger: Logger;
@@ -782,11 +789,21 @@ ${recommendationMessage}`;
    * フィールド名をフォーマット（camelCase → スペース区切り）
    */
   private formatFieldName(fieldName: string): string {
-    // camelCaseをスペース区切りに変換
+    // snake_case / kebab-case / camelCase をスペース区切りに変換
     return fieldName
+      .replaceAll(/[_-]+/g, ' ')
       .replaceAll(/([A-Z])/g, ' $1')
       .replace(/^./, (str) => str.toUpperCase())
+      .replaceAll(/\s+/g, ' ')
       .trim();
+  }
+
+  /**
+   * 英語で返ってくることが多い値を日本語に変換
+   */
+  private localizeSpecValue(value: string): string {
+    const normalizedKey = value.toLowerCase();
+    return SPEC_VALUE_MAP[normalizedKey] || value;
   }
 
   /**
@@ -798,15 +815,26 @@ ${recommendationMessage}`;
     }
 
     if (typeof value === 'string') {
-      const lowerValue = value.toLowerCase().trim();
-      const invalidPlaceholders = ['null', 'none', 'unknown', '不明', 'n/a', '-', 'なし'];
-      if (invalidPlaceholders.includes(lowerValue)) {
+      const normalized = value
+        .trim()
+        .replaceAll(/(?<!\d)\s*,\s*|\s*,\s*(?!\d)/g, ', ')
+        .replaceAll(/\s+/g, ' ');
+      const lowerValue = normalized.toLowerCase();
+      const compactValue = lowerValue.replaceAll(/\s+/g, '');
+      if (INVALID_PLACEHOLDERS.has(lowerValue) || INVALID_PLACEHOLDERS.has(compactValue)) {
         return '';
       }
-      return value;
+      return normalized
+        .split(/(?<!\d),(?!\d)/)
+        .map((item) => this.localizeSpecValue(item.trim()))
+        .join(', ');
     }
 
-    if (typeof value === 'number' || typeof value === 'boolean') {
+    if (typeof value === 'boolean') {
+      return value ? 'あり' : 'なし';
+    }
+
+    if (typeof value === 'number') {
       return String(value);
     }
 
