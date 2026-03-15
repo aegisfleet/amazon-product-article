@@ -75,6 +75,16 @@
 
     /* Transitions */
     --transition-base: all 0.2s ease-in-out;
+
+    /* Score Colors (Light Mode) */
+    --gradient-score-excellent: linear-gradient(135deg, #047857, #059669);
+    --shadow-score-excellent: rgba(5, 150, 105, 0.2);
+    --gradient-score-good: linear-gradient(135deg, #b45309, #92400e);
+    --shadow-score-good: rgba(146, 64, 14, 0.2);
+    --gradient-score-fair: linear-gradient(135deg, #4b5563, #374151);
+    --shadow-score-fair: rgba(55, 65, 81, 0.2);
+    --bg-score-default: #fef9c3;
+    --text-score-default: #92400e;
 }
 
 /* Dark Mode (System Preference) */
@@ -121,6 +131,17 @@
         /* Red 300 to stand out on dark red bg */
         --color-price-up: #fca5a5;
         --color-price-down: #6ee7b7;
+
+        /* Score Colors (Dark Mode Override) */
+        --gradient-score-excellent: linear-gradient(135deg, #064e3b, #022c22);
+        --border-score-excellent: #059669;
+        --gradient-score-good: linear-gradient(135deg, #78350f, #451a03);
+        --border-score-good: #d97706;
+        --gradient-score-fair: linear-gradient(135deg, #1f2937, #111827);
+        --border-score-fair: #4b5563;
+        --bg-score-default: #451a03;
+        --text-score-default: #fef3c7;
+        --border-score-default: #d97706;
     }
 }
 
@@ -162,4 +183,15 @@
 
     --text-pros-title: #6EE7B7;
     --text-cons-title: #FCA5A5;
+
+    /* Score Colors (Dark Mode Override) */
+    --gradient-score-excellent: linear-gradient(135deg, #064e3b, #022c22);
+    --border-score-excellent: #059669;
+    --gradient-score-good: linear-gradient(135deg, #78350f, #451a03);
+    --border-score-good: #d97706;
+    --gradient-score-fair: linear-gradient(135deg, #1f2937, #111827);
+    --border-score-fair: #4b5563;
+    --bg-score-default: #451a03;
+    --text-score-default: #fef3c7;
+    --border-score-default: #d97706;
 }

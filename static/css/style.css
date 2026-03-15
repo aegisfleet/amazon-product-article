@@ -340,42 +340,36 @@ a:hover {
 
 /* Dynamic Score Colors */
 .card-score.score-excellent {
-  background: linear-gradient(135deg, #047857, #059669);
-  /* Emerald 700 to 600 */
+  background: var(--gradient-score-excellent);
   color: white;
-  box-shadow: 0 1px 2px rgba(5, 150, 105, 0.2);
+  box-shadow: 0 1px 2px var(--shadow-score-excellent);
 }
 
 [data-theme="dark"] .card-score.score-excellent {
-  background: linear-gradient(135deg, #064e3b, #022c22);
-  /* Emerald 900 to 950 */
-  border: 1px solid #059669;
+  background: var(--gradient-score-excellent);
+  border: 1px solid var(--border-score-excellent);
 }
 
 .card-score.score-good {
-  background: linear-gradient(135deg, #b45309, #92400e);
-  /* Amber 700 to 800 */
+  background: var(--gradient-score-good);
   color: white;
-  box-shadow: 0 1px 2px rgba(146, 64, 14, 0.2);
+  box-shadow: 0 1px 2px var(--shadow-score-good);
 }
 
 [data-theme="dark"] .card-score.score-good {
-  background: linear-gradient(135deg, #78350f, #451a03);
-  /* Amber 900 to 950 */
-  border: 1px solid #d97706;
+  background: var(--gradient-score-good);
+  border: 1px solid var(--border-score-good);
 }
 
 .card-score.score-fair {
-  background: linear-gradient(135deg, #4b5563, #374151);
-  /* Gray 600 to 700 */
+  background: var(--gradient-score-fair);
   color: white;
-  box-shadow: 0 1px 2px rgba(55, 65, 81, 0.2);
+  box-shadow: 0 1px 2px var(--shadow-score-fair);
 }
 
 [data-theme="dark"] .card-score.score-fair {
-  background: linear-gradient(135deg, #1f2937, #111827);
-  /* Gray 800 to 900 */
-  border: 1px solid #4b5563;
+  background: var(--gradient-score-fair);
+  border: 1px solid var(--border-score-fair);
 }
 
 /* Pickup Card specific overrides if needed (currently sharing same class) */
@@ -843,7 +837,7 @@ a:hover {
   display: inline-flex;
   align-items: center;
   gap: var(--spacing-sm);
-  background: linear-gradient(135deg, #047857, #059669); /* Emerald 700 to 600 */
+  background: var(--gradient-score-excellent);
   color: white;
   padding: var(--spacing-sm) var(--spacing-lg);
   border-radius: 9999px;
@@ -2307,39 +2301,33 @@ a.competitor-preview:hover {
 
 /* Force dynamic score colors to override defaults and dark mode specifics */
 .pickup-card-score.score-excellent {
-  background: linear-gradient(135deg, #047857, #059669) !important;
-  /* Emerald 700 to 600 */
+  background: var(--gradient-score-excellent) !important;
   color: white !important;
 }
 
 [data-theme="dark"] .pickup-card-score.score-excellent {
-  background: linear-gradient(135deg, #064e3b, #022c22) !important;
-  /* Emerald 900 to 950 */
-  border: 1px solid #059669 !important;
+  background: var(--gradient-score-excellent) !important;
+  border: 1px solid var(--border-score-excellent) !important;
 }
 
 .pickup-card-score.score-good {
-  background: linear-gradient(135deg, #b45309, #92400e) !important;
-  /* Amber 700 to 800 */
+  background: var(--gradient-score-good) !important;
   color: white !important;
 }
 
 [data-theme="dark"] .pickup-card-score.score-good {
-  background: linear-gradient(135deg, #78350f, #451a03) !important;
-  /* Amber 900 to 950 */
-  border: 1px solid #d97706 !important;
+  background: var(--gradient-score-good) !important;
+  border: 1px solid var(--border-score-good) !important;
 }
 
 .pickup-card-score.score-fair {
-  background: linear-gradient(135deg, #4b5563, #374151) !important;
-  /* Gray 600 to 700 */
+  background: var(--gradient-score-fair) !important;
   color: white !important;
 }
 
 [data-theme="dark"] .pickup-card-score.score-fair {
-  background: linear-gradient(135deg, #1f2937, #111827) !important;
-  /* Gray 800 to 900 */
-  border: 1px solid #4b5563 !important;
+  background: var(--gradient-score-fair) !important;
+  border: 1px solid var(--border-score-fair) !important;
 }
 
 .pickup-card-price {
@@ -2762,44 +2750,38 @@ a.competitor-preview:hover {
 }
 
 .hero-score-bar.score-excellent {
-  background: linear-gradient(135deg, #047857 0%, #059669 100%);
-  /* Emerald 700 to 600 */
+  background: var(--gradient-score-excellent);
   color: white;
 }
 
 [data-theme="dark"] .hero-score-bar.score-excellent {
-  background: linear-gradient(135deg, #064e3b 0%, #022c22 100%);
-  /* Emerald 900 to 950 */
+  background: var(--gradient-score-excellent);
   color: white;
-  border: 1px solid #059669;
+  border: 1px solid var(--border-score-excellent);
   /* Add border for visibility in dark mode */
 }
 
 .hero-score-bar.score-good {
-  background: linear-gradient(135deg, #b45309 0%, #92400e 100%);
-  /* Amber 700 to 800 */
+  background: var(--gradient-score-good);
   color: white;
 }
 
 [data-theme="dark"] .hero-score-bar.score-good {
-  background: linear-gradient(135deg, #78350f 0%, #451a03 100%);
-  /* Amber 900 to 950 */
+  background: var(--gradient-score-good);
   color: white;
-  border: 1px solid #d97706;
+  border: 1px solid var(--border-score-good);
   /* Add border for visibility in dark mode */
 }
 
 .hero-score-bar.score-fair {
-  background: linear-gradient(135deg, #4b5563 0%, #374151 100%);
-  /* Gray 600 to 700 */
+  background: var(--gradient-score-fair);
   color: white;
 }
 
 [data-theme="dark"] .hero-score-bar.score-fair {
-  background: linear-gradient(135deg, #1f2937 0%, #111827 100%);
-  /* Gray 800 to 900 */
+  background: var(--gradient-score-fair);
   color: white;
-  border: 1px solid #4b5563;
+  border: 1px solid var(--border-score-fair);
   /* Add border for visibility in dark mode */
 }
 
