@@ -782,11 +782,48 @@ ${recommendationMessage}`;
    * フィールド名をフォーマット（camelCase → スペース区切り）
    */
   private formatFieldName(fieldName: string): string {
-    // camelCaseをスペース区切りに変換
+    // snake_case / kebab-case / camelCase をスペース区切りに変換
     return fieldName
+      .replaceAll(/[_-]+/g, ' ')
       .replaceAll(/([A-Z])/g, ' $1')
       .replace(/^./, (str) => str.toUpperCase())
+      .replaceAll(/\s+/g, ' ')
       .trim();
+  }
+
+  /**
+   * 英語で返ってくることが多い値を日本語に変換
+   */
+  private localizeSpecValue(value: string): string {
+    const normalizedKey = value.toLowerCase();
+    const valueMap: Record<string, string> = {
+      yes: 'あり',
+      no: 'なし',
+      true: 'あり',
+      false: 'なし',
+      available: '在庫あり',
+      'in stock': '在庫あり',
+      unavailable: '在庫なし',
+      'out of stock': '在庫なし',
+      black: 'ブラック',
+      white: 'ホワイト',
+      blue: 'ブルー',
+      red: 'レッド',
+      green: 'グリーン',
+      gray: 'グレー',
+      grey: 'グレー',
+      silver: 'シルバー',
+      gold: 'ゴールド',
+      pink: 'ピンク',
+      purple: 'パープル',
+      brown: 'ブラウン',
+      orange: 'オレンジ',
+      yellow: 'イエロー',
+      transparent: '透明',
+      clear: 'クリア',
+    };
+
+    return valueMap[normalizedKey] || value;
   }
 
   /**
@@ -798,16 +835,21 @@ ${recommendationMessage}`;
     }
 
     if (typeof value === 'string') {
-      const lowerValue = value.toLowerCase().trim();
+      const normalized = value.trim().replaceAll(/\s*,\s*/g, ', ').replaceAll(/\s+/g, ' ');
+      const lowerValue = normalized.toLowerCase();
+      const compactValue = lowerValue.replaceAll(/\s+/g, '');
       const invalidPlaceholders = ['null', 'none', 'unknown', '不明', 'n/a', '-', 'なし'];
-      if (invalidPlaceholders.includes(lowerValue)) {
+      if (invalidPlaceholders.includes(lowerValue) || invalidPlaceholders.includes(compactValue)) {
         return '';
       }
-      return value;
+      return normalized
+        .split(',')
+        .map((item) => this.localizeSpecValue(item.trim()))
+        .join(', ');
     }
 
     if (typeof value === 'number' || typeof value === 'boolean') {
-      return String(value);
+      return typeof value === 'boolean' ? (value ? 'あり' : 'なし') : String(value);
     }
 
     if (Array.isArray(value)) {
