@@ -18,7 +18,9 @@ import type {
 import type { InvestigationResult, TechnicalSpecs } from '../types/JulesTypes';
 import type { Product, ProductDetail } from '../types/Product';
 import { Logger } from '../utils/Logger';
-import { DEFAULT_ARTICLE_TEMPLATE, DEFAULT_IMAGE_URL,
+import {
+  DEFAULT_ARTICLE_TEMPLATE,
+  DEFAULT_IMAGE_URL,
   HANDLED_SPEC_FIELDS,
   INVALID_PLACEHOLDERS,
   SPEC_LABEL_MAP,
