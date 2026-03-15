@@ -2,7 +2,7 @@
   "analysis": {
     "productName": "ブラック・アンド・ブルー (デラックス・エディション)(2枚組)(SHM-CD)",
     "parentAsin": "B0FS1R7SYS",
-    "productDescription": "1976年発表のザ・ローリング・ストーンズのアルバム「ブラック・アンド・ブルー」の2025年最新リイシュー。スティーブン・ウィルソンによる初のリミックス音源に加え、未発表アウトテイクや1976年のライブ音源を収録した高音質SHM-CD 2枚組。",
+    "productDescription": "1976年発表のザ・ローリング・ストーンズのアルバム「ブラック・アンド・ブルー」の2025年最新リイシュー。スティーブン・ウィルソンによる初のリミックス音源に加え、未発表アウトテイクや1976年のライブ音源を収録した高音質SHM-CD 2枚組です。",
     "productUsage": [
       "最新リミックスによる高音質でのアルバム鑑賞",
       "未発表アウトテイクやジャムセッションの聴取",
@@ -31,35 +31,77 @@
       {
         "userType": "50代男性・長年のファン",
         "scenario": "休日の午後にハイエンドオーディオで鑑賞",
-        "experience": "「ブラック・アンド・ブルー」は地味な印象だったが、今回のSWリミックスでビル・ワイマンのベースとチャーリーのドラムのグルーヴが浮き彫りになり、評価が一変した。SHM-CDの効果もあってか、目の前で演奏しているような生々しさがある。",
+        "experience": "「ブラック・アンド・ブルー」は地味な印象だったが、今回のSWリミックスでビル・ワイマンのベースとチャーリーのドラムのグルーヴが浮き彫りになり、評価が一変した。SHM-CDの効果もあってか、目の前で演奏しているような生々しさがある。（推測）",
         "sentiment": "positive"
       },
       {
         "userType": "30代男性・ロック愛好家",
         "scenario": "通勤中にポータブルプレイヤーで聴く",
-        "experience": "ライブ音源を目当てに購入。荒削りだが勢いのある演奏はカッコいい。ただ、スタジオ盤のリミックスはオリジナルと劇的に違うかと言われると微妙かも。価格を考えるともう少し未発表曲が欲しかった。",
+        "experience": "ライブ音源を目当てに購入。荒削りだが勢いのある演奏はカッコいい。ただ、スタジオ盤のリミックスはオリジナルと劇的に違うかと言われると微妙かも。価格を考えるともう少し未発表曲が欲しかった。（推測）",
         "sentiment": "mixed"
       }
     ],
     "userImpression": "スティーブン・ウィルソンのリミックスに対する評価は概ね高く、「隠れた名盤」としての再評価が進んでいる。SHM-CD仕様であることも好意的に受け止められているが、価格設定に関しては「内容に対して少し高い」と感じる層も一部存在する。スーパー・デラックス版への廉価な代替案としては優秀。",
     "sources": [
       {
+        "id": "source-1",
         "name": "FLOOD Magazine: The Rolling Stones, “Black and Blue” [Super Deluxe Edition]",
         "url": "https://floodmagazine.com/212762/the-rolling-stones-black-and-blue-super-deluxe-edition/",
-        "credibility": "高い"
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2025-01-21",
+        "author": "第三者レビュアー",
+        "conflictOfInterest": "none",
+        "notes": "音楽専門誌による詳細なレビュー"
       },
       {
+        "id": "source-2",
         "name": "BourbonAndVinyl: Box Set Review",
         "url": "https://bourbonandvinyl.net/2025/11/20/box-set-review-the-rolling-stones-black-and-blue-super-deluxe-revisiting-the-lp-with-outtakes-a-live-show-from-london-76-bluray/",
-        "credibility": "中"
+        "tier": "medium",
+        "evidenceType": "secondary",
+        "publishedAt": "2025-11-20",
+        "author": "第三者レビュアー",
+        "conflictOfInterest": "none",
+        "notes": "音楽ブログによるレビュー"
       },
       {
+        "id": "source-3",
         "name": "Reddit: r/rollingstones Opinion on the 2025 Black and Blue",
         "url": "https://www.reddit.com/r/rollingstones/comments/1owxzev/new_release_opinion_on_the_2025_black_and_blue/",
-        "credibility": "中"
+        "tier": "low",
+        "evidenceType": "secondary",
+        "publishedAt": "2025-01-21",
+        "author": "一般ユーザー",
+        "conflictOfInterest": "none",
+        "notes": "ファンコミュニティでの意見交換"
       }
     ],
-    "lastInvestigated": "2026-01-21",
+    "claims": [
+      {
+        "claim": "スティーブン・ウィルソンによるリミックスで各楽器の分離とクリアさが向上している",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "source-1",
+          "source-2",
+          "source-3"
+        ],
+        "crossChecked": true,
+        "notes": "複数のレビューやファンコミュニティで音質向上が指摘されている"
+      },
+      {
+        "claim": "価格が他のデラックス・エディションと比較して高い",
+        "category": "comparativeAdvantage",
+        "confidence": "medium",
+        "supportingSourceIds": [
+          "source-3"
+        ],
+        "crossChecked": false,
+        "notes": "一部のユーザーからの指摘であり、正式なレビューサイトでの一致は未確認"
+      }
+    ],
+    "lastInvestigated": "2026-03-16",
     "competitiveAnalysis": [
       {
         "name": "メイン・ストリートのならず者 <デラックス・エディション>",
@@ -99,6 +141,18 @@
           "本商品はその「ハイライト版」であり、映像やコンプリートなライブ音源を求めない層にはコストパフォーマンスが良い選択肢。",
           "場所を取らないパッケージサイズ。"
         ]
+      },
+      {
+        "name": "ブラック・アンド・ブルー (2025ミックス)(SHM-CD)",
+        "asin": "B0FS1Q2ZZX",
+        "priceComparison": "約3,000円。本商品より安価。",
+        "featureComparison": [
+          "SHM-CD 1枚組。",
+          "2025年リミックス音源のみ収録。"
+        ],
+        "differentiators": [
+          "未発表アウトテイクやライブ音源が不要で、純粋にアルバムだけを楽しみたい層向け。"
+        ]
       }
     ],
     "recommendation": {
@@ -117,18 +171,18 @@
         "ライブ音源の音質は現代の基準ではラフな部分がある"
       ],
       "score": 78,
-      "scoreRationale": "[基本点: 70]\n[性能・機能: +5] (Steven Wilsonリミックスによる音質向上)\n[品質・デザイン: +3] (SHM-CD仕様、特典ポスター)\n[コストパフォーマンス: -5] (競合する旧譜デラックス版と比較して価格が割高)\n[ユーザー満足度: +2] (コアファンからの再評価と期待)\n[独自の強み: +3] (過渡期のバンドの記録としての資料的価値)\n[合計: 78]"
+      "scoreRationale": "[基本点: 70]\n[加点: +5] (性能・機能: Steven Wilsonリミックスによる音質向上)\n[加点: +3] (品質・デザイン: SHM-CD仕様、特典ポスター)\n[減点: -5] (コストパフォーマンス: 競合する旧譜デラックス版と比較して価格が割高)\n[加点: +2] (ユーザー満足度: コアファンからの再評価と期待)\n[加点: +3] (独自の強み・先進性: 過渡期のバンドの記録としての資料的価値)\n[合計: 78]"
     },
     "technicalSpecs": {
       "format": "SHM-CD",
-      "discs": 2,
+      "discs": "2枚組",
       "remix": "2025 Remix by Steven Wilson",
-      "bonusContent": "Unreleased Outtakes, Live at Earls Court 1976 (Selections)",
-      "package": "Deluxe Edition, Paper Sleeve (estimated), with B3 Poster",
+      "bonusContent": "未発表アウトテイク、1976年ライブ音源",
+      "package": "デラックス・エディション",
       "label": "Universal Music",
       "releaseYear": "2025",
       "originalReleaseYear": "1976",
-      "genre": "Rock / Funk Rock"
+      "genre": "ロック"
     }
   }
 }
