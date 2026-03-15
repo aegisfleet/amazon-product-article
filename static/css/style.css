@@ -177,19 +177,6 @@ a:hover {
   }
 }
 
-.hero-description {
-  max-width: 600px;
-  font-size: 0.875rem;
-  line-height: 1.8;
-  color: var(--color-text-main);
-}
-
-@media (min-width: 768px) {
-  .hero-description {
-    font-size: 1.05rem;
-  }
-}
-
 .hero h1 {
   font-size: 2.5rem;
   font-weight: 800;
@@ -2688,10 +2675,17 @@ a.competitor-preview:hover {
    ===================================================== */
 
 .hero-description {
+  max-width: 600px;
   font-size: 0.95rem;
   line-height: 1.6;
   color: var(--color-text-main);
   margin-bottom: var(--spacing-md);
+}
+
+@media (min-width: 768px) {
+  .hero-description {
+    font-size: 1.05rem;
+  }
 }
 
 /* Score Bar */
@@ -2701,7 +2695,6 @@ a.competitor-preview:hover {
   padding: var(--spacing-sm) var(--spacing-md);
   border-radius: var(--radius-md);
   margin: var(--spacing-xs) 0;
-  color: #fff;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   position: relative;
   overflow: hidden;
@@ -2709,33 +2702,45 @@ a.competitor-preview:hover {
 }
 
 .hero-score-bar.score-excellent {
-  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  background: linear-gradient(135deg, #065f46 0%, #064e3b 100%);
+  /* Emerald 800 to 900 */
   color: white;
 }
 
 [data-theme="dark"] .hero-score-bar.score-excellent {
-  background: linear-gradient(135deg, #059669 0%, #047857 100%);
+  background: linear-gradient(135deg, #064e3b 0%, #022c22 100%);
+  /* Emerald 900 to 950 */
   color: white;
+  border: 1px solid #059669;
+  /* Add border for visibility in dark mode */
 }
 
 .hero-score-bar.score-good {
-  background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+  background: linear-gradient(135deg, #92400e 0%, #78350f 100%);
+  /* Amber 800 to 900 */
   color: white;
 }
 
 [data-theme="dark"] .hero-score-bar.score-good {
-  background: linear-gradient(135deg, #d97706 0%, #b45309 100%);
+  background: linear-gradient(135deg, #78350f 0%, #451a03 100%);
+  /* Amber 900 to 950 */
   color: white;
+  border: 1px solid #d97706;
+  /* Add border for visibility in dark mode */
 }
 
 .hero-score-bar.score-fair {
-  background: linear-gradient(135deg, #6b7280 0%, #4b5563 100%);
+  background: linear-gradient(135deg, #374151 0%, #1f2937 100%);
+  /* Gray 700 to 800 */
   color: white;
 }
 
 [data-theme="dark"] .hero-score-bar.score-fair {
-  background: linear-gradient(135deg, #4b5563 0%, #374151 100%);
+  background: linear-gradient(135deg, #1f2937 0%, #111827 100%);
+  /* Gray 800 to 900 */
   color: white;
+  border: 1px solid #4b5563;
+  /* Add border for visibility in dark mode */
 }
 
 .hero-score-main {
@@ -2787,10 +2792,6 @@ a.competitor-preview:hover {
   /* background handled by specific classes */
 }
 
-[data-theme="dark"] .hero-score-item {
-  /* background handled by specific classes */
-}
-
 .hero-score-plus {
   background: #ecfdf5;
   /* Light Green */
@@ -2800,22 +2801,18 @@ a.competitor-preview:hover {
 }
 
 [data-theme="dark"] .hero-score-plus {
-  background: rgba(16, 185, 129, 0.2);
-  color: #a7f3d0;
+  background: #064e3b;
+  /* Opaque Dark Green */
+  color: #d1fae5;
+  /* Emerald 100 */
   border-left: 3px solid #10b981;
 }
 
-.hero-score-minus {
-  background: #fffbeb;
-  /* Light Orange/Yellow */
-  color: #92400e;
-  /* Dark Orange */
-  border-left: 3px solid #f59e0b;
-}
-
 [data-theme="dark"] .hero-score-minus {
-  background: rgba(245, 158, 11, 0.2);
-  color: #fde68a;
+  background: #451a03;
+  /* Opaque Dark Amber */
+  color: #fef3c7;
+  /* Amber 100 */
   border-left: 3px solid #f59e0b;
 }
 
@@ -2880,8 +2877,6 @@ a.competitor-preview:hover {
   margin-bottom: 0;
 }
 
-
-
 /* Meta Tags */
 .hero-meta-tags {
   display: flex;
@@ -2914,8 +2909,8 @@ a.competitor-preview:hover {
 .hero-tag-availability,
 .card-availability {
   background: #ecfdf5;
-  border-color: #10b981;
-  color: #059669;
+  color: #065f46;
+  /* Emerald 800 for better contrast on light background */
   padding: 0.15rem 0.5rem;
   border-radius: var(--radius-sm);
   border: 1px solid #10b981;
@@ -2927,9 +2922,11 @@ a.competitor-preview:hover {
 [data-theme="dark"] .hero-tag-stock,
 [data-theme="dark"] .hero-tag-availability,
 [data-theme="dark"] .card-availability {
-  background: rgba(16, 185, 129, 0.25);
-  border-color: #10b981;
-  color: #34d399;
+  background: #064e3b;
+  /* Opaque Emerald 900 for guaranteed contrast check */
+  border-color: #059669;
+  color: #d1fae5;
+  /* Emerald 100 */
 }
 
 
