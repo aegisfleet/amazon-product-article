@@ -552,7 +552,7 @@ ${usageSection}`;
 
     const userStories =
       filteredUserStories.length > 0 || filteredUserImpression
-        ? `### 🗣️ 購入者の生の声（ユーザーストーリー）\n${userImpressionBlock}\n\n${userStoriesBlock}`
+        ? `### 🗣️ 購入者の声\n${userImpressionBlock}\n\n${userStoriesBlock}`
         : '';
 
     const content = `## 📊 ユーザーレビュー
