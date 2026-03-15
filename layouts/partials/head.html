@@ -73,156 +73,157 @@
 <!-- Structured Data (JSON-LD) -->
 <!-- WebSite Schema (Home) -->
 {{ if .IsHome }}
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "WebSite",
-  "name": "{{ .Site.Title }}",
-  "url": "{{ .Site.BaseURL }}",
-  "potentialAction": {
-    "@type": "SearchAction",
-    "target": "{{ .Site.BaseURL }}search/?q={search_term_string}",
-    "query-input": "required name=search_term_string"
-  }
-}
-</script>
+{{ $websiteSchema := dict
+  "@context" "https://schema.org"
+  "@type" "WebSite"
+  "name" .Site.Title
+  "url" .Site.BaseURL
+  "potentialAction" (dict
+    "@type" "SearchAction"
+    "target" (printf "%ssearch/?q={search_term_string}" .Site.BaseURL)
+    "query-input" "required name=search_term_string"
+  )
+}}
+<script type="application/ld+json">{{ $websiteSchema | jsonify | safeJS }}</script>
 {{ end }}
 
 <!-- Product Schema (Single Pages with ASIN) -->
 {{ if and .IsPage .Params.asin }}
 {{ $priceValidUntil := now.AddDate 1 0 0 | time.Format "2006-01-02" }}
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Product",
-  "name": "{{ .Title }}",
-  "image": [
-    {{ range $i, $e := .Params.images }}{{ if $i }},{{ end }}"{{ $e | absURL }}"{{ end }}
-   ],
-  "description": "{{ .Description }}",
-  "brand": {
-    "@type": "Brand",
-    "name": "{{ .Params.brand | default "Unknown" }}"
-  },
-  "sku": "{{ .Params.asin }}",
-  {{ if isset .Params "rating" }}
-  "aggregateRating": {
-    "@type": "AggregateRating",
-    "ratingValue": "{{ .Params.rating }}",
-    "bestRating": "5",
-    "worstRating": "1",
-    "ratingCount": "1"
-  },
+{{ $productSchema := dict
+  "@context" "https://schema.org"
+  "@type" "Product"
+  "name" .Title
+  "description" .Description
+  "brand" (dict
+    "@type" "Brand"
+    "name" (.Params.brand | default "Unknown")
+  )
+  "sku" .Params.asin
+  "offers" (dict
+    "@type" "Offer"
+    "url" .Permalink
+    "priceCurrency" "JPY"
+    "price" (index (findRE "[0-9]+" (replace .Params.price "," "")) 0 | default 0)
+    "priceValidUntil" $priceValidUntil
+    "availability" "https://schema.org/InStock"
+    "seller" (dict
+      "@type" "Organization"
+      "name" "Amazon.co.jp"
+    )
+    "shippingDetails" (dict
+      "@type" "OfferShippingDetails"
+      "shippingDestination" (dict
+        "@type" "DefinedRegion"
+        "addressCountry" "JP"
+      )
+      "deliveryTime" (dict
+        "@type" "ShippingDeliveryTime"
+        "handlingTime" (dict
+          "@type" "QuantitativeValue"
+          "minValue" 0
+          "maxValue" 1
+          "unitCode" "DAY"
+        )
+        "transitTime" (dict
+          "@type" "QuantitativeValue"
+          "minValue" 1
+          "maxValue" 3
+          "unitCode" "DAY"
+        )
+      )
+    )
+    "hasMerchantReturnPolicy" (dict
+      "@type" "MerchantReturnPolicy"
+      "applicableCountry" "JP"
+      "returnPolicyCategory" "https://schema.org/MerchantReturnFiniteReturnWindow"
+      "merchantReturnDays" 30
+      "returnMethod" "https://schema.org/ReturnByMail"
+      "returnFees" "https://schema.org/FreeReturn"
+    )
+  )
+}}
+{{ $productImages := slice }}
+{{ with .Params.images }}
+  {{ range . }}
+    {{ $productImages = $productImages | append (. | absURL) }}
   {{ end }}
-  "offers": {
-    "@type": "Offer",
-    "url": "{{ .Permalink }}",
-    "priceCurrency": "JPY",
-    "price": "{{ index (findRE "[0-9]+" (replace .Params.price "," "")) 0 | default 0 }}",
-    "priceValidUntil": "{{ $priceValidUntil }}",
-    "availability": "https://schema.org/InStock",
-    "seller": {
-      "@type": "Organization",
-      "name": "Amazon.co.jp"
-    },
-    "shippingDetails": {
-      "@type": "OfferShippingDetails",
-      "shippingDestination": {
-        "@type": "DefinedRegion",
-        "addressCountry": "JP"
-      },
-      "deliveryTime": {
-        "@type": "ShippingDeliveryTime",
-        "handlingTime": {
-          "@type": "QuantitativeValue",
-          "minValue": 0,
-          "maxValue": 1,
-          "unitCode": "DAY"
-        },
-        "transitTime": {
-          "@type": "QuantitativeValue",
-          "minValue": 1,
-          "maxValue": 3,
-          "unitCode": "DAY"
-        }
-      }
-    },
-    "hasMerchantReturnPolicy": {
-      "@type": "MerchantReturnPolicy",
-      "applicableCountry": "JP",
-      "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
-      "merchantReturnDays": 30,
-      "returnMethod": "https://schema.org/ReturnByMail",
-      "returnFees": "https://schema.org/FreeReturn"
-    }
-  }
-}
-</script>
+{{ end }}
+{{ if gt (len $productImages) 0 }}
+  {{ $productSchema = merge $productSchema (dict "image" $productImages) }}
+{{ end }}
+{{ if isset .Params "rating" }}
+  {{ $productSchema = merge $productSchema (dict "aggregateRating" (dict
+    "@type" "AggregateRating"
+    "ratingValue" .Params.rating
+    "bestRating" "5"
+    "worstRating" "1"
+    "ratingCount" "1"
+  )) }}
+{{ end }}
+<script type="application/ld+json">{{ $productSchema | jsonify | safeJS }}</script>
 {{ end }}
 
 <!-- BreadcrumbList Schema (All Pages) with Parent Category Support -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [{
-    "@type": "ListItem",
-    "position": 1,
-    "name": "ホーム",
-    "item": "{{ .Site.BaseURL }}"
-  }
-  {{ if .IsPage }}
-    {{ $category := "" }}
-    {{ if .Params.categories }}
-      {{ $category = index .Params.categories 0 }}
-    {{ else if .Params.category }}
-      {{ $category = .Params.category }}
-    {{ end }}
+{{ $breadcrumbItems := slice (dict
+  "@type" "ListItem"
+  "position" 1
+  "name" "ホーム"
+  "item" .Site.BaseURL
+) }}
+{{ if .IsPage }}
+  {{ $category := "" }}
+  {{ if .Params.categories }}
+    {{ $category = index .Params.categories 0 }}
+  {{ else if .Params.category }}
+    {{ $category = .Params.category }}
+  {{ end }}
 
-    {{ $parentName := "" }}
-    {{ $parentSlug := "" }}
-    {{ $position := 2 }}
+  {{ $parentName := "" }}
+  {{ $parentSlug := "" }}
 
-    {{ if $category }}
-      {{/* 親カテゴリを検索 */}}
-      {{ range $parent, $data := site.Data.categorygroups }}
-        {{ range $data.categories }}
-          {{ if eq . $category }}
-            {{ $parentName = $parent }}
-            {{ $parentSlug = $data.slug }}
-          {{ end }}
+  {{ if $category }}
+    {{/* 親カテゴリを検索 */}}
+    {{ range $parent, $data := site.Data.categorygroups }}
+      {{ range $data.categories }}
+        {{ if eq . $category }}
+          {{ $parentName = $parent }}
+          {{ $parentSlug = $data.slug }}
         {{ end }}
       {{ end }}
-
-      {{/* 親カテゴリがある場合 */}}
-      {{ if $parentName }}
-      ,{
-        "@type": "ListItem",
-        "position": {{ $position }},
-        "name": "{{ $parentName }}",
-        "item": "{{ .Site.BaseURL }}parent-category/{{ $parentSlug }}/"
-      }
-      {{ $position = 3 }}
-      {{ end }}
-
-      {{/* 子カテゴリ */}}
-      ,{
-        "@type": "ListItem",
-        "position": {{ $position }},
-        "name": "{{ $category }}",
-        "item": "{{ .Site.BaseURL }}categories/{{ $category | urlize }}/"
-      }
-      {{ if $parentName }}{{ $position = 4 }}{{ else }}{{ $position = 3 }}{{ end }}
     {{ end }}
 
-    {{/* 現在のページ */}}
-    ,{
-      "@type": "ListItem",
-      "position": {{ if $parentName }}4{{ else if $category }}3{{ else }}2{{ end }},
-      "name": "{{ .Title }}",
-      "item": "{{ .Permalink }}"
-    }
+    {{/* 親カテゴリがある場合 */}}
+    {{ if $parentName }}
+      {{ $breadcrumbItems = $breadcrumbItems | append (dict
+        "@type" "ListItem"
+        "position" 2
+        "name" $parentName
+        "item" (printf "%sparent-category/%s/" .Site.BaseURL $parentSlug)
+      ) }}
+    {{ end }}
+
+    {{/* 子カテゴリ */}}
+    {{ $categoryPosition := cond $parentName 3 2 }}
+    {{ $breadcrumbItems = $breadcrumbItems | append (dict
+      "@type" "ListItem"
+      "position" $categoryPosition
+      "name" $category
+      "item" (printf "%scategories/%s/" .Site.BaseURL ($category | urlize))
+    ) }}
   {{ end }}
-  ]
-}
-</script>
+
+  {{ $currentPosition := cond $parentName 4 (cond $category 3 2) }}
+  {{ $breadcrumbItems = $breadcrumbItems | append (dict
+    "@type" "ListItem"
+    "position" $currentPosition
+    "name" .Title
+    "item" .Permalink
+  ) }}
+{{ end }}
+{{ $breadcrumbSchema := dict
+  "@context" "https://schema.org"
+  "@type" "BreadcrumbList"
+  "itemListElement" $breadcrumbItems
+}}
+<script type="application/ld+json">{{ $breadcrumbSchema | jsonify | safeJS }}</script>
