@@ -165,6 +165,23 @@ hugo
 3. **pr-auto-merge.yml**: Jules PRを自動マージ
 4. **deploy-articles.yml**: 調査結果から記事を生成し、GitHub Pagesにデプロイ
 
+## 公開ポリシー（サイト表示との同期項目）
+
+公開サイトの「調査方法と信頼性ポリシー」ページ（`/site-policy/research-reliability-policy/`）には、以下を明記します。
+
+- 収集元
+- 検証フロー
+- 除外基準
+- 更新頻度
+- 訂正ポリシー（訂正依頼窓口）
+- アフィリエイト関係
+
+### 運用者向け更新手順
+
+1. ポリシー文言を変更する場合は、`content/site-policy/research-reliability-policy.md` を更新する。
+2. トップページ案内文（`layouts/index.html`）とフッター導線（`layouts/partials/footer.html`）のリンク整合性を確認する。
+3. 変更後に `npm run lint` / `npm run build` / `npm test` を実行し、表示文言と運用手順の乖離がないことを確認する。
+
 ## 技術スタック
 
 - **言語**: TypeScript

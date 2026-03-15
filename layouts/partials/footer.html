@@ -4,6 +4,11 @@
             {{ .Site.Title
             }}は、Amazon.co.jpを宣伝しリンクすることによってサイトが紹介料を獲得できる手段を提供することを目的に設定されたアフィリエイトプログラムである、Amazonアソシエイト・プログラムの参加者です。
         </p>
+        <p style="font-size: 0.85rem; margin-bottom: 0.5rem;">
+            <a href="{{ `site-policy/research-reliability-policy/` | relURL }}">信頼性ポリシー</a>
+            <span aria-hidden="true"> / </span>
+            <a href="{{ `site-policy/research-reliability-policy/#correction-policy` | relURL }}">訂正依頼窓口</a>
+        </p>
         <p>&copy; {{ now.Year }} {{ .Site.Title }}. All rights reserved.</p>
         <p style="font-size: 0.8rem; margin-top: 0.5rem;">
             Last updated: {{ now.Format "2006-01-02" }}
