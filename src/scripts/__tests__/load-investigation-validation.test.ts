@@ -92,7 +92,14 @@ describe('loadInvestigationResults Validation', () => {
           },
         ],
         userImpression: 'Good',
-        sources: [{ name: 's1' }],
+        sources: [
+          {
+            name: 's1',
+            url: 'https://example.com/source',
+            tier: 'high',
+            evidenceType: 'primary',
+          },
+        ],
         competitiveAnalysis: [
           {
             name: 'comp1',
@@ -136,7 +143,14 @@ describe('loadInvestigationResults Validation', () => {
           },
         ],
         userImpression: '印象',
-        sources: [{ name: 'ソース' }],
+        sources: [
+          {
+            name: 'ソース',
+            url: 'https://example.com/source-ja',
+            tier: 'medium',
+            evidenceType: 'secondary',
+          },
+        ],
         competitiveAnalysis: [
           {
             name: '競合',

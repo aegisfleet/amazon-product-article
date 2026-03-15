@@ -161,8 +161,13 @@ export interface UserStory {
 
 export interface SourceReference {
   name: string;
-  url?: string;
-  credibility?: string;
+  url: string;
+  tier: 'high' | 'medium' | 'low';
+  evidenceType: 'primary' | 'secondary';
+  publishedAt?: string;
+  author?: string;
+  conflictOfInterest?: 'none' | 'possible' | 'disclosed' | 'unknown';
+  notes?: string;
 }
 
 /**

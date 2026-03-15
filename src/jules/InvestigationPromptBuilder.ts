@@ -229,8 +229,13 @@ ${rubric}
     "sources": [
       {
         "name": "具体的な記事タイトルまたはサイト名（例：The Verge Review）。抽象的な名称（Category Analysis等）は避けること。",
-        "url": "https://...（可能な限り具体的なURLを記載。ない場合のみnull）",
-        "credibility": "信頼性評価"
+        "url": "https://...（可能な限り具体的なURLを記載）",
+        "tier": "high | medium | low（総合信頼度）",
+        "evidenceType": "primary | secondary（一次情報/二次情報）",
+        "publishedAt": "YYYY-MM-DD（公開日。不明なら省略）",
+        "author": "執筆主体（例: 編集部, メーカー公式, 第三者レビュアー）",
+        "conflictOfInterest": "none | possible | disclosed | unknown（利害関係）",
+        "notes": "評価理由（例: 第三者検証あり / 公式一次資料 / 直近更新）"
       }
     ],
     "lastInvestigated": "YYYY-MM-DD",
