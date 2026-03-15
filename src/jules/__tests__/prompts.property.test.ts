@@ -83,6 +83,10 @@ describe('Investigation Prompt Property Tests', () => {
           // 5. Information sources (New Requirement)
           expect(prompt).toContain('情報ソース');
           expect(prompt).toContain('具体的サイト名・記事タイトル・URL');
+          expect(prompt).toContain('一次情報/二次情報');
+          expect(prompt).toContain('公開日');
+          expect(prompt).toContain('執筆主体');
+          expect(prompt).toContain('利害関係');
 
           // 6. Product information inclusion (Requirements 2.1)
           expect(prompt).toContain(product.title);
@@ -104,6 +108,12 @@ describe('Investigation Prompt Property Tests', () => {
           expect(prompt).toContain('"userStories"');
           expect(prompt).toContain('"userImpression"');
           expect(prompt).toContain('"sources"');
+          expect(prompt).toContain('"tier"');
+          expect(prompt).toContain('"evidenceType"');
+          expect(prompt).toContain('"publishedAt"');
+          expect(prompt).toContain('"author"');
+          expect(prompt).toContain('"conflictOfInterest"');
+          expect(prompt).toContain('"notes"');
           expect(prompt).toContain('"competitiveAnalysis"');
           expect(prompt).toContain('"recommendation"');
           expect(prompt).toContain('"scoreRationale"');

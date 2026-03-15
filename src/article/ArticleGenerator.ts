@@ -442,7 +442,6 @@ ${infoRows.join('\n')}
     // ただし、Creators APIのURLはユーザーには不要なためリンクを貼らない
     const sourcesList = validSources
       .map((source) => {
-        const credibility = source.credibility ? ` (${source.credibility})` : '';
         const creatorsApiHost = 'webservices.amazon.co.jp';
         const creatorsApiPathPrefix = '/creators/v1';
 
@@ -456,10 +455,36 @@ ${infoRows.join('\n')}
           }
         };
 
+        const tierLabel: Record<'high' | 'medium' | 'low', string> = {
+          high: '高',
+          medium: '中',
+          low: '低',
+        };
+        const evidenceTypeLabel: Record<'primary' | 'secondary', string> = {
+          primary: '一次情報',
+          secondary: '二次情報',
+        };
+        const conflictLabel: Record<'none' | 'possible' | 'disclosed' | 'unknown', string> = {
+          none: '利害関係なし',
+          possible: '利害関係の可能性あり',
+          disclosed: '利害関係を開示',
+          unknown: '利害関係不明',
+        };
+
+        const reasonParts = [
+          `信頼度: ${tierLabel[source.tier]}`,
+          `情報種別: ${evidenceTypeLabel[source.evidenceType]}`,
+          source.publishedAt ? `公開日: ${source.publishedAt}` : null,
+          source.author ? `執筆主体: ${source.author}` : null,
+          source.conflictOfInterest ? conflictLabel[source.conflictOfInterest] : null,
+          source.notes ? `評価理由: ${source.notes}` : null,
+        ].filter((part): part is string => Boolean(part));
+        const reasonText = `（${reasonParts.join(' / ')}）`;
+
         if (source.url && !isCreatorsApiUrl(source.url)) {
-          return `- <a href="${this.escapeHtml(source.url)}" target="_blank" rel="noopener noreferrer">${this.escapeHtml(source.name)}</a>${this.escapeHtml(credibility)}`;
+          return `- <a href="${this.escapeHtml(source.url)}" target="_blank" rel="noopener noreferrer">${this.escapeHtml(source.name)}</a> ${this.escapeHtml(reasonText)}`;
         }
-        return `- ${this.escapeHtml(source.name)}${this.escapeHtml(credibility)}`;
+        return `- ${this.escapeHtml(source.name)} ${this.escapeHtml(reasonText)}`;
       })
       .join('\n');
 
