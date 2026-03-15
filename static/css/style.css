@@ -470,6 +470,16 @@ a:hover {
   color: var(--color-text-main);
 }
 
+.card-merchant {
+  display: block;
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+  margin-top: var(--spacing-xs);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
 .card-footer {
   display: flex;
   justify-content: space-between;
@@ -646,6 +656,17 @@ a:hover {
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-md);
   background: #fff;
+}
+
+.hero-tag-merchant {
+  background-color: var(--color-bg-secondary);
+  color: var(--color-text-main);
+  border-color: var(--color-border);
+}
+
+[data-theme="dark"] .hero-tag-merchant {
+  background-color: var(--color-bg-card);
+  color: var(--color-text-primary);
 }
 
 .carousel-track {

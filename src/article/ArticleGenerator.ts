@@ -162,6 +162,7 @@ export class ArticleGenerator {
       mobileOptimized: true,
       seoKeywords,
       is_prime: product.isPrimeEligible || false,
+      merchant_name: product.merchantName,
       affiliate_url: affiliateUrl,
     };
 

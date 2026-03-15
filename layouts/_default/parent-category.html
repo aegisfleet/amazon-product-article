@@ -386,6 +386,11 @@
                         💰 {{ .Params.price }}
                     </span>
                     {{ end }}
+                    {{ with .Params.merchant_name }}
+                    <span class="card-merchant">
+                        🏢 販売元: {{ . }}
+                    </span>
+                    {{ end }}
                     {{ if .Params.score }}
                     {{ $score := .Params.score | int }}
                     {{ $scoreClass := "score-fair" }}

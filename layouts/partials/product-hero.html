@@ -81,7 +81,7 @@
                 <span class="hero-price">{{ $product.price }}</span>
             </div>
             <div class="hero-price-info">
-                {{ if $product.is_prime }}<span class="hero-tag hero-tag-prime">Prime</span>{{ end }}
+                {{ with .Params.merchant_name }}<span class="hero-tag hero-tag-merchant">販売元: {{ . }}</span>{{ end }}
                 {{ with $hero.availability }}<span class="hero-tag hero-tag-availability">{{ . }}</span>{{ end }}
             </div>
         </div>
