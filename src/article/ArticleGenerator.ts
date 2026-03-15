@@ -1711,33 +1711,8 @@ ${confidenceLine}`;
     const availabilityText = detail.availability || '';
     const isPrime = detail.isPrimeEligible || false;
 
-    // 価格差の計算
-    let priceDiffHtml = '';
-    if (basePriceAmount > 0 && competitorPriceAmount > 0) {
-      const diff = competitorPriceAmount - basePriceAmount;
-      const diffFormatted = new Intl.NumberFormat('ja-JP').format(Math.abs(diff));
-      let sign = '±';
-      let diffClass = 'price-equal';
-      if (diff > 0) {
-        sign = '+';
-        diffClass = 'price-up';
-      } else if (diff < 0) {
-        sign = '-';
-        diffClass = 'price-down';
-      }
-      priceDiffHtml = `<span class="competitor-price-diff ${diffClass}">(${sign}￥${diffFormatted})</span>`;
-    }
-
-    let scoreHtml = '';
-    if (score !== undefined) {
-      let scoreClass = 'score-fair';
-      if (score >= 80) {
-        scoreClass = 'score-excellent';
-      } else if (score >= 60) {
-        scoreClass = 'score-good';
-      }
-      scoreHtml = `<div class="competitor-score-container"><span class="pickup-card-score ${scoreClass}">🏆 ${score}点</span></div>`;
-    }
+    const priceDiffHtml = this.renderPriceDiff(basePriceAmount, competitorPriceAmount);
+    const scoreHtml = this.renderCompetitorScore(score);
 
     const previewTag = hasInternalReview ? 'a' : 'div';
     const previewAttrs = hasInternalReview && asin ? ` href="../${asin.toLowerCase()}/"` : '';
@@ -1762,6 +1737,41 @@ ${scoreHtml}${actualPriceHtml}${primeHtml}${availabilityHtml}${specTagsHtml}
   }
 
   /**
+   * 競合商品との価格差表示を生成
+   */
+  private renderPriceDiff(basePrice: number, competitorPrice: number): string {
+    if (basePrice <= 0 || competitorPrice <= 0) return '';
+
+    const diff = competitorPrice - basePrice;
+    const diffFormatted = new Intl.NumberFormat('ja-JP').format(Math.abs(diff));
+    let sign = '±';
+    let diffClass = 'price-equal';
+
+    if (diff > 0) {
+      sign = '+';
+      diffClass = 'price-up';
+    } else if (diff < 0) {
+      sign = '-';
+      diffClass = 'price-down';
+    }
+
+    return `<span class="competitor-price-diff ${diffClass}">(${sign}￥${diffFormatted})</span>`;
+  }
+
+  /**
+   * 競合商品のスコア表示を生成
+   */
+  private renderCompetitorScore(score?: number): string {
+    if (score === undefined) return '';
+
+    let scoreClass = 'score-fair';
+    if (score >= 80) scoreClass = 'score-excellent';
+    else if (score >= 60) scoreClass = 'score-good';
+
+    return `<div class="competitor-score-container"><span class="pickup-card-score ${scoreClass}">🏆 ${score}点</span></div>`;
+  }
+
+  /**
    * スペックタグHTMLを生成（Hugoの partial "product-spec-tags.html" と同期）
    */
   private renderSpecTags(specs: TechnicalSpecs, tagClass: string): string {
@@ -1774,53 +1784,35 @@ ${scoreHtml}${actualPriceHtml}${primeHtml}${availabilityHtml}${specTagsHtml}
       }
     };
 
-    if (specs.os) addTag('OS', specs.os);
-    if (specs.cpu) addTag('CPU', specs.cpu);
-    if (specs.ram) addTag('RAM', specs.ram);
-    if (specs.storage) addTag('ROM', specs.storage);
+    // 基本情報
+    addTag('OS', specs.os);
+    addTag('CPU', specs.cpu);
+    addTag('RAM', specs.ram);
+    addTag('ROM', specs.storage);
+    addTag('個数', specs.count);
+    addTag('容量', specs.capacity);
 
-    if (specs.display?.size) {
-      tags.push(`<span class="${tagClass}">画面: ${this.escapeHtml(specs.display.size)}</span>`);
-    } else if (specs.display_size) {
-      tags.push(`<span class="${tagClass}">画面: ${this.escapeHtml(String(specs.display_size))}</span>`);
-    }
-
-    if (specs.battery?.capacity) {
-      tags.push(`<span class="${tagClass}">バッテリー: ${this.escapeHtml(specs.battery.capacity)}</span>`);
-    } else if (specs.battery_capacity) {
-      tags.push(`<span class="${tagClass}">バッテリー: ${this.escapeHtml(String(specs.battery_capacity))}</span>`);
-    }
-
-    if (specs.dimensions?.weight) {
-      tags.push(`<span class="${tagClass}">重量: ${this.escapeHtml(specs.dimensions.weight)}</span>`);
-    } else if (specs.weight) {
-      tags.push(`<span class="${tagClass}">重量: ${this.escapeHtml(String(specs.weight))}</span>`);
-    }
-
-    const volume = specs.quantity || specs.content || specs.content_volume;
-    if (volume) {
-      addTag('内容量', volume);
-    }
-
-    if (specs.count) addTag('個数', specs.count);
-    if (specs.capacity) addTag('容量', specs.capacity);
+    // 条件付きまたは複数フィールドの可能性があるもの
+    addTag('画面', specs.display?.size || specs.display_size);
+    addTag('バッテリー', specs.battery?.capacity || specs.battery_capacity);
+    addTag('重量', specs.dimensions?.weight || specs.weight);
+    addTag('内容量', specs.quantity || specs.content || specs.content_volume);
 
     if (specs.material && typeof specs.material === 'string') {
       addTag('素材', specs.material);
     }
 
-    const sizeParts: string[] = [];
-    if (specs.dimensions?.height) sizeParts.push(specs.dimensions.height);
-    else if (specs.height) sizeParts.push(String(specs.height));
+    // サイズ（縦 × 横 × 厚み）
+    const h = specs.dimensions?.height || specs.height;
+    const w = specs.dimensions?.width || specs.width;
+    const d = specs.dimensions?.depth || specs.depth;
+    const formattedSize = [h, w, d]
+      .map((v) => this.formatSpecValue(v))
+      .filter((v) => v && v !== 'null')
+      .join(' × ');
 
-    if (specs.dimensions?.width) sizeParts.push(specs.dimensions.width);
-    else if (specs.width) sizeParts.push(String(specs.width));
-
-    if (specs.dimensions?.depth) sizeParts.push(specs.dimensions.depth);
-    else if (specs.depth) sizeParts.push(String(specs.depth));
-
-    if (sizeParts.length > 0) {
-      tags.push(`<span class="${tagClass}">サイズ: ${this.escapeHtml(sizeParts.join(' × '))}</span>`);
+    if (formattedSize) {
+      tags.push(`<span class="${tagClass}">サイズ: ${this.escapeHtml(formattedSize)}</span>`);
     }
 
     return tags.join('');
