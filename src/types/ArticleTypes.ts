@@ -24,6 +24,7 @@ export interface ArticleMetadata {
   images?: string[]; // Product image URLs for Hugo front matter
   affiliate_url?: string; // Affiliate link for the hero button
   is_prime?: boolean;
+  merchant_name?: string | undefined;
   availability?: string;
   technicalSpecs?: TechnicalSpecs; // 詳細スペック情報（カテゴリ依存）
   hero?: {
