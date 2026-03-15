@@ -233,7 +233,7 @@ describe('ArticleGenerator', () => {
       expect(result.content).toContain('## ✅ 購入推奨度');
       expect(result.content).toContain('## 🛒 商品詳細・購入');
       expect(result.content).toContain('## 🔗 参考情報ソース');
-      expect(result.content).toContain('購入者の生の声');
+      expect(result.content).toContain('購入者の声');
       expect(result.content).toContain('会社員の体験談 (通勤・通学)');
       expect(result.content).toContain('多くのユーザーが満足感を得ている');
       expect(result.content).toContain(
@@ -277,7 +277,7 @@ describe('ArticleGenerator', () => {
       expect(result.content).not.toContain('この内容は（推測）です');
       expect(result.content).not.toContain('この内容は（スペックからの推測体験）です');
       expect(result.content).toContain('全体の印象（推測）');
-      expect(result.content).toContain('購入者の生の声');
+      expect(result.content).toContain('購入者の声');
     });
 
     it('should still show the section if impression exists even if all stories are filtered out', async () => {
@@ -293,7 +293,7 @@ describe('ArticleGenerator', () => {
 
       const result = await generator.generateArticle(mockProduct, mockInvestigation);
 
-      expect(result.content).toContain('購入者の生の声');
+      expect(result.content).toContain('購入者の声');
       expect(result.content).toContain('全体の印象（推測）');
       expect(result.content).not.toContain('体験談');
     });
@@ -304,7 +304,7 @@ describe('ArticleGenerator', () => {
 
       const result = await generator.generateArticle(mockProduct, mockInvestigation);
 
-      expect(result.content).not.toContain('購入者の生の声');
+      expect(result.content).not.toContain('購入者の声');
     });
 
 
