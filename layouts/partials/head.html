@@ -236,26 +236,22 @@
   {{ end }}
 {{ end }}
 
-{{ $reviewSchema := dict "@type" "Review" }}
-{{ if $reviewAuthor }}
-  {{ $reviewSchema = merge $reviewSchema (dict "author" (dict "@type" "Person" "name" $reviewAuthor)) }}
-{{ end }}
-{{ if $reviewDatePublished }}
-  {{ $reviewSchema = merge $reviewSchema (dict "datePublished" $reviewDatePublished) }}
-{{ end }}
-{{ if $reviewBody }}
-  {{ $reviewSchema = merge $reviewSchema (dict "reviewBody" $reviewBody) }}
-{{ end }}
-{{ if $hasReviewRating }}
-  {{ $reviewSchema = merge $reviewSchema (dict "reviewRating" (dict
-    "@type" "Rating"
-    "ratingValue" $reviewRating
-    "bestRating" "5"
-    "worstRating" "1"
-  )) }}
-{{ end }}
-
-{{ if gt (len $reviewSchema) 1 }}
+{{ $hasCompleteReview := and $reviewAuthor $reviewDatePublished $reviewBody }}
+{{ if $hasCompleteReview }}
+  {{ $reviewSchema := dict
+    "@type" "Review"
+    "author" (dict "@type" "Person" "name" $reviewAuthor)
+    "datePublished" $reviewDatePublished
+    "reviewBody" $reviewBody
+  }}
+  {{ if $hasReviewRating }}
+    {{ $reviewSchema = merge $reviewSchema (dict "reviewRating" (dict
+      "@type" "Rating"
+      "ratingValue" $reviewRating
+      "bestRating" "5"
+      "worstRating" "1"
+    )) }}
+  {{ end }}
   {{ $productSchema = merge $productSchema (dict "review" $reviewSchema) }}
 {{ end }}
 

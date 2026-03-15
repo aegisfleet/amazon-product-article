@@ -333,7 +333,7 @@ describe('ArticleGenerator', () => {
       expect(result.content).toContain('review:');
       expect(result.content).toContain('author: "編集部"');
       expect(result.content).toContain('date_published: "2025-01-01"');
-      expect(result.content).toContain('summary: "多くのユーザーが満足感を得ている"');
+      expect(result.content).toContain('summary: "第三者検証あり"');
       expect(result.content).toContain('rating: 4.2');
     });
 
@@ -590,6 +590,45 @@ describe('ArticleGenerator', () => {
       expect(metadata.mobileOptimized).toBe(true);
       expect(metadata.tags).toContain('商品レビュー');
       expect(metadata.seoKeywords).toContain('レビュー');
+    });
+
+    it('should set review author to fixed editorial name when verified source exists', () => {
+      const metadata = generator.generateSEOMetadata(mockProduct, mockInvestigation);
+
+      expect(metadata.review).toEqual({
+        author: '編集部',
+        datePublished: '2025-01-01',
+        summary: '第三者検証あり',
+        rating: 4.2,
+      });
+      expect(metadata.review?.author).not.toBe('購入者レビュー');
+      expect(metadata.review?.author).not.toBe(metadata.manufacturer);
+    });
+
+    it('should not generate review metadata when only unverified author evidence exists', () => {
+      const unverifiedInvestigation: InvestigationResult = {
+        ...mockInvestigation,
+        analysis: {
+          ...mockInvestigation.analysis,
+          userImpression: '印象はあるが根拠不足',
+          sources: [
+            {
+              name: '未検証ブログ',
+              url: 'https://example.com/unverified',
+              tier: 'medium',
+              evidenceType: 'secondary',
+              publishedAt: '2025-01-02',
+              author: 'メーカー公式',
+              conflictOfInterest: 'possible',
+              notes: '',
+            },
+          ],
+        },
+      };
+
+      const metadata = generator.generateSEOMetadata(mockProduct, unverifiedInvestigation);
+
+      expect(metadata.review).toBeUndefined();
     });
 
     it('should determine correct price range', () => {
