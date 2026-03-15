@@ -111,60 +111,77 @@ class CreatorsAPIClient:
         
         return self._access_token
     
-    def _make_request(self, endpoint: str, payload: dict) -> dict:
-        """Make authenticated request to Creators API."""
+    def _get_auth_headers(self) -> dict:
+        """Generate common headers and Bearer token for API requests."""
         access_token = self._get_access_token()
-        
-        # Authorization header format: "Bearer TOKEN, Version X.X"
-        headers = {
+        return {
             "Content-Type": "application/json",
             "Authorization": f"Bearer {access_token}, Version {self.CREDENTIAL_VERSION}",
             "x-marketplace": self.MARKETPLACE,
             "x-amz-application-id": self.application_id
         }
+
+    def _sleep_with_backoff(self, attempt: int, message: str = "") -> None:
+        """Sleep with exponential backoff."""
+        delay = min(2 ** attempt, 30)
+        if message:
+            print(f"{message} (attempt {attempt}/{self.max_retries}), retrying in {delay}s...")
+        else:
+            print(f"Waiting {delay}s...")
+        time.sleep(delay)
+
+    def _handle_retryable_error(self, response: requests.Response, headers: dict) -> bool:
+        """Handle retryable API errors (401, 429). Returns True if retry should proceed."""
+        if response.status_code == 429:
+            return True
         
+        if response.status_code == 401:
+            # Token expired, refresh for next attempt
+            self._access_token = None
+            headers.update(self._get_auth_headers())
+            return True
+            
+        return False
+
+    def _attempt_request(self, url: str, headers: dict, payload: dict) -> tuple[Optional[dict], bool]:
+        """Perform a single API request attempt. Returns (response_json, should_retry)."""
+        try:
+            response = requests.post(url, headers=headers, json=payload, timeout=30)
+            
+            if response.status_code == 200:
+                return response.json(), False
+            
+            if response.status_code == 404:
+                return response.json(), False
+            
+            if self._handle_retryable_error(response, headers):
+                msg = "Rate limited" if response.status_code == 429 else ""
+                return None, (msg or True)
+            
+            return None, True
+                
+        except requests.exceptions.RequestException as e:
+            return None, f"Request failed: {e}"
+
+    def _make_request(self, endpoint: str, payload: dict) -> dict:
+        """Make authenticated request to Creators API."""
+        headers = self._get_auth_headers()
         url = f"{self.API_BASE_URL}{endpoint}"
         
         for attempt in range(1, self.max_retries + 1):
-            try:
-                response = requests.post(
-                    url,
-                    headers=headers,
-                    json=payload,
-                    timeout=30
-                )
-                
-                if response.status_code == 200:
-                    return response.json()
-                elif response.status_code == 401:
-                    # Token expired, refresh and retry
-                    self._access_token = None
-                    access_token = self._get_access_token()
-                    headers["Authorization"] = f"Bearer {access_token}, Version {self.CREDENTIAL_VERSION}"
-                    continue
-                elif response.status_code == 404:
-                    # Item not found - return the error response
-                    return response.json()
-                elif response.status_code == 429:
-                    # Rate limited
-                    delay = min(2 ** attempt, 30)
-                    print(f"Rate limited, waiting {delay}s...")
-                    time.sleep(delay)
-                    continue
-                else:
-                    if attempt < self.max_retries:
-                        delay = min(2 ** attempt, 30)
-                        time.sleep(delay)
-                        continue
-                    raise CreatorsAPIRequestError(f"API request failed: {response.status_code} - {response.text}")
-                    
-            except requests.exceptions.RequestException as e:
-                if attempt < self.max_retries:
-                    delay = min(2 ** attempt, 30)
-                    print(f"Request failed (attempt {attempt}/{self.max_retries}), retrying in {delay:.2f}s: {e}")
-                    time.sleep(delay)
-                else:
-                    raise
+            result, retry_info = self._attempt_request(url, headers, payload)
+            
+            if result is not None:
+                return result
+            
+            if retry_info and attempt < self.max_retries:
+                msg = retry_info if isinstance(retry_info, str) else ""
+                self._sleep_with_backoff(attempt, msg)
+                continue
+            
+            # If we reached here without returning, it's an error on the last attempt
+            # or a non-retryable error we didn't catch (though _attempt_request handles most)
+            raise CreatorsAPIRequestError(f"API request failed after {attempt} attempts")
         
         raise CreatorsAPIMaxRetriesError("Max retries exceeded")
     
