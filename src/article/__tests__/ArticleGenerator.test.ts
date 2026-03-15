@@ -307,7 +307,6 @@ describe('ArticleGenerator', () => {
       expect(result.content).not.toContain('購入者の声');
     });
 
-
     it('should generate proper front matter', async () => {
       const result = await generator.generateArticle(mockProduct, mockInvestigation);
 
@@ -680,7 +679,6 @@ describe('ArticleGenerator', () => {
       );
       const endTime = Date.now();
       const duration = endTime - startTime;
-
 
       // Verify concurrency: duration should be significantly less than sequential execution time
       // Allow some overhead (e.g., 80% of sequential time is safe margin)

@@ -47,8 +47,7 @@ RESOURCES = [
     "offersV2.listings.dealDetails",
     "offersV2.listings.loyaltyPoints",
     "browseNodeInfo.browseNodes",
-    "parentAsin",
-    "variationSummaries.variationDimension"
+    "parentASIN",
 ]
 
 def main():

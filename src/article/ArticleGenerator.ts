@@ -834,9 +834,7 @@ ${recommendationMessage}`;
     }
 
     if (Array.isArray(val)) {
-      const formattedArray = val
-        .map((v) => this.formatSpecValue(v, category))
-        .filter((v) => v !== '' && v !== 'null');
+      const formattedArray = val.map((v) => this.formatSpecValue(v, category)).filter((v) => v !== '' && v !== 'null');
       return formattedArray.length > 0 ? `${label}: ${formattedArray.join(', ')}` : '';
     }
 
@@ -943,33 +941,81 @@ ${recommendationMessage}`;
     if (specs.gpu) this.addFrontMatterSpec(lines, addedKeys, 'gpu', `"${this.formatSpecValue(specs.gpu)}"`);
     if (specs.ram) this.addFrontMatterSpec(lines, addedKeys, 'ram', `"${this.formatSpecValue(specs.ram)}"`);
     if (specs.storage) this.addFrontMatterSpec(lines, addedKeys, 'storage', `"${this.formatSpecValue(specs.storage)}"`);
-    if (specs.quantity) this.addFrontMatterSpec(lines, addedKeys, 'quantity', `"${this.formatSpecValue(specs.quantity)}"`);
+    if (specs.quantity)
+      this.addFrontMatterSpec(lines, addedKeys, 'quantity', `"${this.formatSpecValue(specs.quantity)}"`);
     if (specs.content) this.addFrontMatterSpec(lines, addedKeys, 'content', `"${this.formatSpecValue(specs.content)}"`);
     if (specs.count) this.addFrontMatterSpec(lines, addedKeys, 'count', `"${this.formatSpecValue(specs.count)}"`);
-    if (specs.capacity) this.addFrontMatterSpec(lines, addedKeys, 'capacity', `"${this.formatSpecValue(specs.capacity)}"`);
+    if (specs.capacity)
+      this.addFrontMatterSpec(lines, addedKeys, 'capacity', `"${this.formatSpecValue(specs.capacity)}"`);
   }
 
   private addDisplaySpecs(lines: string[], addedKeys: Set<string>, specs: TechnicalSpecs): void {
     if (!specs.display) return;
-    if (specs.display.size) this.addFrontMatterSpec(lines, addedKeys, 'display_size', `"${this.escapeForFrontMatter(specs.display.size)}"`);
-    if (specs.display.resolution) this.addFrontMatterSpec(lines, addedKeys, 'display_resolution', `"${this.escapeForFrontMatter(specs.display.resolution)}"`);
-    if (specs.display.type) this.addFrontMatterSpec(lines, addedKeys, 'display_type', `"${this.escapeForFrontMatter(specs.display.type)}"`);
-    if (specs.display.refreshRate) this.addFrontMatterSpec(lines, addedKeys, 'display_refresh_rate', `"${this.escapeForFrontMatter(specs.display.refreshRate)}"`);
+    if (specs.display.size)
+      this.addFrontMatterSpec(lines, addedKeys, 'display_size', `"${this.escapeForFrontMatter(specs.display.size)}"`);
+    if (specs.display.resolution)
+      this.addFrontMatterSpec(
+        lines,
+        addedKeys,
+        'display_resolution',
+        `"${this.escapeForFrontMatter(specs.display.resolution)}"`,
+      );
+    if (specs.display.type)
+      this.addFrontMatterSpec(lines, addedKeys, 'display_type', `"${this.escapeForFrontMatter(specs.display.type)}"`);
+    if (specs.display.refreshRate)
+      this.addFrontMatterSpec(
+        lines,
+        addedKeys,
+        'display_refresh_rate',
+        `"${this.escapeForFrontMatter(specs.display.refreshRate)}"`,
+      );
   }
 
   private addBatterySpecs(lines: string[], addedKeys: Set<string>, specs: TechnicalSpecs): void {
     if (!specs.battery) return;
-    if (specs.battery.capacity) this.addFrontMatterSpec(lines, addedKeys, 'battery_capacity', `"${this.escapeForFrontMatter(specs.battery.capacity)}"`);
-    if (specs.battery.charging) this.addFrontMatterSpec(lines, addedKeys, 'battery_charging', `"${this.escapeForFrontMatter(specs.battery.charging)}"`);
-    if (specs.battery.playbackTime) this.addFrontMatterSpec(lines, addedKeys, 'battery_playback_time', `"${this.escapeForFrontMatter(specs.battery.playbackTime)}"`);
+    if (specs.battery.capacity)
+      this.addFrontMatterSpec(
+        lines,
+        addedKeys,
+        'battery_capacity',
+        `"${this.escapeForFrontMatter(specs.battery.capacity)}"`,
+      );
+    if (specs.battery.charging)
+      this.addFrontMatterSpec(
+        lines,
+        addedKeys,
+        'battery_charging',
+        `"${this.escapeForFrontMatter(specs.battery.charging)}"`,
+      );
+    if (specs.battery.playbackTime)
+      this.addFrontMatterSpec(
+        lines,
+        addedKeys,
+        'battery_playback_time',
+        `"${this.escapeForFrontMatter(specs.battery.playbackTime)}"`,
+      );
   }
 
   private addCameraSpecs(lines: string[], addedKeys: Set<string>, specs: TechnicalSpecs): void {
     if (!specs.camera) return;
-    if (specs.camera.main) this.addFrontMatterSpec(lines, addedKeys, 'camera_main', `"${this.escapeForFrontMatter(specs.camera.main)}"`);
-    if (specs.camera.ultrawide) this.addFrontMatterSpec(lines, addedKeys, 'camera_ultrawide', `"${this.escapeForFrontMatter(specs.camera.ultrawide)}"`);
-    if (specs.camera.telephoto) this.addFrontMatterSpec(lines, addedKeys, 'camera_telephoto', `"${this.escapeForFrontMatter(specs.camera.telephoto)}"`);
-    if (specs.camera.front) this.addFrontMatterSpec(lines, addedKeys, 'camera_front', `"${this.escapeForFrontMatter(specs.camera.front)}"`);
+    if (specs.camera.main)
+      this.addFrontMatterSpec(lines, addedKeys, 'camera_main', `"${this.escapeForFrontMatter(specs.camera.main)}"`);
+    if (specs.camera.ultrawide)
+      this.addFrontMatterSpec(
+        lines,
+        addedKeys,
+        'camera_ultrawide',
+        `"${this.escapeForFrontMatter(specs.camera.ultrawide)}"`,
+      );
+    if (specs.camera.telephoto)
+      this.addFrontMatterSpec(
+        lines,
+        addedKeys,
+        'camera_telephoto',
+        `"${this.escapeForFrontMatter(specs.camera.telephoto)}"`,
+      );
+    if (specs.camera.front)
+      this.addFrontMatterSpec(lines, addedKeys, 'camera_front', `"${this.escapeForFrontMatter(specs.camera.front)}"`);
   }
 
   private addDimensionSpecs(lines: string[], addedKeys: Set<string>, specs: TechnicalSpecs): void {
@@ -986,17 +1032,22 @@ ${recommendationMessage}`;
     if (specs.codec) {
       this.addFrontMatterSpec(lines, addedKeys, 'codec', this.formatArrayForFrontMatter(specs.codec));
     }
-    if (specs.noiseCancel) this.addFrontMatterSpec(lines, addedKeys, 'noise_cancel', `"${this.formatSpecValue(specs.noiseCancel)}"`);
+    if (specs.noiseCancel)
+      this.addFrontMatterSpec(lines, addedKeys, 'noise_cancel', `"${this.formatSpecValue(specs.noiseCancel)}"`);
   }
 
   private addElectronicsSpecs(lines: string[], addedKeys: Set<string>, specs: TechnicalSpecs): void {
     if (specs.power) this.addFrontMatterSpec(lines, addedKeys, 'power', `"${this.formatSpecValue(specs.power)}"`);
-    if (specs.capacity) this.addFrontMatterSpec(lines, addedKeys, 'capacity', `"${this.formatSpecValue(specs.capacity)}"`);
-    if (specs.contentVolume) this.addFrontMatterSpec(lines, addedKeys, 'content_volume', `"${this.formatSpecValue(specs.contentVolume)}"`);
-    if (specs.quantity) this.addFrontMatterSpec(lines, addedKeys, 'quantity', `"${this.formatSpecValue(specs.quantity)}"`);
+    if (specs.capacity)
+      this.addFrontMatterSpec(lines, addedKeys, 'capacity', `"${this.formatSpecValue(specs.capacity)}"`);
+    if (specs.contentVolume)
+      this.addFrontMatterSpec(lines, addedKeys, 'content_volume', `"${this.formatSpecValue(specs.contentVolume)}"`);
+    if (specs.quantity)
+      this.addFrontMatterSpec(lines, addedKeys, 'quantity', `"${this.formatSpecValue(specs.quantity)}"`);
     if (specs.content) this.addFrontMatterSpec(lines, addedKeys, 'content', `"${this.formatSpecValue(specs.content)}"`);
     if (specs.count) this.addFrontMatterSpec(lines, addedKeys, 'count', `"${this.formatSpecValue(specs.count)}"`);
-    if (specs.category) this.addFrontMatterSpec(lines, addedKeys, 'spec_category', `"${this.formatSpecValue(specs.category)}"`);
+    if (specs.category)
+      this.addFrontMatterSpec(lines, addedKeys, 'spec_category', `"${this.formatSpecValue(specs.category)}"`);
   }
 
   private addConnectivitySpecs(lines: string[], addedKeys: Set<string>, specs: TechnicalSpecs): void {
@@ -1009,10 +1060,17 @@ ${recommendationMessage}`;
     if (specs.weight) this.addFrontMatterSpec(lines, addedKeys, 'weight', `"${this.formatSpecValue(specs.weight)}"`);
     if (specs.midsole) this.addFrontMatterSpec(lines, addedKeys, 'midsole', `"${this.formatSpecValue(specs.midsole)}"`);
     if (specs.cushioningTech) {
-      this.addFrontMatterSpec(lines, addedKeys, 'cushioning_tech', this.formatArrayForFrontMatter(specs.cushioningTech));
+      this.addFrontMatterSpec(
+        lines,
+        addedKeys,
+        'cushioning_tech',
+        this.formatArrayForFrontMatter(specs.cushioningTech),
+      );
     }
-    if (specs.heelCounter) this.addFrontMatterSpec(lines, addedKeys, 'heel_counter', `"${this.formatSpecValue(specs.heelCounter)}"`);
-    if (specs.heelHeight) this.addFrontMatterSpec(lines, addedKeys, 'heel_height', `"${this.formatSpecValue(specs.heelHeight)}"`);
+    if (specs.heelCounter)
+      this.addFrontMatterSpec(lines, addedKeys, 'heel_counter', `"${this.formatSpecValue(specs.heelCounter)}"`);
+    if (specs.heelHeight)
+      this.addFrontMatterSpec(lines, addedKeys, 'heel_height', `"${this.formatSpecValue(specs.heelHeight)}"`);
 
     this.addMaterialSpecs(lines, addedKeys, specs);
     this.addModelAndOriginSpecs(lines, addedKeys, specs);
@@ -1024,8 +1082,10 @@ ${recommendationMessage}`;
     }
 
     if (specs.upperMaterial) this.addFrontMatterSpec(lines, addedKeys, 'upper_material', `"${specs.upperMaterial}"`);
-    if (specs.midsoleMaterial) this.addFrontMatterSpec(lines, addedKeys, 'midsole_material', `"${specs.midsoleMaterial}"`);
-    if (specs.outsoleMaterial) this.addFrontMatterSpec(lines, addedKeys, 'outsole_material', `"${specs.outsoleMaterial}"`);
+    if (specs.midsoleMaterial)
+      this.addFrontMatterSpec(lines, addedKeys, 'midsole_material', `"${specs.midsoleMaterial}"`);
+    if (specs.outsoleMaterial)
+      this.addFrontMatterSpec(lines, addedKeys, 'outsole_material', `"${specs.outsoleMaterial}"`);
     if (specs.outerSole) this.addFrontMatterSpec(lines, addedKeys, 'outer_sole', `"${specs.outerSole}"`);
     if (specs.insoleMaterial) this.addFrontMatterSpec(lines, addedKeys, 'insole_material', `"${specs.insoleMaterial}"`);
     if (specs.innerSole) this.addFrontMatterSpec(lines, addedKeys, 'inner_sole', `"${specs.innerSole}"`);
@@ -1051,9 +1111,16 @@ ${recommendationMessage}`;
   }
 
   private addModelAndOriginSpecs(lines: string[], addedKeys: Set<string>, specs: TechnicalSpecs): void {
-    if (specs.modelNumber) this.addFrontMatterSpec(lines, addedKeys, 'model_number', `"${this.formatSpecValue(specs.modelNumber)}"`);
+    if (specs.modelNumber)
+      this.addFrontMatterSpec(lines, addedKeys, 'model_number', `"${this.formatSpecValue(specs.modelNumber)}"`);
     if (specs.model) this.addFrontMatterSpec(lines, addedKeys, 'model', `"${this.formatSpecValue(specs.model)}"`);
-    if (specs.countryOfOrigin) this.addFrontMatterSpec(lines, addedKeys, 'country_of_origin', `"${this.formatSpecValue(specs.countryOfOrigin)}"`);
+    if (specs.countryOfOrigin)
+      this.addFrontMatterSpec(
+        lines,
+        addedKeys,
+        'country_of_origin',
+        `"${this.formatSpecValue(specs.countryOfOrigin)}"`,
+      );
   }
 
   private addLoadCapacitySpecs(lines: string[], addedKeys: Set<string>, specs: TechnicalSpecs): void {
@@ -1098,15 +1165,26 @@ ${recommendationMessage}`;
     this.addHeroSpecs(lines, hero.specs);
   }
 
-  private addHeroScoreRationale(lines: string[], rationale: NonNullable<ArticleMetadata['hero']>['score_rationale']): void {
+  private addHeroScoreRationale(
+    lines: string[],
+    rationale: NonNullable<ArticleMetadata['hero']>['score_rationale'],
+  ): void {
     if (!rationale) return;
     lines.push('  score_rationale:');
     const { top_plus, top_minus } = rationale;
     if (top_plus) {
-      lines.push('    top_plus:', `      points: ${top_plus.points}`, `      desc: "${this.escapeForFrontMatter(top_plus.desc)}"`);
+      lines.push(
+        '    top_plus:',
+        `      points: ${top_plus.points}`,
+        `      desc: "${this.escapeForFrontMatter(top_plus.desc)}"`,
+      );
     }
     if (top_minus) {
-      lines.push('    top_minus:', `      points: ${top_minus.points}`, `      desc: "${this.escapeForFrontMatter(top_minus.desc)}"`);
+      lines.push(
+        '    top_minus:',
+        `      points: ${top_minus.points}`,
+        `      desc: "${this.escapeForFrontMatter(top_minus.desc)}"`,
+      );
     }
   }
 
@@ -1133,10 +1211,7 @@ ${recommendationMessage}`;
   }
 
   private addProductIdentifiers(lines: string[], metadata: ArticleMetadata): void {
-    lines.push(
-      `asin: "${metadata.asin}"`,
-      `price_range: "${metadata.priceRange}"`,
-    );
+    lines.push(`asin: "${metadata.asin}"`, `price_range: "${metadata.priceRange}"`);
     if (metadata.price) lines.push(`price: "${this.escapeForFrontMatter(metadata.price)}"`);
   }
 
