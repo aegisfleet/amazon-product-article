@@ -145,9 +145,7 @@ category: Electronics
           const result = qualityManager.validateArticleStructure(article);
 
           // アフィリエイトリンクがないため警告があるべき
-          const hasLinkWarning = result.warnings.some(
-            (w) => w.message.includes('アフィリエイトリンク'),
-          );
+          const hasLinkWarning = result.warnings.some((w) => w.message.includes('アフィリエイトリンク'));
           expect(hasLinkWarning).toBe(true);
         }),
         { numRuns: 10 },
