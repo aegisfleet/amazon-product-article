@@ -2859,6 +2859,14 @@ a.competitor-preview:hover {
   border-left: 3px solid #10b981;
 }
 
+.hero-score-minus {
+  background: #fffbeb;
+  /* Amber 50 */
+  color: #92400e;
+  /* Amber 800 */
+  border-left: 3px solid #f59e0b;
+}
+
 [data-theme="dark"] .hero-score-plus {
   background: #064e3b;
   /* Opaque Dark Green */
