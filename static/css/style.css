@@ -183,6 +183,7 @@ a:hover {
   margin-bottom: var(--spacing-md);
   background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
@@ -328,46 +329,52 @@ a:hover {
   padding: 2px 6px;
   border-radius: 4px;
   /* Default styling (fallback) */
-  color: #ca8a04;
-  background: #fef9c3;
+  color: #92400e; /* Amber 800 */
+  background: #fef3c7; /* Amber 100 */
 }
 
 [data-theme="dark"] .card-score {
-  color: #fde047;
-  background: rgba(234, 179, 8, 0.2);
+  color: #fef3c7; /* Amber 100 */
+  background: #451a03; /* Amber 950 */
 }
 
 /* Dynamic Score Colors */
 .card-score.score-excellent {
-  background: linear-gradient(135deg, #065f46, #064e3b); /* Emerald 800 to 900 */
+  background: linear-gradient(135deg, #065f46, #064e3b);
+  /* Emerald 800 to 900 */
   color: white;
   box-shadow: 0 1px 2px rgba(6, 78, 59, 0.2);
 }
 
 [data-theme="dark"] .card-score.score-excellent {
-  background: linear-gradient(135deg, #064e3b, #022c22); /* Emerald 900 to 950 */
+  background: linear-gradient(135deg, #064e3b, #022c22);
+  /* Emerald 900 to 950 */
   border: 1px solid #059669;
 }
 
 .card-score.score-good {
-  background: linear-gradient(135deg, #92400e, #78350f); /* Amber 800 to 900 */
+  background: linear-gradient(135deg, #92400e, #78350f);
+  /* Amber 800 to 900 */
   color: white;
   box-shadow: 0 1px 2px rgba(120, 53, 15, 0.2);
 }
 
 [data-theme="dark"] .card-score.score-good {
-  background: linear-gradient(135deg, #78350f, #451a03); /* Amber 900 to 950 */
+  background: linear-gradient(135deg, #78350f, #451a03);
+  /* Amber 900 to 950 */
   border: 1px solid #d97706;
 }
 
 .card-score.score-fair {
-  background: linear-gradient(135deg, #374151, #1f2937); /* Gray 700 to 800 */
+  background: linear-gradient(135deg, #374151, #1f2937);
+  /* Gray 700 to 800 */
   color: white;
   box-shadow: 0 1px 2px rgba(31, 41, 55, 0.2);
 }
 
 [data-theme="dark"] .card-score.score-fair {
-  background: linear-gradient(135deg, #1f2937, #111827); /* Gray 800 to 900 */
+  background: linear-gradient(135deg, #1f2937, #111827);
+  /* Gray 800 to 900 */
   border: 1px solid #4b5563;
 }
 
@@ -384,14 +391,18 @@ a:hover {
   font-size: 0.9em;
   padding: 2px 6px;
   border-radius: 4px;
-  color: #92400e; /* Amber 800 */
-  background: #fef3c7; /* Amber 100 */
+  color: #92400e;
+  /* Amber 800 */
+  background: #fef3c7;
+  /* Amber 100 */
   width: fit-content;
 }
 
 [data-theme="dark"] .pickup-card-score {
-  color: #fef3c7; /* Amber 100 */
-  background: #451a03; /* Amber 950 */
+  color: #fef3c7;
+  /* Amber 100 */
+  background: #451a03;
+  /* Amber 950 */
 }
 
 .card-price {
@@ -727,7 +738,7 @@ a:hover {
   right: 20px;
   width: 48px;
   height: 48px;
-  background: rgba(255, 255, 255, 0.15);
+  background: rgba(0, 0, 0, 0.5);
   backdrop-filter: blur(8px);
   border: none;
   border-radius: 50%;
@@ -832,7 +843,7 @@ a:hover {
   display: inline-flex;
   align-items: center;
   gap: var(--spacing-sm);
-  background: linear-gradient(135deg, #10b981, #059669);
+  background: linear-gradient(135deg, #065f46, #064e3b); /* Emerald 800 to 900 */
   color: white;
   padding: var(--spacing-sm) var(--spacing-lg);
   border-radius: 9999px;
@@ -840,6 +851,11 @@ a:hover {
   font-weight: 600;
   width: fit-content;
   box-shadow: var(--shadow-md);
+}
+
+[data-theme="dark"] .product-score-badge {
+  background: linear-gradient(135deg, #064e3b, #022c22); /* Emerald 900 to 950 */
+  border: 1px solid #059669;
 }
 
 /* Amazon Buttons */
@@ -1860,17 +1876,23 @@ a.competitor-preview:hover {
 
 .score-plus .score-points {
   color: #065f46;
-  background: rgba(16, 185, 129, 0.2);
+  /* Emerald 800 */
+  background: #ecfdf5;
+  /* Emerald 50 */
 }
 
 .score-minus .score-points {
   color: #92400e;
-  background: rgba(245, 158, 11, 0.2);
+  /* Amber 800 */
+  background: #fffbeb;
+  /* Amber 50 */
 }
 
 .score-neutral .score-points {
   color: #374151;
-  background: rgba(107, 114, 128, 0.2);
+  /* Gray 700 */
+  background: #f9fafb;
+  /* Gray 50 */
 }
 
 .score-total {
@@ -1899,18 +1921,24 @@ a.competitor-preview:hover {
 }
 
 [data-theme="dark"] .score-plus .score-points {
-  color: #34d399;
-  background: rgba(16, 185, 129, 0.3);
+  color: #d1fae5;
+  /* Emerald 100 */
+  background: #064e3b;
+  /* Emerald 900 */
 }
 
 [data-theme="dark"] .score-minus .score-points {
-  color: #fbbf24;
-  background: rgba(245, 158, 11, 0.3);
+  color: #fef3c7;
+  /* Amber 100 */
+  background: #451a03;
+  /* Amber 950 */
 }
 
 [data-theme="dark"] .score-neutral .score-points {
-  color: #9ca3af;
-  background: rgba(107, 114, 128, 0.3);
+  color: #f3f4f6;
+  /* Gray 100 */
+  background: #111827;
+  /* Gray 900 */
 }
 
 /* Mobile responsive */
@@ -2103,7 +2131,7 @@ a.competitor-preview:hover {
 /* シャッフルボタン */
 .shuffle-btn {
   margin-left: auto;
-  background: linear-gradient(135deg, #f59e0b, #d97706);
+  background: linear-gradient(135deg, #92400e, #78350f); /* Amber 800 to 900 */
   color: white;
   border: none;
   padding: 0.5rem 1rem;
@@ -2112,7 +2140,12 @@ a.competitor-preview:hover {
   font-size: 0.875rem;
   cursor: pointer;
   transition: var(--transition-base);
-  box-shadow: 0 2px 6px rgba(217, 119, 6, 0.3);
+  box-shadow: 0 2px 6px rgba(120, 53, 15, 0.3);
+}
+
+[data-theme="dark"] .shuffle-btn {
+  background: linear-gradient(135deg, #78350f, #451a03); /* Amber 900 to 950 */
+  border: 1px solid #d97706;
 }
 
 .shuffle-btn:hover {
@@ -2219,6 +2252,10 @@ a.competitor-preview:hover {
   justify-content: center;
 }
 
+[data-theme="dark"] .pickup-card-image {
+  background: #1f2937;
+}
+
 .pickup-card-image img {
   width: 100%;
   height: 100%;
@@ -2231,9 +2268,14 @@ a.competitor-preview:hover {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #9ca3af;
+  color: #4b5563; /* Gray 600 for contrast */
   font-size: 0.75rem;
   background: #f3f4f6;
+}
+
+[data-theme="dark"] .pickup-card-noimage {
+  color: #9ca3af; /* Gray 400 for contrast on dark */
+  background: #1f2937;
 }
 
 .pickup-card-content {
@@ -2261,13 +2303,6 @@ a.competitor-preview:hover {
   display: flex;
   flex-direction: column;
   gap: 2px;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) .pickup-card-score {
-    color: #fde047;
-    background: rgba(234, 179, 8, 0.2);
-  }
 }
 
 /* Force dynamic score colors to override defaults and dark mode specifics */
