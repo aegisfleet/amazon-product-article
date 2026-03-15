@@ -18,7 +18,12 @@ import type {
 import type { InvestigationResult, TechnicalSpecs } from '../types/JulesTypes';
 import type { Product, ProductDetail } from '../types/Product';
 import { Logger } from '../utils/Logger';
-import { DEFAULT_ARTICLE_TEMPLATE, DEFAULT_IMAGE_URL, HANDLED_SPEC_FIELDS, SPEC_LABEL_MAP } from './ArticleConstants';
+import { DEFAULT_ARTICLE_TEMPLATE, DEFAULT_IMAGE_URL,
+  HANDLED_SPEC_FIELDS,
+  INVALID_PLACEHOLDERS,
+  SPEC_LABEL_MAP,
+  SPEC_VALUE_MAP,
+} from './ArticleConstants';
 
 export class ArticleGenerator {
   private readonly logger: Logger;
@@ -796,34 +801,7 @@ ${recommendationMessage}`;
    */
   private localizeSpecValue(value: string): string {
     const normalizedKey = value.toLowerCase();
-    const valueMap: Record<string, string> = {
-      yes: 'あり',
-      no: 'なし',
-      true: 'あり',
-      false: 'なし',
-      available: '在庫あり',
-      'in stock': '在庫あり',
-      unavailable: '在庫なし',
-      'out of stock': '在庫なし',
-      black: 'ブラック',
-      white: 'ホワイト',
-      blue: 'ブルー',
-      red: 'レッド',
-      green: 'グリーン',
-      gray: 'グレー',
-      grey: 'グレー',
-      silver: 'シルバー',
-      gold: 'ゴールド',
-      pink: 'ピンク',
-      purple: 'パープル',
-      brown: 'ブラウン',
-      orange: 'オレンジ',
-      yellow: 'イエロー',
-      transparent: '透明',
-      clear: 'クリア',
-    };
-
-    return valueMap[normalizedKey] || value;
+    return SPEC_VALUE_MAP[normalizedKey] || value;
   }
 
   /**
@@ -837,22 +815,25 @@ ${recommendationMessage}`;
     if (typeof value === 'string') {
       const normalized = value
         .trim()
-        .replaceAll(/\s*,\s*/g, ', ')
+        .replaceAll(/(?<!\d)\s*,\s*|\s*,\s*(?!\d)/g, ', ')
         .replaceAll(/\s+/g, ' ');
       const lowerValue = normalized.toLowerCase();
       const compactValue = lowerValue.replaceAll(/\s+/g, '');
-      const invalidPlaceholders = ['null', 'none', 'unknown', '不明', 'n/a', '-', 'なし'];
-      if (invalidPlaceholders.includes(lowerValue) || invalidPlaceholders.includes(compactValue)) {
+      if (INVALID_PLACEHOLDERS.has(lowerValue) || INVALID_PLACEHOLDERS.has(compactValue)) {
         return '';
       }
       return normalized
-        .split(',')
+        .split(/(?<!\d),(?!\d)/)
         .map((item) => this.localizeSpecValue(item.trim()))
         .join(', ');
     }
 
-    if (typeof value === 'number' || typeof value === 'boolean') {
-      return typeof value === 'boolean' ? (value ? 'あり' : 'なし') : String(value);
+    if (typeof value === 'boolean') {
+      return value ? 'あり' : 'なし';
+    }
+
+    if (typeof value === 'number') {
+      return String(value);
     }
 
     if (Array.isArray(value)) {

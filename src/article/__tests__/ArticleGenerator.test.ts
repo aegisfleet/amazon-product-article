@@ -799,6 +799,11 @@ describe('ArticleGenerator', () => {
         expect((generator as any).formatSpecValue('black, white')).toBe('ブラック, ホワイト');
       });
 
+      it('should preserve numeric values with internal commas (regression)', () => {
+        expect((generator as any).formatSpecValue('1,000mAh')).toBe('1,000mAh');
+        expect((generator as any).formatSpecValue('価格: 1,500円')).toBe('価格: 1,500円');
+      });
+
       it('should handle nested objects including placeholders', () => {
         const specs = {
           height: '10cm',
