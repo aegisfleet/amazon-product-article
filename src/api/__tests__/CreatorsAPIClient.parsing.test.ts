@@ -1,5 +1,5 @@
-import { CreatorsAPIClient } from '../CreatorsAPIClient';
 import type { CreatorsAPIItem } from '../../types/CreatorsAPITypes';
+import { CreatorsAPIClient } from '../CreatorsAPIClient';
 
 describe('CreatorsAPIClient Parsing Tests', () => {
   let client: CreatorsAPIClient;
@@ -19,11 +19,11 @@ describe('CreatorsAPIClient Parsing Tests', () => {
             {
               merchantInfo: {
                 id: 'AN1VRQENFRJN5',
-                name: 'Amazon.co.jp'
-              }
-            }
-          ]
-        }
+                name: 'Amazon.co.jp',
+              },
+            },
+          ],
+        },
       };
 
       const product = (client as any).parseProduct(mockItem as CreatorsAPIItem);
@@ -38,11 +38,11 @@ describe('CreatorsAPIClient Parsing Tests', () => {
             {
               merchantInfo: {
                 id: 'OTHER_ID',
-                name: 'Other Marketplace Seller'
-              }
-            }
-          ]
-        }
+                name: 'Other Marketplace Seller',
+              },
+            },
+          ],
+        },
       };
 
       const product = (client as any).parseProduct(mockItem as CreatorsAPIItem);
@@ -53,10 +53,8 @@ describe('CreatorsAPIClient Parsing Tests', () => {
       const mockItem: Partial<CreatorsAPIItem> = {
         asin: 'B09VXJ3V1R',
         offersV2: {
-          listings: [
-            {}
-          ]
-        }
+          listings: [{}],
+        },
       };
 
       const product = (client as any).parseProduct(mockItem as CreatorsAPIItem);
