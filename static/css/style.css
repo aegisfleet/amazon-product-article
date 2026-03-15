@@ -31,6 +31,13 @@ a:hover {
   color: var(--color-primary-dark);
 }
 
+.ai-disclaimer {
+  text-align: center;
+  color: var(--color-text-muted);
+  font-size: 0.8rem;
+  margin-bottom: var(--spacing-sm);
+}
+
 /* Layout Utilities */
 .container {
   width: 100%;

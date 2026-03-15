@@ -39,8 +39,10 @@
     --text-competitor-price: #b91c1c;
     --text-competitor-availability: #059669;
 
-    --text-pros-title: #059669; /* Emerald 600 */
-    --text-cons-title: #dc2626; /* Red 600 */
+    --text-pros-title: #059669;
+    /* Emerald 600 */
+    --text-cons-title: #dc2626;
+    /* Red 600 */
 
     /* Amazon Specific */
     --color-amazon-orange: #FF9900;
@@ -55,7 +57,7 @@
     --spacing-sm: 0.5rem;
     --spacing-md: 1rem;
     --spacing-lg: 1.5rem;
-    --spacing-xl: 2rem;
+    --spacing-xl: 0.7rem;
     --spacing-2xl: 3rem;
 
     /* Shadows */
@@ -111,8 +113,10 @@
         --text-competitor-price: #fca5a5;
         --text-competitor-availability: #6ee7b7;
 
-        --text-pros-title: #6EE7B7; /* Emerald 300 to stand out on dark green bg */
-        --text-cons-title: #FCA5A5; /* Red 300 to stand out on dark red bg */
+        --text-pros-title: #6EE7B7;
+        /* Emerald 300 to stand out on dark green bg */
+        --text-cons-title: #FCA5A5;
+        /* Red 300 to stand out on dark red bg */
     }
 }
 
@@ -151,7 +155,7 @@
     --bg-competitor-img: #1e293b;
     --text-competitor-price: #fca5a5;
     --text-competitor-availability: #6ee7b7;
-    
+
     --text-pros-title: #6EE7B7;
     --text-cons-title: #FCA5A5;
 }
