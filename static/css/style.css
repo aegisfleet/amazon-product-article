@@ -1419,9 +1419,27 @@ a.competitor-preview:hover {
   font-size: 1rem;
 }
 
-.competitor-availability {
-  color: var(--text-competitor-availability);
+.competitor-price-diff {
   font-size: 0.8rem;
+  font-weight: 600;
+  margin-left: var(--spacing-xs);
+}
+
+.competitor-price-diff.price-up {
+  color: var(--color-price-up);
+}
+
+.competitor-price-diff.price-down {
+  color: var(--color-price-down);
+}
+
+.competitor-price-diff.price-equal {
+  color: var(--color-text-muted);
+}
+
+.competitor-preview-info .hero-tag {
+  padding: 2px 6px;
+  font-size: 0.75rem;
 }
 
 .competitor-prime {

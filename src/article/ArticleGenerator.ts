@@ -617,7 +617,14 @@ ${reviewAnalysis ? this.generateSentimentAnalysis(reviewAnalysis) : ''}`;
 
           // 商品プレビュー（Creators API情報がある場合）
           const productPreview = detail
-            ? this.renderCompetitorPreview(competitor.name, detail, competitorScore, hasInternalReview, normalizedAsin)
+            ? this.renderCompetitorPreview(
+                competitor.name,
+                detail,
+                investigation.product.price.amount,
+                competitorScore,
+                hasInternalReview,
+                normalizedAsin,
+              )
             : '';
 
           // アフィリエイトリンクを生成
@@ -1568,14 +1575,26 @@ ${recommendationMessage}`;
   private renderCompetitorPreview(
     name: string,
     detail: ProductDetail,
+    basePriceAmount: number,
     score?: number,
     hasInternalReview?: boolean,
     asin?: string,
   ): string {
     const imageUrl = detail.images?.primary || '';
     const priceText = detail.price?.formatted || '';
+    const competitorPriceAmount = detail.price?.amount || 0;
     const availabilityText = detail.availability || '';
-    const primeText = detail.isPrimeEligible ? '⭐ Prime対応' : '';
+    const isPrime = detail.isPrimeEligible || false;
+
+    // 価格差の計算
+    let priceDiffHtml = '';
+    if (basePriceAmount > 0 && competitorPriceAmount > 0) {
+      const diff = competitorPriceAmount - basePriceAmount;
+      const diffFormatted = new Intl.NumberFormat('ja-JP').format(Math.abs(diff));
+      const sign = diff > 0 ? '+' : diff < 0 ? '-' : '±';
+      const diffClass = diff > 0 ? 'price-up' : diff < 0 ? 'price-down' : 'price-equal';
+      priceDiffHtml = `<span class="competitor-price-diff ${diffClass}">(${sign}￥${diffFormatted})</span>`;
+    }
 
     let scoreHtml = '';
     if (score !== undefined) {
@@ -1592,11 +1611,11 @@ ${recommendationMessage}`;
     const previewAttrs = hasInternalReview && asin ? ` href="../${asin.toLowerCase()}/"` : '';
 
     const actualPriceHtml = priceText
-      ? `<span class="competitor-actual-price">${this.escapeHtml(priceText)}</span>`
+      ? `<span class="competitor-actual-price">${this.escapeHtml(priceText)}${priceDiffHtml}</span>`
       : '';
-    const primeHtml = primeText ? `<span class="competitor-prime">${this.escapeHtml(primeText)}</span>` : '';
+    const primeHtml = isPrime ? '<span class="hero-tag hero-tag-prime">Prime</span>' : '';
     const availabilityHtml = availabilityText
-      ? `<span class="competitor-availability">📦 ${this.escapeHtml(availabilityText)}</span>`
+      ? `<span class="hero-tag hero-tag-availability">${this.escapeHtml(availabilityText)}</span>`
       : '';
 
     return `
