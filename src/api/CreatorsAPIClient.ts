@@ -196,6 +196,7 @@ export class CreatorsAPIClient {
       'itemInfo.features',
       'itemInfo.productInfo',
       'offersV2.listings.price',
+      'offersV2.listings.availability',
       'browseNodeInfo.browseNodes',
     ];
 
@@ -252,6 +253,7 @@ export class CreatorsAPIClient {
         'offersV2.listings.price',
         'offersV2.listings.isBuyBoxWinner',
         'offersV2.listings.merchantInfo',
+        'offersV2.listings.availability',
         'browseNodeInfo.browseNodes',
       ],
     };
@@ -309,6 +311,7 @@ export class CreatorsAPIClient {
         'offersV2.listings.price',
         'offersV2.listings.isBuyBoxWinner',
         'offersV2.listings.merchantInfo',
+        'offersV2.listings.availability',
         'customerReviews.count',
         'customerReviews.starRating',
         'browseNodeInfo.browseNodes',
