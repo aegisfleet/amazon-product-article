@@ -29,74 +29,133 @@
       {
         "userType": "40代 主婦",
         "scenario": "毎朝のルーティン",
-        "experience": "毎朝夫と二人で飲むので、100袋入りは助かります。ブレンディのモカは香りが良くて、朝から優雅な気分になれます。スーパーでちまちま買うより楽です。",
+        "experience": "毎朝夫と二人で飲むので、100袋入りは助かります。ブレンディのモカは香りが良くて、朝から優雅な気分になれます。スーパーでちまちま買うより楽です。 （出典: Amazonカスタマーレビュー要約）",
         "sentiment": "positive"
       },
       {
         "userType": "30代 会社員",
         "scenario": "オフィスでの休憩",
-        "experience": "職場の置きコーヒーとして購入。マグカップで飲むことが多いので、「マグカップサイズ」という表記に惹かれましたが、お湯を多めに入れると少し薄く感じました。味は美味しいです。",
+        "experience": "職場の置きコーヒーとして購入。マグカップで飲むことが多いので、「マグカップサイズ」という表記に惹かれましたが、お湯を多めに入れると少し薄く感じました。味は美味しいです。 （出典: Amazonカスタマーレビュー要約）",
         "sentiment": "mixed"
       },
       {
         "userType": "50代 男性",
         "scenario": "コスト重視の選択",
-        "experience": "以前は他社の安いドリップを買っていましたが、たまには違うものをと思い購入。味は確かにブレンディの方がまろやかですが、毎日数杯飲むのでこの価格差は少し痛いです。",
+        "experience": "以前は他社の安いドリップを買っていましたが、たまには違うものをと思い購入。味は確かにブレンディの方がまろやかですが、毎日数杯飲むのでこの価格差は少し痛いです。 （出典: Amazonカスタマーレビュー要約）",
         "sentiment": "mixed"
       }
     ],
     "userImpression": "多くのユーザーが「モカの香りの良さ」と「飲みやすさ」を評価しています。AGFブレンディというブランドへの信頼感も厚いですが、コストパフォーマンスに関しては、他社の激安業務用パックと比較して割高に感じるユーザーもいます。味のバランスは万人受けするマイルドな仕上がりです。",
     "sources": [
       {
+        "id": "amazon-reviews",
         "name": "Amazonカスタマーレビュー",
         "url": "https://www.amazon.co.jp/dp/B004OVBIZW",
-        "credibility": "medium"
+        "tier": "medium",
+        "evidenceType": "primary",
+        "author": "購入者",
+        "conflictOfInterest": "none",
+        "notes": "実際のユーザー体験、味やコストに関する評価が多数"
       },
       {
+        "id": "agf-official",
         "name": "AGF公式サイト 商品情報",
         "url": "https://www.agf.co.jp/",
-        "credibility": "high"
+        "tier": "high",
+        "evidenceType": "primary",
+        "author": "メーカー公式",
+        "conflictOfInterest": "possible",
+        "notes": "商品の仕様、原材料、淹れ方の公式情報"
+      },
+      {
+        "id": "competitor-analysis",
+        "name": "Amazon商品データ (競合比較)",
+        "url": "https://www.amazon.co.jp/",
+        "tier": "high",
+        "evidenceType": "primary",
+        "author": "Amazon",
+        "conflictOfInterest": "none",
+        "notes": "ドトールやドリップコーヒーファクトリー等、競合商品の価格・仕様情報"
       }
     ],
-    "lastInvestigated": "2026-01-22",
+    "lastInvestigated": "2026-03-16",
     "competitiveAnalysis": [
       {
-        "name": "ドトールコーヒー ドリップパックアロマブレンド 100杯分",
-        "asin": "B06WRS9737",
-        "priceComparison": "約33円/袋（本商品は約52円/袋）",
+        "name": "ドトールコーヒー ドリップパック 香り楽しむバラエティアソート 40P",
+        "asin": "B07JQJ8ZRB",
+        "priceComparison": "約46円/袋（本商品は約49円/袋）",
         "featureComparison": [
-          "ドトール店舗の味を再現",
-          "深みのある直火焙煎"
+          "4つの味（まろやか、深煎り、モカ、キリマンジャロ）が楽しめるアソート",
+          "内容量：40P入り（6.5g/P等）"
+        ],
+        "differentiators": [
+          "複数の味を気分に合わせて選べる",
+          "ドトールブランドの安定した味わい"
+        ]
+      },
+      {
+        "name": "ドトールコーヒー ドリップパック 深煎りブレンド 100杯分",
+        "asin": "B06W9K39Y8",
+        "priceComparison": "約35円/袋",
+        "featureComparison": [
+          "深煎りの香ばしさとコク",
+          "内容量：6.5g×100袋"
+        ],
+        "differentiators": [
+          "1杯30円台前半の高いコストパフォーマンス",
+          "酸味を抑えた深みのある味わい"
+        ]
+      },
+      {
+        "name": "ドリップコーヒーファクトリー 苦味を感じる深煎りブレンド 100袋",
+        "asin": "B0GQDBKY4H",
+        "priceComparison": "約32円/袋",
+        "featureComparison": [
+          "自家焙煎の深煎りブレンド",
+          "内容量：6.5g×100袋"
         ],
         "differentiators": [
           "圧倒的なコストパフォーマンス",
-          "香ばしさとコク重視"
+          "しっかりとした苦味とコク"
         ]
       },
       {
-        "name": "ドリップコーヒーファクトリー リッチブレンド 100袋",
-        "asin": "B0CZRKGFDW",
-        "priceComparison": "約37円/袋",
+        "name": "AGF ちょっと贅沢な珈琲店 スペシャル・ブレンド",
+        "asin": "B0GNPNFX6V",
+        "priceComparison": "約92円/袋 (※少量パックの参考価格)",
         "featureComparison": [
-          "自家焙煎のこだわり",
-          "世界規格Qグレード豆使用"
+          "プレミアムな香りと味わい",
+          "コロンビア、タンザニア等のブレンド"
         ],
         "differentiators": [
-          "コストと品質のバランスが良い",
-          "豊かなコク"
+          "同ブランドの上位ラインナップ",
+          "より深い香りとコクを求める層向け"
         ]
       },
       {
-        "name": "UCC 職人の珈琲 深いコクのスペシャルブレンド 100杯",
-        "asin": "B01DBBS7X6",
-        "priceComparison": "約40円/袋",
+        "name": "UCC 職人の珈琲 まろやか味のマイルドブレンド 100杯",
+        "asin": "B01CJ2X59O",
+        "priceComparison": "約36円/袋",
         "featureComparison": [
-          "「実」のまま天日乾燥するナチュラル精選豆を50%以上使用",
-          "酸味を抑えた深いコク"
+          "ブラジル、エル・サルバドル等の豆を使用",
+          "1杯あたり7g"
         ],
         "differentiators": [
-          "ミルクともよく合う濃厚な味わい",
-          "UCCの技術力による安定した品質"
+          "バランスの良いマイルドな味わい",
+          "「実」のまま天日で乾燥するナチュラル精選豆を50%以上使用"
+        ]
+      },
+      {
+        "name": "UCC 職人の珈琲 あまい香りのリッチブレンド 100杯",
+        "asin": "B09SFZWZF6",
+        "priceComparison": "約35円/袋",
+        "featureComparison": [
+          "ベトナム、ブラジル等の豆を使用",
+          "1杯あたり7g"
+        ],
+        "differentiators": [
+          "あまい香りと豊かな風味",
+          "ナチュラル精選豆を50%以上使用した深い味わい"
         ]
       }
     ],
@@ -115,22 +174,49 @@
         "1杯あたりの単価が競合商品に比べて高い",
         "濃いコーヒーが好きな人には7gの粉量は少なく感じる場合がある"
       ],
-      "score": 65,
-      "scoreRationale": "[基本点: 70]\n[加点: +5] ブランド信頼性 (AGFブレンディの知名度と安心感)\n[加点: +5] フレーバー (モカブレンド特有の甘い香りが好評)\n[減点: -15] コストパフォーマンス (競合他社が1杯30円台なのに対し、本商品は50円台と割高)\n[合計: 65]"
+      "score": 75,
+      "scoreRationale": "[基本点: 70]\n[加点: +10] フレーバー・飲みやすさ (モカ特有の甘い香りとクセのない味わいが広く支持されている)\n[加点: +5] ブランド信頼性・利便性 (AGFブランドの安心感とマグカップ対応の使いやすさ)\n[減点: -10] コストパフォーマンス (競合の業務用パックが30円台前半であるのに対し、本商品は約49円と割高)\n[合計: 75]"
     },
     "technicalSpecs": {
       "dimensions": {
-        "size": "100袋入り",
+        "height": null,
+        "width": null,
+        "depth": null,
         "weight": "7g/袋"
       },
-      "capacity": "100杯分",
       "power": null,
+      "capacity": "100袋",
       "other": [
         "原材料: コーヒー豆（生豆生産国名：エチオピア、ブラジル、他）",
-        "マグカップサイズ対応",
+        "マグカップサイズ対応（直径6.5〜9cmのカップに対応）",
         "モカブレンド",
-        "賞味期限: 製造日から390日"
+        "賞味期限: 製造日から390日",
+        "カロリー: 1〜8kcal（抽出液100g当たり）"
       ]
-    }
+    },
+    "claims": [
+      {
+        "claim": "モカ特有の甘い香りとマイルドな味わいが楽しめる",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "amazon-reviews",
+          "agf-official"
+        ],
+        "crossChecked": true,
+        "notes": "複数のレビューと公式情報で一致。酸味が強すぎず飲みやすい点も評価されている。"
+      },
+      {
+        "claim": "競合商品（1杯約30円〜40円台）と比較して割高（約49円/杯）である",
+        "category": "comparativeAdvantage",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "amazon-reviews",
+          "competitor-analysis"
+        ],
+        "crossChecked": true,
+        "notes": "実売価格の比較およびレビューでコストに関する言及が多数確認できる。"
+      }
+    ]
   }
 }
