@@ -4,9 +4,9 @@
  * Validates: Requirements 1.2, 1.3, 1.5
  */
 
-import { existsSync, rmSync, mkdtempSync } from 'node:fs';
-import path from 'node:path';
+import { existsSync, mkdtempSync, rmSync } from 'node:fs';
 import os from 'node:os';
+import path from 'node:path';
 import * as fc from 'fast-check';
 import { CreatorsAPIClient } from '../../api/CreatorsAPIClient';
 import type { Product, ProductSearchParams } from '../../types/Product';
