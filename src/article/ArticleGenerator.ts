@@ -148,7 +148,7 @@ export class ArticleGenerator {
       priceRange,
       price,
       score,
-      // Creators API v1ではレビューデータ取得不可のためrating不使用
+      ...(product.rating.average > 0 && product.rating.average <= 5 ? { rating: product.rating.average } : {}),
       featured: this.shouldBeFeatured(product, investigation),
       mobileOptimized: true,
       seoKeywords,
@@ -1233,7 +1233,7 @@ ${recommendationMessage}`;
     if (metadata.score) lines.push(`score: ${metadata.score}`);
     if (metadata.is_prime !== undefined) lines.push(`is_prime: ${metadata.is_prime}`);
     if (metadata.availability) lines.push(`availability: "${this.escapeForFrontMatter(metadata.availability)}"`);
-    if (metadata.rating) lines.push(`rating: ${metadata.rating}`);
+    if (metadata.rating !== undefined) lines.push(`rating: ${metadata.rating}`);
 
     if (metadata.review) {
       lines.push('review:');
