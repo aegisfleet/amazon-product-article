@@ -55,7 +55,15 @@ export interface SentimentScore {
     support: number;
     reliability: number;
   };
-  confidence: number; // 0-1
+  confidence: number | null; // 0-1, 算出不能時はnull
+  confidenceStatus: 'scored' | 'pending';
+  confidenceFactors: {
+    dataPointCount: number;
+    sourceCount: number;
+    independentSourceRatio: number | null;
+    lastVerifiedAt: string | null;
+    contradictionRate: number | null;
+  };
 }
 
 export class ReviewAnalyzer {
@@ -414,6 +422,8 @@ export class ReviewAnalyzer {
 
     const overall = totalCount > 0 ? (positiveCount - negativeCount) / totalCount : 0;
 
+    const confidence = this.calculateConfidenceScore(result, totalCount);
+
     return {
       overall,
       aspects: {
@@ -423,8 +433,115 @@ export class ReviewAnalyzer {
         support: this.calculateAspectSentiment(result, 'サポート'),
         reliability: this.calculateAspectSentiment(result, '信頼性'),
       },
-      confidence: Math.min(totalCount / 10, 1), // レビュー数に基づく信頼度
+      confidence: confidence.confidence,
+      confidenceStatus: confidence.confidenceStatus,
+      confidenceFactors: confidence.confidenceFactors,
     };
+  }
+
+  /**
+   * 説明可能な信頼度スコアを算出
+   * - データ量
+   * - ソース多様性（独立ソース比率）
+   * - 更新日の新しさ
+   * - 矛盾率
+   */
+  private calculateConfidenceScore(
+    result: InvestigationResult,
+    totalCount: number,
+  ): Pick<SentimentScore, 'confidence' | 'confidenceStatus' | 'confidenceFactors'> {
+    const sources = result.analysis.sources;
+    const sourceCount = sources.length;
+    const independentSourceCount = sources.filter((source) => source.conflictOfInterest === 'none').length;
+    const independentSourceRatio = sourceCount > 0 ? independentSourceCount / sourceCount : null;
+
+    const lastVerifiedAt =
+      result.analysis.lastInvestigated ??
+      this.extractLatestPublishedAt(
+        sources.map((source) => source.publishedAt).filter((date): date is string => !!date),
+      );
+
+    const hasBothPolarities =
+      result.analysis.positivePoints.length > 0 && result.analysis.negativePoints.length > 0 && totalCount > 0;
+    const contradictionRate = hasBothPolarities
+      ? Math.min(result.analysis.positivePoints.length, result.analysis.negativePoints.length) / totalCount
+      : 0;
+
+    const minimumDataReady = totalCount >= 3;
+    const minimumSourceReady = sourceCount >= 1;
+    const minimumDateReady = Boolean(lastVerifiedAt);
+
+    const factors = {
+      dataPointCount: totalCount,
+      sourceCount,
+      independentSourceRatio,
+      lastVerifiedAt: lastVerifiedAt ?? null,
+      contradictionRate,
+    };
+
+    if (!minimumDataReady || !minimumSourceReady || !minimumDateReady) {
+      return {
+        confidence: null,
+        confidenceStatus: 'pending',
+        confidenceFactors: factors,
+      };
+    }
+
+    const dataVolumeScore = Math.min(totalCount / 12, 1);
+    const diversityScore = independentSourceRatio === null ? 0 : Math.min(0.4 + independentSourceRatio * 0.6, 1);
+    const recencyScore = this.calculateRecencyScore(lastVerifiedAt);
+    const contradictionScore = 1 - Math.min(contradictionRate, 0.9);
+
+    const score = dataVolumeScore * 0.35 + diversityScore * 0.25 + recencyScore * 0.2 + contradictionScore * 0.2;
+
+    return {
+      confidence: Math.max(0, Math.min(score, 1)),
+      confidenceStatus: 'scored',
+      confidenceFactors: factors,
+    };
+  }
+
+  private extractLatestPublishedAt(dates: string[]): string | null {
+    const timestamps = dates
+      .map((date) => {
+        const parsed = Date.parse(date);
+        return Number.isNaN(parsed) ? null : parsed;
+      })
+      .filter((timestamp): timestamp is number => timestamp !== null);
+
+    if (timestamps.length === 0) {
+      return null;
+    }
+
+    const latest = new Date(Math.max(...timestamps));
+    return latest.toISOString().slice(0, 10);
+  }
+
+  private calculateRecencyScore(lastVerifiedAt: string | null): number {
+    if (!lastVerifiedAt) {
+      return 0;
+    }
+
+    const verifiedAt = Date.parse(lastVerifiedAt);
+    if (Number.isNaN(verifiedAt)) {
+      return 0;
+    }
+
+    const dayInMs = 24 * 60 * 60 * 1000;
+    const ageInDays = Math.max((Date.now() - verifiedAt) / dayInMs, 0);
+    if (ageInDays <= 30) {
+      return 1;
+    }
+    if (ageInDays <= 180) {
+      return 0.8;
+    }
+    if (ageInDays <= 365) {
+      return 0.6;
+    }
+    if (ageInDays <= 730) {
+      return 0.4;
+    }
+    return 0.2;
   }
 
   /**
