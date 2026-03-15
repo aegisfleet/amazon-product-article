@@ -313,6 +313,10 @@ describe('ArticleGenerator', () => {
       expect(result.content).toContain('---');
       expect(result.content).toContain('title: "テスト商品 スマートフォン"');
       expect(result.content).toContain('asin: "B08N5WRWNW"');
+      expect(result.content).toContain('review:');
+      expect(result.content).toContain('author: "編集部"');
+      expect(result.content).toContain('date_published: "2025-01-01"');
+      expect(result.content).toContain('summary: "多くのユーザーが満足感を得ている"');
     });
 
     it('should use investigation.generatedAt for publishDate', async () => {

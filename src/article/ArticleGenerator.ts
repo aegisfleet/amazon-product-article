@@ -197,6 +197,13 @@ export class ArticleGenerator {
       availability: metadata.availability,
     };
 
+    metadata.review = {
+      author: metadata.manufacturer || '編集部',
+      datePublished: metadata.publishDate.toISOString().slice(0, 10),
+      summary: investigation.analysis.userImpression || metadata.description,
+      ...(metadata.rating !== undefined ? { rating: metadata.rating } : {}),
+    };
+
     return metadata;
   }
 
@@ -1227,6 +1234,22 @@ ${recommendationMessage}`;
     if (metadata.is_prime !== undefined) lines.push(`is_prime: ${metadata.is_prime}`);
     if (metadata.availability) lines.push(`availability: "${this.escapeForFrontMatter(metadata.availability)}"`);
     if (metadata.rating) lines.push(`rating: ${metadata.rating}`);
+
+    if (metadata.review) {
+      lines.push('review:');
+      if (metadata.review.author) {
+        lines.push(`  author: "${this.escapeForFrontMatter(metadata.review.author)}"`);
+      }
+      if (metadata.review.datePublished) {
+        lines.push(`  date_published: "${this.escapeForFrontMatter(metadata.review.datePublished)}"`);
+      }
+      if (metadata.review.summary) {
+        lines.push(`  summary: "${this.escapeForFrontMatter(metadata.review.summary)}"`);
+      }
+      if (metadata.review.rating !== undefined) {
+        lines.push(`  rating: ${metadata.review.rating}`);
+      }
+    }
   }
 
   private addSEOAndSocialMetadata(lines: string[], metadata: ArticleMetadata): void {
