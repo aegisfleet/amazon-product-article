@@ -36,6 +36,13 @@ export class Logger {
     return Logger.instance;
   }
 
+  /**
+   * Resets the singleton instance. Used for testing purposes.
+   */
+  public static resetInstance(): void {
+    Logger.instance = undefined as any;
+  }
+
   public setLogLevel(level: LogLevel): void {
     this.logLevel = level;
   }

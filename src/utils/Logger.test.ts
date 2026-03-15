@@ -8,7 +8,7 @@ describe('Logger', () => {
 
   beforeEach(() => {
     // Clear the singleton instance before each test to ensure clean state
-    (Logger as any).instance = undefined;
+    Logger.resetInstance();
 
     consoleLogSpy = jest.spyOn(console, 'log').mockImplementation(() => {});
     consoleWarnSpy = jest.spyOn(console, 'warn').mockImplementation(() => {});
@@ -38,7 +38,7 @@ describe('Logger', () => {
       logger.info('test info');
 
       expect(consoleLogSpy).toHaveBeenCalledTimes(1); // Only info should be logged
-      expect(consoleLogSpy.mock.calls[0][0]).toContain('[INFO]');
+      expect((consoleLogSpy.mock.calls[0] as string[])[0]).toContain('[INFO]');
     });
 
     it('should initialize with level from process.env.LOG_LEVEL', () => {
@@ -47,7 +47,7 @@ describe('Logger', () => {
 
       logger.debug('test debug');
       expect(consoleLogSpy).toHaveBeenCalledTimes(1);
-      expect(consoleLogSpy.mock.calls[0][0]).toContain('[DEBUG]');
+      expect((consoleLogSpy.mock.calls[0] as string[])[0]).toContain('[DEBUG]');
     });
 
     it('should fallback to INFO if process.env.LOG_LEVEL is invalid', () => {
@@ -69,7 +69,7 @@ describe('Logger', () => {
 
       expect(consoleLogSpy).not.toHaveBeenCalled();
       expect(consoleWarnSpy).toHaveBeenCalledTimes(1);
-      expect(consoleWarnSpy.mock.calls[0][0]).toContain('[WARN]');
+      expect((consoleWarnSpy.mock.calls[0] as string[])[0]).toContain('[WARN]');
     });
   });
 
@@ -84,25 +84,25 @@ describe('Logger', () => {
     it('should log debug messages using console.log', () => {
       logger.debug('debug msg');
       expect(consoleLogSpy).toHaveBeenCalledTimes(1);
-      expect(consoleLogSpy.mock.calls[0][0]).toContain('[DEBUG] debug msg');
+      expect((consoleLogSpy.mock.calls[0] as string[])[0]).toContain('[DEBUG] debug msg');
     });
 
     it('should log info messages using console.log', () => {
       logger.info('info msg');
       expect(consoleLogSpy).toHaveBeenCalledTimes(1);
-      expect(consoleLogSpy.mock.calls[0][0]).toContain('[INFO] info msg');
+      expect((consoleLogSpy.mock.calls[0] as string[])[0]).toContain('[INFO] info msg');
     });
 
     it('should log warn messages using console.warn', () => {
       logger.warn('warn msg');
       expect(consoleWarnSpy).toHaveBeenCalledTimes(1);
-      expect(consoleWarnSpy.mock.calls[0][0]).toContain('[WARN] warn msg');
+      expect((consoleWarnSpy.mock.calls[0] as string[])[0]).toContain('[WARN] warn msg');
     });
 
     it('should log error messages using console.error', () => {
       logger.error('error msg');
       expect(consoleErrorSpy).toHaveBeenCalledTimes(1);
-      expect(consoleErrorSpy.mock.calls[0][0]).toContain('[ERROR] error msg');
+      expect((consoleErrorSpy.mock.calls[0] as string[])[0]).toContain('[ERROR] error msg');
     });
   });
 
@@ -115,24 +115,22 @@ describe('Logger', () => {
     });
 
     it('should include timestamp in logs', () => {
-      // Mock Date to return a consistent value
-      const RealDate = Date;
-      const mockDate = new RealDate('2023-01-01T00:00:00.000Z');
-
-      // Override Date constructor for new Date() calls
-      const DateSpy = jest.spyOn(globalThis, 'Date').mockImplementation(() => mockDate as any);
+      jest.useFakeTimers();
+      const mockDate = new Date('2023-01-01T00:00:00.000Z');
+      jest.setSystemTime(mockDate);
 
       logger.info('test');
 
-      expect(consoleLogSpy.mock.calls[0][0]).toContain('[2023-01-01T00:00:00.000Z]');
-      DateSpy.mockRestore();
+      expect((consoleLogSpy.mock.calls[0] as string[])[0]).toContain('[2023-01-01T00:00:00.000Z]');
+      
+      jest.useRealTimers();
     });
 
     it('should format data correctly', () => {
       const testData = { key: 'value', num: 123 };
       logger.info('msg', testData);
 
-      expect(consoleLogSpy.mock.calls[0][0]).toContain(`Data: ${JSON.stringify(testData)}`);
+      expect((consoleLogSpy.mock.calls[0] as string[])[0]).toContain(`Data: ${JSON.stringify(testData)}`);
     });
 
     it('should format Error correctly', () => {
