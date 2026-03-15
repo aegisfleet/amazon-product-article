@@ -34,6 +34,7 @@ export interface ArticleMetadata {
     target_users: string[];
     warnings: string[];
     specs: TechnicalSpecs;
+    availability?: string | undefined;
   };
 }
 

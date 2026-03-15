@@ -96,6 +96,11 @@
                 💰 {{ .Params.price }}
             </span>
             {{ end }}
+            {{ with .Params.availability }}
+            <span class="card-availability">
+                🚚 {{ . }}
+            </span>
+            {{ end }}
             {{ if .Params.score }}
             {{ $score := .Params.score | int }}
             {{ $scoreClass := "score-fair" }}

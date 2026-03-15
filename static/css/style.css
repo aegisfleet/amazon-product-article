@@ -2892,14 +2892,23 @@ a.competitor-preview:hover {
   font-weight: 700;
 }
 
-.hero-tag-stock {
+.hero-tag-stock,
+.hero-tag-availability,
+.card-availability {
   background: #ecfdf5;
   border-color: #10b981;
   color: #059669;
+  padding: 0.15rem 0.5rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid #10b981;
+  font-size: 0.75rem;
   font-weight: 600;
+  display: inline-block;
 }
 
-[data-theme="dark"] .hero-tag-stock {
+[data-theme="dark"] .hero-tag-stock,
+[data-theme="dark"] .hero-tag-availability,
+[data-theme="dark"] .card-availability {
   background: rgba(16, 185, 129, 0.25);
   border-color: #10b981;
   color: #34d399;
