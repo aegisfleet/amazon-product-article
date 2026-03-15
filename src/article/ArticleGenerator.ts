@@ -28,6 +28,8 @@ import {
 } from './ArticleConstants';
 
 export class ArticleGenerator {
+  private static readonly REVIEW_AUTHOR_NAME = '編集部';
+
   private readonly logger: Logger;
   private readonly defaultTemplate: ArticleTemplate;
   private readonly affiliateManager: AffiliateLinkManager;
@@ -204,14 +206,31 @@ export class ArticleGenerator {
       availability: metadata.availability,
     };
 
-    metadata.review = {
-      author: metadata.manufacturer || '編集部',
-      datePublished: metadata.publishDate.toISOString().slice(0, 10),
-      summary: investigation.analysis.userImpression || metadata.description,
-      ...(metadata.rating === undefined ? {} : { rating: metadata.rating }),
-    };
+    const reviewSummary = this.extractVerifiedReviewSummary(investigation);
+    if (reviewSummary) {
+      metadata.review = {
+        author: ArticleGenerator.REVIEW_AUTHOR_NAME,
+        datePublished: metadata.publishDate.toISOString().slice(0, 10),
+        summary: reviewSummary,
+        ...(metadata.rating === undefined ? {} : { rating: metadata.rating }),
+      };
+    }
 
     return metadata;
+  }
+
+  private extractVerifiedReviewSummary(investigation: InvestigationResult): string | undefined {
+    const verifiedPrimarySource = investigation.analysis.sources.find(
+      (source) =>
+        source.evidenceType === 'primary' &&
+        source.tier === 'high' &&
+        source.notes &&
+        source.notes.trim().length > 0 &&
+        source.conflictOfInterest !== 'possible' &&
+        source.conflictOfInterest !== 'unknown',
+    );
+
+    return verifiedPrimarySource?.notes?.trim();
   }
 
   /**
