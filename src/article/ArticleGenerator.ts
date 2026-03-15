@@ -152,6 +152,7 @@ export class ArticleGenerator {
       featured: this.shouldBeFeatured(product, investigation),
       mobileOptimized: true,
       seoKeywords,
+      is_prime: product.isPrimeEligible || false,
       affiliate_url: affiliateUrl,
     };
 
@@ -349,8 +350,11 @@ export class ArticleGenerator {
     if (productDetail.availability) {
       infoRows.push(`| 在庫状況 | ${this.escapeHtml(productDetail.availability)} |`);
     }
+    if (productDetail.merchantName) {
+      infoRows.push(`| 販売元 | ${this.escapeHtml(productDetail.merchantName)} |`);
+    }
     if (productDetail.isPrimeEligible) {
-      infoRows.push(`| Prime対応 | ✓ 対応 |`);
+      infoRows.push(`| Prime対応 | ✅ 対応 |`);
     }
 
     // EAN/ISBN/UPC

@@ -34,7 +34,8 @@ export interface Product {
     count: number;
   };
   isPrimeEligible?: boolean;
-  availability?: string;
+  availability?: string | undefined;
+  merchantName?: string | undefined;
   brand?: string;
 }
 
@@ -53,7 +54,8 @@ export interface ProductDetail extends Product {
   brand?: string;
   releaseDate?: string;
   isPrimeEligible?: boolean;
-  availability?: string;
+  availability?: string | undefined;
+  merchantName?: string | undefined;
   externalIds?: {
     ean?: string;
     isbn?: string;
