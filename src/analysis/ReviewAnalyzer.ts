@@ -457,12 +457,12 @@ export class ReviewAnalyzer {
 
     const lastVerifiedAt =
       result.analysis.lastInvestigated ??
-      this.extractLatestPublishedAt(sources.map((source) => source.publishedAt).filter((date): date is string => !!date));
+      this.extractLatestPublishedAt(
+        sources.map((source) => source.publishedAt).filter((date): date is string => !!date),
+      );
 
     const hasBothPolarities =
-      result.analysis.positivePoints.length > 0 &&
-      result.analysis.negativePoints.length > 0 &&
-      totalCount > 0;
+      result.analysis.positivePoints.length > 0 && result.analysis.negativePoints.length > 0 && totalCount > 0;
     const contradictionRate = hasBothPolarities
       ? Math.min(result.analysis.positivePoints.length, result.analysis.negativePoints.length) / totalCount
       : 0;
@@ -488,16 +488,11 @@ export class ReviewAnalyzer {
     }
 
     const dataVolumeScore = Math.min(totalCount / 12, 1);
-    const diversityScore =
-      independentSourceRatio === null ? 0 : Math.min(0.4 + independentSourceRatio * 0.6, 1);
+    const diversityScore = independentSourceRatio === null ? 0 : Math.min(0.4 + independentSourceRatio * 0.6, 1);
     const recencyScore = this.calculateRecencyScore(lastVerifiedAt);
     const contradictionScore = 1 - Math.min(contradictionRate, 0.9);
 
-    const score =
-      dataVolumeScore * 0.35 +
-      diversityScore * 0.25 +
-      recencyScore * 0.2 +
-      contradictionScore * 0.2;
+    const score = dataVolumeScore * 0.35 + diversityScore * 0.25 + recencyScore * 0.2 + contradictionScore * 0.2;
 
     return {
       confidence: Math.max(0, Math.min(score, 1)),
