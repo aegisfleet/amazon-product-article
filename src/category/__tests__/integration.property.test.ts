@@ -1,3 +1,4 @@
+import * as os from 'node:os';
 import * as fs from 'node:fs';
 import * as path from 'node:path';
 import * as fc from 'fast-check';
@@ -6,16 +7,19 @@ import { ProductCounter } from '../ProductCounter';
 import type { CategoryGroup } from '../types';
 
 describe('Integration Properties', () => {
-  const tempDir = path.join(__dirname, 'temp_integration_props');
-  const contentDir = path.join(tempDir, 'content');
+  let tempDir: string;
+  let contentDir: string;
 
   beforeAll(() => {
-    if (!fs.existsSync(tempDir)) fs.mkdirSync(tempDir, { recursive: true });
+    tempDir = fs.mkdtempSync(path.join(os.tmpdir(), 'integration-prop-test-'));
+    contentDir = path.join(tempDir, 'content');
     if (!fs.existsSync(contentDir)) fs.mkdirSync(contentDir, { recursive: true });
   });
 
   afterAll(() => {
-    if (fs.existsSync(tempDir)) fs.rmSync(tempDir, { recursive: true, force: true });
+    if (tempDir && fs.existsSync(tempDir)) {
+      fs.rmSync(tempDir, { recursive: true, force: true });
+    }
   });
 
   const clearDirs = () => {

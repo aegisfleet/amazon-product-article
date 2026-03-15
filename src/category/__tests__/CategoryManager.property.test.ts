@@ -1,3 +1,4 @@
+import * as os from 'node:os';
 import * as fs from 'node:fs';
 import * as path from 'node:path';
 import * as fc from 'fast-check';
@@ -5,16 +6,14 @@ import { CategoryManager } from '../CategoryManager';
 import { ProductCounter } from '../ProductCounter';
 
 describe('CategoryManager Properties', () => {
-  const tempDir = path.join(__dirname, 'temp_cm_props');
+  let tempDir: string;
 
   beforeAll(() => {
-    if (!fs.existsSync(tempDir)) {
-      fs.mkdirSync(tempDir, { recursive: true });
-    }
+    tempDir = fs.mkdtempSync(path.join(os.tmpdir(), 'category-manager-prop-test-'));
   });
 
   afterAll(() => {
-    if (fs.existsSync(tempDir)) {
+    if (tempDir && fs.existsSync(tempDir)) {
       fs.rmSync(tempDir, { recursive: true, force: true });
     }
   });

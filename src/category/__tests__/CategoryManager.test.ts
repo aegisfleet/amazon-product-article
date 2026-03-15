@@ -1,19 +1,18 @@
+import * as os from 'node:os';
 import * as fs from 'node:fs';
 import * as path from 'node:path';
 import { CategoryManager } from '../CategoryManager';
 import { ProductCounter } from '../ProductCounter';
 
 describe('CategoryManager', () => {
-  const tempDir = path.join(__dirname, 'temp_category_manager');
+  let tempDir: string;
 
   beforeAll(() => {
-    if (!fs.existsSync(tempDir)) {
-      fs.mkdirSync(tempDir, { recursive: true });
-    }
+    tempDir = fs.mkdtempSync(path.join(os.tmpdir(), 'category-manager-test-'));
   });
 
   afterAll(() => {
-    if (fs.existsSync(tempDir)) {
+    if (tempDir && fs.existsSync(tempDir)) {
       fs.rmSync(tempDir, { recursive: true, force: true });
     }
   });

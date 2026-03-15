@@ -28,6 +28,7 @@
 {{ end }}
 {{ end }}
 {{ $allArticles := where (where .Site.RegularPages "Section" "articles") "Params.asin" "!=" $currentAsin }}
+{{ $shownAsins := slice $currentAsin }}
 
 <div id="product-tracking-info" 
      data-asin="{{ .Params.asin }}" 
@@ -104,8 +105,10 @@
             <section class="related-section">
                 <h3 class="related-section-title">📂 同じカテゴリの商品</h3>
                 <div class="related-grid">
-                    {{ $rankedRelated := partial "product-composite-ranked-pages.html" (dict "pages" $related "randomize" true) }}
+                    {{ $relatedExcluded := where $related "Params.asin" "not in" $shownAsins }}
+                    {{ $rankedRelated := partial "product-composite-ranked-pages.html" (dict "pages" $relatedExcluded "randomize" true) }}
                     {{ range first 4 $rankedRelated }}
+                    {{ $shownAsins = $shownAsins | append .Params.asin }}
                     <a href="{{ .RelPermalink }}" class="pickup-card" data-track-product="1" data-asin="{{ .Params.asin }}" data-category="{{ if .Params.categories }}{{ index .Params.categories 0 }}{{ else }}{{ .Params.category }}{{ end }}" data-price-bucket="{{ if .Params.price }}{{ $itemPrice := index (findRE "[0-9]+" (replace .Params.price "," "")) 0 | int }}{{ if lt $itemPrice 3000 }}under-3000{{ else if lt $itemPrice 7000 }}3000-6999{{ else if lt $itemPrice 15000 }}7000-14999{{ else if lt $itemPrice 30000 }}15000-29999{{ else }}30000-plus{{ end }}{{ else }}unknown{{ end }}" data-price="{{ .Params.price }}">
                         <div class="pickup-card-image">
                             {{ if .Params.images }}
@@ -214,8 +217,10 @@
         style="margin-top: var(--spacing-lg); border-top: 1px solid var(--color-border); padding-top: var(--spacing-lg);">
         <h3 class="related-section-title">💰 同価格帯のおすすめ</h3>
         <div class="related-grid">
-            {{ $rankedSamePriceRange := partial "product-composite-ranked-pages.html" (dict "pages" $samePriceRange "randomize" true) }}
+            {{ $samePriceRangeExcluded := where $samePriceRange "Params.asin" "not in" $shownAsins }}
+            {{ $rankedSamePriceRange := partial "product-composite-ranked-pages.html" (dict "pages" $samePriceRangeExcluded "randomize" true) }}
             {{ range first 4 $rankedSamePriceRange }}
+            {{ $shownAsins = $shownAsins | append .Params.asin }}
             <a href="{{ .RelPermalink }}" class="pickup-card" data-track-product="1" data-asin="{{ .Params.asin }}" data-category="{{ if .Params.categories }}{{ index .Params.categories 0 }}{{ else }}{{ .Params.category }}{{ end }}" data-price-bucket="{{ if .Params.price }}{{ $itemPrice := index (findRE "[0-9]+" (replace .Params.price "," "")) 0 | int }}{{ if lt $itemPrice 3000 }}under-3000{{ else if lt $itemPrice 7000 }}3000-6999{{ else if lt $itemPrice 15000 }}7000-14999{{ else if lt $itemPrice 30000 }}15000-29999{{ else }}30000-plus{{ end }}{{ else }}unknown{{ end }}" data-price="{{ .Params.price }}">
                 <div class="pickup-card-image">
                     {{ if .Params.images }}
@@ -266,7 +271,8 @@
         style="margin-top: var(--spacing-lg); border-top: 1px solid var(--color-border); padding-top: var(--spacing-lg);">
         <h3 class="related-section-title">⭐ 同スコア帯の人気商品</h3>
         <div class="related-grid">
-            {{ $rankedSameScoreRange := partial "product-composite-ranked-pages.html" (dict "pages" $sameScoreRange "randomize" true) }}
+            {{ $sameScoreRangeExcluded := where $sameScoreRange "Params.asin" "not in" $shownAsins }}
+            {{ $rankedSameScoreRange := partial "product-composite-ranked-pages.html" (dict "pages" $sameScoreRangeExcluded "randomize" true) }}
             {{ range first 4 $rankedSameScoreRange }}
             <a href="{{ .RelPermalink }}" class="pickup-card" data-track-product="1" data-asin="{{ .Params.asin }}" data-category="{{ if .Params.categories }}{{ index .Params.categories 0 }}{{ else }}{{ .Params.category }}{{ end }}" data-price-bucket="{{ if .Params.price }}{{ $itemPrice := index (findRE "[0-9]+" (replace .Params.price "," "")) 0 | int }}{{ if lt $itemPrice 3000 }}under-3000{{ else if lt $itemPrice 7000 }}3000-6999{{ else if lt $itemPrice 15000 }}7000-14999{{ else if lt $itemPrice 30000 }}15000-29999{{ else }}30000-plus{{ end }}{{ else }}unknown{{ end }}" data-price="{{ .Params.price }}">
                 <div class="pickup-card-image">
