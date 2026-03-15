@@ -1469,6 +1469,8 @@ ${recommendationMessage}`;
       sentimentText = 'ネガティブ';
     }
 
+    const confidenceLine = this.formatConfidenceLine(sentiment);
+
     return `
 ### 📊 レビュー傾向分析
 
@@ -1481,7 +1483,28 @@ ${recommendationMessage}`;
 - サポート: ${(sentiment.aspects.support * 100).toFixed(1)}%
 - 信頼性: ${(sentiment.aspects.reliability * 100).toFixed(1)}%
 
-**信頼度**: ${(sentiment.confidence * 100).toFixed(1)}%`;
+${confidenceLine}`;
+  }
+
+  private formatConfidenceLine(sentiment: ReviewAnalysisResult['overallSentiment']): string {
+    const summary = this.buildConfidenceFactorSummary(sentiment);
+
+    if (sentiment.confidence === null || sentiment.confidenceStatus === 'pending') {
+      return `**信頼度**: 評価保留（${summary}）`;
+    }
+
+    return `**信頼度**: ${(sentiment.confidence * 100).toFixed(1)}%（${summary}）`;
+  }
+
+  private buildConfidenceFactorSummary(sentiment: ReviewAnalysisResult['overallSentiment']): string {
+    const factors = sentiment.confidenceFactors;
+    const independentRatioText =
+      factors.independentSourceRatio === null ? 'N/A' : `${(factors.independentSourceRatio * 100).toFixed(0)}%`;
+    const contradictionText =
+      factors.contradictionRate === null ? 'N/A' : `${(factors.contradictionRate * 100).toFixed(0)}%`;
+    const lastVerifiedAtText = factors.lastVerifiedAt ?? '未確認';
+
+    return `データ件数: ${factors.dataPointCount} / ソース件数: ${factors.sourceCount} / 独立ソース比率: ${independentRatioText} / 最終確認日: ${lastVerifiedAtText} / 矛盾率: ${contradictionText}`;
   }
 
   private getScoreDescription(score: number): string {
