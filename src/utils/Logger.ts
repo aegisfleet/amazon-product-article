@@ -40,7 +40,7 @@ export class Logger {
    * Resets the singleton instance. Used for testing purposes.
    */
   public static resetInstance(): void {
-    Logger.instance = undefined as any;
+    Logger.instance = undefined as unknown as Logger;
   }
 
   public setLogLevel(level: LogLevel): void {

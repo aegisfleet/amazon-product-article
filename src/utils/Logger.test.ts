@@ -138,8 +138,8 @@ describe('Logger', () => {
       testError.stack = 'Test Error Stack';
 
       logger.error('msg', testError);
-
-      const logString = consoleErrorSpy.mock.calls[0][0];
+                                                                     
+      const logString = (consoleErrorSpy.mock.calls[0] as string[])[0];
       expect(logString).toContain('Error: Test Error Message');
       expect(logString).toContain('Stack: Test Error Stack');
     });
@@ -147,8 +147,8 @@ describe('Logger', () => {
     it('should format unknown error correctly', () => {
       const unknownError = { message: 'Some other error' };
       logger.error('msg', unknownError);
-
-      const logString = consoleErrorSpy.mock.calls[0][0];
+                                                                     
+      const logString = (consoleErrorSpy.mock.calls[0] as string[])[0];
       expect(logString).toContain(`Data: ${JSON.stringify(unknownError)}`);
       expect(logString).not.toContain('Stack:');
     });
