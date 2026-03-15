@@ -21,9 +21,9 @@ export const InvestigationFileSchema = z.object({
       sources: z.array(
         z.object({
           name: z.string(),
-          url: z.string(),
-          tier: z.enum(['high', 'medium', 'low']),
-          evidenceType: z.enum(['primary', 'secondary']),
+          url: z.string().nullable().optional(),
+          tier: z.enum(['high', 'medium', 'low']).optional(),
+          evidenceType: z.enum(['primary', 'secondary']).optional(),
           publishedAt: z.string().optional(),
           author: z.string().optional(),
           conflictOfInterest: z.enum(['none', 'possible', 'disclosed', 'unknown']).optional(),

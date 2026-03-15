@@ -161,9 +161,9 @@ export interface UserStory {
 
 export interface SourceReference {
   name: string;
-  url: string;
-  tier: 'high' | 'medium' | 'low';
-  evidenceType: 'primary' | 'secondary';
+  url?: string | null;
+  tier?: 'high' | 'medium' | 'low';
+  evidenceType?: 'primary' | 'secondary';
   publishedAt?: string;
   author?: string;
   conflictOfInterest?: 'none' | 'possible' | 'disclosed' | 'unknown';

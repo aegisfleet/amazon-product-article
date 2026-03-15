@@ -491,8 +491,8 @@ ${infoRows.join('\n')}
         };
 
         const reasonParts = [
-          `信頼度: ${tierLabel[source.tier]}`,
-          `情報種別: ${evidenceTypeLabel[source.evidenceType]}`,
+          source.tier ? `信頼度: ${tierLabel[source.tier]}` : null,
+          source.evidenceType ? `情報種別: ${evidenceTypeLabel[source.evidenceType]}` : null,
           source.publishedAt ? `公開日: ${source.publishedAt}` : null,
           source.author ? `執筆主体: ${source.author}` : null,
           source.conflictOfInterest ? conflictLabel[source.conflictOfInterest] : null,
