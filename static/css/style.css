@@ -311,14 +311,22 @@ a:hover {
   margin-bottom: var(--spacing-sm);
 }
 
-.card-spec-tag {
+.spec-tag-base,
+.card-spec-tag,
+.hero-tag {
   font-size: 0.75rem;
-  padding: 0.15rem 0.5rem;
-  background: var(--bg-tag);
-  color: var(--color-text-muted);
+  font-weight: 500;
+  padding: 0.2rem 0.5rem;
   border-radius: var(--radius-sm);
   border: 1px solid var(--color-border);
+  line-height: 1.35;
   word-break: break-word;
+}
+
+.card-spec-tag {
+  background: var(--bg-tag);
+  color: var(--color-text-muted);
+  display: inline-flex;
 }
 
 .card-title {
@@ -2962,12 +2970,7 @@ a.competitor-preview:hover {
   display: inline-flex;
   align-items: center;
   gap: var(--spacing-xs);
-  padding: 4px var(--spacing-xs);
-  background: var(--color-bg-body);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-md);
-  font-size: 0.8rem;
-  font-weight: 500;
+  background: var(--bg-tag);
   color: var(--color-text-muted);
 }
 
@@ -3072,6 +3075,19 @@ a.competitor-preview:hover {
 
   .hero-meta-tags {
     margin-bottom: var(--spacing-xs);
+  }
+
+  .card-specs,
+  .hero-meta-tags {
+    gap: 0.2rem;
+    margin-bottom: var(--spacing-xs);
+  }
+
+  .card-spec-tag,
+  .hero-tag,
+  .spec-tag-base {
+    font-size: 0.7rem;
+    padding: 0.12rem 0.42rem;
   }
 
   .hero-description {
