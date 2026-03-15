@@ -152,13 +152,68 @@
 {{ if gt (len $productImages) 0 }}
   {{ $productSchema = merge $productSchema (dict "image" $productImages) }}
 {{ end }}
-{{ if isset .Params "rating" }}
+{{ $ratingValue := 0.0 }}
+{{ $ratingCount := 0 }}
+{{ $hasRatingValue := false }}
+
+{{/* ratingValue: rating(5段階) > score(100点を5段階換算) */}}
+{{ with .Params.rating }}
+  {{ $parsedRating := float . }}
+  {{ if and (gt $parsedRating 0) (le $parsedRating 5) }}
+    {{ $ratingValue = $parsedRating }}
+    {{ $hasRatingValue = true }}
+  {{ end }}
+{{ end }}
+
+{{ if not $hasRatingValue }}
+  {{ with .Params.score }}
+    {{ $parsedScore := float . }}
+    {{ if and (gt $parsedScore 0) (le $parsedScore 100) }}
+      {{ $ratingValue = div (math.Round (mul (div $parsedScore 20) 10)) 10 }}
+      {{ $hasRatingValue = true }}
+    {{ end }}
+  {{ end }}
+{{ end }}
+
+{{/* ratingCount: rating_count優先（snake_case / camelCase 両対応） */}}
+{{ with .Params.rating_count }}
+  {{ $parsedCount := int . }}
+  {{ if gt $parsedCount 0 }}
+    {{ $ratingCount = $parsedCount }}
+  {{ end }}
+{{ end }}
+{{ if le $ratingCount 0 }}
+  {{ with .Params.ratingCount }}
+    {{ $parsedCount := int . }}
+    {{ if gt $parsedCount 0 }}
+      {{ $ratingCount = $parsedCount }}
+    {{ end }}
+  {{ end }}
+{{ end }}
+{{ if le $ratingCount 0 }}
+  {{ with .Params.review_count }}
+    {{ $parsedCount := int . }}
+    {{ if gt $parsedCount 0 }}
+      {{ $ratingCount = $parsedCount }}
+    {{ end }}
+  {{ end }}
+{{ end }}
+{{ if le $ratingCount 0 }}
+  {{ with .Params.reviewCount }}
+    {{ $parsedCount := int . }}
+    {{ if gt $parsedCount 0 }}
+      {{ $ratingCount = $parsedCount }}
+    {{ end }}
+  {{ end }}
+{{ end }}
+
+{{ if and $hasRatingValue (gt $ratingCount 0) }}
   {{ $productSchema = merge $productSchema (dict "aggregateRating" (dict
     "@type" "AggregateRating"
-    "ratingValue" .Params.rating
+    "ratingValue" $ratingValue
     "bestRating" "5"
     "worstRating" "1"
-    "ratingCount" "1"
+    "ratingCount" $ratingCount
   )) }}
 {{ end }}
 <script type="application/ld+json">{{ $productSchema | jsonify | safeJS }}</script>
