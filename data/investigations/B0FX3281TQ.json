@@ -42,92 +42,166 @@
     "userImpression": "曲面モニターユーザーにとっての「最適解」の一つ。これまで高価なBenQ製品しか選択肢がなかった市場に、機能面で肉薄しつつ価格を抑えたキラーアイテムとして受け入れられている。特にバックライトと曲面対応デュアルバーの組み合わせは評価が高い。",
     "sources": [
       {
+        "id": "source-1",
         "name": "Amazon Product Page Details",
         "url": "https://www.amazon.co.jp/dp/B0FX3281TQ",
-        "credibility": "High"
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-03-16",
+        "author": "メーカー公式",
+        "conflictOfInterest": "disclosed",
+        "notes": "公式仕様、画像、価格確認"
       },
       {
-        "name": "Market Comparison (Xiaomi/Yeelight)",
-        "url": null,
-        "credibility": "Medium"
+        "id": "source-2",
+        "name": "Amazon Product Search (Electronics)",
+        "url": "https://webservices.amazon.co.jp/creators/v1/items",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-03-16",
+        "author": "Amazon Creators API",
+        "conflictOfInterest": "none",
+        "notes": "競合商品の検索、価格およびASINの取得"
       }
     ],
-    "lastInvestigated": "2026-01-21",
+    "claims": [
+      {
+        "claim": "曲面モニター（1000R-3000R）に適合するデュアルライトバー構造",
+        "category": "comparativeAdvantage",
+        "confidence": "high",
+        "supportingSourceIds": ["source-1"],
+        "crossChecked": false,
+        "notes": "メーカー独自の機構としての主張。画像と仕様から確認可能。"
+      },
+      {
+        "claim": "演色評価数Ra98の高品質LED採用",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": ["source-1"],
+        "crossChecked": false,
+        "notes": "公式スペックとして確認。競合と同等またはそれ以上の水準。"
+      }
+    ],
+    "lastInvestigated": "2026-03-16",
     "competitiveAnalysis": [
       {
-        "name": "BenQ ScreenBar Halo",
-        "asin": null,
-        "priceComparison": "約19,000円〜。本製品の2倍以上の価格。",
+        "name": "JAPANNEXT モニターライト(湾曲) JN-ML-R450R",
+        "asin": "B0F61RSTW5",
+        "priceComparison": "約10,000円。本製品より約1,000円高い。",
         "featureComparison": [
-          "質感とビルドクオリティはBenQが上",
-          "バックライト機能は同等",
-          "無線リモコンの操作性はBenQが高い評価を得ている"
+          "湾曲モニター対応",
+          "自動調光機能あり",
+          "無線リモコン付属"
         ],
         "differentiators": [
-          "圧倒的なブランド信頼性と高級感",
-          "特許取得のクリップ機構"
+          "国内メーカーの2年保証による安心感",
+          "バックライトの有無は不明瞭"
         ]
       },
       {
-        "name": "Yeelight LED Screen Light Bar Pro",
-        "asin": "B09NLQX33B",
-        "priceComparison": "約14,000円。本製品より高い。",
+        "name": "BenQ ScreenBar スクリーンバー モニター掛け式ライト",
+        "asin": "B0785D93KD",
+        "priceComparison": "約14,000円。本製品より5,000円ほど高い。",
         "featureComparison": [
-          "Razer Chroma等のゲーム連動機能あり",
-          "曲面対応だがバー自体は直線",
-          "バックライトあり"
+          "直管タイプ",
+          "自動調光センサー搭載",
+          "有線（本体タッチ操作）モデル"
         ],
         "differentiators": [
-          "スマートホーム連携（Alexa/Google Home）",
-          "ゲーミングRGBライティング"
+          "圧倒的なブランド信頼性と高品質な質感",
+          "特許取得のクリップ機構による安定性"
         ]
       },
       {
-        "name": "Xiaomi Mi Monitor Light Bar",
-        "asin": "B08W2C5W59",
-        "priceComparison": "約5,500円。本製品より安い。",
+        "name": "Quntis モニターライト Glow RGB",
+        "asin": "B0D7NWBZV6",
+        "priceComparison": "約7,900円。本製品より約1,100円安い。",
         "featureComparison": [
-          "バックライトなし",
-          "曲面モニター専用設計ではない（直線のバー）",
-          "リモコン付き"
+          "RGBバックライト搭載",
+          "無線リモコン付属",
+          "ゲーミング向けの雰囲気作り"
         ],
         "differentiators": [
-          "シンプルさ",
-          "低価格"
+          "RGBライティングによるゲーミング特化",
+          "曲面専用設計（デュアルバー）ではない"
+        ]
+      },
+      {
+        "name": "Quntis モニターライト Basic L205-QU",
+        "asin": "B0G5YPH9SG",
+        "priceComparison": "約4,700円。本製品の約半額。",
+        "featureComparison": [
+          "直管ベーシックモデル",
+          "自動調光なし（手動無段階調整）",
+          "リモコンなし（本体操作）"
+        ],
+        "differentiators": [
+          "低価格",
+          "シンプルな機能構成"
+        ]
+      },
+      {
+        "name": "サンワダイレクト モニターライト 800-LED090",
+        "asin": "B0DKMRK78V",
+        "priceComparison": "約6,500円。本製品より約2,500円安い。",
+        "featureComparison": [
+          "湾曲モニター対応",
+          "センサー搭載",
+          "3段階調色"
+        ],
+        "differentiators": [
+          "国内ブランドの安価な曲面対応モデル",
+          "バックライト機能はなし"
+        ]
+      },
+      {
+        "name": "エレコム モニターライト スクリーンバー DE-ML01BK",
+        "asin": "B0B11Q33HP",
+        "priceComparison": "約4,500円。本製品の半額。",
+        "featureComparison": [
+          "直管タイプ",
+          "自動調光機能",
+          "メモリー機能"
+        ],
+        "differentiators": [
+          "国内ブランドの低価格モデル",
+          "リモコンやバックライト等の付加機能はなし"
         ]
       }
     ],
     "recommendation": {
       "targetUsers": [
         "1000R〜3000Rの曲面モニターを使用しているユーザー",
-        "BenQ ScreenBar Haloが欲しいが予算オーバーな人",
-        "間接照明（バックライト）でデスクの雰囲気を良くしたいゲーマー"
+        "BenQ ScreenBar Haloなどのハイエンド機が欲しいが予算を抑えたい人",
+        "間接照明（バックライト）でデスクの雰囲気を良くし、目の負担を減らしたい人"
       ],
       "pros": [
         "曲面モニターに特化したデュアルライトバー構造による完璧なフィット感",
-        "バックライト搭載による目の保護と雰囲気作り",
-        "競合ハイエンド機に迫る機能を持ちながら1万円を切るコストパフォーマンス"
+        "前面ライトと独立制御可能なバックライト搭載による目の保護と雰囲気作り",
+        "高演色Ra98、自動調光、無線リモコンなどハイエンドに迫る機能を1万円未満で実現"
       ],
       "cons": [
-        "電源要件がシビアな場合がある（USBアダプタ推奨）",
-        "直線モニターに使用すると逆に形状が合わない可能性がある"
+        "電源供給に5V/2A以上の出力が必要（別途USB充電器を推奨）",
+        "直線モニターに使用すると逆に形状が合わず反射の原因になる可能性がある"
       ],
       "score": 92,
-      "scoreRationale": "[基本点: 70]\n[加点: +15] (機能満載かつ競合ハイエンドの半額以下という圧倒的コスパ)\n[加点: +5] (曲面モニター専用のデュアルバー機構とバックライト)\n[加点: +2] (Ra98の高演色性)\n[減点: 0] (目立った欠点は見当たらないが、ブランド力でBenQに劣る程度)\n[合計: 92]"
+      "scoreRationale": "[基本点: 70]\n[加点: +15] (曲面特化のデュアルバー、バックライト、無線リモコン等のハイエンド機能が1万円未満の圧倒的コスパ)\n[加点: +5] (バイアスライティングと映り込み防止による目への配慮)\n[加点: +2] (クリエイター用途にも耐えるRa98の高演色性)\n[合計: 92]"
     },
     "technicalSpecs": {
       "dimensions": {
         "width": "66cm (ライト幅)",
-        "weight": "約300g (推測)"
+        "weight": "約300g (0.66ポンド)"
       },
-      "power": "5V/2A (USB Type-C給電)",
+      "power": "5V/2A (USB Type-C給電推奨)",
       "capacity": null,
       "other": [
         "演色性 Ra98",
         "色温度 3000K-6500K",
         "無線リモコン (2.4GHz)",
         "自動調光センサー搭載",
-        "デュアル光源 (フロント/バック)"
+        "デュアル光源 (フロント/バック)",
+        "対応モニター曲率: 1000R〜3000R",
+        "対応モニター厚さ: 最大約8cmまで"
       ]
     }
   }
