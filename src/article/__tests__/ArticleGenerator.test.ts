@@ -204,6 +204,14 @@ describe('ArticleGenerator', () => {
           reliability: 0.9,
         },
         confidence: 0.8,
+        confidenceStatus: 'scored',
+        confidenceFactors: {
+          dataPointCount: 10,
+          sourceCount: 3,
+          independentSourceRatio: 0.67,
+          lastVerifiedAt: '2025-01-10',
+          contradictionRate: 0.2,
+        },
       },
       keyThemes: ['品質', '価格', '使いやすさ'],
     };
@@ -260,9 +268,36 @@ describe('ArticleGenerator', () => {
         '<span class="mobile-list-item">Amazon Creators API （信頼度: 高 / 情報種別: 一次情報 / 公開日: 2025-01-01 / 執筆主体: Amazon公式 / 利害関係を開示 / 評価理由: 公式一次資料）</span>',
       );
       expect(result.content).not.toContain('[Amazon Creators API](https://webservices.amazon.co.jp/creators/v1/items)');
+      expect(result.content).toContain(
+        '**信頼度**: 80.0%（データ件数: 10 / ソース件数: 3 / 独立ソース比率: 67% / 最終確認日: 2025-01-10 / 矛盾率: 20%）',
+      );
 
       expect(result.wordCount).toBeGreaterThan(0);
       expect(result.sections).toHaveLength(6);
+    });
+
+    it('should fallback to 評価保留 when confidence is not calculable', async () => {
+      const pendingReviewAnalysis = {
+        ...mockReviewAnalysis,
+        overallSentiment: {
+          ...mockReviewAnalysis.overallSentiment,
+          confidence: null,
+          confidenceStatus: 'pending' as const,
+          confidenceFactors: {
+            dataPointCount: 1,
+            sourceCount: 0,
+            independentSourceRatio: null,
+            lastVerifiedAt: null,
+            contradictionRate: 0,
+          },
+        },
+      };
+
+      const result = await generator.generateArticle(mockProduct, mockInvestigation, pendingReviewAnalysis);
+
+      expect(result.content).toContain(
+        '**信頼度**: 評価保留（データ件数: 1 / ソース件数: 0 / 独立ソース比率: N/A / 最終確認日: 未確認 / 矛盾率: 0%）',
+      );
     });
 
     it('should filter out user stories containing "(推測)" but keep impression', async () => {

@@ -151,8 +151,14 @@ describe('ReviewAnalyzer Property Tests', () => {
           expect(analysisResult.overallSentiment).toBeDefined();
           expect(analysisResult.overallSentiment.overall).toBeGreaterThanOrEqual(-1);
           expect(analysisResult.overallSentiment.overall).toBeLessThanOrEqual(1);
-          expect(analysisResult.overallSentiment.confidence).toBeGreaterThanOrEqual(0);
-          expect(analysisResult.overallSentiment.confidence).toBeLessThanOrEqual(1);
+          expect(['scored', 'pending']).toContain(analysisResult.overallSentiment.confidenceStatus);
+          if (analysisResult.overallSentiment.confidenceStatus === 'scored') {
+            expect(analysisResult.overallSentiment.confidence).not.toBeNull();
+            expect(analysisResult.overallSentiment.confidence).toBeGreaterThanOrEqual(0);
+            expect(analysisResult.overallSentiment.confidence).toBeLessThanOrEqual(1);
+          } else {
+            expect(analysisResult.overallSentiment.confidence).toBeNull();
+          }
 
           // 5. Key themes extraction
           expect(Array.isArray(analysisResult.keyThemes)).toBe(true);
@@ -167,6 +173,80 @@ describe('ReviewAnalyzer Property Tests', () => {
         },
       ),
       { numRuns: 100 },
+    );
+  });
+
+  test('入力不足時は信頼度を過信せず評価保留になる', async () => {
+    await fc.assert(
+      fc.asyncProperty(
+        fc.record({
+          sessionId: fc.uuid(),
+          product: fc.record({
+            asin: fc.string({ minLength: 10, maxLength: 10 }).map((s) => s.toUpperCase()),
+            title: fc.string({ minLength: 10, maxLength: 100 }),
+            category: fc.constant('Electronics'),
+            price: fc.record({
+              amount: fc.float({ min: 1, max: 1000, noNaN: true }),
+              currency: fc.constant('USD'),
+              formatted: fc.string({ minLength: 5, maxLength: 15 }),
+            }),
+            images: fc.record({
+              primary: fc.webUrl(),
+              thumbnails: fc.array(fc.webUrl(), { maxLength: 3 }),
+            }),
+            specifications: fc.dictionary(
+              fc.string({ minLength: 3, maxLength: 15 }),
+              fc.string({ minLength: 3, maxLength: 30 }),
+              { minKeys: 1, maxKeys: 5 },
+            ),
+            rating: fc.record({
+              average: fc.float({ min: 1, max: 5, noNaN: true }),
+              count: fc.integer({ min: 0, max: 1000 }),
+            }),
+          }),
+          analysis: fc.record({
+            positivePoints: fc.array(fc.string({ minLength: 10, maxLength: 100 }), { maxLength: 2 }),
+            negativePoints: fc.array(fc.string({ minLength: 10, maxLength: 100 }), { maxLength: 2 }),
+            useCases: fc.array(fc.string({ minLength: 15, maxLength: 150 }), { minLength: 1, maxLength: 3 }),
+            competitiveAnalysis: fc.array(
+              fc.record({
+                name: fc.string({ minLength: 5, maxLength: 50 }),
+                priceComparison: fc.string({ minLength: 10, maxLength: 100 }),
+                featureComparison: fc.array(fc.string({ minLength: 5, maxLength: 50 }), { maxLength: 5 }),
+                differentiators: fc.array(fc.string({ minLength: 5, maxLength: 50 }), { maxLength: 3 }),
+              }),
+              { minLength: 1, maxLength: 3 },
+            ),
+            recommendation: fc.record({
+              targetUsers: fc.array(fc.string({ minLength: 5, maxLength: 30 }), { minLength: 1, maxLength: 5 }),
+              pros: fc.array(fc.string({ minLength: 10, maxLength: 80 }), { minLength: 1, maxLength: 5 }),
+              cons: fc.array(fc.string({ minLength: 10, maxLength: 80 }), { maxLength: 4 }),
+              score: fc.integer({ min: 0, max: 100 }),
+            }),
+            userStories: fc.array(
+              fc.record({
+                userType: fc.string({ minLength: 5, maxLength: 20 }),
+                scenario: fc.string({ minLength: 10, maxLength: 50 }),
+                experience: fc.string({ minLength: 10, maxLength: 100 }),
+                sentiment: fc.constantFrom('positive', 'negative', 'mixed'),
+              }),
+              { minLength: 1, maxLength: 3 },
+            ),
+            userImpression: fc.string({ minLength: 20, maxLength: 200 }),
+            sources: fc.constant([] as InvestigationResult['analysis']['sources']),
+          }),
+          generatedAt: fc.date(),
+        }),
+        async (investigationResult: InvestigationResult) => {
+          const analysisResult = await analyzer.analyzeInvestigationResult(investigationResult);
+
+          expect(analysisResult.overallSentiment.confidenceStatus).toBe('pending');
+          expect(analysisResult.overallSentiment.confidence).toBeNull();
+          expect(analysisResult.overallSentiment.confidenceFactors.sourceCount).toBe(0);
+          expect(analysisResult.overallSentiment.confidenceFactors.lastVerifiedAt).toBeNull();
+        },
+      ),
+      { numRuns: 50 },
     );
   });
 });
