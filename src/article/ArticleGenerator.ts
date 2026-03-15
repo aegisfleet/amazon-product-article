@@ -499,7 +499,7 @@ ${infoRows.join('\n')}
           source.conflictOfInterest ? conflictLabel[source.conflictOfInterest] : null,
           source.notes ? `評価理由: ${source.notes}` : null,
         ].filter((part): part is string => Boolean(part));
-        const reasonText = `（${reasonParts.join(' / ')}）`;
+        const reasonText = reasonParts.length > 0 ? `（${reasonParts.join(' / ')}）` : '';
 
         if (source.url && !isCreatorsApiUrl(source.url)) {
           return `- <a href="${this.escapeHtml(source.url)}" target="_blank" rel="noopener noreferrer">${this.escapeHtml(source.name)}</a> ${this.escapeHtml(reasonText)}`;
