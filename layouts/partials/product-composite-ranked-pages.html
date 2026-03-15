@@ -1,4 +1,5 @@
 {{ $pages := .pages | default (slice) }}
+{{ $randomize := .randomize | default false }}
 {{ $rankedEntries := slice }}
 
 {{ range $pages }}
@@ -20,6 +21,12 @@
 {{ end }}
 
 {{ $sortedEntries := sort $rankedEntries "compositeScore" "desc" }}
+
+{{/* ランダム化が指定されている場合、上位20件を取得してシャッフルする */}}
+{{ if $randomize }}
+{{ $sortedEntries = first 20 $sortedEntries | shuffle }}
+{{ end }}
+
 {{ $rankedPages := slice }}
 {{ range $sortedEntries }}
 {{ $rankedPages = $rankedPages | append .page }}
