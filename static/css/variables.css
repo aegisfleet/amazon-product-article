@@ -43,6 +43,8 @@
     /* Emerald 600 */
     --text-cons-title: #dc2626;
     /* Red 600 */
+    --color-price-up: #dc2626;
+    --color-price-down: #059669;
 
     /* Amazon Specific */
     --color-amazon-orange: #FF9900;
@@ -117,6 +119,8 @@
         /* Emerald 300 to stand out on dark green bg */
         --text-cons-title: #FCA5A5;
         /* Red 300 to stand out on dark red bg */
+        --color-price-up: #fca5a5;
+        --color-price-down: #6ee7b7;
     }
 }
 

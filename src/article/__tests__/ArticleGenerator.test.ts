@@ -410,6 +410,13 @@ describe('ArticleGenerator', () => {
       const mockDetail: ProductDetail = {
         ...mockProduct,
         asin: 'B08COMPET1',
+        price: {
+          ...mockProduct.price,
+          amount: 45000,
+          formatted: '¥45,000',
+        },
+        isPrimeEligible: true,
+        availability: '在庫あり',
       } as any;
       const mockCompetitorDetails = new Map<string, ProductDetail>();
       mockCompetitorDetails.set('B08COMPET1', mockDetail);
@@ -426,6 +433,10 @@ describe('ArticleGenerator', () => {
       expect(result.content).toContain('href="../b08compet1/"');
       expect(result.content).toContain('サイト内レビュー');
       expect(result.content).toContain('class="btn-internal-small"');
+      // Verify unified design and price difference
+      expect(result.content).toContain('<span class="hero-tag hero-tag-prime">Prime</span>');
+      expect(result.content).toContain('class="competitor-price-diff price-down">(-￥5,000)</span>');
+      expect(result.content).toContain('<span class="hero-tag hero-tag-availability">在庫あり</span>');
       // Mock fs.promises.readFile to reject
       expect(result.content).toContain('<a href="../b08compet1/" class="competitor-preview">');
       expect(result.content).not.toContain('<div class="competitor-preview">');
