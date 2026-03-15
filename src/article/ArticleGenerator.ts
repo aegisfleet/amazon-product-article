@@ -194,6 +194,7 @@ export class ArticleGenerator {
       target_users: investigation.analysis.recommendation.targetUsers,
       warnings: investigation.analysis.recommendation.cons || [],
       specs: investigation.analysis.technicalSpecs || {},
+      availability: metadata.availability,
     };
 
     return metadata;
