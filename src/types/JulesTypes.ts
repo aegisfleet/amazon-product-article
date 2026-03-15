@@ -200,141 +200,145 @@ export interface DimensionsSpec {
   weight?: string;
 }
 
+// 共通の型エイリアス（Lint警告対応）
+type NullableString = string | null;
+type StringOrArray = string | string[] | null;
+type StringOrNumber = string | number | null;
+type StringOrObject = string | { [key: string]: string } | null;
+type StringOrMap = string | { [key: string]: string } | null;
+type MaterialValue = string | { upper?: string; outsole?: string; insole?: string; } | null;
+type GeneralOutput = string | { [key: string]: string } | null;
+type PortsInfo = string | string[] | { [key: string]: unknown } | null;
+type LoadCapacityValue = string | { [key: string]: string } | null;
+
 export interface TechnicalSpecs {
   // スマートフォン・タブレット・PC
-  os?: string | null; // e.g., "Android 14", "iOS 17"
-  cpu?: string | null; // e.g., "Snapdragon 8 Gen 3", "A17 Pro"
-  gpu?: string | null; // e.g., "NVIDIA RTX 4070"
-  ram?: string | null; // e.g., "8GB"
-  storage?: string | null; // e.g., "256GB"
+  os?: NullableString; // e.g., "Android 14", "iOS 17"
+  cpu?: NullableString; // e.g., "Snapdragon 8 Gen 3", "A17 Pro"
+  gpu?: NullableString; // e.g., "NVIDIA RTX 4070"
+  ram?: NullableString; // e.g., "8GB"
+  storage?: NullableString; // e.g., "256GB"
   display?: DisplaySpec | null;
   battery?: BatterySpec | null;
   camera?: CameraSpec | null;
   dimensions?: DimensionsSpec | null;
-  connectivity?: string | string[] | null; // e.g., ["5G", "Wi-Fi 6E", "Bluetooth 5.3"]
+  connectivity?: StringOrArray; // e.g., ["5G", "Wi-Fi 6E", "Bluetooth 5.3"]
 
   // イヤホン・ヘッドホン
-  driver?: string | null; // e.g., "10mm ダイナミック"
-  codec?: string | string[] | null; // e.g., ["SBC", "AAC", "LDAC"]
-  noiseCancel?: string | null; // e.g., "ANC対応"
+  driver?: NullableString; // e.g., "10mm ダイナミック"
+  codec?: StringOrArray; // e.g., ["SBC", "AAC", "LDAC"]
+  noiseCancel?: NullableString; // e.g., "ANC対応"
 
   // 家電・その他
-  power?: string | null; // e.g., "1200W"
-  capacity?: string | null; // e.g., "3L"
+  power?: NullableString; // e.g., "1200W"
+  capacity?: NullableString; // e.g., "3L"
 
-  other?: string | string[] | null; // e.g., ["防水IP68", "FeliCa", "eSIM対応"]
+  other?: StringOrArray; // e.g., ["防水IP68", "FeliCa", "eSIM対応"]
 
   // 靴（シューズ）
-  width?: string | null; // e.g., "2E", "4E"
-  weight?: string | null; // e.g., "270g"
-  material?:
-    | string
-    | {
-        upper?: string;
-        outsole?: string;
-        insole?: string;
-      }
-    | null;
-  midsole?: string | null;
-  cushioningTech?: string | string[] | null;
-  heelCounter?: string | null;
-  modelNumber?: string | null;
-  model?: string | null; // Alias for modelNumber
-  category?: string | null; // Category within specs
+  width?: NullableString; // e.g., "2E", "4E"
+  weight?: NullableString; // e.g., "270g"
+  material?: MaterialValue;
+  midsole?: NullableString;
+  cushioningTech?: StringOrArray;
+  heelCounter?: NullableString;
+  modelNumber?: NullableString;
+  model?: NullableString; // Alias for modelNumber
+  category?: NullableString; // Category within specs
 
   // 素材の詳細（各名称のバリエーションに対応）
-  upperMaterial?: string | null;
-  midsoleMaterial?: string | null;
-  outsoleMaterial?: string | null;
-  outerSole?: string | null; // Alias for outsoleMaterial
-  insoleMaterial?: string | null;
-  innerSole?: string | null; // Alias for insoleMaterial
-  insole?: string | null;
+  upperMaterial?: NullableString;
+  midsoleMaterial?: NullableString;
+  outsoleMaterial?: NullableString;
+  outerSole?: NullableString; // Alias for outsoleMaterial
+  insoleMaterial?: NullableString;
+  innerSole?: NullableString; // Alias for insoleMaterial
+  insole?: NullableString;
 
   // その他
-  countryOfOrigin?: string | null;
-  heelHeight?: string | null;
-  loadCapacity?: string | { [key: string]: string } | null; // e.g., "5kg" or { rack: "5kg", hook: "500g" }
-  attachments?: string | string[] | null; // e.g., "フック×2" or ["フック×2", "マグネット"]
+  countryOfOrigin?: NullableString;
+  heelHeight?: NullableString;
+  loadCapacity?: LoadCapacityValue; // e.g., "5kg" or { rack: "5kg", hook: "500g" }
+  attachments?: StringOrArray; // e.g., "フック×2" or ["フック×2", "マグネット"]
 
   // 高頻度出現フィールド（動的調査結果より）
-  features?: string | string[] | null; // e.g., ["クルエルティフリー", "防水"]
-  color?: string | null; // e.g., "ブラック"
-  productType?: string | null; // e.g., "おしゃれ着用洗濯洗剤"
-  output?: string | { [key: string]: string } | null; // 電源出力
-  input?: string | { [key: string]: string } | null; // 電源入力
-  cableLength?: string | null; // e.g., "1.5m"
-  packageContents?: string | string[] | null; // 同梱物
-  ports?: string | string[] | { [key: string]: unknown } | null; // ポート情報
-  certifications?: string | string[] | null; // e.g., ["PSE", "MFi"]
-  ingredients?: string | string[] | null; // 成分
-  compatibility?: string | string[] | null; // 互換性情報
-  compatibleDevices?: string | string[] | null; // 対応機器
-  compatibleModels?: string | string[] | null; // 対応モデル
+  features?: StringOrArray; // e.g., ["クルエルティフリー", "防水"]
+  color?: NullableString; // e.g., "ブラック"
+  productType?: NullableString; // e.g., "おしゃれ着用洗濯洗剤"
+  output?: GeneralOutput; // 電源出力
+  input?: GeneralOutput; // 電源入力
+  cableLength?: NullableString; // e.g., "1.5m"
+  packageContents?: StringOrArray; // 同梱物
+  ports?: PortsInfo; // ポート情報
+  certifications?: StringOrArray; // e.g., ["PSE", "MFi"]
+  ingredients?: StringOrArray; // 成分
+  compatibility?: StringOrArray; // 互換性情報
+  compatibleDevices?: StringOrArray; // 対応機器
+  compatibleModels?: StringOrArray; // 対応モデル
 
   // 書籍・メディア
-  pages?: string | number | null;
-  publicationDate?: string | null;
-  isbn?: string | null;
-  language?: string | null;
-  binding?: string | null;
-  genre?: string | null;
-  author?: string | null;
-  discCount?: string | number | null;
-  trackList?: string | string[] | null;
-  regionCode?: string | null;
-  subtitles?: string | string[] | null;
+  pages?: StringOrNumber;
+  publicationDate?: NullableString;
+  isbn?: NullableString;
+  language?: NullableString;
+  binding?: NullableString;
+  genre?: NullableString;
+  author?: NullableString;
+  discCount?: StringOrNumber;
+  trackList?: StringOrArray;
+  regionCode?: NullableString;
+  subtitles?: StringOrArray;
 
   // キッチン・家電・生活用品
-  heatingMethod?: string | null;
-  temperature?: string | null;
-  heatResistance?: string | null;
-  coldResistance?: string | null;
-  compatibleHeatSources?: string | string[] | null;
-  innerPot?: string | null;
-  roastLevel?: string | null;
-  acidity?: string | null;
-  bitterness?: string | null;
-  beanOrigin?: string | null;
-  controls?: string | string[] | null;
-  duration?: string | null;
-  design?: string | null;
-  colorOptions?: string | string[] | null;
-  setContents?: string | string[] | null;
-  assembly_required?: string | boolean | null;
+  heatingMethod?: NullableString;
+  temperature?: NullableString;
+  heatResistance?: NullableString;
+  coldResistance?: NullableString;
+  compatibleHeatSources?: StringOrArray;
+  innerPot?: NullableString;
+  roastLevel?: NullableString;
+  acidity?: NullableString;
+  bitterness?: NullableString;
+  beanOrigin?: NullableString;
+  controls?: StringOrArray;
+  duration?: NullableString;
+  design?: NullableString;
+  colorOptions?: StringOrArray;
+  setContents?: StringOrArray;
+  assembly_required?: string | boolean | null; // boolean | string のためそのまま
 
   // AV・音響機器
-  polarPattern?: string | null;
-  sensitivity?: string | null;
-  bitDepth?: string | null;
-  sampleRate?: string | null;
-  microphoneType?: string | null;
-  snRatio?: string | null;
-  maxSPL?: string | null;
+  polarPattern?: NullableString;
+  sensitivity?: NullableString;
+  bitDepth?: NullableString;
+  sampleRate?: NullableString;
+  microphoneType?: NullableString;
+  snRatio?: NullableString;
+  maxSPL?: NullableString;
 
   // PC・ネットワーク
-  wifiStandard?: string | null;
-  frequencyBands?: string | string[] | null;
-  antennas?: string | number | null;
-  processor?: string | null;
-  usbPorts?: string | string[] | null;
-  transferSpeed?: string | null;
-  connector?: string | null;
-  supportedDrives?: string | string[] | null;
+  wifiStandard?: NullableString;
+  frequencyBands?: StringOrArray;
+  antennas?: StringOrNumber;
+  processor?: NullableString;
+  usbPorts?: StringOrArray;
+  transferSpeed?: NullableString;
+  connector?: NullableString;
+  supportedDrives?: StringOrArray;
 
   // 食品・ヘルスケア
-  dosageForm?: string | null;
-  guaranteedAnalysis?: string | null;
-  servingsPerContainer?: string | number | null;
-  inactiveIngredients?: string | string[] | null;
-  contraindications?: string | string[] | null;
-  dailyDosage?: string | null;
-  flavor?: string | null;
+  dosageForm?: NullableString;
+  guaranteedAnalysis?: NullableString;
+  servingsPerContainer?: StringOrNumber;
+  inactiveIngredients?: StringOrArray;
+  contraindications?: StringOrArray;
+  dailyDosage?: NullableString;
+  flavor?: NullableString;
 
   // その他
-  compatibleTireSizes?: string | null;
-  recommendedAge?: string | null;
-  uvProtection?: string | null;
+  compatibleTireSizes?: NullableString;
+  recommendedAge?: NullableString;
+  uvProtection?: NullableString;
 
   // 未知のフィールドを許容（動的レンダリング対応）
   [key: string]: unknown;
