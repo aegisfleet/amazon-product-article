@@ -320,6 +320,16 @@ describe('ArticleGenerator', () => {
       expect(result.content).toContain('rating: 4.2');
     });
 
+    it('should include availability in front matter and hero section', async () => {
+      mockProduct.availability = '在庫あり';
+      const result = await generator.generateArticle(mockProduct, mockInvestigation);
+
+      expect(result.content).toContain('availability: "在庫あり"');
+      // Check for both top-level and hero section
+      const matches = result.content.match(/availability: "在庫あり"/g);
+      expect(matches?.length).toBe(2);
+    });
+
     it('should use investigation.generatedAt for publishDate', async () => {
       const result = await generator.generateArticle(mockProduct, mockInvestigation);
       // mockInvestigation.generatedAt is set to 2025-01-01T00:00:00Z in beforeEach
