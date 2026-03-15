@@ -107,17 +107,7 @@
                     <p class="pickup-card-title">{{ .Title | truncate 30 }}</p>
                     {{ if .Params.specs }}
                     <div class="card-specs">
-                        {{ with .Params.specs.os }}<span class="card-spec-tag">OS: {{ . }}</span>{{ end }}
-                        {{ with .Params.specs.cpu }}<span class="card-spec-tag">CPU: {{ . }}</span>{{ end }}
-                        {{ with .Params.specs.ram }}<span class="card-spec-tag">RAM: {{ . }}</span>{{ end }}
-                        {{ with .Params.specs.storage }}<span class="card-spec-tag">ROM: {{ . }}</span>{{ end }}
-                        {{ with .Params.specs.display_size }}<span class="card-spec-tag">画面: {{ . }}</span>{{ end }}
-                        {{ with .Params.specs.battery_capacity }}<span class="card-spec-tag">バッテリー: {{ . }}</span>{{ end }}
-                        {{ with .Params.specs.weight }}<span class="card-spec-tag">重量: {{ . }}</span>{{ end }}
-                        {{ with .Params.specs.quantity }}<span class="card-spec-tag">内容量: {{ . }}</span>{{ end }}
-                        {{ with .Params.specs.content }}<span class="card-spec-tag">内容量: {{ . }}</span>{{ end }}
-                        {{ with .Params.specs.count }}<span class="card-spec-tag">個数: {{ . }}</span>{{ end }}
-                        {{ with .Params.specs.capacity }}<span class="card-spec-tag">容量: {{ . }}</span>{{ end }}
+                        {{ partial "product-spec-tags.html" (dict "specs" .Params.specs "tagClass" "card-spec-tag") }}
                     </div>
                     {{ end }}
                     <div class="pickup-card-meta">

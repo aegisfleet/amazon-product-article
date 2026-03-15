@@ -112,22 +112,7 @@
 
         <div class="hero-meta-tags">
             {{ with $product.brand }}<span class="hero-tag">{{ . }}</span>{{ end }}
-            {{/* Model is not always available in standard params, might need check */}}
-
-            {{/* Specs Display */}}
-            {{ with $product.specs }}
-            {{ with .os }}<span class="hero-tag">OS: {{ . }}</span>{{ end }}
-            {{ with .cpu }}<span class="hero-tag">CPU: {{ . }}</span>{{ end }}
-            {{ with .ram }}<span class="hero-tag">RAM: {{ . }}</span>{{ end }}
-            {{ with .storage }}<span class="hero-tag">ROM: {{ . }}</span>{{ end }}
-            {{ with .display_size }}<span class="hero-tag">画面: {{ . }}</span>{{ end }}
-            {{ with .battery_capacity }}<span class="hero-tag">バッテリー: {{ . }}</span>{{ end }}
-            {{ with .weight }}<span class="hero-tag">重量: {{ . }}</span>{{ end }}
-            {{ with .quantity }}<span class="hero-tag">内容量: {{ . }}</span>{{ end }}
-            {{ with .content }}<span class="hero-tag">内容量: {{ . }}</span>{{ end }}
-            {{ with .count }}<span class="hero-tag">個数: {{ . }}</span>{{ end }}
-            {{ with .capacity }}<span class="hero-tag">容量: {{ . }}</span>{{ end }}
-            {{ end }}
+            {{ partial "product-spec-tags.html" (dict "specs" $product.specs "tagClass" "hero-tag") }}
         </div>
 
         {{ $trackingCategory := "" }}
