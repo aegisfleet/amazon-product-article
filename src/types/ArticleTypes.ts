@@ -36,6 +36,12 @@ export interface ArticleMetadata {
     specs: TechnicalSpecs;
     availability?: string | undefined;
   };
+  review?: {
+    author?: string;
+    datePublished?: string;
+    summary?: string;
+    rating?: number;
+  };
 }
 
 export interface ArticleTemplate {

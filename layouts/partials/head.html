@@ -216,6 +216,49 @@
     "ratingCount" $ratingCount
   )) }}
 {{ end }}
+
+{{ $reviewAuthor := "" }}
+{{ $reviewDatePublished := "" }}
+{{ $reviewBody := "" }}
+{{ $reviewRating := 0.0 }}
+{{ $hasReviewRating := false }}
+
+{{ with .Params.review }}
+  {{ with .author }}{{ $reviewAuthor = . }}{{ end }}
+  {{ with .date_published }}{{ $reviewDatePublished = . }}{{ end }}
+  {{ with .summary }}{{ $reviewBody = . }}{{ end }}
+  {{ with .rating }}
+    {{ $parsedReviewRating := float . }}
+    {{ if and (gt $parsedReviewRating 0) (le $parsedReviewRating 5) }}
+      {{ $reviewRating = $parsedReviewRating }}
+      {{ $hasReviewRating = true }}
+    {{ end }}
+  {{ end }}
+{{ end }}
+
+{{ $reviewSchema := dict "@type" "Review" }}
+{{ if $reviewAuthor }}
+  {{ $reviewSchema = merge $reviewSchema (dict "author" (dict "@type" "Person" "name" $reviewAuthor)) }}
+{{ end }}
+{{ if $reviewDatePublished }}
+  {{ $reviewSchema = merge $reviewSchema (dict "datePublished" $reviewDatePublished) }}
+{{ end }}
+{{ if $reviewBody }}
+  {{ $reviewSchema = merge $reviewSchema (dict "reviewBody" $reviewBody) }}
+{{ end }}
+{{ if $hasReviewRating }}
+  {{ $reviewSchema = merge $reviewSchema (dict "reviewRating" (dict
+    "@type" "Rating"
+    "ratingValue" $reviewRating
+    "bestRating" "5"
+    "worstRating" "1"
+  )) }}
+{{ end }}
+
+{{ if gt (len $reviewSchema) 1 }}
+  {{ $productSchema = merge $productSchema (dict "review" $reviewSchema) }}
+{{ end }}
+
 <script type="application/ld+json">{{ $productSchema | jsonify | safeJS }}</script>
 {{ end }}
 
