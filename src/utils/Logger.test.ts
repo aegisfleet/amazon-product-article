@@ -120,7 +120,7 @@ describe('Logger', () => {
       const mockDate = new RealDate('2023-01-01T00:00:00.000Z');
 
       // Override Date constructor for new Date() calls
-      const DateSpy = jest.spyOn(global, 'Date').mockImplementation(() => mockDate as any);
+      const DateSpy = jest.spyOn(globalThis, 'Date').mockImplementation(() => mockDate as any);
 
       logger.info('test');
 
