@@ -791,7 +791,6 @@ describe('ArticleGenerator', () => {
         expect((generator as any).formatSpecValue(true)).toBe('あり');
       });
 
-
       it('should localize common english values', () => {
         expect((generator as any).formatSpecValue('black')).toBe('ブラック');
         expect((generator as any).formatSpecValue('in stock')).toBe('在庫あり');

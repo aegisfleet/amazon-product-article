@@ -835,7 +835,10 @@ ${recommendationMessage}`;
     }
 
     if (typeof value === 'string') {
-      const normalized = value.trim().replaceAll(/\s*,\s*/g, ', ').replaceAll(/\s+/g, ' ');
+      const normalized = value
+        .trim()
+        .replaceAll(/\s*,\s*/g, ', ')
+        .replaceAll(/\s+/g, ' ');
       const lowerValue = normalized.toLowerCase();
       const compactValue = lowerValue.replaceAll(/\s+/g, '');
       const invalidPlaceholders = ['null', 'none', 'unknown', '不明', 'n/a', '-', 'なし'];
