@@ -683,6 +683,7 @@ ${reviewAnalysis ? this.generateSentimentAnalysis(reviewAnalysis) : ''}`;
                 competitorScore,
                 hasInternalReview,
                 normalizedAsin,
+                competitorInvestigation?.analysis?.technicalSpecs,
               )
             : '';
 
@@ -1702,6 +1703,7 @@ ${confidenceLine}`;
     score?: number,
     hasInternalReview?: boolean,
     asin?: string,
+    specs?: TechnicalSpecs,
   ): string {
     const imageUrl = detail.images?.primary || '';
     const priceText = detail.price?.formatted || '';
@@ -1748,13 +1750,80 @@ ${confidenceLine}`;
       ? `<span class="hero-tag hero-tag-availability">${this.escapeHtml(availabilityText)}</span>`
       : '';
 
+    const specTagsHtml = specs ? `<div class="competitor-preview-tags">${this.renderSpecTags(specs, 'hero-tag')}</div>` : '';
+
     return `
 <${previewTag}${previewAttrs} class="competitor-preview">
 <img src="${this.escapeHtml(imageUrl)}" alt="${this.escapeHtml(name)}" class="competitor-preview-img">
 <div class="competitor-preview-info">
-${scoreHtml}${actualPriceHtml}${primeHtml}${availabilityHtml}
+${scoreHtml}${actualPriceHtml}${primeHtml}${availabilityHtml}${specTagsHtml}
 </div>
 </${previewTag}>`;
+  }
+
+  /**
+   * スペックタグHTMLを生成（Hugoの partial "product-spec-tags.html" と同期）
+   */
+  private renderSpecTags(specs: TechnicalSpecs, tagClass: string): string {
+    const tags: string[] = [];
+
+    const addTag = (label: string, value: unknown) => {
+      const formatted = this.formatSpecValue(value);
+      if (formatted && formatted !== 'null') {
+        tags.push(`<span class="${tagClass}">${label}: ${this.escapeHtml(formatted)}</span>`);
+      }
+    };
+
+    if (specs.os) addTag('OS', specs.os);
+    if (specs.cpu) addTag('CPU', specs.cpu);
+    if (specs.ram) addTag('RAM', specs.ram);
+    if (specs.storage) addTag('ROM', specs.storage);
+
+    if (specs.display?.size) {
+      tags.push(`<span class="${tagClass}">画面: ${this.escapeHtml(specs.display.size)}</span>`);
+    } else if (specs.display_size) {
+      tags.push(`<span class="${tagClass}">画面: ${this.escapeHtml(String(specs.display_size))}</span>`);
+    }
+
+    if (specs.battery?.capacity) {
+      tags.push(`<span class="${tagClass}">バッテリー: ${this.escapeHtml(specs.battery.capacity)}</span>`);
+    } else if (specs.battery_capacity) {
+      tags.push(`<span class="${tagClass}">バッテリー: ${this.escapeHtml(String(specs.battery_capacity))}</span>`);
+    }
+
+    if (specs.dimensions?.weight) {
+      tags.push(`<span class="${tagClass}">重量: ${this.escapeHtml(specs.dimensions.weight)}</span>`);
+    } else if (specs.weight) {
+      tags.push(`<span class="${tagClass}">重量: ${this.escapeHtml(String(specs.weight))}</span>`);
+    }
+
+    const volume = specs.quantity || specs.content || specs.content_volume;
+    if (volume) {
+      addTag('内容量', volume);
+    }
+
+    if (specs.count) addTag('個数', specs.count);
+    if (specs.capacity) addTag('容量', specs.capacity);
+
+    if (specs.material && typeof specs.material === 'string') {
+      addTag('素材', specs.material);
+    }
+
+    const sizeParts: string[] = [];
+    if (specs.dimensions?.height) sizeParts.push(specs.dimensions.height);
+    else if (specs.height) sizeParts.push(String(specs.height));
+
+    if (specs.dimensions?.width) sizeParts.push(specs.dimensions.width);
+    else if (specs.width) sizeParts.push(String(specs.width));
+
+    if (specs.dimensions?.depth) sizeParts.push(specs.dimensions.depth);
+    else if (specs.depth) sizeParts.push(String(specs.depth));
+
+    if (sizeParts.length > 0) {
+      tags.push(`<span class="${tagClass}">サイズ: ${this.escapeHtml(sizeParts.join(' × '))}</span>`);
+    }
+
+    return tags.join('');
   }
 
   /**
