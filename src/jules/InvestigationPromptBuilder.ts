@@ -173,6 +173,14 @@ cat data/investigations/${this.product.asin}.json 2>/dev/null || echo "新規調
 5. 情報ソース
    - 具体的サイト名・記事タイトル・URL（「Category Analysis」等の抽象名は禁止）
    - 例：「価格.com: [商品名] クチコミ」「The Verge Review」など
+   - 採用基準: 著者・媒体・根拠が確認でき、一次情報または一次情報にアクセス可能な検証記事を優先
+   - 除外基準: 匿名まとめ、転載のみ、出典リンクなし、根拠不明の断定、AI自動生成のみで裏取り不能な情報
+   - 公式仕様は仕様確認用途に限定し、品質・耐久性・安全性・比較優位の評価根拠としては第三者ソースで必ず補強
+
+6. 重要な主張のクロスチェック
+   - 「品質・耐久性・安全性・比較優位」に関する重要な主張は、2系統以上の独立ソースで一致確認すること
+   - 同一企業のミラーサイト、同一記事の転載、相互参照のみの二次情報は独立ソースとして数えない
+   - 一致確認できない主張は断定しない。仮説扱いとして明示するか、analysisから除外する
 
 商品情報：
 - ASIN: ${this.product.asin}
@@ -228,6 +236,7 @@ ${rubric}
     "userImpression": "ユーザーの総評・全体的な感想のまとめ",
     "sources": [
       {
+        "id": "source-1（claimsから参照するため一意）",
         "name": "具体的な記事タイトルまたはサイト名（例：The Verge Review）。抽象的な名称（Category Analysis等）は避けること。",
         "url": "https://...（可能な限り具体的なURLを記載）",
         "tier": "high | medium | low（総合信頼度）",
@@ -236,6 +245,16 @@ ${rubric}
         "author": "執筆主体（例: 編集部, メーカー公式, 第三者レビュアー）",
         "conflictOfInterest": "none | possible | disclosed | unknown（利害関係）",
         "notes": "評価理由（例: 第三者検証あり / 公式一次資料 / 直近更新）"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "主張内容（品質・耐久性・安全性・比較優位に関する具体的記述）",
+        "category": "quality | durability | safety | comparativeAdvantage",
+        "confidence": "high | medium | low",
+        "supportingSourceIds": ["source-1", "source-2"],
+        "crossChecked": true,
+        "notes": "一致確認の要点。未一致の場合は理由と仮説扱いを明記"
       }
     ],
     "lastInvestigated": "YYYY-MM-DD",

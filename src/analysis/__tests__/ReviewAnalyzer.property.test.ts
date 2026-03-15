@@ -90,7 +90,12 @@ describe('ReviewAnalyzer Property Tests', () => {
                 url: fc.webUrl(),
                 tier: fc.constantFrom('high', 'medium', 'low'),
                 evidenceType: fc.constantFrom('primary', 'secondary'),
-                publishedAt: fc.date().map((d) => d.toISOString().slice(0, 10)),
+                publishedAt: fc
+                  .integer({
+                    min: Date.UTC(2000, 0, 1),
+                    max: Date.UTC(2100, 11, 31),
+                  })
+                  .map((timestamp) => new Date(timestamp).toISOString().slice(0, 10)),
                 author: fc.string({ minLength: 3, maxLength: 20 }),
                 conflictOfInterest: fc.constantFrom('none', 'possible', 'disclosed', 'unknown'),
                 notes: fc.string({ minLength: 3, maxLength: 40 }),
