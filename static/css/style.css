@@ -339,21 +339,36 @@ a:hover {
 
 /* Dynamic Score Colors */
 .card-score.score-excellent {
-  background: linear-gradient(135deg, #10b981, #059669);
+  background: linear-gradient(135deg, #065f46, #064e3b); /* Emerald 800 to 900 */
   color: white;
-  box-shadow: 0 1px 2px rgba(16, 185, 129, 0.2);
+  box-shadow: 0 1px 2px rgba(6, 78, 59, 0.2);
+}
+
+[data-theme="dark"] .card-score.score-excellent {
+  background: linear-gradient(135deg, #064e3b, #022c22); /* Emerald 900 to 950 */
+  border: 1px solid #059669;
 }
 
 .card-score.score-good {
-  background: linear-gradient(135deg, #f59e0b, #d97706);
+  background: linear-gradient(135deg, #92400e, #78350f); /* Amber 800 to 900 */
   color: white;
-  box-shadow: 0 1px 2px rgba(245, 158, 11, 0.2);
+  box-shadow: 0 1px 2px rgba(120, 53, 15, 0.2);
+}
+
+[data-theme="dark"] .card-score.score-good {
+  background: linear-gradient(135deg, #78350f, #451a03); /* Amber 900 to 950 */
+  border: 1px solid #d97706;
 }
 
 .card-score.score-fair {
-  background: linear-gradient(135deg, #6b7280, #4b5563);
+  background: linear-gradient(135deg, #374151, #1f2937); /* Gray 700 to 800 */
   color: white;
-  box-shadow: 0 1px 2px rgba(107, 114, 128, 0.2);
+  box-shadow: 0 1px 2px rgba(31, 41, 55, 0.2);
+}
+
+[data-theme="dark"] .card-score.score-fair {
+  background: linear-gradient(135deg, #1f2937, #111827); /* Gray 800 to 900 */
+  border: 1px solid #4b5563;
 }
 
 /* Pickup Card specific overrides if needed (currently sharing same class) */
@@ -369,28 +384,14 @@ a:hover {
   font-size: 0.9em;
   padding: 2px 6px;
   border-radius: 4px;
-  color: #ca8a04;
-  background: #fef9c3;
+  color: #92400e; /* Amber 800 */
+  background: #fef3c7; /* Amber 100 */
+  width: fit-content;
 }
 
 [data-theme="dark"] .pickup-card-score {
-  color: #fde047;
-  background: rgba(234, 179, 8, 0.2);
-}
-
-.pickup-card-score.score-excellent {
-  background: linear-gradient(135deg, #10b981, #059669);
-  color: white;
-}
-
-.pickup-card-score.score-good {
-  background: linear-gradient(135deg, #f59e0b, #d97706);
-  color: white;
-}
-
-.pickup-card-score.score-fair {
-  background: linear-gradient(135deg, #6b7280, #4b5563);
-  color: white;
+  color: #fef3c7; /* Amber 100 */
+  background: #451a03; /* Amber 950 */
 }
 
 .card-price {
@@ -791,10 +792,6 @@ a:hover {
   font-weight: 500;
 }
 
-/* Clickable carousel images */
-.carousel-image {
-  cursor: zoom-in;
-}
 
 @media (max-width: 768px) {
   .image-modal-close {
@@ -2254,6 +2251,7 @@ a.competitor-preview:hover {
   line-height: 1.3;
   display: -webkit-box;
   -webkit-line-clamp: 2;
+  line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
@@ -2265,21 +2263,6 @@ a.competitor-preview:hover {
   gap: 2px;
 }
 
-.pickup-card-score {
-  font-size: 0.7rem;
-  font-weight: 700;
-  color: #ca8a04;
-  background: #fef9c3;
-  padding: 2px 6px;
-  border-radius: 4px;
-  width: fit-content;
-}
-
-[data-theme="dark"] .pickup-card-score {
-  color: #fde047;
-  background: rgba(234, 179, 8, 0.2);
-}
-
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) .pickup-card-score {
     color: #fde047;
@@ -2289,18 +2272,39 @@ a.competitor-preview:hover {
 
 /* Force dynamic score colors to override defaults and dark mode specifics */
 .pickup-card-score.score-excellent {
-  background: linear-gradient(135deg, #10b981, #059669) !important;
+  background: linear-gradient(135deg, #065f46, #064e3b) !important;
+  /* Emerald 800 to 900 */
   color: white !important;
+}
+
+[data-theme="dark"] .pickup-card-score.score-excellent {
+  background: linear-gradient(135deg, #064e3b, #022c22) !important;
+  /* Emerald 900 to 950 */
+  border: 1px solid #059669 !important;
 }
 
 .pickup-card-score.score-good {
-  background: linear-gradient(135deg, #f59e0b, #d97706) !important;
+  background: linear-gradient(135deg, #92400e, #78350f) !important;
+  /* Amber 800 to 900 */
   color: white !important;
 }
 
+[data-theme="dark"] .pickup-card-score.score-good {
+  background: linear-gradient(135deg, #78350f, #451a03) !important;
+  /* Amber 900 to 950 */
+  border: 1px solid #d97706 !important;
+}
+
 .pickup-card-score.score-fair {
-  background: linear-gradient(135deg, #6b7280, #4b5563) !important;
+  background: linear-gradient(135deg, #374151, #1f2937) !important;
+  /* Gray 700 to 800 */
   color: white !important;
+}
+
+[data-theme="dark"] .pickup-card-score.score-fair {
+  background: linear-gradient(135deg, #1f2937, #111827) !important;
+  /* Gray 800 to 900 */
+  border: 1px solid #4b5563 !important;
 }
 
 .pickup-card-price {
@@ -2464,18 +2468,39 @@ a.competitor-preview:hover {
 }
 
 .quick-eval-score.score-excellent {
-  background: linear-gradient(135deg, #10b981, #059669);
+  background: linear-gradient(135deg, #065f46, #064e3b);
+  /* Emerald 800 to 900 */
   color: white;
+}
+
+[data-theme="dark"] .quick-eval-score.score-excellent {
+  background: linear-gradient(135deg, #064e3b, #022c22);
+  /* Emerald 900 to 950 */
+  border: 1px solid #059669;
 }
 
 .quick-eval-score.score-good {
-  background: linear-gradient(135deg, #f59e0b, #d97706);
+  background: linear-gradient(135deg, #92400e, #78350f);
+  /* Amber 800 to 900 */
   color: white;
 }
 
+[data-theme="dark"] .quick-eval-score.score-good {
+  background: linear-gradient(135deg, #78350f, #451a03);
+  /* Amber 900 to 950 */
+  border: 1px solid #d97706;
+}
+
 .quick-eval-score.score-fair {
-  background: linear-gradient(135deg, #6b7280, #4b5563);
+  background: linear-gradient(135deg, #374151, #1f2937);
+  /* Gray 700 to 800 */
   color: white;
+}
+
+[data-theme="dark"] .quick-eval-score.score-fair {
+  background: linear-gradient(135deg, #1f2937, #111827);
+  /* Gray 800 to 900 */
+  border: 1px solid #4b5563;
 }
 
 .score-emoji {
