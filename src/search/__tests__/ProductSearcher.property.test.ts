@@ -4,8 +4,9 @@
  * Validates: Requirements 1.2, 1.3, 1.5
  */
 
-import fs from 'node:fs/promises';
+import { existsSync, rmSync, mkdtempSync } from 'node:fs';
 import path from 'node:path';
+import os from 'node:os';
 import * as fc from 'fast-check';
 import { CreatorsAPIClient } from '../../api/CreatorsAPIClient';
 import type { Product, ProductSearchParams } from '../../types/Product';
@@ -33,7 +34,7 @@ class MockCreatorsAPIClient extends CreatorsAPIClient {
         model: `Model${i + 1}`,
       },
       rating: {
-        average: 4.0 + i * 0.2,
+        average: 4 + i * 0.2,
         count: 100 + i * 10,
       },
     }));
@@ -56,8 +57,8 @@ describe('ProductSearcher Property Tests', () => {
     mockClient = new MockCreatorsAPIClient();
     searcher = new ProductSearcher(mockClient);
 
-    // Use a test-specific data directory
-    testDataDir = path.join(process.cwd(), 'test-data', 'products');
+    // Use a unique test-specific data directory to avoid parallel test conflicts
+    testDataDir = mkdtempSync(path.join(os.tmpdir(), 'product-searcher-test-'));
     (searcher as any).dataDir = testDataDir;
 
     await searcher.initialize();
@@ -68,10 +69,14 @@ describe('ProductSearcher Property Tests', () => {
 
   afterEach(async () => {
     // Clean up test data
-    try {
-      await fs.rm(testDataDir, { recursive: true, force: true });
-    } catch (_error) {
-      // Ignore cleanup errors
+    if (testDataDir && existsSync(testDataDir)) {
+      try {
+        // Use sync versions in cleanup to ensure it finishes or use try-catch loop
+        // for Windows issues if needed, but unique directories solve the main race.
+        rmSync(testDataDir, { recursive: true, force: true });
+      } catch (error) {
+        console.warn(`Test data cleanup failed for ${testDataDir}:`, error);
+      }
     }
   });
 
