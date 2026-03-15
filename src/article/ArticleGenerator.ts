@@ -201,7 +201,7 @@ export class ArticleGenerator {
       author: metadata.manufacturer || '編集部',
       datePublished: metadata.publishDate.toISOString().slice(0, 10),
       summary: investigation.analysis.userImpression || metadata.description,
-      ...(metadata.rating !== undefined ? { rating: metadata.rating } : {}),
+      ...(metadata.rating === undefined ? {} : { rating: metadata.rating }),
     };
 
     return metadata;
@@ -1168,12 +1168,16 @@ ${recommendationMessage}`;
 
     this.addHeroScoreRationale(lines, hero.score_rationale);
 
-    if (hero.target_users && hero.target_users.length > 0) {
+    if (hero.warnings && hero.warnings.length > 0) {
       lines.push(`  target_users: ${this.formatArrayForFrontMatter(hero.target_users)}`);
     }
 
     if (hero.warnings && hero.warnings.length > 0) {
       lines.push(`  warnings: ${this.formatArrayForFrontMatter(hero.warnings)}`);
+    }
+
+    if (hero.availability) {
+      lines.push(`  availability: "${this.escapeForFrontMatter(hero.availability)}"`);
     }
 
     this.addHeroSpecs(lines, hero.specs);
