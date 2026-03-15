@@ -1,7 +1,7 @@
 {
   "analysis": {
     "productName": "ジップロック フリーザーバッグ Lサイズ 66枚入",
-    "parentAsin": "B0FSCZ9WTT",
+    "parentAsin": "B0FR9V9L2N",
     "productDescription": "食品の冷凍保存から電子レンジ解凍まで対応する、厚手で丈夫なダブルジッパー付きポリ袋の大容量パック。",
     "productUsage": [
       "肉、魚、野菜などの生鮮食品の冷凍・冷蔵保存",
@@ -52,68 +52,123 @@
     "userImpression": "「結局これに戻ってくる」という声が圧倒的に多い。安価な競合品は多数あるが、ジッパーの閉めやすさ、密閉の確実さ、素材の丈夫さにおいて、ジップロックへの信頼感は絶大である。特にAmazon限定の大容量パックは、品質とコストのバランスを求めるヘビーユーザーから高く評価されている。",
     "sources": [
       {
-        "name": "Amazonカスタマーレビュー",
+        "id": "source-1",
+        "name": "Amazon カスタマーレビュー",
         "url": "https://www.amazon.co.jp/dp/B0FR9V9L2N",
-        "credibility": "高い（実際の購入者による多数の評価）"
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-03-16",
+        "author": "実際の購入者",
+        "conflictOfInterest": "none",
+        "notes": "直近のユーザーの実際の使用体験、評価"
       },
       {
+        "id": "source-2",
         "name": "マイベスト フリーザーバッグ比較記事",
         "url": "https://my-best.com/284",
-        "credibility": "中（一般的な比較情報として参照）"
+        "tier": "medium",
+        "evidenceType": "secondary",
+        "publishedAt": "",
+        "author": "マイベスト編集部",
+        "conflictOfInterest": "unknown",
+        "notes": "一般的な機能・密閉性の比較情報として参照"
+      },
+      {
+        "id": "source-3",
+        "name": "旭化成ホームプロダクツ 公式製品情報",
+        "url": "https://www.asahi-kasei.co.jp/saran/products/ziploc/freezer.html",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "",
+        "author": "旭化成ホームプロダクツ",
+        "conflictOfInterest": "disclosed",
+        "notes": "公式の製品仕様、寸法、機能の説明"
       }
     ],
-    "lastInvestigated": "2026-01-21",
+    "lastInvestigated": "2026-03-16",
     "competitiveAnalysis": [
       {
-        "name": "コア(CORE) フリーザーバッグ マチ付き Lサイズ",
-        "asin": "B0C3QYR9C2",
-        "priceComparison": "1枚あたり約18.6円。ジップロック（約20.5円）より若干安い。",
+        "name": "大和物産 業務用 ダブルジッパー フリーザーバッグ L 60枚",
+        "asin": "B0DBLHHRJV",
+        "priceComparison": "1枚あたり約9.6円。ジップロック（約20.5円）の約半額と非常に安価。",
         "featureComparison": [
-          "マチ付きで自立するため、汁物を入れやすい。",
-          "レトロな柄付きでデザイン性がある。"
+          "ダブルジッパー採用",
+          "厚み0.06mmでジップロックと同等",
+          "業務用パッケージ"
         ],
         "differentiators": [
-          "「マチ付き」という機能性が最大の強み。",
-          "価格と機能のバランスが良い中価格帯の競合。"
+          "圧倒的なコストパフォーマンス",
+          "大量消費する業務用途や大家族に最適"
         ]
       },
       {
-        "name": "宇部フィルム フリーザーバッグ L 北欧柄",
-        "asin": "B0DJNLXVG2",
-        "priceComparison": "1枚あたり約23.4円。ジップロックより割高になる場合がある。",
-        "featureComparison": [
-          "おしゃれな北欧柄プリント。",
-          "基本的なダブルジッパー機能。"
-        ],
-        "differentiators": [
-          "機能よりも「見た目の可愛さ」を重視する層向け。",
-          "キッチンを明るくしたいユーザーに選ばれる。"
-        ]
-      },
-      {
-        "name": "ニトリ(NITORI) フリーザーバッグ ダブルジッパー Lサイズ",
+        "name": "ニトリ(NITORI) フリーザーバッグ ダブルジッパー マチ付き Lサイズ 16枚入 パイン",
         "asin": "B0DLB2CZ63",
-        "priceComparison": "圧倒的な低価格（店舗価格で1枚あたり5-6円程度）。",
+        "priceComparison": "1枚あたり約12.5円。少枚数での購入としては安価。",
         "featureComparison": [
-          "ダブルジッパー採用だが、素材の厚みやジッパーの感触はジップロックに劣る場合がある。",
-          "必要十分な機能を備える。"
+          "ダブルジッパー採用",
+          "マチ付きで自立しやすい",
+          "パイン柄のデザイン"
         ],
         "differentiators": [
-          "圧倒的なコストパフォーマンス。",
-          "「使い捨てだから安くて良い」という層に最強の競合。"
+          "マチ付きであるため、汁物や厚みのある食材の保存に便利",
+          "デザイン性があり、キッチンを彩る"
         ]
       },
       {
-        "name": "Ziploc イージージッパー L",
-        "asin": "B08L6L9BNB",
-        "priceComparison": "1枚あたり約33.8円。通常タイプよりかなり高価。",
+        "name": "by Amazon ダブルジッパーバッグ マチ付きタイプ Lサイズ 80枚",
+        "asin": "B07CZYC4BG",
+        "priceComparison": "1枚あたり約15.3円。ジップロックより安価でマチ付き。",
         "featureComparison": [
-          "スライダーを滑らせるだけで開閉できる。",
-          "密閉性は指で押すタイプの方が高い傾向にある。"
+          "マチ付きタイプ",
+          "ダブルジッパー採用",
+          "大容量80枚パック"
         ],
         "differentiators": [
-          "「閉める手間」を極限まで減らした利便性。",
-          "高齢者や子供でも扱いやすい。"
+          "マチ付きかつ大容量でコスパが高い",
+          "Amazonのプライベートブランドとしての安心感"
+        ]
+      },
+      {
+        "name": "大日産業 たっぷり冷凍保存フリーザーバック大 50枚",
+        "asin": "B0FVL2W356",
+        "priceComparison": "1枚あたり約18.7円。ジップロックとほぼ同等の価格帯。",
+        "featureComparison": [
+          "Wジッパー採用",
+          "透明で中身が見やすい",
+          "大容量50枚パック"
+        ],
+        "differentiators": [
+          "標準的な機能でバランスが取れている",
+          "大容量パックで買い足しの手間を省く"
+        ]
+      },
+      {
+        "name": "システムポリマー CP-335 ストックバッグ冷蔵冷凍Wジッパー Lサイズ 30枚",
+        "asin": "B00RLNVUEE",
+        "priceComparison": "1枚あたり約12円。非常に安価。",
+        "featureComparison": [
+          "Wジッパー採用",
+          "冷蔵・冷凍両対応",
+          "標準的なLサイズ"
+        ],
+        "differentiators": [
+          "日用品として割り切って使える低価格",
+          "シンプルな機能で十分な層向け"
+        ]
+      },
+      {
+        "name": "ケミカルジャパン 保存袋 ジッパー スライド タイプ Lサイズ 25枚",
+        "asin": "B08LCSDBXX",
+        "priceComparison": "1枚あたり約14.1円。スライド式としては比較的安価。",
+        "featureComparison": [
+          "スライド式ジッパー採用",
+          "厚み約0.06mm",
+          "冷凍・冷蔵対応"
+        ],
+        "differentiators": [
+          "開閉が簡単なスライド式",
+          "頻繁に開け閉めする用途（野菜の保存など）に便利"
         ]
       }
     ],
@@ -134,8 +189,43 @@
         "スライダー式に比べると、端から端まで指で押さえる動作が必要。"
       ],
       "score": 89,
-      "scoreRationale": "[基本点: 70]\n[性能・機能: +8] (密閉性の高さ、オープンタブの使いやすさ、素材の丈夫さは業界標準にして最高峰)\n[コストパフォーマンス: +2] (絶対的な安さはないが、大容量版での単価低減と品質を考慮するとコスパは良好)\n[品質・デザイン: +4] (透明度が高く中身が見やすい、手触りも良い)\n[ユーザー満足度: +5] (「結局これ」というリピーターの多さが信頼の証)\n[合計: 89]"
+      "scoreRationale": "[基本点: 70]\n[加点: +8] (密閉性の高さ、オープンタブの使いやすさ、素材の丈夫さは業界標準にして最高峰)\n[加点: +2] (絶対的な安さはないが、大容量版での単価低減と品質を考慮するとコスパは良好)\n[加点: +4] (透明度が高く中身が見やすい、手触りも良い)\n[加点: +5] (「結局これ」というリピーターの多さが信頼の証)\n[合計: 89]"
     },
+    "claims": [
+      {
+        "claim": "厚手で丈夫な素材により、冷凍焼けや匂い移りを強力に防ぐ",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "source-1",
+          "source-2",
+          "source-3"
+        ],
+        "crossChecked": true,
+        "notes": "公式情報と実際のユーザーレビュー、第三者の比較記事で一致"
+      },
+      {
+        "claim": "「パチパチ」と閉まる感覚（ダブルジッパー）で密封確認が容易であり、内側からの圧力にも強い",
+        "category": "durability",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "source-1",
+          "source-3"
+        ],
+        "crossChecked": true,
+        "notes": "公式の機能説明と多くのユーザーが言及している実感として一致"
+      },
+      {
+        "claim": "Amazon限定の大容量パッケージは、通常パッケージと比較して1枚あたりの単価が安く、頻繁に使用するユーザーにとってコストパフォーマンスが良い",
+        "category": "comparativeAdvantage",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "source-1"
+        ],
+        "crossChecked": false,
+        "notes": "ユーザーレビューやAmazonの販売価格からの推測・事実確認に基づく（仮説扱い）"
+      }
+    ],
     "technicalSpecs": {
       "material": "ポリエチレン",
       "temperatureLimit": "耐熱100℃ / 耐冷-70℃",
@@ -143,7 +233,11 @@
       "dimensions": "縦273mm × 横268mm",
       "capacity": "Lサイズ",
       "count": "66枚",
-      "other": ["電子レンジ解凍可", "ダブルジッパー", "オープンタブ"]
+      "other": [
+        "電子レンジ解凍可",
+        "ダブルジッパー",
+        "オープンタブ"
+      ]
     }
   }
 }
