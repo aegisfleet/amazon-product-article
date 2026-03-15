@@ -1,6 +1,7 @@
 # Hugo Configuration for Amazon Product Articles
 # https://gohugo.io/getting-started/configuration/
 
+# Canonical production URL (non-www)
 baseURL = "https://amazon-hikaku.com/"
 relativeURLs = true
 languageCode = "ja"
