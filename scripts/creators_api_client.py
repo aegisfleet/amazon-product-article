@@ -45,11 +45,13 @@ class CreatorsAPIClient:
     
     def __init__(
         self,
+        application_id: str = None,
         credential_id: str = None,
         credential_secret: str = None,
         partner_tag: str = None,
         max_retries: int = 5
     ):
+        self.application_id = application_id or os.environ.get('AMAZON_CREATORS_APPLICATION_ID', '')
         self.credential_id = credential_id or os.environ.get('AMAZON_CREATORS_CREDENTIAL_ID', '')
         self.credential_secret = credential_secret or os.environ.get('AMAZON_CREATORS_CREDENTIAL_SECRET', '')
         self.partner_tag = partner_tag or os.environ.get('AMAZON_PARTNER_TAG', '')
@@ -101,7 +103,8 @@ class CreatorsAPIClient:
         headers = {
             "Content-Type": "application/json",
             "Authorization": f"Bearer {access_token}, Version {self.CREDENTIAL_VERSION}",
-            "x-marketplace": self.MARKETPLACE
+            "x-marketplace": self.MARKETPLACE,
+            "x-amz-application-id": self.application_id
         }
         
         url = f"{self.API_BASE_URL}{endpoint}"

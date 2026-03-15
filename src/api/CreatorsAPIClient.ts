@@ -250,7 +250,8 @@ export class CreatorsAPIClient {
         'itemInfo.byLineInfo',
         'itemInfo.technicalInfo',
         'offersV2.listings.price',
-        'offersV2.listings.availability',
+        'offersV2.listings.isBuyBoxWinner',
+        'offersV2.listings.merchantInfo',
         'browseNodeInfo.browseNodes',
       ],
     };
@@ -306,7 +307,7 @@ export class CreatorsAPIClient {
         'itemInfo.technicalInfo',
         'itemInfo.externalIds',
         'offersV2.listings.price',
-        'offersV2.listings.availability',
+        'offersV2.listings.isBuyBoxWinner',
         'offersV2.listings.merchantInfo',
         'customerReviews.count',
         'customerReviews.starRating',
@@ -621,23 +622,37 @@ export class CreatorsAPIClient {
   private parseProduct(item: CreatorsAPIItem): Product {
     const price = this.extractPrice(item);
     const images = this.extractImages(item);
+    const listing = item.offersV2?.listings?.[0];
+    const { category, categoryInfo } = this.extractCategoryInfo(item);
 
     const product: Product = {
       asin: item.asin,
-      title: item.itemInfo?.title?.displayValue || 'Unknown Title',
-      // Parse category info
-      ...this.extractCategoryInfo(item),
+      title: item.itemInfo?.title?.displayValue || '',
+      category: category,
+      categoryInfo: categoryInfo,
+      detailPageUrl: item.detailPageURL,
       price,
       images,
-      specifications: {}, // Simplification
+      specifications: {},
       rating: {
         average: item.customerReviews?.starRating || 0,
         count: item.customerReviews?.count || 0,
       },
-      detailPageUrl: item.detailPageURL,
+      availability: listing?.availability?.message,
+      merchantName: listing?.merchantInfo?.name,
     };
 
     if (item.parentASIN) product.parentAsin = item.parentASIN;
+
+    // Extract Prime eligibility
+    // JP API does not support deliveryInfo.isPrimeEligible.
+    // Use heuristic: if merchant is Amazon.co.jp, it's likely prime eligible.
+    if (listing?.merchantInfo?.name === 'Amazon.co.jp') {
+      product.isPrimeEligible = true;
+    } else {
+      product.isPrimeEligible = false;
+    }
+
     return product;
   }
 

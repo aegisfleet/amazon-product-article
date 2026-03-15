@@ -178,6 +178,10 @@ export interface CreatorsAPIItem {
       availability?: {
         message: string;
       };
+      merchantInfo?: {
+        id: string;
+        name: string;
+      };
       deliveryInfo?: {
         isPrimeEligible: boolean;
       };

@@ -56,11 +56,21 @@ if __name__ == '__main__':
             "itemInfo.productInfo",
             "itemInfo.technicalInfo",
             "itemInfo.manufactureInfo",
+            "itemInfo.classifications",
             "offersV2.listings.price",
+            "offersV2.listings.availability",
+            "offersV2.listings.merchantInfo",
+            "offersV2.listings.condition",
+            "offersV2.listings.type",
+            "offersV2.listings.isBuyBoxWinner",
+            "offersV2.listings.dealDetails",
+            "offersV2.listings.loyaltyPoints",
             "browseNodeInfo.browseNodes"
         ]
         
         response_json = client.get_items([args.asin], resources=resources)
+        print("Raw API Response:")
+        print(json.dumps(response_json, indent=2, ensure_ascii=False))
         
         if 'itemsResult' in response_json and 'items' in response_json['itemsResult']:
             item = response_json['itemsResult']['items'][0]
