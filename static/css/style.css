@@ -238,10 +238,30 @@ a:hover {
 
 .card-image {
   background-color: #ffffff;
-  height: 250px;
+  width: 100%;
+  aspect-ratio: 1 / 1;
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
+}
+
+.card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+}
+
+.card-image-noimage {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffffff;
+  color: var(--color-text-muted);
+  font-size: 0.875rem;
 }
 
 .card-content {
@@ -397,6 +417,44 @@ a:hover {
   /* Amber 100 */
   background: #451a03;
   /* Amber 950 */
+}
+
+/* Pickup Card Image Styles */
+.pickup-card-image {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-bottom: 1px solid var(--color-border);
+}
+
+[data-theme="dark"] .pickup-card-image {
+  background-color: #ffffff; /* User requested white background even in home cards */
+}
+
+.pickup-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.pickup-card-noimage {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffffff;
+  color: #4b5563;
+  font-size: 0.875rem;
+}
+
+[data-theme="dark"] .pickup-card-noimage {
+  background-color: #ffffff;
+  color: #4b5563;
 }
 
 .card-price {
@@ -2236,41 +2294,7 @@ a.competitor-preview:hover {
   }
 }
 
-.pickup-card-image {
-  width: 100%;
-  height: 100px;
-  overflow: hidden;
-  background: #fff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-[data-theme="dark"] .pickup-card-image {
-  background: #1f2937;
-}
-
-.pickup-card-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-}
-
-.pickup-card-noimage {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #4b5563; /* Gray 600 for contrast */
-  font-size: 0.75rem;
-  background: #f3f4f6;
-}
-
-[data-theme="dark"] .pickup-card-noimage {
-  color: #9ca3af; /* Gray 400 for contrast on dark */
-  background: #1f2937;
-}
+/* .pickup-card-image styles moved to earlier section for central management */
 
 .pickup-card-content {
   padding: var(--spacing-sm);

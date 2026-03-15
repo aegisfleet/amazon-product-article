@@ -32,16 +32,13 @@
     <div class="card-image">
         <a href="{{ .RelPermalink }}"
             data-track-product="1" data-asin="{{ .Params.asin }}" data-category="{{ $trackingCategory }}"
-            data-price-bucket="{{ $priceBucket }}" data-price="{{ .Params.price }}"
-            style="display: flex; justify-content: center; align-items: center; width: 100%; height: 100%; background:#f3f4f6; color:#4b5563; font-size:0.875rem; text-decoration:none;">
+            data-price-bucket="{{ $priceBucket }}" data-price="{{ .Params.price }}">
             <!-- Placeholder for product image integration later -->
             {{ if .Params.images }}
-            <img src="{{ index .Params.images 0 }}" alt="{{ .Title }}"
-                style="width:100%; height:100%; object-fit:contain; object-position:center; margin:auto;" loading="lazy"
+            <img src="{{ index .Params.images 0 }}" alt="{{ .Title }}" loading="lazy"
                 decoding="async">
             {{ else }}
-            <div
-                style="width:100%; height:100%; display:flex; align-items:center; justify-content:center; background:#f3f4f6; color:#4b5563;">
+            <div class="card-image-noimage">
                 画像なし
             </div>
             {{ end }}
