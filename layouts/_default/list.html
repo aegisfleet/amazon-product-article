@@ -208,6 +208,11 @@
                         🏢 販売元: {{ . }}
                     </span>
                     {{ end }}
+                    {{ if .Params.is_amazon_direct }}
+                    <span class="card-amazon-direct">
+                        📦 Amazon直販
+                    </span>
+                    {{ end }}
                     {{ if .Params.score }}
                     {{ $score := .Params.score | int }}
                     {{ $scoreClass := "score-fair" }}

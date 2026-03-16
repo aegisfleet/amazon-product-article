@@ -82,6 +82,9 @@
             </div>
             <div class="hero-price-info">
                 {{ with .Params.merchant_name }}<span class="hero-tag hero-tag-merchant">販売元: {{ . }}</span>{{ end }}
+                {{ if .Params.is_amazon_direct }}
+                <span class="hero-tag hero-tag-amazon-direct">Amazon直販</span>
+                {{ end }}
                 {{ with $hero.availability }}<span class="hero-tag hero-tag-availability">{{ . }}</span>{{ end }}
             </div>
         </div>

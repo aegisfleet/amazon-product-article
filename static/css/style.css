@@ -647,6 +647,15 @@ a:hover {
   align-items: center;
 }
 
+.card-amazon-direct {
+    background: #FF9900;
+    color: #111;
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    border: 1px solid rgba(255, 153, 0, 0.2);
+}
 /* Product Image Carousel */
 .product-image-carousel {
   position: relative;
@@ -1523,14 +1532,27 @@ a.competitor-preview:hover {
   font-size: 0.75rem;
 }
 
-.competitor-prime {
-  color: #ff9900;
-  font-weight: 600;
+.hero-tag-amazon-direct {
+  background: linear-gradient(135deg, #FF9900, #FFB84D);
+  color: #111;
+  font-weight: 700;
+  box-shadow: 0 2px 8px rgba(255, 153, 0, 0.3);
   font-size: 0.8rem;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+}
+
+.hero-tag-amazon-direct::before {
+    content: "📦 ";
 }
 
 @media (prefers-color-scheme: dark) {
-  /* Removed competitor preview overrides (using variables now) */
+  :root:not([data-theme="light"]) .hero-tag-amazon-direct {
+    background: linear-gradient(135deg, #FF9900, #FFB84D);
+    color: #111;
+    font-weight: 700;
+    box-shadow: 0 2px 8px rgba(255, 153, 0, 0.3);
+  }
 }
 
 /* Review Cards */

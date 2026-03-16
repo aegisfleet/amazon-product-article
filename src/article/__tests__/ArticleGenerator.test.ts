@@ -482,7 +482,7 @@ describe('ArticleGenerator', () => {
           amount: 45000,
           formatted: '¥45,000',
         },
-        isPrimeEligible: true,
+        merchantName: 'Amazon.co.jp',
         availability: '在庫あり',
       } as any;
       const mockCompetitorDetails = new Map<string, ProductDetail>();
@@ -501,7 +501,7 @@ describe('ArticleGenerator', () => {
       expect(result.content).toContain('サイト内レビュー');
       expect(result.content).toContain('class="btn-internal-small"');
       // Verify unified design and price difference
-      expect(result.content).toContain('<span class="hero-tag hero-tag-prime">Prime</span>');
+      expect(result.content).toContain('<span class="hero-tag hero-tag-amazon-direct">Amazon直販</span>');
       expect(result.content).toContain('class="competitor-price-diff price-down">(-￥5,000)</span>');
       expect(result.content).toContain('<span class="hero-tag hero-tag-availability">在庫あり</span>');
       // Mock fs.promises.readFile to reject
