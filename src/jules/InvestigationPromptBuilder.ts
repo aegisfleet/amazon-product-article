@@ -280,30 +280,32 @@ ${rubric}
 
 **【technicalSpecs: 詳細スペック抽出】**
 上記JSONの "recommendation" の後に "technicalSpecs" フィールドも追加してください。
-商品カテゴリに応じて、以下のような詳細スペック情報を収集・構造化してください。
-Creators APIの features テキストとWeb調査を組み合わせて情報を取得し、該当しない項目は null を設定してください。
+商品カテゴリに応じて、詳細スペック情報を収集・構造化してください。
 
-出力例（スマートフォンの場合）:
+【出力の安定化ルール】
+- **数値と単位**: \`100g\`, \`500ml\`, \`1.2m\` のように、数値と単位を組み合わせた文字列として出力してください。
+- **重さ (\`weight\`)**: パッケージ重量ではなく、可能な限り「本体重量」を優先してください。
+- **個数・容量 (\`capacity\`)**: \`500ml\`, \`12個入\`, \`8カップ\` のように記述してください。
+- **外形寸法 (\`dimensions\`)**: 原則としてオブジェクト形式 \`{"height": "XXXmm", "width": "XXXmm", "depth": "XXXmm"}\` で出力してください。
+- **階層構造**: \`display\`, \`battery\`, \`camera\` などの主要な部品はオブジェクトで構造化してください。
+
+出力例（標準的な構成）:
 \`\`\`json
 "technicalSpecs": {
-  "os": "Android 14",
-  "cpu": "Snapdragon 8 Gen 3",
-  "ram": "8GB",
-  "storage": "256GB",
-  "display": { "size": "6.7インチ", "resolution": "2796×1290", "type": "OLED" },
-  "battery": { "capacity": "4600mAh", "charging": "25W急速充電" },
-  "camera": { "main": "48MP", "ultrawide": "12MP" },
-  "dimensions": { "height": "160.9mm", "width": "77.6mm", "depth": "8.25mm", "weight": "221g" },
-  "connectivity": ["5G", "Wi-Fi 6E", "Bluetooth 5.3"],
-  "other": ["防水IP68", "FeliCa"]
+  "dimensions": { "height": "160mm", "width": "75mm", "depth": "8.0mm" },
+  "weight": "180g",
+  "capacity": "500ml",
+  "material": "アルミニウム、強化ガラス",
+  "origin": "日本",
+  "other": ["防水IP68", "急速充電対応"]
 }
 \`\`\`
 
-カテゴリ別の収集項目:
-- スマートフォン/タブレット: os, cpu, ram, storage, display, battery, camera, connectivity
-- PC/ノートパソコン: cpu, ram, storage, display, battery, gpu
-- イヤホン/ヘッドホン: driver, codec, battery, connectivity, noiseCancel
-- 家電商品: dimensions, power, capacity, その他機能
+カテゴリ別の推奨収集項目（例）:
+- **スマートフォン/PC**: os, cpu, ram, storage, display, battery, camera, connectivity, weight, dimensions
+- **オーディオ**: driver, codec, battery, connectivity, noiseCancel, weight
+- **家電/キッチン**: power, capacity, material, dimensions, weight
+- **日用品/食品**: capacity (内容量/個数), weight, ingredients (成分/原材料), origin (原産国)
 `;
   }
 }
