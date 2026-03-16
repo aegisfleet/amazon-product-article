@@ -700,13 +700,13 @@ ${reviewAnalysis ? this.generateSentimentAnalysis(reviewAnalysis) : ''}`;
 <h4>${this.escapeHtml(competitor.name)}</h4>
 <p class="competitor-price">💰 ${this.escapeHtml(competitor.priceComparison)}</p>
 <div class="competitor-features">
-<strong>機能比較:</strong>
+<strong>比較ポイント:</strong>
 <ul>
 ${features}
 </ul>
 </div>
 <div class="competitor-diff">
-<strong>差別化ポイント:</strong>
+<strong>選び方のポイント:</strong>
 <ul>
 ${differentiators}
 </ul>
