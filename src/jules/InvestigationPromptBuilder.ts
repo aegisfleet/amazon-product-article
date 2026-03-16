@@ -263,8 +263,8 @@ ${rubric}
         "name": "競合商品名",
         "asin": "B0XXXXXXXX または null（ASINが特定できる場合は必ず記載）",
         "priceComparison": "単なる価格の上下だけでなく、性能、成分、容量、耐久性などを踏まえた『割安か・割高か』の多角的な分析結果。例：『価格は（この競合商品の名前）より30%高いが、有効成分が2倍含まれており1回あたりのコストはむしろ低い』",
-        "featureComparison": ["「${this.product.title}」との『明確な共通点』", "「${this.product.title}」との『決定的な相違点』"],
-        "differentiators": ["『こういう場合は「${this.product.title}」を買うべき』という具体的なケース", "『逆にこういう場合は（この競合商品の名前）の方が適している』という具体的なケース"]
+        "featureComparison": ["共通点：（${this.product.title}」との『明確な共通点』）", "相違点：（${this.product.title}」との『決定的な相違点』）"],
+        "differentiators": ["${this.product.title}の利点：（『こういう場合は「${this.product.title}」を買うべき』という具体的なケース）", "（この競合商品の名前）の利点：（『逆にこういう場合は（この競合商品の名前）の方が適している』という具体的なケース）"]
       }
     ],
     "recommendation": {
