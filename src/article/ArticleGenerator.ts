@@ -695,17 +695,14 @@ ${reviewAnalysis ? this.generateSentimentAnalysis(reviewAnalysis) : ''}`;
 
           const productName = investigation.analysis.productName || investigation.product.title;
           const competitorName = competitor.name;
-          const normalize = (text: string): string => text.replaceAll('対象商品', `「${productName}」`).replaceAll('競合商品', `「${competitorName}」`);
+          const normalize = (text: string): string =>
+            text.replaceAll('対象商品', `「${productName}」`).replaceAll('競合商品', `「${competitorName}」`);
 
           const priceComparison = normalize(competitor.priceComparison);
 
-          const features = competitor.featureComparison
-            .map((feature) => `<li>${normalize(feature)}</li>`)
-            .join('\n');
+          const features = competitor.featureComparison.map((feature) => `<li>${normalize(feature)}</li>`).join('\n');
 
-          const differentiators = competitor.differentiators
-            .map((diff) => `<li>${normalize(diff)}</li>`)
-            .join('\n');
+          const differentiators = competitor.differentiators.map((diff) => `<li>${normalize(diff)}</li>`).join('\n');
 
           return `<div class="competitor-card">
 <h4>${this.escapeHtml(competitor.name)}</h4>
@@ -1736,7 +1733,9 @@ ${confidenceLine}`;
       ? `<span class="hero-tag hero-tag-availability">${this.escapeHtml(availabilityText)}</span>`
       : '';
 
-    const specTagsHtml = specs ? `<div class="competitor-preview-tags">${this.renderSpecTags(specs, 'hero-tag')}</div>` : '';
+    const specTagsHtml = specs
+      ? `<div class="competitor-preview-tags">${this.renderSpecTags(specs, 'hero-tag')}</div>`
+      : '';
 
     return `<${previewTag}${previewAttrs} class="competitor-preview"><img src="${this.escapeHtml(imageUrl)}" alt="${this.escapeHtml(name)}" class="competitor-preview-img"><div class="competitor-preview-content"><div class="competitor-preview-main">${scoreHtml}${actualPriceHtml}</div><div class="competitor-preview-meta">${amazonDirectHtml}${availabilityHtml}</div>${specTagsHtml}</div></${previewTag}>`;
   }

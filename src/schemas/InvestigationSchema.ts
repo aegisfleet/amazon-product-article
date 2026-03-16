@@ -38,13 +38,12 @@ export const InvestigationFileSchema = z.looseObject({
         differentiators: z.array(z.string()),
       }),
     ),
-    recommendation: z
-      .looseObject({
-        targetUsers: z.array(z.string()),
-        pros: z.array(z.string()),
-        cons: z.array(z.string()),
-        score: z.number(),
-      }),
+    recommendation: z.looseObject({
+      targetUsers: z.array(z.string()),
+      pros: z.array(z.string()),
+      cons: z.array(z.string()),
+      score: z.number(),
+    }),
     lastInvestigated: z.string().optional(),
   }),
 });

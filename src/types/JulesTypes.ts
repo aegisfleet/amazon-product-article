@@ -204,7 +204,7 @@ export interface DimensionsSpec {
 type NullableString = string | null;
 type StringOrArray = string | string[] | null;
 type StringOrNumber = string | number | null;
-type MaterialValue = string | { upper?: string; outsole?: string; insole?: string; } | null;
+type MaterialValue = string | { upper?: string; outsole?: string; insole?: string } | null;
 type GeneralOutput = string | { [key: string]: string } | null;
 type PortsInfo = string | string[] | { [key: string]: unknown } | null;
 type LoadCapacityValue = string | { [key: string]: string } | null;
