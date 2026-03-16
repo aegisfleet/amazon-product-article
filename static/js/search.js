@@ -77,6 +77,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 const searchIndex = data;
                 fuse = new Fuse(searchIndex, {
                     keys: [
+                        { name: "asin", weight: 1.0 },
                         { name: "title", weight: 0.7 },
                         { name: "contents", weight: 0.2 },
                         { name: "categories", weight: 0.1 },

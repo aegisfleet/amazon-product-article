@@ -41,6 +41,7 @@
       "score" .Params.score
       "last_investigated" .Params.last_investigated
       "specs" $spec_text
+      "asin" .Params.asin
     -}}
   {{- $.Scratch.Add "index" $dict -}}
 {{- end -}}
