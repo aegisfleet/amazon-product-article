@@ -198,33 +198,35 @@
                 </div>
                 {{ end }}
                 <div class="card-meta-ext">
-                    {{ if .Params.price }}
-                    <span class="card-price">
-                        <span aria-hidden="true">💰</span> {{ .Params.price }}
-                    </span>
-                    {{ end }}
-                    {{ with .Params.merchant_name }}
-                    <span class="card-merchant">
-                        🏢 販売元: {{ . }}
-                    </span>
-                    {{ end }}
-                    {{ if .Params.is_amazon_direct }}
-                    <span class="card-amazon-direct">
-                        📦 Amazon直販
-                    </span>
-                    {{ end }}
-                    {{ if .Params.score }}
-                    {{ $score := .Params.score | int }}
-                    {{ $scoreClass := "score-fair" }}
-                    {{ if ge $score 80 }}
-                    {{ $scoreClass = "score-excellent" }}
-                    {{ else if ge $score 60 }}
-                    {{ $scoreClass = "score-good" }}
-                    {{ end }}
-                    <span class="card-score {{ $scoreClass }}">
-                        <span aria-hidden="true">🏆</span> {{ .Params.score }}点
-                    </span>
-                    {{ end }}
+                    <div class="meta-main-row">
+                        {{ if .Params.price }}
+                        <span class="card-price">
+                            <span aria-hidden="true">💰</span> {{ .Params.price }}
+                        </span>
+                        {{ end }}
+                        {{ if .Params.score }}
+                        {{ $score := .Params.score | int }}
+                        {{ $scoreClass := "score-fair" }}
+                        {{ if ge $score 80 }}
+                        {{ $scoreClass = "score-excellent" }}
+                        {{ else if ge $score 60 }}
+                        {{ $scoreClass = "score-good" }}
+                        {{ end }}
+                        <span class="card-score {{ $scoreClass }}">
+                            <span aria-hidden="true">🏆</span> {{ .Params.score }}点
+                        </span>
+                        {{ end }}
+                    </div>
+                    <div class="meta-details-row">
+                        {{ with .Params.merchant_name }}
+                        <span class="card-merchant">
+                            🏢 {{ . | truncate 15 }}
+                        </span>
+                        {{ end }}
+                        {{ if .Params.is_amazon_direct }}
+                        <span class="card-amazon-direct">Amazon直販</span>
+                        {{ end }}
+                    </div>
                 </div>
                 <div class="card-footer">
                     <span class="article-meta">{{ with .Params.last_investigated }}{{ time . | dateFormat "2006年01月02日"
