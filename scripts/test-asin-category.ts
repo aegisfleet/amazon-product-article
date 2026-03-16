@@ -5,7 +5,7 @@ import { CategoryNormalizer } from '../src/utils/CategoryNormalizer';
 const debugOutputPath = path.resolve('tmp', 'debug_output.json');
 try {
   const debugOutput = JSON.parse(fs.readFileSync(debugOutputPath, 'utf8'));
-  const item = debugOutput.itemsResult?.items?.[0];
+  const item = debugOutput.response?.itemsResult?.items?.[0] || debugOutput.itemsResult?.items?.[0];
   if (!item) {
     console.error('No item found in debug_output.json');
     process.exit(1);
