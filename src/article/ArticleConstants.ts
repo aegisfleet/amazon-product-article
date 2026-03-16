@@ -233,8 +233,8 @@ export const DEFAULT_ARTICLE_TEMPLATE: ArticleTemplate = {
     competitiveAnalysis: {
       title: '競合商品との比較',
       minWordCount: 600,
-      requiredElements: ['競合商品', '機能比較', '差別化ポイント'],
-      structure: '競合商品紹介 → 機能比較 → 優位性分析',
+      requiredElements: ['競合商品', '比較ポイント', '選び方のポイント'],
+      structure: '競合商品紹介 → 比較ポイント → 優位性分析',
     },
     recommendation: {
       title: '購入推奨度',
