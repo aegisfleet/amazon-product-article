@@ -145,7 +145,7 @@ export class SiteNavigationManager {
   generateSitemap(): string {
     this.logger.info('Generating sitemap');
 
-    const baseUrl = 'https://amazon-hikaku.com/';
+    const baseUrl = 'https://www.amazon-hikaku.com/';
     const now = new Date().toISOString();
 
     const urls: Array<{ loc: string; priority: string; changefreq: string }> = [

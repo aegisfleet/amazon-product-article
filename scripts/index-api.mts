@@ -101,7 +101,7 @@ const getCandidateUrls = (urls: string[], state: IndexingState): string[] => {
 };
 
 const fetchSitemapUrls = async (): Promise<string[]> => {
-    const sitemapUrl = 'https://amazon-hikaku.com/sitemap.xml';
+    const sitemapUrl = 'https://www.amazon-hikaku.com/sitemap.xml';
     const urls: string[] = [];
     try {
         console.log(`Fetching sitemap from: ${sitemapUrl}`);
