@@ -147,6 +147,8 @@ export class ArticleGenerator {
     const affiliateLink = this.affiliateManager.generateLinkFromProduct(product);
     const affiliateUrl = affiliateLink.url;
 
+    const isAmazonDirect = product.merchantName === 'Amazon.co.jp';
+
     const metadata: ArticleMetadata = {
       title,
       description,
@@ -161,14 +163,11 @@ export class ArticleGenerator {
       featured: this.shouldBeFeatured(product, investigation),
       mobileOptimized: true,
       seoKeywords,
-      is_prime: product.isPrimeEligible || false,
+      is_amazon_direct: isAmazonDirect,
       merchant_name: product.merchantName,
       affiliate_url: affiliateUrl,
     };
 
-    if (product.isPrimeEligible !== undefined) {
-      metadata.is_prime = product.isPrimeEligible;
-    }
     if (product.availability !== undefined) {
       metadata.availability = product.availability;
     }
@@ -381,15 +380,16 @@ export class ArticleGenerator {
       infoRows.push(`| ブランド | ${productDetail.brand} |`);
     }
 
-    // 在庫・Prime情報
+    // 在庫・Amazon直販情報
     if (productDetail.availability) {
       infoRows.push(`| 在庫状況 | ${this.escapeHtml(productDetail.availability)} |`);
     }
     if (productDetail.merchantName) {
       infoRows.push(`| 販売元 | ${this.escapeHtml(productDetail.merchantName)} |`);
     }
-    if (productDetail.isPrimeEligible) {
-      infoRows.push(`| Prime対応 | ✅ 対応 |`);
+    const isAmazonDirect = productDetail.merchantName === 'Amazon.co.jp';
+    if (isAmazonDirect) {
+      infoRows.push(`| Amazon直販 | ✅ 対応 |`);
     }
 
     // EAN/ISBN/UPC
@@ -1309,7 +1309,7 @@ ${recommendationMessage}`;
 
   private addMetricsMetadata(lines: string[], metadata: ArticleMetadata): void {
     if (metadata.score) lines.push(`score: ${metadata.score}`);
-    if (metadata.is_prime !== undefined) lines.push(`is_prime: ${metadata.is_prime}`);
+    if (metadata.is_amazon_direct !== undefined) lines.push(`is_amazon_direct: ${metadata.is_amazon_direct}`);
     if (metadata.availability) lines.push(`availability: "${this.escapeForFrontMatter(metadata.availability)}"`);
     if (metadata.rating !== undefined) lines.push(`rating: ${metadata.rating}`);
 
@@ -1709,7 +1709,7 @@ ${confidenceLine}`;
     const priceText = detail.price?.formatted || '';
     const competitorPriceAmount = detail.price?.amount || 0;
     const availabilityText = detail.availability || '';
-    const isPrime = detail.isPrimeEligible || false;
+    const isAmazonDirect = detail.merchantName === 'Amazon.co.jp';
 
     const priceDiffHtml = this.renderPriceDiff(basePriceAmount, competitorPriceAmount);
     const scoreHtml = this.renderCompetitorScore(score);
@@ -1720,7 +1720,7 @@ ${confidenceLine}`;
     const actualPriceHtml = priceText
       ? `<span class="competitor-actual-price">${this.escapeHtml(priceText)}${priceDiffHtml}</span>`
       : '';
-    const primeHtml = isPrime ? '<span class="hero-tag hero-tag-prime">Prime</span>' : '';
+    const amazonDirectHtml = isAmazonDirect ? '<span class="hero-tag hero-tag-amazon-direct">Amazon直販</span>' : '';
     const availabilityHtml = availabilityText
       ? `<span class="hero-tag hero-tag-availability">${this.escapeHtml(availabilityText)}</span>`
       : '';
@@ -1731,7 +1731,7 @@ ${confidenceLine}`;
 <${previewTag}${previewAttrs} class="competitor-preview">
 <img src="${this.escapeHtml(imageUrl)}" alt="${this.escapeHtml(name)}" class="competitor-preview-img">
 <div class="competitor-preview-info">
-${scoreHtml}${actualPriceHtml}${primeHtml}${availabilityHtml}${specTagsHtml}
+${scoreHtml}${actualPriceHtml}${amazonDirectHtml}${availabilityHtml}${specTagsHtml}
 </div>
 </${previewTag}>`;
   }
