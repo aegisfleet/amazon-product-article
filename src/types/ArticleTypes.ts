@@ -1,6 +1,7 @@
 import type { AffiliateLink } from './AffiliateTypes';
 import type { TechnicalSpecs } from './JulesTypes';
-import { StyleRule, TemplateSection } from './QualityTypes';
+import type { StyleRule, TemplateSection } from './QualityTypes';
+
 export { StyleRule, TemplateSection } from './QualityTypes';
 
 export interface ArticleMetadata {

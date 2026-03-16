@@ -1725,7 +1725,9 @@ ${confidenceLine}`;
       ? `<span class="hero-tag hero-tag-availability">${this.escapeHtml(availabilityText)}</span>`
       : '';
 
-    const specTagsHtml = specs ? `<div class="competitor-preview-tags">${this.renderSpecTags(specs, 'hero-tag')}</div>` : '';
+    const specTagsHtml = specs
+      ? `<div class="competitor-preview-tags">${this.renderSpecTags(specs, 'hero-tag')}</div>`
+      : '';
 
     return `
 <${previewTag}${previewAttrs} class="competitor-preview">
