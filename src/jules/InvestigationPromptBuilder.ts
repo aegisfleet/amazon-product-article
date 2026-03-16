@@ -177,7 +177,7 @@ cat data/investigations/${this.product.asin}.json 2>/dev/null || echo "新規調
    - 具体的サイト名・記事タイトル・URL（「Category Analysis」等の抽象名は禁止）
    - 例：「価格.com: [商品名] クチコミ」「The Verge Review」など
    - **【必須】sourcesは最低2件以上。Amazon商品ページのみは不可。第三者レビューサイト（価格.com、専門メディア、YouTube等）を必ず1件以上含めること**
-   - **旧形式（name, url, credibilityのみ）は不可。必ず構造化フィールド（id, tier, evidenceType, author, conflictOfInterest, notes）を全て含めること**
+   - **必ず構造化フィールド（id, tier, evidenceType, author, conflictOfInterest, notes）を全て含めること**
    - 採用基準: 著者・媒体・根拠が確認でき、一次情報または一次情報にアクセス可能な検証記事を優先
    - 除外基準: 匿名まとめ、転載のみ、出典リンクなし、根拠不明の断定、AI自動生成のみで裏取り不能な情報
    - 公式仕様は仕様確認用途に限定し、品質・耐久性・安全性・比較優位の評価根拠としては第三者ソースで必ず補強
