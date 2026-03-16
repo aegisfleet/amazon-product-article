@@ -1727,13 +1727,7 @@ ${confidenceLine}`;
 
     const specTagsHtml = specs ? `<div class="competitor-preview-tags">${this.renderSpecTags(specs, 'hero-tag')}</div>` : '';
 
-    return `
-<${previewTag}${previewAttrs} class="competitor-preview">
-<img src="${this.escapeHtml(imageUrl)}" alt="${this.escapeHtml(name)}" class="competitor-preview-img">
-<div class="competitor-preview-info">
-${scoreHtml}${actualPriceHtml}${amazonDirectHtml}${availabilityHtml}${specTagsHtml}
-</div>
-</${previewTag}>`;
+    return `<${previewTag}${previewAttrs} class="competitor-preview"><img src="${this.escapeHtml(imageUrl)}" alt="${this.escapeHtml(name)}" class="competitor-preview-img"><div class="competitor-preview-content"><div class="competitor-preview-main">${scoreHtml}${actualPriceHtml}</div><div class="competitor-preview-meta">${amazonDirectHtml}${availabilityHtml}</div>${specTagsHtml}</div></${previewTag}>`;
   }
 
   /**
