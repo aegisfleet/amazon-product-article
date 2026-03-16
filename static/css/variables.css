@@ -52,9 +52,10 @@
     --color-amazon-blue: #232F3E;
 
     /* Badge & Tag Colors (Shared) */
-    --badge-amazon-bg: linear-gradient(135deg, #FF9900, #FFB84D);
-    --badge-amazon-text: #111827;
-    --badge-amazon-shadow: rgba(255, 153, 0, 0.3);
+    --badge-amazon-bg: #FFF8E1; /* Light Amber bg */
+    --badge-amazon-text: #FF9900; /* Amazon Orange text */
+    --badge-amazon-border: #FF9900;
+    --badge-amazon-shadow: transparent;
 
     --badge-availability-bg: #ecfdf5;
     --badge-availability-text: #065f46;
@@ -149,10 +150,11 @@
         --border-score-good: #d97706;
         --gradient-score-fair: linear-gradient(135deg, #1f2937, #111827);
         --border-score-fair: #4b5563;
-        /* Badge & Tag Colors (Dark Mode) */
-        --badge-amazon-bg: linear-gradient(135deg, #FF9900, #FFB84D);
-        --badge-amazon-text: #111827;
-        --badge-amazon-shadow: rgba(255, 153, 0, 0.3);
+        /* Badge & Tag Colors (Dark Mode Override) */
+        --badge-amazon-bg: rgba(255, 153, 0, 0.1);
+        --badge-amazon-text: #FF9900;
+        --badge-amazon-border: #FF9900;
+        --badge-amazon-shadow: transparent;
 
         --badge-availability-bg: #064e3b;
         --badge-availability-text: #d1fae5;

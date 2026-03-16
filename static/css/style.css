@@ -391,8 +391,8 @@ a:hover {
   display: inline-flex;
   align-items: center;
   gap: var(--spacing-xs);
-  box-shadow: 0 2px 8px var(--badge-amazon-shadow);
-  border: none;
+  border: 1px solid var(--badge-amazon-border);
+  box-shadow: none;
 }
 
 .card-amazon-direct::before,
