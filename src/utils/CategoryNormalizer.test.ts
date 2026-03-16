@@ -93,6 +93,10 @@ describe('CategoryNormalizer', () => {
         'ポイント還元本対象商品',
         '書籍タイトル',
         '[書籍] 読み放題タイトル（ポイント還元本）',
+        'Babel 6-4',
+        'Babel 1-1',
+        'DIY & Garden - AmazonGlobal Free Shipping',
+        'Smart Home Store - AmazonGlobal Free Shipping',
       ];
       invalidNames.forEach((name) => {
         expect(CategoryNormalizer.isValidCategoryName(name)).toBe(false);
