@@ -48,7 +48,17 @@
 
     /* Amazon Specific */
     --color-amazon-orange: #FF9900;
+    --color-amazon-orange-light: #FFB84D;
     --color-amazon-blue: #232F3E;
+
+    /* Badge & Tag Colors (Shared) */
+    --badge-amazon-bg: linear-gradient(135deg, #FF9900, #FFB84D);
+    --badge-amazon-text: #111827;
+    --badge-amazon-shadow: rgba(255, 153, 0, 0.3);
+
+    --badge-availability-bg: #ecfdf5;
+    --badge-availability-text: #065f46;
+    --badge-availability-border: #10b981;
 
     /* Typography */
     --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
@@ -139,6 +149,15 @@
         --border-score-good: #d97706;
         --gradient-score-fair: linear-gradient(135deg, #1f2937, #111827);
         --border-score-fair: #4b5563;
+        /* Badge & Tag Colors (Dark Mode) */
+        --badge-amazon-bg: linear-gradient(135deg, #FF9900, #FFB84D);
+        --badge-amazon-text: #111827;
+        --badge-amazon-shadow: rgba(255, 153, 0, 0.3);
+
+        --badge-availability-bg: #064e3b;
+        --badge-availability-text: #d1fae5;
+        --badge-availability-border: #059669;
+
         --bg-score-default: #451a03;
         --text-score-default: #fef3c7;
         --border-score-default: #d97706;
@@ -191,6 +210,15 @@
     --border-score-good: #d97706;
     --gradient-score-fair: linear-gradient(135deg, #1f2937, #111827);
     --border-score-fair: #4b5563;
+    /* Badge & Tag Colors (Dark Mode) */
+    --badge-amazon-bg: linear-gradient(135deg, #FF9900, #FFB84D);
+    --badge-amazon-text: #111827;
+    --badge-amazon-shadow: rgba(255, 153, 0, 0.3);
+
+    --badge-availability-bg: #064e3b;
+    --badge-availability-text: #d1fae5;
+    --badge-availability-border: #059669;
+
     --bg-score-default: #451a03;
     --text-score-default: #fef3c7;
     --border-score-default: #d97706;

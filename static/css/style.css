@@ -380,21 +380,45 @@ a:hover {
   white-space: nowrap;
 }
 
-.card-amazon-direct {
-  background: var(--color-amazon-orange);
-  color: #111;
-  padding: 0.1rem 0.4rem;
-  border-radius: 4px;
-  font-size: 0.7rem;
+.card-amazon-direct,
+.hero-tag-amazon-direct {
+  background: var(--badge-amazon-bg);
+  color: var(--badge-amazon-text);
+  padding: 0.15rem 0.5rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.75rem;
   font-weight: 700;
   display: inline-flex;
   align-items: center;
+  gap: var(--spacing-xs);
+  box-shadow: 0 2px 8px var(--badge-amazon-shadow);
+  border: none;
 }
 
-.card-availability {
+.card-amazon-direct::before,
+.hero-tag-amazon-direct::before {
+  content: "📦";
+  font-size: 0.9em;
+}
+
+.card-availability,
+.hero-tag-availability {
+  background: var(--badge-availability-bg);
+  color: var(--badge-availability-text);
+  padding: 0.15rem 0.5rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--badge-availability-border);
+  font-size: 0.75rem;
+  font-weight: 600;
   display: inline-flex;
   align-items: center;
-  gap: 2px;
+  gap: var(--spacing-xs);
+}
+
+.card-availability::before,
+.hero-tag-availability::before {
+  content: "🚚";
+  font-size: 0.9em;
 }
 
 .card-score {
@@ -1559,28 +1583,7 @@ a.competitor-preview:hover {
   font-size: 0.75rem;
 }
 
-.hero-tag-amazon-direct {
-  background: linear-gradient(135deg, #FF9900, #FFB84D);
-  color: #111;
-  font-weight: 700;
-  box-shadow: 0 2px 8px rgba(255, 153, 0, 0.3);
-  font-size: 0.8rem;
-  padding: 0.2rem 0.5rem;
-  border-radius: 4px;
-}
-
-.hero-tag-amazon-direct::before {
-    content: "📦 ";
-}
-
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) .hero-tag-amazon-direct {
-    background: linear-gradient(135deg, #FF9900, #FFB84D);
-    color: #111;
-    font-weight: 700;
-    box-shadow: 0 2px 8px rgba(255, 153, 0, 0.3);
-  }
-}
+/* Amazon Direct Tag is now unified with .card-amazon-direct */
 
 /* Review Cards */
 .review-card {
@@ -3051,29 +3054,7 @@ a.competitor-preview:hover {
   font-weight: 700;
 }
 
-.hero-tag-stock,
-.hero-tag-availability,
-.card-availability {
-  background: #ecfdf5;
-  color: #065f46;
-  /* Emerald 800 for better contrast on light background */
-  padding: 0.15rem 0.5rem;
-  border-radius: var(--radius-sm);
-  border: 1px solid #10b981;
-  font-size: 0.75rem;
-  font-weight: 600;
-  display: inline-block;
-}
-
-[data-theme="dark"] .hero-tag-stock,
-[data-theme="dark"] .hero-tag-availability,
-[data-theme="dark"] .card-availability {
-  background: #064e3b;
-  /* Opaque Emerald 900 for guaranteed contrast check */
-  border-color: #059669;
-  color: #d1fae5;
-  /* Emerald 100 */
-}
+/* Unified availability tags styling handled above */
 
 
 
