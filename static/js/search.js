@@ -1,11 +1,136 @@
 function escapeHTML(str) {
     if (typeof str !== 'string') return str;
     return str
-        .replace(/&/g, '&amp;')
-        .replace(/</g, '&lt;')
-        .replace(/>/g, '&gt;')
-        .replace(/"/g, '&quot;')
-        .replace(/'/g, '&#039;');
+        .replaceAll('&', '&amp;')
+        .replaceAll('<', '&lt;')
+        .replaceAll('>', '&gt;')
+        .replaceAll('"', '&quot;')
+        .replaceAll("'", '&#039;');
+}
+
+function toYen(value, unit) {
+    const num = Number.parseFloat(value);
+    if (!Number.isFinite(num)) return 0;
+    if (unit === '万') return num * 10000;
+    if (unit === '千') return num * 1000;
+    return num;
+}
+
+function parseBudgetFromQuery(query) {
+    const normalizedQuery = query.replaceAll(/\s+/g, '');
+    const rangeMatch = normalizedQuery.match(/(\d+(?:\.\d+)?)([万千])?円?[~〜-](\d+(?:\.\d+)?)([万千])?円?/);
+    if (rangeMatch) {
+        const min = toYen(rangeMatch[1], rangeMatch[2]);
+        const max = toYen(rangeMatch[3], rangeMatch[4]);
+        return { min: Math.min(min, max), max: Math.max(min, max) };
+    }
+
+    const upperMatch = normalizedQuery.match(/(\d+(?:\.\d+)?)([万千])?円?(以下|未満|まで)/);
+    if (upperMatch) {
+        return { max: toYen(upperMatch[1], upperMatch[2]) };
+    }
+
+    const lowerMatch = normalizedQuery.match(/(\d+(?:\.\d+)?)([万千])?円?(以上|超)/);
+    if (lowerMatch) {
+        return { min: toYen(lowerMatch[1], lowerMatch[2]) };
+    }
+
+    return null;
+}
+
+function debounce(func, wait) {
+    let timeout;
+    return function (...args) {
+        clearTimeout(timeout);
+        timeout = setTimeout(() => func.apply(this, args), wait);
+    };
+}
+
+function rerankResults(results, query) {
+    if (!Array.isArray(results) || results.length === 0) return [];
+
+    const queryLength = query.trim().length;
+    const queryTerms = query.trim().split(/\s+/).filter(Boolean).length;
+    const intentStrength = Math.min(1, Math.max(0, ((queryLength - 2) / 10) + ((queryTerms - 1) * 0.08)));
+
+    const fuseScores = results.map(result => Number.isFinite(result.score) ? result.score : 1);
+    const minFuseScore = Math.min(...fuseScores);
+    const maxFuseScore = Math.max(...fuseScores);
+    const fuseScoreRange = maxFuseScore - minFuseScore;
+
+    const now = Date.now();
+    const dayMs = 24 * 60 * 60 * 1000;
+    const queryBudget = parseBudgetFromQuery(query);
+
+    const getNormalizedFuseScore = (rawFuseScore) => {
+        if (!Number.isFinite(rawFuseScore)) return 0;
+        if (fuseScoreRange === 0) return 1;
+        const normalized = (rawFuseScore - minFuseScore) / fuseScoreRange;
+        return 1 - normalized;
+    };
+
+    const getQualityScore = (item) => {
+        const quality = Number.parseFloat(item.score);
+        if (!Number.isFinite(quality)) return 0;
+        return Math.min(1, Math.max(0, quality / 100));
+    };
+
+    const getPriceScore = (item) => {
+        const numericPrice = Number.parseFloat(item.price_value);
+
+        if (queryBudget) {
+            if (!Number.isFinite(numericPrice) || numericPrice <= 0) return 0;
+
+            if (queryBudget.min && numericPrice < queryBudget.min) return 0;
+            if (queryBudget.max && numericPrice > queryBudget.max) return 0;
+
+            const center = queryBudget.max && queryBudget.min
+                ? (queryBudget.min + queryBudget.max) / 2
+                : (queryBudget.max || queryBudget.min || numericPrice);
+            const distance = Math.abs(numericPrice - center);
+            const tolerance = Math.max(center * 0.5, 1000);
+            return Math.max(0, 1 - (distance / tolerance));
+        }
+
+        if (Number.isFinite(numericPrice) && numericPrice > 0) return 0.7;
+        return item.price ? 0.5 : 0;
+    };
+
+    const getFreshnessScore = (item) => {
+        if (!item.last_investigated) return 0;
+        const investigatedAt = Date.parse(item.last_investigated);
+        if (!Number.isFinite(investigatedAt)) return 0;
+        const ageDays = Math.max(0, (now - investigatedAt) / dayMs);
+        return Math.exp(-ageDays / 180);
+    };
+
+    const weights = {
+        text: 0.75 - (0.3 * intentStrength),
+        quality: 0.15 + (0.1 * intentStrength),
+        price: 0.05 + (0.1 * intentStrength),
+        freshness: 0.05 + (0.1 * intentStrength)
+    };
+
+    return results
+        .map(result => {
+            const item = result.item || {};
+            const textScore = getNormalizedFuseScore(result.score);
+            const qualityScore = getQualityScore(item);
+            const priceScore = getPriceScore(item);
+            const freshnessScore = getFreshnessScore(item);
+
+            const rerankScore =
+                (textScore * weights.text) +
+                (qualityScore * weights.quality) +
+                (priceScore * weights.price) +
+                (freshnessScore * weights.freshness);
+
+            return {
+                ...result,
+                rerankScore
+            };
+        })
+        .sort((a, b) => b.rerankScore - a.rerankScore);
 }
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -24,14 +149,14 @@ document.addEventListener('DOMContentLoaded', function () {
     // スマートフォンでの検索結果の高さを動的に調整（仮想キーボード対応）
     function updateSearchResultsHeight() {
         // モバイル判定（640px以下）
-        if (window.innerWidth > 640) {
+        if (globalThis.innerWidth > 640) {
             searchResults.style.maxHeight = '';
             return;
         }
 
         // Visual Viewport APIが利用可能な場合
-        if (window.visualViewport) {
-            const viewport = window.visualViewport;
+        if (globalThis.visualViewport) {
+            const viewport = globalThis.visualViewport;
             const searchContainer = document.querySelector('.search-container');
             if (!searchContainer) return;
 
@@ -48,16 +173,16 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     // Visual Viewport resize イベントで高さを動的に更新
-    if (window.visualViewport) {
-        window.visualViewport.addEventListener('resize', updateSearchResultsHeight);
-        window.visualViewport.addEventListener('scroll', updateSearchResultsHeight);
+    if (globalThis.visualViewport) {
+        globalThis.visualViewport.addEventListener('resize', updateSearchResultsHeight);
+        globalThis.visualViewport.addEventListener('scroll', updateSearchResultsHeight);
     }
 
     // ウィンドウリサイズ時も更新
-    window.addEventListener('resize', updateSearchResultsHeight);
+    globalThis.addEventListener('resize', updateSearchResultsHeight);
 
     // Load Fuse.js if not already loaded
-    if (window.Fuse) {
+    if (globalThis.Fuse) {
         initializeSearch();
     } else {
         const script = document.createElement('script');
@@ -77,7 +202,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 const searchIndex = data;
                 fuse = new Fuse(searchIndex, {
                     keys: [
-                        { name: "asin", weight: 1.0 },
+                        { name: "asin", weight: 1 },
                         { name: "title", weight: 0.7 },
                         { name: "contents", weight: 0.2 },
                         { name: "categories", weight: 0.1 },
@@ -93,15 +218,6 @@ document.addEventListener('DOMContentLoaded', function () {
             })
             .catch(err => console.error('Error loading search index:', err));
 
-        // Debounce function to limit search frequency
-        function debounce(func, wait) {
-            let timeout;
-            return function (...args) {
-                clearTimeout(timeout);
-                timeout = setTimeout(() => func.apply(this, args), wait);
-            };
-        }
-
         const handleSearch = debounce((query) => {
             const results = searchWithRerank(query);
             displayResults(results);
@@ -112,127 +228,11 @@ document.addEventListener('DOMContentLoaded', function () {
             return rerankResults(fuse.search(query), query);
         }
 
-        function rerankResults(results, query) {
-            if (!Array.isArray(results) || results.length === 0) return [];
-
-            const queryLength = query.trim().length;
-            const queryTerms = query.trim().split(/\s+/).filter(Boolean).length;
-            const intentStrength = Math.min(1, Math.max(0, ((queryLength - 2) / 10) + ((queryTerms - 1) * 0.08)));
-
-            const fuseScores = results.map(result => Number.isFinite(result.score) ? result.score : 1);
-            const minFuseScore = Math.min(...fuseScores);
-            const maxFuseScore = Math.max(...fuseScores);
-            const fuseScoreRange = maxFuseScore - minFuseScore;
-
-            const now = Date.now();
-            const dayMs = 24 * 60 * 60 * 1000;
-            const queryBudget = parseBudgetFromQuery(query);
-
-            const getNormalizedFuseScore = (rawFuseScore) => {
-                if (!Number.isFinite(rawFuseScore)) return 0;
-                if (fuseScoreRange === 0) return 1;
-                const normalized = (rawFuseScore - minFuseScore) / fuseScoreRange;
-                return 1 - normalized;
-            };
-
-            const getQualityScore = (item) => {
-                const quality = Number.parseFloat(item.score);
-                if (!Number.isFinite(quality)) return 0;
-                return Math.min(1, Math.max(0, quality / 100));
-            };
-
-            const getPriceScore = (item) => {
-                const numericPrice = Number.parseFloat(item.price_value);
-
-                if (queryBudget) {
-                    if (!Number.isFinite(numericPrice) || numericPrice <= 0) return 0;
-
-                    if (queryBudget.min && numericPrice < queryBudget.min) return 0;
-                    if (queryBudget.max && numericPrice > queryBudget.max) return 0;
-
-                    const center = queryBudget.max && queryBudget.min
-                        ? (queryBudget.min + queryBudget.max) / 2
-                        : (queryBudget.max || queryBudget.min || numericPrice);
-                    const distance = Math.abs(numericPrice - center);
-                    const tolerance = Math.max(center * 0.5, 1000);
-                    return Math.max(0, 1 - (distance / tolerance));
-                }
-
-                if (Number.isFinite(numericPrice) && numericPrice > 0) return 0.7;
-                return item.price ? 0.5 : 0;
-            };
-
-            const getFreshnessScore = (item) => {
-                if (!item.last_investigated) return 0;
-                const investigatedAt = Date.parse(item.last_investigated);
-                if (!Number.isFinite(investigatedAt)) return 0;
-                const ageDays = Math.max(0, (now - investigatedAt) / dayMs);
-                return Math.exp(-ageDays / 180);
-            };
-
-            const weights = {
-                text: 0.75 - (0.30 * intentStrength),
-                quality: 0.15 + (0.10 * intentStrength),
-                price: 0.05 + (0.10 * intentStrength),
-                freshness: 0.05 + (0.10 * intentStrength)
-            };
-
-            return results
-                .map(result => {
-                    const item = result.item || {};
-                    const textScore = getNormalizedFuseScore(result.score);
-                    const qualityScore = getQualityScore(item);
-                    const priceScore = getPriceScore(item);
-                    const freshnessScore = getFreshnessScore(item);
-
-                    const rerankScore =
-                        (textScore * weights.text) +
-                        (qualityScore * weights.quality) +
-                        (priceScore * weights.price) +
-                        (freshnessScore * weights.freshness);
-
-                    return {
-                        ...result,
-                        rerankScore
-                    };
-                })
-                .sort((a, b) => b.rerankScore - a.rerankScore);
-        }
-
-        function parseBudgetFromQuery(query) {
-            const normalizedQuery = query.replace(/\s+/g, '');
-            const rangeMatch = normalizedQuery.match(/(\d+(?:\.\d+)?)(万|千)?円?[~〜-](\d+(?:\.\d+)?)(万|千)?円?/);
-            if (rangeMatch) {
-                const min = toYen(rangeMatch[1], rangeMatch[2]);
-                const max = toYen(rangeMatch[3], rangeMatch[4]);
-                return { min: Math.min(min, max), max: Math.max(min, max) };
-            }
-
-            const upperMatch = normalizedQuery.match(/(\d+(?:\.\d+)?)(万|千)?円?(以下|未満|まで)/);
-            if (upperMatch) {
-                return { max: toYen(upperMatch[1], upperMatch[2]) };
-            }
-
-            const lowerMatch = normalizedQuery.match(/(\d+(?:\.\d+)?)(万|千)?円?(以上|超)/);
-            if (lowerMatch) {
-                return { min: toYen(lowerMatch[1], lowerMatch[2]) };
-            }
-
-            return null;
-        }
-
-        function toYen(value, unit) {
-            const num = Number.parseFloat(value);
-            if (!Number.isFinite(num)) return 0;
-            if (unit === '万') return num * 10000;
-            if (unit === '千') return num * 1000;
-            return num;
-        }
         // Event Listeners
         searchInput.addEventListener('input', (e) => {
             if (!fuse) return;
 
-            const query = e.target.value.replace(/　/g, ' ');
+            const query = e.target.value.replaceAll('　', ' ');
             if (query.trim().length === 0) {
                 displaySearchTips();
                 return;
@@ -252,7 +252,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         // === スクロール関連の状態管理 ===
         let isSearchInputMouseDown = false;
-        let lastScrollY = window.scrollY;
+        let lastScrollY = globalThis.scrollY;
         let fadeOutTimeout; // 検索結果フェードアウト用
         let focusScrollTimeout; // フォーカス時のスクロール遅延用
         let isProgramScrolling = false;
@@ -260,7 +260,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         // 現在のスクロール位置を記録
         function updateScrollPosition() {
-            lastScrollY = window.scrollY;
+            lastScrollY = globalThis.scrollY;
         }
 
         // 検索窓を見える位置にスクロールする共通関数
@@ -280,8 +280,8 @@ document.addEventListener('DOMContentLoaded', function () {
             }
 
             // ネイティブスクロールとの競合を防ぐため、現在のスクロールを一度即時停止させる
-            window.scrollTo({
-                top: window.pageYOffset,
+            globalThis.scrollTo({
+                top: globalThis.pageYOffset,
                 behavior: 'instant'
             });
 
@@ -295,7 +295,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
                 // 現在のコンテナの絶対位置（Body最上部からの距離）を算出
                 // これにより、移動中であっても常に正しい目的地を固定できる
-                const currentScrollY = window.pageYOffset;
+                const currentScrollY = globalThis.pageYOffset;
                 const containerRect = container.getBoundingClientRect();
                 const containerAbsoluteTop = containerRect.top + currentScrollY;
 
@@ -311,7 +311,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 // 目標位置へスクロール
                 // behavior: 'smooth' はキャリブレーションと干渉して「戻り」現象を作るため、
                 // 全て instant に統一して正確な貼り付きを優先する
-                window.scrollTo({
+                globalThis.scrollTo({
                     top: targetScrollY,
                     behavior: 'instant'
                 });
@@ -347,11 +347,11 @@ document.addEventListener('DOMContentLoaded', function () {
                 if (calibrationInterval) {
                     stopAndFinish();
                 }
-                window.removeEventListener('touchstart', stopOnInteraction);
-                window.removeEventListener('wheel', stopOnInteraction);
+                globalThis.removeEventListener('touchstart', stopOnInteraction);
+                globalThis.removeEventListener('wheel', stopOnInteraction);
             };
-            window.addEventListener('touchstart', stopOnInteraction, { passive: true });
-            window.addEventListener('wheel', stopOnInteraction, { passive: true });
+            globalThis.addEventListener('touchstart', stopOnInteraction, { passive: true });
+            globalThis.addEventListener('wheel', stopOnInteraction, { passive: true });
         }
 
         // スクロール処理をトリガーする共通関数
@@ -383,7 +383,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 return;
             }
 
-            const query = e.target.value.replace(/　/g, ' ');
+            const query = e.target.value.replaceAll('　', ' ');
             if (query.trim().length < 2) {
                 displaySearchTips();
             } else if (fuse) {
@@ -405,7 +405,7 @@ document.addEventListener('DOMContentLoaded', function () {
             }, 100);
 
             // 検索結果を表示
-            const query = e.target.value.replace(/　/g, ' ');
+            const query = e.target.value.replaceAll('　', ' ');
             if (query.trim().length < 2) {
                 displaySearchTips();
             } else if (fuse) {
@@ -425,7 +425,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
 
         // 手動スクロール時: 100px以上で検索結果をフェードアウト
-        window.addEventListener('scroll', () => {
+        globalThis.addEventListener('scroll', () => {
             if (isProgramScrolling) return;
 
             if (!searchResults.classList.contains('active')) {
@@ -433,7 +433,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 return;
             }
 
-            if (Math.abs(window.scrollY - lastScrollY) > 100) {
+            if (Math.abs(globalThis.scrollY - lastScrollY) > 100) {
                 searchResults.classList.add('fade-out');
                 clearTimeout(fadeOutTimeout);
                 fadeOutTimeout = setTimeout(() => {
@@ -482,24 +482,28 @@ document.addEventListener('DOMContentLoaded', function () {
             const escapedPermalink = escapeHTML(permalink);
             const escapedScore = escapeHTML(String(item.score || ''));
 
+            // HTML components
             const priceDisplay = item.price ? `<span class="result-price">💰 ${escapedPrice}</span>` : '';
+            
             let scoreClass = 'score-fair';
-            const score = parseInt(item.score) || 0;
+            const score = Number.parseInt(item.score, 10) || 0;
             if (score >= 80) {
                 scoreClass = 'score-excellent';
             } else if (score >= 60) {
                 scoreClass = 'score-good';
             }
             const scoreDisplay = item.score ? `<span class="result-score ${scoreClass}">🏆 ${escapedScore}点</span>` : '';
-            const thumbnailHtml = item.image ? `
-                <div class="result-thumbnail">
-                    <img src="${escapedImage}" alt="${escapedTitle}" loading="lazy">
-                </div>
-            ` : `
-                <div class="result-thumbnail no-image">
-                    <span>No Image</span>
-                </div>
-            `;
+
+            const thumbnailHtml = item.image 
+                ? `<div class="result-thumbnail"><img src="${escapedImage}" alt="${escapedTitle}" loading="lazy"></div>`
+                : '<div class="result-thumbnail no-image"><span>No Image</span></div>';
+
+            const categoriesHtml = (item.categories || [])
+                .map(c => `<span class="category-tag">${escapeHTML(c)}</span>`)
+                .join('');
+            const categoriesContainer = categoriesHtml 
+                ? `<div class="result-categories">${categoriesHtml}</div>` 
+                : '';
 
             return `
                 <a href="${escapedPermalink}" class="search-result-item">
@@ -513,7 +517,7 @@ document.addEventListener('DOMContentLoaded', function () {
                             </div>
                         </div>
                         <span class="result-summary">${escapedSummary}</span>
-                        ${item.categories ? `<div class="result-categories">${item.categories.map(c => `<span class="category-tag">${escapeHTML(c)}</span>`).join('')}</div>` : ''}
+                        ${categoriesContainer}
                     </div>
                 </a>
             `;
