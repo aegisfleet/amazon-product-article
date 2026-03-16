@@ -344,11 +344,24 @@ a:hover {
 }
 
 .card-meta-ext {
+  display: grid;
+  gap: var(--spacing-xs);
+  margin-top: 10px;
+  font-size: 0.9em;
+}
+
+.card-meta-primary {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: 10px;
-  font-size: 0.9em;
+  gap: var(--spacing-sm);
+  flex-wrap: wrap;
+}
+
+.card-meta-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-xs);
 }
 
 .card-score {
@@ -471,13 +484,17 @@ a:hover {
 }
 
 .card-merchant {
-  display: block;
-  font-size: 0.75rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  background: var(--color-bg-secondary);
   color: var(--color-text-muted);
-  margin-top: var(--spacing-xs);
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+  padding: 0.15rem 0.5rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--color-border);
+  font-size: 0.75rem;
+  font-weight: 600;
+  line-height: 1.2;
 }
 
 .card-footer {
@@ -648,13 +665,17 @@ a:hover {
 }
 
 .card-amazon-direct {
-    background: #FF9900;
-    color: #111;
-    padding: 0.2rem 0.5rem;
-    border-radius: 4px;
-    font-size: 0.8rem;
-    font-weight: 600;
-    border: 1px solid rgba(255, 153, 0, 0.2);
+  background: #ff9900;
+  color: #111;
+  padding: 0.15rem 0.5rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.75rem;
+  font-weight: 600;
+  line-height: 1.2;
+  border: 1px solid rgba(255, 153, 0, 0.2);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
 }
 /* Product Image Carousel */
 .product-image-carousel {
@@ -3035,7 +3056,10 @@ a.competitor-preview:hover {
   border: 1px solid #10b981;
   font-size: 0.75rem;
   font-weight: 600;
-  display: inline-block;
+  line-height: 1.2;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
 }
 
 [data-theme="dark"] .hero-tag-stock,
