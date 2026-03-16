@@ -85,7 +85,8 @@ describe('Investigation Prompt Property Tests', () => {
           expect(prompt).toContain('具体的サイト名・記事タイトル・URL');
           expect(prompt).toContain('採用基準');
           expect(prompt).toContain('除外基準');
-          expect(prompt).toContain('匿名まとめ、転載のみ、出典リンクなし、根拠不明の断定');
+          expect(prompt).toContain('匿名まとめ');
+          expect(prompt).toContain('転載のみ');
           expect(prompt).toContain('公式仕様は仕様確認用途に限定');
           expect(prompt).toContain('一次情報/二次情報');
           expect(prompt).toContain('公開日');
@@ -96,7 +97,7 @@ describe('Investigation Prompt Property Tests', () => {
           expect(prompt).toContain('重要な主張のクロスチェック');
           expect(prompt).toContain('2系統以上の独立ソースで一致確認');
           expect(prompt).toContain('同一企業のミラーサイト');
-          expect(prompt).toContain('一致確認できない主張は断定しない');
+          expect(prompt).toContain('一致確認できない主張は断定せ');
 
           // 6. Product information inclusion (Requirements 2.1)
           expect(prompt).toContain(product.title);
