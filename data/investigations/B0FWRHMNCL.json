@@ -1,0 +1,181 @@
+{
+  "analysis": {
+    "productName": "オーディオテクニカ AT-MI58/5.0",
+    "parentAsin": "B0FWRHMNCL",
+    "productDescription": "配信やDTM、ライブなどの音楽制作環境に適した、高音質・高耐久な5.0mのXLRマイクケーブルです。",
+    "productUsage": [
+      "コンデンサーマイクとオーディオインターフェースの接続",
+      "ライブハウスやスタジオでのミキサーとの接続",
+      "ゲーム実況や配信時のボイスチャット用マイクの接続"
+    ],
+    "positivePoints": [
+      "OFC（高純度無酸素銅）採用で音質劣化が少ない",
+      "金メッキプラグ採用で接触不良を防ぎ、経年劣化に強い",
+      "柔らかく取り回しの良いPVCシースでセッティングが容易",
+      "耐熱90度で発熱する機材周辺でも安心して使用可能"
+    ],
+    "negativePoints": [
+      "エントリー向けの汎用ケーブルと比較すると価格がやや高め",
+      "5.0mの固定長のため、卓上など短距離での使用には長すぎる場合がある"
+    ],
+    "useCases": [
+      "自宅での音楽制作（DTM）や配信機材のセッティング",
+      "ライブハウスやスタジオでの録音・パフォーマンス"
+    ],
+    "userStories": [
+      {
+        "userType": "ゲーム配信者",
+        "scenario": "自宅のデスク環境でコンデンサーマイクを接続",
+        "experience": "（推測）マイクアームの位置を変えたりする際にケーブルがしなやかなので扱いやすいです。ノイズも乗らずクリアに声が届くので、配信のクオリティが上がりました。ただ、デスクのみで使うには5mは少し長かったです。",
+        "sentiment": "positive"
+      },
+      {
+        "userType": "ミュージシャン",
+        "scenario": "スタジオでのレコーディング",
+        "experience": "（推測）スタジオでの録音用に購入しました。5mあるのでマイクスタンドへの取り回しも余裕があり、音質も申し分ありません。金メッキプラグの安心感もあります。",
+        "sentiment": "positive"
+      }
+    ],
+    "userImpression": "オーディオテクニカの信頼性に違わぬ高品質で、音質と耐久性を求めるユーザーに安心感を与える手堅い製品という評価が想定されます。",
+    "sources": [
+      {
+        "id": "source-1",
+        "name": "Amazon Product Page",
+        "url": "https://www.amazon.co.jp/dp/B0FWRHMNCL",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2025-11-28",
+        "author": "Audio Technica(オーディオテクニカ)",
+        "conflictOfInterest": "possible",
+        "notes": "メーカー提供の公式仕様情報を元に分析"
+      },
+      {
+        "id": "source-2",
+        "name": "General Knowledge of Audio Cables",
+        "url": "null",
+        "tier": "medium",
+        "evidenceType": "secondary",
+        "publishedAt": "",
+        "author": "Third Party Knowledge",
+        "conflictOfInterest": "none",
+        "notes": "OFCや金メッキプラグといった素材の一般的な特性に基づく推測評価"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "OFC（高純度無酸素銅）を採用し音質を重視している",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": ["source-1", "source-2"],
+        "crossChecked": true,
+        "notes": "公式仕様(source-1)と、OFCが一般的に高音質ケーブルで使われるという知識(source-2)で一致。具体的な音質変化についての第三者レビューは未確認のため、技術仕様からの推測として扱う。"
+      },
+      {
+        "claim": "金メッキプラグ採用で経年劣化に強い",
+        "category": "durability",
+        "confidence": "high",
+        "supportingSourceIds": ["source-1", "source-2"],
+        "crossChecked": true,
+        "notes": "公式仕様(source-1)と、金メッキが酸化を防ぐという一般的な知識(source-2)で一致。"
+      }
+    ],
+    "lastInvestigated": "2026-03-16",
+    "competitiveAnalysis": [
+      {
+        "name": "オーディオテクニカ BX3/3.0 BK",
+        "asin": "B0D53XHZ78",
+        "priceComparison": "同メーカーの3.0mモデル。BX3/3.0が3,600円、本製品(5.0m)が3,800円と長さの割に価格差が小さい。",
+        "featureComparison": [
+          "導体にはどちらも高純度無酸素銅を採用",
+          "BX3はブラックとホワイトの2色展開だが、本製品はブラックのみ"
+        ],
+        "differentiators": [
+          "本製品は耐熱90度仕様が明記されており、より過酷な環境（熱を持つ機材周り）での使用を想定している"
+        ]
+      },
+      {
+        "name": "NIMASO マイクケーブル XLR ケーブル (1.5M)",
+        "asin": "B09DXRGSK9",
+        "priceComparison": "NIMASOは1.5mで949円と非常に安価。",
+        "featureComparison": [
+          "NIMASOは純銅の編組みシールドを採用しノイズ低減を謳う",
+          "どちらもPVCジャケットを採用し柔軟性を確保"
+        ],
+        "differentiators": [
+          "オーディオテクニカ製品はOFC（無酸素銅）と金メッキプラグを採用しており、音質と長期的な耐久性で優位性がある"
+        ]
+      },
+      {
+        "name": "UGREEN マイクケーブル オス-メス XLR ケーブル (1M)",
+        "asin": "B016Q2CXV4",
+        "priceComparison": "UGREENは1mで1,799円。",
+        "featureComparison": [
+          "UGREENも金メッキプラグと純銅導体を採用",
+          "UGREENは二重シールド構造"
+        ],
+        "differentiators": [
+          "オーディオテクニカは国内有名音響メーカーとしての信頼性とサポート（国内正規品）に強みがある"
+        ]
+      },
+      {
+        "name": "オーディオテクニカ BX3/3.0 WH",
+        "asin": "B0D542MXFZ",
+        "priceComparison": "同メーカーBX3シリーズのホワイトモデル。3,600円。",
+        "featureComparison": [
+          "仕様はB0D53XHZ78と同じだがカラーがホワイト",
+          "白系のデスク環境やマイクアームにマッチする"
+        ],
+        "differentiators": [
+          "本製品(AT-MI58/5.0)はブラックのみで、よりプロフェッショナルな耐熱環境を想定"
+        ]
+      },
+      {
+        "name": "Amazonベーシック スピーカー PAシステム用XLRマイクケーブル (0.9m) 2本セット",
+        "asin": "B087KG5K35",
+        "priceComparison": "Amazonベーシックは0.9mが2本セットで1,534円とコストパフォーマンスに優れる。",
+        "featureComparison": [
+          "Amazonベーシックは全銅伝導体を採用",
+          "本製品はOFC（高純度無酸素銅）を採用"
+        ],
+        "differentiators": [
+          "本製品はOFC採用により、より高品位な音質伝達が期待できる"
+        ]
+      },
+      {
+        "name": "ヤマハ(YAMAHA) バランスケーブル 3m YBC03",
+        "asin": "B000E63SBS",
+        "priceComparison": "ヤマハの3mモデルは3,782円と、本製品(5m/3,800円)と同等の価格帯。",
+        "featureComparison": [
+          "ヤマハも大手国内メーカーの信頼性がある"
+        ],
+        "differentiators": [
+          "本製品はOFCや金メッキ、耐熱性などを明記しており、同価格帯で5mの長さを提供している点で優位性がある"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "品質と耐久性を重視する配信者やクリエイター",
+        "スタジオやライブハウスで長めのケーブルを必要とするミュージシャン"
+      ],
+      "pros": [
+        "OFCと金メッキプラグによる安定した高音質",
+        "取り回しやすいPVCシースと耐熱仕様による高い信頼性",
+        "オーディオテクニカ製という安心感"
+      ],
+      "cons": [
+        "安価なサードパーティ製品と比べると初期費用がかかる",
+        "デスク上の近距離用途では5mは長すぎて邪魔になる可能性がある"
+      ],
+      "score": 85,
+      "scoreRationale": "[基本点: 70]\n[加点: +5] (性能・機能: OFC採用、耐熱90度仕様で機材周りでの実用性が高い)\n[加点: +5] (品質・デザイン: 金メッキプラグと柔軟なPVCシースによる耐久性と取り回しの良さ)\n[加点: +8] (ユーザー満足度: 国内有名音響メーカーの国内正規品という高い信頼性)\n[減点: -3] (コストパフォーマンス: 汎用ケーブルと比較するとやや高価)\n[合計: 85]"
+    },
+    "technicalSpecs": {
+      "size": "5.0m",
+      "color": "ブラック",
+      "material": "導体: OFC(高純度無酸素銅), シース: PVC, プラグ: 金メッキ",
+      "heatResistance": "耐熱90度",
+      "compatibility": "コンデンサーマイク (+48Vファンタム電源対応)"
+    }
+  }
+}
