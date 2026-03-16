@@ -695,7 +695,7 @@ ${reviewAnalysis ? this.generateSentimentAnalysis(reviewAnalysis) : ''}`;
 
           const productName = investigation.analysis.productName || investigation.product.title;
           const competitorName = competitor.name;
-          const normalize = (text: string) => text.replaceAll('対象商品', `「${productName}」`).replaceAll('競合商品', `「${competitorName}」`);
+          const normalize = (text: string): string => text.replaceAll('対象商品', `「${productName}」`).replaceAll('競合商品', `「${competitorName}」`);
 
           const priceComparison = normalize(competitor.priceComparison);
 
@@ -1782,7 +1782,7 @@ ${confidenceLine}`;
   private renderSpecTags(specs: TechnicalSpecs, tagClass: string): string {
     const tags: string[] = [];
 
-    const addTag = (label: string, value: unknown) => {
+    const addTag = (label: string, value: unknown): void => {
       const formatted = this.formatSpecValue(value);
       if (formatted && formatted !== 'null') {
         tags.push(`<span class="${tagClass}">${label}: ${this.escapeHtml(formatted)}</span>`);
