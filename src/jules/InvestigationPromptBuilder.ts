@@ -155,11 +155,14 @@ cat data/investigations/${this.product.asin}.json 2>/dev/null || echo "新規調
    - 購入背景・生活変化・具体的エピソード（成功・失敗両方）
    - 出典明記: 実レビュー→出典記載 / 推測→experienceに「（推測）」明記
    - **userStoriesに実体験記載＆「レビュー不在」記載は矛盾 → 絶対禁止**
+   - **【品質基準】推測（「（推測）」付き）のストーリーは最大1件まで。実際のレビューや記事から引用・再構成したストーリーを最低2件含めること**
+   - **1-2行の短すぎるexperienceは禁止。具体的な状況・感想・Before/Afterを含む3行以上の記述にすること**
 
 3. 競合商品との比較
    - 同カテゴリの主要競合商品6-8点（最低6点）
    - 価格、機能、品質の比較
    - 差別化ポイントの特定
+   - **【品質基準】featureComparisonとdifferentiatorsは、1-2語の箇条書き（例：「機能はほぼ同等」「価格の安さ」）は禁止。具体的な数値・条件・使用シーンを含む文章で記述すること**
    - **【必須】各競合商品のASINを必ず特定してください**（アフィリエイトリンク生成に使用）
    - **Creators APIのSearchItemsエンドポイントを使用して競合商品を検索し、ASINを取得してください**
    - ASINが見つからない場合は "asin": null と記載
@@ -173,6 +176,8 @@ cat data/investigations/${this.product.asin}.json 2>/dev/null || echo "新規調
 5. 情報ソース
    - 具体的サイト名・記事タイトル・URL（「Category Analysis」等の抽象名は禁止）
    - 例：「価格.com: [商品名] クチコミ」「The Verge Review」など
+   - **【必須】sourcesは最低2件以上。Amazon商品ページのみは不可。第三者レビューサイト（価格.com、専門メディア、YouTube等）を必ず1件以上含めること**
+   - **旧形式（name, url, credibilityのみ）は不可。必ず構造化フィールド（id, tier, evidenceType, author, conflictOfInterest, notes）を全て含めること**
    - 採用基準: 著者・媒体・根拠が確認でき、一次情報または一次情報にアクセス可能な検証記事を優先
    - 除外基準: 匿名まとめ、転載のみ、出典リンクなし、根拠不明の断定、AI自動生成のみで裏取り不能な情報
    - 公式仕様は仕様確認用途に限定し、品質・耐久性・安全性・比較優位の評価根拠としては第三者ソースで必ず補強
@@ -222,8 +227,8 @@ ${rubric}
     "parentAsin": "${this.product.parentAsin || this.product.asin}",
     "productDescription": "この商品が何かを1-2文で簡潔に説明",
     "productUsage": ["使い方1", "使い方2", "使い方3"],
-    "positivePoints": ["具体的な良い点1", "具体的な良い点2"],
-    "negativePoints": ["具体的な問題点1", "具体的な問題点2"],
+    "positivePoints": ["具体的な良い点1（数値や比較を含む詳細な記述）", "具体的な良い点2"],
+    "negativePoints": ["具体的な問題点1（数値や影響範囲を含む詳細な記述）", "具体的な問題点2"],
     "useCases": ["使用シーン1", "使用シーン2"],
     "userStories": [
       {
@@ -279,7 +284,8 @@ ${rubric}
 \`\`\`
 
 **【technicalSpecs: 詳細スペック抽出】**
-上記JSONの "recommendation" の後に "technicalSpecs" フィールドも追加してください。
+上記JSONの "recommendation" の後（ただし \`analysis\` オブジェクトの **内部** ）に "technicalSpecs" フィールドも追加してください。
+※ technicalSpecs は必ず \`analysis\` の中に配置してください。\`analysis\` の外に配置するのは誤りです。
 商品カテゴリに応じて、詳細スペック情報を収集・構造化してください。
 
 【出力の安定化ルール】
