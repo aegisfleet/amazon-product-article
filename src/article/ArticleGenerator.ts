@@ -693,29 +693,23 @@ ${reviewAnalysis ? this.generateSentimentAnalysis(reviewAnalysis) : ''}`;
             ? `<a href="${this.escapeHtml(detail?.detailPageUrl || this.affiliateManager.generateAffiliateLink(normalizedAsin).url)}" class="btn-amazon-small" target="_blank" rel="noopener noreferrer">🛒 Amazonで見る</a>`
             : '';
 
+          const productName = investigation.analysis.productName || investigation.product.title;
+          const competitorName = competitor.name;
+          const normalize = (text: string) => text.replaceAll('対象商品', `「${productName}」`).replaceAll('競合商品', `「${competitorName}」`);
+
+          const priceComparison = normalize(competitor.priceComparison);
+
           const features = competitor.featureComparison
-            .map((feature) => {
-              const productName = investigation.analysis.productName || investigation.product.title;
-              const competitorName = competitor.name;
-              // 「対象商品」および「競合商品」という表現を実際の製品名に置換
-              const content = feature.replaceAll('対象商品', `「${productName}」`).replaceAll('競合商品', `「${competitorName}」`);
-              return `<li>${content}</li>`;
-            })
+            .map((feature) => `<li>${normalize(feature)}</li>`)
             .join('\n');
 
           const differentiators = competitor.differentiators
-            .map((diff) => {
-              const productName = investigation.analysis.productName || investigation.product.title;
-              const competitorName = competitor.name;
-              // 「対象商品」および「競合商品」という表現を実際の製品名に置換
-              const content = diff.replaceAll('対象商品', `「${productName}」`).replaceAll('競合商品', `「${competitorName}」`);
-              return `<li>${content}</li>`;
-            })
+            .map((diff) => `<li>${normalize(diff)}</li>`)
             .join('\n');
 
           return `<div class="competitor-card">
 <h4>${this.escapeHtml(competitor.name)}</h4>
-<p class="competitor-price">💰 ${this.escapeHtml(competitor.priceComparison)}</p>
+<p class="competitor-price">💰 ${this.escapeHtml(priceComparison)}</p>
 <div class="competitor-features">
 <strong>比較ポイント:</strong>
 <ul>
