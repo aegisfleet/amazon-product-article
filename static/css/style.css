@@ -345,10 +345,56 @@ a:hover {
 
 .card-meta-ext {
   display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+  margin-top: var(--spacing-md);
+  padding: var(--spacing-sm);
+  background: var(--color-bg-body);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border);
+}
+
+.meta-main-row {
+  display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: 10px;
-  font-size: 0.9em;
+  width: 100%;
+}
+
+.meta-details-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-sm);
+  align-items: center;
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+}
+
+.card-merchant {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  max-width: 150px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.card-amazon-direct {
+  background: var(--color-amazon-orange);
+  color: #111;
+  padding: 0.1rem 0.4rem;
+  border-radius: 4px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+}
+
+.card-availability {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
 }
 
 .card-score {
@@ -468,16 +514,6 @@ a:hover {
 .card-price {
   font-weight: bold;
   color: var(--color-text-main);
-}
-
-.card-merchant {
-  display: block;
-  font-size: 0.75rem;
-  color: var(--color-text-muted);
-  margin-top: var(--spacing-xs);
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
 }
 
 .card-footer {
@@ -647,15 +683,6 @@ a:hover {
   align-items: center;
 }
 
-.card-amazon-direct {
-    background: #FF9900;
-    color: #111;
-    padding: 0.2rem 0.5rem;
-    border-radius: 4px;
-    font-size: 0.8rem;
-    font-weight: 600;
-    border: 1px solid rgba(255, 153, 0, 0.2);
-}
 /* Product Image Carousel */
 .product-image-carousel {
   position: relative;
