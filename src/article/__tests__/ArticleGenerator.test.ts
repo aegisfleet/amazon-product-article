@@ -370,6 +370,7 @@ describe('ArticleGenerator', () => {
       expect(result.content).toContain('date_published: "2025-01-01"');
       expect(result.content).toContain('summary: "第三者検証あり"');
       expect(result.content).toContain('rating: 4.2');
+      expect(result.content).toContain('rating_count: 150');
     });
 
     it('should include availability in front matter and hero section', async () => {
@@ -622,6 +623,7 @@ describe('ArticleGenerator', () => {
       expect(metadata.category).toBe('Electronics');
       expect(metadata.priceRange).toBe('premium');
       expect(metadata.rating).toBe(4.2);
+      expect(metadata.ratingCount).toBe(150);
       expect(metadata.mobileOptimized).toBe(true);
       expect(metadata.tags).toContain('商品レビュー');
       expect(metadata.seoKeywords).toContain('レビュー');
@@ -678,6 +680,16 @@ describe('ArticleGenerator', () => {
       const highPriceProduct = { ...mockProduct, price: { ...mockProduct.price, amount: 25000 } };
       const metadata3 = generator.generateSEOMetadata(highPriceProduct, mockInvestigation);
       expect(metadata3.priceRange).toBe('high');
+    });
+
+    it('should not set ratingCount when rating count is zero', () => {
+      const unratedCountProduct = {
+        ...mockProduct,
+        rating: { ...mockProduct.rating, count: 0 },
+      };
+
+      const metadata = generator.generateSEOMetadata(unratedCountProduct, mockInvestigation);
+      expect(metadata.ratingCount).toBeUndefined();
     });
 
     it('should set featured flag correctly', () => {
