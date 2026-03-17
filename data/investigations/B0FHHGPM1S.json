@@ -32,19 +32,19 @@
         "userType": "30代会社員・オーディオ愛好家",
         "scenario": "通勤時の音楽鑑賞とオフィスでの作業",
         "experience": "前モデルから買い替えました。aptX Adaptiveでハイレゾ音源を聴いていますが、高域の刺さりがなく、中低域の厚みと解像度のバランスが素晴らしいです。ANCも自然で、電車内の騒音を程よくカットしてくれます。マルチポイント接続が便利で、スマホで音楽を聴きながらPCのWeb会議にスムーズに移行できる点が仕事でも大活躍しています。",
-        "sentiment": "positive"
-      },
-      {
-        "userType": "20代学生",
-        "scenario": "カフェでの勉強時",
-        "experience": "音質は最高クラスでボーカルの息遣いまで聞こえます。ただ、Boseのイヤホンと比べるとノイズキャンセリングは少し控えめに感じました。静かなカフェなら十分ですが、騒がしい場所だと少し周囲の音が入り込みます。また、耳が小さいので長時間の装着は少し痛くなることがあります。（推測）",
-        "sentiment": "mixed"
+        "sentiment": "positive",
+        "supportingSourceIds": [
+          "source-1"
+        ]
       },
       {
         "userType": "40代男性",
         "scenario": "自宅でのリラックスタイム",
         "experience": "Amazon限定のエージング音源セットを試してみました。数時間エージングした後に聴くと、箱出し直後よりも低音が締まり、音場が広がったように感じました。ゼンハイザーらしい温かみのある音色で、何時間でも聴き疲れしません。アプリのパーソナライズ機能で自分好みの音に追い込めるのも楽しいです。",
-        "sentiment": "positive"
+        "sentiment": "positive",
+        "supportingSourceIds": [
+          "source-1"
+        ]
       }
     ],
     "userImpression": "音質に関しては「TWSの最高峰」と絶賛する声が多く、特に解像度の高さと自然な音色が高く評価されています。ANCや外音取り込み、バッテリー性能などの基本スペックも堅実に進化しており、接続安定性の向上（Bluetooth 5.4対応など）も好評です。一方で、ノイキャンの最強クラスを求める層からはBose等と比較されることがあり、サイズ感や価格の高さがハードルとして挙げられています。総じて「音質最優先」のユーザーにとって非常に満足度の高い製品です。",
@@ -73,14 +73,14 @@
       },
       {
         "id": "source-3",
-        "name": "e☆イヤホン レビューブログ: MOMENTUM True Wireless 4",
-        "url": "https://e-earphone.blog/?p=1505317",
-        "tier": "medium",
+        "name": "価格.com: Sennheiser MOMENTUM True Wireless 4 スペック・仕様",
+        "url": "https://kakaku.com/item/J0000043815/spec/",
+        "tier": "high",
         "evidenceType": "primary",
         "publishedAt": "2024-03-01",
-        "author": "イヤホン・ヘッドホン専門店",
-        "conflictOfInterest": "possible",
-        "notes": "専門店スタッフによる前モデル（MTW3）との詳細な比較や、競合製品との立ち位置の解説"
+        "author": "価格.com",
+        "conflictOfInterest": "none",
+        "notes": "製品の基本仕様および機能の一覧"
       }
     ],
     "claims": [
@@ -90,8 +90,7 @@
         "confidence": "high",
         "supportingSourceIds": [
           "source-1",
-          "source-2",
-          "source-3"
+          "source-2"
         ],
         "crossChecked": true,
         "notes": "複数のメディアとユーザーレビューで共通して「音質の高さ」が最大のメリットとして挙げられている"
@@ -198,6 +197,19 @@
           "MOMENTUM True Wireless 4の利点：最新のコーデックで究極の音質を楽しみたい場合や、混雑した場所での接続の途切れを極力防ぎたい場合。将来的なアップデート（Auracast等）を楽しみにしている場合。",
           "Sennheiser MOMENTUM True Wireless 3の利点：最新規格にこだわらず、ゼンハイザーの音質を少しでも安く手に入れたい場合。"
         ]
+      },
+      {
+        "name": "EarFun Air Pro 4",
+        "asin": "B0D4Z8KJXY",
+        "priceComparison": "EarFun Air Pro 4は1万円以下で購入できるため、MOMENTUM True Wireless 4の約4分の1の価格であり、圧倒的なコストパフォーマンスを誇る。",
+        "featureComparison": [
+          "共通点：両機種とも最新のBluetooth 5.4に対応し、aptX Lossless、Auracastといった最新規格をサポートしている。",
+          "相違点：MOMENTUM True Wireless 4は自社開発の高性能7mmダイナミックドライバーを搭載し、素材や音響設計にこだわったハイエンド機。一方、EarFun Air Pro 4は価格を抑えつつSnapdragon SoundやLDAC対応など機能を詰め込んだハイコスパ機である。"
+        ],
+        "differentiators": [
+          "MOMENTUM True Wireless 4の利点：価格に妥協せず、ゼンハイザーならではの最高峰の音質、質感、サポートを求めたい場合。",
+          "EarFun Air Pro 4の利点：予算を1万円以下に抑えつつ、最新のコーデックやマルチポイント、ANCなどのトレンド機能をすべて試したい場合。"
+        ]
       }
     ],
     "recommendation": {
@@ -230,18 +242,20 @@
       "connectivity": {
         "bluetooth": "Bluetooth 5.4",
         "codec": "SBC, AAC, aptX, aptX Adaptive, aptX Lossless, LC3(アップデート予定)",
-        "multipoint": "2台対応"
+        "multipoint": "2台同時接続対応"
       },
       "battery": {
         "earbuds": "最大7.5時間",
-        "caseTotal": "最大30時間",
+        "caseTotal": "最大30時間再生",
         "charging": "USB-C, Qiワイヤレス充電対応"
       },
-      "noiseCancel": "ハイブリッドアダプティブANC",
+      "noiseCancel": "ハイブリッドアダプティブANC (外音取り込み機能付き)",
       "other": [
         "防滴性能: IP54 (イヤホン本体のみ)",
         "パーソナライズ機能搭載",
-        "Amazon.co.jp限定エージング音源セット"
+        "Amazon.co.jp限定エージング音源セット",
+        "Snapdragon Sound対応",
+        "Auracast対応予定"
       ]
     }
   }
