@@ -160,6 +160,7 @@ export class ArticleGenerator {
       price,
       score,
       ...(product.rating.average > 0 && product.rating.average <= 5 ? { rating: product.rating.average } : {}),
+      ...(product.rating.count > 0 ? { ratingCount: product.rating.count } : {}),
       featured: this.shouldBeFeatured(product, investigation),
       mobileOptimized: true,
       seoKeywords,
@@ -1336,6 +1337,7 @@ ${recommendationMessage}`;
     if (metadata.is_amazon_direct !== undefined) lines.push(`is_amazon_direct: ${metadata.is_amazon_direct}`);
     if (metadata.availability) lines.push(`availability: "${this.escapeForFrontMatter(metadata.availability)}"`);
     if (metadata.rating !== undefined) lines.push(`rating: ${metadata.rating}`);
+    if (metadata.ratingCount !== undefined) lines.push(`rating_count: ${metadata.ratingCount}`);
 
     if (metadata.review) {
       lines.push('review:');

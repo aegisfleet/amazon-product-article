@@ -17,6 +17,7 @@ export interface ArticleMetadata {
   price?: string;
   score?: number;
   rating?: number;
+  ratingCount?: number;
   featured: boolean;
   mobileOptimized: boolean;
   seoKeywords: string[];
