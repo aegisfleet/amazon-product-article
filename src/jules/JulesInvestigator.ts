@@ -20,6 +20,7 @@ import type {
   SourceContext,
 } from '../types/JulesTypes';
 import type { Product } from '../types/Product';
+import { InvestigationFileSchema } from '../schemas/InvestigationSchema';
 import { Logger } from '../utils/Logger';
 import { formatInvestigationPrompt } from './prompts';
 
@@ -264,10 +265,16 @@ export class JulesInvestigator {
     const jsonMatch = jsonRegex.exec(content);
     if (jsonMatch?.[1]) {
       try {
-        const parsed = JSON.parse(jsonMatch[1]) as { analysis?: InvestigationResult['analysis'] };
-        if (parsed.analysis) {
-          return parsed.analysis;
+        const parsed = JSON.parse(jsonMatch[1]);
+        // InvestigationFileSchema は { analysis: ... } という構造を期待しているため、
+        // 入力がその構造を持っているか確認してからパースする
+        const dataToValidate = parsed.analysis ? parsed : { analysis: parsed };
+        const validation = InvestigationFileSchema.safeParse(dataToValidate);
+
+        if (validation.success) {
+          return validation.data.analysis as InvestigationResult['analysis'];
         }
+        this.logger.warn('JSON analysis does not match schema, using fallback', validation.error);
       } catch {
         this.logger.warn('Failed to parse JSON analysis, using fallback');
       }
