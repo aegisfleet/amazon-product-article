@@ -275,17 +275,17 @@ export class ArticleGenerator {
 
     // blockquoteを復元
     blockquotes.forEach((bq, i) => {
-      mobileContent = mobileContent.replace(`__BLOCKQUOTE_${i}__`, bq);
+      mobileContent = mobileContent.replaceAll(`__BLOCKQUOTE_${i}__`, bq);
     });
 
     // ヒーロー説明文を復元
     heroDescriptions.forEach((bq, i) => {
-      mobileContent = mobileContent.replace(`__HERODESC_${i}__`, bq);
+      mobileContent = mobileContent.replaceAll(`__HERODESC_${i}__`, bq);
     });
 
     // ソース情報のspanを復元
     sourceSpans.forEach((bq, i) => {
-      mobileContent = mobileContent.replace(`__SOURCESPAN_${i}__`, bq);
+      mobileContent = mobileContent.replaceAll(`__SOURCESPAN_${i}__`, bq);
     });
 
     // テーブルをモバイル対応形式に変換
@@ -519,7 +519,7 @@ ${infoRows.join('\n')}
 
         // 物理的な 1 行に強制するため、あらゆる改行文字を削除し、空白を集約する
         const line = `- <span class="mobile-list-item">${sourceContent}</span>`;
-        return line.replace(/\\n/g, ' ').replace(/\s+/g, ' ').trim();
+        return line.replaceAll(String.raw`\n`, ' ').replaceAll(/\s+/g, ' ').trim();
       })
       .join('\n');
 
