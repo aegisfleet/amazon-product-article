@@ -210,7 +210,7 @@ export class ArticleGenerator {
     if (reviewSummary) {
       metadata.review = {
         author: ArticleGenerator.REVIEW_AUTHOR_NAME,
-        datePublished: metadata.publishDate.toISOString().slice(0, 10),
+        datePublished: this.resolveReviewDatePublished(metadata.publishDate),
         summary: reviewSummary,
         ...(metadata.rating === undefined ? {} : { rating: metadata.rating }),
       };
@@ -231,6 +231,14 @@ export class ArticleGenerator {
     );
 
     return verifiedPrimarySource?.notes?.trim();
+  }
+
+  private resolveReviewDatePublished(publishDate: Date): string {
+    if (Number.isNaN(publishDate.getTime())) {
+      return new Date().toISOString().slice(0, 10);
+    }
+
+    return publishDate.toISOString().slice(0, 10);
   }
 
   /**

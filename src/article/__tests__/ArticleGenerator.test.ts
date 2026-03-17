@@ -411,6 +411,32 @@ describe('ArticleGenerator', () => {
       expect(result.content).toContain('hero:');
       expect(result.sections).toHaveLength(6);
     });
+
+    it('should not output review front matter when no verified review summary exists', async () => {
+      const unverifiedInvestigation: InvestigationResult = {
+        ...mockInvestigation,
+        analysis: {
+          ...mockInvestigation.analysis,
+          sources: [
+            {
+              name: '未検証ブログ',
+              url: 'https://example.com/unverified',
+              tier: 'medium',
+              evidenceType: 'secondary',
+              publishedAt: '2025-01-02',
+              author: 'メーカー公式',
+              conflictOfInterest: 'possible',
+              notes: '',
+            },
+          ],
+        },
+      };
+
+      const result = await generator.generateArticle(mockProduct, unverifiedInvestigation);
+
+      expect(result.content).not.toContain('review:');
+      expect(result.content).not.toContain('summary: "第三者検証あり"');
+    });
     it('should keep items but hide links for competitors with failed Creators API lookup', async () => {
       const mockCompetitorDetails = new Map<string, ProductDetail>();
 
@@ -638,6 +664,19 @@ describe('ArticleGenerator', () => {
       });
       expect(metadata.review?.author).not.toBe('購入者レビュー');
       expect(metadata.review?.author).not.toBe(metadata.manufacturer);
+    });
+
+    it('should fallback review datePublished to current date when publishDate is invalid', () => {
+      const invalidGeneratedAtInvestigation: InvestigationResult = {
+        ...mockInvestigation,
+        generatedAt: new Date('invalid-date'),
+      };
+
+      const metadata = generator.generateSEOMetadata(mockProduct, invalidGeneratedAtInvestigation);
+
+      expect(metadata.review?.author).toBe('編集部');
+      expect(metadata.review?.datePublished).toMatch(/^\d{4}-\d{2}-\d{2}$/);
+      expect(metadata.review?.summary).toBe('第三者検証あり');
     });
 
     it('should not generate review metadata when only unverified author evidence exists', () => {
