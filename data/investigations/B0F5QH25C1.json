@@ -26,22 +26,18 @@
     ],
     "userStories": [
       {
-        "userType": "30代会社員",
+        "userType": "不明",
         "scenario": "海外出張時の利用",
-        "experience": "海外出張に行く際、現地のeSIMを購入してこのルーターに設定して使いました。物理SIMを抜き差しする手間がなく、現地到着後すぐに通信できて非常に便利でした。技適マークもついているので安心して使えます。ただ、初期設定は少し戸惑いました。",
-        "sentiment": "positive",
-        "supportingSourceIds": [
-          "source-3"
-        ]
+        "experience": "具体的な実体験データなし。",
+        "sentiment": "mixed",
+        "supportingSourceIds": []
       },
       {
-        "userType": "40代男性（車中泊・ドライブ愛好家）",
+        "userType": "不明",
         "scenario": "車内でのWi-Fi環境構築",
-        "experience": "車内に常設して使うために購入しました。バッテリーレス運用ができるので、真夏の高温になる車内でもバッテリー膨張や発火の心配がなく、安心して使えています。エンジン始動と同時に起動するので快適です。",
-        "sentiment": "positive",
-        "supportingSourceIds": [
-          "source-3"
-        ]
+        "experience": "具体的な実体験データなし。",
+        "sentiment": "mixed",
+        "supportingSourceIds": []
       },
       {
         "userType": "不明",
@@ -63,28 +59,6 @@
         "author": "富士ソフト",
         "conflictOfInterest": "possible",
         "notes": "公式の製品仕様、機能説明、技適情報などを確認。"
-      },
-      {
-        "id": "source-2",
-        "name": "ITmedia Mobile: 富士ソフトの最新ルーター検証記事",
-        "url": "https://www.itmedia.co.jp/mobile/articles/2403/15/news123.html",
-        "tier": "high",
-        "evidenceType": "secondary",
-        "publishedAt": "2024-03-15",
-        "author": "ITmedia 編集部",
-        "conflictOfInterest": "none",
-        "notes": "第三者メディアによるeSIM設定やバッテリーレス運用の実機検証レビューとして参照。"
-      },
-      {
-        "id": "source-3",
-        "name": "価格.com: 富士ソフト +F FS045W クチコミ・レビュー",
-        "url": "https://kakaku.com/item/K0001598765/",
-        "tier": "medium",
-        "evidenceType": "primary",
-        "publishedAt": "2024-04-10",
-        "author": "一般ユーザー",
-        "conflictOfInterest": "none",
-        "notes": "車載用途や海外旅行での実利用体験談、評価傾向を確認するため参照。"
       }
     ],
     "claims": [
@@ -93,22 +67,20 @@
         "category": "comparativeAdvantage",
         "confidence": "high",
         "supportingSourceIds": [
-          "source-1",
-          "source-2"
+          "source-1"
         ],
-        "crossChecked": true,
-        "notes": "公式仕様とITmediaの実機検証記事で設定画面等の確認が取れており一致している。"
+        "crossChecked": false,
+        "notes": "公式仕様からの確認。複数ソースでのクロスチェックは現在不可。"
       },
       {
         "claim": "バッテリーレス運用に対応し、車載や常時給電環境でも安全",
         "category": "safety",
         "confidence": "high",
         "supportingSourceIds": [
-          "source-1",
-          "source-3"
+          "source-1"
         ],
-        "crossChecked": true,
-        "notes": "メーカーのアピールポイントであると同時に、価格.comなどのユーザーレビューでも車載環境での安全性が高く評価されている。"
+        "crossChecked": false,
+        "notes": "公式仕様からの確認。複数ソースでのクロスチェックは現在不可。"
       }
     ],
     "lastInvestigated": "2026-03-17",
