@@ -29,14 +29,18 @@
         "userType": "週末DIYユーザー",
         "scenario": "電動ドリルでの基礎的な穴あけ作業中に、安価な一般鋼材向けビットを使用して硬質材の加工を試みるケース。",
         "experience": "製品仕様を十分に確認せずにステンレス板の穴あけ作業を行ったため、刃が全く立たず、ドリル先端が焼き付いてしまいました。一般鋼材までなら問題ないですが、硬い素材にはコバルトハイスやチタンコーティングなどの専用ドリルが必要であることを痛感しました。",
-        "supportingSourceIds": ["source-3"],
+        "supportingSourceIds": [
+          "source-3"
+        ],
         "sentiment": "negative"
       },
       {
         "userType": "工具レビュー愛好家",
         "scenario": "YouTubeの工具比較動画で、各社の初心者向けビットセットの内容を比較。",
         "experience": "「HiKOKIの0040-1000は、価格の安さとプラスビットが複数（特にNo.2が多数）入っている点が実用的。ただし、ドリルはあくまで軽作業用なので、本格的に使うなら別途剛性の高いビットを買い足す前提でスターターとして買うべき」と評価されています。",
-        "supportingSourceIds": ["source-2"],
+        "supportingSourceIds": [
+          "source-2"
+        ],
         "sentiment": "mixed"
       }
     ],
@@ -78,7 +82,10 @@
         "claim": "ステンレスや熱処理された鋼材には使用不可である。",
         "category": "durability",
         "confidence": "high",
-        "supportingSourceIds": ["source-1", "source-3"],
+        "supportingSourceIds": [
+          "source-1",
+          "source-3"
+        ],
         "crossChecked": true,
         "notes": "製品仕様（Amazon掲載の公式情報）で明記されており、モノタロウ等の工具基礎知識サイトの記述（一般ハイス鋼はステンレス不可）とも一致する。"
       },
@@ -86,7 +93,10 @@
         "claim": "インパクトドライバー・ドライバードリルに対応する六角軸（6.35mm）である。",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["source-1", "source-2"],
+        "supportingSourceIds": [
+          "source-1",
+          "source-2"
+        ],
         "crossChecked": true,
         "notes": "製品仕様および画像から共通規格であることが確認できる。"
       }
@@ -191,7 +201,11 @@
       "scoreRationale": "[基本点: 70]\n[加点: +10] (1,100円強という安価でドリルとドライバーの両方が揃う極めて高いコストパフォーマンス)\n[加点: +5] (HiKOKIブランドの純正品である安心感と信頼性)\n[加点: +5] (初心者がよく使うサイズが過不足なく網羅され、ホルダー付きで利便性が高い)\n[減点: -2] (ステンレス材への穴あけ不可など、材質面での対応範囲の制限)\n[合計: 88]"
     },
     "technicalSpecs": {
-      "dimensions": { "height": "150mm", "width": "80mm", "depth": "20mm" },
+      "dimensions": {
+        "height": "150mm",
+        "width": "80mm",
+        "depth": "20mm"
+      },
       "weight": "120g",
       "contents": "10本セット（ドリル4本、両頭ドライバービット6本）",
       "drillSizes": "2.0mm, 3.0mm, 4.0mm, 5.0mm",
