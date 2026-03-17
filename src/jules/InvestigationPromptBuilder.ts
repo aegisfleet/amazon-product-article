@@ -103,14 +103,14 @@ export class InvestigationPromptBuilder {
 |---|---|---|
 | \`scripts/creators_get_item.py\` | 詳細な商品情報の取得 | \`python scripts/creators_get_item.py ASIN\` |
 | \`scripts/creators_search_items.py\` | 競合商品の検索 | \`python scripts/creators_search_items.py "キーワード" --search-index Index名\` |
-| \`scripts/check_links.py\` | JSON内の全リンクの有効性チェック | \`python scripts/check_links.py data/investigations/ASIN.json\` |
+| \`scripts/validate_artifact.py\` | JSON内の全品質・リンクチェック | \`python scripts/validate_artifact.py data/investigations/ASIN.json\` |
 
 ---
 
 ## 調査の進め方と検証義務
 1. **情報収集**: \`creators_get_item.py\` で対象商品の公式データを、\`creators_search_items.py\` で競合他社のデータを収集する。
 2. **成果物の作成と徹底検証**: JSONファイル作成後、直ちに以下の検証を行うこと。
-  - \`python scripts/check_links.py data/investigations/${this.product.asin}.json\` を実行する。
+  - \`python scripts/validate_artifact.py data/investigations/${this.product.asin}.json\` を実行する。
   - **修正義務**: 警告やエラー（リンク切れ、非メートル法単位の混入、必須項目の不足等）が出た場合は、必ずその場で内容を修正し、再度チェックをパスさせること。
   - 特に競合製品との価格比較やスペックの正確性を再確認する。
   - \`lastInvestigated\` を本日の日付（${this.today}）に必ず更新する。
