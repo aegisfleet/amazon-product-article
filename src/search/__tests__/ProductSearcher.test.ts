@@ -1,6 +1,6 @@
 import fs from 'node:fs/promises';
 import { CreatorsAPIClient } from '../../api/CreatorsAPIClient';
-import type { Product, ProductSearchResult } from '../../types/Product';
+import type { Product, ProductDetail, ProductSearchResult } from '../../types/Product';
 import { ProductSearcher } from '../ProductSearcher';
 
 // Mock dependencies
@@ -58,15 +58,14 @@ describe('ProductSearcher', () => {
         specifications: {},
       };
 
-      const results = new Map();
-      results.set('B000000001', mockProduct1);
-      results.set('B000000002', mockProduct2);
+      const results = new Map<string, ProductDetail>();
+      results.set('B000000001', mockProduct1 as ProductDetail);
+      results.set('B000000002', mockProduct2 as ProductDetail);
 
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       mockCreatorsClient.getMultipleProductDetails.mockResolvedValue({
         results,
         permanentFailures: new Set(),
-      } as any);
+      });
 
       const session = await searcher.searchByAsins(asins);
 
@@ -206,6 +205,7 @@ describe('ProductSearcher', () => {
 
       await searcher.searchCategory('electronics');
 
+      // eslint-disable-next-line @typescript-eslint/unbound-method
       expect(mockCreatorsClient.searchProducts).toHaveBeenCalledWith(
         expect.objectContaining({
           category: 'electronics',
