@@ -112,6 +112,7 @@ export class InvestigationPromptBuilder {
 3. **外部調査**: Amazon 403エラー等でもGoogle検索等で調査を継続し、絶対に「調査不能」で終わらせない。
 4. **推測ではなく根拠**: 商品仕様からの論理的推論は許容するが、架空のエピソード創作（ハルシネーション）は厳禁。
 5. **網羅的なスペックの記載**: 調査で判明した商品仕様は、\`technicalSpecs\` セクションに漏れなく網羅すること。
+6. **サイズ表記の統一**: サイズはメートル法（m, cm, mm等）のみを使用し、インチ表記は原則不要とする。元データがインチのみの場合はメートル法に変換して記載すること。
 
 ---
 
@@ -225,8 +226,8 @@ ${specs}
       "scoreRationale": "[基本点: 70] [合計: X]"
     },
     "technicalSpecs": {
-      "// 注意": "調査で判明した仕様情報をここに網羅的に記載してください",
-      "// 例示1(家電)": "dimensions: W/H/D, weight: XXg, power: XXW, battery: XXh",
+      "// 注意": "調査で判明した仕様情報をここに網羅的に記載してください（サイズはメートル法のみ、インチ不要）",
+      "// 例示1(家電)": "dimensions: W/H/D (mm/cm), weight: XXg, power: XXW, battery: XXh",
       "// 例示2(化粧品)": "capacity: XXml/XXg, ingredients: [主成分], skinType: [適応]",
       "// 例示3(食品)": "content: XXg, calories: XXkcal, shelfLife: XX日, allergens: [成分]",
       "dimensions": { "height": "XXmm", "width": "XXmm", "depth": "XXmm" },
