@@ -10,7 +10,7 @@ import { formatInvestigationPrompt } from '../prompts';
 describe('Investigation Prompt Property Tests', () => {
   /**
    * Property: Jules Investigation Request Basics
-   * 
+   *
    * Validates that the prompt contains the essential product info and follows the required format.
    * This test is simplified to avoid fragility against prompt text refinements.
    */
