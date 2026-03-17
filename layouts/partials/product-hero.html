@@ -133,20 +133,7 @@
         {{ $priceRaw = index (findRE "[0-9]+" (replace $product.price "," "")) 0 | default 0 }}
         {{ end }}
 
-        {{ $priceBucket := "unknown" }}
-        {{ if gt ($priceRaw | int) 0 }}
-        {{ if lt ($priceRaw | int) 3000 }}
-        {{ $priceBucket = "under-3000" }}
-        {{ else if lt ($priceRaw | int) 7000 }}
-        {{ $priceBucket = "3000-6999" }}
-        {{ else if lt ($priceRaw | int) 15000 }}
-        {{ $priceBucket = "7000-14999" }}
-        {{ else if lt ($priceRaw | int) 30000 }}
-        {{ $priceBucket = "15000-29999" }}
-        {{ else }}
-        {{ $priceBucket = "30000-plus" }}
-        {{ end }}
-        {{ end }}
+        {{ $priceBucket := partial "utils-price-bucket.html" $product.price }}
 
         {{ if $product.affiliate_url }}
         <a href="{{ $product.affiliate_url }}" class="btn-amazon-hero" target="_blank" rel="noopener noreferrer"

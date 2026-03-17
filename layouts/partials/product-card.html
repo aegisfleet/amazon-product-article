@@ -13,20 +13,7 @@
 {{ else if .Params.category }}
 {{ $trackingCategory = .Params.category }}
 {{ end }}
-{{ $priceBucket := "unknown" }}
-{{ if gt ($priceRaw | int) 0 }}
-{{ if lt ($priceRaw | int) 3000 }}
-{{ $priceBucket = "under-3000" }}
-{{ else if lt ($priceRaw | int) 7000 }}
-{{ $priceBucket = "3000-6999" }}
-{{ else if lt ($priceRaw | int) 15000 }}
-{{ $priceBucket = "7000-14999" }}
-{{ else if lt ($priceRaw | int) 30000 }}
-{{ $priceBucket = "15000-29999" }}
-{{ else }}
-{{ $priceBucket = "30000-plus" }}
-{{ end }}
-{{ end }}
+{{ $priceBucket := partial "utils-price-bucket.html" .Params.price }}
 <article class="card" data-price="{{ $priceRaw }}" data-score="{{ .Params.score | default 0 }}"
     data-date="{{ $dateRaw }}">
     <div class="card-image">
