@@ -18,6 +18,11 @@ import type { Product, ProductDetail, ProductSearchParams, ProductSearchResult }
 import { CategoryNormalizer } from '../utils/CategoryNormalizer';
 import { Logger } from '../utils/Logger';
 
+type ProductInfoType = NonNullable<NonNullable<CreatorsAPIItem['itemInfo']>['productInfo']>;
+type ItemDimensionsType = NonNullable<ProductInfoType['itemDimensions']>;
+type TechnicalInfoType = NonNullable<NonNullable<CreatorsAPIItem['itemInfo']>['technicalInfo']>;
+type ManufactureInfoType = NonNullable<NonNullable<CreatorsAPIItem['itemInfo']>['manufactureInfo']>;
+
 interface CreatorsAPIErrorData {
   errors?: Array<{ code: string; message: string }>;
   message?: string; // Some errors return message directly
@@ -785,7 +790,7 @@ export class CreatorsAPIClient {
     return specs;
   }
 
-  private extractProductInfoSpecs(pInfo: any, specs: Record<string, string>): void {
+  private extractProductInfoSpecs(pInfo: ProductInfoType | undefined, specs: Record<string, string>): void {
     if (!pInfo) return;
 
     if (pInfo.color?.displayValue) specs['color'] = pInfo.color.displayValue;
@@ -796,7 +801,7 @@ export class CreatorsAPIClient {
     this.extractArbitraryProductSpecs(pInfo, specs);
   }
 
-  private extractDimensionSpecs(dims: any, specs: Record<string, string>): void {
+  private extractDimensionSpecs(dims: ItemDimensionsType | undefined, specs: Record<string, string>): void {
     if (!dims) return;
     if (dims.height) specs['height'] = `${dims.height.displayValue} ${dims.height.unit}`;
     if (dims.width) specs['width'] = `${dims.width.displayValue} ${dims.width.unit}`;
@@ -804,31 +809,32 @@ export class CreatorsAPIClient {
     if (dims.weight) specs['weight'] = `${dims.weight.displayValue} ${dims.weight.unit}`;
   }
 
-  private extractArbitraryProductSpecs(pInfo: any, specs: Record<string, string>): void {
+  private extractArbitraryProductSpecs(pInfo: ProductInfoType | undefined, specs: Record<string, string>): void {
+    if (!pInfo) return;
     const knownKeys = new Set(['color', 'size', 'unitCount', 'itemDimensions']);
     for (const [key, value] of Object.entries(pInfo)) {
       if (knownKeys.has(key)) continue;
-      if (value && typeof value === 'object' && 'displayValue' in value) {
-        specs[key] = String((value as any).displayValue);
+      if (value !== null && typeof value === 'object' && 'displayValue' in value) {
+        specs[key] = String((value as Record<string, unknown>).displayValue);
       }
     }
   }
 
-  private extractTechnicalInfoSpecs(tInfo: any, specs: Record<string, string>): void {
+  private extractTechnicalInfoSpecs(tInfo: TechnicalInfoType | undefined, specs: Record<string, string>): void {
     if (!tInfo) return;
 
     for (const [key, value] of Object.entries(tInfo)) {
-      if (value && typeof value === 'object') {
+      if (value !== null && typeof value === 'object') {
         if ('displayValue' in value) {
-          specs[key] = String((value as any).displayValue);
-        } else if ('displayValues' in value && Array.isArray((value as any).displayValues)) {
-          specs[key] = (value as any).displayValues.join(', ');
+          specs[key] = String((value as Record<string, unknown>).displayValue);
+        } else if ('displayValues' in value && Array.isArray((value as Record<string, unknown>).displayValues)) {
+          specs[key] = (value as { displayValues: unknown[] }).displayValues.join(', ');
         }
       }
     }
   }
 
-  private extractManufacturerInfoSpecs(mInfo: any, specs: Record<string, string>): void {
+  private extractManufacturerInfoSpecs(mInfo: ManufactureInfoType | undefined, specs: Record<string, string>): void {
     if (!mInfo) return;
     if (mInfo.brand?.displayValue) specs['brand'] = mInfo.brand.displayValue;
     if (mInfo.model?.displayValue) specs['model'] = mInfo.model.displayValue;
