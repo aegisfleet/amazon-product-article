@@ -90,6 +90,8 @@
 <!-- Product Schema (Single Pages with ASIN) -->
 {{ if and .IsPage .Params.asin }}
 {{ $priceValidUntil := now.AddDate 1 0 0 | time.Format "2006-01-02" }}
+{{ $shippingRateRaw := printf "%v" (.Params.shipping_rate | default 0) }}
+{{ $shippingRate := index (findRE "[0-9]+" (replace $shippingRateRaw "," "")) 0 | default 0 }}
 {{ $productSchema := dict
   "@context" "https://schema.org"
   "@type" "Product"
@@ -113,6 +115,11 @@
     )
     "shippingDetails" (dict
       "@type" "OfferShippingDetails"
+      "shippingRate" (dict
+        "@type" "MonetaryAmount"
+        "value" $shippingRate
+        "currency" "JPY"
+      )
       "shippingDestination" (dict
         "@type" "DefinedRegion"
         "addressCountry" "JP"
