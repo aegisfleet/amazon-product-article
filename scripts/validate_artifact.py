@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
-JSON Link & Content Checker for Amazon Product Investigation
-JSONファイル内のURLの有効性と、成果物の品質ガイドラインへの準拠を確認します。
+JSON Artifact Quality Validator for Amazon Product Investigation
+JSONファイルの内容（単位、構造、推奨度の根拠）とURLの有効性を包括的に確認します。
 """
 
 import os
@@ -191,7 +191,7 @@ def _get_target_files(paths: List[str], recursive: bool) -> List[str]:
     return files_to_check
 
 def main():
-    parser = argparse.ArgumentParser(description="JSON Link & Content Checker")
+    parser = argparse.ArgumentParser(description="JSON Artifact Quality Validator")
     parser.add_argument("paths", nargs="+", help="チェックするJSONファイルまたはディレクトリのパス（複数指定可）")
     parser.add_argument("--no-links", action="store_true", help="リンクチェックをスキップする")
     parser.add_argument("--no-content", action="store_true", help="内容のバリデーションをスキップする")
