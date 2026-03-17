@@ -106,11 +106,18 @@ export class InvestigationPromptBuilder {
 
 ---
 
-## 調査の進め方
+## 調査の進め方と検証義務
 1. **情報収集**: \`creators_get_item.py\` で対象商品の公式データを、\`creators_search_items.py\` で競合他社のデータを収集する。
-2. **既存データの活用**: \`cat data/investigations/${this.product.asin}.json\` で既存データがあれば、それをベースに更新。
+2. **既存データの徹底検証**: \`cat data/investigations/${this.product.asin}.json\` で既存データがあれば、その内容が現在でも妥当であるかを必ず検証し、**記載されている全URLが有効かつ関連性があるか再チェック**すること。
 3. **外部調査**: Amazon 403エラー等でもGoogle検索等で調査を継続し、絶対に「調査不能」で終わらせない。
 4. **推測ではなく根拠**: 商品仕様からの論理的推論は許容するが、架空のエピソード創作（ハルシネーション）は厳禁。
+5. **網羅的なスペックの記載**: 調査で判明した商品仕様は、\`technicalSpecs\` セクションに漏れなく網羅すること。
+
+---
+
+## 安全性とコンプライアンス指針
+- **法的制約の遵守**: 美容、健康、食品、ベビー用品などのカテゴリでは、薬機法等の法的制約に基づき「治る」「必ず効果がある」といった誇張表現や医学的根拠のない主張を厳禁とする。
+- **客観性の維持**: 主観的な感想ではなく、スペックや検証されたユーザーレビューに基づいた客観的な事実のみを記載すること。
 
 ---
 
@@ -154,7 +161,7 @@ ${specs}
 \`\`\`json
 {
   "analysis": {
-    "productName": "簡潔な正式名称",
+    "productName": "検索タグやSEOキーワードを除いた簡潔な商品名",
     "parentAsin": "${this.product.parentAsin || this.product.asin}",
     "productDescription": "1-2文の概要",
     "productUsage": ["用途1", "用途2"],
@@ -201,10 +208,12 @@ ${specs}
         "asin": "ASIN(必須)",
         "priceComparison": "価格差の分析",
         "featureComparison": [
+          "比較ポイント:",
           "共通点：[テキスト可変]",
           "相違点：[テキスト可変]"
         ],
         "differentiators": [
+          "選び方のポイント:",
           "[対象商品名]の利点：[テキスト可変]",
           "[競合商品名]の利点：[テキスト可変]"
         ]
@@ -218,6 +227,7 @@ ${specs}
       "scoreRationale": "[基本点: 70] [合計: X]"
     },
     "technicalSpecs": {
+      "// 注意": "調査で判明した仕様情報をここに網羅的に記載してください",
       "// 例示1(家電)": "dimensions: W/H/D, weight: XXg, power: XXW, battery: XXh",
       "// 例示2(化粧品)": "capacity: XXml/XXg, ingredients: [主成分], skinType: [適応]",
       "// 例示3(食品)": "content: XXg, calories: XXkcal, shelfLife: XX日, allergens: [成分]",
@@ -225,8 +235,8 @@ ${specs}
       "weight": "XXg",
       "capacity": "XX",
       "material": "材質",
-      "origin": "原産 country",
-      "other": ["重要スペックのみ抽出"]
+      "origin": "原産国",
+      "other": ["他、重要なスペックを網羅"]
     }
   }
 }
