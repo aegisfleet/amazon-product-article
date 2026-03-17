@@ -91,8 +91,7 @@ export class InvestigationPromptBuilder {
   private generatePrompt(brandInfo: string, parentAsinInfo: string, rubric: string, specs: string): string {
     return `【基本ルール】
 - 全ての出力は日本語で記述すること
-- 認証情報は絶対にログ・ファイル・コミット・PR説明文に含めないこと
-- 調査は妥協せず行い、どれだけ時間が掛かっても全ての検証作業を滞りなく実行すること
+- 情報の正確性を最優先し、常に最新の情報を調査すること
 - コミット対象は \`data/investigations/${this.product.asin}.json\` のみ
 
 ---
@@ -109,7 +108,11 @@ export class InvestigationPromptBuilder {
 
 ## 調査の進め方と検証義務
 1. **情報収集**: \`creators_get_item.py\` で対象商品の公式データを、\`creators_search_items.py\` で競合他社のデータを収集する。
-2. **既存データの徹底検証**: \`cat data/investigations/${this.product.asin}.json\` で既存データがあれば、その内容が現在でも妥当であるかを必ず検証し、**記載されている全URLが有効かつ関連性があるか、対象商品や競合商品の価格・スペックなどの事実情報が現在でも正確であるか（特に競合製品との価格比較）を再チェックし、古い場合は最新情報に更新**すること。その際、\`lastInvestigated\` を本日の日付（${this.today}）に必ず更新すること。
+2. **既存データの徹底検証**: \`cat data/investigations/${this.product.asin}.json\` で既存データがあれば、その内容が現在でも妥当であるかを必ず再検証する。
+  - 記載されている全URLが有効かつ商品と関連性があるか確認する
+  - 対象商品や競合商品の価格・スペックなどの事実情報が現在でも正確であるか（特に競合製品との価格比較）確認する
+  - 情報が古い場合は最新情報に更新する
+  - \`lastInvestigated\` を本日の日付（${this.today}）に必ず更新する
 3. **外部調査**: Amazon 403エラー等でもGoogle検索等で調査を継続し、絶対に「調査不能」で終わらせない。
 4. **推測ではなく根拠**: 商品仕様からの論理的推論は許容するが、架空のエピソード創作（ハルシネーション）は厳禁。
 5. **網羅的なスペックの記載**: 調査で判明した商品仕様は、\`technicalSpecs\` セクションに漏れなく網羅すること。
