@@ -805,9 +805,9 @@ export class CreatorsAPIClient {
   }
 
   private extractArbitraryProductSpecs(pInfo: any, specs: Record<string, string>): void {
-    const knownKeys = ['color', 'size', 'unitCount', 'itemDimensions'];
+    const knownKeys = new Set(['color', 'size', 'unitCount', 'itemDimensions']);
     for (const [key, value] of Object.entries(pInfo)) {
-      if (knownKeys.includes(key)) continue;
+      if (knownKeys.has(key)) continue;
       if (value && typeof value === 'object' && 'displayValue' in value) {
         specs[key] = String((value as any).displayValue);
       }
