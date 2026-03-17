@@ -1,6 +1,7 @@
 import * as fs from 'node:fs';
 import * as path from 'node:path';
 import * as yaml from 'js-yaml';
+import { Logger } from '../utils/Logger';
 import type { ProductCounter } from './ProductCounter';
 import type { CategoryGroup, EnhancedCategoryGroup } from './types';
 
@@ -8,6 +9,7 @@ export class CategoryManager {
   private readonly categoryGroupsPath: string;
   private readonly categoryGroups: CategoryGroup[];
   private enhancedCategoryGroups: EnhancedCategoryGroup[];
+  private readonly logger = Logger.getInstance();
 
   constructor(categoryGroupsPath: string) {
     this.categoryGroupsPath = categoryGroupsPath;
@@ -245,7 +247,7 @@ export class CategoryManager {
 
       if (shouldWrite) {
         fs.writeFileSync(filePath, content);
-        console.log(`Generated: ${filePath}`);
+        this.logger.info(`Generated: ${filePath}`);
       }
     }
 
@@ -255,7 +257,7 @@ export class CategoryManager {
       if (file.endsWith('.md') && !activeSlugs.has(file)) {
         const surplusPath = path.join(parentCategoryDir, file);
         fs.unlinkSync(surplusPath);
-        console.log(`Deleted surplus category file: ${surplusPath}`);
+        this.logger.info(`Deleted surplus category file: ${surplusPath}`);
       }
     }
   }
