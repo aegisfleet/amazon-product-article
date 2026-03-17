@@ -265,10 +265,11 @@ export class JulesInvestigator {
     const jsonMatch = jsonRegex.exec(content);
     if (jsonMatch?.[1]) {
       try {
-        const parsed = JSON.parse(jsonMatch[1]);
+        const parsed = JSON.parse(jsonMatch[1]) as unknown;
         // InvestigationFileSchema は { analysis: ... } という構造を期待しているため、
         // 入力がその構造を持っているか確認してからパースする
-        const dataToValidate = parsed.analysis ? parsed : { analysis: parsed };
+        const isObjectWithAnalysis = typeof parsed === 'object' && parsed !== null && 'analysis' in parsed;
+        const dataToValidate = isObjectWithAnalysis ? parsed : { analysis: parsed };
         const validation = InvestigationFileSchema.safeParse(dataToValidate);
 
         if (validation.success) {
