@@ -102,7 +102,7 @@ export class InvestigationPromptBuilder {
 | ツール | 用途 | コマンド例 |
 |---|---|---|
 | \`scripts/creators_get_item.py\` | 詳細な商品情報の取得 | \`python scripts/creators_get_item.py ASIN\` |
-| \`scripts/creators_search_items.py\` | 競合商品の検索 | \`python scripts/creators_search_items.py \"キーワード\" --search-index Index名\` |
+| \`scripts/creators_search_items.py\` | 競合商品の検索 | \`python scripts/creators_search_items.py "キーワード" --search-index Index名\` |
 
 ---
 
