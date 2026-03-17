@@ -60,10 +60,13 @@ describe('Investigation Prompt Property Tests', () => {
           expect(prompt).toContain('問題点と改善要望');
           expect(prompt).toContain('使用シーン：どのような場面で活用されているか');
 
-          // 2. User stories and experiences (New Requirement)
           expect(prompt).toContain('ユーザーストーリーと実体験');
           expect(prompt).toContain('購入背景・生活変化・具体的エピソード');
-          expect(prompt).toContain('出典明記');
+          expect(prompt).toContain('出典紐付けの義務化');
+          expect(prompt).toContain('supportingSourceIds');
+          expect(prompt).toContain('捏造（ハルシネーション）の厳禁');
+          expect(prompt).toContain('推測の禁止');
+          expect(prompt).toContain('現在、具体的な実体験データなし');
 
           // 3. Competitive comparison requirements (Requirements 2.2, 2.4)
           expect(prompt).toContain('競合商品との比較');
@@ -88,6 +91,8 @@ describe('Investigation Prompt Property Tests', () => {
           expect(prompt).toContain('匿名まとめ');
           expect(prompt).toContain('転載のみ');
           expect(prompt).toContain('公式仕様は仕様確認用途に限定');
+          expect(prompt).toContain('ハルシネーションの厳禁');
+          expect(prompt).toContain('URL検証');
           expect(prompt).toContain('一次情報/二次情報');
           expect(prompt).toContain('公開日');
           expect(prompt).toContain('執筆主体');
