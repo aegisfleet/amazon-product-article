@@ -6,6 +6,7 @@
  */
 
 import axios, { type AxiosInstance } from 'axios';
+import { InvestigationFileSchema } from '../schemas/InvestigationSchema';
 import type {
   ActivitiesResponse,
   InvestigationContext,
@@ -20,7 +21,6 @@ import type {
   SourceContext,
 } from '../types/JulesTypes';
 import type { Product } from '../types/Product';
-import { InvestigationFileSchema } from '../schemas/InvestigationSchema';
 import { Logger } from '../utils/Logger';
 import { formatInvestigationPrompt } from './prompts';
 
