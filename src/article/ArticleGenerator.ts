@@ -513,9 +513,10 @@ ${infoRows.join('\n')}
         ].filter((part): part is string => Boolean(part));
         const reasonText = reasonParts.length > 0 ? `（${reasonParts.join(' / ')}）` : '';
 
-        const sourceContent = source.url && !isCreatorsApiUrl(source.url)
-          ? `<a href="${this.escapeHtml(source.url)}" target="_blank" rel="noopener noreferrer">${this.escapeHtml(source.name.trim())}</a> ${this.escapeHtml(reasonText)}`
-          : `${this.escapeHtml(source.name.trim())} ${this.escapeHtml(reasonText)}`;
+        const sourceContent =
+          source.url && !isCreatorsApiUrl(source.url)
+            ? `<a href="${this.escapeHtml(source.url)}" target="_blank" rel="noopener noreferrer">${this.escapeHtml(source.name.trim())}</a> ${this.escapeHtml(reasonText)}`
+            : `${this.escapeHtml(source.name.trim())} ${this.escapeHtml(reasonText)}`;
 
         // 物理的な 1 行に強制するため、あらゆる改行文字を削除し、空白を集約する
         const line = `- <span class="mobile-list-item">${sourceContent}</span>`;
@@ -1446,7 +1447,10 @@ ${recommendationMessage}`;
 
   private optimizeListsForMobile(content: string): string {
     // リストアイテムにモバイル対応クラスを追加（既に span がある場合はスキップ）
-    return content.replaceAll(/^- (?!<span class="mobile-list-item">)(.+)$/gm, '- <span class="mobile-list-item">$1</span>');
+    return content.replaceAll(
+      /^- (?!<span class="mobile-list-item">)(.+)$/gm,
+      '- <span class="mobile-list-item">$1</span>',
+    );
   }
 
   private extractAffiliateLinks(content: string): AffiliateLink[] {
