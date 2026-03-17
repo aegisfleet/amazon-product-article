@@ -101,6 +101,7 @@ export interface CreatorsAPIItem {
       energyEfficiencyClass?: {
         displayValue: string;
       };
+      [key: string]: any;
     };
     productInfo?: {
       color?: {
@@ -131,6 +132,7 @@ export interface CreatorsAPIItem {
         displayValue: number;
         type: string;
       };
+      [key: string]: any;
     };
     externalIds?: {
       eans?: {
