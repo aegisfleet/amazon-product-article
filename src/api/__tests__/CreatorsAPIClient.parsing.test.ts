@@ -61,4 +61,49 @@ describe('CreatorsAPIClient Parsing Tests', () => {
       expect(product.isPrimeEligible).toBe(false);
     });
   });
+
+  describe('extractSpecifications', () => {
+    it('should extract specifications from productInfo and technicalInfo', () => {
+      const mockItem: any = {
+        asin: 'B0CHYRJN4M',
+        itemInfo: {
+          title: { displayValue: 'Test Product' },
+          productInfo: {
+            color: { displayValue: 'Black' },
+            size: { displayValue: 'Large' },
+            itemDimensions: {
+              height: { displayValue: 10, unit: 'cm' },
+              weight: { displayValue: 200, unit: 'g' },
+            },
+            material: { displayValue: 'Plastic' },
+          },
+          technicalInfo: {
+            formats: { displayValues: ['Digital', 'Physical'] },
+            voltage: { displayValue: '100V' },
+          },
+          manufactureInfo: {
+            model: { displayValue: 'TM-2000' },
+          },
+        },
+      };
+
+      const product = (client as any).parseProduct(mockItem as CreatorsAPIItem);
+      expect(product.specifications).toEqual({
+        color: 'Black',
+        size: 'Large',
+        height: '10 cm',
+        weight: '200 g',
+        material: 'Plastic',
+        formats: 'Digital, Physical',
+        voltage: '100V',
+        model: 'TM-2000',
+      });
+    });
+
+    it('should return empty object if itemInfo is missing', () => {
+      const mockItem: any = { asin: 'B0CHYRJN4M' };
+      const product = (client as any).parseProduct(mockItem as CreatorsAPIItem);
+      expect(product.specifications).toEqual({});
+    });
+  });
 });

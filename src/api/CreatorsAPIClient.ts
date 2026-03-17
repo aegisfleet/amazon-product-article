@@ -636,7 +636,7 @@ export class CreatorsAPIClient {
       detailPageUrl: item.detailPageURL,
       price,
       images,
-      specifications: {},
+      specifications: this.extractSpecifications(item),
       rating: {
         average: item.customerReviews?.starRating || 0,
         count: item.customerReviews?.count || 0,
@@ -771,5 +771,56 @@ export class CreatorsAPIClient {
       category: normalized.main,
       categoryInfo,
     };
+  }
+
+  private extractSpecifications(item: CreatorsAPIItem): Record<string, string> {
+    const specs: Record<string, string> = {};
+    const itemInfo = item.itemInfo;
+    if (!itemInfo) return specs;
+
+    // 1. productInfo (dimensions, color, size, unitCount)
+    if (itemInfo.productInfo) {
+      const pInfo = itemInfo.productInfo;
+      if (pInfo.color?.displayValue) specs['color'] = pInfo.color.displayValue;
+      if (pInfo.size?.displayValue) specs['size'] = pInfo.size.displayValue;
+      if (pInfo.unitCount?.displayValue) specs['unitCount'] = String(pInfo.unitCount.displayValue);
+
+      if (pInfo.itemDimensions) {
+        const dims = pInfo.itemDimensions;
+        if (dims.height) specs['height'] = `${dims.height.displayValue} ${dims.height.unit}`;
+        if (dims.width) specs['width'] = `${dims.width.displayValue} ${dims.width.unit}`;
+        if (dims.length) specs['length'] = `${dims.length.displayValue} ${dims.length.unit}`;
+        if (dims.weight) specs['weight'] = `${dims.weight.displayValue} ${dims.weight.unit}`;
+      }
+
+      // Other arbitrary fields in productInfo
+      for (const [key, value] of Object.entries(pInfo)) {
+        if (['color', 'size', 'unitCount', 'itemDimensions'].includes(key)) continue;
+        if (value && typeof value === 'object' && 'displayValue' in value) {
+          specs[key] = String((value as any).displayValue);
+        }
+      }
+    }
+
+    // 2. technicalInfo
+    if (itemInfo.technicalInfo) {
+      const tInfo = itemInfo.technicalInfo;
+      for (const [key, value] of Object.entries(tInfo)) {
+        if (value && typeof value === 'object' && 'displayValue' in value) {
+          specs[key] = String((value as any).displayValue);
+        } else if (value && typeof value === 'object' && 'displayValues' in value) {
+          specs[key] = (value as any).displayValues.join(', ');
+        }
+      }
+    }
+
+    // 3. manufactureInfo (model number)
+    if (itemInfo.manufactureInfo) {
+      const mInfo = itemInfo.manufactureInfo;
+      if (mInfo.brand?.displayValue) specs['brand'] = mInfo.brand.displayValue;
+      if (mInfo.model?.displayValue) specs['model'] = mInfo.model.displayValue;
+    }
+
+    return specs;
   }
 }
