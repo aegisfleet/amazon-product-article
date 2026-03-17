@@ -96,103 +96,46 @@ export class InvestigationPromptBuilder {
 
 ---
 
-## 既存の調査データを確認
-\`\`\`bash
-cat data/investigations/${this.product.asin}.json 2>/dev/null || echo "新規調査"
-\`\`\`
-- ファイルが存在する場合: 既存データをベースに更新してください
-- ファイルが存在しない場合: 新規調査を行ってください
+## 実行環境と調査ツール
+このシステムは Amazon Creators API と連携しています。以下のツールを積極的に活用して調査を進めてください。
 
-2. **既存データがある場合の更新ルール**
-   - 既存の「良い点」「悪い点」が現在も有効か検証し、維持または更新
-   - 新しいレビューや競合商品の情報を追加
-   - \`lastInvestigated\` フィールドを \`${this.today}\` に更新
+| ツール | 用途 | コマンド例 |
+|---|---|---|
+| \`scripts/creators_get_item.py\` | 詳細な商品情報の取得 | \`python scripts/creators_get_item.py ASIN\` |
+| \`scripts/creators_search_items.py\` | 競合商品の検索 | \`python scripts/creators_search_items.py \"キーワード\" --search-index Index名\` |
 
 ---
 
-【Creators API利用】
-環境変数（AMAZON_CREATORS_APPLICATION_ID, AMAZON_CREATORS_CREDENTIAL_ID, AMAZON_CREATORS_CREDENTIAL_SECRET, AMAZON_PARTNER_TAG）で認証。
-エンドポイント: https://webservices.amazon.co.jp/creators/v1/items（日本リージョン）
+## 調査の進め方
+1. **情報収集**: \`creators_get_item.py\` で対象商品の公式データを、\`creators_search_items.py\` で競合他社のデータを収集する。
+2. **既存データの活用**: \`cat data/investigations/${this.product.asin}.json\` で既存データがあれば、それをベースに更新。
+3. **外部調査**: Amazon 403エラー等でもGoogle検索等で調査を継続し、絶対に「調査不能」で終わらせない。
+4. **推測ではなく根拠**: 商品仕様からの論理的推論は許容するが、架空のエピソード創作（ハルシネーション）は厳禁。
 
-調査用スクリプト（**編集は絶対禁止・そのまま使用すること**）:
-- 商品詳細: \`python scripts/creators_get_item.py <ASIN>\` → tmp/product_info.json
-- 競合検索: \`python scripts/creators_search_items.py "キーワード" --search-index <カテゴリ>\` → tmp/search_results.json
+---
 
-※ --search-index オプションでカテゴリ指定可能:
-   - Electronics (家電), HomeAndKitchen (キッチン/家具), Appliances (冷蔵庫等)
-   - GroceryAndGourmetFood (食品/飲料/冷凍弁当), HealthPersonalCare (漢方/ドラッグストア)
-   - Fashion (服), ToolsAndHomeImprovement (DIY/電動工具), Toys, Books, SportsAndOutdoors 等
-   - 不明な場合は All を使用
-※ tmp/ 内のファイルは .gitignore 対象のため、調査完了後のクリーンアップ不要
+## 【最重要】信頼性とソースのガイドライン
+- **URL検証**: 採用する全URLに対し、タイトルに商品名が含まれているか、404エラーでないかを直接確認すること。
+- **ハルシネーション禁止**: 存在しないURLや、実データに基づかないユーザーストーリーの創作を禁止。
+- **出典の明示**: 主張やストーリーは、必ず \`sources\` の \`id\` を \`supportingSourceIds\` に含めて紐付けること。
+- **クロスチェック**: 重要な品質・比較優位の主張は、2系統以上の独立ソースで一致確認すること。
 
-**調査対象**: 商品「${this.product.title}」
-現在の日付: ${this.today}
+---
 
-【最優先事項：調査の継続と完了】
-レビューや情報が見つからなくても**絶対に調査を中断しないこと**。Amazon 403エラー時もGoogle検索で継続。
-禁止: 「調査不能」報告、カテゴリ一般論、「〇〇市場の分析」のようなタイトル
-必須: 商品仕様・機能からの推測分析、競合比較による立ち位置分析、JSON形式での出力
+## 調査・分析項目
+- **ユーザーストーリー**: 実体験に基づく具体的エピソード（3行以上）。データなしならその旨を記載。
+- **競合比較分析**: 主要競合6-8点のASIN特定と比較。以下のフォーマットを厳守すること：
+  ---
+  比較ポイント:
+  共通点：[共通する特徴や仕様]
+  相違点：[明確に異なる性能・価格・品質]
+  選び方のポイント:
+  [対象商品名]の利点：[競合と比較して選ぶべき具体的な理由]
+  [競合商品名]の利点：[競合の方が適している具体的なケース]
+  ---
+- **購買推奨度**: 推奨ユーザー、注意点、算出されたスコアと根拠。
 
-----
-
-以下の観点で調査・分析を行ってください：
-
-0. **商品概要と使い方**（サイト上部に表示する最重要情報）
-   - **productName**: 正式な商品名（検索タグやSEOキーワードを除いた簡潔な名前）
-     例：「Syncwire 3.5mm 4極オーディオ延長ケーブル 1.2m (2本セット)」
-     ※ Amazonの商品タイトルには「【2本セット】【マイク対応】延長ケーブル ヘッドホン...」のような検索用タグが含まれることがありますが、ここでは「商品本来の名前」を記載してください
-   - **productDescription**: この商品は何か、1-2文で簡潔に説明（例：「〇〇は、△△用の□□です。」）
-   - **productUsage**: 主な使い方・用途を3-5項目で箇条書き
-   - これはサイトの最上部に表示される情報なので、ユーザーが商品を理解しやすい説明にしてください
-
-1. ユーザーレビュー（"Voice of the Customer"）
-   ⇒ Amazon以外のレビューサイト（価格.com、みんなのレビュー等）も積極的に調査
-   - 具体的な使用体験と満足ポイント（単なる機能列挙ではなく、体験として記述）
-   - 問題点と改善要望
-   - 使用シーン：どのような場面で活用されているか
-
-2. ユーザーストーリーと実体験
-   - 購入背景・生活変化・具体的エピソード（成功・失敗両方）
-   - **【出典紐付けの義務化】** 各ユーザーストーリーに対し、根拠となった sources の id を必ず supportingSourceIds に含めてください。
-   - **【捏造（ハルシネーション）の厳禁】** ソースに存在しない具体的なエピソードを「実体験」として創作することは重大な規約違反です。
-   - **【推測の禁止】推測に基づくストーリー作成は禁止。実際のレビューや検証記事などの実データが存在しない項目は、experienceに「現在、具体的な実体験データなし」と正直に記載してください。**
-   - **【品質基準】実際のレビューや記事から引用・再構成したストーリーを最低2-3件含めること。**
-   - **1-2行の短すぎるexperienceは禁止。具体的な状況・感想・Before/Afterを含む3行以上の記述にすること。**
-
-3. 競合商品との比較
-   - 同カテゴリの主要競合商品6-8点（最低6点）
-   - 価格、機能、品質の比較
-   - 差別化ポイントの特定
-   - **【品質基準】featureComparisonとdifferentiatorsは、1-2語の箇条書き（例：「機能はほぼ同等」「価格の安さ」）は禁止。具体的な数値・条件・使用シーンを含む文章で記述すること**
-   - **【必須】各競合商品のASINを必ず特定してください**（アフィリエイトリンク生成に使用）
-   - **Creators APIのSearchItemsエンドポイントを使用して競合商品を検索し、ASINを取得してください**
-   - ASINが見つからない場合は "asin": null と記載
-
-4. 購買推奨度
-   - どのようなユーザーに適しているか
-   - 購入時の注意点
-   - コストパフォーマンス評価
-   - スコア算出（後述の基準に従うこと）
-
-5. 情報ソース
-   - 具体的サイト名・記事タイトル・URL（「Category Analysis」等の抽象名は禁止）
-   - 例：「価格.com: [商品名] クチコミ」「The Verge Review」など
-   - **【必須：ハルシネーションの厳禁】** 存在しないURLや、調査対象と無関係なページをソースとして捏造することは**重大なガイドライン違反**です。必ず実際にアクセスし、商品名がタイトルや内容に含まれていることを確認したURLのみを記載してください。
-   - **【URL検証】** 採用するすべてのURLに対して、以下のチェックを行ってください：
-     - ページタイトルに調査対象の商品名（またはその一部）が正しく含まれているか
-     - 404エラーや「ページが見つかりません」という表示になっていないか
-     - 検索結果のスニペットだけでなく、ページ本体の内容を確認したか
-   - **【必須】** sourcesは最低2件以上。Amazon商品ページのみは不可。第三者レビューサイト（価格.com、専門メディア、YouTube等）を必ず1件以上含めること。
-   - **必ず構造化フィールド（id, tier, evidenceType, author, conflictOfInterest, notes）を全て含めること**
-   - 採用基準: 著者・媒体・根拠が確認でき、一次情報または一次情報にアクセス可能な検証記事を優先
-   - 除外基準: 匿名まとめ、転載のみ、出典リンクなし、根拠不明の断定、AI自動生成のみで裏取り不能な情報
-   - 公式仕様は仕様確認用途に限定し、品質・耐久性・安全性・比較優位の評価根拠としては第三者ソースで必ず補強
-   - **【notesの記述義務】** \`sources\` の \`notes\` には、「そのページから得られた具体的な情報（例：〇〇という機能が特に評価されていた）」を簡潔に記述し、ハルシネーションではないことの証跡としてください。
-
-6. 重要な主張のクロスチェック
-   - 「品質・耐久性・安全性・比較優位」に関する重要な主張は、2系統以上の独立ソースで一致確認すること
-   - 同一企業のミラーサイト、同一記事の転載、相互参照のみの二次情報は独立ソースとして数えない
-   - **【批判的検証】メーカーの主張に対し、あえて反対の意見（Amazon低評価レビュー、検証ブログの不合格通知、リコール情報等）を探し、その対立構造を記述すること。一致確認できない主張は断定せず仮説扱いにするか、除外すること**
+---
 
 商品情報：
 - ASIN: ${this.product.asin}
@@ -204,121 +147,92 @@ ${parentAsinInfo}
 - 仕様・詳細:
 ${specs}
 
-【スコア算出の標準化ガイドライン】
-総合評価スコア（0-100点）は、以下の「標準化ルーブリック」に厳格に従って算出してください。個人の感覚ではなく、定量的・論理的な計算過程を \`scoreRationale\` に明記することが必須です。
+---
 
-1. **基本点: 70点**
-   - 全ての商品は70点（「期待通りで、標準的に満足できるレベル」）から計算を開始します。
-
-${rubric}
-
-3. **\`scoreRationale\` の記述形式 (厳守)**:
-   以下のフォーマットで、計算過程を一行ずつ記述してください。
-   \`\`\`
-   [基本点: 70]
-   [加点: +XX] (理由を簡潔に記述)
-   [減点: -XX] (理由を簡潔に記述)
-   ...
-   [合計: XX] (最終的なスコア)
-   \`\`\`
-
-- 素晴らしい商品には95点以上、重大な欠陥がある商品には厳しく低い点数をつけてください。
-- 加減点がないカテゴリは省略して構いませんが、合計点は必ず一致させてください。
-
-    調査結果は以下のJSON形式で構造化して提供してください。
-    なお、ファイル名は "data/investigations/${this.product.asin}.json" としてください：
-    \`\`\`json
+## 出力形式 (JSON)
+\`data/investigations/${this.product.asin}.json\` として保存してください：
+\`\`\`json
 {
   "analysis": {
-    "productName": "正式な商品名（検索タグを除いた簡潔な名前）",
+    "productName": "簡潔な正式名称",
     "parentAsin": "${this.product.parentAsin || this.product.asin}",
-    "productDescription": "この商品が何かを1-2文で簡潔に説明",
-    "productUsage": ["使い方1", "使い方2", "使い方3"],
-    "positivePoints": ["具体的な良い点1（『洗練された』等の抽象表現禁止。具体的な数値や機能に基づいた根拠を記述）", "具体的な良い点2"],
-    "negativePoints": ["具体的な問題点1（具体的な影響範囲や制約条件を記述）", "具体的な問題点2"],
+    "productDescription": "1-2文の概要",
+    "productUsage": ["用途1", "用途2"],
+    "positivePoints": ["具体的根拠に基づく良い点1", "良い点2"],
+    "negativePoints": ["制約や改善要望1", "問題点2"],
     "useCases": ["使用シーン1", "使用シーン2"],
     "userStories": [
       {
-        "userType": "ユーザー属性（例：30代会社員、主婦、学生）",
-        "scenario": "使用シチュエーション",
-        "experience": "具体的な体験談・ストーリー",
-        "sentiment": "positive" | "negative" | "mixed"
+        "userType": "属性",
+        "scenario": "状況",
+        "experience": "3行以上の実体験（データなしならその旨を記載）",
+        "supportingSourceIds": ["source-id"],
+        "sentiment": "positive | negative | mixed"
       }
     ],
-    "userImpression": "ユーザーの総評・全体的な感想のまとめ",
+    "userImpression": "全体的な感想のまとめ",
     "sources": [
       {
-        "id": "source-1（claimsから参照するため一意）",
-        "name": "具体的な記事タイトルまたはサイト名（例：The Verge Review）。抽象的な名称（Category Analysis等）は避けること。",
-        "url": "https://...（可能な限り具体的なURLを記載）",
-        "tier": "high | medium | low（総合信頼度）",
-        "evidenceType": "primary | secondary（一次情報/二次情報）",
-        "publishedAt": "YYYY-MM-DD（公開日。不明なら省略）",
-        "author": "執筆主体（例: 編集部, メーカー公式, 第三者レビュアー）",
-        "conflictOfInterest": "none | possible | disclosed | unknown（利害関係）",
-        "notes": "評価理由（例: 第三者検証あり / 公式一次資料 / 直近更新）"
+        "id": "src-1",
+        "name": "記事タイトル/サイト名",
+        "url": "URL",
+        "tier": "high | medium | low",
+        "evidenceType": "primary | secondary",
+        "publishedAt": "YYYY-MM-DD",
+        "author": "執筆主体",
+        "conflictOfInterest": "none | possible | disclosed | unknown",
+        "notes": "具体的な情報抽出内容"
       }
     ],
     "claims": [
       {
-        "claim": "主張内容（品質・耐久性・安全性・比較優位に関する具体的記述）",
+        "claim": "主張内容",
         "category": "quality | durability | safety | comparativeAdvantage",
         "confidence": "high | medium | low",
-        "supportingSourceIds": ["source-1", "source-2"],
+        "supportingSourceIds": ["src-1"],
         "crossChecked": true,
-        "notes": "一致確認の要点。未一致の場合は理由と仮説扱いを明記"
+        "notes": "確認内容"
       }
     ],
-    "lastInvestigated": "YYYY-MM-DD",
+    "lastInvestigated": "${this.today}",
     "competitiveAnalysis": [
       {
-        "name": "競合商品名",
-        "asin": "B0XXXXXXXX または null（ASINが特定できる場合は必ず記載）",
-        "priceComparison": "単なる価格の上下だけでなく、性能、成分、容量、耐久性などを踏まえた『割安か・割高か』の多角的な分析結果。例：『価格は（この競合商品の名前）より30%高いが、有効成分が2倍含まれており1回あたりのコストはむしろ低い』",
-        "featureComparison": ["共通点：（${this.product.title}」との『明確な共通点』）", "相違点：（${this.product.title}」との『決定的な相違点』）"],
-        "differentiators": ["${this.product.title}の利点：（『こういう場合は「${this.product.title}」を買うべき』という具体的なケース）", "（この競合商品の名前）の利点：（『逆にこういう場合は（この競合商品の名前）の方が適している』という具体的なケース）"]
+        "name": "競合名",
+        "asin": "ASIN(必須)",
+        "priceComparison": "価格差の分析",
+        "featureComparison": [
+          "比較ポイント:",
+          "共通点：[テキスト可変]",
+          "相違点：[テキスト可変]"
+        ],
+        "differentiators": [
+          "選び方のポイント:",
+          "[対象商品名]の利点：[テキスト可変]",
+          "[競合商品名]の利点：[テキスト可変]"
+        ]
       }
     ],
     "recommendation": {
-      "targetUsers": ["推奨ユーザー1", "推奨ユーザー2"],
-      "pros": ["購入メリット1", "購入メリット2"],
-      "cons": ["購入時の注意点1", "購入時の注意点2"],
+      "targetUsers": ["推奨ユーザー"],
+      "pros": ["メリット"],
+      "cons": ["注意点"],
       "score": 0,
-      "scoreRationale": "ここになぜこのスコアにしたのか、加点・減点の理由を具体的に記述してください（例：機能は完璧だが価格が高すぎるため-10点、など）"
+      "scoreRationale": "[基本点: 70] [合計: X]"
+    },
+    "technicalSpecs": {
+      "// 例示1(家電)": "dimensions: W/H/D, weight: XXg, power: XXW, battery: XXh",
+      "// 例示2(化粧品)": "capacity: XXml/XXg, ingredients: [主成分], skinType: [適応]",
+      "// 例示3(食品)": "content: XXg, calories: XXkcal, shelfLife: XX日, allergens: [成分]",
+      "dimensions": { "height": "XXmm", "width": "XXmm", "depth": "XXmm" },
+      "weight": "XXg",
+      "capacity": "XX",
+      "material": "材質",
+      "origin": "原産 country",
+      "other": ["重要スペックのみ抽出"]
     }
   }
 }
 \`\`\`
-
-**【technicalSpecs: 詳細スペック抽出】**
-上記JSONの "recommendation" の後（ただし \`analysis\` オブジェクトの **内部** ）に "technicalSpecs" フィールドも追加してください。
-※ technicalSpecs は必ず \`analysis\` の中に配置してください。\`analysis\` の外に配置するのは誤りです。
-商品カテゴリに応じて、詳細スペック情報を収集・構造化してください。
-
-【出力の安定化ルール】
-- **数値と単位**: \`100g\`, \`500ml\`, \`1.2m\` のように、数値と単位を組み合わせた文字列として出力してください。
-- **重さ (\`weight\`)**: パッケージ重量ではなく、可能な限り「本体重量」を優先してください。
-- **個数・容量 (\`capacity\`)**: \`500ml\`, \`12個入\`, \`8カップ\` のように記述してください。
-- **外形寸法 (\`dimensions\`)**: 原則としてオブジェクト形式 \`{"height": "XXXmm", "width": "XXXmm", "depth": "XXXmm"}\` で出力してください。
-- **階層構造**: \`display\`, \`battery\`, \`camera\` などの主要な部品はオブジェクトで構造化してください。
-
-出力例（標準的な構成）:
-\`\`\`json
-"technicalSpecs": {
-  "dimensions": { "height": "160mm", "width": "75mm", "depth": "8.0mm" },
-  "weight": "180g",
-  "capacity": "500ml",
-  "material": "アルミニウム、強化ガラス",
-  "origin": "日本",
-  "other": ["防水IP68", "急速充電対応"]
-}
-\`\`\`
-
-カテゴリ別の推奨収集項目（例）:
-- **スマートフォン/PC**: os, cpu, ram, storage, display, battery, camera, connectivity, weight, dimensions
-- **オーディオ**: driver, codec, battery, connectivity, noiseCancel, weight
-- **家電/キッチン**: power, capacity, material, dimensions, weight
-- **日用品/食品**: capacity (内容量/個数), weight, ingredients (成分/原材料), origin (原産国)
 `;
   }
 }
