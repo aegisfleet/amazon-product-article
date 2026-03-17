@@ -1,16 +1,17 @@
 #!/usr/bin/env python3
 """
-JSON Link Checker for Amazon Product Investigation
-JSONファイル内のURLの有効性を確認します。
+JSON Link & Content Checker for Amazon Product Investigation
+JSONファイル内のURLの有効性と、成果物の品質ガイドラインへの準拠を確認します。
 """
 
 import os
 import json
 import sys
 import re
+import argparse
 import requests
 from concurrent.futures import ThreadPoolExecutor
-from typing import List, Dict, Set
+from typing import List, Dict, Set, Any, Optional
 
 def extract_urls_from_json(data) -> Set[str]:
     """JSONデータから再帰的にURLを抽出する"""
@@ -18,15 +19,14 @@ def extract_urls_from_json(data) -> Set[str]:
     
     if isinstance(data, dict):
         for key, value in data.items():
-            # 特定のキー "url" の場合は直接追加
             if key == "url" and isinstance(value, str):
                 urls.add(value)
                 continue
             
-            # 再帰または文字列内の探索
             if isinstance(value, (dict, list)):
                 urls.update(extract_urls_from_json(value))
             elif isinstance(value, str):
+                # Simple URL extraction
                 found = re.findall(r'https?://[^\s<>"]+|www\.[^\s<>"]+', value)
                 urls.update(found)
                 
@@ -36,78 +36,187 @@ def extract_urls_from_json(data) -> Set[str]:
             
     return urls
 
-def check_url(url: str) -> Dict[str, any]:
+def _check_metric_value(val: str, path: str, errors: List[str]):
+    """文字列内の単位をチェックする"""
+    # 画面サイズ関連のフィールドはインチを許可する
+    if re.search(r'display|screen|画面|モニタ', path, re.I):
+        deprecated_units = [r'lbs?', r'oz', r'ft', r'feet', r'yards?']
+    else:
+        deprecated_units = [r'インチ', r'inch', r'(?<!\w)"(?!\w)', r'in\.', r'lbs?', r'oz', r'ft', r'feet', r'yards?']
+    
+    pattern = r'\d+\s*(' + '|'.join(deprecated_units) + r')'
+    if re.search(pattern, val, re.I):
+        errors.append(f"【注】非メートル法または不適切な単位が検出されました: {path} -> {val}")
+
+def _recursive_check_metric(val: Any, path: str, errors: List[str]):
+    """再帰的にメートル法のチェックを行う"""
+    if isinstance(val, str):
+        _check_metric_value(val, path, errors)
+    elif isinstance(val, dict):
+        for k, v in val.items():
+            _recursive_check_metric(v, f"{path}.{k}" if path else k, errors)
+    elif isinstance(val, list):
+        for i, item in enumerate(val):
+            _recursive_check_metric(item, f"{path}[{i}]", errors)
+
+def _validate_metrics(data: Any, errors: List[str]):
+    """メートル法のチェックを行う"""
+    analysis = data.get("analysis", {})
+    if "technicalSpecs" in analysis:
+        _recursive_check_metric(analysis["technicalSpecs"], "technicalSpecs", errors)
+
+def _validate_recommendation(analysis: Dict[str, Any], errors: List[str]):
+    """購買推奨度の根拠をチェックする"""
+    rec = analysis.get("recommendation", {})
+    if rec:
+        rationale = rec.get("scoreRationale", "")
+        if not re.search(r'\[基本点:\s*\d+\]', rationale):
+            errors.append("'scoreRationale' に計算根拠が記載されていない可能性があります。")
+
+def validate_content(data: Any) -> List[str]:
+    """成果物の品質ガイドラインへの準拠を確認する"""
+    errors = []
+    
+    analysis = data.get("analysis", {})
+    if not analysis:
+        return ["'analysis' セクションが見つかりません。"]
+
+    required_fields = [
+        "productName", "productDescription", "userStories", 
+        "sources", "competitiveAnalysis", "recommendation", "technicalSpecs"
+    ]
+    for field in required_fields:
+        if field not in analysis:
+            errors.append(f"必須フィールド '{field}' が見つかりません。")
+
+    if analysis.get("userStories") and len(analysis.get("userStories")) == 0:
+        errors.append("'userStories' が空です。")
+    
+    _validate_metrics(data, errors)
+    _validate_recommendation(analysis, errors)
+
+    return errors
+
+def check_url(url: str) -> Dict[str, Any]:
     """URLの有効性を確認する"""
+    if "webservices.amazon.co.jp/paapi5" in url:
+        return {"url": url, "status": 200, "ok": True, "note": "Amazon PAAPI endpoint is skipped"}
+        
     try:
-        # User-Agentを設定してブロックを回避しやすくする
         headers = {
             "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36"
         }
         response = requests.head(url, headers=headers, timeout=10, allow_redirects=True)
-        # HEADプロトコルが許可されていない場合はGETを試す
-        if response.status_code == 405 or response.status_code == 404:
+        if response.status_code in (404, 405):
             response = requests.get(url, headers=headers, timeout=10, allow_redirects=True, stream=True)
             
-        return {
-            "url": url,
-            "status": response.status_code,
-            "ok": response.ok,
-            "redirected": len(response.history) > 0,
-            "final_url": response.url
-        }
+        return {"url": url, "status": response.status_code, "ok": response.ok, "final_url": response.url}
     except Exception as e:
-        return {
-            "url": url,
-            "status": None,
-            "ok": False,
-            "error": str(e)
-        }
+        return {"url": url, "status": None, "ok": False, "error": str(e)}
 
-def main():
-    if len(sys.argv) < 2:
-        print("使用法: python scripts/check_links.py <path_to_json_file>")
-        sys.exit(1)
-        
-    json_path = sys.argv[1]
-    if not os.path.exists(json_path):
-        print(f"Error: ファイルが見つかりません: {json_path}")
-        sys.exit(1)
-        
-    try:
-        with open(json_path, 'r', encoding='utf-8') as f:
-            data = json.load(f)
-    except Exception as e:
-        print(f"Error: JSONの読み込みに失敗しました: {e}")
-        sys.exit(1)
-        
+def _handle_link_checks(data: Any) -> bool:
+    """リンクのチェックを実行する"""
     urls = extract_urls_from_json(data)
     if not urls:
         print("URLは見つかりませんでした。")
-        return
+        return True
 
     print(f"{len(urls)} 個のURLをチェックしています...")
-    
-    results = []
     with ThreadPoolExecutor(max_workers=5) as executor:
         results = list(executor.map(check_url, sorted(urls)))
-        
-    errors = [r for r in results if not r["ok"]]
     
+    errors = [r for r in results if not r["ok"]]
     if errors:
-        print("\n❌ リンクエラーが見つかりました:")
+        print("❌ リンクエラーが見つかりました:")
         for r in errors:
-            status = r.get("status")
-            error = r.get("error")
-            if status:
-                print(f" [{status}] {r['url']}")
-            else:
-                print(f" [ERR] {r['url']} ({error})")
-        sys.exit(1)
-    else:
-        print("\n✅ すべてのリンクが有効です。")
-        for r in results:
-            print(f" [OK] {r['url']}")
+            msg = f"status {r['status']}" if r['status'] else f"error {r.get('error')}"
+            print(f"  - [{msg}] {r['url']}")
+        return False
+    
+    print("✅ リンクはすべて有効です。")
+    return True
+
+def process_file(file_path: str, check_links: bool, check_content: bool) -> bool:
+    """単一のファイルを処理し、エラーがあればFalseを返す"""
+    print(f"\n--- {os.path.basename(file_path)} をチェック中 ---")
+    
+    try:
+        with open(file_path, 'r', encoding='utf-8') as f:
+            data = json.load(f)
+    except Exception as e:
+        print(f"❌ JSONの読み込みに失敗しました: {e}")
+        return False
+
+    if check_content:
+        content_errors = validate_content(data)
+        if content_errors:
+            print("⚠️ 成果物の品質に関する指摘事項:")
+            for err in content_errors:
+                print(f"  - {err}")
+
+    if check_links:
+        return _handle_link_checks(data)
+            
+    return True
+
+JSON_EXT = ".json"
+
+def _find_json_files(directory: str, recursive: bool) -> List[str]:
+    """ディレクトリ内からJSONファイルを検索する"""
+    if recursive:
+        return [
+            os.path.join(root, f)
+            for root, _, files in os.walk(directory)
+            for f in files
+            if f.endswith(JSON_EXT)
+        ]
+    return [
+        os.path.join(directory, f)
+        for f in os.listdir(directory)
+        if f.endswith(JSON_EXT)
+    ]
+
+def _get_target_files(paths: List[str], recursive: bool) -> List[str]:
+    """指定されたパスから対象となるJSONファイル一覧を取得する"""
+    files_to_check = []
+    for path in paths:
+        if not os.path.exists(path):
+            print(f"Error: パスが見つかりません: {path}")
+            continue
+            
+        if os.path.isfile(path) and path.endswith(JSON_EXT):
+            files_to_check.append(path)
+        elif os.path.isdir(path):
+            files_to_check.extend(_find_json_files(path, recursive))
+    return files_to_check
+
+def main():
+    parser = argparse.ArgumentParser(description="JSON Link & Content Checker")
+    parser.add_argument("paths", nargs="+", help="チェックするJSONファイルまたはディレクトリのパス（複数指定可）")
+    parser.add_argument("--no-links", action="store_true", help="リンクチェックをスキップする")
+    parser.add_argument("--no-content", action="store_true", help="内容のバリデーションをスキップする")
+    parser.add_argument("--recursive", "-r", action="store_true", help="ディレクトリを再帰的に検索する")
+    
+    args = parser.parse_args()
+    files_to_check = _get_target_files(args.paths, args.recursive)
+    
+    if not files_to_check:
+        print("チェック対象のJSONファイルが見つかりませんでした。")
         sys.exit(0)
+
+    print(f"{len(files_to_check)} 個のファイルをチェックします。")
+    
+    all_success = True
+    for f in files_to_check:
+        if not process_file(f, not args.no_links, not args.no_content):
+            all_success = False
+            
+    if all_success:
+        print("\n✨ すべてのチェックを通過しました。")
+        sys.exit(0)
+    else:
+        print("\n❌ いくつかのファイルでエラーが見つかりました。")
+        sys.exit(1)
 
 if __name__ == "__main__":
     main()

@@ -109,10 +109,10 @@ export class InvestigationPromptBuilder {
 
 ## 調査の進め方と検証義務
 1. **情報収集**: \`creators_get_item.py\` で対象商品の公式データを、\`creators_search_items.py\` で競合他社のデータを収集する。
-2. **既存データの徹底検証**: \`cat data/investigations/${this.product.asin}.json\` で既存データがあれば、その内容が現在でも妥当であるかを必ず再検証する。
-  - \`python scripts/check_links.py data/investigations/${this.product.asin}.json\` を実行し、全URLが有効であることを確認する。
-  - 対象商品や競合商品の価格・スペックなどの事実情報が現在でも正確であるか（特に競合製品との価格比較）確認する。
-  - 情報が古い場合は最新情報や新しいサイトが無いか調査する。
+2. **成果物の作成と徹底検証**: JSONファイル作成後、直ちに以下の検証を行うこと。
+  - \`python scripts/check_links.py data/investigations/${this.product.asin}.json\` を実行する。
+  - **修正義務**: 警告やエラー（リンク切れ、非メートル法単位の混入、必須項目の不足等）が出た場合は、必ずその場で内容を修正し、再度チェックをパスさせること。
+  - 特に競合製品との価格比較やスペックの正確性を再確認する。
   - \`lastInvestigated\` を本日の日付（${this.today}）に必ず更新する。
 3. **外部調査**: Amazon 403エラー等でもGoogle検索等で調査を継続し、絶対に「調査不能」で終わらせない。
 4. **推測ではなく根拠**: 商品仕様からの論理的推論は許容するが、架空のエピソード創作（ハルシネーション）は厳禁。
