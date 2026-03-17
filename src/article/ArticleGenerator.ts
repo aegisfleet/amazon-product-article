@@ -263,7 +263,14 @@ export class ArticleGenerator {
       return `__HERODESC_${heroDescriptions.length - 1}__`;
     });
 
-    // 長い段落を分割（blockquote以外のテキストにのみ適用）
+    // ソース情報のspanタグ（長い説明文）を段落分割から保護
+    const sourceSpans: string[] = [];
+    mobileContent = mobileContent.replaceAll(/<span class="mobile-list-item">[\s\S]*?<\/span>/g, (match) => {
+      sourceSpans.push(match);
+      return `__SOURCESPAN_${sourceSpans.length - 1}__`;
+    });
+
+    // 長い段落を分割（blockquoteや保護されたspan以外のテキストにのみ適用）
     mobileContent = mobileContent.replaceAll(/(.{200}[^。！？]{0,100}[。！？])/g, '$1\n\n');
 
     // blockquoteを復元
@@ -274,6 +281,11 @@ export class ArticleGenerator {
     // ヒーロー説明文を復元
     heroDescriptions.forEach((bq, i) => {
       mobileContent = mobileContent.replace(`__HERODESC_${i}__`, bq);
+    });
+
+    // ソース情報のspanを復元
+    sourceSpans.forEach((bq, i) => {
+      mobileContent = mobileContent.replace(`__SOURCESPAN_${i}__`, bq);
     });
 
     // テーブルをモバイル対応形式に変換
@@ -494,17 +506,20 @@ ${infoRows.join('\n')}
         const reasonParts = [
           source.tier ? `信頼度: ${tierLabel[source.tier]}` : null,
           source.evidenceType ? `情報種別: ${evidenceTypeLabel[source.evidenceType]}` : null,
-          source.publishedAt ? `公開日: ${source.publishedAt}` : null,
-          source.author ? `執筆主体: ${source.author}` : null,
+          source.publishedAt ? `公開日: ${source.publishedAt.trim()}` : null,
+          source.author ? `執筆主体: ${source.author.trim()}` : null,
           source.conflictOfInterest ? conflictLabel[source.conflictOfInterest] : null,
-          source.notes ? `評価理由: ${source.notes}` : null,
+          source.notes ? `評価理由: ${source.notes.trim()}` : null,
         ].filter((part): part is string => Boolean(part));
         const reasonText = reasonParts.length > 0 ? `（${reasonParts.join(' / ')}）` : '';
 
-        if (source.url && !isCreatorsApiUrl(source.url)) {
-          return `- <a href="${this.escapeHtml(source.url)}" target="_blank" rel="noopener noreferrer">${this.escapeHtml(source.name)}</a> ${this.escapeHtml(reasonText)}`;
-        }
-        return `- ${this.escapeHtml(source.name)} ${this.escapeHtml(reasonText)}`;
+        const sourceContent = source.url && !isCreatorsApiUrl(source.url)
+          ? `<a href="${this.escapeHtml(source.url)}" target="_blank" rel="noopener noreferrer">${this.escapeHtml(source.name.trim())}</a> ${this.escapeHtml(reasonText)}`
+          : `${this.escapeHtml(source.name.trim())} ${this.escapeHtml(reasonText)}`;
+
+        // 物理的な 1 行に強制するため、あらゆる改行文字を削除し、空白を集約する
+        const line = `- <span class="mobile-list-item">${sourceContent}</span>`;
+        return line.replace(/\\n/g, ' ').replace(/\s+/g, ' ').trim();
       })
       .join('\n');
 
@@ -1430,8 +1445,8 @@ ${recommendationMessage}`;
   }
 
   private optimizeListsForMobile(content: string): string {
-    // リストアイテムにモバイル対応クラスを追加
-    return content.replaceAll(/^- (.+)$/gm, '- <span class="mobile-list-item">$1</span>');
+    // リストアイテムにモバイル対応クラスを追加（既に span がある場合はスキップ）
+    return content.replaceAll(/^- (?!<span class="mobile-list-item">)(.+)$/gm, '- <span class="mobile-list-item">$1</span>');
   }
 
   private extractAffiliateLinks(content: string): AffiliateLink[] {
