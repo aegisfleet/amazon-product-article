@@ -224,8 +224,8 @@
   )) }}
 {{ end }}
 
-{{ $reviewAuthor := "" }}
-{{ $reviewDatePublished := "" }}
+{{ $reviewAuthor := .Site.Params.defaultReviewAuthor | default "編集部" }}
+{{ $reviewDatePublished := .Date | time.Format "2006-01-02" }}
 {{ $reviewBody := "" }}
 {{ $reviewRating := 0.0 }}
 {{ $hasReviewRating := false }}
@@ -243,8 +243,8 @@
   {{ end }}
 {{ end }}
 
-{{ $hasCompleteReview := and $reviewAuthor $reviewDatePublished $reviewBody }}
-{{ if $hasCompleteReview }}
+{{ $hasReviewBody := ne $reviewBody "" }}
+{{ if $hasReviewBody }}
   {{ $reviewSchema := dict
     "@type" "Review"
     "author" (dict "@type" "Person" "name" $reviewAuthor)
