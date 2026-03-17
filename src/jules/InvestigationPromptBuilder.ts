@@ -92,6 +92,7 @@ export class InvestigationPromptBuilder {
     return `【基本ルール】
 - 全ての出力は日本語で記述すること
 - 認証情報は絶対にログ・ファイル・コミット・PR説明文に含めないこと
+- 調査は妥協せず行い、どれだけ時間が掛かっても全ての検証作業を滞りなく実行すること
 - コミット対象は \`data/investigations/${this.product.asin}.json\` のみ
 
 ---
