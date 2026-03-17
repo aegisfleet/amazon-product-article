@@ -778,49 +778,59 @@ export class CreatorsAPIClient {
     const itemInfo = item.itemInfo;
     if (!itemInfo) return specs;
 
-    // 1. productInfo (dimensions, color, size, unitCount)
-    if (itemInfo.productInfo) {
-      const pInfo = itemInfo.productInfo;
-      if (pInfo.color?.displayValue) specs['color'] = pInfo.color.displayValue;
-      if (pInfo.size?.displayValue) specs['size'] = pInfo.size.displayValue;
-      if (pInfo.unitCount?.displayValue) specs['unitCount'] = String(pInfo.unitCount.displayValue);
+    this.extractProductInfoSpecs(itemInfo.productInfo, specs);
+    this.extractTechnicalInfoSpecs(itemInfo.technicalInfo, specs);
+    this.extractManufacturerInfoSpecs(itemInfo.manufactureInfo, specs);
 
-      if (pInfo.itemDimensions) {
-        const dims = pInfo.itemDimensions;
-        if (dims.height) specs['height'] = `${dims.height.displayValue} ${dims.height.unit}`;
-        if (dims.width) specs['width'] = `${dims.width.displayValue} ${dims.width.unit}`;
-        if (dims.length) specs['length'] = `${dims.length.displayValue} ${dims.length.unit}`;
-        if (dims.weight) specs['weight'] = `${dims.weight.displayValue} ${dims.weight.unit}`;
-      }
+    return specs;
+  }
 
-      // Other arbitrary fields in productInfo
-      for (const [key, value] of Object.entries(pInfo)) {
-        if (['color', 'size', 'unitCount', 'itemDimensions'].includes(key)) continue;
-        if (value && typeof value === 'object' && 'displayValue' in value) {
-          specs[key] = String((value as any).displayValue);
-        }
+  private extractProductInfoSpecs(pInfo: any, specs: Record<string, string>): void {
+    if (!pInfo) return;
+
+    if (pInfo.color?.displayValue) specs['color'] = pInfo.color.displayValue;
+    if (pInfo.size?.displayValue) specs['size'] = pInfo.size.displayValue;
+    if (pInfo.unitCount?.displayValue) specs['unitCount'] = String(pInfo.unitCount.displayValue);
+
+    this.extractDimensionSpecs(pInfo.itemDimensions, specs);
+    this.extractArbitraryProductSpecs(pInfo, specs);
+  }
+
+  private extractDimensionSpecs(dims: any, specs: Record<string, string>): void {
+    if (!dims) return;
+    if (dims.height) specs['height'] = `${dims.height.displayValue} ${dims.height.unit}`;
+    if (dims.width) specs['width'] = `${dims.width.displayValue} ${dims.width.unit}`;
+    if (dims.length) specs['length'] = `${dims.length.displayValue} ${dims.length.unit}`;
+    if (dims.weight) specs['weight'] = `${dims.weight.displayValue} ${dims.weight.unit}`;
+  }
+
+  private extractArbitraryProductSpecs(pInfo: any, specs: Record<string, string>): void {
+    const knownKeys = ['color', 'size', 'unitCount', 'itemDimensions'];
+    for (const [key, value] of Object.entries(pInfo)) {
+      if (knownKeys.includes(key)) continue;
+      if (value && typeof value === 'object' && 'displayValue' in value) {
+        specs[key] = String((value as any).displayValue);
       }
     }
+  }
 
-    // 2. technicalInfo
-    if (itemInfo.technicalInfo) {
-      const tInfo = itemInfo.technicalInfo;
-      for (const [key, value] of Object.entries(tInfo)) {
-        if (value && typeof value === 'object' && 'displayValue' in value) {
+  private extractTechnicalInfoSpecs(tInfo: any, specs: Record<string, string>): void {
+    if (!tInfo) return;
+
+    for (const [key, value] of Object.entries(tInfo)) {
+      if (value && typeof value === 'object') {
+        if ('displayValue' in value) {
           specs[key] = String((value as any).displayValue);
-        } else if (value && typeof value === 'object' && 'displayValues' in value) {
+        } else if ('displayValues' in value && Array.isArray((value as any).displayValues)) {
           specs[key] = (value as any).displayValues.join(', ');
         }
       }
     }
+  }
 
-    // 3. manufactureInfo (model number)
-    if (itemInfo.manufactureInfo) {
-      const mInfo = itemInfo.manufactureInfo;
-      if (mInfo.brand?.displayValue) specs['brand'] = mInfo.brand.displayValue;
-      if (mInfo.model?.displayValue) specs['model'] = mInfo.model.displayValue;
-    }
-
-    return specs;
+  private extractManufacturerInfoSpecs(mInfo: any, specs: Record<string, string>): void {
+    if (!mInfo) return;
+    if (mInfo.brand?.displayValue) specs['brand'] = mInfo.brand.displayValue;
+    if (mInfo.model?.displayValue) specs['model'] = mInfo.model.displayValue;
   }
 }
