@@ -24,26 +24,7 @@
       "バッテリーレス運用を活用した、車内専用の常時接続Wi-Fi環境の構築",
       "物理SIMを入れ替える手間なく、海外渡航時に現地のeSIMを利用するシーン"
     ],
-    "userStories": [
-      {
-        "userType": "30代会社員",
-        "scenario": "海外出張時の利用",
-        "experience": "海外出張に行く際、現地のeSIMを購入してこのルーターに設定して使いました。物理SIMを抜き差しする手間がなく、現地到着後すぐに通信できて非常に便利でした。技適マークもついているので安心して使えます。ただ、初期設定は少し戸惑いました。",
-        "sentiment": "positive"
-      },
-      {
-        "userType": "40代男性（車中泊・ドライブ愛好家）",
-        "scenario": "車内でのWi-Fi環境構築",
-        "experience": "車内に常設して使うために購入しました。バッテリーレス運用ができるので、真夏の高温になる車内でもバッテリー膨張や発火の心配がなく、安心して使えています。エンジン始動と同時に起動するので快適です。",
-        "sentiment": "positive"
-      },
-      {
-        "userType": "30代会社員（営業職）",
-        "scenario": "通信障害に備えた回線の使い分け",
-        "experience": "（推測）普段は国内用の物理SIMをメインで使いつつ、通信障害時に備えて予備の回線をeSIMに設定しています。最大3つのeSIMプロファイルを保存できるため、状況に応じて切り替えられて助かっています。",
-        "sentiment": "positive"
-      }
-    ],
+    "userStories": [],
     "userImpression": "eSIM対応とバッテリーレス運用という独自の強みが高く評価される傾向にあります。特に、複数回線の使い分けによる冗長化や、車載用途としての安全性において、明確な目的を持つユーザーから強い支持を得ています。一方で、5G非対応である点は、速度重視のユーザーからはマイナスポイントとして捉えられています。",
     "sources": [
       {
@@ -56,28 +37,6 @@
         "author": "富士ソフト",
         "conflictOfInterest": "possible",
         "notes": "公式の製品仕様、機能説明、技適情報などを確認。"
-      },
-      {
-        "id": "source-2",
-        "name": "ITmedia Mobile: 富士ソフトの最新ルーター検証記事",
-        "url": "https://www.itmedia.co.jp/mobile/articles/2403/15/news123.html",
-        "tier": "high",
-        "evidenceType": "secondary",
-        "publishedAt": "2024-03-15",
-        "author": "ITmedia 編集部",
-        "conflictOfInterest": "none",
-        "notes": "第三者メディアによるeSIM設定やバッテリーレス運用の実機検証レビューとして参照。"
-      },
-      {
-        "id": "source-3",
-        "name": "価格.com: 富士ソフト +F FS045W クチコミ・レビュー",
-        "url": "https://kakaku.com/item/K0001598765/",
-        "tier": "medium",
-        "evidenceType": "primary",
-        "publishedAt": "2024-04-10",
-        "author": "一般ユーザー",
-        "conflictOfInterest": "none",
-        "notes": "車載用途や海外旅行での実利用体験談、評価傾向を確認するため参照。"
       }
     ],
     "claims": [
@@ -86,22 +45,20 @@
         "category": "comparativeAdvantage",
         "confidence": "high",
         "supportingSourceIds": [
-          "source-1",
-          "source-2"
+          "source-1"
         ],
-        "crossChecked": true,
-        "notes": "公式仕様とITmediaの実機検証記事で設定画面等の確認が取れており一致している。"
+        "crossChecked": false,
+        "notes": "公式仕様からの確認。複数ソースでのクロスチェックは現在不可。"
       },
       {
         "claim": "バッテリーレス運用に対応し、車載や常時給電環境でも安全",
         "category": "safety",
         "confidence": "high",
         "supportingSourceIds": [
-          "source-1",
-          "source-3"
+          "source-1"
         ],
-        "crossChecked": true,
-        "notes": "メーカーのアピールポイントであると同時に、価格.comなどのユーザーレビューでも車載環境での安全性が高く評価されている。"
+        "crossChecked": false,
+        "notes": "公式仕様からの確認。複数ソースでのクロスチェックは現在不可。"
       }
     ],
     "lastInvestigated": "2026-03-17",
@@ -109,7 +66,7 @@
       {
         "name": "富士ソフト +F FS040W",
         "asin": "B08CDQQSMP",
-        "priceComparison": "FS040Wの方が価格は安いが、eSIMには対応していない。物理SIMのみの運用で良ければFS040Wの方が割安。",
+        "priceComparison": "FS040Wの方が価格は安い(約12,680円)が、eSIMには対応していない。物理SIMのみの運用で良ければFS040Wの方が割安(FS045Wは約18,900円)。",
         "featureComparison": [
           "共通点：どちらも4G対応で、バッテリーレス運用に対応しており車載や常時給電用途に適している",
           "相違点：FS045WはeSIM（最大3プロファイル）に対応しているが、FS040Wは物理SIM（microSIM）のみの対応"
@@ -122,66 +79,66 @@
       {
         "name": "富士ソフト(Fujisoft) 5G対応Wi-Fiモバイルルーター +F FS050W",
         "asin": "B0BVBLN3XV",
-        "priceComparison": "FS050Wは価格が大幅に高い（約3万円前後）が、5GとWi-Fi 6に対応している。通信速度や最新規格を重視するかどうかでコストパフォーマンスの評価が分かれる。",
+        "priceComparison": "FS050Wは価格が大幅に高い（約33,700円前後）が、5GとWi-Fi 6に対応している。通信速度や最新規格を重視するかどうかでコストパフォーマンスの評価が分かれる(FS045Wは約18,900円)。",
         "featureComparison": [
           "共通点：eSIMとnanoSIMのデュアルSIM対応、バッテリーレス運用対応など、基本コンセプトは共通",
           "相違点：FS050Wは5G通信とWi-Fi 6に対応しており、大幅な高速通信が可能"
         ],
         "differentiators": [
           "富士ソフト ＋F FS045Wの利点：5Gの高速通信が不要で、初期費用を抑えつつeSIMの利便性やバッテリーレス運用を活用したい場合",
-          "富士ソフト +F FS050Wの利点：固定回線代わりや大容量データの送受信など、5Gの高速通信環境が必要な場合"
+          "富士ソフト(Fujisoft) 5G対応Wi-Fiモバイルルーター +F FS050Wの利点：固定回線代わりや大容量データの送受信など、5Gの高速通信環境が必要な場合"
         ]
       },
       {
         "name": "NECプラットフォームズ Aterm MR05LN",
         "asin": "B01JNX1486",
-        "priceComparison": "価格帯は同程度だが、MR05LNはeSIM非対応。物理的なデュアルSIMが必要かどうかで評価が分かれる。",
+        "priceComparison": "価格帯は同程度(約16,600円)だが、MR05LNはeSIM非対応。物理的なデュアルSIMが必要かどうかで評価が分かれる(FS045Wは約18,900円)。",
         "featureComparison": [
           "共通点：デュアルSIM対応の4Gモバイルルーターである点",
           "相違点：FS045WはeSIM+nanoSIMの組み合わせだが、MR05LNは物理SIM（nanoSIM）2枚の構成。またFS045Wはバッテリーレス運用が可能"
         ],
         "differentiators": [
           "富士ソフト ＋F FS045Wの利点：eSIMを利用したい場合や、車載用途などでバッテリーレス運用を行いたい場合",
-          "NEC Aterm MR05LNの利点：手元にある2枚の物理SIMカードを切り替えて使いたい場合"
+          "NECプラットフォームズ Aterm MR05LNの利点：手元にある2枚の物理SIMカードを切り替えて使いたい場合"
         ]
       },
       {
         "name": "Aterm (NEC) Wi-Fi 5Gモバイルルーター MR51FN",
         "asin": "B0BQMX9RT6",
-        "priceComparison": "MR51FNは5G対応のため価格が高い。4Gで十分な場合はFS045Wの方が圧倒的に低コスト。",
+        "priceComparison": "MR51FNは5G対応のため価格が高い(約31,670円)。4Gで十分な場合はFS045Wの方が圧倒的に低コスト(約18,900円)。",
         "featureComparison": [
           "共通点：国内外の幅広いバンドに対応し、海外でも利用可能",
           "相違点：MR51FNは5G対応だが物理SIM(nanoSIM)のみでシングルSIM。FS045Wは4G対応だがeSIM対応デュアルSIM"
         ],
         "differentiators": [
           "富士ソフト ＋F FS045Wの利点：複数回線の使い分けやeSIMの利用を重視し、コストを抑えたい場合",
-          "Aterm MR51FNの利点：5Gの超高速通信を重視し、回線は1つで十分な場合"
+          "Aterm (NEC) Wi-Fi 5Gモバイルルーター MR51FNの利点：5Gの超高速通信を重視し、回線は1つで十分な場合"
         ]
       },
       {
         "name": "カシムラ(Kashimura) SIMフリー無線LANルーター USB電源タイプ NKD-249",
         "asin": "B0B9J5QP15",
-        "priceComparison": "NKD-249は1万円未満と安価だが、USB給電専用でバッテリー非搭載、eSIM非対応。用途が限定されるため単純な価格比較は難しいが、車載専用ならNKD-249が割安。",
+        "priceComparison": "NKD-249は1万円未満(約7,500円)と安価だが、USB給電専用でバッテリー非搭載、eSIM非対応。用途が限定されるため単純な価格比較は難しいが、車載専用ならNKD-249が割安(FS045Wは約18,900円)。",
         "featureComparison": [
           "共通点：車載などでのUSB給電運用を想定した4Gルーター",
           "相違点：NKD-249はバッテリーを搭載しておらず完全な据え置き・車載用。FS045Wはバッテリー搭載・非搭載を切り替え可能でeSIMに対応"
         ],
         "differentiators": [
           "富士ソフト ＋F FS045Wの利点：持ち運んで使うシーンもある場合や、eSIMを利用したい場合",
-          "カシムラ NKD-249の利点：完全に車載・据え置き専用として割り切り、初期費用を極力抑えたい場合"
+          "カシムラ(Kashimura) SIMフリー無線LANルーター USB電源タイプ NKD-249の利点：完全に車載・据え置き専用として割り切り、初期費用を極力抑えたい場合"
         ]
       },
       {
         "name": "Pioneer 車載用 Wi-Fi ルーター DCT-WR200D-E",
         "asin": "B0D46PZSNF",
-        "priceComparison": "DCT-WR200D-Eは機器代金に加え、専用のdocomo in Car Connect契約が必要。柔軟なプラン選択ができるFS045Wの方が長期的には安上がりになる可能性が高い。",
+        "priceComparison": "DCT-WR200D-E(約19,630円)は機器代金に加え、専用のdocomo in Car Connect契約が必要。柔軟なプラン選択ができるFS045W(約18,900円)の方が長期的には安上がりになる可能性が高い。",
         "featureComparison": [
           "共通点：車載環境での利用を想定したルーター",
           "相違点：DCT-WR200D-Eは車載専用設計でdocomo回線固定。FS045Wは汎用ルーターで好みの回線を選べ、持ち運びも可能"
         ],
         "differentiators": [
           "富士ソフト ＋F FS045Wの利点：自分の好きな通信プラン（格安SIMやeSIM）を契約してコストを最適化したい場合や、車外でも使いたい場合",
-          "Pioneer DCT-WR200D-Eの利点：設定の手間を省き、車内限定でデータ使い放題の環境を簡単に構築したい場合"
+          "Pioneer 車載用 Wi-Fi ルーター DCT-WR200D-Eの利点：設定の手間を省き、車内限定でデータ使い放題の環境を簡単に構築したい場合"
         ]
       }
     ],
@@ -222,7 +179,8 @@
       "other": [
         "CE/FCC技適対応",
         "デュアルSIM対応"
-      ]
+      ],
+      "capacity": "非搭載 (別売バッテリー等の利用で駆動)"
     }
   }
 }
