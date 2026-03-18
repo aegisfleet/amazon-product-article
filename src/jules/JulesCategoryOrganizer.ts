@@ -5,9 +5,9 @@
  * 適切な親カテゴリに分類するためのJulesセッションを作成する
  */
 
+import axios, { type AxiosInstance } from 'axios';
 import * as fs from 'node:fs/promises';
 import * as path from 'node:path';
-import axios, { type AxiosInstance } from 'axios';
 import type {
   JulesCredentials,
   JulesError,
@@ -19,9 +19,6 @@ import { Logger } from '../utils/Logger';
 
 const JULES_API_BASE_URL = 'https://jules.googleapis.com/v1alpha';
 
-/**
- * カテゴリグループの型定義
- */
 /**
  * カテゴリグループの型定義
  */
