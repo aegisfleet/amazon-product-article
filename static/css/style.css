@@ -662,11 +662,55 @@ a:hover {
 .content ul,
 .content ol {
   margin-bottom: var(--spacing-lg);
-  padding-left: var(--spacing-xl);
+  padding-left: 0;
+  list-style: none;
 }
 
 .content li {
-  margin-bottom: var(--spacing-xs);
+  position: relative;
+  margin-bottom: var(--spacing-sm);
+  line-height: 1.7;
+}
+
+/* Unordered List Decoration */
+.content ul li {
+  padding-left: 1.75rem;
+}
+
+.content ul li::before {
+  content: "✨";
+  position: absolute;
+  left: 0;
+  top: 0.05rem;
+  font-size: 1.1em;
+}
+
+/* Ordered List Decoration */
+.content ol {
+  counter-reset: content-counter;
+}
+
+.content ol li {
+  counter-increment: content-counter;
+  padding-left: 2.25rem;
+}
+
+.content ol li::before {
+  content: counter(content-counter);
+  position: absolute;
+  left: 0;
+  top: 0.2rem;
+  width: 1.5rem;
+  height: 1.5rem;
+  background: var(--color-primary);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.85rem;
+  font-weight: 800;
+  box-shadow: 0 2px 4px rgba(var(--color-primary-rgb), 0.2);
 }
 
 .content blockquote {
