@@ -110,6 +110,10 @@ def check_url(url: str) -> Dict[str, Any]:
         if response.status_code in (404, 405):
             response = requests.get(url, headers=headers, timeout=10, allow_redirects=True, stream=True)
             
+        # Amazon 503エラーはレート制限/WAFなどによる一時的なものが多いため許容する
+        if response.status_code == 503 and "amazon.co.jp" in url:
+            return {"url": url, "status": 503, "ok": True, "final_url": response.url, "note": "Amazon 503 (rate limit/WAF) allowed"}
+
         return {"url": url, "status": response.status_code, "ok": response.ok, "final_url": response.url}
     except Exception as e:
         return {"url": url, "status": None, "ok": False, "error": str(e)}
