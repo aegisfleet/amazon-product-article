@@ -22,7 +22,7 @@ import type {
 } from '../types/JulesTypes';
 import type { Product } from '../types/Product';
 import { Logger } from '../utils/Logger';
-import { formatInvestigationPrompt } from './prompts';
+import { formatInvestigationPrompt, formatRecommendationPrompt } from './prompts';
 
 const JULES_API_BASE_URL = 'https://jules.googleapis.com/v1alpha';
 
@@ -330,6 +330,40 @@ export class JulesInvestigator {
       sessionName: session.name,
       product,
     };
+  }
+
+  /**
+   * 本日のおすすめ商品調査を開始
+   * Jules がトレンドを探索し、data/recommendations/today.json を作成・コミットする
+   */
+  async startRecommendationInvestigation(
+    sourceContext: SourceContext,
+  ): Promise<{ sessionId: string; sessionName: string }> {
+    const prompt = formatRecommendationPrompt();
+    const request: JulesSessionRequest = {
+      prompt,
+      sourceContext,
+      title: "Today's Recommended Products Investigation",
+      automationMode: 'AUTO_CREATE_PR',
+      requirePlanApproval: false, // 自動承認
+    };
+
+    try {
+      const response = await this.client.post<JulesSessionResponse>('/sessions', request);
+      const sessionId = response.data.id;
+      const sessionName = response.data.name;
+
+      this.logger.info('Recommendation investigation session started', {
+        sessionId,
+        sessionName,
+      });
+
+      return { sessionId, sessionName };
+    } catch (error) {
+      const julesError = this.handleApiError(error);
+      this.logger.error('Failed to start recommendation investigation', julesError);
+      throw new Error(`Recommendation investigation failed: ${julesError.message}`, { cause: error });
+    }
   }
 
   /**
