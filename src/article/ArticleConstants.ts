@@ -207,7 +207,6 @@ export const HANDLED_SPEC_FIELDS = new Set([
   'brand',
   'category',
   'availability',
-  'isPrimeEligible',
   'externalIds',
   'images',
   'title',

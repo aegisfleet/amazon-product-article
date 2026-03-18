@@ -33,7 +33,7 @@ export interface Product {
     average: number;
     count: number;
   };
-  isPrimeEligible?: boolean | undefined;
+
   isAmazonDirect?: boolean | undefined;
   availability?: string | undefined;
   brand?: string | undefined;

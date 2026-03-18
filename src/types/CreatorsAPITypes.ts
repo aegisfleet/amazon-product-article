@@ -192,9 +192,7 @@ export interface CreatorsAPIItem {
         id: string;
         name: string;
       };
-      deliveryInfo?: {
-        isPrimeEligible: boolean;
-      };
+
       loyaltyPoints?: {
         points: number;
       };

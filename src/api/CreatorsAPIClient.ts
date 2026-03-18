@@ -661,14 +661,6 @@ export class CreatorsAPIClient {
 
     if (item.parentASIN) product.parentAsin = item.parentASIN;
 
-    // Extract Prime eligibility
-    // JP API does not support deliveryInfo.isPrimeEligible.
-    // Use heuristic: if merchant is Amazon.co.jp, it's likely prime eligible.
-    if (listing?.merchantInfo?.name === 'Amazon.co.jp') {
-      product.isPrimeEligible = true;
-    } else {
-      product.isPrimeEligible = false;
-    }
 
     return product;
   }
