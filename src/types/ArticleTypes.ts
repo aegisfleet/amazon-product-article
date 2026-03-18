@@ -27,6 +27,9 @@ export interface ArticleMetadata {
   is_amazon_direct?: boolean;
   merchant_name?: string | undefined;
   availability?: string;
+  loyalty_points?: number | undefined;
+  deal_badge?: string | undefined;
+  savings_percentage?: number | undefined;
   technicalSpecs?: TechnicalSpecs; // 詳細スペック情報（カテゴリ依存）
   hero?: {
     score_rationale: {

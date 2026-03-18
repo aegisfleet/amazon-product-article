@@ -167,7 +167,10 @@ export class ArticleGenerator {
       is_amazon_direct: isAmazonDirect,
       merchant_name: product.merchantName,
       affiliate_url: affiliateUrl,
-    };
+      loyalty_points: product.loyaltyPoints,
+      deal_badge: product.dealBadge,
+      savings_percentage: product.savingsPercentage,
+    } as any;
 
     if (product.availability !== undefined) {
       metadata.availability = product.availability;
