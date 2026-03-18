@@ -223,9 +223,6 @@
                         {{ end }}
                     </div>
                     <div class="meta-details-row">
-                        {{ with .Params.merchant_name }}
-                        <span class="card-merchant">🏢 {{ . | truncate 15 }}</span>
-                        {{ end }}
                         {{ if .Params.is_amazon_direct }}
                         <span class="card-amazon-direct">Amazon直販</span>
                         {{ end }}

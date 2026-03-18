@@ -147,8 +147,6 @@ export class ArticleGenerator {
     const affiliateLink = this.affiliateManager.generateLinkFromProduct(product);
     const affiliateUrl = affiliateLink.url;
 
-    const isAmazonDirect = product.merchantName === 'Amazon.co.jp';
-
     const metadata: ArticleMetadata = {
       title,
       description,
@@ -164,8 +162,7 @@ export class ArticleGenerator {
       featured: this.shouldBeFeatured(product, investigation),
       mobileOptimized: true,
       seoKeywords,
-      is_amazon_direct: isAmazonDirect,
-      merchant_name: product.merchantName,
+      is_amazon_direct: product.isAmazonDirect,
       affiliate_url: affiliateUrl,
       loyalty_points: product.loyaltyPoints,
       deal_badge: product.dealBadge,
@@ -407,13 +404,6 @@ export class ArticleGenerator {
     // 在庫・Amazon直販情報
     if (productDetail.availability) {
       infoRows.push(`| 在庫状況 | ${this.escapeHtml(productDetail.availability)} |`);
-    }
-    if (productDetail.merchantName) {
-      infoRows.push(`| 販売元 | ${this.escapeHtml(productDetail.merchantName)} |`);
-    }
-    const isAmazonDirect = productDetail.merchantName === 'Amazon.co.jp';
-    if (isAmazonDirect) {
-      infoRows.push(`| Amazon直販 | ✅ |`);
     }
 
     // EAN/ISBN/UPC
@@ -1749,7 +1739,7 @@ ${confidenceLine}`;
     const priceText = detail.price?.formatted || '';
     const competitorPriceAmount = detail.price?.amount || 0;
     const availabilityText = detail.availability || '';
-    const isAmazonDirect = detail.merchantName === 'Amazon.co.jp';
+    const isAmazonDirect = detail.isAmazonDirect;
 
     const priceDiffHtml = this.renderPriceDiff(basePriceAmount, competitorPriceAmount);
     const scoreHtml = this.renderCompetitorScore(score);

@@ -25,7 +25,6 @@ export interface ArticleMetadata {
   images?: string[]; // Product image URLs for Hugo front matter
   affiliate_url?: string; // Affiliate link for the hero button
   is_amazon_direct?: boolean;
-  merchant_name?: string | undefined;
   availability?: string;
   loyalty_points?: number | undefined;
   deal_badge?: string | undefined;
