@@ -1619,7 +1619,7 @@ a.competitor-preview:hover {
   align-items: center;
   gap: var(--spacing-xs);
   background: linear-gradient(135deg, #ff9900 0%, #ffad33 100%);
-  color: #fff !important;
+  color: #111;
   padding: 0.5rem 1rem;
   border-radius: var(--radius-xl);
   font-weight: 700;
@@ -1629,9 +1629,27 @@ a.competitor-preview:hover {
   transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
+.today-recommendation-link:visited,
+.today-recommendation-link:active {
+  color: #111;
+}
+
 .today-recommendation-link:hover {
+  color: #111;
   transform: translateY(-2px) scale(1.02);
   box-shadow: 0 6px 12px rgba(255, 153, 0, 0.35);
+}
+
+.today-recommendation-link:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+[data-theme="dark"] .today-recommendation-link,
+[data-theme="dark"] .today-recommendation-link:visited,
+[data-theme="dark"] .today-recommendation-link:active,
+[data-theme="dark"] .today-recommendation-link:hover {
+  color: #232f3e;
 }
 
 .today-recommendation-icon {
