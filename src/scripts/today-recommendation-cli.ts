@@ -80,8 +80,7 @@ async function main(): Promise<void> {
 }
 
 // CommonJS環境では最上位でのawaitが使用できないため、Promiseチェーンを使用
-// eslint-disable-next-line @typescript-eslint/no-floating-promises, sonarjs/prefer-top-level-await
-main().catch((error) => {
+void main().catch((error) => {
   console.error('Unhandled error:', error);
   process.exit(1);
 });
