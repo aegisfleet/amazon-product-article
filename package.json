@@ -16,6 +16,7 @@
     "clean": "rimraf dist",
     "search:products": "ts-node src/scripts/product-search-cli.ts",
     "investigate": "ts-node src/scripts/jules-investigation-cli.ts",
+    "investigate:recommendations": "ts-node src/scripts/today-recommendation-cli.ts",
     "generate:articles": "ts-node src/scripts/article-generation-cli.ts",
     "merge:pr": "ts-node src/scripts/pr-merge-cli.ts",
     "organize:categories": "ts-node src/scripts/organize-categories-cli.ts",
