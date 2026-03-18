@@ -657,7 +657,7 @@ export class CreatorsAPIClient {
       loyaltyPoints: listing?.loyaltyPoints?.points ?? undefined,
       dealBadge: listing?.dealDetails?.dealBadge,
       savingsPercentage: listing?.price?.savings?.percentage ?? undefined,
-    } as any;
+    };
 
     if (item.parentASIN) product.parentAsin = item.parentASIN;
 

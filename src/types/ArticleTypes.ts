@@ -8,28 +8,28 @@ export interface ArticleMetadata {
   title: string;
   description: string;
   category: string;
-  subcategory?: string;
-  manufacturer?: string;
+  subcategory?: string | undefined;
+  manufacturer?: string | undefined;
   tags: string[];
   publishDate: Date;
   asin: string;
   priceRange: string;
-  price?: string;
-  score?: number;
-  rating?: number;
-  ratingCount?: number;
+  price?: string | undefined;
+  score?: number | undefined;
+  rating?: number | undefined;
+  ratingCount?: number | undefined;
   featured: boolean;
   mobileOptimized: boolean;
   seoKeywords: string[];
-  lastInvestigated?: string;
-  images?: string[]; // Product image URLs for Hugo front matter
-  affiliate_url?: string; // Affiliate link for the hero button
-  is_amazon_direct?: boolean;
-  availability?: string;
+  lastInvestigated?: string | undefined;
+  images?: string[] | undefined; // Product image URLs for Hugo front matter
+  affiliate_url?: string | undefined; // Affiliate link for the hero button
+  is_amazon_direct?: boolean | undefined;
+  availability?: string | undefined;
   loyalty_points?: number | undefined;
   deal_badge?: string | undefined;
   savings_percentage?: number | undefined;
-  technicalSpecs?: TechnicalSpecs; // 詳細スペック情報（カテゴリ依存）
+  technicalSpecs?: TechnicalSpecs | undefined; // 詳細スペック情報（カテゴリ依存）
   hero?: {
     score_rationale: {
       top_plus: { points: number; desc: string } | null;
