@@ -1750,7 +1750,9 @@ ${confidenceLine}`;
     const previewTag = hasInternalReview ? 'a' : 'div';
     const previewAttrs = hasInternalReview && asin ? ` href="../${asin.toLowerCase()}/"` : '';
 
-    const pointsHtml = loyaltyPoints ? `<span class="hero-points" style="font-size: 0.85rem; margin-left: var(--spacing-sm);">🎁 ${loyaltyPoints}pt還元</span>` : '';
+    const pointsHtml = loyaltyPoints
+      ? `<span class="hero-points" style="font-size: 0.85rem; margin-left: var(--spacing-sm);">🎁 ${loyaltyPoints}pt還元</span>`
+      : '';
     const actualPriceHtml = priceText
       ? `<span class="competitor-actual-price">${this.escapeHtml(priceText)}${priceDiffHtml}${pointsHtml}</span>`
       : '';
