@@ -41,6 +41,7 @@ export class RecommendationPromptBuilder {
 
 ## 成果物の作成と検証
 - 調査結果を \`data/recommendations/today.json\` に保存してください。
+- **重要**: 今回の調査において、\`data/recommendations/today.json\` 以外のファイル（収集した一時データスクリプトや \`tmp/\` 以下のファイルなど）は**絶対にコミット（Git Commit）しないでください**。リポジトリに変更を含めるのは \`today.json\` のみです。
 - ハルシネーション（存在しない商品、架空のセール、実在しないニュースやURLの創作）は厳禁です。必ず実在するエビデンスへのリンクを記載してください。
 
 ---
@@ -63,7 +64,7 @@ export class RecommendationPromptBuilder {
         "name": "情報元の名称（例：Amazon特選タイムセール、〇〇ニュース、Xトレンド等）",
         "url": "エビデンスとなる基の情報のURL（※存在する場合は必ず記載。無い場合は null または空文字）"
       },
-      "highlights": ["特徴1", "特徴2"],
+      "highlights": ["特徴1（各項目30文字以内で簡潔に）", "特徴2（各項目30文字以内で簡潔に）", "3〜5個程度"],
       "url": "https://www.amazon.co.jp/dp/ASIN/",
       "imageUrl": "画像のURL (存在する場合)"
     }
