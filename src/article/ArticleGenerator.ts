@@ -1337,6 +1337,9 @@ ${recommendationMessage}`;
     if (metadata.score) lines.push(`score: ${metadata.score}`);
     if (metadata.is_amazon_direct !== undefined) lines.push(`is_amazon_direct: ${metadata.is_amazon_direct}`);
     if (metadata.availability) lines.push(`availability: "${this.escapeForFrontMatter(metadata.availability)}"`);
+    if (metadata.loyalty_points !== undefined) lines.push(`loyalty_points: ${metadata.loyalty_points}`);
+    if (metadata.savings_percentage !== undefined) lines.push(`savings_percentage: ${metadata.savings_percentage}`);
+    if (metadata.deal_badge) lines.push(`deal_badge: "${this.escapeForFrontMatter(metadata.deal_badge)}"`);
     if (metadata.rating !== undefined) lines.push(`rating: ${metadata.rating}`);
     if (metadata.ratingCount !== undefined) lines.push(`rating_count: ${metadata.ratingCount}`);
 
