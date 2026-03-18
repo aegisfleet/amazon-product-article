@@ -203,7 +203,6 @@ class CreatorsAPIClient:
                 "itemInfo.byLineInfo",
                 "itemInfo.technicalInfo",
                 "offersV2.listings.price",
-                "offersV2.listings.deliveryInfo.isPrimeEligible",
                 "offersV2.listings.availability",
                 "browseNodeInfo.browseNodes"
             ]
