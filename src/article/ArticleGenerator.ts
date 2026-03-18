@@ -1344,19 +1344,26 @@ ${recommendationMessage}`;
     if (metadata.ratingCount !== undefined) lines.push(`rating_count: ${metadata.ratingCount}`);
 
     if (metadata.review) {
-      lines.push('review:');
-      if (metadata.review.author) {
-        lines.push(`  author: "${this.escapeForFrontMatter(metadata.review.author)}"`);
-      }
-      if (metadata.review.datePublished) {
-        lines.push(`  date_published: "${this.escapeForFrontMatter(metadata.review.datePublished)}"`);
-      }
-      if (metadata.review.summary) {
-        lines.push(`  summary: "${this.escapeForFrontMatter(metadata.review.summary)}"`);
-      }
-      if (metadata.review.rating !== undefined) {
-        lines.push(`  rating: ${metadata.review.rating}`);
-      }
+      this.addReviewMetadata(lines, metadata.review);
+    }
+  }
+
+  /**
+   * レビューメタデータを追加
+   */
+  private addReviewMetadata(lines: string[], review: NonNullable<ArticleMetadata['review']>): void {
+    lines.push('review:');
+    if (review.author) {
+      lines.push(`  author: "${this.escapeForFrontMatter(review.author)}"`);
+    }
+    if (review.datePublished) {
+      lines.push(`  date_published: "${this.escapeForFrontMatter(review.datePublished)}"`);
+    }
+    if (review.summary) {
+      lines.push(`  summary: "${this.escapeForFrontMatter(review.summary)}"`);
+    }
+    if (review.rating !== undefined) {
+      lines.push(`  rating: ${review.rating}`);
     }
   }
 
