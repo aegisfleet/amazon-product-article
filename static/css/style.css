@@ -2295,7 +2295,8 @@ a.competitor-preview:hover {
 
 .table-of-contents nav>ul>li>a::before,
 .table-of-contents #TableOfContents>ul>li>a::before {
-  content: '•';
+  content: none;
+  margin-right: 0.5rem;
   color: var(--color-primary);
   font-weight: bold;
 }
