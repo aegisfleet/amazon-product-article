@@ -29,6 +29,10 @@
             <span class="product-count-text">掲載商品数: <span class="product-count-number">{{ len $articles }}</span>
                 点</span>
         </div>
+        <a href="{{ `recommendations/` | relURL }}" class="today-recommendation-link">
+            <span class="today-recommendation-icon">🎯</span>
+            <span class="today-recommendation-text">本日のおすすめ商品</span>
+        </a>
     </div>
 
     <!-- High Score Pickup Section (80点以上) -->

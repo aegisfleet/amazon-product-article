@@ -1,0 +1,108 @@
+{{ define "main" }}
+<div class="container" style="padding-top: var(--spacing-xl);">
+    {{ partial "breadcrumb.html" . }}
+
+    {{ $todayData := .Site.Data.recommendations.today }}
+
+    <div class="article-header" style="margin-bottom: var(--spacing-lg);">
+        <h1>{{ .Title }}</h1>
+        <p class="article-meta">調査日: {{ $todayData.date }}</p>
+    </div>
+
+    <!-- Overview Section -->
+    <div class="pros-cons-grid" style="grid-template-columns: 1fr; margin-bottom: var(--spacing-xl);">
+        <div class="pros-card" style="background: linear-gradient(to right, var(--bg-competitor-preview), var(--color-bg-body)); border-color: #fde68a;">
+            <h2 style="color: #d97706; margin-bottom: var(--spacing-sm); border-bottom: 2px solid #fde68a; padding-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem;">
+                <span style="font-size: 1.5rem;">✨</span>
+                {{ $todayData.headline }}
+            </h2>
+            <p style="font-size: 1.05rem; line-height: 1.7; color: var(--color-text-main);">
+                {{ $todayData.searchContext.todayOverview }}
+            </p>
+        </div>
+    </div>
+
+    <!-- Recommendations List -->
+    <div class="competitor-cards" style="grid-template-columns: 1fr;">
+        {{ range $index, $rec := $todayData.recommendations }}
+        <div class="competitor-card" style="display: flex; flex-direction: column; gap: var(--spacing-md); border-left: 4px solid var(--color-primary); position: relative; padding: var(--spacing-xl);">
+            <!-- Rank Badge -->
+            <div style="position: absolute; top: 0; left: 0; background: var(--color-primary); color: white; width: 40px; height: 40px; display: flex; justify-content: center; align-items: center; font-weight: bold; font-size: 1.2rem; border-bottom-right-radius: var(--radius-lg);">
+                {{ add $index 1 }}
+            </div>
+
+            <div style="display: flex; gap: var(--spacing-lg); align-items: flex-start; margin-left: var(--spacing-md); flex-wrap: wrap;">
+                
+                <!-- Product Image -->
+                <div style="flex-shrink: 0; width: 100%; max-width: 200px; text-align: center; margin: 0 auto;">
+                    {{ if $rec.imageUrl }}
+                    <img src="{{ $rec.imageUrl }}" alt="{{ $rec.title }}" style="width: 100%; max-height: 200px; object-fit: contain; background-color: #ffffff; padding: 0.5rem; border-radius: var(--radius-md);">
+                    {{ else }}
+                    <div class="card-image-noimage" style="height: 150px; display: flex; align-items: center; justify-content: center; background: var(--color-bg-secondary); border-radius: var(--radius-md);">No Image</div>
+                    {{ end }}
+                </div>
+
+                <!-- Product Info -->
+                <div style="flex-grow: 1; min-width: 0;">
+                    <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: var(--spacing-md); flex-wrap: wrap;">
+                        <div style="flex: 1; min-width: 250px;">
+                            <span class="card-tag">{{ $rec.category }}</span>
+                            <h3 style="margin-top: var(--spacing-xs); margin-bottom: var(--spacing-sm); font-size: 1.25rem; line-height: 1.4;">
+                                <a href="{{ printf "https://www.amazon.co.jp/dp/%s?tag=aegis-22" $rec.asin }}" target="_blank" rel="noopener noreferrer" style="color: var(--color-text-main); text-decoration: none;">{{ $rec.title }}</a>
+                            </h3>
+                        </div>
+                        <div style="text-align: right; flex-shrink: 0;">
+                            <span style="font-size: 1.5rem; font-weight: bold; color: var(--color-danger);">{{ $rec.price }}</span>
+                        </div>
+                    </div>
+
+                    <div style="margin: var(--spacing-md) 0; padding: var(--spacing-md); background: var(--bg-competitor-preview); border-radius: var(--radius-md); border-left: 3px solid #ff9900;">
+                        <h4 style="color: #b91c1c; font-size: 1rem; margin-bottom: var(--spacing-xs); display: flex; align-items: center; gap: 0.25rem;">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+                            なぜ『今日』おすすめなのか？
+                        </h4>
+                        <p style="margin: 0; font-size: 0.95rem; font-weight: 600; color: var(--color-text-main);">{{ $rec.whyBuyNow }}</p>
+                        
+                        {{ if $rec.source }}
+                        <div style="margin-top: var(--spacing-sm); font-size: 0.85rem; color: var(--color-text-muted); display: flex; align-items: center; gap: 0.25rem;">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+                            情報元: 
+                            {{ if $rec.source.url }}
+                            <a href="{{ $rec.source.url }}" target="_blank" rel="noopener noreferrer" style="color: var(--color-primary); text-decoration: underline;">{{ $rec.source.name }}</a>
+                            {{ else }}
+                            <span>{{ $rec.source.name }}</span>
+                            {{ end }}
+                        </div>
+                        {{ end }}
+                    </div>
+
+                    <p style="color: var(--color-text-secondary); font-size: 0.95rem; line-height: 1.6; margin-bottom: var(--spacing-md);">
+                        {{ $rec.reason }}
+                    </p>
+
+                    {{ if $rec.highlights }}
+                    <ul style="list-style-type: disc; padding-left: 1.5rem; margin-bottom: var(--spacing-md); color: var(--color-text-secondary); font-size: 0.9rem;">
+                        {{ range $rec.highlights }}
+                        <li style="margin-bottom: 0.25rem;">{{ . }}</li>
+                        {{ end }}
+                    </ul>
+                    {{ end }}
+
+                    <div style="text-align: right; margin-top: var(--spacing-md); display: flex; gap: var(--spacing-sm); justify-content: flex-end; flex-wrap: wrap;">
+                        {{ $articlePage := site.GetPage (printf "/articles/%s" $rec.asin) }}
+                        {{ if $articlePage }}
+                        <a href="{{ $articlePage.RelPermalink }}" class="btn-internal-small">
+                            ✍️ サイト内レビュー
+                        </a>
+                        {{ end }}
+                        <a href="{{ printf "https://www.amazon.co.jp/dp/%s?tag=aegis-22" $rec.asin }}" class="btn-amazon-small" target="_blank" rel="noopener noreferrer">
+                            🛒 Amazonで見る
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{ end }}
+    </div>
+</div>
+{{ end }}
