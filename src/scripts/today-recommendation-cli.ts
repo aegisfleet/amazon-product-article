@@ -4,6 +4,7 @@
  * 本日のおすすめ商品を調査する Jules セッションを開始する
  */
 
+import 'dotenv/config';
 import { JulesInvestigator } from '../jules/JulesInvestigator';
 import type { JulesCredentials, SourceContext } from '../types/JulesTypes';
 import { setGitHubOutput } from '../utils/github-actions';
