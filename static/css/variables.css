@@ -57,9 +57,16 @@
     --badge-amazon-border: #FF9900;
     --badge-amazon-shadow: transparent;
 
-    --badge-availability-bg: #ecfdf5;
-    --badge-availability-text: #065f46;
     --badge-availability-border: #10b981;
+    --badge-availability-shadow: transparent;
+
+    --badge-savings-bg: #fef2f2;
+    --badge-savings-text: #dc2626;
+    --badge-savings-border: #fca5a5;
+
+    --badge-deal-bg: #fff1f2;
+    --badge-deal-text: #e11d48;
+    --badge-deal-border: #fb7185;
 
     /* Typography */
     --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
@@ -156,9 +163,15 @@
         --badge-amazon-border: #FF9900;
         --badge-amazon-shadow: transparent;
 
-        --badge-availability-bg: #064e3b;
-        --badge-availability-text: #d1fae5;
         --badge-availability-border: #059669;
+
+        --badge-savings-bg: rgba(220, 38, 38, 0.15);
+        --badge-savings-text: #fca5a5;
+        --badge-savings-border: #dc2626;
+
+        --badge-deal-bg: rgba(225, 29, 72, 0.15);
+        --badge-deal-text: #fda4af;
+        --badge-deal-border: #e11d48;
 
         --bg-score-default: #451a03;
         --text-score-default: #fef3c7;
@@ -217,9 +230,15 @@
     --badge-amazon-text: #111827;
     --badge-amazon-shadow: rgba(255, 153, 0, 0.3);
 
-    --badge-availability-bg: #064e3b;
-    --badge-availability-text: #d1fae5;
     --badge-availability-border: #059669;
+
+    --badge-savings-bg: rgba(220, 38, 38, 0.15);
+    --badge-savings-text: #fca5a5;
+    --badge-savings-border: #dc2626;
+
+    --badge-deal-bg: rgba(225, 29, 72, 0.15);
+    --badge-deal-text: #fda4af;
+    --badge-deal-border: #e11d48;
 
     --bg-score-default: #451a03;
     --text-score-default: #fef3c7;

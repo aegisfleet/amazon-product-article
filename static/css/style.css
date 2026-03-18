@@ -429,7 +429,47 @@ a:hover {
 
 .card-availability::before,
 .hero-tag-availability::before {
-  content: "🚚";
+  content: "✅";
+  font-size: 0.9em;
+}
+
+.card-savings,
+.hero-tag-savings {
+  background: var(--badge-savings-bg);
+  color: var(--badge-savings-text);
+  padding: 0.15rem 0.5rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--badge-savings-border);
+  font-size: 0.75rem;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+}
+
+.card-savings::before,
+.hero-tag-savings::before {
+  content: "📉";
+  font-size: 0.9em;
+}
+
+.card-deal-badge,
+.hero-tag-deal {
+  background: var(--badge-deal-bg);
+  color: var(--badge-deal-text);
+  padding: 0.15rem 0.5rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--badge-deal-border);
+  font-size: 0.75rem;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+}
+
+.card-deal-badge::before,
+.hero-tag-deal::before {
+  content: "🔥";
   font-size: 0.9em;
 }
 
@@ -3091,17 +3131,6 @@ a.competitor-preview:hover {
   background: var(--bg-tag);
   color: var(--color-text-muted);
 }
-
-.hero-tag-prime {
-  background: #232f3e;
-  border-color: #232f3e;
-  color: #ff9900;
-  font-weight: 700;
-}
-
-/* Unified availability tags styling handled above */
-
-
 
 /* Mobile adjustments for score bar */
 @media (max-width: 959px) {
