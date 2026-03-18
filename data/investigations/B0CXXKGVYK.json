@@ -3,7 +3,10 @@
     "productName": "Dell S2725DS-A 27インチ モニター",
     "parentAsin": "B0GS9PS3VC",
     "productDescription": "美しい日本の砂紋にインスパイアされた背面デザインと、超薄型ベゼルを採用した27インチQHD解像度のIPS非光沢モニター。デュアル5Wスピーカーを内蔵し、最大100Hzのリフレッシュレートやブルーライト低減機能、豊富な位置調整機能を備え、日常作業からエンターテインメントまで幅広く対応します。",
-    "productUsage": ["在宅勤務・テレワークでのオフィス作業", "映画鑑賞やカジュアルなゲーミング"],
+    "productUsage": [
+      "在宅勤務・テレワークでのオフィス作業",
+      "映画鑑賞やカジュアルなゲーミング"
+    ],
     "positivePoints": [
       "27インチQHD解像度とsRGB 99%カバー率による高精細で一貫した色彩の映像",
       "最大100Hzのリフレッシュレートによる滑らかなスクロールや動画再生",
@@ -39,7 +42,9 @@
         "claim": "TÜV Rheinland Eye Comfort 3.0認証で4つ星を獲得し、ハードウェアレベルで有害なブルーライトを低減する",
         "category": "safety",
         "confidence": "high",
-        "supportingSourceIds": ["src-amazon"],
+        "supportingSourceIds": [
+          "src-amazon"
+        ],
         "crossChecked": false,
         "notes": "商品仕様に明記されている"
       },
@@ -47,7 +52,9 @@
         "claim": "100Hzのリフレッシュレートに対応している",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-amazon"],
+        "supportingSourceIds": [
+          "src-amazon"
+        ],
         "crossChecked": false,
         "notes": "商品仕様に明記されている"
       },
@@ -55,7 +62,9 @@
         "claim": "デュアル5Wスピーカーを内蔵し、空間オーディオに対応している",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-amazon"],
+        "supportingSourceIds": [
+          "src-amazon"
+        ],
         "crossChecked": false,
         "notes": "商品仕様に明記されている"
       }
@@ -157,7 +166,7 @@
         "本格的なゲーミングモニターと比較するとリフレッシュレートは控えめ"
       ],
       "score": 80,
-      "scoreRationale": "[基本点: 70] 画質・スタンド機能の充実 (+10) 優秀な内蔵スピーカー (+5) USB-C非対応 (-5) [合計: 80]"
+      "scoreRationale": "[基本点: 70]\n[加点: +10] 画質・スタンド機能の充実\n[加点: +5] 優秀な内蔵スピーカー\n[減点: -5] USB-C非対応\n[合計: 80]"
     },
     "technicalSpecs": {
       "dimensions": {

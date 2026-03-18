@@ -3,7 +3,11 @@
     "productName": "ドリップコーヒーファクトリー 違いを楽しむ コーヒー 5種 飲み比べ ドリップバッグ アソートセット",
     "parentAsin": "B0DBV9HRQV",
     "productDescription": "ドリップコーヒーファクトリーが提供する、5種類の異なる味わい（オリジナル、マイルド、スペシャル、リッチ、ホテルブレンド）を楽しめるドリップバッグコーヒー100袋の大容量詰め合わせセットです。Qグレーダーや大会チャンピオンによる確かな品質管理のもと製造されています。",
-    "productUsage": ["毎日のコーヒーブレイク", "自宅やオフィスでのリフレッシュ", "気分に合わせた味の選択"],
+    "productUsage": [
+      "毎日のコーヒーブレイク",
+      "自宅やオフィスでのリフレッシュ",
+      "気分に合わせた味の選択"
+    ],
     "positivePoints": [
       "5種類の異なるブレンドがセットになっており、毎日飽きずに楽しめる",
       "100袋入りの大容量で、1杯あたりのコストパフォーマンスが非常に高い",
@@ -22,14 +26,18 @@
         "userType": "毎朝コーヒーを飲む会社員",
         "scenario": "在宅勤務中の気分転換として利用",
         "experience": "味の違うコーヒーを試せるので毎回5種を交互にちょっと楽しみながら飲んでます。量の割に値段も高くなく飲みやすいので、毎日のリモートワークのお供として気に入っています。封を開けた時の香りが良くて、味もいいです。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "濃いめのコーヒーが好きなユーザー",
         "scenario": "食後や休憩時間にしっかりしたコーヒーを飲みたい時",
         "experience": "これを美味しいとレビューしてる方には申し訳ないですが、これほど薄いコーヒーは初めてです。濃い味が好きな私には物足りず、また5種類の味の違いもあまり明確には分かりませんでした。",
-        "supportingSourceIds": ["src-2"],
+        "supportingSourceIds": [
+          "src-2"
+        ],
         "sentiment": "negative"
       }
     ],
@@ -74,7 +82,10 @@
         "claim": "5種類のブレンドを気分に合わせて楽しめる",
         "category": "comparativeAdvantage",
         "confidence": "high",
-        "supportingSourceIds": ["src-1", "src-3"],
+        "supportingSourceIds": [
+          "src-1",
+          "src-3"
+        ],
         "crossChecked": true,
         "notes": "商品詳細の記載およびユーザーレビューの記述と一致。"
       },
@@ -82,7 +93,9 @@
         "claim": "味が薄く感じることがある",
         "category": "quality",
         "confidence": "medium",
-        "supportingSourceIds": ["src-2"],
+        "supportingSourceIds": [
+          "src-2"
+        ],
         "crossChecked": false,
         "notes": "一部のユーザーからの指摘あり。好みに依存する部分が大きい。"
       }
@@ -199,7 +212,7 @@
         "味の違いが繊細でわかりにくいという意見もある"
       ],
       "score": 80,
-      "scoreRationale": "[基本点: 70] 100袋という大容量と5種アソートによる高い利便性とコストパフォーマンスで+15。味が薄いという一部の意見や味の違いの分かりにくさを考慮し-5。[合計: 80]"
+      "scoreRationale": "[基本点: 70]\n[加点: +15] 100袋という大容量と5種アソートによる高い利便性とコストパフォーマンスで\n[減点: -5]味が薄いという一部の意見や味の違いの分かりにくさを考慮し\n[合計: 80]"
     },
     "technicalSpecs": {
       "dimensions": {
