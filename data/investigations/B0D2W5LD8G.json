@@ -1,122 +1,179 @@
 {
   "analysis": {
-    "productName": "MOFT Snap-On スマホスタンド MOVAS (磁力強化版)",
-    "parentAsin": "B0DT5RHSJX",
-    "productDescription": "MagSafe対応のiPhone背面に吸着し、スタンド、カードケース、スマホグリップの3役をこなす多機能アクセサリー。耐久性と質感に優れたMOFT独自のヴィーガンレザー「MOVAS™」を採用した磁力強化モデルです。",
+    "productName": "MOFT Snap-On スマホスタンド MOVAS",
+    "parentAsin": "B0D2W5LD8G",
+    "productDescription": "MagSafeに対応した折りたたみ式のスマホスタンド。新素材MOVASを採用し耐久性と磁力が強化されている。",
     "productUsage": [
-      "縦置き・横置き・フローティングモードでの動画視聴やWeb会議",
-      "クレジットカードや身分証などを最大2枚収納して持ち運ぶ",
-      "スマホ操作時の落下防止用グリップとして使用"
+      "スマートフォンの縦置き・横置きスタンド",
+      "カード収納（最大2枚）",
+      "スマホグリップ"
     ],
     "positivePoints": [
-      "独自素材「MOVAS™」による高級感ある質感と高い耐久性、汚れへの強さ",
-      "磁力強化版により、旧モデルと比較してMagSafeへの吸着力が大幅に向上",
-      "未使用時はカードのように薄く折りたため、ポケットに入れても邪魔にならない",
-      "縦置き、横置きに加え、画面を少し浮かせた「フローティングモード」が可能"
+      "新素材MOVASによる高い耐久性と傷つきにくさ",
+      "従来品より強力なマグネットによる安定した固定",
+      "スタンド、グリップ、カードケースの3in1機能"
     ],
     "negativePoints": [
-      "カードを2枚収納すると最初は出し入れがきつく感じることがある",
-      "競合の類似製品と比較して価格設定が高め",
-      "ワイヤレス充電を行う際は取り外す必要がある"
+      "ICカードのタッチ決済にはカードを取り出す必要がある",
+      "淡色のスマホケースを使用すると色移りする可能性がある",
+      "Samsung S Penの信号に干渉する可能性がある"
     ],
     "useCases": [
-      "カフェやデスクでの通知確認やビデオ通話（縦置き）",
-      "新幹線や飛行機での動画鑑賞（横置き・フローティング）",
-      "近所への買い物やランチなど、財布を持たない身軽な外出"
+      "動画視聴やビデオ通話時のスタンドとして",
+      "外出時にクレジットカードや免許証を持ち歩く",
+      "片手操作時のグリップとして"
     ],
-    "userStories": [
-      {
-        "userType": "30代ビジネスマン",
-        "scenario": "外出時の荷物を減らしたい",
-        "experience": "以前は財布を持ち歩いていたが、これに免許証とクレカを入れてからはスマホだけで外出できるようになった。MOVASの質感が良く、ビジネスシーンでも違和感がない。",
-        "sentiment": "positive"
-      },
-      {
-        "userType": "20代学生",
-        "scenario": "動画視聴と通学",
-        "experience": "カフェで勉強する際に縦置きで通知を見たり、休憩中に横置きで動画を見るのに便利。ただ、スキニーパンツのポケットに入れると少し引っかかることがある。",
-        "sentiment": "mixed"
-      }
-    ],
-    "userImpression": "MOFTシリーズの中でも特に質感が良く、長く使えると評判。価格は高いが、安価な製品にはない高級感と機能性のバランスが評価されている。磁力の強さも安心感につながっている。",
+    "userStories": [],
+    "userImpression": "従来モデルと比較して磁力が強化され、新素材MOVASにより高級感と耐久性が向上したことで、より安心して日常使いできると評価されている。ただし、ICカードを収納したままのタッチ決済ができない点は注意が必要。",
     "sources": [
       {
-        "name": "Amazon Product Page",
-        "url": "https://www.amazon.co.jp/dp/B0D2W5LD8G",
-        "credibility": "High"
+        "id": "src-moft-official",
+        "name": "MOFT公式直営店 - MOVAS™耐久強化版 Snap-Onスマホスタンド",
+        "url": "https://www.moftjapan.com/products/fs-iphone-stand-movas",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2024-05-01",
+        "author": "MOFT",
+        "conflictOfInterest": "none",
+        "notes": "製品仕様、よくある質問、特徴の確認"
       }
     ],
-    "lastInvestigated": "2026-01-22",
+    "claims": [
+      {
+        "claim": "新素材MOVASヴィーガンレザーにより傷や摩擦に強い",
+        "category": "durability",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-moft-official"
+        ],
+        "crossChecked": false,
+        "notes": "公式サイトのよくある質問にて確認"
+      },
+      {
+        "claim": "最大2枚までのカード収納が可能",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-moft-official"
+        ],
+        "crossChecked": false,
+        "notes": "公式サイトにて確認"
+      }
+    ],
+    "lastInvestigated": "2026-03-19",
     "competitiveAnalysis": [
       {
-        "name": "JOYROOM MagSafeカードケース",
-        "asin": "B0FBW15CQK",
-        "priceComparison": "MOFTの半額以下で購入可能",
+        "name": "MOFT 8-in-1多機能スタンド カードケース付き",
+        "asin": "B0DPFNG42Q",
+        "priceComparison": "対象商品より価格が高い。NFC/Suica対応や8-in-1の多機能性（三脚機能など）が追加されているため、価格差に見合う機能拡張がある。",
         "featureComparison": [
-          "スタンド機能とカード収納機能は類似",
-          "素材は一般的なPUレザーまたはプラスチック"
+          "共通点：MagSafe対応、MOVAS素材採用、カード収納機能",
+          "相違点：対象商品は薄型軽量に特化している一方、競合はNFC対応や三脚機能などの多機能性を備える"
         ],
         "differentiators": [
-          "価格の安さが最大の魅力",
-          "質感や耐久性ではMOVAS採用のMOFTに劣る"
+          "MOFT Snap-Onの利点：より薄く軽量で、日常的な持ち運びに適している",
+          "MOFT 8-in-1多機能スタンドの利点：カードを入れたままのタッチ決済や、より高度な角度調整・三脚機能が必要な場合に適している"
         ]
       },
       {
-        "name": "UGREEN MagSafeスマホスタンド",
-        "asin": "B0CY55BLYY",
-        "priceComparison": "MOFTより安価",
+        "name": "MOFT 七変化マルチスタンド 携帯スタンド",
+        "asin": "B0CHRKVK1T",
+        "priceComparison": "対象商品より価格が高い。カード収納機能はないが、より高く持ち上げる構造や多彩な角度調整機能にコストがかけられている。",
         "featureComparison": [
-          "グリップ機能を強調したデザイン",
-          "カード収納枚数は同等"
+          "共通点：MagSafe対応、MOVAS素材採用、折りたたみ式",
+          "相違点：対象商品はカード収納があるが、競合はカード収納を廃し、より高い位置での固定や多彩な角度調整に特化している"
         ],
         "differentiators": [
-          "より実用重視のデザイン",
-          "MOFTのようなミニマルな美しさは控えめ"
+          "MOFT Snap-Onの利点：カードを持ち歩ける利便性がある",
+          "MOFT 七変化マルチスタンドの利点：動画撮影やWeb会議など、高さを出したいシーンでより柔軟に対応できる"
         ]
       },
       {
-        "name": "Lamicall MagSafe対応カードケーススタンド",
-        "asin": "B0CWKDYSJ1",
-        "priceComparison": "MOFTより安価",
+        "name": "MOFT 多機能カードケース＆スタンド 大容量",
+        "asin": "B0FSCYPK5N",
+        "priceComparison": "対象商品より価格が高い。最大8枚のカード収納という大容量化が価格に反映されている。",
         "featureComparison": [
-          "スタンドとしての安定性を重視",
-          "カード取り出し用の穴などの工夫がある"
+          "共通点：MagSafe対応、MOVAS素材採用、スタンド機能",
+          "相違点：対象商品はカード2枚収納で薄型だが、競合は最大8枚収納可能な大容量タイプ"
         ],
         "differentiators": [
-          "機能性重視の設計",
-          "デザインの洗練度でMOFTが勝る"
+          "MOFT Snap-Onの利点：スマホに付けたまま違和感なく使える薄さと軽さ",
+          "MOFT 大容量カードケースの利点：名刺や多数のカードを持ち歩きたいビジネスシーンなどに適している"
+        ]
+      },
+      {
+        "name": "MOFT MagSafe対応 ウォレットスタンド",
+        "asin": "B0D5CKSQ81",
+        "priceComparison": "対象商品と同等の価格帯。こちらは電磁波干渉防止シートが内蔵されているモデル。",
+        "featureComparison": [
+          "共通点：MagSafe対応、MOVAS素材採用、カード収納とスタンド機能",
+          "相違点：対象商品は磁力強化に焦点を当てているが、競合は電磁波干渉防止シートを内蔵し特定の用途に配慮している"
+        ],
+        "differentiators": [
+          "MOFT Snap-Onの利点：強化された磁力による安定した吸着力",
+          "MOFT 電磁波干渉防止モデルの利点：カードの磁気不良や電波干渉をより防ぎたい場合に安心感がある"
+        ]
+      },
+      {
+        "name": "MOFT X スマホスタンド 粘着シート版",
+        "asin": "B0891YT5WB",
+        "priceComparison": "対象商品より価格が安い。MagSafeではなく粘着シートによる固定方式のため安価。",
+        "featureComparison": [
+          "共通点：薄型軽量なスタンド機能とカード収納",
+          "相違点：対象商品はMagSafe（マグネット）着脱式だが、競合は背面に直接貼り付ける粘着シート方式"
+        ],
+        "differentiators": [
+          "MOFT Snap-Onの利点：必要に応じて簡単に着脱でき、MagSafe充電も妨げない",
+          "MOFT X 粘着シート版の利点：MagSafe非対応のAndroid端末や古いiPhoneでも直接貼り付けて使用できる"
+        ]
+      },
+      {
+        "name": "MOFT iPhone14/13/12シリーズ ウォレットスタンド",
+        "asin": "B087RBL348",
+        "priceComparison": "対象商品より価格が安い。旧モデルであり、素材もMOVASではなく従来のPUレザー等が使われているため。",
+        "featureComparison": [
+          "共通点：MagSafe対応のスタンド兼カードケース",
+          "相違点：対象商品は耐久性の高い新素材MOVASと強化された磁力を採用しているが、競合は従来素材と従来磁力の旧モデル"
+        ],
+        "differentiators": [
+          "MOFT Snap-Onの利点：圧倒的に傷つきにくく長持ちする素材と、外れにくい強力な磁力",
+          "MOFT 旧モデルの利点：とにかく安価にMagSafe対応のスタンドを試したい場合に適している"
         ]
       }
     ],
     "recommendation": {
       "targetUsers": [
-        "iPhoneのデザインを損なわないミニマルなアクセサリーを好む人",
-        "荷物を極限まで減らしたいミニマリスト",
-        "高品質な素材感や手触りを重視する人"
+        "MagSafe対応のiPhoneユーザー",
+        "財布を持たずにカードだけで外出したい人",
+        "スマホスタンドとグリップを兼用したい人"
       ],
       "pros": [
-        "所有欲を満たす高いデザイン性と質感 (MOVAS)",
-        "実用的な3in1機能 (スタンド、ウォレット、グリップ)",
-        "強力な磁力による安心感"
+        "強力な磁力で安定して使用できる",
+        "傷や摩擦に強いMOVAS素材で長持ちする",
+        "薄型軽量で持ち運びに便利"
       ],
       "cons": [
-        "アクセサリーとしては高価な部類に入る",
-        "MagSafe充電のたびに取り外す手間がある"
+        "ICタッチ決済時にはカードを取り出す必要がある",
+        "淡色のケースに色移りする可能性がある"
       ],
-      "score": 80,
-      "scoreRationale": "[基本点: 70]\n[加点: +5] (MOVAS素材による優れた質感と耐久性)\n[加点: +5] (3in1の多機能さと使い勝手の良さ)\n[減点: -5] (競合と比較して価格が高め)\n[加点: +5] (ユーザー満足度が高く、ブランド信頼性がある)\n[合計: 80]"
+      "score": 85,
+      "scoreRationale": "[基本点: 70]\n[加点: +10] (強化された磁力と高耐久のMOVAS素材)\n[加点: +10] (3in1の多機能性と薄型デザイン)\n[減点: -5] (ICタッチ決済に非対応)\n[合計: 85]"
     },
     "technicalSpecs": {
       "dimensions": {
-        "height": "97mm",
-        "width": "66mm",
-        "depth": "5.5mm",
-        "weight": "約43g"
+        "height": "97.0mm",
+        "width": "66.0mm",
+        "depth": "5.5mm"
       },
-      "material": "MOVAS™ (ヴィーガンレザー), グラスファイバー, 磁石, 金属シート",
-      "compatibility": "iPhone 12/13/14/15/16 シリーズ (MagSafe対応機種)",
+      "weight": "60.0g",
       "capacity": "カード最大2枚",
-      "features": ["MagSafe対応", "3つのスタンドモード", "磁力強化版"]
+      "material": "MOVAS™ヴィーガンレザー、グラスファイバー、マグネット、金属シート",
+      "origin": "不明",
+      "other": [
+        "対応機種: iPhone 12/13/14/15/16/17シリーズ（MagSafe対応）",
+        "非対応機種: MagSafe非対応機種（※専用マグネットリングで対応可能）",
+        "注意点: 金属シート内蔵のためICタッチ決済はカードの取り出しが必要"
+      ]
     }
   }
 }
