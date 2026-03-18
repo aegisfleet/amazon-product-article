@@ -39,7 +39,7 @@ function getOptions(): CLIOptions {
 }
 
 async function main(): Promise<void> {
-  logger.info('Starting Today\'s Recommendation investigation CLI...');
+  logger.info("Starting Today's Recommendation investigation CLI...");
 
   try {
     const options = getOptions();
@@ -61,7 +61,7 @@ async function main(): Promise<void> {
     };
 
     // 調査セッションを開始
-    logger.info('Requesting Jules to find today\'s recommended products...');
+    logger.info("Requesting Jules to find today's recommended products...");
     const sessionInfo = await investigator.startRecommendationInvestigation(sourceContext);
 
     logger.info(`Recommendation investigation session started: ${sessionInfo.sessionId}`);
@@ -74,7 +74,7 @@ async function main(): Promise<void> {
     logger.info('Jules will now search for recommended products and create a PR asynchronously.');
     process.exit(0);
   } catch (error) {
-    logger.error('Today\'s recommendation investigation failed:', error);
+    logger.error("Today's recommendation investigation failed:", error);
     process.exit(1);
   }
 }
