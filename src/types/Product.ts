@@ -37,6 +37,9 @@ export interface Product {
   availability?: string | undefined;
   merchantName?: string | undefined;
   brand?: string;
+  loyaltyPoints?: number;
+  dealBadge?: string;
+  savingsPercentage?: number;
 }
 
 export interface ProductDetail extends Product {
@@ -66,6 +69,9 @@ export interface ProductDetail extends Product {
     name: string;
     role: string;
   }>;
+  loyaltyPoints?: number;
+  dealBadge?: string;
+  savingsPercentage?: number;
 }
 
 export interface ProductSearchParams {

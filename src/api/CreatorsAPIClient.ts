@@ -202,6 +202,8 @@ export class CreatorsAPIClient {
       'itemInfo.productInfo',
       'offersV2.listings.price',
       'offersV2.listings.availability',
+      'offersV2.listings.loyaltyPoints',
+      'offersV2.listings.dealDetails',
       'browseNodeInfo.browseNodes',
     ];
 
@@ -259,6 +261,8 @@ export class CreatorsAPIClient {
         'offersV2.listings.isBuyBoxWinner',
         'offersV2.listings.merchantInfo',
         'offersV2.listings.availability',
+        'offersV2.listings.loyaltyPoints',
+        'offersV2.listings.dealDetails',
         'browseNodeInfo.browseNodes',
       ],
     };
@@ -317,6 +321,8 @@ export class CreatorsAPIClient {
         'offersV2.listings.isBuyBoxWinner',
         'offersV2.listings.merchantInfo',
         'offersV2.listings.availability',
+        'offersV2.listings.loyaltyPoints',
+        'offersV2.listings.dealDetails',
         'customerReviews.count',
         'customerReviews.starRating',
         'browseNodeInfo.browseNodes',
@@ -648,7 +654,10 @@ export class CreatorsAPIClient {
       },
       availability: listing?.availability?.message,
       merchantName: listing?.merchantInfo?.name,
-    };
+      loyaltyPoints: listing?.loyaltyPoints?.points ?? undefined,
+      dealBadge: listing?.dealDetails?.dealBadge,
+      savingsPercentage: listing?.price?.savings?.percentage ?? undefined,
+    } as any;
 
     if (item.parentASIN) product.parentAsin = item.parentASIN;
 

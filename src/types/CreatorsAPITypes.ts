@@ -176,6 +176,14 @@ export interface CreatorsAPIItem {
           currency: string;
           displayAmount: string;
         };
+        savings?: {
+          percentage: number;
+          money: {
+            amount: number;
+            currency: string;
+            displayAmount: string;
+          };
+        };
       };
       availability?: {
         message: string;
@@ -186,6 +194,12 @@ export interface CreatorsAPIItem {
       };
       deliveryInfo?: {
         isPrimeEligible: boolean;
+      };
+      loyaltyPoints?: {
+        points: number;
+      };
+      dealDetails?: {
+        dealBadge?: string;
       };
     }>;
     summaries?: Array<{

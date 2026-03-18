@@ -79,11 +79,20 @@
         <div class="hero-price-bar">
             <div class="hero-price-main">
                 <span class="hero-price">{{ $product.price }}</span>
+                {{ if $product.loyalty_points }}
+                <span class="hero-points">🎁 {{ $product.loyalty_points }}pt還元</span>
+                {{ end }}
             </div>
             <div class="hero-price-info">
                 {{ with .Params.merchant_name }}<span class="hero-tag hero-tag-merchant">販売元: {{ . }}</span>{{ end }}
                 {{ if .Params.is_amazon_direct }}
                 <span class="hero-tag hero-tag-amazon-direct">Amazon直販</span>
+                {{ end }}
+                {{ with .Params.deal_badge }}
+                <span class="hero-tag hero-tag-deal">{{ . }}</span>
+                {{ end }}
+                {{ if .Params.savings_percentage }}
+                <span class="hero-tag hero-tag-savings">{{ .Params.savings_percentage }}% OFF</span>
                 {{ end }}
                 {{ with $hero.availability }}<span class="hero-tag hero-tag-availability">{{ . }}</span>{{ end }}
             </div>

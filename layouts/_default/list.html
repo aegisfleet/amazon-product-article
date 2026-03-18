@@ -203,6 +203,11 @@
                         <span class="card-price">
                             <span aria-hidden="true">💰</span> {{ .Params.price }}
                         </span>
+                        {{ if .Params.loyalty_points }}
+                        <span class="card-points">
+                            <span aria-hidden="true">🎁</span> {{ .Params.loyalty_points }}pt
+                        </span>
+                        {{ end }}
                         {{ end }}
                         {{ if .Params.score }}
                         {{ $score := .Params.score | int }}
@@ -223,6 +228,12 @@
                         {{ end }}
                         {{ if .Params.is_amazon_direct }}
                         <span class="card-amazon-direct">Amazon直販</span>
+                        {{ end }}
+                        {{ with .Params.deal_badge }}
+                        <span class="card-deal-badge">{{ . }}</span>
+                        {{ end }}
+                        {{ if .Params.savings_percentage }}
+                        <span class="card-savings">{{ .Params.savings_percentage }}% OFF</span>
                         {{ end }}
                     </div>
                 </div>
