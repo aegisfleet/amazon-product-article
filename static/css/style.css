@@ -1571,6 +1571,9 @@ a.competitor-preview:hover {
 .product-count-container {
   display: flex;
   justify-content: center;
+  align-items: center;
+  gap: var(--spacing-md);
+  flex-wrap: wrap;
   margin-bottom: var(--spacing-lg);
 }
 
@@ -1608,6 +1611,31 @@ a.competitor-preview:hover {
   font-weight: 700;
   color: var(--color-primary);
   margin: 0 0.1rem;
+}
+
+/* Today's Recommendation Link */
+.today-recommendation-link {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  background: linear-gradient(135deg, #ff9900 0%, #ffad33 100%);
+  color: #fff !important;
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius-xl);
+  font-weight: 700;
+  font-size: 0.95rem;
+  text-decoration: none;
+  box-shadow: 0 4px 6px rgba(255, 153, 0, 0.25);
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.today-recommendation-link:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 6px 12px rgba(255, 153, 0, 0.35);
+}
+
+.today-recommendation-icon {
+  font-size: 1.1rem;
 }
 
 /* Competitor Preview (Creators API Product Info) */
