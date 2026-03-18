@@ -1,137 +1,255 @@
 {
   "analysis": {
-    "productName": "MOFT 8-in-1 多機能スタンド",
+    "productName": "MOFT 8-in-1多機能スタンド カードケース付き",
     "parentAsin": "B0CHRKBCPJ",
-    "productDescription": "スマホスタンド、カードケース、自撮り棒、三脚など8つの機能を凝縮したMagSafeアクセサリーです。独自のヴィーガンレザー「MOVAS™」を採用し、高級感と耐久性を両立しています。",
+    "productDescription": "MagSafeに対応した多機能なスマホスタンドで、最大20cmの高さまでスマートフォンを保持し、様々な角度での使用を可能にするだけでなく、NFCやタッチ決済に対応したカードケース機能を備えています。独自開発のヴィーガンレザー「MOVAS」を使用し、本革のような質感と耐久性を両立しています。",
     "productUsage": [
-      "デスクでの動画視聴やウェブ会議用のスタンド（高さ・角度調整可能）",
-      "外出時のカードケース（2枚収納・NFCタッチ決済対応）",
-      "旅行やVlog撮影時の自撮り棒・三脚",
-      "スマホを持つ際のグリップ（落下防止）"
+      "スマートフォンのスタンドとして使用（縦置き・横置き、高さ調整）",
+      "クレジットカードや交通系ICカードの収納およびタッチ決済",
+      "自撮りやウェブ会議時の三脚代わりとしての利用"
     ],
     "positivePoints": [
-      "最大20cmまで高さを出せるため、目線が上がり首への負担が軽減される",
-      "カードを取り出さずにNFCタッチ決済（Suica等）が可能",
-      "独自素材MOVAS™の手触りが良く、汚れや傷に強い",
-      "ヒンジの強度が十分で、iPhone Pro Maxなどの重い機種でも安定する",
-      "1台で多様な役割（スタンド、財布、三脚）をこなせるため荷物が減る"
+      "カード収納スペースが独立しており、交通系ICカードやタッチ決済にケースを取り外すことなく対応可能である",
+      "最大20cmまでの高さ調整や多角度の調整が可能で、様々なシーンで最適な視界を確保できる",
+      "独自素材「MOVAS」を使用しており、肌触りが良くサステナブルである"
     ],
     "negativePoints": [
-      "本体重量が約96gあり、スマホと合わせると約300g近くなるため重さを感じる",
-      "ポケットに入れるには少し厚みと存在感がある",
-      "価格が約6,700円と、一般的なスマホスタンドと比較して高価"
+      "他社の類似製品と比較して価格が高価（約6,780円）である",
+      "NFC機能を利用する場合はカードを1枚しか収納できないという制限がある"
     ],
     "useCases": [
-      "カフェやデスクでのリモートワーク・Web会議",
-      "新幹線や飛行機での動画鑑賞",
-      "旅行先での集合写真やVlog撮影",
-      "キャッシュレス派の身軽な外出（財布代わり）"
+      "カフェでのリモートワークやウェブ会議",
+      "動画視聴やドラマ鑑賞",
+      "自撮りやライブ配信"
     ],
-    "userStories": [
-      {
-        "userType": "30代 リモートワーカー",
-        "scenario": "外出先でのWeb会議",
-        "experience": "カフェでWeb会議をする際、これまではPCを出していましたが、このスタンドでiPhoneをPCのウェブカメラと同じ高さまで上げられるので、スマホだけで快適に会議ができるようになりました。",
-        "sentiment": "positive"
-      },
-      {
-        "userType": "20代 旅行好き",
-        "scenario": "旅先での記念撮影",
-        "experience": "自撮り棒を持ち歩くのが面倒でしたが、これは普段スマホにつけているスタンドがそのまま三脚や自撮り棒になるので、荷物が減って最高です。ただ、ずっとつけていると手首が少し疲れます。",
-        "sentiment": "mixed"
-      }
-    ],
-    "userImpression": "「重い」という声は一定数あるものの、それを上回る「便利さ」と「質感の良さ」で高評価を得ています。特に高さが出せる点と、カードを入れたままタッチ決済できる点がユーザーの心を掴んでいます。",
+    "userImpression": "多機能で質感も高く、特に高さや角度の調整機能が優れているため利便性が高いと評価されていますが、競合製品に比べて価格が高いため、機能や素材に対する価値を求めるユーザーに適しています。",
     "sources": [
       {
-        "name": "ガジェットブログ デジスタ Review",
-        "url": "https://digital-style.jp/review-moft-jsf-stand",
-        "credibility": "高"
+        "id": "src-moft",
+        "name": "Amazon.co.jp: MOFT【公式直営店】モフト スマホスタンド 8-in-1多機能スタンド カードケース付き",
+        "url": "https://www.amazon.co.jp/dp/B0DJY1X55V",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2024-10-01",
+        "author": "MOFT公式直営店",
+        "conflictOfInterest": "possible",
+        "notes": "製品の仕様、特徴、MOVAS素材の詳細、価格（6,780円）、NFC機能の利用条件（1枚のみ）を確認"
       },
       {
-        "name": "ウエタニブログ Review",
-        "url": "https://uetani-blog.com/moft8-in-1/",
-        "credibility": "中"
+        "id": "src-ugreen1",
+        "name": "Amazon.co.jp: UGREEN スマホスタンド カードケース マグネット 2in1",
+        "url": "https://www.amazon.co.jp/dp/B0F13B39CH?tag=aegis-22&linkCode=ogi&th=1&psc=1",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2024-05-25",
+        "author": "Amazon.co.jp",
+        "conflictOfInterest": "possible",
+        "notes": "競合品（1,329円）、1枚収納、グリップ機能付き"
       },
       {
-        "name": "Amazon Customer Reviews",
-        "url": null,
-        "credibility": "中"
+        "id": "src-ugreen2",
+        "name": "Amazon.co.jp: UGREEN スマホスタンド Magsafe対応 カードケース 超強磁力",
+        "url": "https://www.amazon.co.jp/dp/B0CY55LCT3?tag=aegis-22&linkCode=ogi&th=1&psc=1",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2024-03-01",
+        "author": "Amazon.co.jp",
+        "conflictOfInterest": "possible",
+        "notes": "競合品（1,874円）、3枚収納、角度調整30〜150度"
+      },
+      {
+        "id": "src-sinjimoru",
+        "name": "Amazon.co.jp: Sinjimoru Magsafe 対応 カードケース スマホスタンド",
+        "url": "https://www.amazon.co.jp/dp/B0B7M2C5NS?tag=aegis-22&linkCode=ogi&th=1&psc=1",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2022-07-01",
+        "author": "Amazon.co.jp",
+        "conflictOfInterest": "possible",
+        "notes": "競合品（1,980円）、安全タグパッチ付き、グリップ機能"
+      },
+      {
+        "id": "src-bettdow",
+        "name": "Amazon.co.jp: Bettdow スマホスタンド 卓上 PUレザー素材 耐久 8-in-1多機能スタンド",
+        "url": "https://www.amazon.co.jp/dp/B0FJY195W5?tag=aegis-22&linkCode=ogi&th=1&psc=1",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2024-08-01",
+        "author": "Amazon.co.jp",
+        "conflictOfInterest": "possible",
+        "notes": "競合品（2,451円）、MOFTの類似品でPUレザー使用、高さ20cm、270度回転"
+      },
+      {
+        "id": "src-elecom",
+        "name": "Amazon.co.jp: エレコム スマホスタンド カードケース Magsafe (マグセーフ) iPhone用",
+        "url": "https://www.amazon.co.jp/dp/B0BX7VBZJQ?tag=aegis-22&linkCode=ogi&th=1&psc=1",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2023-03-17",
+        "author": "Amazon.co.jp",
+        "conflictOfInterest": "possible",
+        "notes": "競合品（469円）、1枚収納、フリーアングル"
+      },
+      {
+        "id": "src-staygold",
+        "name": "Amazon.co.jp: 【STAY GOLD】 MagSafe対応 カードケース,スマホスタンド付き",
+        "url": "https://www.amazon.co.jp/dp/B0FPLR7WTQ?tag=aegis-22&linkCode=ogi&th=1&psc=1",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2024-06-01",
+        "author": "Amazon.co.jp",
+        "conflictOfInterest": "possible",
+        "notes": "競合品（1,350円）、3枚収納、最大160度調整"
       }
     ],
-    "lastInvestigated": "2026-01-22",
+    "claims": [
+      {
+        "claim": "独自開発のヴィーガンレザー「MOVAS」を使用し、肌に優しく耐久性が高い",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-moft"
+        ],
+        "crossChecked": false,
+        "notes": "メーカー独自の素材についての主張"
+      },
+      {
+        "claim": "NFC機能やタッチ決済に対応しているが、機能利用時はカード1枚のみ収納可能",
+        "category": "durability",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-moft"
+        ],
+        "crossChecked": false,
+        "notes": "仕様としての制限事項が明記されている"
+      },
+      {
+        "claim": "スマホスタンドとして高さ約20cmまで調整可能",
+        "category": "comparativeAdvantage",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-moft"
+        ],
+        "crossChecked": false,
+        "notes": "他の多くの競合製品が単なるカードケース＋低いスタンドであるのに対し、明確な差別化要素"
+      }
+    ],
+    "lastInvestigated": "2026-03-19",
     "competitiveAnalysis": [
       {
-        "name": "UGREEN MagSafe対応 スマホスタンド",
+        "name": "UGREEN スマホスタンド カードケース (LP947)",
+        "asin": "B0F13B39CH",
+        "priceComparison": "対象商品（MOFT）より大幅に安価（約1,329円）。基本的なスタンド機能と1枚のカード収納で十分な場合はUGREENの方がコストパフォーマンスが高い。",
+        "featureComparison": [
+          "共通点：MagSafeに対応し、スタンド機能とカード収納機能（1枚）を持つ",
+          "相違点：MOFTは高さ調整やNFC対応機能があるのに対し、UGREENはシンプルな折りたたみ構造で高さ調整機能がなく、スマホグリップとしての使用がメインである"
+        ],
+        "differentiators": [
+          "MOFT 8-in-1多機能スタンド カードケース付きの利点：最大20cmまでの高さ調整機能や多角度調整が可能で、ヴィーガンレザー「MOVAS」による高級感がある",
+          "UGREEN スマホスタンド カードケース (LP947)の利点：軽量かつ安価であり、シンプルなグリップとスタンド機能が手軽に利用できる"
+        ]
+      },
+      {
+        "name": "UGREEN スマホスタンド Magsafe対応 カードケース 超強磁力",
         "asin": "B0CY55LCT3",
-        "priceComparison": "MOFTより安価（約半額程度）",
+        "priceComparison": "対象商品より大幅に安価（約1,874円）。3枚収納と角度調整に特化しており、価格差を考慮すると高い価値がある。",
         "featureComparison": [
-          "MagSafe対応でスタンド機能あり",
-          "カード収納枚数が少ない場合がある",
-          "質感はMOVASに劣る"
+          "共通点：MagSafe対応、スタンド機能、カード収納機能を備える",
+          "相違点：MOFTは高さ調整機能を備え独自素材を使用しているが、UGREENは最大3枚のカード収納が可能で30度から150度までの角度調整に特化している"
         ],
         "differentiators": [
-          "コストパフォーマンスに優れる",
-          "MOFTほどの多機能性（三脚機能など）はない"
+          "MOFT 8-in-1多機能スタンド カードケース付きの利点：スマホを高い位置（約20cm）に保持できるため、ウェブ会議や自撮りに適している",
+          "UGREEN スマホスタンド Magsafe対応 カードケース 超強磁力の利点：一度に3枚のカードを収納可能であり、安価に導入できる"
         ]
       },
       {
-        "name": "Sinjimoru M-Pull Tab Stand",
-        "asin": "B0C8MW8JF3",
-        "priceComparison": "MOFTより安価",
+        "name": "Sinjimoru Magsafe 対応 カードケース スマホスタンド",
+        "asin": "B0B7M2C5NS",
+        "priceComparison": "対象商品より大幅に安価（約1,980円）。安全パッチ等を含み、落下防止機能を重視するなら価格以上の価値がある。",
         "featureComparison": [
-          "カード収納とシンプルなスタンド機能",
-          "高さ調整機能はない"
+          "共通点：MagSafe対応、スタンド機能、カード収納機能を備える",
+          "相違点：MOFTはスタンドの高さ調整や多角度調整が豊富だが、Sinjimoruは落下防止用の安全タグパッチやグリップ機能に重点を置いている"
         ],
         "differentiators": [
-          "カードの取り出しやすさに特化",
-          "機能はよりシンプル"
+          "MOFT 8-in-1多機能スタンド カードケース付きの利点：多機能なスタンドとして高い自由度と高級感のある素材を使用している",
+          "Sinjimoru Magsafe 対応 カードケース スマホスタンドの利点：落下防止対策やグリップとしてのホールド感に優れている"
         ]
       },
       {
-        "name": "MOFT 七変化マルチスタンド",
-        "asin": "B0CJ8RSWFC",
-        "priceComparison": "同価格帯",
+        "name": "Bettdow スマホスタンド 8-in-1多機能スタンド",
+        "asin": "B0FJY195W5",
+        "priceComparison": "対象商品より安価（約2,451円）。MOFTの類似機能を多く持つが価格が抑えられており、素材へのこだわりがなければ選択肢となる。",
         "featureComparison": [
-          "カード収納機能がない（または限定的）",
-          "重量は8-in-1より少し軽い"
+          "共通点：MagSafe対応、最大20cmの高さ調整機能、NFC対応のカード収納機能を備える",
+          "相違点：MOFTは独自開発の「MOVAS」素材を使用しているが、Bettdowは一般的なPUレザーを使用している"
         ],
         "differentiators": [
-          "8-in-1はカード収納とNFC対応が追加された上位互換的な位置づけ"
+          "MOFT 8-in-1多機能スタンド カードケース付きの利点：独自のヴィーガンレザー素材による質感の高さと、公式ブランドとしての信頼性がある",
+          "Bettdow スマホスタンド 8-in-1多機能スタンドの利点：MOFTと同等の機能を持ちながら、価格が半分以下に抑えられている"
+        ]
+      },
+      {
+        "name": "エレコム スマホスタンド カードケース Magsafe",
+        "asin": "B0BX7VBZJQ",
+        "priceComparison": "対象商品より非常に安価（約469円）。必要最低限の機能のみを求める場合の選択肢となる。",
+        "featureComparison": [
+          "共通点：MagSafe対応、スタンド機能、1枚のカード収納が可能である",
+          "相違点：MOFTが多機能で複雑な構造を持つ一方、エレコムは非常にシンプルで軽量な構造である"
+        ],
+        "differentiators": [
+          "MOFT 8-in-1多機能スタンド カードケース付きの利点：高さ調整機能や三脚としての利用が可能で、用途が広い",
+          "エレコム スマホスタンド カードケース Magsafeの利点：圧倒的に安価であり、最低限の機能を手軽に利用できる"
+        ]
+      },
+      {
+        "name": "STAY GOLD MagSafe対応 カードケース スマホスタンド付き",
+        "asin": "B0FPLR7WTQ",
+        "priceComparison": "対象商品より大幅に安価（約1,350円）。強力な磁力と3枚収納に魅力を感じるなら価値がある。",
+        "featureComparison": [
+          "共通点：MagSafe対応、スタンド機能、カード収納機能を備える",
+          "相違点：MOFTは高さ調整機能とNFC対応（1枚）を特徴とするが、STAY GOLDは3枚のカード収納と強力な磁力を特徴としている"
+        ],
+        "differentiators": [
+          "MOFT 8-in-1多機能スタンド カードケース付きの利点：高い位置でのスマホ保持やNFC決済のしやすさに優れている",
+          "STAY GOLD MagSafe対応 カードケース スマホスタンド付きの利点：最大3枚のカードが収納でき、強力な磁力で安定して取り付けられる"
         ]
       }
     ],
     "recommendation": {
       "targetUsers": [
-        "iPhoneだけで外出したいミニマリスト",
-        "外出先でWeb会議や動画視聴を頻繁にする人",
-        "SNS用の動画や写真をよく撮影する人"
+        "ウェブ会議や動画視聴でスマホを高い位置で固定したい人",
+        "スマホとICカードを一体化して、スムーズに決済を行いたい人",
+        "素材の質感やデザイン性にこだわる人"
       ],
       "pros": [
-        "高さ調整により姿勢が楽になる",
-        "カード収納＋NFC対応で財布を持ち歩かなくて済む",
-        "高級感のある素材で所有欲を満たす"
+        "最大20cmの高さ調整や多角度での利用が可能で利便性が高い",
+        "ケースに入れたままNFCやタッチ決済が利用できる",
+        "独自のヴィーガンレザーによる高級感のあるデザイン"
       ],
       "cons": [
-        "常時装着するには重さを感じる場合がある",
-        "価格が高い"
+        "価格が6,000円以上と、競合製品に比べてかなり高価である",
+        "NFC機能を利用する場合、カードは1枚しか収納できない"
       ],
-      "score": 86,
-      "scoreRationale": "[基本点: 70]\n[加点: +8] (高さ・角度調整、自撮り棒、三脚、NFCなど機能が極めて豊富)\n[加点: +5] (MOVAS素材の質感と耐久性が高い)\n[加点: +5] (8-in-1という独自の多機能コンセプト)\n[加点: +3] (ユーザー満足度が高い)\n[減点: -5] (価格が6,000円台後半と高価)\n[合計: 86]"
+      "score": 80,
+      "scoreRationale": "[基本点: 70]\n[加点: +10] (最大20cmの高さ調整など、競合には少ない優れたスタンド機能)\n[加点: +5] (独自素材MOVASによる高い質感とデザイン性)\n[減点: -5] (競合品と比較して価格がかなり高い)\n[合計: 80]"
     },
     "technicalSpecs": {
       "dimensions": {
-        "height": "96.5mm",
+        "height": "9.4mm",
         "width": "63.5mm",
-        "depth": "9.04mm",
-        "weight": "約96g"
+        "depth": "96.5mm"
       },
-      "material": "MOVAS™ (ヴィーガンレザー), グラスファイバー, マグネット, 金属シート",
-      "compatibility": "MagSafe対応iPhone (12/13/14/15/16シリーズ) およびMagSafeケース",
-      "cardStorage": "最大2枚 (NFC使用時は1枚推奨)",
-      "standModes": ["フローティング", "ビデオ", "Vlog", "自撮り", "三脚", "その他"],
-      "colors": ["サンライズオレンジ", "デザートゴールド", "ジェットブラック", "ディープブルー", "サンセットレッド"],
-      "other": ["NFCカード対応", "アイアンリング付属 (MagSafe非対応機種用)"]
-    }
+      "weight": "96.0g",
+      "capacity": "カード1〜2枚（NFC利用時は1枚のみ）",
+      "material": "ヴィーガンレザー（MOVAS）、マグネット、金属",
+      "origin": "不明",
+      "other": [
+        "MagSafe対応",
+        "付属のアイアンリングを使用することで全機種対応",
+        "NFC/Suica/タッチ決済対応（条件あり）",
+        "最大高さ約20cmまで展開可能"
+      ]
+    },
+    "userStories": []
   }
 }
