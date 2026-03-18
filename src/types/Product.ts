@@ -34,8 +34,8 @@ export interface Product {
     count: number;
   };
   isPrimeEligible?: boolean;
+  isAmazonDirect?: boolean;
   availability?: string | undefined;
-  merchantName?: string | undefined;
   brand?: string;
   loyaltyPoints?: number;
   dealBadge?: string;
@@ -54,11 +54,7 @@ export interface ProductDetail extends Product {
   manufacturer?: string;
   model?: string;
   // 新規追加フィールド（Creators API拡張）
-  brand?: string;
   releaseDate?: string;
-  isPrimeEligible?: boolean;
-  availability?: string | undefined;
-  merchantName?: string | undefined;
   externalIds?: {
     ean?: string;
     isbn?: string;
@@ -69,9 +65,6 @@ export interface ProductDetail extends Product {
     name: string;
     role: string;
   }>;
-  loyaltyPoints?: number;
-  dealBadge?: string;
-  savingsPercentage?: number;
 }
 
 export interface ProductSearchParams {

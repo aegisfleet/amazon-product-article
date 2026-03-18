@@ -653,7 +653,7 @@ export class CreatorsAPIClient {
         count: item.customerReviews?.count || 0,
       },
       availability: listing?.availability?.message,
-      merchantName: listing?.merchantInfo?.name,
+      isAmazonDirect: listing?.merchantInfo?.name === 'Amazon.co.jp',
       loyaltyPoints: listing?.loyaltyPoints?.points ?? undefined,
       dealBadge: listing?.dealDetails?.dealBadge,
       savingsPercentage: listing?.price?.savings?.percentage ?? undefined,

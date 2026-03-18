@@ -509,7 +509,7 @@ describe('ArticleGenerator', () => {
           amount: 45000,
           formatted: '¥45,000',
         },
-        merchantName: 'Amazon.co.jp',
+        isAmazonDirect: true,
         availability: '在庫あり',
       } as any;
       const mockCompetitorDetails = new Map<string, ProductDetail>();
