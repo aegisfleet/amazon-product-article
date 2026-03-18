@@ -661,7 +661,6 @@ export class CreatorsAPIClient {
 
     if (item.parentASIN) product.parentAsin = item.parentASIN;
 
-
     return product;
   }
 

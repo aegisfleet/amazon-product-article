@@ -10,7 +10,6 @@ describe('CreatorsAPIClient Parsing Tests', () => {
     client.authenticate('app-id', 'cred-id', 'cred-secret', 'tag-22');
   });
 
-
   describe('extractSpecifications', () => {
     it('should extract specifications from productInfo and technicalInfo', () => {
       const mockItem: any = {

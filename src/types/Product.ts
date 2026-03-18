@@ -45,21 +45,25 @@ export interface Product {
 export interface ProductDetail extends Product {
   description?: string | undefined;
   features: string[];
-  dimensions?: {
-    height?: string | undefined;
-    width?: string | undefined;
-    length?: string | undefined;
-    weight?: string | undefined;
-  } | undefined;
+  dimensions?:
+    | {
+        height?: string | undefined;
+        width?: string | undefined;
+        length?: string | undefined;
+        weight?: string | undefined;
+      }
+    | undefined;
   manufacturer?: string | undefined;
   model?: string | undefined;
   // 新規追加フィールド（Creators API拡張）
   releaseDate?: string | undefined;
-  externalIds?: {
-    ean?: string | undefined;
-    isbn?: string | undefined;
-    upc?: string | undefined;
-  } | undefined;
+  externalIds?:
+    | {
+        ean?: string | undefined;
+        isbn?: string | undefined;
+        upc?: string | undefined;
+      }
+    | undefined;
   languages?: string[];
   contributors?: Array<{
     name: string;
