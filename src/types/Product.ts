@@ -8,8 +8,8 @@
  */
 export interface CategoryInfo {
   main: string; // メインカテゴリ（上位カテゴリ）
-  sub?: string; // サブカテゴリ（詳細カテゴリ）
-  browseNodeId?: string; // Creators API BrowseNode ID（将来の拡張用）
+  sub?: string | undefined; // サブカテゴリ（詳細カテゴリ）
+  browseNodeId?: string | undefined; // Creators API BrowseNode ID（将来の拡張用）
 }
 
 export interface Product {
@@ -17,8 +17,8 @@ export interface Product {
   title: string;
   category: string; // 後方互換性のため維持（メインカテゴリ）
   categoryInfo?: CategoryInfo; // 新規: 階層カテゴリ情報
-  parentAsin?: string; // 親ASIN（バリエーション商品の識引用）
-  detailPageUrl?: string; // Amazon DetailPageURL (affiliate link)
+  parentAsin?: string | undefined; // 親ASIN（バリエーション商品の識引用）
+  detailPageUrl?: string | undefined; // Amazon DetailPageURL (affiliate link)
   price: {
     amount: number;
     currency: string;
@@ -33,33 +33,33 @@ export interface Product {
     average: number;
     count: number;
   };
-  isPrimeEligible?: boolean;
-  isAmazonDirect?: boolean;
+  isPrimeEligible?: boolean | undefined;
+  isAmazonDirect?: boolean | undefined;
   availability?: string | undefined;
-  brand?: string;
-  loyaltyPoints?: number;
-  dealBadge?: string;
-  savingsPercentage?: number;
+  brand?: string | undefined;
+  loyaltyPoints?: number | undefined;
+  dealBadge?: string | undefined;
+  savingsPercentage?: number | undefined;
 }
 
 export interface ProductDetail extends Product {
-  description?: string;
+  description?: string | undefined;
   features: string[];
   dimensions?: {
-    height?: string;
-    width?: string;
-    length?: string;
-    weight?: string;
-  };
-  manufacturer?: string;
-  model?: string;
+    height?: string | undefined;
+    width?: string | undefined;
+    length?: string | undefined;
+    weight?: string | undefined;
+  } | undefined;
+  manufacturer?: string | undefined;
+  model?: string | undefined;
   // 新規追加フィールド（Creators API拡張）
-  releaseDate?: string;
+  releaseDate?: string | undefined;
   externalIds?: {
-    ean?: string;
-    isbn?: string;
-    upc?: string;
-  };
+    ean?: string | undefined;
+    isbn?: string | undefined;
+    upc?: string | undefined;
+  } | undefined;
   languages?: string[];
   contributors?: Array<{
     name: string;

@@ -167,7 +167,7 @@ export class ArticleGenerator {
       loyalty_points: product.loyaltyPoints,
       deal_badge: product.dealBadge,
       savings_percentage: product.savingsPercentage,
-    } as any;
+    };
 
     if (product.availability !== undefined) {
       metadata.availability = product.availability;
