@@ -239,18 +239,30 @@ a:hover {
 .card-image {
   background-color: #ffffff;
   width: 100%;
-  aspect-ratio: 1 / 1;
+  aspect-ratio: 16 / 9;
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
 }
 
-.card-image img {
+.card-image a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 100%;
   height: 100%;
+}
+
+.card-image img {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
   object-fit: contain;
   object-position: center;
+  padding: var(--spacing-sm);
+  flex-shrink: 1;
 }
 
 .card-image-noimage {
@@ -500,7 +512,7 @@ a:hover {
 /* Pickup Card Image Styles */
 .pickup-card-image {
   width: 100%;
-  aspect-ratio: 1 / 1;
+  aspect-ratio: 16 / 9;
   background-color: #ffffff;
   display: flex;
   align-items: center;
@@ -514,9 +526,13 @@ a:hover {
 }
 
 .pickup-card-image img {
-  width: 100%;
-  height: 100%;
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
   object-fit: contain;
+  padding: var(--spacing-sm);
+  flex-shrink: 1;
 }
 
 .pickup-card-noimage {
