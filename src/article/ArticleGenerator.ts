@@ -1740,6 +1740,9 @@ ${confidenceLine}`;
     const competitorPriceAmount = detail.price?.amount || 0;
     const availabilityText = detail.availability || '';
     const isAmazonDirect = detail.isAmazonDirect;
+    const loyaltyPoints = detail.loyaltyPoints;
+    const dealBadge = detail.dealBadge;
+    const savingsPercentage = detail.savingsPercentage;
 
     const priceDiffHtml = this.renderPriceDiff(basePriceAmount, competitorPriceAmount);
     const scoreHtml = this.renderCompetitorScore(score);
@@ -1747,10 +1750,15 @@ ${confidenceLine}`;
     const previewTag = hasInternalReview ? 'a' : 'div';
     const previewAttrs = hasInternalReview && asin ? ` href="../${asin.toLowerCase()}/"` : '';
 
+    const pointsHtml = loyaltyPoints ? `<span class="hero-points" style="font-size: 0.85rem; margin-left: var(--spacing-sm);">🎁 ${loyaltyPoints}pt還元</span>` : '';
     const actualPriceHtml = priceText
-      ? `<span class="competitor-actual-price">${this.escapeHtml(priceText)}${priceDiffHtml}</span>`
+      ? `<span class="competitor-actual-price">${this.escapeHtml(priceText)}${priceDiffHtml}${pointsHtml}</span>`
       : '';
     const amazonDirectHtml = isAmazonDirect ? '<span class="hero-tag hero-tag-amazon-direct">Amazon直販</span>' : '';
+    const dealBadgeHtml = dealBadge ? `<span class="hero-tag hero-tag-deal">${this.escapeHtml(dealBadge)}</span>` : '';
+    const savingsPercentageHtml = savingsPercentage
+      ? `<span class="hero-tag hero-tag-savings">${savingsPercentage}% OFF</span>`
+      : '';
     const availabilityHtml = availabilityText
       ? `<span class="hero-tag hero-tag-availability">${this.escapeHtml(availabilityText)}</span>`
       : '';
@@ -1759,7 +1767,7 @@ ${confidenceLine}`;
       ? `<div class="competitor-preview-tags">${this.renderSpecTags(specs, 'hero-tag')}</div>`
       : '';
 
-    return `<${previewTag}${previewAttrs} class="competitor-preview"><img src="${this.escapeHtml(imageUrl)}" alt="${this.escapeHtml(name)}" class="competitor-preview-img"><div class="competitor-preview-content"><div class="competitor-preview-main">${scoreHtml}${actualPriceHtml}</div><div class="competitor-preview-meta">${amazonDirectHtml}${availabilityHtml}</div>${specTagsHtml}</div></${previewTag}>`;
+    return `<${previewTag}${previewAttrs} class="competitor-preview"><img src="${this.escapeHtml(imageUrl)}" alt="${this.escapeHtml(name)}" class="competitor-preview-img"><div class="competitor-preview-content"><div class="competitor-preview-main">${scoreHtml}${actualPriceHtml}</div><div class="competitor-preview-meta">${amazonDirectHtml}${dealBadgeHtml}${savingsPercentageHtml}${availabilityHtml}</div>${specTagsHtml}</div></${previewTag}>`;
   }
 
   /**
