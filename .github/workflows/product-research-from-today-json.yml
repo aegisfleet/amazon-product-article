@@ -1,9 +1,9 @@
 name: JSON-Based Product Research Pipeline
 
 on:
-  schedule:
-    # 毎日深夜3時 JST (18:00 UTC) に実行
-    - cron: '0 18 * * *'
+  push:
+    paths:
+      - 'data/recommendations/today.json'
   workflow_dispatch:
 
 jobs:
