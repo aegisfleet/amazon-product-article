@@ -298,6 +298,8 @@ export class CategoryNormalizer {
 
     // 4. Blacklist (Full Match after normalization)
     const blacklist = [
+      'fire tv 商品一覧ページ',
+      'l202storageitems02sub',
       'arborist merchandising root',
       'babel 6-2',
       'calendar test',
