@@ -17,18 +17,22 @@
 {{ $allArticles := where (where .Site.RegularPages "Section" "articles") "Params.asin" "!=" $currentAsin }}
 {{ $shownAsins := slice $currentAsin }}
 
-<div id="product-tracking-info" 
-     data-asin="{{ .Params.asin }}" 
-     data-category="{{ $currentCategory }}" 
-     data-price-bucket="{{ $currentPriceBucket }}" 
-     data-price="{{ .Params.price }}" 
-     style="display: none;"></div>
+<div id="product-tracking-info" data-asin="{{ .Params.asin }}" data-category="{{ $currentCategory }}"
+    data-price-bucket="{{ $currentPriceBucket }}" data-price="{{ .Params.price }}" style="display: none;"></div>
 
 <div class="container" style="padding-top: var(--spacing-xl);">
     <div class="ai-disclaimer">
         本サイトはAIによる商品の調査レポートを掲載しています。商品選びの参考情報としてご活用ください。
     </div>
     {{ partial "breadcrumb.html" . }}
+
+    <!-- Today's Recommendation Button -->
+    <div style="margin: var(--spacing-md) 0; display: flex; justify-content: center;">
+        <a href="{{ `recommendations/` | relURL }}" class="today-recommendation-link">
+            <span class="today-recommendation-icon">🎯</span>
+            <span class="today-recommendation-text">本日のおすすめ商品</span>
+        </a>
+    </div>
 
     <article class="article-content">
         <header class="article-header">
@@ -69,8 +73,10 @@
         {{/* Rakuten Affiliate Widget */}}
         <div id="rakuten-affiliate-section" class="rakuten-section"
             style="margin-bottom: var(--spacing-lg); text-align: center;">
-            <script type="text/javascript">rakuten_design="slide";rakuten_affiliateId="01080f82.44ae7157.08eb9599.98758834";rakuten_items="ctsmatch";rakuten_genreId="0";rakuten_size="336x280";rakuten_target="_blank";rakuten_theme="gray";rakuten_border="on";rakuten_auto_mode="on";rakuten_genre_title="off";rakuten_recommend="on";rakuten_ts="1773236296402";</script>
-            <script type="text/javascript" src="https://xml.affiliate.rakuten.co.jp/widget/js/rakuten_widget.js?20230106"></script>
+            <script
+                type="text/javascript">rakuten_design = "slide"; rakuten_affiliateId = "01080f82.44ae7157.08eb9599.98758834"; rakuten_items = "ctsmatch"; rakuten_genreId = "0"; rakuten_size = "336x280"; rakuten_target = "_blank"; rakuten_theme = "gray"; rakuten_border = "on"; rakuten_auto_mode = "on"; rakuten_genre_title = "off"; rakuten_recommend = "on"; rakuten_ts = "1773236296402";</script>
+            <script type="text/javascript"
+                src="https://xml.affiliate.rakuten.co.jp/widget/js/rakuten_widget.js?20230106"></script>
         </div>
 
         {{/* 同じカテゴリの記事 */}}
@@ -93,11 +99,15 @@
                 <h3 class="related-section-title">📂 同じカテゴリの商品</h3>
                 <div class="related-grid">
                     {{ $relatedExcluded := where $related "Params.asin" "not in" $shownAsins }}
-                    {{ $rankedRelated := partial "product-composite-ranked-pages.html" (dict "pages" $relatedExcluded "randomize" true) }}
+                    {{ $rankedRelated := partial "product-composite-ranked-pages.html" (dict "pages" $relatedExcluded
+                    "randomize" true) }}
                     {{ range first 4 $rankedRelated }}
                     {{ $shownAsins = $shownAsins | append .Params.asin }}
                     {{ $itemPriceBucket := partial "utils-price-bucket.html" .Params.price }}
-                    <a href="{{ .RelPermalink }}" class="pickup-card" data-track-product="1" data-asin="{{ .Params.asin }}" data-category="{{ if .Params.categories }}{{ index .Params.categories 0 }}{{ else }}{{ .Params.category }}{{ end }}" data-price-bucket="{{ $itemPriceBucket }}" data-price="{{ .Params.price }}">
+                    <a href="{{ .RelPermalink }}" class="pickup-card" data-track-product="1"
+                        data-asin="{{ .Params.asin }}"
+                        data-category="{{ if .Params.categories }}{{ index .Params.categories 0 }}{{ else }}{{ .Params.category }}{{ end }}"
+                        data-price-bucket="{{ $itemPriceBucket }}" data-price="{{ .Params.price }}">
                         <div class="pickup-card-image">
                             {{ if .Params.images }}
                             <img src="{{ index .Params.images 0 }}" alt="{{ .Title }}" loading="lazy" decoding="async">
@@ -206,11 +216,14 @@
         <h3 class="related-section-title">💰 同価格帯のおすすめ</h3>
         <div class="related-grid">
             {{ $samePriceRangeExcluded := where $samePriceRange "Params.asin" "not in" $shownAsins }}
-            {{ $rankedSamePriceRange := partial "product-composite-ranked-pages.html" (dict "pages" $samePriceRangeExcluded "randomize" true) }}
+            {{ $rankedSamePriceRange := partial "product-composite-ranked-pages.html" (dict "pages"
+            $samePriceRangeExcluded "randomize" true) }}
             {{ range first 4 $rankedSamePriceRange }}
             {{ $shownAsins = $shownAsins | append .Params.asin }}
             {{ $itemPriceBucket := partial "utils-price-bucket.html" .Params.price }}
-            <a href="{{ .RelPermalink }}" class="pickup-card" data-track-product="1" data-asin="{{ .Params.asin }}" data-category="{{ if .Params.categories }}{{ index .Params.categories 0 }}{{ else }}{{ .Params.category }}{{ end }}" data-price-bucket="{{ $itemPriceBucket }}" data-price="{{ .Params.price }}">
+            <a href="{{ .RelPermalink }}" class="pickup-card" data-track-product="1" data-asin="{{ .Params.asin }}"
+                data-category="{{ if .Params.categories }}{{ index .Params.categories 0 }}{{ else }}{{ .Params.category }}{{ end }}"
+                data-price-bucket="{{ $itemPriceBucket }}" data-price="{{ .Params.price }}">
                 <div class="pickup-card-image">
                     {{ if .Params.images }}
                     <img src="{{ index .Params.images 0 }}" alt="{{ .Title }}" loading="lazy" decoding="async">
@@ -261,10 +274,13 @@
         <h3 class="related-section-title">⭐ 同スコア帯の人気商品</h3>
         <div class="related-grid">
             {{ $sameScoreRangeExcluded := where $sameScoreRange "Params.asin" "not in" $shownAsins }}
-            {{ $rankedSameScoreRange := partial "product-composite-ranked-pages.html" (dict "pages" $sameScoreRangeExcluded "randomize" true) }}
+            {{ $rankedSameScoreRange := partial "product-composite-ranked-pages.html" (dict "pages"
+            $sameScoreRangeExcluded "randomize" true) }}
             {{ range first 4 $rankedSameScoreRange }}
             {{ $itemPriceBucket := partial "utils-price-bucket.html" .Params.price }}
-            <a href="{{ .RelPermalink }}" class="pickup-card" data-track-product="1" data-asin="{{ .Params.asin }}" data-category="{{ if .Params.categories }}{{ index .Params.categories 0 }}{{ else }}{{ .Params.category }}{{ end }}" data-price-bucket="{{ $itemPriceBucket }}" data-price="{{ .Params.price }}">
+            <a href="{{ .RelPermalink }}" class="pickup-card" data-track-product="1" data-asin="{{ .Params.asin }}"
+                data-category="{{ if .Params.categories }}{{ index .Params.categories 0 }}{{ else }}{{ .Params.category }}{{ end }}"
+                data-price-bucket="{{ $itemPriceBucket }}" data-price="{{ .Params.price }}">
                 <div class="pickup-card-image">
                     {{ if .Params.images }}
                     <img src="{{ index .Params.images 0 }}" alt="{{ .Title }}" loading="lazy" decoding="async">
