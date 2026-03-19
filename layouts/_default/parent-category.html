@@ -407,13 +407,16 @@
                     </div>
                     <div class="meta-details-row">
                         {{ if .Params.is_amazon_direct }}
-                        <span class="card-amazon-direct">Amazon直販</span>
+                        <span class="badge-amazon-direct">Amazon直販</span>
                         {{ end }}
                         {{ with .Params.deal_badge }}
-                        <span class="card-deal-badge">{{ . }}</span>
+                        <span class="badge-deal">{{ . }}</span>
                         {{ end }}
                         {{ if .Params.savings_percentage }}
-                        <span class="card-savings">{{ .Params.savings_percentage }}% OFF</span>
+                        <span class="badge-savings">{{ .Params.savings_percentage }}% OFF</span>
+                        {{ end }}
+                        {{ with .Params.availability }}
+                        <span class="badge-availability">{{ . }}</span>
                         {{ end }}
                     </div>
                 </div>

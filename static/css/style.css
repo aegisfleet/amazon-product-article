@@ -392,8 +392,7 @@ a:hover {
   white-space: nowrap;
 }
 
-.card-amazon-direct,
-.hero-tag-amazon-direct {
+.badge-amazon-direct {
   background: var(--badge-amazon-bg);
   color: var(--badge-amazon-text);
   padding: 0.15rem 0.5rem;
@@ -407,14 +406,12 @@ a:hover {
   box-shadow: none;
 }
 
-.card-amazon-direct::before,
-.hero-tag-amazon-direct::before {
+.badge-amazon-direct::before {
   content: "📦";
   font-size: 0.9em;
 }
 
-.card-availability,
-.hero-tag-availability {
+.badge-availability {
   background: var(--badge-availability-bg);
   color: var(--badge-availability-text);
   padding: 0.15rem 0.5rem;
@@ -427,14 +424,12 @@ a:hover {
   gap: var(--spacing-xs);
 }
 
-.card-availability::before,
-.hero-tag-availability::before {
+.badge-availability::before {
   content: "✅";
   font-size: 0.9em;
 }
 
-.card-savings,
-.hero-tag-savings {
+.badge-savings {
   background: var(--badge-savings-bg);
   color: var(--badge-savings-text);
   padding: 0.15rem 0.5rem;
@@ -447,14 +442,12 @@ a:hover {
   gap: var(--spacing-xs);
 }
 
-.card-savings::before,
-.hero-tag-savings::before {
+.badge-savings::before {
   content: "📉";
   font-size: 0.9em;
 }
 
-.card-deal-badge,
-.hero-tag-deal {
+.badge-deal {
   background: var(--badge-deal-bg);
   color: var(--badge-deal-text);
   padding: 0.15rem 0.5rem;
@@ -467,8 +460,7 @@ a:hover {
   gap: var(--spacing-xs);
 }
 
-.card-deal-badge::before,
-.hero-tag-deal::before {
+.badge-deal::before {
   content: "🔥";
   font-size: 0.9em;
 }
