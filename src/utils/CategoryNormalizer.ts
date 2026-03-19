@@ -284,6 +284,14 @@ export class CategoryNormalizer {
       /spring must haves/i,
       /(?:kindle|無料|[0-9０-９]+万円|円|テスト|マッサージャーほか健康家電|[>＞])/i,
       /(?:amazon\s*global|amazonglobal|babel|コクヨ|beauty|パントリー|本日の|特選品|cml|ソニー|9999$|ポイント還元本|書籍タイトル)/i,
+      // Machine-generated IDs (e.g. L202StorageItems02Sub, L201Skincare01Cat)
+      /l\d{3}[a-z]+\d{2}(?:cat|sub)/i,
+      // Device and Store management pages
+      /fire\s*tv.*(?:一覧|ページ|ストア|store)/i,
+      /(?:kindle|fire|echo|alexa|amazon|ring).*(?:一覧|ページ|ストア|store|popup|体験|イベント)/i,
+      // Brand-specific promotion/coordinated pages
+      /(?:sony|ソニー|panasonic|パナソニック|logicool|ロジクール|elecom|エレコム|iris|アイリス|brother|ブラザー|nestle|ネスレ).*(?:特集|一覧|プロモーション|キャンペーン|限定|コーディネート)/i,
+      /primeday|black\s*friday|ブラックフライデー|新生活|入園入学|父の日|母の日/i,
     ];
 
     if (invalidPatterns.some((pattern) => pattern.test(name))) {
@@ -298,8 +306,6 @@ export class CategoryNormalizer {
 
     // 4. Blacklist (Full Match after normalization)
     const blacklist = [
-      'fire tv 商品一覧ページ',
-      'l202storageitems02sub',
       'arborist merchandising root',
       'babel 6-2',
       'calendar test',
@@ -416,19 +422,9 @@ export class CategoryNormalizer {
       'nonmanga_',
       'new release non manga',
       'ブランド別インテリアコーディネート',
-      'cmldeals on most home&kitchen9999',
-      'l201skincare01cat',
-      'l202storageitems01cat',
-      'l205hairbodycare01cat',
-      'nthamzfundcontrol',
-      'nthamzfundtreatment',
-      '「なるほど家電」はアイリスオーヤマ',
-      'おもちゃ2column',
-      'ソニー2025springcamera',
-      'ソニー2026springvlog',
-      'ピアノ・キーボード｜ヘッドホン',
+      'piano・keyboard｜headphones',
       'プライム感謝祭ポイントアップ商品',
-      'ホーム&キッチン用品ポイントアップ+1% 1',
+      'home&kitchen用品ポイントアップ+1% 1',
       '文具・事務用品（その他）',
       '日本ヒルズ・コルゲート199t',
       '新学期文具',
