@@ -91,9 +91,14 @@ function createPickupCardSpecs(item) {
         { key: 'capacity', label: '容量: ' }
     ];
 
+    const skipZeroCheckKeys = ["os", "cpu", "ram", "storage", "display_size", "battery_capacity"];
+
     specMap.forEach(spec => {
         const val = item.specs[spec.key];
-        if (val && !isZeroValue(val)) {
+        if (val) {
+            if (!skipZeroCheckKeys.includes(spec.key) && isZeroValue(val)) {
+                return;
+            }
             const span = document.createElement('span');
             span.className = 'card-spec-tag';
             span.textContent = spec.label + val;

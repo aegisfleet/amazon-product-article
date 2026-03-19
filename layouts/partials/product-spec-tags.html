@@ -21,7 +21,11 @@
 {{- end -}}
 {{- end -}}
 
-{{- with .count }}<span class="{{ $tagClass }}">個数: {{ . }}</span>{{ end -}}
+{{- with .count }}
+{{- if not (findRE `^0+(\.0+)?\s*[a-zA-Z]*$` .) -}}
+<span class="{{ $tagClass }}">個数: {{ . }}</span>
+{{- end -}}
+{{- end -}}
 {{- with .capacity }}
 {{- if not (findRE `^0+(\.0+)?\s*[a-zA-Z]*$` .) -}}
 <span class="{{ $tagClass }}">容量: {{ . }}</span>
