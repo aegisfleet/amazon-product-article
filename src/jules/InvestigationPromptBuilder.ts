@@ -4,27 +4,6 @@ export class InvestigationPromptBuilder {
   private readonly product: Product;
   private readonly today: string;
 
-  private static readonly SAFETY_SENSITIVE_CATEGORIES = [
-    '美容',
-    'beauty',
-    '健康',
-    'health',
-    'サプリメント',
-    'supplements',
-    '食品',
-    'food',
-    'ベビー',
-    'baby',
-    'スキンケア',
-    'skincare',
-    '医薬品',
-    'medicine',
-    'ペット用品',
-    'pet',
-    'コンタクト',
-    'contact lens',
-  ];
-
   constructor(product: Product) {
     this.product = product;
     // JSTで現在の日付を取得 (YYYY-MM-DD)
@@ -47,12 +26,6 @@ export class InvestigationPromptBuilder {
     return this.generatePrompt(brandInfo, parentAsinInfo, rubric, specs);
   }
 
-  private isSafetySensitive(): boolean {
-    return InvestigationPromptBuilder.SAFETY_SENSITIVE_CATEGORIES.some(
-      (cat) => this.product.category.toLowerCase().includes(cat) || this.product.title.toLowerCase().includes(cat),
-    );
-  }
-
   private getBrandInfo(): string {
     return this.product.brand ? `- ブランド: ${this.product.brand}` : '';
   }
@@ -68,29 +41,28 @@ export class InvestigationPromptBuilder {
   }
 
   private getScoringRubric(): string {
-    const scoringRule = `
+    return `
 1. **スコアリングルール (重要)**:
    - **基本点は 70点 固定**、ここから以下の加減点を適用して最終スコアを算出する
-   - 独自の判断で基本点を変更しない`;
+   - 独自の判断で基本点を変更しない
 
-    if (this.isSafetySensitive()) {
-      return `${scoringRule}
-2. **加減点カテゴリと配分幅 (美容・健康・食品用)**:
-   - **安全性・信頼性 (-20 〜 +10点)**: 【最重要】成分、製造品質、ブランド信頼性、副作用リスク。不安要素がある場合は大きく減点
-   - **コストパフォーマンス (-10 〜 +10点)**: 安全性が確保された上での価格対効果。安くても怪しい商品は評価しない
-   - **性能・効果 (-10 〜 +10点)**: 期待される効果、スペック、実用性
-   - **品質・デザイン (-5 〜 +5点)**: パッケージ、質感、使いやすさ
-   - **ユーザー満足度 (-10 〜 +10点)**: レビュー、リピート率、サポート体制
-   - **独自の強み・先進性 (0 〜 +10点)**: 他にない成分、革新的な技術`;
-    } else {
-      return `${scoringRule}
-2. **加減点カテゴリと配分幅**:
-   - **性能・機能 (-10 〜 +10点)**: スペック、実用性、使い勝手
-   - **コストパフォーマンス (-15 〜 +15点)**: 価格対性能、競合との価格差（最重視）
-   - **品質・デザイン (-5 〜 +5点)**: ビルドクオリティ、質感、美しさ
-   - **ユーザー満足度 (-10 〜 +10点)**: レビュー、信頼性、サポート体制
-   - **独自の強み・先進性 (0 〜 +10点)**: 他にない革新的な機能、独自の価値`;
-    }
+2. **評価カテゴリの選定**:
+   商品の特性（家電、食品、美容品、日用品等）に応じて、以下のいずれかのパターン、あるいはこれらを適切に組み合わせた基準で加減点を行ってください。
+
+   **パターンA：一般商品 (性能・コスパ重視)**
+   - 性能・機能 (-10 ～ +10点): スペック、実用性、使い勝手
+   - コストパフォーマンス (-15 ～ +15点): 価格対性能、競合との価格差（最重視）
+   - 品質・デザイン (-5 ～ +5点): ビルドクオリティ、質感、美しさ
+   - ユーザー満足度 (-10 ～ +10点): レビュー、信頼性、サポート体制
+   - 独自の強み・先進性 (0 ～ +10点): 他にない革新的な機能、独自の価値
+
+   **パターンB：安全性・信頼性重視商品 (美容・健康・食品・ベビー等)**
+   - 安全性・信頼性 (-20 ～ +10点): 【最重要】成分、製造品質、ブランド信頼性、副作用リスク。不安要素がある場合は大きく減点
+   - コストパフォーマンス (-10 ～ +10点): 安全性が確保された上での価格対効果。安くても怪しい商品は評価しない
+   - 性能・効果 (-10 ～ +10点): 期待される効果、スペック、実用性
+   - 品質・デザイン (-5 ～ +5点): パッケージ、質感、使いやすさ
+   - ユーザー満足度 (-10 ～ +10点): レビュー、リピート率、サポート体制
+   - 独自の強み・先進性 (0 ～ +10点): 他にない成分、革新的な技術`;
   }
 
   private generatePrompt(brandInfo: string, parentAsinInfo: string, rubric: string, specs: string): string {
