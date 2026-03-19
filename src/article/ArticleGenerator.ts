@@ -695,14 +695,14 @@ ${reviewAnalysis ? this.generateSentimentAnalysis(reviewAnalysis) : ''}`;
           // 商品プレビュー（Creators API情報がある場合）
           const productPreview = detail
             ? this.renderCompetitorPreview(
-                competitor.name,
-                detail,
-                investigation.product.price.amount,
-                competitorScore,
-                hasInternalReview,
-                normalizedAsin,
-                competitorInvestigation?.analysis?.technicalSpecs,
-              )
+              competitor.name,
+              detail,
+              investigation.product.price.amount,
+              competitorScore,
+              hasInternalReview,
+              normalizedAsin,
+              competitorInvestigation?.analysis?.technicalSpecs,
+            )
             : '';
 
           // アフィリエイトリンクを生成
@@ -1766,13 +1766,13 @@ ${confidenceLine}`;
     const actualPriceHtml = priceText
       ? `<span class="competitor-actual-price">${this.escapeHtml(priceText)}${priceDiffHtml}${pointsHtml}</span>`
       : '';
-    const amazonDirectHtml = isAmazonDirect ? '<span class="hero-tag hero-tag-amazon-direct">Amazon直販</span>' : '';
-    const dealBadgeHtml = dealBadge ? `<span class="hero-tag hero-tag-deal">${this.escapeHtml(dealBadge)}</span>` : '';
+    const amazonDirectHtml = isAmazonDirect ? '<span class="badge-amazon-direct">Amazon直販</span>' : '';
+    const dealBadgeHtml = dealBadge ? `<span class="badge-deal">${this.escapeHtml(dealBadge)}</span>` : '';
     const savingsPercentageHtml = savingsPercentage
-      ? `<span class="hero-tag hero-tag-savings">${savingsPercentage}% OFF</span>`
+      ? `<span class="badge-savings">${savingsPercentage}% OFF</span>`
       : '';
     const availabilityHtml = availabilityText
-      ? `<span class="hero-tag hero-tag-availability">${this.escapeHtml(availabilityText)}</span>`
+      ? `<span class="badge-availability">${this.escapeHtml(availabilityText)}</span>`
       : '';
 
     const specTagsHtml = specs
