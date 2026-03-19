@@ -85,15 +85,15 @@
             </div>
             <div class="hero-price-info">
                 {{ if .Params.is_amazon_direct }}
-                <span class="hero-tag hero-tag-amazon-direct">Amazon直販</span>
+                <span class="badge-amazon-direct">Amazon直販</span>
                 {{ end }}
                 {{ with .Params.deal_badge }}
-                <span class="hero-tag hero-tag-deal">{{ . }}</span>
+                <span class="badge-deal">{{ . }}</span>
                 {{ end }}
                 {{ if .Params.savings_percentage }}
-                <span class="hero-tag hero-tag-savings">{{ .Params.savings_percentage }}% OFF</span>
+                <span class="badge-savings">{{ .Params.savings_percentage }}% OFF</span>
                 {{ end }}
-                {{ with $hero.availability }}<span class="hero-tag hero-tag-availability">{{ . }}</span>{{ end }}
+                {{ with $hero.availability }}<span class="badge-availability">{{ . }}</span>{{ end }}
             </div>
         </div>
 
