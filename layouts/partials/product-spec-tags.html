@@ -7,14 +7,26 @@
 {{- with .storage }}<span class="{{ $tagClass }}">ROM: {{ . }}</span>{{ end -}}
 {{- with .display_size }}<span class="{{ $tagClass }}">画面: {{ . }}</span>{{ end -}}
 {{- with .battery_capacity }}<span class="{{ $tagClass }}">バッテリー: {{ . }}</span>{{ end -}}
-{{- with .weight }}<span class="{{ $tagClass }}">重量: {{ . }}</span>{{ end -}}
+{{- with .weight }}
+{{- if not (findRE `^0+(\.0+)?\s*[a-zA-Z]*$` .) -}}
+<span class="{{ $tagClass }}">重量: {{ . }}</span>
+{{- end -}}
+{{- end -}}
 
 {{- $volume := .quantity -}}
 {{- if not $volume }}{{- $volume = .content -}}{{- end -}}
-{{- with $volume }}<span class="{{ $tagClass }}">内容量: {{ . }}</span>{{ end -}}
+{{- with $volume }}
+{{- if not (findRE `^0+(\.0+)?\s*[a-zA-Z]*$` .) -}}
+<span class="{{ $tagClass }}">内容量: {{ . }}</span>
+{{- end -}}
+{{- end -}}
 
 {{- with .count }}<span class="{{ $tagClass }}">個数: {{ . }}</span>{{ end -}}
-{{- with .capacity }}<span class="{{ $tagClass }}">容量: {{ . }}</span>{{ end -}}
+{{- with .capacity }}
+{{- if not (findRE `^0+(\.0+)?\s*[a-zA-Z]*$` .) -}}
+<span class="{{ $tagClass }}">容量: {{ . }}</span>
+{{- end -}}
+{{- end -}}
 
 {{- with .material }}
 {{- if not (reflect.IsMap .) -}}
@@ -23,9 +35,9 @@
 {{- end -}}
 
 {{- $sizeParts := slice -}}
-{{- with .height }}{{- $sizeParts = $sizeParts | append . -}}{{- end -}}
-{{- with .width }}{{- $sizeParts = $sizeParts | append . -}}{{- end -}}
-{{- with .depth }}{{- $sizeParts = $sizeParts | append . -}}{{- end -}}
+{{- with .height }}{{- if not (findRE `^0+(\.0+)?\s*[a-zA-Z]*$` .) }}{{- $sizeParts = $sizeParts | append . -}}{{- end -}}{{- end -}}
+{{- with .width }}{{- if not (findRE `^0+(\.0+)?\s*[a-zA-Z]*$` .) }}{{- $sizeParts = $sizeParts | append . -}}{{- end -}}{{- end -}}
+{{- with .depth }}{{- if not (findRE `^0+(\.0+)?\s*[a-zA-Z]*$` .) }}{{- $sizeParts = $sizeParts | append . -}}{{- end -}}{{- end -}}
 {{- if gt (len $sizeParts) 0 -}}
 <span class="{{ $tagClass }}">サイズ: {{ delimit $sizeParts " × " }}</span>
 {{- end -}}

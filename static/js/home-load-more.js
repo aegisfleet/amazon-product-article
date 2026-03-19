@@ -72,6 +72,11 @@ function createPickupCardSpecs(item) {
 
     if (!item.specs || typeof item.specs !== 'object') return container;
 
+    const isZeroValue = (val) => {
+        if (typeof val !== 'string' && typeof val !== 'number') return false;
+        return /^0+(\.0+)?\s*[a-zA-Z]*$/i.test(String(val).trim());
+    };
+
     const specMap = [
         { key: 'os', label: 'OS: ' },
         { key: 'cpu', label: 'CPU: ' },
@@ -88,7 +93,7 @@ function createPickupCardSpecs(item) {
 
     specMap.forEach(spec => {
         const val = item.specs[spec.key];
-        if (val) {
+        if (val && !isZeroValue(val)) {
             const span = document.createElement('span');
             span.className = 'card-spec-tag';
             span.textContent = spec.label + val;
@@ -105,10 +110,10 @@ function createPickupCardSpecs(item) {
     }
 
     const { height: h, width: w, depth: d } = item.specs;
-    if (h || w || d) {
+    const parts = [h, w, d].filter(Boolean).filter(val => !isZeroValue(val));
+    if (parts.length > 0) {
         const span = document.createElement('span');
         span.className = 'card-spec-tag';
-        const parts = [h, w, d].filter(Boolean);
         span.textContent = 'サイズ: ' + parts.join(' × ');
         container.appendChild(span);
     }
