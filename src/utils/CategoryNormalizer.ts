@@ -267,11 +267,9 @@ export class CategoryNormalizer {
       /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}/i,
       // Block "Name [ID]" pattern (e.g. "家電 [124048011]")
       /[^[\]]{1,200} \[\d+\]/,
-      /managed stores/i,
-      /custom stores navigation/i,
-      /special features stores/i,
       /arborist merchandising root/i,
-      /ストア$|store$|ストア\s*[(（].*[)）]$/i,
+      // Generic "Store" pages
+      /(?:ストア|store)(?:\s*[(（].*[)）])?$/i,
       /ブラックフライデー/i,
       /文房具・オフィス用品ヤスいいね対象/,
       /日本ヒルズ・コルゲート/i,
@@ -287,7 +285,6 @@ export class CategoryNormalizer {
       // Machine-generated IDs (e.g. L202StorageItems02Sub, L201Skincare01Cat)
       /l\d{3}[a-z]+\d{2}(?:cat|sub)/i,
       // Device and Store management pages
-      /fire\s*tv.*(?:一覧|ページ|ストア|store)/i,
       /(?:kindle|fire|echo|alexa|amazon|ring).*(?:一覧|ページ|ストア|store|popup|体験|イベント)/i,
       // Brand-specific promotion/coordinated pages
       /(?:sony|ソニー|panasonic|パナソニック|logicool|ロジクール|elecom|エレコム|iris|アイリス|brother|ブラザー|nestle|ネスレ).*(?:特集|一覧|プロモーション|キャンペーン|限定|コーディネート)/i,
