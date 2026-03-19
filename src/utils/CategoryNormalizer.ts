@@ -283,7 +283,7 @@ export class CategoryNormalizer {
       /(?:kindle|無料|[0-9０-９]+万円|円|テスト|マッサージャーほか健康家電|[>＞])/i,
       /(?:amazon\s*global|amazonglobal|babel|コクヨ|beauty|パントリー|本日の|特選品|cml|ソニー|9999$|ポイント還元本|書籍タイトル)/i,
       // Machine-generated IDs (e.g. L202StorageItems02Sub, L201Skincare01Cat)
-      /l\d{3}[a-z]+\d{2}(?:cat|sub)/i,
+      /l\d{3}[\s_]*[a-z]+[\s_]*\d{2}[\s_]*(?:cat|sub)/i,
       // Device and Store management pages
       /(?:kindle|fire|echo|alexa|amazon|ring).*(?:一覧|ページ|ストア|store|popup|体験|イベント)/i,
       // Brand-specific promotion/coordinated pages
