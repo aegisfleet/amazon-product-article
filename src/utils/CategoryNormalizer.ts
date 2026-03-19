@@ -437,6 +437,7 @@ export class CategoryNormalizer {
       'パントリー事務用品テープ・結束具',
       'ベビー・幼児用おもちゃ',
       'ベビー家具・収納',
+      'ネスレ日本',
     ];
 
     if (blacklist.includes(name)) {
