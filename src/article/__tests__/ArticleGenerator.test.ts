@@ -528,9 +528,9 @@ describe('ArticleGenerator', () => {
       expect(result.content).toContain('サイト内レビュー');
       expect(result.content).toContain('class="btn-internal-small"');
       // Verify unified design and price difference
-      expect(result.content).toContain('<span class="hero-tag hero-tag-amazon-direct">Amazon直販</span>');
+      expect(result.content).toContain('<span class="badge-amazon-direct">Amazon直販</span>');
       expect(result.content).toContain('class="competitor-price-diff price-down">(-￥5,000)</span>');
-      expect(result.content).toContain('<span class="hero-tag hero-tag-availability">在庫あり</span>');
+      expect(result.content).toContain('<span class="badge-availability">在庫あり</span>');
       // Mock fs.promises.readFile to reject
       expect(result.content).toContain('<a href="../b08compet1/" class="competitor-preview">');
       expect(result.content).not.toContain('<div class="competitor-preview">');
