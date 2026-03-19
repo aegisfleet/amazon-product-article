@@ -74,7 +74,7 @@ function createPickupCardSpecs(item) {
 
     const isZeroValue = (val) => {
         if (typeof val !== 'string' && typeof val !== 'number') return false;
-        return /^0+(\.0+)?\s*[a-zA-Z]*$/i.test(String(val).trim());
+        return /^0+(\.0+)?\s*[a-z]*$/i.test(String(val).trim());
     };
 
     const specMap = [
@@ -91,12 +91,12 @@ function createPickupCardSpecs(item) {
         { key: 'capacity', label: '容量: ' }
     ];
 
-    const skipZeroCheckKeys = ["os", "cpu", "ram", "storage", "display_size", "battery_capacity"];
+    const skipZeroCheckKeys = new Set(["os", "cpu", "ram", "storage", "display_size", "battery_capacity"]);
 
     specMap.forEach(spec => {
         const val = item.specs[spec.key];
         if (val) {
-            if (!skipZeroCheckKeys.includes(spec.key) && isZeroValue(val)) {
+            if (!skipZeroCheckKeys.has(spec.key) && isZeroValue(val)) {
                 return;
             }
             const span = document.createElement('span');
