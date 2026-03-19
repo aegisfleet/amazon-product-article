@@ -316,7 +316,7 @@
     ) }}
   {{ end }}
 
-  {{ $currentPosition := cond $parentName 4 (cond $category 3 2) }}
+  {{ $currentPosition := cond (ne $parentName "") 4 (cond (ne $category "") 3 2) }}
   {{ $breadcrumbItems = $breadcrumbItems | append (dict
     "@type" "ListItem"
     "position" $currentPosition

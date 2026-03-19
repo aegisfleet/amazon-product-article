@@ -1,14 +1,14 @@
 {{- $specs := .specs -}}
 {{- $tagClass := .tagClass | default "card-spec-tag" -}}
 {{- with $specs -}}
-{{- with .os }}<span class="{{ $tagClass }}">OS: {{ . }}</span>{{ end -}}
-{{- with .cpu }}<span class="{{ $tagClass }}">CPU: {{ . }}</span>{{ end -}}
-{{- with .ram }}<span class="{{ $tagClass }}">RAM: {{ . }}</span>{{ end -}}
-{{- with .storage }}<span class="{{ $tagClass }}">ROM: {{ . }}</span>{{ end -}}
-{{- with .display_size }}<span class="{{ $tagClass }}">画面: {{ . }}</span>{{ end -}}
-{{- with .battery_capacity }}<span class="{{ $tagClass }}">バッテリー: {{ . }}</span>{{ end -}}
+{{- with .os }}{{- if ne . "不明" }}<span class="{{ $tagClass }}">OS: {{ . }}</span>{{ end -}}{{ end -}}
+{{- with .cpu }}{{- if ne . "不明" }}<span class="{{ $tagClass }}">CPU: {{ . }}</span>{{ end -}}{{ end -}}
+{{- with .ram }}{{- if ne . "不明" }}<span class="{{ $tagClass }}">RAM: {{ . }}</span>{{ end -}}{{ end -}}
+{{- with .storage }}{{- if ne . "不明" }}<span class="{{ $tagClass }}">ROM: {{ . }}</span>{{ end -}}{{ end -}}
+{{- with .display_size }}{{- if ne . "不明" }}<span class="{{ $tagClass }}">画面: {{ . }}</span>{{ end -}}{{ end -}}
+{{- with .battery_capacity }}{{- if ne . "不明" }}<span class="{{ $tagClass }}">バッテリー: {{ . }}</span>{{ end -}}{{ end -}}
 {{- with .weight }}
-{{- if not (findRE `^0+(\.0+)?\s*[a-zA-Z]*$` .) -}}
+{{- if and (ne . "不明") (not (findRE `^0+(\.0+)?\s*[a-zA-Z]*$` .)) -}}
 <span class="{{ $tagClass }}">重量: {{ . }}</span>
 {{- end -}}
 {{- end -}}
@@ -16,32 +16,32 @@
 {{- $volume := .quantity -}}
 {{- if not $volume }}{{- $volume = .content -}}{{- end -}}
 {{- with $volume }}
-{{- if not (findRE `^0+(\.0+)?\s*[a-zA-Z]*$` .) -}}
+{{- if and (ne . "不明") (not (findRE `^0+(\.0+)?\s*[a-zA-Z]*$` .)) -}}
 <span class="{{ $tagClass }}">内容量: {{ . }}</span>
 {{- end -}}
 {{- end -}}
 
 {{- with .count }}
-{{- if not (findRE `^0+(\.0+)?\s*[a-zA-Z]*$` .) -}}
+{{- if and (ne . "不明") (not (findRE `^0+(\.0+)?\s*[a-zA-Z]*$` .)) -}}
 <span class="{{ $tagClass }}">個数: {{ . }}</span>
 {{- end -}}
 {{- end -}}
 {{- with .capacity }}
-{{- if not (findRE `^0+(\.0+)?\s*[a-zA-Z]*$` .) -}}
+{{- if and (ne . "不明") (not (findRE `^0+(\.0+)?\s*[a-zA-Z]*$` .)) -}}
 <span class="{{ $tagClass }}">容量: {{ . }}</span>
 {{- end -}}
 {{- end -}}
 
 {{- with .material }}
-{{- if not (reflect.IsMap .) -}}
+{{- if and (ne . "不明") (not (reflect.IsMap .)) -}}
 <span class="{{ $tagClass }}">素材: {{ . }}</span>
 {{- end -}}
 {{- end -}}
 
 {{- $sizeParts := slice -}}
-{{- with .height }}{{- if not (findRE `^0+(\.0+)?\s*[a-zA-Z]*$` .) }}{{- $sizeParts = $sizeParts | append . -}}{{- end -}}{{- end -}}
-{{- with .width }}{{- if not (findRE `^0+(\.0+)?\s*[a-zA-Z]*$` .) }}{{- $sizeParts = $sizeParts | append . -}}{{- end -}}{{- end -}}
-{{- with .depth }}{{- if not (findRE `^0+(\.0+)?\s*[a-zA-Z]*$` .) }}{{- $sizeParts = $sizeParts | append . -}}{{- end -}}{{- end -}}
+{{- with .height }}{{- if and (ne . "不明") (not (findRE `^0+(\.0+)?\s*[a-zA-Z]*$` .)) }}{{- $sizeParts = $sizeParts | append . -}}{{- end -}}{{- end -}}
+{{- with .width }}{{- if and (ne . "不明") (not (findRE `^0+(\.0+)?\s*[a-zA-Z]*$` .)) }}{{- $sizeParts = $sizeParts | append . -}}{{- end -}}{{- end -}}
+{{- with .depth }}{{- if and (ne . "不明") (not (findRE `^0+(\.0+)?\s*[a-zA-Z]*$` .)) }}{{- $sizeParts = $sizeParts | append . -}}{{- end -}}{{- end -}}
 {{- if gt (len $sizeParts) 0 -}}
 <span class="{{ $tagClass }}">サイズ: {{ delimit $sizeParts " × " }}</span>
 {{- end -}}

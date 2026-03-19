@@ -122,7 +122,7 @@
         </div>
 
         <div class="hero-meta-tags">
-            {{ with $product.brand }}<span class="hero-tag">{{ . }}</span>{{ end }}
+            {{ with $product.brand }}{{ if ne . "不明" }}<span class="hero-tag">{{ . }}</span>{{ end }}{{ end }}
             {{ partial "product-spec-tags.html" (dict "specs" $product.specs "tagClass" "hero-tag") }}
         </div>
 
