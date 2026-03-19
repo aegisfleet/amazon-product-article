@@ -103,6 +103,9 @@
     --shadow-score-fair: rgba(55, 65, 81, 0.2);
     --bg-score-default: #fef9c3;
     --text-score-default: #92400e;
+
+    /* Recommendation Specific */
+    --color-recommend-why-header: #b91c1c;
 }
 
 /* Dark Mode (System Preference) */
@@ -176,6 +179,8 @@
         --bg-score-default: #451a03;
         --text-score-default: #fef3c7;
         --border-score-default: #d97706;
+
+        --color-recommend-why-header: #fca5a5;
     }
 }
 
@@ -243,4 +248,5 @@
     --bg-score-default: #451a03;
     --text-score-default: #fef3c7;
     --border-score-default: #d97706;
+    --color-recommend-why-header: #fca5a5;
 }
