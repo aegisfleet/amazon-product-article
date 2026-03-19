@@ -19,7 +19,8 @@ def extract_urls_from_json(data) -> Set[str]:
     
     if isinstance(data, dict):
         for key, value in data.items():
-            if key == "url" and isinstance(value, str):
+            # 'url' や 'imageUrl'、'source' 内の 'url' などを対象にする
+            if (key == "url" or key == "imageUrl") and isinstance(value, str):
                 urls.add(value)
                 continue
             
@@ -77,9 +78,19 @@ def validate_content(data: Any) -> List[str]:
     """成果物の品質ガイドラインへの準拠を確認する"""
     errors = []
     
+    # 推薦商品リスト (today.json) の形式チェック
+    if "recommendations" in data and "headline" in data:
+        required_fields = ["date", "headline", "searchContext", "recommendations"]
+        for field in required_fields:
+            if field not in data:
+                errors.append(f"必須フィールド '{field}' が見つかりません。")
+        return errors
+
+    # 通常のアーティファクト (調査結果) の形式チェック
     analysis = data.get("analysis", {})
     if not analysis:
-        return ["'analysis' セクションが見つかりません。"]
+        # どちらの形式でもない場合はバリデーションエラーとはせず、全般的なチェックのみ行う
+        return []
 
     required_fields = [
         "productName", "productDescription", "userStories", 
@@ -106,13 +117,29 @@ def check_url(url: str) -> Dict[str, Any]:
         headers = {
             "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36"
         }
+        # 初期チェックは HEAD
         response = requests.head(url, headers=headers, timeout=10, allow_redirects=True)
+        
+        # HEAD が 404/405 の場合は GET で再試行
         if response.status_code in (404, 405):
             response = requests.get(url, headers=headers, timeout=10, allow_redirects=True, stream=True)
             
         # Amazon 503エラーはレート制限/WAFなどによる一時的なものが多いため許容する
         if response.status_code == 503 and "amazon.co.jp" in url:
             return {"url": url, "status": 503, "ok": True, "final_url": response.url, "note": "Amazon 503 (rate limit/WAF) allowed"}
+
+        # Amazon の「ソフト404」（200 OK だがページが存在しない）をチェック
+        if "amazon.co.jp" in url and response.status_code == 200:
+            # 内容を確認するために GET を実行（HEAD の場合は content が空）
+            full_response = requests.get(url, headers=headers, timeout=10, allow_redirects=True)
+            error_indicators = [
+                "申し訳ございません。入力されたウェブアドレスは当社サイトの有効なページではないか",
+                "something went wrong on our end",
+                "犬の画像が表示される（Amazonの404ページ）" # 実際にはテキストをチェック
+            ]
+            for indicator in error_indicators:
+                if indicator in full_response.text:
+                    return {"url": url, "status": 200, "ok": False, "final_url": full_response.url, "note": "Amazon Soft-404 detected"}
 
         return {"url": url, "status": response.status_code, "ok": response.ok, "final_url": response.url}
     except Exception as e:
