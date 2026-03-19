@@ -89,14 +89,27 @@
                     </ul>
                     {{ end }}
 
-                    <div style="text-align: right; margin-top: var(--spacing-md); display: flex; gap: var(--spacing-sm); justify-content: flex-end; flex-wrap: wrap;">
+                    <div style="text-align: right; margin-top: var(--spacing-sm); display: flex; gap: var(--spacing-sm); justify-content: flex-end; align-items: center; flex-wrap: wrap;">
                         {{ $articlePage := site.GetPage (printf "/articles/%s" $rec.asin) }}
                         {{ if $articlePage }}
-                        <a href="{{ $articlePage.RelPermalink }}" class="btn-internal-small">
-                            ✍️ サイト内レビュー
-                        </a>
+                            {{/* 記事の Front Matter からスコアを取得 */}}
+                            {{ $score := $articlePage.Params.score | default 0 }}
+                            {{ if $score }}
+                                {{ $scoreClass := "score-fair" }}
+                                {{ if ge $score 80 }}
+                                    {{ $scoreClass = "score-excellent" }}
+                                {{ else if ge $score 60 }}
+                                    {{ $scoreClass = "score-good" }}
+                                {{ end }}
+                                <span class="card-score {{ $scoreClass }}" style="font-size: 0.85rem; padding: 2px 8px; margin-top: var(--spacing-sm);">
+                                    🏆 {{ $score }}点
+                                </span>
+                            {{ end }}
+                            <a href="{{ $articlePage.RelPermalink }}" class="btn-internal-small" style="margin-top: var(--spacing-sm);">
+                                ✍️ サイト内レビュー
+                            </a>
                         {{ end }}
-                        <a href="{{ printf "https://www.amazon.co.jp/dp/%s?tag=aegis-22" $rec.asin }}" class="btn-amazon-small" target="_blank" rel="noopener noreferrer">
+                        <a href="{{ printf "https://www.amazon.co.jp/dp/%s?tag=aegis-22" $rec.asin }}" class="btn-amazon-small" target="_blank" rel="noopener noreferrer" style="margin-top: var(--spacing-sm);">
                             🛒 Amazonで見る
                         </a>
                     </div>
