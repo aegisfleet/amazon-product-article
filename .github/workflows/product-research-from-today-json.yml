@@ -12,7 +12,7 @@ jobs:
     permissions:
       contents: read
     outputs:
-      products-found: ${{ steps.search.outputs.products-found }}
+      products-found: ${{ steps.search.outputs.products-found || 'false' }}
 
     steps:
     - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
@@ -32,10 +32,16 @@ jobs:
     - name: Extract ASINs from today.json
       id: extract
       run: |
-        ASINS=$(node -e "const data = require('./data/recommendations/today.json'); console.log(data.recommendations.map(r => r.asin).join(','));")
+        ASINS=$(node -e "const fs = require('fs'); const path = require('path'); const data = require('./data/recommendations/today.json'); const filtered = data.recommendations.filter(r => !fs.existsSync(path.join('data', 'investigations', r.asin + '.json'))).map(r => r.asin); console.log(filtered.join(','));")
         echo "asins=$ASINS" >> $GITHUB_OUTPUT
+        if [ -z "$ASINS" ]; then
+          echo "found=false" >> $GITHUB_OUTPUT
+        else
+          echo "found=true" >> $GITHUB_OUTPUT
+        fi
 
     - name: Run product search
+      if: steps.extract.outputs.found == 'true'
       id: search
       env:
         AMAZON_CREATORS_APPLICATION_ID: ${{ secrets.AMAZON_CREATORS_APPLICATION_ID }}
