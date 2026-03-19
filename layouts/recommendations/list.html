@@ -62,9 +62,9 @@
                         {{ $rec.price }}
                     </div>
 
-                    <h3 style="margin: var(--spacing-xs) 0 var(--spacing-sm); font-size: 1.4rem; line-height: 1.4;">
+                    <h3 class="card-title" style="margin: var(--spacing-xs) 0 var(--spacing-sm); font-size: 1.4rem; line-height: 1.4;">
                         <a href='{{ printf "https://www.amazon.co.jp/dp/%s?tag=aegis-22" $rec.asin }}' target="_blank"
-                            rel="noopener noreferrer" style="color: var(--color-text-main); text-decoration: none;">{{
+                            rel="noopener noreferrer">{{
                             $rec.title }}</a>
                     </h3>
 
