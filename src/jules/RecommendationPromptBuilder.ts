@@ -42,6 +42,7 @@ export class RecommendationPromptBuilder {
 ## 成果物の作成と検証
 - 調査結果を \`data/recommendations/today.json\` に保存してください。
 - **重要**: 今回の調査において、\`data/recommendations/today.json\` 以外のファイル（収集した一時データスクリプトや \`tmp/\` 以下のファイルなど）は**絶対にコミット（Git Commit）しないでください**。リポジトリに変更を含めるのは \`today.json\` のみです。
+- **検証**: 成果物を生成した後、必ず \`python scripts/validate_artifact.py data/recommendations/today.json\` を実行し、構造の正当性やリンク切れ（画像含む）がないことを確認してください。
 - ハルシネーション（存在しない商品、架空のセール、実在しないニュースやURLの創作）は厳禁です。必ず実在するエビデンスへのリンクを記載してください。
 
 ---
