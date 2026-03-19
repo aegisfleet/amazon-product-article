@@ -19,6 +19,8 @@ describe('CategoryNormalizer', () => {
 
     it('should return false for names matching invalid patterns', () => {
       const invalidNames = [
+        'Fire TV 商品一覧ページ',
+        'L202StorageItems02Sub',
         'ブラックフライデー',
         'ブラックフライデーDealKitchen',
         'ブラックフライデーdealelectronics',
