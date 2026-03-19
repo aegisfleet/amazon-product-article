@@ -1,138 +1,131 @@
 {
   "analysis": {
-    "productName": "Amzfast 34インチ ゲーミングモニター AMZG34C5Q Pro",
+    "productName": "Amzfast 34インチ 240Hz 曲面ウルトラワイドゲーミングモニター",
     "parentAsin": "B0F6YDV6CV",
-    "productDescription": "34インチUWQHDの高解像度と240Hzの超高速リフレッシュレートを両立し、3万円台という驚異的な価格を実現した曲面ゲーミングモニターです。",
+    "productDescription": "3440x1440のUWQHD解像度と240Hzのリフレッシュレートを備えた34インチの曲面(1500R)ウルトラワイドゲーミングモニターです。VAパネルを採用し、広色域と高いコントラスト比で没入感の高い映像体験を提供します。",
     "productUsage": [
-      "FPSやレーシングゲームでの高フレームレートプレイ (240Hz)",
-      "ウルトラワイド画面を活かした没入感のあるRPG体験",
-      "PIP/PBP機能を活用した2画面同時出力（ゲーム＋動画など）",
-      "広大なデスクトップ領域を用いたマルチタスク業務"
+      "FPSやRPGなどのゲームプレイ",
+      "PIP/PBP機能を利用したマルチタスク作業",
+      "動画鑑賞やクリエイティブ作業"
     ],
     "positivePoints": [
-      "UWQHD解像度で240Hz駆動というハイエンド級のカタログスペック",
-      "同等スペックの他社製品と比較して半額近い圧倒的なコストパフォーマンス",
-      "HDMI 2.1ポートを2基搭載し、最新のコンソール機やPCとの接続に有利",
-      "5年保証および無輝点1年保証が付帯しており、長期使用への配慮がある"
+      "240Hzの高リフレッシュレートと1ms(MPRT)の応答速度による滑らかな描画",
+      "3440x1440のウルトラワイド解像度と1500Rの曲率による高い没入感",
+      "sRGB 130%の広色域と3000:1の高コントラスト比",
+      "PIP/PBP機能や豊富なインターフェース(HDMI 2.1 x2, DP 1.4 x2)",
+      "5年間の長期保証と1ヶ月以内の無償交換サポート"
     ],
     "negativePoints": [
-      "ブランドの知名度が低く、実機レビューも皆無であるため信頼性が未知数",
-      "VAパネル採用のため、IPSと比較して視野角や残像感で劣る可能性がある",
-      "OSDメニューの操作性や日本語翻訳の精度に不安が残る（新興ブランド特有の傾向）",
-      "VESAマウント周辺の形状により、一部のモニターアーム取り付けにスペーサーが必要"
+      "無名ブランド（Amzfast）のため、長期的な信頼性やサポートに不安を感じる可能性がある",
+      "VESAマウント使用時にスペーサーが必要になる場合があり、取り付けに工夫が必要"
     ],
     "useCases": [
-      "低予算で最強のゲーミング環境を構築したいFPS/TPSゲーマー",
-      "作業効率を上げるためにウルトラワイドモニターを安価に導入したいビジネスユーザー",
-      "最新スペックの格安デバイスを試してみたいガジェット愛好家"
+      "広大なマップを見渡す必要があるFPSやMMORPGのプレイ",
+      "複数のウィンドウを並べて行うプログラミングや動画編集",
+      "ゲームをしながら別のデバイスの映像を同時に表示する作業"
     ],
-    "userStories": [
-      {
-        "userType": "ゲーマー (推測)",
-        "scenario": "Apex Legendsを240Hzでプレイ",
-        "experience": "240Hzの滑らかさは圧倒的で、敵の動きが目で追いやすくなる。VAパネル特有の黒の沈み込みは良いが、激しい動きで若干の残像を感じるかもしれない。（※スペックに基づく推測）",
-        "sentiment": "mixed"
-      },
-      {
-        "userType": "デスクワーカー (推測)",
-        "scenario": "複数のウィンドウを開いて作業",
-        "experience": "2枚のモニターを置くより省スペースで、ベゼルがないため視線移動がスムーズ。文字の表示も鮮明であれば、仕事用として非常に優秀なコスパ。（※スペックに基づく推測）",
-        "sentiment": "positive"
-      }
-    ],
-    "userImpression": "現時点で実際のユーザーレビューは確認できないが、カタログスペック上のコストパフォーマンスは市場最高レベル。信頼性を度外視すれば、非常に魅力的な選択肢である。",
+    "userStories": [],
+    "userImpression": "3万円台半ばという低価格ながら、240Hzの高リフレッシュレートやウルトラワイド解像度を備え、圧倒的なコストパフォーマンスを誇るゲーミングモニター。ただし、新興ブランドのためサポート面を気にする声も想定されるが、5年保証でカバーしている点が評価される。",
     "sources": [
       {
-        "name": "Amazon商品ページ仕様",
+        "id": "src-amazon-B0DZ6LG8PZ",
+        "name": "Amazon商品ページ (Amzfast AMZG34C5Q Pro)",
         "url": "https://www.amazon.co.jp/dp/B0DZ6LG8PZ",
-        "credibility": "高 (公式スペック)"
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-03-20",
+        "author": "Amzfast Official",
+        "conflictOfInterest": "possible",
+        "notes": "スペック情報、価格情報（35,979円、過去価格43,980円からの割引）、保証内容を取得。"
       }
     ],
-    "lastInvestigated": "2026-01-22",
+    "claims": [
+      {
+        "claim": "リフレッシュレート240Hz、応答速度1ms(MPRT)に対応し、競技レベルの反応速度を実現。",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-amazon-B0DZ6LG8PZ"
+        ],
+        "crossChecked": false,
+        "notes": "商品スペックの記載に基づく。"
+      },
+      {
+        "claim": "3万円台で34インチのウルトラワイド曲面240Hzモニターを購入できる圧倒的なコストパフォーマンス。",
+        "category": "comparativeAdvantage",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-amazon-B0DZ6LG8PZ"
+        ],
+        "crossChecked": false,
+        "notes": "価格とスペックから判断。"
+      }
+    ],
+    "lastInvestigated": "2026-03-20",
     "competitiveAnalysis": [
       {
-        "name": "Xiaomi ゲーミングモニター G34WQi",
-        "asin": "B0CWS2YKNK",
-        "priceComparison": "約+4,000円 (39,980円)",
-        "featureComparison": [
-          "180Hz (Amzfastは240Hz)",
-          "ブランド信頼性が高い"
-        ],
-        "differentiators": [
-          "Xiaomiのエコシステムとビルドクオリティ",
-          "Amzfastはより高いリフレッシュレートを提供"
-        ]
-      },
-      {
-        "name": "KOORUI 34E6C",
+        "name": "KOORUI 34インチ ウルトラワイド 湾曲 ゲーミングモニター",
         "asin": "B0BZYP24JC",
-        "priceComparison": "約-2,000円 (33,800円)",
+        "priceComparison": "対象商品（Amzfast）は競合よりも安価でありながら、リフレッシュレートが高い（Amzfastは240Hz、KOORUIは180Hz）。そのため、コストパフォーマンスにおいて優位性がある。",
         "featureComparison": [
-          "180Hz (Amzfastは240Hz)",
-          "格安モニターとして定評あり"
+          "共通点：34インチのウルトラワイド(3440x1440)、VAパネル、曲面デザイン。",
+          "相違点：Amzfastは240Hz対応でHDMI 2.1 x2搭載、KOORUIは180Hz対応でHDMI x2(バージョン未確認)搭載。"
         ],
         "differentiators": [
-          "KOORUIはユーザー情報が多い",
-          "AmzfastはHDMI 2.1と240Hzでスペック優位"
+          "Amzfast 34インチ 240Hz 曲面ウルトラワイドゲーミングモニターの利点：より高いリフレッシュレート（240Hz）と、PIP/PBP機能、5年間の長期保証が魅力。インターフェースも豊富。",
+          "KOORUI 34インチ ウルトラワイド 湾曲 ゲーミングモニターの利点：KOORUIは格安モニター市場である程度の実績と知名度がある。"
         ]
       },
       {
-        "name": "Z-Edge UG34W",
-        "asin": "B0DCZ1PVKM",
-        "priceComparison": "ほぼ同価格 (36,802円)",
+        "name": "LG ゲーミングモニター UltraGear 34G600A-BAJP",
+        "asin": "B0FC2DVN2N",
+        "priceComparison": "対象商品（Amzfast）は競合よりも大幅に安価であり、スペック上の見劣りもないため、コストパフォーマンスが非常に高い。",
         "featureComparison": [
-          "IPSパネル採用",
-          "165Hz (Amzfastは240Hz)"
+          "共通点：34インチ ウルトラワイド(3440x1440)、曲面デザイン。",
+          "相違点：AmzfastはVAパネルで240Hz、1500Rの曲率。LGは160Hz、1800Rの曲率で大手メーカーの信頼性がある。"
         ],
         "differentiators": [
-          "発色と視野角重視ならZ-Edge (IPS)",
-          "応答速度とコントラスト重視ならAmzfast (VA)"
+          "Amzfast 34インチ 240Hz 曲面ウルトラワイドゲーミングモニターの利点：価格が圧倒的に安く、スペック上のリフレッシュレートも240Hzと高い。",
+          "LG ゲーミングモニター UltraGear 34G600A-BAJPの利点：大手ディスプレイメーカーLGの高い品質と信頼性、ブランド力がある。"
         ]
       }
     ],
     "recommendation": {
       "targetUsers": [
-        "コスパ最優先でハイエンドスペックを求める人",
-        "人柱覚悟で新興ブランドを試せる人",
-        "VAパネルの特性（コントラスト重視・残像感）を理解している人"
+        "予算を抑えつつ高リフレッシュレート(240Hz)のウルトラワイドモニターを導入したいゲーマー",
+        "PIP/PBP機能を活用してマルチタスクを効率化したい人",
+        "新興ブランドでも長期保証(5年)があるなら試してみたい人"
       ],
       "pros": [
-        "3万円台で240Hz UWQHDという破格のスペック",
-        "HDMI 2.1 x2, DP 1.4 x2という豊富な接続端子",
-        "PIP/PBP対応で多用途に使える"
+        "3万円台半ばで34インチウルトラワイド・240Hzという破格のスペック",
+        "HDMI 2.1 x2とDP 1.4 x2の豊富なインターフェース",
+        "PIP/PBP機能による便利なマルチタスク",
+        "5年間の長期保証"
       ],
       "cons": [
-        "情報不足による信頼性リスク",
-        "初期不良やサポート対応への不安",
-        "VAパネルの特性理解が必要"
+        "新興ブランドのため、長期的な信頼性は未知数",
+        "VESAマウント使用時にスペーサーが必要な場合がある"
       ],
-      "score": 78,
-      "scoreRationale": "[基本点: 70]\n[加点: +10] (240Hz/UWQHDという通常10万円クラスのスペック)\n[加点: +15] (競合他社を突き放す圧倒的な価格設定)\n[減点: -5] (VAパネルの特性と安価な部材による品質懸念)\n[減点: -12] (ブランド実績皆無・レビュー不在による高い購入リスク)\n[合計: 78]"
+      "score": 85,
+      "scoreRationale": "[基本点: 70]\n[加点: +15] (34インチUWQHD・240Hz・HDMI2.1対応で3万円台という圧倒的なコストパフォーマンス)\n[加点: +5] (5年間の長期保証とPIP/PBP機能の利便性)\n[減点: -5] (新興ブランド特有の品質のばらつきや信頼性への懸念)\n[合計: 85]"
     },
     "technicalSpecs": {
-      "display": {
-        "size": "34インチ",
-        "resolution": "3440 x 1440 (UWQHD)",
-        "type": "VA / 曲面1500R",
-        "refreshRate": "240Hz"
-      },
       "dimensions": {
+        "height": "190mm",
         "width": "807mm",
-        "height": "440mm",
-        "depth": "190mm",
-        "weight": "5.3kg"
+        "depth": "440mm"
       },
-      "connectivity": [
-        "HDMI 2.1 x2",
-        "DisplayPort 1.4 x2",
-        "Audio Out"
-      ],
+      "weight": "5.3kg",
+      "capacity": "なし",
+      "material": "プラスチック等",
+      "origin": "不明",
       "other": [
-        "HDR400",
-        "FreeSync/Adaptive Sync",
-        "PIP/PBP",
-        "VESA 75x75mm",
-        "5年保証"
+        "HDR400対応",
+        "Adaptive Sync (VRR対応)",
+        "フリッカー防止",
+        "ブルーライト低減",
+        "PIP / PBP機能搭載",
+        "VESAマウント対応 (75x75mm)"
       ]
     }
   }
