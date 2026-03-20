@@ -59,7 +59,7 @@
                     </div>
 
                     <div style="font-size: 1.75rem; font-weight: bold; color: var(--color-danger); line-height: 1.2;">
-                        {{ $rec.price }}
+                        {{ partial "utils-price-format.html" $rec.price }}
                     </div>
 
                     <h3 class="card-title" style="margin: var(--spacing-xs) 0 var(--spacing-sm); font-size: 1.4rem; line-height: 1.4;">
