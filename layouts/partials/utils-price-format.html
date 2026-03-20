@@ -1,0 +1,22 @@
+{{/* Price Format Utility */}}
+{{ $price := . }}
+{{ if not $price }}
+  {{ return "" }}
+{{ end }}
+
+{{ $priceStr := printf "%v" $price }}
+{{ if in $priceStr "￥" }}
+  {{ return $priceStr }}
+{{ end }}
+
+{{/* Extract only digits to format if it's a raw number or has commas but no currency symbol */}}
+{{/* Also handle cases like "9,937" (no yen mark) */}}
+{{ $priceClean := replace (replace $priceStr "," "") " " "" }}
+{{ $matches := findRE "^[0-9]+$" $priceClean }}
+
+{{ if gt (len $matches) 0 }}
+  {{ $priceRaw := index $matches 0 | int }}
+  {{ return (printf "￥%s" (lang.FormatNumber 0 $priceRaw)) }}
+{{ end }}
+
+{{ return $priceStr }}
