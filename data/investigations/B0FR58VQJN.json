@@ -1,0 +1,178 @@
+{
+  "analysis": {
+    "productName": "REDMAGIC 11 Pro",
+    "parentAsin": "B0G48JBB47",
+    "productDescription": "Snapdragon 8 Elite Gen 5を搭載し、業界初の水冷ファン内蔵の冷却システムを備えたハイエンドゲーミングスマートフォンです。7500mAhの超大容量バッテリーと80W有線・ワイヤレス充電にも対応しています。",
+    "productUsage": [
+      "高負荷な3Dゲームのプレイ",
+      "長時間の動画視聴やライブ配信",
+      "高い処理能力を必要とするアプリの同時操作"
+    ],
+    "positivePoints": [
+      "最高峰のSnapdragon 8 Elite Gen 5プロセッサによる圧倒的な処理性能",
+      "水冷と空冷を組み合わせたAquaCore冷却システムによる安定したパフォーマンス持続",
+      "7500mAhの大容量バッテリーとバイパス給電対応による長時間の安定駆動",
+      "IPX8防水への対応",
+      "最大144Hzリフレッシュレートとベゼルレスフルディスプレイによる高い没入感"
+    ],
+    "negativePoints": [
+      "約230gとスマートフォンとしては重量がある",
+      "高価格帯（約13万円）であるため導入ハードルが高い"
+    ],
+    "useCases": [
+      "競技性の高いFPSやアクションゲームを長時間プレイする",
+      "ゲーム配信を行いながら端末の充電と冷却を両立させる"
+    ],
+    "userStories": [],
+    "userImpression": "",
+    "sources": [
+      {
+        "id": "src-1",
+        "name": "Amazon商品ページ: REDMAGIC 11 Pro",
+        "url": "https://www.amazon.co.jp/dp/B0FR58VQJN",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-03-20",
+        "author": "nubia / Fastlane Japan株式会社",
+        "conflictOfInterest": "disclosed",
+        "notes": "商品仕様（Snapdragon 8 Elite Gen 5、水冷ファン内蔵、7500mAhバッテリー、80W急速充電、ワイヤレス充電対応、IPX8防水など）の確認元"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "水冷と空冷を組み合わせたAquaCore冷却システムによる安定したパフォーマンス持続",
+        "category": "durability",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "crossChecked": false,
+        "notes": "Amazon商品ページの公式説明による"
+      },
+      {
+        "claim": "7500mAhの大容量バッテリーとバイパス給電対応による長時間の安定駆動",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "crossChecked": false,
+        "notes": "Amazon商品ページの公式説明による"
+      }
+    ],
+    "lastInvestigated": "2026-03-20",
+    "competitiveAnalysis": [
+      {
+        "name": "Xiaomi POCO F7 Ultra",
+        "asin": "B0DYF7CFJ5",
+        "priceComparison": "対象商品より安いが、水冷ファン内蔵による持続的な冷却性能と7500mAhの超大容量バッテリーによる長時間のゲームプレイ適性においては対象商品が勝る",
+        "featureComparison": [
+          "共通点：Snapdragon 8 Eliteプロセッサ搭載の高性能スマートフォンである点",
+          "相違点：対象商品は水冷ファン内蔵の冷却システムと7500mAhのバッテリーを搭載し、ゲーム用途に特化している点"
+        ],
+        "differentiators": [
+          "REDMAGIC 11 Proの利点：水冷ファンと超大容量バッテリーによる長時間のゲームプレイにおける安定性と持続力",
+          "Xiaomi POCO F7 Ultraの利点：高性能プロセッサを搭載しながらも価格が安く、コストパフォーマンスに優れている点"
+        ]
+      },
+      {
+        "name": "Xiaomi 15 Ultra",
+        "asin": "B0DXFPWYZ4",
+        "priceComparison": "対象商品より高価格。対象商品はゲーム用途に特化した冷却とバッテリー性能を持つため、ゲームを主目的とする場合は対象商品の方が費用対効果が高い",
+        "featureComparison": [
+          "共通点：Snapdragon 8 Eliteプロセッサを搭載したハイエンド端末である点",
+          "相違点：対象商品は水冷ファンなどのゲーミング特化機能を持つのに対し、本機種はカメラ性能などの総合的なプレミアム体験に特化している点"
+        ],
+        "differentiators": [
+          "REDMAGIC 11 Proの利点：水冷ファン内蔵やバイパス充電など、ゲーム体験を極限まで高める専用機能と優れたコストパフォーマンス",
+          "Xiaomi 15 Ultraの利点：ハイエンドモデルとしてカメラ性能やブランドの総合的な機能性を求めるケースに適している点"
+        ]
+      },
+      {
+        "name": "Xiaomi POCO F8 Pro",
+        "asin": "B0G5WH8NM3",
+        "priceComparison": "対象商品より価格が抑えられているが、対象商品は水冷ファンや7500mAhバッテリーといったより高度なゲーム特化機能を提供している",
+        "featureComparison": [
+          "共通点：最新のSnapdragon 8 Eliteを搭載し、高い基本性能を持つ点",
+          "相違点：本機種は6210mAhバッテリーと100W充電であるのに対し、対象商品は7500mAhバッテリーと水冷ファン内蔵の冷却システムを備えている点"
+        ],
+        "differentiators": [
+          "REDMAGIC 11 Proの利点：水冷ファンによる強力な冷却と大容量バッテリーにより、高負荷ゲームを長時間快適にプレイできる点",
+          "Xiaomi POCO F8 Proの利点：初期費用を抑えつつ高い処理能力と100Wの超高速充電を利用できる点"
+        ]
+      },
+      {
+        "name": "REDMAGIC 10 Air",
+        "asin": "B0F6LP6FLT",
+        "priceComparison": "対象商品より安価であるが、対象商品はチップセットが新世代（Snapdragon 8 Elite Gen 5）であり、バッテリー容量や防水性能でも勝っている",
+        "featureComparison": [
+          "共通点：REDMAGICブランドのゲーミングスマートフォンである点",
+          "相違点：本機種はSnapdragon 8 Gen 3と6000mAhバッテリーであるのに対し、対象商品は次世代チップと7500mAhバッテリー、IPX8防水を備えている点"
+        ],
+        "differentiators": [
+          "REDMAGIC 11 Proの利点：最新のプロセッサと水冷システム、大容量バッテリーによる最高峰のパフォーマンスと安定性",
+          "REDMAGIC 10 Airの利点：ゲーミングスマホとしての十分な性能を持ちながら、価格が抑えられている点"
+        ]
+      },
+      {
+        "name": "nubia Z80 Ultra",
+        "asin": "B0FX2X2G5X",
+        "priceComparison": "対象商品と同等の高価格帯。対象商品は水冷ファンによるゲームへの特化度が高く、長時間のゲーム用途では対象商品が適している",
+        "featureComparison": [
+          "共通点：Snapdragon 8 Elite Gen 5を搭載し、大容量バッテリーを備えた高性能モデルである点",
+          "相違点：本機種は35mmレンズなどカメラ性能や総合的なフラッグシップとしての機能を重視しているのに対し、対象商品はゲーム特化の冷却機構を持つ点"
+        ],
+        "differentiators": [
+          "REDMAGIC 11 Proの利点：水冷ファンによる強力な排熱性能で、高負荷ゲームにおけるサーマルスロットリングを防ぐ点",
+          "nubia Z80 Ultraの利点：高性能カメラや総合的なフラッグシップスマートフォンとしての体験を重視するケースに適している点"
+        ]
+      },
+      {
+        "name": "OnePlus 15",
+        "asin": "B0FXLWVS27",
+        "priceComparison": "対象商品と近い価格帯。対象商品は水冷ファン内蔵によりゲーム中の冷却性能に特化しており、ゲームを重視するユーザーには対象商品の方が魅力的な選択となる",
+        "featureComparison": [
+          "共通点：Snapdragon 8 Elite Gen 5を搭載したハイエンド端末である点",
+          "相違点：本機種は165Hzリフレッシュレートや120W高速充電を備える一方、対象商品は水冷ファンや7500mAhの大容量バッテリーなどゲームプレイ中の安定性を重視している点"
+        ],
+        "differentiators": [
+          "REDMAGIC 11 Proの利点：水冷ファンと充電分離機能により、長時間の高負荷ゲームプレイでも発熱を抑えて安定稼働できる点",
+          "OnePlus 15の利点：165Hzの高速リフレッシュレートと120Wの超高速充電による、よりスムーズな操作性と素早いバッテリー回復"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "ヘビーゲーマー",
+        "eスポーツプレイヤー",
+        "最新の最高スペックを求めるユーザー"
+      ],
+      "pros": [
+        "圧倒的な処理性能",
+        "長時間のゲームプレイでも発熱を抑える優れた冷却性能",
+        "超大容量バッテリーと充電分離機能"
+      ],
+      "cons": [
+        "価格が高い",
+        "本体重量が重い"
+      ],
+      "score": 85,
+      "scoreRationale": "[基本点: 70]\n[加点: +10] (Snapdragon 8 Elite Gen 5搭載による最高峰の処理性能)\n[加点: +5] (水冷ファン内蔵による優れた冷却性能)\n[加点: +5] (7500mAhの大容量バッテリーと充電分離機能)\n[減点: -5] (約230gとスマートフォンとしては重め)\n[合計: 85]"
+    },
+    "technicalSpecs": {
+      "display": "約17.4cm BOE製X10 AMOLEDフルディスプレイ (最大144Hzリフレッシュレート)",
+      "processor": "Snapdragon 8 Elite Gen 5 (最大4.6GHz)",
+      "memory": "12GB LPDDR5T",
+      "storage": "256GB UFS 4.1 Pro",
+      "battery": "7500mAh (最大80W有線急速充電対応、ワイヤレス充電対応)",
+      "cooling": "水冷と空冷を組み合わせたAquaCore冷却システム",
+      "weight": "約230g",
+      "waterResistance": "IPX8",
+      "other": [
+        "3D超音波指紋認証センサー",
+        "おサイフケータイ対応",
+        "充電分離（バイパス充電）機能"
+      ]
+    }
+  }
+}
