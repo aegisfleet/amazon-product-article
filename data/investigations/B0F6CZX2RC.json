@@ -7,18 +7,17 @@
       "USB-Cケーブル1本でノートPCへの最大90W給電と映像出力を同時に行い、デスク周りをスッキリさせる。",
       "PCを起動せずに、付属リモコンでNetflix、YouTube、Prime Videoなどの動画配信サービスをテレビ感覚で視聴する。",
       "3440×1440の高解像度ウルトラワイド画面を活用し、ブラウザと資料を並べて効率的にマルチタスクを行う。",
-      "AirPlay 2やMiracastを使用して、スマートフォンやタブレットの画面をワイヤレスで大画面に共有する。"
+      "AirPlayやMiracastを使用して、スマートフォンやタブレットの画面をワイヤレスで大画面に共有する。"
     ],
     "positivePoints": [
       "PC不要で主要な動画配信サービスが楽しめるwebOS搭載という独自の強み。",
       "34インチ・3440×1440の高解像度により、作業領域が広く生産性が向上する。",
       "USB-Cケーブル1本で最大90WのPD給電が可能で、ハイスペックなノートPCも充電できる。",
-      "ホワイトカラーの清潔感あるデザインと、曲面ディスプレイによる高い没入感。",
+      "ホワイトカラーの清潔感あるデザインと、1800R曲面ディスプレイによる高い没入感。",
       "7W+7Wのスピーカーを内蔵しており、外部スピーカーなしでも十分な音量が得られる。"
     ],
     "negativePoints": [
       "リフレッシュレートが100Hzのため、本格的なFPSゲーム用途には専用ゲーミングモニターに劣る。",
-      "パネルタイプ（IPS/VA）が明記されておらず、視野角や色の正確性を重視するクリエイターは詳細確認が必要。",
       "スタンドの調整機能（スイベルやピボットなど）が限定的である可能性がある。"
     ],
     "useCases": [
@@ -26,71 +25,117 @@
       "配線を極力減らし、白いデバイスで統一したいミニマリストのデスク環境。",
       "PCだけでなく、スマホやタブレットの映像も手軽に大画面で楽しみたいリビングや寝室。"
     ],
-    "userStories": [
-      {
-        "userType": "30代 在宅ワーカー",
-        "scenario": "日中の業務から夜の映画鑑賞への切り替え",
-        "experience": "（推測）仕事中はUSB-CでMacBookを接続し、広大な作業領域でExcelとZoomを併用。終業後はPCをスリープさせ、リモコン一つでNetflixを起動。椅子にもたれてリラックスしながら映画を楽しめるのが最高に快適。",
-        "sentiment": "positive"
-      },
-      {
-        "userType": "一人暮らしの学生",
-        "scenario": "テレビ代わりのメインディスプレイとして",
-        "experience": "（推測）部屋が狭いのでテレビとモニターを置けず、これ一台に統合。PCゲームもそこそこできて、寝る前にはベッドからリモコンでYouTubeを見られる。白いデザインが部屋に圧迫感を与えないのも気に入っている。",
-        "sentiment": "positive"
-      }
-    ],
-    "userImpression": "34インチウルトラワイドという生産性の高いフォーマットに、スマートTVの利便性を融合させた「ありそうでなかった」製品。USB-C 90W給電という強力なドッキング機能も備えており、現代のテレワーク環境に最適解を提供する一台と評価できる。",
+    "userStories": [],
+    "userImpression": "34インチ曲面ウルトラワイドという生産性の高いフォーマットに、スマートTVの利便性を融合させた「ありそうでなかった」製品。USB-C 90W給電という強力なドッキング機能も備えており、現代のテレワーク環境に最適解を提供する一台と評価できる。",
     "sources": [
       {
+        "id": "src-1",
         "name": "Amazon Product Page",
         "url": "https://www.amazon.co.jp/dp/B0F6CZX2RC",
-        "credibility": "High"
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2024-03-21",
+        "author": "Amazon",
+        "conflictOfInterest": "none",
+        "notes": "製品仕様、価格、特徴の確認"
       }
     ],
-    "lastInvestigated": "2026-01-22",
+    "claims": [
+      {
+        "claim": "webOS搭載でPCなしで動画配信サービスが視聴可能",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": ["src-1"],
+        "crossChecked": true,
+        "notes": "公式の製品仕様にて確認"
+      },
+      {
+        "claim": "USB Type-Cによる最大90Wの給電に対応",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": ["src-1"],
+        "crossChecked": true,
+        "notes": "公式の製品仕様にて確認"
+      }
+    ],
+    "lastInvestigated": "2026-03-21",
     "competitiveAnalysis": [
       {
-        "name": "Samsung Smart Monitor M7 (32インチ)",
-        "asin": null,
-        "priceComparison": "価格帯は近いが、こちらはウルトラワイドではない",
+        "name": "LG MyView Smart Monitor 34SR60QC-B",
+        "asin": "B0DK932RM1",
+        "priceComparison": "同価格帯で展開されている。",
         "featureComparison": [
-          "4K (3840x2160) 解像度",
-          "フラットスクリーン",
-          "Tizen OS搭載"
+          "共通点：34インチウルトラワイド解像度、100Hzリフレッシュレート、webOS搭載スマートモニター。",
+          "相違点：対象商品は1800Rの曲面ディスプレイでホワイトカラー、給電能力が最大90W。34SR60QC-Bはフラット画面でブラックカラー。"
         ],
         "differentiators": [
-          "LGはウルトラワイドによる作業領域の横幅が強み",
-          "LGは曲面による没入感がある",
-          "Samsungは4Kによる画素密度と縦解像度が強み"
+          "LG MyView Smart Monitor 34SR63QA-Wの利点：曲面ディスプレイによる没入感と、ホワイト基調の明るいデスク環境の構築に適している点。また、より強力な90WのPD給電機能。",
+          "LG MyView Smart Monitor 34SR60QC-Bの利点：フラットディスプレイを好むユーザーや、ブラック基調のデバイスで統一したい場合に向いている点。"
         ]
       },
       {
         "name": "LG UltraGear 34G600A-BAJP",
         "asin": "B0FC2DVN2N",
-        "priceComparison": "同価格帯 (約52,000円)",
+        "priceComparison": "対象商品とほぼ同等の価格帯。",
         "featureComparison": [
-          "リフレッシュレート160Hz",
-          "1ms応答速度",
-          "ゲーミング特化機能 (FreeSync Premiumなど)"
+          "共通点：LG製の34インチ曲面ウルトラワイドモニター。",
+          "相違点：対象商品はwebOS搭載のスマートモニターで100Hz。34G600A-BAJPは160Hz対応の純粋なゲーミングモニター。"
         ],
         "differentiators": [
-          "34G600Aは純粋なゲーミングモニターでスマート機能なし",
-          "34SR63QA-WはUSB-C給電とwebOSによる利便性が圧倒的優位"
+          "LG MyView Smart Monitor 34SR63QA-Wの利点：USB-C給電機能やwebOSによる単体での動画視聴など、テレワークやエンタメ用途での利便性に優れる点。",
+          "LG UltraGear 34G600A-BAJPの利点：160Hzの高リフレッシュレートやゲーミング特化機能があり、本格的なPCゲームプレイを重視するケースに適している点。"
         ]
       },
       {
-        "name": "KOORUI 34インチ ウルトラワイド",
-        "asin": "B0BZYP24JC",
-        "priceComparison": "約33,000円と非常に安価",
+        "name": "KOORUI 曲面ゲーミングモニター 34インチ (B0FXGDDVSB)",
+        "asin": "B0FXGDDVSB",
+        "priceComparison": "対象商品より大幅に安価に設定されている。",
         "featureComparison": [
-          "165Hzリフレッシュレート",
-          "VAパネル",
-          "基本的なインターフェースのみ"
+          "共通点：34インチのウルトラワイド曲面(3440×1440)ディスプレイ。",
+          "相違点：対象商品はwebOSやUSB-C PD給電(90W)を搭載しているが、KOORUIはスマート機能や高度な給電機能を持たない純粋なモニターで、リフレッシュレートは180Hz。"
         ],
         "differentiators": [
-          "価格重視ならKOORUI",
-          "機能性、給電、スマート機能を求めるならLG"
+          "LG MyView Smart Monitor 34SR63QA-Wの利点：スマート機能(webOS)、USB-C一本での映像出力と90W給電機能による配線の簡素化、スピーカー内蔵による高い利便性。",
+          "KOORUI 曲面ゲーミングモニター 34インチ (B0FXGDDVSB)の利点：機能がシンプルだが、高いリフレッシュレート(180Hz)を持ち、大幅に安価でコストパフォーマンスに優れる点。"
+        ]
+      },
+      {
+        "name": "LG ウルトラワイドモニター 34WR50QK-B",
+        "asin": "B0F2TJGV4R",
+        "priceComparison": "対象商品より安価に設定されている。",
+        "featureComparison": [
+          "共通点：LG製の34インチウルトラワイド(3440×1440)で100Hzリフレッシュレート。",
+          "相違点：対象商品は曲面かつwebOSやUSB-C給電を持つが、34WR50QK-Bはフラット画面のベーシックなモニター機能のみ。"
+        ],
+        "differentiators": [
+          "LG MyView Smart Monitor 34SR63QA-Wの利点：動画配信サービスの単体視聴、USB-C(90W)によるノートPCの給電、曲面による没入感。",
+          "LG ウルトラワイドモニター 34WR50QK-Bの利点：スマート機能や給電機能が不要な場合の純粋なウルトラワイドモニターとしての導入コストの低さ。"
+        ]
+      },
+      {
+        "name": "Samsung 27インチ M5 スマートモニター",
+        "asin": "B0D1DWXRPT",
+        "priceComparison": "対象商品より安価。",
+        "featureComparison": [
+          "共通点：OS搭載で単体で動画サービスが視聴できるスマートモニター。",
+          "相違点：対象商品は34インチ曲面ウルトラワイド(3440×1440)でUSB-C給電対応。Samsung M5は27インチのフルHD(1920×1080)でフラット画面。"
+        ],
+        "differentiators": [
+          "LG MyView Smart Monitor 34SR63QA-Wの利点：圧倒的に広い作業領域と高解像度、USB-C(90W)でのドッキングステーション的活用が可能な点。",
+          "Samsung 27インチ M5 スマートモニターの利点：小型でフルHD解像度で十分な場合、コストを抑えてスマートモニター環境を導入できる点。"
+        ]
+      },
+      {
+        "name": "LG MyView Smart Monitor 32SR83U-W",
+        "asin": "B0CTQSM9YC",
+        "priceComparison": "対象商品よりやや高価。",
+        "featureComparison": [
+          "共通点：LG製のwebOS搭載スマートモニターで、ホワイト基調のデザイン、USB-C給電対応。",
+          "相違点：対象商品は34インチ曲面ウルトラワイド(3440×1440、90W給電)。32SR83U-Wは31.5インチの4Kフラット画面(3840×2160、最大65W給電)。"
+        ],
+        "differentiators": [
+          "LG MyView Smart Monitor 34SR63QA-Wの利点：ウルトラワイドによる横長の広大な作業領域、曲面による没入感、およびより強力な90WのPD給電。",
+          "LG MyView Smart Monitor 32SR83U-Wの利点：4K解像度による高精細な表示や、縦方向の解像度の高さ、一般的な16:9比率を好むケース。"
         ]
       }
     ],
@@ -98,7 +143,7 @@
       "targetUsers": [
         "在宅勤務で効率を上げつつ、デスク周りをスッキリさせたい人",
         "テレビを置かずに動画配信サービスを楽しみたい一人暮らしの人",
-        "MacBookなどのUSB-C給電対応ノートPCユーザー"
+        "MacBookなどのUSB-C 90W給電が役立つハイパフォーマンスノートPCのユーザー"
       ],
       "pros": [
         "webOS搭載でPC不要のエンタメ視聴が可能",
@@ -106,40 +151,42 @@
         "34インチ曲面ウルトラワイドによる没入感と作業効率"
       ],
       "cons": [
-        "リフレッシュレート100Hzはガチゲーマーには不足",
-        "パネルの詳細スペックが不明確",
+        "リフレッシュレート100Hzは本格的なゲーマーには不足",
         "スタンドの調整機能に制限がある可能性"
       ],
       "score": 90,
-      "scoreRationale": "[基本点: 70]\n[加点: +5] (独自性: 34インチウルトラワイドかつスマートモニターという希少な組み合わせ)\n[加点: +10] (コスパ: USB-C 90W給電、webOS、リモコン付属で5万円台は破格)\n[加点: +5] (機能: 豊富な接続性とワイヤレス共有機能)\n[合計: 90]"
+      "scoreRationale": "[基本点: 70]\n[加点: +5] (性能・機能: 34インチ曲面ウルトラワイドとスマートモニター機能を高レベルで融合)\n[加点: +10] (コスパ: USB-C 90W給電、webOS、リモコン付属、曲面ウルトラワイドで6万円台前半という高いコストパフォーマンス)\n[加点: +5] (独自の強み: ワイヤレス共有などを含む多彩な機能とスマートなホワイト基調デザイン)\n[合計: 90]"
     },
     "technicalSpecs": {
       "display": {
         "size": "34インチ",
-        "resolution": "3440×1440 (UWQHD)",
+        "resolution": "3440×1440 (ウルトラワイド)",
         "type": "曲面 (1800R)",
         "refreshRate": "100Hz"
       },
-      "os": "webOS 23",
+      "os": "webOS",
       "connectivity": [
         "USB Type-C (PD 90W)",
         "HDMI",
-        "USB-A (Downstream)",
+        "USB-A (ハブ機能)",
         "Bluetooth",
-        "Wi-Fi (AirPlay 2 / Miracast)"
+        "Wi-Fi (AirPlay / Miracast対応)"
       ],
-      "audio": "7W + 7W ステレオスピーカー",
+      "audio": "7W + 7W スピーカー",
       "features": [
         "HDR対応",
         "アンチグレア",
         "フリッカーセーフ",
-        "ブルーライト低減モード",
+        "自動明るさ調整",
         "リモコン付属"
       ],
       "dimensions": {
-        "width": "約80.9cm (概算)",
-        "height": "約48.3cm (概算)"
-      }
+        "width": "808.9mm",
+        "height": "483.0mm",
+        "depth": "223.0mm"
+      },
+      "weight": "6100g",
+      "color": "ホワイト"
     }
   }
 }
