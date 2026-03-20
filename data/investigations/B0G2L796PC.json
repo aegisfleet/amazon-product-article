@@ -1,149 +1,154 @@
 {
   "analysis": {
-    "productName": "OPPO Reno13 A 5G",
+    "productName": "OPPO Reno13 A",
     "parentAsin": "B0G2L69DWG",
-    "productDescription": "大容量5,800mAhバッテリーと独自のAI機能を搭載し、日常使いからエンタメまで快適にこなすミドルレンジスマートフォンです。",
-    "productUsage": [
-      "AI機能による写真編集（不要物の削除など）や文章作成",
-      "5,800mAhバッテリーを活かした長時間の動画視聴やゲーム",
-      "おサイフケータイを利用したキャッシュレス決済",
-      "顔認証・指紋認証によるスムーズなロック解除",
-      "5G通信による高速データ通信"
-    ],
-    "positivePoints": [
-      "5,800mAhというクラス最大級の大容量バッテリー",
-      "120Hzリフレッシュレート対応の滑らかな有機ELディスプレイ",
-      "OPPO AIによる写真編集や文章作成の自動化・効率化",
-      "最大16GB（8GB+拡張8GB）のRAMによるスムーズなマルチタスク",
-      "3万円台後半という手頃な価格設定"
-    ],
-    "negativePoints": [
-      "ストレージ容量が128GBと、写真や動画を大量に保存するには心許ない可能性がある（microSD対応は推測）",
-      "Snapdragon 6 Gen 1は日常使いには十分だが、重量級の3Dゲームには不向き",
-      "詳細な防水防塵性能についての記載が商品情報に欠けている（通常Reno Aシリーズは対応しているが明記なし）"
-    ],
-    "useCases": [
-      "充電器を持ち歩かずに一日中外出するシーン",
-      "SNS投稿用にAIで写真を綺麗に加工する",
-      "通勤・通学中の動画視聴やブラウジング"
-    ],
-    "userStories": [
-      {
-        "userType": "大学生",
-        "scenario": "朝から夜まで講義やサークル活動で外出",
-        "experience": "以前のスマホは夕方にはモバイルバッテリーが必要だったが、Reno13 Aに変えてからは夜帰宅するまで充電が持つので荷物が減った。（推測）",
-        "sentiment": "positive"
-      },
-      {
-        "userType": "若手社会人",
-        "scenario": "移動中のメール作成やスケジュール調整",
-        "experience": "AI文章作成機能を使うことで、移動中に素早くメールの返信案を作れるのが便利。画面も綺麗で動画を見るのも楽しい。（推測）",
-        "sentiment": "positive"
-      }
-    ],
-    "userImpression": "バッテリー持ちとAI機能を重視しつつ、価格を抑えたいユーザーにとって最適な選択肢。",
+    "productDescription": "OPPOが展開するReno Aシリーズの最新モデル「Reno13 A」。6.67インチの有機ELディスプレイ（リフレッシュレート120Hz対応）や5800mAhの大容量バッテリーを搭載し、Snapdragon 6 Gen 1を採用したミドルレンジスマートフォンです。",
+    "productUsage": ["日常的な連絡やSNSの閲覧", "動画視聴や軽量なゲーム", "おサイフケータイを利用した決済"],
+    "positivePoints": ["5800mAhの大容量バッテリーで長時間の使用が可能", "最大16GB（仮想拡張含む）のRAMと128GBのROM、さらに1TBまでのmicroSDカード拡張に対応", "リフレッシュレート120Hz対応のなめらかな有機ELディスプレイ", "OPPO AIを利用した写真編集や文章作成のサポート機能"],
+    "negativePoints": ["SoCがSnapdragon 6 Gen 1であり、重い3Dゲームなどには向かない", "前モデル(Reno11 A)のMediaTek Dimensity 7050から処理性能が劇的に向上しているわけではない"],
+    "useCases": ["外出先で長時間スマホを使うシチュエーション", "写真の不要な部分をAIでサクッと消去したい時", "交通系ICカードや電子マネーでのスマートな決済"],
+    "userStories": [],
+    "userImpression": "5800mAhの大容量バッテリーを搭載しつつ、約192gと比較的軽量に抑えられており、日常使いに十分なスペックを備えたバランスの良いスマートフォンと評価されます。AI機能への対応も現代的なニーズを満たしています。",
     "sources": [
       {
-        "name": "Amazon商品ページ",
+        "id": "src-amazon",
+        "name": "Amazon 商品ページ",
         "url": "https://www.amazon.co.jp/dp/B0G2L796PC",
-        "credibility": "高"
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2024-03-21",
+        "author": "Amazon",
+        "conflictOfInterest": "none",
+        "notes": "スペック情報、価格情報"
+      },
+      {
+        "id": "src-amazon-reno11",
+        "name": "Amazon Reno11 A 商品ページ",
+        "url": "https://www.amazon.co.jp/dp/B0F8R358P8",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2024-03-21",
+        "author": "Amazon",
+        "conflictOfInterest": "none",
+        "notes": "前モデルのスペック情報"
       }
     ],
-    "lastInvestigated": "2026-01-22",
+    "claims": [
+      {
+        "claim": "5800mAhの大容量バッテリーを搭載",
+        "category": "durability",
+        "confidence": "high",
+        "supportingSourceIds": ["src-amazon"],
+        "crossChecked": false,
+        "notes": "商品仕様より確認"
+      },
+      {
+        "claim": "OPPO AIで写真編集・文章作成を提案",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": ["src-amazon"],
+        "crossChecked": false,
+        "notes": "商品仕様より確認"
+      }
+    ],
+    "lastInvestigated": "2026-03-21",
     "competitiveAnalysis": [
       {
-        "name": "Motorola g66j 5G",
+        "name": "OPPO Reno11 A",
+        "asin": "B0F8R358P8",
+        "priceComparison": "Reno13 Aの方が新しいモデルであるため価格が高く設定されている傾向にある。",
+        "featureComparison": [
+          "共通点：リフレッシュレート120Hzの有機ELディスプレイ、おサイフケータイ対応、マイナンバーカード対応",
+          "相違点：Reno13 Aはバッテリー容量が5800mAh（Reno11 Aは5000mAh）と大容量化し、Snapdragon 6 Gen 1を搭載している。またAI機能がアピールされている。"
+        ],
+        "differentiators": [
+          "OPPO Reno13 Aの利点：バッテリー容量が大きく、最新のOPPO AI機能が利用できる点。",
+          "OPPO Reno11 Aの利点：型落ちモデルとして価格が下がっており、コストパフォーマンスに優れる点。"
+        ]
+      },
+      {
+        "name": "Motorola moto g05",
+        "asin": "B0DYJHD1DM",
+        "priceComparison": "moto g05はエントリークラスのため、Reno13 Aと比較して大幅に安価である。",
+        "featureComparison": [
+          "共通点：6.7インチクラスの大画面、5000mAh超の大容量バッテリーを搭載している点",
+          "相違点：Reno13 AはフルHD+の有機ELで120Hz対応だが、moto g05はHD+の液晶で90Hz。SoCの性能もReno13 Aが大きく上回る。"
+        ],
+        "differentiators": [
+          "OPPO Reno13 Aの利点：高精細な有機ELディスプレイ、高い基本性能、おサイフケータイ対応など、メイン端末としての総合力が高い。",
+          "Motorola moto g05の利点：価格が非常に安く、サブ端末や子供用、ライトユースに最適である。"
+        ]
+      },
+      {
+        "name": "Xiaomi Redmi 14C",
+        "asin": "B0DHDCR1YJ",
+        "priceComparison": "Redmi 14Cもエントリーモデルのため、Reno13 Aよりも大幅に安い。",
+        "featureComparison": [
+          "共通点：大画面ディスプレイ、5000mAhクラスの大容量バッテリーを搭載",
+          "相違点：Reno13 Aは有機ELでSoC性能も高い。Redmi 14Cはおサイフケータイ非対応の可能性が高く、液晶ディスプレイである。"
+        ],
+        "differentiators": [
+          "OPPO Reno13 Aの利点：基本性能の高さ、おサイフケータイへの対応、高画質なディスプレイ。",
+          "Xiaomi Redmi 14Cの利点：6.88インチというさらに大きな画面と、圧倒的なコストパフォーマンス。"
+        ]
+      },
+      {
+        "name": "Blackview Wave9",
+        "asin": "B0GLP6GCLW",
+        "priceComparison": "Wave9は超低価格帯のモデルであり、Reno13 Aと比較すると数分の一の価格である。",
+        "featureComparison": [
+          "共通点：大容量の5000mAh以上のバッテリーを搭載している点",
+          "相違点：Reno13 Aは有機EL、おサイフケータイ対応、高解像度メインカメラを搭載。Wave9は基本的な機能に絞られたモデル。"
+        ],
+        "differentiators": [
+          "OPPO Reno13 Aの利点：日本国内向け機能（おサイフケータイ）や有機ELディスプレイなど、普段使いの快適性が圧倒的に高い。",
+          "Blackview Wave9の利点：非常に安価であり、ケースやTFカードなどが付属するなどコストパフォーマンスが極めて高い点。"
+        ]
+      },
+      {
+        "name": "Motorola motorola g66j 5G PANTONE",
         "asin": "B0FDKVB871",
-        "priceComparison": "約2.6万円（Reno13 Aより約1.2万円安い）",
+        "priceComparison": "moto g66jはミドルレンジで、Reno13 Aよりも少し安価に設定されている。",
         "featureComparison": [
-          "バッテリー5,200mAh（Reno13 Aは5,800mAh）",
-          "IP68/IP69の強力な防水防塵性能"
+          "共通点：6.7インチクラスの大画面、5200mAh/5800mAhと大容量バッテリーを搭載し、NFC/FeliCa（おサイフケータイ）に対応",
+          "相違点：Reno13 Aは有機ELディスプレイだが、moto g66jは液晶(LCD)である。また、SoCはReno13 AがSnapdragon、moto g66jがDimensityを搭載。"
         ],
         "differentiators": [
-          "圧倒的なコストパフォーマンス",
-          "過酷な環境でも使えるタフネスさ"
+          "OPPO Reno13 Aの利点：より高画質で鮮やかな有機ELディスプレイを搭載し、バッテリー容量もさらに大きい点。",
+          "Motorola motorola g66j 5G PANTONEの利点：IP68・IP69という高い防塵防水性能と、価格の安さ。"
         ]
       },
       {
-        "name": "AQUOS wish5",
-        "asin": "B0FNC78HXJ",
-        "priceComparison": "約3.3万円（Reno13 Aより約5,000円安い）",
+        "name": "AQUOS sense4 SH-41A (整備済み品)",
+        "asin": "B0GK9KFRLJ",
+        "priceComparison": "型落ちの整備済み品であるため、Reno13 Aと比べ非常に安価。",
         "featureComparison": [
-          "詳細スペックはエントリー寄り",
-          "シンプルで使いやすいデザイン"
+          "共通点：防水防塵、おサイフケータイ（FeliCa）対応などの国内向け機能を備える点",
+          "相違点：Reno13 Aは6.7インチの大画面だが、AQUOS sense4は5.8インチとコンパクト。性能面でもReno13 Aが圧倒的に高い。"
         ],
         "differentiators": [
-          "国産ブランドの安心感",
-          "機能のシンプルさ"
-        ]
-      },
-      {
-        "name": "Sony Xperia 10 VI",
-        "asin": "B0D6YF4LNL",
-        "priceComparison": "約5.4万円（Reno13 Aより約1.6万円高い）",
-        "featureComparison": [
-          "21:9の縦長有機ELディスプレイ",
-          "軽量コンパクトボディ"
-        ],
-        "differentiators": [
-          "Sonyブランド",
-          "片手での持ちやすさ"
+          "OPPO Reno13 Aの利点：大画面、最新の基本性能、大容量バッテリーなど、現代のスマホとして快適に使えるスペックを備える点。",
+          "AQUOS sense4 SH-41Aの利点：片手で操作しやすいコンパクトなサイズ感と、整備済み品ならではの安さ。"
         ]
       }
     ],
     "recommendation": {
-      "targetUsers": [
-        "スマートフォンの充電頻度を減らしたい人",
-        "最新のAI機能を試してみたいがハイエンド機は高いと感じる人",
-        "動画視聴やSNS利用が中心のライト〜ミドルユーザー"
-      ],
-      "pros": [
-        "圧倒的なバッテリー持ち（5,800mAh）",
-        "120Hz有機ELによる優れた視聴体験",
-        "実用的なAI機能搭載"
-      ],
-      "cons": [
-        "重いゲームをプレイする人には性能不足の可能性",
-        "ストレージ128GBは人によっては不足する"
-      ],
-      "score": 90,
-      "scoreRationale": "[基本点: 70]\n[コストパフォーマンス: +10] (3万円台で5,800mAh、120Hz有機EL、AI搭載は破格)\n[性能・機能: +5] (RAM拡張や急速充電など実用性が高い)\n[独自の強み: +5] (競合を上回るバッテリー容量)\n[合計: 90]"
+      "targetUsers": ["バッテリー持ちを重視する人", "手軽にAI機能（写真編集など）を試したい人", "おサイフケータイなどの国内向け機能が必須な人"],
+      "pros": ["5800mAhの大容量バッテリー", "最大16GB相当まで拡張可能なRAM", "滑らかな120Hz有機ELディスプレイ"],
+      "cons": ["ハイエンドモデルと比べるとSoCの処理性能は控えめ"],
+      "score": 75,
+      "scoreRationale": "[基本点: 70]\n[加点: +5] (5800mAhの大容量バッテリーとAI機能搭載などの実用性の高さ)\n[合計: 75]"
     },
     "technicalSpecs": {
-      "os": "Android (詳細バージョン不明)",
-      "cpu": "Snapdragon 6 Gen 1",
-      "ram": "8GB (最大16GB拡張)",
-      "storage": "128GB",
-      "display": {
-        "size": "6.7インチ",
-        "resolution": "2400×1080",
-        "type": "有機EL (AMOLED)"
-      },
-      "battery": {
-        "capacity": "5800mAh",
-        "charging": "急速充電対応"
-      },
-      "camera": {
-        "main": "5000万画素",
-        "ultrawide": null
-      },
-      "dimensions": {
-        "height": "162mm",
-        "width": "75mm",
-        "depth": "7.8mm",
-        "weight": "190g"
-      },
-      "connectivity": [
-        "5G",
-        "FeliCa (おサイフケータイ)",
-        "Wi-Fi",
-        "Bluetooth"
-      ],
-      "other": [
-        "指紋認証",
-        "顔認証",
-        "OPPO AI"
-      ]
+      "dimensions": { "height": "162.2mm", "width": "75.0mm", "depth": "7.8mm" },
+      "weight": "192g",
+      "display": "約6.7インチ 有機EL フルHD+ (2400×1080) 120Hz",
+      "battery": "5800mAh",
+      "cpu": "Qualcomm Snapdragon 6 Gen 1 (オクタコア 2.2GHz×4 + 1.8GHz×4)",
+      "memory": "RAM 8GB (最大16GB拡張) / ROM 128GB (1TB microSD対応)",
+      "camera": "アウトカメラ: 5000万画素",
+      "network": "5G, docomo/au/SoftBank/Rakuten Mobile回線対応",
+      "features": ["おサイフケータイ", "指紋認証", "顔認証", "急速充電対応", "OPPO AI"]
     }
   }
 }
