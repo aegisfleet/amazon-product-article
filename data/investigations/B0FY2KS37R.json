@@ -2,149 +2,175 @@
   "analysis": {
     "productName": "Anker Soundcore C30i",
     "parentAsin": "B0G4RFYG88",
-    "productDescription": "耳を塞がず、アクセサリー感覚で装着できるイヤーカフ型のオープンイヤーワイヤレスイヤホンです。",
-    "productUsage": [
-      "周囲の音を聞きながらの通勤・通学や家事",
-      "ランニングや軽い運動（IPX4防水対応）",
-      "オンライン会議や通話（マルチポイント接続活用）",
-      "メガネやマスク着用時の長時間の「ながら聴き」"
-    ],
-    "positivePoints": [
-      "圧倒的なコストパフォーマンス（約5,000円でAnker品質）",
-      "耳を塞がないため周囲の音が聞こえ、会話やアナウンスを逃さない",
-      "メガネやマスクと干渉しにくいクリップオンデザイン",
-      "イヤホン単体10時間、ケース込み30時間の長時間再生",
-      "マルチポイント接続対応で2台の機器をシームレスに切り替え可能"
-    ],
-    "negativePoints": [
-      "装着感に個人差があり、長時間使用で耳たぶが痛くなる場合がある",
-      "オープンイヤー特有の仕様として、カナル型に比べ低音が弱く感じる",
-      "タッチコントロールの位置が耳の後ろにあり、操作に慣れが必要"
-    ],
-    "useCases": [
-      "オフィスや自宅での「ながら作業」用BGM再生",
-      "ランニングやウォーキング時の安全な音楽鑑賞",
-      "家事や育児中に子供の声を聞き漏らさないための使用"
-    ],
+    "productDescription": "イヤーカフ型で耳を塞がないオープンイヤー型ワイヤレスイヤホン。アクセサリー感覚で快適に装着でき、Bluetooth 5.3やマルチポイント接続に対応しています。",
+    "productUsage": ["音楽鑑賞", "通話", "スポーツ・ランニング", "Web会議"],
+    "positivePoints": ["耳を塞がないため周囲の音が聞こえて安全", "重さが気にならず快適な装着感", "アプリでの設定・ペアリングが簡単", "最大30時間の長寿命バッテリー", "IPX4の防水性能"],
+    "negativePoints": ["周囲の音が聞こえるため、騒音下でのリスニングには不向き", "音漏れの可能性がある"],
+    "useCases": ["ランニングやウォーキング中に周囲の音を聞きながら音楽を楽しむ", "Web会議中にインターホンや家族の呼びかけに気づけるようにする", "長時間の作業中に耳の疲れを軽減する"],
     "userStories": [
       {
-        "userType": "40代・会社員",
-        "scenario": "通勤中の使用",
-        "experience": "以前は密閉型を使っていたが、外を歩くのが怖くなりこちらに変更。周囲の音が聞こえる安心感があり、食事中の咀嚼音が頭に響かないのも意外なメリットだった。",
-        "sentiment": "positive"
-      },
-      {
-        "userType": "10代・学生",
-        "scenario": "長時間使用",
-        "experience": "上位機種は柔らかくフィットしたが、こちらは硬くて耳が痛くなり、つけていられなかった。耳の形に合わなかったようだ。",
-        "sentiment": "negative"
-      },
-      {
-        "userType": "40代・メガネユーザー",
-        "scenario": "日常使用",
-        "experience": "オープンイヤー型は初めてだったが、メガネのツルと干渉せず、耳も痛くならずに快適に使えている。メガネユーザーには特におすすめ。",
+        "userType": "一般ユーザー",
+        "scenario": "日常の音楽リスニング",
+        "experience": "初めてのイヤーカフ型でしたが、耳を塞がないため周囲の音が自然に入ってきて安心感があります。音も非常にクリアで驚きました。\n本体の重さもほとんど気にならず、長時間つけていても耳が痛くなりにくいです。\nまた、専用アプリからの登録やBluetoothペアリングもスムーズに行え、全体的に使い勝手の良い製品だと感じています。",
+        "supportingSourceIds": ["amazon-product-page", "anker-japan-official"],
         "sentiment": "positive"
       }
     ],
-    "userImpression": "「ながら聴き」に最適なコスパ最強のイヤーカフとして高評価を得ている一方、装着感（耳への締め付け）については「痛い」という声と「快適」という声に二分されている。音質は価格相応だが、Ankerのアプリ対応やマルチポイントなどの機能性が評価されている。",
+    "userImpression": "音質はクリアで、耳を塞がないため周囲の音も確認しやすく日常使いに便利。重さを感じにくく、設定やペアリングの簡単さも高く評価されています。軽量で長時間の使用にも適した実用的なイヤーカフ型イヤホンです。",
     "sources": [
       {
-        "name": "Anker Japan公式サイト 製品ページ",
+        "id": "amazon-product-page",
+        "name": "Amazon 公式商品ページ",
+        "url": "https://www.amazon.co.jp/dp/B0FY2KS37R",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2024-01-01",
+        "author": "Anker",
+        "conflictOfInterest": "none",
+        "notes": "実際のユーザーレビュー（音質、装着感、ペアリングの容易さ）および製品のスペック情報（寸法、重量、Bluetooth、防水性能など）の裏付けとして使用。"
+      },
+      {
+        "id": "anker-japan-official",
+        "name": "Anker Japan 公式サイト",
         "url": "https://www.ankerjapan.com/products/a3330",
-        "credibility": "高"
-      },
-      {
-        "name": "PCMag Review",
-        "url": "https://www.pcmag.com/reviews/anker-soundcore-c30i",
-        "credibility": "高"
-      },
-      {
-        "name": "Sypnotix Review",
-        "url": "https://www.sypnotix.com/reviews/anker-soundcore-c30i-review",
-        "credibility": "中"
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2024-01-01",
+        "author": "Anker Japan",
+        "conflictOfInterest": "disclosed",
+        "notes": "製品情報（イヤーカフ型、耳を塞がない快適な装着感など）およびスペックの確認用として使用。"
       }
     ],
-    "lastInvestigated": "2026-01-22",
+    "claims": [
+      {
+        "claim": "最大30時間の再生が可能",
+        "category": "durability",
+        "confidence": "high",
+        "supportingSourceIds": ["amazon-product-page", "anker-japan-official"],
+        "crossChecked": true,
+        "notes": "Amazon商品ページとAnker公式サイトの双方から確認"
+      },
+      {
+        "claim": "Bluetooth 5.3対応およびマルチポイント接続",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": ["amazon-product-page", "anker-japan-official"],
+        "crossChecked": true,
+        "notes": "Amazon商品ページとAnker公式サイトの双方から確認"
+      },
+      {
+        "claim": "IPX4防水規格対応",
+        "category": "safety",
+        "confidence": "high",
+        "supportingSourceIds": ["amazon-product-page", "anker-japan-official"],
+        "crossChecked": true,
+        "notes": "Amazon商品ページとAnker公式サイトの双方から確認"
+      }
+    ],
+    "lastInvestigated": "2026-03-21",
     "competitiveAnalysis": [
+      {
+        "name": "Anker Soundcore V20i",
+        "asin": "B0D4Z8NPH7",
+        "priceComparison": "同価格帯で展開されており、V20iは耳掛け型（オープンイヤー）、C30iはイヤーカフ型という形状の違いがある。防水規格もV20iがIP55、C30iがIPX4と異なる。",
+        "featureComparison": [
+          "共通点：Bluetooth 5.4/5.3、マルチポイント接続、オープンイヤー型",
+          "相違点：V20iは耳掛け型でIP55防塵防水・最大36時間再生。C30iはイヤーカフ型でIPX4防水・最大30時間再生"
+        ],
+        "differentiators": [
+          "Anker Soundcore C30iの利点：イヤーカフ型でアクセサリー感覚で装着でき、より手軽で圧迫感が少ない。",
+          "Anker Soundcore V20iの利点：IP55の防塵防水性能と長時間のバッテリー（最大36時間）を備え、スポーツや屋外での激しい活動に適している。"
+        ]
+      },
+      {
+        "name": "UGREEN イヤーカフ イヤホン",
+        "asin": "B0DMZWD4JP",
+        "priceComparison": "UGREENの方が安価であり、予算重視のユーザー向け。C30iはAnkerブランドの信頼性とアフターサポートが価格差の理由となる。",
+        "featureComparison": [
+          "共通点：イヤーカフ型、オープンイヤー、最大30時間再生",
+          "相違点：UGREENはBluetooth 5.4とENC搭載AI通話ノイズキャンセリングを強調。C30iはBluetooth 5.3"
+        ],
+        "differentiators": [
+          "Anker Soundcore C30iの利点：Soundcoreアプリによるカスタマイズや安定したブランドサポートがある。",
+          "UGREEN イヤーカフ イヤホンの利点：価格が安く、最新のBluetooth 5.4を採用している。"
+        ]
+      },
+      {
+        "name": "Anker Soundcore C40i メタリックグレー",
+        "asin": "B0DFCPRT83",
+        "priceComparison": "C40iの方が上位モデルとして価格が高い。素材やデザインに高級感がある。",
+        "featureComparison": [
+          "共通点：イヤーカフ型、オープンイヤー、IPX4防水、マルチポイント接続",
+          "相違点：C40iはBluetooth 5.4対応だが、最大再生時間は21時間とC30i（30時間）より短い。"
+        ],
+        "differentiators": [
+          "Anker Soundcore C30iの利点：価格が手頃で、再生時間が最大30時間と長い。",
+          "Anker Soundcore C40i メタリックグレーの利点：Bluetooth 5.4対応や高級感のあるデザインを求めるユーザーに適している。"
+        ]
+      },
+      {
+        "name": "Anker Soundcore C40i ローズゴールド",
+        "asin": "B0DFCQNKHD",
+        "priceComparison": "C40i（メタリックグレーと同スペック）の方が上位モデルで価格が高い。",
+        "featureComparison": [
+          "共通点：イヤーカフ型、オープンイヤー、IPX4防水、マルチポイント接続",
+          "相違点：カラーバリエーションが異なり、C40iはBluetooth 5.4対応だが再生時間は21時間と短い。"
+        ],
+        "differentiators": [
+          "Anker Soundcore C30iの利点：コストパフォーマンスに優れ、最大30時間の長寿命バッテリーを持つ。",
+          "Anker Soundcore C40i ローズゴールドの利点：華やかなローズゴールドのカラーとBluetooth 5.4に対応している。"
+        ]
+      },
+      {
+        "name": "JBL SOUNDGEAR SENSE",
+        "asin": "B0CJRD7SXD",
+        "priceComparison": "JBLの方が価格帯が一段高く、音質やブランド志向の強いユーザー向け。",
+        "featureComparison": [
+          "共通点：オープンイヤー型、Bluetooth 5.3、マルチポイント接続",
+          "相違点：JBLはIP54の防塵防水対応で耳掛け型、C30iはIPX4でイヤーカフ型。"
+        ],
+        "differentiators": [
+          "Anker Soundcore C30iの利点：イヤーカフ型で軽量・安価であり、手軽に導入しやすい。",
+          "JBL SOUNDGEAR SENSEの利点：JBL特有の音響チューニングとIP54の高い防塵防水性能を持つ。"
+        ]
+      },
       {
         "name": "SOUNDPEATS Clip1",
         "asin": "B0G1BC1F3S",
-        "priceComparison": "Soundcore C30iより少し高価（約7,500円）だが、クーポン等で近くなる場合も。",
+        "priceComparison": "同等の価格帯。LDAC対応などの付加価値で勝負している。",
         "featureComparison": [
-          "LDAC対応でハイレゾ再生が可能（C30iはSBC/AACのみ）",
-          "再生時間は最大40時間とC30iより長い"
+          "共通点：イヤーカフ型、マルチポイント接続、IPX5防水",
+          "相違点：Clip1はLDACハイレゾ対応・最大40時間再生・Bluetooth 5.4。C30iはSBC/AAC・最大30時間再生・Bluetooth 5.3。"
         ],
         "differentiators": [
-          "音質重視ならLDAC対応のClip1",
-          "ブランド信頼性とアプリの使いやすさならAnker"
-        ]
-      },
-      {
-        "name": "UGREEN イヤーカフ型イヤホン",
-        "asin": "B0DMZWD4JP",
-        "priceComparison": "C30iの半額近い（約2,400円）圧倒的な安さ。",
-        "featureComparison": [
-          "Bluetooth 5.4対応（C30iは5.3）",
-          "再生時間は同等（30時間）"
-        ],
-        "differentiators": [
-          "とにかく安さを求めるならUGREEN",
-          "Ankerの保証やマルチポイント機能を求めるならC30i"
-        ]
-      },
-      {
-        "name": "JBL Soundgear Clips",
-        "asin": "B0FPKXJSY9",
-        "priceComparison": "C30iの3倍以上の価格（約17,000円）。",
-        "featureComparison": [
-          "音質、特に低音の迫力はJBLが上手",
-          "IP54防塵防水（C30iはIPX4）"
-        ],
-        "differentiators": [
-          "予算があり音質に妥協したくないならJBL",
-          "手軽に試したいならC30i"
+          "Anker Soundcore C30iの利点：Ankerブランドの信頼性と充実したアプリの使い勝手。",
+          "SOUNDPEATS Clip1の利点：LDACによるハイレゾ対応と最大40時間という長時間のバッテリーライフ。"
         ]
       }
     ],
     "recommendation": {
-      "targetUsers": [
-        "初めてオープンイヤー型イヤホンを試してみたい人",
-        "メガネをかけていて従来のイヤホンが邪魔だった人",
-        "コスパ重視で信頼できるブランドの製品が欲しい人"
-      ],
-      "pros": [
-        "圧倒的なコストパフォーマンス",
-        "軽量でメガネに干渉しないデザイン",
-        "マルチポイント接続などの充実した機能"
-      ],
-      "cons": [
-        "耳の形状によっては長時間装着で痛みを感じる可能性がある",
-        "重低音重視の音楽鑑賞には向かない"
-      ],
-      "score": 90,
-      "scoreRationale": "[基本点: 70]\n[加点: +15] (5000円以下でマルチポイント・アプリ対応という圧倒的コスパ)\n[加点: +5] (Ankerブランドの安心感とビルドクオリティ)\n[加点: +5] (ユニークなイヤーカフ型デザインと軽量性)\n[減点: -5] (装着感に個人差があり、痛いという報告があるため)\n[合計: 90]"
+      "targetUsers": ["周囲の音を聞きながら音楽を楽しみたい人", "耳の穴を塞ぐイヤホンが苦手な人", "アクセサリー感覚でイヤホンを着けたい人", "テレワークやWeb会議で長時間使用する人"],
+      "pros": ["耳を塞がない快適な装着感", "クリアな音質と周囲の音の聞こえやすさ", "アプリやペアリングの設定が簡単", "最大30時間再生の長持ちバッテリー"],
+      "cons": ["騒がしい環境では音楽が聞こえにくい", "音漏れに配慮が必要な場合がある"],
+      "score": 85,
+      "scoreRationale": "[基本点: 70]\n[加点: +10] (使い勝手の良いイヤーカフ型で耳への負担が少なく、周囲の音も確認できる高い実用性)\n[加点: +5] (最大30時間再生やマルチポイント接続など、必要十分な機能が揃っておりコスパ良好)\n[合計: 85]"
     },
     "technicalSpecs": {
+      "dimensions": {
+        "height": "30mm",
+        "width": "60mm",
+        "depth": "50mm"
+      },
+      "weight": "約5.7g (片耳) / 約60g (充電ケース込み)",
       "driver": "12mm x 17mm ダイナミックドライバー",
       "codec": "SBC / AAC",
-      "battery": {
-        "capacity": "イヤホン単体最大10時間 / ケース込み最大30時間",
-        "charging": "USB-C / 10分の充電で約3時間再生"
-      },
-      "connectivity": [
-        "Bluetooth 5.3",
-        "マルチポイント接続"
-      ],
-      "noiseCancel": null,
-      "dimensions": {
-        "size": "約60 x 50 x 30 mm",
-        "weight": "約5.7g (片耳) / 約60g (充電ケース込み)"
-      },
-      "other": [
-        "IPX4防水規格",
-        "Anker Soundcoreアプリ対応",
-        "イヤーカフキャップ付属 (M/L)"
-      ]
+      "battery": "イヤホン単体最大10時間 / ケース込み最大30時間",
+      "charging": "USB-C / 10分の充電で約3時間再生",
+      "bluetoothVersion": "5.3",
+      "waterproof": "IPX4",
+      "maxPlaybackTime": "30h",
+      "connection": "マルチポイント接続対応",
+      "other": ["Soundcoreアプリ対応", "イヤーカフキャップ付属 (M/L)"]
     }
   }
 }
