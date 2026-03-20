@@ -3,6 +3,7 @@
     {{ partial "breadcrumb.html" . }}
 
     {{ $todayData := .Site.Data.recommendations.today }}
+    {{ $productCache := index .Site.Data.cache "paapi-product-cache" }}
 
     <div class="article-header" style="margin-bottom: var(--spacing-lg);">
         <h1>{{ .Title }}</h1>
@@ -40,8 +41,16 @@
 
                 <!-- Product Image -->
                 <div style="flex-shrink: 0; width: 100%; max-width: 200px; text-align: center; margin: 0 auto;">
-                    {{ if $rec.imageUrl }}
-                    <img src="{{ $rec.imageUrl }}" alt="{{ $rec.title }}"
+                    {{ $imageUrl := $rec.imageUrl }}
+                    {{ if and (not $imageUrl) $productCache }}
+                        {{ $cachedItem := index $productCache $rec.asin }}
+                        {{ if $cachedItem }}
+                            {{ $imageUrl = $cachedItem.data.images.primary }}
+                        {{ end }}
+                    {{ end }}
+
+                    {{ if $imageUrl }}
+                    <img src="{{ $imageUrl }}" alt="{{ $rec.title }}"
                         style="width: 100%; max-height: 200px; object-fit: contain; background-color: #ffffff; padding: 0.5rem; border-radius: var(--radius-md);">
                     {{ else }}
                     <div class="card-image-noimage"
