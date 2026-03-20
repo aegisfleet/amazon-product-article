@@ -22,9 +22,11 @@ export const SPEC_LABEL_MAP: Record<string, string> = {
 
   // 電子機器
   os: 'OS',
-  cpu: 'CPU',
+  cpu: 'プロセッサ',
   gpu: 'GPU',
+  processor: 'プロセッサ',
   ram: 'メモリ',
+  memory: 'メモリ',
   storage: 'ストレージ',
   display: 'ディスプレイ',
   battery: 'バッテリー',
