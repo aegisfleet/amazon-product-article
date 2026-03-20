@@ -130,6 +130,28 @@ function rerankResults(results, query) {
                 rerankScore
             };
         })
+        .filter(result => {
+            // Apply UI filters during reranking
+            const item = result.item || {};
+            const score = Number.parseFloat(item.score) || 0;
+            const price = Number.parseFloat(item.price_value) || 0;
+
+            const scoreMin = Number.parseFloat(document.getElementById('filter-score-min')?.value) || 0;
+            const scoreMax = Number.parseFloat(document.getElementById('filter-score-max')?.value) || 100;
+            const priceMin = Number.parseFloat(document.getElementById('filter-price-min')?.value) || 0;
+            const priceMax = Number.parseFloat(document.getElementById('filter-price-max')?.value) || Number.MAX_SAFE_INTEGER;
+
+            if (score < scoreMin) return false;
+            // Only apply max filters if they have a numeric value (placeholder is different)
+            const scoreMaxInput = document.getElementById('filter-score-max');
+            if (scoreMaxInput && scoreMaxInput.value !== '' && score > scoreMax) return false;
+            
+            const priceMaxInput = document.getElementById('filter-price-max');
+            if (price < priceMin) return false;
+            if (priceMaxInput && priceMaxInput.value !== '' && price > priceMax) return false;
+
+            return true;
+        })
         .sort((a, b) => b.rerankScore - a.rerankScore);
 }
 
@@ -248,6 +270,19 @@ document.addEventListener('DOMContentLoaded', function () {
             updateSearchResultsHeight();
 
             handleSearch(query);
+        });
+
+        // Filter event listeners to trigger re-search
+        ['filter-score-min', 'filter-score-max', 'filter-price-min', 'filter-price-max'].forEach(id => {
+            const el = document.getElementById(id);
+            if (el) {
+                el.addEventListener('input', () => {
+                    const query = searchInput.value.replaceAll('　', ' ');
+                    if (query.trim().length >= 2) {
+                        handleSearch(query);
+                    }
+                });
+            }
         });
 
         // === スクロール関連の状態管理 ===
