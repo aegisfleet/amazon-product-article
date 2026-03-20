@@ -2,6 +2,7 @@ name: Today's Recommendations Product Research
 
 on:
   push:
+    branches: [main]
     paths:
       - 'data/recommendations/today.json'
   workflow_dispatch:
