@@ -8,6 +8,8 @@
     "prebuild:hugo": "ts-node src/scripts/enhance-categories.ts",
     "build": "tsc",
     "dev": "ts-node src/index.ts",
+    "server": "hugo server",
+    "server:fast": "hugo server --templateMetrics --disableFastRender --gc --noHTTPCache",
     "test": "jest",
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage",
