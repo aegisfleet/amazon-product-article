@@ -333,7 +333,7 @@ export class JulesInvestigator {
   }
 
   /**
-   * 本日のおすすめ商品調査を開始
+   * 本日の注目商品10選調査を開始
    * Jules がトレンドを探索し、data/recommendations/today.json を作成・コミットする
    */
   async startRecommendationInvestigation(

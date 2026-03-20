@@ -1,7 +1,7 @@
 #!/usr/bin/env ts-node
 /**
  * Today's Recommendation CLI Script
- * 本日のおすすめ商品を調査する Jules セッションを開始する
+ * 本日の注目商品10選を調査する Jules セッションを開始する
  */
 
 import 'dotenv/config';

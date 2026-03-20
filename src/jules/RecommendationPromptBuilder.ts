@@ -1,5 +1,5 @@
 /**
- * RecommendationPromptBuilder - 本日のおすすめ商品を調査するためのプロンプトを構築
+ * RecommendationPromptBuilder - 本日の注目商品10選を調査するためのプロンプトを構築
  */
 
 export class RecommendationPromptBuilder {
