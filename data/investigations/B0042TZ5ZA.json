@@ -25,72 +25,99 @@
       "オンラインフィットネス動画を見ながらの宅トレ",
       "ジムへの持ち運び（ストラップ利用）"
     ],
-    "userStories": [
-      {
-        "userType": "30代男性（会社員・宅トレ初心者）",
-        "scenario": "フローリングでの腹筋運動",
-        "experience": "（推測）これまではカーペットの上でやっていたが腰が痛かった。このマットは厚みが十分で痛みがなく、アディダスのロゴが目に入るだけでやる気が出る。",
-        "sentiment": "positive"
-      },
-      {
-        "userType": "20代女性（ヨガ実践者）",
-        "scenario": "自宅での朝ヨガ",
-        "experience": "（推測）クッション性は抜群だが、片足立ちのポーズなどでは少し沈み込みすぎてバランスが取りにくいことがある。リラックス系のヨガには最適。",
-        "sentiment": "mixed"
-      }
-    ],
-    "userImpression": "価格は高めだが、アディダスブランドへの信頼とデザイン性を重視する層に支持されている。機能面ではクッション性の高さが評価されている。",
+    "userStories": [],
+    "userImpression": "価格は高めだが、アディダスブランドと機能面（クッション性の高さ）が評価される傾向にある。",
     "sources": [
       {
-        "name": "Amazon Product Page Details",
+        "id": "src-amazon",
+        "name": "Amazon Product Page: adidas(アディダス) トレーニングマット",
         "url": "https://www.amazon.co.jp/dp/B0042TZ5ZA",
-        "credibility": "high"
-      },
-      {
-        "name": "General Knowledge of NBR Training Mats",
-        "url": null,
-        "credibility": "medium"
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-03-21",
+        "author": "Amazon",
+        "conflictOfInterest": "possible",
+        "notes": "アディダス トレーニングマット ADMT-12235の公式商品情報、価格、仕様"
       }
     ],
-    "lastInvestigated": "2026-01-23",
+    "lastInvestigated": "2026-03-21",
     "competitiveAnalysis": [
       {
         "name": "GronG(グロング) トレーニングマット",
         "asin": "B0FC17F24P",
-        "priceComparison": "ほぼ同価格（約3,600円）だが、GronGの方がわずかに安い。",
+        "priceComparison": "ほぼ同価格",
         "featureComparison": [
-          "GronGは幅90cmと幅広（adidasは61cm）",
-          "厚さは同じ10mm"
+          "共通点：厚さ10mm",
+          "相違点：GronGは幅90cmと幅広"
         ],
         "differentiators": [
-          "GronGはサイズが大きく、広々と使える",
-          "adidasはブランド力とデザイン性で勝る"
+          "adidas(アディダス) トレーニングマット ブラック ADMT-12235の利点：ブランド力とデザイン性で勝る",
+          "GronG(グロング) トレーニングマットの利点：サイズが大きく広々と使える"
         ]
       },
       {
         "name": "Amazonベーシック ヨガマット",
         "asin": "B01LP0U5X0",
-        "priceComparison": "Amazonベーシックの方が約1,500円安い（約2,100円）。",
+        "priceComparison": "Amazonベーシックの方が約1,500円安い",
         "featureComparison": [
-          "厚さはAmazonベーシックの方が厚い（12mm vs 10mm）",
-          "素材感は類似"
+          "共通点：素材感は類似",
+          "相違点：厚さはAmazonベーシックの方が厚い（12mm vs 10mm）"
         ],
         "differentiators": [
-          "Amazonベーシックは圧倒的なコストパフォーマンス",
-          "ブランドロゴなどの装飾はない"
+          "adidas(アディダス) トレーニングマット ブラック ADMT-12235の利点：デザイン性や耐久性に優れる",
+          "Amazonベーシック ヨガマットの利点：圧倒的なコストパフォーマンス"
         ]
       },
       {
         "name": "プリマソーレ(Primasole) ヨガマット",
         "asin": "B07XL9FL8T",
-        "priceComparison": "プリマソーレの方が半額以下（約1,800円）。",
+        "priceComparison": "プリマソーレの方が半額以下",
         "featureComparison": [
-          "厚さは同じ10mm",
-          "エンボス加工などの基本機能は類似"
+          "共通点：厚さ10mm",
+          "相違点：プリマソーレはカラーバリエーションが豊富"
         ],
         "differentiators": [
-          "プリマソーレはカラーバリエーションが豊富",
-          "耐久性や質感ではadidasに分がある可能性がある"
+          "adidas(アディダス) トレーニングマット ブラック ADMT-12235の利点：耐久性や質感に分がある可能性がある",
+          "プリマソーレ(Primasole) ヨガマットの利点：安価でカラーバリエーションが豊富"
+        ]
+      },
+      {
+        "name": "adidas フィットネスマット 7mm",
+        "asin": "B078WZ13GP",
+        "priceComparison": "adidas 7mmの方が安い",
+        "featureComparison": [
+          "共通点：adidasブランド",
+          "相違点：厚さが7mmと薄い"
+        ],
+        "differentiators": [
+          "adidas(アディダス) トレーニングマット ブラック ADMT-12235の利点：10mmの厚さでクッション性に優れる",
+          "adidas フィットネスマット 7mmの利点：より軽量で安価"
+        ]
+      },
+      {
+        "name": "BARWING ヨガマット 15mm",
+        "asin": "B0CXHKHV32",
+        "priceComparison": "価格帯は近い",
+        "featureComparison": [
+          "共通点：トレーニングマット",
+          "相違点：BARWINGは15mmの特厚・幅広設計"
+        ],
+        "differentiators": [
+          "adidas(アディダス) トレーニングマット ブラック ADMT-12235の利点：持ち運びやすくブランドの信頼性がある",
+          "BARWING ヨガマット 15mmの利点：特厚で防音性が高い"
+        ]
+      },
+      {
+        "name": "アルインコ(ALINCO) エクササイズフロアマット",
+        "asin": "B0007TT7I0",
+        "priceComparison": "アルインコの方がやや安い",
+        "featureComparison": [
+          "共通点：トレーニング機器の下に敷ける",
+          "相違点：アルインコは厚さ9mmのPVC素材"
+        ],
+        "differentiators": [
+          "adidas(アディダス) トレーニングマット ブラック ADMT-12235の利点：NBR素材でクッション性が高い",
+          "アルインコ(ALINCO) エクササイズフロアマットの利点：PVC素材でマシン保護に特化している"
         ]
       }
     ],
@@ -110,16 +137,16 @@
         "柔らかすぎるためバランス系の種目には不向きな場合がある"
       ],
       "score": 73,
-      "scoreRationale": "[基本点: 70]\n[性能・機能: +5] (10mmの十分な厚みとクッション性、キャリーストラップ付属)\n[コストパフォーマンス: -10] (競合他社製品と比較して価格が約2倍と高い)\n[品質・デザイン: +8] (アディダスブランドの信頼性とデザイン、耐久性のある縁取り)\n[合計: 73]"
+      "scoreRationale": "[基本点: 70]\n[加点: +5] (10mmの十分な厚みとクッション性、キャリーストラップ付属)\n[減点: -10] (競合他社製品と比較して価格が約2倍と高い)\n[加点: +8] (アディダスブランドの信頼性とデザイン、耐久性のある縁取り)\n[合計: 73]"
     },
     "technicalSpecs": {
-      "material": "ニトリルゴム(NBR) 74%, ポリエステル 22%, ポリプロピレン 3%, ナイロン 1%",
       "dimensions": {
         "length": "183cm",
         "width": "61cm",
-        "thickness": "10mm"
+        "height": "10mm"
       },
-      "weight": "約1.25kg",
+      "weight": "1.25kg",
+      "material": "ニトリルゴム(NBR) 74%, ポリエステル 22%, ポリプロピレン 3%, ナイロン 1%",
       "accessories": "キャリーストラップ",
       "features": [
         "クローズドセル技術（吸水防止）",
