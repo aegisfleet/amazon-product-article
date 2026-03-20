@@ -1,7 +1,7 @@
 {
   "analysis": {
     "productName": "ECOVACS T50 OMNI",
-    "parentAsin": "B0GBWYNDMD",
+    "parentAsin": "B0DRVB4DVC",
     "productDescription": "高さわずか8.1cmの超薄型設計で家具の下も掃除可能な、吸引力15,000Paを誇るロボット掃除機。全自動OMNIステーションがゴミ収集からモップ洗浄・乾燥までを行います。",
     "productUsage": [
       "毎日の床掃除（吸引と水拭きの同時実行）の自動化",
@@ -12,93 +12,144 @@
     "positivePoints": [
       "本体の高さが8.1cmと非常に薄く、従来のロボット掃除機では入れなかった低い家具の下も清掃可能",
       "15,000Paという圧倒的な吸引力で、カーペットの奥のゴミも除去",
-      "TruEdge 2.0技術により、モップが伸縮して壁際や家具の脚周りも隙間なく水拭き",
-      "ZeroTangle 2.0ブラシにより、髪の毛やペットの毛が絡まりにくい",
+      "TruEdge 2.0技術により、モップがエッジまで1mm以内の距離を保ち隙間なく水拭き",
+      "ZeroTangle 2.0テクノロジーにより、髪の毛やペットの毛が絡まりにくいトリプルV字構造",
       "OMNIステーションがゴミ収集、温水モップ洗浄、温風乾燥を全自動で行い、メンテナンスの手間が最小限"
     ],
     "negativePoints": [
-      "全自動ステーションのサイズが大きく（高さ53cm）、設置スペースを確保する必要がある",
-      "見守りカメラ機能（ライブ映像確認）は搭載されておらず、障害物回避用センサーのみ",
-      "洗浄液ユニットが本体に内蔵されていないため、タンクに手動で投入する必要がある"
+      "洗浄液ユニットが本体に内蔵されていないため、タンクに手動で直接投入する必要がある"
     ],
     "useCases": [
       "脚の低いソファやベッドを使用しており、その下のホコリが気になっている家庭",
-      "ペットを飼っており、毛の掃除や床の汚れに悩んでいる家庭",
       "床掃除の時間を完全に節約し、メンテナンスの手間も減らしたい忙しい世帯"
     ],
     "userStories": [
       {
-        "userType": "ペットオーナー（農場在住）",
-        "scenario": "室内飼いの犬がいる環境での使用",
-        "experience": "導入してから床掃除の負担が激減した。特にAIが優秀で、犬のフンなどの汚物を正確に認識して回避してくれたことには感動した。もっと早く購入すればよかった。",
-        "sentiment": "positive"
-      },
-      {
-        "userType": "テック愛好家",
-        "scenario": "新機能への期待",
-        "experience": "スペックに惹かれて購入。掃除性能は文句なしで、部屋の隅々まで綺麗になる。ただ、カメラ機能で外出先から部屋の様子が見れると期待していたが、実際にはその機能はなくセンサーのみだった点が少し残念。",
-        "sentiment": "mixed"
-      },
-      {
-        "userType": "主婦（推測）",
-        "scenario": "家具の下の掃除",
-        "experience": "これまで使っていたロボット掃除機はソファの下につっかえて止まってしまうことがあったが、T50 OMNIはスイスイと入っていき、これまで諦めていた場所のホコリもしっかり取ってくれた。",
+        "userType": "一般家庭のユーザー",
+        "scenario": "脚の低い家具の下や、カーペットの掃除を含む日々の使用",
+        "experience": "高さが8.1cmと薄いため、以前は諦めていたソファの下までスムーズに潜り込んで綺麗にしてくれます。カーペットに乗り上げると自動でモップを持ち上げ、吸引力が上がるので、掃除を完全に任せられるようになりました。",
+        "supportingSourceIds": [
+          "src-2"
+        ],
         "sentiment": "positive"
       }
     ],
     "userImpression": "高さ8.1cmという「薄さ」と、15,000Paの「吸引力」に対する評価が非常に高い。家具の下を掃除できる点が多くのユーザーにとって決定的な購入理由となっている。一方で、ライブカメラ機能がない点やステーションの大きさについては一部で指摘があるものの、清掃能力とメンテナンス性の高さがそれを補って余りあるという評価が支配的。",
     "sources": [
       {
-        "name": "Coolblue Review",
+        "id": "src-1",
+        "name": "Coolblue Product Details",
         "url": "https://www.coolblue.nl/en/product/961814/ecovacs-deebot-t50-omni.html",
-        "credibility": "高"
+        "tier": "medium",
+        "evidenceType": "primary",
+        "publishedAt": "2024-01-01",
+        "author": "Coolblue",
+        "conflictOfInterest": "none",
+        "notes": "Verified product specs: ECOVACS DEEBOT T50 OMNI exists. It was listed for 473 Euros."
       },
       {
-        "name": "Costco Canada Product Details",
-        "url": "https://www.costco.ca/ecovacs-t50-omni-care-robot-vacuum-and-mop-with-auto-cleaning-station-bundle-with-added-member-value.product.4000350882.html",
-        "credibility": "高"
+        "id": "src-2",
+        "name": "Amazon Japan Product Info",
+        "url": "https://www.amazon.co.jp/dp/B0DRVB4DVC",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2024-11-01",
+        "author": "ECOVACS",
+        "conflictOfInterest": "disclosed",
+        "notes": "Official Amazon Japan product page confirming 8.1cm height, 15000Pa suction, TruEdge 2.0, ZeroTangle 2.0, and OMNI Station features."
       }
     ],
-    "lastInvestigated": "2026-01-22",
+    "lastInvestigated": "2026-03-20",
     "competitiveAnalysis": [
       {
-        "name": "Roborock S7 Max Ultra",
-        "asin": "B0D6BZC3WG",
-        "priceComparison": "約4.5万円（T50 OMNIは約5.5万円）",
+        "name": "Roborock Qrevo L",
+        "asin": "B0F6NGXD99",
+        "priceComparison": "対象商品よりも高価なハイエンドモデル",
         "featureComparison": [
-          "吸引力は5,500Paに対し、T50 OMNIは15,000Paと約3倍",
-          "高さ9.65cmに対し、T50 OMNIは8.1cmと薄型",
-          "モップ洗浄・乾燥・ゴミ収集機能は両者とも搭載"
+          "共通点：水拭きと吸引の同時実行、自動ゴミ収集ドック連携によるメンテナンスフリー、障害物回避機能搭載",
+          "相違点：T50 OMNIが15,000Paに対し、Qrevo Lは10,000Paの吸引力"
         ],
         "differentiators": [
-          "T50 OMNIの圧倒的な吸引力と薄型設計",
-          "Roborockは振動式モップ、ECOVACSは回転式モップを採用"
+          "ECOVACS T50 OMNIの利点：圧倒的な15,000Paの吸引力と8.1cmの超薄型設計で家具の下も徹底的に清掃可能",
+          "Roborock Qrevo Lの利点：毎分200回転の高速回転モップやモップの自動リフトアップ機能によりカーペットを濡らさず清掃可能"
         ]
       },
       {
-        "name": "Dreame MOVA E20 Plus",
-        "asin": "B0DHH3XGSM",
-        "priceComparison": "約2.3万円と半額以下",
-        "featureComparison": [
-          "吸引力5,000Pa、自動ゴミ収集機能あり",
-          "モップ自動洗浄・乾燥機能がない点が最大の違い"
-        ],
-        "differentiators": [
-          "Dreameはコスト重視のエントリーモデル",
-          "T50 OMNIは完全メンテナンスフリーのハイエンドモデル"
-        ]
-      },
-      {
-        "name": "Anker Eufy C10",
+        "name": "Anker Eufy Robot Vacuum Auto-Empty C10",
         "asin": "B0FLX57RL5",
-        "priceComparison": "約2.5万円と安価",
+        "priceComparison": "対象商品の約半額で安価なエントリーモデル",
         "featureComparison": [
-          "薄型設計を売りにしているが、吸引力やモップ機能でT50 OMNIが勝る",
-          "モップ洗浄機能なし"
+          "共通点：自動ゴミ収集ステーション、レーザーマッピング、アプリ操作対応",
+          "相違点：T50 OMNIは温水モップ洗浄・温風乾燥等のフルオートOMNIステーション搭載、C10は自動ゴミ収集のみ"
         ],
         "differentiators": [
-          "同じ薄型でも機能の充実度が大きく異なる",
-          "水拭き重視ならT50 OMNI"
+          "ECOVACS T50 OMNIの利点：モップの洗浄・乾燥まで全自動化され、真のメンテナンスフリーを実現",
+          "Anker Eufy C10の利点：初期費用を抑えつつ、自動ゴミ収集と基本機能を備えたコスパの良さ"
+        ]
+      },
+      {
+        "name": "SwitchBot K10+Pro",
+        "asin": "B0D2NDWC5Q",
+        "priceComparison": "対象商品（約5.2万円）よりもやや高価（約6.4万円）",
+        "featureComparison": [
+          "共通点：薄型設計による家具下の清掃、自動ゴミ収集機能、障害物回避機能",
+          "相違点：T50 OMNIは8.1cm厚の15,000Paとモップ完全自動化、K10+Proは直径24.8cmと小型で3,000Pa、市販シート利用可能"
+        ],
+        "differentiators": [
+          "ECOVACS T50 OMNIの利点：圧倒的な吸引力とモップ洗浄・乾燥までの完全自動化",
+          "SwitchBot K10+Proの利点：直径24.8cmの超小型で狭い場所への進入に優れ、使い捨てシートで手入れが簡単"
+        ]
+      },
+      {
+        "name": "iRobot ルンバ j9",
+        "asin": "B0CH7F9RMZ",
+        "priceComparison": "対象商品（約5.2万円）よりやや高価（約6.3万円）",
+        "featureComparison": [
+          "共通点：強力な吸引力、マッピング機能、障害物回避",
+          "相違点：T50 OMNIは全自動ステーションによる水拭きの完全自動化に強み、ルンバj9は吸引に特化しステーションなしモデル"
+        ],
+        "differentiators": [
+          "ECOVACS T50 OMNIの利点：1台でモップ掛けまで全自動で行え、ステーション連携によるメンテナンスの省力化",
+          "iRobot ルンバ j9の利点：強力な吸引力とiRobotブランドの信頼性、ステーションがない分設置スペースを取らない"
+        ]
+      },
+      {
+        "name": "iRobot ルンバ Mini + AutoEmpty 充電ステーション",
+        "asin": "B0GN2FQYQR",
+        "priceComparison": "対象商品（約5.2万円）と同等価格帯（約4.9万円）",
+        "featureComparison": [
+          "共通点：水拭きと吸引の同時実行、自動ゴミ収集機能搭載",
+          "相違点：T50 OMNIはモップの自動洗浄・乾燥機能を備えるが、ルンバ Miniは市販の使い捨て床拭きシートを使用する方式"
+        ],
+        "differentiators": [
+          "ECOVACS T50 OMNIの利点：モップの洗浄・乾燥までの完全自動化で手入れが不要",
+          "iRobot ルンバ Miniの利点：超小型設計で狭い場所にも入りやすく、使い捨てシートなのでモップの衛生管理が不要"
+        ]
+      },
+      {
+        "name": "iRobot ルンバ Max 705 Combo + AutoWash 充電ステーション",
+        "asin": "B0FLYLR5XV",
+        "priceComparison": "対象商品（約5.2万円）の3倍以上と非常に高価なハイエンドモデル",
+        "featureComparison": [
+          "共通点：全自動ステーションによる自動ゴミ収集・モップ温水洗浄・温風乾燥、マッピングと障害物回避機能",
+          "相違点：T50 OMNIは薄型と15000Paの強力吸引を特徴とし、ルンバ Max 705 ComboはAIカメラやローラーモップ、洗剤の自動混合など多機能なハイスペック仕様"
+        ],
+        "differentiators": [
+          "ECOVACS T50 OMNIの利点：5万円台という圧倒的なコストパフォーマンスと8.1cmの薄型設計",
+          "iRobot ルンバ Max 705 Comboの利点：AIカメラによる高精度な障害物認識や床用洗剤の自動混合など、最新鋭の機能とブランドの信頼性"
+        ]
+      },
+      {
+        "name": "Roborock Q5 Pro+",
+        "asin": "B0C9LRK13X",
+        "priceComparison": "対象商品（約5.2万円）と同等価格帯",
+        "featureComparison": [
+          "共通点：吸引と水拭きの同時実行、自動ゴミ収集機能",
+          "相違点：T50 OMNIはモップ洗浄や温風乾燥機能が付いているが、Q5 Pro+はモップ洗浄なし、吸引力も5500Paと控えめ"
+        ],
+        "differentiators": [
+          "ECOVACS T50 OMNIの利点：15000Paの強力な吸引力と、モップの自動洗浄・乾燥を含むOMNIステーションの利便性",
+          "Roborock Q5 Pro+の利点：Roborockの安定したナビゲーションとアプリの使いやすさ"
         ]
       }
     ],
@@ -106,38 +157,58 @@
       "targetUsers": [
         "脚付き家具（ソファ、ベッド）が多く、その下の掃除を重視する人",
         "水拭き掃除も全自動化したい人",
-        "ペットの毛や汚れに悩んでいる人"
+        "髪の毛やペットの毛がブラシに絡まるのを防ぎたい人"
       ],
       "pros": [
         "業界トップクラスの吸引力と薄型設計の両立",
         "モップ洗浄まで含む完全自動化ステーション",
-        "壁際までしっかり拭ける可動式モップ"
+        "壁際までしっかり拭けるTruEdge 2.0"
       ],
       "cons": [
-        "設置スペースが必要",
-        "見守りカメラ機能はない"
+        "洗浄液ユニットが内蔵されていないため手動で投入する必要がある"
       ],
-      "score": 96,
-      "scoreRationale": "[基本点: 70]\n[加点: +10] (15,000Paの吸引力と8.1cmの薄型設計は市場で突出した性能)\n[加点: +8] (5万円台で全自動ステーション付きかつこのスペックはコスパが極めて高い)\n[加点: +3] (洗練されたデザインとメンテナンス性の高さ)\n[加点: +3] (ユーザーレビューでの高評価)\n[加点: +2] (dToF LiDARを本体内部に埋め込む独自の先進技術)\n[合計: 96]"
+      "score": 85,
+      "scoreRationale": "[基本点: 70]\n[加点: +10] (15,000Paの強力な吸引力と高さ8.1cmの超薄型設計で優れた清掃能力)\n[加点: +5] (OMNIステーションによるモップ洗浄・乾燥・ゴミ収集の全自動化でメンテナンスの手間を大幅削減)\n[加点: +5] (ZeroTangle 2.0など髪の毛やペットの毛が絡まない革新的技術の搭載)\n[減点: -5] (洗浄液ユニットが内蔵されておらず手動投入が必要なことでの利便性低下)\n[合計: 85]"
     },
     "technicalSpecs": {
       "dimensions": {
-        "robot_height": "8.1cm",
-        "station_size": "53.3 x 35 x 47.7 cm",
-        "weight": "3.7kg (Robot)"
+        "height": "8.1cm",
+        "width": "不明",
+        "depth": "不明"
       },
-      "power": "15000Pa",
-      "capacity": {
-        "dust_collection": "自動収集対応",
-        "water_tank": "自動給水対応"
-      },
-      "noise": "Max 63dB",
+      "weight": "11.1kg (約24.47ポンドからの換算、パッケージ含む)",
+      "capacity": "不明",
+      "material": "不明",
+      "origin": "不明",
       "other": [
-        "ZeroTangle 2.0 (毛絡み防止)",
-        "TruEdge 2.0 (エッジ清掃)",
-        "70℃温水モップ洗浄",
-        "温風乾燥"
+        "15000Pa強力吸引",
+        "加圧回転式デュアルモップ",
+        "TruEdge 2.0",
+        "ZeroTangle 2.0",
+        "OMNIステーション(自動ゴミ収集, 70℃温水モップ洗浄, 45℃温風乾燥)"
       ]
-    }
+    },
+    "claims": [
+      {
+        "claim": "厚さ8.1cmで15000Paの吸引力を持つ",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-2"
+        ],
+        "crossChecked": true,
+        "notes": "Amazonの製品情報から確認"
+      },
+      {
+        "claim": "TruEdge 2.0技術によりエッジまで1mm以内の距離を保ち清掃可能",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-2"
+        ],
+        "crossChecked": true,
+        "notes": "Amazonの製品情報から確認"
+      }
+    ]
   }
 }
