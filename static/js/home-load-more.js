@@ -8,14 +8,23 @@ document.addEventListener('DOMContentLoaded', function () {
     loadMoreButton.addEventListener('click', function () {
         const hiddenCards = document.querySelectorAll('.card-wrapper.card-hidden');
 
-        // Show the next batch of cards
-        for (let i = 0; i < itemsPerBatch && i < hiddenCards.length; i++) {
-            hiddenCards[i].classList.remove('card-hidden');
-        }
+        if (hiddenCards.length > 0) {
+            // Show the next batch of cards
+            for (let i = 0; i < itemsPerBatch && i < hiddenCards.length; i++) {
+                hiddenCards[i].classList.remove('card-hidden');
+            }
 
-        // If no more hidden cards, hide the button
-        if (document.querySelectorAll('.card-wrapper.card-hidden').length === 0) {
-            loadMoreContainer.style.display = 'none';
+            // If no more hidden cards, change the button to "Back to top"
+            if (document.querySelectorAll('.card-wrapper.card-hidden').length === 0) {
+                loadMoreButton.textContent = 'トップに戻る';
+                loadMoreButton.classList.add('is-back-to-top');
+            }
+        } else {
+            // Scroll to the top of the page
+            globalThis.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
         }
     });
 });

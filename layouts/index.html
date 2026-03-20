@@ -189,7 +189,7 @@
 
     <div class="card-grid" id="product-grid">
         {{ $articles := where .Site.RegularPages "Section" "articles" }}
-        {{ $sorted := sort $articles ".Params.last_investigated" "desc" }}
+        {{ $sorted := first 90 (sort $articles ".Params.last_investigated" "desc") }}
         {{ range $index, $element := $sorted }}
         <div class="card-wrapper{{ if ge $index 15 }} card-hidden{{ end }}">
             {{ partial "product-card.html" . }}
