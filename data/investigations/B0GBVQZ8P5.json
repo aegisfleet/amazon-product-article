@@ -1,0 +1,195 @@
+{
+  "analysis": {
+    "productName": "FOSSiBOT S5 SIMフリー スマホ 16GB RAM+128GB ROM 6000mAh",
+    "parentAsin": "B0GR53RZ3X",
+    "productDescription": "Unisoc T7250 8コアプロセッサと最大16GB RAM相当の動作環境を備えるAndroid 15搭載スマートフォンです。6.88インチの大画面と6000mAhの大容量バッテリーを搭載し、日常使いから長時間の動画視聴まで幅広く対応します。",
+    "productUsage": [
+      "日常的な通話やウェブブラウジング",
+      "動画視聴やゲームプレイ",
+      "旅行やアウトドアでの長時間利用",
+      "OTG機能を用いた他の小型電子機器への給電"
+    ],
+    "positivePoints": [
+      "6.88インチHD+の大画面と120Hzの高リフレッシュレートで滑らかな操作が可能",
+      "6000mAhの大容量バッテリー搭載で長時間の使用でも安心",
+      "最新のAndroid 15 OSを搭載し、操作がスムーズでプライバシー保護も強化されている",
+      "薄型軽量ボディ（厚さ8.5mm、重量215.6g）で日常的な持ち運びに便利",
+      "最大16GB RAMと128GB ROM（1TB拡張可）でマルチタスクやデータ保存に余裕がある"
+    ],
+    "negativePoints": [
+      "10Wの充電速度は6000mAhの大容量バッテリーに対して充電時間がかかる可能性がある",
+      "解像度がHD+（720×1640）であり、フルHD以上を求めるユーザーにはやや物足りない可能性がある",
+      "リアカメラが1300万画素であり、より高画素なカメラを求めるユーザーには向かない"
+    ],
+    "useCases": [
+      "長時間の外出や旅行時に、バッテリー切れを気にせずナビゲーションやカメラを利用する",
+      "120Hzの高リフレッシュレートと大画面を活かして、ゲームや動画コンテンツを快適に楽しむ",
+      "OTG機能を利用して、ワイヤレスイヤホンなどの他の小型デバイスを充電する"
+    ],
+    "userStories": [],
+    "userImpression": "大画面と大容量バッテリーを備えつつ、薄型軽量で日常的な持ち運びにも適した実用的なエントリークラスのスマートフォン。最新OS搭載で基本機能も充実しており、コストパフォーマンスの高さが期待できる。",
+    "sources": [
+      {
+        "id": "src-amazon",
+        "name": "Amazon商品ページ",
+        "url": "https://www.amazon.co.jp/dp/B0GBVQZ8P5?tag=aegis-22&linkCode=ogi&th=1&psc=1",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-03-20",
+        "author": "Amazon",
+        "conflictOfInterest": "possible",
+        "notes": "スペック情報、価格情報、商品説明を取得"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "6000mAhの大容量バッテリーを搭載し、長時間の使用が可能",
+        "category": "durability",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-amazon"
+        ],
+        "crossChecked": false,
+        "notes": "公式の商品仕様から確認"
+      },
+      {
+        "claim": "最大16GBのRAM（物理4GB+仮想12GB）と128GBのROMを搭載",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-amazon"
+        ],
+        "crossChecked": false,
+        "notes": "公式の商品仕様から確認"
+      },
+      {
+        "claim": "6.88インチのHD+ディスプレイと120Hzのリフレッシュレート",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-amazon"
+        ],
+        "crossChecked": false,
+        "notes": "公式の商品仕様から確認"
+      }
+    ],
+    "lastInvestigated": "2026-03-20",
+    "competitiveAnalysis": [
+      {
+        "name": "UMIDIGI G5 Mecha",
+        "asin": "B0C996PJ7K",
+        "priceComparison": "本製品と同等の価格帯。",
+        "featureComparison": [
+          "共通点：6000mAhの大容量バッテリーを搭載し、長時間の使用に適している点",
+          "相違点：本製品は薄型軽量なデザインを重視しているが、UMIDIGI G5 Mechaは防水防塵（IP68/IP69K）と耐衝撃性能を備えたタフネススマホであり、5000万画素のメインカメラを搭載している点"
+        ],
+        "differentiators": [
+          "FOSSiBOT S5の利点：薄型軽量ボディで日常の持ち運びに適しており、最新のAndroid 15と120Hzのリフレッシュレートによる滑らかな操作が可能な点",
+          "UMIDIGI G5 Mechaの利点：防水・防塵・耐衝撃性能を備えており、アウトドアなどの過酷な環境での使用に適している点、および高画素カメラを搭載している点"
+        ]
+      },
+      {
+        "name": "Blackview Wave9",
+        "asin": "B0GLP6GCLW",
+        "priceComparison": "本製品よりわずかに安価。",
+        "featureComparison": [
+          "共通点：Android 15を搭載し、低価格帯のエントリーモデルとして位置づけられている点",
+          "相違点：本製品は6000mAhの大容量バッテリーと6.88インチの大画面を搭載しているが、Blackview Wave9は5000mAhバッテリーと6.56インチ画面で、IP54の防水防塵に対応している点"
+        ],
+        "differentiators": [
+          "FOSSiBOT S5の利点：大容量バッテリーと大画面ディスプレイにより、動画視聴や長時間の使用においてより快適な環境を提供する点",
+          "Blackview Wave9の利点：IP54の防水防塵性能により、多少の水しぶきや埃に対して耐性がある点"
+        ]
+      },
+      {
+        "name": "OUKITEL C21",
+        "asin": "B08HZ4F7MK",
+        "priceComparison": "本製品とほぼ同等の価格。",
+        "featureComparison": [
+          "共通点：低価格帯で基本的な機能を備えたSIMフリースマートフォンである点",
+          "相違点：本製品は6.88インチの大画面と6000mAhの大容量バッテリー、最新のAndroid 15を搭載しているが、OUKITEL C21は6.4インチのフルHD+画面、4000mAhバッテリー、Android 10搭載である点"
+        ],
+        "differentiators": [
+          "FOSSiBOT S5の利点：より大きなバッテリー容量と大画面、最新のOSを搭載しており、日常利用において高い利便性を提供する点",
+          "OUKITEL C21の利点：フルHD+の高解像度ディスプレイを搭載しており、より精細な画面表示が可能な点"
+        ]
+      },
+      {
+        "name": "FOSSiBOT F114",
+        "asin": "B0FHW67KFL",
+        "priceComparison": "本製品より高価。",
+        "featureComparison": [
+          "共通点：同じメーカーの製品であり、Android 15を搭載している点",
+          "相違点：本製品は薄型軽量な日常使いモデルだが、F114は防水防塵（IP68/IP69K）と耐衝撃性能を備えたタフネススマホであり、5000万画素カメラと18W急速充電に対応している点"
+        ],
+        "differentiators": [
+          "FOSSiBOT S5の利点：より安価であり、薄型軽量ボディで日常的な持ち運びや使用が容易である点",
+          "FOSSiBOT F114の利点：高い堅牢性と防水防塵性能を備え、アウトドアや過酷な現場での使用に適している点"
+        ]
+      },
+      {
+        "name": "Blackview FORT 1",
+        "asin": "B0FGXSK772",
+        "priceComparison": "本製品より高価。",
+        "featureComparison": [
+          "共通点：Android 15を搭載している点",
+          "相違点：本製品は6000mAhバッテリーで薄型軽量だが、FORT 1は10000mAhの超大容量バッテリーを搭載し、防水防塵耐衝撃性能を備えたタフネスモデルである点"
+        ],
+        "differentiators": [
+          "FOSSiBOT S5の利点：軽量かつ薄型で、日常の携帯性が非常に高い点",
+          "Blackview FORT 1の利点：圧倒的なバッテリー容量と堅牢性を備え、長期間の充電不要な環境やハードな使用環境に適している点"
+        ]
+      },
+      {
+        "name": "FOSSiBOT S2",
+        "asin": "B0GCZGXVP7",
+        "priceComparison": "本製品より高価。",
+        "featureComparison": [
+          "共通点：同じメーカーのスマートフォンであり、5000mAh以上のバッテリーを備えている点",
+          "相違点：本製品はAndroid 15を搭載し大画面（6.88インチ）だが、S2はAndroid 14搭載で、50MPの高性能カメラとより大きなメモリ・ストレージ（20GB RAM相当、256GB ROM）を備えている点"
+        ],
+        "differentiators": [
+          "FOSSiBOT S5の利点：より低価格で最新のAndroid 15を搭載し、バッテリー容量も多い点",
+          "FOSSiBOT S2の利点：カメラ性能とストレージ容量が大きく、写真撮影やデータ保存を重視する用途に適している点"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "低価格で大画面・大容量バッテリーのスマートフォンを探しているユーザー",
+        "日常的なウェブブラウジングや動画視聴を主な用途とするユーザー",
+        "最新のAndroid OSを体験したいユーザー"
+      ],
+      "pros": [
+        "6.88インチの大画面と120Hzリフレッシュレート",
+        "6000mAhの大容量バッテリー搭載",
+        "最新のAndroid 15を採用"
+      ],
+      "cons": [
+        "カメラの画素数が1300万画素と競合モデルに比べて控えめ",
+        "充電速度が10Wであり、満充電に時間がかかる"
+      ],
+      "score": 80,
+      "scoreRationale": "[基本点: 70]\n[加点: +5] (6000mAhの大容量バッテリーと6.88インチの大画面を搭載し実用性が高い)\n[加点: +5] (15,898円という低価格ながらAndroid 15を搭載しコスパが良い)\n[合計: 80]"
+    },
+    "technicalSpecs": {
+      "dimensions": {
+        "height": "約9.4mm",
+        "width": "約76.6mm",
+        "depth": "約165.8mm"
+      },
+      "weight": "約220g",
+      "display": "6.88インチ HD+ (720x1640), 120Hzリフレッシュレート",
+      "cpu": "Unisoc T7250 8コアプロセッサ",
+      "memory": "16GB (物理4GB + 仮想12GB)",
+      "storage": "128GB ROM (最大1TBのmicroSDカード拡張対応)",
+      "battery": "6000mAh, 10W急速充電, OTG逆充電対応",
+      "camera": "リア: 1300万画素, フロント: 800万画素",
+      "os": "Android 15",
+      "connectivity": "2.4GHz/5GHz Wi-Fi, Bluetooth 5.0, GPS",
+      "sim": "デュアルNano SIM または Nano SIM + TFカード",
+      "sensors": "顔認証, 側面指紋認証",
+      "interfaces": "USB Type-C, 3.5mmイヤホンジャック"
+    }
+  }
+}
