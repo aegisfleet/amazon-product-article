@@ -1,0 +1,225 @@
+{
+  "analysis": {
+    "productName": "VersLife L6 ロボット掃除機 水拭き両用",
+    "parentAsin": "B0GQHRQYHL",
+    "productDescription": "吸引と水拭きが同時に行える、3500Paの強力吸引ロボット掃除機です。厚さ7.35cmの超薄型設計で、スマホアプリやスマートスピーカーからの操作にも対応します。",
+    "productUsage": [
+      "フローリング、畳、カーペットの吸引掃除",
+      "水拭きによる床の拭き掃除",
+      "アプリや音声アシスタントを利用した遠隔操作・スケジュール清掃"
+    ],
+    "positivePoints": [
+      "3500Paの強力な吸引力と水拭き機能を併せ持つ",
+      "厚さわずか7.35cmの超薄型設計で家具の下も掃除しやすい",
+      "Wi-Fi/アプリ、リモコン、Alexa/Googleアシスタントによる多様な操作方法",
+      "約15mmの段差乗り越え機能と落下・衝突防止センサー搭載",
+      "最大130分の連続稼働と自動充電機能",
+      "1万円台前半という非常に高いコストパフォーマンス",
+      "回転ブラシがないダイレクト吸引口のため、ペットの毛が絡まりにくい"
+    ],
+    "negativePoints": [
+      "自動ゴミ収集ステーションは非搭載",
+      "高度なレーザーマッピング機能が非搭載で、ランダムまたはジグザグ走行となる",
+      "カーペットの奥深くに入り込んだゴミは、回転ブラシ搭載モデルに比べて取りきれない場合がある",
+      "2.4GHzのWi-Fiのみの対応"
+    ],
+    "useCases": [
+      "ペット（犬・猫）を飼っており、抜け毛の掃除に悩んでいる家庭",
+      "一人暮らしのワンルームでの日常的な清掃",
+      "ベッドやソファの下など、手の届きにくい場所の掃除",
+      "スマートスピーカーと連携した声での操作"
+    ],
+    "userStories": [
+      {
+        "userType": "ペットを飼っている家庭",
+        "scenario": "日常的な抜け毛や猫砂の掃除",
+        "experience": "2匹の猫を飼っているため、日常的に抜け毛や猫砂が散らかりますが、VersLife L6はメインの回転ブラシがないダイレクト吸引のため、毛が絡まることなく直接ダストボックスに吸い込まれます。面倒なブラシの毛絡み除去の手間が省けました。細かいホコリから猫砂までしっかり吸い取ってくれますが、カーペットの奥のゴミを取るのは少し苦手なようです。また、高さが7.4cm程度と薄いため、脚の低いソファの下にも入り込んで掃除してくれます。",
+        "supportingSourceIds": ["src-amazon-review-1"],
+        "sentiment": "positive"
+      }
+    ],
+    "userImpression": "1万円台前半という低価格ながら、3500Paの強力な吸引力、水拭き機能、アプリ連携、自動充電など、基本的なロボット掃除機の機能を網羅しており、初めてロボット掃除機を購入する層や一人暮らしの方にとって非常に魅力的な選択肢となっている。特に、メインブラシがないことによる「毛絡みのなさ」は、ペットを飼っているユーザーから高く評価されている。",
+    "sources": [
+      {
+        "id": "src-amazon-listing",
+        "name": "Amazon商品ページ",
+        "url": "https://www.amazon.co.jp/dp/B0G4LZ34T5",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-03-21",
+        "author": "VersLife",
+        "conflictOfInterest": "disclosed",
+        "notes": "商品の公式スペックおよび機能説明を確認"
+      },
+      {
+        "id": "src-amazon-review-1",
+        "name": "Amazonカスタマーレビュー (海外)",
+        "url": "https://www.amazon.co.jp/dp/B0G4LZ34T5",
+        "tier": "medium",
+        "evidenceType": "secondary",
+        "publishedAt": "2026-03-21",
+        "author": "Amazonユーザー",
+        "conflictOfInterest": "none",
+        "notes": "ペット(猫2匹)を飼っているユーザーのレビュー。回転ブラシがないため毛が絡まない点、高さが低くソファ下に入れる点が高評価。一方でマッピング機能がなくランダムな動きであること、カーペットの奥のゴミには少し弱いことが言及されている。"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "最大3500Paの強力な吸引力を持つ",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": ["src-amazon-listing"],
+        "crossChecked": false,
+        "notes": "商品詳細より確認"
+      },
+      {
+        "claim": "吸引と水拭きの両方に対応している",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": ["src-amazon-listing"],
+        "crossChecked": false,
+        "notes": "商品詳細より確認"
+      },
+      {
+        "claim": "厚さが7.35cmの超薄型設計である",
+        "category": "durability",
+        "confidence": "high",
+        "supportingSourceIds": ["src-amazon-listing"],
+        "crossChecked": true,
+        "notes": "商品詳細およびユーザーレビュー（約7.4cmと言及）で確認"
+      },
+      {
+        "claim": "メインの回転ブラシがなく、ダイレクト吸引のため毛が絡まりにくい",
+        "category": "durability",
+        "confidence": "high",
+        "supportingSourceIds": ["src-amazon-listing", "src-amazon-review-1"],
+        "crossChecked": true,
+        "notes": "商品詳細の「絡まり防止吸引口設計」と、ユーザーのレビューで一致"
+      }
+    ],
+    "lastInvestigated": "2026-03-21",
+    "competitiveAnalysis": [
+      {
+        "name": "Anker Eufy RoboVac G30 Hybrid",
+        "asin": "B08KD938WQ",
+        "priceComparison": "対象商品の方が大幅に安い。対象商品は1万円台前半であるのに対し、競合商品は約19,000円。対象商品は低価格ながらも強力な吸引力を持つ。",
+        "featureComparison": [
+          "共通点：吸引と水拭き両用、薄型設計、Wi-Fi/アプリ対応、自動充電",
+          "相違点：対象商品は3500Paの吸引力を持つが、競合はブランド力とスマート・ダイナミック・ナビゲーション機能に強みがある"
+        ],
+        "differentiators": [
+          "VersLife L6の利点：圧倒的な低価格と、公称3500Paの高い吸引力、毛が絡みにくい吸引口",
+          "Anker Eufy RoboVac G30 Hybridの利点：Ankerブランドの信頼性と、効率的なルートで清掃するナビゲーション機能"
+        ]
+      },
+      {
+        "name": "ECOVACS DEEBOT N20 PRO PLUS",
+        "asin": "B0D45R4YVL",
+        "priceComparison": "対象商品の方が圧倒的に安い。競合商品は約30,000円で、自動ゴミ収集機能を搭載している。",
+        "featureComparison": [
+          "共通点：水拭き対応、アプリ操作、落下・衝突防止",
+          "相違点：競合は自動ゴミ収集ステーション、8000Paの強力吸引、高度なマッピング機能を搭載しているが、価格が高い"
+        ],
+        "differentiators": [
+          "VersLife L6の利点：価格が1/2以下で、初めてのロボット掃除機として手軽に導入できる点",
+          "ECOVACS DEEBOT N20 PRO PLUSの利点：自動ゴミ収集によるメンテナンスの手間軽減と、より高度な清掃性能・ナビゲーション機能"
+        ]
+      },
+      {
+        "name": "Anker Eufy Clean X8 Pro with Self-Empty Station",
+        "asin": "B0C4NN6GGY",
+        "priceComparison": "対象商品の方が圧倒的に安い。競合商品は約30,000円で自動ゴミ収集機能を搭載する上位モデル。",
+        "featureComparison": [
+          "共通点：アプリ操作、自動充電機能",
+          "相違点：競合は自動ゴミ収集、デュアルタービン（4000Pa×2）による強力な吸引力、毛絡み除去システムを搭載"
+        ],
+        "differentiators": [
+          "VersLife L6の利点：初期費用を極力抑えつつ、基本的なロボット掃除機の恩恵を受けられる点",
+          "Anker Eufy Clean X8 Proの利点：強力な吸引力と自動ゴミ収集ステーションによる高い利便性"
+        ]
+      },
+      {
+        "name": "ECOVACS DEEBOT N30 PLUS",
+        "asin": "B0FMR9YY83",
+        "priceComparison": "対象商品の方が大幅に安い。競合商品は約35,000円で、より多機能。",
+        "featureComparison": [
+          "共通点：水拭き対応、アプリ連携",
+          "相違点：競合は10000Paの吸引力、自動ゴミ収集、ゼロタングル（毛絡み防止）などの高度な機能を搭載"
+        ],
+        "differentiators": [
+          "VersLife L6の利点：必要十分な機能を備えながらも、驚異的な低価格を実現している点",
+          "ECOVACS DEEBOT N30 PLUSの利点：高い吸引力と自動ゴミ収集、優れた毛絡み防止機能"
+        ]
+      },
+      {
+        "name": "Anker Eufy Robot Vacuum Auto-Empty C10",
+        "asin": "B0FLX57RL5",
+        "priceComparison": "対象商品の方が大幅に安い。競合商品は約30,000円で自動ゴミ収集機能を備えている。",
+        "featureComparison": [
+          "共通点：自動充電、落下防止、薄型、アプリ操作",
+          "相違点：競合はレーザーマッピングと自動ゴミ収集ステーションを搭載"
+        ],
+        "differentiators": [
+          "VersLife L6の利点：価格が安く、かつ水拭き機能が搭載されている点（競合は水拭き非搭載）",
+          "Anker Eufy Robot Vacuum Auto-Empty C10の利点：自動ゴミ収集とレーザーマッピングによる効率的な清掃"
+        ]
+      },
+      {
+        "name": "ECOVACS T50 OMNI",
+        "asin": "B0FSL5MRPG",
+        "priceComparison": "対象商品の方が非常に安い。競合商品は約53,000円のハイエンドモデル。",
+        "featureComparison": [
+          "共通点：水拭き両用、アプリ操作",
+          "相違点：競合はモップ自動洗浄・乾燥、自動ゴミ収集、15000Paの吸引力など全自動化機能を網羅"
+        ],
+        "differentiators": [
+          "VersLife L6の利点：最低限のコストでロボット掃除機を導入できる点",
+          "ECOVACS T50 OMNIの利点：メンテナンスのほぼ全てを自動化できるハイエンドな機能性"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "初めてロボット掃除機を購入する方",
+        "ペットを飼っており抜け毛の掃除を自動化したい方",
+        "コストパフォーマンスを最重視する方",
+        "家具の下など狭い隙間を掃除したい方"
+      ],
+      "pros": [
+        "1万円台前半という圧倒的な低価格",
+        "吸引と水拭きの両方に対応",
+        "超薄型（7.35cm）で家具の下に入りやすい",
+        "ブラシレス吸引口で毛が絡まりにくい"
+      ],
+      "cons": [
+        "自動ゴミ収集機能がないためゴミ捨ての手間がかかる",
+        "高度なマッピング機能がないため効率面で上位機種に劣る",
+        "カーペットの奥のゴミの吸引は少し苦手"
+      ],
+      "score": 75,
+      "scoreRationale": "[基本点: 70]\n[加点: +15] (吸引と水拭き両用で1万円台前半という圧倒的なコストパフォーマンス)\n[加点: +5] (7.35cmの超薄型設計による実用性の高さ)\n[加点: +5] (ブラシレス構造によりペットの毛が絡まないという明確な利点)\n[減点: -10] (マッピング機能の不在により清掃効率が落ちる点)\n[減点: -10] (大幅な割引率設定による二重価格の懸念)\n[合計: 75]"
+    },
+    "technicalSpecs": {
+      "dimensions": {
+        "height": "73.5mm",
+        "width": "標準",
+        "depth": "標準"
+      },
+      "weight": "不明",
+      "suctionPower": "3500Pa",
+      "continuousRuntime": "最大130分",
+      "noiseLevel": "60dB未満",
+      "stepClimbing": "約15mm",
+      "waterTank": "250ml",
+      "color": "ブラック",
+      "features": [
+        "水拭き両用",
+        "自動充電",
+        "落下・衝突防止",
+        "Wi-Fi/アプリ対応(2.4GHzのみ)",
+        "Alexa/Googleアシスタント対応",
+        "4つの清掃モード(自動・弓形・集中・壁際)"
+      ]
+    }
+  }
+}
