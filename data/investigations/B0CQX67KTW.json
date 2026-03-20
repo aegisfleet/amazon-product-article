@@ -1,0 +1,220 @@
+{
+  "analysis": {
+    "productName": "Anker Power Bank (10000mAh, 22.5W)",
+    "parentAsin": "B0GLYKZ3K5",
+    "productDescription": "大人気「PowerCore 10000」の次世代モデルとして登場したモバイルバッテリー。世界最薄クラスとなる厚さ約16mmの薄型設計に加え、最大22.5Wの急速充電と便利なディスプレイ表示、付属ケーブルを収納できるストラップ機能を備えています。",
+    "productUsage": [
+      "スマートフォン、タブレット、ワイヤレスイヤホンなどの充電",
+      "出張、旅行などの外出先での電源確保"
+    ],
+    "positivePoints": [
+      "10000mAhの大容量かつ最大22.5Wの高出力で、3台同時の充電が可能",
+      "厚さ約16mm（1円玉の直径より薄い）の薄型設計で、カバンやポーチの隙間にも入れやすい",
+      "USB-Cケーブルが付属し、本体のストラップとして収納できるため持ち運びに便利",
+      "バッテリーの残量がディスプレイで正確に確認できる"
+    ],
+    "negativePoints": [
+      "USB-A/USB-Cの22.5W出力はHuawei機器のみ対応であり、それ以外はそれぞれ最大18W/20W出力となる",
+      "本体の充電はUSB-Cポートのみ対応しており、パススルー充電には非対応",
+      "充電器と本製品を繋ぐためのケーブルとしては付属ケーブルの使用は非推奨（Ankerサポート回答より）"
+    ],
+    "useCases": [
+      "日々の通勤・通学時にカバンに入れて持ち歩き、スマートフォンの充電切れに備える",
+      "旅行や出張時に複数のデバイス（スマホとイヤホンなど）を同時に充電する",
+      "外出先でケーブルを忘れた際でも、付属の収納式ケーブルですぐに充電する"
+    ],
+    "userStories": [
+      {
+        "userType": "旅行者",
+        "scenario": "旅行先でのモバイルバッテリー利用",
+        "experience": "旅行での使用のために購入しました。届いてすぐに充電と動作確認を行いましたが問題なく使えました。重さは許容範囲内です。ただし、ストラップケーブルはスマホとバッテリーを繋ぐ用途であり、バッテリー自体の充電用には別のケーブルを用意した方が良いとサポートから言われたため、追加でケーブルを購入しました。",
+        "supportingSourceIds": [
+          "src-anker-official-review"
+        ],
+        "sentiment": "positive"
+      },
+      {
+        "userType": "学生",
+        "scenario": "日常的な持ち歩きでの利用",
+        "experience": "思ったよりも薄くてコンパクトなので、持ち運びにとても便利です。10000mAhの容量があるため、外出先でも安心して使うことができます。",
+        "supportingSourceIds": [
+          "src-anker-official-review"
+        ],
+        "sentiment": "positive"
+      },
+      {
+        "userType": "ビジネスパーソン",
+        "scenario": "子供用を含めた家族での利用",
+        "experience": "子供たちのためにも購入しました。かさばらず使いやすいとのことです。残量が数字で見えるため、充電のタイミングが分かりやすいのが良い点です。",
+        "supportingSourceIds": [
+          "src-anker-official-review"
+        ],
+        "sentiment": "positive"
+      }
+    ],
+    "userImpression": "薄型でコンパクトな点、残量ディスプレイの分かりやすさ、そしてケーブルをストラップとして収納できる利便性が高く評価されています。一方で、本体の充電用ケーブルや急速充電の仕様については事前の確認が必要との声もあります。",
+    "sources": [
+      {
+        "id": "src-anker-official",
+        "name": "Anker Power Bank (10000mAh, 22.5W) 製品ページ",
+        "url": "https://www.ankerjapan.com/products/a1257",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2024-07-01",
+        "author": "Anker Japan",
+        "conflictOfInterest": "disclosed",
+        "notes": "製品仕様、サイズ（約114 × 71 × 16mm）、重さ（約200g）、出力仕様、注意事項を確認。"
+      },
+      {
+        "id": "src-anker-official-review",
+        "name": "Anker Power Bank (10000mAh, 22.5W) カスタマーレビュー",
+        "url": "https://www.ankerjapan.com/products/a1257",
+        "tier": "medium",
+        "evidenceType": "secondary",
+        "publishedAt": "2026-03-21",
+        "author": "Anker公式オンラインストア ユーザー",
+        "conflictOfInterest": "none",
+        "notes": "サイズ感、利便性、残量表示の使いやすさ、付属ケーブルの用途に関するサポートの回答を確認。"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "厚さ約16mmの世界最薄クラスの薄型設計",
+        "category": "durability",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-anker-official"
+        ],
+        "crossChecked": false,
+        "notes": "公式の製品仕様にて確認。10000mAhかつUSB-Cポートを2つ備えた3ポート搭載のモバイルバッテリーにおいて（2024年2月時点 / Anker調べ）。"
+      },
+      {
+        "claim": "最大22.5Wの出力に対応（ただしHuawei機器以外は最大20W）",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-anker-official"
+        ],
+        "crossChecked": false,
+        "notes": "公式の注意事項に記載。「USB-Aポート / USB-Cポートの22.5W出力はHuawei機器のみ対応です。Huawei機器以外については、USB-AポートはMAX 18W出力、USB-CポートはMAX 20W出力となります。」"
+      }
+    ],
+    "lastInvestigated": "2026-03-21",
+    "competitiveAnalysis": [
+      {
+        "name": "Xiaomi Power Bank 10000mAh 22.5W Lite",
+        "asin": "B0DJBXGW2X",
+        "priceComparison": "対象商品より安価で、コストパフォーマンスに優れている。",
+        "featureComparison": [
+          "共通点：10000mAhの容量を持ち、最大22.5Wの急速充電、3台同時充電に対応している",
+          "相違点：Xiaomiは重量が約227gで厚みもあるが、双方向の急速充電に対応している。一方、Ankerは厚さ約16mm、重量約200gで薄型軽量であり、残量ディスプレイやケーブルストラップを搭載している"
+        ],
+        "differentiators": [
+          "Anker Power Bank (10000mAh, 22.5W)の利点：薄型軽量で持ち運びに適しており、残量表示やケーブル収納機能などの使い勝手に優れている",
+          "Xiaomi Power Bank 10000mAh 22.5W Liteの利点：価格が手頃であり、コストパフォーマンスを重視する場合に適している"
+        ]
+      },
+      {
+        "name": "UGREEN PB507",
+        "asin": "B0DZ1TGX6T",
+        "priceComparison": "対象商品より安価で、より手軽に購入できる。",
+        "featureComparison": [
+          "共通点：10000mAhの容量で、PD20W急速充電に対応、残量ディスプレイを搭載している",
+          "相違点：UGREENはUSB-AとUSB-Cの2ポート構成で約177g。Ankerは3ポート構成（USB-C×2, USB-A×1）で、ケーブルを収納できるストラップ機能を備えている"
+        ],
+        "differentiators": [
+          "Anker Power Bank (10000mAh, 22.5W)の利点：3つのポートで複数デバイスの同時充電に優れ、ケーブルを収納できるため持ち物を減らせる",
+          "UGREEN PB507の利点：約177gと非常に軽量で、価格も安いためよりコンパクトさを求める場合に適している"
+        ]
+      },
+      {
+        "name": "エレコム EC-C37BK",
+        "asin": "B0DJ8LS3T7",
+        "priceComparison": "対象商品よりわずかに安価な価格設定。",
+        "featureComparison": [
+          "共通点：10000mAhの容量で、3ポートを搭載している",
+          "相違点：エレコムはUSB-A×2、USB-C×1の構成で最大出力15W、重量は約230g。AnkerはUSB-C×2、USB-A×1の構成で最大出力22.5W（一部機器）、重量約200gと軽量で高出力"
+        ],
+        "differentiators": [
+          "Anker Power Bank (10000mAh, 22.5W)の利点：出力が高く（最大22.5W/20W）、USB-Cポートを2つ備えており、最新デバイスの充電に適している",
+          "エレコム EC-C37BKの利点：USB-Aポートを2つ備えており、旧来のUSB-Aケーブルを多用するユーザーに適している"
+        ]
+      },
+      {
+        "name": "INIU P41",
+        "asin": "B0DHZPSVR5",
+        "priceComparison": "対象商品より安価で、高出力と低価格を両立している。",
+        "featureComparison": [
+          "共通点：10000mAhの容量、3ポート搭載、ストラップ式のUSB-Cケーブルが付属している",
+          "相違点：INIUは最大45Wの高出力に対応し、ノートPC等の充電も可能。重量は約182g。Ankerは最大22.5W（実質20W）で、厚さ16mmの薄型設計と残量ディスプレイを搭載している"
+        ],
+        "differentiators": [
+          "Anker Power Bank (10000mAh, 22.5W)の利点：薄型でフラットなデザインのためカバンに収納しやすく、ディスプレイで残量が正確に分かる",
+          "INIU P41の利点：最大45Wの高出力に対応しており、スマートフォンだけでなくノートパソコンの充電など幅広い用途で使える"
+        ]
+      },
+      {
+        "name": "CIO SMARTCOBY Pro SLIM 35W",
+        "asin": "B0CHVZHLZ1",
+        "priceComparison": "対象商品よりも高価だが、高出力やパススルー充電などの高機能を備えている。",
+        "featureComparison": [
+          "共通点：10000mAhの容量、薄さ約16mmの薄型設計、3ポート搭載、デジタル残量表示を備えている",
+          "相違点：CIOは最大35W出力やパススルー充電に対応し、重量は約220g。Ankerは最大22.5W（実質20W）出力で約200g、パススルー充電には非対応だが、ケーブルストラップ機能がある"
+        ],
+        "differentiators": [
+          "Anker Power Bank (10000mAh, 22.5W)の利点：価格が抑えられており、ケーブルストラップ機能によりケーブルを忘れる心配がない",
+          "CIO SMARTCOBY Pro SLIM 35Wの利点：最大35W出力やパススルー充電に対応しており、ノートパソコンの充電やコンセント周りの省スペース化を重視する場合に適している"
+        ]
+      },
+      {
+        "name": "Anker Nano Power Bank 30W",
+        "asin": "B0CDBY9P5Q",
+        "priceComparison": "対象商品よりも高価な上位モデル。",
+        "featureComparison": [
+          "共通点：Anker製の10000mAh、残量ディスプレイ搭載、USB-Cケーブルが一体型または付属している",
+          "相違点：Nanoは最大30W出力に対応し、ケーブルが完全に本体と一体化している（重量約215g）。本製品は最大22.5W（実質20W）出力で薄型設計（約200g）、ケーブルは取り外してストラップとして収納可能"
+        ],
+        "differentiators": [
+          "Anker Power Bank (10000mAh, 22.5W)の利点：薄型設計で携帯性に優れ、ケーブルを取り外して別の用途や交換にも対応できる",
+          "Anker Nano Power Bank 30Wの利点：最大30Wの高出力に対応し、ケーブルが完全に一体化しているためケーブルを紛失するリスクがない"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "コンパクトで薄いモバイルバッテリーを探している人",
+        "ケーブルを一緒に持ち歩くのが面倒な人",
+        "バッテリー残量を正確に把握したい人"
+      ],
+      "pros": [
+        "1円玉より薄い約16mmの薄型・軽量設計",
+        "残量が数字で分かるディスプレイ",
+        "ケーブルをストラップとして収納できる便利さ"
+      ],
+      "cons": [
+        "多くの機器では最大20W出力となる点",
+        "パススルー充電には非対応である点"
+      ],
+      "score": 83,
+      "scoreRationale": "[基本点: 70]\n[加点: +8] (薄さ約16mm、重量約200gと携帯性に非常に優れている)\n[加点: +5] (残量ディスプレイやケーブルストラップなど使い勝手が良い)\n[加点: +2] (Ankerブランドの信頼性と充実したサポート)\n[減点: -2] (22.5W出力がHuawei機器のみであり、それ以外は最大20Wとなる点)\n[合計: 83]"
+    },
+    "technicalSpecs": {
+      "dimensions": {
+        "height": "114mm",
+        "width": "71mm",
+        "depth": "16mm"
+      },
+      "weight": "200g",
+      "capacity": "10000mAh",
+      "power": "最大22.5W (USB-C出力: 5V=3A/9V=2.22A/10V=2.25A、USB-A出力: 5V=3A/9V=2A/10V=2.25A)",
+      "ports": "USB-C × 2, USB-A × 1",
+      "input": "USB-C入力: 5V=3A/9V=2.22A (最大20W)",
+      "other": [
+        "低電流モード搭載",
+        "ディスプレイ搭載（残量表示）",
+        "付属ケーブルをストラップとして収納可能",
+        "PSE技術基準適合"
+      ]
+    }
+  }
+}
