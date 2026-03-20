@@ -695,14 +695,14 @@ ${reviewAnalysis ? this.generateSentimentAnalysis(reviewAnalysis) : ''}`;
           // 商品プレビュー（Creators API情報がある場合）
           const productPreview = detail
             ? this.renderCompetitorPreview(
-              competitor.name,
-              detail,
-              investigation.product.price.amount,
-              competitorScore,
-              hasInternalReview,
-              normalizedAsin,
-              competitorInvestigation?.analysis?.technicalSpecs,
-            )
+                competitor.name,
+                detail,
+                investigation.product.price.amount,
+                competitorScore,
+                hasInternalReview,
+                normalizedAsin,
+                competitorInvestigation?.analysis?.technicalSpecs,
+              )
             : '';
 
           // アフィリエイトリンクを生成
