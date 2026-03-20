@@ -1,7 +1,11 @@
+.search-header {
+    margin-top: var(--spacing-1g);
+}
+
 .search-container {
     position: relative;
     max-width: 1000px;
-    margin: 0.7rem auto 2rem auto;
+    margin: 1rem auto 2rem auto;
     padding: 0 1rem;
     scroll-margin-top: 5rem;
     /* スクロール位置の余裕を確保 */
