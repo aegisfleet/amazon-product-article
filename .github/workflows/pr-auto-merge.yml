@@ -32,18 +32,29 @@ jobs:
     - name: Build project
       run: npm run build
 
-    - name: Generate articles
+    - name: Analyze changed files
+      id: analyze_changes
       env:
         AMAZON_PARTNER_TAG: ${{ secrets.AMAZON_PARTNER_TAG }}
       run: |
         git fetch origin ${{ github.base_ref }}
-        CHANGED_FILES=$(git diff --name-only origin/${{ github.base_ref }} HEAD -- 'data/investigations/*.json' | tr '\n' ' ')
-
-        if [ -n "$CHANGED_FILES" ]; then
-          echo "Found changed files: $CHANGED_FILES"
-          npx ts-node src/scripts/article-generation-cli.ts --skip-paapi $CHANGED_FILES
+        
+        # Check for investigation changes
+        INVESTIGATION_FILES=$(git diff --name-only origin/${{ github.base_ref }} HEAD -- 'data/investigations/*.json' | tr '\n' ' ')
+        if [ -n "$INVESTIGATION_FILES" ]; then
+          echo "Found changed investigation files: $INVESTIGATION_FILES"
+          npx ts-node src/scripts/article-generation-cli.ts --skip-paapi $INVESTIGATION_FILES
         else
           echo "No investigation files changed. Skipping article generation."
+        fi
+
+        # Check for today.json changes
+        if git diff --name-only origin/${{ github.base_ref }} HEAD | grep -q 'data/recommendations/today.json'; then
+          echo "today_changed=true" >> $GITHUB_OUTPUT
+          echo "today.json has changed."
+        else
+          echo "today_changed=false" >> $GITHUB_OUTPUT
+          echo "today.json has not changed."
         fi
 
         npm run sanitize:frontmatter
@@ -67,15 +78,16 @@ jobs:
         PR_AUTHOR: ${{ github.event.pull_request.user.login }}
       run: npm run merge:pr
 
-    - name: Trigger deploy workflow
+    - name: Trigger subsequent workflows
       if: success()
       uses: actions/github-script@ed597411d8f924073f98dfc5c65a23a2325f34cd # v8.0.0
       with:
         github-token: ${{ secrets.GITHUB_TOKEN }}
         script: |
-          // マージ後、少し待機してからデプロイをトリガー
+          // マージ後、少し待機してからワークフローをトリガー
           await new Promise(resolve => setTimeout(resolve, 5000));
 
+          // 1. デプロイワークフローをトリガー
           console.log('Triggering Deploy Articles workflow...');
           await github.rest.actions.createWorkflowDispatch({
             owner: context.repo.owner,
@@ -84,6 +96,20 @@ jobs:
             ref: 'main'
           });
           console.log('Deploy workflow triggered successfully');
+
+          // 2. today.json が変更されていたら商品調査ワークフローをトリガー
+          if ("${{ steps.analyze_changes.outputs.today_changed }}" === "true") {
+            console.log('Triggering Today Recommendations Product Research workflow...');
+            await github.rest.actions.createWorkflowDispatch({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              workflow_id: 'product-research-from-today-json.yml',
+              ref: 'main'
+            });
+            console.log('Today Recommendations Product Research workflow triggered successfully');
+          } else {
+            console.log('today.json not changed, skipping product research workflow.');
+          }
 
     - name: Report merge status
       if: always()
