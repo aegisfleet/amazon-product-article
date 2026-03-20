@@ -1,0 +1,150 @@
+{
+  "analysis": {
+    "productName": "SHARP シンプルスマホ6 Softbank版 SIMフリー",
+    "parentAsin": "B0GL7RMX1S",
+    "productDescription": "大きくて見やすい約14.5cmの大画面と、電話・メールの専用ボタンでかんたん操作が可能なスマートフォンです。マスクをしたままでも顔認証ができ、ハンドソープで洗えるなど衛生面にも配慮されています。",
+    "productUsage": ["電話やメールの基本的なコミュニケーション", "インターネットの閲覧や動画視聴", "キャッシュレス決済や写真撮影"],
+    "positivePoints": ["大きく見やすい約14.5cmのディスプレイ", "電話やメールの専用ボタンでかんたんに操作できる", "防水・防塵・耐衝撃性能があり、ハンドソープで洗える", "マスクをしたまま顔認証が可能"],
+    "negativePoints": ["ストレージ容量が64GBと比較的少なめ", "おサイフケータイ(FeliCa)非対応", "最新の3Dゲームなど重い処理には向かないスペック"],
+    "useCases": ["スマートフォンを初めて使うシニア層", "操作が簡単で丈夫なスマホを求める方", "衛生面を気にする方（丸洗い可能）"],
+    "userStories": [],
+    "userImpression": "大きなボタンと見やすい画面、分かりやすい操作性を備えています。「押すだけサポート」などの初心者向け機能が充実しており、スマホデビューのシニア層や、複雑な操作を避けたいユーザー向けの設計となっています。耐衝撃や丸洗い可能な点も特徴です。",
+    "sources": [
+      {
+        "id": "src-softbank-official",
+        "name": "シンプルスマホ6 製品情報 | SoftBank",
+        "url": "https://www.softbank.jp/mobile/products/smartphone/simple-sumaho6/",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2022-04-01",
+        "author": "ソフトバンク株式会社",
+        "conflictOfInterest": "none",
+        "notes": "基本スペック、詳細スペック（画面サイズ、解像度、カメラ画素数、防水・防塵性能、耐衝撃性能、おサイフケータイ非対応など）を確認。"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "ハンドソープやアルコール除菌シートで洗える防水・防塵性能（IPX5/IPX8、IP6X）",
+        "category": "durability",
+        "confidence": "high",
+        "supportingSourceIds": ["src-softbank-official"],
+        "crossChecked": false,
+        "notes": "公式サイトのスペック表にてIPX5/IPX8の防水、IP6Xの防塵性能を確認。"
+      },
+      {
+        "claim": "コンクリート落下試験をクリアした耐衝撃性能（MIL-STD-810H）",
+        "category": "durability",
+        "confidence": "high",
+        "supportingSourceIds": ["src-softbank-official"],
+        "crossChecked": false,
+        "notes": "公式サイトのスペック表にてMIL-STD-810H準拠を確認。"
+      }
+    ],
+    "lastInvestigated": "2026-03-20",
+    "competitiveAnalysis": [
+      {
+        "name": "SHARP AQUOS wish5 (B0FVLFPPHR)",
+        "asin": "B0FVLFPPHR",
+        "priceComparison": "AQUOS wish5はより新しいモデルであり、大画面約16.8cmや大容量バッテリーを搭載しているため、シンプルスマホ6より高価です。より高いスペックを求める場合はAQUOS wish5が適しています。",
+        "featureComparison": [
+          "共通点：防水・防塵・耐衝撃性能を備えており、シンプルで使いやすいデザインを採用しています。",
+          "相違点：シンプルスマホ6は約14.5cm画面で専用ボタンを備えた初心者向け特化モデルですが、AQUOS wish5は約16.8cmの大画面、5000mAhの大容量バッテリー、より高性能なカメラを備えた一般向けモデルです。"
+        ],
+        "differentiators": [
+          "SHARP シンプルスマホ6 Softbank版 SIMフリーの利点：電話やメールの専用ボタン、「押すだけサポート」機能など、初めてのスマホでも迷わず使える工夫がされています。",
+          "SHARP AQUOS wish5 (B0FVLFPPHR)の利点：大画面で動画やSNSを楽しみたい方や、バッテリー持ちを重視する方に適しています。"
+        ]
+      },
+      {
+        "name": "SHARP シンプルスマホ7 (B0GL8F9DVQ)",
+        "asin": "B0GL8F9DVQ",
+        "priceComparison": "シンプルスマホ7は後継機種であり、おサイフケータイ(FeliCa)に対応するなどの進化があるため、価格がやや高くなっています。",
+        "featureComparison": [
+          "共通点：どちらも初心者向けの専用ボタンや、見やすい画面、分かりやすい操作性を備えています。",
+          "相違点：シンプルスマホ6はおサイフケータイ非対応ですが、シンプルスマホ7はおサイフケータイ(FeliCa)に対応し、指紋認証からの決済アプリ起動機能などを備えています。"
+        ],
+        "differentiators": [
+          "SHARP シンプルスマホ6 Softbank版 SIMフリーの利点：基本機能に絞られている分、より低価格で購入できる可能性があります。",
+          "SHARP シンプルスマホ7 (B0GL8F9DVQ)の利点：おサイフケータイを利用してキャッシュレス決済を頻繁に行う方に適しています。"
+        ]
+      },
+      {
+        "name": "SHARP AQUOS wish5 SH-52F (B0GCD7H924)",
+        "asin": "B0GCD7H924",
+        "priceComparison": "AQUOS wish5 SH-52Fはより高価ですが、5000万画素の高性能カメラや大容量バッテリー、大画面を搭載しており、その価値があります。",
+        "featureComparison": [
+          "共通点：防水防塵・耐衝撃性能を備え、MIL規格に準拠したタフネス仕様です。",
+          "相違点：シンプルスマホ6は物理ボタンによる直感的な操作が特徴ですが、AQUOS wish5 SH-52Fは約16.8cmの大画面や高性能な5000万画素カメラ、環境に配慮した再生素材の使用が特徴です。"
+        ],
+        "differentiators": [
+          "SHARP シンプルスマホ6 Softbank版 SIMフリーの利点：物理ボタンがあり、ガラケーからの乗り換えや直感的な操作を重視する方に最適です。",
+          "SHARP AQUOS wish5 SH-52F (B0GCD7H924)の利点：写真撮影を重視する方や、より大きな画面でコンテンツを楽しみたい方に適しています。"
+        ]
+      },
+      {
+        "name": "AQUOS sense9 SH-M29A (B0DQ3VC1H7)",
+        "asin": "B0DQ3VC1H7",
+        "priceComparison": "AQUOS sense9は高性能なミドルレンジモデルであり、シンプルスマホ6と比較して価格は大幅に高くなりますが、処理能力やカメラ性能が大きく優れています。",
+        "featureComparison": [
+          "共通点：SHARP製のスマートフォンであり、防水防塵性能などを備えています。",
+          "相違点：シンプルスマホ6は初心者向けの操作性に特化しているのに対し、AQUOS sense9はより高い処理性能、大容量のストレージ(128GB)、約15.5cmのディスプレイを搭載した汎用的なモデルです。"
+        ],
+        "differentiators": [
+          "SHARP シンプルスマホ6 Softbank版 SIMフリーの利点：物理ボタンの搭載やわかりやすいUIなど、初めてスマートフォンを使う方に優しい設計になっています。",
+          "AQUOS sense9 SH-M29A (B0DQ3VC1H7)の利点：より高いスペックを必要とする用途（ゲームや高品質な写真撮影など）に快適に対応できます。"
+        ]
+      },
+      {
+        "name": "SHARP AQUOS wish5 SH-52F ホワイト (B0GCCDYGGH)",
+        "asin": "B0GCCDYGGH",
+        "priceComparison": "AQUOS wish5は新しいモデルであり、機能強化に伴いシンプルスマホ6よりも高い価格設定となっています。",
+        "featureComparison": [
+          "共通点：耐久性に優れ、日常使いに適した設計となっています。",
+          "相違点：シンプルスマホ6がシニア層の使いやすさに特化している一方、こちらは一般ユーザー向けに大画面（約16.8cm）や長持ちバッテリーをアピールしています。"
+        ],
+        "differentiators": [
+          "SHARP シンプルスマホ6 Softbank版 SIMフリーの利点：操作に迷わない専用ボタンがあり、手軽に使えます。",
+          "SHARP AQUOS wish5 SH-52F ホワイト (B0GCCDYGGH)の利点：長時間の動画視聴や最新のアプリ利用に適した大画面とバッテリーを備えています。"
+        ]
+      },
+      {
+        "name": "SHARP AQUOS wish5 ミソラ (B0FVL9MLBH)",
+        "asin": "B0FVL9MLBH",
+        "priceComparison": "AQUOS wish5シリーズとして、シンプルスマホ6よりも高い価格帯に位置しますが、それに見合う画面サイズやバッテリー容量を持っています。",
+        "featureComparison": [
+          "共通点：防水・防塵、耐衝撃といった頑丈さを備えています。",
+          "相違点：シンプルスマホ6は操作サポート機能が充実していますが、AQUOS wish5はより滑らかな表示が可能な約16.8cmディスプレイなどを搭載しています。"
+        ],
+        "differentiators": [
+          "SHARP シンプルスマホ6 Softbank版 SIMフリーの利点：「押すだけサポート」などの機能で、トラブル時も安心です。",
+          "SHARP AQUOS wish5 ミソラ (B0FVL9MLBH)の利点：よりモダンなデザインと、一般用途に十分な基本性能を備えています。"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": ["初めてスマートフォンを持つシニア層", "電話とメールなど基本機能を重視する方", "操作が簡単で丈夫なスマホを求める方"],
+      "pros": ["電話・メールの専用ボタンで操作が直感的", "防水・防塵・耐衝撃性能で丈夫、丸洗いも可能", "「押すだけサポート」でトラブル時も安心"],
+      "cons": ["おサイフケータイ(FeliCa)に非対応", "ストレージが64GBと少なめ", "高性能を要求する用途には不向き"],
+      "score": 75,
+      "scoreRationale": "[基本点: 70]\n[加点: +10] (初心者やシニア層に特化した非常に使いやすい専用ボタンとUI設計)\n[加点: +5] (ハンドソープで洗えるなど衛生面にも配慮された高い耐久性)\n[減点: -10] (おサイフケータイ非対応であり、現代のキャッシュレス決済需要に応えきれていない)\n[合計: 75]"
+    },
+    "technicalSpecs": {
+      "dimensions": { "height": "158mm", "width": "71mm", "depth": "9.4mm" },
+      "weight": "174g",
+      "displaySize": "約14.5cm",
+      "displayResolution": "HD+ (1520x720ドット)",
+      "batteryCapacity": "4000mAh",
+      "os": "Android 12",
+      "cpu": "Snapdragon 695 5G (オクタコア) 2.2GHz + 1.8GHz",
+      "ram": "4GB",
+      "rom": "64GB",
+      "cameraMain": "デュアルカメラ (約1200万画素 + 約190万画素)",
+      "cameraSub": "約800万画素",
+      "connectivity": "Wi-Fi (IEEE 802.11 a/b/g/n/ac), Bluetooth 5.1",
+      "durability": "防水 (IPX5/IPX8), 防塵 (IP6X), 耐衝撃 (MIL-STD-810H-516 SHOCK)",
+      "terminals": "USB Type-C",
+      "sim": "nanoSIM / eSIM",
+      "other": ["生体認証(指紋、顔)", "世界対応ケータイ対応", "おサイフケータイ非対応", "ワイヤレス充電非対応"]
+    }
+  }
+}
