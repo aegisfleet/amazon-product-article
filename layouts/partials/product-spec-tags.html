@@ -2,9 +2,11 @@
 {{- $tagClass := .tagClass | default "card-spec-tag" -}}
 {{- with $specs -}}
 {{- with .os }}{{- if ne . "不明" }}<span class="{{ $tagClass }}">OS: {{ . }}</span>{{ end -}}{{ end -}}
-{{- with .cpu }}{{- if ne . "不明" }}<span class="{{ $tagClass }}">CPU: {{ . }}</span>{{ end -}}{{ end -}}
-{{- with .ram }}{{- if ne . "不明" }}<span class="{{ $tagClass }}">RAM: {{ . }}</span>{{ end -}}{{ end -}}
-{{- with .storage }}{{- if ne . "不明" }}<span class="{{ $tagClass }}">ROM: {{ . }}</span>{{ end -}}{{ end -}}
+{{- $cpu := .processor | default .cpu -}}
+{{- with $cpu }}{{- if ne . "不明" }}<span class="{{ $tagClass }}">プロセッサ: {{ . }}</span>{{ end -}}{{ end -}}
+{{- $ram := .memory | default .ram -}}
+{{- with $ram }}{{- if ne . "不明" }}<span class="{{ $tagClass }}">メモリ: {{ . }}</span>{{ end -}}{{ end -}}
+{{- with .storage }}{{- if ne . "不明" }}<span class="{{ $tagClass }}">ストレージ: {{ . }}</span>{{ end -}}{{ end -}}
 {{- with .display_size }}{{- if ne . "不明" }}<span class="{{ $tagClass }}">画面: {{ . }}</span>{{ end -}}{{ end -}}
 {{- with .battery_capacity }}{{- if ne . "不明" }}<span class="{{ $tagClass }}">バッテリー: {{ . }}</span>{{ end -}}{{ end -}}
 {{- with .weight }}
