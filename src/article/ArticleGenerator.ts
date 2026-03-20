@@ -695,14 +695,14 @@ ${reviewAnalysis ? this.generateSentimentAnalysis(reviewAnalysis) : ''}`;
           // 商品プレビュー（Creators API情報がある場合）
           const productPreview = detail
             ? this.renderCompetitorPreview(
-                competitor.name,
-                detail,
-                investigation.product.price.amount,
-                competitorScore,
-                hasInternalReview,
-                normalizedAsin,
-                competitorInvestigation?.analysis?.technicalSpecs,
-              )
+              competitor.name,
+              detail,
+              investigation.product.price.amount,
+              competitorScore,
+              hasInternalReview,
+              normalizedAsin,
+              competitorInvestigation?.analysis?.technicalSpecs,
+            )
             : '';
 
           // アフィリエイトリンクを生成
@@ -1052,8 +1052,12 @@ ${recommendationMessage}`;
   private addBasicSpecs(lines: string[], addedKeys: Set<string>, specs: TechnicalSpecs): void {
     if (specs.os) this.addFrontMatterSpec(lines, addedKeys, 'os', `"${this.formatSpecValue(specs.os)}"`);
     if (specs.cpu) this.addFrontMatterSpec(lines, addedKeys, 'cpu', `"${this.formatSpecValue(specs.cpu)}"`);
+    if (specs.processor)
+      this.addFrontMatterSpec(lines, addedKeys, 'processor', `"${this.formatSpecValue(specs.processor)}"`);
     if (specs.gpu) this.addFrontMatterSpec(lines, addedKeys, 'gpu', `"${this.formatSpecValue(specs.gpu)}"`);
     if (specs.ram) this.addFrontMatterSpec(lines, addedKeys, 'ram', `"${this.formatSpecValue(specs.ram)}"`);
+    if (specs.memory)
+      this.addFrontMatterSpec(lines, addedKeys, 'memory', `"${this.formatSpecValue(specs.memory)}"`);
     if (specs.storage) this.addFrontMatterSpec(lines, addedKeys, 'storage', `"${this.formatSpecValue(specs.storage)}"`);
     if (specs.quantity)
       this.addFrontMatterSpec(lines, addedKeys, 'quantity', `"${this.formatSpecValue(specs.quantity)}"`);
