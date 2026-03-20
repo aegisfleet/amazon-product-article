@@ -1,0 +1,181 @@
+{
+  "analysis": {
+    "productName": "CORSAIR XENEON EDGE 14.5インチLCDタッチスクリーン",
+    "parentAsin": "B0DVTHN8DN",
+    "productDescription": "PCケース内外のどちらにも設置可能な14.5インチの横長LCDタッチスクリーン。解像度2560x720の高精細ディスプレイで、iCUEソフトウェアと連携してシステム情報の表示やサブモニターとしての活用が可能です。",
+    "productUsage": [
+      "PCケース内でのシステムモニタリング",
+      "デスク上でのサブモニター",
+      "PCステータス、チャット、カレンダーの表示",
+      "タッチ操作によるアプリケーションのウィジェット管理"
+    ],
+    "positivePoints": [
+      "ケース内外の両方で使えるマグネット式＆ネジ留めマウント対応",
+      "解像度2560x720の超横長ディスプレイで鮮明な映像",
+      "5点マルチタッチ対応で直感的な操作が可能",
+      "CORSAIR iCUEとシームレスに連携しPC情報をリアルタイム表示"
+    ],
+    "negativePoints": [
+      "価格が約4.3万円とサブモニターとしては非常に高価",
+      "接続にUSB-C（DP Altモード）が必須で、対応環境を選ぶ",
+      "特殊なサイズと解像度のため、表示するコンテンツの最適化が必要"
+    ],
+    "useCases": [
+      "透明なサイドパネルを持つPCケース内への組み込み",
+      "ストリーマーやクリエイターのデスク上でのツールパレット表示",
+      "AIDA64等のモニタリングソフトを用いたシステム監視用画面"
+    ],
+    "userStories": [],
+    "userImpression": "現状、PCケース内に組み込める専用設計のディスプレイとして、デザイン性やiCUE連携機能による高いカスタマイズ性が注目されています。実用的なサブモニターというよりは、魅せるPCを構築するための高級オプションパーツという位置づけです。",
+    "sources": [
+      {
+        "id": "src-1",
+        "name": "Amazon.co.jp 商品ページ",
+        "url": "https://www.amazon.co.jp/dp/B0DVTHN8DN",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2025-08-15",
+        "author": "CORSAIR",
+        "conflictOfInterest": "none",
+        "notes": "基本スペック、価格、特徴を取得"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "PCケースの内外にマウント可能で強力なマグネットやネジで固定できる",
+        "category": "comparativeAdvantage",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "crossChecked": true,
+        "notes": "Amazonの製品特徴に記載あり"
+      },
+      {
+        "claim": "解像度2560x720の14.5インチで5点マルチタッチに対応",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "crossChecked": true,
+        "notes": "仕様として明記"
+      }
+    ],
+    "lastInvestigated": "2026-03-20",
+    "competitiveAnalysis": [
+      {
+        "name": "Prechen 12.3インチ タッチスクリーン",
+        "asin": "B0F23ZCSK8",
+        "priceComparison": "対象商品より大幅に安価であるが、ケース内専用マウントは非搭載。",
+        "featureComparison": [
+          "共通点：横長（ストレッチバー）形状でタッチスクリーンに対応",
+          "相違点：対象商品は14.5インチ（2560x720）でPCケース内固定用マグネット搭載、本競合は12.3インチ（1920x720）で据え置きメイン"
+        ],
+        "differentiators": [
+          "CORSAIR XENEON EDGE 14.5の利点：PCケースへの組み込みやすさ、iCUE連動、高解像度と大きな画面",
+          "Prechen 12.3インチの利点：価格が手頃でHDMIとUSB-Cによる接続の柔軟性が高い"
+        ]
+      },
+      {
+        "name": "Pramie 12.3インチ モバイルモニター",
+        "asin": "B0GFW6QQF7",
+        "priceComparison": "対象商品より大幅に安価であるが、タッチ非対応でケース内組み込みには不向き。",
+        "featureComparison": [
+          "共通点：横長比率のサブディスプレイ",
+          "相違点：対象商品はタッチ対応とPCマウントに特化しているが、本競合はタッチ非対応の汎用モバイルモニター"
+        ],
+        "differentiators": [
+          "CORSAIR XENEON EDGE 14.5の利点：PCケースへのマウント機能と直感的なタッチ操作",
+          "Pramie 12.3インチの利点：コストパフォーマンスの高さと軽量なモバイル用途への適性"
+        ]
+      },
+      {
+        "name": "wisecoco 7.9インチ CPUモニター",
+        "asin": "B0CP7SKQPJ",
+        "priceComparison": "対象商品の5分の1以下の価格で、PC内部モニターとしては安価な入門機。",
+        "featureComparison": [
+          "共通点：PC内部への設置を想定したシステム情報表示用途",
+          "相違点：対象商品は14.5インチと大型でタッチ対応、本競合は7.9インチと小型でタッチ非対応"
+        ],
+        "differentiators": [
+          "CORSAIR XENEON EDGE 14.5の利点：圧倒的な画面サイズと解像度、CORSAIRエコシステムとの連携",
+          "wisecoco 7.9インチの利点：安価でスペースの限られたPCケース内にも導入しやすいサイズ感"
+        ]
+      },
+      {
+        "name": "8.8インチ PCセンサーパネルディスプレイ",
+        "asin": "B0DFGRMZDP",
+        "priceComparison": "対象商品の半額以下。PC内部モニターとして中価格帯。",
+        "featureComparison": [
+          "共通点：PCケース内への設置用途、タッチ操作対応",
+          "相違点：対象商品は14.5インチでCORSAIRブランド、本競合は8.8インチ"
+        ],
+        "differentiators": [
+          "CORSAIR XENEON EDGE 14.5の利点：14.5インチの大画面で、360mmファンマウント位置に美しく収まる専用設計",
+          "8.8インチモデルの利点：小型ケースでも設置可能な汎用的なサイズ感と手頃な価格"
+        ]
+      },
+      {
+        "name": "15.6インチ 10点タッチモバイルモニター",
+        "asin": "B0F7R419VC",
+        "priceComparison": "対象商品より大幅に安価。一般的なタッチ対応モニターとして標準的。",
+        "featureComparison": [
+          "共通点：タッチ操作対応のモバイルディスプレイ",
+          "相違点：対象商品はPCケース内組み込みを想定した横長形状、本競合は一般的な16:9の15.6インチ"
+        ],
+        "differentiators": [
+          "CORSAIR XENEON EDGE 14.5の利点：特殊な横長アスペクト比とPCケースとの一体感",
+          "15.6インチモデルの利点：一般的な16:9比率で多様な用途に対応でき、コストパフォーマンスに優れる"
+        ]
+      },
+      {
+        "name": "KEEPTIME 15.6インチ モバイルモニター",
+        "asin": "B0D1K8H4F5",
+        "priceComparison": "対象商品より大幅に安価で、1万円を切る。",
+        "featureComparison": [
+          "共通点：サブディスプレイ用途",
+          "相違点：対象商品はPC内部向けでタッチ対応・特殊形状、本競合は一般的な16:9でタッチ非対応"
+        ],
+        "differentiators": [
+          "CORSAIR XENEON EDGE 14.5の利点：システムモニタリング用途に特化したデザインと機能",
+          "KEEPTIME 15.6インチの利点：圧倒的な低価格で、一般的な資料閲覧やデュアルモニター環境を手軽に構築できる"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "魅せるPC（ショーケースPC）を自作するユーザー",
+        "CORSAIRのiCUE対応パーツでシステムを統一しているユーザー",
+        "PCケース内に大型のステータスモニターを組み込みたい人"
+      ],
+      "pros": [
+        "14.5インチの大型横長ディスプレイによる圧倒的な存在感",
+        "マグネットやファンマウントを用いた柔軟な設置",
+        "タッチパネル搭載で直感的な操作が可能"
+      ],
+      "cons": [
+        "サブモニターとしては非常に高価",
+        "接続がUSB-C（DP Alt対応）に限定される",
+        "PCケースに十分なスペースが必要"
+      ],
+      "score": 86,
+      "scoreRationale": "[基本点: 70]\n[加点: +8] (PCケース内マウント対応、高解像度横長、タッチ対応、iCUE連動)\n[減点: -10] (一般的なモバイルモニターやPCケース内モニターと比べて非常に高価)\n[加点: +8] (CORSAIRブランド、PCケースとの親和性とビルドクオリティ)\n[加点: +10] (他に類を見ない14.5インチというサイズ感とiCUEによるシステムモニタリングの革新性)\n[合計: 86]"
+    },
+    "technicalSpecs": {
+      "dimensions": {
+        "height": "22.0mm",
+        "width": "120.0mm",
+        "depth": "372.0mm"
+      },
+      "weight": "710g",
+      "displaySize": "14.5インチ",
+      "resolution": "2560x720",
+      "refreshRate": "60Hz",
+      "touchScreen": "5点マルチタッチ（静電容量式）",
+      "interface": "USB-C（DP-Altモード対応）",
+      "mount": "内部：14倍マグネット、360mmファン取り付け位置（4隅ネジ）、外部：付属スタンド",
+      "software": "iCUEおよびWindows対応"
+    }
+  }
+}
