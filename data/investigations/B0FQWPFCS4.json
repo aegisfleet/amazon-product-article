@@ -1,0 +1,231 @@
+{
+  "analysis": {
+    "productName": "OPPO Reno11 A",
+    "parentAsin": "B0FTZDPFGH",
+    "productDescription": "大画面約17cmの有機ELディスプレイと最大120Hzのリフレッシュレート、67Wの急速充電に対応したミドルレンジの5Gスマートフォンです。",
+    "productUsage": [
+      "ウェブブラウジング",
+      "動画視聴",
+      "SNSの利用",
+      "日常的な写真撮影"
+    ],
+    "positivePoints": [
+      "約17cmの10億色有機ELディスプレイによる明るく色鮮やかな画面表示",
+      "最大67Wの急速充電により、約48分で100%の充電が可能",
+      "5,000mAhの大容量バッテリーを搭載し、丸1日使える電池持ち",
+      "「MediaTek Dimensity 7050」を搭載し、日常使いにおいてサクサク快適に動作する",
+      "インカメラは約3,200万画素と高画質で、顔色が明るく自然に撮影できる"
+    ],
+    "negativePoints": [
+      "カメラの発色が寒色寄りで、色鮮やかさに欠ける場合がある",
+      "ポートレート撮影時の背景のボケ感が弱く、被写体が際立ちにくい",
+      "ズーム撮影時の画質が粗く、輪郭がぼやけやすい",
+      "動画撮影時の手ブレ補正が弱く、上下の揺れが目立つ",
+      "高負荷な作業を行うと本体に熱がこもりやすい（表面温度が43度を超えることがある）"
+    ],
+    "useCases": [
+      "通勤・通学中になめらかな画面でウェブブラウジングやSNSを楽しむ",
+      "外出先でもバッテリー残量を気にせず動画を視聴する",
+      "朝の短い時間でサクッと急速充電して出かける",
+      "自撮りで自然な肌色を残す"
+    ],
+    "userStories": [
+      {
+        "userType": "一般ユーザー",
+        "scenario": "日常的なウェブ検索やSNSの利用",
+        "experience": "画面が大きく、最大120Hzのリフレッシュレートのおかげでスクロールが非常になめらかです。ベンチマークスコアも約59万点と高く、サクサク動くのでストレスなく使えます。",
+        "supportingSourceIds": [
+          "src-mybest"
+        ],
+        "sentiment": "positive"
+      },
+      {
+        "userType": "忙しいビジネスパーソン",
+        "scenario": "朝の支度時間での充電",
+        "experience": "夜に充電を忘れても、最大67Wの急速充電に対応しているため、朝の支度中に30分充電するだけで60%まで回復しました。1日中安心して使えます。",
+        "supportingSourceIds": [
+          "src-mybest"
+        ],
+        "sentiment": "positive"
+      },
+      {
+        "userType": "写真好きのユーザー",
+        "scenario": "食べ物や風景の撮影",
+        "experience": "アウトカメラの解像感は良いものの、発色が寒色寄りで色鮮やかさに欠けるため、食べ物の写真が少し美味しくなさそうに見えることがありました。ズーム撮影時も粗さが目立ちます。",
+        "supportingSourceIds": [
+          "src-mybest"
+        ],
+        "sentiment": "mixed"
+      }
+    ],
+    "userImpression": "日常使いには十分すぎる処理性能と、急速充電・長持ちバッテリーを兼ね備えたコストパフォーマンスの高いモデルです。ディスプレイも美しく快適ですが、カメラの色味や手ブレ補正、高負荷時の発熱にはやや妥協が必要です。",
+    "sources": [
+      {
+        "id": "src-mybest",
+        "name": "OPPO Reno11 Aを徹底レビュー！実際に使ってわかったメリット・デメリットは？ / マイベスト",
+        "url": "https://my-best.com/products/3537795",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2025-11-19",
+        "author": "高山健次",
+        "conflictOfInterest": "disclosed",
+        "notes": "処理性能、カメラ性能、バッテリー持ち、充電速度、画面性能、熱のこもりやすさを検証。ベンチマークスコア約59万点、約12時間48分の連続使用、67W急速充電などの具体的なデータを確認。"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "日常使いに十分な処理性能（ベンチマーク約59万点）",
+        "category": "durability",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-mybest"
+        ],
+        "crossChecked": false,
+        "notes": "MediaTek Dimensity 7050を搭載し、前モデルから性能向上"
+      },
+      {
+        "claim": "最大67Wの急速充電に対応し、約48分で100%充電可能",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-mybest"
+        ],
+        "crossChecked": false,
+        "notes": "30分で60%充電できたことを検証済み"
+      },
+      {
+        "claim": "高負荷時に熱がこもりやすい",
+        "category": "quality",
+        "confidence": "medium",
+        "supportingSourceIds": [
+          "src-mybest"
+        ],
+        "crossChecked": false,
+        "notes": "表面温度43.6℃を記録"
+      }
+    ],
+    "lastInvestigated": "2026-03-20",
+    "competitiveAnalysis": [
+      {
+        "name": "motorola g66j 5G",
+        "asin": "B0FDKVB871",
+        "priceComparison": "対象商品よりやや安い。コスパを追求するなら競合が視野に入るが、機能バランスは対象商品が優れる。",
+        "featureComparison": [
+          "共通点：ミドルレンジの5Gスマートフォン、大画面ディスプレイ、FeliCa・防水防塵対応",
+          "相違点：対象商品は最大67Wの急速充電に対応しているが、競合はバッテリー容量が5,200mAhとわずかに大きい。競合はFMラジオ搭載など独自の機能を持つ。"
+        ],
+        "differentiators": [
+          "OPPO Reno11 Aの利点：67Wの圧倒的な急速充電速度と、顔色が良く映るインカメラ性能",
+          "motorola g66j 5Gの利点：大容量バッテリーと、独自の便利機能（FMラジオなど）"
+        ]
+      },
+      {
+        "name": "Redmi 12 5G 8GB+256GB",
+        "asin": "B0CL72NN5F",
+        "priceComparison": "対象商品より安価で、ストレージ容量が多い。",
+        "featureComparison": [
+          "共通点：大画面ディスプレイ（約17cm/約17.3cm）、5000mAhバッテリー、FeliCa対応",
+          "相違点：対象商品が128GBなのに対し、競合は256GBのストレージを持つ。対象商品は有機ELディスプレイだが、競合は液晶ディスプレイ。"
+        ],
+        "differentiators": [
+          "OPPO Reno11 Aの利点：発色の良い有機ELディスプレイと、67W急速充電",
+          "Redmi 12 5Gの利点：大容量ストレージ（256GB）と、より手頃な価格設定"
+        ]
+      },
+      {
+        "name": "Galaxy A25 5G",
+        "asin": "B0FH4SZGQG",
+        "priceComparison": "対象商品よりやや安価で、ブランド力がある。",
+        "featureComparison": [
+          "共通点：ミドルレンジ5Gスマホで、大画面有機ELと5000mAhのバッテリーを搭載",
+          "相違点：対象商品が67W急速充電に対応しているのに対し、競合はそこまでの急速充電は謳っていないが、Samsungの独自UI(One UI)とブランド力がある"
+        ],
+        "differentiators": [
+          "OPPO Reno11 Aの利点：67Wの圧倒的な急速充電性能と、軽量なボディ",
+          "Galaxy A25 5Gの利点：Samsungというブランドへの安心感と、独自UIの使いやすさ"
+        ]
+      },
+      {
+        "name": "REDMI 15 5G",
+        "asin": "B0G2KSCGCG",
+        "priceComparison": "対象商品より安価で、大容量バッテリーが強み。",
+        "featureComparison": [
+          "共通点：5G対応、FeliCa搭載でコストパフォーマンスが高い",
+          "相違点：対象商品は5000mAhだが、競合は7000mAhの超大容量バッテリーを搭載。競合は33W充電だが対象商品は67W充電"
+        ],
+        "differentiators": [
+          "OPPO Reno11 Aの利点：充電時間の短縮と薄型軽量のバランス",
+          "REDMI 15 5Gの利点：7000mAhという圧倒的なバッテリー容量"
+        ]
+      },
+      {
+        "name": "motorola g64",
+        "asin": "B0D6YJG5MP",
+        "priceComparison": "対象商品よりわずかに安価。",
+        "featureComparison": [
+          "共通点：FeliCa対応、ミドルレンジの5Gスマートフォン",
+          "相違点：対象商品が有機ELを採用しているのに対し、競合は液晶などの違いがある。対象商品は67W急速充電に対応"
+        ],
+        "differentiators": [
+          "OPPO Reno11 Aの利点：色鮮やかな有機ELディスプレイと圧倒的な充電速度",
+          "motorola g64の利点：ピュアなAndroidに近い操作感"
+        ]
+      },
+      {
+        "name": "Xiaomi Redmi 12 ポーラシルバー XIG03",
+        "asin": "B0CX13FSVQ",
+        "priceComparison": "対象商品の半額程度で購入可能。",
+        "featureComparison": [
+          "共通点：日常使いに十分な5G対応エントリー・ミドル機",
+          "相違点：対象商品が有機EL、67W充電、より高い処理性能を備える一方、競合は価格を重視したスペック"
+        ],
+        "differentiators": [
+          "OPPO Reno11 Aの利点：高画質な有機ELディスプレイと、重い処理にも耐えうるスペック",
+          "Xiaomi Redmi 12の利点：圧倒的に手頃な価格で購入できること"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "予算4万円台でサクサク動くスマホを探している人",
+        "充電を忘れがちで急速充電を重視する人",
+        "大きな画面で動画やウェブを快適に見たい人",
+        "自撮りを頻繁に行う人"
+      ],
+      "pros": [
+        "最大67Wの急速充電",
+        "サクサク動く処理性能",
+        "色鮮やかな大画面有機EL",
+        "長持ちする5,000mAhバッテリー"
+      ],
+      "cons": [
+        "カメラの発色やボケ感が弱め",
+        "動画撮影時の手ブレ補正が弱い",
+        "高負荷時に発熱しやすい"
+      ],
+      "score": 83,
+      "scoreRationale": "[基本点: 70]\n[加点: +5] (MediaTek Dimensity 7050搭載で日常使いが快適)\n[加点: +5] (最大67Wの圧倒的な急速充電性能)\n[加点: +5] (5,000mAh大容量バッテリーで電池持ちが良好)\n[加点: +3] (約17cmの10億色有機ELディスプレイ)\n[減点: -3] (カメラの発色が寒色寄りでズームやポートレートが弱い)\n[減点: -2] (動画撮影時の手ブレが目立つ)\n[合計: 83]"
+    },
+    "technicalSpecs": {
+      "dimensions": {
+        "height": "162mm",
+        "width": "75mm",
+        "depth": "7.6mm"
+      },
+      "weight": "177g",
+      "capacity": "128GB",
+      "material": "背面：ガラスまたは樹脂（カラーによる加工）",
+      "origin": "中国",
+      "other": [
+        "ディスプレイ: 約17cm 有機EL (2,412×1,080 / FHD+), リフレッシュレート最大120Hz",
+        "バッテリー: 5,000mAh (最大67W急速充電対応)",
+        "CPU: MediaTek Dimensity 7050 (オクタコア 2.6GHz×2 + 2.0GHz×6)",
+        "RAM: 8GB (最大16GB相当まで拡張可能)",
+        "アウトカメラ: [広角]約6,400万画素 (F1.7) / [超広角]約800万画素 (F2.2, 画角112°) / [マクロ]約200万画素 (F2.4)",
+        "インカメラ: 約3,200万画素 (F2.4)",
+        "防水・防塵: IP65",
+        "生体認証: ディスプレイ指紋認証・顔認証"
+      ]
+    }
+  }
+}
