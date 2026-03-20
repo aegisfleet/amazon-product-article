@@ -16,7 +16,7 @@ export function formatInvestigationPrompt(product: Product): string {
 }
 
 /**
- * 本日のおすすめ商品調査プロンプトを生成
+ * 本日の注目商品10選調査プロンプトを生成
  */
 export function formatRecommendationPrompt(): string {
   return new RecommendationPromptBuilder().build();
