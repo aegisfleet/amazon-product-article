@@ -6,6 +6,7 @@ describe('CategoryNormalizer', () => {
       expect(CategoryNormalizer.isValidCategoryName('electronics')).toBe(true);
       expect(CategoryNormalizer.isValidCategoryName('books')).toBe(true);
       expect(CategoryNormalizer.isValidCategoryName('ボードゲーム')).toBe(true);
+      expect(CategoryNormalizer.isValidCategoryName('草刈機・刈払機パーツ・アクセサリ')).toBe(true);
       expect(CategoryNormalizer.isValidCategoryName('category_with_dash')).toBe(true);
     });
 

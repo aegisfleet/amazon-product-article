@@ -229,6 +229,7 @@ export class CategoryNormalizer {
       'キーボード・マウス・入力機器',
       '体重・体脂肪・体組成計',
       'ベビーカー',
+      '草刈機・刈払機パーツ・アクセサリ',
     ];
     if (whitelist.some((item) => name.includes(CategoryNormalizer.getComparisonName(item)))) {
       return true;
