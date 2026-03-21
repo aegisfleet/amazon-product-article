@@ -26,68 +26,121 @@
     ],
     "userStories": [
       {
-        "userType": "30代デスクワーカー",
-        "scenario": "毎晩の就寝前に使用",
-        "experience": "一日中パソコンに向かって固まった背中が、ポールに乗るだけでリセットされる感覚がある。安価なものを使っていた時は背中が痛くなったが、これは全く痛くない。",
-        "sentiment": "positive"
+        "userType": "初心者",
+        "scenario": "初めてのストレッチポール使用",
+        "experience": "LPNのストレッチポールEXは、仰向けに寝るだけで背骨や肩まわりが自然にリセットされるような感覚があり、使い始めてから寝つきが良くなった気がします。硬すぎず柔らかすぎず、ちょうどいい反発力で体をしっかり支えてくれるので、初心者でも安心して使えました。",
+        "sentiment": "positive",
+        "supportingSourceIds": [
+          "src-amazon-review-1"
+        ]
       },
       {
-        "userType": "40代主婦",
-        "scenario": "安価な類似品からの買い替え",
-        "experience": "以前は3000円程度のフォームローラーを使っていたが、すぐにへたってしまった。本家のEXは数年使っても硬さが変わらず、最初からこれを買えばよかったと後悔した。",
-        "sentiment": "positive"
+        "userType": "肩こりや背中痛に悩むユーザー",
+        "scenario": "YouTube動画を見ながらの使用",
+        "experience": "肩こり背中痛が酷すぎるんですが、これに寝てYouTubeピラティスをみながらマネをすると、めちゃくちゃ気持ちいいです。ただ、お尻の辺りが凹んできたので耐久性が心配です。",
+        "sentiment": "mixed",
+        "supportingSourceIds": [
+          "src-amazon-review-2"
+        ]
+      },
+      {
+        "userType": "長期検討ユーザー",
+        "scenario": "ジムでの使用経験を経て購入",
+        "experience": "場所取るし要らないかな、ジムにあるし…と思いつつ10年。見た限り価格の大きな変動もなく、使うとやっぱり良いものなので、ついに買いました。",
+        "sentiment": "positive",
+        "supportingSourceIds": [
+          "src-amazon-review-3"
+        ]
       }
     ],
     "userImpression": "価格は高いが、その品質と耐久性から「一生モノ」として評価されている。安価な類似品で失敗したユーザーが最終的にたどり着く「本物」としての地位を確立している。",
     "sources": [
       {
-        "name": "Yahoo!ショッピング 商品レビュー",
-        "url": "https://store.shopping.yahoo.co.jp/stretchpole/ex00002.html",
-        "credibility": "高"
+        "id": "src-amazon-review-1",
+        "name": "Amazon カスタマーレビュー (Kensuke)",
+        "url": "https://www.amazon.co.jp/dp/B00F9VW8V4",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2025-07-09",
+        "author": "Kensuke",
+        "conflictOfInterest": "none",
+        "notes": "初心者にも安心の反発力と寝つきの良さを評価"
       },
       {
-        "name": "みんなのレビュー（楽天）",
-        "url": "https://review.rakuten.co.jp/review/item/1/294830_10000041/1.1/",
-        "credibility": "高"
+        "id": "src-amazon-review-2",
+        "name": "Amazon カスタマーレビュー (りるしー)",
+        "url": "https://www.amazon.co.jp/dp/B00F9VW8V4",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2024-11-26",
+        "author": "りるしー",
+        "conflictOfInterest": "none",
+        "notes": "肩こり改善を実感しつつも、へこみによる耐久性への懸念"
+      },
+      {
+        "id": "src-amazon-review-3",
+        "name": "Amazon カスタマーレビュー (Amazon カスタマー)",
+        "url": "https://www.amazon.co.jp/dp/B00F9VW8V4",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-03-08",
+        "author": "Amazon カスタマー",
+        "conflictOfInterest": "none",
+        "notes": "長年の検討の末の購入。品質への信頼感が伺える"
       }
     ],
-    "lastInvestigated": "2026-01-23",
+    "lastInvestigated": "2026-03-22",
     "competitiveAnalysis": [
       {
-        "name": "MOJEER ストレッチ用ポール 87cm",
-        "asin": "B0DXSQ77H4",
-        "priceComparison": "約3,000円とLPNの約1/3以下の価格。",
+        "name": "ハルクファクター ストレッチ用ポール ロング",
+        "asin": "B0DL5PF3PJ",
+        "priceComparison": "対象商品より安価でロングサイズ。高い耐荷重を誇る。",
         "featureComparison": [
-          "長さ87cmとやや短い",
-          "耐久性や素材の質（EVA等）がLPN（EPE）と異なる可能性がある"
+          "共通点：発泡オレフィン系樹脂（EPE）芯材と合成皮革カバーを使用し耐久性に優れる",
+          "相違点：ハルクファクターは耐荷重150kgを明記、対象商品はLPNブランドの元祖としての信頼性がある"
         ],
         "differentiators": [
-          "圧倒的な安さ",
-          "カラーバリエーションの豊富さ"
+          "LPN ストレッチポールEX アイボリーの利点：元祖ブランドとしての圧倒的な実績と信頼性、医療・スポーツ現場での採用実績",
+          "ハルクファクター ストレッチ用ポール ロングの利点：150kgの耐荷重とコストパフォーマンスの高さ"
         ]
       },
       {
-        "name": "プリマソーレ(Primasole) エクササイズポール 92cm",
-        "asin": "B0DB73ZMTQ",
-        "priceComparison": "約3,400円と非常に安価。",
+        "name": "RIORES ヨガポール ストレッチ用ポール",
+        "asin": "B0D9Q2W31H",
+        "priceComparison": "対象商品の半額以下。手頃な価格で導入しやすい。",
         "featureComparison": [
-          "Amazon限定ブランドの安心感はあるが、LPNほどの専門性はない",
-          "長さ92cmでLPNより少し短い"
+          "共通点：円柱形状のストレッチ・エクササイズ用途",
+          "相違点：対象商品はEPE芯材だが、RIORESはEPE芯材を使用しつつカバーにPUレザーを採用。耐荷重は約100kg"
         ],
         "differentiators": [
-          "手頃な価格でAmazonでの入手性が良い"
+          "LPN ストレッチポールEX アイボリーの利点：耐久性に優れたPVCカバーと長期使用を前提とした品質管理",
+          "RIORES ヨガポール ストレッチ用ポールの利点：手頃な価格で軽量（本体850g）"
         ]
       },
       {
-        "name": "AYO ストレッチ ポール 100cm",
-        "asin": "B0F6JMQPGN",
-        "priceComparison": "約4,000円。",
+        "name": "Rondofy フォームローラー 筋膜リリース セット",
+        "asin": "B09W89MGRG",
+        "priceComparison": "対象商品の約1/5の価格。安価でセット内容が充実。",
         "featureComparison": [
-          "長さ100cmでLPN（98cm）と同等以上のサイズ",
-          "耐荷重150kgを謳う"
+          "共通点：筋肉をほぐす用途",
+          "相違点：対象商品は円柱状のポールだが、Rondofyは表面に凹凸のあるフォームローラーで筋膜リリースに特化"
         ],
         "differentiators": [
-          "ロングサイズで安価"
+          "LPN ストレッチポールEX アイボリーの利点：背骨のラインを整える姿勢改善に特化",
+          "Rondofy フォームローラー 筋膜リリース セットの利点：局所的な筋膜リリースやマッサージに強く、非常に安価"
+        ]
+      },
+      {
+        "name": "MOJEER ストレッチ用ポール ハーフ 42cm 2個セット",
+        "asin": "B0F23HC1LF",
+        "priceComparison": "対象商品の約1/3以下の価格。",
+        "featureComparison": [
+          "共通点：ストレッチ用途",
+          "相違点：対象商品はロングポールだが、MOJEERは42cmのハーフカット2個セット。耐荷重130kg"
+        ],
+        "differentiators": [
+          "LPN ストレッチポールEX アイボリーの利点：本格的な全身の姿勢リセットとストレッチ効果",
+          "MOJEER ストレッチ用ポール ハーフ 42cm 2個セットの利点：安定感が高くコンパクトに収納可能"
         ]
       }
     ],
@@ -98,33 +151,53 @@
         "正しい姿勢改善やリハビリ目的で、確実な効果を求める人"
       ],
       "pros": [
-        "医療・スポーツ現場でも使われるプロ品質",
-        "適度な硬さで身体を痛めにくい",
-        "高い耐久性（コストパフォーマンスは長期的に見て悪くない）"
+        "医療・スポーツ現場でも使われるプロ品質と実績",
+        "適度な硬さ（EPE素材）で身体を痛めにくく、リラックス効果が高い",
+        "へたりにくく高い耐久性を持つため長期的に使える"
       ],
       "cons": [
-        "初期投資が高い（1万円超）",
-        "サイズが大きく場所をとる"
+        "初期費用が高い（約1万円）",
+        "長さが約98cmあり、収納スペースを要する"
       ],
       "score": 83,
-      "scoreRationale": "[基本点: 70]\n[性能・機能: +8] (EPE素材による絶妙な硬さと復元力、プロユースの実績)\n[コストパフォーマンス: -10] (競合品との価格差が非常に大きい)\n[品質・デザイン: +5] (へたりにくさ、メンテナンス性)\n[ユーザー満足度: +5] (類似品との違いを実感する声多数)\n[独自の強み: +5] (元祖ストレッチポールとしてのブランドと信頼)\n[合計: 83]"
+      "scoreRationale": "[基本点: 70]\n[加点: +8] (EPE素材による絶妙な反発力と姿勢改善効果、プロユースの信頼性)\n[減点: -5] (競合品と比べて価格が2〜3倍とかなり高価)\n[加点: +5] (耐久性が高く長期間使用しても変形しにくい)\n[加点: +5] (初心者から長年の検討者まで幅広いポジティブな評価)\n[合計: 83]"
     },
     "technicalSpecs": {
       "dimensions": {
-        "length": "約98cm",
-        "diameter": "約15cm",
-        "weight": "約700g"
+        "height": "約98cm",
+        "width": "約15cm",
+        "depth": "約15cm"
       },
-      "material": {
-        "core": "発泡オレフィン系樹脂(EPE)",
-        "cover": "合成皮革(PVC)"
-      },
-      "capacity": "身長155cm以上（これ以下はハーフカット推奨）",
-      "accessories": [
-        "エクササイズDVD",
-        "取扱説明書"
+      "weight": "約700g",
+      "material": "芯材：発泡オレフィン系樹脂(EPE)、カバー：合成皮革(PVC)",
+      "other": [
+        "付属品：エクササイズDVD、スタートブック",
+        "カラー：アイボリー"
       ],
-      "other": "日本製（LPN公式サイト等で確認されることが多いが、今回はAmazon情報ベース）"
-    }
+      "capacity": "身長155cm以上（※推奨）",
+      "origin": "日本製"
+    },
+    "claims": [
+      {
+        "claim": "適度な反発力で体をしっかり支え、初心者でも安心して使える",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-amazon-review-1"
+        ],
+        "crossChecked": true,
+        "notes": "レビューで「硬すぎず柔らかすぎず、ちょうどいい反発力」と評価されている"
+      },
+      {
+        "claim": "使用によってお尻の辺りが凹むなど、耐久性に懸念が生じるケースがある",
+        "category": "durability",
+        "confidence": "medium",
+        "supportingSourceIds": [
+          "src-amazon-review-2"
+        ],
+        "crossChecked": false,
+        "notes": "一部ユーザーから使用中のへこみに関する言及があるが、使い方による可能性もあり"
+      }
+    ]
   }
 }
