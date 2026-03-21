@@ -2,104 +2,136 @@
   "analysis": {
     "productName": "ピップエレキバン MAX200",
     "parentAsin": "B0FH53KYJS",
-    "productDescription": "ピップエレキバンシリーズ最強の磁力（200ミリテスラ）を持つ、貼るタイプの磁気治療器です。",
+    "productDescription": "最大磁束密度200ミリテスラの大型円錐磁石を採用した、広範囲のコリにアプローチする磁気治療器です。",
     "productUsage": [
-      "肩、腰、首など、こりを感じる部分に直接貼る",
-      "指で押して「少し痛い、気持ちいい」と感じるポイントに貼る",
-      "入浴時も貼ったままでOK（2〜5日間の使用を推奨）"
+      "肩コリの緩和",
+      "首のコリの緩和",
+      "腰のコリの緩和",
+      "筋肉内の血行改善"
     ],
     "positivePoints": [
-      "シリーズ最強の200ミリテスラで、頑固なこりに深く効く",
-      "肌色で目立ちにくく、匂いもないため外出時でも使いやすい",
-      "貼っている間中、磁気が血行を改善し続ける",
-      "伸縮性があり、肌に優しいバンソウコウを使用している"
+      "シリーズ最大の200ミリテスラの磁力",
+      "大型円錐磁石により広範囲に磁気が浸透",
+      "伸縮性・透湿性に優れた肌に優しいバンソウコウを使用",
+      "においがなく目立ちにくい肌色",
+      "貼ったまま入浴が可能"
     ],
     "negativePoints": [
-      "肌が弱い人はかぶれる可能性がある",
-      "1回使い捨てのため、毎日貼り替えるとコストがかかる",
-      "効果には個人差があり、即効性を感じにくい場合がある"
+      "心臓ペースメーカー等の植込型医用電子機器を使用している方は使用不可",
+      "医師の治療を受けている方（悪性腫瘍、心臓障害、妊娠初期・出産直後など）は要相談"
     ],
     "useCases": [
-      "デスクワークで慢性的な肩こりに悩む時",
-      "立ち仕事で腰の負担が大きい時",
-      "湿布の匂いが気になる場面でのケア"
+      "長時間のデスクワークで肩や首がガチガチになったとき",
+      "重い荷物を持った後など、腰にハリを感じるとき",
+      "においを気にせず、日中や仕事中もこっそりコリをケアしたいとき"
     ],
-    "userStories": [
-      {
-        "userType": "40代デスクワーカー",
-        "scenario": "長時間のPC作業によるひどい肩こり",
-        "experience": "今まで130を使っていましたが、MAX200に変えてから奥の方の重だるさが軽くなった気がします。貼ったままお風呂に入れるのが楽で良いです。",
-        "sentiment": "positive"
-      },
-      {
-        "userType": "30代主婦",
-        "scenario": "家事と育児による腰痛",
-        "experience": "手軽に貼れるのは良いですが、肌が弱いためか3日目くらいで痒くなってしまいました。効果は感じるので、短期間で貼り替えるようにしています。",
-        "sentiment": "mixed"
-      }
-    ],
-    "userImpression": "シリーズ最強の磁力に対する期待値が高く、多くのユーザーが頑固なこりへの効果を実感している。一方で、長時間貼付による肌トラブルを気にする声もあり、肌質に合わせた使用期間の調整が求められる。",
+    "userStories": [],
+    "userImpression": "最大の磁束密度と大型円錐磁石による確かなコリへのアプローチが期待でき、肌に優しい素材や入浴可能な利便性から、日常的に使いやすい製品として評価されています。",
     "sources": [
       {
-        "name": "Amazon Product Page",
-        "url": "https://www.amazon.co.jp/dp/B01MYECFGP",
-        "credibility": "High"
-      }
-    ],
-    "lastInvestigated": "2026-01-23",
-    "competitiveAnalysis": [
-      {
-        "name": "ピップエレキバン 130",
-        "asin": "B00EEVHTSW",
-        "priceComparison": "MAX200より安価（約1,000円前後）で、コストパフォーマンスに優れる",
-        "featureComparison": [
-          "磁束密度130mT（MAX200より弱い）",
-          "同じく24粒入りで使い方は同様"
-        ],
-        "differentiators": [
-          "初めての人でも使いやすいスタンダードな磁力",
-          "より安価に試せる"
-        ]
+        "id": "src-pip-official",
+        "name": "ピップエレキバン公式サイト 製品情報（ピップエレキバンMAX200）",
+        "url": "https://elekiban.pipjapan.co.jp/products/200.html",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2024-01-01",
+        "author": "ピップ株式会社",
+        "conflictOfInterest": "disclosed",
+        "notes": "大型円錐磁石と最大の磁束密度で広範囲に磁気が届く点、バンソウコウの特長、入浴可能性、医療機器認証番号(228AGBZX00091000)、禁忌・注意事項を確認。"
       },
       {
-        "name": "ピップ マグネループEX",
-        "asin": "B00MNZHFDK",
-        "priceComparison": "約2,000円弱だが、繰り返し使えるため長期的には高コスパ",
+        "id": "src-amazon-B01MYECFGP",
+        "name": "Amazon商品ページ（ピップエレキバン MAX200 24粒入）",
+        "url": "https://www.amazon.co.jp/dp/B01MYECFGP?tag=aegis-22&linkCode=ogi&th=1&psc=1",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2017-03-21",
+        "author": "Amazon",
+        "conflictOfInterest": "none",
+        "notes": "価格(1382円)、サイズ、重量、ASIN、発売日を確認。"
+      },
+      {
+        "id": "src-amazon-B075GD4K9Y",
+        "name": "Amazon商品ページ（阿蘇製薬 デルガード 磁気バンX 強力タイプ 48粒）",
+        "url": "https://www.amazon.co.jp/dp/B075GD4K9Y?tag=aegis-22&linkCode=ogi&th=1&psc=1",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2017-09-25",
+        "author": "Amazon",
+        "conflictOfInterest": "none",
+        "notes": "競合商品のASIN、価格(1414円)、内容量(48粒)、医療機器認証番号を確認。"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "大型円錐磁石と最大の磁束密度(200mT)で広範囲に磁気が届く",
+        "category": "comparativeAdvantage",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-pip-official"
+        ],
+        "crossChecked": false,
+        "notes": "公式サイトの製品情報より"
+      },
+      {
+        "claim": "医療機器認証を取得している管理医療機器である",
+        "category": "safety",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-pip-official",
+          "src-amazon-B01MYECFGP"
+        ],
+        "crossChecked": true,
+        "notes": "認証番号228AGBZX00091000"
+      }
+    ],
+    "lastInvestigated": "2026-03-22",
+    "competitiveAnalysis": [
+      {
+        "name": "阿蘇製薬 デルガード 磁気バンX 強力タイプ 48粒",
+        "asin": "B075GD4K9Y",
+        "priceComparison": "対象商品は24粒で約1,382円、競合商品は48粒で約1,414円。競合商品の方が1粒あたりのコストは低く、大容量でコストパフォーマンスに優れている。",
         "featureComparison": [
-          "ネックレスタイプで首・肩全体をケア",
-          "150mTの磁石を内蔵"
+          "共通点：どちらも貼るタイプの磁気治療器であり、管理医療機器としての認証を受けている。",
+          "相違点：対象商品は大型円錐磁石を使用しシリーズ最大の200mTを誇る。競合商品は48粒入りと大容量。"
         ],
         "differentiators": [
-          "貼り替えの手間がない",
-          "ピンポイントではなく広範囲をカバー"
+          "ピップエレキバン MAX200の利点：独自の大型円錐磁石により広範囲に磁気が浸透し、においがなく肌に優しいなど使用感にこだわっている点。",
+          "阿蘇製薬 デルガード 磁気バンXの利点：同じ強力タイプでありながら、粒数が多くコストパフォーマンスが非常に高い点。"
         ]
       }
     ],
     "recommendation": {
       "targetUsers": [
-        "慢性的な強いこりに悩んでいる人",
-        "湿布の匂いや見た目が気になる人",
-        "忙しくてマッサージに通えない人"
+        "頑固な肩コリや腰のコリに悩んでいる方",
+        "仕事中や外出中も目立たずケアしたい方",
+        "お風呂にも貼ったまま入りたい方"
       ],
       "pros": [
-        "貼るだけで手軽にケアできる",
-        "シリーズ最強の磁力で高い効果が期待できる",
-        "目立たず、日常生活の邪魔にならない"
+        "200mTの強力な磁気と大型円錐磁石で広範囲をケア",
+        "においがなく、肌色のバンソウコウで目立ちにくい",
+        "医療機器としての信頼性"
       ],
       "cons": [
-        "ランニングコストがかかる",
-        "肌トラブルのリスクがある"
+        "大容量の競合品と比べると1粒あたりの単価がやや高い",
+        "心臓ペースメーカー等の電子機器を使用している場合は使えない"
       ],
-      "score": 75,
-      "scoreRationale": "[基本点: 70]\n[加点: +5] シリーズ最強の磁力による高い効果期待\n[加点: +5] 貼るだけの手軽さと目立ちにくさ\n[減点: -5] 使い捨てによるランニングコスト\n[合計: 75]"
+      "score": 83,
+      "scoreRationale": "[基本点: 70]\n[加点: +5] (管理医療機器としての認証を受けており安全性・信頼性が高い)\n[減点: -2] (競合品と比較して1粒あたりの単価が高くコストパフォーマンスでやや劣る)\n[加点: +5] (シリーズ最大の200mTと大型円錐磁石による高い効果への期待)\n[加点: +3] (肌への優しさ、においがない、入浴可能など高い品質・使い勝手)\n[加点: +2] (大型円錐磁石という独自のアプローチ)\n[合計: 83]"
     },
     "technicalSpecs": {
-      "magneticFluxDensity": "200mT (ミリテスラ)",
-      "quantity": "24粒",
-      "material": "バンソウコウ、フェライト磁石",
+      "dimensions": {
+        "height": "約22mm",
+        "width": "約80mm",
+        "depth": "約116mm"
+      },
+      "weight": "約32g",
+      "size": "24粒",
       "color": "ベージュ",
-      "duration": "2〜5日間（推奨）",
-      "medicalDeviceCertification": "228AGBZX00091000"
+      "material": "バンソウコウ、フェライト磁石(大型円錐磁石)",
+      "duration": "2〜5日間",
+      "medicalDeviceCertificationNumber": "228AGBZX00091000",
+      "model": "4.90252E"
     }
   }
 }
