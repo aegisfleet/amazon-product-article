@@ -41,6 +41,8 @@ describe('CategoryNormalizer', () => {
         'Home & Kitchen - AmazonGlobal Free Shipping',
         'SnS Acquisition Test HPC ASINs Low Price',
         'Toys - AmazonGlobal Free Shipping',
+        'ホーム&キッチン用品ポイントアップ+1% _1',
+        'ポイントアップキャンペーン',
         '定期おトク便初回最大30%OFF',
         '定期おトク便',
         'HPCAFC2409under2000',
