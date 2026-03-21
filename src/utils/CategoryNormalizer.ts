@@ -40,8 +40,8 @@ export class CategoryNormalizer {
     if (validNames.length > 0) {
       // Updated logic: Main is Specific, Sub is Parent
       // validNames is collected from leaf up, so [leaf, parent, grandparent, ...]
-      const main = validNames[0]!;
-      const sub = (validNames.length > 1 ? validNames[1] : '')!;
+      const main = validNames[0] ?? 'Unknown';
+      const sub = validNames[1] ?? '';
 
       // Calculate score based on preferred keywords across all valid hierarchy names
       let score = 0;
@@ -164,8 +164,12 @@ export class CategoryNormalizer {
     }
 
     // 3. Fallback to best available node even if it's "Other"
-    const bestNode = sortedNodes[0]!;
-    return CategoryNormalizer.attachBrowseNodeId(CategoryNormalizer.normalize(bestNode), bestNode);
+    const bestNode = sortedNodes[0];
+    if (bestNode) {
+      return CategoryNormalizer.attachBrowseNodeId(CategoryNormalizer.normalize(bestNode), bestNode);
+    }
+
+    return { main: 'その他', sub: 'Unknown', nameCount: 0, score: -1 };
   }
 
   /**
