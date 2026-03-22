@@ -1,0 +1,170 @@
+{
+  "analysis": {
+    "productName": "nubia Flip 5G",
+    "parentAsin": "B0CX4ZFLTZ",
+    "productDescription": "6.9インチのAMOLEDディスプレイとアウトディスプレイを搭載した縦折り型の折りたたみスマートフォン。SIMフリーでFeliCa(おサイフケータイ)にも対応し、コストパフォーマンスに優れたモデルです。",
+    "productUsage": [
+      "コンパクトに持ち運べる折りたたみスマートフォンとして",
+      "FeliCa対応でおサイフケータイを利用",
+      "大画面での動画視聴やブラウジング"
+    ],
+    "positivePoints": [
+      "折りたたみスマホとしては非常に手頃な価格設定",
+      "FeliCa(おサイフケータイ)に対応しており日常使いに便利",
+      "6.9インチの大画面とコンパクトな持ち運びを両立",
+      "指紋がつきにくいマットな質感の背面デザイン"
+    ],
+    "negativePoints": [
+      "画面の開閉角度が90度を超えると180度までバタンと開いてしまう仕様がある",
+      "本体が少し滑りやすい素材感",
+      "ハイエンド機と比較すると処理性能やカメラ性能は価格相応"
+    ],
+    "useCases": [
+      "ポケットや小さなバッグに収納して持ち歩く",
+      "サブディスプレイで通知の確認やセルフィー撮影を行う",
+      "電子マネー決済や交通系ICでの改札通過"
+    ],
+    "userStories": [
+      {
+        "userType": "一般ユーザー",
+        "scenario": "日常的な持ち歩きと決済利用",
+        "experience": "Galaxyの折りたたみスマホから乗り換えましたが、価格が安いのにFeliCa対応でSuicaが使えるのがとても便利です。背面はマット仕上げで指紋が目立ちにくいのも良い点です。ただ、画面を開く時に90度を超えるとパタンと全開になってしまうので、角度をつけて置きたい時は少し注意が必要です。",
+        "supportingSourceIds": ["note-kinchan"],
+        "sentiment": "positive"
+      }
+    ],
+    "userImpression": "折りたたみスマホの入門機として非常に優秀なコストパフォーマンスを誇り、特にFeliCa対応が日本のユーザーから高く評価されています。ヒンジの固さなど一部の使い勝手でハイエンド機に及ばない部分はありますが、価格を考慮すれば十分満足できるという声が多いです。",
+    "sources": [
+      {
+        "id": "note-kinchan",
+        "name": "nubia Flip 5Gを1ヶ月間使ってみた｜きんちゃん/Kinchan",
+        "url": "https://note.com/kinchan1110/n/nb0a89231f4af",
+        "tier": "medium",
+        "evidenceType": "primary",
+        "publishedAt": "2024-05-05",
+        "author": "きんちゃん/Kinchan",
+        "conflictOfInterest": "none",
+        "notes": "1ヶ月使用レビュー。FeliCa対応の高評価、背面のマットな質感への言及、ヒンジの角度（90度を超えると全開になる）についての詳細な使用感が記載されている。"
+      },
+      {
+        "id": "amazon-api",
+        "name": "Amazon Product Data",
+        "url": "https://www.amazon.co.jp/dp/B0CX4ZFLTZ",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2024-03-21",
+        "author": "Amazon",
+        "conflictOfInterest": "none",
+        "notes": "製品の基本仕様、寸法、価格、特徴（iF DESIGN AWARD 2024受賞など）のデータ"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "FeliCa(おサイフケータイ)に対応しておりSuica等が利用可能",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": ["note-kinchan", "amazon-api"],
+        "crossChecked": true,
+        "notes": "Amazonの商品名・機能説明およびユーザーレビューの両方で確認"
+      },
+      {
+        "claim": "ヒンジが90度を超えると180度まで開きやすい",
+        "category": "durability",
+        "confidence": "medium",
+        "supportingSourceIds": ["note-kinchan"],
+        "crossChecked": false,
+        "notes": "ユーザーレビューでの指摘。構造上の仕様とみられる"
+      }
+    ],
+    "lastInvestigated": "2026-03-22",
+    "competitiveAnalysis": [
+      {
+        "name": "motorola razr 50",
+        "asin": "B0FQ9YQQKQ",
+        "priceComparison": "nubia Flip 5Gよりもかなり高価なハイエンドモデルです。価格差は大きいですが、その分高い性能と防水性能を備えています。",
+        "featureComparison": [
+          "共通点：縦折り型の折りたたみスマートフォン、FeliCa/おサイフケータイ対応",
+          "相違点：razr 50はより大容量のストレージ(512GB)とメモリ(12GB)、防水防塵(IP48)を備えているのに対し、nubia Flipはより手頃な価格に抑えられている"
+        ],
+        "differentiators": [
+          "nubia Flip 5Gの利点：圧倒的に手頃な価格で折りたたみスマホとFeliCa機能を手に入れられる点",
+          "motorola razr 50の利点：防水防塵性能や高い基本スペックを求める場合"
+        ]
+      },
+      {
+        "name": "Galaxy Z Flip6",
+        "asin": "B0DD34K86W",
+        "priceComparison": "nubia Flip 5Gと比較して3倍以上の価格差があるフラッグシップモデルです。",
+        "featureComparison": [
+          "共通点：縦折り型の折りたたみスマートフォン、FeliCa対応",
+          "相違点：Galaxy Z Flip6はGalaxy AI対応など最新のハイエンド機能と高性能なヒンジ機構を備えている"
+        ],
+        "differentiators": [
+          "nubia Flip 5Gの利点：折りたたみスマホを試してみたいユーザーにとって手の届きやすい価格",
+          "Galaxy Z Flip6の利点：カメラ性能、処理速度、ヒンジの安定性など、すべての面で最高クラスの体験を求める場合"
+        ]
+      },
+      {
+        "name": "ZTE Libero Flip",
+        "asin": "B0FQHT8634",
+        "priceComparison": "nubia Flip 5Gとほぼ同等かやや高い価格帯です（販売元やキャリア版の有無による）。",
+        "featureComparison": [
+          "共通点：ZTE製の姉妹機であり、基本的なハードウェア構成や折りたたみ機構は非常に近い",
+          "相違点：Libero Flipはワイモバイル版として展開されており、SIMフリー版のnubia Flipとは対応バンドやプリインストールアプリに違いがある"
+        ],
+        "differentiators": [
+          "nubia Flip 5Gの利点：完全なSIMフリー機として、様々なキャリアで利用しやすい点",
+          "Libero Flipの利点：ワイモバイルユーザーであれば、サポートや回線との親和性が高い場合がある"
+        ]
+      },
+      {
+        "name": "Galaxy Z Fold5 (整備済み品)",
+        "asin": "B0DPR8FGSS",
+        "priceComparison": "整備済み品であってもnubia Flip 5Gよりかなり高価です。",
+        "featureComparison": [
+          "共通点：折りたたみスマートフォン",
+          "相違点：Fold5は横折り型でタブレットサイズの画面になるのに対し、nubia Flipは縦折り型でコンパクトさを重視している"
+        ],
+        "differentiators": [
+          "nubia Flip 5Gの利点：コンパクトで持ち運びやすく、圧倒的に安価な点",
+          "Galaxy Z Fold5の利点：大画面でマルチタスクや電子書籍の閲覧、動画視聴を本格的に楽しみたい場合"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "折りたたみスマホに興味があるが価格で躊躇していた人",
+        "コンパクトに持ち運べるスマホが欲しい人",
+        "メイン端末やサブ端末としてFeliCa搭載機を探している人"
+      ],
+      "pros": [
+        "折りたたみスマホとしては破格の低価格",
+        "FeliCa対応で日本の決済事情に適合",
+        "マットな質感で指紋が目立たないデザイン"
+      ],
+      "cons": [
+        "ヒンジの開閉角度調整がハイエンド機ほど自由ではない",
+        "カメラや処理性能は価格相応のミドルクラス"
+      ],
+      "score": 75,
+      "scoreRationale": "[基本点: 70]\n[加点: +10] 折りたたみスマホとして圧倒的なコストパフォーマンスとFeliCa対応の利便性\n[加点: +2] iF DESIGN AWARD 2024を受賞した優れたデザイン性\n[減点: -7] ヒンジの角度調整（90度以上で全開になる）など、使い勝手においてハイエンド機との差がある\n[合計: 75]"
+    },
+    "technicalSpecs": {
+      "dimensions": {
+        "height": "170mm",
+        "width": "76mm",
+        "depth": "15.5mm"
+      },
+      "weight": "214g",
+      "display": "6.9インチ AMOLED",
+      "memory": "8GB RAM",
+      "storage": "256GB ROM",
+      "network": "5G, docomo/au/SoftBank/Rakuten Mobile回線対応",
+      "features": ["SIMフリー", "FeliCa対応", "5000万画素カメラ", "迷惑電話対策"],
+      "model": "NX724J",
+      "releaseDate": "2024-03-21",
+      "color": "ブラック",
+      "material": "マット仕上げガラス"
+    }
+  }
+}
