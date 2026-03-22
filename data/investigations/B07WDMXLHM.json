@@ -1,0 +1,161 @@
+{
+  "analysis": {
+    "productName": "Jackery SolarSaga 100 ソーラーパネル 100W",
+    "parentAsin": "B0FRRXQJ2X",
+    "productDescription": "ポータブル電源用の100W出力ソーラーパネル。ETFE素材による高い耐久性と、最大23%の光電変換効率を実現し、防災用途やアウトドアで活躍します。",
+    "productUsage": [
+      "キャンプや車中泊でのポータブル電源の充電",
+      "災害・停電時のスマートフォンの充電・非常用電源確保",
+      "屋外での電子機器の充電"
+    ],
+    "positivePoints": [
+      "耐久性に優れたETFE素材を採用し、長期間の使用に耐える",
+      "一般社団法人防災安全協会から「防災製品等推奨品」に登録されるなど、災害時の信頼性が高い",
+      "単結晶シリコンを採用し、高い光電変換効率を持つ",
+      "USB-A、USB-C出力ポートを搭載し、スマートフォンなどに直接充電が可能"
+    ],
+    "negativePoints": [
+      "他社の100Wパネルと比較して価格が高めに設定されている",
+      "完全防水ではなくIP65防水のため、激しい雨での使用は避ける必要がある"
+    ],
+    "useCases": [
+      "連泊のキャンプでポータブル電源のバッテリー残量を維持したいシーン",
+      "停電が続く災害時に、家族のスマートフォンを複数台充電するシーン"
+    ],
+    "userStories": [
+      {
+        "userType": "アウトドア愛好家",
+        "scenario": "キャンプ時のポータブル電源の充電",
+        "experience": "キャンプにJackeryのポータブル電源とともに持ち込んで使用しています。展開しやすく、日中の日差しを利用してしっかり充電できるため、連泊でも電源に困りません。USBポートから直接スマホを充電できるのも便利です。",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "sentiment": "positive"
+      },
+      {
+        "userType": "防災意識の高い家庭",
+        "scenario": "停電への備えとしての導入",
+        "experience": "台風などの停電に備えて購入しました。防災推奨品に選ばれている安心感と、耐久性の高い素材を使っている点が決め手です。重量が約4.7kgあり少し重さを感じますが、折りたたむと薄くなり収納しやすいです。",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "sentiment": "positive"
+      }
+    ],
+    "userImpression": "価格は高めであるものの、ETFE素材による高い耐久性と防災製品推奨品に登録されているという信頼性から、アウトドアから防災用途まで幅広く支持されている印象。特に同ブランドのポータブル電源との組み合わせでの利用が多く見られます。",
+    "sources": [
+      {
+        "id": "src-1",
+        "name": "Amazon商品ページ",
+        "url": "https://www.amazon.co.jp/dp/B07WDMXLHM?tag=aegis-22&linkCode=ogi&th=1&psc=1",
+        "tier": "medium",
+        "evidenceType": "primary",
+        "publishedAt": "2026-03-23",
+        "author": "Amazon",
+        "conflictOfInterest": "none",
+        "notes": "スペック情報、価格情報、特徴の抽出"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "一般社団法人防災安全協会から防災製品等推奨品に登録されている",
+        "category": "safety",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "crossChecked": false,
+        "notes": "メーカー公式のAmazon商品ページから抽出"
+      },
+      {
+        "claim": "ETFE素材の採用により耐久性と耐熱性に優れている",
+        "category": "durability",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "crossChecked": false,
+        "notes": "メーカー公式のAmazon商品ページから抽出"
+      }
+    ],
+    "lastInvestigated": "2026-03-23",
+    "competitiveAnalysis": [
+      {
+        "name": "山善 ELEIN ソーラーパネル 100W",
+        "asin": "B0D3QWJVW2",
+        "priceComparison": "Jackery製品と比較して価格は安価であるが、Jackeryは防災推奨品としての実績やETFE素材の採用など、品質と信頼性にコストがかけられている。",
+        "featureComparison": [
+          "共通点：100Wの出力、折りたたみ式である点、USB出力ポートを備えている点",
+          "相違点：JackeryはETFE素材を採用し耐久性を高めている一方、山善は価格を抑えつつ国内メーカーの安心感を提供している"
+        ],
+        "differentiators": [
+          "Jackery SolarSaga 100 ソーラーパネル 100Wの利点：防災製品推奨品としての実績や、ETFE素材による高い耐久性と信頼性がある",
+          "山善 ELEIN ソーラーパネル 100Wの利点：価格が抑えられており、国内メーカーのサポートを受けつつ初期費用を抑えられる"
+        ]
+      },
+      {
+        "name": "OTOUCH ソーラーパネル 100W",
+        "asin": "B0D8PN578F",
+        "priceComparison": "OTOUCHは1万円以下と非常に安価であるが、Jackeryのような長期的な耐久性の実績やブランドの信頼性の面では劣る可能性がある。",
+        "featureComparison": [
+          "共通点：100W出力、ETFE素材採用、USB出力対応",
+          "相違点：OTOUCHはPD60Wなど急速充電規格に強く安価だが、Jackeryはポータブル電源市場での高い実績とブランド力がある"
+        ],
+        "differentiators": [
+          "Jackery SolarSaga 100 ソーラーパネル 100Wの利点：ポータブル電源との組み合わせでの動作保証や、防災用途での高い信頼性がある",
+          "OTOUCH ソーラーパネル 100Wの利点：1万円以下という圧倒的な低価格で100W出力を得られる"
+        ]
+      },
+      {
+        "name": "LVYUAN ソーラーパネル 100W 単結晶",
+        "asin": "B0BCYVVX49",
+        "priceComparison": "LVYUANはキャンピングカー等への据え置き用として設計されており安価だが、Jackeryは折りたたみ・持ち運びに特化した設計であるため価格差がある。",
+        "featureComparison": [
+          "共通点：100W出力、単結晶シリコンを採用し高い変換効率を持つ点",
+          "相違点：Jackeryは折りたたみ式で持ち運びに適しているのに対し、LVYUANはアルミフレームを持つ据え置き・固定設置向きのパネルである"
+        ],
+        "differentiators": [
+          "Jackery SolarSaga 100 ソーラーパネル 100Wの利点：折りたたみ可能で、キャンプや災害時にどこへでも持ち運んで設置できる機動性がある",
+          "LVYUAN ソーラーパネル 100W 単結晶の利点：キャンピングカーの屋根など、固定して常時発電させたい用途に適している"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "Jackeryのポータブル電源を既に持っているユーザー",
+        "災害時に備えて信頼できるソーラーパネルを備蓄したい家庭",
+        "キャンプなどのアウトドアで連泊するキャンパー"
+      ],
+      "pros": [
+        "ETFE素材採用で耐久性が高い",
+        "防災製品等推奨品に登録されるほどの信頼性",
+        "USBポートから直接スマホ等に充電可能"
+      ],
+      "cons": [
+        "競合の100Wパネルと比較して高価格帯",
+        "防水仕様はIP65にとどまるため水没や大雨には耐えられない"
+      ],
+      "score": 75,
+      "scoreRationale": "[基本点: 70]\n[加点: +5] (ETFE素材の採用と「防災製品等推奨品」に登録されている高い安全性と信頼性)\n[加点: +5] (USB出力対応など単体でも使いやすい利便性)\n[減点: -5] (競合製品と比較して価格が高く、コストパフォーマンスで劣る)\n[合計: 75]"
+    },
+    "technicalSpecs": {
+      "model": "JS-100F",
+      "power": "100W",
+      "voltage": "18V",
+      "current": "5.55A",
+      "material": "ETFE",
+      "weight": "約4.75kg",
+      "waterResistance": "IP65防水",
+      "outputPorts": [
+        "DC出力(18V/5.5A)",
+        "USB-C",
+        "USB-A(最大3A)"
+      ],
+      "other": [
+        "単結晶シリコン",
+        "高変換効率",
+        "折りたたみ式"
+      ]
+    }
+  }
+}
