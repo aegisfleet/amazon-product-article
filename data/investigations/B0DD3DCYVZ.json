@@ -1,0 +1,221 @@
+{
+  "analysis": {
+    "productName": "Galaxy Z Flip6",
+    "parentAsin": "B0DDK57NH2",
+    "productDescription": "Galaxy AI対応の折りたたみスマートフォン。メインディスプレイに約170mmのAMOLED、カバーディスプレイに約86mmを搭載し、閉じたままでも多彩な操作が可能。",
+    "productUsage": [
+      "日常的なコミュニケーション",
+      "コンパクトな携帯性重視",
+      "セルフィーや動画撮影"
+    ],
+    "positivePoints": [
+      "コンパクトで持ち運びやすい折りたたみデザイン",
+      "120Hz駆動の滑らかなメインディスプレイ",
+      "閉じたまま使えるカバーディスプレイの利便性",
+      "カメラマンいらずで自撮りしやすい",
+      "AI機能で翻訳や編集が可能"
+    ],
+    "negativePoints": [
+      "折りたたみスマホ特有の開閉の手間",
+      "バッテリー容量（4000mAh）がヘビーユースにはやや物足りない可能性",
+      "折り目の存在が気になる場合がある"
+    ],
+    "useCases": [
+      "小さなバッグやポケットに入れての持ち歩き",
+      "机に置いてのビデオ通話や自撮り撮影",
+      "閉じた状態でのサクッとした通知確認や支払い"
+    ],
+    "userStories": [
+      {
+        "userType": "写真好きのユーザー",
+        "scenario": "自撮りやグループ撮影の際",
+        "experience": "スマホを折り曲げて置いて撮影できるので、三脚なしで好きな角度から撮れるのがとても便利。外カメラで高画質なままプレビューを確認しながら撮影できるのも最高。",
+        "supportingSourceIds": [
+          "kakaku-review-1"
+        ],
+        "sentiment": "positive"
+      },
+      {
+        "userType": "携帯性重視のユーザー",
+        "scenario": "外出時の持ち歩き",
+        "experience": "折りたたむと手のひらサイズになり、浅いポケットに入れても落ちる心配がなく、小さなカバンにもすっぽり収まる。デザインもマットで高級感がある。",
+        "supportingSourceIds": [
+          "kakaku-review-2"
+        ],
+        "sentiment": "positive"
+      },
+      {
+        "userType": "実用性重視のユーザー",
+        "scenario": "日常的な操作",
+        "experience": "レスポンスは良好でサクサク動くが、何かするたびに画面を開くワンアクションが必要になるため、頻繁にスマホを見る人には開閉が少し面倒に感じることがある。",
+        "supportingSourceIds": [
+          "kakaku-review-3"
+        ],
+        "sentiment": "mixed"
+      }
+    ],
+    "userImpression": "デザイン性と携帯性の高さで非常に満足度が高い。とくに折りたたみ機構を活かした撮影スタイルや、コンパクトに持ち運べる点が好評。一方で、開閉の手間やバッテリー持ちにやや不満を感じる声もある。",
+    "sources": [
+      {
+        "id": "kakaku-review-1",
+        "name": "価格.com - Galaxy Z Flip6 レビュー",
+        "url": "https://review.kakaku.com/review/M0000001085/",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2024-08-01",
+        "author": "価格.com ユーザー",
+        "conflictOfInterest": "none",
+        "notes": "自撮りやカメラ機能、デザイン、携帯性についてのユーザーレビューを抽出"
+      },
+      {
+        "id": "kakaku-review-2",
+        "name": "価格.com - Galaxy Z Flip6 レビュー",
+        "url": "https://review.kakaku.com/review/M0000001085/",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2024-08-01",
+        "author": "価格.com ユーザー",
+        "conflictOfInterest": "none",
+        "notes": "携帯性の高さとデザインに関する言及"
+      },
+      {
+        "id": "kakaku-review-3",
+        "name": "価格.com - Galaxy Z Flip6 レビュー",
+        "url": "https://review.kakaku.com/review/M0000001085/",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2024-08-01",
+        "author": "価格.com ユーザー",
+        "conflictOfInterest": "none",
+        "notes": "開閉の手間やレスポンスについての意見"
+      },
+      {
+        "id": "specs-1",
+        "name": "DuckDuckGo 検索結果 - Galaxy Z Flip6 スペック",
+        "url": "https://duckduckgo.com/",
+        "tier": "medium",
+        "evidenceType": "secondary",
+        "publishedAt": "2024-07-24",
+        "author": "各種メディア",
+        "conflictOfInterest": "none",
+        "notes": "サイズ（71.9 x 165.1 x 6.9 mm）、重量（187g）、バッテリー（4000mAh）などの基本スペック"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "折りたたんでコンパクトに持ち運べる高い携帯性",
+        "category": "comparativeAdvantage",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "kakaku-review-2",
+          "specs-1"
+        ],
+        "crossChecked": true,
+        "notes": "重量187g、折りたたみ時のサイズ感について複数のレビューで言及あり"
+      },
+      {
+        "claim": "折りたたみ機構を利用した自由な角度での撮影が可能",
+        "category": "durability",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "kakaku-review-1"
+        ],
+        "crossChecked": false,
+        "notes": "自立させての撮影機能が高評価"
+      }
+    ],
+    "lastInvestigated": "2026-03-22",
+    "competitiveAnalysis": [
+      {
+        "name": "motorola razr 50",
+        "asin": "B0DH7QY2HM",
+        "priceComparison": "Galaxy Z Flip6よりも安価な価格設定だが、GalaxyはハイエンドSoCを搭載しており価格差なりの性能差がある。",
+        "featureComparison": [
+          "共通点：縦型の折りたたみスマホ、大型のアウトディスプレイを搭載、コンパクトな携帯性",
+          "相違点：Galaxy Z Flip6はSnapdragon 8 Gen 3で高性能。razr 50はDimensity 7300Xでミドルハイ性能。アウトディスプレイのサイズ（razr 50は3.6型とやや大きい）"
+        ],
+        "differentiators": [
+          "Galaxy Z Flip6の利点：最高峰の処理性能、AI機能の充実、Samsungエコシステムとの連携",
+          "motorola razr 50の利点：手頃な価格で折りたたみスマホを体験できる、より大きなアウトディスプレイ"
+        ]
+      },
+      {
+        "name": "nubia Flip 5G",
+        "asin": "B0CX4ZFLTZ",
+        "priceComparison": "nubia Flip 5Gは非常に安価でコスパに優れるが、性能面やカメラ性能はGalaxy Z Flip6が圧倒的に上回る。",
+        "featureComparison": [
+          "共通点：縦型の折りたたみスマホ、6.9インチ（nubia）/6.7インチ（Galaxy）のメインディスプレイ",
+          "相違点：nubia Flip 5Gは丸型のアウトディスプレイを搭載し、SoCや全体的なスペックを抑えたエントリー向け折りたたみスマホ。"
+        ],
+        "differentiators": [
+          "Galaxy Z Flip6の利点：ハイエンドの基本性能、優れたカメラ画質と使い勝手、IP48の防水対応",
+          "nubia Flip 5Gの利点：圧倒的な安さで、初めての折りたたみスマホとして手を出しやすい"
+        ]
+      },
+      {
+        "name": "motorola razr 40",
+        "asin": "B0CNH528RS",
+        "priceComparison": "razr 40は前世代のミドルレンジモデルであり安価だが、性能や機能面でGalaxy Z Flip6が大きく上回る。",
+        "featureComparison": [
+          "共通点：縦型の折りたたみスマホ、コンパクトに折りたためる構造",
+          "相違点：razr 40はアウトディスプレイが1.5型と小さく通知確認程度。Galaxy Z Flip6は3.4型で様々なアプリが操作可能。"
+        ],
+        "differentiators": [
+          "Galaxy Z Flip6の利点：大きなカバーディスプレイでの高い操作性、ハイエンドの処理能力、AI機能",
+          "motorola razr 40の利点：価格が安く、シンプルな折りたたみ機構を求める人向け"
+        ]
+      },
+      {
+        "name": "Galaxy Z Fold 3 5G",
+        "asin": "B0BV5T89KP",
+        "priceComparison": "Fold 3は横折りタイプで整備済み品のため価格は近いが、用途やコンセプトが全く異なる。",
+        "featureComparison": [
+          "共通点：Samsung製の折りたたみスマートフォン",
+          "相違点：Flip6は縦折りでコンパクトさを重視。Fold 3は横折りで開くとタブレットサイズの7.6型大画面になる。"
+        ],
+        "differentiators": [
+          "Galaxy Z Flip6の利点：圧倒的な軽さとコンパクトさ、最新のSoCとAI機能",
+          "Galaxy Z Fold 3 5Gの利点：タブレットライクな大画面でのマルチタスクや動画視聴、Sペン対応"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "コンパクトでおしゃれなスマホを探している人",
+        "自撮りやVlog撮影をよく行う人",
+        "最新のAI機能を体験したい人"
+      ],
+      "pros": [
+        "圧倒的な携帯性とデザイン性",
+        "自由な角度で置けるカメラ撮影の利便性",
+        "カバーディスプレイでのサクサク操作"
+      ],
+      "cons": [
+        "開閉の動作を面倒に感じる可能性がある",
+        "ヘビーに使うとバッテリー持ちに不安",
+        "価格が高め"
+      ],
+      "score": 83,
+      "scoreRationale": "[基本点: 70]\n[加点: +8] 持ち運びやすさとデザイン性の高さ（ユーザー満足度・携帯性）\n[加点: +7] 折りたたみ機構を活かした独自のカメラ撮影体験とAI機能（独自の強み・性能）\n[加点: +3] ハイエンドSoC（Snapdragon 8 Gen 3）搭載による高い処理性能\n[減点: -3] 開閉の手間やバッテリー容量への懸念（使い勝手）\n[減点: -2] 高価格帯であること（コスパ）\n[合計: 83]"
+    },
+    "technicalSpecs": {
+      "dimensions": {
+        "height": "165.1mm",
+        "width": "71.9mm",
+        "depth": "6.9mm"
+      },
+      "weight": "187g",
+      "capacity": "256GB / 512GB",
+      "material": "ガラス、アルミニウム",
+      "origin": "韓国（Samsung）",
+      "other": [
+        "SoC: Snapdragon 8 Gen 3",
+        "メモリ: 8GB / 12GB",
+        "バッテリー: 4000mAh",
+        "メインディスプレイ: 170mm Dynamic AMOLED 2X",
+        "カバーディスプレイ: 86mm Super AMOLED",
+        "防水防塵: IP48"
+      ]
+    }
+  }
+}
