@@ -1,0 +1,141 @@
+{
+  "analysis": {
+    "productName": "Galaxy Z Fold4 12GB/256GB",
+    "parentAsin": "B0BV5QY8F7",
+    "productDescription": "サムスンの折りたたみスマートフォン「Galaxy Z Fold4」の整備済み品。12GBのメモリと256GBのストレージを搭載し、開くと約193mmの大画面となる。",
+    "productUsage": [
+      "スマートフォンの利用",
+      "大画面での動画視聴やブラウジング",
+      "マルチタスク作業"
+    ],
+    "positivePoints": [
+      "折りたたみ機構により、大画面と携帯性を両立している",
+      "12GBのRAMを搭載しており、複数アプリの同時起動などマルチタスクが快適",
+      "5000万画素のメインカメラなど高性能なカメラを搭載している"
+    ],
+    "negativePoints": [
+      "折りたたみ式のため、一般的なスマートフォンよりも重量がある",
+      "折りたたみ画面の中央に折り目がある",
+      "整備済み品のため、バッテリーや外装に多少の劣化がある可能性がある"
+    ],
+    "useCases": [
+      "外出先での動画視聴や電子書籍の閲覧",
+      "2つのアプリを並べて表示しながらの作業",
+      "三脚なしでの自撮りや動画撮影（フレックスモード）"
+    ],
+    "userStories": [],
+    "userImpression": "大画面の迫力とマルチタスクの快適さが高く評価される一方で、重量や折り目の存在、価格がネックになるという意見がみられる。整備済み品として価格が抑えられている点は魅力的。",
+    "sources": [
+      {
+        "id": "src-amazon",
+        "name": "Amazon商品ページ",
+        "url": "https://www.amazon.co.jp/dp/B0BV63F59G",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2024-03-22",
+        "author": "Amazon",
+        "conflictOfInterest": "none",
+        "notes": "商品の基本情報、価格、仕様の確認"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "折りたたみにより約193mmの大画面を利用可能",
+        "category": "comparativeAdvantage",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-amazon"
+        ],
+        "crossChecked": false,
+        "notes": "製品の基本的な仕様"
+      }
+    ],
+    "lastInvestigated": "2026-03-22",
+    "competitiveAnalysis": [
+      {
+        "name": "Galaxy Z Fold5",
+        "asin": "B0FBGMHSBR",
+        "priceComparison": "Galaxy Z Fold5は次世代モデルであり、Fold4よりも高価である。性能を重視する場合はFold5、コストパフォーマンスを重視する場合はFold4が適している。",
+        "featureComparison": [
+          "共通点：折りたたみ式の大画面スマートフォン",
+          "相違点：Fold5はヒンジが改良され、隙間なく閉じることができる。また、軽量化され、SoCが新しくなっている。"
+        ],
+        "differentiators": [
+          "Galaxy Z Fold4の利点：整備済み品として手頃な価格で購入できる",
+          "Galaxy Z Fold5の利点：ヒンジの改良による薄型化と最新SoCによる高いパフォーマンス"
+        ]
+      },
+      {
+        "name": "Galaxy Z Fold4 (au版)",
+        "asin": "B0FBGMY6H8",
+        "priceComparison": "au版の整備済み品は同等の価格帯かやや安い場合がある。対応する通信キャリア（周波数帯）に合わせて選択する必要がある。",
+        "featureComparison": [
+          "共通点：ハードウェアの基本仕様（Fold4）は同一",
+          "相違点：販売キャリア（ドコモ版とau版）の違いによるプリインストールアプリや対応周波数帯の違い"
+        ],
+        "differentiators": [
+          "Galaxy Z Fold 4の利点：ドコモ回線での利用に最適化されている",
+          "Galaxy Z Fold4 (au版)の利点：au回線での利用に最適化されており、価格が少し安い傾向がある"
+        ]
+      },
+      {
+        "name": "Galaxy Z Fold3 5G",
+        "asin": "B0BV5T89KP",
+        "priceComparison": "旧モデルであるため、本製品よりも価格が安い。",
+        "featureComparison": [
+          "共通点：折りたたみ式の大画面スマートフォン",
+          "相違点：Fold4はFold3と比べて、カメラ性能（50MP）やSoCが向上し、横幅が少し広がりカバーディスプレイが使いやすくなっている"
+        ],
+        "differentiators": [
+          "Galaxy Z Fold4の利点：カメラ性能が大幅に向上しており、カバーディスプレイの比率が改善されている",
+          "Galaxy Z Fold3の利点：より安価に折りたたみスマートフォンを体験できる"
+        ]
+      },
+      {
+        "name": "Galaxy Z Flip4",
+        "asin": "B0DPR8HYHZ",
+        "priceComparison": "縦折りタイプのFlip4は、横折りタイプのFold4よりも大幅に安価である。",
+        "featureComparison": [
+          "共通点：サムスンの折りたたみスマートフォン",
+          "相違点：Fold4は横折り（タブレット型）で大画面が特徴、Flip4は縦折り（ガラケー型）でコンパクトさが特徴"
+        ],
+        "differentiators": [
+          "Galaxy Z Fold4の利点：開くとタブレットサイズの大画面になり、マルチタスクに優れる",
+          "Galaxy Z Flip4の利点：折りたたむと非常にコンパクトになり、価格も安い"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "大画面でコンテンツを楽しみたい人",
+        "外出先で効率的にマルチタスク作業を行いたい人",
+        "折りたたみスマホを少しでも安く試したい人"
+      ],
+      "pros": [
+        "タブレット級の大画面",
+        "マルチタスクの快適さ",
+        "高性能なカメラ"
+      ],
+      "cons": [
+        "重量がある",
+        "画面の折り目が気になる場合がある",
+        "整備済み品であることの懸念"
+      ],
+      "score": 80,
+      "scoreRationale": "[基本点: 70]\n[加点: +10] (大画面とマルチタスクの利便性が高い)\n[加点: +5] (整備済み品として新品より価格が抑えられている)\n[減点: -5] (重量と折りたたみ機構の耐久性への懸念)\n[合計: 80]"
+    },
+    "technicalSpecs": {
+      "dimensions": {
+        "height": "155.1mm",
+        "width": "14.2mm",
+        "depth": "67.1mm"
+      },
+      "weight": "263g",
+      "display": "メイン: 約193mm, カバー: 約157mm",
+      "memory": "12GB",
+      "storage": "256GB",
+      "battery": "4400mAh",
+      "camera": "アウト: 50.0 MP + 12.0 MP + 10.0 MP"
+    }
+  }
+}
