@@ -809,16 +809,20 @@ a:hover {
 }
 
 .product-hero-image {
+  width: 100%;
+  min-width: 0;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
+  position: relative;
 }
 
 /* Product Image Carousel */
 .product-image-carousel {
   position: relative;
   width: 100%;
-  max-width: 400px;
+  max-width: min(400px, 100%);
+  min-width: 0;
   overflow: hidden;
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-md);
@@ -923,8 +927,12 @@ a:hover {
   left: 50%;
   transform: translateX(-50%);
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 6px;
   z-index: 10;
+  max-width: 90%;
+  padding: 0 4px;
 }
 
 .dot {
