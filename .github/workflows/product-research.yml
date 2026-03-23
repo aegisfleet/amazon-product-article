@@ -60,6 +60,7 @@ on:
           - docking_station
           - monitor_arm
           - desk_setup
+          - supplements
       max_results:
         description: 'Maximum results per category'
         required: false
