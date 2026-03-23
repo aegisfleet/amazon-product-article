@@ -1,0 +1,174 @@
+{
+  "analysis": {
+    "productName": "SIWULIU T5 電動シェーバー",
+    "parentAsin": "B0CX8SWZ57",
+    "productDescription": "IPX7完全防水で乾湿両用対応、強力モーター搭載の往復式メンズシェーバーです。出張や旅行に便利なコンパクト設計で、Type-C急速充電に対応しています。",
+    "productUsage": [
+      "毎日の髭剃り",
+      "旅行や出張先でのシェービング",
+      "お風呂でのドライ・ウェットシェービング"
+    ],
+    "positivePoints": [
+      "IPX7の完全防水仕様で丸ごと水洗いが可能",
+      "Type-C急速充電に対応し、約1.5時間で最長100分使用可能",
+      "コンパクトかつ軽量で持ち運びに便利",
+      "3Dフローティングブレードにより顔の輪郭に自動でフィット"
+    ],
+    "negativePoints": [
+      "無名ブランドのため長期間の耐久性や刃の交換に関する不安がある",
+      "安価なため高級モデルと比較すると深剃りの面で見劣りする可能性がある"
+    ],
+    "useCases": [
+      "出張先や旅行先での手軽なシェービング",
+      "お風呂に入りながらのウェットシェービング"
+    ],
+    "userStories": [],
+    "userImpression": "安価でコンパクト、かつIPX7防水やType-C充電といった基本機能をしっかり備えており、旅行や出張用のサブ機として使い勝手が良い印象です。",
+    "sources": [
+      {
+        "id": "src-amazon",
+        "name": "Amazon.co.jp 商品ページ",
+        "url": "https://www.amazon.co.jp/dp/B0CX8SWZ57",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-03-24",
+        "author": "Amazon",
+        "conflictOfInterest": "none",
+        "notes": "商品スペック、機能、価格情報を確認"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "IPX7完全防水で丸洗い可能",
+        "category": "durability",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-amazon"
+        ],
+        "crossChecked": false,
+        "notes": "商品仕様より"
+      },
+      {
+        "claim": "1.5時間充電で最長100分使用可能",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-amazon"
+        ],
+        "crossChecked": false,
+        "notes": "商品仕様より"
+      }
+    ],
+    "lastInvestigated": "2026-03-24",
+    "competitiveAnalysis": [
+      {
+        "name": "Omniveo FK-609",
+        "asin": "B0DLWK7YQH",
+        "priceComparison": "Omniveoの方が安価だが、どちらも低価格帯の製品として競合する。",
+        "featureComparison": [
+          "共通点：Type-C急速充電対応、IPX7防水、軽量コンパクト設計。",
+          "相違点：OmniveoはAIによるヒゲ検知機能やLEDディスプレイを搭載している。"
+        ],
+        "differentiators": [
+          "SIWULIU T5 電動シェーバーの利点：シンプルな機能で扱いやすく、必要十分なシェービング性能を持つ。",
+          "Omniveo FK-609の利点：AI検知機能や残量表示ディスプレイなど、同価格帯でより多機能である。"
+        ]
+      },
+      {
+        "name": "イズミ IZF-V559-A-EA",
+        "asin": "B07ZQVT7GJ",
+        "priceComparison": "イズミの方が価格は高いが、国内メーカーとしての信頼性がある。",
+        "featureComparison": [
+          "共通点：往復式シェーバー、本体丸洗いに対応。",
+          "相違点：イズミは4枚刃を採用しており、刃の構造とメーカーの信頼性に違いがある。また、SIWULIUはType-C充電であるのに対し、イズミは専用アダプター充電。"
+        ],
+        "differentiators": [
+          "SIWULIU T5 電動シェーバーの利点：Type-C充電で汎用性が高く、より軽量・コンパクトで持ち運びに有利。",
+          "イズミ IZF-V559-A-EAの利点：国内メーカーの4枚刃設計で、安定した剃り心地と替え刃の入手性が高い。"
+        ]
+      },
+      {
+        "name": "パナソニック ES-KS30-K",
+        "asin": "B00KSX25B6",
+        "priceComparison": "パナソニックの方が安価なエントリーモデルである。",
+        "featureComparison": [
+          "共通点：軽量コンパクトで持ち運びに適している。",
+          "相違点：SIWULIUが往復式であるのに対し、パナソニックは回転式。充電方式もSIWULIUがType-Cに対し、パナソニックはプラグイン充電式（8時間充電）。"
+        ],
+        "differentiators": [
+          "SIWULIU T5 電動シェーバーの利点：急速充電（1.5時間）に対応し、水洗い可能で清潔に保てる。",
+          "パナソニック ES-KS30-Kの利点：回転式で肌に優しく、国内大手メーカーの安心感がある。"
+        ]
+      },
+      {
+        "name": "Omniveo FK610",
+        "asin": "B0GHNNCTZ4",
+        "priceComparison": "価格帯は同等だが、Omniveoは大幅な割引（参考価格からの値引き）が設定されている。",
+        "featureComparison": [
+          "共通点：3連密着ブレード、IPX7防水、Type-C充電、軽量設計。",
+          "相違点：Omniveo FK610はLEDディスプレイを搭載し、トリマーも付属している。"
+        ],
+        "differentiators": [
+          "SIWULIU T5 電動シェーバーの利点：シンプルな構成で操作に迷わない。",
+          "Omniveo FK610の利点：バッテリー残量が一目でわかるLED表示や、細部を整えるトリマー機能が充実している。"
+        ]
+      },
+      {
+        "name": "ブラウン シリーズ3 3010s",
+        "asin": "B01B5JCT4E",
+        "priceComparison": "ブラウンの方が価格が高いが、ブランド力と確かな深剃り性能がある。",
+        "featureComparison": [
+          "共通点：3枚刃、水洗い・お風呂剃りに対応。",
+          "相違点：ブラウンは網刃技術に優れており深剃りが得意。一方でSIWULIUはType-C充電を採用しており、充電の汎用性に優れる。"
+        ],
+        "differentiators": [
+          "SIWULIU T5 電動シェーバーの利点：Type-C急速充電と軽量コンパクトさで旅行や出張に最適。",
+          "ブラウン シリーズ3 3010sの利点：定評のある深剃り性能と堅牢なつくりで、日常のメイン機として頼れる。"
+        ]
+      },
+      {
+        "name": "パナソニック ER-GK60-W",
+        "asin": "B06XSD3N13",
+        "priceComparison": "パナソニックのボディトリマーの方が価格が高い。",
+        "featureComparison": [
+          "共通点：防水設計（水洗い可能）。",
+          "相違点：SIWULIUは顔の髭剃りに特化したシェーバーだが、パナソニック ER-GK60-Wは全身のムダ毛処理（VIO含む）を目的としたボディトリマーである。"
+        ],
+        "differentiators": [
+          "SIWULIU T5 電動シェーバーの利点：顔の髭剃りに適した形状と刃の構造を持つ。",
+          "パナソニック ER-GK60-Wの利点：アタッチメントを使って全身のムダ毛を安全に処理できる専用設計。"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "出張や旅行用のコンパクトなシェーバーを探している人",
+        "Type-C充電で持ち物を減らしたい人",
+        "お風呂で手軽にシェービングしたい人"
+      ],
+      "pros": [
+        "Type-C急速充電",
+        "IPX7完全防水で手入れが容易",
+        "小型・軽量で携帯性が高い"
+      ],
+      "cons": [
+        "長期間の耐久性に不安がある",
+        "機能がシンプルで上位モデルのような多機能さはない"
+      ],
+      "score": 75,
+      "scoreRationale": "[基本点: 70]\n[加点: +5] Type-C充電対応と軽量コンパクトで実用性が高い\n[加点: +5] IPX7防水・乾湿両用など基本機能を網羅\n[減点: -5] 無名ブランドであり品質とサポートに不透明さがある\n[合計: 75]"
+    },
+    "technicalSpecs": {
+      "dimensions": {
+        "height": "約80mm",
+        "width": "約30mm",
+        "depth": "約60mm"
+      },
+      "weight": "約145g",
+      "power": "Type-C急速充電 (1.5時間充電で約100分使用)",
+      "waterproof": "IPX7",
+      "blade": "往復式 3Dフローティングブレード",
+      "model": "T5"
+    }
+  }
+}
