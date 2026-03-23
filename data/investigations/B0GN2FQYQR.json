@@ -1,0 +1,120 @@
+{
+  "analysis": {
+    "productName": "ルンバ Mini",
+    "parentAsin": "B0GN2FQYQR",
+    "productDescription": "アイロボット史上最小のコンパクトなボディに、吸引と水拭き、自動ゴミ収集機能を搭載したロボット掃除機です。狭いスペースにも入り込み、アプリや本体ボタンから簡単に操作できます。",
+    "productUsage": [
+      "毎日の床掃除（吸引・水拭き）",
+      "狭い部屋や家具の隙間の清掃"
+    ],
+    "positivePoints": [
+      "フルサイズと同等の性能を持ちながら、1/2のサイズで狭い場所も掃除可能",
+      "使い捨ての市販の床拭きシート（花王クイックルワイパーなど）が使用できる手軽さ",
+      "自動ゴミ収集ステーション搭載でゴミ捨ての手間を軽減"
+    ],
+    "negativePoints": [
+      "水拭き専用のモップパッドではなく使い捨てシートを使うため、頑固な汚れには不向きな可能性がある",
+      "サイズが極小のため、ダストボックスの容量が小さく、ステーションへのゴミ排出頻度が高くなる可能性がある"
+    ],
+    "useCases": [
+      "一人暮らしのコンパクトな部屋の掃除",
+      "家具が多く、通常のロボット掃除機では入り込めない隙間が多い部屋の掃除"
+    ],
+    "userStories": [],
+    "userImpression": "非常にコンパクトで設置場所を取らず、市販のシートを使える水拭き機能が手軽で好評です。",
+    "sources": [
+      {
+        "id": "src-amazon",
+        "name": "Amazon商品ページ",
+        "url": "https://www.amazon.co.jp/dp/B0GN2FQYQR",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-03-23",
+        "author": "Amazon",
+        "conflictOfInterest": "none",
+        "notes": "商品仕様、特徴、価格を確認"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "史上最小のRoombaで、フルサイズと同等の性能を持つ",
+        "category": "comparativeAdvantage",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-amazon"
+        ],
+        "crossChecked": false,
+        "notes": "公式の商品特徴に記載"
+      },
+      {
+        "claim": "市販の床拭きシートが使用可能",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-amazon"
+        ],
+        "crossChecked": false,
+        "notes": "公式の商品特徴に記載"
+      }
+    ],
+    "lastInvestigated": "2026-03-23",
+    "competitiveAnalysis": [
+      {
+        "name": "Anker Eufy Robot Vacuum Auto-Empty C10",
+        "asin": "B0DLG93BX5",
+        "priceComparison": "対象商品より安い。基本的な吸引・自動ゴミ収集機能は備えているが、ルンバ Miniのような極小サイズや市販シートを使った水拭き機能はない。",
+        "featureComparison": [
+          "共通点：自動ゴミ収集ステーションを搭載し、マッピング機能を備える",
+          "相違点：対象商品は極小サイズで市販シートでの水拭き対応、競合は薄型ボディと毛絡み除去システムを搭載"
+        ],
+        "differentiators": [
+          "ルンバ Miniの利点：サイズが非常に小さく狭い隙間に入りやすい、市販のシートで手軽に水拭きできる",
+          "Anker Eufy C10の利点：価格が抑えられており、毛絡み除去システムなどメンテナンス性に優れる"
+        ]
+      },
+      {
+        "name": "dreame F10 Plus",
+        "asin": "B0FBRK491H",
+        "priceComparison": "対象商品より安い。強力な吸引力と本格的な水拭き機能を備えているが、サイズは通常サイズ。",
+        "featureComparison": [
+          "共通点：吸引と水拭きに両対応し、自動ゴミ収集機能を搭載",
+          "相違点：対象商品は極小サイズで市販シート使用、競合は13,000Paの強力な吸引力と150mlタンクによる本格的な水拭き"
+        ],
+        "differentiators": [
+          "ルンバ Miniの利点：設置スペースを取らない極小サイズ、使い捨てシートでの簡単な水拭き",
+          "dreame F10 Plusの利点：高い吸引力と本格的な水拭きモップを備え、広い部屋の掃除に適している"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "一人暮らしなどで部屋がコンパクトな人",
+        "ロボット掃除機の設置スペースを最小限に抑えたい人",
+        "水拭きの手入れを市販シートで手軽に済ませたい人"
+      ],
+      "pros": [
+        "世界最小クラスのコンパクトさで隙間も掃除可能",
+        "市販の使い捨てシートが使えて衛生的かつ手軽",
+        "自動ゴミ収集機能で日々のメンテナンスが楽"
+      ],
+      "cons": [
+        "通常サイズに比べると一度に掃除できる面積が限られる可能性がある",
+        "本格的な水拭きモップではないため、頑固な汚れには弱い可能性がある"
+      ],
+      "score": 85,
+      "scoreRationale": "[基本点: 70]\n[加点: +10] (世界最小クラスという他にない独自性と省スペース性)\n[加点: +5] (市販の使い捨てシートが使えるという高い利便性と手軽さ)\n[合計: 85]"
+    },
+    "technicalSpecs": {
+      "color": "ホワイト",
+      "size": "極小",
+      "model": "F155260",
+      "features": [
+        "水拭き両用",
+        "LiDARナビゲーション",
+        "パワーリフト吸引",
+        "自動ゴミ収集機能",
+        "マッピング"
+      ]
+    }
+  }
+}
