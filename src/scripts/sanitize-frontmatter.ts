@@ -1,5 +1,8 @@
 import * as fs from 'node:fs';
 import * as path from 'node:path';
+import { Logger } from '../utils/Logger';
+
+const logger = Logger.getInstance();
 
 const CONTENT_DIR = path.join(process.cwd(), 'content', 'articles');
 
@@ -95,7 +98,7 @@ function processFile(filePath: string): boolean {
   }
 
   if (endIndex === -1) {
-    console.warn(`Warning: No closing frontmatter delimiter in ${filePath}`);
+    logger.warn(`Warning: No closing frontmatter delimiter in ${filePath}`);
     return false;
   }
 
@@ -109,9 +112,9 @@ function processFile(filePath: string): boolean {
     if (sanitized !== original) {
       lines[i] = sanitized;
       modified = true;
-      console.log(`Fixed: ${path.basename(filePath)} line ${i + 1}`);
-      console.log(`  Before: ${original}`);
-      console.log(`  After:  ${sanitized}`);
+      logger.info(`Fixed: ${path.basename(filePath)} line ${i + 1}`);
+      logger.info(`  Before: ${original}`);
+      logger.info(`  After:  ${sanitized}`);
     }
   }
 
@@ -126,10 +129,10 @@ function processFile(filePath: string): boolean {
  * Main function
  */
 function main(): void {
-  console.log('Sanitizing frontmatter in content/articles...');
+  logger.info('Sanitizing frontmatter in content/articles...');
 
   if (!fs.existsSync(CONTENT_DIR)) {
-    console.log('No content/articles directory found, skipping.');
+    logger.info('No content/articles directory found, skipping.');
     return;
   }
 
@@ -143,7 +146,7 @@ function main(): void {
     }
   }
 
-  console.log(`Sanitization complete. Fixed ${fixedCount} file(s).`);
+  logger.info(`Sanitization complete. Fixed ${fixedCount} file(s).`);
 }
 
 main();
