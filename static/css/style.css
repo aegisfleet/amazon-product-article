@@ -3012,8 +3012,8 @@ a.competitor-preview:hover {
 /* Mobile adjustments for hero evaluation */
 @media (max-width: 767px) {
   .hero-evaluation-section {
-    margin-top: var(--spacing-md);
-    padding-top: var(--spacing-md);
+    margin-top: 0;
+    padding-top: 0;
   }
 
   .hero-eval-block {
