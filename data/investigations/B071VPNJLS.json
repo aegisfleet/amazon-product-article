@@ -1,0 +1,136 @@
+{
+  "analysis": {
+    "productName": "LEWITT LCT 440 PURE コンデンサーマイク",
+    "parentAsin": "B0DG1YR69C",
+    "productDescription": "スタジオクオリティの音質と高い耐音圧を誇る、ボーカルから楽器までマルチに使えるラージダイアフラム・コンデンサーマイクです。ショックマウントやポップフィルターなど充実した付属品が同梱されており、すぐにレコーディングを始められます。",
+    "productUsage": [
+      "ボーカル録音",
+      "楽器録音（ドラム、エレキギター、ブラスなど）",
+      "ポッドキャスト・配信"
+    ],
+    "positivePoints": [
+      "同価格帯クラスを超えた上位機種と同等のスタジオクオリティのサウンド",
+      "140dBという最大耐音圧により、大音量の音源にも対応可能",
+      "ショックマウントやポップフィルターなど、必要なアクセサリが標準で付属する",
+      "亜鉛ダイキャスト製の堅牢で精悍なデザイン"
+    ],
+    "negativePoints": [
+      "オーディオインターフェイスと48Vファンタム電源が別途必要（USBマイクではない）"
+    ],
+    "useCases": [
+      "自宅でのボーカルやアコースティックギターの高音質なレコーディング",
+      "高音質を求めるゲーム実況やライブ配信",
+      "スタジオでの本格的な楽器録音"
+    ],
+    "userStories": [],
+    "userImpression": "価格以上の音質と使い勝手の良さから、「最初の1本」や「ステップアップの1本」として高く評価されています。付属品が充実している点も、初心者から中級者まで幅広いユーザーに好評です。",
+    "sources": [
+      {
+        "id": "src-amazon",
+        "name": "Amazon商品ページ",
+        "url": "https://www.amazon.co.jp/dp/B071VPNJLS",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-03-24",
+        "author": "Amazon",
+        "conflictOfInterest": "none",
+        "notes": "製品仕様、特徴、付属品、価格情報の確認"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "140dBの最大耐音圧を持ち、大音量音源にも使用可能",
+        "category": "durability",
+        "confidence": "high",
+        "supportingSourceIds": ["src-amazon"],
+        "crossChecked": false,
+        "notes": "Amazonの商品説明（Features）に記載あり"
+      },
+      {
+        "claim": "専用ショックマウント、ウィンドスクリーン、ポップフィルターが同梱",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": ["src-amazon"],
+        "crossChecked": false,
+        "notes": "Amazonの商品説明（Features）に記載あり"
+      }
+    ],
+    "lastInvestigated": "2026-03-24",
+    "competitiveAnalysis": [
+      {
+        "name": "オーディオテクニカ AT2020USB-XP",
+        "asin": "B0C61VGXWM",
+        "priceComparison": "AT2020USB-XPの方が安価。USB接続でお手軽だが、LCT 440 PUREは本格的なXLR接続でより高音質を追求できるため、価格差の価値は十分にある。",
+        "featureComparison": [
+          "共通点：配信や録音に適したコンデンサーマイクである点",
+          "相違点：LCT 440 PUREはXLR接続でファンタム電源が必要だが高音質・高耐圧。AT2020USB-XPはUSB接続でノイズリダクション等のデジタル機能を搭載。"
+        ],
+        "differentiators": [
+          "LEWITT LCT 440 PUREの利点：オーディオインターフェースを用いた本格的な録音や、大音量の楽器録音にも対応できる高い基本性能。",
+          "オーディオテクニカ AT2020USB-XPの利点：PCやPS4/PS5に直接USBで繋ぐだけで簡単に高音質な配信・録音環境が構築でき、ノイズリダクション機能も搭載している点。"
+        ]
+      },
+      {
+        "name": "Marantz Professional MPM-2000U",
+        "asin": "B01GJ9IUNY",
+        "priceComparison": "MPM-2000Uの方が大幅に安価。入門用としては魅力的だが、本格的な音楽制作やプロクオリティを求めるならLCT 440 PUREの方が適している。",
+        "featureComparison": [
+          "共通点：コンデンサーマイクであり、ショックマウントが付属する点",
+          "相違点：LCT 440 PUREはXLR接続のアナログマイクで高耐圧。MPM-2000UはUSB接続で手軽に使える設計。"
+        ],
+        "differentiators": [
+          "LEWITT LCT 440 PUREの利点：上位機種譲りの回路設計によるスタジオクオリティのサウンドと、140dBの耐音圧による録音の幅広さ。",
+          "Marantz Professional MPM-2000Uの利点：USB接続でオーディオインターフェース不要な手軽さと、非常にリーズナブルな価格設定。"
+        ]
+      },
+      {
+        "name": "LEWITT LCT 240 PRO",
+        "asin": "B07N8Y328S",
+        "priceComparison": "LCT 240 PROの方が安価。同じブランドの弟分にあたり、予算を抑えたい場合に適しているが、より高い解像度と余裕のあるサウンドを求めるならLCT 440 PUREを選ぶ価値がある。",
+        "featureComparison": [
+          "共通点：同じLEWITTのXLR接続コンデンサーマイクであり、ポップフィルター等が付属する点",
+          "相違点：LCT 440 PUREはラージダイアフラムを採用し、より豊かな低域や全体的なサウンドクオリティが向上している。"
+        ],
+        "differentiators": [
+          "LEWITT LCT 440 PUREの利点：より上位の回路設計とラージダイアフラムによる、さらに一段上のスタジオクオリティサウンド。",
+          "LEWITT LCT 240 PROの利点：LCT 440 PUREよりも手頃な価格で、同ブランドのクリアなサウンド傾向を手に入れられるコストパフォーマンスの高さ。"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "本格的なボーカル・楽器のレコーディングを始めたい方",
+        "「最初の1本」のコンデンサーマイクから、より高音質なものへステップアップしたい方",
+        "大音量の楽器（ドラム、ギターアンプなど）も録音する機会がある方"
+      ],
+      "pros": [
+        "上位機種同等の高音質と高い最大耐音圧",
+        "ショックマウントやポップフィルターなど録音に必要なアクセサリーが全て揃っている",
+        "シンプルで使い勝手が良く、頑丈な亜鉛ダイキャスト製ボディ"
+      ],
+      "cons": [
+        "別途オーディオインターフェースとファンタム電源(48V)が必要",
+        "指向性の切り替え機能などはない（単一指向性のみ）"
+      ],
+      "score": 85,
+      "scoreRationale": "[基本点: 70] (固定)\n[加点: +10] (上位機種譲りの高音質と140dBの最大耐音圧という優れた基本性能)\n[加点: +5] (ショックマウントやポップフィルター等の充実した付属品)\n[合計: 85] (最終的なスコア)"
+    },
+    "technicalSpecs": {
+      "dimensions": { "height": "138mm", "width": "52mm", "depth": "36mm" },
+      "weight": "310g",
+      "microphoneType": "コンデンサー",
+      "polarPattern": "カーディオイド（単一指向性）",
+      "sensitivity": "27.4 mV/Pa, -31.2 dBV/Pa",
+      "equivalentNoiseLevel": "7 dB (A)",
+      "maxSpl": "140 dBSPL (0.5 % THD)",
+      "signalToNoiseRatio": "87 dB (A)",
+      "dynamicRange": "133 dB (A)",
+      "supplyVoltage": "48 V ± 4 V",
+      "currentConsumption": "2.63 mA",
+      "internalImpedance": "110 Ω",
+      "connector": "金メッキ 3-pin XLR",
+      "material": "亜鉛ダイキャスト（筐体）",
+      "accessories": "専用ショックマウント、ウィンドスクリーン、ポップフィルター"
+    }
+  }
+}
