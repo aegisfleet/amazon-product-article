@@ -50,7 +50,7 @@
                     {{- end -}}
 
                     {{- if $imageUrl -}}
-                    <img src="{{- $imageUrl -}}" alt="{{- $rec.title -}}"
+                    <img src="{{ $imageUrl }}" alt="{{ $rec.title }}"
                         style="width: 100%; max-height: 200px; object-fit: contain; background-color: #ffffff; padding: 0.5rem; border-radius: var(--radius-md);">
                     {{- else -}}
                     <div class="card-image-noimage"
@@ -104,7 +104,7 @@
                             </svg>
                             情報元:
                             {{- if $rec.source.url -}}
-                            <a href="{{- $rec.source.url -}}" target="_blank" rel="noopener noreferrer"
+                            <a href="{{ $rec.source.url }}" target="_blank" rel="noopener noreferrer"
                                 style="color: var(--color-primary); text-decoration: underline;">{{- $rec.source.name -}}</a>
                             {{- else -}}
                             <span>{{- $rec.source.name -}}</span>
@@ -145,7 +145,7 @@
                             🏆 {{- $score -}}点
                         </span>
                         {{- end -}}
-                        <a href="{{- $articlePage.RelPermalink -}}" class="btn-internal-small"
+                        <a href="{{ $articlePage.RelPermalink }}" class="btn-internal-small"
                             style="margin-top: var(--spacing-sm);">
                             ✍️ サイト内レビュー
                         </a>
