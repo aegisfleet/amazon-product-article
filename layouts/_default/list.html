@@ -217,7 +217,7 @@
                         {{- else if ge $score 60 -}}
                         {{- $scoreClass = "score-good" -}}
                         {{- end -}}
-                        <span class="card-score {{- $scoreClass -}}">
+                        <span class="card-score {{ $scoreClass }}">
                             <span aria-hidden="true">🏆</span> {{ .Params.score }}点
                         </span>
                         {{- end -}}
