@@ -2,20 +2,20 @@
 <html lang="{{ .Site.LanguageCode | default "ja" }}" prefix="og: http://ogp.me/ns#">
 
 <head>
-  <title>{{ if .IsHome }}{{ .Site.Title }}{{ else if .Params.score }}{{ .Title }}{{ if .Params.price }} {{ .Params.price
-    }}{{ end }} レビュー【{{ .Params.score }}点】 | {{ .Site.Title }}{{ else }}{{ .Title }} レビュー | {{ .Site.Title }}{{ end }}
+  <title>{{- if .IsHome -}}{{ .Site.Title }}{{- else if .Params.score -}}{{ .Title }}{{- if .Params.price -}} {{ .Params.price
+    }}{{- end -}} レビュー【{{ .Params.score }}点】 | {{ .Site.Title }}{{- else -}}{{ .Title }} レビュー | {{ .Site.Title }}{{- end -}}
   </title>
-  {{ partial "head.html" . }}
+  {{- partial "head.html" . -}}
 </head>
 
 <body>
-  {{ partial "header.html" . }}
+  {{- partial "header.html" . -}}
 
   <main>
-    {{ block "main" . }}{{ end }}
+    {{- block "main" . -}}{{- end -}}
   </main>
 
-  {{ partial "footer.html" . }}
+  {{- partial "footer.html" . -}}
   <button id="scroll-to-top" class="scroll-to-top" aria-label="トップに戻る">
     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
       stroke-linecap="round" stroke-linejoin="round">

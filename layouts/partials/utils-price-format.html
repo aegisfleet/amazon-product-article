@@ -1,23 +1,23 @@
-{{/* Price Format Utility */}}
-{{ $price := . }}
-{{ $result := "" }}
+{{- /* Price Format Utility */ -}}
+{{- $price := . -}}
+{{- $result := "" -}}
 
-{{ if $price }}
-  {{ $priceStr := printf "%v" $price }}
-  {{ if in $priceStr "￥" }}
-    {{ $result = $priceStr }}
-  {{ else }}
-    {{/* Extract only digits to format if it's a raw number or has commas but no currency symbol */}}
-    {{ $priceClean := replace (replace $priceStr "," "") " " "" }}
-    {{ $matches := findRE "^[0-9]+$" $priceClean }}
+{{- if $price -}}
+  {{- $priceStr := printf "%v" $price -}}
+  {{- if in $priceStr "￥" -}}
+    {{- $result = $priceStr -}}
+  {{- else -}}
+    {{- /* Extract only digits to format if it's a raw number or has commas but no currency symbol */ -}}
+    {{- $priceClean := replace (replace $priceStr "," "") " " "" -}}
+    {{- $matches := findRE "^[0-9]+$" $priceClean -}}
 
-    {{ if gt (len $matches) 0 }}
-      {{ $priceRaw := index $matches 0 | int }}
-      {{ $result = printf "￥%s" (lang.FormatNumber 0 $priceRaw) }}
-    {{ else }}
-      {{ $result = $priceStr }}
-    {{ end }}
-  {{ end }}
-{{ end }}
+    {{- if gt (len $matches) 0 -}}
+      {{- $priceRaw := index $matches 0 | int -}}
+      {{- $result = printf "￥%s" (lang.FormatNumber 0 $priceRaw) -}}
+    {{- else -}}
+      {{- $result = $priceStr -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
 
-{{ $result }}
+{{- $result -}}

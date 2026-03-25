@@ -1,30 +1,30 @@
-{{ define "main" }}
-{{/* Variable Definitions moved to top */}}
-{{ $currentAsin := .Params.asin }}
-{{ $categories := .Params.categories }}
-{{ $currentPrice := 0 }}
-{{ if .Params.price }}
-{{ $currentPrice = index (findRE "[0-9]+" (replace .Params.price "," "")) 0 | int }}
-{{ end }}
-{{ $currentScore := .Params.score | default 0 }}
-{{ $currentCategory := "" }}
-{{ if and $categories (gt (len $categories) 0) }}
-{{ $currentCategory = index $categories 0 }}
-{{ else if .Params.category }}
-{{ $currentCategory = .Params.category }}
-{{ end }}
-{{ $currentPriceBucket := partial "utils-price-bucket.html" .Params.price }}
-{{ $allArticles := where (where .Site.RegularPages "Section" "articles") "Params.asin" "!=" $currentAsin }}
-{{ $shownAsins := slice $currentAsin }}
+{{- define "main" -}}
+{{- /* Variable Definitions moved to top */ -}}
+{{- $currentAsin := .Params.asin -}}
+{{- $categories := .Params.categories -}}
+{{- $currentPrice := 0 -}}
+{{- if .Params.price -}}
+{{- $currentPrice = index (findRE "[0-9]+" (replace .Params.price "," "")) 0 | int -}}
+{{- end -}}
+{{- $currentScore := .Params.score | default 0 -}}
+{{- $currentCategory := "" -}}
+{{- if and $categories (gt (len $categories) 0) -}}
+{{- $currentCategory = index $categories 0 -}}
+{{- else if .Params.category -}}
+{{- $currentCategory = .Params.category -}}
+{{- end -}}
+{{- $currentPriceBucket := partial "utils-price-bucket.html" .Params.price -}}
+{{- $allArticles := where (where .Site.RegularPages "Section" "articles") "Params.asin" "!=" $currentAsin -}}
+{{- $shownAsins := slice $currentAsin -}}
 
-<div id="product-tracking-info" data-asin="{{ .Params.asin }}" data-category="{{ $currentCategory }}"
-    data-price-bucket="{{ $currentPriceBucket }}" data-price="{{ .Params.price }}" style="display: none;"></div>
+<div id="product-tracking-info" data-asin="{{ .Params.asin }}" data-category="{{- $currentCategory -}}"
+    data-price-bucket="{{- $currentPriceBucket -}}" data-price="{{ .Params.price }}" style="display: none;"></div>
 
 <div class="container" style="padding-top: var(--spacing-xl);">
     <div class="ai-disclaimer">
         本サイトはAIによる商品の調査レポートを掲載しています。商品選びの参考情報としてご活用ください。
     </div>
-    {{ partial "breadcrumb.html" . }}
+    {{- partial "breadcrumb.html" . -}}
 
     <!-- Today's Recommendation Button -->
     <div style="margin: var(--spacing-md) 0; display: flex; justify-content: center;">
@@ -36,27 +36,27 @@
 
     <article class="article-content">
         <header class="article-header">
-            {{ if and .Params.categories (gt (len .Params.categories) 0) }}
-            {{ $category := index .Params.categories 0 }}
-            <a href="{{ printf `categories/%s/` ($category | urlize) | relURL }}" class="card-tag">{{ $category }}</a>
-            {{ else }}
-            {{ with .Params.category }}<a href="{{ printf `categories/%s/` (. | urlize) | relURL }}" class="card-tag">{{
-                . }}</a>{{ end }}
-            {{ end }}
+            {{- if and .Params.categories (gt (len .Params.categories) 0) -}}
+            {{- $category := index .Params.categories 0 -}}
+            <a href="{{ printf `categories/%s/` ($category | urlize) | relURL }}" class="card-tag">{{- $category -}}</a>
+            {{- else -}}
+            {{- with .Params.category -}}<a href="{{ printf `categories/%s/` (. | urlize) | relURL }}" class="card-tag">{{
+                . }}</a>{{- end -}}
+            {{- end -}}
             <h1 class="hero-title" style="margin-top: var(--spacing-sm);">{{ .Title }}</h1>
             <div class="article-meta">
                 <span>公開日: {{ .Date.Format "2006年01月02日" }}</span>
-                {{ with .Params.author }}<span> • 著者: {{ . }}</span>{{ end }}
+                {{- with .Params.author -}}<span> • 著者: {{ . }}</span>{{- end -}}
             </div>
         </header>
 
         <!-- Product Hero Card (generated from Front Matter) -->
-        {{ if .Params.hero }}
-        {{ partial "product-hero.html" . }}
-        {{ end }}
+        {{- if .Params.hero -}}
+        {{- partial "product-hero.html" . -}}
+        {{- end -}}
 
-        {{/* Keepa Price History Graph */}}
-        {{ if .Params.asin }}
+        {{- /* Keepa Price History Graph */ -}}
+        {{- if .Params.asin -}}
         <div id="keepa-graph-section" class="keepa-section" style="display: none;">
             <h3 class="keepa-section-title">📈 価格推移（Keepa）</h3>
             <div class="keepa-graph-container">
@@ -68,9 +68,9 @@
                 <p class="keepa-note">※ クリックで Keepa の詳細ページを開きます</p>
             </div>
         </div>
-        {{ end }}
+        {{- end -}}
 
-        {{/* Rakuten Affiliate Widget */}}
+        {{- /* Rakuten Affiliate Widget */ -}}
         <div id="rakuten-affiliate-section" class="rakuten-section"
             style="margin-bottom: var(--spacing-lg); text-align: center;">
             <script
@@ -79,74 +79,73 @@
                 src="https://xml.affiliate.rakuten.co.jp/widget/js/rakuten_widget.js?20230106"></script>
         </div>
 
-        {{/* 同じカテゴリの記事 */}}
-        {{ $related := $allArticles }}
-        {{ if and $categories (gt (len $categories) 0) }}
-        {{ $firstCat := index $categories 0 }}
-        {{ if $firstCat }}
-        {{ $relatedWithCats := where $related "Params.categories" "!=" nil }}
-        {{ $related = where $relatedWithCats "Params.categories" "intersect" (slice $firstCat) }}
-        {{ else }}
-        {{ $related = slice }}
-        {{ end }}
-        {{ else }}
-        {{ $related = slice }}
-        {{ end }}
+        {{- /* 同じカテゴリの記事 */ -}}
+        {{- $related := $allArticles -}}
+        {{- if and $categories (gt (len $categories) 0) -}}
+        {{- $firstCat := index $categories 0 -}}
+        {{- if $firstCat -}}
+        {{- $relatedWithCats := where $related "Params.categories" "!=" nil -}}
+        {{- $related = where $relatedWithCats "Params.categories" "intersect" (slice $firstCat) -}}
+        {{- else -}}
+        {{- $related = slice -}}
+        {{- end -}}
+        {{- else -}}
+        {{- $related = slice -}}
+        {{- end -}}
 
         <div id="related-products-section" style="display: none;">
-            {{ if gt (len $related) 0 }}
+            {{- if gt (len $related) 0 -}}
             <section class="related-section">
                 <h3 class="related-section-title">📂 同じカテゴリの商品</h3>
                 <div class="related-grid">
-                    {{ $relatedExcluded := where $related "Params.asin" "not in" $shownAsins }}
-                    {{ $rankedRelated := partial "product-composite-ranked-pages.html" (dict "pages" $relatedExcluded
-                    "randomize" true) }}
-                    {{ range first 4 $rankedRelated }}
-                    {{ $shownAsins = $shownAsins | append .Params.asin }}
-                    {{ $itemPriceBucket := partial "utils-price-bucket.html" .Params.price }}
+                    {{- $relatedExcluded := where $related "Params.asin" "not in" $shownAsins -}}
+                    {{- $rankedRelated := partial "product-composite-ranked-pages.html" (dict "pages" $relatedExcluded
+                    "randomize" true) -}}
+                    {{- range first 4 $rankedRelated -}}
+                    {{- $shownAsins = $shownAsins | append .Params.asin -}}
+                    {{- $itemPriceBucket := partial "utils-price-bucket.html" .Params.price -}}
                     <a href="{{ .RelPermalink }}" class="pickup-card" data-track-product="1"
                         data-asin="{{ .Params.asin }}"
-                        data-category="{{ if .Params.categories }}{{ index .Params.categories 0 }}{{ else }}{{ .Params.category }}{{ end }}"
-                        data-price-bucket="{{ $itemPriceBucket }}" data-price="{{ .Params.price }}">
+                        data-category="{{- if .Params.categories -}}{{ index .Params.categories 0 }}{{- else -}}{{ .Params.category }}{{- end -}}"
+                        data-price-bucket="{{- $itemPriceBucket -}}" data-price="{{ .Params.price }}">
                         <div class="pickup-card-image">
-                            {{ if .Params.images }}
+                            {{- if .Params.images -}}
                             <img src="{{ index .Params.images 0 }}" alt="{{ .Title }}" loading="lazy" decoding="async">
-                            {{ else }}
+                            {{- else -}}
                             <div class="pickup-card-noimage">画像なし</div>
-                            {{ end }}
+                            {{- end -}}
                         </div>
                         <div class="pickup-card-content">
                             <p class="pickup-card-title">{{ .Title | truncate 30 }}</p>
                             <div class="pickup-card-meta">
-                                {{ if .Params.score }}
-                                {{ $score := .Params.score | int }}
-                                {{ $scoreClass := "score-fair" }}
-                                {{ if ge $score 80 }}
-                                {{ $scoreClass = "score-excellent" }}
-                                {{ else if ge $score 60 }}
-                                {{ $scoreClass = "score-good" }}
-                                {{ end }}
-                                <span class="pickup-card-score {{ $scoreClass }}">🏆 {{ .Params.score }}点</span>
-                                {{ end }}
-                                {{ if .Params.price }}<span class="pickup-card-price">{{ .Params.price }}</span>{{ end
-                                }}
+                                {{- if .Params.score -}}
+                                {{- $score := .Params.score | int -}}
+                                {{- $scoreClass := "score-fair" -}}
+                                {{- if ge $score 80 -}}
+                                {{- $scoreClass = "score-excellent" -}}
+                                {{- else if ge $score 60 -}}
+                                {{- $scoreClass = "score-good" -}}
+                                {{- end -}}
+                                <span class="pickup-card-score {{- $scoreClass -}}">🏆 {{ .Params.score }}点</span>
+                                {{- end -}}
+                                {{- if .Params.price -}}<span class="pickup-card-price">{{ .Params.price }}</span>{{- end -}}
                             </div>
                         </div>
                     </a>
-                    {{ end }}
+                    {{- end -}}
                 </div>
             </section>
-            {{ end }}
+            {{- end -}}
         </div>
 
-        {{ if .TableOfContents }}
+        {{- if .TableOfContents -}}
         <nav class="table-of-contents" id="toc" style="display: none;">
             <details open>
                 <summary>📑 目次</summary>
                 {{ .TableOfContents }}
             </details>
         </nav>
-        {{ end }}
+        {{- end -}}
 
         <div class="content">
             {{ .Content }}
@@ -195,120 +194,120 @@
 
     </article>
 
-    {{/* 同価格帯の商品（±20%範囲、別カテゴリ優先） */}}
-    {{ if gt $currentPrice 0 }}
-    {{ $minPrice := int (mul $currentPrice 0.8) }}
-    {{ $maxPrice := int (mul $currentPrice 1.2) }}
-    {{ $samePriceRange := slice }}
-    {{ range $allArticles }}
-    {{ $itemPrice := 0 }}
-    {{ if .Params.price }}
-    {{ $itemPrice = index (findRE "[0-9]+" (replace .Params.price "," "")) 0 | int }}
-    {{ end }}
-    {{ if and (ge $itemPrice $minPrice) (le $itemPrice $maxPrice) }}
-    {{ $samePriceRange = $samePriceRange | append . }}
-    {{ end }}
-    {{ end }}
+    {{- /* 同価格帯の商品（±20%範囲、別カテゴリ優先） */ -}}
+    {{- if gt $currentPrice 0 -}}
+    {{- $minPrice := int (mul $currentPrice 0.8) -}}
+    {{- $maxPrice := int (mul $currentPrice 1.2) -}}
+    {{- $samePriceRange := slice -}}
+    {{- range $allArticles -}}
+    {{- $itemPrice := 0 -}}
+    {{- if .Params.price -}}
+    {{- $itemPrice = index (findRE "[0-9]+" (replace .Params.price "," "")) 0 | int -}}
+    {{- end -}}
+    {{- if and (ge $itemPrice $minPrice) (le $itemPrice $maxPrice) -}}
+    {{- $samePriceRange = $samePriceRange | append . -}}
+    {{- end -}}
+    {{- end -}}
 
-    {{ if gt (len $samePriceRange) 0 }}
+    {{- if gt (len $samePriceRange) 0 -}}
     <section class="related-section"
         style="margin-top: var(--spacing-lg); border-top: 1px solid var(--color-border); padding-top: var(--spacing-lg);">
         <h3 class="related-section-title">💰 同価格帯のおすすめ</h3>
         <div class="related-grid">
-            {{ $samePriceRangeExcluded := where $samePriceRange "Params.asin" "not in" $shownAsins }}
-            {{ $rankedSamePriceRange := partial "product-composite-ranked-pages.html" (dict "pages"
-            $samePriceRangeExcluded "randomize" true) }}
-            {{ range first 4 $rankedSamePriceRange }}
-            {{ $shownAsins = $shownAsins | append .Params.asin }}
-            {{ $itemPriceBucket := partial "utils-price-bucket.html" .Params.price }}
+            {{- $samePriceRangeExcluded := where $samePriceRange "Params.asin" "not in" $shownAsins -}}
+            {{- $rankedSamePriceRange := partial "product-composite-ranked-pages.html" (dict "pages"
+            $samePriceRangeExcluded "randomize" true) -}}
+            {{- range first 4 $rankedSamePriceRange -}}
+            {{- $shownAsins = $shownAsins | append .Params.asin -}}
+            {{- $itemPriceBucket := partial "utils-price-bucket.html" .Params.price -}}
             <a href="{{ .RelPermalink }}" class="pickup-card" data-track-product="1" data-asin="{{ .Params.asin }}"
-                data-category="{{ if .Params.categories }}{{ index .Params.categories 0 }}{{ else }}{{ .Params.category }}{{ end }}"
-                data-price-bucket="{{ $itemPriceBucket }}" data-price="{{ .Params.price }}">
+                data-category="{{- if .Params.categories -}}{{ index .Params.categories 0 }}{{- else -}}{{ .Params.category }}{{- end -}}"
+                data-price-bucket="{{- $itemPriceBucket -}}" data-price="{{ .Params.price }}">
                 <div class="pickup-card-image">
-                    {{ if .Params.images }}
+                    {{- if .Params.images -}}
                     <img src="{{ index .Params.images 0 }}" alt="{{ .Title }}" loading="lazy" decoding="async">
-                    {{ else }}
+                    {{- else -}}
                     <div class="pickup-card-noimage">画像なし</div>
-                    {{ end }}
+                    {{- end -}}
                 </div>
                 <div class="pickup-card-content">
                     <p class="pickup-card-title">{{ .Title | truncate 30 }}</p>
                     <div class="pickup-card-meta">
-                        {{ if .Params.score }}
-                        {{ $score := .Params.score | int }}
-                        {{ $scoreClass := "score-fair" }}
-                        {{ if ge $score 80 }}
-                        {{ $scoreClass = "score-excellent" }}
-                        {{ else if ge $score 60 }}
-                        {{ $scoreClass = "score-good" }}
-                        {{ end }}
-                        <span class="pickup-card-score {{ $scoreClass }}">🏆 {{ .Params.score }}点</span>
-                        {{ end }}
-                        {{ if .Params.price }}<span class="pickup-card-price">{{ .Params.price }}</span>{{ end }}
+                        {{- if .Params.score -}}
+                        {{- $score := .Params.score | int -}}
+                        {{- $scoreClass := "score-fair" -}}
+                        {{- if ge $score 80 -}}
+                        {{- $scoreClass = "score-excellent" -}}
+                        {{- else if ge $score 60 -}}
+                        {{- $scoreClass = "score-good" -}}
+                        {{- end -}}
+                        <span class="pickup-card-score {{- $scoreClass -}}">🏆 {{ .Params.score }}点</span>
+                        {{- end -}}
+                        {{- if .Params.price -}}<span class="pickup-card-price">{{ .Params.price }}</span>{{- end -}}
                     </div>
                 </div>
             </a>
-            {{ end }}
+            {{- end -}}
         </div>
     </section>
-    {{ end }}
-    {{ end }}
+    {{- end -}}
+    {{- end -}}
 
-    {{/* 同スコア帯の人気商品（10の位ベースの範囲: 90点以上は90-100、80点台は80-89、等） */}}
-    {{ if gt $currentScore 0 }}
-    {{/* 90点以上は90-100、それ以外は10の位で区切る (例: 83→80-89, 77→70-79) */}}
-    {{ $decade := div $currentScore 10 }}
-    {{ $minScore := mul $decade 10 }}
-    {{ $maxScore := 0 }}
-    {{ if ge $currentScore 90 }}
-    {{ $maxScore = 99999 }}
-    {{ else }}
-    {{ $maxScore = sub (add $minScore 10) 1 }}
-    {{ end }}
-    {{ $sameScoreRange := where $allArticles "Params.score" "ge" $minScore }}
-    {{ $sameScoreRange = where $sameScoreRange "Params.score" "le" $maxScore }}
+    {{- /* 同スコア帯の人気商品（10の位ベースの範囲: 90点以上は90-100、80点台は80-89、等） */ -}}
+    {{- if gt $currentScore 0 -}}
+    {{- /* 90点以上は90-100、それ以外は10の位で区切る (例: 83→80-89, 77→70-79) */ -}}
+    {{- $decade := div $currentScore 10 -}}
+    {{- $minScore := mul $decade 10 -}}
+    {{- $maxScore := 0 -}}
+    {{- if ge $currentScore 90 -}}
+    {{- $maxScore = 99999 -}}
+    {{- else -}}
+    {{- $maxScore = sub (add $minScore 10) 1 -}}
+    {{- end -}}
+    {{- $sameScoreRange := where $allArticles "Params.score" "ge" $minScore -}}
+    {{- $sameScoreRange = where $sameScoreRange "Params.score" "le" $maxScore -}}
 
-    {{ if gt (len $sameScoreRange) 0 }}
+    {{- if gt (len $sameScoreRange) 0 -}}
     <section class="related-section"
         style="margin-top: var(--spacing-lg); border-top: 1px solid var(--color-border); padding-top: var(--spacing-lg);">
         <h3 class="related-section-title">⭐ 同スコア帯の人気商品</h3>
         <div class="related-grid">
-            {{ $sameScoreRangeExcluded := where $sameScoreRange "Params.asin" "not in" $shownAsins }}
-            {{ $rankedSameScoreRange := partial "product-composite-ranked-pages.html" (dict "pages"
-            $sameScoreRangeExcluded "randomize" true) }}
-            {{ range first 4 $rankedSameScoreRange }}
-            {{ $itemPriceBucket := partial "utils-price-bucket.html" .Params.price }}
+            {{- $sameScoreRangeExcluded := where $sameScoreRange "Params.asin" "not in" $shownAsins -}}
+            {{- $rankedSameScoreRange := partial "product-composite-ranked-pages.html" (dict "pages"
+            $sameScoreRangeExcluded "randomize" true) -}}
+            {{- range first 4 $rankedSameScoreRange -}}
+            {{- $itemPriceBucket := partial "utils-price-bucket.html" .Params.price -}}
             <a href="{{ .RelPermalink }}" class="pickup-card" data-track-product="1" data-asin="{{ .Params.asin }}"
-                data-category="{{ if .Params.categories }}{{ index .Params.categories 0 }}{{ else }}{{ .Params.category }}{{ end }}"
-                data-price-bucket="{{ $itemPriceBucket }}" data-price="{{ .Params.price }}">
+                data-category="{{- if .Params.categories -}}{{ index .Params.categories 0 }}{{- else -}}{{ .Params.category }}{{- end -}}"
+                data-price-bucket="{{- $itemPriceBucket -}}" data-price="{{ .Params.price }}">
                 <div class="pickup-card-image">
-                    {{ if .Params.images }}
+                    {{- if .Params.images -}}
                     <img src="{{ index .Params.images 0 }}" alt="{{ .Title }}" loading="lazy" decoding="async">
-                    {{ else }}
+                    {{- else -}}
                     <div class="pickup-card-noimage">画像なし</div>
-                    {{ end }}
+                    {{- end -}}
                 </div>
                 <div class="pickup-card-content">
                     <p class="pickup-card-title">{{ .Title | truncate 30 }}</p>
                     <div class="pickup-card-meta">
-                        {{ if .Params.score }}
-                        {{ $score := .Params.score | int }}
-                        {{ $scoreClass := "score-fair" }}
-                        {{ if ge $score 80 }}
-                        {{ $scoreClass = "score-excellent" }}
-                        {{ else if ge $score 60 }}
-                        {{ $scoreClass = "score-good" }}
-                        {{ end }}
-                        <span class="pickup-card-score {{ $scoreClass }}">🏆 {{ .Params.score }}点</span>
-                        {{ end }}
-                        {{ if .Params.price }}<span class="pickup-card-price">{{ .Params.price }}</span>{{ end }}
+                        {{- if .Params.score -}}
+                        {{- $score := .Params.score | int -}}
+                        {{- $scoreClass := "score-fair" -}}
+                        {{- if ge $score 80 -}}
+                        {{- $scoreClass = "score-excellent" -}}
+                        {{- else if ge $score 60 -}}
+                        {{- $scoreClass = "score-good" -}}
+                        {{- end -}}
+                        <span class="pickup-card-score {{- $scoreClass -}}">🏆 {{ .Params.score }}点</span>
+                        {{- end -}}
+                        {{- if .Params.price -}}<span class="pickup-card-price">{{ .Params.price }}</span>{{- end -}}
                     </div>
                 </div>
             </a>
-            {{ end }}
+            {{- end -}}
         </div>
     </section>
-    {{ end }}
-    {{ end }}
+    {{- end -}}
+    {{- end -}}
 </div>
-{{ end }}
+{{- end -}}

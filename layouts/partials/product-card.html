@@ -1,112 +1,111 @@
-{{ $priceRaw := 0 }}
-{{ if .Params.price }}
-{{ $priceRaw = index (findRE "[0-9]+" (replace .Params.price "," "")) 0 | default 0 }}
-{{ end }}
-{{ $dateRaw := .Date.Unix }}
-{{ with .Params.last_investigated }}{{ $dateRaw = (time .).Unix }}{{ end }}
-{{ $trackingCategory := "" }}
-{{ $terms := .GetTerms "categories" }}
-{{ if $terms }}
-{{ $trackingCategory = (index $terms 0).LinkTitle }}
-{{ else if .Params.categories }}
-{{ $trackingCategory = index .Params.categories 0 }}
-{{ else if .Params.category }}
-{{ $trackingCategory = .Params.category }}
-{{ end }}
-{{ $priceBucket := partial "utils-price-bucket.html" .Params.price }}
-<article class="card" data-price="{{ $priceRaw }}" data-score="{{ .Params.score | default 0 }}"
-    data-date="{{ $dateRaw }}">
+{{- $priceRaw := 0 -}}
+{{- if .Params.price -}}
+{{- $priceRaw = index (findRE "[0-9]+" (replace .Params.price "," "")) 0 | default 0 -}}
+{{- end -}}
+{{- $dateRaw := .Date.Unix -}}
+{{- with .Params.last_investigated -}}{{- $dateRaw = (time .).Unix -}}{{- end -}}
+{{- $trackingCategory := "" -}}
+{{- $terms := .GetTerms "categories" -}}
+{{- if $terms -}}
+{{- $trackingCategory = (index $terms 0).LinkTitle -}}
+{{- else if .Params.categories -}}
+{{- $trackingCategory = index .Params.categories 0 -}}
+{{- else if .Params.category -}}
+{{- $trackingCategory = .Params.category -}}
+{{- end -}}
+{{- $priceBucket := partial "utils-price-bucket.html" .Params.price -}}
+<article class="card" data-price="{{- $priceRaw -}}" data-score="{{ .Params.score | default 0 }}"
+    data-date="{{- $dateRaw -}}">
     <div class="card-image">
         <a href="{{ .RelPermalink }}"
-            data-track-product="1" data-asin="{{ .Params.asin }}" data-category="{{ $trackingCategory }}"
-            data-price-bucket="{{ $priceBucket }}" data-price="{{ .Params.price }}">
+            data-track-product="1" data-asin="{{ .Params.asin }}" data-category="{{- $trackingCategory -}}"
+            data-price-bucket="{{- $priceBucket -}}" data-price="{{ .Params.price }}">
             <!-- Placeholder for product image integration later -->
-            {{ if .Params.images }}
+            {{- if .Params.images -}}
             <img src="{{ index .Params.images 0 }}" alt="{{ .Title }}" loading="lazy"
                 decoding="async">
-            {{ else }}
+            {{- else -}}
             <div class="card-image-noimage">
                 画像なし
             </div>
-            {{ end }}
+            {{- end -}}
         </a>
     </div>
     <div class="card-content">
         <div class="card-header">
-            {{ $categories := .GetTerms "categories" }}
-            {{ if $categories }}
-            {{ $firstCat := index $categories 0 }}
-            <a href="{{ $firstCat.RelPermalink }}" class="card-tag">{{ $firstCat.LinkTitle }}</a>
-            {{ with .Params.subcategory }}<span class="card-tag-sub">{{ . }}</span>{{ end }}
-            {{ else if .Params.category }}
+            {{- $categories := .GetTerms "categories" -}}
+            {{- if $categories -}}
+            {{- $firstCat := index $categories 0 -}}
+            <a href="{{- $firstCat.RelPermalink -}}" class="card-tag">{{- $firstCat.LinkTitle -}}</a>
+            {{- with .Params.subcategory -}}<span class="card-tag-sub">{{ . }}</span>{{- end -}}
+            {{- else if .Params.category -}}
             <span class="card-tag">{{ .Params.category }}</span>
-            {{ with .Params.subcategory }}<span class="card-tag-sub">{{ . }}</span>{{ end }}
-            {{ end }}
+            {{- with .Params.subcategory -}}<span class="card-tag-sub">{{ . }}</span>{{- end -}}
+            {{- end -}}
             <h3 class="card-title">
                 <a href="{{ .RelPermalink }}" data-track-product="1" data-asin="{{ .Params.asin }}"
-                    data-category="{{ $trackingCategory }}" data-price-bucket="{{ $priceBucket }}"
+                    data-category="{{- $trackingCategory -}}" data-price-bucket="{{- $priceBucket -}}"
                     data-price="{{ .Params.price }}">{{ .Title }}</a>
             </h3>
         </div>
         <p class="card-excerpt">
             {{ .Description | default (.Summary | truncate 100) }}
         </p>
-        {{ if .Params.specs }}
+        {{- if .Params.specs -}}
         <div class="card-specs">
-            {{ partial "product-spec-tags.html" (dict "specs" .Params.specs "tagClass" "card-spec-tag") }}
+            {{- partial "product-spec-tags.html" (dict "specs" .Params.specs "tagClass" "card-spec-tag") -}}
         </div>
-        {{ end }}
+        {{- end -}}
         <div class="card-meta-ext">
             <div class="meta-main-row">
-                {{ if .Params.price }}
+                {{- if .Params.price -}}
                 <span class="card-price">
                     💰 {{ .Params.price }}
                 </span>
-                {{ if .Params.loyalty_points }}
+                {{- if .Params.loyalty_points -}}
                 <span class="card-points">
                     🎁 {{ .Params.loyalty_points }}pt
                 </span>
-                {{ end }}
-                {{ end }}
-                {{ if .Params.score }}
-                {{ $score := .Params.score | int }}
-                {{ $scoreClass := "score-fair" }}
-                {{ if ge $score 80 }}
-                {{ $scoreClass = "score-excellent" }}
-                {{ else if ge $score 60 }}
-                {{ $scoreClass = "score-good" }}
-                {{ end }}
-                <span class="card-score {{ $scoreClass }}">
+                {{- end -}}
+                {{- end -}}
+                {{- if .Params.score -}}
+                {{- $score := .Params.score | int -}}
+                {{- $scoreClass := "score-fair" -}}
+                {{- if ge $score 80 -}}
+                {{- $scoreClass = "score-excellent" -}}
+                {{- else if ge $score 60 -}}
+                {{- $scoreClass = "score-good" -}}
+                {{- end -}}
+                <span class="card-score {{- $scoreClass -}}">
                     🏆 {{ .Params.score }}点
                 </span>
-                {{ end }}
+                {{- end -}}
             </div>
             <div class="meta-details-row">
-                {{ if .Params.is_amazon_direct }}
+                {{- if .Params.is_amazon_direct -}}
                 <span class="badge-amazon-direct">Amazon直販</span>
-                {{ end }}
-                {{ with .Params.deal_badge }}
+                {{- end -}}
+                {{- with .Params.deal_badge -}}
                 <span class="badge-deal">{{ . }}</span>
-                {{ end }}
-                {{ if .Params.savings_percentage }}
+                {{- end -}}
+                {{- if .Params.savings_percentage -}}
                 <span class="badge-savings">{{ .Params.savings_percentage }}% OFF</span>
-                {{ end }}
-                {{ with .Params.availability }}
+                {{- end -}}
+                {{- with .Params.availability -}}
                 <span class="badge-availability">{{ . }}</span>
-                {{ end }}
+                {{- end -}}
             </div>
         </div>
         <div class="card-footer">
-            <span class="article-meta">{{ with .Params.last_investigated }}{{ time . | dateFormat "2006年01月02日" }}{{
-                else }}{{ .Date.Format "2006年01月02日" }}{{ end }}</span>
-            {{ if .Params.affiliate_url }}
+            <span class="article-meta">{{- with .Params.last_investigated -}}{{ time . | dateFormat "2006年01月02日" }}{{- else -}}{{ .Date.Format "2006年01月02日" }}{{- end -}}</span>
+            {{- if .Params.affiliate_url -}}
             <a href="{{ .Params.affiliate_url }}" class="btn-amazon-small" target="_blank" rel="noopener noreferrer"
-                data-track-product="1" data-asin="{{ .Params.asin }}" data-category="{{ $trackingCategory }}"
-                data-price-bucket="{{ $priceBucket }}" data-price="{{ .Params.price }}">🛒
+                data-track-product="1" data-asin="{{ .Params.asin }}" data-category="{{- $trackingCategory -}}"
+                data-price-bucket="{{- $priceBucket -}}" data-price="{{ .Params.price }}">🛒
                 Amazonで見る</a>
-            {{ else }}
+            {{- else -}}
             <a href="{{ .RelPermalink }}" class="read-more">レビューを読む →</a>
-            {{ end }}
+            {{- end -}}
         </div>
     </div>
 </article>

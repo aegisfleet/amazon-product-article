@@ -1,4 +1,4 @@
-{{ define "main" }}
+{{- define "main" -}}
 <section class="hero">
     <div class="container hero-content">
         <div class="hero-image">
@@ -13,7 +13,7 @@
 
 <section class="container" style="margin-top: var(--spacing-lg);">
     <!-- Product Count Display -->
-    {{ $articles := where .Site.RegularPages "Section" "articles" }}
+    {{- $articles := where .Site.RegularPages "Section" "articles" -}}
     <div class="product-count-container">
         <div class="product-count-badge">
             <span class="product-count-icon">
@@ -36,18 +36,17 @@
     </div>
 
     <!-- High Score Pickup Section (80点以上) -->
-    {{ $highScoreArticles := where (where .Site.RegularPages "Section" "articles") ".Params.score" "ge" 80 }}
-    {{ if gt (len $highScoreArticles) 0 }}
-    {{ $rankedHighScoreArticles := partial "product-composite-ranked-pages.html" (dict "pages" $highScoreArticles) }}
-    {{ $pickupItems := first 6 $rankedHighScoreArticles }}
-    {{ $pickupCandidates := first 1000 $rankedHighScoreArticles }}
-    {{ $pickupData := slice }}
-    {{ range $pickupCandidates }}
-    {{ $pickupCategory := "" }}
-    {{ if .Params.categories }}{{ $pickupCategory = index .Params.categories 0 }}{{ else if .Params.category }}{{
-    $pickupCategory = .Params.category }}{{ end }}
-    {{ $pickupPriceBucket := partial "utils-price-bucket.html" .Params.price }}
-    {{ $pickupData = $pickupData | append (dict
+    {{- $highScoreArticles := where (where .Site.RegularPages "Section" "articles") ".Params.score" "ge" 80 -}}
+    {{- if gt (len $highScoreArticles) 0 -}}
+    {{- $rankedHighScoreArticles := partial "product-composite-ranked-pages.html" (dict "pages" $highScoreArticles) -}}
+    {{- $pickupItems := first 6 $rankedHighScoreArticles -}}
+    {{- $pickupCandidates := first 1000 $rankedHighScoreArticles -}}
+    {{- $pickupData := slice -}}
+    {{- range $pickupCandidates -}}
+    {{- $pickupCategory := "" -}}
+    {{- if .Params.categories -}}{{- $pickupCategory = index .Params.categories 0 -}}{{- else if .Params.category -}}{{- $pickupCategory = .Params.category -}}{{- end -}}
+    {{- $pickupPriceBucket := partial "utils-price-bucket.html" .Params.price -}}
+    {{- $pickupData = $pickupData | append (dict
     "title" .Title
     "url" .RelPermalink
     "score" (.Params.score | default 0)
@@ -57,8 +56,8 @@
     "priceBucket" $pickupPriceBucket
     "image" (cond (and .Params.images (gt (len .Params.images) 0)) (index .Params.images 0) "")
     "specs" .Params.specs
-    ) }}
-    {{ end }}
+    ) -}}
+    {{- end -}}
     <div class="pickup-section">
         <div class="pickup-header">
             <h3 class="pickup-title">🏆 高評価おすすめ</h3>
@@ -68,48 +67,47 @@
             </button>
         </div>
         <div class="pickup-grid is-loading" id="pickup-grid">
-            {{ range $pickupItems }}
-            {{ $pickupCategory := "" }}
-            {{ if .Params.categories }}{{ $pickupCategory = index .Params.categories 0 }}{{ else if .Params.category
-            }}{{ $pickupCategory = .Params.category }}{{ end }}
-            {{ $pickupPriceBucket := partial "utils-price-bucket.html" .Params.price }}
+            {{- range $pickupItems -}}
+            {{- $pickupCategory := "" -}}
+            {{- if .Params.categories -}}{{- $pickupCategory = index .Params.categories 0 -}}{{- else if .Params.category -}}{{- $pickupCategory = .Params.category -}}{{- end -}}
+            {{- $pickupPriceBucket := partial "utils-price-bucket.html" .Params.price -}}
             <a href="{{ .RelPermalink }}" class="pickup-card" data-score="{{ .Params.score }}"
                 data-price="{{ .Params.price }}" data-track-product="1" data-asin="{{ .Params.asin }}"
-                data-category="{{ $pickupCategory }}" data-price-bucket="{{ $pickupPriceBucket }}">
+                data-category="{{- $pickupCategory -}}" data-price-bucket="{{- $pickupPriceBucket -}}">
                 <div class="pickup-card-image">
-                    {{ if .Params.images }}
+                    {{- if .Params.images -}}
                     <img src="{{ index .Params.images 0 }}" alt="{{ .Title }}" loading="lazy" decoding="async">
-                    {{ else }}
+                    {{- else -}}
                     <div class="pickup-card-noimage">画像なし</div>
-                    {{ end }}
+                    {{- end -}}
                 </div>
                 <div class="pickup-card-content">
                     <p class="pickup-card-title">{{ .Title | truncate 30 }}</p>
-                    {{ if .Params.specs }}
+                    {{- if .Params.specs -}}
                     <div class="card-specs">
-                        {{ partial "product-spec-tags.html" (dict "specs" .Params.specs "tagClass" "card-spec-tag") }}
+                        {{- partial "product-spec-tags.html" (dict "specs" .Params.specs "tagClass" "card-spec-tag") -}}
                     </div>
-                    {{ end }}
+                    {{- end -}}
                     <div class="pickup-card-meta">
-                        {{ $score := .Params.score | int }}
-                        {{ $scoreClass := "score-fair" }}
-                        {{ if ge $score 80 }}
-                        {{ $scoreClass = "score-excellent" }}
-                        {{ else if ge $score 60 }}
-                        {{ $scoreClass = "score-good" }}
-                        {{ end }}
-                        <span class="pickup-card-score {{ $scoreClass }}">🏆 {{ .Params.score }}点</span>
-                        {{ if .Params.price }}
+                        {{- $score := .Params.score | int -}}
+                        {{- $scoreClass := "score-fair" -}}
+                        {{- if ge $score 80 -}}
+                        {{- $scoreClass = "score-excellent" -}}
+                        {{- else if ge $score 60 -}}
+                        {{- $scoreClass = "score-good" -}}
+                        {{- end -}}
+                        <span class="pickup-card-score {{- $scoreClass -}}">🏆 {{ .Params.score }}点</span>
+                        {{- if .Params.price -}}
                         <span class="pickup-card-price">{{ .Params.price }}</span>
-                        {{ end }}
+                        {{- end -}}
                     </div>
                 </div>
             </a>
-            {{ end }}
+            {{- end -}}
         </div>
-        <script id="pickup-data" type="application/json">{{ $pickupData | jsonify | safeJS }}</script>
+        <script id="pickup-data" type="application/json">{{- $pickupData | jsonify | safeJS -}}</script>
     </div>
-    {{ end }}
+    {{- end -}}
 
     <!-- Search Section -->
     <div class="search-header" style="text-align: center;">
@@ -162,9 +160,9 @@
     </div>
 
     <!-- Mobile: Dropdown UI -->
-    {{ $urlMap := dict }}{{ range $name, $items := .Site.Taxonomies.categories }}{{ with $.Site.GetPage (printf
-    "/categories/%s" $name) }}{{ $urlMap = merge $urlMap (dict .LinkTitle .RelPermalink) }}{{ end }}{{ end }}
-    <script id="category-url-data" type="application/json">{{ $urlMap | jsonify | safeJS }}</script>
+    {{- $urlMap := dict -}}{{- range $name, $items := .Site.Taxonomies.categories -}}{{- with $.Site.GetPage (printf
+    "/categories/%s" $name) -}}{{- $urlMap = merge $urlMap (dict .LinkTitle .RelPermalink) -}}{{- end -}}{{- end -}}
+    <script id="category-url-data" type="application/json">{{- $urlMap | jsonify | safeJS -}}</script>
     <div class="category-dropdown-container" id="category-dropdown-container">
         <div class="category-dropdown-group">
             <label for="category-group-select" class="category-dropdown-label">グループ</label>
@@ -188,19 +186,19 @@
     </div>
 
     <div class="card-grid" id="product-grid">
-        {{ $articles := where .Site.RegularPages "Section" "articles" }}
-        {{ $sorted := first 90 (sort $articles ".Params.last_investigated" "desc") }}
-        {{ range $index, $element := $sorted }}
-        <div class="card-wrapper{{ if ge $index 15 }} card-hidden{{ end }}">
-            {{ partial "product-card.html" . }}
+        {{- $articles := where .Site.RegularPages "Section" "articles" -}}
+        {{- $sorted := first 90 (sort $articles ".Params.last_investigated" "desc") -}}
+        {{- range $index, $element := $sorted -}}
+        <div class="card-wrapper{{- if ge $index 15 -}} card-hidden{{- end -}}">
+            {{- partial "product-card.html" . -}}
         </div>
-        {{ end }}
+        {{- end -}}
     </div>
 
-    {{ if gt (len $sorted) 15 }}
+    {{- if gt (len $sorted) 15 -}}
     <div class="load-more-container" id="load-more-container">
         <button id="load-more-button" class="btn-load-more">もっと見る</button>
     </div>
-    {{ end }}
+    {{- end -}}
 </section>
-{{ end }}
+{{- end -}}

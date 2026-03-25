@@ -1,13 +1,13 @@
-{{ define "main" }}
+{{- define "main" -}}
 <div class="container" style="padding-top: var(--spacing-xl);">
-    {{ partial "breadcrumb.html" . }}
+    {{- partial "breadcrumb.html" . -}}
 
     <div class="article-header">
         <h1>{{ .Title }}</h1>
-        {{ with .Description }}<p class="article-meta">{{ . }}</p>{{ end }}
+        {{- with .Description -}}<p class="article-meta">{{ . }}</p>{{- end -}}
     </div>
 
-    {{/* Filter Section */}}
+    {{- /* Filter Section */ -}}
     <div class="filter-section" id="filter-section">
         <div class="filter-header">
             <button type="button" class="filter-toggle" id="filter-toggle" aria-controls="filter-content"
@@ -25,7 +25,7 @@
             <button type="button" class="filter-preset-btn" data-preset="beginner" aria-pressed="false">入門向け</button>
             <button type="button" class="filter-preset-btn" data-preset="lightweight" aria-pressed="false">軽量・持ち運び</button>
         </div>
-            {{/* Price Filter */}}
+            {{- /* Price Filter */ -}}
             <div class="filter-group">
                 <h4 class="filter-group-title">価格帯</h4>
                 <div class="filter-options">
@@ -52,7 +52,7 @@
                 </div>
             </div>
 
-            {{/* Score Filter */}}
+            {{- /* Score Filter */ -}}
             <div class="filter-group">
                 <h4 class="filter-group-title">評価スコア</h4>
                 <div class="filter-options">
@@ -107,84 +107,84 @@
     </div>
 
     <div id="product-grid" class="card-grid">
-        {{ range .Pages }}
-        {{/* Get price as number */}}
-        {{ $priceRaw := 0 }}
-        {{ if .Params.price }}
-        {{ $priceRaw = index (findRE "[0-9]+" (replace .Params.price "," "")) 0 | default 0 }}
-        {{ end }}
-        {{ $dateRaw := .Date.Unix }}
-        {{ with .Params.last_investigated }}{{ $dateRaw = (time .).Unix }}{{ end }}
-        {{ $specTokens := slice }}
-        {{ with .Params.specs }}
-        {{ with .communication }}
-        {{ if reflect.IsSlice . }}
-        {{ range . }}
-        {{ $connStr := . | lower }}
-        {{ if in $connStr "5g" }}{{ $specTokens = $specTokens | append "5g" }}{{ end }}
-        {{ if in $connStr "gps" }}{{ $specTokens = $specTokens | append "gps" }}{{ end }}
-        {{ if or (in $connStr "felica") (in $connStr "nfc") }}{{ $specTokens = $specTokens | append "felica" }}{{ end }}
-        {{ end }}
-        {{ else }}
-        {{ $connStr := . | lower }}
-        {{ if in $connStr "5g" }}{{ $specTokens = $specTokens | append "5g" }}{{ end }}
-        {{ if in $connStr "gps" }}{{ $specTokens = $specTokens | append "gps" }}{{ end }}
-        {{ if or (in $connStr "felica") (in $connStr "nfc") }}{{ $specTokens = $specTokens | append "felica" }}{{ end }}
-        {{ end }}
-        {{ end }}
-        {{ with .display_type }}
-        {{ if or (in (. | lower) "amoled") (in (. | lower) "oled") (in (. | lower) "有機el") }}{{ $specTokens = $specTokens | append "amoled" }}{{ end }}
-        {{ end }}
-        {{ with .other_specs }}
-        {{ if reflect.IsSlice . }}
-        {{ range . }}
-        {{ if or (in (. | lower) "防水") (in (. | lower) "ip6") (in (. | lower) "ip5") (in (. | lower) "atm") }}{{ $specTokens = $specTokens | append "waterproof" }}{{ end }}
-        {{ if or (in (. | lower) "felica") (in (. | lower) "suica") (in (. | lower) "おサイフ") }}{{ $specTokens = $specTokens | append "felica" }}{{ end }}
-        {{ if in (. | lower) "gps" }}{{ $specTokens = $specTokens | append "gps" }}{{ end }}
-        {{ end }}
-        {{ else }}
-        {{ $specStr := . | lower }}
-        {{ if or (in $specStr "防水") (in $specStr "ip6") (in $specStr "ip5") (in $specStr "atm") }}{{ $specTokens = $specTokens | append "waterproof" }}{{ end }}
-        {{ if or (in $specStr "felica") (in $specStr "suica") (in $specStr "おサイフ") }}{{ $specTokens = $specTokens | append "felica" }}{{ end }}
-        {{ if in $specStr "gps" }}{{ $specTokens = $specTokens | append "gps" }}{{ end }}
-        {{ end }}
-        {{ end }}
-        {{ with .weight }}
-        {{ $weightLower := . | lower }}
-        {{ if or (in $weightLower "軽") (in $weightLower "light") }}{{ $specTokens = $specTokens | append "lightweight" }}{{ end }}
-        {{ if not (in $weightLower "kg") }}
-        {{ $weightValue := replaceRE "[^0-9]" "" $weightLower | replaceRE "^0+" "" | int }}
-        {{ if and (gt $weightValue 0) (le $weightValue 200) }}{{ $specTokens = $specTokens | append "lightweight" }}{{ end }}
-        {{ end }}
-        {{ end }}
-        {{ end }}
-        {{ $specsString := delimit ($specTokens | uniq) "," }}
+        {{- range .Pages -}}
+        {{- /* Get price as number */ -}}
+        {{- $priceRaw := 0 -}}
+        {{- if .Params.price -}}
+        {{- $priceRaw = index (findRE "[0-9]+" (replace .Params.price "," "")) 0 | default 0 -}}
+        {{- end -}}
+        {{- $dateRaw := .Date.Unix -}}
+        {{- with .Params.last_investigated -}}{{- $dateRaw = (time .).Unix -}}{{- end -}}
+        {{- $specTokens := slice -}}
+        {{- with .Params.specs -}}
+        {{- with .communication -}}
+        {{- if reflect.IsSlice . -}}
+        {{- range . -}}
+        {{- $connStr := . | lower -}}
+        {{- if in $connStr "5g" -}}{{- $specTokens = $specTokens | append "5g" -}}{{- end -}}
+        {{- if in $connStr "gps" -}}{{- $specTokens = $specTokens | append "gps" -}}{{- end -}}
+        {{- if or (in $connStr "felica") (in $connStr "nfc") -}}{{- $specTokens = $specTokens | append "felica" -}}{{- end -}}
+        {{- end -}}
+        {{- else -}}
+        {{- $connStr := . | lower -}}
+        {{- if in $connStr "5g" -}}{{- $specTokens = $specTokens | append "5g" -}}{{- end -}}
+        {{- if in $connStr "gps" -}}{{- $specTokens = $specTokens | append "gps" -}}{{- end -}}
+        {{- if or (in $connStr "felica") (in $connStr "nfc") -}}{{- $specTokens = $specTokens | append "felica" -}}{{- end -}}
+        {{- end -}}
+        {{- end -}}
+        {{- with .display_type -}}
+        {{- if or (in (. | lower) "amoled") (in (. | lower) "oled") (in (. | lower) "有機el") -}}{{- $specTokens = $specTokens | append "amoled" -}}{{- end -}}
+        {{- end -}}
+        {{- with .other_specs -}}
+        {{- if reflect.IsSlice . -}}
+        {{- range . -}}
+        {{- if or (in (. | lower) "防水") (in (. | lower) "ip6") (in (. | lower) "ip5") (in (. | lower) "atm") -}}{{- $specTokens = $specTokens | append "waterproof" -}}{{- end -}}
+        {{- if or (in (. | lower) "felica") (in (. | lower) "suica") (in (. | lower) "おサイフ") -}}{{- $specTokens = $specTokens | append "felica" -}}{{- end -}}
+        {{- if in (. | lower) "gps" -}}{{- $specTokens = $specTokens | append "gps" -}}{{- end -}}
+        {{- end -}}
+        {{- else -}}
+        {{- $specStr := . | lower -}}
+        {{- if or (in $specStr "防水") (in $specStr "ip6") (in $specStr "ip5") (in $specStr "atm") -}}{{- $specTokens = $specTokens | append "waterproof" -}}{{- end -}}
+        {{- if or (in $specStr "felica") (in $specStr "suica") (in $specStr "おサイフ") -}}{{- $specTokens = $specTokens | append "felica" -}}{{- end -}}
+        {{- if in $specStr "gps" -}}{{- $specTokens = $specTokens | append "gps" -}}{{- end -}}
+        {{- end -}}
+        {{- end -}}
+        {{- with .weight -}}
+        {{- $weightLower := . | lower -}}
+        {{- if or (in $weightLower "軽") (in $weightLower "light") -}}{{- $specTokens = $specTokens | append "lightweight" -}}{{- end -}}
+        {{- if not (in $weightLower "kg") -}}
+        {{- $weightValue := replaceRE "[^0-9]" "" $weightLower | replaceRE "^0+" "" | int -}}
+        {{- if and (gt $weightValue 0) (le $weightValue 200) -}}{{- $specTokens = $specTokens | append "lightweight" -}}{{- end -}}
+        {{- end -}}
+        {{- end -}}
+        {{- end -}}
+        {{- $specsString := delimit ($specTokens | uniq) "," -}}
 
-        <article class="card" data-price="{{ $priceRaw }}" data-score="{{ .Params.score | default 0 }}"
-            data-date="{{ $dateRaw }}" data-specs="{{ $specsString }}">
+        <article class="card" data-price="{{- $priceRaw -}}" data-score="{{ .Params.score | default 0 }}"
+            data-date="{{- $dateRaw -}}" data-specs="{{- $specsString -}}">
             <div class="card-image">
                 <a href="{{ .RelPermalink }}" aria-hidden="true" tabindex="-1">
-                    {{ if .Params.images }}
+                    {{- if .Params.images -}}
                     <img src="{{ index .Params.images 0 }}" alt="{{ .Title }}"
                         loading="lazy" decoding="async">
-                    {{ else }}
+                    {{- else -}}
                     <div class="card-image-noimage" aria-hidden="true">
                         画像なし
                     </div>
-                    {{ end }}
+                    {{- end -}}
                 </a>
             </div>
             <div class="card-content">
                 <div class="card-header">
-                    {{ $categories := .GetTerms "categories" }}
-                    {{ if $categories }}
-                    {{ $firstCat := index $categories 0 }}
-                    <a href="{{ $firstCat.RelPermalink }}" class="card-tag">{{ $firstCat.LinkTitle }}</a>
-                    {{ with .Params.subcategory }}<span class="card-tag-sub">{{ . }}</span>{{ end }}
-                    {{ else if .Params.category }}
+                    {{- $categories := .GetTerms "categories" -}}
+                    {{- if $categories -}}
+                    {{- $firstCat := index $categories 0 -}}
+                    <a href="{{- $firstCat.RelPermalink -}}" class="card-tag">{{- $firstCat.LinkTitle -}}</a>
+                    {{- with .Params.subcategory -}}<span class="card-tag-sub">{{ . }}</span>{{- end -}}
+                    {{- else if .Params.category -}}
                     <span class="card-tag">{{ .Params.category }}</span>
-                    {{ with .Params.subcategory }}<span class="card-tag-sub">{{ . }}</span>{{ end }}
-                    {{ end }}
+                    {{- with .Params.subcategory -}}<span class="card-tag-sub">{{ . }}</span>{{- end -}}
+                    {{- end -}}
                     <h3 class="card-title">
                         <a href="{{ .RelPermalink }}">{{ .Title }}</a>
                     </h3>
@@ -192,65 +192,64 @@
                 <p class="card-excerpt">
                     {{ .Description | default (.Summary | truncate 100) }}
                 </p>
-                {{ if .Params.specs }}
+                {{- if .Params.specs -}}
                 <div class="card-specs">
-                    {{ partial "product-spec-tags.html" (dict "specs" .Params.specs "tagClass" "card-spec-tag") }}
+                    {{- partial "product-spec-tags.html" (dict "specs" .Params.specs "tagClass" "card-spec-tag") -}}
                 </div>
-                {{ end }}
+                {{- end -}}
                 <div class="card-meta-ext">
                     <div class="meta-main-row">
-                        {{ if .Params.price }}
+                        {{- if .Params.price -}}
                         <span class="card-price">
                             <span aria-hidden="true">💰</span> {{ .Params.price }}
                         </span>
-                        {{ if .Params.loyalty_points }}
+                        {{- if .Params.loyalty_points -}}
                         <span class="card-points">
                             <span aria-hidden="true">🎁</span> {{ .Params.loyalty_points }}pt
                         </span>
-                        {{ end }}
-                        {{ end }}
-                        {{ if .Params.score }}
-                        {{ $score := .Params.score | int }}
-                        {{ $scoreClass := "score-fair" }}
-                        {{ if ge $score 80 }}
-                        {{ $scoreClass = "score-excellent" }}
-                        {{ else if ge $score 60 }}
-                        {{ $scoreClass = "score-good" }}
-                        {{ end }}
-                        <span class="card-score {{ $scoreClass }}">
+                        {{- end -}}
+                        {{- end -}}
+                        {{- if .Params.score -}}
+                        {{- $score := .Params.score | int -}}
+                        {{- $scoreClass := "score-fair" -}}
+                        {{- if ge $score 80 -}}
+                        {{- $scoreClass = "score-excellent" -}}
+                        {{- else if ge $score 60 -}}
+                        {{- $scoreClass = "score-good" -}}
+                        {{- end -}}
+                        <span class="card-score {{- $scoreClass -}}">
                             <span aria-hidden="true">🏆</span> {{ .Params.score }}点
                         </span>
-                        {{ end }}
+                        {{- end -}}
                     </div>
                     <div class="meta-details-row">
-                        {{ if .Params.is_amazon_direct }}
+                        {{- if .Params.is_amazon_direct -}}
                         <span class="badge-amazon-direct">Amazon直販</span>
-                        {{ end }}
-                        {{ with .Params.deal_badge }}
+                        {{- end -}}
+                        {{- with .Params.deal_badge -}}
                         <span class="badge-deal">{{ . }}</span>
-                        {{ end }}
-                        {{ if .Params.savings_percentage }}
+                        {{- end -}}
+                        {{- if .Params.savings_percentage -}}
                         <span class="badge-savings">{{ .Params.savings_percentage }}% OFF</span>
-                        {{ end }}
-                        {{ with .Params.availability }}
+                        {{- end -}}
+                        {{- with .Params.availability -}}
                         <span class="badge-availability">{{ . }}</span>
-                        {{ end }}
+                        {{- end -}}
                     </div>
                 </div>
                 <div class="card-footer">
-                    <span class="article-meta">{{ with .Params.last_investigated }}{{ time . | dateFormat "2006年01月02日"
-                        }}{{
-                        else }}{{ .Date.Format "2006年01月02日" }}{{ end }}</span>
-                    {{ if .Params.affiliate_url }}
+                    <span class="article-meta">{{- with .Params.last_investigated -}}{{ time . | dateFormat "2006年01月02日"
+                        }}{{- else -}}{{ .Date.Format "2006年01月02日" }}{{- end -}}</span>
+                    {{- if .Params.affiliate_url -}}
                     <a href="{{ .Params.affiliate_url }}" class="btn-amazon-small" target="_blank"
                         rel="noopener noreferrer"><span aria-hidden="true">🛒</span> Amazonで見る</a>
-                    {{ else }}
+                    {{- else -}}
                     <a href="{{ .RelPermalink }}" class="read-more">レビューを読む →</a>
-                    {{ end }}
+                    {{- end -}}
                 </div>
             </div>
         </article>
-        {{ end }}
+        {{- end -}}
     </div>
 </div>
 
@@ -430,4 +429,4 @@
     }, true);
 </script>
 <script src="{{ `js/category-features.js` | relURL }}"></script>
-{{ end }}
+{{- end -}}
