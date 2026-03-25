@@ -28,56 +28,89 @@
     "userStories": [
       {
         "userType": "FPSゲーマー",
-        "scenario": "Apex LegendsやVALORANTのプレイ",
-        "experience": "以前使っていた安価なマウスとは別次元のエイム追従性に感動した。ワイヤレスの遅延も全く感じない。ただ、キーボードが少し大きくてマウスを振るスペースが狭くなった。",
-        "sentiment": "mixed"
+        "scenario": "PCでのFPSゲームプレイ",
+        "experience": "G703hのHERO 25Kセンサーは応答速度が非常に高く、95gという軽量設計のおかげで長時間のゲームプレイでも手首への負担が少ない。ただし、G213rキーボードはフルサイズで幅があるため、マウスを大きく動かすためのスペース確保に工夫が必要だった。",
+        "sentiment": "mixed",
+        "supportingSourceIds": [
+          "src-1",
+          "src-2"
+        ]
       },
       {
         "userType": "在宅ワーク兼ゲーマー",
-        "scenario": "日中の仕事と夜のゲーム",
-        "experience": "キーボードのパームレストが手首に優しく、長時間タイピングしても疲れにくい。マウスも握りやすく、仕事の効率も上がった気がする。RGBライトを落ち着いた色にすれば仕事でも違和感がない。",
-        "sentiment": "positive"
+        "scenario": "日中の仕事と夜のゲームの兼用",
+        "experience": "G213rキーボードのパームレストと2段階の角度調節機能が秀逸で、長時間タイピングしても疲れにくい。耐水性があるため、デスクで飲み物を飲む際も安心できる。マウスもワイヤレスで握りやすく、仕事の効率が上がった。",
+        "sentiment": "positive",
+        "supportingSourceIds": [
+          "src-1",
+          "src-2"
+        ]
       }
     ],
     "userImpression": "マウス（G703h）への評価は極めて高く、センサー性能と形状の良さが絶賛されている。一方、キーボード（G213r）は打鍵感や機能性は評価されているものの、その大きさと「メンブレンであること」で好みが分かれる。セットとしてのコストパフォーマンスは標準的だが、性能バランスは良好。",
     "sources": [
       {
+        "id": "src-1",
         "name": "Logicool G 公式サイト (G703h)",
         "url": "https://gaming.logicool.co.jp/ja-jp/products/gaming-mice/g703-hero-wireless-gaming-mouse.html",
-        "credibility": "高"
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-03-26",
+        "author": "Logicool G",
+        "conflictOfInterest": "none",
+        "notes": "G703hのセンサー性能と95gという軽量仕様について確認"
       },
       {
+        "id": "src-2",
         "name": "Logicool G 公式サイト (G213r)",
         "url": "https://gaming.logicool.co.jp/ja-jp/products/gaming-keyboards/g213-rgb-gaming-keyboard.html",
-        "credibility": "高"
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-03-26",
+        "author": "Logicool G",
+        "conflictOfInterest": "none",
+        "notes": "G213rのMech-Domeキー、サイズ、および耐水性について確認"
       }
     ],
-    "lastInvestigated": "2026-01-24",
+    "lastInvestigated": "2026-03-26",
     "competitiveAnalysis": [
       {
-        "name": "Logicool G G413 TKL SE + G304 セット",
+        "name": "Logicool G G413 TKL SE + G304 ワイヤレス",
         "asin": "B0BSFFPQ94",
-        "priceComparison": "約13,300円（本製品より約3,400円安い）",
+        "priceComparison": "対象商品より安価であるが、キーボードがテンキーレスでマウスが電池式エントリーモデルであるため妥当な価格差。省スペースを重視するなら懸念はない。",
         "featureComparison": [
-          "キーボード: メカニカル（タクタイル） vs メンブレン（本製品）",
-          "マウス: エントリーワイヤレス（乾電池式） vs ハイエンドワイヤレス（充電式・本製品）"
+          "共通点：Logicool Gブランドのキーボード・マウスセット。ソフトウェアで一括管理可能。",
+          "相違点：本製品はメンブレン(フルサイズ)とハイエンドワイヤレス充電式マウス。競合はメカニカル(テンキーレス)とエントリーワイヤレス電池式マウス。"
         ],
         "differentiators": [
-          "キースイッチの違い（メカニカル派ならG413）",
-          "マウス性能の違い（性能重視ならG703hを含む本製品）"
+          "Logicool G G213r + G703hの利点：マウスのセンサー性能が高く、充電式で軽量（95g）。エルゴノミクスデザインで長時間の使用に優れる。",
+          "Logicool G G413 TKL SE + G304 ワイヤレスの利点：キーボードがメカニカルスイッチでテンキーレスのため省スペース。マウスは電池式で最大250時間の連続使用が可能。"
         ]
       },
       {
-        "name": "Razer Cynosa Lite + Viper Mini (参考比較)",
-        "asin": null,
-        "priceComparison": "約8,000-10,000円（別々購入時）",
+        "name": "Logicool G G213r + G402 有線",
+        "asin": "B0932XFWQV",
+        "priceComparison": "対象商品より安価であるが、マウスが有線であるためコストが抑えられている。有線に抵抗がなければ品質的な懸念はない。",
         "featureComparison": [
-          "キーボード: メンブレン（同等）",
-          "マウス: 有線軽量 vs ワイヤレスエルゴノミクス（本製品）"
+          "共通点：同じG213rゲーミングキーボード(メンブレン)を採用している。",
+          "相違点：本製品はG703h(ワイヤレスハイエンドマウス)を付属。競合はG402(有線ゲーミングマウス)を付属。"
         ],
         "differentiators": [
-          "本製品はマウスがワイヤレスである点が大きなアドバンテージ",
-          "価格帯が異なる（本製品の方が上位）"
+          "Logicool G G213r + G703hの利点：ワイヤレスマウスによりケーブルの煩わしさがない。最新のHERO 25Kセンサーを搭載し高精度。",
+          "Logicool G G213r + G402 有線の利点：価格が抑えられており、有線接続で遅延や充電の心配がない。"
+        ]
+      },
+      {
+        "name": "Logicool G G213r + G502RGBhr 有線",
+        "asin": "B09332P7VC",
+        "priceComparison": "対象商品より安価であるが、マウスが有線モデル（G502RGBhr）であるため。多ボタンを求めるユーザーには価格以上の価値がある。",
+        "featureComparison": [
+          "共通点：同じG213rゲーミングキーボード(メンブレン)を採用している。",
+          "相違点：本製品はG703h(ワイヤレス・95g)を採用。競合はG502RGBhr(有線・11個の多ボタン・重量調節可能)を採用。"
+        ],
+        "differentiators": [
+          "Logicool G G213r + G703hの利点：ワイヤレスによる自由度の高さと、95gという軽量設計。",
+          "Logicool G G213r + G502RGBhr 有線の利点：11個のプログラム可能ボタンと重量調節機能があり、MMOなど多機能性を求める用途に強い。"
         ]
       }
     ],
@@ -105,12 +138,16 @@
         "model": "G213r (G213 Prodigy)",
         "switchType": "Mech-Dome (メンブレン)",
         "connection": "有線 (USB)",
-        "size": "452 x 218 x 33 mm",
+        "dimensions": {
+          "width": "452mm",
+          "depth": "218mm",
+          "height": "33mm"
+        },
         "weight": "1000g",
         "features": [
           "耐水性",
           "一体型パームレスト",
-          "LIGHTSYNC RGB",
+          "LIGHTSYNC 1680万色 RGB",
           "メディアコントロール"
         ]
       },
@@ -119,10 +156,36 @@
         "sensor": "HERO 25K",
         "dpi": "100 - 25,600 DPI",
         "connection": "LIGHTSPEED ワイヤレス",
-        "battery": "最長60時間 (ライティングなし)",
+        "battery": "最長60時間",
         "weight": "95g",
-        "size": "124 x 68 x 43 mm"
+        "dimensions": {
+          "depth": "124mm",
+          "width": "68mm",
+          "height": "43mm"
+        }
       }
-    }
+    },
+    "claims": [
+      {
+        "claim": "HERO 25Kセンサーを搭載し、有線以上の応答速度と正確なトラッキングを実現",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "crossChecked": false,
+        "notes": "Logicool G 公式サイトのスペックから確認"
+      },
+      {
+        "claim": "G213rはメカニカルに近い打鍵感を持つ「Mech-Dome」キーを採用し、静音性と耐久性（耐水）に優れる",
+        "category": "durability",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-2"
+        ],
+        "crossChecked": false,
+        "notes": "公式サイトで特徴として記載"
+      }
+    ]
   }
 }
