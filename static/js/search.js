@@ -300,7 +300,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         // 検索窓を見える位置にスクロールする共通関数
         function scrollSearchIntoView(callback) {
-            const container = document.querySelector('.search-container');
+            const container = document.querySelector('.search-input-wrapper');
             const header = document.querySelector('.site-header');
             if (!container) {
                 isProgramScrolling = false;
