@@ -140,7 +140,7 @@
                         {{- else if ge $score 60 -}}
                         {{- $scoreClass = "score-good" -}}
                         {{- end -}}
-                        <span class="card-score {{- $scoreClass -}}"
+                        <span class="card-score {{ $scoreClass }}"
                             style="font-size: 0.85rem; padding: 2px 8px; margin-top: var(--spacing-sm);">
                             🏆 {{- $score -}}点
                         </span>
