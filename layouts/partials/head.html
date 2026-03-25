@@ -13,18 +13,18 @@
 <meta name="color-scheme" content="light dark">
 
 <meta name="description"
-  content="{{ if .Description }}{{ .Description }}{{ else if .IsPage }}{{ .Summary | truncate 160 }}{{ else }}{{ .Site.Params.description }}{{ end }}">
+  content="{{- if .Description -}}{{ .Description }}{{- else if .IsPage -}}{{ .Summary | truncate 160 }}{{- else -}}{{ .Site.Params.description }}{{- end -}}">
 <link rel="canonical" href="{{ .Permalink }}">
 
 <!-- Open Graph / Facebook -->
-<meta property="og:type" content="{{ if .IsHome }}website{{ else }}article{{ end }}">
+<meta property="og:type" content="{{- if .IsHome -}}website{{- else -}}article{{- end -}}">
 <meta property="og:url" content="{{ .Permalink }}">
 <meta property="og:title"
-  content="{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}">
+  content="{{- if .IsHome -}}{{ .Site.Title }}{{- else -}}{{ .Title }} | {{ .Site.Title }}{{- end -}}">
 <meta property="og:description"
-  content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
+  content="{{- with .Description -}}{{ . }}{{- else -}}{{ .Site.Params.description }}{{- end -}}">
 <meta property="og:image"
-  content="{{ with .Params.images }}{{ index . 0 | absURL }}{{ else }}{{ `images/default-ogp.png` | absURL }}{{ end }}">
+  content="{{- with .Params.images -}}{{ index . 0 | absURL }}{{- else -}}{{ `images/default-ogp.png` | absURL }}{{- end -}}">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:site_name" content="{{ .Site.Title }}">
@@ -34,11 +34,11 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:url" content="{{ .Permalink }}">
 <meta name="twitter:title"
-  content="{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}">
+  content="{{- if .IsHome -}}{{ .Site.Title }}{{- else -}}{{ .Title }} | {{ .Site.Title }}{{- end -}}">
 <meta name="twitter:description"
-  content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
+  content="{{- with .Description -}}{{ . }}{{- else -}}{{ .Site.Params.description }}{{- end -}}">
 <meta name="twitter:image"
-  content="{{ with .Params.images }}{{ index . 0 | absURL }}{{ else }}{{ `images/default-ogp.png` | absURL }}{{ end }}">
+  content="{{- with .Params.images -}}{{ index . 0 | absURL }}{{- else -}}{{ `images/default-ogp.png` | absURL }}{{- end -}}">
 
 <!-- Favicon -->
 <link rel="icon" type="image/png" href="{{ `favicon.png` | relURL }}">
@@ -54,9 +54,9 @@
 <!-- CSS -->
 <link rel="stylesheet" href="{{ `css/variables.css` | relURL }}">
 <link rel="stylesheet" href="{{ `css/style.css` | relURL }}">
-{{ if .IsHome }}
+{{- if .IsHome -}}
 <link rel="stylesheet" href="{{ `css/search.css` | relURL }}">
-{{ end }}
+{{- end -}}
 
 <script>
   (() => {
@@ -68,14 +68,14 @@
   })();
 </script>
 <script src="{{ `js/theme.js` | relURL }}" defer></script>
-{{ if .Params.asin }}
+{{- if .Params.asin -}}
 <script src="{{ `js/carousel.js` | relURL }}" defer></script>
-{{ end }}
+{{- end -}}
 
 <!-- Structured Data (JSON-LD) -->
 <!-- WebSite Schema (Home) -->
-{{ if .IsHome }}
-{{ $websiteSchema := dict
+{{- if .IsHome -}}
+{{- $websiteSchema := dict
   "@context" "https://schema.org"
   "@type" "WebSite"
   "name" .Site.Title
@@ -84,17 +84,16 @@
     "@type" "SearchAction"
     "target" (printf "%ssearch/?q={search_term_string}" .Site.BaseURL)
     "query-input" "required name=search_term_string"
-  )
-}}
-<script type="application/ld+json">{{ $websiteSchema | jsonify | safeJS }}</script>
-{{ end }}
+  ) -}}
+<script type="application/ld+json">{{- $websiteSchema | jsonify | safeJS -}}</script>
+{{- end -}}
 
 <!-- Product Schema (Single Pages with ASIN) -->
-{{ if and .IsPage .Params.asin }}
-{{ $priceValidUntil := now.AddDate 1 0 0 | time.Format "2006-01-02" }}
-{{ $shippingRateRaw := printf "%v" (.Params.shipping_rate | default 0) }}
-{{ $shippingRate := index (findRE "[0-9]+" (replace $shippingRateRaw "," "")) 0 | default 0 }}
-{{ $productSchema := dict
+{{- if and .IsPage .Params.asin -}}
+{{- $priceValidUntil := now.AddDate 1 0 0 | time.Format "2006-01-02" -}}
+{{- $shippingRateRaw := printf "%v" (.Params.shipping_rate | default 0) -}}
+{{- $shippingRate := index (findRE "[0-9]+" (replace $shippingRateRaw "," "")) 0 | default 0 -}}
+{{- $productSchema := dict
   "@context" "https://schema.org"
   "@type" "Product"
   "name" .Title
@@ -150,183 +149,180 @@
       "returnMethod" "https://schema.org/ReturnByMail"
       "returnFees" "https://schema.org/FreeReturn"
     )
-  )
-}}
-{{ $productImages := slice }}
-{{ with .Params.images }}
-  {{ range . }}
-    {{ $productImages = $productImages | append (. | absURL) }}
-  {{ end }}
-{{ end }}
-{{ if gt (len $productImages) 0 }}
-  {{ $productSchema = merge $productSchema (dict "image" $productImages) }}
-{{ end }}
-{{ $ratingValue := 0.0 }}
-{{ $ratingCount := 0 }}
-{{ $hasRatingValue := false }}
+  ) -}}
+{{- $productImages := slice -}}
+{{- with .Params.images -}}
+  {{- range . -}}
+    {{- $productImages = $productImages | append (. | absURL) -}}
+  {{- end -}}
+{{- end -}}
+{{- if gt (len $productImages) 0 -}}
+  {{- $productSchema = merge $productSchema (dict "image" $productImages) -}}
+{{- end -}}
+{{- $ratingValue := 0.0 -}}
+{{- $ratingCount := 0 -}}
+{{- $hasRatingValue := false -}}
 
-{{/* ratingValue: rating(5段階) > score(100点を5段階換算) */}}
-{{ with .Params.rating }}
-  {{ $parsedRating := float . }}
-  {{ if and (gt $parsedRating 0) (le $parsedRating 5) }}
-    {{ $ratingValue = $parsedRating }}
-    {{ $hasRatingValue = true }}
-  {{ end }}
-{{ end }}
+{{- /* ratingValue: rating(5段階) > score(100点を5段階換算) */ -}}
+{{- with .Params.rating -}}
+  {{- $parsedRating := float . -}}
+  {{- if and (gt $parsedRating 0) (le $parsedRating 5) -}}
+    {{- $ratingValue = $parsedRating -}}
+    {{- $hasRatingValue = true -}}
+  {{- end -}}
+{{- end -}}
 
-{{ if not $hasRatingValue }}
-  {{ with .Params.score }}
-    {{ $parsedScore := float . }}
-    {{ if and (gt $parsedScore 0) (le $parsedScore 100) }}
-      {{ $ratingValue = div (math.Round (mul (div $parsedScore 20) 10)) 10 }}
-      {{ $hasRatingValue = true }}
-    {{ end }}
-  {{ end }}
-{{ end }}
+{{- if not $hasRatingValue -}}
+  {{- with .Params.score -}}
+    {{- $parsedScore := float . -}}
+    {{- if and (gt $parsedScore 0) (le $parsedScore 100) -}}
+      {{- $ratingValue = div (math.Round (mul (div $parsedScore 20) 10)) 10 -}}
+      {{- $hasRatingValue = true -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
 
-{{/* ratingCount: rating_count優先（snake_case / camelCase 両対応） */}}
-{{ with .Params.rating_count }}
-  {{ $parsedCount := int . }}
-  {{ if gt $parsedCount 0 }}
-    {{ $ratingCount = $parsedCount }}
-  {{ end }}
-{{ end }}
-{{ if le $ratingCount 0 }}
-  {{ with .Params.ratingCount }}
-    {{ $parsedCount := int . }}
-    {{ if gt $parsedCount 0 }}
-      {{ $ratingCount = $parsedCount }}
-    {{ end }}
-  {{ end }}
-{{ end }}
-{{ if le $ratingCount 0 }}
-  {{ with .Params.review_count }}
-    {{ $parsedCount := int . }}
-    {{ if gt $parsedCount 0 }}
-      {{ $ratingCount = $parsedCount }}
-    {{ end }}
-  {{ end }}
-{{ end }}
-{{ if le $ratingCount 0 }}
-  {{ with .Params.reviewCount }}
-    {{ $parsedCount := int . }}
-    {{ if gt $parsedCount 0 }}
-      {{ $ratingCount = $parsedCount }}
-    {{ end }}
-  {{ end }}
-{{ end }}
+{{- /* ratingCount: rating_count優先（snake_case / camelCase 両対応） */ -}}
+{{- with .Params.rating_count -}}
+  {{- $parsedCount := int . -}}
+  {{- if gt $parsedCount 0 -}}
+    {{- $ratingCount = $parsedCount -}}
+  {{- end -}}
+{{- end -}}
+{{- if le $ratingCount 0 -}}
+  {{- with .Params.ratingCount -}}
+    {{- $parsedCount := int . -}}
+    {{- if gt $parsedCount 0 -}}
+      {{- $ratingCount = $parsedCount -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+{{- if le $ratingCount 0 -}}
+  {{- with .Params.review_count -}}
+    {{- $parsedCount := int . -}}
+    {{- if gt $parsedCount 0 -}}
+      {{- $ratingCount = $parsedCount -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+{{- if le $ratingCount 0 -}}
+  {{- with .Params.reviewCount -}}
+    {{- $parsedCount := int . -}}
+    {{- if gt $parsedCount 0 -}}
+      {{- $ratingCount = $parsedCount -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
 
-{{ if and $hasRatingValue (gt $ratingCount 0) }}
-  {{ $productSchema = merge $productSchema (dict "aggregateRating" (dict
+{{- if and $hasRatingValue (gt $ratingCount 0) -}}
+  {{- $productSchema = merge $productSchema (dict "aggregateRating" (dict
     "@type" "AggregateRating"
     "ratingValue" $ratingValue
     "bestRating" "5"
     "worstRating" "1"
     "ratingCount" $ratingCount
-  )) }}
-{{ end }}
+  )) -}}
+{{- end -}}
 
-{{ $reviewAuthor := .Site.Params.defaultReviewAuthor | default "編集部" }}
-{{ $reviewDatePublished := .Date | time.Format "2006-01-02" }}
-{{ $reviewBody := "" }}
-{{ $reviewRating := 0.0 }}
-{{ $hasReviewRating := false }}
+{{- $reviewAuthor := .Site.Params.defaultReviewAuthor | default "編集部" -}}
+{{- $reviewDatePublished := .Date | time.Format "2006-01-02" -}}
+{{- $reviewBody := "" -}}
+{{- $reviewRating := 0.0 -}}
+{{- $hasReviewRating := false -}}
 
-{{ with .Params.review }}
-  {{ with .author }}{{ $reviewAuthor = . }}{{ end }}
-  {{ with .date_published }}{{ $reviewDatePublished = . }}{{ end }}
-  {{ with .summary }}{{ $reviewBody = . }}{{ end }}
-  {{ with .rating }}
-    {{ $parsedReviewRating := float . }}
-    {{ if and (gt $parsedReviewRating 0) (le $parsedReviewRating 5) }}
-      {{ $reviewRating = $parsedReviewRating }}
-      {{ $hasReviewRating = true }}
-    {{ end }}
-  {{ end }}
-{{ end }}
+{{- with .Params.review -}}
+  {{- with .author -}}{{- $reviewAuthor = . -}}{{- end -}}
+  {{- with .date_published -}}{{- $reviewDatePublished = . -}}{{- end -}}
+  {{- with .summary -}}{{- $reviewBody = . -}}{{- end -}}
+  {{- with .rating -}}
+    {{- $parsedReviewRating := float . -}}
+    {{- if and (gt $parsedReviewRating 0) (le $parsedReviewRating 5) -}}
+      {{- $reviewRating = $parsedReviewRating -}}
+      {{- $hasReviewRating = true -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
 
-{{ $hasReviewBody := ne $reviewBody "" }}
-{{ if $hasReviewBody }}
-  {{ $reviewSchema := dict
+{{- $hasReviewBody := ne $reviewBody "" -}}
+{{- if $hasReviewBody -}}
+  {{- $reviewSchema := dict
     "@type" "Review"
     "author" (dict "@type" "Person" "name" $reviewAuthor)
     "datePublished" $reviewDatePublished
-    "reviewBody" $reviewBody
-  }}
-  {{ if $hasReviewRating }}
-    {{ $reviewSchema = merge $reviewSchema (dict "reviewRating" (dict
+    "reviewBody" $reviewBody -}}
+  {{- if $hasReviewRating -}}
+    {{- $reviewSchema = merge $reviewSchema (dict "reviewRating" (dict
       "@type" "Rating"
       "ratingValue" $reviewRating
       "bestRating" "5"
       "worstRating" "1"
-    )) }}
-  {{ end }}
-  {{ $productSchema = merge $productSchema (dict "review" $reviewSchema) }}
-{{ end }}
+    )) -}}
+  {{- end -}}
+  {{- $productSchema = merge $productSchema (dict "review" $reviewSchema) -}}
+{{- end -}}
 
-<script type="application/ld+json">{{ $productSchema | jsonify | safeJS }}</script>
-{{ end }}
+<script type="application/ld+json">{{- $productSchema | jsonify | safeJS -}}</script>
+{{- end -}}
 
 <!-- BreadcrumbList Schema (All Pages) with Parent Category Support -->
-{{ $breadcrumbItems := slice (dict
+{{- $breadcrumbItems := slice (dict
   "@type" "ListItem"
   "position" 1
   "name" "ホーム"
   "item" .Site.BaseURL
-) }}
-{{ if .IsPage }}
-  {{ $category := "" }}
-  {{ if .Params.categories }}
-    {{ $category = index .Params.categories 0 }}
-  {{ else if .Params.category }}
-    {{ $category = .Params.category }}
-  {{ end }}
+) -}}
+{{- if .IsPage -}}
+  {{- $category := "" -}}
+  {{- if .Params.categories -}}
+    {{- $category = index .Params.categories 0 -}}
+  {{- else if .Params.category -}}
+    {{- $category = .Params.category -}}
+  {{- end -}}
 
-  {{ $parentName := "" }}
-  {{ $parentSlug := "" }}
+  {{- $parentName := "" -}}
+  {{- $parentSlug := "" -}}
 
-  {{ if $category }}
-    {{/* 親カテゴリを検索 */}}
-    {{ range $parent, $data := site.Data.categorygroups }}
-      {{ range $data.categories }}
-        {{ if eq . $category }}
-          {{ $parentName = $parent }}
-          {{ $parentSlug = $data.slug }}
-        {{ end }}
-      {{ end }}
-    {{ end }}
+  {{- if $category -}}
+    {{- /* 親カテゴリを検索 */ -}}
+    {{- range $parent, $data := site.Data.categorygroups -}}
+      {{- range $data.categories -}}
+        {{- if eq . $category -}}
+          {{- $parentName = $parent -}}
+          {{- $parentSlug = $data.slug -}}
+        {{- end -}}
+      {{- end -}}
+    {{- end -}}
 
-    {{/* 親カテゴリがある場合 */}}
-    {{ if $parentName }}
-      {{ $breadcrumbItems = $breadcrumbItems | append (dict
+    {{- /* 親カテゴリがある場合 */ -}}
+    {{- if $parentName -}}
+      {{- $breadcrumbItems = $breadcrumbItems | append (dict
         "@type" "ListItem"
         "position" 2
         "name" $parentName
         "item" (printf "%sparent-category/%s/" .Site.BaseURL $parentSlug)
-      ) }}
-    {{ end }}
+      ) -}}
+    {{- end -}}
 
-    {{/* 子カテゴリ */}}
-    {{ $categoryPosition := cond $parentName 3 2 }}
-    {{ $breadcrumbItems = $breadcrumbItems | append (dict
+    {{- /* 子カテゴリ */ -}}
+    {{- $categoryPosition := cond $parentName 3 2 -}}
+    {{- $breadcrumbItems = $breadcrumbItems | append (dict
       "@type" "ListItem"
       "position" $categoryPosition
       "name" $category
       "item" (printf "%scategories/%s/" .Site.BaseURL ($category | urlize))
-    ) }}
-  {{ end }}
+    ) -}}
+  {{- end -}}
 
-  {{ $currentPosition := cond (ne $parentName "") 4 (cond (ne $category "") 3 2) }}
-  {{ $breadcrumbItems = $breadcrumbItems | append (dict
+  {{- $currentPosition := cond (ne $parentName "") 4 (cond (ne $category "") 3 2) -}}
+  {{- $breadcrumbItems = $breadcrumbItems | append (dict
     "@type" "ListItem"
     "position" $currentPosition
     "name" .Title
     "item" .Permalink
-  ) }}
-{{ end }}
-{{ $breadcrumbSchema := dict
+  ) -}}
+{{- end -}}
+{{- $breadcrumbSchema := dict
   "@context" "https://schema.org"
   "@type" "BreadcrumbList"
-  "itemListElement" $breadcrumbItems
-}}
-<script type="application/ld+json">{{ $breadcrumbSchema | jsonify | safeJS }}</script>
+  "itemListElement" $breadcrumbItems -}}
+<script type="application/ld+json">{{- $breadcrumbSchema | jsonify | safeJS -}}</script>

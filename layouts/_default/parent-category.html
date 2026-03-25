@@ -1,13 +1,13 @@
-{{ define "main" }}
-{{/* Get parent category name from front matter */}}
-{{ $parentCategory := .Params.parent_category | default "" }}
-{{ $categoryData := "" }}
-{{ if ne $parentCategory "" }}
-{{ $categoryData = index .Site.Data.categories.parents $parentCategory }}
-{{ end }}
+{{- define "main" -}}
+{{- /* Get parent category name from front matter */ -}}
+{{- $parentCategory := .Params.parent_category | default "" -}}
+{{- $categoryData := "" -}}
+{{- if ne $parentCategory "" -}}
+{{- $categoryData = index .Site.Data.categories.parents $parentCategory -}}
+{{- end -}}
 
-{{/* Error if no products (excluding "その他") */}}
-{{ if and (ne $parentCategory "その他") (or (not $categoryData) (eq $categoryData.productCount 0)) }}
+{{- /* Error if no products (excluding "その他") */ -}}
+{{- if and (ne $parentCategory "その他") (or (not $categoryData) (eq $categoryData.productCount 0)) -}}
 <div class="container" style="padding-top: var(--spacing-xl);">
     <div class="article-header">
         <h1>カテゴリが見つかりません</h1>
@@ -17,114 +17,114 @@
     </div>
 </div>
 {{ return }}
-{{ end }}
+{{- end -}}
 
 <div class="container" style="padding-top: var(--spacing-xl);">
     <div class="article-header">
         <h1>{{ .Title }}</h1>
-        {{ with .Description }}<p class="article-meta">{{ . }}</p>{{ end }}
+        {{- with .Description -}}<p class="article-meta">{{ . }}</p>{{- end -}}
     </div>
 
-    {{/* Get child categories for this parent */}}
-    {{ $childCategories := slice }}
-    {{ if $categoryData }}
-    {{ range $categoryData.childrenWithCounts }}
-    {{ if gt .productCount 0 }}
-    {{ $childCategories = $childCategories | append .name }}
-    {{ end }}
-    {{ end }}
-    {{ end }}
+    {{- /* Get child categories for this parent */ -}}
+    {{- $childCategories := slice -}}
+    {{- if $categoryData -}}
+    {{- range $categoryData.childrenWithCounts -}}
+    {{- if gt .productCount 0 -}}
+    {{- $childCategories = $childCategories | append .name -}}
+    {{- end -}}
+    {{- end -}}
+    {{- end -}}
 
-    {{/* Collect all articles from child categories */}}
-    {{ $articles := slice }}
-    {{ range $childCategories }}
-    {{ $cat := . }}
-    {{ range where $.Site.RegularPages "Section" "articles" }}
-    {{ if in .Params.categories $cat }}
-    {{ $articles = $articles | append . }}
-    {{ end }}
-    {{ end }}
-    {{ end }}
+    {{- /* Collect all articles from child categories */ -}}
+    {{- $articles := slice -}}
+    {{- range $childCategories -}}
+    {{- $cat := . -}}
+    {{- range where $.Site.RegularPages "Section" "articles" -}}
+    {{- if in .Params.categories $cat -}}
+    {{- $articles = $articles | append . -}}
+    {{- end -}}
+    {{- end -}}
+    {{- end -}}
 
-    {{/* Special handling for "その他" - also include uncategorized articles */}}
-    {{ if eq $parentCategory "その他" }}
-    {{/* Collect ALL categories from ALL parent groups */}}
-    {{ $allCategorizedItems := slice }}
-    {{ range $groupName, $groupData := .Site.Data.categories.parents }}
-    {{ range $groupData.childrenWithCounts }}
-    {{ $allCategorizedItems = $allCategorizedItems | append .name }}
-    {{ end }}
-    {{ end }}
+    {{- /* Special handling for "その他" - also include uncategorized articles */ -}}
+    {{- if eq $parentCategory "その他" -}}
+    {{- /* Collect ALL categories from ALL parent groups */ -}}
+    {{- $allCategorizedItems := slice -}}
+    {{- range $groupName, $groupData := .Site.Data.categories.parents -}}
+    {{- range $groupData.childrenWithCounts -}}
+    {{- $allCategorizedItems = $allCategorizedItems | append .name -}}
+    {{- end -}}
+    {{- end -}}
 
-    {{/* Find articles whose categories are NOT in any parent group */}}
-    {{ range where $.Site.RegularPages "Section" "articles" }}
-    {{ $article := . }}
-    {{ $isCategorized := false }}
-    {{ range $article.Params.categories }}
-    {{ if in $allCategorizedItems . }}
-    {{ $isCategorized = true }}
-    {{ end }}
-    {{ end }}
-    {{ if not $isCategorized }}
-    {{ $articles = $articles | append $article }}
-    {{ end }}
-    {{ end }}
-    {{ end }}
+    {{- /* Find articles whose categories are NOT in any parent group */ -}}
+    {{- range where $.Site.RegularPages "Section" "articles" -}}
+    {{- $article := . -}}
+    {{- $isCategorized := false -}}
+    {{- range $article.Params.categories -}}
+    {{- if in $allCategorizedItems . -}}
+    {{- $isCategorized = true -}}
+    {{- end -}}
+    {{- end -}}
+    {{- if not $isCategorized -}}
+    {{- $articles = $articles | append $article -}}
+    {{- end -}}
+    {{- end -}}
+    {{- end -}}
 
-    {{/* Remove duplicates by using a map */}}
-    {{ $uniqueArticles := slice }}
-    {{ $seenPaths := slice }}
-    {{ range $articles }}
-    {{ if not (in $seenPaths .RelPermalink) }}
-    {{ $uniqueArticles = $uniqueArticles | append . }}
-    {{ $seenPaths = $seenPaths | append .RelPermalink }}
-    {{ end }}
-    {{ end }}
+    {{- /* Remove duplicates by using a map */ -}}
+    {{- $uniqueArticles := slice -}}
+    {{- $seenPaths := slice -}}
+    {{- range $articles -}}
+    {{- if not (in $seenPaths .RelPermalink) -}}
+    {{- $uniqueArticles = $uniqueArticles | append . -}}
+    {{- $seenPaths = $seenPaths | append .RelPermalink -}}
+    {{- end -}}
+    {{- end -}}
 
-    {{/* Sort by last_investigated desc */}}
-    {{ $sorted := sort $uniqueArticles ".Params.last_investigated" "desc" }}
+    {{- /* Sort by last_investigated desc */ -}}
+    {{- $sorted := sort $uniqueArticles ".Params.last_investigated" "desc" -}}
 
-    {{/* For "その他", collect categories from displayed articles instead of just predefined list */}}
-    {{ $displayCategories := $childCategories }}
-    {{ if eq $parentCategory "その他" }}
-    {{ $displayCategories = slice }}
-    {{ $seenCats := slice }}
-    {{ range $uniqueArticles }}
-    {{ range .Params.categories }}
-    {{ if not (in $seenCats .) }}
-    {{ $displayCategories = $displayCategories | append . }}
-    {{ $seenCats = $seenCats | append . }}
-    {{ end }}
-    {{ end }}
-    {{ end }}
-    {{ end }}
+    {{- /* For "その他", collect categories from displayed articles instead of just predefined list */ -}}
+    {{- $displayCategories := $childCategories -}}
+    {{- if eq $parentCategory "その他" -}}
+    {{- $displayCategories = slice -}}
+    {{- $seenCats := slice -}}
+    {{- range $uniqueArticles -}}
+    {{- range .Params.categories -}}
+    {{- if not (in $seenCats .) -}}
+    {{- $displayCategories = $displayCategories | append . -}}
+    {{- $seenCats = $seenCats | append . -}}
+    {{- end -}}
+    {{- end -}}
+    {{- end -}}
+    {{- end -}}
 
-    {{/* Count categories for filter */}}
-    {{ $catCounts := dict }}
-    {{ range $sorted }}
-    {{ $article := . }}
-    {{ range .Params.categories }}
-    {{ $cat := . }}
-    {{ if in $displayCategories $cat }}
-    {{ $currentCount := index $catCounts $cat | default 0 }}
-    {{ $catCounts = merge $catCounts (dict $cat (add $currentCount 1)) }}
-    {{ end }}
-    {{ end }}
-    {{ end }}
+    {{- /* Count categories for filter */ -}}
+    {{- $catCounts := dict -}}
+    {{- range $sorted -}}
+    {{- $article := . -}}
+    {{- range .Params.categories -}}
+    {{- $cat := . -}}
+    {{- if in $displayCategories $cat -}}
+    {{- $currentCount := index $catCounts $cat | default 0 -}}
+    {{- $catCounts = merge $catCounts (dict $cat (add $currentCount 1)) -}}
+    {{- end -}}
+    {{- end -}}
+    {{- end -}}
 
-    {{/* Filter Section */}}
-    {{/* Show child category pills */}}
+    {{- /* Filter Section */ -}}
+    {{- /* Show child category pills */ -}}
     <div class="category-pills-container" style="margin-bottom: var(--spacing-lg);">
         <div style="display: flex; flex-wrap: wrap; gap: var(--spacing-sm);">
-            {{ range $displayCategories }}
-            {{ $cat := . }}
-            {{ range $name, $taxonomy := $.Site.Taxonomies.categories }}
-            {{ $catPage := $.Site.GetPage (printf "/categories/%s" $name) }}
-            {{ if and $catPage (eq $catPage.LinkTitle $cat) }}
-            <a href="{{ $catPage.RelPermalink }}" class="category-pill">{{ $cat }}</a>
-            {{ end }}
-            {{ end }}
-            {{ end }}
+            {{- range $displayCategories -}}
+            {{- $cat := . -}}
+            {{- range $name, $taxonomy := $.Site.Taxonomies.categories -}}
+            {{- $catPage := $.Site.GetPage (printf "/categories/%s" $name) -}}
+            {{- if and $catPage (eq $catPage.LinkTitle $cat) -}}
+            <a href="{{- $catPage.RelPermalink -}}" class="category-pill">{{- $cat -}}</a>
+            {{- end -}}
+            {{- end -}}
+            {{- end -}}
         </div>
     </div>
 
@@ -144,24 +144,24 @@
             <button type="button" class="filter-preset-btn" data-preset="beginner" aria-pressed="false">入門向け</button>
             <button type="button" class="filter-preset-btn" data-preset="lightweight" aria-pressed="false">軽量・持ち運び</button>
         </div>
-            {{/* Category Filter */}}
+            {{- /* Category Filter */ -}}
             <div class="filter-group">
                 <h4 class="filter-group-title">カテゴリ</h4>
                 <div class="filter-options category-filters" id="category-filters">
-                    {{ range $displayCategories }}
-                    {{ $cat := . }}
-                    {{ $count := index $catCounts $cat | default 0 }}
-                    {{ if gt $count 0 }}
+                    {{- range $displayCategories -}}
+                    {{- $cat := . -}}
+                    {{- $count := index $catCounts $cat | default 0 -}}
+                    {{- if gt $count 0 -}}
                     <label class="filter-checkbox">
-                        <input type="checkbox" name="category" value="{{ $cat }}">
-                        <span class="filter-label">{{ $cat }} <span class="filter-count">({{ $count }})</span></span>
+                        <input type="checkbox" name="category" value="{{- $cat -}}">
+                        <span class="filter-label">{{- $cat -}} <span class="filter-count">({{- $count -}})</span></span>
                     </label>
-                    {{ end }}
-                    {{ end }}
+                    {{- end -}}
+                    {{- end -}}
                 </div>
             </div>
 
-            {{/* Price Filter */}}
+            {{- /* Price Filter */ -}}
             <div class="filter-group">
                 <h4 class="filter-group-title">価格帯</h4>
                 <div class="filter-options">
@@ -188,7 +188,7 @@
                 </div>
             </div>
 
-            {{/* Score Filter */}}
+            {{- /* Score Filter */ -}}
             <div class="filter-group">
                 <h4 class="filter-group-title">評価スコア</h4>
                 <div class="filter-options">
@@ -215,8 +215,8 @@
                 </div>
             </div>
 
-            {{/* Specs Filters - Only show for smartphone parent category */}}
-            {{ if eq $parentCategory "スマホ・タブレット本体" }}
+            {{- /* Specs Filters - Only show for smartphone parent category */ -}}
+            {{- if eq $parentCategory "スマホ・タブレット本体" -}}
             <div class="filter-group">
                 <h4 class="filter-group-title">スペック</h4>
                 <div class="filter-options spec-filters" id="spec-filters">
@@ -242,7 +242,7 @@
                     </label>
                 </div>
             </div>
-            {{ end }}
+            {{- end -}}
         </div>
     </div>
 
@@ -274,100 +274,100 @@
 
 
     <div id="product-grid" class="card-grid">
-        {{ range $sorted }}
-        {{/* Build category list for data attribute */}}
-        {{ $cats := slice }}
-        {{ range .Params.categories }}
-        {{ $cats = $cats | append . }}
-        {{ end }}
-        {{ $catString := delimit $cats "," }}
+        {{- range $sorted -}}
+        {{- /* Build category list for data attribute */ -}}
+        {{- $cats := slice -}}
+        {{- range .Params.categories -}}
+        {{- $cats = $cats | append . -}}
+        {{- end -}}
+        {{- $catString := delimit $cats "," -}}
 
-        {{/* Get price as number */}}
-        {{ $priceRaw := 0 }}
-        {{ if .Params.price }}
-        {{ $priceRaw = index (findRE "[0-9]+" (replace .Params.price "," "")) 0 | default 0 }}
-        {{ end }}
-        {{ $dateRaw := .Date.Unix }}
-        {{ with .Params.last_investigated }}{{ $dateRaw = (time .).Unix }}{{ end }}
+        {{- /* Get price as number */ -}}
+        {{- $priceRaw := 0 -}}
+        {{- if .Params.price -}}
+        {{- $priceRaw = index (findRE "[0-9]+" (replace .Params.price "," "")) 0 | default 0 -}}
+        {{- end -}}
+        {{- $dateRaw := .Date.Unix -}}
+        {{- with .Params.last_investigated -}}{{- $dateRaw = (time .).Unix -}}{{- end -}}
 
-        {{/* Extract specs for filtering */}}
-        {{ $specs := slice }}
-        {{ with .Params.specs }}
-        {{/* Check for 5G, GPS, NFC in connectivity - handle both array and string */}}
-        {{ with .connectivity }}
-        {{ if reflect.IsSlice . }}
-        {{ range . }}
-        {{ if in (. | lower) "5g" }}{{ $specs = $specs | append "5g" }}{{ end }}
-        {{ if in (. | lower) "gps" }}{{ $specs = $specs | append "gps" }}{{ end }}
-        {{ if or (in (. | lower) "felica") (in (. | lower) "nfc") }}{{ $specs = $specs | append "felica" }}{{ end }}
-        {{ end }}
-        {{ else }}
-        {{ $connStr := . | lower }}
-        {{ if in $connStr "5g" }}{{ $specs = $specs | append "5g" }}{{ end }}
-        {{ if in $connStr "gps" }}{{ $specs = $specs | append "gps" }}{{ end }}
-        {{ if or (in $connStr "felica") (in $connStr "nfc") }}{{ $specs = $specs | append "felica" }}{{ end }}
-        {{ end }}
-        {{ end }}
-        {{/* Check for AMOLED/OLED display */}}
-        {{ with .display_type }}
-        {{ if or (in (. | lower) "amoled") (in (. | lower) "oled") (in (. | lower) "有機el") }}{{ $specs = $specs | append
-        "amoled" }}{{ end }}
-        {{ end }}
-        {{/* Check for waterproof in other_specs - handle both array and string */}}
-        {{ with .other_specs }}
-        {{ if reflect.IsSlice . }}
-        {{ range . }}
-        {{ if or (in (. | lower) "防水") (in (. | lower) "ip6") (in (. | lower) "ip5") (in (. | lower) "atm") }}{{ $specs
-        = $specs | append "waterproof" }}{{ end }}
-        {{ if or (in (. | lower) "felica") (in (. | lower) "suica") (in (. | lower) "おサイフ") }}{{ $specs = $specs |
-        append "felica" }}{{ end }}
-        {{ if in (. | lower) "gps" }}{{ $specs = $specs | append "gps" }}{{ end }}
-        {{ end }}
-        {{ else }}
-        {{ $specStr := . | lower }}
-        {{ if or (in $specStr "防水") (in $specStr "ip6") (in $specStr "ip5") (in $specStr "atm") }}{{ $specs = $specs |
-        append "waterproof" }}{{ end }}
-        {{ if or (in $specStr "felica") (in $specStr "suica") (in $specStr "おサイフ") }}{{ $specs = $specs | append
-        "felica" }}{{ end }}
-        {{ if in $specStr "gps" }}{{ $specs = $specs | append "gps" }}{{ end }}
-        {{ end }}
-        {{ end }}
-        {{ with .weight }}
-        {{ $weightLower := . | lower }}
-        {{ if or (in $weightLower "軽") (in $weightLower "light") }}{{ $specs = $specs | append "lightweight" }}{{ end }}
-        {{ if not (in $weightLower "kg") }}
-        {{ $weightValue := replaceRE "[^0-9]" "" $weightLower | replaceRE "^0+" "" | int }}
-        {{ if and (gt $weightValue 0) (le $weightValue 200) }}{{ $specs = $specs | append "lightweight" }}{{ end }}
-        {{ end }}
-        {{ end }}
-        {{ end }}
-        {{ $specsString := delimit ($specs | uniq) "," }}
+        {{- /* Extract specs for filtering */ -}}
+        {{- $specs := slice -}}
+        {{- with .Params.specs -}}
+        {{- /* Check for 5G, GPS, NFC in connectivity - handle both array and string */ -}}
+        {{- with .connectivity -}}
+        {{- if reflect.IsSlice . -}}
+        {{- range . -}}
+        {{- if in (. | lower) "5g" -}}{{- $specs = $specs | append "5g" -}}{{- end -}}
+        {{- if in (. | lower) "gps" -}}{{- $specs = $specs | append "gps" -}}{{- end -}}
+        {{- if or (in (. | lower) "felica") (in (. | lower) "nfc") -}}{{- $specs = $specs | append "felica" -}}{{- end -}}
+        {{- end -}}
+        {{- else -}}
+        {{- $connStr := . | lower -}}
+        {{- if in $connStr "5g" -}}{{- $specs = $specs | append "5g" -}}{{- end -}}
+        {{- if in $connStr "gps" -}}{{- $specs = $specs | append "gps" -}}{{- end -}}
+        {{- if or (in $connStr "felica") (in $connStr "nfc") -}}{{- $specs = $specs | append "felica" -}}{{- end -}}
+        {{- end -}}
+        {{- end -}}
+        {{- /* Check for AMOLED/OLED display */ -}}
+        {{- with .display_type -}}
+        {{- if or (in (. | lower) "amoled") (in (. | lower) "oled") (in (. | lower) "有機el") -}}{{- $specs = $specs | append
+        "amoled" -}}{{- end -}}
+        {{- end -}}
+        {{- /* Check for waterproof in other_specs - handle both array and string */ -}}
+        {{- with .other_specs -}}
+        {{- if reflect.IsSlice . -}}
+        {{- range . -}}
+        {{- if or (in (. | lower) "防水") (in (. | lower) "ip6") (in (. | lower) "ip5") (in (. | lower) "atm") -}}{{- $specs
+        = $specs | append "waterproof" -}}{{- end -}}
+        {{- if or (in (. | lower) "felica") (in (. | lower) "suica") (in (. | lower) "おサイフ") -}}{{- $specs = $specs |
+        append "felica" -}}{{- end -}}
+        {{- if in (. | lower) "gps" -}}{{- $specs = $specs | append "gps" -}}{{- end -}}
+        {{- end -}}
+        {{- else -}}
+        {{- $specStr := . | lower -}}
+        {{- if or (in $specStr "防水") (in $specStr "ip6") (in $specStr "ip5") (in $specStr "atm") -}}{{- $specs = $specs |
+        append "waterproof" -}}{{- end -}}
+        {{- if or (in $specStr "felica") (in $specStr "suica") (in $specStr "おサイフ") -}}{{- $specs = $specs | append
+        "felica" -}}{{- end -}}
+        {{- if in $specStr "gps" -}}{{- $specs = $specs | append "gps" -}}{{- end -}}
+        {{- end -}}
+        {{- end -}}
+        {{- with .weight -}}
+        {{- $weightLower := . | lower -}}
+        {{- if or (in $weightLower "軽") (in $weightLower "light") -}}{{- $specs = $specs | append "lightweight" -}}{{- end -}}
+        {{- if not (in $weightLower "kg") -}}
+        {{- $weightValue := replaceRE "[^0-9]" "" $weightLower | replaceRE "^0+" "" | int -}}
+        {{- if and (gt $weightValue 0) (le $weightValue 200) -}}{{- $specs = $specs | append "lightweight" -}}{{- end -}}
+        {{- end -}}
+        {{- end -}}
+        {{- end -}}
+        {{- $specsString := delimit ($specs | uniq) "," -}}
 
-        <article class="card" data-price="{{ $priceRaw }}" data-score="{{ .Params.score | default 0 }}"
-            data-date="{{ $dateRaw }}" data-categories="{{ $catString }}" data-specs="{{ $specsString }}">
+        <article class="card" data-price="{{- $priceRaw -}}" data-score="{{ .Params.score | default 0 }}"
+            data-date="{{- $dateRaw -}}" data-categories="{{- $catString -}}" data-specs="{{- $specsString -}}">
             <div class="card-image">
                 <a href="{{ .RelPermalink }}" tabindex="-1" aria-hidden="true">
-                    {{ if .Params.images }}
+                    {{- if .Params.images -}}
                     <img src="{{ index .Params.images 0 }}" alt="{{ .Title }}"
                         loading="lazy" decoding="async">
-                    {{ else }}
+                    {{- else -}}
                     <div class="card-image-noimage" aria-hidden="true">
                         画像なし
                     </div>
-                    {{ end }}
+                    {{- end -}}
                 </a>
             </div>
             <div class="card-content">
                 <div class="card-header">
-                    {{ $categories := .GetTerms "categories" }}
-                    {{ if $categories }}
-                    {{ $firstCat := index $categories 0 }}
-                    <a href="{{ $firstCat.RelPermalink }}" class="card-tag">{{ $firstCat.LinkTitle }}</a>
-                    {{ with .Params.subcategory }}<span class="card-tag-sub">{{ . }}</span>{{ end }}
-                    {{ else if .Params.category }}
+                    {{- $categories := .GetTerms "categories" -}}
+                    {{- if $categories -}}
+                    {{- $firstCat := index $categories 0 -}}
+                    <a href="{{- $firstCat.RelPermalink -}}" class="card-tag">{{- $firstCat.LinkTitle -}}</a>
+                    {{- with .Params.subcategory -}}<span class="card-tag-sub">{{ . }}</span>{{- end -}}
+                    {{- else if .Params.category -}}
                     <span class="card-tag">{{ .Params.category }}</span>
-                    {{ with .Params.subcategory }}<span class="card-tag-sub">{{ . }}</span>{{ end }}
-                    {{ end }}
+                    {{- with .Params.subcategory -}}<span class="card-tag-sub">{{ . }}</span>{{- end -}}
+                    {{- end -}}
                     <h3 class="card-title">
                         <a href="{{ .RelPermalink }}">{{ .Title }}</a>
                     </h3>
@@ -375,65 +375,64 @@
                 <p class="card-excerpt">
                     {{ .Description | default (.Summary | truncate 100) }}
                 </p>
-                {{ if .Params.specs }}
+                {{- if .Params.specs -}}
                 <div class="card-specs">
-                    {{ partial "product-spec-tags.html" (dict "specs" .Params.specs "tagClass" "card-spec-tag") }}
+                    {{- partial "product-spec-tags.html" (dict "specs" .Params.specs "tagClass" "card-spec-tag") -}}
                 </div>
-                {{ end }}
+                {{- end -}}
                 <div class="card-meta-ext">
                     <div class="meta-main-row">
-                        {{ if .Params.price }}
+                        {{- if .Params.price -}}
                         <span class="card-price">
                             💰 {{ .Params.price }}
                         </span>
-                        {{ if .Params.loyalty_points }}
+                        {{- if .Params.loyalty_points -}}
                         <span class="card-points">
                             🎁 {{ .Params.loyalty_points }}pt
                         </span>
-                        {{ end }}
-                        {{ end }}
-                        {{ if .Params.score }}
-                        {{ $score := .Params.score | int }}
-                        {{ $scoreClass := "score-fair" }}
-                        {{ if ge $score 80 }}
-                        {{ $scoreClass = "score-excellent" }}
-                        {{ else if ge $score 60 }}
-                        {{ $scoreClass = "score-good" }}
-                        {{ end }}
-                        <span class="card-score {{ $scoreClass }}">
+                        {{- end -}}
+                        {{- end -}}
+                        {{- if .Params.score -}}
+                        {{- $score := .Params.score | int -}}
+                        {{- $scoreClass := "score-fair" -}}
+                        {{- if ge $score 80 -}}
+                        {{- $scoreClass = "score-excellent" -}}
+                        {{- else if ge $score 60 -}}
+                        {{- $scoreClass = "score-good" -}}
+                        {{- end -}}
+                        <span class="card-score {{- $scoreClass -}}">
                             🏆 {{ .Params.score }}点
                         </span>
-                        {{ end }}
+                        {{- end -}}
                     </div>
                     <div class="meta-details-row">
-                        {{ if .Params.is_amazon_direct }}
+                        {{- if .Params.is_amazon_direct -}}
                         <span class="badge-amazon-direct">Amazon直販</span>
-                        {{ end }}
-                        {{ with .Params.deal_badge }}
+                        {{- end -}}
+                        {{- with .Params.deal_badge -}}
                         <span class="badge-deal">{{ . }}</span>
-                        {{ end }}
-                        {{ if .Params.savings_percentage }}
+                        {{- end -}}
+                        {{- if .Params.savings_percentage -}}
                         <span class="badge-savings">{{ .Params.savings_percentage }}% OFF</span>
-                        {{ end }}
-                        {{ with .Params.availability }}
+                        {{- end -}}
+                        {{- with .Params.availability -}}
                         <span class="badge-availability">{{ . }}</span>
-                        {{ end }}
+                        {{- end -}}
                     </div>
                 </div>
                 <div class="card-footer">
-                    <span class="article-meta">{{ with .Params.last_investigated }}{{ time . | dateFormat "2006年01月02日"
-                        }}{{
-                        else }}{{ .Date.Format "2006年01月02日" }}{{ end }}</span>
-                    {{ if .Params.affiliate_url }}
+                    <span class="article-meta">{{- with .Params.last_investigated -}}{{ time . | dateFormat "2006年01月02日"
+                        }}{{- else -}}{{ .Date.Format "2006年01月02日" }}{{- end -}}</span>
+                    {{- if .Params.affiliate_url -}}
                     <a href="{{ .Params.affiliate_url }}" class="btn-amazon-small" target="_blank"
                         rel="noopener noreferrer">🛒 Amazonで見る</a>
-                    {{ else }}
+                    {{- else -}}
                     <a href="{{ .RelPermalink }}" class="read-more">レビューを読む →</a>
-                    {{ end }}
+                    {{- end -}}
                 </div>
             </div>
         </article>
-        {{ end }}
+        {{- end -}}
     </div>
 </div>
 
@@ -606,4 +605,4 @@
 </style>
 
 <script src="{{ `js/category-features.js` | relURL }}"></script>
-{{ end }}
+{{- end -}}

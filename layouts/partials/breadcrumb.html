@@ -1,90 +1,90 @@
-{{/* Breadcrumb Navigation with Parent-Child Category Support */}}
+{{- /* Breadcrumb Navigation with Parent-Child Category Support */ -}}
 <nav class="breadcrumb" aria-label="パンくずリスト">
     <ol class="breadcrumb-list">
-        {{/* ホーム */}}
+        {{- /* ホーム */ -}}
         <li class="breadcrumb-item">
             <a href="{{ `` | relURL }}">🏠 ホーム</a>
         </li>
 
-        {{ if .IsPage }}
-        {{/* 商品ページの場合 */}}
-        {{ $category := "" }}
-        {{ if .Params.categories }}
-        {{ $category = index .Params.categories 0 }}
-        {{ else if .Params.category }}
-        {{ $category = .Params.category }}
-        {{ end }}
+        {{- if .IsPage -}}
+        {{- /* 商品ページの場合 */ -}}
+        {{- $category := "" -}}
+        {{- if .Params.categories -}}
+        {{- $category = index .Params.categories 0 -}}
+        {{- else if .Params.category -}}
+        {{- $category = .Params.category -}}
+        {{- end -}}
 
-        {{ if $category }}
-        {{/* 親カテゴリを検索 */}}
-        {{ $parentName := "" }}
-        {{ $parentSlug := "" }}
-        {{ range $parent, $data := site.Data.categorygroups }}
-        {{ range $data.categories }}
-        {{ if eq . $category }}
-        {{ $parentName = $parent }}
-        {{ $parentSlug = $data.slug }}
-        {{ end }}
-        {{ end }}
-        {{ end }}
+        {{- if $category -}}
+        {{- /* 親カテゴリを検索 */ -}}
+        {{- $parentName := "" -}}
+        {{- $parentSlug := "" -}}
+        {{- range $parent, $data := site.Data.categorygroups -}}
+        {{- range $data.categories -}}
+        {{- if eq . $category -}}
+        {{- $parentName = $parent -}}
+        {{- $parentSlug = $data.slug -}}
+        {{- end -}}
+        {{- end -}}
+        {{- end -}}
 
-        {{/* 親カテゴリ表示 */}}
-        {{ if $parentName }}
+        {{- /* 親カテゴリ表示 */ -}}
+        {{- if $parentName -}}
         <li class="breadcrumb-item">
             <span class="breadcrumb-separator">›</span>
-            <a href="{{ printf `parent-category/%s/` $parentSlug | relURL }}">{{ $parentName }}</a>
+            <a href="{{ printf `parent-category/%s/` $parentSlug | relURL }}">{{- $parentName -}}</a>
         </li>
-        {{ end }}
+        {{- end -}}
 
-        {{/* 子カテゴリ表示 */}}
+        {{- /* 子カテゴリ表示 */ -}}
         <li class="breadcrumb-item">
             <span class="breadcrumb-separator">›</span>
-            <a href="{{ printf `categories/%s/` ($category | urlize) | relURL }}">{{ $category }}</a>
+            <a href="{{ printf `categories/%s/` ($category | urlize) | relURL }}">{{- $category -}}</a>
         </li>
-        {{ end }}
+        {{- end -}}
 
-        {{/* 現在のページ（商品名） */}}
+        {{- /* 現在のページ（商品名） */ -}}
         <li class="breadcrumb-item current">
             <span class="breadcrumb-separator">›</span>
             <span>{{ .Title }}</span>
         </li>
 
-        {{ else if eq .Kind "term" }}
-        {{/* カテゴリ一覧ページ（子カテゴリページ）の場合 */}}
-        {{ $categoryName := .Title }}
+        {{- else if eq .Kind "term" -}}
+        {{- /* カテゴリ一覧ページ（子カテゴリページ）の場合 */ -}}
+        {{- $categoryName := .Title -}}
 
-        {{/* 親カテゴリを検索 */}}
-        {{ $parentName := "" }}
-        {{ $parentSlug := "" }}
-        {{ range $parent, $data := site.Data.categorygroups }}
-        {{ range $data.categories }}
-        {{ if eq . $categoryName }}
-        {{ $parentName = $parent }}
-        {{ $parentSlug = $data.slug }}
-        {{ end }}
-        {{ end }}
-        {{ end }}
+        {{- /* 親カテゴリを検索 */ -}}
+        {{- $parentName := "" -}}
+        {{- $parentSlug := "" -}}
+        {{- range $parent, $data := site.Data.categorygroups -}}
+        {{- range $data.categories -}}
+        {{- if eq . $categoryName -}}
+        {{- $parentName = $parent -}}
+        {{- $parentSlug = $data.slug -}}
+        {{- end -}}
+        {{- end -}}
+        {{- end -}}
 
-        {{/* 親カテゴリ表示 */}}
-        {{ if $parentName }}
+        {{- /* 親カテゴリ表示 */ -}}
+        {{- if $parentName -}}
         <li class="breadcrumb-item">
             <span class="breadcrumb-separator">›</span>
-            <a href="{{ printf `parent-category/%s/` $parentSlug | relURL }}">{{ $parentName }}</a>
+            <a href="{{ printf `parent-category/%s/` $parentSlug | relURL }}">{{- $parentName -}}</a>
         </li>
-        {{ end }}
+        {{- end -}}
 
-        {{/* 現在のカテゴリ */}}
+        {{- /* 現在のカテゴリ */ -}}
         <li class="breadcrumb-item current">
             <span class="breadcrumb-separator">›</span>
             <span>{{ .Title }}</span>
         </li>
 
-        {{ else if .IsSection }}
-        {{/* セクションページの場合 */}}
+        {{- else if .IsSection -}}
+        {{- /* セクションページの場合 */ -}}
         <li class="breadcrumb-item current">
             <span class="breadcrumb-separator">›</span>
             <span>{{ .Title }}</span>
         </li>
-        {{ end }}
+        {{- end -}}
     </ol>
 </nav>

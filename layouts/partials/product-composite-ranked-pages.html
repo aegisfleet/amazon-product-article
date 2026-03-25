@@ -1,35 +1,35 @@
-{{ $pages := .pages | default (slice) }}
-{{ $randomize := .randomize | default false }}
-{{ $rankedEntries := slice }}
+{{- $pages := .pages | default (slice) -}}
+{{- $randomize := .randomize | default false -}}
+{{- $rankedEntries := slice -}}
 
-{{ range $pages }}
-{{ $score := int (.Params.score | default 0) }}
-{{ $investigatedUnix := 0 }}
-{{ with .Params.last_investigated }}
-{{ $investigatedUnix = (time .).Unix }}
-{{ end }}
-{{ $hasPriceBonus := 0 }}
-{{ if .Params.price }}
-{{ $hasPriceBonus = 70 }}
-{{ end }}
-{{ $hasImageBonus := 0 }}
-{{ if and .Params.images (gt (len .Params.images) 0) }}
-{{ $hasImageBonus = 30 }}
-{{ end }}
-{{ $compositeScore := add (mul $score 1000000000000) (add (mul $investigatedUnix 100) (add $hasPriceBonus $hasImageBonus)) }}
-{{ $rankedEntries = $rankedEntries | append (dict "page" . "compositeScore" $compositeScore) }}
-{{ end }}
+{{- range $pages -}}
+{{- $score := int (.Params.score | default 0) -}}
+{{- $investigatedUnix := 0 -}}
+{{- with .Params.last_investigated -}}
+{{- $investigatedUnix = (time .).Unix -}}
+{{- end -}}
+{{- $hasPriceBonus := 0 -}}
+{{- if .Params.price -}}
+{{- $hasPriceBonus = 70 -}}
+{{- end -}}
+{{- $hasImageBonus := 0 -}}
+{{- if and .Params.images (gt (len .Params.images) 0) -}}
+{{- $hasImageBonus = 30 -}}
+{{- end -}}
+{{- $compositeScore := add (mul $score 1000000000000) (add (mul $investigatedUnix 100) (add $hasPriceBonus $hasImageBonus)) -}}
+{{- $rankedEntries = $rankedEntries | append (dict "page" . "compositeScore" $compositeScore) -}}
+{{- end -}}
 
-{{ $sortedEntries := sort $rankedEntries "compositeScore" "desc" }}
+{{- $sortedEntries := sort $rankedEntries "compositeScore" "desc" -}}
 
-{{/* ランダム化が指定されている場合、上位20件を取得してシャッフルする */}}
-{{ if $randomize }}
-{{ $sortedEntries = first 20 $sortedEntries | shuffle }}
-{{ end }}
+{{- /* ランダム化が指定されている場合、上位20件を取得してシャッフルする */ -}}
+{{- if $randomize -}}
+{{- $sortedEntries = first 20 $sortedEntries | shuffle -}}
+{{- end -}}
 
-{{ $rankedPages := slice }}
-{{ range $sortedEntries }}
-{{ $rankedPages = $rankedPages | append .page }}
-{{ end }}
+{{- $rankedPages := slice -}}
+{{- range $sortedEntries -}}
+{{- $rankedPages = $rankedPages | append .page -}}
+{{- end -}}
 
 {{ return $rankedPages }}

@@ -1,20 +1,20 @@
-{{/* Hero Card Partial */}}
-{{ $product := .Params }}
-{{ $hero := .Params.hero }}
+{{- /* Hero Card Partial */ -}}
+{{- $product := .Params -}}
+{{- $hero := .Params.hero -}}
 
 <div class="product-hero-card">
     <div class="product-hero-image">
-        <div class="product-image-carousel" id="carousel-{{ $product.asin }}">
+        <div class="product-image-carousel" id="carousel-{{- $product.asin -}}">
             <div class="carousel-track">
-                {{ if $product.images }}
-                <img src="{{ index $product.images 0 }}" alt="{{ $product.title }}" class="carousel-image"
+                {{- if $product.images -}}
+                <img src="{{ index $product.images 0 }}" alt="{{- $product.title -}}" class="carousel-image"
                     fetchpriority="high" decoding="async">
-                {{ range after 1 $product.images }}
-                <img src="{{ . }}" alt="{{ $product.title }}" class="carousel-image" loading="lazy" decoding="async">
-                {{ end }}
-                {{ end }}
+                {{- range after 1 $product.images -}}
+                <img src="{{ . }}" alt="{{- $product.title -}}" class="carousel-image" loading="lazy" decoding="async">
+                {{- end -}}
+                {{- end -}}
             </div>
-            {{ if and $product.images (gt (len $product.images) 1) }}
+            {{- if and $product.images (gt (len $product.images) 1) -}}
             <button class="carousel-button prev" aria-label="前へ">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                     stroke-linecap="round" stroke-linejoin="round">
@@ -28,126 +28,126 @@
                 </svg>
             </button>
             <div class="carousel-dots"></div>
-            {{ end }}
+            {{- end -}}
         </div>
     </div>
 
     <div class="product-hero-info">
         <p class="hero-description">
-            {{/* Description logic needs to be handled in front matter or passed directly */}}
-            {{ $product.description | default ($product.summary | truncate 200) }}
+            {{- /* Description logic needs to be handled in front matter or passed directly */ -}}
+            {{- $product.description | default ($product.summary | truncate 200) -}}
         </p>
 
-        {{ $score := $product.score | int }}
-        {{ $scoreClass := "score-fair" }}
-        {{ $scoreEmoji := "😐" }}
-        {{ $scoreText := "普通" }}
+        {{- $score := $product.score | int -}}
+        {{- $scoreClass := "score-fair" -}}
+        {{- $scoreEmoji := "😐" -}}
+        {{- $scoreText := "普通" -}}
 
-        {{ if ge $score 80 }}
-        {{ $scoreClass = "score-excellent" }}
-        {{ $scoreEmoji = "😍" }}
-        {{ $scoreText = "最高" }}
-        {{ else if ge $score 60 }}
-        {{ $scoreClass = "score-good" }}
-        {{ $scoreEmoji = "😊" }}
-        {{ $scoreText = "良い" }}
-        {{ end }}
+        {{- if ge $score 80 -}}
+        {{- $scoreClass = "score-excellent" -}}
+        {{- $scoreEmoji = "😍" -}}
+        {{- $scoreText = "最高" -}}
+        {{- else if ge $score 60 -}}
+        {{- $scoreClass = "score-good" -}}
+        {{- $scoreEmoji = "😊" -}}
+        {{- $scoreText = "良い" -}}
+        {{- end -}}
 
-        <div class="hero-score-bar {{ $scoreClass }}">
+        <div class="hero-score-bar {{- $scoreClass -}}">
             <div class="hero-score-main">
-                <span class="hero-score-emoji">{{ $scoreEmoji }}</span>
-                <span class="hero-score-number">{{ $score }}</span>
+                <span class="hero-score-emoji">{{- $scoreEmoji -}}</span>
+                <span class="hero-score-number">{{- $score -}}</span>
                 <span class="hero-score-unit">点</span>
-                <span class="hero-score-text">{{ $scoreText }}</span>
+                <span class="hero-score-text">{{- $scoreText -}}</span>
             </div>
             <div class="hero-score-rationale">
-                {{ with $hero.score_rationale.top_plus }}
+                {{- with $hero.score_rationale.top_plus -}}
                 <div class="hero-score-item hero-score-plus">
                     <span class="hero-score-item-points">+{{ .points }}</span>
                     <span class="hero-score-item-desc">{{ .desc }}</span>
                 </div>
-                {{ end }}
-                {{ with $hero.score_rationale.top_minus }}
+                {{- end -}}
+                {{- with $hero.score_rationale.top_minus -}}
                 <div class="hero-score-item hero-score-minus">
                     <span class="hero-score-item-points">-{{ .points }}</span>
                     <span class="hero-score-item-desc">{{ .desc }}</span>
                 </div>
-                {{ end }}
+                {{- end -}}
             </div>
         </div>
 
         <div class="hero-price-bar">
             <div class="hero-price-main">
-                <span class="hero-price">{{ $product.price }}</span>
-                {{ if $product.loyalty_points }}
-                <span class="hero-points">🎁 {{ $product.loyalty_points }}pt還元</span>
-                {{ end }}
+                <span class="hero-price">{{- $product.price -}}</span>
+                {{- if $product.loyalty_points -}}
+                <span class="hero-points">🎁 {{- $product.loyalty_points -}}pt還元</span>
+                {{- end -}}
             </div>
             <div class="hero-price-info">
-                {{ if .Params.is_amazon_direct }}
+                {{- if .Params.is_amazon_direct -}}
                 <span class="badge-amazon-direct">Amazon直販</span>
-                {{ end }}
-                {{ with .Params.deal_badge }}
+                {{- end -}}
+                {{- with .Params.deal_badge -}}
                 <span class="badge-deal">{{ . }}</span>
-                {{ end }}
-                {{ if .Params.savings_percentage }}
+                {{- end -}}
+                {{- if .Params.savings_percentage -}}
                 <span class="badge-savings">{{ .Params.savings_percentage }}% OFF</span>
-                {{ end }}
-                {{ with $hero.availability }}<span class="badge-availability">{{ . }}</span>{{ end }}
+                {{- end -}}
+                {{- with $hero.availability -}}<span class="badge-availability">{{ . }}</span>{{- end -}}
             </div>
         </div>
 
         <div class="hero-evaluation-section">
-            {{ if $hero.target_users }}
+            {{- if $hero.target_users -}}
             <div class="hero-eval-block hero-eval-pros">
                 <span class="hero-eval-title">👍 こんな方におすすめ</span>
                 <ul>
-                    {{ range $hero.target_users }}
+                    {{- range $hero.target_users -}}
                     <li>{{ . }}</li>
-                    {{ end }}
+                    {{- end -}}
                 </ul>
             </div>
-            {{ end }}
+            {{- end -}}
 
-            {{ if $hero.warnings }}
+            {{- if $hero.warnings -}}
             <div class="hero-eval-block hero-eval-cons">
                 <span class="hero-eval-title">⚠️ 購入時の注意点</span>
                 <ul>
-                    {{ range $hero.warnings }}
+                    {{- range $hero.warnings -}}
                     <li>{{ . }}</li>
-                    {{ end }}
+                    {{- end -}}
                 </ul>
             </div>
-            {{ end }}
+            {{- end -}}
         </div>
 
         <div class="hero-meta-tags">
-            {{ with $product.brand }}{{ if ne . "不明" }}<span class="hero-tag">{{ . }}</span>{{ end }}{{ end }}
-            {{ partial "product-spec-tags.html" (dict "specs" $product.specs "tagClass" "hero-tag") }}
+            {{- with $product.brand -}}{{- if ne . "不明" -}}<span class="hero-tag">{{ . }}</span>{{- end -}}{{- end -}}
+            {{- partial "product-spec-tags.html" (dict "specs" $product.specs "tagClass" "hero-tag") -}}
         </div>
 
-        {{ $trackingCategory := "" }}
-        {{ $terms := .GetTerms "categories" }}
-        {{ if $terms }}
-        {{ $trackingCategory = (index $terms 0).LinkTitle }}
-        {{ else if $product.categories }}
-        {{ $trackingCategory = index $product.categories 0 }}
-        {{ else if $product.category }}
-        {{ $trackingCategory = $product.category }}
-        {{ end }}
+        {{- $trackingCategory := "" -}}
+        {{- $terms := .GetTerms "categories" -}}
+        {{- if $terms -}}
+        {{- $trackingCategory = (index $terms 0).LinkTitle -}}
+        {{- else if $product.categories -}}
+        {{- $trackingCategory = index $product.categories 0 -}}
+        {{- else if $product.category -}}
+        {{- $trackingCategory = $product.category -}}
+        {{- end -}}
 
-        {{ $priceRaw := 0 }}
-        {{ if $product.price }}
-        {{ $priceRaw = index (findRE "[0-9]+" (replace $product.price "," "")) 0 | default 0 }}
-        {{ end }}
+        {{- $priceRaw := 0 -}}
+        {{- if $product.price -}}
+        {{- $priceRaw = index (findRE "[0-9]+" (replace $product.price "," "")) 0 | default 0 -}}
+        {{- end -}}
 
-        {{ $priceBucket := partial "utils-price-bucket.html" $product.price }}
+        {{- $priceBucket := partial "utils-price-bucket.html" $product.price -}}
 
-        {{ if $product.affiliate_url }}
-        <a href="{{ $product.affiliate_url }}" class="btn-amazon-hero" target="_blank" rel="noopener noreferrer"
-            data-track-product="1" data-asin="{{ $product.asin }}" data-category="{{ $trackingCategory }}"
-            data-price-bucket="{{ $priceBucket }}" data-price="{{ $product.price }}">🛒
+        {{- if $product.affiliate_url -}}
+        <a href="{{- $product.affiliate_url -}}" class="btn-amazon-hero" target="_blank" rel="noopener noreferrer"
+            data-track-product="1" data-asin="{{- $product.asin -}}" data-category="{{- $trackingCategory -}}"
+            data-price-bucket="{{- $priceBucket -}}" data-price="{{- $product.price -}}">🛒
             Amazonで詳細を見る</a>
-        {{ end }}
+        {{- end -}}
     </div>
 </div>
