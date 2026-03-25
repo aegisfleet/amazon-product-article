@@ -7,14 +7,14 @@ describe('head.html review schema conditions', () => {
   it('requires reviewBody presence before emitting Review schema', () => {
     const template = fs.readFileSync(headTemplatePath, 'utf8');
 
-    expect(template).toContain('{{ $hasReviewBody := ne $reviewBody "" }}');
-    expect(template).toContain('{{ if $hasReviewBody }}');
+    expect(template).toContain('{{- $hasReviewBody := ne $reviewBody "" -}}');
+    expect(template).toContain('{{- if $hasReviewBody -}}');
   });
 
   it('uses safe defaults for review author and datePublished', () => {
     const template = fs.readFileSync(headTemplatePath, 'utf8');
 
-    expect(template).toContain('{{ $reviewAuthor := .Site.Params.defaultReviewAuthor | default "編集部" }}');
-    expect(template).toContain('{{ $reviewDatePublished := .Date | time.Format "2006-01-02" }}');
+    expect(template).toContain('{{- $reviewAuthor := .Site.Params.defaultReviewAuthor | default "編集部" -}}');
+    expect(template).toContain('{{- $reviewDatePublished := .Date | time.Format "2006-01-02" -}}');
   });
 });
