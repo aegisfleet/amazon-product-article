@@ -126,7 +126,7 @@
                                 {{- else if ge $score 60 -}}
                                 {{- $scoreClass = "score-good" -}}
                                 {{- end -}}
-                                <span class="pickup-card-score {{- $scoreClass -}}">🏆 {{ .Params.score }}点</span>
+                                <span class="pickup-card-score {{ $scoreClass }}">🏆 {{ .Params.score }}点</span>
                                 {{- end -}}
                                 {{- if .Params.price -}}<span class="pickup-card-price">{{ .Params.price }}</span>{{- end -}}
                             </div>
