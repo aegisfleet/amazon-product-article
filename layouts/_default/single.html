@@ -17,8 +17,8 @@
 {{- $allArticles := where (where .Site.RegularPages "Section" "articles") "Params.asin" "!=" $currentAsin -}}
 {{- $shownAsins := slice $currentAsin -}}
 
-<div id="product-tracking-info" data-asin="{{ .Params.asin }}" data-category="{{- $currentCategory -}}"
-    data-price-bucket="{{- $currentPriceBucket -}}" data-price="{{ .Params.price }}" style="display: none;"></div>
+<div id="product-tracking-info" data-asin="{{ .Params.asin }}" data-category="{{ $currentCategory }}"
+    data-price-bucket="{{ $currentPriceBucket }}" data-price="{{ .Params.price }}" style="display: none;"></div>
 
 <div class="container" style="padding-top: var(--spacing-xl);">
     <div class="ai-disclaimer">
@@ -106,8 +106,8 @@
                     {{- $itemPriceBucket := partial "utils-price-bucket.html" .Params.price -}}
                     <a href="{{ .RelPermalink }}" class="pickup-card" data-track-product="1"
                         data-asin="{{ .Params.asin }}"
-                        data-category="{{- if .Params.categories -}}{{ index .Params.categories 0 }}{{- else -}}{{ .Params.category }}{{- end -}}"
-                        data-price-bucket="{{- $itemPriceBucket -}}" data-price="{{ .Params.price }}">
+                        data-category="{{ if .Params.categories }}{{ index .Params.categories 0 }}{{ else }}{{ .Params.category }}{{ end }}"
+                        data-price-bucket="{{ $itemPriceBucket }}" data-price="{{ .Params.price }}">
                         <div class="pickup-card-image">
                             {{- if .Params.images -}}
                             <img src="{{ index .Params.images 0 }}" alt="{{ .Title }}" loading="lazy" decoding="async">
@@ -221,8 +221,8 @@
             {{- $shownAsins = $shownAsins | append .Params.asin -}}
             {{- $itemPriceBucket := partial "utils-price-bucket.html" .Params.price -}}
             <a href="{{ .RelPermalink }}" class="pickup-card" data-track-product="1" data-asin="{{ .Params.asin }}"
-                data-category="{{- if .Params.categories -}}{{ index .Params.categories 0 }}{{- else -}}{{ .Params.category }}{{- end -}}"
-                data-price-bucket="{{- $itemPriceBucket -}}" data-price="{{ .Params.price }}">
+                data-category="{{ if .Params.categories }}{{ index .Params.categories 0 }}{{ else }}{{ .Params.category }}{{ end }}"
+                data-price-bucket="{{ $itemPriceBucket }}" data-price="{{ .Params.price }}">
                 <div class="pickup-card-image">
                     {{- if .Params.images -}}
                     <img src="{{ index .Params.images 0 }}" alt="{{ .Title }}" loading="lazy" decoding="async">
@@ -278,8 +278,8 @@
             {{- range first 4 $rankedSameScoreRange -}}
             {{- $itemPriceBucket := partial "utils-price-bucket.html" .Params.price -}}
             <a href="{{ .RelPermalink }}" class="pickup-card" data-track-product="1" data-asin="{{ .Params.asin }}"
-                data-category="{{- if .Params.categories -}}{{ index .Params.categories 0 }}{{- else -}}{{ .Params.category }}{{- end -}}"
-                data-price-bucket="{{- $itemPriceBucket -}}" data-price="{{ .Params.price }}">
+                data-category="{{ if .Params.categories }}{{ index .Params.categories 0 }}{{ else }}{{ .Params.category }}{{ end }}"
+                data-price-bucket="{{ $itemPriceBucket }}" data-price="{{ .Params.price }}">
                 <div class="pickup-card-image">
                     {{- if .Params.images -}}
                     <img src="{{ index .Params.images 0 }}" alt="{{ .Title }}" loading="lazy" decoding="async">

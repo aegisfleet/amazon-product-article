@@ -121,7 +121,7 @@
             {{- range $name, $taxonomy := $.Site.Taxonomies.categories -}}
             {{- $catPage := $.Site.GetPage (printf "/categories/%s" $name) -}}
             {{- if and $catPage (eq $catPage.LinkTitle $cat) -}}
-            <a href="{{- $catPage.RelPermalink -}}" class="category-pill">{{- $cat -}}</a>
+            <a href="{{ $catPage.RelPermalink }}" class="category-pill">{{ $cat }}</a>
             {{- end -}}
             {{- end -}}
             {{- end -}}
@@ -153,7 +153,7 @@
                     {{- $count := index $catCounts $cat | default 0 -}}
                     {{- if gt $count 0 -}}
                     <label class="filter-checkbox">
-                        <input type="checkbox" name="category" value="{{- $cat -}}">
+                        <input type="checkbox" name="category" value="{{ $cat }}">
                         <span class="filter-label">{{- $cat -}} <span class="filter-count">({{- $count -}})</span></span>
                     </label>
                     {{- end -}}
@@ -343,8 +343,8 @@
         {{- end -}}
         {{- $specsString := delimit ($specs | uniq) "," -}}
 
-        <article class="card" data-price="{{- $priceRaw -}}" data-score="{{ .Params.score | default 0 }}"
-            data-date="{{- $dateRaw -}}" data-categories="{{- $catString -}}" data-specs="{{- $specsString -}}">
+        <article class="card" data-price="{{ $priceRaw }}" data-score="{{ .Params.score | default 0 }}"
+            data-date="{{ $dateRaw }}" data-categories="{{ $catString }}" data-specs="{{ $specsString }}">
             <div class="card-image">
                 <a href="{{ .RelPermalink }}" tabindex="-1" aria-hidden="true">
                     {{- if .Params.images -}}

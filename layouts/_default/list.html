@@ -160,8 +160,8 @@
         {{- end -}}
         {{- $specsString := delimit ($specTokens | uniq) "," -}}
 
-        <article class="card" data-price="{{- $priceRaw -}}" data-score="{{ .Params.score | default 0 }}"
-            data-date="{{- $dateRaw -}}" data-specs="{{- $specsString -}}">
+        <article class="card" data-price="{{ $priceRaw }}" data-score="{{ .Params.score | default 0 }}"
+            data-date="{{ $dateRaw }}" data-specs="{{ $specsString }}">
             <div class="card-image">
                 <a href="{{ .RelPermalink }}" aria-hidden="true" tabindex="-1">
                     {{- if .Params.images -}}
@@ -179,7 +179,7 @@
                     {{- $categories := .GetTerms "categories" -}}
                     {{- if $categories -}}
                     {{- $firstCat := index $categories 0 -}}
-                    <a href="{{- $firstCat.RelPermalink -}}" class="card-tag">{{- $firstCat.LinkTitle -}}</a>
+                    <a href="{{ $firstCat.RelPermalink }}" class="card-tag">{{ $firstCat.LinkTitle }}</a>
                     {{- with .Params.subcategory -}}<span class="card-tag-sub">{{ . }}</span>{{- end -}}
                     {{- else if .Params.category -}}
                     <span class="card-tag">{{ .Params.category }}</span>

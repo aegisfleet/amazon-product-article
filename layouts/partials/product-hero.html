@@ -4,13 +4,13 @@
 
 <div class="product-hero-card">
     <div class="product-hero-image">
-        <div class="product-image-carousel" id="carousel-{{- $product.asin -}}">
+        <div class="product-image-carousel" id="carousel-{{ $product.asin }}">
             <div class="carousel-track">
                 {{- if $product.images -}}
                 <img src="{{ index $product.images 0 }}" alt="{{- $product.title -}}" class="carousel-image"
                     fetchpriority="high" decoding="async">
                 {{- range after 1 $product.images -}}
-                <img src="{{ . }}" alt="{{- $product.title -}}" class="carousel-image" loading="lazy" decoding="async">
+                <img src="{{ . }}" alt="{{ $product.title }}" class="carousel-image" loading="lazy" decoding="async">
                 {{- end -}}
                 {{- end -}}
             </div>
@@ -144,9 +144,9 @@
         {{- $priceBucket := partial "utils-price-bucket.html" $product.price -}}
 
         {{- if $product.affiliate_url -}}
-        <a href="{{- $product.affiliate_url -}}" class="btn-amazon-hero" target="_blank" rel="noopener noreferrer"
-            data-track-product="1" data-asin="{{- $product.asin -}}" data-category="{{- $trackingCategory -}}"
-            data-price-bucket="{{- $priceBucket -}}" data-price="{{- $product.price -}}">🛒
+        <a href="{{ $product.affiliate_url }}" class="btn-amazon-hero" target="_blank" rel="noopener noreferrer"
+            data-track-product="1" data-asin="{{ $product.asin }}" data-category="{{ $trackingCategory }}"
+            data-price-bucket="{{ $priceBucket }}" data-price="{{ $product.price }}">🛒
             Amazonで詳細を見る</a>
         {{- end -}}
     </div>
