@@ -26,70 +26,107 @@
     ],
     "userStories": [
       {
-        "userType": "20代女性",
+        "userType": "一般ユーザー",
         "scenario": "毎日のバスタイム",
-        "experience": "髪が細くて絡まりやすかったが、スムースを使うようになって指通りが良くなった。香りも強すぎず癒やされる。",
-        "sentiment": "positive"
-      },
-      {
-        "userType": "30代女性",
-        "scenario": "バスルームの模様替え",
-        "experience": "ボトルデザインに惹かれて購入。置くだけで浴室がホテルのような雰囲気になった。少し高いがリピートしている。",
+        "experience": "植物由来成分配合で、さっぱりとした洗い上がりを体感でき、夏のベタつく時期でも快適に過ごせます。\n泡立ちも良く、指通りがさらさらになるので、毎日のヘアケアが楽しみになりました。\nまた、シンプルで洗練されたボトルデザインがバスルームをおしゃれに演出してくれます。",
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "positive"
       }
     ],
     "userImpression": "「さらさらになる」「香りが良い」という評価が圧倒的多数。一方で「パサつく」「値段が高い」という声もあるが、ブランドイメージと使用感のバランスで高評価を得ている。",
     "sources": [
       {
+        "id": "src-1",
         "name": "Amazon商品ページ",
         "url": "https://www.amazon.co.jp/dp/B07MFPF21Q",
-        "credibility": "high"
-      },
-      {
-        "name": "@cosme クチコミランキング（推測）",
-        "url": null,
-        "credibility": "medium"
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2024-01-01",
+        "author": "BOTANIST",
+        "conflictOfInterest": "disclosed",
+        "notes": "製品の仕様・特徴を確認"
       }
     ],
-    "lastInvestigated": "2026-01-24",
+    "lastInvestigated": "2026-03-26",
     "competitiveAnalysis": [
       {
-        "name": "Diane BOTANICAL モイスト セット",
-        "asin": "B083MBG3Y9",
-        "priceComparison": "約2,200円。BOTANISTより若干安い。",
+        "name": "NILE ダメージケア シャンプー トリートメント セット",
+        "asin": "B0F9L1XPWP",
+        "priceComparison": "対象商品と同程度の価格帯",
         "featureComparison": [
-          "90%以上天然由来成分",
-          "保湿重視のモイストタイプ"
+          "共通点：アミノ酸系シャンプーである点",
+          "相違点：対象商品は植物由来成分とさらさら感重視、競合はハチミツ・ケラチン配合でダメージ補修重視"
         ],
         "differentiators": [
-          "コストパフォーマンス",
-          "より強い香り"
+          "BOTANISTの利点：さらさらとした指通りと、シンプルでおしゃれなデザインを好む方に適している",
+          "NILEの利点：ダメージが気になる方やもっちりとした仕上がりを求める方に適している"
         ]
       },
       {
-        "name": "LUX ルミニーク ボタニカルピュア",
-        "asin": "B07YG7L1N8",
-        "priceComparison": "約1,020円。BOTANISTの半額以下。",
+        "name": "Q+ クオリタス ダメージケア シャンプー トリートメント セット",
+        "asin": "B0C3BVXYNJ",
+        "priceComparison": "対象商品と同程度の価格帯",
         "featureComparison": [
-          "ノンシリコンシャンプー",
-          "合成着色料フリー"
+          "共通点：アミノ酸系シャンプーである点",
+          "相違点：対象商品は植物由来成分とさらさら感重視、競合は美容室専売品レベルのダメージケア重視"
         ],
         "differentiators": [
-          "圧倒的な安さ",
-          "手に入りやすさ"
+          "BOTANISTの利点：さらさらとした指通りと、シンプルでおしゃれなデザインを好む方に適している",
+          "Q+の利点：パサつきが気になるダメージ髪のケアを重視する方に適している"
         ]
       },
       {
-        "name": "いち髪 濃密W保湿ケア セット",
-        "asin": "B01JGQCWCM",
-        "priceComparison": "約1,780円。BOTANISTより安い。",
+        "name": "Qurap キュラップ シャンプー トリートメント セット",
+        "asin": "B0FM7WHB82",
+        "priceComparison": "対象商品と同程度の価格帯",
         "featureComparison": [
-          "和草成分配合",
-          "サルフェートフリー"
+          "共通点：アミノ酸系シャンプーである点",
+          "相違点：対象商品は植物由来成分とさらさら感重視、競合はラッピングモイスト機能重視"
         ],
         "differentiators": [
-          "日本人の髪質に合わせた処方",
-          "コストパフォーマンス"
+          "BOTANISTの利点：さらさらとした指通りと、シンプルでおしゃれなデザインを好む方に適している",
+          "Qurapの利点：モイスト感を求める方に適している"
+        ]
+      },
+      {
+        "name": "REPAIRM シャンプー トリートメント セット",
+        "asin": "B0DK4MR5WQ",
+        "priceComparison": "対象商品よりやや高め",
+        "featureComparison": [
+          "共通点：ヘアケアセットである点",
+          "相違点：対象商品は植物由来成分とさらさら感重視、競合は15種のたんぱく質配合でダメージ補修重視"
+        ],
+        "differentiators": [
+          "BOTANISTの利点：さらさらとした指通りと、シンプルでおしゃれなデザインを好む方に適している",
+          "REPAIRMの利点：広がりケアや色もちを重視する方に適している"
+        ]
+      },
+      {
+        "name": "LUX スーパーリッチクリスタル ミモザ",
+        "asin": "B0GHN85N9R",
+        "priceComparison": "対象商品より安い",
+        "featureComparison": [
+          "共通点：フローラル系の香り",
+          "相違点：対象商品はアミノ酸系・植物由来成分重視、競合は手に入りやすさとコストパフォーマンス重視"
+        ],
+        "differentiators": [
+          "BOTANISTの利点：成分にこだわりたい方やさらさらとした指通りを求める方に適している",
+          "LUXの利点：コストパフォーマンスを最重視する方に適している"
+        ]
+      },
+      {
+        "name": "THERATIS ムーンライト スリーク",
+        "asin": "B0CJ4TPMBD",
+        "priceComparison": "対象商品と同程度の価格帯",
+        "featureComparison": [
+          "共通点：さらさら・スリークな仕上がりを謳う点",
+          "相違点：対象商品は植物由来成分重視、競合は夜間のケアに特化した設計"
+        ],
+        "differentiators": [
+          "BOTANISTの利点：植物由来成分にこだわりたい方に適している",
+          "THERATISの利点：夜寝ている間のヘアケアを重視する方に適している"
         ]
       }
     ],
@@ -112,13 +149,22 @@
       "scoreRationale": "[基本点: 70]\n[加点: +5] (アミノ酸系洗浄成分とダブルフレグランスの評価)\n[減点: -5] (競合と比較して価格が高め)\n[加点: +5] (洗練されたデザインと高いユーザー満足度)\n[加点: +5] (ボタニカルシャンプーの定番としての信頼性)\n[合計: 80]"
     },
     "technicalSpecs": {
-      "capacity": "シャンプー 490ml / トリートメント 490g",
-      "type": "スムース (さらさらタイプ)",
-      "scent": "グリーンアップル＆ローズ (シャンプー) / アップル＆ベリー (トリートメント)",
-      "ingredients_feature": "植物由来成分配合、合成着色料フリー、サルフェートフリー (シャンプー)",
-      "silicone": "ノンシリコン (シャンプーのみ)",
-      "dimensions": null,
-      "weight": null
+      "dimensions": {
+        "height": "200mm",
+        "width": "70mm",
+        "depth": "70mm"
+      },
+      "weight": "約1100g (セット合計)",
+      "capacity": "490ml/490g",
+      "material": "プラスチックボトル",
+      "origin": "日本",
+      "other": [
+        "スムース (さらさらタイプ)",
+        "植物由来成分配合",
+        "合成着色料フリー",
+        "サルフェートフリー",
+        "ノンシリコン (シャンプーのみ)"
+      ]
     }
   }
 }
