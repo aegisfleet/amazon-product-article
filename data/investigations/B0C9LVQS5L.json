@@ -1,0 +1,169 @@
+{
+  "analysis": {
+    "productName": "DOCKCASE 6-in-1 USB C ハブ（クリア版/ディスプレイ搭載）",
+    "parentAsin": "B0BRC86GZG",
+    "productDescription": "液晶ディスプレイを搭載し、接続デバイスのステータスをリアルタイムで確認できる6-in-1 USB Type-Cハブ。",
+    "productUsage": [
+      "ノートPCのポート拡張",
+      "4K@60Hz外部モニター出力",
+      "有線LAN(1000Mbps)接続",
+      "PD 100Wパススルー充電"
+    ],
+    "positivePoints": [
+      "内蔵ディスプレイで各ポートの接続状態や温度を一目で確認可能",
+      "4K@60Hzの高画質HDMI出力に対応",
+      "100WのUSB PDパススルー充電により、PCを充電しながらポートを利用可能",
+      "クリア仕様（スケルトン版）のユニークなデザイン",
+      "放熱性に優れた設計（DOCKCASEのスマート放熱機能など）"
+    ],
+    "negativePoints": [
+      "一般的なUSBハブと比較して価格が高め",
+      "USBのデータ転送速度が5Gbps止まり（上位モデルは10Gbps対応）"
+    ],
+    "useCases": [
+      "MacBookなどポート数が少ないノートPCでのテレワークや動画鑑賞",
+      "接続不良などをディスプレイでトラブルシューティングする際",
+      "クリアなガジェットデザインを好むユーザーのデスク環境構築"
+    ],
+    "userStories": [],
+    "userImpression": "ディスプレイで接続状態や給電状況を可視化できるというユニークなコンセプトが評価されている。4K/60HzのHDMI出力や有線LANなど、必須機能がコンパクトにまとまっており、特にガジェット好きに刺さるデザインと機能性を持つ。一方で価格の高さとUSB転送速度が5Gbpsである点は用途によってネックとなる可能性がある。",
+    "sources": [
+      {
+        "id": "src-1",
+        "name": "Amazon Product Page",
+        "url": "https://www.amazon.co.jp/dp/B0C9LVQS5L",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-03-26",
+        "author": "Amazon",
+        "conflictOfInterest": "disclosed",
+        "notes": "商品仕様、価格(￥8,999)、機能(100W PD, 4K 60Hz HDMI, 1000Mbps LAN, 5Gbpsデータ転送, ディスプレイ機能)を確認。"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "液晶ディスプレイに接続情報をリアルタイム表示できる",
+        "category": "comparativeAdvantage",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "crossChecked": false,
+        "notes": "Amazonの商品説明（DOCKCASEの特長であるスマートハブ機能）で確認。"
+      },
+      {
+        "claim": "4K@60HzのHDMI出力に対応",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "crossChecked": false,
+        "notes": "Amazonの商品説明で確認。"
+      }
+    ],
+    "lastInvestigated": "2026-03-26",
+    "competitiveAnalysis": [
+      {
+        "name": "Anker 332 USB-C ハブ (5-in-1)",
+        "asin": "B0BQMSXFP7",
+        "priceComparison": "対象商品の約1/3の価格で非常に安価。",
+        "featureComparison": [
+          "共通点：USB-C/Aデータポート搭載、PDパススルー充電対応",
+          "相違点：Ankerは有線LANなし、HDMIが4K 30Hzまで、ディスプレイ非搭載。対象商品はLANあり、4K 60Hz対応、ディスプレイ搭載。"
+        ],
+        "differentiators": [
+          "DOCKCASE 6-in-1 USB C ハブ（クリア版/ディスプレイ搭載）の利点：ディスプレイによる状態可視化、有線LAN接続、4K 60Hzの滑らかな映像出力",
+          "Anker 332 USB-C ハブ (5-in-1)の利点：圧倒的な低価格と小型軽量さ（LANや4K60Hzが不要なライトユーザー向け）"
+        ]
+      },
+      {
+        "name": "Anker USB-C ハブ (5-in-1, 4K, HDMI)",
+        "asin": "B0DLWDJJQ8",
+        "priceComparison": "対象商品の約1/3の価格。",
+        "featureComparison": [
+          "共通点：複数USB-Aポート搭載",
+          "相違点：AnkerはLAN非搭載、HDMI 4K30Hz、ディスプレイなし。PD入力は最大100W(出力90W)など。"
+        ],
+        "differentiators": [
+          "DOCKCASE 6-in-1 USB C ハブ（クリア版/ディスプレイ搭載）の利点：有線LANポートや4K 60Hz出力が必要な場合や、ガジェットとしてのデザイン性を重視する場合",
+          "Anker USB-C ハブ (5-in-1, 4K, HDMI)の利点：LANポートが不要で、基本的なUSB機器接続と充電ができれば良い場合のコストパフォーマンス"
+        ]
+      },
+      {
+        "name": "DOCKCASE 10-in-1 USB C ハブ",
+        "asin": "B0CKWJSM83",
+        "priceComparison": "対象商品より高価（約15,000円）。",
+        "featureComparison": [
+          "共通点：ディスプレイ搭載、クリアデザイン、LANポート、100W PD",
+          "相違点：10-in-1はDPポート追加(デュアルディスプレイ対応)、SD/TFカードリーダー搭載、USBポートが10Gbpsに高速化されている。"
+        ],
+        "differentiators": [
+          "DOCKCASE 6-in-1 USB C ハブ（クリア版/ディスプレイ搭載）の利点：10-in-1ほどの拡張性が不要な場合、よりコンパクトで安価にスマートハブの体験を得られる",
+          "DOCKCASE 10-in-1 USB C ハブの利点：SDカードの読み込みやデュアルディスプレイ、10Gbpsの高速データ転送が必要なプロユース"
+        ]
+      },
+      {
+        "name": "DOCKCASE 6-in-1 USB C ハブ（スケルトン版 銀）",
+        "asin": "B0C9LT2TM7",
+        "priceComparison": "対象商品と同価格。",
+        "featureComparison": [
+          "共通点：機能、スペックは完全に同一",
+          "相違点：カラーバリエーションの違い（対象商品はスペースグレー/黒、こちらはシルバー/銀）"
+        ],
+        "differentiators": [
+          "DOCKCASE 6-in-1 USB C ハブ（クリア版/ディスプレイ搭載）の利点：PCなどの周辺機器が黒やスペースグレー系の場合にデザインがマッチする",
+          "DOCKCASE 6-in-1 USB C ハブ（スケルトン版 銀）の利点：シルバー系のPC（MacBookのシルバー等）を使用している場合"
+        ]
+      },
+      {
+        "name": "DOCKCASE Visual Smart USB Cハブ (6イン1) グレー",
+        "asin": "B0BRRM36PS",
+        "priceComparison": "対象商品よりやや高価（並行輸入品などの可能性あり）。",
+        "featureComparison": [
+          "共通点：ディスプレイ搭載、ポート構成（LAN, 4K60Hz HDMI, PD100W等）",
+          "相違点：スケルトンデザインの有無や細かい筐体デザインの差異"
+        ],
+        "differentiators": [
+          "DOCKCASE 6-in-1 USB C ハブ（クリア版/ディスプレイ搭載）の利点：内部基板が見えるクリアデザインを採用している",
+          "DOCKCASE Visual Smart USB Cハブ (6イン1) グレーの利点：クリアデザインよりも落ち着いた金属筐体を好む場合"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "接続トラブルを視覚的に確認したいユーザー",
+        "デザイン性・ガジェット感の高いハブを求めるユーザー",
+        "4K@60Hz出力と有線LANを同時に使いたいユーザー"
+      ],
+      "pros": [
+        "ディスプレイで動作状況が丸わかり",
+        "4K@60Hz対応で滑らかな映像出力",
+        "クリア仕様の目を引くデザイン"
+      ],
+      "cons": [
+        "USBポートが5Gbps止まり",
+        "同ポート構成の他社製ハブに比べると高価"
+      ],
+      "score": 83,
+      "scoreRationale": "[基本点: 70]\n[加点: +8] ディスプレイでステータス確認ができる独自性とデザイン性\n[加点: +5] 4K@60Hzおよび有線LANに対応する十分な基本性能\n[加点: +3] 100W PDパススルー充電対応\n[減点: -3] 一般的なUSBハブと比較して高価格帯である点\n[合計: 83]"
+    },
+    "technicalSpecs": {
+      "dimensions": {
+        "height": "18mm",
+        "width": "39mm",
+        "depth": "127mm"
+      },
+      "weight": "110g",
+      "ports": [
+        "100W PD3.0 USB-C充電ポート x1",
+        "4K@60Hz HDMIポート x1",
+        "1000Mbps LANポート x1",
+        "USB-C 3.2 データポート (5Gbps) x1",
+        "USB-A 3.2 データポート (5Gbps) x2"
+      ],
+      "material": "アルミニウム合金（一部クリア素材）",
+      "warranty": "12ヶ月"
+    }
+  }
+}
