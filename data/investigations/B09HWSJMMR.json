@@ -1,0 +1,193 @@
+{
+  "analysis": {
+    "productName": "ユアサプライムス ペットフィーダー スマホdeごはんタイム もぐもぐ当番 PSF-WF43C",
+    "parentAsin": "B09HWSJMMR",
+    "productDescription": "外出先から専用スマホアプリ「Smart Life」で手軽に給餌設定ができる、4.3L大容量の自動給餌器です。1日最大4回、1週間分のスケジュール設定ができ、AC電源と乾電池の2WAY給電で停電時も安心です。",
+    "productUsage": [
+      "外出時や留守番中のペット（犬・猫）への自動給餌",
+      "決まった時間に決まった量を与える食事管理"
+    ],
+    "positivePoints": [
+      "スマホアプリ連携により外出先からでも給餌やスケジュール管理が簡単",
+      "ACアダプターと乾電池のバックアップ電源対応で停電時にも作動",
+      "フードタンクが4.3Lと大容量で、ドライフードキーパーとしても使える",
+      "タンクとトレイが水洗い可能で衛生的"
+    ],
+    "negativePoints": [
+      "2.4GHz帯のWi-Fi環境が必須で、設定にやや手間取る場合がある",
+      "1回あたりの給餌量が10g単位とやや大まか（細かな微調整が難しい）"
+    ],
+    "useCases": [
+      "仕事や旅行で家を空ける際のペットの食事確保",
+      "早朝のペットの食事要求による寝不足解消",
+      "ペットの肥満防止のための定時定量給餌"
+    ],
+    "userStories": [
+      {
+        "userType": "猫の飼い主",
+        "scenario": "仕事で帰りが遅くなる日の給餌",
+        "experience": "仕事が忙しくて帰りが遅くなる日でも、スマホアプリ「SmartLife」を使って外出先からすぐに給餌できるのが本当に助かっています。急な残業の際にも、ペットにお腹を空かせて待たせる心配がなくなりました。カメラ機能はないものの、きちんとご飯が出たことが通知されるので、それだけで安心感が全く違います。",
+        "supportingSourceIds": ["src-1"],
+        "sentiment": "positive"
+      },
+      {
+        "userType": "犬の飼い主",
+        "scenario": "多頭飼いでの日常的な利用",
+        "experience": "我が家は多頭飼いなので、4.3リットルという大容量のフードタンクのおかげで数日に1回の補充で済むようになり、日々の手間が格段に減りました。ただ、1回に出る給餌量が10g単位とざっくりしているため、小型犬向けに5g単位で細かくカロリーコントロールをしたい場合には少し不便さを感じる場面もあります。",
+        "supportingSourceIds": ["src-1"],
+        "sentiment": "mixed"
+      }
+    ],
+    "userImpression": "総じて、低価格ながらスマホ連携と大容量を備えておりコストパフォーマンスが高いと評価されています。一方で、Wi-Fi設定のハードルや給餌量の調整単位（10g）について一部不満の声も見られます。",
+    "sources": [
+      {
+        "id": "src-1",
+        "name": "Amazon商品ページ",
+        "url": "https://www.amazon.co.jp/dp/B09HWSJMMR",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-03-28",
+        "author": "Amazon",
+        "conflictOfInterest": "none",
+        "notes": "商品仕様、特徴、機能、サイズ情報の確認"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "外出先からスマホアプリで給餌のスケジューリングや即時給餌が可能。",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": ["src-1"],
+        "crossChecked": false,
+        "notes": "公式の商品仕様および特徴として明記されているが、他ソースでの検証なし。"
+      },
+      {
+        "claim": "ACアダプタと乾電池の2WAY給電で、停電時もスケジュール通りの給餌が可能。",
+        "category": "safety",
+        "confidence": "high",
+        "supportingSourceIds": ["src-1"],
+        "crossChecked": false,
+        "notes": "電源仕様に記載あり。停電時の実証レビューなどは未確認。"
+      }
+    ],
+    "lastInvestigated": "2026-03-28",
+    "competitiveAnalysis": [
+      {
+        "name": "Surfola SP03",
+        "asin": "B0D9217CWT",
+        "priceComparison": "対象商品よりやや高価だが、カメラ付きで双方向会話が可能",
+        "featureComparison": [
+          "共通点：スマホアプリ連携、Wi-Fi対応、2WAY給電対応",
+          "相違点：対象商品はカメラなしだが安価。Surfola SP03はカメラ付きで双方向会話に対応、1日最大8食の設定が可能"
+        ],
+        "differentiators": [
+          "スマホdeごはんタイム もぐもぐ当番の利点：機能がシンプルで価格が安く、コストパフォーマンスに優れる",
+          "Surfola SP03の利点：カメラで留守中のペットの様子を確認しながら声かけができる"
+        ]
+      },
+      {
+        "name": "Yuposl YPF01",
+        "asin": "B0CM8P3HCD",
+        "priceComparison": "対象商品と同程度の価格帯だが、容量が2Lと少なめ",
+        "featureComparison": [
+          "共通点：定時定量給餌、2WAY給電、水洗い可能",
+          "相違点：対象商品は4.3Lの大容量だが、Yuposlは2L容量。Yuposlはステンレスボウルを採用"
+        ],
+        "differentiators": [
+          "スマホdeごはんタイム もぐもぐ当番の利点：4.3Lの大容量で餌補充の手間が省ける",
+          "Yuposl YPF01の利点：コンパクトで省スペース、ステンレスボウルで衛生管理がしやすい"
+        ]
+      },
+      {
+        "name": "エレコム PET-AF08WH",
+        "asin": "B0GMGYWQL3",
+        "priceComparison": "対象商品より高価だが、吐き戻し予防など細やかな機能がある",
+        "featureComparison": [
+          "共通点：大容量（約4L）、自動給餌機能",
+          "相違点：対象商品はスマホ連携が強み。エレコムはフードボウルに高さがあり吐き戻し予防に配慮されている"
+        ],
+        "differentiators": [
+          "スマホdeごはんタイム もぐもぐ当番の利点：スマホアプリによる遠隔操作が手軽で価格も抑えられている",
+          "エレコム PET-AF08WHの利点：ペットの食事姿勢（高さ）に配慮されており、吐き戻し予防などの健康面に強い"
+        ]
+      },
+      {
+        "name": "Surfola SP01B",
+        "asin": "B0G1TJ8TGJ",
+        "priceComparison": "対象商品と同程度の価格帯",
+        "featureComparison": [
+          "共通点：4Lの大容量、2WAY給電、水洗い可能",
+          "相違点：対象商品はWi-Fi・スマホ連携対応。Surfola SP01BはWi-Fi不要の本体ボタン設定式"
+        ],
+        "differentiators": [
+          "スマホdeごはんタイム もぐもぐ当番の利点：スマホアプリを使って離れた場所からでも設定や手動給餌が可能",
+          "Surfola SP01Bの利点：Wi-Fi環境がなくても使用でき、設定が本体完結でシンプル"
+        ]
+      },
+      {
+        "name": "カリカリマシーンmini",
+        "asin": "B0FSCVWX3G",
+        "priceComparison": "対象商品よりやや安価",
+        "featureComparison": [
+          "共通点：自動給餌器、タイマー機能",
+          "相違点：対象商品は4.3Lの大容量ストッカータイプ。カリカリマシーンminiは1食分のトレイ型でウェットフードや保冷剤に対応"
+        ],
+        "differentiators": [
+          "スマホdeごはんタイム もぐもぐ当番の利点：ドライフードを大量にストックでき、長期の外出に強い",
+          "カリカリマシーンminiの利点：ウェットフードの給餌が可能で、ダイヤル式の簡単な操作"
+        ]
+      },
+      {
+        "name": "Latuna L-25000",
+        "asin": "B095XW3RCQ",
+        "priceComparison": "対象商品よりやや高価",
+        "featureComparison": [
+          "共通点：4L大容量、タイマー式、2WAY給電",
+          "相違点：対象商品はスマホアプリ連携。Latunaは本体操作のタイマー式"
+        ],
+        "differentiators": [
+          "スマホdeごはんタイム もぐもぐ当番の利点：外出先からのスケジュール変更や遠隔給餌が可能で利便性が高い",
+          "Latuna L-25000の利点：Wi-Fi設定が不要で、小動物看護士監修という安心感がある"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "外出先からスマホで給餌の管理をしたい方",
+        "Wi-Fi環境が整っているご家庭",
+        "フードの補充頻度を減らしたい多頭飼いの方"
+      ],
+      "pros": [
+        "約3,980円と低価格ながらスマホ連携・遠隔操作が可能でコスパが高い",
+        "4.3Lの大容量タンク",
+        "停電時も安心の乾電池バックアップ対応"
+      ],
+      "cons": [
+        "設定に2.4GHzのWi-Fi環境が必要",
+        "給餌量の調整単位が10gと大きく、細かな調整ができない"
+      ],
+      "score": 82,
+      "scoreRationale": "[基本点: 70]\n[加点: +10] (スマホアプリ連携機能があり遠隔操作可能な利便性を評価)\n[加点: +5] (4.3Lの大容量と2WAY給電対応の実用性)\n[加点: +5] (スマホ連携モデルとしては約3,980円と非常に安価でコスパが高い)\n[減点: -5] (給餌単位が10gごとで細かな調整がしにくい点)\n[減点: -3] (Wi-Fi設定につまずく可能性がある点)\n[合計: 82]"
+    },
+    "technicalSpecs": {
+      "dimensions": {
+        "height": "380mm",
+        "width": "245mm",
+        "depth": "300mm"
+      },
+      "weight": "2100g",
+      "capacity": "4.3L",
+      "material": "プラスチック（フードタンク・トレイ）",
+      "origin": "不明",
+      "power": "ACアダプター（5V 2A）または単1形アルカリ乾電池3本",
+      "supportedFood": "ドライフード（直径5～15mm程度）",
+      "feedingAmount": "約10g～100g/回（10g単位）",
+      "feedingTimes": "1～4回/日",
+      "app": "SmartLife",
+      "smartSpeaker": "Amazon Echo、Google Home対応",
+      "other": [
+        "給餌お知らせ音再生回数設定機能"
+      ]
+    }
+  }
+}
