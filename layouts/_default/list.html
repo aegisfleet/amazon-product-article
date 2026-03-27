@@ -201,7 +201,7 @@
                     <div class="meta-main-row">
                         {{- if .Params.price -}}
                         <span class="card-price">
-                            <span aria-hidden="true">💰</span> {{ .Params.price }}
+                            <span aria-hidden="true">💰</span> {{ partial "utils-price-format.html" .Params.price }}
                         </span>
                         {{- if .Params.loyalty_points -}}
                         <span class="card-points">
