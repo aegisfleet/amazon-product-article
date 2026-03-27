@@ -2,164 +2,249 @@
   "analysis": {
     "productName": "Xiaomi Redmi Watch 5 Lite",
     "parentAsin": "B0DTTGDDJ9",
-    "productDescription": "1万円以下でGPSとBluetooth通話を搭載し、最大18日間のバッテリー持続を実現した高コスパスマートウォッチ。",
+    "productDescription": "1.96インチの大型有機ELディスプレイと18日間の長時間バッテリー持続を特徴とする、軽量でコストパフォーマンスに優れたスマートウォッチ。GNSS内蔵でスマートフォンなしでのワークアウト記録やBluetooth通話にも対応しています。",
     "productUsage": [
-      "内蔵GPSにより、スマートフォンを持たずにランニングやウォーキングのルート・距離を正確に記録する",
-      "Bluetooth通話機能を使って、手首だけで電話の応答や発信を行う",
-      "心拍数、血中酸素レベル、睡眠、ストレスレベルを24時間モニタリングし、健康状態を可視化する",
-      "1.96インチの大画面でLINEやメールの通知を見やすく確認する"
+      "日常の健康管理（心拍数、血中酸素、睡眠、ストレスのモニタリング）",
+      "150種類以上のワークアウト記録（ランニング、ウォーキング、水泳など）",
+      "スマートフォンの通知確認およびBluetooth通話"
     ],
     "positivePoints": [
-      "GPS内蔵かつBluetooth通話対応で7,000円以下という圧倒的なコストパフォーマンス",
-      "最大18日間（標準使用）という驚異的なバッテリー持ちで、充電のストレスがほぼない",
-      "1.96インチの大型有機EL（AMOLED）ディスプレイは見やすく、操作もしやすい",
-      "Alexa音声アシスタントに対応しており、手元でスマートホーム機器の操作などが可能"
+      "1.96インチの有機ELディスプレイで画面が大きく、文字や情報が見やすい",
+      "GNSS（GPS/Galileo/Glonass/BeiDou/QZSS）内蔵でスマートフォンなしでも正確な位置記録が可能",
+      "標準使用で最大18日間、常時表示（AOD）でも最大7日間という長寿命バッテリー",
+      "Bluetooth通話機能に対応し、スマートウォッチ単体での着信応答や発信が可能",
+      "約6,000円台という低価格ながら、充実した基本機能を備えコストパフォーマンスが非常に高い"
     ],
     "negativePoints": [
-      "FeliCa（おサイフケータイ）非対応のため、Suicaなどの電子決済が利用できない",
-      "ディスプレイの輝度自動調整機能がなく、環境に合わせて手動で明るさを変更する必要がある",
-      "シャワーなどの水圧で画面が誤反応することがある（画面ロック推奨）",
-      "充電時間が約2時間と、最近の急速充電対応モデルに比べるとやや長い"
+      "Alexa機能は設定後数時間で反応しなくなるなど不安定であり、実用的ではない",
+      "LINEの着信時（特にiPhoneとペアリングした場合）に着信中には振動せず、不在着信の通知しか残らない",
+      "常時表示と全ての健康モニタリング機能を有効にすると、バッテリーの消費が激しくなる",
+      "ストラップが内側に通すタイプのため、付け外しがやや面倒に感じることがある",
+      "明るさの自動調節機能（自動輝度調節）が搭載されていない"
     ],
     "useCases": [
-      "毎日の充電が面倒で、とにかくバッテリー持ちの良いスマートウォッチを探しているユーザー",
-      "ランニング時にスマホを持ち歩きたくないが、ルートやペースは記録したいランナー",
-      "初めてスマートウォッチを購入するため、低予算で多機能なモデルを試したい入門者"
+      "スマートフォンを持たずにランニングやウォーキングなどの屋外アクティビティを行う",
+      "長期間の旅行や出張で充電器を持ち歩きたくない場面での日常使い",
+      "作業中や移動中に、スマートフォンを取り出さずに通知を確認したり、電話に応答する"
     ],
     "userStories": [
       {
-        "userType": "30代 会社員（営業職）",
-        "scenario": "多忙な平日の通知確認と充電管理",
-        "experience": "以前使っていたウォッチは毎日充電が必要で、出張時に充電器を忘れて困ったことがあった。Redmi Watch 5 Liteに変えてからは、2週間の出張でも充電器を持たずに行けるようになり、荷物も気苦労も減った。通知も大画面で見やすく、客先への移動中にサッと内容を確認できるのが助かっている。（推測）",
+        "userType": "スマートウォッチ初心者",
+        "scenario": "初めてのスマートウォッチとして購入",
+        "experience": "画面が大きくて見やすく、操作もサクサク動いて直感的に使えます。バッテリーが1週間以上余裕で持つので、毎日の充電の手間がなく楽です。有機ELで画面も綺麗で、腕を持ち上げた時だけ表示される機能も便利です。値段も安くて満足しています。",
+        "supportingSourceIds": [
+          "src-kakaku-1"
+        ],
         "sentiment": "positive"
       },
       {
-        "userType": "40代 週末ランナー",
-        "scenario": "休日のランニングと健康管理",
-        "experience": "スマホを持って走るのが重くて嫌だったが、この価格でGPSが入っていることに驚いて購入。実際に走ってみると、高層ビルの近くでもGPS補足が速く、ルートも正確に記録されていた。走り終わった後にスマホアプリで地図を見るのが楽しみになった。（推測）",
+        "userType": "iPhoneユーザー",
+        "scenario": "LINEの通知確認や通話目的で使用",
+        "experience": "画面が大きくてテキストメッセージはしっかり確認できますが、LINEの着信時にはリアルタイムで振動せず、気付けないのが不便です。不在着信になってから通知が来る仕様は改善してほしいです。一方で通常のBluetooth通話は問題なくできました。",
+        "supportingSourceIds": [
+          "src-ametuku-1"
+        ],
+        "sentiment": "mixed"
+      },
+      {
+        "userType": "スポーツ愛好家",
+        "scenario": "ウォーキングやランニングでのGPS記録",
+        "experience": "高層ビルが立ち並ぶエリアでのウォーキングでも、ルートをほぼ正確に記録してくれました。スマートウォッチ単体で位置情報が取れるので、身軽に運動できるのが良いです。ただ、GPSを使うと当然ですがバッテリーの減りは早くなります。",
+        "supportingSourceIds": [
+          "src-ametuku-1"
+        ],
         "sentiment": "positive"
       },
       {
-        "userType": "20代 学生",
-        "scenario": "通学時の音楽操作とコンビニ決済",
-        "experience": "画面が大きくて綺麗なので気に入っているが、コンビニで買い物をするときに結局スマホを出さないといけないのが少し不便。以前使っていたバンドにはSuica機能があったので、そこだけはスペックダウンを感じる。でもバッテリー持ちが良いので許容範囲。（推測）",
+        "userType": "日常的な健康管理者",
+        "scenario": "睡眠や歩数の常時モニタリング",
+        "experience": "歩数や心拍数、睡眠を常時計測してくれるので健康管理に役立っています。しかし、Alexa機能は設定してもすぐに反応しなくなってしまい、全く使い物になりませんでした。また、時計の時刻がスマホとずれることがあるのも気になります。",
+        "supportingSourceIds": [
+          "src-kakaku-1"
+        ],
         "sentiment": "mixed"
       }
     ],
-    "userImpression": "ユーザーの多くは「価格破壊」とも言えるコストパフォーマンスの高さに衝撃を受けている。特にGPS内蔵とバッテリー持ちに対する評価が極めて高い。一方で、電子決済機能がない点や自動調光がない点を残念がる声もあるが、価格を考えれば妥協できるという意見が支配的である。",
+    "userImpression": "大画面で視認性が高く、長持ちするバッテリーと基本機能（GPS、通話、健康管理）が充実しているにもかかわらず非常に安価なため、「コスパ最強のエントリーモデル」として高く評価されています。一方で、Alexaの動作不安定やLINE通話通知の仕様、時刻のズレなどソフトウェア・連携面の細かな不満点も複数報告されており、完璧を求めるよりも価格重視で基本機能を使いたいユーザー向けと認識されています。",
     "sources": [
       {
-        "name": "Xiaomi Redmi Watch 5 LiteとRedmi Watch 5 Activeの違いは？実際に使ってよい点・気になる点を徹底レビュー！ | my-best",
-        "url": "https://my-best.com/products/5341280",
-        "credibility": "実機検証に基づく詳細なレビューと比較データがあり、信頼性が高い"
+        "id": "src-ametuku-1",
+        "name": "Redmi Watch 5 Lite を徹底レビュー！４週間使用して分かったことを全て伝えます！ / コスパの良いガジェットが好きだぁ",
+        "url": "https://ametuku.com/redmi-watch-5-lite-review/",
+        "tier": "medium",
+        "evidenceType": "primary",
+        "publishedAt": "2024-11-02",
+        "author": "ametuku",
+        "conflictOfInterest": "none",
+        "notes": "4週間使用した詳細なレビュー。良い点（GPS、通話、バッテリー）と悪い点（Alexa不安定、LINE着信通知の仕様、常時表示時のバッテリー消費）が具体的に検証されている。"
       },
       {
-        "name": "Redmi Watch 5 Lite 公式製品ページ",
-        "url": "https://www.mi.com/jp/product/redmi-watch-5-lite",
-        "credibility": "公式スペック情報"
+        "id": "src-kakaku-1",
+        "name": "Redmi Watch 5 Lite レビュー評価・評判 / 価格.com",
+        "url": "https://review.kakaku.com/review/J0000046084/",
+        "tier": "medium",
+        "evidenceType": "primary",
+        "publishedAt": "2024-11-01",
+        "author": "価格.comユーザー",
+        "conflictOfInterest": "none",
+        "notes": "多数のユーザーレビュー。コストパフォーマンスやバッテリー持ち、画面の綺麗さが高評価。一方で時刻のズレやAlexaの不具合、設定の初期化などの不具合も報告されている。"
       }
     ],
-    "lastInvestigated": "2026-01-24",
+    "claims": [
+      {
+        "claim": "標準使用で最大18日間、常時表示でも最大7日間のバッテリー寿命を持つ。",
+        "category": "durability",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-ametuku-1",
+          "src-kakaku-1"
+        ],
+        "crossChecked": true,
+        "notes": "公式スペックおよび複数のユーザーレビュー、ブログレビューで1週間以上のバッテリー持ちが確認されている。ただし常時表示＋全モニタリングONでは1日持たないという検証結果もある。"
+      },
+      {
+        "claim": "Alexa機能は設定後すぐに反応しなくなり、実用的ではない。",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-ametuku-1",
+          "src-kakaku-1"
+        ],
+        "crossChecked": true,
+        "notes": "ブログの検証記事および複数の価格.comユーザーレビューで同様の不具合が報告されている。"
+      },
+      {
+        "claim": "LINEの音声着信時はリアルタイムで振動せず、不在着信の通知のみとなる。",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-ametuku-1"
+        ],
+        "crossChecked": false,
+        "notes": "ブログレビューにて、特にiPhoneとのペアリング時における具体的な挙動として検証・報告されている。"
+      }
+    ],
+    "lastInvestigated": "2026-03-28",
     "competitiveAnalysis": [
       {
-        "name": "HUAWEI Band 9",
-        "asin": "B0DZH1XVYN",
-        "priceComparison": "約7,000円〜8,000円と同価格帯。",
+        "name": "Xiaomi Redmi Watch 5 Active",
+        "asin": "B0DFZPR9Z4",
+        "priceComparison": "対象商品より安価だが、GPSと有機ELディスプレイを省いたエントリーモデル。",
         "featureComparison": [
-          "HUAWEI Band 9はGPS非搭載（スマホのGPSを利用）。",
-          "形状がスリムなバンド型で、Redmi Watch 5 Lite（スクエア型）より軽量で装着感が少ない。",
-          "睡眠分析などのヘルスケア機能の精度には定評がある。"
+          "共通点：Bluetooth通話対応、18日間の長寿命バッテリー、大型ディスプレイ（2.0インチ）",
+          "相違点：Activeは液晶ディスプレイ（LCD）で解像度が低く、GPS（GNSS）を内蔵していない。Liteは有機ELとGPSを搭載。"
         ],
         "differentiators": [
-          "Redmi Watch 5 LiteはGPS内蔵と画面の大きさで勝る。",
-          "HUAWEI Band 9は装着感の軽快さとヘルスケア精度で勝負。"
+          "Xiaomi Redmi Watch 5 Liteの利点：スマートフォンなしでのGPS記録と、発色の良い有機ELディスプレイを楽しめる。",
+          "Xiaomi Redmi Watch 5 Activeの利点：GPSが不要で、とにかく価格を抑えてスマートウォッチの基本機能や通話を使いたい場合に適している。"
         ]
       },
       {
-        "name": "CMF Watch Pro 2",
-        "asin": "B0D54386H7",
-        "priceComparison": "約11,000円とRedmi Watch 5 Liteより3,000円以上高い。",
+        "name": "Xiaomi Smart Band 9 Active",
+        "asin": "B0DK6ZC5ZC",
+        "priceComparison": "対象商品より大幅に安いが、バンド型でディスプレイが小さく、通話やGPS機能はない。",
         "featureComparison": [
-          "GPS内蔵、Bluetooth通話対応など機能面は近い。",
-          "ベゼル交換可能など、デザインのカスタマイズ性が高い。",
-          "独自のドット絵UIなどデザイン重視。"
+          "共通点：Xiaomi製の健康管理デバイスであり、長時間バッテリーを搭載している。",
+          "相違点：Band 9 Activeは軽量なリストバンド型（1.47インチ液晶）。GPSやBluetooth通話機能が省略されている。"
         ],
         "differentiators": [
-          "Redmi Watch 5 Liteの方が安価でバッテリー持ちが良い（CMFは通常11日）。",
-          "CMFはデザインとブランドの世界観が売り。"
+          "Xiaomi Redmi Watch 5 Liteの利点：大画面での通知確認、単体での通話、GPSを利用した本格的なワークアウト記録が可能。",
+          "Xiaomi Smart Band 9 Activeの利点：圧倒的な安さと軽量さ。睡眠計測など、着けっぱなしでも気にならない装着感を求める場合に適している。"
         ]
       },
       {
         "name": "Xiaomi Smart Band 9 Pro",
-        "asin": "B0DK6ZC5ZC",
-        "priceComparison": "約9,500円とRedmi Watch 5 Liteより少し高い。",
+        "asin": "B0DYF82545",
+        "priceComparison": "対象商品よりやや高いが、質感の高いメタルフレームと環境光センサー（自動調光）を備えている。",
         "featureComparison": [
-          "同じXiaomi製でGPS内蔵だが、こちらは縦長のバンドとウォッチの中間的な形状。",
-          "自動調光機能がついている（Redmi Watch 5 Liteにはない）。",
-          "ボディがアルミニウム合金で質感がより高い。"
+          "共通点：有機ELディスプレイ、GPS（GNSS）内蔵、長寿命バッテリー。",
+          "相違点：Band 9 Proは1.74インチでスリムなデザイン。自動明るさ調整機能やメタルフレームを採用しており質感が向上しているが、Bluetooth通話には対応していない。"
         ],
         "differentiators": [
-          "価格重視ならRedmi Watch 5 Lite。",
-          "質感と自動調光、少しスリムな形状を求めるならBand 9 Pro。"
+          "Xiaomi Redmi Watch 5 Liteの利点：価格がより安く、画面サイズが1.96インチとさらに大きいため情報が見やすい。またBluetooth通話に対応している。",
+          "Xiaomi Smart Band 9 Proの利点：高級感のあるデザインと、自動明るさ調整による快適な視認性。よりスマートな外観を好む人に適している。"
+        ]
+      },
+      {
+        "name": "Xiaomi Smart Band 9",
+        "asin": "B0DFHFM1X9",
+        "priceComparison": "対象商品と同価格帯だが、アプローチが異なる（大画面ウォッチ型 vs 軽量バンド型）。",
+        "featureComparison": [
+          "共通点：有機ELディスプレイを採用し、高いコストパフォーマンスと長寿命バッテリーを誇る。",
+          "相違点：Smart Band 9は非常にコンパクトなバンド型（1.62インチ）でGPSや通話機能はないが、リニアモーターによる上質な振動やアルミニウム合金フレームを持つ。"
+        ],
+        "differentiators": [
+          "Xiaomi Redmi Watch 5 Liteの利点：大きな画面で通知が見やすく、スマートウォッチらしい操作感。GPSと通話機能が使える。",
+          "Xiaomi Smart Band 9の利点：つけていることを忘れるほどの軽量さと、睡眠トラッキング時の不快感の少なさ。上質な振動フィードバック。"
+        ]
+      },
+      {
+        "name": "HUAWEI WATCH FIT Special Edition",
+        "asin": "B0DPX91VHZ",
+        "priceComparison": "対象商品より高価。他社メーカーの強力な競合。",
+        "featureComparison": [
+          "共通点：1.64インチの大型有機ELディスプレイ、GPS内蔵。",
+          "相違点：HUAWEIは睡眠計測の精度やアプリの使い勝手に定評があるが、バッテリー持ちは通常9日間とXiaomiより短い。Bluetooth通話には非対応。"
+        ],
+        "differentiators": [
+          "Xiaomi Redmi Watch 5 Liteの利点：価格が圧倒的に安く、バッテリー持ちが倍近く長い。Bluetooth通話機能も備えている。",
+          "HUAWEI WATCH FIT Special Editionの利点：HUAWEI独自のTruSleepなど、より詳細で精度の高い健康・睡眠モニタリング機能を使いたい場合に適している。"
+        ]
+      },
+      {
+        "name": "Xiaomi Smart Band 9 Pro (別カラー)",
+        "asin": "B0DK71CTCK",
+        "priceComparison": "対象商品よりやや高い上位モデル（別カラーバリエーション）。",
+        "featureComparison": [
+          "共通点：GPS搭載、大画面有機EL。",
+          "相違点：前述のB0DYF82545と同等。自動調光やコンパス機能、21日間のバッテリーを搭載しているが、Bluetooth通話機能は持たない。"
+        ],
+        "differentiators": [
+          "Xiaomi Redmi Watch 5 Liteの利点：Bluetooth通話機能が必要な場合や、より正方形に近い大画面を求める場合、かつ価格を抑えたい場合に最適。",
+          "Xiaomi Smart Band 9 Pro (別カラー)の利点：自動調光機能やより洗練されたベゼルレスデザイン、長時間のバッテリー（21日間）を重視する場合に適している。"
         ]
       }
     ],
     "recommendation": {
       "targetUsers": [
-        "予算1万円以下でGPS付きのスマートウォッチを探している人",
-        "毎日の充電から解放されたい人",
-        "初めてスマートウォッチを買う学生やビジネスマン",
-        "電子決済はスマホで十分と割り切れる人"
+        "スマートウォッチを初めて購入する初心者",
+        "価格を抑えつつ大画面で基本機能（通知、健康管理）を使いたい人",
+        "スマートフォンなしでGPSを使ったワークアウト記録を行いたい人",
+        "毎日の充電の手間を省きたい人"
       ],
       "pros": [
-        "7,000円以下でGPS・通話・AMOLED搭載という圧倒的コスパ",
-        "最大18日間のロングバッテリー",
-        "見やすい大画面ディスプレイ",
-        "豊富なスポーツモードと健康管理機能"
+        "1.96インチの大画面有機ELで視認性が高い",
+        "6,000円台という圧倒的なコストパフォーマンス",
+        "GPS内蔵およびBluetooth通話に対応",
+        "最大18日間の長時間バッテリー"
       ],
       "cons": [
-        "電子決済（Suica等）が使えない",
-        "画面の明るさ自動調整がない",
-        "質感はプラスチック主体で高級感には欠ける"
+        "Alexa機能が不安定で実質使い物にならない",
+        "LINEの着信通知にリアルタイムで気づけない（特にiPhone）",
+        "自動明るさ調整機能がない",
+        "ストラップの着脱がやや面倒"
       ],
-      "score": 95,
-      "scoreRationale": "[基本点: 70]\n[加点: +15] (コストパフォーマンス: 7000円以下でGPS・通話機能搭載は市場で突出している)\n[加点: +8] (性能・機能: 1.96インチAMOLED、18日間バッテリーなど基本性能が非常に高い)\n[加点: +2] (ユーザー満足度: バッテリー持ちとコスパへの評価が極めて高い)\n[減点: -0] (品質・デザイン: 価格相応だが安っぽすぎない)\n[加点: +0] (独自の強み: 「安価なGPSウォッチ」としての地位)\n[合計: 95] (電子決済がない点を除けば、この価格帯ではほぼ欠点のない「買い」の製品)"
+      "score": 75,
+      "scoreRationale": "[基本点: 70]\n[加点: +10] (6,000円台でGPS内蔵・有機EL大画面という圧倒的なコストパフォーマンス)\n[加点: +5] (最大18日間の長寿命バッテリーと基本機能の網羅性)\n[減点: -5] (Alexa機能の動作不安定および一部の時刻ズレ不具合報告)\n[減点: -5] (LINE着信通知の仕様問題および明るさ自動調節機能の欠如)\n[合計: 75]"
     },
     "technicalSpecs": {
-      "os": "Xiaomi HyperOS",
-      "display": {
-        "size": "1.96インチ",
-        "resolution": "410 x 502",
-        "type": "AMOLED (有機EL)"
-      },
-      "battery": {
-        "capacity": "470mAh",
-        "charging": "約2時間",
-        "life": "標準18日間 / ヘビーユース12日間 / AOD7日間"
-      },
-      "connectivity": [
-        "Bluetooth 5.3",
-        "GNSS (GPS, GLONASS, Galileo, BeiDou, QZSS)"
-      ],
-      "sensors": [
-        "心拍数センサー",
-        "血中酸素レベルセンサー",
-        "加速度センサー",
-        "ジャイロスコープ"
-      ],
       "dimensions": {
         "height": "48.1mm",
         "width": "39.2mm",
-        "depth": "10.6mm",
-        "weight": "29.2g (ストラップ含まず)"
+        "depth": "10.6mm"
       },
-      "waterResistance": "5ATM (水深50m相当)",
-      "compatibility": "Android 8.0 または iOS 12.0 以降",
+      "weight": "29.2g（ストラップ含まず） / 43g（ストラップ含む）",
+      "display": "1.96インチ 有機ELディスプレイ (解像度: 410×502, 332PPI)",
+      "battery": "470mAh (通常使用: 最大18日間, AOD: 最大7日間)",
+      "sensors": "心拍数センサー、血中酸素レベルセンサー、GNSS（GPS/Galileo/Glonass/BeiDou/QZSS）",
+      "waterResistance": "5ATM",
+      "connectivity": "Bluetooth (通話対応)",
+      "osCompatibility": "Android 8.0以降またはiOS 12.0以降",
+      "material": "NCVMミドルフレーム（プラスチック製）、TPU（ストラップ）",
       "other": [
-        "Bluetooth通話",
-        "Alexa対応",
-        "150+ スポーツモード",
-        "常時表示対応"
+        "150種類以上のスポーツモード",
+        "常時画面表示（AOD）対応",
+        "Alexa対応（※動作不安定の報告あり）"
       ]
     }
   }
