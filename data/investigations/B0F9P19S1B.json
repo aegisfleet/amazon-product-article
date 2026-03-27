@@ -1,0 +1,132 @@
+{
+  "analysis": {
+    "productName": "Redmi Pad 2 4GB+128GB",
+    "parentAsin": "B0F9P19S1B",
+    "productDescription": "Xiaomiの約27.9cmAndroidタブレット。2.5K高解像度ディスプレイ、9000mAh大容量バッテリー、Helio G100-Ultraプロセッサを搭載し、高いコストパフォーマンスを誇る。",
+    "productUsage": [
+      "動画視聴",
+      "ブラウジング",
+      "軽いゲーム",
+      "電子書籍の閲覧",
+      "子供の学習用"
+    ],
+    "positivePoints": [
+      "21,980円という価格ながら2.5Kの高解像度ディスプレイを搭載",
+      "9000mAhの大容量バッテリーで長時間の使用が可能",
+      "Dolby Atmos対応のクアッドスピーカーで臨場感あるサウンド",
+      "最大2TBまでのmicroSDカード拡張に対応"
+    ],
+    "negativePoints": [
+      "重量が比較的重い可能性がある（大容量バッテリー搭載のため）"
+    ],
+    "useCases": [
+      "リビングでの動画鑑賞",
+      "外出先での電子書籍閲覧",
+      "子供の知育アプリ利用"
+    ],
+    "userStories": [],
+    "userImpression": "価格を抑えつつも、ディスプレイやバッテリー、サウンドといったエンタメ性能に特化した高コスパタブレットとして高い評価が期待される。",
+    "sources": [
+      {
+        "id": "src-1",
+        "name": "Amazon商品ページ",
+        "url": "https://www.amazon.co.jp/dp/B0F9P19S1B",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-03-27",
+        "author": "Amazon",
+        "conflictOfInterest": "none",
+        "notes": "商品スペック、価格、特徴の確認"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "2.5Kの高精細ディスプレイを搭載",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "crossChecked": false,
+        "notes": "商品ページの仕様より確認"
+      },
+      {
+        "claim": "9000mAhの大容量バッテリー搭載",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "crossChecked": false,
+        "notes": "商品ページの仕様より確認"
+      }
+    ],
+    "lastInvestigated": "2026-03-27",
+    "competitiveAnalysis": [
+      {
+        "name": "NEC LAVIE Tab T11d",
+        "asin": "B0GFD33BVK",
+        "priceComparison": "Redmi Pad 2より安価だが、解像度やプロセッサ性能で劣る。",
+        "featureComparison": [
+          "共通点：約27.9cmディスプレイを搭載している点",
+          "相違点：Redmi Pad 2は2.5K解像度とHelio G100-Ultraを搭載しているのに対し、NECは1920x1200解像度とHelio G88を搭載している"
+        ],
+        "differentiators": [
+          "Redmi Pad 2の利点：より高精細なディスプレイと高性能なプロセッサ、大容量バッテリーによる高いエンタメ体験",
+          "NEC LAVIE Tab T11dの利点：初期費用を抑えられる点"
+        ]
+      },
+      {
+        "name": "Redmi Pad SE 2 4GB 128G Gray",
+        "asin": "B0F9P4719Q",
+        "priceComparison": "同じ価格帯の同シリーズの別カラーモデル",
+        "featureComparison": [
+          "共通点：基本スペック（約27.9cm 2.5K, 9000mAh, Helio G100-Ultra, 4GB/128GB）は同じ",
+          "相違点：カラーバリエーションが異なる（ミントグリーンとグラファイトグレー）"
+        ],
+        "differentiators": [
+          "Redmi Pad 2の利点：明るくポップなミントグリーンカラーを選べる点",
+          "Redmi Pad SE 2 4GB 128G Grayの利点：落ち着いたグラファイトグレーカラーを選べる点"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "コスパ重視でエンタメ用タブレットを探している人",
+        "動画や映画を高画質・高音質で楽しみたい人",
+        "バッテリー持ちを重視する人"
+      ],
+      "pros": [
+        "2.5K高解像度ディスプレイ",
+        "大容量9000mAhバッテリー",
+        "クアッドスピーカー搭載",
+        "高コスパ"
+      ],
+      "cons": [
+        "メモリが4GBとやや少なめなため、重いマルチタスクには不向き"
+      ],
+      "score": 85,
+      "scoreRationale": "[基本点: 70]\n[加点: +10] (2万強の価格で2.5Kディスプレイと9000mAhの大容量バッテリーを搭載し、非常にコストパフォーマンスが高い)\n[加点: +5] (Dolby Atmos対応のクアッドスピーカー搭載でエンタメ性能に優れる)\n[合計: 85]"
+    },
+    "technicalSpecs": {
+      "dimensions": {
+        "height": "不明",
+        "width": "不明",
+        "depth": "不明"
+      },
+      "weight": "不明",
+      "capacity": "128GB",
+      "memory": "4GB",
+      "processor": "Helio G100-Ultra",
+      "battery": "9000mAh",
+      "display": "約27.9cm 2.5Kディスプレイ",
+      "audio": "Dolby Atmos対応クアッドスピーカー",
+      "color": "ミントグリーン",
+      "origin": "不明",
+      "other": [
+        "最大2TBまでのmicroSDカード拡張対応",
+        "Xiaomi相互接続機能対応"
+      ]
+    }
+  }
+}
