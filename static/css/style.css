@@ -1641,11 +1641,11 @@ a.competitor-preview:hover {
   gap: var(--spacing-sm);
   background: linear-gradient(to bottom, #f7dfa5, #f0c14b);
   color: #111;
-  padding: var(--spacing-sm) var(--spacing-md);
+  padding: 0.5rem 1rem;
   border: 1px solid #a88734;
   border-radius: var(--radius-md);
-  font-weight: 700;
-  font-size: 0.875rem;
+  font-weight: 600;
+  font-size: 0.95rem;
   text-decoration: none;
   box-shadow: 0 1px 0 rgba(255, 255, 255, .4) inset;
   transition: all 0.2s ease;
@@ -1690,6 +1690,7 @@ a.competitor-preview:hover {
 
 .today-recommendation-icon {
   font-size: 1.1rem;
+  line-height: 1;
 }
 
 /* Competitor Preview (Creators API Product Info) */
