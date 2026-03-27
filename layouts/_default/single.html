@@ -20,7 +20,7 @@
 <div id="product-tracking-info" data-asin="{{ .Params.asin }}" data-category="{{ $currentCategory }}"
     data-price-bucket="{{ $currentPriceBucket }}" data-price="{{ .Params.price }}" style="display: none;"></div>
 
-<div class="container" style="padding-top: var(--spacing-xl);">
+<div class="container" style="padding-top: var(--spacing-sm);">
     <div class="ai-disclaimer">
         本サイトはAIによる商品の調査レポートを掲載しています。商品選びの参考情報としてご活用ください。
     </div>
@@ -40,7 +40,8 @@
             {{- $category := index .Params.categories 0 -}}
             <a href="{{ printf `categories/%s/` ($category | urlize) | relURL }}" class="card-tag">{{- $category -}}</a>
             {{- else -}}
-            {{- with .Params.category -}}<a href="{{ printf `categories/%s/` (. | urlize) | relURL }}" class="card-tag">{{
+            {{- with .Params.category -}}<a href="{{ printf `categories/%s/` (. | urlize) | relURL }}"
+                class="card-tag">{{
                 . }}</a>{{- end -}}
             {{- end -}}
             <h1 class="hero-title" style="margin-top: var(--spacing-sm);">{{ .Title }}</h1>
@@ -128,7 +129,8 @@
                                 {{- end -}}
                                 <span class="pickup-card-score {{ $scoreClass }}">🏆 {{ .Params.score }}点</span>
                                 {{- end -}}
-                                {{- if .Params.price -}}<span class="pickup-card-price">{{ .Params.price }}</span>{{- end -}}
+                                {{- if .Params.price -}}<span class="pickup-card-price">{{ .Params.price }}</span>{{-
+                                end -}}
                             </div>
                         </div>
                     </a>
