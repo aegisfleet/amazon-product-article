@@ -1,0 +1,167 @@
+{
+  "analysis": {
+    "productName": "ユピテル DRY-TW6000d 前後2カメラ ドライブレコーダー",
+    "parentAsin": "B0BDLLY9K8",
+    "productDescription": "カンタン操作で、あんしん機能が充実。定期フォーマットいらずの前後2カメラベーシックモデル。",
+    "productUsage": [
+      "運転中の映像記録",
+      "煽り運転や事故時の証拠保全",
+      "駐車中の監視（※オプションの駐車記録用電源コードが必要）"
+    ],
+    "positivePoints": [
+      "SDカードの定期的なフォーマットが不要でメンテナンスフリー",
+      "繰り返しの上書き記録に強い高耐久16GB SDカードが付属",
+      "シガーソケットを使わない電源直結コードが標準付属",
+      "逆光や夜間でも映像が白とびしにくいHDR搭載",
+      "視界を妨げにくいコンパクト設計"
+    ],
+    "negativePoints": [
+      "録画画質がフルHDではなくHD(100万画素)であるため、細部の精細さに欠ける場合がある"
+    ],
+    "useCases": [
+      "初めてドライブレコーダーを取り付ける人",
+      "SDカードのメンテナンスを手間に感じる人",
+      "シガーソケットを他の機器に使いたい人"
+    ],
+    "userStories": [],
+    "userImpression": "画質はHD（100万画素）と昨今のフルHD主流の中ではやや控えめだが、その分コンパクトで視界の邪魔にならず、SDカードのフォーマット不要機能や高耐久SDカード、電源直結コードが最初から付属している点で、非常に実用的でコストパフォーマンスが高いと評価されている。取り付け後のメンテナンスの手間を省きたいユーザーに好評。",
+    "sources": [
+      {
+        "id": "src-amazon",
+        "name": "Amazon.co.jp 商品ページ",
+        "url": "https://www.amazon.co.jp/dp/B0BDLLY9K8",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-03-27",
+        "author": "Amazon",
+        "conflictOfInterest": "none",
+        "notes": "価格（13,200円）、特長（電源直結コード付属、逆光下に強いHDR搭載、SDカードフォーマット不要、高耐久16GB SD カード付属、コンパクト設計）を確認"
+      },
+      {
+        "id": "src-yupiteru-official",
+        "name": "DRY-TW6000d｜ドライブレコーダー｜Yupiteru(ユピテル)",
+        "url": "https://www.yupiteru.co.jp/products/drive_recorder/dry-tw6000d/",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-03-27",
+        "author": "株式会社ユピテル",
+        "conflictOfInterest": "disclosed",
+        "notes": "製品概要、100万画素HD&Gセンサー、特長を確認"
+      },
+      {
+        "id": "src-yupiteru-spec",
+        "name": "DRY-TW6000d 仕様｜ドライブレコーダー｜Yupiteru(ユピテル)",
+        "url": "https://www.yupiteru.co.jp/products/drive_recorder/dry-tw6000d/spec.html",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-03-27",
+        "author": "株式会社ユピテル",
+        "conflictOfInterest": "disclosed",
+        "notes": "外形寸法、本体重量を確認"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "SDカードフォーマット不要",
+        "category": "durability",
+        "confidence": "high",
+        "supportingSourceIds": ["src-amazon", "src-yupiteru-official"],
+        "crossChecked": true,
+        "notes": "Amazon商品ページ、公式サイト双方で特長として記載"
+      },
+      {
+        "claim": "電源直結コード付属",
+        "category": "comparativeAdvantage",
+        "confidence": "high",
+        "supportingSourceIds": ["src-amazon", "src-yupiteru-official"],
+        "crossChecked": true,
+        "notes": "多くのエントリーモデルはシガープラグコードだが、本機は電源直結コードが標準付属"
+      }
+    ],
+    "lastInvestigated": "2026-03-27",
+    "competitiveAnalysis": [
+      {
+        "name": "コムテック ZDR027",
+        "asin": "B0DJ8JDP1K",
+        "priceComparison": "コムテックZDR027の方がやや高価。フルHD画質やSTARVIS搭載などスペックが高いため。",
+        "featureComparison": [
+          "共通点：前後2カメラ、Gセンサー・GPS・HDR搭載。",
+          "相違点：本商品はHD画質（100万画素）だが、ZDR027は前後フルHD画質（200万画素）でSTARVISを搭載し夜間撮影に強い。"
+        ],
+        "differentiators": [
+          "ユピテル DRY-TW6000dの利点：価格が抑えられており、電源直結コードが標準で付属する。",
+          "コムテック ZDR027の利点：フルHD画質とSTARVIS搭載で、より高精細で夜間でも明るい映像を記録できる。"
+        ]
+      },
+      {
+        "name": "ユピテル WDT510c",
+        "asin": "B08F52DWJX",
+        "priceComparison": "同価格帯。",
+        "featureComparison": [
+          "共通点：ユピテル製の前後2カメラ、GPS・Gセンサー・HDR搭載。",
+          "相違点：WDT510cはフロント200万画素(Full HD)、リア100万画素。本商品(DRY-TW6000d)は前後ともHD画質だが、電源直結コードが付属する。"
+        ],
+        "differentiators": [
+          "ユピテル DRY-TW6000dの利点：電源直結コードが標準付属しており、配線をすっきり隠したい場合に適している。",
+          "ユピテル WDT510cの利点：フロントカメラがフルHD（200万画素）で、前方の記録をより鮮明に残せる。"
+        ]
+      },
+      {
+        "name": "コムテック ZDR043",
+        "asin": "B0CK4RLC3J",
+        "priceComparison": "コムテックZDR043の方が高価。",
+        "featureComparison": [
+          "共通点：前後2カメラ、コンパクト設計、GPS・Gセンサー搭載。",
+          "相違点：ZDR043は前後フルHD(200万画素)で後続車両接近お知らせ機能など運転支援機能が豊富。"
+        ],
+        "differentiators": [
+          "ユピテル DRY-TW6000dの利点：導入コストが低く、基本的な機能（前後録画、フォーマット不要）が揃っている。",
+          "コムテック ZDR043の利点：画質が高く、あおり運転対策に有効な後続車両接近お知らせ機能などの付加価値がある。"
+        ]
+      },
+      {
+        "name": "ケンウッド DRV-MR480",
+        "asin": "B0CGL6L55W",
+        "priceComparison": "同価格帯〜やや高価。",
+        "featureComparison": [
+          "共通点：前後2カメラ、HDR搭載。",
+          "相違点：ケンウッドMR480は前後ともフルHD。本商品はHD画質だがコンパクトで電源直結コード付属。"
+        ],
+        "differentiators": [
+          "ユピテル DRY-TW6000dの利点：シガーソケットを占有しない電源直結コードが付属。",
+          "ケンウッド DRV-MR480の利点：前後フルHDで、ケンウッドならではの高画質チューニングが施されている。"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "コストを抑えて前後2カメラを取り入れたい人",
+        "SDカードのフォーマット作業を面倒に感じる人",
+        "シガーソケットを塞がずに配線を綺麗にまとめたい人"
+      ],
+      "pros": [
+        "SDカードの定期フォーマット不要",
+        "電源直結コードが標準付属",
+        "高耐久SDカード同梱ですぐに使える",
+        "コンパクトで視界の邪魔にならない"
+      ],
+      "cons": [
+        "画質がHD(100万画素)で、フルHDモデルに比べるとナンバープレートなどの認識精度で劣る可能性がある"
+      ],
+      "score": 75,
+      "scoreRationale": "[基本点: 70]\n[加点: +5] (定期フォーマット不要・高耐久SD同梱など、メンテナンスフリーで実用性が高い)\n[加点: +5] (同価格帯で電源直結コードが標準付属しており、コスパが良い)\n[減点: -5] (主流のフルHD画質ではなくHD画質である点)\n[合計: 75]"
+    },
+    "technicalSpecs": {
+      "dimensions": {
+        "height": "49mm(フロント) / 25mm(リア直径)",
+        "width": "64mm(フロント) / 58mm(リア)",
+        "depth": "29mm(フロント)"
+      },
+      "weight": "約65g(フロント) / 約21g(リア) / パッケージ総重量 約460g",
+      "resolution": "HD (100万画素)",
+      "recordingMedium": "microSDカード (16GB付属、8～128GB対応 Class10以上)",
+      "powerSupply": "DC12V (電源直結コード付属)",
+      "features": ["Gセンサー", "GPS", "HDR", "SDフォーマット不要機能"]
+    }
+  }
+}
