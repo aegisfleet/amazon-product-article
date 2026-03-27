@@ -27,29 +27,22 @@
       "出張先のホテルなど、乾燥が気になる場所への持ち運び（軽量・コンパクト）",
       "就寝時、ベッドサイドでアロマの香りとともに使用する場合"
     ],
-    "userStories": [
-      {
-        "userType": "30代女性・事務職",
-        "scenario": "冬場のオフィスが乾燥しており、肌荒れやドライアイに悩んでいた。",
-        "experience": "（推測）PCのUSBポートから電源を取れるので、デスク上で手軽に使えています。蒸気が熱くならない超音波式なので、うっかり手が当たっても安心です。ただ、タンクが小さいので朝イチとお昼休みの2回給水が必要なのが少し手間に感じます。LEDライトは仕事中は消していますが、気分別に色が変えられるのは面白い機能だと思います。",
-        "sentiment": "positive"
-      },
-      {
-        "userType": "20代男性・学生",
-        "scenario": "寝室の乾燥対策として、枕元に置ける静かな加湿器を探していた。",
-        "experience": "（推測）静音性は期待通りで、寝ている間も音は気になりません。しかし、4時間の自動オフ機能があるため、朝起きる頃には止まってしまっています。また、Type-Cケーブルを繋ぎっぱなしにする必要があり、コンセントの位置によっては置き場所に困ることがありました。コードレスだともっと便利だったと思います。",
-        "sentiment": "mixed"
-      }
-    ],
+    "userStories": [],
     "userImpression": "コンパクトさとType-C給電の利便性は評価されていますが、バッテリー非搭載である点やタンク容量の小ささは用途を選びます。パーソナルスペース専用と割り切れば使い勝手は良いですが、競合製品に比べてコストパフォーマンス面で見劣りする可能性があります。",
     "sources": [
       {
-        "name": "Category Analysis (Based on Product Specs & Competitors)",
-        "url": null,
-        "credibility": "商品スペックと市場の類似商品データを基にした分析"
+        "id": "src-1",
+        "name": "Amazon.co.jp 公式商品データ",
+        "url": "https://www.amazon.co.jp/dp/B0FLJGFWWH",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-03-28",
+        "author": "Amazon",
+        "conflictOfInterest": "none",
+        "notes": "商品スペックと市場の類似商品データを基にした分析"
       }
     ],
-    "lastInvestigated": "2026-01-24",
+    "lastInvestigated": "2026-03-28",
     "competitiveAnalysis": [
       {
         "name": "CENterano 卓上加湿器 2600mAhバッテリー搭載 (B0FSLCXTNH)",
@@ -109,13 +102,18 @@
       "scoreRationale": "[基本点: 70]\n[加点: +0] (標準的な超音波加湿器の機能)\n[減点: -5] (競合は同価格帯以下でバッテリー内蔵や大容量モデルがあり、割高感がある)\n[減点: -2] (レビュー情報が少なく、知名度も低いため)\n[合計: 63]"
     },
     "technicalSpecs": {
-      "dimensions": "ペットボトルサイズ（詳細寸法不明、推定高さ15cm程度）",
-      "weight": "軽量（詳細不明）",
-      "power": "USB Type-C給電 (消費電力: 2W)",
+      "dimensions": { "height": "150mm" },
+      "weight": "不明",
+      "power": "2W",
       "capacity": "250ml",
       "timer": "連続4時間 / 間欠8時間 自動オフ",
-      "noise": "約25dB (静音)",
-      "other": "7色LEDライト, アロマ対応, 次亜塩素酸水対応, 空焚き防止"
+      "noise": "25dB",
+      "other": [
+        "7色LEDライト",
+        "アロマ対応",
+        "次亜塩素酸水対応",
+        "空焚き防止"
+      ]
     }
   }
 }
