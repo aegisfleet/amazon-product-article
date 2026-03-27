@@ -78,7 +78,7 @@
 
         <div class="hero-price-bar">
             <div class="hero-price-main">
-                <span class="hero-price">{{- $product.price -}}</span>
+                <span class="hero-price">{{ partial "utils-price-format.html" $product.price }}</span>
                 {{- if $product.loyalty_points -}}
                 <span class="hero-points">🎁 {{- $product.loyalty_points -}}pt還元</span>
                 {{- end -}}
