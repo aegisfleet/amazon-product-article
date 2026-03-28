@@ -1,0 +1,148 @@
+{
+  "analysis": {
+    "productName": "Bloomtwin I37 ワイヤレスイヤホン",
+    "parentAsin": "B0GV7CZ9NW",
+    "productDescription": "Bluetooth 6.0を搭載し、最大60時間の再生とIPX7の防水性能を備えた完全ワイヤレスイヤホンです。",
+    "productUsage": ["音楽鑑賞", "WEB会議", "スポーツ", "通勤・通学"],
+    "positivePoints": [
+      "最新のBluetooth 6.0による低遅延と安定した接続",
+      "IPX7の防水性能により、雨天やスポーツ時でも安心して使用可能",
+      "イヤホン単体で6時間、充電ケース込みで最大60時間の長時間再生",
+      "イヤホン片側約4gと軽量で、長時間の装着でも快適"
+    ],
+    "negativePoints": [
+      "充電ケース自体は防水仕様ではないため、水濡れに注意が必要",
+      "ノイズキャンセリング機能は搭載されていない（40dBの騒音低減は物理的な遮音等に限定される）"
+    ],
+    "useCases": ["通勤時の音楽鑑賞", "ランニング中の使用", "オンライン会議での通話"],
+    "userStories": [],
+    "userImpression": "軽量で長時間再生が可能なため、日常使いからスポーツまで幅広いシーンで使いやすいという印象を受けます。最新のBluetooth規格に対応している点も魅力です。",
+    "sources": [
+      {
+        "id": "src-amazon-B0GCZ6BZW4",
+        "name": "Amazon商品ページ",
+        "url": "https://www.amazon.co.jp/dp/B0GCZ6BZW4",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-03-29",
+        "author": "Amazon",
+        "conflictOfInterest": "none",
+        "notes": "スペック、価格、機能の確認"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "最大60時間の連続再生が可能",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": ["src-amazon-B0GCZ6BZW4"],
+        "crossChecked": false,
+        "notes": "充電ケースとの併用による合計時間"
+      },
+      {
+        "claim": "IPX7の防水性能を備える",
+        "category": "durability",
+        "confidence": "high",
+        "supportingSourceIds": ["src-amazon-B0GCZ6BZW4"],
+        "crossChecked": false,
+        "notes": "イヤホン本体のみ。ケースは非防水"
+      }
+    ],
+    "lastInvestigated": "2026-03-29",
+    "competitiveAnalysis": [
+      {
+        "name": "Anker Soundcore Liberty Neo 2",
+        "asin": "B08X6ZKQ95",
+        "priceComparison": "対象商品より高価だが、Ankerという高いブランド力と専用アプリ対応によるカスタマイズ性がある。",
+        "featureComparison": [
+          "共通点：完全ワイヤレス、IPX7防水性能",
+          "相違点：AnkerはBluetooth 5.2で最大40時間再生、専用アプリに対応。対象商品はBluetooth 6.0で最大60時間再生。"
+        ],
+        "differentiators": [
+          "Bloomtwin I37 ワイヤレスイヤホンの利点：より新しいBluetooth規格（6.0）と長時間のバッテリー（最大60時間）を備えている。",
+          "Anker Soundcore Liberty Neo 2の利点：ブランドの信頼性が高く、専用アプリによるイコライザーなどのカスタマイズが可能。"
+        ]
+      },
+      {
+        "name": "Btootos A90 Pro ワイヤレスイヤホン",
+        "asin": "B0FCLXMC5F",
+        "priceComparison": "対象商品よりも安価だが、再生時間が短くBluetoothのバージョンも一世代前。",
+        "featureComparison": [
+          "共通点：完全ワイヤレス、IPX7防水性能",
+          "相違点：BtootosはBluetooth 5.4で最大40時間再生、ENC通話ノイズキャンセリング機能付き。対象商品はBluetooth 6.0で最大60時間再生。"
+        ],
+        "differentiators": [
+          "Bloomtwin I37 ワイヤレスイヤホンの利点：再生時間が長く、最新のBluetooth 6.0を搭載している点。",
+          "Btootos A90 Pro ワイヤレスイヤホンの利点：価格が抑えられており、通話ノイズキャンセリング機能が明記されている点。"
+        ]
+      },
+      {
+        "name": "Bloomtwin I37 (Whiteモデル)",
+        "asin": "B0GCZG9PQQ",
+        "priceComparison": "同製品の色違い（ホワイト）であり、価格は対象商品よりも大幅に安い場合がある。",
+        "featureComparison": [
+          "共通点：仕様は完全に同一（Bluetooth 6.0、IPX7防水、最大60時間再生）",
+          "相違点：カラーリングがホワイトである点と、販売価格が異なる。"
+        ],
+        "differentiators": [
+          "Bloomtwin I37 ワイヤレスイヤホンの利点：ブラックカラーを好むユーザーに適している。",
+          "Bloomtwin I37 (Whiteモデル)の利点：機能が同じでありながら、安価に入手できる可能性がある。"
+        ]
+      },
+      {
+        "name": "Bloomtwin I37 (002 Whiteモデル)",
+        "asin": "B0FZGF5ZHV",
+        "priceComparison": "同製品のバリエーションであり、対象商品より安価に販売されている。",
+        "featureComparison": [
+          "共通点：基本仕様は同一（Bluetooth 6.0、IPX7防水、最大60時間再生）",
+          "相違点：カラーバリエーションが異なる点と販売価格。"
+        ],
+        "differentiators": [
+          "Bloomtwin I37 ワイヤレスイヤホンの利点：ブラックカラーを選択したい場合。",
+          "Bloomtwin I37 (002 Whiteモデル)の利点：ホワイト系のカラーをより安く購入できる。"
+        ]
+      },
+      {
+        "name": "Bloomtwin I37 (Light Creamモデル)",
+        "asin": "B0F9Z4SCPN",
+        "priceComparison": "同製品の別カラー（ライトクリーム）であり、価格が対象商品より安い。",
+        "featureComparison": [
+          "共通点：基本スペック（Bluetooth 6.0、最大60時間再生）は同じ",
+          "相違点：カラーがライトクリームであることと販売価格。"
+        ],
+        "differentiators": [
+          "Bloomtwin I37 ワイヤレスイヤホンの利点：定番のブラックカラー。",
+          "Bloomtwin I37 (Light Creamモデル)の利点：柔らかい色合いのクリーム色を安く手に入れられる。"
+        ]
+      },
+      {
+        "name": "Bloomtwin I37 (Pinkモデル)",
+        "asin": "B0GBVGRFDX",
+        "priceComparison": "同製品のピンクモデルだが、対象商品よりも高価に設定されている。",
+        "featureComparison": [
+          "共通点：機能やスペックは対象商品と全く同じ",
+          "相違点：カラーリングがピンクであり、価格が割高。"
+        ],
+        "differentiators": [
+          "Bloomtwin I37 ワイヤレスイヤホンの利点：ピンクモデルに比べて価格が適正である。",
+          "Bloomtwin I37 (Pinkモデル)の利点：ピンク色が好きなユーザーの選択肢となる。"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": ["長時間のバッテリー駆動を求める人", "スポーツやランニングで使いたい人", "手頃な価格で最新Bluetooth規格を試したい人"],
+      "pros": ["最大60時間の長寿命バッテリー", "IPX7の高い防水性能", "軽量で快適な装着感"],
+      "cons": ["ケース自体は非防水", "ブランドの知名度が低い"],
+      "score": 75,
+      "scoreRationale": "[基本点: 70]\n[加点: +5] (最新のBluetooth 6.0対応と最大60時間のバッテリー性能を評価)\n[合計: 75]"
+    },
+    "technicalSpecs": {
+      "weight": "64.8g (イヤホン片側約4g、ケース約60.8g)",
+      "battery": "最大60時間（イヤホン単体で最大6時間）",
+      "waterResistance": "IPX7 (イヤホン本体のみ)",
+      "connectivity": "Bluetooth 6.0+EDR",
+      "driver": "10mmダイナミックドライバー",
+      "other": ["自動ペアリング対応", "片耳/両耳使用可能"]
+    }
+  }
+}
