@@ -1,0 +1,128 @@
+{
+  "analysis": {
+    "productName": "Galaxy S26 Ultra 512GB",
+    "parentAsin": "B0GK9LK8Y1",
+    "productDescription": "Samsungの最新フラッグシップスマートフォン「Galaxy S26 Ultra」です。約17.5cmの大型ディスプレイ、QHD+の高解像度、5000mAhの大容量バッテリーを搭載し、最新のGalaxy AI機能に対応しています。",
+    "productUsage": ["スマートフォンのメイン機として", "写真や動画の高画質撮影", "AI機能を活用した翻訳や検索"],
+    "positivePoints": ["Galaxy AIによる先回りした機能の提供", "OSアップデート7年対応で長期間安心して使用可能", "約17.5cmの大画面かつQHD+の美しいディスプレイ", "IP68の最高クラスの防水防塵性能"],
+    "negativePoints": ["246,400円と非常に高価であるため、購入のハードルが高い", "約214gとやや重さがあるため、長時間の片手操作には不向きな場合がある"],
+    "useCases": ["旅行先での高画質な風景写真の撮影", "海外旅行や出張時のAI翻訳機能の活用", "長時間の動画視聴やゲームプレイ"],
+    "userStories": [],
+    "userImpression": "最新のAI機能と最高峰のスペックを備えており、長期間安心して使えるハイエンドスマートフォンとして期待されますが、価格の高さがネックとなります。",
+    "sources": [
+      {
+        "id": "src-amazon",
+        "name": "Amazon商品詳細",
+        "url": "https://www.amazon.co.jp/dp/B0GK9LK8Y1",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-03-28",
+        "author": "Amazon",
+        "conflictOfInterest": "possible",
+        "notes": "スペック情報、価格情報、発売日などを取得"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "OSアップデート7年対応",
+        "category": "durability",
+        "confidence": "high",
+        "supportingSourceIds": ["src-amazon"],
+        "crossChecked": false,
+        "notes": "Amazonの商品情報に記載あり"
+      },
+      {
+        "claim": "Galaxy AI対応の先回りするAIフォン",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": ["src-amazon"],
+        "crossChecked": false,
+        "notes": "Amazonの商品情報に記載あり"
+      }
+    ],
+    "lastInvestigated": "2026-03-28",
+    "competitiveAnalysis": [
+      {
+        "name": "motorola g66j 5G PANTONE",
+        "asin": "B0FDKVB871",
+        "priceComparison": "対象商品よりも大幅に安価ですが、ハイエンドなGalaxy S26 Ultraと比較すると処理性能やカメラ性能、AI機能の面で大きな差があります。",
+        "featureComparison": [
+          "共通点：5000mAhクラスの大容量バッテリー搭載、防水防塵対応、FeliCa（おサイフケータイ）対応",
+          "相違点：対象商品は約17.5cm QHD+の大画面、最高クラスの処理性能、AI機能を搭載。競合はミドルレンジクラスの性能で約17.0cm FHD+液晶、価格を重視したモデル"
+        ],
+        "differentiators": [
+          "Galaxy S26 Ultra 512GBの利点：最高峰のパフォーマンス、最新のAI機能、7年間のOSアップデートによる長期利用",
+          "motorola g66j 5G PANTONEの利点：圧倒的なコストパフォーマンス、日常利用には十分な性能"
+        ]
+      },
+      {
+        "name": "AQUOS wish5 SH-52F",
+        "asin": "B0GCCDZRSB",
+        "priceComparison": "対象商品よりも非常に安価なエントリーモデルです。スペック面では対象商品が圧倒的に上回ります。",
+        "featureComparison": [
+          "共通点：防水防塵対応、5000mAhクラスのバッテリー搭載",
+          "相違点：対象商品は最高性能とAI機能を持つハイエンドモデル。競合はMIL規格準拠の耐久性や再生プラスチックを使用し、必要最低限の機能に絞ったエントリーモデル"
+        ],
+        "differentiators": [
+          "Galaxy S26 Ultra 512GBの利点：QHD+の美しい大画面、高画質カメラ、AIによる作業効率化",
+          "AQUOS wish5 SH-52Fの利点：環境に配慮した素材、MIL規格の耐久性、初心者でも使いやすいシンプルさ"
+        ]
+      },
+      {
+        "name": "motog05",
+        "asin": "B0DYJHD1DM",
+        "priceComparison": "対象商品よりも非常に安価なエントリークラスのスマートフォンです。",
+        "featureComparison": [
+          "共通点：防水防塵対応（ただし競合はIP52）、大容量バッテリー（競合は5200mAh）",
+          "相違点：対象商品はIP68の完全防水防塵、7年のOSアップデート保証。競合はヴィーガンレザー素材を採用し、価格を極限まで抑えたモデル"
+        ],
+        "differentiators": [
+          "Galaxy S26 Ultra 512GBの利点：長期間のOSアップデート保証、IP68の防水防塵、ハイエンドならではの快適な操作性",
+          "motog05の利点：手軽に購入できる低価格、ヴィーガンレザーの質感"
+        ]
+      },
+      {
+        "name": "AQUOS sense4 SH-41A (整備済み品)",
+        "asin": "B0GK9KFRLJ",
+        "priceComparison": "対象商品は最新のハイエンドモデルであり、競合は過去のミドルレンジモデルの整備済み品であるため、価格・性能ともに比較になりません。",
+        "featureComparison": [
+          "共通点：防水防塵対応、指紋・顔認証対応",
+          "相違点：対象商品は約17.5cmの大画面と最新AI機能。競合は約14.7cmのコンパクトサイズで扱いやすさを重視"
+        ],
+        "differentiators": [
+          "Galaxy S26 Ultra 512GBの利点：最新技術のすべてが詰まったフラッグシップ体験",
+          "AQUOS sense4 SH-41A (整備済み品)の利点：圧倒的な低価格、片手で持ちやすいコンパクトサイズ"
+        ]
+      },
+      {
+        "name": "Blackview Wave9C",
+        "asin": "B0GLP6GCLW",
+        "priceComparison": "対象商品と比べて格段に安価な低価格帯スマートフォンです。",
+        "featureComparison": [
+          "共通点：5000mAhバッテリー搭載",
+          "相違点：対象商品はハイエンドスペックと高度なGalaxy AI。競合は価格を重視し、機能やスペックを最小限に抑えたモデル"
+        ],
+        "differentiators": [
+          "Galaxy S26 Ultra 512GBの利点：妥協のない最高峰の性能とAI機能、長期間の使用に耐える品質",
+          "Blackview Wave9Cの利点：極めて安価に購入できる点、ケースやTFカードが付属するコストパフォーマンス"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": ["最高峰の性能を求めるユーザー", "スマートフォンを長く（7年程度）使い続けたいユーザー", "最新のAI機能をビジネスや日常で活用したいユーザー"],
+      "pros": ["Galaxy AIによる新しいスマートフォン体験", "7年間のOSアップデート対応で長く使える", "約17.5cmの大画面と大容量バッテリー", "最高クラスのIP68防水防塵性能"],
+      "cons": ["24万円超という非常に高額な価格設定", "約214gの重量があるため、重く感じる場合がある"],
+      "score": 75,
+      "scoreRationale": "[基本点: 70]\n[加点: +10] (Galaxy AI搭載、最高峰の性能と7年間のOSアップデートによる優れた品質・デザイン)\n[減点: -5] (24万円超という非常に高額な価格設定のためコスパは減点)\n[合計: 75]"
+    },
+    "technicalSpecs": {
+      "display": "約17.5cm QHD+",
+      "weight": "約214g",
+      "battery": "5000mAh",
+      "waterproof": "IP68防水防塵",
+      "color": "ブラック",
+      "storage": "512GB",
+      "other": ["Galaxy AI対応", "SIMフリー", "FeliCa対応", "OSアップデート7年対応"]
+    }
+  }
+}
