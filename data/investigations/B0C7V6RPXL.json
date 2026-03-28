@@ -1,0 +1,185 @@
+{
+  "analysis": {
+    "productName": "HP Envy x360 2-in-1 35.5cm FHD IPS タッチスクリーン ノートパソコン",
+    "parentAsin": "B0DXN6VZMB",
+    "productDescription": "インテル第13世代Core i5-1335Uと8GBのメモリ、512GBのSSDを搭載したコンバーチブルタイプの35.5cm 2-in-1ノートパソコン。画面を360度回転させてタブレットモードやテントモードなど様々なスタイルで使用でき、FHDタッチスクリーンやバックライトキーボード、指紋リーダーといった機能も充実しています。",
+    "productUsage": [
+      "Office等の文書作成",
+      "Web閲覧・動画視聴",
+      "テレワーク・ビデオ会議",
+      "大学の授業・レポート作成"
+    ],
+    "positivePoints": [
+      "360度回転ヒンジにより、タブレットやテントモードなど様々なスタイルで使用可能",
+      "Bang & Olufsenのデュアルスピーカーと前面プライバシーカメラを搭載",
+      "急速充電（HP高速充電）に対応",
+      "約1.52kgで持ち運びにも対応できる重さ"
+    ],
+    "negativePoints": [
+      "メモリが8GBでオンボードのため、購入後のアップグレードができない",
+      "グラフィックスが内蔵のIntel Iris Xeのため、重い動画編集やゲームには不向き"
+    ],
+    "useCases": [
+      "リビングやベッドでくつろぎながらの動画視聴（テントモード）",
+      "手書きでメモを取りたい時（タブレットモード）",
+      "外出先での仕事や学習"
+    ],
+    "userStories": [],
+    "userImpression": "全体として、洗練されたデザインとコンバーチブルの利便性が高く評価されています。日常的なタスクやビジネス用途には十分な性能ですが、メモリが8GB固定である点には注意が必要だという声もあります。",
+    "sources": [
+      {
+        "id": "src-1",
+        "name": "HP ENVY x360 14 2023 レビュー / LaptopDecision",
+        "url": "https://laptopdecision.com/ja/review/hp-envy-x360-14-2023",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2023-04-01",
+        "author": "LaptopDecision",
+        "conflictOfInterest": "none",
+        "notes": "スペック、寸法、重量（1.52kg）、機能（メモリ増設不可、急速充電対応など）、長所・短所を抽出"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "重量は約1.52kgで、薄さ19.6mm",
+        "category": "durability",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "crossChecked": false,
+        "notes": "LaptopDecisionのスペックデータに基づく"
+      },
+      {
+        "claim": "RAMの増設・アップグレードは不可",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "crossChecked": false,
+        "notes": "LaptopDecisionで明記されている"
+      }
+    ],
+    "lastInvestigated": "2026-03-29",
+    "competitiveAnalysis": [
+      {
+        "name": "ASIN: B0D9Q2Y86R",
+        "asin": "B0D9Q2Y86R",
+        "priceComparison": "対象商品より高価だが、その分ディスプレイ性能や基本スペックが高い",
+        "featureComparison": [
+          "共通点：35.5cmのディスプレイサイズで、薄型軽量のモバイルノートである点",
+          "相違点：B0D9Q2Y86RはOLED（有機EL）ディスプレイを採用しており、色域が広く非常に鮮やかな表示が可能。また、通常のクラムシェル型である"
+        ],
+        "differentiators": [
+          "対象商品名の利点：画面が360度回転しタブレットとしても使える2-in-1の利便性とタッチ対応",
+          "ASIN: B0D9Q2Y86Rの利点：OLEDによる高画質と、より軽量（約1.2kg）で持ち運びに適している点"
+        ]
+      },
+      {
+        "name": "ASIN: B0BVJZ9RHD",
+        "asin": "B0BVJZ9RHD",
+        "priceComparison": "対象商品と同等かやや安価な価格帯の2-in-1モデル",
+        "featureComparison": [
+          "共通点：同じく35.5cmの2-in-1コンバーチブルモデルで、タッチスクリーンを搭載",
+          "相違点：対象商品はインテルCore i5を搭載しているのに対し、B0BVJZ9RHDはAMD Ryzenを搭載。また、デザインや素材の高級感においてHP Envyの方が上回る傾向がある"
+        ],
+        "differentiators": [
+          "対象商品名の利点：アルミボディによる高い質感と洗練されたデザイン、Thunderbolt 4対応の拡張性",
+          "ASIN: B0BVJZ9RHDの利点：コストパフォーマンスに優れ、AMD Ryzenによる高いマルチコア性能"
+        ]
+      },
+      {
+        "name": "ASIN: B09XMMWQHR",
+        "asin": "B09XMMWQHR",
+        "priceComparison": "対象商品よりやや安価で、手頃な2-in-1を求める層向け",
+        "featureComparison": [
+          "共通点：35.5cmの2-in-1コンバーチブルノートPC",
+          "相違点：B09XMMWQHRはAMD Ryzenシリーズを搭載。またディスプレイのアスペクト比が16:10（1920x1200）を採用しているモデルが多い"
+        ],
+        "differentiators": [
+          "対象商品名の利点：薄型でHP特有のスタイリッシュなデザインと、Bang & Olufsenによる高品質なオーディオ",
+          "ASIN: B09XMMWQHRの利点：16:10のディスプレイにより、縦に長く文書作成やWeb閲覧がしやすい点"
+        ]
+      },
+      {
+        "name": "ASIN: B0B1MF5YKT",
+        "asin": "B0B1MF5YKT",
+        "priceComparison": "対象商品より安価なHPの下位モデル",
+        "featureComparison": [
+          "共通点：HP製の35.5cm、タッチ対応2-in-1ノートパソコン",
+          "相違点：対象商品（Envyシリーズ）はプレミアムラインであり、Pavilion（B0B1MF5YKT）はスタンダードライン。Envyの方が素材の質感や薄さ、細部の作りに優れる"
+        ],
+        "differentiators": [
+          "対象商品名の利点：アルミユニボディによる高い剛性と高級感、より薄型のデザイン",
+          "ASIN: B0B1MF5YKTの利点：より安価にHPの2-in-1ノートPCを導入できるコストパフォーマンス"
+        ]
+      },
+      {
+        "name": "ASIN: B085B5XW5C",
+        "asin": "B085B5XW5C",
+        "priceComparison": "対象商品より安価なHPの下位モデル",
+        "featureComparison": [
+          "共通点：HP製の35.5cm、タッチ対応2-in-1コンバーチブル",
+          "相違点：対象商品は上位のEnvyシリーズで、より高級感のある素材（アルミ）と薄型設計を採用"
+        ],
+        "differentiators": [
+          "対象商品名の利点：プレミアム感のあるデザインとビルドクオリティ",
+          "ASIN: B085B5XW5Cの利点：価格が安く、手軽に2-in-1を試せる点"
+        ]
+      },
+      {
+        "name": "ASIN: B0BZZVGZ43",
+        "asin": "B0BZZVGZ43",
+        "priceComparison": "対象商品と同等かやや高価なプレミアム2-in-1",
+        "featureComparison": [
+          "共通点：35.5cmの高級志向な2-in-1ノートパソコン",
+          "相違点：B0BZZVGZ43は2.8KのOLED（有機EL）ディスプレイを搭載しており、画質が非常に高い"
+        ],
+        "differentiators": [
+          "対象商品名の利点：インテルCPUによる安定した動作と、メテオシルバーの洗練されたデザイン",
+          "ASIN: B0BZZVGZ43の利点：OLEDによる圧倒的な高画質で、動画視聴やクリエイティブな作業に最適"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "仕事とプライベートの両方でPCを活用したいビジネスパーソン",
+        "手書きメモやレポート作成など、多様な使い方を求める大学生",
+        "デザイン性や高級感を重視するユーザー"
+      ],
+      "pros": [
+        "テントモードやタブレットモードで使える2-in-1の利便性",
+        "アルミボディによる高い質感と洗練されたデザイン",
+        "指紋認証やプライバシーカメラスイッチなど充実したセキュリティ機能"
+      ],
+      "cons": [
+        "メモリが8GBで増設不可のため、重いマルチタスクには制限がある",
+        "重量が約1.52kgあり、毎日長時間持ち歩くにはやや重い"
+      ],
+      "score": 75,
+      "scoreRationale": "[基本点: 70]\n[加点: +5] (洗練されたデザインとアルミボディの高級感)\n[加点: +5] (2-in-1の利便性とタッチ対応)\n[減点: -5] (メモリが8GBで増設不可であり将来性にやや懸念があるため)\n[合計: 75]"
+    },
+    "technicalSpecs": {
+      "dimensions": {
+        "height": "19.6mm",
+        "width": "322mm",
+        "depth": "210.7mm"
+      },
+      "weight": "1.52kg",
+      "display": "35.5cm FHD (1920 x 1080) IPS タッチスクリーン",
+      "cpu": "Intel Core i5-1335U",
+      "ram": "8GB DDR4 3200MHz (オンボード、増設不可)",
+      "storage": "512GB PCIe NVMe SSD",
+      "ports": "1x USB 3.2 Type-C, 2x USB 3.0 Type-A, 1x HDMI 2.1",
+      "battery": "43Wh, 高速充電対応",
+      "other": [
+        "Wi-Fi 6E",
+        "Bluetooth 5.3",
+        "指紋リーダー",
+        "Bang & Olufsenデュアルスピーカー",
+        "前面プライバシーカメラ"
+      ]
+    }
+  }
+}
