@@ -104,11 +104,26 @@ function rerankResults(results, query) {
         return Math.exp(-ageDays / 180);
     };
 
+    const getCategoryScore = (item, query) => {
+        const itemCategories = (item.categories || []).map(c => c.toLowerCase());
+        if (itemCategories.length === 0) return 0;
+
+        const queryTerms = query.toLowerCase().trim().split(/\s+/).filter(Boolean);
+        if (queryTerms.length === 0) return 0;
+
+        // クエリ単語がカテゴリー名のいずれかと一致する度合いを算出
+        const matches = queryTerms.filter(term =>
+            itemCategories.some(cat => cat === term || cat.includes(term))
+        );
+        return matches.length / queryTerms.length;
+    };
+
     const weights = {
-        text: 0.75 - (0.3 * intentStrength),
+        category: 0.2,             // カテゴリー一致の優先度
+        text: 0.55 - (0.2 * intentStrength), // 純粋なテキスト一致
         quality: 0.15 + (0.1 * intentStrength),
-        price: 0.05 + (0.1 * intentStrength),
-        freshness: 0.05 + (0.1 * intentStrength)
+        price: 0.05 + (0.05 * intentStrength),
+        freshness: 0.05 + (0.05 * intentStrength)
     };
 
     return results
@@ -118,8 +133,10 @@ function rerankResults(results, query) {
             const qualityScore = getQualityScore(item);
             const priceScore = getPriceScore(item);
             const freshnessScore = getFreshnessScore(item);
+            const categoryScore = getCategoryScore(item, query);
 
             const rerankScore =
+                (categoryScore * weights.category) +
                 (textScore * weights.text) +
                 (qualityScore * weights.quality) +
                 (priceScore * weights.price) +
@@ -227,7 +244,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         { name: "asin", weight: 1 },
                         { name: "title", weight: 0.7 },
                         { name: "contents", weight: 0.2 },
-                        { name: "categories", weight: 0.1 },
+                        { name: "categories", weight: 1 }, // 0.1から1へ大幅強化
                         { name: "specs", weight: 0.3 }
                     ],
 
