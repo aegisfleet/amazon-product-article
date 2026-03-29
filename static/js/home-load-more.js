@@ -5,6 +5,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
     if (!loadMoreButton) return;
 
+    // Check initial state
+    const initialHiddenCards = document.querySelectorAll('.card-wrapper.card-hidden');
+    if (initialHiddenCards.length === 0) {
+        loadMoreButton.textContent = 'トップに戻る';
+        loadMoreButton.classList.add('is-back-to-top');
+    }
+
     loadMoreButton.addEventListener('click', function () {
         const hiddenCards = document.querySelectorAll('.card-wrapper.card-hidden');
 
