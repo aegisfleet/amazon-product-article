@@ -9,6 +9,7 @@
     // Category data loaded from JSON - initialized asynchronously
     let categoryGroups = {};
     let parentCategoryUrls = {};
+    let categoryIcons = {}; // NEW: Store icons for parent categories
     let categoryCounts = {}; // NEW: Store product counts for child categories
     let dataLoaded = false;
 
@@ -72,6 +73,9 @@
                             categoryCounts[child.name] = child.productCount;
                         });
                         parentCategoryUrls[group.name] = group.slug;
+                        if (group.icon) {
+                            categoryIcons[group.name] = group.icon;
+                        }
                         if (group.productCount !== undefined) {
                             categoryCounts[group.name] = group.productCount;
                         }
@@ -82,6 +86,9 @@
                 for (const [groupName, groupData] of Object.entries(data)) {
                     categoryGroups[groupName] = groupData.categories || [];
                     parentCategoryUrls[groupName] = groupData.slug;
+                    if (groupData.icon) {
+                        categoryIcons[groupName] = groupData.icon;
+                    }
                 }
             }
 
@@ -165,7 +172,8 @@
             Object.keys(groups).forEach(group => {
                 const option = document.createElement('option');
                 option.value = group;
-                option.textContent = group;
+                const icon = categoryIcons[group];
+                option.textContent = icon ? `${icon} ${group}` : group;
                 groupSelect.appendChild(option);
             });
         }
@@ -305,7 +313,8 @@
             // Create heading (display only, not a link)
             const heading = document.createElement('h3');
             heading.className = 'category-group-heading';
-            heading.textContent = groupName;
+            const icon = categoryIcons[groupName];
+            heading.textContent = icon ? `${icon} ${groupName}` : groupName;
 
             headingWrapper.appendChild(toggleIcon);
             headingWrapper.appendChild(heading);

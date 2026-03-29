@@ -1,6 +1,7 @@
 export interface CategoryGroup {
   name: string;
   slug: string;
+  icon?: string | undefined;
   description?: string | undefined;
   visible?: boolean | undefined;
   priority?: number | undefined;
