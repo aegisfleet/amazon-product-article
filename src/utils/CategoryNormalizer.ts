@@ -426,6 +426,7 @@ export class CategoryNormalizer {
       'new release non manga',
       'ブランド別インテリアコーディネート',
       'piano・keyboard｜headphones',
+      'ピアノ・キーボード｜ヘッドホン',
       'プライム感謝祭ポイントアップ商品',
       'home&kitchen用品ポイントアップ+1% 1',
       'ホーム&キッチン用品ポイントアップ+1% 1',
