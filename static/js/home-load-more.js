@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function () {
     const loadMoreButton = document.getElementById('load-more-button');
-    const loadMoreContainer = document.getElementById('load-more-container');
+
     const itemsPerBatch = 15;
 
     if (!loadMoreButton) return;
