@@ -112,6 +112,8 @@ describe('CategoryNormalizer', () => {
         'Babel 1-1',
         'DIY & Garden - AmazonGlobal Free Shipping',
         'Smart Home Store - AmazonGlobal Free Shipping',
+        'ピアノ・キーボード｜ヘッドホン',
+        'piano・keyboard｜headphones',
       ];
       invalidNames.forEach((name) => {
         expect(CategoryNormalizer.isValidCategoryName(name)).toBe(false);
