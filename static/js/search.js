@@ -459,7 +459,7 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         });
 
-        // 手動スクロール時: 100px以上で検索結果をフェードアウト
+        // 手動スクロール時: 500px以上または検索ボックスが画面外（上部）に完全に消えたら検索結果をフェードアウト
         globalThis.addEventListener('scroll', () => {
             if (isProgramScrolling) return;
 
@@ -468,7 +468,10 @@ document.addEventListener('DOMContentLoaded', function () {
                 return;
             }
 
-            if (Math.abs(globalThis.scrollY - lastScrollY) > 100) {
+            const scrollDistance = Math.abs(globalThis.scrollY - lastScrollY);
+
+            // しきい値を500pxに緩和。検索ボックスが画面上部に隠れても、500pxまでは維持する。
+            if (scrollDistance > 500) {
                 searchResults.classList.add('fade-out');
                 clearTimeout(fadeOutTimeout);
                 fadeOutTimeout = setTimeout(() => {
