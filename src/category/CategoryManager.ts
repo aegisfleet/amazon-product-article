@@ -91,10 +91,11 @@ export class CategoryManager {
         if (typeof legacyGroup.slug === 'string' && Array.isArray(legacyGroup.categories)) {
           this.addGroup(
             {
-              name: key,
-              slug: legacyGroup.slug,
-              children: legacyGroup.categories,
-            },
+                name: key,
+                slug: legacyGroup.slug,
+                icon: legacyGroup.icon as string | undefined,
+                children: legacyGroup.categories,
+              },
             seenNames,
             seenSlugs,
           );
@@ -133,6 +134,7 @@ export class CategoryManager {
       const enhancedGroup: EnhancedCategoryGroup = {
         name: group.name,
         slug: group.slug,
+        icon: group.icon,
         visible,
         priority,
         children: group.children,
@@ -170,6 +172,7 @@ export class CategoryManager {
       outputData[group.name] = {
         slug: group.slug,
         categories: group.children,
+        ...(group.icon !== undefined && { icon: group.icon }),
         ...(group.description !== undefined && { description: group.description }),
         ...(group.visible !== undefined && { visible: group.visible }),
         ...(group.priority !== undefined && { priority: group.priority }),
@@ -189,6 +192,7 @@ export class CategoryManager {
         {
           name: string;
           slug: string;
+          icon?: string | undefined;
           description?: string;
           productCount: number;
           isVisible: boolean;
@@ -200,6 +204,7 @@ export class CategoryManager {
       yamlData.parents[group.name] = {
         name: group.name,
         slug: group.slug,
+        icon: group.icon,
         ...(group.description !== undefined && { description: group.description }),
         productCount: group.productCount,
         isVisible: group.isVisible,
