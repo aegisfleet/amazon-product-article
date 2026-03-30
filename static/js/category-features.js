@@ -367,7 +367,7 @@ function initCategoryFeatures() {
     function sortCards(sortValue) {
         const cards = Array.from(productGrid.querySelectorAll('.card'));
 
-        const sortedCards = cards.sort((a, b) => {
+        cards.sort((a, b) => {
             let valA, valB;
 
             switch (sortValue) {
@@ -393,7 +393,7 @@ function initCategoryFeatures() {
 
         // Re-append sorted cards
         productGrid.innerHTML = '';
-        sortedCards.forEach(card => productGrid.appendChild(card));
+        cards.forEach(card => productGrid.appendChild(card));
     }
 
     /**
