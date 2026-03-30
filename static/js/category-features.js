@@ -14,9 +14,9 @@ function matchesKeyword(card, query) {
  * Check if a card matches the selected categories
  */
 function matchesCategory(card, selectedCategories) {
-    if (selectedCategories.length === 0) return true;
+    if (selectedCategories.size === 0) return true;
     const cardCategories = (card.dataset.categories || '').split(',');
-    return cardCategories.some(cat => selectedCategories.includes(cat.trim()));
+    return cardCategories.some(cat => selectedCategories.has(cat.trim()));
 }
 
 /**
@@ -121,9 +121,9 @@ function updateRadioState(params, paramName, radioGroupName) {
  */
 function updateCheckboxState(params, paramName, container, checkboxName) {
     if (params.has(paramName) && container) {
-        const values = params.get(paramName).split(',');
+        const values = new Set(params.get(paramName).split(','));
         container.querySelectorAll(`input[name="${checkboxName}"]`).forEach(cb => {
-            cb.checked = values.includes(cb.value);
+            cb.checked = values.has(cb.value);
         });
     }
 }
@@ -134,9 +134,9 @@ function updateCheckboxState(params, paramName, container, checkboxName) {
 function updateFilterSectionState(params, filterSection, filterToggle) {
     if (params.toString()) {
         const hasOtherFilters = params.has('price') || params.has('score') || params.has('categories') || params.has('specs') || params.has('preset');
-        if (hasOtherFilters && filterSection && filterSection.classList.contains('collapsed')) {
+        if (hasOtherFilters && filterSection?.classList.contains('collapsed')) {
             filterSection.classList.remove('collapsed');
-            if (filterToggle) filterToggle.setAttribute('aria-expanded', 'true');
+            filterToggle?.setAttribute('aria-expanded', 'true');
         }
     }
 }
@@ -343,10 +343,10 @@ function initCategoryFeatures() {
      */
     function filterCards() {
         const filters = {
-            selectedCategories: getSelectedCategories(),
+            selectedCategories: new Set(getSelectedCategories()),
             priceRange: getSelectedPriceRange(),
             scoreRange: getScoreRange(),
-            searchQuery: keywordSearch ? keywordSearch.value.trim().toLowerCase() : '',
+            searchQuery: keywordSearch?.value.trim().toLowerCase() || '',
             requiredSpecs: getSelectedSpecs(),
             activePreset,
             presetDefinitions
@@ -432,7 +432,7 @@ function initCategoryFeatures() {
         }
 
         // Search Query
-        if (keywordSearch && keywordSearch.value.trim()) {
+        if (keywordSearch?.value.trim()) {
             params.set('q', keywordSearch.value.trim());
         }
 
@@ -516,7 +516,7 @@ function initCategoryFeatures() {
     if (filterToggle && filterSection) {
         filterToggle.addEventListener('click', () => {
             const isCollapsed = filterSection.classList.toggle('collapsed');
-            filterToggle.setAttribute('aria-expanded', !isCollapsed);
+            filterToggle?.setAttribute('aria-expanded', !isCollapsed);
         });
     }
 
