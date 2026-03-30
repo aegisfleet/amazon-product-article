@@ -295,7 +295,11 @@ export class CategoryNormalizer {
       /^\d{2}\s*ビジネス/,
       /spring must haves/i,
       /(?:kindle|無料|[0-9０-９]+万円|円|テスト|マッサージャーほか健康家電|[>＞])/i,
-      /(?:amazon\s*global|amazonglobal|babel|コクヨ|beauty|パントリー|本日の|特選品|cml|ソニー|9999$|ポイント還元本|書籍タイトル)/i,
+      /(?:amazon\s*global|amazonglobal|babel|コクヨ|beauty|パントリー|本日の|特選品|cml|customers' most-loved|ソニー|9999$|ポイント還元本|書籍タイトル)/i,
+      // Age ranges and price ranges
+      /\d+[歳才]+～/,
+      /\d+(?:,\d+)?-\d+(?:,\d+)?円/,
+      /ゲージ/,
       // Machine-generated IDs (e.g. L202StorageItems02Sub, L2_02_StorageItems_02Sub)
       /l[\d\s_]+[a-z]+[\d\s_]+(?:cat|sub)/i,
       // Device and Store management pages
