@@ -42,6 +42,10 @@ describe('CategoryNormalizer', () => {
         'Home & Kitchen - AmazonGlobal Free Shipping',
         'SnS Acquisition Test HPC ASINs Low Price',
         'Toys - AmazonGlobal Free Shipping',
+        'ドラッグストア 表示されている方限定キャンペーン',
+        'テスト　半額ストア',
+        'Drugstore - AmazonGlobal free shipping',
+        'HPC_CreatorInfoHub_栄養補助食品',
         'ホーム&キッチン用品ポイントアップ+1% _1',
         'ポイントアップキャンペーン',
         '定期おトク便初回最大30%OFF',
@@ -182,6 +186,15 @@ describe('CategoryNormalizer', () => {
       const node: BrowseNode = { DisplayName: 'valid category', Id: '456' };
       const result = CategoryNormalizer.normalize(node);
       expect(result.main).toBe('valid category');
+    });
+
+    it('should normalize non-breaking spaces (NBSP) to normal spaces', () => {
+      const node: BrowseNode = {
+        displayName: 'L-シトルリン\u00a0サプリメント',
+        id: '3457016051',
+      };
+      const result = CategoryNormalizer.normalize(node);
+      expect(result.main).toBe('L-シトルリン サプリメント');
     });
   });
 });

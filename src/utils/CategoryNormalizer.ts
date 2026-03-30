@@ -307,8 +307,8 @@ export class CategoryNormalizer {
       /^hpc/i,
       /^\d{2}\s*ビジネス/,
       /spring must haves/i,
-      /(?:kindle|無料|[0-9０-９]+万円|円|テスト|マッサージャーほか健康家電|[>＞])/i,
-      /(?:amazon\s*global|amazonglobal|babel|コクヨ|beauty|パントリー|本日の|特選品|cml|customers' most-loved|ソニー|9999$|ポイント還元本|書籍タイトル)/i,
+      /(?:kindle|無料|[0-9０-９]+万円|円|テスト|マッサージャーほか健康家電|[>＞]|表示されている方限定)/i,
+      /(?:amazon\s*global|amazonglobal|babel|コクヨ|beauty|パントリー|本日の|特選品|cml|customers' most-loved|ソニー|9999$|ポイント還元本|書籍タイトル|free\s*shipping)/i,
       // Age ranges and price ranges
       /\d+[歳才]+～/,
       /\d+(?:,\d+)?-\d+(?:,\d+)?円/,
@@ -483,7 +483,10 @@ export class CategoryNormalizer {
   private static sanitizeCategoryName(name: string): string {
     // Remove internal prefixes like PJ_
     const sanitized = name.replace(/^PJ_/i, '');
-    // Remove special characters sometimes found in browse nodes
-    return sanitized.replaceAll(/[【】|()_※]/g, '').trim();
+    // Normalize spaces (including NBSP \u00a0) and remove special characters
+    return sanitized
+      .replaceAll(/[\u00a0\s]+/g, ' ')
+      .replaceAll(/[【】|()_※]/g, '')
+      .trim();
   }
 }
