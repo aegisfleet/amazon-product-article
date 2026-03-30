@@ -61,6 +61,9 @@ export class CategoryNormalizer {
     'ベビー',
     'マタニティ',
     'ビジネス',
+    'ペット',
+    '猫',
+    '犬',
   ];
 
   /**
