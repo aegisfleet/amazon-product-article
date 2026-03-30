@@ -30,65 +30,80 @@
     ],
     "userStories": [
       {
-        "userType": "20代学生",
+        "userType": "初心者・学生",
         "scenario": "初めてのヘアアイロン購入",
         "experience": "価格が手頃でデザインも可愛いため、初めてのコテとして購入しました。電源を入れてすぐに温まるので、朝の準備がとても楽になりました。友達との旅行でも、海外対応でポーチも付いているので荷物がかさばらず便利でした。",
-        "sentiment": "positive"
-      },
-      {
-        "userType": "30代会社員",
-        "scenario": "毎日のスタイリングでのリピート使用",
-        "experience": "以前のモデルが壊れたため、同じSALONIAの商品をリピート購入しました。コストパフォーマンスが良く、万が一壊れても気軽に買い替えられるのが魅力です。ただ、巻いている最中に温度ボタンを押してしまうことがあり、その点だけが少し不満です。",
-        "sentiment": "mixed"
+        "sentiment": "positive",
+        "supportingSourceIds": [
+          "src-select-ec"
+        ]
       }
     ],
     "userImpression": "多くのユーザーが、手頃な価格とシンプルで直感的に使えるデザインを高く評価しています。特にヘアアイロン初心者やコストを重視する学生からの支持が厚いです。一方で、ボタン配置による誤操作のしやすさや、長期的な耐久性については価格相応という意見も見られ、改善を望む声も一部存在します。",
     "sources": [
       {
-        "name": "楽天市場 みんなのレビュー・口コミ",
-        "url": "https://review.rakuten.co.jp/review/item/1/262435_10000181/1.1/",
-        "credibility": "High"
-      },
-      {
+        "id": "src-select-ec",
         "name": "Select EC: サロニアカールヘアアイロンの良い口コミ・悪い口コミ！太さによる違いもある？",
         "url": "https://acrove.co.jp/select_ec/5278/",
-        "credibility": "Medium"
+        "tier": "medium",
+        "evidenceType": "secondary",
+        "publishedAt": "2024-09-01",
+        "author": "Select EC編集者 mai",
+        "conflictOfInterest": "unknown",
+        "notes": "手頃な価格、立ち上がりの速さ（約30秒）、季節限定色の可愛さ、専用ポーチの付属、誤操作への言及など"
       },
       {
+        "id": "src-hair-children",
         "name": "hair-children.jp: サロニアのコテは悪い？口コミに対しての感想を実際に使ってみた美容師が解説",
         "url": "https://hair-children.jp/salonia-curl/",
-        "credibility": "High"
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2023-03-01",
+        "author": "美容師 大脇貴志",
+        "conflictOfInterest": "none",
+        "notes": "約3000円という価格以上の機能。コスパ最強。"
       }
     ],
-    "lastInvestigated": "2026-01-25",
+    "lastInvestigated": "2026-03-31",
     "competitiveAnalysis": [
       {
-        "name": "Keitenn セラミックカールアイロン 32mm",
-        "asin": "B0DTTR5G38",
-        "priceComparison": "SALONIAとほぼ同価格帯（約3,680円）。",
-        "featureComparison": ["マイナスイオン搭載", "4段階の温度調整（SALONIAは5℃刻みで調整可能）"],
-        "differentiators": ["初心者向けを強調したシンプルな機能性", "ピンク色のカラーデザイン"]
+        "name": "SALONIA サロニア 2WAY ストレート カール ヘアアイロンコテ 32mm SL-002ABE ベージュ",
+        "asin": "B0FT1BTBMY",
+        "priceComparison": "同じ価格帯での機能違い",
+        "featureComparison": [
+          "共通点：同じブランドの32mm、同一価格帯、海外対応。",
+          "相違点：対象商品はカール専用だが、こちらはストレートとカールの2WAY仕様。"
+        ],
+        "differentiators": [
+          "SALONIA セラミック カール ヘアアイロン 32mmの利点：カールに特化しているため、巻き髪スタイルをより簡単かつきれいに仕上げやすい。",
+          "SALONIA 2WAY ストレート カールの利点：1台でストレートとカールの両方を楽しめるため、収納スペースを節約したい方に適している。"
+        ]
       },
       {
-        "name": "mod's hair スタイリッシュ マイナスイオン2WAYアイロン 32mm",
-        "asin": "B0F3NT47MM",
-        "priceComparison": "SALONIAより1,000円以上高価（約4,950円）。",
-        "featureComparison": ["ストレートとカールの両方が使える2WAY仕様", "こちらも海外対応"],
-        "differentiators": ["1台で2役をこなせる利便性", "コンパクトな設計"]
+        "name": "クレイツ ヘアアイロン イオンカール プロ 32mm C73310 SR-32 シルバー",
+        "asin": "B002YLTHDE",
+        "priceComparison": "対象商品よりも高価",
+        "featureComparison": [
+          "共通点：32mmのカールアイロン。",
+          "相違点：対象商品はエントリー向けで安価だが、クレイツはプロ向けで高い機能性と耐久性を備える。"
+        ],
+        "differentiators": [
+          "SALONIA セラミック カール ヘアアイロン 32mmの利点：圧倒的に安価で、初心者が手軽に試せる。",
+          "クレイツ イオンカール プロ 32mmの利点：サロンでも使われる品質で、髪へのダメージを抑えつつ長期間安定して使える。"
+        ]
       },
       {
-        "name": "クレイツ イオンカール プロ SR-32mm",
-        "asin": "B0FD8RXXRS",
-        "priceComparison": "SALONIAの約2.5〜3倍の価格（約10,000円）。プロ・ハイアマチュア向け。",
-        "featureComparison": ["髪滑りが非常に良い「クレイツイオンゴールド」加工", "髪のダメージを抑える機能に優れる"],
-        "differentiators": ["美容師も使用するプロ仕様の品質と耐久性", "仕上がりの質感や髪への優しさ"]
-      },
-      {
-        "name": "ReFa カールアイロン プロ 32mm",
-        "asin": "B0CP6XTFL5",
-        "priceComparison": "SALONIAの6倍以上の価格（約25,000円）。高級美容家電。",
-        "featureComparison": ["水・熱・圧のダメージを抑える「カーボンレイヤープレート」", "髪の水分を保持し、しっとりとした仕上がりになる"],
-        "differentiators": ["独自のプレート技術による圧倒的なダメージレス性能", "ブランドイメージと高級感"]
+        "name": "ヴィダル サスーン カール ヘアアイロン 32mm VSI-3214/KJ",
+        "asin": "B0DKSKFLQH",
+        "priceComparison": "対象商品よりも安価",
+        "featureComparison": [
+          "共通点：32mm、海外対応、セラミックコーティング。",
+          "相違点：対象商品は100℃～210℃まで5℃刻みの細かい温度調整が可能だが、ヴィダルサスーンは4段階の温度調節。"
+        ],
+        "differentiators": [
+          "SALONIA セラミック カール ヘアアイロン 32mmの利点：細かい温度設定ができ、髪質に合わせたスタイリングが可能。",
+          "ヴィダル サスーン カール ヘアアイロン 32mmの利点：より安価であり、予算を極力抑えたい場合に適している。"
+        ]
       }
     ],
     "recommendation": {
@@ -108,16 +123,28 @@
         "ダメージレス性能は高級機に劣るため、毎日のハードな使用にはヘアケアとの併用が必要"
       ],
       "score": 85,
-      "scoreRationale": "[基本点: 70]\n[コストパフォーマンス: +15] (3,000円台でこの性能とデザインは市場で圧倒的)\n[性能・機能: +5] (立ち上がりの速さと細かい温度設定が実用的)\n[ユーザー満足度: +5] (長年のベストセラーであり、多くのユーザーに支持されている)\n[品質・デザイン: -0] (価格なりだが、シンプルで悪くない)\n[減点: -10] (ボタン配置による誤操作のしやすさと、耐久性の不安)\n[合計: 85]"
+      "scoreRationale": "[基本点: 70]\n[加点: +15] (3,000円台という手頃な価格帯での高いコストパフォーマンス)\n[加点: +5] (立ち上がりの速さや細かい温度設定など、実用的な機能性)\n[加点: +5] (美容師や多くのユーザーから支持されている高い満足度)\n[減点: -10] (ボタン配置による誤操作のしやすさや、耐久性に関する懸念)\n[合計: 85]"
     },
     "technicalSpecs": {
-      "dimensions": { "width": "356mm", "depth": "39mm", "height": "71mm", "weight": "約370g" },
-      "power": { "voltage": "AC100V-240V", "consumption": "50W (50/60Hz)" },
+      "dimensions": {
+        "width": "120mm",
+        "height": "120mm",
+        "depth": "350mm"
+      },
+      "power": {
+        "voltage": "AC100V-240V",
+        "consumption": "50W (50/60Hz)"
+      },
       "temperature": "100℃～210℃ (5℃刻み調整)",
       "cordLength": "約1.5m (360度回転)",
       "barrelSize": "32mm",
       "coating": "セラミックコーティング",
-      "other": ["オートパワーOFF機能 (約30分後)", "専用耐熱ポーチ付属", "スタンド付き"]
+      "other": [
+        "オートパワーOFF機能 (約30分後)",
+        "専用耐熱ポーチ付属",
+        "スタンド付き"
+      ],
+      "weight": "370g"
     }
   }
 }
