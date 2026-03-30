@@ -24,7 +24,10 @@ export class CategoryNormalizer {
     let currentNode: BrowseNode | undefined = node;
 
     while (currentNode) {
-      const namesToCheck = [currentNode.displayName || currentNode.DisplayName, currentNode.contextFreeName].filter(
+      const displayName = currentNode.displayName || currentNode.DisplayName;
+      const contextFreeName = currentNode.contextFreeName;
+      
+      const namesToCheck = [displayName, contextFreeName].filter(
         (n): n is string => !!n,
       );
 
@@ -61,6 +64,11 @@ export class CategoryNormalizer {
         '収納',
         'チャイルドシート',
         'ジュニアシート',
+        'child seat',
+        'junior seat',
+        'wireless headphones',
+        'wireless headset',
+        'ワイヤレスヘッドホン',
         'ベビーカー',
         '抱っこ紐',
         'おむつ',
@@ -446,6 +454,12 @@ export class CategoryNormalizer {
       'ベビー・幼児用おもちゃ',
       'ベビー家具・収納',
       'ネスレ日本',
+      'customers\' most-loved',
+      'best sellers',
+      'amazon.co.jp ranking',
+      'kindle store',
+      'coupons',
+      'trials',
     ];
 
     if (blacklist.includes(name)) {
