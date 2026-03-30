@@ -10,21 +10,6 @@ export interface NormalizedCategory {
 }
 
 export class CategoryNormalizer {
-  private static readonly preferredKeywords = [
-    'スマートフォン', 'スマホ', 'タブレット', 'ノートパソコン', 'PC', 'ゲーミングPC', 
-    'ディスプレー', 'モニター', 'キーボード', 'マウス', 'イヤホン', 'ヘッドホン', 
-    'スピーカー', 'カメラ', 'レンズ', 'プロジェクター', 'テレビ', '冷蔵庫', '洗濯機',
-    '炊飯器', '掃除機', '電子レンジ', 'エアコン', '健康食品', 'サプリメント', '補助食品', 'サプリ',
-    'ボードゲーム', 'アナログゲーム', 'カードゲーム', 'おもちゃ', 'ホビー', 'フィギュア', 
-    'プラモデル', '画材', '文房具', '文具', '絵具', 'オフィス用品', '収納',
-    'チャイルドシート', 'ジュニアシート', 'ベビーカー', '抱っこ紐', 'おむつ', '紙おむつ',
-    'ベビーおむつ', 'ゲーミングチェア', 'デスクチェア', 'パソコンチェア', 'オフィスチェア',
-    'ワークチェア', 'Kindle', 'Fire', 'Echo', 'Alexa', 'Ring', 'Amazonデバイス',
-    '本', '書籍', 'コントローラー', 'ヘッドセット', '替えブラシ', 'マッサージ機',
-    '健康家電', 'ロボット', 'ガンダム', '美顔器', '美容家電', 'ブロック', 'レゴ',
-    'Lego', 'ベビー', 'マタニティ', 'ビジネス'
-  ];
-
   /**
    * Normalize a BrowseNode into a category
    * Policy: Use the Amazon category as is, but filter out inappropriate ones.
@@ -34,78 +19,119 @@ export class CategoryNormalizer {
       return { main: 'その他', sub: 'Unknown', nameCount: 0, score: -1 };
     }
 
+    // Collect all valid display names up the tree
     const validNames: string[] = [];
     let currentNode: BrowseNode | undefined = node;
 
     while (currentNode) {
-      const name = CategoryNormalizer.getValidNameFromNode(currentNode);
-      if (name) {
-        validNames.push(name);
+      const cfn = currentNode.contextFreeName;
+      const dn = currentNode.displayName || currentNode.DisplayName;
+      
+      const validCFN = cfn && CategoryNormalizer.isValidCategoryName(cfn) ? 
+        CategoryNormalizer.sanitizeCategoryName(cfn) : null;
+      const validDN = dn && CategoryNormalizer.isValidCategoryName(dn) ? 
+        CategoryNormalizer.sanitizeCategoryName(dn) : null;
+
+      if (validCFN && validDN) {
+        // If both are valid, pick the better one based on:
+        // 1. Specificity (length) if one contains the other
+        // 2. Language (prefer Japanese if available)
+        // 3. Default Policy (prefer contextFreeName)
+        const lowerCFN = validCFN.toLowerCase();
+        const lowerDN = validDN.toLowerCase();
+        
+        if (lowerDN.includes(lowerCFN) && validDN.length > validCFN.length) {
+          validNames.push(validDN);
+        } else if (lowerCFN.includes(lowerDN) && validCFN.length > validDN.length) {
+          validNames.push(validCFN);
+        } else if (/[ぁ-んァ-ヶー一-龠]/.test(validDN) && !/[ぁ-んァ-ヶー一-龠]/.test(validCFN)) {
+          validNames.push(validDN);
+        } else {
+          validNames.push(validCFN);
+        }
+      } else if (validDN) {
+        validNames.push(validDN);
+      } else if (validCFN) {
+        validNames.push(validCFN);
       }
+
       currentNode = currentNode.ancestor || currentNode.Ancestor;
     }
 
     if (validNames.length > 0) {
-      return {
-        main: validNames[0] ?? 'Unknown',
-        sub: validNames[1] ?? '',
-        nameCount: validNames.length,
-        score: CategoryNormalizer.calculateScore(validNames),
-      };
+      // Updated logic: Main is Specific, Sub is Parent
+      // validNames is collected from leaf up, so [leaf, parent, grandparent, ...]
+      const main = validNames[0] ?? 'Unknown';
+      const sub = validNames[1] ?? '';
+
+      // Calculate score based on preferred keywords across all valid hierarchy names
+      let score = 0;
+      const preferredKeywords = [
+        'ボードゲーム',
+        'アナログゲーム',
+        'カードゲーム',
+        'おもちゃ',
+        'ホビー',
+        'フィギュア',
+        'プラモデル',
+        '画材',
+        '文房具',
+        '文具',
+        '絵具',
+        'オフィス用品',
+        '収納',
+        'チャイルドシート',
+        'ジュニアシート',
+        'ベビーカー',
+        '抱っこ紐',
+        'おむつ',
+        '紙おむつ',
+        'ベビーおむつ',
+        'ゲーミングチェア',
+        'デスクチェア',
+        'パソコンチェア',
+        'オフィスチェア',
+        'ワークチェア',
+        'Kindle',
+        'Fire',
+        'Echo',
+        'Alexa',
+        'Ring',
+        'Amazonデバイス',
+        '本',
+        '書籍',
+        'コントローラー',
+        'ヘッドセット',
+        'マウス',
+        'キーボード',
+        '替えブラシ',
+        'マッサージ機',
+        '健康家電',
+        'ロボット',
+        'ガンダム',
+        '美顔器',
+        '美容家電',
+        'ブロック',
+        'レゴ',
+        'Lego',
+        'ベビー',
+        'マタニティ',
+        'ビジネス',
+      ];
+
+      // Check all valid names in the hierarchy for preferred keywords
+      const hasPreferredKeyword = validNames.some((name) =>
+        preferredKeywords.some((keyword) => name.toLowerCase().includes(keyword.toLowerCase())),
+      );
+
+      if (hasPreferredKeyword) {
+        score = 10;
+      }
+
+      return { main: main, sub: sub, nameCount: validNames.length, score };
     }
 
-    return CategoryNormalizer.getFallbackCategory(node);
-  }
-
-  /**
-   * Extract a single valid name from a node, prioritizing better variants
-   */
-  private static getValidNameFromNode(node: BrowseNode): string | null {
-    const cfn = node.contextFreeName;
-    const dn = node.displayName || node.DisplayName;
-    
-    const vCFN = cfn && CategoryNormalizer.isValidCategoryName(cfn) ? 
-      CategoryNormalizer.sanitizeCategoryName(cfn) : null;
-    const vDN = dn && CategoryNormalizer.isValidCategoryName(dn) ? 
-      CategoryNormalizer.sanitizeCategoryName(dn) : null;
-
-    if (!vCFN || !vDN) {
-      return vDN || vCFN;
-    }
-
-    // If both exist, choose the better one
-    const lowerCFN = vCFN.toLowerCase();
-    const lowerDN = vDN.toLowerCase();
-    
-    // 1. More specific name (contains the other but is longer)
-    if (lowerDN.includes(lowerCFN) && vDN.length > vCFN.length) return vDN;
-    if (lowerCFN.includes(lowerDN) && vCFN.length > vDN.length) return vCFN;
-    
-    // 2. Prefer Japanese (Multibyte) over English
-    const hasJpDN = /[ぁ-んァ-ヶー一-龠]/.test(vDN);
-    const hasJpCFN = /[ぁ-んァ-ヶー一-龠]/.test(vCFN);
-    if (hasJpDN && !hasJpCFN) return vDN;
-    
-    // Default to CFN as it's usually cleaner
-    return vCFN;
-  }
-
-  /**
-   * Calculate score based on preferred keywords
-   */
-  private static calculateScore(validNames: string[]): number {
-    const hasPreferredKeyword = validNames.some((name) =>
-      CategoryNormalizer.preferredKeywords.some((keyword) => 
-        name.toLowerCase().includes(keyword.toLowerCase())
-      )
-    );
-    return hasPreferredKeyword ? 10 : 0;
-  }
-
-  /**
-   * Fallback logic when no valid category is found in hierarchy
-   */
-  private static getFallbackCategory(node: BrowseNode): NormalizedCategory {
+    // If no valid category found in the tree, fallback to Other
     const fallbackName = node.displayName || node.DisplayName || 'Unknown';
     const subName = CategoryNormalizer.isValidCategoryName(fallbackName)
       ? CategoryNormalizer.sanitizeCategoryName(fallbackName)
@@ -134,12 +160,15 @@ export class CategoryNormalizer {
       const normB = CategoryNormalizer.normalize(b);
 
       // Priority Policy: Depth (Specificity) > Score (Domain preference) > SalesRank
+      // 1. Depth (Specificity): Prefer most specific leaf categories
       if (normB.nameCount !== normA.nameCount) {
         return normB.nameCount - normA.nameCount;
       }
+      // 2. Score (Domain preference)
       if (normB.score !== normA.score) {
         return normB.score - normA.score;
       }
+      // 3. Sales Rank
       const rankA = a.salesRank ?? a.SalesRank ?? Number.MAX_SAFE_INTEGER;
       const rankB = b.salesRank ?? b.SalesRank ?? Number.MAX_SAFE_INTEGER;
       return rankA - rankB;
@@ -201,8 +230,8 @@ export class CategoryNormalizer {
   private static getComparisonName(name: string): string {
     return name
       .toLowerCase()
-      .replaceAll(/[＿_]/g, ' ')
-      .replaceAll(/\s+/g, ' ')
+      .replaceAll(/[＿_]/g, ' ') // アンダースコアをスペースに
+      .replaceAll(/\s+/g, ' ') // 連続スペースを1つに
       .trim();
   }
 
@@ -239,7 +268,7 @@ export class CategoryNormalizer {
       /ポイントアップ/,
       /^・.*・$/,
       /non\s*manga/i,
-      /kos_/i,
+      /^kos_/i,
       /winter favorites/i,
       /高評価ブランド/,
       /今旬/,
@@ -258,12 +287,15 @@ export class CategoryNormalizer {
       /l\d+.*cat$/i,
       /^all /i,
       /^prime /i,
+      /[【】|()※]/,
       /^家電$/,
       /^アクセサリ$/,
       /^アクセサリー$/,
       /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}/i,
-      /[^[]]{1,200} \[\d+\]/,
+      // Block "Name [ID]" pattern (e.g. "家電 [124048011]")
+      /[^[\]]{1,200} \[\d+\]/,
       /arborist merchandising root/i,
+      // Generic "Store" pages
       /(?:ストア|store)(?:\s*[(（].*[)）])?$/i,
       /ブラックフライデー/i,
       /文房具・オフィス用品ヤスいいね対象/,
@@ -275,14 +307,19 @@ export class CategoryNormalizer {
       /^hpc/i,
       /^\d{2}\s*ビジネス/,
       /spring must haves/i,
-      /(?:kindle|無料|[0-9０-９]+万円|円|テスト|マッサージャーほか健康家電)/i,
+      /(?:kindle|無料|[0-9０-９]+万円|円|テスト|マッサージャーほか健康家電|[>＞])/i,
       /(?:amazon\s*global|amazonglobal|babel|コクヨ|beauty|パントリー|本日の|特選品|cml|customers' most-loved|ソニー|9999$|ポイント還元本|書籍タイトル)/i,
+      // Age ranges and price ranges
       /\d+[歳才]+～/,
       /\d+(?:,\d+)?-\d+(?:,\d+)?円/,
       /ゲージ/,
+      // Machine-generated IDs (e.g. L202StorageItems02Sub, L2_02_StorageItems_02Sub)
       /l[\d\s_]+[a-z]+[\d\s_]+(?:cat|sub)/i,
+      // Device and Store management pages
       /(?:kindle|fire|echo|alexa|amazon|ring).*(?:一覧|ページ|ストア|store|popup|体験|イベント)/i,
+      // Brand-specific promotion/coordinated pages
       /(?:sony|ソニー|panasonic|パナソニック|logicool|ロジクール|elecom|エレコム|iris|アイリス|brother|ブラザー|nestle|ネスレ).*(?:特集|一覧|プロモーション|キャンペーン|限定|コーディネート)/i,
+      /primeday|black\s*friday|ブラックフライデー|新生活|入園入学|父の日|母の日/i,
     ];
 
     if (invalidPatterns.some((pattern) => pattern.test(name))) {
@@ -295,22 +332,145 @@ export class CategoryNormalizer {
       return false;
     }
 
-    // 4. Blacklist
+    // 4. Blacklist (Full Match after normalization)
     const blacklist = [
-      'ドラッグストア', 'ビューティー', 'パソコン・周辺機器', '大型家電', '家電＆カメラ',
-      'ホーム＆キッチン', 'DIY・工具・ガーデン', 'スポーツ＆アウトドア', 'おもちゃ', 'ホビー',
-      'ベビー＆マタニティ', 'ペット用品', 'キッチン用品', '食器・カトラリー', '調理・製菓道具',
-      '弁当箱・水筒', 'キッチン用品・食器', 'バス・トイレ・洗面用品', 'タオル',
-      'ラグ・カーペット・マット', 'カーテン・ブラインド', 'クッション・座布団', '寝具',
-      'インテリア', '生活雑貨', '防犯・防災用品', '掃除用品', '洗濯用品', '手芸・画材',
-      '文房具・オフィス用品', '楽器・音響機器', '本', '洋書', '雑誌', 'コミック',
-      'Kindle本', 'デジタルミュージック', 'ビデオ・DVD', 'TVゲーム', 'PCソフト',
-      'お酒', '飲料', '食品・飲料・お酒', '服＆ファッション小物', 'シューズ＆バッグ',
-      'ジュエリー', '時計', 'Amazonブランド', 'Amazon限定商品', 'Featured Categories',
-      'Categories', 'カテゴリー', 'カテゴリ', '定期おトク便', '対象asin', '面出し用asin',
-      'internal', 'others', 'パントリー', 'amazon global', 'amazon basics',
-      'amazon basic', 'amazon store', 'kindle本', 'ジャンル別', 'custom stores',
-      '無料本', 'キャンペーン', 'まとめ買い', '期間限定ポイント',
+      'arborist merchandising root',
+      'babel 6-2',
+      'calendar test',
+      'test',
+      'テスト',
+      '面だし用asin',
+      'hair care',
+      'pbhome&kitchen9999',
+      'panasonic-ha-hotairstylers',
+      'umall',
+      'sns acquisition test hpc asins',
+      'シャープの家電がお買い得',
+      'ジュニアシート 3歳頃から',
+      'チャイルドシート 1歳頃から',
+      'チャイルドシート 新生児から',
+      'カテゴリー別',
+      '卒園式・入学式の撮影テクニック',
+      'yobi',
+      'p&g',
+      '定期おトク便',
+      '介護用品・生理用品',
+      '花王',
+      'panasonic beauty',
+      'twinbird',
+      'panasonic ヘアケア',
+      'パナソニック ヘアケア',
+      'パナソニック ヘアードライヤー',
+      'おうちでヘアケア',
+      'アウトドア用品',
+      'スポーツ＆アウトドア',
+      'sports & outdoors',
+      'ホーム・日用品',
+      '日用品・生活必需品：おもちゃ',
+      '和書（アダルト除く）',
+      'featured categories',
+      'omron（オムロン）',
+      '電池利用商品',
+      'io data',
+      'logicool',
+      'casio',
+      'lenovo',
+      'drugstore - amazonglobal',
+      'pb_home&kitchen',
+      '新生活ギフト',
+      'ya-man',
+      'others',
+      'pb_beauty',
+      'パントリー',
+      '対象asin',
+      '面出し用asin',
+      'internal',
+      'サンワサプライ',
+      'pb_pc',
+      'ベビー＆マタニティ',
+      'ホーム＆キッチン',
+      '食品・飲料・お酒',
+      '服＆ファッション小物',
+      'beauty store',
+      'diapers',
+      'シャープ',
+      'special features stores',
+      'self service',
+      'amazon global',
+      'amazon basics',
+      'amazon basic',
+      'amazon store',
+      'kindle本',
+      'ジャンル別',
+      'custom stores',
+      'custom stores navigation',
+      '無料本',
+      'キャンペーン',
+      'まとめ買い',
+      '期間限定ポイント',
+      'h&s',
+      'panasonic-ha-',
+      'amazonベーシック',
+      'kindle popup',
+      'kindle書籍 5冊購入で15%ポイント還元',
+      'kindle電子書籍リーダー',
+      '文房具図鑑',
+      '受験対策文房具',
+      'コクヨの文房具・事務用品',
+      '美容・健康家電',
+      '理美容家電',
+      'kindle書籍',
+      'kindle unlimited',
+      'おせちhqp紐付用',
+      'amazonglobal',
+      'クリスマスギフト･コフレ',
+      '日用品・生活必需品 - ビューティー',
+      'スッキリ片づける・収納する',
+      'カー＆バイク用品',
+      '車＆バイク',
+      'kindleオーナー ライブラリー',
+      'kindle本 (電子書籍) まとめ買いキャンペーン',
+      'kindle本 ポイントアップチャンスキャンペーン',
+      'kindle本はじめての購入に使える70%offクーポン',
+      'kindle events',
+      'ポイントフェア',
+      'まとめ買い(期間限定ポイント)',
+      '冬の読書応援',
+      '秋',
+      '冬',
+      '春',
+      '夏',
+      'amazon',
+      'baby',
+      'ベビー',
+      'gt managed stores',
+      'スポーツ・アウトドア',
+      'sports - amazonglobal free shipping',
+      'babel',
+      'nonmanga_',
+      'new release non manga',
+      'ブランド別インテリアコーディネート',
+      'piano・keyboard｜headphones',
+      'ピアノ・キーボード｜ヘッドホン',
+      'プライム感謝祭ポイントアップ商品',
+      'home&kitchen用品ポイントアップ+1% 1',
+      'ホーム&キッチン用品ポイントアップ+1% 1',
+      '文具・事務用品（その他）',
+      '日本ヒルズ・コルゲート199t',
+      '新学期文具',
+      '替えブラシs',
+      '家電 本体',
+      '家電 新商品',
+      '理美容家電 新商品',
+      '理美容家電新商品特集',
+      'スキンケア他美容家電新商品',
+      '白系家電特集',
+      '母の日特集',
+      'j-pop・日本の音楽',
+      'パントリー事務用品テープ・結束具',
+      'ベビー・幼児用おもちゃ',
+      'ベビー家具・収納',
+      'ネスレ日本',
     ];
 
     if (blacklist.includes(name)) {
@@ -321,16 +481,9 @@ export class CategoryNormalizer {
   }
 
   private static sanitizeCategoryName(name: string): string {
-    let sanitized = name.replace(/^PJ_/i, '');
-    
-    // Normalize spaces (convert any whitespace to a single half-width space)
-    sanitized = sanitized.replaceAll(/\s+/g, ' ');
-
-    // Remove text inside parentheses (e.g., "(30日分)", "【限定】", etc.)
-    sanitized = sanitized.replaceAll(/[（(].*?[)）]/g, '');
-    sanitized = sanitized.replaceAll(/[【［[].*?[】］\]]/g, '');
-
-    // Remove remaining symbols and trim
-    return sanitized.replaceAll(/[【】|()（）_※]/g, '').trim();
+    // Remove internal prefixes like PJ_
+    const sanitized = name.replace(/^PJ_/i, '');
+    // Remove special characters sometimes found in browse nodes
+    return sanitized.replaceAll(/[【】|()_※]/g, '').trim();
   }
 }
