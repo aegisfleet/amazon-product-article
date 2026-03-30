@@ -1,8 +1,8 @@
 {
   "analysis": {
     "productName": "Glorlummi プロジェクター X8max",
-    "parentAsin": "B0GD7Q24G9",
-    "productDescription": "Android TVを搭載し、Wi-Fi6や自動台形補正、270°回転スタンドなどの最新機能を備えた、1080Pネイティブ解像度の家庭用小型プロジェクターです。",
+    "parentAsin": "B0GL7CVHVT",
+    "productDescription": "Android TVを搭載し、Wi-Fi6や自動台形補正、270°回転スタンドなどの機能を備えた、1080Pネイティブ解像度の家庭用小型プロジェクターです。",
     "productUsage": [
       "リビングや寝室の壁・天井に投影して、映画やアニメを大画面で楽しむ。",
       "Android TV内蔵により、スマートフォンなしでYouTubeやPrime Videoなどの動画配信サービスを直接視聴する。",
@@ -10,7 +10,7 @@
       "Bluetoothスピーカーと接続して、迫力あるサウンドでホームシアター環境を構築する。"
     ],
     "positivePoints": [
-      "【驚異的なコストパフォーマンス】約7,000円という低価格で、ネイティブ1080P解像度とAndroid OSを搭載している点は市場でもトップクラスのコスパ。",
+      "【驚異的なコストパフォーマンス】5,000円台という低価格で、ネイティブ1080P解像度とAndroid OSを搭載している。",
       "【柔軟な設置性】270°回転するスタンド一体型デザインにより、三脚不要で壁から天井まで自由に投影角度を調整できる。",
       "【単体での動作】Android TVシステムを内蔵しており、Wi-Fiに繋ぐだけで動画アプリを利用可能。外部機器を用意する必要がない。",
       "【最新の通信規格】Wi-Fi 6とBluetooth 5.4に対応しており、ワイヤレス接続の安定性と速度が期待できる。"
@@ -23,78 +23,112 @@
     ],
     "useCases": [
       "一人暮らしのワンルームで、テレビの代わりに壁一面をスクリーンにする。",
-      "寝室の天井に星空や環境映像を投影し、リラックス空間を演出する。",
-      "キャンプ場（電源サイトやポータブル電源使用）に持ち込み、テント内で映画鑑賞会を行う。",
+      "寝室の天井に映像を投影し、リラックス空間を演出する。",
       "子供部屋でアニメを流し、タブレットやスマホの画面を占有せずにエンタメを提供する。"
     ],
-    "userStories": [
-      {
-        "userType": "20代・大学生（一人暮らし）",
-        "scenario": "狭い部屋でのホームシアター化",
-        "experience": "6畳の部屋にテレビを置くと狭くなるため、このプロジェクターを購入。白い壁に投影しているが、夜に部屋を真っ暗にすると映画館のような雰囲気になる。YouTubeやPrime Videoが最初から入っているので、スマホを繋ぐ手間がないのが最高。画質もこの価格なら文句なしのレベルで、字幕もしっかり読める。ただ、ファンの音が少しするので、ヘッドホンをして視聴している。",
-        "sentiment": "positive"
-      },
-      {
-        "userType": "30代・会社員（ガジェット好き）",
-        "scenario": "寝室用サブ機として導入",
-        "experience": "リビングには本格的なプロジェクターがあるが、寝る前に少し見る用として購入。回転スタンドが非常に便利で、天井への投影が数秒でセットアップできる。明るさはスペックの数字ほどではないが、暗い寝室なら十分。Androidの挙動がたまに重くなることがあるが、再起動すれば直るレベル。価格を考えれば非常に遊べるおもちゃとして満足している。",
-        "sentiment": "mixed"
-      }
-    ],
-    "userImpression": "ユーザーは「価格以上の多機能さ」に驚きつつも、「過度な期待は禁物」と冷静に受け止めている傾向がある。特に1080Pの解像度と回転スタンドの利便性は高く評価される一方、明るさの誇張やファンの騒音、OSの挙動の怪しさについては「値段相応」と割り切られている。総じて、初めてプロジェクターを買う層や、サブ機を探している層からの支持が厚い。",
+    "userStories": [],
+    "userImpression": "ユーザーは「価格以上の多機能さ」に驚きつつも、「過度な期待は禁物」と冷静に受け止めている傾向がある。特に1080Pの解像度と回転スタンドの利便性は高く評価される一方、明るさの誇張やファンの騒音、OSの挙動については「値段相応」と割り切られている。総じて、初めてプロジェクターを買う層や、サブ機を探している層からの支持が厚い。",
     "sources": [
       {
+        "id": "src-1",
         "name": "Amazon商品ページ (B0FWKS3TH1)",
         "url": "https://www.amazon.co.jp/dp/B0FWKS3TH1",
-        "credibility": "高程度。公式スペックとユーザーレビューの参照元。"
-      },
-      {
-        "name": "PA-API Search Results",
-        "url": null,
-        "credibility": "高程度。競合商品の価格と仕様の確認に使用。"
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-03-31",
+        "author": "Amazon",
+        "conflictOfInterest": "none",
+        "notes": "公式スペックの参照元。"
       }
     ],
-    "lastInvestigated": "2026-01-25",
+    "claims": [
+      {
+        "claim": "低価格でAndroid OSを搭載し、単体で動画アプリを利用可能",
+        "category": "comparativeAdvantage",
+        "confidence": "high",
+        "supportingSourceIds": ["src-1"],
+        "crossChecked": false,
+        "notes": "商品仕様より確認"
+      }
+    ],
+    "lastInvestigated": "2026-03-31",
     "competitiveAnalysis": [
       {
-        "name": "kitley M8 projector",
-        "asin": "B0FHQ78TBK",
-        "priceComparison": "約6,999円。本商品と完全に同価格帯。",
+        "name": "Philoent HY300 ultra プロジェクター",
+        "asin": "B0F5GQLNWP",
+        "priceComparison": "本商品より約2,000円高い。同様にAndroid TVを搭載し、スタンド一体型である。",
         "featureComparison": [
-          "スタンド一体型、Android搭載、自動台形補正など、機能面でも本商品とほぼ同一。",
-          "「明るさプラス27000LM」を謳っており、スペック上のアピールポイントも類似している。"
+          "共通点：Android TV 14.0搭載、Wi-Fi6・Bluetooth 5.4対応、270°回転スタンド搭載、1080P解像度対応。",
+          "相違点：本商品の明るさ表記は30000LMに対し、Philoent HY300 ultraも30000LMを表記。Philoent HY300 ultraは388gと軽量性をアピール。"
         ],
         "differentiators": [
-          "機能や価格に差がほとんどなく、ブランド名や筐体のデザイン（色やロゴ）、その時のセール状況で選択が分かれる。",
-          "本商品は「2025アップグレード版」として30000LMを謳っており、数値上わずかに優位に見せている。"
+          "Glorlummi プロジェクター X8maxの利点：価格がより安価で手軽に導入できる点。",
+          "Philoent HY300 ultra プロジェクターの利点：388gの軽量設計で持ち運びに有利である点。"
         ]
       },
       {
-        "name": "FUNLOGY Projector",
-        "asin": "B0DLB2J7HT",
-        "priceComparison": "約8,480円。本商品より若干高い。",
+        "name": "FALIYORS PJ400 プロジェクター",
+        "asin": "B0F9L5ND7C",
+        "priceComparison": "本商品より約1,900円高いが、参考価格からの割引率が91%と異常に高く設定されている。",
         "featureComparison": [
-          "解像度は1280x720（HD）であり、本商品の1080P（FHD）より劣る。",
-          "明るさは150ANSIルーメンと、信頼できる単位で表記されている。",
-          "日本のブランドであり、日本語サポートや品質管理の面で安心感がある。"
+          "共通点：Android TV搭載、Wi-Fi6・Bluetooth 5.4対応、270°回転スタンド搭載、1080P解像度対応。",
+          "相違点：明るさ表記が本商品30000LMに対しFALIYORSは27000LM。FALIYORSはAndroid TV 13を搭載。"
         ],
         "differentiators": [
-          "スペック（解像度）では本商品が勝るが、FUNLOGYは信頼性とサポート体制で差別化している。",
-          "「失敗したくない」「サポート重視」のユーザーはFUNLOGYを選ぶ傾向がある。"
+          "Glorlummi プロジェクター X8maxの利点：価格がより安価で、不自然な割引表示がない点。",
+          "FALIYORS PJ400 プロジェクターの利点：Android TV 13であることが明記されている点。"
         ]
       },
       {
-        "name": "Anker Nebula Capsule Air",
-        "asin": "B0CXTB6CBR",
-        "priceComparison": "約39,990円。本商品の約5〜6倍の価格。",
+        "name": "Tecaki G01 プロジェクター",
+        "asin": "B0G4CWLMYS",
+        "priceComparison": "本商品の約2.6倍の価格。より高価格帯。",
         "featureComparison": [
-          "Google TVを正式搭載しており、Netflixなども公式対応で快適に動作する。",
-          "解像度は720Pだが、DLP方式を採用しており、コントラストや発色は本商品（LCD方式）より優れている可能性がある。",
-          "バッテリー内蔵で完全コードレスで使用可能。"
+          "共通点：Android TV搭載、Wi-Fi6・Bluetooth 5.4対応、270°回転スタンド搭載、1080P解像度対応。",
+          "相違点：Tecaki G01は明るさ25000LM表記。より高価格だが基本的なスペック表記は類似。"
         ],
         "differentiators": [
-          "圧倒的な価格差があるが、携帯性、画質・音質のクオリティ、ソフトウェアの完成度、ブランド力においてAnkerが圧倒的に優位。",
-          "本商品は「とにかく安く」というニーズに応える代替品としての立ち位置。"
+          "Glorlummi プロジェクター X8maxの利点：圧倒的に安価で手軽に購入できるコストパフォーマンス。",
+          "Tecaki G01 プロジェクターの利点：3年保証などサポート面をアピールしている点。"
+        ]
+      },
+      {
+        "name": "Philoent HY300 MAX プロジェクター",
+        "asin": "B0FX3QZXG3",
+        "priceComparison": "本商品の約2.4倍の価格。同系統のデザインだが取り外し可能なベースを採用。",
+        "featureComparison": [
+          "共通点：Android TV 14.0搭載、Wi-Fi6・Bluetooth 5.4対応、1080P解像度対応。",
+          "相違点：明るさ表記が1400ANSIルーメンと、ANSI規格での記載がある点。取り外し可能なベースを採用。"
+        ],
+        "differentiators": [
+          "Glorlummi プロジェクター X8maxの利点：価格が大幅に安い。",
+          "Philoent HY300 MAX プロジェクターの利点：ANSIルーメン表記による明るさの信頼性が高く、ベースが取り外し可能な点。"
+        ]
+      },
+      {
+        "name": "WANBO T2 Ultra プロジェクター",
+        "asin": "B0DTDZJBWS",
+        "priceComparison": "本商品の約4.2倍の価格。信頼できるブランドの製品。",
+        "featureComparison": [
+          "共通点：Android TV搭載、1080P解像度対応。",
+          "相違点：WANBOは500ANSIルーメンの確かな明るさ、Google Widevine DRM L1認証（Netflix等の高画質再生対応）など、スペックの信頼性が高い。"
+        ],
+        "differentiators": [
+          "Glorlummi プロジェクター X8maxの利点：圧倒的な低価格。",
+          "WANBO T2 Ultra プロジェクターの利点：Google Widevine DRM L1認証による確実な動画配信サービスの利用と、500ANSIルーメンの実用的な明るさ。"
+        ]
+      },
+      {
+        "name": "Tecaki A30 プロジェクター",
+        "asin": "B0FGCLDGHF",
+        "priceComparison": "本商品より約2,200円高い。",
+        "featureComparison": [
+          "共通点：Android TV搭載、Wi-Fi6・Bluetooth 5.4対応、270°回転スタンド搭載、1080P解像度対応。",
+          "相違点：Tecaki A30は455gの軽量化と、1.15:1の短焦点レンズ搭載をアピール。"
+        ],
+        "differentiators": [
+          "Glorlummi プロジェクター X8maxの利点：より安価であること。",
+          "Tecaki A30 プロジェクターの利点：短焦点レンズにより、より狭い部屋でも大画面を作りやすい点。"
         ]
       }
     ],
@@ -115,18 +149,18 @@
         "ファンの音が大きいため、静かなシーンでは気になる可能性がある。",
         "著作権保護された高画質コンテンツ（Netflix HDなど）が見られない場合がある。"
       ],
-      "score": 80,
-      "scoreRationale": "[基本点: 70]\n[加点: +15] (1080PネイティブかつAndroid搭載で7,000円切りは圧倒的なコストパフォーマンス)\n[加点: +5] (回転スタンドによる設置の自由度と単体運用の手軽さ)\n[減点: -5] (30000LMという誇張されたスペック表記と、実質的な明るさの不足)\n[減点: -5] (Google非認証OSの可能性によるアプリ互換性やセキュリティの懸念)\n[合計: 80]"
+      "score": 75,
+      "scoreRationale": "[基本点: 70]\n[加点: +15] (1080PネイティブかつAndroid搭載で5,000円台は圧倒的なコストパフォーマンス)\n[加点: +5] (回転スタンドによる設置の自由度と単体運用の手軽さ)\n[減点: -10] (30000LMという誇張されたスペック表記と実質的な明るさの不足)\n[減点: -5] (Google非認証OSの可能性によるアプリ互換性の懸念)\n[合計: 75]"
     },
     "technicalSpecs": {
       "dimensions": {
-        "height": "19.0cm",
-        "width": "10.0cm",
-        "depth": "10.0cm",
-        "weight": "不明（推定約0.8kg）"
+        "height": "190mm",
+        "width": "100mm",
+        "depth": "100mm"
       },
+      "weight": "不明",
       "resolution": "1920 x 1080 (Native)",
-      "brightness": "30000 LM (Claimed)",
+      "brightness": "30000 LM",
       "connectivity": [
         "Wi-Fi 6",
         "Bluetooth 5.4",
@@ -134,8 +168,8 @@
         "USB",
         "3.5mm Audio"
       ],
-      "os": "Android TV (Version unknown)",
-      "projection_size": "30-200 inches",
+      "os": "Android TV",
+      "projection_size": "76.2-508 cm",
       "speaker": "HiFi Speaker Built-in"
     }
   }
