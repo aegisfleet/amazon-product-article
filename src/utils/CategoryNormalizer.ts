@@ -24,16 +24,37 @@ export class CategoryNormalizer {
     let currentNode: BrowseNode | undefined = node;
 
     while (currentNode) {
-      const namesToCheck = [currentNode.contextFreeName, currentNode.displayName || currentNode.DisplayName].filter(
-        (n): n is string => !!n,
-      );
+      const cfn = currentNode.contextFreeName;
+      const dn = currentNode.displayName || currentNode.DisplayName;
+      
+      const validCFN = cfn && CategoryNormalizer.isValidCategoryName(cfn) ? 
+        CategoryNormalizer.sanitizeCategoryName(cfn) : null;
+      const validDN = dn && CategoryNormalizer.isValidCategoryName(dn) ? 
+        CategoryNormalizer.sanitizeCategoryName(dn) : null;
 
-      for (const name of namesToCheck) {
-        if (CategoryNormalizer.isValidCategoryName(name)) {
-          validNames.push(CategoryNormalizer.sanitizeCategoryName(name));
-          break; // Stop at first valid name for this node
+      if (validCFN && validDN) {
+        // If both are valid, pick the better one based on:
+        // 1. Specificity (length) if one contains the other
+        // 2. Language (prefer Japanese if available)
+        // 3. Default Policy (prefer contextFreeName)
+        const lowerCFN = validCFN.toLowerCase();
+        const lowerDN = validDN.toLowerCase();
+        
+        if (lowerDN.includes(lowerCFN) && validDN.length > validCFN.length) {
+          validNames.push(validDN);
+        } else if (lowerCFN.includes(lowerDN) && validCFN.length > validDN.length) {
+          validNames.push(validCFN);
+        } else if (/[ぁ-んァ-ヶー一-龠]/.test(validDN) && !/[ぁ-んァ-ヶー一-龠]/.test(validCFN)) {
+          validNames.push(validDN);
+        } else {
+          validNames.push(validCFN);
         }
+      } else if (validDN) {
+        validNames.push(validDN);
+      } else if (validCFN) {
+        validNames.push(validCFN);
       }
+
       currentNode = currentNode.ancestor || currentNode.Ancestor;
     }
 
