@@ -114,7 +114,7 @@ describe('CategoryNormalizer', () => {
         'Smart Home Store - AmazonGlobal Free Shipping',
         'ピアノ・キーボード｜ヘッドホン',
         'piano・keyboard｜headphones',
-        'Customers\' Most-Loved：おもちゃ&ホビー',
+        "Customers' Most-Loved：おもちゃ&ホビー",
         '3歳～',
         '6歳才～',
         '2,001-3,000円',

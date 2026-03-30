@@ -26,10 +26,8 @@ export class CategoryNormalizer {
     while (currentNode) {
       const displayName = currentNode.displayName || currentNode.DisplayName;
       const contextFreeName = currentNode.contextFreeName;
-      
-      const namesToCheck = [displayName, contextFreeName].filter(
-        (n): n is string => !!n,
-      );
+
+      const namesToCheck = [displayName, contextFreeName].filter((n): n is string => !!n);
 
       for (const name of namesToCheck) {
         if (CategoryNormalizer.isValidCategoryName(name)) {
@@ -458,7 +456,7 @@ export class CategoryNormalizer {
       'ベビー・幼児用おもちゃ',
       'ベビー家具・収納',
       'ネスレ日本',
-      'customers\' most-loved',
+      "customers' most-loved",
       'best sellers',
       'amazon.co.jp ranking',
       'kindle store',
