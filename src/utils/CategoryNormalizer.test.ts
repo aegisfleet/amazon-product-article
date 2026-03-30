@@ -196,5 +196,16 @@ describe('CategoryNormalizer', () => {
       const result = CategoryNormalizer.normalize(node);
       expect(result.main).toBe('L-シトルリン サプリメント');
     });
+
+    it('should score pet/cat categories correctly', () => {
+      const node: BrowseNode = {
+        contextFreeName: '猫用エンクロージャ',
+        displayName: 'エンクロージャ',
+        id: '10479667051',
+      };
+      const result = CategoryNormalizer.normalize(node);
+      expect(result.main).toBe('猫用エンクロージャ');
+      expect(result.score).toBe(10); // Now it should be 10 due to '猫' keyword
+    });
   });
 });
