@@ -10,6 +10,59 @@ export interface NormalizedCategory {
 }
 
 export class CategoryNormalizer {
+  private static readonly PREFERRED_KEYWORDS = [
+    'ボードゲーム',
+    'アナログゲーム',
+    'カードゲーム',
+    'おもちゃ',
+    'ホビー',
+    'フィギュア',
+    'プラモデル',
+    '画材',
+    '文房具',
+    '文具',
+    '絵具',
+    'オフィス用品',
+    '収納',
+    'チャイルドシート',
+    'ジュニアシート',
+    'ベビーカー',
+    '抱っこ紐',
+    'おむつ',
+    '紙おむつ',
+    'ベビーおむつ',
+    'ゲーミングチェア',
+    'デスクチェア',
+    'パソコンチェア',
+    'オフィスチェア',
+    'ワークチェア',
+    'Kindle',
+    'Fire',
+    'Echo',
+    'Alexa',
+    'Ring',
+    'Amazonデバイス',
+    '本',
+    '書籍',
+    'コントローラー',
+    'ヘッドセット',
+    'マウス',
+    'キーボード',
+    '替えブラシ',
+    'マッサージ機',
+    '健康家電',
+    'ロボット',
+    'ガンダム',
+    '美顔器',
+    '美容家電',
+    'ブロック',
+    'レゴ',
+    'Lego',
+    'ベビー',
+    'マタニティ',
+    'ビジネス',
+  ];
+
   /**
    * Normalize a BrowseNode into a category
    * Policy: Use the Amazon category as is, but filter out inappropriate ones.
@@ -19,119 +72,85 @@ export class CategoryNormalizer {
       return { main: 'その他', sub: 'Unknown', nameCount: 0, score: -1 };
     }
 
-    // Collect all valid display names up the tree
+    const validNames = CategoryNormalizer.collectValidHierarchyNames(node);
+
+    if (validNames.length > 0) {
+      const main = validNames[0] ?? 'Unknown';
+      const sub = validNames[1] ?? '';
+      const score = CategoryNormalizer.calculateScore(validNames);
+
+      return { main, sub, nameCount: validNames.length, score };
+    }
+
+    return CategoryNormalizer.getFallbackCategory(node);
+  }
+
+  /**
+   * Collect all valid display names up the tree
+   */
+  private static collectValidHierarchyNames(node: BrowseNode): string[] {
     const validNames: string[] = [];
     let currentNode: BrowseNode | undefined = node;
 
     while (currentNode) {
       const cfn = currentNode.contextFreeName;
       const dn = currentNode.displayName || currentNode.DisplayName;
-      
+
       const validCFN = cfn && CategoryNormalizer.isValidCategoryName(cfn) ? 
         CategoryNormalizer.sanitizeCategoryName(cfn) : null;
       const validDN = dn && CategoryNormalizer.isValidCategoryName(dn) ? 
         CategoryNormalizer.sanitizeCategoryName(dn) : null;
 
-      if (validCFN && validDN) {
-        // If both are valid, pick the better one based on:
-        // 1. Specificity (length) if one contains the other
-        // 2. Language (prefer Japanese if available)
-        // 3. Default Policy (prefer contextFreeName)
-        const lowerCFN = validCFN.toLowerCase();
-        const lowerDN = validDN.toLowerCase();
-        
-        if (lowerDN.includes(lowerCFN) && validDN.length > validCFN.length) {
-          validNames.push(validDN);
-        } else if (lowerCFN.includes(lowerDN) && validCFN.length > validDN.length) {
-          validNames.push(validCFN);
-        } else if (/[ぁ-んァ-ヶー一-龠]/.test(validDN) && !/[ぁ-んァ-ヶー一-龠]/.test(validCFN)) {
-          validNames.push(validDN);
-        } else {
-          validNames.push(validCFN);
-        }
-      } else if (validDN) {
-        validNames.push(validDN);
-      } else if (validCFN) {
-        validNames.push(validCFN);
+      const bestName = CategoryNormalizer.pickBestName(validCFN, validDN);
+      if (bestName) {
+        validNames.push(bestName);
       }
 
       currentNode = currentNode.ancestor || currentNode.Ancestor;
     }
 
-    if (validNames.length > 0) {
-      // Updated logic: Main is Specific, Sub is Parent
-      // validNames is collected from leaf up, so [leaf, parent, grandparent, ...]
-      const main = validNames[0] ?? 'Unknown';
-      const sub = validNames[1] ?? '';
+    return validNames;
+  }
 
-      // Calculate score based on preferred keywords across all valid hierarchy names
-      let score = 0;
-      const preferredKeywords = [
-        'ボードゲーム',
-        'アナログゲーム',
-        'カードゲーム',
-        'おもちゃ',
-        'ホビー',
-        'フィギュア',
-        'プラモデル',
-        '画材',
-        '文房具',
-        '文具',
-        '絵具',
-        'オフィス用品',
-        '収納',
-        'チャイルドシート',
-        'ジュニアシート',
-        'ベビーカー',
-        '抱っこ紐',
-        'おむつ',
-        '紙おむつ',
-        'ベビーおむつ',
-        'ゲーミングチェア',
-        'デスクチェア',
-        'パソコンチェア',
-        'オフィスチェア',
-        'ワークチェア',
-        'Kindle',
-        'Fire',
-        'Echo',
-        'Alexa',
-        'Ring',
-        'Amazonデバイス',
-        '本',
-        '書籍',
-        'コントローラー',
-        'ヘッドセット',
-        'マウス',
-        'キーボード',
-        '替えブラシ',
-        'マッサージ機',
-        '健康家電',
-        'ロボット',
-        'ガンダム',
-        '美顔器',
-        '美容家電',
-        'ブロック',
-        'レゴ',
-        'Lego',
-        'ベビー',
-        'マタニティ',
-        'ビジネス',
-      ];
+  /**
+   * Pick the best name between contextFreeName and displayName
+   */
+  private static pickBestName(cfn: string | null, dn: string | null): string | null {
+    if (cfn && dn) {
+      const lowerCFN = cfn.toLowerCase();
+      const lowerDN = dn.toLowerCase();
 
-      // Check all valid names in the hierarchy for preferred keywords
-      const hasPreferredKeyword = validNames.some((name) =>
-        preferredKeywords.some((keyword) => name.toLowerCase().includes(keyword.toLowerCase())),
-      );
-
-      if (hasPreferredKeyword) {
-        score = 10;
+      if (lowerDN.includes(lowerCFN) && dn.length > cfn.length) {
+        return dn;
       }
-
-      return { main: main, sub: sub, nameCount: validNames.length, score };
+      if (lowerCFN.includes(lowerDN) && cfn.length > dn.length) {
+        return cfn;
+      }
+      if (/[ぁ-んァ-ヶー一-龠]/.test(dn) && !/[ぁ-んァ-ヶー一-龠]/.test(cfn)) {
+        return dn;
+      }
+      return cfn;
     }
+    return dn || cfn;
+  }
 
-    // If no valid category found in the tree, fallback to Other
+  /**
+   * Calculate score based on preferred keywords
+   */
+  private static calculateScore(names: string[]): number {
+    const hasPreferredKeyword = names.some((name) =>
+      CategoryNormalizer.PREFERRED_KEYWORDS.some((keyword) =>
+        name.toLowerCase().includes(keyword.toLowerCase()),
+      ),
+    );
+
+    return hasPreferredKeyword ? 10 : 0;
+  }
+
+  /**
+   * Get fallback category when no valid names found
+   */
+  private static getFallbackCategory(node: BrowseNode): NormalizedCategory {
     const fallbackName = node.displayName || node.DisplayName || 'Unknown';
     const subName = CategoryNormalizer.isValidCategoryName(fallbackName)
       ? CategoryNormalizer.sanitizeCategoryName(fallbackName)
