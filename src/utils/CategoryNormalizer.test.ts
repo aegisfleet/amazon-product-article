@@ -114,6 +114,12 @@ describe('CategoryNormalizer', () => {
         'Smart Home Store - AmazonGlobal Free Shipping',
         'ピアノ・キーボード｜ヘッドホン',
         'piano・keyboard｜headphones',
+        'Customers\' Most-Loved：おもちゃ&ホビー',
+        '3歳～',
+        '6歳才～',
+        '2,001-3,000円',
+        '10,000-15,000円',
+        '犬用品 ゲージ',
       ];
       invalidNames.forEach((name) => {
         expect(CategoryNormalizer.isValidCategoryName(name)).toBe(false);
@@ -146,6 +152,16 @@ describe('CategoryNormalizer', () => {
         nameCount: 3,
         score: 0,
       });
+    });
+
+    it('should prioritize contextFreeName over displayName', () => {
+      const node: BrowseNode = {
+        contextFreeName: 'Specific Name',
+        displayName: 'Generic Name',
+        id: '123',
+      };
+      const result = CategoryNormalizer.normalize(node);
+      expect(result.main).toBe('Specific Name');
     });
 
     it('should skip invalid categories in the chain', () => {
