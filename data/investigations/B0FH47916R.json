@@ -1,0 +1,113 @@
+{
+  "analysis": {
+    "productName": "テクニクス ワイヤレスイヤホン EAH-AZ100-N シャンパンゴールド（The Musicコラボ）",
+    "parentAsin": "B0FH47916R",
+    "productDescription": "The Music ミュージックキーホルダーが付属した限定コラボモデルとして販売されていますが、ベースとなる「EAH-AZ100」の詳細な公式スペックは確認できませんでした。信頼性の高い現行フラッグシップ「EAH-AZ80」の検討もおすすめします。",
+    "productUsage": [
+      "音楽鑑賞",
+      "コレクション"
+    ],
+    "positivePoints": [
+      "The Musicキーホルダー（Amazon Music対応NFC搭載）が付属する",
+      "「ありのままの音が生きる」と謳うテクニクスの音質",
+      "ノイズキャンセリング機能搭載"
+    ],
+    "negativePoints": [
+      "メーカー公式サイト等で「EAH-AZ100」という型番の存在が確認できない",
+      "ベースモデルのスペックが不明確であり、価格が約4万円と高額",
+      "保証やサポート体制に懸念が残る"
+    ],
+    "useCases": [
+      "特典のキーホルダーを利用した音楽再生",
+      "スマートフォンと連携したリスニング"
+    ],
+    "userStories": [],
+    "userImpression": "Amazonレビューの一部では音質やノイズキャンセリングを評価する声も見られますが、製品自体の素性が不明瞭なため、購入には慎重な判断が求められます。",
+    "sources": [
+      {
+        "id": "src-1",
+        "name": "Amazon商品ページ",
+        "url": "https://www.amazon.co.jp/dp/B0FH47916R",
+        "tier": "low",
+        "evidenceType": "primary",
+        "publishedAt": "2026-03-31",
+        "author": "販売者",
+        "conflictOfInterest": "possible",
+        "notes": "商品情報および価格の確認"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "The Musicキーホルダーが付属し、スマホをかざしてAmazon Musicのプレイリストを再生可能",
+        "category": "quality",
+        "confidence": "medium",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "crossChecked": false,
+        "notes": "商品ページ上の記載"
+      },
+      {
+        "claim": "公式情報が見当たらず、製品の素性や詳細スペックが不明",
+        "category": "safety",
+        "confidence": "high",
+        "supportingSourceIds": [],
+        "crossChecked": true,
+        "notes": "Google検索および公式サイト内検索でヒットしない"
+      }
+    ],
+    "lastInvestigated": "2026-03-31",
+    "competitiveAnalysis": [
+      {
+        "name": "テクニクス ワイヤレスイヤホン EAH-AZ80-S",
+        "asin": "B0C5WZDSDV",
+        "priceComparison": "本製品よりも安価でありながら、テクニクスの現行フラッグシップモデルとして確かな性能と保証が提供されています。特別な特典にこだわらないのであれば、圧倒的にEAH-AZ80をおすすめします。",
+        "featureComparison": [
+          "共通点：テクニクスブランドのワイヤレスイヤホン、ノイズキャンセリング搭載",
+          "相違点：EAH-AZ80はメーカー公式のフラッグシップモデルであり詳細スペックやサポートが明確。一方、EAH-AZ100は公式情報が存在しない謎のモデルである。"
+        ],
+        "differentiators": [
+          "テクニクス ワイヤレスイヤホン EAH-AZ100-N シャンパンゴールド（The Musicコラボ）の利点：The Musicキーホルダーが付属している点のみ",
+          "テクニクス ワイヤレスイヤホン EAH-AZ80-Sの利点：確実な正規品としての信頼性、圧倒的な音質評価、手厚いサポート、より安価に入手可能"
+        ]
+      },
+      {
+        "name": "テクニクス ワイヤレスイヤホン EAH-AZ60M2-S",
+        "asin": "B0C5X122NF",
+        "priceComparison": "本製品の約半額から購入可能。こちらも公式の現行モデルであり、コストパフォーマンスに優れています。",
+        "featureComparison": [
+          "共通点：テクニクスブランド、ノイズキャンセリング搭載",
+          "相違点：EAH-AZ60M2は公式に実在し、詳細な機能（3台マルチポイント、LDAC対応など）が保証されている。"
+        ],
+        "differentiators": [
+          "テクニクス ワイヤレスイヤホン EAH-AZ100-N シャンパンゴールド（The Musicコラボ）の利点：The Musicキーホルダーが付属",
+          "テクニクス ワイヤレスイヤホン EAH-AZ60M2-Sの利点：価格が安く、公式の保証と確かなスペックを備えている"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "どうしても付属の「The Musicキーホルダー」が欲しい方"
+      ],
+      "pros": [
+        "限定のキーホルダーが付属する"
+      ],
+      "cons": [
+        "メーカー公式の製品情報が存在せず、信頼性に欠ける",
+        "約4万円という価格に見合うイヤホン本体の価値が不明瞭"
+      ],
+      "score": 30,
+      "scoreRationale": "[基本点: 70]\n[減点: -20] (メーカー公式情報が存在せず、製品の素性が極めて不明瞭なため)\n[減点: -15] (詳細不明なイヤホンに対して約4万円という価格設定であり、コストパフォーマンスが非常に悪い)\n[減点: -5] (正規品としてのサポートや保証に対する強い懸念)\n[合計: 30]"
+    },
+    "technicalSpecs": {
+      "color": "シャンパンゴールド",
+      "features": [
+        "ノイズキャンセリング機能（詳細不明）",
+        "NFC搭載キーホルダー付属"
+      ],
+      "other": [
+        "公式スペック情報なし"
+      ]
+    }
+  }
+}
