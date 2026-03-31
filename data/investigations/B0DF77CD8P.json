@@ -1,0 +1,163 @@
+{
+  "analysis": {
+    "productName": "Swudloe HDMI キャプチャーボード C7-01",
+    "parentAsin": "B0FP31CCK9",
+    "productDescription": "4K 30Hz パススルー出力と1080P 60FPSでの録画・配信に対応した、USB 3.0接続のゲームキャプチャーボードです。PS4/PS5/Switch等の家庭用ゲーム機やPC、スマートフォンなど幅広いデバイスに対応し、ドライバ不要で手軽に利用できます。",
+    "productUsage": ["ゲーム実況・配信", "ビデオ録画", "Webカメラ・スマートフォンの映像キャプチャ"],
+    "positivePoints": [
+      "4K@30Hzパススルー対応で遅延なくプレイ可能",
+      "1080P/60FPSでの滑らかな録画・配信をサポート",
+      "USB 3.0インターフェース採用により高速伝送（最大5Gbps）が可能",
+      "ドライバ不要でPCに接続するだけで使用できるプラグアンドプレイ設計"
+    ],
+    "negativePoints": [
+      "ブランド（Swudloe）の知名度が低く、長期間の耐久性やサポート体制が不透明",
+      "同等スペックの競合製品（約2000円〜4000円）と比較して価格（6000円台）が割高である",
+      "本体の詳細なサイズや重量が公式仕様に記載されていない"
+    ],
+    "useCases": [
+      "Nintendo SwitchやPS5でのゲームプレイを遅延なくテレビで楽しみながら、同時にPCで録画・配信する",
+      "一眼レフカメラやビデオカメラをWebカメラ代わりにして、Zoom会議やOBSでの高品質なライブ配信を行う"
+    ],
+    "userStories": [],
+    "userImpression": "レビューなどの外部情報が不足しているため実際のユーザー評価は不明ですが、カタログスペック上は十分な性能を備えています。ただし、無名ブランドの同等スペック製品と比べると価格設定が強気であり、コストパフォーマンスの観点で懸念が残ります。",
+    "sources": [
+      {
+        "id": "src-1",
+        "name": "Amazon商品ページ",
+        "url": "https://www.amazon.co.jp/dp/B0DF77CD8P",
+        "tier": "low",
+        "evidenceType": "primary",
+        "publishedAt": "2026-04-01",
+        "author": "Amazon/Swudloe",
+        "conflictOfInterest": "disclosed",
+        "notes": "製品仕様、価格（6298円）、特徴（4Kパススルー、1080p 60fps、USB 3.0）を確認"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "4K@30Hzのパススルー機能と1080P/60fpsの録画に対応",
+        "category": "quality",
+        "confidence": "medium",
+        "supportingSourceIds": ["src-1"],
+        "crossChecked": false,
+        "notes": "商品ページの仕様記載による（外部検証記事などはなし）"
+      },
+      {
+        "claim": "USB 3.0インターフェースを採用し、最大5Gbpsの伝送速度をサポート",
+        "category": "quality",
+        "confidence": "medium",
+        "supportingSourceIds": ["src-1"],
+        "crossChecked": false,
+        "notes": "商品ページの仕様記載による"
+      }
+    ],
+    "lastInvestigated": "2026-04-01",
+    "competitiveAnalysis": [
+      {
+        "name": "Denkouozi HDMI キャプチャーボード",
+        "asin": "B0FP2YQRRX",
+        "priceComparison": "対象商品（6298円）の約3分の1の価格（2099円）で購入可能であり、対象商品は非常に割高な設定となっている。",
+        "featureComparison": [
+          "共通点：4Kパススルー、1080P 60FPS録画、USB 3.0対応という基本スペックが共通している。",
+          "相違点：対象商品はホワイトカラーのC7-01というモデル名があるが、Denkouoziはブラックカラーの汎用デザインである。"
+        ],
+        "differentiators": [
+          "Swudloe HDMI キャプチャーボード C7-01の利点：ホワイト系のカラーリングを好むユーザーに適している。",
+          "Denkouozi HDMI キャプチャーボードの利点：同等の基本スペックを圧倒的な低価格で導入でき、コストパフォーマンスに優れている。"
+        ]
+      },
+      {
+        "name": "Y&H USB3.0 キャプチャーボード",
+        "asin": "B0FZB95HVQ",
+        "priceComparison": "対象商品よりも大幅に安価（1699円）であり、対象商品の価格競争力は皆無である。",
+        "featureComparison": [
+          "共通点：4Kパススルー、1080P 60fps録画、USB 3.0接続に対応している。",
+          "相違点：Y&H製品はQuest 3などのVR機器への対応も明記されており、より多用途なアピールがされている。"
+        ],
+        "differentiators": [
+          "Swudloe HDMI キャプチャーボード C7-01の利点：特になし。",
+          "Y&H USB3.0 キャプチャーボードの利点：非常に安価でありながら必要十分なスペックを備えており、エントリー用途に最適である。"
+        ]
+      },
+      {
+        "name": "cotsoco HDMIキャプチャーボード",
+        "asin": "B0G942L1YB",
+        "priceComparison": "対象商品より安価（3599円）である。",
+        "featureComparison": [
+          "共通点：4Kパススルー入力、1080P 60FPS録画、USB 3.0対応が共通している。",
+          "相違点：製品デザインや筐体の材質などに違いがある可能性があるが、スペック上の大きな差異は見られない。"
+        ],
+        "differentiators": [
+          "Swudloe HDMI キャプチャーボード C7-01の利点：特になし。",
+          "cotsoco HDMIキャプチャーボードの利点：同等スペックながら対象商品より価格が抑えられており、適度な価格帯の選択肢としてバランスが良い。"
+        ]
+      },
+      {
+        "name": "PAFOR キャプチャーボード",
+        "asin": "B0BM3W7W5T",
+        "priceComparison": "対象商品より安価（4580円）である。",
+        "featureComparison": [
+          "共通点：4Kパススルー、1080P 60FPS録画に対応している。",
+          "相違点：PAFOR製品は国内向けの公式ストア販売であり、サポート面での安心感が期待できる。"
+        ],
+        "differentiators": [
+          "Swudloe HDMI キャプチャーボード C7-01の利点：特になし。",
+          "PAFOR キャプチャーボードの利点：専用のストアから販売されており、無名ブランド品に比べて一定の品質やサポート対応が期待できる。"
+        ]
+      },
+      {
+        "name": "BotthHealth 4K HDMI キャプチャーボード",
+        "asin": "B0CHDTZC8P",
+        "priceComparison": "対象商品よりやや安価（5499円）である。",
+        "featureComparison": [
+          "共通点：4Kパススルー、1080P 60FPS録画、USB 3.0接続に対応している。",
+          "相違点：ブランドやデザインの違い以外に明確なスペック差は確認できない。"
+        ],
+        "differentiators": [
+          "Swudloe HDMI キャプチャーボード C7-01の利点：特になし。",
+          "BotthHealth 4K HDMI キャプチャーボードの利点：対象商品より少し安く購入できる。"
+        ]
+      },
+      {
+        "name": "汎用 キャプチャーボード",
+        "asin": "B0D2ZH43Z1",
+        "priceComparison": "対象商品と同価格帯（6298円）である。",
+        "featureComparison": [
+          "共通点：4Kパススルー、1080P 60FPS録画、USB 3.0接続に対応している。",
+          "相違点：販売ページの情報やブランド名以外に明確な違いは見受けられない。"
+        ],
+        "differentiators": [
+          "Swudloe HDMI キャプチャーボード C7-01の利点：特になし。",
+          "汎用 キャプチャーボードの利点：特になし。"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "ホワイトカラーの機材で統一したい配信者・ゲーマー"
+      ],
+      "pros": [
+        "4Kパススルー対応でゲーム画面の遅延がない",
+        "1080P 60FPSでの録画・配信が可能",
+        "USB 3.0による高速転送"
+      ],
+      "cons": [
+        "同等スペックの競合他社製品と比較して価格が2〜3倍と非常に高い",
+        "ブランドの知名度が低く、レビューもないため信頼性に欠ける",
+        "耐久性やサポートに関する情報が不透明"
+      ],
+      "score": 50,
+      "scoreRationale": "[基本点: 70]\n[加点: +5] (基本スペックは4Kパススルー・1080p60fps・USB3.0と現代の水準を満たしている)\n[減点: -15] (無名の類似スペック製品が2000円台で買える中、6000円台は著しくコストパフォーマンスが悪い)\n[減点: -10] (ブランド知名度が皆無であり、第三者からのレビュー評価や動作実績が一切確認できないため信頼性に乏しい)\n[合計: 50]"
+    },
+    "technicalSpecs": {
+      "dimensions": { "height": "不明", "width": "不明", "depth": "不明" },
+      "weight": "不明",
+      "resolution": "入力・パススルー: 最大4K(3840×2160) @30Hz / 録画: 最大1080P(1920×1080) @60fps",
+      "interface": "USB 3.0 (最大5Gbps)",
+      "color": "ホワイト",
+      "compatibility": "PC(Windows 7/8/10/11, Mac OS, Linux), PS5, PS4, Xbox Series X/S, Switch, Wii U, Android, iPad, ビデオカメラ等",
+      "supportedSoftware": "OBS, Zoom, XSplit, QuickTime, Potplayer"
+    }
+  }
+}
