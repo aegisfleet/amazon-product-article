@@ -125,6 +125,9 @@ describe('CategoryNormalizer', () => {
         '10,000-15,000円',
         '犬用品 ゲージ',
         '燃料',
+        '「なるほど家電」はアイリスオーヤマ',
+        'なるほど家電が毎日お買い得',
+        'IsWhiteGloveRequired',
       ];
       invalidNames.forEach((name) => {
         expect(CategoryNormalizer.isValidCategoryName(name)).toBe(false);

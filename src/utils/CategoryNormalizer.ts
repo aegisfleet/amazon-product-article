@@ -349,6 +349,8 @@ export class CategoryNormalizer {
       /(?:sony|ソニー|panasonic|パナソニック|logicool|ロジクール|elecom|エレコム|iris|アイリス|brother|ブラザー|nestle|ネスレ).*(?:特集|一覧|プロモーション|キャンペーン|限定|コーディネート)/i,
       /primeday|black\s*friday|ブラックフライデー|新生活|入園入学|父の日|母の日/i,
       /^燃料$/,
+      /なるほど家電/i,
+      /iswhitegloverequired/i,
     ];
 
     if (invalidPatterns.some((pattern) => pattern.test(name))) {
