@@ -124,6 +124,7 @@ describe('CategoryNormalizer', () => {
         '2,001-3,000円',
         '10,000-15,000円',
         '犬用品 ゲージ',
+        '燃料',
       ];
       invalidNames.forEach((name) => {
         expect(CategoryNormalizer.isValidCategoryName(name)).toBe(false);
@@ -206,6 +207,39 @@ describe('CategoryNormalizer', () => {
       const result = CategoryNormalizer.normalize(node);
       expect(result.main).toBe('猫用エンクロージャ');
       expect(result.score).toBe(10); // Now it should be 10 due to '猫' keyword
+    });
+
+    it('should score beauty/haircare categories correctly', () => {
+      const shampooNode: BrowseNode = {
+        contextFreeName: 'シャンプー',
+        displayName: 'シャンプー',
+        id: '123',
+      };
+      const result = CategoryNormalizer.normalize(shampooNode);
+      expect(result.main).toBe('シャンプー');
+      expect(result.score).toBe(10);
+
+      const fuelNode: BrowseNode = {
+        contextFreeName: '燃料',
+        displayName: '燃料',
+        id: '211760089051',
+      };
+      const fuelResult = CategoryNormalizer.normalize(fuelNode);
+      expect(fuelResult.main).toBe('その他'); // Because '燃料' is invalid
+    });
+  });
+
+  describe('selectBestCategory', () => {
+    it('should prefer specific beauty categories over generic/junk ones', () => {
+      const nodes: BrowseNode[] = [
+        { displayName: '燃料', id: '211760089051' },
+        { displayName: 'シャンプー', id: '123' },
+        { displayName: 'ヘアケア', id: '456' },
+      ];
+
+      const result = CategoryNormalizer.selectBestCategory(nodes);
+      expect(result.main).toBe('シャンプー');
+      expect(result.score).toBe(10);
     });
   });
 });
