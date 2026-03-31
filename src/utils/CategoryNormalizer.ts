@@ -64,6 +64,11 @@ export class CategoryNormalizer {
     'ペット',
     '猫',
     '犬',
+    'ビューティー',
+    'ヘアケア',
+    'シャンプー',
+    'トリートメント',
+    'リンス',
   ];
 
   /**
@@ -342,6 +347,7 @@ export class CategoryNormalizer {
       // Brand-specific promotion/coordinated pages
       /(?:sony|ソニー|panasonic|パナソニック|logicool|ロジクール|elecom|エレコム|iris|アイリス|brother|ブラザー|nestle|ネスレ).*(?:特集|一覧|プロモーション|キャンペーン|限定|コーディネート)/i,
       /primeday|black\s*friday|ブラックフライデー|新生活|入園入学|父の日|母の日/i,
+      /^燃料$/,
     ];
 
     if (invalidPatterns.some((pattern) => pattern.test(name))) {
