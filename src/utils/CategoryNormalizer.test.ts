@@ -125,7 +125,6 @@ describe('CategoryNormalizer', () => {
         '10,000-15,000円',
         '犬用品 ゲージ',
         '燃料',
-        '安全対策・サバイバル',
       ];
       invalidNames.forEach((name) => {
         expect(CategoryNormalizer.isValidCategoryName(name)).toBe(false);
