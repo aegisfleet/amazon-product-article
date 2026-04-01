@@ -1,0 +1,191 @@
+{
+  "analysis": {
+    "productName": "ラカナウPVA8軟膏",
+    "parentAsin": "B0CYPLXL2Z",
+    "productDescription": "しっしんやかゆみ、虫刺されなどに効果的な、by Amazonブランドのステロイド成分配合軟膏です。",
+    "productUsage": [
+      "しっしん",
+      "かゆみ",
+      "虫さされ",
+      "かぶれ",
+      "あせも",
+      "じんましん",
+      "皮膚炎"
+    ],
+    "positivePoints": [
+      "患部にとどまりやすい軟膏タイプ",
+      "アンテドラッグステロイド成分を配合し、炎症をしっかり鎮める",
+      "Amazonプライベートブランドにより、同等成分の市販薬と比較して低価格で購入可能"
+    ],
+    "negativePoints": [
+      "指定第2類医薬品であり、使用上の注意を守る必要がある",
+      "ステロイド成分を含むため、顔面などの皮膚の薄い部分への使用には注意が必要"
+    ],
+    "useCases": [
+      "虫に刺されて強いかゆみや腫れがある時",
+      "乾燥などによる湿疹や皮膚炎が悪化した時",
+      "洗剤や化粧品などによるかぶれが起きた時"
+    ],
+    "userStories": [],
+    "userImpression": "価格の安さと、アンテドラッグステロイド配合による確かな効果から、コストパフォーマンスに優れたかゆみ止め・皮膚炎治療薬として評価できます。",
+    "sources": [
+      {
+        "id": "src-1",
+        "name": "Amazon Product Data (B0CYPLXL2Z)",
+        "url": "https://www.amazon.co.jp/dp/B0CYPLXL2Z",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2024-03-01",
+        "author": "Amazon",
+        "conflictOfInterest": "none",
+        "notes": "製品情報、成分情報、価格情報の取得"
+      },
+      {
+        "id": "src-2",
+        "name": "Amazon Product Data (B0CYPR8Y91)",
+        "url": "https://www.amazon.co.jp/dp/B0CYPR8Y91",
+        "tier": "high",
+        "evidenceType": "secondary",
+        "publishedAt": "2024-03-01",
+        "author": "Amazon",
+        "conflictOfInterest": "none",
+        "notes": "同シリーズのクリームタイプの製品情報"
+      },
+      {
+        "id": "src-3",
+        "name": "Amazon Product Data (B09GS1W26M)",
+        "url": "https://www.amazon.co.jp/dp/B09GS1W26M",
+        "tier": "high",
+        "evidenceType": "secondary",
+        "publishedAt": "2021-03-15",
+        "author": "Amazon",
+        "conflictOfInterest": "none",
+        "notes": "同一メーカーのクリームタイプの製品情報"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "アンテドラッグステロイドを配合している",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": ["src-1", "src-3"],
+        "crossChecked": true,
+        "notes": "PVA配合の皮膚炎治療薬である"
+      },
+      {
+        "claim": "他のPVA配合医薬品よりも低価格である",
+        "category": "comparativeAdvantage",
+        "confidence": "high",
+        "supportingSourceIds": ["src-1", "src-3"],
+        "crossChecked": true,
+        "notes": "同一メーカーの類似製品や他社製品と比較して価格が安い"
+      }
+    ],
+    "lastInvestigated": "2026-04-01",
+    "competitiveAnalysis": [
+      {
+        "name": "ラカナウPVA8クリーム",
+        "asin": "B0CYPR8Y91",
+        "priceComparison": "同ブランドのクリームタイプ。価格はラカナウPVA8軟膏とほぼ同等です。",
+        "featureComparison": [
+          "共通点：同ブランドで、用途が同じ。",
+          "相違点：本商品は軟膏タイプ（患部にとどまりやすく刺激が少ない）、競合商品はクリームタイプ（伸びが良くべたつかない）。"
+        ],
+        "differentiators": [
+          "ラカナウPVA8軟膏の利点：患部をしっかり保護したい場合や、乾燥した患部に適している",
+          "ラカナウPVA8クリームの利点：広範囲に塗りたい場合や、べたつきを避けたい場合、ジュクジュクした患部に適している"
+        ]
+      },
+      {
+        "name": "ラホヤPVA8クリーム",
+        "asin": "B09GS1W26M",
+        "priceComparison": "同一メーカー（万協製薬）製造のクリームタイプ。ラカナウPVA8軟膏の方が低価格です。",
+        "featureComparison": [
+          "共通点：製造元が同じ万協製薬である点。",
+          "相違点：本商品はby Amazonブランドの軟膏タイプ、競合商品は一般向けのクリームタイプ。"
+        ],
+        "differentiators": [
+          "ラカナウPVA8軟膏の利点：Amazonプライベートブランドによる低価格と、軟膏特有の患部保護効果",
+          "ラホヤPVA8クリームの利点：クリームタイプで塗り拡げやすい"
+        ]
+      },
+      {
+        "name": "エルスカットL",
+        "asin": "B0CVPN9KX2",
+        "priceComparison": "同じくby Amazonブランドの皮膚疾患薬。エルスカットLの方が安価です。",
+        "featureComparison": [
+          "共通点：by Amazonブランドの皮膚疾患薬である点。",
+          "相違点：本商品はステロイド成分配合の指定第2類医薬品、競合商品は非ステロイド性（第2類医薬品）である点。"
+        ],
+        "differentiators": [
+          "ラカナウPVA8軟膏の利点：ステロイド配合により、強い炎症や我慢できないかゆみに素早く効果を発揮する",
+          "エルスカットLの利点：ステロイドを含まないため、デリケートな部位にも比較的使いやすい"
+        ]
+      },
+      {
+        "name": "新リビメックスコーワ軟膏",
+        "asin": "B0C133K2XW",
+        "priceComparison": "有名ブランドのステロイド軟膏。ラカナウPVA8軟膏の方が安価です。",
+        "featureComparison": [
+          "共通点：アンテドラッグステロイドを配合した軟膏である点。",
+          "相違点：本商品は大容量で低価格、競合商品は有名ブランドの製品。"
+        ],
+        "differentiators": [
+          "ラカナウPVA8軟膏の利点：大容量かつ低価格でコストパフォーマンスに優れる",
+          "新リビメックスコーワ軟膏の利点：有名ブランドの安心感がある"
+        ]
+      },
+      {
+        "name": "メンソレータムメディクイックプロ軟膏",
+        "asin": "B09W4SV9SP",
+        "priceComparison": "ラカナウPVA8軟膏の方が安価で容量も多いです。",
+        "featureComparison": [
+          "共通点：アンテドラッグステロイドを配合した軟膏である点。",
+          "相違点：本商品は一般的な湿疹向け、競合商品は手湿疹に特化している点。内容量は本商品が20g、競合が8g。"
+        ],
+        "differentiators": [
+          "ラカナウPVA8軟膏の利点：汎用的なしっしんやかゆみに使え、大容量で安い",
+          "メンソレータムメディクイックプロ軟膏の利点：水仕事などで荒れたつらい手湿疹に特化した処方"
+        ]
+      },
+      {
+        "name": "ウナコーワエースプレミアムL",
+        "asin": "B0F6279XRX",
+        "priceComparison": "ラカナウPVA8軟膏の方が安価です。",
+        "featureComparison": [
+          "共通点：虫さされ・かゆみ止めである点。",
+          "相違点：本商品は患部にとどまる軟膏タイプ、競合商品は手を汚さず塗れる液体タイプ。"
+        ],
+        "differentiators": [
+          "ラカナウPVA8軟膏の利点：軟膏ベースで患部を保護し、乾燥した皮膚炎や掻き壊しにも使いやすい",
+          "ウナコーワエースプレミアムLの利点：液体でサッと塗れ、清涼感が得られるため、虫刺されに最適"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "虫刺されや湿疹で、強いかゆみや赤みに悩んでいる方",
+        "コストパフォーマンスの高いステロイド軟膏を探している方",
+        "患部を保護しながら治療したい方"
+      ],
+      "pros": [
+        "アンテドラッグステロイド配合で高い消炎効果",
+        "Amazonブランドならではの低価格と大容量(20g)",
+        "軟膏タイプで患部をしっかり保護"
+      ],
+      "cons": [
+        "ステロイドを含むため、広範囲や長期間の使用には注意が必要",
+        "軟膏特有のベタつきがある"
+      ],
+      "score": 85,
+      "scoreRationale": "[基本点: 70]\n[加点: +10] (PVA配合による確かな消炎・鎮痒効果と軟膏の保護効果)\n[加点: +10] (同等成分の製品と比較して低価格・大容量でありコスパが極めて高い)\n[減点: -5] (指定第2類医薬品のステロイド剤であり、使用上の制限や副作用リスクへの注意が必要なため)\n[合計: 85]"
+    },
+    "technicalSpecs": {
+      "weight": "20g",
+      "dosageForm": "軟膏",
+      "medicineClass": "指定第2類医薬品",
+      "manufacturer": "万協製薬",
+      "brand": "by Amazon"
+    }
+  }
+}
