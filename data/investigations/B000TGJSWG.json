@@ -1,0 +1,171 @@
+{
+  "analysis": {
+    "productName": "エンジニア マイクロニッパー ESD 120㎜ NS-04",
+    "parentAsin": "B000TGJSWG",
+    "productDescription": "細かな作業に対応する小型ヘッドのマイクロニッパー。静電気対策(ESD)と開き幅調整金具を備える。",
+    "productUsage": [
+      "精密機器の基板周辺での細かなリード線や部品の切断",
+      "静電気を嫌う電子部品の取り扱いを伴う作業"
+    ],
+    "positivePoints": [
+      "刃の開き幅を調整できる金具付きで、連続作業の負担を軽減可能",
+      "表面抵抗値1×10^6〜10^7ΩのESD対策が施されたグリップ",
+      "環境に優しいエラストマー素材の手にフィットするデザイングリップ",
+      "落下防止に便利なストラップ穴付き"
+    ],
+    "negativePoints": [
+      "絶縁工具ではないため、活線作業には使用不可",
+      "小型で精密作業向けであるため、太い線や硬い素材の切断には不向き"
+    ],
+    "useCases": [
+      "高密度に実装された精密基板でのリード線切断",
+      "電子工作やプラモデルなどの細かな切断作業"
+    ],
+    "userStories": [],
+    "userImpression": "小型・軽量で、静電気対策が施されており精密作業に非常に向いている。価格も手頃でコストパフォーマンスに優れる。",
+    "sources": [
+      {
+        "id": "src-amazon-b000tgjswg",
+        "name": "Amazon.co.jp 商品ページ B000TGJSWG",
+        "url": "https://www.amazon.co.jp/dp/B000TGJSWG",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-04-01",
+        "author": "ENGINEER",
+        "conflictOfInterest": "none",
+        "notes": "基本スペック、価格(1,576円)、特徴(ESD対応、調整金具、エラストマーグリップ)を確認"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "静電気(ESD)対策済みグリップ",
+        "category": "safety",
+        "confidence": "high",
+        "supportingSourceIds": ["src-amazon-b000tgjswg"],
+        "crossChecked": false,
+        "notes": "メーカー公称値として表面抵抗値1×10^6〜10^7Ωを記載"
+      },
+      {
+        "claim": "開き幅調整金具付き",
+        "category": "durability",
+        "confidence": "high",
+        "supportingSourceIds": ["src-amazon-b000tgjswg"],
+        "crossChecked": false,
+        "notes": "商品仕様として明記"
+      }
+    ],
+    "lastInvestigated": "2026-04-01",
+    "competitiveAnalysis": [
+      {
+        "name": "ENGINEER マイクロニッパー ESD 123㎜ NP-05",
+        "asin": "B002F9MQHY",
+        "priceComparison": "対象商品よりやや高い。先細形状に特化しており、より狭い箇所での作業が求められるかどうかが価値の差となる。",
+        "featureComparison": [
+          "共通点：ESD対策、エラストマーグリップ、開き幅調整金具、ストラップ穴",
+          "相違点：対象商品はスタンダードな小型ヘッド、競合は先細形状の123mm"
+        ],
+        "differentiators": [
+          "エンジニア マイクロニッパー ESD 120㎜ NS-04の利点：標準的な形状で価格がわずかに安く、汎用的な精密作業に適している",
+          "ENGINEER マイクロニッパー ESD 123㎜ NP-05の利点：先細形状により、より奥まった箇所や狭いスペースでの作業に有利"
+        ]
+      },
+      {
+        "name": "ENGINEER マイクロニッパー ESD 112㎜ NS-06",
+        "asin": "B001D7TE2E",
+        "priceComparison": "対象商品と同程度の価格帯。",
+        "featureComparison": [
+          "共通点：ESD対策、エラストマーグリップ、開き幅調整金具、ストラップ穴",
+          "相違点：対象商品は120mm、競合は112mmとさらに小型"
+        ],
+        "differentiators": [
+          "エンジニア マイクロニッパー ESD 120㎜ NS-04の利点：標準的な小型サイズで扱いやすい",
+          "ENGINEER マイクロニッパー ESD 112㎜ NS-06の利点：さらに小型であるため、極めて細かい作業に特化している"
+        ]
+      },
+      {
+        "name": "ENGINEER 強力ニッパー 片刃 ラウンド 130mm NK-15",
+        "asin": "B001HQR1WG",
+        "priceComparison": "対象商品よりやや高い。",
+        "featureComparison": [
+          "共通点：小型工具であること",
+          "相違点：対象商品は精密作業向けのESD対応マイクロニッパー、競合は強力切断（銅線φ2.6対応）の片刃ニッパー"
+        ],
+        "differentiators": [
+          "エンジニア マイクロニッパー ESD 120㎜ NS-04の利点：ESD対応であり静電気に敏感な電子部品の作業に最適",
+          "ENGINEER 強力ニッパー 片刃 ラウンド 130mm NK-15の利点：太い銅線など、より力を要する切断作業に向いている"
+        ]
+      },
+      {
+        "name": "ENGINEER 強力ニッパー 両刃 ラウンド 155mm NK-36",
+        "asin": "B000W9HJLM",
+        "priceComparison": "対象商品より少し安い。",
+        "featureComparison": [
+          "共通点：工具であること",
+          "相違点：対象商品は精密作業向けのESD対応120mm、競合は電工向けの強力ニッパー（155mm、銅線φ3.2対応）"
+        ],
+        "differentiators": [
+          "エンジニア マイクロニッパー ESD 120㎜ NS-04の利点：精密作業や基板作業に適したサイズと静電気対策",
+          "ENGINEER 強力ニッパー 両刃 ラウンド 155mm NK-36の利点：電工作業など、より太い線の切断が可能"
+        ]
+      },
+      {
+        "name": "ENGINEER 強力ニッパー 片刃 ラウンド 153mm NK-16",
+        "asin": "B000W9FY0U",
+        "priceComparison": "対象商品より高い。",
+        "featureComparison": [
+          "共通点：工具であること",
+          "相違点：対象商品は精密作業向け120mm、競合は強力切断向け153mm（銅線φ3対応）"
+        ],
+        "differentiators": [
+          "エンジニア マイクロニッパー ESD 120㎜ NS-04の利点：ESD対応であり電子機器の微細な切断に特化している",
+          "ENGINEER 強力ニッパー 片刃 ラウンド 153mm NK-16の利点：強力な切断能力を持ち、太い線の切断に適している"
+        ]
+      },
+      {
+        "name": "ENGINEER 斜ニッパー 穴付 片刃 ラウンド 133mm NN-45",
+        "asin": "B001YHANVE",
+        "priceComparison": "対象商品よりやや高い。",
+        "featureComparison": [
+          "共通点：小型工具であること",
+          "相違点：対象商品は精密作業向けの直刃マイクロニッパー、競合はストリップ用穴付きの斜ニッパー"
+        ],
+        "differentiators": [
+          "エンジニア マイクロニッパー ESD 120㎜ NS-04の利点：ESD対応で電子部品の周辺での切断作業に向く",
+          "ENGINEER 斜ニッパー 穴付 片刃 ラウンド 133mm NN-45の利点：被覆剥きができるストリップ穴（1.2mm/1.6mm）を備えている"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "電子工作や基板の修理・組み立てを行う人",
+        "静電気対策が必要な精密部品を扱うエンジニア",
+        "プラモデルやジオラマ制作などで細かいパーツの切断をする人"
+      ],
+      "pros": [
+        "静電気対策(ESD)が施されている",
+        "開き幅調整金具で長時間の連続作業が楽",
+        "エラストマー製グリップで握りやすい"
+      ],
+      "cons": [
+        "絶縁工具ではないため通電箇所には使えない",
+        "太いワイヤー等の切断には適さない"
+      ],
+      "score": 83,
+      "scoreRationale": "[基本点: 70]\n[加点: +8] (静電気対策ESD対応や開き幅調整金具などの実用性の高い機能)\n[加点: +5] (割引率47%で1500円台とコストパフォーマンスが高い)\n[合計: 83]"
+    },
+    "technicalSpecs": {
+      "dimensions": {
+        "height": "10mm",
+        "width": "50mm",
+        "depth": "120mm"
+      },
+      "weight": "83g",
+      "material": "エラストマー (グリップ)",
+      "other": [
+        "表面抵抗値: 1×10^6〜10^7Ω (ESD対策)",
+        "開き幅調整金具付き",
+        "落下防止ストラップ穴付き"
+      ]
+    }
+  }
+}
