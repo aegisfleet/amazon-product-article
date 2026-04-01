@@ -1,0 +1,193 @@
+{
+  "analysis": {
+    "productName": "Anker Eufy X10 Pro Omni",
+    "parentAsin": "B0GSYQGZXY",
+    "productDescription": "AnkerのEufyブランドから発売された、全自動クリーニングステーション付属のロボット掃除機です。最大8000Paの強力な吸引力に加え、加圧式デュアル回転モップによる水拭き機能を搭載しています。",
+    "productUsage": [
+      "毎日の床の自動清掃（吸引・水拭き）",
+      "カーペットとフローリングの自動認識・清掃",
+      "ゴミ収集からモップ洗浄・乾燥までの完全自動化"
+    ],
+    "positivePoints": [
+      "全自動クリーニングステーションによる手間の少なさ（ゴミ収集、モップの洗浄・乾燥まで自動）",
+      "最大8000Paの強力な吸引力と加圧式水拭きによる高い清掃力",
+      "AIマッピングとAIカメラ搭載による高度な障害物回避能力",
+      "毛絡み除去システム搭載でお手入れが簡単"
+    ],
+    "negativePoints": [
+      "全自動ステーションのサイズが大きく設置スペースが必要",
+      "多機能なため、初期設定やアプリの使いこなしに少し時間がかかる可能性がある"
+    ],
+    "useCases": [
+      "仕事や育児で忙しく、掃除の時間を極力減らしたい家庭",
+      "ペットや子供がおり、常に床を清潔に保ちたい家庭",
+      "広いリビングや複数の部屋がある住環境"
+    ],
+    "userStories": [],
+    "userImpression": "全自動クリーニングステーションの利便性と高い清掃能力、障害物回避性能の高さで、掃除の手間を大幅に削減できる優秀なロボット掃除機という評価が期待されます。",
+    "sources": [
+      {
+        "id": "src-amazon",
+        "name": "Amazon商品ページ",
+        "url": "https://www.amazon.co.jp/dp/B0CPHYJRRP",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-04-01",
+        "author": "Anker",
+        "conflictOfInterest": "possible",
+        "notes": "商品の公式スペックおよび特徴（8000Paの吸引力、全自動ステーション、加圧式水拭きなど）"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "最大8000Paの強力な吸引力と加圧式デュアル回転モップ",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-amazon"
+        ],
+        "crossChecked": false,
+        "notes": "Amazon商品ページより"
+      },
+      {
+        "claim": "全自動クリーニングステーションによるゴミ収集、モップの洗浄・乾燥",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-amazon"
+        ],
+        "crossChecked": false,
+        "notes": "Amazon商品ページより"
+      },
+      {
+        "claim": "AIマッピング、AIカメラ搭載による障害物回避機能",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-amazon"
+        ],
+        "crossChecked": false,
+        "notes": "Amazon商品ページより"
+      }
+    ],
+    "lastInvestigated": "2026-04-01",
+    "competitiveAnalysis": [
+      {
+        "name": "Anker Eufy Robot Vacuum Omni E25",
+        "asin": "B0F9JGVSDX",
+        "priceComparison": "E25の方が上位機種で価格が高い。高い分、より強力な吸引力と洗剤投入機能を備えている。",
+        "featureComparison": [
+          "共通点：全自動クリーニングステーション（自動ゴミ収集、モップ洗浄・乾燥）搭載、水拭き対応、AIカメラ障害物回避。",
+          "相違点：E25はローラーモップ、洗剤投入機能があり、吸引力も20000PaとX10 Pro Omni(8000Pa)より大幅に高い。"
+        ],
+        "differentiators": [
+          "Anker Eufy X10 Pro Omniの利点：全自動機能と水拭きを備えつつ、より手頃な価格で購入可能。",
+          "Anker Eufy Robot Vacuum Omni E25の利点：より高い吸引力と洗剤投入機能など、さらに高度な清掃性能を求める場合に適している。"
+        ]
+      },
+      {
+        "name": "Anker Eufy Clean X8 Pro with Self-Empty Station",
+        "asin": "B0C4NN6GGY",
+        "priceComparison": "X8 Proの方が価格が安い。自動モップ洗浄が必要ない分コストを抑えられる。",
+        "featureComparison": [
+          "共通点：自動ゴミ収集ステーション搭載、アプリ操作対応、毛絡み除去システム。",
+          "相違点：X10 Pro Omniはモップ洗浄・乾燥機能を含む「全自動」ステーションと加圧式水拭きを備えるが、X8 Proはゴミ収集のみで、吸引力は4000Pa×2。"
+        ],
+        "differentiators": [
+          "Anker Eufy X10 Pro Omniの利点：水拭きの手間（モップ洗浄・乾燥）も省きたい完全な自動化を求める場合に最適。",
+          "Anker Eufy Clean X8 Pro with Self-Empty Stationの利点：水拭きの全自動化までは不要で、初期費用を抑えつつゴミ捨ての手間を省きたい場合に適している。"
+        ]
+      },
+      {
+        "name": "スイッチボット(SwitchBot) ロボット掃除機 K11+",
+        "asin": "B0F7GGN94D",
+        "priceComparison": "K11+の方が価格が安い。ステーションの規模や水拭き方式に違いがあるため。",
+        "featureComparison": [
+          "共通点：自動充電、落下防止、マッピング機能、自動ゴミ収集。",
+          "相違点：K11+は超小型で使い捨て掃除シートを使用。X10 Pro Omniは全自動クリーニングステーションでモップの洗浄まで行うフルスペックモデル。"
+        ],
+        "differentiators": [
+          "Anker Eufy X10 Pro Omniの利点：メンテナンスフリーで強力な水拭き清掃を任せたい場合に適している。",
+          "スイッチボット(SwitchBot) ロボット掃除機 K11+の利点：狭い隙間や家具の下にも入りやすい超小型設計で、使い捨てシートで手軽に運用したい場合に適している。"
+        ]
+      },
+      {
+        "name": "roborock ロボロック Q7B+",
+        "asin": "B0F6NRWF9V",
+        "priceComparison": "Q7B+の方が価格が安い。全自動モップ洗浄の有無が主な価格差の要因。",
+        "featureComparison": [
+          "共通点：自動ゴミ収集ステーション、8000Paの吸引力、マッピング機能。",
+          "相違点：X10 Pro Omniはモップの自動洗浄・乾燥機能があるが、Q7B+は水拭き対応ではあるもののモップの自動洗浄・乾燥ステーションは付属していない。"
+        ],
+        "differentiators": [
+          "Anker Eufy X10 Pro Omniの利点：モップの洗浄と乾燥まで全自動化したい場合に適している。",
+          "roborock ロボロック Q7B+の利点：高い吸引力とゴミ自動収集を求めつつ、価格を抑えたい場合に適している。"
+        ]
+      },
+      {
+        "name": "AIRROBO ロボット掃除機 P20",
+        "asin": "B0B5XRHWZ1",
+        "priceComparison": "P20の方が圧倒的に価格が安い。エントリーモデルのため。",
+        "featureComparison": [
+          "共通点：ロボット掃除機としての基本機能（自動充電、落下防止など）。",
+          "相違点：P20は2800Paの吸引力で自動ゴミ収集などのステーションを持たないエントリーモデル。X10 Pro Omniは全自動ステーションを持つハイエンドモデル。"
+        ],
+        "differentiators": [
+          "Anker Eufy X10 Pro Omniの利点：掃除に関するあらゆる手間を省きたい場合に最適。",
+          "AIRROBO ロボット掃除機 P20の利点：初めてロボット掃除機を導入する方や、コストを最小限に抑えたい場合に適している。"
+        ]
+      },
+      {
+        "name": "Anker Eufy Robot Vacuum Auto-Empty C10",
+        "asin": "B0DLG93BX5",
+        "priceComparison": "C10の方が価格が安い。モップ洗浄機能がないためコストが抑えられている。",
+        "featureComparison": [
+          "共通点：自動ゴミ収集ステーション、毛絡み除去システム、レーザーマッピング。",
+          "相違点：C10は自動ゴミ収集のみのエントリー/ミドルクラス。X10 Pro Omniはモップ洗浄などを含む全自動ステーション搭載のハイエンドクラス。"
+        ],
+        "differentiators": [
+          "Anker Eufy X10 Pro Omniの利点：水拭き機能とそのメンテナンスを含めた完全自動化を求める場合に適している。",
+          "Anker Eufy Robot Vacuum Auto-Empty C10の利点：水拭きや高度なAIカメラまでは不要で、ゴミ捨ての手間だけをリーズナブルに省きたい場合に適している。"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "掃除の手間を極限まで減らしたい共働き世帯",
+        "水拭きまで全自動で任せたい方",
+        "障害物を自動で避けて賢く掃除してほしい方"
+      ],
+      "pros": [
+        "全自動ステーションにより日々のメンテナンスがほぼ不要",
+        "強力な吸引と加圧式水拭きで高い清掃効果",
+        "優れた障害物回避システム"
+      ],
+      "cons": [
+        "全自動ステーションの設置スペースが必要",
+        "ハイエンドモデルのため価格が比較的高め"
+      ],
+      "score": 85,
+      "scoreRationale": "[基本点: 70]\n[加点: +10] (全自動クリーニングステーションなど高度な自動化による利便性)\n[加点: +10] (8000Paの強力な吸引力と加圧式水拭き機能による高い清掃力)\n[減点: -5] (多機能ゆえの設置スペースの制約や価格設定)\n[合計: 85]"
+    },
+    "technicalSpecs": {
+      "dimensions": {
+        "height": "460mm",
+        "width": "480mm",
+        "depth": "366mm"
+      },
+      "weight": "11979g",
+      "power": "最大8000Pa (吸引力)",
+      "battery": "情報なし",
+      "capacity": "ダストバッグ、モップパッド、水タンク",
+      "material": "プラスチック等",
+      "origin": "情報なし",
+      "other": [
+        "加圧式デュアル回転モップ搭載",
+        "全自動クリーニングステーション (ゴミ収集/モップ洗浄・乾燥)",
+        "毛絡み除去システム",
+        "AIマッピング、AIカメラ搭載",
+        "カラー: ブラック"
+      ]
+    }
+  }
+}
