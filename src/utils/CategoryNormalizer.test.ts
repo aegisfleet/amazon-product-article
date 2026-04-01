@@ -4,7 +4,7 @@ describe('CategoryNormalizer', () => {
   describe('isValidCategoryName', () => {
     it('should return true for valid category names', () => {
       expect(CategoryNormalizer.isValidCategoryName('electronics')).toBe(true);
-      expect(CategoryNormalizer.isValidCategoryName('books')).toBe(true);
+      expect(CategoryNormalizer.isValidCategoryName('ビジネス・経済')).toBe(true);
       expect(CategoryNormalizer.isValidCategoryName('ボードゲーム')).toBe(true);
       expect(CategoryNormalizer.isValidCategoryName('草刈機・刈払機パーツ・アクセサリ')).toBe(true);
       expect(CategoryNormalizer.isValidCategoryName('category_with_dash')).toBe(true);
@@ -128,6 +128,10 @@ describe('CategoryNormalizer', () => {
         '「なるほど家電」はアイリスオーヤマ',
         'なるほど家電が毎日お買い得',
         'IsWhiteGloveRequired',
+        '本',
+        '書籍',
+        '和書',
+        'Kindle本',
       ];
       invalidNames.forEach((name) => {
         expect(CategoryNormalizer.isValidCategoryName(name)).toBe(false);
@@ -229,6 +233,28 @@ describe('CategoryNormalizer', () => {
       };
       const fuelResult = CategoryNormalizer.normalize(fuelNode);
       expect(fuelResult.main).toBe('その他'); // Because '燃料' is invalid
+    });
+  });
+
+  describe('Book categorization', () => {
+    it('should skip generic "本" node and pick specific genre node', () => {
+      const grandParent: BrowseNode = { displayName: '本', id: '1' };
+      const parent: BrowseNode = { displayName: 'ビジネス・経済', id: '2', ancestor: grandParent };
+      const leaf: BrowseNode = { displayName: 'マネープラン', id: '3', ancestor: parent };
+
+      const result = CategoryNormalizer.normalize(leaf);
+      expect(result).toEqual({
+        main: 'マネープラン',
+        sub: 'ビジネス・経済',
+        nameCount: 2,
+        score: 10,
+      });
+    });
+
+    it('should score "ビジネス・経済" as 10', () => {
+      const node: BrowseNode = { displayName: 'ビジネス・経済', id: '1' };
+      const result = CategoryNormalizer.normalize(node);
+      expect(result.score).toBe(10);
     });
   });
 

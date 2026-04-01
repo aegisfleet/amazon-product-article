@@ -42,8 +42,6 @@ export class CategoryNormalizer {
     'Alexa',
     'Ring',
     'Amazonデバイス',
-    '本',
-    '書籍',
     'コントローラー',
     'ヘッドセット',
     'マウス',
@@ -70,6 +68,14 @@ export class CategoryNormalizer {
     'トリートメント',
     'リンス',
     'マイク',
+    'ビジネス・経済',
+    'マネープラン',
+    '節約・家計管理',
+    '投資',
+    '自己啓発',
+    '実用書',
+    'コミック・ラノベ',
+    '暮らし・健康・子育て',
   ];
 
   /**
@@ -398,7 +404,6 @@ export class CategoryNormalizer {
       'sports & outdoors',
       'ホーム・日用品',
       '日用品・生活必需品：おもちゃ',
-      '和書（アダルト除く）',
       'featured categories',
       'omron（オムロン）',
       '電池利用商品',
@@ -502,6 +507,10 @@ export class CategoryNormalizer {
       'ベビー・幼児用おもちゃ',
       'ベビー家具・収納',
       'ネスレ日本',
+      '本',
+      '書籍',
+      '和書',
+      'Kindle本',
     ];
 
     if (blacklist.includes(name)) {
