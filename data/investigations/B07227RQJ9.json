@@ -1,0 +1,201 @@
+{
+  "analysis": {
+    "productName": "Amazonベーシック ペット用 自動給水器 重力式 3.8L",
+    "parentAsin": "B07227RQJ9",
+    "productDescription": "電気を使わず重力で自動的に給水する、Amazonベーシックのペット用自動給水器です。3.8Lの大容量で、猫や小型～中型犬の多頭飼いやお留守番に最適です。",
+    "productUsage": [
+      "ペット（犬・猫）の日常的な飲み水の供給",
+      "外出・お留守番時の自動給水"
+    ],
+    "positivePoints": [
+      "電源不要（重力式）で停電時や留守番中も安全・確実に水が供給できる",
+      "3.8Lの大容量で、頻繁な水補充の手間が省ける",
+      "透明なボトルで残量がひと目で確認できる",
+      "滑りにくいゴム製の脚が付いており、安定感がある",
+      "食器の側面に取っ手用の切り抜きがあり、持ち運びやお手入れが簡単"
+    ],
+    "negativePoints": [
+      "手洗いのみ可能で、食洗機などは使用できない",
+      "フィルター等の浄水機能は付いていないため、定期的な水の交換や洗浄が必要",
+      "水が常に露出しているため、ホコリやゴミが入りやすい"
+    ],
+    "useCases": [
+      "日中家を空ける共働き家庭のペットの水分補給",
+      "猫や小型犬を多頭飼いしている家庭での共有給水器として",
+      "停電時など電気が使えない状況下での備えとして"
+    ],
+    "userStories": [
+      {
+        "userType": "多頭飼いの飼い主",
+        "scenario": "猫と小型犬を複数飼っており、水の減りが早い状況",
+        "experience": "3.8Lと大容量なので、1日に何度も水を補充する手間が省けました。透明なタンクで残量もすぐに分かり、重力式で電気が不要なため、コードをかじる心配もなく安全に使えています。",
+        "supportingSourceIds": [
+          "src-amazon-product-page"
+        ],
+        "sentiment": "positive"
+      },
+      {
+        "userType": "日中家を空ける飼い主",
+        "scenario": "仕事で長時間家を留守にする際のペットの飲み水確保",
+        "experience": "お留守番中の飲み水が心配でしたが、これならたっぷりと水を入れておけます。ただ、水が受け皿に出しっぱなしになる構造なので、抜け毛やホコリが浮くことがあり、帰宅時のこまめな洗浄は必要です。",
+        "supportingSourceIds": [
+          "src-amazon-product-page"
+        ],
+        "sentiment": "mixed"
+      }
+    ],
+    "userImpression": "大容量で電源不要というシンプルさが評価されています。多頭飼いや留守番の多い家庭に便利ですが、浄水フィルターがないため毎日の衛生管理（洗浄・水換え）は飼い主自身で行う必要があります。",
+    "sources": [
+      {
+        "id": "src-amazon-product-page",
+        "name": "Amazon商品ページ",
+        "url": "https://www.amazon.co.jp/dp/B07227RQJ9",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-04-01",
+        "author": "Amazon",
+        "conflictOfInterest": "none",
+        "notes": "商品の機能、仕様（寸法縦31.50×横17.78×高さ30.48cm、重さ412.77g、3.8L）、価格（1546円）、特徴を確認"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "重力式で新鮮な飲み水を継続的に供給",
+        "category": "durability",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-amazon-product-page"
+        ],
+        "crossChecked": false,
+        "notes": "商品仕様に明記されている"
+      },
+      {
+        "claim": "最大3.8Lの水を貯水可能",
+        "category": "durability",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-amazon-product-page"
+        ],
+        "crossChecked": false,
+        "notes": "商品仕様・スペックに明記されている"
+      }
+    ],
+    "lastInvestigated": "2026-04-01",
+    "competitiveAnalysis": [
+      {
+        "name": "M-PETS REFRESH ウォーターディスペンサー 850ml",
+        "asin": "B0FGTHRMRT",
+        "priceComparison": "M-PETSの方がわずかに高いが、容量が850mlと少なく小型化されている",
+        "featureComparison": [
+          "共通点：電源不要の重力式自動給水器",
+          "相違点：対象商品は3.8Lと大容量であるのに対し、M-PETSは850mlと小型である"
+        ],
+        "differentiators": [
+          "Amazonベーシック ペット用 自動給水器 重力式 3.8Lの利点：大容量であり、多頭飼いや中型犬、長時間の留守番に適している",
+          "M-PETS REFRESH ウォーターディスペンサー 850mlの利点：小型で省スペースなため、1匹飼いの小型犬や猫など、水が汚れにくい頻度で交換したい場合に適している"
+        ]
+      },
+      {
+        "name": "JUNSPOWペット給水器 4L",
+        "asin": "B0CXDS15W4",
+        "priceComparison": "JUNSPOWの方が高い",
+        "featureComparison": [
+          "共通点：大容量の重力式自動給水器",
+          "相違点：対象商品はポリプロピレン製だが、JUNSPOWはステンレス製ボウルを採用している"
+        ],
+        "differentiators": [
+          "Amazonベーシック ペット用 自動給水器 重力式 3.8Lの利点：シンプルで価格が安い",
+          "JUNSPOWペット給水器 4Lの利点：ボウル部分がステンレス製で、プラスチックアレルギーのペットにも配慮でき、傷がつきにくく衛生的である"
+        ]
+      },
+      {
+        "name": "Ladruph 水飲み器 自動給水器 ペット用 3.8L",
+        "asin": "B0GMMTHN1C",
+        "priceComparison": "Ladruphの方が少し安い",
+        "featureComparison": [
+          "共通点：3.8Lの大容量で重力式の自動給水器",
+          "相違点：デザインやメーカーが異なるが、スペック上は非常に似ている"
+        ],
+        "differentiators": [
+          "Amazonベーシック ペット用 自動給水器 重力式 3.8Lの利点：Amazonベーシックというブランドの信頼性がある",
+          "Ladruph 水飲み器 自動給水器 ペット用 3.8Lの利点：少しでも安く購入したい場合に適している"
+        ]
+      },
+      {
+        "name": "Marchul 猫 自動給餌器・給水器セット",
+        "asin": "B0FJWK7CTS",
+        "priceComparison": "Marchulの方が高いが、給餌器とのセットである",
+        "featureComparison": [
+          "共通点：3.8Lの大容量重力式給水",
+          "相違点：対象商品は給水器単体だが、Marchulは給餌器（フードフィーダー）とのセット製品である"
+        ],
+        "differentiators": [
+          "Amazonベーシック ペット用 自動給水器 重力式 3.8Lの利点：給水器のみが必要な場合、安価に導入できる",
+          "Marchul 猫 自動給餌器・給水器セットの利点：水だけでなく餌の自動供給も同時に揃えたい場合に適している"
+        ]
+      },
+      {
+        "name": "ペット給水器 猫 水飲み器 犬 重力式給水器 3L",
+        "asin": "B0GQJVSJ2L",
+        "priceComparison": "こちらの方が安い",
+        "featureComparison": [
+          "共通点：重力式給水器",
+          "相違点：容量が3L（別モデルで5L）であり、ボール付きで漏れ防止構造を持つ"
+        ],
+        "differentiators": [
+          "Amazonベーシック ペット用 自動給水器 重力式 3.8Lの利点：3.8Lという絶妙な容量で安定感がある",
+          "ペット給水器 猫 水飲み器 犬 重力式給水器 3Lの利点：漏れ防止などの追加機能があり安価"
+        ]
+      },
+      {
+        "name": "マーセイラ 自動ペット給水器",
+        "asin": "B0GRVGQ5DH",
+        "priceComparison": "マーセイラの方が少し高い",
+        "featureComparison": [
+          "共通点：電源不要の重力式給水器",
+          "相違点：機能的には類似している"
+        ],
+        "differentiators": [
+          "Amazonベーシック ペット用 自動給水器 重力式 3.8Lの利点：価格が抑えられている",
+          "マーセイラ 自動ペット給水器の利点：デザインや細かい作りの違い（好みの問題）"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "猫や小型～中型犬を多頭飼いしている家庭",
+        "仕事などで長時間家を空けることが多い飼い主",
+        "電源不要でシンプルな構造の給水器を探している人"
+      ],
+      "pros": [
+        "3.8Lの大容量で頻繁な水補充が不要",
+        "電源を使わないため、感電リスクや停電時の心配がない",
+        "透明ボトルで残量確認が容易",
+        "Amazonベーシックならではの低価格と安定した品質"
+      ],
+      "cons": [
+        "浄水機能（フィルター）がないため、抜け毛やホコリが浮きやすい",
+        "定期的な手洗いが必要（食洗機不可）"
+      ],
+      "score": 80,
+      "scoreRationale": "[基本点: 70]\n[加点: +10] (3.8Lの大容量と電源不要の利便性・コストパフォーマンスが優れている)\n[加点: +5] (透明ボトルや滑り止めゴムなど実用的な設計)\n[減点: -5] (フィルターがなく水が露出するため、衛生面でこまめな手入れが必要)\n[合計: 80]"
+    },
+    "technicalSpecs": {
+      "dimensions": {
+        "height": "304.8mm",
+        "width": "177.8mm",
+        "depth": "315mm"
+      },
+      "weight": "412.77g",
+      "capacity": "3.8L",
+      "material": "ポリプロピレン、PET樹脂",
+      "origin": "不明",
+      "other": [
+        "電源不要（重力式）",
+        "手洗いのみ可能",
+        "滑りにくいゴム製の脚付き",
+        "持ち運び用切り抜き取っ手付き"
+      ]
+    }
+  }
+}
