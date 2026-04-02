@@ -360,6 +360,8 @@ export class CategoryNormalizer {
       /なるほど家電/i,
       /iswhitegloverequired/i,
       /秀和システム.*コレクション/i,
+      /プロも納得/i,
+      /スチールラックのすごい収納/i,
     ];
 
     if (invalidPatterns.some((pattern) => pattern.test(name))) {
