@@ -1,0 +1,131 @@
+{
+  "analysis": {
+    "productName": "CIO フラットスパイラルケーブル CtoC 1m",
+    "parentAsin": "B0GDQR8GTS",
+    "productDescription": "薄いフラットケーブルに磁石を内蔵し、渦巻き状にきれいにまとまるType-Cケーブル。最大240WのPD急速充電と最大480Mbpsのデータ転送に対応。",
+    "productUsage": [
+      "スマートフォンやタブレットの充電",
+      "ノートPCへの給電",
+      "データ転送"
+    ],
+    "positivePoints": [
+      "マグネット内蔵で渦巻き状にスッキリまとまる",
+      "最大240WのPD急速充電に対応",
+      "ナイロン編み込み素材で柔軟性と耐久性がある"
+    ],
+    "negativePoints": [
+      "データ転送速度がUSB2.0相当(480Mbps)に留まる"
+    ],
+    "useCases": [
+      "外出先への持ち運び",
+      "デスク周りのケーブル整理"
+    ],
+    "userStories": [],
+    "userImpression": "持ち運びしやすさと高い給電能力（最大240W）から、モバイル用途やデスク周りの整理に適したケーブルとして評価される傾向にある。",
+    "sources": [
+      {
+        "id": "src-1",
+        "name": "Amazon商品ページ",
+        "url": "https://www.amazon.co.jp/dp/B0FXKDCLDH",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-04-02",
+        "author": "CIO",
+        "conflictOfInterest": "disclosed",
+        "notes": "製品の基本仕様および公式の製品説明"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "最大240WのPD急速充電に対応",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "crossChecked": false,
+        "notes": "公式スペック"
+      },
+      {
+        "claim": "マグネット内蔵で渦巻き状にまとまる",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "crossChecked": false,
+        "notes": "公式スペック"
+      }
+    ],
+    "lastInvestigated": "2026-04-02",
+    "competitiveAnalysis": [
+      {
+        "name": "CIO フレックススパイラルケーブル 1m",
+        "asin": "B0G6K8J7TF",
+        "priceComparison": "対象商品と同等の価格帯",
+        "featureComparison": [
+          "共通点：CtoC、240WのPD急速充電対応、スパイラル状にまとまる",
+          "相違点：対象商品は平型(フラット)であるのに対し、こちらは標準的な形状記憶タイプ"
+        ],
+        "differentiators": [
+          "CIO フラットスパイラルケーブル CtoC 1mの利点：薄型でかさばりにくいため、ポーチなどへの収納性に優れる",
+          "CIO フレックススパイラルケーブル 1mの利点：形状記憶により、より自由な形に整えやすい可能性がある"
+        ]
+      },
+      {
+        "name": "CIO 柔らかいスパイラルシリコンケーブル CtoC 1m",
+        "asin": "B0DHBNPC69",
+        "priceComparison": "対象商品よりやや高価",
+        "featureComparison": [
+          "共通点：CtoC、240WのPD急速充電対応、スパイラル状にまとまる",
+          "相違点：本商品はシリコン素材を採用しており、より柔らかく絡まりにくい特性がある"
+        ],
+        "differentiators": [
+          "CIO フラットスパイラルケーブル CtoC 1mの利点：ナイロン編み込み素材による耐久性とフラット形状による収納性",
+          "CIO 柔らかいスパイラルシリコンケーブル CtoC 1mの利点：シリコン素材によるしなやかさと肌触りの良さ"
+        ]
+      },
+      {
+        "name": "Raineed フラットスパイラルケーブル CtoC",
+        "asin": "B0GRTKS66M",
+        "priceComparison": "対象商品より安価",
+        "featureComparison": [
+          "共通点：フラット形状、マグネット吸着でスパイラル状にまとまる、PD 240W対応",
+          "相違点：ブランドが異なる（CIOとRaineed）"
+        ],
+        "differentiators": [
+          "CIO フラットスパイラルケーブル CtoC 1mの利点：国内ブランド(CIO)による信頼性とサポート体制",
+          "Raineed フラットスパイラルケーブル CtoCの利点：初期費用を抑えて同様の機能を利用できる"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "外出先で複数のデバイスを充電する人",
+        "ケーブルの絡まりや収納に悩んでいる人",
+        "ノートPCなど高出力な給電が必要な人"
+      ],
+      "pros": [
+        "マグネット内蔵でスッキリまとまる",
+        "240Wの高出力充電対応",
+        "かさばらないフラット形状"
+      ],
+      "cons": [
+        "データ転送速度はUSB2.0相当(480Mbps)",
+        "映像出力には非対応(仕様上記載なし)"
+      ],
+      "score": 80,
+      "scoreRationale": "[基本点: 70]\n[加点: +5] 最大240WのPD充電対応による高い実用性\n[加点: +5] マグネット内蔵・フラット形状による優れた収納性\n[合計: 80]"
+    },
+    "technicalSpecs": {
+      "length": "1m",
+      "weight": "100g",
+      "material": "ナイロン編み込み素材",
+      "color": "エアリーパープル",
+      "other": [
+        "最大充電出力: 240W (PD対応)",
+        "データ転送速度: 480Mbps (USB 2.0)"
+      ]
+    }
+  }
+}
