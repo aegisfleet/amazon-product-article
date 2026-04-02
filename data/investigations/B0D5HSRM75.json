@@ -1,0 +1,188 @@
+{
+  "analysis": {
+    "productName": "Kobo Libra Colour",
+    "parentAsin": "B0D93NV4R6",
+    "productDescription": "カラー対応の約17.8cm(7.0インチ相当)E Ink Kaleido 3ディスプレイを搭載した電子書籍リーダー。IPX8規格準拠の防水機能を備え、スタイラスペン（別売）による書き込み機能にも対応する。",
+    "productUsage": [
+      "カラーページを含む電子書籍の閲覧",
+      "スタイラスペンを利用したメモ書きやハイライト",
+      "入浴時や水回りでの読書"
+    ],
+    "positivePoints": [
+      "カラー表示対応により、雑誌やコミック、図解入り書籍などをフルカラーで楽しめる",
+      "スタイラスペン（別売）による手書きメモやハイライトが可能",
+      "ページめくりボタンを搭載し、片手でも快適に操作できる",
+      "IPX8準拠の防水性能で、お風呂やキッチンでも利用可能",
+      "ComfortLight PRO機能により、周囲の環境に合わせて色温度と明るさを自動調整"
+    ],
+    "negativePoints": [
+      "カラー表示の解像度は150ppiと、白黒表示(300ppi)に比べて粗い",
+      "Kobo Stylus 2（スタイラスペン）は別売りである",
+      "E Ink技術の特性上、LCDやOLEDのような鮮やかな発色や高速な画面書き換えは期待できない"
+    ],
+    "useCases": [
+      "通勤や通学中の電車内で、雑誌やカラーコミックを読む",
+      "入浴中にリラックスしながら読書を楽しむ",
+      "読書中に気になった箇所へ手書きでメモを残す"
+    ],
+    "userStories": [],
+    "userImpression": "カラーE Inkディスプレイを採用したことで、電子書籍の楽しみ方が大きく広がったと評価されている。特にカラーコミックや雑誌の閲覧において、従来の白黒端末からの進化が実感できるという声が多い。一方、カラー解像度や発色については、液晶や有機ELディスプレイと比較すると見劣りする点や、E Ink特有の残像感に言及する意見も見られる。防水機能やページめくりボタンなど、電子書籍リーダーとしての基本性能は充実しており、総合的な満足度は高い傾向にある。",
+    "sources": [
+      {
+        "id": "src-1",
+        "name": "Amazon Product Data",
+        "url": "https://www.amazon.co.jp/dp/B0D5HSRM75",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-04-03",
+        "author": "Amazon",
+        "conflictOfInterest": "none",
+        "notes": "商品の基本スペック、機能、販売情報などを抽出"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "7.0インチのE Ink Kaleido 3ディスプレイを搭載し、カラー表示に対応している。",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "crossChecked": false,
+        "notes": "商品情報に明記されている"
+      },
+      {
+        "claim": "IPX8規格準拠の防水性能を備えている。",
+        "category": "safety",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "crossChecked": false,
+        "notes": "水深2mで最大60分耐久すると記載されている"
+      }
+    ],
+    "lastInvestigated": "2026-04-03",
+    "competitiveAnalysis": [
+      {
+        "name": "BOOX Go Color 7",
+        "asin": "B0D76HBTX7",
+        "priceComparison": "BOOX Go Color 7は汎用Androidタブレットに近く、Playストアから様々なアプリをインストールできる点が強みであるが、価格は高めに設定されている傾向がある。純粋な読書用途であればKobo Libra Colourの方がコストパフォーマンスに優れる。",
+        "featureComparison": [
+          "共通点：約17.8cmのカラーE Inkディスプレイ（Kaleido 3）を搭載。ページめくりボタンを備える。",
+          "相違点：Kobo Libra Colourが楽天Kobo専用端末であるのに対し、BOOX Go Color 7はAndroid OSを搭載し、Kindleを含む様々な電子書籍アプリやその他のAndroidアプリを利用可能。Kobo Libra Colourは防水(IPX8)対応。"
+        ],
+        "differentiators": [
+          "Kobo Libra Colourの利点：防水対応でお風呂で使える。楽天Koboストアとの統合性が高い。",
+          "BOOX Go Color 7の利点：Android OS搭載で拡張性が高く、複数ストアのアプリを利用可能。"
+        ]
+      },
+      {
+        "name": "Kobo Clara Colour",
+        "asin": "B0D5J3S45V",
+        "priceComparison": "Kobo Clara Colourは画面サイズが小さくページめくりボタンを搭載していない分、安価に設定されている。",
+        "featureComparison": [
+          "共通点：カラーE Inkディスプレイ（Kaleido 3）を搭載し、防水機能（IPX8）を備える楽天Kobo専用端末。",
+          "相違点：Kobo Libra Colourは約17.8cm画面でページめくりボタンとスタイラスペン(別売)による書き込み機能に対応する。Kobo Clara Colourは約15.2cm画面でボタンやペン入力には非対応。"
+        ],
+        "differentiators": [
+          "Kobo Libra Colourの利点：画面が大きく、ページめくりボタンで快適に操作可能。ペンでの書き込みができる。",
+          "Kobo Clara Colourの利点：コンパクトで軽く、持ち運びに便利。価格が手頃。"
+        ]
+      },
+      {
+        "name": "Kindle Paperwhite (第11世代)",
+        "asin": "B09RN24X4M",
+        "priceComparison": "Kindle Paperwhiteは白黒表示のみであるため、カラー対応のKobo Libra Colourよりも安価な場合が多い。",
+        "featureComparison": [
+          "共通点：防水機能(IPX8)を備えた電子書籍リーダー。フロントライトを搭載。",
+          "相違点：Kobo Libra Colourはカラー表示とペン入力に対応し、ページめくりボタンを搭載。Kindle Paperwhiteは白黒表示(300ppi)でボタンやペン入力は非対応だが、AmazonのKindleストアと連携。"
+        ],
+        "differentiators": [
+          "Kobo Libra Colourの利点：カラーコミックや雑誌を楽しめる。ページめくりボタン搭載。スタイラスペンでの書き込みが可能。",
+          "Kindle Paperwhite (第11世代)の利点：Kindleストアの豊富なラインナップを利用可能。"
+        ]
+      },
+      {
+        "name": "BOOX Tab Mini C",
+        "asin": "B0C7GH4Q5Z",
+        "priceComparison": "BOOX Tab Mini Cは高性能なAndroid搭載カラーEinkタブレットであり、Kobo Libra Colourと比較して価格は大幅に高い。",
+        "featureComparison": [
+          "共通点：カラーE Inkディスプレイ(Kaleido 3)を搭載し、スタイラスペンによる書き込みに対応。",
+          "相違点：Kobo Libra Colourが約17.8cmの専用端末でページめくりボタンと防水機能を備えるのに対し、BOOX Tab Mini Cは約19.8cmのAndroid OS搭載端末で、様々なアプリが利用でき、専用GPUによる高速な描画が可能だが、防水には非対応。"
+        ],
+        "differentiators": [
+          "Kobo Libra Colourの利点：防水対応でお風呂で使える。ページめくりボタン搭載で読書に特化した操作性。軽量で安価。",
+          "BOOX Tab Mini Cの利点：画面が大きく、Android OS搭載により複数ストアのアプリやブラウザなどが快適に動作。BSR搭載で画面の書き換えが高速。"
+        ]
+      },
+      {
+        "name": "Kindle Scribe",
+        "asin": "B0CJ4RSXJ5",
+        "priceComparison": "Kindle Scribeは10.2インチの大型ディスプレイを搭載しているため、Kobo Libra Colourよりも高価格帯となる。",
+        "featureComparison": [
+          "共通点：専用スタイラスペンによる手書きメモ機能に対応。",
+          "相違点：Kobo Libra Colourは約17.8cmのカラー表示対応・防水・ページめくりボタン搭載。Kindle Scribeは約25.9cmの白黒表示のみで、防水・ページめくりボタンは非搭載だが画面サイズが大きいためノート用途に優れる。"
+        ],
+        "differentiators": [
+          "Kobo Libra Colourの利点：カラー表示対応。防水機能搭載。コンパクトで軽量、ページめくりボタンがあり読書用途で扱いやすい。",
+          "Kindle Scribeの利点：約25.9cmの大画面で、PDFの閲覧やノートとしての実用性が高い。"
+        ]
+      },
+      {
+        "name": "Bigme B7",
+        "asin": "B0F99Q6XND",
+        "priceComparison": "Bigme B7はAndroidを搭載しSIM(4G)にも対応する高機能モデルのため、純粋な電子書籍リーダーであるKobo Libra Colourに比べて価格設定は高い。",
+        "featureComparison": [
+          "共通点：約17.8cmのカラー電子ペーパーディスプレイを搭載。",
+          "相違点：Kobo Libra Colourは楽天Kobo専用の読書特化型端末で防水対応。Bigme B7はAndroid 14を搭載し、Google Play経由でアプリを追加可能。さらにSIMフリーで4G通信にも対応するが防水機能はない。"
+        ],
+        "differentiators": [
+          "Kobo Libra Colourの利点：防水対応でお風呂などで安全に使える。読書に最適化されたシンプルなUI。価格が抑えられている。",
+          "Bigme B7の利点：Android OSと4G通信により、Wi-Fiがない環境でも自由にアプリを利用できる。"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "楽天Koboストアをメインで利用している人",
+        "カラーコミックや雑誌、実用書などをE Ink端末で読みたい人",
+        "お風呂やプールサイドなど、水回りで読書を楽しみたい人",
+        "電子書籍に直接手書きでメモやハイライトを書き込みたい人"
+      ],
+      "pros": [
+        "Kaleido 3によるカラー表示",
+        "手書き入力対応（ペンは別売）",
+        "IPX8の防水性能",
+        "便利なページめくりボタン"
+      ],
+      "cons": [
+        "カラー表示時の解像度は150ppiと低め",
+        "専用スタイラスペンが別売り",
+        "Androidアプリなどの追加は不可"
+      ],
+      "score": 85,
+      "scoreRationale": "[基本点: 70]\n[加点: +5] (Kaleido 3によるカラー表示に対応し、読書の幅が広がった点)\n[加点: +5] (IPX8準拠の防水性能とページめくりボタンを備え、実用性が高い点)\n[加点: +5] (別売りながらスタイラスペンによる書き込みに対応する点)\n[減点: -0] (特になし)\n[合計: 85]"
+    },
+    "technicalSpecs": {
+      "display": "約17.8cm E Ink Kaleido 3 タッチスクリーン",
+      "resolution": "カラー表示：150ppi / 白黒表示：300ppi",
+      "storage": "約32GB (テキストベースの本：約27,000点分 / コミック：約540点分)",
+      "batteryLife": "数週間（使用環境により異なる）",
+      "frontLight": "ComfortLight PRO (色温度・明るさ調整可能)",
+      "dimensions": {
+        "width": "144.6mm",
+        "height": "161.0mm",
+        "depth": "6.2mm ～ 8.3mm"
+      },
+      "weight": "199.5g",
+      "pageTurn": "画面のタップ / スワイプ / ページめくりボタン",
+      "waterproof": "IPX8規格準拠 (水深2m/最大60分耐久)",
+      "interfaces": "Wi-Fi, USB-C",
+      "color": "ブラック",
+      "other": [
+        "Kobo Stylus 2（別売）に対応し、メモや書き込みが可能"
+      ]
+    }
+  }
+}
