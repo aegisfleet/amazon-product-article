@@ -31,36 +31,61 @@
     "userStories": [
       {
         "userType": "40代男性・運動初心者",
-        "scenario": "健康診断の結果を受け、週末に軽いジョギングを始めることを決意。高価な専門シューズには抵抗があり、手頃で自分の幅広な足に合う靴を探していた。",
-        "experience": "JOLT 4が5,000円以下で手に入り、試しに始めるには最適だと感じた。特に4Eという幅広サイズが用意されていたのが決め手となり、実際に履いてみると全く窮屈さがなく、快適に走ることができた。この靴のおかげで運動を始めるハードルが下がり、三日坊主にならずにジョギングを継続できている。",
+        "scenario": "健康診断の結果を受け、週末に軽いジョギングを始めることを決意。手頃で自分の幅広な足に合う靴を探していた。",
+        "experience": "5,000円台という安さで手に入り、4Eという幅広設計で快適に走ることができた。初めてのランニングシューズに最適だった。",
+        "supportingSourceIds": [
+          "src-1",
+          "src-2"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "20代男性・通勤ランナー",
-        "scenario": "会社の近くのジムに通うため、仕事帰りに走れる靴を探していた。革靴とは別にスニーカーを持ち歩くのが面倒で、スーツにも合わせやすい黒一色のランニングシューズを求めていた。",
-        "experience": "JOLT 4のオールブラックモデルは、ぱっと見ではランニングシューズに見えないほどシンプルで、オフィスカジュアルな服装にも違和感なく合わせられた。高価なシューズを毎日使うのは気が引けるが、この価格なら気兼ねなく履き潰せる。クッションも十分で、約1年間の通勤ラン（合計約960km）を快適にサポートしてくれた。",
+        "scenario": "会社の近くのジムに通うため、仕事帰りに走れる靴を探していた。スーツにも合わせやすい黒一色のランニングシューズを求めていた。",
+        "experience": "オールブラックモデルはオフィスカジュアルにも合わせやすく、価格も手頃なので毎日のように履ける。クッション性もあり快適。",
+        "supportingSourceIds": [
+          "src-2"
+        ],
         "sentiment": "positive"
       }
     ],
     "userImpression": "総合的に、JOLT 4はランニングやウォーキングなどの軽運動を始める層にとって最適なエントリーシューズと評価できます。最大の魅力である「価格」と「幅広設計」は、多くの初心者が抱える「続くか分からない趣味に高額な投資はしたくない」「自分の足に合う靴が見つからない」という2つの大きな課題を解決します。前作からの改良点であるヒールカウンターの改善も評価されており、エントリーモデルとしての完成度は非常に高いです。",
     "sources": [
       {
+        "id": "src-1",
         "name": "【格安】アシックスジョルト４（JOLT４）レビュー情報 - ランｄｅ部",
         "url": "http://running-first-mabou.com/2023/11/05/%E3%80%90%E6%A0%BC%E5%AE%89%E3%80%91%E3%82%A2%E3%82%B7%E3%83%83%E3%82%AF%E3%82%B9%E3%82%B8%E3%83%A7%E3%83%AB%E3%83%88%EF%BC%94%EF%BC%88jolt%EF%BC%94%EF%BC%89%E3%83%AC%E3%83%93%E3%83%A5%E3%83%BC/",
-        "credibility": "中"
+        "tier": "medium",
+        "evidenceType": "secondary",
+        "publishedAt": "2023-11-05",
+        "author": "ランｄｅ部",
+        "conflictOfInterest": "possible",
+        "notes": "JOLT4は幅広いシューズで、日常履きやウォーキング・ジョギングなど様々なシーンで使えると評価されている。"
       },
       {
-        "name": "【レビュー】アシックスJoltが初心者ランナーにオススメな理由 - RunningBasement",
+        "id": "src-2",
+        "name": "【レビュー】アシックスJoltが初心者ランナーにオススメな理由 - YukiYamada",
         "url": "https://runner-yukiyamada.com/itemreview-18/",
-        "credibility": "中"
+        "tier": "medium",
+        "evidenceType": "secondary",
+        "publishedAt": "2023-03-06",
+        "author": "YukiYamada",
+        "conflictOfInterest": "possible",
+        "notes": "初心者ランナー向けの入門シューズとしてJOLT4が紹介されている。定価5,500円と低価格帯でありながら、オールブラックカラーがあり、通気性の高いアッパーやEVAフォーム、ジェルクッションなどの特徴がある。"
       },
       {
-        "name": "価格.com - ランニング シューズ アシックス jolt4」の人気商品一覧",
-        "url": "https://search.kakaku.com/%E3%83%A9%E3%83%B3%E3%83%8B%E3%83%B3%E3%82%B0%20%E3%82%B7%E3%83%A5%E3%83%BC%E3%82%BA%20%E3%82%A2%E3%82%B7%E3%83%83%E3%82%AF%E3%82%B9%20jolt4/",
-        "credibility": "高"
+        "id": "src-3",
+        "name": "価格.com - アシックス JOLT 4 1011B603 (ランニングシューズ) 価格比較",
+        "url": "https://kakaku.com/item/S0001041606/",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-04-03",
+        "author": "価格.com",
+        "conflictOfInterest": "none",
+        "notes": "1011B603（JOLT4の関連品番）の最安価格が5,049円であることが確認できた。"
       }
     ],
-    "lastInvestigated": "2026-01-27",
+    "lastInvestigated": "2026-04-03",
     "competitiveAnalysis": [
       {
         "name": "ミズノ ウエーブライダー28 スーパーワイド",
@@ -135,19 +160,49 @@
       "scoreRationale": "[基本点: 70]\n[加点: +15] (コストパフォーマンス: 5,000円以下という価格は、信頼できるナショナルブランドのシューズとして破格であり、最大の評価ポイント。)\n[加点: +6] (性能・機能: エントリーモデルとして十分なクッション性と、前作から改良されたヒールホールド機能を備えている。)\n[加点: +5] (ユーザー満足度: ECサイトやレビューブログでの評価が非常に高く、多くのユーザーが価格以上の価値を感じている。)\n[減点: -4] (品質・デザイン: デザインはシンプル過ぎるきらいがあり、アッパーの耐久性は価格相応。本格的なランニングには機能不足。)\n[合計: 92]"
     },
     "technicalSpecs": {
-      "width": "エクストラワイド (4E相当)",
-      "weight": "約270g (27.0cm 片足)",
-      "material": {
-        "upper": "合成繊維/人工皮革",
-        "outsole": "ゴム底",
-        "insole": "合成樹脂(ORTHOLITE)/固定式"
-      },
-      "midsole": "EVAフォーム",
+      "color": "001(ブラック/ブラック)",
+      "size": "28.0 cm 4E",
+      "model": "1011B602",
+      "width": "EXTRA WIDE (4E相当)",
+      "material": "アッパー/合成繊維/人工皮革、アウターソール/ゴム底、インナーソール/ 合成樹脂(ORTHOLITE)/固定式",
       "cushioningTech": [
-        "GELテクノロジー (かかと部)"
-      ],
-      "heelCounter": "あり（硬め・JOLT 3より改善）",
-      "modelNumber": "1011B602"
-    }
+        "GELクッション",
+        "EVAフォーム"
+      ]
+    },
+    "claims": [
+      {
+        "claim": "5,000円台という圧倒的なコストパフォーマンスのエントリーモデル",
+        "category": "comparativeAdvantage",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-2",
+          "src-3"
+        ],
+        "crossChecked": true,
+        "notes": "複数のレビュー記事や価格.comのデータから、5,000円台（最安5,049円、定価5,500円）で買えるアシックスのエントリーモデルであることが確認できる。"
+      },
+      {
+        "claim": "4E相当の「エクストラワイド」設計",
+        "category": "durability",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "crossChecked": false,
+        "notes": "足幅が広い人向けに作られていることが確認できる。"
+      },
+      {
+        "claim": "日常履きやウォーキング、軽いジョギングに適している",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-1",
+          "src-2"
+        ],
+        "crossChecked": true,
+        "notes": "両方のレビュー記事で、初心者向け、日常履き、ウォーキング、ジョギングなどに適していると評価されている。"
+      }
+    ]
   }
 }
