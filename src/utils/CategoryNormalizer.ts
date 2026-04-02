@@ -362,6 +362,7 @@ export class CategoryNormalizer {
       /秀和システム.*コレクション/i,
       /プロも納得/i,
       /スチールラックのすごい収納/i,
+      /その他の.*(?:書籍|本|関連)$/,
     ];
 
     if (invalidPatterns.some((pattern) => pattern.test(name))) {
@@ -441,6 +442,7 @@ export class CategoryNormalizer {
       'amazon basics',
       'amazon basic',
       'amazon store',
+      'その他',
       'kindle本',
       'ジャンル別',
       'custom stores',
