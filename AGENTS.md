@@ -8,7 +8,9 @@
 
 Amazon Creators APIの認証情報の取り扱いには、最優先でセキュリティを確保すること。
 
-- **ログ出力の禁止**: `AMAZON_CREATORS_APPLICATION_ID`, `AMAZON_CREATORS_CREDENTIAL_ID`, `AMAZON_CREATORS_CREDENTIAL_SECRET` をコンソール、ログ、ファイル、またはコミットメッセージに出力しないこと。
+- **ログ出力の禁止**:
+  `AMAZON_CREATORS_APPLICATION_ID`, `AMAZON_CREATORS_CREDENTIAL_ID`, `AMAZON_CREATORS_CREDENTIAL_SECRET`
+  をコンソール、ログ、ファイル、またはコミットメッセージに出力しないこと。
 - **環境変数の利用**: 秘密情報には `process.env` を通じてアクセスすること。キーをハードコードしたり、平文のファイルに保存したりしないこと。
 - **エラーメッセージ**: API失敗時のエラーハンドリングで機密情報が漏洩しないようにすること。
 
@@ -88,8 +90,10 @@ Amazon Creators APIの認証情報の取り扱いには、最優先でセキュ�
 
 カテゴリを親グループに整理する際は、**`data/categorygroups.json` のみ編集する**こと。
 
-- **ソート順**: Unicodeコードポイント順（英数字 > ひらがな > カタカナ > 漢字）を維持すること。迷った場合は `npm run sort:categories` を実行すること。
-- **新規追加後の手順**: `npm run prebuild:hugo` を実行し、`data/categories.yml` 等が自動生成・更新されることを確認すること。
+- **ソート順**: Unicodeコードポイント順（英数字 > ひらがな > カタカナ > 漢字）を維持すること。
+  迷った場合は `npm run sort:categories` を実行すること。
+- **新規追加後の手順**: `npm run prebuild:hugo` を実行し、`data/categories.yml` 等が
+  自動生成・更新されることを確認すること。
 
 ### 4.2 キャッシュ管理ツール
 
@@ -97,8 +101,11 @@ Amazon Creators APIの認証情報の取り扱いには、最優先でセキュ�
 
 | スクリプト | 用途 | 使用例 |
 |---|---|---|
-| `scripts/reset-cache-timestamp.ts` | 特定のASINのキャッシュをリセット | `npx ts-node scripts/reset-cache-timestamp.ts B003AZZS4A` |
-| `scripts/reset-category-cache.ts` | カテゴリ名を含むキャッシュを一括リセット | `npx ts-node scripts/reset-category-cache.ts "ビジネス・経済"` |
+| `scripts/reset-cache-timestamp.ts` | ASIN単位のリセット | `scripts/... B003AZZS4A` |
+| `scripts/reset-category-cache.ts` | カテゴリ単位のリセット | `scripts/... "カテゴリー名"` |
+
+> [!NOTE]
+> 使用例の詳細はスクリプトのヘルプ、またはソースコードを参照すること。
 
 ---
 
