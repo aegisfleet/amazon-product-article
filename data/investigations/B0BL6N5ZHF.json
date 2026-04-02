@@ -29,52 +29,118 @@
     "userStories": [
       {
         "userType": "オーディオ初心者",
-        "scenario": "初めての本格的な中華イヤホンとして購入",
-        "experience": "これまで使っていた安価なイヤホンとは次元の違う音のクリアさと低音の迫力に驚いた。装着感も良く、長時間つけていても耳が痛くならない。",
-        "sentiment": "positive"
-      },
-      {
-        "userType": "音楽愛好家",
-        "scenario": "サブ機としての運用",
-        "experience": "数万円のイヤホンも持っているが、Cadenzaのチューニングバランスの良さには感心した。気軽に持ち出せる高音質機として重宝している。",
-        "sentiment": "positive"
+        "scenario": "初めての本格的な有線イヤホンとして購入",
+        "experience": "スマートフォンやDAPでの音楽鑑賞に使用。安価なイヤホンからアップグレードしたところ、クリアで迫力のある低音とバランスの取れた音質に驚いた。長時間のリスニングでも耳が疲れにくい軽量設計も良い。",
+        "sentiment": "positive",
+        "supportingSourceIds": [
+          "src-2"
+        ]
       }
     ],
     "userImpression": "「5000円以下のベストバイ」との呼び声も高く、特にバランスの取れたチューニングと装着感の良さが評価されている。低音の質とボーカルの聴きやすさが両立しており、ジャンルを選ばず楽しめる万能機として人気。",
     "sources": [
       {
+        "id": "src-1",
         "name": "Linsoul Audio Official Page",
         "url": "https://www.linsoul.com/products/kiwi-ears-cadenza",
-        "credibility": "high"
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2024-01-01",
+        "author": "Linsoul",
+        "conflictOfInterest": "disclosed",
+        "notes": "公式の製品仕様と特徴"
       },
       {
+        "id": "src-2",
         "name": "Amazon Customer Reviews",
         "url": "https://www.amazon.co.jp/dp/B0BL6N5ZHF",
-        "credibility": "medium"
+        "tier": "medium",
+        "evidenceType": "secondary",
+        "publishedAt": "2026-04-03",
+        "author": "Amazon Reviewers",
+        "conflictOfInterest": "none",
+        "notes": "ユーザーによる装着感や音質の評価"
       }
     ],
-    "lastInvestigated": "2026-01-27",
+    "lastInvestigated": "2026-04-03",
     "competitiveAnalysis": [
+      {
+        "name": "Kiwi Ears Cadenza II",
+        "asin": "B0GD6RB7VL",
+        "priceComparison": "対象商品より約3,000円高い。上位機種としてのアップグレード価格。",
+        "featureComparison": [
+          "共通点：軽量で美しい筐体、0.78mm 2pinコネクタ、ダイナミックドライバー搭載",
+          "相違点：Cadenza IIはチタンコーティングダイアフラムとKARS 2.0システムを搭載し、より精緻な低音調整がされている"
+        ],
+        "differentiators": [
+          "Kiwi Ears Cadenzaの利点：価格が手頃で、エントリーモデルとしてのコストパフォーマンスに優れる",
+          "Kiwi Ears Cadenza IIの利点：より高い解像度と最新の音響調整システムによるワンランク上の音質"
+        ]
+      },
       {
         "name": "Moondrop Chu II",
         "asin": "B0CB8HHS8V",
-        "priceComparison": "約3,900円。Cadenzaより少し安い。",
-        "featureComparison": ["金属筐体", "ノズル交換可能", "やや高音寄りのスッキリした音"],
-        "differentiators": ["金属筐体の質感", "よりフラットに近いチューニング"]
+        "priceComparison": "対象商品より少し安い。",
+        "featureComparison": [
+          "共通点：低価格帯の定番エントリーモデル、0.78mm 2pinコネクタ",
+          "相違点：Chu IIは金属筐体で交換可能な音響ノズルを採用。Cadenzaは樹脂筐体でベリリウムドライバー"
+        ],
+        "differentiators": [
+          "Kiwi Ears Cadenzaの利点：軽量な樹脂筐体で長時間の装着でも疲れにくい",
+          "Moondrop Chu IIの利点：金属筐体の質感と、すっきりした音のチューニング"
+        ]
       },
       {
         "name": "7Hz x Crinacle Zero:2",
         "asin": "B0CN2BPN6G",
-        "priceComparison": "約3,200円。Cadenzaより1000円以上安い。",
-        "featureComparison": ["独特なデザイン", "低音重視のチューニング", "プラスチッキーな質感"],
-        "differentiators": ["圧倒的な低価格", "コラボモデルとしての話題性"]
+        "priceComparison": "対象商品より安い。",
+        "featureComparison": [
+          "共通点：著名レビュアーも評価する低価格高音質モデル、0.78mm 2pinコネクタ",
+          "相違点：Zero:2は低音にパンチを持たせた独特のデザイン。Cadenzaはよりバランス重視のチューニング"
+        ],
+        "differentiators": [
+          "Kiwi Ears Cadenzaの利点：筐体のデザイン性と質感が高く、よりフラット寄りのバランスの取れた音質",
+          "7Hz x Crinacle Zero:2の利点：価格の安さと、低音の力強さ"
+        ]
       },
       {
         "name": "TANGZU Wan'er S.G 2",
         "asin": "B0FDJXTC7K",
-        "priceComparison": "約3,500円。Cadenzaより安い。",
-        "featureComparison": ["美しいフェイスプレート", "ボーカル重視のチューニング", "0.78mm 2pin"],
-        "differentiators": ["デザインの独自性", "中音域の艶やかさ"]
+        "priceComparison": "対象商品と同価格帯（現在在庫切れ）。",
+        "featureComparison": [
+          "共通点：美しいフェイスプレートデザイン、0.78mm 2pinコネクタ",
+          "相違点：Wan'er S.G 2はPETダイヤフラムでボーカルに艶があるチューニング"
+        ],
+        "differentiators": [
+          "Kiwi Ears Cadenzaの利点：ベリリウムドライバーによる速いレスポンスと高い解像度",
+          "TANGZU Wan'er S.G 2の利点：ボーカル帯域の表現力と特徴的なイヤーチップ"
+        ]
+      },
+      {
+        "name": "Kiwi Ears Cadenza (パープル)",
+        "asin": "B0BL75KQ2K",
+        "priceComparison": "対象商品と同価格帯。",
+        "featureComparison": [
+          "共通点：仕様は完全に同じ（色違い）",
+          "相違点：本体カラーが異なる（パープル vs ブルー）"
+        ],
+        "differentiators": [
+          "Kiwi Ears Cadenzaの利点：好みのカラーを選択可能",
+          "Kiwi Ears Cadenza (パープル)の利点：好みのカラーを選択可能"
+        ]
+      },
+      {
+        "name": "Kiwi Ears Belle",
+        "asin": "B0FY6F77W4",
+        "priceComparison": "対象商品と同等か少し安い。",
+        "featureComparison": [
+          "共通点：同ブランドの低価格帯IEM、0.78mm 2pin対応",
+          "相違点：BelleはDLC振動板を採用し金属フェイスプレート。Cadenzaはベリリウム振動板でフル樹脂筐体"
+        ],
+        "differentiators": [
+          "Kiwi Ears Cadenzaの利点：ベリリウムドライバー特有のレスポンスとフルレジンの軽量さ",
+          "Kiwi Ears Belleの利点：DLCドライバーによる解像感と金属プレートの質感"
+        ]
       }
     ],
     "recommendation": {
@@ -92,22 +158,42 @@
         "高音が刺さると感じる場合がある",
         "ケースなどの付属品は最小限"
       ],
-      "score": 97,
-      "scoreRationale": "[基本点: 70]\n[加点: +7] (ベリリウムメッキドライバーによる解像度の高さとバランスの良い音質)\n[加点: +10] (同価格帯の競合と比較しても頭一つ抜けた完成度)\n[加点: +4] (3Dプリントレジンの美しい仕上がりと軽量な装着感)\n[加点: +4] (国内外で非常に高い評価を得ている)\n[加点: +2] (この価格帯でベリリウム素材を採用)\n[合計: 97]"
+      "score": 98,
+      "scoreRationale": "[基本点: 70]\n[加点: +8] (価格帯トップクラスの解像度とバランスの良い音質)\n[加点: +10] (同価格帯の競合と比較しても非常に高い完成度)\n[加点: +5] (美しい3Dプリントレジン筐体と軽量で快適な装着感)\n[加点: +5] (国内外で非常に高い評価を得ている)\n[合計: 98]"
     },
     "technicalSpecs": {
-      "driver": "10mm Beryllium Dynamic Driver",
+      "driver": "10mmベリリウムダイナミックドライバー",
       "codec": null,
       "battery": null,
-      "connectivity": "Wired (3.5mm)",
+      "connectivity": "有線 (3.5mm)",
       "noiseCancel": null,
-      "dimensions": null,
+      "dimensions": {
+        "height": "100mm",
+        "width": "150mm",
+        "depth": "100mm"
+      },
+      "weight": "80g",
+      "material": "医療レベル樹脂キャビティ",
       "other": [
-        "Impedance: 32Ω",
-        "Sensitivity: 110dB",
-        "Frequency: 20Hz-20kHz",
-        "Connector: 0.78mm 2pin"
+        "インピーダンス: 32Ω",
+        "感度: 110dB SPL/mW@1KHz",
+        "周波数帯域: 20Hz-20KHz",
+        "歪み率: 0.3%",
+        "コネクタ: 0.78mm 2pin",
+        "ケーブル: 4コア編み込みケーブル"
       ]
-    }
+    },
+    "claims": [
+      {
+        "claim": "10mmベリリウムダイナミックドライバーにより、クリアでバランスの取れた音質を実現",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "crossChecked": true,
+        "notes": "公式情報とユーザーレビューの傾向が一致"
+      }
+    ]
   }
 }
