@@ -1,124 +1,180 @@
 {
   "analysis": {
     "productName": "Marantz Professional M4U USBコンデンサーマイク",
-    "parentAsin": "B09JKLKBCH",
-    "productDescription": "PCやMacに簡単に接続できる、USB A/Dアダプター付属の単一指向性コンデンサーマイクです。",
+    "parentAsin": "B07WKM5ZCS",
+    "productDescription": "マイク、USBアダプター、ケーブル類、卓上スタンドが付属し、レイテンシーなしのモニター出力を備えた単一指向性USBコンデンサーマイクです。配信、ゲーム実況、レコーディングなどに最適です。",
     "productUsage": [
-      "オンライン会議・ビデオ通話 (Zoom, Skypeなど)",
-      "ポッドキャスト・ナレーションの録音",
-      "ゲーム実況・ボイスチャット",
-      "ボーカルや楽器の簡易レコーディング"
+      "ゲーム実況・配信",
+      "ポッドキャスト",
+      "テレワーク・ボイスチャット",
+      "DTM・DAWでの楽曲制作"
     ],
     "positivePoints": [
-      "必要なアクセサリ（マイクケーブル、USBアダプター、卓上スタンド）が全て揃っている",
-      "音響機器の老舗ブランドMarantz Professionalによる信頼性",
-      "USBアダプター経由で手軽にデジタル録音が可能",
-      "低遅延のヘッドフォン出力によるモニタリング機能",
-      "単一指向性により、周囲の雑音を拾いにくい設計"
+      "必要なものがすべて揃ったオールインワンパッケージ",
+      "単一指向性によるクリアな集音と低ノイズ設計",
+      "レイテンシーなしでモニタリング可能な専用ヘッドフォン出力",
+      "付属のUSB A/Dアダプターで簡単にPC接続可能"
     ],
     "negativePoints": [
-      "マイク本体にミュートボタンやゲイン調整機能がない",
-      "価格相応の質感（プラスチック筐体など）の可能性がある",
-      "USBアダプターを使用するため、接続が少し煩雑になる場合がある"
+      "本格的なスタジオマイクと比較すると解像度に限界がある可能性",
+      "機能がシンプルなため、本体での細かい調整（ゲイン等）はできない"
     ],
     "useCases": [
-      "在宅勤務でのWeb会議",
-      "これから配信を始める初心者のエントリー機材"
+      "デスクでのゲーム実況や配信",
+      "在宅ワーク中のオンライン会議やボイスチャット",
+      "自宅での簡易的なボーカル・楽器の録音"
     ],
-    "userStories": [
-      {
-        "userType": "会社員（リモートワーク）",
-        "scenario": "Web会議での音質改善",
-        "experience": "（推測）PC内蔵マイクの音質が悪く、相手に聞き返されることが多かったため導入。USBアダプターで簡単に接続でき、クリアな音声で会議ができるようになった。",
-        "sentiment": "positive"
-      },
-      {
-        "userType": "ゲーム実況初心者",
-        "scenario": "初めての配信環境構築",
-        "experience": "（推測）低予算でマイクを探しており、Marantzブランドに惹かれて購入。スタンドも付属しており、すぐに実況を始められた。ミュートボタンがないのが少し不便だが、音質には満足している。",
-        "sentiment": "mixed"
-      }
-    ],
-    "userImpression": "エントリーモデルとして必要な機能を備え、コストパフォーマンスに優れた製品と評価されている。",
+    "userStories": [],
+    "userImpression": "必要な付属品がすべてセットになっており、購入してすぐにPCに接続して使用できる手軽さが高く評価されています。レイテンシーなしでのモニタリング機能も配信者にとって有用です。",
     "sources": [
       {
-        "name": "Amazon Product Page",
+        "id": "src-amazon",
+        "name": "Amazon商品ページ",
         "url": "https://www.amazon.co.jp/dp/B07WKM5ZCS",
-        "credibility": "high"
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-04-03",
+        "author": "Marantz Professional",
+        "conflictOfInterest": "none",
+        "notes": "製品仕様、特徴、価格の確認"
       }
     ],
-    "lastInvestigated": "2026-01-27",
+    "claims": [
+      {
+        "claim": "必要な付属品（スタンド、ケーブル、USBアダプター）がセットになっている",
+        "category": "comparativeAdvantage",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-amazon"
+        ],
+        "crossChecked": false,
+        "notes": "Amazon商品ページで確認"
+      },
+      {
+        "claim": "レイテンシーなしでのモニタリングが可能",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-amazon"
+        ],
+        "crossChecked": false,
+        "notes": "Amazon商品ページで確認"
+      }
+    ],
+    "lastInvestigated": "2026-04-03",
     "competitiveAnalysis": [
       {
-        "name": "ZealSound USBマイク",
+        "name": "Marantz Professional MPM-1000U",
+        "asin": "B01GHOM67W",
+        "priceComparison": "M4U（3,500円）に対し、MPM-1000U（6,580円）は上位モデルに位置します。",
+        "featureComparison": [
+          "共通点：Marantzブランドの単一指向性USBコンデンサーマイク。",
+          "相違点：MPM-1000Uはより高音質なDAW録音などに適した設計であり、本体重量やサイズも異なります。M4UにはUSBアダプタやスタンドが付属し、より手軽なパッケージとなっています。"
+        ],
+        "differentiators": [
+          "Marantz Professional M4U USBコンデンサーマイクの利点：より安価で、ヘッドフォン出力（レイテンシーなし）と必要な付属品が揃っている点。",
+          "Marantz Professional MPM-1000Uの利点：より本格的な録音品質を求める場合。"
+        ]
+      },
+      {
+        "name": "Marantz Professional MPM-2000U",
+        "asin": "B01GJ9IUNY",
+        "priceComparison": "M4U（3,500円）に対し、MPM-2000U（8,980円）はさらに上位のモデルです。",
+        "featureComparison": [
+          "共通点：Marantzブランドの単一指向性USBコンデンサーマイク。",
+          "相違点：MPM-2000Uはより広い用途に対応し、ショックマウントや保管用ケースが付属する、本格的なスタジオ品質のモデルです。"
+        ],
+        "differentiators": [
+          "Marantz Professional M4U USBコンデンサーマイクの利点：価格が大幅に安く、デスクスタンドやモニター用端子など配信に便利な機能が手軽に揃う点。",
+          "Marantz Professional MPM-2000Uの利点：より高い音質と、ショックマウントなどの本格的なアクセサリーによる高品質な録音環境。"
+        ]
+      },
+      {
+        "name": "Marantz Professional MPM-1000",
+        "asin": "B01C05AL4C",
+        "priceComparison": "M4U（3,500円）に対し、MPM-1000（7,980円）は上位モデルであり、USB接続ではありません。",
+        "featureComparison": [
+          "共通点：Marantzブランドの単一指向性コンデンサーマイク。",
+          "相違点：MPM-1000はXLR接続でファンタム電源が必要な本格的なマイクです。M4UはUSB接続でオーディオインターフェイス不要です。"
+        ],
+        "differentiators": [
+          "Marantz Professional M4U USBコンデンサーマイクの利点：USB接続でオーディオインターフェイスが不要なため、初心者でもすぐに使える点。",
+          "Marantz Professional MPM-1000の利点：オーディオインターフェイスと組み合わせて、より本格的なスタジオレコーディングを行いたい場合。"
+        ]
+      },
+      {
+        "name": "Marantz Professional Umpire",
+        "asin": "B07SS99MPS",
+        "priceComparison": "M4U（3,500円）に対し、Umpire（6,700円）は価格帯が少し上です。",
+        "featureComparison": [
+          "共通点：Marantzブランドの卓上用USBコンデンサーマイク。",
+          "相違点：Umpireはコンパクトな独自デザインで、ポップガードとショックマウントが内蔵されたポッドキャスト特化型です。"
+        ],
+        "differentiators": [
+          "Marantz Professional M4U USBコンデンサーマイクの利点：より安価で、ヘッドフォンモニタリング機能が付いている点。",
+          "Marantz Professional Umpireの利点：ポップガードやショックマウントが一体化しており、ノイズ対策が充実している点。"
+        ]
+      },
+      {
+        "name": "Amazonベーシック USBコンデンサーマイク",
+        "asin": "B0CL9BTQRF",
+        "priceComparison": "M4U（3,500円）とAmazonベーシック（3,111円）はほぼ同価格帯の競合製品です。",
+        "featureComparison": [
+          "共通点：価格帯が近く、USB接続の単一指向性コンデンサーマイク。",
+          "相違点：Amazonベーシックはワンタップミュート機能を搭載しています。M4Uはレイテンシーなしのヘッドフォン出力やUSBアダプタを付属しています。"
+        ],
+        "differentiators": [
+          "Marantz Professional M4U USBコンデンサーマイクの利点：オーディオ機器ブランドMarantz製であることと、ダイレクトモニタリング機能がある点。",
+          "Amazonベーシック USBコンデンサーマイクの利点：配信時に便利なワンタップミュート機能がある点。"
+        ]
+      },
+      {
+        "name": "ZealSound USBコンデンサーマイク k66",
         "asin": "B092JB6XR3",
-        "priceComparison": "ほぼ同価格帯（約3,600円）",
+        "priceComparison": "M4U（3,500円）とZealSound k66（3,999円）は同価格帯です。",
         "featureComparison": [
-          "エコー機能搭載",
-          "ボリュームノブあり"
+          "共通点：同価格帯のUSB接続コンデンサーマイク。",
+          "相違点：ZealSound k66はミュートボタン、エコー機能、マイク/モニターのボリュームコントロールを本体に搭載しています。"
         ],
         "differentiators": [
-          "機能の多さはZealSoundだが、ブランド信頼性はMarantz"
-        ]
-      },
-      {
-        "name": "ELECOM HS-MC14UBK",
-        "asin": "B0BTGLP2G5",
-        "priceComparison": "若干安い（約3,300円）",
-        "featureComparison": [
-          "タッチミュート機能",
-          "LEDインジケーター"
-        ],
-        "differentiators": [
-          "Web会議での利便性（ミュート機能）はELECOMが優れる"
-        ]
-      },
-      {
-        "name": "UGREEN コンデンサーマイク",
-        "asin": "B0FG7DVV62",
-        "priceComparison": "安い（約3,000円）",
-        "featureComparison": [
-          "RGBライティング",
-          "ノイズキャンセリング機能"
-        ],
-        "differentiators": [
-          "ゲーミング向けの派手なデザインに対し、M4Uはシンプルで落ち着いたデザイン"
+          "Marantz Professional M4U USBコンデンサーマイクの利点：老舗オーディオブランドの安心感とシンプルなパッケージ。",
+          "ZealSound USBコンデンサーマイク k66の利点：本体にミュートボタンやエコー、ボリューム調整機能などの機能が豊富に搭載されている点。"
         ]
       }
     ],
     "recommendation": {
       "targetUsers": [
-        "初めてマイクを購入するPCユーザー",
-        "ブランドへの信頼感を重視する人",
-        "シンプルな機材構成を好む人"
+        "手軽に高音質な配信環境を整えたい初心者",
+        "安価で信頼できるブランドのUSBマイクを探している人",
+        "レイテンシーなしで自分の声をモニターしたい配信者"
       ],
       "pros": [
-        "オールインワンパッケージですぐに使える",
-        "信頼のMarantzブランド",
-        "低価格ながら本格的なコンデンサーマイクの入り口として最適"
+        "必要なアクセサリーがすべて揃ったパッケージ",
+        "低価格ながらレイテンシーなしのモニター出力搭載",
+        "Marantzブランドの信頼性"
       ],
       "cons": [
-        "手元でのミュートやボリューム調整ができない",
-        "本格的な音楽制作にはスペック不足の可能性がある"
+        "本体にミュートボタンやゲイン調整つまみがない",
+        "本格的なスタジオマイクには音質で劣る可能性がある"
       ],
       "score": 75,
-      "scoreRationale": "[基本点: 70]\n[コストパフォーマンス: +5] (3,500円で必要なものが全て揃い、ブランド品である点は高評価)\n[機能・性能: -5] (本体にミュートやゲイン調整などの便利機能がない)\n[品質・デザイン: +5] (Marantzブランドへの信頼感)\n[合計: 75]"
+      "scoreRationale": "[基本点: 70]\n[加点: +5] (必要な付属品がすべて揃っており、3500円という低価格でコストパフォーマンスが高い)\n[加点: +5] (同価格帯では珍しいレイテンシーなしのダイレクトモニタリング機能を搭載)\n[減点: -5] (本体でのミュートやゲイン調整ができず、操作性にやや欠ける)\n[合計: 75]"
     },
     "technicalSpecs": {
       "dimensions": {
-        "height": "18.6cm",
-        "width": "4.9cm",
-        "depth": "4.9cm",
-        "weight": "約0.52kg"
+        "height": "185.9mm",
+        "width": "48.8mm",
+        "depth": "48.8mm"
       },
-      "connectivity": [
-        "USB Type-A (アダプタ)",
-        "XLR"
-      ],
+      "weight": "520g",
+      "capacity": "1個",
+      "material": "不明",
+      "origin": "不明",
       "other": [
-        "単一指向性",
-        "エレクトレットコンデンサー",
-        "ヘッドホン出力あり"
+        "指向性: 単一指向性",
+        "接続: USB",
+        "ヘッドフォン出力搭載（レイテンシーなしモニタリング対応）",
+        "付属品: マイク、USB A/Dアダプター、マイクケーブル、卓上スタンド"
       ]
     }
   }
