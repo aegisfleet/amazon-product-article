@@ -132,6 +132,7 @@ describe('CategoryNormalizer', () => {
         '書籍',
         '和書',
         'Kindle本',
+        '秀和システム新社 今すぐ使える実用書コレクション！',
       ];
       invalidNames.forEach((name) => {
         expect(CategoryNormalizer.isValidCategoryName(name)).toBe(false);

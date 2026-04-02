@@ -357,6 +357,7 @@ export class CategoryNormalizer {
       /^燃料$/,
       /なるほど家電/i,
       /iswhitegloverequired/i,
+      /秀和システム.*コレクション/i,
     ];
 
     if (invalidPatterns.some((pattern) => pattern.test(name))) {
