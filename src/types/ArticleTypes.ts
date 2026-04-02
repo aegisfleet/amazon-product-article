@@ -25,6 +25,9 @@ export interface ArticleMetadata {
   images?: string[] | undefined; // Product image URLs for Hugo front matter
   affiliate_url?: string | undefined; // Affiliate link for the hero button
   is_amazon_direct?: boolean | undefined;
+  brand?: string | undefined;
+  model?: string | undefined;
+  releaseDate?: string | undefined;
   availability?: string | undefined;
   loyalty_points?: number | undefined;
   deal_badge?: string | undefined;
@@ -38,6 +41,9 @@ export interface ArticleMetadata {
     target_users: string[];
     warnings: string[];
     specs: TechnicalSpecs;
+    brand?: string | undefined;
+    model?: string | undefined;
+    releaseDate?: string | undefined;
     availability?: string | undefined;
   };
   review?: {
