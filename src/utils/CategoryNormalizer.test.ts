@@ -133,6 +133,7 @@ describe('CategoryNormalizer', () => {
         '和書',
         'Kindle本',
         '秀和システム新社 今すぐ使える実用書コレクション！',
+        '毎日使う水だから 家庭用浄水器ならクリンスイ',
       ];
       invalidNames.forEach((name) => {
         expect(CategoryNormalizer.isValidCategoryName(name)).toBe(false);

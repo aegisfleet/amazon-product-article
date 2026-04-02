@@ -352,7 +352,9 @@ export class CategoryNormalizer {
       // Device and Store management pages
       /(?:kindle|fire|echo|alexa|amazon|ring).*(?:一覧|ページ|ストア|store|popup|体験|イベント)/i,
       // Brand-specific promotion/coordinated pages
-      /(?:sony|ソニー|panasonic|パナソニック|logicool|ロジクール|elecom|エレコム|iris|アイリス|brother|ブラザー|nestle|ネスレ).*(?:特集|一覧|プロモーション|キャンペーン|限定|コーディネート)/i,
+      /(?:sony|ソニー|panasonic|パナソニック|logicool|ロジクール|elecom|エレコム).*(?:特集|一覧|プロモーション|キャンペーン|限定|コーディネート)/i,
+      /(?:iris|アイリス|brother|ブラザー|nestle|ネスレ|cleansui|クリンスイ).*(?:特集|一覧|プロモーション|キャンペーン|限定|コーディネート)/i,
+      /毎日使う水/i,
       /primeday|black\s*friday|ブラックフライデー|新生活|入園入学|父の日|母の日/i,
       /^燃料$/,
       /なるほど家電/i,
