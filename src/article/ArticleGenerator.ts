@@ -115,6 +115,7 @@ export class ArticleGenerator {
    * SEOメタデータを生成
    */
   generateSEOMetadata(product: Product, investigation: InvestigationResult): ArticleMetadata {
+    const productDetail = product as ProductDetail;
     // productName があればそれを使用、なければ ASIN からフォールバック
     const displayName = investigation.analysis.productName || `Product ${product.asin}`;
     // タイトルをシンプルに商品名のみにする
@@ -164,6 +165,9 @@ export class ArticleGenerator {
       seoKeywords,
       is_amazon_direct: product.isAmazonDirect,
       affiliate_url: affiliateUrl,
+      brand: product.brand,
+      model: productDetail.model,
+      releaseDate: productDetail.releaseDate,
       loyalty_points: product.loyaltyPoints,
       deal_badge: product.dealBadge,
       savings_percentage: product.savingsPercentage,
@@ -177,8 +181,10 @@ export class ArticleGenerator {
       metadata.subcategory = subcategory;
     }
 
-    if (manufacturer) {
-      metadata.manufacturer = manufacturer;
+    // APIから取得したmanufacturerがあれば最優先、なければextractManufacturerの結果
+    const finalManufacturer = productDetail.manufacturer || manufacturer;
+    if (finalManufacturer) {
+      metadata.manufacturer = finalManufacturer;
     }
 
     if (investigation.analysis.lastInvestigated) {
@@ -204,6 +210,9 @@ export class ArticleGenerator {
       target_users: investigation.analysis.recommendation.targetUsers,
       warnings: investigation.analysis.recommendation.cons || [],
       specs: investigation.analysis.technicalSpecs || {},
+      brand: metadata.brand,
+      model: metadata.model,
+      releaseDate: metadata.releaseDate,
       availability: metadata.availability,
     };
 
@@ -395,10 +404,19 @@ export class ArticleGenerator {
       `| カテゴリ | ${product.categoryInfo?.main || product.category} |`,
     ];
 
-    // 追加プロパティ（ブランドなど）
+    // 追加プロパティ（メーカー・ブランドなど）
     const productDetail = product as ProductDetail;
+    if (productDetail.manufacturer) {
+      infoRows.push(`| メーカー | ${productDetail.manufacturer} |`);
+    }
     if (productDetail.brand) {
       infoRows.push(`| ブランド | ${productDetail.brand} |`);
+    }
+    if (productDetail.model) {
+      infoRows.push(`| 型番 | ${productDetail.model} |`);
+    }
+    if (productDetail.releaseDate) {
+      infoRows.push(`| 発売日 | ${productDetail.releaseDate} |`);
     }
 
     // 在庫・Amazon直販情報
@@ -1328,6 +1346,7 @@ ${recommendationMessage}`;
       `categories: ["${this.escapeForFrontMatter(metadata.category)}"]`,
     );
     if (metadata.subcategory) lines.push(`subcategory: "${this.escapeForFrontMatter(metadata.subcategory)}"`);
+    if (metadata.brand) lines.push(`brand: "${this.escapeForFrontMatter(metadata.brand)}"`);
     if (metadata.manufacturer) lines.push(`manufacturer: "${this.escapeForFrontMatter(metadata.manufacturer)}"`);
   }
 
@@ -1339,6 +1358,9 @@ ${recommendationMessage}`;
   private addMetricsMetadata(lines: string[], metadata: ArticleMetadata): void {
     if (metadata.score) lines.push(`score: ${metadata.score}`);
     if (metadata.is_amazon_direct !== undefined) lines.push(`is_amazon_direct: ${metadata.is_amazon_direct}`);
+    if (metadata.model) lines.push(`model: "${this.escapeForFrontMatter(metadata.model)}"`);
+    if (metadata.releaseDate)
+      lines.push(`release_date: "${this.escapeForFrontMatter(metadata.releaseDate)}"`);
     if (metadata.availability) lines.push(`availability: "${this.escapeForFrontMatter(metadata.availability)}"`);
     if (metadata.loyalty_points !== undefined) lines.push(`loyalty_points: ${metadata.loyalty_points}`);
     if (metadata.savings_percentage !== undefined) lines.push(`savings_percentage: ${metadata.savings_percentage}`);
