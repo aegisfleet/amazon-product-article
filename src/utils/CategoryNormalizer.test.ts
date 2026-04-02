@@ -137,6 +137,7 @@ describe('CategoryNormalizer', () => {
         'プロも納得 スチールラックのすごい収納',
         'その他のビジネス・経済関連書籍',
         'その他',
+        '収納ラック　セット（ルミナス）',
       ];
       invalidNames.forEach((name) => {
         expect(CategoryNormalizer.isValidCategoryName(name)).toBe(false);
