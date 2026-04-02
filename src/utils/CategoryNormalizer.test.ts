@@ -139,6 +139,7 @@ describe('CategoryNormalizer', () => {
         'その他',
         '収納ラック　セット（ルミナス）',
         '理美容以外の本体',
+        'ドラッグストア HOTW',
       ];
       invalidNames.forEach((name) => {
         expect(CategoryNormalizer.isValidCategoryName(name)).toBe(false);
