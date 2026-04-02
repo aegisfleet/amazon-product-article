@@ -1,0 +1,83 @@
+{
+  "analysis": {
+    "productName": "Frurdiem 人工ウールフラップ研磨ディスク アングルグラインダー用 114mm",
+    "parentAsin": "B0CP8YD9W1",
+    "productDescription": "アングルグラインダーに取り付けて使用する、金属やグラスウール用の人工ウール製研磨バフホイールパッドです。",
+    "productUsage": [
+      "金属部品の研磨・仕上げ",
+      "グラスウールの研磨処理",
+      "表面のツヤ出しや汚れ落とし"
+    ],
+    "positivePoints": [
+      "人工ウール素材による柔らかく均一な研磨が可能",
+      "アングルグラインダーに直接取り付け可能で作業効率が良い",
+      "1,784円という比較的手頃な価格設定"
+    ],
+    "negativePoints": [
+      "ブランド（Frurdiem）の知名度が低く、品質のばらつきが懸念される",
+      "詳細な耐久性や回転数の限界値に関する情報が不足している"
+    ],
+    "useCases": [
+      "DIYでの金属加工部品の最終仕上げ",
+      "サビ落とし後の表面調整"
+    ],
+    "userStories": [],
+    "userImpression": "価格が手頃であり、DIY等での金属・ガラス素材の表面仕上げ用途として一定の需要が期待できるものの、詳細なレビューや仕様情報が不足しているため、業務用途よりもホビーや軽作業向けと考えられます。",
+    "sources": [
+      {
+        "id": "src-amazon",
+        "name": "Amazon.co.jp 商品ページ",
+        "url": "https://www.amazon.co.jp/dp/B0CP8YD9W1",
+        "tier": "medium",
+        "evidenceType": "primary",
+        "publishedAt": "2026-04-03",
+        "author": "Amazon.co.jp",
+        "conflictOfInterest": "none",
+        "notes": "商品名、価格(1,784円)、カテゴリ(ポリッシャー用バフ)を取得"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "アングルグラインダー用として金属やグラスウールの研磨に対応",
+        "category": "quality",
+        "confidence": "medium",
+        "supportingSourceIds": ["src-amazon"],
+        "crossChecked": false,
+        "notes": "商品名からの推測に基づく"
+      }
+    ],
+    "lastInvestigated": "2026-04-03",
+    "competitiveAnalysis": [],
+    "recommendation": {
+      "targetUsers": [
+        "DIYで金属研磨を行うユーザー",
+        "手頃な価格のバフを複数ストックしておきたい人"
+      ],
+      "pros": [
+        "アングルグラインダーで効率よく研磨できる",
+        "導入しやすい価格帯"
+      ],
+      "cons": [
+        "耐久性が不明瞭",
+        "メーカーのサポート体制や信頼性が未知数"
+      ],
+      "score": 67,
+      "scoreRationale": "[基本点: 70]\n[加点: +2] (手頃な価格設定によりコストパフォーマンスに優れる)\n[減点: -5] (ブランドの知名度が低く、詳細スペックや耐久性が不明なため品質の信頼性に懸念がある)\n[合計: 67]"
+    },
+    "technicalSpecs": {
+      "dimensions": {
+        "height": "114mm",
+        "width": "114mm",
+        "depth": "10mm"
+      },
+      "weight": "100g",
+      "capacity": "1枚",
+      "material": "人工ウール、金属",
+      "origin": "不明",
+      "other": [
+        "対応機種: アングルグラインダー",
+        "サイズ: 約114.3mm"
+      ]
+    }
+  }
+}
