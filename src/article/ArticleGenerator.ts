@@ -167,7 +167,7 @@ export class ArticleGenerator {
       affiliate_url: affiliateUrl,
       brand: product.brand,
       model: productDetail.model,
-      releaseDate: productDetail.releaseDate,
+      releaseDate: this.formatToJapaneseDate(productDetail.releaseDate),
       loyalty_points: product.loyaltyPoints,
       deal_badge: product.dealBadge,
       savings_percentage: product.savingsPercentage,
@@ -416,7 +416,8 @@ export class ArticleGenerator {
       infoRows.push(`| 型番 | ${productDetail.model} |`);
     }
     if (productDetail.releaseDate) {
-      infoRows.push(`| 発売日 | ${productDetail.releaseDate} |`);
+      const formattedReleaseDate = this.formatToJapaneseDate(productDetail.releaseDate);
+      infoRows.push(`| 発売日 | ${formattedReleaseDate} |`);
     }
 
     // 在庫・Amazon直販情報
@@ -1900,5 +1901,25 @@ ${confidenceLine}`;
       .replaceAll('>', '&gt;')
       .replaceAll('"', '&quot;')
       .replaceAll("'", '&#039;');
+  }
+
+  /**
+   * ISO形式などの日付文字列を日本時間の「YYYY年MM月DD日」形式に変換
+   */
+  private formatToJapaneseDate(dateStr: string | undefined): string | undefined {
+    if (!dateStr) return undefined;
+    try {
+      const date = new Date(dateStr);
+      if (Number.isNaN(date.getTime())) {
+        // パースできなかった場合は元の文字列を返す
+        return dateStr;
+      }
+      const year = date.getFullYear();
+      const month = String(date.getMonth() + 1).padStart(2, '0');
+      const day = String(date.getDate()).padStart(2, '0');
+      return `${year}年${month}月${day}日`;
+    } catch {
+      return dateStr;
+    }
   }
 }
