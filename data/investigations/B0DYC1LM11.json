@@ -1,0 +1,128 @@
+{
+  "analysis": {
+    "productName": "Amazon Echo Show 8 最新モデル",
+    "parentAsin": "B0FKWCM1L9",
+    "productDescription": "8.7インチHDディスプレイと空間オーディオを搭載した2025年最新モデルのスマートディスプレイ。",
+    "productUsage": [
+      "スマートホーム機器の操作",
+      "動画・音楽ストリーミングの視聴",
+      "ビデオ通話と見守り"
+    ],
+    "positivePoints": [
+      "8.7インチの鮮やかなHDタッチスクリーン",
+      "空間オーディオ対応による迫力のあるサウンド",
+      "スマートホームハブ内蔵で連携しやすい",
+      "自動フレーミングとノイズ低減対応のカメラ搭載"
+    ],
+    "negativePoints": [
+      "設置スペースが一定以上必要",
+      "バッテリー非搭載のため持ち運びには向かない"
+    ],
+    "useCases": [
+      "キッチンでのレシピ動画視聴",
+      "リビングでの音楽再生",
+      "外出先からのペット見守り"
+    ],
+    "userStories": [],
+    "userImpression": "空間オーディオと8.7インチの大画面により、エンターテインメント性能が向上したバランスの良いスマートディスプレイ。",
+    "sources": [
+      {
+        "id": "src-1",
+        "name": "Amazon商品ページ",
+        "url": "https://www.amazon.co.jp/dp/B0DYC1LM11",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2025-11-12",
+        "author": "Amazon",
+        "conflictOfInterest": "none",
+        "notes": "製品仕様、価格、公式の特長情報を取得"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "自動フレーミング機能付きカメラと空間オーディオを搭載",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "crossChecked": false,
+        "notes": "公式ページの仕様として明記"
+      }
+    ],
+    "lastInvestigated": "2026-04-03",
+    "competitiveAnalysis": [
+      {
+        "name": "Amazon Echo Show 15",
+        "asin": "B0C7Y1N38H",
+        "priceComparison": "Echo Show 15の方が高く設定されている。",
+        "featureComparison": [
+          "共通点：Alexa対応、スマートホーム連携",
+          "相違点：Echo Show 15は15.6インチ大画面と壁掛け対応だが、本製品は8.7インチで置き型仕様"
+        ],
+        "differentiators": [
+          "Amazon Echo Show 8の利点：コンパクトで設置場所を選ばず、空間オーディオ対応で音響性能が高い",
+          "Amazon Echo Show 15の利点：壁掛けができ、家族共有の掲示板として使いやすい大画面"
+        ]
+      },
+      {
+        "name": "Amazon Echo Show 11",
+        "asin": "B0DYBQJZ2W",
+        "priceComparison": "Echo Show 11の方がやや高く設定されている。",
+        "featureComparison": [
+          "共通点：Alexa対応、空間オーディオ対応、2025年最新モデル",
+          "相違点：画面サイズが11インチか8.7インチかの違い"
+        ],
+        "differentiators": [
+          "Amazon Echo Show 8の利点：コンパクトで価格が抑えられており、手軽に導入できる",
+          "Amazon Echo Show 11の利点：より大きな画面で映像視聴時の没入感が高い"
+        ]
+      },
+      {
+        "name": "Amazon Echo Hub",
+        "asin": "B0BCSCVR17",
+        "priceComparison": "Echo Hubの方が安く設定されている。",
+        "featureComparison": [
+          "共通点：スマートホームハブ機能搭載、Alexa対応",
+          "相違点：Echo Hubはスマートホーム管理に特化した壁掛け推奨パネルだが、Echo Show 8はエンターテインメント要素が強い据え置きディスプレイ"
+        ],
+        "differentiators": [
+          "Amazon Echo Show 8の利点：音楽や動画再生機能が豊富で、通話などの汎用性が高い",
+          "Amazon Echo Hubの利点：スマートホーム機器の直感的な集中管理に特化している"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "キッチンやリビングで動画や音楽を楽しみたい人",
+        "スマートホーム機器を音声やタッチで一括管理したい人"
+      ],
+      "pros": [
+        "バランスの良い8.7インチ画面",
+        "空間オーディオによる高音質",
+        "カメラを使った見守り機能"
+      ],
+      "cons": [
+        "バッテリー駆動ではないため固定場所での使用に限定される"
+      ],
+      "score": 85,
+      "scoreRationale": "[基本点: 70]\n[加点: +10] (空間オーディオやスマートホームハブ内蔵などの優れた機能性)\n[加点: +5] (2万円台で高機能なスマートディスプレイとしての高いコスパ)\n[合計: 85]"
+    },
+    "technicalSpecs": {
+      "dimensions": {
+        "height": "150mm",
+        "width": "128mm",
+        "depth": "208mm"
+      },
+      "weight": "1048g",
+      "displaySize": "8.7インチ",
+      "processor": "AZ3 Pro",
+      "color": "グラファイト",
+      "other": [
+        "空間オーディオ対応",
+        "スマートホームハブ内蔵",
+        "カメラ(自動フレーミング、3.3倍ズーム、ノイズ低減技術)"
+      ]
+    }
+  }
+}
