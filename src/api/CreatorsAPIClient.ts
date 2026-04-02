@@ -654,6 +654,7 @@ export class CreatorsAPIClient {
       },
       availability: listing?.availability?.message,
       isAmazonDirect: listing?.merchantInfo?.name === 'Amazon.co.jp',
+      brand: item.itemInfo?.byLineInfo?.brand?.displayValue || item.itemInfo?.manufactureInfo?.brand?.displayValue,
       loyaltyPoints: listing?.loyaltyPoints?.points ?? undefined,
       dealBadge: listing?.dealDetails?.dealBadge,
       savingsPercentage: listing?.price?.savings?.percentage ?? undefined,
@@ -666,10 +667,15 @@ export class CreatorsAPIClient {
 
   private parseProductDetail(item: CreatorsAPIItem): ProductDetail {
     const product = this.parseProduct(item);
+    const itemInfo = item.itemInfo;
     return {
       ...product,
-      features: item.itemInfo?.features?.displayValues || [],
-      // ... extra fields (brand, releaseDate etc.) mapping
+      features: itemInfo?.features?.displayValues || [],
+      manufacturer: itemInfo?.byLineInfo?.manufacturer?.displayValue,
+      model: itemInfo?.manufactureInfo?.model?.displayValue,
+      releaseDate:
+        (itemInfo?.productInfo as any)?.releaseDate?.displayValue ||
+        itemInfo?.contentInfo?.publicationDate?.displayValue,
     };
   }
 
