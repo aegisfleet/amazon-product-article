@@ -185,33 +185,50 @@
     <!-- Brand Section -->
     {{- $brandData := .Site.Data.brandgroups -}}
     {{- if $brandData -}}
-    <div class="header-content">
-        <h2>ブランドで探す</h2>
-    </div>
-    <div class="brand-grid">
-        {{- range $brandName, $brand := $brandData -}}
-        {{- /* Count articles matching this brand */ -}}
+    {{- $brandList := slice -}}
+    {{- range $brandName, $brand := $brandData -}}
         {{- $brandCount := 0 -}}
         {{- $matcherType := "title_prefix" -}}
         {{- $matcherValue := $brandName -}}
         {{- with $brand.matcher -}}
-        {{- $matcherType = .type | default "title_prefix" -}}
-        {{- $matcherValue = .value | default $brandName -}}
+            {{- $matcherType = .type | default "title_prefix" -}}
+            {{- $matcherValue = .value | default $brandName -}}
         {{- end -}}
         {{- range where $.Site.RegularPages "Section" "articles" -}}
-        {{- if eq $matcherType "title_prefix" -}}
-        {{- if hasPrefix .Title $matcherValue -}}
-        {{- $brandCount = add $brandCount 1 -}}
-        {{- end -}}
-        {{- end -}}
+            {{- if eq $matcherType "title_prefix" -}}
+                {{- if hasPrefix .Title $matcherValue -}}
+                    {{- $brandCount = add $brandCount 1 -}}
+                {{- end -}}
+            {{- end -}}
         {{- end -}}
         {{- if gt $brandCount 0 -}}
-        <a href="{{ `brand/` | relURL }}{{ $brand.slug }}/" class="brand-card">
-            <span class="brand-icon">{{ $brand.icon | default "🏷️" }}</span>
-            <span class="brand-name">{{ $brandName }}</span>
-            <span class="brand-count">{{ $brandCount }}件</span>
-        </a>
+            {{- $brandList = $brandList | append (dict "name" $brandName "slug" $brand.slug "icon" ($brand.icon | default "🏷️") "count" $brandCount) -}}
         {{- end -}}
+    {{- end -}}
+
+    <div class="header-content">
+        <h2>ブランドで探す</h2>
+    </div>
+
+    <!-- Mobile: Brand Dropdown -->
+    <div class="brand-dropdown-container">
+        <label for="brand-select" class="category-dropdown-label">ブランド</label>
+        <select id="brand-select" class="category-dropdown-select">
+            <option value="">ブランドを選択...</option>
+            {{- range $brandList -}}
+                <option value="{{ `brand/` | relURL }}{{ .slug }}/">{{ .icon }} {{ .name }} ({{ .count }}件)</option>
+            {{- end -}}
+        </select>
+    </div>
+
+    <!-- Desktop: Brand Grid -->
+    <div class="brand-grid">
+        {{- range $brandList -}}
+        <a href="{{ `brand/` | relURL }}{{ .slug }}/" class="brand-card">
+            <span class="brand-grid-icon">{{ .icon }}</span>
+            <span class="brand-name">{{ .name }}</span>
+            <span class="brand-count">{{ .count }}件</span>
+        </a>
         {{- end -}}
     </div>
     {{- end -}}

@@ -2104,14 +2104,39 @@ a.competitor-preview:hover {
 }
 
 /* =====================================================
-   BRAND GRID (Home Page)
+   BRAND SECTION
    ===================================================== */
 
+/* Brand Dropdown (Mobile) */
+.brand-dropdown-container {
+  display: none;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+  margin-bottom: var(--spacing-lg);
+  padding: var(--spacing-md);
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+}
+
+@media (max-width: 767px) {
+  .brand-dropdown-container {
+    display: flex;
+  }
+}
+
+/* Brand Grid (Desktop) */
 .brand-grid {
   display: flex;
   flex-wrap: wrap;
   gap: var(--spacing-md);
   margin-bottom: var(--spacing-xl);
+}
+
+@media (max-width: 767px) {
+  .brand-grid {
+    display: none !important;
+  }
 }
 
 .brand-card {
@@ -2136,9 +2161,10 @@ a.competitor-preview:hover {
   transform: translateY(-2px);
 }
 
-.brand-icon {
+.brand-grid-icon {
   font-size: 1.5rem;
   flex-shrink: 0;
+  color: var(--color-amazon-orange);
 }
 
 .brand-name {
@@ -2157,16 +2183,6 @@ a.competitor-preview:hover {
   border-radius: 9999px;
   border: 1px solid var(--color-border);
   white-space: nowrap;
-}
-
-@media (max-width: 767px) {
-  .brand-grid {
-    flex-direction: column;
-  }
-
-  .brand-card {
-    max-width: none;
-  }
 }
 
 /* =====================================================
