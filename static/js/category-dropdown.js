@@ -133,20 +133,39 @@
     function getFilteredGroups() {
         if (Object.keys(filteredGroups).length === 0) {
             const urls = getCategoryUrls();
+            
+            // Inject counts from Hugo if available
+            const countDataScript = document.getElementById('category-count-data');
+            if (countDataScript) {
+                const countsFromHugo = JSON.parse(countDataScript.textContent || '{}');
+                for (const [cat, count] of Object.entries(countsFromHugo)) {
+                    if (categoryCounts[cat] === undefined) {
+                        categoryCounts[cat] = count;
+                    }
+                }
+            }
+
             const availableCategories = Object.keys(urls);
             const categorizedItems = new Set();
 
             // First pass: categorize items into defined groups
             for (const [group, categories] of Object.entries(categoryGroups)) {
+                let groupProductCount = 0;
                 const available = categories.filter(cat => {
                     if (availableCategories.includes(cat)) {
                         categorizedItems.add(cat);
+                        if (categoryCounts[cat] !== undefined) {
+                            groupProductCount += categoryCounts[cat];
+                        }
                         return true;
                     }
                     return false;
                 }).filter(Boolean);
                 if (available.length > 0 || parentCategoryUrls[group]) {
                     filteredGroups[group] = available;
+                    if (categoryCounts[group] === undefined) {
+                        categoryCounts[group] = groupProductCount;
+                    }
                 }
             }
 
@@ -157,6 +176,18 @@
                     filteredGroups['その他'] = [];
                 }
                 filteredGroups['その他'] = [...filteredGroups['その他'], ...uncategorized];
+                
+                let othersCount = 0;
+                uncategorized.forEach(cat => {
+                    if (categoryCounts[cat] !== undefined) {
+                        othersCount += categoryCounts[cat];
+                    }
+                });
+                if (categoryCounts['その他'] === undefined) {
+                    categoryCounts['その他'] = othersCount;
+                } else {
+                    categoryCounts['その他'] += othersCount;
+                }
             }
         }
         return filteredGroups;
@@ -198,7 +229,10 @@
             if (slug) {
                 const viewAllOption = document.createElement('option');
                 viewAllOption.value = `__all__:${slug}`;
-                viewAllOption.textContent = `📁 ${selectedGroup}のすべてを見る`;
+                const parentCount = categoryCounts[selectedGroup];
+                viewAllOption.textContent = parentCount !== undefined 
+                    ? `📁 ${selectedGroup}のすべてを見る (${parentCount})`
+                    : `📁 ${selectedGroup}のすべてを見る`;
                 viewAllOption.style.fontWeight = 'bold';
                 subSelect.appendChild(viewAllOption);
             }
@@ -328,7 +362,10 @@
                 const viewAllTag = document.createElement('a');
                 viewAllTag.href = parentUrl;
                 viewAllTag.className = 'category-tag-link category-view-all';
-                viewAllTag.textContent = `📁 ${groupName}のすべてを見る`;
+                const parentCount = categoryCounts[groupName];
+                viewAllTag.textContent = parentCount !== undefined
+                    ? `📁 ${groupName}のすべてを見る (${parentCount})`
+                    : `📁 ${groupName}のすべてを見る`;
                 tagsContainer.appendChild(viewAllTag);
             }
 
