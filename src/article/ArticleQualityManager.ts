@@ -19,6 +19,12 @@ export class ArticleQualityManager {
   private defaultRequirements: ContentRequirements;
   private defaultStyleRules: StyleRule[];
 
+  private static readonly TONE_LABEL_MAP: Record<string, string> = {
+    professional: 'プロフェッショナルで信頼性の高い',
+    casual: 'カジュアルで親しみやすい',
+    formal: 'フォーマルで正確な',
+  };
+
   constructor() {
     this.logger = Logger.getInstance();
     this.defaultRequirements = this.createDefaultRequirements();
@@ -601,7 +607,7 @@ ${sections}
 ${config.targetAudience}
 
 ## トーン
-${config.tone === 'professional' ? 'プロフェッショナルで信頼性の高い' : config.tone === 'casual' ? 'カジュアルで親しみやすい' : 'フォーマルで正確な'}文体
+${ArticleQualityManager.TONE_LABEL_MAP[config.tone] || 'フォーマルで正確な'}文体
 
 ## 出力形式
 Markdown形式で、指定されたセクション構造に従って作成してください。`;
