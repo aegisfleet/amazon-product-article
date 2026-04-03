@@ -1,0 +1,105 @@
+{
+  "analysis": {
+    "productName": "配達先のお姉さんが怖すぎる 4巻",
+    "parentAsin": "B0GK6QL1BM",
+    "productDescription": "頼間リヨによる漫画作品「配達先のお姉さんが怖すぎる」の第4巻（デジタル版）。",
+    "productUsage": [
+      "読書",
+      "娯楽"
+    ],
+    "positivePoints": [
+      "デジタル版のため保管場所を取らない",
+      "購入後すぐに読むことができる"
+    ],
+    "negativePoints": [
+      "紙の質感が楽しめない",
+      "対応するデバイスが必要"
+    ],
+    "useCases": [
+      "通勤・通学中の読書",
+      "自宅でのリラックスタイム"
+    ],
+    "userStories": [],
+    "userImpression": "デジタルコミックとして、場所を取らずいつでも読める利便性が提供されている。",
+    "sources": [
+      {
+        "id": "src-1",
+        "name": "Amazon商品ページ",
+        "url": "https://www.amazon.co.jp/dp/B0GK6QL1BM?tag=aegis-22&linkCode=ogi&th=1&psc=1",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-03-21",
+        "author": "スクウェア・エニックス",
+        "conflictOfInterest": "none",
+        "notes": "商品基本情報（価格、発売日、著者等）の確認"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "著者は頼間リヨ氏である",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "crossChecked": false,
+        "notes": "Amazon商品ページの著者情報より確認"
+      }
+    ],
+    "lastInvestigated": "2026-04-03",
+    "competitiveAnalysis": [
+      {
+        "name": "配達先のお姉さんが怖すぎる 1巻",
+        "asin": "B0D2LJNFYV",
+        "priceComparison": "1巻は安価に設定されており、新規読者の導入として適しているが、4巻はシリーズの続きを楽しむための通常価格となっている。",
+        "featureComparison": [
+          "共通点：著者（頼間リヨ）、出版社（スクウェア・エニックス）、フォーマット（Kindle版）",
+          "相違点：収録されているストーリーの進行度、発売時期"
+        ],
+        "differentiators": [
+          "配達先のお姉さんが怖すぎる 4巻の利点：最新のストーリー展開を楽しめる点",
+          "配達先のお姉さんが怖すぎる 1巻の利点：物語の始まりから読めるため、新規読者に最適である点"
+        ]
+      },
+      {
+        "name": "レンタルショップでお姉さんをレンタルする話",
+        "asin": "B07NMLLS3D",
+        "priceComparison": "価格帯は近いが、対象商品はシリーズものの一部であるのに対し、こちらは別の作品である。",
+        "featureComparison": [
+          "共通点：デジタルコミック（Kindle版）",
+          "相違点：著者、出版社（KADOKAWA）、ストーリー内容"
+        ],
+        "differentiators": [
+          "配達先のお姉さんが怖すぎる 4巻の利点：特定のシリーズの続きを追うことができる点",
+          "レンタルショップでお姉さんをレンタルする話の利点：異なるテーマや作家の作品を楽しめる点"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "シリーズのファン",
+        "日常系・ラブコメ漫画が好きな人",
+        "デジタルで漫画を読みたい人"
+      ],
+      "pros": [
+        "場所を取らない",
+        "シリーズの続きが読める"
+      ],
+      "cons": [
+        "紙媒体ではないためコレクション性では劣る場合がある"
+      ],
+      "score": 75,
+      "scoreRationale": "[基本点: 70]\n[加点: +5] (シリーズ作品として安定した供給とデジタル版の利便性)\n[減点: -0] (特筆すべき欠点なし)\n[合計: 75]"
+    },
+    "technicalSpecs": {
+      "format": "Kindle版",
+      "author": "頼間リヨ",
+      "publisher": "スクウェア・エニックス",
+      "releaseDate": "2026-03-21",
+      "isAdultProduct": "false",
+      "other": [
+        "デジタルコンテンツのため物理的なサイズや重量はなし"
+      ]
+    }
+  }
+}
