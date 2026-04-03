@@ -7,5 +7,14 @@
             "value": "by Amazon"
         },
         "description": "Amazonオリジナルブランド商品の一覧"
+    },
+    "Amazonベーシック": {
+        "slug": "amazon-basics",
+        "icon": "🛒",
+        "matcher": {
+            "type": "title_prefix",
+            "value": "Amazonベーシック"
+        },
+        "description": "高品質で低価格なAmazonベーシックの商品一覧"
     }
 }
