@@ -6,7 +6,7 @@
             "type": "title_prefix",
             "value": "by Amazon"
         },
-        "description": "Amazonオリジナルブランド商品の一覧"
+        "description": "by Amazonの商品一覧"
     },
     "Amazonベーシック": {
         "slug": "amazon-basics",
@@ -15,6 +15,114 @@
             "type": "title_prefix",
             "value": "Amazonベーシック"
         },
-        "description": "高品質で低価格なAmazonベーシックの商品一覧"
+        "description": "Amazonベーシックの商品一覧"
+    },
+    "エレコム": {
+        "slug": "elecom",
+        "icon": "🔌",
+        "matcher": {
+            "type": "title_prefix",
+            "value": "エレコム"
+        },
+        "description": "エレコムの商品一覧"
+    },
+    "Anker": {
+        "slug": "anker",
+        "icon": "⚡",
+        "matcher": {
+            "type": "title_prefix",
+            "value": "Anker"
+        },
+        "description": "Ankerの商品一覧"
+    },
+    "Apple": {
+        "slug": "apple",
+        "icon": "🍏",
+        "matcher": {
+            "type": "title_prefix",
+            "value": "Apple"
+        },
+        "description": "Apple製品の一覧"
+    },
+    "アイリスオーヤマ": {
+        "slug": "iris-ohyama",
+        "icon": "💡",
+        "matcher": {
+            "type": "title_prefix",
+            "value": "アイリスオーヤマ"
+        },
+        "description": "アイリスオーヤマの商品一覧"
+    },
+    "UGREEN": {
+        "slug": "ugreen",
+        "icon": "🖱️",
+        "matcher": {
+            "type": "title_prefix",
+            "value": "UGREEN"
+        },
+        "description": "UGREENの商品一覧"
+    },
+    "シャオミ (Xiaomi)": {
+        "slug": "xiaomi",
+        "icon": "📱",
+        "matcher": {
+            "type": "regex",
+            "value": "Xiaomi"
+        },
+        "description": "Xiaomiの商品一覧"
+    },
+    "オーディオテクニカ": {
+        "slug": "audio-technica",
+        "icon": "🎧",
+        "matcher": {
+            "type": "title_prefix",
+            "value": "オーディオテクニカ"
+        },
+        "description": "オーディオテクニカの商品一覧"
+    },
+    "パナソニック": {
+        "slug": "panasonic",
+        "icon": "🍳",
+        "matcher": {
+            "type": "title_prefix",
+            "value": "パナソニック"
+        },
+        "description": "パナソニックの商品一覧"
+    },
+    "山崎実業": {
+        "slug": "yamazaki",
+        "icon": "🏠",
+        "matcher": {
+            "type": "title_prefix",
+            "value": "山崎実業"
+        },
+        "description": "山崎実業の商品一覧"
+    },
+    "無印良品": {
+        "slug": "muji",
+        "icon": "🍱",
+        "matcher": {
+            "type": "title_prefix",
+            "value": "無印良品"
+        },
+        "description": "無印良品の商品一覧"
+    },
+    "シャープ": {
+        "slug": "sharp",
+        "icon": "🧊",
+        "matcher": {
+            "type": "title_prefix",
+            "value": "シャープ"
+        },
+        "description": "シャープの商品一覧"
+    },
+    "Samsung": {
+        "slug": "samsung",
+        "icon": "🖥️",
+        "matcher": {
+            "type": "title_prefix",
+            "value": "Samsung"
+        },
+        "description": "Samsungの商品一覧"
     }
 }
