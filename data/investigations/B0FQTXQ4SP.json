@@ -1,0 +1,115 @@
+{
+  "analysis": {
+    "productName": "Eluvina レジャーシート",
+    "parentAsin": "B0FX8FMBSR",
+    "productDescription": "所ジョージの世田谷ベースにも掲載された、大人3〜4人用のコンパクトなレジャーシート。軽量ポリエステル素材とTPU撥水コーティングによる防水性能を備える。",
+    "productUsage": [
+      "お花見",
+      "ピクニック",
+      "花火大会",
+      "BBQ",
+      "山登り",
+      "スポーツ観戦",
+      "運動会の応援"
+    ],
+    "positivePoints": [
+      "160x180cmのサイズながら、折りたたむと12x16x3cmになり非常にコンパクト",
+      "ハニカム構造パターンを採用し、耐久性が高い",
+      "TPU撥水コーティングにより、地面が濡れていても水分が染み出さない"
+    ],
+    "negativePoints": [
+      "凸凹のある地面で使用すると快適性が減少する恐れがある"
+    ],
+    "useCases": [
+      "ピクニックやBBQで大人3〜4人が座るためのスペース確保として",
+      "スポーツ観戦や運動会での防水シートとして"
+    ],
+    "userStories": [],
+    "userImpression": "軽量かつコンパクトでありながら十分な広さがあり、防水性にも優れているため、幅広いアウトドアシーンで活躍する実用的なレジャーシートである。",
+    "sources": [
+      {
+        "id": "src-1",
+        "name": "Amazon公式商品ページ",
+        "url": "https://www.amazon.co.jp/dp/B0FQTXQ4SP",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-04-04",
+        "author": "Amazon",
+        "conflictOfInterest": "none",
+        "notes": "商品の仕様（サイズ、素材、特徴、価格など）を確認。"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "折りたたむと幅12cm×高さ16cm×厚さ3cmと非常にコンパクト",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "crossChecked": false,
+        "notes": "Amazon商品ページの「特徴」より確認"
+      },
+      {
+        "claim": "TPU撥水コーティング加工で水分が染み出さない",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "crossChecked": false,
+        "notes": "Amazon商品ページの「特徴」より確認"
+      }
+    ],
+    "lastInvestigated": "2026-04-04",
+    "competitiveAnalysis": [
+      {
+        "name": "SCIVEI レジャーシート ピクニックマット 大判 150x200cm",
+        "asin": "B0963X85HJ",
+        "priceComparison": "比較元製品と対象製品は共にレジャーシートであり、価格の優位性は直接比較できないが、対象製品の「コンパクトに収納できる」という点が評価される。",
+        "featureComparison": [
+          "共通点：ピクニックやアウトドア向けのレジャーシートであること。防水・防湿性能を備えること。",
+          "相違点：対象商品は160x180cmで重量約100g、TPU撥水コーティングを採用。本競合は150x200cmで重量700g、裏面にPVC素材を採用。"
+        ],
+        "differentiators": [
+          "Eluvina レジャーシートの利点：圧倒的に軽量で折りたたみサイズも小さく、持ち運びに便利。",
+          "SCIVEI レジャーシート ピクニックマット 大判 150x200cmの利点：裏面がPVC素材であり、より厚みと重量があるため風で飛ばされにくい可能性がある。"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "ピクニックや運動会に行く家族",
+        "荷物を極力減らしたいキャンパーや登山者",
+        "濡れた地面でも気にせず使えるシートを探している人"
+      ],
+      "pros": [
+        "超軽量かつコンパクトな収納サイズ",
+        "TPU撥水コーティングによる高い防水性",
+        "大人3〜4人が座れる十分な広さ"
+      ],
+      "cons": [
+        "薄手のため、凹凸のある地面では座り心地が悪くなる可能性がある"
+      ],
+      "score": 85,
+      "scoreRationale": "[基本点: 70]\n[加点: +10] (160x180cmのサイズと防水・ハニカム構造による耐久性・利便性)\n[加点: +5] (1513円という手頃な価格によるコストパフォーマンス)\n[合計: 85]"
+    },
+    "technicalSpecs": {
+      "dimensions": {
+        "width": "1600mm",
+        "depth": "1800mm",
+        "height": "0mm"
+      },
+      "weight": "100g",
+      "capacity": "3-4人用",
+      "material": "軽量ポリエステル素材 (TPU撥水コーティング加工)",
+      "color": "グレー",
+      "origin": "不明",
+      "other": [
+        "収納時サイズ: 120x160x30mm",
+        "収納袋付き",
+        "ハニカム構造パターン"
+      ]
+    }
+  }
+}
