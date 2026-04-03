@@ -181,6 +181,40 @@
     <!-- Desktop: Grouped View (Populated by JS) -->
     <div id="category-grouped-view" class="category-grouped-view"></div>
 
+    <!-- Brand Section -->
+    {{- $brandData := .Site.Data.brandgroups -}}
+    {{- if $brandData -}}
+    <div class="header-content">
+        <h2>ブランドで探す</h2>
+    </div>
+    <div class="brand-grid">
+        {{- range $brandName, $brand := $brandData -}}
+        {{- /* Count articles matching this brand */ -}}
+        {{- $brandCount := 0 -}}
+        {{- $matcherType := "title_prefix" -}}
+        {{- $matcherValue := $brandName -}}
+        {{- with $brand.matcher -}}
+        {{- $matcherType = .type | default "title_prefix" -}}
+        {{- $matcherValue = .value | default $brandName -}}
+        {{- end -}}
+        {{- range where $.Site.RegularPages "Section" "articles" -}}
+        {{- if eq $matcherType "title_prefix" -}}
+        {{- if hasPrefix .Title $matcherValue -}}
+        {{- $brandCount = add $brandCount 1 -}}
+        {{- end -}}
+        {{- end -}}
+        {{- end -}}
+        {{- if gt $brandCount 0 -}}
+        <a href="{{ `brand/` | relURL }}{{ $brand.slug }}/" class="brand-card">
+            <span class="brand-icon">{{ $brand.icon | default "🏷️" }}</span>
+            <span class="brand-name">{{ $brandName }}</span>
+            <span class="brand-count">{{ $brandCount }}件</span>
+        </a>
+        {{- end -}}
+        {{- end -}}
+    </div>
+    {{- end -}}
+
     <div class="header-content">
         <h2>最新のレビュー</h2>
     </div>
