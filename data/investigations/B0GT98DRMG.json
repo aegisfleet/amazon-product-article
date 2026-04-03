@@ -1,0 +1,199 @@
+{
+  "analysis": {
+    "productName": "シークリスタルス エプソムソルト オリジナル",
+    "parentAsin": "B0GT98DRMG",
+    "productDescription": "国産の高品質な硫酸マグネシウム（エプソムソルト）を使用した無香料の浴用化粧料の11kg（2.2kg×5袋）セット。",
+    "productUsage": [
+      "毎日の入浴での温浴効果・塩素中和",
+      "スポーツ後の筋肉疲労の緩和",
+      "美容・肌の乾燥防止"
+    ],
+    "positivePoints": [
+      "塩分0%で浴槽や風呂釜を痛めない",
+      "食品添加物グレードの安全な原材料を使用",
+      "化粧品製造業許可工場で生産された浴用化粧料であること",
+      "水道水の塩素を中和し、一番風呂でも肌へのピリピリ感を軽減"
+    ],
+    "negativePoints": [
+      "1回につき150g以上を使用するため、大容量パッケージは重く保管場所をとる"
+    ],
+    "useCases": [
+      "疲れた日のご褒美としての20分間の入浴",
+      "激しいスポーツ後のケア・リフレッシュ"
+    ],
+    "userStories": [],
+    "userImpression": "塩分を含まず純度99%以上の硫酸マグネシウムにより、筋肉の疲労回復や肌の保湿に効果的であると評価されている。日本における厳格な基準（食品添加物基準）で製造された安全性が高い商品。",
+    "sources": [
+      {
+        "id": "src-api-B0GT98DRMG",
+        "name": "Amazon商品データ（対象商品）",
+        "url": "https://www.amazon.co.jp/dp/B0GT98DRMG",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-04-03",
+        "author": "Amazon",
+        "conflictOfInterest": "none",
+        "notes": "商品仕様、成分（硫酸マグネシウム99%、塩分0%）、スポーツ用途などの特長を確認。"
+      },
+      {
+        "id": "src-api-B00C1CACNU",
+        "name": "Amazon商品データ（2.2kg単品）",
+        "url": "https://www.amazon.co.jp/dp/B00C1CACNU",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-04-03",
+        "author": "Amazon",
+        "conflictOfInterest": "none",
+        "notes": "同シリーズ単品の価格（1236円）や詳細仕様を確認。"
+      },
+      {
+        "id": "src-api-B00CIQOD6G",
+        "name": "Amazon商品データ（4kg）",
+        "url": "https://www.amazon.co.jp/dp/B00CIQOD6G",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-04-03",
+        "author": "Amazon",
+        "conflictOfInterest": "none",
+        "notes": "同シリーズ4kgの価格（1914円）を確認。"
+      },
+      {
+        "id": "src-api-B00IQ3WGA0",
+        "name": "Amazon商品データ（8.8kg）",
+        "url": "https://www.amazon.co.jp/dp/B00IQ3WGA0",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-04-03",
+        "author": "Amazon",
+        "conflictOfInterest": "none",
+        "notes": "同シリーズ8.8kg（2.2kg×4）の価格（3402円）を確認。"
+      },
+      {
+        "id": "src-api-B08GQSF6Z4",
+        "name": "Amazon商品データ（競合: BASSPA）",
+        "url": "https://www.amazon.co.jp/dp/B08GQSF6Z4",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-04-03",
+        "author": "Amazon",
+        "conflictOfInterest": "none",
+        "notes": "競合商品の仕様や価格（3kg, 2503円）を確認。"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "食品添加物グレードの原材料を使用し、化粧品製造業許可工場で生産されている",
+        "category": "safety",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-api-B0GT98DRMG",
+          "src-api-B00C1CACNU"
+        ],
+        "crossChecked": true,
+        "notes": "商品の「Features」内で明確に宣言されている"
+      },
+      {
+        "claim": "塩分0%、硫酸マグネシウム99%",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-api-B0GT98DRMG",
+          "src-api-B00C1CACNU"
+        ],
+        "crossChecked": true,
+        "notes": "商品仕様から確認"
+      }
+    ],
+    "lastInvestigated": "2026-04-03",
+    "competitiveAnalysis": [
+      {
+        "name": "シークリスタルス エプソムソルト 2.2kg (単品)",
+        "asin": "B00C1CACNU",
+        "priceComparison": "対象商品は2.2kgの5個セット（合計11kg）で、単品を5個買うよりも大容量で割安に設定されている。",
+        "featureComparison": [
+          "共通点：品質、成分、製造工程は全く同じである。",
+          "相違点：容量が異なるため、保管スペースの必要性が異なる。"
+        ],
+        "differentiators": [
+          "シークリスタルス エプソムソルト オリジナルの利点：日常的に消費する場合のグラムあたりのコストパフォーマンスに優れている。",
+          "シークリスタルス エプソムソルト 2.2kg (単品)の利点：初めて試す場合や保管場所が限られている場合に適している。"
+        ]
+      },
+      {
+        "name": "シークリスタルス エプソムソルト 4kg",
+        "asin": "B00CIQOD6G",
+        "priceComparison": "対象商品は11kgの超大容量であるのに対し、こちらは4kgの中容量パッケージ。",
+        "featureComparison": [
+          "共通点：ブランドおよび製品自体は同一。",
+          "相違点：1パッケージあたりの重量が異なる（2.2kgの小分けか、4kgの袋か）。"
+        ],
+        "differentiators": [
+          "シークリスタルス エプソムソルト オリジナルの利点：2.2kgごとの小分けパッケージのため、11kgの大容量ながらも開封後の湿気対策などがしやすい。",
+          "シークリスタルス エプソムソルト 4kgの利点：パッケージのゴミを減らしたい場合に向いている。"
+        ]
+      },
+      {
+        "name": "シークリスタルス エプソムソルト 8.8kg (2.2kg×4)",
+        "asin": "B00IQ3WGA0",
+        "priceComparison": "対象商品（11kg）よりもやや少なめの8.8kgパッケージ。",
+        "featureComparison": [
+          "共通点：ブランドおよび製品自体は同一で、2.2kgごとの小分けである点も共通。",
+          "相違点：総容量と販売単位（4個か5個か）。"
+        ],
+        "differentiators": [
+          "シークリスタルス エプソムソルト オリジナルの利点：最も頻繁に使用するヘビーユーザーにとって、より多いストックを確保できる。",
+          "シークリスタルス エプソムソルト 8.8kg (2.2kg×4)の利点：11kgでは多すぎると感じるユーザーに適している。"
+        ]
+      },
+      {
+        "name": "BASSPA エプソムソルト 3kg",
+        "asin": "B08GQSF6Z4",
+        "priceComparison": "対象商品は他社ブランドの3kgパッケージよりもグラム単価で優位性がある。",
+        "featureComparison": [
+          "共通点：硫酸マグネシウム99%以上の入浴剤であり、塩素除去効果をうたっている点。",
+          "相違点：ブランドが異なり、BASSPAは7種類の香りなど香り付きのバリエーション展開に強みがある。"
+        ],
+        "differentiators": [
+          "シークリスタルス エプソムソルト オリジナルの利点：食品添加物グレードの明記や化粧品製造許可工場での生産など、安全性・品質へのこだわりがより明確である。",
+          "BASSPA エプソムソルト 3kgの利点：香り付きの商品を選びたい場合や、ブランドを変えて試してみたい場合に適している。"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "毎日の入浴で温浴効果を高めたい人",
+        "スポーツや運動の後に筋肉をリラックスさせたい人",
+        "無香料で安全性の高い入浴剤を探している人"
+      ],
+      "pros": [
+        "食品添加物グレードの原料と化粧品製造許可工場による高い安全性",
+        "11kgという大容量による優れたコストパフォーマンス",
+        "塩分ゼロで風呂釜を傷める心配がない"
+      ],
+      "cons": [
+        "総重量11kgと非常に重く、保管スペースの確保が必要",
+        "1回あたりの使用量が多く、減りが早いと感じる可能性がある"
+      ],
+      "score": 87,
+      "scoreRationale": "[基本点: 70]\n[加点: +10] (安全性: 化粧品製造業許可工場生産、食品添加物グレードの明記)\n[加点: +5] (コストパフォーマンス: 11kgの大容量による優れたグラム単価)\n[加点: +2] (性能: 硫酸マグネシウム99%・塩分0%で風呂釜への影響がない)\n[合計: 87]"
+    },
+    "technicalSpecs": {
+      "dimensions": {
+        "height": "270mm",
+        "width": "100mm",
+        "length": "140mm"
+      },
+      "weight": "11000g",
+      "capacity": "11000g",
+      "material": "硫酸マグネシウム",
+      "origin": "日本",
+      "other": [
+        "塩分0%",
+        "海水比0.2%",
+        "1回の使用量: 150Lに対して150cc以上(0.1～0.2%)",
+        "無香料",
+        "浴用化粧料"
+      ]
+    }
+  }
+}
