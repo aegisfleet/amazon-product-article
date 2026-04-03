@@ -160,9 +160,10 @@
     </div>
 
     <!-- Mobile: Dropdown UI -->
-    {{- $urlMap := dict -}}{{- range $name, $items := .Site.Taxonomies.categories -}}{{- with $.Site.GetPage (printf
-    "/categories/%s" $name) -}}{{- $urlMap = merge $urlMap (dict .LinkTitle .RelPermalink) -}}{{- end -}}{{- end -}}
+    {{- $urlMap := dict -}}{{- $countMap := dict -}}{{- range $name, $items := .Site.Taxonomies.categories -}}{{- with $.Site.GetPage (printf
+    "/categories/%s" $name) -}}{{- $urlMap = merge $urlMap (dict .LinkTitle .RelPermalink) -}}{{- $countMap = merge $countMap (dict .LinkTitle (len $items)) -}}{{- end -}}{{- end -}}
     <script id="category-url-data" type="application/json">{{- $urlMap | jsonify | safeJS -}}</script>
+    <script id="category-count-data" type="application/json">{{- $countMap | jsonify | safeJS -}}</script>
     <div class="category-dropdown-container" id="category-dropdown-container">
         <div class="category-dropdown-group">
             <label for="category-group-select" class="category-dropdown-label">グループ</label>
