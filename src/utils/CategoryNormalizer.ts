@@ -111,10 +111,10 @@ export class CategoryNormalizer {
       const cfn = currentNode.contextFreeName;
       const dn = currentNode.displayName || currentNode.DisplayName;
 
-      const validCFN = cfn && CategoryNormalizer.isValidCategoryName(cfn) ? 
-        CategoryNormalizer.sanitizeCategoryName(cfn) : null;
-      const validDN = dn && CategoryNormalizer.isValidCategoryName(dn) ? 
-        CategoryNormalizer.sanitizeCategoryName(dn) : null;
+      const validCFN =
+        cfn && CategoryNormalizer.isValidCategoryName(cfn) ? CategoryNormalizer.sanitizeCategoryName(cfn) : null;
+      const validDN =
+        dn && CategoryNormalizer.isValidCategoryName(dn) ? CategoryNormalizer.sanitizeCategoryName(dn) : null;
 
       const bestName = CategoryNormalizer.pickBestName(validCFN, validDN);
       if (bestName) {
@@ -154,9 +154,7 @@ export class CategoryNormalizer {
    */
   private static calculateScore(names: string[]): number {
     const hasPreferredKeyword = names.some((name) =>
-      CategoryNormalizer.PREFERRED_KEYWORDS.some((keyword) =>
-        name.toLowerCase().includes(keyword.toLowerCase()),
-      ),
+      CategoryNormalizer.PREFERRED_KEYWORDS.some((keyword) => name.toLowerCase().includes(keyword.toLowerCase())),
     );
 
     return hasPreferredKeyword ? 10 : 0;

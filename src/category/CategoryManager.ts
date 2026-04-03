@@ -91,11 +91,11 @@ export class CategoryManager {
         if (typeof legacyGroup.slug === 'string' && Array.isArray(legacyGroup.categories)) {
           this.addGroup(
             {
-                name: key,
-                slug: legacyGroup.slug,
-                icon: legacyGroup.icon as string | undefined,
-                children: legacyGroup.categories,
-              },
+              name: key,
+              slug: legacyGroup.slug,
+              icon: legacyGroup.icon as string | undefined,
+              children: legacyGroup.categories,
+            },
             seenNames,
             seenSlugs,
           );

@@ -47,7 +47,8 @@ function processStringValue(prefix: string, value: string): string | null {
 
 function sanitizeFrontmatterLine(line: string): string {
   // Simple key: "value" match (allowing trailing characters or comments)
-  const simpleMatch = /^(\s*-?\s*\w*:\s*)(".*)$/.exec(line);
+  // Optimization: use (?:-\s*)? instead of -?\s* to avoid ReDoS from overlapping \s*
+  const simpleMatch = /^(\s*(?:-\s*)?\w+:\s*)(".*)$/.exec(line);
   const prefix = simpleMatch?.[1];
   const value = simpleMatch?.[2];
 
@@ -60,7 +61,8 @@ function sanitizeFrontmatterLine(line: string): string {
   }
 
   // Fallback for list items like `  - "value"`
-  const listMatch = /^(\s*-\s*)(".*)$/.exec(line);
+  // Optimization: ensure a space after the dash to avoid ambiguity
+  const listMatch = /^(\s*-\s+)(".*)$/.exec(line);
   const listPrefix = listMatch?.[1];
   const listValue = listMatch?.[2];
 
