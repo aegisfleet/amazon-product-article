@@ -1,113 +1,215 @@
 {
   "analysis": {
-    "productName": "HiBy FC4 ポータブルUSB DACアンプ",
+    "productName": "HiBy FC4",
     "parentAsin": "B0C4NHV5LL",
-    "productDescription": "ES9219デュアルDACと高出力アンプ回路を搭載した、MQA 16x対応のポータブルUSB DAC。スマホやPCで手軽にハイレゾ音源を楽しめる。",
+    "productDescription": "ES9219 DACチップをデュアルで搭載し、PCM768kHz/32bitおよびDSD256のネイティブ再生に対応したポータブルUSB DACヘッドホンアンプ。最大340mW+340mW(@32Ω)の高出力とMQA 16倍展開機能も備えている。",
     "productUsage": [
-      "スマートフォンでのハイレゾストリーミング再生（Apple Music, Amazon Music HD等）",
-      "PC/Macと接続しての高音質音楽鑑賞",
-      "4.4mmバランス接続による高インピーダンスヘッドホンの駆動"
+      "スマートフォン(Android/iOS)やPCと接続しての高音質音楽鑑賞",
+      "ハイレゾイヤホン、ヘッドホンの駆動",
+      "MQAフォーマットの再生"
     ],
     "positivePoints": [
-      "同クラス最高レベルの340mW+340mW（32Ω）の高出力",
-      "MQA 16x展開に対応し、Tidal等の音源をフルに楽しめる",
-      "ハードウェアボリュームボタン搭載で細かい音量調整が可能",
-      "LEDインジケーターで再生中のサンプリングレートが一目でわかる"
+      "ES9219をデュアル搭載し、PCM768kHz/32bit、DSD256ネイティブ再生に対応する高いデコード能力",
+      "340mW+340mW (@32Ω)の高出力で、インピーダンスの高いヘッドホンも余裕で駆動できる",
+      "ハードウェアボリュームボタンを備え、直感的な音量操作が可能",
+      "MQAの16倍展開に対応し、MQA音源を本来の品質で楽しめる"
     ],
     "negativePoints": [
-      "高出力ゆえにスマホのバッテリー消費が比較的早い",
-      "使用中に筐体が温かくなりやすい",
-      "付属のケーブルが少し硬めで取り回しにくい場合がある"
+      "再生開始/停止時や動画の停止時にポップノイズが発生することがある",
+      "使用中に本体がやや熱を持つ（約40度弱）ため、夏場などの長時間の使用に注意が必要",
+      "iOSデバイスでの使用には別途Lightning - Type-C OTGケーブルの購入が必要"
     ],
     "useCases": [
-      "通勤・通学中の高音質リスニング",
-      "カフェや出張先でのPCオーディオ環境の構築"
+      "外出先や移動中にスマートフォンと接続してハイレゾ音源を楽しむ",
+      "PCに接続し、デスクトップ環境で高音質な音楽再生を行う",
+      "高インピーダンスのヘッドホンを屋外でも十分に鳴らす"
     ],
     "userStories": [
       {
-        "userType": "30代男性・オーディオファン",
-        "scenario": "外出先でも有線イヤホンの本領を発揮させたい",
-        "experience": "スマホ直挿しとは次元の違う駆動力に驚いた。特に低音の締まりと音場の広がりが素晴らしい。バッテリー消費は早いが、音質のためなら許容範囲。（推測）",
-        "sentiment": "positive"
-      },
-      {
-        "userType": "20代学生",
-        "scenario": "PCでゲームや動画を高音質で楽しみたい",
-        "experience": "PCに繋ぐだけで音がクリアになった。FPSゲームでの足音も聞き取りやすくなった気がする。LEDの色が変わるのもカッコいい。（推測）",
+        "userType": "オーディオ愛好家",
+        "scenario": "スマートフォンと有線イヤホンを接続して音楽鑑賞",
+        "experience": "コンパクトながら340mWの高出力があり、手持ちのヘッドホンも余裕で鳴らすことができました。音質は特定の帯域が強調されることなくクリアで素直な印象です。ハードウェアボリュームボタンがあるので、スマホの画面を見ずに音量調整できるのも便利です。ただし、再生や停止のタイミングでわずかにポップノイズが入るのが少し気になりました。",
+        "supportingSourceIds": [
+          "src-kakaku-review-1",
+          "src-kakaku-review-2"
+        ],
         "sentiment": "positive"
       }
     ],
-    "userImpression": "高出力と高音質を両立したコスパの高いDACとして評価されている。特にパワーが必要なイヤホンやヘッドホンを持っているユーザーからの支持が厚い。",
+    "userImpression": "デュアルDACと340mWの高出力によるクリアでパワフルな音質が評価されている一方、再生・停止時のポップノイズや本体の発熱が気になるとの声もある。総じて、価格に対して高い性能を持つUSB DACとして支持されている。",
     "sources": [
       {
-        "name": "HiBy Official Product Page",
-        "url": null,
-        "credibility": "High"
+        "id": "src-amazon-api",
+        "name": "Amazon Product Data",
+        "url": "https://www.amazon.co.jp/dp/B0C4NHV5LL",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-04-04",
+        "author": "HiBy",
+        "conflictOfInterest": "none",
+        "notes": "製品仕様、価格、特徴を取得。"
       },
       {
-        "name": "Amazon Customer Reviews (Verified Purchase)",
-        "url": "https://www.amazon.co.jp/dp/B0C4NHV5LL",
-        "credibility": "Medium"
+        "id": "src-kakaku-review-1",
+        "name": "HiBy FC4 レビュー - 価格.com",
+        "url": "https://review.kakaku.com/review/K0001467279/",
+        "tier": "medium",
+        "evidenceType": "secondary",
+        "publishedAt": "2022-11-15",
+        "author": "くるしぇんぬ",
+        "conflictOfInterest": "none",
+        "notes": "音質は素直で良い、ハードウェアボリュームが便利、ポップノイズと発熱があることを指摘。"
+      },
+      {
+        "id": "src-kakaku-review-2",
+        "name": "HiBy FC4 レビュー - 価格.com",
+        "url": "https://review.kakaku.com/review/K0001467279/",
+        "tier": "medium",
+        "evidenceType": "secondary",
+        "publishedAt": "2022-11-10",
+        "author": "サンジュリアン",
+        "conflictOfInterest": "none",
+        "notes": "音質がクリアでパンチがある、HD650なども余裕で鳴らせるパワーがあると評価。"
       }
     ],
-    "lastInvestigated": "2026-01-27",
+    "claims": [
+      {
+        "claim": "ES9219を2基搭載し、高解像度のロスレス音楽を再生可能",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-amazon-api",
+          "src-kakaku-review-2"
+        ],
+        "crossChecked": true,
+        "notes": "公式のスペック情報とレビューでの音質評価から確認。"
+      },
+      {
+        "claim": "340mW+340mWの出力で大型ヘッドホンも駆動可能",
+        "category": "comparativeAdvantage",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-amazon-api",
+          "src-kakaku-review-2"
+        ],
+        "crossChecked": true,
+        "notes": "公式情報と、レビューでのHD650を余裕で鳴らせるという声から確認。"
+      },
+      {
+        "claim": "再生・停止時にポップノイズが発生し、本体がやや発熱する",
+        "category": "durability",
+        "confidence": "medium",
+        "supportingSourceIds": [
+          "src-kakaku-review-1"
+        ],
+        "crossChecked": false,
+        "notes": "ユーザーレビューで指摘されているが、他のレビューでの言及は少ない。"
+      }
+    ],
+    "lastInvestigated": "2026-04-04",
     "competitiveAnalysis": [
       {
-        "name": "EarFun UA100",
-        "asin": "B0CZ8P2233",
-        "priceComparison": "約1,600円安価",
+        "name": "iBasso Jr. Macaron",
+        "asin": "B0DMDWDKXD",
+        "priceComparison": "対象商品と同等の価格帯。Macaronは小型軽量で低消費電力をアピールしている。",
         "featureComparison": [
-          "DSD512対応（FC4はDSD256）",
-          "出力はFC4の方が強力な可能性が高い"
+          "共通点：デュアルDAC搭載（MacaronはCS43131）、PCM384kHz/32bit対応、4.4mmバランス出力対応",
+          "相違点：対象商品はPCM768kHz、MQA16倍対応だが、Macaronはより小型軽量でKDS社製クロックを採用している"
         ],
         "differentiators": [
-          "価格の安さ",
-          "軽量コンパクト"
+          "HiBy FC4の利点：最大出力が高く、より強力にヘッドホンを駆動できる。MQAに対応している",
+          "iBasso Jr. Macaronの利点：より小型・軽量（16g）であり、消費電力が低いためスマホのバッテリーに優しい"
         ]
       },
       {
-        "name": "iBasso Jr. Macchiato",
-        "asin": "B0G346QBP6",
-        "priceComparison": "約3,000円高価",
+        "name": "eppfun USB-C DAC",
+        "asin": "B0DSVZDC5Y",
+        "priceComparison": "対象商品の3分の1以下の価格。エントリー向けの安価なモデル。",
         "featureComparison": [
-          "CS43131デュアルDAC",
-          "OLEDディスプレイ搭載",
-          "580mWの高出力"
+          "共通点：USB-C接続の小型DACアンプ、PCM384kHz/32bit対応",
+          "相違点：対象商品はバランス出力とデュアルDACを備え高出力だが、eppfunは3.5mmのみでDACもシングル構成の可能性がある"
         ],
         "differentiators": [
-          "視認性の高いディスプレイ",
-          "圧倒的なパワー"
+          "HiBy FC4の利点：バランス出力対応、デュアルDAC、高出力など音質面での性能が圧倒的に高い",
+          "eppfun USB-C DACの利点：非常に安価で、手軽にスマホの音質を向上させたい場合に適している"
+        ]
+      },
+      {
+        "name": "ラディウス RK-DA60C",
+        "asin": "B09GTWRTS7",
+        "priceComparison": "対象商品よりやや安価。",
+        "featureComparison": [
+          "共通点：USB-C接続、PCM384kHz/32bit対応",
+          "相違点：対象商品はバランス出力対応で高出力だが、RK-DA60Cは3.5mm出力のみでケーブル一体型の超小型設計"
+        ],
+        "differentiators": [
+          "HiBy FC4の利点：4.4mmバランス出力に対応し、音質と出力の面で優位性がある",
+          "ラディウス RK-DA60Cの利点：ケーブル一体型で取り回しが良く、非常にコンパクトである"
+        ]
+      },
+      {
+        "name": "FIIO KA11",
+        "asin": "B09NXKYTDQ",
+        "priceComparison": "対象商品より安価。",
+        "featureComparison": [
+          "共通点：CS43131 DACチップ搭載（KA11はシングル）、PCM384kHz/32bit対応",
+          "相違点：対象商品はデュアルDAC・バランス出力対応だが、KA11はシングルDAC・3.5mm出力のみ"
+        ],
+        "differentiators": [
+          "HiBy FC4の利点：デュアルDACとバランス出力により、より高音質と高出力を実現している",
+          "FIIO KA11の利点：8.5gと非常に軽量で、UAC1.0にも対応しておりゲーム機等との接続性が高い"
+        ]
+      },
+      {
+        "name": "Yinyoo TRI TK1",
+        "asin": "B0F8NX8FNP",
+        "priceComparison": "対象商品よりやや安価。",
+        "featureComparison": [
+          "共通点：デュアルDAC搭載（TK1はCS43131）、4.4mmバランスおよび3.5mm出力対応",
+          "相違点：対象商品はES9219搭載でMQA対応だが、TK1は物理キーでの操作性や低消費電力に注力している"
+        ],
+        "differentiators": [
+          "HiBy FC4の利点：MQAフルデコード（16倍展開）に対応し、より高いPCMレートをサポートしている",
+          "Yinyoo TRI TK1の利点：価格がやや安く、インジケーターの色でフォーマットが判別しやすい"
         ]
       }
     ],
     "recommendation": {
       "targetUsers": [
-        "スマホで手軽に高音質を楽しみたいが、パワーも妥協したくない人",
-        "MQA音源をネイティブ再生したいTidalユーザー",
-        "4.4mmバランス接続対応のイヤホンを持っている人"
+        "手持ちの有線イヤホンやヘッドホンを高音質で楽しみたいユーザー",
+        "4.4mmバランス接続を利用したいオーディオファン",
+        "MQA音源をストリーミングやダウンロードで利用しているユーザー"
       ],
       "pros": [
-        "クラスを超えた高い駆動力",
-        "MQA 16x対応",
-        "高級感のあるデザイン"
+        "デュアルDAC構成と高出力によるパワフルでクリアな音質",
+        "MQA 16倍展開対応",
+        "ハードウェアボリュームによる快適な操作性"
       ],
       "cons": [
-        "スマホのバッテリー消費",
-        "発熱"
+        "再生・停止時にポップノイズが発生する場合がある",
+        "使用中に本体が発熱しやすい",
+        "iOSでの利用には別途ケーブルが必要"
       ],
-      "score": 85,
-      "scoreRationale": "[基本点: 70]\n[性能・機能: +5] (340mWの高出力、MQA 16x対応)\n[コストパフォーマンス: +5] (1万円以下でこのスペックと駆動力は優秀)\n[品質・デザイン: +0] (標準的)\n[ユーザー満足度: +0] (標準的)\n[独自の強み: +5] (HiByのオーディオ設計ノウハウ)\n[合計: 85]"
+      "score": 83,
+      "scoreRationale": "[基本点: 70]\n[加点: +8] (デュアルDACと340mWの高出力による音質・駆動力の高さ)\n[加点: +5] (MQA 16倍展開対応という独自の強み)\n[加点: +3] (ハードウェアボリューム搭載による操作性の良さ)\n[減点: -3] (ポップノイズと発熱の指摘によるユーザビリティの減点)\n[合計: 83]"
     },
     "technicalSpecs": {
-      "driver": "ES9219 x2 (Dual DAC)",
-      "codec": "PCM 768kHz/32bit, DSD256, MQA 16x",
-      "battery": null,
-      "connectivity": [
-        "USB Type-C",
-        "3.5mm Single Ended",
-        "4.4mm Balanced"
-      ],
-      "noiseCancel": null
+      "dimensions": {
+        "height": "11.9mm",
+        "width": "22.1mm",
+        "depth": "65.3mm"
+      },
+      "color": "ブルー",
+      "dacChip": "ES9219 x2",
+      "outputPower": "340mW + 340mW @ 32Ω",
+      "samplingRate": "最大PCM768kHz/32bit、DSD256 (ネイティブ)",
+      "mqa": "MQA 16倍展開対応",
+      "outputs": ["4.4mmバランス", "3.5mmシングルエンド"],
+      "osCompatibility": ["Android", "iOS", "Mac", "Windows"],
+      "other": [
+        "独立FPGAベースデュアル独立クリスタル発振器",
+        "ハードウェアボリュームボタン搭載"
+      ]
     }
   }
 }
