@@ -2,16 +2,23 @@
 {{- /* Get brand info from front matter */ -}}
 {{- $brandName := .Params.brand_name | default "" -}}
 {{- $matcherType := .Params.brand_matcher_type | default "title_prefix" -}}
+{{- $matcherValue := .Params.brand_matcher_value | default $brandName -}}
 
 {{- /* Collect articles matching this brand using scratch */ -}}
 {{- $scratch := newScratch -}}
 {{- $scratch.Set "articles" slice -}}
-{{- range where $.Site.RegularPages "Section" "articles" -}}
-{{- if eq $matcherType "title_prefix" -}}
-{{- if hasPrefix .Title $brandName -}}
-{{- $scratch.Add "articles" (slice .) -}}
-{{- end -}}
-{{- end -}}
+{{- range where site.RegularPages "Section" "articles" -}}
+  {{- $match := false -}}
+  {{- if eq $matcherType "title_prefix" -}}
+    {{- if hasPrefix .Title $matcherValue -}}{{- $match = true -}}{{- end -}}
+  {{- else if eq $matcherType "brand" -}}
+    {{- if eq .Params.brand $matcherValue -}}{{- $match = true -}}{{- end -}}
+  {{- else if eq $matcherType "regex" -}}
+    {{- if findRE $matcherValue .Title -}}{{- $match = true -}}{{- end -}}
+  {{- end -}}
+  {{- if $match -}}
+    {{- $scratch.Add "articles" (slice .) -}}
+  {{- end -}}
 {{- end -}}
 {{- $articles := $scratch.Get "articles" -}}
 

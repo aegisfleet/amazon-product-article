@@ -68,6 +68,7 @@ function syncBrandData(): void {
       layout: 'brand-list',
       brand_name: brandName,
       brand_matcher_type: matcherType,
+      brand_matcher_value: brand.matcher?.value || brandName,
     };
 
     const content = `---\n${yaml.dump(frontMatter)}---\n`;

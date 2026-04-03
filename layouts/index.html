@@ -199,10 +199,16 @@
     {{- $matcherValue = .value | default $brandName -}}
     {{- end -}}
     {{- range where $.Site.RegularPages "Section" "articles" -}}
+    {{- $match := false -}}
     {{- if eq $matcherType "title_prefix" -}}
-    {{- if hasPrefix .Title $matcherValue -}}
-    {{- $brandCount = add $brandCount 1 -}}
+    {{- if hasPrefix .Title $matcherValue -}}{{- $match = true -}}{{- end -}}
+    {{- else if eq $matcherType "brand" -}}
+    {{- if eq .Params.brand $matcherValue -}}{{- $match = true -}}{{- end -}}
+    {{- else if eq $matcherType "regex" -}}
+    {{- if findRE $matcherValue .Title -}}{{- $match = true -}}{{- end -}}
     {{- end -}}
+    {{- if $match -}}
+    {{- $brandCount = add $brandCount 1 -}}
     {{- end -}}
     {{- end -}}
     {{- if gt $brandCount 0 -}}
