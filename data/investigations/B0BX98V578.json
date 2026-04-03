@@ -1,22 +1,20 @@
 {
   "analysis": {
     "productName": "LINSOUL KZ ZVX 1DDインナーイヤーイヤホン",
-    "parentAsin": "B0BX986HXV",
-    "productDescription": "10mm複合磁気ダイナミックドライバーを搭載し、亜鉛合金製の金属筐体を採用した、低価格ながら高級感のある中華イヤホン。",
+    "parentAsin": "B0BX98V578",
+    "productDescription": "10mm複合磁気ダイナミックドライバーを搭載した、重低音とクリアな解像度を特徴とする有線イヤホン。",
     "productUsage": [
       "スマートフォンやDAPでの音楽鑑賞",
       "リケーブルによる音質のカスタマイズ",
       "PCでのゲームや動画視聴"
     ],
     "positivePoints": [
-      "価格を超えた高級感のある金属筐体（亜鉛合金製）",
-      "リケーブル対応で好みのケーブルに交換可能",
       "パワフルな重低音とクリアなボーカル",
+      "リケーブル対応で好みのケーブルに交換可能",
       "人間工学に基づいたフィット感の良い形状",
-      "スマートフォンでも鳴らしやすい低インピーダンス設計"
+      "スマートフォンでも鳴らしやすい低インピーダンス設計(35Ω)"
     ],
     "negativePoints": [
-      "金属筐体のため冬場は装着時に冷たく感じる",
       "高音が人によっては刺さると感じることがある",
       "付属ケーブルの質は簡易的なもので、タッチノイズが気になる場合がある"
     ],
@@ -25,102 +23,136 @@
       "初めてのリケーブル対応イヤホンとして",
       "手軽に持ち運べるサブ機として"
     ],
-    "userStories": [
-      {
-        "userType": "20代学生",
-        "scenario": "通学中の電車内",
-        "experience": "スマホ直挿しで使用しているが、以前使っていた付属イヤホンとは比べ物にならないほど音が良く、遮音性も高いので音楽に没頭できる。",
-        "sentiment": "positive"
-      },
-      {
-        "userType": "30代会社員",
-        "scenario": "デスクワーク中のBGM",
-        "experience": "金属製の質感が素晴らしく、デスクに置いているだけでも様になる。音質も元気があり、仕事の合間の気分転換に最適。",
-        "sentiment": "positive"
-      }
-    ],
-    "userImpression": "1000円台という価格からは信じられないほどのビルドクオリティと、KZらしい元気なドンシャリサウンドで、コスパ最強の一角として高く評価されている。",
+    "userStories": [],
+    "userImpression": "ビルドクオリティが高く、KZらしい元気なドンシャリサウンドで、コストパフォーマンスに優れたモデルとして評価されている。",
     "sources": [
       {
+        "id": "src-1",
         "name": "Amazon.co.jp 商品ページ",
         "url": "https://www.amazon.co.jp/dp/B0BX98V578",
-        "credibility": "high"
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2023-01-01",
+        "author": "Linsoul",
+        "conflictOfInterest": "none",
+        "notes": "公式のスペック情報と商品説明"
       }
     ],
-    "lastInvestigated": "2026-01-27",
+    "claims": [
+      {
+        "claim": "10mm複合ダイナミックドライバーを搭載し、低音と重低音の音に素晴らしい解析度を持つ",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "crossChecked": false,
+        "notes": "商品説明より"
+      }
+    ],
+    "lastInvestigated": "2026-04-04",
     "competitiveAnalysis": [
       {
-        "name": "KZ EDX Lite",
-        "asin": "B0D87LKTXN",
-        "priceComparison": "ZVXよりさらに安価（約100円〜200円差）",
+        "name": "KZ Castor",
+        "asin": "B0CMZQMQQS",
+        "priceComparison": "対象商品よりやや高いが、チューニングスイッチを搭載し音質の調整が可能。",
         "featureComparison": [
-          "樹脂製筐体で軽量",
-          "同じく1DD構成",
-          "リケーブル対応"
+          "共通点：リケーブル対応の有線イヤホン",
+          "相違点：Castorはチューニングスイッチを搭載し、デュアルダイナミックドライバーを採用"
         ],
         "differentiators": [
-          "ZVXは金属筐体で高級感があるのに対し、EDX Liteはプラスチックでチープさがある",
-          "音質はZVXの方が解像感が高い傾向"
+          "LINSOUL KZ ZVXの利点：シンプルな1DD構成で自然な音の繋がりを楽しめる",
+          "KZ Castorの利点：スイッチにより好みに合わせた音質調整が可能"
+        ]
+      },
+      {
+        "name": "KZ EDX Lite",
+        "asin": "B0DHKCYGXP",
+        "priceComparison": "対象商品より安価で、よりエントリー向けの価格設定。",
+        "featureComparison": [
+          "共通点：10mmダイナミックドライバーを搭載しリケーブル可能",
+          "相違点：EDX Liteは樹脂製シェルを採用し軽量化されている"
+        ],
+        "differentiators": [
+          "LINSOUL KZ ZVXの利点：金属筐体による高いビルドクオリティと音の響き",
+          "KZ EDX Liteの利点：非常に安価で軽量なため長時間の使用でも疲れにくい"
+        ]
+      },
+      {
+        "name": "KZ ZS12 Pro 2",
+        "asin": "B0FWBS1FXN",
+        "priceComparison": "対象商品より大幅に高く、ハイエンド志向のユーザー向け。",
+        "featureComparison": [
+          "共通点：リケーブル対応でKZブランドのイヤホン",
+          "相違点：ZS12 Pro 2は1DD+5BAのハイブリッド構成を採用"
+        ],
+        "differentiators": [
+          "LINSOUL KZ ZVXの利点：低価格で手軽に購入でき、1DDのまとまりのある音",
+          "KZ ZS12 Pro 2の利点：複数ドライバーによる高い解像度と分離感"
+        ]
+      },
+      {
+        "name": "KZ Gale",
+        "asin": "B0FJ2F6P3K",
+        "priceComparison": "対象商品より高く、DSP内蔵のType-C接続モデル。",
+        "featureComparison": [
+          "共通点：カナル型の有線イヤホン",
+          "相違点：GaleはType-C接続でDSPサウンドカードを内蔵している"
+        ],
+        "differentiators": [
+          "LINSOUL KZ ZVXの利点：汎用性の高い3.5mmプラグで様々な機器に接続可能",
+          "KZ Galeの利点：Type-C接続でスマホに直挿しでき、マイク付きで通話も快適"
         ]
       },
       {
         "name": "KZ EDX Pro",
         "asin": "B09F34DKQP",
-        "priceComparison": "ZVXより数百円高い場合が多い",
+        "priceComparison": "対象商品と同等の価格帯で競合する定番モデル。",
         "featureComparison": [
-          "KZの定番エントリーモデル",
-          "樹脂製筐体に金属プレート",
-          "強力なドンシャリサウンド"
+          "共通点：10mmダイナミックドライバー搭載、リケーブル対応",
+          "相違点：EDX Proは樹脂製筐体に金属プレートを組み合わせたデザイン"
         ],
         "differentiators": [
-          "ZVXの方が筐体全体の剛性が高く、音の響きが引き締まっている",
-          "EDX Proの方が低音の量がより多い"
-        ]
-      },
-      {
-        "name": "KBEAR Flash",
-        "asin": "B0D45L71V8",
-        "priceComparison": "ZVXより数百円高い（約1,449円）",
-        "featureComparison": [
-          "1DD+1BAのハイブリッド構成",
-          "合金製カバー",
-          "リケーブル対応"
-        ],
-        "differentiators": [
-          "KBEAR Flashはハイブリッド構成で高域の煌びやかさが特徴",
-          "ZVXはシングルダイナミックならではの自然な繋がりがある"
+          "LINSOUL KZ ZVXの利点：全体が金属筐体で高級感があり、剛性が高い",
+          "KZ EDX Proの利点：定番モデルとしての信頼性と、低音の量感の多さ"
         ]
       }
     ],
     "recommendation": {
       "targetUsers": [
         "コストパフォーマンスを最優先する人",
-        "金属筐体の質感が好きな人",
+        "重低音を楽しみたい人",
         "リケーブルを試してみたいイヤホン初心者"
       ],
       "pros": [
         "圧倒的なコストパフォーマンス",
-        "価格破壊級のビルドクオリティ（金属筐体）",
+        "価格以上のビルドクオリティ",
         "楽しく聴けるドンシャリサウンド"
       ],
       "cons": [
-        "冬場の装着時の冷たさ",
+        "高域の粗さが気になる場合がある",
         "リケーブル沼への入り口となる危険性"
       ],
-      "score": 85,
-      "scoreRationale": "[基本点: 70]\n[加点: +15] (1000円台前半で金属筐体かつリケーブル可能という圧倒的なコストパフォーマンス)\n[加点: +5] (ビルドクオリティが高く、デザインもシンプルで良い)\n[減点: -5] (高域の粗さや付属ケーブルの質など、価格なりの妥協点は存在する)\n[合計: 85]"
+      "score": 80,
+      "scoreRationale": "[基本点: 70]\n[加点: +10] (低価格でありながら高いビルドクオリティとリケーブル対応を実現する優れたコストパフォーマンス)\n[加点: +5] (重低音と解析度のバランスが良く、独自のチューニングが施されている)\n[減点: -5] (高域の刺さりや付属ケーブルの質など、エントリー機特有の妥協点がある)\n[合計: 80]"
     },
     "technicalSpecs": {
-      "driver": "10mm 複合磁気ダイナミックドライバー",
-      "codec": null,
-      "battery": null,
-      "connectivity": [
-        "3.5mmプラグ",
-        "0.75mm 2pin リケーブル対応"
-      ],
-      "noiseCancel": "パッシブノイズキャンセリング（遮音性）",
-      "impedance": "35Ω",
-      "sensitivity": "95dB"
+      "dimensions": {
+        "height": "20mm",
+        "width": "100mm",
+        "depth": "100mm"
+      },
+      "weight": "0.2g",
+      "capacity": "なし",
+      "material": "天然樹脂、金属",
+      "origin": "中国",
+      "other": [
+        "ドライバー: 10mm複合磁気ダイナミックドライバー",
+        "インピーダンス: 35Ω",
+        "感度: 95dB",
+        "コネクタ: 0.75mm 2pin",
+        "プラグ: 3.5mm"
+      ]
     }
   }
 }
