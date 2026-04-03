@@ -1,0 +1,168 @@
+{
+  "analysis": {
+    "productName": "UGREEN 4K HDMI キャプチャーボード パススルー機能",
+    "parentAsin": "B0CM9C91MK",
+    "productDescription": "4K@60Hzのパススルー出力と1080P@60Hzの録画に対応したHDMIキャプチャーボード。マイクとオーディオ端子を搭載し、ゲーム機やPC、最新のiPad OSにも対応する汎用性の高いモデルです。",
+    "productUsage": [
+      "ゲーム実況生配信",
+      "Web会議",
+      "ライブ配信",
+      "画面共有",
+      "録画"
+    ],
+    "positivePoints": [
+      "4K@60Hzの低遅延パススルー機能により、高画質でゲームをプレイしながら配信が可能",
+      "マイク入力およびオーディオ出力用の3.5mmジャックを搭載し、ボイスチャット音声も同時に録音可能",
+      "USB-CとUSB-Aの両対応ケーブルが付属し、iPad OS 17を含む幅広いOS（Windows、Mac、Android等）に対応",
+      "ドライバー不要でOBSやZoomなどの主要ソフトウェアですぐに利用可能"
+    ],
+    "negativePoints": [
+      "4Kでの録画には非対応（最大録画解像度はフルHD 1080P/60Hz）",
+      "4Kパススルー出力はHDR（ハイダイナミックレンジ）には非対応",
+      "HDCPによって暗号化されたコンテンツのキャプチャおよび録画は不可"
+    ],
+    "useCases": [
+      "Nintendo SwitchやPS5/PS4のゲーム画面をPCに取り込んでYouTubeやTwitchで実況配信する",
+      "デジタル一眼レフカメラをWebカメラ化して高画質なWeb会議やセミナー配信を行う",
+      "iPad（OS17以降）を外付けディスプレイとして活用し、出先でゲーム画面を表示・録画する"
+    ],
+    "userStories": [],
+    "userImpression": "手頃な価格ながら4Kパススルーと1080p60fps録画を両立し、さらにマイク端子や幅広いデバイス対応を備えており、これからゲーム実況を始めるユーザーにとって非常にコストパフォーマンスに優れた実用的なキャプチャーボードと評価できます。",
+    "sources": [
+      {
+        "id": "src-1",
+        "name": "Amazon Product Data",
+        "url": "https://www.amazon.co.jp/dp/B0CM9C91MK",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-04-03",
+        "author": "UGREEN",
+        "conflictOfInterest": "none",
+        "notes": "製品仕様、機能詳細（4K60Hzパススルー、1080p60Hzキャプチャ、USB-C/A対応、サイズ・重量等）"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "4K@60Hzパススルー機能と最大1080P@60Hz録画に対応",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "crossChecked": false,
+        "notes": "製品のメインスペックとして公式データに記載"
+      },
+      {
+        "claim": "iPad OS 17に対応し、iPadをHDMI入力の外付けディスプレイとして使用可能",
+        "category": "durability",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "crossChecked": false,
+        "notes": "UVC1.0サポートにより実現。公式データに記載あり"
+      }
+    ],
+    "lastInvestigated": "2026-04-03",
+    "competitiveAnalysis": [
+      {
+        "name": "UGREEN 2K@30Hz HDMI キャプチャーボード",
+        "asin": "B0DGXJS6BF",
+        "priceComparison": "本製品よりもわずかに安価なエントリーモデル。",
+        "featureComparison": [
+          "共通点：UGREEN製、プラグアンドプレイ対応、USB-A/C両対応",
+          "相違点：本製品が4K@60Hzパススルー/1080P@60Hz録画対応に対し、B0DGXJS6BFは4K@30Hzパススルー/2K@30Hz録画。また、本製品はマイク/オーディオ端子を備える。"
+        ],
+        "differentiators": [
+          "UGREEN 4K HDMI キャプチャーボード パススルー機能の利点：60Hzの滑らかなパススルー出力と、マイク入力端子を備えているため、FPSゲームや実況音声のミックスに最適。",
+          "UGREEN 2K@30Hz HDMI キャプチャーボードの利点：マイク入力等が不要で、より低予算で環境を構築したい場合。"
+        ]
+      },
+      {
+        "name": "UGREEN 4K@60Hz HDMI キャプチャーボード HDR VRR対応",
+        "asin": "B0D4LV836Z",
+        "priceComparison": "本製品の2倍以上の価格設定のハイエンドモデル。",
+        "featureComparison": [
+          "共通点：UGREEN製、4K@60Hzパススルー対応",
+          "相違点：B0D4LV836Zは1080P@240Hzの高フレームレート録画やHDR、VRRに対応し、帯域幅が5Gbpsの高速転送をサポート。"
+        ],
+        "differentiators": [
+          "UGREEN 4K HDMI キャプチャーボード パススルー機能の利点：必要十分な機能を備えながら、非常に手頃な価格で購入できる圧倒的なコストパフォーマンス。",
+          "UGREEN 4K@60Hz HDMI キャプチャーボード HDR VRR対応の利点：HDR映像や高フレームレートでの本格的なゲームプレイと録画を両立したいヘビーゲーマー向け。"
+        ]
+      },
+      {
+        "name": "Elgato Game Capture HD60 X",
+        "asin": "B0CDWRBWY8",
+        "priceComparison": "本製品の約5倍の価格となる著名ブランドのハイエンド機。",
+        "featureComparison": [
+          "共通点：4K対応パススルー機能搭載",
+          "相違点：Elgatoは4K@30Hz録画や1080p@60Hz HDR録画、VRRパススルーに対応し、専用の強力な録画ソフトウェアが利用可能。"
+        ],
+        "differentiators": [
+          "UGREEN 4K HDMI キャプチャーボード パススルー機能の利点：Elgatoに比べて圧倒的に安価であり、入門用として導入のハードルが非常に低い。",
+          "Elgato Game Capture HD60 Xの利点：配信者からの高い信頼性、HDR録画対応、充実した専用ソフトウェアによる安定した配信環境構築が可能。"
+        ]
+      },
+      {
+        "name": "YFFSFDC 4K HDMI キャプチャーボード",
+        "asin": "B0D9NPXPMY",
+        "priceComparison": "本製品の半額以下で購入できる格安モデル。",
+        "featureComparison": [
+          "共通点：4Kパススルー、1080P 60FPS録画対応",
+          "相違点：本製品はマイク・オーディオ端子を搭載し、UGREENという一定の知名度があるブランド製。YFFSFDCはさらに安価だが端子等の付加機能に乏しい。"
+        ],
+        "differentiators": [
+          "UGREEN 4K HDMI キャプチャーボード パススルー機能の利点：マイク入力端子を用いた実況機能と、24ヶ月のメーカー保証といった安心感。",
+          "YFFSFDC 4K HDMI キャプチャーボードの利点：とにかく予算を抑えて映像の取り込みのみを行いたい場合のコストメリット。"
+        ]
+      },
+      {
+        "name": "ノーブランド HDMI キャプチャーボード 4K パススルー対応",
+        "asin": "B0DF77CD8P",
+        "priceComparison": "本製品よりもやや高い価格設定。",
+        "featureComparison": [
+          "共通点：4Kパススルー、1080P 60FPS録画対応",
+          "相違点：機能的には類似しているが、本製品の方が価格が安く、かつUGREEN製としての保証対応や明確な仕様（iPad OS 17対応など）が提示されている。"
+        ],
+        "differentiators": [
+          "UGREEN 4K HDMI キャプチャーボード パススルー機能の利点：同等の基本スペックを持ちながら価格が安く、ブランドの信頼性と充実したサポート体制がある。",
+          "ノーブランド HDMI キャプチャーボード 4K パススルー対応の利点：特になし（本製品の方が総合的に優位）。"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "これからゲーム実況やライブ配信を始めたいエントリーユーザー",
+        "SwitchやPS5のゲーム映像を遅延なくモニターに表示しつつPCで録画したい人",
+        "カメラをWebカメラ化して高画質なZoom会議を行いたいビジネスパーソン"
+      ],
+      "pros": [
+        "4000円台という手頃な価格で4K@60Hzパススルーと1080p@60fps録画を実現",
+        "マイク端子搭載で、キャプボ単体で音声ミックスが可能",
+        "iPad(OS17)をモニター化できるなど幅広いOSと互換性がある"
+      ],
+      "cons": [
+        "4K解像度での録画はできない",
+        "パススルー映像はHDR非対応のため、HDRモニターの恩恵を受けられない"
+      ],
+      "score": 86,
+      "scoreRationale": "[基本点: 70]\n[加点: +6] (4K@60Hzパススルーと1080P@60Hz録画、マイク・オーディオ端子搭載という充実した基本性能)\n[加点: +8] (これだけの機能を備えながら約4000円という非常に優れたコストパフォーマンス)\n[加点: +2] (iPad OS 17対応やUSB-A/C両対応ケーブル付属など、現代のデバイス環境に即した独自の強み)\n[合計: 86]"
+    },
+    "technicalSpecs": {
+      "dimensions": {
+        "height": "20mm",
+        "width": "55mm",
+        "depth": "100mm"
+      },
+      "weight": "320g",
+      "inputResolution": "最大4K(3840×2160)/60Hz",
+      "outputResolution": "最大フルHD(1920×1080)/60Hz (録画)",
+      "passThrough": "4K(3840×2160)/60Hz (HDR非対応)",
+      "interface": "USB-C/A (PC接続用), HDMI入力, HDMI出力, 3.5mmマイクジャック, 3.5mmオーディオジャック",
+      "osCompatibility": "Mac OS, Windows 8.1/10, Linux, Android, iOS/iPad OS17",
+      "softwareCompatibility": "OBS, Tik Tok, YouTube, Twitter, Facebook Live, XSplit, Potplayer, QuickTime Player",
+      "warranty": "24ヶ月"
+    }
+  }
+}
