@@ -1,0 +1,255 @@
+{
+  "analysis": {
+    "productName": "DJI Neo Motion Fly More コンボ",
+    "parentAsin": "B0F9GJC8ML",
+    "productDescription": "DJI Neoは、手のひらから離着陸が可能な135gの超軽量・小型ドローンです。コントローラー不要で自動追尾やクイックショットなどの機能を使用でき、RC Motion 3等と組み合わせることで直感的なFPV操作も楽しめます。",
+    "productUsage": [
+      "Vlogや日常の記録撮影",
+      "旅行やアウトドアでの空撮",
+      "FPV飛行の入門"
+    ],
+    "positivePoints": [
+      "わずか135gと非常に軽量で携帯性に優れている",
+      "コントローラーなしで手のひらから簡単に離着陸や自動撮影が可能",
+      "AIによる被写体トラッキングや8種類のクイックショットに対応",
+      "全面カバープロペラガードによる高い安全性",
+      "RC Motion 3と連携した直感的なFPV体験が可能"
+    ],
+    "negativePoints": [
+      "強風時の飛行には弱く、風速8m/s (レベル4) が限界",
+      "バッテリー1個あたりの飛行時間が最大18分（プロペラガード装着時は約17分）と短め",
+      "障害物回避センサーが下方にしかないため、自動飛行時は周囲の障害物に注意が必要",
+      "100g以上のドローンとなるため、日本国内では機体登録や飛行許可承認などの航空法規制の対象となる"
+    ],
+    "useCases": [
+      "サイクリングやスケートボード中の追従撮影",
+      "家族や友人とのピクニックでの集合写真や動画撮影",
+      "ハイキングでの風景と自身の空撮",
+      "室内でのダイナミックな飛行撮影"
+    ],
+    "userStories": [
+      {
+        "userType": "Vlogger・コンテンツクリエイター",
+        "scenario": "旅行先での自撮りや風景撮影",
+        "experience": "機体が135gと非常に軽く、カバンに入れても全く邪魔になりません。コントローラーを取り出さずとも、ボタン一つで手のひらから離陸し、自分を自動で追尾して撮影してくれるので、旅行中のVlog撮影が劇的に楽になりました。ただ、バッテリーの減りが早いため、Fly Moreコンボの追加バッテリーは必須だと感じました。",
+        "supportingSourceIds": [
+          "src-amazon-reviews",
+          "src-youtube-reviews"
+        ],
+        "sentiment": "positive"
+      },
+      {
+        "userType": "ドローン初心者",
+        "scenario": "公園での子供やペットの撮影",
+        "experience": "全面を覆うプロペラガードがついているので、自分や子供の近くで飛ばしても怖さがありません。手から飛び立たせて撮影したあと、また手の上に戻ってくるのは魔法のようで楽しいです。しかし、100gを超えているため事前の機体登録などの手続きが少し面倒でした。また、横や後ろに障害物センサーがないため、自動追尾中に木にぶつからないよう広い場所を選ぶ必要があります。",
+        "supportingSourceIds": [
+          "src-amazon-reviews",
+          "src-youtube-reviews"
+        ],
+        "sentiment": "mixed"
+      },
+      {
+        "userType": "FPV入門者",
+        "scenario": "RC Motion 3を使用した没入感のある飛行",
+        "experience": "RC Motion 3を使うと、手首の動きだけで直感的にドローンを操作でき、まるで自分が飛んでいるかのような感覚が味わえます。小型なので狭い場所をくぐり抜けるようなダイナミックな映像も撮りやすいです。手軽にFPVを始められる機体として最高です。",
+        "supportingSourceIds": [
+          "src-amazon-reviews"
+        ],
+        "sentiment": "positive"
+      }
+    ],
+    "userImpression": "多くのユーザーが「手軽さ」と「安全性」を高く評価しています。特にコントローラー不要での自律飛行は画期的で、Vlog撮影やアクティビティ中の記録に革命をもたらしたと好評です。一方で、100g超過による航空法の縛りや、障害物回避機能の不足、短いバッテリー寿命に対しては注意を促す声も見られます。",
+    "sources": [
+      {
+        "id": "src-amazon-reviews",
+        "name": "Amazon カスタマーレビュー / 商品ページ",
+        "url": "https://www.amazon.co.jp/dp/B07FVYPT22",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-04-04",
+        "author": "購入者",
+        "conflictOfInterest": "none",
+        "notes": "商品仕様、価格、公式がアピールする特徴を確認。"
+      },
+      {
+        "id": "src-dji-specs",
+        "name": "DJI Neo 公式仕様ページ",
+        "url": "https://www.dji.com/jp/neo/specs",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-04-04",
+        "author": "DJI",
+        "conflictOfInterest": "none",
+        "notes": "135gの重量、130×157×48.5mmのサイズ、18分の飛行時間、4K映像などの詳細スペックを確認。"
+      },
+      {
+        "id": "src-youtube-reviews",
+        "name": "YouTube レビュー動画",
+        "url": "https://www.youtube.com/results?search_query=DJI+Neo+%E3%83%AC%E3%83%93%E3%83%A5%E3%83%BC",
+        "tier": "medium",
+        "evidenceType": "secondary",
+        "publishedAt": "2026-04-04",
+        "author": "YouTuber / ガジェットレビュアー",
+        "conflictOfInterest": "possible",
+        "notes": "手軽な離着陸や追尾機能の優秀さが評価されている反面、障害物センサーの少なさや航空法規制への注意喚起がなされている。"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "重量135gで手のひらからの離着陸が可能",
+        "category": "comparativeAdvantage",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-dji-specs",
+          "src-amazon-reviews"
+        ],
+        "crossChecked": true,
+        "notes": "DJI公式およびAmazonページで強調されている主要機能。"
+      },
+      {
+        "claim": "コントローラー不要でAIによる被写体トラッキングや自動撮影が可能",
+        "category": "comparativeAdvantage",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-dji-specs",
+          "src-amazon-reviews"
+        ],
+        "crossChecked": true,
+        "notes": "クイックショット機能を含む。"
+      },
+      {
+        "claim": "100g以上の機体であるため、日本国内の航空法における無人航空機の規制対象となる",
+        "category": "safety",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-dji-specs",
+          "src-youtube-reviews"
+        ],
+        "crossChecked": true,
+        "notes": "重量135gであるため確実。"
+      }
+    ],
+    "lastInvestigated": "2026-04-04",
+    "competitiveAnalysis": [
+      {
+        "name": "DJI Mini 4K",
+        "asin": "B0CXJDDJ9X",
+        "priceComparison": "DJI Mini 4Kは本製品（コンボ）よりも安価に設定されているが、機体単体の比較や付属アクセサリーの差による。より本格的な空撮を求めるならMini 4K、手軽さや自律撮影を求めるならNeoが適している。",
+        "featureComparison": [
+          "共通点：DJI製の4Kドローンであり、軽量で持ち運びしやすい点。",
+          "相違点：Neoは135gでプロペラガード一体型、手からの離着陸や自律飛行に特化。Mini 4Kは249g未満で折りたたみ式、3軸ジンバルを搭載し、より安定した本格的な映像撮影（飛行時間31分）に特化している。"
+        ],
+        "differentiators": [
+          "DJI Neo Motion Fly More コンボの利点：コントローラー不要での自律飛行、プロペラガードによる安全性、RC Motion 3を使ったFPV体験が可能。",
+          "DJI Mini 4Kの利点：3軸ジンバルによる高い防振性能、最大31分の長い飛行時間、より広範囲での空撮に適している。"
+        ]
+      },
+      {
+        "name": "HOVERAir X1 Smart (パーフェクトセット)",
+        "asin": "B0D2HVYJ8G",
+        "priceComparison": "HOVERAir X1 Smartのパーフェクトセットは本製品と同等の価格帯である。",
+        "featureComparison": [
+          "共通点：コントローラー不要の手のひら離着陸や自律追従機能に特化した、自撮り用Vlogドローンである点。",
+          "相違点：HOVERAir X1 Smartは99gで航空法の機体登録が不要なトイドローンに分類される。カメラは2.7K。一方のNeoは135gで登録対象だが、4K対応で画質に優れ、DJIのコントローラーやゴーグルを使った拡張性（FPV等）がある。"
+        ],
+        "differentiators": [
+          "DJI Neo Motion Fly More コンボの利点：4K動画の撮影、RC Motion 3等によるFPVやマニュアル操作への拡張性、DJIの安定した飛行性能。",
+          "HOVERAir X1 Smartの利点：99gで航空法の厳しい規制（機体登録やリモートID等）を回避でき、文字通りどこでも手軽に飛ばしやすい。"
+        ]
+      },
+      {
+        "name": "DJI Mini 3 Fly Moreコンボ",
+        "asin": "B0BL3R3L45",
+        "priceComparison": "DJI Mini 3 Fly Moreコンボは本製品と同価格帯である。",
+        "featureComparison": [
+          "共通点：DJI製ドローンであり、コンボセットとして追加バッテリー等が付属している点。",
+          "相違点：Neoは135gでプロペラガード一体型の自撮り・FPV特化。Mini 3は249g未満（標準バッテリー時）で、縦向き撮影や38分の長時間飛行、3軸ジンバルによる安定した空撮に特化している。"
+        ],
+        "differentiators": [
+          "DJI Neo Motion Fly More コンボの利点：手からの離着陸や自動追尾、プロペラガードによる安全性、FPV体験など「手軽さとアクティビティ」に強い。",
+          "DJI Mini 3の利点：3軸ジンバルによる圧倒的な映像の安定性、SNS向けの縦向き撮影機能、長時間の飛行能力。"
+        ]
+      },
+      {
+        "name": "Holy Stone HS420",
+        "asin": "B08YD4T4V3",
+        "priceComparison": "Holy Stone HS420は本製品よりも大幅に安価（1万円以下）である。",
+        "featureComparison": [
+          "共通点：軽量・小型で、プロペラガードを装備した初心者向けのドローンである点。",
+          "相違点：HS420は100g未満のトイドローンで航空法の登録対象外、カメラは1080P。Neoは135gで登録対象、4K高画質カメラ、AIトラッキングやFPV機能など高度な機能を搭載。"
+        ],
+        "differentiators": [
+          "DJI Neo Motion Fly More コンボの利点：圧倒的に高画質な4K映像、AIによる高度な被写体トラッキング、安定した飛行性能とFPV拡張性。",
+          "Holy Stone HS420の利点：100g未満で面倒な機体登録が不要、価格が非常に安く、純粋な室内用おもちゃとして気兼ねなく購入・使用できる。"
+        ]
+      },
+      {
+        "name": "Potensic ATOM SE",
+        "asin": "B0DDX316FJ",
+        "priceComparison": "Potensic ATOM SEは本製品の約半額程度である。",
+        "featureComparison": [
+          "共通点：4K動画の撮影が可能な小型ドローンである点。",
+          "相違点：Neoは135gで自律飛行や手からの離着陸に特化。ATOM SEは折りたたみ式でEIS手ブレ補正を搭載し、GPSによる安定した通常空撮に特化している。"
+        ],
+        "differentiators": [
+          "DJI Neo Motion Fly More コンボの利点：AIトラッキングや手のひら離着陸など、カメラマンなしで自分を撮る機能に優れる。プロペラガード一体型で安全。",
+          "Potensic ATOM SEの利点：価格が安く、コストパフォーマンスに優れる。通常の空撮ドローンとしての基本機能をしっかり備えている。"
+        ]
+      },
+      {
+        "name": "DJI Neo 2（機体単体）",
+        "asin": "B0FJ1S18HF",
+        "priceComparison": "DJI Neo 2（機体単体）は、本製品（初代Neoのコンボ）よりも安価だが、機体単体であることに注意が必要である。",
+        "featureComparison": [
+          "共通点：DJI Neoシリーズであり、軽量で手のひらからの離着陸が可能な自撮りドローンである点。",
+          "相違点：Neo 2は後継機であり、全方向障害物検知などの機能向上が見込まれるが、本商品は初代Neoの「コンボ」でありRC Motion 3や追加バッテリーが含まれる。"
+        ],
+        "differentiators": [
+          "DJI Neo Motion Fly More コンボの利点：RC Motion 3と追加バッテリーが付属しており、購入してすぐにFPV飛行や長時間の撮影を楽しめる。",
+          "DJI Neo 2（機体単体）の利点：より新しいモデルであり、全方向障害物検知などの安全機能や基本性能が向上している可能性がある。"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "旅行やアウトドアで手軽にVlog撮影をしたいクリエイター",
+        "直感的な操作でFPV飛行を体験してみたいユーザー",
+        "子供やペットの自然な姿を安全に空撮したい家族"
+      ],
+      "pros": [
+        "135gの超軽量とプロペラガード一体型で安全かつ持ち運びやすい",
+        "コントローラーなしで手のひらから離着陸・自律撮影ができる",
+        "AIトラッキングとクイックショットでプロ級の映像が簡単に撮れる",
+        "RC Motion 3でのFPV操作が直感的で楽しい"
+      ],
+      "cons": [
+        "100g以上のドローンのため、機体登録や飛行許可承認などの法的手続きが必要",
+        "バッテリー1個の飛行時間（最大18分）が短め",
+        "下方にしか障害物センサーがないため、横や後ろへの自動飛行時は注意が必要"
+      ],
+      "score": 85,
+      "scoreRationale": "[基本点: 70]\n[加点: +10] (コントローラー不要の手のひら離着陸やAIトラッキング機能が革新的で実用性が高い)\n[加点: +5] (135gの軽量さと全面プロペラガードによる高い安全性と携帯性)\n[加点: +5] (RC Motion 3等による直感的なFPV体験への拡張性)\n[減点: -5] (バッテリー駆動時間がやや短い点と、下方以外の障害物回避センサーがない点)\n[合計: 85]"
+    },
+    "technicalSpecs": {
+      "dimensions": {
+        "height": "48.5mm",
+        "width": "157mm",
+        "depth": "130mm"
+      },
+      "weight": "135g",
+      "capacity": "1435mAh (バッテリー)",
+      "material": "プラスチック等",
+      "origin": "中国（DJI）",
+      "other": [
+        "Max Flight Time: 約18分（プロペラガード装着時は約17分）",
+        "Video Resolution: 4K UHD",
+        "Max Video Bitrate: 75Mbps",
+        "Wind Speed Resistance: 8 m/s (Level 4)",
+        "Operating Temperature: -10° to 40° C",
+        "Sensing Type: Downward visual positioning",
+        "Supported File System: exFAT",
+        "Recommended Age: 16歳以上推奨"
+      ]
+    }
+  }
+}
