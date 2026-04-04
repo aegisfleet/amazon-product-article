@@ -1,0 +1,148 @@
+{
+  "analysis": {
+    "productName": "SanDisk microSD Express Card 256GB",
+    "parentAsin": "B0F3P3X5P2",
+    "productDescription": "Nintendo Switch 2向けに公式ライセンスされたSanDisk製の256GB microSD Expressカードです。",
+    "productUsage": [
+      "Nintendo Switch 2のストレージ拡張",
+      "ゲームソフトのダウンロード・保存",
+      "ゲームデータの高速読み込み"
+    ],
+    "positivePoints": [
+      "Nintendo Switch 2の公式ライセンス商品で高い互換性と信頼性",
+      "ゲームの起動やロード時間が高速化される",
+      "256GBの大容量で複数のゲームを保存可能",
+      "プラグアンドプレイで簡単に導入可能",
+      "競合他社や限定版と比較して安価"
+    ],
+    "negativePoints": [
+      "大容量のゲームを多数保存する場合は256GBでは将来的に不足する可能性がある",
+      "転送速度や耐久性などの詳細なスペック値が商品ページで明示されていない"
+    ],
+    "useCases": [
+      "Switch 2の本体容量が不足してきた時の増設",
+      "ロード時間を短縮して快適にゲームをプレイしたい場合"
+    ],
+    "userStories": [
+      {
+        "userType": "Nintendo Switch 2 ユーザー",
+        "scenario": "Switch 2の容量拡張のため",
+        "experience": "コンソールに挿入するだけで即座に認識され、問題なくフォーマットできた。プラグアンドプレイで非常に簡単だった。",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "sentiment": "positive"
+      },
+      {
+        "userType": "Nintendo Switch 2 ヘビーゲーマー",
+        "scenario": "大容量ゲームのダウンロードと快適なプレイ環境の構築",
+        "experience": "ゲームの起動が非常に速く、内部ロードもスムーズになった。ダウンロードやアップデートも問題なく行え、256GBの容量のおかげでゲームを削除せずに済むようになった。",
+        "supportingSourceIds": [
+          "src-2"
+        ],
+        "sentiment": "positive"
+      }
+    ],
+    "userImpression": "公式ライセンス品としての安心感に加え、ゲームのロード時間短縮や簡単なセットアップが高く評価されている。",
+    "sources": [
+      {
+        "id": "src-1",
+        "name": "Amazon.co.jp カスタマーレビュー (ドイツ)",
+        "url": "https://www.amazon.co.jp/dp/B0F3P3X5P2",
+        "tier": "medium",
+        "evidenceType": "primary",
+        "publishedAt": "2026-02-26",
+        "author": "Alwin",
+        "conflictOfInterest": "none",
+        "notes": "SDカードは問題なく高速に動作。Switch 2で問題なく認識、フォーマットされた。シンプルなプラグアンドプレイ"
+      },
+      {
+        "id": "src-2",
+        "name": "Amazon.co.jp カスタマーレビュー (イタリア)",
+        "url": "https://www.amazon.co.jp/dp/B0F3P3X5P2",
+        "tier": "medium",
+        "evidenceType": "primary",
+        "publishedAt": "2025-09-11",
+        "author": "Marietto1983",
+        "conflictOfInterest": "none",
+        "notes": "任天堂の正規品としての安心感。ゲームの起動が速く内部読み込みもスムーズ。256GBの容量に満足。"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "プラグアンドプレイで簡単に導入可能",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-1",
+          "src-2"
+        ],
+        "crossChecked": true,
+        "notes": "複数の海外レビューで挿入後すぐに認識されることが言及されている"
+      },
+      {
+        "claim": "ゲームの起動とロードが高速",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-1",
+          "src-2"
+        ],
+        "crossChecked": true,
+        "notes": "レビューにてゲームの起動が大幅に速くなったとの記載あり"
+      }
+    ],
+    "lastInvestigated": "2026-04-04",
+    "competitiveAnalysis": [
+      {
+        "name": "SanDisk microSD Express Card 256GB (Amazon限定)",
+        "asin": "B0FH6HTYVW",
+        "priceComparison": "対象商品はAmazon限定版よりも安価である。価格差はステッカー同梱の有無によるものであり、ステッカーが不要なユーザーにとっては対象商品の価値が高い",
+        "featureComparison": [
+          "共通点：基本スペック、容量（256GB）、SanDisk製の公式ライセンス品であること",
+          "相違点：限定版にはNintendo Switch 2 ロゴデザインステッカーが同梱されている"
+        ],
+        "differentiators": [
+          "SanDisk microSD Express Card 256GBの利点：ステッカーが不要であれば、より安価に購入できる点",
+          "SanDisk microSD Express Card 256GB (Amazon限定)の利点：Switch 2のロゴデザインステッカーが欲しい場合"
+        ]
+      },
+      {
+        "name": "Nextorage microSD Express 256GB",
+        "asin": "B0FC6DHNKZ",
+        "priceComparison": "対象商品はNextorage製よりも安価である。Nextorageは具体的な速度や耐久性を明記しているが、一般的な用途であれば対象商品でも十分な性能を発揮するため、コストを抑えたい場合に適している",
+        "featureComparison": [
+          "共通点：Nintendo Switch 2向け動作確認済み、microSD Express 256GBであること",
+          "相違点：対象商品は任天堂の公式ライセンス品。Nextorage製品は最大読み出し810MB/sや各種耐久テストクリア（防水、防塵など）、5年保証を詳細にアピールしている"
+        ],
+        "differentiators": [
+          "SanDisk microSD Express Card 256GBの利点：任天堂公式ライセンス品でありながら価格が抑えられている点",
+          "Nextorage microSD Express 256GBの利点：具体的な速度（810MB/s）や様々な耐久性（防水、防塵、耐衝撃など）が明示されており、長期保証（5年）が付いている点"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "Nintendo Switch 2の容量を手軽に拡張したいユーザー",
+        "公式ライセンス品の安心感を求めるユーザー"
+      ],
+      "pros": [
+        "任天堂公式ライセンス品で安心",
+        "導入が簡単",
+        "コストパフォーマンスが高い"
+      ],
+      "cons": [
+        "詳細な転送速度や耐久性の仕様が明記されていない"
+      ],
+      "score": 80,
+      "scoreRationale": "[基本点: 70]\n[加点: +5] (任天堂公式ライセンス品としての高い信頼性と安心感)\n[加点: +5] (競合他社製品やAmazon限定版と比較して安価でコストパフォーマンスに優れる)\n[合計: 80]"
+    },
+    "technicalSpecs": {
+      "capacity": "256GB",
+      "model": "BEE-A-SD01A",
+      "brand": "SanDisk",
+      "type": "microSD Express Card",
+      "compatibility": "Nintendo Switch 2"
+    }
+  }
+}
