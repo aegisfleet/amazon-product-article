@@ -25,34 +25,43 @@
       "初めてバランス接続を試す際のエントリー機として",
       "デスクワークやリラックスタイムのBGM再生"
     ],
-    "userStories": [
-      {
-        "userType": "30代男性・会社員",
-        "scenario": "DAP購入を機にバランス接続を試す",
-        "experience": "（推測）これまでスマホ直挿しだったが、バランス接続対応のDAPを購入。ケーブルを買い足さずに付属のプラグ交換だけで4.4mm接続ができ、音の広がりと分離感の向上に感動した。コスパが凄まじい。",
-        "sentiment": "positive"
-      },
-      {
-        "userType": "20代学生",
-        "scenario": "初めての中華イヤホン購入",
-        "experience": "（推測）付属品の多さに惹かれて購入。最初は高音がきつく感じたが、付属の黒ノズル（Reference）とウレタンイヤーピースに変えたら丁度よいバランスになった。パーツを交換して音が変わるのが楽しい。",
-        "sentiment": "positive"
-      }
-    ],
+    "userStories": [],
     "userImpression": "「価格破壊」と評されるほどの圧倒的なコストパフォーマンスが最大の特徴。音質は寒色系で解像度が高く、ボーカルが綺麗に聞こえるという評価が多い。低音不足や高音の刺さりを指摘する声もあるが、豊富な付属品で調整可能な点が好評。",
     "sources": [
       {
+        "id": "src-1",
         "name": "GADGENEKO -ガジェねこ- Review",
         "url": "https://gadgeneko.jp/trn-conch-review",
-        "credibility": "high"
+        "tier": "medium",
+        "evidenceType": "secondary",
+        "publishedAt": "2024-11-21",
+        "author": "GADGENEKO",
+        "conflictOfInterest": "unknown",
+        "notes": "TRN Conchのレビュー記事。豪華な付属品や音質について評価している。"
       },
       {
+        "id": "src-2",
         "name": "Cortyuming Review",
         "url": "https://cortyuming.hateblo.jp/entry/2024/12/01/070148",
-        "credibility": "medium"
+        "tier": "medium",
+        "evidenceType": "secondary",
+        "publishedAt": "2024-12-01",
+        "author": "CortYuming",
+        "conflictOfInterest": "unknown",
+        "notes": "TRN Conchレビュー。付属品の多さを評価。"
       }
     ],
-    "lastInvestigated": "2026-01-27",
+    "claims": [
+      {
+        "claim": "3,000円台という低価格帯でありながら、ノズル交換やプラグ交換に対応しており、豊富な付属品がついている",
+        "category": "comparativeAdvantage",
+        "confidence": "high",
+        "supportingSourceIds": ["src-1", "src-2"],
+        "crossChecked": true,
+        "notes": "複数のレビュー記事で圧倒的なコストパフォーマンスと付属品の豪華さが言及されている。"
+      }
+    ],
+    "lastInvestigated": "2026-04-05",
     "competitiveAnalysis": [
       {
         "name": "Moondrop Chu II (竹-CHU II)",
@@ -116,16 +125,20 @@
       "scoreRationale": "[基本点: 70]\n[加点: +8] (リケーブル、3種のプラグ交換、ノズル交換という高機能性)\n[加点: +15] (この価格でこの付属品と品質は圧倒的なコストパフォーマンス)\n[加点: +3] (金属筐体の質感が高い)\n[加点: +2] (音質への満足度は高いが好みが分かれる点もあるため)\n[加点: +2] (エントリー帯でのプラグ交換システム導入という独自性)\n[合計: 100]"
     },
     "technicalSpecs": {
+      "dimensions": {
+        "height": "40mm",
+        "width": "100mm",
+        "length": "100mm"
+      },
+      "weight": "100g (全体)、8.5g (片側)",
       "driver": "10mm デュアル磁気回路DLCダイヤモンド複合振動板",
-      "codec": null,
-      "battery": null,
       "connectivity": "有線 (2pin 0.75mm, プラグ交換式 2.5mm/3.5mm/4.4mm)",
       "noiseCancel": "Passive (高い遮音性)",
       "impedance": "30Ω",
       "sensitivity": "114dB",
       "frequency_response": "20Hz-20000Hz",
       "cable": "4芯銀メッキ銅と無酸素銅の編組ケーブル",
-      "weight": "8.5g (片側)"
+      "color": "シルバー"
     }
   }
 }
