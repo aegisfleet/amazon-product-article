@@ -1,0 +1,190 @@
+{
+  "analysis": {
+    "productName": "Anker Power Bank (25000mAh, 165W)",
+    "parentAsin": "B0DT4RGDSJ",
+    "productDescription": "MacBookなどのノートPCを含む複数機器を同時急速充電可能な25000mAhの超大容量モバイルバッテリー。巻取り式USB-Cケーブルを内蔵し、持ち運びに便利です。",
+    "productUsage": [
+      "ノートパソコンの外出先での充電",
+      "スマートフォンやタブレットの複数回充電",
+      "出張や旅行時の電源確保",
+      "複数デバイスの同時充電"
+    ],
+    "positivePoints": [
+      "25000mAhの超大容量でMacBook Airを約1回、スマートフォンを複数回充電可能",
+      "3つのUSB-Cポートから最大100W（合計最大165W）の高出力で急速充電対応",
+      "20,000回以上の巻取りと折り曲げに耐える高耐久な巻取り式ケーブルと一体型ケーブルの2本を内蔵",
+      "出力やバッテリー本体の入力状況、残量がリアルタイムで確認できるディスプレイ機能を搭載",
+      "最大4台のデバイスを同時充電可能（USB-Cケーブル×2、USB-A×1、USB-C×1）"
+    ],
+    "negativePoints": [
+      "容量が大きいため、重量が約595g（1.31175ポンド換算）と重く持ち運びにはやや負担になる"
+    ],
+    "useCases": [
+      "長時間の外出や旅行、出張時のバッテリー補給",
+      "カフェや外出先でのノートPC作業",
+      "スマートフォン、タブレット、ノートPCなど複数デバイスを持ち歩く際の電源管理"
+    ],
+    "userStories": [],
+    "userImpression": "大容量かつ高出力であり、さらに巻取り式ケーブルを内蔵しているため、ケーブルを別途持ち歩く手間が省けて非常に便利との評価が期待される。一方で、重量があるため携帯性よりも機能性を重視するユーザー向け。",
+    "sources": [
+      {
+        "id": "src-amazon",
+        "name": "Amazon商品ページ",
+        "url": "https://www.amazon.co.jp/dp/B0DT4RGDSJ",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-04-05",
+        "author": "Anker",
+        "conflictOfInterest": "disclosed",
+        "notes": "製品スペック、機能説明、価格を確認。"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "最大165Wの高出力（単ポート最大100W）に対応",
+        "category": "performance",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-amazon"
+        ],
+        "crossChecked": false,
+        "notes": "Amazon商品ページ記載事項"
+      },
+      {
+        "claim": "25000mAhの超大容量バッテリー",
+        "category": "performance",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-amazon"
+        ],
+        "crossChecked": false,
+        "notes": "Amazon商品ページ記載事項"
+      },
+      {
+        "claim": "巻取り式および一体型のUSB-Cケーブルを内蔵",
+        "category": "design",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-amazon"
+        ],
+        "crossChecked": false,
+        "notes": "Amazon商品ページ記載事項"
+      }
+    ],
+    "lastInvestigated": "2026-04-05",
+    "competitiveAnalysis": [
+      {
+        "name": "UGREEN モバイルバッテリー 25000mAh 200W",
+        "asin": "B0FJR63WW4",
+        "priceComparison": "対象商品と同程度の価格帯",
+        "featureComparison": [
+          "共通点：25000mAhの大容量、巻取り式USB-Cケーブル内蔵、TFTディスプレイ搭載、複数ポート搭載",
+          "相違点：UGREENは合計最大200W出力（対象商品は165W）。UGREENはパススルー充電や低電流モードを搭載。"
+        ],
+        "differentiators": [
+          "Anker Power Bank (25000mAh, 165W)の利点：Ankerブランドの信頼性、最大4台同時充電の利便性",
+          "UGREEN モバイルバッテリー 25000mAh 200Wの利点：合計200Wの超高出力でMacBook 2台の同時急速充電が可能、パススルー機能や低電流モードに対応"
+        ]
+      },
+      {
+        "name": "UGREEN PD3.1 モバイルバッテリー 145W高出力 25000mAh",
+        "asin": "B0BJQ7F16T",
+        "priceComparison": "対象商品よりやや安価",
+        "featureComparison": [
+          "共通点：25000mAhの大容量、ノートPCへの給電対応",
+          "相違点：UGREENは合計145W出力（対象商品は165W）。ケーブルは付属するが内蔵/巻取り式ではない。UGREENはパススルーや低電流モード搭載。"
+        ],
+        "differentiators": [
+          "Anker Power Bank (25000mAh, 165W)の利点：巻取り式ケーブル内蔵で荷物がすっきりする点、合計出力が高い点",
+          "UGREEN PD3.1 モバイルバッテリー 145W高出力 25000mAhの利点：価格が抑えられており、コストパフォーマンスに優れる"
+        ]
+      },
+      {
+        "name": "Anker 737 Power Bank (PowerCore 24000)",
+        "asin": "B09VPHVT2Z",
+        "priceComparison": "対象商品より高価",
+        "featureComparison": [
+          "共通点：超大容量（24000mAh）、単ポート140Wの高出力（対象商品は単ポート100W）、ディスプレイ搭載",
+          "相違点：737は24000mAhで単ポート140W対応だがケーブル内蔵ではない。対象商品は25000mAhで巻取り式ケーブル内蔵。"
+        ],
+        "differentiators": [
+          "Anker Power Bank (25000mAh, 165W)の利点：巻取りケーブル内蔵で持ち運びが便利、価格が安い",
+          "Anker 737 Power Bank (PowerCore 24000)の利点：単ポート最大140Wの超高出力対応で、より高出力を求めるユーザー向け"
+        ]
+      },
+      {
+        "name": "UGREEN モバイルバッテリー PD3.1対応 165W 25000mAh",
+        "asin": "B0DSPX4RQ5",
+        "priceComparison": "対象商品よりやや安価",
+        "featureComparison": [
+          "共通点：25000mAhの大容量、合計最大165W出力、ケーブル2本内蔵、ディスプレイ搭載",
+          "相違点：UGREENは単ポート最大140W対応（対象商品は100W）、パススルー機能や低電流モード搭載。"
+        ],
+        "differentiators": [
+          "Anker Power Bank (25000mAh, 165W)の利点：Ankerブランドのサポートと信頼性",
+          "UGREEN モバイルバッテリー PD3.1対応 165W 25000mAhの利点：単ポート140W出力に対応、パススルー機能や低電流モードを備える多機能性"
+        ]
+      },
+      {
+        "name": "EcoFlow RAPID モバイルバッテリー 25000mAh 170W",
+        "asin": "B0FCXQ5FCD",
+        "priceComparison": "対象商品より安価",
+        "featureComparison": [
+          "共通点：25000mAhの大容量、ケーブル内蔵設計、TFTディスプレイ搭載",
+          "相違点：EcoFlowは合計最大170W出力（対象商品は165W）、自動車規格のセル採用による長寿命。"
+        ],
+        "differentiators": [
+          "Anker Power Bank (25000mAh, 165W)の利点：最大4台の同時充電、スマートな巻取り式ケーブルの採用",
+          "EcoFlow RAPID モバイルバッテリー 25000mAh 170Wの利点：長寿命バッテリーセルを採用し、耐久性と価格の面で優れる"
+        ]
+      },
+      {
+        "name": "INIU 100W モバイルバッテリー 大容量 25000mAh",
+        "asin": "B0CB5WDHSM",
+        "priceComparison": "対象商品より大幅に安価",
+        "featureComparison": [
+          "共通点：25000mAhの大容量、ノートPC対応",
+          "相違点：INIUは合計最大100W出力でケーブル内蔵なし（対象商品は165Wでケーブル内蔵）。ディスプレイは簡易的な残量表示のみ。"
+        ],
+        "differentiators": [
+          "Anker Power Bank (25000mAh, 165W)の利点：高出力（165W）と巻取り式ケーブル内蔵による利便性、ディスプレイによる詳細な状況確認",
+          "INIU 100W モバイルバッテリー 大容量 25000mAhの利点：価格が圧倒的に安く、100W出力でも十分なユーザーにとっては高コスパ"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "ノートPCを外出先で頻繁に充電する人",
+        "複数のデバイス（スマホ、タブレット、PC）を同時に充電したい人",
+        "ケーブルを別途持ち歩くのが面倒な人"
+      ],
+      "pros": [
+        "25000mAhの超大容量で安心",
+        "巻取り式ケーブル内蔵でスマートに持ち運べる",
+        "合計165Wの高出力で複数デバイスを急速充電可能",
+        "ディスプレイで充電状況が一目でわかる"
+      ],
+      "cons": [
+        "重量があり、日常的な持ち運びには重く感じる場合がある"
+      ],
+      "score": 85,
+      "scoreRationale": "[基本点: 70]\n[加点: +10] (25000mAhの超大容量と合計165Wのハイパワーによる高い基本性能)\n[加点: +8] (巻取り式ケーブル内蔵とディスプレイ搭載による優れた利便性)\n[減点: -3] (重量があり、持ち運びにおける負担がやや大きい)\n[合計: 85]"
+    },
+    "technicalSpecs": {
+      "dimensions": {
+        "height": "不明",
+        "width": "不明",
+        "depth": "不明"
+      },
+      "weight": "約595g",
+      "capacity": "25000mAh",
+      "material": "不明",
+      "origin": "不明",
+      "other": [
+        "出力: 最大165W (単ポート最大100W)",
+        "ポート: USB-C×2 (内蔵ケーブル含む), USB-A×1, USB-C×1",
+        "機能: ディスプレイ搭載、巻取り式ケーブル内蔵"
+      ]
+    }
+  }
+}
