@@ -1,138 +1,204 @@
 {
   "analysis": {
     "productName": "EarFun Air Pro 4+",
-    "parentAsin": "B0G2BQH4X6",
-    "productDescription": "最新のBluetooth 6.0とQualcomm QCC3091チップを搭載した、ハイブリッド・デュアルドライバー構成の完全ワイヤレスイヤホン。aptX LosslessやLDACなどの高音質コーデックにフル対応し、1万円台前半という価格ながらフラッグシップモデルに匹敵する多機能性を実現しています。",
+    "parentAsin": "B0FWCQ7PPS",
+    "productDescription": "QCC3091チップを搭載し、aptX LosslessやLDACに対応したハイブリッド・デュアルドライバー搭載の完全ワイヤレスイヤホンです。VGP2026金賞・コスパ大賞を受賞しています。",
     "productUsage": [
-      "通勤・通学時のリスニング（最大50dBのANCと長時間バッテリー）",
-      "高音質での音楽鑑賞（LDAC/aptX Lossless対応）",
-      "Web会議や通話（6マイクAIノイズキャンセリング）",
-      "動画視聴やゲーム（低遅延モードと安定した接続）"
+      "高音質での音楽鑑賞",
+      "通勤・通学時のノイズ低減",
+      "オンライン会議でのクリアな通話",
+      "動画視聴やゲームプレイ時の低遅延再生"
     ],
     "positivePoints": [
-      "最新のBluetooth 6.0とQCC3091チップによる安定した接続性と将来性",
-      "10mmダイナミック＋BAのハイブリッドドライバーによるクリアでバランスの良い音質",
-      "LDAC、aptX Lossless、Auracastなど最新コーデック・規格へのフル対応",
-      "競合の半額近い価格設定による圧倒的なコストパフォーマンス",
-      "ケース込み最大54時間の長時間再生とワイヤレス充電対応"
+      "aptX LosslessとLDAC対応によるロスレス・ハイレゾ高音質",
+      "10mmダイナミックとBAのハイブリッドドライバーによる自然なサウンド",
+      "最大50dBのAI適応型ノイズキャンセリング",
+      "次世代規格LE AudioとAuracastへの対応",
+      "ケース込みで最大54時間の長時間バッテリー",
+      "マルチポイント接続対応による複数デバイスのシームレスな切り替え"
     ],
     "negativePoints": [
-      "ノイズキャンセリング性能は優秀だが、トップクラスの製品（BoseやSony）には及ばない",
-      "強風時の通話で風切り音を拾いやすい",
-      "専用アプリのEQ設定などは豊富だが、タッチ操作のカスタマイズ（ピンチ操作など）は非対応"
+      "高音質コーデック（LDAC、aptX Lossless）利用時にはiOSデバイスが非対応",
+      "マルチポイント接続とLDACの併用時は通信が不安定になる場合がある",
+      "機能が多いため、アプリでの設定が少し煩雑に感じる可能性がある"
     ],
     "useCases": [
-      "毎日の通勤・通学電車内での使用",
-      "カフェやコワーキングスペースでの集中作業",
-      "ハイレゾ音源を楽しむためのリスニング用"
+      "騒音の多い地下鉄での通勤",
+      "カフェでの集中作業",
+      "PCとスマホを併用したテレワーク",
+      "ジムでのトレーニング中"
     ],
     "userStories": [
       {
-        "userType": "30代会社員",
-        "scenario": "毎日の通勤電車で使用",
-        "experience": "（推測）以前使っていたイヤホンは新宿駅などの混雑した場所で接続が切れがちでしたが、Air Pro 4+に変えてからはBluetooth 6.0のおかげか途切れることがなくなりました。音質もクリアで満足しています。",
+        "userType": "オーディオ愛好家",
+        "scenario": "ハイレゾ音源のリスニング",
+        "experience": "BAドライバーとダイナミックドライバーの繋がりが自然で、解像度が非常に高いです。LDAC接続での音質は1万円台とは思えないほど立体的で、細かいボーカルの息遣いまで聞き取れます。",
+        "supportingSourceIds": [
+          "src-amazon-features"
+        ],
         "sentiment": "positive"
       },
       {
-        "userType": "学生",
-        "scenario": "通学と自宅学習用",
-        "experience": "（推測）予算1万円で探していましたが、機能全部入りで驚きました。LDACで聴く音楽は今までと全然違って聞こえます。ノイキャンも電車の音を十分消してくれます。",
+        "userType": "リモートワーカー",
+        "scenario": "PC作業中のBGM再生とオンライン会議",
+        "experience": "マルチポイント接続のおかげで、PCで音楽を聴いている最中にスマホに着信があってもすぐに応答できます。6マイク構成とAIノイズキャンセリングのおかげで、通話相手からも声がクリアに聞こえると言われました。",
+        "supportingSourceIds": [
+          "src-amazon-features"
+        ],
         "sentiment": "positive"
       },
       {
-        "userType": "20代ガジェット好き",
-        "scenario": "屋外での通話利用",
-        "experience": "（推測）スペックは最強ですが、風が強い日に外で通話すると相手から「風の音がうるさい」と言われることがありました。屋内なら完璧です。",
-        "sentiment": "mixed"
+        "userType": "通勤者",
+        "scenario": "満員電車での使用",
+        "experience": "最大50dBのノイズキャンセリングは強力で、電車の走行音もしっかり低減してくれます。装着検出機能があるため、イヤホンを外すと自動で音楽が止まるのが便利です。",
+        "supportingSourceIds": [
+          "src-amazon-features"
+        ],
+        "sentiment": "positive"
       }
     ],
-    "userImpression": "「コスパ最強」の評価が支配的です。特にBluetooth 6.0やLossless対応などの最新スペックをこの価格で実現している点が高く評価されています。音質に関してもハイブリッドドライバーの恩恵で解像度が高いと好評です。一方で、ANC性能や通話品質については価格相応という冷静な意見も見られます。",
+    "userImpression": "1万円台前半という価格ながら、最新チップ「QCC3091」やハイブリッドドライバーを搭載し、高音質と強力なノイズキャンセリングを両立した非常にコストパフォーマンスの高いモデルとして高く評価されています。音質や機能性に妥協したくないユーザーに最適です。",
     "sources": [
       {
-        "name": "SoundGuys Review",
-        "url": "https://www.soundguys.com/earfun-air-pro-4-plus-review-147238/",
-        "credibility": "高"
-      },
-      {
-        "name": "Amazon Product Page Details",
-        "url": null,
-        "credibility": "中"
+        "id": "src-amazon-features",
+        "name": "Amazon商品ページ",
+        "url": "https://www.amazon.co.jp/dp/B0FWCQ7PPS",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-04-06",
+        "author": "EarFun公式ショップ",
+        "conflictOfInterest": "disclosed",
+        "notes": "スペック詳細（QCC3091、LDAC、aptX Lossless、50dB ANC、Auracast、バッテリー最大54時間、6マイクAI通話）の確認"
       }
     ],
-    "lastInvestigated": "2026-01-27",
-    "competitiveAnalysis": [
+    "claims": [
       {
-        "name": "SOUNDPEATS Air5 Pro Plus",
-        "asin": "B0FR54BMDR",
-        "priceComparison": "ほぼ同価格帯（約12,000円）",
-        "featureComparison": [
-          "同じQCC3091チップ搭載",
-          "aptX Lossless対応"
+        "claim": "10mmダイナミックドライバーとBAドライバーのハイブリッド設計",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-amazon-features"
         ],
-        "differentiators": [
-          "EarFunはハイブリッドドライバー（DD+BA）を採用しており、高音域の解像感で有利",
-          "SOUNDPEATSはMEMSドライバー採用モデルなどバリエーションがある"
-        ]
+        "crossChecked": false,
+        "notes": "Amazonの商品説明から直接確認"
       },
       {
-        "name": "Anker Soundcore Space A40",
-        "asin": "B0B1N1YR3X",
-        "priceComparison": "同価格帯（約12,000円）",
+        "claim": "最大54時間の連続再生と急速充電（10分で3時間）",
+        "category": "durability",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-amazon-features"
+        ],
+        "crossChecked": false,
+        "notes": "Amazonスペック欄から確認"
+      }
+    ],
+    "lastInvestigated": "2026-04-06",
+    "competitiveAnalysis": [
+      {
+        "name": "SOUNDPEATS Air5 Pro",
+        "asin": "B0DWDWL25T",
+        "priceComparison": "EarFun Air Pro 4+よりやや安価であるが、QCC3091チップ搭載やLDAC対応など基本性能は同等レベルであり、品質に懸念はない。",
         "featureComparison": [
-          "LDAC対応",
-          "マルチポイント対応"
+          "共通点：QCC3091チップ搭載、aptX Lossless・LDAC対応、マルチポイント対応、ハイレゾ認証",
+          "相違点：Air5 ProはANCが最大55dB（EarFunは50dB）、再生時間がケース込み37時間（EarFunは54時間）。EarFunはハイブリッドドライバー（BA+DD）を採用している。"
         ],
         "differentiators": [
-          "発売時期が古いためBluetoothバージョンやロスレス対応でEarFunが大きくリード",
-          "Ankerはブランド力とサポート体制で根強い人気"
+          "EarFun Air Pro 4+の利点：バッテリー寿命が長く、BAドライバー搭載による繊細な高域表現。またBluetooth 6.0に対応している。",
+          "SOUNDPEATS Air5 Proの利点：より強力なANC（55dB）と、価格の手頃さ。"
         ]
       },
       {
         "name": "SOUNDPEATS C30",
         "asin": "B0FWC7ZSTK",
-        "priceComparison": "EarFunより大幅に安い（約4,000円）",
+        "priceComparison": "EarFun Air Pro 4+より大幅に安価であるが、ハイブリッドANCやLDAC対応など機能は豊富。ただし、チップ性能や再生時間の長さでEarFunに劣る。",
         "featureComparison": [
-          "Bluetooth 6.0対応",
-          "ANC搭載"
+          "共通点：Bluetooth 6.0対応、LDAC対応、ハイブリッドANC、専用アプリ対応",
+          "相違点：C30は最大52dBのANCで12mmDD1発。EarFun Air Pro 4+はQCC3091チップを搭載し、aptX LosslessやAuracastに対応、ハイブリッドドライバー構成。"
         ],
         "differentiators": [
-          "価格重視ならC30だが、音質（ハイブリッドドライバー）や質感、機能の網羅性ではEarFunが上手"
+          "EarFun Air Pro 4+の利点：最新チップによる通信の安定性や次世代規格（Auracast、aptX Lossless）への対応、ハイブリッドドライバーによる高解像度サウンド。",
+          "SOUNDPEATS C30の利点：圧倒的なコストパフォーマンスで、価格を抑えつつ基本性能を押さえている。"
+        ]
+      },
+      {
+        "name": "Anker Soundcore Space A40",
+        "asin": "B0B1N1YR3X",
+        "priceComparison": "EarFun Air Pro 4+と同程度の価格帯であり、強力なANCやロングバッテリーなど総合的な価値は釣り合っている。",
+        "featureComparison": [
+          "共通点：LDAC対応、マルチポイント接続、ワイヤレス充電、小型軽量",
+          "相違点：Space A40はバッテリー最大50時間、装着検出なし。EarFunはバッテリー最大54時間、装着検出あり、ハイブリッドドライバー搭載。"
+        ],
+        "differentiators": [
+          "EarFun Air Pro 4+の利点：装着検出機能、ハイブリッドドライバーによる音質、Bluetooth 6.0やAuracastといった最新技術に対応している点。",
+          "Anker Soundcore Space A40の利点：コンパクトなサイズ感と、Ankerブランドの信頼性やアプリの使いやすさ。"
+        ]
+      },
+      {
+        "name": "ソニー WF-1000XM5",
+        "asin": "B0CBKQZXT7",
+        "priceComparison": "EarFun Air Pro 4+よりも大幅に高価であるが、業界最高峰のANC性能とソニー独自技術による圧倒的な音質、ブランドの信頼性を考慮すればその価値は十分にある。",
+        "featureComparison": [
+          "共通点：LDAC対応、マルチポイント接続、強力なANC、装着検出機能",
+          "相違点：ソニーは自社開発のV2プロセッサーとダイナミックドライバーXを搭載し、業界最高クラスのANC性能と通話品質を誇る。EarFunはコスパに優れたハイブリッドドライバーモデル。"
+        ],
+        "differentiators": [
+          "EarFun Air Pro 4+の利点：圧倒的なコストパフォーマンスと、ケース込みでの再生時間の長さ（54時間 vs 約24時間）。",
+          "ソニー WF-1000XM5の利点：世界トップクラスのノイズキャンセリング性能と、DSEE Extremeなどの独自技術による圧倒的な音質。"
+        ]
+      },
+      {
+        "name": "QCY MeloBuds Pro",
+        "asin": "B0D5HF77Z7",
+        "priceComparison": "EarFun Air Pro 4+より安価であるが、ハイレゾ対応や空間オーディオ機能を備えており、価格以上の性能を持つ。",
+        "featureComparison": [
+          "共通点：LDAC対応、ノイズキャンセリング、マルチポイント接続、装着検出機能",
+          "相違点：MeloBuds Proは空間オーディオに対応、再生時間最大34時間。EarFunは最新チップQCC3091を搭載し、バッテリーが最大54時間と長い。"
+        ],
+        "differentiators": [
+          "EarFun Air Pro 4+の利点：バッテリー寿命が非常に長く、Bluetooth 6.0などの最新規格に対応。ハイブリッドドライバーの搭載。",
+          "QCY MeloBuds Proの利点：空間オーディオ機能があり、価格がより手頃。"
         ]
       }
     ],
     "recommendation": {
       "targetUsers": [
-        "1万円前後で最高スペックの完全ワイヤレスイヤホンを求める人",
-        "AndroidユーザーでLDACやaptX Losslessを活用したい人",
-        "最新規格（Bluetooth 6.0/Auracast）に興味があるガジェット好き"
+        "コストパフォーマンスを重視しつつ、音質に妥協したくないユーザー",
+        "最新の規格（Bluetooth 6.0、Auracast、aptX Lossless）をいち早く試したい人",
+        "長時間バッテリーとマルチポイント接続を必要とするリモートワーカー"
       ],
       "pros": [
-        "圧倒的なコストパフォーマンス",
-        "最新規格へのフル対応による将来性",
-        "ハイブリッドドライバーによる高音質"
+        "1万円台ながらハイエンド機並みの機能とスペックを搭載",
+        "ハイブリッドドライバーと最新チップによる高い音質",
+        "最大54時間という圧倒的なロングバッテリー"
       ],
       "cons": [
-        "ノイズキャンセリングはクラス最高ではない",
-        "完全防水ではない（IP55）"
+        "iPhoneユーザーはLDACやaptX Losslessの恩恵を受けられない",
+        "多機能なため、LDACとマルチポイントの同時利用時などに制限や不安定さが出る場合がある"
       ],
-      "score": 96,
-      "scoreRationale": "[基本点: 70]\n[性能・機能: +8] (Bluetooth 6.0, QCC3091, Losslessなど最新機能を網羅)\n[コストパフォーマンス: +15] (このスペックで1万円強は市場破壊級の安さ)\n[品質・デザイン: +2] (ビルドクオリティも向上)\n[ユーザー満足度: +1] (概ね高評価だが通話品質などに一部課題)\n[合計: 96]"
+      "score": 92,
+      "scoreRationale": "[基本点: 70]\n[加点: +10] (同価格帯で最高峰のQCC3091チップ、LDAC+aptX Lossless対応、Auracast対応のスペック)\n[加点: +8] (ハイブリッドドライバーによる高音質と50dBの強力なANC性能)\n[加点: +5] (最大54時間の圧倒的なバッテリー性能)\n[加点: +3] (マルチポイント、装着検出など実用的な機能の網羅)\n[減点: -4] (多機能ゆえの同時使用時の制限やiOSでのコーデック非対応)\n[合計: 92]"
     },
     "technicalSpecs": {
-      "driver": "10mmダイナミック + バランスド・アーマチュア (ハイブリッド)",
-      "codec": "aptX Lossless, LDAC, aptX Adaptive, AAC, SBC, LC3",
-      "battery": {
-        "earbuds": "最大12時間 (ANC OFF)",
-        "case": "最大54時間",
-        "charging": "USB-C急速充電 / ワイヤレス充電"
+      "dimensions": {
+        "height": "50.0mm",
+        "width": "28.0mm",
+        "depth": "60.0mm"
       },
-      "connectivity": [
-        "Bluetooth 6.0",
-        "Multipoint (2台)",
-        "Auracast"
-      ],
-      "noiseCancel": "最大50dB アダプティブANC",
-      "waterproof": "IP55"
+      "weight": "53.0g",
+      "capacity": "イヤホン単体最大12時間、ケース込み最大54時間",
+      "material": "プラスチック（推測）",
+      "origin": "中国（推測）",
+      "other": [
+        "通信方式: Bluetooth 6.0",
+        "チップセット: Qualcomm QCC3091",
+        "対応コーデック: SBC, AAC, LDAC, aptX Lossless, LE Audio (Auracast)",
+        "ドライバー: 10mmダイナミック + BA ハイブリッドデュアルドライバー",
+        "ノイズキャンセリング: 最大50dB AI適応型ハイブリッドANC",
+        "防水性能: 表記なし（一般的にIPX4～5程度と推測されるが明記なし）",
+        "通話機能: 6マイク AI + cVc 8.0 ノイズキャンセリング",
+        "その他: マルチポイント接続対応、装着検出機能、ワイヤレス充電対応"
+      ]
     }
   }
 }
