@@ -1,0 +1,112 @@
+{
+  "analysis": {
+    "productName": "コクヨ キャンパスノート 5冊パック 5色アソート",
+    "parentAsin": "B000I430RI",
+    "productDescription": "コクヨの定番、キャンパスノートの5冊パックです。5色アソートなので教科や用途ごとの使い分けに便利です。",
+    "productUsage": [
+      "学校の授業用ノート",
+      "勉強、学習用",
+      "仕事のメモ書き、アイデア帳"
+    ],
+    "positivePoints": [
+      "5色アソートで教科ごとの使い分けがしやすい",
+      "安心と信頼のコクヨ キャンパスブランド",
+      "まとめ買いでお得な5冊セット"
+    ],
+    "negativePoints": [
+      "カラーの組み合わせを自由に選べない"
+    ],
+    "useCases": [
+      "新学期の学習準備",
+      "資格勉強用のノートまとめ",
+      "家庭での家計簿やメモ帳"
+    ],
+    "userStories": [],
+    "userImpression": "学習用や日常使いのノートとして、多くの人に選ばれている定番の安心感があります。色分けできることで整理しやすく、まとめ買いに最適です。",
+    "sources": [
+      {
+        "id": "src-1",
+        "name": "Amazon.co.jp",
+        "url": "https://www.amazon.co.jp/dp/B000I430RI?tag=aegis-22&linkCode=ogi&th=1&psc=1",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-04-05",
+        "author": "コクヨ(KOKUYO)",
+        "conflictOfInterest": "none",
+        "notes": "製品公式データ・仕様確認"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "5色アソートで使い分けが容易",
+        "category": "comparativeAdvantage",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "crossChecked": false,
+        "notes": "商品情報から明確"
+      }
+    ],
+    "lastInvestigated": "2026-04-05",
+    "competitiveAnalysis": [
+      {
+        "name": "コクヨ キャンパスノート B5 A罫 40枚 5冊パック",
+        "asin": "B000I41D8G",
+        "priceComparison": "同一ブランドの枚数違いバリエーション。本品が30枚であるのに対し、競合品は40枚と容量が多い",
+        "featureComparison": [
+          "共通点：コクヨのキャンパスノートB5サイズ",
+          "相違点：本品は30枚、競合は40枚"
+        ],
+        "differentiators": [
+          "コクヨ キャンパスノート 5冊パック 5色アソートの利点：薄くて持ち運びやすく、5色で色分けが可能",
+          "コクヨ キャンパスノート B5 A罫 40枚 5冊パックの利点：1冊あたりのページ数が多いため、長く使用できる"
+        ]
+      },
+      {
+        "name": "コクヨ キャンパス フラットが気持ちいい ノート ドットB罫",
+        "asin": "B0CP24Q52S",
+        "priceComparison": "フラットに開くという機能面での付加価値があり、本品と比較して少し割高になっている",
+        "featureComparison": [
+          "共通点：コクヨのキャンパスノート",
+          "相違点：本品は通常の無線綴じA罫、競合はフラットに開くタイプのドットB罫"
+        ],
+        "differentiators": [
+          "コクヨ キャンパスノート 5冊パック 5色アソートの利点：スタンダードで安価、色数が豊富",
+          "コクヨ キャンパス フラットが気持ちいい ノートの利点：見開きでフラットに使えるため、スマホでの撮影や書き込みが快適"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "学生、受験生",
+        "ノートを複数教科・プロジェクトで使い分ける人"
+      ],
+      "pros": [
+        "色分けができて整理が簡単",
+        "定番品質で書きやすい"
+      ],
+      "cons": [
+        "色の指定はできない"
+      ],
+      "score": 85,
+      "scoreRationale": "[基本点: 70]\n[加点: +10] (信頼性の高いキャンパスブランドと定番の品質)\n[加点: +5] (5色アソートにより分類がしやすく実用性が高い)\n[合計: 85]"
+    },
+    "technicalSpecs": {
+      "dimensions": {
+        "height": "4mm",
+        "width": "252mm",
+        "depth": "179mm"
+      },
+      "weight": "100g",
+      "capacity": "30枚×5冊",
+      "material": "紙",
+      "origin": "日本",
+      "other": [
+        "サイズ: セミB5",
+        "罫内容: A罫 (普通横罫)",
+        "行数: 30行"
+      ]
+    }
+  }
+}
