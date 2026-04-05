@@ -27,80 +27,93 @@
       "外出先や帰省先での食事として",
       "手作り離乳食の素材（アレンジ用）として"
     ],
-    "userStories": [
-      {
-        "userType": "生後5ヶ月児の親（初めての離乳食）",
-        "scenario": "魚をあげたいが、骨の処理や裏ごしが不安で手間もかかる。",
-        "experience": "自分で鯛を茹でてすり潰すとパサパサになってしまい、子供が食べてくれなかった。この商品はなめらかで食べやすく、子供も嫌がらずに食べてくれた。骨の心配もなく安心してあげられるのが嬉しい。",
-        "sentiment": "positive"
-      },
-      {
-        "userType": "共働きの親",
-        "scenario": "平日の夕食準備、時間がなく離乳食を作る余裕がない。",
-        "experience": "パウチを開けるだけで一品追加できるので非常に助かる。フリーズドライはお湯が必要だが、これはそのままでもいけるし、量も十分あるのでコスパが良い。",
-        "sentiment": "positive"
-      },
-      {
-        "userType": "自然派志向の親",
-        "scenario": "市販のベビーフードは添加物や味付けが濃いのが気になる。",
-        "experience": "原材料が「たい、じゃがいも、でん粉」のみで、調味料や保存料が入っていないのが良い。自分で素材を選んで作るのと同じ安心感がある。",
-        "sentiment": "positive"
-      }
-    ],
+    "userStories": [],
     "userImpression": "魚の下処理の手間を解消する「神アイテム」として評価が高い。特に初期の少量しか食べない時期に、安全な魚を手軽にあげられる点が支持されている。味付けなしでアレンジしやすい点も好評。",
     "sources": [
       {
+        "id": "src-1",
         "name": "Amazon Product Page",
         "url": "https://www.amazon.co.jp/dp/B0FK5182DD",
-        "credibility": "High"
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2025-09-08",
+        "author": "和光堂",
+        "conflictOfInterest": "none",
+        "notes": "商品の仕様、特徴、価格情報を取得"
       },
       {
-        "name": "Wakodo Official Site (Speculated based on brand info)",
-        "url": "https://www.wakodo.co.jp/",
-        "credibility": "High"
+        "id": "src-2",
+        "name": "Amazon Product Page (和光堂 はじめての離乳食 裏ごしおさかな)",
+        "url": "https://www.amazon.co.jp/dp/B0052VL6RI",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2017-06-01",
+        "author": "和光堂",
+        "conflictOfInterest": "none",
+        "notes": "競合商品の仕様、特徴、価格情報を取得"
+      },
+      {
+        "id": "src-3",
+        "name": "Amazon Product Page (the kindest 魚ピューレ)",
+        "url": "https://www.amazon.co.jp/dp/B0CSYBPGJL",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2024-01-01",
+        "author": "ｔｈｅ　ｋｉｎｄｅｓｔ",
+        "conflictOfInterest": "none",
+        "notes": "競合商品の仕様、特徴、価格情報を取得"
+      },
+      {
+        "id": "src-4",
+        "name": "Amazon Product Page (Little One's 天然たらフレーク)",
+        "url": "https://www.amazon.co.jp/dp/B0FF9PWDXF?th=1&psc=1",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2024-01-01",
+        "author": "Little One's",
+        "conflictOfInterest": "none",
+        "notes": "競合商品の仕様、特徴、価格情報を取得"
       }
     ],
-    "lastInvestigated": "2026-01-27",
+    "lastInvestigated": "2026-04-06",
     "competitiveAnalysis": [
       {
-        "name": "和光堂 はじめての離乳食 裏ごしおさかな (フリーズドライ)",
+        "name": "和光堂 はじめての離乳食 裏ごしおさかな 2.6g×6個",
         "asin": "B0052VL6RI",
-        "priceComparison": "1箱(2.6g×6個)約720円。本商品(50g約320円)の方がg単価は圧倒的に安い。",
+        "priceComparison": "本商品は50gで294円、競合は15.6g(2.6g×6個)で636円。本商品の方がグラム単価で圧倒的に安価である。",
         "featureComparison": [
-          "フリーズドライでお湯が必要 vs 本商品はそのまま使えるパウチ",
-          "1回分ずつの個包装で保存しやすい vs 本商品は開封後冷凍が必要",
-          "常温で長期保存可能 vs 本商品も常温保存可能だが開封後は即日"
+          "共通点：どちらも白身魚（たい/たら）を使用し、5か月から使える無添加の離乳食である点",
+          "相違点：本商品はペースト状でそのまま使えるパウチタイプであるのに対し、競合はフリーズドライでお湯で溶かす必要がある点"
         ],
         "differentiators": [
-          "本商品は「量」と「そのまま使える手軽さ」で優位",
-          "フリーズドライは「少量をたまに使う」場合に便利"
+          "和光堂 素材を楽しむ離乳食 たいの利点：そのまま使えて手軽であり、1袋の容量が多いためコストパフォーマンスが高い点",
+          "和光堂 はじめての離乳食 裏ごしおさかなの利点：1回分ごとの個包装で常温での長期保存・持ち運びに優れている点"
         ]
       },
       {
-        "name": "the kindest 魚ピューレ",
+        "name": "the kindest 魚ピューレ 3種 デビューセット",
         "asin": "B0CSYBPGJL",
-        "priceComparison": "3個セット約2680円(1個約900円)。本商品は約320円と非常に安価。",
+        "priceComparison": "本商品は1個(50g)294円、競合は3個セットで2682円(1個あたり894円)。本商品の方が非常に安価である。",
         "featureComparison": [
-          "シェフ監修の高品質 vs 本商品は標準的な品質",
-          "パッケージがおしゃれで贈答向き vs 本商品は実用重視",
-          "どちらも無添加・パウチ・ペースト"
+          "共通点：どちらもペースト状でそのまま使えるパウチタイプであり、無添加である点",
+          "相違点：本商品は「たい」1種類のみであるのに対し、競合は「たら・鮭・かつお」の3種セットであり、シェフ監修の高品質を謳っている点"
         ],
         "differentiators": [
-          "本商品は圧倒的なコストパフォーマンス",
-          "the kindestはブランド価値と贈り物需要"
+          "和光堂 素材を楽しむ離乳食 たいの利点：圧倒的なコストパフォーマンスで日常使いしやすい点",
+          "the kindest 魚ピューレ 3種 デビューセットの利点：複数の魚種を試せる点や、こだわりのレシピで贈答品としても適している点"
         ]
       },
       {
-        "name": "Little One's 天然たらフレーク",
+        "name": "Little One's 無添加 北海道産 天然たら フレーク",
         "asin": "B0FF9PWDXF",
-        "priceComparison": "30g×2袋で約830円。本商品の方が安い。",
+        "priceComparison": "本商品は50gで294円、競合は60g(30g×2袋)で980円。本商品の方が安価である。",
         "featureComparison": [
-          "フレーク状(7ヶ月〜) vs 本商品はペースト(5ヶ月〜)",
-          "北海道産天然たら使用 vs 本商品は国内製造たい"
+          "共通点：どちらも国産の魚を使用し、無添加・加熱済みでそのまま使える点",
+          "相違点：本商品は5ヶ月から使える「ペースト状」であるのに対し、競合は7ヶ月から向けの「フレーク状」である点"
         ],
         "differentiators": [
-          "本商品は離乳食開始直後の「ごっくん期」に最適",
-          "Little One'sは少し進んだ時期の「もぐもぐ期」向け"
+          "和光堂 素材を楽しむ離乳食 たいの利点：ペースト状で離乳食初期（ごっくん期）に最適であり、価格も安い点",
+          "Little One's 無添加 北海道産 天然たら フレークの利点：少し進んだ時期（もぐもぐ期以降）の食感練習やアレンジ料理に向いている点"
         ]
       }
     ],
@@ -120,16 +133,62 @@
         "開封後は冷凍しないと日持ちしない",
         "1回で使い切るには量が多い（初期の場合）"
       ],
-      "score": 90,
-      "scoreRationale": "[基本点: 70]\n[加点: +5] (5ヶ月から使えるなめらかペースト、冷凍可能、パウチ)\n[加点: +8] (50gで300円台と、競合のフリーズドライや高級パウチに比べ圧倒的にコスパが良い)\n[加点: +2] (魚の臭みを抑えた工夫、安心の和光堂ブランド)\n[加点: +3] (離乳食初期の「魚調理のハードル」を大きく下げる点は満足度高い)\n[加点: +2] (素材のみのシンプル配合はアレンジしやすく貴重)\n[合計: 90]"
+      "score": 87,
+      "scoreRationale": "[基本点: 70]\n[加点: +5] (5ヶ月から使えるなめらかペースト、冷凍保存可能で使い勝手が良い)\n[加点: +8] (50gで294円と、競合のフリーズドライや高級パウチに比べ圧倒的にコストパフォーマンスが良い)\n[加点: +2] (調理が面倒な「たい」を手軽にあげられ、じゃがいもを合わせて食べやすくする工夫がある)\n[加点: +2] (味付けなし・着色料・香料不使用で安心のシンプル配合)\n[合計: 87]"
     },
     "technicalSpecs": {
-      "ingredients": "たいほぐし身（国内製造）、じゃがいも、でん粉",
-      "nutrition": "エネルギー18kcal、たんぱく質2.3g、脂質0.11g、炭水化物1.9g、食塩相当量0.017g",
-      "allergy": "なし",
+      "dimensions": {
+        "height": "150mm",
+        "width": "95mm",
+        "depth": "8mm"
+      },
+      "weight": "50g",
       "capacity": "50g",
-      "storage": "常温（開封後要冷蔵・冷凍可）",
-      "age": "5か月頃から"
-    }
+      "material": "パウチ容器",
+      "origin": "日本",
+      "other": [
+        "原材料: たいほぐし身（国内製造）、じゃがいも、でん粉",
+        "栄養成分(50gあたり): エネルギー18kcal、たんぱく質2.3g、脂質0.11g、炭水化物1.9g、食塩相当量0.017g",
+        "対象月齢: 5か月頃から",
+        "保存方法: 常温（開封後要冷蔵・冷凍可）",
+        "アレルギー物質: 該当なし",
+        "着色料・香料: 不使用"
+      ]
+    },
+    "claims": [
+      {
+        "claim": "面倒な魚の骨取り・裏ごしが不要で、開封してすぐ使える",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "crossChecked": false,
+        "notes": "公式情報に基づく"
+      },
+      {
+        "claim": "味付けをしておらず、国産のじゃがいもを合わせることで魚のにおいを緩和し食べやすくしている",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "crossChecked": false,
+        "notes": "公式情報に基づく"
+      },
+      {
+        "claim": "他のベビーフードに比べ、グラムあたりの価格が安くコストパフォーマンスに優れる",
+        "category": "comparativeAdvantage",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-1",
+          "src-2",
+          "src-3",
+          "src-4"
+        ],
+        "crossChecked": true,
+        "notes": "競合商品の販売価格との比較"
+      }
+    ]
   }
 }
