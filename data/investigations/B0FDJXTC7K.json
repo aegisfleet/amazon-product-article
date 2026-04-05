@@ -1,121 +1,181 @@
 {
   "analysis": {
-    "productName": "TANGZU Wan'er S.G 2",
-    "parentAsin": "B0FDWC9MRC",
-    "productDescription": "コストパフォーマンス最強と謳われた名機「Wan'er S.G」の正統進化モデル。ドライバーの改良による音質向上に加え、高級イヤーピース「Tang Sancai」を標準付属するなど、付属品も大幅にグレードアップしています。",
+    "productName": "TANGZU Wan'er S.G 2 インイヤーモニター",
+    "parentAsin": "B0FDJXTC7K",
+    "productDescription": "10mm PETダイヤフラムダイナミックドライバーを搭載したHiFi有線イヤホン。絡まり防止の着脱式ケーブルが付属します。",
     "productUsage": [
-      "高音質な音楽鑑賞（特にボーカル曲）",
-      "FPSなどのゲーミング用途（正確な定位感）",
-      "初めてのIEM（インイヤーモニター）としての入門機",
-      "外出時のリスニング（絡まりにくいケーブル）"
+      "音楽鑑賞",
+      "ゲーム",
+      "DJ・ステージ"
     ],
     "positivePoints": [
-      "名機をベースに改良された10mm PETダイヤフラムドライバーによるクリアなサウンド",
-      "単体で購入すると高価な「Tang Sancai」イヤーピースが標準付属する破格のコストパフォーマンス",
-      "取り回しが良く絡まりにくい、アップグレードされた銀メッキOFCケーブル",
-      "人間工学に基づいた疲れにくい装着感と美しいフェイスプレートデザイン"
+      "10mm PETダイヤフラムダイナミックドライバーによるクリアでバランスの取れた音質",
+      "着脱・交換可能な0.78mmフラット2ピンケーブル",
+      "人間工学に基づいた快適なフィット感",
+      "特許取得済みのTang Sancaiイヤーチップによる高い音響性能"
     ],
     "negativePoints": [
-      "競合機種（Moondrop Chu IIなど）と比較すると筐体がプラスチック製であり、質感で劣る場合がある",
-      "発売直後のため、長期的な耐久性に関するユーザーレビューがまだ少ない"
+      "マイクが付属しない（本モデルはマイクなし）",
+      "スマートフォンなどに接続する場合、3.5mmジャックまたは変換アダプタが必要"
     ],
     "useCases": [
-      "通勤・通学時の音楽リスニング",
-      "PCやスマートフォンでのゲームプレイ",
-      "カフェなどでの作業用BGM再生"
+      "高音質での音楽リスニング",
+      "長時間のゲーミングセッション",
+      "DJプレイやステージでのモニタリング"
     ],
-    "userStories": [
-      {
-        "userType": "オーディオ初心者（学生）",
-        "scenario": "初めての本格的な有線イヤホン選び",
-        "experience": "スマホ付属のイヤホンから卒業したくて購入。3000円台とは思えないほど音がクリアで、特に女性ボーカルが綺麗に聞こえる。付属のイヤーピースがカラフルで可愛く、装着感も抜群だった。（推測）",
-        "sentiment": "positive"
-      },
-      {
-        "userType": "初代Wan'er S.Gユーザー",
-        "scenario": "サブ機の買い替え",
-        "experience": "初代を持っていたが、ケーブルの質感がチープだったのが不満だった。このS.G 2はケーブルが大幅に改善されており、絡まりにくくて使いやすい。音質も低域の解像度が上がっているように感じる。（推測）",
-        "sentiment": "positive"
-      }
-    ],
-    "userImpression": "「価格破壊」と呼ばれた初代の良さをそのままに、弱点だったケーブルや付属品を強化した「完全版」。特にTang Sancaiイヤーピースの付属はユーザーにとって大きなサプライズであり、この価格帯では頭一つ抜けた満足度を提供している。",
+    "userStories": [],
+    "userImpression": "価格を抑えつつも、バランスの取れた高音質と快適な装着感を提供するIEMとして、オーディオ愛好家やゲーマーから注目される製品。",
     "sources": [
       {
-        "name": "Amazon Product Page Details",
+        "id": "src-1",
+        "name": "Amazon.co.jp 商品ページ",
         "url": "https://www.amazon.co.jp/dp/B0FDJXTC7K",
-        "credibility": "High"
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-04-06",
+        "author": "Amazon",
+        "conflictOfInterest": "none",
+        "notes": "商品スペック、価格、特徴を確認"
       }
     ],
-    "lastInvestigated": "2026-01-27",
+    "claims": [
+      {
+        "claim": "10mm PETダイヤフラムによるクリアな音質",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "crossChecked": false,
+        "notes": "メーカー公式の仕様として明記"
+      },
+      {
+        "claim": "人間工学に基づいた設計による快適な装着感",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "crossChecked": false,
+        "notes": "公式情報に基づく"
+      }
+    ],
+    "lastInvestigated": "2026-04-06",
     "competitiveAnalysis": [
       {
-        "name": "Moondrop Chu II",
-        "asin": "B0CB8HHS8V",
-        "priceComparison": "約3,900円（Wan'er S.G 2より約400円高い）",
+        "name": "KINBOOFI WAN'ER S.G II",
+        "asin": "B0FL7GQGDV",
+        "priceComparison": "同価格帯。",
         "featureComparison": [
-          "アルミニウムマグネシウム合金ドーム振動板",
-          "堅牢な金属筐体",
-          "ノズル交換ギミック搭載"
+          "共通点：10mmダイナミックドライバー、PETダイヤフラム、2ピン着脱式ケーブル",
+          "相違点：販売ブランドと一部のデザイン仕様"
         ],
         "differentiators": [
-          "Chu IIは金属筐体で高級感があるが、Wan'er S.G 2は高級イヤーピース付属で装着感とコスパで勝負",
-          "Wan'er S.G 2の方がケーブルの質が良い（Chu 2のケーブルはゴム被膜で癖がつきやすい）"
+          "TANGZU Wan'er S.G 2の利点：TANGZUのオリジナルブランドとしての安心感",
+          "KINBOOFI WAN'ER S.G IIの利点：特定販売店での取り扱いや保証内容の違い"
         ]
       },
       {
-        "name": "7Hz Salnotes Zero 2",
-        "asin": "B0CN2T4G4L",
-        "priceComparison": "約3,200円（Wan'er S.G 2より約300円安い）",
+        "name": "TANGZU Wan'er S.G (第1世代)",
+        "asin": "B0FDKN1SJC",
+        "priceComparison": "本製品より安い。前世代モデルのため。",
         "featureComparison": [
-          "10mmダイナミックドライバー",
-          "より低音を強調したチューニング",
-          "プラスチック筐体"
+          "共通点：10mmダイナミックドライバー、2ピン着脱式ケーブル",
+          "相違点：ドライバーチャンバーの改良、ケーブル品質、イヤーチップ"
         ],
         "differentiators": [
-          "Zero 2は低音重視のパワフルな音、Wan'er S.G 2はボーカル重視のバランス型",
-          "付属品の豪華さではWan'er S.G 2が圧倒的に有利"
+          "TANGZU Wan'er S.G 2の利点：改良されたドライバーによる音質の向上、ケーブルの絡まりにくさ",
+          "TANGZU Wan'er S.G (第1世代)の利点：価格の安さ"
         ]
       },
       {
-        "name": "Linsoul Tripowin Ruta10",
-        "asin": "B0F4QYH46B",
-        "priceComparison": "約2,640円（Wan'er S.G 2より約900円安い）",
+        "name": "Linsoul TANGZU Wan’er S.G HiFi 10mm Dynamic Driver",
+        "asin": "B0C6QJZ574",
+        "priceComparison": "同価格帯。",
         "featureComparison": [
-          "LCPダイナミックドライバー",
-          "シンプルな構成"
+          "共通点：10mmダイナミックドライバー、PETダイヤフラム",
+          "相違点：マイクの有無、カラーバリエーション"
         ],
         "differentiators": [
-          "価格は安いが、付属品やビルドクオリティはWan'er S.G 2の方が価格差以上に高い"
+          "TANGZU Wan'er S.G 2の利点：最新の第2世代モデルとしての改良点",
+          "Linsoul TANGZU Wan’er S.Gの利点：マイク付きモデルの選択肢やカラーバリエーション"
+        ]
+      },
+      {
+        "name": "Linsoul TANGZU Wan'er S.G II (Type-C Mic)",
+        "asin": "B0F1DD75TB",
+        "priceComparison": "本製品よりやや高い。Type-C接続とマイクが付随するため。",
+        "featureComparison": [
+          "共通点：Wan'er S.G 2の基本性能",
+          "相違点：接続端子（Type-Cか3.5mmか）、マイクの有無"
+        ],
+        "differentiators": [
+          "TANGZU Wan'er S.G 2の利点：アンプやDACなど多様なオーディオ機器と接続しやすい汎用性の高い3.5mm端子",
+          "Linsoul TANGZU Wan'er S.G II (Type-C Mic)の利点：最新のスマートフォンに直挿しできる利便性、通話可能なマイク付き"
+        ]
+      },
+      {
+        "name": "Linsoul TANGZU Wan'er S.G HiFi (マイク付き)",
+        "asin": "B0BRVCRRSV",
+        "priceComparison": "同価格帯。",
+        "featureComparison": [
+          "共通点：Wan'er S.GシリーズのIEM設計",
+          "相違点：マイクの有無、世代の違い"
+        ],
+        "differentiators": [
+          "TANGZU Wan'er S.G 2の利点：第2世代の改良された音響性能",
+          "Linsoul TANGZU Wan'er S.G HiFi (マイク付き)の利点：通話用途に使えるマイク付き"
+        ]
+      },
+      {
+        "name": "Linsoul TANGZU Wan'er S.G HiFi (ブラック, マイクなし)",
+        "asin": "B0BL16M8FH",
+        "priceComparison": "同価格帯。",
+        "featureComparison": [
+          "共通点：マイクなしのIEM",
+          "相違点：世代の違い、カラーバリエーション"
+        ],
+        "differentiators": [
+          "TANGZU Wan'er S.G 2の利点：第2世代のドライバーやケーブルなどの改良点",
+          "Linsoul TANGZU Wan'er S.G HiFi (ブラック, マイクなし)の利点：第1世代のブラックカラーを選択したい場合"
         ]
       }
     ],
     "recommendation": {
       "targetUsers": [
-        "初めて中華イヤホンを買う人",
-        "コスパ重視で音質と装着感を両立させたい人",
-        "女性ボーカル曲をよく聴く人"
+        "コストパフォーマンスに優れた有線イヤホンを探している人",
+        "初めてIEM（インイヤーモニター）を試してみたい人",
+        "高音質でゲームや音楽を楽しみたい人"
       ],
       "pros": [
-        "高級イヤーピース「Tang Sancai」が標準付属（これだけで元が取れるレベル）",
-        "取り回しの良い高品質なケーブル",
-        "全帯域バランスの取れた聴き疲れしないサウンド"
+        "10mmダイナミックドライバーによる優れた音質",
+        "リケーブル可能な設計で長く使える",
+        "絡まりにくい高品質ケーブルが付属"
       ],
       "cons": [
-        "金属筐体のライバル機に比べると高級感は劣る",
-        "リケーブル端子（2pin）の耐久性は扱い方による"
+        "マイクが付属しないため、通話メインの用途には向かない",
+        "スマートフォンにイヤホンジャックがない場合は変換アダプタが必要"
       ],
-      "score": 96,
-      "scoreRationale": "[基本点: 70]\n[加点: +10] (高級イヤーピース付属による圧倒的なコストパフォーマンス)\n[加点: +5] (名機をベースに改良された確かな音質性能)\n[加点: +3] (デザインは良いがプラ筐体のため控えめに評価)\n[加点: +3] (初代の実績はあるが新製品のため控えめに評価)\n[加点: +5] (Tang Sancaiイヤーピースという独自の強力な武器)\n[合計: 96]"
+      "score": 85,
+      "scoreRationale": "[基本点: 70]\n[加点: +5] (10mm PETダイヤフラムによる高音質設計)\n[加点: +5] (0.78mm 2ピン着脱式ケーブルでリケーブル可能)\n[加点: +5] (人間工学に基づく快適なフィット感と特許取得イヤーチップ)\n[合計: 85]"
     },
     "technicalSpecs": {
-      "driver": "10mm PETダイヤフラム ダイナミックドライバー",
-      "codec": null,
-      "battery": null,
-      "connectivity": "有線 (3.5mmプラグ / 0.78mm 2pinコネクタ)",
-      "noiseCancel": null,
-      "impedance": "19Ω",
-      "sensitivity": "105dB (推測値)",
-      "cable": "1.2m 銀メッキOFCケーブル (絡まり防止設計)"
+      "dimensions": {
+        "height": "1000mm",
+        "width": "10mm",
+        "depth": "10mm"
+      },
+      "weight": "20g",
+      "capacity": "1",
+      "material": "PET（ダイヤフラム）、銀メッキ無酸素銅（ケーブル）",
+      "origin": "不明",
+      "other": [
+        "ドライバー: 10mm PETダイヤフラムダイナミックドライバー",
+        "インピーダンス: 19Ω",
+        "コネクタ: 0.78mmフラット2ピン",
+        "プラグ: 3.5mm",
+        "ケーブル長: 1.2m"
+      ]
     }
   }
 }
