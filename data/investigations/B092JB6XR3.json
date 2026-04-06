@@ -25,74 +25,99 @@
       "ZoomやTeamsなどのWeb会議・テレワーク",
       "オンライン授業やプレゼンテーションの音声入力"
     ],
-    "userStories": [
-      {
-        "userType": "スマホで配信を始めた学生",
-        "scenario": "初めての歌枠配信",
-        "experience": "スマホに変換アダプタで繋ぐだけで認識され、すぐに配信が始められた。エコーを少しかけると歌が上手く聞こえて好評だった。難しい設定がいらないのが嬉しい。",
-        "sentiment": "positive"
-      },
-      {
-        "userType": "テレワーク中心の会社員",
-        "scenario": "毎日のWeb会議",
-        "experience": "会議中に咳き込む時など、手元のミュートボタンですぐに音を消せるのが非常に便利。ヘッドセットのような圧迫感がなく、長時間でも疲れにくい。",
-        "sentiment": "positive"
-      },
-      {
-        "userType": "ゲーム実況者",
-        "scenario": "PCでのFPSゲーム実況",
-        "experience": "音質はクリアだが、キーボードの打鍵音を拾いやすい。付属スタンドだとキーボードの振動も拾うので、別途マイクアームを用意した方が良さそう。",
-        "sentiment": "mixed"
-      }
-    ],
+    "userStories": [],
     "userImpression": "3000円台という低価格ながら、必要な機能とアクセサリが全て揃っているコストパフォーマンスの高さが評価されている。特にスマホユーザーからの支持が厚く、手軽に音質向上とエフェクトを楽しめる入門機として人気。",
     "sources": [
       {
-        "name": "Amazon Product Page Details",
+        "id": "src-1",
+        "name": "Amazon 商品ページ",
         "url": "https://www.amazon.co.jp/dp/B092JB6XR3",
-        "credibility": "High"
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-04-07",
+        "author": "Amazon",
+        "conflictOfInterest": "none",
+        "notes": "公式の商品仕様とユーザーレビュー"
       }
     ],
-    "lastInvestigated": "2026-01-28",
+    "lastInvestigated": "2026-04-07",
     "competitiveAnalysis": [
       {
-        "name": "FIFINE K669B",
-        "asin": "B075PJ7V3V",
-        "priceComparison": "価格は3900円前後とK66に近いが、若干高め。",
+        "name": "JBL QUANTUM STREAM",
+        "asin": "B09VGCZHG4",
+        "priceComparison": "JBL QUANTUM STREAMの方が高価だが、サンプリングレート96kHz/24bitの高音質や専用ソフトでの詳細設定が可能で、より本格的な配信・録音向け。",
         "featureComparison": [
-          "音質には定評があるが、機能はシンプル（ボリュームのみ）",
-          "ミュートボタンやエコー機能がない",
-          "スマホ用アダプタは付属しない（別途用意が必要）"
+          "共通点：USB接続、コンデンサーマイク、ミュート機能搭載",
+          "相違点：JBLは単一指向性/無指向性の切り替えが可能、RGBインジケーター搭載、高解像度録音対応。ZealSoundはエコー機能搭載、スマホ用アダプタ付属。"
         ],
         "differentiators": [
-          "K66はミュート・エコー機能があり多機能",
-          "K66はスマホ用アダプタが同梱されている点でスマホユーザーに有利"
+          "ZealSound USBマイクの利点：エコー機能が本体で調整可能、スマホ用アダプタが付属しスマホで手軽に使える、価格が安い",
+          "JBL QUANTUM STREAMの利点：ブランドの信頼性、指向性の切り替えが可能、より高音質での録音が可能、専用ソフトによるカスタマイズ性"
         ]
       },
       {
-        "name": "UGREEN USBマイク",
+        "name": "HyperX SoloCast",
+        "asin": "B0FLKJ7FH7",
+        "priceComparison": "HyperX SoloCastの方が高価だが、内蔵ショックマウントやポップフィルターなど、配信向けの専用設計が充実している。",
+        "featureComparison": [
+          "共通点：USB接続、コンデンサーマイク、タップでのミュート機能",
+          "相違点：HyperXはハイレゾ録音対応、専用ソフトによるカスタマイズ、ショックマウント内蔵。ZealSoundはエコー機能搭載、スマホ用アダプタ付属。"
+        ],
+        "differentiators": [
+          "ZealSound USBマイクの利点：スマホ用アダプタ付属でスマホ配信が容易、本体でエコー調整が可能、価格が安い",
+          "HyperX SoloCastの利点：内蔵ショックマウントによる振動ノイズ低減、ハイレゾ対応、コンパクトな形状"
+        ]
+      },
+      {
+        "name": "Logicool G Blue Yeti",
+        "asin": "B0822PMBTZ",
+        "priceComparison": "Logicool G Blue Yetiは非常に高価だが、3つのカプセル内蔵による高品質な音声と多彩な音声変調機能があり、本格的なストリーマー向け。",
+        "featureComparison": [
+          "共通点：USB接続、ゲーミング・配信向けマイク",
+          "相違点：Blue Yetiは複数の収音パターン切り替え、Blue VO!CEエフェクトによる高度な音声処理が可能。ZealSoundは単一指向性のみでシンプルなエコー機能、スマホ接続向け。"
+        ],
+        "differentiators": [
+          "ZealSound USBマイクの利点：非常に安価、スマホ用アダプタ付属で初心者でも手軽に導入可能",
+          "Logicool G Blue Yetiの利点：プロレベルの高音質、多彩な収音パターン、高度な音声カスタマイズ機能"
+        ]
+      },
+      {
+        "name": "UGREEN コンデンサーマイク",
         "asin": "B0FG7DVV62",
-        "priceComparison": "3000円以下になることもあり、K66より安い場合がある。",
+        "priceComparison": "価格帯は同等。UGREENはRGBライティングを搭載しており、ゲーミング環境の構築を重視するユーザー向け。",
         "featureComparison": [
-          "RGBライティング搭載でゲーミング演出が可能",
-          "ミュートボタンはあるが、エコー調整機能はない"
+          "共通点：USB接続、単一指向性、プラグ＆プレイ、低価格帯",
+          "相違点：UGREENはRGBライティングとDSPノイズ低減機能を搭載。ZealSoundはエコー機能搭載、スマホ用アダプタ付属。"
         ],
         "differentiators": [
-          "K66はエコー機能で「歌ってみた」等の用途に強い",
-          "UGREENはRGBライティングで「見た目」重視"
+          "ZealSound USBマイクの利点：エコー機能搭載でカラオケや歌配信に適している、スマホへの接続が簡単",
+          "UGREEN コンデンサーマイクの利点：RGBライティングで配信映えする、DSPによる効果的なノイズ低減"
         ]
       },
       {
-        "name": "TKGOU ArctisX",
-        "asin": "B0B1CWKWZR",
-        "priceComparison": "3100円前後でK66とほぼ同価格帯。",
+        "name": "オーディオテクニカ AT2020USB-XP",
+        "asin": "B0C61VGXWM",
+        "priceComparison": "オーディオテクニカの方が大幅に高価だが、プロ仕様の高音質と高度なノイズリダクション・オートゲインコントロールを備える。",
         "featureComparison": [
-          "192kHz/24bitの高音質を謳う",
-          "ショックマウント内蔵だが、エコー機能はない"
+          "共通点：USB接続、コンデンサーマイク、ヘッドホン出力によるモニタリング",
+          "相違点：AT2020USB-XPはノイズリダクション、オートゲインコントロール、ミックスコントロール機能を搭載。ZealSoundはエコー機能、スマホ用アダプタ付属。"
         ],
         "differentiators": [
-          "K66はエコー機能とスマホ接続の容易さで差別化",
-          "TKGOUはスペック上のサンプリングレートの高さが売り"
+          "ZealSound USBマイクの利点：低価格で導入しやすい、スマホ用アダプタが付属、エコー機能が手軽に使える",
+          "オーディオテクニカ AT2020USB-XPの利点：プロレベルのクリアな音質、高度なノイズ低減とゲインコントロール機能、ブランドの信頼性"
+        ]
+      },
+      {
+        "name": "Amazonベーシック USBコンデンサーマイク",
+        "asin": "B0CL9BTQRF",
+        "priceComparison": "Amazonベーシックの方が安価で、よりシンプルな機能を求めるユーザー向け。",
+        "featureComparison": [
+          "共通点：USB接続、コンデンサーマイク、単一指向性、タップミュート機能",
+          "相違点：Amazonベーシックは非常にシンプルな機能とデザイン。ZealSoundはエコー機能、ボリューム調整、モニタリング端子、スマホ用アダプタを搭載。"
+        ],
+        "differentiators": [
+          "ZealSound USBマイクの利点：エコー機能、モニタリング機能など多機能、スマホ用アダプタが付属",
+          "Amazonベーシック USBコンデンサーマイクの利点：より安価でシンプルなデザイン"
         ]
       }
     ],
@@ -115,15 +140,42 @@
       "scoreRationale": "[基本点: 70]\n[加点: +10] (付属品の多さ、スマホアダプタ同梱によるコスパの高さ)\n[加点: +5] (エコー、ミュート、モニタリング機能をハードウェアで搭載)\n[加点: +3] (Lightningアダプタ付属という独自の親切設計)\n[減点: -2] (価格相応のプラスチック筐体と推測されるビルドクオリティ)\n[合計: 86]"
     },
     "technicalSpecs": {
-      "type": "Condenser",
-      "connection": ["USB Type-A", "USB Type-C", "Lightning"],
-      "polarPattern": "Cardioid (単一指向性)",
-      "frequencyResponse": null,
-      "sampleRate": null,
-      "dimensions": null,
-      "weight": "約1.3ポンド (パッケージ重量)",
-      "features": ["Echo Effect", "Mute Button", "Volume Control", "Headphone Jack", "LED Indicator"],
-      "accessories": ["Tripod Stand", "Pop Filter", "USB Cable", "Type-C Adapter", "Lightning Adapter"]
-    }
+      "type": "コンデンサーマイク",
+      "connection": [
+        "USB Type-A",
+        "USB Type-C",
+        "Lightning"
+      ],
+      "polarPattern": "単一指向性 (カーディオイド)",
+      "weight": "約590g",
+      "accessories": [
+        "卓上マイクスタンド",
+        "ポップフィルター",
+        "Type-C to USB-Aケーブル",
+        "Type-Cアダプタ",
+        "Lightningアダプタ"
+      ],
+      "features": [
+        "エコー調整",
+        "ミュートボタン",
+        "ボリューム調整",
+        "遅延ゼロモニタリング用イヤホンジャック",
+        "LEDインジケーター"
+      ],
+      "color": "ブラック",
+      "size": "単品"
+    },
+    "claims": [
+      {
+        "claim": "iPhone/Android両対応のアダプタ付属",
+        "category": "comparativeAdvantage",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "crossChecked": true,
+        "notes": "商品の説明から確認済み"
+      }
+    ]
   }
 }
