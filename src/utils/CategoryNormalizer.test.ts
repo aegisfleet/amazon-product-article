@@ -141,6 +141,8 @@ describe('CategoryNormalizer', () => {
         '理美容以外の本体',
         'ドラッグストア HOTW',
         '第2類医薬品-濫用の恐れ無し',
+        'ビューティー',
+        'ビューティーストア',
       ];
       invalidNames.forEach((name) => {
         expect(CategoryNormalizer.isValidCategoryName(name)).toBe(false);
