@@ -287,6 +287,7 @@ export class CategoryNormalizer {
       '草刈機・刈払機パーツ・アクセサリ',
       '育毛・養毛用トニック・エッセンス',
       'ヘアケアギフトセット',
+      'ヘアケア・カラー・スタイリング',
     ];
     if (whitelist.some((item) => name.includes(CategoryNormalizer.getComparisonName(item)))) {
       return true;
