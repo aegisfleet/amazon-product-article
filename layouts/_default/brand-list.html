@@ -8,17 +8,17 @@
 {{- $scratch := newScratch -}}
 {{- $scratch.Set "articles" slice -}}
 {{- range where site.RegularPages "Section" "articles" -}}
-  {{- $match := false -}}
-  {{- if eq $matcherType "title_prefix" -}}
-    {{- if hasPrefix .Title $matcherValue -}}{{- $match = true -}}{{- end -}}
-  {{- else if eq $matcherType "brand" -}}
-    {{- if eq .Params.brand $matcherValue -}}{{- $match = true -}}{{- end -}}
-  {{- else if eq $matcherType "regex" -}}
-    {{- if findRE $matcherValue .Title -}}{{- $match = true -}}{{- end -}}
-  {{- end -}}
-  {{- if $match -}}
-    {{- $scratch.Add "articles" (slice .) -}}
-  {{- end -}}
+{{- $match := false -}}
+{{- if eq $matcherType "title_prefix" -}}
+{{- if hasPrefix .Title $matcherValue -}}{{- $match = true -}}{{- end -}}
+{{- else if eq $matcherType "brand" -}}
+{{- if eq .Params.brand $matcherValue -}}{{- $match = true -}}{{- end -}}
+{{- else if eq $matcherType "regex" -}}
+{{- if findRE $matcherValue .Title -}}{{- $match = true -}}{{- end -}}
+{{- end -}}
+{{- if $match -}}
+{{- $scratch.Add "articles" (slice .) -}}
+{{- end -}}
 {{- end -}}
 {{- $articles := $scratch.Get "articles" -}}
 
@@ -87,7 +87,8 @@
     {{- /* Filter Section */ -}}
     <div class="filter-section" id="filter-section">
         <div class="filter-header">
-            <button type="button" class="filter-toggle" id="filter-toggle" aria-controls="filter-content" aria-expanded="true">
+            <button type="button" class="filter-toggle" id="filter-toggle" aria-controls="filter-content"
+                aria-expanded="true">
                 <span class="filter-icon" aria-hidden="true">🔍</span>
                 <span>フィルター</span>
                 <span class="filter-arrow" aria-hidden="true">▼</span>
@@ -105,7 +106,8 @@
                     {{- if gt $count 0 -}}
                     <label class="filter-checkbox">
                         <input type="checkbox" name="category" value="{{ $cat }}">
-                        <span class="filter-label">{{- $cat -}} <span class="filter-count">({{- $count -}})</span></span>
+                        <span class="filter-label">{{- $cat -}} <span class="filter-count">({{- $count
+                                -}})</span></span>
                     </label>
                     {{- end -}}
                     {{- end -}}
@@ -215,8 +217,7 @@
             <div class="card-image">
                 <a href="{{ .RelPermalink }}" tabindex="-1" aria-hidden="true">
                     {{- if .Params.images -}}
-                    <img src="{{ index .Params.images 0 }}" alt="{{ .Title }}"
-                        loading="lazy" decoding="async">
+                    <img src="{{ index .Params.images 0 }}" alt="{{ .Title }}" loading="lazy" decoding="async">
                     {{- else -}}
                     <div class="card-image-noimage" aria-hidden="true">
                         画像なし
