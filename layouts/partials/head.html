@@ -12,21 +12,32 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <meta name="color-scheme" content="light dark">
 
-<meta name="description" content="{{- if .IsHome -}}{{- $articles := where .Site.RegularPages " Section" "articles"
-  -}}{{ len $articles }}点以上のAmazon商品をGoogle AI「Jules」が徹底比較！高評価（80点以上）おすすめを価格・スペック・特徴からレビュー。タイムセール情報も毎日更新。{{- else if
-  .Params.score -}}【{{ .Params.score }}点】{{ .Title }} {{ .Params.price }} レビュー。{{ .Description | default .Summary |
-  truncate 120 }}。AIエージェントによる徹底調査レポート。{{- else if eq .Section "recommendations"
-  -}}本日の注目商品10選！AIが厳選した高評価商品を価格・特徴比較。Amazon最安値リンク付きで即購入可能。{{- else if eq .Type "categories" -}}Amazon {{ .Title }}
-  のおすすめ商品をGoogle AIが徹底比較。高評価な商品を厳選してレビュー。価格やスペックの比較検討に。{{- else if .Description -}}{{ .Description }}{{ else }}{{
-  .Site.Params.description }}{{- end -}}">
+{{- $metaDescription := "" -}}
+{{- if .IsHome -}}
+{{- $articles := where .Site.RegularPages "Section" "articles" -}}
+{{- $metaDescription = printf "%d点以上のAmazon商品をGoogle AI「Jules」が徹底比較！高評価（80点以上）おすすめを価格・スペック・特徴からレビュー。タイムセール情報も毎日更新。" (len
+$articles) -}}
+{{- else if .Params.score -}}
+{{- $metaDescription = printf "【%d点】%s %s レビュー。%s。AIエージェントによる徹底調査レポート。" (.Params.score | int) .Title (.Params.price |
+default "") (.Description | default .Summary | truncate 120) -}}
+{{- else if eq .Section "recommendations" -}}
+{{- $metaDescription = "本日の注目商品10選！AIが厳選した高評価商品を価格・特徴比較。Amazon最安値リンク付きで即購入可能。" -}}
+{{- else if eq .Type "categories" -}}
+{{- $metaDescription = printf "Amazon %s のおすすめ商品をGoogle AIが徹底比較。高評価な商品を厳選してレビュー。価格やスペックの比較検討に。" .Title -}}
+{{- else if .Description -}}
+{{- $metaDescription = .Description -}}
+{{- else -}}
+{{- $metaDescription = .Site.Params.description -}}
+{{- end -}}
+<meta name="description" content="{{ $metaDescription }}">
 <link rel="canonical" href="{{ .Permalink }}">
+
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="{{- if .IsHome -}}website{{- else -}}article{{- end -}}">
 <meta property="og:url" content="{{ .Permalink }}">
 <meta property="og:title"
   content="{{- if .IsHome -}}{{ .Site.Title }}{{- else -}}{{ .Title }} | {{ .Site.Title }}{{- end -}}">
-<meta property="og:description"
-  content="{{- with .Description -}}{{ . }}{{- else -}}{{ .Site.Params.description }}{{- end -}}">
+<meta property="og:description" content="{{ $metaDescription }}">
 <meta property="og:image"
   content="{{- with .Params.images -}}{{ index . 0 | absURL }}{{- else -}}{{ `images/default-ogp.png` | absURL }}{{- end -}}">
 <meta property="og:image:width" content="1200">
@@ -39,8 +50,7 @@
 <meta name="twitter:url" content="{{ .Permalink }}">
 <meta name="twitter:title"
   content="{{- if .IsHome -}}{{ .Site.Title }}{{- else -}}{{ .Title }} | {{ .Site.Title }}{{- end -}}">
-<meta name="twitter:description"
-  content="{{- with .Description -}}{{ . }}{{- else -}}{{ .Site.Params.description }}{{- end -}}">
+<meta name="twitter:description" content="{{ $metaDescription }}">
 <meta name="twitter:image"
   content="{{- with .Params.images -}}{{ index . 0 | absURL }}{{- else -}}{{ `images/default-ogp.png` | absURL }}{{- end -}}">
 
