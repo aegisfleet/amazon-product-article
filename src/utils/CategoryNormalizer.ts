@@ -77,6 +77,7 @@ export class CategoryNormalizer {
     '暮らし・健康・子育て',
     '育毛',
     'トニック',
+    'スカルプ',
   ];
 
   /**
@@ -285,6 +286,7 @@ export class CategoryNormalizer {
       'ベビーカー',
       '草刈機・刈払機パーツ・アクセサリ',
       '育毛・養毛用トニック・エッセンス',
+      'ヘアケアギフトセット',
     ];
     if (whitelist.some((item) => name.includes(CategoryNormalizer.getComparisonName(item)))) {
       return true;

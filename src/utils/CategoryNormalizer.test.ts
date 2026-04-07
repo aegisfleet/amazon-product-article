@@ -161,6 +161,19 @@ describe('CategoryNormalizer', () => {
       expect(CategoryNormalizer.isValidCategoryName('a・b・c')).toBe(false);
       expect(CategoryNormalizer.isValidCategoryName('category・subcategory')).toBe(true);
     });
+
+    it('should allow "ヘアケアギフトセット" even though it contains "ギフト"', () => {
+      expect(CategoryNormalizer.isValidCategoryName('ヘアケアギフトセット')).toBe(true);
+    });
+
+    it('should allow "育毛・養毛用" categories even with 2+ dots', () => {
+      expect(CategoryNormalizer.isValidCategoryName('育毛・養毛用シャンプー')).toBe(true);
+      expect(CategoryNormalizer.isValidCategoryName('育毛・養毛用トリートメント')).toBe(true);
+    });
+
+    it('should allow "ヘアケア・カラー・スタイリング" even with 2 dots', () => {
+      expect(CategoryNormalizer.isValidCategoryName('ヘアケア・カラー・スタイリング')).toBe(true);
+    });
   });
 
   describe('normalize', () => {
@@ -249,6 +262,12 @@ describe('CategoryNormalizer', () => {
 
     it('should score "育毛・養毛用トニック・エッセンス" as 10', () => {
       const node: BrowseNode = { displayName: '育毛・養毛用トニック・エッセンス', id: '1' };
+      const result = CategoryNormalizer.normalize(node);
+      expect(result.score).toBe(10);
+    });
+
+    it('should score categories with "スカルプ" as 10', () => {
+      const node: BrowseNode = { displayName: 'スカルプシャンプー', id: '1' };
       const result = CategoryNormalizer.normalize(node);
       expect(result.score).toBe(10);
     });
