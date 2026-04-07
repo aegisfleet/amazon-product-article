@@ -8,6 +8,7 @@ describe('CategoryNormalizer', () => {
       expect(CategoryNormalizer.isValidCategoryName('ボードゲーム')).toBe(true);
       expect(CategoryNormalizer.isValidCategoryName('草刈機・刈払機パーツ・アクセサリ')).toBe(true);
       expect(CategoryNormalizer.isValidCategoryName('category_with_dash')).toBe(true);
+      expect(CategoryNormalizer.isValidCategoryName('育毛・養毛用トニック・エッセンス')).toBe(true);
     });
 
     it('should return false for empty or undefined names', () => {
@@ -244,6 +245,12 @@ describe('CategoryNormalizer', () => {
       };
       const fuelResult = CategoryNormalizer.normalize(fuelNode);
       expect(fuelResult.main).toBe('その他'); // Because '燃料' is invalid
+    });
+
+    it('should score "育毛・養毛用トニック・エッセンス" as 10', () => {
+      const node: BrowseNode = { displayName: '育毛・養毛用トニック・エッセンス', id: '1' };
+      const result = CategoryNormalizer.normalize(node);
+      expect(result.score).toBe(10);
     });
   });
 

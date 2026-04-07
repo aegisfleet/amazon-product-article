@@ -75,6 +75,8 @@ export class CategoryNormalizer {
     '実用書',
     'コミック・ラノベ',
     '暮らし・健康・子育て',
+    '育毛',
+    'トニック',
   ];
 
   /**
@@ -282,6 +284,7 @@ export class CategoryNormalizer {
       '体重・体脂肪・体組成計',
       'ベビーカー',
       '草刈機・刈払機パーツ・アクセサリ',
+      '育毛・養毛用トニック・エッセンス',
     ];
     if (whitelist.some((item) => name.includes(CategoryNormalizer.getComparisonName(item)))) {
       return true;
