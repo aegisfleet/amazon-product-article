@@ -1,10 +1,21 @@
 <!DOCTYPE html>
-<html lang="{{ .Site.LanguageCode | default "ja" }}" prefix="og: http://ogp.me/ns#">
+<html lang="{{ .Site.LanguageCode | default " ja" }}" prefix="og: http://ogp.me/ns#">
 
 <head>
-  <title>{{- if .IsHome -}}{{ .Site.Title }}{{- else if .Params.score -}}{{ .Title }}{{- if .Params.price -}} {{ .Params.price
-    }}{{- end -}} レビュー【{{ .Params.score }}点】 | {{ .Site.Title }}{{- else -}}{{ .Title }} レビュー | {{ .Site.Title }}{{- end -}}
+  <title>
+    {{- if .IsHome -}}
+    Amazon おすすめ 比較 徹底調査レポート | {{ .Site.Title }}
+    {{- else if .Params.score -}}
+    【{{ .Params.score }}点】{{ .Title }} {{ .Params.price }} レビュー | {{ .Site.Title }}
+    {{- else if eq .Section "recommendations" -}}
+    本日の注目商品10選！AI厳選レビュー | {{ .Site.Title }}
+    {{- else if eq .Type "categories" -}}
+    Amazon {{ .Title }} おすすめ比較ランキング | AI徹底調査 | {{ .Site.Title }}
+    {{- else -}}
+    {{ .Title }} レビュー | {{ .Site.Title }}
+    {{- end -}}
   </title>
+
   {{- partial "head.html" . -}}
 </head>
 
