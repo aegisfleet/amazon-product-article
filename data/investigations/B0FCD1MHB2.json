@@ -1,0 +1,129 @@
+{
+  "analysis": {
+    "productName": "Dell Pro 14 (AMD Ryzen 5)",
+    "parentAsin": "B0FCD1MHB2",
+    "productDescription": "AMD Ryzen 5プロセッサーと16GBメモリを搭載した、高い耐久性と15.1時間のロングバッテリーが特徴の14インチビジネスノートPCです。",
+    "productUsage": [
+      "ビジネスでの資料作成やWeb会議",
+      "プログラミングや開発作業",
+      "動画鑑賞やWebブラウジングなどの日常利用"
+    ],
+    "positivePoints": [
+      "15.1時間の長持ちバッテリー搭載",
+      "MIL-STD試験をクリアした高い耐久性",
+      "USB-CポートやHDMIなど豊富なインターフェースを搭載"
+    ],
+    "negativePoints": [
+      "重量が1.35kgと、14インチとしてはやや重め",
+      "価格が約15万円と、同等スペックの競合機種と比べて高価"
+    ],
+    "useCases": [
+      "外出先や出張時のメインPCとして",
+      "リモートワーク用の社給端末として",
+      "大学の講義や課題用のPCとして"
+    ],
+    "userStories": [],
+    "userImpression": "高い耐久性とロングバッテリー、そして充実したサポート体制が魅力のビジネス向けノートPC。価格は高めですが、その分信頼性が高く、長く安心して使える点が評価されています。",
+    "sources": [
+      {
+        "id": "src-amazon",
+        "name": "Amazon商品ページ",
+        "url": "https://www.amazon.co.jp/dp/B0FCD1MHB2",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-04-08",
+        "author": "Dell",
+        "conflictOfInterest": "none",
+        "notes": "製品仕様、特徴、価格情報を取得"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "MIL-STD試験をクリアした高い耐久性",
+        "category": "durability",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-amazon"
+        ],
+        "crossChecked": false,
+        "notes": "Amazonの商品説明文より確認"
+      },
+      {
+        "claim": "15.1時間のバッテリー駆動（FHD+使用時）",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-amazon"
+        ],
+        "crossChecked": false,
+        "notes": "Amazonの商品説明文より確認"
+      }
+    ],
+    "lastInvestigated": "2026-04-08",
+    "competitiveAnalysis": [
+      {
+        "name": "Lenovo IdeaPad Slim 3 15.3インチ",
+        "asin": "B0GGBDGRVK",
+        "priceComparison": "本製品（Dell Pro 14）とほぼ同等の価格帯。本製品の方がサイズがコンパクトで持ち運びに適している。",
+        "featureComparison": [
+          "共通点：AMD Ryzen 5プロセッサ、16GBメモリ、512GB SSDを搭載し、日常的なビジネス用途に十分な性能を備えている点",
+          "相違点：本製品は14インチ（1.35kg）で持ち運びを重視しているのに対し、IdeaPad Slim 3は15.3インチ（1.59kg）で画面の大きさを重視している点。また、本製品はMIL-STD準拠の耐久性をアピールしている。"
+        ],
+        "differentiators": [
+          "Dell Pro 14の利点：MIL-STD準拠の高い耐久性と1.35kgの軽量ボディで、外出先への持ち運びが多いユーザーに適している。",
+          "Lenovo IdeaPad Slim 3の利点：15.3インチの大画面を搭載しており、据え置きメインで複数のウィンドウを並べて作業するケースに適している。"
+        ]
+      },
+      {
+        "name": "BINHENGLON 14インチノートパソコン",
+        "asin": "B0DT43QRMT",
+        "priceComparison": "BINHENGLONの方が約8万円安く、大幅に安価。ただし、本製品はDellという大手ブランドの信頼性やサポート体制、MIL-STD準拠の耐久性で勝る。",
+        "featureComparison": [
+          "共通点：14インチ液晶、Ryzen 5プロセッサ、16GBメモリ、512GB SSDを搭載している点",
+          "相違点：本製品は最新のRyzenを搭載し、AI機能や高いセキュリティ機能（Dell Trusted Workspaceなど）を備えている。一方BINHENGLONは一世代前のRyzen 5 3500Uを搭載し、価格を抑えている。"
+        ],
+        "differentiators": [
+          "Dell Pro 14の利点：最新のCPUやAI機能、高いセキュリティ機能、大手メーカーによる充実したサポート体制があり、ビジネスで安心して使用できる。",
+          "BINHENGLONの利点：圧倒的に価格が安く、初期費用を抑えたい学生やサブ機を探しているユーザーに適している。"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "外出が多く、PCを持ち歩くビジネスパーソン",
+        "耐久性と信頼性の高いPCを長く使いたい人",
+        "充実したメーカーサポートを必要とする法人や個人"
+      ],
+      "pros": [
+        "15.1時間のロングバッテリー",
+        "MIL-STD準拠の堅牢なボディ",
+        "AI機能を活用できる最新プロセッサ"
+      ],
+      "cons": [
+        "価格が約15万円と同スペック帯では高め",
+        "重量1.35kgは14インチとしては標準的で、特別軽くはない"
+      ],
+      "score": 75,
+      "scoreRationale": "[基本点: 70]\n[加点: +5] (MIL-STD準拠の耐久性による堅牢なボディ)\n[加点: +5] (15.1時間のロングバッテリー)\n[加点: +3] (メーカーの充実したサポート体制)\n[加点: +2] (Dell Trusted Workspace等の優れたセキュリティ機能)\n[減点: -10] (同等スペックの競合他社製品と比較して価格設定がやや高め)\n[合計: 75]"
+    },
+    "technicalSpecs": {
+      "dimensions": {
+        "height": "19mm",
+        "width": "314mm",
+        "depth": "225mm"
+      },
+      "weight": "1.35kg",
+      "capacity": "512GB (SSD)",
+      "material": "プラチナシルバーのメタリック仕上げ または マグネタイトのレーザーテクスチャー仕上げ（ポストコンシューマー再生プラスチックを最大50%使用）",
+      "origin": "不明",
+      "other": [
+        "プロセッサ: AMD Ryzen 5",
+        "メモリ: 16GB",
+        "ディスプレイ: FHD+ (1920x1200)",
+        "OS: Windows 11 Pro",
+        "バッテリー駆動時間: 15.1時間",
+        "Wi-Fi: Wi-Fi 6E対応"
+      ]
+    }
+  }
+}
