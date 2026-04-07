@@ -1,138 +1,201 @@
 {
   "analysis": {
-    "productName": "UGREEN RGBゲーミングマイク 96kHz/24bit (モデル 65629)",
+    "productName": "UGREEN ゲーミングコンデンサーマイク",
     "parentAsin": "B0FG7DVV62",
-    "productDescription": "最大96kHz/24bitのハイレゾ音質に対応し、鮮やかなRGBライティングとノイズ抑制機能を搭載した高コストパフォーマンスなUSBコンデンサーマイク。",
+    "productDescription": "最大96kHz/24bitの高解像度収音とDSPチップによるノイズ低減機能を搭載したゲーミング向けコンデンサーマイク。RGBライティングとワンタッチミュートを備え、ゲーム実況や配信に最適です。",
     "productUsage": [
-      "ゲーム実況・ライブ配信（YouTube, Twitch, OBS）",
-      "ボイスチャット（Discord, Skype, LINE）",
-      "Web会議・テレワーク（Zoom, Teams, Google Meet）",
-      "PS4/PS5でのゲーム内ボイスチャット"
+      "ゲーム実況",
+      "YouTube配信",
+      "Web会議",
+      "ボイスチャット"
     ],
     "positivePoints": [
-      "3,000円以下の価格帯で最大96kHz/24bitの高解像度録音に対応",
-      "ワンタッチで操作できるミュートボタンとRGBライティング切り替え",
-      "ポップフィルター、ショックマウント、スタンドがすべて揃ったオールインワンセット",
-      "DSPチップ内蔵による環境ノイズ抑制機能",
-      "遅延ゼロで自分の声を確認できる3.5mmモニタリングジャック搭載"
+      "最大96kHz/24bitの高解像度収音に対応",
+      "DSPチップとANSによる効果的な環境ノイズ抑制",
+      "7つのモードから選べる鮮やかなRGBライティング",
+      "ワンタッチで即座に切り替え可能なミュート機能",
+      "防音カバーやショックマウントが付属するオールインワンセット"
     ],
     "negativePoints": [
-      "マイク本体に物理的なマイクゲイン（入力音量）調整ノブがない（PC/ソフト側での調整が必要）",
-      "Xboxシリーズには非対応",
-      "高感度ゆえに、スピーカーからの音を拾いやすくハウリングの注意が必要"
+      "Xboxには非対応",
+      "スピーカーとの併用時にハウリングの可能性があるため注意が必要",
+      "最適な音質を得るために口から20〜30cm離す必要があるなど配置にコツがいる"
     ],
     "useCases": [
-      "初めてのゲーム実況環境構築",
-      "テレワークでの通話品質向上",
-      "PS5での友人とのボイスチャット"
+      "自室でのPCゲーム実況プレイ",
+      "YouTubeやTwitchなどでのライブ配信",
+      "ZoomやSkypeなどを使ったリモートワークでのWeb会議",
+      "Discordでのチームメイトとのボイスチャット"
     ],
-    "userStories": [
-      {
-        "userType": "ゲーム配信初心者（学生）",
-        "scenario": "初めての実況動画作成",
-        "experience": "（推測）限られた予算の中で、見た目も良く音質も妥協したくないと思い購入。RGBライトがデスクの雰囲気を盛り上げてくれ、ポップフィルターも付属しているのですぐに本格的な録音が始められた。ノイズキャンセリングのおかげでキーボードの打鍵音が入りにくく、視聴者からも「声がクリア」と好評だった。",
-        "sentiment": "positive"
-      },
-      {
-        "userType": "在宅勤務の会社員",
-        "scenario": "Zoom会議での使用",
-        "experience": "（推測）PC内蔵マイクの音質が悪かったため導入。ワンタッチでミュートできる機能が会議中に非常に便利。相手に「声が聞き取りやすくなった」と言われ、仕事の効率も上がった気がする。ただ、本体で入力レベルを調整できないので、初期設定でWindowsの設定を開く必要があったのが少し手間だった。",
-        "sentiment": "mixed"
-      }
-    ],
-    "userImpression": "3,000円を切る価格ながら、配信や通話に必要な機能（高音質、ミュート、RGB、付属品）が全て揃っており、コストパフォーマンスが非常に高い製品。初心者や予算を抑えたいユーザーにとって強力な選択肢となる。",
+    "userStories": [],
+    "userImpression": "高解像度の音質とノイズキャンセリング機能を備えつつ、RGBライティングやワンタッチミュートなど配信者に便利な機能が充実しているマイクです。必要なアクセサリが全て揃ったセットとなっており、プラグアンドプレイで初心者でも扱いやすいと評価されています。",
     "sources": [
       {
-        "name": "UGREEN Official Site (General Product Info)",
-        "url": "https://www.ugreen.com/",
-        "credibility": "High"
-      },
-      {
-        "name": "Amazon Product Page Specifications",
+        "id": "src-amazon",
+        "name": "Amazon商品ページ",
         "url": "https://www.amazon.co.jp/dp/B0FG7DVV62",
-        "credibility": "High"
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-04-08",
+        "author": "UGREEN",
+        "conflictOfInterest": "disclosed",
+        "notes": "製品仕様、特徴、価格情報を確認"
       }
     ],
-    "lastInvestigated": "2026-01-28",
+    "claims": [
+      {
+        "claim": "最大96kHz/24bitの高解像度収音に対応し豊かな音質を提供",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-amazon"
+        ],
+        "crossChecked": false,
+        "notes": "メーカー公式仕様"
+      },
+      {
+        "claim": "DSPチップとANSによるノイズ抑制機能",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-amazon"
+        ],
+        "crossChecked": false,
+        "notes": "キーボード音や環境雑音を効果的に軽減"
+      }
+    ],
+    "lastInvestigated": "2026-04-08",
     "competitiveAnalysis": [
       {
-        "name": "TKGOU ArctisX USBマイク",
-        "asin": "B0B1CWKWZR",
-        "priceComparison": "ほぼ同価格帯（約3,100円）",
+        "name": "Amazonベーシック USBコンデンサーマイク",
+        "asin": "B082X44M1D",
+        "priceComparison": "対象商品より安い。しかし機能が非常にシンプルでRGBライティングやノイズ抑制機能がないため、機能性を求めるなら本商品の方が価値がある。",
         "featureComparison": [
-          "192kHz/24bit対応（UGREENは96kHz）",
-          "同じくワンタッチミュート搭載"
+          "共通点：USB接続のコンデンサーマイクであること。",
+          "相違点：対象商品はゲーミング向けのRGBライティングやDSPノイズキャンセリング、タッチミュートを搭載しているのに対し、Amazonベーシックは非常にシンプルな機能とデザインです。"
         ],
         "differentiators": [
-          "TKGOUはさらに高いサンプリングレートを謳うが、UGREENはDSPノイズ抑制を強調",
-          "デザインの好みで分かれる"
+          "UGREEN ゲーミングコンデンサーマイクの利点：RGBライティングでデスクの雰囲気を演出でき、ノイズキャンセリング機能やタッチミュートなど配信向け機能が充実している点。",
+          "Amazonベーシック USBコンデンサーマイクの利点：機能がシンプルで価格が安く、デスクで目立たない落ち着いたデザインである点。"
         ]
       },
       {
-        "name": "ZealSound USBマイク",
-        "asin": "B092JB6XR3",
-        "priceComparison": "少し高い（約3,600円）",
+        "name": "FIFINE AmpliGame A6V",
+        "asin": "B09QGNBB7D",
+        "priceComparison": "対象商品よりやや高い。定番モデルとしての安心感はあるが、本商品の方が価格が安く同等の機能を備えているためコスパが良い。",
         "featureComparison": [
-          "エコー機能搭載",
-          "ボリュームノブ搭載"
+          "共通点：ゲーミング向けのUSBコンデンサーマイクで、RGBライティング、ワンタッチミュートを搭載し、ポップフィルターが付属すること。",
+          "相違点：対象商品はDSPチップとANSによるノイズ抑制をアピールしていますが、FIFINE A6Vはより定番モデルとしての実績があります。"
         ],
         "differentiators": [
-          "ZealSoundは本体で音量調整とエコー調整が可能",
-          "UGREENはRGBライティングがあり、ゲーミング用途に特化"
+          "UGREEN ゲーミングコンデンサーマイクの利点：最大96kHz/24bitの高解像度収音と、DSPチップによるキーボード音や環境雑音のノイズ軽減機能を搭載している点。",
+          "FIFINE AmpliGame A6Vの利点：ゲーミングマイクの定番モデルとしてユーザーが多く、評価が定まっている点。"
         ]
       },
       {
-        "name": "エレコム ゲーミングマイク HS-MC14UBK",
-        "asin": "B0BTGLP2G5",
-        "priceComparison": "同価格帯（約3,300円）",
+        "name": "Comica EJoy Uni",
+        "asin": "B0D4Z8LWXC",
+        "priceComparison": "対象商品より高い。ブームアームが付属しているため、アームが必要なユーザーにはその価値がある。",
         "featureComparison": [
-          "タッチミュート、LED搭載",
-          "国内メーカー製"
+          "共通点：USB接続のゲーミングマイクで、RGBライティングやノイズ軽減、ワンタッチミュートを搭載していること。",
+          "相違点：対象商品は卓上スタンドと防音カバーのセットですが、Comica EJoy Uniはブームアームが付属するセットです。"
         ],
         "differentiators": [
-          "エレコムは安心の国内サポート",
-          "UGREENはスペック（96kHz/24bit）で勝る可能性がある（エレコムは詳細スペック非公表の場合が多い）"
+          "UGREEN ゲーミングコンデンサーマイクの利点：卓上に手軽に設置でき、価格が手頃な点。",
+          "Comica EJoy Uniの利点：ブームアームが付属しているため、デスクスペースを広く使え、口元へのマイクセッティングが自在に行える点。"
         ]
       },
       {
-        "name": "Faunow USBコンデンサーマイク",
-        "asin": "B09LHKBPSN",
-        "priceComparison": "非常に安い（約1,800円）",
+        "name": "FIFINE AmpliGame A8",
+        "asin": "B09Y1M3BZJ",
+        "priceComparison": "対象商品より高い。RGBライティングのカスタマイズ性を重視するならその価値はあるが、音質とノイズ抑制重視なら本商品の方がコスパが良い。",
         "featureComparison": [
-          "基本的な録音機能のみ",
-          "ミュートボタンなしのモデルもあり"
+          "共通点：ゲーミング向けのUSBコンデンサーマイクで、RGBライティングやタッチ式ミュートを搭載していること。",
+          "相違点：対象商品はノイズ低減機能を重視していますが、FIFINE A8はRGBの変換コントロール機能を備え、ライティングのカスタマイズ性が高いです。"
         ],
         "differentiators": [
-          "価格最優先ならFaunow",
-          "機能と使い勝手、音質を求めるならUGREEN"
+          "UGREEN ゲーミングコンデンサーマイクの利点：価格が安く、DSPチップによる環境雑音のノイズ軽減機能を搭載している点。",
+          "FIFINE AmpliGame A8の利点：RGBの変換コントロール機能があり、より細かくライティングを楽しめる点。"
+        ]
+      },
+      {
+        "name": "MAONO DM30 RGB",
+        "asin": "B0BYZFL8RJ",
+        "priceComparison": "対象商品より高い。専用ソフトウェアで詳細な設定ができる点に価値があるが、手軽さを求めるなら本商品が適している。",
+        "featureComparison": [
+          "共通点：USBコンデンサーマイクで、RGBライティングや単一指向性、プラグ＆プレイに対応していること。",
+          "相違点：対象商品はDSPチップによるノイズ抑制を搭載していますが、MAONO DM30は専用ソフトウェアでの詳細な設定が可能です。"
+        ],
+        "differentiators": [
+          "UGREEN ゲーミングコンデンサーマイクの利点：価格が手頃で、ソフトウェア不要でDSPノイズ軽減機能が働く点。",
+          "MAONO DM30 RGBの利点：専用ソフトウェアを使用して、マイクゲインやイコライザー、RGBライティングなどを細かくカスタマイズできる点。"
+        ]
+      },
+      {
+        "name": "Muchfox ゲーミングマイク",
+        "asin": "B0FLDGHT13",
+        "priceComparison": "対象商品より安い。非常に低価格だが、音質やノイズ抑制機能の面では本商品に劣る懸念がある。",
+        "featureComparison": [
+          "共通点：USB接続のゲーミングマイクで、アクティブノイズキャンセリングやRGBライトを搭載していること。",
+          "相違点：対象商品は最大96kHz/24bitの高解像度収音やDSPチップを搭載し基本スペックが高いですが、Muchfoxは非常に低価格なエントリーモデルです。"
+        ],
+        "differentiators": [
+          "UGREEN ゲーミングコンデンサーマイクの利点：高解像度収音対応とDSP内蔵により、よりクリアで高音質な録音環境が期待できる点。",
+          "Muchfox ゲーミングマイクの利点：価格が非常に安く、とりあえずゲーミングマイクを試してみたいという場合に導入しやすい点。"
         ]
       }
     ],
     "recommendation": {
       "targetUsers": [
-        "予算3,000円以下で高音質なマイクを探している人",
-        "初めてゲーム実況や配信を始める初心者",
-        "デスクをRGBライティングで飾りたいゲーマー",
-        "PS4/PS5で手軽にボイスチャットを楽しみたい人"
+        "手軽に高音質な配信環境を整えたいゲーム実況者",
+        "環境音やキーボードのタイピング音を軽減したい人",
+        "デスク周りをRGBライティングで彩りたいゲーマー",
+        "ドライバーインストール不要ですぐに使いたい初心者"
       ],
       "pros": [
-        "価格以上の高スペック（96kHz/24bit, DSP内蔵）",
-        "必要なアクセサリー（ポップガード、スタンド）が全て付属",
-        "ワンタッチミュートとモニタリング機能が便利"
+        "DSPチップとANSによる効果的な環境ノイズ軽減機能",
+        "最大96kHz/24bitの高解像度で豊かな音質の収音",
+        "ミュート状態が分かりやすいワンタッチミュートとRGBライティング",
+        "必要なアクセサリが揃ったオールインワンパッケージ"
       ],
       "cons": [
-        "マイク本体で入力ゲイン（音量）を調整できない",
-        "Xboxシリーズでは使用不可"
+        "Xboxには非対応",
+        "スピーカー併用時のハウリングへの注意が必要"
       ],
-      "score": 90,
-      "scoreRationale": "[基本点: 70]\n[加点: +12] (3000円以下で96kHz/24bit、DSP、全部入りセットという圧倒的なコストパフォーマンス)\n[加点: +5] (ワンタッチミュート、RGB、遅延なしモニタリングなど実用的な機能が充実)\n[加点: +2] (UGREENブランドの信頼性とビルドクオリティへの期待)\n[加点: +3] (この価格帯でRGBとハイレゾを両立させた独自性)\n[減点: -2] (本体にゲイン調整ノブがないため、微調整にはPC操作が必要)\n[合計: 90]"
+      "score": 83,
+      "scoreRationale": "[基本点: 70]\n[加点: +5] (最大96kHz/24bitの高解像度収音に対応)\n[加点: +5] (DSPチップとANSによるノイズ抑制機能を搭載)\n[加点: +3] (必要なアクセサリが全て揃ったオールインワンセットでコスパが良い)\n[合計: 83]"
     },
     "technicalSpecs": {
-      "driver": "Condenser (Cardioid)",
-      "connectivity": ["USB Type-C", "3.5mm Headphone Jack"],
-      "noiseCancel": "DSP Noise Reduction",
-      "dimensions": null,
-      "other": ["96kHz/24bit Sampling Rate", "RGB Lighting", "Touch Mute", "Plug & Play"]
+      "samplingRate": "最大96kHz/24bit",
+      "polarPattern": "単一指向性",
+      "interface": "USB (プラグ＆プレイ)",
+      "connectivity": "USB-C to USB-A (1.5mケーブル付属), 3.5mmオーディオ出力端子",
+      "lighting": "RGBライティング (7モード)",
+      "features": [
+        "DSP内蔵",
+        "ANSノイズ低減",
+        "ワンタッチミュート",
+        "リアルタイムモニタリング"
+      ],
+      "compatibility": [
+        "Windows",
+        "Mac",
+        "PS4/PS5",
+        "Switch",
+        "iPhone 15/16/17",
+        "iOSデバイス"
+      ],
+      "includedItems": [
+        "マイク本体",
+        "防音カバー (ポップフィルター)",
+        "1.5m USBケーブル",
+        "ショックマウント",
+        "マイクスタンド"
+      ],
+      "warranty": "24ヶ月メーカー保証",
+      "other": [
+        "Xbox非対応"
+      ]
     }
   }
 }
