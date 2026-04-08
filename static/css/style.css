@@ -150,6 +150,10 @@ a:hover {
     gap: var(--spacing-2xl);
     text-align: left;
   }
+
+  .hero-message {
+    flex: 1;
+  }
 }
 
 .hero-image {
@@ -190,10 +194,11 @@ a:hover {
 .hero p {
   font-size: 0.875rem;
   color: var(--color-text-muted);
-  max-width: 600px;
+  max-width: 680px;
 }
 
 .hero-message {
+  width: 100%;
   max-width: 680px;
 }
 
