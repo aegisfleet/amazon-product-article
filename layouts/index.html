@@ -5,9 +5,20 @@
             <img src="{{ `images/default-ogp.png` | relURL }}" alt="スマートな商品リサーチ" width="400" height="300"
                 fetchpriority="high">
         </div>
-        <p class="hero-description">
-            このサイトでは、<b>GoogleのJules</b>が調べた調査レポートを閲覧できます。各商品の特徴、使用方法を把握し、目的に応じた最適な商品の比較検討にお役立てください。なお、<u>AIエージェントの調査が間違っている可能性があること</u>に留意してください。
-        </p>
+        <div class="hero-message">
+            <p class="hero-description">
+                <b>高評価商品・価格帯・主要スペック</b>を先に一覧で確認できるため、候補を短時間で比較できます。気になる商品は検索やカテゴリ導線からすぐに深掘りでき、用途や予算に合う選択肢を選びやすくなります。
+            </p>
+            <details class="hero-note">
+                <summary>ご利用前の注意</summary>
+                <p>AIエージェントによる調査結果には誤りが含まれる可能性があります。最終的な購入判断は必ず公式情報をご確認ください。</p>
+            </details>
+            <div class="hero-cta-group" aria-label="最初の探索導線">
+                <a href="#pickup-grid" class="hero-cta-button" data-hero-entry="high-score">高評価から探す</a>
+                <a href="#search-input" class="hero-sub-link" data-hero-entry="search">検索から探す</a>
+                <a href="#category-group-select" class="hero-sub-link" data-hero-entry="category">カテゴリから探す</a>
+            </div>
+        </div>
     </div>
 </section>
 

@@ -193,9 +193,80 @@ a:hover {
   max-width: 600px;
 }
 
+.hero-message {
+  max-width: 680px;
+}
+
+.hero .hero-description {
+  color: var(--color-text-main);
+  margin-bottom: var(--spacing-sm);
+}
+
+.hero-note {
+  margin: 0;
+  color: var(--color-text-secondary);
+  font-size: 0.85rem;
+}
+
+.hero-note summary {
+  cursor: pointer;
+  font-weight: 600;
+  color: var(--color-text-main);
+  margin-bottom: var(--spacing-xs);
+}
+
+.hero-note p {
+  margin: var(--spacing-xs) 0 0;
+  font-size: 0.8rem;
+  color: var(--color-text-secondary);
+  max-width: none;
+}
+
+.hero-cta-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-sm);
+  margin-top: var(--spacing-md);
+  align-items: center;
+}
+
+.hero-cta-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.25rem;
+  border-radius: var(--radius-md);
+  background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+  color: #fff;
+  text-decoration: none;
+  font-weight: 700;
+  box-shadow: var(--shadow-md);
+}
+
+.hero-cta-button:hover {
+  transform: translateY(-1px);
+  opacity: 0.95;
+}
+
+.hero-sub-link {
+  color: var(--color-text-link);
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
 @media (min-width: 768px) {
   .hero p {
     font-size: 1.05rem;
+  }
+
+  .hero-note {
+    font-size: 0.9rem;
+  }
+
+  .hero-note p {
+    font-size: 0.85rem;
   }
 }
 
