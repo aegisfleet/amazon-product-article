@@ -14,6 +14,17 @@
 {{- $trackingCategory = .Params.category -}}
 {{- end -}}
 {{- $priceBucket := partial "utils-price-bucket.html" .Params.price -}}
+{{- $availabilityText := lower (.Params.availability | default "") -}}
+{{- $hasStockHint := or (in $availabilityText "在庫あり") (in $availabilityText "通常") (in $availabilityText "残り") (in $availabilityText "在庫") -}}
+{{- $primaryCtaText := "3分で要点を見る（レビュー）" -}}
+{{- $ctaHelperText := "価格推移・注意点・向いている人を3分で確認できます。" -}}
+{{- if .Params.savings_percentage -}}
+{{- $primaryCtaText = printf "%s%%OFFを確認" .Params.savings_percentage -}}
+{{- $ctaHelperText = "割引率・実質価格・購入前の注意点をまとめて確認できます。" -}}
+{{- else if $hasStockHint -}}
+{{- $primaryCtaText = "在庫・価格をチェック" -}}
+{{- $ctaHelperText = "最新の在庫状況と価格、ポイント還元の有無を確認できます。" -}}
+{{- end -}}
 <article class="card" data-price="{{ $priceRaw }}" data-score="{{ .Params.score | default 0 }}"
     data-date="{{ $dateRaw }}">
     <div class="card-image">
@@ -98,14 +109,24 @@
         </div>
         <div class="card-footer">
             <span class="article-meta">{{- with .Params.last_investigated -}}{{ time . | dateFormat "2006年01月02日" }}{{- else -}}{{ .Date.Format "2006年01月02日" }}{{- end -}}</span>
-            {{- if .Params.affiliate_url -}}
-            <a href="{{ .Params.affiliate_url }}" class="btn-amazon-small" target="_blank" rel="noopener noreferrer"
-                data-track-product="1" data-asin="{{ .Params.asin }}" data-category="{{ $trackingCategory }}"
-                data-price-bucket="{{ $priceBucket }}" data-price="{{ .Params.price }}">🛒
-                Amazonで見る</a>
-            {{- else -}}
-            <a href="{{ .RelPermalink }}" class="read-more">レビューを読む →</a>
-            {{- end -}}
+            <div class="card-footer-cta">
+                <p class="card-cta-note">{{ $ctaHelperText }}</p>
+                <div class="card-cta-actions">
+                    {{- if .Params.affiliate_url -}}
+                    <a href="{{ .Params.affiliate_url }}" class="btn-amazon-small" target="_blank" rel="noopener noreferrer"
+                        data-track-product="1" data-asin="{{ .Params.asin }}" data-category="{{ $trackingCategory }}"
+                        data-price-bucket="{{ $priceBucket }}" data-price="{{ .Params.price }}"><span aria-hidden="true">🛒</span>
+                        {{ $primaryCtaText }}</a>
+                    <a href="{{ .RelPermalink }}" class="btn-internal-small" data-track-product="1" data-asin="{{ .Params.asin }}"
+                        data-category="{{ $trackingCategory }}" data-price-bucket="{{ $priceBucket }}"
+                        data-price="{{ .Params.price }}">3分で要点を見る</a>
+                    {{- else -}}
+                    <a href="{{ .RelPermalink }}" class="btn-internal-small" data-track-product="1" data-asin="{{ .Params.asin }}"
+                        data-category="{{ $trackingCategory }}" data-price-bucket="{{ $priceBucket }}"
+                        data-price="{{ .Params.price }}">{{ $primaryCtaText }}</a>
+                    {{- end -}}
+                </div>
+            </div>
         </div>
     </div>
 </article>
