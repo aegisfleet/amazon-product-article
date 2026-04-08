@@ -43,38 +43,61 @@ export class CreatorsAPICache {
    */
   private load(): void {
     try {
-      if (fs.existsSync(this.cachePath)) {
-        const rawData = fs.readFileSync(this.cachePath, 'utf-8');
-        const parsed = JSON.parse(rawData) as Record<string, unknown>;
-
-        // Migration check: if old format (without status), assume valid
-        this.cache = {};
-        for (const key in parsed) {
-          if (Object.hasOwn(parsed, key)) {
-            const value = parsed[key];
-            const entry = value as Partial<CacheEntry> & Record<string, unknown>;
-            if (entry && typeof entry === 'object' && !entry.status) {
-              this.cache[key] = {
-                data: (entry.data as ProductDetail | null) || null,
-                timestamp: typeof entry.timestamp === 'number' ? entry.timestamp : Date.now(),
-                status: 'valid',
-              };
-            } else if (entry?.status) {
-              this.cache[key] = entry as CacheEntry;
-            }
-          }
-        }
-
-        this.logger.info(`Creators API Cache loaded: ${Object.keys(this.cache).length} entries`);
-      } else {
-        this.ensureDirectory();
-        this.cache = {};
-        this.logger.info('Creators API Cache initialized (new)');
+      if (!fs.existsSync(this.cachePath)) {
+        this.initializeNewCache();
+        return;
       }
+
+      const rawData = fs.readFileSync(this.cachePath, 'utf-8');
+      const parsed = JSON.parse(rawData) as Record<string, unknown>;
+      this.cache = this.migrateCacheEntries(parsed);
+
+      this.logger.info(`Creators API Cache loaded: ${Object.keys(this.cache).length} entries`);
     } catch (error) {
       this.logger.warn('Failed to load Creators API Cache:', error);
       this.cache = {}; // Start fresh on error
     }
+  }
+
+  /**
+   * Initialize a new cache if file doesn't exist
+   */
+  private initializeNewCache(): void {
+    this.ensureDirectory();
+    this.cache = {};
+    this.logger.info('Creators API Cache initialized (new)');
+  }
+
+  /**
+   * Migrate and parse raw cache object into CacheStore
+   */
+  private migrateCacheEntries(parsed: Record<string, unknown>): CacheStore {
+    const cache: CacheStore = {};
+    for (const key in parsed) {
+      if (!Object.hasOwn(parsed, key)) continue;
+
+      const entry = parsed[key] as Partial<CacheEntry> & Record<string, unknown>;
+      if (!entry || typeof entry !== 'object') continue;
+
+      cache[key] = this.normalizeCacheEntry(entry);
+    }
+    return cache;
+  }
+
+  /**
+   * Normalize an entry, providing defaults for missing status (migration)
+   */
+  private normalizeCacheEntry(entry: Partial<CacheEntry> & Record<string, unknown>): CacheEntry {
+    if (entry.status) {
+      return entry as CacheEntry;
+    }
+
+    // Migration logic for old format (without status)
+    return {
+      data: (entry.data as ProductDetail | null) || null,
+      timestamp: typeof entry.timestamp === 'number' ? entry.timestamp : Date.now(),
+      status: 'valid',
+    };
   }
 
   /**
