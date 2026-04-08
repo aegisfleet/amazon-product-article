@@ -49,16 +49,19 @@ export class CreatorsAPICache {
 
         // Migration check: if old format (without status), assume valid
         this.cache = {};
-        for (const [key, value] of Object.entries(parsed)) {
-          const entry = value as Partial<CacheEntry> & Record<string, unknown>;
-          if (entry && typeof entry === 'object' && !entry.status) {
-            this.cache[key] = {
-              data: (entry.data as ProductDetail | null) || null,
-              timestamp: typeof entry.timestamp === 'number' ? entry.timestamp : Date.now(),
-              status: 'valid',
-            };
-          } else if (entry?.status) {
-            this.cache[key] = entry as CacheEntry;
+        for (const key in parsed) {
+          if (Object.hasOwn(parsed, key)) {
+            const value = parsed[key];
+            const entry = value as Partial<CacheEntry> & Record<string, unknown>;
+            if (entry && typeof entry === 'object' && !entry.status) {
+              this.cache[key] = {
+                data: (entry.data as ProductDetail | null) || null,
+                timestamp: typeof entry.timestamp === 'number' ? entry.timestamp : Date.now(),
+                status: 'valid',
+              };
+            } else if (entry?.status) {
+              this.cache[key] = entry as CacheEntry;
+            }
           }
         }
 
