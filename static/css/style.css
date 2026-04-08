@@ -2096,7 +2096,11 @@ a.competitor-preview:hover {
   color: white !important;
   font-weight: 700;
   border-color: var(--color-primary) !important;
+  align-self: flex-start;
+  margin-top: var(--spacing-xs);
+  margin-bottom: var(--spacing-xs);
 }
+
 
 .category-view-all:hover {
   background: var(--color-primary-dark) !important;
