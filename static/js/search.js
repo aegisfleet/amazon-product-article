@@ -36,6 +36,37 @@ function debounce(func, wait) {
     };
 }
 
+function normalizeComparisonTagsFromText(rawSpecs) {
+    if (!rawSpecs || typeof rawSpecs !== 'string') return [];
+
+    const specText = rawSpecs.toLowerCase();
+    const tags = [];
+
+    const weightMatch = specText.match(/weight:([^\s]+)/);
+    const weightText = weightMatch ? weightMatch[1] : '';
+    const weightNumber = Number.parseFloat(weightText.replace(/[^\d.]/g, ''));
+    if (weightText.includes('軽') || weightText.includes('light') || (Number.isFinite(weightNumber) && weightNumber > 0 && weightNumber <= 1000)) {
+        tags.push('軽量');
+    }
+
+    if (['防水', 'ipx', 'ip6', 'ip5', 'waterproof'].some(keyword => specText.includes(keyword))) {
+        tags.push('防水');
+    }
+
+    const batteryMatch = specText.match(/battery_capacity:([^\s]+)/);
+    const batteryText = batteryMatch ? batteryMatch[1] : '';
+    if (
+        batteryText.includes('長') ||
+        batteryText.includes('大') ||
+        batteryText.includes('mah') ||
+        ['長時間', 'ロング', '連続', '駆動'].some(keyword => specText.includes(keyword))
+    ) {
+        tags.push('長時間バッテリー');
+    }
+
+    return [...new Set(tags)].slice(0, 3);
+}
+
 function rerankResults(results, query) {
     if (!Array.isArray(results) || results.length === 0) return [];
 
@@ -565,9 +596,11 @@ document.addEventListener('DOMContentLoaded', function () {
         uniqueResults.slice(0, 20).forEach(result => {
             const item = result.item;
             const titleText = item.title;
+            const shortTitle = titleText.length > 30 ? `${titleText.slice(0, 30)}...` : titleText;
             const summaryText = item.summary || '';
             const imageSrc = item.image;
             const priceText = item.price;
+            const comparisonTags = normalizeComparisonTagsFromText(item.specs);
 
             let permalink = item.permalink || '';
             if (permalink && !permalink.startsWith('http') && !permalink.startsWith('/')) {
@@ -578,6 +611,11 @@ document.addEventListener('DOMContentLoaded', function () {
             const resultLink = document.createElement('a');
             resultLink.href = permalink;
             resultLink.className = 'search-result-item';
+            resultLink.dataset.trackProduct = '1';
+            resultLink.dataset.asin = typeof item.asin === 'string' ? item.asin : '';
+            resultLink.dataset.category = Array.isArray(item.categories) && item.categories.length > 0 ? String(item.categories[0]) : 'unknown';
+            resultLink.dataset.priceBucket = 'unknown';
+            resultLink.dataset.hasComparisonTags = comparisonTags.length > 0 ? '1' : '0';
 
             // Thumbnail
             if (imageSrc) {
@@ -608,7 +646,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
             const titleSpan = document.createElement('span');
             titleSpan.className = 'result-title';
-            titleSpan.textContent = titleText;
+            titleSpan.textContent = shortTitle;
             headerDiv.appendChild(titleSpan);
 
             // Metrics
@@ -644,18 +682,16 @@ document.addEventListener('DOMContentLoaded', function () {
             summarySpan.textContent = summaryText;
             contentDiv.appendChild(summarySpan);
 
-            // Categories
-            const categories = item.categories || [];
-            if (categories.length > 0) {
-                const categoriesDiv = document.createElement('div');
-                categoriesDiv.className = 'result-categories';
-                categories.forEach(cat => {
-                    const catTag = document.createElement('span');
-                    catTag.className = 'category-tag';
-                    catTag.textContent = cat;
-                    categoriesDiv.appendChild(catTag);
+            if (comparisonTags.length > 0) {
+                const tagsDiv = document.createElement('div');
+                tagsDiv.className = 'result-categories';
+                comparisonTags.forEach(tag => {
+                    const tagSpan = document.createElement('span');
+                    tagSpan.className = 'category-tag';
+                    tagSpan.textContent = tag;
+                    tagsDiv.appendChild(tagSpan);
                 });
-                contentDiv.appendChild(categoriesDiv);
+                contentDiv.appendChild(tagsDiv);
             }
 
             resultLink.appendChild(contentDiv);

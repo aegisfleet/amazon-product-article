@@ -87,59 +87,48 @@ function createPickupCardSpecs(item) {
     container.className = 'card-specs';
 
     if (!item.specs || typeof item.specs !== 'object') return container;
-
-    const isZeroValue = (val) => {
-        if (typeof val !== 'string' && typeof val !== 'number') return false;
-        return /^0+(\.0+)?\s*[a-z]*$/i.test(String(val).trim());
-    };
-
-    const specMap = [
-        { key: 'os', label: 'OS: ' },
-        { key: 'cpu', label: 'CPU: ' },
-        { key: 'ram', label: 'RAM: ' },
-        { key: 'storage', label: 'ROM: ' },
-        { key: 'display_size', label: '画面: ' },
-        { key: 'battery_capacity', label: 'バッテリー: ' },
-        { key: 'weight', label: '重量: ' },
-        { key: 'quantity', label: '内容量: ' },
-        { key: 'content', label: '内容量: ' },
-        { key: 'count', label: '個数: ' },
-        { key: 'capacity', label: '容量: ' }
-    ];
-
-    const skipZeroCheckKeys = new Set(["os", "cpu", "ram", "storage", "display_size", "battery_capacity"]);
-
-    specMap.forEach(spec => {
-        const val = item.specs[spec.key];
-        if (val) {
-            if (!skipZeroCheckKeys.has(spec.key) && isZeroValue(val)) {
-                return;
-            }
-            const span = document.createElement('span');
-            span.className = 'card-spec-tag';
-            span.textContent = spec.label + val;
-            container.appendChild(span);
-        }
+    const comparisonTags = normalizeComparisonTags(item.specs);
+    comparisonTags.forEach(tag => {
+        const span = document.createElement('span');
+        span.className = 'card-spec-tag';
+        span.textContent = tag;
+        container.appendChild(span);
     });
 
-    const material = item.specs.material;
-    if (material && typeof material === 'string') {
-        const span = document.createElement('span');
-        span.className = 'card-spec-tag';
-        span.textContent = '素材: ' + material;
-        container.appendChild(span);
-    }
-
-    const { height: h, width: w, depth: d } = item.specs;
-    const parts = [h, w, d].filter(Boolean).filter(val => !isZeroValue(val));
-    if (parts.length > 0) {
-        const span = document.createElement('span');
-        span.className = 'card-spec-tag';
-        span.textContent = 'サイズ: ' + parts.join(' × ');
-        container.appendChild(span);
-    }
-
     return container;
+}
+
+function normalizeComparisonTags(specs) {
+    if (!specs || typeof specs !== 'object') return [];
+
+    const tags = [];
+    const allValues = Object.values(specs)
+        .flatMap(value => Array.isArray(value) ? value : [value])
+        .filter(value => value != null && typeof value !== 'object')
+        .map(value => String(value).toLowerCase());
+    const fullText = allValues.join(' ');
+
+    const weightText = specs.weight ? String(specs.weight).toLowerCase() : '';
+    const weightNumber = Number.parseFloat(weightText.replace(/[^\d.]/g, ''));
+    if (weightText.includes('軽') || weightText.includes('light') || (Number.isFinite(weightNumber) && weightNumber > 0 && weightNumber <= 1000)) {
+        tags.push('軽量');
+    }
+
+    if (['防水', 'ipx', 'ip6', 'ip5', 'waterproof'].some(keyword => fullText.includes(keyword))) {
+        tags.push('防水');
+    }
+
+    const batteryText = specs.battery_capacity ? String(specs.battery_capacity).toLowerCase() : '';
+    if (
+        batteryText.includes('長') ||
+        batteryText.includes('大') ||
+        batteryText.includes('mah') ||
+        ['長時間', 'ロング', '連続', '駆動'].some(keyword => fullText.includes(keyword))
+    ) {
+        tags.push('長時間バッテリー');
+    }
+
+    return [...new Set(tags)].slice(0, 3);
 }
 
 function createPickupCardMeta(score, scoreClass, price) {
@@ -169,7 +158,7 @@ function renderPickupItems(items, pickupGrid) {
         if (!safeHref) return;
 
         const title = typeof item.title === 'string' ? item.title : '';
-        const shortTitle = title.length > 30 ? `${title.slice(0, 30)}...` : title;
+        const shortTitle = title.length > 24 ? `${title.slice(0, 24)}...` : title;
         const score = Number(item.score || 0);
         const scoreClass = getScoreClass(score);
         const price = typeof item.price === 'string' ? item.price : '';
@@ -185,6 +174,8 @@ function renderPickupItems(items, pickupGrid) {
         cardLink.dataset.asin = typeof item.asin === 'string' ? item.asin : '';
         cardLink.dataset.category = typeof item.category === 'string' ? item.category : 'unknown';
         cardLink.dataset.priceBucket = typeof item.priceBucket === 'string' ? item.priceBucket : 'unknown';
+        const comparisonTags = normalizeComparisonTags(item.specs);
+        cardLink.dataset.hasComparisonTags = comparisonTags.length > 0 ? '1' : '0';
 
         const imageContainer = createPickupCardImage(safeImageSrc, shortTitle);
         const contentContainer = document.createElement('div');

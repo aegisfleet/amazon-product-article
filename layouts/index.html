@@ -73,9 +73,12 @@
             {{- if .Params.categories -}}{{- $pickupCategory = index .Params.categories 0 -}}{{- else if
             .Params.category -}}{{- $pickupCategory = .Params.category -}}{{- end -}}
             {{- $pickupPriceBucket := partial "utils-price-bucket.html" .Params.price -}}
+            {{- $comparisonTags := partial "product-spec-tags.html" (dict "specs" .Params.specs "tagClass" "card-spec-tag" "mode" "comparison") -}}
+            {{- $hasComparisonTags := gt (len (trim $comparisonTags " \n\t")) 0 -}}
             <a href="{{ .RelPermalink }}" class="pickup-card" data-score="{{ .Params.score }}"
                 data-price="{{ .Params.price }}" data-track-product="1" data-asin="{{ .Params.asin }}"
-                data-category="{{ $pickupCategory }}" data-price-bucket="{{ $pickupPriceBucket }}">
+                data-category="{{ $pickupCategory }}" data-price-bucket="{{ $pickupPriceBucket }}"
+                data-has-comparison-tags="{{ if $hasComparisonTags }}1{{ else }}0{{ end }}">
                 <div class="pickup-card-image">
                     {{- if .Params.images -}}
                     <img src="{{ index .Params.images 0 }}" alt="{{ .Title }}" loading="lazy" decoding="async">
@@ -84,10 +87,10 @@
                     {{- end -}}
                 </div>
                 <div class="pickup-card-content">
-                    <p class="pickup-card-title">{{ .Title | truncate 30 }}</p>
-                    {{- if .Params.specs -}}
+                    <p class="pickup-card-title">{{ .Title | truncate 24 }}</p>
+                    {{- if $hasComparisonTags -}}
                     <div class="card-specs">
-                        {{- partial "product-spec-tags.html" (dict "specs" .Params.specs "tagClass" "card-spec-tag") -}}
+                        {{- $comparisonTags | safeHTML -}}
                     </div>
                     {{- end -}}
                     <div class="pickup-card-meta">

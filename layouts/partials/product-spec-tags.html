@@ -1,6 +1,46 @@
 {{- $specs := .specs -}}
 {{- $tagClass := .tagClass | default "card-spec-tag" -}}
+{{- $mode := .mode | default "full" -}}
 {{- with $specs -}}
+{{- if eq $mode "comparison" -}}
+{{- $comparisonTags := slice -}}
+{{- $fullTextParts := slice -}}
+{{- range $key, $value := . -}}
+{{- if reflect.IsSlice $value -}}
+{{- $fullTextParts = $fullTextParts | append (printf "%s" (delimit $value " ")) -}}
+{{- else if not (reflect.IsMap $value) -}}
+{{- $fullTextParts = $fullTextParts | append (printf "%v" $value) -}}
+{{- end -}}
+{{- end -}}
+{{- $fullText := lower (delimit $fullTextParts " ") -}}
+
+{{- with .weight -}}
+{{- $weightText := lower (printf "%v" .) -}}
+{{- $weightNumeric := float (replaceRE `[^0-9.]` "" $weightText) -}}
+{{- if or (in $weightText "軽") (in $weightText "light") (and (gt $weightNumeric 0) (le $weightNumeric 1000)) -}}
+{{- $comparisonTags = $comparisonTags | append "軽量" -}}
+{{- end -}}
+{{- end -}}
+
+{{- if or (in $fullText "防水") (in $fullText "ipx") (in $fullText "ip6") (in $fullText "ip5") (in $fullText "waterproof") -}}
+{{- $comparisonTags = $comparisonTags | append "防水" -}}
+{{- end -}}
+
+{{- with .battery_capacity -}}
+{{- $batteryText := lower (printf "%v" .) -}}
+{{- if or (in $batteryText "長") (in $batteryText "大") (in $batteryText "mah") -}}
+{{- $comparisonTags = $comparisonTags | append "長時間バッテリー" -}}
+{{- end -}}
+{{- end -}}
+{{- if and (not (in $comparisonTags "長時間バッテリー")) (or (in $fullText "長時間") (in $fullText "ロング") (in $fullText "連続") (in $fullText "駆動")) -}}
+{{- $comparisonTags = $comparisonTags | append "長時間バッテリー" -}}
+{{- end -}}
+
+{{- $comparisonTags = first 3 ($comparisonTags | uniq) -}}
+{{- range $comparisonTags -}}
+<span class="{{- $tagClass -}}">{{ . }}</span>
+{{- end -}}
+{{- else -}}
 {{- with .os }}{{- if ne . "不明" }}<span class="{{- $tagClass -}}">OS: {{ . }}</span>{{- end -}}{{ end -}}
 {{- $cpu := .processor | default .cpu -}}
 {{- with $cpu -}}{{- if ne . "不明" }}<span class="{{- $tagClass -}}">プロセッサ: {{ . }}</span>{{- end -}}{{ end -}}
@@ -46,5 +86,6 @@
 {{- with .depth }}{{- if and (ne . "不明") (not (findRE `^0+(\.0+)?\s*[a-zA-Z]*$` .)) }}{{- $sizeParts = $sizeParts | append . -}}{{- end -}}{{- end -}}
 {{- if gt (len $sizeParts) 0 -}}
 <span class="{{- $tagClass -}}">サイズ: {{ delimit $sizeParts " × " }}</span>
+{{- end -}}
 {{- end -}}
 {{- end -}}
