@@ -1,0 +1,116 @@
+{
+  "analysis": {
+    "productName": "Tooblite 蓄光スティック",
+    "parentAsin": "B0978MX85V",
+    "productDescription": "光を吸収して最大12時間発光する、電源不要の蓄光スティック。キーホルダーなどに取り付けて、暗闇での目印やアウトドア用途で活躍します。",
+    "productUsage": [
+      "夜間や暗所での目印",
+      "アウトドア・キャンプ時のアクセサリー",
+      "鍵などの紛失防止用キーホルダー"
+    ],
+    "positivePoints": [
+      "電池不要で繰り返し使用可能",
+      "最大12時間発光し、長時間の夜間使用に対応",
+      "軽量でコンパクトなため持ち運びが容易"
+    ],
+    "negativePoints": [
+      "太陽光やライトの強い光をあてる必要がある",
+      "化学発光（ケミカルライト）のような強い光ではない"
+    ],
+    "useCases": [
+      "キャンプ時のテントの目印",
+      "夜間のジョギングやウォーキングでの安全確保",
+      "停電時の非常用目印",
+      "カバンや鍵に取り付けての日常使い"
+    ],
+    "userStories": [],
+    "userImpression": "電池不要で繰り返し使える手軽さと、最大12時間という発光時間の長さが特徴の蓄光スティック。劇的な明るさはないものの、暗所での目印としては十分な性能を発揮するエコなアイテムです。",
+    "sources": [
+      {
+        "id": "src-amazon-detail",
+        "name": "Amazon商品詳細ページ: 蓄光スティック 【グロースティックGLOW STICK】3インチ 最大12時間発光 Tooblite",
+        "url": "https://www.amazon.co.jp/dp/B0978MX85V",
+        "tier": "medium",
+        "evidenceType": "primary",
+        "publishedAt": "2026-04-08",
+        "author": "TRYL / SPーSHOP",
+        "conflictOfInterest": "possible",
+        "notes": "商品仕様として「最大12時間発光」が記載されている。"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "最大12時間発光する",
+        "category": "quality",
+        "confidence": "medium",
+        "supportingSourceIds": [
+          "src-amazon-detail"
+        ],
+        "crossChecked": false,
+        "notes": "商品仕様に記載されている。ただし、徐々に暗くなる蓄光の性質上、実用的な明るさがどの程度続くかは環境による。"
+      }
+    ],
+    "lastInvestigated": "2026-04-08",
+    "competitiveAnalysis": [
+      {
+        "name": "STAR(スター) 蓄光 アクセサリー ナイグロー",
+        "asin": "B01B8F150E",
+        "priceComparison": "ナイグローは800円と本商品（1800円）の半額以下であり、価格的な優位性が高い。一方で、ナイグローも10時間以上の発光を謳っており性能は拮抗している。",
+        "featureComparison": [
+          "共通点：レアアースクリスタル等の素材を用いた蓄光式デバイスで、10時間以上の発光が可能。",
+          "相違点：Toobliteは米国製でサイズが3インチ(75mm)・プラスチック製だが、ナイグローはアクリルハウジングを採用しスクラッチに強い設計。"
+        ],
+        "differentiators": [
+          "Toobliteの利点：シンプルなスティック形状と最大12時間という少し長めの公称発光時間。",
+          "STAR(スター) ナイグローの利点：アクリル製で傷に強く、カラーバリエーションがあり、かつ価格が安い点。"
+        ]
+      },
+      {
+        "name": "NASA WESTERN SADDLE KEY RING GLOWスティック",
+        "asin": "B0CPPJ1DFV",
+        "priceComparison": "980円とTooblite（1800円）より安価である。",
+        "featureComparison": [
+          "共通点：蓄光素材を用いたスティック形状のキーホルダー。",
+          "相違点：本商品はサイズが80mm（Toobliteは75mm）であり、デザインやカラー（ホワイト）が異なる。"
+        ],
+        "differentiators": [
+          "Toobliteの利点：公称で最大12時間の長寿命発光をアピールしている。",
+          "NASA WESTERN GLOWスティックの利点：安価でありながら少し大きめ（80mm）で目立ちやすい。"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "エコで電池交換が不要な目印を探している人",
+        "キャンプやアウトドアを頻繁に楽しむ人"
+      ],
+      "pros": [
+        "電池が不要",
+        "繰り返し使える",
+        "コンパクトで軽量"
+      ],
+      "cons": [
+        "ケミカルライトのような強い光源としては使えない",
+        "事前の光の蓄積が必須",
+        "競合に比べてやや高価"
+      ],
+      "score": 65,
+      "scoreRationale": "[基本点: 70]\n[加点: +5] (電池不要で最大12時間発光するエコな仕様)\n[減点: -10] (類似スペックの競合他社製品と比較して価格が高い)\n[合計: 65]"
+    },
+    "technicalSpecs": {
+      "dimensions": {
+        "height": "75mm",
+        "width": "16mm",
+        "depth": "16mm"
+      },
+      "weight": "不明",
+      "capacity": "1本",
+      "material": "プラスチック",
+      "origin": "アメリカ合衆国",
+      "other": [
+        "最大12時間発光",
+        "サイズ: 75mm"
+      ]
+    }
+  }
+}
