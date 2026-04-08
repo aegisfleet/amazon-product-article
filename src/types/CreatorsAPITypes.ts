@@ -132,6 +132,9 @@ export interface CreatorsAPIItem {
         displayValue: number;
         type: string;
       };
+      releaseDate?: {
+        displayValue: string;
+      };
       [key: string]: unknown;
     };
     externalIds?: {

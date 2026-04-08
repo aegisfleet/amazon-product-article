@@ -674,8 +674,7 @@ export class CreatorsAPIClient {
       manufacturer: itemInfo?.byLineInfo?.manufacturer?.displayValue,
       model: itemInfo?.manufactureInfo?.model?.displayValue,
       releaseDate:
-        (itemInfo?.productInfo as any)?.releaseDate?.displayValue ||
-        itemInfo?.contentInfo?.publicationDate?.displayValue,
+        itemInfo?.productInfo?.releaseDate?.displayValue || itemInfo?.contentInfo?.publicationDate?.displayValue,
     };
   }
 
