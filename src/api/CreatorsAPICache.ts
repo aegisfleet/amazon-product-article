@@ -50,7 +50,7 @@ export class CreatorsAPICache {
         // Migration check: if old format (without status), assume valid
         this.cache = {};
         for (const key in parsed) {
-          if (Object.prototype.hasOwnProperty.call(parsed, key)) {
+          if (Object.hasOwn(parsed, key)) {
             const value = parsed[key];
             const entry = value as Partial<CacheEntry> & Record<string, unknown>;
             if (entry && typeof entry === 'object' && !entry.status) {
