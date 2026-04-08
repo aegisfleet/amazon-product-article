@@ -1360,8 +1360,7 @@ ${recommendationMessage}`;
     if (metadata.score) lines.push(`score: ${metadata.score}`);
     if (metadata.is_amazon_direct !== undefined) lines.push(`is_amazon_direct: ${metadata.is_amazon_direct}`);
     if (metadata.model) lines.push(`model: "${this.escapeForFrontMatter(metadata.model)}"`);
-    if (metadata.releaseDate)
-      lines.push(`release_date: "${this.escapeForFrontMatter(metadata.releaseDate)}"`);
+    if (metadata.releaseDate) lines.push(`release_date: "${this.escapeForFrontMatter(metadata.releaseDate)}"`);
     if (metadata.availability) lines.push(`availability: "${this.escapeForFrontMatter(metadata.availability)}"`);
     if (metadata.loyalty_points !== undefined) lines.push(`loyalty_points: ${metadata.loyalty_points}`);
     if (metadata.savings_percentage !== undefined) lines.push(`savings_percentage: ${metadata.savings_percentage}`);
