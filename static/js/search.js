@@ -64,6 +64,25 @@ function normalizeComparisonTagsFromText(rawSpecs) {
         tags.push('長時間バッテリー');
     }
 
+    const displayMatch = specText.match(/display_size:([^\s]+)/);
+    const displayText = displayMatch ? displayMatch[1] : '';
+    const displayNumber = Number.parseFloat(displayText.replace(/[^\d.]/g, ''));
+    if (Number.isFinite(displayNumber) && displayNumber >= 6.5) {
+        tags.push('大画面');
+    }
+
+    const storageMatch = specText.match(/storage:([^\s]+)/);
+    const storageText = storageMatch ? storageMatch[1] : '';
+    if (['1tb', '1000', '512', '256'].some(keyword => storageText.includes(keyword))) {
+        tags.push('大容量ストレージ');
+    }
+
+    const cpuMatch = specText.match(/(?:processor|cpu):([^\s]+)/);
+    const cpuText = cpuMatch ? cpuMatch[1] : '';
+    if (['snapdragon8', 'ryzen7', 'ryzen9', 'corei7', 'corei9', 'm1', 'm2', 'm3', 'm4'].some(keyword => cpuText.replaceAll(/\s+/g, '').includes(keyword))) {
+        tags.push('高性能CPU');
+    }
+
     return [...new Set(tags)].slice(0, 3);
 }
 
@@ -682,15 +701,25 @@ document.addEventListener('DOMContentLoaded', function () {
             summarySpan.textContent = summaryText;
             contentDiv.appendChild(summarySpan);
 
-            if (comparisonTags.length > 0) {
+            const categories = item.categories || [];
+            if (categories.length > 0 || comparisonTags.length > 0) {
                 const tagsDiv = document.createElement('div');
                 tagsDiv.className = 'result-categories';
+
+                categories.forEach(cat => {
+                    const catSpan = document.createElement('span');
+                    catSpan.className = 'category-tag';
+                    catSpan.textContent = cat;
+                    tagsDiv.appendChild(catSpan);
+                });
+
                 comparisonTags.forEach(tag => {
                     const tagSpan = document.createElement('span');
                     tagSpan.className = 'category-tag';
                     tagSpan.textContent = tag;
                     tagsDiv.appendChild(tagSpan);
                 });
+
                 contentDiv.appendChild(tagsDiv);
             }
 

@@ -128,6 +128,22 @@ function normalizeComparisonTags(specs) {
         tags.push('長時間バッテリー');
     }
 
+    const displayText = specs.display_size ? String(specs.display_size).toLowerCase() : '';
+    const displayNumber = Number.parseFloat(displayText.replace(/[^\d.]/g, ''));
+    if (Number.isFinite(displayNumber) && displayNumber >= 6.5) {
+        tags.push('大画面');
+    }
+
+    const storageText = specs.storage ? String(specs.storage).toLowerCase() : '';
+    if (['1tb', '1000', '512', '256'].some(keyword => storageText.includes(keyword))) {
+        tags.push('大容量ストレージ');
+    }
+
+    const cpuText = specs.processor || specs.cpu ? String(specs.processor || specs.cpu).toLowerCase() : '';
+    if (['snapdragon 8', 'ryzen 7', 'ryzen 9', 'core i7', 'core i9', 'm1', 'm2', 'm3', 'm4'].some(keyword => cpuText.includes(keyword))) {
+        tags.push('高性能CPU');
+    }
+
     return [...new Set(tags)].slice(0, 3);
 }
 

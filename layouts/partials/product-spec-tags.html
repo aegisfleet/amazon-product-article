@@ -36,6 +36,26 @@
 {{- $comparisonTags = $comparisonTags | append "長時間バッテリー" -}}
 {{- end -}}
 
+{{- with .display_size -}}
+{{- $displayText := lower (printf "%v" .) -}}
+{{- $displayNumeric := float (replaceRE `[^0-9.]` "" $displayText) -}}
+{{- if and (gt $displayNumeric 0) (ge $displayNumeric 6.5) -}}
+{{- $comparisonTags = $comparisonTags | append "大画面" -}}
+{{- end -}}
+{{- end -}}
+
+{{- with .storage -}}
+{{- $storageText := lower (printf "%v" .) -}}
+{{- if or (in $storageText "1tb") (in $storageText "1000") (in $storageText "512") (in $storageText "256") -}}
+{{- $comparisonTags = $comparisonTags | append "大容量ストレージ" -}}
+{{- end -}}
+{{- end -}}
+
+{{- $cpu := lower (printf "%v" (.processor | default .cpu)) -}}
+{{- if or (in $cpu "snapdragon 8") (in $cpu "ryzen 7") (in $cpu "ryzen 9") (in $cpu "core i7") (in $cpu "core i9") (in $cpu "m1") (in $cpu "m2") (in $cpu "m3") (in $cpu "m4") -}}
+{{- $comparisonTags = $comparisonTags | append "高性能CPU" -}}
+{{- end -}}
+
 {{- $comparisonTags = first 3 ($comparisonTags | uniq) -}}
 {{- range $comparisonTags -}}
 <span class="{{- $tagClass -}}">{{ . }}</span>
