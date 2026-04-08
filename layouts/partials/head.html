@@ -15,8 +15,7 @@
 {{- $metaDescription := "" -}}
 {{- if .IsHome -}}
 {{- $articles := where .Site.RegularPages "Section" "articles" -}}
-{{- $metaDescription = printf "%d点以上のAmazon商品をGoogle AI「Jules」が徹底比較！高評価（80点以上）おすすめを価格・スペック・特徴からレビュー。タイムセール情報も毎日更新。" (len
-$articles) -}}
+{{- $metaDescription = printf "%d点以上のAmazon商品を徹底比較！高評価商品・価格帯・主要スペックを一覧で確認でき、あなたにぴったりの選択肢が短時間で見つかります。" (len $articles) -}}
 {{- else if .Params.score -}}
 {{- $metaDescription = printf "【%d点】%s %s レビュー。%s。AIエージェントによる徹底調査レポート。" (.Params.score | int) .Title (.Params.price |
 default "") (.Description | default .Summary | truncate 120) -}}
