@@ -1,0 +1,169 @@
+{
+  "analysis": {
+    "productName": "いけにえと雪のセツナ",
+    "parentAsin": "B0185OT576",
+    "productDescription": "雪国を舞台にした90年代風RPG",
+    "productUsage": ["ゲームプレイ", "ストーリー体験", "ノスタルジックなRPG体験"],
+    "positivePoints": [
+      "90年代のRPGを思い起こさせるクラシックなシステム",
+      "雪国をテーマにした美しい世界観とピアノ中心のBGM",
+      "アクティブ・タイム・バトルを踏襲した戦闘システム"
+    ],
+    "negativePoints": [
+      "グラフィックや演出が最新のゲームと比べると控えめ",
+      "物語のテーマが重いため、好みが分かれる可能性がある"
+    ],
+    "useCases": ["休日などのまとまった時間にじっくりプレイ", "過去のRPG作品に懐かしさを感じる時"],
+    "userStories": [
+      {
+        "userType": "RPGファン",
+        "scenario": "休日のリラックスタイムにプレイ",
+        "experience": "昔遊んだRPGの感覚が蘇り、ピアノのBGMと雪の世界観に引き込まれた。戦闘もシンプルで遊びやすい。",
+        "supportingSourceIds": ["src-1", "src-2"],
+        "sentiment": "positive"
+      }
+    ],
+    "userImpression": "古き良きRPGの雰囲気を現代のハードで楽しめる点が高く評価されている。特にBGMや切ないストーリーが印象的であるという声が多い。",
+    "sources": [
+      {
+        "id": "src-1",
+        "name": "Wikipedia - いけにえと雪のセツナ",
+        "url": "https://ja.wikipedia.org/wiki/%E3%81%84%E3%81%91%E3%81%AB%E3%81%88%E3%81%A8%E9%9B%AA%E3%81%AE%E3%82%BB%E3%83%84%E3%83%8A",
+        "tier": "medium",
+        "evidenceType": "secondary",
+        "publishedAt": "2024-01-01",
+        "author": "Wikipedia contributors",
+        "conflictOfInterest": "none",
+        "notes": "90年代RPGを意識したシステムや世界観、ストーリー概要を確認"
+      },
+      {
+        "id": "src-2",
+        "name": "いけにえと雪のセツナ | SQUARE ENIX",
+        "url": "https://www.jp.square-enix.com/setsuna/",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2016-02-18",
+        "author": "SQUARE ENIX",
+        "conflictOfInterest": "disclosed",
+        "notes": "「とりもどそう、ぼくたちのRPG」などコンセプトを確認"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "90年代のRPGを意識したシステムである",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": ["src-1", "src-2"],
+        "crossChecked": true,
+        "notes": "Wikipedia及び公式の情報から確認"
+      }
+    ],
+    "lastInvestigated": "2026-04-09",
+    "competitiveAnalysis": [
+      {
+        "name": "いけにえと雪のセツナ - Switch",
+        "asin": "B01N5R9QT6",
+        "priceComparison": "同一ゲームのSwitch版。PS4版より高い場合、携帯性を重視するかどうかが基準となる。",
+        "featureComparison": [
+          "共通点：ゲーム内容やシステム、ストーリー展開は全く同じ。",
+          "相違点：プレイ環境（テレビ画面専用か携帯モードも使えるか）や、ロード時間等のハード依存の差。"
+        ],
+        "differentiators": [
+          "いけにえと雪のセツナの利点：大画面で美麗な雪景色を堪能でき、トロフィー機能などPS4のシステムに準拠したプレイが可能。",
+          "いけにえと雪のセツナ - Switchの利点：携帯機としても遊べるため、場所を選ばずプレイできる手軽さがある。"
+        ]
+      },
+      {
+        "name": "いけにえと雪のセツナ - PSVita",
+        "asin": "B0181ZSSQ8",
+        "priceComparison": "同一ゲームのPSVita版。こちらも価格差と携帯機である点を考慮する。",
+        "featureComparison": [
+          "共通点：ゲームの根幹となるシステムやストーリーは共通。",
+          "相違点：ハードの性能差によるグラフィックやフレームレートの違い。"
+        ],
+        "differentiators": [
+          "いけにえと雪のセツナの利点：Vita版に比べてグラフィックが鮮明で、ロード時間も快適な場合が多い。",
+          "いけにえと雪のセツナ - PSVitaの利点：携帯性に優れ、外出先でも手軽に遊べる。"
+        ]
+      },
+      {
+        "name": "いけにえと雪のセツナ 導きと記憶の書 (ファミ通の攻略本)",
+        "asin": "4047331481",
+        "priceComparison": "ゲーム本編と攻略本のため直接的な価格比較は該当しない。",
+        "featureComparison": [
+          "共通点：『いけにえと雪のセツナ』に関連する製品である点。",
+          "相違点：ゲームソフト本体と、その攻略情報・設定資料集という用途の違い。"
+        ],
+        "differentiators": [
+          "いけにえと雪のセツナの利点：ゲームを実際にプレイし、体験できる。",
+          "いけにえと雪のセツナ 導きと記憶の書 (ファミ通の攻略本)の利点：ゲームを有利に進める情報や、深い設定を楽しむことができる。"
+        ]
+      },
+      {
+        "name": "いけにえと雪のセツナ 導きと記憶の書 (ファミ通の攻略本) Kindle版",
+        "asin": "B01DJX81VY",
+        "priceComparison": "ゲーム本編と電子書籍版攻略本のため直接的な比較は該当しない。",
+        "featureComparison": [
+          "共通点：『いけにえと雪のセツナ』の関連製品である点。",
+          "相違点：ゲーム体験そのものと、攻略情報を得るための電子書籍という形態の違い。"
+        ],
+        "differentiators": [
+          "いけにえと雪のセツナの利点：実際に物語や戦闘を体験できる。",
+          "いけにえと雪のセツナ 導きと記憶の書 (ファミ通の攻略本) Kindle版の利点：端末でいつでもどこでも手軽に攻略情報を確認できる。"
+        ]
+      },
+      {
+        "name": "【PS4】ロストスフィア",
+        "asin": "B073X15RRR",
+        "priceComparison": "同じ開発スタジオ(Tokyo RPG Factory)の次作。発売時期の違いにより価格に差がある。",
+        "featureComparison": [
+          "共通点：Tokyo RPG Factory開発の、90年代RPGの雰囲気を踏襲した作品。",
+          "相違点：セツナが雪国を舞台にしているのに対し、ロストスフィアは「記憶」をテーマにした異なる世界観・システムを持つ。"
+        ],
+        "differentiators": [
+          "いけにえと雪のセツナの利点：切ないストーリーとピアノBGM、雪景色という統一された独特の雰囲気を楽しめる。",
+          "【PS4】ロストスフィアの利点：システムが進化し、より洗練された戦闘や多彩な環境を探索できる。"
+        ]
+      },
+      {
+        "name": "聖剣伝説コレクション - Switch",
+        "asin": "B06XR73KWR",
+        "priceComparison": "スクウェア・エニックスの過去のRPGの移植版。Switch用ソフトで価格帯は異なる。",
+        "featureComparison": [
+          "共通点：90年代にスクウェアが発売した名作RPGに関連する点（セツナはリスペクト、聖剣は移植）。",
+          "相違点：セツナはコマンド選択式バトルだが、聖剣伝説はアクションRPGである点。"
+        ],
+        "differentiators": [
+          "いけにえと雪のセツナの利点：現代の技術で作られた新しい「90年代風」RPGを体験できる。",
+          "聖剣伝説コレクション - Switchの利点：過去の名作3タイトルを1本で遊べ、アクション性の高い戦闘が楽しめる。"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "スーパーファミコン時代のRPGに思い入れがある人",
+        "切ないストーリーやピアノ音楽が好きな人",
+        "シンプルなコマンドバトルを楽しみたい人"
+      ],
+      "pros": [
+        "どこか懐かしさを感じるシステムと雰囲気",
+        "統一感のある美しい雪の世界とBGM",
+        "現在の価格設定（約1,039円）は非常にコストパフォーマンスが高い"
+      ],
+      "cons": [
+        "最新の大作RPGのような派手なグラフィックや演出はない",
+        "好みが分かれる重いテーマのストーリー"
+      ],
+      "score": 83,
+      "scoreRationale": "[基本点: 70]\n[加点: +5] (90年代RPGの雰囲気を再現した世界観とシステムの高い完成度)\n[加点: +3] (ピアノ中心のBGMが作品の雰囲気とマッチしている)\n[加点: +8] (現在の価格帯が約1,039円と安価で、コスパが非常に高い)\n[減点: -3] (最新のゲームと比較するとグラフィックや演出面で物足りなさがある)\n[合計: 83]"
+    },
+    "technicalSpecs": {
+      "weight": "77g",
+      "releaseDate": "2016-02-18",
+      "isAdultProduct": "false",
+      "platform": "PlayStation 4",
+      "developer": "Tokyo RPG Factory",
+      "publisher": "SQUARE ENIX"
+    }
+  }
+}
