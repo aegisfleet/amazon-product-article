@@ -256,6 +256,12 @@ a:hover {
   font-weight: 600;
 }
 
+#search-section,
+#category-section,
+#brand-section {
+  scroll-margin-top: 5rem;
+}
+
 @media (min-width: 768px) {
   .hero p {
     font-size: 1.05rem;
