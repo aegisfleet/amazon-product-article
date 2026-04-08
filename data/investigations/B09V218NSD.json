@@ -1,0 +1,211 @@
+{
+  "analysis": {
+    "productName": "ベッセル 電ドラボールプラス 220USB-P1",
+    "parentAsin": "B09V218NSD",
+    "productDescription": "電動と手動の両方で使えるハイブリッドドライバー。3段階の回転・トルク切り替えとUSB Type-C充電機能を備える。",
+    "productUsage": ["家具の組み立て", "家電やPCの分解・組み立て", "DIYや工作作業"],
+    "positivePoints": [
+      "回転数とトルクを3段階（低/中/高）で切り替え可能で、用途に応じた作業ができる。",
+      "USB Type-Cポートを採用しており、スマートフォンやパソコンと同じケーブルで充電できるため汎用性が高い。",
+      "手回し時の最大耐久トルクが12N・mと高く、本締めも安心して行える。"
+    ],
+    "negativePoints": [
+      "グリップ部分が劣化する可能性があり、長期間の使用における耐久性にやや懸念がある。",
+      "太さがあるため、細かな作業や狭い場所での使用には向かない場合がある。"
+    ],
+    "useCases": [
+      "自宅での家具組み立てや家電修理",
+      "デスク周りでの精密機器やPCの組み立て",
+      "屋内専用の効率的な手軽な電動ドライバーとしての活用"
+    ],
+    "userStories": [
+      {
+        "userType": "DIY初心者・家族ユーザー",
+        "scenario": "屋内でのちょっとした家電の分解や組み立てに使用",
+        "experience": "棒状の直感的なデザインで操作が簡単。パワーも申し分なく、作業性が大きく改善され安心感と充実感を得られた。",
+        "supportingSourceIds": ["src-kakaku-review"],
+        "sentiment": "positive"
+      },
+      {
+        "userType": "小物・家電・PC組み立てユーザー",
+        "scenario": "テーブルでのちょっとした作業",
+        "experience": "USB Type-Cポートを搭載しており、手持ちのPD充電器やスマホのケーブルを共用して充電できるため、取り回しが良く大変便利。",
+        "supportingSourceIds": ["src-kakaku-review"],
+        "sentiment": "positive"
+      }
+    ],
+    "userImpression": "多くのユーザーが、手軽に使える形状とUSB Type-C充電の汎用性を高く評価している。特に、作業効率が大幅に向上する点や、3段階の切り替えモードによる使い勝手の良さが好評である。一方で、サイズによる取り回しの制限を感じる声も一部ある。",
+    "sources": [
+      {
+        "id": "src-kakaku-spec",
+        "name": "価格.com - ベッセル 電ドラボールプラス 220USB-P1 スペック・仕様",
+        "url": "https://kakaku.com/item/K0001564803/spec/",
+        "tier": "high",
+        "evidenceType": "secondary",
+        "publishedAt": "2022-04-04",
+        "author": "価格.com",
+        "conflictOfInterest": "none",
+        "notes": "製品の価格情報、発売日、スペック（最大締め付けトルク 2 N・m、重量 170g、充電時間60分）を確認。"
+      },
+      {
+        "id": "src-kakaku-review",
+        "name": "価格.com - ベッセル 電ドラボールプラス 220USB-P1 レビュー・評価",
+        "url": "https://kakaku.com/item/K0001564803/review/",
+        "tier": "medium",
+        "evidenceType": "primary",
+        "publishedAt": "2026-03-24",
+        "author": "一般ユーザー",
+        "conflictOfInterest": "none",
+        "notes": "USB-Cの使い勝手の良さや、家庭用としての取り回しの良さを評価する意見を抽出。"
+      },
+      {
+        "id": "src-vessel-official",
+        "name": "ベッセル 電ドラボールプラス 公式サイト",
+        "url": "https://www.vessel.co.jp/product/screwdriver/148504/",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2022-04-07",
+        "author": "ベッセル",
+        "conflictOfInterest": "none",
+        "notes": "製品公式の特長や仕様（3段階の回転数・トルク、サイズ、付属品等）を確認。"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "USB Type-Cを採用し、汎用性の高い充電が可能。",
+        "category": "durability",
+        "confidence": "high",
+        "supportingSourceIds": ["src-kakaku-review", "src-vessel-official"],
+        "crossChecked": true,
+        "notes": "ユーザーレビューおよび公式サイトの両方で確認。"
+      },
+      {
+        "claim": "3段階の回転・トルクモードにより用途に合わせた作業が可能。",
+        "category": "comparativeAdvantage",
+        "confidence": "high",
+        "supportingSourceIds": ["src-vessel-official"],
+        "crossChecked": false,
+        "notes": "公式サイトの仕様で確認。"
+      }
+    ],
+    "lastInvestigated": "2026-04-08",
+    "competitiveAnalysis": [
+      {
+        "name": "パナソニック miniQu EZ7412S-B",
+        "asin": "B083ZLMMD9",
+        "priceComparison": "対象商品より高価。プロ仕様の精密さや細かなトルク管理が求められる場合に適している。",
+        "featureComparison": [
+          "共通点：リチウムイオンバッテリー内蔵の充電式電動ドライバーで、手回し併用が可能。",
+          "相違点：パナソニックは充電時間が45分と短いが、最大締め付けトルクは1N・mと低め。"
+        ],
+        "differentiators": [
+          "ベッセル 電ドラボールプラス 220USB-P1の利点：3段階のトルク調整と、最大2N・mの高い締め付け力が魅力。",
+          "パナソニック miniQu EZ7412S-Bの利点：充電時間が短く、よりコンパクトで軽量なため、長時間の細かな作業に向く。"
+        ]
+      },
+      {
+        "name": "マキタ ペン型インパクトドライバ TD022DSHX",
+        "asin": "B01KYQVA6M",
+        "priceComparison": "対象商品よりも高価。インパクト機構を備え、より高いパワーとプロレベルの耐久性を提供する。",
+        "featureComparison": [
+          "共通点：手動と電動を組み合わせた作業が可能であり、DIY等で広く使われる。",
+          "相違点：マキタはペン型で折り曲げ可能であり、インパクト機能を備えているためより強力な作業ができる。"
+        ],
+        "differentiators": [
+          "ベッセル 電ドラボールプラス 220USB-P1の利点：USB Type-C充電の利便性と、より手軽で軽量な直感的な操作性。",
+          "マキタ ペン型インパクトドライバ TD022DSHXの利点：高いトルクとバッテリー交換可能な設計で、屋外や過酷な作業環境に強い。"
+        ]
+      },
+      {
+        "name": "ボッシュ(BOSCH) GO コードレスドライバー",
+        "asin": "B0DG8J3FTB",
+        "priceComparison": "対象商品と同程度の価格帯。押し込むだけで作動する直感的な操作感が特徴。",
+        "featureComparison": [
+          "共通点：コンパクトなUSB充電式電動ドライバー。",
+          "相違点：ボッシュは押し込み操作で作動するプッシュドライブ機能を採用しているが、本製品はスライドスイッチ式。"
+        ],
+        "differentiators": [
+          "ベッセル 電ドラボールプラス 220USB-P1の利点：手回しの通常のドライバーと同じ感覚でスライドスイッチにより確実な操作ができる。",
+          "ボッシュ(BOSCH) GO コードレスドライバーの利点：押し込むだけの簡単操作と、メカニカルクラッチによる確実な締め付け。"
+        ]
+      },
+      {
+        "name": "マキタ 充電式ペンバッテリドライバ DF012DSHX",
+        "asin": "B01L930FUQ",
+        "priceComparison": "対象商品より高価。クラッチ機能を搭載し、デリケートな締め付けに対応。",
+        "featureComparison": [
+          "共通点：軽量で取り回しの良い電動ドライバー。",
+          "相違点：マキタはペン型でバッテリー着脱式であり、クラッチ機能によるトルク調整が可能。"
+        ],
+        "differentiators": [
+          "ベッセル 電ドラボールプラス 220USB-P1の利点：圧倒的に軽量で、USB充電による手軽な運用が可能。",
+          "マキタ 充電式ペンバッテリドライバ DF012DSHXの利点：精密なクラッチ調整と、予備バッテリーによる連続使用が可能。"
+        ]
+      },
+      {
+        "name": "VOICE 電動ドライバー RAQUL",
+        "asin": "B0FBT7J7XG",
+        "priceComparison": "対象商品と同等かやや安価。コストパフォーマンスを重視したエントリーモデル。",
+        "featureComparison": [
+          "共通点：手動・電動兼用のボールグリップ型ドライバー。",
+          "相違点：本製品は3段階の回転・トルク切り替えがあるが、VOICEは単一モードでの動作が基本。"
+        ],
+        "differentiators": [
+          "ベッセル 電ドラボールプラス 220USB-P1の利点：3段階モード切り替えにより、作業に応じた細かな調整が可能で品質への信頼性も高い。",
+          "VOICE 電動ドライバー RAQULの利点：よりシンプルな機能で、価格を抑えて購入できる。"
+        ]
+      },
+      {
+        "name": "アイリスオーヤマ 電動ドライバー",
+        "asin": "B01D152YT0",
+        "priceComparison": "対象商品より安価。家具組み立てに特化した初心者向け。",
+        "featureComparison": [
+          "共通点：DIYや家具組み立て用途で手軽に使用できる。",
+          "相違点：アイリスオーヤマはガンタイプで大型・重量があり、トルクは大きいが手回し兼用ではない。"
+        ],
+        "differentiators": [
+          "ベッセル 電ドラボールプラス 220USB-P1の利点：手回しドライバーと全く同じ感覚で使え、細かい作業や狭い場所で有利。",
+          "アイリスオーヤマ 電動ドライバーの利点：低価格でありながら、大型家具の組み立てにも対応できるパワフルなトルク。"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "家具やPC・家電の組み立てを頻繁に行うユーザー",
+        "手回しドライバーの感覚を残したまま作業効率を上げたいDIYer",
+        "USB Type-C対応の充電機器を統一したい方"
+      ],
+      "pros": [
+        "3段階のモード切り替えで用途が広い",
+        "USB Type-Cによる手軽な充電が可能",
+        "通常のドライバーと同じ直感的な操作感"
+      ],
+      "cons": [
+        "本格的な屋外作業や高トルクが必要な作業には不向き",
+        "グリップが太めで狭い場所では干渉する可能性がある"
+      ],
+      "score": 88,
+      "scoreRationale": "[基本点: 70]\n[加点: +8] (3段階の回転数・トルク切り替えと最大耐久トルク12N・mの実用性の高さ)\n[加点: +7] (USB Type-C対応で手持ちのケーブルを流用でき、取り回しが良い)\n[加点: +5] (多くのユーザーが高く評価する作業効率の向上と使い勝手)\n[減点: -2] (本体がやや太めで、狭所での使用に制限がある)\n[合計: 88]"
+    },
+    "technicalSpecs": {
+      "dimensions": {
+        "height": "45mm",
+        "width": "45mm",
+        "depth": "147mm"
+      },
+      "weight": "170g",
+      "capacity": "800mAh (内蔵Li-ionバッテリー)",
+      "material": "強化ギア&ハウジング",
+      "origin": "日本",
+      "other": [
+        "無負荷回転速度: 【低】280回転/分 【中】340回転/分 【高】400回転/分",
+        "最大出力トルク（電動）: 【低】1.2N・m 【中】1.6N・m 【高】2.0N・m",
+        "手回し時の最大耐久トルク: 12N・m",
+        "充電時間: 約60分",
+        "充電回数: 約500回",
+        "充電ポート: USB Type-C",
+        "スリーブ: 対辺6.35mm アルミスリーブチャック"
+      ]
+    }
+  }
+}
