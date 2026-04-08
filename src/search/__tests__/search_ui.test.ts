@@ -1,5 +1,5 @@
-import * as fs from 'fs';
-import * as path from 'path';
+import * as fs from 'node:fs';
+import * as path from 'node:path';
 
 // Mock DOM elements and methods
 const createMockElement = (tagName: string) => {
@@ -43,7 +43,7 @@ describe('Search UI XSS Protection', () => {
   let searchInput: any;
 
   beforeAll(() => {
-    const filePath = path.join(__dirname, '../../../../static/js/search.js');
+    const filePath = path.join(__dirname, '../../../static/js/search.js');
     searchJsContent = fs.readFileSync(filePath, 'utf8');
   });
 
@@ -63,9 +63,9 @@ describe('Search UI XSS Protection', () => {
       querySelector: jest.fn(() => createMockElement('div')),
     };
 
-    (global as any).document = mockDocument;
-    (global as any).globalThis = global;
-    (global as any).window = global;
+    (globalThis as any).document = mockDocument;
+    (globalThis as any).globalThis = globalThis;
+    (globalThis as any).window = globalThis;
   });
 
   test('static/js/search.js should not contain innerHTML', () => {
