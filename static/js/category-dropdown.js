@@ -355,10 +355,7 @@
             headingWrapper.appendChild(heading);
             groupSection.appendChild(headingWrapper);
 
-            const tagsContainer = document.createElement('div');
-            tagsContainer.className = 'category-tags-container';
-
-            // Add "View All" link at the top of child categories
+            // Add "View All" link at the top of child categories (Moved outside tagsContainer to be always visible)
             if (parentUrl) {
                 const viewAllTag = document.createElement('a');
                 viewAllTag.href = parentUrl;
@@ -367,10 +364,14 @@
                 viewAllTag.textContent = parentCount !== undefined
                     ? `📁 ${groupName}のすべてを見る (${parentCount})`
                     : `📁 ${groupName}のすべてを見る`;
-                tagsContainer.appendChild(viewAllTag);
+                groupSection.appendChild(viewAllTag);
             }
 
+            const tagsContainer = document.createElement('div');
+            tagsContainer.className = 'category-tags-container';
+
             categories.forEach(category => {
+
                 const tag = document.createElement('a');
                 tag.href = safeCategoryUrl(urls[category]);
                 tag.className = 'category-tag-link';
