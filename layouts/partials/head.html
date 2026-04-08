@@ -102,6 +102,49 @@ default "") (.Description | default .Summary | truncate 120) -}}
 <script type="application/ld+json">{{- $websiteSchema | jsonify | safeJS -}}</script>
 {{- end -}}
 
+<!-- ItemList Schema (Home / Category Pages) -->
+{{- if or .IsHome (eq .Type "categories") -}}
+{{- $itemPages := slice -}}
+{{- if .IsHome -}}
+{{- $itemPages = first 15 ((where .Site.RegularPages "Section" "articles").ByDate.Reverse) -}}
+{{- else -}}
+{{- $itemPages = first 15 (.Pages.ByDate.Reverse) -}}
+{{- end -}}
+{{- $itemListElements := slice -}}
+{{- range $index, $itemPage := $itemPages -}}
+{{- $listItem := dict
+"@type" "ListItem"
+"position" (add $index 1)
+"url" $itemPage.Permalink
+"name" $itemPage.Title -}}
+{{- with $itemPage.Params.images -}}
+{{- $listItem = merge $listItem (dict "image" ((index . 0) | absURL)) -}}
+{{- end -}}
+{{- with $itemPage.Params.price -}}
+{{- $price := index (findRE "[0-9]+" (replace . "," "")) 0 | default "" -}}
+{{- if ne $price "" -}}
+{{- $listItem = merge $listItem (dict "offers" (dict
+"@type" "Offer"
+"priceCurrency" "JPY"
+"price" $price
+)) -}}
+{{- end -}}
+{{- end -}}
+{{- $itemListElements = $itemListElements | append $listItem -}}
+{{- end -}}
+{{- if gt (len $itemListElements) 0 -}}
+{{- $itemListTitle := cond .IsHome "おすすめ商品一覧" (printf "%s のおすすめ商品一覧" .Title) -}}
+{{- $itemListSchema := dict
+"@context" "https://schema.org"
+"@type" "ItemList"
+"name" $itemListTitle
+"numberOfItems" (len $itemListElements)
+"itemListOrder" "https://schema.org/ItemListOrderDescending"
+"itemListElement" $itemListElements -}}
+<script type="application/ld+json">{{- $itemListSchema | jsonify | safeJS -}}</script>
+{{- end -}}
+{{- end -}}
+
 <!-- Product Schema (Single Pages with ASIN) -->
 {{- if and .IsPage .Params.asin -}}
 {{- $priceValidUntil := now.AddDate 1 0 0 | time.Format "2006-01-02" -}}
