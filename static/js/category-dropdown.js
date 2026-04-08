@@ -179,7 +179,8 @@
                 
                 let othersCount = 0;
                 uncategorized.forEach(cat => {
-                    if (categoryCounts[cat] !== undefined) {
+                    // 「その他」カテゴリ自身は「その他」グループに合算しない（重複防止）
+                    if (cat !== 'その他' && categoryCounts[cat] !== undefined) {
                         othersCount += categoryCounts[cat];
                     }
                 });
