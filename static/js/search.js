@@ -1,13 +1,3 @@
-function escapeHTML(str) {
-    if (typeof str !== 'string') return str;
-    return str
-        .replaceAll('&', '&amp;')
-        .replaceAll('<', '&lt;')
-        .replaceAll('>', '&gt;')
-        .replaceAll('"', '&quot;')
-        .replaceAll("'", '&#039;');
-}
-
 function toYen(value, unit) {
     const num = Number.parseFloat(value);
     if (!Number.isFinite(num)) return 0;
@@ -282,7 +272,17 @@ document.addEventListener('DOMContentLoaded', function () {
                 return;
             }
 
-            searchResults.innerHTML = '<div class="search-loading"><div class="spinner"></div><span class="loading-text">検索中...</span></div>';
+            searchResults.textContent = '';
+            const loadingDiv = document.createElement('div');
+            loadingDiv.className = 'search-loading';
+            const spinner = document.createElement('div');
+            spinner.className = 'spinner';
+            loadingDiv.appendChild(spinner);
+            const loadingText = document.createElement('span');
+            loadingText.className = 'loading-text';
+            loadingText.textContent = '検索中...';
+            loadingDiv.appendChild(loadingText);
+            searchResults.appendChild(loadingDiv);
             searchResults.classList.add('active');
             updateSearchResultsHeight();
 
@@ -500,14 +500,53 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     function displayResults(results) {
+        searchResults.textContent = '';
+
         if (results.length === 0) {
-            searchResults.innerHTML = `
-                <div class="search-empty-state">
-                    <svg class="empty-icon" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
-                    <span class="empty-title">見つかりませんでした</span>
-                    <span class="empty-desc">別のキーワードでもう一度お試しください。</span>
-                </div>
-            `;
+            const emptyState = document.createElement('div');
+            emptyState.className = 'search-empty-state';
+
+            const svgNamespace = "http://www.w3.org/2000/svg";
+            const svg = document.createElementNS(svgNamespace, 'svg');
+            svg.setAttribute('class', 'empty-icon');
+            svg.setAttribute('width', '48');
+            svg.setAttribute('height', '48');
+            svg.setAttribute('viewBox', '0 0 24 24');
+            svg.setAttribute('fill', 'none');
+            svg.setAttribute('stroke', 'currentColor');
+            svg.setAttribute('stroke-width', '1.5');
+            svg.setAttribute('stroke-linecap', 'round');
+            svg.setAttribute('stroke-linejoin', 'round');
+
+            const circle = document.createElementNS(svgNamespace, 'circle');
+            circle.setAttribute('cx', '11');
+            circle.setAttribute('cy', '11');
+            circle.setAttribute('r', '8');
+            svg.appendChild(circle);
+
+            const lines = [
+                {x1: '21', y1: '21', x2: '16.65', y2: '16.65'},
+                {x1: '11', y1: '8', x2: '11', y2: '14'},
+                {x1: '8', y1: '11', x2: '14', y2: '11'}
+            ];
+            lines.forEach(coords => {
+                const line = document.createElementNS(svgNamespace, 'line');
+                Object.entries(coords).forEach(([key, value]) => line.setAttribute(key, value));
+                svg.appendChild(line);
+            });
+            emptyState.appendChild(svg);
+
+            const title = document.createElement('span');
+            title.className = 'empty-title';
+            title.textContent = '見つかりませんでした';
+            emptyState.appendChild(title);
+
+            const desc = document.createElement('span');
+            desc.className = 'empty-desc';
+            desc.textContent = '別のキーワードでもう一度お試しください。';
+            emptyState.appendChild(desc);
+
+            searchResults.appendChild(emptyState);
             searchResults.classList.add('active');
             updateSearchResultsHeight();
             return;
@@ -523,97 +562,211 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         }
 
-        const html = uniqueResults.slice(0, 20).map(result => {
+        uniqueResults.slice(0, 20).forEach(result => {
             const item = result.item;
-            const escapedTitle = escapeHTML(item.title);
-            const escapedSummary = escapeHTML(item.summary || '');
-            const escapedImage = escapeHTML(item.image);
-            const escapedPrice = escapeHTML(item.price);
+            const titleText = item.title;
+            const summaryText = item.summary || '';
+            const imageSrc = item.image;
+            const priceText = item.price;
 
             let permalink = item.permalink || '';
             if (permalink && !permalink.startsWith('http') && !permalink.startsWith('/')) {
                 permalink = '/';
             }
-            const escapedPermalink = escapeHTML(permalink);
-            const escapedScore = escapeHTML(String(item.score || ''));
+            const scoreText = String(item.score || '');
 
-            // HTML components
-            const priceDisplay = item.price ? `<span class="result-price">💰 ${escapedPrice}</span>` : '';
-            
-            let scoreClass = 'score-fair';
-            const score = Number.parseInt(item.score, 10) || 0;
-            if (score >= 80) {
-                scoreClass = 'score-excellent';
-            } else if (score >= 60) {
-                scoreClass = 'score-good';
+            const resultLink = document.createElement('a');
+            resultLink.href = permalink;
+            resultLink.className = 'search-result-item';
+
+            // Thumbnail
+            if (imageSrc) {
+                const thumbDiv = document.createElement('div');
+                thumbDiv.className = 'result-thumbnail';
+                const img = document.createElement('img');
+                img.src = imageSrc;
+                img.alt = titleText;
+                img.loading = 'lazy';
+                thumbDiv.appendChild(img);
+                resultLink.appendChild(thumbDiv);
+            } else {
+                const thumbDiv = document.createElement('div');
+                thumbDiv.className = 'result-thumbnail no-image';
+                const span = document.createElement('span');
+                span.textContent = 'No Image';
+                thumbDiv.appendChild(span);
+                resultLink.appendChild(thumbDiv);
             }
-            const scoreDisplay = item.score ? `<span class="result-score ${scoreClass}">🏆 ${escapedScore}点</span>` : '';
 
-            const thumbnailHtml = item.image 
-                ? `<div class="result-thumbnail"><img src="${escapedImage}" alt="${escapedTitle}" loading="lazy"></div>`
-                : '<div class="result-thumbnail no-image"><span>No Image</span></div>';
+            // Content
+            const contentDiv = document.createElement('div');
+            contentDiv.className = 'result-content';
 
-            const categoriesHtml = (item.categories || [])
-                .map(c => `<span class="category-tag">${escapeHTML(c)}</span>`)
-                .join('');
-            const categoriesContainer = categoriesHtml 
-                ? `<div class="result-categories">${categoriesHtml}</div>` 
-                : '';
+            // Header
+            const headerDiv = document.createElement('div');
+            headerDiv.className = 'result-header';
 
-            return `
-                <a href="${escapedPermalink}" class="search-result-item">
-                    ${thumbnailHtml}
-                    <div class="result-content">
-                        <div class="result-header">
-                            <span class="result-title">${escapedTitle}</span>
-                            <div class="result-metrics">
-                                ${priceDisplay}
-                                ${scoreDisplay}
-                            </div>
-                        </div>
-                        <span class="result-summary">${escapedSummary}</span>
-                        ${categoriesContainer}
-                    </div>
-                </a>
-            `;
-        }).join('');
+            const titleSpan = document.createElement('span');
+            titleSpan.className = 'result-title';
+            titleSpan.textContent = titleText;
+            headerDiv.appendChild(titleSpan);
 
-        searchResults.innerHTML = html;
+            // Metrics
+            const metricsDiv = document.createElement('div');
+            metricsDiv.className = 'result-metrics';
+            
+            if (item.price) {
+                const priceSpan = document.createElement('span');
+                priceSpan.className = 'result-price';
+                priceSpan.textContent = `💰 ${priceText}`;
+                metricsDiv.appendChild(priceSpan);
+            }
+
+            if (item.score) {
+                let scoreClass = 'score-fair';
+                const score = Number.parseInt(item.score, 10) || 0;
+                if (score >= 80) {
+                    scoreClass = 'score-excellent';
+                } else if (score >= 60) {
+                    scoreClass = 'score-good';
+                }
+                const scoreSpan = document.createElement('span');
+                scoreSpan.className = `result-score ${scoreClass}`;
+                scoreSpan.textContent = `🏆 ${scoreText}点`;
+                metricsDiv.appendChild(scoreSpan);
+            }
+            headerDiv.appendChild(metricsDiv);
+            contentDiv.appendChild(headerDiv);
+
+            // Summary
+            const summarySpan = document.createElement('span');
+            summarySpan.className = 'result-summary';
+            summarySpan.textContent = summaryText;
+            contentDiv.appendChild(summarySpan);
+
+            // Categories
+            const categories = item.categories || [];
+            if (categories.length > 0) {
+                const categoriesDiv = document.createElement('div');
+                categoriesDiv.className = 'result-categories';
+                categories.forEach(cat => {
+                    const catTag = document.createElement('span');
+                    catTag.className = 'category-tag';
+                    catTag.textContent = cat;
+                    categoriesDiv.appendChild(catTag);
+                });
+                contentDiv.appendChild(categoriesDiv);
+            }
+
+            resultLink.appendChild(contentDiv);
+            searchResults.appendChild(resultLink);
+        });
+
         searchResults.classList.add('active');
         updateSearchResultsHeight();
     }
 
     function displaySearchTips() {
-        const tipsHtml = `
-            <div class="search-tips-container">
-                <div class="search-tips-header">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <circle cx="12" cy="12" r="10"></circle>
-                        <line x1="12" y1="16" x2="12" y2="12"></line>
-                        <line x1="12" y1="8" x2="12.01" y2="8"></line>
-                    </svg>
-                    <span>検索のヒント</span>
-                </div>
-                <div class="search-tips-list">
-                    <div class="search-tip-item">
-                        <span class="search-tip-icon">⚙️</span>
-                        <div class="search-tip-content">
-                            <span class="search-tip-title">スペック検索</span>
-                            <span class="search-tip-description">「8GB」「軽量」「防水」など、商品の仕様でも検索できます。</span>
-                        </div>
-                    </div>
-                    <div class="search-tip-item">
-                        <span class="search-tip-icon">🔍</span>
-                        <div class="search-tip-content">
-                            <span class="search-tip-title">AND検索</span>
-                            <span class="search-tip-description">キーワードをスペースで区切ると、複数条件で絞り込めます。</span>
-                            <div>例: <span class="search-tip-example">モニター 4K</span></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        `;
-        searchResults.innerHTML = tipsHtml;
+        searchResults.textContent = '';
+
+        const container = document.createElement('div');
+        container.className = 'search-tips-container';
+
+        const header = document.createElement('div');
+        header.className = 'search-tips-header';
+
+        const svgNamespace = "http://www.w3.org/2000/svg";
+        const svg = document.createElementNS(svgNamespace, 'svg');
+        svg.setAttribute('width', '18');
+        svg.setAttribute('height', '18');
+        svg.setAttribute('viewBox', '0 0 24 24');
+        svg.setAttribute('fill', 'none');
+        svg.setAttribute('stroke', 'currentColor');
+        svg.setAttribute('stroke-width', '2');
+        svg.setAttribute('stroke-linecap', 'round');
+        svg.setAttribute('stroke-linejoin', 'round');
+
+        const circle = document.createElementNS(svgNamespace, 'circle');
+        circle.setAttribute('cx', '12');
+        circle.setAttribute('cy', '12');
+        circle.setAttribute('r', '10');
+        svg.appendChild(circle);
+
+        const line1 = document.createElementNS(svgNamespace, 'line');
+        line1.setAttribute('x1', '12');
+        line1.setAttribute('y1', '16');
+        line1.setAttribute('x2', '12');
+        line1.setAttribute('y2', '12');
+        svg.appendChild(line1);
+
+        const line2 = document.createElementNS(svgNamespace, 'line');
+        line2.setAttribute('x1', '12');
+        line2.setAttribute('y1', '8');
+        line2.setAttribute('x2', '12.01');
+        line2.setAttribute('y2', '8');
+        svg.appendChild(line2);
+
+        header.appendChild(svg);
+        const headerTitle = document.createElement('span');
+        headerTitle.textContent = '検索のヒント';
+        header.appendChild(headerTitle);
+        container.appendChild(header);
+
+        const list = document.createElement('div');
+        list.className = 'search-tips-list';
+
+        const tips = [
+            {
+                icon: '⚙️',
+                title: 'スペック検索',
+                desc: '「8GB」「軽量」「防水」など、商品の仕様でも検索できます。'
+            },
+            {
+                icon: '🔍',
+                title: 'AND検索',
+                desc: 'キーワードをスペースで区切ると、複数条件で絞り込めます。',
+                example: 'モニター 4K'
+            }
+        ];
+
+        tips.forEach(tip => {
+            const item = document.createElement('div');
+            item.className = 'search-tip-item';
+
+            const iconSpan = document.createElement('span');
+            iconSpan.className = 'search-tip-icon';
+            iconSpan.textContent = tip.icon;
+            item.appendChild(iconSpan);
+
+            const content = document.createElement('div');
+            content.className = 'search-tip-content';
+
+            const tipTitle = document.createElement('span');
+            tipTitle.className = 'search-tip-title';
+            tipTitle.textContent = tip.title;
+            content.appendChild(tipTitle);
+
+            const tipDesc = document.createElement('span');
+            tipDesc.className = 'search-tip-description';
+            tipDesc.textContent = tip.desc;
+            content.appendChild(tipDesc);
+
+            if (tip.example) {
+                const exampleDiv = document.createElement('div');
+                exampleDiv.textContent = '例: ';
+                const exampleSpan = document.createElement('span');
+                exampleSpan.className = 'search-tip-example';
+                exampleSpan.textContent = tip.example;
+                exampleDiv.appendChild(exampleSpan);
+                content.appendChild(exampleDiv);
+            }
+
+            item.appendChild(content);
+            list.appendChild(item);
+        });
+
+        container.appendChild(list);
+        searchResults.appendChild(container);
         searchResults.classList.add('active');
         updateSearchResultsHeight();
     }
