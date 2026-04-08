@@ -14,9 +14,9 @@
                 <p>AIエージェントによる調査結果には誤りが含まれる可能性があります。最終的な購入判断は必ず公式情報をご確認ください。</p>
             </details>
             <div class="hero-cta-group" aria-label="最初の探索導線">
-                <a href="#pickup-grid" class="hero-cta-button" data-hero-entry="high-score">高評価から探す</a>
-                <a href="#search-input" class="hero-sub-link" data-hero-entry="search">検索から探す</a>
-                <a href="#category-group-select" class="hero-sub-link" data-hero-entry="category">カテゴリから探す</a>
+                <a href="#search-section" class="hero-cta-button" data-hero-entry="search">検索から探す</a>
+                <a href="#category-section" class="hero-sub-link" data-hero-entry="category">カテゴリから探す</a>
+                <a href="#brand-section" class="hero-sub-link" data-hero-entry="brand">ブランドから探す</a>
             </div>
         </div>
     </div>
@@ -123,7 +123,7 @@
     {{- end -}}
 
     <!-- Search Section -->
-    <div class="search-header" style="text-align: center;">
+    <div class="search-header" id="search-section" style="text-align: center;">
         <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 0.5rem; color: var(--color-text-primary);">
             🔍 商品を検索する</h3>
         <p style="font-size: 0.875rem; color: var(--color-text-secondary);">商品名、スペック、特徴から商品を探せます✨</p>
@@ -168,7 +168,7 @@
         <div id="search-results"></div>
     </div>
 
-    <div class="header-content">
+    <div class="header-content" id="category-section">
         <h2>カテゴリから探す</h2>
     </div>
 
@@ -228,7 +228,7 @@
     {{- end -}}
     {{- end -}}
 
-    <div class="header-content">
+    <div class="header-content" id="brand-section">
         <h2>ブランドから探す</h2>
     </div>
 
