@@ -2,137 +2,247 @@
   "analysis": {
     "productName": "Anker 511 Charger (Nano Pro)",
     "parentAsin": "B0CJK4B3TH",
-    "productDescription": "一般的な20W充電器と同等の出力を維持しながら、約45%の小型化を実現した、指先サイズのUSB-C急速充電器。",
+    "productDescription": "最大20W出力のUSB PDに対応し、超コンパクトサイズを実現した急速充電器。iPhoneやAndroidなどの各種機器に対応し、多重保護システム「ActiveShield」による高い安全性を備える。",
     "productUsage": [
-      "iPhone 16/15/14シリーズやAndroidスマートフォンの急速充電（最大20W）",
-      "iPadやワイヤレスイヤホンなどのUSB-C対応機器の充電",
-      "旅行や出張時の持ち運び用メイン/サブ充電器として利用",
-      "コンセント周りをすっきりさせたいデスク環境での使用"
+      "iPhoneやAndroidスマートフォン等の急速充電",
+      "タブレット端末やワイヤレスイヤホンなど、USB-C対応機器の充電"
     ],
     "positivePoints": [
-      "一辺約3cmの圧倒的なコンパクトサイズと、約30gの軽量設計",
-      "最大20W出力でiPhoneを通常充電器の約3倍速く充電可能",
-      "Anker独自のActiveShield技術による優れた温度管理と安全性",
-      "インテリアに合わせて選べる豊富なカラーバリエーション",
-      "Apple純正充電器と比較して安価でありながら同等の性能"
+      "20Wの急速充電に対応しており、約1時間でバッテリーが大きく回復する",
+      "一般的な20W充電器より約45%小さく、カバンのポケットや隙間に収まる携帯性の高さ",
+      "独自技術のActiveShield搭載により、充電中の温度上昇が抑えられ安全性が高い"
     ],
     "negativePoints": [
-      "プラグが折りたためないため、収納時に他の物を傷つけるリスクがある",
-      "急速充電中は本体が熱くなりやすい（特に充電開始直後）",
-      "USB-Cケーブルは付属していないため別途購入が必要"
+      "プラグが折りたたみ式ではないため、持ち運び時に他の物に干渉する可能性がある",
+      "充電中に触れないほどではないが、ある程度熱を持つ場合がある"
     ],
     "useCases": [
-      "通勤・通学バッグのポケットに常備し、外出先でのバッテリー切れに備える",
-      "カフェの狭いコンセントや、電源タップの干渉しやすい場所での使用",
-      "寝室のベッドサイドなど、目立たせたくない場所での常時設置"
+      "外出先や旅行への持ち運び用として",
+      "コンセントが密集している場所での使用",
+      "ベッドサイドやデスク周りでの省スペースな充電"
     ],
     "userStories": [
       {
-        "userType": "20代 大学生",
-        "scenario": "キャンパスライフでの携帯用",
-        "experience": "ペンケースに入るサイズなので、荷物を増やしたくない通学時に最適です。友達の充電器と間違わないようにパープルを選びました。充電速度も速く、休み時間にサッと充電できるのが助かります。",
+        "userType": "一般ユーザー",
+        "scenario": "スマートフォンの充電",
+        "experience": "4570mAhのスマートフォンでも数時間で充電が完了し、短時間でも十分に回復するため緊急時に助かる。本体は非常に小さくカバンに入れやすいが、プラグが折りたためないので収納時には少し気になる。",
+        "supportingSourceIds": [
+          "src-kakaku-review-1"
+        ],
         "sentiment": "positive"
       },
       {
-        "userType": "30代 会社員",
-        "scenario": "出張とオフィス利用",
-        "experience": "性能は素晴らしいですが、プラグが折りたためないのが唯一かつ最大の欠点です。ポーチの中で他のガジェットを傷つけないか心配になります。それ以外は完璧なサイズ感です。",
-        "sentiment": "mixed"
-      },
-      {
-        "userType": "40代 主婦",
-        "scenario": "リビングでの家族共有",
-        "experience": "純正の充電器が壊れたので買い替えました。とても小さくてコンセントに挿しっぱなしでも邪魔になりません。子供たちのiPhoneもすぐに充電できるので重宝しています。",
+        "userType": "iPhoneユーザー",
+        "scenario": "日常的な充電用途",
+        "experience": "コンパクトなサイズながら20Wのパワーがあり、以前の充電器よりも充電スピードが早い。発熱も特に気にならず、安心して使用できる。",
+        "supportingSourceIds": [
+          "src-kakaku-review-2",
+          "src-kakaku-review-3"
+        ],
         "sentiment": "positive"
       }
     ],
-    "userImpression": "圧倒的なコンパクトさと充電速度に対しては非常に高い評価を得ています。特にデザインと質感の良さはAnkerならではの強みとして認識されています。一方で、競合他社（UGREENやCIOなど）が同サイズでプラグ折りたたみ式を出しているため、「次は折りたたみ対応にしてほしい」という要望が根強くあります。",
+    "userImpression": "非常にコンパクトなサイズと20W出力による充電速度の速さが高く評価されている。プラグが折りたためない点については一部不満の声もあるが、総合的な安定性とAnkerブランドへの信頼感から満足度は高い。",
     "sources": [
       {
-        "name": "Amazon Product Page & Customer Reviews",
-        "url": "https://www.amazon.co.jp/dp/B09BJTCC88",
-        "credibility": "High"
+        "id": "src-amazon",
+        "name": "Amazon商品ページ",
+        "url": "https://www.amazon.co.jp/dp/B09BJTCC88?tag=aegis-22&linkCode=ogi&th=1&psc=1",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-04-10",
+        "author": "Amazon.co.jp",
+        "conflictOfInterest": "none",
+        "notes": "商品の公式スペック、価格、特徴を確認"
       },
       {
-        "name": "Anker Japan Official Site",
-        "url": "https://www.ankerjapan.com/products/a2637",
-        "credibility": "High"
+        "id": "src-kakaku-review-1",
+        "name": "価格.com レビュー (pochinasu)",
+        "url": "https://review.kakaku.com/review/K0001416959/ReviewCD=1769857/#tab",
+        "tier": "high",
+        "evidenceType": "secondary",
+        "publishedAt": "2026-04-10",
+        "author": "pochinasu",
+        "conflictOfInterest": "none",
+        "notes": "充電速度の早さ、携帯性の良さ、プラグが折りたためないことに関する言及"
+      },
+      {
+        "id": "src-kakaku-review-2",
+        "name": "価格.com レビュー (s234)",
+        "url": "https://review.kakaku.com/review/K0001416959/ReviewCD=1615167/#tab",
+        "tier": "high",
+        "evidenceType": "secondary",
+        "publishedAt": "2026-04-10",
+        "author": "s234",
+        "conflictOfInterest": "none",
+        "notes": "コンパクトさと発熱がないことに関する言及"
+      },
+      {
+        "id": "src-kakaku-review-3",
+        "name": "価格.com レビュー (スト6)",
+        "url": "https://review.kakaku.com/review/K0001416960/ReviewCD=1599496/#tab",
+        "tier": "high",
+        "evidenceType": "secondary",
+        "publishedAt": "2026-04-10",
+        "author": "スト6",
+        "conflictOfInterest": "none",
+        "notes": "充電スピードの早さと発熱が抑えられていることに関する言及"
       }
     ],
-    "lastInvestigated": "2026-01-29",
+    "claims": [
+      {
+        "claim": "最大20W出力で一般的な5W出力の充電器に比べ最大3倍速い充電が可能",
+        "category": "performance",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-amazon",
+          "src-kakaku-review-1",
+          "src-kakaku-review-3"
+        ],
+        "crossChecked": true,
+        "notes": "メーカー公称値であり、ユーザーレビューでも充電の速さが確認できる"
+      },
+      {
+        "claim": "一般的な20W出力の充電器より約45%小型化されている",
+        "category": "comparativeAdvantage",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-amazon",
+          "src-kakaku-review-1",
+          "src-kakaku-review-2"
+        ],
+        "crossChecked": true,
+        "notes": "メーカーの仕様およびユーザーの評価でコンパクトさが強調されている"
+      },
+      {
+        "claim": "ActiveShieldによる安全機能で温度上昇を抑える",
+        "category": "safety",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-amazon",
+          "src-kakaku-review-2",
+          "src-kakaku-review-3"
+        ],
+        "crossChecked": true,
+        "notes": "メーカーの技術仕様および複数のユーザーから発熱が抑えられているとの報告がある"
+      }
+    ],
+    "lastInvestigated": "2026-04-10",
     "competitiveAnalysis": [
       {
-        "name": "Apple 20W USB-C電源アダプタ",
-        "asin": "B0CX24XSV9",
-        "priceComparison": "Anker (￥1,690) はApple純正 (￥2,284) より約26%安価。",
+        "name": "Anker Nano Charger (20W) (B099ZNTRL5)",
+        "asin": "B099ZNTRL5",
+        "priceComparison": "価格は同等。",
         "featureComparison": [
-          "Apple純正ならではの安心感と完全な互換性",
-          "サイズはAnkerより大きく、プラグも折りたたみ不可"
+          "共通点：Anker製の最大20W出力USB-C急速充電器である点",
+          "相違点：対象商品は「Nano Pro」であり、より進化した安全システム「ActiveShield」を搭載しカラーバリエーションが豊富である点"
         ],
         "differentiators": [
-          "絶対的なブランド信頼性",
-          "リセールバリューの高さ"
+          "Anker 511 Charger (Nano Pro) PD 20W USB-C 急速充電器の利点：より高度な温度管理機能「ActiveShield」による安全性の高さと、選べるカラーバリエーション",
+          "Anker Nano Charger (20W) (B099ZNTRL5)の利点：基本的な20W充電性能を求める場合のシンプルな選択肢"
         ]
       },
       {
-        "name": "UGREEN Nexode Mini 20W",
-        "asin": "B0BJ6YJKDX",
-        "priceComparison": "Ankerより安価 (￥1,268前後) で購入可能。",
+        "name": "Anker Charger (20W, 2-Port) (B0CL8R7TV5)",
+        "asin": "B0CL8R7TV5",
+        "priceComparison": "価格は同等。",
         "featureComparison": [
-          "同等の20W出力だが、プラグが折りたたみ可能である点が大きな強み",
-          "GaNFast II採用でサイズも同等クラス"
+          "共通点：Anker製の20W充電器である点",
+          "相違点：対象商品は1ポートでよりコンパクトなのに対し、競合商品は2ポート搭載で複数機器の充電が可能である点"
         ],
         "differentiators": [
-          "携帯性に優れた折りたたみプラグ",
-          "高いコストパフォーマンス"
+          "Anker 511 Charger (Nano Pro) PD 20W USB-C 急速充電器の利点：圧倒的なコンパクトさと軽量さにより、1台の機器を充電する際の持ち運びやすさ",
+          "Anker Charger (20W, 2-Port) (B0CL8R7TV5)の利点：2ポートを搭載しており、スマートフォンとイヤホンなどを同時に充電できる利便性"
         ]
       },
       {
-        "name": "エレコム EC-AC12020WH",
-        "asin": "B0FP1Z52N3",
-        "priceComparison": "Ankerよりやや安価 (￥1,480前後)。",
+        "name": "Amazonベーシック 急速充電器 USB-C 20W Nano GaN (B0DBPSBQT2)",
+        "asin": "B0DBPSBQT2",
+        "priceComparison": "対象商品より少し安い。",
         "featureComparison": [
-          "USB-CとUSB-Aの2ポートを搭載しており汎用性が高い",
-          "プラグ折りたたみ可能"
+          "共通点：20W出力対応の超コンパクトなUSB-C急速充電器である点",
+          "相違点：対象商品はAnker独自のActiveShieldを搭載しているのに対し、競合商品はGaN(窒化ガリウム)を採用している点"
         ],
         "differentiators": [
-          "2台同時充電（合計出力は分散される点に注意）が可能",
-          "国内メーカーの安心感"
+          "Anker 511 Charger (Nano Pro) PD 20W USB-C 急速充電器の利点：Ankerブランドの高い信頼性と、独自の多重保護システム・ActiveShieldによる安全性",
+          "Amazonベーシック 急速充電器 USB-C 20W Nano GaN (B0DBPSBQT2)の利点：GaN採用により高効率でありながら、より安価に購入できるコストパフォーマンス"
+        ]
+      },
+      {
+        "name": "エレコム 充電器 Type-C 20W (B0CZN9XSDM)",
+        "asin": "B0CZN9XSDM",
+        "priceComparison": "対象商品の約半額であり、非常に安価。",
+        "featureComparison": [
+          "共通点：20W出力対応のコンパクトなUSB-C急速充電器である点",
+          "相違点：対象商品はプラグが折りたためない超小型設計であるのに対し、競合商品はプラグが折りたたみ式である点"
+        ],
+        "differentiators": [
+          "Anker 511 Charger (Nano Pro) PD 20W USB-C 急速充電器の利点：プラグ非折りたたみだが、本体サイズが極めて小さく、Ankerの高い安全基準を満たしている点",
+          "エレコム 充電器 Type-C 20W (B0CZN9XSDM)の利点：プラグが折りたためるため持ち運び時に他の物に干渉しにくく、非常に低価格である点"
+        ]
+      },
+      {
+        "name": "バッファロー 充電器 20W 2ポート (B0DMCPT5PV)",
+        "asin": "B0DMCPT5PV",
+        "priceComparison": "対象商品より安い。",
+        "featureComparison": [
+          "共通点：最大20W出力の急速充電器である点",
+          "相違点：対象商品は1ポートの超小型モデルであるのに対し、競合商品はUSB-CとUSB-Aの2ポート搭載でプラグ折りたたみ式である点"
+        ],
+        "differentiators": [
+          "Anker 511 Charger (Nano Pro) PD 20W USB-C 急速充電器の利点：1ポートに特化した極限のコンパクトさとデザイン性の高さ",
+          "バッファロー 充電器 20W 2ポート (B0DMCPT5PV)の利点：USB-CとUSB-Aの両方が使え、プラグも折りたためる汎用性と携帯性のバランスの良さ"
+        ]
+      },
+      {
+        "name": "Anker Charger (20W, 2-Port) 2個セット (B0C8JYYCF1)",
+        "asin": "B0C8JYYCF1",
+        "priceComparison": "2個セットのため対象商品より高いが、1個あたりでは安い。",
+        "featureComparison": [
+          "共通点：Anker製の20W充電器である点",
+          "相違点：対象商品は1ポートの単体販売であるのに対し、競合商品は2ポートモデルの2個セットである点"
+        ],
+        "differentiators": [
+          "Anker 511 Charger (Nano Pro) PD 20W USB-C 急速充電器の利点：単体でのコンパクトさと、ActiveShieldによる高い安全性",
+          "Anker Charger (20W, 2-Port) 2個セット (B0C8JYYCF1)の利点：複数個必要かつ複数ポートが必要な場合に、コストパフォーマンス高く揃えられる点"
         ]
       }
     ],
     "recommendation": {
       "targetUsers": [
-        "とにかく小さくて可愛いデザインの充電器が欲しい人",
-        "Ankerブランドの安全性と信頼性を重視する人",
-        "プラグの折りたたみが必須条件ではない人"
+        "コンパクトで持ち運びに便利な充電器を探している人",
+        "iPhoneなどを高速で充電したい人",
+        "信頼できるブランドの安全な充電器を求める人"
       ],
       "pros": [
-        "所有欲を満たす質感の高さと豊富なカラー",
-        "干渉しにくい超コンパクトサイズ",
-        "安心の最大30ヶ月保証（Anker会員登録時）"
+        "手のひらサイズの圧倒的なコンパクトさ",
+        "最大20Wの急速充電に対応",
+        "ActiveShield搭載による高い安全性"
       ],
       "cons": [
-        "持ち運び時にプラグが邪魔になる可能性がある",
-        "コスパだけを見ればUGREENなど他社に分がある"
+        "プラグが折りたためない",
+        "ポートが1つのみ"
       ],
-      "score": 93,
-      "scoreRationale": "[基本点: 70]\n[加点: +7] (性能・機能): 20W出力、PowerIQ 3.0 (Gen2)、ActiveShieldと、充電器としての基本性能と安全性は非常に高い。\n[加点: +8] (コストパフォーマンス): 純正品より安価だが、さらに安い競合他社が存在するため満点ではない。Ankerのブランド料と考えれば納得できる範囲。\n[減点: -1] (品質・デザイン): 質感とカラーは最高(+3)だが、競合の多くが対応している「折りたたみプラグ」非対応なのは携帯用として痛い(-4)。\n[加点: +7] (ユーザー満足度): 数万件のレビューと高評価が証明する圧倒的な実績と信頼。\n[加点: +2] (独自の強み・先進性): 指先サイズの小ささと、他社にはない洗練されたカラー展開。\n[合計: 93]"
+      "score": 90,
+      "scoreRationale": "[基本点: 70]\n[加点: +5] (最大20Wの急速充電対応による高い性能)\n[加点: +5] (圧倒的なコンパクトさによる携帯性の高さ)\n[加点: +5] (複数から選べるデザイン性の高さ)\n[加点: +5] (ActiveShield等による安全性の高さ)\n[加点: +3] (Ankerブランドの信頼性の高さ)\n[減点: -3] (プラグが折りたためず持ち運び時に少し干渉する欠点)\n[合計: 90]"
     },
     "technicalSpecs": {
-      "output": "5V=3A / 9V=2.22A (最大20W)",
-      "input": "100-240V~0.6A 50-60Hz",
-      "port": "USB-C x 1",
-      "chargingProtocol": "USB PD, PowerIQ 3.0 (Gen2)",
-      "safetyFeatures": "ActiveShield (温度管理), 過電圧保護",
       "dimensions": {
-        "height": "約30mm",
-        "width": "約29.5mm",
-        "depth": "約29.5mm",
-        "weight": "約30g"
+        "height": "30mm",
+        "width": "29mm",
+        "depth": "29mm"
       },
-      "compatibility": "iPhone 16/15/14/13, Galaxy S23/S22, Pixel 7/6, iPad mini/Air等",
-      "other": "PSE技術基準適合, プラグ折りたたみ不可"
+      "weight": "32g",
+      "power": "20W",
+      "ports": "USB-C x 1",
+      "input": "100-240V~ 0.6A 50-60Hz",
+      "output": "5V=3A / 9V=2.22A",
+      "color": "ダークグレー",
+      "other": [
+        "PowerIQ 3.0 (Gen2) 搭載",
+        "ActiveShield 搭載",
+        "PSE技術基準適合"
+      ]
     }
   }
 }
