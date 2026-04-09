@@ -67,7 +67,7 @@ export class RecommendationPromptBuilder {
   "recommendations": [
     {
       "asin": "ASIN",
-      "title": "商品名",
+      "title": "検索タグやSEOキーワードを除いた簡潔な商品名",
       "price": "価格",
       "category": "カテゴリ（10個すべて異なるようにする）",
       "reason": "この商品自体の魅力や優れている点（2〜3文）",
