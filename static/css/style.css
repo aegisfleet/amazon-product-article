@@ -142,7 +142,43 @@ a:hover {
   text-align: center;
 }
 
-@media (min-width: 960px) {
+.hero h1 {
+  font-size: 1.35rem;
+  font-weight: 800;
+  margin-bottom: var(--spacing-md);
+  background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  line-height: 1;
+}
+
+.hero p {
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+  max-width: 680px;
+}
+
+.hero-message {
+  width: 100%;
+  max-width: 680px;
+}
+
+.hero .hero-description {
+  color: var(--color-text-main);
+  margin-bottom: var(--spacing-sm);
+}
+
+.hero-cta-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-sm);
+  margin-top: var(--spacing-md);
+  align-items: center;
+  justify-content: center;
+}
+
+@media (min-width: 768px) {
   .hero-content {
     flex-direction: row;
     align-items: center;
@@ -157,6 +193,10 @@ a:hover {
 
   .hero-message {
     flex: 1;
+  }
+
+  .hero-cta-group {
+    justify-content: flex-start;
   }
 }
 
@@ -185,33 +225,6 @@ a:hover {
   }
 }
 
-.hero h1 {
-  font-size: 1.35rem;
-  font-weight: 800;
-  margin-bottom: var(--spacing-md);
-  background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  line-height: 1.3;
-}
-
-.hero p {
-  font-size: 0.875rem;
-  color: var(--color-text-muted);
-  max-width: 680px;
-}
-
-.hero-message {
-  width: 100%;
-  max-width: 680px;
-}
-
-.hero .hero-description {
-  color: var(--color-text-main);
-  margin-bottom: var(--spacing-sm);
-}
-
 .hero-note {
   margin: 0;
   color: var(--color-text-secondary);
@@ -232,13 +245,6 @@ a:hover {
   max-width: none;
 }
 
-.hero-cta-group {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--spacing-sm);
-  margin-top: var(--spacing-md);
-  align-items: center;
-}
 
 .hero-cta-button {
   display: inline-flex;
@@ -894,7 +900,7 @@ a:hover {
   }
 }
 
-@media (min-width: 960px) {
+@media (min-width: 768px) {
   .product-hero-card {
     grid-template-columns: 400px 1fr;
   }
