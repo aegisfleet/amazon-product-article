@@ -1,0 +1,103 @@
+{
+  "analysis": {
+    "productName": "by Amazon 葛根湯エキス 顆粒 S 60包",
+    "parentAsin": "B0CVNW1RHR",
+    "productDescription": "大容量60包入りのPB商品。コストパフォーマンスに優れた葛根湯エキス顆粒です。",
+    "productUsage": [
+      "風邪の初期症状（寒気、発熱、頭痛）の緩和",
+      "肩こり、筋肉痛の改善"
+    ],
+    "positivePoints": [
+      "大容量（60包）でコストパフォーマンスが高い",
+      "AmazonのPB商品であり入手しやすい"
+    ],
+    "negativePoints": [
+      "特大容量のため、短期間で使い切れない可能性がある",
+      "顆粒タイプが苦手な人には不向き"
+    ],
+    "useCases": [
+      "風邪の引き始めで寒気を感じた時",
+      "仕事や家事で肩こりがつらい時"
+    ],
+    "userStories": [],
+    "userImpression": "大容量でコストパフォーマンスが良く、常備薬として購入しやすいという点が評価されています。",
+    "sources": [
+      {
+        "id": "src-1",
+        "name": "Amazon.co.jp 製品ページ",
+        "url": "https://www.amazon.co.jp/dp/B0CVNW1RHR",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2024-02-20",
+        "author": "Amazon",
+        "conflictOfInterest": "none",
+        "notes": "製品仕様、成分情報の確認"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "60包の大容量でコストパフォーマンスに優れている",
+        "category": "comparativeAdvantage",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "crossChecked": false,
+        "notes": "内容量からの論理的推論"
+      }
+    ],
+    "lastInvestigated": "2026-04-09",
+    "competitiveAnalysis": [
+      {
+        "name": "クラシエ 葛根湯エキス顆粒S",
+        "asin": "B00F4MGKUI",
+        "priceComparison": "対象商品の方が1包あたりの単価が安く、コストパフォーマンスに優れる。",
+        "featureComparison": [
+          "共通点：葛根湯エキスを配合した顆粒タイプの第2類医薬品",
+          "相違点：内容量がクラシエは30包であるのに対し、対象商品は60包と大容量"
+        ],
+        "differentiators": [
+          "by Amazon 葛根湯エキス 顆粒 S 60包の利点：大容量で1包あたりの単価が安いため、常備薬としてコストパフォーマンスが良い",
+          "クラシエ 葛根湯エキス顆粒Sの利点：30包入りで、短期間での使い切りに適している"
+        ]
+      },
+      {
+        "name": "by Amazon 葛根湯エキス 顆粒 S 30包",
+        "asin": "B0CVQJXH6W",
+        "priceComparison": "同一製品の容量違いであり、対象商品の方が1包あたりの単価が安く経済的。",
+        "featureComparison": [
+          "共通点：同一ブランド、同一成分の葛根湯エキス顆粒",
+          "相違点：内容量が30包か60包かの違い"
+        ],
+        "differentiators": [
+          "by Amazon 葛根湯エキス 顆粒 S 60包の利点：頻繁に使用する人や家族で使う場合のコストパフォーマンスが高い",
+          "by Amazon 葛根湯エキス 顆粒 S 30包の利点：少量でお試し購入や、持ち運び・短期間での使用に向いている"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "風邪薬を常備しておきたい人",
+        "コストパフォーマンスを重視する人",
+        "肩こりや頭痛などの症状が頻発する人"
+      ],
+      "pros": [
+        "大容量で1包あたりの単価が安い",
+        "PB商品で信頼感がある"
+      ],
+      "cons": [
+        "大容量のため、たまにしか使わない場合は余らせるリスクがある"
+      ],
+      "score": 85,
+      "scoreRationale": "[基本点: 70]\n[加点: +10] 大容量（60包）によるコストパフォーマンスの良さ\n[加点: +5] Amazon PB商品としての入手のしやすさ\n[合計: 85]"
+    },
+    "technicalSpecs": {
+      "capacity": "60包",
+      "origin": "日本",
+      "releaseDate": "2024-02-20",
+      "other": [
+        "第2類医薬品"
+      ]
+    }
+  }
+}
