@@ -1,148 +1,240 @@
 {
   "analysis": {
-    "productName": "Razer Huntsman V3 Pro Tenkeyless JP",
+    "productName": "Razer Huntsman V3 Pro Tenkeyless",
     "parentAsin": "B0G6ZC5F5W",
-    "productDescription": "プロフェッショナルなeスポーツシーン向けに設計された、ラピッドトリガー搭載のアナログオプティカルゲーミングキーボードです。",
-    "productUsage": [
-      "FPS/TPSなどの競技性の高いゲームプレイ",
-      "0.1mm単位でのアクチュエーションポイント調整による高速入力",
-      "ラピッドトリガーモードを使用した超高速連打",
-      "専用ソフトウェアSynapseによるキーごとの感度カスタマイズ"
-    ],
+    "productDescription": "Razerの最高峰、第2世代アナログオプティカルスイッチを搭載したプロ仕様のテンキーレスゲーミングキーボード。ラピッドトリガーと0.1～4.0mmで調整可能なアクチュエーションにより、究極の入力速度と精度を実現します。",
+    "productUsage": ["FPS・TPSなどの競技性の高いゲーム", "高速タイピングや日常のPC作業"],
     "positivePoints": [
-      "ラピッドトリガーによる圧倒的な入力反応速度",
-      "アクチュエーションポイントを0.1mmから4.0mmまで調整可能",
-      "耐久性の高いダブルショットPBTキーキャップ",
-      "高級感のあるアルミ製トッププレートとマグネット式リストレスト",
-      "設定がオンボードメモリに保存可能"
+      "第2世代アナログオプティカルスイッチによる超高速レスポンス",
+      "0.1〜4.0mmの範囲で細かく調整可能なアクチュエーションポイント",
+      "ラピッドトリガー搭載により、ストッピングや細かな移動操作が直感的に行える",
+      "堅牢なアルミニウムトッププレートと高級感のあるデザイン",
+      "専用のマルチファンクションダイヤルとコントロールボタンで操作性が高い",
+      "高品質で着脱が容易なマグネット式レザーリストレストが付属"
     ],
     "negativePoints": [
-      "3万円を超える高額な価格設定",
-      "打鍵音が大きく独特(底打ち音が響く場合がある)",
-      "Razer Synapseソフトウェアが重く不安定なことがある",
-      "アナログスイッチ特有の慣れが必要"
+      "他社製や通常のゲーミングキーボードと比較して価格が非常に高い",
+      "キースイッチの底打ち音がやや大きく、静音性は低め",
+      "USB接続ポートが奥まっており、付属以外のケーブルが使いにくい場合がある"
     ],
     "useCases": [
-      "ValorantやCS2などのストッピングが重要なFPSゲーム",
-      "高速なキー入力が求められるリズムゲーム",
-      "長時間のゲームプレイ(リストレスト付属)"
+      "VALORANTなどのFPSゲームで、瞬時のストッピングや繊細なキャラクターコントロールを行う",
+      "ゲームプレイ中にダイヤルを使用して瞬時に音量を調節する",
+      "付属のリストレストを装着して、長時間のタイピングやゲームプレイの疲労を軽減する"
     ],
     "userStories": [
       {
-        "userType": "FPSゲーマー (Valorantプレイヤー)",
-        "scenario": "ランクマッチでの撃ち合い",
-        "experience": "以前のメカニカルキーボードではストッピングが遅れがちだったが、Huntsman V3 Proに変えてからキャラクターの静止が瞬時に行えるようになり、ヘッドショット率が向上した。ラピッドトリガーの効果を体感できた。",
+        "userType": "FPSゲーマー",
+        "scenario": "VALORANTプレイ時のストッピング操作",
+        "experience": "ラピッドトリガー機能のおかげで、キーを少し戻すだけで入力がリセットされ、ストッピングが従来よりも圧倒的に速く、正確に行えるようになりました。AIMの安定性が劇的に向上しました。",
+        "supportingSourceIds": ["src-1", "src-3", "src-4"],
         "sentiment": "positive"
       },
       {
         "userType": "PCゲーマー",
-        "scenario": "セットアップと日常使用",
-        "experience": "性能は文句ないが、Synapseの設定項目が多くて最初は戸惑った。また、価格が高いので購入には勇気が必要だったが、質感の高さには満足している。",
+        "scenario": "長時間のゲームプレイ",
+        "experience": "付属の硬めなレザーリストレストが手首にジャストフィットし、長時間のプレイでも疲れにくいです。また、打鍵感がなめらかで「スコスコ」という感覚が非常に心地良いです。",
+        "supportingSourceIds": ["src-1", "src-2", "src-4"],
+        "sentiment": "positive"
+      },
+      {
+        "userType": "一般ユーザー",
+        "scenario": "タイピングや日常作業",
+        "experience": "底打ち音が少し大きく、静音性を求める環境には向かないと感じました。ただ、キーの跳ね返りが強く高速な入力ができる点は気に入っています。",
+        "supportingSourceIds": ["src-1", "src-3"],
         "sentiment": "mixed"
       }
     ],
-    "userImpression": "性能面では現行のゲーミングキーボードでトップクラスとの評価が多い。特にラピッドトリガーの精度とカスタマイズ性はFPSプレイヤーから絶賛されている。一方で、価格の高さと打鍵音の大きさ、ソフトウェアの挙動については一部不満の声も見られる。",
+    "userImpression": "ラピッドトリガーによる圧倒的な反応速度と、細かく調整可能なアクチュエーションポイントが高く評価されています。価格は高いものの、FPSガチ勢や高級感を求めるユーザーからは「価格以上の価値がある」と絶賛されています。打鍵感の心地よさやリストレストの使い勝手も好評ですが、打鍵音の大きさには好みが分かれるようです。",
     "sources": [
       {
-        "name": "Amazon商品ページ",
-        "url": "https://www.amazon.co.jp/dp/B0CLGV79TS",
-        "credibility": "High"
+        "id": "src-1",
+        "name": "デバイスオタク / Razer Huntsman V3 Pro をレビュー！",
+        "url": "https://1337yn.com/razer-huntsman-v3-pro-review/",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2024-05-03",
+        "author": "デバイスオタク",
+        "conflictOfInterest": "none",
+        "notes": "ラピッドトリガーの有用性、打鍵感（スコスコ）、打鍵音、リストレストの快適さ、USBポートの形状について詳細にレビュー。"
+      },
+      {
+        "id": "src-2",
+        "name": "価格.com / Huntsman V3 Pro Tenkeyless JP レビュー",
+        "url": "https://review.kakaku.com/review/K0001580874/ReviewCD=1962825/",
+        "tier": "medium",
+        "evidenceType": "secondary",
+        "publishedAt": "2025-05-23",
+        "author": "価格.com ユーザー",
+        "conflictOfInterest": "none",
+        "notes": "光学スイッチの滑らかさ、マット仕上げのスリムな筐体、カスタマイズ性に関する高評価を確認。"
+      },
+      {
+        "id": "src-3",
+        "name": "GAMING CAT / Razer Huntsman V3 Pro TKLを徹底レビュー",
+        "url": "https://gamingcat.jp/razer-huntsman-v3-pro/",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-02-09",
+        "author": "GAMING CAT",
+        "conflictOfInterest": "none",
+        "notes": "デザインの質感、打鍵感、専用ソフトでの設定方法、ラピッドトリガーの性能、打鍵音が大きい点について言及。"
+      },
+      {
+        "id": "src-4",
+        "name": "れいびゅー！ / 【Huntsman V3 Pro TKLレビュー】",
+        "url": "https://reiview.jp/%E3%80%90huntsman-v3-pro-tkl%E3%83%AC%E3%83%93%E3%83%A5%E3%83%BC%E3%80%91%E6%89%93%E3%81%A3%E3%81%A6%E3%82%8B%E3%81%A0%E3%81%91%E3%81%A7%E6%B0%97%E6%8C%81%E3%81%A1%E3%81%84%E3%81%84/",
+        "tier": "medium",
+        "evidenceType": "secondary",
+        "publishedAt": "2025-06-03",
+        "author": "れいびゅー！",
+        "conflictOfInterest": "none",
+        "notes": "なめらかな打鍵感、FPSガチ勢向けの高いコントロール性能、高級感への評価を収集。"
       }
     ],
-    "lastInvestigated": "2026-01-29",
+    "claims": [
+      {
+        "claim": "第2世代アナログオプティカルスイッチにより、0.1～4.0mmの範囲でアクチュエーションポイントの調整が可能",
+        "category": "comparativeAdvantage",
+        "confidence": "high",
+        "supportingSourceIds": ["src-1", "src-3"],
+        "crossChecked": true,
+        "notes": "公式スペックおよび複数のレビュー記事で確認。"
+      },
+      {
+        "claim": "ラピッドトリガー搭載により、FPSなどのゲームで超高速なストッピングが可能",
+        "category": "comparativeAdvantage",
+        "confidence": "high",
+        "supportingSourceIds": ["src-1", "src-3", "src-4"],
+        "crossChecked": true,
+        "notes": "複数のレビュー記事で、ストッピング性能の高さが評価されている。"
+      },
+      {
+        "claim": "アルミニウム製トッププレートを採用し、高い耐久性と高級感のあるデザインを実現",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": ["src-1", "src-2", "src-3"],
+        "crossChecked": true,
+        "notes": "複数のソースで外観の質感や耐久性が高く評価されている。"
+      }
+    ],
+    "lastInvestigated": "2026-04-11",
     "competitiveAnalysis": [
       {
-        "name": "SteelSeries Apex Pro Mini JP",
-        "asin": "B0BJ1SSV1P",
-        "priceComparison": "競合価格: ￥26,280 (本製品: ￥32,980)",
+        "name": "SteelSeries Apex Pro TKL",
+        "asin": "B0BGQG1H5Y",
+        "priceComparison": "対象商品より安い。コストを抑えつつラピッドトリガーを導入したい場合に魅力的。",
         "featureComparison": [
-          "OmniPointスイッチ搭載",
-          "60%サイズ(本製品はTKL)"
+          "共通点：ラピッドトリガー搭載、アクチュエーションポイントの変更が可能、テンキーレスサイズ。",
+          "相違点：対象商品はオプティカルスイッチを採用し、右上にマルチファンクションダイヤルを搭載。Apex ProはOLEDスマートディスプレイを搭載している。"
         ],
         "differentiators": [
-          "Razerは第2世代アナログオプティカルスイッチ",
-          "本製品は独立した矢印キーがあるTKLサイズ"
+          "Razer Huntsman V3 Pro Tenkeylessの利点：光学スイッチによる耐久性と滑らかな打鍵感、専用ダイヤルによる直感的な操作性。",
+          "SteelSeries Apex Pro TKLの利点：OLEDディスプレイによる情報表示や設定変更のしやすさ、実績ある定番モデルとしての安心感。"
         ]
       },
       {
-        "name": "SteelSeries Apex Pro Mini JP",
-        "asin": "B0B5X1PSVP",
-        "priceComparison": "競合価格: ￥25,759 (本製品: ￥32,980)",
+        "name": "Logicool G PRO X TKL RAPID",
+        "asin": "B0DFBWQZDL",
+        "priceComparison": "対象商品と同程度の価格帯。ブランドの好みや機能の違いが選択の決め手になる。",
         "featureComparison": [
-          "OmniPointスイッチ搭載",
-          "60%サイズ(本製品はTKL)"
+          "共通点：ラピッドトリガー搭載、テンキーレスサイズ、プロゲーマー向けのハイエンドモデル。",
+          "相違点：対象商品はアナログオプティカルスイッチを採用。PRO X TKL RAPIDは磁気式アナログスイッチを採用している。"
         ],
         "differentiators": [
-          "Razerは第2世代アナログオプティカルスイッチ",
-          "本製品は独立した矢印キーがあるTKLサイズ"
+          "Razer Huntsman V3 Pro Tenkeylessの利点：オプティカルスイッチの独特な打鍵感と、高級感のあるアルミニウムトッププレート。",
+          "Logicool G PRO X TKL RAPIDの利点：磁気スイッチを採用しており、ロジクール製デバイスとの統一環境を構築しやすい。"
         ]
       },
       {
-        "name": "REALFORCE GX1",
-        "asin": "B0DRJK17XF",
-        "priceComparison": "競合価格: ￥32,000 (本製品: ￥32,980)",
+        "name": "TURTLE BEACH Vulcan II TKL Pro",
+        "asin": "B0D7928XR4",
+        "priceComparison": "対象商品より大幅に安い。コストパフォーマンスに非常に優れる。",
         "featureComparison": [
-          "静電容量無接点方式",
-          "日本製",
-          "静音スイッチ"
+          "共通点：ラピッドトリガー搭載、アクチュエーションポイント変更可能、テンキーレスサイズ。",
+          "相違点：対象商品はオプティカルスイッチだが、Vulcan II TKL Proはホールエフェクト（磁気式）アナログスイッチを採用。"
         ],
         "differentiators": [
-          "Razerはよりゲーミング特化の機能(Snap Tap等)が豊富",
-          "オプティカルスイッチのクリック感"
+          "Razer Huntsman V3 Pro Tenkeylessの利点：ビルドクオリティの高さ、マグネット式リストレスト付属、細かな設定が可能な専用ソフトウェア。",
+          "TURTLE BEACH Vulcan II TKL Proの利点：圧倒的なコストパフォーマンスで、手軽にラピッドトリガーを体験できる。"
         ]
       },
       {
-        "name": "CORSAIR K70 PRO TKL",
-        "asin": "B0D7VW5SMC",
-        "priceComparison": "競合価格: ￥22,380 (本製品: ￥32,980)",
+        "name": "DAREU COOL60",
+        "asin": "B0FH6X4M3C",
+        "priceComparison": "対象商品より圧倒的に安い。コンパクトなサイズと価格が魅力。",
         "featureComparison": [
-          "磁気式キースイッチ",
-          "ポーリングレート8000Hz"
+          "共通点：ラピッドトリガー対応、磁気/光学系の独自スイッチ。",
+          "相違点：対象商品はテンキーレスでオプティカルスイッチ。COOL60は60%サイズの英語配列で磁気スイッチを採用、8000Hzポーリングレート対応。"
         ],
         "differentiators": [
-          "Razerのスイッチ調整機能の精密さ",
-          "エコシステムの成熟度"
+          "Razer Huntsman V3 Pro Tenkeylessの利点：日本語配列のテンキーレスで日常使いしやすいレイアウト、アルミニウムフレームの堅牢性。",
+          "DAREU COOL60の利点：60%サイズでデスクスペースを広く使える、非常に安価にラピッドトリガーと8000Hzを体験できる。"
+        ]
+      },
+      {
+        "name": "Wooting 60HE",
+        "asin": "B0CLJ9K1R6",
+        "priceComparison": "対象商品と同程度かやや高い（市場価格による）。ラピッドトリガーのパイオニア。",
+        "featureComparison": [
+          "共通点：高性能なラピッドトリガーとアクチュエーションポイント調整機能。",
+          "相違点：対象商品はテンキーレスでオンボードメモリへの保存が豊富。Wooting 60HEは60%サイズで、Webベースのソフトウェア「Wootility」を使用。"
+        ],
+        "differentiators": [
+          "Razer Huntsman V3 Pro Tenkeylessの利点：テンキーレスレイアウトによる日常的な使いやすさ、ソフトウェア不要で本体のみでの設定変更機能。",
+          "Wooting 60HEの利点：ラピッドトリガーの先駆者としての圧倒的な信頼性と、洗練されたWebソフトウェアによる設定の自由度。"
+        ]
+      },
+      {
+        "name": "Pulsar PCMK 2HE",
+        "asin": "B0CWL4Y957",
+        "priceComparison": "対象商品より安い。磁気スイッチ搭載の対抗馬。",
+        "featureComparison": [
+          "共通点：ラピッドトリガー対応、テンキーレス（またはコンパクト）サイズ。",
+          "相違点：対象商品はRazerのオプティカルスイッチ、PCMK 2HEは磁気スイッチを採用。"
+        ],
+        "differentiators": [
+          "Razer Huntsman V3 Pro Tenkeylessの利点：0.1mm単位の細かなラピッドトリガー調整と、専用ソフトウェアの使いやすさ。",
+          "Pulsar PCMK 2HEの利点：価格を抑えつつ磁気スイッチの恩恵を受けられるコストパフォーマンス。"
         ]
       }
     ],
     "recommendation": {
       "targetUsers": [
-        "本気で勝ちたいFPS/TPSゲーマー",
-        "最新のデバイス機能を試したいガジェット好き",
-        "Razer製品でデバイスを統一しているユーザー"
+        "VALORANTなどのFPSゲームで少しでも有利に立ち回りたい競技ゲーマー",
+        "ラピッドトリガーと打鍵感の両方を妥協したくないユーザー",
+        "デスク周りをRazer製品で統一し、高級感のあるデバイスを求める人"
       ],
       "pros": [
-        "最高峰の反応速度とカスタマイズ性",
-        "優れたビルドクオリティと耐久性",
-        "オンボードメモリによる設定持ち運び"
+        "ラピッドトリガーによる圧倒的なストッピング性能",
+        "第2世代アナログオプティカルスイッチによる心地よい打鍵感",
+        "アルミニウム製トッププレートとリストレストによる高い質感と快適性"
       ],
       "cons": [
-        "非常に高価",
-        "打鍵音が大きい",
-        "ソフトウェアのセットアップが必要"
+        "キーボードとしては非常に高価",
+        "打鍵音が比較的大きめ",
+        "USBポートの形状が特殊で、サードパーティ製ケーブルが使いにくい場合がある"
       ],
       "score": 85,
-      "scoreRationale": "[基本点: 70]\n[加点: +10] (第2世代アナログオプティカルスイッチとラピッドトリガーの性能)\n[減点: -10] (競合と比較して高価な価格設定)\n[加点: +5] (PBTキーキャップとアルミ製トッププレートのビルドクオリティ)\n[加点: +5] (プロゲーマーの高い採用率と信頼性)\n[加点: +5] (詳細なカスタマイズ機能と先進性)\n[合計: 85]"
+      "scoreRationale": "[基本点: 70] (固定)\n[加点: +10] (第2世代アナログオプティカルスイッチとラピッドトリガーによる最高峰のゲーミング性能)\n[加点: +5] (アルミニウムプレートやリストレストなど、高級感とビルドクオリティの高さ)\n[加点: +5] (オンボードでの設定変更やダイヤルなど、使い勝手に優れた機能性)\n[減点: -5] (他社製品と比較しても非常に高価な価格設定)\n[合計: 85] (最終的なスコア)"
     },
     "technicalSpecs": {
-      "switchType": "第2世代 Razer アナログオプティカルスイッチ",
-      "actuationPoint": "0.1 mm - 4.0 mm (可変)",
-      "rapidTrigger": "対応 (感度調整可能)",
-      "keycaps": "ダブルショット PBT キーキャップ",
-      "connectivity": "有線 (USB Type-C 取り外し可能)",
-      "pollingRate": "1000 Hz (一部機能で高速処理)",
       "dimensions": {
-        "width": "363 mm",
-        "depth": "139 mm",
-        "height": "39 mm",
-        "weight": "約720g"
+        "height": "39mm",
+        "width": "139mm",
+        "depth": "363mm"
       },
-      "onboardMemory": "対応 (最大6プロファイル)",
+      "weight": "720g",
+      "switchType": "第2世代 Razer アナログオプティカルスイッチ",
+      "actuationPoint": "0.1～4.0mm (可変)",
+      "rapidTrigger": "対応 (0.1mm～1.0mm)",
+      "pollingRate": "1000Hz",
+      "actuationForce": "40g",
+      "layout": "日本語配列 (テンキーレス)",
+      "connection": "有線 (USB Type-C)",
+      "keycaps": "ダブルショット PBT キーキャップ",
       "lighting": "Razer Chroma RGB",
-      "other": [
-        "マグネット式リストレスト付属",
-        "マルチファンクションデジタルダイヤル"
-      ]
+      "other": ["マグネット式エルゴノミックリストレスト付属", "マルチファンクションデジタルダイヤル搭載", "オンボードメモリ対応"]
     }
   }
 }
