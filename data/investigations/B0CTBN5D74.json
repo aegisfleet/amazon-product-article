@@ -27,42 +27,34 @@
       "週末の作り置きやパーティー料理の準備",
       "自家製ヨーグルトやドライフルーツ作り"
     ],
-    "userStories": [
-      {
-        "userType": "30代 共働き夫婦（子供2人）",
-        "scenario": "平日の夕食作り",
-        "experience": "（推測）以前使っていたノンフライヤーは音がうるさく、テレビの音が聞こえなかったが、この機種はDCモーターのおかげで非常に静か。6Lの大容量なので、唐揚げも一度に家族全員分作れて時短になる。忙しい夕方のストレスが減った。",
-        "sentiment": "positive"
-      },
-      {
-        "userType": "40代 料理好き主婦",
-        "scenario": "週末の凝った料理作り",
-        "experience": "（推測）最高230℃まで上がるので、ステーキの表面をカリッと焼くのが得意。また、発酵モードで自家製ヨーグルトや塩麹を作れるのが嬉しい。レシピブックも充実していて、新しい料理に挑戦する楽しみが増えた。",
-        "sentiment": "positive"
-      }
-    ],
+    "userStories": [],
     "userImpression": "DCモーターによる「静音性」と「パワー（調理速度・高温）」が高く評価されると予想される。価格は高めだが、ビルドクオリティと機能性で差別化されており、安価な製品に満足できなかった層からの支持が見込まれる。",
     "sources": [
       {
+        "id": "src-1",
         "name": "Amazon商品ページ",
         "url": "https://www.amazon.co.jp/dp/B0CTBN5D74",
-        "credibility": "high"
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2024-06-04",
+        "author": "COSORI (ウィーシンク ジャパン)",
+        "conflictOfInterest": "none",
+        "notes": "公式の商品仕様や特徴を確認"
       }
     ],
-    "lastInvestigated": "2026-01-29",
+    "lastInvestigated": "2026-04-11",
     "competitiveAnalysis": [
       {
         "name": "COSORI ノンフライヤー 4.7L CAF-L501",
         "asin": "B09HB4B15V",
         "priceComparison": "約11,000円（本製品より約9,000円安い）",
         "featureComparison": [
-          "容量は4.7Lと一回り小さい",
-          "最高温度は同じ230℃",
-          "DCモーター非搭載のため、静音性は劣る可能性あり"
+          "共通点：最高温度230℃までの加熱調理が可能",
+          "相違点：容量が4.7Lと一回り小さく、DCモーターは非搭載"
         ],
         "differentiators": [
-          "コンパクトさ重視ならこちら",
-          "価格が手頃でコスパが高い"
+          "COSORI ノンフライヤー 6L DCモーター CAF-DC601の利点：静音性が高く、6Lの大容量で大家族向け",
+          "COSORI ノンフライヤー 4.7L CAF-L501の利点：コンパクトで収納しやすく、価格が手頃"
         ]
       },
       {
@@ -70,13 +62,12 @@
         "asin": "B0DHTWPZR8",
         "priceComparison": "約9,000円（本製品より約11,000円安い）",
         "featureComparison": [
-          "容量は8Lとさらに大きい",
-          "ダブルバスケットではないが、大量調理に向く",
-          "ブランド認知度はCOSORIより低い"
+          "共通点：大容量で多人数向けの調理が可能",
+          "相違点：容量が8Lとさらに大きく、DCモーターの有無が異なる"
         ],
         "differentiators": [
-          "圧倒的なコストパフォーマンス",
-          "大家族向けの超大容量"
+          "COSORI ノンフライヤー 6L DCモーター CAF-DC601の利点：DCモーターによる静音性と、ブランドの信頼性が高い",
+          "ChefRobot ノンフライヤー 8Lの利点：8Lの超大容量でありながら価格が安い"
         ]
       },
       {
@@ -84,12 +75,12 @@
         "asin": "B0DBKLGGLB",
         "priceComparison": "約12,000円（本製品より約8,000円安い）",
         "featureComparison": [
-          "容量はほぼ同じ6.2L",
-          "前面が透明窓になっており調理中の中身が見える"
+          "共通点：約6Lの同等の大容量を備える",
+          "相違点：前面に透明窓があり、調理中の中身が確認できる"
         ],
         "differentiators": [
-          "可視窓による安心感",
-          "価格と機能のバランスが良い"
+          "COSORI ノンフライヤー 6L DCモーター CAF-DC601の利点：DCモーター搭載で静音性が高い",
+          "SAMKYO ノンフライヤー 6.2Lの利点：透明窓があり焼き加減を確認しやすい"
         ]
       }
     ],
@@ -110,8 +101,8 @@
         "本体サイズが大きく場所をとる",
         "中が見える窓がない"
       ],
-      "score": 85,
-      "scoreRationale": "[基本点: 70]\n[加点: +10] (DCモーターによる静音性・高速調理、230℃高温、多機能性は市場トップクラス)\n[減点: -10] (競合製品が1万円前後であるのに対し、約2万円と価格差が大きい)\n[加点: +5] (COSORIブランドのデザイン性と品質への信頼感)\n[加点: +5] (推定される高いユーザー満足度とレシピ特典)\n[加点: +5] (DCモーター搭載という独自の強み)\n[合計: 85]"
+      "score": 80,
+      "scoreRationale": "[基本点: 70]\n[加点: +4] (DCモーターによる静音性と高速調理)\n[加点: +3] (最高230℃の高温調理機能)\n[加点: +3] (9種類の調理モードによる多機能性)\n[減点: -10] (競合製品が1万円前後であるのに対し、約2万円と価格差が大きい)\n[加点: +5] (COSORIブランドのデザイン性と品質への信頼感)\n[加点: +5] (DCモーター搭載という独自の強み)\n[合計: 80]"
     },
     "technicalSpecs": {
       "capacity": "6L",
@@ -130,17 +121,49 @@
         "保温"
       ],
       "dimensions": {
-        "width": "30.0cm (約)",
-        "depth": "40.0cm (約)",
-        "height": "30.1cm (約)",
-        "weight": "5.2kg (約)"
+        "height": "301mm",
+        "width": "300mm",
+        "depth": "400mm"
       },
       "color": "ブラック",
       "other": [
         "DCモーター搭載",
         "95%オイルカット",
         "食洗機対応バスケット"
-      ]
-    }
+      ],
+      "weight": "5200g"
+    },
+    "claims": [
+      {
+        "claim": "DCモーター搭載により、従来品よりも最大38%速く調理でき、エネルギー効率が高く静音性に優れている",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "crossChecked": false,
+        "notes": "Amazonの商品説明「Features」に記載あり"
+      },
+      {
+        "claim": "最高230℃までの温度設定が可能で、食材の水分と旨みを閉じ込めながら均一に加熱する",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "crossChecked": false,
+        "notes": "Amazonの商品説明「Features」に記載あり"
+      },
+      {
+        "claim": "95%オイルカットが可能で、6Lの大容量",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "crossChecked": false,
+        "notes": "Amazonの商品説明「Features」に記載あり"
+      }
+    ]
   }
 }
