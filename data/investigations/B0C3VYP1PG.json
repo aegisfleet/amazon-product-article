@@ -31,62 +31,74 @@
         "userType": "20代 一人暮らし会社員",
         "scenario": "仕事帰りの夕食",
         "experience": "スーパーで買ってきた半額のお惣菜を温め直しモードで加熱すると、揚げたてのようにサクサクになり感動した。電子レンジでベチャッとするのが嫌だったので重宝している。音も静かなので夜遅くても使いやすい。",
-        "sentiment": "positive"
+        "sentiment": "positive",
+        "supportingSourceIds": [
+          "src-1"
+        ]
       },
       {
         "userType": "自炊初心者",
         "scenario": "冷凍食品の活用",
         "experience": "付属のレシピに冷凍食品の調理時間や温度が細かく載っているので、失敗せずに作れた。油を使わないので後片付けも楽で、揚げ物への抵抗感がなくなった。",
-        "sentiment": "positive"
+        "sentiment": "positive",
+        "supportingSourceIds": [
+          "src-1"
+        ]
       }
     ],
     "userImpression": "価格はやや高いものの、コンパクトなサイズ感、静音性、使いやすいタッチパネル、充実したレシピにより、一人暮らしユーザーからの満足度は高いと推測される。安価な製品よりも「体験の質」を重視する層に支持されている。",
     "sources": [
       {
+        "id": "src-1",
         "name": "Amazon商品ページ",
         "url": "https://www.amazon.co.jp/dp/B0C3VYP1PG",
-        "credibility": "高"
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2023-05-01",
+        "author": "COSORI",
+        "conflictOfInterest": "none",
+        "notes": "公式商品情報とレビュー"
       }
     ],
-    "lastInvestigated": "2026-01-29",
+    "lastInvestigated": "2026-04-11",
     "competitiveAnalysis": [
       {
-        "name": "MAXZEN ノンフライヤー 2L MAF-LT01",
+        "name": "MAXZEN ノンフライヤー 2L",
         "asin": "B0CWGTX33F",
-        "priceComparison": "約3,500円とCOSORIの半額程度で非常に安価。",
+        "priceComparison": "対象商品の半額程度で非常に安価なため、コスト重視のユーザーには魅力的だが、機能面ではシンプルに留まる。",
         "featureComparison": [
-          "操作はシンプルなダイヤル式（COSORIはタッチパネル）",
-          "機能は最低限（COSORIはプリセットやレシピが充実）"
+          "共通点：容量2Lのコンパクトなノンフライヤーであること",
+          "相違点：MAXZENはシンプルなダイヤル式操作に対し、対象商品はタッチパネル操作で充実したプリセットや専用レシピが付属する"
         ],
         "differentiators": [
-          "圧倒的なコストパフォーマンス",
-          "機能よりも安さを求めるユーザー向け"
+          "対象商品の利点：タッチパネルの使いやすさと、料理研究家監修レシピによる調理の幅広さ",
+          "MAXZEN ノンフライヤー 2Lの利点：圧倒的な低価格による導入ハードルの低さ"
         ]
       },
       {
         "name": "Wallfire ノンフライヤー 3L",
         "asin": "B0DF55HFKV",
-        "priceComparison": "約5,500円とCOSORIより安く、容量も大きい。",
+        "priceComparison": "対象商品より安価でありながら容量が大きく、コストパフォーマンスが高い。",
         "featureComparison": [
-          "3Lの大容量で可視窓付き（中が見える）",
-          "タッチパネル搭載"
+          "共通点：タッチパネル操作が可能であること",
+          "相違点：Wallfireは3Lと容量が大きく、調理状態を確認できる可視窓が付いている"
         ],
         "differentiators": [
-          "コストとスペック（容量・窓）のバランスが良い",
-          "COSORIは「よりコンパクト」「静音」「レシピの質」で対抗"
+          "対象商品の利点：A4サイズに収まるコンパクトさと、静音性に優れている点",
+          "Wallfire ノンフライヤー 3Lの利点：大容量かつ中が見える可視窓付きで、一度に多めの調理がしやすい点"
         ]
       },
       {
-        "name": "SAMKYO ノンフライヤー 2L F20",
+        "name": "SAMKYO ノンフライヤー 2L",
         "asin": "B0CHHZ4GMS",
-        "priceComparison": "約5,000円でCOSORIより安価。",
+        "priceComparison": "対象商品より安価であり、予算を抑えたい場合に選択肢となる。",
         "featureComparison": [
-          "2Lサイズでスペックは近い",
-          "COSORIのような特定レシピへの訴求は弱め"
+          "共通点：2Lサイズのコンパクトなノンフライヤーであること",
+          "相違点：SAMKYOは基本的な機能に特化している一方、対象商品は多彩なレシピや調理モードが強み"
         ],
         "differentiators": [
-          "標準的な選択肢",
-          "COSORIはブランド力とデザインで差別化"
+          "対象商品の利点：ブランドの信頼性と、充実したレシピによる使い勝手の良さ",
+          "SAMKYO ノンフライヤー 2Lの利点：手頃な価格で購入できる標準的なノンフライヤーであること"
         ]
       }
     ],
@@ -112,8 +124,7 @@
       "dimensions": {
         "height": "26.7cm",
         "width": "21.1cm",
-        "depth": "25.6cm",
-        "weight": "非公開"
+        "depth": "25.6cm"
       },
       "capacity": "2L",
       "power": "省エネ（詳細ワット数非公開だが通常1000W前後）",
@@ -124,7 +135,9 @@
         "オイル97%カット",
         "PSE認証済み",
         "食洗機対応バスケット"
-      ]
-    }
+      ],
+      "weight": "非公開"
+    },
+    "claims": []
   }
 }
