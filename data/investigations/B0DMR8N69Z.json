@@ -1,0 +1,217 @@
+{
+  "analysis": {
+    "productName": "Milk Touch ジェリーフィットティンティッドグロウティント 10 Fallen Coco",
+    "parentAsin": "B0DMR8N69Z",
+    "productDescription": "42%水分ベースでベタつかず軽い付け心地が特徴のリップティント。ソフトクールプランピング成分配合で心地よい爽快感を与えつつ、4種の果汁成分とスクワランで保湿ケアを行いながらツヤを持続させます。",
+    "productUsage": [
+      "リップメイク",
+      "唇の保湿とツヤ出し"
+    ],
+    "positivePoints": [
+      "水分ベースでベタつかず、軽い付け心地",
+      "ぷっくりツヤツヤで発色がよい",
+      "スースーする清涼感（ソフトクールプランピング成分配合）",
+      "乾燥しにくく、時間が経ってもツヤが維持される"
+    ],
+    "negativePoints": [
+      "夕方になると乾燥して皮がむけるとのレビューあり",
+      "グラスにつきやすく、色残りが弱いという意見がある"
+    ],
+    "useCases": [
+      "日常使いのリップメイク",
+      "ツヤ感を重視したメイク",
+      "乾燥を防ぎながら発色を楽しみたい時"
+    ],
+    "userStories": [
+      {
+        "userType": "一般ユーザー",
+        "scenario": "春に向けた日常のメイクアップ",
+        "experience": "少しスースーしますが、痛みはなく清涼感を感じる程度です。1回塗布だとすっぴんでも浮かない自然な仕上がりで、2回重ね塗りするとツヤが増して少し濃く発色します。ただし、飲み食いすると色残りは薄れる印象です。",
+        "supportingSourceIds": [
+          "src-amazon-reviews"
+        ],
+        "sentiment": "positive"
+      },
+      {
+        "userType": "乾燥が気になるユーザー",
+        "scenario": "長時間の外出",
+        "experience": "色はとても可愛く色持ちも良いと感じる一方で、夕方になると唇がカサカサして皮がむけてしまうことがありました。こまめな保湿が必要かもしれません。",
+        "supportingSourceIds": [
+          "src-amazon-reviews"
+        ],
+        "sentiment": "mixed"
+      },
+      {
+        "userType": "リップの仕上がりにこだわるユーザー",
+        "scenario": "ツヤ感と発色の両立を求めて使用",
+        "experience": "塗った後のぷるんぷるん感があり、ベタつかないのでお気に入りです。他のリップよりも乾燥しにくいと感じており、ツヤと発色のバランスに満足しています。",
+        "supportingSourceIds": [
+          "src-amazon-reviews"
+        ],
+        "sentiment": "positive"
+      }
+    ],
+    "userImpression": "発色の良さやツヤ感、清涼感のある付け心地に満足している声が多い一方で、飲食による色落ちや長時間の使用による乾燥を気にする意見も見られます。全体的に仕上がりの美しさが高く評価されています。",
+    "sources": [
+      {
+        "id": "src-amazon",
+        "name": "Amazon商品ページ",
+        "url": "https://www.amazon.co.jp/dp/B0DMR8N69Z",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-04-11",
+        "author": "MILKTOUCH",
+        "conflictOfInterest": "none",
+        "notes": "商品の基本情報、価格（1,760円）、特徴、スペックを確認"
+      },
+      {
+        "id": "src-amazon-reviews",
+        "name": "Amazonカスタマーレビュー",
+        "url": "https://www.amazon.co.jp/dp/B0DMR8N69Z",
+        "tier": "medium",
+        "evidenceType": "secondary",
+        "publishedAt": "2026-04-11",
+        "author": "Amazon購入者",
+        "conflictOfInterest": "none",
+        "notes": "使用感、良い点・悪い点のレビュー抽出"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "42%水分ベースでベタつかない軽い付け心地",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-amazon"
+        ],
+        "crossChecked": false,
+        "notes": "メーカー公式の特徴"
+      },
+      {
+        "claim": "ソフトクールプランピング成分配合で清涼感がある",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-amazon",
+          "src-amazon-reviews"
+        ],
+        "crossChecked": true,
+        "notes": "メーカー説明とユーザーレビューの両方で確認"
+      }
+    ],
+    "lastInvestigated": "2026-04-11",
+    "competitiveAnalysis": [
+      {
+        "name": "Laka フルーティーグラムティント #103 ハミング",
+        "asin": "B0BY8NVDX5",
+        "priceComparison": "対象商品とほぼ同価格帯。",
+        "featureComparison": [
+          "共通点：ツヤ感、高発色、保湿成分を含むリップティント",
+          "相違点：対象商品は清涼成分を配合しているのに対し、Lakaは10種の果実由来成分を含みヴィーガンフォーミュラであることが特徴"
+        ],
+        "differentiators": [
+          "Milk Touchの利点：プランピング効果による清涼感とぷっくりとした仕上がりを楽しめる点",
+          "Lakaの利点：ヴィーガン処方であることと、豊富な果実由来成分による保湿力"
+        ]
+      },
+      {
+        "name": "Dinto ブラーグローイミニリップティント 252 Memento Mori",
+        "asin": "B0D2ZF9K2X",
+        "priceComparison": "対象商品よりも安価だが、ミニサイズである点に注意。",
+        "featureComparison": [
+          "共通点：しっとりとしたツヤ感と水光のようなテクスチャー",
+          "相違点：対象商品は通常サイズで42%水分ベース。Dintoは持ち運びしやすいコンパクトサイズでヴィーガンコスメ"
+        ],
+        "differentiators": [
+          "Milk Touchの利点：通常サイズであり、爽快感のある付け心地",
+          "Dintoの利点：価格が抑えられており、持ち運びに便利なお試しサイズである点"
+        ]
+      },
+      {
+        "name": "KATE リップモンスター 09",
+        "asin": "B08YKJ17MZ",
+        "priceComparison": "対象商品よりも少し安価。",
+        "featureComparison": [
+          "共通点：高発色と長時間の持続力を謳うリップアイテム",
+          "相違点：対象商品はツヤと清涼感のあるティントタイプ。KATEは色持ちの良さと落ちにくさに特化した口紅タイプ"
+        ],
+        "differentiators": [
+          "Milk Touchの利点：水分ベースのツヤ感と、清涼感のある使用感",
+          "KATEの利点：圧倒的な色持ちの良さと落ちにくさ"
+        ]
+      },
+      {
+        "name": "セザンヌ ウォータリーティントリップ 06",
+        "asin": "B09LTLY45V",
+        "priceComparison": "対象商品の半額以下であり、非常に安価。",
+        "featureComparison": [
+          "共通点：ティント処方でツヤが持続する点",
+          "相違点：対象商品は清涼成分や複数の果汁成分を含む。セザンヌはシンプルでコスパに特化した処方"
+        ],
+        "differentiators": [
+          "Milk Touchの利点：プランピング効果やリッチな保湿成分による高い使用感",
+          "セザンヌの利点：手軽に試せる圧倒的なコストパフォーマンスの良さ"
+        ]
+      },
+      {
+        "name": "ロムアンド ジューシー ラスティング ティント #13 EAT DOTORI",
+        "asin": "B0814SBT3Q",
+        "priceComparison": "対象商品よりも少し安価。",
+        "featureComparison": [
+          "共通点：韓国コスメのリップティントであり、ツヤ感（光沢）と持続力を特徴とする",
+          "相違点：対象商品はプランピングによる清涼感がある。ロムアンドはシロップコーティングのような澄んだ光沢（糖葫芦光沢）を強調"
+        ],
+        "differentiators": [
+          "Milk Touchの利点：ソフトクールプランピング成分によるスースーとした清涼感",
+          "ロムアンドの利点：時間が経つにつれて現れる独特の澄んだ光沢感"
+        ]
+      },
+      {
+        "name": "KATE リップモンスター クリアトーン C01",
+        "asin": "B0D7CBTG8M",
+        "priceComparison": "対象商品よりも少し安価。",
+        "featureComparison": [
+          "共通点：長時間の持続力を持つリップ",
+          "相違点：対象商品はツヤと高発色。KATEクリアトーンは唇の色と同化するなじみ発色が特徴"
+        ],
+        "differentiators": [
+          "Milk Touchの利点：高発色とぷるんとしたツヤ感",
+          "KATEの利点：自然に馴染むクリアな発色と高い持続力"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "ツヤ感と発色の両方を重視する人",
+        "リップに清涼感（スースー感）を求める人",
+        "ベタつかない軽い付け心地が好きな人"
+      ],
+      "pros": [
+        "美しいツヤ感と高発色",
+        "ソフトクールプランピング成分による心地よい清涼感",
+        "水分ベースでベタつかない"
+      ],
+      "cons": [
+        "飲食すると色落ちしやすい場合がある",
+        "人によっては長時間使用で乾燥を感じる可能性がある"
+      ],
+      "score": 75,
+      "scoreRationale": "[基本点: 70]\n[加点: +5] (美しいツヤ感と高発色、ベタつかない軽い使用感が評価されている)\n[加点: +5] (独自のプランピング成分による心地よい清涼感が特徴的である)\n[減点: -3] (飲食による色落ちや、長時間使用時の乾燥に関する指摘が一部にある)\n[減点: -2] (グラスにつきやすいなど、ティントとしての定着力に課題がある)\n[合計: 75]"
+    },
+    "technicalSpecs": {
+      "dimensions": {
+        "width": "26mm",
+        "height": "81mm",
+        "depth": "24mm"
+      },
+      "weight": "40g",
+      "capacity": "4g",
+      "material": "液体",
+      "origin": "大韓民国",
+      "other": [
+        "カラー: 10 : Fallen Coco",
+        "仕上がり: 高光沢"
+      ]
+    }
+  }
+}
