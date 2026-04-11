@@ -1,0 +1,143 @@
+{
+  "analysis": {
+    "productName": "FUNLOGY Speaker",
+    "parentAsin": "B0D4TRVKGG",
+    "productDescription": "FUNLOGYの総合出力14WステレオPCスピーカーです。USB給電と3.5mmピン入力に対応し、30度の傾斜角度による聴き取りやすい音響設計が特徴です。",
+    "productUsage": ["PCやモニターの外部スピーカーとして", "デスク周りの省スペースな音響アップグレードに"],
+    "positivePoints": ["総合14Wの十分な出力による迫力あるサウンド", "スピーカー間のケーブルが130cmありデュアルモニター環境にも対応", "30度の傾斜でリスニングポジションに向けた設計", "1年保証と日本人スタッフによるサポート対応"],
+    "negativePoints": ["USB給電のためノイズが乗る環境がある可能性がある", "Bluetooth接続非対応のため有線接続が必須"],
+    "useCases": ["デュアルモニター環境でのPC作業・動画視聴", "ノートPCの音質を改善したい時の外部スピーカーとして", "手軽に迫力ある低音を楽しみたいゲームプレイ時に"],
+    "userStories": [],
+    "userImpression": "1990円という低価格ながら14W出力を備え、十分な音圧と聴き取りやすい音質でコストパフォーマンスが高いと評価されています。",
+    "sources": [
+      {
+        "id": "amazon-official",
+        "name": "Amazon商品ページ",
+        "url": "https://www.amazon.co.jp/dp/B0D4TRVKGG",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-04-11",
+        "author": "FUNLOGY",
+        "conflictOfInterest": "none",
+        "notes": "公式スペック、特徴、価格情報を確認"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "総合出力14Wで迫力ある音",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": ["amazon-official"],
+        "crossChecked": false,
+        "notes": "商品仕様に7W×2の記載あり"
+      },
+      {
+        "claim": "スピーカー間のケーブルが130cmでデュアルディスプレイ対応",
+        "category": "durability",
+        "confidence": "high",
+        "supportingSourceIds": ["amazon-official"],
+        "crossChecked": false,
+        "notes": "商品仕様に記載"
+      }
+    ],
+    "lastInvestigated": "2026-04-11",
+    "competitiveAnalysis": [
+      {
+        "name": "バッファロー BSSP105UBK",
+        "asin": "B07ZCYH8TW",
+        "priceComparison": "対象商品より安価",
+        "featureComparison": [
+          "共通点：USB給電、3.5mm入力、コンパクト設計",
+          "相違点：対象商品は14W出力と30度の傾斜設計だが、バッファロー製は出力がより小さい一般的な箱型"
+        ],
+        "differentiators": [
+          "FUNLOGY Speakerの利点：より高出力（14W）で迫力ある音と、傾斜による聴き取りやすさ",
+          "バッファロー BSSP105UBKの利点：価格の安さと定番メーカーの安心感"
+        ]
+      },
+      {
+        "name": "エレコム SP-P10CUSBBK",
+        "asin": "B0DJ86V28L",
+        "priceComparison": "対象商品よりやや高価",
+        "featureComparison": [
+          "共通点：USB給電、PC向けスピーカー",
+          "相違点：対象商品は14W出力・3.5mm入力だが、エレコム製は4.4W出力でUSB-C接続のみ"
+        ],
+        "differentiators": [
+          "FUNLOGY Speakerの利点：出力が大きく、3.5mm端子で汎用的に接続可能",
+          "エレコム SP-P10CUSBBKの利点：USB-C1本で音声・給電が可能で配線がすっきりする"
+        ]
+      },
+      {
+        "name": "サンワサプライ MM-SPL22UBK",
+        "asin": "B0DKDVZLCF",
+        "priceComparison": "対象商品より高価",
+        "featureComparison": [
+          "共通点：USB給電、ステレオスピーカー",
+          "相違点：対象商品は14W出力だが、サンワサプライ製はパッシブラジエーター搭載で金属メッシュパネル採用"
+        ],
+        "differentiators": [
+          "FUNLOGY Speakerの利点：価格が安く、コストパフォーマンスに優れる",
+          "サンワサプライ MM-SPL22UBKの利点：金属メッシュによる高級感とパッシブラジエーターの低音強化"
+        ]
+      },
+      {
+        "name": "サンワダイレクト 400-SP099",
+        "asin": "B09MT68ZGR",
+        "priceComparison": "対象商品より高価",
+        "featureComparison": [
+          "共通点：USB給電、3.5mm接続",
+          "相違点：対象商品はセパレート型（左右独立）だが、サンワダイレクト製はサウンドバー型（一体型）で6W出力"
+        ],
+        "differentiators": [
+          "FUNLOGY Speakerの利点：左右の配置を自由に調整でき、出力も大きい",
+          "サンワダイレクト 400-SP099の利点：モニター下にすっきり収まるサウンドバー形状"
+        ]
+      },
+      {
+        "name": "Nylavee PCスピーカー",
+        "asin": "B0DSB9DKR6",
+        "priceComparison": "対象商品よりかなり高価",
+        "featureComparison": [
+          "共通点：USB給電、ステレオサウンド",
+          "相違点：対象商品は有線接続のみだが、NylaveeはBluetooth接続にも対応したサウンドバー型"
+        ],
+        "differentiators": [
+          "FUNLOGY Speakerの利点：シンプルで安価、左右分離によるステレオ感",
+          "Nylavee PCスピーカーの利点：Bluetooth対応でスマホなどからもワイヤレスで再生可能"
+        ]
+      },
+      {
+        "name": "Bose Companion 2 Series III",
+        "asin": "B00DCGC8BS",
+        "priceComparison": "対象商品より非常に高価",
+        "featureComparison": [
+          "共通点：PC向けステレオスピーカー、3.5mm接続",
+          "相違点：対象商品はUSB給電だが、BoseはACアダプター給電で独自の音響技術を搭載"
+        ],
+        "differentiators": [
+          "FUNLOGY Speakerの利点：USB給電による手軽さと圧倒的なコストパフォーマンス",
+          "Bose Companion 2 Series IIIの利点：高価格帯ならではの圧倒的な音質とブランドの信頼性"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": ["PCの音質を手軽に向上させたい人", "デュアルモニター環境でスピーカーを配置したい人", "低予算で高出力なスピーカーを探している人"],
+      "pros": ["1990円で総合14Wの迫力あるサウンド", "スピーカー間ケーブル130cmで配置の自由度が高い", "USB給電でコンセント不要", "音を聴き取りやすい30度の傾斜設計"],
+      "cons": ["Bluetooth非対応（有線接続のみ）", "USB給電特有のノイズが発生する可能性がある"],
+      "score": 88,
+      "scoreRationale": "[基本点: 70]\n[加点: +10] (1990円で14W出力という非常に高いコストパフォーマンス)\n[加点: +5] (ケーブル長130cmや30度傾斜など実用性の高い設計)\n[加点: +5] (日本ブランドによる安心のサポートと1年保証)\n[減点: -2] (Bluetooth非対応で有線接続のみの制約)\n[合計: 88]"
+    },
+    "technicalSpecs": {
+      "dimensions": { "height": "108mm", "width": "69mm", "depth": "132mm" },
+      "weight": "260g (片方のみ)",
+      "power": "総合14W (7W x 2)",
+      "impedance": "3.2 Ω × 2",
+      "connection": "3.5mm AUXピン入力",
+      "powerSupply": "USB Type-A給電",
+      "cableLength": "スピーカー間: 130cm, AUXケーブル: 130cm, USB給電ケーブル: 130cm",
+      "features": ["音量調整ダイヤル", "パッシブラジエーター型", "30度傾斜設計"],
+      "other": ["取扱説明書（保証書付き）付属"]
+    }
+  }
+}
