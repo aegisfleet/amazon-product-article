@@ -1,0 +1,195 @@
+{
+  "analysis": {
+    "productName": "Shokz OpenComm2 2025 Upgrade",
+    "parentAsin": "B0DSJBWQ3X",
+    "productDescription": "骨伝導技術を採用したビジネス向けオープンイヤーヘッドホン。ノイズキャンセリングマイク搭載でクリアな通話が可能。",
+    "productUsage": [
+      "テレワークやWeb会議での音声通話",
+      "ランニングなどのスポーツ時の音楽鑑賞・通話",
+      "外出先や移動中のハンズフリー通話"
+    ],
+    "positivePoints": [
+      "DSP技術とノイズキャンセリングマイクによるクリアな通話品質",
+      "骨伝導により耳を塞がないため周囲の音を自然に把握可能",
+      "最大16時間の通話時間で長時間の業務にも対応",
+      "IP55防塵防水で汗や軽い雨にも強い"
+    ],
+    "negativePoints": [
+      "骨伝導の特性上、音漏れがあるため静かな場所での大音量には不向き",
+      "通常のカナル型イヤホンと比べると低音の迫力に欠ける"
+    ],
+    "useCases": [
+      "長時間のオンライン会議や商談",
+      "周囲の音に注意が必要な環境での作業",
+      "ウォーキングやランニング中の使用"
+    ],
+    "userStories": [
+      {
+        "userType": "ビジネスパーソン",
+        "scenario": "在宅勤務中の長時間のオンライン会議",
+        "experience": "耳を塞がないため、長時間の会議でも耳が疲れにくく快適。マイクのノイズキャンセリング性能が高く、生活音が相手に伝わりにくい点も安心。",
+        "supportingSourceIds": [
+          "src-1",
+          "src-2"
+        ],
+        "sentiment": "positive"
+      }
+    ],
+    "userImpression": "クリアな通話品質と耳を塞がない快適さが評価されており、特にテレワークやWeb会議などのビジネスユースにおいて高い満足度を得ている。",
+    "sources": [
+      {
+        "id": "src-1",
+        "name": "Amazon 製品ページ",
+        "url": "https://www.amazon.co.jp/dp/B0DSJBWQ3X",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2025-01-01",
+        "author": "SHOKZ",
+        "conflictOfInterest": "possible",
+        "notes": "製品の基本仕様および特徴（ノイズキャンセリングマイク、16時間通話など）を確認"
+      },
+      {
+        "id": "src-2",
+        "name": "価格.com 製品情報",
+        "url": "https://kakaku.com/item/K0001580441/",
+        "tier": "medium",
+        "evidenceType": "secondary",
+        "publishedAt": "2023-10-01",
+        "author": "価格.com",
+        "conflictOfInterest": "none",
+        "notes": "製品の仕様と市場での位置づけを確認"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "最大16時間連続通話可能",
+        "category": "durability",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-1",
+          "src-2"
+        ],
+        "crossChecked": true,
+        "notes": "Amazonおよび価格.comの製品仕様にて確認"
+      }
+    ],
+    "lastInvestigated": "2026-04-11",
+    "competitiveAnalysis": [
+      {
+        "name": "Shokz OpenComm2 UC 2025 Upgrade",
+        "asin": "B0DSJ9KYV6",
+        "priceComparison": "対象商品より高いが、PCとの安定した接続を保証する専用USBアダプタが付属しているため、その分の価値は十分にある。",
+        "featureComparison": [
+          "共通点：基本性能、デザイン、バッテリー駆動時間",
+          "相違点：USBアダプタ（ドングル）の有無。PCでの安定接続が必要な場合はUCモデルが優れる"
+        ],
+        "differentiators": [
+          "Shokz OpenComm2 2025 Upgradeの利点：Bluetooth接続で十分な場合や、コストを抑えたい場合に最適",
+          "Shokz OpenComm2 UC 2025 Upgradeの利点：PC（特にBluetooth非対応や接続が不安定な環境）での利用が多いケースに最適"
+        ]
+      },
+      {
+        "name": "Shokz OpenRun Pro 2",
+        "asin": "B0D2W63XYY",
+        "priceComparison": "対象商品より高いが、音楽鑑賞に特化したDualPitch技術や低音の強化が施されており、音質を重視するユーザーには価格差に見合う価値がある。",
+        "featureComparison": [
+          "共通点：骨伝導技術を採用したShokzブランドのイヤホン",
+          "相違点：OpenRun Pro 2は音楽再生品質に特化（DualPitch技術）している一方、OpenComm2はブームマイク搭載で通話特化"
+        ],
+        "differentiators": [
+          "Shokz OpenComm2 2025 Upgradeの利点：ブームマイクによるクリアな音声入力が可能で、ビジネス用途に最適",
+          "Shokz OpenRun Pro 2の利点：音楽鑑賞をメインとする場合や、より高音質なリスニング体験を求める場合に最適"
+        ]
+      },
+      {
+        "name": "Shokz OpenFit Air",
+        "asin": "B0CT7C1CP1",
+        "priceComparison": "対象商品より安いが、Shokzブランドの基準を満たした品質であり性能に懸念はない。ただしブームマイクがないため通話品質は対象商品に譲る。",
+        "featureComparison": [
+          "共通点：耳を塞がないオープンイヤー型",
+          "相違点：OpenFit Airは空気伝導方式で左右完全分離型、OpenComm2は骨伝導方式でネックバンド型+ブームマイク"
+        ],
+        "differentiators": [
+          "Shokz OpenComm2 2025 Upgradeの利点：安定した装着感と通話品質が求められるビジネスシーンに最適",
+          "Shokz OpenFit Airの利点：完全ワイヤレスの取り回しの良さや、日常的な音楽視聴を重視する場合に最適"
+        ]
+      },
+      {
+        "name": "Shokz OpenRun",
+        "asin": "B0D9JFC7JC",
+        "priceComparison": "対象商品より安いが、高い防水性能を備えており品質に懸念はない。ただし通話特化のブームマイクがない点が価格差に反映されている。",
+        "featureComparison": [
+          "共通点：骨伝導技術を採用したネックバンド型",
+          "相違点：OpenRunはIP67防水でスポーツ向け、OpenComm2はブームマイク付きで通話特化"
+        ],
+        "differentiators": [
+          "Shokz OpenComm2 2025 Upgradeの利点：ノイズキャンセリングマイク搭載で通話品質が圧倒的に高い",
+          "Shokz OpenRunの利点：高い防水性能（IP67）を持ち、激しいスポーツやアウトドアに最適"
+        ]
+      },
+      {
+        "name": "Shokz OpenRun Mini",
+        "asin": "B0D9JJG52V",
+        "priceComparison": "対象商品より安いが、サイズ違いの派生モデルであり品質に懸念はない。マイク性能が対象商品より劣る分が価格差となっている。",
+        "featureComparison": [
+          "共通点：OpenRunシリーズとしての基本性能",
+          "相違点：Miniは頭の小さな人向けにバンドが短く設計されている。OpenComm2はブームマイク付き"
+        ],
+        "differentiators": [
+          "Shokz OpenComm2 2025 Upgradeの利点：通話特化で長時間のWeb会議に最適",
+          "Shokz OpenRun Miniの利点：通常サイズが合わない人や、スポーツ利用に最適"
+        ]
+      },
+      {
+        "name": "Shokz OpenMove",
+        "asin": "B09H6MY31J",
+        "priceComparison": "対象商品より安く、エントリーモデルであるため機能やバッテリー駆動時間は限定的だが、基本的な骨伝導イヤホンとしての品質に懸念はない。",
+        "featureComparison": [
+          "共通点：骨伝導技術を採用したShokzのイヤホン",
+          "相違点：OpenMoveはエントリーモデルでマイク性能やバッテリー寿命（最大6時間）が劣る"
+        ],
+        "differentiators": [
+          "Shokz OpenComm2 2025 Upgradeの利点：高いマイク性能と長時間のバッテリー駆動（最大16時間通話）でビジネス用途に特化",
+          "Shokz OpenMoveの利点：コストを抑えて骨伝導を試したい場合に最適"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "頻繁にオンライン会議を行うビジネスパーソン",
+        "長時間の通話で耳への負担を軽減したい人",
+        "周囲の音を聞きながら作業をしたい人"
+      ],
+      "pros": [
+        "ノイズキャンセリング・ブームマイクによる卓越した通話品質",
+        "長時間の装着でも快適なオープンイヤー設計",
+        "16時間の長い連続通話時間"
+      ],
+      "cons": [
+        "音楽鑑賞メインのモデルと比較すると音質で劣る場合がある",
+        "マイク部分が収納できないため、持ち運び時にやや嵩張る"
+      ],
+      "score": 85,
+      "scoreRationale": "[基本点: 70]\n[加点: +10] (ブームマイクとDSPによる優れた通話性能)\n[加点: +5] (最大16時間の長バッテリーによるビジネスでの実用性の高さ)\n[加点: +5] (耳を塞がないことによる長時間の快適性)\n[減点: -5] (ビジネス特化のため、純粋な音楽再生用としては他モデルに劣る点)\n[合計: 85]"
+    },
+    "technicalSpecs": {
+      "dimensions": {
+        "height": "44.2mm",
+        "width": "102.4mm",
+        "depth": "123.8mm"
+      },
+      "weight": "35.0g",
+      "capacity": "なし",
+      "material": "シリコン・ニッケルチタン合金",
+      "origin": "未記載",
+      "other": [
+        "Bluetooth 5.1",
+        "通信範囲: 最大30m",
+        "連続通話時間: 最大16時間",
+        "音楽再生時間: 最大8時間",
+        "充電時間: 約60分（5分充電で約2時間通話）",
+        "IP55防塵防水"
+      ]
+    }
+  }
+}
