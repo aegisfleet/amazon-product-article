@@ -13,12 +13,13 @@
       "Nothingらしい独創的な透明（スケルトン）デザイン",
       "ANCオフ時最大80時間、オン時35時間の長時間バッテリー",
       "直感的な操作が可能な回転式ダイヤル（ローラー）搭載",
-      "英国KEFとのコラボレーションによるサウンドチューニング",
-      "LDACコーデック対応によるハイレゾワイヤレス再生",
-      "Nothing XアプリによるEQカスタマイズとChatGPT連携"
+      "英国KEFとのコラボレーションによる自然なサウンドチューニング",
+      "LDACコーデック対応による24ビット/96kHzハイレゾワイヤレス再生",
+      "Nothing XアプリによるEQカスタマイズとChatGPT連携",
+      "空間オーディオとヘッドトラッキング機能搭載"
     ],
     "negativePoints": [
-      "公式発表情報が乏しく、一部スペック（KEFコラボ等）の裏付けが取れない",
+      "公式発表情報が乏しく、一部スペック（KEFコラボ等）の裏付けがWeb上で広く取れない",
       "aptX Adaptive等の他コーデック対応状況が不明",
       "ノイズキャンセリング性能の実力が未知数",
       "防水性能に関する記載がない"
@@ -28,93 +29,146 @@
       "数日間の旅行や出張（充電不要な長時間バッテリー）",
       "個性的なファッションを好むユーザーの日常使い"
     ],
-    "userStories": [
-      {
-        "userType": "ガジェット好きの30代男性",
-        "scenario": "外出時の音楽鑑賞",
-        "experience": "（推測）Nothing Earシリーズのデザインが好きで購入。オーバーイヤーになっても透明感のあるデザインは健在で、所有欲を満たしてくれる。ダイヤル操作は直感的で、物理ボタンよりも音量調整がスムーズだ。",
-        "sentiment": "positive"
-      },
-      {
-        "userType": "オーディオファンの20代学生",
-        "scenario": "自宅でのリスニング",
-        "experience": "（推測）KEFがチューニングに関わっているという点に惹かれた。バランスの取れた自然なサウンドで、特に中高域のクリアさが際立っている印象。LDAC接続時の解像感も高い。",
-        "sentiment": "positive"
-      }
-    ],
-    "userImpression": "Nothing特有のデザインと、KEFコラボ・80時間再生という強力なスペックを兼ね備えた意欲作。実際の音質やANC性能への期待が高い一方、情報の少なさが懸念点。",
+    "userStories": [],
+    "userImpression": "Nothing特有のデザインと、KEFコラボ・80時間再生という強力なスペックを兼ね備えた意欲作。実際の音質やANC性能への期待が高い一方、実機レビューなどの情報が少ない。",
     "sources": [
       {
+        "id": "src-1",
         "name": "Amazon商品ページ",
         "url": "https://www.amazon.co.jp/dp/B0F66XD5LF",
-        "credibility": "medium"
+        "tier": "medium",
+        "evidenceType": "primary",
+        "publishedAt": "2025-08-19",
+        "author": "Nothing",
+        "conflictOfInterest": "none",
+        "notes": "スペック、機能、特徴の確認"
       }
     ],
-    "lastInvestigated": "2026-01-29",
+    "claims": [
+      {
+        "claim": "最大80時間の長時間バッテリー",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": ["src-1"],
+        "crossChecked": false,
+        "notes": "Amazonの商品ページ仕様より"
+      },
+      {
+        "claim": "英国KEFによるサウンドチューニング",
+        "category": "quality",
+        "confidence": "medium",
+        "supportingSourceIds": ["src-1"],
+        "crossChecked": false,
+        "notes": "Amazonの商品ページ仕様に記載あり。他の情報源では未確認"
+      }
+    ],
+    "lastInvestigated": "2026-04-12",
     "competitiveAnalysis": [
       {
         "name": "Sennheiser MOMENTUM 4 Wireless",
         "asin": "B0B6GHW1SX",
-        "priceComparison": "ほぼ同価格帯（実売3.3〜3.5万円前後）",
+        "priceComparison": "Nothing Headphone (1) とほぼ同価格帯（3.9万円前後）",
         "featureComparison": [
-          "60時間再生",
-          "aptX Adaptive対応",
-          "定評ある音質"
+          "共通点：高音質コーデック対応、強力なノイズキャンセリング、長時間のバッテリー駆動",
+          "相違点：Nothingは80時間再生で透明デザイン、Sennheiserは60時間再生でaptX Adaptive対応・実績ある音質"
         ],
         "differentiators": [
-          "Nothingは80時間再生と透明デザインで差別化",
-          "ゼンハイザーは音質の信頼性と実績で勝る"
+          "Nothing Headphone (1) の利点：圧倒的な80時間バッテリーと個性的で唯一無二のスケルトンデザイン",
+          "Sennheiser MOMENTUM 4 Wireless の利点：長年培われたオーディオブランドとしての信頼性と、定評ある確かな高音質"
         ]
       },
       {
         "name": "Sony WH-1000XM4",
         "asin": "B08F2866Q3",
-        "priceComparison": "Nothingより安価（2.8万円台）",
+        "priceComparison": "Nothing Headphone (1) よりも安価（2.7万円台）",
         "featureComparison": [
-          "業界最高クラスのノイキャン",
-          "30時間再生",
-          "LDAC対応"
+          "共通点：LDAC対応によるハイレゾ再生、専用アプリによるカスタマイズ",
+          "相違点：Nothingは80時間再生、Sonyは30時間再生だが業界最高クラスのノイズキャンセリング性能を誇る"
         ],
         "differentiators": [
-          "Nothingはバッテリー持ちとデザインの新しさで勝負",
-          "Sonyはノイキャン性能と完成度の高さが強み"
+          "Nothing Headphone (1) の利点：充電の手間を減らす80時間のバッテリーライフと新しいデザイン",
+          "Sony WH-1000XM4 の利点：価格が下がっておりコスパが高く、最高峰のノイズキャンセリング性能が実証されている点"
         ]
       },
       {
         "name": "Anker Soundcore Space Q45",
         "asin": "B0B5WD4CMW",
-        "priceComparison": "Nothingの半額以下（約1.5万円）",
+        "priceComparison": "Nothing Headphone (1) の半額以下（約1.4万円）",
         "featureComparison": [
-          "65時間再生",
-          "ウルトラノイズキャンセリング2.0",
-          "LDAC対応"
+          "共通点：LDAC対応、長時間再生（60時間超）",
+          "相違点：Nothingは独自デザインとKEFチューニング、Ankerは圧倒的な低価格"
         ],
         "differentiators": [
-          "Nothingはブランド価値とビルドクオリティ、KEFチューニングで差別化"
+          "Nothing Headphone (1) の利点：洗練されたデザインやKEFチューニングによる音質へのこだわり",
+          "Anker Soundcore Space Q45 の利点：価格に対する機能の充実度（コスパの高さ）"
+        ]
+      },
+      {
+        "name": "Anker Soundcore Q30i",
+        "asin": "B0DPX7W84T",
+        "priceComparison": "Nothing Headphone (1) と比較して非常に安価（約1万円）",
+        "featureComparison": [
+          "共通点：長時間再生（最大80時間）、専用アプリ対応",
+          "相違点：NothingはLDAC対応やデザイン性を重視、Ankerは有線時のハイレゾ対応と価格を重視"
+        ],
+        "differentiators": [
+          "Nothing Headphone (1) の利点：ワイヤレスでのハイレゾ再生(LDAC)と、プレミアムな質感・デザイン",
+          "Anker Soundcore Q30i の利点：手軽に購入できる価格と必要十分な機能"
+        ]
+      },
+      {
+        "name": "Sony WH-CH720N",
+        "asin": "B0BVPNJP1C",
+        "priceComparison": "Nothing Headphone (1) の半額以下（約1.6万円）",
+        "featureComparison": [
+          "共通点：ノイズキャンセリング搭載、軽量設計",
+          "相違点：Nothingは高級感や高音質コーデック対応、Sonyは手軽さと軽量さ"
+        ],
+        "differentiators": [
+          "Nothing Headphone (1) の利点：KEFチューニングによる高音質と所有欲を満たすデザイン",
+          "Sony WH-CH720N の利点：192gという圧倒的な軽さと手頃な価格"
+        ]
+      },
+      {
+        "name": "Sennheiser ACCENTUM Headphone",
+        "asin": "B0CGR7XRYW",
+        "priceComparison": "Nothing Headphone (1) の半額以下（約1.7万円）",
+        "featureComparison": [
+          "共通点：ハイブリッドノイズキャンセリング、長時間のバッテリー（50時間超）",
+          "相違点：Nothingはデザインと80時間再生、Sennheiserは伝統的な音質とコスパ"
+        ],
+        "differentiators": [
+          "Nothing Headphone (1) の利点：空間オーディオ対応やChatGPT連携などの先進機能",
+          "Sennheiser ACCENTUM Headphone の利点：信頼のゼンハイザーサウンドを手の届きやすい価格で楽しめる点"
         ]
       }
     ],
     "recommendation": {
       "targetUsers": [
         "Nothing製品のデザインや世界観が好きな人",
-        "充電の手間を減らしたい長時間リスナー",
-        "人と被らないヘッドホンを探している人"
+        "充電の手間を極力減らしたい長時間リスナー",
+        "人と被らない個性的なヘッドホンを探している人"
       ],
       "pros": [
-        "所有欲を満たす透明デザイン",
-        "驚異的な80時間バッテリーライフ",
-        "物理ダイヤルによる快適な操作性"
+        "所有欲を満たす透明（スケルトン）デザイン",
+        "驚異的な最大80時間バッテリーライフ",
+        "物理ダイヤルによる快適な直感操作"
       ],
       "cons": [
-        "発売直後で信頼性やレビューが不足している",
-        "公式の修理・サポート体制が大手ほど充実していない可能性"
+        "価格が約4万円とやや高価",
+        "実機レビューやユーザーの声がまだ少ないため、実際の使い勝手が不透明"
       ],
       "score": 80,
-      "scoreRationale": "[基本点: 70]\n[性能・機能: +5] (LDAC対応、最大80時間再生、ダイヤル操作などスペックは高い)\n[品質・デザイン: +10] (Nothing独自の透明デザインは市場で唯一無二の価値)\n[独自の強み: +5] (KEFチューニングとChatGPT連携機能)\n[信頼性・情報: -10] (公式発表前の可能性があり、KEFコラボの裏付けがWebで取れないため懸念あり)\n[合計: 80]"
+      "scoreRationale": "[基本点: 70]\n[性能・機能: +5] (LDAC対応、空間オーディオ、最大80時間再生など機能が豊富)\n[品質・デザイン: +10] (Nothing独自の透明デザインは他にはない魅力)\n[独自の強み: +5] (KEFチューニングとChatGPT連携機能)\n[ユーザー満足度: -10] (ユーザーレビューがなく、実環境での評価が不明なため不確実性を考慮し減点)\n[合計: 80]"
     },
     "technicalSpecs": {
-      "driver": null,
-      "codec": "LDAC, AAC, SBC",
+      "dimensions": {
+        "height": "189.2mm",
+        "width": "85.1mm",
+        "depth": "173.7mm"
+      },
+      "weight": "328.9g",
+      "codec": "LDAC",
       "battery": "最大80時間 (ANC ON時は35時間)",
       "connectivity": [
         "Bluetooth",
@@ -127,6 +181,7 @@
         "KEFチューニング",
         "ChatGPT連携",
         "Nothing Xアプリ対応",
+        "空間オーディオ",
         "回転式ダイヤル操作"
       ]
     }
