@@ -1,0 +1,239 @@
+{
+  "analysis": {
+    "productName": "卓上加湿器 Type-C充電式 350ml",
+    "parentAsin": "B0DCFXF1H1",
+    "productDescription": "1200mAhのバッテリーを内蔵し、コードレスで最大12時間使用可能な卓上小型加湿器。350mlのタンクは銀イオン抗菌加工が施されており、次亜塩素酸水にも対応している。",
+    "productUsage": [
+      "乾燥対策",
+      "花粉対策",
+      "静電気対策",
+      "空間除菌"
+    ],
+    "positivePoints": [
+      "1200mAhのバッテリー内蔵でコードレス使用が可能",
+      "銀イオン抗菌加工タンクで清潔なミストを維持",
+      "動作音30dB以下の静音設計",
+      "倒れても水漏れしない密封設計",
+      "次亜塩素酸水対応で空間除菌に活用可能"
+    ],
+    "negativePoints": [
+      "連続モードでは朝まで水が持たない場合がある",
+      "アロマは水溶性のものしか対応していない",
+      "初回使用時に吸水軸の調整が必要な場合がある"
+    ],
+    "useCases": [
+      "オフィスのデスクでのパーソナル加湿",
+      "寝室のベッドサイドでの就寝時の加湿",
+      "車内や旅行先での携帯用加湿",
+      "ペット（爬虫類など）の湿度管理"
+    ],
+    "userStories": [
+      {
+        "userType": "会社員",
+        "scenario": "職場のデスクでの乾燥対策",
+        "experience": "職場のデスクに置いて使用しています。コンパクトで場所を取らず、コードレスなので配置に困りません。しっかり蒸気が出て加湿されているのを感じます。",
+        "supportingSourceIds": [
+          "amazon-reviews-1"
+        ],
+        "sentiment": "positive"
+      },
+      {
+        "userType": "旅行者",
+        "scenario": "旅行先のホテルでの加湿",
+        "experience": "ホテルでの乾燥対策として購入しました。リュックに余裕で収まるサイズ感で、充電しながら使えるのが便利です。最初はミストが出ませんでしたが、中の吸水軸を少し回したら出るようになりました。",
+        "supportingSourceIds": [
+          "amazon-reviews-1"
+        ],
+        "sentiment": "positive"
+      },
+      {
+        "userType": "一般家庭",
+        "scenario": "就寝時のベッドサイドでの使用",
+        "experience": "ベッドサイドに置いて使用しています。連続モードだと朝までは持ちませんが、間欠モードにすれば朝まで余裕で持ちます。静音なので就寝時も気になりません。",
+        "supportingSourceIds": [
+          "amazon-reviews-1"
+        ],
+        "sentiment": "mixed"
+      }
+    ],
+    "userImpression": "コンパクトで持ち運びしやすく、コードレスで使用できる点が多くのユーザーから高く評価されています。デスク周りやベッドサイド、旅行先など様々なシーンで手軽に加湿できると好評ですが、長時間の連続加湿には間欠モードの利用が推奨されます。",
+    "sources": [
+      {
+        "id": "amazon-reviews-1",
+        "name": "Amazonカスタマーレビュー",
+        "url": "https://www.amazon.co.jp/dp/B0DCFXF1H1",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-04-11",
+        "author": "Amazonユーザー",
+        "conflictOfInterest": "none",
+        "notes": "使用感、良い点、気になる点の抽出"
+      },
+      {
+        "id": "amazon-product-page-1",
+        "name": "Amazon商品ページ",
+        "url": "https://www.amazon.co.jp/dp/B0DCFXF1H1",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-04-11",
+        "author": "メーカー",
+        "conflictOfInterest": "possible",
+        "notes": "製品仕様、機能の特徴の抽出"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "1200mAhのバッテリーを内蔵し、最大12時間のコードレス使用が可能",
+        "category": "durability",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "amazon-product-page-1"
+        ],
+        "crossChecked": false,
+        "notes": "メーカー公式スペック"
+      },
+      {
+        "claim": "銀イオン抗菌加工タンクで雑菌の繁殖を抑える",
+        "category": "safety",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "amazon-product-page-1"
+        ],
+        "crossChecked": false,
+        "notes": "メーカー公式スペック"
+      },
+      {
+        "claim": "動作音30dB以下の静音設計",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "amazon-product-page-1",
+          "amazon-reviews-1"
+        ],
+        "crossChecked": true,
+        "notes": "メーカースペックとユーザーレビュー（就寝時も気にならない）で一致"
+      }
+    ],
+    "lastInvestigated": "2026-04-11",
+    "competitiveAnalysis": [
+      {
+        "name": "Bulonchi H-19L (B0FWCB9YD8)",
+        "asin": "B0FWCB9YD8",
+        "priceComparison": "対象商品よりやや安価。",
+        "featureComparison": [
+          "共通点：Type-C充電式、次亜塩素酸水対応、空焚き防止、LEDライト",
+          "相違点：Bulonchiはバッテリー容量が1800mAhでダブルノズル(2方向加湿)、対象商品は1200mAhでシングルノズル。タンク容量はBulonchiが300ml、対象商品が350ml。"
+        ],
+        "differentiators": [
+          "対象商品の利点：タンク容量がやや大きく(350ml)、給水回数を減らしたい場合に適している。",
+          "Bulonchi H-19Lの利点：バッテリー容量が大きく、ダブルノズルでより広範囲をスピーディに加湿できる。"
+        ]
+      },
+      {
+        "name": "ラブホーム美家 L09-WT (B0FQMPJJ39)",
+        "asin": "B0FQMPJJ39",
+        "priceComparison": "対象商品よりやや安価。",
+        "featureComparison": [
+          "共通点：Type-C給電、次亜塩素酸水対応、静音設計",
+          "相違点：対象商品は充電式(コードレス)だが、ラブホーム美家は給電式(バッテリー非搭載)である。タンク容量はラブホーム美家が320ml。"
+        ],
+        "differentiators": [
+          "対象商品の利点：バッテリー内蔵でコードレスで使用できるため、持ち運びや場所を選ばない。",
+          "ラブホーム美家 L09-WTの利点：バッテリー非搭載のため過充電の心配がなく、電源につないだまま長時間の連続使用に適している。"
+        ]
+      },
+      {
+        "name": "AMZHOOZ JSQ (B0FMMVT6FN)",
+        "asin": "B0FMMVT6FN",
+        "priceComparison": "対象商品より高価。",
+        "featureComparison": [
+          "共通点：Type-C充電式、空焚き防止、LEDライト",
+          "相違点：AMZHOOZはダブルノズル搭載で300mlタンク、対象商品はシングルノズルで350mlタンク。"
+        ],
+        "differentiators": [
+          "対象商品の利点：タンク容量が大きく、価格も抑えられているためコストパフォーマンスに優れる。",
+          "AMZHOOZ JSQの利点：ダブルノズルで加湿量が多く、素早く潤いを感じたい場合に適している。"
+        ]
+      },
+      {
+        "name": "Hommily CXJS-18 (B0G1CBL6T9)",
+        "asin": "B0G1CBL6T9",
+        "priceComparison": "対象商品よりやや安価。",
+        "featureComparison": [
+          "共通点：Type-C充電式、次亜塩素酸水対応、大容量350ml",
+          "相違点：Hommilyは2000mAhのバッテリー、LCD残量表示、磁吸式スプレーヘッド、ダブル噴霧を搭載している。"
+        ],
+        "differentiators": [
+          "対象商品の利点：シンプルな機能で扱いやすく、ペットボトル型で持ち運びに適したデザイン。",
+          "Hommily CXJS-18の利点：バッテリー容量が大きく、残量表示やダブル噴霧など高機能である。"
+        ]
+      },
+      {
+        "name": "ラブホーム美家 S06 (B0FJRX8J8J)",
+        "asin": "B0FJRX8J8J",
+        "priceComparison": "対象商品と同程度の価格。",
+        "featureComparison": [
+          "共通点：Type-C充電式、次亜塩素酸水対応、LEDライト、静音設計",
+          "相違点：対象商品は350mlタンク・1200mAhバッテリー、ラブホーム美家は300mlタンク・仕様上最長12時間稼働。"
+        ],
+        "differentiators": [
+          "対象商品の利点：タンク容量が350mlと大きく、一度の給水で長持ちする。",
+          "ラブホーム美家 S06の利点：木目調のカラーなどデザインの選択肢がある。"
+        ]
+      },
+      {
+        "name": "Imboxx DHC-HUM-01 (B0DS2K4GQN)",
+        "asin": "B0DS2K4GQN",
+        "priceComparison": "対象商品よりかなり安価。",
+        "featureComparison": [
+          "共通点：Type-C充電式、次亜塩素酸水対応、LEDライト、350mlタンク、1200mAhバッテリー",
+          "相違点：基本的なスペック（タンク容量、バッテリー容量）はほぼ同一だが、Imboxxの方が軽量（207g）。"
+        ],
+        "differentiators": [
+          "対象商品の利点：銀イオン抗菌加工が明記されており、清潔さに配慮されている。",
+          "Imboxx DHC-HUM-01の利点：基本的なスペックを満たしつつ、価格が非常に安くコストパフォーマンスが高い。"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "デスクワークでパーソナルスペースを加湿したい人",
+        "車内や旅行先に持ち運べる加湿器を探している人",
+        "就寝時のベッドサイドで静かな加湿器を使いたい人"
+      ],
+      "pros": [
+        "コンパクトで持ち運びしやすい",
+        "コードレスで場所を選ばず使える",
+        "静音設計で就寝時も気にならない",
+        "水漏れ防止機能があり安心"
+      ],
+      "cons": [
+        "部屋全体を加湿するほどのパワーはない",
+        "連続モードでは朝まで持たないことがある",
+        "水溶性アロマ以外は使用できない"
+      ],
+      "score": 80,
+      "scoreRationale": "[基本点: 70]\n[加点: +5] (1200mAhバッテリー内蔵でコードレスの利便性が高い)\n[加点: +5] (銀イオン抗菌加工や次亜塩素酸水対応など衛生面への配慮)\n[加点: +5] (静音設計や水漏れ防止など、寝室やデスクでの実用性が高い)\n[減点: -5] (競合（B0G1CBL6T9やB0FWCB9YD8）と比較するとバッテリー容量や噴霧量などのスペックがやや劣り、コスパの面で最高評価とは言えない)\n[合計: 80]"
+    },
+    "technicalSpecs": {
+      "dimensions": {
+        "height": "165mm",
+        "width": "77mm",
+        "depth": "77mm"
+      },
+      "weight": "不明",
+      "capacity": "350ml",
+      "material": "銀イオン抗菌加工素材（タンク内部）",
+      "origin": "不明",
+      "other": [
+        "バッテリー容量: 1200mAh",
+        "連続稼働時間: 最大12時間（間欠モード等を含む）",
+        "充電ポート: Type-C",
+        "騒音レベル: 30dB以下",
+        "タイマー機能: 連続モード4時間/間欠モード8時間で自動オフ",
+        "対応アロマ: 水溶性アロマのみ",
+        "次亜塩素酸水対応: 50ppm以下"
+      ]
+    }
+  }
+}
