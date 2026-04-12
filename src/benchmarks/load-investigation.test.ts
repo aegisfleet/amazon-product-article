@@ -4,8 +4,8 @@ import { loadInvestigationResults } from '../scripts/article-generation-cli';
 import { Logger } from '../utils/Logger';
 
 // Mock modules
-jest.mock('fs/promises');
-jest.mock('child_process');
+jest.mock('node:fs/promises');
+jest.mock('node:child_process');
 // Logger mock needs to be a bit more elaborate because it's a singleton
 jest.mock('../utils/Logger', () => ({
   Logger: {
