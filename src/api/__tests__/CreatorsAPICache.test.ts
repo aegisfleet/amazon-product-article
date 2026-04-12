@@ -3,7 +3,7 @@ import path from 'node:path';
 import type { ProductDetail } from '../../types/Product';
 import { CreatorsAPICache } from '../CreatorsAPICache';
 
-jest.mock('fs');
+jest.mock('node:fs');
 jest.mock('../../utils/Logger', () => ({
   Logger: {
     getInstance: jest.fn().mockReturnValue({

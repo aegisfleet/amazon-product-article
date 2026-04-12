@@ -4,7 +4,7 @@ import path from 'node:path';
 import { setGitHubOutput } from './github-actions';
 import { Logger } from './Logger';
 
-jest.mock('fs/promises');
+jest.mock('node:fs/promises');
 
 describe('setGitHubOutput', () => {
   const originalEnv = process.env;

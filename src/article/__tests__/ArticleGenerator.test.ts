@@ -9,7 +9,7 @@ import type { Product, ProductDetail } from '../../types/Product';
 import { ArticleGenerator } from '../ArticleGenerator';
 
 // Mock fs
-jest.mock('fs', () => ({
+jest.mock('node:fs', () => ({
   ...jest.requireActual('fs'),
   existsSync: jest.fn(),
   promises: {
