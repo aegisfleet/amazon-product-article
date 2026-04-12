@@ -17,7 +17,7 @@ jest.mock('./Logger', () => ({
 // Now import the module under test
 import { runGhCommand } from './GitCommandRunner';
 
-jest.mock('child_process');
+jest.mock('node:child_process');
 
 describe('runGhCommand', () => {
   beforeEach(() => {

@@ -14,7 +14,7 @@ jest.mock('../../utils/Logger', () => ({
 }));
 
 // Mock fs and path
-jest.mock('fs/promises');
+jest.mock('node:fs/promises');
 jest.mock('path', () => {
   const originalPath = jest.requireActual('path');
   return {

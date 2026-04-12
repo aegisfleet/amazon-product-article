@@ -5,7 +5,7 @@ import { ProductSearcher } from '../ProductSearcher';
 
 // Mock dependencies
 jest.mock('../../api/CreatorsAPIClient');
-jest.mock('fs/promises');
+jest.mock('node:fs/promises');
 jest.mock('../../utils/Logger', () => {
   return {
     Logger: {

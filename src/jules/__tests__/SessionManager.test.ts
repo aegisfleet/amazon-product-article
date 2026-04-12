@@ -4,8 +4,8 @@ import type { Product } from '../../types/Product';
 import { saveSessionInfo } from '../SessionManager';
 
 // Mock fs and path
-jest.mock('fs/promises');
-jest.mock('path');
+jest.mock('node:fs/promises');
+jest.mock('node:path');
 
 // Mock Logger
 jest.mock('../../utils/Logger', () => ({
