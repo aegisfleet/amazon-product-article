@@ -1,0 +1,124 @@
+{
+  "analysis": {
+    "productName": "Prechen セカンダリモニター",
+    "parentAsin": "B0FPXGQ9LL",
+    "productDescription": "1920x720の高解像度IPSパネルを搭載した31.2cm（12.3型相当）のストレッチバー型モバイルモニター。USB-Cケーブル1本で接続可能で、内蔵スピーカーやPCのステータスモニタリングに対応。",
+    "productUsage": ["PCのセカンダリモニター", "CPU/GPUなどのステータスモニタリング", "動画・マルチメディアの視聴", "プレゼンテーション用ディスプレイ"],
+    "positivePoints": [
+      "USB-Cケーブル1本で映像出力と給電が完了するため、配線がスッキリする",
+      "バー型で、メインモニターの下や隙間など省スペースに設置しやすい",
+      "1920x720の高解像度IPSパネルにより、広視野角で鮮明な映像を楽しめる",
+      "AIDA64対応で、PCのステータス（CPU/GPU等）モニタリング用途に最適"
+    ],
+    "negativePoints": [
+      "特殊なアスペクト比（バー型）のため、フルスクリーンの動画視聴やゲームには不向きな場合がある",
+      "タッチパネル機能は非搭載"
+    ],
+    "useCases": [
+      "メインモニターの下に配置し、DiscordやSpotify、PCのステータスを表示する",
+      "リモートワーク時のサブモニターとして、チャットツールや参考資料を常時表示する"
+    ],
+    "userStories": [],
+    "userImpression": "省スペースで設置できるユニークな形状が評価されており、特にPCのステータスモニターや特定のアプリを常時表示させるサブディスプレイとして高い利便性を発揮する。ケーブル1本で接続できる手軽さもあるが、特殊な比率のため用途が限定される点には注意が必要。",
+    "sources": [
+      {
+        "id": "src-1",
+        "name": "Amazon Product Detail Page",
+        "url": "https://www.amazon.co.jp/dp/B0FPXGQ9LL",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-04-12",
+        "author": "Amazon",
+        "conflictOfInterest": "none",
+        "notes": "商品の基本仕様、USB-C対応、AIDA64対応、サイズ情報を確認"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "USB-Cケーブル1本で映像と給電が可能",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": ["src-1"],
+        "crossChecked": true,
+        "notes": "商品仕様で明記されている"
+      },
+      {
+        "claim": "AIDA64との互換性があり、PCのステータスモニタリングに最適",
+        "category": "comparativeAdvantage",
+        "confidence": "high",
+        "supportingSourceIds": ["src-1"],
+        "crossChecked": true,
+        "notes": "商品タイトルおよび仕様でアピールされている"
+      }
+    ],
+    "lastInvestigated": "2026-04-12",
+    "competitiveAnalysis": [
+      {
+        "name": "Cuifati ポータブルモニター",
+        "asin": "B0F3X11V6R",
+        "priceComparison": "本商品の方が安価であり、コストパフォーマンスに優れている。",
+        "featureComparison": [
+          "共通点：ストレッチバー型のディスプレイで、PCのステータスモニター等に適している。内蔵スピーカーを搭載している。",
+          "相違点：Cuifatiは画面サイズが32cmで1920x515解像度、本商品は31.2cmで1920x720解像度。本商品の方が縦の解像度が高い。"
+        ],
+        "differentiators": [
+          "Prechen セカンダリモニターの利点：価格が抑えられており、縦の解像度が高いため、より多くの情報を表示できる。",
+          "Cuifati ポータブルモニターの利点：少し横幅が広く、特定の配置スペースにぴったり合う場合がある。"
+        ]
+      },
+      {
+        "name": "VSDISPLAY タッチスクリーン",
+        "asin": "B0BDM7X2W9",
+        "priceComparison": "VSDISPLAYはタッチ機能等の付加価値があるため高価。",
+        "featureComparison": [
+          "共通点：バー型の細長いディスプレイで、PC内のステータスモニタリング等に利用される。",
+          "相違点：VSDISPLAYは22.3cmでタッチ機能付き、本商品は31.2cmでタッチ機能なし。"
+        ],
+        "differentiators": [
+          "Prechen セカンダリモニターの利点：画面サイズが大きく、手頃な価格で購入できる。",
+          "VSDISPLAY タッチスクリーンの利点：タッチ操作が可能で、より直感的な操作や組み込み用途に適している。"
+        ]
+      },
+      {
+        "name": "Jectse CPU温度モニター",
+        "asin": "B0DGL61HRW",
+        "priceComparison": "Jectseの方が高価である。",
+        "featureComparison": [
+          "共通点：横長ストレッチバー型で、AIDA64等のステータスモニタリングに利用可能。",
+          "相違点：Jectseは35.5cm（1920x550解像度）で画面がより大きく横長。本商品は31.2cm（1920x720解像度）。"
+        ],
+        "differentiators": [
+          "Prechen セカンダリモニターの利点：価格が安く、縦の解像度が高いためバランスが良い。",
+          "Jectse CPU温度モニターの利点：より大きな画面で、視認性を高めたい場合に適している。"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": ["自作PCユーザー", "デスクの隙間を活用したい人", "株価やチャットツールを常時表示したい人"],
+      "pros": ["省スペースなバー型デザイン", "ケーブル1本での簡単な接続", "高解像度IPSパネルで見やすい"],
+      "cons": ["特殊なアスペクト比のため用途が限られる", "タッチ操作非対応"],
+      "score": 85,
+      "scoreRationale": "[基本点: 70]\n[加点: +10] (USB-Cケーブル1本で接続でき、省スペース性に優れる実用性の高さ)\n[加点: +10] (同種のバー型モニターと比較して安価でコストパフォーマンスが良い)\n[減点: -5] (特殊な比率のため、一般的な動画視聴等には不向きで用途が限定される)\n[合計: 85]"
+    },
+    "technicalSpecs": {
+      "dimensions": {
+        "height": "120.0mm",
+        "width": "310.0mm",
+        "depth": "20.0mm"
+      },
+      "weight": "不明",
+      "displaySize": "31.2cm",
+      "resolution": "1920 x 720",
+      "panelType": "IPS",
+      "material": "金属素材",
+      "interfaces": ["HDMI", "USB-C"],
+      "other": [
+        "内蔵スピーカー",
+        "VESAマウント対応 (75x75mm)",
+        "コントラスト比 1200:1",
+        "輝度 300ニト",
+        "視野角 178度"
+      ]
+    }
+  }
+}
