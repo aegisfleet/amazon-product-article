@@ -1,0 +1,196 @@
+{
+  "analysis": {
+    "productName": "コムテック ドライブレコーダー用 駐車監視用直接配線コード HDROP-14",
+    "parentAsin": "B07B3W56RQ",
+    "productDescription": "コムテック対応ドライブレコーダーの駐車監視機能を使用する際に必要な直接配線コードです。車両キースイッチOFF後も電源供給を行い、録画を可能にします。",
+    "productUsage": [
+      "ドライブレコーダーの駐車監視機能の使用",
+      "車両バッテリーからの直接電源供給"
+    ],
+    "positivePoints": [
+      "シガープラグコード不要でスッキリ配線可能",
+      "車両キースイッチOFF後も録画可能",
+      "多くのコムテック製ドラレコに対応"
+    ],
+    "negativePoints": [
+      "ハイブリッド車では設定変更が必要な場合がある",
+      "取り付けに専門知識が必要な場合がある"
+    ],
+    "useCases": [
+      "駐車中の当て逃げやイタズラ監視",
+      "シガーソケットを塞ぎたくない場合の電源取り"
+    ],
+    "userStories": [
+      {
+        "userType": "一般ドライバー",
+        "scenario": "ZDR065への取り付け",
+        "experience": "コムテックのZDR065を取り付ける際に駐車監視コードとしてHDROP-14を使用しました。電源を取り出す純正オプション電源コネクターから配線し、配線を隠してスッキリと取り付けることができました。",
+        "supportingSourceIds": [
+          "src-minkara-1"
+        ],
+        "sentiment": "positive"
+      },
+      {
+        "userType": "DIYユーザー",
+        "scenario": "HDR035への取り付け",
+        "experience": "HDR035の駐車監視機能を使用するために購入しました。バッテリー上がりを防ぐため、駐車監視を使用しない時は物理的に電源を遮断できるようトグルスイッチを介して配線しました。",
+        "supportingSourceIds": [
+          "src-minkara-2"
+        ],
+        "sentiment": "positive"
+      }
+    ],
+    "userImpression": "コムテック製ドライブレコーダーで駐車監視機能を利用するユーザーにとっての必須アイテムとして、多くのユーザーがDIYまたは業者に依頼して取り付けており、配線がスッキリする点が高く評価されています。",
+    "sources": [
+      {
+        "id": "src-minkara-1",
+        "name": "COMTEC ZDR065+HDROP-14 駐車監視コード取付けー１/みんカラ",
+        "url": "https://minkara.carview.co.jp/userid/209912/car/3824697/8561147/note.aspx",
+        "tier": "medium",
+        "evidenceType": "primary",
+        "publishedAt": "2026-03-07",
+        "author": "mayuhina",
+        "conflictOfInterest": "none",
+        "notes": "ZDR065へのHDROP-14の取り付け手順に関する詳細な記録。"
+      },
+      {
+        "id": "src-minkara-2",
+        "name": "【ドラレコ】COMTEC HDR035取り付け/みんカラ",
+        "url": "https://minkara.carview.co.jp/userid/3780616/car/3817060/8537888/note.aspx",
+        "tier": "medium",
+        "evidenceType": "primary",
+        "publishedAt": "2026-02-15",
+        "author": "くろく",
+        "conflictOfInterest": "none",
+        "notes": "HDR035への取り付け記録。HDROP-14を使用してトグルスイッチ付きの配線を自作している。"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "車両キースイッチOFF後も電源供給を行い、駐車監視録画が可能",
+        "category": "durability",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-minkara-1",
+          "src-minkara-2"
+        ],
+        "crossChecked": true,
+        "notes": "メーカー公式仕様および複数のユーザー取り付けレビューで確認。"
+      }
+    ],
+    "lastInvestigated": "2026-04-12",
+    "competitiveAnalysis": [
+      {
+        "name": "コムテック 駐車監視直接配線コード CDOP-01P",
+        "asin": "B0B8GZLKBQ",
+        "priceComparison": "対象商品とほぼ同価格帯。",
+        "featureComparison": [
+          "共通点：コムテック製ドライブレコーダー用の駐車監視コードであること。",
+          "相違点：対応するドライブレコーダーの機種が異なる。"
+        ],
+        "differentiators": [
+          "コムテック ドライブレコーダー用 駐車監視用直接配線コード HDROP-14の利点：HDR-951GW、ZDR026など、旧機種から幅広い機種に対応している点。",
+          "コムテック 駐車監視直接配線コード CDOP-01Pの利点：新機種など、CDOP-01P指定のドライブレコーダーに適合する点。"
+        ]
+      },
+      {
+        "name": "70mai Hardwire Kit UP03 駐車監視オプション",
+        "asin": "B09TDZ6FWZ",
+        "priceComparison": "対象商品よりやや高価。",
+        "featureComparison": [
+          "共通点：ドライブレコーダーの駐車監視機能を利用するための配線キットであること。",
+          "相違点：対象商品はコムテック専用であるのに対し、こちらは70mai製ドライブレコーダー専用（Type-C接続）である。"
+        ],
+        "differentiators": [
+          "コムテック ドライブレコーダー用 駐車監視用直接配線コード HDROP-14の利点：コムテック製ドライブレコーダーに確実に対応し、メーカー純正の安心感がある点。",
+          "70mai Hardwire Kit UP03 駐車監視オプションの利点：70mai製の対応機種で駐車監視を行う際に必要となる専用オプションである点。"
+        ]
+      },
+      {
+        "name": "OTORAM互換/交換可能な HDROP-14 互換品",
+        "asin": "B0CQ747NLC",
+        "priceComparison": "対象商品より安価。",
+        "featureComparison": [
+          "共通点：HDROP-14と互換性があり、同じ用途で使用できること。",
+          "相違点：対象商品は純正品であるが、こちらはサードパーティ製の互換品である。"
+        ],
+        "differentiators": [
+          "コムテック ドライブレコーダー用 駐車監視用直接配線コード HDROP-14の利点：メーカー純正品であり、品質の信頼性やトラブル時のサポート面で安心できる点。",
+          "OTORAM互換/交換可能な HDROP-14 互換品の利点：純正品と同等の機能を低価格で導入できるため、コストを抑えたい場合に適している点。"
+        ]
+      },
+      {
+        "name": "コムテック 駐車監視直接配線コード HDROP-09",
+        "asin": "B01MDTIR9I",
+        "priceComparison": "対象商品よりやや安価。",
+        "featureComparison": [
+          "共通点：コムテック純正の駐車監視用配線コードであること。",
+          "相違点：対応するドライブレコーダーの機種が異なる（HDROP-09は旧機種向け）。"
+        ],
+        "differentiators": [
+          "コムテック ドライブレコーダー用 駐車監視用直接配線コード HDROP-14の利点：HDR-951GW、ZDR026など、HDROP-14指定の機種に適合する点。",
+          "コムテック 駐車監視直接配線コード HDROP-09の利点：HDROP-09指定の旧機種を使用している場合に適合する点。"
+        ]
+      },
+      {
+        "name": "DOPENTSZ ドライブレコーダー 配線コード HDROP-14 互換品",
+        "asin": "B0GNZ16Q6X",
+        "priceComparison": "対象商品より安価。",
+        "featureComparison": [
+          "共通点：HDROP-14と同じ用途で使用できる配線コードであること。",
+          "相違点：純正品ではなくサードパーティ製の互換品である。"
+        ],
+        "differentiators": [
+          "コムテック ドライブレコーダー用 駐車監視用直接配線コード HDROP-14の利点：コムテックの純正品であり、万が一の不具合の際も本体含めた保証が受けやすい点。",
+          "DOPENTSZ ドライブレコーダー 配線コード HDROP-14 互換品の利点：純正品にこだわらず、とにかく安く駐車監視機能を導入したい場合に適している点。"
+        ]
+      },
+      {
+        "name": "LONNIK HDROP-14 互換品",
+        "asin": "B0CQ8H4V6C",
+        "priceComparison": "対象商品より安価。",
+        "featureComparison": [
+          "共通点：HDROP-14として機能する駐車監視用コードであること。",
+          "相違点：LONNIK製のサードパーティ互換品であること。"
+        ],
+        "differentiators": [
+          "コムテック ドライブレコーダー用 駐車監視用直接配線コード HDROP-14の利点：純正品ならではの品質と安心感がある点。",
+          "LONNIK HDROP-14 互換品の利点：コストパフォーマンスに優れており、安価にシステムを構築できる点。"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "コムテック製対応ドライブレコーダー所有者",
+        "駐車監視機能を利用したい人",
+        "シガーソケットを空けておきたい人"
+      ],
+      "pros": [
+        "車両バッテリーからの直接給電で駐車監視が可能",
+        "シガーソケットを使用せず配線を隠せる",
+        "純正品の安心感"
+      ],
+      "cons": [
+        "取り付けには車の内装剥がしや配線の知識が必要",
+        "互換品に比べるとやや価格が高い"
+      ],
+      "score": 83,
+      "scoreRationale": "[基本点: 70]\n[加点: +5] (メーカー純正品による高い信頼性と安心感)\n[加点: +5] (シガーソケットを塞がずスッキリ配線できる実用性)\n[加点: +5] (駐車監視機能という重要な防犯機能を有効化できる利便性)\n[減点: -2] (取り付けに配線の知識や手間を要する点)\n[合計: 83]"
+    },
+    "technicalSpecs": {
+      "dimensions": {
+        "height": "134mm",
+        "width": "55mm",
+        "depth": "36mm"
+      },
+      "weight": "不明",
+      "capacity": "4m (コード長さ)",
+      "material": "不明",
+      "origin": "不明",
+      "other": [
+        "対応機種: HDR-951GW、HDR852G、HDR360G、HDR-751G、HDR-751GP、HDR-75GA、HDR103、HDR203、ZDR026など",
+        "付属品: エレクトロタップ2個"
+      ]
+    }
+  }
+}
