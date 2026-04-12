@@ -27,74 +27,73 @@
       "朝の忙しい時間帯のメイク前保湿として",
       "エアコンでの乾燥対策としてデスクサイドで使用"
     ],
-    "userStories": [
-      {
-        "userType": "20代後半・会社員・混合肌",
-        "scenario": "毎日のメイク落とし前に使用",
-        "experience": "帰宅後、メイクを落とす前にスチームを浴びるのが日課になりました。温かいスチームで毛穴が開く感覚があり、その後のクレンジングで汚れがしっかり落ちて肌がツルツルになります。鏡が付いているので、ドレッサーがない場所でも使いやすくて気に入っています。",
-        "sentiment": "positive"
-      },
-      {
-        "userType": "30代・主婦・乾燥肌",
-        "scenario": "子供が寝た後のリラックスタイム",
-        "experience": "育児で自分の時間が取れない中、寝る前の数分間だけこのスチーマーを使っています。すぐに温かいミストが出るので待ち時間がなく、短い時間でもエステ気分が味わえます。冬場の乾燥による肌のつっぱりが軽減されました。",
-        "sentiment": "positive"
-      }
-    ],
+    "userStories": [],
     "userImpression": "ユーザーからは、起動の速さとスチーム量の多さが特に高く評価されている。鏡やノズル角度調整といった実用的な機能も好評。手頃な価格帯でありながら十分な保湿効果が得られるため、初めてスチーマーを購入する層からの支持が厚い。一方で、冷ミスト機能がない点を残念がる声も一部見られる。",
     "sources": [
       {
-        "name": "LIPS - ANLAN スチーマーZ32 口コミ一覧",
-        "url": "https://lipscosme.com/products/536863/review",
-        "credibility": "高（多数の実体験レビューあり）"
-      },
-      {
-        "name": "Amazon商品ページ情報",
+        "id": "src-1",
+        "name": "Amazon商品ページ情報（カスタマーレビュー含む）",
         "url": "https://www.amazon.co.jp/dp/B0BHSL23LS",
-        "credibility": "高"
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2024-10-31",
+        "author": "ANLAN",
+        "conflictOfInterest": "none",
+        "notes": "商品仕様、特徴、レビューからの使用感"
       }
     ],
-    "lastInvestigated": "2026-01-30",
+    "lastInvestigated": "2026-04-13",
     "competitiveAnalysis": [
       {
-        "name": "Kiboer ハンディミスト",
-        "asin": "B0CB1FGG5C",
-        "priceComparison": "ANLAN（約5,200円）に対し、約3,000円と安価。",
+        "name": "LINKA イオン フェイススチーマー",
+        "asin": "B0BSN124WZ",
+        "priceComparison": "ANLANより高価だが、高潤保湿のナノイオンスチーム機能とアロマ機能が付属している。",
         "featureComparison": [
-          "ANLANは温スチーム卓上型、Kiboerは冷ミスト携帯型。",
-          "KiboerはUSB充電式で持ち運び可能。",
-          "ANLANの方がスチーム量と保湿力で勝る。"
+          "共通点：卓上タイプのナノフェイススチーマーであり、保湿やクレンジング用途に適している。",
+          "相違点：LINKAはアロマ機能付きでイオンスチームを発生させるが、ANLANは鏡とノズル角度調整機能に特化している。"
         ],
         "differentiators": [
-          "外出先での乾燥対策やメイク直しに適している。",
-          "冷ミストによる引き締め効果。"
+          "ANLANの利点：鏡やノズル角度調整があり、実用性に優れている。",
+          "LINKAの利点：アロマ機能とイオンスチームによるリラックス効果と高保湿が期待できる。"
         ]
       },
       {
-        "name": "Francfranc サロン フェイシャルスチーマー",
-        "asin": "B0CY7TMMT1",
-        "priceComparison": "ANLAN（約5,200円）に対し、約8,900円と高価。",
+        "name": "アイリスオーヤマ フェイススチーマー FST-101",
+        "asin": "B0CJF8S6G8",
+        "priceComparison": "ANLANとほぼ同価格帯だが、給水タンク容量が150mLと大きく、稼働時間が長い。",
         "featureComparison": [
-          "Francfrancはアロマ機能付きでデザイン性が高い。",
-          "ANLANは鏡付きで実用性重視。",
-          "スチーム性能自体は同等クラス。"
+          "共通点：卓上型で鏡付き、ノズルの角度調整が可能。",
+          "相違点：アイリスオーヤマは選べる3モード（モイスト、クレンジング、メイクアップ）やLEDライト（3色調整）を搭載している。"
         ],
         "differentiators": [
-          "インテリアに馴染む洗練されたデザイン。",
-          "ギフトとしてのブランド力。"
+          "ANLANの利点：30秒の急速予熱によりすぐに使い始められる。",
+          "アイリスオーヤマの利点：LEDライト付きミラーやモード選択機能など、機能が充実している。"
         ]
       },
       {
-        "name": "YUNJI スチーマー",
-        "asin": "B0932ZLCBF",
-        "priceComparison": "ANLAN（約5,200円）に対し、約3,400円と安価。",
+        "name": "NANOA フェイススチーマー",
+        "asin": "B0BMG29MYN",
+        "priceComparison": "ANLANとほぼ同価格帯だが、温スチームに加えて冷ミスト機能も搭載している。",
         "featureComparison": [
-          "YUNJIは水素水を生成すると謳っている。",
-          "ANLANの方が鏡やノズル角度調整など使い勝手が良い。"
+          "共通点：水道水が使用可能で、ナノサイズのミストを発生させる。",
+          "相違点：NANOAは温冷ダブルケアが可能で、240mLの大容量タンクを備えている。"
         ],
         "differentiators": [
-          "水素水ミストという独自の訴求点。",
-          "低価格な卓上スチーマー。"
+          "ANLANの利点：鏡付きでコンパクトな設計。",
+          "NANOAの利点：冷ミストによる引き締めケアができ、タンク容量も大きい。"
+        ]
+      },
+      {
+        "name": "N\\C フェイススチーマー",
+        "asin": "B09CPT5TM1",
+        "priceComparison": "ANLANより安価で、コンパクトな設計。",
+        "featureComparison": [
+          "共通点：ナノサイズのミストを発生させる卓上スチーマー。",
+          "相違点：N\\Cは10秒の急速加熱が可能だが、タンク容量は80mLと小さい。"
+        ],
+        "differentiators": [
+          "ANLANの利点：鏡付きで、タンク容量が大きく連続使用時間が長い。",
+          "N\\Cの利点：価格が手頃で、加熱速度が非常に速い。"
         ]
       }
     ],
@@ -115,20 +114,51 @@
         "タンク容量が大きくはないため、連続使用時は給水が必要な場合も"
       ],
       "score": 85,
-      "scoreRationale": "[基本点: 70]\n[加点: +10] (コストパフォーマンス: 5,000円台で鏡・角度調整付きの温スチーマーは非常に優秀)\n[加点: +5] (性能・効果: 30秒の高速起動と濃密なナノミストによる高い保湿効果)\n[加点: +5] (ユーザー満足度: LIPS等での評価が高く、具体的な改善実感の声が多い)\n[減点: -5] (機能: 冷ミスト機能がない単機能モデルである点)\n[合計: 85]"
+      "scoreRationale": "[基本点: 70] (固定)\n[加点: +10] (コストパフォーマンスの良さ)\n[加点: +5] (30秒の高速起動と濃密なナノミストによる性能)\n[加点: +5] (ユーザー満足度の高さ)\n[減点: -5] (冷ミスト機能がない単機能モデル)\n[合計: 85] (最終的なスコア)"
     },
     "technicalSpecs": {
-      "type": "卓上フェイススチーマー",
-      "steamType": "温熱ナノミスト",
-      "tankCapacity": "145ml",
-      "continuousUseTime": "約20分",
-      "startupTime": "約30秒",
-      "powerSource": "AC電源",
-      "dimensions": null,
-      "weight": null,
-      "nozzleAngle": "30°〜72°調整可能",
-      "mirrorAngle": "最大120°調整可能",
-      "other": ["PSE認証済み", "水道水使用可能", "空焚き防止機能"]
-    }
+      "dimensions": {
+        "height": "200mm",
+        "width": "150mm",
+        "depth": "100mm"
+      },
+      "weight": "750g",
+      "capacity": "145ml",
+      "material": "ABS樹脂",
+      "origin": "中国",
+      "other": [
+        "温熱ナノミスト",
+        "約20分連続使用可能",
+        "約30秒急速予熱",
+        "AC電源",
+        "ノズル角度30°〜72°調整可能",
+        "ミラー最大角度120°調整可能",
+        "PSE認証済み",
+        "水道水使用可能",
+        "空焚き防止機能"
+      ]
+    },
+    "claims": [
+      {
+        "claim": "スチーム発生待ち時間が最速約30秒",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "crossChecked": false,
+        "notes": "Amazonの商品説明に明記されている"
+      },
+      {
+        "claim": "内部が175°C以上に達すると自動的に機能が停止する安全設計",
+        "category": "safety",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "crossChecked": false,
+        "notes": "Amazonの商品説明（安全機能）に記載"
+      }
+    ]
   }
 }
