@@ -15,7 +15,7 @@ export const InvestigationFileSchema = z.looseObject({
         experience: z.string().trim(),
         sentiment: z.enum(['positive', 'negative', 'mixed']),
       }),
-    ),
+    ).optional(),
     userImpression: z.string().trim(),
     sources: z.array(
       z.object({
