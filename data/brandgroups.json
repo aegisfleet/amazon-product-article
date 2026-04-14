@@ -202,8 +202,8 @@
     "icon": "🎮",
     "description": "Sonyの商品一覧",
     "matcher": {
-      "type": "brand",
-      "value": "Sony"
+      "type": "regex",
+      "value": "Sony|ソニー|ソニー・インタラクティブエンタテインメント"
     }
   },
   "ツムラ漢方": {
