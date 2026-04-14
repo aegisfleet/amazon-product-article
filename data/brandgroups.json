@@ -127,10 +127,10 @@
   },
   "Samsung": {
     "slug": "samsung",
-    "icon": "🖥️",
+    "icon": "📱",
     "matcher": {
-      "type": "title_prefix",
-      "value": "Samsung"
+      "type": "regex",
+      "value": "Samsung|Galaxy|サムスン|ギャラクシー"
     },
     "description": "Samsungの商品一覧"
   },
@@ -179,22 +179,13 @@
       "value": "Spigen"
     }
   },
-  "new balance": {
+  "New Balance": {
     "slug": "new-balance",
     "icon": "👟",
-    "description": "new balanceの商品一覧",
+    "description": "New Balance (ニューバランス) の商品一覧",
     "matcher": {
-      "type": "brand",
-      "value": "new balance"
-    }
-  },
-  "Galaxy": {
-    "slug": "galaxy",
-    "icon": "📱",
-    "description": "Galaxyの商品一覧",
-    "matcher": {
-      "type": "brand",
-      "value": "Galaxy"
+      "type": "regex",
+      "value": "new balance|New Balance|ニューバランス"
     }
   },
   "Sony": {
@@ -224,19 +215,19 @@
       "value": "バッファロー"
     }
   },
-  "コンフィー": {
-    "slug": "コンフィー",
+  "COMFEE": {
+    "slug": "comfee",
     "icon": "🧊",
-    "description": "コンフィーの商品一覧",
+    "description": "COMFEE (コンフィー) の商品一覧",
     "matcher": {
-      "type": "brand",
-      "value": "コンフィー"
+      "type": "regex",
+      "value": "COMFEE|Comfee|コンフィー"
     }
   },
-  "ティファール": {
+  "T-fal": {
     "slug": "t-fal",
     "icon": "🍳",
-    "description": "ティファール(T-fal)の商品一覧",
+    "description": "T-fal(ティファール)の商品一覧",
     "matcher": {
       "type": "regex",
       "value": "T-fal|T-Fal|ティファール"
