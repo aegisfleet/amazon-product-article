@@ -62,7 +62,8 @@ export class BrandCounter {
         return data.brand.trim();
       }
     } catch (e) {
-      console.warn(`Failed to extract brand from ${filePath}: ${e}`);
+      const message = e instanceof Error ? e.message : String(e);
+      console.warn(`Failed to extract brand from ${filePath}: ${message}`);
     }
     return null;
   }

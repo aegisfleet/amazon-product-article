@@ -27,7 +27,7 @@ export class BrandManager {
   public load(): void {
     if (fs.existsSync(this.configPath)) {
       const raw = fs.readFileSync(this.configPath, 'utf-8');
-      this.brandGroups = JSON.parse(raw);
+      this.brandGroups = JSON.parse(raw) as BrandGroups;
     }
   }
 
