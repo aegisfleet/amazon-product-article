@@ -24,65 +24,84 @@
       "在宅勤務でのWebカメラやヘッドセットの接続",
       "ゲーム機へのキーボード・マウス接続"
     ],
-    "userStories": [
-      {
-        "userType": "30代会社員（リモートワーク）",
-        "scenario": "ノートPCのポート不足解消",
-        "experience": "会社支給のノートPCにUSBポートが2つしかなく、マウスとWebカメラで埋まってしまいUSBメモリが使えなかったため購入。ケーブルが短いのでPCの横で邪魔にならず、スッキリ配線できた。",
-        "sentiment": "positive"
-      },
-      {
-        "userType": "大学生",
-        "scenario": "レポート作成とスマホ同期",
-        "experience": "安かったので購入したが、HDDを接続したら認識しなかった。説明書を見たらバスパワーで電力が足りないとのこと。マウスやキーボードなら問題なく使えている。",
-        "sentiment": "mixed"
-      }
-    ],
+    "userStories": [],
     "userImpression": "安価で必要十分な機能を備えた高コスパモデル。ケーブルが短い点はノートPCユーザーには好評だが、デスクトップユーザーには不評。",
     "sources": [
       {
-        "name": "Amazon商品ページ",
+        "id": "src-amazon-b07xpmr5cw",
+        "name": "Amazon商品ページ - バッファロー BSH4U125U3BK",
         "url": "https://www.amazon.co.jp/dp/B07XPMR5CW",
-        "credibility": "high"
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2019-10-09",
+        "author": "Amazon.co.jp",
+        "conflictOfInterest": "none",
+        "notes": "製品基本情報、価格(960円)、レビュー"
+      },
+      {
+        "id": "src-buffalo-official",
+        "name": "バッファロー公式製品ページ",
+        "url": "https://www.buffalo.jp/product/detail/bsh4u125u3bk.html",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-04-15",
+        "author": "株式会社バッファロー",
+        "conflictOfInterest": "possible",
+        "notes": "詳細仕様、重量35g、寸法"
       }
     ],
-    "lastInvestigated": "2026-01-31",
+    "lastInvestigated": "2026-04-15",
     "competitiveAnalysis": [
       {
-        "name": "Anker USB3.0 ウルトラスリム 4ポートハブ",
-        "asin": "B07ST84PF5",
-        "priceComparison": "約1,040円。本製品より約200円高い。",
+        "name": "エレコム U3H-H042BK/E",
+        "asin": "B0DVGRKJV6",
+        "priceComparison": "同価格帯（960円）。価格面での優劣はない。",
         "featureComparison": [
-          "ケーブル長が60cmあり、デスクトップPCでも使いやすい",
-          "質感はAnkerの方がやや高級感がある"
+          "共通点：4ポートUSB3.2(Gen1)対応のバスパワー専用ハブ。",
+          "相違点：エレコムはケーブル長が15cmとやや長く、厚みが約10mmとわずかに薄い。バッファローは10cmと短く、前面3ポート・側面1ポートの配置。"
         ],
         "differentiators": [
-          "ケーブルの長さ（Ankerは長い、バッファローは短い）",
-          "価格（バッファローの方が安い）"
+          "バッファロー USBハブの利点：側面にポートがあり、幅の広いUSB機器を接続しても他のポートと干渉しにくい設計。",
+          "エレコム U3H-H042BK/Eの利点：ケーブルが15cmあるため、PC周辺での取り回しに若干の余裕がある。"
         ]
       },
       {
         "name": "UGREEN USB ハブ 4ポート",
         "asin": "B0CD1BHXPZ",
-        "priceComparison": "約792円。本製品とほぼ同価格帯。",
+        "priceComparison": "同価格帯（約980円）。価格差はほとんどない。",
         "featureComparison": [
-          "機能的にはほぼ同等",
-          "UGREENはケーブル15cm"
+          "共通点：4ポートUSB3.0対応のバスパワー専用スリムハブ。",
+          "相違点：UGREENはケーブル長が15cm。バッファローは10cmで側面ポート配置を採用。"
         ],
         "differentiators": [
-          "ブランド（国内メーカーの安心感ならバッファロー）"
+          "バッファロー USBハブの利点：国内老舗メーカー（バッファロー）の製品であり、サポート面での安心感がある。",
+          "UGREEN USB ハブ 4ポートの利点：ケーブル長が15cmあり、取り回しが良い。"
         ]
       },
       {
-        "name": "エレコム USBハブ U3H-FC02BBK",
+        "name": "エレコム U3H-FC02BBK",
         "asin": "B07CMF41B5",
-        "priceComparison": "約1,290円。本製品より高い。",
+        "priceComparison": "本製品より約300円高い（1,290円）。",
         "featureComparison": [
-          "超小型・軽量設計",
-          "機能は同等"
+          "共通点：USB3.0対応の4ポートバスパワーハブ。超小型・軽量設計。",
+          "相違点：エレコムは直挿しに近い超小型デザインでケーブル長15cm。バッファローは薄型ながら少し長さのある筐体。"
         ],
         "differentiators": [
-          "よりコンパクトさを求めるならエレコムだが、価格差がある"
+          "バッファロー USBハブの利点：約300円安く、コストパフォーマンスに優れる。",
+          "エレコム U3H-FC02BBKの利点：筐体がさらに小型で、持ち運びや収納時にかさばりにくい。"
+        ]
+      },
+      {
+        "name": "Anker ウルトラスリム 4ポートハブ",
+        "asin": "B07ST84PF5",
+        "priceComparison": "本製品より約300円高い（1,299円）。",
+        "featureComparison": [
+          "共通点：4ポートのUSB3.0対応バスパワーハブでスリムなデザイン。",
+          "相違点：Ankerはケーブル長が約60cmと非常に長い。バッファローは10cmと短い。"
+        ],
+        "differentiators": [
+          "バッファロー USBハブの利点：価格が安く、ケーブルが短いためノートPCのすぐ横で使う際にごちゃつかない。",
+          "Anker ウルトラスリム 4ポートハブの利点：ケーブルが60cmあるため、デスクトップPCの背面から手元に引き出して使うなどの用途に適している。"
         ]
       }
     ],
@@ -101,22 +120,51 @@
         "ケーブルが短い（約10cm）",
         "バスパワー専用（消費電力の大きい機器不可）"
       ],
-      "score": 80,
-      "scoreRationale": "[基本点: 70]\n[加点: +10] (国内有名メーカー製でありながら競合他社より安価な価格設定)\n[減点: -5] (ケーブルが10cmと短く用途が限定される、バスパワー専用)\n[加点: +5] (バッファローブランドの信頼性と入手性の良さ)\n[合計: 80]"
+      "score": 78,
+      "scoreRationale": "[基本点: 70]\n[加点: +10] (国内有名メーカー製でありながら約960円という高いコストパフォーマンス)\n[加点: +3] (前面3ポート+側面1ポート配置により、幅広機器の干渉を防ぐ実用的な設計)\n[減点: -5] (ケーブルが約10cmと短く、デスクトップPC環境などでは使いにくい)\n[合計: 78]"
     },
     "technicalSpecs": {
-      "ports": "4ポート (USB 3.0 Type-A)",
-      "interface": "USB 3.0 (USB3.2 Gen1 / 3.1 Gen1)",
-      "cableLength": "約10cm",
-      "powerSupply": "バスパワー",
       "dimensions": {
-        "width": "96mm",
         "height": "11mm",
-        "depth": "31mm",
-        "weight": "約35g"
+        "width": "31mm",
+        "depth": "96mm"
       },
-      "compatibility": ["Windows", "Mac", "ChromeOS", "PS4", "PS5"],
-      "material": "プラスチック"
-    }
+      "weight": "35g",
+      "cableLength": "10cm",
+      "ports": "4ポート",
+      "interface": "USB 3.2(Gen 1)/3.1(Gen 1)/3.0 Type-A",
+      "powerSupply": "バスパワー",
+      "compatibility": [
+        "Windows",
+        "Mac",
+        "ChromeOS",
+        "PS4",
+        "PS5"
+      ],
+      "color": "ブラック"
+    },
+    "claims": [
+      {
+        "claim": "厚さ約11mmの薄型設計で持ち運びに適している",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-amazon-b07xpmr5cw",
+          "src-buffalo-official"
+        ],
+        "crossChecked": true,
+        "notes": "寸法データで確認"
+      },
+      {
+        "claim": "重量が約35gと軽量",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-buffalo-official"
+        ],
+        "crossChecked": false,
+        "notes": "公式ページの仕様で確認"
+      }
+    ]
   }
 }
