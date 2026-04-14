@@ -2,119 +2,189 @@
   "analysis": {
     "productName": "Anker PowerExpand 13-in-1 USB-C Dock",
     "parentAsin": "B088FMRW7L",
-    "productDescription": "USB-C接続で13のポートを拡張できるドッキングステーション。最大85WのPD充電と3画面出力に対応しています。",
+    "productDescription": "13のポートを搭載し、最大85W出力でのノートPC充電や最大3画面への映像出力が可能なUSB-Cドッキングステーション。",
     "productUsage": [
-      "ノートPCのポート拡張（USB-A, HDMI, SDカード等）",
-      "デスク据え置きでのマルチモニター環境構築",
-      "ノートPCへの給電（最大85W）と周辺機器の同時接続"
+      "ノートパソコンへの給電と周辺機器の同時接続",
+      "マルチディスプレイ環境の構築（最大3画面）",
+      "高速データ転送と有線LAN接続"
     ],
     "positivePoints": [
-      "13ポートという圧倒的な拡張性",
-      "Ankerブランドの信頼性と安定した動作",
-      "最大85WのPD充電で高性能ノートPCにも給電可能",
-      "SD/microSDカードスロット同時使用可能"
+      "最大85Wの高出力でノートPCにフルスピード充電が可能",
+      "HDMI×2、DisplayPort×1を備え、最大3つのディスプレイへ同時出力可能",
+      "13ポートという高い拡張性でデスク周りの配線をすっきり整理できる"
     ],
     "negativePoints": [
-      "ACアダプタが非常に大きく重い（レンガサイズ）",
-      "映像出力スペックが古く、4K 60Hzや高解像度マルチモニタに弱い",
-      "価格が発売当時から下がっておらず、最新機種と比較して割高",
-      "縦置き不可でデスク上の占有面積が大きい"
+      "ACアダプターのサイズが大きく重量があるため、持ち運びには不向き",
+      "価格がやや高めに設定されている"
     ],
     "useCases": [
-      "テレワークでの自宅デスク環境構築",
-      "ポートの少ないMacBook等の拡張",
-      "クリエイター用途（SDカード多用など）"
+      "自宅やオフィスの固定デスクでの利用",
+      "複数モニターを使ったマルチタスク作業",
+      "SDカードやUSBメモリなどのデータ転送を頻繁に行うクリエイターの利用"
     ],
-    "userStories": [
-      {
-        "userType": "在宅勤務の会社員",
-        "scenario": "ノートPC1台で仕事を完結させたい",
-        "experience": "ケーブル1本でモニター、キーボード、マウス、充電が全て繋がり非常に快適。ただしACアダプタが机の下で邪魔になるのが難点。（推測）",
-        "sentiment": "mixed"
-      },
-      {
-        "userType": "MacBook Proユーザー",
-        "scenario": "クラムシェルモードでの使用",
-        "experience": "安定して動作するが、デュアルモニターにするとリフレッシュレートが落ちるのが気になる。最新のドックに買い替えを検討中。（推測）",
-        "sentiment": "negative"
-      }
-    ],
-    "userImpression": "発売当時は決定版とも言える製品だったが、現在はスペックの古さが目立つ。安定性は高いが、巨大なACアダプタと価格がネックとなり、指名買いする理由は薄れている。",
+    "userStories": [],
+    "userImpression": "13の豊富なポートと高出力充電により、デスク周りのハブをこれ1台に集約できる高い利便性が評価されている。一方で、付属のACアダプタが大きいため据え置き用としての用途に最適。",
     "sources": [
       {
-        "name": "Anker Japan公式サイト",
+        "id": "src-1",
+        "name": "Anker PowerExpand 13-in-1 USB-C Dock 公式ページ",
         "url": "https://www.ankerjapan.com/products/a8392",
-        "credibility": "高"
-      },
-      {
-        "name": "Amazonカスタマーレビュー",
-        "url": "https://www.amazon.co.jp/dp/B088FMRW7L",
-        "credibility": "中"
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-04-15",
+        "author": "Anker Japan",
+        "conflictOfInterest": "possible",
+        "notes": "製品の公式仕様（13ポート、85W充電、4K対応マルチディスプレイ）を確認"
       }
     ],
-    "lastInvestigated": "2026-01-31",
+    "claims": [
+      {
+        "claim": "最大85Wの高出力でノートPCにフルスピード充電が可能",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "crossChecked": false,
+        "notes": "公式サイトの仕様情報と一致"
+      },
+      {
+        "claim": "最大3つのディスプレイへ同時出力可能",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "crossChecked": false,
+        "notes": "公式サイトの仕様情報と一致"
+      }
+    ],
+    "lastInvestigated": "2026-04-15",
     "competitiveAnalysis": [
       {
-        "name": "UGREEN Revodok Pro 314",
-        "asin": "B0DYTVVLH4",
-        "priceComparison": "約6,000円安い（13,990円）",
+        "name": "Anker PowerExpand Elite 13-in-1 Thunderbolt 3 Dock",
+        "asin": "B087JKDD4M",
+        "priceComparison": "対象商品よりも上位モデルであり、Thunderbolt 3に対応している分価格が高い。",
         "featureComparison": [
-          "HDMI 4K@60Hz対応（Ankerは条件による）",
-          "データ転送10Gbps（Ankerは5Gbps想定）"
+          "共通点：13のポートを搭載し、最大85W出力での充電が可能。",
+          "相違点：対象商品はUSB-C接続であるのに対し、競合商品はThunderbolt 3接続に対応し、より高速なデータ転送が可能。"
         ],
         "differentiators": [
-          "コストパフォーマンスが高い",
-          "最新スペック搭載"
+          "Anker PowerExpand 13-in-1 USB-C Dockの利点：Thunderbolt 3対応が不要な場合、より安価に13ポートの拡張性を得られる。",
+          "Anker PowerExpand Elite 13-in-1 Thunderbolt 3 Dockの利点：Thunderbolt 3による40Gbpsの超高速データ転送が必要なケースで優位。"
         ]
       },
       {
-        "name": "Belkin Connect 11-in-1 GaN Dock",
-        "asin": "B0DM1TWPDY",
-        "priceComparison": "約2,000円高い（22,464円）",
+        "name": "Anker Nano ドッキングステーション (13-in-1)",
+        "asin": "B0FLD8KKN7",
+        "priceComparison": "対象商品よりも安価に購入できるコンパクトモデル。",
         "featureComparison": [
-          "GaN電源内蔵でACアダプタ不要",
-          "HDMI 2.1 / 4K@120Hz対応"
+          "共通点：13-in-1の拡張性を持ち、マルチディスプレイ出力に対応。",
+          "相違点：対象商品は85W出力のACアダプタ付属だが、競合商品は最大100Wパススルー充電対応で、よりコンパクトなデザイン。"
         ],
         "differentiators": [
-          "デスク周りが圧倒的にスッキリする",
-          "最新の映像出力規格に対応"
+          "Anker PowerExpand 13-in-1 USB-C Dockの利点：ACアダプタが付属し、安定した電力供給が可能。",
+          "Anker Nano ドッキングステーション (13-in-1)の利点：より安価で、省スペースなデザインを求める場合に適している。"
+        ]
+      },
+      {
+        "name": "Anker Prime ドッキングステーション (14-in-1, 160W)",
+        "asin": "B0D31FK2W6",
+        "priceComparison": "対象商品より高価だが、より高出力と多ポートを備える。",
+        "featureComparison": [
+          "共通点：多機能なドッキングステーションで、ノートPCの充電と拡張を兼ねる。",
+          "相違点：対象商品は13-in-1で85W出力だが、競合商品は14-in-1で合計最大160W出力に対応し、GaN搭載でACアダプタを内蔵している。"
+        ],
+        "differentiators": [
+          "Anker PowerExpand 13-in-1 USB-C Dockの利点：機能が十分に揃っており、競合よりも価格が抑えられている。",
+          "Anker Prime ドッキングステーション (14-in-1, 160W)の利点：より高い出力（最大160W）や、ACアダプタ内蔵によるデスク周りのスマートさを求める場合に最適。"
+        ]
+      },
+      {
+        "name": "Anker 563 USB-C ドッキングステーション (10-in-1)",
+        "asin": "B09XHKHZZH",
+        "priceComparison": "対象商品よりもわずかに高価な場合があるが、MST機能に特化している。",
+        "featureComparison": [
+          "共通点：USB-C接続でマルチディスプレイ出力に対応。",
+          "相違点：対象商品は13ポート搭載だが、競合商品は10ポート。ただし、競合商品はMST機能によるトリプルモニター出力（特にM1 MacBook）に強みがある。"
+        ],
+        "differentiators": [
+          "Anker PowerExpand 13-in-1 USB-C Dockの利点：ポート数が多く、幅広い周辺機器を接続できる。",
+          "Anker 563 USB-C ドッキングステーション (10-in-1)の利点：M1 MacBookなどでトリプルディスプレイ環境を構築したい場合に適している。"
+        ]
+      },
+      {
+        "name": "Anker PowerExpand 8-in-1 USB-C PD 10Gbps データ ハブ",
+        "asin": "B087TB7YM7",
+        "priceComparison": "対象商品よりも大幅に安価。",
+        "featureComparison": [
+          "共通点：USB-C接続で、PCへの給電やHDMI出力、SDカードスロットを備える。",
+          "相違点：対象商品は据え置き型の13-in-1ドックだが、競合商品は持ち運び可能な8-in-1のハブタイプ。"
+        ],
+        "differentiators": [
+          "Anker PowerExpand 13-in-1 USB-C Dockの利点：据え置きで多くの機器を常時接続しておく用途に最適。",
+          "Anker PowerExpand 8-in-1 USB-C PD 10Gbps データ ハブの利点：持ち運びやすく、外出先でも利用できる手軽さがある。"
+        ]
+      },
+      {
+        "name": "GIISSMO Macbook Pro/Air専用 14-IN-2 ドッキングステーション",
+        "asin": "B0C7ZY8LCG",
+        "priceComparison": "対象商品より安価に購入可能。",
+        "featureComparison": [
+          "共通点：マルチディスプレイ出力や多数のポートを備える。",
+          "相違点：対象商品は汎用的なUSB-C接続だが、競合商品はMacBook Pro/Air専用のデュアルUSB-C接続設計。"
+        ],
+        "differentiators": [
+          "Anker PowerExpand 13-in-1 USB-C Dockの利点：WindowsやMacを問わず、様々なUSB-C対応ノートPCで利用可能。",
+          "GIISSMO Macbook Pro/Air専用 14-IN-2 ドッキングステーションの利点：MacBookユーザーであれば、より安価に14-in-2の拡張性を得られる。"
         ]
       }
     ],
     "recommendation": {
       "targetUsers": [
-        "安定性重視でAnker製品で統一したいユーザー",
-        "古い規格のモニターを使用していて高リフレッシュレートを求めないユーザー"
+        "自宅や職場で固定デスクを使用し、多くの周辺機器を接続するユーザー",
+        "ノートPCにケーブル1本接続するだけで、充電と拡張を行いたいユーザー",
+        "マルチディスプレイ環境を構築したいユーザー"
       ],
       "pros": [
-        "長期間販売されており動作実績が豊富",
-        "ポートの種類と数が豊富"
+        "13種類のポートで高い拡張性を実現",
+        "最大85Wの高出力でPCをフルスピード充電可能",
+        "最大3画面の同時出力に対応"
       ],
       "cons": [
-        "今から買うにはスペック対価格比（コスパ）が悪い",
-        "ACアダプタが巨大で設置場所に困る"
+        "ACアダプターが大きくかさばる",
+        "Thunderbolt非対応"
       ],
-      "score": 60,
-      "scoreRationale": "[基本点: 70]\n[加点: +5] (Ankerブランドの信頼性とビルドクオリティ)\n[減点: -5] (映像出力スペックが古く4K60Hzマルチなどに弱い)\n[減点: -10] (競合の最新機種と比較して価格が高く、ACアダプタも巨大で取り回しが悪い)\n[合計: 60]"
+      "score": 75,
+      "scoreRationale": "[基本点: 70]\n[加点: +10] (13種類の豊富なポートと最大3画面出力による高い実用性と拡張性)\n[加点: +5] (85Wの高出力PD給電による利便性)\n[減点: -5] (付属ACアダプターのサイズが大きく設置場所を選ぶ点)\n[減点: -5] (上位モデルや競合他社の多機能モデルと比較して価格がやや高い点)\n[合計: 75]"
     },
     "technicalSpecs": {
       "dimensions": {
-        "width": "125mm",
-        "depth": "88mm",
-        "height": "41mm",
-        "weight": "370g"
+        "height": "41.6mm",
+        "width": "88.6mm",
+        "depth": "125.8mm"
       },
-      "power": "85W (PD pass-through to host), 18W (PD port)",
-      "capacity": null,
-      "other": [
-        "USB-A 3.0 x3",
-        "USB-C 3.0 x1",
-        "HDMI 2.0 x2",
-        "DisplayPort 1.4 x1",
-        "SD/microSD (UHS-I)",
-        "Ethernet (1Gbps)",
-        "Audio Jack"
-      ]
+      "weight": "370.0g",
+      "ports": [
+        "USB-Cポート (最大85W出力)",
+        "USB-Cポート (最大18W出力 PD対応)",
+        "USB-Cデータポート",
+        "USB-Aポート ×3",
+        "HDMIポート ×2 (1080p@60Hz)",
+        "DisplayPort (1080p@60Hz)",
+        "1Gbps イーサネットポート",
+        "3.5mm オーディオジャック",
+        "microSDカードスロット",
+        "SDカードスロット"
+      ],
+      "powerDelivery": "最大85W出力 (PC給電用), 最大18W出力 (周辺機器用)",
+      "videoOutput": "1080p (60Hz) 最大3画面 (HDMI×2 + DisplayPort)",
+      "includedAccessories": [
+        "ACアダプタ (約143 × 63 × 30mm / 約582g)",
+        "USB-C＆USB-C ケーブル (約0.9m)",
+        "取扱説明書"
+      ],
+      "model": "A8392"
     }
   }
 }
