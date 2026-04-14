@@ -59,12 +59,17 @@ export class BrandCounter {
       const content = fs.readFileSync(filePath, 'utf-8');
       const { data } = matter(content);
       if (data.brand && typeof data.brand === 'string') {
-        return data.brand.trim();
+        return BrandCounter.normalizeBrandName(data.brand);
       }
     } catch (e) {
       const message = e instanceof Error ? e.message : String(e);
       console.warn(`Failed to extract brand from ${filePath}: ${message}`);
     }
     return null;
+  }
+
+  public static normalizeBrandName(name: string): string {
+    // 括弧書き（例：Apple(アップル) -> Apple）を除去
+    return name.replace(/\s*[\(（].*?[\)）]\s*$/g, '').trim();
   }
 }

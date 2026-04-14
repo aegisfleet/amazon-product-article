@@ -71,21 +71,21 @@
     },
     "description": "UGREENの商品一覧"
   },
-  "シャオミ (Xiaomi)": {
+  "シャオミ": {
     "slug": "xiaomi",
     "icon": "📱",
     "matcher": {
       "type": "regex",
-      "value": "Xiaomi"
+      "value": "Xiaomi|シャオミ|xiaomi"
     },
-    "description": "Xiaomiの商品一覧"
+    "description": "Xiaomi(シャオミ)の商品一覧"
   },
   "オーディオテクニカ": {
     "slug": "audio-technica",
     "icon": "🎧",
     "matcher": {
-      "type": "title_prefix",
-      "value": "オーディオテクニカ"
+      "type": "regex",
+      "value": "オーディオテクニカ|Audio Technica"
     },
     "description": "オーディオテクニカの商品一覧"
   },
@@ -102,8 +102,8 @@
     "slug": "yamazaki",
     "icon": "🏠",
     "matcher": {
-      "type": "title_prefix",
-      "value": "山崎実業"
+      "type": "regex",
+      "value": "山崎実業|Yamazaki"
     },
     "description": "山崎実業の商品一覧"
   },
@@ -134,121 +134,40 @@
     },
     "description": "Samsungの商品一覧"
   },
-  "エレコム(ELECOM)": {
-    "slug": "エレコム-elecom",
+  "山善": {
+    "slug": "山善",
     "icon": "🏷️",
-    "description": "エレコム(ELECOM)の商品一覧",
+    "description": "山善の商品一覧",
     "matcher": {
       "type": "brand",
-      "value": "エレコム(ELECOM)"
+      "value": "山善"
     }
   },
-  "アイリスオーヤマ(IRIS OHYAMA)": {
-    "slug": "アイリスオーヤマ-iris-ohyama",
+  "Logicool": {
+    "slug": "logicool",
     "icon": "🏷️",
-    "description": "アイリスオーヤマ(IRIS OHYAMA)の商品一覧",
+    "description": "Logicoolの商品一覧",
     "matcher": {
       "type": "brand",
-      "value": "アイリスオーヤマ(IRIS OHYAMA)"
+      "value": "Logicool"
     }
   },
-  "xiaomi(シャオミ)": {
-    "slug": "xiaomi-シャオミ",
+  "タイガー魔法瓶": {
+    "slug": "タイガー魔法瓶",
     "icon": "🏷️",
-    "description": "xiaomi(シャオミ)の商品一覧",
+    "description": "タイガー魔法瓶の商品一覧",
     "matcher": {
       "type": "brand",
-      "value": "xiaomi(シャオミ)"
+      "value": "タイガー魔法瓶"
     }
   },
-  "Amazonベーシック(Amazon Basics)": {
-    "slug": "amazonベーシック-amazon-basics",
+  "コクヨ": {
+    "slug": "コクヨ",
     "icon": "🏷️",
-    "description": "Amazonベーシック(Amazon Basics)の商品一覧",
+    "description": "コクヨの商品一覧",
     "matcher": {
       "type": "brand",
-      "value": "Amazonベーシック(Amazon Basics)"
-    }
-  },
-  "Apple(アップル)": {
-    "slug": "apple-アップル",
-    "icon": "🏷️",
-    "description": "Apple(アップル)の商品一覧",
-    "matcher": {
-      "type": "brand",
-      "value": "Apple(アップル)"
-    }
-  },
-  "パナソニック(Panasonic)": {
-    "slug": "パナソニック-panasonic",
-    "icon": "🏷️",
-    "description": "パナソニック(Panasonic)の商品一覧",
-    "matcher": {
-      "type": "brand",
-      "value": "パナソニック(Panasonic)"
-    }
-  },
-  "Audio Technica(オーディオテクニカ)": {
-    "slug": "audio-technica-オーディオテクニカ",
-    "icon": "🏷️",
-    "description": "Audio Technica(オーディオテクニカ)の商品一覧",
-    "matcher": {
-      "type": "brand",
-      "value": "Audio Technica(オーディオテクニカ)"
-    }
-  },
-  "シャープ(SHARP)": {
-    "slug": "シャープ-sharp",
-    "icon": "🏷️",
-    "description": "シャープ(SHARP)の商品一覧",
-    "matcher": {
-      "type": "brand",
-      "value": "シャープ(SHARP)"
-    }
-  },
-  "山善(YAMAZEN)": {
-    "slug": "山善-yamazen",
-    "icon": "🏷️",
-    "description": "山善(YAMAZEN)の商品一覧",
-    "matcher": {
-      "type": "brand",
-      "value": "山善(YAMAZEN)"
-    }
-  },
-  "Logicool(ロジクール)": {
-    "slug": "logicool-ロジクール",
-    "icon": "🏷️",
-    "description": "Logicool(ロジクール)の商品一覧",
-    "matcher": {
-      "type": "brand",
-      "value": "Logicool(ロジクール)"
-    }
-  },
-  "タイガー魔法瓶(TIGER)": {
-    "slug": "タイガー魔法瓶-tiger",
-    "icon": "🏷️",
-    "description": "タイガー魔法瓶(TIGER)の商品一覧",
-    "matcher": {
-      "type": "brand",
-      "value": "タイガー魔法瓶(TIGER)"
-    }
-  },
-  "コクヨ(KOKUYO)": {
-    "slug": "コクヨ-kokuyo",
-    "icon": "🏷️",
-    "description": "コクヨ(KOKUYO)の商品一覧",
-    "matcher": {
-      "type": "brand",
-      "value": "コクヨ(KOKUYO)"
-    }
-  },
-  "Yamazaki(山崎実業)": {
-    "slug": "yamazaki-山崎実業",
-    "icon": "🏷️",
-    "description": "Yamazaki(山崎実業)の商品一覧",
-    "matcher": {
-      "type": "brand",
-      "value": "Yamazaki(山崎実業)"
+      "value": "コクヨ"
     }
   },
   "Spigen": {
@@ -260,13 +179,13 @@
       "value": "Spigen"
     }
   },
-  "new balance(ニューバランス)": {
-    "slug": "new-balance-ニューバランス",
+  "new balance": {
+    "slug": "new-balance",
     "icon": "🏷️",
-    "description": "new balance(ニューバランス)の商品一覧",
+    "description": "new balanceの商品一覧",
     "matcher": {
       "type": "brand",
-      "value": "new balance(ニューバランス)"
+      "value": "new balance"
     }
   },
   "Galaxy": {
@@ -305,13 +224,13 @@
       "value": "バッファロー"
     }
   },
-  "コンフィー(COMFEE')": {
-    "slug": "コンフィー-comfee",
+  "コンフィー": {
+    "slug": "コンフィー",
     "icon": "🏷️",
-    "description": "コンフィー(COMFEE')の商品一覧",
+    "description": "コンフィーの商品一覧",
     "matcher": {
       "type": "brand",
-      "value": "コンフィー(COMFEE')"
+      "value": "コンフィー"
     }
   }
 }
