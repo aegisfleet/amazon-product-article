@@ -1,6 +1,6 @@
+import matter from 'gray-matter';
 import * as fs from 'node:fs';
 import * as path from 'node:path';
-import matter from 'gray-matter';
 
 export interface BrandCount {
   name: string;
@@ -70,6 +70,6 @@ export class BrandCounter {
 
   public static normalizeBrandName(name: string): string {
     // 括弧書き（例：Apple(アップル) -> Apple）を除去
-    return name.replace(/\s*[\(（].*?[\)）]\s*$/g, '').trim();
+    return name.replaceAll(/\s*[(（].*?[)）]\s*$/g, '').trim();
   }
 }
