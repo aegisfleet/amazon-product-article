@@ -3,6 +3,8 @@ import * as path from 'node:path';
 import * as yaml from 'js-yaml';
 import { CategoryManager } from '../category/CategoryManager';
 import { ProductCounter } from '../category/ProductCounter';
+import { BrandCounter } from '../navigation/BrandCounter';
+import { BrandManager, BrandEntry } from '../navigation/BrandManager';
 
 const categoryGroupsPath = path.resolve(process.cwd(), 'data/categorygroups.json');
 const contentPath = path.resolve(process.cwd(), 'content');
@@ -13,16 +15,23 @@ const brandGroupsSourcePath = path.resolve(process.cwd(), 'data/brandgroups.json
 const brandGroupsStaticPath = path.resolve(process.cwd(), 'static/data/brandgroups.json');
 const brandContentDir = path.resolve(contentPath, 'brand');
 
-interface BrandMatcher {
-  type: string;
-  value: string;
-}
+/**
+ * ブランドの自動抽出とデータの同期
+ * 1. 記事から10個以上の商品を持つブランドを自動抽出
+ * 2. data/brandgroups.json を更新
+ */
+function updateBrandGroups(): void {
+  console.log('--- Brand Auto-Extraction ---');
+  const articlesPath = path.resolve(process.cwd(), 'content/articles');
+  const counter = new BrandCounter(articlesPath);
+  const topBrands = counter.getTopBrands();
+  console.log(`Found ${topBrands.length} brands with 10+ products.`);
 
-interface BrandEntry {
-  slug: string;
-  icon?: string;
-  description?: string;
-  matcher?: BrandMatcher;
+  const manager = new BrandManager(brandGroupsSourcePath);
+  manager.load();
+  manager.mergeTopBrands(topBrands);
+  manager.save();
+  console.log('Updated brandgroups.json with newly discovered brands.');
 }
 
 /**
@@ -31,6 +40,7 @@ interface BrandEntry {
  * 2. content/brand/*.md の自動生成・削除
  */
 function syncBrandData(): void {
+  console.log('--- Brand Data Sync ---');
   if (!fs.existsSync(brandGroupsSourcePath)) {
     console.log('No brandgroups.json found, skipping brand sync.');
     return;
@@ -118,6 +128,8 @@ function main(): void {
 
     console.log(`Successfully enhanced ${enhanced.length} parent categories and synced markdown files.`);
 
+    // ブランド定義の更新
+    updateBrandGroups();
     // ブランドデータの同期
     syncBrandData();
   } catch (e) {
