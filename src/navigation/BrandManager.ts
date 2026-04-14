@@ -62,7 +62,7 @@ export class BrandManager {
     const map = new Map<string, string>();
     for (const key of Object.keys(this.brandGroups)) {
       map.set(BrandManager.normalizeBrandName(key).toLowerCase(), key);
-      
+
       const matcher = this.brandGroups[key]?.matcher;
       if (matcher?.value) {
         map.set(BrandManager.normalizeBrandName(matcher.value).toLowerCase(), key);
@@ -77,10 +77,10 @@ export class BrandManager {
   private findExistingKey(
     brandName: string,
     normalizedName: string,
-    normalizedMap: Map<string, string>
+    normalizedMap: Map<string, string>,
   ): string | null {
     const normalizedKey = normalizedName.toLowerCase();
-    
+
     // 1. 正規化名マップから検索
     const directMatch = normalizedMap.get(normalizedKey);
     if (directMatch) return directMatch;
@@ -113,11 +113,7 @@ export class BrandManager {
   /**
    * 新しいブランドを登録する
    */
-  private registerBrand(
-    brandName: string,
-    normalizedName: string,
-    normalizedMap: Map<string, string>
-  ): void {
+  private registerBrand(brandName: string, normalizedName: string, normalizedMap: Map<string, string>): void {
     const slug = this.generateUniqueSlug(this.generateSlug(normalizedName));
 
     this.brandGroups[normalizedName] = {
@@ -126,8 +122,8 @@ export class BrandManager {
       description: `${normalizedName}の商品一覧`,
       matcher: {
         type: 'brand',
-        value: brandName
-      }
+        value: brandName,
+      },
     };
 
     // マップを更新して以降の重複を防ぐ
@@ -140,8 +136,8 @@ export class BrandManager {
   private generateUniqueSlug(baseSlug: string): string {
     let finalSlug = baseSlug;
     let counter = 1;
-    const existingSlugs = new Set(Object.values(this.brandGroups).map(b => b.slug));
-    
+    const existingSlugs = new Set(Object.values(this.brandGroups).map((b) => b.slug));
+
     while (existingSlugs.has(finalSlug)) {
       finalSlug = `${baseSlug}-${counter++}`;
     }
