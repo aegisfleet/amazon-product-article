@@ -43,91 +43,115 @@ export class BrandManager {
    * 集計されたトップブランドを既存の定義にマージする
    */
   public mergeTopBrands(topBrands: BrandCount[]): void {
-    // 既存のブランドを正規化した名前でマップ化しておく (normalized -> original key)
-    const normalizedExisting = new Map<string, string>();
-    for (const key of Object.keys(this.brandGroups)) {
-      normalizedExisting.set(BrandManager.normalizeBrandName(key).toLowerCase(), key);
-      
-      // matcher.value が設定されている場合はそれも考慮する
-      const matcher = this.brandGroups[key]?.matcher;
-      if (matcher) {
-        if (matcher.value) {
-          normalizedExisting.set(BrandManager.normalizeBrandName(matcher.value).toLowerCase(), key);
-        }
-        // regex の場合はテストして一致すればマップに追加
-        if (matcher.type === 'regex' && matcher.value) {
-          try {
-            const regex = new RegExp(matcher.value, 'i');
-            // この正規化マップ作成時に、将来現れる可能性がある名前をすべて網羅はできないが、
-            // 少なくとも既存の matcher.value に含まれる単語は考慮できる。
-          } catch (e) {
-            // Invalid regex, skip
-          }
-        }
-      }
-    }
+    const normalizedMap = this.createNormalizedMap();
 
     for (const brand of topBrands) {
       const normalizedName = BrandManager.normalizeBrandName(brand.name);
-      const normalizedKey = normalizedName.toLowerCase();
-
-      // すでに存在するか正規化名でチェック
-      let existingKey = normalizedExisting.get(normalizedKey);
-
-      // さらに、全ての既存ブランドのマッチャー（特に regex）に対してチェック
-      if (!existingKey) {
-        for (const [key, entry] of Object.entries(this.brandGroups)) {
-          const matcher = entry.matcher;
-          if (matcher && matcher.type === 'regex' && matcher.value) {
-            try {
-              const regex = new RegExp(matcher.value, 'i');
-              if (regex.test(brand.name) || regex.test(normalizedName)) {
-                existingKey = key;
-                break;
-              }
-            } catch (e) { /* skip invalid regex */ }
-          }
-        }
-      }
+      const existingKey = this.findExistingKey(brand.name, normalizedName, normalizedMap);
 
       if (!existingKey) {
-        // 新規追加（表示名はカッコを除去したものにする）
-        const displayName = normalizedName;
-        const slug = this.generateSlug(displayName);
-        
-        // 既存の slug と重複しないようにチェック
-        let finalSlug = slug;
-        let counter = 1;
-        const existingSlugs = new Set(Object.values(this.brandGroups).map(b => b.slug));
-        while (existingSlugs.has(finalSlug)) {
-          finalSlug = `${slug}-${counter++}`;
-        }
-
-        this.brandGroups[displayName] = {
-          slug: finalSlug,
-          icon: '🏷️',
-          description: `${displayName}の商品一覧`,
-          matcher: {
-            type: 'brand',
-            value: brand.name // 元の名称（カッコあり含む）をマッチャーに設定
-          }
-        };
-
-        // 追加したものを既知リストに加える
-        normalizedExisting.set(normalizedKey, displayName);
-      } else {
-        // 既に存在するブランドページがある場合
-        // 必要に応じて matcher を拡張するなどは将来の課題とするが、
-        // 現状は既存の定義を優先してスキップする。
+        this.registerBrand(brand.name, normalizedName, normalizedMap);
       }
     }
+  }
+
+  /**
+   * 既存ブランドから正規化名マップを作成する
+   */
+  private createNormalizedMap(): Map<string, string> {
+    const map = new Map<string, string>();
+    for (const key of Object.keys(this.brandGroups)) {
+      map.set(BrandManager.normalizeBrandName(key).toLowerCase(), key);
+      
+      const matcher = this.brandGroups[key]?.matcher;
+      if (matcher?.value) {
+        map.set(BrandManager.normalizeBrandName(matcher.value).toLowerCase(), key);
+      }
+    }
+    return map;
+  }
+
+  /**
+   * ブランド名が既存の定義に一致するか確認する
+   */
+  private findExistingKey(
+    brandName: string,
+    normalizedName: string,
+    normalizedMap: Map<string, string>
+  ): string | null {
+    const normalizedKey = normalizedName.toLowerCase();
+    
+    // 1. 正規化名マップから検索
+    const directMatch = normalizedMap.get(normalizedKey);
+    if (directMatch) return directMatch;
+
+    // 2. 正規表現マッチャーとの照合
+    return this.findKeyByRegex(brandName, normalizedName);
+  }
+
+  /**
+   * 正規表現マッチャーを使用して既存ブランドキーを検索する
+   */
+  private findKeyByRegex(brandName: string, normalizedName: string): string | null {
+    for (const [key, entry] of Object.entries(this.brandGroups)) {
+      const matcher = entry.matcher;
+      if (matcher?.type === 'regex' && matcher.value) {
+        try {
+          const regex = new RegExp(matcher.value, 'i');
+          if (regex.test(brandName) || regex.test(normalizedName)) {
+            return key;
+          }
+        } catch (e) {
+          const message = e instanceof Error ? e.message : String(e);
+          console.warn(`Invalid regex pattern for "${key}": ${message}`);
+        }
+      }
+    }
+    return null;
+  }
+
+  /**
+   * 新しいブランドを登録する
+   */
+  private registerBrand(
+    brandName: string,
+    normalizedName: string,
+    normalizedMap: Map<string, string>
+  ): void {
+    const slug = this.generateUniqueSlug(this.generateSlug(normalizedName));
+
+    this.brandGroups[normalizedName] = {
+      slug,
+      icon: '🏷️',
+      description: `${normalizedName}の商品一覧`,
+      matcher: {
+        type: 'brand',
+        value: brandName
+      }
+    };
+
+    // マップを更新して以降の重複を防ぐ
+    normalizedMap.set(normalizedName.toLowerCase(), normalizedName);
+  }
+
+  /**
+   * 重複しないスラッグを生成する
+   */
+  private generateUniqueSlug(baseSlug: string): string {
+    let finalSlug = baseSlug;
+    let counter = 1;
+    const existingSlugs = new Set(Object.values(this.brandGroups).map(b => b.slug));
+    
+    while (existingSlugs.has(finalSlug)) {
+      finalSlug = `${baseSlug}-${counter++}`;
+    }
+    return finalSlug;
   }
 
   public static normalizeBrandName(name: string): string {
     // 括弧書き（例：Apple(アップル) -> Apple）を除去
-    return name.replace(/\s*[\(（].*?[\)）]\s*$/g, '').trim();
+    return name.replaceAll(/\s*[(（].*?[)）]\s*$/g, '').trim();
   }
-
   public getBrandGroups(): BrandGroups {
     return this.brandGroups;
   }
