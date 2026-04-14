@@ -152,6 +152,18 @@ export class ConfigManager {
     }
 
     if (
+      Number.isNaN(config.system.maxConcurrentRequests) ||
+      config.system.maxConcurrentRequests < 1 ||
+      config.system.maxConcurrentRequests > 20
+    ) {
+      errors.push('Max concurrent requests must be a number between 1 and 20');
+    }
+
+    if (Number.isNaN(config.jules.timeout) || config.jules.timeout < 1000 || config.jules.timeout > 60000) {
+      errors.push('Jules timeout must be a number between 1s and 60s');
+    }
+
+    if (
       Number.isNaN(config.productSearch.maxResultsPerCategory) ||
       config.productSearch.maxResultsPerCategory < 1 ||
       config.productSearch.maxResultsPerCategory > 50
