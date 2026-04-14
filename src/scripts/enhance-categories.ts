@@ -56,7 +56,7 @@ function syncBrandData(): void {
 
   // ブランドデータを読み込み
   const rawData = fs.readFileSync(brandGroupsSourcePath, 'utf-8');
-  const brandData: Record<string, BrandEntry> = JSON.parse(rawData);
+  const brandData = JSON.parse(rawData) as Record<string, BrandEntry>;
 
   // content/brand/ ディレクトリの準備
   if (!fs.existsSync(brandContentDir)) {
