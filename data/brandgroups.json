@@ -232,5 +232,14 @@
       "type": "brand",
       "value": "コンフィー"
     }
+  },
+  "ティファール": {
+    "slug": "t-fal",
+    "icon": "🍳",
+    "description": "ティファール(T-fal)の商品一覧",
+    "matcher": {
+      "type": "regex",
+      "value": "T-fal|T-Fal|ティファール"
+    }
   }
 }
