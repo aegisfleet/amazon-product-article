@@ -223,7 +223,7 @@
     {{- $brandCount = add $brandCount 1 -}}
     {{- end -}}
     {{- end -}}
-    {{- if gt $brandCount 0 -}}
+    {{- if ge $brandCount 10 -}}
     {{- $brandList = $brandList | append (dict "name" $brandName "slug" $brand.slug "icon" ($brand.icon | default "🏷️")
     "count" $brandCount) -}}
     {{- end -}}

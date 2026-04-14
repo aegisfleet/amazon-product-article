@@ -1,137 +1,317 @@
 {
-    "Amazon": {
-        "slug": "amazon",
-        "icon": "📱",
-        "matcher": {
-            "type": "brand",
-            "value": "Amazon"
-        },
-        "description": "Amazonブランド（Fire TV, Kindle等）の商品一覧"
+  "Amazon": {
+    "slug": "amazon",
+    "icon": "📱",
+    "matcher": {
+      "type": "brand",
+      "value": "Amazon"
     },
-    "by Amazon": {
-        "slug": "by-amazon",
-        "icon": "📦",
-        "matcher": {
-            "type": "title_prefix",
-            "value": "by Amazon"
-        },
-        "description": "by Amazonの商品一覧"
+    "description": "Amazonブランド（Fire TV, Kindle等）の商品一覧"
+  },
+  "by Amazon": {
+    "slug": "by-amazon",
+    "icon": "📦",
+    "matcher": {
+      "type": "title_prefix",
+      "value": "by Amazon"
     },
-    "Amazonベーシック": {
-        "slug": "amazon-basics",
-        "icon": "🛒",
-        "matcher": {
-            "type": "title_prefix",
-            "value": "Amazonベーシック"
-        },
-        "description": "Amazonベーシックの商品一覧"
+    "description": "by Amazonの商品一覧"
+  },
+  "Amazonベーシック": {
+    "slug": "amazon-basics",
+    "icon": "🛒",
+    "matcher": {
+      "type": "title_prefix",
+      "value": "Amazonベーシック"
     },
-    "エレコム": {
-        "slug": "elecom",
-        "icon": "🔌",
-        "matcher": {
-            "type": "title_prefix",
-            "value": "エレコム"
-        },
-        "description": "エレコムの商品一覧"
+    "description": "Amazonベーシックの商品一覧"
+  },
+  "エレコム": {
+    "slug": "elecom",
+    "icon": "🔌",
+    "matcher": {
+      "type": "title_prefix",
+      "value": "エレコム"
     },
-    "Anker": {
-        "slug": "anker",
-        "icon": "⚡",
-        "matcher": {
-            "type": "title_prefix",
-            "value": "Anker"
-        },
-        "description": "Ankerの商品一覧"
+    "description": "エレコムの商品一覧"
+  },
+  "Anker": {
+    "slug": "anker",
+    "icon": "⚡",
+    "matcher": {
+      "type": "title_prefix",
+      "value": "Anker"
     },
-    "Apple": {
-        "slug": "apple",
-        "icon": "🍏",
-        "matcher": {
-            "type": "title_prefix",
-            "value": "Apple"
-        },
-        "description": "Apple製品の一覧"
+    "description": "Ankerの商品一覧"
+  },
+  "Apple": {
+    "slug": "apple",
+    "icon": "🍏",
+    "matcher": {
+      "type": "title_prefix",
+      "value": "Apple"
     },
-    "アイリスオーヤマ": {
-        "slug": "iris-ohyama",
-        "icon": "💡",
-        "matcher": {
-            "type": "title_prefix",
-            "value": "アイリスオーヤマ"
-        },
-        "description": "アイリスオーヤマの商品一覧"
+    "description": "Apple製品の一覧"
+  },
+  "アイリスオーヤマ": {
+    "slug": "iris-ohyama",
+    "icon": "💡",
+    "matcher": {
+      "type": "title_prefix",
+      "value": "アイリスオーヤマ"
     },
-    "UGREEN": {
-        "slug": "ugreen",
-        "icon": "🖱️",
-        "matcher": {
-            "type": "title_prefix",
-            "value": "UGREEN"
-        },
-        "description": "UGREENの商品一覧"
+    "description": "アイリスオーヤマの商品一覧"
+  },
+  "UGREEN": {
+    "slug": "ugreen",
+    "icon": "🖱️",
+    "matcher": {
+      "type": "title_prefix",
+      "value": "UGREEN"
     },
-    "シャオミ (Xiaomi)": {
-        "slug": "xiaomi",
-        "icon": "📱",
-        "matcher": {
-            "type": "regex",
-            "value": "Xiaomi"
-        },
-        "description": "Xiaomiの商品一覧"
+    "description": "UGREENの商品一覧"
+  },
+  "シャオミ (Xiaomi)": {
+    "slug": "xiaomi",
+    "icon": "📱",
+    "matcher": {
+      "type": "regex",
+      "value": "Xiaomi"
     },
-    "オーディオテクニカ": {
-        "slug": "audio-technica",
-        "icon": "🎧",
-        "matcher": {
-            "type": "title_prefix",
-            "value": "オーディオテクニカ"
-        },
-        "description": "オーディオテクニカの商品一覧"
+    "description": "Xiaomiの商品一覧"
+  },
+  "オーディオテクニカ": {
+    "slug": "audio-technica",
+    "icon": "🎧",
+    "matcher": {
+      "type": "title_prefix",
+      "value": "オーディオテクニカ"
     },
-    "パナソニック": {
-        "slug": "panasonic",
-        "icon": "🍳",
-        "matcher": {
-            "type": "title_prefix",
-            "value": "パナソニック"
-        },
-        "description": "パナソニックの商品一覧"
+    "description": "オーディオテクニカの商品一覧"
+  },
+  "パナソニック": {
+    "slug": "panasonic",
+    "icon": "🍳",
+    "matcher": {
+      "type": "title_prefix",
+      "value": "パナソニック"
     },
-    "山崎実業": {
-        "slug": "yamazaki",
-        "icon": "🏠",
-        "matcher": {
-            "type": "title_prefix",
-            "value": "山崎実業"
-        },
-        "description": "山崎実業の商品一覧"
+    "description": "パナソニックの商品一覧"
+  },
+  "山崎実業": {
+    "slug": "yamazaki",
+    "icon": "🏠",
+    "matcher": {
+      "type": "title_prefix",
+      "value": "山崎実業"
     },
-    "無印良品": {
-        "slug": "muji",
-        "icon": "🍱",
-        "matcher": {
-            "type": "title_prefix",
-            "value": "無印良品"
-        },
-        "description": "無印良品の商品一覧"
+    "description": "山崎実業の商品一覧"
+  },
+  "無印良品": {
+    "slug": "muji",
+    "icon": "🍱",
+    "matcher": {
+      "type": "title_prefix",
+      "value": "無印良品"
     },
-    "シャープ": {
-        "slug": "sharp",
-        "icon": "🧊",
-        "matcher": {
-            "type": "title_prefix",
-            "value": "シャープ"
-        },
-        "description": "シャープの商品一覧"
+    "description": "無印良品の商品一覧"
+  },
+  "シャープ": {
+    "slug": "sharp",
+    "icon": "🧊",
+    "matcher": {
+      "type": "title_prefix",
+      "value": "シャープ"
     },
-    "Samsung": {
-        "slug": "samsung",
-        "icon": "🖥️",
-        "matcher": {
-            "type": "title_prefix",
-            "value": "Samsung"
-        },
-        "description": "Samsungの商品一覧"
+    "description": "シャープの商品一覧"
+  },
+  "Samsung": {
+    "slug": "samsung",
+    "icon": "🖥️",
+    "matcher": {
+      "type": "title_prefix",
+      "value": "Samsung"
+    },
+    "description": "Samsungの商品一覧"
+  },
+  "エレコム(ELECOM)": {
+    "slug": "エレコム-elecom",
+    "icon": "🏷️",
+    "description": "エレコム(ELECOM)の商品一覧",
+    "matcher": {
+      "type": "brand",
+      "value": "エレコム(ELECOM)"
     }
+  },
+  "アイリスオーヤマ(IRIS OHYAMA)": {
+    "slug": "アイリスオーヤマ-iris-ohyama",
+    "icon": "🏷️",
+    "description": "アイリスオーヤマ(IRIS OHYAMA)の商品一覧",
+    "matcher": {
+      "type": "brand",
+      "value": "アイリスオーヤマ(IRIS OHYAMA)"
+    }
+  },
+  "xiaomi(シャオミ)": {
+    "slug": "xiaomi-シャオミ",
+    "icon": "🏷️",
+    "description": "xiaomi(シャオミ)の商品一覧",
+    "matcher": {
+      "type": "brand",
+      "value": "xiaomi(シャオミ)"
+    }
+  },
+  "Amazonベーシック(Amazon Basics)": {
+    "slug": "amazonベーシック-amazon-basics",
+    "icon": "🏷️",
+    "description": "Amazonベーシック(Amazon Basics)の商品一覧",
+    "matcher": {
+      "type": "brand",
+      "value": "Amazonベーシック(Amazon Basics)"
+    }
+  },
+  "Apple(アップル)": {
+    "slug": "apple-アップル",
+    "icon": "🏷️",
+    "description": "Apple(アップル)の商品一覧",
+    "matcher": {
+      "type": "brand",
+      "value": "Apple(アップル)"
+    }
+  },
+  "パナソニック(Panasonic)": {
+    "slug": "パナソニック-panasonic",
+    "icon": "🏷️",
+    "description": "パナソニック(Panasonic)の商品一覧",
+    "matcher": {
+      "type": "brand",
+      "value": "パナソニック(Panasonic)"
+    }
+  },
+  "Audio Technica(オーディオテクニカ)": {
+    "slug": "audio-technica-オーディオテクニカ",
+    "icon": "🏷️",
+    "description": "Audio Technica(オーディオテクニカ)の商品一覧",
+    "matcher": {
+      "type": "brand",
+      "value": "Audio Technica(オーディオテクニカ)"
+    }
+  },
+  "シャープ(SHARP)": {
+    "slug": "シャープ-sharp",
+    "icon": "🏷️",
+    "description": "シャープ(SHARP)の商品一覧",
+    "matcher": {
+      "type": "brand",
+      "value": "シャープ(SHARP)"
+    }
+  },
+  "山善(YAMAZEN)": {
+    "slug": "山善-yamazen",
+    "icon": "🏷️",
+    "description": "山善(YAMAZEN)の商品一覧",
+    "matcher": {
+      "type": "brand",
+      "value": "山善(YAMAZEN)"
+    }
+  },
+  "Logicool(ロジクール)": {
+    "slug": "logicool-ロジクール",
+    "icon": "🏷️",
+    "description": "Logicool(ロジクール)の商品一覧",
+    "matcher": {
+      "type": "brand",
+      "value": "Logicool(ロジクール)"
+    }
+  },
+  "タイガー魔法瓶(TIGER)": {
+    "slug": "タイガー魔法瓶-tiger",
+    "icon": "🏷️",
+    "description": "タイガー魔法瓶(TIGER)の商品一覧",
+    "matcher": {
+      "type": "brand",
+      "value": "タイガー魔法瓶(TIGER)"
+    }
+  },
+  "コクヨ(KOKUYO)": {
+    "slug": "コクヨ-kokuyo",
+    "icon": "🏷️",
+    "description": "コクヨ(KOKUYO)の商品一覧",
+    "matcher": {
+      "type": "brand",
+      "value": "コクヨ(KOKUYO)"
+    }
+  },
+  "Yamazaki(山崎実業)": {
+    "slug": "yamazaki-山崎実業",
+    "icon": "🏷️",
+    "description": "Yamazaki(山崎実業)の商品一覧",
+    "matcher": {
+      "type": "brand",
+      "value": "Yamazaki(山崎実業)"
+    }
+  },
+  "Spigen": {
+    "slug": "spigen",
+    "icon": "🏷️",
+    "description": "Spigenの商品一覧",
+    "matcher": {
+      "type": "brand",
+      "value": "Spigen"
+    }
+  },
+  "new balance(ニューバランス)": {
+    "slug": "new-balance-ニューバランス",
+    "icon": "🏷️",
+    "description": "new balance(ニューバランス)の商品一覧",
+    "matcher": {
+      "type": "brand",
+      "value": "new balance(ニューバランス)"
+    }
+  },
+  "Galaxy": {
+    "slug": "galaxy",
+    "icon": "🏷️",
+    "description": "Galaxyの商品一覧",
+    "matcher": {
+      "type": "brand",
+      "value": "Galaxy"
+    }
+  },
+  "Sony": {
+    "slug": "sony",
+    "icon": "🏷️",
+    "description": "Sonyの商品一覧",
+    "matcher": {
+      "type": "brand",
+      "value": "Sony"
+    }
+  },
+  "ツムラ漢方": {
+    "slug": "ツムラ漢方",
+    "icon": "🏷️",
+    "description": "ツムラ漢方の商品一覧",
+    "matcher": {
+      "type": "brand",
+      "value": "ツムラ漢方"
+    }
+  },
+  "バッファロー": {
+    "slug": "バッファロー",
+    "icon": "🏷️",
+    "description": "バッファローの商品一覧",
+    "matcher": {
+      "type": "brand",
+      "value": "バッファロー"
+    }
+  },
+  "コンフィー(COMFEE')": {
+    "slug": "コンフィー-comfee",
+    "icon": "🏷️",
+    "description": "コンフィー(COMFEE')の商品一覧",
+    "matcher": {
+      "type": "brand",
+      "value": "コンフィー(COMFEE')"
+    }
+  }
 }
