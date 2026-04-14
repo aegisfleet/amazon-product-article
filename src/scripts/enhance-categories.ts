@@ -4,7 +4,7 @@ import * as yaml from 'js-yaml';
 import { CategoryManager } from '../category/CategoryManager';
 import { ProductCounter } from '../category/ProductCounter';
 import { BrandCounter } from '../navigation/BrandCounter';
-import { BrandManager, BrandEntry } from '../navigation/BrandManager';
+import { type BrandEntry, BrandManager } from '../navigation/BrandManager';
 
 const categoryGroupsPath = path.resolve(process.cwd(), 'data/categorygroups.json');
 const contentPath = path.resolve(process.cwd(), 'content');

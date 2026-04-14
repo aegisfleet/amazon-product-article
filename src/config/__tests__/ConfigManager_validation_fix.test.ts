@@ -48,7 +48,9 @@ describe('ConfigManager Validation Improvements', () => {
   test('should throw if MAX_CONCURRENT_REQUESTS is NaN', async () => {
     process.env.MAX_CONCURRENT_REQUESTS = 'invalid';
     const configManager = ConfigManager.getInstance();
-    await expect(configManager.initialize()).rejects.toThrow('Max concurrent requests must be a number between 1 and 20');
+    await expect(configManager.initialize()).rejects.toThrow(
+      'Max concurrent requests must be a number between 1 and 20',
+    );
   });
 
   test('should throw if JULES_TIMEOUT is NaN', async () => {
@@ -60,7 +62,9 @@ describe('ConfigManager Validation Improvements', () => {
   test('should throw if MAX_RESULTS_PER_CATEGORY is NaN', async () => {
     process.env.MAX_RESULTS_PER_CATEGORY = 'invalid';
     const configManager = ConfigManager.getInstance();
-    await expect(configManager.initialize()).rejects.toThrow('Max results per category must be a number between 1 and 50');
+    await expect(configManager.initialize()).rejects.toThrow(
+      'Max results per category must be a number between 1 and 50',
+    );
   });
 
   test('should throw if MIN_WORD_COUNT is NaN', async () => {

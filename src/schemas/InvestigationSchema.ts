@@ -8,14 +8,16 @@ export const InvestigationFileSchema = z.looseObject({
     positivePoints: z.array(z.string().trim()),
     negativePoints: z.array(z.string().trim()),
     useCases: z.array(z.string().trim()),
-    userStories: z.array(
-      z.object({
-        userType: z.string().trim(),
-        scenario: z.string().trim(),
-        experience: z.string().trim(),
-        sentiment: z.enum(['positive', 'negative', 'mixed']),
-      }),
-    ).optional(),
+    userStories: z
+      .array(
+        z.object({
+          userType: z.string().trim(),
+          scenario: z.string().trim(),
+          experience: z.string().trim(),
+          sentiment: z.enum(['positive', 'negative', 'mixed']),
+        }),
+      )
+      .optional(),
     userImpression: z.string().trim(),
     sources: z.array(
       z.object({
