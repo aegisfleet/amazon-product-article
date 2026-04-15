@@ -1,120 +1,161 @@
 {
   "analysis": {
-    "productName": "Amazonベーシック USB 3.0ケーブル 1.8m (Type-A - Type-B)",
-    "parentAsin": "B0CD3XHQBF",
-    "productDescription": "外付けHDD、ドッキングステーション、スキャナーなどのUSB 3.0機器をPCに接続するためのスタンダードなケーブルです。1.8mの長さで、安定した高速データ転送を提供します。",
+    "productName": "Amazonベーシック USB3.0ケーブル 1.8m(USB タイプA オス - タイプBオス)ブラック",
+    "parentAsin": "B00NH144GK",
+    "productDescription": "高速マルチシールドUSB 3.0 (Aオス) - USB 3.0 (Bオス) ケーブル。最大4.8Gbpsの高速転送に対応します。",
     "productUsage": [
-      "外付けハードディスクドライブ（HDD/SSD）の接続",
-      "USB 3.0対応ドッキングステーションの接続",
-      "USB 3.0対応モニターやスキャナーの接続",
-      "USB 3.0ポートリプリケーターの接続"
+      "外付けHDDなど、USB 3.0 Type-Bポートを搭載した機器の接続",
+      "USB 3.0対応ドッキングステーションやモニターの接続"
     ],
     "positivePoints": [
-      "USB 3.0規格準拠の安定した高速データ転送（理論値最大5Gbps）",
-      "Amazonベーシックならではの優れたコストパフォーマンス",
-      "信号干渉を防ぐマルチシールド構造による高い信頼性",
-      "開封が容易なフラストレーションフリーパッケージ"
+      "1.8mという使いやすい長さ",
+      "最大4.8Gbpsの高速データ転送対応",
+      "Amazonベーシックならではのシンプルなデザインと安定した品質",
+      "フラストレーションフリーパッケージで開封が簡単"
     ],
     "negativePoints": [
-      "ケーブルが太く、取り回しがやや硬い（Amazonベーシック製品の一般的な特徴）",
-      "USB 2.0 Type-Bとは形状が異なるため、プリンター等での誤購入に注意が必要"
+      "USB 2.0 Type-Bコネクタには非対応(形状が異なるため)",
+      "太めで硬めのケーブルである可能性がある（Amazonベーシックケーブルの一般的な傾向）"
     ],
     "useCases": [
-      "デスク周りでのPCと外付けHDDやドッキングステーションの常設接続",
-      "オフィス環境でのUSB 3.0対応スキャナーや周辺機器の配線"
+      "PCとUSB3.0対応外付けハードディスクの接続",
+      "PCとUSB3.0ドッキングステーションの接続"
     ],
-    "userStories": [
-      {
-        "userType": "在宅勤務エンジニア",
-        "scenario": "ドッキングステーションとノートPCの接続",
-        "experience": "「付属のケーブルが短すぎたため購入しました。1.8mあるので、デスクの下に置いたドックまで余裕を持って配線できました。ケーブルは太めですが、その分丈夫そうで安心感があります。」（推測）",
-        "sentiment": "positive"
-      },
-      {
-        "userType": "一般ユーザー",
-        "scenario": "古いプリンターへの接続試行",
-        "experience": "「プリンターのケーブルが壊れたので購入しましたが、コネクタの形が合わず使えませんでした。USB 2.0と3.0でType-Bの形状が違うことを知らずに買ってしまいました。」（推測）",
-        "sentiment": "negative"
-      }
-    ],
-    "userImpression": "必要な機能を低価格で提供する「質実剛健」な製品として評価されています。ケーブルの太さは好みが分かれますが、耐久性と安定性の裏返しとして好意的に受け止められることが多いです。ただし、コネクタ形状の違いによる誤購入のリスクがあります。",
+    "userStories": [],
+    "userImpression": "高速転送に対応したUSB 3.0 Type-Bケーブルとして、安定した品質と手頃な価格を兼ね備えた実用的な製品。外付けHDDなどの接続に最適です。",
     "sources": [
       {
-        "name": "Amazon商品ページ仕様情報",
-        "url": null,
-        "credibility": "高"
+        "id": "src-1",
+        "name": "Amazon商品ページ",
+        "url": "https://www.amazon.co.jp/dp/B00NH144GK",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-04-15",
+        "author": "Amazon",
+        "conflictOfInterest": "none",
+        "notes": "商品仕様、特徴（4.8Gbps転送、対応機器等）を確認"
       }
     ],
-    "lastInvestigated": "2026-01-31",
+    "claims": [
+      {
+        "claim": "最大4.8Gbpsの高速伝送速度に対応",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "crossChecked": false,
+        "notes": "Amazon商品ページの公式スペックに基づく"
+      }
+    ],
+    "lastInvestigated": "2026-04-15",
     "competitiveAnalysis": [
       {
-        "name": "エレコム USB3-AB15BK (1.5m)",
-        "asin": "B00C12109U",
-        "priceComparison": "約1,009円とほぼ同価格帯。",
+        "name": "エレコム USBケーブル 2m USB3-AB20BK",
+        "asin": "B00C1210K4",
+        "priceComparison": "エレコム製品とほぼ同等価格だが、Amazonベーシックは1.8mであり、長さの単価では若干割高な印象。",
         "featureComparison": [
-          "1.5mと少し短いが、国内メーカーの安心感がある",
-          "金メッキピン仕様でサビに強い"
+          "共通点：USB 3.0 (Aオス) - USB 3.0 (Bオス)接続、外付けHDD等への対応",
+          "相違点：長さ（Amazonは1.8m、エレコムは2m）"
         ],
         "differentiators": [
-          "日本メーカー製",
-          "より柔軟なケーブルの可能性"
+          "Amazonベーシック USB3.0ケーブル 1.8mの利点：フラストレーションフリーパッケージによる開封のしやすさ",
+          "エレコム USBケーブル 2m USB3-AB20BKの利点：2mという少し長いケーブル長が必要な場合"
         ]
       },
       {
-        "name": "Cable Matters USB 3.0 ケーブル (3m)",
+        "name": "DTECH USB 3.0 ケーブル 1m",
+        "asin": "B08BZ8XBR6",
+        "priceComparison": "DTECH製品の方が少し安いが、長さが1mと短い。用途による長さの必要性で判断が分かれる。",
+        "featureComparison": [
+          "共通点：USB 3.0 (Aオス) - USB 3.0 (Bオス)接続、5Gbps（4.8Gbps）クラスの転送速度",
+          "相違点：長さ（Amazonは1.8m、DTECHは1m）"
+        ],
+        "differentiators": [
+          "Amazonベーシック USB3.0ケーブル 1.8mの利点：1.8mという、PCから少し離れた場所に機器を設置するのに十分な長さ",
+          "DTECH USB 3.0 ケーブル 1mの利点：1mで十分な場合、わずかに安価に購入可能"
+        ]
+      },
+      {
+        "name": "Cable Matters 5Gbps USB 3.0 ケーブル 3m",
         "asin": "B00C7RZPJ0",
-        "priceComparison": "約999円で、Amazonベーシック(1.8m)よりも長く同等の価格。",
+        "priceComparison": "Cable Matters製品は3mでありながら安価であり、長さの割にコストパフォーマンスが高い。",
         "featureComparison": [
-          "3mの長さがあり、離れた機器の接続に有利",
-          "金メッキコネクタ採用"
+          "共通点：USB 3.0 (Aオス) - USB 3.0 (Bオス)接続",
+          "相違点：長さ（Amazonは1.8m、Cable Mattersは3m）。Cable Mattersは金メッキコネクタや無酸素銅導体などを採用している"
         ],
         "differentiators": [
-          "コストパフォーマンス（長さあたりの価格）",
-          "3mのロングケーブル"
+          "Amazonベーシック USB3.0ケーブル 1.8mの利点：Amazonベーシックブランドの安心感とフラストレーションフリーパッケージ",
+          "Cable Matters 5Gbps USB 3.0 ケーブル 3mの利点：3mという長さが必要な場合や、より高品質な素材（金メッキ等）を求める場合"
         ]
       },
       {
-        "name": "FamGift USB 3.0 ケーブル (1.8m)",
-        "asin": "B0DQL2SDS4",
-        "priceComparison": "約589円と圧倒的に安価。",
+        "name": "エレコム USBケーブル 3m USB3-AB30BK",
+        "asin": "B00C121054",
+        "priceComparison": "エレコムの3m製品はやや高価になる。対象商品より高いが、USB3.0正規認証品としての価値がある。",
         "featureComparison": [
-          "機能的には同等だが、ブランド知名度と信頼性が低い",
-          "高耐久ナイロンなどを謳う場合がある（要確認だが本品はスタンダード）"
+          "共通点：USB 3.0 (Aオス) - USB 3.0 (Bオス)接続",
+          "相違点：長さ（Amazonは1.8m、エレコムは3m）。エレコムはUSB3.0正規認証品であり金メッキピンコネクタを採用。"
         ],
         "differentiators": [
-          "圧倒的な低価格"
+          "Amazonベーシック USB3.0ケーブル 1.8mの利点：1.8mで十分な場合はより安価に購入可能",
+          "エレコム USBケーブル 3m USB3-AB30BKの利点：3mの長さが必要で、かつUSB3.0正規認証の安心感を求める場合"
+        ]
+      },
+      {
+        "name": "エレコム USB3.0ケーブル 0.5m DH-AB3N05BK",
+        "asin": "B088HFSQQK",
+        "priceComparison": "エレコムの0.5m製品は安価。長さが短い分安い。",
+        "featureComparison": [
+          "共通点：USB 3.0 (Aオス) - USB 3.0 (Bオス)接続",
+          "相違点：長さ（Amazonは1.8m、エレコムは0.5m）"
+        ],
+        "differentiators": [
+          "Amazonベーシック USB3.0ケーブル 1.8mの利点：0.5mでは短すぎる環境において適度な長さ",
+          "エレコム USB3.0ケーブル 0.5m DH-AB3N05BKの利点：ノートPCのすぐ横にHDDを置くなど、短いケーブルでスッキリさせたい場合"
+        ]
+      },
+      {
+        "name": "UGREEN USB3.0 MicroB USBケーブル 1M",
+        "asin": "B0798MXH9M",
+        "priceComparison": "UGREEN製品の方が安いが、コネクタ形状が異なる（MicroB）ため直接の代替にはならない場合が多い。",
+        "featureComparison": [
+          "共通点：USB 3.0対応の機器接続用ケーブル",
+          "相違点：コネクタ形状（AmazonはType-B、UGREENはMicroB）。長さ（Amazonは1.8m、UGREENは1m）"
+        ],
+        "differentiators": [
+          "Amazonベーシック USB3.0ケーブル 1.8mの利点：接続先がType-Bポートの場合の選択肢",
+          "UGREEN USB3.0 MicroB USBケーブル 1Mの利点：接続先がMicroBポート（多くのポータブルHDD等）の場合の選択肢"
         ]
       }
     ],
     "recommendation": {
       "targetUsers": [
-        "外付けHDDやドックを安定して接続したいユーザー",
-        "ブランドの信頼性と価格のバランスを重視するユーザー",
-        "硬めのケーブルでも問題ない（常設）環境のユーザー"
+        "安定した品質のUSB 3.0 Type-Bケーブルを探している人",
+        "外付けHDDやドッキングステーションを接続したい人"
       ],
       "pros": [
-        "Amazonブランドの安心感と入手性",
-        "安定した通信品質",
-        "手頃な価格"
+        "1.8mの汎用的な長さ",
+        "高速なデータ転送（4.8Gbps）",
+        "Amazonベーシックの信頼性"
       ],
       "cons": [
-        "ケーブルが太く硬いため、頻繁な抜き差しや持ち運びには不向きな場合がある",
-        "USB 2.0 Type-B機器には使用不可"
+        "USB 2.0のType-Bポートには刺さらないため注意が必要"
       ],
-      "score": 85,
-      "scoreRationale": "[基本点: 70]\n[加点: +5] (Amazonベーシックの安定した品質とマルチシールド構造)\n[加点: +5] (競合と比較しても標準的かつ手頃な価格設定)\n[加点: +5] (多くのユーザーに選ばれている定番商品としての信頼性)\n[合計: 85]"
+      "score": 75,
+      "scoreRationale": "[基本点: 70]\n[加点: +3] (安定した品質)\n[加点: +2] (4.8Gbpsの高速転送対応)\n[合計: 75]"
     },
     "technicalSpecs": {
       "dimensions": {
+        "height": "16mm",
+        "width": "13.5mm",
         "length": "1.8m"
       },
-      "connectivity": [
-        "USB 3.0 Type-A Male",
-        "USB 3.0 Type-B Male"
-      ],
-      "transferRate": "最大5Gbps (理論値)",
-      "shielding": "マルチシールド",
-      "compatibility": "USB 3.0対応の外付けHDD、ドッキングステーション、モニター、スキャナー等（USB 2.0 Type-B非対応）",
+      "weight": "108.9g",
+      "color": "ブラック",
+      "connectorType": "USB 3.0 Type-A オス - USB 3.0 Type-B オス",
+      "transferRate": "最大4.8Gbps",
+      "compatibility": "USB 3.0 Type-Bポート搭載機器（Fujitsu ScanSnap iX500、Dell S2340T、各種USB 3.0外付けHDDなど）",
       "other": [
         "フラストレーションフリーパッケージ"
       ]
