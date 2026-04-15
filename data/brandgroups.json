@@ -149,7 +149,7 @@
     "description": "Logicoolの商品一覧",
     "matcher": {
       "type": "brand",
-      "value": "Logicool"
+      "value": "Logicool|ロジクール"
     }
   },
   "タイガー魔法瓶": {
@@ -184,8 +184,8 @@
     "icon": "👟",
     "description": "New Balance (ニューバランス) の商品一覧",
     "matcher": {
-      "type": "regex",
-      "value": "new balance|New Balance|ニューバランス"
+      "type": "brand",
+      "value": "new balance|ニューバランス"
     }
   },
   "Sony": {
@@ -193,8 +193,8 @@
     "icon": "🎮",
     "description": "Sonyの商品一覧",
     "matcher": {
-      "type": "regex",
-      "value": "Sony|ソニー|ソニー・インタラクティブエンタテインメント"
+      "type": "brand",
+      "value": "Sony|ソニー|PlayStation"
     }
   },
   "ツムラ漢方": {
@@ -229,8 +229,8 @@
     "icon": "🍳",
     "description": "T-fal(ティファール)の商品一覧",
     "matcher": {
-      "type": "regex",
-      "value": "T-fal|T-Fal|ティファール"
+      "type": "brand",
+      "value": "T-[Ff]al|ティファール"
     }
   }
 }
