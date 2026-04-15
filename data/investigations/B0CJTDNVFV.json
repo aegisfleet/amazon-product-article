@@ -24,65 +24,99 @@
       "リビングのテレビにSwitchとPS5を接続して切り替え",
       "プロジェクターとテレビの使い分け"
     ],
-    "userStories": [
-      {
-        "userType": "30代在宅ワーカー",
-        "scenario": "仕事用PCと私物Macのモニター共有",
-        "experience": "以前は毎回ケーブルを差し替えていましたが、これを導入してからはボタン一つで切り替えられ、ストレスが激減しました。Anker製なので挙動も安定しており、画面のちらつきもありません。（推測）",
-        "sentiment": "positive"
-      },
-      {
-        "userType": "ゲーマー",
-        "scenario": "PS5とSwitchの切り替え",
-        "experience": "安物の切替器を使っていましたがブラックアウトすることがあり、Ankerに買い替えました。今のところ映像の乱れもなく快適です。電源不要なのが配線周りをスッキリさせてくれます。（推測）",
-        "sentiment": "positive"
-      }
-    ],
+    "userStories": [],
     "userImpression": "多くの安価なノーブランド品が存在する中で、Ankerを選ぶ理由は「信頼性」と「サポート」。機能はシンプルですが、画質の劣化や接続不良の不安なく使える点が評価されています。",
     "sources": [
       {
+        "id": "src-1",
         "name": "Amazon商品ページ",
         "url": "https://www.amazon.co.jp/dp/B0CJTDNVFV",
-        "credibility": "high"
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-04-16",
+        "author": "AnkerDirect",
+        "conflictOfInterest": "none",
+        "notes": "公式の商品仕様と価格（￥1,690）"
       }
     ],
-    "lastInvestigated": "2026-01-31",
+    "lastInvestigated": "2026-04-16",
     "competitiveAnalysis": [
       {
         "name": "GANA HDMI切替器",
         "asin": "B0BJ6YY6RH",
-        "priceComparison": "約30%安価（1,000円以下）",
+        "priceComparison": "対象商品より安価で、コストを抑えたい場合に適している。",
         "featureComparison": [
-          "同等の双方向機能",
-          "アルミニウム合金筐体"
+          "共通点：双方向通信対応、4K 60Hz対応",
+          "相違点：Anker製はブランドの信頼性が高いのに対し、GANA製は価格が安い。"
         ],
         "differentiators": [
-          "価格の安さ",
-          "ブランド信頼性はAnkerに劣る"
+          "Anker Switch (2-in-1 Out, 4K)の利点：ブランドの信頼性と長期保証",
+          "GANA HDMI切替器の利点：低価格で導入しやすい"
         ]
       },
       {
-        "name": "UGREEN HDMI切替器",
+        "name": "UGREEN HDMI切替器 (ケーブル一体型)",
         "asin": "B08R868KSZ",
-        "priceComparison": "同価格帯",
+        "priceComparison": "対象商品より安価で、ケーブル一体型のためさらなるコストメリットがある。",
         "featureComparison": [
-          "ケーブル一体型",
-          "4K 60Hz対応"
+          "共通点：双方向通信対応、4K 60Hz対応",
+          "相違点：UGREEN製はケーブル一体型だが、Anker製はケーブル別途必要。"
         ],
         "differentiators": [
-          "ケーブル一体型のため、別途ケーブル購入不要だが長さの調整は不可"
+          "Anker Switch (2-in-1 Out, 4K)の利点：用途に合わせてケーブルの長さを自由に選べる",
+          "UGREEN HDMI切替器の利点：別途ケーブルを用意する必要がなく、すぐに使える"
         ]
       },
       {
-        "name": "avedio links HDMI切替器",
-        "asin": "B0F18R7YG5",
-        "priceComparison": "同価格帯",
+        "name": "エレコム HDMI切替器 DH-SW4KBD21BK/E",
+        "asin": "B0DDKSDZ98",
+        "priceComparison": "対象商品と同等の価格帯だが、国内ブランドの安心感がある。",
         "featureComparison": [
-          "8K 60Hz / 4K 120Hz対応",
-          "USB給電対応"
+          "共通点：双方向通信対応、4K 60Hz対応",
+          "相違点：エレコムは国内メーカーで放熱性の高いメタルケースを採用。"
         ],
         "differentiators": [
-          "より高いリフレッシュレートと解像度に対応"
+          "Anker Switch (2-in-1 Out, 4K)の利点：シンプルでコンパクトなデザイン",
+          "エレコム HDMI切替器の利点：国内メーカーの信頼とメタルケースによる高い放熱性能"
+        ]
+      },
+      {
+        "name": "NUIKOTI HDMI 切替器 GFS5",
+        "asin": "B0CNNG216G",
+        "priceComparison": "対象商品より非常に安価で、予算重視のユーザー向け。",
+        "featureComparison": [
+          "共通点：双方向通信対応、4K 60Hz対応",
+          "相違点：ブランド力に差があり、Ankerの方が信頼性が高い。"
+        ],
+        "differentiators": [
+          "Anker Switch (2-in-1 Out, 4K)の利点：高いブランド力とサポート体制",
+          "NUIKOTI HDMI 切替器の利点：非常に低価格であること"
+        ]
+      },
+      {
+        "name": "llano 4K HDMI切替器 H204",
+        "asin": "B0F62P2KT3",
+        "priceComparison": "対象商品より安価で、コストパフォーマンスに優れる。",
+        "featureComparison": [
+          "共通点：双方向通信対応、4K 60Hz対応",
+          "相違点：Anker製の方が知名度が高いが、機能面ではほぼ同等。"
+        ],
+        "differentiators": [
+          "Anker Switch (2-in-1 Out, 4K)の利点：実績のあるブランドによる安心感",
+          "llano 4K HDMI切替器の利点：価格の安さと24ヶ月の保証期間"
+        ]
+      },
+      {
+        "name": "UGREEN HDMI 切り替え器 2入力1出力 ACBUGN50966",
+        "asin": "B07JQH1L83",
+        "priceComparison": "対象商品より安価で、品質と価格のバランスが良い。",
+        "featureComparison": [
+          "共通点：双方向通信対応、4K 60Hz対応",
+          "相違点：Anker製はデザインが丸みを帯びているが、UGREEN製は長方形に近い形状。"
+        ],
+        "differentiators": [
+          "Anker Switch (2-in-1 Out, 4K)の利点：コンパクトで省スペースなデザイン",
+          "UGREEN HDMI 切り替え器の利点：価格と機能のバランスが良く、24ヶ月保証付き"
         ]
       }
     ],
@@ -102,26 +136,38 @@
         "リモコン操作はできない"
       ],
       "score": 75,
-      "scoreRationale": "[基本点: 70]\n[加点: +5] (品質・デザイン: Ankerのビルドクオリティと信頼性)\n[加点: +5] (ユーザー満足度: 長期保証とサポート体制)\n[減点: -5] (コストパフォーマンス: 競合他社より若干割高かつケーブル別売り)\n[合計: 75]"
+      "scoreRationale": "[基本点: 70]\n[加点: +5] (Ankerのビルドクオリティと信頼性)\n[加点: +5] (長期保証とサポート体制)\n[減点: -5] (競合他社より若干割高かつケーブル別売り)\n[合計: 75]"
     },
     "technicalSpecs": {
       "dimensions": {
-        "width": "5.5cm",
-        "depth": "5.5cm",
-        "height": "1.5cm",
-        "weight": "30g"
+        "width": "55mm",
+        "depth": "55mm",
+        "height": "15mm"
       },
-      "resolution": "4K (60Hz), 1080p (120Hz)",
-      "connectivity": [
-        "HDMI入力 x 2 / 出力 x 1 (または逆)",
-        "双方向対応"
-      ],
-      "power": "バスパワー (外部電源不要)",
+      "weight": "30g",
+      "capacity": "なし",
+      "material": "アルミニウム（推測される質感）",
+      "origin": "不明",
       "other": [
+        "解像度: 4K (60Hz)",
+        "接続: HDMI入力 x 2 / 出力 x 1 (双方向対応)",
+        "電源: バスパワー (外部電源不要)",
         "HDCP対応",
         "3Dコンテンツ対応",
         "HDR対応"
       ]
-    }
+    },
+    "claims": [
+      {
+        "claim": "4K (60Hz) 出力対応のHDMIポートを搭載",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "crossChecked": false,
+        "notes": "公式製品仕様に記載"
+      }
+    ]
   }
 }
