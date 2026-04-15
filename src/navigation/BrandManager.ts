@@ -95,7 +95,7 @@ export class BrandManager {
   private findKeyByRegex(brandName: string, normalizedName: string): string | null {
     for (const [key, entry] of Object.entries(this.brandGroups)) {
       const matcher = entry.matcher;
-      if (matcher?.type === 'regex' && matcher.value) {
+      if ((matcher?.type === 'regex' || matcher?.type === 'brand') && matcher.value) {
         try {
           const regex = new RegExp(matcher.value, 'i');
           if (regex.test(brandName) || regex.test(normalizedName)) {
