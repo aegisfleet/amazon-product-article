@@ -24,20 +24,7 @@
       "複数の周辺機器（HDD、ウェブカメラ、マイクなど）を常時接続しておくクリエイターデスク",
       "ミニマルなデスクセットアップを目指すユーザー"
     ],
-    "userStories": [
-      {
-        "userType": "在宅勤務のエンジニア",
-        "scenario": "毎朝のセットアップ時間の短縮",
-        "experience": "以前は充電ケーブル、HDMI、USBハブをそれぞれPCに繋いでいたが、これにしてからType-Cケーブル1本挿すだけで仕事モードに移行できるようになった。デスクもスッキリして集中できる。（推測）",
-        "sentiment": "positive"
-      },
-      {
-        "userType": "デザイナー",
-        "scenario": "大画面モニターでの作業",
-        "experience": "4Kモニタを使用しているが、スタンドのおかげで目線が上がり首が楽になった。SDカードスロットが手元にあるので写真の取り込みもスムーズ。ただ、値段が高いので購入には勇気が要った。（推測）",
-        "sentiment": "mixed"
-      }
-    ],
+    "userStories": [],
     "userImpression": "機能性とデザイン性を両立させたユニークな製品として評価が高い。特に「デスクを片付けたい」というニーズに完璧に応えるが、導入コストの高さがネックとなる場合がある。",
     "sources": [
       {
@@ -46,50 +33,124 @@
         "credibility": "High"
       }
     ],
-    "lastInvestigated": "2026-01-31",
+    "lastInvestigated": "2026-04-16",
     "competitiveAnalysis": [
       {
-        "name": "EAYHM モニター台 USBドッキング付き",
-        "asin": "B0F632HKYM",
-        "priceComparison": "約3,300円と圧倒的に安価だが、機能は簡易的。",
-        "featureComparison": ["USBハブ機能のみでPD充電や映像出力がない", "作りがプラスチック中心で軽量だが安価"],
-        "differentiators": ["本格的なドック機能ではなく、あくまで「USBポート付きの台」である点"]
+        "name": "Belkin Connect 11-in-1 GaNドック",
+        "asin": "B0DM1TWPDY",
+        "priceComparison": "対象商品（約33,000円）と比較して約10,000円ほど安い。",
+        "featureComparison": [
+          "共通点：多様なポート（HDMI、USB-C、USB-A、SD、イーサネットなど）を備え、PDパススルー充電にも対応している。",
+          "相違点：Anker 675はモニタースタンドとワイヤレス充電パッドが一体化しているのに対し、Belkin 11-in-1はコンパクトなドック形状であり、モニタースタンド機能やワイヤレス充電はない。"
+        ],
+        "differentiators": [
+          "Anker 675 USB-C ドッキングステーションの利点：モニタースタンド一体型でデスク周りをすっきりと整理でき、ワイヤレス充電も備えているため、省スペースと機能性を同時に求める場合に適している。",
+          "Belkin Connect 11-in-1 GaNドックの利点：コンパクトで持ち運びや設置が容易であり、モニタースタンドが不要な場合や予算を抑えたい場合に適している。"
+        ]
       },
       {
-        "name": "PULWTOP 11-in-1 ドッキングステーション",
-        "asin": "B0D7CHCW65",
-        "priceComparison": "約11,000円で、Ankerの半額程度。",
-        "featureComparison": ["縦置きスタンド型でPCを閉じて使う前提", "ワイヤレス充電機能はない"],
-        "differentiators": ["モニターの下ではなく横に置くスタイル。省スペースだがモニター高さ調整機能はない"]
+        "name": "StarTech USB-Cドッキングステーション 4K 3画面",
+        "asin": "B0GMV5QQPP",
+        "priceComparison": "対象商品よりやや安価。",
+        "featureComparison": [
+          "共通点：多数のポートを搭載し、PD充電や高速データ転送をサポートしている。",
+          "相違点：StarTechのドックは最大3画面への出力（4K 60Hzx2 + 4K 30Hzx1）に特化しているが、モニタースタンド機能はない。一方、Anker 675は1画面出力（4K 60Hz）でスタンド一体型。"
+        ],
+        "differentiators": [
+          "Anker 675 USB-C ドッキングステーションの利点：モニタースタンドによるデスク整理と、スマホのワイヤレス充電機能でオールインワンの利便性がある。",
+          "StarTech USB-Cドッキングステーションの利点：複数（最大3台）の高解像度モニターを同時に接続したいプロフェッショナル用途に適している。"
+        ]
       },
       {
-        "name": "サンワダイレクト Type-C ドッキングステーション",
-        "asin": "B0BPB5G1MR",
-        "priceComparison": "約17,800円とAnkerよりやや安い。",
-        "featureComparison": ["スタンド型ドック", "機能性は同等クラス"],
-        "differentiators": ["ワイヤレス充電の有無やデザインの洗練度でAnkerに分がある"]
+        "name": "RayCue 14-IN-2 ドッキングステーション",
+        "asin": "B0FWHR4TD2",
+        "priceComparison": "対象商品と比べて半額以下と非常に安価。",
+        "featureComparison": [
+          "共通点：多数の拡張ポート（HDMI、USB-A/C、LANなど）を備える。",
+          "相違点：RayCueはMacBook専用に近いデュアルUSB-C接続で、3画面出力（MST）に対応するがスタンド機能はない。Ankerは汎用性が高く、モニタースタンドとワイヤレス充電付き。"
+        ],
+        "differentiators": [
+          "Anker 675 USB-C ドッキングステーションの利点：物理的なデスク整理（キーボード収納など）が可能で、デザイン性に優れワイヤレス充電も利用できる。",
+          "RayCue 14-IN-2 ドッキングステーションの利点：非常にコストパフォーマンスが高く、MacBook環境で手軽に多数のポートとマルチモニターを実現したい場合に適している。"
+        ]
+      },
+      {
+        "name": "Anker Prime ドッキングステーション (14-in-1)",
+        "asin": "B0F8VNSTYC",
+        "priceComparison": "対象商品より約7,000円高い。",
+        "featureComparison": [
+          "共通点：Anker製の高品質なドッキングステーションで、多様なポートとPD充電に対応。",
+          "相違点：Anker Primeは最大8K出力や3画面出力に対応し、本体にディスプレイを搭載して状況確認が可能。ACアダプタもGaN内蔵でスマート。しかしモニタースタンド形状ではない。"
+        ],
+        "differentiators": [
+          "Anker 675 USB-C ドッキングステーションの利点：モニタースタンド一体型であるため、追加のスタンドを購入せずとも目線を上げ、デスク下の収納スペースを確保できる。",
+          "Anker Prime ドッキングステーション (14-in-1)の利点：より高度な映像出力（最大8Kや3画面）やステータス表示ディスプレイが必要なハイエンドユーザーに適している。"
+        ]
+      },
+      {
+        "name": "Selore&S-Global USB C ドッキングステーション",
+        "asin": "B0DYTVVLH4",
+        "priceComparison": "価格は不明（在庫状況等による）だが、一般的にこのクラスのハブ型ドックはAnker 675より安価。",
+        "featureComparison": [
+          "共通点：多彩なポート（HDMI、DP、USB、LAN、SDなど）を備え、PD充電に対応。",
+          "相違点：Selore&S-Globalは据え置きハブ型で4K/8Kマルチモニター出力に強みがあるが、スタンド機能やワイヤレス充電は搭載していない。"
+        ],
+        "differentiators": [
+          "Anker 675 USB-C ドッキングステーションの利点：モニターを置く台座としての物理的機能と、スマホ等を充電できるワイヤレスパッドが統合されている点。",
+          "Selore&S-Global USB C ドッキングステーションの利点：マルチモニター環境の構築を重視し、スタンドが不要な場合に適している。"
+        ]
+      },
+      {
+        "name": "Anker Prime ドッキングステーション (14-in1, Thunderbolt 5)",
+        "asin": "B0DTK6VPH2",
+        "priceComparison": "対象商品より大幅に高い（約48,500円）。",
+        "featureComparison": [
+          "共通点：Anker製の多機能ドックで、PD充電や多彩なポートを備える。",
+          "相違点：Thunderbolt 5に対応し、最大120Gbpsのデータ転送や最大140WのPD出力など極めて高いスペックを誇る。スタンド機能はない。"
+        ],
+        "differentiators": [
+          "Anker 675 USB-C ドッキングステーションの利点：モニタースタンドとしてデスクを整理でき、一般的な用途（4K 60Hzや100W PD）には十分なスペックをより手頃な価格で得られる。",
+          "Anker Prime ドッキングステーション (Thunderbolt 5)の利点：次世代のThunderbolt 5規格による超高速データ転送や大出力が必要なクリエイターやゲーマーに最適。"
+        ]
       }
     ],
     "recommendation": {
-      "targetUsers": ["デスク周りの配線を極限まで減らしたいMacBook/ノートPCユーザー", "機能的なワークスペースを構築したいリモートワーカー"],
-      "pros": ["12-in-1の圧倒的な拡張性", "ワイヤレス充電などの付加価値", "Ankerブランドの信頼性"],
-      "cons": ["高額な初期投資", "大型モニターのスタンド形状との相性"],
-      "score": 85,
-      "scoreRationale": "[基本点: 70]\n[加点: +8] (12-in-1、PD 100W、ワイヤレス充電など機能性が極めて高い)\n[減点: -5] (約24,000円と高額で、コストパフォーマンスは人を選ぶ)\n[加点: +5] (ビルドクオリティが高く、デスクの美観を損なわないデザイン)\n[加点: +7] (モニタースタンドとドックを融合させた独自性と利便性)\n[合計: 85]"
+      "targetUsers": [
+        "デスク周りの配線を極限まで減らしたいMacBook/ノートPCユーザー",
+        "機能的なワークスペースを構築したいリモートワーカー"
+      ],
+      "pros": [
+        "12-in-1の圧倒的な拡張性",
+        "ワイヤレス充電などの付加価値",
+        "Ankerブランドの信頼性"
+      ],
+      "cons": [
+        "高額な初期投資",
+        "大型モニターのスタンド形状との相性"
+      ],
+      "score": 80,
+      "scoreRationale": "[基本点: 70]\n[加点: +10] (12の機能を1つに集約し、デスク周りをスマートに整理できる利便性)\n[加点: +5] (最大100WのPD充電やワイヤレス充電など、実用的な機能が充実)\n[減点: -5] (約33,000円と高額であり、純粋なドックのみを求めるユーザーにはコスパが低い)\n[合計: 80]"
     },
     "technicalSpecs": {
-      "dimensions": { "width": "540mm", "depth": "220mm", "height": "90mm", "weight": "約1.66kg" },
-      "power": { "input": "ACアダプタ (180W)", "output_pd": "Max 100W (Host)", "output_wireless": "Max 10W" },
-      "ports": {
-        "usb_c_upstream": "1 (100W charging)",
-        "usb_c_data": "2 (10Gbps, 45W shared)",
-        "usb_a": "3 (10Gbps)",
-        "hdmi": "1 (4K@60Hz)",
-        "ethernet": "1 (1Gbps)",
-        "audio": "3.5mm AUX",
-        "sd_card": "SD / microSD"
+      "dimensions": {
+        "height": "90mm",
+        "width": "220mm",
+        "depth": "540mm"
       },
-      "compatibility": "Windows 10/11, macOS 10.14 or later"
+      "weight": "1660g",
+      "capacity": "100W PD出力対応",
+      "material": "アルミニウム合金（推測される質感から）",
+      "origin": "中国",
+      "other": [
+        "ワイヤレス充電: 最大10W",
+        "USB-C (アップストリーム): 100W PD対応",
+        "USB-C (ダウンストリーム): 10Gbps x2 (合計45W)",
+        "USB-A: 10Gbps x3 (7.5W x1, 4.5W x2)",
+        "HDMI: 4K (60Hz)",
+        "イーサネット: 1Gbps",
+        "SD/microSDスロット",
+        "3.5mmオーディオジャック"
+      ]
     }
   }
 }
