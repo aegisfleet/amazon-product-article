@@ -1,98 +1,181 @@
 {
   "analysis": {
-    "productName": "UGREEN HDMI KVM切替器 2入力1出力 4K@60Hz USB2.0",
+    "productName": "UGREEN HDMI KVM切替器 2入力1出力 4K@60Hz (15166A)",
     "parentAsin": "B0CG1W5K7C",
-    "productDescription": "2台のPCで1組のキーボード、マウス、モニターを共有できるHDMI KVM切替器です。4K@60Hzの高画質出力に対応し、手元スイッチで簡単に切り替えが可能です。",
+    "productDescription": "2台のPCで1つのHDMIディスプレイとキーボード・マウス・USB機器を共有できるKVM切替器。4K/60Hzの映像出力に対応し、手元スイッチでの簡単切り替えが可能。",
     "productUsage": [
-      "2台のPC（デスクトップとノートPCなど）を1つのモニターで使用",
-      "キーボード、マウス、プリンターなどのUSB機器を共有",
-      "手元スイッチで素早くPCを切り替え"
+      "デスクトップPCとノートPCでモニター、キーボード、マウスを共有",
+      "WindowsとMacの混在環境での切り替え",
+      "テレワークとプライベートPCの切り替え"
     ],
     "positivePoints": [
-      "4K@60Hzの高画質に対応し、鮮明な映像を楽しめる",
-      "手元スイッチが付属しており、本体を隠して設置しても操作が簡単",
-      "USB 2.0ポートを4つ搭載し、複数の周辺機器を接続可能",
-      "ドライバー不要で接続するだけですぐに使用可能"
+      "4K/60Hzの高画質出力に対応",
+      "手元スイッチが付属し、本体を裏側に隠しても切り替え操作が容易",
+      "USB 2.0ポートを4つ搭載し、周辺機器も共有可能",
+      "ドライバ不要で接続するだけですぐに使用可能"
     ],
     "negativePoints": [
-      "USB 3.0非対応のため、外付けHDDなどの高速転送には不向き",
-      "消費電力の高い機器を接続する場合、別途電源供給が必要になることがある",
-      "Bluetooth機器（無線マウスなど）とUSB 2.0の干渉が発生する可能性がある"
+      "USBポートは2.0のため、外付けHDDなど高速なデータ転送が必要な機器の接続には不向き",
+      "動作を安定させるためにはPCのUSBポートから十分な電力が供給されている必要がある",
+      "複数のBluetoothレシーバーを同時に接続すると干渉する可能性がある"
     ],
     "useCases": [
-      "在宅勤務で会社用PCと個人用PCを切り替えて使用",
-      "ゲーム機とPCでモニターとスピーカーを共有",
-      "サーバー管理などで複数のPCを操作する場合"
+      "在宅勤務環境の構築",
+      "複数PCでの動画編集やデザイン作業",
+      "ゲーム機とPCのモニター共有"
     ],
-    "userStories": [
-      {
-        "userType": "30代 リモートワーカー",
-        "scenario": "仕事用PCと個人用PCの切り替え",
-        "experience": "デスクが狭いため、キーボードとマウスを1つにまとめられて快適になった。手元スイッチが便利。（推測）",
-        "sentiment": "positive"
-      },
-      {
-        "userType": "ゲーマー",
-        "scenario": "PCとゲーム機の切り替え",
-        "experience": "4Kモニターを使用しているが、画質劣化なく切り替えができている。（推測）",
-        "sentiment": "positive"
-      }
-    ],
-    "userImpression": "手頃な価格で4K@60Hzに対応しており、基本的なKVM機能としては十分な性能を持つ。USB 3.0が必要ないユーザーには最適。",
+    "userStories": [],
+    "userImpression": "手元スイッチが付属している点が特に使い勝手が良いと評価されている。4K/60Hz出力も安定しており、テレワークや複数PCを使い分けるユーザーにとって実用的な製品。ただし、USB規格が2.0のため、高速なデータ転送を求める用途には向かない。",
     "sources": [
       {
-        "name": "Amazon Product Page",
+        "id": "src-1",
+        "name": "Amazon商品ページ",
         "url": "https://www.amazon.co.jp/dp/B0CG1W5K7C",
-        "credibility": "high"
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-04-16",
+        "author": "UGREEN",
+        "conflictOfInterest": "none",
+        "notes": "商品仕様、価格（3,759円）、4K@60Hz対応、USB2.0x4、手元スイッチ付属を確認"
       }
     ],
-    "lastInvestigated": "2026-01-31",
+    "claims": [
+      {
+        "claim": "4K@60Hzでの安定した映像出力",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "crossChecked": false,
+        "notes": "商品仕様に明記されている"
+      },
+      {
+        "claim": "手元スイッチによる便利な切り替え",
+        "category": "comparativeAdvantage",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "crossChecked": false,
+        "notes": "手元スイッチが付属していることは確認済み。他の多くの低価格KVMには付属していないことが多い"
+      }
+    ],
+    "lastInvestigated": "2026-04-16",
     "competitiveAnalysis": [
       {
-        "name": "UGREEN USB 3.0 KVM切替器 (上位モデル)",
+        "name": "Lemorele HDMI KVM 切替器",
+        "asin": "B0CFVWT7Z7",
+        "priceComparison": "本製品より少し安い。LemoreleはUSB 3.0ポートを搭載しており、転送速度では本製品（USB 2.0）より優位性があるが、手元スイッチの有無などの使い勝手で選択が分かれる。",
+        "featureComparison": [
+          "共通点：2入力1出力、4K@60Hz対応、KVM機能",
+          "相違点：UGREENはUSB 2.0x4＆手元スイッチ付き。LemoreleはUSB 3.0搭載。"
+        ],
+        "differentiators": [
+          "UGREEN HDMI KVM切替器 2入力1出力 4K@60Hz (15166A)の利点：手元スイッチが付属しており、本体を隠しての運用がしやすい。",
+          "Lemorele HDMI KVM 切替器の利点：USB 3.0を搭載しており、USBメモリなどの高速転送に向いている。"
+        ]
+      },
+      {
+        "name": "UGREEN HDMI KVM切替器 2入力1出力 USB 3.0",
         "asin": "B0DC5ZZMKD",
-        "priceComparison": "約640円高い",
-        "featureComparison": ["USB 3.0対応 (本製品はUSB 2.0)", "それ以外の機能はほぼ同等"],
-        "differentiators": ["高速データ転送が必要な場合はこちらが推奨される"]
+        "priceComparison": "本製品より高い。USB 3.0ポートと電源アダプターが付属する上位モデル。",
+        "featureComparison": [
+          "共通点：UGREEN製、2入力1出力、4K@60Hz対応、手元スイッチ付属",
+          "相違点：本製品はUSB 2.0で電源アダプタなし。B0DC5ZZMKDはUSB 3.0対応で電源アダプタが付属。"
+        ],
+        "differentiators": [
+          "UGREEN HDMI KVM切替器 2入力1出力 4K@60Hz (15166A)の利点：価格が安く、マウスやキーボードのみの共有であれば十分な性能を持つ。",
+          "UGREEN HDMI KVM切替器 2入力1出力 USB 3.0の利点：USB 3.0での高速転送が可能で、外部電源供給により動作が安定する。"
+        ]
+      },
+      {
+        "name": "ES-Tune HDMI KVM切替器",
+        "asin": "B08CDNRSDR",
+        "priceComparison": "本製品より少し安い。",
+        "featureComparison": [
+          "共通点：2入力1出力、4K@60Hz対応、手元スイッチ（有線リモート）付属",
+          "相違点：ES-TuneはType-C端子対応。UGREENは標準のUSB。"
+        ],
+        "differentiators": [
+          "UGREEN HDMI KVM切替器 2入力1出力 4K@60Hz (15166A)の利点：UGREENという知名度の高いブランドであり、サポートなどの信頼性が期待できる。",
+          "ES-Tune HDMI KVM切替器の利点：価格がやや安く、Type-C端子を活用できる環境に便利。"
+        ]
+      },
+      {
+        "name": "Buerlaseul USB 切替器 KVMスイッチ",
+        "asin": "B0DGD2RJ3M",
+        "priceComparison": "本製品より安い。",
+        "featureComparison": [
+          "共通点：2入力1出力、4K@60Hz対応",
+          "相違点：BuerlaseulはUSB 3.0を搭載しているが、手元スイッチがない。"
+        ],
+        "differentiators": [
+          "UGREEN HDMI KVM切替器 2入力1出力 4K@60Hz (15166A)の利点：手元スイッチにより、切替器本体をデスクの裏などに隠しても操作しやすい。",
+          "Buerlaseul USB 切替器 KVMスイッチの利点：価格が安く、USB 3.0の高速データ転送が必要な場合に適している。"
+        ]
       },
       {
         "name": "MWIN 4K KVMスイッチ",
         "asin": "B0C13L9P78",
-        "priceComparison": "約760円安い",
-        "featureComparison": ["機能はほぼ同等", "ブランド知名度はUGREENより低い"],
-        "differentiators": ["コスト重視なら有力な選択肢"]
+        "priceComparison": "本製品より安い。",
+        "featureComparison": [
+          "共通点：2入力1出力、4K@60Hz対応",
+          "相違点：MWINは本体ボタンのみでの切り替え。UGREENは手元スイッチ付属。"
+        ],
+        "differentiators": [
+          "UGREEN HDMI KVM切替器 2入力1出力 4K@60Hz (15166A)の利点：手元スイッチが付属し、操作時の利便性が高い。",
+          "MWIN 4K KVMスイッチの利点：安価にシンプルなKVM環境を構築できる。"
+        ]
       },
       {
-        "name": "Anker KVM Switch",
-        "asin": "B0D5HQRVWF",
-        "priceComparison": "約4,200円高い",
-        "featureComparison": ["多機能ドッキングステーション機能", "高信頼性"],
-        "differentiators": ["プロフェッショナル用途向け"]
+        "name": "無名ブランド(ノーブランド) HDMI KVM切替器 (B0CBBV228V)",
+        "asin": "B0CBBV228V",
+        "priceComparison": "本製品より安い。",
+        "featureComparison": [
+          "共通点：2入力1出力、4K@60Hz対応",
+          "相違点：無名ブランドはPSE認証電源アダプターが付属する。UGREENは手元スイッチ付属でUSBバスパワー駆動中心。"
+        ],
+        "differentiators": [
+          "UGREEN HDMI KVM切替器 2入力1出力 4K@60Hz (15166A)の利点：手元スイッチが便利で、ブランドの信頼性が高い。",
+          "無名ブランド(ノーブランド) HDMI KVM切替器 (B0CBBV228V)の利点：電源アダプターが付属し、電力不足による動作不安定を防ぎやすい。"
+        ]
       }
     ],
     "recommendation": {
       "targetUsers": [
-        "コストを抑えたいが4K@60Hz環境が必要なユーザー",
-        "キーボード・マウスの共有が主目的で、高速転送を必要としないユーザー"
+        "2台のPCで1つのモニターとキーボード・マウスを共有したい人",
+        "KVM切替器本体を見えない場所に設置し、手元スイッチで切り替えたい人",
+        "マウスやキーボードなど、高速データ転送を必要としないUSB機器を中心に共有する人"
       ],
       "pros": [
-        "4K@60Hz対応で画質が良い",
-        "手元スイッチ付きで操作性が良い",
-        "UGREEN製という安心感"
+        "手元スイッチ付属で切り替え操作が非常に便利",
+        "4K/60Hzの高画質出力をサポート",
+        "USBポートが4つあり、複数の周辺機器を共有可能"
       ],
       "cons": [
-        "USB 3.0が必要な場合は上位モデルを選ぶべき",
-        "電源不足時はMicro USB給電が必要"
+        "USB 2.0までの対応なので、高速なデータ転送が必要な機器には不向き",
+        "電源アダプタが付属せず、PCのUSBポートからの給電に依存するため、電力消費の大きい機器の接続には注意が必要"
       ],
-      "score": 80,
-      "scoreRationale": "[基本点: 70]\n[加点: +5] (4K@60Hz対応、手元スイッチ付きで使い勝手が良い)\n[加点: +5] (UGREENブランドの信頼性とビルドクオリティ)\n[合計: 80]"
+      "score": 75,
+      "scoreRationale": "[基本点: 70]\n[加点: +5] (手元スイッチ付属による高い利便性)\n[加点: +5] (4K/60Hz対応と安定した映像出力)\n[減点: -5] (USB 2.0までの対応で、最近の機器にはややスペック不足)\n[合計: 75]"
     },
     "technicalSpecs": {
-      "maxResolution": "4K@60Hz",
-      "ports": "HDMI 2.0 x 3, USB 2.0 x 4",
-      "powerSource": "USB Bus Power / Micro USB (5V)",
-      "dimensions": { "length": "3.8インチ", "width": "2.3インチ", "height": "0.9インチ" },
-      "other": ["手元スイッチ付属", "ドライバー不要"]
+      "dimensions": {
+        "height": "22.86mm",
+        "width": "58.42mm",
+        "depth": "96.52mm"
+      },
+      "weight": "不明",
+      "capacity": "2入力1出力",
+      "material": "プラスチック（推定）",
+      "origin": "中国（推定）",
+      "other": [
+        "対応解像度: 最大4096×2160＠60Hz, 3D/HDCP2.2/Dolby Vision/HDR対応",
+        "USBポート: USB 2.0 × 4",
+        "切り替え方式: 本体ボタン、手元スイッチ",
+        "対応OS: Windows11/10/8.1/8/7/XP/Vista, Mac OS, Linux, ChromeOS"
+      ]
     }
   }
 }
