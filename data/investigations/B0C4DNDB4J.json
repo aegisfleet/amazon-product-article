@@ -1,0 +1,170 @@
+{
+  "analysis": {
+    "productName": "GULIGULI ペットカメラ Hiibo",
+    "parentAsin": "B0C4DNDB4J",
+    "productDescription": "部屋全体を移動しながら撮影し、おやつを投げてペットと遊べる可動式のペット用見守りロボットカメラ。",
+    "productUsage": [
+      "外出先からのペットの様子の確認",
+      "ペットへの声かけや双方向会話",
+      "おやつ機能によるペットとの遊び・しつけ",
+      "屋内防犯・見守りカメラとしての利用"
+    ],
+    "positivePoints": [
+      "車輪で部屋中を移動可能で、ペットが動いても追随して様子を確認できる",
+      "満充電で最大15日間の長寿命バッテリーを搭載し、頻繁な充電が不要",
+      "アプリからおやつ(推奨サイズ0.6～1.2cm)を投げてペットと遊べる機能",
+      "1080Pの高画質、110度の広角レンズ、夜間暗視機能を搭載"
+    ],
+    "negativePoints": [
+      "価格が18,990円と、据え置き型のペットカメラと比較して高価",
+      "Wi-Fiは2.4GHz帯のみの対応で、5GHz帯には非対応",
+      "ロボットが移動するため、段差がある部屋での利用には制限がある可能性がある"
+    ],
+    "useCases": [
+      "留守番中の犬や猫の様子を、部屋の死角なく確認したい時",
+      "外出先からおやつをあげて、ペットのストレスや運動不足を解消したい時",
+      "声かけによって不安がっているペットを落ち着かせたい時"
+    ],
+    "userStories": [],
+    "userImpression": "移動機能により部屋のどこにいてもペットを見つけられる点が画期的であり、おやつ機能と合わせてペットの留守番時の退屈しのぎに非常に役立つ多機能ロボットカメラ。",
+    "sources": [
+      {
+        "id": "src-amazon-guliguli",
+        "name": "Amazon商品ページ (GULIGULI Hiibo)",
+        "url": "https://www.amazon.co.jp/dp/B0C4DNDB4J",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-04-16",
+        "author": "Amazon",
+        "conflictOfInterest": "none",
+        "notes": "商品の機能（可動式、おやつ機能、双方向会話、1080P、暗視、バッテリー15日）、仕様（重量1.2kg）について確認"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "車輪による可動式でペットを追随可能、最大15日間バッテリー",
+        "category": "comparativeAdvantage",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-amazon-guliguli"
+        ],
+        "crossChecked": false,
+        "notes": "商品仕様より確認"
+      }
+    ],
+    "lastInvestigated": "2026-04-16",
+    "competitiveAnalysis": [
+      {
+        "name": "ieGeek 見守りカメラ",
+        "asin": "B0D5QD1L5G",
+        "priceComparison": "ieGeek製品の方が大幅に安価。移動機能やおやつ投下機能が不要であれば、ieGeek製品で十分な見守りが可能。",
+        "featureComparison": [
+          "共通点：スマートフォンから遠隔でペットの様子を確認でき、双方向通話や暗視機能に対応する。",
+          "相違点：GULIGULI Hiiboは部屋を移動できおやつ機能があるのに対し、ieGeekは据え置き型で500万画素の高画質や自動追尾(カメラの首振り)に特化している。"
+        ],
+        "differentiators": [
+          "GULIGULI ペットカメラ Hiiboの利点：カメラ自体が移動してペットの居場所まで行ける点と、おやつで遊べる点。",
+          "ieGeek 見守りカメラの利点：安価でありながら高画質(500万画素)かつ5GHz Wi-Fiに対応している点。"
+        ]
+      },
+      {
+        "name": "Furboドッグカメラ 360°ビュー",
+        "asin": "B0BWN22T25",
+        "priceComparison": "初期費用はFurboの方が安いが、Furboは機能をフル活用するためにサブスクリプションが必要である。",
+        "featureComparison": [
+          "共通点：おやつを投げる機能や双方向会話機能、暗視機能を搭載し、ペットとのコミュニケーションに優れる。",
+          "相違点：GULIGULI Hiiboは可動式ロボットであるのに対し、Furboは据え置き型(360度回転)でAIによる高度な通知機能(ワンワン通知など)を持つ。"
+        ],
+        "differentiators": [
+          "GULIGULI ペットカメラ Hiiboの利点：部屋の中を自由に移動でき、サブスクリプションなしで全ての機能が利用できる点。",
+          "Furboドッグカメラ 360°ビューの利点：ペット専用のAIによる鳴き声検知や異常検知などの高度な通知機能がある点。"
+        ]
+      },
+      {
+        "name": "Furboミニ 360°ビュー",
+        "asin": "B0F8LGB7VR",
+        "priceComparison": "初期費用はFurboミニの方が安いが、サブスクリプションが必要。",
+        "featureComparison": [
+          "共通点：スマホ対応で双方向会話や暗視機能があり、おやつ投下も可能。",
+          "相違点：GULIGULI Hiiboは自走式ロボットカメラ。Furboミニは据え置き型の小型カメラ。"
+        ],
+        "differentiators": [
+          "GULIGULI ペットカメラ Hiiboの利点：自走して部屋のあらゆる場所のペットを見つけられる点。",
+          "Furboミニ 360°ビューの利点：コンパクトで設置場所を選ばず、AIによる高度な通知機能を備える点。"
+        ]
+      },
+      {
+        "name": "ミニマルランド 見守り用カメラ ML-668",
+        "asin": "B0FPCF65ZH",
+        "priceComparison": "ミニマルランド製は安価。小動物などのケージに取り付ける用途に特化しているため価格帯が異なる。",
+        "featureComparison": [
+          "共通点：Wi-Fi接続でスマホから映像を確認できる。",
+          "相違点：GULIGULI Hiiboは自走式で部屋全体を移動する。ミニマルランド製はケージに吸盤やネジで固定する据え置き型。"
+        ],
+        "differentiators": [
+          "GULIGULI ペットカメラ Hiiboの利点：放し飼いの犬や猫を部屋中追いかけて見守れる点。",
+          "ミニマルランド 見守り用カメラ ML-668の利点：ケージ内での見守りに特化し、ケージに直接設置しやすい点。"
+        ]
+      },
+      {
+        "name": "YESRAMO 800万画素 ペットカメラ",
+        "asin": "B0G7D2PFR5",
+        "priceComparison": "YESRAMO製品は安価。機能が監視特化であるため、ロボット機能を持つ対象商品より安い。",
+        "featureComparison": [
+          "共通点：暗視機能、双方向通話、動体検知に対応。",
+          "相違点：GULIGULI Hiiboは自走式ロボット。YESRAMOは800万画素(4K)の高精細画質を持つ据え置きPTZカメラ。"
+        ],
+        "differentiators": [
+          "GULIGULI ペットカメラ Hiiboの利点：ペットと一緒におやつで遊べ、移動して死角をなくせる点。",
+          "YESRAMO 800万画素 ペットカメラの利点：非常に高画質であり、細かい様子の確認に優れる点。"
+        ]
+      },
+      {
+        "name": "Anker Eufy Dog Camera D605",
+        "asin": "B09G9TBY85",
+        "priceComparison": "Anker製品の方が高価。機能が類似しているが、ブランドの信頼性や専用AIの有無で価格差がある。",
+        "featureComparison": [
+          "共通点：おやつ飛び出し機能、1080PフルHD画質、双方向会話機能を備える。",
+          "相違点：GULIGULI Hiiboは自走式ロボットである。Anker Eufy D605は270度回転の据え置き型で、本体におやつ容器の水洗い対応などの独自の工夫がある。"
+        ],
+        "differentiators": [
+          "GULIGULI ペットカメラ Hiiboの利点：ロボットとして部屋を移動できるため、カメラの視界から外れることが少ない点。",
+          "Anker Eufy Dog Camera D605の利点：据え置き型として安定しており、おやつ詰まり防止設計や水洗い可能な容器などメンテナンス性に優れる点。"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "留守番中のペットがカメラの死角に隠れてしまって心配な飼い主",
+        "おやつを使いながら遠隔でペットと遊びたい方",
+        "充電の手間を減らしたい方(15日間の長寿命バッテリー)"
+      ],
+      "pros": [
+        "自走式で部屋中を移動できるため死角ができにくい",
+        "おやつ機能でペットの退屈を解消できる",
+        "長持ちするバッテリー"
+      ],
+      "cons": [
+        "据え置き型のカメラに比べて価格が高い",
+        "5GHz帯のWi-Fiに対応していない"
+      ],
+      "score": 80,
+      "scoreRationale": "[基本点: 70]\n[加点: +5] (自走式という他にない革新的な機能)\n[加点: +5] (長持ちするバッテリー)\n[加点: +5] (おやつ機能と双方向会話によるペットとのコミュニケーションの充実)\n[減点: -5] (Wi-Fiが2.4GHzのみ対応であり設置環境を選ぶ可能性があるため)\n[合計: 80]"
+    },
+    "technicalSpecs": {
+      "weight": "1200g",
+      "color": "ホワイト",
+      "resolution": "1080P (200万画素)",
+      "lensAngle": "110度広角",
+      "connectivity": "Wi-Fi 2.4GHzのみ対応",
+      "batteryLife": "最大15日間",
+      "supportedTreatSize": "0.6cm～1.2cm",
+      "other": [
+        "双方向通話機能",
+        "夜間暗視撮影対応",
+        "専用無料アプリ(iOS/Android対応)",
+        "日本語説明書付き"
+      ]
+    }
+  }
+}
