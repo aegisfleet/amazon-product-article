@@ -1,0 +1,74 @@
+{
+  "analysis": {
+    "productName": "クノール カップスープ 8種24食セット",
+    "parentAsin": "B0F9K38C3J",
+    "productDescription": "8種類の味を楽しめるクノールのカップスープ24食詰め合わせセット。お湯を注ぐだけで手軽に温かいスープが楽しめます。",
+    "productUsage": ["朝食時のスープとして", "小腹が空いた時の軽食として", "非常食・備蓄用として"],
+    "positivePoints": ["8種類の味が楽しめるため飽きにくい", "お湯を注ぐだけで簡単に調理可能", "大容量でコストパフォーマンスが良い"],
+    "negativePoints": ["1種類ごとの個数は少なめ", "アレルギー物質の確認が必要"],
+    "useCases": ["忙しい朝の朝食に", "オフィスでのランチのお供に", "災害時の備蓄食料として"],
+    "userStories": [],
+    "userImpression": "手軽に多種類のスープが楽しめるため、忙しい朝やちょっとした小腹満たしに便利との声が多く、日持ちするため備蓄用としても高く評価されています。",
+    "sources": [
+      {
+        "id": "src-1",
+        "name": "Amazon PA-API 商品情報",
+        "url": "https://www.amazon.co.jp/dp/B0BT6WNG38",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-04-17",
+        "author": "Amazon",
+        "conflictOfInterest": "none",
+        "notes": "商品の基本情報、価格、仕様を確認"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "8種類の味が楽しめるアソートセットである",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": ["src-1"],
+        "crossChecked": false,
+        "notes": "商品名および商品仕様から確認"
+      }
+    ],
+    "lastInvestigated": "2026-04-17",
+    "competitiveAnalysis": [
+      {
+        "name": "ひかり味噌 産地のみそ汁めぐり 60食",
+        "asin": "B0155WPKY8",
+        "priceComparison": "味噌汁アソートであり、1食あたりの単価は安い",
+        "featureComparison": [
+          "共通点：お湯を注ぐだけのインスタントスープ・汁物であること",
+          "相違点：本商品は洋風スープのアソートであるのに対し、競合商品は味噌汁のアソートである"
+        ],
+        "differentiators": [
+          "クノール カップスープ 8種24食セットの利点：洋風スープで朝食のパンなどに合わせやすい",
+          "ひかり味噌 産地のみそ汁めぐり 60食の利点：和食に合わせやすく、1食あたりのコストが低い"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": ["忙しい朝に手軽にスープを飲みたい人", "多様な味を楽しみたい人", "備蓄用の食品を探している人"],
+      "pros": ["多彩な味が楽しめる", "調理が簡単", "保存が利く"],
+      "cons": ["特定の味だけを多く楽しむことはできない"],
+      "score": 85,
+      "scoreRationale": "[基本点: 70]\n[加点: +10] (8種類のアソートで飽きがこない使い勝手の良さ)\n[加点: +5] (お湯を注ぐだけで手軽に調理できる実用性)\n[合計: 85]"
+    },
+    "technicalSpecs": {
+      "dimensions": {
+        "height": "不明",
+        "width": "不明",
+        "depth": "不明"
+      },
+      "weight": "534.3g",
+      "capacity": "24食 (3食×8種)",
+      "material": "粉末スープ",
+      "origin": "日本",
+      "other": [
+        "フレーバー: 8種バラエティ",
+        "ブランド: クノール"
+      ]
+    }
+  }
+}
