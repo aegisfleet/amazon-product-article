@@ -1,6 +1,6 @@
 {
   "analysis": {
-    "productName": "Z-Edge UG34 湾曲ゲーミングモニター 34インチ",
+    "productName": "Z Z-Edge UG34 湾曲ゲーミングモニター 34インチ",
     "parentAsin": "B0D83Y8KZ7",
     "productDescription": "165HzのリフレッシュレートとUWQHD解像度を備え、没入感のあるゲーム体験を提供するコストパフォーマンスに優れた34インチ湾曲ウルトラワイドモニターです。",
     "productUsage": [
@@ -23,67 +23,99 @@
       "予算を抑えてウルトラワイド環境を構築したいゲーマー",
       "2画面置くスペースはないが作業領域を広げたい在宅ワーカー"
     ],
-    "userStories": [
-      {
-        "userType": "ゲーマー (推測)",
-        "scenario": "FPSやレーシングゲームのプレイ",
-        "experience": "165Hzの滑らかさと湾曲画面の没入感により、ゲーム体験が向上しました。特に横長の視野が有利に働くタイトルで真価を発揮します。",
-        "sentiment": "positive"
-      },
-      {
-        "userType": "在宅ワーカー (推測)",
-        "scenario": "複数ウィンドウを開いての作業",
-        "experience": "ウィンドウを左右に並べても窮屈さがなく、デュアルモニターのような使い勝手を1枚で実現でき、デスク周りもすっきりしました。",
-        "sentiment": "positive"
-      }
-    ],
+    "userStories": [],
     "userImpression": "3万円台でこのスペックは破格であり、エントリー向けのウルトラワイドモニターとして十分な性能を持っていますが、競合製品（特にXiaomi）との比較検討が必要です。",
     "sources": [
       {
+        "id": "src-1",
         "name": "Amazon Product Page",
         "url": "https://www.amazon.co.jp/dp/B0CRCZ1Q6L",
-        "credibility": "High"
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2024-09-20",
+        "author": "Z Z-Edge",
+        "conflictOfInterest": "possible",
+        "notes": "スペック情報、価格情報"
       }
     ],
-    "lastInvestigated": "2026-01-31",
+    "lastInvestigated": "2026-04-17",
     "competitiveAnalysis": [
       {
-        "name": "Xiaomi G34WQi ゲーミングモニター",
+        "name": "CRUA 34インチ UWQHD 曲面モニター",
+        "asin": "B0FG28Q773",
+        "priceComparison": "対象商品より安価に購入できるが、スペック面での妥協が必要になるため、価格重視のユーザーに適している。",
+        "featureComparison": [
+          "共通点：34インチUWQHD(3440x1440)、曲面VAパネル搭載、HDMIx2・DPx2の入力端子構成",
+          "相違点：対象商品は165Hz駆動で高さ調整スタンド付きだが、競合は120Hz駆動でチルト調整のみ"
+        ],
+        "differentiators": [
+          "Z Z-Edge UG34 湾曲ゲーミングモニター 34インチの利点：165Hzの高リフレッシュレートと高さ調整可能なスタンドにより、より本格的なゲーミングとエルゴノミクスに優れる",
+          "CRUA 34インチ UWQHD 曲面モニターの利点：リフレッシュレートが120Hzで十分な用途であれば、初期費用を抑えられる"
+        ]
+      },
+      {
+        "name": "cocopar 34インチ UWQHD 曲面モニター HG-4K34",
+        "asin": "B0FCLP8NC2",
+        "priceComparison": "対象商品と同等の価格帯であり、付加機能（PIP/PBPなど）の有無で選択が分かれる。",
+        "featureComparison": [
+          "共通点：34インチUWQHD(3440x1440)、曲面VAパネル、165Hzリフレッシュレート対応、PIP/PBP機能搭載",
+          "相違点：対象商品はType-C非対応だが、競合はType-Cに対応しているモデル(HG-4K34C)のバリエーションでありスピーカーを内蔵している"
+        ],
+        "differentiators": [
+          "Z Z-Edge UG34 湾曲ゲーミングモニター 34インチの利点：純粋なゲーミング用途に特化したシンプルな構成",
+          "cocopar 34インチ UWQHD 曲面モニター HG-4K34の利点：スピーカー内蔵やPIP/PBPによるマルチタスク利便性が高い"
+        ]
+      },
+      {
+        "name": "Xiaomi 曲面 ゲーミングモニター G34WQi",
         "asin": "B0CWS2YKNK",
-        "priceComparison": "ほぼ同価格（+1,000円〜2,000円程度）",
+        "priceComparison": "対象商品より高価だが、大手ブランドの安心感とより高いリフレッシュレートを考慮すると、その価値は十分にある。",
         "featureComparison": [
-          "リフレッシュレートが180Hzと高い",
-          "Xiaomiブランドの信頼性"
+          "共通点：34インチUWQHD(3440x1440)、1500Rの曲面VA非光沢パネル搭載",
+          "相違点：対象商品は165Hz駆動だが、競合は180Hz駆動に対応し、1ms MPRT応答速度とより洗練されたデザインを持つ"
         ],
         "differentiators": [
-          "Xiaomiは180Hz駆動でスペックが若干高い",
-          "Z-EdgeはHDMIx2, DPx2とポート数が豊富（XiaomiはDPx2, HDMIx2と同様の構成の場合が多いが要確認）"
+          "Z Z-Edge UG34 湾曲ゲーミングモニター 34インチの利点：3万円台前半という圧倒的なコストパフォーマンス",
+          "Xiaomi 曲面 ゲーミングモニター G34WQiの利点：180Hzの高速駆動と、大手ブランドならではの信頼性と品質"
         ]
       },
       {
-        "name": "CRUA 34インチ ゲーミングモニター",
-        "asin": "B0DPKN9HXB",
-        "priceComparison": "約5,000円安い",
-        "featureComparison": [
-          "価格最優先の構成",
-          "高さ調整機能がないモデルが多い"
-        ],
-        "differentiators": [
-          "圧倒的な安さ",
-          "Z-Edgeは高さ調整スタンド付きでエルゴノミクスに優れる"
-        ]
-      },
-      {
-        "name": "cocopar HG-4K34C",
+        "name": "cocopar 34インチ UWQHD 曲面モニター Type-C搭載 HG-4K34C",
         "asin": "B0FCLK86BL",
-        "priceComparison": "同価格帯",
+        "priceComparison": "対象商品よりやや高価だが、Type-C接続が必要な環境であればその価値がある。",
         "featureComparison": [
-          "USB-C対応",
-          "スピーカー内蔵"
+          "共通点：34インチUWQHD(3440x1440)、曲面VAパネル、165Hzリフレッシュレート対応",
+          "相違点：対象商品はHDMIとDP接続のみだが、競合はUSB Type-C映像入力に対応している"
         ],
         "differentiators": [
-          "cocoparはUSB-C接続が可能でMacBook等との相性が良い",
-          "Z-Edgeは純粋なゲーミングスペック重視"
+          "Z Z-Edge UG34 湾曲ゲーミングモニター 34インチの利点：USB Type-Cが不要な場合、より安価に購入できる",
+          "cocopar 34インチ UWQHD 曲面モニター Type-C搭載 HG-4K34Cの利点：MacBookやノートPCとType-Cケーブル1本で接続したい場合に適している"
+        ]
+      },
+      {
+        "name": "CRUA 34インチ UWQHD 165Hz 曲面モニター",
+        "asin": "B0DPKN9HXB",
+        "priceComparison": "対象商品よりさらに安価であり、モニターアームの使用を前提としてとにかく初期費用を抑えたい場合に適している。",
+        "featureComparison": [
+          "共通点：34インチUWQHD(3440x1440)、165Hzリフレッシュレート、1500R曲面VAパネル",
+          "相違点：対象商品は高さ調整可能なスタンドが付属するが、競合は傾斜（チルト）調整のみ"
+        ],
+        "differentiators": [
+          "Z Z-Edge UG34 湾曲ゲーミングモニター 34インチの利点：高さ調整機能により、モニターアーム無しでも快適な視環境を構築できる",
+          "CRUA 34インチ UWQHD 165Hz 曲面モニターの利点：スペックに対する価格が極めて安く、モニターアームの使用を前提とするなら最適"
+        ]
+      },
+      {
+        "name": "PHILIPS EVNIA 湾曲ゲーミングモニター 34M2C3500L/11",
+        "asin": "B0F9NMJQSQ",
+        "priceComparison": "対象商品より高価だが、大手ブランドの5年保証や応答速度の速さを考慮すると品質面で懸念がない。",
+        "featureComparison": [
+          "共通点：34インチUWQHD(3440x1440)、1500R曲面パネル",
+          "相違点：対象商品は165Hz、1msだが、競合は180Hz、超高速0.5ms応答速度を誇り、5年保証が付帯する"
+        ],
+        "differentiators": [
+          "Z Z-Edge UG34 湾曲ゲーミングモニター 34インチの利点：価格を限界まで抑えたい場合に有利",
+          "PHILIPS EVNIA 湾曲ゲーミングモニター 34M2C3500L/11の利点：大手メーカーの安心感、5年間の長期保証、より高速な0.5ms応答速度"
         ]
       }
     ],
@@ -102,21 +134,21 @@
         "競合Xiaomiの存在（180Hz）により選択肢としての決定打に欠ける場合がある",
         "パネル品質やサポートへの不安（マイナーブランド）"
       ],
-      "score": 76,
-      "scoreRationale": "[基本点: 70]\n[コスパ: +10] (3万円台前半でUWQHD/165Hz/高さ調整付きは非常に優秀)\n[性能: +2] (165Hz, 1ms, 高さ調整ありと機能は十分)\n[品質: -3] (ブランドの信頼性が大手と比較して未知数)\n[競合比較: -3] (同価格帯にXiaomi (180Hz) が存在するため、スペックだけで選ぶと負ける)\n[合計: 76]"
+      "score": 80,
+      "scoreRationale": "[基本点: 70]\n[加点: +8] (3万円台前半で34インチUWQHDという高いコストパフォーマンス)\n[加点: +3] (165Hzのリフレッシュレートと1ms応答速度による十分なゲーミング性能)\n[加点: +2] (この価格帯では省略されがちな高さ調整対応スタンドを標準装備)\n[減点: -3] (XiaomiやPhilipsなど、少し予算を足せば買える大手ブランドの競合が存在し、ブランド力で劣る)\n[合計: 80]"
     },
     "technicalSpecs": {
       "display": {
-        "size": "34インチ",
+        "size": "34型",
         "resolution": "3440 x 1440 (UWQHD)",
         "type": "VA非光沢",
         "refreshRate": "165Hz",
         "response": "1ms"
       },
       "dimensions": {
-        "width": "約81cm",
-        "height": "高さ調整対応",
-        "weight": "約9kg"
+        "height": "520mm",
+        "width": "810mm",
+        "depth": "240mm"
       },
       "connectivity": [
         "HDMI 2.0 x 2",
@@ -129,7 +161,20 @@
         "HDR",
         "フリッカーフリー",
         "ブルーライトカット"
-      ]
-    }
+      ],
+      "weight": "9.0kg"
+    },
+    "claims": [
+      {
+        "claim": "165Hzのリフレッシュレートと1msの応答速度",
+        "category": "comparativeAdvantage",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "crossChecked": false,
+        "notes": "Amazon商品ページに記載"
+      }
+    ]
   }
 }
