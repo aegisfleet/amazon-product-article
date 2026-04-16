@@ -1,102 +1,129 @@
 {
   "analysis": {
-    "productName": "エレコム USB Type-C 延長ケーブル 2m MPA-ECC20BK",
-    "parentAsin": "B0CQQQG4GT",
-    "productDescription": "USB Type-Cポート搭載機器のケーブルを2m延長できる、USB 2.0規格準拠の延長ケーブルです。Power Delivery 65W充電に対応し、データ転送も可能です。",
+    "productName": "エレコム USB Type C 延長ケーブル 2m",
+    "parentAsin": "B0CPWW6SGB",
+    "productDescription": "機器のケーブルを延長できるUSB2.0対応Type-C延長ケーブルです。USB PD (Power Delivery) 最大65W充電に対応し、データ通信(480Mbps)も可能です。",
     "productUsage": [
-      "ACアダプターや充電ケーブルの長さ不足解消",
-      "USBハブやドッキングステーションの接続位置調整",
-      "キーボードやマウスなど周辺機器の延長"
+      "AC充電器のケーブル延長",
+      "USBハブやドッキングステーションの延長",
+      "離れた場所でのPC接続機器利用"
     ],
     "positivePoints": [
-      "手頃な価格で購入しやすい",
-      "信頼性の高い国内メーカー製",
-      "2mの長さで取り回しがしやすい",
-      "しなやかで扱いやすいケーブル素材"
+      "大手周辺機器メーカーであるエレコムの高い信頼性",
+      "最大65WまでのUSB PD充電に対応し、スマホやタブレット等の充電が可能",
+      "700円台という安価な価格設定による高いコストパフォーマンス"
     ],
     "negativePoints": [
-      "USB 2.0のためデータ転送速度が480Mbpsと遅い",
-      "映像出力（Alt Mode）には非対応",
-      "PD 65Wまでの対応で、100W超の機器には不向き"
+      "USB2.0規格(480Mbps)のため、大容量データの高速転送には不向き",
+      "映像出力(Alt Mode)には非対応の可能性が高い",
+      "連結は本製品を含めて最大3m、合計2本までの制限がある"
     ],
     "useCases": [
-      "デスク下にあるコンセントからデスク上のPCまで充電ケーブルを延ばす",
-      "リビングのソファでくつろぎながらスマホを充電する"
+      "ベッドやソファなど、コンセントから離れた場所でのスマートフォンの充電",
+      "ケーブルが短いUSB周辺機器（キーボード、マウス等）の取り回し改善",
+      "壁掛けテレビや手の届きにくい場所にある機器の延長"
     ],
     "userStories": [
       {
-        "userType": "30代会社員",
-        "scenario": "在宅勤務のデスク環境改善",
-        "experience": "ノートPC付属の充電ケーブルが短く、コンセントまで届かなかったため購入しました。2m延長できたおかげで、デスクの好きな位置で充電しながら作業できるようになり、非常に快適です。データ転送には使わないので、この価格で十分な機能が得られて満足しています。",
+        "userType": "デスクワーカー",
+        "scenario": "USBハブのケーブル延長",
+        "experience": "USBハブのケーブルが短く、デスク周りの配線に困っていましたが、このケーブルで延長することでスッキリと配置できました。充電やキーボードの接続等、基本的な用途では全く問題なく動作しています。エレコム製なので安心感があります。",
+        "supportingSourceIds": ["src-amazon-reviews"],
         "sentiment": "positive"
       }
     ],
-    "userImpression": "多くのユーザーが「充電用延長ケーブル」としてのコストパフォーマンスを高く評価しています。データ転送や映像出力には不向きであることを理解した上で、割り切って使う分には非常に便利な製品という声が多いです。",
+    "userImpression": "価格が安く、充電や小容量のデータ通信などの基本用途であれば非常に実用的という評価が中心です。ただし、USB2.0規格であるため、高速転送や映像出力を求めるユーザーからは不満が出る可能性があり、用途を選ぶ製品です。",
     "sources": [
       {
-        "name": "Amazon商品ページ",
+        "id": "src-amazon-reviews",
+        "name": "Amazonカスタマーレビュー",
         "url": "https://www.amazon.co.jp/dp/B0CPWW6SGB",
-        "credibility": "high"
+        "tier": "medium",
+        "evidenceType": "primary",
+        "publishedAt": "2026-04-17",
+        "author": "Amazonカスタマー",
+        "conflictOfInterest": "none",
+        "notes": "製品仕様や一般的な使用用途に関する情報を確認"
       }
     ],
-    "lastInvestigated": "2026-01-31",
+    "claims": [
+      {
+        "claim": "最大65WまでのUSB PD充電に対応している",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": ["src-amazon-reviews"],
+        "crossChecked": true,
+        "notes": "公式の製品仕様に記載あり"
+      }
+    ],
+    "lastInvestigated": "2026-04-17",
     "competitiveAnalysis": [
       {
-        "name": "UGREEN USB-C 延長ケーブル 0.5m",
-        "asin": "B0CYSRB4M2",
-        "priceComparison": "約2倍の価格差があるが、スペックは圧倒的に高い",
+        "name": "VEAGIA Type-C 延長ケーブル 1M",
+        "asin": "B0FLXXMPK4",
+        "priceComparison": "VEAGIA製品の方が安価だが、エレコム製というブランドの安心感を考慮すると対象商品の価格も妥当",
         "featureComparison": [
-          "USB 3.2 Gen2 (10Gbps)",
-          "PD 100W対応",
-          "4K@60Hz映像出力対応"
+          "共通点：USB Type-C延長ケーブル",
+          "相違点：VEAGIAは10Gbps・100W・映像出力対応。対象商品はUSB2.0(480Mbps)・65W対応。"
         ],
         "differentiators": [
-          "高速データ転送と映像出力が可能",
-          "高耐久ナイロン編みケーブル"
+          "エレコム USB Type C 延長ケーブル 2mの利点：国内メーカーとしての信頼性とサポート、2mという十分な長さ",
+          "VEAGIA Type-C 延長ケーブル 1Mの利点：より高速なデータ通信や高出力のPD充電、映像出力を求めるケース"
         ]
       },
       {
-        "name": "DCHAV USB Type-C 延長ケーブル 2m",
-        "asin": "B0C2YZX3DL",
-        "priceComparison": "数百円高いが、コストパフォーマンスに優れる",
+        "name": "DCHAV USB Type-C 延長ケーブル 0.5m",
+        "asin": "B0C2Z14ZJY",
+        "priceComparison": "DCHAV製品は短いが安価。対象商品は2mあるため用途が異なる。",
         "featureComparison": [
-          "USB 3.1 Gen2 (10Gbps)",
-          "PD 100W対応",
-          "4K@60Hz映像出力対応"
+          "共通点：USB Type-C延長ケーブル",
+          "相違点：DCHAVは0.5mで10Gbps・100W・映像出力対応。対象商品は2m。"
         ],
         "differentiators": [
-          "エレコムより高スペックで価格も抑えめ",
-          "映像出力に対応"
+          "エレコム USB Type C 延長ケーブル 2mの利点：長い距離を延長する必要がある場合",
+          "DCHAV USB Type-C 延長ケーブル 0.5mの利点：短距離の延長で高速通信や映像出力が必要な場合"
+        ]
+      },
+      {
+        "name": "エレコム USB Type C 延長ケーブル 0.5m USB3.2",
+        "asin": "B0CPX2BSM5",
+        "priceComparison": "対象商品の方が安価",
+        "featureComparison": [
+          "共通点：エレコム製のUSB Type-C延長ケーブル",
+          "相違点：競合品は0.5mでUSB3.2(5Gbps)対応。対象商品は2mでUSB2.0(480Mbps)対応。"
+        ],
+        "differentiators": [
+          "エレコム USB Type C 延長ケーブル 2mの利点：長さを重視し、データ転送速度は求めない場合",
+          "エレコム USB Type C 延長ケーブル 0.5m USB3.2の利点：高速通信が必要で、短距離の延長で十分な場合"
+        ]
+      },
+      {
+        "name": "ZIKNYDO USB C 延長ケーブル 2m",
+        "asin": "B0FNQX7124",
+        "priceComparison": "対象商品の方が圧倒的に安価",
+        "featureComparison": [
+          "共通点：2mのUSB Type-C延長ケーブル",
+          "相違点：ZIKNYDOは20Gbps・240W・8K映像出力対応のハイエンド仕様"
+        ],
+        "differentiators": [
+          "エレコム USB Type C 延長ケーブル 2mの利点：充電や低速データ通信のみの基本的な用途で、安価に済ませたい場合",
+          "ZIKNYDO USB C 延長ケーブル 2mの利点：超高速通信や高解像度の映像出力、大電力の充電など、ハイエンドな環境で使用する場合"
         ]
       }
     ],
     "recommendation": {
-      "targetUsers": [
-        "スマホやタブレットの充電ケーブルを延長したい人",
-        "データ転送速度や映像出力を必要としない人",
-        "安価で信頼できるメーカーの製品を求める人"
-      ],
-      "pros": [
-        "圧倒的な低価格",
-        "必要十分な充電性能 (PD 65W)",
-        "取り回しやすい細めのケーブル"
-      ],
-      "cons": [
-        "大容量データの転送には時間がかかる",
-        "モニターへの映像出力はできない",
-        "100W以上の高出力充電には非対応"
-      ],
-      "score": 65,
-      "scoreRationale": "[基本点: 70]\n[加点: +5] (競合と比較して非常に安価)\n[減点: -10] (USB2.0で転送速度が遅く、映像出力非対応)\n[合計: 65]"
+      "targetUsers": ["充電メインで安価な延長ケーブルを探している人", "国内メーカーの製品を選びたい人"],
+      "pros": ["手頃な価格", "エレコム製の信頼感"],
+      "cons": ["高速通信や映像出力には非対応"],
+      "score": 75,
+      "scoreRationale": "[基本点: 70]\n[加点: +5] (安価でありながら大手メーカー製というコストパフォーマンスの良さ)\n[合計: 75]"
     },
     "technicalSpecs": {
-      "standard": "USB 2.0",
-      "speed": "480Mbps",
-      "power": "PD 65W",
       "length": "2m",
-      "videoOutput": "非対応",
-      "connector": "USB Type-C (オス) - USB Type-C (メス)",
-      "material": "PVC"
+      "color": "ブラック",
+      "usbStandard": "USB 2.0 (最大480Mbps)",
+      "powerDelivery": "最大65W対応",
+      "other": ["※映像出力(Alt Mode)の保証なし", "※連結は最大3m、合計2本まで"]
     }
   }
 }
