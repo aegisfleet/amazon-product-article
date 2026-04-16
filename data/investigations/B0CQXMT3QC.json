@@ -26,75 +26,81 @@
       "狭いデスク上での作業スペース確保",
       "サブモニターの設置"
     ],
-    "userStories": [
-      {
-        "userType": "30代 在宅勤務ワーカー",
-        "scenario": "初めてのモニターアーム導入",
-        "experience": "デスクが狭く、モニターの脚が邪魔だったため購入。Amazonベーシックなら失敗はないだろうと選択した。24インチのモニターを取り付けたが、保持力は問題なく、机が広々と使えるようになった。（推測）",
-        "sentiment": "positive"
-      },
-      {
-        "userType": "40代 システムエンジニア",
-        "scenario": "サブモニター用のアームとして使用",
-        "experience": "メインはエルゴトロンを使っているが、サブ用として安価なこちらを選択。質感は価格なりだが、固定して使う分には揺れも少なく十分実用的だと感じた。（推測）",
-        "sentiment": "mixed"
-      }
-    ],
+    "userStories": [],
     "userImpression": "エントリークラスのモニターアームとして、必要最低限の機能とAmazonブランドの安心感を兼ね備えています。スペック（耐荷重・サイズ）は競合に譲りますが、ライトな用途や24インチクラスのモニター使用者には十分な選択肢です。",
     "sources": [
       {
-        "name": "Amazon商品ページ仕様詳細",
+        "id": "src-amazon",
+        "name": "Amazonベーシック シングルモニターアーム 商品ページ",
         "url": "https://www.amazon.co.jp/dp/B0CQXMT3QC",
-        "credibility": "高"
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2024-09-24",
+        "author": "Amazon",
+        "conflictOfInterest": "none",
+        "notes": "公式の製品スペック、価格、機能説明"
       }
     ],
-    "lastInvestigated": "2026-01-31",
+    "lastInvestigated": "2026-04-17",
     "competitiveAnalysis": [
       {
-        "name": "ErGear PC モニターアーム",
-        "asin": "B08SVW59KT",
-        "priceComparison": "約2,880円（本製品より安価）",
+        "name": "suptek PC モニターアーム MD01A",
+        "asin": "B0DCVWK5RY",
+        "priceComparison": "対象商品より安価だが、アルミ合金製でスペックも高いため品質に特段の懸念はない。",
         "featureComparison": [
-          "13-32インチ対応（本製品は27インチ）",
-          "耐荷重2-8kg（本製品は7kg）"
+          "共通点：ガススプリング式、C型クランプ/グロメット対応",
+          "相違点：suptekは13～32インチ/2～9kg対応でスペックが高く、価格も安い。Amazonベーシックは最大27インチ/7kgまで。"
         ],
         "differentiators": [
-          "より広い対応サイズと耐荷重",
-          "ホワイトモデルの展開あり"
+          "Amazonベーシック シングルモニターアームの利点：Amazonブランドの安心感",
+          "suptek PC モニターアーム MD01Aの利点：対応サイズ・耐荷重に優れ、価格が安い"
+        ]
+      },
+      {
+        "name": "Amazonベーシック シングルモニターアーム (最大32インチ)",
+        "asin": "B0CQXL5S4T",
+        "priceComparison": "対象商品より安価。同ブランドでポール式のため構造が簡素であり、品質的な懸念はない。",
+        "featureComparison": [
+          "共通点：Amazonベーシックブランド",
+          "相違点：B0CQXL5S4Tは最大32インチ/10kg対応。対象商品(B0CQXMT3QC)はガススプリング式だが、B0CQXL5S4Tは通常のポール/アーム式。"
+        ],
+        "differentiators": [
+          "Amazonベーシック シングルモニターアームの利点：ガススプリング式によるスムーズな上下調整",
+          "Amazonベーシック シングルモニターアーム (最大32インチ)の利点：大型モニター対応と高い耐荷重、より安価な価格"
+        ]
+      },
+      {
+        "name": "NB ERGONOMIC モニターアーム A5",
+        "asin": "B0GHT7N1HT",
+        "priceComparison": "対象商品より安価。ブランド力には差があるが、大型モニター対応で実用上の性能に懸念はない。",
+        "featureComparison": [
+          "共通点：ガススプリング式に似た調整機構",
+          "相違点：NB ERGONOMICは17～32インチ/9kg対応。"
+        ],
+        "differentiators": [
+          "Amazonベーシック シングルモニターアームの利点：Amazonのサポート体制",
+          "NB ERGONOMIC モニターアーム A5の利点：32インチまでの大型モニターに対応しつつ安価"
         ]
       },
       {
         "name": "エレコム モニターアーム DPA-SS02BK",
         "asin": "B09DSCG8DC",
-        "priceComparison": "約4,000円（本製品より高価）",
+        "priceComparison": "対象商品より高価だが、エレコム製という国内メーカーの信頼性と高い耐荷重性能があるためその価値はある。",
         "featureComparison": [
-          "17-32インチ対応",
-          "耐荷重9kg"
+          "共通点：ガス式、VESA規格対応",
+          "相違点：エレコムは17～32インチ/9kg対応。"
         ],
         "differentiators": [
-          "国内有名メーカーの信頼性",
-          "高い耐荷重性能"
-        ]
-      },
-      {
-        "name": "Alterzone モニターアーム ALZARM-E1",
-        "asin": "B0G6K1FV1K",
-        "priceComparison": "約2,480円（本製品より大幅に安価）",
-        "featureComparison": [
-          "17-32インチ対応",
-          "耐荷重2-9kg"
-        ],
-        "differentiators": [
-          "圧倒的なコストパフォーマンス",
-          "高いスペック"
+          "Amazonベーシック シングルモニターアームの利点：エレコム製より手頃な価格",
+          "エレコム モニターアーム DPA-SS02BKの利点：国内有名メーカー製で大型モニター対応"
         ]
       }
     ],
     "recommendation": {
       "targetUsers": [
-        "24インチ前後の標準的なモニターを使用している人",
-        "初めてモニターアームを購入する初心者",
-        "Amazonブランドのサポートを重視する人"
+        "27インチ以下、7kg以下の軽量モニターを使用している人",
+        "ガススプリング式のアームをAmazonブランドで揃えたい人",
+        "Amazonのサポートや保証を重視する人"
       ],
       "pros": [
         "Amazonベーシックの1年保証",
@@ -106,26 +112,54 @@
         "重量級モニター（7kg超）は保持できない",
         "競合製品に比べてスペック上のコスパは劣る"
       ],
-      "score": 68,
-      "scoreRationale": "[基本点: 70]\n[性能・機能: -5] (競合他社製品が32インチ/9kg対応が標準的であるのに対し、27インチ/7kgと劣るため)\n[コストパフォーマンス: +3] (3000円程度と安価ではあるが、さらに安価で高スペックな競合が存在するため加点は限定的)\n[品質・デザイン: 0] (Amazonベーシックとしての標準的な品質)\n[合計: 68]"
+      "score": 71,
+      "scoreRationale": "[基本点: 70]\n[減点: -4] (競合が32インチ/9kg対応の中、27インチ/7kgまでとスペックが見劣りするため)\n[減点: -3] (ガス式とはいえ3711円は、より高スペックで安い競合製品が存在するためやや割高)\n[加点: +3] (Amazonブランドによる安心感と1年保証)\n[加点: +5] (ケーブル管理システムや分かりやすい説明書が付属し、初心者でも設置しやすい配慮がある)\n[合計: 71]"
     },
     "technicalSpecs": {
       "dimensions": {
-        "height": "46cm (最大延長時)",
-        "width": "52cm (最大延長時)",
-        "depth": null,
-        "weight": "1.9kg (約4.18ポンド)"
+        "height": "457.2mm",
+        "width": "107.95mm",
+        "depth": "474.98mm"
       },
+      "weight": "1896g",
       "capacity": "最大7kg",
-      "compatibility": "最大27インチ",
+      "compatibility": "最大約68.6cm (38～69cm)",
       "vesa": "75x75mm, 100x100mm",
       "mechanism": "ガススプリング式",
-      "mountType": "C型クランプ / グロメット",
+      "mountType": "C型クランプ(厚さ1～10cm) / グロメット(穴径4～6cm)",
       "range": {
-        "tilt": "-90° ~ +85°",
-        "swivel": "180°",
+        "tilt": "-90° ～ +85°",
+        "swivel": "90°",
         "rotation": "360°"
+      },
+      "material": "スチール、アルミニウム",
+      "origin": "不明",
+      "other": [
+        "最大延長: 長さ52cm / 高さ46cm",
+        "ケーブル管理システム付属"
+      ]
+    },
+    "claims": [
+      {
+        "claim": "最大27インチ、7kgまでのモニターに対応",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-amazon"
+        ],
+        "crossChecked": false,
+        "notes": "公式スペック"
+      },
+      {
+        "claim": "傾斜-90°～+85°、回転(スイベル)90°、回転(ローテーション)360°の調節が可能",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-amazon"
+        ],
+        "crossChecked": false,
+        "notes": "公式スペック"
       }
-    }
+    ]
   }
 }
