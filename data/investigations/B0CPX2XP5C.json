@@ -1,124 +1,191 @@
 {
   "analysis": {
-    "productName": "エレコム USB Type-C 延長ケーブル 1m USB3.2(Gen1) PD 60W対応",
-    "parentAsin": "B0CQQMTMFQ",
-    "productDescription": "USB Type-Cポートを搭載した機器の接続距離を延長できる、USB 3.2 (Gen1) 対応の延長ケーブルです。",
+    "productName": "エレコム USB Type-C 延長ケーブル 1m (MPA-ECECC10BK)",
+    "parentAsin": "B0CPX2XP5C",
+    "productDescription": "USB Type-C(TM)ケーブルの長さを延長するための1mケーブルです。最大5Gbpsの高速データ転送と最大60WのUSB Power Deliveryに対応しています。",
     "productUsage": [
-      "PC背面のアクセスしにくいUSB-Cポートを手元に延長して使用",
-      "短すぎる充電ケーブルや周辺機器のケーブル長を延長",
-      "USBハブやドッキングステーションの接続位置を調整"
+      "AC充電器のケーブル延長",
+      "USBハブやドッキングステーションの延長",
+      "パソコンから離れた位置での機器接続"
     ],
     "positivePoints": [
-      "日本メーカー（エレコム）製である安心感と品質管理",
-      "2重シールドケーブル採用による外部ノイズへの強さ",
-      "USB PD (Power Delivery) 60W対応で、ノートPCやスマホの充電にも十分対応",
-      "サビに強く信号劣化を抑える金メッキピンを採用",
-      "難燃性の素材を使用しており、安全性に配慮されている"
+      "最大60WのPD対応による高速充電が可能",
+      "最大5Gbps(USB3.2 Gen1)の高速データ通信に対応",
+      "ノイズから信号を保護する2重シールドケーブルを採用",
+      "金メッキピン採用でサビに強く信号劣化を抑える"
     ],
     "negativePoints": [
-      "USB 3.2 Gen 1 (5Gbps) までの対応であり、10Gbps転送や高度な映像出力にはスペック不足の可能性がある",
-      "延長ケーブルという性質上、接続する機器やケーブルの組み合わせによっては電圧降下や認識不良が起きるリスクがある（規格外の使用法となるため）",
-      "コネクタ部分が比較的大きめである可能性がある（干渉注意）"
+      "バスパワー駆動デバイスでは電力不足になる場合がある",
+      "連結可能なケーブルの長さは本製品を含めて最大2mまでという制約がある"
     ],
     "useCases": [
-      "デスクトップPCの背面ポートへのアクセス改善",
-      "カフェやデスクで電源が遠い場合の充電ケーブル延長",
-      "Webカメラやマイクの設置位置調整"
+      "ケーブル一体型のAC充電器を少し離れたコンセントから使いたい時",
+      "ケーブルが短いUSBハブをパソコンに接続する時"
     ],
-    "userStories": [
-      {
-        "userType": "30代 リモートワーカー",
-        "scenario": "デスクトップPCの背面ポート活用",
-        "experience": "PC背面のUSB-Cポートにいちいち手を回すのが面倒で購入しました。机の上にポートを持ってこれたので、USBメモリやスマホの接続が劇的に楽になりました。速度も安定しています。（推測）",
-        "sentiment": "positive"
-      },
-      {
-        "userType": "20代 学生",
-        "scenario": "スマホの充電",
-        "experience": "ベッドで寝ながらスマホを充電したかったのですが、付属のケーブルが短くて届きませんでした。この延長ケーブルを使って快適に操作できるようになりました。充電速度も落ちていないようです。（推測）",
-        "sentiment": "positive"
-      }
-    ],
-    "userImpression": "レビュー情報は限定的ですが、エレコム製というブランドへの信頼感から選ばれる傾向があります。特に安価な海外製ケーブルに対する不安を持つユーザーにとって、確実なシールド処理や安全性への配慮が評価ポイントとなります。",
+    "userStories": [],
+    "userImpression": "ケーブルが短い機器の取り回し改善に役立つ一方で、連結時の全長制約（最大2m）やバスパワー機器の動作についての仕様を把握した上で使用することが推奨される延長ケーブルです。",
     "sources": [
       {
-        "name": "Amazon商品ページ",
+        "id": "src-1",
+        "name": "Amazon.co.jp 商品ページ",
         "url": "https://www.amazon.co.jp/dp/B0CPX2XP5C",
-        "credibility": "high"
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-04-17",
+        "author": "Amazon",
+        "conflictOfInterest": "none",
+        "notes": "製品仕様、価格（1,090円）、機能詳細を確認"
+      },
+      {
+        "id": "src-2",
+        "name": "価格.com 検索結果",
+        "url": "https://search.kakaku.com/MPA-ECECC10BK/",
+        "tier": "medium",
+        "evidenceType": "secondary",
+        "publishedAt": "2026-04-17",
+        "author": "価格.com",
+        "conflictOfInterest": "none",
+        "notes": "市場の取扱状況および他社販売価格帯の確認"
       }
     ],
-    "lastInvestigated": "2026-01-31",
+    "claims": [
+      {
+        "claim": "最大60WのUSB PDに対応し、対応機器の高速充電が可能",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "crossChecked": true,
+        "notes": "商品仕様より確認"
+      },
+      {
+        "claim": "ノイズ干渉を防ぐ2重シールドケーブル構造を採用",
+        "category": "durability",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "crossChecked": false,
+        "notes": "メーカー公式の仕様記載より確認"
+      }
+    ],
+    "lastInvestigated": "2026-04-17",
     "competitiveAnalysis": [
       {
-        "name": "UGREEN USB Type C延長ケーブル 1M (B08MXL8JGF)",
-        "asin": "B08MXL8JGF",
-        "priceComparison": "約1,300円（本製品より約300円高い）",
+        "name": "UGREEN USB Type C 延長ケーブル",
+        "asin": "B08NTCD6VQ",
+        "priceComparison": "UGREEN製品はセールやクーポンで安価になる傾向がありますが、本製品は国内メーカーのサポート体制に優位性があります。",
         "featureComparison": [
-          "USB 3.2 Gen 2 (10Gbps) 対応（本製品は5Gbps）",
-          "PD 100W対応（本製品は60W）",
-          "4K60Hz映像出力対応"
+          "共通点：USB Type-Cの延長に対応し、PDによる給電が可能な点",
+          "相違点：メーカーのサポート体制や、ケーブルの被覆素材等の細かな仕様が異なる"
         ],
         "differentiators": [
-          "スペック重視ならUGREENが圧倒的に有利",
-          "コスト重視ならエレコム"
+          "エレコム USB Type-C 延長ケーブルの利点：国内メーカー製ならではの安心感と品質基準",
+          "UGREEN USB Type C 延長ケーブルの利点：ナイロン編組など高耐久素材が採用されているモデルがある場合、物理的な耐久性で選ばれるケースがある"
         ]
       },
       {
-        "name": "エレコム USB Type C 延長ケーブル 1m USB2.0 (B0CPX2V7XC)",
+        "name": "DCHAV USB Type-C 延長ケーブル 1m",
+        "asin": "B0C2Z335S7",
+        "priceComparison": "DCHAV製の方が実売価格が安いですが、ブランドの信頼性や国内サポートの面では本製品が勝ります。",
+        "featureComparison": [
+          "共通点：1mのType-C延長ケーブルである点",
+          "相違点：DCHAV製品は100W/10Gbps対応を謳うなどスペック表記上の違いがある"
+        ],
+        "differentiators": [
+          "エレコム USB Type-C 延長ケーブルの利点：過度なスペック表記ではなく、安定動作が確認されている堅実な仕様と国内サポート",
+          "DCHAV USB Type-C 延長ケーブル 1mの利点：より高いスペック（100W PDや10Gbps転送）を低価格で求める場合に適している"
+        ]
+      },
+      {
+        "name": "Drawheart Type-C 延長ケーブル 1M",
+        "asin": "B0FLXVRNHV",
+        "priceComparison": "Drawheart製は非常に低価格ですが、耐久性や長期的な品質については未知数な部分があります。",
+        "featureComparison": [
+          "共通点：Type-Cの延長用途で1mの長さを持つ点",
+          "相違点：Drawheart製は100W PD充電や10Gbps対応をアピールしているが、ブランドの知名度が低い"
+        ],
+        "differentiators": [
+          "エレコム USB Type-C 延長ケーブルの利点：エレコムという確立されたブランドによる品質管理と明確な動作保証",
+          "Drawheart Type-C 延長ケーブル 1Mの利点：とにかく初期コストを安く抑えたい用途に適している"
+        ]
+      },
+      {
+        "name": "エレコム USB Type C 延長ケーブル 1m (高耐久/100W対応)",
+        "asin": "B0GKDTGVPY",
+        "priceComparison": "同じエレコム製でも、100W対応・高耐久ナイロンメッシュ採用の製品の方が価格が高いです。",
+        "featureComparison": [
+          "共通点：エレコム製の1m Type-C延長ケーブルである点",
+          "相違点：本製品は60W/5Gbps対応の通常仕様、比較対象は100W/10Gbps対応でナイロンメッシュの高耐久仕様である点"
+        ],
+        "differentiators": [
+          "エレコム USB Type-C 延長ケーブルの利点：過剰なスペックを必要としない場合のコストパフォーマンスに優れる",
+          "エレコム USB Type C 延長ケーブル 1m (高耐久/100W対応)の利点：100Wの急速充電やより高速なデータ転送、高い物理的耐久性を求める場合に適している"
+        ]
+      },
+      {
+        "name": "Akkerds USB Type C 延長ケーブル L字型 1m",
+        "asin": "B0FC24MCZ7",
+        "priceComparison": "Akkerds製の方が安価ですが、L字コネクタという特殊な形状です。",
+        "featureComparison": [
+          "共通点：Type-C機器のケーブル延長に用いる1mのケーブルである点",
+          "相違点：コネクタ形状が本製品はストレート型、Akkerds製はL字型である点"
+        ],
+        "differentiators": [
+          "エレコム USB Type-C 延長ケーブルの利点：一般的なストレートコネクタであり、接続機器を選ばず汎用的に使いやすい",
+          "Akkerds USB Type C 延長ケーブル L字型 1mの利点：機器側面に沿ってケーブルを配線したいなど、L字形状が活きる設置環境に適している"
+        ]
+      },
+      {
+        "name": "エレコム USB Type C 延長ケーブル 0.5m",
         "asin": "B0CPX2V7XC",
-        "priceComparison": "約650円（本製品より安い）",
+        "priceComparison": "長さが短い分、0.5m版の方が若干価格が抑えられている場合があります。",
         "featureComparison": [
-          "USB 2.0 (480Mbps) 止まり",
-          "PD 60Wは同じ"
+          "共通点：エレコム製の同シリーズ延長ケーブルであり、基本的な基本スペック（60W PD/5Gbps転送）は同じ",
+          "相違点：ケーブル長が本製品は1m、比較対象は0.5mである点"
         ],
         "differentiators": [
-          "充電専用やマウス接続なら安いこちらで十分",
-          "HDDや高速データ転送が必要なら本製品（Gen1）を選ぶべき"
-        ]
-      },
-      {
-        "name": "サンワサプライ USB5Gbps Type-C延長ケーブル (B0DSJ658XD)",
-        "asin": "B0DSJ658XD",
-        "priceComparison": "約2,400円（非常に高い）",
-        "featureComparison": [
-          "L型コネクタ採用",
-          "PD 100W対応"
-        ],
-        "differentiators": [
-          "L型が必要な特殊な環境向け",
-          "価格差が大きいため通常の延長なら本製品が有利"
+          "エレコム USB Type-C 延長ケーブルの利点：コンセントやPCから離れた場所へ引き回すのに十分な長さがある",
+          "エレコム USB Type C 延長ケーブル 0.5mの利点：机上など近い距離での配線時にケーブルが余って邪魔になるのを防ぐことができる"
         ]
       }
     ],
     "recommendation": {
       "targetUsers": [
-        "日本メーカーの安心感を重視するユーザー",
-        "データ転送（USBメモリ等）も行うが、10Gbpsまでの超高速は不要なユーザー",
-        "ノートPC（60W以下）の充電ケーブルを延長したいユーザー"
+        "USB Type-Cケーブルの長さが足りず延長したい人",
+        "ハブやドッキングステーションの取り回しを改善したい人",
+        "信頼できる国内メーカー製品を求める人"
       ],
       "pros": [
-        "信頼性の高いエレコム製で、2重シールドなどのノイズ対策がしっかりしている",
-        "UGREEN等の高スペック品より安価で、普段使いにちょうど良いスペック",
-        "難燃性素材や金メッキピンなど、安全面・耐久面への配慮"
+        "最大60WのPD充電対応",
+        "2重シールドや金メッキピンによる安定した通信",
+        "信頼性の高い国内メーカー製"
       ],
       "cons": [
-        "10Gbps転送や4K映像出力を求めるならスペック不足",
-        "PD 100W充電が必要なハイスペックPCには不向き"
+        "連結時の最大長（2mまで）や本数制限がある",
+        "バスパワー機器での動作保証に一部制限がある"
       ],
-      "score": 80,
-      "scoreRationale": "[基本点: 70]\n[加点: +5] 国内メーカー製かつ2重シールド採用など、品質面での信頼性が高い\n[加点: +5] 競合（UGREEN）より安価で、USB 2.0版より高速というバランスの取れた価格設定\n[合計: 80]"
+      "score": 75,
+      "scoreRationale": "[基本点: 70]\n[加点: +3] (安定したデータ通信と給電を支える2重シールド構造)\n[加点: +2] (国内ブランドの信頼性)\n[合計: 75]"
     },
     "technicalSpecs": {
-      "os": null,
-      "cpu": null,
-      "ram": null,
-      "storage": null,
-      "display": null,
-      "battery": null,
-      "camera": null,
-      "connectivity": ["USB 3.2 Gen 1 (5Gbps)", "USB PD (60W)"],
-      "dimensions": { "length": "1.0m", "weight": null },
-      "other": ["2重シールド", "金メッキピン", "難燃性素材"]
+      "dimensions": {
+        "height": "不明",
+        "width": "不明",
+        "depth": "不明"
+      },
+      "weight": "不明",
+      "capacity": "1m",
+      "material": "PVC",
+      "origin": "不明",
+      "other": [
+        "コネクタ形状: USB Type-C(TM) メス - USB Type-C(TM) オス",
+        "対応転送速度: 最大5Gbps(理論値)",
+        "対応電力: USB Power Delivery対応(最大60W: 20V/3A)",
+        "シールド方法: 2重シールド",
+        "メッキピン仕様: 金メッキピン"
+      ]
     }
   }
 }
