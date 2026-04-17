@@ -1,0 +1,145 @@
+{
+  "analysis": {
+    "productName": "プーマ スニーカー Vコート バルク ユニセックス",
+    "parentAsin": "B09LCF83VY",
+    "productDescription": "ブランドを象徴するディテールをアクセントに効かせたスポーティかつミニマルなルックスが魅力的なプーマスニーカー。SoftFoam+クッションインソールや、グリップ力の高いラバーソールが安定感のある履き心地を提供します。",
+    "productUsage": [
+      "デイリーユース",
+      "カジュアルな外出"
+    ],
+    "positivePoints": [
+      "SoftFoam+によるクッション性に優れた快適な履き心地",
+      "様々なスタイリングに合わせやすいミニマルなデザイン",
+      "グリップ力の高いラバーソール"
+    ],
+    "negativePoints": [
+      "足幅が狭めの作りのため、幅広足の人には窮屈に感じる可能性がある",
+      "ソールの耐久性が低く、短期間で摩耗する可能性がある"
+    ],
+    "useCases": [
+      "日常的な外出や散歩",
+      "カジュアルな服装での通勤・通学"
+    ],
+    "userStories": [
+      {
+        "userType": "日常使いするユーザー",
+        "scenario": "普段の外出時に着用",
+        "experience": "足幅が狭い作りになっており、スリムな足の方向けに感じました。約10週間の使用でソールが摩耗してしまい、耐久性に難があると感じました。",
+        "supportingSourceIds": [
+          "src-amazon-review-sg-1"
+        ],
+        "sentiment": "negative"
+      }
+    ],
+    "userImpression": "スタイリッシュでクッション性があり普段使いしやすい一方で、足幅が狭めでソールの耐久性に不満を持つユーザーも見受けられます。",
+    "sources": [
+      {
+        "id": "src-amazon-review-sg-1",
+        "name": "Amazonシンガポール カスタマーレビュー",
+        "url": "https://www.amazon.co.jp/dp/B09LCF83VY",
+        "tier": "medium",
+        "evidenceType": "primary",
+        "publishedAt": "2026-03-12",
+        "author": "Amazon購入者",
+        "conflictOfInterest": "none",
+        "notes": "約10週間の使用でソールが摩耗した。足幅が狭い作りであるとの指摘。"
+      },
+      {
+        "id": "src-amazon-page",
+        "name": "Amazon商品詳細ページ",
+        "url": "https://www.amazon.co.jp/dp/B09LCF83VY",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-04-17",
+        "author": "PUMA",
+        "conflictOfInterest": "disclosed",
+        "notes": "商品説明、仕様、価格、割引率などの公式情報を確認。"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "SoftFoam+インソールによる高いクッション性",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-amazon-page"
+        ],
+        "crossChecked": false,
+        "notes": "公式の商品説明に記載あり"
+      },
+      {
+        "claim": "ソールの耐久性が低い",
+        "category": "durability",
+        "confidence": "low",
+        "supportingSourceIds": [
+          "src-amazon-review-sg-1"
+        ],
+        "crossChecked": false,
+        "notes": "一部のユーザーレビューからの指摘"
+      }
+    ],
+    "lastInvestigated": "2026-04-17",
+    "competitiveAnalysis": [
+      {
+        "name": "アディダス スニーカー VL COURT ベース メンズ NLF52",
+        "asin": "B0CJTZLZZ5",
+        "priceComparison": "対象商品（プーマ）はアディダスより若干安価であり、コストパフォーマンスに優れています。",
+        "featureComparison": [
+          "共通点：コート系デザインのローカットスニーカーであり、人工皮革をメインアッパーに使用している点。",
+          "相違点：アディダスは一部天然皮革を使用しており、プーマは合成繊維と人工皮革の組み合わせ。インソールのクッション技術（プーマのSoftFoam+など）が異なる。"
+        ],
+        "differentiators": [
+          "プーマ スニーカー Vコート バルクの利点：SoftFoam+による快適なクッション性と、より手頃な価格。",
+          "アディダス スニーカー VL COURT ベースの利点：一部天然皮革を使用しており、アディダス特有の3ストライプスデザインを好む場合に適している。"
+        ]
+      },
+      {
+        "name": "アシックス スニーカー LYTE CLASSIC メンズ",
+        "asin": "B0DL5ZB316",
+        "priceComparison": "対象商品（プーマ）はアシックスより安価であり、コスト面で有利です。",
+        "featureComparison": [
+          "共通点：コート系・クラシック系デザインのローカットスニーカーである点。",
+          "相違点：アシックスはランニングシューズのヘリテージを引き継ぐデザインで、クッション材としてEVAなどを採用している一方、プーマはバルカナイズド風のソールとSoftFoam+インソールを採用しています。"
+        ],
+        "differentiators": [
+          "プーマ スニーカー Vコート バルクの利点：SoftFoam+による快適なクッション性と、より手頃な価格。",
+          "アシックス スニーカー LYTE CLASSICの利点：アシックスストライプのデザインと、ランニングシューズ由来の快適性・歩きやすさを重視する場合に適している。"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "足幅が細身から普通の人",
+        "手頃な価格でスポーティなスニーカーを探している人",
+        "日常使いの歩きやすい靴を求めている人"
+      ],
+      "pros": [
+        "手頃な価格",
+        "SoftFoam+による快適なクッション",
+        "どんな服にも合わせやすいシンプルなデザイン"
+      ],
+      "cons": [
+        "足幅が狭い作り",
+        "ソールの耐久性に懸念がある"
+      ],
+      "score": 65,
+      "scoreRationale": "[基本点: 70]\n[加点: +10] (参考価格から40%OFFの高いコストパフォーマンス)\n[加点: +5] (SoftFoam+インソールによる快適な履き心地)\n[減点: -5] (一部レビューで指摘されているソールの耐久性の低さ)\n[減点: -5] (一部レビューで指摘されている足幅の狭さ)\n[減点: -10] (競合商品が多数存在する中での独自性の薄さ)\n[合計: 65]"
+    },
+    "technicalSpecs": {
+      "dimensions": {
+        "height": "79.99mm",
+        "width": "195.00mm",
+        "depth": "254.99mm"
+      },
+      "weight": "約700g (両足・箱等含む総重量と推定)",
+      "capacity": "1足",
+      "material": "アッパー: 人工皮革+合成繊維、ミッドソール: ラバー、アウトソール: ゴム底",
+      "origin": "不明",
+      "other": [
+        "SoftFoam+クッションインソール搭載",
+        "ローカット",
+        "シューレース式"
+      ]
+    }
+  }
+}
