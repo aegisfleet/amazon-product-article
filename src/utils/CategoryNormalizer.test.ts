@@ -142,6 +142,7 @@ describe('CategoryNormalizer', () => {
         '理美容以外の本体',
         'ドラッグストア HOTW',
         '第2類医薬品-濫用の恐れ無し',
+        'CC installments Banner4',
         'ビューティー',
         'ビューティーストア',
       ];
