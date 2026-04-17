@@ -1,0 +1,101 @@
+{
+  "analysis": {
+    "productName": "Logicool G G333 ゲーミングイヤホン",
+    "parentAsin": "B0FT7Q8N2Y",
+    "productDescription": "デュアルダイナミックドライバーを搭載した、PC、PS4/PS5、Switch、スマートフォンなど多デバイス対応の有線ゲーミングイヤホンです。アルミハウジングと3.5mm/USB-C両対応の接続性を持ちます。",
+    "productUsage": ["ゲームプレイ（特にFPS/TPS）", "ボイスチャット", "音楽鑑賞"],
+    "positivePoints": ["アルミハウジングで耐久性が高い", "3.5mm接続に加え、USB-Cアダプタが付属し汎用性が高い", "インラインマイク付きで手元で音量調整とマイク操作が可能"],
+    "negativePoints": ["FPSで上下や重なった音の定位が分かりづらいという意見がある", "有線特有のケーブルの煩わしさがある"],
+    "useCases": ["外出先でのSwitchやスマートフォンでのゲームプレイ", "PS4/PS5のコントローラーに直挿ししてのボイスチャット"],
+    "userStories": [
+      {
+        "userType": "FPSゲーマー",
+        "scenario": "FPSゲーム（タルコフやValorant）で定位感の確認",
+        "experience": "耳へのフィット感は良く、外れにくい点は評価できる。しかし、上下の音や、重なった銃声がどこから鳴っているか判断しづらく、競技性の高いFPSには不向きだと感じた。",
+        "supportingSourceIds": ["src-kakaku-review1"],
+        "sentiment": "negative"
+      }
+    ],
+    "userImpression": "ビルドクオリティが高く、様々なデバイスで気軽に使える点は高評価だが、FPSなどの定位感が重要なゲーム用途としては意見が分かれるイヤホン。",
+    "sources": [
+      {
+        "id": "src-kakaku-review1",
+        "name": "価格.com - ロジクール G333 Gaming Earphones レビュー・評価",
+        "url": "https://review.kakaku.com/review/J0000037767/",
+        "tier": "medium",
+        "evidenceType": "secondary",
+        "publishedAt": "2022-08-31",
+        "author": "価格.com ユーザー",
+        "conflictOfInterest": "none",
+        "notes": "FPS(タルコフ、Valorant)において、上下の音や重なった音の判断がしづらいとの指摘"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "FPSゲームにおいて、上下の音の定位や重なった音の聞き分けが困難である",
+        "category": "quality",
+        "confidence": "medium",
+        "supportingSourceIds": ["src-kakaku-review1"],
+        "crossChecked": false,
+        "notes": "Kakaku.comのユーザーレビューによる。全てのプレイヤーに当てはまるかは不明だが、FPS用途では注意が必要"
+      }
+    ],
+    "lastInvestigated": "2026-04-17",
+    "competitiveAnalysis": [
+      {
+        "name": "Sony INZONE Buds WF-G700N",
+        "asin": "B0CKFC9BKT",
+        "priceComparison": "INZONE Budsは完全ワイヤレス・アクティブノイズキャンセリング搭載のハイエンドモデルであり、G333よりも大幅に価格が高い。利便性と音質を極めるならINZONE Buds、手軽に有線で多デバイスに繋ぐならG333。",
+        "featureComparison": [
+          "共通点：ゲーミング用途に最適化されたイヤホン、PS5/PC等の複数デバイス対応",
+          "相違点：G333は有線(3.5mm/USB-C)、INZONE Budsは完全ワイヤレス(2.4GHz USB-C/LE Audio)かつノイズキャンセリング搭載"
+        ],
+        "differentiators": [
+          "Logicool G G333の利点：バッテリー残量を気にせず使用可能。価格が安く、導入ハードルが低い。",
+          "Sony INZONE Budsの利点：ケーブルの煩わしさがなく、ノイズキャンセリングによる高い没入感と、立体音響・個人最適化による優れた定位感"
+        ]
+      },
+      {
+        "name": "SteelSeries Arctis GameBuds",
+        "asin": "B0DF2KLHSR",
+        "priceComparison": "Arctis GameBudsはワイヤレスでノイズキャンセリング機能を持ち、高価格帯。ワイヤレスの利便性と豊富なEQ設定を求めるならArctis GameBuds、手頃な価格と有線の確実性を求めるならG333。",
+        "featureComparison": [
+          "共通点：様々なプラットフォーム(PS5/Switch/PC/スマホ)に対応",
+          "相違点：G333は有線接続専用、Arctis GameBudsは2.4GHzワイヤレスおよびBluetooth 5.3の同時接続に対応し、ワイヤレスQi充電可能なケース付き"
+        ],
+        "differentiators": [
+          "Logicool G G333の利点：有線接続によるゼロ遅延と、充電不要な点。",
+          "SteelSeries Arctis GameBudsの利点：専用アプリによる100以上のEQプリセット、ANC機能、Bluetoothと2.4GHzのシームレスな切り替え"
+        ]
+      },
+      {
+        "name": "HyperX Cloud Earbuds 2",
+        "asin": "B0C14FS8FP",
+        "priceComparison": "Cloud Earbuds 2とG333は同等の価格帯。マイク付き有線ゲーミングイヤホンとして直接の競合となる。",
+        "featureComparison": [
+          "共通点：有線接続でインラインマイク搭載。スマートフォン、Switch、PCなどに適している。",
+          "相違点：G333はデュアルドライバーとUSB-Cアダプタ同梱。Cloud Earbuds 2は14mmドライバーで90度プラグを採用。"
+        ],
+        "differentiators": [
+          "Logicool G G333の利点：USB-Cアダプタが標準付属し、イヤホンジャックがないスマホやPCにもすぐ接続できる。アルミハウジングの堅牢性。",
+          "HyperX Cloud Earbuds 2の利点：薄型の90度プラグでケーブルの引っ掛かりを軽減でき、ケース付きで持ち運びに優れる。"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": ["Switchやスマホなど、複数のデバイスで手軽に有線イヤホンを使いたいユーザー", "充電の手間や遅延を避けたいゲーマー", "予算を抑えつつビルドクオリティの高いイヤホンが欲しい人"],
+      "pros": ["USB-Cアダプタ付属でデバイスを選ばない", "デュアルドライバーによる迫力のあるサウンド", "アルミハウジングで耐久性が高く見た目が良い"],
+      "cons": ["FPSなどでのシビアな音の定位には不向きな場合がある", "有線ケーブルが煩わしく感じる場合がある"],
+      "score": 75,
+      "scoreRationale": "[基本点: 70]\n[加点: +5] (USB-Cアダプタ付属により最新のスマホやPCなど幅広いデバイスへの接続性が高い)\n[加点: +5] (アルミニウムハウジングによる高い耐久性と質感を備える)\n[減点: -5] (FPS用途において、上下の音や重なった音の定位感が分かりづらいとの指摘がある)\n[合計: 75]"
+    },
+    "technicalSpecs": {
+      "dimensions": { "height": "25.0mm", "width": "12.0mm", "length": "1200.0mm" },
+      "weight": "19g",
+      "capacity": "N/A",
+      "material": "アルミニウムハウジング、シリコン製イヤーチップ",
+      "origin": "不明",
+      "other": ["接続方式: 3.5mm Aux接続 または USB-C (付属アダプター使用)", "ドライバー: 5.8mm および 9.2mm デュアルダイナミックドライバー", "インラインマイク搭載（ボリュームコントロール機能付き）", "保証: 2年間メーカー保証"]
+    }
+  }
+}
