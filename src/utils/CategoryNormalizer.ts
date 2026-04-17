@@ -371,6 +371,7 @@ export class CategoryNormalizer {
       /第[123一二三]類医薬品/i,
       /濫用の恐れ/i,
       /その他の.*(?:書籍|本|関連)$/,
+      /banner|installments|membership/i,
     ];
 
     if (invalidPatterns.some((pattern) => pattern.test(name))) {
