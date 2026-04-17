@@ -1,0 +1,182 @@
+{
+  "analysis": {
+    "productName": "コムテック ドライブレコーダー ZDR065",
+    "parentAsin": "B0FDK55FLZ",
+    "productDescription": "コムテックのフロントWQHD 370万画素、前後STARVIS 2搭載の高画質・高機能な2カメラドライブレコーダーです。",
+    "productUsage": [
+      "自動車の運転中の映像記録",
+      "夜間・低照度環境での鮮明な録画",
+      "駐車監視(オプション)"
+    ],
+    "positivePoints": [
+      "フロントカメラがWQHD(370万画素)と高精細でフルHDより鮮明",
+      "前後カメラともにSTARVIS 2搭載により夜間や暗所での撮影に強い",
+      "後続車両接近お知らせ機能など多彩な運転支援機能を搭載",
+      "安心の日本製、3年保証付き"
+    ],
+    "negativePoints": [
+      "価格が2万円台後半と、海外製やエントリー機と比較すると高価",
+      "駐車監視機能の利用には別売オプションが必要になる場合が多い"
+    ],
+    "useCases": [
+      "夜間のドライブが多い方",
+      "高画質でナンバープレートなどの証拠を残したい方",
+      "あおり運転対策"
+    ],
+    "userStories": [
+      {
+        "userType": "夜間運転が多いドライバー",
+        "scenario": "仕事で夜遅くに帰宅する際、街灯の少ない道を走る状況",
+        "experience": "前後STARVIS 2のおかげで、これまでのドラレコでは真っ暗だった道でも周囲の様子が明るく録画されており、ノイズも少なくて非常に安心感があります。",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "sentiment": "positive"
+      }
+    ],
+    "userImpression": "価格に見合う高い基本性能（WQHD画質、前後STARVIS 2）と、日本製・3年保証による安心感が評価されています。特に夜間の鮮明な映像に対する満足度が高いです。",
+    "sources": [
+      {
+        "id": "src-1",
+        "name": "Amazon商品ページ B0FDK55FLZ",
+        "url": "https://www.amazon.co.jp/dp/B0FDK55FLZ",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-04-17",
+        "author": "Amazon",
+        "conflictOfInterest": "none",
+        "notes": "商品の基本スペック、メーカー公式情報、およびユーザーレビューの傾向を確認"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "前後ともにSTARVIS 2搭載で夜間撮影性能が向上し、低ノイズ・高鮮明な映像が記録可能",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "crossChecked": true,
+        "notes": "メーカー公式仕様に記載"
+      }
+    ],
+    "lastInvestigated": "2026-04-17",
+    "competitiveAnalysis": [
+      {
+        "name": "コムテック ZDR055",
+        "asin": "B0CK4RLC3J",
+        "priceComparison": "対象商品とほぼ同等の価格帯（約22,000円台）。フロントカメラの解像度の違いが主な差。",
+        "featureComparison": [
+          "共通点：前後2カメラ、前後STARVIS 2搭載、日本製、3年保証、運転支援機能搭載",
+          "相違点：対象商品はフロントWQHD(370万画素)なのに対し、ZDR055はフロントFullHD(200万画素)"
+        ],
+        "differentiators": [
+          "コムテック ドライブレコーダー ZDR065の利点：フロントカメラが高解像度でより詳細な記録が可能",
+          "コムテック ZDR055の利点：機能が少しシンプルでFullHDで十分な場合の選択肢"
+        ]
+      },
+      {
+        "name": "VANTRUE N4S",
+        "asin": "B0G815PK68",
+        "priceComparison": "対象商品よりやや高価（約26,000円台）。カメラの数と録画解像度が異なる。",
+        "featureComparison": [
+          "共通点：STARVIS 2センサー搭載、高画質録画対応、駐車監視機能(オプション)",
+          "相違点：対象商品が前後2カメラなのに対し、N4Sは3カメラ(前・車内・後)で車内撮影に対応。Wi-Fi機能もN4Sは搭載"
+        ],
+        "differentiators": [
+          "コムテック ドライブレコーダー ZDR065の利点：日本製・3年保証で品質への安心感が強い",
+          "VANTRUE N4Sの利点：車内カメラが必要なタクシーやライドシェア向け、スマホ連携(Wi-Fi)が便利"
+        ]
+      },
+      {
+        "name": "VIOFO A119 MINI 2",
+        "asin": "B0C6DR8W73",
+        "priceComparison": "対象商品より安価（約15,000円）。カメラ数と機能が異なる。",
+        "featureComparison": [
+          "共通点：Sony STARVIS 2搭載、高画質録画(2K)",
+          "相違点：対象商品が前後2カメラなのに対し、A119 MINI 2はフロント1カメラの超小型モデル。Wi-Fiと音声コントロールを搭載"
+        ],
+        "differentiators": [
+          "コムテック ドライブレコーダー ZDR065の利点：リアカメラがあり後方からのあおり運転などにも対応可能",
+          "VIOFO A119 MINI 2の利点：非常に小型で視界の妨げにならず、安価にSTARVIS 2のフロントカメラを導入できる"
+        ]
+      },
+      {
+        "name": "ユピテル SN-TW9600d",
+        "asin": "B08L533213",
+        "priceComparison": "対象商品より安価（約18,000円）。センサー世代や機能に差がある。",
+        "featureComparison": [
+          "共通点：前後2カメラ、STARVIS搭載、3年保証",
+          "相違点：対象商品はSTARVIS 2・フロントWQHDだが、こちらはSTARVIS(第1世代)で前後FullHD"
+        ],
+        "differentiators": [
+          "コムテック ドライブレコーダー ZDR065の利点：次世代センサー(STARVIS 2)と高解像度による優れた夜間・暗所撮影能力",
+          "ユピテル SN-TW9600dの利点：価格が抑えられており、コストを抑えつつ国内メーカーの前後2カメラが欲しい場合に適する"
+        ]
+      },
+      {
+        "name": "ユピテル SN-TW6100c",
+        "asin": "B0FSKBSVF5",
+        "priceComparison": "対象商品より安価（約18,000円台）。SDカードメンテナンスフリーなどの機能が異なる。",
+        "featureComparison": [
+          "共通点：前後2カメラ、フロントSTARVIS搭載",
+          "相違点：対象商品が前後STARVIS 2なのに対し、こちらはフロントのみSTARVIS。SDカードフォーマット不要機能をアピール"
+        ],
+        "differentiators": [
+          "コムテック ドライブレコーダー ZDR065の利点：リアカメラもSTARVIS 2で夜間の後方映像がより鮮明",
+          "ユピテル SN-TW6100cの利点：SDカードフォーマット不要で日々の運用・メンテナンスが楽"
+        ]
+      },
+      {
+        "name": "セルスター CS-91FH",
+        "asin": "B07ZKKFL4B",
+        "priceComparison": "対象商品より安価だが当時の定価帯や機能面で異なる。型落ちモデル。",
+        "featureComparison": [
+          "共通点：前後2カメラ、STARVIS搭載、日本製、3年保証",
+          "相違点：対象商品は最新のSTARVIS 2・WQHDだが、CS-91FHは2019年モデルでFullHD、センサーも旧世代"
+        ],
+        "differentiators": [
+          "コムテック ドライブレコーダー ZDR065の利点：最新のセンサーと高解像度で画質が圧倒的に優れている",
+          "セルスター CS-91FHの利点：型落ちのため中古などで安く手に入る可能性がある"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "夜間やトンネルなど暗所での走行が多い方",
+        "画質に妥協せず、いざという時の証拠能力を高めたい方",
+        "海外製より日本製の品質や長期保証を重視する方"
+      ],
+      "pros": [
+        "フロントWQHD、前後STARVIS 2による圧倒的な夜間撮影能力",
+        "充実した安全運転支援機能",
+        "日本製・3年保証による信頼性"
+      ],
+      "cons": [
+        "やや価格が高い",
+        "駐車監視が別売オプション"
+      ],
+      "score": 88,
+      "scoreRationale": "[基本点: 70]\n[加点: +10] フロントWQHD(370万画素)と前後STARVIS 2搭載による極めて高い基本性能・録画品質\n[加点: +5] 日本製・3年保証という高い信頼性とユーザー満足度\n[加点: +5] 豊富な安全運転支援機能による実用性の高さ\n[減点: -2] 同等機能の海外製品と比較するとコスパの面でやや劣る\n[合計: 88]"
+    },
+    "technicalSpecs": {
+      "dimensions": {
+        "height": "58.4mm",
+        "width": "92.4mm",
+        "depth": "29.2mm"
+      },
+      "weight": "118g",
+      "capacity": "1",
+      "material": "プラスチック等",
+      "origin": "日本",
+      "other": [
+        "フロントカメラ画素数: 370万画素(WQHD)",
+        "リアカメラ画素数: 200万画素(FullHD)",
+        "センサー: 前後1/2.8型CMOSセンサー(STARVIS 2)",
+        "フロント画角: 水平134° 垂直70°(対角160°)",
+        "リア画角: 水平138° 垂直70°(対角168°)",
+        "F値: 前後1.8"
+      ]
+    }
+  }
+}
