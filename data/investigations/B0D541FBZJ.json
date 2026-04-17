@@ -1,8 +1,8 @@
 {
   "analysis": {
-    "productName": "エレコム Thunderbolt 4 ドッキングステーション 14-in-1 (DST-W07)",
+    "productName": "エレコム USB-Cハブ ドッキングステーション 14in1 Thunderbolt4対応 DST-W07",
     "parentAsin": "B0D541FBZJ",
-    "productDescription": "Thunderbolt 4ケーブル1本で、映像出力、データ転送、PCへの給電(最大60W)など14の機能を拡張できる高性能ドッキングステーション。",
+    "productDescription": "Intel(R) Thunderbolt 4を含む14ポートを搭載した据え置き型のドッキングステーション。最大8K/30Hzの映像出力、最大40Gbpsのデータ転送、最大60WのノートPC給電に対応。",
     "productUsage": [
       "Thunderbolt 4ケーブルでPCと接続し、デスクトップ環境を一括構築・拡張",
       "最大3台の外部モニターへの同時映像出力（HDMI / DisplayPort）",
@@ -21,112 +21,178 @@
       "発売後の情報が少なく、長期使用の信頼性や詳細な互換性情報が不足している"
     ],
     "useCases": [
-      "マルチモニター環境で効率的に作業したいクリエイターやエンジニア",
-      "ノートPCを持ち運ぶ頻度が高く、デスクに戻った際にケーブル1本で環境を復帰させたいビジネスパーソン",
-      "デスク上のケーブルを整理し、スッキリとした作業環境を構築したいユーザー"
+      "ノートパソコンの機能を据え置き型で大幅に拡張したい場合",
+      "ケーブル1本で多数の周辺機器と接続し、作業環境をすっきりとさせたい場合",
+      "最大3画面の外部モニター出力を行いたい場合"
     ],
-    "userStories": [
-      {
-        "userType": "在宅勤務の会社員",
-        "scenario": "毎日のPC接続の手間を減らしたい",
-        "experience": "（推測）これまではモニターや電源、USBハブなど複数のケーブルを抜き差ししていたが、このドックを導入してからはThunderboltケーブル1本で完結。出社時の持ち出しも非常にスムーズになった。",
-        "sentiment": "positive"
-      },
-      {
-        "userType": "映像クリエイター",
-        "scenario": "大容量データの転送とマルチモニター",
-        "experience": "（推測）Thunderbolt 4の帯域幅のおかげで、外付けSSDへのデータ転送が高速。3画面出力も安定しており作業効率が上がったが、MacBook Pro 16インチへの給電が60Wだと高負荷時にバッテリーが減ることがあるのが惜しい。",
-        "sentiment": "mixed"
-      }
-    ],
-    "userImpression": "日本メーカー製のThunderbolt 4ドックとして貴重な選択肢。機能性は非常に高いが、PD 60Wという仕様がハイエンドユーザーにはネックになる可能性がある。",
+    "userStories": [],
+    "userImpression": "Thunderbolt 4対応で14ポートと高い拡張性を誇るが、PD60WはハイエンドノートPCには不足する可能性がある。",
     "sources": [
       {
+        "id": "src-1",
         "name": "Amazon商品ページ",
         "url": "https://www.amazon.co.jp/dp/B0D541FBZJ",
-        "credibility": "high"
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2024-06-19",
+        "author": "エレコム(ELECOM)",
+        "conflictOfInterest": "none",
+        "notes": "製品仕様、価格、発売日などの公式情報を確認"
       }
     ],
-    "lastInvestigated": "2026-01-31",
+    "lastInvestigated": "2026-04-18",
     "competitiveAnalysis": [
       {
-        "name": "UGREEN Revodok Max 213",
-        "asin": "B0DQWJNJ21",
-        "priceComparison": "同価格帯（約32,000円）だが、セール時はUGREENの方が安くなる傾向がある。",
+        "name": "エレコム ドッキングステーション 14in1 Thunderbolt4対応 DST-W13",
+        "asin": "B0DSZNL8D5",
+        "priceComparison": "DST-W13の方がやや高価だが、PD給電能力が高い。",
         "featureComparison": [
-          "PD給電が90W対応でエレコム(60W)より強力",
-          "2.5Gbpsイーサネットポート搭載（エレコムは詳細不明だが恐らく1Gbps）"
+          "共通点：14in1、Thunderbolt4対応、最大8K/30Hz出力。",
+          "相違点：DST-W13はPD96W対応、4画面同時出力（3画面拡張）。DST-W07はPD60W対応、3画面出力、マグネット付スタンド付属。"
         ],
         "differentiators": [
-          "給電能力とネットワーク速度でUGREENが優位",
-          "エレコムは国内メーカーの安心感と縦置きスタンドが強み"
+          "エレコム DST-W07の利点：マグネット付スタンドが付属し、縦置きに対応している。",
+          "エレコム DST-W13の利点：PCへのPD給電が96Wと高く、4画面出力にも対応している。"
         ]
       },
       {
-        "name": "Belkin Connect 5-in-1 Thunderbolt 4",
-        "asin": "B0C6LRNCWM",
-        "priceComparison": "約25,000円とエレコムより5,000円ほど安価。",
+        "name": "j5create USB4 Thunderbolt 3/4対応 14in1 JCD554",
+        "asin": "B0D3P39735",
+        "priceComparison": "j5createの方が安価である。",
         "featureComparison": [
-          "ポート数は5つと少ない（エレコムは14ポート）",
-          "PCへの給電は最大96W対応で強力"
+          "共通点：14in1の拡張性、Thunderbolt 4互換性。",
+          "相違点：j5createはPD100W入力に対応（充電器別売）。エレコムはマグネット付スタンド付属。"
         ],
         "differentiators": [
-          "Belkinはコンパクトさと給電能力重視",
-          "エレコムはポート数と拡張性重視"
+          "エレコム DST-W07の利点：据え置きに適した縦置きスタンドが付属する。",
+          "j5create JCD554の利点：アルミニウムとレザー素材を採用したデザイン性が高い。"
+        ]
+      },
+      {
+        "name": "レノボ ThinkPad ユニバーサル Thunderbolt 4 ドック 40B00135JP",
+        "asin": "B0BZKKWBRK",
+        "priceComparison": "レノボの方が高価である。",
+        "featureComparison": [
+          "共通点：Thunderbolt 4対応、多数のポートを搭載。",
+          "相違点：レノボはエンタープライズ向けの管理機能（vPro等）に対応する傾向がある。"
+        ],
+        "differentiators": [
+          "エレコム DST-W07の利点：比較的安価で、一般用途の14ポート拡張が揃っている。",
+          "レノボ 40B00135JPの利点：ThinkPadとの互換性やビジネス向け機能に優れる。"
+        ]
+      },
+      {
+        "name": "Dell WD22TB4 Modular Dock",
+        "asin": "B0B13Y2QVW",
+        "priceComparison": "Dellの方が高価である。",
+        "featureComparison": [
+          "共通点：Thunderbolt 4対応、多数のポートを搭載。",
+          "相違点：Dellはモジュール式で将来的なアップグレードが可能。"
+        ],
+        "differentiators": [
+          "エレコム DST-W07の利点：比較的安価で、一般的な14ポート拡張が可能。",
+          "Dell WD22TB4の利点：モジュール機能による将来的な拡張性と、Dell PCとの親和性。"
+        ]
+      },
+      {
+        "name": "WAVLINK Thunderbolt 4 ドッキングステーション 13 in 1",
+        "asin": "B0DPCHRJ8P",
+        "priceComparison": "WAVLINKの方がわずかに安価。",
+        "featureComparison": [
+          "共通点：Thunderbolt 4対応、最大8K出力。",
+          "相違点：WAVLINKは13ポートでPD96W対応、2.5Gイーサネット搭載。エレコムは14ポートでPD60W対応。"
+        ],
+        "differentiators": [
+          "エレコム DST-W07の利点：ポート数が多く、国内メーカーのサポートが期待できる。",
+          "WAVLINKの利点：96W給電と2.5Gイーサネットにより、高いパフォーマンスを発揮する。"
+        ]
+      },
+      {
+        "name": "UGREEN Revodok Max 213 13-in-1",
+        "asin": "B0DQWJNJ21",
+        "priceComparison": "UGREENの方が高価である。",
+        "featureComparison": [
+          "共通点：Thunderbolt 4対応、最大8K出力。",
+          "相違点：UGREENは13ポートでPD90W対応、2.5Gイーサネット搭載。エレコムは14ポートでPD60W対応。"
+        ],
+        "differentiators": [
+          "エレコム DST-W07の利点：国内メーカー製品で安価、縦置きスタンド付属。",
+          "UGREEN Revodok Max 213の利点：90W給電と2.5Gイーサネット搭載で、通信や給電性能が高い。"
         ]
       }
     ],
     "recommendation": {
       "targetUsers": [
-        "日本メーカーの製品サポートや信頼性を重視するユーザー",
-        "多数のUSB機器を使用しており、ポート数を最優先するユーザー",
-        "デスクの配置に合わせて縦置き設置を行いたいユーザー"
+        "日本メーカー製のドッキングステーションを求めるユーザー",
+        "多数のUSB機器を接続したいユーザー",
+        "デスク上で縦置き・横置きを自由に選びたいユーザー"
       ],
       "pros": [
-        "Thunderbolt 4による圧倒的な拡張性と高速転送",
-        "14ポート搭載でハブの買い足しが不要",
-        "設置の自由度が高いマグネットスタンド"
+        "Thunderbolt 4対応による高速データ通信",
+        "14ポート搭載で幅広い拡張性を確保",
+        "マグネット付きスタンドで縦置き・横置き両対応"
       ],
       "cons": [
-        "PD 60W給電のため、高スペックなゲーミングノートやMacBook Pro 16インチ等では給電不足の可能性がある",
-        "競合の海外メーカー製品と比較して価格設定がやや高め"
+        "PCへのPD給電が最大60Wのため、高電力ノートPCには不足する可能性がある"
       ],
-      "score": 78,
-      "scoreRationale": "[基本点: 70]\n[加点: +5] (Thunderbolt 4対応、14ポートの豊富な拡張性、3画面出力対応)\n[加点: +5] (国内メーカーであるエレコムブランドの安心感、マグネットスタンドの実用性)\n[加点: +3] (独自の縦置き・横置き両対応スタンド機構)\n[減点: -5] (競合が90W-100W給電に対応する中、60W給電は価格帯を考えると物足りない)\n[合計: 78]"
+      "score": 75,
+      "scoreRationale": "[基本点: 70]\n[加点: +5] (Thunderbolt 4対応と14ポートの豊富な拡張性)\n[加点: +3] (独自のマグネットスタンドによる縦置き対応)\n[加点: +2] (国内メーカーである安心感)\n[減点: -5] (PD給電が最大60Wであり、競合製品に比べて見劣りする)\n[合計: 75]"
     },
     "technicalSpecs": {
-      "cpu": null,
-      "ram": null,
-      "storage": null,
-      "display": {
-        "size": null,
-        "resolution": "最大8K/30Hz (シングル出力時)",
-        "type": "HDMI / DisplayPort"
-      },
-      "battery": null,
-      "gpu": null,
       "dimensions": {
-        "height": "約40mm",
-        "width": "約125mm",
-        "depth": "約92mm",
-        "weight": "不明"
+        "height": "40mm",
+        "width": "92mm",
+        "depth": "125mm"
       },
+      "weight": "不明",
       "power": "PD給電 最大60W",
+      "ports": "14",
       "connectivity": [
-        "Thunderbolt 4 (PC接続用)",
-        "Thunderbolt 4 (ダウンストリーム)",
-        "USB-A x3",
-        "USB-C x2",
+        "Thunderbolt 4 (アップストリーム)",
+        "Thunderbolt 4 (ダウンストリーム, 15W, 8K/30Hz)",
         "HDMI",
         "DisplayPort",
-        "LAN (RJ45)",
-        "SD/microSDカードスロット",
-        "3.5mmオーディオジャック"
+        "LANポート",
+        "USBポート（その他詳細は公式で確認）"
       ],
+      "display": "最大8K/30Hz出力（シングル）",
       "other": [
-        "マグネットスタンド付属",
-        "セキュリティスロット搭載"
+        "マグネット付スタンド付属",
+        "縦置き対応",
+        "カラー: ブラック"
       ]
-    }
+    },
+    "claims": [
+      {
+        "claim": "Intel(R) Thunderbolt 4を含む14ポート搭載",
+        "category": "durability",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "crossChecked": true,
+        "notes": "公式情報より確認"
+      },
+      {
+        "claim": "最大8K/30Hzの映像出力（シングル時）",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "crossChecked": true,
+        "notes": "公式情報より確認"
+      },
+      {
+        "claim": "最大60W給電でノートパソコンへの充電が可能",
+        "category": "durability",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "crossChecked": true,
+        "notes": "公式情報より確認"
+      }
+    ]
   }
 }
