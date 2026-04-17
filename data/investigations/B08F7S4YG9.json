@@ -29,70 +29,127 @@
     ],
     "userStories": [
       {
-        "userType": "FPS初心者（大学生）",
+        "userType": "FPS初心者",
         "scenario": "友人に誘われてApex Legendsを始めたが、敵の位置がわからず勝てなかったため購入。",
-        "experience": "今まで使っていたイヤホンとは別世界で、敵が右から来ているのか左から来ているのかがはっきり分かるようになった。おかげで不意打ちされることが減り、キル数も増えた。6,000円台でこの性能は学生には本当にありがたい。",
+        "experience": "今まで使っていたイヤホンとは別世界で、敵が右から来ているのか左から来ているのかがはっきり分かるようになった。おかげで不意打ちされることが減り、キル数も増えた。6,000円台でこの性能は本当にありがたい。",
+        "supportingSourceIds": [
+          "src-2"
+        ],
         "sentiment": "positive"
       },
       {
-        "userType": "30代 リモートワーカー",
+        "userType": "リモートワーカー兼ゲーマー",
         "scenario": "仕事のWeb会議と趣味のゲームを両立できるヘッドセットを探していた。",
-        "experience": "マイク音質が非常に良く、会議でも聞き返されることがなくなった。遮音性が高いので集中できるが、3時間ほど連続して着けていると耳の周りが圧迫されて痛くなることがあるため、適度な休憩が必要だと感じた。",
+        "experience": "マイク音質が非常に良く、会議でも聞き返されることがなくなった。遮音性が高いので集中できるが、長時間の使用だと耳の周りが圧迫されて痛くなることがあるため、適度な休憩が必要だと感じた。",
+        "supportingSourceIds": [
+          "src-2"
+        ],
         "sentiment": "mixed"
       }
     ],
     "userImpression": "「コスパ最強」という評価が圧倒的に多い。特にFPSゲーマーからの支持が厚く、定位感の良さが繰り返し称賛されている。一方で、装着感（側圧の強さ）については好みが分かれ、ここが唯一の欠点として挙げられることが多い。耐久性やケーブルの取り回しについても価格なりという意見があるが、総合的な満足度は非常に高い。",
     "sources": [
       {
-        "name": "GameWatch: Razer BlackShark V2 X Review",
-        "url": null,
-        "credibility": "信頼できるゲームメディアによるレビュー"
+        "id": "src-1",
+        "name": "Amazon公式サイト 製品仕様",
+        "url": "https://www.amazon.co.jp/dp/B08F7S4YG9",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2020-08-18",
+        "author": "Razer",
+        "conflictOfInterest": "none",
+        "notes": "製品の基本スペックや特徴を確認"
       },
       {
-        "name": "Amazon Customer Reviews",
+        "id": "src-2",
+        "name": "Amazon カスタマーレビュー",
         "url": "https://www.amazon.co.jp/dp/B08F7S4YG9",
-        "credibility": "実際の購入者による多数のレビュー"
+        "tier": "high",
+        "evidenceType": "secondary",
+        "publishedAt": "2026-04-17",
+        "author": "一般ユーザー",
+        "conflictOfInterest": "none",
+        "notes": "音質、定位感、フィット感、軽量設計に関するユーザーの評価を確認"
       }
     ],
-    "lastInvestigated": "2026-02-06",
+    "lastInvestigated": "2026-04-17",
     "competitiveAnalysis": [
       {
         "name": "HyperX Cloud Stinger 2",
         "asin": "B0BCFKG49M",
-        "priceComparison": "約6,100円。本製品とほぼ同価格帯の直接的なライバル。",
+        "priceComparison": "対象商品とほぼ同価格帯の直接的なライバル。PC環境でのDTS Headphone:X Spatial Audio対応でサラウンド機能を重視するかに応じて選択が変わる。",
         "featureComparison": [
-          "重量は約275gと少し重いが、DTS Headphone:X Spatial Audioに対応（PC）。",
-          "マイクは跳ね上げ式ミュート機能を搭載（BlackSharkはボタン式）。"
+          "共通点：軽量設計、有線接続（3.5mmジャック）、ノイズキャンセリングマイク搭載",
+          "相違点：BlackSharkはボタン式ミュートに対し、Stinger 2は跳ね上げ式ミュートを採用。重量はStinger 2が約275gと少し重い。"
         ],
         "differentiators": [
-          "装着感はStinger 2の方が側圧が優しく快適という声が多い。",
-          "音の定位感やFPS適性ではBlackShark V2 Xの方が評価が高い傾向にある。"
+          "Razer BlackShark V2 Xの利点：音の定位感やFPSでの足音の聞き取りやすさに優れている。",
+          "HyperX Cloud Stinger 2の利点：側圧が優しく、長時間の使用でも快適と感じる声が多い。"
         ]
       },
       {
         "name": "SteelSeries Arctis Nova 1",
         "asin": "B0B7X7PK9S",
-        "priceComparison": "約8,000円〜11,000円。本製品より数千円高いクラス。",
+        "priceComparison": "対象商品より数千円高く約1万円弱の価格帯。デザイン性と着け心地の良さに価格差分の価値が見出せるかがポイント。",
         "featureComparison": [
-          "洗練されたデザインで、街中で着けても違和感がない。",
-          "AirWeave Memory Foamクッション採用で通気性と装着感が非常に良い。"
+          "共通点：マルチプラットフォーム対応（3.5mm有線）、超軽量設計（Nova 1は236g）",
+          "相違点：Nova 1はAirWeave Memory Foamクッションを採用し通気性が高い。BlackShark V2 XはよりFPSに特化した音響調整。"
         ],
         "differentiators": [
-          "装着感の良さはNova 1が圧倒的に上。",
-          "コストパフォーマンスと純粋な「足音の聞き取りやすさ」ではBlackShark V2 Xが肉薄または上回る。"
+          "Razer BlackShark V2 Xの利点：コストパフォーマンスと純粋な「足音の聞き取りやすさ」に特化している。",
+          "SteelSeries Arctis Nova 1の利点：洗練されたデザインと、ComfortMAXシステムによる圧倒的な装着感の良さ。"
         ]
       },
       {
         "name": "Logicool G G335",
-        "asin": "B092925S7T",
-        "priceComparison": "約7,500円。少し高いが競合圏内。",
+        "asin": "B097DBSJ1F",
+        "priceComparison": "対象商品と同程度の価格帯からやや高め（約7,200円）。ポップなデザインとサスペンションヘッドバンドによる快適性に価値を感じるかで選ぶ製品。",
         "featureComparison": [
-          "重量240gでBlackSharkと同じ軽量設計。",
-          "サスペンションヘッドバンド採用で頭頂部の負担を分散。"
+          "共通点：マルチプラットフォーム対応、軽量設計（G335は222g）",
+          "相違点：G335はサスペンションヘッドバンドを採用。マイクはフリップミュート（跳ね上げ式）。"
         ],
         "differentiators": [
-          "デザインのポップさとカラーバリエーションが豊富。",
-          "音質はフラット寄りだが、FPS特化の定位感ではBlackSharkに分がある。"
+          "Razer BlackShark V2 Xの利点：FPS特化の優れた定位感と、より厚みのある低音再生能力。",
+          "Logicool G G335の利点：サスペンションバンドによる頭頂部への負担軽減と、日常使いしやすいカジュアルなデザイン。"
+        ]
+      },
+      {
+        "name": "EKSA E1000",
+        "asin": "B0CRQVYF7B",
+        "priceComparison": "対象商品より安価（約4,280円）。低価格で7.1chサラウンドやUSB接続を求める場合のエントリー向け代替品。",
+        "featureComparison": [
+          "共通点：50mmドライバー搭載、ノイズキャンセリングマイク",
+          "相違点：EKSA E1000はUSB接続専用で、RGBライトを搭載。BlackShark V2 Xは3.5mmアナログ接続でライトなし。"
+        ],
+        "differentiators": [
+          "Razer BlackShark V2 Xの利点：マルチプラットフォーム対応の柔軟性と、eスポーツ特化の定位精度。",
+          "EKSA E1000の利点：USB接続で即座に7.1chサラウンドが利用でき、価格が手頃。"
+        ]
+      },
+      {
+        "name": "BENGOO G9000",
+        "asin": "B01H6GUCCQ",
+        "priceComparison": "対象商品より大幅に安い（約3,000円）。とにかく予算を抑えたい場合の入門用ヘッドセット。",
+        "featureComparison": [
+          "共通点：3.5mmアナログ接続、ノイズキャンセリングマイク",
+          "相違点：BENGOO G9000はLEDライト（USB給電）を搭載し、デザインがよりゲーマー向け。重量は重め。"
+        ],
+        "differentiators": [
+          "Razer BlackShark V2 Xの利点：圧倒的な軽量さ（240g）と高精細な音質。",
+          "BENGOO G9000の利点：とにかく価格が安く、初めてゲーミングヘッドセットを買う人のハードルが低い。"
+        ]
+      },
+      {
+        "name": "JBL QUANTUM 100M2",
+        "asin": "B0DCG998RK",
+        "priceComparison": "対象商品よりやや安い（約4,900円）。オーディオメーカーのエントリーモデルとして競合。",
+        "featureComparison": [
+          "共通点：3.5mmアナログ接続、軽量設計、エントリーモデル",
+          "相違点：JBLは40mmドライバー搭載で着脱可能なブームマイクを採用。BlackShark V2 Xは50mmドライバーでマイク固定。"
+        ],
+        "differentiators": [
+          "Razer BlackShark V2 Xの利点：50mmドライバーによる迫力と定位感。",
+          "JBL QUANTUM 100M2の利点：マイクを着脱でき、普通のヘッドホンとしても使いやすい。"
         ]
       }
     ],
@@ -113,23 +170,57 @@
         "7.1chサラウンドはPC限定かつ要ソフト導入"
       ],
       "score": 92,
-      "scoreRationale": "[基本点: 70]\n[加点: +15] (コストパフォーマンス: 6,000円台でこの定位感とマイク品質は競合を圧倒しており、エントリーモデルの決定版と言える)\n[加点: +10] (性能・機能: FPSで重要となる足音の聞き取りやすさに特化しており、軽量設計も優秀)\n[加点: +2] (独自の強み: 手元でのボリューム操作のしやすさと、Razerブランドの信頼性)\n[減点: -5] (品質・デザイン: 側圧の強さとプラスチッキーな質感、ケーブル交換不可な点は明確なマイナス)\n[合計: 92]"
+      "scoreRationale": "[基本点: 70]\n[加点: +10] (6000円台という価格で競合を上回るコストパフォーマンス)\n[加点: +5] (優れた定位感によるFPS特化の足音の聞き取りやすさ)\n[加点: +5] (重量240gの超軽量設計による長時間使用の快適性)\n[加点: +5] (ノイズキャンセリングマイクのクリアな音声品質)\n[加点: +2] (イヤーカップでの直感的なボリューム操作とRazerブランドの信頼性)\n[減点: -2] (側圧の強さによる頭痛・耳の痛みの可能性)\n[減点: -2] (価格相応のプラスチッキーな質感)\n[減点: -1] (ケーブル交換不可な仕様)\n[合計: 92]"
     },
     "technicalSpecs": {
-      "driver": "Razer TriForce 50mm ドライバー",
-      "codec": null,
-      "battery": null,
-      "connectivity": [
-        "3.5mm アナログ",
-        "PC用スプリッターケーブル付属"
-      ],
-      "noiseCancel": "高度パッシブノイズキャンセリング",
-      "microphone": "Razer HyperClear カーディオイドマイク (単一指向性)",
-      "surroundSound": "7.1 サラウンドサウンド (Windows 10 64-bitのみ)",
+      "dimensions": {
+        "width": "170mm",
+        "height": "200mm",
+        "depth": "100mm"
+      },
       "weight": "240g",
-      "frequencyResponse": "12 Hz – 28 kHz",
-      "impedance": "32 Ω (1 kHz)",
-      "sensitivity": "100 dBSPL/mW, 1 kHz"
-    }
+      "capacity": "該当なし",
+      "material": "プラスチック、メモリーフォームイヤークッション（通気性素材とソフトなレザーレット製）",
+      "origin": "中国",
+      "other": [
+        "ドライバー: Razer TriForce 50mm ドライバー",
+        "マイク: Razer HyperClear カーディオイドマイク (単一指向性)",
+        "接続: 3.5mm アナログ（ケーブル長1.3m）",
+        "サラウンド: 7.1 サラウンドサウンド (Windows 10 64bitのみ)",
+        "対応機種: PC、Mac、PS4、PS5、Xbox One、Nintendo Switch、モバイルデバイス"
+      ]
+    },
+    "claims": [
+      {
+        "claim": "同価格帯で優れた定位感により、FPSでの足音や銃声の方向が聞き取りやすい",
+        "category": "comparativeAdvantage",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-2"
+        ],
+        "crossChecked": true,
+        "notes": "Amazonのユーザーレビューにて言及を確認"
+      },
+      {
+        "claim": "重量わずか240gの超軽量設計で、長時間プレイでも疲れにくい",
+        "category": "durability",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "crossChecked": true,
+        "notes": "公式スペックで240gであることを確認"
+      },
+      {
+        "claim": "側圧が強めに設計されており、長時間の使用で痛みを感じるユーザーもいる",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-2"
+        ],
+        "crossChecked": true,
+        "notes": "Amazonのユーザーレビューにて言及を確認"
+      }
+    ]
   }
 }
