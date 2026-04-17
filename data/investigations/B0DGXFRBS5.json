@@ -1,0 +1,168 @@
+{
+  "analysis": {
+    "productName": "FieldNew デジタル角度計",
+    "parentAsin": "B0DGXFRBS5",
+    "productDescription": "IP54の防滴・防塵仕様を備え、マグネット付きで工具の角度調整やDIYに便利な小型デジタル角度計。絶対測定と相対測定の2モードを搭載。",
+    "productUsage": [
+      "家具や木工などのDIYの角度調整",
+      "テーブルソーなどの工具の角度調整"
+    ],
+    "positivePoints": [
+      "マグネット付きで金属部に固定でき、V溝加工でパイプにもフィットする",
+      "IP54防滴・防塵仕様で屋外や水回りでも使用可能",
+      "バックライト、数値反転、ホールド機能搭載で読み取りやすい",
+      "日本語マニュアルや動画解説があり、初心者にも優しい"
+    ],
+    "negativePoints": [
+      "長時間水につけたり水中での使用はできない",
+      "長いものの水平出しには向かず、サッシ等の取り付けにはレーザー墨出し器や水準器が適している"
+    ],
+    "useCases": [
+      "テーブルソーのブレード角度の調整",
+      "棚や家具作成時の傾斜・直角出し",
+      "配管など曲面への角度測定"
+    ],
+    "userStories": [
+      {
+        "userType": "DIYユーザー",
+        "scenario": "棚を作るための角度調整",
+        "experience": "とても使いやすく、棚作りの際に正確な角度を出すのに役立ちました。操作も簡単で直感的に使えます。",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "sentiment": "positive"
+      }
+    ],
+    "userImpression": "総じて評価が高く（4.4/5.0）、マグネットで固定できる点や、バックライトなどの表示の見やすさ、日本語マニュアルの分かりやすさがDIY初心者から経験者まで幅広く好評です。",
+    "sources": [
+      {
+        "id": "src-1",
+        "name": "Amazon カスタマーレビュー",
+        "url": "https://www.amazon.co.jp/dp/B0DGXFRBS5",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2024-05-01",
+        "author": "Amazon購入者",
+        "conflictOfInterest": "none",
+        "notes": "「とても使いやすく 今、棚作りに役に立ちました」との記載を確認。総合評価は4.4"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "マグネット付きで工具に固定しやすい",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "crossChecked": true,
+        "notes": "商品説明とユーザーレビューから確認"
+      }
+    ],
+    "lastInvestigated": "2026-04-17",
+    "competitiveAnalysis": [
+      {
+        "name": "SCITOOLS デジタル角度計",
+        "asin": "B0CHM97R2Z",
+        "priceComparison": "対象商品より安い。基本的な機能は備えているが、保証や日本語サポートの手厚さで対象商品が勝る。",
+        "featureComparison": [
+          "共通点：IP54防水防塵、LCD画面、マグネット搭載",
+          "相違点：対象商品は日本語の動画解説や手厚い国内サポートがある"
+        ],
+        "differentiators": [
+          "FieldNew デジタル角度計の利点：初心者向けの動画解説や日本語マニュアル、安心の国内サポート体制",
+          "SCITOOLS デジタル角度計の利点：より安価に基本機能を入手可能"
+        ]
+      },
+      {
+        "name": "DFsucces デジタル角度計",
+        "asin": "B0CY5DDSVH",
+        "priceComparison": "対象商品より安い。小型で持ち運びに便利。",
+        "featureComparison": [
+          "共通点：IP54防水防塵、絶対・相対測定モード",
+          "相違点：対象商品はV溝加工がありパイプ測定に優れる"
+        ],
+        "differentiators": [
+          "FieldNew デジタル角度計の利点：V溝加工による曲面へのフィット感や高いサポート品質",
+          "DFsucces デジタル角度計の利点：安価でシンプルな機能"
+        ]
+      },
+      {
+        "name": "generic 磁気式デジタル角度計",
+        "asin": "B0G1M6SPZP",
+        "priceComparison": "対象商品より大幅に安い。USB充電式である点が特徴。",
+        "featureComparison": [
+          "共通点：マグネット搭載、LCDディスプレイ",
+          "相違点：競合はUSB充電式、対象商品は乾電池式（一般的な仕様）"
+        ],
+        "differentiators": [
+          "FieldNew デジタル角度計の利点：ブランドの信頼性と充実した日本語サポート",
+          "generic 磁気式デジタル角度計の利点：低価格かつUSB充電式でランニングコストが低い"
+        ]
+      },
+      {
+        "name": "Huepar デジタル角度計",
+        "asin": "B0CQK2X52S",
+        "priceComparison": "対象商品よりかなり高い。プロ仕様の計測機器メーカーとしての信頼性がある。",
+        "featureComparison": [
+          "共通点：防塵防水仕様、マグネット付き",
+          "相違点：競合は高価格帯で精度や耐久性に優れたプロ向け"
+        ],
+        "differentiators": [
+          "FieldNew デジタル角度計の利点：DIY初心者でも手が出しやすい手頃な価格と親切なマニュアル",
+          "Huepar デジタル角度計の利点：プロ用レーザー機器メーカーとしての信頼性と高い堅牢性"
+        ]
+      },
+      {
+        "name": "Ruyarful デジタル水平器",
+        "asin": "B0FT8GFM7W",
+        "priceComparison": "価格非表示のため不明。",
+        "featureComparison": [
+          "共通点：防水防塵、充電式または電池式、LCD搭載",
+          "相違点：競合は4面に磁石を配置している"
+        ],
+        "differentiators": [
+          "FieldNew デジタル角度計の利点：DIYアドバイザー推奨という実績と初心者向けの手厚いサポート",
+          "Ruyarful デジタル水平器の利点：4面磁気により多様な設置が可能"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "DIY初心者",
+        "テーブルソーや電動工具の角度調整を正確に行いたい人",
+        "手厚いサポートや分かりやすい説明書を求める人"
+      ],
+      "pros": [
+        "マグネットとV溝で安定して測定可能",
+        "防塵防滴（IP54）で水回りや屋外でも安心",
+        "日本語マニュアル・動画解説による手厚いサポート"
+      ],
+      "cons": [
+        "長い距離の水平出しには不向き",
+        "完全防水ではないため水中での使用は不可"
+      ],
+      "score": 83,
+      "scoreRationale": "[基本点: 70]\n[加点: +3] (IP54防滴防塵による実用性の高さ)\n[加点: +2] (V溝加工によるパイプへのフィットしやすさ)\n[加点: +5] (マグネット付きで工具の角度調整が容易)\n[加点: +5] (日本語マニュアルと動画解説があり初心者にも親切)\n[減点: -2] (長距離の水平出しなど用途に一部制約があるため)\n[合計: 83]"
+    },
+    "technicalSpecs": {
+      "dimensions": {
+        "height": "1.0mm",
+        "width": "58.0mm",
+        "depth": "58.0mm"
+      },
+      "weight": "75.0g",
+      "material": "不明（底面マグネット付き）",
+      "accuracy": "±0.2°",
+      "protection": "IP54（防滴・防塵）",
+      "color": "ブラック",
+      "origin": "不明",
+      "other": [
+        "絶対測定/相対測定モード",
+        "バックライト搭載",
+        "数値反転機能",
+        "ホールド機能"
+      ]
+    }
+  }
+}
