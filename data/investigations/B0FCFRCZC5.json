@@ -1,0 +1,116 @@
+{
+  "analysis": {
+    "productName": "Kiboer 電気ブラシ KBO-135S",
+    "parentAsin": "B0FCFRCZC5",
+    "productDescription": "頭皮・フェイス・ボディに使える5in1の電気ブラシ。EMS、RF、エレクトロポレーション（EP）、3D振動、LED光エステ（赤・青）を搭載し、液体ボックスを備える。",
+    "productUsage": ["頭皮ケア", "フェイスリフトケア", "美容液の導入"],
+    "positivePoints": [
+      "EMS、RF、EP、LED、振動と多彩な機能を搭載している",
+      "美容液を入れられる液体ボックスが付いており、ケアしながら効率的に浸透させられる",
+      "コードレス仕様で持ち運びが便利"
+    ],
+    "negativePoints": [
+      "液体ボックスの手入れが必要",
+      "振動音が苦手な人には気になる可能性がある"
+    ],
+    "useCases": ["夜のスキンケア後のハリ感アップ", "メイク前の毛穴ケア", "リラックスタイムの頭皮ケア"],
+    "userStories": [],
+    "userImpression": "多機能でありながら液体ボックス搭載という独自の強みがあり、美容液を併用したながらケアに便利である。",
+    "sources": [
+      {
+        "id": "src-amazon",
+        "name": "Amazon.co.jp 商品ページ",
+        "url": "https://www.amazon.co.jp/dp/B0FCFRCZC5",
+        "tier": "low",
+        "evidenceType": "primary",
+        "publishedAt": "2024-05-01",
+        "author": "Kiboer",
+        "conflictOfInterest": "possible",
+        "notes": "製品機能（EMS、RF、EP、LED、振動、液体ボックス）、サイズ、価格の確認"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "EMS、RF、EP、LED、振動の5つの機能を搭載",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": ["src-amazon"],
+        "crossChecked": false,
+        "notes": "公式商品情報に基づく"
+      },
+      {
+        "claim": "マグネット式液体ボックス搭載",
+        "category": "comparativeAdvantage",
+        "confidence": "high",
+        "supportingSourceIds": ["src-amazon"],
+        "crossChecked": false,
+        "notes": "公式商品情報に基づく"
+      }
+    ],
+    "lastInvestigated": "2026-04-18",
+    "competitiveAnalysis": [
+      {
+        "name": "MYTREX VIDO",
+        "asin": "B0C4KKH5TY",
+        "priceComparison": "対象商品より高価。価格差に見合う強力な高速横振動機能（毎分約2,400回）が特徴。",
+        "featureComparison": [
+          "共通点：頭皮やフェイスのケアを目的とする電動ブラシ",
+          "相違点：MYTREXは横振動モーションブラシに特化している一方、対象商品はEMSやRF、液体ボックスなど多機能"
+        ],
+        "differentiators": [
+          "Kiboer 電気ブラシ KBO-135Sの利点：EMSやRF、LED、液体ボックスなど多彩な機能を1台でこなせる",
+          "MYTREX VIDOの利点：高速横振動による強力な爽快感とこわばりへのアプローチ力"
+        ]
+      },
+      {
+        "name": "RELX リフトブラシ",
+        "asin": "B0G8FHJKWG",
+        "priceComparison": "対象商品より安価。機能はEMSとLEDに絞られており、手軽に導入したい人向け。",
+        "featureComparison": [
+          "共通点：EMS機能とLED機能を搭載している点",
+          "相違点：対象商品はRFやEP、液体ボックスが搭載されているが、RELXはEMSとLEDに特化している"
+        ],
+        "differentiators": [
+          "Kiboer 電気ブラシ KBO-135Sの利点：RFやEP機能があり、美容液の導入効率が高い",
+          "RELX リフトブラシの利点：機能がシンプルで価格が安く、手軽に始められる"
+        ]
+      },
+      {
+        "name": "Tibnozt 電気ブラシ",
+        "asin": "B0G4WJMYJG",
+        "priceComparison": "対象商品より安価。EMS、RF、EP、LEDなど機能が似ているが、ブランドの信頼性やビルドクオリティに差がある可能性がある。",
+        "featureComparison": [
+          "共通点：EMS、RF、EP、LED、液体ケースを搭載している点",
+          "相違点：対象商品はKiboerという一定の知名度があるブランドだが、Tibnoztはより低価格帯の製品"
+        ],
+        "differentiators": [
+          "Kiboer 電気ブラシ KBO-135Sの利点：メーカー1年保証があり、品質やデザインに高級感がある",
+          "Tibnozt 電気ブラシの利点：同等の機能をより低価格で試すことができる"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": ["美容液の効果を高めたい人", "1台で複数のケアを行いたい人", "お風呂上がりにながら美容をしたい人"],
+      "pros": ["多彩な機能（EMS/RF/EP/LED）", "美容液を直接塗布できる液体ボックス"],
+      "cons": ["手入れの手間", "機能が多い分操作を覚える必要がある"],
+      "score": 83,
+      "scoreRationale": "[基本点: 70]\n[加点: +5] (EMS/RF/EP/LEDなど多機能)\n[加点: +5] (美容液を効率よく導入できる液体ボックス搭載)\n[加点: +5] (多機能ながら7,980円というバランスの取れたコストパフォーマンス)\n[減点: -2] (液体ボックスの洗浄など手入れの手間)\n[合計: 83]"
+    },
+    "technicalSpecs": {
+      "dimensions": {
+        "height": "205mm",
+        "width": "53mm",
+        "depth": "94mm"
+      },
+      "weight": "250g",
+      "capacity": "液体ボックス付き",
+      "material": "シリコン（ピン部分など）",
+      "origin": "不明",
+      "other": [
+        "機能: EMS、RF、エレクトロポレーション(EP)、3D振動、LED（赤・青）",
+        "レベル調整: 5段階",
+        "充電: コードレス"
+      ]
+    }
+  }
+}
