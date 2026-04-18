@@ -1,7 +1,7 @@
 {
   "analysis": {
     "productName": "エレコム モバイルバッテリー 10000mAh 15W 3ポート EC-C37WH",
-    "parentAsin": "B0DJD437P1",
+    "parentAsin": "B0DJ8KPGMP",
     "productDescription": "薄型で持ち運びやすく、スマートフォンを約3.3回充電できる10000mAhの大容量モバイルバッテリーです。3つの出力ポートを備え、複数デバイスの同時充電が可能です。",
     "productUsage": [
       "スマートフォン、タブレットの外出先での充電",
@@ -28,96 +28,136 @@
       "旅行中に地図アプリを多用する際の電源確保",
       "家族や友人と外出時に、充電ポートをシェアする"
     ],
-    "userStories": [
-      {
-        "userType": "大学生",
-        "scenario": "一日中キャンパスで過ごす日",
-        "experience": "授業の合間にスマホで動画を見たり、SNSをチェックしたりするので、夕方にはバッテリーがピンチになる。このバッテリーは薄いのでリュックのポケットに入れても邪魔にならず、友達のスマホも一緒に充電してあげられるのが便利。",
-        "sentiment": "positive"
-      },
-      {
-        "userType": "営業職",
-        "scenario": "外回りの多いビジネスマン",
-        "experience": "スマホと社用携帯、さらにはワイヤレスイヤホンを持ち歩いている。3ポートあるので、カフェでの休憩中にまとめて充電できるのが助かる。ただ、急いで充電したい時は少し遅く感じることもある。",
-        "sentiment": "mixed"
-      }
-    ],
+    "userStories": [],
     "userImpression": "手頃な価格で必要十分な機能を備えた、信頼性の高いモバイルバッテリー。急速充電にこだわらなければ、3ポート同時充電の利便性と国内メーカーの安心感は大きな魅力。ただし、最新の超小型・急速充電対応モデルと比較すると、スペック面で見劣りする部分もある。",
     "sources": [
       {
-        "name": "Amazon PA-API 商品情報 (ASIN: B0DJ8KPGMP)",
-        "url": "https://webservices.amazon.co.jp/paapi5/getitems",
-        "credibility": "High"
-      },
-      {
-        "name": "Amazon PA-API 競合検索 (Keyword: モバイルバッテリー 10000mAh)",
-        "url": "https://webservices.amazon.co.jp/paapi5/searchitems",
-        "credibility": "High"
+        "id": "src-amazon",
+        "name": "Amazon商品ページ",
+        "url": "https://www.amazon.co.jp/dp/B0DJ8KPGMP",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2024-10-20",
+        "author": "Amazon",
+        "conflictOfInterest": "none",
+        "notes": "商品の基本情報、価格、スペックを確認"
       }
     ],
-    "lastInvestigated": "2026-01-31",
+    "claims": [
+      {
+        "claim": "10000mAhの容量",
+        "category": "durability",
+        "confidence": "high",
+        "supportingSourceIds": ["src-amazon"],
+        "crossChecked": false,
+        "notes": "商品仕様に記載"
+      },
+      {
+        "claim": "最大15W出力対応",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": ["src-amazon"],
+        "crossChecked": false,
+        "notes": "商品仕様に記載"
+      }
+    ],
+    "lastInvestigated": "2026-04-19",
     "competitiveAnalysis": [
       {
-        "name": "UGREEN モバイルバッテリー 10000mAh PD20W (B0DZ1TGX6T)",
-        "asin": "B0DZ1TGX6T",
-        "priceComparison": "約1,979円と、エレコム（2,190円）より安価。",
-        "featureComparison": [
-          "PD20Wの急速充電に対応。",
-          "USB-C×1、USB-A×1の2ポート構成。",
-          "小型・軽量設計。"
-        ],
-        "differentiators": [
-          "UGREENは急速充電性能と価格で優れる。",
-          "エレコムはポート数（3ポート）と国内メーカーの安心感で差別化。"
-        ]
-      },
-      {
-        "name": "Anker Power Bank (10000mAh, 22.5W) (B0CQX67KTW)",
+        "name": "Anker Power Bank (10000mAh, 22.5W)",
         "asin": "B0CQX67KTW",
-        "priceComparison": "約3,490円と、エレコムより1,000円以上高い。",
+        "priceComparison": "対象商品（2,490円）と比較して約1,000円高いが、最大22.5Wの急速充電やディスプレイ搭載など価格差に見合う高い機能性を備えている。",
         "featureComparison": [
-          "最大22.5Wの高出力。",
-          "ディスプレイ搭載で残量がわかりやすい。",
-          "USB-C×2、USB-A×1の3ポート構成。"
+          "共通点：10000mAhの大容量バッテリー",
+          "相違点：Ankerは22.5Wの急速充電対応でケーブル一体型、ディスプレイ搭載。エレコムは15W出力で3ポート搭載。"
         ],
         "differentiators": [
-          "Ankerは高機能・高性能だが価格が高い。",
-          "エレコムは基本的な機能を低価格で提供。"
+          "エレコム モバイルバッテリー 10000mAh 15W 3ポート EC-C37WHの利点：価格が手頃で、3ポート搭載により複数デバイスの充電がしやすい。",
+          "Anker Power Bank (10000mAh, 22.5W)の利点：22.5Wの急速充電に対応し、ケーブル一体型でディスプレイも搭載しており機能性が高い。"
         ]
       },
       {
-        "name": "INIU 10000mAh モバイルバッテリー (B0DHZPSVR5)",
-        "asin": "B0DHZPSVR5",
-        "priceComparison": "約2,256円と、エレコムとほぼ同価格帯。",
+        "name": "UGREEN モバイルバッテリー 大容量 10000mAh",
+        "asin": "B0DZ1TGX6T",
+        "priceComparison": "対象商品（2,490円）と比較して約500円安い上、PD20Wの急速充電に対応しておりコストパフォーマンスに優れる。",
         "featureComparison": [
-          "軽量・薄型デザイン。",
-          "3台同時充電が可能。",
-          "入出力ポートの構成が類似。"
+          "共通点：10000mAhの容量",
+          "相違点：UGREENはPD20Wの急速充電に対応。エレコムは最大15W出力で3ポート搭載。"
         ],
         "differentiators": [
-          "スペックや価格帯が非常に近く、直接的な競合。",
-          "エレコムのブランド力が選定の決め手となるか。"
+          "エレコム モバイルバッテリー 10000mAh 15W 3ポート EC-C37WHの利点：USB-Aが2ポートあり、旧来の機器の充電にも使いやすい。",
+          "UGREEN モバイルバッテリー 大容量 10000mAhの利点：価格が安く、PD20Wの急速充電に対応している。"
+        ]
+      },
+      {
+        "name": "INIU 45W 超軽量 小型 モバイルバッテリー",
+        "asin": "B0DHZPSVR5",
+        "priceComparison": "対象商品（2,490円）とほぼ同価格帯だが、こちらは45Wの高出力に対応しており、性能面でのコストパフォーマンスが高い。",
+        "featureComparison": [
+          "共通点：10000mAhの容量、3台同時充電",
+          "相違点：INIUは45Wの高出力に対応。エレコムは15W出力。"
+        ],
+        "differentiators": [
+          "エレコム モバイルバッテリー 10000mAh 15W 3ポート EC-C37WHの利点：国内メーカーの製品であるという安心感がある。",
+          "INIU 45W 超軽量 小型 モバイルバッテリーの利点：45Wの高出力に対応しており、ノートパソコンなどの充電にも利用可能。"
+        ]
+      },
+      {
+        "name": "Anker Zolo Power Bank (10000mAh, 30W)",
+        "asin": "B0DRFR2YT3",
+        "priceComparison": "対象商品（2,490円）と比較して約1,500円高いが、30Wの出力とケーブル一体型の利便性があり、価格差の価値はある。",
+        "featureComparison": [
+          "共通点：10000mAhの容量",
+          "相違点：Ankerは30W出力対応でケーブル一体型。エレコムは15W出力。"
+        ],
+        "differentiators": [
+          "エレコム モバイルバッテリー 10000mAh 15W 3ポート EC-C37WHの利点：価格が安く手に入れやすい。",
+          "Anker Zolo Power Bank (10000mAh, 30W)の利点：30Wの高出力とケーブル一体型により、持ち物を減らしつつ素早く充電できる。"
+        ]
+      },
+      {
+        "name": "Anker PowerCore Slim 10000",
+        "asin": "B081YPQPXH",
+        "priceComparison": "対象商品（2,490円）と比較して約500円高いが、Ankerの高い信頼性と低電流モードが搭載されている点に価値がある。",
+        "featureComparison": [
+          "共通点：10000mAhの容量、薄型デザイン",
+          "相違点：Ankerは低電流モードを搭載。エレコムはUSB-A×2、Type-C×1の3ポートを搭載。"
+        ],
+        "differentiators": [
+          "エレコム モバイルバッテリー 10000mAh 15W 3ポート EC-C37WHの利点：3ポート搭載で複数機器の充電に優れている。",
+          "Anker PowerCore Slim 10000の利点：低電流モードがあり、イヤホンなどの小型機器の充電に最適。"
+        ]
+      },
+      {
+        "name": "エレコム モバイルバッテリー 10000mAh 15W 3ポート (ブラック)",
+        "asin": "B0DJ8LS3T7",
+        "priceComparison": "同価格。カラーバリエーションのため、価格差はない。",
+        "featureComparison": [
+          "共通点：全ての仕様が同一のカラーバリエーション",
+          "相違点：本体カラーが異なる。"
+        ],
+        "differentiators": [
+          "エレコム モバイルバッテリー 10000mAh 15W 3ポート EC-C37WHの利点：好みに合わせて白色を選べる。",
+          "エレコム モバイルバッテリー 10000mAh 15W 3ポート (ブラック)の利点：好みに合わせて黒色を選べる。"
         ]
       }
     ],
     "recommendation": {
       "targetUsers": [
-        "急速充電よりも、一度に複数の機器を充電したいユーザー",
-        "国内メーカーの製品に安心感を感じる方",
-        "手頃な価格で10000mAhの大容量バッテリーを探している方"
+        "複数デバイスを同時に充電したい方",
+        "手頃な価格で大容量のモバイルバッテリーを探している方",
+        "薄型で持ち運びやすいバッテリーを求める方"
       ],
       "pros": [
-        "3ポート搭載で最大3台同時充電が可能",
-        "薄型デザインで持ち運びに便利",
-        "国内メーカー（エレコム）製でPSE適合の安心感"
+        "3ポート搭載で複数台の充電が可能",
+        "10000mAhの大容量",
+        "手頃な価格"
       ],
       "cons": [
-        "PD急速充電（20W以上）には非対応（最大15W）",
-        "競合製品（UGREENなど）と比較すると価格対性能比がやや劣る",
-        "重量が約230gと、最新モデルに比べると少し重め"
+        "急速充電は最大15Wまで"
       ],
       "score": 67,
-      "scoreRationale": "[基本点: 70]\n[減点: -5] (最大出力15WでPD急速充電非対応は、現代のニーズに対してやや物足りない)\n[減点: -5] (競合のUGREEN製品などが、より高性能かつ低価格で販売されており、コストパフォーマンスで見劣りする)\n[加点: +5] (国内メーカー「エレコム」の信頼性と、薄型で実用的なデザイン)\n[加点: +2] (3ポート同時充電が可能という点は、複数デバイス持ちには便利)\n[合計: 67]"
+      "scoreRationale": "[基本点: 70]\n[加点: +2] (3ポート搭載による複数デバイスの同時充電が可能という利便性)\n[減点: -5] (最大出力15WでPD急速充電に非対応であり、現代のニーズにやや見劣りする)\n[減点: -5] (競合製品により安価で高性能なものが存在し、コストパフォーマンス面で懸念がある)\n[加点: +5] (国内メーカーであるエレコムの信頼性とPSE適合の安心感)\n[合計: 67]"
     },
     "technicalSpecs": {
       "capacity": "10000mAh",
