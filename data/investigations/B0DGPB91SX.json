@@ -1,120 +1,193 @@
 {
   "analysis": {
-    "productName": "エレコム USBハブ 4-in-1 (USB-A×3 / USB-C×1) PD100W対応 U3HC-H040PBK",
-    "parentAsin": "B0DGQH1362",
-    "productDescription": "USB-A機器3台とUSB-C機器1台をまとめて接続でき、最大100WのPD急速充電にも対応したスリムなUSBハブです。",
+    "productName": "エレコム USBハブ 4-in-1 USB-C接続 USB-A×3 USB-C×1 充電 PD100W対応 高速データ転送 ブラック",
+    "parentAsin": "B0DGPB91SX",
+    "productDescription": "USB-Aポート×3、USB Type-Cポート×1を搭載したUSBハブ。最大100WのUSB Power Deliveryに対応し、パソコンを充電しながら各種デバイスの接続が可能です。",
     "productUsage": [
-      "ノートPCのUSBポート不足の解消",
-      "USB PD対応充電器を接続してのPCへの給電（パススルー充電）",
-      "マウス、キーボード、USBメモリなどの周辺機器の同時接続"
+      "マウスやキーボード、USBメモリの接続",
+      "ノートPCへの給電(USB PD対応)"
     ],
     "positivePoints": [
-      "国内大手メーカー（エレコム）ならではの安心感とサポート体制",
-      "USB PD 100W入力に対応し、高出力PCでも安定して充電しながら使用可能",
-      "約36gと非常に軽量でコンパクト、持ち運び用ポーチに入れても嵩張らない",
-      "USB-Cポートもデータ通信に対応しており、機器の接続柔軟性が高い"
+      "最大100WのUSB Power Delivery入力に対応(パソコンへの給電は最大85W)",
+      "USB-A×3とUSB-C×1の計4ポートを搭載し、様々な機器を同時に接続可能",
+      "ケーブル長12cmとコンパクトで持ち運びに便利",
+      "エレコムブランドで1年間の保証付き"
     ],
     "negativePoints": [
-      "データ転送速度が「高速データ転送」表記のみで、競合（10Gbps）と比較すると5Gbps（USB 3.0相当）である可能性が高くスペックで見劣りする",
-      "同価格帯またはそれ以下の価格で10Gbps対応の海外製競合製品（UGREEN等）が存在し、コストパフォーマンスは最高とは言えない",
-      "ケーブル長が短め（推定）なため、スタンドに立てたPCやデスクトップPCでは使いにくい場合がある"
+      "HDMIやLANポートなどは搭載していない(純粋なUSBハブ機能のみ)",
+      "最大100Wの入力を受け付けるが、ハブ本体で15W消費するため、パソコンには最大85W給電となる"
     ],
     "useCases": [
-      "外出先やカフェでのテレワーク（持ち運び用）",
-      "ポート数の少ない薄型ノートPC（MacBook Air等）の拡張",
-      "デスク周りをすっきりさせたい時の周辺機器まとめ"
+      "ポートの少ないノートPCでの周辺機器拡張",
+      "外出先やカフェでの作業時に、電源と周辺機器を1つのポートにまとめて接続"
     ],
-    "userStories": [
-      {
-        "userType": "30代 リモートワーカー",
-        "scenario": "外出先でのPC作業",
-        "experience": "カフェで作業する際、MacBook Airのポートが少なくて困っていました。このハブなら充電ケーブルとiPhone、USBメモリを同時に繋げます。何より軽くてカバンの中で邪魔にならないのが気に入っています。（推測）",
-        "sentiment": "positive"
-      },
-      {
-        "userType": "大学生",
-        "scenario": "大学でのレポート作成",
-        "experience": "海外製の安いハブを使っていましたが接続が不安定でした。エレコムなら安心だと思って買い替えました。特に問題なく使えており、発熱も気になりません。（推測）",
-        "sentiment": "positive"
-      }
-    ],
-    "userImpression": "発売間もない、または販路限定製品のため直接のレビューは少ないですが、エレコム製品としての標準的な信頼性は担保されています。特に「軽さ」と「PD100W対応」の実用性が評価されるポイントでしょう。スペック重視のユーザーよりは、国内ブランドの安心感を求める層に適しています。",
+    "userStories": [],
+    "userImpression": "価格も手頃で、必要な機能をシンプルに備えたUSB PD対応ハブとして評価されています。エレコムという国内メーカーの安心感もあり、日常的な使用に適しているという印象です。",
     "sources": [
       {
-        "name": "Amazon商品ページ",
-        "url": "https://www.amazon.co.jp/dp/B0DGPB91SX",
-        "credibility": "高"
+        "id": "src-1",
+        "name": "価格.com U3HC-H040PBK",
+        "url": "https://kakaku.com/item/K0001653088/",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2024-09-15",
+        "author": "価格.com",
+        "conflictOfInterest": "none",
+        "notes": "製品情報、スペック詳細(サイズ、重量等)、価格情報"
       },
       {
-        "name": "エレコム公式サイト（一般情報）",
-        "url": "https://www.elecom.co.jp/",
-        "credibility": "高"
+        "id": "src-2",
+        "name": "Amazon",
+        "url": "https://www.amazon.co.jp/dp/B0DGPB91SX",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2024-09-15",
+        "author": "Amazon",
+        "conflictOfInterest": "none",
+        "notes": "製品特長、画像、価格"
       }
     ],
-    "lastInvestigated": "2026-01-31",
+    "claims": [
+      {
+        "claim": "最大100WのUSB PD入力に対応",
+        "category": "durability",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-2"
+        ],
+        "crossChecked": true,
+        "notes": "Amazonの機能説明より確認"
+      },
+      {
+        "claim": "本体重量36g",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "crossChecked": true,
+        "notes": "価格.comのスペック表より確認"
+      }
+    ],
+    "lastInvestigated": "2026-04-19",
     "competitiveAnalysis": [
       {
-        "name": "UGREEN 5-in-1 USB C ハブ (B0D9Q9WCLX)",
-        "asin": "B0D9Q9WCLX",
-        "priceComparison": "約1,800円台と、本製品（約2,700円）より大幅に安価",
+        "name": "エレコム USB-C ハブ 3in1 DST-W11",
+        "asin": "B0DH825399",
+        "priceComparison": "対象商品とほぼ同等の価格帯。DST-W11はHDMIを搭載しているがUSBポート数が少ない。",
         "featureComparison": [
-          "10Gbpsの高速データ転送に対応（本製品は速度詳細不明だが恐らく5Gbps）",
-          "5ポート構成（USB-C×2[データ/PD], USB-A×3）でポート数が多い"
+          "共通点：USB Type-C接続でPD100W入力に対応",
+          "相違点：対象商品はUSB-A×3・USB-C×1の4ポート構成だが、DST-W11はHDMI 4K対応、USB-A、Type-C(PD)の3in1構成"
         ],
         "differentiators": [
-          "圧倒的なコストパフォーマンス",
-          "より高速なデータ転送スペック"
+          "対象商品の利点：USBポートが4つあり、多数の周辺機器を同時に接続できる",
+          "競合商品の利点：HDMI出力を備えており、外部モニターへの出力が可能"
         ]
       },
       {
-        "name": "Anker USB-C ハブ (4-in-1) (B0CTQGM5ZN)",
-        "asin": "B0CTQGM5ZN",
-        "priceComparison": "約3,500円と、本製品より高価",
+        "name": "UGREEN Revodok 105 USB C ハブ 5-IN-1",
+        "asin": "B0BR3M8XHK",
+        "priceComparison": "対象商品より大幅に安い。",
         "featureComparison": [
-          "10Gbpsデータ転送対応を明記",
-          "Anker独自の信頼性とブランド力"
+          "共通点：USB Type-C接続、PD100W入力対応、USBハブ機能",
+          "相違点：UGREENは5in1(HDMI+USB3.0×1+USB2.0×2+PD)だが、対象商品はHDMIなしでUSB3.2 Gen1×4(A×3, C×1)"
         ],
         "differentiators": [
-          "確実な10Gbps対応スペック",
-          "ビルドクオリティの高さ"
+          "対象商品の利点：国内メーカーの信頼性と、全ポートがUSB3.2 Gen1(5Gbps)に対応している",
+          "競合商品の利点：価格が安く、HDMI出力も搭載している"
+        ]
+      },
+      {
+        "name": "エレコム USB-C ハブ 3in1 ホワイト DST-W12",
+        "asin": "B0DH7LRCWX",
+        "priceComparison": "対象商品よりわずかに安い。",
+        "featureComparison": [
+          "共通点：エレコム製、USB Type-C接続、PD100W入力対応",
+          "相違点：DST-W12はHDMIを搭載した3in1モデルでカラーがホワイト"
+        ],
+        "differentiators": [
+          "対象商品の利点：USBポート数が多く、周辺機器の接続に特化している",
+          "競合商品の利点：HDMI出力を備え、ホワイトカラーが選べる"
+        ]
+      },
+      {
+        "name": "UGREEN Revodok 1071 USB-Cハブ 7-IN-1",
+        "asin": "B0BLNDNBG1",
+        "priceComparison": "対象商品とほぼ同じ価格。",
+        "featureComparison": [
+          "共通点：USB Type-C接続、PD100W入力対応",
+          "相違点：UGREENはHDMIやSD/microSDカードリーダーを備えた7in1構成"
+        ],
+        "differentiators": [
+          "対象商品の利点：エレコムという国内メーカーの安心感とシンプルな構成",
+          "競合商品の利点：多機能(カードリーダー、HDMI出力)でコストパフォーマンスに優れる"
+        ]
+      },
+      {
+        "name": "UGREEN Revodok USB-C ハブ 6in1",
+        "asin": "B0D1XLNWP2",
+        "priceComparison": "対象商品より安い。",
+        "featureComparison": [
+          "共通点：USB Type-C接続、PD100W入力対応",
+          "相違点：UGREENはHDMIや10Gbps高速転送に対応した6in1構成"
+        ],
+        "differentiators": [
+          "対象商品の利点：シンプルなUSBハブとして使いやすい",
+          "競合商品の利点：10Gbpsの高速転送やHDMI出力に対応している"
+        ]
+      },
+      {
+        "name": "エレコム USB-C ハブ ドッキングステーション 5in1 DST-W01",
+        "asin": "B0CQ29L3RM",
+        "priceComparison": "対象商品よりわずかに安い。",
+        "featureComparison": [
+          "共通点：エレコム製、USB Type-C接続、PD100W入力対応",
+          "相違点：DST-W01はHDMIなどを搭載した5in1構成"
+        ],
+        "differentiators": [
+          "対象商品の利点：USBポートの増設に特化している",
+          "競合商品の利点：HDMI出力や複数の機能を備えている"
         ]
       }
     ],
     "recommendation": {
       "targetUsers": [
-        "海外製メーカーに不安があり、国内メーカー製品を使いたい人",
-        "持ち運び用にできるだけ軽くてコンパクトなハブを探している人",
-        "複雑な機能は不要で、充電と基本的なUSB機器接続ができれば良い人"
+        "ポート数が少ないノートPCを使っている人",
+        "HDMI出力などは不要で、純粋にUSBポートを増やしたい人",
+        "PCを充電しながらUSB機器を使いたい人",
+        "国内メーカーの製品を好む人"
       ],
       "pros": [
-        "エレコムブランドの安心感と入手性の良さ",
-        "約36gという圧倒的な軽さ",
-        "PD100W対応でハイエンドノートPCでも充電速度が落ちにくい"
+        "最大100W入力のUSB PDに対応し、PCへの給電が可能",
+        "USB-A×3、USB-C×1と使い勝手の良いポート構成",
+        "全ポートがUSB3.2 Gen1(5Gbps)に対応"
       ],
       "cons": [
-        "データ転送速度重視（SSDなどを接続する）なら他社製品の方が高性能な場合がある",
-        "コスパだけで見ると海外製競合に劣る"
+        "HDMI出力やLANポート、カードリーダーは搭載していない",
+        "PD入力ポート自体は通信非対応の場合が多い(製品仕様による)"
       ],
-      "score": 69,
-      "scoreRationale": "[基本点: 70]\n[性能・機能: 0] (必要十分な機能だが、転送速度等のスペックで突出した点はない)\n[コストパフォーマンス: -4] (競合のUGREENが安価かつ高スペックであるため、相対的に割高)\n[品質・デザイン: +3] (エレコムの品質管理への信頼と、36gという軽量設計を評価)\n[合計: 69] (安心して使える標準的な良品だが、コスパ重視なら他を選びたくなる立ち位置)"
+      "score": 75,
+      "scoreRationale": "[基本点: 70]\n[加点: +5] (USB PD100W対応と全ポートUSB3.2 Gen1対応の実用性の高さ)\n[加点: +5] (エレコムブランドの安心感とコンパクトな設計)\n[減点: -5] (同価格帯の他社製品と比較して機能が限定的(HDMI等なし)なためコスパ面でマイナス)\n[合計: 75]"
     },
     "technicalSpecs": {
       "dimensions": {
-        "width": "約100mm",
-        "depth": "約30mm",
-        "height": "約10mm",
-        "weight": "約36g"
+        "height": "10.0mm",
+        "width": "30.0mm",
+        "depth": "100.0mm"
       },
-      "ports": {
-        "usb_a": "3ポート",
-        "usb_c": "1ポート（データ通信/PD充電対応）"
-      },
-      "power": {
-        "pd_input": "最大100W",
-        "pd_output": "最大85W（本体消費15W）"
-      },
-      "cable_length": "不明（画像より15-30cm程度と推測）",
-      "transfer_speed": "高速データ転送（詳細規格記載なし、USB 5Gbps相当と推測）"
+      "weight": "36g",
+      "capacity": "1個",
+      "material": "不明",
+      "origin": "不明",
+      "other": [
+        "インターフェース(PC側): USB3.2 Gen1 Type-C",
+        "インターフェース(デバイス側): USB3.2 Gen1 Type-A×3 / Type-C×1",
+        "電源供給方式: バスパワー(USB PD対応)",
+        "USB PD最大入力: 100W",
+        "USB PD最大出力(PCへの給電): 85W (本体で15W消費)",
+        "ケーブル長: 約12cm",
+        "保証期間: 1年間"
+      ]
     }
   }
 }
