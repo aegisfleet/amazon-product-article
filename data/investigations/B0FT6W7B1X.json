@@ -1,0 +1,181 @@
+{
+  "analysis": {
+    "productName": "MAXWIN バイク用ドライブレコーダー MUFU MF-BDVR003-PRO",
+    "parentAsin": "B0CZTC6BQM",
+    "productDescription": "最大約16時間の連続録画が可能な大容量バッテリーを内蔵した、配線不要のバイク・自転車用ドライブレコーダー。フルHD・広角120°の高画質録画や、スマート感知センサーによる自動電源ON/OFF機能を備えています。",
+    "productUsage": [
+      "バイク・自転車での通勤・通学時の録画",
+      "ツーリング時の風景撮影",
+      "万が一の事故時の証拠映像の記録"
+    ],
+    "positivePoints": [
+      "最大約16時間の長寿命バッテリーで頻繁な充電が不要",
+      "マウントに装着するだけで自動電源ONになるスマート感知センサー",
+      "コンパクトで持ち運びに便利な手のひらサイズ",
+      "専用アプリでスマホと連携し、映像確認や設定が簡単"
+    ],
+    "negativePoints": [
+      "画質はフルHDで、4K対応の競合製品と比べるとやや見劣りする",
+      "前カメラのみで後方録画には対応していない"
+    ],
+    "useCases": [
+      "毎日の通勤・通学",
+      "週末の長距離ツーリング",
+      "デリバリー業務"
+    ],
+    "userStories": [],
+    "userImpression": "大容量バッテリーと配線不要の手軽さが評価されており、特に通勤などで毎日使用するユーザーにとって、自動電源ON機能や充電頻度の少なさが大きなメリットとなっています。一方で、画質や後方録画を重視するユーザーには物足りなさを感じる場合があるようです。",
+    "sources": [
+      {
+        "id": "src-1",
+        "name": "Amazon商品ページ",
+        "url": "https://www.amazon.co.jp/dp/B0FT6W7B1X",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-03-05",
+        "author": "MAXWIN",
+        "conflictOfInterest": "disclosed",
+        "notes": "製品仕様、機能（4000mAhバッテリー、約16時間連続録画、スマート感知センサー、フルHD、IP等級等なしが判明）、サイズを確認"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "最大約16時間連続録画が可能",
+        "category": "durability",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "crossChecked": false,
+        "notes": "メーカーの公式仕様（4000mAhバッテリー）として記載あり"
+      },
+      {
+        "claim": "マウントに装着するだけで自動電源ON",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "crossChecked": false,
+        "notes": "スマート感知センサー搭載と記載"
+      }
+    ],
+    "lastInvestigated": "2026-04-18",
+    "competitiveAnalysis": [
+      {
+        "name": "BOIFUN バイク用ドライブレコーダー MT07",
+        "asin": "B0FWJMZYHJ",
+        "priceComparison": "対象商品より安い。解像度はこちらが2Kで高いが、対象商品はバッテリー容量と連続録画時間で勝る。",
+        "featureComparison": [
+          "共通点：スマホ連携可能、コンパクトサイズ、ループ録画・Gセンサー搭載",
+          "相違点：解像度(対象商品:フルHD, BOIFUN:2K)、バッテリー(対象商品:4000mAhで約16時間, BOIFUN:USB/直結給電)"
+        ],
+        "differentiators": [
+          "MAXWIN MUFU MF-BDVR003-PROの利点：大容量バッテリー内蔵で配線が全く不要。約16時間の長時間連続録画が可能。",
+          "BOIFUN MT07の利点：2Kの高画質で価格が手頃。バイクからの直接給電も可能。"
+        ]
+      },
+      {
+        "name": "AKEEYO バイクドライブレコーダー AKY-710LITE",
+        "asin": "B0FX21SFC4",
+        "priceComparison": "対象商品より安い。機能面ではAKEEYOも2K解像度を持つが、バッテリー持ちは対象商品の半分程度。",
+        "featureComparison": [
+          "共通点：配線不要のバッテリー内蔵型、スマホ連携、IP66防水",
+          "相違点：解像度(対象商品:フルHD, AKEEYO:2K)、バッテリー稼働時間(対象商品:約16時間, AKEEYO:最大7.5時間)"
+        ],
+        "differentiators": [
+          "MAXWIN MUFU MF-BDVR003-PROの利点：圧倒的なバッテリー持ちで、充電の手間を減らせる。",
+          "AKEEYO AKY-710LITEの利点：2Kの高画質で価格が抑えられている。"
+        ]
+      },
+      {
+        "name": "AKEEYO バイクドライブレコーダー AKY-710PRO",
+        "asin": "B0CPLSG34R",
+        "priceComparison": "対象商品より高い。4K画質や強力な手ブレ補正などの高性能を備えているため。",
+        "featureComparison": [
+          "共通点：配線不要、スマホ連携、防水防塵",
+          "相違点：画質・機能(対象商品:フルHD, AKEEYO:4K・EIS手ブレ補正)、バッテリー(対象商品:4000mAh, AKEEYO:1800mAh)"
+        ],
+        "differentiators": [
+          "MAXWIN MUFU MF-BDVR003-PROの利点：長時間の連続録画が可能で、バッテリー切れの心配が少ない。",
+          "AKEEYO AKY-710PROの利点：4K超高画質とEIS手ブレ補正で、より美しく滑らかな映像を残せる。"
+        ]
+      },
+      {
+        "name": "SULUWU 4K ドライブレコーダー HUT10",
+        "asin": "B0GKGDFPSW",
+        "priceComparison": "対象商品より安い。4K画質と2カメラ対応でありながら価格が抑えられている。",
+        "featureComparison": [
+          "共通点：バッテリー内蔵、スマホ連携、防水設計",
+          "相違点：カメラ数(対象商品:前のみ, SULUWU:前後2カメラ)、画質(対象商品:フルHD, SULUWU:4K)、バッテリー(対象商品:4000mAh, SULUWU:3000mAh/最大8時間)"
+        ],
+        "differentiators": [
+          "MAXWIN MUFU MF-BDVR003-PROの利点：約16時間の長時間稼働と、マウント装着による自動電源ONの利便性。",
+          "SULUWU HUT10の利点：前後2カメラで4K画質に対応し、コストパフォーマンスが高い。"
+        ]
+      },
+      {
+        "name": "LXMIMI バイクドライブレコーダー HU-814",
+        "asin": "B0D3SY4J5J",
+        "priceComparison": "対象商品の約3分の1の価格。エントリーモデルとして機能が絞られている。",
+        "featureComparison": [
+          "共通点：配線不要の充電式、フルHD録画",
+          "相違点：バッテリー稼働時間(対象商品:約16時間, LXMIMI:最大4時間)、防水性能(対象商品:非記載だが屋外用, LXMIMI:IPX5)"
+        ],
+        "differentiators": [
+          "MAXWIN MUFU MF-BDVR003-PROの利点：圧倒的なバッテリー持ちと、スマート感知センサーによる使い勝手の良さ。",
+          "LXMIMI HU-814の利点：非常に低価格で、とりあえず導入してみたい初心者に適している。"
+        ]
+      },
+      {
+        "name": "SULUWU バイクドライブレコーダー HUT10 (64GB付属版)",
+        "asin": "B0GH66SGLF",
+        "priceComparison": "対象商品より安い。機能はほぼ同じで4K録画対応だがバッテリー持ちは劣る。",
+        "featureComparison": [
+          "共通点：バッテリー内蔵、スマホ連携、ループ録画",
+          "相違点：画質(対象商品:フルHD, SULUWU:4K)、稼働時間(対象商品:約16時間, SULUWU:最大8時間)"
+        ],
+        "differentiators": [
+          "MAXWIN MUFU MF-BDVR003-PROの利点：充電頻度を減らせる大容量バッテリーと、マウント装着で自動起動する手軽さ。",
+          "SULUWU HUT10の利点：4Kの高画質と64GBカード付属でコストパフォーマンスに優れる。"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "充電の手間を極力減らしたい人",
+        "配線作業が苦手で手軽に導入したい人",
+        "毎日の通勤・通学でバイクを利用する人"
+      ],
+      "pros": [
+        "最大約16時間の長時間連続録画",
+        "配線不要で簡単に設置可能",
+        "マウント装着で自動電源ONの便利さ",
+        "専用アプリでの簡単操作"
+      ],
+      "cons": [
+        "画質はフルHDで、最新の4Kモデルには劣る",
+        "前方のみの録画"
+      ],
+      "score": 80,
+      "scoreRationale": "[基本点: 70]\n[加点: +10] (最大約16時間の連続録画が可能で充電の手間が少ない実用性の高さ)\n[加点: +5] (スマート感知センサーによる自動電源ON/OFFの利便性)\n[減点: -5] (価格に対して画質がフルHD止まりであり、コスパ面でやや物足りない)\n[合計: 80]"
+    },
+    "technicalSpecs": {
+      "dimensions": {
+        "height": "37mm",
+        "width": "43mm",
+        "depth": "70mm"
+      },
+      "weight": "118g",
+      "resolution": "フルHD (1080P)",
+      "viewAngle": "広角120度",
+      "battery": "4000mAh (最大約16時間連続録画)",
+      "connectivity": "2.4G Wi-Fi内蔵、専用スマホアプリ対応",
+      "sensors": "スマート感知センサー、傾き動作検知(Gセンサー)",
+      "other": [
+        "自動電源ON/OFF機能",
+        "緊急録画機能"
+      ]
+    }
+  }
+}
