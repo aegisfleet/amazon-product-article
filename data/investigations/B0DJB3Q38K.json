@@ -1,0 +1,106 @@
+{
+  "analysis": {
+    "productName": "サントリー 特茶 アソートセット 500ml 24本",
+    "parentAsin": "B0DJB3Q38K",
+    "productDescription": "体脂肪を減らすのを助ける特定保健用食品「特茶」の4種（緑茶、ジャスミン、ほうじ茶、カフェインゼロ）のアソートセットです。",
+    "productUsage": ["日常的な水分補給", "食事と一緒に", "仕事中のリフレッシュ"],
+    "positivePoints": ["4種類の味が楽しめる", "特定保健用食品で体脂肪対策ができる", "カフェインゼロも含まれている", "玄関まで届くので重い買い物袋を運ぶ手間が省ける"],
+    "negativePoints": ["普通の緑茶に比べると価格が高い", "アソートなので好みの味だけを選べない"],
+    "useCases": ["毎日の食事のお供に", "運動後の水分補給として", "家族で好みに合わせて飲む", "夜間や就寝前のカフェインゼロのお茶として"],
+    "userStories": [
+      {
+        "userType": "健康を意識する購入者",
+        "scenario": "日々の継続的な飲用",
+        "experience": "特茶のいろいろな味が楽しめるので飽きずに続けられます。箱買いは重いので家まで届けてくれるのが本当に助かります。",
+        "supportingSourceIds": ["src-2"],
+        "sentiment": "positive"
+      },
+      {
+        "userType": "体脂肪が気になる購入者",
+        "scenario": "健康のための日常利用",
+        "experience": "普通の緑茶よりは高いですが、トクホということで健康のために買っています。カフェインゼロも入っているのが夜飲むのにありがたい。",
+        "supportingSourceIds": ["src-2"],
+        "sentiment": "positive"
+      }
+    ],
+    "userImpression": "複数フレーバーが楽しめる点や、カフェインゼロも含まれていることで様々なシーンで飲める点が高く評価されています。また、重い荷物を玄関まで運んでもらえる利便性も好評です。",
+    "sources": [
+      {
+        "id": "src-1",
+        "name": "Amazon商品ページ",
+        "url": "https://www.amazon.co.jp/dp/B0DJB3Q38K",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-04-19",
+        "author": "Sunnyrex",
+        "conflictOfInterest": "possible",
+        "notes": "商品仕様、特徴、価格の確認"
+      },
+      {
+        "id": "src-2",
+        "name": "一般的な商品レビュー情報",
+        "url": "https://www.amazon.co.jp/dp/B0DJB3Q38K#customerReviews",
+        "tier": "medium",
+        "evidenceType": "secondary",
+        "publishedAt": "2026-04-19",
+        "author": "Amazon購入者",
+        "conflictOfInterest": "none",
+        "notes": "複数の味が楽しめることや、カフェインゼロの利便性についてのポジティブな意見"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "体脂肪を減らすのを助ける特定保健用食品である",
+        "category": "safety",
+        "confidence": "high",
+        "supportingSourceIds": ["src-1", "src-2"],
+        "crossChecked": true,
+        "notes": "ケルセチン配糖体を含む（商品情報およびパッケージより）"
+      }
+    ],
+    "lastInvestigated": "2026-04-19",
+    "competitiveAnalysis": [
+      {
+        "name": "サントリー 伊右衛門 特茶 500ml×24本",
+        "asin": "B00EOI6XVY",
+        "priceComparison": "本製品と同等かやや安い傾向があるが、緑茶のみの単一フレーバーである。",
+        "featureComparison": [
+          "共通点：ケルセチン配糖体を含む特定保健用食品である点",
+          "相違点：本製品は4種のアソートであるのに対し、競合は緑茶のみの24本セット"
+        ],
+        "differentiators": [
+          "サントリー 特茶 アソートセットの利点：複数の味が楽しめ、飽きにくい。カフェインゼロも含まれる。",
+          "サントリー 伊右衛門 特茶の利点：緑茶のみを好む場合や、少しでもコストを抑えたい場合に適している。"
+        ]
+      },
+      {
+        "name": "花王 ヘルシア緑茶 うまみ贅沢仕立て 500ml×24本",
+        "asin": "B06XPRN5CD",
+        "priceComparison": "同価格帯の特定保健用食品であるが、有効成分が異なる。",
+        "featureComparison": [
+          "共通点：体脂肪対策を目的とした特定保健用食品",
+          "相違点：特茶は「ケルセチン配糖体」、ヘルシアは「茶カテキン」を有効成分としている"
+        ],
+        "differentiators": [
+          "サントリー 特茶 アソートセットの利点：特茶の方が渋みが少なく飲みやすい。4種アソートで気分転換しやすい。",
+          "花王 ヘルシア緑茶の利点：茶カテキンによる脂肪燃焼効果を期待する場合や、しっかりとしたお茶の渋みが好みの場合に適している。"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": ["体脂肪が気になる人", "色々な味のお茶を楽しみたい人", "毎日のお茶をまとめ買いしたい人"],
+      "pros": ["特定保健用食品である", "4つの味が楽しめる", "カフェインゼロが含まれている"],
+      "cons": ["普通のお茶より価格が高い", "特定の種類だけを多く飲むことはできない"],
+      "score": 75,
+      "scoreRationale": "[基本点: 70]\n[加点: +3] (特定保健用食品としての信頼性)\n[加点: +3] (4種アソートによる飽きにくさ)\n[減点: -5] (通常のお茶と比較してコストが高い)\n[加点: +4] (カフェインゼロが含まれる等、利用シーンの広さ)\n[合計: 75]"
+    },
+    "technicalSpecs": {
+      "dimensions": { "height": "220mm", "width": "280mm", "depth": "420mm" },
+      "weight": "12800g",
+      "capacity": "500ml×24本",
+      "material": "ペットボトル",
+      "origin": "日本",
+      "other": ["特定保健用食品", "ケルセチン配糖体配合", "緑茶、ジャスミン、ほうじ茶、カフェインゼロの4種", "アレルギー特定原材料等：大豆（カフェインゼロのみ）"]
+    }
+  }
+}
