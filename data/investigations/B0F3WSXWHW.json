@@ -1,88 +1,173 @@
 {
   "analysis": {
-    "productName": "UGREEN HDMI 2.1 切替器 2入力1出力",
+    "productName": "UGREEN HDMI 切り替え器 セレクター 2入力1出力 8K@60Hz/4k@240Hz",
     "parentAsin": "B0F3WSXWHW",
-    "productDescription": "8K@60Hzや4K@120Hzに対応した、2台のHDMI機器を1台のモニターに切り替えて出力できる手動式セレクターです。",
+    "productDescription": "8K@60Hzおよび4K@240Hzの高解像度・高リフレッシュレートに対応したUGREENの2入力1出力HDMIセレクターです。手動切り替えで、ゲーム機やPCを1台のモニターで共有できます。",
     "productUsage": [
-      "PS5やXbox Series Xなどの最新ゲーム機を1つのHDMIポートで切り替えて使用",
-      "PCとゲーム機で同じモニターを共有",
-      "テレビのHDMIポート不足を解消"
+      "PS5やXboxなどのゲーム機とPCを1台のモニターに接続して切り替える",
+      "HDMIポートが不足しているテレビに複数のHDMI機器を接続する"
     ],
     "positivePoints": [
-      "HDMI 2.1対応で8K@60Hz/4K@120Hzの高解像度・高リフレッシュレートをサポート",
-      "USB-C給電ケーブル付属で安定した動作が可能",
-      "手動スイッチによる確実な切り替え操作",
-      "UGREENブランドによる一定の品質信頼性",
-      "競合製品と比較して安価な価格設定"
+      "8K@60Hzおよび4K@240Hz、4K@120Hzに対応し、次世代ゲーム機や高性能PCでの滑らかな映像出力をサポートしている",
+      "HDMI 2.1規格に準拠し、VRR（可変リフレッシュレート）やダイナミックHDR、Dolby Atmosに対応している",
+      "ボタン一つで2つの入力を簡単に切り替えられ、LEDインジケーターで接続状況が一目でわかる",
+      "48Gbpsのデータ転送帯域幅を持ち、入力遅延を減らしゲームの応答性を向上させる"
     ],
     "negativePoints": [
-      "自動切り替え機能がない",
-      "リモコンが付属していないため本体での操作が必要",
-      "単方向仕様のため1入力2出力の分配器としては使用不可"
+      "双方向（1入力2出力）には対応しておらず、2入力1出力専用である",
+      "自動切り替え機能は搭載されていない",
+      "ARC/eARCには非対応である",
+      "動作にはUSB-Cでの給電が必須であり、電源ケーブルは付属するがアダプターは別途用意する必要がある"
     ],
     "useCases": [
-      "ハイエンドゲーミング環境の構築",
-      "リビングのAV機器配線の整理"
+      "ゲーミング環境での複数ハードウェア（PCとPS5など）の切り替え",
+      "リビングのテレビでのFire TV StickとNintendo Switchの切り替え"
     ],
-    "userStories": [
-      {
-        "userType": "ゲーマー",
-        "scenario": "PS5とXbox Series Xの両方を所有",
-        "experience": "（推測）これまではケーブルを差し替えていたが、ボタン一つで切り替えられるようになり手間が減った。4K120Hzでも遅延を感じない。",
-        "sentiment": "positive"
-      },
-      {
-        "userType": "PCユーザー",
-        "scenario": "仕事用PCとゲーム機を同じモニターで使用",
-        "experience": "（推測）デスク上のケーブルがすっきりした。手動切り替えなので勝手に画面が変わることがなくて良い。",
-        "sentiment": "positive"
-      }
-    ],
-    "userImpression": "HDMI 2.1対応の安価なセレクターとして、特にゲーマー層からの需要が見込まれる。手動操作の手間はあるが、その分安定性とコストパフォーマンスに優れる。",
+    "userStories": [],
+    "userImpression": "8Kや高リフレッシュレートの4K映像に対応しており、最新ゲーム機を利用するユーザーにとって信頼性の高い切替器です。自動切り替えやARCに非対応といった制約はありますが、UGREENブランドの安心感とシンプルな操作性が評価されるスペックとなっています。",
     "sources": [
       {
-        "name": "Amazon Product Page",
+        "id": "src-amazon-b0f3wsxwhw",
+        "name": "Amazon.co.jp 公式商品ページ",
         "url": "https://www.amazon.co.jp/dp/B0F3WSXWHW",
-        "credibility": "high"
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-04-20",
+        "author": "Amazon/UGREEN",
+        "conflictOfInterest": "none",
+        "notes": "商品の公式スペック、価格、特徴を確認"
       }
     ],
-    "lastInvestigated": "2026-01-31",
+    "claims": [
+      {
+        "claim": "8K@60Hzおよび4K@240Hzに対応",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": ["src-amazon-b0f3wsxwhw"],
+        "crossChecked": false,
+        "notes": "公式スペックに基づく"
+      },
+      {
+        "claim": "VRR、ダイナミックHDR、Dolby Atmos、HDCP2.3対応",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": ["src-amazon-b0f3wsxwhw"],
+        "crossChecked": false,
+        "notes": "公式スペックに基づく"
+      }
+    ],
+    "lastInvestigated": "2026-04-20",
     "competitiveAnalysis": [
       {
-        "name": "エレコム DH-SW8KBD21BK/E",
-        "asin": "B0DP46LYZ6",
-        "priceComparison": "3330円（本製品より約1400円高い）",
-        "featureComparison": ["双方向対応（本製品は単方向）", "薄型設計", "国内メーカーサポート"],
-        "differentiators": ["双方向機能が必要ならエレコムだが、単なる切替ならUGREENの方がコスパが良い"]
+        "name": "ENBUER 8K HDMI 切替器",
+        "asin": "B0FPLVKH81",
+        "priceComparison": "対象商品より安価",
+        "featureComparison": [
+          "共通点：2入力1出力、8K@60Hz対応、HDMI 2.1対応、アルミニウム筐体",
+          "相違点：対象商品は給電必須だが、競合は電力不足時のみ給電で可。対象商品は4K@240Hz対応を謳っているが、競合は4K@120Hzや1080P@240Hzまで。"
+        ],
+        "differentiators": [
+          "UGREEN HDMI 切り替え器 セレクター 2入力1出力 8K@60Hz/4k@240Hzの利点：大手アクセサリーブランドの信頼性があり、4K@240Hzという超高リフレッシュレートを公式にサポートしている。",
+          "ENBUER 8K HDMI 切替器の利点：価格が安く、給電が必須ではない場合があるため配線を少なくできる可能性がある。"
+        ]
       },
       {
-        "name": "サンワサプライ SW-HDR8K21L",
-        "asin": "B0C9CZX29D",
-        "priceComparison": "3364円（本製品より約1400円高い）",
-        "featureComparison": ["2入力1出力", "国内メーカーサポート"],
-        "differentiators": ["機能は同等だが価格差が大きい"]
+        "name": "avedio links 8K HDMI切替器",
+        "asin": "B0G7V5CJ12",
+        "priceComparison": "対象商品より安価",
+        "featureComparison": [
+          "共通点：8K@60Hz対応、HDMI 2.1対応",
+          "相違点：対象商品は2入力1出力専用だが、競合は2入力1出力 / 1入力2出力の双方向対応である。対象商品は4K@240Hz対応だが、競合は4K@120Hzまで。"
+        ],
+        "differentiators": [
+          "UGREEN HDMI 切り替え器 セレクター 2入力1出力 8K@60Hz/4k@240Hzの利点：UGREENブランドの信頼感と、4K@240Hz対応という点。",
+          "avedio links 8K HDMI切替器の利点：価格が安く、1入力2出力の分配モード（同時出力不可）としても利用できる双方向対応の利便性がある。"
+        ]
       },
       {
-        "name": "avedio links HDMI切替器",
-        "asin": "B0F18R7YG5",
-        "priceComparison": "1227円（本製品より約700円安い）",
-        "featureComparison": ["双方向対応", "より小型"],
-        "differentiators": ["さらに安価だが、ブランド信頼性と安定性でUGREENを選ぶ余地がある"]
+        "name": "Chayoo 8K HDMI切替器",
+        "asin": "B0DBVDL3WF",
+        "priceComparison": "対象商品より安価",
+        "featureComparison": [
+          "共通点：8K@60Hz対応、HDMI 2.1対応",
+          "相違点：対象商品は2入力1出力専用だが、競合は双方向対応である。対象商品は給電必須だが競合は給電不要を謳っている。"
+        ],
+        "differentiators": [
+          "UGREEN HDMI 切り替え器 セレクター 2入力1出力 8K@60Hz/4k@240Hzの利点：有名ブランドであり、動作安定性のためにあえて給電を必須としている点で安心感がある。",
+          "Chayoo 8K HDMI切替器の利点：安価で双方向利用ができ、給電不要で使える手軽さがある。"
+        ]
+      },
+      {
+        "name": "XinYaa 8K HDMI切替器",
+        "asin": "B0F5WVFM54",
+        "priceComparison": "対象商品とほぼ同等",
+        "featureComparison": [
+          "共通点：8K@60Hz対応、HDMI 2.1対応",
+          "相違点：対象商品は2入力1出力専用だが、競合は双方向対応である。"
+        ],
+        "differentiators": [
+          "UGREEN HDMI 切り替え器 セレクター 2入力1出力 8K@60Hz/4k@240Hzの利点：グローバルな周辺機器ブランド（UGREEN）としての高い信頼性がある。",
+          "XinYaa 8K HDMI切替器の利点：双方向（1入力2出力）としても使える汎用性がある。"
+        ]
+      },
+      {
+        "name": "GANA 8K HDMI切替器",
+        "asin": "B0BPRQHSGT",
+        "priceComparison": "対象商品よりやや高価",
+        "featureComparison": [
+          "共通点：8K@60Hz対応、HDMI 2.1対応",
+          "相違点：対象商品は2入力1出力専用だが、競合は双方向対応である。競合は電源付き（Cタイプ）と明記されている。"
+        ],
+        "differentiators": [
+          "UGREEN HDMI 切り替え器 セレクター 2入力1出力 8K@60Hz/4k@240Hzの利点：価格が少し安く、ブランド力がある。",
+          "GANA 8K HDMI切替器の利点：双方向で利用できる汎用性がある。"
+        ]
+      },
+      {
+        "name": "スマート良品 8K HDMI分配器/切替器",
+        "asin": "B09TSXS1R6",
+        "priceComparison": "対象商品より高価",
+        "featureComparison": [
+          "共通点：8K@60Hz対応、HDMI 2.1対応",
+          "相違点：対象商品は2入力1出力専用だが、競合は双方向対応である。価格が対象商品より高い。"
+        ],
+        "differentiators": [
+          "UGREEN HDMI 切り替え器 セレクター 2入力1出力 8K@60Hz/4k@240Hzの利点：大幅に価格が安く、PCや最新ゲーム機（4K@240Hzなど）での利用に適したスペックを持っている。",
+          "スマート良品 8K HDMI分配器/切替器の利点：双方向に対応しており、1入力2出力の用途に使える。"
+        ]
       }
     ],
     "recommendation": {
-      "targetUsers": ["PS5/Xbox Series Xユーザー", "4K/120Hzモニター利用者", "コスパ重視の人"],
-      "pros": ["最新規格HDMI 2.1対応", "圧倒的なコストパフォーマンス", "安定動作のための外部電源対応"],
-      "cons": ["手動切り替えのみ", "リモコンなし"],
-      "score": 80,
-      "scoreRationale": "[基本点: 70]\n[加点: +5] (HDMI 2.1対応、8K/4K120Hzサポート、USB-C給電による安定性)\n[加点: +5] (競合他社製品と比較して安価でありながら十分な機能を持つ)\n[合計: 80]"
+      "targetUsers": [
+        "最新のゲーム機（PS5等）や高性能PCを使用しており、高リフレッシュレート（4K@120Hz/240Hz）を活かしたい人",
+        "信頼できる有名ブランドの製品を使いたい人",
+        "2つの機器を1つのモニターに出力できれば十分な人"
+      ],
+      "pros": [
+        "4K@240Hzという超高リフレッシュレートに対応",
+        "UGREENという大手ブランドの安心感",
+        "VRRやDolby Atmosなど最新規格を網羅",
+        "給電必須設計による安定動作"
+      ],
+      "cons": [
+        "双方向（1入力2出力）には非対応",
+        "自動切り替え機能がない",
+        "給電用のアダプターが別途必要"
+      ],
+      "score": 83,
+      "scoreRationale": "[基本点: 70]\n[加点: +8] (4K@240Hzという優れた高リフレッシュレート対応)\n[加点: +5] (VRR、Dolby Atmosなどの充実した最新規格への対応)\n[加点: +5] (UGREENという信頼性の高いブランド)\n[減点: -5] (多くの競合が備える双方向対応（1入力2出力）機能がないこと)\n[合計: 83]"
     },
     "technicalSpecs": {
-      "dimensions": { "height": "3cm (約1.18インチ)", "width": "7.2cm (約2.83インチ)", "depth": "15.7cm (約6.18インチ)" },
-      "power": "USB-C給電 (ケーブル付属)",
-      "capacity": "48Gbps帯域幅",
-      "connectivity": ["HDMI 2.1", "HDCP 2.3", "VRR", "HDR10+"],
-      "other": ["手動スイッチ", "LEDインジケーター"]
+      "dimensions": { "height": "30.0mm", "width": "72.0mm", "depth": "157.0mm" },
+      "resolution": "8K@60Hz、4K@240Hz、4K@120Hz、2K@240Hz、1080P@240Hz",
+      "bandwidth": "48Gbps",
+      "supportedFeatures": "HDMI 2.1/2.0/1.4、VRR、Dynamic HDR、Dolby Atmos、HDCP 2.3",
+      "ports": "2入力1出力 (単方向)",
+      "powerSupply": "USB-C給電必須 (5V電源アダプターは別売)",
+      "material": "アルミニウム合金 (推定)",
+      "color": "ブラック",
+      "model": "65877",
+      "warranty": "24ヶ月"
     }
   }
 }
