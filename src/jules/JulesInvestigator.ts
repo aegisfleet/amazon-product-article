@@ -101,8 +101,8 @@ export class JulesInvestigator {
       return response.data;
     } catch (error) {
       const julesError = this.handleApiError(error);
-      this.logger.error('Failed to list Jules sources', julesError);
-      throw new Error(`Failed to list sources: ${julesError.message}`, { cause: error });
+      this.logger.error('Failed to list sources', { error: julesError });
+      throw julesError;
     }
   }
 
