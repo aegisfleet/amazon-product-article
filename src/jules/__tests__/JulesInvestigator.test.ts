@@ -1,6 +1,6 @@
 import axios from 'axios';
-import { JulesInvestigator } from '../JulesInvestigator';
 import { Logger } from '../../utils/Logger';
+import { JulesInvestigator } from '../JulesInvestigator';
 
 jest.mock('axios');
 jest.mock('../../utils/Logger', () => ({
@@ -45,8 +45,8 @@ describe('JulesInvestigator', () => {
       const mockSources = {
         sources: [
           { id: '1', name: 'source1' },
-          { id: '2', name: 'source2' }
-        ]
+          { id: '2', name: 'source2' },
+        ],
       };
       mockGet.mockResolvedValueOnce({ data: mockSources });
 
@@ -64,14 +64,14 @@ describe('JulesInvestigator', () => {
       const handleApiErrorSpy = jest.spyOn(investigator as any, 'handleApiError');
 
       await expect(investigator.listSources()).rejects.toMatchObject({
-        code: 'UNKNOWN_ERROR'
+        code: 'UNKNOWN_ERROR',
       });
 
       expect(handleApiErrorSpy).toHaveBeenCalledWith(error);
       expect(mockLoggerError).toHaveBeenCalledWith('Failed to list sources', {
         error: expect.objectContaining({
           code: 'UNKNOWN_ERROR',
-        })
+        }),
       });
     });
 
@@ -85,14 +85,14 @@ describe('JulesInvestigator', () => {
       const handleApiErrorSpy = jest.spyOn(investigator as any, 'handleApiError');
 
       await expect(investigator.listSources()).rejects.toMatchObject({
-        code: 'RATE_LIMIT_EXCEEDED'
+        code: 'RATE_LIMIT_EXCEEDED',
       });
 
       expect(handleApiErrorSpy).toHaveBeenCalledWith(axiosError);
       expect(mockLoggerError).toHaveBeenCalledWith('Failed to list sources', {
         error: expect.objectContaining({
           code: 'RATE_LIMIT_EXCEEDED',
-        })
+        }),
       });
     });
   });
