@@ -248,30 +248,7 @@ document.addEventListener('DOMContentLoaded', function () {
             .catch(err => console.error('Error loading search index:', err));
 
         const handleSearch = debounce((query) => {
-            const results = searchWithRerank(query);
-            displayResults(results);
-        }, 300);
-
-
-        function searchWithRerank(query) {
-            return rerankResults(fuse.search(query), query);
-        }
-
-        // Event Listeners
-        searchInput.addEventListener('input', (e) => {
-            if (!fuse) return;
-
-            const query = e.target.value.replaceAll('　', ' ');
-            if (query.trim().length === 0) {
-                displaySearchTips();
-                return;
-            }
-
-            if (query.trim().length < 2) {
-                // Keep the tips visible while typing the first character
-                return;
-            }
-
+            // 検索中表示
             searchResults.textContent = '';
             const loadingDiv = document.createElement('div');
             loadingDiv.className = 'search-loading';
@@ -286,7 +263,42 @@ document.addEventListener('DOMContentLoaded', function () {
             searchResults.classList.add('active');
             updateSearchResultsHeight();
 
+            // 検索と表示
+            const results = searchWithRerank(query);
+            displayResults(results);
+        }, 300);
+
+
+        function searchWithRerank(query) {
+            return rerankResults(fuse.search(query), query);
+        }
+
+        // Event Listeners
+        searchInput.addEventListener('input', (e) => {
+            if (!fuse) return;
+            if (e.isComposing) return;
+
+            const query = e.target.value.replaceAll('　', ' ');
+            if (query.trim().length === 0) {
+                displaySearchTips();
+                return;
+            }
+
+            if (query.trim().length < 2) {
+                // 1文字のときはヒントを表示したままにする
+                return;
+            }
+
             handleSearch(query);
+        });
+
+        // IME入力確定時にも検索を実行
+        searchInput.addEventListener('compositionend', (e) => {
+            if (!fuse) return;
+            const query = e.target.value.replaceAll('　', ' ');
+            if (query.trim().length >= 2) {
+                handleSearch(query);
+            }
         });
 
         // Filter event listeners to trigger re-search
