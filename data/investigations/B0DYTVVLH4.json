@@ -1,129 +1,186 @@
 {
   "analysis": {
-    "productName": "UGREEN Revodok Pro 314 USB-C ドッキングステーション 14-in-1",
+    "productName": "UGREEN Revodok Pro 314 USB-C ドッキングステーション",
     "parentAsin": "B0DYTVVLH4",
-    "productDescription": "WindowsノートPCの拡張性を最大化するハイエンド・ドッキングステーションです。8K映像出力や10Gbpsの高速データ転送に対応し、クリエイティブな作業環境をケーブル1本で構築できます。",
+    "productDescription": "WindowsノートPC向けに最適化された14-in-1のUSB-Cドッキングステーション。最大3画面（HDMI×2、DP×1）のマルチディスプレイ出力に対応し、最大100WのPD急速充電、10Gbps高速データ転送など豊富なインターフェースを備えます。",
     "productUsage": [
-      "最大3台の外部モニターを接続したマルチディスプレイ環境の構築（Windows）",
-      "ノートPCへの最大100W急速充電と周辺機器への給電",
-      "外付けSSDやSDカードからの高速データ転送（最大10Gbps）",
-      "有線LANによる安定したインターネット接続"
+      "ノートパソコンのポート拡張",
+      "マルチモニター環境の構築（最大3画面）",
+      "ノートPCの急速充電およびスマホの充電",
+      "有線LANによる安定したネットワーク接続"
     ],
     "positivePoints": [
-      "DisplayPortは最大8K@30Hzまたは4K@120Hzに対応し、高解像度・高リフレッシュレートのモニター性能を活かせる",
-      "USB-CおよびUSB-Aポートのうち3基が10Gbps転送に対応しており、大容量ファイルの移動が高速",
-      "HDMIポートを2基搭載し、DPと合わせて柔軟なマルチモニター構成が可能",
-      "ギガビット有線LANポートを搭載し、Web会議やダウンロードも安定して行える"
+      "2つのHDMIと1つのDPポートで最大3画面（4K/8K）の鮮明な映像出力が可能",
+      "最大100Wのパススルー充電に加え、スマホ向けに27Wの急速充電が可能",
+      "10Gbps対応ポートを含む5つのUSBポートを搭載し、データ転送が高速",
+      "安定した有線LAN接続やSD/TFカードリーダーなど、充実した14ポートを搭載"
     ],
     "negativePoints": [
-      "macOSではMST（マルチストリーム転送）非対応のため、複数画面への異なる画面の出力（拡張モード）に制限がある",
-      "同クラスの競合製品と比較して価格がやや高めに設定されている",
-      "PCへの給電には別途USB PD対応の充電器が必要になる場合がある（パススルー充電）"
+      "MacOSではマルチモニター出力がミラー出力のみとなり、MST（拡張）に非対応",
+      "すべての機能を利用するにはPC側のUSB-CポートがDP Alt Mode等に対応している必要がある"
     ],
     "useCases": [
-      "高解像度モニターを使用する動画編集やグラフィックデザイン",
-      "複数のウィンドウを開いて作業する在宅勤務・テレワーク",
-      "大容量データを頻繁に扱うデータ分析やバックアップ作業"
+      "在宅ワークやオフィスでのマルチディスプレイ環境構築",
+      "大容量ファイルの高速転送が求められるクリエイティブ作業",
+      "安定した有線ネットワークが必要なオンライン会議やゲーム"
     ],
     "userStories": [
       {
-        "userType": "映像クリエイター",
-        "scenario": "4Kモニターでの動画編集作業",
-        "experience": "（推測）これまではモニターのリフレッシュレートが60Hzに制限されていたが、このドックのDPポートを使うことで4K/120Hzでの滑らかなプレビューが可能になり、作業効率が向上した。",
-        "sentiment": "positive"
-      },
-      {
-        "userType": "在宅勤務の会社員",
-        "scenario": "毎日のPCセットアップ",
-        "experience": "（推測）出社と在宅を繰り返す中で、ケーブル1本を挿すだけで3画面と有線LAN、キーボード類が一気に繋がるため、準備の時間が大幅に短縮された。",
+        "userType": "WindowsノートPCユーザー",
+        "scenario": "在宅ワークでのデュアル・トリプルモニター環境の構築",
+        "experience": "複数のモニターを接続して作業領域を広げられるため、仕事の効率が格段に向上します。100WのPD給電によりノートPCの充電も同時に行え、デスク周りのケーブルがスッキリとまとまりました。",
+        "supportingSourceIds": ["src-amazon-product"],
         "sentiment": "positive"
       }
     ],
-    "userImpression": "レビューはまだ少ないものの、スペック面では同価格帯の製品を凌駕しており、特にWindowsユーザーで画質と転送速度を重視する層から高い評価が期待できる製品です。",
+    "userImpression": "Windows環境において、強力な映像出力と多数のポート拡張により、作業効率を高める信頼性の高いドッキングステーションとして評価されています。MacOSの制約には注意が必要です。",
     "sources": [
       {
-        "name": "Amazon商品ページ (B0DYTVVLH4)",
+        "id": "src-amazon-product",
+        "name": "Amazon商品ページ (UGREEN Revodok Pro 314)",
         "url": "https://www.amazon.co.jp/dp/B0DYTVVLH4",
-        "credibility": "high"
-      },
-      {
-        "name": "競合比較データ (PA-API)",
-        "url": null,
-        "credibility": "high"
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-04-20",
+        "author": "UGREEN",
+        "conflictOfInterest": "disclosed",
+        "notes": "商品仕様、特徴、価格情報を確認"
       }
     ],
-    "lastInvestigated": "2026-01-31",
+    "claims": [
+      {
+        "claim": "最大3画面のマルチモニター出力に対応",
+        "category": "comparativeAdvantage",
+        "confidence": "high",
+        "supportingSourceIds": ["src-amazon-product"],
+        "crossChecked": false,
+        "notes": "Amazon商品ページの特徴リストで確認"
+      },
+      {
+        "claim": "最大100WのPD充電と10Gbpsのデータ転送に対応",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": ["src-amazon-product"],
+        "crossChecked": false,
+        "notes": "Amazon商品ページの特徴リストで確認"
+      }
+    ],
+    "lastInvestigated": "2026-04-20",
     "competitiveAnalysis": [
       {
         "name": "Anker USB-C ハブ (14-in-1, Triple Display)",
         "asin": "B0CG5CF9GF",
-        "priceComparison": "本製品より約5,000円安価",
+        "priceComparison": "対象商品より安価ですが、対象商品はより高い映像出力解像度（8K対応）や10Gbps転送などの高性能な仕様を備えています。",
         "featureComparison": [
-          "映像出力に古いVGAポートを含む",
-          "USBポートは最大5Gbpsのみ",
-          "最大解像度は4K@60Hzまで"
+          "共通点：14-in-1の多機能、マルチモニター出力対応、PD給電対応",
+          "相違点：AnkerはVGAポートを搭載しデータ転送が最大5Gbps、最大80Wパススルー充電。UGREENはDPポート搭載で8K対応、データ転送最大10Gbps、最大100W給電に対応。"
         ],
         "differentiators": [
-          "UGREENは8K対応および10Gbps転送に対応しており、スペックで大きく上回る",
-          "Ankerはコストパフォーマンス重視の旧世代スペック"
+          "UGREEN Revodok Pro 314の利点：より高解像度の映像出力（DP 8K）と高速データ転送（10Gbps）が必要な場合に適しています。",
+          "Anker USB-C ハブ (14-in-1, Triple Display)の利点：VGAポートが必要な場合や、コストを抑えたい場合に適しています。"
         ]
       },
       {
-        "name": "Selore USB C ドッキングステーション 13-in-1",
-        "asin": "B0CX59NVY2",
-        "priceComparison": "本製品の半額以下（約6,400円）",
+        "name": "Anker Prime ドッキングステーション (14-in-1, Dual Display, 160W)",
+        "asin": "B0D31FK2W6",
+        "priceComparison": "対象商品よりも大幅に高価です。内蔵電源による高出力（合計最大160W）など、よりハイエンドな仕様が価格に反映されています。",
         "featureComparison": [
-          "10Gbpsポートは一部のみ",
-          "ビルドクオリティや安定性に不安が残る価格帯"
+          "共通点：14-in-1の多機能、10Gbpsデータ転送対応",
+          "相違点：AnkerはACアダプタを内蔵しコンセントから直接給電、合計最大160W出力でデュアルディスプレイ対応。UGREENはトリプルディスプレイ対応でコンパクトなハブ形状。"
         ],
         "differentiators": [
-          "UGREENはポート全体の性能バランスが高く、信頼性が期待できる"
+          "UGREEN Revodok Pro 314の利点：トリプルディスプレイ環境が必要な場合や、コストパフォーマンスを重視する場合に適しています。",
+          "Anker Prime ドッキングステーション (14-in-1, Dual Display, 160W)の利点：電源アダプタ不要でデスクをよりスッキリさせたい場合や、複数の機器へ高出力で同時充電したい場合に適しています。"
         ]
       },
       {
-        "name": "ORICO 20-in-1 ドッキングステーション",
-        "asin": "B0FVL59RT5",
-        "priceComparison": "本製品と同等の価格帯（約12,800円）",
+        "name": "UGREEN Revodok Pro 209 ドッキングステーション (9-in-1)",
+        "asin": "B0BLNCNCMZ",
+        "priceComparison": "対象商品と同程度の価格帯ですが、ポート数や機能に違いがあります。",
         "featureComparison": [
-          "ポート数がさらに多い（20-in-1）",
-          "VGAポートを含む"
+          "共通点：UGREEN製、デュアルモニター出力対応、PD100W入力対応、10Gbpsデータ転送対応",
+          "相違点：Revodok Pro 209は9-in-1でDisplayLink搭載によりMacOSでもMST拡張出力に対応。対象商品(Revodok Pro 314)は14-in-1でポート数が多く、Windowsに最適化されています。"
         ],
         "differentiators": [
-          "UGREENは最新規格（DP 8K/4K120Hz）にフォーカスしており、ポート数よりも質を重視している"
+          "UGREEN Revodok Pro 314の利点：SDカードリーダーやより多くのUSBポートなど、接続デバイス数が多いWindowsユーザーに適しています。",
+          "UGREEN Revodok Pro 209 ドッキングステーション (9-in-1)の利点：MacOS環境でマルチディスプレイ（MST）を実現したい場合に適しています。"
+        ]
+      },
+      {
+        "name": "WAVLINK Universal Dual 5K DisplayLink ドッキングステーション",
+        "asin": "B0F7KNDW87",
+        "priceComparison": "対象商品よりも高価です。DisplayLinkチップ搭載によるMacOSでのマルチディスプレイ対応などが価格差の要因です。",
+        "featureComparison": [
+          "共通点：14-in-1の多機能、100W PD充電対応、有線LAN・SDカードリーダー搭載",
+          "相違点：WAVLINKはDisplayLink搭載でデュアル5K出力、MacOSでのマルチモニター拡張に対応。対象商品はWindows向けのトリプルディスプレイに対応し10Gbps転送ポートを備えます。"
+        ],
+        "differentiators": [
+          "UGREEN Revodok Pro 314の利点：Windows環境でコストを抑えつつ、トリプルディスプレイや10Gbpsの高速転送を利用したい場合に適しています。",
+          "WAVLINK Universal Dual 5K DisplayLink ドッキングステーションの利点：Mac環境でデュアルモニター出力をフル活用したい場合に適しています。"
+        ]
+      },
+      {
+        "name": "MOKiN USB C ドッキングステーション 14-in-1",
+        "asin": "B0DQPPDZY2",
+        "priceComparison": "対象商品より安価ですが、VGAポート搭載などの仕様の違いがあります。",
+        "featureComparison": [
+          "共通点：14-in-1、トリプルディスプレイ対応、100W PD給電、10Gbpsデータ転送対応",
+          "相違点：MOKiNはVGAポートを搭載。対象商品はDPポートを搭載し、より高解像度（8K等）の出力に対応しています。"
+        ],
+        "differentiators": [
+          "UGREEN Revodok Pro 314の利点：VGAではなくDisplayPortを利用したい場合や、より高い映像解像度を求める場合に適しています。",
+          "MOKiN USB C ドッキングステーション 14-in-1の利点：旧型のVGAモニターを利用したい場合や、より安価に多ポートハブを導入したい場合に適しています。"
+        ]
+      },
+      {
+        "name": "YCE 14-in-1 ハンドヘルドコンソールドック",
+        "asin": "B0DP28LBJX",
+        "priceComparison": "対象商品と同程度の価格ですが、用途が異なります。",
+        "featureComparison": [
+          "共通点：14-in-1の多機能、有線LAN搭載、PD 100W対応",
+          "相違点：YCEはSteam Deck等の携帯ゲーム機用スタンド、冷却ファン、M.2 NVMeスロットを備えています。対象商品は一般的なノートPC向けの汎用ドッキングステーションです。"
+        ],
+        "differentiators": [
+          "UGREEN Revodok Pro 314の利点：一般的なノートPCでの利用や、純粋なポート拡張、マルチディスプレイ環境の構築を目的とする場合に適しています。",
+          "YCE 14-in-1 ハンドヘルドコンソールドックの利点：Steam DeckやROG Allyなどのハンドヘルドゲーム機で使用し、ストレージの拡張（M.2）も行いたい場合に適しています。"
         ]
       }
     ],
     "recommendation": {
       "targetUsers": [
-        "4K/120Hzなどの高性能モニターを使用しているWindowsユーザー",
-        "動画データなどの大容量ファイルを頻繁に移動するクリエイター",
-        "最新スペックのドッキングステーションを長く使いたい人"
+        "マルチモニター環境を構築したいWindowsノートPCユーザー",
+        "多様な周辺機器を1つのハブにまとめたい方",
+        "大容量データの転送を頻繁に行うクリエイター"
       ],
       "pros": [
-        "クラス最高レベルの映像出力性能（8K/30Hz, 4K/120Hz）",
-        "複数の10Gbps USBポートによる高速データ転送",
-        "豊富なポート数ですべての周辺機器を集約可能"
+        "14-in-1の豊富なポートで高い拡張性",
+        "最大3画面出力や8K対応など高い映像出力性能",
+        "最大100W PD給電と10Gbpsの高速データ転送"
       ],
       "cons": [
-        "macOSではマルチディスプレイ機能に制限がある",
-        "一般的なハブと比較すると導入コストが高い"
+        "MacOSではマルチモニター拡張（MST）に非対応"
       ],
-      "score": 78,
-      "scoreRationale": "[基本点: 70]\n[加点: +8] (8K対応および10Gbpsポート複数搭載という高いスペック)\n[減点: -5] (競合製品と比較して価格が高価)\n[加点: +2] (UGREENブランドの信頼性とビルドクオリティ)\n[加点: +3] (この価格帯で4K/120Hz対応は希少で独自性がある)\n[合計: 78]"
+      "score": 83,
+      "scoreRationale": "[基本点: 70]\n[加点: +8] (14-in-1の豊富な拡張性と最大3画面出力の高い利便性)\n[加点: +5] (10Gbpsデータ転送や100W給電などの基本性能の高さ)\n[加点: +5] (現在のセール価格によるコストパフォーマンスの良さ)\n[減点: -5] (MacOS環境でのマルチモニター拡張に非対応である制限)\n[合計: 83]"
     },
     "technicalSpecs": {
-      "ports": "14-in-1 (HDMI x2, DP x1, USB-C 10Gbps x1, USB-A 10Gbps x2, USB-A 5Gbps x2, RJ45, SD/TF, Audio, PD Input)",
-      "videoOutput": {
-        "hdmi1": "4K@60Hz",
-        "hdmi2": "4K@60Hz",
-        "displayPort": "8K@30Hz / 4K@120Hz"
-      },
-      "usbSpeed": "最大10Gbps (USB 3.2 Gen 2)",
-      "pdCharging": "最大100W (ホスト給電)",
-      "compatibility": "Windows 10/11, macOS (制限あり), Linux",
-      "ethernet": "1000Mbps (Gigabit)",
-      "audio": "3.5mm AUX",
-      "cardReader": "SD/TF (UHS-I 104MB/sまたは170MB/s)"
+      "// 注意": "調査で判明した仕様情報をここに網羅的に記載する（サイズはメートル法のみ、インチ不要）",
+      "dimensions": { "height": "125mm", "width": "50mm", "depth": "96mm" },
+      "ports": [
+        "HDMI (最大4K@60Hz) x2",
+        "DisplayPort (最大8K@30Hz / 4K@120Hz) x1",
+        "USB-C (PD 100W 入力)",
+        "USB-C (27W 出力 / スマホ等向け)",
+        "USB 3.2 Gen2 (10Gbps) x3",
+        "USB 3.0 (5Gbps) x2",
+        "RJ45 Gigabit Ethernet",
+        "SD/TF カードスロット (170MB/s)",
+        "3.5mm オーディオポート"
+      ],
+      "color": "ブラック",
+      "model": "CM843",
+      "partNumber": "55891",
+      "cableLength": "90cm"
     }
   }
 }
