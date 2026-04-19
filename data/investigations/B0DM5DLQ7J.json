@@ -1,0 +1,244 @@
+{
+  "analysis": {
+    "productName": "ヤマハ ライブストリーミングミキサー AG03MK2 ケーブルセット",
+    "parentAsin": "B0DM5DLQ7J",
+    "productDescription": "直感的な操作と高品質なDSPエフェクトを備え、ライブ配信から音楽制作まで幅広く対応する3チャンネルミキサー。Amazon限定の3mマイクケーブルセットモデル。",
+    "productUsage": [
+      "ライブ配信（YouTube, ツイキャス, スマホアプリなど）",
+      "ゲーム実況",
+      "弾き語りなどの音楽制作",
+      "テレワーク・オンライン会議"
+    ],
+    "positivePoints": [
+      "直感的な物理フェーダーとボタンによる簡単操作",
+      "遅延のない高品質なDSPエフェクト（コンプレッサー、EQ、リバーブ、アンプシミュレーター）",
+      "配信に必須のLOOPBACK機能に対応し、BGMやPC音声を簡単にミックス可能",
+      "AndroidやiOSなどのスマホ・タブレット接続に便利な4極ミニ入出力端子（TRRS）を搭載",
+      "ワンボタンでマイク入力をミュートできる専用ボタンを搭載"
+    ],
+    "negativePoints": [
+      "ファンタム電源対応のコンボジャックが1基のみのため、コンデンサーマイクは1本しか使用できない",
+      "音楽制作用のオーディオインターフェイス（MOTU M2など）と比較すると録音の音質は劣る",
+      "iOSデバイスと接続する場合、別途Apple純正の変換アダプタが必要になる場合がある"
+    ],
+    "useCases": [
+      "iPhoneやAndroidスマートフォンを用いた手軽な弾き語り配信",
+      "PCとマイクを接続したゲーム実況や雑談配信",
+      "OBSやZOOMなどを併用したオンライン会議やリモートワーク"
+    ],
+    "userStories": [
+      {
+        "userType": "弾き語り配信者",
+        "scenario": "iPhoneを用いたツイキャス・nanaでの弾き語り配信",
+        "experience": "iPhoneとAG03MK2を接続するだけで簡単に配信環境が整いました。表示がわかりやすく操作がシンプルなので、初めて使う方でも説明書を読まずになんとなく使えます。ボタンひとつで癖のないきれいなリバーブがかけられ、配信中にBGMを流すのもループバックに切り替えるだけなので、パフォーマンスに集中できます。",
+        "supportingSourceIds": [
+          "src-2"
+        ],
+        "sentiment": "positive"
+      },
+      {
+        "userType": "ゲーマー・雑談配信者",
+        "scenario": "PCでのゲーム実況や雑談配信",
+        "experience": "配信中のとっさの判断でマイク入力をミュートできるボタンが追加されたのが非常に便利です。また、AG Controllerを使ってPCからエフェクトの詳細な設定ができるため、自分の声に合わせた細かな音作りが可能です。",
+        "supportingSourceIds": [
+          "src-1",
+          "src-3"
+        ],
+        "sentiment": "positive"
+      },
+      {
+        "userType": "テレワーク利用者",
+        "scenario": "Androidスマートフォンを使ったLINE通話や会議",
+        "experience": "4極ミニ入出力端子が追加されたことで、Androidスマートフォンでの通話や会議でも高音質なマイクが使えるようになりました。テストでAG03MK2を経由してコンデンサーマイクでLINE通話しましたが、音が非常にクリアでした。",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "sentiment": "positive"
+      }
+    ],
+    "userImpression": "多くのユーザーから「ライブ配信に最適化された究極のミキサー」と高く評価されています。直感的な操作性、スマホへの対応強化（4極ミニ入出力）、ミュートボタンの追加など、前モデルから痒い所に手が届く改善が施されており、初心者から上級者まで幅広い層に支持されています。",
+    "sources": [
+      {
+        "id": "src-1",
+        "name": "YAMAHA AG03MK2をレビュー。ライブ配信で最強のオーディオインターフェイス",
+        "url": "https://hikigatarisuto-labo.jp/ag03mk2/",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2024-01-02",
+        "author": "ぎたすけ",
+        "conflictOfInterest": "none",
+        "notes": "4極ミニ端子によるスマホ配信のメリット、AG Controllerの使いやすさ、音質の評価"
+      },
+      {
+        "id": "src-2",
+        "name": "配信のYAMAHA AG03MK2｜宅録のMOTU M2｜完全比較ガイド！",
+        "url": "https://studiohosshi.com/m2-ag03mk2/",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2024-01-01",
+        "author": "studiohosshi",
+        "conflictOfInterest": "none",
+        "notes": "iPhoneでの配信における圧倒的な使いやすさ、MOTU M2との音質・用途の比較"
+      },
+      {
+        "id": "src-3",
+        "name": "ヤマハ | AG03MK2 - AG Series - 概要",
+        "url": "https://jp.yamaha.com/products/proaudio/live_streaming_gaming/ag/ag03mk2/index.html",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2024-01-01",
+        "author": "ヤマハ株式会社",
+        "conflictOfInterest": "disclosed",
+        "notes": "製品の公式仕様、新機能（ミュートボタン、4極ミニ入出力端子）の解説"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "配信中の音声をワンボタンでオフにできるミュートボタンを搭載",
+        "category": "comparativeAdvantage",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-3"
+        ],
+        "crossChecked": true,
+        "notes": "公式サイトおよび各種レビューで前モデルからの主要な改善点として言及"
+      },
+      {
+        "claim": "Android端末での配信や通話に便利な4極ミニ入出力端子（TRRS）を搭載",
+        "category": "comparativeAdvantage",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-1",
+          "src-3"
+        ],
+        "crossChecked": true,
+        "notes": "USB接続に相性問題が出やすいAndroid端末でも安定して高音質配信が可能"
+      },
+      {
+        "claim": "宅録特化のオーディオインターフェイス（MOTU M2など）と比較すると、純粋な録音音質はやや劣る",
+        "category": "quality",
+        "confidence": "medium",
+        "supportingSourceIds": [
+          "src-2"
+        ],
+        "crossChecked": false,
+        "notes": "配信の使いやすさに特化している分、DAC性能などの純粋な音質面では音楽制作専用機に譲る部分がある"
+      }
+    ],
+    "lastInvestigated": "2026-04-19",
+    "competitiveAnalysis": [
+      {
+        "name": "ヤマハ AG03MK2 W (通常版)",
+        "asin": "B09VFDKDDM",
+        "priceComparison": "本商品はマイクケーブル（3m）が付属するAmazon限定セットのため、通常版よりも価格が高く設定されています。ケーブルを別途用意する手間を省きたい初心者には本商品が適しています。",
+        "featureComparison": [
+          "共通点：ミキサー本体の機能、仕様、カラー（ホワイト）は完全に同一。",
+          "相違点：本商品には3mのマイクケーブル（XLR）が付属している。"
+        ],
+        "differentiators": [
+          "ヤマハ AG03MK2 ケーブルセットの利点：コンデンサーマイク等を購入してすぐに接続できるケーブルが付属している。",
+          "ヤマハ AG03MK2 W (通常版)の利点：ケーブルを既に持っている場合や、好みのケーブルを別途購入したい場合はこちらの方が安価に済む。"
+        ]
+      },
+      {
+        "name": "ヤマハ AG03MK2 B MC (ブラックモデル)",
+        "asin": "B0DM5Q2KNL",
+        "priceComparison": "本商品と同一価格です。色のみの違いとなります。",
+        "featureComparison": [
+          "共通点：ミキサー本体の機能、仕様、付属するマイクケーブル（3m）は完全に同一。",
+          "相違点：本体カラーが異なる（本商品はホワイト、競合はブラック）。"
+        ],
+        "differentiators": [
+          "ヤマハ AG03MK2 ケーブルセットの利点：デスク周りを白系のデバイスで統一したい場合に適している。",
+          "ヤマハ AG03MK2 B MC (ブラックモデル)の利点：デスク周りを黒系のデバイスで統一したい場合や、汚れを目立たせたくない場合に適している。"
+        ]
+      },
+      {
+        "name": "ヤマハ ゲームストリーミングミキサー ZG02",
+        "asin": "B0CTJBGSNX",
+        "priceComparison": "本商品と同等程度の価格帯ですが、用途が異なります。",
+        "featureComparison": [
+          "共通点：ヤマハ製のストリーミング向けミキサーで、PCとUSB接続して使用する点。",
+          "相違点：ZG02はゲーム実況に特化しており、ボイスチャットとゲーム音のバランス調整機能や、ゲーム向けの独自エフェクト（3Dサラウンドなど）に強みがある。"
+        ],
+        "differentiators": [
+          "ヤマハ AG03MK2 ケーブルセットの利点：楽器の入力端子が豊富で、弾き語りや雑談配信、スマホでの配信など汎用性が高い。",
+          "ヤマハ ゲームストリーミングミキサー ZG02の利点：PCゲームの配信において、ゲーム音とボイスチャット音を直感的にミックス・調整したいゲーマーに最適。"
+        ]
+      },
+      {
+        "name": "オーディオテクニカ AT-UMX3",
+        "asin": "B0CS6S8GBH",
+        "priceComparison": "本商品よりやや安価ですが、ケーブルは付属していません。",
+        "featureComparison": [
+          "共通点：PC/スマホ対応のUSBオーディオミキサーで、LOOPBACK機能やマイク入力端子を備えている点。",
+          "相違点：AG03MK2は物理フェーダーや豊富なDSPエフェクト（コンプ/EQ/リバーブ）を本体に内蔵しているのに対し、AT-UMX3はよりシンプルでコンパクトな設計。"
+        ],
+        "differentiators": [
+          "ヤマハ AG03MK2 ケーブルセットの利点：エフェクトの細かな調整や、フェーダーによる直感的な音量操作が可能で、拡張性が高い。",
+          "オーディオテクニカ AT-UMX3の利点：より小型で持ち運びやすく、設定をシンプルに済ませたいユーザーに適している。"
+        ]
+      },
+      {
+        "name": "Roland GO:MIXER PRO-X",
+        "asin": "B097H2HK5B",
+        "priceComparison": "価格の比較はできませんが、モバイル端末での使用に特化した製品です。",
+        "featureComparison": [
+          "共通点：スマートフォンやタブレットでのライブ配信に適したモバイルミキサーである点。",
+          "相違点：AG03MK2はPCベースでの使用も強く意識された卓上ミキサーデザインですが、GO:MIXER PRO-Xは電池駆動が可能で、よりモバイルに特化したコンパクト設計。"
+        ],
+        "differentiators": [
+          "ヤマハ AG03MK2 ケーブルセットの利点：PCとスマホの両方で快適に操作でき、PCソフトウェア（AG Controller）による緻密な音作りが可能。",
+          "Roland GO:MIXER PRO-Xの利点：電池駆動ができ、出先など電源がない場所でのスマホ配信に圧倒的に便利。"
+        ]
+      },
+      {
+        "name": "ヤマハ AG03 (前モデル)",
+        "asin": "B00ST0FOO0",
+        "priceComparison": "前モデルのため現在も安価に販売されている場合があります。",
+        "featureComparison": [
+          "共通点：基本的なレイアウトや3チャンネルミキサーとしての役割、LOOPBACK機能。",
+          "相違点：本商品（MK2）にはミュートボタンや4極ミニ入出力が追加され、内部回路の見直しで音質も向上している。"
+        ],
+        "differentiators": [
+          "ヤマハ AG03MK2 ケーブルセットの利点：スマホ配信への対応力が高く、ミュートボタンなどの配信に便利な機能がアップデートされている。",
+          "ヤマハ AG03 (前モデル)の利点：最新機能が不要で、とにかく安価に基本的なミキサー機能を手に入れたい場合に適している。"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "これからライブ配信を始めたいと考えている初心者",
+        "スマホやタブレットで弾き語り配信や雑談配信を行いたい方",
+        "PCでのゲーム実況やオンライン会議用の高品質なオーディオインターフェイスを探している方"
+      ],
+      "pros": [
+        "フェーダーやボタンによる直感的な操作で、配信中のトラブルを減らせる",
+        "スマホアプリやPCソフトで詳細な音作りが可能",
+        "購入後すぐにマイクを接続できるケーブルセット"
+      ],
+      "cons": [
+        "複数人でマイクを同時に使用したい場合は入力端子が不足する（その場合は上位機種AG06MK2が必要）",
+        "宅録・DTM専用機と比べると純粋な録音音質はやや劣る"
+      ],
+      "score": 93,
+      "scoreRationale": "[基本点: 70]\n[加点: +8] (直感的な操作性と充実した配信向け機能（LOOPBACK、ミュートボタン）を評価)\n[加点: +8] (4極ミニ端子搭載によりスマホ配信の利便性が格段に向上した点を評価)\n[加点: +5] (遅延のない高品質なDSPエフェクトを内蔵している点を評価)\n[加点: +4] (前モデルからの正統進化により、圧倒的なユーザー支持と信頼性を得ている点を評価)\n[減点: -2] (音楽制作用の同価格帯オーディオインターフェイスと比較すると、純粋な録音音質でやや劣る点を考慮)\n[合計: 93]"
+    },
+    "technicalSpecs": {
+      "dimensions": {
+        "width": "126mm",
+        "height": "63mm",
+        "depth": "201mm"
+      },
+      "weight": "800g",
+      "powerConsumption": "最大 4.5 W",
+      "powerRequirements": "5 V DC, 900 mA",
+      "inputs": "モノラル（MIC/LINE）×1、ステレオ（LINE）×1、スマートフォン用4極ミニ入出力（TRRS）×1",
+      "outputs": "PHONES×1、MONITOR OUT×2、スマートフォン用4極ミニ入出力（TRRS）×1",
+      "usbInterface": "USB Type-C",
+      "dspEffects": "COMP/EQ、REVERB、AMP SIM",
+      "color": "ホワイト",
+      "includedAccessories": "キャノンケーブル(3m)、USB2.0 ケーブル (1.5m)、クイックガイド、セーフティガイド"
+    }
+  }
+}
