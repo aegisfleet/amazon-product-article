@@ -1,120 +1,182 @@
 {
   "analysis": {
-    "productName": "MSL FORCE USB-C マグネット変換アダプタ L字 100W PD",
-    "parentAsin": "B0DMDR6MDN",
-    "productDescription": "USB-Cケーブルをマグネット着脱式に変換し、機器のポート保護と利便性を向上させるL字型アダプタです。",
+    "productName": "MSL FORCE USB-C 変換アダプタ マグネット吸着 L字",
+    "parentAsin": "B0DMDG924Z",
+    "productDescription": "PD100W対応、最大480Mbpsのデータ転送が可能なマグネット式USB-C変換アダプタ（L字型）。",
     "productUsage": [
-      "ノートPCやスマートフォンの充電ポート保護（抜き差しによる摩耗防止）",
-      "MagSafeのようにケーブルを近づけるだけで接続できるようにする",
-      "L字型コネクタによる省スペースな配線整理"
+      "ノートパソコンやスマートフォンの充電",
+      "デバイスポートの保護（防塵・抜き差し軽減）",
+      "USB-CケーブルのL字変換とマグネット着脱化"
     ],
     "positivePoints": [
-      "最大100WのPD急速充電に対応し、ノートPCも充電可能",
-      "L字型デザインでデバイス横のスペースを有効活用できる",
-      "日本の中小企業ブランドによる安心感と手頃な価格設定"
+      "最大100WのPD急速充電に対応",
+      "マグネット式で着脱が簡単、ケーブルの引っ掛けによる落下防止",
+      "端子が防塵プラグ代わりになる",
+      "L字型のためケーブルが邪魔になりにくい",
+      "LEDランプで接続状態が確認可能"
     ],
     "negativePoints": [
-      "映像出力には非対応",
-      "データ転送速度が480Mbps（USB 2.0相当）と遅い",
-      "マグネット式のため、横方向の力で意図せず外れる場合がある"
+      "映像出力やOTG機能には非対応",
+      "イヤホンやマイク、USBメモリ、マウス等の周辺機器接続には非対応",
+      "データ転送速度はUSB 2.0相当（480Mbps）に留まる"
     ],
     "useCases": [
-      "MacBook Air/Proの充電ケーブルのMagSafe化",
-      "スマートフォンの充電時のケーブル破損防止",
-      "デスク周りの配線をスッキリさせたい場合"
+      "MacBookなどでのデスクワーク時の充電ケーブル接続",
+      "スマートフォンを充電しながら操作するシーン",
+      "頻繁にケーブルを抜き差しする環境でのポート保護"
     ],
-    "userStories": [
-      {
-        "userType": "ノートPCユーザー",
-        "scenario": "毎日の持ち運びでケーブルの抜き差しが頻繁",
-        "experience": "以前はケーブルを挿すのが面倒だったが、マグネット式にしてから近づけるだけで繋がり、非常に楽になった。ポートの傷も気にならなくなった。（推測）",
-        "sentiment": "positive"
-      },
-      {
-        "userType": "デスクワーカー",
-        "scenario": "充電しながらの使用",
-        "experience": "L字型なのでケーブルが横に飛び出さず、マウス操作の邪魔にならないのが良い。ただしデータ転送は遅いので充電専用にしている。（推測）",
-        "sentiment": "mixed"
-      }
-    ],
-    "userImpression": "充電用途に特化したコストパフォーマンスの良い製品。映像出力や高速転送を求めないユーザーには適している。",
+    "userStories": [],
+    "userImpression": "映像出力が非対応である点に注意が必要だが、PD100Wの急速充電とマグネット着脱の利便性を安価（980円）に実現できるため、純粋な充電用途やポート保護目的にはコストパフォーマンスに優れたアダプタとして評価できる。",
     "sources": [
       {
+        "id": "src-amazon",
         "name": "Amazon商品ページ",
         "url": "https://www.amazon.co.jp/dp/B0DMDG924Z",
-        "credibility": "高"
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-04-20",
+        "author": "MSL FORCE",
+        "conflictOfInterest": "none",
+        "notes": "製品仕様（PD100W、480Mbps、L字、映像出力不可）および価格（980円）を確認。"
       }
     ],
-    "lastInvestigated": "2026-01-31",
+    "claims": [
+      {
+        "claim": "最大100WのPD急速充電に対応",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-amazon"
+        ],
+        "crossChecked": false,
+        "notes": "商品仕様より確認"
+      },
+      {
+        "claim": "映像出力・OTG機能は非対応",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-amazon"
+        ],
+        "crossChecked": false,
+        "notes": "商品仕様（注意事項）より確認"
+      }
+    ],
+    "lastInvestigated": "2026-04-20",
     "competitiveAnalysis": [
       {
-        "name": "Akkerds マグネット USB C L字 変換 アダプタ",
-        "asin": "B0DB5SYPCH",
-        "priceComparison": "約749円（本製品より安い）",
+        "name": "MSL FORCE 変換アダプタ L字 Bタイプ",
+        "asin": "B0DLMN97W7",
+        "priceComparison": "対象商品よりやや高価だが、最大240W、40Gbps、8K60Hz映像出力に対応しており、高性能。",
         "featureComparison": [
-          "40Gbps転送",
-          "8K映像出力",
-          "100W PD"
+          "共通点：L字型マグネット式変換アダプタである点",
+          "相違点：対象商品は100W/480Mbps/映像出力不可。競合は240W/40Gbps/8K映像出力対応。"
         ],
         "differentiators": [
-          "スペックが非常に高いが価格が安く、信頼性に懸念が残る可能性がある"
+          "対象商品（B0DMDG924Z）の利点：価格が抑えられており、純粋な充電目的に適している。",
+          "MSL FORCE 変換アダプタ L字 Bタイプの利点：映像出力や高速データ転送が必要な場合に適している。"
         ]
       },
       {
-        "name": "CIO マグネット変換アダプタ",
+        "name": "CIO マグネット変換アダプタ L字",
         "asin": "B0D542J918",
-        "priceComparison": "約1480円（本製品より高い）",
+        "priceComparison": "対象商品より高価。基本的なスペック（100W/480Mbps/映像出力不可）は同等。",
         "featureComparison": [
-          "100W PD",
-          "480Mbps転送",
-          "映像非対応"
+          "共通点：100W充電対応、480Mbpsデータ転送、映像出力非対応のL字型アダプタ",
+          "相違点：ブランドとデザイン（カラー展開等）"
         ],
         "differentiators": [
-          "国内人気ブランドの信頼性とデザイン性",
-          "スペックは本製品と同等"
+          "対象商品（B0DMDG924Z）の利点：価格が安く、コストパフォーマンスに優れる。",
+          "CIO マグネット変換アダプタ L字の利点：CIOブランドの信頼性や、製品デザインの好みで選べる。"
         ]
       },
       {
-        "name": "エレコム マグネット 変換アダプタ",
-        "asin": "B0FJ1ZK4SL",
-        "priceComparison": "約1150円（本製品より高い）",
+        "name": "ノーブランド アダプタ L字",
+        "asin": "B0GDTVBFCQ",
+        "priceComparison": "対象商品より安価だが、100W充電に加え40Gbpsデータ転送や8K映像出力対応を謳っており、価格設定とスペックのバランスにやや懸念がある。",
         "featureComparison": [
-          "100W PD",
-          "L字型"
+          "共通点：L字型マグネット式アダプタ",
+          "相違点：競合は低価格ながら40Gbps転送や8K映像出力を謳うが、ブランド信頼性が低い。"
         ],
         "differentiators": [
-          "国内大手メーカーの安心感"
+          "対象商品（B0DMDG924Z）の利点：日本の中小企業ブランドとして販売されており、極端に怪しいスペック表記ではない点での安心感。",
+          "ノーブランド アダプタ L字の利点：極めて安価に多機能を試したい場合。"
+        ]
+      },
+      {
+        "name": "MSL FORCE 変換アダプタ ストレート",
+        "asin": "B0DLMBXZMD",
+        "priceComparison": "対象商品よりやや高価だが、最大240W、40Gbps、8K60Hz映像出力に対応。",
+        "featureComparison": [
+          "共通点：マグネット式変換アダプタである点",
+          "相違点：対象商品はL字型で100W/480Mbps。競合はストレート型で240W/40Gbps/8K映像出力対応。"
+        ],
+        "differentiators": [
+          "対象商品（B0DMDG924Z）の利点：L字型でケーブルの取り回しが良く、低価格。",
+          "MSL FORCE 変換アダプタ ストレートの利点：ストレート型が適している環境や、映像出力が必要な場合。"
+        ]
+      },
+      {
+        "name": "CIO マグネット変換アダプタ ストレート",
+        "asin": "B0DK7B7XBL",
+        "priceComparison": "対象商品より高価。基本スペック（100W/480Mbps/映像出力不可）は同等だがストレート型。",
+        "featureComparison": [
+          "共通点：100W充電対応、480Mbpsデータ転送、映像出力非対応",
+          "相違点：対象商品はL字型、競合はストレート型で別ブランド。"
+        ],
+        "differentiators": [
+          "対象商品（B0DMDG924Z）の利点：L字型で低価格。",
+          "CIO マグネット変換アダプタ ストレートの利点：CIOブランドの信頼性や、ストレート型が必要な場合。"
+        ]
+      },
+      {
+        "name": "MSL FORCE 変換アダプタ L字 Cタイプ",
+        "asin": "B0DXV1WJ91",
+        "priceComparison": "対象商品より高価で、240W、40Gbps、8K映像出力対応のハイエンドモデル。",
+        "featureComparison": [
+          "共通点：L字型マグネット式変換アダプタ",
+          "相違点：対象商品は充電重視（100W/480Mbps/映像出力不可）。競合は多機能ハイエンド仕様。"
+        ],
+        "differentiators": [
+          "対象商品（B0DMDG924Z）の利点：充電用途に割り切った低価格設定。",
+          "MSL FORCE 変換アダプタ L字 Cタイプの利点：映像出力や超高速データ転送が必要な場合。"
         ]
       }
     ],
     "recommendation": {
       "targetUsers": [
-        "充電メインで安価にマグネット化したいユーザー",
-        "「日本の中小企業」ブランドを選びたいがコストも抑えたい人",
-        "L字コネクタで配線をスッキリさせたい人"
+        "充電目的でケーブルの着脱を簡単にしたい人",
+        "デバイスのポートをホコリや物理的摩耗から守りたい人",
+        "映像出力を必要としない人"
       ],
       "pros": [
-        "100W充電対応でPCにも使える",
-        "882円と手頃な価格",
-        "ポート保護に役立つ"
+        "PD100W対応でノートパソコンも充電可能",
+        "マグネット式で着脱が容易",
+        "L字型でケーブルが邪魔にならない",
+        "1,000円を切る低価格"
       ],
       "cons": [
-        "映像出力はできない",
-        "高速データ転送には向かない"
+        "映像出力非対応",
+        "データ転送は低速（USB 2.0相当）",
+        "OTG機能非対応（周辺機器接続不可）"
       ],
-      "score": 70,
-      "scoreRationale": "[基本点: 70]\n[コスパ: +5] 国内ブランド(CIO)の同等品より約40%安く、充電用途ならコスパ良好。\n[性能: -5] 映像出力非対応かつデータ転送がUSB2.0相当(480Mbps)のため、用途が限定される。\n[合計: 70]"
+      "score": 75,
+      "scoreRationale": "[基本点: 70]\n[加点: +5] (980円という低価格でPD100W充電とマグネット着脱機能を実現したコストパフォーマンス)\n[合計: 75]"
     },
     "technicalSpecs": {
-      "interface": "USB-C to USB-C",
-      "max_power": "100W (PD対応)",
-      "data_transfer": "480Mbps",
-      "video_output": "非対応",
-      "connector_type": "L字型 / マグネット着脱式",
-      "compatibility": "PC, Tablet, Smartphone (USB-C搭載機)",
-      "dimensions": null,
+      "type": "マグネット式 USB-C to USB-C 変換アダプタ",
+      "shape": "L字型",
+      "chargingPower": "最大PD 100W",
+      "dataTransferSpeed": "最大480Mbps",
+      "videoOutput": "非対応",
+      "otgFunction": "非対応",
+      "material": "アルミニウム合金シェル",
+      "magnet": "N52マグネット",
+      "indicator": "LED表示ランプ内蔵（緑色点灯）",
+      "origin": "中国（ブランドは日本の中小企業として登録）",
       "other": [
-        "LEDインジケーター搭載"
+        "防塵プラグ機能",
+        "過充電防止・自動出力調節機能搭載"
       ]
     }
   }
