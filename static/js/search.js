@@ -555,10 +555,55 @@ document.addEventListener('DOMContentLoaded', function () {
         // Deduplicate results by permalink just in case
         const seen = new Set();
         const uniqueResults = [];
+        const categoryCounts = {};
+
         for (const result of results) {
             if (!seen.has(result.item.permalink)) {
                 seen.add(result.item.permalink);
                 uniqueResults.push(result);
+
+                // Collect categories for suggestions
+                const categories = result.item.categories || [];
+                categories.forEach(cat => {
+                    categoryCounts[cat] = (categoryCounts[cat] || 0) + 1;
+                });
+            }
+        }
+
+        // Render category suggestions at the top
+        const topCategories = Object.entries(categoryCounts)
+            .sort((a, b) => b[1] - a[1])
+            .slice(0, 6);
+
+        if (topCategories.length > 0) {
+            const suggestionArea = document.createElement('div');
+            suggestionArea.className = 'search-suggestion-area';
+
+            const label = document.createElement('span');
+            label.className = 'suggestion-label';
+            label.textContent = '🔍 カテゴリから探す:';
+            suggestionArea.appendChild(label);
+
+            const suggestionList = document.createElement('div');
+            suggestionList.className = 'suggestion-list';
+
+            const urlDataScript = document.getElementById('category-url-data');
+            const urlMap = urlDataScript ? JSON.parse(urlDataScript.textContent) : {};
+
+            topCategories.forEach(([cat, count]) => {
+                const url = urlMap[cat];
+                if (url) {
+                    const btn = document.createElement('a');
+                    btn.href = url;
+                    btn.className = 'suggestion-tag';
+                    btn.innerHTML = `<span>${cat}</span><small>${count}</small>`;
+                    suggestionList.appendChild(btn);
+                }
+            });
+
+            if (suggestionList.children.length > 0) {
+                suggestionArea.appendChild(suggestionList);
+                searchResults.appendChild(suggestionArea);
             }
         }
 
