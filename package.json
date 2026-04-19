@@ -9,6 +9,7 @@
     "build": "tsc",
     "dev": "ts-node src/index.ts",
     "server": "hugo server",
+    "server:dev": "hugo server --config config.toml,hugo.dev.toml --templateMetrics --gc --noHTTPCache",
     "server:fast": "hugo server --templateMetrics --disableFastRender --gc --noHTTPCache",
     "test": "jest",
     "test:watch": "jest --watch",

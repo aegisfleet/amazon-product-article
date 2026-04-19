@@ -1,0 +1,17 @@
+# Hugo Development Configuration
+# この設定は開発時の起動速度を向上させるために使用されます。
+# ほとんどの記事（7000件超）を除外し、約200件程度のみを対象にします。
+
+# 不要な出力を無効化
+disableKinds = ["RSS", "sitemap", "robotsTXT"]
+
+[params]
+  isDev = true
+
+[build]
+  # B00で始まる商品記事以外を無視する（約250件に制限）
+  ignoreFiles = [
+    "content/articles/[0-9].*",      # 数字で始まる記事
+    "content/articles/B[1-9].*",     # B1-B9で始まる記事
+    "content/articles/B0[1-9].*",    # B01-B09で始まる記事
+  ]
