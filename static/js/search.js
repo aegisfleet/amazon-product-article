@@ -248,6 +248,17 @@ document.addEventListener('DOMContentLoaded', function () {
             .catch(err => console.error('Error loading search index:', err));
 
         const handleSearch = debounce((query) => {
+            const trimmedQuery = query.trim();
+            if (trimmedQuery.length === 0) {
+                displaySearchTips();
+                return;
+            }
+
+            if (trimmedQuery.length < 2) {
+                // 1文字のときはアクションを起こさない（ヒントまたは前回の結果を維持）
+                return;
+            }
+
             // 検索中表示
             searchResults.textContent = '';
             const loadingDiv = document.createElement('div');
@@ -279,16 +290,6 @@ document.addEventListener('DOMContentLoaded', function () {
             if (e.isComposing) return;
 
             const query = e.target.value.replaceAll('　', ' ');
-            if (query.trim().length === 0) {
-                displaySearchTips();
-                return;
-            }
-
-            if (query.trim().length < 2) {
-                // 1文字のときはヒントを表示したままにする
-                return;
-            }
-
             handleSearch(query);
         });
 
