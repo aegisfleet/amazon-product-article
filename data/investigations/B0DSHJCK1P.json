@@ -1,138 +1,177 @@
 {
   "analysis": {
-    "productName": "Lemorele 13-in-1 USB-C ドッキングステーション (TC100)",
-    "parentAsin": "B0GH5QY7YY",
-    "productDescription": "圧倒的なコストパフォーマンスを誇る13-in-1多機能ハブ。3,000円台という価格ながらトリプルディスプレイ出力やPD100W充電に対応。",
+    "productName": "Lemorele 13-in-1 USB-C ドッキングステーション",
+    "parentAsin": "B0DSHJCK1P",
+    "productDescription": "1つのType-Cポートから13のポート（HDMIx2、VGA、LAN、USB 3.0x2、USB 2.0x2、PD100W、オーディオ、SD/TFカード）に拡張できる多機能ドッキングステーション。",
     "productUsage": [
-      "USB-Cポート1つで13機能に拡張（HDMI x2, VGA, LAN, USB x4, SD/TF, Audio）",
-      "最大3画面の同時出力（MST対応、Windowsで拡張モード可）",
-      "PD 100W急速充電対応でPCを充電しながら使用可能"
+      "ノートPCのポート不足解消",
+      "マルチディスプレイ（最大3画面）出力",
+      "有線LAN接続による安定した通信"
     ],
     "positivePoints": [
-      "他社を圧倒する低価格（13ポートで約3,000円）",
-      "VGAポート搭載で古いプロジェクターやモニターにも対応",
-      "軽量コンパクトなデザインで持ち運びに便利"
+      "13ポートの充実した拡張性",
+      "最大3画面の同時出力に対応（HDMI2ポート+VGA1ポート）",
+      "PD 100Wの急速充電パススルー対応",
+      "約3,000円台という非常に高いコストパフォーマンス"
     ],
     "negativePoints": [
-      "HDMI出力が4K@30Hzに制限される（動きの速い映像には不向き）",
-      "プラスチック筐体のため、負荷が高い時の放熱性に懸念がある",
-      "USBデータ転送速度が最大5Gbpsに留まる（競合上位は10Gbps）"
+      "VGAポートは1080Pまでの対応となる",
+      "SD/TFカードの同時使用について制限がある可能性（類似品共通の仕様）"
     ],
     "useCases": [
-      "在宅勤務でのデスク環境構築（モニター、LAN、周辺機器の一括接続）",
-      "VGA端子が必要なプレゼンテーション環境",
-      "ポート数が極端に少ないモバイルノートPCの拡張"
+      "在宅勤務やオフィスでのマルチモニター環境構築",
+      "プレゼンテーションでのプロジェクター出力（VGA接続）",
+      "LANポートがない薄型ノートPCでの有線ネットワーク接続"
     ],
-    "userStories": [
-      {
-        "userType": "会社員（在宅勤務）",
-        "scenario": "毎日のPC持ち帰りと自宅デスクでの接続",
-        "experience": "（推測）ケーブル1本でモニター2台と有線LAN、キーボード類に一瞬で接続でき、準備時間が大幅に短縮された。安価だが問題なく動作している。",
-        "sentiment": "positive"
-      },
-      {
-        "userType": "学生",
-        "scenario": "大学でのプレゼンテーション",
-        "experience": "（推測）古いプロジェクターしかない教室でVGAポートが役立った。HDMIとVGAを同時に使えるので柔軟に対応できる。",
-        "sentiment": "positive"
-      }
-    ],
-    "userImpression": "驚異的なコストパフォーマンスで基本的なドッキングステーションの機能を網羅している。4K@60Hzや高速データ転送を求めない一般的な事務作業用途であれば十分な性能を持つ。",
+    "userStories": [],
+    "userImpression": "全体的に非常にコストパフォーマンスが高く、必要なポートが一通り揃っているため、特に在宅勤務やオフィスワークで重宝されている印象です。プラスチック筐体ですが、機能面での満足度は高い傾向にあります。",
     "sources": [
       {
-        "name": "Amazon商品ページ (Features & Specs)",
+        "id": "src-1",
+        "name": "Amazon 商品ページ (B0DSHJCK1P)",
         "url": "https://www.amazon.co.jp/dp/B0DSHJCK1P",
-        "credibility": "high"
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-04-20",
+        "author": "Lemorele",
+        "conflictOfInterest": "possible",
+        "notes": "商品スペック、価格（3,067円）、ポート構成などを確認"
       }
     ],
-    "lastInvestigated": "2026-01-31",
+    "claims": [
+      {
+        "claim": "13-in-1の豊富なポートを備えている",
+        "category": "durability",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "crossChecked": false,
+        "notes": "公式スペックより確認"
+      }
+    ],
+    "lastInvestigated": "2026-04-20",
     "competitiveAnalysis": [
       {
-        "name": "UGREEN Revodok 12-in-1 (B0CR6J2HCK)",
-        "asin": "B0CR6J2HCK",
-        "priceComparison": "約4,959円（+約1,900円）",
+        "name": "Lemorele TC500",
+        "asin": "B0G79NYB15",
+        "priceComparison": "対象商品より高価（約8,000円）。価格差に見合う映像出力性能の向上が見られる。",
         "featureComparison": [
-          "HDMI 4K@60Hz対応（Lemoreleは30Hz）",
-          "USB転送速度 10Gbps（Lemoreleは5Gbps）"
+          "共通点：13-in-1の拡張性、PD100W給電、有線LAN対応",
+          "相違点：対象商品はVGAポートを搭載しているが、競合品はVGAの代わりにDisplayPortを搭載し、より高解像度（4K@60Hz）のトリプルディスプレイ出力に最適化されている点。"
         ],
         "differentiators": [
-          "UGREENは基本性能（画質・速度）が高い",
-          "Lemoreleは価格最優先の選択肢"
+          "Lemorele 13-in-1 USB-C ドッキングステーションの利点：VGAポートを搭載しており、古いプロジェクターやモニターにも対応可能。また、圧倒的に価格が安い点。",
+          "Lemorele TC500の利点：DisplayPortを搭載し、より現代的な高解像度マルチモニター環境に適している点。"
         ]
       },
       {
-        "name": "Anker USB-C Hub 14-in-1 (B0CG5CF9GF)",
-        "asin": "B0CG5CF9GF",
-        "priceComparison": "約8,990円（約3倍）",
+        "name": "UGREEN Revodok Pro 314",
+        "asin": "B0DYTVVLH4",
+        "priceComparison": "対象商品より高価（約12,000円）。ポート規格や転送速度の面で高い性能を誇る。",
         "featureComparison": [
-          "4K@60Hz対応",
-          "ブランド信頼性とビルドクオリティが高い"
+          "共通点：PD100W充電、有線LAN、SD/TFカードリーダー搭載",
+          "相違点：競合はUSB 10Gbpsポートを搭載し、DP 8K出力や4K@120Hz出力に対応するなど、全体的なスペックが上位規格である点。また対象商品は13ポートだが競合は14ポート。"
         ],
         "differentiators": [
-          "Ankerは長期的な信頼性と安定性重視",
-          "Lemoreleはコスト重視"
+          "Lemorele 13-in-1 USB-C ドッキングステーションの利点：価格が3分の1以下であり、一般的なオフィス用途であれば十分な性能を安価に導入できる点。",
+          "UGREEN Revodok Pro 314の利点：8K解像度や10Gbpsの超高速データ転送など、よりハイエンドな環境構築が必要なプロフェッショナル用途に適している点。"
         ]
       },
       {
-        "name": "UGREEN Revodok 7-in-1 (B0D1XSKZRJ)",
-        "asin": "B0D1XSKZRJ",
-        "priceComparison": "約3,849円（同価格帯）",
+        "name": "NOVOO 7-in-1 USB C ハブ",
+        "asin": "B0FVWB7VN6",
+        "priceComparison": "対象商品よりやや高価（約4,300円）。",
         "featureComparison": [
-          "ポート数が7つと少ない（VGAやLANなしの場合あり）",
-          "4K@60Hz対応"
+          "共通点：PD100W給電、有線LAN、USB-Aポート搭載",
+          "相違点：対象商品は13ポートでマルチディスプレイ対応だが、競合品は7ポートでHDMI1ポートのみのシンプルな構成である点。"
         ],
         "differentiators": [
-          "ポート数ならLemorele、画質ならUGREEN 7-in-1"
+          "Lemorele 13-in-1 USB-C ドッキングステーションの利点：より安価でありながら、拡張ポート数が多く、マルチディスプレイ環境を構築できる点。",
+          "NOVOO 7-in-1 USB C ハブの利点：ポート数が絞られている分、コンパクトで持ち運びに適している点。"
+        ]
+      },
+      {
+        "name": "Anker PowerExpand 13-in-1",
+        "asin": "B088FMRW7L",
+        "priceComparison": "対象商品より非常に高価（約27,000円）。Ankerブランドの信頼性と高品質な造り。",
+        "featureComparison": [
+          "共通点：13-in-1の拡張性、複数画面出力、SD/TF対応",
+          "相違点：競合品はACアダプター付属の据え置き型ドックであり、バスパワー駆動の対象商品とは使用形態が異なる点。"
+        ],
+        "differentiators": [
+          "Lemorele 13-in-1 USB-C ドッキングステーションの利点：本体が軽量コンパクトで持ち運びも可能であり、圧倒的に低価格である点。",
+          "Anker PowerExpand 13-in-1の利点：専用ACアダプターからの安定した電力供給ができ、据え置きでの長期的な安定動作が見込める点。"
+        ]
+      },
+      {
+        "name": "MOKiN ドッキングステーション 13-in-1",
+        "asin": "B0GQ8X9B5L",
+        "priceComparison": "対象商品より高価（約5,400円）。",
+        "featureComparison": [
+          "共通点：13ポート構成、PD100W、デュアルHDMI、LANポート搭載",
+          "相違点：対象商品はVGAポートを搭載しているが、競合品は画面切替専用キーを本体に搭載している点。"
+        ],
+        "differentiators": [
+          "Lemorele 13-in-1 USB-C ドッキングステーションの利点：価格がより安く、レガシーなVGA接続が必要な環境に適している点。",
+          "MOKiN ドッキングステーション 13-in-1の利点：物理的な画面切替キーがあり、会議中のプライバシー保護や表示切り替えが直感的に行える点。"
+        ]
+      },
+      {
+        "name": "バッファロー USB-C ハブ 6-in-1",
+        "asin": "B0DVLK4CCT",
+        "priceComparison": "対象商品より高価（約5,000円）。",
+        "featureComparison": [
+          "共通点：PD給電対応、HDMIとVGAポート搭載、LANポート搭載",
+          "相違点：対象商品は13ポートでSDカードなども対応するが、競合品は6ポートに絞った国内メーカー品である点。"
+        ],
+        "differentiators": [
+          "Lemorele 13-in-1 USB-C ドッキングステーションの利点：同等以下の価格で倍以上のポート数を持ち、SDカードの読み込みなどより幅広い用途に対応できる点。",
+          "バッファロー USB-C ハブ 6-in-1の利点：国内メーカー製という安心感とサポート体制が期待できる点。"
         ]
       }
     ],
     "recommendation": {
       "targetUsers": [
-        "とにかく安く多機能ハブを手に入れたい人",
-        "4K@60Hzの高画質を必要としない事務作業ユーザー",
-        "VGA端子を必要とするユーザー"
+        "安価にポート不足を解消したいノートPCユーザー",
+        "複数のモニターを接続したい在宅ワーカー",
+        "VGA接続が必要な古いプロジェクターを使う機会がある人"
       ],
       "pros": [
         "圧倒的なコストパフォーマンス",
-        "13ポートという高い拡張性",
-        "レガシーなVGAポートを搭載"
+        "13ポートの豊富な拡張性",
+        "トリプルディスプレイ対応",
+        "PD100Wパススルー充電対応"
       ],
       "cons": [
-        "HDMIが4K@30Hzまでの対応",
-        "データ転送速度が5Gbps止まり",
-        "プラスチック筐体の質感と放熱性"
+        "VGAポートは1080Pまでの解像度制限がある",
+        "プラスチック筐体"
       ],
-      "score": 75,
-      "scoreRationale": "[基本点: 70]\n[加点: +15] (競合の半額以下という圧倒的なコストパフォーマンス)\n[減点: -5] (HDMI 30Hz、USB 5Gbpsという一世代前のスペック)\n[減点: -5] (プラスチック筐体による質感と放熱性の懸念)\n[合計: 75]"
+      "score": 80,
+      "scoreRationale": "[基本点: 70]\n[加点: +15] (3000円台という圧倒的なコストパフォーマンス)\n[加点: +5] (13ポートの豊富な拡張性)\n[減点: -10] (プラスチック筐体による質感の懸念と、ブランドの信頼性がやや不明瞭)\n[合計: 80]"
     },
     "technicalSpecs": {
       "dimensions": {
-        "width": "1.7インチ",
-        "height": "0.63インチ",
-        "length": "6.7インチ",
-        "weight": "0.22ポンド"
+        "height": "16mm",
+        "width": "43mm",
+        "depth": "170mm"
       },
-      "connectivity": [
-        "USB-C (Host)",
-        "2 x HDMI (4K@30Hz)",
-        "1 x VGA (1080P)",
-        "2 x USB-A 3.0 (5Gbps)",
-        "2 x USB-A 2.0",
-        "1 x USB-C Data (5Gbps)",
-        "1 x USB-C PD (100W)",
-        "1 x RJ45 (1Gbps)",
-        "SD/TF Card Slots",
-        "3.5mm Audio"
+      "weight": "100g",
+      "material": "プラスチック",
+      "ports": [
+        "USB 3.0 (5Gbps) x2",
+        "USB 2.0 x2",
+        "HDMI (4K@60Hz) x2",
+        "VGA (1080P) x1",
+        "Type-C (5Gbpsデータ & PD 100W給電) x1",
+        "RJ45 (1Gbps LAN) x1",
+        "3.5mmオーディオ x1",
+        "SDカードリーダー x1",
+        "Micro SD/TFカードリーダー x1"
       ],
-      "power": "PD 100W Pass-through",
-      "display": {
-        "maxResolution": "4K@30Hz (Single/Dual HDMI)",
-        "mstSupport": true
-      },
-      "other": [
-        "Material: Plastic",
-        "Color: Black"
-      ]
+      "powerDelivery": "100W",
+      "displayOutput": "最大3画面拡張 (MSTトリプルディスプレイ)",
+      "warranty": "1年のメーカー保証"
     }
   }
 }
