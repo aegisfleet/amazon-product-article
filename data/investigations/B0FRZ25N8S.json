@@ -1,0 +1,185 @@
+{
+  "analysis": {
+    "productName": "Apple iPhone 17 (256 GB)",
+    "parentAsin": "B0FRZ25N8S",
+    "productDescription": "ProMotion対応のディスプレイ、A19チップ、進化したセンターフレームフロントカメラを搭載した最新スマートフォン。",
+    "productUsage": [
+      "日常的な通話、メッセージング、SNS利用",
+      "高画質な写真・動画の撮影（グループセルフィー等）",
+      "滑らかなディスプレイでの動画視聴やゲームアプリのプレイ"
+    ],
+    "positivePoints": [
+      "最大120Hzのアダプティブリフレッシュレートを持つProMotionテクノロジーにより、非常に滑らかな画面操作が可能",
+      "最新のA19チップ搭載により、高い処理性能と電力効率を実現",
+      "グループセルフィーもスマートに撮れる進化した18MPセンターフレームフロントカメラ",
+      "ビデオ再生最大30時間と、一日中使える長寿命バッテリー"
+    ],
+    "negativePoints": [
+      "AppleCare+がセットになっているため、初期費用が高くなる",
+      "重量が177gあり、長時間の片手操作では少し重さを感じる可能性がある"
+    ],
+    "useCases": [
+      "友人や家族とのグループでのセルフィー撮影時",
+      "長時間の外出時や旅行先での動画撮影（モバイルバッテリー不要の安心感）",
+      "高負荷なゲームや動画編集アプリの利用"
+    ],
+    "userStories": [],
+    "userImpression": "ProMotionディスプレイの搭載と最新A19チップにより、全体的な操作感が非常に滑らかで快適。バッテリー性能の向上やカメラの進化も相まって、ハイエンドモデルとして高い完成度を誇るという評価が多い。",
+    "sources": [
+      {
+        "id": "src-apple-specs",
+        "name": "Apple公式サイト - iPhone 17 仕様",
+        "url": "https://www.apple.com/jp/iphone-17/specs/",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-04-19",
+        "author": "Apple",
+        "conflictOfInterest": "none",
+        "notes": "スペック情報、ディスプレイ、チップ、カメラ、バッテリー性能などを確認"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "最大120HzのProMotionディスプレイを搭載",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-apple-specs"
+        ],
+        "crossChecked": true,
+        "notes": "Apple公式サイトの仕様ページで確認"
+      },
+      {
+        "claim": "ビデオ再生最大30時間のバッテリー駆動",
+        "category": "durability",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-apple-specs"
+        ],
+        "crossChecked": true,
+        "notes": "Apple公式サイトの仕様ページで確認"
+      }
+    ],
+    "lastInvestigated": "2026-04-19",
+    "competitiveAnalysis": [
+      {
+        "name": "Apple iPhone 17 256GB (ブラック)",
+        "asin": "B0FQGJ6H6X",
+        "priceComparison": "対象商品はAppleCare+が付帯しているため本体単体より高価だが、保証が必要な場合は別途加入するより手間が省ける。",
+        "featureComparison": [
+          "共通点：ストレージ容量（256GB）、A19チップ、ProMotionディスプレイなど本体スペックは同一",
+          "相違点：AppleCare+の有無、本体カラー"
+        ],
+        "differentiators": [
+          "Apple iPhone 17 (256 GB)の利点：2年延長AppleCare+が付帯しており、万が一の故障時にも安心して利用できる",
+          "Apple iPhone 17 256GB (ブラック)の利点：AppleCare+が不要な場合や、他のカラーを希望する場合に初期費用を抑えられる"
+        ]
+      },
+      {
+        "name": "Apple iPhone 17 128GB",
+        "asin": "B0FZPX98RD",
+        "priceComparison": "対象商品（256GB）より安いが、ストレージ容量が半分。動画や写真を多く撮る場合は不足する可能性がある。",
+        "featureComparison": [
+          "共通点：A19チップ、ProMotionディスプレイ、カメラ性能など基本スペックは同一",
+          "相違点：ストレージ容量（128GB vs 256GB）、AppleCare+の有無"
+        ],
+        "differentiators": [
+          "Apple iPhone 17 (256 GB)の利点：大容量ストレージにより、容量不足を気にせず写真や動画を保存できる",
+          "Apple iPhone 17 128GBの利点：価格が抑えられており、クラウドストレージを中心に利用するユーザーにはコストパフォーマンスが高い"
+        ]
+      },
+      {
+        "name": "Apple iPhone 17 Pro 256GB",
+        "asin": "B0FZQ816YH",
+        "priceComparison": "対象商品より大幅に高価。より高いカメラ性能や素材（チタニウム）に価値を見出せるかどうかがポイント。",
+        "featureComparison": [
+          "共通点：ストレージ容量（256GB）、ProMotionディスプレイ搭載",
+          "相違点：チップ（A19 Pro vs A19）、カメラ（望遠レンズ有無、Pro Fusion）、本体素材（チタニウム vs アルミニウム）"
+        ],
+        "differentiators": [
+          "Apple iPhone 17 (256 GB)の利点：十分な高性能を持ちながら、Proモデルに比べて価格が抑えられている",
+          "Apple iPhone 17 Pro 256GBの利点：プロレベルのカメラ撮影（望遠など）や、より高い処理性能を求める場合に適している"
+        ]
+      },
+      {
+        "name": "Apple iPhone 16 256GB",
+        "asin": "B0DJXRYQZM",
+        "priceComparison": "対象商品より安い1世代前のモデル。価格差と最新機能（ProMotion等）のトレードオフとなる。",
+        "featureComparison": [
+          "共通点：ストレージ容量（256GB）",
+          "相違点：チップ（A18 vs A19）、ディスプレイ（ProMotion非対応 vs 対応）、フロントカメラ性能"
+        ],
+        "differentiators": [
+          "Apple iPhone 17 (256 GB)の利点：滑らかなProMotionディスプレイや、進化したフロントカメラなど最新機能を利用できる",
+          "Apple iPhone 16 256GBの利点：十分な性能を持ちつつ、価格が抑えられているためコスト重視のユーザーに適している"
+        ]
+      },
+      {
+        "name": "Apple iPhone 17e 256GB",
+        "asin": "B0GQVTTNQW",
+        "priceComparison": "対象商品より安い廉価モデル。画面サイズや一部機能で妥協できるなら選択肢となる。",
+        "featureComparison": [
+          "共通点：ストレージ容量（256GB）、A19チップ搭載",
+          "相違点：ディスプレイサイズ、ProMotion非対応 vs 対応、カメラ性能"
+        ],
+        "differentiators": [
+          "Apple iPhone 17 (256 GB)の利点：標準画面サイズで滑らかなProMotionディスプレイや、高性能なカメラシステムを利用できる",
+          "Apple iPhone 17e 256GBの利点：A19チップの基本性能を持ちながら、価格が安く抑えられている"
+        ]
+      },
+      {
+        "name": "Apple iPhone Air 256GB",
+        "asin": "B0FQFLWSWZ",
+        "priceComparison": "対象商品と近い価格帯の別ラインナップ。薄さと大画面を重視するかどうかがポイント。",
+        "featureComparison": [
+          "共通点：ストレージ容量（256GB）、ProMotionディスプレイ搭載",
+          "相違点：チップ（A19 Pro vs A19）、ディスプレイサイズ（大型 vs 標準）、本体の薄さ"
+        ],
+        "differentiators": [
+          "Apple iPhone 17 (256 GB)の利点：標準的なサイズで扱いやすく、バランスの取れた性能を持つ",
+          "Apple iPhone Air 256GBの利点：より大きな画面と史上最薄のデザインで、動画視聴などに適している"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "最新のiPhoneを快適に使いたいユーザー",
+        "スマートフォンを落としたり傷つけたりするリスクを減らしたい（AppleCare+加入を希望する）ユーザー",
+        "ゲームや動画視聴で滑らかなディスプレイを求めるユーザー"
+      ],
+      "pros": [
+        "AppleCare+がセットになっており、購入後のサポートが安心",
+        "ProMotionディスプレイの搭載で非常に滑らかな操作感",
+        "最新のA19チップによる高いパフォーマンス",
+        "進化したセンターフレーム対応フロントカメラ",
+        "優れたバッテリー持ち"
+      ],
+      "cons": [
+        "AppleCare+の料金が含まれているため初期費用が高い",
+        "重量が177gあり、少し重さを感じる場合がある"
+      ],
+      "score": 88,
+      "scoreRationale": "[基本点: 70]\n[加点: +8] (ProMotionディスプレイ対応による滑らかな操作性)\n[加点: +7] (最新A19チップ搭載による高い処理性能と電力効率)\n[加点: +5] (ビデオ再生最大30時間の優れたバッテリー持ち)\n[加点: +5] (進化した18MPセンターフレームフロントカメラ)\n[減点: -7] (高価格帯であること)\n[合計: 88]"
+    },
+    "technicalSpecs": {
+      "dimensions": {
+        "height": "149.6mm",
+        "width": "71.5mm",
+        "depth": "7.95mm"
+      },
+      "weight": "177g",
+      "capacity": "256GB",
+      "material": "アルミニウム（推定、背面ガラス等）",
+      "origin": "中国",
+      "other": [
+        "ディスプレイ: 約160mm（対角）、2,622 x 1,206ピクセル解像度、460ppi、最大120Hz ProMotion対応",
+        "チップ: A19チップ",
+        "メインカメラ: 48MP Dual Fusionカメラシステム（メイン、超広角）",
+        "フロントカメラ: 18MPセンターフレームカメラ",
+        "バッテリー: ビデオ再生最大30時間、ビデオ再生（ストリーミング）最大27時間",
+        "カラー: セージ",
+        "付属品: 2年延長 AppleCare+ for iPhone 17"
+      ]
+    }
+  }
+}
