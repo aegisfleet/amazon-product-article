@@ -596,7 +596,12 @@ document.addEventListener('DOMContentLoaded', function () {
                     const btn = document.createElement('a');
                     btn.href = url;
                     btn.className = 'suggestion-tag';
-                    btn.innerHTML = `<span>${cat}</span><small>${count}</small>`;
+                    const catSpan = document.createElement('span');
+                    catSpan.textContent = cat;
+                    const countSmall = document.createElement('small');
+                    countSmall.textContent = count;
+                    btn.appendChild(catSpan);
+                    btn.appendChild(countSmall);
                     suggestionList.appendChild(btn);
                 }
             });
