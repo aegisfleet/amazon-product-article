@@ -6,6 +6,17 @@ function toYen(value, unit) {
     return num;
 }
 
+function sanitizeCategoryUrl(rawUrl) {
+    if (typeof rawUrl !== 'string' || rawUrl.trim() === '') return null;
+    try {
+        const parsed = new URL(rawUrl, window.location.origin);
+        if (parsed.protocol !== 'http:' && parsed.protocol !== 'https:') return null;
+        return parsed.href;
+    } catch (e) {
+        return null;
+    }
+}
+
 function parseBudgetFromQuery(query) {
     const normalizedQuery = query.replaceAll(/\s+/g, '');
     const rangeMatch = normalizedQuery.match(/(\d+(?:\.\d+)?)([万千])?円?[~〜-](\d+(?:\.\d+)?)([万千])?円?/);
@@ -604,10 +615,10 @@ document.addEventListener('DOMContentLoaded', function () {
             const urlMap = urlDataScript ? JSON.parse(urlDataScript.textContent) : {};
 
             topCategories.forEach(([cat, count]) => {
-                const url = urlMap[cat];
-                if (url) {
+                const safeUrl = sanitizeCategoryUrl(urlMap[cat]);
+                if (safeUrl) {
                     const btn = document.createElement('a');
-                    btn.href = url;
+                    btn.href = safeUrl;
                     btn.className = 'suggestion-tag';
                     const catSpan = document.createElement('span');
                     catSpan.textContent = cat;
