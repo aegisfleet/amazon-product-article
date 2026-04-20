@@ -22,68 +22,48 @@
       "テレワークでのマルチモニター環境構築（ExcelとWeb会議の同時表示など）",
       "ポート数が少ないモバイルノートPC（MacBook Airなど）の拡張"
     ],
-    "userStories": [
-      {
-        "userType": "30代会社員（テレワーク）",
-        "scenario": "自宅のデスク環境改善",
-        "experience": "会社のWindowsノートPCにモニターを2台繋ぎたくて購入しました。ケーブル1本で全部繋がるので、PCを持ち出す時も楽です。画質も問題なく綺麗に映っています。（機能に基づく推測）",
-        "sentiment": "positive"
-      },
-      {
-        "userType": "フリーランス（Macユーザー）",
-        "scenario": "外出先での作業",
-        "experience": "MacBook Airで使用。HDMIが2つあるので便利かと思いましたが、Macでは2つの外部モニターに別々の画面を出せない（ミラーリングになる）ことを後で知りました。Windows機では問題ないようです。（機能に基づく推測）",
-        "sentiment": "mixed"
-      }
-    ],
+    "userStories": [],
     "userImpression": "安価にデュアルディスプレイ環境を構築したいWindowsユーザーにとってはコストパフォーマンスの高い選択肢ですが、Macユーザーや高速データ転送を求める層には不向きな側面があります。",
-    "sources": [
-      {
-        "name": "Amazon Product Page (Feature Analysis)",
-        "url": "https://www.amazon.co.jp/dp/B0FLDL2GCW",
-        "credibility": "High"
-      }
-    ],
-    "lastInvestigated": "2026-01-31",
+    "sources": [],
+    "lastInvestigated": "2026-04-21",
     "competitiveAnalysis": [
       {
         "name": "UGREEN Revodok Pro 7-in-1",
         "asin": "B0D1XSKZRJ",
-        "priceComparison": "3,849円（セール時）。Newmightとほぼ同価格帯だが、スペックが高い。",
+        "priceComparison": "対象商品と同価格帯だが、USBデータ転送速度が優れている。",
         "featureComparison": [
-          "USB転送速度: 最大10Gbps（Newmightは5Gbps）",
-          "HDMI x2 (4K@60Hz) は同等"
+          "共通点：HDMIを2ポート搭載し、デュアルモニター出力に対応している。",
+          "相違点：対象商品はUSB転送速度が5Gbpsだが、本製品は10Gbpsに対応している。"
         ],
         "differentiators": [
-          "USBデータ転送速度が速い",
-          "USB-Cデータポートが2つある（Newmightは1つ）"
+          "Newmightの利点：安価にデュアルHDMI環境を構築できる。",
+          "UGREEN Revodok Pro 7-in-1の利点：より高速なデータ転送が必要なケースに適している。"
         ]
       },
       {
         "name": "Anker USB-C ハブ (7-in-1, Dual Display)",
         "asin": "B0D52GVLDP",
-        "priceComparison": "4,990円。Newmightより約1,000円高い。",
+        "priceComparison": "対象商品より高価だが、大手ブランドの安心感がある。",
         "featureComparison": [
-          "USB転送速度: 最大10Gbps",
-          "HDMI出力: 4K@30Hz / 1080p@60Hz（Newmightは4K@60Hzを謳う）"
+          "共通点：7-in-1でデュアルHDMI出力を搭載している。",
+          "相違点：対象商品は4K@60Hz対応を謳うが、本製品は4K@30Hz出力となる。"
         ],
         "differentiators": [
-          "大手ブランドの信頼性",
-          "価格は高いが安心感がある"
+          "Newmightの利点：より安価に購入でき、スペック上の出力解像度が高い。",
+          "Anker USB-C ハブ (7-in-1, Dual Display)の利点：信頼できる大手メーカーのサポートを受けたいケースに適している。"
         ]
       },
       {
         "name": "UGREEN Revodok 107 7-in-1",
         "asin": "B093FKT9BF",
-        "priceComparison": "3,449円。Newmightより安価だがHDMIは1ポートのみ。",
+        "priceComparison": "対象商品と同価格帯だが、ポート構成が異なる。",
         "featureComparison": [
-          "HDMI出力: 1ポート (4K@60Hz) (Newmightは2ポート)",
-          "有線LANポート搭載 (Newmightは非搭載)",
-          "SD/microSDカードスロット搭載 (Newmightは非搭載)"
+          "共通点：7-in-1のUSB-Cハブである。",
+          "相違点：対象商品はHDMI×2だが、本製品はHDMI×1で有線LANとSDカードスロットを搭載している。"
         ],
         "differentiators": [
-          "有線LANとSDカードが必要なユーザー向け",
-          "デュアルディスプレイ不要ならこちらの方が機能バランスが良い"
+          "Newmightの利点：デュアルモニター環境の構築が必要なケースに適している。",
+          "UGREEN Revodok 107 7-in-1の利点：有線LANやSDカードの読み込みが必要なケースに適している。"
         ]
       }
     ],
@@ -101,18 +81,24 @@
         "macOSではデュアルディスプレイ拡張（A-B-C）ができない"
       ],
       "score": 75,
-      "scoreRationale": "[基本点: 70]\n[加点: +5] (機能: 4,000円以下でHDMI×2ポート搭載は貴重)\n[加点: +5] (コスパ: 競合と比較しても十分安い)\n[減点: -5] (性能: USB転送速度が5Gbpsであり、同価格帯の競合(10Gbps)に見劣りする)\n[合計: 75]"
+      "scoreRationale": "[基本点: 70]\n[加点: +5] (4,000円以下でデュアルHDMI出力を搭載している点)\n[加点: +5] (最大100WのPD急速充電に対応し実用性が高い点)\n[減点: -5] (macOSのMSTモード非対応による複数モニター時の制限)\n[合計: 75]"
     },
     "technicalSpecs": {
-      "ports": "HDMI x2, USB-A 3.0 x3, USB-C 3.0 x1, USB-C PD x1",
-      "hdmi_resolution": "Max 4K@60Hz (Single/Dual depending on OS/Source)",
-      "usb_speed": "5Gbps (USB 3.0)",
-      "pd_charging": "Max 100W (Pass-through)",
-      "compatibility": "Windows (MST supported), macOS (MST not supported), iPadOS",
       "dimensions": {
-        "weight": "約60g (推測)",
-        "size": "詳細不明"
-      }
-    }
+        "height": "未公表",
+        "width": "未公表",
+        "depth": "未公表"
+      },
+      "weight": "60g",
+      "capacity": "なし",
+      "material": "未公表",
+      "origin": "未公表",
+      "other": [
+        "ポート: HDMI×2 (最大4K@60Hz)、USB-A 3.0×3 (最大5Gbps)、USB-C 3.0×1 (最大5Gbps)、USB-C PD (最大100W)",
+        "カラー: グレー",
+        "対応機器: MacBook Pro/Air・Surface・Dell・HP・iPad Pro・WindowsノートPC等"
+      ]
+    },
+    "claims": []
   }
 }
