@@ -378,6 +378,27 @@ export interface JulesError {
   retryable: boolean;
 }
 
+/**
+ * Jules API Error Class
+ * throwing an Error object is required by lint rules.
+ */
+export class JulesApiError extends Error implements JulesError {
+  public readonly code: string;
+  public readonly details?: unknown;
+  public readonly retryable: boolean;
+
+  constructor(julesError: JulesError, cause?: unknown) {
+    super(julesError.message, { cause });
+    this.name = 'JulesApiError';
+    this.code = julesError.code;
+    this.details = julesError.details;
+    this.retryable = julesError.retryable;
+
+    // Set the prototype explicitly for extending Error in TypeScript
+    Object.setPrototypeOf(this, JulesApiError.prototype);
+  }
+}
+
 export interface JulesApiResponse<T = unknown> {
   success: boolean;
   data?: T;

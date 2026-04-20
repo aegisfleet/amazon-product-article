@@ -35,6 +35,7 @@ describe('JulesInvestigator', () => {
       },
     });
 
+    // eslint-disable-next-line @typescript-eslint/unbound-method
     mockLoggerError = Logger.getInstance().error as jest.Mock;
 
     investigator = new JulesInvestigator({ apiKey: 'test-api-key' });
@@ -63,9 +64,7 @@ describe('JulesInvestigator', () => {
 
       const handleApiErrorSpy = jest.spyOn(investigator as any, 'handleApiError');
 
-      await expect(investigator.listSources()).rejects.toMatchObject({
-        code: 'UNKNOWN_ERROR',
-      });
+      await expect(investigator.listSources()).rejects.toHaveProperty('code', 'UNKNOWN_ERROR');
 
       expect(handleApiErrorSpy).toHaveBeenCalledWith(error);
       expect(mockLoggerError).toHaveBeenCalledWith('Failed to list sources', {
@@ -84,9 +83,7 @@ describe('JulesInvestigator', () => {
 
       const handleApiErrorSpy = jest.spyOn(investigator as any, 'handleApiError');
 
-      await expect(investigator.listSources()).rejects.toMatchObject({
-        code: 'RATE_LIMIT_EXCEEDED',
-      });
+      await expect(investigator.listSources()).rejects.toHaveProperty('code', 'RATE_LIMIT_EXCEEDED');
 
       expect(handleApiErrorSpy).toHaveBeenCalledWith(axiosError);
       expect(mockLoggerError).toHaveBeenCalledWith('Failed to list sources', {

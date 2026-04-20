@@ -12,7 +12,6 @@ import type {
   InvestigationContext,
   InvestigationResult,
   JulesCredentials,
-  JulesError,
   JulesSessionRequest,
   JulesSessionResponse,
   JulesSourcesResponse,
@@ -20,6 +19,7 @@ import type {
   SessionStatus,
   SourceContext,
 } from '../types/JulesTypes';
+import { JulesApiError } from '../types/JulesTypes';
 import type { Product } from '../types/Product';
 import { Logger } from '../utils/Logger';
 import { formatInvestigationPrompt, formatRecommendationPrompt } from './prompts';
@@ -128,7 +128,7 @@ export class JulesInvestigator {
     } catch (error) {
       const julesError = this.handleApiError(error);
       this.logger.error('Failed to create Jules session', julesError);
-      throw new Error(`Jules session creation failed: ${julesError.message}`, { cause: error });
+      throw julesError;
     }
   }
 
@@ -142,7 +142,7 @@ export class JulesInvestigator {
     } catch (error) {
       const julesError = this.handleApiError(error);
       this.logger.error('Failed to get session', { sessionId, error: julesError });
-      throw new Error(`Failed to get session: ${julesError.message}`, { cause: error });
+      throw julesError;
     }
   }
 
@@ -158,7 +158,7 @@ export class JulesInvestigator {
     } catch (error) {
       const julesError = this.handleApiError(error);
       this.logger.error('Failed to list activities', { sessionId, error: julesError });
-      throw new Error(`Failed to list activities: ${julesError.message}`, { cause: error });
+      throw julesError;
     }
   }
 
@@ -172,7 +172,7 @@ export class JulesInvestigator {
     } catch (error) {
       const julesError = this.handleApiError(error);
       this.logger.error('Failed to send message', { sessionId, error: julesError });
-      throw new Error(`Failed to send message: ${julesError.message}`, { cause: error });
+      throw julesError;
     }
   }
 
@@ -186,7 +186,7 @@ export class JulesInvestigator {
     } catch (error) {
       const julesError = this.handleApiError(error);
       this.logger.error('Failed to approve plan', { sessionId, error: julesError });
-      throw new Error(`Failed to approve plan: ${julesError.message}`, { cause: error });
+      throw julesError;
     }
   }
 
@@ -217,7 +217,7 @@ export class JulesInvestigator {
     } catch (error) {
       const julesError = this.handleApiError(error);
       this.logger.error('Failed to get session status', { sessionId, error: julesError });
-      throw new Error(`Session status retrieval failed: ${julesError.message}`, { cause: error });
+      throw julesError;
     }
   }
 
@@ -252,7 +252,7 @@ export class JulesInvestigator {
     } catch (error) {
       const julesError = this.handleApiError(error);
       this.logger.error('Failed to retrieve investigation results', { sessionId, error: julesError });
-      throw new Error(`Results retrieval failed: ${julesError.message}`, { cause: error });
+      throw julesError;
     }
   }
 
@@ -362,7 +362,7 @@ export class JulesInvestigator {
     } catch (error) {
       const julesError = this.handleApiError(error);
       this.logger.error('Failed to start recommendation investigation', julesError);
-      throw new Error(`Recommendation investigation failed: ${julesError.message}`, { cause: error });
+      throw julesError;
     }
   }
 
@@ -393,91 +393,121 @@ export class JulesInvestigator {
       if (status.status === 'completed') {
         return await this.retrieveResults(sessionId, product);
       } else if (status.status === 'failed') {
-        throw new Error(`Investigation failed: ${status.error}`);
+        // status.error は JulesError.message に相当すると想定
+        throw new JulesApiError({
+          code: 'INVESTIGATION_FAILED',
+          message: status.error || 'Investigation failed',
+          retryable: false,
+        });
       }
 
       // 10秒待機してから再チェック
       await new Promise((resolve) => setTimeout(resolve, 10000));
     }
 
-    throw new Error(`Investigation timeout after ${maxWaitTime}ms`);
+    throw new JulesApiError({
+      code: 'INVESTIGATION_TIMEOUT',
+      message: `Investigation timeout after ${maxWaitTime}ms`,
+      retryable: true,
+    });
   }
 
   /**
    * APIエラーを処理
    */
-  private handleApiError(error: unknown): JulesError {
+  private handleApiError(error: unknown): JulesApiError {
     if (axios.isAxiosError(error)) {
       const status = error.response?.status;
       const data = error.response?.data as unknown;
 
       // レート制限エラー
       if (status === 429) {
-        return {
-          code: 'RATE_LIMIT_EXCEEDED',
-          message: 'Jules API rate limit exceeded',
-          details: data as Record<string, unknown>,
-          retryable: true,
-        };
+        return new JulesApiError(
+          {
+            code: 'RATE_LIMIT_EXCEEDED',
+            message: 'Jules API rate limit exceeded',
+            details: data as Record<string, unknown>,
+            retryable: true,
+          },
+          error,
+        );
       }
 
       // 認証エラー
       if (status === 401 || status === 403) {
-        return {
-          code: 'AUTHENTICATION_ERROR',
-          message: 'Jules API authentication failed. Check your API key.',
-          details: data as Record<string, unknown>,
-          retryable: false,
-        };
+        return new JulesApiError(
+          {
+            code: 'AUTHENTICATION_ERROR',
+            message: 'Jules API authentication failed. Check your API key.',
+            details: data as Record<string, unknown>,
+            retryable: false,
+          },
+          error,
+        );
       }
 
       // サーバーエラー
       if (status && status >= 500) {
-        return {
-          code: 'SERVER_ERROR',
-          message: 'Jules API server error',
-          details: data as Record<string, unknown>,
-          retryable: true,
-        };
+        return new JulesApiError(
+          {
+            code: 'SERVER_ERROR',
+            message: 'Jules API server error',
+            details: data as Record<string, unknown>,
+            retryable: true,
+          },
+          error,
+        );
       }
 
       // その他のHTTPエラー
-      return {
-        code: 'HTTP_ERROR',
-        message: `Jules API HTTP error: ${status}`,
-        details: data as Record<string, unknown>,
-        retryable: false,
-      };
+      return new JulesApiError(
+        {
+          code: 'HTTP_ERROR',
+          message: `Jules API HTTP error: ${status}`,
+          details: data as Record<string, unknown>,
+          retryable: false,
+        },
+        error,
+      );
     }
 
     // ネットワークエラーやタイムアウト
     if (error instanceof Error) {
       if (error.message.includes('ECONNABORTED') || error.message.includes('ENOTFOUND')) {
-        return {
-          code: 'NETWORK_ERROR',
-          message: 'Network error connecting to Jules API',
-          details: error.message,
-          retryable: true,
-        };
+        return new JulesApiError(
+          {
+            code: 'NETWORK_ERROR',
+            message: 'Network error connecting to Jules API',
+            details: error.message,
+            retryable: true,
+          },
+          error,
+        );
       }
 
-      return {
-        code: 'UNKNOWN_ERROR',
-        message: error.message,
-        details: {
-          name: error.name,
+      return new JulesApiError(
+        {
+          code: 'UNKNOWN_ERROR',
           message: error.message,
+          details: {
+            name: error.name,
+            message: error.message,
+          },
+          retryable: false,
         },
-        retryable: false,
-      };
+        error,
+      );
     }
 
     // その他のエラー
-    return {
-      code: 'UNKNOWN_ERROR',
-      message: 'Unknown Jules API error',
-      details: String(error),
-      retryable: false,
-    };
+    return new JulesApiError(
+      {
+        code: 'UNKNOWN_ERROR',
+        message: 'Unknown Jules API error',
+        details: String(error),
+        retryable: false,
+      },
+      error,
+    );
   }
 }
