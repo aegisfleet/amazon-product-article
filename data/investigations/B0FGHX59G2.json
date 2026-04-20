@@ -1,134 +1,185 @@
 {
   "analysis": {
-    "productName": "UGREEN 14-in-1 ドッキングステーション (CM843)",
+    "productName": "UGREEN ドッキングステーション 14-in-1",
     "parentAsin": "B0FGHX59G2",
-    "productDescription": "14のポートを1台に集約し、最大3画面出力と100W PD充電に対応した多機能ドッキングステーション。",
+    "productDescription": "14種類のポートを備え、3画面への同時出力と100W PD急速充電に対応した高機能ドッキングステーション。",
     "productUsage": [
-      "ノートPCのUSB-Cポートを14ポートに拡張",
-      "HDMIとDisplayPortを使用した最大3画面のマルチモニター環境構築",
-      "ノートPCへの最大100W急速充電と周辺機器への給電"
+      "ノートPCのポート拡張",
+      "マルチモニター環境の構築",
+      "複数デバイスの同時接続および充電"
     ],
     "positivePoints": [
-      "14ポートという圧倒的な拡張性でデスク周りを整理できる",
-      "4K/120Hzを含む高解像度での3画面出力に対応",
-      "競合の同等スペック製品と比較して非常にコストパフォーマンスが高い",
-      "放熱機能を備え、安定した動作が期待できる"
+      "14個の豊富なポート（DP×2、HDMI×1、USB-C/A×複数、有線LANなど）を1台に集約",
+      "DP 4K120Hz、HDMI 4K60Hzでの3画面出力に対応し、作業領域を大幅に拡張可能",
+      "最大100WのPD急速充電に対応し、PCへの給電と周辺機器の接続をケーブル1本で両立",
+      "10Gbps対応の高速USBポートを3つ搭載し、大容量データの転送もスムーズ"
     ],
     "negativePoints": [
-      "ACアダプタのサイズが大きく場所を取る可能性がある（推測）",
-      "macOSではOSの仕様上、MST（マルチストリームトランスポート）による3画面拡張が制限される場合がある（ミラーリングになる可能性）",
-      "高負荷時の本体発熱"
+      "サイズがやや大きめ（約20cm角）で、持ち運びには不向きな据え置き型",
+      "MacOSでは仕様上、外部モニターがミラーリング出力（同じ画面）になる制限がある"
     ],
     "useCases": [
-      "複数のモニターと周辺機器を使用するテレワーク環境",
-      "動画編集やデザイン作業など広い作業領域を必要とするクリエイティブワーク",
-      "ノートPCを持ち運ぶ頻度が高く、ケーブル1本で着脱したいユーザー"
+      "自宅やオフィスのデスクで、ノートPCをデスクトップPCのようにメインマシンとして使う",
+      "動画編集やデザイン作業など、高解像度のマルチモニター環境が必要なクリエイティブ作業"
     ],
-    "userStories": [
-      {
-        "userType": "在宅勤務のエンジニア",
-        "scenario": "配線が散らかりがちなデスク環境の改善",
-        "experience": "モニター2台とキーボード、マウス、有線LANをこれ1台にまとめられ、デスクが劇的にスッキリした。外出時はケーブル1本抜くだけなので非常に楽。（推測）",
-        "sentiment": "positive"
-      },
-      {
-        "userType": "動画クリエイター",
-        "scenario": "マルチモニターでの編集作業",
-        "experience": "4Kモニターに出力しても遅延なくスムーズに動作する。SDカードスロットへのアクセスもしやすく、撮影データの取り込みもスムーズ。（推測）",
-        "sentiment": "positive"
-      }
-    ],
-    "userImpression": "豊富なポート数と高い出力性能を持ちながら、競合他社製品よりも安価に抑えられた高コスパモデル。特にWindowsユーザーにとって3画面出力のメリットは大きい。",
+    "userStories": [],
+    "userImpression": "14-in-1という圧倒的なポート数と3画面出力が魅力で、Windowsユーザーのデスクトップ環境構築に最適と高く評価されています。一方でMac環境でのマルチモニター拡張制限には注意が必要です。",
     "sources": [
       {
+        "id": "src-amazon-official",
         "name": "Amazon商品ページ",
         "url": "https://www.amazon.co.jp/dp/B0FGHX59G2",
-        "credibility": "高"
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-04-21",
+        "author": "UGREEN",
+        "conflictOfInterest": "disclosed",
+        "notes": "メーカー公式の仕様および特徴説明"
       }
     ],
-    "lastInvestigated": "2026-01-31",
+    "claims": [
+      {
+        "claim": "最大3画面の同時出力に対応（DP1.4 4K120Hz、HDMI2.0 4K60Hz）",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-amazon-official"
+        ],
+        "crossChecked": true,
+        "notes": "メーカー公式仕様より確認"
+      },
+      {
+        "claim": "最大100WのPD急速充電対応",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-amazon-official"
+        ],
+        "crossChecked": true,
+        "notes": "メーカー公式仕様より確認"
+      }
+    ],
+    "lastInvestigated": "2026-04-21",
     "competitiveAnalysis": [
       {
-        "name": "UGREEN Revodok Pro 314",
+        "name": "UGREEN Revodok Pro 314 (B0DYTVVLH4)",
         "asin": "B0DYTVVLH4",
-        "priceComparison": "同価格帯（割引時）だが、こちらは8K対応の上位モデル",
+        "priceComparison": "対象商品と同価格。対象商品が据え置き型に近いデザインなのに対し、こちらはややコンパクトな縦型デザインを採用している。",
         "featureComparison": [
-          "こちらは8K出力対応",
-          "ポート構成はほぼ同じ"
+          "共通点：14-in-1のポート構成、最大100W PD充電、10Gbpsデータ転送対応",
+          "相違点：対象商品はDP2+HDMI1の構成だが、競合はHDMI2+DP1の構成。競合は最大8K出力に対応。"
         ],
         "differentiators": [
-          "Revodokブランドの上位モデル",
-          "スペック的にはこちらが上"
+          "UGREEN ドッキングステーション 14-in-1の利点：DisplayPort接続のモニターを複数持っている場合や、平置きで安定して設置したい場合に適している。",
+          "UGREEN Revodok Pro 314の利点：HDMI接続のモニターを複数持っている場合や、8K対応モニターを使用する場合、デスクスペースを節約したい場合に適している。"
         ]
       },
       {
-        "name": "Anker Prime ドッキングステーション",
-        "asin": "B0F8VNSTYC",
-        "priceComparison": "約2倍の価格差がある",
+        "name": "Anker Prime ドッキングステーション (B0D31FK2W6)",
+        "asin": "B0D31FK2W6",
+        "priceComparison": "対象商品よりも高価。その分、GaN搭載のACアダプタを内蔵しており、よりスマートな配線が可能。",
         "featureComparison": [
-          "Ankerは最大140W出力",
-          "ステータス表示ディスプレイ搭載"
+          "共通点：14-in-1のポート構成、10Gbpsデータ転送対応",
+          "相違点：対象商品は最大3画面出力対応だが、競合は最大2画面出力。競合はACアダプタ内蔵で合計最大160W出力対応。"
         ],
         "differentiators": [
-          "Ankerのブランド信頼性と高級感",
-          "ディスプレイによる情報表示"
+          "UGREEN ドッキングステーション 14-in-1の利点：より安価でありながら、3画面出力に対応している。",
+          "Anker Prime ドッキングステーションの利点：ACアダプタ内蔵で配線がスッキリし、ステータスディスプレイで出力状況を確認できる。"
         ]
       },
       {
-        "name": "Anker PowerExpand 13-in-1",
-        "asin": "B088FMRW7L",
-        "priceComparison": "約6,000円高い",
+        "name": "Anker Nano ドッキングステーション (B0FLD8KKN7)",
+        "asin": "B0FLD8KKN7",
+        "priceComparison": "対象商品よりやや高価。コンパクトさを重視したモデル。",
         "featureComparison": [
-          "Ankerは85W出力",
-          "ポート数は1つ少ない"
+          "共通点：10Gbpsデータ転送、最大100W出力対応",
+          "相違点：対象商品は14ポートだが、競合は13ポートでよりコンパクトな設計。"
         ],
         "differentiators": [
-          "UGREENの方がスペックとコスパで勝る"
+          "UGREEN ドッキングステーション 14-in-1の利点：より多くのポートを備え、有線LANなど据え置き環境で必要なポートが充実している。",
+          "Anker Nano ドッキングステーションの利点：コンパクトで持ち運びやすく、デスク上でもスペースを取らない。"
+        ]
+      },
+      {
+        "name": "UGREEN Revodok Pro 12-in-1 (B0DRP1F6R7)",
+        "asin": "B0DRP1F6R7",
+        "priceComparison": "対象商品よりも安価。ポート数を少し絞ったモデル。",
+        "featureComparison": [
+          "共通点：最大3画面出力、100W PD充電、10Gbpsデータ転送対応",
+          "相違点：対象商品は14ポートだが、競合は12ポート（HDMI×2、DP×1構成）。"
+        ],
+        "differentiators": [
+          "UGREEN ドッキングステーション 14-in-1の利点：USBポートの数が多く、より多くの周辺機器を同時に接続できる。",
+          "UGREEN Revodok Pro 12-in-1の利点：価格が抑えられており、ポート数がそこまで必要ないユーザーにとってコストパフォーマンスが高い。"
+        ]
+      },
+      {
+        "name": "UGREEN Revodok Pro 210 (B0BXDQS4BD)",
+        "asin": "B0BXDQS4BD",
+        "priceComparison": "対象商品の約半額。より手軽に導入できるエントリー寄りのモデル。",
+        "featureComparison": [
+          "共通点：マルチディスプレイ出力、100W PD急速充電対応",
+          "相違点：対象商品は14ポートで3画面出力対応だが、競合は10ポートで、データ転送速度も5Gbps（対象商品は10Gbps）。"
+        ],
+        "differentiators": [
+          "UGREEN ドッキングステーション 14-in-1の利点：ポート数が多く、10Gbpsの高速データ転送や4K120Hz出力など、より高性能な環境を構築できる。",
+          "UGREEN Revodok Pro 210の利点：安価でコンパクトなため、基本的なポート拡張とマルチモニター環境（デュアル等）を手軽に構築したい場合に適している。"
+        ]
+      },
+      {
+        "name": "Belkin Connect 11-in-1 GaNドック (B0DM1TWPDY)",
+        "asin": "B0DM1TWPDY",
+        "priceComparison": "対象商品より高価。信頼性の高いブランドとGaN電源内蔵が特徴。",
+        "featureComparison": [
+          "共通点：10Gbpsデータ転送、マルチモニター対応",
+          "相違点：対象商品は14ポートだが、競合は11ポートで電源を内蔵している。"
+        ],
+        "differentiators": [
+          "UGREEN ドッキングステーション 14-in-1の利点：ポート数が多く、コストパフォーマンスに優れている。",
+          "Belkin Connect 11-in-1 GaNドックの利点：電源内蔵でACアダプターが不要なため、配線周りがスッキリし、持ち運びの際もかさばらない。"
         ]
       }
     ],
     "recommendation": {
       "targetUsers": [
-        "WindowsノートPCを使用していてマルチモニター環境を構築したい人",
-        "コスパ重視で多機能なドックを探している人",
-        "USB-A/C周辺機器を多数持っている人"
+        "複数のモニター（最大3画面）を使って作業領域を広げたいWindowsユーザー",
+        "多数のUSB機器や有線LANなどを1つのハブにまとめて接続したい方",
+        "ノートPCの充電と周辺機器の接続をケーブル1本で済ませたい方"
       ],
       "pros": [
-        "1万円台前半で手に入る14-in-1の高機能",
-        "4K/120Hz対応でゲーミングモニター等も活かせる",
-        "100W PD充電対応でハイスペックPCも充電可能"
+        "14個の豊富なポートを搭載し、あらゆる接続ニーズに対応",
+        "最大4K120Hzの高解像度出力を含む3画面出力が可能",
+        "最大100WのPD急速充電に対応"
       ],
       "cons": [
-        "MacBook（特にM1/M2/M3 Air/Pro 13インチ）ではMST非対応のため複数画面拡張ができない可能性がある",
-        "発熱への注意が必要"
+        "MacOS環境では外部モニターが拡張できずミラーリングになってしまう制限がある",
+        "本体サイズが大きく、持ち運びには適していない"
       ],
-      "score": 85,
-      "scoreRationale": "[基本点: 70]\n[加点: +10] (14ポート、3画面出力、100W充電とスペックが非常に高い)\n[加点: +10] (競合他社製品と比較して圧倒的に安価)\n[減点: -5] (Macでの制限など互換性の複雑さ)\n[合計: 85]"
+      "score": 88,
+      "scoreRationale": "[基本点: 70]\n[加点: +8] (14の豊富なポートと3画面出力などの高い拡張性)\n[加点: +6] (最大100W PD充電、10Gbps高速転送による実用性の高さ)\n[加点: +8] (これだけの機能を備えながら約1.2万円という高いコストパフォーマンス)\n[減点: -4] (MacOS環境でのマルチモニター制限（ミラーリングのみ）)\n[合計: 88]"
     },
     "technicalSpecs": {
       "dimensions": {
-        "size": "中型"
+        "height": "199.9mm",
+        "width": "150.0mm",
+        "depth": "199.9mm"
       },
-      "ports": {
-        "upstream": "USB-C 3.2 (100W PD充電対応)",
-        "video": [
-          "DisplayPort 1.4 x2 (4K120Hz)",
-          "HDMI 2.0 x1 (4K60Hz)"
-        ],
-        "usb": [
-          "USB-C 3.2 (10Gbps) x2",
-          "USB-A 3.2 (10Gbps) x1",
-          "USB-A 3.0 (5Gbps) x2",
-          "USB-C PD充電 (27W)"
-        ],
-        "network": "RJ45 (1Gbps)",
-        "audio": "3.5mmオーディオジャック",
-        "cardReader": "SD/TF (UHS-I 170MB/s)"
-      },
-      "power": {
-        "input": "DC 24V/140W",
-        "output": "PCへ最大100W"
-      }
+      "weight": "1000g",
+      "ports": [
+        "USB-C 3.2 アップリンク（ノートPCへ最大100W充電）×1",
+        "PD充電ポート（最大27W出力）×1",
+        "DP (DisplayPort 1.4, 4K120Hz) ×2",
+        "HDMI (HDMI 2.0, 4K60Hz) ×1",
+        "USB-C 3.2 (10Gbps) ×2",
+        "USB-A 3.2 (10Gbps) ×1",
+        "USB-A 3.0 (5Gbps) ×2",
+        "SD/TFカードリーダー (SD3.0, 170MB/s) ×1",
+        "RJ45 イーサネット (1000Mbps) ×1",
+        "3.5mm オーディオジャック ×1",
+        "DC電源入力 (24V/140W) ×1"
+      ],
+      "color": "ブラック",
+      "warranty": "2年間のメーカー保証"
     }
   }
 }
