@@ -397,7 +397,7 @@ export class JulesInvestigator {
         throw new JulesApiError({
           code: 'INVESTIGATION_FAILED',
           message: status.error || 'Investigation failed',
-          retryable: false
+          retryable: false,
         });
       }
 
@@ -408,7 +408,7 @@ export class JulesInvestigator {
     throw new JulesApiError({
       code: 'INVESTIGATION_TIMEOUT',
       message: `Investigation timeout after ${maxWaitTime}ms`,
-      retryable: true
+      retryable: true,
     });
   }
 
@@ -422,71 +422,92 @@ export class JulesInvestigator {
 
       // レート制限エラー
       if (status === 429) {
-        return new JulesApiError({
-          code: 'RATE_LIMIT_EXCEEDED',
-          message: 'Jules API rate limit exceeded',
-          details: data as Record<string, unknown>,
-          retryable: true,
-        }, error);
+        return new JulesApiError(
+          {
+            code: 'RATE_LIMIT_EXCEEDED',
+            message: 'Jules API rate limit exceeded',
+            details: data as Record<string, unknown>,
+            retryable: true,
+          },
+          error,
+        );
       }
 
       // 認証エラー
       if (status === 401 || status === 403) {
-        return new JulesApiError({
-          code: 'AUTHENTICATION_ERROR',
-          message: 'Jules API authentication failed. Check your API key.',
-          details: data as Record<string, unknown>,
-          retryable: false,
-        }, error);
+        return new JulesApiError(
+          {
+            code: 'AUTHENTICATION_ERROR',
+            message: 'Jules API authentication failed. Check your API key.',
+            details: data as Record<string, unknown>,
+            retryable: false,
+          },
+          error,
+        );
       }
 
       // サーバーエラー
       if (status && status >= 500) {
-        return new JulesApiError({
-          code: 'SERVER_ERROR',
-          message: 'Jules API server error',
-          details: data as Record<string, unknown>,
-          retryable: true,
-        }, error);
+        return new JulesApiError(
+          {
+            code: 'SERVER_ERROR',
+            message: 'Jules API server error',
+            details: data as Record<string, unknown>,
+            retryable: true,
+          },
+          error,
+        );
       }
 
       // その他のHTTPエラー
-      return new JulesApiError({
-        code: 'HTTP_ERROR',
-        message: `Jules API HTTP error: ${status}`,
-        details: data as Record<string, unknown>,
-        retryable: false,
-      }, error);
+      return new JulesApiError(
+        {
+          code: 'HTTP_ERROR',
+          message: `Jules API HTTP error: ${status}`,
+          details: data as Record<string, unknown>,
+          retryable: false,
+        },
+        error,
+      );
     }
 
     // ネットワークエラーやタイムアウト
     if (error instanceof Error) {
       if (error.message.includes('ECONNABORTED') || error.message.includes('ENOTFOUND')) {
-        return new JulesApiError({
-          code: 'NETWORK_ERROR',
-          message: 'Network error connecting to Jules API',
-          details: error.message,
-          retryable: true,
-        }, error);
+        return new JulesApiError(
+          {
+            code: 'NETWORK_ERROR',
+            message: 'Network error connecting to Jules API',
+            details: error.message,
+            retryable: true,
+          },
+          error,
+        );
       }
 
-      return new JulesApiError({
-        code: 'UNKNOWN_ERROR',
-        message: error.message,
-        details: {
-          name: error.name,
+      return new JulesApiError(
+        {
+          code: 'UNKNOWN_ERROR',
           message: error.message,
+          details: {
+            name: error.name,
+            message: error.message,
+          },
+          retryable: false,
         },
-        retryable: false,
-      }, error);
+        error,
+      );
     }
 
     // その他のエラー
-    return new JulesApiError({
-      code: 'UNKNOWN_ERROR',
-      message: 'Unknown Jules API error',
-      details: String(error),
-      retryable: false,
-    }, error);
+    return new JulesApiError(
+      {
+        code: 'UNKNOWN_ERROR',
+        message: 'Unknown Jules API error',
+        details: String(error),
+        retryable: false,
+      },
+      error,
+    );
   }
 }
