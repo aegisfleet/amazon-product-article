@@ -1,0 +1,191 @@
+{
+  "analysis": {
+    "productName": "RebotAi タブレット 8インチ A9",
+    "parentAsin": "B0GS5SZVWN",
+    "productDescription": "Helio G100プロセッサを搭載した8.68インチの高性能Android 15タブレット。18GBのRAMと128GBのストレージ、4G LTE通話機能、高精度GPSを備えています。",
+    "productUsage": [
+      "動画視聴",
+      "電子書籍・マンガの閲覧",
+      "ゲームアプリのプレイ",
+      "カーナビとしての利用",
+      "オンライン会議やビデオ通話"
+    ],
+    "positivePoints": [
+      "最新のHelio G100プロセッサ搭載で、G99より性能と省電力性が向上している",
+      "8.68インチ、厚さ7.8mm、重量360gと軽量・薄型で持ち運びに便利",
+      "4G LTE通信と通話に対応し、SIMフリーで外出先でもネット接続が可能",
+      "90Hzの高リフレッシュレート対応のIPS液晶で、滑らかな操作と映像が楽しめる",
+      "Widevine L1認証対応で、主要ストリーミングサービスで高画質再生が可能"
+    ],
+    "negativePoints": [
+      "内蔵ストレージが128GBと、最新の高性能タブレットとしては標準的（ただし1TBまで拡張可能）",
+      "バッテリー容量が5000mAhで、他の大容量モデルに比べるとやや少なめ",
+      "急速充電は20Wまでで、超急速充電には非対応"
+    ],
+    "useCases": [
+      "通勤・通学中の動画視聴や読書",
+      "旅行先での地図・ナビゲーション利用",
+      "カフェなど外出先での軽作業やSNSの利用",
+      "自宅でのベッドやソファでのリラックスタイム",
+      "子供の学習やエンターテインメント用"
+    ],
+    "userStories": [],
+    "userImpression": "Helio G100搭載によるサクサクとした動作と、8.68インチの持ち運びやすいサイズ感が高く評価されています。4G LTE対応でどこでも通信できる利便性と、90Hzディスプレイによる滑らかな映像体験が、日常使いからエンターテインメントまで幅広いシーンでユーザーの満足度を高めています。軽量でありながら必要な機能がコンパクトにまとまった、コストパフォーマンスの高いタブレットという印象です。",
+    "sources": [
+      {
+        "id": "src-1",
+        "name": "Amazon商品ページ",
+        "url": "https://www.amazon.co.jp/dp/B0FG8F15YM",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-04-20",
+        "author": "RebotAi",
+        "conflictOfInterest": "disclosed",
+        "notes": "商品の仕様、機能（Helio G100、90Hz、4G LTE、Widevine L1など）の詳細情報を確認。"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "Helio G99をベースに多方面で性能が強化されたHelio G100プロセッサを搭載している。",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "crossChecked": false,
+        "notes": "商品スペックからの確認。"
+      },
+      {
+        "claim": "4G LTE通話と通信に対応し、GPSも内蔵している。",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "crossChecked": false,
+        "notes": "商品仕様からの確認。SIMフリーモデル。"
+      },
+      {
+        "claim": "Widevine L1認証を取得しており、主要動画サービスで高画質再生が可能。",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "crossChecked": false,
+        "notes": "商品スペックからの確認。"
+      }
+    ],
+    "lastInvestigated": "2026-04-20",
+    "competitiveAnalysis": [
+      {
+        "name": "LZF ZPad3",
+        "asin": "B0FWR62JYH",
+        "priceComparison": "対象商品（￥14,698）より価格が高い（￥18,998）。",
+        "featureComparison": [
+          "共通点：4G LTE対応、GPS搭載、Widevine L1対応、顔認識対応",
+          "相違点：対象商品が8.68インチ（Helio G100）であるのに対し、LZF ZPad3は11インチ（Helio G99）、10000mAhバッテリーを搭載している。"
+        ],
+        "differentiators": [
+          "RebotAi A9の利点：コンパクトな8.68インチサイズで軽量（360g）なため、持ち運びに優れている。プロセッサが最新のHelio G100である。",
+          "LZF ZPad3の利点：11インチの大画面で、10000mAhの超大容量バッテリーを搭載しており、長時間の動画視聴や作業に向いている。"
+        ]
+      },
+      {
+        "name": "Bmax I8 Plus",
+        "asin": "B0DYNB39BK",
+        "priceComparison": "対象商品より価格が高い（￥19,900）。",
+        "featureComparison": [
+          "共通点：8インチクラスの画面サイズ、90Hz高リフレッシュレート、Widevine L1対応",
+          "相違点：対象商品が4G LTE対応であるのに対し、Bmax I8 PlusはWi-Fiモデル（通話機能なし）。プロセッサも異なり、BmaxはT7250を搭載している。"
+        ],
+        "differentiators": [
+          "RebotAi A9の利点：4G LTE対応で単独での通信が可能。Helio G100による安定した性能。",
+          "Bmax I8 Plusの利点：より大容量のバッテリー（6000mAh）と、少しだけ多いRAM（24GB）を搭載している。"
+        ]
+      },
+      {
+        "name": "BekoQurd 10.4インチタブレット",
+        "asin": "B0DQ58ZPP2",
+        "priceComparison": "対象商品と価格帯は近いが、わずかに安い（￥13,999）。",
+        "featureComparison": [
+          "共通点：MediaTek系プロセッサ（対象はG100、競合はG99）、128GBストレージ",
+          "相違点：対象商品は8.68インチであるのに対し、BekoQurdは10.4インチ。バッテリー容量もBekoQurdが7000mAhと多い。"
+        ],
+        "differentiators": [
+          "RebotAi A9の利点：8インチクラスのコンパクトさと軽さで、持ち運びに適している。最新のHelio G100搭載。",
+          "BekoQurdの利点：10.4インチの2K大画面と、大容量バッテリーを備えており、自宅での映像視聴に適している。"
+        ]
+      },
+      {
+        "name": "CHUWI AuPad Mini",
+        "asin": "B0GHFCX9J7",
+        "priceComparison": "対象商品より価格が安い（￥12,900）。",
+        "featureComparison": [
+          "共通点：8.7インチクラスの画面サイズ、Widevine L1対応、90Hzリフレッシュレート",
+          "相違点：対象商品がHelio G100と4G LTE対応であるのに対し、CHUWIはT615プロセッサのWi-Fiモデルである。"
+        ],
+        "differentiators": [
+          "RebotAi A9の利点：Helio G100による高い処理性能と、4G LTE通信によるモビリティの高さ。",
+          "CHUWI AuPad Miniの利点：価格がより手頃で、Wi-Fi環境での使用に特化している。"
+        ]
+      },
+      {
+        "name": "アイリスオーヤマ TM08E2W74-AZ1B",
+        "asin": "B0FJXWKT9Z",
+        "priceComparison": "対象商品より価格が高い（￥19,800）。",
+        "featureComparison": [
+          "共通点：8インチ画面サイズ、128GBストレージ、Widevine L1対応",
+          "相違点：対象商品がHelio G100で4G LTE対応なのに対し、アイリスオーヤマ製はHelio G99でWi-Fiモデル。"
+        ],
+        "differentiators": [
+          "RebotAi A9の利点：最新プロセッサ搭載、4G LTE通信対応、さらに価格も抑えられておりコストパフォーマンスが高い。",
+          "アイリスオーヤマ製品の利点：国内メーカーとしての信頼性やサポート体制に安心感がある。"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "持ち運びに便利な8インチクラスのタブレットを探している人",
+        "外出先でもWi-Fiに頼らず通信したい人（カーナビ利用など）",
+        "動画視聴や電子書籍を快適に楽しみたい人"
+      ],
+      "pros": [
+        "軽量・コンパクトで持ち運びやすい",
+        "4G LTEとGPS搭載でモビリティに優れる",
+        "Helio G100と90Hzディスプレイで動作が滑らか"
+      ],
+      "cons": [
+        "バッテリー容量が5000mAhと大容量モデルよりは少ない",
+        "超急速充電には非対応（20Wまで）"
+      ],
+      "score": 83,
+      "scoreRationale": "[基本点: 70]\n[加点: +5] 最新のHelio G100プロセッサによる優れた処理性能\n[加点: +3] 90Hzディスプレイによる滑らかな操作性\n[加点: +4] 4G LTE対応による高い利便性\n[加点: +3] GPS搭載による機動力\n[加点: +5] セルラーモデルとしての高いコストパフォーマンス\n[減点: -7] 5000mAhのやや少ないバッテリー容量\n[合計: 83]"
+    },
+    "technicalSpecs": {
+      "dimensions": {
+        "height": "149.99mm",
+        "width": "49.99mm",
+        "depth": "249.99mm"
+      },
+      "weight": "360g",
+      "displaySize": "約22cm",
+      "displayResolution": "1340×800 (IPS, 90Hz)",
+      "processor": "MediaTek Helio G100 (MT8781)",
+      "ram": "18GB (物理6GB + 仮想12GB)",
+      "storage": "128GB (microSDで最大1TB拡張可能)",
+      "battery": "5000mAh",
+      "charging": "20W PD急速充電",
+      "os": "Android 15",
+      "connectivity": "4G LTE, 5G Wi-Fi, Bluetooth 5.2",
+      "camera": "背面1300万画素(AF), 前面500万画素",
+      "sensors": "6軸ジャイロ, GPS, 光センサー, 重力センサー",
+      "other": [
+        "Widevine L1認証",
+        "nanoSIMスロット×2 (SIMフリー)",
+        "ワイヤレス投影対応",
+        "GMS認証取得"
+      ]
+    }
+  }
+}
