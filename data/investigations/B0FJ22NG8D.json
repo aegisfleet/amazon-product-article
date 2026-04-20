@@ -1,106 +1,167 @@
 {
   "analysis": {
-    "productName": "エレコム マグネット変換アダプタ USB Type-C 100W PD (MPA-CECMAADBK)",
+    "productName": "エレコム マグネット 変換アダプタ USB Type-C ケーブル ストレート 100W PD対応",
     "parentAsin": "B0FNZZWLRW",
-    "productDescription": "USB Type-Cケーブルをマグネット式に変換するアダプタです。ケーブルの頻繁な抜き差しによるコネクタの劣化を防ぎ、足を引っ掛けた際なども安全に外れる設計です。",
+    "productDescription": "手持ちのUSB Type-Cケーブルを磁力着脱式に変換できるストレートタイプのマグネットアダプタ。ケーブルの頻繁な抜き差しによる端子への負荷を軽減し、高温状態や過電流を検知して電流を遮断するブレーカー機能を搭載している。",
     "productUsage": [
-      "ノートPCやタブレットの充電ポートをマグネット着脱式にする",
-      "頻繁なケーブルの抜き差しから端末の充電口を保護する",
-      "ケーブルに足を引っ掛けた際の落下事故を防止する"
+      "ノートPCやタブレットのUSB Type-C充電ポートをマグネット着脱式に変更する",
+      "頻繁なケーブルの抜き差しによる端末充電口の劣化や損傷を防ぐ"
     ],
     "positivePoints": [
-      "国内メーカー（エレコム）製である安心感",
-      "ブレーカー内蔵（Thermal Protection）による発火防止機能",
-      "100W USB PD対応でノートPCも急速充電可能",
-      "マグネット式で着脱が簡単"
+      "国内メーカー(エレコム)製の安心感",
+      "ブレーカー内蔵(Thermal Protection)によるショート・発火防止機能",
+      "100WのUSB PDに対応し、ノートPC等の急速充電が可能",
+      "手持ちのケーブルに取り付けるだけで簡単にマグネット化できる"
     ],
     "negativePoints": [
-      "データ転送速度が遅い（映像出力不可、USB2.0相当の可能性大）",
-      "マグネット接続部が外れやすい場合がある（一般的なマグネット製品の弱点）",
-      "競合の海外製アダプタに比べて高価な場合がある"
+      "データ転送は可能だが映像出力には非対応",
+      "水滴や汚れが付着すると発熱の恐れがあるため定期的な清掃が必要",
+      "他社のマグネット変換アダプタと比較して、一部高価な場合がある"
     ],
     "useCases": [
-      "MacBookやWindowsノートPCの充電",
-      "タブレット端末の充電スタンド化",
-      "子供やペットがいる家庭での安全対策"
+      "MacBookやWindowsノートPC、タブレット端末の充電",
+      "抜き差しが多いデスク環境での充電ステーション化"
     ],
-    "userStories": [
-      {
-        "userType": "30代 リモートワーカー",
-        "scenario": "自宅でのPC作業",
-        "experience": "以前は中華製の無名ブランドを使っていたが、発熱が怖くてエレコム製に買い替えた。ブレーカー搭載という点が安心材料。（推測）",
-        "sentiment": "positive"
-      },
-      {
-        "userType": "40代 主婦",
-        "scenario": "リビングでのタブレット充電",
-        "experience": "子供がケーブルに引っかかってタブレットを落としそうになったことがあるが、マグネット式にしてからはケーブルだけが外れるので安心。（推測）",
-        "sentiment": "positive"
-      }
-    ],
-    "userImpression": "信頼性の高い国内メーカー製で、特に安全機能（発火防止）が評価されている。映像出力や高速データ転送はできないが、充電専用と割り切れば安心して使える製品。",
+    "userStories": [],
+    "userImpression": "信頼性の高い国内メーカー製で、特にブレーカー搭載による発火防止機能が評価できる。映像出力機能は省かれているが、100W PD充電専用と割り切れば、機器への負担を減らし安全に使える実用的な製品。",
     "sources": [
       {
+        "id": "src-1",
         "name": "Amazon.co.jp 商品ページ",
         "url": "https://www.amazon.co.jp/dp/B0FJ22NG8D",
-        "credibility": "High"
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-04-21",
+        "author": "エレコム(ELECOM)",
+        "conflictOfInterest": "none",
+        "notes": "商品の公式仕様、価格、機能説明を確認"
       }
     ],
-    "lastInvestigated": "2026-01-31",
+    "claims": [
+      {
+        "claim": "コネクター部分にブレーカーを内蔵し、高温状態や過電流を検知して電流を遮断する",
+        "category": "safety",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "crossChecked": false,
+        "notes": "公式商品ページの説明より"
+      },
+      {
+        "claim": "最大100WのUSB PDに対応している",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "crossChecked": false,
+        "notes": "公式商品ページの説明より"
+      }
+    ],
+    "lastInvestigated": "2026-04-21",
     "competitiveAnalysis": [
       {
-        "name": "CIO マグネット変換アダプタ (B0DK7BS8N1)",
-        "asin": "B0DK7BS8N1",
-        "priceComparison": "やや高い (￥1,480)",
-        "featureComparison": ["100W PD対応", "USB2.0", "映像出力不可"],
-        "differentiators": ["CIOブランドのデザイン性", "L字型などバリエーション豊富"]
+        "name": "Akkerds マグネット USB C 変換 アダプタ",
+        "asin": "B0DDKVSP3G",
+        "priceComparison": "対象商品(1,280円)よりも安価な748円で提供されており、価格優位性があるが、安全性や品質に対する信頼度は未知数。",
+        "featureComparison": [
+          "共通点：マグネット式変換アダプタ、100W PD急速充電対応、ストレート型",
+          "相違点：Akkerdsは40Gbpsのデータ転送や8K映像出力に対応しているが、エレコムは映像出力不可でデータ転送の速度明記なし。一方エレコムは発火を防ぐブレーカー機能(Thermal Protection)を搭載。"
+        ],
+        "differentiators": [
+          "エレコム マグネット 変換アダプタの利点：国内メーカーの信頼性と、異常時に電流を遮断するブレーカー搭載による高い安全性",
+          "Akkerds マグネット USB C 変換 アダプタの利点：価格が安く、8K映像出力や40Gbpsの高速データ転送にも対応する多機能性"
+        ]
       },
       {
-        "name": "MSL FORCE マグネットアダプタ (B0DMDG924Z)",
-        "asin": "B0DMDG924Z",
-        "priceComparison": "安い (￥882)",
-        "featureComparison": ["100W PD対応", "480Mbps"],
-        "differentiators": ["圧倒的な安さ", "L字型"]
+        "name": "YFFSFDC USB-Cマグネット式 Type C 変換アダプタ 2個セット",
+        "asin": "B0FN4J7Q25",
+        "priceComparison": "対象商品(1,280円)に対して、YFFSFDCは2個セットで1,130円であり、単価が圧倒的に安い。",
+        "featureComparison": [
+          "共通点：マグネット式変換アダプタ",
+          "相違点：YFFSFDCは240W超高速充電、80Gbpsデータ転送、8K映像出力に対応しており、かつ2個セット。エレコムは100W PD対応で映像出力非対応だが、ブレーカー搭載で安全性が高い。"
+        ],
+        "differentiators": [
+          "エレコム マグネット 変換アダプタの利点：異常な発熱や過電流を検知して遮断する機能があり、安全性が高い",
+          "YFFSFDC USB-Cマグネット式 Type C 変換アダプタの利点：2個セットでコスパが高く、240W充電や映像出力などスペックが高い"
+        ]
       },
       {
-        "name": "EC-GOOD 24ピン マグネットアダプタ (B0D8XN5XKJ)",
-        "asin": "B0D8XN5XKJ",
-        "priceComparison": "同等 (￥1,280)",
-        "featureComparison": ["100W PD対応", "10Gbps転送", "4K映像出力対応"],
-        "differentiators": ["映像出力が可能", "高スペック"]
+        "name": "ENDLESSHINE TYPE C to TYPE C マグネット変換アダプタ",
+        "asin": "B0F18ZKPGK",
+        "priceComparison": "対象商品(1,280円)に対して、ENDLESSHINEは1,610円であり、やや割高。",
+        "featureComparison": [
+          "共通点：マグネット式変換アダプタ",
+          "相違点：ENDLESSHINEは540度回転(180度L型+360度回転)に対応し、240W急速充電が可能。エレコムはストレート型で100W対応、ブレーカー搭載。"
+        ],
+        "differentiators": [
+          "エレコム マグネット 変換アダプタの利点：安全性を重視したブレーカー機能と国内ブランドの信頼感",
+          "ENDLESSHINE TYPE C to TYPE C マグネット変換アダプタの利点：角度を自由に変えられる回転機能と、240W対応の充電能力"
+        ]
       },
       {
-        "name": "Akkerds 40Gbps マグネットアダプタ (B0DB5SYPCH)",
-        "asin": "B0DB5SYPCH",
-        "priceComparison": "非常に安い (￥749)",
-        "featureComparison": ["100W PD対応", "40Gbps転送", "8K映像出力対応"],
-        "differentiators": ["オーバースペックなほどの高性能", "安価だが信頼性は未知数"]
+        "name": "EC-GOOD USB-C Type Cマグネット変換アダプタ 端子2個付き",
+        "asin": "B0BGDM7WJX",
+        "priceComparison": "対象商品(1,280円)に対して、EC-GOODは1,080円であり、安価。",
+        "featureComparison": [
+          "共通点：マグネット式変換アダプタ、100W PD対応",
+          "相違点：EC-GOODは端子が2個付属し、40Gbps高速データ転送と8K映像出力に対応。エレコムは映像出力不可で端子は1つだが、ブレーカー内蔵による安全機能がある。"
+        ],
+        "differentiators": [
+          "エレコム マグネット 変換アダプタの利点：ショートや発熱を防ぐ独自のブレーカー機能による安全性の高さ",
+          "EC-GOOD USB-C Type Cマグネット変換アダプタの利点：端子が2個付属し複数のデバイスで使い回しやすい点と、映像出力対応"
+        ]
+      },
+      {
+        "name": "Gourde USB C 変換アダプタ マグネット L字 2個セット",
+        "asin": "B0DQ82Y613",
+        "priceComparison": "対象商品(1,280円)に対して、Gourdeは2個セットで1,799円であり、1個あたりの単価は約900円と安価。",
+        "featureComparison": [
+          "共通点：マグネット式変換アダプタ",
+          "相違点：GourdeはL字型で2個セット、240W急速充電、40Gbps転送、8K映像対応。エレコムはストレート型で100W対応、映像出力非対応だが、ブレーカー機能を持つ。"
+        ],
+        "differentiators": [
+          "エレコム マグネット 変換アダプタの利点：ストレート型の形状と、発火事故を防ぐ安全機能(Thermal Protection)の搭載",
+          "Gourde USB C 変換アダプタの利点：ケーブルの取り回しがしやすいL字型で、かつスペックが高く2個セットである点"
+        ]
       }
     ],
     "recommendation": {
       "targetUsers": [
-        "ノートPCの充電をMagSafeのようにしたい人",
-        "無名メーカーの製品を使うのが怖い人",
-        "充電専用で安全性を最優先したい人"
+        "充電ケーブルの抜き差しによる端子劣化を防ぎたい人",
+        "発熱や発火のリスクを抑え、安全性を最優先する人",
+        "国内メーカー製品に安心感を求める人"
       ],
       "pros": [
         "エレコム製という信頼感",
-        "発火を防ぐブレーカー機能搭載",
-        "100W PD対応"
+        "発火・ショートを防ぐブレーカー機能搭載",
+        "100W PD対応でノートPCも急速充電可能"
       ],
       "cons": [
-        "映像出力に対応していない",
-        "データ転送が遅い",
-        "他社製品より割高に感じる場合がある"
+        "映像出力には対応していない",
+        "データ転送速度に関する明確な記載がない",
+        "海外製の安価な競合品に比べて割高に感じることがある"
       ],
       "score": 75,
-      "scoreRationale": "[基本点: 70]\n[加点: +5] 国内メーカー製かつブレーカー搭載の安全性\n[減点: -5] 映像出力不可・USB2.0相当の低速転送\n[加点: +5] 100W PD対応の実用性\n[合計: 75]"
+      "scoreRationale": "[基本点: 70]\n[加点: +5] ブレーカー内蔵による高い安全性\n[加点: +5] 国内メーカー製の信頼感\n[加点: +5] 100W PD対応の実用性の高さ\n[減点: -5] 映像出力非対応の制約\n[減点: -5] データ転送速度が不明瞭な点\n[合計: 75]"
     },
     "technicalSpecs": {
-      "dimensions": null,
-      "power": "100W (20V/5A)",
-      "capacity": null,
-      "other": ["USB PD対応", "Thermal Protection (ブレーカー搭載)", "USB2.0相当(推定)"]
+      "dimensions": {
+        "height": "不明",
+        "width": "不明",
+        "depth": "不明"
+      },
+      "weight": "不明",
+      "capacity": "変換アダプタ(ストレート) 1個",
+      "material": "不明",
+      "origin": "中国",
+      "other": [
+        "最大100W PD対応",
+        "Thermal Protection (ブレーカー搭載)",
+        "映像出力不可",
+        "データ転送対応"
+      ]
     }
   }
 }
