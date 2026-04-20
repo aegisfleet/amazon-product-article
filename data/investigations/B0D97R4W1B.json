@@ -1,0 +1,187 @@
+{
+  "analysis": {
+    "productName": "Redmi Pad SE 8.7",
+    "parentAsin": "B0DYDYWFRM",
+    "productDescription": "Xiaomiの221mmコンパクトAndroidタブレット。持ち歩きに便利なサイズと18W急速充電対応の6650mAhバッテリー、90Hzリフレッシュレートディスプレイを備える。",
+    "productUsage": [
+      "電子書籍や漫画の閲覧",
+      "動画視聴（YouTube、Netflix等）",
+      "ウェブブラウジング",
+      "カジュアルなゲーム",
+      "外出先への持ち運び"
+    ],
+    "positivePoints": [
+      "221mmで片手でも持ちやすく、重量も軽いため携帯性に優れている",
+      "90Hzのリフレッシュレート対応で滑らかなスクロールと映像表現が可能",
+      "6650mAhの大容量バッテリーを搭載し、長時間の使用が可能",
+      "Dolby Atmos対応のステレオスピーカーで、コンパクトながら没入感のある音声を楽しめる",
+      "最大2TBまでのmicroSDカードによるストレージ拡張に対応している"
+    ],
+    "negativePoints": [
+      "MediaTek Helio G85プロセッサは日常使いには十分だが、重い3Dゲームなどには向かない",
+      "メモリが4GBとやや少なめ（仮想メモリ拡張の可否は機種によるが、基本スペックとしては控えめ）"
+    ],
+    "useCases": [
+      "通勤や通学の電車内での読書や動画視聴",
+      "自宅のソファやベッドでのリラックスタイムのお供",
+      "子供の学習用や動画視聴用デバイス",
+      "旅行や出張時のエンターテインメントデバイス"
+    ],
+    "userStories": [],
+    "userImpression": "片手で持てる絶妙なサイズ感と、動画視聴や読書に最適なディスプレイ・スピーカー性能が高く評価されています。ゲームなどの高負荷な作業には向きませんが、エンタメ消費や日常使いのサブデバイスとして非常にコストパフォーマンスに優れているという印象です。",
+    "sources": [
+      {
+        "id": "src-amazon-features",
+        "name": "Amazon商品ページ仕様",
+        "url": "https://www.amazon.co.jp/dp/B0D97R4W1B",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-04-21",
+        "author": "Amazon",
+        "conflictOfInterest": "none",
+        "notes": "90Hzディスプレイ、6650mAhバッテリー、Helio G85、Dolby Atmosなどの公式スペックを確認"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "最大600nitの高輝度かつ90Hzリフレッシュレート対応のディスプレイを搭載",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-amazon-features"
+        ],
+        "crossChecked": false,
+        "notes": "Amazon商品ページの記載により確認"
+      },
+      {
+        "claim": "6650mAhの大容量バッテリーと18W急速充電に対応",
+        "category": "durability",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-amazon-features"
+        ],
+        "crossChecked": false,
+        "notes": "Amazon商品ページの記載により確認"
+      }
+    ],
+    "lastInvestigated": "2026-04-21",
+    "competitiveAnalysis": [
+      {
+        "name": "CHUWI AuPad mini",
+        "asin": "B0FZ9QMKQL",
+        "priceComparison": "対象商品はCHUWI AuPad miniよりも高価ですが、Xiaomiというブランドの信頼性やDolby Atmos対応、バッテリー容量(6650mAh vs 5500mAh)で優位性があります。",
+        "featureComparison": [
+          "共通点：221mmディスプレイ、90Hzリフレッシュレート対応、ストレージ拡張可能",
+          "相違点：対象商品はHelio G85/6650mAh/Wi-Fiモデルに対し、CHUWI AuPad miniはUnisoc T615/5500mAh/SIMフリー(4G LTE)対応。RAM/ROMの容量も異なります。"
+        ],
+        "differentiators": [
+          "Redmi Pad SE 8.7の利点：Xiaomiブランドの信頼性、大容量6650mAhバッテリー、Dolby Atmos対応スピーカーによる優れたオーディオ体験",
+          "CHUWI AuPad miniの利点：SIMフリー(4G LTE)対応で単体通信が可能、低価格、大容量メモリ/ストレージ(物理RAMや拡張分を含む)"
+        ]
+      },
+      {
+        "name": "Headwolf FPad5",
+        "asin": "B0F3HD78PB",
+        "priceComparison": "対象商品はHeadwolf FPad5よりも高価ですが、ブランドの信頼性やバッテリー容量で上回っています。一方、Headwolf FPad5は性能と価格のバランスに優れています。",
+        "featureComparison": [
+          "共通点：203.2mmクラスのコンパクトサイズ、Widevine L1対応",
+          "相違点：対象商品はHelio G85/221mm/Wi-Fiモデルに対し、FPad5はより高性能なHelio G99/213.36mm(FHD)/SIMフリー(4G LTE)対応。"
+        ],
+        "differentiators": [
+          "Redmi Pad SE 8.7の利点：221mmのやや大きな画面、6650mAhの大容量バッテリー、Dolby Atmos対応の音響性能",
+          "Headwolf FPad5の利点：より高性能なHelio G99搭載、FHD高解像度ディスプレイ、SIMフリー(4G LTE)対応"
+        ]
+      },
+      {
+        "name": "PHILIPS T7335",
+        "asin": "B0G5645C4B",
+        "priceComparison": "対象商品はPHILIPS T7335と近い価格帯です。どちらも有名ブランドですが、用途や求める機能によって選択が分かれます。",
+        "featureComparison": [
+          "共通点：221mmディスプレイ、90Hzリフレッシュレート対応",
+          "相違点：対象商品はWi-Fi専用で6650mAhバッテリーに対し、PHILIPS T7335はSIMフリー(4G LTE)対応、5000mAhバッテリー、128GBストレージ。"
+        ],
+        "differentiators": [
+          "Redmi Pad SE 8.7の利点：6650mAhの大容量バッテリー、Dolby Atmos対応による高音質",
+          "PHILIPS T7335の利点：SIMフリー(4G LTE)対応で単体で通信可能、GPS搭載、128GBのストレージ容量"
+        ]
+      },
+      {
+        "name": "アイリスオーヤマ LUCA TA08E1W63-V1H",
+        "asin": "B0FBGMSL9D",
+        "priceComparison": "対象商品はアイリスオーヤマのタブレットよりも高価ですが、ディスプレイ性能やバッテリー容量など全体的なスペックで大きく上回っています。",
+        "featureComparison": [
+          "共通点：Wi-Fiモデルのコンパクトタブレット、保護フィルム等の一部実用的な仕様",
+          "相違点：対象商品は221mm/90Hz/Helio G85/6650mAhに対し、アイリスオーヤマは203.2mm/標準リフレッシュレート/RK3562/4000mAh。"
+        ],
+        "differentiators": [
+          "Redmi Pad SE 8.7の利点：より大きく滑らかな90Hzディスプレイ、大幅に多いバッテリー容量、高い処理性能",
+          "アイリスオーヤマ LUCAの利点：より低価格、国内メーカーの安心感、シンプルな用途（ネット・動画）に特化"
+        ]
+      },
+      {
+        "name": "PAITANRY タブレット",
+        "asin": "B0FLWW1CC8",
+        "priceComparison": "対象商品はPAITANRYのタブレットよりも高価ですが、Xiaomiのブランド力、バッテリー容量、音響性能において価値を見出せます。",
+        "featureComparison": [
+          "共通点：203.2mmクラスのコンパクトサイズ、Widevine L1対応",
+          "相違点：対象商品は221mm/Helio G85/6650mAhに対し、PAITANRYは220.47mm/5000mAhで、Wi-Fi 6対応。"
+        ],
+        "differentiators": [
+          "Redmi Pad SE 8.7の利点：ブランドの信頼性、18W急速充電対応の6650mAh大容量バッテリー、Dolby Atmos対応",
+          "PAITANRY 203.2mmタブレットの利点：低価格、Wi-Fi 6による高速な無線通信対応"
+        ]
+      },
+      {
+        "name": "Topsand タブレット",
+        "asin": "B0GQRJB6QM",
+        "priceComparison": "対象商品はTopsandのタブレットよりも高価ですが、プロセッサ性能(Helio G85)やバッテリー容量で上回っています。",
+        "featureComparison": [
+          "共通点：203.2mmクラスのサイズ感、ストレージ拡張対応",
+          "相違点：対象商品はHelio G85/Wi-Fi/6650mAhに対し、TopsandはHelio G80/SIMフリー(4G LTE)/5100mAh。"
+        ],
+        "differentiators": [
+          "Redmi Pad SE 8.7の利点：Xiaomiブランド、大容量バッテリー、Dolby Atmos対応",
+          "Topsand 203.2mmタブレットの利点：SIMフリー(4G LTE)対応、保護ケース同梱、低価格"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "電子書籍や漫画を快適に読みたい人",
+        "外出先で動画を楽しみたい人",
+        "手軽な価格で信頼できるブランドのサブ端末を探している人"
+      ],
+      "pros": [
+        "片手で持ちやすい221mmサイズ",
+        "6650mAhの大容量バッテリー",
+        "90Hz対応で滑らかなディスプレイ"
+      ],
+      "cons": [
+        "重い3Dゲームには向かない処理性能",
+        "メモリ4GBでマルチタスクには少し不安がある"
+      ],
+      "score": 80,
+      "scoreRationale": "[基本点: 70]\n[加点: +5] (6650mAhの大容量バッテリーと18W急速充電)\n[加点: +5] (90Hz対応とDolby Atmos対応による高いエンタメ性能)\n[加点: +5] (Xiaomiブランドの信頼性とビルドクオリティ)\n[減点: -5] (Helio G85と4GB RAMによる処理性能の限界)\n[合計: 80]"
+    },
+    "technicalSpecs": {
+      "dimensions": {
+        "height": "211.58mm",
+        "width": "125.48mm",
+        "depth": "8.8mm"
+      },
+      "weight": "373g",
+      "display": "221mm LCD, 1340x800, 90Hz, 5:3アスペクト比, 最大輝度600nit, 低ブルーライト認証",
+      "processor": "MediaTek Helio G85 オクタコア",
+      "memory": "4GB RAM",
+      "storage": "64GB (最大2TBのmicroSDカード拡張対応)",
+      "battery": "6650mAh, 18W急速充電対応",
+      "audio": "デュアルスピーカー, Dolby Atmos対応, 3.5mmイヤホンジャック搭載",
+      "connectivity": "Wi-Fi 5, Bluetooth 5.3",
+      "camera": "リア8MP, フロント5MP",
+      "os": "Xiaomi HyperOS (Androidベース)",
+      "other": [
+        "Widevine L1対応"
+      ]
+    }
+  }
+}
