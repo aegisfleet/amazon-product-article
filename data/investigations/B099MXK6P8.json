@@ -1,0 +1,201 @@
+{
+  "analysis": {
+    "productName": "Logicool G G304 ワイヤレスゲーミングマウス",
+    "parentAsin": "B0FWB24GVS",
+    "productDescription": "HEROセンサーとLIGHTSPEEDワイヤレステクノロジーを搭載した、単三電池1本で駆動する超軽量（99g）ワイヤレスゲーミングマウス。最大250時間の連続使用が可能で、コストパフォーマンスに優れたモデルです。",
+    "productUsage": [
+      "PCゲーム全般（FPS、アクションなど）",
+      "普段使い・テレワーク"
+    ],
+    "positivePoints": [
+      "単三電池1本で最大250時間動作する長寿命バッテリー",
+      "遅延を感じさせないLIGHTSPEEDワイヤレステクノロジー搭載",
+      "99gと軽量で取り回しが良い",
+      "サイドにラバーグリップがないため、経年劣化によるベタつき（加水分解）や摩耗がない",
+      "G HUBソフトウェアにより6個のボタンをカスタマイズ可能"
+    ],
+    "negativePoints": [
+      "表面のプラスチック素材がむき出しのため、人によっては安っぽく感じる",
+      "最新モデルと比較すると12000 DPIのセンサーは一世代前の性能",
+      "本体が乾電池式であるため、充電式を好むユーザーには不向き"
+    ],
+    "useCases": [
+      "コストを抑えて快適なワイヤレスゲーミング環境を構築したい時",
+      "外出先のノートPCと一緒に持ち運んで使用する時"
+    ],
+    "userStories": [
+      {
+        "userType": "ゲーマー",
+        "scenario": "アクションゲームやFPSのプレイ時",
+        "experience": "ワイヤレスながら遅延を感じることなく、思い通りにマウスが動く。断面が五角形のような形状になっていて、持ち上げやすくフィット感が良い。",
+        "supportingSourceIds": [
+          "src-kakaku-review1",
+          "src-kakaku-review2"
+        ],
+        "sentiment": "positive"
+      },
+      {
+        "userType": "長期利用者",
+        "scenario": "日常的なPC操作やゲームでの長期利用",
+        "experience": "以前のマウスはサイドのラバーが削れたりベタベタになったりして不快だったが、G304はサイドにラバーがないので劣化せず長持ちしている。プラ素材の安っぽさはあるが、実用性を重視するとかえって良い。",
+        "supportingSourceIds": [
+          "src-kakaku-review1",
+          "src-kakaku-review3"
+        ],
+        "sentiment": "positive"
+      }
+    ],
+    "userImpression": "コストパフォーマンスの高さとワイヤレスの快適さから、初心者から中級者まで幅広く支持されています。ラバーのないシンプルな構造が、経年劣化を嫌うユーザーに高く評価されています。一方で、素材の質感やクリック音、最新機に比べるとやや控えめなセンサー性能について言及されることもありますが、価格を考慮すれば総じて満足度の高い製品です。",
+    "sources": [
+      {
+        "id": "src-logicool-official",
+        "name": "G304 LIGHTSPEEDワイヤレスゲーミングマウス / ロジクール公式ストア",
+        "url": "https://www.logicool.co.jp/ja-jp/shop/p/g304-lightspeed-wireless-gaming-mouse.910-005288",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-04-21",
+        "author": "ロジクール",
+        "conflictOfInterest": "none",
+        "notes": "寸法、重量、センサー仕様（HERO, 12000DPI）、駆動時間（250時間）を確認"
+      },
+      {
+        "id": "src-kakaku-review1",
+        "name": "ロジクール G304 [ブラック] レビュー・評価 / 価格.com",
+        "url": "https://kakaku.com/item/K0001056686/review/",
+        "tier": "medium",
+        "evidenceType": "secondary",
+        "publishedAt": "2026-04-21",
+        "author": "価格.comユーザー",
+        "conflictOfInterest": "unknown",
+        "notes": "サイドのラバーがないことによるメリット（削れない）、意図通りの動作精度について確認"
+      },
+      {
+        "id": "src-kakaku-review2",
+        "name": "ロジクール G304 [ブラック] レビュー・評価 / 価格.com",
+        "url": "https://kakaku.com/item/K0001056686/review/",
+        "tier": "medium",
+        "evidenceType": "secondary",
+        "publishedAt": "2026-04-21",
+        "author": "価格.comユーザー",
+        "conflictOfInterest": "unknown",
+        "notes": "断面が五角形で持ち上げやすい形状であること、G HUBでの割り当ての自由度について確認"
+      },
+      {
+        "id": "src-kakaku-review3",
+        "name": "ロジクール G304 [ブラック] レビュー・評価 / 価格.com",
+        "url": "https://kakaku.com/item/K0001056686/review/",
+        "tier": "medium",
+        "evidenceType": "secondary",
+        "publishedAt": "2026-04-21",
+        "author": "価格.comユーザー",
+        "conflictOfInterest": "unknown",
+        "notes": "プラむき出しで安っぽい反面、加水分解でベタベタにならないこと、センサー性能に関する評価を確認"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "単三電池1本で250時間の連続使用が可能である",
+        "category": "durability",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-logicool-official"
+        ],
+        "crossChecked": true,
+        "notes": "公式スペックおよびAmazon商品説明に記載"
+      },
+      {
+        "claim": "サイドにラバーがないため、長期間使用しても加水分解によるベタつきや摩耗が発生しない",
+        "category": "durability",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-kakaku-review1",
+          "src-kakaku-review3"
+        ],
+        "crossChecked": true,
+        "notes": "複数のユーザーレビューで同様の評価がある"
+      }
+    ],
+    "lastInvestigated": "2026-04-21",
+    "competitiveAnalysis": [
+      {
+        "name": "Logicool G703h",
+        "asin": "B07SYKKP47",
+        "priceComparison": "対象商品はG703hより安価である。価格差は大きいが、G703hはより高性能なHERO 25KセンサーやPOWERPLAY充電システムに対応し、充電式のエクスぺリエンスを求めるユーザーに向いている。",
+        "featureComparison": [
+          "共通点：Logicool Gシリーズのワイヤレスゲーミングマウスで、LIGHTSPEED技術を搭載している",
+          "相違点：対象商品は乾電池式で左右対称に近いデザインだが、G703hは充電式（POWERPLAY対応）のエルゴノミクスデザインでより高性能なセンサー（25K）を搭載する"
+        ],
+        "differentiators": [
+          "[Logicool G G304 ワイヤレスゲーミングマウス]の利点：価格が手頃で単三乾電池1本で長期間稼働するため、充電の手間やバッテリー劣化を気にしなくてよい",
+          "[Logicool G703h]の利点：より手にフィットするエルゴノミクス形状と高性能センサーを備え、POWERPLAY（無接点充電）に対応している"
+        ]
+      },
+      {
+        "name": "SteelSeries Rival 3 Wireless",
+        "asin": "B08GDDZML8",
+        "priceComparison": "対象商品はRival 3 Wirelessと近い価格帯であり、同等の低価格帯ワイヤレスゲーミングマウスとして競合する。",
+        "featureComparison": [
+          "共通点：単四/単三乾電池を使用する低価格帯のワイヤレスゲーミングマウスである",
+          "相違点：対象商品は2.4GHz（LIGHTSPEED）接続のみだが、Rival 3 Wirelessは2.4GHzとBluetoothのデュアルワイヤレス接続に対応している"
+        ],
+        "differentiators": [
+          "[Logicool G G304 ワイヤレスゲーミングマウス]の利点：単三電池1本で99gと軽量であり、LIGHTSPEEDの安定した低遅延接続が評価されている",
+          "[SteelSeries Rival 3 Wireless]の利点：Bluetooth接続にも対応しており、レシーバーを使わずに複数のデバイスで使い回すことができる"
+        ]
+      },
+      {
+        "name": "Razer DeathAdder V2 X HyperSpeed",
+        "asin": "B09KNM6V9Q",
+        "priceComparison": "対象商品はDeathAdder V2 X HyperSpeedよりやや安価である。価格差は小さいが、Razer製はエルゴノミクス形状とBluetooth対応を特徴とする。",
+        "featureComparison": [
+          "共通点：乾電池駆動で長寿命を誇るワイヤレスゲーミングマウスである",
+          "相違点：対象商品は小型かつシンプルなデザインだが、DeathAdder V2 X HyperSpeedは受賞歴のあるエルゴノミクスデザインを採用し、単三・単四どちらの電池でも使用できるスロットを備え、Bluetoothにも対応している"
+        ],
+        "differentiators": [
+          "[Logicool G G304 ワイヤレスゲーミングマウス]の利点：より小型・軽量（99g）でつまみ持ち・つかみ持ちに適しており、価格が抑えられている",
+          "[Razer DeathAdder V2 X HyperSpeed]の利点：かぶせ持ちに最適なエルゴノミクスデザインで、Bluetooth接続や電池サイズを選べる柔軟性がある"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "初めてゲーミングマウスを購入するエントリーユーザー",
+        "予算を抑えつつワイヤレスの快適さを得たいゲーマー",
+        "マウスのサイドグリップが加水分解でベタつくのを避けたい人",
+        "外出先にも持ち運びやすいコンパクトなマウスを探している人"
+      ],
+      "pros": [
+        "コストパフォーマンスに優れる",
+        "単三電池1本で長期間使用でき、バッテリー劣化を気にする必要がない",
+        "サイドのラバーがないため耐久性が高く、経年劣化しにくい"
+      ],
+      "cons": [
+        "プラスチックの質感が人によっては安っぽく感じる",
+        "最新のゲーミングマウスに比べるとセンサーや軽量化の面で一歩劣る",
+        "乾電池式のため電池交換の手間がかかる"
+      ],
+      "score": 85,
+      "scoreRationale": "[基本点: 70]\n[加点: +10] (競合と比較して優れたコストパフォーマンス（約4,800円）)\n[加点: +3] (250時間の長寿命バッテリー)\n[加点: +2] (劣化しにくいラバーレスデザイン)\n[加点: +5] (遅延を感じさせないLIGHTSPEEDワイヤレスの安定性と評価)\n[減点: -2] (プラスチック素材の安っぽさ)\n[減点: -3] (一世代前のセンサー性能)\n[合計: 85]"
+    },
+    "technicalSpecs": {
+      "dimensions": {
+        "height": "38.2mm",
+        "width": "62.1mm",
+        "depth": "116.6mm"
+      },
+      "weight": "99g",
+      "capacity": "",
+      "material": "プラスチック（サイドグリップのラバーなし）",
+      "origin": "不明",
+      "other": [
+        "センサー: HERO",
+        "解像度: 200～12,000 DPI",
+        "ワイヤレステクノロジー: LIGHTSPEED (1000Hz / 1ms)",
+        "バッテリー: 単三形乾電池1本",
+        "バッテリー寿命: 最大250時間",
+        "ボタン数: 6個（プログラム可能）",
+        "オンボードメモリ: プロファイルx1"
+      ]
+    }
+  }
+}
