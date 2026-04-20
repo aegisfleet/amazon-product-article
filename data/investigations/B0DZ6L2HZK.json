@@ -1,0 +1,206 @@
+{
+  "analysis": {
+    "productName": "FPD Mini Pad 21.3cm",
+    "parentAsin": "B0FPF5Q8BZ",
+    "productDescription": "Unisoc T620と18GB RAM(6GB+12GB拡張)を搭載した21.3cmの軽量Android 15タブレット。Widevine L1対応でフルHD動画の視聴に最適で、重量約340gの持ち運びやすさが特徴。",
+    "productUsage": [
+      "動画視聴",
+      "電子書籍の閲覧",
+      "ブラウジング",
+      "日常的なアプリ利用"
+    ],
+    "positivePoints": [
+      "約340gという超軽量・薄さ7.8mmのスリムボディで持ち運びが容易",
+      "Widevine L1対応でNetflixやPrime VideoのフルHD再生が可能",
+      "最新のAndroid 15 OSとUnisoc T620を搭載し、日常使用に十分な性能",
+      "大容量128GBストレージと1TBまでのmicroSD拡張に対応",
+      "18W急速充電に対応し、短時間で充電可能"
+    ],
+    "negativePoints": [
+      "高負荷な3Dゲームには向かない",
+      "バッテリー容量が5000mAhと、他社競合(6000mAh等)に比べてやや少なめ"
+    ],
+    "useCases": [
+      "通勤時の電車内で片手で電子書籍や動画を楽しむ",
+      "リビングでGoogle TVリモコンとして活用し、動画を大画面にキャストする",
+      "カフェでの作業やリラックスタイムのブラウジング"
+    ],
+    "userStories": [
+      {
+        "userType": "通勤中のビジネスパーソン",
+        "scenario": "満員電車での動画視聴と読書",
+        "experience": "重量が約340gと非常に軽く、片手で持っていても疲れにくい。Widevine L1対応のおかげで、移動中に高画質でドラマやアニメを楽しむことができる。",
+        "supportingSourceIds": [
+          "src-amazon-B0DZ6L2HZK"
+        ],
+        "sentiment": "positive"
+      },
+      {
+        "userType": "エンタメ重視のユーザー",
+        "scenario": "自宅でのリラックスタイム",
+        "experience": "Google TVのリモコン機能やGemini AIを利用して、音声で動画を検索できるのが便利。イヤホンジャックもあるので、夜間でも気兼ねなくコンテンツに没入できる。",
+        "supportingSourceIds": [
+          "src-amazon-B0DZ6L2HZK"
+        ],
+        "sentiment": "positive"
+      }
+    ],
+    "userImpression": "340gの圧倒的な軽さとAndroid 15搭載による使いやすさが評価される。Widevine L1に対応しフルHD画質での動画視聴が可能なため、エンタメ用途や電子書籍の読書に非常に適しているタブレット。",
+    "sources": [
+      {
+        "id": "src-amazon-B0DZ6L2HZK",
+        "name": "Amazon商品ページ",
+        "url": "https://www.amazon.co.jp/dp/B0DZ6L2HZK",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-04-20",
+        "author": "FPD Vision",
+        "conflictOfInterest": "none",
+        "notes": "スペック情報、価格、商品特徴"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "重量約340gの超軽量設計",
+        "category": "durability",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-amazon-B0DZ6L2HZK"
+        ],
+        "crossChecked": false,
+        "notes": "商品スペック記載"
+      },
+      {
+        "claim": "Widevine L1対応で高画質動画視聴が可能",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-amazon-B0DZ6L2HZK"
+        ],
+        "crossChecked": false,
+        "notes": "商品説明の記載"
+      }
+    ],
+    "lastInvestigated": "2026-04-20",
+    "competitiveAnalysis": [
+      {
+        "name": "DOOGEE T20mini",
+        "asin": "B0CWVPX64V",
+        "priceComparison": "DOOGEE T20miniは非常に安価であるが、性能面では対象商品のUnisoc T620の方が優れている。",
+        "featureComparison": [
+          "共通点：21.3cmのディスプレイ、Widevine L1対応",
+          "相違点：対象商品はAndroid 15でUnisoc T620を搭載。T20miniはAndroid 13でUnisoc T606搭載。対象商品の方がOSが新しく処理性能も高い。"
+        ],
+        "differentiators": [
+          "FPD Mini Pad 21.3cmの利点：最新OS、高い処理性能、イヤホンジャックやGemini AI対応など機能が豊富",
+          "DOOGEE T20miniの利点：圧倒的に安い価格"
+        ]
+      },
+      {
+        "name": "TECLAST T50 Mini",
+        "asin": "B0DRJJYNDZ",
+        "priceComparison": "TECLAST T50 Miniの方がやや高価だが、Helio G99や120Hzリフレッシュレートなどの付加価値がある。",
+        "featureComparison": [
+          "共通点：20.3cmクラスのコンパクトタブレット、Widevine L1対応",
+          "相違点：TECLASTはHelio G99搭載で処理性能が高く、120Hzリフレッシュレートに対応。対象商品は軽量さ（340g）が際立つ。"
+        ],
+        "differentiators": [
+          "FPD Mini Pad 21.3cmの利点：約340gの軽さとコストパフォーマンス",
+          "TECLAST T50 Miniの利点：より高い処理性能（Helio G99）と滑らかな画面表示（120Hz）"
+        ]
+      },
+      {
+        "name": "Headwolf FPad5",
+        "asin": "B0F3HD78PB",
+        "priceComparison": "価格帯は同等だが、スペック重視の場合はFPad5が競合となる。",
+        "featureComparison": [
+          "共通点：Widevine L1対応、SIMフリー",
+          "相違点：HeadwolfはHelio G99を搭載しておりゲーム性能で上回るが、対象商品はAndroid 15を搭載している。"
+        ],
+        "differentiators": [
+          "FPD Mini Pad 21.3cmの利点：最新Android 15OS",
+          "Headwolf FPad5の利点：ゲームに強いHelio G99プロセッサ"
+        ]
+      },
+      {
+        "name": "BekoQurd M8",
+        "asin": "B0F9KVN5TL",
+        "priceComparison": "BekoQurd M8の方が価格は高めだが、バッテリー容量が多い。",
+        "featureComparison": [
+          "共通点：21.3cmサイズ、Widevine L1対応",
+          "相違点：BekoQurd M8はHelio G99と6000mAhバッテリーを搭載。対象商品は軽量設計が特徴。"
+        ],
+        "differentiators": [
+          "FPD Mini Pad 21.3cmの利点：価格の安さと軽さ",
+          "BekoQurd M8の利点：大容量バッテリーとプロセッサ性能"
+        ]
+      },
+      {
+        "name": "SVITOO P08",
+        "asin": "B0GQFWBTYR",
+        "priceComparison": "価格帯はほぼ同等。コスパ勝負になる。",
+        "featureComparison": [
+          "共通点：Android 16(SVITOO)とAndroid 15(対象商品)で比較的新しいOS、Widevine L1対応",
+          "相違点：SVITOO P08は6000mAhバッテリー搭載。対象商品はUnisoc T620を搭載し軽量さをアピール。"
+        ],
+        "differentiators": [
+          "FPD Mini Pad 21.3cmの利点：約340gの軽量ボディ",
+          "SVITOO P08の利点：6000mAhの大容量バッテリー"
+        ]
+      },
+      {
+        "name": "BNCF タブレット 20.3cm",
+        "asin": "B0FSRCYCSG",
+        "priceComparison": "BNCFタブレットはかなり高価だが、ハイエンドクラスの性能を持つ。",
+        "featureComparison": [
+          "共通点：20.3cmクラスのコンパクトタブレット",
+          "相違点：BNCFはDimensity 7300を搭載し、非常に高いゲーム性能を誇る。対象商品は日常用途向け。"
+        ],
+        "differentiators": [
+          "FPD Mini Pad 21.3cmの利点：圧倒的な安さと日常使いに十分な機能",
+          "BNCF タブレット 20.3cmの利点：Dimensity 7300による高いゲーミング性能"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "通勤・通学で動画や電子書籍を楽しみたい人",
+        "軽くて持ち運びやすいタブレットを探している人",
+        "最新のAndroid OSを使いたい人"
+      ],
+      "pros": [
+        "約340gの圧倒的な軽さ",
+        "Widevine L1対応で高画質動画が楽しめる",
+        "最新Android 15搭載で使いやすい",
+        "コストパフォーマンスが高い"
+      ],
+      "cons": [
+        "重い3Dゲームには不向き",
+        "バッテリー容量が競合と比べてやや少なめ"
+      ],
+      "score": 83,
+      "scoreRationale": "[基本点: 70]\n[加点: +5] 約340gの超軽量設計による携帯性の高さ\n[加点: +5] Widevine L1対応で動画視聴に最適化されている点\n[加点: +5] 最新のAndroid 15搭載\n[減点: -2] バッテリー容量が5000mAhと競合機種よりやや少ない\n[合計: 83]"
+    },
+    "technicalSpecs": {
+      "dimensions": {
+        "height": "205mm",
+        "width": "125mm",
+        "depth": "7.8mm"
+      },
+      "weight": "340g",
+      "display": "21.3cm IPS FHD+ (1920×1200)",
+      "cpu": "UNISOC T620 8コア (A75x2+A55x6)",
+      "memory": "18GB (6GB RAM + 12GB仮想RAM)",
+      "storage": "128GB ROM (最大1TBのmicroSDXC拡張対応)",
+      "battery": "5000mAh (18W急速充電対応)",
+      "os": "Android 15",
+      "connectivity": "Wi-Fi 5, Bluetooth 5.0, GPS",
+      "ports": "USB Type-C, 3.5mmイヤホンジャック",
+      "other": [
+        "Widevine L1対応",
+        "Gemini 2.5 Flash AI搭載",
+        "Google TVリモコン機能"
+      ]
+    }
+  }
+}
