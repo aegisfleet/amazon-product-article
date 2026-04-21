@@ -1,0 +1,173 @@
+{
+  "analysis": {
+    "productName": "富士通 ARROWS Tab Q739 (整備済み品)",
+    "parentAsin": "B0GH6C83J4",
+    "productDescription": "33.8cmの大型ディスプレイを搭載し、防塵・防滴性能(IP5X/IPX5)を備えた軽量・堅牢なWindowsタブレットです。キーボードやタッチペンが付属し、ビジネスから日常使いまで幅広い用途に対応します。",
+    "productUsage": [
+      "資料作成やプレゼンテーション",
+      "屋外や過酷な環境でのフィールドワーク",
+      "動画視聴やネットサーフィン"
+    ],
+    "positivePoints": [
+      "33.8cmのフルHD大画面で視認性が高い",
+      "防塵・防滴性能(IP5X/IPX5)や堅牢な設計",
+      "軽量(本体約810g)で持ち運びに便利",
+      "キーボード・タッチペン付属で利便性が高い",
+      "USB Type-CやmicroHDMIなど多彩なインターフェースを搭載"
+    ],
+    "negativePoints": [
+      "33.8cmのため小型バッグには収まりにくい",
+      "搭載CPUが第8世代Core i5のため最新ゲーム等には不向き"
+    ],
+    "useCases": [
+      "会議やプレゼンでの資料の表示",
+      "工場や屋外現場でのデータ確認・入力",
+      "自宅での動画鑑賞"
+    ],
+    "userStories": [],
+    "userImpression": "13.3インチ(33.8cm)の大画面とフルHD解像度を備え、防塵・防滴性能(IP5X/IPX5)による堅牢な作りが特徴です。軽量でビジネスや過酷な現場作業での利用に適しています。",
+    "sources": [
+      {
+        "id": "src-1",
+        "name": "Amazon商品ページ",
+        "url": "https://www.amazon.co.jp/dp/B0GH6C83J4",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2023-01-01",
+        "author": "Amazon",
+        "conflictOfInterest": "none",
+        "notes": "スペック情報、価格(17,800円)、製品特徴(防塵防滴、33.8cmFHD、Core i5-8365U等)を確認"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "IP5X/IPX5の防塵・防滴性能を備えている",
+        "category": "durability",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "crossChecked": false,
+        "notes": "商品ページの製品特徴に明記"
+      }
+    ],
+    "lastInvestigated": "2026-04-21",
+    "competitiveAnalysis": [
+      {
+        "name": "富士通 ARROWS Tab V727",
+        "asin": "B0GRTZH5YZ",
+        "priceComparison": "対象商品よりも安価だが、画面サイズが31.2cmでCPUが第7世代Core M3と性能面で劣る。",
+        "featureComparison": [
+          "共通点：富士通製のWindowsタブレットで、タッチペンが付属する",
+          "相違点：対象商品は33.8cm/Core i5-8365Uだが、競合は31.2cm/Core M3であり、画面サイズとCPU性能が異なる"
+        ],
+        "differentiators": [
+          "富士通 ARROWS Tab Q739 (整備済み品)の利点：33.8cmの大画面とCore i5-8365Uの処理能力を求める場合に適している",
+          "富士通 ARROWS Tab V727の利点：より小型の31.2cmで、価格を重視する場合に適している"
+        ]
+      },
+      {
+        "name": "富士通 ARROWS Tab Q738",
+        "asin": "B0G7W9K1SL",
+        "priceComparison": "対象商品とほぼ同価格帯だが、対象商品はCPUが第8世代Core i5-8365Uであるのに対し、競合は同等性能のCore i5-8350Uでありメモリが8GBである点が異なる。",
+        "featureComparison": [
+          "共通点：33.8cmFHD、防塵・防滴などの基本コンセプトが同じ",
+          "相違点：対象商品はメモリ4GBだが、競合はメモリ8GBを搭載している"
+        ],
+        "differentiators": [
+          "富士通 ARROWS Tab Q739 (整備済み品)の利点：僅かにCPUの最大クロック周波数が高い",
+          "富士通 ARROWS Tab Q738の利点：メモリが8GB搭載されており、マルチタスクを重視する場合に適している"
+        ]
+      },
+      {
+        "name": "Microsoft Surface Go 2",
+        "asin": "B0FF4LMZL2",
+        "priceComparison": "対象商品よりも高価だが、26.7cmと小型軽量で携帯性に優れ、Windows Hello等の機能を備える。",
+        "featureComparison": [
+          "共通点：Windows 11搭載の2in1タブレット",
+          "相違点：対象商品は33.8cmと大きいが、競合は26.7cmで小型。解像度やアスペクト比も異なる"
+        ],
+        "differentiators": [
+          "富士通 ARROWS Tab Q739 (整備済み品)の利点：33.8cmの大画面で資料閲覧や作業が行いやすい",
+          "Microsoft Surface Go 2の利点：26.7cmで小型軽量のため、日常的な持ち運びに非常に適している"
+        ]
+      },
+      {
+        "name": "東芝 Dynabook S73",
+        "asin": "B0FFTFPGSN",
+        "priceComparison": "対象商品よりも高価だが、第10世代Core i5とメモリ8GB、SSD256GBを搭載しており基本性能が高い。",
+        "featureComparison": [
+          "共通点：33.8cmのフルHDディスプレイを搭載している",
+          "相違点：対象商品はタブレット(キーボード分離型)だが、競合は標準的なクラムシェル型のノートPCである"
+        ],
+        "differentiators": [
+          "富士通 ARROWS Tab Q739 (整備済み品)の利点：タブレット単体として使用でき、タッチ操作やペン入力がしやすい",
+          "東芝 Dynabook S73の利点：キーボード入力が主体の作業が多く、より高い処理性能を求める場合に適している"
+        ]
+      },
+      {
+        "name": "ToueDigital Surface Pro 5",
+        "asin": "B0GQ964X2K",
+        "priceComparison": "対象商品とほぼ同価格帯だが、画面が31.2cmでキーボードが付属しない。",
+        "featureComparison": [
+          "共通点：Windowsタブレットで、ストレージが128GB",
+          "相違点：対象商品はキーボードとタッチペンが付属するが、競合は本体のみである"
+        ],
+        "differentiators": [
+          "富士通 ARROWS Tab Q739 (整備済み品)の利点：キーボードとタッチペンが標準で付属し、すぐに幅広い作業が行える",
+          "ToueDigital Surface Pro 5の利点：キックスタンドを内蔵しており、本体のみでの自立が可能である"
+        ]
+      },
+      {
+        "name": "富士通 ARROWS Tab Q508",
+        "asin": "B0GNS6QW8Y",
+        "priceComparison": "対象商品よりもかなり安価だが、25.7cmと小型でCPUがAtom x7-Z8シリーズと性能が低い。",
+        "featureComparison": [
+          "共通点：富士通のARROWS Tabシリーズで、防滴防塵性能を持つ",
+          "相違点：対象商品は33.8cmでCore i5搭載だが、競合は25.7cmでAtom搭載"
+        ],
+        "differentiators": [
+          "富士通 ARROWS Tab Q739 (整備済み品)の利点：33.8cmの大画面と、Atomに比べて快適に動作するCore i5を搭載している",
+          "富士通 ARROWS Tab Q508の利点：非常に安価で小型のため、単純な閲覧用途やコスト重視の現場導入に適している"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "プレゼンや会議で大画面を必要とするビジネスマン",
+        "過酷な環境や屋外でタブレットを使用する現場作業員",
+        "自宅で動画視聴などを大画面で楽しみたいユーザー"
+      ],
+      "pros": [
+        "33.8cmの大画面で資料等が見やすい",
+        "防塵・防滴性能による高い堅牢性",
+        "キーボードとタッチペン付属でコスパが高い"
+      ],
+      "cons": [
+        "サイズが大きいため持ち運びに少し不便",
+        "メモリが4GBのためマルチタスクには不向き"
+      ],
+      "score": 80,
+      "scoreRationale": "[基本点: 70]\n[加点: +5] (33.8cmの大画面による視認性の高さ)\n[加点: +5] (防塵・防滴性能と堅牢性)\n[加点: +5] (キーボード・タッチペン付属で安価なコストパフォーマンス)\n[減点: -5] (メモリが4GBでマルチタスク時の性能に不安があるため)\n[合計: 80]"
+    },
+    "technicalSpecs": {
+      "dimensions": {
+        "height": "200.9mm",
+        "width": "315mm",
+        "depth": "9.7mm"
+      },
+      "weight": "810g",
+      "capacity": "128GB SSD",
+      "material": "不明",
+      "origin": "不明",
+      "other": [
+        "OS: Windows 11",
+        "CPU: Intel Core i5-8365U",
+        "メモリ: 4GB",
+        "ディスプレイ: 33.8cm フルHD(1920×1080) 非光沢",
+        "インターフェース: USB Type-C, Wi-Fi, Bluetooth, HDMI",
+        "その他: 10点マルチタッチ、防塵防滴(IP5X/IPX5)、純正キーボード・タッチペン付属"
+      ]
+    }
+  }
+}
