@@ -1,0 +1,232 @@
+{
+  "analysis": {
+    "productName": "JBL Live Beam 3 ワイヤレスイヤホン",
+    "parentAsin": "B0D44H2RG3",
+    "productDescription": "スマート充電ケースを搭載し、真のアダプティブノイズキャンセリングとIP55防水性能を備えた完全ワイヤレスイヤホンです。ケースのタッチスクリーンで直接操作可能。",
+    "productUsage": [
+      "音楽鑑賞",
+      "通話",
+      "オンライン会議",
+      "スポーツ・アウトドア",
+      "動画視聴"
+    ],
+    "positivePoints": [
+      "スマート充電ケースのタッチスクリーンでスマホなしで操作可能",
+      "リアルタイムで適応する高性能なノイズキャンセリング",
+      "最大48時間（イヤホン12時間＋ケース36時間）のロングバッテリー",
+      "マルチポイント接続に対応し、2台のデバイスをシームレスに切り替え可能",
+      "IP55防塵・防水対応でスポーツにも最適",
+      "Google Finder対応で紛失時の追跡が可能"
+    ],
+    "negativePoints": [
+      "スマート充電ケースの厚みがあり、携帯性にやや難があると感じる場合がある",
+      "標準のイヤーピースのフィット感が合わない場合がある",
+      "高音域の伸びについてはイコライザーでの調整が必要と感じるユーザーもいる"
+    ],
+    "useCases": [
+      "通勤・通学電車での音楽リスニング（ノイズキャンセリング活用）",
+      "スマートフォンとPCを同時に接続しての仕事（マルチポイント活用）",
+      "ジョギングやジムでのワークアウト（防塵防水機能活用）",
+      "スマートフォンを取り出さずにケース画面での曲送りや音量調整"
+    ],
+    "userStories": [
+      {
+        "userType": "音楽・ガジェット好き",
+        "scenario": "日常の音楽リスニングや外出時に使用",
+        "experience": "スマート充電ケースの液晶が非常にかっこよく、スマホを出さずに操作できるのが便利です。音質はJBLらしい低音の量感がありつつ、高音はマイルド。イコライザーで好みに調整するとさらに良くなります。",
+        "supportingSourceIds": [
+          "src-review-1"
+        ],
+        "sentiment": "positive"
+      },
+      {
+        "userType": "一般ユーザー",
+        "scenario": "通勤中の音楽リスニング",
+        "experience": "ノイズキャンセリングは完璧に無音になるわけではありませんが、周囲の騒音を適度にブロックしてくれて実用的です。ケースが少し分厚いですが、機能性を考えれば許容範囲です。",
+        "supportingSourceIds": [
+          "src-review-2"
+        ],
+        "sentiment": "positive"
+      }
+    ],
+    "userImpression": "JBLらしいパワフルな低音と、ケースに搭載されたスマート液晶ディスプレイによる高い操作性が評価されています。ノイズキャンセリングは実用レベルであり、価格以上の多機能性を備えたコストパフォーマンスの高い製品という印象です。",
+    "sources": [
+      {
+        "id": "src-official",
+        "name": "JBL LIVE BEAM 3 公式情報",
+        "url": "https://www.amazon.co.jp/dp/B0D44H2RG3",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2024-06-15",
+        "author": "JBL",
+        "conflictOfInterest": "none",
+        "notes": "製品仕様、バッテリー時間、IP55防水、スマートケースなどの公式スペック"
+      },
+      {
+        "id": "src-review-1",
+        "name": "価格.com レビュー (ReviewCD=1993641)",
+        "url": "https://review.kakaku.com/review/J0000044882/ReviewCD=1993641/",
+        "tier": "medium",
+        "evidenceType": "secondary",
+        "publishedAt": "2024-07-01",
+        "author": "一般ユーザー",
+        "conflictOfInterest": "none",
+        "notes": "音質評価、イコライザー推奨、スマート充電ケースのデザインについて"
+      },
+      {
+        "id": "src-review-2",
+        "name": "価格.com レビュー (ReviewCD=2005533)",
+        "url": "https://review.kakaku.com/review/J0000044882/ReviewCD=2005533/",
+        "tier": "medium",
+        "evidenceType": "secondary",
+        "publishedAt": "2024-08-01",
+        "author": "一般ユーザー",
+        "conflictOfInterest": "none",
+        "notes": "ノイズキャンセリングの実用性、コスパの良さについて"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "最大48時間（イヤホン12時間＋ケース36時間）のバッテリー寿命",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-official"
+        ],
+        "crossChecked": true,
+        "notes": "公式スペックおよびAmazon製品ページで確認"
+      },
+      {
+        "claim": "スマート充電ケース搭載でスマホを使わずに操作可能",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-official",
+          "src-review-1"
+        ],
+        "crossChecked": true,
+        "notes": "JBL独自の特徴的な機能として公式とユーザーレビューの両方で言及"
+      }
+    ],
+    "lastInvestigated": "2026-04-22",
+    "competitiveAnalysis": [
+      {
+        "name": "JBL LIVE BEAM 3 (国内モデル色違い)",
+        "asin": "B0D3T5ZW6Z",
+        "priceComparison": "対象商品は輸入盤などの影響で割高だが、国内正規モデルは安価。スペック自体は同等。",
+        "featureComparison": [
+          "共通点：スマート充電ケース、ハイブリッドノイズキャンセリング、マルチポイント接続対応。",
+          "相違点：対象商品（B0D44H2RG3）は並行輸入品または別流通の可能性があり、価格差が大きい。"
+        ],
+        "differentiators": [
+          "JBL Live Beam 3の利点：機能・音質は同一。",
+          "JBL LIVE BEAM 3 (B0D3T5ZW6Z)の利点：国内正規品であり、価格も安くメーカー保証も受けやすいため、通常はこちらが推奨される。"
+        ]
+      },
+      {
+        "name": "JBL TOUR PRO 3",
+        "asin": "B0FPQN7DBD",
+        "priceComparison": "対象商品と同程度の価格帯だが、TOUR PRO 3はJBLのフラグシップモデルであり上位機種。",
+        "featureComparison": [
+          "共通点：スマート充電ケース搭載、ノイズキャンセリング対応、マルチポイント対応。",
+          "相違点：TOUR PRO 3はデュアルドライバーを搭載し、より高品位な音質と進化したノイキャン、より大きなケーススクリーンを備える。"
+        ],
+        "differentiators": [
+          "JBL Live Beam 3の利点：より軽量でスポーティな用途に適した設計。",
+          "JBL TOUR PRO 3の利点：同程度の予算であれば、音質と機能が大幅に向上したフラグシップモデルのTOUR PRO 3がおすすめ。"
+        ]
+      },
+      {
+        "name": "JBL TOUR PRO 2",
+        "asin": "B0BSGYZW4M",
+        "priceComparison": "対象商品より安価。",
+        "featureComparison": [
+          "共通点：スマート充電ケース搭載、ノイズキャンセリング対応。",
+          "相違点：TOUR PRO 2は前世代のフラグシップであり、空間サウンド機能などに違いがある。"
+        ],
+        "differentiators": [
+          "JBL Live Beam 3の利点：バッテリー寿命が長く、最新の防水性能（IP55）を備える。",
+          "JBL TOUR PRO 2の利点：型落ちのフラグシップとして、空間サウンド機能など独自の魅力があり安価。"
+        ]
+      },
+      {
+        "name": "Bose QuietComfort Ultra Earbuds",
+        "asin": "B0FCSGGHLL",
+        "priceComparison": "対象商品と同程度の価格帯。",
+        "featureComparison": [
+          "共通点：強力なアクティブノイズキャンセリング機能、ハイエンド帯の完全ワイヤレスイヤホン。",
+          "相違点：Boseは業界最高クラスのノイズキャンセリングとイマーシブオーディオ（空間オーディオ）に特化している。JBLはスマートケースと長時間バッテリーが強み。"
+        ],
+        "differentiators": [
+          "JBL Live Beam 3の利点：スマート充電ケースによる利便性と、圧倒的な長時間バッテリー（最大48時間）。",
+          "Bose QuietComfort Ultra Earbudsの利点：最高峰のノイズキャンセリング性能と没入感のある空間オーディオを重視する場合。"
+        ]
+      },
+      {
+        "name": "SONY WF-1000XM5",
+        "asin": "B0CBKQZXT7",
+        "priceComparison": "対象商品よりやや安価。",
+        "featureComparison": [
+          "共通点：ハイレゾ対応（LDAC）、高性能ノイズキャンセリング、マルチポイント対応。",
+          "相違点：SONYは業界最高クラスのノイキャンとコンパクトな本体設計、AI技術による通話品質の高さが特徴。"
+        ],
+        "differentiators": [
+          "JBL Live Beam 3の利点：ケースのタッチスクリーンによる直感的な操作性と、より長いバッテリー持続時間。",
+          "SONY WF-1000XM5の利点：イヤホン本体の圧倒的な小型・軽量さと、ノイズキャンセリング・音質の総合的なバランス。"
+        ]
+      },
+      {
+        "name": "Apple AirPods Pro (第2世代/USB-C)",
+        "asin": "B0CQ8GDDBM",
+        "priceComparison": "対象商品より安価（整備済み品）。",
+        "featureComparison": [
+          "共通点：高性能なノイズキャンセリングと外音取り込み。",
+          "相違点：AirPods ProはAppleエコシステムとの完璧な連携に特化している。"
+        ],
+        "differentiators": [
+          "JBL Live Beam 3の利点：OSに依存しない汎用性とスマートケースによる操作、バッテリー寿命。",
+          "Apple AirPods Proの利点：iPhoneなどのApple製品ユーザーにとってのシームレスな体験と強力な外音取り込みモード。"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "スマートフォンを取り出さずに音楽や設定を操作したい人",
+        "バッテリー残量を気にせず長時間使用したい人",
+        "低音重視のJBLサウンドを好む人",
+        "スポーツやアウトドアでも安心して使える防塵防水性能を求める人"
+      ],
+      "pros": [
+        "革新的なスマート充電ケースによる高い操作性",
+        "最大48時間の驚異的なロングバッテリー",
+        "IP55防塵・防水対応でアクティブな用途にも対応",
+        "マルチポイント接続で複数デバイスの使い分けが簡単"
+      ],
+      "cons": [
+        "スマート充電ケースの分、ケースサイズがやや大きい",
+        "価格設定が他の国内流通モデル(B0D3T5ZW6Z)や上位モデル(TOUR PRO 3)と比較して割高"
+      ],
+      "score": 67,
+      "scoreRationale": "[基本点: 70]\n[加点: +5] (スマート充電ケースによる独自の高い操作性と利便性)\n[加点: +2] (最大48時間の驚異的なロングバッテリー)\n[加点: +2] (IP55の防塵防水性能によるアクティビティへの対応)\n[減点: -12] (同一製品の国内正規版や上位モデルと比較して、明らかに高すぎる価格設定・コストパフォーマンスの悪さ)\n[合計: 67]"
+    },
+    "technicalSpecs": {
+      "dimensions": {
+        "height": "160mm",
+        "width": "40mm",
+        "depth": "100mm"
+      },
+      "weight": "90g",
+      "capacity": "イヤホン本体、充電ケース",
+      "material": "プラスチック、シリコン",
+      "origin": "中国",
+      "other": [
+        "接続: Bluetooth",
+        "ノイズキャンセリング: 真のアダプティブノイズキャンセリング",
+        "バッテリー寿命: 最大48時間（イヤホン12時間 ＋ ケース36時間）",
+        "防水・防塵性能: IP55",
+        "ドライバー: ダイナミックドライバー",
+        "機能: スマート充電ケース（タッチスクリーン搭載）、マルチポイント接続、Google Finder対応"
+      ]
+    }
+  }
+}
