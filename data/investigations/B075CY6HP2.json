@@ -25,20 +25,7 @@
       "オフィスのランチタイムのお供に",
       "小腹が空いた時の間食や夜食として"
     ],
-    "userStories": [
-      {
-        "userType": "30代 会社員",
-        "scenario": "オフィスのランチタイム",
-        "experience": "お弁当だけでは物足りない時に、マグカップとお湯があればすぐに作れて便利。淡路島のたまねぎスープは甘みがあって癒やされる。（推測）",
-        "sentiment": "positive"
-      },
-      {
-        "userType": "40代 主婦",
-        "scenario": "朝食の準備",
-        "experience": "子供が野菜嫌いだが、このポタージュなら甘くて飲みやすいと言って飲んでくれる。パンを浸して食べると美味しい。（推測）",
-        "sentiment": "positive"
-      }
-    ],
+    "userStories": [],
     "userImpression": "淡路島産たまねぎのブランド力を活かした、甘みとコクのあるポタージュとして期待が高い商品。手軽さと美味しさを兼ね備えている。",
     "sources": [
       {
@@ -47,7 +34,7 @@
         "credibility": "high"
       }
     ],
-    "lastInvestigated": "2026-02-01",
+    "lastInvestigated": "2026-04-22",
     "competitiveAnalysis": [
       {
         "name": "善太 ZENTAの金のポタージュ 12食",
@@ -92,7 +79,7 @@
         "化学調味料無添加などの強いこだわりがある場合は原材料を確認する必要がある"
       ],
       "score": 80,
-      "scoreRationale": "[基本点: 70]\n[コストパフォーマンス: +5] (1食90円でブランド玉ねぎ使用はお得)\n[品質・デザイン: +5] (農家直営のこだわりとクリーミーな味わいへの期待)\n[性能・機能: +0] (標準的なインスタントスープの利便性)\n[合計: 80]"
+      "scoreRationale": "[基本点: 70]\n[加点: +5] (1食90円でブランド玉ねぎ使用はお得なため)\n[加点: +5] (農家直営のこだわりとクリーミーな味わいへの期待できるため)\n[合計: 80]"
     },
     "technicalSpecs": {
       "contentVolume": "130g (13g × 10本)",
@@ -101,7 +88,8 @@
       "expirationDate": "製造日より1年間",
       "storageMethod": "直射日光を避け常温で保存",
       "dimensions": null,
-      "calories": null
+      "calories": null,
+      "weight": "150g"
     }
   }
 }
