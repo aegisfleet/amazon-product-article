@@ -1,0 +1,190 @@
+{
+  "analysis": {
+    "productName": "JBL FLIP 7",
+    "parentAsin": "B0F1MZJTB7",
+    "productDescription": "500mlペットボトルと同程度のサイズ感ながら、歌や楽器が明瞭で迫力のある音楽を奏でるパワフルなJBLプロサウンドを実現した、IP68防塵防水対応のポータブルBluetoothスピーカー。",
+    "productUsage": [
+      "アウトドア・キャンプでの音楽鑑賞",
+      "お風呂場や水回りでの利用",
+      "自宅での日常的な音楽再生"
+    ],
+    "positivePoints": [
+      "コンパクトサイズながら迫力のあるJBLプロサウンド",
+      "IP68の防塵防水・耐衝撃設計でアウトドアでも安心して使える",
+      "Auracast対応でステレオペアリングなどマルチスピーカー接続が可能",
+      "USB-C充電対応で汎用性が高い",
+      "持ち運びに便利なカラビナとストラップを同梱"
+    ],
+    "negativePoints": [
+      "価格が1万円台後半と、エントリーモデルに比べるとやや高価"
+    ],
+    "useCases": [
+      "キャンプ場やビーチでの使用",
+      "浴室での使用",
+      "部屋間を持ち運んでの使用"
+    ],
+    "userStories": [
+      {
+        "userType": "一般ユーザー",
+        "scenario": "日常・アウトドアでの使用",
+        "experience": "音質が良く、迫力満点だと感じています。価格も手頃で、値段分の価値があると感じているようです。また、コストパフォーマンスも良いとの声もあります。 音量については、十分で、出力が大きくなったという声があります。 携帯性についても好評で、持ち運びや水濡れでも潰れない点が特に優れています。",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "sentiment": "positive"
+      }
+    ],
+    "userImpression": "音質が非常に良く、迫力のあるサウンドが好評です。IP68の防塵防水性能とコンパクトなサイズ感により、携帯性に優れ、水濡れを気にせず使用できる点が高く評価されています。コストパフォーマンスや価格に見合った価値があると感じるユーザーが多いです。",
+    "sources": [
+      {
+        "id": "src-1",
+        "name": "Amazon カスタマーレビュー サマリー",
+        "url": "https://www.amazon.co.jp/dp/B0F1MZJTB7",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2025-04-10",
+        "author": "Amazon",
+        "conflictOfInterest": "none",
+        "notes": "Amazonのカスタマーレビューサマリー（AI生成）より、使用感と評価を抽出"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "IP68の防塵防水性能と衝撃への耐性",
+        "category": "durability",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "crossChecked": true,
+        "notes": "Amazonの商品仕様および特徴より確認"
+      },
+      {
+        "claim": "Auracastマルチスピーカー接続機能の搭載",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "crossChecked": true,
+        "notes": "Amazonの商品仕様および特徴より確認"
+      }
+    ],
+    "lastInvestigated": "2026-04-21",
+    "competitiveAnalysis": [
+      {
+        "name": "Anker Soundcore 2",
+        "asin": "B01NAVANRX",
+        "priceComparison": "Soundcore 2は約5,990円とJBL FLIP 7の1/3程度の価格で非常に安価ですが、音質の迫力やAuracast等の拡張機能ではFLIP 7が上回ります。",
+        "featureComparison": [
+          "共通点：Bluetooth対応のポータブルスピーカーである点",
+          "相違点：FLIP 7はIP68防塵防水とAuracastに対応しているのに対し、Soundcore 2はIPX7防水でMicro USB充電（一部USB-C対応版あり）"
+        ],
+        "differentiators": [
+          "JBL FLIP 7の利点：より高音質なJBLプロサウンドと、防塵にも対応したIP68の耐久性、最新のマルチスピーカー接続機能",
+          "Anker Soundcore 2の利点：圧倒的に安価で、とりあえずポータブルスピーカーが欲しい場合に適している"
+        ]
+      },
+      {
+        "name": "Anker Soundcore 3",
+        "asin": "B08CXJ3HMF",
+        "priceComparison": "Soundcore 3は約6,990円とFLIP 7より大幅に安いですが、JBLならではの低音の迫力やデザイン性で差別化されています。",
+        "featureComparison": [
+          "共通点：USB-C充電対応、アプリでのイコライザー設定が可能である点",
+          "相違点：FLIP 7はAuracast接続とIP68に対応しているのに対し、Soundcore 3はPartyCast機能とIPX7防水である点"
+        ],
+        "differentiators": [
+          "JBL FLIP 7の利点：最新のAuracast規格と防塵性能を備え、よりダイナミックなサウンドを楽しめる点",
+          "Anker Soundcore 3の利点：価格が抑えられており、コストパフォーマンスに優れている点"
+        ]
+      },
+      {
+        "name": "JBL GO4",
+        "asin": "B0CZDCWM48",
+        "priceComparison": "GO4は約4,518円と非常に安価でコンパクトですが、出力や低音の迫力ではFLIP 7が上位モデルとして勝ります。",
+        "featureComparison": [
+          "共通点：JBLブランド、IP67/68クラスの防塵防水性能、Auracastに対応している点",
+          "相違点：GO4は超小型・軽量設計であるのに対し、FLIP 7は500mlペットボトルサイズでより大きなウーファーとツイーターを搭載している点"
+        ],
+        "differentiators": [
+          "JBL FLIP 7の利点：余裕のある筐体サイズによるパワフルな音圧と明瞭なサウンド",
+          "JBL GO4の利点：圧倒的な持ち運びやすさと低価格"
+        ]
+      },
+      {
+        "name": "SONY SRS-XB100",
+        "asin": "B0C3Q65R9P",
+        "priceComparison": "SRS-XB100は約7,358円で、FLIP 7より手頃な価格帯のコンパクトモデルです。",
+        "featureComparison": [
+          "共通点：IP67/68相当の防塵防水性能、ストラップが付属し持ち運びに適している点",
+          "相違点：SRS-XB100は円柱型の小型モデルでモノラル（2台でステレオ）ですが、FLIP 7はより大きく2ウェイ構成のスピーカーを採用している点"
+        ],
+        "differentiators": [
+          "JBL FLIP 7の利点：2ウェイスピーカー構成による、より解像度の高いサウンドと広い音場",
+          "SONY SRS-XB100の利点：コンパクトで軽く、価格が安い点"
+        ]
+      },
+      {
+        "name": "SONY SRS-ULT10",
+        "asin": "B0D13TBD9B",
+        "priceComparison": "SRS-ULT10は約12,500円で、FLIP 7より少し安い価格帯の競合製品です。",
+        "featureComparison": [
+          "共通点：防塵防水性能（IP67/68）、縦置き・横置き両対応のポータブルサイズである点",
+          "相違点：ULT10はソニー独自の「ULTボタン」による重低音強化が特徴で、FLIP 7はJBLプロサウンドとAuracastに対応している点"
+        ],
+        "differentiators": [
+          "JBL FLIP 7の利点：Auracastによる他機種との柔軟なマルチ接続と、JBLならではの明るく迫力あるサウンド",
+          "SONY SRS-ULT10の利点：専用ボタンで手軽に重低音モードを切り替えられる点"
+        ]
+      },
+      {
+        "name": "Marshall Willen II",
+        "asin": "B0DFHCWZ81",
+        "priceComparison": "Willen IIは約17,980円で、FLIP 7とほぼ同価格帯のプレミアムな競合製品です。",
+        "featureComparison": [
+          "共通点：防塵防水性能（IP67/68）を持ち、持ち運びに便利なストラップ類を備えている点",
+          "相違点：Willen IIはスクエア型でMarshallのクラシックなデザインが特徴、FLIP 7は円筒形でペットボトルホルダー等に収まりやすいデザイン"
+        ],
+        "differentiators": [
+          "JBL FLIP 7の利点：ドリンクホルダーに入る形状とAuracast対応による利便性",
+          "Marshall Willen IIの利点：Marshall独自のデザイン性とシグネチャーサウンド"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "アウトドアで音楽を高音質で楽しみたい人",
+        "お風呂で使える高音質スピーカーを探している人",
+        "複数台繋げてパーティーなどで使いたい人"
+      ],
+      "pros": [
+        "持ち運びやすいサイズと高音質の両立",
+        "高い防塵防水・耐衝撃性能",
+        "Auracast対応の拡張性"
+      ],
+      "cons": [
+        "1万円台後半という価格設定"
+      ],
+      "score": 88,
+      "scoreRationale": "[基本点: 70]\n[加点: +8] (500mlペットボトルサイズながら2ウェイ構成で迫力の高音質を実現)\n[加点: +5] (IP68防塵防水・耐衝撃設計でアウトドアでも安心して使える)\n[加点: +5] (Auracast対応により最新のマルチスピーカー接続が可能で将来性が高い)\n[合計: 88]"
+    },
+    "technicalSpecs": {
+      "dimensions": {
+        "width": "182.5mm",
+        "height": "69.5mm",
+        "depth": "71.5mm"
+      },
+      "weight": "560g",
+      "capacity": "",
+      "material": "",
+      "origin": "",
+      "other": [
+        "防塵防水性能: IP68",
+        "スピーカー構成: 45 x 80mmウーファー + 16mmツイーター",
+        "マルチ接続: Auracast対応",
+        "充電端子: USB Type-C",
+        "付属品: ストラップ、カラビナ"
+      ]
+    }
+  }
+}
