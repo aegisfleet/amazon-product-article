@@ -32,87 +32,116 @@
     ],
     "userStories": [
       {
-        "userType": "30代会社員（サブ機検討中）",
-        "scenario": "出張時の移動中やホテルでのエンタメ消費用として購入",
-        "experience": "iPad Proを持っているが、もっと気軽に持ち出せる安価なタブレットが欲しくて購入。90Hz画面のおかげでカクつきを感じにくく、動画を見るには十分すぎる性能。特にスピーカーの音が良く、ホテルで映画を見るのが快適になった。DeXモードも意外と便利で、メール返信くらいならこれで済ませられる。",
-        "sentiment": "positive"
-      },
-      {
-        "userType": "大学生",
-        "scenario": "講義のノート取りとPDF閲覧用",
-        "experience": "Galaxyならペンが使えると思って購入したが、このモデルはSペン非対応だと後で知ってショックを受けた。市販のタッチペンは使えるが、パームリジェクションがないので書きにくい。動画視聴専用機としては優秀だが、勉強用ならS9 FEにしておくべきだった。",
+        "userType": "動画視聴ユーザー",
+        "scenario": "自宅でYouTubeや映画を視聴",
+        "experience": "タブレットの性能には満足しており、YouTubeも快適に視聴できます。ただ、ガラスフィルムを貼ると画面半分のタッチ感度が悪くなることがありました。",
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "mixed"
       },
       {
-        "userType": "主婦",
-        "scenario": "子供の動画視聴と自身のレシピ検索用",
-        "experience": "以前使っていた安い中華タブレットはすぐ壊れたが、これはGalaxyなので安心感がある。画面が大きくて綺麗だし、子供が雑に扱っても丈夫そう。ただ充電が遅いので、使いたい時に充電切れになっていると少しイライラする。",
-        "sentiment": "positive"
+        "userType": "一般ユーザー",
+        "scenario": "日常的な利用",
+        "experience": "全体的に満足していますが、容量7040mAhのはずですが、体感的に充電を必要とする期間が短く、バッテリーの減り方が早く感じることがあります。",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "sentiment": "mixed"
       }
     ],
     "userImpression": "価格を抑えつつもSamsungらしい高品質なハードウェアとソフトウェア（One UI）体験を提供しており、コストパフォーマンスが非常に高いと評価されている。特に90Hzディスプレイとスピーカー品質、DeXモードへの対応が好評。一方で、Sペン非対応や充電速度の遅さが主な不満点として挙げられる。",
     "sources": [
       {
-        "name": "GSMArena: Samsung Galaxy Tab A9+ Review",
-        "url": "https://www.gsmarena.com/samsung_galaxy_tab_a9_plus-review-2658.php",
-        "credibility": "high"
-      },
-      {
-        "name": "Amazonユーザーレビュー",
-        "url": null,
-        "credibility": "medium"
-      },
-      {
-        "name": "TechRadar Review",
-        "url": "https://www.techradar.com/tablets/android-tablets/samsung-galaxy-tab-a9-plus-review",
-        "credibility": "high"
+        "id": "src-1",
+        "name": "Amazonカスタマーレビュー",
+        "url": "https://www.amazon.co.jp/dp/B0CKKK44GN",
+        "tier": "medium",
+        "evidenceType": "primary",
+        "publishedAt": "2024-04-21",
+        "author": "Amazonカスタマー",
+        "conflictOfInterest": "none",
+        "notes": "バッテリーの持ち具合やガラスフィルム装着時のタッチ感度に関する使用感"
       }
     ],
-    "lastInvestigated": "2026-02-22",
+    "lastInvestigated": "2026-04-21",
     "competitiveAnalysis": [
       {
-        "name": "Xiaomi Redmi Pad SE (4GB/128GB)",
-        "asin": "B0CGWDCQK8",
-        "priceComparison": "約1.8万円とGalaxy Tab A9+より約1万円安い。",
+        "name": "Samsung Galaxy Tab A11+ 128GB (Wi-Fi)",
+        "asin": "B0DQD8K642",
+        "priceComparison": "対象商品より価格が高いが、後継機でありストレージ容量が大きくGalaxy AIに対応している。",
         "featureComparison": [
-          "SoCはSnapdragon 680で、A9+のSD695より性能が低い（特にGPU性能）",
-          "ストレージは128GBとA9+の倍",
-          "同じく90Hzディスプレイとクアッドスピーカーを搭載",
-          "OSの更新頻度や完成度はSamsungに分がある"
+          "共通点：Samsung製の11インチWi-Fiモデルタブレットでバッテリー容量も同じ。",
+          "相違点：A11+は後継機でストレージ容量が大きく、Galaxy AIに対応している。"
         ],
         "differentiators": [
-          "圧倒的な価格の安さ",
-          "基本容量の多さ（128GBスタート）"
+          "Galaxy Tab A9+(Wi-Fiモデル)の利点：価格が安く、基本的な用途には十分な性能を備えている。",
+          "Samsung Galaxy Tab A11+ 128GB (Wi-Fi)の利点：最新のAI機能や大容量ストレージが必要な場合に適している。"
         ]
       },
       {
-        "name": "Lenovo Tab B11",
-        "asin": "B0CXDXV9WK",
-        "priceComparison": "約3万円とGalaxy Tab A9+と同等〜やや高い。",
+        "name": "Samsung Galaxy Tab A11+ 128GB 5G（SIMフリー）",
+        "asin": "B0DQCWX628",
+        "priceComparison": "対象商品より価格が高く、5G対応のSIMフリーモデルである。",
         "featureComparison": [
-          "SoCはHelio G88で、A9+より大幅に性能が低い",
-          "IP52の防塵防滴性能がある（A9+は非対応）",
-          "Lenovo Penが同梱されるモデルが多く、手書き入力に強い"
+          "共通点：11インチクラスのAndroidタブレット。",
+          "相違点：こちらは5G通信に対応しており、屋外でも単体で通信が可能。"
         ],
         "differentiators": [
-          "ペン入力への公式対応（同梱）",
-          "防滴対応"
+          "Galaxy Tab A9+(Wi-Fiモデル)の利点：Wi-Fi環境での使用が中心であれば、価格を抑えられる。",
+          "Samsung Galaxy Tab A11+ 128GB 5Gの利点：Wi-Fiがない外出先でも通信が可能である。"
         ]
       },
       {
-        "name": "iPad (第9世代) 64GB 整備済み品",
-        "asin": "B0BKPM58BP",
-        "priceComparison": "約3.5万円とGalaxy Tab A9+より高い。",
+        "name": "UBDXBD M70 タブレット",
+        "asin": "B0GD12PH9F",
+        "priceComparison": "対象商品より価格が安く、コストパフォーマンスを重視する場合の選択肢となる。",
         "featureComparison": [
-          "SoCはA13 Bionicで、A9+より圧倒的に高性能",
-          "画面は60Hzで非フルラミネーション（隙間がある）",
-          "スピーカーは横持ち時に片側からしか出ない（ステレオ非対応配置）",
-          "Lightning端子"
+          "共通点：11インチの大画面を搭載したAndroidタブレット。",
+          "相違点：UBDXBDはメモリやストレージの表記が大きいが、ブランド力やサポート体制はGalaxyに劣る。"
         ],
         "differentiators": [
-          "iOSアプリの質と量",
-          "Apple Pencil（第1世代）による本格的な手書き",
-          "圧倒的なリセールバリュー"
+          "Galaxy Tab A9+(Wi-Fiモデル)の利点：Samsungブランドの信頼性と充実したサポート体制。",
+          "UBDXBD M70 タブレットの利点：価格が大幅に安く、予算を抑えたい場合に適している。"
+        ]
+      },
+      {
+        "name": "SVITOO P11 タブレット",
+        "asin": "B0G6BGWQQJ",
+        "priceComparison": "対象商品より価格が安く、初期投資を抑えられる。",
+        "featureComparison": [
+          "共通点：11インチクラスのAndroidタブレットで動画視聴などに適している。",
+          "相違点：SVITOOは独自の高スペック表記をしているが、全体的な完成度やブランドの安心感はGalaxyが勝る。"
+        ],
+        "differentiators": [
+          "Galaxy Tab A9+(Wi-Fiモデル)の利点：メーカー保証やソフトウェアアップデートの信頼性。",
+          "SVITOO P11 タブレットの利点：低価格でありながら多くの機能がアピールされている。"
+        ]
+      },
+      {
+        "name": "BMAX タブレット 11インチ",
+        "asin": "B0DPSH2P16",
+        "priceComparison": "対象商品よりも安価な価格設定となっている。",
+        "featureComparison": [
+          "共通点：11インチ画面でWidevine L1に対応し、動画視聴向けである。",
+          "相違点：BMAXは低価格帯ブランドであり、Galaxyほどのブランド力や品質保証はない。"
+        ],
+        "differentiators": [
+          "Galaxy Tab A9+(Wi-Fiモデル)の利点：純正ならではの品質の高さやサポートの充実。",
+          "BMAX タブレット 11インチの利点：動画視聴メインで割り切って使う場合のコストパフォーマンス。"
+        ]
+      },
+      {
+        "name": "NEC LAVIE T11N",
+        "asin": "B0DNV96C42",
+        "priceComparison": "対象商品よりも価格が高く、国内メーカーの安心感を求める層向け。",
+        "featureComparison": [
+          "共通点：11インチ画面のWi-Fi専用Androidタブレット。",
+          "相違点：LAVIEは国内ブランドであり、ストレージ容量が128GBと対象商品より大きい。"
+        ],
+        "differentiators": [
+          "Galaxy Tab A9+(Wi-Fiモデル)の利点：NEC製品に比べて価格が手頃でコストパフォーマンスが良い。",
+          "NEC LAVIE T11Nの利点：日本の有名ブランドによる手厚いサポートや大容量ストレージ。"
         ]
       }
     ],
@@ -156,10 +185,9 @@
         "front": "5MP"
       },
       "dimensions": {
-        "height": "168.7mm",
-        "width": "257.1mm",
-        "depth": "6.9mm",
-        "weight": "480g"
+        "height": "6.9mm",
+        "width": "168.7mm",
+        "depth": "257.1mm"
       },
       "connectivity": [
         "Wi-Fi 5 (802.11 a/b/g/n/ac)",
@@ -172,7 +200,20 @@
         "Dolby Atmos対応クアッドスピーカー",
         "顔認証",
         "Samsung Knoxセキュリティ"
-      ]
-    }
+      ],
+      "weight": "480g"
+    },
+    "claims": [
+      {
+        "claim": "ガラスフィルムを貼るとタッチ感度に影響が出る場合がある",
+        "category": "quality",
+        "confidence": "medium",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "crossChecked": false,
+        "notes": "特定のガラスフィルムに関する事象の可能性もある"
+      }
+    ]
   }
 }
