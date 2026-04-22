@@ -1,115 +1,179 @@
 {
   "analysis": {
-    "productName": "DuHeSin USB-C マグネットアダプター (24ピン/2個セット)",
-    "parentAsin": "B0DXDZ3DGF",
-    "productDescription": "USB-Cケーブルをマグネット着脱式に変換し、ポート保護と利便性を向上させる24ピンアダプター（2個セット）。",
+    "productName": "DuHeSin USB-Cマグネット式アダプター 2個セット",
+    "parentAsin": "B09WJWQMML",
+    "productDescription": "24ピンのUSB-Cマグネット式ストレートアダプター2個セット。最大100WのUSB PD急速充電、10Gbpsのデータ転送、4K/60Hzの映像出力に対応し、ケーブルの着脱を容易にします。",
     "productUsage": [
-      "MacBookやスマホの充電ポートに装着し、ケーブルの抜き差しを容易にする",
-      "ケーブルに足を引っ掛けた際のデバイス落下防止（MagSafeライクな使用感）",
-      "頻繁な抜き差しによるUSB-Cポートの摩耗・破損防止"
+      "MacBook Pro/Airなどノートパソコンの充電・データ転送",
+      "USB Type-Cポート搭載スマートフォンの充電",
+      "ケーブルの頻繁な抜き差しによる端子劣化の防止",
+      "足を引っかけた際のデバイス落下の防止"
     ],
     "positivePoints": [
-      "24ピン全結線仕様により、充電(100W)、データ(10Gbps)、映像(4K)の全てに対応",
-      "L字型ではなくストレート型なので、隣接ポートに干渉しにくい",
-      "強力なマグネットで確実に接続される"
+      "最大100WのPD急速充電に対応し、PC等の充電もスムーズ",
+      "10Gbpsデータ転送・4K/60Hzの映像出力に対応する高い互換性",
+      "マグネット式で簡単に着脱でき、端子の劣化を防げる",
+      "隣のポートと干渉しにくいスリムなデザイン"
     ],
     "negativePoints": [
-      "同等スペックの競合他社品と比較して価格が非常に高い（約1.5〜2倍）",
-      "USB-IF非準拠の規格外製品であり、理論上ショートや発熱のリスクがある",
-      "端子部分が小さく、紛失しやすい"
+      "強い衝撃が加わると外れる可能性がある",
+      "マグネット部分に砂鉄などの異物が付着すると接触不良の原因になる"
     ],
     "useCases": [
-      "デスクワーク中のMacBook充電（不意のケーブル引っ掛け対策）",
-      "車内など不安定な場所でのスマートフォン充電"
+      "オフィスや自宅でノートPCを持ち運ぶ際の充電ケーブル接続",
+      "スマートフォンやタブレットの充電時の抜き差しを簡単にする用途",
+      "デスク周りでケーブルをすっきりさせつつ、引っかかり事故を防ぐ用途"
     ],
-    "userStories": [
-      {
-        "userType": "MacBook Proユーザー",
-        "scenario": "カフェでの作業中",
-        "experience": "トイレに立つ際にケーブルを抜く手間が省け、戻ったときも近づけるだけでパチっと繋がり快適。（推測）",
-        "sentiment": "positive"
-      },
-      {
-        "userType": "ガジェット好き",
-        "scenario": "複数デバイスの運用",
-        "experience": "全てのデバイスにチップをつけておけば、1本のケーブルで使い回せるのが非常に便利。（推測）",
-        "sentiment": "positive"
-      }
-    ],
-    "userImpression": "MagSafeのような利便性を汎用USB-C機器で実現できる点は評価されているが、価格設定が競合に比べて強気である。",
+    "userStories": [],
+    "userImpression": "端子の摩耗を防ぎ、充電時の着脱が格段に楽になるとして高く評価されています。100WのPD充電や高速データ通信に対応しているため、MacBookなどの高出力デバイスでも実用的に使えます。",
     "sources": [
       {
-        "name": "Amazon Product Page",
+        "id": "src-amazon-B09WJWQMML",
+        "name": "Amazon.co.jp 商品ページ",
         "url": "https://www.amazon.co.jp/dp/B09WJWQMML",
-        "credibility": "High"
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-04-23",
+        "author": "DuHeSin",
+        "conflictOfInterest": "none",
+        "notes": "製品仕様、機能、価格情報を確認"
       }
     ],
-    "lastInvestigated": "2026-02-01",
+    "claims": [
+      {
+        "claim": "最大100WのPD充電に対応",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": ["src-amazon-B09WJWQMML"],
+        "crossChecked": false,
+        "notes": "商品ページで100W対応を明記"
+      },
+      {
+        "claim": "10Gbpsデータ転送、4K/60Hz映像出力対応",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": ["src-amazon-B09WJWQMML"],
+        "crossChecked": false,
+        "notes": "商品ページで10Gbpsおよび4K/60Hz出力対応を明記"
+      }
+    ],
+    "lastInvestigated": "2026-04-23",
     "competitiveAnalysis": [
       {
-        "name": "DuHeSin USB-C マグネットアダプター (40Gbpsモデル)",
+        "name": "HanCenDa USB C アダプター マグネット式 2個パック ホワイト (B0F5W6YP78)",
+        "asin": "B0F5W6YP78",
+        "priceComparison": "対象商品よりやや安い。本製品が100W・10Gbps・4Kであるのに対し、競合は240W・40Gbps・8Kに対応しておりスペック上で上回る。",
+        "featureComparison": [
+          "共通点：24ピンのマグネット式、ストレート型、2個セット",
+          "相違点：対象商品は100W充電/10Gbps/4K映像出力対応。競合は240W充電/40Gbps/8K映像出力に対応。"
+        ],
+        "differentiators": [
+          "DuHeSin USB-Cマグネット式アダプター 2個セットの利点：特になし（スペック上は競合の方が優れている）",
+          "HanCenDa USB C アダプター マグネット式 2個パック ホワイト (B0F5W6YP78)の利点：240Wの超急速充電、40Gbpsの超高速データ転送、8K映像出力に対応しており、より高性能なデバイスでの使用に適している。"
+        ]
+      },
+      {
+        "name": "HanCenDa USB-Cマグネット式アダプター 2個セット (B0BN63MJPD)",
+        "asin": "B0BN63MJPD",
+        "priceComparison": "対象商品よりやや高い。本製品が100W充電であるのに対し、競合は140W充電・20Gbps・8Kに対応しておりスペックがやや高い。",
+        "featureComparison": [
+          "共通点：24ピンのマグネット式、ストレート型、2個セット",
+          "相違点：対象商品は100W充電/10Gbps/4K映像出力対応。競合は140W充電/20Gbps/8K映像出力に対応。"
+        ],
+        "differentiators": [
+          "DuHeSin USB-Cマグネット式アダプター 2個セットの利点：わずかに安価であること。",
+          "HanCenDa USB-Cマグネット式アダプター 2個セット (B0BN63MJPD)の利点：140Wの充電と20Gbpsのデータ転送、8K出力に対応し、より高いスペックを求める場合に適している。"
+        ]
+      },
+      {
+        "name": "Ackno USB Cマグネット式アダプター 2個セット (B0DQVZ56YN)",
+        "asin": "B0DQVZ56YN",
+        "priceComparison": "対象商品より安い。本製品が100W・10Gbpsであるのに対し、競合は140W・40Gbpsに対応しておりコスパが高い。",
+        "featureComparison": [
+          "共通点：マグネット式、2個セット",
+          "相違点：対象商品は100W充電/10Gbps対応。競合は140W充電/40Gbps対応。"
+        ],
+        "differentiators": [
+          "DuHeSin USB-Cマグネット式アダプター 2個セットの利点：特になし（スペック・価格ともに競合の方が優位）",
+          "Ackno USB Cマグネット式アダプター 2個セット (B0DQVZ56YN)の利点：価格が安い上に、140W充電や40Gbpsデータ転送に対応しておりコストパフォーマンスに優れる。"
+        ]
+      },
+      {
+        "name": "DuHeSin USB-Cマグネット式アダプター 2個セット 40Gbps (B09WRC7KK8)",
         "asin": "B09WRC7KK8",
-        "priceComparison": "同価格帯",
+        "priceComparison": "対象商品と同価格。本製品が10Gbps・4Kであるのに対し、同ブランドの競合品は同じ価格で40Gbps・8Kに対応している。",
         "featureComparison": [
-          "こちらは40Gbps/8K対応の上位スペック"
+          "共通点：同ブランドの24ピンマグネット式、100W充電対応、2個セット",
+          "相違点：対象商品は10Gbpsデータ転送・4K映像出力。競合は40Gbpsデータ転送・8K映像出力に対応。"
         ],
         "differentiators": [
-          "価格が同じなら、スペックの高いB09WRC7KK8の方が推奨される"
+          "DuHeSin USB-Cマグネット式アダプター 2個セットの利点：特になし（同価格で上位互換品が存在する）",
+          "DuHeSin USB-Cマグネット式アダプター 2個セット 40Gbps (B09WRC7KK8)の利点：同じ価格でありながら40Gbpsのデータ転送と8K映像出力に対応しており、コストパフォーマンスが圧倒的に高い。"
         ]
       },
       {
-        "name": "EC-GOOD 24ピン マグネットアダプター",
-        "asin": "B0D8XN5XKJ",
-        "priceComparison": "約35%安い (￥1,280)",
+        "name": "Cosmic3C USB-C Type-Cマグネット式アダプター (B0D2RM2XHK)",
+        "asin": "B0D2RM2XHK",
+        "priceComparison": "対象商品より安い。本製品は2個セットだが、競合は1個売りと推測され、単価としては割高な可能性がある。ただし競合は140W・40Gbpsに対応。",
         "featureComparison": [
-          "同等の24ピン、100W、10Gbps、4K対応"
+          "共通点：24ピンマグネット式、ストレート型",
+          "相違点：対象商品は100W充電/10Gbps対応で2個セット。競合は140W充電/40Gbps対応。"
         ],
         "differentiators": [
-          "機能差はほぼなく、コストパフォーマンスで圧倒的に優れる"
+          "DuHeSin USB-Cマグネット式アダプター 2個セットの利点：2個セットであるため、複数デバイスで使いたい場合に適している。",
+          "Cosmic3C USB-C Type-Cマグネット式アダプター (B0D2RM2XHK)の利点：140W充電や40Gbpsデータ転送に対応しており、よりハイスペックな環境での使用に向いている。"
         ]
       },
       {
-        "name": "fine-R USB4 マグネットアダプター",
-        "asin": "B0BPS42YFN",
-        "priceComparison": "約50%安い (￥998)",
+        "name": "YFFSFDC 24ピン マグネット式 USB-C アダプタ専用 ゴールド (B0CXXXC347)",
+        "asin": "B0CXXXC347",
+        "priceComparison": "対象商品より大幅に安い。ただし競合はアダプターの「端子部分のみ」の販売である可能性が高い点に注意。",
         "featureComparison": [
-          "USB4 (40Gbps) 対応でスペックも上"
+          "共通点：マグネット式アダプタ用24ピン端子",
+          "相違点：対象商品はアダプタ本体と端子のセットだが、競合は端子部分のみの販売と見られる。"
         ],
         "differentiators": [
-          "スペック、価格ともに本製品を上回る"
+          "DuHeSin USB-Cマグネット式アダプター 2個セットの利点：アダプター本体が含まれており、すぐに使用を開始できる。",
+          "YFFSFDC 24ピン マグネット式 USB-C アダプタ専用 ゴールド (B0CXXXC347)の利点：端子部分のみのスペアを安価に確保したい場合に適している。"
         ]
       }
     ],
     "recommendation": {
       "targetUsers": [
-        "DuHeSinブランドで統一したいユーザー",
-        "特定の形状（ストレート型かつ特定デザイン）を求めるユーザー"
+        "頻繁にケーブルを抜き差しするデバイスを利用する人",
+        "ケーブルに引っかかってデバイスを落下させるリスクを減らしたい人",
+        "端子の摩耗を防ぎたい人"
       ],
       "pros": [
-        "ポート保護と着脱の利便性",
-        "フル機能対応（充電・データ・映像）"
+        "100W急速充電対応でノートPCにも余裕で給電可能",
+        "マグネット式で着脱が容易",
+        "端子の保護になる"
       ],
       "cons": [
-        "コストパフォーマンスが非常に悪い",
-        "USB規格外による潜在的リスク"
+        "同価格帯・より安い価格帯で、より高性能（140W/240W、40Gbps、8K）な他社製品や同社製品が存在し、本製品を選ぶ積極的な理由が薄い",
+        "マグネット部分に汚れが付着すると接触不良の原因になる"
       ],
       "score": 60,
-      "scoreRationale": "[基本点: 70]\n[加点: +5] (利便性とフル機能対応)\n[減点: -15] (競合他社製品と比較して価格が高すぎ、コスパが悪い)\n[合計: 60]"
+      "scoreRationale": "[基本点: 70]\n[加点: +5] (100WのPD急速充電、10Gbpsデータ転送に対応し実用性が高い)\n[減点: -15] (同ブランド・同価格で40Gbps対応の上位互換品が存在するほか、他社からもより安価でハイスペックな製品が出ており、コストパフォーマンス・競争力が著しく劣る)\n[合計: 60]"
     },
     "technicalSpecs": {
-      "dimensions": {
-        "width": "N/A",
-        "height": "N/A",
-        "depth": "N/A",
-        "weight": "20g"
-      },
-      "power": "Max 100W (20V/5A)",
-      "capacity": null,
+      "weight": "20g",
+      "capacity": "2個",
+      "material": "合金",
+      "origin": "不明",
       "other": [
-        "USB 3.1 Gen2 (10Gbps)",
-        "4K@60Hz Video",
-        "24-pin design"
-      ]
+        "コネクタ形状: USB Type-C (24ピン マグネット式)",
+        "形状: ストレート",
+        "最大出力: 100W USB PD対応",
+        "最大データ転送速度: 10Gbps (USB3.1 Gen2相当)",
+        "最大映像出力: 4K (60Hz)",
+        "互換性: Thunderbolt 3"
+      ],
+      "dimensions": {
+        "height": "不明",
+        "width": "不明",
+        "depth": "不明"
+      }
     }
   }
 }
