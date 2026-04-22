@@ -26,61 +26,70 @@
       "会議中の水分補給",
       "読書や映画鑑賞などのリラックスタイム"
     ],
-    "userStories": [
-      {
-        "userType": "30代デスクワーカー",
-        "scenario": "仕事中のコーヒーブレイク",
-        "experience": "以前は蓋付きのマグを使っていたが、飲むたびに蓋を開けるのが面倒だった。このタンブラーは視線をPC画面から外さずにどこからでも飲めるので、集中力を維持したまま水分補給ができる。（推測）",
-        "sentiment": "positive"
-      },
-      {
-        "userType": "20代女性（在宅勤務）",
-        "scenario": "自宅でのリラックスタイム",
-        "experience": "デザインがおしゃれで気に入っている。コーヒーの香りがふわっと広がるので、普通のマグカップで飲むより美味しく感じる。パーツも少なくて洗うのが楽。（推測）",
-        "sentiment": "positive"
-      }
-    ],
+    "userStories": [],
     "userImpression": "機能性（飲みやすさ・香り）とデザイン性を両立させた商品として、特にデスクワーカーやコーヒー愛好家に評価されるだろう。ただし、持ち運び用途を期待するユーザーには不向き。",
     "sources": [
       {
+        "id": "src-1",
         "name": "Amazon商品ページ (B0CLM41DSY)",
         "url": "https://www.amazon.co.jp/dp/B0CLM41DSY",
-        "credibility": "high"
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-04-23",
+        "author": "Amazon.co.jp",
+        "conflictOfInterest": "none",
+        "notes": "マーナ (marna) 360°タンブラーの商品仕様、機能詳細"
       },
       {
-        "name": "Amazon競合商品ページ (B00NBM1XEG, B085VWX8S3)",
-        "url": null,
-        "credibility": "medium"
+        "id": "src-2",
+        "name": "Amazon競合商品ページ (ドウシシャ B00NBM1XEG)",
+        "url": "https://www.amazon.co.jp/dp/B00NBM1XEG",
+        "tier": "medium",
+        "evidenceType": "secondary",
+        "publishedAt": "2026-04-23",
+        "author": "Amazon.co.jp",
+        "conflictOfInterest": "none",
+        "notes": "ドウシシャ コンビニマグの競合情報"
+      },
+      {
+        "id": "src-3",
+        "name": "Amazon競合商品ページ (パール金属 B085VWX8S3)",
+        "url": "https://www.amazon.co.jp/dp/B085VWX8S3",
+        "tier": "medium",
+        "evidenceType": "secondary",
+        "publishedAt": "2026-04-23",
+        "author": "Amazon.co.jp",
+        "conflictOfInterest": "none",
+        "notes": "パール金属 カフェマグの競合情報"
       }
     ],
-    "lastInvestigated": "2026-02-01",
+    "claims": [],
+    "lastInvestigated": "2026-04-23",
     "competitiveAnalysis": [
       {
         "name": "ドウシシャ コンビニマグ (B00NBM1XEG)",
         "asin": "B00NBM1XEG",
-        "priceComparison": "約1,600円（マーナの半額以下）",
+        "priceComparison": "対象商品より安いが、密閉性やコンビニコーヒー対応を重視するならこちらが適している。飲み心地や香りの広がりを重視する場合は対象商品に価値がある",
         "featureComparison": [
-          "完全密閉タイプで持ち運び可能",
-          "コンビニコーヒーのマシンに対応",
-          "飲み口は特定の方向のみ"
+          "共通点：真空二層構造、保温保冷対応",
+          "相違点：対象商品は360度どこからでも飲めるが、競合品は飲み口が特定方向のみで完全密閉タイプ"
         ],
         "differentiators": [
-          "密閉性が高い",
-          "価格が安い",
-          "飲み心地や香りの広がりはマーナに劣る"
+          "マーナ (marna) 360°タンブラーの利点：視線を外さずに飲める360度飲み口と、香りが広がる口当たりなめらかなフチ形状",
+          "ドウシシャ コンビニマグの利点：カバンに入れても漏れない完全密閉構造と、コンビニコーヒーのマシンに直接対応している点"
         ]
       },
       {
         "name": "パール金属 カフェマグ (B085VWX8S3)",
         "asin": "B085VWX8S3",
-        "priceComparison": "約1,400円（最安クラス）",
+        "priceComparison": "対象商品より大幅に安いが、特筆すべき機能がなく、デザインや飲み心地の付加価値を求める場合は対象商品に価値がある",
         "featureComparison": [
-          "シンプルな真空タンブラー",
-          "特筆すべき機能はない"
+          "共通点：真空二層構造のタンブラー、フタ付き",
+          "相違点：対象商品は360度飲み口や香りの広がりにこだわった設計だが、競合品はシンプルな設計"
         ],
         "differentiators": [
-          "圧倒的な安さ",
-          "デザインや質感は価格相応"
+          "マーナ (marna) 360°タンブラーの利点：ストレスフリーな360度飲み口と、飲み物を美味しく楽しむための洗練されたデザイン・質感",
+          "パール金属 カフェマグの利点：圧倒的な安さで、基本的な保温保冷機能のみを求める場合に適している"
         ]
       }
     ],
@@ -100,24 +109,21 @@
         "価格が競合に比べて高い"
       ],
       "score": 75,
-      "scoreRationale": "[基本点: 70]\n[加点: +5] (360度どこからでも飲める独自の飲み口)\n[加点: +5] (香りを広げる構造と洗練されたデザイン)\n[減点: -10] (競合製品に比べて価格が倍以上と高い)\n[加点: +5] (「cocuri」という新しい体験価値の提供)\n[合計: 75]"
+      "scoreRationale": "[基本点: 70]\n[加点: +5] (360度どこからでも飲める独自の飲み口で実用性が高い)\n[加点: +5] (香りを広げる構造と洗練されたデザインによる品質の高さ)\n[減点: -5] (競合製品に比べて価格が倍以上とコストパフォーマンスがやや低い)\n[合計: 75]"
     },
     "technicalSpecs": {
       "dimensions": {
         "diameter": "78mm",
-        "height": "150mm",
-        "weight": "約225g"
+        "height": "150mm"
       },
       "capacity": "380ml",
-      "material": [
-        "本体：ステンレス鋼(外体：粉体塗装加工)",
-        "外フタ・内フタ：ポリプロピレン",
-        "パッキン：シリコーンゴム"
-      ],
-      "insulation": "真空二層構造",
+      "weight": "225g",
+      "material": "本体：ステンレス鋼(外体：粉体塗装加工)、外フタ・内フタ：ポリプロピレン、パッキン：シリコーンゴム",
+      "origin": "中国",
       "other": [
         "360度飲み口",
-        "フタ付き（非密閉）"
+        "フタ付き（非密閉）",
+        "真空二層構造"
       ]
     }
   }
