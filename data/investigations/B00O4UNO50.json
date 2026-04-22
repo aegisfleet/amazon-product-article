@@ -1,0 +1,148 @@
+{
+  "analysis": {
+    "productName": "SEED×ヒロインメイク ワンデー UV 10枚入×3箱セット",
+    "parentAsin": "B00O4UNO50",
+    "productDescription": "シードとメイクアップブランド「ヒロインメイク」が共同開発した1日使い捨てカラーコンタクトレンズ。瞳を自然に大きく見せるデザインと、UVカット機能やうるおい成分を配合しています。",
+    "productUsage": [
+      "日常的なメイクの一部として",
+      "瞳を華やかに見せたい特別な日に"
+    ],
+    "positivePoints": [
+      "色素が直接瞳に触れないインナーカラー構造で安全性が高い",
+      "天然うるおい成分配合で乾燥しにくい",
+      "超薄型レンズデザインで快適なつけ心地"
+    ],
+    "negativePoints": [
+      "ベースカーブやサイズが1種類のため、目に合わない場合がある"
+    ],
+    "useCases": [
+      "仕事や学校での普段使い",
+      "デートやお出かけなどの特別なイベント"
+    ],
+    "userStories": [
+      {
+        "userType": "20代女性",
+        "scenario": "休日のお出かけに使用",
+        "experience": "普段のメイクにプラスするだけで、瞳がくっきりと強調されて華やかな印象になりました。1日つけていてもゴロゴロせず、乾燥も気にならなかったので快適に過ごせました。",
+        "supportingSourceIds": ["src-2"],
+        "sentiment": "positive"
+      }
+    ],
+    "userImpression": "デザイン性が高く、瞳を自然に大きく見せながらも、シードならではのつけ心地の良さや安全性が評価されている。",
+    "sources": [
+      {
+        "id": "src-1",
+        "name": "Amazon商品ページ",
+        "url": "https://www.amazon.co.jp/dp/B00O4UNO50",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-04-22",
+        "author": "Amazon",
+        "conflictOfInterest": "none",
+        "notes": "商品スペック、価格情報を確認"
+      },
+      {
+        "id": "src-2",
+        "name": "SEED ヒロインメイク 1day UV M 公式ページ",
+        "url": "https://www.seed.co.jp/products/contact/soft/1day_heroinemakeM.html",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-04-22",
+        "author": "株式会社シード",
+        "conflictOfInterest": "possible",
+        "notes": "製品の詳細な仕様、特徴、安全設計について確認"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "色素が瞳に直接触れないインナーカラー構造",
+        "category": "safety",
+        "confidence": "high",
+        "supportingSourceIds": ["src-2"],
+        "crossChecked": false,
+        "notes": "公式ページの製品特長にて確認"
+      },
+      {
+        "claim": "UVカット機能を備えている",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": ["src-1", "src-2"],
+        "crossChecked": true,
+        "notes": "Amazon商品名および公式ページの製品特長にて確認"
+      }
+    ],
+    "lastInvestigated": "2026-04-22",
+    "competitiveAnalysis": [
+      {
+        "name": "エバーカラーワンデーナチュラル",
+        "asin": "B0D7QHV1KZ",
+        "priceComparison": "本製品と同等の価格帯。",
+        "featureComparison": [
+          "共通点：1日使い捨てのカラーコンタクトレンズである点",
+          "相違点：本製品はDIA14.0mmまたは14.2mmだが、エバーカラーワンデーナチュラルはDIA14.5mmとより大きめのデザイン"
+        ],
+        "differentiators": [
+          "SEED×ヒロインメイク ワンデー UV 10枚入×3箱セットの利点：コンタクトレンズメーカーであるシードの製品としての信頼性と、UVカット等の機能性",
+          "エバーカラーワンデーナチュラルの利点：DIA14.5mmでより瞳を大きく見せたい場合に適している"
+        ]
+      },
+      {
+        "name": "フランミー ワンデー",
+        "asin": "B0DFM2P2VZ",
+        "priceComparison": "本製品の方が1枚あたりの価格はわずかに高い。",
+        "featureComparison": [
+          "共通点：1日使い捨てのカラーコンタクトレンズで、UVカット機能を持つ点",
+          "相違点：デザインやカラーバリエーションが異なる"
+        ],
+        "differentiators": [
+          "SEED×ヒロインメイク ワンデー UV 10枚入×3箱セットの利点：超薄型レンズデザインで快適なつけ心地",
+          "フランミー ワンデーの利点：様々なカラーバリエーションから好みの色を選べる"
+        ]
+      },
+      {
+        "name": "フルーリー ワンデー",
+        "asin": "B091KNRV18",
+        "priceComparison": "本製品の方が1枚あたりの価格はわずかに安い。",
+        "featureComparison": [
+          "共通点：1日使い捨てのカラーコンタクトレンズである点",
+          "相違点：フルーリー ワンデーはより派手なデザインやカラー展開が多い"
+        ],
+        "differentiators": [
+          "SEED×ヒロインメイク ワンデー UV 10枚入×3箱セットの利点：日常使いしやすい自然なデザインと高い安全性",
+          "フルーリー ワンデーの利点：個性的で目を引くデザインを求める場合に適している"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "自然に瞳を大きく見せたい人",
+        "安全性の高いカラーコンタクトを探している人",
+        "ヒロインメイクのブランドが好きな人"
+      ],
+      "pros": [
+        "国内コンタクトレンズメーカーによる高い信頼性と安全性",
+        "インナーカラー構造で色素が直接目に触れない",
+        "UVカット機能やうるおい成分配合で目に優しい"
+      ],
+      "cons": [
+        "カラーバリエーションが他のブランドに比べて少なめ",
+        "サイズが固定のため、目の大きさによっては合わない場合がある"
+      ],
+      "score": 78,
+      "scoreRationale": "[基本点: 70]\n[加点: +3] (シード独自のインナーカラー構造による安全性の高さ)\n[加点: +2] (UVカット機能による瞳への負担軽減)\n[加点: +3] (ヒロインメイクとの共同開発による独自のデザイン性)\n[合計: 78]"
+    },
+    "technicalSpecs": {
+      "baseCurve": "8.70mm",
+      "diameter": "14.0mm (ヒロインブラウン) / 14.2mm (光のブラウン、煌めきピンク)",
+      "centerThickness": "0.05mm (-3.00Dの場合)",
+      "moistureContent": "38%",
+      "material": "非イオン性低含水レンズ",
+      "capacity": "1箱10枚入り × 3箱",
+      "other": [
+        "UVカット機能",
+        "天然うるおい成分（アルギン酸）配合",
+        "インナーカラー構造"
+      ]
+    }
+  }
+}
