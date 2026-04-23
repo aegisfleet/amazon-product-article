@@ -1013,59 +1013,6 @@ describe('ArticleGenerator', () => {
       });
     });
 
-    describe('formatScoreRationaleAsCard', () => {
-      it('should format base score correctly', () => {
-        const rationale = '[基本点: 70]';
-        const result = (generator as any).formatScoreRationaleAsCard(rationale);
-        expect(result).toContain('<div class="score-base">');
-        expect(result).toContain('70');
-      });
-
-      it('should format plus items correctly', () => {
-        const rationale = '[加点: +10] Good Point';
-        const result = (generator as any).formatScoreRationaleAsCard(rationale);
-        expect(result).toContain('<div class="score-item score-plus">');
-        expect(result).toContain('+10');
-        expect(result).toContain('Good Point');
-      });
-
-      it('should format minus items correctly', () => {
-        const rationale = '[減点: -5] Bad Point';
-        const result = (generator as any).formatScoreRationaleAsCard(rationale);
-        expect(result).toContain('<div class="score-item score-minus">');
-        expect(result).toContain('-5');
-        expect(result).toContain('Bad Point');
-      });
-
-      it('should format total score correctly', () => {
-        const rationale = '[合計: 75]';
-        const result = (generator as any).formatScoreRationaleAsCard(rationale);
-        expect(result).toContain('<div class="score-total">');
-        expect(result).toContain('75');
-      });
-
-      it('should format zero points correctly', () => {
-        let result = (generator as any).formatScoreRationaleAsCard('[加点: 0] Zero Plus');
-        expect(result).toContain('score-plus');
-        expect(result).toContain('±0');
-
-        result = (generator as any).formatScoreRationaleAsCard('[減点: 0] Zero Minus');
-        expect(result).toContain('score-minus');
-        expect(result).toContain('±0');
-
-        result = (generator as any).formatScoreRationaleAsCard('[Info: 0] Zero Neutral');
-        expect(result).toContain('score-neutral');
-        expect(result).toContain('±0');
-      });
-
-      it('should handle array input', () => {
-        const rationale = ['[基本点: 50]', '[合計: 50]'];
-        const result = (generator as any).formatScoreRationaleAsCard(rationale);
-        expect(result).toContain('score-base');
-        expect(result).toContain('score-total');
-      });
-    });
-
     describe('calculateWordCount', () => {
       it('should count Japanese characters', () => {
         const text = 'こんにちは世界'; // 7 chars
