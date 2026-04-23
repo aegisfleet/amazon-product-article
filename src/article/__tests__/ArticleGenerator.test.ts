@@ -965,49 +965,55 @@ describe('ArticleGenerator', () => {
       });
     });
 
-    describe('extractTopRationaleItems', () => {
-      it('should return nulls for undefined input', () => {
-        const result = (generator as any).extractTopRationaleItems(undefined);
-        expect(result).toEqual({ topPlus: null, topMinus: null });
+    describe('extractScoreRationaleItems', () => {
+      it('should return empty results for undefined input', () => {
+        const result = (generator as any).extractScoreRationaleItems(undefined);
+        expect(result).toEqual({ plus: [], minus: [], topPlus: null, topMinus: null });
       });
 
-      it('should extract top plus and minus items from string input', () => {
+      it('should extract all plus and minus items from string input', () => {
         const rationale = '[加点: +10] Plus Item 1\n[減点: -5] Minus Item 1';
-        const result = (generator as any).extractTopRationaleItems(rationale);
+        const result = (generator as any).extractScoreRationaleItems(rationale);
+        expect(result.plus).toEqual([{ points: 10, desc: 'Plus Item 1' }]);
+        expect(result.minus).toEqual([{ points: 5, desc: 'Minus Item 1' }]);
         expect(result.topPlus).toEqual({ points: 10, desc: 'Plus Item 1' });
         expect(result.topMinus).toEqual({ points: 5, desc: 'Minus Item 1' });
       });
 
-      it('should extract top plus and minus items from array input', () => {
+      it('should extract all plus and minus items from array input', () => {
         const rationale = ['[加点: +10] Plus Item 1', '[減点: -5] Minus Item 1'];
-        const result = (generator as any).extractTopRationaleItems(rationale);
+        const result = (generator as any).extractScoreRationaleItems(rationale);
+        expect(result.plus).toEqual([{ points: 10, desc: 'Plus Item 1' }]);
+        expect(result.minus).toEqual([{ points: 5, desc: 'Minus Item 1' }]);
         expect(result.topPlus).toEqual({ points: 10, desc: 'Plus Item 1' });
         expect(result.topMinus).toEqual({ points: 5, desc: 'Minus Item 1' });
       });
 
-      it('should select the item with maximum points', () => {
+      it('should select the item with maximum points for top items', () => {
         const rationale = [
           '[加点: +5] Small Plus',
           '[加点: +20] Big Plus',
           '[減点: -2] Small Minus',
           '[減点: -15] Big Minus',
         ];
-        const result = (generator as any).extractTopRationaleItems(rationale);
+        const result = (generator as any).extractScoreRationaleItems(rationale);
+        expect(result.plus).toHaveLength(2);
+        expect(result.minus).toHaveLength(2);
         expect(result.topPlus).toEqual({ points: 20, desc: 'Big Plus' });
         expect(result.topMinus).toEqual({ points: 15, desc: 'Big Minus' });
       });
 
       it('should clean descriptions (remove HTML, parens)', () => {
         const rationale = ['[加点: +10] (<b>Bold</b>)', '[減点: -5] (<i>Italic</i>)'];
-        const result = (generator as any).extractTopRationaleItems(rationale);
-        expect(result.topPlus).toEqual({ points: 10, desc: 'Bold' });
-        expect(result.topMinus).toEqual({ points: 5, desc: 'Italic' });
+        const result = (generator as any).extractScoreRationaleItems(rationale);
+        expect(result.plus[0]).toEqual({ points: 10, desc: 'Bold' });
+        expect(result.minus[0]).toEqual({ points: 5, desc: 'Italic' });
       });
 
       it('should ignore items that do not match the pattern', () => {
         const rationale = ['Just some text', '[Invalid: 10] No sign'];
-        const result = (generator as any).extractTopRationaleItems(rationale);
-        expect(result).toEqual({ topPlus: null, topMinus: null });
+        const result = (generator as any).extractScoreRationaleItems(rationale);
+        expect(result).toEqual({ plus: [], minus: [], topPlus: null, topMinus: null });
       });
     });
 
