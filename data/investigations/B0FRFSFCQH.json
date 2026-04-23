@@ -1,0 +1,238 @@
+{
+  "analysis": {
+    "productName": "Anker Solix C2000 Gen 2",
+    "parentAsin": "B0GX66RCZK",
+    "productDescription": "容量2048Wh、定格出力2000Wの高性能ポータブル電源。世界最小クラスのコンパクト設計（約18.9kg）で、GaN技術により発熱を抑えながら99分で満充電が可能です。",
+    "productUsage": [
+      "家庭での停電・災害用バックアップ電源",
+      "TOUモードを活用したソーラー発電・深夜電力の自家消費",
+      "エアコン、電子レンジ、冷蔵庫などの高出力家電の稼働",
+      "キャンプや車中泊での大容量電源"
+    ],
+    "positivePoints": [
+      "2000Wh以上のクラスで世界最小レベルのコンパクトサイズと約18.9kgの軽量化",
+      "GaN技術搭載により、発熱を抑えて安定した充電・放電が可能",
+      "停電時に約10msで切り替わるUPS（無停電電源装置）機能搭載",
+      "別売りの拡張バッテリーで最大5120Whまで容量拡張が可能",
+      "リン酸鉄リチウムイオン電池採用で10年以上の長寿命（4000回サイクル）",
+      "プラスチックのきしみなどがない、頑丈で高品質な作り"
+    ],
+    "negativePoints": [
+      "ソーラーパネル入力は最大800Wまでで、複数接続時はケーブルが煩雑になる",
+      "アプリ設定における消費量や太陽光の高度な分析機能が限定的",
+      "拡張バッテリーは1台のみ接続可能",
+      "インプット・アウトプットの電流値表示が小さく読み取りにくい"
+    ],
+    "useCases": [
+      "災害や停電時に、冷蔵庫や照明、通信機器を数日間稼働させる",
+      "エアコンなどの高出力家電（1000W〜）を連続して動かす",
+      "日常的にTOU機能（時間帯別制御）を設定し、電気代の安い深夜や太陽光発電の電力をためて使う"
+    ],
+    "userStories": [
+      {
+        "userType": "ファミリー層・戸建て住まい",
+        "scenario": "ソーラーパネルと連携し、TOU機能を利用して電気代を節約",
+        "experience": "我が家にはソーラーパネルがあり、エアコンの稼働などに活用しています。以前使っていた他社製は熱を持ちやすかったのですが、本機はGaN技術のおかげで発熱問題がクリアされ、日没後でも太陽光で発電した電力をしっかり活用できるようになりました。災害時のオフグリッド生活も視野に入る、まさにゲームチェンジャーです。",
+        "supportingSourceIds": [
+          "src-amazon-reviews"
+        ],
+        "sentiment": "positive"
+      },
+      {
+        "userType": "防災備蓄・キャンプ愛好家",
+        "scenario": "停電への備えとして拡張バッテリーと共に設置",
+        "experience": "高品質で頑丈な作りで、プラスチックのきしみなどもありません。本体は約19kgと重いですが、4kWhの統合ユニットと比べると分割して運べるため扱いやすいです。ACポートも4つあり配置も十分。接続したまま放置できる安定感があり、非常に信頼できる電源です。",
+        "supportingSourceIds": [
+          "src-amazon-reviews"
+        ],
+        "sentiment": "positive"
+      },
+      {
+        "userType": "節電目的のユーザー",
+        "scenario": "日常の家電をポータブル電源で稼働させる",
+        "experience": "思い切って大容量を購入しました。電気ケトルやトースターなどすべて問題なく使用でき、月々の電気代削減にも期待しています。ただ、ディスプレイの入出力のワット数表示が少し小さく、読み取りづらいのが難点です。",
+        "supportingSourceIds": [
+          "src-amazon-reviews"
+        ],
+        "sentiment": "mixed"
+      }
+    ],
+    "userImpression": "価格はやや高めですが、2000Whクラスとしての圧倒的なコンパクトさ（約18.9kg）と、GaN技術による低発熱で安定した動作が非常に高く評価されています。特に、TOU機能とパススルー・UPS機能を組み合わせた日常的な節電・防災運用において「接続したまま放置できる信頼性」が強みです。拡張性の制限やアプリの分析機能など一部ソフト面の課題はあるものの、基本性能やビルドクオリティへの満足度は極めて高いです。",
+    "sources": [
+      {
+        "id": "src-amazon-product",
+        "name": "Amazon商品ページ",
+        "url": "https://www.amazon.co.jp/dp/B0FRFSFCQH",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-04-24",
+        "author": "Anker",
+        "conflictOfInterest": "none",
+        "notes": "製品スペック（2048Wh, 18.9kg, 定格2000W, 99分満充電, リン酸鉄など）および価格（118,900円）"
+      },
+      {
+        "id": "src-amazon-reviews",
+        "name": "Amazonカスタマーレビュー",
+        "url": "https://www.amazon.co.jp/dp/B0FRFSFCQH",
+        "tier": "medium",
+        "evidenceType": "secondary",
+        "publishedAt": "2026-04-24",
+        "author": "Amazon購入者",
+        "conflictOfInterest": "none",
+        "notes": "GaN技術による低発熱、本体の頑丈さ、約19kgの重量感、ディスプレイ表示の小ささ、ソーラー充電時のケーブルの煩雑さなどについて言及"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "2000Wh以上のクラスで世界最小レベルのコンパクトサイズ、重量約18.9kgを実現",
+        "category": "comparativeAdvantage",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-amazon-product",
+          "src-amazon-reviews"
+        ],
+        "crossChecked": true,
+        "notes": "商品仕様およびレビューの実感から確認。"
+      },
+      {
+        "claim": "GaN（窒化ガリウム）技術により、高出力充放電時の発熱を大幅に抑制",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-amazon-product",
+          "src-amazon-reviews"
+        ],
+        "crossChecked": true,
+        "notes": "レビューにて「GaN搭載で発熱問題クリア」と明記されている。"
+      },
+      {
+        "claim": "停電時に約10msで自動で切り替わるUPS（無停電電源装置）機能を搭載",
+        "category": "safety",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-amazon-product"
+        ],
+        "crossChecked": false,
+        "notes": "商品仕様に記載あり。"
+      }
+    ],
+    "lastInvestigated": "2026-04-24",
+    "competitiveAnalysis": [
+      {
+        "name": "Jackery ポータブル電源 2000 New",
+        "asin": "B0DBHS1S3V",
+        "priceComparison": "Jackeryの方が約1,000円高い。両者とも同等の容量・出力を持つハイエンドモデル。",
+        "featureComparison": [
+          "共通点：2000Wh級の大容量（Jackery: 2042Wh, Anker: 2048Wh）、定格出力2000W以上、UPS機能、アプリ遠隔操作、リン酸鉄リチウムイオン電池を採用し長寿命",
+          "相違点：Ankerは重量約18.9kg・99分満充電に対し、Jackeryはさらに軽量な17.9kg・102分満充電。Jackeryの定格出力は2200WでAnker（2000W）より若干高い"
+        ],
+        "differentiators": [
+          "Anker Solix C2000 Gen 2の利点：GaN技術による低発熱と安定性、TOU（時間帯別制御）機能が優秀で、別売りバッテリーによる容量拡張（最大5120Wh）が可能",
+          "Jackery 2000 Newの利点：同容量帯でさらに1kg軽量（17.9kg）であり、定格出力が2200Wと高いため、同時使用できる家電の幅がやや広い"
+        ]
+      },
+      {
+        "name": "FOSSiBOT F2400",
+        "asin": "B0D4XX84S3",
+        "priceComparison": "FOSSiBOTの方が約22,000円安く、コストパフォーマンスに優れる。",
+        "featureComparison": [
+          "共通点：容量2048Wh、リン酸鉄電池採用、UPS機能搭載",
+          "相違点：Anker（18.9kg）に対しFOSSiBOTは22kgと重い。一方、FOSSiBOTは定格出力2400Wとパワフルで、充電入力ワット数を5段階で調整可能"
+        ],
+        "differentiators": [
+          "Anker Solix C2000 Gen 2の利点：3kg以上軽量で持ち運びやすく、99分の超急速充電が可能。また、ブランドの信頼性とアフターサポートが手厚い",
+          "FOSSiBOT F2400の利点：価格が圧倒的に安く、定格2400W出力を備えているため、より高負荷な電動工具なども安定して動かせる"
+        ]
+      },
+      {
+        "name": "Jackery ポータブル電源 1500 New",
+        "asin": "B0FX4YBZV4",
+        "priceComparison": "ソーラーパネルセットながらJackeryの方が約11,800円安い。",
+        "featureComparison": [
+          "共通点：定格出力2000W、UPS機能、アプリ対応、リン酸鉄採用",
+          "相違点：Jackeryは容量が1536Whと少なく、重量14.5kgと軽量"
+        ],
+        "differentiators": [
+          "Anker Solix C2000 Gen 2の利点：圧倒的に大容量（2048Wh）であり、停電時や連泊キャンプなどでより長時間家電を稼働できる",
+          "Jackery 1500 Newの利点：2000W出力を維持しながら14.5kgと非常に軽量で取り回しが良く、日常的な持ち運びに適している"
+        ]
+      },
+      {
+        "name": "AFERIY Haven2400",
+        "asin": "B0DRWZV3MM",
+        "priceComparison": "AFERIYの方が約11,900円安い。",
+        "featureComparison": [
+          "共通点：容量2048Wh、UPS機能、リン酸鉄採用、1.5時間での急速充電",
+          "相違点：AFERIYは重量22kgと重く、出力が定格2400W"
+        ],
+        "differentiators": [
+          "Anker Solix C2000 Gen 2の利点：本体重量が約3kg軽く、世界最小クラスのコンパクトさで収納・設置がしやすい",
+          "AFERIY Haven2400の利点：価格が抑えられており、定格2400W出力と7年保証の長期サポートがある点"
+        ]
+      },
+      {
+        "name": "EENOUR P2001PLUS",
+        "asin": "B0D1TYQ7XH",
+        "priceComparison": "EENOURの方が約23,900円安く、コストパフォーマンスに優れる。",
+        "featureComparison": [
+          "共通点：2048Whの大容量、UPS機能、アプリ操作対応、リン酸鉄採用",
+          "相違点：EENOURは重量22kgと重く、充電速度は1.6時間（96分）でAnkerと同等。出力は定格2400W"
+        ],
+        "differentiators": [
+          "Anker Solix C2000 Gen 2の利点：GaN技術による低発熱設計や、約18.9kgの軽量・コンパクト化に成功しており、品質やブランド力が高い",
+          "EENOUR P2001PLUSの利点：安価ながら定格2400W出力を備え、AC入力電力の調整（4段階）ができるためブレーカー落ちを防ぎやすい"
+        ]
+      },
+      {
+        "name": "Anker Solix C2000 Gen 2 (オフホワイト)",
+        "asin": "B0FR4LJ6ZH",
+        "priceComparison": "同機種のカラーバリエーションだが、ホワイトは199,900円となっており、ダークグレー（118,900円）と比べて約81,000円高い。",
+        "featureComparison": [
+          "共通点：スペックや機能、サイズ、重量、サポート体制は全て完全に同一",
+          "相違点：本体カラーがオフホワイトである点と、販売価格が大きく異なる点"
+        ],
+        "differentiators": [
+          "Anker Solix C2000 Gen 2 (ダークグレー)の利点：全く同じ機能・性能でありながら、オフホワイトモデルに比べて大幅に安く購入でき、極めて高いコストパフォーマンスを誇る",
+          "Anker Solix C2000 Gen 2 (オフホワイト)の利点：インテリアに馴染みやすい明るいカラーリングを採用している"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "大容量（2000Wh）と軽量コンパクトさ（20kg未満）を両立させたい人",
+        "太陽光発電や深夜電力と連携して、日常的に電気代を節約したい人",
+        "停電時にエアコンや冷蔵庫などの大型家電を確実に動かしたい人",
+        "発熱の少ない安定したポータブル電源を探している人"
+      ],
+      "pros": [
+        "2000Wh帯として世界最小クラスのサイズと18.9kgの軽量化",
+        "GaN技術により発熱を抑え、接続したまま長期間安定稼働が可能",
+        "業界最速クラスの99分満充電",
+        "拡張バッテリーによる大容量化（最大5120Wh）に対応"
+      ],
+      "cons": [
+        "ソーラーパネル複数接続時に配線が煩雑になる",
+        "ディスプレイの電流値表示が小さく見えづらい",
+        "アプリの消費量分析など一部のソフト面が他社よりシンプル"
+      ],
+      "score": 88,
+      "scoreRationale": "[基本点: 70]\n[加点: +5] (2000Whクラスで18.9kgという驚異的な軽量・コンパクト設計)\n[加点: +5] (GaN搭載で発熱を抑え、日常的な充放電でも安定稼働する品質・安全性)\n[加点: +5] (世界最速クラスの99分満充電とUPS機能の実用性)\n[加点: +5] (定価199,900円から118,900円での販売となっており、競合と比べてもコスパが非常に高い)\n[減点: -2] (ディスプレイ表示の小ささやアプリの分析機能の弱さ)\n[合計: 88]"
+    },
+    "technicalSpecs": {
+      "weight": "18.9kg",
+      "capacity": "2048Wh",
+      "power": "定格2000W / 瞬間最大3300W",
+      "batteryType": "リン酸鉄リチウムイオン電池",
+      "chargeTime": "AC急速充電で約99分",
+      "cycleLife": "4000回 (10年以上の長寿命設計)",
+      "ups": "10ms自動切り替え機能搭載",
+      "solarInput": "最大800W",
+      "other": [
+        "GaN（窒化ガリウム）技術搭載",
+        "TOU（時間帯別制御）モード搭載",
+        "専用アプリによる遠隔操作対応",
+        "別売拡張バッテリーで最大5120Whまで拡張可能"
+      ]
+    }
+  }
+}
