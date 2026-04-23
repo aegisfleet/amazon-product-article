@@ -253,8 +253,8 @@ describe('ArticleGenerator', () => {
       expect(result.content).toContain('## 📦 商品の特徴');
       expect(result.content).toContain('## 📊 ユーザーレビュー');
       expect(result.content).toContain('## 🥊 競合商品との比較');
-      expect(result.content).toContain('## ✅ 購入推奨度');
-      expect(result.content).toContain('## 🛒 商品詳細・購入');
+      expect(result.content).toContain('## 🎯 最終結論：この商品は買いか？');
+      expect(result.content).toContain('## 🛒 商品詳細');
       expect(result.content).toContain('## 🔗 参考情報ソース');
       expect(result.content).toContain('購入者の声');
       expect(result.content).toContain('会社員の体験談 (通勤・通学)');
@@ -771,7 +771,7 @@ describe('ArticleGenerator', () => {
 
   describe('insertAffiliateLinks', () => {
     it('should insert affiliate links with proper format', () => {
-      const content = '## 商品詳細・購入\n\n商品の詳細情報です。';
+      const content = '## 🛒 商品詳細\n\n商品の詳細情報です。';
       const result = generator.insertAffiliateLinks(content, mockProduct);
 
       expect(result).toContain('amazon.co.jp/dp/B08N5WRWNW');

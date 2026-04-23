@@ -336,7 +336,7 @@ export class ArticleGenerator {
 
     // 商品名の後にアフィリエイトリンクを挿入
     const contentWithLinks = content.replace(
-      /(## 商品詳細・購入)/,
+      /(## (🛒 )?商品詳細(・購入)?)/,
       `$1\n\n<a href="${this.escapeHtml(affiliateUrl)}" class="affiliate-link mobile-friendly-button" target="_blank" rel="noopener noreferrer"><strong>${this.escapeHtml(product.asin)}をAmazonで確認する</strong></a>\n`,
     );
 
@@ -396,9 +396,6 @@ export class ArticleGenerator {
     _affiliateTag: string,
     investigation: InvestigationResult,
   ): ArticleSection {
-    const affiliateLink = this.affiliateManager.generateLinkFromProduct(product);
-    const affiliateUrl = affiliateLink.url;
-
     // 基本情報行
     const infoRows: string[] = [
       `| ASIN | ${product.asin} |`,
