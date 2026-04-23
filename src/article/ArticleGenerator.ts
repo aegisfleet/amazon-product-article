@@ -200,14 +200,12 @@ export class ArticleGenerator {
     }
 
     // Hero Front Matter Data
-    const { plus, minus, topPlus, topMinus } = this.extractScoreRationaleItems(
+    const { plus, minus } = this.extractScoreRationaleItems(
       investigation.analysis.recommendation.scoreRationale,
     );
 
     metadata.hero = {
       score_rationale: {
-        top_plus: topPlus,
-        top_minus: topMinus,
         plus,
         minus,
       },
@@ -1315,21 +1313,7 @@ ${recommendationMessage}`;
   ): void {
     if (!rationale) return;
     lines.push('  score_rationale:');
-    const { top_plus, top_minus, plus, minus } = rationale;
-    if (top_plus) {
-      lines.push(
-        '    top_plus:',
-        `      points: ${top_plus.points}`,
-        `      desc: "${this.escapeForFrontMatter(top_plus.desc)}"`,
-      );
-    }
-    if (top_minus) {
-      lines.push(
-        '    top_minus:',
-        `      points: ${top_minus.points}`,
-        `      desc: "${this.escapeForFrontMatter(top_minus.desc)}"`,
-      );
-    }
+    const { plus, minus } = rationale;
 
     if (plus && plus.length > 0) {
       lines.push('    plus:');
@@ -1693,16 +1677,13 @@ ${confidenceLine}`;
 
   /**
    * scoreRationaleから加点・減点項目をすべて抽出
-   * 加えて、スコアバーに表示するための最大項目も抽出
    */
   private extractScoreRationaleItems(rationale: string | string[] | undefined): {
     plus: { points: number; desc: string }[];
     minus: { points: number; desc: string }[];
-    topPlus: { points: number; desc: string } | null;
-    topMinus: { points: number; desc: string } | null;
   } {
     if (!rationale) {
-      return { plus: [], minus: [], topPlus: null, topMinus: null };
+      return { plus: [], minus: [] };
     }
 
     const rawRationale = Array.isArray(rationale) ? rationale.join('\n') : rationale;
@@ -1710,8 +1691,6 @@ ${confidenceLine}`;
 
     const plus: { points: number; desc: string }[] = [];
     const minus: { points: number; desc: string }[] = [];
-    let topPlus: { points: number; desc: string } | null = null;
-    let topMinus: { points: number; desc: string } | null = null;
 
     for (const line of lines) {
       // 加点: [任意のラベル: +13] (説明)
@@ -1719,12 +1698,7 @@ ${confidenceLine}`;
       if (plusMatch) {
         const points = Number.parseInt(plusMatch[1] ?? '0', 10);
         const desc = this.cleanRationaleDesc(plusMatch[2] || '');
-        const item = { points, desc };
-        plus.push(item);
-
-        if (!topPlus || points > topPlus.points) {
-          topPlus = item;
-        }
+        plus.push({ points, desc });
       }
 
       // 減点: [任意のラベル: -(\d+)] (説明)
@@ -1732,16 +1706,11 @@ ${confidenceLine}`;
       if (minusMatch) {
         const points = Number.parseInt(minusMatch[1] ?? '0', 10);
         const desc = this.cleanRationaleDesc(minusMatch[2] || '');
-        const item = { points, desc };
-        minus.push(item);
-
-        if (!topMinus || points > topMinus.points) {
-          topMinus = item;
-        }
+        minus.push({ points, desc });
       }
     }
 
-    return { plus, minus, topPlus, topMinus };
+    return { plus, minus };
   }
 
   /**

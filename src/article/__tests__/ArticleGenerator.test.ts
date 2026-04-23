@@ -968,7 +968,7 @@ describe('ArticleGenerator', () => {
     describe('extractScoreRationaleItems', () => {
       it('should return empty results for undefined input', () => {
         const result = (generator as any).extractScoreRationaleItems(undefined);
-        expect(result).toEqual({ plus: [], minus: [], topPlus: null, topMinus: null });
+        expect(result).toEqual({ plus: [], minus: [] });
       });
 
       it('should extract all plus and minus items from string input', () => {
@@ -976,8 +976,6 @@ describe('ArticleGenerator', () => {
         const result = (generator as any).extractScoreRationaleItems(rationale);
         expect(result.plus).toEqual([{ points: 10, desc: 'Plus Item 1' }]);
         expect(result.minus).toEqual([{ points: 5, desc: 'Minus Item 1' }]);
-        expect(result.topPlus).toEqual({ points: 10, desc: 'Plus Item 1' });
-        expect(result.topMinus).toEqual({ points: 5, desc: 'Minus Item 1' });
       });
 
       it('should extract all plus and minus items from array input', () => {
@@ -985,11 +983,9 @@ describe('ArticleGenerator', () => {
         const result = (generator as any).extractScoreRationaleItems(rationale);
         expect(result.plus).toEqual([{ points: 10, desc: 'Plus Item 1' }]);
         expect(result.minus).toEqual([{ points: 5, desc: 'Minus Item 1' }]);
-        expect(result.topPlus).toEqual({ points: 10, desc: 'Plus Item 1' });
-        expect(result.topMinus).toEqual({ points: 5, desc: 'Minus Item 1' });
       });
 
-      it('should select the item with maximum points for top items', () => {
+      it('should extract all items with their respective points', () => {
         const rationale = [
           '[加点: +5] Small Plus',
           '[加点: +20] Big Plus',
@@ -999,8 +995,8 @@ describe('ArticleGenerator', () => {
         const result = (generator as any).extractScoreRationaleItems(rationale);
         expect(result.plus).toHaveLength(2);
         expect(result.minus).toHaveLength(2);
-        expect(result.topPlus).toEqual({ points: 20, desc: 'Big Plus' });
-        expect(result.topMinus).toEqual({ points: 15, desc: 'Big Minus' });
+        expect(result.plus[1]).toEqual({ points: 20, desc: 'Big Plus' });
+        expect(result.minus[1]).toEqual({ points: 15, desc: 'Big Minus' });
       });
 
       it('should clean descriptions (remove HTML, parens)', () => {
@@ -1013,7 +1009,7 @@ describe('ArticleGenerator', () => {
       it('should ignore items that do not match the pattern', () => {
         const rationale = ['Just some text', '[Invalid: 10] No sign'];
         const result = (generator as any).extractScoreRationaleItems(rationale);
-        expect(result).toEqual({ plus: [], minus: [], topPlus: null, topMinus: null });
+        expect(result).toEqual({ plus: [], minus: [] });
       });
     });
 
