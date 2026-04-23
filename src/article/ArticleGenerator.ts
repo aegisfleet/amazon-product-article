@@ -813,10 +813,6 @@ ${investigation.analysis.recommendation.cons.map((con) => `- ${con}`).join('\n')
     const score = investigation.analysis.recommendation.score;
     const scoreText = this.getScoreDescription(score);
 
-    const formattedRationale = investigation.analysis.recommendation.scoreRationale
-      ? this.formatScoreRationaleAsCard(investigation.analysis.recommendation.scoreRationale)
-      : '';
-
     let recommendationMessage: string;
     if (score >= 80) {
       recommendationMessage = '自信を持っておすすめできる商品です。';
@@ -827,10 +823,6 @@ ${investigation.analysis.recommendation.cons.map((con) => `- ${con}`).join('\n')
     }
 
     const content = `## ✅ 購入推奨度
-
-### 総合評価: ${score}点/100点 (${scoreText})
-
-${formattedRationale ? `### 評価の理由\n\n${formattedRationale}\n` : ''}
 
 ### こんな方におすすめ
 
@@ -1607,72 +1599,6 @@ ${confidenceLine}`;
 
     // Markdownのblockquote記法「>」を使用
     return `> ${sanitized}`;
-  }
-
-  /**
-   * scoreRationaleをカード形式のHTMLにフォーマット
-   * 基本点・加点・減点・合計を識別して、絵文字とスタイリングで視覚的に表示
-   */
-  private formatScoreRationaleAsCard(rationale: string | string[]): string {
-    const rawRationale = Array.isArray(rationale) ? rationale.join('\n') : rationale;
-    const lines = rawRationale.split('\n').filter((line) => line.trim());
-    const parts = lines.map((line) => this.convertRationaleLineToHtml(line));
-
-    return `<div class="score-rationale-card">\n${parts.join('\n')}\n</div>`;
-  }
-
-  /**
-   * スコア理由の1行をHTML形式に変換
-   */
-  private convertRationaleLineToHtml(line: string): string {
-    // 基本点: [基本点: 70]
-    const baseMatch = /\[基本点:\s*(\d+)\]/.exec(line);
-    if (baseMatch) {
-      return `<div class="score-base">📊 基本点: <strong>${baseMatch[1]}</strong>点</div>`;
-    }
-
-    // 加点: [任意のラベル: +13] 説明 または (説明)
-    const plusMatch = /\[[^\]]{1,100}:\s*\+(\d+)\]\s*(.*)/.exec(line);
-    if (plusMatch) {
-      const cleanDesc = this.cleanRationaleDesc(plusMatch[2] || '');
-      return `<div class="score-item score-plus">✅ <span class="score-points">+${plusMatch[1]}</span> ${cleanDesc}</div>`;
-    }
-
-    // 減点: [任意のラベル: -5] 説明 または (説明)
-    const minusMatch = /\[[^\]]{1,100}:\s*-(\d+)\]\s*(.*)/.exec(line);
-    if (minusMatch) {
-      const cleanDesc = this.cleanRationaleDesc(minusMatch[2] || '');
-      return `<div class="score-item score-minus">⚠️ <span class="score-points">-${minusMatch[1]}</span> ${cleanDesc}</div>`;
-    }
-
-    // 合計: [合計: 88]
-    const totalMatch = /\[合計:\s*(\d+)\]/.exec(line);
-    if (totalMatch) {
-      return `<div class="score-total">🎯 合計: <strong>${totalMatch[1]}</strong>点</div>`;
-    }
-
-    // 加点・減点 0点（明示的なラベルあり）
-    const zeroAddMatch = /\[加点:\s*0\]\s*(.*)/.exec(line);
-    if (zeroAddMatch) {
-      const cleanDesc = this.cleanRationaleDesc(zeroAddMatch[1] || '');
-      return `<div class="score-item score-plus">✅ <span class="score-points">±0</span> ${cleanDesc}</div>`;
-    }
-
-    const zeroSubMatch = /\[減点:\s*0\]\s*(.*)/.exec(line);
-    if (zeroSubMatch) {
-      const cleanDesc = this.cleanRationaleDesc(zeroSubMatch[1] || '');
-      return `<div class="score-item score-minus">⚠️ <span class="score-points">±0</span> ${cleanDesc}</div>`;
-    }
-
-    // 任意のラベルでゼロ点のパターン
-    const zeroNeutralMatch = /\[[^\]]{1,100}:\s*0\]\s*(.*)/.exec(line);
-    if (zeroNeutralMatch) {
-      const cleanDesc = this.cleanRationaleDesc(zeroNeutralMatch[1] || '');
-      return `<div class="score-item score-neutral">➖ <span class="score-points">±0</span> ${cleanDesc}</div>`;
-    }
-
-    // パースできない行はそのままラップ
-    return `<div class="score-item">${line}</div>`;
   }
 
   /**
