@@ -37,6 +37,8 @@ export interface ArticleMetadata {
     score_rationale: {
       top_plus: { points: number; desc: string } | null;
       top_minus: { points: number; desc: string } | null;
+      plus: { points: number; desc: string }[];
+      minus: { points: number; desc: string }[];
     };
     target_users: string[];
     warnings: string[];

@@ -200,12 +200,16 @@ export class ArticleGenerator {
     }
 
     // Hero Front Matter Data
-    const { topPlus, topMinus } = this.extractTopRationaleItems(investigation.analysis.recommendation.scoreRationale);
+    const { plus, minus, topPlus, topMinus } = this.extractScoreRationaleItems(
+      investigation.analysis.recommendation.scoreRationale,
+    );
 
     metadata.hero = {
       score_rationale: {
         top_plus: topPlus,
         top_minus: topMinus,
+        plus,
+        minus,
       },
       target_users: investigation.analysis.recommendation.targetUsers,
       warnings: investigation.analysis.recommendation.cons || [],
@@ -1311,7 +1315,7 @@ ${recommendationMessage}`;
   ): void {
     if (!rationale) return;
     lines.push('  score_rationale:');
-    const { top_plus, top_minus } = rationale;
+    const { top_plus, top_minus, plus, minus } = rationale;
     if (top_plus) {
       lines.push(
         '    top_plus:',
@@ -1325,6 +1329,22 @@ ${recommendationMessage}`;
         `      points: ${top_minus.points}`,
         `      desc: "${this.escapeForFrontMatter(top_minus.desc)}"`,
       );
+    }
+
+    if (plus && plus.length > 0) {
+      lines.push('    plus:');
+      for (const item of plus) {
+        lines.push('      - points: ' + item.points);
+        lines.push('        desc: "' + this.escapeForFrontMatter(item.desc) + '"');
+      }
+    }
+
+    if (minus && minus.length > 0) {
+      lines.push('    minus:');
+      for (const item of minus) {
+        lines.push('      - points: ' + item.points);
+        lines.push('        desc: "' + this.escapeForFrontMatter(item.desc) + '"');
+      }
     }
   }
 
@@ -1672,50 +1692,56 @@ ${confidenceLine}`;
   }
 
   /**
-   * scoreRationaleから最大加点項目と最大減点項目を抽出
-   * スコアバーに表示するためのサマリー情報
+   * scoreRationaleから加点・減点項目をすべて抽出
+   * 加えて、スコアバーに表示するための最大項目も抽出
    */
-  private extractTopRationaleItems(rationale: string | string[] | undefined): {
+  private extractScoreRationaleItems(rationale: string | string[] | undefined): {
+    plus: { points: number; desc: string }[];
+    minus: { points: number; desc: string }[];
     topPlus: { points: number; desc: string } | null;
     topMinus: { points: number; desc: string } | null;
   } {
     if (!rationale) {
-      return { topPlus: null, topMinus: null };
+      return { plus: [], minus: [], topPlus: null, topMinus: null };
     }
 
     const rawRationale = Array.isArray(rationale) ? rationale.join('\n') : rationale;
     const lines = rawRationale.split('\n').filter((line) => line.trim());
 
+    const plus: { points: number; desc: string }[] = [];
+    const minus: { points: number; desc: string }[] = [];
     let topPlus: { points: number; desc: string } | null = null;
     let topMinus: { points: number; desc: string } | null = null;
 
     for (const line of lines) {
       // 加点: [任意のラベル: +13] (説明)
-      // 「加点」固定ではなく、+数字をトリガーにして加点を識別
       const plusMatch = /\[[^\]]{1,100}:\s*\+(\d+)\]\s*(.*)/.exec(line);
       if (plusMatch) {
         const points = Number.parseInt(plusMatch[1] ?? '0', 10);
         const desc = this.cleanRationaleDesc(plusMatch[2] || '');
+        const item = { points, desc };
+        plus.push(item);
 
         if (!topPlus || points > topPlus.points) {
-          topPlus = { points, desc };
+          topPlus = item;
         }
       }
 
-      // 減点: [任意のラベル: -5] (説明)
-      // 「減点」固定ではなく、-数字をトリガーにして減点を識別
+      // 減点: [任意のラベル: -(\d+)] (説明)
       const minusMatch = /\[[^\]]{1,100}:\s*-(\d+)\]\s*(.*)/.exec(line);
       if (minusMatch) {
         const points = Number.parseInt(minusMatch[1] ?? '0', 10);
         const desc = this.cleanRationaleDesc(minusMatch[2] || '');
+        const item = { points, desc };
+        minus.push(item);
 
         if (!topMinus || points > topMinus.points) {
-          topMinus = { points, desc };
+          topMinus = item;
         }
       }
     }
 
-    return { topPlus, topMinus };
+    return { plus, minus, topPlus, topMinus };
   }
 
   /**
