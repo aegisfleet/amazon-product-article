@@ -373,8 +373,8 @@ export class ArticleGenerator {
     }
 
     sections.push(
-      this.generateRecommendationSection(investigation, template.sections.recommendation),
       this.generatePurchaseSection(product, affiliateTag, investigation),
+      this.generateRecommendationSection(product, investigation, template.sections.recommendation),
     );
 
     // 情報ソース（もしあれば）
@@ -447,7 +447,7 @@ export class ArticleGenerator {
       }
     }
 
-    const content = `## 🛒 商品詳細・購入
+    const content = `## 🛒 商品詳細
 
 <div class="product-comparison">
 
@@ -455,12 +455,10 @@ export class ArticleGenerator {
 | :--- | :--- |
 ${infoRows.join('\n')}
 
-</div>
-
-<a href="${this.escapeHtml(affiliateUrl)}" class="btn-amazon-large" target="_blank" rel="noopener noreferrer">Amazonで詳細を見る</a>`;
+</div>`;
 
     return {
-      title: '商品詳細・購入',
+      title: '商品詳細',
       content,
       wordCount: this.calculateWordCount(content),
       requiredElements: ['商品詳細表', '購入リンク'],
@@ -807,7 +805,14 @@ ${investigation.analysis.recommendation.cons.map((con) => `- ${con}`).join('\n')
   /**
    * 推奨度セクションを生成
    */
-  private generateRecommendationSection(investigation: InvestigationResult, template: TemplateSection): ArticleSection {
+  private generateRecommendationSection(
+    product: Product,
+    investigation: InvestigationResult,
+    template: TemplateSection,
+  ): ArticleSection {
+    const affiliateLink = this.affiliateManager.generateLinkFromProduct(product);
+    const affiliateUrl = affiliateLink.url;
+
     const targetUsers = investigation.analysis.recommendation.targetUsers.map((user) => `- ${user}`).join('\n');
 
     const score = investigation.analysis.recommendation.score;
@@ -822,7 +827,7 @@ ${investigation.analysis.recommendation.cons.map((con) => `- ${con}`).join('\n')
       recommendationMessage = '購入前に他の選択肢も検討することをおすすめします。';
     }
 
-    const content = `## ✅ 購入推奨度
+    const content = `## 🎯 最終結論：この商品は買いか？
 
 ### こんな方におすすめ
 
@@ -836,10 +841,14 @@ ${investigation.analysis.recommendation.cons.map((con) => `- ⚠️ ${con}`).joi
 
 この商品は${scoreText}の評価となりました。特に${investigation.analysis.recommendation.pros[0] || '品質面'}での優位性が認められます。
 
-${recommendationMessage}`;
+${recommendationMessage}
+
+<div class="final-recommendation-action">
+<a href="${this.escapeHtml(affiliateUrl)}" class="btn-amazon-large" target="_blank" rel="noopener noreferrer">Amazonで詳細を見る</a>
+</div>`;
 
     return {
-      title: '✅ 購入推奨度',
+      title: '🎯 最終結論：この商品は買いか？',
       content,
       wordCount: this.calculateWordCount(content),
       requiredElements: template.requiredElements,
