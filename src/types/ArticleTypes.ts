@@ -35,8 +35,6 @@ export interface ArticleMetadata {
   technicalSpecs?: TechnicalSpecs | undefined; // 詳細スペック情報（カテゴリ依存）
   hero?: {
     score_rationale: {
-      top_plus: { points: number; desc: string } | null;
-      top_minus: { points: number; desc: string } | null;
       plus: { points: number; desc: string }[];
       minus: { points: number; desc: string }[];
     };

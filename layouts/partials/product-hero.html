@@ -61,36 +61,18 @@
                 <span class="hero-score-text">{{- $scoreText -}}</span>
             </div>
             <div class="hero-score-rationale">
-                {{- if $hero.score_rationale.plus -}}
                 {{- range $hero.score_rationale.plus -}}
                 <div class="hero-score-item hero-score-plus">
                     <span class="hero-score-item-points">+{{ .points }}</span>
                     <span class="hero-score-item-desc">{{ .desc }}</span>
                 </div>
                 {{- end -}}
-                {{- else -}}
-                {{- with $hero.score_rationale.top_plus -}}
-                <div class="hero-score-item hero-score-plus">
-                    <span class="hero-score-item-points">+{{ .points }}</span>
-                    <span class="hero-score-item-desc">{{ .desc }}</span>
-                </div>
-                {{- end -}}
-                {{- end -}}
 
-                {{- if $hero.score_rationale.minus -}}
                 {{- range $hero.score_rationale.minus -}}
                 <div class="hero-score-item hero-score-minus">
                     <span class="hero-score-item-points">-{{ .points }}</span>
                     <span class="hero-score-item-desc">{{ .desc }}</span>
                 </div>
-                {{- end -}}
-                {{- else -}}
-                {{- with $hero.score_rationale.top_minus -}}
-                <div class="hero-score-item hero-score-minus">
-                    <span class="hero-score-item-points">-{{ .points }}</span>
-                    <span class="hero-score-item-desc">{{ .desc }}</span>
-                </div>
-                {{- end -}}
                 {{- end -}}
             </div>
         </div>
