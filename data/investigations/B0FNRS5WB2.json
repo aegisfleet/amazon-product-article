@@ -28,74 +28,99 @@
       "初めてのノイズキャンセリングイヤホンとして、失敗のない選択をしたいエントリーユーザー",
       "サブ機として、ラフに使える高機能なイヤホンを求めているオーディオファン"
     ],
-    "userStories": [
-      {
-        "userType": "大学生",
-        "scenario": "通学とオンライン授業",
-        "experience": "「初めて自分のお小遣いで買ったノイキャンイヤホンです。電車の中での騒音がスッと消えて、勉強に集中できるようになりました。スマホで音楽を聴いている時にPCでZoom授業が始まっても、勝手に切り替わってくれるのが本当に便利。充電も全然減らなくて、一週間に一回充電すれば十分なのが嬉しいです。」",
-        "sentiment": "positive"
-      },
-      {
-        "userType": "ビジネスマン",
-        "scenario": "カフェでのリモートワーク",
-        "experience": "「仕事用に購入。以前使っていた高いイヤホンを無くしてしまい、つなぎのつもりで買いましたが、これで十分でした。カフェのガヤガヤした音を消してくれるし、マルチポイントで社用携帯の着信も逃さない。5000円でこれが買える時代になったのかと驚きました。」",
-        "sentiment": "positive"
-      }
-    ],
+    "userStories": [],
     "userImpression": "Anker Soundcore P31iは、「価格破壊」とも言える圧倒的なコストパフォーマンスでユーザーの心を掴んでいる。特に評価されているのは、5,000円以下でANCとマルチポイント接続を両立させている点と、驚異的なバッテリー持ちである。音質については「値段の割に良い」「低音が効いている」という声が多く、アプリでのカスタマイズ性も満足度を高めている。一方で、ノイキャン性能への過度な期待は禁物という冷静な意見も見られるが、総合的な満足度は極めて高い。",
     "sources": [
       {
+        "id": "src-1",
         "name": "Amazon Product Page (PA-API)",
         "url": "https://www.amazon.co.jp/dp/B0FNRS5WB2",
-        "credibility": "公式商品情報"
-      },
-      {
-        "name": "Soundcore Official Site Information",
-        "url": null,
-        "credibility": "メーカー公式情報"
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-04-25",
+        "author": "Anker",
+        "conflictOfInterest": "none",
+        "notes": "公式商品情報とレビュー"
       }
     ],
-    "lastInvestigated": "2026-02-01",
+    "lastInvestigated": "2026-04-25",
     "competitiveAnalysis": [
       {
-        "name": "HUAWEI FreeBuds SE 4 ANC",
-        "asin": "B0FLCY8K8K",
-        "priceComparison": "約5,380円で、P31iより数百円高い。",
+        "name": "Anker Soundcore P40i",
+        "asin": "B0CP4RQZ3L",
+        "priceComparison": "対象商品より高価。上位モデルであり、ノイズキャンセリング性能の高さや再生時間の長さに価値を見出せるかどうかが判断基準となる。",
         "featureComparison": [
-          "ANC搭載（最大50dBと謳う）",
-          "バッテリー最大50時間（P31iと同等）",
-          "IP54防塵防滴（P31iはIP55で防水性がやや高い）"
+          "共通点：Anker製の完全ワイヤレスイヤホンであり、マルチポイント接続や専用アプリに対応している点。",
+          "相違点：P40iは周囲の騒音レベルに応じて自動調整する「ウルトラノイズキャンセリング 2.0」を搭載し、最大60時間の再生が可能。一方P31iは通常のアクティブノイズキャンセリングで最大50時間再生となる。"
         ],
         "differentiators": [
-          "スペックは非常に似通っているが、P31iの方がわずかに安く、防水性能で勝る。",
-          "HUAWEIはANC性能の高さをアピールポイントとしている。"
-        ]
-      },
-      {
-        "name": "TOZO NC9",
-        "asin": "B0DK53QZ8J",
-        "priceComparison": "約4,690円で、P31iよりさらに安価。",
-        "featureComparison": [
-          "ANC搭載",
-          "IPX8防水（P31iより高い防水性能）",
-          "最大60時間再生（P31iより長い）"
-        ],
-        "differentiators": [
-          "スペック数値上はTOZOが勝る点（防水、再生時間）が多いが、ブランド信頼性とアプリの完成度でAnker（Soundcore）が優位。",
-          "TOZOは完全防水が必要なユーザー向け。"
+          "Anker Soundcore P31iの利点：価格が安く、コストパフォーマンスに優れている点。基本的なノイズキャンセリング機能があれば十分なユーザーに適している。",
+          "Anker Soundcore P40iの利点：より強力なノイズキャンセリング性能と、ケースをスマホスタンドとして使える独自機能を求めるユーザーに適している。"
         ]
       },
       {
         "name": "Xiaomi REDMI Buds 8 Lite",
         "asin": "B0FRSCXWSV",
-        "priceComparison": "約3,300円と圧倒的に安い。",
+        "priceComparison": "対象商品より安価。非常に安価だが、P31iと同等にマルチポイント接続やノイズキャンセリングを搭載している。",
         "featureComparison": [
-          "ANC搭載（42dB）",
-          "バッテリー最大36時間（P31iより短い）",
-          "マルチポイント対応かは不明確"
+          "共通点：アクティブノイズキャンセリングとマルチポイント接続に対応している点。",
+          "相違点：REDMI Buds 8 Liteは12.4mmの大型ドライバーと最大36時間の再生時間を持ち、P31iは11mmドライバーで最大50時間の再生時間を誇る。"
         ],
         "differentiators": [
-          "価格最優先ならXiaomiだが、バッテリー持ちやマルチポイントなどの使い勝手を含めた総合力ではP31iが勝る。"
+          "Anker Soundcore P31iの利点：バッテリー再生時間が長く、頻繁な充電の手間を減らせる点。Ankerのオーディオ技術による重低音の質。",
+          "Xiaomi REDMI Buds 8 Liteの利点：圧倒的な低価格でありながらノイズキャンセリングやマルチポイント接続を体験できる点。予算を最小限に抑えたい場合に適している。"
+        ]
+      },
+      {
+        "name": "JBL WAVE BEAM 2",
+        "asin": "B0DHCBCTGM",
+        "priceComparison": "対象商品よりやや高価。オーディオブランドの製品であり、音質やアプリのカスタマイズ性に価値がある。",
+        "featureComparison": [
+          "共通点：アクティブノイズキャンセリングとマルチポイント接続に対応している点。",
+          "相違点：JBL WAVE BEAM 2はIP54防水防塵で最大40時間再生、独自のJBL Headphonesアプリによる細かなカスタマイズが可能。P31iはIP55防塵防水で最大50時間再生。"
+        ],
+        "differentiators": [
+          "Anker Soundcore P31iの利点：価格がやや安く、バッテリー再生時間が長い点。",
+          "JBL WAVE BEAM 2の利点：JBLブランドならではの音質調整機能や、装着感にこだわったショートスティック型デザインを好むユーザーに適している。"
+        ]
+      },
+      {
+        "name": "ソニー SONY WF-C710N",
+        "asin": "B0F3XFNHCW",
+        "priceComparison": "対象商品より高価。上位ブランドの高機能モデルであり、音質や通話品質に確かな性能を求める場合の選択肢。",
+        "featureComparison": [
+          "共通点：ノイズキャンセリング機能、マルチポイント接続、アプリ対応を備えている点。",
+          "相違点：WF-C710NはAI技術を活用したクリアな通話品質や、DSEEによる圧縮音源の高音質化機能を備えるが、バッテリーは最大21時間再生。P31iは音質補正機能は控えめだが最大50時間再生が可能。"
+        ],
+        "differentiators": [
+          "Anker Soundcore P31iの利点：圧倒的に安価でありながら日常使いに十分な機能を備え、バッテリー持ちが非常に良い点。",
+          "ソニー SONY WF-C710Nの利点：ソニー独自の音響技術による高音質や、通話時のAIノイズリダクションなど、基本性能の高さを重視するユーザーに適している。"
+        ]
+      },
+      {
+        "name": "Generic T3 (Bluetooth 6.0)",
+        "asin": "B0GR4ZSDKH",
+        "priceComparison": "対象商品より安価。格安帯の製品であり、ブランド力よりも価格の安さを最優先する場合の選択肢となる。",
+        "featureComparison": [
+          "共通点：最新のBluetooth規格(6.0/6.1)を謳っている点。",
+          "相違点：Generic T3はIPX6防水とケースのLED残量表示を備え、最大24時間再生。P31iはマルチポイント接続に対応し、最大50時間再生と専用アプリによるカスタマイズが可能。"
+        ],
+        "differentiators": [
+          "Anker Soundcore P31iの利点：マルチポイント接続や専用アプリによるカスタマイズ性、Ankerブランドの信頼性と充実したサポート体制がある点。",
+          "Generic T3の利点：とにかく安価にワイヤレスイヤホンを入手したい場合や、ケースのLED残量表示など視覚的なわかりやすさを重視する場合に適している。"
+        ]
+      },
+      {
+        "name": "ソニー SONY WF-C510",
+        "asin": "B0DDKHF9XY",
+        "priceComparison": "対象商品より高価。ソニー製のエントリーモデルであり、音質を重視するユーザーの比較対象となる。",
+        "featureComparison": [
+          "共通点：マルチポイント接続、アプリによるカスタマイズ、IPX4/IP55クラスの防滴/防水性能を持つ点。",
+          "相違点：WF-C510はノイズキャンセリング機能を搭載せず（外音取り込みのみ）、片耳4.6gの超小型軽量設計とDSEE高音質化を備える。P31iはアクティブノイズキャンセリングを搭載している。"
+        ],
+        "differentiators": [
+          "Anker Soundcore P31iの利点：この価格帯でアクティブノイズキャンセリングを搭載しており、騒音環境下での没入感が高い点。",
+          "ソニー SONY WF-C510の利点：ノイズキャンセリングは不要だが、ソニーのDSEEによる高音質と、長時間装着しても疲れにくい超小型軽量デザインを重視するユーザーに適している。"
         ]
       }
     ],
@@ -120,21 +145,35 @@
     },
     "technicalSpecs": {
       "driver": "11mmダイナミックドライバー",
-      "codec": ["SBC", "AAC"],
+      "codec": [
+        "SBC",
+        "AAC"
+      ],
       "battery": {
         "earbud": "最大10時間",
         "withCase": "最大50時間",
         "charging": "USB-C急速充電 (10分充電で約3.5時間再生)"
       },
-      "connectivity": ["Bluetooth 6.1", "マルチポイント接続"],
+      "connectivity": [
+        "Bluetooth 6.1",
+        "マルチポイント接続"
+      ],
       "noiseCancel": "アクティブノイズキャンセリング / 外音取り込み",
       "waterResistance": "IP55 (防塵・防水)",
-      "features": ["BassUp技術", "AIノイズリダクション通話", "Soundcoreアプリ対応", "ゲーミングモード"],
+      "features": [
+        "BassUp技術",
+        "AIノイズリダクション通話",
+        "Soundcoreアプリ対応",
+        "ゲーミングモード"
+      ],
       "dimensions": {
-         "case": "約 57 x 57 x 29 mm (インチ換算)"
+        "height": "29.3mm",
+        "width": "57.5mm",
+        "depth": "57.5mm"
       },
       "weight": null,
       "color": "ブラック"
-    }
+    },
+    "claims": []
   }
 }
