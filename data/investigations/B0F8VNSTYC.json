@@ -1,159 +1,178 @@
 {
   "analysis": {
-    "productName": "Anker Prime ドッキングステーション (14-in-1, Triple Display, DisplayLink)",
+    "productName": "Anker Prime ドッキングステーション (14-in-1)",
     "parentAsin": "B0F8VNSTYC",
-    "productDescription": "最大140WのホストPCへの給電能力と、DisplayLink技術による最大3画面への高解像度出力を両立した、クリエイターやパワーユーザー向けの多機能ドッキングステーションです。",
+    "productDescription": "最大8K出力・3画面同時出力に対応し、ディスプレイ搭載で状況確認が可能な高性能14-in-1ドッキングステーション。",
     "productUsage": [
-      "デスク上の複数の周辺機器（モニター、キーボード、マウス、外部ストレージなど）をUSB-Cケーブル1本でノートPCに接続する",
-      "DisplayLinkアプリを利用し、M1/M2/M3搭載MacBookでも最大3台の外部モニターに画面を拡張する",
-      "最大140Wの出力で、16インチMacBook Proなどの高性能ノートPCを急速充電する",
-      "本体搭載のスマートディスプレイで各ポートの接続状況や出力情報をリアルタイムに確認する",
-      "イーサネットポートで安定した有線ネットワークに接続する"
+      "ノートパソコンへの複数モニター接続（最大3画面）",
+      "デスク周りのケーブル整理と機器の一括接続",
+      "PCへの給電と各種周辺機器の同時使用"
     ],
     "positivePoints": [
-      "14もの豊富なポートを備え、拡張性が非常に高い",
-      "DisplayLink対応により、M1/M2/M3搭載MacBookでも最大3画面の外部ディスプレイ出力が可能",
-      "最大8K(単一ディスプレイ)または4K(複数ディスプレイ)という高い映像出力性能",
-      "最大140Wという強力なPD給電能力で、高性能なノートPCも余裕をもって充電できる",
-      "GaN技術とACアダプタ内蔵により、デスク周りがスッキリする",
-      "本体に搭載されたスマートディスプレイで、各ポートの動作状況を視覚的に確認できる",
-      "ActiveShield 3.0と冷却ファンによる温度管理システム搭載"
+      "最大8K出力または最大4Kでの3画面同時出力に対応し、高解像度環境を構築可能",
+      "14のポート（HDMI×2、DisplayPort×1、USB-C/A、イーサネット等）を備え拡張性が非常に高い",
+      "GaN搭載ACアダプタ内蔵でデスク周りがスッキリし、最大140Wのアップストリーム給電に対応",
+      "本体ディスプレイで充電状況や接続モニター情報の確認ができ、時計表示なども可能"
     ],
     "negativePoints": [
-      "約3.2万円という価格は、安価な競合製品（1.5万円前後）と比較すると高額",
-      "外部ディスプレイ出力にはDisplayLinkアプリのインストールが必須",
-      "Thunderbolt非対応のため、データ転送速度は最大10Gbpsに制限される",
-      "国内でのユーザーレビュー数がまだ発展途上"
+      "高機能・高性能であるため、価格が約4万円と高価である",
+      "外部ディスプレイ出力にDisplayLinkアプリのダウンロードが必要であり、導入の手間がある"
     ],
     "useCases": [
-      "多数の高解像度モニターや周辺機器を駆使するクリエイターやデイトレーダーの作業環境",
-      "MacBookの画面出力制限に悩むユーザーのマルチモニターデスクの構築",
-      "フリーアドレスのオフィスで、自席に戻った際にケーブル1本で素早く作業環境を再現するシーン",
-      "在宅勤務で、会社のノートPCと私用のPCを切り替えて使う際のハブとして"
+      "ゲーマーやクリエイターによる複数モニター環境の構築",
+      "MacBookやWindowsノートPCを中心とした本格的なデスクトップ環境の構築",
+      "ケーブル1本でのノートPC充電と周辺機器の一括接続"
     ],
-    "userStories": [
-      {
-        "userType": "40代男性、Webデベロッパー（MacBook Pro M2利用）",
-        "scenario": "在宅勤務環境のアップグレード",
-        "experience": "これまでMacBookの画面出力制限で外部モニターは1台しか使えず、作業効率に限界を感じていた。このドッキングステーションを導入したことで、コーディング用の縦置きモニター、プレビュー用の横置き4Kモニター、コミュニケーションツール用のサブモニターという3画面環境を実現。仮想デスクトップを切り替える手間が激減し、開発に集中できる時間が増えた。価格は高かったが、生産性向上を考えれば十分元が取れる投資だったと感じている。(推測)",
-        "sentiment": "positive"
-      },
-      {
-        "userType": "30代女性、映像編集者",
-        "scenario": "高解像度映像の編集と書き出し",
-        "experience": "8K映像の編集を行うため、高リフレッシュレートのモニターへの安定した出力が必要だった。この商品はDisplayPortとHDMIの両方を備え、8K出力にも対応している点が決め手となった。ACアダプタが内蔵されているため、足元のコンセント周りがスッキリしたのも嬉しい誤算。ただ、初期設定でDisplayLinkドライバのインストールと設定に少し戸惑った。一度設定してしまえば快適そのもの。(推測)",
-        "sentiment": "mixed"
-      },
-      {
-        "userType": "50代男性、企業のIT管理者",
-        "scenario": "フリーアドレスオフィスの設備として",
-        "experience": "社員がどのデスクに座っても同じ作業環境を再現できるよう、各デスクにこのドッキングステーションを設置。モニター、有線LAN、キーボード、マウスをすべて接続しておけば、社員はUSB-Cケーブルを1本PCに挿すだけで業務を開始できる。多様なノートPC（Windows/Mac）に対応できるDisplayLink採用モデルである点が選定のポイントだった。(推測)",
-        "sentiment": "positive"
-      }
-    ],
-    "userImpression": "本商品は、特に複数の高解像度モニターを使用したいクリエイターや開発者、またMacBookの外部ディスプレイ制限に悩むユーザーから高く評価される。14もの豊富なポート、140Wという強力な給電能力、そしてスマートディスプレイという付加価値は、デスク上のあらゆる機器を一つにまとめたいというニーズに応える。価格は約3.2万円と安くはないが、ACアダプタ内蔵やディスプレイ搭載などのユニークな機能が差別化要因となっている。DisplayLinkアプリの導入が必要な点を許容できるかがポイント。",
+    "userStories": [],
+    "userImpression": "価格は高いものの、14-in-1の圧倒的な拡張性と最大3画面出力、そして本体ディスプレイによる情報確認機能を備え、デスク環境を劇的に改善する高性能ドッキングステーションとして評価できる。",
     "sources": [
       {
-        "name": "Amazon PA-API 商品情報",
-        "url": null,
-        "credibility": "公式情報"
-      },
-      {
-        "name": "Macworld Review (参考)",
-        "url": "https://www.macworld.com/article/2992468/anker-prime-14-in-1-displaylink-usb-c-dock-review.html",
-        "credibility": "高い"
+        "id": "src-1",
+        "name": "Amazon公式製品ページ",
+        "url": "https://www.amazon.co.jp/dp/B0F8VNSTYC",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-04-25",
+        "author": "AnkerDirect",
+        "conflictOfInterest": "none",
+        "notes": "製品の仕様、特徴、価格情報を確認"
       }
     ],
-    "lastInvestigated": "2026-02-01",
+    "claims": [
+      {
+        "claim": "最大8Kでの1画面出力、または最大4Kでの3画面同時出力に対応する",
+        "category": "performance",
+        "confidence": "high",
+        "supportingSourceIds": ["src-1"],
+        "crossChecked": false,
+        "notes": "公式ページの製品特徴に記載あり"
+      },
+      {
+        "claim": "最大140WのUSB PD給電に対応し、ノートPCを急速充電可能",
+        "category": "performance",
+        "confidence": "high",
+        "supportingSourceIds": ["src-1"],
+        "crossChecked": false,
+        "notes": "公式ページの製品仕様に記載あり"
+      }
+    ],
+    "lastInvestigated": "2026-04-25",
     "competitiveAnalysis": [
       {
-        "name": "UGREEN Revodok Pro 314",
+        "name": "UGREEN Revodok Pro 314 USB-C ドッキングステーション 14-in-1",
         "asin": "B0DYTVVLH4",
-        "priceComparison": "約14,000円と、調査対象商品（約32,000円）の半額以下。",
+        "priceComparison": "本製品（Anker Prime）よりも大幅に安価（約1.2万円）であるが、最大出力解像度や給電能力（最大100W）に差があり、本体ディスプレイ等の独自機能もない。",
         "featureComparison": [
-          "14-in-1でポート数は同等。",
-          "3画面出力対応だが、最大出力解像度は調査対象商品（8K対応）に劣る場合がある（UGREENはDP 8K対応を謳うが同時出力時の制限に注意が必要）。",
-          "PD給電は100Wで、調査対象商品（140W）より低い。",
-          "ACアダプタ内蔵ではない（別途電源が必要な場合が多い）。"
+          "共通点：14-in-1の多ポート構成、3画面出力対応",
+          "相違点：Ankerは最大8K出力・140W給電対応・本体ディスプレイ搭載・ACアダプタ内蔵。UGREENは最大100W給電。"
         ],
         "differentiators": [
-          "圧倒的なコストパフォーマンス。",
-          "調査対象商品はACアダプタ内蔵、スマートディスプレイ、140W出力という付加価値で勝負。"
+          "Anker Prime ドッキングステーション (14-in-1)の利点：圧倒的な給電能力（140W）、8K対応の高解像度出力、本体ディスプレイによる稼働状況の可視化",
+          "UGREEN Revodok Pro 314の利点：14-in-1かつ3画面対応でありながら、1万円台前半という非常に高いコストパフォーマンス"
         ]
       },
       {
-        "name": "Anker PowerExpand Elite 13-in-1",
-        "asin": "B087JKDD4M",
-        "priceComparison": "約26,500円と、調査対象商品より安い。",
+        "name": "Anker Prime ドッキングステーション (14-in-1, Dual Display, 160W)",
+        "asin": "B0D31FK2W6",
+        "priceComparison": "本製品（Anker Prime Triple Display）の方が1万円高い。出力画面数やディスプレイ搭載などの付加機能による価格差。",
         "featureComparison": [
-          "Thunderbolt 3対応で最大40Gbpsのデータ転送が可能。",
-          "映像出力は最大2画面（4K/60Hz）。",
-          "PD給電能力は85W。"
+          "共通点：Anker Primeシリーズの14-in-1ドッキングステーション、GaN搭載ACアダプタ内蔵",
+          "相違点：対象製品（B0F8VNSTYC）は3画面出力・最大8K対応・本体ディスプレイ搭載。比較製品はデュアルディスプレイ出力・最大4K対応。"
         ],
         "differentiators": [
-          "高速データ転送が必要ならThunderbolt対応のこちら。",
-          "3画面出力や140W給電が必要なら調査対象商品（Prime）が優位。"
+          "Anker Prime ドッキングステーション (14-in-1)の利点：3画面同時出力が必要な場合や、より高解像度な8K環境、本体での状況確認を求める場合に最適",
+          "Anker Prime ドッキングステーション (14-in-1, Dual Display)の利点：デュアルディスプレイで十分な場合、約1万円安く同等のポート拡張とスッキリしたデスク環境を構築できる"
         ]
       },
       {
-        "name": "Plugable 14-in-1 USB-C Dock",
-        "asin": "B09TSQYGKS",
-        "priceComparison": "約36,500円と、調査対象商品より高い。",
+        "name": "UGREEN Maxidok 10-in-1 Thunderbolt 5 ドッキングステーション",
+        "asin": "B0FRLVWT2D",
+        "priceComparison": "参考価格は同程度（約4.2万円）だが、実売価格はUGREENの方が安い。Thunderbolt 5対応という点で規格の方向性が異なる。",
         "featureComparison": [
-          "DisplayLink対応の老舗ブランド。",
-          "100W充電。",
-          "4画面出力対応モデルもあるが、本モデルは価格帯が近い競合。"
+          "共通点：ハイエンドなドッキングステーション、8K出力対応、3画面出力対応",
+          "相違点：Ankerは14-in-1でDisplayLinkによる汎用的な出力・ディスプレイ搭載。UGREENは10-in-1だがThunderbolt 5対応で120Gbpsの超高速転送に対応。"
         ],
         "differentiators": [
-          "調査対象商品の方が安価で、かつ140W給電やスマートディスプレイという独自機能を持つ。"
+          "Anker Prime ドッキングステーション (14-in-1)の利点：ポート数の多さ、DisplayLinkによる柔軟な出力環境構築、本体ディスプレイの利便性",
+          "UGREEN Maxidok 10-in-1の利点：Thunderbolt 5による圧倒的な転送速度（120Gbps）を活かした超高速データ通信"
+        ]
+      },
+      {
+        "name": "StarTech USB-Cドッキングステーション 4K 3画面 199N-USBC-DOCK",
+        "asin": "B0GMV5QQPP",
+        "priceComparison": "本製品（Anker Prime）の方が約1.2万円高いが、給電能力や最大解像度、付加機能でAnkerが上回る。",
+        "featureComparison": [
+          "共通点：3画面出力対応、USB-C接続のドッキングステーション",
+          "相違点：Ankerは最大8K出力、140W給電、ディスプレイ搭載。StarTechは最大4K出力、100W給電。"
+        ],
+        "differentiators": [
+          "Anker Prime ドッキングステーション (14-in-1)の利点：より高い給電能力と8K対応、スマートなACアダプタ内蔵設計",
+          "StarTech 199N-USBC-DOCKの利点：法人向けでも実績のあるブランドによる手堅い3画面出力環境をやや安価に導入可能"
+        ]
+      },
+      {
+        "name": "UGREEN Revodok Maxidok Thunderbolt5 Mac mini ドッキングステーション",
+        "asin": "B0FGCVR5WZ",
+        "priceComparison": "本製品（Anker Prime）の方が約5,000円高い。用途や設置形態が大きく異なる。",
+        "featureComparison": [
+          "共通点：ハイエンド向け、8K対応",
+          "相違点：Ankerは汎用的な14-in-1。UGREENはMac miniの設置に特化したデザインで、M.2 SSDの増設に対応している点。"
+        ],
+        "differentiators": [
+          "Anker Prime ドッキングステーション (14-in-1)の利点：汎用性の高いデザインと豊富なポート構成",
+          "UGREEN Revodok Maxidok Thunderbolt5の利点：Mac miniと一体化するデザインで、かつSSDストレージの拡張が可能"
+        ]
+      },
+      {
+        "name": "UGREEN 7 in 1 Revodok Pro USB C ドッキングステーション",
+        "asin": "B0D1XSKZRJ",
+        "priceComparison": "本製品（Anker Prime）の方が圧倒的に高価。機能や用途のターゲットが異なる。",
+        "featureComparison": [
+          "共通点：USB-C接続によるポート拡張",
+          "相違点：Ankerは据え置き型のハイエンド14-in-1（ACアダプタ駆動）。UGREENは持ち運びも可能なコンパクトな7-in-1（バスパワー/PDパススルー駆動）。"
+        ],
+        "differentiators": [
+          "Anker Prime ドッキングステーション (14-in-1)の利点：固定のデスク環境で、圧倒的なポート数と高性能な映像出力を求める場合に最適",
+          "UGREEN 7 in 1 Revodok Proの利点：持ち運び用途や、必要最低限のポート拡張を安価に済ませたい場合に最適"
         ]
       }
     ],
     "recommendation": {
       "targetUsers": [
-        "M1/M2/M3チップ搭載のMacBookで3画面以上の外部ディスプレイを使いたいクリエイター",
-        "16インチMacBook Proなど、100Wを超える高い給電能力を必要とするノートPCユーザー",
-        "デスク上のACアダプタを減らし、スマートな環境を構築したいユーザー",
-        "ポートの使用状況を可視化したいガジェット好き"
+        "複数台のモニター（最大3画面）を利用するクリエイターやエンジニア",
+        "デスク上のケーブルをスッキリさせたい本格的なPCユーザー",
+        "最大140Wの強力な給電能力を必要とするハイスペックノートPCユーザー"
       ],
       "pros": [
-        "DisplayLinkによるMacでの3画面出力対応",
-        "最大140Wの超強力なPD給電能力",
-        "ACアダプタ内蔵による配線のスッキリさ",
-        "スマートディスプレイによる状態確認の利便性"
+        "最大3画面の同時出力に対応し、作業領域を大幅に拡張可能",
+        "ACアダプタ内蔵により、デスク周りが非常にスッキリする",
+        "本体ディスプレイで充電状態等を視覚的に確認できる"
       ],
       "cons": [
-        "3万円を超える価格設定",
-        "DisplayLinkソフトウェアのインストールが必要",
-        "Thunderbolt非対応（データ転送速度重視なら不向き）"
+        "約4万円という高価格設定",
+        "画面出力には専用アプリ(DisplayLink)の導入が必須"
       ],
-      "score": 92,
-      "scoreRationale": "[基本点: 70]\n[加点: +9] (14ポート、3画面出力、140W PD、スマートディスプレイなど機能は最高レベル)\n[加点: +5] (Ankerブランドの信頼性、ACアダプタ内蔵、GaN採用)\n[加点: +5] (ユーザー満足度・期待度は高い)\n[加点: +8] (スマートディスプレイと140W給電は独自の強み)\n[減点: -5] (約3.2万円はUGREEN等の廉価な競合に比べると高い)\n[合計: 92]"
+      "score": 85,
+      "scoreRationale": "[基本点: 70]\n[加点: +8] (14-in-1の圧倒的な拡張性と、最大8K対応・3画面出力といった高い性能)\n[加点: +7] (最大140WのPD給電対応とACアダプタ内蔵によるスマートな設計)\n[加点: +5] (本体ディスプレイ搭載という他社にない独自の利便性・先進性)\n[減点: -5] (約4万円という高価格によるコストパフォーマンスの低さ)\n[合計: 85]"
     },
     "technicalSpecs": {
-      "dimensions": null,
-      "weight": null,
-      "ports": {
-        "total": 14,
-        "video": ["HDMI 2.1 x 2 (Up to 4K@60Hz)", "DisplayPort 1.4 x 1 (Up to 8K@60Hz)"],
-        "usb": [
-          "USB-C (10Gbps, 100W) x 2",
-          "USB-C (5Gbps, 100W) x 1",
-          "USB-A (5Gbps, 7.5W) x 2",
-          "USB-A (480Mbps) x 1",
-          "USB-C Upstream (140W Output)"
-        ],
-        "ethernet": "RJ45 (2.5Gbps)",
-        "audio": "3.5mm Audio Jack (In/Out)",
-        "cardReader": "SD / microSD (UHS-I)"
+      "dimensions": {
+        "height": "145mm",
+        "width": "65mm",
+        "depth": "65mm"
       },
-      "display": "Smart Display (Status Monitor)",
-      "power": {
-        "acInput": "Built-in AC Adapter",
-        "pdOutput": "Max 140W"
-      },
-      "compatibility": ["Windows 10/11", "macOS 12 or later"],
-      "other": ["DisplayLink DL-7400 Chipset", "GaN Technology", "ActiveShield 3.0"]
+      "weight": "800g",
+      "capacity": "14ポート",
+      "material": "記載なし",
+      "origin": "記載なし",
+      "other": [
+        "出力解像度: 最大8K(1画面時) / 最大4K(3画面同時出力時)",
+        "給電能力: USB PD 最大140W出力対応 (アップストリーム)",
+        "転送速度: 最大10Gbps高速データ転送",
+        "電源: GaN搭載 ACアダプタ内蔵",
+        "冷却機能: 常時温度管理システムActiveShield 3.0および冷却ファン内蔵",
+        "要件: DisplayLinkアプリのダウンロードが必要"
+      ]
     }
   }
 }
