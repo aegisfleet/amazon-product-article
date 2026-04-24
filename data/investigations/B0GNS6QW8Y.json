@@ -1,0 +1,182 @@
+{
+  "analysis": {
+    "productName": "富士通 タブレットPC 10.1型 ARROWS Tab Q508",
+    "parentAsin": "B0GNS6QW8Y",
+    "productDescription": "IPX5/8防水・防塵設計を備えた10.1型WUXGA(1920×1200)タブレットの整備済み品。Atomプロセッサ、4GBメモリ、128GBのSSDを搭載し、持ち運びに適した約600gの軽量ボディが特徴です。",
+    "productUsage": [
+      "ビジネス用途のポータブル作業端末",
+      "現場作業用防塵・防水タブレット",
+      "教育現場での学習用端末"
+    ],
+    "positivePoints": [
+      "IPX5/8およびIP6Xに対応した優れた防水防塵性能と耐衝撃設計",
+      "高精細な10.1型WUXGA(1920×1200)IPS Alpha液晶ディスプレイ",
+      "約600gの軽量設計で日常の持ち運びに便利",
+      "専門技術者によるクリーニングと検査を経た整備済み品で最新OS(Windows 11)搭載",
+      "1万円を切る低価格でコストパフォーマンスに優れる"
+    ],
+    "negativePoints": [
+      "Atom x7-Z8シリーズCPUは現在の基準では処理性能が控えめ",
+      "本モデル(B0GNS6QW8Y)はタッチペン・キーボードが付属しない",
+      "中古(整備済み品)のためバッテリーの劣化具合には個体差がある"
+    ],
+    "useCases": [
+      "粉塵や水滴が懸念される工事現場や工場での図面・マニュアル閲覧",
+      "営業先への持ち運びや外出先での簡単な資料確認",
+      "子供の学習用・プログラミング入門用の安価な端末としての利用"
+    ],
+    "userStories": [],
+    "userImpression": "1万円を切る価格帯ながら防水・防塵設計とWUXGAディスプレイを備えており、現場作業や学習用など、用途を限定すれば非常にコストパフォーマンスが高いと評価できます。一方でCPUの性能は控えめであり、重い作業には向かないためサブ機としての運用が適しています。",
+    "sources": [
+      {
+        "id": "src-amazon",
+        "name": "Amazon.co.jp 商品ページ",
+        "url": "https://www.amazon.co.jp/dp/B0GNS6QW8Y",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2024-04-24",
+        "author": "HCMA(販売元)",
+        "conflictOfInterest": "disclosed",
+        "notes": "製品仕様、価格(9999円)、キーボード・タッチペン非搭載であること、防水防塵性能(IPX5/8, IP6X)を確認。"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "IPX5/8およびIP6Xに対応した優れた防水防塵性能",
+        "category": "durability",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-amazon"
+        ],
+        "crossChecked": false,
+        "notes": "商品詳細ページの特徴欄に明記。"
+      },
+      {
+        "claim": "約600gの軽量設計",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-amazon"
+        ],
+        "crossChecked": false,
+        "notes": "商品詳細ページの特徴欄に明記。"
+      }
+    ],
+    "lastInvestigated": "2026-04-24",
+    "competitiveAnalysis": [
+      {
+        "name": "富士通 タブレットPC ARROWS Tab Q508/SE (SOUSIA販売モデル)",
+        "asin": "B0DSRLTG3M",
+        "priceComparison": "対象商品と同等の価格帯であり、スペックもほぼ共通している。",
+        "featureComparison": [
+          "共通点：10.1型WUXGA液晶、Atomプロセッサ、4GBメモリ、約128GBのストレージ、防水防塵対応",
+          "相違点：販売元による整備・保証内容の違い。付属品の有無に差異がある可能性がある。"
+        ],
+        "differentiators": [
+          "富士通 タブレットPC 10.1型 ARROWS Tab Q508の利点：Amazon.co.jp限定のHCMAによる整備済み品で180日保証付き",
+          "富士通 タブレットPC ARROWS Tab Q508/SE (SOUSIA販売モデル)の利点：価格がわずかに安い場合がある"
+        ]
+      },
+      {
+        "name": "富士通 タブレットPC ARROWS Tab Q508 (kawase販売・タッチペン付属モデル)",
+        "asin": "B0GS53Z6L5",
+        "priceComparison": "タッチペン付属等の違いにより価格が異なる可能性がある。",
+        "featureComparison": [
+          "共通点：10.1型WUXGA液晶、Atomプロセッサ、4GBメモリ、128GBのストレージ",
+          "相違点：対象商品はタッチペン非搭載だが、比較対象はタッチペンが付属しているモデル。"
+        ],
+        "differentiators": [
+          "富士通 タブレットPC 10.1型 ARROWS Tab Q508の利点：付属品を省くことで最安クラスの価格を実現している",
+          "富士通 タブレットPC ARROWS Tab Q508 (kawase販売・タッチペン付属モデル)の利点：購入後すぐにタッチ操作を活用できる"
+        ]
+      },
+      {
+        "name": "富士通 タブレットPC ARROWS Tab Q508 (AIAcross販売・Celeron搭載モデル)",
+        "asin": "B0GGMJ9BF6",
+        "priceComparison": "上位CPU(Celeron N4000)とキーボードが付属するため、対象商品より高い価格となっている。処理性能とキーボード入力が必要なユーザー向け。",
+        "featureComparison": [
+          "共通点：10.1型WUXGA液晶、4GBメモリ、128GBのストレージ",
+          "相違点：CPUがCeleron N4000であり、キーボードが付属している点。"
+        ],
+        "differentiators": [
+          "富士通 タブレットPC 10.1型 ARROWS Tab Q508の利点：圧倒的に安価であり、キーボードが不要な用途（ビューワーなど）に最適",
+          "富士通 タブレットPC ARROWS Tab Q508 (AIAcross販売・Celeron搭載モデル)の利点：Celeronによる処理性能の向上と、キーボードによるノートPCライクな入力作業が可能"
+        ]
+      },
+      {
+        "name": "富士通 タブレットPC ARROWS Tab V727",
+        "asin": "B0GRTZH5YZ",
+        "priceComparison": "対象商品よりやや高い価格帯。高性能CPUと大画面を必要とする用途向け。",
+        "featureComparison": [
+          "共通点：富士通製のWindowsタブレット、4GBメモリ、128GB SSD",
+          "相違点：画面サイズが約31.2cm(約31.2cm相当)と大きく、CPUがCore M3と高性能。LTE対応。"
+        ],
+        "differentiators": [
+          "富士通 タブレットPC 10.1型 ARROWS Tab Q508の利点：10.1型で約600gと軽量・コンパクトであり、持ち運びに有利",
+          "富士通 タブレットPC ARROWS Tab V727の利点：Core M3搭載で処理性能が高く、大画面で作業効率が良い"
+        ]
+      },
+      {
+        "name": "富士通 タブレットPC ARROWS Tab Q508 (kawase販売・SSD64GBモデル)",
+        "asin": "B0GC2XZ3W9",
+        "priceComparison": "ストレージ容量が半分の64GBであるため、価格設定に差がある。",
+        "featureComparison": [
+          "共通点：10.1型WUXGA液晶、Atomプロセッサ、4GBメモリ",
+          "相違点：対象商品のストレージが128GBであるのに対し、比較対象は64GB。"
+        ],
+        "differentiators": [
+          "富士通 タブレットPC 10.1型 ARROWS Tab Q508の利点：128GBのストレージがあり、Windowsアップデートやアプリのインストールに余裕がある",
+          "富士通 タブレットPC ARROWS Tab Q508 (kawase販売・SSD64GBモデル)の利点：用途を絞れば実用可能で、より安価に入手できる可能性がある"
+        ]
+      },
+      {
+        "name": "富士通 タブレットPC ARROWS Tab Q508 (不明モデル)",
+        "asin": "B0FPKBR6MS",
+        "priceComparison": "同シリーズの別モデルや別販売元によるもの。",
+        "featureComparison": [
+          "共通点：10.1型タブレット",
+          "相違点：付属品、販売元、保証内容の違い。"
+        ],
+        "differentiators": [
+          "富士通 タブレットPC 10.1型 ARROWS Tab Q508の利点：HCMAによる整備とAmazon.co.jp限定のサポートが期待できる",
+          "富士通 タブレットPC ARROWS Tab Q508 (不明モデル)の利点：価格やコンディションによる"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "現場作業などで水濡れ・粉塵リスクがある環境で使う人",
+        "WebブラウジングやPDF等の資料閲覧など、軽作業メインの安価なサブ端末を探している人",
+        "キーボード不要でタブレット単体として使いたい人"
+      ],
+      "pros": [
+        "IPX5/8、IP6Xの防水・防塵設計でタフに使える",
+        "1920×1200の高精細ディスプレイ搭載",
+        "1万円未満でWindows 11 Pro環境が手に入る高いコストパフォーマンス"
+      ],
+      "cons": [
+        "Atom CPUと4GBメモリのため、ブラウザのタブを多数開くなどの重い処理には不向き",
+        "キーボードとタッチペンが付属しないため、必要な場合は別途調達が必要"
+      ],
+      "score": 75,
+      "scoreRationale": "[基本点: 70]\n[加点: +5] 1万円未満という圧倒的なコストパフォーマンス\n[加点: +5] Windows 11 Pro搭載の利便性\n[加点: +5] IPX5/8・IP6Xの防水防塵性能により、現場や屋外など幅広いシーンで使えるタフさ\n[減点: -10] CPUがAtomであり、メモリも4GBのため、現代のPCとしては処理性能が低い\n[合計: 75]"
+    },
+    "technicalSpecs": {
+      "dimensions": {
+        "height": "不明",
+        "width": "不明",
+        "depth": "不明"
+      },
+      "weight": "約600g",
+      "capacity": "128GB (SSD), 4GB (メモリ)",
+      "material": "不明",
+      "origin": "不明",
+      "display": "10.1型 IPS Alpha液晶 WUXGA(1920×1200)",
+      "os": "Windows 11 Pro",
+      "cpu": "Atom(TM) x7-Z8シリーズ",
+      "durability": "防水(IPX5/8)、防塵(IP6X)、耐衝撃設計",
+      "connectivity": "Wi-Fi, Bluetooth, USBポート, Type-C",
+      "accessories": "キーボード・タッチペン非搭載"
+    }
+  }
+}
