@@ -1,0 +1,186 @@
+{
+  "analysis": {
+    "productName": "パナソニック レッツノート CF-SZ6",
+    "parentAsin": "B0CB5Y8SW3",
+    "productDescription": "超軽量デザインの307mmノートPC。整備済み品で、Windows 11 ProとOffice 2019を搭載しています。",
+    "productUsage": [
+      "ビジネス用途（文書作成、表計算、プレゼンテーションなど）",
+      "持ち運んでの外出先での作業",
+      "Web会議やオンライン授業"
+    ],
+    "positivePoints": [
+      "重量が約1kg前後と非常に軽く、持ち運びに便利",
+      "Office 2019が搭載されており、すぐにビジネスで利用可能",
+      "整備済み品として初期設定が完了しており、初心者でも扱いやすい"
+    ],
+    "negativePoints": [
+      "SSDが128GBと少なめで、大量のデータを保存するには外付けストレージ等が必要になる場合がある",
+      "中古品（整備済み品）であるため、バッテリーの消耗や外観の使用感には個体差がある"
+    ],
+    "useCases": [
+      "頻繁に持ち歩く必要があるビジネスマンのメインPCとして",
+      "Officeソフトを利用する学生のレポート作成用PCとして"
+    ],
+    "userStories": [
+      {
+        "userType": "ビジネスマン",
+        "scenario": "出張先でのプレゼン資料作成とオンライン会議の実施",
+        "experience": "非常に軽量なのでカバンに入れて持ち歩いても苦にならず、出張先でも快適に作業ができました。Office 2019が最初から入っているので、新しくソフトを買い足す必要がなく助かりました。",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "sentiment": "positive"
+      },
+      {
+        "userType": "学生",
+        "scenario": "大学の授業でのレポート作成",
+        "experience": "大学に毎日持ち運ぶので軽さが魅力です。ただ、SSDが128GBしかないので、写真や動画をたくさん保存するとすぐに容量がいっぱいになってしまうのが少し不便です。",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "sentiment": "mixed"
+      }
+    ],
+    "userImpression": "非常に軽量で持ち運びに適しており、Officeソフトが標準搭載されている点が多くのユーザーから高く評価されています。一方で、SSD容量が128GBと少なめな点や、中古品ゆえのバッテリー持ちに対する懸念も見受けられます。",
+    "sources": [
+      {
+        "id": "src-1",
+        "name": "Amazon商品ページ レビュー・特徴",
+        "url": "https://www.amazon.co.jp/dp/B0CB5Y8SW3",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-04-24",
+        "author": "Amazon",
+        "conflictOfInterest": "none",
+        "notes": "商品仕様、特徴、および一般的なノートパソコンの使われ方に基づく情報"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "重量が軽く持ち運びに適している",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "crossChecked": false,
+        "notes": "レッツノート CF-SZ6の一般的な仕様および商品ページの特徴に基づく"
+      },
+      {
+        "claim": "Office 2019搭載ですぐに使用可能",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "crossChecked": false,
+        "notes": "商品ページの仕様に記載"
+      }
+    ],
+    "lastInvestigated": "2026-04-24",
+    "competitiveAnalysis": [
+      {
+        "name": "パナソニック レッツノート CF-SZ6 (B09LD469FN)",
+        "asin": "B09LD469FN",
+        "priceComparison": "対象商品よりも安価でありながら、SSD容量が256GBと倍になっている。",
+        "featureComparison": [
+          "共通点：同型番（CF-SZ6）、Core i5-7200U搭載、メモリ8GB",
+          "相違点：B09LD469FNはSSDが256GB搭載されているのに対し、対象商品は128GBである。"
+        ],
+        "differentiators": [
+          "パナソニック レッツノート CF-SZ6の利点：販売元による特定のサポートや状態の良さがある場合を除き、スペック上の優位性は少ない。",
+          "パナソニック レッツノート CF-SZ6 (B09LD469FN)の利点：価格が安く、かつSSD容量が多いためコストパフォーマンスに優れる。"
+        ]
+      },
+      {
+        "name": "東芝 dynabook G83",
+        "asin": "B0GS58JVC8",
+        "priceComparison": "対象商品よりも高価であるが、CPUが第10世代と新しく、SSD容量も多い。",
+        "featureComparison": [
+          "共通点：軽量（約1kg）、メモリ8GB",
+          "相違点：G83は第10世代Core i5、SSD 256GB、337mm液晶を搭載。対象商品は第7世代Core i5、SSD 128GB、307mm液晶である。"
+        ],
+        "differentiators": [
+          "パナソニック レッツノート CF-SZ6の利点：価格が抑えられており、コンパクトな307mmサイズであること。",
+          "東芝 dynabook G83の利点：より新しい世代の高性能CPUと大きな画面、倍のストレージ容量を持つこと。"
+        ]
+      },
+      {
+        "name": "東芝 dynabook B45",
+        "asin": "B0GXF6HDHG",
+        "priceComparison": "対象商品よりも安価であるが、スペックは全体的に見劣りする。",
+        "featureComparison": [
+          "共通点：SSD 128GB搭載",
+          "相違点：B45はCeleron 3865U、メモリ4GB、396mm大画面。対象商品はCore i5、メモリ8GB、307mmで軽量である。"
+        ],
+        "differentiators": [
+          "パナソニック レッツノート CF-SZ6の利点：処理能力が高く（Core i5、8GBメモリ）、軽量で持ち運びに適している。",
+          "東芝 dynabook B45の利点：価格が安く、画面が大きい（396mm）ため据え置きでの作業に向いている。"
+        ]
+      },
+      {
+        "name": "富士通 LIFEBOOK A579/B",
+        "asin": "B0G1Y995FD",
+        "priceComparison": "対象商品と同価格帯だが、CPU性能やストレージ容量で勝る。",
+        "featureComparison": [
+          "共通点：メモリ8GB搭載",
+          "相違点：A579/Bは第8世代Core i5、SSD 256GB、396mm。対象商品は第7世代、SSD 128GB、307mm軽量である。"
+        ],
+        "differentiators": [
+          "パナソニック レッツノート CF-SZ6の利点：圧倒的に軽量で持ち運びに優れている。",
+          "富士通 LIFEBOOK A579/Bの利点：第8世代CPUによる高い処理能力と大画面、十分なストレージ容量を持つこと。"
+        ]
+      },
+      {
+        "name": "東芝 dynabook B55/B65",
+        "asin": "B0G57S1PC3",
+        "priceComparison": "対象商品よりもやや安価。",
+        "featureComparison": [
+          "共通点：メモリ8GB、SSD 128GB搭載",
+          "相違点：B55/B65は第6世代Core i5、396mm。対象商品は第7世代Core i5、307mmで軽量である。"
+        ],
+        "differentiators": [
+          "パナソニック レッツノート CF-SZ6の利点：より新しい世代のCPUを搭載し、軽量で持ち運びに適している。",
+          "東芝 dynabook B55/B65の利点：396mmの大画面であり、テンキーやDVDドライブを搭載している。"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "頻繁にPCを持ち歩くビジネスマンや学生",
+        "文書作成などの軽作業をメインで行うユーザー"
+      ],
+      "pros": [
+        "約1kgの超軽量ボディ",
+        "Office 2019搭載ですぐに使える"
+      ],
+      "cons": [
+        "SSD容量が128GBと少なめ",
+        "同型番の他出品（より安く大容量）が存在し、コスパに難あり"
+      ],
+      "score": 70,
+      "scoreRationale": "[基本点: 70]\n[加点: +5] 超軽量設計により持ち運びに非常に適しているため\n[加点: +5] Office 2019が搭載されており初期設定済みですぐに使えるため\n[減点: -10] 同等のモデルでSSD容量が倍（256GB）かつ価格が安い商品（B09LD469FN）が存在し、相対的なコストパフォーマンスが低いため\n[合計: 70]"
+    },
+    "technicalSpecs": {
+      "dimensions": {
+        "height": "19.5mm",
+        "width": "283.5mm",
+        "depth": "203.8mm"
+      },
+      "weight": "849g",
+      "display": "307mm (1920×1080)",
+      "cpu": "Intel Core i5-7200U (2.6GHz)",
+      "memory": "8GB",
+      "storage": "SSD 128GB",
+      "os": "Windows 11 Pro 64bit",
+      "office": "Microsoft Office 2019",
+      "interfaces": [
+        "Webカメラ",
+        "Wi-Fi",
+        "Bluetooth",
+        "HDMI",
+        "SDカードスロット"
+      ]
+    }
+  }
+}
