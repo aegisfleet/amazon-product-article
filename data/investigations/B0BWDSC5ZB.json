@@ -1,0 +1,170 @@
+{
+  "analysis": {
+    "productName": "ロジクール MX KEYS mini KX700GRd グラファイト",
+    "parentAsin": "B0BWDSC5ZB",
+    "productDescription": "テンキーレスで省スペース化を実現した、ロジクールの高機能ワイヤレスキーボードです。",
+    "productUsage": ["長時間のタイピング作業", "複数デバイス間の切り替え入力", "限られたデスクスペースでの利用"],
+    "positivePoints": ["指先にフィットする球状のくぼみを持つキーによる快適な打鍵感", "506gの重量と金属プレートによる圧倒的な安定性", "マウスとキーボードの距離が縮まり肩や腕の疲労を軽減"],
+    "negativePoints": ["Logi Boltレシーバーが別売り", "頻繁に持ち運ぶにはやや重い", "上下のカーソルキーが小さい"],
+    "useCases": ["自宅のテレワーク環境でのメインキーボードとして", "出先での安定したタイピング作業用として", "複数のPCやタブレットを切り替えての作業"],
+    "userStories": [
+      {
+        "userType": "デスクワーカー",
+        "scenario": "毎日の長時間のタイピング作業において",
+        "experience": "Magic Keyboardと比較して少し深めのストロークと、指にフィットするキーのくぼみのおかげで、ミスタイプが減り心地よいタイピングができました。打鍵音も静かで快適です。",
+        "supportingSourceIds": ["src-note-kenzaki"],
+        "sentiment": "positive"
+      },
+      {
+        "userType": "ノマドワーカー",
+        "scenario": "カフェや外出先での作業時",
+        "experience": "コンパクトでありながら約506gの重量があるため、外出先の不安定なテーブルで激しくタイピングしても本体が全く動かず、自宅と同じような安定した環境で作業できました。ただし、毎日持ち歩くには少しずっしりとした重みを感じます。",
+        "supportingSourceIds": ["src-taboyama", "src-note-kenzaki"],
+        "sentiment": "mixed"
+      }
+    ],
+    "userImpression": "価格は高めですが、その分高い品質と快適な打鍵感、優れた安定性を備えており、タイピング環境をワンランクアップさせたいユーザーから高く評価されています。",
+    "sources": [
+      {
+        "id": "src-note-kenzaki",
+        "name": "MX KEYS miniって実際どう？1年使ってみた感想【ロジクール/キーボード/ワイヤレス/ガジェット/レビュー】｜ケンザキ【商品レビュー】",
+        "url": "https://note.com/kenzaki1135/n/n99a05e01d2e6",
+        "tier": "medium",
+        "evidenceType": "secondary",
+        "publishedAt": "2025-07-21",
+        "author": "ケンザキ",
+        "conflictOfInterest": "possible",
+        "notes": "1年使用レビュー。打鍵感が少し深めで心地よい、キーのくぼみでミスタイプ減少、500gは持ち歩きには重いが安定する、レシーバー別売りがマイナス点といった感想を記載。"
+      },
+      {
+        "id": "src-taboyama",
+        "name": "妥協なきコンパクト。MX Keys Miniで手に入れる、どこでも「いつもの打鍵感」という贅沢 | タボヤマ",
+        "url": "https://taboyama.com/logicool-mx-keys-mini-review/",
+        "tier": "medium",
+        "evidenceType": "secondary",
+        "publishedAt": "2024-01-01",
+        "author": "タボヤマ",
+        "conflictOfInterest": "possible",
+        "notes": "指先に吸い付くキー、右手の移動距離減少による疲れ軽減、506gによる安定感、カーソルキーの小ささとレシーバー別売りについて言及。"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "指の形状に合わせた球状にくぼんだキーがミスタイプを減らし、心地よい打鍵感を提供する。",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": ["src-note-kenzaki", "src-taboyama"],
+        "crossChecked": true,
+        "notes": "両方のレビューサイトで共通して高く評価されているポイント。"
+      },
+      {
+        "claim": "約506gの重量があるためタイピング時の安定性が非常に高いが、持ち運びには少し重く感じる。",
+        "category": "durability",
+        "confidence": "high",
+        "supportingSourceIds": ["src-note-kenzaki", "src-taboyama"],
+        "crossChecked": true,
+        "notes": "重量によるトレードオフについて両方のレビューで言及あり。"
+      }
+    ],
+    "lastInvestigated": "2026-04-24",
+    "competitiveAnalysis": [
+      {
+        "name": "ロジクール MX KEYS S KX800sGR",
+        "asin": "B0C65F55K5",
+        "priceComparison": "対象商品より高価。テンキーが必要なフルサイズ環境を求めるなら価格差分の価値があるが、省スペース性を重視するなら対象商品の方が安価で優れている。",
+        "featureComparison": [
+          "共通点：パーフェクト・ストローク・キーを採用し、高い打鍵感と安定性を備えるフラッグシップモデルであること",
+          "相違点：対象商品はテンキーレスのコンパクト設計だが、競合商品はテンキー付きのフルサイズキーボードである"
+        ],
+        "differentiators": [
+          "ロジクール MX KEYS mini KX700GRd グラファイトの利点：マウスまでの距離が短く省スペースで、腕や肩の負担が少ない",
+          "ロジクール MX KEYS S KX800sGRの利点：数字入力が多い作業に不可欠なテンキーを搭載している"
+        ]
+      },
+      {
+        "name": "ロジクール SIGNATURE SLIM K950GR",
+        "asin": "B0CZ8X3DH8",
+        "priceComparison": "対象商品より安価。より手軽に薄型キーボードを導入したい場合に適しているが、打鍵感の質感や機能性においては対象商品に軍配が上がる。",
+        "featureComparison": [
+          "共通点：ロジクール製の薄型ワイヤレスキーボードであり、複数デバイスとの接続に対応していること",
+          "相違点：対象商品はキーのくぼみなど打鍵感にこだわった上位モデルだが、競合商品は機能と価格のバランスを取ったスタンダードな薄型モデルである"
+        ],
+        "differentiators": [
+          "ロジクール MX KEYS mini KX700GRd グラファイトの利点：指にフィットするキー形状とメタルプレートによる圧倒的なタイピングの心地よさと安定感",
+          "ロジクール SIGNATURE SLIM K950GRの利点：価格が安く、テンキーも備えているため手軽に導入しやすい"
+        ]
+      },
+      {
+        "name": "ロジクール SIGNATURE K855BG",
+        "asin": "B0B86RKYFX",
+        "priceComparison": "対象商品よりやや安価。メカニカルな打鍵感を好むのであれば選択肢に入る。",
+        "featureComparison": [
+          "共通点：テンキーレスでコンパクトなロジクール製ワイヤレスキーボードであること",
+          "相違点：対象商品はパンタグラフ式の薄型・静音キーボードだが、競合商品は赤軸リニアスイッチを採用したメカニカルキーボードである"
+        ],
+        "differentiators": [
+          "ロジクール MX KEYS mini KX700GRd グラファイトの利点：薄型でタイピング音が静かであり、スマートイルミネーションも搭載している",
+          "ロジクール SIGNATURE K855BGの利点：メカニカルスイッチ特有の深いキーストロークと確かな打鍵感が得られる"
+        ]
+      },
+      {
+        "name": "エレコム ワイヤレスキーボード TK-QT11MDMABK",
+        "asin": "B0GL1WCYBY",
+        "priceComparison": "対象商品より非常に安価。価格重視の場合は選ばれるが、安定性や打鍵感の質は大きく異なる。",
+        "featureComparison": [
+          "共通点：テンキーレスのコンパクトなワイヤレスキーボードであること",
+          "相違点：対象商品は高品質なパンタグラフ式と金属プレートによる安定性を誇るが、競合商品は軽量なメンブレン式である"
+        ],
+        "differentiators": [
+          "ロジクール MX KEYS mini KX700GRd グラファイトの利点：長時間のタイピングでも疲れにくい打鍵感と、複数デバイスのシームレスな切り替え機能",
+          "エレコム ワイヤレスキーボード TK-QT11MDMABKの利点：非常に安価で、手軽に持ち運べる軽量さを備えている"
+        ]
+      },
+      {
+        "name": "ロジクール SIGNATURE K855GR",
+        "asin": "B0B2ZT2HRJ",
+        "priceComparison": "対象商品よりやや安価。メカニカルな打鍵感を求めるユーザー向け。",
+        "featureComparison": [
+          "共通点：テンキーレスの省スペース設計であること",
+          "相違点：対象商品は薄型パンタグラフ式、競合商品は赤軸メカニカルスイッチを採用"
+        ],
+        "differentiators": [
+          "ロジクール MX KEYS mini KX700GRd グラファイトの利点：静音性が高く、オフィスやカフェなど場所を選ばず使いやすい",
+          "ロジクール SIGNATURE K855GRの利点：メカニカルキーボードならではのしっかりとした打鍵感を味わえる"
+        ]
+      },
+      {
+        "name": "ロジクール SIGNATURE SLIM K950OW",
+        "asin": "B0CZ8VSCCH",
+        "priceComparison": "対象商品より安価。コストパフォーマンスとテンキーを求める場合に適している。",
+        "featureComparison": [
+          "共通点：ワイヤレス接続と複数デバイスの切り替えに対応していること",
+          "相違点：対象商品はコンパクトなテンキーレス、競合商品はオフホワイトカラーのテンキー付きフルサイズである"
+        ],
+        "differentiators": [
+          "ロジクール MX KEYS mini KX700GRd グラファイトの利点：デスクを広く使え、マウス操作との行き来がスムーズに行える",
+          "ロジクール SIGNATURE SLIM K950OWの利点：安価にテンキー付きのフルサイズ環境を構築できる"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": ["タイピングの快適さを重視するライターやプログラマー", "デスクをすっきりと保ちたいミニマリスト", "複数のデバイスを一つのキーボードで操作したい人"],
+      "pros": ["極めて快適な打鍵感と静音性", "重量による抜群の安定性", "省スペースでマウス操作への移行がスムーズ"],
+      "cons": ["USBレシーバーが付属しない", "持ち歩き用としてはやや重い"],
+      "score": 83,
+      "scoreRationale": "[基本点: 70]\n[加点: +8] (指の形状に合わせた球状のくぼみと適度なストロークによる快適な打鍵感)\n[加点: +5] (506gの金属プレート内蔵によるタイピング時の高い安定性)\n[加点: +5] (テンキーレスによる省スペース設計と右手の移動距離削減)\n[減点: -2] (持ち運ぶにはやや重い重量)\n[減点: -3] (高価格帯ながらLogi Boltレシーバーが別売りである点)\n[合計: 83]"
+    },
+    "technicalSpecs": {
+      "dimensions": {
+        "height": "21mm",
+        "width": "132mm",
+        "depth": "296mm"
+      },
+      "weight": "506g",
+      "connectivity": "Bluetooth、Logi Bolt（レシーバー別売）、Unifying非対応",
+      "powerSupply": "USB-C充電式",
+      "keyLayout": "日本語配列",
+      "other": ["スマートイルミネーション（バックライト）搭載", "Easy-Switch対応（最大3台）", "対応OS: Windows 10/11以降, macOS 10.15以降, ChromeOS, Android 5.0以降"]
+    }
+  }
+}
