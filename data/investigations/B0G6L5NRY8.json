@@ -26,42 +26,34 @@
       "学生の学習用・資料閲覧用デバイスとして",
       "外出先でのプレゼンテーションやサブモニターとして"
     ],
-    "userStories": [
-      {
-        "userType": "30代 男性 会社員",
-        "scenario": "自宅でのリラックスタイムに",
-        "experience": "スマホでは画面が小さく、PCを開くのは億劫な時に、ソファで寝転がりながらYouTubeやNetflixを見るのに最適。画質も音も良く、バッテリー持ちも良いので充電を気にせず使える。",
-        "sentiment": "positive"
-      },
-      {
-        "userType": "大学生",
-        "scenario": "大学の講義と課題作成",
-        "experience": "PDFの教科書を開きながらノートを取るのに十分な画面サイズ。iPadは高くて手が出なかったが、この価格でこの性能なら満足。キーボードと合わせてレポート作成にも使っている。",
-        "sentiment": "positive"
-      }
-    ],
+    "userStories": [],
     "userImpression": "圧倒的なコストパフォーマンスが高く評価されている。特にディスプレイの美しさとスピーカーの音質に対する満足度が高い。一方で、GPSがない点や指紋認証がない点を惜しむ声もあるが、価格を考えれば納得という意見が大半。",
     "sources": [
       {
+        "id": "src-1",
         "name": "Amazon Product Page",
         "url": "https://www.amazon.co.jp/dp/B0G6L5NRY8",
-        "credibility": "High"
+        "tier": "low",
+        "evidenceType": "primary",
+        "publishedAt": "2026-04-26",
+        "author": "Unknown",
+        "conflictOfInterest": "disclosed",
+        "notes": "Amazon上の商品ページ。不正なスペック表記（Snapdragon 7s Gen 4等）が確認されたため信頼性は低い。"
       }
     ],
-    "lastInvestigated": "2026-02-01",
+    "lastInvestigated": "2026-04-26",
     "competitiveAnalysis": [
       {
         "name": "Xiaomi Redmi Pad Pro",
         "asin": "B0D6N7GW4P",
         "priceComparison": "ほぼ同等のスペックだが、POCO Padの方が実売価格が安い場合が多い。",
         "featureComparison": [
-          "スペックはほぼ共通（Snapdragon 7s Gen 2, 12.1インチなど）",
-          "POCOブランドならではのデザイン違い",
-          "Redmi Pad Proは販路によっては保証やサポートが手厚い場合がある"
+          "共通点：約30cmクラスの大画面タブレット（または近いサイズのタブレット）",
+          "相違点：スペックはほぼ共通（Snapdragon 7s Gen 2, 約30.7cmなど）、POCOブランドならではのデザイン違い、Redmi Pad Proは販路によっては保証やサポートが手厚い場合がある"
         ],
         "differentiators": [
-          "ブランドとデザイン",
-          "コストパフォーマンス（POCOが有利な傾向）"
+          "Xiaomi POCO Padの利点：ブランドとデザインの独自性。",
+          "Xiaomi Redmi Pad Proの利点：販路によっては保証やサポートが手厚い場合がある。"
         ]
       },
       {
@@ -69,14 +61,12 @@
         "asin": "B0DZ895SXY",
         "priceComparison": "iPadの方が約1.4万円高い。",
         "featureComparison": [
-          "iPadは10.9インチ 60Hz液晶、POCOは12.1インチ 120Hz液晶",
-          "iPadOSのアプリ品質とエコシステムはiPadが優位",
-          "POCOは基本ストレージが256GBに対し、同価格帯のiPadは64GB"
+          "共通点：約30cmクラスの大画面タブレット（または近いサイズのタブレット）",
+          "相違点：iPadは約27.7cm 60Hz液晶、POCOは約30.7cm 120Hz液晶、iPadOSのアプリ品質とエコシステムはiPadが優位、POCOは基本ストレージが256GBに対し、同価格帯のiPadは64GB"
         ],
         "differentiators": [
-          "OS（iPadOS vs Android）",
-          "リフレッシュレート（60Hz vs 120Hz）",
-          "ストレージ容量のコスパ"
+          "Xiaomi POCO Padの利点：120Hzのリフレッシュレートと大容量ストレージ（256GB）によるコスパの良さ。",
+          "Apple iPad (第10世代)の利点：iPadOSのアプリ品質とエコシステム。"
         ]
       },
       {
@@ -84,13 +74,51 @@
         "asin": "B0BKPM58BP",
         "priceComparison": "整備済み品であればiPad 第9世代の方が5000円程度安い。",
         "featureComparison": [
-          "iPad 第9世代はホームボタンありの旧デザイン、画面も10.2インチと小さい",
-          "充電端子がLightning（iPad 9）対 USB-C（POCO）",
-          "スピーカーが片側（iPad 9）対 クアッド（POCO）"
+          "共通点：約30cmクラスの大画面タブレット（または近いサイズのタブレット）",
+          "相違点：iPad 第9世代はホームボタンありの旧デザイン、画面も約25.9cmと小さい、充電端子がLightning（iPad 9）対 USB-C（POCO）、スピーカーが片側（iPad 9）対 クアッド（POCO）"
         ],
         "differentiators": [
-          "価格の安さ（iPad 9整備品）",
-          "モダンなデザインと機能（POCO）"
+          "Xiaomi POCO Padの利点：モダンなデザインとクアッドスピーカー、USB-C対応。",
+          "Apple iPad (第9世代) 整備済み品の利点：整備品であれば初期費用を抑えられる安さ。"
+        ]
+      },
+      {
+        "name": "星の輝き T30",
+        "asin": "B0GVJGWSZK",
+        "priceComparison": "対象商品より安いが、スペック面で劣る",
+        "featureComparison": [
+          "共通点：約30cmクラスの大画面",
+          "相違点：対象商品は2.5K解像度とSnapdragonを搭載。T30は2K解像度、8000mAhバッテリー。"
+        ],
+        "differentiators": [
+          "Xiaomi POCO Padの利点：処理性能の高さ、ブランド品（と主張している点）。",
+          "星の輝き T30の利点：安価に大画面を入手できる。"
+        ]
+      },
+      {
+        "name": "Hasskya K90",
+        "asin": "B0GD58SKM2",
+        "priceComparison": "対象商品より安価",
+        "featureComparison": [
+          "共通点：約30cmクラスのタブレット",
+          "相違点：対象商品は2.5K解像度。K90は2K解像度。"
+        ],
+        "differentiators": [
+          "Xiaomi POCO Padの利点：より高解像度なディスプレイ。",
+          "Hasskya K90の利点：価格の安さ。"
+        ]
+      },
+      {
+        "name": "アイリスオーヤマ タブレット TM12E2W74-AZ1B",
+        "asin": "B0FJXYR31F",
+        "priceComparison": "対象商品より安い価格設定",
+        "featureComparison": [
+          "共通点：約30cmクラスの大画面",
+          "相違点：対象商品はSnapdragon搭載（自称）。アイリスオーヤマはHelio G99搭載。"
+        ],
+        "differentiators": [
+          "Xiaomi POCO Padの利点：より高いスペック（表記上）。",
+          "アイリスオーヤマ タブレット TM12E2W74-AZ1Bの利点：国内メーカーのサポートと信頼性。"
         ]
       }
     ],
@@ -110,8 +138,8 @@
         "生体認証が顔認証のみ",
         "重い3Dゲームを最高画質でプレイするにはスペック不足"
       ],
-      "score": 95,
-      "scoreRationale": "[基本点: 70]\n[性能・機能: +7] (12.1インチ120Hzディスプレイと実用十分な処理性能)\n[コストパフォーマンス: +12] (競合のiPadやGalaxy Tab S9 FEより安価で大画面、ストレージも256GBと余裕がある)\n[品質・デザイン: +2] (金属筐体の質感が高い)\n[ユーザー満足度: +4] (Xiaomiタブレットの実績とコスパへの評価が高い)\n[合計: 95]"
+      "score": 64,
+      "scoreRationale": "[基本点: 70]\n[加点: +8] (実用十分な処理性能)\n[加点: +4] (大画面でありながら比較的安価なコストパフォーマンス)\n[加点: +2] (金属筐体の質感が高い)\n[減点: -20] (Amazonの商品説明に「Snapdragon 7s Gen 4」「12000mAh」など存在しない/不正なスペック表記があり、サクラ・詐欺的な業者の可能性が非常に高いため)\n[合計: 64]"
     },
     "technicalSpecs": {
       "os": "Android 14 (HyperOS)",
@@ -119,7 +147,7 @@
       "ram": "8GB",
       "storage": "256GB",
       "display": {
-        "size": "12.1インチ",
+        "size": "約30.7cm (対角線長)",
         "resolution": "2560×1600 (2.5K)",
         "type": "LCD, 120Hz"
       },
@@ -146,6 +174,18 @@
         "microSDカード対応(最大1.5TB)",
         "イヤホンジャックあり"
       ]
-    }
+    },
+    "claims": [
+      {
+        "claim": "Amazon上の商品説明に不正なスペック表記がある",
+        "category": "safety",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "crossChecked": true,
+        "notes": "POCO Padの本来のスペック（Snapdragon 7s Gen 2, 10000mAh）と異なる「Snapdragon 7s Gen 4」「12000mAh」が表記されている"
+      }
+    ]
   }
 }
