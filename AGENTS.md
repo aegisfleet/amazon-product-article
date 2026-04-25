@@ -32,6 +32,8 @@ Amazon Creators APIの認証情報の取り扱いには、最優先でセキュ�
   - ESLintエラーが0件であることを確認する。
 - **ビルド**: `npm run build`
   - TypeScriptのコンパイルエラーがないことを確認する。
+- **サーバー起動 (ブラウザ確認時)**: `npm run server:dev`
+  - ブラウザでの動作確認（`browser_subagent` 等）を行う場合は、事前にバックグラウンド等でサーバーを起動しておくこと。
 - **テスト**: `npm test`
   - すべてのユニットテストおよびプロパティベースのテストがパスすることを確認する。
 - **アーティファクト検証**: `python scripts/validate_artifact.py <生成したJSONファイル>`
@@ -57,12 +59,17 @@ Amazon Creators APIの認証情報の取り扱いには、最優先でセキュ�
 ### 2.4 開発環境
 
 - **ローカルサーバー**: `http://localhost:1313/`
-- **サーバー起動チェック**:
-  動作確認（ブラウザテスト等）を行う前には、必ずサーバーが起動しているか確認すること。
-  起動していない場合は、以下のコマンドで起動すること。
+- **サーバー起動手順**:
+  ブラウザテストや目視確認を行う前には、以下のコマンドでサーバーを起動すること。
   ```bash
+  # バックグラウンドで起動する場合 (Windows PowerShell)
+  Start-Process npm -ArgumentList "run", "server:dev" -WindowStyle Hidden
+  
+  # または通常通り起動
   npm run server:dev
   ```
+- **サーバー停止手順**:
+  作業終了後、不要になったサーバーは `Ctrl+C` またはプロセス終了で停止すること。
 
 ---
 
