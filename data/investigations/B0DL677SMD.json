@@ -1,0 +1,100 @@
+{
+  "analysis": {
+    "productName": "U530CSI",
+    "parentAsin": "B0DL677SMD",
+    "productDescription": "2000年代に登場したフィットネスランニングシューズを洗練されたファッションアイテムとして提案する「530」。曲線を活かした流麗なデザインとABZORB搭載ミッドソールが特徴的なスニーカーです。",
+    "productUsage": ["日常的なファッション", "ウォーキング", "カジュアルスタイルへの取り入れ"],
+    "positivePoints": ["約49%の割引率による圧倒的なコストパフォーマンス", "Y2Kファッションにマッチするレトロなデザイン", "ABZORB搭載による快適な履き心地", "シンセティックレザーとメッシュによる通気性と軽さ"],
+    "negativePoints": ["耐水レベルが非防水のため雨天時の使用には不向き"],
+    "useCases": ["普段使いのスニーカーとして", "Y2K風のコーディネートの足元として", "長時間の外出やウォーキング時のシューズとして"],
+    "userStories": [],
+    "userImpression": "レトロ感のある流麗なデザインと、クッション性（ABZORB）による快適な履き心地が評価されています。特に今回のセール価格ではコストパフォーマンスが非常に高く、日常使いとして人気のあるアイテムです。",
+    "sources": [
+      {
+        "id": "src-amazon-b0d315g6vj",
+        "name": "Amazon.co.jp B0D315G6VJ 商品詳細ページ",
+        "url": "https://www.amazon.co.jp/dp/B0D315G6VJ",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-04-25",
+        "author": "ニューバランス(Amazon)",
+        "conflictOfInterest": "disclosed",
+        "notes": "U530の製品説明（ABZORB搭載、2000年代のフィットネスランニングシューズの復刻など）を確認。"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "ABZORB搭載ミッドソールにより快適な履き心地を実現",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": ["src-amazon-b0d315g6vj"],
+        "crossChecked": false,
+        "notes": "Amazon商品ページの商品説明欄に記載あり"
+      }
+    ],
+    "lastInvestigated": "2026-04-25",
+    "competitiveAnalysis": [
+      {
+        "name": "MR530AD D 235",
+        "asin": "B0D5CW7HJN",
+        "priceComparison": "対象商品（B0DL677SMD）は6,590円であり、MR530AD（9,178円）よりも非常に安価に設定されている。",
+        "featureComparison": [
+          "共通点：2000年代のランニングシューズ「530」をベースにした流麗なデザインと、ABZORB搭載による高いクッション性を持つ点",
+          "相違点：カラーバリエーションが異なる。対象商品（B0DL677SMD）はCSI(WHITE/GREEN)であるのに対し、MR530ADはホワイトがベース"
+        ],
+        "differentiators": [
+          "対象商品（U530CSI）の利点：約49%の割引が適用されており、圧倒的にコストパフォーマンスが高い点",
+          "競合商品（MR530AD）の利点：ホワイトのシンプルなカラーリングを好む場合に適している点"
+        ]
+      },
+      {
+        "name": "U530ESB D 240",
+        "asin": "B0DL62W7NK",
+        "priceComparison": "対象商品（6,590円）は、U530ESB（8,910円）と比較して大きく安価。",
+        "featureComparison": [
+          "共通点：同じ「530」シリーズであり、基本的なデザインや機能性（ソール等）は共通",
+          "相違点：U530ESBはシルバー/リネンのカラーリング"
+        ],
+        "differentiators": [
+          "対象商品（U530CSI）の利点：価格が安く、グリーンを取り入れたカラーが欲しい場合に最適",
+          "競合商品（U530ESB）の利点：シルバーやリネン系統のカラーリングが欲しい場合に適している点"
+        ]
+      },
+      {
+        "name": "MR530",
+        "asin": "B07VYH6JM5",
+        "priceComparison": "対象商品（6,590円）は、MR530 グレー（14,300円）と比較して半額以下である。",
+        "featureComparison": [
+          "共通点：ニューバランスの530シリーズとしての基本形状やコンセプト",
+          "相違点：カラーがグレーであり、価格帯が大きく異なる"
+        ],
+        "differentiators": [
+          "対象商品（U530CSI）の利点：圧倒的に価格が安く、手軽に530シリーズを試せる点",
+          "競合商品（MR530）の利点：定番のグレーカラーを求める場合に適している点"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": ["Y2Kファッションを取り入れたい人", "日常使いでクッション性の高いスニーカーを探している人", "コストパフォーマンスの高いニューバランスを求める人"],
+      "pros": ["約49%の割引による高いコスパ", "ABZORBによる優れたクッション性", "レトロで洗練されたデザイン"],
+      "cons": ["非防水のため雨の日は注意が必要"],
+      "score": 90,
+      "scoreRationale": "[基本点: 70]\n[加点: +15] (価格対性能が非常に高く、約49%オフと競合他社や同シリーズ別色と比較しても圧倒的なコストパフォーマンスであるため)\n[加点: +5] (ABZORB搭載ミッドソールによる優れたクッション性と快適な履き心地)\n[合計: 90]"
+    },
+    "technicalSpecs": {
+      "dimensions": {
+        "height": "0mm",
+        "width": "0mm",
+        "depth": "0mm"
+      },
+      "weight": "0g",
+      "capacity": "0",
+      "material": "シンセティックレザー/メッシュ（アッパー）、ABZORB（ミッドソール）",
+      "origin": "不明",
+      "color": "CSI(WHITE/GREEN)",
+      "size": "25.0 cm D",
+      "closureType": "レースアップ",
+      "waterResistance": "非防水"
+    }
+  }
+}
