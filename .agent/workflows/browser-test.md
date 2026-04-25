@@ -13,8 +13,11 @@ WSL環境ではAntigravityの`browser_subagent`が動作しないため、Playwr
 ブラウザテスト前に、Hugoサーバーを起動する必要がある。
 
 ```bash
-// turbo
-hugo server --bind 0.0.0.0 --port 1313 --disableFastRender &
+# 推奨: 開発用設定で起動
+npm run server:dev
+
+# または、バックグラウンドで起動する場合 (Windows PowerShell)
+Start-Process npm -ArgumentList "run", "server:dev" -WindowStyle Hidden
 ```
 
 サーバー起動後、約3-5秒待機してからアクセスする。
