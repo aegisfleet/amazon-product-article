@@ -1,0 +1,118 @@
+{
+  "analysis": {
+    "productName": "Nintendo Switch 2(日本語・国内専用)",
+    "parentAsin": "B0DX1BC3R8",
+    "productDescription": "任天堂の次世代ゲーム機本体、Nintendo Switch 2の国内専用モデル。日本語環境のみをサポートし、日本国内向けのソフトやサービスに特化しています。",
+    "productUsage": [
+      "ゲームプレイ",
+      "エンターテインメント"
+    ],
+    "positivePoints": [
+      "最新の次世代ゲーム機",
+      "Amazon公式での安定した在庫状況"
+    ],
+    "negativePoints": [
+      "日本語・国内専用のため海外向けのソフトや海外アカウントとの連携に制限がある"
+    ],
+    "useCases": [
+      "自宅での据え置き・携帯でのゲームプレイ",
+      "家族や友人とのマルチプレイ"
+    ],
+    "userStories": [],
+    "userImpression": "発売前の製品であり、具体的なユーザーレビューはまだ見られませんが、次世代機としての期待と、日本語専用という制約が特徴的です。",
+    "sources": [
+      {
+        "id": "src-1",
+        "name": "Amazon商品ページ",
+        "url": "https://www.amazon.co.jp/dp/B0DX1BC3R8",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2025-06-05",
+        "author": "任天堂",
+        "conflictOfInterest": "none",
+        "notes": "製品情報、価格、特徴（日本語・国内専用、ニンテンドーアカウント連携制限など）を確認"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "本商品は、日本語・国内専用商品であり、本体で使用できる言語は「日本語」のみです。",
+        "category": "durability",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "crossChecked": true,
+        "notes": "商品仕様として明記"
+      },
+      {
+        "claim": "「国/地域」設定が「日本」のニンテンドーアカウントのみ連携可能で、「ニンテンドーeショップ」で購入できるソフトも日本地域対象のみとなります。",
+        "category": "durability",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "crossChecked": true,
+        "notes": "商品仕様として明記"
+      }
+    ],
+    "lastInvestigated": "2026-04-26",
+    "competitiveAnalysis": [
+      {
+        "name": "Nintendo Switch 2(日本語・国内専用) + マイクロファイバークロス",
+        "asin": "B0GN2FTQC5",
+        "priceComparison": "対象商品より高価だが、ソフトと特典が付属しているため、ゲームと同時に購入したいユーザー向け",
+        "featureComparison": [
+          "共通点：Nintendo Switch 2本体(日本語・国内専用)",
+          "相違点：対象商品は本体のみ、本製品はソフト「ぽこ あ ポケモン -Switch2」とAmazon限定特典（マイクロファイバークロス）が付属"
+        ],
+        "differentiators": [
+          "Nintendo Switch 2(日本語・国内専用)の利点：本体のみで安価に購入できるため、ソフトを別途選びたい場合やダウンロード版をメインにする場合に適している",
+          "Nintendo Switch 2(日本語・国内専用) + マイクロファイバークロスの利点：特典とソフトがセットになっており、購入してすぐに特定のゲームを始めたい場合に便利"
+        ]
+      },
+      {
+        "name": "Nintendo Switch 2(日本語・国内専用) + microSD",
+        "asin": "B0DX1588W5",
+        "priceComparison": "対象商品より高価だが、大容量のmicroSDカードがセットになっているため、ダウンロード版ソフトを多く遊ぶ予定のユーザーにとって価値がある",
+        "featureComparison": [
+          "共通点：Nintendo Switch 2本体(日本語・国内専用)",
+          "相違点：対象商品は本体のみ、本製品はSamsung microSD Express Card 256GBが付属"
+        ],
+        "differentiators": [
+          "Nintendo Switch 2(日本語・国内専用)の利点：本体のみで安価に購入できるため、ストレージが不要な場合や自身で好みのmicroSDカードを用意する場合に適している",
+          "Nintendo Switch 2(日本語・国内専用) + microSDの利点：256GBの大容量microSDカードが最初から付属するため、ダウンロードソフトを頻繁に購入するユーザーにとって追加購入の手間が省ける"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "最新の任天堂ゲームを遊びたい日本のユーザー",
+        "国内向けのソフトを中心にプレイする人"
+      ],
+      "pros": [
+        "待望の次世代ゲーム機",
+        "国内専用でシンプルに利用可能"
+      ],
+      "cons": [
+        "海外のソフトや海外アカウントとの連携ができない",
+        "発売前のため詳細な使用感が未知数"
+      ],
+      "score": 80,
+      "scoreRationale": "[基本点: 70]\n[加点: +10] (次世代ゲーム機としての高い期待値とブランド力)\n[減点: -0] (特筆すべきマイナス要素なし)\n[合計: 80]"
+    },
+    "technicalSpecs": {
+      "releaseDate": "2025-06-05",
+      "model": "4902370553024",
+      "color": "不明",
+      "features": [
+        "本商品は、日本語・国内専用商品です。",
+        "本体で使用できる言語は「日本語」のみです。",
+        "「国/地域」設定が「日本」のニンテンドーアカウントのみ連携できます。",
+        "「ニンテンドーeショップ」で購入できるソフトは日本地域を対象にしたソフトのみです。"
+      ],
+      "other": [
+        "ゲーム機本体"
+      ]
+    }
+  }
+}
