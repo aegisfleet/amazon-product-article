@@ -200,9 +200,7 @@ export class ArticleGenerator {
     }
 
     // Hero Front Matter Data
-    const { plus, minus } = this.extractScoreRationaleItems(
-      investigation.analysis.recommendation.scoreRationale,
-    );
+    const { plus, minus } = this.extractScoreRationaleItems(investigation.analysis.recommendation.scoreRationale);
 
     metadata.hero = {
       score_rationale: {
