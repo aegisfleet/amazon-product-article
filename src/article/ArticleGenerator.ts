@@ -938,7 +938,11 @@ ${recommendationMessage}
     }
 
     // primitiveとして安全に文字列化（symbol, bigintなど）
-    return typeof value === 'symbol' ? value.toString() : String(value as string | number | boolean);
+    if (typeof value === 'symbol' || typeof value === 'bigint') {
+      return value.toString();
+    }
+
+    return '';
   }
 
   /**

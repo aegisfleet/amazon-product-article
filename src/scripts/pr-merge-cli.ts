@@ -307,7 +307,7 @@ async function main(): Promise<void> {
       head: prData.head.ref,
       base: prData.base.ref,
       author: prData.user?.login || '',
-      state: prData.state as 'open' | 'closed' | 'merged',
+      state: prData.state,
       draft: prData.draft || false,
       changedFiles: filesData.map((f) => f.filename),
       labels: prData.labels.map((l) => (typeof l === 'string' ? l : l.name || '')),

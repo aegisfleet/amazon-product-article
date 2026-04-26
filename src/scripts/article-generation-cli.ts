@@ -162,7 +162,7 @@ export async function loadInvestigationResults(targetFiles?: string[]): Promise<
             product,
             investigation,
             timestamp: new Date().toISOString(),
-          } as InvestigationData;
+          };
         } catch (error) {
           if ((error as { code?: string }).code === 'ENOENT') {
             logger.warn(`File not found: ${filePath}, skipping`);
