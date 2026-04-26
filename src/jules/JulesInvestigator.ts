@@ -426,7 +426,7 @@ export class JulesInvestigator {
           {
             code: 'RATE_LIMIT_EXCEEDED',
             message: 'Jules API rate limit exceeded',
-            details: data as Record<string, unknown>,
+            details: data,
             retryable: true,
           },
           error,
@@ -439,7 +439,7 @@ export class JulesInvestigator {
           {
             code: 'AUTHENTICATION_ERROR',
             message: 'Jules API authentication failed. Check your API key.',
-            details: data as Record<string, unknown>,
+            details: data,
             retryable: false,
           },
           error,
@@ -452,7 +452,7 @@ export class JulesInvestigator {
           {
             code: 'SERVER_ERROR',
             message: 'Jules API server error',
-            details: data as Record<string, unknown>,
+            details: data,
             retryable: true,
           },
           error,
@@ -464,7 +464,7 @@ export class JulesInvestigator {
         {
           code: 'HTTP_ERROR',
           message: `Jules API HTTP error: ${status}`,
-          details: data as Record<string, unknown>,
+          details: data,
           retryable: false,
         },
         error,
