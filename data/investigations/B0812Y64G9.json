@@ -1,0 +1,165 @@
+{
+  "analysis": {
+    "productName": "シリコンパワー SSD 1TB P34A60シリーズ SP001TBP34A60M28",
+    "parentAsin": "B09BJVLD1T",
+    "productDescription": "PCIe Gen3x4インターフェースを採用した、NVMe 1.3対応の1TB M.2 SSDです。最大読込速度2200MB/s、最大書込速度1600MB/sと高速なデータ転送を実現し、5年間の長期保証が付属しています。",
+    "productUsage": [
+      "自作PCやノートPCの内蔵ストレージ増設・換装",
+      "OSやアプリケーションの高速起動",
+      "ゲームのロード時間短縮"
+    ],
+    "positivePoints": [
+      "最大読込2200MB/s、書込1600MB/sと、SATA SSDに比べて大幅に高速",
+      "1TBで約22,000円という手頃な価格帯",
+      "国内サポートと5年間または300TBWの保証付きで安心",
+      "HMB（ホストメモリバッファ）対応により、DRAMレスながら性能を向上"
+    ],
+    "negativePoints": [
+      "DRAMキャッシュ非搭載のため、大容量の連続書き込み時に速度低下の可能性がある",
+      "最新のPCIe Gen4x4対応モデル（例: 最大7000MB/s超）と比較すると最高速度で見劣りする",
+      "PS5の拡張ストレージとしては要件（Gen4）を満たしていない"
+    ],
+    "useCases": [
+      "コスパ重視の自作PCやゲーミングPCのシステムドライブとして使用する",
+      "古いSATA SSDやHDDからのアップグレードでパソコンの動作を全体的に軽くする",
+      "大量の写真や動画、ゲームデータを保存するためのセカンダリストレージとして活用する"
+    ],
+    "userStories": [],
+    "userImpression": "PCIe Gen3x4対応のM.2 SSDとしては標準的な性能を持ちつつ、価格が抑えられており非常にコストパフォーマンスに優れています。DRAMレスですが、HMB技術により日常的な用途やゲームのロードなどで十分な速度を発揮します。5年保証がある点も安心感を与えています。",
+    "sources": [
+      {
+        "id": "src-1",
+        "name": "Amazon商品ページ",
+        "url": "https://www.amazon.co.jp/dp/B0812Y64G9",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-04-27",
+        "author": "Amazon",
+        "conflictOfInterest": "possible",
+        "notes": "製品仕様、価格、保証内容を確認"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "最大読込2200MB/s、書込1600MB/s",
+        "category": "comparativeAdvantage",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "crossChecked": false,
+        "notes": "メーカー公称値"
+      },
+      {
+        "claim": "5年間保証付き",
+        "category": "durability",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "crossChecked": false,
+        "notes": "TBW600または5年間の保証"
+      }
+    ],
+    "lastInvestigated": "2026-04-27",
+    "competitiveAnalysis": [
+      {
+        "name": "Kingston NV3 1TB",
+        "asin": "B0DBR3DZWG",
+        "priceComparison": "対象商品より高価だが、PCIe Gen4対応で大幅に高速。",
+        "featureComparison": [
+          "共通点：容量1TBのM.2 2280 NVMe SSD、5年保証",
+          "相違点：対象商品はPCIe Gen3（最大読込2200MB/s）、Kingston NV3はPCIe Gen4（最大読込6000MB/s）"
+        ],
+        "differentiators": [
+          "シリコンパワー P34A60の利点：価格が安く、Gen3環境のPCでのアップグレードに最適",
+          "Kingston NV3の利点：PCIe Gen4の高速転送に対応しており、大容量データの移動や最新ゲームのロードで有利"
+        ]
+      },
+      {
+        "name": "シリコンパワー US75 1TB",
+        "asin": "B0CCD6T788",
+        "priceComparison": "対象商品より高価だが、PS5に対応し、最高クラスの速度を誇る。",
+        "featureComparison": [
+          "共通点：同メーカーの容量1TB M.2 2280 NVMe SSD、5年保証",
+          "相違点：対象商品はPCIe Gen3で最大読込2200MB/s。US75はPCIe Gen4で最大読込7000MB/s、PS5対応"
+        ],
+        "differentiators": [
+          "シリコンパワー P34A60の利点：低コストで大容量ストレージを確保できる",
+          "シリコンパワー US75の利点：PS5の増設ストレージとして使用可能で、ハイエンドな性能"
+        ]
+      },
+      {
+        "name": "Hanye M200 1TB",
+        "asin": "B0BY22479C",
+        "priceComparison": "対象商品よりわずかに安価だが、SATA接続のため速度は大きく劣る。",
+        "featureComparison": [
+          "共通点：容量1TBのM.2 2280フォームファクタ",
+          "相違点：対象商品はNVMe(PCIe)接続で読込2200MB/s。Hanye M200はSATA接続で読込550MB/s"
+        ],
+        "differentiators": [
+          "シリコンパワー P34A60の利点：NVMe対応により、SATAの約4倍の速度でデータ転送が可能",
+          "Hanye M200の利点：NVMe非対応の古いPCでもM.2 SATAスロットがあれば使用可能"
+        ]
+      },
+      {
+        "name": "Ediloca EN206 1TB",
+        "asin": "B0BJDXL2F7",
+        "priceComparison": "対象商品より安価だが、SATA接続のため速度に大きな差がある。",
+        "featureComparison": [
+          "共通点：容量1TBのM.2 2280フォームファクタ",
+          "相違点：対象商品はNVMe(PCIe)接続、Ediloca EN206はSATA接続(読込550MB/s)"
+        ],
+        "differentiators": [
+          "シリコンパワー P34A60の利点：NVMe接続による高速なアクセス速度",
+          "Ediloca EN206の利点：価格が抑えられており、SATA M.2スロットしか持たないPCに適合"
+        ]
+      },
+      {
+        "name": "fanxiang S880E 1TB",
+        "asin": "B0D5M5D2XP",
+        "priceComparison": "対象商品よりやや高価だが、Gen4対応で非常に高速かつPS5にも対応。",
+        "featureComparison": [
+          "共通点：容量1TBのM.2 2280 NVMe SSD",
+          "相違点：対象商品はGen3(最大2200MB/s)。fanxiang S880EはGen4(最大7100MB/s)でグラフェン放熱シート搭載"
+        ],
+        "differentiators": [
+          "シリコンパワー P34A60の利点：信頼のシリコンパワー製でコストパフォーマンスに優れる",
+          "fanxiang S880Eの利点：PS5の増設要件を満たし、Gen4環境で最高クラスのパフォーマンスを発揮"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "コスパ重視で1TBのM.2 SSDを探しているユーザー",
+        "PCIe Gen3までの対応となる少し前のPCをアップグレードしたい人",
+        "ゲームや動画保存用の大容量サブストレージが欲しい人"
+      ],
+      "pros": [
+        "PCIe Gen3対応で読込2200MB/sの十分な速度",
+        "1TBとして安価でコストパフォーマンスが高い",
+        "5年保証と国内サポートがあり安心"
+      ],
+      "cons": [
+        "PS5の拡張ストレージとしては使用不可",
+        "DRAMレスのため、大容量の連続書き込みには不向き"
+      ],
+      "score": 80,
+      "scoreRationale": "[基本点: 70]\n[加点: +10] (大容量1TBでコストパフォーマンスに優れる)\n[加点: +5] (5年間の長期保証)\n[減点: -5] (DRAMレスで高負荷時に速度低下の懸念がある)\n[合計: 80]"
+    },
+    "technicalSpecs": {
+      "dimensions": {
+        "height": "165.1mm",
+        "width": "246.4mm",
+        "depth": "27.9mm"
+      },
+      "weight": "2.0g",
+      "capacity": "1TB",
+      "interface": "PCIe Gen3x4, NVMe 1.3",
+      "formFactor": "M.2 2280",
+      "performance": "読込:最大2200MB/s、書込:最大1600MB/s",
+      "endurance": "600 TBW",
+      "warranty": "5年保証"
+    }
+  }
+}
