@@ -134,6 +134,52 @@ async function repairAndPushContent(
 }
 
 /**
+ * 単一のJSONファイルを検証し、必要に応じて修復する
+ */
+async function validateAndRepairSingleJson(
+  octokit: Octokit,
+  owner: string,
+  repo: string,
+  branch: string,
+  file: string,
+): Promise<{ passed: boolean; repaired?: boolean; message?: string }> {
+  try {
+    logger.info(`  Checking: ${file}`);
+    const { data } = await octokit.repos.getContent({
+      owner,
+      repo,
+      path: file,
+      ref: branch,
+    });
+
+    if (!('content' in data && typeof data.content === 'string')) {
+      return { passed: false, message: `Could not retrieve content for ${file}` };
+    }
+
+    const content = Buffer.from(data.content, 'base64').toString('utf-8');
+
+    try {
+      JSON.parse(content);
+      return { passed: true };
+    } catch (parseError) {
+      // 自動修復を試みる
+      const repairedContent = tryRepairContent(content, file);
+      if (repairedContent) {
+        await repairAndPushContent(octokit, owner, repo, branch, file, repairedContent, data.sha);
+        return { passed: false, repaired: true };
+      }
+      throw parseError; // 修復不能な場合はそのままエラースロー
+    }
+  } catch (error) {
+    const errorMessage = error instanceof Error ? error.message : String(error);
+    return {
+      passed: false,
+      message: `JSON syntax error in ${file}: ${errorMessage}`,
+    };
+  }
+}
+
+/**
  * PRに含まれるJSONファイルの妥当性を検証（および必要に応じて修復）する
  */
 async function validateJsonFiles(
@@ -152,51 +198,20 @@ async function validateJsonFiles(
   logger.info(`Validating ${jsonFiles.length} JSON file(s)...`);
 
   let anyRepaired = false;
-
   for (const file of jsonFiles) {
-    try {
-      logger.info(`  Checking: ${file}`);
-      const { data } = await octokit.repos.getContent({
-        owner,
-        repo,
-        path: file,
-        ref: branch,
-      });
-
-      if ('content' in data && typeof data.content === 'string') {
-        const content = Buffer.from(data.content, 'base64').toString('utf-8');
-
-        try {
-          JSON.parse(content);
-        } catch (parseError) {
-          // 自動修復を試みる
-          const repairedContent = tryRepairContent(content, file);
-
-          if (repairedContent) {
-            await repairAndPushContent(octokit, owner, repo, branch, file, repairedContent, data.sha);
-            anyRepaired = true;
-          } else {
-            throw parseError; // 修復不能な場合はそのままエラースロー
-          }
-        }
-      } else {
-        return {
-          passed: false,
-          message: `Could not retrieve content for ${file}`,
-        };
+    const result = await validateAndRepairSingleJson(octokit, owner, repo, branch, file);
+    if (!result.passed) {
+      if (result.repaired) {
+        anyRepaired = true;
+        continue;
       }
-    } catch (error) {
-      const errorMessage = error instanceof Error ? error.message : String(error);
-      return {
-        passed: false,
-        message: `JSON syntax error in ${file}: ${errorMessage}`,
-      };
+      return result;
     }
   }
 
   if (anyRepaired) {
     return {
-      passed: false, // 修復が行われた場合、一度処理を中断して再試行されるのを待つ（またはエラー通知で知らせる）
+      passed: false,
       repaired: true,
       message: 'Invalid JSON was found and automatically repaired.',
     };
@@ -204,6 +219,56 @@ async function validateJsonFiles(
 
   logger.info('All JSON files are valid');
   return { passed: true };
+}
+
+/**
+ * 単一のMarkdownファイルを検証し、必要に応じて修復する
+ */
+async function validateAndRepairSingleMarkdown(
+  octokit: Octokit,
+  owner: string,
+  repo: string,
+  branch: string,
+  file: string,
+): Promise<{ passed: boolean; repaired?: boolean; message?: string }> {
+  try {
+    const { data } = await octokit.repos.getContent({
+      owner,
+      repo,
+      path: file,
+      ref: branch,
+    });
+
+    if (!('content' in data && typeof data.content === 'string')) {
+      return { passed: true };
+    }
+
+    const content = Buffer.from(data.content, 'base64').toString('utf-8');
+    const invalidDatePattern = /(\d{4}-)00(\d-\d{2})/;
+
+    if (!invalidDatePattern.test(content)) {
+      return { passed: true };
+    }
+
+    logger.warn(`  Invalid date detected in ${file}`);
+    const repairedContent = tryRepairContent(content, file);
+
+    if (repairedContent) {
+      await repairAndPushContent(octokit, owner, repo, branch, file, repairedContent, data.sha);
+      return { passed: false, repaired: true };
+    }
+
+    return {
+      passed: false,
+      message: `Invalid date format in ${file} that could not be auto-repaired.`,
+    };
+  } catch (error) {
+    const errorMessage = error instanceof Error ? error.message : String(error);
+    return {
+      passed: false,
+      message: `Error validating ${file}: ${errorMessage}`,
+    };
+  }
 }
 
 /**
@@ -225,43 +290,14 @@ async function validateMarkdownFiles(
   logger.info(`Validating ${mdFiles.length} Markdown file(s)...`);
 
   let anyRepaired = false;
-
   for (const file of mdFiles) {
-    try {
-      const { data } = await octokit.repos.getContent({
-        owner,
-        repo,
-        path: file,
-        ref: branch,
-      });
-
-      if ('content' in data && typeof data.content === 'string') {
-        const content = Buffer.from(data.content, 'base64').toString('utf-8');
-
-        // 日付の形式チェック ( Hugo が受け付けない形式を検出 )
-        // last_investigated: "2026-001-07" など
-        const invalidDatePattern = /(\d{4}-)00(\d-\d{2})/;
-        if (invalidDatePattern.test(content)) {
-          logger.warn(`  Invalid date detected in ${file}`);
-          const repairedContent = tryRepairContent(content, file);
-
-          if (repairedContent) {
-            await repairAndPushContent(octokit, owner, repo, branch, file, repairedContent, data.sha);
-            anyRepaired = true;
-          } else {
-            return {
-              passed: false,
-              message: `Invalid date format in ${file} that could not be auto-repaired.`,
-            };
-          }
-        }
+    const result = await validateAndRepairSingleMarkdown(octokit, owner, repo, branch, file);
+    if (!result.passed) {
+      if (result.repaired) {
+        anyRepaired = true;
+        continue;
       }
-    } catch (error) {
-      const errorMessage = error instanceof Error ? error.message : String(error);
-      return {
-        passed: false,
-        message: `Error validating ${file}: ${errorMessage}`,
-      };
+      return result;
     }
   }
 
@@ -396,6 +432,57 @@ async function processValidationResult(
 }
 
 /**
+ * ブランチ保護ルールがない場合の即時マージ（フォールバック）を実行する
+ */
+function tryImmediateMergeFallback(options: CLIOptions, prTitle: string): void {
+  logger.warn('Auto-merge is not available because no branch protection rules are configured.');
+  logger.info('Falling back to immediate merge...');
+
+  try {
+    runGhCommand(
+      ['pr', 'merge', options.prNumber.toString(), '--squash', '--delete-branch', '--subject', prTitle],
+      {
+        stdio: 'inherit',
+        env: { ...process.env, GH_TOKEN: options.token },
+      },
+    );
+    logger.info(`PR #${options.prNumber} merged immediately (fallback)`);
+  } catch (error) {
+    logger.error('Fallback immediate merge failed:', error);
+    throw error;
+  }
+}
+
+/**
+ * 1回分のマージ試行を実行する
+ * @returns 成功（またはフォールバック成功）した場合は true
+ */
+function attemptMergeIteration(options: CLIOptions, prTitle: string): boolean {
+  try {
+    runGhCommand(
+      ['pr', 'merge', options.prNumber.toString(), '--squash', '--auto', '--delete-branch', '--subject', prTitle],
+      {
+        stdio: 'pipe',
+        env: { ...process.env, GH_TOKEN: options.token },
+      },
+    );
+
+    logger.info(`Auto-merge enabled for PR #${options.prNumber}`);
+    return true;
+  } catch (error) {
+    const stderr = error instanceof GitCommandError ? error.stderr : '';
+
+    // ブランチ保護ルールがない場合は即時マージを試行
+    if (stderr.includes('Protected branch rules not configured')) {
+      tryImmediateMergeFallback(options, prTitle);
+      return true;
+    }
+
+    throw error;
+  }
+}
+
+/**
  * 自動マージの設定を試行する（リトライとフォールバック含む）
  */
 async function enableAutoMergeWithRetry(octokit: Octokit, options: CLIOptions, prTitle: string): Promise<void> {
@@ -407,40 +494,11 @@ async function enableAutoMergeWithRetry(octokit: Octokit, options: CLIOptions, p
 
   for (let attempt = 1; attempt <= maxRetries; attempt++) {
     try {
-      runGhCommand(
-        ['pr', 'merge', options.prNumber.toString(), '--squash', '--auto', '--delete-branch', '--subject', prTitle],
-        {
-          stdio: 'pipe',
-          env: { ...process.env, GH_TOKEN: options.token },
-        },
-      );
-
-      logger.info(`Auto-merge enabled for PR #${options.prNumber}`);
-      return;
+      if (attemptMergeIteration(options, prTitle)) {
+        return;
+      }
     } catch (error) {
       lastError = error instanceof Error ? error : new Error(String(error));
-      const stderr = error instanceof GitCommandError ? error.stderr : '';
-
-      // ブランチ保護ルールが設定されていない場合のフォールバック
-      if (stderr.includes('Protected branch rules not configured')) {
-        logger.warn('Auto-merge is not available because no branch protection rules are configured.');
-        logger.info('Falling back to immediate merge...');
-
-        try {
-          runGhCommand(
-            ['pr', 'merge', options.prNumber.toString(), '--squash', '--delete-branch', '--subject', prTitle],
-            {
-              stdio: 'inherit',
-              env: { ...process.env, GH_TOKEN: options.token },
-            },
-          );
-          logger.info(`PR #${options.prNumber} merged immediately (fallback)`);
-          return;
-        } catch (mergeError) {
-          logger.error('Fallback immediate merge failed:', mergeError);
-          lastError = mergeError instanceof Error ? mergeError : new Error(String(mergeError));
-        }
-      }
 
       if (attempt < maxRetries) {
         logger.warn(`Auto-merge failed (attempt ${attempt}/${maxRetries}), retrying in ${retryDelayMs / 1000}s...`);
