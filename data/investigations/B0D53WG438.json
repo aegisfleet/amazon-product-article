@@ -1,0 +1,179 @@
+{
+  "analysis": {
+    "productName": "エレコム USB-Cハブ ドッキングステーション DST-W09",
+    "parentAsin": "B0D53WG438",
+    "productDescription": "薄型ノートパソコンの機能を拡張する、USB Type-C接続の6in1ドッキングステーション。スリムタイプでPD100W対応、4K60Hz HDMI、LANポートなどを備える。",
+    "productUsage": [
+      "ノートパソコンのUSBポートやHDMIポートの拡張",
+      "有線LANでのインターネット接続",
+      "USB PDでのパススルー充電"
+    ],
+    "positivePoints": [
+      "持ち運びに便利なスリムな形状",
+      "USB PD 100W対応で高速充電可能",
+      "最大5Gbpsの高速データ転送に対応",
+      "有線LANポート搭載で安定したネットワーク接続が可能"
+    ],
+    "negativePoints": [
+      "カードリーダー(SD/microSD)が非搭載"
+    ],
+    "useCases": [
+      "外出先や出張先でのノートPCの機能拡張",
+      "自宅のデスクでのマルチモニター環境構築",
+      "安定した有線LAN接続が必要なオンライン会議"
+    ],
+    "userStories": [],
+    "userImpression": "薄型で持ち運びやすく、基本的な拡張ポート(USB-A, HDMI, LAN, Type-C)が揃っており、出張や外出の多いビジネスユーザーに適しているとの評価が予想される（具体的なユーザーレビューは確認できず）。",
+    "sources": [
+      {
+        "id": "src-amazon",
+        "name": "Amazon商品ページ",
+        "url": "https://www.amazon.co.jp/dp/B0D53WG438",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2024-06-19",
+        "author": "エレコム",
+        "conflictOfInterest": "none",
+        "notes": "商品の仕様、価格、特徴を確認"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "スリムタイプで持ち運びに便利",
+        "category": "durability",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-amazon"
+        ],
+        "crossChecked": false,
+        "notes": "商品公式説明に記載あり"
+      },
+      {
+        "claim": "最大100WのUSB PDパススルー充電対応",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-amazon"
+        ],
+        "crossChecked": false,
+        "notes": "商品公式説明にて確認"
+      }
+    ],
+    "lastInvestigated": "2026-04-26",
+    "competitiveAnalysis": [
+      {
+        "name": "UGREEN Revodok Pro USB C Hub 6-in-1",
+        "asin": "B0D1XLNWP2",
+        "priceComparison": "対象商品よりも安価だが、LANポートの有無などの違いがある。",
+        "featureComparison": [
+          "共通点：USB-C接続、PD100W対応、4K60Hz対応",
+          "相違点：UGREENは10Gbps対応ポート搭載。エレコムは有線LANポート搭載（UGREENのこのモデルはLAN非搭載）"
+        ],
+        "differentiators": [
+          "エレコム DST-W09の利点：有線LANポートが必要な場合や国内メーカーのサポートを重視する場合に優位。",
+          "UGREEN Revodok Proの利点：10Gbpsの高速データ転送を重視する場合や、より安価に導入したい場合に適している。"
+        ]
+      },
+      {
+        "name": "UGREEN Revodok 1061 USB-Cハブ 6-IN-1",
+        "asin": "B0BW2TLQ8S",
+        "priceComparison": "対象商品よりも安価である。",
+        "featureComparison": [
+          "共通点：USB-C接続、PD100W対応、有線LANポート搭載",
+          "相違点：エレコムは4K60Hz対応だが、UGREEN 1061は4K30Hzまでの対応である。"
+        ],
+        "differentiators": [
+          "エレコム DST-W09の利点：より滑らかな映像出力（4K60Hz）が必要な場合に優位。",
+          "UGREEN Revodok 1061の利点：4K30Hzで十分な用途であれば、より安価に導入可能。"
+        ]
+      },
+      {
+        "name": "TP-Link USB Type-C 6ポート ハブ UH6120C",
+        "asin": "B0DK4GMTFF",
+        "priceComparison": "対象商品よりもやや高価である。",
+        "featureComparison": [
+          "共通点：USB-C接続、PD100W対応、4K60Hz対応、有線LAN搭載",
+          "相違点：ポート構成がほぼ同等であるが、デザインやブランドが異なる。"
+        ],
+        "differentiators": [
+          "エレコム DST-W09の利点：TP-Link製品よりも安価に導入でき、スリムな形状である点。",
+          "TP-Link UH6120Cの利点：ネットワーク機器で実績のあるTP-Linkブランドを好むユーザーに適している。"
+        ]
+      },
+      {
+        "name": "バッファロー USB-C ハブ 6-in-1 LUD-U3-CU302SV/N",
+        "asin": "B0DVLK4CCT",
+        "priceComparison": "対象商品よりもやや高価である。",
+        "featureComparison": [
+          "共通点：USB-C接続、PD100W対応、有線LAN搭載、4K対応",
+          "相違点：バッファローはVGAポートも搭載しており、古いプロジェクター等への接続が可能。"
+        ],
+        "differentiators": [
+          "エレコム DST-W09の利点：よりスリムな形状と安価な価格設定。",
+          "バッファロー LUD-U3-CU302SV/Nの利点：VGA接続が必要な環境で活躍する。"
+        ]
+      },
+      {
+        "name": "ロジテック ドッキングステーション 6-in-1 LHB-PMP6U3S",
+        "asin": "B0CQYKF6CM",
+        "priceComparison": "対象商品よりも安価だが、大幅な値引き（参考価格から73%オフ）がされており、品質や信頼性に留意が必要。",
+        "featureComparison": [
+          "共通点：USB-C接続、PD100W対応、4K60Hz対応",
+          "相違点：ロジテックは画面表示ON/OFFボタンやSD/microSDスロットを備えるが、有線LANポートがない。"
+        ],
+        "differentiators": [
+          "エレコム DST-W09の利点：有線LAN接続が必要な場合や、過度な割引のない標準的な価格設定による安心感。",
+          "ロジテック LHB-PMP6U3Sの利点：SDカードリーダーや画面表示ON/OFFボタンが必要な場合に適している。"
+        ]
+      },
+      {
+        "name": "Anker PowerExpand 6-in-1 イーサネット ハブ",
+        "asin": "B08C74W2QK",
+        "priceComparison": "対象商品よりも高価である。",
+        "featureComparison": [
+          "共通点：USB-C接続、有線LAN搭載、4K対応",
+          "相違点：AnkerはPDパススルーが65Wまでの対応であるのに対し、エレコムは100Wまで対応している。"
+        ],
+        "differentiators": [
+          "エレコム DST-W09の利点：100WのPDパススルー充電が必要なノートPCを使用している場合や、より安価に導入したい場合に優位。",
+          "Anker PowerExpand 6-in-1の利点：Ankerブランドの信頼性を重視するユーザーに適している。"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "出張や外出先での作業が多いビジネスパーソン",
+        "有線LAN接続を必要とするノートパソコンユーザー",
+        "USB PD対応の薄型ノートPCを利用しているユーザー"
+      ],
+      "pros": [
+        "スリムタイプで持ち運びしやすい",
+        "有線LANポート搭載で安定した通信が可能",
+        "100WのUSB PDパススルー充電に対応"
+      ],
+      "cons": [
+        "SD/microSDカードリーダーが搭載されていない"
+      ],
+      "score": 75,
+      "scoreRationale": "[基本点: 70]\n[加点: +5] スリムで持ち運びに便利な形状と、有線LAN・4K60Hz・PD100W対応という実用性の高いポート構成（性能・機能）\n[合計: 75]"
+    },
+    "technicalSpecs": {
+      "dimensions": {
+        "height": "17mm",
+        "width": "23mm",
+        "depth": "135mm"
+      },
+      "weight": "不明",
+      "capacity": "なし",
+      "material": "不明",
+      "origin": "不明",
+      "other": [
+        "対応解像度: 最大4K(60Hz)",
+        "USB Power Delivery: 最大100W対応",
+        "データ転送速度: 最大5Gbps(USB3.2 Gen1)",
+        "ポート構成: HDMI, LAN, USB Type-A, USB Type-Cなど(計6ポート)",
+        "カラー: ブラック"
+      ]
+    }
+  }
+}
