@@ -529,6 +529,7 @@ export class CategoryNormalizer {
       '書籍',
       '和書',
       'Kindle本',
+      '収納・生活雑貨',
     ];
 
     if (blacklist.includes(name)) {
