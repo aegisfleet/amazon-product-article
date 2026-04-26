@@ -342,9 +342,11 @@ export class CategoryNormalizer {
       /brandname変更/i,
       /deal/i,
       /^hpc/i,
+      /\w*afc[\s\d]*under/i,
+      /\w+[\s\d]*under\d+/i,
       /^\d{2}\s*ビジネス/,
       /spring must haves/i,
-      /(?:kindle|無料|[0-9０-９]+万円|円|テスト|マッサージャーほか健康家電|[>＞]|表示されている方限定)/i,
+      /(?:kindle|無料|[0-9０-９]+万円|円|テスト|test|マッサージャーほか健康家電|[>＞]|表示されている方限定|widget)/i,
       /(?:amazon\s*global|amazonglobal|babel|コクヨ|beauty|パントリー|本日の|特選品|cml|customers' most-loved|ソニー|9999$|ポイント還元本|書籍タイトル|free\s*shipping)/i,
       // Age ranges and price ranges
       /\d+[歳才]+～/,

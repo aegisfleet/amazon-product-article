@@ -146,6 +146,12 @@ describe('CategoryNormalizer', () => {
         'ビューティー',
         'ビューティーストア',
         '収納・生活雑貨',
+        'GroAFC2409under2000',
+        'Gro_AFC_2409_under2000',
+        'Groceryunder2000BFW24',
+        'Grocery_under2000_BFW24',
+        'SnS Acquisition Test Grocery ASINs Low Price',
+        'Grocery Recommendation Widget',
       ];
       invalidNames.forEach((name) => {
         expect(CategoryNormalizer.isValidCategoryName(name)).toBe(false);
