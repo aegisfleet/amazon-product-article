@@ -276,101 +276,207 @@ async function validateMarkdownFiles(
   return { passed: true };
 }
 
+/**
+ * PR情報と変更ファイルリストを取得し、PullRequestオブジェクトを構築する
+ */
+async function fetchPullRequest(octokit: Octokit, options: CLIOptions): Promise<PullRequest> {
+  const { data: prData } = await octokit.pulls.get({
+    owner: options.owner,
+    repo: options.repo,
+    pull_number: options.prNumber,
+  });
+
+  const { data: filesData } = await octokit.pulls.listFiles({
+    owner: options.owner,
+    repo: options.repo,
+    pull_number: options.prNumber,
+  });
+
+  return {
+    number: prData.number,
+    title: prData.title,
+    body: prData.body || '',
+    head: prData.head.ref,
+    base: prData.base.ref,
+    author: prData.user?.login || '',
+    state: prData.state as 'open' | 'closed' | 'merged',
+    draft: prData.draft || false,
+    changedFiles: filesData.map((f) => f.filename),
+    labels: prData.labels.map((l) => (typeof l === 'string' ? l : l.name || '')),
+    createdAt: new Date(prData.created_at),
+    updatedAt: new Date(prData.updated_at),
+  };
+}
+
+/**
+ * ドラフトPRを ready for review に変換し、APIが反映されるまで待機する
+ */
+async function handleDraftPr(octokit: Octokit, options: CLIOptions): Promise<void> {
+  logger.info('PR is a draft, converting to ready for review...');
+
+  try {
+    runGhCommand(['pr', 'ready', options.prNumber.toString()], {
+      stdio: 'pipe',
+      env: { ...process.env, GH_TOKEN: options.token },
+    });
+    logger.info('Successfully converted draft PR to ready for review');
+
+    // 状態が更新されるまで待機
+    let attempts = 0;
+    const maxAttempts = 3;
+    while (attempts < maxAttempts) {
+      await new Promise((resolve) => setTimeout(resolve, 3000));
+      const { data: updatedPr } = await octokit.pulls.get({
+        owner: options.owner,
+        repo: options.repo,
+        pull_number: options.prNumber,
+      });
+      if (!updatedPr.draft) {
+        logger.info('PR is now ready for review');
+        return;
+      }
+      attempts++;
+      logger.info(`Waiting for PR to be ready (attempt ${attempts}/${maxAttempts})...`);
+    }
+  } catch (error) {
+    logger.error('Failed to convert draft PR to ready:', error);
+    throw error;
+  }
+
+  // 最終的な待機（API反映の安定化）
+  await new Promise((resolve) => setTimeout(resolve, 3000));
+}
+
+/**
+ * 変更ファイルがない場合にPRをクローズし、ブランチを削除する
+ */
+async function handleNoChangedFiles(octokit: Octokit, options: CLIOptions, headBranch: string): Promise<void> {
+  logger.warn('PR has no changed files, closing...');
+  await octokit.pulls.update({
+    owner: options.owner,
+    repo: options.repo,
+    pull_number: options.prNumber,
+    state: 'closed',
+  });
+  logger.info(`PR #${options.prNumber} closed successfully`);
+
+  await deleteBranch(octokit, options.owner, options.repo, headBranch);
+}
+
+/**
+ * バリデーション結果に基づいてコメント投稿やプロセス終了を判断する
+ */
+async function processValidationResult(
+  octokit: Octokit,
+  options: CLIOptions,
+  result: { passed: boolean; repaired?: boolean; message?: string },
+  type: 'JSON' | 'Markdown',
+): Promise<boolean> {
+  if (result.passed) return true;
+
+  if (result.repaired) {
+    logger.info(`Auto-repair completed for ${type}. PR will be reconsidered in the next trigger.`);
+    await octokit.issues.createComment({
+      owner: options.owner,
+      repo: options.repo,
+      issue_number: options.prNumber,
+      body: `🛠 **${type} Auto-Repair Completed**\n\n不正な形式が検出されましたが、自動的に修復して更新しました。次回の実行をお待ちください。`,
+    });
+    return false;
+  }
+
+  logger.error(`${type} validation failed: ${result.message}`);
+  await octokit.issues.createComment({
+    owner: options.owner,
+    repo: options.repo,
+    issue_number: options.prNumber,
+    body: `❌ **${type} Validation Failed**\n\n${result.message}\n\nこのエラーを修正するまで自動マージは行われません。`,
+  });
+  return false;
+}
+
+/**
+ * 自動マージの設定を試行する（リトライとフォールバック含む）
+ */
+async function enableAutoMergeWithRetry(octokit: Octokit, options: CLIOptions, prTitle: string): Promise<void> {
+  logger.info('Enabling auto-merge for the PR...');
+
+  const maxRetries = 10;
+  const retryDelayMs = 10000;
+  let lastError: Error | null = null;
+
+  for (let attempt = 1; attempt <= maxRetries; attempt++) {
+    try {
+      runGhCommand(
+        ['pr', 'merge', options.prNumber.toString(), '--squash', '--auto', '--delete-branch', '--subject', prTitle],
+        {
+          stdio: 'pipe',
+          env: { ...process.env, GH_TOKEN: options.token },
+        },
+      );
+
+      logger.info(`Auto-merge enabled for PR #${options.prNumber}`);
+      return;
+    } catch (error) {
+      lastError = error instanceof Error ? error : new Error(String(error));
+      const stderr = error instanceof GitCommandError ? error.stderr : '';
+
+      // ブランチ保護ルールが設定されていない場合のフォールバック
+      if (stderr.includes('Protected branch rules not configured')) {
+        logger.warn('Auto-merge is not available because no branch protection rules are configured.');
+        logger.info('Falling back to immediate merge...');
+
+        try {
+          runGhCommand(
+            ['pr', 'merge', options.prNumber.toString(), '--squash', '--delete-branch', '--subject', prTitle],
+            {
+              stdio: 'inherit',
+              env: { ...process.env, GH_TOKEN: options.token },
+            },
+          );
+          logger.info(`PR #${options.prNumber} merged immediately (fallback)`);
+          return;
+        } catch (mergeError) {
+          logger.error('Fallback immediate merge failed:', mergeError);
+          lastError = mergeError instanceof Error ? mergeError : new Error(String(mergeError));
+        }
+      }
+
+      if (attempt < maxRetries) {
+        logger.warn(`Auto-merge failed (attempt ${attempt}/${maxRetries}), retrying in ${retryDelayMs / 1000}s...`);
+        await new Promise((resolve) => setTimeout(resolve, retryDelayMs));
+      }
+    }
+  }
+
+  if (lastError) {
+    throw lastError;
+  }
+}
+
 async function main(): Promise<void> {
+
   logger.info('Starting PR merge CLI...');
 
   try {
     const options = getOptions();
     logger.info(`Processing PR #${options.prNumber} by ${options.prAuthor}`);
 
-    // GitHub API クライアントを初期化
     const octokit = new Octokit({ auth: options.token });
-
-    // PR情報を取得
-    const { data: prData } = await octokit.pulls.get({
-      owner: options.owner,
-      repo: options.repo,
-      pull_number: options.prNumber,
-    });
-
-    // 変更ファイル一覧を取得
-    const { data: filesData } = await octokit.pulls.listFiles({
-      owner: options.owner,
-      repo: options.repo,
-      pull_number: options.prNumber,
-    });
-
-    const pr: PullRequest = {
-      number: prData.number,
-      title: prData.title,
-      body: prData.body || '',
-      head: prData.head.ref,
-      base: prData.base.ref,
-      author: prData.user?.login || '',
-      state: prData.state,
-      draft: prData.draft || false,
-      changedFiles: filesData.map((f) => f.filename),
-      labels: prData.labels.map((l) => (typeof l === 'string' ? l : l.name || '')),
-      createdAt: new Date(prData.created_at),
-      updatedAt: new Date(prData.updated_at),
-    };
+    const pr = await fetchPullRequest(octokit, options);
 
     logger.info(`PR title: ${pr.title}`);
     logger.info(`Changed files: ${pr.changedFiles.length}`);
     logger.info(`Draft status: ${pr.draft}`);
 
-    // ドラフトPRの場合は、ready状態に変換
+    // ドラフトPRの処理
     if (pr.draft) {
-      logger.info('PR is a draft, converting to ready for review...');
-
-      try {
-        runGhCommand(['pr', 'ready', options.prNumber.toString()], {
-          stdio: 'pipe',
-          env: { ...process.env, GH_TOKEN: options.token },
-        });
-        logger.info('Successfully converted draft PR to ready for review');
-
-        // 状態が更新されるまで待機
-        let attempts = 0;
-        const maxAttempts = 3;
-        while (attempts < maxAttempts) {
-          await new Promise((resolve) => setTimeout(resolve, 3000));
-          const { data: updatedPr } = await octokit.pulls.get({
-            owner: options.owner,
-            repo: options.repo,
-            pull_number: options.prNumber,
-          });
-          if (!updatedPr.draft) {
-            logger.info('PR is now ready for review');
-            break;
-          }
-          attempts++;
-          logger.info(`Waiting for PR to be ready (attempt ${attempts}/${maxAttempts})...`);
-        }
-      } catch (error) {
-        logger.error('Failed to convert draft PR to ready:', error);
-        throw error;
-      }
-
-      // GitHub APIが安定するまで追加で待機
-      logger.info('Waiting for GitHub API to stabilize after draft conversion...');
-      await new Promise((resolve) => setTimeout(resolve, 3000));
+      await handleDraftPr(octokit, options);
     }
 
-    // 変更ファイルがない場合はPRをクローズ
+    // 変更ファイルがない場合の処理
     if (pr.changedFiles.length === 0) {
-      logger.warn('PR has no changed files, closing...');
-      await octokit.pulls.update({
-        owner: options.owner,
-        repo: options.repo,
-        pull_number: options.prNumber,
-        state: 'closed',
-      });
-      logger.info(`PR #${options.prNumber} closed successfully`);
-
-      // ブランチも削除
-      await deleteBranch(octokit, options.owner, options.repo, pr.head);
-
+      await handleNoChangedFiles(octokit, options, pr.head);
       process.exit(0);
     }
 
@@ -379,151 +485,25 @@ async function main(): Promise<void> {
     const decision = mergeManager.validatePullRequest(pr);
 
     logger.info(`Merge decision: ${decision.shouldMerge ? 'APPROVE' : 'REJECT'}`);
-    logger.info(`Reason: ${decision.reason}`);
-
     if (!decision.shouldMerge) {
-      logger.warn('PR validation failed, skipping merge');
-      for (const result of decision.validationResults) {
-        logger.info(`  ${result.check}: ${result.passed ? 'PASSED' : 'FAILED'} - ${result.message}`);
-      }
+      logger.warn(`PR validation failed: ${decision.reason}`);
+      decision.validationResults.forEach((r) => logger.info(`  ${r.check}: ${r.passed ? 'OK' : 'FAIL'} - ${r.message}`));
       process.exit(0);
     }
 
-    // JSONファイルの妥当性をチェック
-    const jsonValidation = await validateJsonFiles(octokit, options.owner, options.repo, pr.head, pr.changedFiles);
-
-    if (!jsonValidation.passed) {
-      if (jsonValidation.repaired) {
-        logger.info('Auto-repair completed for JSON. PR will be reconsidered in the next trigger.');
-
-        // 修復成功のコメントを残す
-        await octokit.issues.createComment({
-          owner: options.owner,
-          repo: options.repo,
-          issue_number: options.prNumber,
-          body: `🛠 **Data Auto-Repair Completed**\n\n不正な形式の JSON または日付が検出されましたが、自動的に修復して更新しました。次回の実行をお待ちください。`,
-        });
-
-        process.exit(0);
-      }
-
-      logger.error(`JSON validation failed: ${jsonValidation.message}`);
-
-      // コメントを残して異常終了
-      await octokit.issues.createComment({
-        owner: options.owner,
-        repo: options.repo,
-        issue_number: options.prNumber,
-        body: `❌ **JSON Validation Failed**\n\n${jsonValidation.message}\n\nこのエラーを修正するまで自動マージは行われません。`,
-      });
-
-      process.exit(1);
+    // コンテンツのバリデーション
+    const jsonResult = await validateJsonFiles(octokit, options.owner, options.repo, pr.head, pr.changedFiles);
+    if (!(await processValidationResult(octokit, options, jsonResult, 'JSON'))) {
+      process.exit(jsonResult.repaired ? 0 : 1);
     }
 
-    // Markdownファイルの日付をチェック
-    const mdValidation = await validateMarkdownFiles(octokit, options.owner, options.repo, pr.head, pr.changedFiles);
-
-    if (!mdValidation.passed) {
-      if (mdValidation.repaired) {
-        logger.info('Auto-repair completed for Markdown. PR will be reconsidered in the next trigger.');
-
-        await octokit.issues.createComment({
-          owner: options.owner,
-          repo: options.repo,
-          issue_number: options.prNumber,
-          body: `🛠 **Markdown Auto-Repair Completed**\n\n日付形式の異常が検出されましたが、自動的に修復して更新しました。次回の実行をお待ちください。`,
-        });
-
-        process.exit(0);
-      }
-
-      logger.error(`Markdown validation failed: ${mdValidation.message}`);
-      await octokit.issues.createComment({
-        owner: options.owner,
-        repo: options.repo,
-        issue_number: options.prNumber,
-        body: `❌ **Markdown Validation Failed**\n\n${mdValidation.message}`,
-      });
-      process.exit(1);
+    const mdResult = await validateMarkdownFiles(octokit, options.owner, options.repo, pr.head, pr.changedFiles);
+    if (!(await processValidationResult(octokit, options, mdResult, 'Markdown'))) {
+      process.exit(mdResult.repaired ? 0 : 1);
     }
 
-    // PRを自動マージに設定
-    // GitHub CLI (gh) を使用して auto-merge を有効化
-    // 検証が済んでいるので、後はGitHubプラットフォームに任せる
-    logger.info('Enabling auto-merge for the PR...');
-
-    const maxRetries = 10;
-    const retryDelayMs = 10000;
-    let lastError: Error | null = null;
-
-    for (let attempt = 1; attempt <= maxRetries; attempt++) {
-      try {
-        // gh pr merge <number> --squash --auto --delete-branch --subject "<title>"
-        // Note: GITHUB_TOKEN is usually automatically picked up by gh if set in env as GH_TOKEN or GITHUB_TOKEN
-        // We ensure GH_TOKEN is set to options.token
-
-        // Capture output to detect specific GraphQL errors
-        runGhCommand(
-          [
-            'pr',
-            'merge',
-            options.prNumber.toString(),
-            '--squash',
-            '--auto',
-            '--delete-branch',
-            '--subject',
-            prData.title,
-          ],
-          {
-            stdio: 'pipe',
-            env: { ...process.env, GH_TOKEN: options.token },
-          },
-        );
-
-        logger.info(`Auto-merge enabled for PR #${options.prNumber}`);
-        lastError = null;
-        break;
-      } catch (error) {
-        lastError = error instanceof Error ? error : new Error(String(error));
-        const stderr = error instanceof GitCommandError ? error.stderr : '';
-
-        // Check for "Protected branch rules not configured" error
-        // This happens when auto-merge is requested but no protection rules exist on the base branch.
-        // In this case, we can safely fallback to immediate merge since we've already done our own validation.
-        if (stderr.includes('Protected branch rules not configured')) {
-          logger.warn('Auto-merge is not available because no branch protection rules are configured.');
-          logger.info('Falling back to immediate merge...');
-
-          try {
-            runGhCommand(
-              ['pr', 'merge', options.prNumber.toString(), '--squash', '--delete-branch', '--subject', prData.title],
-              {
-                stdio: 'inherit',
-                env: { ...process.env, GH_TOKEN: options.token },
-              },
-            );
-            logger.info(`PR #${options.prNumber} merged immediately (fallback)`);
-            lastError = null;
-            break;
-          } catch (mergeError) {
-            logger.error('Fallback immediate merge failed:', mergeError);
-            lastError = mergeError instanceof Error ? mergeError : new Error(String(mergeError));
-          }
-        }
-
-        if (attempt < maxRetries) {
-          logger.warn(`Auto-merge failed (attempt ${attempt}/${maxRetries}), retrying in ${retryDelayMs / 1000}s...`);
-          await new Promise((resolve) => setTimeout(resolve, retryDelayMs));
-        }
-      }
-    }
-
-    if (lastError) {
-      logger.error('Failed to enable auto-merge after retries:', lastError);
-      // 失敗しても検証自体はパスしているので、プロセスは成功として終了させるか検討の余地があるが
-      // マージ設定ができないのはCIとしては失敗なので exit 1 とする
-      process.exit(1);
-    }
+    // 自動マージ有効化
+    await enableAutoMergeWithRetry(octokit, options, pr.title);
 
     process.exit(0);
   } catch (error) {
