@@ -145,6 +145,7 @@ describe('CategoryNormalizer', () => {
         'CC installments Banner4',
         'ビューティー',
         'ビューティーストア',
+        '収納・生活雑貨',
       ];
       invalidNames.forEach((name) => {
         expect(CategoryNormalizer.isValidCategoryName(name)).toBe(false);
