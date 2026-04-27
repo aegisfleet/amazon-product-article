@@ -152,6 +152,8 @@ describe('CategoryNormalizer', () => {
         'Grocery_under2000_BFW24',
         'SnS Acquisition Test Grocery ASINs Low Price',
         'Grocery Recommendation Widget',
+        'タケオキクチ、コムサイズム他 ビジネスファッション・小物',
+        '【最大60％OFF】タケオキクチ、コムサイズム他 就活・ビジネスファッション',
       ];
       invalidNames.forEach((name) => {
         expect(CategoryNormalizer.isValidCategoryName(name)).toBe(false);
