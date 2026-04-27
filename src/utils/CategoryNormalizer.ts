@@ -297,7 +297,7 @@ export class CategoryNormalizer {
     const invalidPatterns = [
       /sale|off|coupon|ranking|best|week|fair|event|campaign|bauhutte|free shipping|test/i,
       /セール|オフ(?!ィス)|クーポン|ランキング|おすすめ|ウィーク|フェア|イベント|キャンペーン/,
-      /企画|向け|ほか$|など$|新商品|すべて$|特設ページ|発売日お届け|父の日/,
+      /企画|向け|ほか$|など$|他(?:$|[\s、])|新商品|すべて$|特設ページ|発売日お届け|父の日/,
       /替えブラシ[_＿\s]*[sｓ]/i,
       /割引|お買い得|利用シーン|あわせ買い|合わせ買い|全商品$|関連製品$|新製品$|ヤスいいね|対象商品|人気商品|レビュー評価/,
       /まとめ買い|まとめでお得|中止|hqp|紐付|新生活|入園入学/,
@@ -324,7 +324,7 @@ export class CategoryNormalizer {
       /l\d+.*cat$/i,
       /^all /i,
       /^prime /i,
-      /[【】|()※]/,
+      /[【】|()（）※]/,
       /^家電$/,
       /^アクセサリ$/,
       /^アクセサリー$/,
@@ -532,6 +532,7 @@ export class CategoryNormalizer {
       '和書',
       'Kindle本',
       '収納・生活雑貨',
+      'タケオキクチ、コムサイズム他 ビジネスファッション・小物',
     ];
 
     if (blacklist.includes(name)) {
@@ -547,7 +548,7 @@ export class CategoryNormalizer {
     // Normalize spaces (including NBSP \u00a0) and remove special characters
     return sanitized
       .replaceAll(/[\u00a0\s]+/g, ' ')
-      .replaceAll(/[【】|()_※]/g, '')
+      .replaceAll(/[【】|()（）_※]/g, '')
       .trim();
   }
 }
