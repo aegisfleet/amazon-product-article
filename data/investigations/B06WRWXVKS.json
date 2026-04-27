@@ -1,131 +1,254 @@
 {
   "analysis": {
     "productName": "superInk ユニバーサル 洗浄液 100ml インクジェットプリントヘッド用 キット",
-    "parentAsin": "B06X95CY9L",
+    "parentAsin": "B06WRWXVKS",
     "productDescription": "キヤノン、エプソン、ブラザー、HP、リコーの主要5大メーカーに対応したインクジェットプリンター用洗浄液キット。手袋や注入器などの作業ツールが一式付属しており、自宅で手軽にヘッドクリーニングを行える。",
     "productUsage": [
       "印刷のかすれや特定の色が出ない際のヘッドクリーニング",
-      "長期間使用していなかったプリンターのメンテナンス",
-      "メーカー修理に出す前の自己解決手段"
+      "長期間使用していなかったプリンターのメンテナンス"
     ],
     "positivePoints": [
       "主要5メーカーに対応するユニバーサル仕様",
       "注入器やチューブ、手袋など必要なツールが全て揃っている",
-      "1,000円強という低価格で修理・買い替えコストを削減できる可能性がある"
+      "低価格で修理・買い替えコストを削減できる可能性がある"
     ],
     "negativePoints": [
-      "レビュー情報が乏しく、実際の洗浄効果が不透明",
+      "実際の洗浄効果が不透明",
       "重度の目詰まりや物理的なヘッド故障には効果がない場合がある",
       "作業による故障リスクは自己責任となる"
     ],
     "useCases": [
       "強力クリーニングを繰り返しても改善しない場合",
-      "保証切れの古いプリンターを復活させたい場合",
-      "ジャンク品プリンターの修理・再生"
+      "保証切れの古いプリンターを復活させたい場合"
     ],
-    "userStories": [
-      {
-        "userType": "コスト重視のユーザー",
-        "scenario": "古いプリンターの復活",
-        "experience": "（推測）メーカー保証が切れたプリンターが目詰まりを起こし、買い替えを検討していた。ダメ元で本製品を使用したところ、固着したインクが解消され、再び印刷できるようになった。高額な修理代を浮かせることができた。",
-        "sentiment": "positive"
-      },
-      {
-        "userType": "DIY初心者",
-        "scenario": "初めてのヘッド洗浄",
-        "experience": "（推測）ヘッド洗浄は難しそうだと感じていたが、このキットには注入器やチューブなどのツールが一式揃っていたため、別途道具を買い揃える必要がなくスムーズに作業できた。",
-        "sentiment": "positive"
-      },
-      {
-        "userType": "慎重なユーザー",
-        "scenario": "効果への不安",
-        "experience": "（推測）数回試してみたが、頑固な目詰まりは完全には解消しなかった。あくまで軽度の詰まりやメンテナンス用と考えたほうが良いかもしれない。",
-        "sentiment": "mixed"
-      }
-    ],
-    "userImpression": "必要な道具が安価に揃うユニバーサルキットとして、プリンターの不調に悩むユーザーにとって手軽な「最後の頼みの綱」。ただし効果はケースバイケースであり、自己責任での利用が前提となる。",
+    "userStories": [],
+    "userImpression": "必要な道具が安価に揃うユニバーサルキットとして、プリンターの不調に悩むユーザーにとって手軽な選択肢。ただし効果はケースバイケースであり、自己責任での利用が前提となる。",
     "sources": [
       {
+        "id": "src-1",
         "name": "Amazon商品ページ (B06WRWXVKS)",
         "url": "https://www.amazon.co.jp/dp/B06WRWXVKS",
-        "credibility": "高"
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-04-28",
+        "author": "super Ink",
+        "conflictOfInterest": "none",
+        "notes": "商品の公式仕様および付属ツールについて"
+      },
+      {
+        "id": "src-2",
+        "name": "Amazon商品ページ (B0895DMZL2)",
+        "url": "https://www.amazon.co.jp/dp/B0895DMZL2",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-04-28",
+        "author": "super Ink",
+        "conflictOfInterest": "none",
+        "notes": "同ブランドの上位版商品の情報"
+      },
+      {
+        "id": "src-3",
+        "name": "Amazon商品ページ (B06WW2SNPW)",
+        "url": "https://www.amazon.co.jp/dp/B06WW2SNPW",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-04-28",
+        "author": "super Ink",
+        "conflictOfInterest": "none",
+        "notes": "同ブランドの互換インク商品の情報"
+      },
+      {
+        "id": "src-4",
+        "name": "Amazon商品ページ (B09CTDT8P7)",
+        "url": "https://www.amazon.co.jp/dp/B09CTDT8P7",
+        "tier": "medium",
+        "evidenceType": "secondary",
+        "publishedAt": "2026-04-28",
+        "author": "Edenz",
+        "conflictOfInterest": "none",
+        "notes": "競合商品の情報"
+      },
+      {
+        "id": "src-5",
+        "name": "Amazon商品ページ (B0BM4WSHG9)",
+        "url": "https://www.amazon.co.jp/dp/B0BM4WSHG9",
+        "tier": "medium",
+        "evidenceType": "secondary",
+        "publishedAt": "2026-04-28",
+        "author": "Bell Collar",
+        "conflictOfInterest": "none",
+        "notes": "競合商品の情報"
+      },
+      {
+        "id": "src-6",
+        "name": "Amazon商品ページ (B01N2MTNHO)",
+        "url": "https://www.amazon.co.jp/dp/B01N2MTNHO",
+        "tier": "medium",
+        "evidenceType": "secondary",
+        "publishedAt": "2026-04-28",
+        "author": "ZECOO COLOR",
+        "conflictOfInterest": "none",
+        "notes": "競合商品の情報"
+      },
+      {
+        "id": "src-7",
+        "name": "Amazon商品ページ (B06WD86LMW)",
+        "url": "https://www.amazon.co.jp/dp/B06WD86LMW",
+        "tier": "medium",
+        "evidenceType": "secondary",
+        "publishedAt": "2026-04-28",
+        "author": "super Ink",
+        "conflictOfInterest": "none",
+        "notes": "同ブランドの250ml版の情報"
+      },
+      {
+        "id": "src-8",
+        "name": "Amazon商品ページ (B01LDX8Q80)",
+        "url": "https://www.amazon.co.jp/dp/B01LDX8Q80",
+        "tier": "medium",
+        "evidenceType": "secondary",
+        "publishedAt": "2026-04-28",
+        "author": "エレコム(ELECOM)",
+        "conflictOfInterest": "none",
+        "notes": "競合商品の情報（シートタイプ）"
       }
     ],
-    "lastInvestigated": "2026-02-02",
+    "claims": [
+      {
+        "claim": "主要5大メーカー（キヤノン、エプソン、ブラザー、HP、リコー）に対応している",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "crossChecked": false,
+        "notes": "公式商品情報に基づく"
+      },
+      {
+        "claim": "ツール一式が同梱されている",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "crossChecked": false,
+        "notes": "公式商品情報に基づく"
+      }
+    ],
+    "lastInvestigated": "2026-04-28",
     "competitiveAnalysis": [
       {
-        "name": "ビュウプリント 目詰まりバスター (B097SGMLPG)",
-        "asin": "B097SGMLPG",
-        "priceComparison": "約980円。本製品(約1,100円)より若干安い。",
-        "featureComparison": [
-          "同様にユニバーサル対応でツールキットも付属",
-          "コストパフォーマンスで強力なライバル"
-        ],
-        "differentiators": [
-          "superInkの方がブランドとして「PLUS」版などのラインナップを持っており、専門性が高い印象を与える可能性がある"
-        ]
-      },
-      {
-        "name": "superInk クリーニング液 PLUS (B0895DMZL2)",
+        "name": "superInk クリーニング液 PLUS",
         "asin": "B0895DMZL2",
-        "priceComparison": "約1,650円。本製品より約500円高い。",
+        "priceComparison": "対象商品より高い。追加のアダプタ類が含まれているため。",
         "featureComparison": [
-          "7つのアダプタが追加で付属し、より多様な機種に適合しやすい",
-          "特定のエプソン機種(IC70/80等)での使用が推奨されている"
+          "共通点：同ブランドのユニバーサル対応洗浄液100ml。基本的な付属品は同じ。",
+          "相違点：PLUSバージョンは7つのアダプタとシリコーンチューブが1本多く（計3本）付属している。"
         ],
         "differentiators": [
-          "本製品はスタンダード版として、より安価に基本的な洗浄を行いたいユーザー向け"
+          "superInk ユニバーサル 洗浄液 100ml インクジェットプリントヘッド用 キットの利点：価格が安く、基本的なツールで十分な場合に適している。",
+          "superInk クリーニング液 PLUSの利点：様々な形状のプリントヘッドに対応できるアダプタが付属しており、特にエプソンの一部機種などで確実な作業を行いたい場合に適している。"
         ]
       },
       {
-        "name": "Edenz 洗浄液 2本セット (B09CTDT8P7)",
-        "asin": "B09CTDT8P7",
-        "priceComparison": "約1,680円(2本)。1本あたり840円と最安クラス。",
+        "name": "superInk 250ml クリーニング液",
+        "asin": "B06WD86LMW",
+        "priceComparison": "対象商品より高いが、容量あたりの単価は安い。",
         "featureComparison": [
-          "2本セットのため、複数台の所有者や繰り返し洗浄したい場合に有利"
+          "共通点：同ブランドのユニバーサル対応洗浄液で、付属品も同じ。",
+          "相違点：容量が250mlと対象商品の2.5倍になっている。"
         ],
         "differentiators": [
-          "本製品は1本単位で購入でき、とりあえず1回試したいユーザーに適している"
+          "superInk ユニバーサル 洗浄液 100ml インクジェットプリントヘッド用 キットの利点：1回限りのメンテナンスや試しに使ってみたい場合に適した容量と価格。",
+          "superInk 250ml クリーニング液の利点：複数回メンテナンスを行う場合や複数台のプリンターを所有している場合にコストパフォーマンスが高い。"
+        ]
+      },
+      {
+        "name": "Edenz プリンターヘッドクリーニング液 100ml 2本",
+        "asin": "B09CTDT8P7",
+        "priceComparison": "対象商品より高いが、1本(100ml)あたりの単価は安い。",
+        "featureComparison": [
+          "共通点：ユニバーサル対応の洗浄液キット。",
+          "相違点：100mlボトルが2本入っており、アダプターが4個付属している。"
+        ],
+        "differentiators": [
+          "superInk ユニバーサル 洗浄液 100ml インクジェットプリントヘッド用 キットの利点：1本だけ必要な場合に初期費用を抑えられる。",
+          "Edenz プリンターヘッドクリーニング液 100ml 2本の利点：200ml分の洗浄液とアダプターが付属しており、総合的なコストパフォーマンスが高い。"
+        ]
+      },
+      {
+        "name": "Bell Collar (ベルカラー) インクジェットプリンターヘッド用 洗浄液100ｍl",
+        "asin": "B0BM4WSHG9",
+        "priceComparison": "対象商品より安い。",
+        "featureComparison": [
+          "共通点：ユニバーサル対応の100ml洗浄液。",
+          "相違点：手袋のみ付属し、注入器やチューブなどの洗浄用ツールが付属していない。"
+        ],
+        "differentiators": [
+          "superInk ユニバーサル 洗浄液 100ml インクジェットプリントヘッド用 キットの利点：洗浄に必要なツールが一式揃っているため、初めて洗浄を行う場合に便利。",
+          "Bell Collar (ベルカラー) インクジェットプリンターヘッド用 洗浄液100ｍlの利点：既に洗浄ツールを持っている場合の補充用として安価。"
+        ]
+      },
+      {
+        "name": "ZECOO COLOR クリーニングキット",
+        "asin": "B01N2MTNHO",
+        "priceComparison": "対象商品より高い。",
+        "featureComparison": [
+          "共通点：洗浄液と洗浄用ツールがセットになっている。",
+          "相違点：エプソン顔料プリンター専用であり、容量が30mlと少ない。ツールが4色分（4セット）独立して付属している。"
+        ],
+        "differentiators": [
+          "superInk ユニバーサル 洗浄液 100ml インクジェットプリントヘッド用 キットの利点：様々なメーカーに対応し、容量が多く価格も安い。",
+          "ZECOO COLOR クリーニングキットの利点：エプソン顔料プリンターに特化し、各色ごとに専用のツールを使うことで色の混ざりを防ぐことができる。"
+        ]
+      },
+      {
+        "name": "エレコム クリーニングシート CK-PRA43",
+        "asin": "B01LDX8Q80",
+        "priceComparison": "対象商品より安い。",
+        "featureComparison": [
+          "共通点：プリンターのメンテナンス用品。",
+          "相違点：ヘッドのインク詰まりを洗浄する液ではなく、給排紙ローラーの汚れを取るためのシート（A4サイズ3枚入り）。"
+        ],
+        "differentiators": [
+          "superInk ユニバーサル 洗浄液 100ml インクジェットプリントヘッド用 キットの利点：印刷のかすれや色抜けなど、プリントヘッドのインク詰まりを解消できる。",
+          "エレコム クリーニングシート CK-PRA43の利点：紙詰まりや空送りなど、給排紙ローラーのトラブルを簡単に解消できる。"
         ]
       }
     ],
     "recommendation": {
       "targetUsers": [
         "メーカー保証切れのプリンターを持つユーザー",
-        "修理費をかけずに自力で直したいDIY派",
-        "特定のメーカーに限らず汎用的な洗浄液を探している人"
+        "自力でヘッド洗浄を行いたいユーザー",
+        "基本的なツール一式を手軽に揃えたい人"
       ],
       "pros": [
         "5大メーカー対応の汎用性",
         "作業ツール一式同梱ですぐ始められる",
-        "失敗しても痛手の少ない低価格"
+        "1回分のメンテナンスとして手頃な価格"
       ],
       "cons": [
-        "物理的な故障や重度の詰まりは直らない",
+        "物理的な故障には効果がない",
         "作業に伴うリスクは自己責任"
       ],
       "score": 75,
-      "scoreRationale": "[基本点: 70]\n[加点: +10] 1,000円強でツール一式が揃うコストパフォーマンスの高さ。\n[加点: +5] 主要5メーカーに対応するユニバーサル性。\n[減点: -10] レビュー情報が少なく、実際の効果や信頼性が未知数であるため。\n[合計: 75]"
+      "scoreRationale": "[基本点: 70]\n[加点: +10] 安価で基本的な洗浄ツールが一式揃うコストパフォーマンスの良さ\n[加点: +5] 主要5大メーカーに対応する汎用性の高さ\n[減点: -10] レビュー情報が少なく実際の効果が不透明\n[合計: 75]"
     },
     "technicalSpecs": {
-      "volume": "100ml",
-      "compatibleBrands": [
-        "Canon",
-        "Epson",
-        "Brother",
-        "HP",
-        "Ricoh"
-      ],
-      "accessories": [
-        "手袋1組",
-        "10ml注入器",
-        "針",
-        "キャップ",
-        "シリコーンチューブ2本"
-      ],
-      "liquidType": "インクジェットプリントヘッド用洗浄液",
-      "color": "透明",
-      "dimensions": null
+      "dimensions": {
+        "height": "110mm",
+        "width": "33mm",
+        "depth": "70mm"
+      },
+      "weight": "非公開",
+      "capacity": "100ml",
+      "material": "非公開",
+      "origin": "非公開",
+      "other": [
+        "色: 透明",
+        "対応メーカー: キヤノン、エプソン、ブラザー、HP、リコー",
+        "付属品: 手袋1組、10ml注入器、針、キャップ、シリコーンチューブ2本"
+      ]
     }
   }
 }
