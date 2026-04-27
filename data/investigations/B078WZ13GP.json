@@ -24,40 +24,55 @@
       "ジムへの持ち運び用マイマット",
       "マンション等での防音・衝撃吸収対策"
     ],
-    "userStories": [
-      {
-        "userType": "30代女性（フィットネス初心者）",
-        "scenario": "自宅でのオンラインヨガレッスン",
-        "experience": "初めてのヨガマットとして購入しました。フローリングの上でも痛くなく、7mmの厚さがちょうど良いです。何よりアディダスのロゴがやる気を出させてくれます。（推測）",
-        "sentiment": "positive"
-      },
-      {
-        "userType": "40代男性（筋トレユーザー）",
-        "scenario": "プランクや腹筋運動",
-        "experience": "薄いマットだと肘が痛かったのですが、このマットはクッション性が高く快適です。軽いので使わない時はすぐに片付けられるのも気に入っています。（推測）",
-        "sentiment": "positive"
-      },
-      {
-        "userType": "20代女性（持ち運び重視）",
-        "scenario": "ヨガスタジオへの移動",
-        "experience": "以前使っていたマットより断然軽いです。丸めてもコンパクトなので、仕事帰りにジムへ行く際も負担になりません。（推測）",
-        "sentiment": "positive"
-      }
-    ],
+    "userStories": [],
     "userImpression": "軽量でクッション性が高く、持ち運びやすさと快適さを両立したマットとして評価されています。アディダスブランドへの信頼感も高く、初心者から中級者まで幅広く選ばれています。",
     "sources": [
       {
+        "id": "src-1",
         "name": "Amazon Product Data (PA-API)",
         "url": "https://www.amazon.co.jp/dp/B078WZ13GP",
-        "credibility": "high"
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-04-28",
+        "author": "Amazon",
+        "conflictOfInterest": "none",
+        "notes": "アディダス公式の商品仕様・価格データ"
       },
       {
+        "id": "src-2",
         "name": "Reebok Product Data (Comparative)",
         "url": "https://www.amazon.co.jp/dp/B00IPEXN1G",
-        "credibility": "high"
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-04-28",
+        "author": "Amazon",
+        "conflictOfInterest": "none",
+        "notes": "Reebokの7mmヨガマットの仕様・価格データ"
+      },
+      {
+        "id": "src-3",
+        "name": "Amazon Basics Product Data (Comparative)",
+        "url": "https://www.amazon.co.jp/dp/B0DM6JN33F",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-04-28",
+        "author": "Amazon",
+        "conflictOfInterest": "none",
+        "notes": "Amazonベーシックの6mmヨガマットの仕様・価格データ"
+      },
+      {
+        "id": "src-4",
+        "name": "Primasole Product Data (Comparative)",
+        "url": "https://www.amazon.co.jp/dp/B07QPP77W1",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-04-28",
+        "author": "Amazon",
+        "conflictOfInterest": "none",
+        "notes": "プリマソーレの4mmヨガマットの仕様・価格データ"
       }
     ],
-    "lastInvestigated": "2026-02-02",
+    "lastInvestigated": "2026-04-28",
     "competitiveAnalysis": [
       {
         "name": "Reebok フィットネスマット 7mm",
@@ -129,7 +144,42 @@
       },
       "material": "NBR（ニトリルゴム）",
       "color": "グレー",
-      "other": ["キャリーストラップ付属なし（要確認だが記載なし）"]
-    }
+      "other": [
+        "キャリーストラップ付属なし（要確認だが記載なし）"
+      ]
+    },
+    "claims": [
+      {
+        "claim": "厚さ7mmでクッション性が高い",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "crossChecked": true,
+        "notes": "製品仕様に基づく"
+      },
+      {
+        "claim": "重量が約850gで軽量",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "crossChecked": true,
+        "notes": "製品仕様に基づく"
+      },
+      {
+        "claim": "同等スペックのReebokより価格が安い",
+        "category": "comparativeAdvantage",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-1",
+          "src-2"
+        ],
+        "crossChecked": true,
+        "notes": "両商品の価格比較に基づく"
+      }
+    ]
   }
 }
