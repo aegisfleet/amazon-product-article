@@ -78,6 +78,8 @@ export class CategoryNormalizer {
     '育毛',
     'トニック',
     'スカルプ',
+    'コンタクトレンズ',
+    'カラコン',
   ];
 
   /**

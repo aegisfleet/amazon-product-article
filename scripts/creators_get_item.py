@@ -69,8 +69,8 @@ if __name__ == '__main__':
         ]
         
         response_json = client.get_items([args.asin], resources=resources)
-        print("Raw API Response:")
-        print(json.dumps(response_json, indent=2, ensure_ascii=False))
+        with open("tmp/raw_response.json", "w", encoding="utf-8") as f:
+            json.dump(response_json, f, indent=2, ensure_ascii=False)
         
         if 'itemsResult' in response_json and 'items' in response_json['itemsResult']:
             item = response_json['itemsResult']['items'][0]
