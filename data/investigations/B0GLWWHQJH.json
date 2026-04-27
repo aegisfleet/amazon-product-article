@@ -1,0 +1,239 @@
+{
+  "analysis": {
+    "productName": "YOYIFUN ネックケア 首 リラクゼーション器 EMS & TENS",
+    "parentAsin": "B0GLWWHQJH",
+    "productDescription": "EMS、振動、加温機能を搭載した、超軽量（約106g）の首元用リラクゼーション器。10種類のモードと16段階の強度調整が可能で、日々の首周りのケアに適しています。",
+    "productUsage": [
+      "首のリラクゼーション",
+      "デスクワークや運転中の首周りのケア",
+      "リフレッシュ目的の温熱ケア"
+    ],
+    "positivePoints": [
+      "EMS、振動、温熱の3つの機能が組み合わさり、効果的にケアできる",
+      "重量約106gと非常に軽量で、使用中に首への負担が少ない",
+      "コードレスかつType-C充電式で持ち運びやすく、どこでも手軽に使用可能",
+      "10種類のモードと16段階の強度調整で、好みに合わせた細かい設定ができる"
+    ],
+    "negativePoints": [
+      "個人によってはEMSのピリピリ感を強く感じることがある",
+      "保温機能だけの単独モード切替がないなど、一部の操作に不便を感じるユーザーもいる",
+      "数回の連続使用（4〜5セット）で充電が必要になる場合がある"
+    ],
+    "useCases": [
+      "デスクワーク中のリフレッシュ",
+      "長時間の運転中の休憩時間",
+      "就寝前のリラックスタイム",
+      "家事の合間"
+    ],
+    "userStories": [
+      {
+        "userType": "デスクワーカー",
+        "scenario": "日々のPC作業で首の疲れを感じている時",
+        "experience": "EMSの刺激が強すぎず絶妙で、細かくレベル調整ができるのが便利です。温熱機能と振動のおかげでただのEMSよりマッサージ感が強く、軽くてコードレスなのでスマホやテレビを見ながら手軽に使えます。",
+        "supportingSourceIds": [
+          "src-amazon-review-1"
+        ],
+        "sentiment": "positive"
+      },
+      {
+        "userType": "ドライバー",
+        "scenario": "車の運転が多く、肩や首の疲れに悩んでいる時",
+        "experience": "軽くてコンパクトなので車内でも使いやすく、休憩中にサッと使えるのが便利です。首を少し濡らすとフィット感が増し、使った後は首や肩が軽くなり上を向くのが楽になりました。",
+        "supportingSourceIds": [
+          "src-amazon-review-2"
+        ],
+        "sentiment": "positive"
+      },
+      {
+        "userType": "オフィスワーカー",
+        "scenario": "仕事中に気分転換したい時",
+        "experience": "ほんのり暖かく、振動でも刺激してくれるので、仕事しながら付けるのに最適です。軽いし充電できるし、お手軽に使えるのが良いです。",
+        "supportingSourceIds": [
+          "src-amazon-review-3"
+        ],
+        "sentiment": "positive"
+      }
+    ],
+    "userImpression": "総じて、その軽量さと手軽さが高く評価されています。EMS、振動、温熱の組み合わせによるリフレッシュ効果に満足しているユーザーが多く、特にデスクワークや運転中の使用に適しているという声が目立ちます。一方で、EMS特有の刺激が苦手なユーザーもいるため、使用感には個人差があるようです。",
+    "sources": [
+      {
+        "id": "src-amazon-review-1",
+        "name": "Amazonカスタマーレビュー",
+        "url": "https://www.amazon.co.jp/dp/B0GLWWHQJH",
+        "tier": "medium",
+        "evidenceType": "secondary",
+        "publishedAt": "2026-03-23",
+        "author": "Amazon カスタマー",
+        "conflictOfInterest": "unknown",
+        "notes": "デスクワークでの使用感、EMSの強さ、温熱・振動機能についてのレビュー"
+      },
+      {
+        "id": "src-amazon-review-2",
+        "name": "Amazonカスタマーレビュー",
+        "url": "https://www.amazon.co.jp/dp/B0GLWWHQJH",
+        "tier": "medium",
+        "evidenceType": "secondary",
+        "publishedAt": "2026-04-16",
+        "author": "Amazon カスタマー",
+        "conflictOfInterest": "unknown",
+        "notes": "車内での使用感、コンパクトさ、使用後のスッキリ感についてのレビュー"
+      },
+      {
+        "id": "src-amazon-review-3",
+        "name": "Amazonカスタマーレビュー",
+        "url": "https://www.amazon.co.jp/dp/B0GLWWHQJH",
+        "tier": "medium",
+        "evidenceType": "secondary",
+        "publishedAt": "2026-04-21",
+        "author": "Amazon カスタマー",
+        "conflictOfInterest": "unknown",
+        "notes": "仕事中の使用感、手軽さについてのレビュー"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "重量が約106gと超軽量である",
+        "category": "durability",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-amazon-review-1",
+          "src-amazon-review-3"
+        ],
+        "crossChecked": true,
+        "notes": "公式情報とユーザーレビューの双方で軽量であることが確認されている"
+      },
+      {
+        "claim": "EMS、振動、温熱の3つの機能を備えている",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-amazon-review-1",
+          "src-amazon-review-2"
+        ],
+        "crossChecked": true,
+        "notes": "複数のレビューで各機能が体感されている"
+      }
+    ],
+    "lastInvestigated": "2026-04-27",
+    "competitiveAnalysis": [
+      {
+        "name": "Liaolee (B0C58DTLTR)",
+        "asin": "B0C58DTLTR",
+        "priceComparison": "対象商品より安価であるが、基本的なEMSと加温機能を備えており、予算を抑えたい場合には十分な性能を持つ。",
+        "featureComparison": [
+          "共通点：EMSと加温機能を搭載し、10種類のモードと16段階の強度調整が可能。コードレス設計で軽量。",
+          "相違点：対象商品は振動機能を追加で備えている点が異なる。"
+        ],
+        "differentiators": [
+          "YOYIFUN ネックケアの利点：EMSだけでなく振動機能も組み合わせたマッサージ効果を求める場合に適している。",
+          "Liaoleeの利点：より安価に基本的なEMS・温熱ケアを行いたい場合や、日本語音声ガイダンスが必要な場合に適している。"
+        ]
+      },
+      {
+        "name": "Bisoom (B0GG9XVCDD)",
+        "asin": "B0GG9XVCDD",
+        "priceComparison": "対象商品とほぼ同等の価格帯であり、振動機能の有無など必要な機能に応じて選択できる。",
+        "featureComparison": [
+          "共通点：EMSと加温機能を備え、液晶ディスプレイとタイマー機能を持つ。10種類のモードを搭載。",
+          "相違点：対象商品は16段階の強度調整と振動機能を備える一方、Bisoomは15段階の強度調整となっている。"
+        ],
+        "differentiators": [
+          "YOYIFUN ネックケアの利点：振動機能が追加されており、より複合的な刺激を求める場合に適している。",
+          "Bisoomの利点：基本的なEMSと加温機能を備えた手頃なモデルとして選択肢に入る。"
+        ]
+      },
+      {
+        "name": "Liaolee (B0CXPL7N8C)",
+        "asin": "B0CXPL7N8C",
+        "priceComparison": "対象商品より高価であるが、首以外にも肩・腰・背中・太ももなど広範囲の部位に使用できるという汎用性の高さにおいて価格差に見合う価値がある。",
+        "featureComparison": [
+          "共通点：温熱機能を備え、コードレスで使用可能。",
+          "相違点：Liaoleeは首だけでなく、肩・腰・背中・太ももなど広範囲に使用可能なリラクゼーション器である。"
+        ],
+        "differentiators": [
+          "YOYIFUN ネックケアの利点：首元に特化したコンパクトで軽量なEMSケアを安価に行いたい場合に適している。",
+          "Liaolee (B0CXPL7N8C)の利点：首以外の全身の部位にも使用したい場合に適している。"
+        ]
+      },
+      {
+        "name": "ZHKJ (B0GH62FV6N)",
+        "asin": "B0GH62FV6N",
+        "priceComparison": "対象商品より高価であるが、EMSではなく物理的なもみ玉によるしっかりとしたマッサージを求めるユーザーにとっては価格に見合う価値がある。",
+        "featureComparison": [
+          "共通点：ネック＆ショルダー向けのコードレス・USB-C充電式リラクゼーション器。",
+          "相違点：ZHKJはEMSではなく、物理的な「人の手のようなもみ心地」を謳う電動マッサージャーである可能性が高い。"
+        ],
+        "differentiators": [
+          "YOYIFUN ネックケアの利点：EMSによる刺激を好み、超軽量で手軽に使用したい場合に適している。",
+          "ZHKJの利点：電気刺激が苦手で、物理的なもみほぐしを求める場合に適している。"
+        ]
+      },
+      {
+        "name": "YFFU (B0DZC5DMP1)",
+        "asin": "B0DZC5DMP1",
+        "priceComparison": "対象商品より非常に高価であるが、全身に使用可能であり、物理的な揉みほぐしを広範囲で行えるという点で十分な付加価値がある。",
+        "featureComparison": [
+          "共通点：首や肩のリラクゼーションを目的とし、温熱機能を備える。",
+          "相違点：YFFUは全身使用可能で、3Dショルダーリラクゼーション器としてより大規模な構造を持つ。"
+        ],
+        "differentiators": [
+          "YOYIFUN ネックケアの利点：首専用で、作業中などに手軽に「ながらケア」をしたい場合に圧倒的に適している。",
+          "YFFUの利点：高価格帯で、全身をしっかり物理的に揉みほぐしたい場合に適している。"
+        ]
+      },
+      {
+        "name": "ドクターエア MN-05 (B09RGWPZ47)",
+        "asin": "B09RGWPZ47",
+        "priceComparison": "対象商品より圧倒的に高価であるが、管理医療機器に認定された本格的な物理マッサージ機であり、確実な揉み心地と信頼性を求めるユーザーには価格に見合う価値がある。",
+        "featureComparison": [
+          "共通点：首肩周りのマッサージを目的とするコードレス機器。",
+          "相違点：ドクターエアは管理医療機器認定製品であり、独自の「はさみもみ」による強力な物理マッサージを行う本格的な機器である。"
+        ],
+        "differentiators": [
+          "YOYIFUN ネックケアの利点：EMSによる手軽な刺激を低価格で試したい場合に適している。",
+          "ドクターエアの利点：医療機器として確かなマッサージ効果を求め、しっかりとした揉み心地を重視する場合に適している。"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "デスクワークや長時間の運転などで首の疲れを感じやすい人",
+        "手軽に「ながらケア」ができる軽量なネックケア機器を探している人",
+        "EMSの刺激と温熱機能の両方を試してみたい人"
+      ],
+      "pros": [
+        "約106gと超軽量で、首への負担が少ない",
+        "EMS、振動、加温の3つの機能で総合的にケアできる",
+        "コードレスでどこでも手軽に使用できる"
+      ],
+      "cons": [
+        "EMSの電気刺激が苦手な人には不向き",
+        "使用頻度によってはこまめな充電が必要になる場合がある"
+      ],
+      "score": 83,
+      "scoreRationale": "[基本点: 70]\n[加点: +8] (EMS、振動、加温の3機能を搭載し、多角的なケアが可能)\n[加点: +5] (約106gという超軽量設計で、作業中などのながらケアに非常に適している)\n[加点: +5] (2,980円という手頃な価格でコスパが高い)\n[減点: -5] (EMS特有の刺激に対する好みが分かれ、合わないユーザーもいる)\n[合計: 83]"
+    },
+    "technicalSpecs": {
+      "dimensions": {
+        "height": "150mm",
+        "width": "35mm",
+        "depth": "140mm"
+      },
+      "weight": "106g",
+      "power": "Type-C充電式",
+      "chargeTime": "約2.5時間",
+      "modes": "10種類",
+      "intensityLevels": "16段階",
+      "color": "ホワイトｘグレー",
+      "origin": "中国",
+      "other": [
+        "EMS機能",
+        "TENS機能",
+        "加温機能",
+        "振動機能",
+        "液晶ディスプレイ",
+        "自動オフ機能付き"
+      ]
+    }
+  }
+}
