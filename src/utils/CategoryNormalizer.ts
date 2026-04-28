@@ -88,7 +88,7 @@ export class CategoryNormalizer {
    */
   public static normalize(node?: BrowseNode): NormalizedCategory {
     if (!node) {
-      return { main: 'その他', sub: 'Unknown', nameCount: 0, score: -1 };
+      return { main: 'その他／全般', sub: 'Unknown', nameCount: 0, score: -1 };
     }
 
     const validNames = CategoryNormalizer.collectValidHierarchyNames(node);
@@ -174,7 +174,7 @@ export class CategoryNormalizer {
       : '一般';
 
     return {
-      main: 'その他',
+      main: 'その他／全般',
       sub: subName,
       nameCount: 0,
       score: -1,
@@ -187,7 +187,7 @@ export class CategoryNormalizer {
    */
   public static selectBestCategory(nodes: BrowseNode[]): NormalizedCategory & { browseNodeId?: string } {
     if (!nodes || nodes.length === 0) {
-      return { main: 'その他', sub: 'Unknown', nameCount: 0, score: -1 };
+      return { main: 'その他／全般', sub: 'Unknown', nameCount: 0, score: -1 };
     }
 
     // 1. Normalize and Sort nodes
@@ -214,7 +214,7 @@ export class CategoryNormalizer {
     for (const node of sortedNodes) {
       const normalized = CategoryNormalizer.normalize(node);
 
-      if (normalized.main !== 'その他') {
+      if (normalized.main !== 'その他／全般') {
         CategoryNormalizer.resolveSubCategory(normalized, sortedNodes);
         return CategoryNormalizer.attachBrowseNodeId(normalized, node);
       }
@@ -226,7 +226,7 @@ export class CategoryNormalizer {
       return CategoryNormalizer.attachBrowseNodeId(CategoryNormalizer.normalize(bestNode), bestNode);
     }
 
-    return { main: 'その他', sub: 'Unknown', nameCount: 0, score: -1 };
+    return { main: 'その他／全般', sub: 'Unknown', nameCount: 0, score: -1 };
   }
 
   /**
@@ -239,7 +239,7 @@ export class CategoryNormalizer {
 
     const subCandidate = sortedNodes.find((n: BrowseNode) => {
       const sn = CategoryNormalizer.normalize(n);
-      return sn.main !== 'その他' && sn.main !== normalized.main;
+      return sn.main !== 'その他／全般' && sn.main !== normalized.main;
     });
 
     normalized.sub = subCandidate ? CategoryNormalizer.normalize(subCandidate).main : '';
