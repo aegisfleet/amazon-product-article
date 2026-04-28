@@ -30,8 +30,8 @@
     function filterVisibleCategories(groups) {
         return groups.filter(group => {
             if (group.visible === false) return false;
-            // 0 products are hidden unless it's "その他"
-            if (group.name !== 'その他' && group.productCount !== undefined && group.productCount === 0) return false;
+            // 0 products are hidden unless it's "その他／全般"
+            if (group.name !== 'その他／全般' && group.productCount !== undefined && group.productCount === 0) return false;
             return true;
         });
     }
@@ -67,7 +67,7 @@
                         ? group.childrenWithCounts.filter(child => child.productCount > 0)
                         : [];
 
-                    if (visibleChildren.length > 0 || group.name === 'その他' || (group.productCount !== undefined && group.productCount > 0)) {
+                    if (visibleChildren.length > 0 || group.name === 'その他／全般' || (group.productCount !== undefined && group.productCount > 0)) {
                         categoryGroups[group.name] = visibleChildren.map(child => child.name);
                         visibleChildren.forEach(child => {
                             categoryCounts[child.name] = child.productCount;
@@ -169,25 +169,25 @@
                 }
             }
 
-            // Second pass: add uncategorized items to 'その他'
+            // Second pass: add uncategorized items to 'その他／全般'
             const uncategorized = availableCategories.filter(cat => !categorizedItems.has(cat));
             if (uncategorized.length > 0) {
-                if (!filteredGroups['その他']) {
-                    filteredGroups['その他'] = [];
+                if (!filteredGroups['その他／全般']) {
+                    filteredGroups['その他／全般'] = [];
                 }
-                filteredGroups['その他'] = [...filteredGroups['その他'], ...uncategorized];
+                filteredGroups['その他／全般'] = [...filteredGroups['その他／全般'], ...uncategorized];
                 
                 let othersCount = 0;
                 uncategorized.forEach(cat => {
-                    // 「その他」カテゴリ自身は「その他」グループに合算しない（重複防止）
-                    if (cat !== 'その他' && categoryCounts[cat] !== undefined) {
+                    // 「その他／全般」カテゴリ自身は「その他／全般」グループに合算しない（重複防止）
+                    if (cat !== 'その他／全般' && categoryCounts[cat] !== undefined) {
                         othersCount += categoryCounts[cat];
                     }
                 });
-                if (categoryCounts['その他'] === undefined) {
-                    categoryCounts['その他'] = othersCount;
+                if (categoryCounts['その他／全般'] === undefined) {
+                    categoryCounts['その他／全般'] = othersCount;
                 } else {
-                    categoryCounts['その他'] += othersCount;
+                    categoryCounts['その他／全般'] += othersCount;
                 }
             }
         }
