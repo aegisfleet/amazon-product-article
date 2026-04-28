@@ -123,7 +123,7 @@ export const SPEC_LABEL_MAP: Record<string, string> = {
   accessories: '付属品',
   includedItems: '同梱物',
   packageContents: '同梱物',
-  other: 'その他／全般',
+  other: 'その他',
   features: '特徴',
   specialFeatures: '特殊機能',
   compatibility: '互換性',
