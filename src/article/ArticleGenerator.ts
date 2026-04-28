@@ -1356,16 +1356,20 @@ ${recommendationMessage}
     if (plus && plus.length > 0) {
       lines.push('    plus:');
       for (const item of plus) {
-        lines.push('      - points: ' + item.points);
-        lines.push('        desc: "' + this.escapeForFrontMatter(item.desc) + '"');
+        lines.push(
+          `      - points: ${item.points}`,
+          `        desc: "${this.escapeForFrontMatter(item.desc)}"`
+        );
       }
     }
 
     if (minus && minus.length > 0) {
       lines.push('    minus:');
       for (const item of minus) {
-        lines.push('      - points: ' + item.points);
-        lines.push('        desc: "' + this.escapeForFrontMatter(item.desc) + '"');
+        lines.push(
+          `      - points: ${item.points}`,
+          `        desc: "${this.escapeForFrontMatter(item.desc)}"`
+        );
       }
     }
   }
@@ -1899,9 +1903,9 @@ ${confidenceLine}`;
       throw new Error('variants array must not be empty');
     }
     let hash = 0;
-    for (let i = 0; i < asin.length; i++) {
-      const char = asin.charCodeAt(i);
-      hash = (hash * 31 + char) | 0; // 32-bit integer overflow を利用した簡易ハッシュ
+    for (const char of asin) {
+      const codePoint = char.codePointAt(0) || 0;
+      hash = Math.trunc(hash * 31 + codePoint); // 小数点以下を切り捨て
     }
     const index = Math.abs(hash) % variants.length;
     // variants.length > 0 を上でガード済みのため、index は常に有効な範囲
