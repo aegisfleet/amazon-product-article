@@ -147,7 +147,7 @@ describe('CreatorsAPIClient Category Parsing', () => {
 
       const result = clientAny.extractCategoryInfo(item as CreatorsAPIItem);
       // new logic: fallback to "その他"
-      expect(result.category).toBe('その他');
+      expect(result.category).toBe('その他／全般');
     });
 
     test('should prioritize preferred categories (e.g. Child Seat)', () => {

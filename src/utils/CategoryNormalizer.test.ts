@@ -267,7 +267,7 @@ describe('CategoryNormalizer', () => {
         id: '211760089051',
       };
       const fuelResult = CategoryNormalizer.normalize(fuelNode);
-      expect(fuelResult.main).toBe('その他'); // Because '燃料' is invalid
+      expect(fuelResult.main).toBe('その他／全般'); // Because '燃料' is invalid
     });
 
     it('should score "育毛・養毛用トニック・エッセンス" as 10', () => {

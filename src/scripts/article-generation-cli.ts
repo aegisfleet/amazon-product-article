@@ -440,7 +440,7 @@ async function processArticles(
             data.product = {
               ...data.product,
               title: `商品調査中 (${data.product.asin})`,
-              category: 'その他',
+              category: 'その他／全般',
               price: { amount: 9999, currency: 'JPY', formatted: '¥9,999' },
               images: { primary: 'https://via.placeholder.com/500x500.png?text=No+Image', thumbnails: [] },
               specifications: {},

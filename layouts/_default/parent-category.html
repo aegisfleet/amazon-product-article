@@ -7,7 +7,7 @@
 {{- end -}}
 
 {{- /* Error if no products (excluding "その他") */ -}}
-{{- if and (ne $parentCategory "その他") (or (not $categoryData) (eq $categoryData.productCount 0)) -}}
+{{- if and (ne $parentCategory "その他／全般") (or (not $categoryData) (eq $categoryData.productCount 0)) -}}
 <div class="container" style="padding-top: var(--spacing-xl);">
     <div class="article-header">
         <h1>カテゴリが見つかりません</h1>
@@ -47,7 +47,7 @@
     {{- end -}}
 
     {{- /* Special handling for "その他" - also include uncategorized articles */ -}}
-    {{- if eq $parentCategory "その他" -}}
+    {{- if eq $parentCategory "その他／全般" -}}
     {{- /* Collect ALL categories from ALL parent groups */ -}}
     {{- $allCategorizedItems := slice -}}
     {{- range $groupName, $groupData := .Site.Data.categories.parents -}}
@@ -86,7 +86,7 @@
 
     {{- /* For "その他", collect categories from displayed articles instead of just predefined list */ -}}
     {{- $displayCategories := $childCategories -}}
-    {{- if eq $parentCategory "その他" -}}
+    {{- if eq $parentCategory "その他／全般" -}}
     {{- $displayCategories = slice -}}
     {{- $seenCats := slice -}}
     {{- range $uniqueArticles -}}
