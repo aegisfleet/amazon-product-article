@@ -3,7 +3,7 @@
  * Category Organization CLI Script
  * GitHub Actions から実行されるカテゴリ整理スクリプト
  *
- * 毎日18:00 JSTに実行され、「その他」に分類されているカテゴリを
+ * 毎日18:00 JSTに実行され、「その他／全般」に分類されているカテゴリを
  * JulesAPIを使って適切な親カテゴリに整理する
  *
  * 環境変数:

@@ -1,7 +1,7 @@
 /**
  * JulesCategoryOrganizer - Google Jules APIを使用したカテゴリ整理の実行
  *
- * 「その他」に分類されている（=categorygroups.jsonに未登録の）カテゴリを
+ * 「その他／全般」に分類されている（=categorygroups.jsonに未登録の）カテゴリを
  * 適切な親カテゴリに分類するためのJulesセッションを作成する
  */
 
@@ -221,7 +221,7 @@ export class JulesCategoryOrganizer {
       if (!entry) continue;
 
       const category = entry.data?.categoryInfo?.main;
-      if (category && category !== 'その他' && category !== 'null') {
+      if (category && category !== 'その他／全般' && category !== 'null') {
         categories.add(category);
       }
     }
