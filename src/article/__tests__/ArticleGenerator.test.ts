@@ -250,13 +250,15 @@ describe('ArticleGenerator', () => {
       expect(result.content).toContain('target_users:');
       expect(result.content).toContain('warnings:');
       expect(result.content).toContain('specs:');
-      expect(result.content).toContain('## 📦 商品の特徴');
-      expect(result.content).toContain('## 📊 ユーザーレビュー');
+      // 見出しバリエーション対応: いずれかのパターンが含まれることを確認
+      expect(result.content).toMatch(/## (📦 商品の特徴|🔍 商品の詳しい特徴|📋 商品スペックと特徴)/);
+      expect(result.content).toMatch(/## (📊 ユーザーレビュー|💬 レビュー分析|⭐ ユーザー評価まとめ)/);
       expect(result.content).toContain('## 🥊 競合商品との比較');
       expect(result.content).toContain('## 🎯 最終結論：この商品は買いか？');
       expect(result.content).toContain('## 🛒 商品詳細');
       expect(result.content).toContain('## 🔗 参考情報ソース');
-      expect(result.content).toContain('購入者の声');
+      // 見出しバリエーション対応
+      expect(result.content).toMatch(/(購入者の声|ユーザーの感想|利用者の体験談)/);
       expect(result.content).toContain('会社員の体験談 (通勤・通学)');
       expect(result.content).toContain('多くのユーザーが満足感を得ている');
       expect(result.content).toContain(
@@ -329,7 +331,8 @@ describe('ArticleGenerator', () => {
       expect(result.content).not.toContain('この内容は（推測）です');
       expect(result.content).not.toContain('この内容は（スペックからの推測体験）です');
       expect(result.content).toContain('全体の印象（推測）');
-      expect(result.content).toContain('購入者の声');
+      // 見出しバリエーション対応
+      expect(result.content).toMatch(/(購入者の声|ユーザーの感想|利用者の体験談)/);
     });
 
     it('should still show the section if impression exists even if all stories are filtered out', async () => {
@@ -345,9 +348,12 @@ describe('ArticleGenerator', () => {
 
       const result = await generator.generateArticle(mockProduct, mockInvestigation);
 
-      expect(result.content).toContain('購入者の声');
+      // 見出しバリエーション対応
+      expect(result.content).toMatch(/(購入者の声|ユーザーの感想|利用者の体験談)/);
       expect(result.content).toContain('全体の印象（推測）');
-      expect(result.content).not.toContain('体験談');
+      // 推測ストーリーのフィルタ後、個別の体験談ブロック（「○○の体験談 (シナリオ)」）が表示されないことを確認
+      // 見出しバリエーション「利用者の体験談」とは区別する
+      expect(result.content).not.toContain('学生の体験談');
     });
 
     it('should hide the entire section only if both stories and impression are missing or empty', async () => {
@@ -356,7 +362,8 @@ describe('ArticleGenerator', () => {
 
       const result = await generator.generateArticle(mockProduct, mockInvestigation);
 
-      expect(result.content).not.toContain('購入者の声');
+      // 見出しバリエーション対応
+      expect(result.content).not.toMatch(/(購入者の声|ユーザーの感想|利用者の体験談)/);
     });
 
     it('should generate proper front matter', async () => {
