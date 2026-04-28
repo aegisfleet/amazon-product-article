@@ -1,0 +1,188 @@
+{
+  "analysis": {
+    "productName": "Bauhutte 昇降式 L字デスク スタンダード BHD-670H-BK",
+    "parentAsin": "B071FSPSYV",
+    "productDescription": "既存のデスクの横に設置することで、手軽にL字デスク環境を構築できる昇降式のPCワゴン・CPUスタンド。",
+    "productUsage": ["作業スペースの拡張", "ミドルタワーPCの収納", "マウステーブルとしての活用"],
+    "positivePoints": [
+      "今あるデスクと高さを揃えて連結できる無段階昇降機能",
+      "PCを埃や衝撃から保護する堅牢なCPUスタンド構造",
+      "ロック付きキャスターと取っ手による高い機動性とメンテナンス性"
+    ],
+    "negativePoints": [
+      "他社製の単純なPCワゴンと比較すると価格設定がやや高め",
+      "大型のゲーミングPCの場合はサイズが合わず、別モデル(ラージタイプ等)が必要になる場合がある"
+    ],
+    "useCases": [
+      "ゲーミング環境でのマウスの可動域拡大",
+      "テレワーク時の作業スペース追加",
+      "デスクトップPCの床置き回避による故障リスク低減"
+    ],
+    "userStories": [
+      {
+        "userType": "ゲーマー",
+        "scenario": "ゲームプレイ時のマウス操作スペース拡大",
+        "experience": "既存のデスクと高さをピッタリ合わせることができるため、段差を気にせず腕を乗せられ、安定したエイム操作が可能になります。また、PC本体を足元から浮かせて収納できるため、床のホコリを吸い込みにくくなりました。",
+        "supportingSourceIds": ["src-1"],
+        "sentiment": "positive"
+      }
+    ],
+    "userImpression": "多くのユーザーが、簡単にL字環境を作れる点や、無段階の高さ調節でメインデスクとフラットに繋げられる点を高く評価しています。一方で、PCのサイズによっては入らない場合があるため、事前のサイズ確認が必須です。",
+    "sources": [
+      {
+        "id": "src-1",
+        "name": "昇降式Ｌ字デスク BHD-670 / 820 | Bauhütte®",
+        "url": "https://www.bauhutte.jp/product/bhd670/",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2021-06-01",
+        "author": "ビーズ株式会社",
+        "conflictOfInterest": "disclosed",
+        "notes": "製品の仕様（天板サイズ、昇降範囲、耐荷重など）および用途、特徴の確認"
+      },
+      {
+        "id": "src-2",
+        "name": "Amazon | Bauhutte ( バウヒュッテ ) 昇降式 PCワゴン デスク横に並べられる パソコンラック PCラック ( 幅 32 × 奥行 67 高さ 57~78 cm ) 昇降式 L字デスク スタンダード ブラック BHD-670H-BK",
+        "url": "https://www.amazon.co.jp/dp/B071FSPSYV",
+        "tier": "medium",
+        "evidenceType": "primary",
+        "publishedAt": "2017-06-09",
+        "author": "Amazon",
+        "conflictOfInterest": "none",
+        "notes": "価格情報、ユーザーからの基本的な製品情報の確認"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "天板は無段階での高さ調節が可能で、57cmから78cmの範囲で昇降する",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": ["src-1", "src-2"],
+        "crossChecked": true,
+        "notes": "公式サイトのスペック表とAmazonの仕様記載で一致"
+      },
+      {
+        "claim": "総耐荷重は60kg未満で、天板と底板それぞれに30kgまで積載可能",
+        "category": "durability",
+        "confidence": "high",
+        "supportingSourceIds": ["src-1"],
+        "crossChecked": false,
+        "notes": "公式サイトのスペック表にて確認"
+      }
+    ],
+    "lastInvestigated": "2026-04-28",
+    "competitiveAnalysis": [
+      {
+        "name": "Bauhutte BHD-550H-BK",
+        "asin": "B0CSS1X54R",
+        "priceComparison": "対象商品よりやや安価。",
+        "featureComparison": [
+          "共通点：昇降機能を備え、PCを収納できるデスク横設置型のワゴンである点",
+          "相違点：BHD-550H-BKは奥行きが55cmと短く、よりコンパクトなスペースに適している"
+        ],
+        "differentiators": [
+          "Bauhutte 昇降式 L字デスク スタンダード BHD-670H-BKの利点：奥行きが67cmあり、標準的なデスクと並べた際に広い作業スペースを確保しやすい",
+          "Bauhutte BHD-550H-BKの利点：部屋が狭く、奥行きの浅いデスクを使用している場合にフィットしやすい"
+        ]
+      },
+      {
+        "name": "Bauhutte BHD-820H-BK",
+        "asin": "B07B9WR48F",
+        "priceComparison": "対象商品より高価。",
+        "featureComparison": [
+          "共通点：同ブランドの昇降式L字デスクであり、基本的な構造やデザインが同じである点",
+          "相違点：BHD-820H-BKは幅39cm、奥行き82cmと一回り大きく、大型ゲーミングPCの収納に対応している"
+        ],
+        "differentiators": [
+          "Bauhutte 昇降式 L字デスク スタンダード BHD-670H-BKの利点：コンパクトで設置スペースを取りすぎず、一般的なミドルタワーPCにちょうど良い",
+          "Bauhutte BHD-820H-BKの利点：大型のフルタワーPCを収納でき、より広いマウステーブルスペースを確保できる"
+        ]
+      },
+      {
+        "name": "DAIWIN パソコンワゴン pcラック 昇降式",
+        "asin": "B0D2VPPLQK",
+        "priceComparison": "対象商品のおよそ半額と非常に安価。",
+        "featureComparison": [
+          "共通点：キャスター付きで天板の高さが調節可能なPCワゴンである点",
+          "相違点：DAIWINは木製棚板を採用しており、昇降範囲（67～95cm）が対象商品（57～78cm）より高く設定されている"
+        ],
+        "differentiators": [
+          "Bauhutte 昇降式 L字デスク スタンダード BHD-670H-BKの利点：一般的な高さのデスク（70cm前後）と高さを合わせやすく、ゲーミング環境に馴染むデザイン",
+          "DAIWIN パソコンワゴン pcラック 昇降式の利点：コストを抑えて導入でき、スタンディングデスクなどに合わせやすい高い昇降範囲を持つ"
+        ]
+      },
+      {
+        "name": "U-POWER 昇降式L字デスク PCラック X-1-WG",
+        "asin": "B0C3B8MLZY",
+        "priceComparison": "対象商品よりわずかに安価。",
+        "featureComparison": [
+          "共通点：幅32cm×奥行67cmという天板サイズが同じで、昇降式のPCワゴンである点",
+          "相違点：U-POWERの昇降範囲は60～80cmであり、木目調のデザインを採用している"
+        ],
+        "differentiators": [
+          "Bauhutte 昇降式 L字デスク スタンダード BHD-670H-BKの利点：57cmまで下げることができるため、低めのデスク環境や小柄なユーザーにも対応可能",
+          "U-POWER 昇降式L字デスク PCラック X-1-WGの利点：インテリアに馴染みやすい木目調デザインを選択できる"
+        ]
+      },
+      {
+        "name": "Bauhutte ゲーミングデスクHD BHD-1200HDM-BK",
+        "asin": "B07NFDWZ6X",
+        "priceComparison": "対象商品より高価だが、製品のカテゴリ（メインデスク）が異なる。",
+        "featureComparison": [
+          "共通点：無段階の昇降機能を備えたBauhutte製のゲーミングデスクである点",
+          "相違点：対象商品はデスク横に設置する拡張用のワゴンであるのに対し、こちらは幅120cmのメインデスクである"
+        ],
+        "differentiators": [
+          "Bauhutte 昇降式 L字デスク スタンダード BHD-670H-BKの利点：既存のデスクを活かしたまま、低コストで作業環境を拡張できる",
+          "Bauhutte ゲーミングデスクHD BHD-1200HDM-BKの利点：耐荷重100kgのタフな仕様で、一から本格的なゲーミング環境を構築できる"
+        ]
+      },
+      {
+        "name": "Anovara 昇降デスク 電動 昇降式デスク L字デスク",
+        "asin": "B0G2LLTCVP",
+        "priceComparison": "対象商品とほぼ同価格帯だが、こちらはメインのL字デスク自体である。",
+        "featureComparison": [
+          "共通点：L字型のデスク環境を構築できる点",
+          "相違点：対象商品は既存デスクの横に置いてL字環境を作る拡張パーツだが、こちらは単体でL字型をした電動昇降デスク（幅140cm）である"
+        ],
+        "differentiators": [
+          "Bauhutte 昇降式 L字デスク スタンダード BHD-670H-BKの利点：PCを床のホコリから守る専用の収納スペース（CPUスタンド）として機能する",
+          "Anovara 昇降デスク 電動 昇降式デスク L字デスクの利点：ボタン一つでデスク全体の高さを変えられる電動昇降機能を備え、広大な作業スペースを確保できる"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "既存のデスク環境をL字型に拡張したいゲーマーやワーカー",
+        "デスクトップPCを床置きしたくないユーザー"
+      ],
+      "pros": [
+        "今あるデスクと高さを揃えてフラットなL字環境が構築可能",
+        "PC本体を埃や衝撃から守る堅牢な設計",
+        "キャスター付きで掃除や配線整理時の移動が容易"
+      ],
+      "cons": [
+        "PCのサイズによっては収納できないため事前確認が必須",
+        "安価なPCラックと比較すると初期投資がやや高め"
+      ],
+      "score": 83,
+      "scoreRationale": "[基本点: 70]\n[加点: +5] (既存デスクを活かしつつ作業スペースを簡単に拡張できる利便性)\n[加点: +5] (PCを床置きから浮かせることで埃の吸い込みや転倒リスクを低減できる機能性)\n[加点: +5] (無段階の高さ調節機能により、メインデスクとの段差なくフラットな環境を構築可能)\n[減点: -2] (価格が同等サイズの他社製PCワゴンと比較してやや割高)\n[合計: 83]"
+    },
+    "technicalSpecs": {
+      "dimensions": {
+        "height": "570～780mm",
+        "width": "320mm",
+        "depth": "670mm"
+      },
+      "weight": "10.72kg",
+      "capacity": "ミドルタワーPC対応 (最大収納サイズ: 約 幅230mm × 奥行き590mm × 高さ645mm)",
+      "material": "脚部: エポキシ粉体塗装, 甲板の表面材: 合成樹脂化粧繊維板(塩化ビニル樹脂)",
+      "origin": "不明",
+      "other": [
+        "耐荷重: 60kg未満 (天板 30kg、底板 30kg)",
+        "昇降ロック: 樹脂製ロックレバー",
+        "機能: ロック付きキャスター, 取っ手, パンチングボード"
+      ]
+    }
+  }
+}
