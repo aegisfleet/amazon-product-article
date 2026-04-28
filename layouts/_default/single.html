@@ -46,7 +46,7 @@
             {{- end -}}
             <h1 class="hero-title" style="margin-top: var(--spacing-sm);">{{ .Title }}</h1>
             <div class="article-meta">
-                <span>公開日: {{ .Date.Format "2006年01月02日" }}</span>
+                <span>更新日: {{ .Lastmod.Format "2006年01月02日" }}</span>
                 {{- with .Params.author -}}<span> • 著者: {{ . }}</span>{{- end -}}
             </div>
         </header>

@@ -54,6 +54,18 @@ hasCJKLanguage = true
 [permalinks]
   articles = "/:contentbasename/"
 
+# Sitemap settings
+[sitemap]
+  changeFreq = "monthly"
+  priority = 0.5
+
+# Git info for automatic lastmod
+enableGitInfo = true
+
+# Front matter date resolution
+[frontmatter]
+  lastmod = [":git", "lastmod", "last_investigated", "date"]
+
 # Minify output
 [minify]
   minifyOutput = false

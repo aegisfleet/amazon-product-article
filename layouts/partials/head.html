@@ -11,14 +11,34 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <meta name="color-scheme" content="light dark">
+{{- partial "noindex-control.html" . -}}
 
 {{- $metaDescription := "" -}}
 {{- if .IsHome -}}
 {{- $articles := where .Site.RegularPages "Section" "articles" -}}
 {{- $metaDescription = printf "%d点以上のAmazon商品を徹底比較！高評価商品・価格帯・主要スペックを一覧で確認でき、あなたにぴったりの選択肢が短時間で見つかります。" (len $articles) -}}
 {{- else if .Params.score -}}
-{{- $metaDescription = printf "【%d点】%s %s レビュー。%s。AIエージェントによる徹底調査レポート。" (.Params.score | int) .Title (.Params.price |
-default "") (.Description | default .Summary | truncate 120) -}}
+{{- $score := .Params.score | int -}}
+{{- $category := "" -}}
+{{- if .Params.categories -}}{{- $category = index .Params.categories 0 -}}{{- else if .Params.category -}}{{- $category = .Params.category -}}{{- end -}}
+{{- $brand := .Params.brand | default "" -}}
+{{- $descBase := .Description | default .Summary | truncate 100 -}}
+{{- /* スコア帯とカテゴリに応じた meta description バリエーション */ -}}
+{{- if ge $score 85 -}}
+{{- $metaDescription = printf "%s（%s）を徹底レビュー。%s。スコア%d点の高評価を獲得した理由と競合比較を詳しく解説。" .Title (.Params.price | default "") $descBase $score -}}
+{{- else if ge $score 70 -}}
+{{- if $category -}}
+{{- $metaDescription = printf "%sカテゴリの%sをAI調査。%s。価格%sでスコア%d点、競合との違いを比較分析。" $category .Title $descBase (.Params.price | default "") $score -}}
+{{- else -}}
+{{- $metaDescription = printf "%s %sの実力を調査。%s。スコア%d点の評価ポイントと購入時の注意点。" .Title (.Params.price | default "") $descBase $score -}}
+{{- end -}}
+{{- else -}}
+{{- if $brand -}}
+{{- $metaDescription = printf "%sの%sを分析。%s。%sで購入前に知っておくべきポイントをまとめました。" $brand .Title $descBase (.Params.price | default "") -}}
+{{- else -}}
+{{- $metaDescription = printf "%s %sのメリット・デメリットを調査。%s。購入を検討する際の参考情報。" .Title (.Params.price | default "") $descBase -}}
+{{- end -}}
+{{- end -}}
 {{- else if eq .Section "recommendations" -}}
 {{- $metaDescription = "本日の注目商品10選！AIが厳選した高評価商品を価格・特徴比較。Amazon最安値リンク付きで即購入可能。" -}}
 {{- else if eq .Type "categories" -}}
