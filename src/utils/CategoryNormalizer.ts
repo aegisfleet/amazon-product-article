@@ -535,6 +535,7 @@ export class CategoryNormalizer {
       'Kindle本',
       '収納・生活雑貨',
       'タケオキクチ、コムサイズム他 ビジネスファッション・小物',
+      'ゲーミングチェア＆デスク',
     ];
 
     if (blacklist.includes(name)) {
