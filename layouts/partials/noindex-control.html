@@ -1,34 +1,28 @@
-{{- /*
-  noindex-control.html - 品質基準に基づいてnoindexタグを出力するパーシャル
-
-  以下の条件のいずれかに該当する記事ページに noindex を付与:
-  1. Front Matter に noindex: true が明示されている
+{{- /* 
+  noindex-control.html - 品質基準に基づいて noindex を制御する
+  1. noindex: true が明示されている
   2. description が 30 文字未満
-  3. ユーザーストーリー（本文中の「体験談」セクション）がなく、かつスコアが 55 以下
+  3. スコアが 75 以下 かつ ユーザーストーリー（user_stories）がない
 */ -}}
 {{- $shouldNoindex := false -}}
 
-{{- /* 明示的な noindex フラグ */ -}}
 {{- if .Params.noindex -}}
   {{- $shouldNoindex = true -}}
 {{- end -}}
 
-{{- /* 記事ページのみ品質チェック */ -}}
 {{- if and (eq .Section "articles") (not $shouldNoindex) -}}
-
-  {{- /* description が短すぎる */ -}}
-  {{- $desc := .Description | default "" -}}
-  {{- if lt (len $desc) 30 -}}
+  {{- /* Description チェック */ -}}
+  {{- if lt (len (.Description | default "")) 30 -}}
     {{- $shouldNoindex = true -}}
   {{- end -}}
 
-  {{- /* スコアが低く、コンテンツも薄い記事 */ -}}
-  {{- $score := .Params.score | default 0 -}}
-  {{- $hasUserStories := findRE "体験談" .RawContent -}}
-  {{- if and (le $score 55) (eq (len $hasUserStories) 0) -}}
-    {{- $shouldNoindex = true -}}
+  {{- /* スコアとストーリーのチェック */ -}}
+  {{- if not $shouldNoindex -}}
+    {{- $hasStories := and .Params.user_stories (gt (len .Params.user_stories) 0) -}}
+    {{- if and (le (.Params.score | default 0) 75) (not $hasStories) -}}
+      {{- $shouldNoindex = true -}}
+    {{- end -}}
   {{- end -}}
-
 {{- end -}}
 
 {{- if $shouldNoindex -}}
