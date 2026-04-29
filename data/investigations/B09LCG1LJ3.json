@@ -1,0 +1,176 @@
+{
+  "analysis": {
+    "productName": "プーマ スニーカー Vコート バルク",
+    "parentAsin": "B0GPVQ2B67",
+    "productDescription": "プーマのコート系デザインスニーカー。人工皮革のアッパーとゴム底を採用し、ベーシックで普段使いしやすい一足です。",
+    "productUsage": [
+      "普段使い",
+      "通学・通勤",
+      "カジュアルファッション"
+    ],
+    "positivePoints": [
+      "手頃な価格で購入しやすい",
+      "シンプルで服に合わせやすいデザイン",
+      "人工皮革採用で手入れが容易"
+    ],
+    "negativePoints": [
+      "クッション性など特筆すべき機能は少ない"
+    ],
+    "useCases": [
+      "カジュアルな服装での外出",
+      "日常の移動"
+    ],
+    "userStories": [],
+    "userImpression": "シンプルなデザインで価格も手頃なため、普段使いのスニーカーとして選びやすいという印象。",
+    "sources": [
+      {
+        "id": "src-1",
+        "name": "Amazon 商品詳細ページ (B09LCG1LJ3)",
+        "url": "https://www.amazon.co.jp/dp/B09LCG1LJ3",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-04-30",
+        "author": "PUMA(プーマ)",
+        "conflictOfInterest": "disclosed",
+        "notes": "商品価格、仕様（人工皮革+合成繊維アッパー、ゴム底）の確認。"
+      },
+      {
+        "id": "src-2",
+        "name": "Amazon 商品詳細ページ (B0C7J2V5VX)",
+        "url": "https://www.amazon.co.jp/dp/B0C7J2V5VX",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-04-30",
+        "author": "PUMA(プーマ)",
+        "conflictOfInterest": "disclosed",
+        "notes": "競合商品（コート クラシック バルク）の価格と仕様（キャンバスアッパー、SoftFoam+インソール）の確認。"
+      },
+      {
+        "id": "src-3",
+        "name": "Amazon 商品詳細ページ (B0D5HQCD8X)",
+        "url": "https://www.amazon.co.jp/dp/B0D5HQCD8X",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-04-30",
+        "author": "PUMA(プーマ)",
+        "conflictOfInterest": "disclosed",
+        "notes": "競合商品（V コート EASE IN）の価格と仕様（イーズイン機能）の確認。"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "人工皮革と合成繊維のアッパーを採用し、手入れがしやすい。",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "crossChecked": false,
+        "notes": "Amazonの商品詳細情報から確認。"
+      },
+      {
+        "claim": "同ブランドのコート クラシック バルクと比較して、価格が安価である。",
+        "category": "comparativeAdvantage",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-1",
+          "src-2"
+        ],
+        "crossChecked": true,
+        "notes": "Amazonの商品詳細情報の価格データ（2965円 vs 3732円）から確認。"
+      }
+    ],
+    "lastInvestigated": "2026-04-30",
+    "competitiveAnalysis": [
+      {
+        "name": "プーマ コート クラシック バルク",
+        "asin": "B0C7J2V5VX",
+        "priceComparison": "対象商品よりやや高い",
+        "featureComparison": [
+          "共通点：プーマのコート系スニーカーでシンプルなデザイン",
+          "相違点：コート クラシックはキャンバスアッパーとソフトフォームプラスインソールを採用"
+        ],
+        "differentiators": [
+          "プーマ スニーカー Vコート バルクの利点：人工皮革アッパーで手入れがしやすく、より安価",
+          "プーマ コート クラシック バルクの利点：インソールのクッション性が高く、より快適な履き心地"
+        ]
+      },
+      {
+        "name": "プーマ V コート EASE IN",
+        "asin": "B0D5HQCD8X",
+        "priceComparison": "対象商品より高い",
+        "featureComparison": [
+          "共通点：プーマのコート系デザイン",
+          "相違点：EASE INモデルは着脱のしやすさに特化した機能を搭載"
+        ],
+        "differentiators": [
+          "プーマ スニーカー Vコート バルクの利点：価格が安く、ベーシックな機能を求める方に適している",
+          "プーマ V コート EASE INの利点：靴紐を結ぶ手間を省きたい、着脱のしやすさを重視する方に適している"
+        ]
+      },
+      {
+        "name": "プーマ リバウンド V6 ロウ",
+        "asin": "B0DLFV1RMD",
+        "priceComparison": "対象商品より高い",
+        "featureComparison": [
+          "共通点：プーマのローカットスニーカー",
+          "相違点：リバウンドV6はタンブルレザー調アッパーやパーフォレーション加工など、よりスポーティーでボリュームのあるデザイン"
+        ],
+        "differentiators": [
+          "プーマ スニーカー Vコート バルクの利点：すっきりとした細身のシルエットで、より低価格",
+          "プーマ リバウンド V6 ロウの利点：存在感のあるデザインや通気性などの機能性を求める方に適している"
+        ]
+      },
+      {
+        "name": "プーマ Vコートバルク",
+        "asin": "B0F3M2RVZY",
+        "priceComparison": "対象商品よりやや高い",
+        "featureComparison": [
+          "共通点：プーマのVコートバルクシリーズ",
+          "相違点：こちらは2E相当のワイズ設定が明記されている"
+        ],
+        "differentiators": [
+          "プーマ スニーカー Vコート バルクの利点：価格がより安価で手に取りやすい",
+          "プーマ Vコートバルクの利点：ワイズ設定が明記されており、サイズ感を気にする方に適している"
+        ]
+      },
+      {
+        "name": "ニューバランス CT30",
+        "asin": "B093YCP7JT",
+        "priceComparison": "対象商品よりやや高い",
+        "featureComparison": [
+          "共通点：コートスタイルのスニーカー",
+          "相違点：ブランドが異なる。CT30はニューバランスのベーシックなコートスタイル"
+        ],
+        "differentiators": [
+          "プーマ スニーカー Vコート バルクの利点：より低価格で手に取りやすい",
+          "ニューバランス CT30の利点：ニューバランスらしいデザインやフィット感を好む方に適している"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "コストパフォーマンスを重視する方",
+        "シンプルなデザインのスニーカーを探している方",
+        "日常使いの靴を求めている方"
+      ],
+      "pros": [
+        "低価格",
+        "シンプルなデザイン",
+        "手入れしやすい人工皮革アッパー"
+      ],
+      "cons": [
+        "クッション性は高機能モデルに劣る"
+      ],
+      "score": 80,
+      "scoreRationale": "[基本点: 70]\n[加点: +10] (3000円を切る価格でコスパが高い)\n[加点: +5] (人工皮革採用で手入れが容易)\n[減点: -5] (クッション性など特筆すべき機能が少ない)\n[合計: 80]"
+    },
+    "technicalSpecs": {
+      "weight": "不明",
+      "material": "アッパー: 人工皮革+合成繊維、アウトソール: ゴム底",
+      "other": [
+        "カラー: 26年春夏カラー プーマ ホワイト/パリジャン ナイト(05)"
+      ]
+    }
+  }
+}
