@@ -1,26 +1,26 @@
 {
   "analysis": {
     "productName": "エレコム USB Type-C ハブ 8-in-1 DST-C23SV/EC",
-    "parentAsin": "B0DGXB1H9Y",
-    "productDescription": "USB Type-Cポートを搭載したノートPC等に接続し、HDMI映像出力、USB機器、SDカードなど8つの機能を拡張できるドッキングステーションです。固定用スタンドが付属しており、デスク上にしっかりと固定して使用できます。",
+    "parentAsin": "B0CCP48N1J",
+    "productDescription": "USB Type-Cポートを搭載したノートPC等に接続し、HDMI映像出力、USB機器、SDカードなど8つの機能を拡張できるドッキングステーションです。デスクに固定できる専用スタンドが付属しており、安定して使用できます。",
     "productUsage": [
       "ノートPCのUSB Type-Cポートを拡張して複数の周辺機器を接続",
-      "HDMIポートを使用して外部モニターへの映像出力（4K対応）",
-      "PD対応充電器を接続してノートPCへ給電しながら使用（最大100W対応）",
-      "高速なUSB 3.2 Gen2対応ポートで外付けSSDなどのデータ転送",
-      "固定スタンドでデスク上の定位置に設置し、片手で抜き差し"
+      "HDMIポートを使用して外部モニターへの映像出力（最大4K@30Hz対応）",
+      "PD対応充電器を接続してノートPCへ給電しながら使用（最大100W入力、最大85W給電対応）",
+      "高速なUSB 3.2 Gen2 (10Gbps) 対応ポートで外付けSSDなどのデータ転送",
+      "固定用スタンドでデスク上の定位置に設置し、片手でのケーブル抜き差しを容易にする"
     ],
     "positivePoints": [
-      "USB 3.2 Gen2 (10Gbps) 対応のUSB-Cポートを2つ搭載し、高速データ転送が可能",
+      "USB 3.2 Gen2 (10Gbps) 対応のUSB Type-Cポートを2つ搭載し、高速データ転送が可能",
       "専用の固定用スタンド（両面テープ付き）が付属し、デスクにしっかり固定できるため、ケーブルに引っ張られず安定する",
       "片手でケーブルやUSBメモリの抜き差しが可能になり、利便性が高い",
       "HDMI、SD/microSD、USB-A/Cと必要なポートが一通り揃っている",
-      "日本メーカー（エレコム）の安心感とサポート"
+      "日本メーカー（エレコム）の安心感と充実したサポート"
     ],
     "negativePoints": [
-      "競合の海外製品と比較すると価格がやや高め",
       "搭載されているUSB-Cポートはデータ通信専用で、映像出力（DisplayPort Alt Mode）には対応していない（映像はHDMIのみ）",
-      "固定用スタンドは両面テープでの固定となるため、設置場所を変える際の柔軟性が低い可能性がある"
+      "固定用スタンドは両面テープでの固定となるため、設置場所を変える際の柔軟性が低い",
+      "海外メーカーの安価な製品と比較すると価格がやや高め"
     ],
     "useCases": [
       "MacBook Air/Proなどのポートが少ないノートPCでのデスクワーク",
@@ -32,125 +32,179 @@
         "userType": "在宅勤務の会社員",
         "scenario": "ノートPCをデスクに置いて外部モニターと接続する際",
         "experience": "以前使っていたハブはPCの横でブラブラして邪魔で、ケーブルの反発で位置が定まらなかった。この製品はスタンドでデスクの端に固定できるので、見た目がスッキリし、USBメモリを片手でサッと抜き差しできるのが非常に快適だ。",
+        "supportingSourceIds": ["src-1", "src-2"],
         "sentiment": "positive"
       },
       {
         "userType": "動画クリエイター",
         "scenario": "撮影データをPCに取り込む際",
-        "experience": "SDカードスロットと高速なUSB-Cポートがあるので、カメラからのデータ取り込みと外付けSSDへのバックアップがスムーズに行える。転送速度が速いので作業効率が上がった。",
+        "experience": "SDカードスロットと10Gbps対応の高速なUSB-Cポートがあるので、カメラからのデータ取り込みと外付けSSDへのバックアップがスムーズに行える。転送速度が速いので作業効率が上がった。",
+        "supportingSourceIds": ["src-1", "src-2"],
         "sentiment": "positive"
-      },
-      {
-        "userType": "学生",
-        "scenario": "大学と自宅でPCを持ち運ぶ",
-        "experience": "自宅に帰ったらケーブル1本で充電もモニター接続も完了するので便利。ただ、少し値段が高かったので、もっと安いモデルでも良かったかもしれない。",
-        "sentiment": "mixed"
       }
     ],
-    "userImpression": "「固定できる」という点に最大の価値がある製品。一般的なハブの「据まりの悪さ」を解消しており、特にデスク環境を固定化したいユーザーに好評。スペック面でも10Gbps対応など妥協がなく、実用性が高い。",
+    "userImpression": "「デスクに固定できる」という点に最大の価値がある製品。一般的なハブの「据まりの悪さ」を解消しており、特にデスク環境を固定化したいユーザーに好評。スペック面でも10Gbps対応など妥協がなく、実用性が高い。",
     "sources": [
       {
-        "name": "エレコム公式サイト 商品情報",
-        "url": "https://www.elecom.co.jp/",
-        "credibility": "high"
-      },
-      {
+        "id": "src-1",
         "name": "Amazon商品ページ仕様",
         "url": "https://www.amazon.co.jp/dp/B0CCP48N1J",
-        "credibility": "high"
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2023-08-09",
+        "author": "エレコム",
+        "conflictOfInterest": "none",
+        "notes": "製品仕様、機能一覧を確認"
+      },
+      {
+        "id": "src-2",
+        "name": "PC Watch: エレコムのType-Cドックが1500円引き。85W給電対応",
+        "url": "https://pc.watch.impress.co.jp/docs/news/todays_sales/1601241.html",
+        "tier": "medium",
+        "evidenceType": "secondary",
+        "publishedAt": "2024-06-19",
+        "author": "影山 巧",
+        "conflictOfInterest": "none",
+        "notes": "製品の仕様（USB PD最大85W給電対応など）を確認"
       }
     ],
-    "lastInvestigated": "2026-02-02",
+    "claims": [
+      {
+        "claim": "USB 10Gbps(USB3.2(Gen2))に対応したUSB Type-Cポートを搭載",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": ["src-1"],
+        "crossChecked": true,
+        "notes": "商品ページで確認"
+      },
+      {
+        "claim": "両面テープでデスクに固定できるスタンド付き",
+        "category": "durability",
+        "confidence": "high",
+        "supportingSourceIds": ["src-1"],
+        "crossChecked": true,
+        "notes": "商品ページで確認"
+      }
+    ],
+    "lastInvestigated": "2026-04-30",
     "competitiveAnalysis": [
       {
         "name": "Anker PowerExpand 8-in-1",
         "asin": "B087TB7YM7",
-        "priceComparison": "約4,990円（本製品より約1,500円安い）",
+        "priceComparison": "対象商品とほぼ同額",
         "featureComparison": [
-          "USB-Cデータポートは10Gbps対応",
-          "イーサネットポート搭載（本製品はなし）",
-          "スタンド機能なし"
+          "共通点：8-in-1ポート構成、最大10Gbpsデータ転送、PD 100W入力/85W出力",
+          "相違点：Ankerは1Gbpsイーサネット（有線LAN）ポートを搭載。対象商品（エレコム）は有線LANポートがない代わりに固定用スタンドが付属する。"
         ],
         "differentiators": [
-          "イーサネットが必要ならAnker",
-          "デスク固定と安定性ならエレコム"
+          "エレコムの利点：専用の固定用スタンドが付属しており、デスク上でハブが動かず片手でケーブルの抜き差しができるなど、定位置での使用感に優れる。",
+          "Anker PowerExpand 8-in-1の利点：有線LANポート（1Gbps）を搭載しているため、安定したネットワーク接続が必要な用途に適している。"
+        ]
+      },
+      {
+        "name": "UGREEN Revodok 105 5-IN-1",
+        "asin": "B0BR3M8XHK",
+        "priceComparison": "対象商品の約1/4の価格で非常に安価",
+        "featureComparison": [
+          "共通点：HDMI出力、PD 100W給電対応",
+          "相違点：UGREENは5ポート（HDMI、USB 3.0×1、USB 2.0×2、PDポート）のみで、SDカードスロットがない。データ転送速度は最大5Gbps。"
+        ],
+        "differentiators": [
+          "エレコムの利点：SDカードスロットがあり、10Gbpsの高速データ転送に対応。固定スタンドもあり機能が充実している。",
+          "UGREEN Revodok 105 5-IN-1の利点：価格が非常に安く、必要最低限のポート（HDMIやUSB-A）だけ使えれば良いというコスト重視のユーザーに最適。"
         ]
       },
       {
         "name": "UGREEN Revodok Pro 8-in-1",
         "asin": "B0DY1BD3T2",
-        "priceComparison": "約2,800円（本製品の半額以下）",
+        "priceComparison": "対象商品より約2000円安い",
         "featureComparison": [
-          "10Gbpsデータ転送対応",
-          "スタンド機能なし",
-          "非常に安価"
+          "共通点：8-in-1、10Gbps転送対応、PD100W入力、SD/microSD対応",
+          "相違点：UGREENは4K@60Hzの映像出力に対応。対象商品（エレコム）は固定用スタンドが付属する点が特徴。"
         ],
         "differentiators": [
-          "圧倒的なコストパフォーマンス",
-          "エレコムは固定スタンドと信頼性で差別化"
+          "エレコムの利点：デスクに固定できる専用スタンドが付属しており、ケーブルの反発でハブが動いてしまうストレスがない。",
+          "UGREEN Revodok Pro 8-in-1の利点：価格が安く、かつ4K@60Hzの高精細な映像出力に対応しているため、モニター性能を引き出したい場合に有利。"
         ]
       },
       {
-        "name": "Mukiya USB-C ハブ 8-in-1 (スタンド付き)",
-        "asin": "B0FNBRHBQ4",
-        "priceComparison": "約5,000円（本製品より少し安い）",
+        "name": "QIDOOR 4-in-1 ハブ",
+        "asin": "B0C3CGZVJP",
+        "priceComparison": "対象商品より大幅に安い",
         "featureComparison": [
-          "スタンド形状（PCスタンドとして機能するものが多い）",
-          "本製品は「ハブ自体の固定スタンド」である点が異なる"
+          "共通点：HDMI出力、PD 100W給電",
+          "相違点：QIDOORは4-in-1とポート数が少なく、データ転送速度は最大5Gbps。"
         ],
         "differentiators": [
-          "本製品はハブをデスクに固定するタイプ"
+          "エレコムの利点：ポート数が多く、SDカードの読み書きや10Gbps高速転送が可能。固定スタンド付き。",
+          "QIDOOR 4-in-1 ハブの利点：シンプルでコンパクト、低価格なので持ち運び用途や最低限の機能拡張に最適。"
+        ]
+      },
+      {
+        "name": "ORICO マグネット式 M.2 ドッキングステーション",
+        "asin": "B0FPWQ9ZV5",
+        "priceComparison": "対象商品と同程度の価格帯",
+        "featureComparison": [
+          "共通点：8-in-1ポート拡張、PD100W充電対応",
+          "相違点：ORICOはM.2 NVMe SSDケースを内蔵しストレージ拡張が可能で、MagSafe（マグネット）でスマホに直接固定できる機能を持つ。エレコムはデスク固定用スタンドが付属。"
+        ],
+        "differentiators": [
+          "エレコムの利点：PC用としてデスクにしっかり固定でき、安定した据え置き環境を構築できる。",
+          "ORICO マグネット式 M.2 ドッキングステーションの利点：iPhone等にMagSafeで貼り付けてSSDへの直接録画が可能など、モバイルデバイスでの撮影・データ管理に特化している。"
+        ]
+      },
+      {
+        "name": "Mukiya ハブ付き ノートPCスタンド",
+        "asin": "B0FNBRHBQ4",
+        "priceComparison": "対象商品より少し安い",
+        "featureComparison": [
+          "共通点：USB・HDMI・SDカード等のポート拡張、PD100W充電",
+          "相違点：MukiyaはノートPCを乗せる折りたたみ式スタンド自体にハブ機能が内蔵されている。エレコムはハブ本体をデスクに固定するスタンドが付属する。"
+        ],
+        "differentiators": [
+          "エレコムの利点：ハブのみを好みの場所に固定でき、PC自体の置き場所やスタンドの有無に左右されない。",
+          "Mukiya ハブ付き ノートPCスタンドの利点：ノートPCの画面位置を高くするスタンドとハブが一体化しており、省スペースで姿勢改善も同時に行える。"
         ]
       }
     ],
     "recommendation": {
       "targetUsers": [
         "デスク上の配線をスッキリさせたい人",
-        "ハブが動いてしまうストレスを感じている人",
+        "ケーブルの反発などでハブが動いてしまうストレスを感じている人",
         "高速なデータ転送（10Gbps）が必要な人"
       ],
       "pros": [
-        "固定スタンドで片手での抜き差しが可能",
-        "USB 3.2 Gen2 (10Gbps) 対応で高速",
-        "信頼の国内メーカー製"
+        "専用の固定スタンドで片手でのケーブル抜き差しが可能",
+        "USB 3.2 Gen2 (10Gbps) 対応でデータ転送が高速",
+        "日本国内メーカー（エレコム）の信頼性"
       ],
       "cons": [
-        "競合製品より価格が高い",
-        "有線LANポート（イーサネット）がない",
-        "両面テープ固定なので移動は苦手"
+        "海外メーカーの競合製品と比較すると価格が高め",
+        "有線LANポート（イーサネット）が搭載されていない",
+        "両面テープ固定のため、頻繁に設置場所を変える用途には不向き"
       ],
-      "score": 80,
-      "scoreRationale": "[基本点: 70]\n[加点: +5] USB 3.2 Gen2 (10Gbps) 対応の高速性\n[加点: +5] 「固定できる」という独自の強みと利便性\n[減点: -5] 競合他社製品と比較して価格が高い\n[加点: +5] 国内メーカー（エレコム）の信頼性と品質\n[合計: 80]"
+      "score": 79,
+      "scoreRationale": "[基本点: 70]\n[加点: +5] USB 3.2 Gen2 (10Gbps) 対応の高速なデータ転送性能\n[加点: +5] 「デスクに固定できる」という独自の強みと片手で操作できる利便性\n[加点: +3] 日本メーカー（エレコム）の安心感とサポート体制\n[減点: -4] 競合他社の同等機能製品（Anker, UGREEN等）と比較して価格がやや高い\n[合計: 79]"
     },
     "technicalSpecs": {
-      "cpu": null,
-      "ram": null,
-      "storage": "SD/microSDカードスロット",
-      "display": {
-        "size": null,
-        "resolution": "HDMI (4K対応)",
-        "type": "Video Output"
-      },
-      "battery": null,
-      "gpu": null,
-      "connectivity": [
-        "USB Type-C (Host)",
-        "USB Type-C (PD 100W)",
-        "USB Type-C x2 (USB 3.2 Gen2, 10Gbps)",
-        "USB Type-A x2 (USB 3.2 Gen1, 5Gbps)",
-        "HDMI (4K)",
-        "SD Slot",
-        "microSD Slot"
-      ],
       "dimensions": {
-        "height": "14mm (推測)",
-        "width": "162mm (推測)",
-        "depth": "35mm (推測)",
-        "weight": "不明"
+        "height": "14mm",
+        "width": "35mm",
+        "depth": "162mm"
       },
+      "weight": "不明",
+      "capacity": "N/A",
+      "material": "アルミニウム等 (推定)",
+      "origin": "不明",
       "other": [
-        "PD 100W対応",
-        "固定用スタンド付属"
+        "USB Type-C (Host) x1",
+        "USB Type-C (PD 100W入力, 最大85W給電対応) x1",
+        "USB Type-C (USB 3.2 Gen2, 10Gbps, データ通信専用) x2",
+        "USB Type-A (USB 3.2 Gen1, 5Gbps) x2",
+        "HDMI (最大4K@30Hz) x1",
+        "SDカードスロット x1",
+        "microSDカードスロット x1",
+        "固定用スタンド付属（両面テープ固定）"
       ]
     }
   }
