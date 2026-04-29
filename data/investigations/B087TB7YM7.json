@@ -1,0 +1,180 @@
+{
+  "analysis": {
+    "productName": "Anker PowerExpand 8-in-1 USB-C PD 10Gbps データハブ",
+    "parentAsin": "B087TB7YM7",
+    "productDescription": "最大100WのPower Deliveryに対応し、4K (60Hz) 出力可能なHDMIポート、1Gbpsイーサネット、SD/microSDカードスロット、10Gbpsの高速データ転送に対応したUSB-A/Cポートを搭載する多機能8-in-1 USB-Cハブです。",
+    "productUsage": [
+      "ノートPC（MacBook Pro、iPad Proなど）のポート拡張",
+      "外部ディスプレイへの4K高画質出力",
+      "PD対応充電器でのパススルー充電",
+      "有線LAN接続による安定したネットワーク環境構築"
+    ],
+    "positivePoints": [
+      "最大10Gbpsの高速データ転送が可能なUSB-AおよびUSB-Cポートを搭載",
+      "4K (60Hz) の高画質出力に対応したHDMIポート",
+      "最大100Wの入力（85W出力）に対応し、ハブを使用しながらノートPCをフルスピード充電可能",
+      "1Gbps対応の有線LANポートやSD/microSDスロットなど豊富なポートを1つに集約"
+    ],
+    "negativePoints": [
+      "ハブ自体が15Wの電力を消費するため、ノートPCへの給電は最大85Wとなる",
+      "4K (60Hz) での出力には、ノートPCがDisplayPort 1.4に対応している必要がある"
+    ],
+    "useCases": [
+      "自宅やオフィスでのデュアルディスプレイ環境の構築",
+      "外出先や出張先での有線LAN接続やSDカードのデータ読み込み",
+      "周辺機器を多数接続しながらのノートPCへの給電"
+    ],
+    "userStories": [],
+    "userImpression": "豊富なポート構成と高速なデータ転送・高画質出力が1つにまとまっており、コンパクトで持ち運びにも便利と評価されています。特に10Gbpsのデータ転送と4K(60Hz)出力の組み合わせは作業効率向上に貢献します。",
+    "sources": [
+      {
+        "id": "amazon-description",
+        "name": "Amazon商品ページ",
+        "url": "https://www.amazon.co.jp/dp/B087TB7YM7",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-04-29",
+        "author": "Amazon",
+        "conflictOfInterest": "none",
+        "notes": "商品の公式スペックおよび特徴"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "最大10Gbpsのデータ転送が可能",
+        "category": "durability",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "amazon-description"
+        ],
+        "crossChecked": true,
+        "notes": "USB 3.1 Gen 2対応ポートを搭載"
+      },
+      {
+        "claim": "最大85Wのパススルー充電が可能",
+        "category": "durability",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "amazon-description"
+        ],
+        "crossChecked": true,
+        "notes": "100W入力時、ハブ本体で15W消費し残りの85Wを出力"
+      }
+    ],
+    "lastInvestigated": "2026-04-29",
+    "competitiveAnalysis": [
+      {
+        "name": "Belkin USB-C 8-IN-1 マルチポート ハブ INC024fqBK",
+        "asin": "B0FXDVQMQG",
+        "priceComparison": "Belkin製の方が安価だが、最大10Gbpsのデータ転送や最大100WPDに対応するなど基本スペックは近い。Anker製品はAmazonでトップクラスの人気を誇るブランド力が強み。",
+        "featureComparison": [
+          "共通点：8つのポートを搭載、最大100W PD充電対応、最大10Gbpsのデータ転送、4K(60Hz)対応",
+          "相違点：Belkin製品は2.5Gbps対応の有線LANポートを搭載している場合があるが、詳細仕様は製品モデルによる。デザインやサイズ感、ブランドのサポート体制に違いがある。"
+        ],
+        "differentiators": [
+          "Anker PowerExpand 8-in-1 USB-C PD 10Gbps データハブの利点：Amazon第1位の充電製品ブランドとしての実績と信頼感がある。",
+          "Belkin USB-C 8-IN-1 マルチポート ハブ INC024fqBKの利点：より安価に導入できる可能性がある。"
+        ]
+      },
+      {
+        "name": "サンワダイレクト Type-C ドッキングステーション 400-DKMP5GM",
+        "asin": "B0G2TZ9Q53",
+        "priceComparison": "サンワダイレクト製の方が安価。HDMIポートを2つ搭載し、デュアルディスプレイ環境を構築したい場合に適している。",
+        "featureComparison": [
+          "共通点：8-in-1のマルチポート、PD 100W充電対応、SD/microSDカードリーダー搭載",
+          "相違点：サンワダイレクト製品はHDMIポートを2つ搭載し2画面出力に対応する一方、有線LANポートは搭載していない。Anker製品は1Gbps有線LANポートを搭載し10Gbpsのデータ転送に対応。"
+        ],
+        "differentiators": [
+          "Anker PowerExpand 8-in-1 USB-C PD 10Gbps データハブの利点：有線LANポートや10Gbpsの高速データ転送が必要な場合に適している。",
+          "サンワダイレクト Type-C ドッキングステーション 400-DKMP5GMの利点：HDMI出力を2つ必要とするデュアルディスプレイ環境を構築したい場合や、予算を抑えたい場合に適している。"
+        ]
+      },
+      {
+        "name": "UGREEN Revodok Pro USB-C ハブ 8-in-1",
+        "asin": "B0DY1BD3T2",
+        "priceComparison": "UGREEN製の方が安価。スペック的にも10Gbpsデータ転送や4K(60Hz)出力に対応し、コストパフォーマンスが高い。",
+        "featureComparison": [
+          "共通点：10Gbpsデータ転送、4K(60Hz)出力、100W PD急速充電対応、SD/microSDカードスロット搭載",
+          "相違点：Anker製品は1Gbps有線LANポートを搭載しているが、UGREEN製品は有線LANの代わりにUSBポート構成などが異なる場合がある。"
+        ],
+        "differentiators": [
+          "Anker PowerExpand 8-in-1 USB-C PD 10Gbps データハブの利点：有線LANによる安定したネットワーク接続が必要な場合や、Ankerブランドのサポートを重視する場合に適している。",
+          "UGREEN Revodok Pro USB-C ハブ 8-in-1の利点：同様の高速データ転送と高画質出力をより安価に導入したい場合に適している。"
+        ]
+      },
+      {
+        "name": "エレコム USB-C ハブ ドッキングステーション DST-W10",
+        "asin": "B0DSZGR9BC",
+        "priceComparison": "エレコム製の方が安価。10Gbpsデータ転送や4K(60Hz)出力など基本性能は同等。",
+        "featureComparison": [
+          "共通点：USB 10Gbps(USB3.2(Gen2))対応、PD100W対応、HDMI 4K/60Hz対応",
+          "相違点：エレコム独自の接続安定性を高める設計が採用されている。デザインや本体のサイズ、重量が異なる。"
+        ],
+        "differentiators": [
+          "Anker PowerExpand 8-in-1 USB-C PD 10Gbps データハブの利点：グローバルブランドとしての実績と、コンパクトなデザイン。",
+          "エレコム USB-C ハブ ドッキングステーション DST-W10の利点：国内メーカー製としての安心感や、独自の安定接続設計を重視する場合に適している。"
+        ]
+      },
+      {
+        "name": "UGREEN 5-IN-1 USB Cハブ",
+        "asin": "B0BW2PNZF2",
+        "priceComparison": "UGREEN 5-in-1はポート数が少ないため非常に安価。",
+        "featureComparison": [
+          "共通点：PD 100W充電対応、4K(60Hz)出力対応",
+          "相違点：Anker製品は8ポート（LAN、SDスロット等含む）を搭載しているのに対し、UGREEN製品は5ポート（USB-A×3、HDMI、PD給電）のみ。データ転送速度も5Gbpsにとどまる。"
+        ],
+        "differentiators": [
+          "Anker PowerExpand 8-in-1 USB-C PD 10Gbps データハブの利点：LAN接続やSDカードの読み込み、10Gbpsの高速転送など多様な機能が必要な場合に最適。",
+          "UGREEN 5-IN-1 USB Cハブの利点：USB-Aポートの拡張とHDMI出力のみが必要で、なるべくコンパクトで安価な製品を求めている場合に適している。"
+        ]
+      },
+      {
+        "name": "abius USB C ハブ 8-in-1",
+        "asin": "B0FW3MY3KK",
+        "priceComparison": "abius製は非常に安価。",
+        "featureComparison": [
+          "共通点：8つのポートを搭載、PD100W対応",
+          "相違点：abius製品のデータ転送速度は5Gbpsにとどまり、ブランドの知名度や信頼性に差がある。"
+        ],
+        "differentiators": [
+          "Anker PowerExpand 8-in-1 USB-C PD 10Gbps データハブの利点：最大10Gbpsの高速データ転送と、大手ブランドの確かな品質・サポートを重視する場合に適している。",
+          "abius USB C ハブ 8-in-1の利点：データ転送速度にこだわらず、とにかく安価にポートを拡張したい場合に適している。"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "MacBook ProやiPad Proユーザー",
+        "有線LAN環境やSDカードリーダーが必要なクリエイター",
+        "高速なデータ転送と高画質出力を求めるビジネスパーソン"
+      ],
+      "pros": [
+        "10Gbpsの高速データ転送に対応",
+        "4K (60Hz) の高画質出力が可能",
+        "最大85Wのパススルー充電に対応し、PCへの給電が可能"
+      ],
+      "cons": [
+        "ハブ自体が15Wの電力を消費するため、接続機器によっては出力不足になる場合がある",
+        "4K (60Hz) 出力にはPC側のDisplayPort 1.4対応が必要"
+      ],
+      "score": 85,
+      "scoreRationale": "[基本点: 70] (固定)\n[加点: +5] (10Gbpsの高速データ転送に対応し実用性が高い)\n[加点: +5] (4K(60Hz)出力と1Gbps有線LAN搭載で多様なニーズに対応)\n[加点: +5] (Ankerブランドによる高い品質とサポートの信頼性)\n[合計: 85]"
+    },
+    "technicalSpecs": {
+      "dimensions": {
+        "height": "15.3mm",
+        "width": "55.0mm",
+        "depth": "121.0mm"
+      },
+      "weight": "127.0g",
+      "capacity": "N/A",
+      "material": "アルミニウム等",
+      "origin": "不明",
+      "other": [
+        "入力: 最大100W PD対応",
+        "出力: 最大85W",
+        "ポート: USB-C PD入力、USB-C (10Gbps)、USB-A (10Gbps) x 2、HDMI (4K@60Hz)、1Gbps イーサネット、SDカードスロット、microSDカードスロット"
+      ]
+    }
+  }
+}
