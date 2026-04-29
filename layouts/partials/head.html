@@ -16,25 +16,31 @@
 {{- $metaDescription := "" -}}
 {{- if .IsHome -}}
 {{- $articles := where .Site.RegularPages "Section" "articles" -}}
-{{- $metaDescription = printf "%d点以上のAmazon商品を徹底比較！高評価商品・価格帯・主要スペックを一覧で確認でき、あなたにぴったりの選択肢が短時間で見つかります。" (len $articles) -}}
+{{- $metaDescription = printf "%d点以上のAmazon商品を徹底比較！高評価商品・価格帯・主要スペックを一覧で確認でき、あなたにぴったりの選択肢が短時間で見つかります。" (len $articles)
+-}}
 {{- else if .Params.score -}}
 {{- $score := .Params.score | int -}}
 {{- $category := "" -}}
-{{- if .Params.categories -}}{{- $category = index .Params.categories 0 -}}{{- else if .Params.category -}}{{- $category = .Params.category -}}{{- end -}}
+{{- if .Params.categories -}}{{- $category = index .Params.categories 0 -}}{{- else if .Params.category -}}{{- $category
+= .Params.category -}}{{- end -}}
 {{- $brand := .Params.brand | default "" -}}
 {{- $descBase := .Description | default .Summary | truncate 100 -}}
 {{- /* スコア帯とカテゴリに応じた meta description バリエーション */ -}}
 {{- if ge $score 85 -}}
-{{- $metaDescription = printf "%s（%s）を徹底レビュー。%s。スコア%d点の高評価を獲得した理由と競合比較を詳しく解説。" .Title (.Params.price | default "") $descBase $score -}}
+{{- $metaDescription = printf "%s（%s）を徹底レビュー。%s。スコア%d点の高評価を獲得した理由と競合比較を詳しく解説。" .Title (.Params.price | default "")
+$descBase $score -}}
 {{- else if ge $score 70 -}}
 {{- if $category -}}
-{{- $metaDescription = printf "%sカテゴリの%sをAI調査。%s。価格%sでスコア%d点、競合との違いを比較分析。" $category .Title $descBase (.Params.price | default "") $score -}}
+{{- $metaDescription = printf "%sカテゴリの%sをAI調査。%s。価格%sでスコア%d点、競合との違いを比較分析。" $category .Title $descBase (.Params.price |
+default "") $score -}}
 {{- else -}}
-{{- $metaDescription = printf "%s %sの実力を調査。%s。スコア%d点の評価ポイントと購入時の注意点。" .Title (.Params.price | default "") $descBase $score -}}
+{{- $metaDescription = printf "%s %sの実力を調査。%s。スコア%d点の評価ポイントと購入時の注意点。" .Title (.Params.price | default "") $descBase
+$score -}}
 {{- end -}}
 {{- else -}}
 {{- if $brand -}}
-{{- $metaDescription = printf "%sの%sを分析。%s。%sで購入前に知っておくべきポイントをまとめました。" $brand .Title $descBase (.Params.price | default "") -}}
+{{- $metaDescription = printf "%sの%sを分析。%s。%sで購入前に知っておくべきポイントをまとめました。" $brand .Title $descBase (.Params.price | default
+"") -}}
 {{- else -}}
 {{- $metaDescription = printf "%s %sのメリット・デメリットを調査。%s。購入を検討する際の参考情報。" .Title (.Params.price | default "") $descBase -}}
 {{- end -}}
@@ -405,22 +411,24 @@
 <script type="application/ld+json">{{- $breadcrumbSchema | jsonify | safeJS -}}</script>
 {{- /* FAQ Schema (for single pages with target_users or warnings) */ -}}
 {{- if and .IsPage .Params.hero -}}
-  {{- $faqItems := slice -}}
-  
-  {{- /* target_users を FAQ に変換 */ -}}
-  {{- with .Params.hero.target_users -}}
-    {{- $answer := delimit . "、" -}}
-    {{- $faqItems = $faqItems | append (dict "@type" "Question" "name" (printf "%sはどんな人におすすめですか？" $.Title) "acceptedAnswer" (dict "@type" "Answer" "text" (printf "次のような方におすすめです：%s。" $answer))) -}}
-  {{- end -}}
+{{- $faqItems := slice -}}
 
-  {{- /* warnings を FAQ に変換 */ -}}
-  {{- with .Params.hero.warnings -}}
-    {{- $answer := delimit . "、" -}}
-    {{- $faqItems = $faqItems | append (dict "@type" "Question" "name" (printf "%sを購入する際の注意点はありますか？" $.Title) "acceptedAnswer" (dict "@type" "Answer" "text" (printf "購入時には以下の点にご注意ください：%s。" $answer))) -}}
-  {{- end -}}
+{{- /* target_users を FAQ に変換 */ -}}
+{{- with .Params.hero.target_users -}}
+{{- $answer := delimit . "、" -}}
+{{- $faqItems = $faqItems | append (dict "@type" "Question" "name" (printf "%sはどんな人におすすめですか？" $.Title) "acceptedAnswer"
+(dict "@type" "Answer" "text" (printf "次のような方におすすめです：%s。" $answer))) -}}
+{{- end -}}
 
-  {{- if gt (len $faqItems) 0 -}}
-    {{- $faqSchema := dict "@context" "https://schema.org" "@type" "FAQPage" "mainEntity" $faqItems -}}
-    <script type="application/ld+json">{{- $faqSchema | jsonify | safeJS -}}</script>
-  {{- end -}}
+{{- /* warnings を FAQ に変換 */ -}}
+{{- with .Params.hero.warnings -}}
+{{- $answer := delimit . "、" -}}
+{{- $faqItems = $faqItems | append (dict "@type" "Question" "name" (printf "%sを購入する際の注意点はありますか？" $.Title)
+"acceptedAnswer" (dict "@type" "Answer" "text" (printf "購入時には以下の点にご注意ください：%s。" $answer))) -}}
+{{- end -}}
+
+{{- if gt (len $faqItems) 0 -}}
+{{- $faqSchema := dict "@context" "https://schema.org" "@type" "FAQPage" "mainEntity" $faqItems -}}
+<script type="application/ld+json">{{- $faqSchema | jsonify | safeJS -}}</script>
+{{- end -}}
 {{- end -}}

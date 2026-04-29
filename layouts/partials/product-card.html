@@ -17,13 +17,12 @@
 <article class="card" data-price="{{ $priceRaw }}" data-score="{{ .Params.score | default 0 }}"
     data-date="{{ $dateRaw }}">
     <div class="card-image">
-        <a href="{{ .RelPermalink }}"
-            data-track-product="1" data-asin="{{ .Params.asin }}" data-category="{{ $trackingCategory }}"
-            data-price-bucket="{{ $priceBucket }}" data-price="{{ .Params.price }}">
+        <a href="{{ .RelPermalink }}" data-track-product="1" data-asin="{{ .Params.asin }}"
+            data-category="{{ $trackingCategory }}" data-price-bucket="{{ $priceBucket }}"
+            data-price="{{ .Params.price }}">
             <!-- Placeholder for product image integration later -->
             {{- if .Params.images -}}
-            <img src="{{ index .Params.images 0 }}" alt="{{ .Title }}" loading="lazy"
-                decoding="async">
+            <img src="{{ index .Params.images 0 }}" alt="{{ .Title }}" loading="lazy" decoding="async">
             {{- else -}}
             <div class="card-image-noimage">
                 画像なし
@@ -97,7 +96,8 @@
             </div>
         </div>
         <div class="card-footer">
-            <span class="article-meta">{{- with .Params.last_investigated -}}{{ time . | dateFormat "2006年01月02日" }}{{- else -}}{{ .Date.Format "2006年01月02日" }}{{- end -}}</span>
+            <span class="article-meta">{{- with .Params.last_investigated -}}{{ time . | dateFormat "2006年01月02日" }}{{-
+                else -}}{{ .Date.Format "2006年01月02日" }}{{- end -}}</span>
             {{- if .Params.affiliate_url -}}
             <a href="{{ .Params.affiliate_url }}" class="btn-amazon-small" target="_blank" rel="noopener noreferrer"
                 data-track-product="1" data-asin="{{ .Params.asin }}" data-category="{{ $trackingCategory }}"

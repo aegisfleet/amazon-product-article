@@ -16,7 +16,8 @@
 {{- if and .Params.images (gt (len .Params.images) 0) -}}
 {{- $hasImageBonus = 30 -}}
 {{- end -}}
-{{- $compositeScore := add (mul $score 1000000000000) (add (mul $investigatedUnix 100) (add $hasPriceBonus $hasImageBonus)) -}}
+{{- $compositeScore := add (mul $score 1000000000000) (add (mul $investigatedUnix 100) (add $hasPriceBonus
+$hasImageBonus)) -}}
 {{- $rankedEntries = $rankedEntries | append (dict "page" . "compositeScore" $compositeScore) -}}
 {{- end -}}
 

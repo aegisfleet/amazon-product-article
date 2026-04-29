@@ -3,18 +3,17 @@
 {{- $result := "" -}}
 
 {{- if $price -}}
-  {{- $priceStr := printf "%v" $price -}}
-  {{- /* Extract only digits to format. Remove ￥, commas and spaces if present. */ -}}
-  {{- $priceClean := replace (replace (replace $priceStr "￥" "") "," "") " " "" -}}
-  {{- $matches := findRE "^[0-9]+$" $priceClean -}}
+{{- $priceStr := printf "%v" $price -}}
+{{- /* Extract only digits to format. Remove ￥, commas and spaces if present. */ -}}
+{{- $priceClean := replace (replace (replace $priceStr "￥" "") "," "") " " "" -}}
+{{- $matches := findRE "^[0-9]+$" $priceClean -}}
 
-  {{- if gt (len $matches) 0 -}}
-    {{- $priceRaw := index $matches 0 | int -}}
-    {{- $result = printf "￥%s" (lang.FormatNumber 0 $priceRaw) -}}
-  {{- else -}}
-    {{- $result = $priceStr -}}
-  {{- end -}}
+{{- if gt (len $matches) 0 -}}
+{{- $priceRaw := index $matches 0 | int -}}
+{{- $result = printf "￥%s" (lang.FormatNumber 0 $priceRaw) -}}
+{{- else -}}
+{{- $result = $priceStr -}}
+{{- end -}}
 {{- end -}}
 
 {{- $result -}}
-
