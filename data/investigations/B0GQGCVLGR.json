@@ -1,0 +1,239 @@
+{
+  "analysis": {
+    "productName": "GMKtec ミニPC M8",
+    "parentAsin": "B0GQGCVLGR",
+    "productDescription": "AMD Ryzen 5 PRO 6650Hを搭載し、USB4.0やOCulink、2.5GbE LANなどの豊富なインターフェースを備えた高性能・小型のミニPC。ビジネス用途からカジュアルゲーミングまで幅広く対応可能。",
+    "productUsage": [
+      "オフィスワーク・日常用途",
+      "軽めのクリエイティブ作業やゲーム",
+      "マルチディスプレイ環境の構築"
+    ],
+    "positivePoints": [
+      "Ryzen 5 PRO 6650H搭載により、オフィス作業やWebブラウジングが快適",
+      "OCuLink対応により将来的なeGPU追加など拡張性が高い",
+      "USB4やHDMI、DPを利用した最大3画面の同時出力に対応",
+      "デュアル2.5GbE LAN搭載で高速・安定したネットワーク環境を構築可能"
+    ],
+    "negativePoints": [
+      "16GB LPDDR5メモリはオンボード(はんだ付け)のため換装・増設不可",
+      "USB PD駆動の場合は100W以上の出力が必要で、60W等では高負荷時にシャットダウンする可能性がある",
+      "グラフィック性能は内蔵GPUに依存するため、重い最新の3Dゲームには不向き"
+    ],
+    "useCases": [
+      "スペースの限られたデスクでのテレワーク",
+      "外部GPUを接続したゲーミング・クリエイティブ作業",
+      "デュアルLANを活かした小規模サーバー運用"
+    ],
+    "userStories": [
+      {
+        "userType": "一般ユーザー",
+        "scenario": "日常的なWebブラウジングやオフィスソフトの利用",
+        "experience": "今のところ普通に使えています。ネットやoffice程度なら快適です。本体も小さくて軽いので設置場所に困りません。",
+        "supportingSourceIds": [
+          "src-amazon-review-1"
+        ],
+        "sentiment": "positive"
+      },
+      {
+        "userType": "カジュアルゲーマー",
+        "scenario": "原神やPC版World of Tanksなどのゲームプレイ",
+        "experience": "原神や鳴潮も問題なく動きました。PC版『World of Tanks』をフルHD＆低画質＆60fpsで遊ぶには充分な性能です。",
+        "supportingSourceIds": [
+          "src-amazon-review-2"
+        ],
+        "sentiment": "positive"
+      },
+      {
+        "userType": "パワーユーザー",
+        "scenario": "各種ベンチマークと高負荷テストの実施",
+        "experience": "ポート類が豊富でOCuLinkがあるのは素晴らしいですが、メモリがオンボードで増設できない点と、60WのType-C給電では高負荷時に電源が落ちたため100W以上の電源が必須な点には注意が必要です。",
+        "supportingSourceIds": [
+          "src-amazon-review-3"
+        ],
+        "sentiment": "mixed"
+      }
+    ],
+    "userImpression": "本体が非常にコンパクトながら、日常のオフィス作業やブラウジング、軽めのゲームまで快適にこなせる性能を備えていると評価されています。特にOCuLinkやデュアルLANなど拡張ポートが充実している点が好評ですが、メモリが増設不可である点や、USB Type-C給電を利用する際のアダプタ出力（100W以上推奨）には注意が必要という声もあります。",
+    "sources": [
+      {
+        "id": "src-amazon-review-1",
+        "name": "Amazon カスタマーレビュー（日本のレビュアー）",
+        "url": "https://www.amazon.co.jp/dp/B0GQGCVLGR",
+        "tier": "medium",
+        "evidenceType": "primary",
+        "publishedAt": "2026-04-21",
+        "author": "Amazon カスタマー",
+        "conflictOfInterest": "none",
+        "notes": "ネットやoffice程度なら快適、小さくて軽いという評価を確認"
+      },
+      {
+        "id": "src-amazon-review-2",
+        "name": "Amazon カスタマーレビュー（日本のレビュアー）",
+        "url": "https://www.amazon.co.jp/dp/B0GQGCVLGR",
+        "tier": "medium",
+        "evidenceType": "primary",
+        "publishedAt": "2026-04-13",
+        "author": "Amazon カスタマー",
+        "conflictOfInterest": "none",
+        "notes": "原神、鳴潮、World of Tanks（FHD/低画質）がプレイ可能との評価を確認"
+      },
+      {
+        "id": "src-amazon-review-3",
+        "name": "Amazon カスタマーレビュー（海外のレビュアー翻訳）",
+        "url": "https://www.amazon.co.jp/dp/B0GQGCVLGR",
+        "tier": "medium",
+        "evidenceType": "primary",
+        "publishedAt": "2025-10-26",
+        "author": "Amazon カスタマー",
+        "conflictOfInterest": "none",
+        "notes": "メモリ増設不可、60W給電でのシャットダウン事例、OCuLinkの評価を確認"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "Ryzen 5 PRO 6650Hを搭載し、日常用途や軽めのゲームが快適に動作する",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-amazon-review-1",
+          "src-amazon-review-2"
+        ],
+        "crossChecked": true,
+        "notes": "複数のレビューでオフィス作業や原神などの動作が確認されている"
+      },
+      {
+        "claim": "USB PD駆動時は100W以上の電源が必要",
+        "category": "safety",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-amazon-review-3"
+        ],
+        "crossChecked": false,
+        "notes": "ユーザーレビューで60W給電時のシャットダウンが報告されており、商品詳細でも100W以上の出力が必要と記載がある"
+      }
+    ],
+    "lastInvestigated": "2026-04-29",
+    "competitiveAnalysis": [
+      {
+        "name": "Getorli ミニPC Ryzen 5 6600H",
+        "asin": "B0GTPPYTNR",
+        "priceComparison": "対象商品よりやや高い。同じ6000番台のRyzen 5（6600H）を搭載しているが、対象商品はPRO仕様（6650H）であり、また対象商品はOCuLinkなど拡張性に優れている。",
+        "featureComparison": [
+          "共通点：Ryzen 5 6000シリーズ（Zen 3+アーキテクチャ）を搭載し、高い処理能力を持つ",
+          "相違点：対象商品はOCuLinkやデュアル2.5GbE LANを搭載している点"
+        ],
+        "differentiators": [
+          "GMKtec M8の利点：OCuLinkを利用した外部GPU接続や、小規模サーバーとしての運用など、高い拡張性と柔軟なネットワーク構築が可能",
+          "Getorli ミニPCの利点：一般的な用途であれば十分な性能を持ち、構成によってはメモリ増設が可能な場合がある（要確認）"
+        ]
+      },
+      {
+        "name": "YCTipc ミニPC Ryzen 5 6600H",
+        "asin": "B0DNJK2M6D",
+        "priceComparison": "対象商品より安価。メモリ8GB/ストレージ256GBと構成が抑えられているため価格が安い。",
+        "featureComparison": [
+          "共通点：Ryzen 5 6600Hを搭載し、デュアル2.5GbE LANポートを備える",
+          "相違点：対象商品（16GB/512GB）に対し、YCTipc製は8GB/256GBとメモリ・ストレージ容量が少ない"
+        ],
+        "differentiators": [
+          "GMKtec M8の利点：標準で16GBメモリを搭載しており、購入後すぐに快適なマルチタスクが可能。OCuLinkにも対応。",
+          "YCTipc ミニPCの利点：初期費用を抑えたい場合や、自身でメモリ・ストレージを増設する前提のユーザーに適している"
+        ]
+      },
+      {
+        "name": "GMKtec M6 Ultra ミニPC Ryzen 5 7640HS",
+        "asin": "B0GCMPGVWQ",
+        "priceComparison": "対象商品より安価。より新しい世代のRyzen 5 7640HSを搭載しているが、ベアボーンまたは最小構成である可能性があるため、購入時の価格と構成の確認が必要。",
+        "featureComparison": [
+          "共通点：GMKtec製の高性能ミニPCである点",
+          "相違点：対象商品はRyzen 5 PRO 6650H搭載に対し、M6 Ultraはより新しい世代のRyzen 5 7640HSを搭載"
+        ],
+        "differentiators": [
+          "GMKtec M8の利点：OCuLink搭載による外部GPUへの対応など、特定の拡張性が求められる場合に有利",
+          "GMKtec M6 Ultraの利点：より新しいCPUアーキテクチャによる基本性能の高さが魅力"
+        ]
+      },
+      {
+        "name": "GMKtec ミニPC G10 Ryzen 5 3500U",
+        "asin": "B0GQFN17GR",
+        "priceComparison": "対象商品より大幅に安価。世代が古いRyzen 5 3500Uを搭載しているため。",
+        "featureComparison": [
+          "共通点：GMKtec製のミニPCである点",
+          "相違点：搭載CPUの世代が大きく異なり（3500U vs 6650H）、全体の処理性能やグラフィック性能に大きな差がある"
+        ],
+        "differentiators": [
+          "GMKtec M8の利点：圧倒的に高いCPU・GPU性能を持ち、ゲームや高負荷な作業にも対応可能。OCuLinkなど最新ポートを完備。",
+          "GMKtec ミニPC G10の利点：ブラウジングや軽作業に用途を絞ることで、非常に低価格で導入可能"
+        ]
+      },
+      {
+        "name": "Getorli ミニPC Ryzen 5 3550H",
+        "asin": "B0G1YF928T",
+        "priceComparison": "対象商品より大幅に安価。古い世代のRyzen 5 3550H搭載のため。",
+        "featureComparison": [
+          "共通点：コンパクトなミニPCである点",
+          "相違点：CPU性能、搭載インターフェース（USB4やOCuLinkの有無）に大きな差がある"
+        ],
+        "differentiators": [
+          "GMKtec M8の利点：最新のインターフェースと高い処理能力を備え、長期間快適に使用できる",
+          "Getorli ミニPCの利点：用途を限定したサブPCとしての導入など、コストを最小限に抑えたい場合に適している"
+        ]
+      },
+      {
+        "name": "Getorli ミニPC Ryzen 5 6600H (32GB/1TB)",
+        "asin": "B0GTPD6HQR",
+        "priceComparison": "対象商品より高価。メモリ32GB、ストレージ1TBと大容量構成になっているため。",
+        "featureComparison": [
+          "共通点：Ryzen 5 6000シリーズ（6600H/6650H）を搭載",
+          "相違点：対象商品は16GB/512GB構成だが、こちらは32GB/1TB構成である"
+        ],
+        "differentiators": [
+          "GMKtec M8の利点：OCuLink搭載など独自の拡張性を持ち、標準構成でバランスの良い価格設定",
+          "Getorli ミニPC (32GB)の利点：最初から大容量のメモリとストレージが必要なユーザーにとって、後からの増設の手間が省ける"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "省スペースで高性能なPCを探している人",
+        "将来的にeGPUの追加を検討している人",
+        "複数台のモニターで作業を行うビジネスパーソン"
+      ],
+      "pros": [
+        "Ryzen 5 PRO 6650Hによる快適な動作レスポンス",
+        "OCuLink対応により高いグラフィック拡張性を持つ",
+        "デュアル2.5GbE LAN搭載でネットワーク周りが強力"
+      ],
+      "cons": [
+        "メモリがオンボードのため増設・換装が不可能",
+        "PD給電には100W以上の高出力アダプタが必要"
+      ],
+      "score": 80,
+      "scoreRationale": "[基本点: 70]\n[加点: +5] (Ryzen 5 PRO 6650H搭載による基本性能の高さ)\n[加点: +5] (OCuLinkやデュアルLANなど豊富な拡張性とインターフェース)\n[加点: +5] (コンパクトながら十分な冷却性能と実用性の高さ)\n[減点: -5] (メモリがオンボードで増設不可能な点)\n[合計: 80]"
+    },
+    "technicalSpecs": {
+      "color": "ホワイト",
+      "other": [
+        "新設計の上下デュアルファン冷却システム",
+        "BIOSから3つのパフォーマンスモード(28W/35W/40W)を設定可能",
+        "cpu: AMD Ryzen 5 PRO 6650H (6コア12スレッド、最大4.5GHz)",
+        "gpu: AMD Radeon 660M (内蔵GPU)",
+        "memory: 16GB LPDDR5 6400MT/s (オンボード)",
+        "storage: 512GB M.2 2280 NVMe SSD (2スロット搭載、最大8TB拡張可能)",
+        "network: Wi-Fi 6E, 2.5GbE LAN x2",
+        "interfaces: USB4 (40Gbps, PD給電, 映像出力対応), OCuLink (PCIe Gen4x4), USB 3.2 Gen2 (10Gbps) x3, HDMI 2.0, DisplayPort 1.4",
+        "videoOutput: 最大3画面同時出力 (8K対応)",
+        "powerRequirement: USB PD駆動時は100W以上の出力が必要"
+      ],
+      "dimensions": {
+        "height": "約43mm",
+        "width": "約128mm",
+        "depth": "約127mm"
+      },
+      "weight": "約520g",
+      "capacity": "N/A",
+      "material": "プラスチック/金属",
+      "origin": "中国"
+    }
+  }
+}

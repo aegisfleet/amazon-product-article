@@ -1,0 +1,171 @@
+{
+  "analysis": {
+    "productName": "nwm WIRED MWE006 オープンイヤー 有線イヤホン (ホワイトベージュ)",
+    "parentAsin": "B0DL52J1Z8",
+    "productDescription": "NTTが開発した音漏れ抑制技術「PSZ」を搭載した、オープンイヤー型の有線イヤホン。耳を塞がないため周囲の音を聞きながら音楽や通話が楽しめる。",
+    "productUsage": [
+      "オンライン会議やテレワークでの使用",
+      "家事や育児中の音楽鑑賞",
+      "周囲の音を聞きながらのウォーキング"
+    ],
+    "positivePoints": [
+      "NTT独自のPSZ技術による高レベルな音漏れ抑制",
+      "片耳約7.2g(コード含まず)の非常に軽量な設計",
+      "IPX4相当の防水性能による突然の雨や汗への対応",
+      "充電不要ですぐに使える3.5mm有線接続"
+    ],
+    "negativePoints": [
+      "有線接続のためケーブルの取り回しが必要",
+      "3.5mmジャック非搭載のスマートフォンでは変換アダプタが必要"
+    ],
+    "useCases": [
+      "オフィスや自宅の静かな環境でのWeb会議",
+      "家族の呼びかけに気づく必要がある自宅での作業中"
+    ],
+    "userStories": [],
+    "userImpression": "音漏れを抑制しつつ、軽量で快適な装着感を実現した実用的な有線イヤホン。",
+    "sources": [
+      {
+        "id": "src-amazon",
+        "name": "Amazon商品ページ",
+        "url": "https://www.amazon.co.jp/dp/B0DL52J1Z8",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2024-11-20",
+        "author": "Amazon",
+        "conflictOfInterest": "none",
+        "notes": "製品仕様、価格、公式の特徴説明を確認"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "独自のPSZ技術によりオープンイヤー型でありながら音漏れを最小限に抑える",
+        "category": "comparativeAdvantage",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-amazon"
+        ],
+        "crossChecked": false,
+        "notes": "NTT sonorityのコア技術"
+      },
+      {
+        "claim": "片耳約7.2gの軽量設計で長時間の装着でも疲れにくい",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-amazon"
+        ],
+        "crossChecked": false,
+        "notes": "スペック情報として記載"
+      }
+    ],
+    "lastInvestigated": "2026-04-29",
+    "competitiveAnalysis": [
+      {
+        "name": "nwm MWE001",
+        "asin": "B0BJ6TLV63",
+        "priceComparison": "本製品（MWE006）の方が安価に設定されており、コストパフォーマンスに優れている。",
+        "featureComparison": [
+          "共通点：NTT独自のPSZ技術搭載、オープンイヤー型、3.5mm有線接続",
+          "相違点：本製品の方が軽量（片耳約7.2g vs 約9g）、本製品はIPX4防水対応"
+        ],
+        "differentiators": [
+          "nwm WIRED MWE006の利点：軽量かつ防水対応で、価格も安価なためより手に取りやすい",
+          "nwm MWE001の利点：初代モデルとして実績がある"
+        ]
+      },
+      {
+        "name": "nwm WIRED MWE007",
+        "asin": "B0DT68JK5G",
+        "priceComparison": "MWE007の方がやや高価だが、接続方式の違いによるもの。",
+        "featureComparison": [
+          "共通点：基本性能、PSZ技術搭載、軽量設計、IPX4防水対応",
+          "相違点：本製品が3.5mmジャック接続なのに対し、MWE007はUSB Type-C接続"
+        ],
+        "differentiators": [
+          "nwm WIRED MWE006の利点：従来のPCやオーディオ機器に直接接続可能で、やや安価",
+          "nwm WIRED MWE007の利点：イヤホンジャックがない最新のスマートフォンやPCに直接接続可能"
+        ]
+      },
+      {
+        "name": "nwm MBE001",
+        "asin": "B0C1B6F9M6",
+        "priceComparison": "MBE001（完全ワイヤレス）の方が高価である。",
+        "featureComparison": [
+          "共通点：PSZ技術搭載のオープンイヤー型",
+          "相違点：本製品が有線接続であるのに対し、MBE001は完全ワイヤレス接続"
+        ],
+        "differentiators": [
+          "nwm WIRED MWE006の利点：充電不要で遅延がなく、長時間のオンライン会議などに最適",
+          "nwm MBE001の利点：ケーブルの煩わしさがなく、完全ワイヤレスでより自由度が高い"
+        ]
+      },
+      {
+        "name": "nwm MBN001",
+        "asin": "B0CKYS9CYJ",
+        "priceComparison": "MBN001（ネックバンド型）の方が高価である。",
+        "featureComparison": [
+          "共通点：PSZ技術搭載のオープンイヤー型",
+          "相違点：本製品が有線接続なのに対し、MBN001はネックバンド型のワイヤレス接続"
+        ],
+        "differentiators": [
+          "nwm WIRED MWE006の利点：バッテリー切れの心配がなく、すぐに使用可能",
+          "nwm MBN001の利点：ワイヤレスで取り回しが良く、バッテリー持続も最大20時間と長い"
+        ]
+      },
+      {
+        "name": "Generic 有線オープンイヤーイヤホン",
+        "asin": "B0GSFLGH39",
+        "priceComparison": "Generic製品の方が大幅に安価であるが、技術的な差異が大きい。",
+        "featureComparison": [
+          "共通点：3.5mm有線接続のオープンイヤー型イヤホン",
+          "相違点：本製品は高度な音漏れ抑制技術（PSZ）を搭載しているが、Generic製品は通常のスピーカー構造のため音漏れがしやすい"
+        ],
+        "differentiators": [
+          "nwm WIRED MWE006の利点：オフィスや公共の場でも音漏れを気にせず使用できる高い機能性",
+          "Generic 有線オープンイヤーイヤホンの利点：とにかく価格を抑えたい場合に適している"
+        ]
+      },
+      {
+        "name": "Generic Type-C オープンイヤーイヤホン",
+        "asin": "B0GC4QWHGW",
+        "priceComparison": "Generic製品の方が安価である。",
+        "featureComparison": [
+          "共通点：有線接続のオープンイヤー型イヤホン",
+          "相違点：本製品は3.5mm接続かつ音漏れ抑制技術搭載。Generic製品はType-C接続で音漏れ対策は限定的"
+        ],
+        "differentiators": [
+          "nwm WIRED MWE006の利点：音漏れが少なく周囲の目を気にせず使える点",
+          "Generic Type-C オープンイヤーイヤホンの利点：Type-C対応の安価なオープンイヤーを探している場合に適している"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "長時間のオンライン会議を行うビジネスパーソン",
+        "周囲の音を聞きながら作業したい方",
+        "充電を気にせずイヤホンを使いたい方"
+      ],
+      "pros": [
+        "音漏れを最小限に抑える独自のPSZ技術",
+        "充電不要で遅延のない有線接続",
+        "片耳約7.2gの軽量設計で快適な装着感"
+      ],
+      "cons": [
+        "ケーブルが邪魔になる場面がある",
+        "3.5mmジャックがないデバイスでは変換が必要"
+      ],
+      "score": 95,
+      "scoreRationale": "[基本点: 70]\n[加点: +8] (PSZ技術による高い音漏れ抑制などの優れた基本性能)\n[加点: +5] (従来モデルから軽量化・防水機能を追加しつつ価格を抑えた優れたコストパフォーマンス)\n[加点: +4] (NTT sonorityの高いビルドクオリティと5色の豊富なカラー展開)\n[加点: +8] (独自のPSZ技術による、オープンイヤーの弱点である音漏れを克服した圧倒的な独自性・先進性)\n[合計: 95]"
+    },
+    "technicalSpecs": {
+      "type": "オープンイヤー型有線イヤホン",
+      "connection": "3.5mm 4極ステレオミニプラグ",
+      "weight": "約7.2g (コード含まず、片耳)",
+      "waterResistance": "IPX4相当",
+      "microphone": "搭載",
+      "technology": "PSZ (パーソナライズドサウンドゾーン) 技術",
+      "color": "ホワイトベージュ"
+    }
+  }
+}

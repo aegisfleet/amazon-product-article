@@ -1,0 +1,176 @@
+{
+  "analysis": {
+    "productName": "WINZONE ホエイ プロテイン パーフェクトチョイス 3kg プレーン",
+    "parentAsin": "B0BMLBCJQ7",
+    "productDescription": "創立100年以上の製薬会社である日本新薬が製造する、医師推奨のホエイプロテイン。11種のビタミンと4種のミネラルを配合しています。",
+    "productUsage": [
+      "筋肉トレーニング後の栄養補給",
+      "日常的なタンパク質不足の解消",
+      "健康維持・体力づくり"
+    ],
+    "positivePoints": [
+      "11種ビタミン・4種ミネラル配合で栄養バランスが良い",
+      "日本新薬による国内製造で安全性が高い",
+      "数回のシェイクでダマにならず溶けやすい"
+    ],
+    "negativePoints": [
+      "大容量（3kg）のため、初めて試す人には量が多い"
+    ],
+    "useCases": [
+      "日々の筋トレ後のリカバリー",
+      "朝食時や間食の栄養補給"
+    ],
+    "userStories": [
+      {
+        "userType": "一般ユーザー",
+        "scenario": "日々のタンパク質補給",
+        "experience": "溶けやすさ◎ 数回のシェイクでダマになることなく溶け、泡立ちもほとんどありません。味◯ 牛乳と豆乳の中間くらいな味で甘さはほとんどありません。",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "sentiment": "positive"
+      }
+    ],
+    "userImpression": "溶けやすくダマになりにくい点が評価されており、甘さ控えめでさっぱりとした風味が飲みやすいと好評です。",
+    "sources": [
+      {
+        "id": "src-1",
+        "name": "Amazon カスタマーレビュー",
+        "url": "https://www.amazon.co.jp/dp/B0BMLBCJQ7",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-04-29",
+        "author": "Amazon カスタマー",
+        "conflictOfInterest": "unknown",
+        "notes": "溶けやすさや味に関するユーザーの評価"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "11種ビタミン・4種ミネラル配合",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "crossChecked": true,
+        "notes": "商品詳細より確認"
+      },
+      {
+        "claim": "日本新薬 国内製造",
+        "category": "safety",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "crossChecked": true,
+        "notes": "商品詳細より確認"
+      }
+    ],
+    "lastInvestigated": "2026-04-29",
+    "competitiveAnalysis": [
+      {
+        "name": "LIMITEST 工場直販 無添加 国産 3kg プレーン ナチュラル",
+        "asin": "B07GZJGGS6",
+        "priceComparison": "WINZONEの方が高いが、ビタミン・ミネラル配合の付加価値がある。",
+        "featureComparison": [
+          "共通点：どちらも国内製造で3kgの大容量。",
+          "相違点：WINZONEは11種ビタミン・4種ミネラル配合、LIMITESTは人工甘味料、香料など無添加に特化。"
+        ],
+        "differentiators": [
+          "WINZONE ホエイ プロテイン パーフェクトチョイス 3kg プレーンの利点：ビタミンやミネラルも同時に摂取でき、医師推奨の安心感がある。",
+          "LIMITEST 工場直販 無添加 国産 3kg プレーン ナチュラルの利点：無添加にこだわりたい場合に適している。"
+        ]
+      },
+      {
+        "name": "LIMITEST 3kg コーヒー",
+        "asin": "B086P86L5Z",
+        "priceComparison": "WINZONEの方が高いが、ビタミン・ミネラル配合の付加価値がある。",
+        "featureComparison": [
+          "共通点：3kgの大容量。",
+          "相違点：WINZONEはプレーン風味でビタミン等配合、LIMITESTはコーヒー風味で無添加特化。"
+        ],
+        "differentiators": [
+          "WINZONE ホエイ プロテイン パーフェクトチョイス 3kg プレーンの利点：風味を自分でアレンジしやすく、栄養成分が豊富。",
+          "LIMITEST 3kg コーヒーの利点：コーヒー風味で、無添加を好む方に適している。"
+        ]
+      },
+      {
+        "name": "ボディウイング 3kg 無添加ナチュラル",
+        "asin": "B01CUAB1CS",
+        "priceComparison": "WINZONEの方が高いが、製薬会社基準の品質と栄養配合に差がある。",
+        "featureComparison": [
+          "共通点：プレーン風味で3kgの大容量。",
+          "相違点：WINZONEはビタミン等配合、ボディウイングは添加物を一切使用していない点に特化。"
+        ],
+        "differentiators": [
+          "WINZONE ホエイ プロテイン パーフェクトチョイス 3kg プレーンの利点：ビタミン・ミネラル配合で、総合的な栄養補給が可能。",
+          "ボディウイング 3kg 無添加ナチュラルの利点：完全無添加を求める方に最適。"
+        ]
+      },
+      {
+        "name": "nichie 3kg プレーン",
+        "asin": "B07DCND7J6",
+        "priceComparison": "WINZONEの方が高いが、ホエイ単体とカゼインブレンドの違いがある。",
+        "featureComparison": [
+          "共通点：プレーン風味で3kgの大容量。",
+          "相違点：WINZONEはホエイ100%にビタミン等配合、nichieはホエイとカゼインのブレンド。"
+        ],
+        "differentiators": [
+          "WINZONE ホエイ プロテイン パーフェクトチョイス 3kg プレーンの利点：速やかな吸収と豊富なビタミン・ミネラル補給が可能。",
+          "nichie 3kg プレーンの利点：カゼイン配合により、就寝前など長時間のタンパク質補給に適している。"
+        ]
+      },
+      {
+        "name": "エクスプロージョン 3kg プレーン味",
+        "asin": "B01N209M13",
+        "priceComparison": "WINZONEの方が高いが、ビタミン・ミネラルの配合に違いがある。",
+        "featureComparison": [
+          "共通点：国内製造で3kgの大容量、プレーン風味。",
+          "相違点：WINZONEは11種ビタミン・4種ミネラル配合。"
+        ],
+        "differentiators": [
+          "WINZONE ホエイ プロテイン パーフェクトチョイス 3kg プレーンの利点：ビタミン・ミネラルもまとめて摂取したい方に適している。",
+          "エクスプロージョン 3kg プレーン味の利点：シンプルなプロテインをより手頃な価格で手に入れたい方に適している。"
+        ]
+      },
+      {
+        "name": "EZOBOLIC 3kg プレーン",
+        "asin": "B0CB62CTZ8",
+        "priceComparison": "WINZONEの方が高いが、医師推奨などの信頼性で差別化。",
+        "featureComparison": [
+          "共通点：プレーン風味で3kgの大容量。",
+          "相違点：WINZONEはビタミン・ミネラル配合、EZOBOLICは北海道発のプロテイン専門店による商品。"
+        ],
+        "differentiators": [
+          "WINZONE ホエイ プロテイン パーフェクトチョイス 3kg プレーンの利点：製薬会社による製造や医師推奨といった高い信頼性。",
+          "EZOBOLIC 3kg プレーンの利点：プロテイン専門店こだわりの味や溶けやすさを楽しみたい方に適している。"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "タンパク質と同時にビタミン・ミネラルも摂取したい人",
+        "安心・安全な国内製造（製薬会社）の製品を求める人"
+      ],
+      "pros": [
+        "11種ビタミン・4種ミネラル配合",
+        "日本新薬による国内製造",
+        "溶けやすくダマになりにくい"
+      ],
+      "cons": [
+        "価格が競合製品と比較してやや高め"
+      ],
+      "score": 90,
+      "scoreRationale": "[基本点: 70]\n[加点: +8] (日本新薬 国内製造による高い信頼性)\n[加点: +2] (13,209円/3kgは競合と比べてやや高めだが妥当な価格設定)\n[加点: +5] (11種ビタミン・4種ミネラル配合による高い機能性)\n[加点: +3] (溶けやすく泡立ちが少ないとのユーザーからの高評価)\n[加点: +2] (医師推奨による信頼感)\n[合計: 90]"
+    },
+    "technicalSpecs": {
+      "size": "3kg",
+      "weight": "3.0kg",
+      "ingredients": "ホエイたんぱく（外国製造）、デキストリン、食塩、亜鉛含有酵母／レシチン、炭酸Ca、微粒二酸化ケイ素、炭酸Mg、V.C、甘味料（スクラロース）、抽出V.E、 ピロリン酸第二鉄、ナイアシン、香料、パントテン酸Ca、V.B₁、V.B₆、V.B₂、V.A、葉酸、V.D、V.B₁₂（一部に乳成分を含む）",
+      "origin": "日本（日本新薬製造）",
+      "nutrition": "エネルギー 113kcal、たんぱく質 20.9g、脂質 1.7g、炭水化物 3.6g、食塩相当量 0.2g (1食29gあたり)",
+      "vitamins_minerals": "ビタミンA、ビタミンB1、ビタミンB2、ビタミンB6、ビタミンB12、ビタミンC、ビタミンD、ビタミンE、葉酸、パントテン酸、ナイアシン、カルシウム、鉄、亜鉛、マグネシウム"
+    }
+  }
+}
