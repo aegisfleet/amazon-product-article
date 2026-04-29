@@ -1,0 +1,209 @@
+{
+  "analysis": {
+    "productName": "Amazon Fire Max 11 タブレット",
+    "parentAsin": "B0C2ZMNWXX",
+    "productDescription": "AmazonのFireタブレットシリーズで最も大画面となる11インチの2Kディスプレイを搭載したプレミアムモデル。128GBのストレージ、高速な8コアプロセッサ、Wi-Fi 6対応により、エンターテインメントから軽作業まで幅広い用途に対応します。",
+    "productUsage": [
+      "動画視聴",
+      "電子書籍の閲覧",
+      "Webブラウジング",
+      "オンライン会議（Zoom等）",
+      "文書作成（Microsoft 365 Personal）"
+    ],
+    "positivePoints": [
+      "2K解像度の11インチ大画面で、Prime Videoなどの動画コンテンツを美しい映像で楽しめる",
+      "8コアプロセッサと4GB RAMによるスムーズな動作",
+      "最大14時間駆動する長寿命バッテリーを搭載し、外出先でも安心",
+      "Wi-Fi 6対応で、高速かつ安定した通信が可能",
+      "別売りの専用スタイラスペンやキーボードカバーを組み合わせることで、PCライクな使い方が可能"
+    ],
+    "negativePoints": [
+      "Google Playストアが公式にはサポートされておらず、Amazonアプリストアのアプリに限られる",
+      "重量が約490gあり、片手で長時間持つには重い",
+      "GPS非搭載のため、本格的なカーナビ等の用途には不向き"
+    ],
+    "useCases": [
+      "リビングでの動画視聴や雑誌（dマガジン等）の閲覧",
+      "外出先や移動中のエンターテインメント利用",
+      "キーボードやスタイラスペンを活用した出先での簡単な文書作成やメール返信"
+    ],
+    "userStories": [
+      {
+        "userType": "エンタメ重視のユーザー",
+        "scenario": "リビングでのリラックスタイムに",
+        "experience": "11インチの2Kディスプレイは動画視聴に最適で、Prime Videoの映画も美しい画質で楽しめます。画面が大きいので、dマガジンなどの雑誌も見開きで快適に読めるのが嬉しいポイントです。",
+        "supportingSourceIds": [
+          "src-amazon-official"
+        ],
+        "sentiment": "positive"
+      },
+      {
+        "userType": "ビジネスパーソン",
+        "scenario": "外出先でのメール確認や簡単な作業に",
+        "experience": "別売りのキーボード付きカバーを装着すると、ちょっとしたノートPCのように使えます。Wi-Fi 6対応で通信も安定しており、Microsoft 365が使えるため、外出先での簡単な文書確認やメール返信にとても重宝しています。",
+        "supportingSourceIds": [
+          "src-amazon-official"
+        ],
+        "sentiment": "positive"
+      }
+    ],
+    "userImpression": "大画面で美しいディスプレイと長持ちするバッテリーが高く評価されており、エンターテインメント用途を中心に非常に高い満足度を得ています。別売りアクセサリを活用することで、ライトな作業用デバイスとしても活躍できる点が好評ですが、Google Playストア非対応というアプリの制限については留意が必要です。",
+    "sources": [
+      {
+        "id": "src-amazon-official",
+        "name": "Amazon公式商品ページ",
+        "url": "https://www.amazon.co.jp/dp/B0B2SFNGP4",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2023-06-14",
+        "author": "Amazon",
+        "conflictOfInterest": "none",
+        "notes": "製品の公式スペック、特徴、想定ユースケースを確認。"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "最大14時間稼働する大容量バッテリーを搭載",
+        "category": "durability",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-amazon-official"
+        ],
+        "crossChecked": false,
+        "notes": "公式スペックに基づく記載"
+      },
+      {
+        "claim": "2K（213ppi）の高解像度11インチディスプレイを搭載",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-amazon-official"
+        ],
+        "crossChecked": false,
+        "notes": "公式スペックに基づく記載"
+      }
+    ],
+    "lastInvestigated": "2026-04-29",
+    "competitiveAnalysis": [
+      {
+        "name": "HiGrace 10インチ Android16 Wi-Fiモデル",
+        "asin": "B0FPLLDL76",
+        "priceComparison": "対象商品よりも大幅に安価ですが、解像度や処理性能で劣ります。",
+        "featureComparison": [
+          "共通点：動画視聴やWeb閲覧など基本的な用途に対応するタブレットである点",
+          "相違点：対象商品は11インチ2KディスプレイやWi-Fi 6対応、専用アクセサリによる拡張性などプレミアムな仕様ですが、競合品は10.1インチ1332x800解像度で基本的なスペックに留まります。"
+        ],
+        "differentiators": [
+          "Amazon Fire Max 11の利点：高画質な2Kディスプレイ、高速なWi-Fi 6対応、専用キーボードやペンによる高い拡張性があり、より快適なエンタメ・作業環境を構築できます。",
+          "HiGrace 10インチの利点：Android OSを搭載しておりGoogle Playストアが利用可能。価格が非常に安く、初期投資を抑えたい場合に適しています。"
+        ]
+      },
+      {
+        "name": "TABWEE T80 android タブレット 10インチ",
+        "asin": "B0G3X4WQV4",
+        "priceComparison": "対象商品よりも大幅に安価ですが、ディスプレイ解像度等の基本性能で劣ります。",
+        "featureComparison": [
+          "共通点：大画面ディスプレイを搭載し、エンターテインメント用途に適している点",
+          "相違点：対象商品が高精細な2Kディスプレイと専用の高品質アクセサリを備えるのに対し、競合品は解像度が1280x800に留まるものの、最新のAndroid 16を搭載しています。"
+        ],
+        "differentiators": [
+          "Amazon Fire Max 11の利点：より美しく精細なディスプレイ、Amazonのエコシステムとの強力な連携、長時間のバッテリー駆動時間が魅力です。",
+          "TABWEE T80の利点：最新のAndroid OSとGMS認証により、Google Playの豊富なアプリを自由にインストールして利用できる点が優れています。"
+        ]
+      },
+      {
+        "name": "Amazon Fire HD 10 キッズモデル",
+        "asin": "B0BL66DWC3",
+        "priceComparison": "対象商品よりも安価ですが、ターゲット層が明確に異なります。",
+        "featureComparison": [
+          "共通点：AmazonのFireタブレットシリーズであり、Amazonのサービスとの親和性が高い点",
+          "相違点：対象商品は11インチ2Kディスプレイや高性能プロセッサを搭載した大人向けのプレミアム機ですが、競合品は10.1インチフルHDで、キッズカバーやAmazon Kids+1年間使い放題など子供向けの仕様になっています。"
+        ],
+        "differentiators": [
+          "Amazon Fire Max 11の利点：より大きな高解像度画面、高速なプロセッサ、Wi-Fi 6対応による高い基本性能と、キーボード等での拡張性を持ちます。",
+          "Fire HD 10 キッズモデルの利点：頑丈なキッズカバーが付属し、2年間の限定保証やペアレンタルコントロール機能が充実しているため、子供に持たせるのに最適です。"
+        ]
+      },
+      {
+        "name": "シャオミ(Xiaomi) タブレット Redmi Pad 2",
+        "asin": "B0F9P4719Q",
+        "priceComparison": "対象商品よりも安価で、Android OSを搭載した強力な競合です。",
+        "featureComparison": [
+          "共通点：11インチクラスの大型・高解像度ディスプレイ（対象商品は2K、競合は2.5K）を搭載している点",
+          "相違点：対象商品がAmazon独自のOSエコシステムであるのに対し、競合品はAndroid OSを搭載し、Google Playが利用可能です。また、競合品は9000mAhの大容量バッテリーを搭載しています。"
+        ],
+        "differentiators": [
+          "Amazon Fire Max 11の利点：Amazon Prime VideoやKindleなど、Amazonサービスをメインに利用する場合のシームレスな使い勝手や、専用アクセサリ（キーボード・ペン）による拡張性に優れています。",
+          "Redmi Pad 2の利点：より高解像度な2.5Kディスプレイを搭載し、Google Playストアが利用できるため、利用できるアプリの幅が圧倒的に広いです。"
+        ]
+      },
+      {
+        "name": "TechZen タブレット 10インチ (Android 16)",
+        "asin": "B0G524H8J7",
+        "priceComparison": "対象商品よりも大幅に安価です。",
+        "featureComparison": [
+          "共通点：128GBクラスの大容量ストレージ（本機は64GB+拡張、対象は128GB）でメディアを楽しめる点",
+          "相違点：対象商品は11インチ2Kディスプレイを搭載するプレミアムモデルですが、競合品は10インチ1280x800解像度のエントリークラスの性能です。"
+        ],
+        "differentiators": [
+          "Amazon Fire Max 11の利点：圧倒的に高画質なディスプレイ、高性能プロセッサ、Wi-Fi 6対応による快適な動作環境、堅牢な造りが強みです。",
+          "TechZen タブレットの利点：Android OS搭載でGoogle Playが使え、GPS機能も内蔵しているため、ナビ用途等にも利用可能です。"
+        ]
+      },
+      {
+        "name": "BMAXPAD タブレット 10インチ (Android 16)",
+        "asin": "B0G5PQD5MK",
+        "priceComparison": "対象商品よりも大幅に安価です。",
+        "featureComparison": [
+          "共通点：動画視聴やWeb閲覧といった一般的な用途に適している点",
+          "相違点：対象商品は11インチ2Kの高精細ディスプレイを搭載していますが、競合品は10.1インチ1280x800に留まります。一方で競合品はAndroid 16を搭載しています。"
+        ],
+        "differentiators": [
+          "Amazon Fire Max 11の利点：美しい2Kディスプレイ、高い処理性能、Wi-Fi 6による高速通信など、ハードウェアの基本性能が全体的に高く、快適に使用できます。",
+          "BMAXPAD タブレットの利点：Android OSを搭載しGoogle Playが利用できるためアプリの自由度が高く、かつ非常に安価に購入できます。"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "Amazonプライム会員で、Prime VideoやKindleを頻繁に利用する人",
+        "リビングで手軽に大画面で動画や雑誌を楽しみたい人",
+        "別売りのキーボード等を用いて、外出先で簡単な文書作成やメール対応を行いたい人"
+      ],
+      "pros": [
+        "動画や雑誌が綺麗に見える11インチの2Kディスプレイ",
+        "サクサク動く高速な8コアプロセッサと4GB RAM",
+        "最大14時間駆動する大容量バッテリーとWi-Fi 6による快適な通信環境"
+      ],
+      "cons": [
+        "Google Playストアに非対応で、利用できるアプリに制限がある",
+        "約490gとやや重く、片手での長時間の利用には適さない"
+      ],
+      "score": 83,
+      "scoreRationale": "[基本点: 70] (固定)\n[加点: +8] (11インチ2K高解像度ディスプレイによる優れた映像体験)\n[加点: +5] (Wi-Fi 6対応と高性能プロセッサによる快適な動作・通信環境)\n[加点: +5] (専用キーボードやペンによる拡張性とPCライクな使い勝手)\n[減点: -5] (Google Play非対応によるアプリの制限、拡張性の低さ)\n[合計: 83]"
+    },
+    "technicalSpecs": {
+      "dimensions": {
+        "height": "259.1mm",
+        "width": "163.8mm",
+        "depth": "7.6mm"
+      },
+      "weight": "489.9g",
+      "capacity": "128GB",
+      "display": "28cm(約11インチ) 2K (213ppi)",
+      "processor": "8コアプロセッサ",
+      "memory": "4GB RAM",
+      "batteryLife": "最大14時間",
+      "connectivity": [
+        "Wi-Fi 6対応",
+        "USB-C (2.0)"
+      ],
+      "camera": "8メガピクセル",
+      "color": "グレー",
+      "other": [
+        "Microsoft 365 Personal 3か月無料体験つき（条件あり）",
+        "別売りスタイラスペン、キーボード付きカバー対応"
+      ]
+    }
+  }
+}
