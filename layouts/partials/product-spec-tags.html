@@ -8,7 +8,8 @@
 {{- with $ram -}}{{- if ne . "不明" }}<span class="{{- $tagClass -}}">メモリ: {{ . }}</span>{{- end -}}{{ end -}}
 {{- with .storage -}}{{- if ne . "不明" }}<span class="{{- $tagClass -}}">ストレージ: {{ . }}</span>{{- end -}}{{ end -}}
 {{- with .display_size -}}{{- if ne . "不明" }}<span class="{{- $tagClass -}}">画面: {{ . }}</span>{{- end -}}{{ end -}}
-{{- with .battery_capacity -}}{{- if ne . "不明" }}<span class="{{- $tagClass -}}">バッテリー: {{ . }}</span>{{- end -}}{{ end -}}
+{{- with .battery_capacity -}}{{- if ne . "不明" }}<span class="{{- $tagClass -}}">バッテリー: {{ . }}</span>{{- end -}}{{ end
+-}}
 {{- with .weight -}}
 {{- if and (ne . "不明") (not (findRE `^0+(\.0+)?\s*[a-zA-Z]*$` .)) -}}
 <span class="{{- $tagClass -}}">重量: {{ . }}</span>
@@ -41,9 +42,12 @@
 {{- end -}}
 
 {{- $sizeParts := slice -}}
-{{- with .height }}{{- if and (ne . "不明") (not (findRE `^0+(\.0+)?\s*[a-zA-Z]*$` .)) }}{{- $sizeParts = $sizeParts | append . -}}{{- end -}}{{- end -}}
-{{- with .width }}{{- if and (ne . "不明") (not (findRE `^0+(\.0+)?\s*[a-zA-Z]*$` .)) }}{{- $sizeParts = $sizeParts | append . -}}{{- end -}}{{- end -}}
-{{- with .depth }}{{- if and (ne . "不明") (not (findRE `^0+(\.0+)?\s*[a-zA-Z]*$` .)) }}{{- $sizeParts = $sizeParts | append . -}}{{- end -}}{{- end -}}
+{{- with .height }}{{- if and (ne . "不明") (not (findRE `^0+(\.0+)?\s*[a-zA-Z]*$` .)) }}{{- $sizeParts = $sizeParts |
+append . -}}{{- end -}}{{- end -}}
+{{- with .width }}{{- if and (ne . "不明") (not (findRE `^0+(\.0+)?\s*[a-zA-Z]*$` .)) }}{{- $sizeParts = $sizeParts |
+append . -}}{{- end -}}{{- end -}}
+{{- with .depth }}{{- if and (ne . "不明") (not (findRE `^0+(\.0+)?\s*[a-zA-Z]*$` .)) }}{{- $sizeParts = $sizeParts |
+append . -}}{{- end -}}{{- end -}}
 {{- if gt (len $sizeParts) 0 -}}
 <span class="{{- $tagClass -}}">サイズ: {{ delimit $sizeParts " × " }}</span>
 {{- end -}}

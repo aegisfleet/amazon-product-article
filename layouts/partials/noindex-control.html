@@ -1,28 +1,28 @@
-{{- /* 
-  noindex-control.html - 品質基準に基づいて noindex を制御する
-  1. noindex: true が明示されている
-  2. description が 30 文字未満
-  3. スコアが 75 以下 かつ ユーザーストーリー（user_stories）がない
+{{- /*
+noindex-control.html - 品質基準に基づいて noindex を制御する
+1. noindex: true が明示されている
+2. description が 30 文字未満
+3. スコアが 75 以下 かつ ユーザーストーリー（user_stories）がない
 */ -}}
 {{- $shouldNoindex := false -}}
 
 {{- if .Params.noindex -}}
-  {{- $shouldNoindex = true -}}
+{{- $shouldNoindex = true -}}
 {{- end -}}
 
 {{- if and (eq .Section "articles") (not $shouldNoindex) -}}
-  {{- /* Description チェック */ -}}
-  {{- if lt (len (.Description | default "")) 30 -}}
-    {{- $shouldNoindex = true -}}
-  {{- end -}}
+{{- /* Description チェック */ -}}
+{{- if lt (len (.Description | default "")) 30 -}}
+{{- $shouldNoindex = true -}}
+{{- end -}}
 
-  {{- /* スコアとストーリーのチェック */ -}}
-  {{- if not $shouldNoindex -}}
-    {{- $hasStories := and .Params.user_stories (gt (len .Params.user_stories) 0) -}}
-    {{- if and (le (.Params.score | default 0) 75) (not $hasStories) -}}
-      {{- $shouldNoindex = true -}}
-    {{- end -}}
-  {{- end -}}
+{{- /* スコアとストーリーのチェック */ -}}
+{{- if not $shouldNoindex -}}
+{{- $hasStories := and .Params.user_stories (gt (len .Params.user_stories) 0) -}}
+{{- if and (le (.Params.score | default 0) 75) (not $hasStories) -}}
+{{- $shouldNoindex = true -}}
+{{- end -}}
+{{- end -}}
 {{- end -}}
 
 {{- if $shouldNoindex -}}

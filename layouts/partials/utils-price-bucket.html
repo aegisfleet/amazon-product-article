@@ -1,17 +1,17 @@
 {{- $price := . -}}
 {{- $priceRaw := 0 -}}
 {{- if $price -}}
-  {{- $matches := findRE "[0-9]+" (replace (printf "%v" $price) "," "") -}}
-  {{- if gt (len $matches) 0 -}}
-    {{- $priceRaw = index $matches 0 | int -}}
-  {{- end -}}
+{{- $matches := findRE "[0-9]+" (replace (printf "%v" $price) "," "") -}}
+{{- if gt (len $matches) 0 -}}
+{{- $priceRaw = index $matches 0 | int -}}
+{{- end -}}
 {{- end -}}
 {{- $priceBucket := "unknown" -}}
 {{- if gt $priceRaw 0 -}}
-  {{- if lt $priceRaw 3000 -}}{{- $priceBucket = "under-3000" -}}
-  {{- else if lt $priceRaw 7000 -}}{{- $priceBucket = "3000-6999" -}}
-  {{- else if lt $priceRaw 15000 -}}{{- $priceBucket = "7000-14999" -}}
-  {{- else if lt $priceRaw 30000 -}}{{- $priceBucket = "15000-29999" -}}
-  {{- else -}}{{- $priceBucket = "30000-plus" -}}{{- end -}}
+{{- if lt $priceRaw 3000 -}}{{- $priceBucket = "under-3000" -}}
+{{- else if lt $priceRaw 7000 -}}{{- $priceBucket = "3000-6999" -}}
+{{- else if lt $priceRaw 15000 -}}{{- $priceBucket = "7000-14999" -}}
+{{- else if lt $priceRaw 30000 -}}{{- $priceBucket = "15000-29999" -}}
+{{- else -}}{{- $priceBucket = "30000-plus" -}}{{- end -}}
 {{- end -}}
 {{ return $priceBucket }}
