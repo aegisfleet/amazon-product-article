@@ -318,7 +318,7 @@
     <section class="related-articles" style="margin-top: var(--spacing-xl); padding-top: var(--spacing-lg); border-top: 1px solid var(--color-border);">
         <h3 style="margin-bottom: var(--spacing-md); font-size: 1.25rem;">🔍 あわせて読みたい：{{ $category }}の調査結果</h3>
         <div class="product-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: var(--spacing-md);">
-            {{- range first 3 (shuffle $related) -}}
+            {{- range first 4 (shuffle $related) -}}
             {{- partial "product-card.html" . -}}
             {{- end -}}
         </div>
