@@ -1,138 +1,201 @@
 {
   "analysis": {
-    "productName": "TESSAN 延長コード 2m 薄型 電源タップ (TS-708-C)",
-    "parentAsin": "B0F4N4WYTX",
-    "productDescription": "ACコンセント3口とUSBポート3口（Type-C×1、Type-A×2）を搭載した、コンパクトな電源タップです。",
+    "productName": "TESSAN 延長コード 2m 薄型 電源タップ usb コンセントタップ 3個AC 1個タイプC 2個タイプA",
+    "parentAsin": "B0GVMQV4JF",
+    "productDescription": "薄型でコンパクトな設計の電源タップ。ACコンセント3口とUSBポート3口（Type-C 1口、Type-A 2口）を備え、最大6台の機器に同時給電が可能です。",
     "productUsage": [
-      "デスク周りの電源整理",
-      "旅行や出張先でのコンセント増設",
-      "ベッドサイドでのスマホ・タブレット充電",
-      "狭い隙間にあるコンセントの有効活用"
+      "複数のデジタル機器の同時充電",
+      "デスク周りや狭い隙間での電源確保"
     ],
     "positivePoints": [
-      "3方向から挿せるACコンセント配置で干渉しにくい",
-      "USB-Cポートを含む3つのUSBポートで充電器不要",
-      "薄型プラグ採用で家具裏のコンセントでも使いやすい",
-      "コンパクトで持ち運びに便利",
-      "壁掛け用の穴と滑り止めゴム付きで設置場所を選ばない"
+      "ACコンセントとUSBポートを備え、最大6台同時充電が可能",
+      "薄型設計で家具の裏など狭い場所にも設置しやすい",
+      "コンパクトで持ち運びが容易（旅行や出張に便利）",
+      "L型プラグとコンセントの配置により、他のプラグと干渉しにくい"
     ],
     "negativePoints": [
-      "USB-Cポートは最大15W出力のため、PCの充電やスマホの超急速充電には非対応",
-      "AC差込口は3つなので、大量の機器を接続するには不向き",
-      "通電ランプが明るすぎると感じる場合がある（TESSAN製品の一般的傾向）"
+      "USBポートの出力が最大15W（Type-C）/12W（Type-A）であり、急速充電には物足りない場合がある"
     ],
     "useCases": [
-      "デスク上のPCモニター、充電器、照明の電源確保",
-      "ホテルの少ないコンセントを拡張して複数デバイスを充電",
-      "リビングのテレビ裏やソファ裏の電源確保"
+      "デスク上でのパソコン・スマートフォン・タブレットの充電",
+      "家具の裏などの狭いスペースでの電源確保",
+      "出張や旅行先でのコンセント増設"
     ],
     "userStories": [
       {
-        "userType": "30代会社員（リモートワーク）",
-        "scenario": "自宅のデスク周りの配線整理",
-        "experience": "以前は大きな電源タップを使っていて邪魔だったが、これに変えてからデスク上がスッキリした。USBポートが直接ついているのでスマホの充電器を挿す必要がなくなり、ACコンセントを有効に使えている。（推測）",
+        "userType": "一般ユーザー",
+        "scenario": "デスク上での利用",
+        "experience": "非常にコンパクトにまとまるため、机の上に置いても邪魔にならず快適に使用できる。ACアダプターを複数接続しても干渉せずに使えるのが良い。",
+        "supportingSourceIds": [
+          "amazon-review-0"
+        ],
         "sentiment": "positive"
       },
       {
-        "userType": "学生（旅行好き）",
-        "scenario": "カプセルホテルでの宿泊",
-        "experience": "コンセントが一つしかない場所でも、これがあればスマホ、タブレット、モバイルバッテリーを同時に充電できるので重宝している。コンパクトでカバンの中でも邪魔にならない。（推測）",
+        "userType": "一般ユーザー",
+        "scenario": "各種機器の充電",
+        "experience": "USBポートの出力は急速充電にはやや不足しているが、ACコンセントが3つあるため、そこに別のUSB充電器を接続して補うことができる。底面にゴム足が付いていて安定感があり、使い勝手が良い。",
+        "supportingSourceIds": [
+          "amazon-review-2"
+        ],
         "sentiment": "positive"
       }
     ],
-    "userImpression": "コンパクトさと多機能性を兼ね備えたバランスの良い製品。USB-Cポートがあることで現代のニーズに合っているが、高出力PD充電を求めないユーザー向け。",
+    "userImpression": "コンパクトで省スペースな設計と、AC・USBの両方が使える利便性が高く評価されています。USBの出力が控えめである点は指摘されているものの、総合的な使い勝手の良さから満足度は高い傾向にあります。",
     "sources": [
       {
-        "name": "Amazon商品ページ仕様",
+        "id": "amazon-review-0",
+        "name": "Amazon カスタマーレビュー",
         "url": "https://www.amazon.co.jp/dp/B0D62XRZTV",
-        "credibility": "高"
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2025-12-23",
+        "author": "Amazon カスタマー",
+        "conflictOfInterest": "none",
+        "notes": "机の上に置いても邪魔にならない、ACアダプタが干渉しないと評価。"
+      },
+      {
+        "id": "amazon-review-2",
+        "name": "Amazon カスタマーレビュー",
+        "url": "https://www.amazon.co.jp/dp/B0D62XRZTV",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-03-24",
+        "author": "Amazon カスタマー",
+        "conflictOfInterest": "none",
+        "notes": "USB出力は低いが、使い勝手が良いと評価。"
       }
     ],
-    "lastInvestigated": "2026-02-02",
+    "claims": [
+      {
+        "claim": "薄型・コンパクトで省スペースな設計",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "amazon-review-0"
+        ],
+        "crossChecked": true,
+        "notes": "ユーザーレビューや製品仕様から確認可能"
+      },
+      {
+        "claim": "プラグ同士が干渉しにくい配置",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "amazon-review-0"
+        ],
+        "crossChecked": true,
+        "notes": "ユーザーレビューから確認可能"
+      }
+    ],
+    "lastInvestigated": "2026-04-30",
     "competitiveAnalysis": [
       {
-        "name": "Mscien 4AC 電源タップ (B0F4J7KCJZ)",
-        "asin": "B0F4J7KCJZ",
-        "priceComparison": "本製品より約100円高いが、AC口数が1つ多い。",
+        "name": "エレコム ECT-3920BK",
+        "asin": "B0F44764Y1",
+        "priceComparison": "対象商品より高価だが、30Wの高出力USBポートを搭載し、コンセント数も多い。",
         "featureComparison": [
-          "AC4口 vs AC3口",
-          "個別スイッチ付き vs 一括管理のみ",
-          "USBポートは2つ vs 本製品は3つ"
+          "共通点：ACコンセント、USBポート（Type-C・Type-A）を備えている点。",
+          "相違点：エレコムはAC6口、USB最大30W出力で雷ガードや回転脚を備える。対象商品はAC3口でコンパクトさに特化。"
         ],
         "differentiators": [
-          "Mscienは個別スイッチで節電可能",
-          "TESSANはよりコンパクトでUSBポートが多い"
+          "TESSAN 延長コード 2m 薄型 電源タップの利点：より小型軽量で持ち運びに便利。価格が安い。",
+          "エレコム ECT-3920BKの利点：コンセント数が多く、USBの出力が高いため急速充電に対応できる。"
         ]
       },
       {
-        "name": "TESSAN 巻き取り式電源タップ (B0FRM4X3NX)",
-        "asin": "B0FRM4X3NX",
-        "priceComparison": "本製品より約600円高い。",
+        "name": "NVEESHOX 電源タップ マグネット付き",
+        "asin": "B0GSPKMMKQ",
+        "priceComparison": "対象商品よりやや高価だが、AC8口と個別スイッチを備える。",
         "featureComparison": [
-          "巻き取り式ケーブル vs 固定ケーブル",
-          "USB-Cポート×2 vs USB-Cポート×1"
+          "共通点：ACコンセント、USBポートを備え、壁掛けなどの設置方法に対応する点。",
+          "相違点：NVEESHOXはAC8口とUSB4ポートを備え、マグネットや個別スイッチを搭載。対象商品はよりシンプルで小型。"
         ],
         "differentiators": [
-          "携帯性は巻き取り式が上だが価格が高い",
-          "本製品はコスパ重視"
+          "TESSAN 延長コード 2m 薄型 電源タップの利点：コンパクトで省スペースに設置可能。",
+          "NVEESHOX 電源タップ マグネット付きの利点：接続ポート数が多く、個別スイッチで待機電力をカットできる。"
         ]
       },
       {
-        "name": "Mscien 木目調電源タップ (B0C4KBY1FC)",
-        "asin": "B0C4KBY1FC",
-        "priceComparison": "本製品より約570円高い。",
+        "name": "SAYBOUR 電源タップ AJ-6100",
+        "asin": "B0C3LZQRKD",
+        "priceComparison": "対象商品と同程度の価格帯。",
         "featureComparison": [
-          "木目調デザイン vs シンプルな白",
-          "雷ガード付き vs 言及なし"
+          "共通点：ACコンセントとUSBポート（Type-C・Type-A）を備えている点。",
+          "相違点：SAYBOURはAC6口で一括スイッチや雷ガードを備える。対象商品はAC3口でスイッチがないが、より小型。"
         ],
         "differentiators": [
-          "デザイン性と雷ガード機能",
-          "本製品はシンプルさと価格で勝負"
+          "TESSAN 延長コード 2m 薄型 電源タップの利点：より小さく持ち運びにも適している。",
+          "SAYBOUR 電源タップ AJ-6100の利点：コンセント数が多く、一括スイッチで節電が可能。"
+        ]
+      },
+      {
+        "name": "Mscienエムサイン 電源タップ",
+        "asin": "B0FFSPVYZF",
+        "priceComparison": "対象商品と同程度の価格帯。",
+        "featureComparison": [
+          "共通点：ACコンセントとUSBポート（Type-C・Type-A）を備えている点。",
+          "相違点：MscienはAC8口、USB4ポートで個別スイッチを備える。対象商品はAC3口、USB3ポートでよりコンパクト。"
+        ],
+        "differentiators": [
+          "TESSAN 延長コード 2m 薄型 電源タップの利点：無駄のないコンパクトなデザインで省スペース。",
+          "Mscienエムサイン 電源タップの利点：接続機器が多くても対応でき、個別スイッチで管理がしやすい。"
+        ]
+      },
+      {
+        "name": "YUDOFICAL 電源タップ",
+        "asin": "B0F3CQ2G4K",
+        "priceComparison": "対象商品よりやや安価。",
+        "featureComparison": [
+          "共通点：ACコンセント、USBポートを備え、コンパクトな設計である点。",
+          "相違点：YUDOFICALはAC4口、雷ガードを備え、プラグが180度回転する。対象商品はAC3口。"
+        ],
+        "differentiators": [
+          "TESSAN 延長コード 2m 薄型 電源タップの利点：AC差込口が3方向に分散しており、干渉しにくい。",
+          "YUDOFICAL 電源タップの利点：AC差込口が1つ多く、雷ガードによる保護機能がある。"
+        ]
+      },
+      {
+        "name": "TESSAN 電源タップ 9個AC口",
+        "asin": "B0B19ZZFQ1",
+        "priceComparison": "対象商品と同程度の価格帯。",
+        "featureComparison": [
+          "共通点：同ブランドの製品で、USBポート（Type-C・Type-A）を備えている点。",
+          "相違点：B0B19ZZFQ1はAC9口で一括スイッチを備える。対象商品はAC3口でコンパクト。"
+        ],
+        "differentiators": [
+          "TESSAN 延長コード 2m 薄型 電源タップの利点：小型軽量で持ち運びや限られたスペースでの使用に適している。",
+          "TESSAN 電源タップ 9個AC口の利点：より多くの機器を同時に接続でき、一括スイッチで電源管理ができる。"
         ]
       }
     ],
     "recommendation": {
       "targetUsers": [
-        "デスク周りをすっきりさせたい人",
-        "旅行や出張によく行く人",
-        "USB充電器を減らしたい人"
+        "デスク周りやベッドサイドなど、限られたスペースで複数の機器を充電したい人",
+        "旅行や出張によく行く人"
       ],
       "pros": [
-        "3方向AC配置で大きなアダプタも干渉しにくい",
-        "USB-Cポート搭載で変換アダプタ不要",
-        "安価で必要十分な機能"
+        "コンパクトで省スペース",
+        "ACコンセントとUSBポートを両方備えている",
+        "プラグ同士が干渉しにくい設計"
       ],
       "cons": [
-        "USB PD急速充電（20W以上）には非対応",
-        "個別スイッチがないため待機電力カットには不向き"
+        "USBポートの出力が高くないため、ノートパソコンや急速充電には不向き"
       ],
-      "score": 80,
-      "scoreRationale": "[基本点: 70]\n[加点: +5] (AC3口+USB3口の多機能性とコンパクトさ)\n[加点: +3] (干渉しにくい3方向配置と薄型プラグ)\n[加点: +5] (1,799円という優れたコストパフォーマンス)\n[減点: -5] (USB-Cが最大15Wで急速充電PD非対応)\n[加点: +2] (壁掛け穴や滑り止めなど細かい配慮)\n[合計: 80]"
+      "score": 82,
+      "scoreRationale": "[基本点: 70]\n[加点: +5] (コンパクトで省スペースな設計と持ち運びのしやすさ)\n[加点: +5] (ACコンセントとUSBポートの複合搭載による利便性)\n[加点: +5] (プラグ同士が干渉しにくい考えられた配置)\n[減点: -3] (USBポートの出力が低く急速充電にはやや不足)\n[合計: 82]"
     },
     "technicalSpecs": {
       "dimensions": {
-        "height": "3.7cm",
-        "width": "5.2cm",
-        "depth": "7.8cm",
-        "weight": "264g"
+        "height": "78mm",
+        "width": "52mm",
+        "depth": "37mm"
       },
-      "power": {
-        "ac": "100V-125V~ 15A 1500W Max",
-        "usb_a": "5V/2.4A Max per port",
-        "usb_c": "5V/3A 15W Max"
-      },
-      "cable_length": "2m",
-      "plug_type": "L型薄型プラグ",
-      "ports": {
-        "ac": 3,
-        "usb_a": 2,
-        "usb_c": 1
-      },
-      "other": [
-        "スマートIC搭載",
-        "壁掛けフック穴あり",
-        "滑り止めマット付き"
-      ]
+      "weight": "264g",
+      "cableLength": "2m",
+      "acOutlets": "3口 (最大出力: 合計1500W)",
+      "usbPorts": "3口 (Type-C: 1口, Type-A: 2口)",
+      "usbOutput": "Type-C: 最大15W, Type-A: 最大12W"
     }
   }
 }
