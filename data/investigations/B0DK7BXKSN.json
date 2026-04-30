@@ -1,6 +1,6 @@
 {
   "analysis": {
-    "productName": "槌屋ヤック 90系 ノア・ヴォクシー専用 スマートフォンホルダー SY-NV17",
+    "productName": "槌屋ヤック トヨタ90系 ノア・ヴォクシー専用 スマートフォンホルダー SY-NV17",
     "parentAsin": "B0D8S34XVC",
     "productDescription": "トヨタ90系ノア・ヴォクシーのメーターパネルフード左側に装着する専用設計のスマートフォンホルダーです。",
     "productUsage": [
@@ -17,7 +17,8 @@
     "negativePoints": [
       "汎用品に比べて価格が高め",
       "MagSafeやワイヤレス充電機能は非搭載",
-      "厚みのある手帳型ケースなどは対応しない可能性がある"
+      "厚みのある手帳型ケースなどは対応しない可能性がある",
+      "ホールド部分の自由度が低い、角度調整ができない（一部ユーザーからの指摘）"
     ],
     "useCases": [
       "ドライブ中のナビゲーション利用",
@@ -25,65 +26,77 @@
     ],
     "userStories": [
       {
-        "userType": "30代ファミリー層（推測）",
-        "scenario": "休日の家族旅行",
-        "experience": "ダッシュボード周りをすっきりさせたくて専用品を購入。純正品のように馴染んでおり、運転中の視界も邪魔しないので満足している。（推測）",
-        "sentiment": "positive"
-      },
-      {
-        "userType": "40代男性（推測）",
-        "scenario": "毎日の通勤",
-        "experience": "しっかり固定されるので安心感があるが、充電ケーブルを毎回挿すのが少し手間に感じる。ワイヤレス充電があれば完璧だった。（推測）",
-        "sentiment": "mixed"
+        "userType": "ノア ハイブリッドオーナー",
+        "scenario": "メーターパネルフード周りへの設置",
+        "experience": "スマホ弄りや【ながら運転】防止策として、またエンジンスタートスイッチとハザードランプスイッチの押し間違え防止策として取り付けた。ホルダー部分を上げなくてもスタートスイッチを押せ、視界も気にならず専用品ならではの作りで満足している。",
+        "sentiment": "positive",
+        "supportingSourceIds": [
+          "src-2"
+        ]
       }
     ],
-    "userImpression": "レビュー情報はまだ少ないが、槌屋ヤックのSYシリーズは伝統的にフィッティングの良さで評価が高く、本製品も内装への親和性を重視するユーザーから支持されると予想される。",
+    "userImpression": "専用設計によるフィット感が高く評価されている一方で、角度調整ができないといった不満の声もある。",
     "sources": [
       {
+        "id": "src-1",
         "name": "Amazon商品ページ",
         "url": "https://www.amazon.co.jp/dp/B0DK7BXKSN",
-        "credibility": "高"
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2024-06-25",
+        "author": "槌屋ヤック",
+        "conflictOfInterest": "none",
+        "notes": "商品の基本情報、価格、スペック"
+      },
+      {
+        "id": "src-2",
+        "name": "みんカラ パーツレビュー",
+        "url": "https://minkara.carview.co.jp/userid/2443929/car/3262804/13305895/parts.aspx",
+        "tier": "medium",
+        "evidenceType": "secondary",
+        "publishedAt": "2026-05-01",
+        "author": "一般ユーザー",
+        "conflictOfInterest": "none",
+        "notes": "専用品ならではのフィット感、エンジンスタートスイッチとの干渉がないことへの高評価"
+      },
+      {
+        "id": "src-3",
+        "name": "Yahoo!ショッピング NEWFRONTIER 商品ページ",
+        "url": "https://store.shopping.yahoo.co.jp/newfrontier/yac-sy-nv17.html",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-05-01",
+        "author": "NEWFRONTIER",
+        "conflictOfInterest": "none",
+        "notes": "商品情報および「角度調整ができない」という一部ユーザーの声の引用"
       }
     ],
-    "lastInvestigated": "2026-02-02",
+    "lastInvestigated": "2026-05-01",
     "competitiveAnalysis": [
       {
-        "name": "wincar 90系ノア・ヴォクシー用 ワイヤレス充電スマホホルダー",
-        "asin": "B0FVDT983G",
-        "priceComparison": "約3,900円（本製品よりやや安価）",
-        "featureComparison": [
-          "ワイヤレス充電機能搭載",
-          "MagSafe対応"
-        ],
-        "differentiators": [
-          "充電機能の有無",
-          "マグネット固定の手軽さ"
-        ]
-      },
-      {
-        "name": "oricarmes ダッシュボードトレイ付きスマホホルダー",
-        "asin": "B0FTZ5TPW3",
-        "priceComparison": "約3,300円（本製品より安価）",
-        "featureComparison": [
-          "収納ボックス・トレイ機能付き",
-          "マグネット式"
-        ],
-        "differentiators": [
-          "収納力の追加",
-          "設置場所（ダッシュボードトレイ）"
-        ]
-      },
-      {
-        "name": "WeCar エアコン吹き出し口取付スマホホルダー",
+        "name": "WeCar 90系ノア・ヴォクシー用 エアコン吹き出し口取付スマホホルダー",
         "asin": "B0G4ZHS986",
-        "priceComparison": "約1,300円（本製品より大幅に安価）",
+        "priceComparison": "約1,380円と対象商品（約4,314円）より大幅に安価。低予算で設置したい場合は適している。",
         "featureComparison": [
-          "汎用性の高いエアコン取付タイプ",
-          "コンパクト"
+          "共通点：ノア・ヴォクシー90系対応のスマートフォンホルダーである点。",
+          "相違点：対象商品はメーターパネル横の専用設計だが、WeCar製はエアコン吹き出し口取付・マグネット式。"
         ],
         "differentiators": [
-          "価格",
-          "設置場所（エアコン前を塞ぐデメリットあり）"
+          "槌屋ヤック(Tsuchiya Yac) トヨタ90系 ノア · ヴォクシー専用 スマートフォンホルダー車種専用品 ブラック SY-NV17の利点：エアコンの風を遮らないメーターパネル横への設置。専用設計による内装との一体感。",
+          "WeCar 90系ノア・ヴォクシー用 エアコン吹き出し口取付スマホホルダーの利点：価格が非常に安く、マグネット式で着脱が容易。コンパクト。"
+        ]
+      },
+      {
+        "name": "AdBurnin 90系 ノア ヴォクシー スマホホルダー クリップ式",
+        "asin": "B0GG9GHXL9",
+        "priceComparison": "約2,480円と対象商品より安価。",
+        "featureComparison": [
+          "共通点：90系ノア・ヴォクシー向けのスマホホルダー。360度回転対応のモデルがある点。",
+          "相違点：対象商品は専用のクランプ固定式、AdBurninはクリップ式で角度調整が容易。"
+        ],
+        "differentiators": [
+          "槌屋ヤック(Tsuchiya Yac) トヨタ90系 ノア · ヴォクシー専用 スマートフォンホルダー車種専用品 ブラック SY-NV17の利点：専用設計で確実な固定ができ、車内のインテリアに溶け込む。",
+          "AdBurnin 90系 ノア ヴォクシー スマホホルダー クリップ式の利点：角度調整がしやすく、クリップ式で取り付け・取り外しが手軽。"
         ]
       }
     ],
@@ -103,15 +116,46 @@
         "特定のスマホケースへの対応可否に注意が必要"
       ],
       "score": 85,
-      "scoreRationale": "[基本点: 70]\n[性能・機能: +5] (専用設計による最適な配置と確実なホールド)\n[コストパフォーマンス: -5] (機能単体で見ると価格は高め)\n[品質・デザイン: +10] (内装に合わせたシボ加工など純正のような質感)\n[ユーザー満足度: 0] (レビュー不足のため評価なし)\n[独自の強み・先進性: +5] (車種専用設計という明確な強み)\n[合計: 85]"
+      "scoreRationale": "[基本点: 70]\n[加点: +5] (専用設計による最適な配置と確実なホールド)\n[減点: -5] (機能単体で見ると価格が高め)\n[減点: -5] (角度調整等の自由度が低いため)\n[加点: +10] (内装に合わせたシボ加工など純正のような高い質感)\n[加点: +10] (車種専用設計という明確な独自性と強み)\n[合計: 85]"
     },
     "technicalSpecs": {
-      "dimensions": null,
-      "weight": null,
-      "supportedSizes": "要確認（一般的なスマホサイズに対応と推測）",
+      "dimensions": {
+        "height": "不明",
+        "width": "不明",
+        "depth": "不明"
+      },
+      "weight": "不明",
+      "capacity": "不明",
       "material": "プラスチック（内装近似シボ加工）",
-      "mountingMethod": "両面テープ（推測）",
-      "charging": "なし"
-    }
+      "origin": "不明",
+      "other": [
+        "カラー: ブラック",
+        "取付方法: 両面テープ（推測）",
+        "充電機能: なし"
+      ]
+    },
+    "claims": [
+      {
+        "claim": "専用設計による内装への高いフィット感",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-1",
+          "src-2"
+        ],
+        "crossChecked": true,
+        "notes": "メーカーの公式説明と実際のユーザーレビューの両方で確認"
+      },
+      {
+        "claim": "エンジンスタートスイッチの操作を妨げない",
+        "category": "durability",
+        "confidence": "medium",
+        "supportingSourceIds": [
+          "src-2"
+        ],
+        "crossChecked": false,
+        "notes": "実際のユーザーによるレビューでの言及"
+      }
+    ]
   }
 }
