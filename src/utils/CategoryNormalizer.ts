@@ -80,6 +80,8 @@ export class CategoryNormalizer {
     'スカルプ',
     'コンタクトレンズ',
     'カラコン',
+    'キャンプ',
+    'アウトドア',
   ];
 
   /**
@@ -290,6 +292,8 @@ export class CategoryNormalizer {
       '育毛・養毛用トニック・エッセンス',
       'ヘアケアギフトセット',
       'ヘアケア・カラー・スタイリング',
+      '寝袋・シュラフ用ピロー(枕)',
+      '寝袋・ベッド・マット',
     ];
     if (whitelist.some((item) => name.includes(CategoryNormalizer.getComparisonName(item)))) {
       return true;
