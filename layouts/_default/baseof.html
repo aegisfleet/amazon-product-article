@@ -9,6 +9,8 @@
   {{- $pageTitle = printf "【%v点】%s %s レビュー | %s" .Params.score .Title (.Params.price | default "") .Site.Title -}}
   {{- else if eq .Section "recommendations" -}}
   {{- $pageTitle = printf "本日の注目商品10選！AI厳選レビュー | %s" .Site.Title -}}
+  {{- else if eq .Section "bargain" -}}
+  {{- $pageTitle = printf "あともう一品！高評価お手頃商品 | %s" .Site.Title -}}
   {{- else if eq .Type "categories" -}}
   {{- $pageTitle = printf "Amazon %s おすすめ比較ランキング | AI徹底調査 | %s" .Title .Site.Title -}}
   {{- else -}}

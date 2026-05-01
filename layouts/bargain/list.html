@@ -1,0 +1,119 @@
+{{- define "main" -}}
+<div class="container" style="padding-top: var(--spacing-xl);">
+    {{- partial "breadcrumb.html" . -}}
+
+    <!-- Page Header -->
+    <div class="bargain-hero">
+        <div class="bargain-hero-icon">🎁</div>
+        <h1 class="bargain-hero-title">あともう一品</h1>
+        <p class="bargain-hero-subtitle">高評価 × お手頃価格の厳選商品</p>
+        <p class="bargain-hero-desc">
+            スコア <strong>80点以上</strong> の高評価商品を <strong>¥2,000以下</strong> で厳選。
+            カテゴリや価格帯で絞り込んで、お気に入りの一品を見つけましょう。
+        </p>
+    </div>
+
+    <!-- Filter Panel -->
+    <div class="bargain-filter-panel" id="bargain-filter-panel">
+        <div class="bargain-filter-row">
+            <div class="bargain-filter-group">
+                <label for="bargain-score-slider" class="bargain-filter-label">
+                    <span class="bargain-filter-icon">🏆</span>
+                    最低スコア: <span id="bargain-score-value" class="bargain-filter-value">80</span>点以上
+                </label>
+                <input type="range" id="bargain-score-slider" class="bargain-slider"
+                    min="0" max="100" step="5" value="80">
+                <div class="bargain-slider-labels">
+                    <span>0</span><span>50</span><span>100</span>
+                </div>
+            </div>
+
+            <div class="bargain-filter-group">
+                <label for="bargain-price-slider" class="bargain-filter-label">
+                    <span class="bargain-filter-icon">💰</span>
+                    上限価格: <span id="bargain-price-value" class="bargain-filter-value">¥2,000</span>以下
+                </label>
+                <input type="range" id="bargain-price-slider" class="bargain-slider"
+                    min="0" max="50000" step="500" value="2000">
+                <div class="bargain-slider-labels">
+                    <span>¥0</span><span>¥25,000</span><span>¥50,000</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="bargain-filter-row bargain-filter-row-bottom">
+            <div class="bargain-filter-group">
+                <label for="bargain-category-select" class="bargain-filter-label">
+                    <span class="bargain-filter-icon">📂</span>
+                    カテゴリ
+                </label>
+                <select id="bargain-category-select" class="bargain-select">
+                    <option value="">すべてのカテゴリ</option>
+                </select>
+            </div>
+
+            <div class="bargain-filter-group">
+                <label class="bargain-filter-label">
+                    <span class="bargain-filter-icon">🔄</span>
+                    ソート
+                </label>
+                <div class="bargain-sort-buttons" id="bargain-sort-buttons">
+                    <button type="button" class="bargain-sort-btn active" data-sort="score">スコア順</button>
+                    <button type="button" class="bargain-sort-btn" data-sort="price">価格順</button>
+                    <button type="button" class="bargain-sort-btn" data-sort="date">新着順</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Results Stats -->
+    <div class="bargain-stats" id="bargain-stats">
+        <span class="bargain-stats-icon">📊</span>
+        <span id="bargain-result-count">0</span>件の商品が見つかりました
+    </div>
+
+    <!-- Product Grid -->
+    <div class="bargain-grid" id="bargain-grid"></div>
+
+    <!-- No Results Message -->
+    <div class="bargain-no-results" id="bargain-no-results" style="display: none;">
+        <div class="bargain-no-results-icon">🔍</div>
+        <p class="bargain-no-results-text">条件に一致する商品が見つかりませんでした。</p>
+        <p class="bargain-no-results-hint">フィルタ条件を変更してお試しください。</p>
+        <button type="button" class="bargain-reset-btn" id="bargain-reset-btn">フィルタをリセット</button>
+    </div>
+
+    <!-- Product Data (Hugo build-time) -->
+    {{- $articles := where .Site.RegularPages "Section" "articles" -}}
+    {{- $bargainData := slice -}}
+    {{- range $articles -}}
+    {{- $score := .Params.score | default 0 -}}
+    {{- if ge $score 1 -}}
+    {{- $priceRaw := 0 -}}
+    {{- if .Params.price -}}
+    {{- $priceRaw = index (findRE "[0-9]+" (replace .Params.price "," "")) 0 | default 0 -}}
+    {{- end -}}
+    {{- $category := "" -}}
+    {{- if .Params.categories -}}{{- $category = index .Params.categories 0 -}}{{- else if .Params.category -}}{{- $category = .Params.category -}}{{- end -}}
+    {{- $lastInvestigated := "" -}}
+    {{- with .Params.last_investigated -}}{{- $lastInvestigated = . -}}{{- end -}}
+    {{- $bargainData = $bargainData | append (dict
+    "title" .Title
+    "url" .RelPermalink
+    "score" $score
+    "price" (.Params.price | default "")
+    "priceRaw" $priceRaw
+    "asin" (.Params.asin | default "")
+    "category" $category
+    "image" (cond (and .Params.images (gt (len .Params.images) 0)) (index .Params.images 0) "")
+    "affiliateUrl" (.Params.affiliate_url | default "")
+    "lastInvestigated" $lastInvestigated
+    "isAmazonDirect" (.Params.is_amazon_direct | default false)
+    "loyaltyPoints" (.Params.loyalty_points | default 0)
+    ) -}}
+    {{- end -}}
+    {{- end -}}
+    <script id="bargain-data" type="application/json">{{- $bargainData | jsonify | safeJS -}}</script>
+</div>
+<script src="{{ `js/bargain-filter.js` | relURL }}" defer></script>
+{{- end -}}
