@@ -318,5 +318,16 @@ describe('CategoryNormalizer', () => {
       expect(result.main).toBe('シャンプー');
       expect(result.score).toBe(10);
     });
+
+    it('should exclude "日用品・生活必需品 - ペット用品" and prefer specific pet food category', () => {
+      const junkNode: BrowseNode = { displayName: '日用品・生活必需品 - ペット用品', id: '204812631051' };
+      const specificNode: BrowseNode = { displayName: 'ドライキャットフード', id: '2155308051' };
+
+      expect(CategoryNormalizer.isValidCategoryName('日用品・生活必需品 - ペット用品')).toBe(false);
+
+      const result = CategoryNormalizer.selectBestCategory([junkNode, specificNode]);
+      expect(result.main).toBe('ドライキャットフード');
+      expect(result.score).toBe(10);
+    });
   });
 });
