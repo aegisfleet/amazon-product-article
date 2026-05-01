@@ -28,13 +28,22 @@
                 </div>
             </div>
 
-            <div class="bargain-filter-group">
-                <label for="bargain-price-slider" class="bargain-filter-label">
-                    <span class="bargain-filter-icon">💰</span>
-                    上限価格: <span id="bargain-price-value" class="bargain-filter-value">¥2,000</span>以下
-                </label>
-                <input type="range" id="bargain-price-slider" class="bargain-slider"
-                    min="0" max="50000" step="500" value="2000">
+            <div class="bargain-filter-group-price">
+                <div class="bargain-filter-group">
+                    <label for="bargain-min-price-slider" class="bargain-filter-label">
+                        <span class="bargain-filter-icon">💰</span>
+                        最低価格: <span id="bargain-min-price-value" class="bargain-filter-value">¥0</span>
+                    </label>
+                    <input type="range" id="bargain-min-price-slider" class="bargain-slider"
+                        min="0" max="50000" step="500" value="0">
+                </div>
+                <div class="bargain-filter-group">
+                    <label for="bargain-price-slider" class="bargain-filter-label">
+                        上限価格: <span id="bargain-price-value" class="bargain-filter-value">¥2,000</span>以下
+                    </label>
+                    <input type="range" id="bargain-price-slider" class="bargain-slider"
+                        min="0" max="50000" step="500" value="2000">
+                </div>
                 <div class="bargain-slider-labels">
                     <span>¥0</span><span>¥25,000</span><span>¥50,000</span>
                 </div>
@@ -58,9 +67,9 @@
                     ソート
                 </label>
                 <div class="bargain-sort-buttons" id="bargain-sort-buttons">
-                    <button type="button" class="bargain-sort-btn active" data-sort="score">スコア順</button>
+                    <button type="button" class="bargain-sort-btn active" data-sort="date">新着順</button>
+                    <button type="button" class="bargain-sort-btn" data-sort="score">スコア順</button>
                     <button type="button" class="bargain-sort-btn" data-sort="price">価格順</button>
-                    <button type="button" class="bargain-sort-btn" data-sort="date">新着順</button>
                 </div>
             </div>
         </div>

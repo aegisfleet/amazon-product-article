@@ -16,8 +16,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // DOM refs
   const scoreSlider = document.getElementById('bargain-score-slider');
+  const minPriceSlider = document.getElementById('bargain-min-price-slider');
   const priceSlider = document.getElementById('bargain-price-slider');
   const scoreValueEl = document.getElementById('bargain-score-value');
+  const minPriceValueEl = document.getElementById('bargain-min-price-value');
   const priceValueEl = document.getElementById('bargain-price-value');
   const categorySelect = document.getElementById('bargain-category-select');
   const sortButtons = document.getElementById('bargain-sort-buttons');
@@ -28,7 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (!scoreSlider || !priceSlider || !gridEl) return;
 
-  let currentSort = 'score';
+  let currentSort = 'date'; // Default to Newest
 
   // --- URL Params ---
   function readUrlParams() {
@@ -37,12 +39,17 @@ document.addEventListener('DOMContentLoaded', () => {
       const v = parseInt(params.get('minScore'), 10);
       if (!isNaN(v)) scoreSlider.value = String(Math.max(0, Math.min(100, v)));
     }
+    if (params.has('minPrice')) {
+      const v = parseInt(params.get('minPrice'), 10);
+      if (!isNaN(v)) minPriceSlider.value = String(Math.max(0, Math.min(50000, v)));
+    }
     if (params.has('maxPrice')) {
       const v = parseInt(params.get('maxPrice'), 10);
       if (!isNaN(v)) priceSlider.value = String(Math.max(0, Math.min(50000, v)));
     }
     if (params.has('category') && categorySelect) {
-      categorySelect.value = params.get('category');
+      // We will set this after populating categories
+      categorySelect.dataset.pendingValue = params.get('category');
     }
     if (params.has('sort')) {
       const s = params.get('sort');
@@ -55,34 +62,51 @@ document.addEventListener('DOMContentLoaded', () => {
   function updateUrlParams() {
     const params = new URLSearchParams();
     const minScore = parseInt(scoreSlider.value, 10);
+    const minPrice = parseInt(minPriceSlider.value, 10);
     const maxPrice = parseInt(priceSlider.value, 10);
     const category = categorySelect ? categorySelect.value : '';
 
     if (minScore !== 80) params.set('minScore', String(minScore));
+    if (minPrice !== 0) params.set('minPrice', String(minPrice));
     if (maxPrice !== 2000) params.set('maxPrice', String(maxPrice));
     if (category) params.set('category', category);
-    if (currentSort !== 'score') params.set('sort', currentSort);
+    if (currentSort !== 'date') params.set('sort', currentSort);
 
     const qs = params.toString();
     const newUrl = globalThis.location.pathname + (qs ? '?' + qs : '');
     globalThis.history.replaceState(null, '', newUrl);
   }
 
-  // --- Populate categories ---
-  function populateCategories() {
+  // --- Dynamic Category Update ---
+  function updateCategoryOptions(availableProducts) {
     if (!categorySelect) return;
+    const currentVal = categorySelect.value || categorySelect.dataset.pendingValue || '';
+    delete categorySelect.dataset.pendingValue;
+
     const cats = new Map();
-    for (const p of allProducts) {
+    for (const p of availableProducts) {
       if (p.category) {
         cats.set(p.category, (cats.get(p.category) || 0) + 1);
       }
     }
+    
+    // Clear and rebuild
+    categorySelect.innerHTML = '<option value="">すべてのカテゴリ</option>';
     const sorted = [...cats.entries()].sort((a, b) => b[1] - a[1]);
+    
+    let exists = false;
     for (const [cat, count] of sorted) {
       const opt = document.createElement('option');
       opt.value = cat;
       opt.textContent = `${cat} (${count})`;
       categorySelect.appendChild(opt);
+      if (cat === currentVal) exists = true;
+    }
+
+    if (exists) {
+      categorySelect.value = currentVal;
+    } else {
+      categorySelect.value = '';
     }
   }
 
@@ -141,23 +165,40 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function applyFilters() {
     const minScore = parseInt(scoreSlider.value, 10);
+    const minPrice = parseInt(minPriceSlider.value, 10);
     const maxPrice = parseInt(priceSlider.value, 10);
-    const category = categorySelect ? categorySelect.value : '';
+
+    // Ensure minPrice <= maxPrice for logical UX (optional, but good)
+    if (minPrice > maxPrice) {
+      // You could either sync them or just let the filter handle it
+      // Let's just update display for now
+    }
 
     // Update display values
     scoreValueEl.textContent = String(minScore);
+    minPriceValueEl.textContent = formatPrice(minPrice);
     priceValueEl.textContent = formatPrice(maxPrice);
 
-    // Filter
-    let filtered = allProducts.filter(p => {
+    // Step 1: Filter by Score and Price range
+    let preFiltered = allProducts.filter(p => {
       if (p.score < minScore) return false;
+      if (p.priceRaw < minPrice) return false;
       if (maxPrice > 0 && p.priceRaw > maxPrice) return false;
       if (maxPrice === 0 && p.priceRaw > 0) return false;
+      return true;
+    });
+
+    // Step 2: Update Category options based on Score and Price range
+    updateCategoryOptions(preFiltered);
+
+    // Step 3: Filter by selected category
+    const category = categorySelect ? categorySelect.value : '';
+    let filtered = preFiltered.filter(p => {
       if (category && p.category !== category) return false;
       return true;
     });
 
-    // Sort
+    // Step 4: Sort
     if (currentSort === 'score') {
       filtered.sort((a, b) => b.score - a.score || a.priceRaw - b.priceRaw);
     } else if (currentSort === 'price') {
@@ -193,9 +234,10 @@ document.addEventListener('DOMContentLoaded', () => {
   // --- Reset ---
   function resetFilters() {
     scoreSlider.value = '80';
+    minPriceSlider.value = '0';
     priceSlider.value = '2000';
     if (categorySelect) categorySelect.value = '';
-    currentSort = 'score';
+    currentSort = 'date';
     updateSortButtons();
     applyFilters();
   }
@@ -210,6 +252,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // --- Events ---
   scoreSlider.addEventListener('input', applyFilters);
+  minPriceSlider.addEventListener('input', applyFilters);
   priceSlider.addEventListener('input', applyFilters);
   if (categorySelect) categorySelect.addEventListener('change', applyFilters);
   if (resetBtn) resetBtn.addEventListener('click', resetFilters);
@@ -225,7 +268,6 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // --- Init ---
-  populateCategories();
   readUrlParams();
   updateSortButtons();
   applyFilters();

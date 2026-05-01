@@ -3960,6 +3960,24 @@ a.competitor-preview:hover {
   gap: var(--spacing-sm);
 }
 
+.bargain-filter-group-price {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-md);
+  position: relative;
+}
+
+.bargain-filter-group-price .bargain-slider-labels {
+  grid-column: 1 / -1;
+  margin-top: 4px;
+}
+
+@media (max-width: 480px) {
+  .bargain-filter-group-price {
+    grid-template-columns: 1fr;
+  }
+}
+
 .bargain-filter-label {
   font-size: 0.9rem;
   font-weight: 600;
