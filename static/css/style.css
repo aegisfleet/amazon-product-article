@@ -3774,3 +3774,588 @@ a.competitor-preview:hover {
 .empty-desc {
   font-size: 0.9rem;
 }
+
+/* =====================================================
+   BARGAIN PAGE — 「あともう一品」特設ページ
+   ===================================================== */
+
+/* --- Home Page: Bargain Link Button --- */
+.bargain-link {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  background: linear-gradient(135deg, #059669, #10b981);
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border: 1px solid #047857;
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-decoration: none;
+  box-shadow: 0 2px 8px rgba(5, 150, 105, 0.25);
+  transition: all 0.2s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.bargain-link:hover {
+  background: linear-gradient(135deg, #047857, #059669);
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(5, 150, 105, 0.35);
+}
+
+.bargain-link:visited,
+.bargain-link:active {
+  color: #fff;
+}
+
+.bargain-link:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+[data-theme="dark"] .bargain-link {
+  background: linear-gradient(135deg, #047857, #065f46);
+  border-color: #10b981;
+  box-shadow: 0 2px 8px rgba(16, 185, 129, 0.2);
+}
+
+[data-theme="dark"] .bargain-link:hover {
+  background: linear-gradient(135deg, #059669, #047857);
+  color: #fff;
+}
+
+[data-theme="dark"] .bargain-link:visited,
+[data-theme="dark"] .bargain-link:active {
+  color: #fff;
+}
+
+.bargain-link-icon {
+  font-size: 1.1rem;
+  line-height: 1;
+}
+
+/* --- Bargain Hero --- */
+.bargain-hero {
+  text-align: center;
+  padding: var(--spacing-xl) var(--spacing-md);
+  margin-bottom: var(--spacing-xl);
+  background: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 50%, #a7f3d0 100%);
+  border-radius: var(--radius-xl);
+  border: 2px solid #10b981;
+  box-shadow: 0 4px 20px rgba(16, 185, 129, 0.15);
+}
+
+[data-theme="dark"] .bargain-hero {
+  background: linear-gradient(135deg, #064e3b 0%, #065f46 50%, #047857 100%);
+  border-color: #34d399;
+  box-shadow: 0 4px 20px rgba(52, 211, 153, 0.1);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .bargain-hero {
+    background: linear-gradient(135deg, #064e3b 0%, #065f46 50%, #047857 100%);
+    border-color: #34d399;
+    box-shadow: 0 4px 20px rgba(52, 211, 153, 0.1);
+  }
+}
+
+.bargain-hero-icon {
+  font-size: 3rem;
+  margin-bottom: var(--spacing-sm);
+  animation: bargain-bounce 2s ease-in-out infinite;
+}
+
+@keyframes bargain-bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+.bargain-hero-title {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #065f46;
+  margin-bottom: var(--spacing-xs);
+}
+
+[data-theme="dark"] .bargain-hero-title {
+  color: #6ee7b7;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .bargain-hero-title {
+    color: #6ee7b7;
+  }
+}
+
+.bargain-hero-subtitle {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #047857;
+  margin-bottom: var(--spacing-md);
+}
+
+[data-theme="dark"] .bargain-hero-subtitle {
+  color: #a7f3d0;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .bargain-hero-subtitle {
+    color: #a7f3d0;
+  }
+}
+
+.bargain-hero-desc {
+  font-size: 0.95rem;
+  color: #374151;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+[data-theme="dark"] .bargain-hero-desc {
+  color: #d1d5db;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .bargain-hero-desc {
+    color: #d1d5db;
+  }
+}
+
+/* --- Filter Panel --- */
+.bargain-filter-panel {
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  padding: var(--spacing-lg);
+  margin-bottom: var(--spacing-lg);
+  box-shadow: var(--shadow-md);
+  backdrop-filter: blur(10px);
+}
+
+.bargain-filter-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-lg);
+}
+
+.bargain-filter-row-bottom {
+  margin-top: var(--spacing-lg);
+  padding-top: var(--spacing-lg);
+  border-top: 1px solid var(--color-border);
+}
+
+@media (max-width: 640px) {
+  .bargain-filter-row {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-md);
+  }
+}
+
+.bargain-filter-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.bargain-filter-label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--color-text-main);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+}
+
+.bargain-filter-icon {
+  font-size: 1rem;
+}
+
+.bargain-filter-value {
+  font-weight: 700;
+  color: var(--color-primary);
+  font-size: 1rem;
+}
+
+/* --- Custom Range Slider --- */
+.bargain-slider {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 6px;
+  background: linear-gradient(90deg, #10b981, #6ee7b7);
+  border-radius: 3px;
+  outline: none;
+  cursor: pointer;
+}
+
+.bargain-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #059669, #10b981);
+  border: 3px solid white;
+  box-shadow: 0 2px 8px rgba(5, 150, 105, 0.35);
+  cursor: pointer;
+  transition: transform 0.15s ease;
+}
+
+.bargain-slider::-webkit-slider-thumb:hover {
+  transform: scale(1.15);
+}
+
+.bargain-slider::-moz-range-thumb {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #059669, #10b981);
+  border: 3px solid white;
+  box-shadow: 0 2px 8px rgba(5, 150, 105, 0.35);
+  cursor: pointer;
+}
+
+[data-theme="dark"] .bargain-slider {
+  background: linear-gradient(90deg, #047857, #34d399);
+}
+
+[data-theme="dark"] .bargain-slider::-webkit-slider-thumb {
+  border-color: #1f2937;
+}
+
+[data-theme="dark"] .bargain-slider::-moz-range-thumb {
+  border-color: #1f2937;
+}
+
+.bargain-slider-labels {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+  margin-top: -2px;
+}
+
+/* --- Category Select --- */
+.bargain-select {
+  padding: 0.5rem 0.75rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-bg-card);
+  color: var(--color-text-main);
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: var(--transition-base);
+}
+
+.bargain-select:hover {
+  border-color: var(--color-primary);
+}
+
+.bargain-select:focus {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 1px;
+}
+
+/* --- Sort Buttons --- */
+.bargain-sort-buttons {
+  display: flex;
+  gap: var(--spacing-xs);
+  flex-wrap: wrap;
+}
+
+.bargain-sort-btn {
+  padding: 0.4rem 0.8rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-bg-card);
+  color: var(--color-text-muted);
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: var(--transition-base);
+}
+
+.bargain-sort-btn:hover {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+
+.bargain-sort-btn.active {
+  background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+  color: white;
+  border-color: transparent;
+  box-shadow: 0 2px 6px rgba(var(--color-primary-rgb), 0.3);
+}
+
+/* --- Stats Bar --- */
+.bargain-stats {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  padding: 0.6rem 1rem;
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  margin-bottom: var(--spacing-lg);
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--color-text-main);
+  box-shadow: var(--shadow-sm);
+}
+
+.bargain-stats-icon {
+  font-size: 1.1rem;
+}
+
+#bargain-result-count {
+  font-weight: 700;
+  color: var(--color-primary);
+  font-size: 1.1rem;
+}
+
+/* --- Product Grid --- */
+.bargain-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--spacing-lg);
+  margin-bottom: var(--spacing-2xl);
+  transition: opacity 0.2s ease;
+}
+
+.bargain-grid-fade {
+  opacity: 0;
+}
+
+@media (max-width: 1024px) {
+  .bargain-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .bargain-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* --- Product Card --- */
+.bargain-card {
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition-base);
+  display: flex;
+  flex-direction: column;
+}
+
+.bargain-card:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 10px 25px rgba(16, 185, 129, 0.2);
+  border-color: #10b981;
+}
+
+[data-theme="dark"] .bargain-card:hover {
+  box-shadow: 0 10px 25px rgba(52, 211, 153, 0.15);
+  border-color: #34d399;
+}
+
+.bargain-card-image-link {
+  display: block;
+  text-decoration: none;
+}
+
+.bargain-card-image {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.bargain-card-image img {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  padding: var(--spacing-sm);
+}
+
+.bargain-card-noimage {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text-muted);
+  font-size: 0.875rem;
+  background: #f3f4f6;
+}
+
+[data-theme="dark"] .bargain-card-noimage {
+  background: #374151;
+}
+
+.bargain-card-body {
+  padding: var(--spacing-md);
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.bargain-card-category {
+  display: inline-block;
+  padding: 0.2rem 0.6rem;
+  background: var(--bg-tag);
+  color: var(--text-tag);
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  width: fit-content;
+}
+
+.bargain-card-title {
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.4;
+  margin: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.bargain-card-title a {
+  color: var(--color-text-main);
+  text-decoration: none;
+}
+
+.bargain-card-title a:hover {
+  color: var(--color-primary);
+  text-decoration: underline;
+}
+
+.bargain-card-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+.bargain-card-price {
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: #dc2626;
+}
+
+[data-theme="dark"] .bargain-card-price {
+  color: #fca5a5;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .bargain-card-price {
+    color: #fca5a5;
+  }
+}
+
+.bargain-card-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-xs);
+  min-height: 1.2rem;
+}
+
+.bargain-card-points {
+  font-size: 0.8rem;
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
+.bargain-card-actions {
+  margin-top: auto;
+  padding-top: var(--spacing-sm);
+  border-top: 1px solid var(--color-border);
+  display: flex;
+  justify-content: flex-end;
+}
+
+.bargain-card-review-link {
+  font-weight: 600;
+  font-size: 0.875rem;
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+.bargain-card-review-link:hover {
+  text-decoration: underline;
+}
+
+/* --- No Results --- */
+.bargain-no-results {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-2xl) var(--spacing-lg);
+  text-align: center;
+  gap: var(--spacing-sm);
+}
+
+.bargain-no-results-icon {
+  font-size: 3rem;
+  opacity: 0.5;
+}
+
+.bargain-no-results-text {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--color-text-main);
+}
+
+.bargain-no-results-hint {
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+}
+
+.bargain-reset-btn {
+  margin-top: var(--spacing-md);
+  padding: 0.6rem 1.2rem;
+  background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+  color: white;
+  border: none;
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: var(--transition-base);
+  box-shadow: 0 2px 6px rgba(var(--color-primary-rgb), 0.3);
+}
+
+.bargain-reset-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(var(--color-primary-rgb), 0.4);
+}
+
+/* --- Mobile Responsive: Bargain Hero --- */
+@media (max-width: 640px) {
+  .bargain-hero-title {
+    font-size: 1.5rem;
+  }
+
+  .bargain-hero-subtitle {
+    font-size: 0.95rem;
+  }
+
+  .bargain-hero-desc {
+    font-size: 0.85rem;
+  }
+}

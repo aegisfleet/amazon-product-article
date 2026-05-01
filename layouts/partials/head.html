@@ -47,6 +47,8 @@ $score -}}
 {{- end -}}
 {{- else if eq .Section "recommendations" -}}
 {{- $metaDescription = "本日の注目商品10選！AIが厳選した高評価商品を価格・特徴比較。Amazon最安値リンク付きで即購入可能。" -}}
+{{- else if eq .Section "bargain" -}}
+{{- $metaDescription = "スコア80点以上の高評価商品を2,000円以下で厳選。カテゴリや価格帯で自由にフィルタして、あなたにぴったりのお手頃商品が見つかります。" -}}
 {{- else if eq .Type "categories" -}}
 {{- $metaDescription = printf "Amazon %s のおすすめ商品をGoogle AIが徹底比較。高評価な商品を厳選してレビュー。価格やスペックの比較検討に。" .Title -}}
 {{- else if .Description -}}
