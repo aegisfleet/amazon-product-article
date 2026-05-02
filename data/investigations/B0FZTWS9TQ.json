@@ -1,0 +1,184 @@
+{
+  "analysis": {
+    "productName": "XO Simple is Beauty スマートブルーライトカットメガネ",
+    "parentAsin": "B0FZTWS9TQ",
+    "productDescription": "ブルーライトカットレンズとBluetoothオーディオ機能を搭載したスマートグラス。音楽再生や音声通話を手軽に楽しめるオープンイヤー型。",
+    "productUsage": [
+      "ブルーライトカット",
+      "音楽再生",
+      "音声通話",
+      "PC作業",
+      "オンライン会議"
+    ],
+    "positivePoints": [
+      "2時間充電で200時間の長時間待機が可能",
+      "軽量フレームで長時間の装着でも快適",
+      "耳を塞がないオープンイヤー型で周囲の音も聞こえる",
+      "ブルーライトカットレンズ搭載でPC作業等に最適"
+    ],
+    "negativePoints": [
+      "オープンイヤー型のため音漏れの可能性がある",
+      "充電中はBluetoothペアリングができない",
+      "防水性能の記載がない"
+    ],
+    "useCases": [
+      "自宅でのテレワーク",
+      "オフィスでのPC作業",
+      "音楽を聴きながらの家事・作業",
+      "オンライン授業"
+    ],
+    "userStories": [],
+    "userImpression": "手軽にブルーライト対策とオーディオ機能を楽しめるスマートグラス。軽量で長時間バッテリーを搭載しており、日常使いに適しているが、音質や音漏れについては環境を選ぶ可能性がある。",
+    "sources": [
+      {
+        "id": "src-1",
+        "name": "Amazon商品ページ",
+        "url": "https://www.amazon.co.jp/dp/B0FZTWS9TQ",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-05-02",
+        "author": "XO Simple is Beauty",
+        "conflictOfInterest": "disclosed",
+        "notes": "商品スペックや特徴を抽出"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "満充電にはわずか2時間、連続再生8時間を実現、待機時間は200時間",
+        "category": "durability",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "crossChecked": false,
+        "notes": "Amazon商品ページより"
+      },
+      {
+        "claim": "効果的なブルーライトカットレンズを使用し、デジタル疲労から目を保護",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "crossChecked": false,
+        "notes": "Amazon商品ページより"
+      }
+    ],
+    "lastInvestigated": "2026-05-02",
+    "competitiveAnalysis": [
+      {
+        "name": "XO Simple is Beauty スマートサングラス",
+        "asin": "B0FR1N8NPK",
+        "priceComparison": "同等の価格帯。レンズの種類が異なる可能性はあるが基本機能は類似している。",
+        "featureComparison": [
+          "共通点：Bluetoothオーディオ、内蔵マイク、2時間充電で8時間再生・200時間待機",
+          "相違点：レンズの色やデザインのバリエーション違い"
+        ],
+        "differentiators": [
+          "XO Simple is Beauty スマートブルーライトカットメガネの利点：明確にブルーライトカットを謳っており、PC作業向け",
+          "XO Simple is Beauty スマートサングラスの利点：特になし（同スペックの別バリエーションと推測される）"
+        ]
+      },
+      {
+        "name": "Mingtawn スマートグラス",
+        "asin": "B0GS57BNHX",
+        "priceComparison": "Mingtawnの方が価格が高い。機能面での差（調光レンズ、音声アシスタントなど）が反映されている。",
+        "featureComparison": [
+          "共通点：Bluetoothオーディオ、通話機能",
+          "相違点：Mingtawnは自動調光レンズ、Bluetooth 5.4、音声アシスタント対応を謳う"
+        ],
+        "differentiators": [
+          "XO Simple is Beauty スマートブルーライトカットメガネの利点：価格が安く、手軽に導入できる",
+          "Mingtawn スマートグラスの利点：屋外でサングラスになる調光レンズや、より最新のBluetooth規格に対応している"
+        ]
+      },
+      {
+        "name": "Mingtawn AIスマートグラス",
+        "asin": "B0GD75H2LN",
+        "priceComparison": "Mingtawn AIスマートグラスの方が大幅に高い。カメラ機能やAI機能が搭載されているため。",
+        "featureComparison": [
+          "共通点：スマートグラス形状",
+          "相違点：Mingtawn AIはカメラ搭載、録画機能、同時通訳機能など多機能。XOはオーディオ機能のみ"
+        ],
+        "differentiators": [
+          "XO Simple is Beauty スマートブルーライトカットメガネの利点：カメラ非搭載のため、プライバシーを気にせず日常使いしやすい",
+          "Mingtawn AIスマートグラスの利点：写真・動画撮影や翻訳など、高度な機能が利用可能"
+        ]
+      },
+      {
+        "name": "Pramie スマートメガネ",
+        "asin": "B0FVS2JDYP",
+        "priceComparison": "ほぼ同価格帯の競合製品。",
+        "featureComparison": [
+          "共通点：Bluetoothオーディオ、通話機能、長時間バッテリー(8時間再生/200時間待機)",
+          "相違点：Pramieは調光レンズ搭載、Bluetooth 5.4対応"
+        ],
+        "differentiators": [
+          "XO Simple is Beauty スマートブルーライトカットメガネの利点：ブルーライトカットに特化している",
+          "Pramie スマートメガネの利点：屋内・屋外両用で使える調光レンズを搭載している"
+        ]
+      },
+      {
+        "name": "Zunate スマートグラス",
+        "asin": "B0D1CSJ5MJ",
+        "priceComparison": "Zunateの方が高価格。",
+        "featureComparison": [
+          "共通点：Bluetoothオーディオ、通話機能",
+          "相違点：Zunateはデュアルマイクノイズリダクション、40分急速充電を謳う"
+        ],
+        "differentiators": [
+          "XO Simple is Beauty スマートブルーライトカットメガネの利点：価格が安く、コストパフォーマンスに優れる",
+          "Zunate スマートグラスの利点：より高度なノイズリダクション機能と急速充電に対応している"
+        ]
+      },
+      {
+        "name": "Blackview スマートグラス BV100",
+        "asin": "B0G58JCD6N",
+        "priceComparison": "Blackviewの方が高価格。カメラ機能やAI機能による価格差。",
+        "featureComparison": [
+          "共通点：スマートグラス形状",
+          "相違点：Blackviewはカメラ搭載、録画機能、骨伝導オーディオ、IP54防水など高機能"
+        ],
+        "differentiators": [
+          "XO Simple is Beauty スマートブルーライトカットメガネの利点：軽量でシンプルな機能。カメラレスで場所を選ばない",
+          "Blackview スマートグラス BV100の利点：カメラ録画機能や骨伝導による高音質、防水性能を備える"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "PC作業やスマホ閲覧で目の疲れを感じている人",
+        "耳を塞がずに音楽や通話を楽しみたい人",
+        "低予算でスマートグラスを試してみたい人"
+      ],
+      "pros": [
+        "3000円台という安価な価格設定",
+        "ブルーライトカットレンズ標準搭載",
+        "最大200時間の長期待機バッテリー"
+      ],
+      "cons": [
+        "防水・防滴性能の記載がなく屋外での使用に不安が残る",
+        "オーディオの音質や音漏れの詳細は不明"
+      ],
+      "score": 75,
+      "scoreRationale": "[基本点: 70]\n[加点: +5] (3299円という低価格でスマートグラスとしての基本機能を備えておりコスパが良い)\n[加点: +3] (200時間の長期待機・8時間連続再生という良好なバッテリー性能)\n[減点: -3] (防水性能等の記載がなく、屋外やスポーツ時の使用に懸念がある)\n[合計: 75]"
+    },
+    "technicalSpecs": {
+      "weight": "不明",
+      "capacity": "満充電約2時間、連続再生約8時間、待機時間約200時間",
+      "material": "不明",
+      "origin": "中国 (Sanqi Youpin (Shenzhen) Co, Ltd.)",
+      "other": [
+        "レンズ: ブルーライトカットレンズ",
+        "Bluetooth対応",
+        "内蔵マイク・ステレオスピーカー搭載",
+        "スマート音声制御対応"
+      ],
+      "dimensions": {
+        "height": "不明",
+        "width": "不明",
+        "depth": "不明"
+      }
+    }
+  }
+}
