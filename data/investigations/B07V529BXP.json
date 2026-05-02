@@ -1,141 +1,217 @@
 {
   "analysis": {
-    "productName": "UGREEN USB Type C ケーブル PD対応100W/5A (2m)",
-    "parentAsin": "B0B9H8MGYY",
-    "productDescription": "最大100W (5A) のUSB PD急速充電に対応した高耐久ナイロン編組USB-Cケーブル。iPhone 15/16シリーズやMacBook ProなどのノートPC、Galaxyなどの充電に最適ですが、映像出力には非対応です。",
+    "productName": "UGREEN USB Type Cケーブル 100W/5A (2m, ブラック)",
+    "parentAsin": "B07V529BXP",
+    "productDescription": "最大100W(20V/5A)のPD超急速充電と480Mbpsのデータ転送に対応するUSB Type-C to Type-Cケーブル。ナイロン編みで断線防止仕様、幅広いデバイスと互換性がある。",
     "productUsage": [
-      "MacBook ProやWindowsノートPCの急速充電 (最大100W)",
-      "iPhone 15/16、Galaxy、Pixelなどのスマートフォンの急速充電",
-      "タブレット (iPad Pro/Air) やモバイルバッテリーへの給電",
-      "USB 2.0でのデータ転送 (スマホとPC間の写真転送など)"
+      "ノートPC（MacBook Pro等）の高速充電",
+      "スマートフォン（iPhone 15以降、Galaxy等）の充電",
+      "タブレット（iPad等）の充電",
+      "最大480Mbpsでのデータ転送"
     ],
     "positivePoints": [
-      "100Wの高出力対応により、ハイスペックなノートPCもフルスピードで充電可能",
-      "ナイロン編組と強化されたコネクタにより、断線に強く耐久性が高い",
-      "Apple純正ケーブルや大手競合製品と比較して安価で、コストパフォーマンスに優れる",
-      "E-markerチップ搭載で安定した電力供給が可能"
+      "最大100W対応でノートPCの充電にも十分な出力",
+      "ナイロンファイバー被覆で10000回以上の折り曲げ試験に合格した高耐久設計",
+      "E-markerスマートチップ搭載で過電流や過熱からデバイスを保護",
+      "24ヶ月間の長期保証付き"
     ],
     "negativePoints": [
-      "ケーブルが太く硬めなため、取り回しにくく、狭いデスクやバッグ内で嵩張りやすい",
-      "USB 2.0規格のためデータ転送速度が480Mbpsと遅く、大容量データの移動には不向き",
-      "映像出力 (Alt Mode) に対応していないため、モニター接続には使用できない"
+      "映像出力（オルタネートモード）には非対応",
+      "データ転送速度はUSB 2.0準拠（480Mbps）であり、大容量ファイルの転送には不向き"
     ],
     "useCases": [
-      "自宅やオフィスのデスクでのノートPC用常設充電ケーブルとして",
-      "断線を防ぎたい旅行や出張時の持ち運び用ケーブルとして",
-      "純正ケーブルが壊れた際の安価で信頼できる代替品として"
+      "自宅やオフィスでのノートパソコンの充電用メインケーブルとして",
+      "持ち運び用の頑丈なケーブルとしてカバンに入れておく",
+      "PD対応急速充電器と組み合わせてスマートフォンの充電時間を短縮"
     ],
-    "userStories": [
-      {
-        "userType": "30代エンジニア",
-        "scenario": "MacBook ProとiPhone 15 Proの充電",
-        "experience": "純正ケーブルが黄ばんで断線しかけたので買い替え。純正より太くて硬いが、逆に頑丈そうで安心感がある。100W充電も問題なく認識され、MacBook Proの充電速度も純正と変わらない。iPhone 15 Proも急速充電できるので、これ1本で済むのが良い。",
-        "sentiment": "positive"
-      },
-      {
-        "userType": "大学生",
-        "scenario": "カフェでの学習用",
-        "experience": "持ち運び用に購入したが、ケーブルが硬くてまとめるのが少し面倒。マジックテープのバンドがついているのは便利。充電は速いが、硬いので狭いカフェのテーブルだとケーブルの反発でスマホが動いてしまうことがある。",
-        "sentiment": "mixed"
-      },
-      {
-        "userType": "40代会社員",
-        "scenario": "出張時の予備ケーブル",
-        "experience": "安かったので出張用バッグに入れっぱなしにする用に購入。ラフに扱っても断線する気配がないのが良い。データ転送は遅いので、あくまで充電専用と割り切って使っている。",
-        "sentiment": "positive"
-      }
-    ],
-    "userImpression": "「硬いが丈夫で安い」というのが一般的な評価。純正品の脆弱さに不満を持つユーザーから、その耐久性とコストパフォーマンスが高く評価されている。一方で、取り回しの悪さ（硬さ）は多くのユーザーが挙げる欠点であり、柔軟性を求める層はシリコンケーブルに流れる傾向がある。充電性能に関する不満は少なく、100W対応の信頼性は高い。",
+    "userStories": [],
+    "userImpression": "100Wという高出力に対応しながらも手頃な価格で、ナイロン編みによる耐久性の高さが評価されている。一方で、映像出力非対応や転送速度がUSB 2.0水準であることは、購入前に確認が必要な点として認識されている。充電専用として割り切って使うユーザーにはコストパフォーマンスが高く非常に好評である。",
     "sources": [
       {
-        "name": "Amazon商品ページ (PA-API)",
-        "url": "https://www.amazon.co.jp/dp/B07V529BXP",
-        "credibility": "公式情報"
+        "id": "src-1",
+        "name": "最近買ってよかったもの→窒化ガリウムPD対応充電器。パソコンもスマホも同時に急速充電できる - 斗比主閲子の姑日記",
+        "url": "https://topisyu.hatenablog.com/entry/2022/04/24/073000",
+        "tier": "medium",
+        "evidenceType": "secondary",
+        "publishedAt": "2022-04-24",
+        "author": "斗比主閲子",
+        "conflictOfInterest": "none",
+        "notes": "PD対応充電器との組み合わせで活用されている言及。"
       },
       {
-        "name": "各社USBケーブル比較レビュー記事 (Web一般)",
-        "url": null,
-        "credibility": "一般的評価"
+        "id": "src-2",
+        "name": "MacBook Neo アクセサリ おすすめ5選｜通勤・通学用を設計者が厳選【2026年】",
+        "url": "https://www.tetsu7017.com/blog/macbook-neo-accessories/",
+        "tier": "medium",
+        "evidenceType": "secondary",
+        "publishedAt": "2026-01-01",
+        "author": "tetsu7017",
+        "conflictOfInterest": "possible",
+        "notes": "MacBookのおすすめアクセサリとしてUGREEN製品が挙げられている。"
+      },
+      {
+        "id": "src-amazon",
+        "name": "Amazon.co.jp 製品ページ UGREEN USB Type CケーブルPD対応100W/5A",
+        "url": "https://www.amazon.co.jp/dp/B07V529BXP",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-05-03",
+        "author": "UGREEN",
+        "conflictOfInterest": "disclosed",
+        "notes": "製品の基本仕様、最大100W対応、耐久テスト結果、映像出力非対応の記載を確認"
       }
     ],
-    "lastInvestigated": "2026-02-03",
+    "claims": [
+      {
+        "claim": "最大100W（20V×5A）のPD技術に対応し、超高速充電が可能",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-amazon"
+        ],
+        "crossChecked": false,
+        "notes": "商品仕様より"
+      },
+      {
+        "claim": "ナイロンファイバー被覆構造で10000回以上の折り曲げ試験に合格",
+        "category": "durability",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-amazon"
+        ],
+        "crossChecked": false,
+        "notes": "商品仕様より"
+      },
+      {
+        "claim": "ビデオ出力をサポートしていない",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-amazon"
+        ],
+        "crossChecked": false,
+        "notes": "商品仕様（注意書き）より"
+      }
+    ],
+    "lastInvestigated": "2026-05-03",
     "competitiveAnalysis": [
       {
-        "name": "Anker USB-C & USB-C ケーブル (240W, 高耐久ナイロン)",
-        "asin": "B0CD9NT4ZQ",
-        "priceComparison": "UGREENより高価。最新規格の240Wに対応しており、将来性が高い。",
+        "name": "Luxxio USB-C to USB-C 2m (B0FLY38Y38)",
+        "asin": "B0FLY38Y38",
+        "priceComparison": "対象商品より安価である。同じ100W対応、ナイロン編みでスペックは同等だが、UGREENのような有名ブランドではないため信頼性に差がある可能性がある。",
         "featureComparison": [
-          "最大240W対応で、最新のゲーミングPCなどもカバー",
-          "同じくナイロン編組で高耐久",
-          "Ankerブランドの信頼性と最大30ヶ月保証"
+          "共通点：100W対応、2m、ナイロン編み、E-marker搭載、データ転送480Mbps",
+          "相違点：ブランド力、保証期間の有無"
         ],
         "differentiators": [
-          "240Wという圧倒的な供給電力スペック",
-          "より洗練されたコネクタデザイン"
+          "UGREEN USB Type CケーブルPD対応100Wの利点：ブランドの信頼性と24ヶ月の長期保証がある点",
+          "Luxxio USB-C to USB-C 2mの利点：価格がより安価に抑えられている点"
         ]
       },
       {
-        "name": "Anker PowerLine III Flow",
-        "asin": "B093L6298K",
-        "priceComparison": "UGREENの約1.5〜2倍の価格。",
+        "name": "sccvee USB Type C充電ケーブル 2個パック (B0F5B6L7NH)",
+        "asin": "B0F5B6L7NH",
+        "priceComparison": "対象商品より安価でありながら2本セット。価格競争力は非常に高いが、ブランドの知名度は低い。",
         "featureComparison": [
-          "シリコン素材で絡まない、非常に柔らかい",
-          "100W対応で充電性能は同等",
-          "耐久性は25,000回折り曲げとこちらも高い"
+          "共通点：100W対応、2m、ナイロン編み、データ転送",
+          "相違点：本数（こちらは2本セット）、カラー（シルバーブラック）"
         ],
         "differentiators": [
-          "圧倒的な「絡まりにくさ」と「柔らかさ」",
-          "豊富なカラーバリエーション"
+          "UGREEN USB Type CケーブルPD対応100Wの利点：単体での品質の信頼性と長期間の保証",
+          "sccvee USB Type C充電ケーブルの利点：圧倒的なコストパフォーマンス（2本セットで低価格）"
         ]
       },
       {
-        "name": "CIO シリコンケーブル (C to C)",
-        "asin": "B0B2PR2QD4",
-        "priceComparison": "UGREENより高価だがAnkerよりは安価な傾向。",
+        "name": "INIU USB C ケーブル 2本セット 2m (B0987W9SRR)",
+        "asin": "B0987W9SRR",
+        "priceComparison": "2本セットの価格。1本当たりの単価は対象商品より安い。INIUはモバイルアクセサリーで一定の知名度がある。",
         "featureComparison": [
-          "シリコン素材で柔らかい",
-          "コネクタ部分がコンパクト",
-          "100W対応"
+          "共通点：100W対応、2m、ナイロン編み、データ転送",
+          "相違点：本数（こちらは2本セット）"
         ],
         "differentiators": [
-          "L字コネクタ版などバリエーションが豊富",
-          "日本メーカーとしてのサポートへの期待"
+          "UGREEN USB Type CケーブルPD対応100Wの利点：UGREENブランドの信頼性",
+          "INIU USB C ケーブル 2本セットの利点：複数本必要な場合のコストパフォーマンスが良い点"
+        ]
+      },
+      {
+        "name": "UGREEN USB Type Cケーブル 2M-2本セット (B08D6NCQ1Z)",
+        "asin": "B08D6NCQ1Z",
+        "priceComparison": "対象商品の2本セット版。1本当たりの価格はこちらの方が割安になる。",
+        "featureComparison": [
+          "共通点：同じUGREEN製の100W対応、2mケーブル",
+          "相違点：パッケージの本数"
+        ],
+        "differentiators": [
+          "UGREEN USB Type CケーブルPD対応100W（単体）の利点：1本だけ必要な場合に初期費用を抑えられる点",
+          "UGREEN USB Type Cケーブル 2M-2本セットの利点：1本あたりのコストパフォーマンスが優れている点"
+        ]
+      },
+      {
+        "name": "UGREEN USB C ケーブル L字 100W 2M (B083PPG795)",
+        "asin": "B083PPG795",
+        "priceComparison": "対象商品とほぼ同価格帯。",
+        "featureComparison": [
+          "共通点：UGREEN製、100W対応、2m",
+          "相違点：コネクタ形状（こちらはL字型）"
+        ],
+        "differentiators": [
+          "UGREEN USB Type CケーブルPD対応100Wの利点：ストレート型で一般的な用途や狭い隙間に挿す場合に適している点",
+          "UGREEN USB C ケーブル L字の利点：スマホでゲームをする際など、横持ちした時にケーブルが邪魔にならない点"
+        ]
+      },
+      {
+        "name": "GHNTJAP USB C to USB C ケーブル 2M 2本セット (B0G51N67N8)",
+        "asin": "B0G51N67N8",
+        "priceComparison": "2本セットで対象商品よりも安価。コストパフォーマンスは高いが、ノーブランド品に近い。",
+        "featureComparison": [
+          "共通点：100W対応、2m、ナイロン編み、データ転送480Mbps",
+          "相違点：本数、ブランド力"
+        ],
+        "differentiators": [
+          "UGREEN USB Type CケーブルPD対応100Wの利点：品質の安定性と充実したカスタマーサポート（24ヶ月保証）",
+          "GHNTJAP USB C to USB C ケーブルの利点：予備も含めて安価に2本手に入れられる点"
         ]
       }
     ],
     "recommendation": {
       "targetUsers": [
-        "コストを抑えつつ、高性能なノートPCを充電したいユーザー",
-        "ケーブルの断線に悩み、とにかく丈夫なケーブルが欲しいユーザー",
-        "ケーブルの硬さや取り回しよりも、耐久性と価格を重視する実用派"
+        "ノートPC用の100W充電ケーブルを探している人",
+        "耐久性の高い（断線しにくい）ケーブルが欲しい人",
+        "信頼できるブランドの製品を求めている人"
       ],
       "pros": [
-        "100Wの高出力対応で殆どのUSB-C機器を急速充電可能",
-        "非常に安価でありながら品質が安定している（高コスパ）",
-        "ナイロン編組による高い物理的耐久性"
+        "100Wの高出力でMacBookなども急速充電可能",
+        "ナイロン編組で断線に強く、1万回の折り曲げテストをクリア",
+        "E-markerチップ搭載で安全性が高い",
+        "24ヶ月の長期保証付き"
       ],
       "cons": [
-        "ケーブルが硬く、机の上で邪魔になりやすい",
-        "映像出力には対応していない",
-        "データ転送が遅い (USB 2.0)"
+        "映像出力には非対応",
+        "データ転送はUSB 2.0（480Mbps）と遅め"
       ],
-      "score": 88,
-      "scoreRationale": "[基本点: 70]\n[加点: +8] (100W対応と確かな給電能力)\n[加点: +12] (競合他社と比較して圧倒的に安価で手が届きやすい)\n[加点: +3] (ナイロン編組による物理的な頑丈さ)\n[減点: -5] (ケーブルの硬さと取り回しの悪さは明確なストレス要因)\n[合計: 88]"
+      "score": 85,
+      "scoreRationale": "[基本点: 70]\n[加点: +5] (100Wの超急速充電対応による利便性)\n[加点: +5] (ナイロン編みによる高い耐久性と1万回折り曲げ試験合格の実績)\n[加点: +5] (UGREENという信頼性あるブランドと24ヶ月保証の安心感)\n[加点: +5] (E-markerチップ搭載による過電流等の保護機能の充実)\n[減点: -2] (映像出力非対応)\n[減点: -3] (USB 2.0規格によるデータ転送の遅さ)\n[合計: 85]"
     },
     "technicalSpecs": {
-      "connectorType": "USB-C to USB-C",
-      "length": "2m",
-      "material": "ナイロン編組",
-      "maxPower": "100W (20V/5A)",
-      "dataTransferSpeed": "480Mbps (USB 2.0)",
-      "videoOutput": false,
-      "durability": "10000回以上の折り曲げテスト",
-      "features": [
-        "E-markerチップ搭載",
-        "過電流保護",
-        "過熱保護"
-      ],
-      "usbStandard": "USB 2.0"
+      "dimensions": {
+        "height": "不明",
+        "width": "不明",
+        "depth": "不明"
+      },
+      "weight": "不明",
+      "capacity": "2m",
+      "material": "アルミニウム合金シェル、ナイロンファイバー被覆",
+      "origin": "不明",
+      "connectorType": "USB Type-C to Type-C",
+      "maximumPower": "100W (20V/5A)",
+      "dataTransferRate": "最大480Mbps (USB 2.0)",
+      "other": [
+        "映像出力: 非対応",
+        "搭載チップ: E-marker内蔵",
+        "保証期間: 24ヶ月",
+        "耐久性: 10000回以上の折り曲げ試験合格"
+      ]
     }
   }
 }
