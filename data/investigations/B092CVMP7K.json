@@ -1,0 +1,224 @@
+{
+  "analysis": {
+    "productName": "FLEXISPOT スタンディングデスク EF1 120x60cm",
+    "parentAsin": "B0GYRYZYS9",
+    "productDescription": "電動で高さ調節が可能なスタンディングデスク。天板サイズ120x60cmで、長時間のデスクワークや学習に適しています。",
+    "productUsage": [
+      "テレワーク時のパソコンデスクとして",
+      "長時間の座り作業と立ち作業の切り替え",
+      "体格に合わせた学習机やゲーム用デスクとして"
+    ],
+    "positivePoints": [
+      "高さのメモリー機能により、ボタン一つでお気に入りの高さに調整できる",
+      "長時間の座りすぎを防ぐためのアラーム機能が搭載されている",
+      "重みがあり、昇降時やタイピング時でも安定感が高い",
+      "1人でも組み立てが可能（ただし時間はかかる）"
+    ],
+    "negativePoints": [
+      "本体が非常に重く、組み立てや移動に苦労する場合がある",
+      "天板に自分でネジ穴を開ける必要がある部分があり、電動ドライバーなどの工具が必須",
+      "価格が他社製の類似スペック（幅120cmの電動昇降デスク）と比べて割高"
+    ],
+    "useCases": [
+      "リモートワークで座りっぱなしになりがちな人が、立ち作業を交えるシーン",
+      "身長や使う椅子に合わせて、自分にとって最適な高さの机に調整したいシーン"
+    ],
+    "userStories": [
+      {
+        "userType": "テレワーカー",
+        "scenario": "在宅勤務用に購入して組み立て",
+        "experience": "重量があるため組み立ては少し大変で、天板へのネジ穴開けに電動工具が必要でしたが、1人で1時間ほどで完成できました。安定感があり、昇降もスムーズで満足しています。",
+        "supportingSourceIds": [
+          "src-amazon-review-1",
+          "src-amazon-review-2"
+        ],
+        "sentiment": "positive"
+      },
+      {
+        "userType": "デスクワーカー",
+        "scenario": "長時間の作業で姿勢を変えたい",
+        "experience": "座りっぱなしでの作業から立ち作業へ簡単に切り替えられるようになり、疲れたときだけ座るようになりました。ボタン一つで記憶した高さに戻るのが便利です。",
+        "supportingSourceIds": [
+          "src-amazon-review-3"
+        ],
+        "sentiment": "positive"
+      }
+    ],
+    "userImpression": "組み立て時の重量感や電動工具が必要な点で苦労する声があるものの、完成後はしっかりとした安定感とスムーズな昇降機能が高く評価されており、長時間の作業環境を改善できると満足度は高いです。",
+    "sources": [
+      {
+        "id": "src-amazon-review-1",
+        "name": "Amazon カスタマーレビュー",
+        "url": "https://www.amazon.co.jp/dp/B092CVMP7K",
+        "tier": "medium",
+        "evidenceType": "primary",
+        "publishedAt": "2026-05-02",
+        "author": "Amazon カスタマー",
+        "conflictOfInterest": "none",
+        "notes": "組み立てには電動ドライバーが必要で1時間ほどかかったが満足しているとの意見"
+      },
+      {
+        "id": "src-amazon-review-2",
+        "name": "Amazon カスタマーレビュー",
+        "url": "https://www.amazon.co.jp/dp/B092CVMP7K",
+        "tier": "medium",
+        "evidenceType": "primary",
+        "publishedAt": "2026-05-02",
+        "author": "Amazon カスタマー",
+        "conflictOfInterest": "none",
+        "notes": "重くて組み立てに苦労した、一部ドリルで穴開けが必要だったという指摘"
+      },
+      {
+        "id": "src-amazon-review-3",
+        "name": "Amazon カスタマーレビュー",
+        "url": "https://www.amazon.co.jp/dp/B092CVMP7K",
+        "tier": "medium",
+        "evidenceType": "primary",
+        "publishedAt": "2026-05-02",
+        "author": "Amazon カスタマー",
+        "conflictOfInterest": "none",
+        "notes": "立つ姿勢に変わり、疲れたときだけ座るようになったとの声"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "重量があり安定感に優れている",
+        "category": "durability",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-amazon-review-2",
+          "src-amazon-review-3"
+        ],
+        "crossChecked": true,
+        "notes": "複数のレビューで「重いだけありしっかりしている」「安定している」と言及されている"
+      },
+      {
+        "claim": "組み立てに電動ドライバー（工具）が必要",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-amazon-review-1",
+          "src-amazon-review-2"
+        ],
+        "crossChecked": true,
+        "notes": "商品仕様やレビューで「天板に穴を開ける必要があるため電動工具必須」と確認できる"
+      }
+    ],
+    "lastInvestigated": "2026-05-02",
+    "competitiveAnalysis": [
+      {
+        "name": "Alebert 昇降デスク 電動 昇降式デスク 幅120cm",
+        "asin": "B0CP5K3DWH",
+        "priceComparison": "対象商品の約半額であり、非常に安価に導入できる。ただしFLEXISPOTのようなブランドの実績や安定感では劣る可能性がある。",
+        "featureComparison": [
+          "共通点：幅120cmの天板、電動昇降、高さメモリー機能",
+          "相違点：Alebertは価格が安くキャスターが付属するが、FLEXISPOTはブランドの実績と安定感がある"
+        ],
+        "differentiators": [
+          "FLEXISPOT スタンディングデスク EF1 120x60cmの利点：ブランドの信頼性と、重量による高い安定性がある点",
+          "Alebert 昇降デスク 電動 昇降式デスク 幅120cmの利点：価格が非常に安く、初期コストを抑えられる点"
+        ]
+      },
+      {
+        "name": "FEZIBO 昇降デスク 電動 幅120cm",
+        "asin": "B0F99CQZM2",
+        "priceComparison": "対象商品の約半額。安価な選択肢として魅力的だが、長期的な耐久性は要確認。",
+        "featureComparison": [
+          "共通点：幅120cmの天板、電動昇降、高さメモリー機能",
+          "相違点：FEZIBOは価格が安く衝突検知機能などを備えるが、FLEXISPOTは定番ブランドの安心感がある"
+        ],
+        "differentiators": [
+          "FLEXISPOT スタンディングデスク EF1 120x60cmの利点：定番ブランドの安心感としっかりした作り",
+          "FEZIBO 昇降デスク 電動 幅120cmの利点：コストパフォーマンスが高く、衝突検知機能などを備えている点"
+        ]
+      },
+      {
+        "name": "Acrolix 電動昇降デスク 幅120cm",
+        "asin": "B0FD3LDYJR",
+        "priceComparison": "対象商品より大幅に安い。価格重視の場合の選択肢となる。",
+        "featureComparison": [
+          "共通点：幅120cmの電動昇降、高さメモリー機能",
+          "相違点：Acrolixはデスク下隠し収納など独自の工夫があるが、FLEXISPOTは実績が豊富"
+        ],
+        "differentiators": [
+          "FLEXISPOT スタンディングデスク EF1 120x60cmの利点：多くのユーザーに支持されているブランドの信頼性",
+          "Acrolix 電動昇降デスク 幅120cmの利点：圧倒的な安さと収納等の付加機能"
+        ]
+      },
+      {
+        "name": "ErGear 電動 オフィスワークテーブル 昇降式デスク 幅120cm",
+        "asin": "B0DYDRQB7N",
+        "priceComparison": "対象商品より安い。中価格帯の選択肢。",
+        "featureComparison": [
+          "共通点：幅120cm、電動昇降、メモリー機能",
+          "相違点：ErGearは耐荷重80kgを謳うが、FLEXISPOTの公称耐荷重は70kg"
+        ],
+        "differentiators": [
+          "FLEXISPOT スタンディングデスク EF1 120x60cmの利点：ブランドの知名度と実績に基づく安心感",
+          "ErGear 電動 オフィスワークテーブル 昇降式デスク 幅120cmの利点：少し高い耐荷重と手頃な価格設定"
+        ]
+      },
+      {
+        "name": "Skyvance 電動 昇降デスク 120×60",
+        "asin": "B0FV6THV3R",
+        "priceComparison": "対象商品よりやや安い。",
+        "featureComparison": [
+          "共通点：幅120cm、奥行60cmの天板、電動昇降機能",
+          "相違点：Skyvanceは昇降範囲が65cm～と低く設定できるが、FLEXISPOTは69.5cm～となっている"
+        ],
+        "differentiators": [
+          "FLEXISPOT スタンディングデスク EF1 120x60cmの利点：定番ブランドとしての実績と安定感",
+          "Skyvance 電動 昇降デスク 120×60の利点：最低高さがより低く（65cm）、小柄な人でも使いやすい点"
+        ]
+      },
+      {
+        "name": "YIHAYO 昇降デスク 幅120cm",
+        "asin": "B0D12SP4L3",
+        "priceComparison": "対象商品より大幅に安く半額以下。",
+        "featureComparison": [
+          "共通点：幅120cm、奥行60cm、電動昇降",
+          "相違点：YIHAYOは安価だが、FLEXISPOTはアラーム機能など独自の健康管理機能がある"
+        ],
+        "differentiators": [
+          "FLEXISPOT スタンディングデスク EF1 120x60cmの利点：長時間作業をサポートするアラーム機能や安定性の高さ",
+          "YIHAYO 昇降デスク 幅120cmの利点：圧倒的なコストパフォーマンス"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "リモートワーク環境を快適にしたい人",
+        "座りすぎによる体への負担を軽減したい人",
+        "組み立てに少し手間がかかっても、安定感のあるデスクを求める人"
+      ],
+      "pros": [
+        "ボタンひとつで好みの高さにスムーズに昇降できる",
+        "重量がありタイピング時などでもぐらつきにくい安定感",
+        "座りすぎ防止のアラーム機能搭載"
+      ],
+      "cons": [
+        "重量があるため1人での組み立てや移動が大変",
+        "天板の取り付けに電動ドライバーなどの工具が必要",
+        "競合の類似製品と比較すると価格が高め"
+      ],
+      "score": 75,
+      "scoreRationale": "[基本点: 70]\n[加点: +5] (メモリー機能とアラーム機能により実用性が高い)\n[加点: +3] (重量による安定感)\n[加点: +2] (ブランドの信頼性)\n[減点: -3] (競合製品と比べて価格が高い)\n[減点: -2] (組み立てに電動工具が必須な点で手軽さに欠ける)\n[合計: 75]"
+    },
+    "technicalSpecs": {
+      "dimensions": {
+        "height": "695～1120mm (脚部のみ)",
+        "width": "1200mm",
+        "depth": "600mm"
+      },
+      "weight": "26.5kg",
+      "capacity": "耐荷重: 70kg",
+      "material": "フレーム(白)+天板(White wood)",
+      "origin": "不明",
+      "other": [
+        "昇降範囲: 69.5～112cm (天板厚み含まず)",
+        "メモリー機能搭載",
+        "アラーム機能搭載"
+      ]
+    }
+  }
+}
