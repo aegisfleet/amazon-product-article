@@ -447,13 +447,10 @@ function tryImmediateMergeFallback(options: CLIOptions, prTitle: string): void {
   logger.info('Falling back to immediate merge...');
 
   try {
-    runGhCommand(
-      ['pr', 'merge', options.prNumber.toString(), '--squash', '--delete-branch', '--subject', prTitle],
-      {
-        stdio: 'inherit',
-        env: { ...process.env, GH_TOKEN: options.token },
-      },
-    );
+    runGhCommand(['pr', 'merge', options.prNumber.toString(), '--squash', '--delete-branch', '--subject', prTitle], {
+      stdio: 'inherit',
+      env: { ...process.env, GH_TOKEN: options.token },
+    });
     logger.info(`PR #${options.prNumber} merged immediately (fallback)`);
   } catch (error) {
     logger.error('Fallback immediate merge failed:', error);
@@ -493,7 +490,7 @@ function attemptMergeIteration(options: CLIOptions, prTitle: string): boolean {
 /**
  * 自動マージの設定を試行する（リトライとフォールバック含む）
  */
-async function enableAutoMergeWithRetry(octokit: Octokit, options: CLIOptions, prTitle: string): Promise<void> {
+async function enableAutoMergeWithRetry(_octokit: Octokit, options: CLIOptions, prTitle: string): Promise<void> {
   logger.info('Enabling auto-merge for the PR...');
 
   const maxRetries = 10;
@@ -521,7 +518,6 @@ async function enableAutoMergeWithRetry(octokit: Octokit, options: CLIOptions, p
 }
 
 async function main(): Promise<void> {
-
   logger.info('Starting PR merge CLI...');
 
   try {
@@ -553,7 +549,9 @@ async function main(): Promise<void> {
     logger.info(`Merge decision: ${decision.shouldMerge ? 'APPROVE' : 'REJECT'}`);
     if (!decision.shouldMerge) {
       logger.warn(`PR validation failed: ${decision.reason}`);
-      decision.validationResults.forEach((r) => logger.info(`  ${r.check}: ${r.passed ? 'OK' : 'FAIL'} - ${r.message}`));
+      for (const r of decision.validationResults) {
+        logger.info(`  ${r.check}: ${r.passed ? 'OK' : 'FAIL'} - ${r.message}`);
+      }
       process.exit(0);
     }
 
