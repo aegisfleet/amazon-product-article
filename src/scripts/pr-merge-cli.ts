@@ -170,7 +170,11 @@ async function validateAndRepairSingleJson(
       }
       throw parseError; // 修復不能な場合はそのままエラースロー
     }
-  } catch (error) {
+  } catch (error: any) {
+    if (error.status === 404) {
+      logger.info(`  File ${file} not found (likely deleted in PR). Skipping validation.`);
+      return { passed: true };
+    }
     const errorMessage = error instanceof Error ? error.message : String(error);
     return {
       passed: false,
@@ -262,7 +266,11 @@ async function validateAndRepairSingleMarkdown(
       passed: false,
       message: `Invalid date format in ${file} that could not be auto-repaired.`,
     };
-  } catch (error) {
+  } catch (error: any) {
+    if (error.status === 404) {
+      logger.info(`  File ${file} not found (likely deleted in PR). Skipping validation.`);
+      return { passed: true };
+    }
     const errorMessage = error instanceof Error ? error.message : String(error);
     return {
       passed: false,
