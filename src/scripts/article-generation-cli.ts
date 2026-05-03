@@ -255,12 +255,7 @@ function initializeCreatorsAPI(
 
   if (useApi) {
     try {
-      client.authenticate(
-        options.applicationId,
-        options.credentialId,
-        options.credentialSecret,
-        options.partnerTag,
-      );
+      client.authenticate(options.applicationId, options.credentialId, options.credentialSecret, options.partnerTag);
       logger.info('Creators API client authenticated');
     } catch (error) {
       logger.error('Failed to authenticate Creators API client:', error);
@@ -457,7 +452,10 @@ async function processArticles(
             .map((c) => c.asin!);
 
           if (competitorAsins.length > 0) {
-            const cachedCompetitors = cache.getMultiple(competitorAsins, { ignoreExpiration: true, allowInvalid: true });
+            const cachedCompetitors = cache.getMultiple(competitorAsins, {
+              ignoreExpiration: true,
+              allowInvalid: true,
+            });
             for (const [asin, detail] of cachedCompetitors.entries()) {
               competitorDetails.set(asin, detail);
             }
@@ -570,10 +568,11 @@ export async function main(): Promise<void> {
     logger.info(`Loaded ${investigations.length} investigation results`);
 
     const publisher = initializePublisher(options);
-    const { client: creatorsClient, cache: creatorsCache, useApi: useCreatorsApi } = initializeCreatorsAPI(
-      options,
-      skipCreatorsApi,
-    );
+    const {
+      client: creatorsClient,
+      cache: creatorsCache,
+      useApi: useCreatorsApi,
+    } = initializeCreatorsAPI(options, skipCreatorsApi);
 
     if (useCreatorsApi) {
       await performBatchFetching(investigations, creatorsClient, creatorsCache);
