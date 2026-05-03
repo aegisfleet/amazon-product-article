@@ -38,9 +38,27 @@ export class ArticleGenerator {
   ];
 
   private static readonly REVIEW_HEADINGS = [
-    { section: '📊 ユーザーレビュー', positive: '👍 ユーザーが評価している点', negative: '👎 ユーザーが気になると感じている点', useCases: '💡 実際の使用シーン', voices: '🗣️ 購入者の声' },
-    { section: '💬 レビュー分析', positive: '✅ 高評価のポイント', negative: '⚠️ 注意すべきポイント', useCases: '🎯 実際に使われているシーン', voices: '📝 ユーザーの感想' },
-    { section: '⭐ ユーザー評価まとめ', positive: '👍 評判の良い点', negative: '👎 改善を望む声', useCases: '💡 利用者の活用シーン', voices: '🗣️ 利用者の体験談' },
+    {
+      section: '📊 ユーザーレビュー',
+      positive: '👍 ユーザーが評価している点',
+      negative: '👎 ユーザーが気になると感じている点',
+      useCases: '💡 実際の使用シーン',
+      voices: '🗣️ 購入者の声',
+    },
+    {
+      section: '💬 レビュー分析',
+      positive: '✅ 高評価のポイント',
+      negative: '⚠️ 注意すべきポイント',
+      useCases: '🎯 実際に使われているシーン',
+      voices: '📝 ユーザーの感想',
+    },
+    {
+      section: '⭐ ユーザー評価まとめ',
+      positive: '👍 評判の良い点',
+      negative: '👎 改善を望む声',
+      useCases: '💡 利用者の活用シーン',
+      voices: '🗣️ 利用者の体験談',
+    },
   ];
 
   private static readonly RECOMMENDATION_MESSAGES_HIGH = [
@@ -1356,20 +1374,14 @@ ${recommendationMessage}
     if (plus && plus.length > 0) {
       lines.push('    plus:');
       for (const item of plus) {
-        lines.push(
-          `      - points: ${item.points}`,
-          `        desc: "${this.escapeForFrontMatter(item.desc)}"`
-        );
+        lines.push(`      - points: ${item.points}`, `        desc: "${this.escapeForFrontMatter(item.desc)}"`);
       }
     }
 
     if (minus && minus.length > 0) {
       lines.push('    minus:');
       for (const item of minus) {
-        lines.push(
-          `      - points: ${item.points}`,
-          `        desc: "${this.escapeForFrontMatter(item.desc)}"`
-        );
+        lines.push(`      - points: ${item.points}`, `        desc: "${this.escapeForFrontMatter(item.desc)}"`);
       }
     }
   }
