@@ -1,0 +1,181 @@
+{
+  "analysis": {
+    "productName": "Anker Nano ドッキングステーション (13-in-1, 着脱式USB-C ハブ)",
+    "parentAsin": "B0FLD8KKN7",
+    "productDescription": "13ポート搭載のドッキングステーションと着脱式の6ポートUSB-Cハブが一体になったAnkerの製品です。自宅ではドッキングステーションとして、外出先ではUSB-Cハブとして持ち運べる利便性が特徴です。",
+    "productUsage": [
+      "ノートPCのポート拡張",
+      "外部ディスプレイへの複数画面出力",
+      "外出先へのUSB-Cハブの持ち運び"
+    ],
+    "positivePoints": [
+      "着脱式USB-Cハブ搭載で、自宅と外出先で使い分け可能",
+      "最大3画面の同時出力に対応（ドッキングステーション使用時）",
+      "最大100WでノートPCへのパススルー充電が可能",
+      "最大10Gbpsの高速データ転送対応"
+    ],
+    "negativePoints": [
+      "USBハブとして使用時は1画面への出力のみ",
+      "本体サイズが大きく、設置スペースが必要"
+    ],
+    "useCases": [
+      "テレワークと出社が混在するハイブリッドワーク",
+      "複数のモニターを使用した効率的な作業環境の構築",
+      "クリエイターなどの大容量データ転送が必要な作業"
+    ],
+    "userStories": [],
+    "userImpression": "ドッキングステーションとポータブルハブを兼ね備えた画期的な製品であり、特にハイブリッドワーカーにとって、自宅の拡張性と外出時の携帯性を両立できる点が魅力的です。",
+    "sources": [
+      {
+        "id": "src-amazon",
+        "name": "Amazon商品ページ",
+        "url": "https://www.amazon.co.jp/dp/B0FLD8KKN7",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-05-04",
+        "author": "Anker",
+        "conflictOfInterest": "none",
+        "notes": "商品の主な機能とスペック、価格を確認"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "着脱式USB-Cハブ搭載で、自宅と外出先で使い分け可能",
+        "category": "comparativeAdvantage",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-amazon"
+        ],
+        "crossChecked": false,
+        "notes": "商品仕様から確認"
+      },
+      {
+        "claim": "最大3画面の同時出力に対応",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-amazon"
+        ],
+        "crossChecked": false,
+        "notes": "商品仕様から確認"
+      }
+    ],
+    "lastInvestigated": "2026-05-04",
+    "competitiveAnalysis": [
+      {
+        "name": "UGREEN Revodok Pro 314 USB-C ドッキングステーション 14-in-1",
+        "asin": "B0DYTVVLH4",
+        "priceComparison": "対象商品よりやや高価だが、14ポートとより多くのポートを備えている",
+        "featureComparison": [
+          "共通点：マルチディスプレイ対応、100W PD充電、10Gbpsデータ転送",
+          "相違点：対象商品は着脱式ハブを搭載しているが、競合製品は一体型でポート数が多い(14ポート)"
+        ],
+        "differentiators": [
+          "Anker Nano ドッキングステーションの利点：着脱式ハブにより、外出時にもハブを持ち運べる携帯性",
+          "UGREEN Revodok Pro 314の利点：より多くのポート数が必要で、据え置きでの使用がメインのケース"
+        ]
+      },
+      {
+        "name": "Anker Prime ドッキングステーション (14-in-1, Triple Display)",
+        "asin": "B0F8VNSTYC",
+        "priceComparison": "対象商品の2倍以上の価格だが、最大8K出力やGaN搭載などハイスペック",
+        "featureComparison": [
+          "共通点：3画面出力対応、Anker製",
+          "相違点：対象商品は着脱式だが、競合製品は据え置き型でGaN搭載、ディスプレイ付き、8K対応など高性能"
+        ],
+        "differentiators": [
+          "Anker Nano ドッキングステーションの利点：価格が抑えられており、携帯性にも優れる",
+          "Anker Prime ドッキングステーションの利点：8K出力や高度な冷却システムなど、よりプロフェッショナルな環境が求められるケース"
+        ]
+      },
+      {
+        "name": "UGREEN 7 in 1 Revodok Pro USB C ドッキングステーション",
+        "asin": "B0D1XSKZRJ",
+        "priceComparison": "対象商品の1/3程度の価格で、手軽に導入できる",
+        "featureComparison": [
+          "共通点：100W PD充電、10Gbpsデータ転送対応",
+          "相違点：対象商品は13ポート(着脱式)で3画面出力対応、競合製品は7ポートで2画面出力まで"
+        ],
+        "differentiators": [
+          "Anker Nano ドッキングステーションの利点：豊富なポート数と最大3画面の出力、着脱式による利便性",
+          "UGREEN 7 in 1 Revodok Proの利点：安価でコンパクトであり、基本的なポート拡張で十分なケース"
+        ]
+      },
+      {
+        "name": "UGREEN ドッキングステーション 14-in-1 3画面出力",
+        "asin": "B0FGHX59G2",
+        "priceComparison": "対象商品よりやや高いが、機能面で充実",
+        "featureComparison": [
+          "共通点：3画面出力、100W PD充電対応",
+          "相違点：対象商品は着脱式ハブだが、競合は一体型で放熱機能付き、DP 4K120Hz対応"
+        ],
+        "differentiators": [
+          "Anker Nano ドッキングステーションの利点：着脱式のハブによる外出時の携帯性",
+          "UGREEN ドッキングステーション 14-in-1の利点：高いリフレッシュレートでの出力や、放熱性能を重視するケース"
+        ]
+      },
+      {
+        "name": "Anker Prime ドッキングステーション (14-in-1, Dual Display)",
+        "asin": "B0D31FK2W6",
+        "priceComparison": "対象商品より高価で、電源内蔵などの機能がある",
+        "featureComparison": [
+          "共通点：Anker製、高速データ転送対応",
+          "相違点：対象商品は着脱式ハブと3画面出力、競合製品はAC-DC電源内蔵で2画面出力"
+        ],
+        "differentiators": [
+          "Anker Nano ドッキングステーションの利点：3画面出力が必要で、ハブを持ち運びたい場合",
+          "Anker Prime ドッキングステーション (14-in-1)の利点：電源装置が内蔵されており、デスク周りをすっきりさせたいケース"
+        ]
+      },
+      {
+        "name": "Baseus 12-in-1 USB-C ドッキングステーション Nomos NU1 Air",
+        "asin": "B0FX9B22NM",
+        "priceComparison": "対象商品より安価で、コスパに優れる",
+        "featureComparison": [
+          "共通点：マルチディスプレイ対応、100W PD充電",
+          "相違点：対象商品は13ポートで着脱式、競合製品は12ポートで据え置き型"
+        ],
+        "differentiators": [
+          "Anker Nano ドッキングステーションの利点：着脱式ハブによる利便性と、ポート数の多さ",
+          "Baseus 12-in-1の利点：価格を抑えつつ、充実したポートを据え置きで使いたいケース"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "自宅と外出先の両方で仕事をするハイブリッドワーカー",
+        "複数のモニターを利用して作業効率を上げたい方",
+        "ポート数が少ないノートPCを使用している方"
+      ],
+      "pros": [
+        "ドッキングステーションとポータブルハブを兼ね備えた1台2役",
+        "最大3画面への出力が可能で作業領域を拡張できる",
+        "最大100Wのパススルー充電と10Gbpsのデータ転送に対応"
+      ],
+      "cons": [
+        "USBハブ単体使用時は1画面出力に制限される",
+        "13ポートフル活用時は配線が煩雑になる可能性がある"
+      ],
+      "score": 85,
+      "scoreRationale": "[基本点: 70]\n[加点: +10] 着脱式USB-Cハブ搭載という革新的な設計による利便性の高さ\n[加点: +5] 最大3画面同時出力など、ドッキングステーションとしての高い性能\n[加点: +5] 機能の豊富さに対して価格が比較的抑えられておりコスパが良い\n[減点: -5] ハブ単体での画面出力制限（1画面のみ）\n[合計: 85]"
+    },
+    "technicalSpecs": {
+      "dimensions": {
+        "height": "950mm",
+        "width": "400mm",
+        "depth": "1400mm"
+      },
+      "weight": "不明",
+      "capacity": "13-in-1",
+      "material": "不明",
+      "origin": "不明",
+      "other": [
+        "最大100W パススルー充電対応 (USB-C)",
+        "最大3画面同時出力対応 (HDMI×2, DisplayPort×1)",
+        "最大10Gbps 高速データ転送対応",
+        "SD / microSDカードスロット搭載",
+        "1Gbps対応イーサネットポート搭載"
+      ]
+    }
+  }
+}
