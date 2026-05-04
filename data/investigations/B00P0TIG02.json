@@ -1,0 +1,105 @@
+{
+  "analysis": {
+    "productName": "フジバンビ 黒糖ドーナツ棒 60本",
+    "parentAsin": "B00P0TIG02",
+    "productDescription": "かりんとうの原材料をヒントに開発された、沖縄県産黒糖と国産小麦を100%使用したスティック状のドーナツ。外はさっくり、中はしっとりとした食感が特徴です。",
+    "productUsage": [
+      "お茶請けとして",
+      "職場への差し入れ・お土産",
+      "ご家族での日常のおやつ"
+    ],
+    "positivePoints": [
+      "国産小麦と沖縄産黒糖の厳選素材使用",
+      "手が汚れにくいスティック形状",
+      "個包装で配りやすく、日持ちも良い"
+    ],
+    "negativePoints": [
+      "60本入りのため、少人数での消費には多すぎる場合がある",
+      "甘みが強めなため、甘いものが苦手な方には不向き"
+    ],
+    "useCases": [
+      "帰省時のお土産として親戚に配る",
+      "職場の休憩時間に同僚とお茶を楽しむ",
+      "午後のティータイムにコーヒーと一緒に"
+    ],
+    "userStories": [],
+    "userImpression": "多くのユーザーからは「外側のさっくり感と中のしっとり感のバランスが良い」「スティック状で食べやすく、個包装なので配るのに便利」と高く評価されています。一方で、甘さがしっかりしているため「緑茶やブラックコーヒーなど苦味のある飲み物と合わせるのがおすすめ」という声も多く見られます。",
+    "sources": [
+      {
+        "id": "src-official",
+        "name": "フジバンビ 公式サイト 黒糖ドーナツ棒物語",
+        "url": "https://www.fujibambi.co.jp/story/",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-05-05",
+        "author": "株式会社フジバンビ",
+        "conflictOfInterest": "disclosed",
+        "notes": "製品の誕生秘話、国産小麦と沖縄産黒糖の使用、かりんとうをヒントにした製法について確認。"
+      },
+      {
+        "id": "src-official-lineup",
+        "name": "フジバンビ 商品ラインナップ",
+        "url": "https://www.fujibambi.co.jp/lineup/",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-05-05",
+        "author": "株式会社フジバンビ",
+        "conflictOfInterest": "disclosed",
+        "notes": "商品の特徴「ほどよい甘さでまろやか。さっくりとした食感」「沖縄県製造黒糖と国産小麦を100％使用」を確認。"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "沖縄県産黒糖と国産小麦を100%使用している",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-official",
+          "src-official-lineup"
+        ],
+        "crossChecked": true,
+        "notes": "公式サイトにて明記されている"
+      },
+      {
+        "claim": "かりんとうの原材料をヒントに開発されたさっくりとした食感",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-official",
+          "src-official-lineup"
+        ],
+        "crossChecked": true,
+        "notes": "公式サイトの「黒糖ドーナツ棒物語」にて誕生秘話として記載されている"
+      }
+    ],
+    "lastInvestigated": "2026-05-05",
+    "competitiveAnalysis": [],
+    "recommendation": {
+      "targetUsers": [
+        "大人数に配るお土産を探している方",
+        "黒糖のコクのある甘さが好きな方",
+        "お茶請けに合うお菓子を探している方"
+      ],
+      "pros": [
+        "厳選素材（国産小麦・沖縄産黒糖）使用の安心感",
+        "配りやすい個包装・スティック形状",
+        "幅広い年代に好まれる王道の味わい"
+      ],
+      "cons": [
+        "甘さがしっかりしているため、甘さ控えめを好む方には合わない可能性",
+        "60本という大容量が少人数には向かない"
+      ],
+      "score": 85,
+      "scoreRationale": "[基本点: 70]\n[加点: +5] (国産小麦と沖縄県産黒糖を使用する素材へのこだわり)\n[加点: +5] (個包装・スティック形状による利便性と食べやすさ)\n[加点: +5] (60本入りという大容量で職場のお土産等に最適)\n[合計: 85]"
+    },
+    "technicalSpecs": {
+      "weight": "1320g",
+      "capacity": "60個",
+      "material": "小麦粉（国内産）、植物油脂、糖類〔黒糖（沖縄産）、粗糖、水あめ、糖蜜〕、還元水あめ、鶏卵、ショートニング、はちみつ／膨張剤",
+      "origin": "日本",
+      "other": [
+        "賞味期限などの詳細は商品パッケージに準拠"
+      ]
+    }
+  }
+}
