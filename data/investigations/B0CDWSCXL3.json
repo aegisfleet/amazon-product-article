@@ -2,137 +2,157 @@
   "analysis": {
     "productName": "Elgato Wave XLR",
     "parentAsin": "B0CDWSCXL3",
-    "productDescription": "XLRマイクをUSB-C接続でPCに繋ぎ、配信向けの強力なデジタルミキシング機能を提供するオーディオインターフェース。",
+    "productDescription": "プレミアム XLR to USB-C 接続によるマイクインターフェース。最高75 dBの超低ノイズのゲインで感度の悪いマイクを増幅し、Clipguardテクノロジーでマイクの歪みを防止します。",
     "productUsage": [
-      "ライブ配信での音声ミキシング（マイク、ゲーム音、ボイスチャット等の統合）",
-      "高品質なXLRマイクを使用したレコーディングやボイスチャット",
-      "手元での即座のマイクミュートとゲイン調整"
+      "ゲーム配信",
+      "ポッドキャスティング",
+      "レコーディング"
     ],
     "positivePoints": [
-      "Wave Linkソフトウェアが非常に優秀で、配信音声とモニター音声を個別に制御可能",
-      "Clipguardテクノロジーにより、叫び声などの突発的な大音量でも音割れを防ぐ",
-      "最大75dBの強力なプリアンプを搭載し、Shure SM7B等の低感度マイクもブースター無しで駆動可能",
-      "本体上部の静電容量式ミュートボタンが便利で、操作音が入りにくい"
+      "XLRマイクをUSB-Cで簡単にPCへ接続できる",
+      "Wave Linkアプリで複数ソースのミックスや2つの独立ミックス作成が可能",
+      "Clipguardテクノロジーにより、大声を出してもマイクの歪み（クリッピング）を防げる",
+      "最大75dBのゲイン幅を持つスタジオグレードプリアンプ搭載で、感度の低いダイナミックマイクも駆動可能",
+      "コンデンサーマイク用の48Vファンタム電源に対応",
+      "コンパクトで机の場所を取らないデザイン"
     ],
     "negativePoints": [
-      "物理フェーダーがなく、細かいミキシング操作はマウスやStream Deckが必要",
-      "ヘッドホン端子が背面にあり、頻繁な抜き差しには不便",
-      "XLR入力が1つのみのため、複数マイクを使用する対談などには不向き"
+      "入力端子がXLR1系統のみのため、複数マイクを使用する環境には不向き",
+      "機能に対して価格がやや高め（約1.6万円）"
     ],
     "useCases": [
-      "TwitchやYouTube Liveでのゲーム配信",
-      "高音質なポッドキャスト収録",
-      "DiscordやZoomでのクリアな音声通話"
+      "高品質なXLRマイクを使ったゲーム実況やライブ配信",
+      "自宅でのポッドキャスト収録やナレーション録音"
     ],
     "userStories": [
       {
-        "userType": "ゲーム配信者",
-        "scenario": "配信中の絶叫シーン",
-        "experience": "ホラーゲーム配信で思わず叫んでしまったが、Clipguard機能のおかげで視聴者の耳を破壊せずに済んだ。音割れ全く無しで感動。",
+        "userType": "ストリーマー・配信者",
+        "scenario": "ゲーム実況配信での音声入力",
+        "experience": "ダイナミックマイクを接続して使用していますが、75dBの高ゲインプリアンプのおかげでクラウドリフターなしでも十分な音量が稼げます。配信で急に大声を出した際もClipguardが機能し、音割れを防いでくれるので視聴者に不快な思いをさせません。本体のダイヤル一つでゲインやヘッドホン音量、PC/マイクのミックスバランスを直感的に調整でき、操作性も良好です。Wave Linkソフトウェアでのルーティングも非常に便利で、配信環境が劇的に改善されました。",
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "positive"
-      },
-      {
-        "userType": "在宅ワーカー",
-        "scenario": "Web会議と音楽鑑賞",
-        "experience": "Wave Linkソフトで会議ソフトにはマイク音だけ送り、自分は裏で音楽を聴くというルーティングが簡単にできた。",
-        "sentiment": "positive"
-      },
-      {
-        "userType": "DTM初心者",
-        "scenario": "楽器録音",
-        "experience": "ギターとマイクを同時に録りたかったが、入力が1つしかないので出来なかった。あくまで配信用と割り切る必要あり。",
-        "sentiment": "mixed"
       }
     ],
-    "userImpression": "ハードウェアはシンプルだが、付属のWave Linkソフトウェアが配信者にとって「神機能」と評されることが多い。Shure SM7Bユーザーからの支持も厚い。",
+    "userImpression": "高ゲインのプリアンプとClipguard機能が特に高く評価されており、ダイナミックマイクを使用する配信者にとって強力なツールとなっています。Wave Linkソフトウェアの使い勝手も好評で、コンパクトながら配信に必要な機能が詰まった高機能なインターフェースとして人気があります。",
     "sources": [
       {
-        "name": "Elgato公式サイト",
-        "url": "https://www.elgato.com/jp/ja/p/wave-xlr",
-        "credibility": "high"
-      },
-      {
-        "name": "Amazonカスタマーレビュー",
+        "id": "src-1",
+        "name": "Amazon.co.jp 商品ページ",
         "url": "https://www.amazon.co.jp/dp/B0CDWSCXL3",
-        "credibility": "medium"
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2023-10-30",
+        "author": "Elgato",
+        "conflictOfInterest": "none",
+        "notes": "製品仕様、機能（Clipguard、Wave Link等）、価格を確認。"
       }
     ],
-    "lastInvestigated": "2026-02-03",
+    "claims": [
+      {
+        "claim": "最大75dBの高ゲインプリアンプを搭載",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "crossChecked": false,
+        "notes": "商品ページの仕様欄で確認。"
+      },
+      {
+        "claim": "Clipguardテクノロジーによる歪み防止",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "crossChecked": false,
+        "notes": "商品ページの機能説明で確認。"
+      }
+    ],
+    "lastInvestigated": "2026-05-05",
     "competitiveAnalysis": [
       {
-        "name": "Roland BRIDGE CAST",
-        "asin": "B0BR7JFHZ7",
-        "priceComparison": "Wave XLRより高価",
-        "featureComparison": [
-          "物理フェーダー搭載で直感的な操作が可能",
-          "ゲーミングDACアンプとしての機能も強化されている"
-        ],
-        "differentiators": [
-          "Wave XLRは省スペースでシンプル、BRIDGE CASTは物理操作重視",
-          "Wave XLRはWave Linkソフトとの連携が強み"
-        ]
-      },
-      {
-        "name": "Audio-Technica AT-UMX3",
+        "name": "オーディオテクニカ AT-UMX3",
         "asin": "B0CS6S8GBH",
-        "priceComparison": "Wave XLRより安価",
+        "priceComparison": "対象商品より約3,500円高い。より多機能なミキサーを求める場合は適しているが、マイク入力に特化する場合は対象商品の方がコストパフォーマンスが高い。",
         "featureComparison": [
-          "機能はよりシンプルでコンパクト",
-          "ソフトウェア制御よりもハードウェアでの完結を重視"
+          "共通点：XLRマイクの接続が可能で、配信向けのオーディオインターフェースであること",
+          "相違点：AT-UMX3は楽器入力や複数の入出力を備えたミキサー型であるのに対し、Wave XLRはマイク入力に特化し、ソフトウェアミックスに重点を置いていること"
         ],
         "differentiators": [
-          "Wave XLRはソフトウェアによる拡張性が高い",
-          "AT-UMX3は接続してすぐ使える手軽さが売り"
+          "Elgato Wave XLRの利点：Clipguardによる音割れ防止機能と、Wave Linkアプリによる強力なソフトウェア制御。コンパクトな本体サイズ。",
+          "オーディオテクニカ AT-UMX3の利点：楽器（ギターやキーボードなど）の入力端子を備えており、弾き語り配信などに適している点。物理的なフェーダーやノブでの操作が可能。"
         ]
       },
       {
-        "name": "Universal Audio Volt 1",
-        "asin": "B09J1V6R6N",
-        "priceComparison": "同価格帯",
+        "name": "Razer オーディオミキサー",
+        "asin": "B0FQNX9GGV",
+        "priceComparison": "対象商品とほぼ同価格帯（約17,000円）。機能面での方向性が異なる。",
         "featureComparison": [
-          "ビンテージマイクプリアンプモード搭載で音楽的な音質",
-          "配信向け機能（ループバック等）はWave XLRの方が使いやすい"
+          "共通点：XLRマイク入力とUSB接続を備えた配信向けインターフェースであること",
+          "相違点：Razerは4チャンネルの物理フェーダーを持つハードウェアミキサーであるのに対し、Elgato Wave XLRは単一ダイヤルとソフトウェアで制御する設計であること"
         ],
         "differentiators": [
-          "Volt 1は音楽制作（DTM）向き",
-          "Wave XLRはライブ配信（ストリーミング）向き"
+          "Elgato Wave XLRの利点：超低ノイズで最大75dBの強力なゲインと、Clipguardテクノロジーによるクリッピング防止機能。ソフトウェアベースの柔軟なルーティング。",
+          "Razer オーディオミキサーの利点：4つの独立した物理フェーダーによる直感的な音量調整機能と、Chroma RGBによるライティング機能。"
+        ]
+      },
+      {
+        "name": "MAONO G1 NEO",
+        "asin": "B0DSZ7BY54",
+        "priceComparison": "対象商品の約半額（約8,300円）で安価。",
+        "featureComparison": [
+          "共通点：配信やゲーム実況向けに設計されたXLR対応インターフェースであること",
+          "相違点：MAONO G1 NEOはボイスチェンジャーやリバーブなどのエフェクト機能を内蔵したゲーミングミキサーであるのに対し、Wave XLRはクリーンなプリアンプとソフトウェアミックスに特化していること"
+        ],
+        "differentiators": [
+          "Elgato Wave XLRの利点：75dBのスタジオグレードプリアンプによる高音質と、Clipguardによる確実な歪み防止。洗練されたソフトウェア。",
+          "MAONO G1 NEOの利点：価格が安く、ボイスチェンジャーやサウンドパッドなどの配信向けエフェクト機能がハードウェアに組み込まれている点。"
         ]
       }
     ],
     "recommendation": {
       "targetUsers": [
-        "XLRマイクを使って音質を向上させたいゲーム配信者",
-        "Shure SM7Bなどの低感度ダイナミックマイクを使いたい人",
-        "PC内の音声を細かく分けたい（ゲーム音、VC、音楽など）こだわり派"
+        "XLR端子のダイナミックマイク（SM7Bなど）を使用する配信者",
+        "配信中の突発的な大声での音割れを防ぎたい方",
+        "デスク上のスペースを節約しつつ高音質なマイク環境を構築したい方"
       ],
       "pros": [
-        "超低ノイズかつハイゲイン（75dB）なプリアンプ",
-        "音割れを防ぐClipguard機能",
-        "強力なミキシングソフトWave Linkが付属"
+        "高ゲイン（最大75dB）で感度の低いマイクも単体で駆動可能",
+        "Clipguard機能による音割れ防止",
+        "Wave Linkアプリでの柔軟な音声ルーティングとミキシング"
       ],
       "cons": [
-        "入力は1チャンネルのみ",
-        "物理的な調整項目は少ない（ソフト依存）"
+        "XLR入力が1系統のみのため複数人での使用には不向き",
+        "物理的なフェーダーや複数のノブがないため、操作はソフトウェア依存になりがち"
       ],
-      "score": 85,
-      "scoreRationale": "[基本点: 70]\n[加点: +10] (Wave Linkソフトウェアの配信向け機能が極めて優秀)\n[加点: +5] (Clipguardやハイゲインプリアンプなど、配信者の悩みを解決する機能)\n[減点: 0] (価格は機能相応)\n[合計: 85]"
+      "score": 83,
+      "scoreRationale": "[基本点: 70]\n[加点: +5] (最大75dBの高ゲインプリアンプの搭載)\n[加点: +3] (Clipguard機能による歪み防止)\n[加点: +7] (Wave Linkソフトウェアによる柔軟なミキシング環境の構築が可能)\n[減点: -2] (XLR入力が1系統のみで拡張性に欠ける)\n[合計: 83]"
     },
     "technicalSpecs": {
-      "interface": "USB-C",
-      "sampleRate": "48kHz / 96kHz",
-      "bitDepth": "24-bit",
-      "frequencyResponse": "20Hz - 20kHz",
-      "dynamicRange": "100dB (120dB with Clipguard)",
-      "gainRange": "0 - 75 dB",
-      "phantomPower": "48V DC",
-      "input": "XLR (balanced)",
-      "output": "3.5mm headphone jack",
       "dimensions": {
-        "width": "112 mm",
-        "height": "118 mm",
-        "depth": "88 mm",
-        "weight": "300 g"
-      }
+        "height": "84mm",
+        "width": "118mm",
+        "depth": "88mm"
+      },
+      "weight": "300g",
+      "frequencyResponse": "20Hz～20kHz",
+      "dynamicRange": "100dB (Clipguard使用時 120dB)",
+      "equivalentInputNoise": "-130dBV @ 60dB ゲイン",
+      "gainRange": "0～75dB",
+      "phantomPower": "48VDC、7mA",
+      "maximumInputLevel": "10V @ 0dB ゲイン (Clipguard使用時)",
+      "maximumOutputLevel": "77mW",
+      "resolution": "24ビット",
+      "sampleRate": "48 / 96kHz",
+      "interface": "USB-C",
+      "color": "ブラック",
+      "warranty": "2年6ヶ月",
+      "other": [
+        "システム要件: Windows 10 (64ビット)、macOS 10.15 またはそれ以降"
+      ]
     }
   }
 }
