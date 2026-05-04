@@ -1,0 +1,209 @@
+{
+  "analysis": {
+    "productName": "コラントッテ ネックレス ALT(オルト)",
+    "parentAsin": "B08DNFQZ6W",
+    "productDescription": "トップジョイントが可変式で、気分やシーンに合わせてV型または直線型の2つのデザインを楽しめる磁気ネックレスです。ウォータープルーフ仕様でスポーツ時も安心です。",
+    "productUsage": [
+      "首・肩の血行改善",
+      "筋肉のコリの緩和",
+      "スポーツ時のアクセサリー",
+      "普段使いのアクセサリー"
+    ],
+    "positivePoints": [
+      "トップジョイントの留め方で2種類のデザインが楽しめる",
+      "水に強いウォータープルーフ仕様でお手入れが簡単",
+      "着脱が簡単なマグネット式の留め具を採用",
+      "希土類永久磁石150mTを10個内蔵し、N極S極交互配列で磁力が広範囲に影響"
+    ],
+    "negativePoints": [
+      "重量が約17gあり、人によっては重く感じる可能性がある"
+    ],
+    "useCases": [
+      "デスクワーク中の肩こり対策",
+      "スポーツ時の着用",
+      "外出時のファッションアイテム"
+    ],
+    "userStories": [
+      {
+        "userType": "一般ユーザー",
+        "scenario": "日常的な着用",
+        "experience": "Lサイズなら丁度良い長さだと感じてます。磁気多くとても良いです。",
+        "supportingSourceIds": [
+          "src-amazon-review"
+        ],
+        "sentiment": "positive"
+      }
+    ],
+    "userImpression": "定番商品として安定した人気があり、磁気の効果と2WAYで使えるデザイン、ちょうど良い長さや着け心地などが高く評価されています。",
+    "sources": [
+      {
+        "id": "src-amazon-product",
+        "name": "Amazon商品ページ",
+        "url": "https://www.amazon.co.jp/dp/B08DNFQZ6W",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2020-10-01",
+        "author": "Amazon",
+        "conflictOfInterest": "possible",
+        "notes": "商品価格、基本スペック、Amazonレビュー等を確認"
+      },
+      {
+        "id": "src-colantotte-official",
+        "name": "コラントッテ公式サイト",
+        "url": "https://www.colantotte.jp/product/abara",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2020-10-01",
+        "author": "株式会社コラントッテ",
+        "conflictOfInterest": "possible",
+        "notes": "商品概要、詳細スペック（サイズ・重量・磁石仕様等）を確認"
+      },
+      {
+        "id": "src-amazon-review",
+        "name": "Amazonカスタマーレビュー",
+        "url": "https://www.amazon.co.jp/dp/B08DNFQZ6W",
+        "tier": "medium",
+        "evidenceType": "secondary",
+        "publishedAt": "2024-01-01",
+        "author": "Amazonカスタマー",
+        "conflictOfInterest": "none",
+        "notes": "Lサイズの着け心地と磁気への評価を抽出"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "水に強いウォータープルーフ仕様",
+        "category": "durability",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-amazon-product",
+          "src-colantotte-official"
+        ],
+        "crossChecked": true,
+        "notes": "公式サイトとAmazon双方で確認"
+      },
+      {
+        "claim": "トップジョイントが可変式で2種類のデザインが楽しめる",
+        "category": "comparativeAdvantage",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-amazon-product",
+          "src-colantotte-official"
+        ],
+        "crossChecked": true,
+        "notes": "公式サイトとAmazon双方で確認"
+      }
+    ],
+    "lastInvestigated": "2026-05-04",
+    "competitiveAnalysis": [
+      {
+        "name": "ピップ マグネループMAX",
+        "asin": "B08VSM8J47",
+        "priceComparison": "対象商品よりもかなり安価。手軽に試せる価格帯だが、デザイン性や材質の高級感は劣る。",
+        "featureComparison": [
+          "共通点：磁気の力で血行を改善しコリをほぐす磁気ネックレスである点",
+          "相違点：対象商品が150mTの磁石10個と2WAYデザイン・SUS316Lジョイントを採用しているのに対し、マグネループMAXは全体が55mTの磁性粉配合ループで一部に200mTの磁石を6粒内蔵している点"
+        ],
+        "differentiators": [
+          "コラントッテ ネックレス ALT(オルト)の利点：ファッション性が高く、2通りのデザインを楽しめ、ジョイント部に高級なステンレスを使用している点",
+          "ピップ マグネループMAXの利点：価格が非常に安く、ループ全体から磁力が出る設計で、手軽に肩こりケアを始めたいケース"
+        ]
+      },
+      {
+        "name": "コラントッテ TAO RAFFI",
+        "asin": "B0C1JWDVT4",
+        "priceComparison": "対象商品よりも高価。ループ全体に磁石が配置された上位モデルであるため妥当な価格差。",
+        "featureComparison": [
+          "共通点：同じコラントッテブランドの磁気ネックレスで、SUS316Lのトップジョイントを採用している点",
+          "相違点：対象商品が150mTの磁石10個配置なのに対し、TAO RAFFIは55mTの磁石を10mm間隔でループ全体に配置している点"
+        ],
+        "differentiators": [
+          "コラントッテ ネックレス ALT(オルト)の利点：価格が手頃で、気分に合わせて2種類のデザインに変更できる点",
+          "コラントッテ TAO RAFFIの利点：ループ全体から磁力が働き、より広い範囲に効果が期待できる上位モデルを求めるケース"
+        ]
+      },
+      {
+        "name": "コラントッテ ネックレスLUCE(ルーチェ) α",
+        "asin": "B08XM1HZ4T",
+        "priceComparison": "対象商品よりもかなり高価。磁石を100〜120個使用したハイスペックモデルであるため。",
+        "featureComparison": [
+          "共通点：同じコラントッテブランドの磁気ネックレスである点",
+          "相違点：対象商品がシリコンループに磁石を内蔵しているのに対し、LUCE αは100mTのフェライト永久磁石そのものを100個以上繋ぎ合わせた全周磁石タイプのデザインである点"
+        ],
+        "differentiators": [
+          "コラントッテ ネックレス ALT(オルト)の利点：シリコン製で水に強くスポーツ向きであり、価格も抑えられている点",
+          "コラントッテ ネックレスLUCE(ルーチェ) αの利点：圧倒的な磁石数と、48面体鏡面加工の磁石による高級感ある輝きを求めるケース"
+        ]
+      },
+      {
+        "name": "コラントッテ TAO プラチナ ネックレス AURA",
+        "asin": "B01HTNZB7W",
+        "priceComparison": "対象商品よりも高価。ループ全体からの磁力と、手作業による七宝焼風加工などの高級感があるため。",
+        "featureComparison": [
+          "共通点：同じコラントッテブランドの磁気ネックレスである点",
+          "相違点：対象商品がシリコンループと可変式ジョイントなのに対し、AURAはループ全体に磁石を配置し、トップに鏡面仕上げと七宝焼風の装飾を施している点"
+        ],
+        "differentiators": [
+          "コラントッテ ネックレス ALT(オルト)の利点：軽量でスポーツ時にも使いやすく、コストパフォーマンスに優れている点",
+          "コラントッテ TAO プラチナ ネックレス AURAの利点：高級感のあるデザインと、ループ全体からの磁力を重視するケース"
+        ]
+      },
+      {
+        "name": "コラントッテ TAO ネックレス RAFFI",
+        "asin": "B01DNIXYIU",
+        "priceComparison": "対象商品よりも高価。ループ全体に磁石を配置したTAOシリーズであるため。",
+        "featureComparison": [
+          "共通点：同じコラントッテブランドで、ジョイントにSUS316Lを採用している点",
+          "相違点：対象商品が局所的な磁石配置と2WAYデザインであるのに対し、RAFFIはループ全体からの磁力とシンプルなリング状デザインである点"
+        ],
+        "differentiators": [
+          "コラントッテ ネックレス ALT(オルト)の利点：価格が安く、2通りのデザインを楽しめるスポーティなモデルである点",
+          "コラントッテ TAO ネックレス RAFFIの利点：ループ全体からの磁力と、フォーマルなシーンにも合わせやすいシンプルなデザインを求めるケース"
+        ]
+      },
+      {
+        "name": "コラントッテ SPORTS ネックレス SR140 NEXT",
+        "asin": "B0CWVCJP6C",
+        "priceComparison": "対象商品よりも安価。スポーツ向けのエントリーモデルであるため。",
+        "featureComparison": [
+          "共通点：同じコラントッテブランドのシリコン製ウォータープルーフモデルでスポーツ向けである点",
+          "相違点：対象商品が150mTの磁石10個と金属製可変ジョイントを採用しているのに対し、SR140 NEXTは140mTの磁石8個でバイカラーの軽量ループを採用している点"
+        ],
+        "differentiators": [
+          "コラントッテ ネックレス ALT(オルト)の利点：磁力が高く、金属パーツによる高級感と2WAYデザインを楽しめる点",
+          "コラントッテ SPORTS ネックレス SR140 NEXTの利点：より安価で軽量・カジュアルなデザインで、スポーツ時に特化して使いたいケース"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "肩こり・首こりに悩んでいる人",
+        "スポーツ中も着けたままにしたい人",
+        "服装に合わせてデザインを変えたい人",
+        "高級感と手頃な価格のバランスを求める人"
+      ],
+      "pros": [
+        "気分に合わせて2種類のデザイン（V型・直線型）を楽しめる",
+        "ウォータープルーフで汗や水に強く、お手入れが簡単",
+        "150mTの強力な磁石を10個内蔵し、しっかりとした効果が期待できる"
+      ],
+      "cons": [
+        "ループ全体から磁力が出る上位モデル（TAOシリーズ）よりは磁力の範囲が限定的"
+      ],
+      "score": 83,
+      "scoreRationale": "[基本点: 70]\n[加点: +5] (トップジョイントが可変式で2種類のデザインを楽しめる独自性・実用性)\n[加点: +5] (ウォータープルーフ仕様でスポーツ時も使える高い汎用性)\n[加点: +5] (150mTの強力な磁石を10個配置しており、しっかりとした磁気効果が期待できる性能)\n[減点: -2] (ループ全体から磁力が出る上位モデルと比較すると、磁力の及ぶ範囲が限定的である)\n[合計: 83]"
+    },
+    "technicalSpecs": {
+      "dimensions": {
+        "length": "47cm"
+      },
+      "weight": "17g",
+      "material": "【本体】シリコン【トップジョイント】ステンレス（SUS316L）",
+      "origin": "日本（コラントッテ製品全般の仕様に基づく）",
+      "other": [
+        "医療機器認証番号: 301AGBZX00080000",
+        "磁石: 希土類永久磁石150ミリテスラ10個をN極S極交互配列"
+      ]
+    }
+  }
+}
