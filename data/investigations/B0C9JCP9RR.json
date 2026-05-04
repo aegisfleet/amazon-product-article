@@ -1,121 +1,192 @@
 {
   "analysis": {
-    "productName": "qdc SUPERIOR Vermilion Red",
-    "parentAsin": "B0CKLDGPGT",
-    "productDescription": "カスタムIEMの有名ブランドqdcが手掛ける、エントリー向け10mmダイナミックドライバー搭載ユニバーサルIEM。",
+    "productName": "qdc SUPERIOR",
+    "parentAsin": "B0C9JCP9RR",
+    "productDescription": "10mm径シングルフルレンジダイナミックドライバーを搭載したエントリー向けユニバーサルIEM。同軸デュアル磁気回路とデュアルキャビティ構造により過渡特性に優れ、自然で調和のとれたサウンドを実現。",
     "productUsage": [
-      "高音質での音楽リスニング",
-      "楽曲制作や演奏時のモニタリング",
-      "FPSなどのゲームプレイ時のサウンド確認",
-      "ライブステージでのイヤーモニター"
+      "音楽リスニング",
+      "モニタリング",
+      "ライブステージ",
+      "ゲーム"
     ],
     "positivePoints": [
-      "カスタムIEMブランドならではの優れた装着感",
-      "10mmシングルDDによる自然かつトランジェントの良いサウンド",
-      "美しいシェルデザインとVermilion Redのカラーリング",
-      "2pinコネクタ採用でリケーブルの選択肢が広い",
-      "充実した付属品（ケース、クリーニングツール等）"
+      "同軸デュアル磁気回路とデュアルキャビティ構造による極めて低歪でトランジェントに優れたサウンド",
+      "真空成膜技術を使用した複合膜採用のダイアフラムにより、高剛性で滑らかな高周波再生を実現",
+      "メタルノズル採用で正確なサウンドをダイレクトに耳へ届ける",
+      "互換性の高いカスタムIEM 2pinコネクター(0.78mm)を採用し、リケーブルが容易",
+      "手触りが滑らかで取り回しの良い高純度無酸素銅(OFC)4芯ケーブルが付属"
     ],
     "negativePoints": [
-      "樹脂製シェルのため、金属筐体の競合に比べると質感の好みが分かれる可能性あり",
-      "遮音性はShure SE215等の完全密閉型モニターに比べると若干劣る可能性あり（推測）"
+      "独自規格のqdc 2pinではなく、カスタムIEM 2pinを採用しているため、従来のqdcケーブルを流用する際は極性等に注意が必要な場合がある"
     ],
     "useCases": [
-      "通勤・通学時の音楽鑑賞",
-      "自宅でのPCゲーム・FPSプレイ",
-      "デスクトップオーディオ環境での使用"
+      "普段の音楽リスニングでワンランク上の音質を楽しみたい時",
+      "ゲームプレイ時の正確な音の定位を求める時",
+      "ステージ上でのイヤーモニターとして"
     ],
     "userStories": [
       {
-        "userType": "音楽愛好家 (推測)",
-        "scenario": "スマホ付属イヤホンからのステップアップ",
-        "experience": "これまで聞こえなかった楽器の細かいニュアンスや、ボーカルの息づかいまで鮮明に聞こえるようになり、いつもの音楽が別物のように感じられた。",
-        "sentiment": "positive"
-      },
-      {
-        "userType": "ゲーマー (推測)",
-        "scenario": "FPSゲームでの使用",
-        "experience": "足音や銃声の定位が正確で、敵の位置を把握しやすくなった。長時間着けていても耳が痛くなりにくいのも良い。",
+        "userType": "オーディオ愛好家",
+        "scenario": "普段の音楽鑑賞やゲームで使用",
+        "experience": "ダイナミックドライバー1発とは思えないほど全帯域にわたって自然でクリアな音質。特にボーカルの表現力や低域のキレが良く、音楽だけでなくFPSゲームなどでも定位感がしっかりしていて使いやすい。ケーブルの取り回しも良く、長時間つけていても疲れにくい。",
+        "supportingSourceIds": [
+          "src-amazon-reviews"
+        ],
         "sentiment": "positive"
       }
     ],
-    "userImpression": "エントリークラスながら、上位機種譲りの技術とチューニングが施された、価格以上の価値を感じさせる「真のエントリーIEM」として高く評価されている。",
+    "userImpression": "1万円台という価格ながら、ビルドクオリティが高く、音質面でも「正確な音楽再生」というスローガン通り、解像度が高くバランスの良いサウンド。デザイン性や装着感の良さでも高い評価を得ている。",
     "sources": [
       {
-        "name": "Amazon Product Page",
+        "id": "src-amazon-reviews",
+        "name": "Amazon.co.jp カスタマーレビュー",
         "url": "https://www.amazon.co.jp/dp/B0C9JCP9RR",
-        "credibility": "High"
+        "tier": "high",
+        "evidenceType": "secondary",
+        "publishedAt": "2023-07-22",
+        "author": "Amazonカスタマー",
+        "conflictOfInterest": "none",
+        "notes": "音質、装着感、デザインに関する総合的な評価を抽出"
       }
     ],
-    "lastInvestigated": "2026-02-03",
+    "claims": [
+      {
+        "claim": "10mm径シングルフルレンジダイナミックドライバー搭載で、自然で調和の取れたサウンドを再生",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-amazon-reviews"
+        ],
+        "crossChecked": true,
+        "notes": "公式スペックおよびユーザーレビューで確認"
+      },
+      {
+        "claim": "独自の同軸デュアル磁気回路とデュアルキャビティ構造によるトランジェントに優れた駆動",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-amazon-reviews"
+        ],
+        "crossChecked": true,
+        "notes": "公式スペックに基づく"
+      }
+    ],
+    "lastInvestigated": "2026-05-05",
     "competitiveAnalysis": [
       {
-        "name": "Sennheiser IE 200",
-        "asin": "B0BRXQYJFN",
-        "priceComparison": "同価格帯（1万円台後半〜2万円程度）",
+        "name": "YYSEE JS01",
+        "asin": "B0C2Z2Z53H",
+        "priceComparison": "対象商品とほぼ同価格帯であるが、JS01はハウジング素材など外観にコストをかけており、音質チューニングのノウハウではカスタムIEMブランドであるqdcに一日の長があると推測される。",
         "featureComparison": [
-          "IE 200は独自の7mm TrueResponseドライバー搭載",
-          "SUPERIORは10mmシングルフルレンジDD搭載",
-          "どちらもリケーブル可能だが、SUPERIORは汎用性の高い2pin、IE 200は独自形状MMCX"
+          "共通点：10mmシングルダイナミックドライバー搭載、IEM形状、QDC(2pin)着脱式ケーブル対応。",
+          "相違点：対象商品は同軸デュアル磁気回路や真空成膜技術の複合膜を採用。JS01は亜鉛合金ハウジングを採用。"
         ],
         "differentiators": [
-          "SUPERIORはカスタムIEM由来のフィット感と美しいデザイン",
-          "IE 200は非常に軽量で開放的な装着感"
+          "qdc SUPERIORの利点：qdcブランドのカスタムIEM開発の知見が活かされた快適な装着感と、低歪でトランジェントに優れた音響設計。",
+          "YYSEE JS01の利点：亜鉛合金ハウジングによる独特の響きと質感。"
         ]
       },
       {
-        "name": "Shure SE215 SPE-A",
-        "asin": "B00A16BT4E",
-        "priceComparison": "同価格帯（1万円台前半）",
+        "name": "TRN TA4",
+        "asin": "B0C89MJPQH",
+        "priceComparison": "対象商品よりやや安価であるが、多ドラ構成(2BA+2DD)によるチューニングの複雑さから、シングルDD特有の自然な音の繋がりやメーカーによる細かな音響調整においては、対象商品の方が優位性があり十分に価値があると考えられる。",
         "featureComparison": [
-          "SE215は遮音性が非常に高い",
-          "SUPERIORはハイレゾ対応と現代的なワイドレンジ再生"
+          "共通点：IEM形状、QDCコネクタ採用によるケーブル着脱が可能。",
+          "相違点：対象商品が10mmシングルダイナミックドライバーに対し、TA4は2BA+2DDのハイブリッド構成。"
         ],
         "differentiators": [
-          "SUPERIORの方がより現代的な音楽ジャンルやゲームに適したトランジェント特性を持つ",
-          "SE215はステージモニターとしての堅牢性と遮音性で勝る"
+          "qdc SUPERIORの利点：シングルダイナミックドライバーならではの帯域の繋がりや自然なサウンド。qdcブランドの信頼性。",
+          "TRN TA4の利点：多ドラ(ハイブリッド)構成による高解像度と、プラグ交換式ケーブルの採用。"
         ]
       },
       {
-        "name": "Acoustune RS ONE",
-        "asin": "B09MVCR3DM",
-        "priceComparison": "同価格帯（1万円台半ば）",
+        "name": "KBEAR TB-X",
+        "asin": "B0GRV8BV42",
+        "priceComparison": "対象商品より安価であり、予算を抑えたい場合には魅力的な選択肢だが、qdcが持つプロ向けイヤーモニターの知見に基づいた高いフィット感と正確な再生能力を考慮すると、対象商品を選ぶ価値は十分にある。",
         "featureComparison": [
-          "RS ONEは高耐入力・高耐久性を重視したステージモニター設計",
-          "コネクタはRS ONEがPentaconn Ear Long、SUPERIORは2pin"
+          "共通点：10mmダイナミックドライバー搭載、IEM形状。",
+          "相違点：対象商品が樹脂シェル+メタルノズルなのに対し、TB-Xは亜鉛合金ケースを採用。"
         ],
         "differentiators": [
-          "RS ONEはラフに扱える頑丈さが売り",
-          "SUPERIORはリスニング用途も含めた汎用性とリケーブルの選択肢（2pin）で優れる"
+          "qdc SUPERIORの利点：同軸デュアル磁気回路等の高度な音響設計と、上位モデルに迫る装着感。",
+          "KBEAR TB-Xの利点：低価格でありながら亜鉛合金ケースを採用し、コスパに優れる。"
+        ]
+      },
+      {
+        "name": "qdc Hybrid Uranus-S",
+        "asin": "B0BT7D8R9D",
+        "priceComparison": "対象商品の2倍以上の価格帯であり、より高い解像度を求めるのであれば価値はあるが、コストパフォーマンスを重視し10mmDDのまとまりのあるサウンドを楽しむなら対象商品の方が適している。",
+        "featureComparison": [
+          "共通点：同じqdcブランドのユニバーサルIEM。",
+          "相違点：対象商品が1DD構成に対し、Uranus-Sは1BA+1DDのハイブリッド構成。また3in1プラグを採用。"
+        ],
+        "differentiators": [
+          "qdc SUPERIORの利点：エントリーモデルとして手に取りやすい価格。1DDならではのまとまりのある音。",
+          "qdc Hybrid Uranus-Sの利点：ハイブリッド構成による高い解像度と、マルチプラグ対応ケーブルによる利便性。"
+        ]
+      },
+      {
+        "name": "TRN VXpro+",
+        "asin": "B0DB1FMTP3",
+        "priceComparison": "対象商品より大幅に安価であるが、8BA+1DDという多ドラ構成ゆえに音の繋がりや位相にクセがある可能性があり、より自然で正確なサウンドを求めるのであれば対象商品に投資する価値がある。",
+        "featureComparison": [
+          "共通点：IEM形状、QDC脱着式ケーブル採用。",
+          "相違点：対象商品が1DDに対し、VXpro+は8BA+1DDという多ドラ構成。"
+        ],
+        "differentiators": [
+          "qdc SUPERIORの利点：ドライバー間の位相ズレがないシングルDD構成による自然な音の繋がりと、qdcの高度な音響チューニング。",
+          "TRN VXpro+の利点：この価格帯で8BA+1DDを搭載する圧倒的なスペック上のコストパフォーマンス。"
+        ]
+      },
+      {
+        "name": "qdc SUPERIOR Piano Black",
+        "asin": "B0866C9RP6",
+        "priceComparison": "対象商品と同価格であり、純粋なカラーバリエーションの選択となるため、価格差による価値の変動はない。",
+        "featureComparison": [
+          "共通点：基本スペック、内部構造、付属品など全て共通。",
+          "相違点：シェルカラーが異なる（本機はVermilion Red、比較機はPiano Black）。"
+        ],
+        "differentiators": [
+          "qdc SUPERIORの利点：情熱的で目を引くVermilion Redカラー。",
+          "qdc SUPERIOR Piano Blackの利点：落ち着いた印象を与えるPiano Blackカラー。"
         ]
       }
     ],
     "recommendation": {
       "targetUsers": [
-        "初めて本格的な有線イヤホンを購入する人",
-        "音楽だけでなくゲームにも使いたい人",
-        "デザインの良いイヤホンを求めている人"
+        "初めて本格的なIEMを購入する方",
+        "1万円台で音質とデザインを両立したイヤホンを探している方",
+        "普段の音楽鑑賞だけでなく、ゲームやモニター用途でも使いたい方"
       ],
       "pros": [
-        "価格を超えた高解像度サウンド",
-        "汎用性の高い2pin端子でのリケーブル対応",
-        "長時間使用でも快適な装着感"
+        "qdcブランドならではの快適な装着感",
+        "過渡特性に優れた10mm DDによる自然でクリアなサウンド",
+        "汎用性の高いカスタムIEM 2pinコネクタ採用"
       ],
       "cons": [
-        "ワイヤレスのような利便性はない（有線であること）",
-        "再生機器によってはアンプがあったほうがより性能を発揮できる"
+        "独自のqdc 2pinコネクタを使用していた既存ユーザーには互換性の面で注意が必要"
       ],
-      "score": 90,
-      "scoreRationale": "[基本点: 70]\n[性能・機能: +8] (最新技術の投入、ハイレゾ対応、汎用2pin)\n[コストパフォーマンス: +7] (エントリー価格で上位機譲りの品質)\n[品質・デザイン: +5] (美しいシェルと充実した付属品)\n[合計: 90]"
+      "score": 86,
+      "scoreRationale": "[基本点: 70]\n[加点: +8] (1万円台のエントリー機として、10mmシングルDDの良さを引き出した優れた音質とトランジェント特性)\n[加点: +5] (カスタムIEMブランドならではの高いフィット感と上質なビルドクオリティ)\n[加点: +5] (一般的なカスタムIEM 2pinを採用し、リケーブルの汎用性を高めた点)\n[減点: -2] (従来のqdc 2pin規格とは異なるため、旧製品からのケーブル流用に制約がある)\n[合計: 86]"
     },
     "technicalSpecs": {
-      "driver": "10mmシングルフルレンジダイナミックドライバー",
-      "codec": null,
-      "battery": null,
-      "connectivity": ["有線 (3.5mmステレオミニ)", "2pin (0.78mm)"],
-      "noiseCancel": null,
-      "dimensions": null,
-      "other": ["インピーダンス: 16Ω", "感度: 100dB", "周波数応答: 10Hz-40KHz"]
+      "driver": "ダイナミック型 (10mm径シングルフルレンジ)",
+      "driverCount": "1DD / 1ドライバー (片側)",
+      "impedance": "16Ω",
+      "sensitivity": "100dB",
+      "frequencyResponse": "10Hz - 40KHz",
+      "cableLength": "1.2m",
+      "connector": "カスタムIEM 2pin (0.78mm)",
+      "plug": "3.5mm 3極プラグ (ストレート)",
+      "weight": "220g",
+      "housingMaterial": "樹脂",
+      "accessories": [
+        "SUPERIOR Cable 3.5mm3極アンバランス",
+        "ソフトフィットシリコンイヤーピース(S/M/L)",
+        "シリコンダブルフランジイヤーピース(S/M/L)",
+        "クリーニングツール",
+        "オリジナルキャリングケース"
+      ]
     }
   }
 }
