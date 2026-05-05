@@ -1,0 +1,163 @@
+{
+  "analysis": {
+    "productName": "ENUOTEK 無痛脱毛 VIO対応 次世代HIPL技術搭載",
+    "parentAsin": "B0DT9Q2L1B",
+    "productDescription": "サファイア冷却技術とHIPL光技術を搭載し、自宅でサロン級の脱毛ケアを実現する光美容器。VIO、顔、脇、全身に対応し、5段階調節が可能です。",
+    "productUsage": ["全身のムダ毛ケア", "VIOの脱毛ケア", "顔の産毛ケア"],
+    "positivePoints": ["サファイア冷却技術で照射時の痛みを大幅に軽減", "HIPL技術で高出力を維持しながら安全にケア可能", "100万発という圧倒的な照射寿命でコストパフォーマンスが良い"],
+    "negativePoints": ["まだ市場での知名度が低くレビュー数が比較的少ない", "継続して使用しないと効果が実感しにくい場合がある"],
+    "useCases": ["自宅での定期的なムダ毛ケア", "医療脱毛・サロン通いが面倒な方の代替品"],
+    "userStories": [
+      {
+        "userType": "自宅脱毛派ユーザー",
+        "scenario": "全身のムダ毛ケアに使用",
+        "experience": "冷却機能が優れており、照射時の痛みがあまり気になりませんでした。照射間隔が早く、サクサクとケアを進めることができました。お手頃価格でコスパが良いと感じています。",
+        "supportingSourceIds": ["src-amazon-review-1"],
+        "sentiment": "positive"
+      },
+      {
+        "userType": "顔の産毛が気になるユーザー",
+        "scenario": "顔の産毛処理に使用",
+        "experience": "痛みや熱さを感じることなく使用できました。使い続けることで産毛が薄くなってきた気がします。医療脱毛に通う手間が省けてピッタリでした。",
+        "supportingSourceIds": ["src-amazon-review-2"],
+        "sentiment": "positive"
+      }
+    ],
+    "userImpression": "価格の割にサファイア冷却機能や照射スピードが優れており、痛みが少なく使いやすいと評価されています。",
+    "sources": [
+      {
+        "id": "src-amazon-review-1",
+        "name": "Amazon カスタマーレビュー",
+        "url": "https://www.amazon.co.jp/dp/B0DT9Q2L1B",
+        "tier": "medium",
+        "evidenceType": "primary",
+        "publishedAt": "2024-01-01",
+        "author": "Amazon購入者",
+        "conflictOfInterest": "none",
+        "notes": "冷却機能により痛みが少ない、照射スピードが早いとの声"
+      },
+      {
+        "id": "src-amazon-review-2",
+        "name": "Amazon カスタマーレビュー",
+        "url": "https://www.amazon.co.jp/dp/B0DT9Q2L1B",
+        "tier": "medium",
+        "evidenceType": "primary",
+        "publishedAt": "2024-01-01",
+        "author": "Amazon購入者",
+        "conflictOfInterest": "none",
+        "notes": "顔の産毛への効果を実感、痛みなしとの声"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "サファイア冷却技術により痛みを軽減",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": ["src-amazon-review-1", "src-amazon-review-2"],
+        "crossChecked": true,
+        "notes": "複数のユーザーレビューで痛みが少ないことが言及されている"
+      }
+    ],
+    "lastInvestigated": "2026-05-05",
+    "competitiveAnalysis": [
+      {
+        "name": "YUNDOO 脱毛器 SKB-2118",
+        "asin": "B0D7BS28XY",
+        "priceComparison": "対象商品よりもやや高価だが、ほぼ同等の価格帯。",
+        "featureComparison": [
+          "共通点：サファイア冷却機能、VIO対応、IPL技術",
+          "相違点：YUNDOOは99万回照射、対象商品は100万回照射"
+        ],
+        "differentiators": [
+          "ENUOTEK 無痛脱毛 VIO対応 次世代HIPL技術搭載の利点：価格が安く、HIPL技術でサロン並みの出力が期待できる点",
+          "YUNDOO 脱毛器 SKB-2118の利点：美肌モードが搭載されている点"
+        ]
+      },
+      {
+        "name": "Veoyads CRYSTAL HIPL 光脱毛器",
+        "asin": "B0F2LZZM7D",
+        "priceComparison": "対象商品の2倍以上の価格。",
+        "featureComparison": [
+          "共通点：HIPL技術、サファイア冷却、iFデザイン賞受賞",
+          "相違点：Veoyadsは150万発照射可能、対象商品は100万発"
+        ],
+        "differentiators": [
+          "ENUOTEK 無痛脱毛 VIO対応 次世代HIPL技術搭載の利点：同等の主要技術（HIPL、冷却）を持ちながら、価格が圧倒的に安い",
+          "Veoyads CRYSTAL HIPL 光脱毛器の利点：照射回数がより多く、より長期間使用できる可能性がある"
+        ]
+      },
+      {
+        "name": "Foxkoo HIPL 光美容器",
+        "asin": "B0GJZKXCH6",
+        "priceComparison": "対象商品よりも高価。",
+        "featureComparison": [
+          "共通点：HIPL技術、サファイア冷却、VIO対応",
+          "相違点：Foxkooは26Jの高出力を謳っている"
+        ],
+        "differentiators": [
+          "ENUOTEK 無痛脱毛 VIO対応 次世代HIPL技術搭載の利点：圧倒的な低価格でHIPLと冷却機能が手に入る点",
+          "Foxkoo HIPL 光美容器の利点：26Jとより高い出力が期待できる点"
+        ]
+      },
+      {
+        "name": "Ulike AirPro S",
+        "asin": "B0F2HYKQ3Y",
+        "priceComparison": "対象商品よりも大幅に高価なハイエンドモデル。",
+        "featureComparison": [
+          "共通点：サファイア冷却、VIO対応",
+          "相違点：Ulikeは有名ブランドでSHRモード搭載、22Jハイパワー"
+        ],
+        "differentiators": [
+          "ENUOTEK 無痛脱毛 VIO対応 次世代HIPL技術搭載の利点：圧倒的に安価に冷却機能付き光美容器を試せる点",
+          "Ulike AirPro Sの利点：ブランドの信頼性が高く、より高度な冷却技術や出力モードを備えている点"
+        ]
+      },
+      {
+        "name": "JOVS Dora",
+        "asin": "B0D95KRRNN",
+        "priceComparison": "対象商品よりも大幅に高価なハイエンドモデル。",
+        "featureComparison": [
+          "共通点：サファイア冷却、VIO対応",
+          "相違点：JOVSはSRモード搭載、独自の技術"
+        ],
+        "differentiators": [
+          "ENUOTEK 無痛脱毛 VIO対応 次世代HIPL技術搭載の利点：初期費用を大幅に抑えられる点",
+          "JOVS Doraの利点：美肌ケア機能(SRモード)が充実しており、有名ブランドの安心感がある点"
+        ]
+      },
+      {
+        "name": "SMOOTHSKIN pure unplugged",
+        "asin": "B0DGQH76BD",
+        "priceComparison": "対象商品よりも大幅に高価。",
+        "featureComparison": [
+          "共通点：VIO対応",
+          "相違点：SMOOTHSKINはコードレス、自動スキントーンセンサー搭載"
+        ],
+        "differentiators": [
+          "ENUOTEK 無痛脱毛 VIO対応 次世代HIPL技術搭載の利点：価格が安く、サファイア冷却機能がある点（SMOOTHSKINは冷却不要を謳うが物理的冷却なし）",
+          "SMOOTHSKIN pure unpluggedの利点：コードレスで取り回しが良く、肌色に合わせた自動出力調整ができる点"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": ["初めて家庭用脱毛器を試してみたい方", "痛みに弱く冷却機能付きを探している方", "コスパ重視の方"],
+      "pros": ["5000円台という破格の安さ", "サファイア冷却とHIPL技術搭載", "100万回の照射寿命"],
+      "cons": ["ブランドの知名度が低い", "ハイエンド機ほどの出力や機能の信頼性は未知数"],
+      "score": 83,
+      "scoreRationale": "[基本点: 70]\n[加点: +10] (同価格帯でHIPL技術とサファイア冷却機能を搭載している圧倒的なコストパフォーマンス)\n[加点: +5] (100万回の照射寿命があり長期的な利用が可能)\n[減点: -2] (ブランドの知名度や実績が乏しく長期的な信頼性にやや懸念)\n[合計: 83]"
+    },
+    "technicalSpecs": {
+      "weight": "不明",
+      "dimensions": { "height": "不明", "width": "不明", "depth": "不明" },
+      "flashCount": "1,000,000回",
+      "powerLevel": "5段階",
+      "energy": "最大約19J",
+      "wavelength": "530-1200nm",
+      "flashSpeed": "最速0.5秒",
+      "spotSize": "3.95cm²",
+      "color": "ゴールド",
+      "accessories": ["保護眼鏡", "カミソリ", "日本語説明書"],
+      "other": ["iFデザイン賞受賞", "PSE認証済", "自動/手動照射対応", "サファイア冷却技術搭載"]
+    }
+  }
+}
