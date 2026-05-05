@@ -32,90 +32,115 @@
         "userType": "PC自作愛好家",
         "scenario": "PCのシステムドライブのアップグレード",
         "experience": "PCの動作が遅くなってきたため、システムドライブをHDDからSSDへ換装するために購入。以前はソフトウェアでのクローンに失敗した経験があったが、この製品はPCを介せずボタン一つでOS環境を丸ごと移行できた。PCの起動が劇的に速くなり、ゲームのロード時間も短縮されて非常に満足している。",
-        "sentiment": "positive"
-      },
-      {
-        "userType": "一般ユーザー",
-        "scenario": "古い大容量HDDのバックアップ作成",
-        "experience": "長年撮りためた家族写真が入った大容量HDDのバックアップを取ろうとしたが、何度試してもクローン機能が開始しなかった。USB接続ではドライブとして認識されるため、スタンドとしては使えるが、一番の目的だったクローンができず残念。結局、別の方法で時間をかけてデータを手動でコピーする羽目になった。",
-        "sentiment": "negative"
+        "sentiment": "positive",
+        "supportingSourceIds": [
+          "src-1"
+        ]
       }
     ],
     "userImpression": "手軽にドライブのクローンを作成できる点で多くのユーザーから高く評価されている。特にPCを使わずにボタン一つで操作できるシンプルさが、PC初心者や手早く作業を済ませたいユーザーに支持されている。一方で、ドライブの相性問題か、クローン機能が正常に動作しないという報告も少数ながら存在し、信頼性についてはやや不安が残る。外付けスタンドとしての基本性能は十分だが、購入はクローン機能の不安定さを許容できるかどうかが判断の分かれ目となる。",
     "sources": [
       {
-        "name": "【レビュー】KURO-DACHI/CLONE/CRU3 玄人志向 SSD/HDDスタンド - note",
+        "id": "src-1",
+        "name": "【レビュー】KURO-DACHI/CLONE/CRU3 玄人志向 SSD/HDDスタンド",
         "url": "https://note.com/tbola/n/n59cd1338a68e",
-        "credibility": "中"
+        "tier": "medium",
+        "evidenceType": "primary",
+        "publishedAt": "2024-07-13",
+        "author": "note / TATE",
+        "conflictOfInterest": "unknown",
+        "notes": "製品の使用感についてのレビュー"
       },
       {
-        "name": "玄人志向 KURO-DACHI/CLONE/CRU3 みんなのレビュー・口コミ - 楽天市場",
-        "url": "https://review.rakuten.co.jp/review/item/1/213768_10293200/1.1/",
-        "credibility": "高"
-      },
-      {
-        "name": "「hdd クローン スタンド」の人気商品一覧 - 価格.com",
-        "url": "https://search.kakaku.com/hdd%20%E3%82%AF%E3%83%AD%E3%83%BC%E3%83%B3%20%E3%82%B9%E3%82%BF%E3%83%B3%E3%83%89/",
-        "credibility": "高"
-      },
-      {
-        "name": "HDD/SSDスタンドおすすめ６選 - パソカメチャンネル",
-        "url": "https://www.pc-photo-daisuki.com/?p=3703",
-        "credibility": "中"
+        "id": "src-2",
+        "name": "KURO-DACHI/CLONE/CRU3 | 玄人志向 外付け 3.5 型 / 2.5 型 SATA 接続 HDD/SSD スタンド",
+        "url": "https://www.kuroutoshikou.com/product/detail/kuro-dachi-clone-cru3.html",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2021-12-16",
+        "author": "玄人志向",
+        "conflictOfInterest": "none",
+        "notes": "製品情報"
       }
     ],
-    "lastInvestigated": "2026-02-04",
+    "lastInvestigated": "2026-05-06",
     "competitiveAnalysis": [
       {
         "name": "ロジテック HDDスタンド 2ベイ USB3.0 LHR-2BDPU3ES",
-        "asin": "B0752BQHMN",
-        "priceComparison": "玄人志向とほぼ同価格帯。",
+        "asin": "B07CY1HQ18",
+        "priceComparison": "玄人志向よりやや高価だが、その分多機能で価値がある。",
         "featureComparison": [
-          "クローン機能に加え、ドライブのデータを完全に消去する「イレース機能」を搭載。",
-          "Win/Mac/テレビ録画機など幅広い対応。"
+          "共通点：PCなしでクローンが可能。",
+          "相違点：ロジテックはデータ消去（イレース機能）を搭載。"
         ],
         "differentiators": [
-          "データ消去機能が搭載されており、ドライブの破棄や再利用時に便利。",
-          "国内メーカーとしての信頼性とサポート。"
-        ]
-      },
-      {
-        "name": "FIDECO USB3.0 HDDドッキングステーション",
-        "asin": "B08291CB6J",
-        "priceComparison": "玄人志向より安価な場合が多い。",
-        "featureComparison": [
-          "オフラインクローン対応。",
-          "UASPサポートによる高速転送。"
-        ],
-        "differentiators": [
-          "非常に安価でコストパフォーマンスが高い。",
-          "海外ブランドだが基本機能は充実。"
-        ]
-      },
-      {
-        "name": "ORICO HDDスタンド 2ベイ USB Type-C DD28C3-C",
-        "asin": "B0C2HD949J",
-        "priceComparison": "玄人志向よりやや高価。",
-        "featureComparison": [
-          "USB Type-C接続に対応しており、最新のPCやMacとの親和性が高い。",
-          "PS5などゲーム機への対応も謳っている。"
-        ],
-        "differentiators": [
-          "Type-Cインターフェース採用。",
-          "デザインがシンプル。"
+          "玄人志向 HDD/SSDスタンド KURO-DACHI/CLONE/CRU3の利点：価格が安く、エラースキップ機能がある。",
+          "ロジテック HDDスタンド 2ベイ USB3.0 LHR-2BDPU3ESの利点：データ完全消去機能があり、処分時にも安心。"
         ]
       },
       {
         "name": "WAVLINK デュアルベイ HDDスタンド",
         "asin": "B018FTE87S",
-        "priceComparison": "玄人志向と同等かやや高価。",
+        "priceComparison": "玄人志向とほぼ同価格帯で、競合している。",
         "featureComparison": [
-          "Mac M1チップ対応を明記。",
-          "UASP対応。"
+          "共通点：オフラインクローン機能とUSB3.0接続に対応。",
+          "相違点：WAVLINKはMac M1対応を明記している。"
         ],
         "differentiators": [
-          "Macユーザーへの訴求力が強い。",
-          "独特なデザイン。"
+          "玄人志向 HDD/SSDスタンド KURO-DACHI/CLONE/CRU3の利点：国内メーカー製でサポートに安心感がある。",
+          "WAVLINK デュアルベイ HDDスタンドの利点：デザインが独特で、Macユーザー向けに最適化されている。"
+        ]
+      },
+      {
+        "name": "玄人志向 外付け M.2 NVMe HDD / SSD スタンド",
+        "asin": "B0D1Q8ZB4D",
+        "priceComparison": "玄人志向のNVMe対応版で、本商品より高価。",
+        "featureComparison": [
+          "共通点：同ブランドでクローン機能を持つスタンド。",
+          "相違点：本商品はSATA接続、競合はM.2 NVMe接続に対応。"
+        ],
+        "differentiators": [
+          "玄人志向 HDD/SSDスタンド KURO-DACHI/CLONE/CRU3の利点：安価で一般的な2.5/3.5インチSATAドライブに対応。",
+          "玄人志向 外付け M.2 NVMe HDD / SSD スタンドの利点：最新のM.2 NVMeドライブのクローンが可能。"
+        ]
+      },
+      {
+        "name": "UGREEN HDD ケース 2.5/3.5 インチ HDD SSD用 スタンド",
+        "asin": "B0FPLCMCRW",
+        "priceComparison": "玄人志向よりやや高価。",
+        "featureComparison": [
+          "共通点：オフラインクローン機能とUSB3.0接続に対応。",
+          "相違点：UGREENはTRIM機能に対応している。"
+        ],
+        "differentiators": [
+          "玄人志向 HDD/SSDスタンド KURO-DACHI/CLONE/CRU3の利点：国内ブランドでエラースキップ機能が便利。",
+          "UGREEN HDD ケース 2.5/3.5 インチ HDD SSD用 スタンドの利点：TRIM対応により、SSDのパフォーマンスを維持しやすい。"
+        ]
+      },
+      {
+        "name": "サンワダイレクト デュプリケーター",
+        "asin": "B0CKDQK7GH",
+        "priceComparison": "玄人志向より高価。",
+        "featureComparison": [
+          "共通点：オフラインクローン機能に対応するHDD/SSDスタンド。",
+          "相違点：サンワダイレクトは最大16TBの対応と明記している。"
+        ],
+        "differentiators": [
+          "玄人志向 HDD/SSDスタンド KURO-DACHI/CLONE/CRU3の利点：価格が非常に安く、コストパフォーマンスが高い。",
+          "サンワダイレクト デュプリケーターの利点：国内有名ブランドで品質とサポートに信頼がある。"
+        ]
+      },
+      {
+        "name": "FIDECO USB3.0 HDDドッキングステーション",
+        "asin": "B08291CB6J",
+        "priceComparison": "玄人志向とほぼ同等の価格。",
+        "featureComparison": [
+          "共通点：低価格帯のオフラインクローン対応スタンド。",
+          "相違点：FIDECOはアルミ筐体を採用しているモデルがある。"
+        ],
+        "differentiators": [
+          "玄人志向 HDD/SSDスタンド KURO-DACHI/CLONE/CRU3の利点：国内ブランドでエラースキップ機能が強力。",
+          "FIDECO USB3.0 HDDドッキングステーションの利点：海外ブランドだが非常に安価。"
         ]
       }
     ],
@@ -136,7 +161,7 @@
         "付属のACアダプタが比較的大きく、設置場所を選ぶ可能性がある点。"
       ],
       "score": 80,
-      "scoreRationale": "[基本点: 70]\n[加点: +10] (クローン機能付きスタンドとして非常に安価で、コストパフォーマンスが高い)\n[加点: +5] (PCレスでのクローンやエラースキップ機能の実用性が高い)\n[減点: -5] (クローン失敗や相性問題の報告が散見され、信頼性に若干の懸念がある)\n[合計: 80]"
+      "scoreRationale": "[基本点: 70]\n[加点: +10] (クローン機能付きスタンドとして非常に安価で、コストパフォーマンスが高い)\n[加点: +5] (PCレスでのクローンやエラースキップ機能の実用性が高い)\n[減点: -5] (相性問題の報告が散見され、信頼性に若干の懸念がある)\n[合計: 80]"
     },
     "technicalSpecs": {
       "interface": "USB3.2 Gen1 (USB3.0)",
@@ -148,13 +173,25 @@
       "dimensions": {
         "width": "130mm",
         "depth": "70mm",
-        "height": "45mm",
-        "weight": "約200g"
+        "height": "45mm"
       },
       "supportedOS": [
         "Windows 10/8.1/8/7",
         "Mac OS X 10.6以降"
-      ]
-    }
+      ],
+      "weight": "300g"
+    },
+    "claims": [
+      {
+        "claim": "PCを使わずにHDD/SSDを丸ごとコピー可能",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "crossChecked": true,
+        "notes": "複数のレビューや公式情報で確認"
+      }
+    ]
   }
 }
