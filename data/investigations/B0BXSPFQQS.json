@@ -1,0 +1,149 @@
+{
+  "analysis": {
+    "productName": "Pixio PS2D モニターアーム デュアル",
+    "parentAsin": "B0BXSPFQQS",
+    "productDescription": "約43〜89cmの大型モニターに対応したガススプリング式デュアルモニターアーム",
+    "productUsage": [
+      "デュアルモニター環境の構築",
+      "デスクスペースの有効活用",
+      "ゲームやオフィスワークでの使用"
+    ],
+    "positivePoints": [
+      "1画面あたり最大15kgの高耐荷重",
+      "約43〜89cmの大型モニターに対応",
+      "上向き90度、下向き45度など広い可動域"
+    ],
+    "negativePoints": [
+      "価格が他の競合製品と比べて高価",
+      "奥行きのないデスクでは壁に干渉する可能性がある"
+    ],
+    "useCases": [
+      "大型モニターを2画面並べて作業する",
+      "重量級のモニターをしっかり固定する",
+      "デスクをスッキリさせる"
+    ],
+    "userStories": [
+      {
+        "userType": "大型モニター利用者",
+        "scenario": "重量級のモニターを設置",
+        "experience": "根本のアームが若干水平気味で机の奥側にモニターを置きたいが机の天板と壁の距離をとれずに悩んでいたが、高さやチルトもできしっかり位置も保持できている。壁際で使用する場合、2つのモニターを極力寄せても250mm程度の空間はできてしまう。",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "sentiment": "mixed"
+      },
+      {
+        "userType": "一般ユーザー",
+        "scenario": "デュアルモニターを配置",
+        "experience": "モニターの組み立ては説明書通りに進められた。スプリングのビス調節にそれなりに力が必要ではあったが、設置した際に頻繁に揺れる様では困るため、納得のいく範囲であった。",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "sentiment": "positive"
+      }
+    ],
+    "userImpression": "スプリングの調整には力が必要だが、その分しっかりと位置を保持できるため、大型や重量級のモニターでも安定して設置できると評価されている。ただし、壁際で使用する際にはデスクの奥行きが十分にあるか注意が必要。",
+    "sources": [
+      {
+        "id": "src-1",
+        "name": "Pixio公式商品ページ レビュー",
+        "url": "https://pixiogaming.jp/products/ps2d",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-05-05",
+        "author": "Pixio公式",
+        "conflictOfInterest": "possible",
+        "notes": "公式サイト上の購入者レビュー。壁際での配置やスプリングの調整について言及"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "15kgの重量級モニターでも位置を保持できる",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "crossChecked": false,
+        "notes": "レビューにて重量級のモニタでしっかり位置を保持できていると確認"
+      },
+      {
+        "claim": "壁際で使用すると奥行きが必要",
+        "category": "durability",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "crossChecked": false,
+        "notes": "机と壁がくっついている場合だと壁に干渉するとのレビューあり"
+      }
+    ],
+    "lastInvestigated": "2026-05-05",
+    "competitiveAnalysis": [
+      {
+        "name": "Amazonベーシック デュアルモニターアーム",
+        "asin": "B0CQTPZNV8",
+        "priceComparison": "対象商品より大幅に安いが、耐荷重が10kgまでと劣る",
+        "featureComparison": [
+          "共通点：デュアルモニター対応",
+          "相違点：対象商品は15kg・約89cm対応に対し、本品は10kg・約81cm対応"
+        ],
+        "differentiators": [
+          "Pixio PS2Dの利点：より重く大きなモニターを取り付けられる点",
+          "Amazonベーシックの利点：価格が安く導入しやすい点"
+        ]
+      },
+      {
+        "name": "エレコム デュアルモニターアーム ガス式",
+        "asin": "B0C7VPZ8ZK",
+        "priceComparison": "対象商品より安いが、耐荷重が9kgまでと対象商品より劣る",
+        "featureComparison": [
+          "共通点：ガススプリング式のデュアルモニター対応",
+          "相違点：対象商品は15kg・約89cm対応に対し、本品は9kg・約81cm対応"
+        ],
+        "differentiators": [
+          "Pixio PS2Dの利点：15kgまでの重量級モニターに対応できる点",
+          "エレコムの利点：価格が安く、コストパフォーマンスに優れる点"
+        ]
+      },
+      {
+        "name": "ErGear デュアルモニターアーム",
+        "asin": "B0FVSRQRZ3",
+        "priceComparison": "対象商品より安いが、耐荷重が9kgまでと対象商品より劣る",
+        "featureComparison": [
+          "共通点：ガススプリング式のデュアルモニター対応",
+          "相違点：対象商品は15kg・約89cm対応に対し、本品は9kg・約81cm対応、ポール式である"
+        ],
+        "differentiators": [
+          "Pixio PS2Dの利点：高耐荷重で約89cmの大型モニターを設置できる点",
+          "ErGearの利点：ポール式で高さを出しやすい点と価格の安さ"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "重量級の大型モニターを使用している人",
+        "安定した固定力を求める人"
+      ],
+      "pros": [
+        "15kgの高耐荷重",
+        "約89cmまでの大型モニター対応"
+      ],
+      "cons": [
+        "価格が競合より高い",
+        "奥行きのない壁際では干渉しやすい"
+      ],
+      "score": 65,
+      "scoreRationale": "[基本点: 70]\n[加点: +5] (1-15kgの幅広い重量・約89cm大型モニター対応の性能)\n[減点: -10] (価格が19,980円と競合と比べて高価)\n[合計: 65]"
+    },
+    "technicalSpecs": {
+      "capacity": "2画面",
+      "other": [
+        "対応サイズ: 約43.2〜88.9cm",
+        "耐荷重: 1〜15kg(1アームあたり)",
+        "VESAマウント: 75x75mm / 100x100mm",
+        "多角度調節: 上向き90°、下向き45°、左右90°、回転360°"
+      ]
+    }
+  }
+}
