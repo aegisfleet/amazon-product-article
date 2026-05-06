@@ -1,0 +1,197 @@
+{
+  "analysis": {
+    "productName": "Diyife TSA南京錠 4桁ダイヤルロック",
+    "parentAsin": "B0F8VDDFDX",
+    "productDescription": "TSA承認済みの4桁ダイヤル式南京錠。高強度亜鉛合金とスチール製ケーブルを採用し、スーツケースやロッカーなど多様な用途に対応。",
+    "productUsage": [
+      "スーツケースや旅行バッグの施錠",
+      "ジムや学校のロッカーの施錠",
+      "バックパックのジッパーの施錠"
+    ],
+    "positivePoints": [
+      "高強度亜鉛合金と切断に強いスチール製ケーブルによる高い耐久性",
+      "4桁ダイヤルで10,000通りの組み合わせが可能",
+      "ダイヤルが引っかからずスムーズに回せて設定しやすい",
+      "コンパクトで未使用時の持ち運びが容易"
+    ],
+    "negativePoints": [
+      "金属製のため、コンパクトながら少し重さを感じる",
+      "屋内や暗い場所ではダイヤルの数字が見にくい場合がある",
+      "ワイヤー部分が細いため、太い南京錠に比べると安心感に欠ける場合がある"
+    ],
+    "useCases": [
+      "海外旅行時のスーツケースの施錠",
+      "ジムのロッカーの貴重品保管",
+      "バイクのシートバッグの盗難防止"
+    ],
+    "userStories": [
+      {
+        "userType": "旅行者",
+        "scenario": "旅行用リュックへの取り付け",
+        "experience": "しっかりとした作りで安心感があります。デザインもカラフルで目立つので、自分の荷物をすぐに見分けられるのも便利です。暗証番号の設定もとても簡単で、すぐに使い始められました。ジッパー部分にもスムーズに通せました。",
+        "supportingSourceIds": ["src-amazon-reviews"],
+        "sentiment": "positive"
+      },
+      {
+        "userType": "一般ユーザー",
+        "scenario": "ロッカーでの使用",
+        "experience": "100円ショップのものは設定時にダイヤルが一緒に回ってしまい使えませんでしたが、こちらはダイヤルの回す時のスムースさやカチカチという感覚があり、設定が簡単でした。",
+        "supportingSourceIds": ["src-amazon-reviews"],
+        "sentiment": "positive"
+      },
+      {
+        "userType": "一般ユーザー",
+        "scenario": "屋内での使用",
+        "experience": "少し重さを感じる点と、屋内では数字が見にくい点が気になりました。",
+        "supportingSourceIds": ["src-amazon-reviews"],
+        "sentiment": "mixed"
+      }
+    ],
+    "userImpression": "総じて「設定が簡単」「ダイヤルがスムーズ」「しっかりとした作り」と高く評価されている。一方で、コンパクトながら「重みがある」「数字が暗いところで見にくい」といった意見も見られる。",
+    "sources": [
+      {
+        "id": "src-amazon-reviews",
+        "name": "Amazonカスタマーレビュー",
+        "url": "https://www.amazon.co.jp/dp/B0F8VDDFDX",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-05-06",
+        "author": "Amazon購入者",
+        "conflictOfInterest": "none",
+        "notes": "設定のしやすさ、重さ、視認性についての実際のレビューを確認"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "高強度亜鉛合金とスチール製ケーブルで頑丈",
+        "category": "durability",
+        "confidence": "high",
+        "supportingSourceIds": ["src-amazon-reviews"],
+        "crossChecked": true,
+        "notes": "公式情報とユーザーレビューの両方で頑丈さが言及されている"
+      },
+      {
+        "claim": "ダイヤルの設定が簡単でスムーズ",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": ["src-amazon-reviews"],
+        "crossChecked": true,
+        "notes": "複数のレビューで安価な製品と比較してダイヤルのスムーズさが高く評価されている"
+      }
+    ],
+    "lastInvestigated": "2026-05-06",
+    "competitiveAnalysis": [
+      {
+        "name": "ZHEGE TSAロック 南京錠 4桁ダイヤル式ロック ワイヤータイプ (B0C7LD94CH)",
+        "asin": "B0C7LD94CH",
+        "priceComparison": "対象商品とほぼ同等かやや高めの価格帯。機能面では大きな差はない。",
+        "featureComparison": [
+          "共通点：4桁ダイヤル、ワイヤータイプのTSAロック。",
+          "相違点：ブランドとカラーバリエーションの違い。"
+        ],
+        "differentiators": [
+          "Diyife TSA南京錠 4桁ダイヤルロックの利点：コンパクトでダイヤルがスムーズとの評価が多い。",
+          "ZHEGE TSAロック 南京錠 4桁ダイヤル式ロック ワイヤータイプ (B0C7LD94CH)の利点：特定のカラーを好むユーザーに適している。"
+        ]
+      },
+      {
+        "name": "fogman TSAロック 南京錠 4桁 ダイヤル式 (B0BPYRW9PR)",
+        "asin": "B0BPYRW9PR",
+        "priceComparison": "対象商品よりやや高い。U字型の金具を採用している。",
+        "featureComparison": [
+          "共通点：4桁ダイヤル式のTSAロック。",
+          "相違点：fogmanはワイヤーではなく通常のU字型金具を採用。"
+        ],
+        "differentiators": [
+          "Diyife TSA南京錠 4桁ダイヤルロックの利点：ワイヤータイプなので細い穴や複数のジッパーを通しやすい。",
+          "fogman TSAロック 南京錠 4桁 ダイヤル式 (B0BPYRW9PR)の利点：ワイヤーより太い金具でしっかりとした施錠感がある。"
+        ]
+      },
+      {
+        "name": "Diyife TSAロック 4桁ダイヤルロック ブラック (B0CHS1VB86)",
+        "asin": "B0CHS1VB86",
+        "priceComparison": "同一製品の色違い（ブラック）で価格も同等。",
+        "featureComparison": [
+          "共通点：基本性能、デザイン、材質は全て同じ。",
+          "相違点：本体カラーがオレンジかブラックかの違い。"
+        ],
+        "differentiators": [
+          "Diyife TSA南京錠 4桁ダイヤルロックの利点：オレンジは目立つため、荷物を見つけやすい。",
+          "Diyife TSAロック 4桁ダイヤルロック ブラック (B0CHS1VB86)の利点：ブラックは落ち着いた色合いで、どんなバッグにも合わせやすい。"
+        ]
+      },
+      {
+        "name": "prendre TSAロック 南京錠 4桁 ダイヤル式 シルバー (B07RZRVBK5)",
+        "asin": "B07RZRVBK5",
+        "priceComparison": "対象商品と同価格帯。U字型の標準的なデザイン。",
+        "featureComparison": [
+          "共通点：4桁ダイヤル式TSAロック。",
+          "相違点：prendreはワイヤーではなくU字型金具を採用。"
+        ],
+        "differentiators": [
+          "Diyife TSA南京錠 4桁ダイヤルロックの利点：ワイヤー式で柔軟な取り付けが可能。",
+          "prendre TSAロック 南京錠 4桁 ダイヤル式 シルバー (B07RZRVBK5)の利点：シンプルで標準的な南京錠の形状を好む場合に適している。"
+        ]
+      },
+      {
+        "name": "ZHEGE TSAロック 4桁ダイヤル式 南京錠 (B095HG6Y9S)",
+        "asin": "B095HG6Y9S",
+        "priceComparison": "対象商品と同価格帯。U字型金具のタイプ。",
+        "featureComparison": [
+          "共通点：4桁ダイヤル式TSAロック。",
+          "相違点：ワイヤータイプかU字型金具タイプかの違い。"
+        ],
+        "differentiators": [
+          "Diyife TSA南京錠 4桁ダイヤルロックの利点：ワイヤーケーブルが長めで、複数のジッパーをまとめてロックしやすい。",
+          "ZHEGE TSAロック 4桁ダイヤル式 南京錠 (B095HG6Y9S)の利点：U字型金具で頑丈さを重視する場合に向いている。"
+        ]
+      },
+      {
+        "name": "NAGE TSAロック 南京錠 4桁 ダイヤル錠 (B0DHKYN78F)",
+        "asin": "B0DHKYN78F",
+        "priceComparison": "同価格帯の競合製品。",
+        "featureComparison": [
+          "共通点：4桁ダイヤル式のTSAロック機能。",
+          "相違点：メーカーの違いとデザインの細部の違い。"
+        ],
+        "differentiators": [
+          "Diyife TSA南京錠 4桁ダイヤルロックの利点：ワイヤータイプで柔軟性があり、様々な用途に使いやすい。",
+          "NAGE TSAロック 南京錠 4桁 ダイヤル錠 (B0DHKYN78F)の利点：コンパクトなデザインを好むユーザー向け。"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "海外旅行に行く人",
+        "ジムや学校のロッカーを利用する人",
+        "リュックやバッグの防犯対策をしたい人"
+      ],
+      "pros": [
+        "10,000通りの4桁ダイヤルで防犯性が高い",
+        "ワイヤータイプで狭い穴や複数のジッパーにも通しやすい",
+        "ダイヤルの操作がスムーズで設定が容易"
+      ],
+      "cons": [
+        "コンパクトだが金属製で少し重い",
+        "暗い場所や視力が低いと数字が見にくい",
+        "ワイヤーなので太いU字金具に比べると物理的な切断リスクに不安を感じる場合がある"
+      ],
+      "score": 83,
+      "scoreRationale": "[基本点: 70]\n[加点: +8] (ダイヤルがスムーズで設定が簡単、100均製品との明確な品質の差があるため)\n[加点: +5] (ワイヤータイプで多様なジッパーや穴に通しやすい実用性の高さ)\n[加点: +3] (オレンジカラーで荷物が見つけやすいデザイン性)\n[減点: -3] (金属製による重さと、暗い場所での数字の見にくさ)\n[合計: 83]"
+    },
+    "technicalSpecs": {
+      "dimensions": {
+        "height": "47mm",
+        "width": "12mm",
+        "depth": "35mm"
+      },
+      "material": "高強度亜鉛合金(本体), スチール(ケーブル)",
+      "color": "オレンジ",
+      "lockType": "4桁ダイヤル式",
+      "tsaApproved": "はい",
+      "other": [
+        "ワイヤーケーブルタイプ"
+      ]
+    }
+  }
+}
