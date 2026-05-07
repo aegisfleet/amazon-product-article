@@ -1,0 +1,211 @@
+{
+  "analysis": {
+    "productName": "パイロット シャープペンシル S20 0.5mm マホガニー",
+    "parentAsin": "B06ZZFJ6HY",
+    "productDescription": "やさしい木のぬくもりを感じられる、木軸シャープペンシル「S20」。使い込むほどに手に馴染み、味わいが増すのが特徴です。",
+    "productUsage": [
+      "日常的な筆記",
+      "製図・デッサン",
+      "学習用",
+      "ギフト"
+    ],
+    "positivePoints": [
+      "使い込むほどに手に馴染み、ツヤが出る樹脂含浸カバ材（マホガニー）を採用",
+      "低重心設計による安定した筆記感",
+      "高級感のあるデザインで、プレゼントにも最適",
+      "細身のボディで長時間の筆記でも疲れにくい"
+    ],
+    "negativePoints": [
+      "落とすと先端のガイドパイプが曲がりやすい",
+      "木軸のため、水濡れに注意が必要"
+    ],
+    "useCases": [
+      "学校や職場での普段使い",
+      "長時間の勉強や執筆作業",
+      "図面の作成",
+      "贈り物として"
+    ],
+    "userStories": [
+      {
+        "userType": "学生",
+        "scenario": "毎日の勉強で使用",
+        "experience": "最初は木の質感がサラサラしていましたが、毎日使っているうちに手に馴染み、独特のツヤが出てきました。低重心で書きやすく、長時間勉強しても手が疲れにくいです。",
+        "supportingSourceIds": [
+          "src-amazon-reviews",
+          "src-kakaku-reviews"
+        ],
+        "sentiment": "positive"
+      },
+      {
+        "userType": "社会人",
+        "scenario": "オフィスでのメモ書き",
+        "experience": "マホガニーの色合いが落ち着いていて、ビジネスシーンでも使いやすいです。ただ、机から落とした時にペン先が曲がってしまい、修理が必要になったのが残念でした。",
+        "supportingSourceIds": [
+          "src-amazon-reviews",
+          "src-kakaku-reviews"
+        ],
+        "sentiment": "mixed"
+      }
+    ],
+    "userImpression": "木軸ならではの経年変化を楽しめる点や、計算された低重心設計による書きやすさが高く評価されています。一方で、精密な作りのため落下などの衝撃に弱く、取り扱いには注意が必要という声も聞かれます。",
+    "sources": [
+      {
+        "id": "src-amazon-reviews",
+        "name": "Amazon カスタマーレビュー",
+        "url": "https://www.amazon.co.jp/dp/B06ZZFJ6HY",
+        "tier": "medium",
+        "evidenceType": "primary",
+        "publishedAt": "2026-05-07",
+        "author": "Amazon",
+        "conflictOfInterest": "none",
+        "notes": "書き心地の良さや経年変化、ペン先の繊細さに関するレビューを抽出"
+      },
+      {
+        "id": "src-kakaku-reviews",
+        "name": "価格.com S20 シャープペンシル カスタマーレビュー",
+        "url": "https://kakaku.com/search_results/S20+%83V%83%83%81%5B%83v%83y%83%93%83V%83%8B/?category=0029",
+        "tier": "medium",
+        "evidenceType": "secondary",
+        "publishedAt": "2026-05-07",
+        "author": "価格.comユーザー",
+        "conflictOfInterest": "none",
+        "notes": "書き心地やデザイン、耐久性についてのユーザー評価を確認"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "使い込むほどにツヤが出る木軸素材",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-amazon-reviews",
+          "src-kakaku-reviews"
+        ],
+        "crossChecked": true,
+        "notes": "多くのユーザーが経年変化を実感している"
+      },
+      {
+        "claim": "低重心設計による書きやすさ",
+        "category": "comparativeAdvantage",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-amazon-reviews",
+          "src-kakaku-reviews"
+        ],
+        "crossChecked": true,
+        "notes": "筆記の安定性が高いと評価されている"
+      }
+    ],
+    "lastInvestigated": "2026-05-07",
+    "competitiveAnalysis": [
+      {
+        "name": "三菱鉛筆 ピュアモルト 0.5 ナチュラル",
+        "asin": "B001DHKOOQ",
+        "priceComparison": "対象商品よりも安価だが、材質はウイスキー樽の廃材を使用しており、太めのボディとなっている。",
+        "featureComparison": [
+          "共通点：木軸を採用している点。",
+          "相違点：対象商品は細身で製図用のような低重心設計だが、本商品は太軸で樽材を再利用している点。"
+        ],
+        "differentiators": [
+          "パイロット S20の利点：細身で低重心のため、細かい文字を書くのや長時間の筆記に向いている。",
+          "三菱鉛筆 ピュアモルトの利点：価格が手頃で、太めの軸が好みの人に向いている。"
+        ]
+      },
+      {
+        "name": "PILOT シャープ レグノ ディープレッド",
+        "asin": "B008C0LR8Y",
+        "priceComparison": "対象商品と同程度の価格帯。",
+        "featureComparison": [
+          "共通点：パイロット製の木軸シャープペンシルで、樹脂含浸カバ材を使用している点。",
+          "相違点：対象商品はS20シリーズの特有のフォルムだが、レグノはより丸みを帯びた標準的な形状。"
+        ],
+        "differentiators": [
+          "パイロット S20の利点：製図用ペンに近いシャープなデザインと低重心設計。",
+          "PILOT レグノの利点：標準的なペンの太さ・形状で、誰にでも握りやすい点。"
+        ]
+      },
+      {
+        "name": "無印良品 木軸シャープペン ナチュラル",
+        "asin": "B098N59PBP",
+        "priceComparison": "対象商品よりもかなり安価。",
+        "featureComparison": [
+          "共通点：木軸を使用している点。",
+          "相違点：対象商品は0.5mm芯だが、本商品は2.0mm芯で鉛筆のような太さ。素材も本商品は天然木、対象商品は樹脂含浸カバ材。"
+        ],
+        "differentiators": [
+          "パイロット S20の利点：0.5mm芯で細かな文字が書きやすく、樹脂を含浸させているため耐久性が高い。",
+          "無印良品 木軸シャープペンの利点：鉛筆のような書き心地と、非常に手頃な価格。"
+        ]
+      },
+      {
+        "name": "三菱鉛筆 ピュアモルト 0.5 ダークブラウン",
+        "asin": "B001DHKOPA",
+        "priceComparison": "対象商品よりも安価。",
+        "featureComparison": [
+          "共通点：木製軸を使用している点。",
+          "相違点：カラーバリエーションの違い（マホガニーに対しダークブラウン）。"
+        ],
+        "differentiators": [
+          "パイロット S20の利点：スリムなボディと製図用のような精密な書き味。",
+          "三菱鉛筆 ピュアモルトの利点：コストパフォーマンスの高さと、ウイスキー樽材という独特のストーリー性。"
+        ]
+      },
+      {
+        "name": "三菱鉛筆 ピュアモルト 細軸 ダークブラウン",
+        "asin": "B001DHNWWM",
+        "priceComparison": "対象商品よりも安価。",
+        "featureComparison": [
+          "共通点：細身の木製軸を採用している点。",
+          "相違点：対象商品は樹脂含浸カバ材でツヤがあるが、本商品は樽材を使用しており比較的マットな質感。"
+        ],
+        "differentiators": [
+          "パイロット S20の利点：長期間の使用による経年変化（ツヤ）をより楽しめる点。",
+          "三菱鉛筆 ピュアモルトの利点：手軽に木軸の雰囲気を味わえる点。"
+        ]
+      },
+      {
+        "name": "Pilot S20 0.3mm マホガニー",
+        "asin": "B08SHXN9V1",
+        "priceComparison": "対象商品と同程度の価格。",
+        "featureComparison": [
+          "共通点：同じS20シリーズのマホガニーカラーである点。",
+          "相違点：芯径が対象商品は0.5mmだが、本商品は0.3mmである点。"
+        ],
+        "differentiators": [
+          "パイロット S20 0.5mmの利点：標準的な芯径で、普段使いや汎用的な用途に向いている。",
+          "Pilot S20 0.3mmの利点：より細かな文字を書く手帳用や、精密な製図作業に向いている。"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "長く愛用できるペンを探している人",
+        "書き心地の良さを重視する学生や社会人",
+        "木製品の経年変化を楽しみたい人"
+      ],
+      "pros": [
+        "使い込むほどに手に馴染む木軸",
+        "安定した低重心設計による書きやすさ",
+        "高級感のある美しいフォルム"
+      ],
+      "cons": [
+        "落下によるペン先の破損リスクがある",
+        "水濡れに弱い"
+      ],
+      "score": 85,
+      "scoreRationale": "[基本点: 70]\n[加点: +5] (使い込むほどに味わいが増す木軸素材)\n[加点: +5] (高級感のある高いデザイン性)\n[加点: +10] (低重心設計による書き心地の良さ)\n[減点: -5] (落下時にガイドパイプが曲がりやすいという繊細さ)\n[合計: 85]"
+    },
+    "technicalSpecs": {
+      "dimensions": {
+        "height": "10.6mm",
+        "width": "146.0mm",
+        "depth": "10.6mm"
+      },
+      "weight": "18g",
+      "coreSize": "0.5mm",
+      "material": "樹脂含浸カバ材",
+      "mechanism": "ノック式",
+      "origin": "日本"
+    }
+  }
+}
