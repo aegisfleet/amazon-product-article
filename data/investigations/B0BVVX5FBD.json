@@ -2,131 +2,211 @@
   "analysis": {
     "productName": "FIFINE AmpliGame AM8",
     "parentAsin": "B0BVVX5FBD",
-    "productDescription": "XLRとUSBの両方に対応したダイナミックマイクで、ゲーミング向けのRGBライティングと実用的なタッチミュート機能を搭載しています。",
+    "productDescription": "XLRとUSBの両接続に対応した、単一指向性のダイナミックマイク。ゲーム実況、ポッドキャスト、ライブ配信向けに設計されており、RGBライティングやタッチミュート機能を備えています。",
     "productUsage": [
-      "ゲーム実況・ライブ配信",
-      "ポッドキャスト・ナレーション録音",
-      "ボイスチャット・Web会議",
-      "XLR接続による本格的なレコーディング"
+      "ゲーム実況",
+      "ポッドキャスト",
+      "ライブ配信",
+      "テレワーク",
+      "ナレーション録音"
     ],
     "positivePoints": [
-      "USBとXLRの両方に対応しており、初心者から上級者へのステップアップに対応",
-      "タッチ式のミュートボタンが静音で使いやすく、瞬時に操作可能",
-      "ダイナミックマイクの特性により、周囲の雑音（キーボード音など）を拾いにくい",
-      "RGBライティングがゲーミング環境の雰囲気を高める（オフにも可能）",
-      "ヘッドホン端子を搭載し、遅延のない音声モニタリングが可能"
+      "USBとXLRの両接続に対応し、初心者から上級者まで長く使える",
+      "単一指向性のダイナミックマイクで、周囲の環境音やキーボード音を効果的に低減できる",
+      "タッチ式のミュートボタンとLEDインジケーターで直感的な操作が可能",
+      "カスタマイズ可能なRGBライティング機能で配信環境を彩ることができる"
     ],
     "negativePoints": [
-      "付属のデスクトップスタンドは高さが低く、口元に近づけるには別途マイクアームが推奨される",
-      "ボディはプラスチック製であり、金属製のような重厚感や高級感には欠ける",
-      "ショックマウント機能は内蔵されているが、外部からの強い振動には弱い場合がある"
+      "XLR接続時はミュートボタンやRGBライティング機能が使用できない",
+      "FIFINE Genieソフトウェアには非対応である",
+      "XLRケーブルは付属していないため、XLR接続を行う場合は別途用意が必要"
     ],
     "useCases": [
-      "初めて単体マイクを購入するゲーマーの配信環境構築",
-      "将来的にオーディオインターフェース導入を検討しているユーザーの入門機",
-      "生活音を拾わずにクリアな音声を届けたいテレワーク環境"
+      "防音環境のない自宅でのゲーム配信",
+      "オーディオインターフェースへのステップアップを見据えたマイク導入",
+      "Discordでのボイスチャット"
     ],
     "userStories": [
       {
-        "userType": "ゲーム配信初心者",
-        "scenario": "配信ソフトでの設定と実況",
-        "experience": "USBケーブル1本でPCに接続するだけで認識され、すぐに高音質な配信が始められた。ミュート忘れもLEDの色でわかるので防げている。",
+        "userType": "ゲーム配信者",
+        "scenario": "自宅のPCデスクでゲーム実況を行う",
+        "experience": "以前はコンデンサーマイクを使用しており、キーボードの打鍵音や環境音が入りやすかったが、AM8に変えてからは声だけをクリアに拾ってくれるようになった。USBで手軽に接続でき、将来的にオーディオインターフェースを導入した際にもXLR接続でそのまま使える点が非常に魅力的。タップミュートも便利で使い勝手が良い。",
+        "supportingSourceIds": [
+          "src-1",
+          "src-2"
+        ],
         "sentiment": "positive"
-      },
-      {
-        "userType": "FPSゲーマー",
-        "scenario": "ボイスチャット中のキーボード操作",
-        "experience": "以前のコンデンサーマイクではキーボードの打鍵音が入ってしまったが、AM8に変えてからは声だけをクリアに拾ってくれるようになった。",
-        "sentiment": "positive"
-      },
-      {
-        "userType": "デスク環境重視ユーザー",
-        "scenario": "デスク上のセットアップ",
-        "experience": "付属スタンドだと低すぎて前かがみになる必要があったため、すぐにマイクアームを買い足した。マイク自体の性能には満足している。",
-        "sentiment": "mixed"
       }
     ],
-    "userImpression": "価格以上の音質と機能性を備えた「コスパ最強」のマイクとして非常に高い評価を得ている。特にUSB/XLR両対応の柔軟性と、ゲーマー向けの機能（RGB、ミュート）が好評。",
+    "userImpression": "価格以上の音質と多機能性で、特に周囲のノイズに悩むゲーマーや配信者から高い評価を得ている。USBとXLRのデュアル接続対応により、初心者にとって導入しやすく、将来的な機材のアップグレードにも対応できる点が評価されている。",
     "sources": [
       {
-        "name": "Amazon Customer Reviews",
+        "id": "src-1",
+        "name": "FIFINE Official Website - AmpliGame AM8",
+        "url": "https://fifinemicrophone.com/collections/dynamic-microphones/products/fifine-ampligame-am8-microphone",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-05-09",
+        "author": "FIFINE",
+        "conflictOfInterest": "disclosed",
+        "notes": "製品の仕様、XLR時の制限（RGB・ミュート不可）、ソフトウェア非対応などの詳細を確認。"
+      },
+      {
+        "id": "src-2",
+        "name": "Amazon.co.jp 製品ページ",
         "url": "https://www.amazon.co.jp/dp/B0BVVX5FBD",
-        "credibility": "medium"
+        "tier": "medium",
+        "evidenceType": "secondary",
+        "publishedAt": "2026-05-09",
+        "author": "Amazon",
+        "conflictOfInterest": "none",
+        "notes": "ダイナミックマイクとしてのノイズ低減効果や使い勝手、デザインに対する肯定的な評価が確認できる。"
       }
     ],
-    "lastInvestigated": "2026-02-05",
+    "claims": [
+      {
+        "claim": "USBとXLRの両接続に対応している",
+        "category": "comparativeAdvantage",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-1",
+          "src-2"
+        ],
+        "crossChecked": true,
+        "notes": "公式サイトおよび商品仕様で確認。"
+      },
+      {
+        "claim": "XLR接続時はRGBライティングとミュート機能が使用不可",
+        "category": "durability",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "crossChecked": false,
+        "notes": "公式サイトのFAQセクションで確認。"
+      }
+    ],
+    "lastInvestigated": "2026-05-09",
     "competitiveAnalysis": [
+      {
+        "name": "audio-technica ATR2100x-USB",
+        "asin": "B08KDVW9Z3",
+        "priceComparison": "対象商品と同価格帯。オーディオテクニカのブランド力と信頼性があるが、ゲーミング特化の機能（RGBなど）はない。",
+        "featureComparison": [
+          "共通点：USBおよびXLRの両接続に対応した単一指向性ダイナミックマイクである点",
+          "相違点：ATR2100x-USBはハンドヘルド型でRGBライティングがなく、より伝統的なボーカル・配信用デザインである点"
+        ],
+        "differentiators": [
+          "FIFINE AmpliGame AM8の利点：RGBライティングやタッチミュート機能があり、ゲーミングデスクや配信映えする点",
+          "audio-technica ATR2100x-USBの利点：老舗オーディオメーカーの信頼性と、ハンドマイクとしても使いやすい形状"
+        ]
+      },
       {
         "name": "MAONO PD100X",
         "asin": "B0D1TV5PR9",
-        "priceComparison": "AM8より約2,500円安く、非常に安価。",
+        "priceComparison": "対象商品よりもやや安価。似た機能を持ちコストパフォーマンスが高い。",
         "featureComparison": [
-          "同じくUSB/XLR両対応のダイナミックマイク",
-          "RGBライティング搭載",
-          "AM8のような物理タッチミュートボタンの配置が異なる"
+          "共通点：USBおよびXLR両接続対応、単一指向性ダイナミックマイク、RGBライティング搭載",
+          "相違点：専用ソフトウェアによる細かいEQ・オーディオ調整機能の有無（MAONOはソフト対応モデルが多い傾向）"
         ],
         "differentiators": [
-          "PD100Xは専用ソフトでの制御が可能",
-          "AM8は直感的な物理操作（ゲインつまみ等）に優れる"
+          "FIFINE AmpliGame AM8の利点：独特なスクエア型のデザインと安定した卓上スタンドが付属する点",
+          "MAONO PD100Xの利点：より安価でありながらRGBやUSB/XLR接続をサポートする点"
         ]
       },
       {
-        "name": "FIFINE K688",
-        "asin": "B0DNJGTMBK",
-        "priceComparison": "AM8より約4,000円高い。",
+        "name": "FIFINE K688W",
+        "asin": "B0CPSC76DC",
+        "priceComparison": "対象商品よりもやや高価。同一ブランドの用途違いモデル。",
         "featureComparison": [
-          "USB/XLR両対応",
-          "よりフラットで放送局向けの音質設計",
-          "RGBライティングなし"
+          "共通点：FIFINE製のUSB/XLR両接続対応ダイナミックマイクである点",
+          "相違点：AM8はRGBライティング搭載で低音域が強めのチューニング、K688は中高音域がクリアでRGB非搭載のポッドキャスト向けデザインである点"
         ],
         "differentiators": [
-          "K688は落ち着いたデザインでビジネスやポッドキャスト向き",
-          "AM8はゲーミング向けの派手なデザインと機能"
+          "FIFINE AmpliGame AM8の利点：RGBライティングがあり、ゲーミング環境の雰囲気に合わせやすく、価格も手頃な点",
+          "FIFINE K688Wの利点：よりフラットでクリアな音質を提供し、本格的なポッドキャストやナレーションに向いている点"
         ]
       },
       {
-        "name": "Audio-Technica AT2040",
-        "asin": "B09BFPNW2J",
-        "priceComparison": "AM8より約4,500円高い。",
+        "name": "MAONO PD300XT",
+        "asin": "B0F2HR9SZT",
+        "priceComparison": "対象商品と比較してかなり高価。",
         "featureComparison": [
-          "XLR接続専用（USB不可）",
-          "プロ仕様の品質と耐久性",
-          "ハイパーカーディオイド（超単一指向性）"
+          "共通点：USBおよびXLRのデュアル接続をサポートするダイナミックマイク",
+          "相違点：PD300XTはより高解像度な録音に対応したハイエンドモデルである点"
         ],
         "differentiators": [
-          "オーディオインターフェースが必須",
-          "信頼のブランドと堅牢なビルドクオリティ"
+          "FIFINE AmpliGame AM8の利点：コストパフォーマンスに優れ、必要な機能を手頃な価格で揃えられる点",
+          "MAONO PD300XTの利点：より高品位な録音が可能で、プロレベルのスタジオレコーディングに適している点"
+        ]
+      },
+      {
+        "name": "MAONO PD100XS",
+        "asin": "B0F1F3PZJF",
+        "priceComparison": "対象商品よりもやや高価。",
+        "featureComparison": [
+          "共通点：USBおよびXLR対応のダイナミックマイク",
+          "相違点：PD100XSはより洗練された外観とノイズキャンセリング機能に特化している点"
+        ],
+        "differentiators": [
+          "FIFINE AmpliGame AM8の利点：RGBによる視覚的なアピールと、直感的なタップミュート機能がある点",
+          "MAONO PD100XSの利点：不要な環境音を抑える設計がより強力にアピールされている点"
+        ]
+      },
+      {
+        "name": "HyperX FlipCast",
+        "asin": "B0FKTCPR94",
+        "priceComparison": "対象商品と比較して非常に高価。",
+        "featureComparison": [
+          "共通点：XLRとUSBのデュアルコネクションに対応した単一指向性のダイナミックマイク",
+          "相違点：HyperXはNGENUITYソフトウェアに対応し、詳細なカスタマイズが可能。マルチファンクションノブなどの高度な操作系統を備える"
+        ],
+        "differentiators": [
+          "FIFINE AmpliGame AM8の利点：価格が圧倒的に安く、コストパフォーマンスに優れる点",
+          "HyperX FlipCastの利点：専用ソフトウェアによる高度な制御と、ゲーミングブランドとしての確立されたサポート・機能性"
         ]
       }
     ],
     "recommendation": {
       "targetUsers": [
-        "コスパ重視で高音質なマイクを探しているゲーマー・配信者",
-        "現在はUSB接続だが、将来的にXLR機材への移行を考えている人",
-        "キーボード音などの環境音を低減したい人"
+        "初めて本格的なマイクを購入するゲーマー",
+        "キーボード音や環境ノイズに悩んでいる配信者",
+        "将来的にオーディオインターフェースの導入を考えているユーザー"
       ],
       "pros": [
-        "圧倒的なコストパフォーマンス",
-        "USB/XLR両対応による高い拡張性",
-        "実用的なタッチミュートと直感的な音量操作"
+        "手頃な価格でありながらUSBとXLRの両接続に対応",
+        "ダイナミックマイク特有の優れたノイズ低減効果",
+        "タップミュートやRGBライティングなど、配信に便利な機能を搭載"
       ],
       "cons": [
-        "付属スタンドの実用性が低い（アーム推奨）",
-        "質感がプラスチック寄り"
+        "XLR接続時はミュートやRGB機能が使用できない",
+        "専用ソフトウェアによる詳細なEQ調整などは非対応"
       ],
-      "score": 88,
-      "scoreRationale": "[基本点: 70]\n[加点: +15] (この価格帯でUSB/XLR両対応、かつ十分な音質と機能を持つ圧倒的なコスパ)\n[加点: +5] (タッチミュート、RGB、ヘッドホンモニタリングなど、配信者に必要な機能が完備)\n[減点: -2] (付属スタンドが低く実用性に欠ける点と、筐体のプラスチック感)\n[合計: 88]"
+      "score": 85,
+      "scoreRationale": "[基本点: 70]\n[加点: +10] (USB/XLR両対応による高い実用性と将来性)\n[加点: +10] (価格帯に対する機能・音質のコストパフォーマンスが優秀)\n[減点: -5] (XLR接続時に一部機能が制限される点)\n[合計: 85]"
     },
     "technicalSpecs": {
-      "type": "ダイナミック型",
-      "polarPattern": "単一指向性 (カーディオイド)",
-      "frequencyResponse": "50Hz - 16kHz",
-      "connectivity": ["USB Type-C", "XLR"],
-      "bitDepthSampleRate": "16-bit / 48kHz (推定)",
-      "controls": ["マイクゲイン", "ヘッドホンボリューム", "タッチミュート", "RGB制御"],
-      "lighting": "RGBライティング (3モード)",
-      "monitoring": "3.5mmヘッドホンジャック (リアルタイムモニタリング)",
-      "dimensions": null
+      "type": "ダイナミックマイク",
+      "polarPattern": "単一指向性（カーディオイド）",
+      "frequencyResponse": "50Hz - 16KHz",
+      "connectivity": "USB Type-C, XLR",
+      "features": [
+        "RGBライティング",
+        "タップミュート",
+        "音声モニタリング用3.5mmヘッドホン端子",
+        "音量調節ノブ"
+      ],
+      "compatibleDevices": [
+        "PC",
+        "PS4",
+        "PS5"
+      ],
+      "color": "ブラック",
+      "weight": "非公開",
+      "other": [
+        "付属アクセサリ: USB Type-C to Type-Aケーブル, デスクトップマイクスタンド",
+        "マイクマウントネジ: 一般的なブームマウントに組み立て可能な変換アダプター内蔵"
+      ]
     }
   }
 }
