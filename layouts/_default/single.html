@@ -26,11 +26,15 @@
     </div>
     {{- partial "breadcrumb.html" . -}}
 
-    <!-- Today's Recommendation Button -->
-    <div style="margin: var(--spacing-md) 0; display: flex; justify-content: center;">
+    <!-- Today's Recommendation & Bargain Button -->
+    <div class="product-count-container">
         <a href="{{ `recommendations/` | relURL }}" class="today-recommendation-link">
             <span class="today-recommendation-icon">🎯</span>
             <span class="today-recommendation-text">本日の注目商品10選</span>
+        </a>
+        <a href="{{ `bargain/` | relURL }}" class="bargain-link" id="bargain-link">
+            <span class="bargain-link-icon">🎁</span>
+            <span>あともう一品</span>
         </a>
     </div>
 
