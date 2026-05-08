@@ -1,0 +1,176 @@
+{
+  "analysis": {
+    "productName": "HAIBING ギターワイヤレスシステム",
+    "parentAsin": "B0BSBL5QQB",
+    "productDescription": "UHF帯を使用したギター・ベース用のワイヤレスシステム。低価格ながら最大4時間の連続使用が可能なバッテリーを内蔵し、手軽にワイヤレス環境を構築できます。",
+    "productUsage": ["エレキギターの演奏", "ベースの演奏", "自宅練習", "手軽なライブ演奏"],
+    "positivePoints": ["価格が非常に安い", "軽量でコンパクト", "USBで簡単に充電できる"],
+    "negativePoints": ["途中で通信不良が発生することがある", "ベースの低音がカットされてしまう", "バッテリーの持続時間が最大4時間と短め"],
+    "useCases": ["自宅でのギター練習", "ケーブルの煩わしさを解消したい時", "費用を抑えてワイヤレスを試したい初心者"],
+    "userStories": [
+      {
+        "userType": "自宅ギタリスト",
+        "scenario": "自宅での練習時",
+        "experience": "ケーブルが邪魔に感じていたため購入しました。低価格ですが音はよく出ており、練習には十分使えます。",
+        "supportingSourceIds": ["src-amazon-reviews"],
+        "sentiment": "positive"
+      },
+      {
+        "userType": "ベーシスト",
+        "scenario": "ベース演奏時",
+        "experience": "手軽にワイヤレスにしたくて試しましたが、ベースギターの低音の深みがカットされてしまい、音質面で少し物足りなさを感じました。",
+        "supportingSourceIds": ["src-amazon-reviews"],
+        "sentiment": "negative"
+      },
+      {
+        "userType": "アマチュアミュージシャン",
+        "scenario": "長時間の演奏",
+        "experience": "安価で導入しやすいですが、途中で通信不良が度々発生することがあり、ライブなどの本番での使用には不安が残ります。",
+        "supportingSourceIds": ["src-amazon-reviews"],
+        "sentiment": "mixed"
+      }
+    ],
+    "userImpression": "非常に安価でワイヤレス環境を構築できるためお試しや練習用には適しているが、通信の安定性や音質（特に低音域）に妥協が必要な製品。",
+    "sources": [
+      {
+        "id": "src-amazon-reviews",
+        "name": "Amazon カスタマーレビュー",
+        "url": "https://www.amazon.co.jp/dp/B0BSBL5QQB",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-05-09",
+        "author": "Amazonユーザー",
+        "conflictOfInterest": "none",
+        "notes": "「低価格だけど音はよく出る」「通信不良が度々発生する」「ベースの低音がカットされる」などのレビューを確認。星評価3.4。"
+      },
+      {
+        "id": "src-amazon-page",
+        "name": "Amazon 商品ページ",
+        "url": "https://www.amazon.co.jp/dp/B0BSBL5QQB",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-05-09",
+        "author": "HAIBING",
+        "conflictOfInterest": "none",
+        "notes": "製品仕様（UHF、4ms遅延、600mAhバッテリー、4時間使用など）を確認。"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "ベースの低音がカットされる",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": ["src-amazon-reviews"],
+        "crossChecked": false,
+        "notes": "複数のレビューから音質、特に低音の再現性に難があることがうかがえる。"
+      },
+      {
+        "claim": "最大4時間の長時間動作",
+        "category": "durability",
+        "confidence": "medium",
+        "supportingSourceIds": ["src-amazon-page"],
+        "crossChecked": false,
+        "notes": "メーカーの仕様に基づく。"
+      }
+    ],
+    "lastInvestigated": "2026-05-09",
+    "competitiveAnalysis": [
+      {
+        "name": "BOSS ボス WL-20",
+        "asin": "B07DMZFM55",
+        "priceComparison": "対象商品（1,550円）と比較して非常に高価だが、その分音質と通信の安定性に優れる。",
+        "featureComparison": [
+          "共通点：ギター用のワイヤレスシステム",
+          "相違点：対象商品はUHF帯を使用し非常に安価で遅延4ms・駆動4時間であるのに対し、WL-20は2.3msの超低レイテンシー、最大約7時間駆動、ケーブルトーンシミュレーションなど高度な機能を備える。"
+        ],
+        "differentiators": [
+          "HAIBING ギターワイヤレスシステムの利点：圧倒的に価格が安く、初めてワイヤレスを試すのには適している。",
+          "BOSS ボス WL-20の利点：通信が安定しており、音質も良いため、ライブなどの本番環境で安心して使用できる。"
+        ]
+      },
+      {
+        "name": "LEKATO ギターワイヤレスシステム ws-100",
+        "asin": "B0BXWM3P8B",
+        "priceComparison": "対象商品より高価だが、機能面で充実している。",
+        "featureComparison": [
+          "共通点：安価なワイヤレスシステムで充電式であること",
+          "相違点：対象商品はUHF帯を使用するのに対し、LEKATOは2.4GHz帯を使用。またLEKATOは190°回転可能で様々なギターにフィットしやすい。"
+        ],
+        "differentiators": [
+          "HAIBING ギターワイヤレスシステムの利点：より価格が安いため、とにかくコストを抑えたい場合に適している。",
+          "LEKATO ギターワイヤレスシステムの利点：プラグが回転するため、ジャックの位置が特殊なギターでも使いやすい。"
+        ]
+      },
+      {
+        "name": "New Bee ギター ワイヤレス 送受信機 WJ21",
+        "asin": "B0CBMXXLFD",
+        "priceComparison": "対象商品より高価だが、連続使用時間などで勝る。",
+        "featureComparison": [
+          "共通点：コンパクトな充電式ワイヤレスシステム",
+          "相違点：対象商品の駆動時間が4時間であるのに対し、New Bee WJ21は6時間連続使用可能で2.4GHz帯を使用する。"
+        ],
+        "differentiators": [
+          "HAIBING ギターワイヤレスシステムの利点：低コストで導入できること。",
+          "New Bee WJ21の利点：連続使用時間が長く、プラグが280°回転するため使い勝手が良い。"
+        ]
+      },
+      {
+        "name": "LEKATO ギターワイヤレスシステム",
+        "asin": "B08R3P2KHD",
+        "priceComparison": "対象商品より価格が高いが、実用性に優れる。",
+        "featureComparison": [
+          "共通点：エレキギターやベースで使用可能なワイヤレスシステム",
+          "相違点：対象商品は駆動時間4時間だが、LEKATO製品は8時間連続使用が可能である。"
+        ],
+        "differentiators": [
+          "HAIBING ギターワイヤレスシステムの利点：初期投資を安く済ませられる点。",
+          "LEKATOの利点：バッテリー持ちが良く、長時間の練習や演奏に向いている。"
+        ]
+      },
+      {
+        "name": "BOSS ボス WL-20L",
+        "asin": "B07DPKZFRZ",
+        "priceComparison": "対象商品よりはるかに高価だが、プロユースの品質を持つ。",
+        "featureComparison": [
+          "共通点：ギター用ワイヤレス",
+          "相違点：対象商品が安価な入門用であるのに対し、WL-20Lはアコースティックギターなどにも最適なケーブル・トーン・シミュレーション非搭載の高品質モデルであり、安定した通信を提供する。"
+        ],
+        "differentiators": [
+          "HAIBING ギターワイヤレスシステムの利点：圧倒的な低価格。",
+          "BOSS WL-20Lの利点：信頼性が高く、音質劣化を最小限に抑えたいユーザーに最適。"
+        ]
+      },
+      {
+        "name": "Xvive A24 Guitar Wireless System",
+        "asin": "B0G918HK3S",
+        "priceComparison": "対象商品より高価であり、品質が高い。",
+        "featureComparison": [
+          "共通点：ギター用ワイヤレスシステム",
+          "相違点：対象商品はUHF帯の安価な製品だが、Xviveは高音質な伝送技術と洗練されたデザインを持つ。"
+        ],
+        "differentiators": [
+          "HAIBING ギターワイヤレスシステムの利点：価格が非常に安く、気軽に購入できる。",
+          "Xvive A24の利点：音質と信頼性に優れ、より本格的な演奏に適している。"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": ["とにかく安くワイヤレスを試したい人", "自宅での練習用にケーブルをなくしたい人"],
+      "pros": ["非常に安価", "USB充電式で扱いやすい", "コンパクトで軽量"],
+      "cons": ["通信不良が発生しやすい", "ベースなどの低音がカットされる", "バッテリー駆動時間が最大4時間と短い"],
+      "score": 60,
+      "scoreRationale": "[基本点: 70]\n[加点: +5] (1,550円という圧倒的な低価格によるコスパ)\n[減点: -10] (通信の不安定さや低音カットなど性能・品質に難あり)\n[減点: -5] (バッテリー駆動時間が最大4時間と短め)\n[合計: 60]"
+    },
+    "technicalSpecs": {
+      "frequencyRange": "UHF帯",
+      "frequencyResponse": "20Hz～20KHz",
+      "latency": "4ms",
+      "battery": "リチウムバッテリー 600mAh",
+      "usageTime": "最大4時間",
+      "chargingTime": "2時間",
+      "chargingInterface": "マイクロUSB",
+      "material": "プラスチック+金属",
+      "color": "黒"
+    }
+  }
+}
