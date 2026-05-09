@@ -27,68 +27,99 @@
       "『ゼルダの伝説』新作でのHD振動2を活かした没入体験",
       "オンラインマルチプレイ時のボイスチャット活用"
     ],
-    "userStories": [
-      {
-        "userType": "30代男性（アクションゲーマー）",
-        "scenario": "『モンスターハンター』新作のプレイ",
-        "experience": "背面のGL/GRボタンにアイテム使用を割り当てたら、狩りの快適さが劇的に変わった。HD振動2はモンスターの咆哮まで手に伝わってくるようで、没入感が段違いだ。",
-        "sentiment": "positive"
-      },
-      {
-        "userType": "20代学生（FPSプレイヤー）",
-        "scenario": "オンライン対戦",
-        "experience": "スティックの精度が良く、エイムが安定する。これまでのProコンであったスティックの削れやドリフトも改善されているように感じる。ただ、学生には少し痛い出費だった。",
-        "sentiment": "mixed"
-      },
-      {
-        "userType": "40代主婦（ファミリー利用）",
-        "scenario": "家族でのパーティゲーム",
-        "experience": "子供の手には少し大きく重いようです。機能は素晴らしいですが、子供用にはもっと安いサードパーティ製でも十分かもしれません。夫は喜んで使っています。",
-        "sentiment": "mixed"
-      }
-    ],
+    "userStories": [],
     "userImpression": "価格の上昇に対する戸惑いはあるものの、HD振動2や追加ボタン、ヘッドホンジャックなどの進化点に対する評価は非常に高い。「一度使ったら前のProコンには戻れない」という声が多く、純正ならではの完成度が支持されている。",
     "sources": [
       {
-        "name": "IGN Japan Review",
+        "id": "src-1",
+        "name": "IGN Japan",
         "url": "https://jp.ign.com/nintendo-switch-2/review",
-        "credibility": "high"
-      },
-      {
-        "name": "Amazon Customer Reviews",
-        "url": null,
-        "credibility": "medium"
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-05-09",
+        "author": "IGN Japan",
+        "conflictOfInterest": "none",
+        "notes": "Nintendo Switch 2と周辺機器のレビュー記事"
       }
     ],
-    "lastInvestigated": "2026-02-05",
+    "lastInvestigated": "2026-05-10",
     "competitiveAnalysis": [
       {
         "name": "Nintendo Switch Proコントローラー",
-        "asin": "B01NCX66JN",
-        "priceComparison": "定価7,678円に対し、Switch 2 Proコンは9,980円と約2,300円高い。",
+        "asin": "B01NCX3W3O",
+        "priceComparison": "定価6,973円に対し、Switch 2 Proコンは9,980円と約3,000円高い。",
         "featureComparison": [
-          "Switch 2 ProはHD振動2に対応",
-          "Switch 2 Proはヘッドホンジャック、Cボタン、GL/GRボタンを新規搭載",
-          "バッテリー持続時間は同等（約40時間）"
+          "共通点：任天堂純正のProコントローラーであること",
+          "相違点：Switch 2 ProはHD振動2に対応し、ヘッドホンジャック、Cボタン、GL/GRボタンを新規搭載している"
         ],
         "differentiators": [
-          "次世代機専用機能（HD振動2など）の有無",
-          "追加ボタンによる操作性の拡張",
-          "オーディオ機能の統合"
+          "Nintendo Switch 2 Proコントローラーの利点：次世代機専用機能（HD振動2など）や追加ボタンによる操作性の拡張、オーディオ機能の統合",
+          "Nintendo Switch Proコントローラーの利点：価格が安く、旧Switchでの利用に十分な機能を持っていること"
         ]
       },
       {
-        "name": "Yommor Switch コントローラー",
-        "asin": "B0DDK6R2KZ",
-        "priceComparison": "3,635円と、Switch 2 Proコンの半額以下。",
+        "name": "ワイヤレスホリパッド for Nintendo Switch ブルー",
+        "asin": "B07Q2JFJJR",
+        "priceComparison": "5,236円と、Switch 2 Proコンの約半額。",
         "featureComparison": [
-          "Yommorは連射機能やRGBライトなど独自機能を搭載",
-          "YommorはHD振動やNFCの精度・対応で純正に劣る可能性が高い",
-          "Yommorは背面ボタンを持つが、Switch 2ネイティブ対応かは不明"
+          "共通点：Nintendo Switch向けに設計されたコントローラーであること",
+          "相違点：ホリパッドはHD振動2やNFCなどの純正特有の機能を持たない可能性があるが、価格が安い"
         ],
         "differentiators": [
-          "圧倒的な価格差",
-          "純正の信頼性と質感対多機能・低価格"
+          "Nintendo Switch 2 Proコントローラーの利点：HD振動2、NFC対応、GL/GRボタンなど全ての新機能が利用可能",
+          "ワイヤレスホリパッド for Nintendo Switch ブルーの利点：圧倒的な価格の安さと、基本機能に絞った使いやすさ"
+        ]
+      },
+      {
+        "name": "Switch コントローラー Switch2 TURBO連射機能 (Yommor)",
+        "asin": "B0DDK6R2KZ",
+        "priceComparison": "2,598円と、Switch 2 Proコンの約4分の一。",
+        "featureComparison": [
+          "共通点：Switch/Switch2で利用可能なワイヤレスコントローラーであること",
+          "相違点：Yommorは連射機能やマクロ機能、RGBライトなど独自の多機能を搭載しているが、純正のHD振動2には完全対応していない可能性が高い"
+        ],
+        "differentiators": [
+          "Nintendo Switch 2 Proコントローラーの利点：純正ならではの信頼性、質感、およびHD振動2の完全対応",
+          "Switch コントローラー Switch2 TURBO連射機能 (Yommor)の利点：非常に低価格でありながら、連射やマクロなどの独自機能を持つこと"
+        ]
+      },
+      {
+        "name": "Switch コントローラー ワイヤレス ホール効果スティック (NINJACON)",
+        "asin": "B0F7R92JRG",
+        "priceComparison": "NINJACONの方が圧倒的に安価であると想定される。",
+        "featureComparison": [
+          "共通点：SwitchおよびSwitch2で利用できるワイヤレスコントローラーであること",
+          "相違点：NINJACONはホール効果スティックやTURBO連射、RGBライトを搭載するが、純正のHD振動2やamiibo機能は非対応の可能性がある"
+        ],
+        "differentiators": [
+          "Nintendo Switch 2 Proコントローラーの利点：純正によるSwitch 2への完全最適化とHD振動2、amiibo読み込みへの対応",
+          "Switch コントローラー ワイヤレス ホール効果スティック (NINJACON)の利点：ホール効果スティックによる耐久性の向上と、カスタマイズ可能なRGBライトや連射機能"
+        ]
+      },
+      {
+        "name": "Joy-Con(L) ネオンブルー",
+        "asin": "B071KPQD5X",
+        "priceComparison": "単品購入の場合はJoy-Conが安いが、左右揃えるとProコントローラーと同等の価格帯となる。",
+        "featureComparison": [
+          "共通点：任天堂純正のコントローラーであること",
+          "相違点：Joy-Conは分離して使えるが、Proコントローラーはグリップ一体型で長時間プレイに適している。またSwitch 2 ProコントローラーはHD振動2やGL/GRボタン等の新機能を備える"
+        ],
+        "differentiators": [
+          "Nintendo Switch 2 Proコントローラーの利点：一体型グリップによる安定した操作性と、新世代機能（HD振動2、GL/GRボタン等）の搭載",
+          "Joy-Con(L) ネオンブルーの利点：おすそわけプレイや体感ゲームに適した分離型デザイン"
+        ]
+      },
+      {
+        "name": "グリップコントローラー Fit アタッチメントセット for Nintendo Switch (ホリ)",
+        "asin": "B0CDQCXHH5",
+        "priceComparison": "ホリ製はSwitch 2 Proコントローラーより安価な傾向にある。",
+        "featureComparison": [
+          "共通点：Switchの携帯モードおよびTVモードで快適に操作できるよう設計されていること",
+          "相違点：ホリ製はアタッチメントによるスタイル変更が特徴だが、ジャイロセンサーやHD振動2など純正特有の機能が省かれている場合がある"
+        ],
+        "differentiators": [
+          "Nintendo Switch 2 Proコントローラーの利点：全てのセンサー類やHD振動2、amiiboに対応したフルスペックの体験",
+          "グリップコントローラー Fit アタッチメントセット for Nintendo Switch (ホリ)の利点：手にフィットしやすい独自形状と、アタッチメントによる利用シーンの柔軟性"
         ]
       }
     ],
@@ -111,13 +142,26 @@
       "scoreRationale": "[基本点: 70]\n[性能・機能: +10] (HD振動2、GL/GRボタン、ヘッドホンジャック等の大幅な機能追加)\n[コストパフォーマンス: -5] (約1万円という価格は周辺機器として高額)\n[品質・デザイン: +5] (純正品としての高いビルドクオリティと静音性)\n[ユーザー満足度: +5] (機能進化への評価が高い)\n[合計: 85]"
     },
     "technicalSpecs": {
-      "connectivity": ["Bluetooth 5.3", "USB Type-C", "NFC (amiibo対応)"],
-      "battery": { "capacity": "1300mAh", "life": "約40時間", "charging": "約6時間" },
-      "dimensions": { "weight": "約260g", "width": "106mm", "height": "152mm", "depth": "60mm" },
-      "buttons": ["A/B/X/Y", "L/R/ZL/ZR", "GL/GR (背面)", "Cボタン", "キャプチャーボタン", "HOMEボタン", "L/Rスティック (押し込み対応)"],
-      "sensors": ["加速度センサー", "ジャイロセンサー"],
-      "audio": "3.5mmヘッドホンマイクジャック",
-      "other": ["HD振動2", "モーションIRカメラ (右Joy-Con同様の機能内蔵か推測)"]
-    }
+      "dimensions": {
+        "height": "152mm",
+        "width": "106mm",
+        "depth": "60mm"
+      },
+      "weight": "240g",
+      "capacity": "なし",
+      "material": "プラスチック等",
+      "origin": "未公開",
+      "other": [
+        "Bluetooth 5.3",
+        "USB Type-C",
+        "NFC (amiibo対応)",
+        "1300mAhバッテリー",
+        "約40時間動作",
+        "約6時間充電",
+        "HD振動2搭載",
+        "3.5mmヘッドホンマイクジャック"
+      ]
+    },
+    "claims": []
   }
 }
