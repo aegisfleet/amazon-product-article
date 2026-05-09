@@ -1,0 +1,144 @@
+{
+  "analysis": {
+    "productName": "CIO SMARTCOBY Pro SLIM SS",
+    "parentAsin": "B0GMX7Y16Z",
+    "productDescription": "発火リスクを低減した半固体電池を搭載し、約16mmの薄さを実現した10000mAh・35W出力のモバイルバッテリーです。",
+    "productUsage": [
+      "スマートフォン・タブレットの充電",
+      "一部ノートPCの充電",
+      "旅行や出張での携帯用電源"
+    ],
+    "positivePoints": [
+      "発火リスクが低く安全性の高い半固体電池を採用",
+      "10000mAhクラス・30W以上出力で約16mmという圧倒的な薄さ",
+      "単ポート最大35Wの高出力で一部ノートPCへの給電も可能",
+      "パススルー充電対応で本体とデバイスを同時充電可能"
+    ],
+    "negativePoints": [
+      "複数ポート同時使用時は合計最大30W出力に制限される",
+      "最大35Wの蓄電を行うには35W以上対応のPD充電器が別途必要"
+    ],
+    "useCases": [
+      "カフェや外出先でのノートPC・スマートフォンの充電",
+      "飛行機内への持ち込み（機内持ち込み対応）",
+      "通勤・通学カバンに入れての日常的な持ち歩き"
+    ],
+    "userStories": [],
+    "userImpression": "次世代の半固体電池による安全性と、16mmの極薄設計でありながら35W出力という高いスペックが評価される製品。日常の持ち歩きや旅行など幅広いシーンで活躍する安心感と利便性を両立している。",
+    "sources": [
+      {
+        "id": "src-1",
+        "name": "Amazon商品詳細ページ",
+        "url": "https://www.amazon.co.jp/dp/B0GMX7Y16Z",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-05-09",
+        "author": "CIO",
+        "conflictOfInterest": "none",
+        "notes": "製品の公式仕様（半固体電池、薄さ16mm、最大35W出力、3ポート搭載等）を確認"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "発火リスクを低減した半固体電池を搭載",
+        "category": "safety",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "crossChecked": false,
+        "notes": "公式情報に基づく"
+      },
+      {
+        "claim": "薄さ約16mmの極薄設計",
+        "category": "durability",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "crossChecked": false,
+        "notes": "公式情報に基づく"
+      }
+    ],
+    "lastInvestigated": "2026-05-09",
+    "competitiveAnalysis": [
+      {
+        "name": "バッファロー 半固体モバイルバッテリー 10000mAh 30W ケーブル一体型",
+        "asin": "B0GQSW1DSL",
+        "priceComparison": "対象商品とほぼ同価格帯。安全性を重視する半固体電池搭載モデルとして直接的な競合となる。",
+        "featureComparison": [
+          "共通点：半固体電池搭載、10000mAh容量、最大30Wクラスの出力、パススルー充電対応",
+          "相違点：対象商品が3ポート搭載（最大35W）でケーブル別売りなのに対し、競合はケーブル一体型（最大30W）となっている。"
+        ],
+        "differentiators": [
+          "CIO SMARTCOBY Pro SLIM SSの利点：最大35W出力対応により、一部ノートPCなど高出力が必要な機器により素早く充電可能。複数ポートで同時充電しやすい。",
+          "バッファロー 半固体モバイルバッテリーの利点：ケーブル一体型であるため、別途ケーブルを持ち歩く手間が省ける。"
+        ]
+      },
+      {
+        "name": "エレコム モバイルバッテリー 30W 10000mAh EC-C23LBK",
+        "asin": "B0D4Y52TDX",
+        "priceComparison": "対象商品より安価に購入できる。半固体電池の安全性よりも価格を優先する場合の選択肢となる。",
+        "featureComparison": [
+          "共通点：10000mAh容量、最大30Wクラスの出力、3ポート（Type-C×2, USB-A×1）搭載",
+          "相違点：対象商品が安全性の高い半固体電池を採用し薄さ16mmを実現しているのに対し、競合は従来型リチウムイオン電池を採用していると推測される。"
+        ],
+        "differentiators": [
+          "CIO SMARTCOBY Pro SLIM SSの利点：半固体電池による発火リスクの低減と、16mmという薄さにより持ち運びやすさと安全性が高い。",
+          "エレコム EC-C23LBKの利点：一般的なバッテリーセルを使用している分、価格が安くコストパフォーマンスに優れている。"
+        ]
+      },
+      {
+        "name": "CIO SMARTCOBY Pro SLIM Cable 35W",
+        "asin": "B0D53Z5BYG",
+        "priceComparison": "同メーカーの兄弟機で価格帯も近い。",
+        "featureComparison": [
+          "共通点：CIO製、10000mAh容量、最大35W出力、薄型設計",
+          "相違点：対象商品が半固体電池を採用し薄さ16mmであるのに対し、競合はケーブル内蔵型で薄さ18mmとなっている。"
+        ],
+        "differentiators": [
+          "CIO SMARTCOBY Pro SLIM SSの利点：半固体電池採用による安全性向上と、より薄い16mm設計でスリムに持ち運べる。",
+          "CIO SMARTCOBY Pro SLIM Cableの利点：ケーブルが内蔵されているため、持ち運び時にケーブルを忘れる心配がない。"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "持ち歩き用のバッテリーに高い安全性を求める人",
+        "薄くてかさばらない10000mAhモバイルバッテリーを探している人",
+        "スマホやタブレットだけでなく一部ノートPCも充電したい人"
+      ],
+      "pros": [
+        "発火リスクを低減した半固体電池搭載",
+        "約16mmの薄型設計で持ち運びやすい",
+        "単ポート最大35Wの高出力",
+        "便利なパススルー充電や残量デジタル表示対応"
+      ],
+      "cons": [
+        "一般的なリチウムイオン搭載モデルと比較すると価格が高め",
+        "複数台同時充電時は最大30Wに制限される"
+      ],
+      "score": 85,
+      "scoreRationale": "[基本点: 70]\n[加点: +10] 発火リスクを低減する次世代の半固体電池搭載による安全性の高さ\n[加点: +5] 35W出力と10000mAhクラスで約16mmという優れた携帯性と性能\n[加点: +5] パススルー充電や残量のデジタル表示など高い実用性\n[減点: -5] 一般的な同容量モデルに比べて価格がやや高い\n[合計: 85]"
+    },
+    "technicalSpecs": {
+      "dimensions": {
+        "depth": "16mm"
+      },
+      "weight": "187g",
+      "capacity": "10000mAh",
+      "ports": "USB Type-C ×2, USB Type-A ×1",
+      "batteryType": "半固体系バッテリーセル",
+      "features": [
+        "パススルー充電",
+        "デジタル残量表示",
+        "PPS対応"
+      ],
+      "other": [
+        "機内持ち込み対応",
+        "単ポート最大35W",
+        "全ポート使用時最大30W"
+      ]
+    }
+  }
+}
