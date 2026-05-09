@@ -1,149 +1,165 @@
 {
   "analysis": {
-    "productName": "ソニー ゲーミングイヤホン INZONE Buds (WF-G700N)",
+    "productName": "ソニー ゲーミングイヤホン INZONE Buds",
     "parentAsin": "B0CKFHB9P3",
-    "productDescription": "ソニー INZONE Buds (WF-G700N)は、プロeスポーツチームFnatic監修のもと開発された、PCおよびPS5ゲーマー向けの完全ワイヤレスゲーミングイヤホンです。USB-Cトランシーバーによる低遅延2.4GHz接続とアクティブノイズキャンセリング機能により、ゲームへの高い没入感を提供します。",
-    "productUsage": [
-      "PC、PS5、Nintendo Switchでの低遅延2.4GHzワイヤレス接続によるゲーミング",
-      "専用PCソフトウェア「INZONE Hub」による音の個人最適化（立体音響、イコライザー調整）",
-      "周囲の騒音を遮断するアクティブノイズキャンセリング機能を利用した集中プレイ",
-      "LE Audio対応スマートフォン（Xperia 1 Vなど）での音楽鑑賞や通話",
-      "長時間のゲームセッションや外出先での利用（本体最大12時間、ケース込みで最大24時間）"
-    ],
+    "productDescription": "Fnatic監修の完全ワイヤレスゲーミングイヤホン。低遅延の2.4GHz接続とアクティブノイズキャンセリング、長時間のバッテリーを備える。",
+    "productUsage": ["PCゲーム", "PS5ゲーム", "モバイルゲーム"],
     "positivePoints": [
-      "USB-Cトランシーバー接続により30ms未満の超低遅延を実現し、音の遅延が勝敗を分けるFPSゲームでも快適にプレイ可能。",
-      "ソニーの高級オーディオに採用される「ダイナミックドライバーX」を搭載し、爆発音から微細な足音まで高精細に再現する優れた音質。",
-      "イヤホン本体で最大12時間（ノイズキャンセリングOFF時）という、完全ワイヤレスイヤホンとして業界最長クラスのバッテリー持続時間。",
-      "専用PCソフト「INZONE Hub」による音の個人最適化機能が強力で、自分の耳の形状に合わせた立体音響設定が可能。",
-      "耳への圧迫感が少ない形状設計で、長時間のゲームプレイでも疲れにくい快適な装着感。"
+      "2.4GHzワイヤレス接続とLC3による低遅延",
+      "アクティブノイズキャンセリング(ANC)搭載",
+      "最大24時間（本体のみで12時間）の長時間バッテリー",
+      "独自開発8.4mmドライバーによる高音質と立体音響"
     ],
     "negativePoints": [
-      "Bluetooth接続は「LE Audio」専用であり、iPhoneや従来のAndroid端末など非対応機器ではBluetooth接続が一切できない（最大の欠点）。",
-      "競合のSteelSeries製品などが対応しているワイヤレス充電（Qi）に非対応。",
-      "マイク音質は実用的だが、配信や高品質なボイスチャットには外付けマイクが推奨されるレベル。",
-      "ケースや本体の質感がややプラスチッキーで、価格（約2.7万円）に対して高級感に欠けるとの声がある。"
+      "通常のBluetoothコーデック（SBC、AAC等）に非対応",
+      "LE Audio非対応のスマートフォンやタブレットとは直接Bluetooth接続不可",
+      "一部環境でPC起動時にレシーバーの挿し直しが必要になる不具合報告あり"
     ],
-    "useCases": [
-      "FPSゲームで敵の足音や銃声の方向を正確に聞き分け、有利に立ち回りたい時。",
-      "オープンワールドゲームの壮大な世界に、周囲の騒音を気にせず深く没入したい時。",
-      "ヘッドセット特有の頭部への圧迫感や髪型の乱れを避けつつ、長時間のゲームセッションに集中したい時。",
-      "PCやPS5だけでなく、USB-C端子を持つモバイルゲーミングPCやSwitchでも低遅延オーディオを楽しみたい時。"
-    ],
+    "useCases": ["FPSなどの競技ゲーム", "長時間のゲーム配信・プレイ", "周囲の雑音が気になる環境でのゲームプレイ"],
     "userStories": [
       {
-        "userType": "20代 PCゲーマー (FPS中心)",
-        "scenario": "ヘッドセットからの移行",
-        "experience": "夏場の蒸れと頭痛に耐えきれずヘッドセットからINZONE Budsに移行。最初は遅延や定位感を心配していたが、Valorantをプレイしても全く違和感がなく、むしろ足音がクリアに聞こえることに驚いた。何より10時間ぶっ続けでプレイしても耳が痛くならず、バッテリーも切れないのが神。スマホ（iPhone）で音楽が聴けないのは不便だが、ゲーム専用機として割り切っている。",
-        "sentiment": "positive"
+        "userType": "PCゲーマー",
+        "scenario": "Dolby Atmosを利用しようとした",
+        "experience": "プレイしているゲームの都合で、立体音響をDolby Atmos for Headphonesで利用したいと考えていました。しかし、この製品で専用アプリ(INZONE Hub)を入れるとDolby Atmosが選択できず、アプリをアンインストールする必要がありました。アプリなしだとマイクの音量調整などができず、非常に不便に感じました。",
+        "supportingSourceIds": ["kakaku-bbs-1"],
+        "sentiment": "mixed"
       },
       {
-        "userType": "30代 PS5ユーザー",
-        "scenario": "リビングでのプレイ",
-        "experience": "家族がいるリビングでPS5を遊ぶために購入。ノイズキャンセリングのおかげでテレビの音や生活音が気にならず、ゲームに没頭できる。USBドングルを挿すだけで使える手軽さは良いが、スマホとマルチポイント接続できないため、ゲーム中にスマホの着信に気づけないのが少し不便。音質は文句なし。",
-        "sentiment": "mixed"
+        "userType": "PCゲーマー",
+        "scenario": "PC起動時の利用",
+        "experience": "Windows 11のPCに付属のレシーバーを使って接続しています。しかし、PC起動後に毎回レシーバーを挿し直さないとINZONE Hubでイヤホンが認識されず、音が出ない現象が発生しました。初期化やリセットを試しても改善せず、非常に困っています。",
+        "supportingSourceIds": ["kakaku-bbs-1"],
+        "sentiment": "negative"
       }
     ],
-    "userImpression": "INZONE Budsは「ゲーマーのための完全ワイヤレス」として、音質・低遅延・バッテリー持ちの3点において極めて高い評価を得ている。特にバッテリー持ちは競合を圧倒しており、長時間プレイヤーからの支持が厚い。一方で、Bluetoothの互換性（LE Audioのみ）とワイヤレス充電非対応は、汎用性を求めるユーザーにとって大きなハードルとなっており、SteelSeriesなどの競合製品と比較される主な要因となっている。「ゲーム専用と割り切れば最強」というのが多くのユーザーの共通認識である。",
+    "userImpression": "音質、ノイズキャンセリング、バッテリー持ちは高く評価されている一方、接続の汎用性の低さ（通常のBluetooth非対応）やPCソフトウェア周りの不具合に不満の声が見られる。",
     "sources": [
       {
-        "name": "【レビュー】INZONE Buds:WF-G700N ソニー ゲーミングイヤホン - note",
-        "url": "https://note.com/tbola/n/n2ea20921af55",
-        "credibility": "中：製品の基本的な長所と機能をまとめたユーザーレビュー。"
-      },
-      {
-        "name": "SONYの完全ワイヤレスゲーミングイヤホン「INZONE Buds」をレビュー - しーのゲームメイン色々ブログ",
-        "url": "https://shi-blogdayo.com/inzone-buds/",
-        "credibility": "高：長期使用に基づいた詳細なレビュー。"
-      },
-      {
-        "name": "Amazon.co.jp: SteelSeries Arctis GameBuds 製品情報",
-        "url": "https://www.amazon.co.jp/dp/B0DF2KLHSR",
-        "credibility": "高：競合製品の公式スペック情報。"
+        "id": "kakaku-bbs-1",
+        "name": "価格.com - SONY INZONE Buds WF-G700N クチコミ掲示板",
+        "url": "https://kakaku.com/item/J0000042744/review/",
+        "tier": "medium",
+        "evidenceType": "secondary",
+        "publishedAt": "2026-05-10",
+        "author": "価格.comユーザー",
+        "conflictOfInterest": "none",
+        "notes": "PC接続時の不具合やソフトウェアの挙動に関するクチコミ"
       }
     ],
-    "lastInvestigated": "2026-02-05",
+    "claims": [
+      {
+        "claim": "通常のBluetooth（SBC、AACなど）では接続できず、LE Audio対応機器またはUSBレシーバーが必要",
+        "category": "durability",
+        "confidence": "high",
+        "supportingSourceIds": ["kakaku-bbs-1"],
+        "crossChecked": false,
+        "notes": "Amazonの商品説明にも明記されている"
+      }
+    ],
+    "lastInvestigated": "2026-05-10",
     "competitiveAnalysis": [
       {
         "name": "SteelSeries Arctis GameBuds",
         "asin": "B0DF2KLHSR",
-        "priceComparison": "INZONE Budsよりわずかに安価（約2.5万円前後）。",
+        "priceComparison": "対象商品と同程度の価格帯であり、強力な競合となる。",
         "featureComparison": [
-          "2.4GHzワイヤレスとBluetooth 5.3の切り替えが可能で、通常のスマホとも接続可能。",
-          "ケースがQiワイヤレス充電に対応しており、充電の手間が少ない。",
-          "合計バッテリー持続時間は40時間と長いが、イヤホン単体は10時間（INZONEは12時間）。"
+          "共通点：2.4GHz接続、ANC搭載、専用アプリでのEQ調整",
+          "相違点：Arctis GameBudsはBluetooth 5.3にも対応し通常のスマホとも接続可能。バッテリー持ちはINZONE Budsの方が単体でやや長い（12時間 vs 10時間）。"
         ],
         "differentiators": [
-          "Bluetooth接続の汎用性と、100以上のゲームタイトル別EQプリセット。",
-          "INZONEの弱点（BT互換性、Qi充電）を完全にカバーしており、機能面での汎用性はSteelSeriesが上。",
-          "音質やANC性能の純粋な比較ではソニーに分があるとの評価も。"
+          "ソニー INZONE Budsの利点：長時間の単体バッテリーと、ソニー製ダイナミックドライバーによる高音質・没入感",
+          "SteelSeries Arctis GameBudsの利点：Bluetooth接続に対応しており、スマホ等のデバイスとの汎用性が高い。Qiワイヤレス充電にも対応。"
         ]
       },
       {
-        "name": "Razer Hammerhead Pro HyperSpeed",
-        "asin": "B0C52XCJV9",
-        "priceComparison": "INZONE Budsより安価（約2.2万円前後）。",
+        "name": "Razer Hammerhead V3 X HyperSpeed",
+        "asin": "B0GWCVXPC3",
+        "priceComparison": "対象商品より安価であり、コストを抑えたいユーザーの選択肢となる。",
         "featureComparison": [
-          "USB-Cドングルによる低遅延接続とBluetooth接続の両対応。",
-          "Razer Chroma RGBに対応し、ゲーミングギアらしいライティングが可能。",
-          "THX認証オーディオによる映画的なサウンド体験。"
+          "共通点：2.4GHzワイヤレス接続対応、PC/PS5対応",
+          "相違点：Razerは11mmドライバー搭載、Bluetooth 5.3対応。ANCについては明記なし。"
         ],
         "differentiators": [
-          "視覚的な演出（RGB）とTHXサウンド。",
-          "バッテリー持続時間が短く（約4-6時間）、長時間の連続プレイには不向き。"
+          "ソニー INZONE Budsの利点：強力なアクティブノイズキャンセリングと、プロチーム監修によるゲーム向けチューニング",
+          "Razer Hammerhead V3 X HyperSpeedの利点：Bluetooth接続が可能で、価格が安くコストパフォーマンスに優れる。"
         ]
       },
       {
-        "name": "Soundcore VR P10 by Anker",
-        "asin": "B0B87QFF3X",
-        "priceComparison": "INZONE Budsの半額以下（約1.3万円前後）で圧倒的なコストパフォーマンス。",
+        "name": "Middle Rabbit SW4 Pro",
+        "asin": "B0FMFCSYS1",
+        "priceComparison": "対象商品よりも大幅に安価なエントリーモデル。",
         "featureComparison": [
-          "USB-Cドングルによる低遅延接続を手軽に実現。",
-          "パススルー充電に対応しており、ドングルを挿したまま機器の充電が可能。",
-          "ノイズキャンセリングは非搭載。"
+          "共通点：2.4GHzドングル接続による低遅延",
+          "相違点：Middle Rabbitはデュアルモード（Bluetooth対応）だが、ANCは非搭載。"
         ],
         "differentiators": [
-          "価格の安さと、Meta Quest等への最適化。",
-          "機能は最小限だが「ワイヤレスで低遅延」という目的を最も安価に達成できる。"
+          "ソニー INZONE Budsの利点：ソニー独自の高音質技術とANCによる高い没入感",
+          "Middle Rabbit SW4 Proの利点：低価格でありながらBluetoothと2.4GHzの両方に対応し、手軽に導入できる。"
+        ]
+      },
+      {
+        "name": "CYBER ワイヤレスゲーミングイヤホン",
+        "asin": "B0DTTSL2LK",
+        "priceComparison": "対象商品よりも非常に安価。",
+        "featureComparison": [
+          "共通点：PS5、Switch、PC向けのワイヤレスゲーミングイヤホン",
+          "相違点：CYBERはエントリー向けの基本機能のみで、ANCや高度な立体音響などのプレミアム機能は持たない。"
+        ],
+        "differentiators": [
+          "ソニー INZONE Budsの利点：本格的な音質チューニング、ANC、立体音響などのハイエンド機能",
+          "CYBER ワイヤレスゲーミングイヤホンの利点：Switchなどのコンソール機でとりあえずワイヤレス環境を構築したい場合の低コストな選択肢"
+        ]
+      },
+      {
+        "name": "ソニー INZONE Buds (ブラック)",
+        "asin": "B0CKFC9BKT",
+        "priceComparison": "対象商品と同価格。",
+        "featureComparison": [
+          "共通点：仕様は全て同一",
+          "相違点：カラーバリエーションの違い（対象商品はホワイト、こちらはブラック）"
+        ],
+        "differentiators": [
+          "ソニー INZONE Buds (ホワイト)の利点：PS5の本体カラーや白いデスク環境にマッチする",
+          "ソニー INZONE Buds (ブラック)の利点：汚れが目立ちにくく、黒基調のPC環境にマッチする"
         ]
       }
     ],
     "recommendation": {
       "targetUsers": [
-        "1回のプレイ時間が長く、イヤホンのバッテリー切れを絶対に避けたいハードコアゲーマー",
-        "FPS/TPSで敵の位置を正確に把握するため、最高レベルの定位感と音質を求める人",
-        "PS5またはPCでのゲームプレイがメインで、スマホ（iPhone等）での利用は重視しない人",
-        "ヘッドセットの蒸れや重さから解放されたい人"
+        "PS5やPCで本格的にFPSなどをプレイするユーザー",
+        "周囲の音を遮断してゲームに没入したいユーザー",
+        "長時間のゲームセッションを行うユーザー"
       ],
       "pros": [
-        "イヤホン単体で12時間という驚異的なバッテリー持ちにより、充電の心配なく一日中プレイ可能。",
-        "ソニーのオーディオ技術（Dynamic Driver X）による、解像度が高く定位感に優れたサウンド。",
-        "耳への負担が少ない優れた装着感と、強力なノイズキャンセリングによる没入感。"
+        "遅延の少ない2.4GHzワイヤレス接続",
+        "優秀なアクティブノイズキャンセリング",
+        "単体で最大12時間の長寿命バッテリー"
       ],
       "cons": [
-        "Bluetooth接続がLE Audio限定のため、汎用的なワイヤレスイヤホンとしての使い回しが効かない。",
-        "ワイヤレス充電に非対応で、充電にはケーブル接続が必要。",
-        "競合製品（SteelSeries等）と比較して機能面での柔軟性に欠ける部分がある。"
+        "通常のBluetoothコーデック非対応でスマホ等での利用が限定的",
+        "PCソフトウェア連携に関する不具合報告がある"
       ],
-      "score": 87,
-      "scoreRationale": "[基本点: 70]\n[加点: +9] (性能・機能: 単体12時間のバッテリーと優れた音質・定位感はゲーミングイヤホンとして最高峰)\n[加点: +4] (品質・デザイン: 装着感は素晴らしいが、プラスチックの質感は価格相応)\n[加点: +5] (ユーザー満足度: コアなゲーマーからの信頼は厚いが、BT仕様への不満で少し相殺)\n[加点: +4] (独自の強み・先進性: Fnatic監修と立体音響技術。LE Audioへの早期対応は先進的だが現状不便)\n[減点: -5] (コストパフォーマンス: 機能は高いが、汎用性の低さと競合の台頭を考えると割高感がある)\n[合計: 87]"
+      "score": 80,
+      "scoreRationale": "[基本点: 70]\n[加点: +5] (独自開発8.4mmドライバーによる高音質)\n[加点: +5] (イヤホン単体で最大12時間の長時間バッテリー)\n[加点: +5] (強力なアクティブノイズキャンセリング機能)\n[減点: -5] (通常のBluetoothコーデック非対応による汎用性の低さ)\n[合計: 80]"
     },
     "technicalSpecs": {
-      "driver": "8.4mm ダイナミックドライバーX",
-      "codec": "LC3 (LE Audioのみ対応)",
-      "battery": {
-        "earbudsOnly": "最大12時間 (NCオフ) / 最大11時間 (NCオン)",
-        "withCase": "最大24時間",
-        "charging": "USB-C急速充電 (5分で60分使用可), ワイヤレス充電非対応"
+      "dimensions": {
+        "height": "不明",
+        "width": "不明",
+        "depth": "不明"
       },
-      "connectivity": ["2.4GHz USB-Cトランシーバー", "Bluetooth 5.3 (LE Audio Only)"],
-      "noiseCancel": "アクティブノイズキャンセリング (ANC) / 外音取り込みモード",
-      "microphone": "AIノイズリダクション機能搭載マイク",
-      "waterResistance": "IPX4相当 (イヤホン本体のみ)",
-      "weight": {
-        "earbud": "約6.5g x 2",
-        "case": "約50g"
-      },
-      "other": ["360立体音響", "INZONE Hub対応", "PS5連携機能"]
+      "weight": "13g(両耳合計の概算、本体片耳約6.5g)",
+      "capacity": "不明",
+      "material": "不明",
+      "origin": "不明",
+      "other": [
+        "接続方式: 2.4GHz(USB Type-Cトランシーバー), Bluetooth LE Audio(LC3)",
+        "ドライバー: 8.4mm ダイナミックドライバーX",
+        "バッテリー持続時間: イヤホン本体のみで最大12時間、充電ケース込みで合計約24時間 (2.4GHz接続・ノイズキャンセリングOFF時)",
+        "急速充電: 5分間の充電で約60分の使用が可能",
+        "ノイズキャンセリング: アクティブノイズキャンセリング搭載",
+        "対応コーデック: LC3 (SBC、AAC、aptX、LDACには非対応)"
+      ]
     }
   }
 }
