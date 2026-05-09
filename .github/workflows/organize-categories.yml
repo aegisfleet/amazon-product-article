@@ -9,8 +9,8 @@ permissions:
 
 on:
   schedule:
-    # 18:00 JST = 09:00 UTC
-    - cron: '0 9 * * *'
+    # 19:00 JST = 09:00 UTC
+    - cron: '0 10 * * *'
   workflow_dispatch:
 
 jobs:
