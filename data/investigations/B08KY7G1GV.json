@@ -31,19 +31,28 @@
         "userType": "会社員（テレワーク）",
         "scenario": "Web会議での使用",
         "experience": "これまでPC内蔵マイクを使っていたが、MV7に変えてから「声がラジオDJみたいにクリアだ」と同僚に驚かれた。エアコンの音も拾わないので快適。",
-        "sentiment": "positive"
+        "sentiment": "positive",
+        "supportingSourceIds": [
+          "src-0"
+        ]
       },
       {
         "userType": "ゲーム実況者",
         "scenario": "ライブ配信",
         "experience": "興奮して大声を出してもオートレベルモードが音割れを防いでくれるので助かる。ただ、キーボードを叩きすぎると少し振動を拾うのでアームスタンドは必須。",
-        "sentiment": "mixed"
+        "sentiment": "mixed",
+        "supportingSourceIds": [
+          "src-0"
+        ]
       },
       {
         "userType": "ポッドキャスター",
         "scenario": "インタビュー収録",
-        "experience": "USBケーブルがMicro-Bなのが残念。長期間使っていたら接触が悪くなってきた気がする。",
-        "sentiment": "negative"
+        "experience": "USBケーブルがMicro-USBなのが残念。長期間使っていたら接触が悪くなってきた気がする。",
+        "sentiment": "negative",
+        "supportingSourceIds": [
+          "src-0"
+        ]
       }
     ],
     "userImpression": "音質の良さとアプリの使い勝手は絶賛されており、「配信者ならこれを買っておけば間違いない」という評価が定着している。一方で、Micro-USB端子であることへの不満は根強く、後継機への買い替えを検討する声もある。",
@@ -51,28 +60,39 @@
       {
         "name": "Amazon Product Page",
         "url": "https://www.amazon.co.jp/dp/B08KY7G1GV",
-        "credibility": "high"
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-05-10",
+        "author": "Shure / Amazon",
+        "conflictOfInterest": "none",
+        "notes": "Product details",
+        "id": "src-0"
       },
       {
         "name": "Shure Official Website (MV7+ Info used for comparison)",
         "url": "https://www.shure.com/en-US/products/microphones/mv7",
-        "credibility": "high"
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-05-10",
+        "author": "Shure / Amazon",
+        "conflictOfInterest": "none",
+        "notes": "Product details",
+        "id": "src-1"
       }
     ],
-    "lastInvestigated": "2026-02-05",
+    "lastInvestigated": "2026-05-10",
     "competitiveAnalysis": [
       {
         "name": "Audio-Technica AT2040USB",
         "asin": "B0C2G4PGYS",
         "priceComparison": "約22,000円と、MV7より1万円以上安い。",
         "featureComparison": [
-          "USB接続専用（XLRなし）",
-          "ハイパーカーディオイド特性で遮音性が高い",
-          "最大96kHz/24bit対応（MV7は48kHz/24bit）"
+          "共通点：ダイナミックマイクである点、カーディオイド特性",
+          "相違点：AT2040USBはUSB接続専用でXLR出力がないが、最大96kHz/24bitに対応（MV7は48kHz/24bit）。またAT2040USBはUSB Type-Cを採用している"
         ],
         "differentiators": [
-          "USB Type-C端子を採用している",
-          "XLR出力がないため拡張性はMV7に劣る"
+          "SHURE MV7 ポッドキャストマイクロホンの利点：専用アプリによる細かな設定とオートレベルモード、XLR出力があるため将来的な拡張性が高い",
+          "Audio-Technica AT2040USBの利点：USB Type-C端子を採用しており利便性が高く、価格も安い"
         ]
       },
       {
@@ -80,13 +100,12 @@
         "asin": "B0CRYM5NLS",
         "priceComparison": "約1万円と、MV7の1/3以下の価格。",
         "featureComparison": [
-          "USB/XLR両対応",
-          "最大96kHz/24bit対応",
-          "ミュートボタンなどの操作系も搭載"
+          "共通点：USB/XLR両対応のダイナミックマイクである点",
+          "相違点：FDUCE SL40+は最大96kHz/24bitに対応し、物理的なミュートボタンを搭載。MV7はタッチパネル操作でShurePlus MOTIVアプリによる詳細設定が可能"
         ],
         "differentiators": [
-          "価格が圧倒的に安い",
-          "ブランド力と専用ソフトウェアの完成度ではSHUREに及ばない"
+          "SHURE MV7 ポッドキャストマイクロホンの利点：圧倒的なブランド力、マイクとしての基本性能、専用ソフトウェアの完成度が高い",
+          "FDUCE SL40+の利点：価格が圧倒的に安く、コスパ重視のユーザーに向いている"
         ]
       },
       {
@@ -94,12 +113,12 @@
         "asin": "B0CS6ML88D",
         "priceComparison": "約1.5万円と、MV7の半額以下。",
         "featureComparison": [
-          "USB/XLR両対応",
-          "独自の形状デザイン"
+          "共通点：USB/XLR両対応のダイナミックマイクである点",
+          "相違点：FIFINE Tank3は独自の形状をしており、MV7はSM7Bを踏襲したクラシックなデザイン。ブランドの信頼性やアプリの有無で異なる"
         ],
         "differentiators": [
-          "コストパフォーマンスに優れる",
-          "MV7ほどの知名度や信頼性はない"
+          "SHURE MV7 ポッドキャストマイクロホンの利点：信頼性と実績が高く、長期的に安心して使用できる",
+          "FIFINE Tank3の利点：コストパフォーマンスに優れており、初期費用を抑えられる"
         ]
       }
     ],
@@ -119,18 +138,27 @@
         "価格が高めであること"
       ],
       "score": 90,
-      "scoreRationale": "[基本点: 70]\n[加点: +10] USB/XLR両対応と専用アプリによる高い利便性と音質\n[減点: -5] 競合と比較して価格が高い\n[加点: +5] SHUREブランドの信頼性と堅牢性\n[加点: +5] ユーザー満足度が非常に高い\n[加点: +5] オートレベルモードなどの独自機能\n[合計: 90]"
+      "scoreRationale": "[基本点: 70]\n[加点: +10] (USB/XLR両対応と専用アプリによる高い利便性と音質)\n[減点: -5] (競合と比較して価格が高い)\n[加点: +5] (SHUREブランドの信頼性と堅牢性)\n[加点: +5] (ユーザー満足度が非常に高い)\n[加点: +5] (オートレベルモードなどの独自機能)\n[合計: 90]"
     },
     "technicalSpecs": {
-      "transducer": "Dynamic (Moving Coil)",
-      "polarPattern": "Unidirectional (Cardioid)",
-      "frequencyResponse": "50 Hz to 16,000 Hz",
-      "bitDepth": "16 or 24-bit",
-      "samplingRate": "44.1 or 48 kHz",
-      "connectivity": ["Micro-B USB", "XLR", "3.5mm Headphone"],
-      "weight": "0.55 kg",
-      "dimensions": { "length": "153.6 mm", "diameter": "66.5 mm" },
-      "software": "ShurePlus MOTIV Desktop App"
-    }
+      "transducer": "ダイナミック（ムービングコイル）",
+      "polarPattern": "単一指向性（カーディオイド）",
+      "frequencyResponse": "50Hz - 16,000Hz",
+      "bitDepth": "16または24ビット",
+      "samplingRate": "44.1または48kHz",
+      "connectivity": [
+        "Micro-USB",
+        "XLR",
+        "3.5mmヘッドホン端子"
+      ],
+      "weight": "550g",
+      "dimensions": {
+        "height": "164mm",
+        "width": "153.6mm",
+        "depth": "90.2mm"
+      },
+      "software": "ShurePlus MOTIV デスクトップアプリ"
+    },
+    "claims": []
   }
 }
