@@ -1,154 +1,185 @@
 {
   "analysis": {
-    "productName": "Xiaomi POCO X7 Pro 8GB+256GB",
-    "parentAsin": "B0DSN25HB3",
-    "productDescription": "XiaomiのPOCOブランドが放つ、圧倒的なコストパフォーマンスを誇る高性能スマートフォン。最新のDimensity 8400-Ultraチップと6000mAhの大容量バッテリーを搭載し、ハイエンド級の処理能力をミドルレンジの価格で実現した一台です。",
+    "productName": "Xiaomi POCO X7 Pro",
+    "parentAsin": "B0FHW2KGP7",
+    "productDescription": "ハイエンド級のチップセット「Dimensity 8400-Ultra」を搭載した、大容量バッテリーと高速充電対応のハイパフォーマンススマートフォン。",
     "productUsage": [
-      "高負荷な3Dゲーム（原神、崩壊：スターレイル等）の快適なプレイ",
-      "90W急速充電による、朝の支度時間などでの超短時間充電",
-      "IP68防塵防水性能を活かした、お風呂やキッチン、アウトドアでの使用",
-      "1.5K CrystalRes有機ELディスプレイでの高精細な映画・動画鑑賞"
+      "モバイルゲーム",
+      "動画視聴",
+      "写真撮影",
+      "日常利用"
     ],
     "positivePoints": [
-      "5万円以下の価格帯ながら、ハイエンド機に匹敵するDimensity 8400-Ultraチップを搭載",
-      "一般的なスマホより一回り大きい6000mAhバッテリーによる圧倒的な電池持ち",
-      "わずか約42分で100%まで充電できる90Wハイパーチャージ",
-      "POCOシリーズとして待望のIP68防塵防水に対応し、水没の心配が軽減",
-      "最大120Hzのリフレッシュレートと3200nitsの輝度を持つ高品質ディスプレイ"
+      "Dimensity 8400-Ultra搭載で高い処理性能を発揮",
+      "6000mAhの大容量バッテリーと90W急速充電に対応",
+      "120Hz対応の1.5K有機ELディスプレイ搭載",
+      "POCOシリーズ初のIP68防塵・防水対応で濡れた手でも操作可能"
     ],
     "negativePoints": [
-      "FeliCa（おサイフケータイ）対応の明記がなく、交通系ICなどが使えない可能性が高い",
-      "ワイヤレス充電には非対応",
-      "microSDカードスロットやイヤホンジャックの有無が不明確（近年の傾向では非搭載が多い）"
+      "重量が重い可能性がある（大容量バッテリーのため）"
     ],
     "useCases": [
-      "低予算で最高クラスのゲーム環境を整えたいゲーマー",
-      "充電の手間を減らしたい、バッテリー切れを心配したくないヘビーユーザー",
-      "水回りでも安心してスマホを使いたいユーザー"
+      "ゲームを長時間プレイする",
+      "外出先での利用が多い",
+      "水回りや屋外での利用"
     ],
-    "userStories": [
-      {
-        "userType": "20代大学生（ゲーム好き）",
-        "scenario": "外出先や通学中のゲームプレイ",
-        "experience": "以前使っていたミドルレンジスマホでは重かった3Dゲームが、POCO X7 Proでは最高画質設定でも驚くほど滑らかに動く。発熱も気にならず、6000mAhのおかげでモバイルバッテリーを持ち歩く必要がなくなった。",
-        "sentiment": "positive"
-      },
-      {
-        "userType": "30代会社員",
-        "scenario": "メイン端末としての日常利用",
-        "experience": "（推測）スペックと価格に惹かれて購入したが、駅の改札やコンビニ支払いでスマホを使えないのが予想以上に不便。結局、決済用にもう一台持ち歩くことになり、サブ機運用に切り替えた。",
-        "sentiment": "mixed"
-      },
-      {
-        "userType": "40代男性（ガジェット好き）",
-        "scenario": "自宅でのエンタメ消費",
-        "experience": "有機ELディスプレイの発色が素晴らしく、映画を見る没入感が高い。風呂に入りながら動画を見てもIP68なので安心。この価格でこの完成度は信じられない。",
-        "sentiment": "positive"
-      }
-    ],
-    "userImpression": "「コスパモンスター」の名に恥じない圧倒的なスペックに対する称賛が多数。特に処理性能とバッテリー持ちに関しては、倍以上の価格のフラッグシップ機に迫ると評価されている。一方で、日本独自機能（FeliCa）の欠如を惜しむ声も見られる。",
+    "userStories": [],
+    "userImpression": "大画面・大容量バッテリーを備え、ハイエンドチップ搭載により日常使いからゲームまで快適に動作し、かつ防水防塵性能によりどこでも安心して使える点が評価される高コスパスマホ。",
     "sources": [
       {
-        "name": "Amazon商品ページ仕様詳細",
+        "id": "src-1",
+        "name": "Amazon Product Page",
         "url": "https://www.amazon.co.jp/dp/B0DSN25HB3",
-        "credibility": "高"
-      },
-      {
-        "name": "Xiaomi公式発表およびテック系ニュースサイト（推測に基づく）",
-        "url": null,
-        "credibility": "中"
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-05-10",
+        "author": "Amazon",
+        "conflictOfInterest": "none",
+        "notes": "Dimensity 8400-Ultra、6000mAh、90W充電、1.5K 120Hz有機EL、IP68、5000万画素カメラ"
       }
     ],
-    "lastInvestigated": "2026-02-05",
+    "claims": [
+      {
+        "claim": "Dimensity 8400-Ultra搭載による高い処理性能",
+        "category": "performance",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "crossChecked": false,
+        "notes": "製品説明より"
+      },
+      {
+        "claim": "6000mAhバッテリー＆90W急速充電",
+        "category": "battery",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "crossChecked": false,
+        "notes": "製品説明より"
+      },
+      {
+        "claim": "IP68防塵・防水対応",
+        "category": "durability",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "crossChecked": false,
+        "notes": "製品説明より"
+      }
+    ],
+    "lastInvestigated": "2026-05-10",
     "competitiveAnalysis": [
       {
-        "name": "Samsung Galaxy A36 5G",
-        "asin": "B0FBRGC1RK",
-        "priceComparison": "価格はほぼ同等（約4.9万円）。",
+        "name": "Xiaomi POCO X8 Pro",
+        "asin": "B0GK8HBB3H",
+        "priceComparison": "対象商品より高い",
         "featureComparison": [
-          "GalaxyはFeliCa（おサイフケータイ）に完全対応",
-          "処理性能はPOCO X7 Proの方が大幅に高い",
-          "GalaxyはOSアップデートサポートの手厚さとブランドの安心感がある"
+          "共通点：1.5K 120Hz 有機ELディスプレイ、IP68防塵・防水",
+          "相違点：対象商品はDimensity 8400-Ultra搭載・6000mAhバッテリー・90W充電。X8 ProはDimensity 8500-Ultra搭載・6500mAhバッテリー・100W充電・冷却システム強化"
         ],
         "differentiators": [
-          "日常の利便性（決済等）重視ならGalaxy",
-          "ゲーム性能と充電速度重視ならPOCO"
+          "Xiaomi POCO X7 Proの利点：価格が抑えられており、十分な高性能を持つ",
+          "Xiaomi POCO X8 Proの利点：より高い処理性能、大容量バッテリー、冷却システム搭載でゲーム特化"
         ]
       },
       {
-        "name": "Google Pixel 8a",
-        "asin": "B0D45BQ32D",
-        "priceComparison": "Pixel 8aの方が約1.7万円高い（約6.6万円）。",
+        "name": "Xiaomi POCO F7 12GB+512GB",
+        "asin": "B08N6NCH3P",
+        "priceComparison": "対象商品より高い",
         "featureComparison": [
-          "PixelはAI機能（消しゴムマジック等）とカメラ画質で優れる",
-          "POCOは画面サイズ、バッテリー容量、充電速度で勝る",
-          "Pixelは7年間のアップデート保証がある"
+          "共通点：大容量バッテリー、90W急速充電、高解像度ディスプレイ",
+          "相違点：対象商品はDimensity 8400-Ultra搭載。F7はSnapdragon 8s Gen 4搭載・6500mAhバッテリー・ディスプレイサイズ"
         ],
         "differentiators": [
-          "カメラとソフトウェ体験重視ならPixel",
-          "ハードウェアスペックと価格重視ならPOCO"
+          "Xiaomi POCO X7 Proの利点：コンパクトで手頃な価格",
+          "Xiaomi POCO F7の利点：Snapdragon 8s Gen 4搭載でより高い処理性能、大画面・大容量メモリ/ストレージ"
         ]
       },
       {
-        "name": "Samsung Galaxy A55 5G",
-        "asin": "B0FM3CX2LW",
-        "priceComparison": "Galaxy A55の方が約1.4万円高い（約6.2万円）。",
+        "name": "Xiaomi POCO F6 Pro",
+        "asin": "B08N6LJ71W",
+        "priceComparison": "対象商品より少し高い",
         "featureComparison": [
-          "A55は金属フレームやガラス背面など高級感のあるビルドクオリティ",
-          "性能対価格比（コスパ）ではPOCOが圧倒的に有利"
+          "共通点：高性能チップセット、大容量バッテリー",
+          "相違点：対象商品はDimensity 8400-Ultra搭載・6000mAh・90W充電。F6 ProはSnapdragon 8 Gen 2搭載・5000mAh・120W充電・2K解像度"
         ],
         "differentiators": [
-          "質感と所有満足感ならA55",
-          "実利的なパフォーマンスならPOCO"
+          "Xiaomi POCO X7 Proの利点：バッテリー容量が大きく、IP68対応で水にも強い",
+          "Xiaomi POCO F6 Proの利点：Snapdragon 8 Gen 2搭載、120W超急速充電、2K高解像度ディスプレイ"
+        ]
+      },
+      {
+        "name": "Xiaomi POCO M8 5G",
+        "asin": "B0G4MHJQZH",
+        "priceComparison": "対象商品より安い",
+        "featureComparison": [
+          "共通点：大容量バッテリー、120Hz有機EL",
+          "相違点：対象商品はハイエンド級Dimensity 8400-Ultra搭載。M8 5GはミドルレンジSnapdragon 6 Gen 3搭載・IP66"
+        ],
+        "differentiators": [
+          "Xiaomi POCO X7 Proの利点：処理性能が圧倒的に高く、IP68完全防水対応",
+          "Xiaomi POCO M8 5Gの利点：価格が安く、日常利用に十分な性能"
+        ]
+      },
+      {
+        "name": "Xiaomi POCO M7 Pro 5G",
+        "asin": "B0DYF4KF65",
+        "priceComparison": "対象商品より安い",
+        "featureComparison": [
+          "共通点：大容量バッテリー、120Hz有機ELディスプレイ",
+          "相違点：対象商品はDimensity 8400-Ultra搭載・90W充電。M7 Pro 5GはDimensity 7025-Ultra搭載・45W充電"
+        ],
+        "differentiators": [
+          "Xiaomi POCO X7 Proの利点：処理性能、充電速度、カメラ性能などの総合的なスペックが高い",
+          "Xiaomi POCO M7 Pro 5Gの利点：価格がさらに安く、コスパ重視"
         ]
       }
     ],
     "recommendation": {
       "targetUsers": [
-        "とにかく安く高性能なゲーム用スマホが欲しい人",
-        "バッテリー持ちと充電速度を最優先する人",
-        "おサイフケータイを使わない、またはサブ機として割り切れる人"
+        "コスパよくハイエンド級の性能を求めるユーザー",
+        "バッテリー持ちを重視するユーザー",
+        "お風呂や水辺などでも使いたいユーザー（IP68対応）"
       ],
       "pros": [
-        "価格破壊レベルの処理性能（Dimensity 8400-Ultra）",
-        "安心のIP68防塵防水と6000mAhバッテリー",
-        "爆速の90W充電"
+        "Dimensity 8400-Ultra搭載でサクサク動作",
+        "6000mAh大容量バッテリーと90W急速充電",
+        "シリーズ初のIP68防水防塵",
+        "1.5K 120Hzの綺麗なディスプレイ"
       ],
       "cons": [
-        "おサイフケータイ非対応の可能性による日常決済の不便さ",
-        "カメラ性能は価格相応（ハイエンドには劣る）"
+        "ハイエンドの最上位機種と比べると処理性能やカメラが劣る",
+        "バッテリー容量が大きいため重量がある可能性"
       ],
-      "score": 95,
-      "scoreRationale": "[基本点: 70]\n[加点: +10] (Dimensity 8400-Ultra搭載で価格帯を超越した処理性能)\n[加点: +15] (5万円以下でハイエンド性能とIP68防水を実現し、圧倒的コスパ)\n[加点: +3] (IP68防塵防水に対応し、耐久性が向上)\n[加点: +2] (6000mAhの大容量バッテリー搭載)\n[減点: -5] (FeliCa（おサイフケータイ）非対応の可能性が高く、日常使いで不便)\n[合計: 95]"
+      "score": 83,
+      "scoreRationale": "[基本点: 70]\n[加点: +5] (Dimensity 8400-Ultra搭載による高い処理性能)\n[加点: +2] (6000mAh大容量バッテリー)\n[加点: +1] (90W急速充電による利便性)\n[加点: +3] (IP68防塵・防水対応で利便性向上)\n[加点: +2] (1.5K 120Hzの高精細有機ELディスプレイ)\n[合計: 83]"
     },
     "technicalSpecs": {
-      "os": "Android (Xiaomi HyperOS)",
+      "dimensions": {
+        "height": "未公表",
+        "width": "未公表",
+        "depth": "未公表"
+      },
+      "weight": "未公表",
+      "capacity": "8GB RAM + 256GB ROM",
+      "material": "未公表",
+      "origin": "未公表",
+      "os": "Android",
       "cpu": "MediaTek Dimensity 8400-Ultra",
       "ram": "8GB",
       "storage": "256GB",
-      "display": {
-        "size": "6.67インチ",
-        "resolution": "2712×1220 (1.5K)",
-        "type": "CrystalRes 有機EL (AMOLED)"
-      },
-      "battery": {
-        "capacity": "6000mAh",
-        "charging": "90W ハイパーチャージ"
-      },
-      "camera": {
-        "main": "50MP (Sony IMX882, OIS)",
-        "ultrawide": null
-      },
-      "connectivity": [
-        "5G",
-        "Wi-Fi",
-        "Bluetooth",
-        "docomo/au/SoftBank/Rakuten Mobile対応"
-      ],
       "other": [
-        "IP68防塵防水",
-        "120Hzリフレッシュレート",
-        "AI消しゴムPro"
+        "バッテリー: 6000mAh",
+        "充電: 90Wハイパーチャージ",
+        "ディスプレイ: 16.9cm 1.5K(2712×1220) 有機EL(CrystalRes)",
+        "リフレッシュレート: 最大120Hz",
+        "防塵防水: IP68",
+        "メインカメラ: 5000万画素 (SONY IMX882, f/1.5)",
+        "対応回線: docomo/au/SoftBank/Rakuten Mobile",
+        "カラー: イエロー"
       ]
     }
   }
