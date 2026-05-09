@@ -2,8 +2,8 @@ name: Product Research Pipeline
 
 on:
   schedule:
-    # Run daily at 17:00 JST (08:00 UTC)
-    - cron: '0 8 * * *'
+    # Run daily at 16:00 JST (07:00 UTC)
+    - cron: '0 7 * * *'
   workflow_dispatch:
     inputs:
       categories:
