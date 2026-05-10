@@ -1,0 +1,226 @@
+{
+  "analysis": {
+    "productName": "KURE(呉工業) LOOX(ルックス) ヘッドライト クリア アンド プロテクト 1196",
+    "parentAsin": "B0G3P98Q6C",
+    "productDescription": "自動車の樹脂製ヘッドライトやテールランプの黄ばみ・白化を落とし、硬度6Hのガラスコートと強力UVカット剤で長期間保護するクリーナー＆コーティング剤です。こすらず塗るだけで施工できる手軽さが特徴です。",
+    "productUsage": [
+      "自動車の樹脂製ヘッドライト・テールランプ・バイザーの洗浄及びコーティング"
+    ],
+    "positivePoints": [
+      "塗るだけで頑固な黄ばみや白化を落とせるため、研磨の労力がかからない",
+      "研磨剤不使用で、ヘッドライトに傷をつける心配がない",
+      "硬度6Hの硬質ガラスコートと強力UVカット剤による長期間の保護効果"
+    ],
+    "negativePoints": [
+      "ヘッドライトの状態（深い傷や内部の劣化など）によっては完全にクリアにならない場合がある"
+    ],
+    "useCases": [
+      "ヘッドライトが黄ばんで暗くなってきたと感じた時の回復作業",
+      "車検前にヘッドライトの光量を確保するためのメンテナンス"
+    ],
+    "userStories": [
+      {
+        "userType": "ノートに乗るユーザー",
+        "scenario": "黄ばみとヒビ割れが酷くなったヘッドライトのメンテナンス",
+        "experience": "耐水ペーパーとコンパウンドで磨いた後にクリア＆プロテクトを施工しました。ヒビ割れは完全には取れませんでしたが、だいぶキレイになり満足しています。",
+        "supportingSourceIds": [
+          "src-minkara-1"
+        ],
+        "sentiment": "positive"
+      },
+      {
+        "userType": "RVRに乗るユーザー",
+        "scenario": "車検前のヘッドライトの黄ばみ対策",
+        "experience": "車検が近く黄ばみが気になっていたため、3年前に一度使用して余っていたものを再施工しました。簡易施工できて、ある程度効果が分かりやすいので気に入っています。",
+        "supportingSourceIds": [
+          "src-minkara-2"
+        ],
+        "sentiment": "positive"
+      }
+    ],
+    "userImpression": "研磨剤を使わず「塗るだけ」という手軽さが高く評価されており、手作業での研磨に比べて劇的に作業時間が短縮できる点が好評です。また、過去に購入したものを再度利用できるなど、コストパフォーマンスの良さを実感するユーザーもいます。",
+    "sources": [
+      {
+        "id": "src-amazon",
+        "name": "Amazon商品ページ",
+        "url": "https://www.amazon.co.jp/dp/B09GP887W8",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2021-09-22",
+        "author": "KURE(呉工業)",
+        "conflictOfInterest": "disclosed",
+        "notes": "製品の基本仕様、特徴、価格情報を確認"
+      },
+      {
+        "id": "src-minkara-1",
+        "name": "みんカラ パーツレビュー (ノート)",
+        "url": "https://minkara.carview.co.jp/userid/3206235/car/3773363/13661363/parts.aspx",
+        "tier": "medium",
+        "evidenceType": "secondary",
+        "publishedAt": "2025-10-19",
+        "author": "黄色いレガシィ",
+        "conflictOfInterest": "none",
+        "notes": "事前の研磨と併用して十分な効果を実感したとのレビュー"
+      },
+      {
+        "id": "src-minkara-2",
+        "name": "みんカラ パーツレビュー (RVR)",
+        "url": "https://minkara.carview.co.jp/userid/3391962/car/3431268/13549936/parts.aspx",
+        "tier": "medium",
+        "evidenceType": "secondary",
+        "publishedAt": "2023-11-20",
+        "author": "@riki",
+        "conflictOfInterest": "none",
+        "notes": "車検前のメンテに活用。簡易施工で効果が分かりやすいと評価"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "こすらず塗るだけで黄ばみ・白化を落とす",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-amazon"
+        ],
+        "crossChecked": false,
+        "notes": "メーカー公式の特徴"
+      },
+      {
+        "claim": "研磨剤不使用で傷をつける心配がない",
+        "category": "safety",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-amazon"
+        ],
+        "crossChecked": false,
+        "notes": "メーカー公式の特徴"
+      },
+      {
+        "claim": "簡易施工でも効果が実感できる",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-minkara-1",
+          "src-minkara-2"
+        ],
+        "crossChecked": true,
+        "notes": "複数のユーザーレビューで手軽さと効果のバランスが評価されている"
+      }
+    ],
+    "lastInvestigated": "2026-05-10",
+    "competitiveAnalysis": [
+      {
+        "name": "プロスタッフ ヘッドライトガチコート 魁 磨き塾 S132",
+        "asin": "B00T47R2II",
+        "priceComparison": "本製品よりも安価。付属品が豊富で、より手軽に安く済ませたい層向け。",
+        "featureComparison": [
+          "共通点：ヘッドライトの黄ばみ除去とコーティングを行う製品",
+          "相違点：本製品は塗るだけで汚れを落とすタイプだが、S132はクロスなどで磨く工程がある"
+        ],
+        "differentiators": [
+          "KURE LOOX 1196の利点：研磨剤不使用で「こすらず塗るだけ」という施工の圧倒的な手軽さ",
+          "プロスタッフ 魁 磨き塾 S132の利点：価格が安く、クロスなどが多数付属しているためコスパが高い"
+        ]
+      },
+      {
+        "name": "WAKO'S ヘッドライトリペア V341",
+        "asin": "B0DFVM27YW",
+        "priceComparison": "本製品よりかなり高価。プロ仕様の本格的な効果を求めるユーザー向け。",
+        "featureComparison": [
+          "共通点：ヘッドライトの光量回復や車検対策を目的とする点",
+          "相違点：WAKO'Sはプロユースも想定された強力なリペア剤であり、価格帯が大きく異なる"
+        ],
+        "differentiators": [
+          "KURE LOOX 1196の利点：一般ユーザーでも手が出しやすい手頃な価格と、簡単な施工方法",
+          "WAKO'S V341の利点：価格に見合った、より本格的で高い持続性を持つプロレベルの仕上がり"
+        ]
+      },
+      {
+        "name": "3M ヘッドライト修復キット 39193",
+        "asin": "B08749H19D",
+        "priceComparison": "本製品とほぼ同価格帯。修復キットとしてのアプローチが異なる。",
+        "featureComparison": [
+          "共通点：短時間（3Mは15分と表記）での黄ばみ除去を謳っている点",
+          "相違点：3Mは「キット」として修復に特化しているのに対し、本製品はクリア＆プロテクトの2液タイプ"
+        ],
+        "differentiators": [
+          "KURE LOOX 1196の利点：硬度6Hのガラスコートによる強力な保護性能（プロテクト効果）",
+          "3M ヘッドライト修復キット 39193の利点：世界的な研磨・接着ブランドである3Mの信頼性と、キット一つで完結する利便性"
+        ]
+      },
+      {
+        "name": "BPRO ヘッドライトクリーナー 450g BCQ-28A045",
+        "asin": "B098S1P3RH",
+        "priceComparison": "本製品より高価だが、大容量（450g）であるためグラム単価は安い。",
+        "featureComparison": [
+          "共通点：手磨きによる黄ばみ除去",
+          "相違点：BPROは業務用のコンパウンド（研磨剤）であり、本製品は研磨剤不使用のケミカル（溶解）タイプ"
+        ],
+        "differentiators": [
+          "KURE LOOX 1196の利点：研磨剤不使用で傷をつけず、コーティングまで一貫して行える点",
+          "BPRO BCQ-28A045の利点：大容量の業務用コンパウンドとして、物理的にしっかりと黄ばみを削り落としたい場合に適している"
+        ]
+      },
+      {
+        "name": "横浜油脂（Linda）ベースクリーナー BZ62",
+        "asin": "B00ZF7VYQM",
+        "priceComparison": "本製品より高価。クリーナー単体の製品。",
+        "featureComparison": [
+          "共通点：ヘッドライトの黄ばみ・白化の除去",
+          "相違点：Linda BZ62は「ベースクリーナー」であり、別途コーティング剤が必要になる場合があるが、本製品はプロテクト剤がセットになっている"
+        ],
+        "differentiators": [
+          "KURE LOOX 1196の利点：クリーナーとプロテクト剤がセットになっており、これ一つで保護まで完了する",
+          "Linda BZ62の利点：プロユースの強力な洗浄力で、頑固な汚れの下地処理に特化している"
+        ]
+      },
+      {
+        "name": "CCI スマートシャイン ヘッドライトコートNEO W-225",
+        "asin": "B00DVKRJ7A",
+        "priceComparison": "本製品よりやや高価。強力なUVカットに特化。",
+        "featureComparison": [
+          "共通点：黄ばみ除去とUVカットポリマーによるコーティング機能",
+          "相違点：スマートシャインは強力コーティングを謳っており、本製品は硬度6Hのガラスコートを特徴とする"
+        ],
+        "differentiators": [
+          "KURE LOOX 1196の利点：研磨剤不使用の手軽さと、硬度6Hという具体的な硬さを明記したガラスコート",
+          "CCI スマートシャイン W-225の利点：UVカットポリマーによる、より紫外線保護にフォーカスした性能"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "手作業での面倒な研磨作業を避けたい人",
+        "車検前にサッとヘッドライトの黄ばみを取りたい人",
+        "ヘッドライトに研磨傷をつけたくない人"
+      ],
+      "pros": [
+        "研磨剤不使用で「塗るだけ」で黄ばみが落ちる圧倒的な手軽さ",
+        "硬度6Hのガラスコートと強力UVカットによる保護性能",
+        "1箱で複数回（または複数台）施工できるコストパフォーマンス"
+      ],
+      "cons": [
+        "ヘッドライト内側の汚れや、素材自体に深く浸透した細かいクラック（ひび割れ）には効果がない",
+        "効果を最大限に引き出すためには、場合によっては事前の耐水ペーパー等での下地処理が必要になることもある"
+      ],
+      "score": 85,
+      "scoreRationale": "[基本点: 70]\n[加点: +10] 研磨剤不使用で塗るだけで黄ばみが落ちる手軽さと作業負担の軽減\n[加点: +5] 硬度6HのガラスコートとUVカット剤による実用的な保護性能\n[加点: +5] 複数回施工でき、1回あたりのコストパフォーマンスが高い点\n[減点: -5] 深い傷や内部劣化には対応できず、状況によっては完全な回復が見込めない点\n[合計: 85]"
+    },
+    "technicalSpecs": {
+      "dimensions": {
+        "height": "195mm",
+        "width": "113mm",
+        "depth": "60mm"
+      },
+      "weight": "140g",
+      "capacity": "クリーナー: 36ml, コーティング: 4ml",
+      "color": "透明",
+      "model": "1196",
+      "features": [
+        "研磨剤不使用",
+        "硬度6H硬質ガラスコート",
+        "強力UVカット剤配合"
+      ]
+    }
+  }
+}
