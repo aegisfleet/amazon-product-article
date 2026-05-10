@@ -1,0 +1,166 @@
+{
+  "analysis": {
+    "productName": "単3形 USB充電式リチウムイオンバッテリー 4本セット",
+    "parentAsin": "B0DFG9FNH9",
+    "productDescription": "USB-Cポートから直接充電できる1.5Vの単3形リチウムイオンバッテリー4本セット。2600mWhの大容量と約1200回の繰り返し充電が可能。",
+    "productUsage": ["子供のおもちゃ", "リモコン", "ワイヤレスマウス", "ワイヤレスキーボード", "ドアロック", "電動歯ブラシ", "美容機器"],
+    "positivePoints": [
+      "専用の充電器が不要で、付属のUSB-Cケーブルで直接充電可能",
+      "2600mWhの大容量で長時間使用が可能",
+      "約2時間の急速充電に対応",
+      "1.5Vの定出力で安定した電力を供給",
+      "水銀、カドミウム、鉛不使用で環境に優しい"
+    ],
+    "negativePoints": [
+      "LEDキャンドル、懐中電灯、フォトフラッシュなどのLED製品には使用不可",
+      "充電用のACアダプター（5V）は別途用意する必要がある"
+    ],
+    "useCases": [
+      "電池消費が激しい子供のおもちゃでの使用",
+      "ワイヤレスマウスやキーボードなどのPC周辺機器での利用",
+      "定期的に電池交換が必要なリモコンや電動歯ブラシでの使用"
+    ],
+    "userStories": [],
+    "userImpression": "専用充電器が不要で直接ケーブルを挿して充電できる利便性が高く評価されている。1.5Vの安定した出力により、従来のニッケル水素電池（1.2V）では動作が不安定になりがちな機器にも適している。",
+    "sources": [
+      {
+        "id": "src-1",
+        "name": "Amazon商品ページ",
+        "url": "https://www.amazon.co.jp/dp/B0D11S3XHT",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-05-10",
+        "author": "SZEMPTY",
+        "conflictOfInterest": "disclosed",
+        "notes": "商品の仕様、特徴、価格情報を確認"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "2時間でフル充電可能",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": ["src-1"],
+        "crossChecked": false,
+        "notes": "商品仕様に記載"
+      },
+      {
+        "claim": "1200回循環使用可能",
+        "category": "durability",
+        "confidence": "high",
+        "supportingSourceIds": ["src-1"],
+        "crossChecked": false,
+        "notes": "商品仕様に記載"
+      }
+    ],
+    "lastInvestigated": "2026-05-10",
+    "competitiveAnalysis": [
+      {
+        "name": "MoSpace 単3形リチウムイオン",
+        "asin": "B0BYSH6TMV",
+        "priceComparison": "対象商品よりやや高いが、容量は2550mWhとほぼ同等。",
+        "featureComparison": [
+          "共通点：1.5V定出力、4-in-1 USB C充電ケーブル付属",
+          "相違点：対象商品は2600mWh/1200回充電可能、競合は2550mWh/1000回充電可能"
+        ],
+        "differentiators": [
+          "SMARTOOOLS 単3形 USB充電式リチウムイオンバッテリーの利点：価格が安く、容量と繰り返し使用回数で優れる",
+          "MoSpace 単3形リチウムイオンの利点：特になし"
+        ]
+      },
+      {
+        "name": "XIKAYADA 充電式 単3/単4電池 4本セット",
+        "asin": "B0GHQTN5NS",
+        "priceComparison": "対象商品よりやや安く、大容量の3200mWhを備える。ただし単3と単4の組み合わせ。",
+        "featureComparison": [
+          "共通点：1.5V定出力、USB-C充電",
+          "相違点：対象商品は単3形×4本（2600mWh）、競合は単3形×2本（3200mWh）＋単4形×2本（1000mWh）のセット"
+        ],
+        "differentiators": [
+          "SMARTOOOLS 単3形 USB充電式リチウムイオンバッテリーの利点：単3電池が4本必要な機器に適している",
+          "XIKAYADA 充電式 単3/単4電池 4本セットの利点：単3と単4の両方が必要な場合に便利で、単3の容量が大きい"
+        ]
+      },
+      {
+        "name": "SZEMPTY 単三USB充電式電池4個",
+        "asin": "B0CQ4SS11Z",
+        "priceComparison": "対象商品とほぼ同価格帯だが、容量が3400mWhと大きい。",
+        "featureComparison": [
+          "共通点：1.5V定出力、USB-C充電、1200回充電可能",
+          "相違点：対象商品（2600mWh）に比べ、競合（3400mWh）の方が大容量"
+        ],
+        "differentiators": [
+          "SMARTOOOLS 単3形 USB充電式リチウムイオンバッテリーの利点：特になし",
+          "SZEMPTY 単三USB充電式電池4個の利点：同価格帯でより大容量（3400mWh）を搭載している"
+        ]
+      },
+      {
+        "name": "PULOMI USB リチウムイオン充電式単三電池 8個パック",
+        "asin": "B0DH372RYS",
+        "priceComparison": "総額は高いが、8本セットのため1本あたりの単価は安い。",
+        "featureComparison": [
+          "共通点：1.5V定出力、2600mWh、1200回充電可能",
+          "相違点：対象商品は4本セット、競合は8本セット"
+        ],
+        "differentiators": [
+          "SMARTOOOLS 単3形 USB充電式リチウムイオンバッテリーの利点：少ない本数で初期投資を抑えたい場合に適している",
+          "PULOMI USB リチウムイオン充電式単三電池 8個パックの利点：大量に電池が必要な場合にコストパフォーマンスが高い"
+        ]
+      },
+      {
+        "name": "SZEMPTY 単3形2本+単4形2本リチウム充電池",
+        "asin": "B0CC5BV76F",
+        "priceComparison": "対象商品とほぼ同価格。",
+        "featureComparison": [
+          "共通点：1.5V定出力、USB-C充電",
+          "相違点：対象商品は単3形4本、競合は単3形2本＋単4形2本のセット"
+        ],
+        "differentiators": [
+          "SMARTOOOLS 単3形 USB充電式リチウムイオンバッテリーの利点：単3形が4本必要な場合に適している",
+          "SZEMPTY 単3形2本+単4形2本リチウム充電池の利点：単3と単4の両方を使用したい場合に便利"
+        ]
+      },
+      {
+        "name": "SZEMPTY 単3形充電池 2本セット",
+        "asin": "B0FT3T92M9",
+        "priceComparison": "総額は安いが、2本セットのため1本あたりの単価は高い。",
+        "featureComparison": [
+          "共通点：1.5V定出力、USB-C充電",
+          "相違点：対象商品は2600mWh×4本、競合は3400mWh×2本"
+        ],
+        "differentiators": [
+          "SMARTOOOLS 単3形 USB充電式リチウムイオンバッテリーの利点：本数が多く、1本あたりのコストパフォーマンスが良い",
+          "SZEMPTY 単3形充電池 2本セットの利点：大容量（3400mWh）で、少量の電池で十分な場合に適している"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "専用充電器を持ちたくない人",
+        "1.5Vの電圧を必要とする機器を使用している人",
+        "頻繁に電池を交換するコストや手間を減らしたい人"
+      ],
+      "pros": [
+        "USB-Cケーブルで直接充電できる手軽さ",
+        "1.5Vの安定した出力",
+        "繰り返し使える経済性"
+      ],
+      "cons": [
+        "LED製品（懐中電灯など）には使用不可",
+        "USB充電器（5V）は別途必要"
+      ],
+      "score": 75,
+      "scoreRationale": "[基本点: 70]\n[加点: +5] (USB-C直挿し充電と1.5V定出力の実用性が高い)\n[加点: +5] (1200回の繰り返し使用によるコストパフォーマンスの高さ)\n[減点: -5] (LED製品に使用できないという用途の制限がある)\n[合計: 75]"
+    },
+    "technicalSpecs": {
+      "capacity": "2600mWh (1733mAh)",
+      "voltage": "1.5V",
+      "batteryType": "リチウムイオン",
+      "chargingMethod": "USB Type-C",
+      "chargingTime": "約2時間",
+      "cycleLife": "約1200回",
+      "packageContents": "単3形充電池4本、4 in 1 USB-TypeCケーブル",
+      "other": ["水銀、カドミウム、鉛不使用"]
+    }
+  }
+}
