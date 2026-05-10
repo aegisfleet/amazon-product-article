@@ -1,0 +1,177 @@
+{
+  "analysis": {
+    "productName": "SANPIMA 単3形リチウム充電池4本 1.5V 大容量3000mWh 急速充電器付き 約1600回充電可能 1-4本同時充電 2.5時間充電 自然放電抑制",
+    "parentAsin": "B0GZRV6WLT",
+    "productDescription": "1.5Vの定電圧出力と3000mWh(2000mAh)の大容量を備えた単3形リチウム充電池4本と、2.5時間で急速充電可能な専用充電器のセット。",
+    "productUsage": [
+      "ゲーム機のコントローラー",
+      "デジタルカメラやフラッシュ",
+      "子供のおもちゃ",
+      "ドアロックや各種モニター機器"
+    ],
+    "positivePoints": [
+      "1.5Vの定電圧出力により、ニッケル水素電池(1.2V)では動作が不安定になる機器でも安定して使用できる",
+      "3000mWhの大容量で長時間の使用が可能",
+      "約1600回の繰り返し充電が可能で経済的",
+      "付属の充電器はType-C接続で2.5時間の急速充電に対応"
+    ],
+    "negativePoints": [
+      "専用の1.5Vリチウムイオン電池用充電器が必要（従来のニッケル水素用充電器は使用不可）"
+    ],
+    "useCases": [
+      "消費電力の大きいゲームパッドでの使用",
+      "高い電圧が要求されるスマートロックやセンサー類での使用"
+    ],
+    "userStories": [],
+    "userImpression": "1.5V定電圧出力のメリットを活かし、これまでアルカリ乾電池でしか正常動作しなかった機器の代替として高く評価されている。大容量と急速充電の利便性も備え、コストパフォーマンスに優れた充電池セット。",
+    "sources": [
+      {
+        "id": "src-amazon",
+        "name": "Amazon商品ページ",
+        "url": "https://www.amazon.co.jp/dp/B0DWG13MP6",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-05-10",
+        "author": "sanpima",
+        "conflictOfInterest": "possible",
+        "notes": "製品スペック（3000mWh、1.5V、1600回充電、2.5時間急速充電）を確認。"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "1.5Vの定常出力を維持する",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-amazon"
+        ],
+        "crossChecked": false,
+        "notes": "メーカー公式スペックとして記載。"
+      },
+      {
+        "claim": "1600回の充電サイクルが可能",
+        "category": "durability",
+        "confidence": "medium",
+        "supportingSourceIds": [
+          "src-amazon"
+        ],
+        "crossChecked": false,
+        "notes": "メーカー公式の寿命スペック。実環境での検証は不明だが、リチウムイオン電池の特性として標準的な水準の記述。"
+      }
+    ],
+    "lastInvestigated": "2026-05-10",
+    "competitiveAnalysis": [
+      {
+        "name": "XTAR 1.5V充電池 4150mWh 単3形 リチウム電池4本 LC4充電器の組み合わせ",
+        "asin": "B0CJRPWBVS",
+        "priceComparison": "対象商品よりも高価だが、容量が4150mWhと大きく上回る。",
+        "featureComparison": [
+          "共通点：単3形リチウム充電池4本と充電器のセット、1.5V出力。",
+          "相違点：XTARは4150mWhと大容量だが価格が高い。対象商品は3000mWhで価格が手頃。"
+        ],
+        "differentiators": [
+          "SANPIMAの利点：コストパフォーマンスに優れ、日常的な用途に十分な容量。",
+          "XTARの利点：より大容量が必要な高消費電力機器向け。"
+        ]
+      },
+      {
+        "name": "MXBatt 単三電池 充電式 充電器セット リチウム充電池 1.5V 3400mWh 8本入り",
+        "asin": "B0BWXLYPKZ",
+        "priceComparison": "対象商品より少し高価だが、電池が8本含まれており、1本当たりの単価は安い。",
+        "featureComparison": [
+          "共通点：1.5V出力の単3形リチウム充電池と充電器のセット。",
+          "相違点：MXBattは8本セットで液晶ディスプレイ充電器付き。対象商品は4本セットでコンパクトな充電器。"
+        ],
+        "differentiators": [
+          "SANPIMAの利点：初期費用を抑えたい場合や、4本で十分な場合に適している。",
+          "MXBattの利点：多くの電池を必要とする場合や、液晶での状態確認を重視する場合。"
+        ]
+      },
+      {
+        "name": "XTAR 新型 1.5V 充電池 単3形 4000mWh 4本 充電器付属",
+        "asin": "B0GJZL1PZ1",
+        "priceComparison": "対象商品より高価。タッチ式残量表示などの高機能を備える。",
+        "featureComparison": [
+          "共通点：単3形リチウム充電池4本と充電器のセット、1.5V定電圧出力。",
+          "相違点：XTARは4000mWhの大容量とタッチ式残量表示を搭載。対象商品は3000mWhでシンプル。"
+        ],
+        "differentiators": [
+          "SANPIMAの利点：シンプルな機能で価格が安く、手軽に導入できる。",
+          "XTARの利点：電池単体での残量確認機能や、より長い駆動時間が必要な場合。"
+        ]
+      },
+      {
+        "name": "SZEMPTY 単3形2本＋単4形2本セット USB-C急速充電対応1.5V",
+        "asin": "B0FT3WMFY6",
+        "priceComparison": "価格は対象商品と同等レベル。専用充電器不要でケーブル直差し充電。",
+        "featureComparison": [
+          "共通点：1.5V出力のリチウム充電池。",
+          "相違点：SZEMPTYは単3/単4の混成セットで本体にUSB-C直差し充電。対象商品は単3が4本で専用充電器を使用。"
+        ],
+        "differentiators": [
+          "SANPIMAの利点：専用充電器で一度に4本をすっきり充電でき、単3のみが必要な場合に適している。",
+          "SZEMPTYの利点：充電器を持ち運びたくない場合や、単3と単4の両方が必要な場合。"
+        ]
+      },
+      {
+        "name": "JP-POWER 単4形 リチウムイオン充電池 4本セット 充電器付き",
+        "asin": "B0FLDCDW9P",
+        "priceComparison": "対象商品より安価だが、単4形のみのセット。",
+        "featureComparison": [
+          "共通点：1.5V出力のリチウム充電池と充電器のセット。",
+          "相違点：JP-POWERは単4形で容量1300mWh。対象商品は単3形で3000mWh。"
+        ],
+        "differentiators": [
+          "SANPIMAの利点：単3形対応機器に特化しており、容量が大きい。",
+          "JP-POWERの利点：単4形が必要な機器向けで、価格が手頃。"
+        ]
+      },
+      {
+        "name": "XIKAYADA 単3/単4 電池充電器 1.5V リチウムイオン",
+        "asin": "B0GTMDFNYJ",
+        "priceComparison": "価格は対象商品と同等レベルだが、こちらは充電器単体での販売(電池なしの可能性あり)。",
+        "featureComparison": [
+          "共通点：1.5Vリチウムイオン電池用の充電器。",
+          "相違点：XIKAYADAは8スロット充電器。対象商品は4本用充電器と電池のセット。"
+        ],
+        "differentiators": [
+          "SANPIMAの利点：電池と充電器がセットになっており、すぐに使用開始できる。",
+          "XIKAYADAの利点：既に多数の1.5Vリチウム充電池を持っており、8本同時充電したい場合。"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "1.5V出力が必要な機器（スマートロックや一部のコントローラー）を使用する人",
+        "頻繁にアルカリ乾電池を消費しており、充電式に切り替えてコストを削減したい人"
+      ],
+      "pros": [
+        "安定した1.5V出力",
+        "3000mWhの大容量",
+        "急速充電器がセットで導入しやすい"
+      ],
+      "cons": [
+        "専用充電器以外は使用できない"
+      ],
+      "score": 85,
+      "scoreRationale": "[基本点: 70]\n[加点: +5] (1.5V定電圧出力の実用性の高さ)\n[加点: +5] (3000mWhの大容量)\n[加点: +5] (電池4本と充電器セットで2190円という高いコストパフォーマンス)\n[合計: 85]"
+    },
+    "technicalSpecs": {
+      "dimensions": {
+        "height": "50mm",
+        "width": "14mm",
+        "depth": "14mm"
+      },
+      "weight": "20g",
+      "capacity": "3000mWh / 2000mAh",
+      "material": "リチウムイオン",
+      "origin": "中国",
+      "other": [
+        "出力電圧: 1.5V",
+        "充電サイクル: 約1600回",
+        "充電時間: 約2.5時間",
+        "充電インターフェース: USB Type-C"
+      ]
+    }
+  }
+}
