@@ -1,143 +1,189 @@
 {
   "analysis": {
-    "productName": "ロジクール Signature M550MBKs",
+    "productName": "Logicool Signature M550 ワイヤレスマウス",
     "parentAsin": "B0BKP2XWY5",
-    "productDescription": "独自のSmartWheelによる快適なスクロールと静音性を備えた、シンプルで高品質なワイヤレスマウスです。",
+    "productDescription": "静音クリックと独自のスマートホイールを搭載した、BluetoothおよびLogi Bolt接続対応のシンプルなワイヤレスマウス。サイドボタンを省くことでコストパフォーマンスを高めたモデルです。",
     "productUsage": [
-      "オフィスの静かな環境でのデスクワーク",
-      "カフェや図書館など音が気になる場所でのPC操作",
-      "長いドキュメントやWebページの閲覧",
-      "複数のデバイス（Windows, Mac, iPadなど）での使用"
+      "オフィスワーク・在宅ワーク",
+      "外出先での持ち運び",
+      "静かな環境（図書館・会議室等）での使用"
     ],
     "positivePoints": [
-      "クリック音を90%軽減した「SilentTouch」技術による高い静音性",
-      "勢いよく回すと高速スクロールに切り替わる「SmartWheel」が非常に便利",
-      "接続安定性の高い「Logi Bolt」と汎用的な「Bluetooth」の両方に対応",
-      "レギュラーサイズで多くの人の手にフィットする形状",
-      "最大24ヶ月の長い電池寿命（単3電池1本）"
+      "約3,000円台という手頃な価格設定",
+      "クリック音を従来比90%軽減した静音設計",
+      "勢いよく回すと高速スクロールに自動で切り替わるスマートホイール",
+      "Bluetoothと付属のLogi Boltレシーバーの両方で接続可能"
     ],
     "negativePoints": [
-      "サイドボタンがないため、ブラウザの「戻る/進む」をワンタッチで操作できない",
-      "上位モデルのM650（サイドボタンあり）との価格差が小さく、コストパフォーマンスで劣る場合がある",
-      "Logi BoltレシーバーはUSB-A端子のため、USB-CのみのPCでは変換アダプタが必要"
+      "サイドボタン（戻る/進む）がないため、Webブラウジング等で多用する人には不便",
+      "全体的なデザイン・質感にややプラスチック感（チープさ）がある",
+      "複数デバイス間のシームレスな切り替え機能（FLOW）には非対応"
     ],
     "useCases": [
-      "静かなオフィスでの事務作業",
-      "深夜の自宅でのPC利用",
-      "出張や外出先でのモバイルワーク"
+      "仕事でExcelや長いWebページをよく閲覧する",
+      "カフェやシェアオフィスなどの静かな場所で作業する",
+      "多機能さは不要でシンプルに安く良質なマウスが欲しい"
     ],
     "userStories": [
       {
-        "userType": "30代会社員（事務職）",
-        "scenario": "オフィスでのExcel作業",
-        "experience": "以前使っていたマウスのカチカチ音が気になっていたが、これに変えてから周囲に気を使わずに済むようになった。SmartWheelのおかげで縦長の表も素早くスクロールできて快適。（推測）",
+        "userType": "デスクワーカー・リモートワーカー",
+        "scenario": "オフィスや自宅で静かに仕事をする場面",
+        "experience": "クリック音が静かで周りの目を気にせずに作業できます。スマートホイールのおかげで、長いExcelシートやウェブページもサクサクと高速スクロールで進めるため、作業効率が大きく上がりました。ただし、サイドボタンがないため、ブラウザの「戻る」などを頻繁に使う操作では少し不便さを感じます。",
+        "supportingSourceIds": [
+          "src-tech-you-review"
+        ],
         "sentiment": "positive"
-      },
-      {
-        "userType": "大学生",
-        "scenario": "図書館でのレポート作成",
-        "experience": "クリック音がほとんどしないので、静かな図書館でも安心して使える。接続も途切れず安定しているのが良い。（推測）",
-        "sentiment": "positive"
-      },
-      {
-        "userType": "40代エンジニア",
-        "scenario": "Webブラウジング",
-        "experience": "質感やホイールの感触は最高だが、やはりサイドボタンがないのは不便だった。数百円足してM650にすればよかったと少し後悔している。（推測）",
-        "sentiment": "negative"
       }
     ],
-    "userImpression": "質感、静音性、スクロール性能は非常に高く評価されているが、サイドボタンがないことによる操作性の制限と、上位機種との価格差の小ささが主な論点となっている。",
+    "userImpression": "価格を抑えつつも静音性やスクロールの快適さが確保されており、非常にコストパフォーマンスが高いと評価されています。一方で、サイドボタンや複数デバイス切替といった高度な機能は省かれているため、シンプルな用途を求める層に最適です。",
     "sources": [
       {
-        "name": "Amazon.co.jp 商品ページ",
-        "url": "https://www.amazon.co.jp/dp/B0BKP2XWY5",
-        "credibility": "high"
-      },
-      {
-        "name": "Logicool 公式サイト (M550)",
-        "url": "https://www.logicool.co.jp/ja-jp/products/mice/signature-m550-wireless-mouse.html",
-        "credibility": "high"
+        "id": "src-tech-you-review",
+        "name": "Logicool M550 Signatureレビュー/TECH-YOU",
+        "url": "https://tech-you.jp/logicool-m550signature-review/",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2024-01-01",
+        "author": "TECH-YOU",
+        "conflictOfInterest": "disclosed",
+        "notes": "実機レビューに基づく使用感。静音性・スマートホイールの良さと、サイドボタン非搭載のデメリット、M650との比較などが詳細に言及されている。"
       }
     ],
-    "lastInvestigated": "2026-02-06",
+    "claims": [
+      {
+        "claim": "クリック音を従来比で90%軽減した静音設計である",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-tech-you-review"
+        ],
+        "crossChecked": true,
+        "notes": "レビュー記事および公式スペックにて言及あり"
+      },
+      {
+        "claim": "サイドボタンが搭載されていない",
+        "category": "durability",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-tech-you-review"
+        ],
+        "crossChecked": true,
+        "notes": "デザインのシンプル化のために省かれている"
+      }
+    ],
+    "lastInvestigated": "2026-05-13",
     "competitiveAnalysis": [
       {
-        "name": "Logicool Signature M650MGR",
+        "name": "ロジクール Signature M650MGR",
         "asin": "B09Q5SHDR3",
-        "priceComparison": "M550とほぼ同価格帯（約3,800円〜4,000円）",
+        "priceComparison": "対象商品よりやや高いが、機能追加分の価値はある",
         "featureComparison": [
-          "サイドボタンあり（戻る/進む操作が可能）",
-          "それ以外のSmartWheelやSilentTouchなどの機能はM550と同等"
+          "共通点：静音設計、スマートホイール搭載、Bluetooth/Logi Bolt対応",
+          "相違点：M650にはサイドボタン（戻る・進む）が搭載されている"
         ],
         "differentiators": [
-          "サイドボタンの有無が最大の違い",
-          "機能性を重視するならM650の方がコスパが良い"
+          "Logicool Signature M550 ワイヤレスマウスの利点：機能を絞ることでより低価格で手に入る",
+          "ロジクール Signature M650MGRの利点：サイドボタンを活用してブラウザ等の操作を効率化できる"
         ]
       },
       {
-        "name": "HP 280 ワイヤレスマウス",
-        "asin": "B08NR16ZYQ",
-        "priceComparison": "約1,500円と非常に安価",
+        "name": "ロジクール ワイヤレスマウス M240GRd",
+        "asin": "B0D21S5SPG",
+        "priceComparison": "対象商品よりも安価で、エントリー向けとしてのコスパが高い",
         "featureComparison": [
-          "基本的な3ボタンマウス",
-          "静音クリック機能あり",
-          "SmartWheelのような高機能スクロールはない"
+          "共通点：静音設計、Bluetooth対応のシンプルな小型マウス",
+          "相違点：M240はスマートホイール非搭載で、よりコンパクトかつ基本機能のみに特化している"
         ],
         "differentiators": [
-          "圧倒的な安さ",
-          "機能は最小限で良いユーザー向け"
+          "Logicool Signature M550 ワイヤレスマウスの利点：スマートホイールによる高速スクロールが快適で作業性が高い",
+          "ロジクール ワイヤレスマウス M240GRdの利点：より安価かつコンパクトで、持ち運びやサブ用途に最適"
         ]
       },
       {
-        "name": "BUFFALO BSMBW315BK",
-        "asin": "B07S8VWT5B",
-        "priceComparison": "約1,000円強と非常に安価",
+        "name": "ロジクール Signature M750MGR",
+        "asin": "B0BKPL1VKW",
+        "priceComparison": "対象商品よりも高価だが、マルチデバイス環境に最適",
         "featureComparison": [
-          "5ボタン（サイドボタンあり）",
-          "静音モデル",
-          "BlueLEDセンサー"
+          "共通点：静音設計、スマートホイール搭載",
+          "相違点：M750はサイドボタンに加え、Easy-SwitchやFLOWなど複数デバイス間のシームレスな操作機能に対応"
         ],
         "differentiators": [
-          "低価格ながらサイドボタンを搭載している点",
-          "質感やホイール性能はLogicoolに劣る"
+          "Logicool Signature M550 ワイヤレスマウスの利点：単一デバイスでの利用に特化し、コストを低く抑えている",
+          "ロジクール Signature M750MGRの利点：複数台のPCを同時に使い分けるハイエンドな用途で真価を発揮する"
+        ]
+      },
+      {
+        "name": "ロジクール ワイヤレスマウス M220CG",
+        "asin": "B09J46WG5D",
+        "priceComparison": "対象商品よりもかなり安価なエントリーモデル",
+        "featureComparison": [
+          "共通点：静音設計のワイヤレスマウス",
+          "相違点：M220はBluetooth非対応（USBレシーバーのみ）、スマートホイール非搭載"
+        ],
+        "differentiators": [
+          "Logicool Signature M550 ワイヤレスマウスの利点：Bluetooth接続対応とスマートホイールによるスクロールの快適さ",
+          "ロジクール ワイヤレスマウス M220CGの利点：USBポートが空いているPCで、とにかく安く静音マウスを導入したい場合に適している"
+        ]
+      },
+      {
+        "name": "ロジクール SEB-M705 ワイヤレスマウス",
+        "asin": "B08GP2H88M",
+        "priceComparison": "対象商品よりも高価な多機能モデル",
+        "featureComparison": [
+          "共通点：高速スクロール機能を搭載",
+          "相違点：M705は7ボタン搭載でカスタマイズ性が高く、電池寿命が最大36ヶ月と長いが、静音仕様ではない"
+        ],
+        "differentiators": [
+          "Logicool Signature M550 ワイヤレスマウスの利点：クリック音が静かで、場所を選ばずに使用できる",
+          "ロジクール SEB-M705 ワイヤレスマウスの利点：ボタン数が多く、用途に合わせた幅広いカスタマイズが可能"
+        ]
+      },
+      {
+        "name": "Logicool Signature M550MGR (グラファイト)",
+        "asin": "B0BKP5R91F",
+        "priceComparison": "対象商品とほぼ同価格のカラーバリエーション",
+        "featureComparison": [
+          "共通点：静音設計、スマートホイール、サイズなど基本スペックは完全に同一",
+          "相違点：本体カラーが異なる（対象商品はAmazon限定のブラック、こちらはグラファイト）"
+        ],
+        "differentiators": [
+          "Logicool Signature M550 ワイヤレスマウスの利点：Amazon限定のブラックカラーで、環境に馴染みやすい",
+          "Logicool Signature M550MGR (グラファイト)の利点：色味の好みで選べるグラファイトカラー"
         ]
       }
     ],
     "recommendation": {
       "targetUsers": [
-        "マウスに多機能を求めず、シンプルさを好む人",
-        "誤操作を防ぐために余計なボタンがない方が良い人",
-        "静音性とスクロールの快適さを重視する人"
+        "サイドボタンを必要としない人",
+        "手頃な価格で静かなマウスを探している人",
+        "スクロールの快適さを重視する人"
       ],
       "pros": [
-        "最高レベルの静音性とクリック感の両立",
-        "SmartWheelによる快適なスクロール体験",
-        "Logi Boltによる安定した接続"
+        "コストパフォーマンスが非常に高い",
+        "スマートホイールによる長文スクロールが快適",
+        "静音性が高く場所を選ばない"
       ],
       "cons": [
-        "サイドボタンがないため、ブラウジング効率は少し落ちる",
-        "同価格帯の上位モデル(M650)と比べると割高感がある"
+        "サイドボタンがない",
+        "プラスチック感が強く高級感には欠ける",
+        "複数PC間のシームレスな切替には非対応"
       ],
-      "score": 80,
-      "scoreRationale": "[基本点: 70]\n[加点: +5] (SmartWheelとSilentTouchによる高い実用性と快適性)\n[減点: -5] (機能に対して価格が高く、上位機種M650との価格差が小さいためコスパは低め)\n[加点: +5] (Logicoolならではのビルドクオリティとデザインの良さ)\n[加点: +5] (同価格帯では独自のSmartWheel機能)\n[合計: 80]"
+      "score": 75,
+      "scoreRationale": "[基本点: 70]\n[加点: +10] (3000円台という安さで静音性やスマートホイールを備える高いコストパフォーマンス)\n[減点: -5] (サイドボタンやFlow機能が省かれており、作業効率重視のユーザーには物足りない)\n[合計: 75]"
     },
     "technicalSpecs": {
-      "connection": "Bluetooth Low Energy / Logi Bolt USBレシーバー",
-      "sensor": "ロジクール アドバンス オプティカル トラッキング",
-      "dpi": "400-4000 dpi",
-      "buttons": "3個（左/右クリック、ミドルクリック）",
-      "battery": {
-        "type": "単三形乾電池 x1",
-        "life": "最大24ヶ月"
-      },
       "dimensions": {
         "height": "38.8mm",
-        "width": "61mm",
-        "depth": "108.2mm",
-        "weight": "97.4g"
+        "width": "108.2mm",
+        "depth": "61.0mm"
       },
-      "compatibility": ["Windows", "macOS", "Linux", "Chrome OS", "iPadOS", "Android"],
-      "warranty": "1年間 (Amazon限定モデル)"
+      "weight": "97.4g",
+      "connectivity": "Bluetooth Low Energy, Logi Bolt USBレシーバー",
+      "sensor": "オプティカル",
+      "resolution": "最大4000DPI",
+      "battery": "単三形乾電池 x 1",
+      "batteryLife": "最大24ヶ月（Logi Bolt接続時） / 最大20ヶ月（Bluetooth接続時）",
+      "compatibility": "Windows, macOS, iPadOS, ChromeOS, Android, Linux"
     }
   }
 }
