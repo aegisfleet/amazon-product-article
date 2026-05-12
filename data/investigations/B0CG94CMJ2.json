@@ -26,50 +26,100 @@
       "自宅でのヘアカラーリング",
       "トイレや排水溝の掃除"
     ],
-    "userStories": [
-      {
-        "userType": "30代男性（趣味：料理）",
-        "scenario": "週末のスパイスカレー作り",
-        "experience": "ターメリックなどの色素が手に付くのを防ぐために購入。黒い手袋はプロっぽくて気分が上がるし、食品衛生法適合なので安心して肉を揉み込める。（推測）",
-        "sentiment": "positive"
-      },
-      {
-        "userType": "40代女性（主婦）",
-        "scenario": "キッチンの排水溝掃除",
-        "experience": "以前使っていた手袋より少し厚手に感じる。掃除中に破れることがなくて良いが、少し値段が高いので使い捨てにするのがもったいなく感じることもある。（推測）",
-        "sentiment": "mixed"
-      }
-    ],
+    "userStories": [],
     "userImpression": "食品衛生法適合という安心感と、汚れが目立たない黒色の実用性が評価されていると推測される。一方で、消耗品としては価格がやや高めであるため、コストパフォーマンスを重視するユーザーには選ばれにくい可能性がある。",
     "sources": [
       {
+        "id": "src-1",
         "name": "Amazon商品ページ",
         "url": "https://www.amazon.co.jp/dp/B0CG94CMJ2",
-        "credibility": "high"
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-05-13",
+        "author": "SANYU",
+        "conflictOfInterest": "disclosed",
+        "notes": "公式の商品仕様や特徴を確認"
       }
     ],
-    "lastInvestigated": "2026-02-06",
+    "lastInvestigated": "2026-05-13",
     "competitiveAnalysis": [
       {
         "name": "フジ スーパーニトリルグローブ 粉無し ブラック M",
         "asin": "B0BCJCD458",
-        "priceComparison": "783円（約44%安い）",
-        "featureComparison": ["食品衛生法適合", "粉なし", "薄手"],
-        "differentiators": ["圧倒的な低価格", "フジナップという業務用の定番ブランド"]
+        "priceComparison": "対象商品より安い。業務用として普及しておりコストパフォーマンスに優れる。",
+        "featureComparison": [
+          "共通点：黒色、Mサイズ、100枚入り、ニトリルゴム製",
+          "相違点：対象商品は『厚手』を強調しているが、こちらは一般的な厚み"
+        ],
+        "differentiators": [
+          "対象商品の利点：厚手で破れにくい可能性がある",
+          "フジ スーパーニトリルグローブの利点：圧倒的な低価格と業務用ブランドの信頼性"
+        ]
       },
       {
-        "name": "Felice(フェリーチェ) ニトリルグローブ 黒",
-        "asin": "B09R6Z2C8C",
-        "priceComparison": "1092円（約22%安い）",
-        "featureComparison": ["食品衛生法適合", "粉なし", "川西工業製"],
-        "differentiators": ["手袋メーカー大手の川西工業製で信頼性が高い", "価格も手頃"]
+        "name": "HANWOO ニトリル手袋 黒 100枚入",
+        "asin": "B0GRGDC4N2",
+        "priceComparison": "対象商品より安い。品質・性能に懸念はない。",
+        "featureComparison": [
+          "共通点：黒色、Mサイズ、100枚入り、食品衛生法適合、パウダーフリー",
+          "相違点：対象商品は厚手、HANWOOは厚さ約0.08mmを明記"
+        ],
+        "differentiators": [
+          "対象商品の利点：詳細な厚みは不明だが厚手であることをアピールしている",
+          "HANWOO ニトリル手袋の利点：価格が安く、寸法が明確（全長240mm）"
+        ]
       },
       {
-        "name": "水野産業 ニトリルグローブ N460",
-        "asin": "B07WMQXLWV",
-        "priceComparison": "1170円（約16%安い）",
-        "featureComparison": ["食品衛生法適合", "粉なし"],
-        "differentiators": ["食品包装資材専門商社の製品"]
+        "name": "トラスコ中山(TRUSCO) 使い捨て ニトリル 手袋 粉なし TG スタンダード 黒 M",
+        "asin": "B0795DDNB2",
+        "priceComparison": "対象商品より安い。有名メーカー製であり信頼性が高い。",
+        "featureComparison": [
+          "共通点：黒色、Mサイズ、100枚入り、パウダーフリー",
+          "相違点：トラスコ中山は厚さ0.08mm"
+        ],
+        "differentiators": [
+          "対象商品の利点：食品衛生法適合を前面に押し出している",
+          "トラスコ中山の利点：国内有名メーカーによる信頼性と低価格"
+        ]
+      },
+      {
+        "name": "Cociliye ニトリル手袋 使い捨て手袋 黒 ロング M",
+        "asin": "B0GY4FD7MJ",
+        "priceComparison": "対象商品より大幅に安い。",
+        "featureComparison": [
+          "共通点：黒色、Mサイズ、100枚入り、食品衛生法適合",
+          "相違点：Cociliyeは薄手をアピール、対象商品は厚手をアピール"
+        ],
+        "differentiators": [
+          "対象商品の利点：厚手で丈夫",
+          "Cociliye ニトリル手袋の利点：非常に安価で薄手のため細かい作業に向く"
+        ]
+      },
+      {
+        "name": "PROART ニトリル手袋 黒 M",
+        "asin": "B0BT9BNX6F",
+        "priceComparison": "対象商品より安い。",
+        "featureComparison": [
+          "共通点：黒色、Mサイズ、100枚入り、食品衛生法適合、パウダーフリー",
+          "相違点：PROARTは厚さ0.15mmと非常に厚手で真空パック入り"
+        ],
+        "differentiators": [
+          "対象商品の利点：手軽なパッケージ",
+          "PROART ニトリル手袋の利点：0.15mmの確実な厚みと長期保存可能な真空パック"
+        ]
+      },
+      {
+        "name": "FUSHI&MON ニトリル手袋 黒 M",
+        "asin": "B0GLYJH8J1",
+        "priceComparison": "対象商品より安い。",
+        "featureComparison": [
+          "共通点：黒色、Mサイズ、食品衛生法適合、パウダーフリー",
+          "相違点：FUSHI&MONは50枚入りのパッケージ展開がある"
+        ],
+        "differentiators": [
+          "対象商品の利点：100枚入りの標準的な箱",
+          "FUSHI&MON ニトリル手袋の利点：低価格"
+        ]
       }
     ],
     "recommendation": {
@@ -86,17 +136,42 @@
         "競合他社に比べて価格が高い",
         "ブランドの信頼性が大手メーカーに劣る"
       ],
-      "score": 72,
-      "scoreRationale": "[基本点: 70]\n[加点: +5] (食品衛生法適合)\n[加点: +5] (需要のある黒色・パウダーフリー)\n[減点: -8] (競合と比較して価格が大幅に高い)\n[合計: 72] 価格競争力が低いため標準より少し上の評価にとどまる"
+      "score": 65,
+      "scoreRationale": "[基本点: 70]\n[加点: +5] (食品衛生法適合で用途が広い)\n[加点: +5] (パウダーフリーで使いやすい)\n[減点: -15] (競合品と比較して価格が割高でありコストパフォーマンスが低い)\n[合計: 65]"
     },
     "technicalSpecs": {
       "material": "ニトリルゴム",
       "powder": "なし（パウダーフリー）",
       "color": "ブラック",
       "size": "M",
+      "dimensions": {
+        "height": "80mm",
+        "width": "95mm",
+        "depth": "240mm"
+      },
+      "weight": "520g",
       "quantity": "100枚",
       "foodSanitationLaw": "適合（厚生省告知第370号）",
-      "features": ["左右兼用", "指先エンボス加工", "ラテックスフリー"]
-    }
+      "features": [
+        "左右兼用",
+        "指先エンボス加工",
+        "ラテックスフリー"
+      ],
+      "other": [
+        "厚手仕上げ"
+      ]
+    },
+    "claims": [
+      {
+        "claim": "食品衛生法適合",
+        "category": "safety",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "crossChecked": false,
+        "notes": "Amazon商品ページに記載あり"
+      }
+    ]
   }
 }
