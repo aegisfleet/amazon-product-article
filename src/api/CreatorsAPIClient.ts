@@ -44,10 +44,10 @@ export class CreatorsAPIClient {
   // OAuth Token Management
   private accessToken: string | undefined;
   private tokenExpiresAt = 0;
-  private readonly OAUTH_TOKEN_URL = 'https://creatorsapi.auth.us-west-2.amazoncognito.com/oauth2/token';
+  private readonly OAUTH_TOKEN_URL = 'https://api.amazon.co.jp/auth/o2/token';
   private readonly API_BASE_URL = 'https://creatorsapi.amazon';
   private readonly MARKETPLACE = 'www.amazon.co.jp';
-  private readonly CREDENTIAL_VERSION = '2.3';
+  private readonly CREDENTIAL_VERSION = '3.3';
 
   constructor() {
     // Rate limit configuration - can be adjusted via environment variables
@@ -107,12 +107,11 @@ export class CreatorsAPIClient {
     this.logger.debug('Refreshing OAuth access token...');
 
     try {
-      const credentials = `${this.credentials.credentialId}:${this.credentials.credentialSecret}`;
-      const authHeader = `Basic ${Buffer.from(credentials).toString('base64')}`;
-
       const params = new URLSearchParams();
       params.append('grant_type', 'client_credentials');
-      params.append('scope', 'creatorsapi/default');
+      params.append('scope', 'creatorsapi::default');
+      params.append('client_id', this.credentials.credentialId);
+      params.append('client_secret', this.credentials.credentialSecret);
 
       const response = await axios.post<{ access_token: string; expires_in: number }>(
         this.OAUTH_TOKEN_URL,
@@ -120,7 +119,6 @@ export class CreatorsAPIClient {
         {
           headers: {
             'Content-Type': 'application/x-www-form-urlencoded',
-            Authorization: authHeader,
           },
           timeout: 10000,
         },
@@ -492,7 +490,7 @@ export class CreatorsAPIClient {
 
           const headers = {
             'Content-Type': 'application/json',
-            Authorization: `Bearer ${token}, Version ${this.CREDENTIAL_VERSION}`,
+            Authorization: `Bearer ${token}`,
             'x-marketplace': this.MARKETPLACE,
             'x-amz-application-id': this.credentials?.applicationId, // Include if available
           };
@@ -572,7 +570,7 @@ export class CreatorsAPIClient {
       if (lastError && axios.isAxiosError(lastError) && lastError.response?.status === 401) {
         this.logger.info('Refreshing access token after 401 error');
         const newToken = await this.getAccessToken();
-        headers.Authorization = `Bearer ${newToken}, Version ${this.CREDENTIAL_VERSION}`;
+        headers.Authorization = `Bearer ${newToken}`;
       }
       return true; // Continue loop
     }
