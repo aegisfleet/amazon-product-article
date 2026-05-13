@@ -80,19 +80,25 @@ jobs:
         git config --global user.name "github-actions[bot]"
         git config --global user.email "github-actions[bot]@users.noreply.github.com"
         git add data/cache/paapi-product-cache.json
-        # Only commit if there are changes
+        # 変更がある場合のみコミット
         if ! git diff --staged --quiet; then
-          git commit -m "Update build artifacts [skip ci]"
-          # Retry push with rebase if it fails (handles concurrent workflow conflicts)
+          git commit -m "ビルド成果物の更新 [skip ci]"
+          # プッシュに失敗した場合（競合など）、リベースして再試行
           for i in 1 2 3; do
             if git push; then
               echo "Push succeeded on attempt $i"
               break
             else
               echo "Push failed on attempt $i, pulling with rebase and retrying..."
-              git pull --rebase origin main
-              if [ $i -eq 3 ]; then
-                echo "Push failed after 3 attempts"
+              # --autostash を使用して、未ステージングの変更があってもリベース可能にする
+              if git pull --rebase --autostash origin main; then
+                if [ $i -eq 3 ]; then
+                  echo "Push failed after 3 attempts"
+                  exit 1
+                fi
+              else
+                echo "Rebase failed, aborting..."
+                git rebase --abort || true
                 exit 1
               fi
             fi
