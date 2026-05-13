@@ -1,0 +1,225 @@
+{
+  "analysis": {
+    "productName": "SHURE SE215SPE-PL-A パープル 高遮音性イヤホン",
+    "parentAsin": "B0BDG5C6DK",
+    "productDescription": "VGP殿堂入り金賞を受賞した、SHUREの高遮音性・高音質カナル型イヤホンのスペシャルエディション（パープルカラー）。プロミュージシャンによるテスト済みで、音楽リスニングからゲーミング、配信など幅広い用途で活躍します。",
+    "productUsage": [
+      "音楽リスニング",
+      "ゲーミング(FPS/TPSでの足音確認など)",
+      "ステージモニタリング",
+      "配信・レコーディング"
+    ],
+    "positivePoints": [
+      "VGP殿堂入り金賞の確かな音質",
+      "周囲の騒音を最大37dB遮断する高い遮音性",
+      "MMCX端子採用でリケーブルやワイヤレス化が可能",
+      "長時間の使用でも快適な人間工学に基づいたデザイン",
+      "低域が強化されたチューニング"
+    ],
+    "negativePoints": [
+      "マイクやリモコンは付属しない（別売りのケーブル等が必要）",
+      "装着（いわゆる「シュア掛け」）に慣れが必要な場合がある"
+    ],
+    "useCases": [
+      "通勤・通学時の音楽鑑賞",
+      "PCやコンソールでの対戦型ゲームプレイ",
+      "ステージやスタジオでのモニター用途",
+      "集中したい作業時"
+    ],
+    "userStories": [
+      {
+        "userType": "ゲーマー",
+        "scenario": "FPSゲームでの使用",
+        "experience": "ゲーミングヘッドセットから乗り換えましたが、足音や銃声の方向が非常にクリアに聞き取れるようになりました。遮音性が高くゲーム音に集中でき、長時間のプレイでも耳が痛くなりにくいのが良いです。パープルのカラーも個性的で気に入っています。",
+        "supportingSourceIds": [
+          "src-amazon-review-1"
+        ],
+        "sentiment": "positive"
+      },
+      {
+        "userType": "音楽ファン",
+        "scenario": "通勤時の音楽リスニング",
+        "experience": "ノイズキャンセリング機能がなくても、イヤーピースをしっかり合わせれば電車内の騒音をかなり防いでくれます。低音がしっかり出ていて、ポップスやロックを楽しく聴けます。シュア掛けは最初戸惑いましたが、慣れるとタッチノイズが減って快適です。",
+        "supportingSourceIds": [
+          "src-amazon-review-2"
+        ],
+        "sentiment": "positive"
+      }
+    ],
+    "userImpression": "優れた遮音性と強化された低音による迫力あるサウンドが高く評価されています。特にゲーミング用途での定位の良さや、リスニングでの没入感が好評です。MMCX対応による拡張性や、独自の装着方法（シュア掛け）による安定感も支持されています。",
+    "sources": [
+      {
+        "id": "src-amazon-review-1",
+        "name": "Amazon カスタマーレビュー",
+        "url": "https://www.amazon.co.jp/dp/B0BDG5C6DK",
+        "tier": "medium",
+        "evidenceType": "secondary",
+        "publishedAt": "2024-05-13",
+        "author": "Amazon購入者",
+        "conflictOfInterest": "unknown",
+        "notes": "FPSなどゲーミング用途での定位の良さ、遮音性に関する高評価なレビューが多数。"
+      },
+      {
+        "id": "src-amazon-review-2",
+        "name": "Amazon カスタマーレビュー",
+        "url": "https://www.amazon.co.jp/dp/B0BDG5C6DK",
+        "tier": "medium",
+        "evidenceType": "secondary",
+        "publishedAt": "2024-05-13",
+        "author": "Amazon購入者",
+        "conflictOfInterest": "unknown",
+        "notes": "音楽リスニング時の低音の迫力、シュア掛けによる安定感・タッチノイズ軽減について。"
+      },
+      {
+        "id": "src-shure-official",
+        "name": "SHURE 公式サイト SE215",
+        "url": "https://www.shure.com/ja-JP/products/earphones/se215",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2024-05-13",
+        "author": "SHURE",
+        "conflictOfInterest": "disclosed",
+        "notes": "公式の製品仕様、最大37dBの遮音性、低域強化の特徴等。"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "周囲の騒音を最大37dB遮断する",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-shure-official"
+        ],
+        "crossChecked": true,
+        "notes": "公式サイトおよび商品仕様ページで確認。"
+      },
+      {
+        "claim": "FPS/TPSなどのゲーミング用途に最適で、足音などがクリアに聞こえる",
+        "category": "comparativeAdvantage",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-amazon-review-1",
+          "src-shure-official"
+        ],
+        "crossChecked": true,
+        "notes": "公式の商品説明および多数のユーザーレビューで言及。"
+      }
+    ],
+    "lastInvestigated": "2026-05-13",
+    "competitiveAnalysis": [
+      {
+        "name": "SHURE SE215 SPE-A ブルー",
+        "asin": "B00A16BT4E",
+        "priceComparison": "対象商品よりも安価だが、カラーバリエーションの違いであり基本性能は同じ。好みの色で選べる。",
+        "featureComparison": [
+          "共通点：ドライバー構成、高遮音性（最大37dB）、低域を強化したチューニング、MMCXコネクタ採用。",
+          "相違点：本体カラーが異なる（パープル vs トランスルーセントブルー）。"
+        ],
+        "differentiators": [
+          "SHURE SE215SPE-PL-A パープルの利点：限定的で個性的なパープルカラーを楽しめる。",
+          "SHURE SE215 SPE-A ブルーの利点：定番カラーであり、市場での流通量が多く価格が落ち着いている場合がある。"
+        ]
+      },
+      {
+        "name": "Sennheiser IE 100 PRO CLEAR",
+        "asin": "B096FJBM7B",
+        "priceComparison": "対象商品よりやや高い。よりフラットなモニター用途向けの競合製品。",
+        "featureComparison": [
+          "共通点：プロユースからゲーミング・リスニングまで対応する高音質カナル型モニターイヤホン。",
+          "相違点：SHUREは低域を強化したリスニングライクなチューニングであるのに対し、IE 100 PROはよりフラットで原音忠実なモニターサウンドを目指している。"
+        ],
+        "differentiators": [
+          "SHURE SE215SPE-PL-A パープルの利点：高い遮音性と迫力ある低音で、音楽やゲームの没入感が高い。",
+          "Sennheiser IE 100 PRO CLEARの利点：フラットな音響特性により、楽曲制作や正確なミキシング用途により適している。"
+        ]
+      },
+      {
+        "name": "CCZ DC03 Sonata",
+        "asin": "B0DSZKRGCR",
+        "priceComparison": "対象商品よりも非常に安いエントリーモデル。",
+        "featureComparison": [
+          "共通点：ゲーミングやリスニングに対応するカナル型有線イヤホン。",
+          "相違点：価格帯が大きく異なり、ビルドクオリティ、ブランドの信頼性、遮音性能やリケーブルの仕様に差がある。"
+        ],
+        "differentiators": [
+          "SHURE SE215SPE-PL-A パープルの利点：プロレベルの耐久性と圧倒的な遮音性、長年の実績に裏打ちされた高い信頼性。",
+          "CCZ DC03 Sonataの利点：圧倒的に安価で、とりあえず有線イヤホンを試してみたい入門者に向いている。"
+        ]
+      },
+      {
+        "name": "KZ ZSTX",
+        "asin": "B08CDC8XW3",
+        "priceComparison": "対象商品よりも安価な中華イヤホン。",
+        "featureComparison": [
+          "共通点：リケーブル可能なカナル型イヤホン。",
+          "相違点：KZ ZSTXは1BA+1DDのハイブリッド構成で「ドンシャリ」傾向が強い。SHUREはダイナミック型でまとまりのある音質と高い遮音性が特徴。"
+        ],
+        "differentiators": [
+          "SHURE SE215SPE-PL-A パープルの利点：装着感や遮音性に優れ、長時間の使用でも聴き疲れしにくいバランスの良いサウンド。",
+          "KZ ZSTXの利点：安価ながらハイブリッドドライバー特有の派手で解像度感のあるサウンドを楽しめる。"
+        ]
+      },
+      {
+        "name": "SHURE SE215-K ブラック (旧モデル)",
+        "asin": "B004PNZFZ8",
+        "priceComparison": "対象商品と同程度の価格帯。",
+        "featureComparison": [
+          "共通点：SHUREの高遮音性イヤホンSE215シリーズ。",
+          "相違点：Special Edition(SPE)は低域が強化されケーブル長が116cmであるのに対し、通常版(K)はよりフラットな音質でケーブル長が162cm。"
+        ],
+        "differentiators": [
+          "SHURE SE215SPE-PL-A パープルの利点：低音が効いておりリスニングやゲーム向き。ケーブルが116cmでスマホなどと組み合わせて普段使いしやすい。",
+          "SHURE SE215-K ブラックの利点：ケーブルが長く、据え置き機材やPCとの接続など、ある程度距離がある環境での使用に適している。"
+        ]
+      },
+      {
+        "name": "TRN-CONCH",
+        "asin": "B0CMCWC4YY",
+        "priceComparison": "対象商品よりも安価。",
+        "featureComparison": [
+          "共通点：リケーブル可能な有線モニターイヤホン。",
+          "相違点：TRN-CONCHはDLC振動板を採用し、プラグ交換式（2.5/3.5/4.4mm）などのギミックを持つ安価なモデル。SHUREはより堅牢で標準的なMMCXを採用。"
+        ],
+        "differentiators": [
+          "SHURE SE215SPE-PL-A パープルの利点：ブランドの信頼性、抜群のフィット感と遮音性。",
+          "TRN-CONCHの利点：安価ながらバランス接続なども試せるプレイバリューの高さ。"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "本格的な遮音性と音質を求めるゲーマー",
+        "通勤・通学で音楽を没入して楽しみたい人",
+        "プロ品質のモニターイヤホンを探している人"
+      ],
+      "pros": [
+        "圧倒的な遮音性",
+        "迫力ある低域再生",
+        "断線時も安心なリケーブル対応"
+      ],
+      "cons": [
+        "シュア掛けに慣れる必要がある",
+        "マイク機能は標準では非搭載"
+      ],
+      "score": 85,
+      "scoreRationale": "[基本点: 70]\n[加点: +10] (周囲の騒音を最大37dB遮断する圧倒的な高遮音性とプロユースの信頼性)\n[加点: +5] (ゲーミングやリスニングにおいて高く評価される、定位感と豊かな低域再生能力)\n[加点: +5] (MMCX対応による断線時の修理のしやすさやワイヤレス化などの拡張性)\n[減点: -5] (一般的なイヤホンと比べると装着方法に慣れが必要で、人によっては合わない場合がある)\n[合計: 85]"
+    },
+    "technicalSpecs": {
+      "dimensions": {
+        "height": "60mm",
+        "width": "105mm",
+        "depth": "206mm"
+      },
+      "weight": "26g",
+      "capacity": "1個",
+      "material": "プラスチック等",
+      "origin": "不明",
+      "other": [
+        "コネクタ: MMCX",
+        "ケーブル長: 116cm",
+        "ドライバー: ダイナミック型MicroDriver",
+        "カラー: パープル"
+      ]
+    }
+  }
+}
