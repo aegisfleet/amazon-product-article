@@ -43,8 +43,8 @@ class CreatorsAPIMaxRetriesError(CreatorsAPIRequestError):
 class CreatorsAPIClient:
     """Amazon Creators API Client with OAuth 2.0 authentication."""
     
-    # OAuth Token Endpoint for Japan (FE region - Cognito)
-    OAUTH_TOKEN_URL = "https://creatorsapi.auth.us-west-2.amazoncognito.com/oauth2/token"
+    # OAuth Token Endpoint for Japan (Login with Amazon)
+    OAUTH_TOKEN_URL = "https://api.amazon.co.jp/auth/o2/token"
     
     # Creators API Base URL
     API_BASE_URL = "https://creatorsapi.amazon"
@@ -56,8 +56,8 @@ class CreatorsAPIClient:
     # Marketplace for Japan
     MARKETPLACE = "www.amazon.co.jp"
     
-    # Credential version for Japan (FE region)
-    CREDENTIAL_VERSION = "2.3"
+    # Credential version for Japan
+    CREDENTIAL_VERSION = "3.3"
     
     def __init__(
         self,
@@ -82,17 +82,17 @@ class CreatorsAPIClient:
         if self._access_token and time.time() < self._token_expires_at - 60:
             return self._access_token
         
-        # Create Basic Auth header: base64(credential_id:credential_secret)
-        credentials = f"{self.credential_id}:{self.credential_secret}"
-        auth_header = base64.b64encode(credentials.encode()).decode()
-        
         headers = {
             "Content-Type": "application/x-www-form-urlencoded",
-            "Authorization": f"Basic {auth_header}"
         }
         
-        # OAuth 2.0 client credentials grant
-        data = "grant_type=client_credentials&scope=creatorsapi/default"
+        # OAuth 2.0 client credentials grant for LwA
+        data = {
+            "grant_type": "client_credentials",
+            "scope": "creatorsapi::default",
+            "client_id": self.credential_id,
+            "client_secret": self.credential_secret
+        }
         
         response = requests.post(
             self.OAUTH_TOKEN_URL,
@@ -116,7 +116,7 @@ class CreatorsAPIClient:
         access_token = self._get_access_token()
         return {
             "Content-Type": "application/json",
-            "Authorization": f"Bearer {access_token}, Version {self.CREDENTIAL_VERSION}",
+            "Authorization": f"Bearer {access_token}",
             "x-marketplace": self.MARKETPLACE,
             "x-amz-application-id": self.application_id
         }
