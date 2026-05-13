@@ -28,19 +28,19 @@ Amazon Creators APIの認証情報の取り扱いには、最優先でセキュ�
 
 いかなるタスクも、以下のコマンドが正常終了することを確認するまでは完了とみなしてはならない。
 
-- **Lint**: `npm run lint`
+- **Lint**: `pnpm run lint`
   - ESLintエラーが0件であることを確認する。
-- **ビルド**: `npm run build`
+- **ビルド**: `pnpm run build`
   - TypeScriptのコンパイルエラーがないことを確認する。
-- **サーバー起動 (ブラウザ確認時)**: `npm run server:dev`
+- **サーバー起動 (ブラウザ確認時)**: `pnpm run server:dev`
   - ブラウザでの動作確認（`browser_subagent` 等）を行う場合は、事前にバックグラウンド等でサーバーを起動しておくこと。
-- **テスト**: `npm test`
+- **テスト**: `pnpm test`
   - すべてのユニットテストおよびプロパティベースのテストがパスすることを確認する。
 - **アーティファクト検証**: `python scripts/validate_artifact.py <生成したJSONファイル>`
   - 調査結果や推薦リストの生成・修正を行った場合は必ず実行すること。
 
 > [!IMPORTANT]
-> GitHub Actions CIはLintエラーがあると失敗する。実装完了前に必ず `npm run lint` を実行し、エラーが0件であることを確認すること。
+> GitHub Actions CIはLintエラーがあると失敗する。実装完了前に必ず `pnpm run lint` を実行し、エラーが0件であることを確認すること。
 
 ### 2.2 テスト駆動開発 (TDD)
 
@@ -66,7 +66,7 @@ Amazon Creators APIの認証情報の取り扱いには、最優先でセキュ�
   Start-Process npm -ArgumentList "run", "server:dev" -WindowStyle Hidden
   
   # または通常通り起動
-  npm run server:dev
+  pnpm run server:dev
   ```
 - **サーバー停止手順**:
   作業終了後、不要になったサーバーは `Ctrl+C` またはプロセス終了で停止すること。
@@ -104,8 +104,8 @@ Amazon Creators APIの認証情報の取り扱いには、最優先でセキュ�
 カテゴリを親グループに整理する際は、**`data/categorygroups.json` のみ編集する**こと。
 
 - **ソート順**: Unicodeコードポイント順（英数字 > ひらがな > カタカナ > 漢字）を維持すること。
-  迷った場合は `npm run sort:categories` を実行すること。
-- **新規追加後の手順**: `npm run prebuild:hugo` を実行し、`data/categories.yml` 等が
+  迷った場合は `pnpm run sort:categories` を実行すること。
+- **新規追加後の手順**: `pnpm run prebuild:hugo` を実行し、`data/categories.yml` 等が
   自動生成・更新されることを確認すること。
 
 ### 4.2 キャッシュ管理ツール
@@ -139,4 +139,4 @@ Amazon Creators APIの認証情報の取り扱いには、最優先でセキュ�
 
 - **構文維持**: 巨大なテンプレートリテラルのバックティックや波括弧の対応を壊さないこと。
 - **フレーズの維持**: プロパティテストでチェックされている特定の指示やキーワードを慎重に扱うこと。
-- **変更後の検証**: `npm test src/jules/__tests__/JulesInvestigator.property.test.ts` を必ず実行すること。
+- **変更後の検証**: `pnpm test src/jules/__tests__/JulesInvestigator.property.test.ts` を必ず実行すること。

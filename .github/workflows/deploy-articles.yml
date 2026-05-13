@@ -11,7 +11,7 @@ on:
       - 'config.toml'
       - 'src/**'
       - 'package.json'
-      - 'package-lock.json'
+      - 'pnpm-lock.yaml'
   workflow_dispatch:
 
 # GitHub Pages へのデプロイ権限
@@ -41,17 +41,20 @@ jobs:
         git checkout -B main
         git pull --rebase origin main
 
+    - name: Install pnpm
+      uses: pnpm/action-setup@8912a9102ac27614460f54aedde9e1e7f9aec20d # v6.0.5
+
     - name: Use Node.js
       uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6.4.0
       with:
         node-version: '22'
-        cache: 'npm'
+        cache: 'pnpm'
     
     - name: Install dependencies
-      run: npm ci
+      run: pnpm install --frozen-lockfile
     
     - name: Build project
-      run: npm run build
+      run: pnpm run build
     
     - name: Generate articles
       env:
@@ -59,7 +62,7 @@ jobs:
         AMAZON_CREATORS_APPLICATION_ID: ${{ secrets.AMAZON_CREATORS_APPLICATION_ID }}
         AMAZON_CREATORS_CREDENTIAL_ID: ${{ secrets.AMAZON_CREATORS_CREDENTIAL_ID }}
         AMAZON_CREATORS_CREDENTIAL_SECRET: ${{ secrets.AMAZON_CREATORS_CREDENTIAL_SECRET }}
-      run: npm run generate:articles
+      run: pnpm run generate:articles
     
     
     - name: Setup Hugo
@@ -69,7 +72,7 @@ jobs:
         extended: true
     
     - name: Prepare static data
-      run: npm run prebuild:hugo
+      run: pnpm run prebuild:hugo
     
     - name: Commit build artifacts
       if: always()

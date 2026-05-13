@@ -238,7 +238,7 @@ describe('CreatorsAPICache', () => {
 
     // Use spies to restore original implementation after test
     const writeFileSpy = jest.spyOn(fs.promises, 'writeFile').mockResolvedValue(undefined);
-    const mkdirSpy = jest.spyOn(fs.promises, 'mkdir').mockResolvedValue(undefined as any);
+    const mkdirSpy = jest.spyOn(fs.promises, 'mkdir').mockResolvedValue(undefined);
 
     try {
       await cache.save();

@@ -62,7 +62,7 @@ describe('CreatorsAPIClient Category Parsing', () => {
         },
       };
 
-      const result = clientAny.extractCategoryInfo(item as CreatorsAPIItem);
+      const result = clientAny.extractCategoryInfo(item);
       expect(result.category).toBe('Electronics');
       expect(result.categoryInfo.main).toBe('Electronics');
       expect(result.categoryInfo.browseNodeId).toBe('1');
@@ -79,7 +79,7 @@ describe('CreatorsAPIClient Category Parsing', () => {
         },
       };
 
-      const result = clientAny.extractCategoryInfo(item as CreatorsAPIItem);
+      const result = clientAny.extractCategoryInfo(item);
       expect(result.category).toBe('Headphones');
     });
 
@@ -99,7 +99,7 @@ describe('CreatorsAPIClient Category Parsing', () => {
         },
       };
 
-      const result = clientAny.extractCategoryInfo(item as CreatorsAPIItem);
+      const result = clientAny.extractCategoryInfo(item);
       // Even though Home has rank 1, Pillow has depth 2. Pillow should win.
       expect(result.category).toBe('Pillow');
     });
@@ -114,7 +114,7 @@ describe('CreatorsAPIClient Category Parsing', () => {
         },
       };
 
-      const result = clientAny.extractCategoryInfo(item as CreatorsAPIItem);
+      const result = clientAny.extractCategoryInfo(item);
       expect(result.category).toBe('Smart Watch');
     });
 
@@ -132,7 +132,7 @@ describe('CreatorsAPIClient Category Parsing', () => {
         },
       };
 
-      const result = clientAny.extractCategoryInfo(item as CreatorsAPIItem);
+      const result = clientAny.extractCategoryInfo(item);
       // In the new logic, Wireless Headphones is main (index 0), Headphones is sub (index 1)
       expect(result.category).toBe('Wireless Headphones');
       expect(result.categoryInfo.sub).toBe('Headphones');
@@ -145,7 +145,7 @@ describe('CreatorsAPIClient Category Parsing', () => {
         },
       };
 
-      const result = clientAny.extractCategoryInfo(item as CreatorsAPIItem);
+      const result = clientAny.extractCategoryInfo(item);
       // new logic: fallback to "その他"
       expect(result.category).toBe('その他／全般');
     });
@@ -160,7 +160,7 @@ describe('CreatorsAPIClient Category Parsing', () => {
         },
       };
 
-      const result = clientAny.extractCategoryInfo(item as CreatorsAPIItem);
+      const result = clientAny.extractCategoryInfo(item);
       expect(result.category).toBe('チャイルドシート');
     });
 
@@ -178,7 +178,7 @@ describe('CreatorsAPIClient Category Parsing', () => {
         },
       };
 
-      const result = clientAny.extractCategoryInfo(item as CreatorsAPIItem);
+      const result = clientAny.extractCategoryInfo(item);
       // "ベビー＆マタニティ" is blocked, so "チャイルドシート" (ancestor) becomes the leaf of the path.
       expect(result.category).toBe('チャイルドシート');
       expect(result.categoryInfo.main).toBe('チャイルドシート');
@@ -194,7 +194,7 @@ describe('CreatorsAPIClient Category Parsing', () => {
         },
       };
 
-      const result = clientAny.extractCategoryInfo(item as CreatorsAPIItem);
+      const result = clientAny.extractCategoryInfo(item);
       // "介護用品・生理用品" is blocked, so only "おむつ" remains.
       expect(result.category).toBe('おむつ');
     });

@@ -21,17 +21,20 @@ jobs:
     steps:
     - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
 
+    - name: Install pnpm
+      uses: pnpm/action-setup@8912a9102ac27614460f54aedde9e1e7f9aec20d # v6.0.5
+
     - name: Use Node.js
       uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6.4.0
       with:
         node-version: '22'
-        cache: 'npm'
+        cache: 'pnpm'
 
     - name: Install dependencies
-      run: npm ci
+      run: pnpm install --frozen-lockfile
 
     - name: Build project
-      run: npm run build
+      run: pnpm run build
 
     - name: Check for unregistered categories
       id: check
@@ -50,7 +53,7 @@ jobs:
         JULES_API_KEY: ${{ secrets.JULES_API_KEY }}
         JULES_SOURCE: sources/github/${{ github.repository }}
         JULES_STARTING_BRANCH: ${{ github.ref_name }}
-      run: npm run organize:categories
+      run: pnpm run organize:categories
 
     - name: Upload session data
       if: steps.check.outputs.count != '0'
