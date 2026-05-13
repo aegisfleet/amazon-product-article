@@ -58,12 +58,13 @@ Amazon Creators APIの認証情報の取り扱いには、最優先でセキュ�
 
 ### 2.4 開発環境
 
+- **パッケージマネージャー**: 本プロジェクトでは **pnpm** を使用する。`npm` や `yarn` は使用しないこと。依存関係をインストールする際は、不慮のロックファイル更新を防ぐため、必ず `pnpm install --frozen-lockfile` を実行すること。
 - **ローカルサーバー**: `http://localhost:1313/`
 - **サーバー起動手順**:
   ブラウザテストや目視確認を行う前には、以下のコマンドでサーバーを起動すること。
   ```bash
   # バックグラウンドで起動する場合 (Windows PowerShell)
-  Start-Process npm -ArgumentList "run", "server:dev" -WindowStyle Hidden
+  Start-Process pnpm -ArgumentList "run", "server:dev" -WindowStyle Hidden
   
   # または通常通り起動
   pnpm run server:dev

@@ -46,7 +46,7 @@ Amazon Creators APIとGoogle Julesを活用した商品調査記事の自動生�
 │   ├── pr-auto-merge.yml     # PR自動マージ
 │   └── deploy-articles.yml   # GitHub Pagesデプロイ
 ├── config.toml               # Hugo設定
-├── package.json              # npm設定
+├── package.json              # プロジェクト設定（pnpm）
 ├── tsconfig.json             # TypeScript設定
 └── jest.config.js            # Jest設定
 ```
@@ -58,7 +58,7 @@ Amazon Creators APIとGoogle Julesを活用した商品調査記事の自動生�
 | `src/api/CreatorsAPIClient.ts` | Amazon Creators API v1との通信を担当。商品情報取得、カテゴリ抽出、アフィリエイトリンク生成 |
 | `src/article/ArticleGenerator.ts` | 調査データからHugo記事（Markdown）を生成。Front matterと本文構成を担当 |
 | `src/article/ArticleQualityManager.ts` | 記事の品質チェックと最適化 |
-| `src/scripts/*.ts` | CLIエントリポイント。npm scriptsから呼び出される |
+| `src/scripts/*.ts` | CLIエントリポイント。pnpm scriptsから呼び出される |
 | `config.toml` | Hugoの設定（サイトURL、言語、パーマリンク等） |
 | `data/investigations/{ASIN}.json` | 各商品のJules調査結果データ |
 | `data/categorygroups.json` | カテゴリの親グループ定義 |
@@ -70,7 +70,7 @@ Amazon Creators APIとGoogle Julesを活用した商品調査記事の自動生�
 
 ```bash
 # 依存関係インストール
-ppnpm install
+pnpm install --frozen-lockfile
 
 # TypeScriptビルド
 pnpm run build

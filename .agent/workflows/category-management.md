@@ -72,7 +72,7 @@ it('should return false for junk category', () => {
 ユニットテストを実行して、修正が正しいこと、および他のカテゴリに影響がないことを確認します。
 
 ```bash
-npm test src/utils/CategoryNormalizer.test.ts
+pnpm test src/utils/CategoryNormalizer.test.ts
 ```
 
 ## 3. キャッシュのリセット (Cache Management)
@@ -98,7 +98,7 @@ npx ts-node scripts/reset-cache-timestamp.ts <ASIN>
 記事を再生成して、最終的な出力（Markdownのフロントマター）を確認します。
 
 ```bash
-npm run generate:articles
+pnpm run generate:articles
 ```
 
 `content/articles/<ASIN>.md` を開き、`categories` や `subcategory` が意図通りになっているか確認してください。
