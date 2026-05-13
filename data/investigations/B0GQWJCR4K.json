@@ -1,0 +1,192 @@
+{
+  "analysis": {
+    "productName": "Apple 27.9cm iPad Air (M4)",
+    "parentAsin": "B0GQWJCR4K",
+    "productDescription": "Apple M4チップを搭載した27.9cm iPad Airです。Liquid Retinaディスプレイ、Wi-Fi 7対応、Touch IDを搭載し、高パフォーマンスを実現しています。",
+    "productUsage": [
+      "クリエイティブ作業（イラスト制作など）",
+      "動画視聴・ゲーム",
+      "マルチタスクを伴う学習・ビジネス業務"
+    ],
+    "positivePoints": [
+      "M4チップ搭載による圧倒的なパフォーマンス",
+      "Wi-Fi 7対応による高速な通信環境",
+      "P3広色域とTrue Tone対応の美しいLiquid Retinaディスプレイ"
+    ],
+    "negativePoints": [
+      "高価格帯であるためライトユーザーにはオーバースペックになる可能性がある",
+      "リフレッシュレートなどのディスプレイ性能はProモデルに劣る"
+    ],
+    "useCases": [
+      "Apple Pencilを使ったノート作成やイラスト制作",
+      "キーボードと組み合わせてのドキュメント作成"
+    ],
+    "userStories": [],
+    "userImpression": "クリエイティブ作業やゲームなど重い処理も快適にこなせる、M4チップによる高いパフォーマンスを備えたモデル。",
+    "sources": [
+      {
+        "id": "src-amazon",
+        "name": "Amazon商品ページ",
+        "url": "https://www.amazon.co.jp/dp/B0GQWJCR4K",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-05-13",
+        "author": "Amazon",
+        "conflictOfInterest": "none",
+        "notes": "M4チップ搭載、27.9cmLiquid Retinaディスプレイ、Wi-Fi 7対応、Touch ID搭載、128GB、スペースグレイなどの公式仕様データ"
+      },
+      {
+        "id": "src-apple",
+        "name": "Apple公式サイト",
+        "url": "https://www.apple.com/jp/ipad-air/specs/",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-05-13",
+        "author": "Apple",
+        "conflictOfInterest": "none",
+        "notes": "M4チップ搭載、Wi-Fi 7対応を公式サイトで確認"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "M4チップによる圧倒的パフォーマンス",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-amazon",
+          "src-apple"
+        ],
+        "crossChecked": true,
+        "notes": "公式仕様から確認"
+      },
+      {
+        "claim": "Wi-Fi 7対応",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-amazon",
+          "src-apple"
+        ],
+        "crossChecked": true,
+        "notes": "公式仕様から確認"
+      }
+    ],
+    "lastInvestigated": "2026-05-13",
+    "competitiveAnalysis": [
+      {
+        "name": "Apple iPad Pro 27.9cm (M4) 256GB",
+        "asin": "B0D6LNXJ3F",
+        "priceComparison": "iPad Proの方が大幅に高価である。プロレベルのクリエイティブ作業や最高のディスプレイを求めるのであればその価値はあるが、一般的な作業にはiPad Airで十分である。",
+        "featureComparison": [
+          "共通点：最新のM4チップを搭載し、Wi-Fi 7にも対応している。",
+          "相違点：ProはUltra Retina XDRディスプレイ、Face IDを搭載し、リフレッシュレートやカメラ性能が上位であるのに対し、AirはLiquid Retinaディスプレイ、Touch IDを搭載している。"
+        ],
+        "differentiators": [
+          "Apple 27.9cm iPad Air (M4)の利点：M4チップの高いパフォーマンスをProよりも手頃な価格で享受でき、コストパフォーマンスに優れる。",
+          "Apple iPad Pro 27.9cm (M4) 256GBの利点：OLEDディスプレイによる最高の映像体験や、ProMotionテクノロジーなど、より高度な機能と体験が得られる。"
+        ]
+      },
+      {
+        "name": "Apple 27.9cm iPad (A16) 128GB",
+        "asin": "B0DZ8HV6RT",
+        "priceComparison": "標準的なiPadはiPad Airよりも安価であり、一般的な用途には十分なコストパフォーマンスを持つ。",
+        "featureComparison": [
+          "共通点：27.9cmディスプレイ、Touch IDを搭載している。",
+          "相違点：iPadはA16チップ、Wi-Fi 6であるのに対し、Airは高性能なM4チップとWi-Fi 7を搭載している。"
+        ],
+        "differentiators": [
+          "Apple 27.9cm iPad Air (M4)の利点：M4チップにより、動画編集やイラスト作成などのより高度なマルチタスクが快適に行える。",
+          "Apple 27.9cm iPad (A16) 128GBの利点：価格が安く、ウェブブラウジングや動画視聴といった日常的な用途には最も適している。"
+        ]
+      },
+      {
+        "name": "Apple iPad Pro 27.9cm (M4) 1TB",
+        "asin": "B0D3J6DKZM",
+        "priceComparison": "極めて安価なエントリー向けタブレットであり、価格帯が全く異なるため用途が被らない。",
+        "featureComparison": [
+          "共通点：M4チップ搭載、27.9cmディスプレイ。",
+          "相違点：ストレージが1TBと大きく、RAMも多い。ディスプレイ性能やカメラ性能もAirを上回る。"
+        ],
+        "differentiators": [
+          "Apple 27.9cm iPad Air (M4)の利点：手頃な価格でM4の性能を体験でき、コストパフォーマンスが良い。",
+          "Apple iPad Pro 27.9cm (M4) 1TBの利点：大容量ストレージと最高峰のディスプレイによるプロ向け作業環境。"
+        ]
+      },
+      {
+        "name": "xiaomi(シャオミ) タブレット Redmi Pad 2 27.9cm",
+        "asin": "B0F9P4719Q",
+        "priceComparison": "Redmi Pad 2は非常に安価であり、予算重視のユーザー向け。",
+        "featureComparison": [
+          "共通点：27.9cmクラスのディスプレイ。",
+          "相違点：Redmi Pad 2はAndroid OSであり、チップ性能（Helio G100-Ultra）はM4に大きく及ばない。"
+        ],
+        "differentiators": [
+          "Apple 27.9cm iPad Air (M4)の利点：圧倒的な処理性能により、重いアプリやマルチタスクを快適にこなせる。",
+          "xiaomi(シャオミ) タブレット Redmi Pad 2 27.9cmの利点：価格が圧倒的に安く、動画視聴やブラウジング等の軽作業に特化している。"
+        ]
+      },
+      {
+        "name": "HiGrace 25.4cm Android16 タブレット",
+        "asin": "B0FPLLDL76",
+        "priceComparison": "極めて安価なエントリー向けタブレットであり、価格帯が全く異なる。",
+        "featureComparison": [
+          "共通点：タブレット端末である点。",
+          "相違点：ディスプレイサイズ（25.4cm vs 27.9cm）、OS、処理性能すべてにおいてiPad Airが上回る。"
+        ],
+        "differentiators": [
+          "Apple 27.9cm iPad Air (M4)の利点：高性能チップによる快適な操作感と、高品質なディスプレイによる体験。",
+          "HiGrace 25.4cm Android16 タブレットの利点：約1万円で購入できる圧倒的な安さ。"
+        ]
+      },
+      {
+        "name": "POPUX P11 Android16 27.9cm",
+        "asin": "B0GTV8RNVY",
+        "priceComparison": "安価なAndroidタブレットであり、iPad Airの価格の数分の一。",
+        "featureComparison": [
+          "共通点：27.9cmクラスの大画面。",
+          "相違点：iPad AirがM4チップとiPadOSを搭載するのに対し、こちらは廉価なAndroid環境である。"
+        ],
+        "differentiators": [
+          "Apple 27.9cm iPad Air (M4)の利点：Appleエコシステムとの連携や、高付加価値なアプリの利用が可能。",
+          "POPUX P11 Android16 27.9cmの利点：キーボードなどが付属しても2万円以下で手に入る低コスト。"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "クリエイティブ作業を行う学生やクリエイター",
+        "長期にわたって快適に使いたいユーザー",
+        "高負荷なゲームを楽しみたいユーザー"
+      ],
+      "pros": [
+        "M4チップによる高い処理能力",
+        "Wi-Fi 7対応で高速通信が可能"
+      ],
+      "cons": [
+        "ストレージ容量を増やすと価格が高額になる",
+        "ライトな用途にはオーバースペック気味"
+      ],
+      "score": 85,
+      "scoreRationale": "[基本点: 70]\n[加点: +10] (M4チップによる極めて高いパフォーマンスと実用性)\n[加点: +5] (Wi-Fi 7対応など最新規格への対応による将来性の高さ)\n[合計: 85]"
+    },
+    "technicalSpecs": {
+      "weight": "462g",
+      "capacity": "128GB",
+      "material": "アルミニウム",
+      "other": [
+        "カラー: スペースグレイ",
+        "チップ: Apple M4チップ",
+        "ディスプレイ: 27.9cm Liquid Retinaディスプレイ (P3広色域、True Tone対応)",
+        "通信機能: Wi-Fi 7対応 (Apple N1)",
+        "カメラ: 12MPフロントカメラ(センターフレーム対応)、12MP広角バックカメラ",
+        "セキュリティ: Touch ID搭載",
+        "対応アクセサリ: Apple Pencil Pro、Apple Pencil (USB-C)、Magic Keyboard"
+      ],
+      "dimensions": {
+        "height": "247.6mm",
+        "width": "178.5mm",
+        "depth": "6.1mm"
+      }
+    }
+  }
+}
