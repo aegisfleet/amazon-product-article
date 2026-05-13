@@ -20,17 +20,20 @@ jobs:
       with:
         fetch-depth: 0
 
+    - name: Install pnpm
+      uses: pnpm/action-setup@8912a9102ac27614460f54aedde9e1e7f9aec20d # v6.0.5
+
     - name: Use Node.js
       uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6.4.0
       with:
         node-version: '22'
-        cache: 'npm'
+        cache: 'pnpm'
 
     - name: Install dependencies
-      run: npm ci
+      run: pnpm install --frozen-lockfile
 
     - name: Build project
-      run: npm run build
+      run: pnpm run build
 
     - name: Analyze changed files
       id: analyze_changes
@@ -43,7 +46,7 @@ jobs:
         INVESTIGATION_FILES=$(git diff --name-only origin/${{ github.base_ref }} HEAD -- 'data/investigations/*.json' | tr '\n' ' ')
         if [ -n "$INVESTIGATION_FILES" ]; then
           echo "Found changed investigation files: $INVESTIGATION_FILES"
-          npx ts-node src/scripts/article-generation-cli.ts --skip-paapi $INVESTIGATION_FILES
+          pnpm exec ts-node src/scripts/article-generation-cli.ts --skip-paapi $INVESTIGATION_FILES
         else
           echo "No investigation files changed. Skipping article generation."
         fi
@@ -57,7 +60,7 @@ jobs:
           echo "today.json has not changed."
         fi
 
-        npm run sanitize:frontmatter
+        pnpm run sanitize:frontmatter
 
     - name: Setup Hugo
       uses: peaceiris/actions-hugo@2752ce1d29631191ea3f27c23495fa06139a5b78 # v3.2.1
@@ -66,7 +69,7 @@ jobs:
         extended: true
 
     - name: Prepare static data
-      run: npm run prebuild:hugo
+      run: pnpm run prebuild:hugo
 
     - name: Build site with Hugo
       run: hugo --minify
@@ -76,7 +79,7 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         PR_NUMBER: ${{ github.event.pull_request.number }}
         PR_AUTHOR: ${{ github.event.pull_request.user.login }}
-      run: npm run merge:pr
+      run: pnpm run merge:pr
 
     - name: Trigger subsequent workflows
       if: success()

@@ -65,10 +65,14 @@
     "js-yaml": "^4.1.1",
     "zod": "^4.4.3"
   },
-  "overrides": {
-    "crypto-js": "^4.2.0",
-    "test-exclude": {
-      "minimatch": "3.1.5"
-    }
-  }
+  "pnpm": {
+    "overrides": {
+      "crypto-js": "^4.2.0",
+      "test-exclude>minimatch": "3.1.5"
+    },
+    "onlyBuiltDependencies": [
+      "unrs-resolver"
+    ]
+  },
+  "packageManager": "pnpm@10.5.2"
 }

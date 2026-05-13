@@ -19,22 +19,25 @@ jobs:
     steps:
     - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
     
+    - name: Install pnpm
+      uses: pnpm/action-setup@8912a9102ac27614460f54aedde9e1e7f9aec20d # v6.0.5
+
     - name: Use Node.js
       uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6.4.0
       with:
         node-version: '22'
-        cache: 'npm'
+        cache: 'pnpm'
     
     - name: Install dependencies
-      run: npm ci
+      run: pnpm install --frozen-lockfile
       
     - name: Build project
-      run: npm run build
+      run: pnpm run build
 
     - name: Find oldest product
       id: find-oldest
       run: |
-        OLD_ASIN=$(npx ts-node src/scripts/maintenance-find-oldest.ts --count 15)
+        OLD_ASIN=$(pnpm exec ts-node src/scripts/maintenance-find-oldest.ts --count 15)
         echo "Found oldest ASIN: $OLD_ASIN"
         echo "asin=$OLD_ASIN" >> $GITHUB_OUTPUT
 
@@ -47,7 +50,7 @@ jobs:
         AMAZON_CREATORS_CREDENTIAL_SECRET: ${{ secrets.AMAZON_CREATORS_CREDENTIAL_SECRET }}
         AMAZON_PARTNER_TAG: ${{ secrets.AMAZON_PARTNER_TAG }}
         INPUT_ASINS: ${{ steps.find-oldest.outputs.asin }}
-      run: npm run search:products
+      run: pnpm run search:products
     
     - name: Upload product data
       if: steps.search.outputs.products-found == 'true'
@@ -69,17 +72,20 @@ jobs:
     steps:
     - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
     
+    - name: Install pnpm
+      uses: pnpm/action-setup@8912a9102ac27614460f54aedde9e1e7f9aec20d # v6.0.5
+
     - name: Use Node.js
       uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6.4.0
       with:
         node-version: '22'
-        cache: 'npm'
+        cache: 'pnpm'
     
     - name: Install dependencies
-      run: npm ci
+      run: pnpm install --frozen-lockfile
     
     - name: Build project
-      run: npm run build
+      run: pnpm run build
     
     - name: Download product data
       uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c # v8.0.1
@@ -93,7 +99,7 @@ jobs:
         JULES_SOURCE: sources/github/${{ github.repository }}
         JULES_STARTING_BRANCH: ${{ github.ref_name }}
         MAX_INVESTIGATION_PRODUCTS: '15'
-      run: npm run investigate
+      run: pnpm run investigate
     
     - name: Upload session data
       uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1

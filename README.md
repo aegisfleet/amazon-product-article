@@ -70,62 +70,62 @@ Amazon Creators APIとGoogle Julesを活用した商品調査記事の自動生�
 
 ```bash
 # 依存関係インストール
-npm ci
+ppnpm install
 
 # TypeScriptビルド
-npm run build
+pnpm run build
 
 # 開発モードで実行
-npm run dev
+pnpm run dev
 ```
 
 ### テスト
 
 ```bash
 # テスト実行
-npm test
+pnpm test
 
 # ウォッチモード
-npm run test:watch
+pnpm run test:watch
 
 # カバレッジ付きテスト
-npm run test:coverage
+pnpm run test:coverage
 ```
 
 ### Lint
 
 ```bash
 # Lint実行
-npm run lint
+pnpm run lint
 
 # Lint自動修正
-npm run lint:fix
+pnpm run lint:fix
 ```
 
 ### CLI操作
 
 ```bash
 # 商品検索
-npm run search:products
+pnpm run search:products
 
 # Jules調査依頼
-npm run investigate
+pnpm run investigate
 
 # 記事生成
-npm run generate:articles
+pnpm run generate:articles
 
 # オプションをつけて記事生成
-# --asin <ASIN>: 指定したASINのみ処理（例: npm run generate:articles -- --asin B0007TT7I0）
-# --skip-creators-api: Creators API呼び出しをスキップ（例: npm run generate:articles -- --skip-creators-api）
+# --asin <ASIN>: 指定したASINのみ処理（例: pnpm run generate:articles -- --asin B0007TT7I0）
+# --skip-creators-api: Creators API呼び出しをスキップ（例: pnpm run generate:articles -- --skip-creators-api）
 
 # PRマージ
-npm run merge:pr
+pnpm run merge:pr
 
 # カテゴリの整理
-npm run organize:categories
+pnpm run organize:categories
 
 # カテゴリのソート
-npm run sort:categories
+pnpm run sort:categories
 ```
 
 ### Hugo（静的サイト生成）

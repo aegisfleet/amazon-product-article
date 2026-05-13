@@ -56,25 +56,25 @@ describe('SessionManager', () => {
   });
 
   it('should throw error for invalid ASIN (Path Traversal attempt)', async () => {
-    const invalidProduct = { ...mockProduct, asin: '../invalid' } as Product;
+    const invalidProduct = { ...mockProduct, asin: '../invalid' };
     await expect(saveSessionInfo(invalidProduct, mockSessionInfo)).rejects.toThrow('Invalid ASIN format');
     expect(fs.writeFile).not.toHaveBeenCalled();
   });
 
   it('should throw error for invalid ASIN (Invalid characters)', async () => {
-    const invalidProduct = { ...mockProduct, asin: 'INVALID-ASIN' } as Product;
+    const invalidProduct = { ...mockProduct, asin: 'INVALID-ASIN' };
     await expect(saveSessionInfo(invalidProduct, mockSessionInfo)).rejects.toThrow('Invalid ASIN format');
     expect(fs.writeFile).not.toHaveBeenCalled();
   });
 
   it('should throw error for invalid ASIN (Absolute path attempt)', async () => {
-    const invalidProduct = { ...mockProduct, asin: '/tmp/invalid-asin-test' } as Product;
+    const invalidProduct = { ...mockProduct, asin: '/tmp/invalid-asin-test' };
     await expect(saveSessionInfo(invalidProduct, mockSessionInfo)).rejects.toThrow('Invalid ASIN format');
     expect(fs.writeFile).not.toHaveBeenCalled();
   });
 
   it('should throw error for invalid ASIN (Null byte injection)', async () => {
-    const invalidProduct = { ...mockProduct, asin: 'B000000000\0' } as Product;
+    const invalidProduct = { ...mockProduct, asin: 'B000000000\0' };
     await expect(saveSessionInfo(invalidProduct, mockSessionInfo)).rejects.toThrow('Invalid ASIN format');
     expect(fs.writeFile).not.toHaveBeenCalled();
   });
