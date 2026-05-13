@@ -44,7 +44,7 @@ class CreatorsAPIClient:
     """Amazon Creators API Client with OAuth 2.0 authentication."""
     
     # OAuth Token Endpoint for Japan (Login with Amazon)
-    OAUTH_TOKEN_URL = "https://api.amazon.co.jp/auth/o2/token"
+    OAUTH_TOKEN_URL = "https://api.amazon.com/auth/o2/token"
     
     # Creators API Base URL
     API_BASE_URL = "https://creatorsapi.amazon"
@@ -82,8 +82,13 @@ class CreatorsAPIClient:
         if self._access_token and time.time() < self._token_expires_at - 60:
             return self._access_token
         
+        # Create Basic Auth header
+        credentials = f"{self.credential_id}:{self.credential_secret}"
+        auth_header = base64.b64encode(credentials.encode()).decode()
+        
         headers = {
             "Content-Type": "application/x-www-form-urlencoded",
+            "Authorization": f"Basic {auth_header}"
         }
         
         # OAuth 2.0 client credentials grant for LwA

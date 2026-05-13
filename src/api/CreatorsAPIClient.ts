@@ -44,7 +44,7 @@ export class CreatorsAPIClient {
   // OAuth Token Management
   private accessToken: string | undefined;
   private tokenExpiresAt = 0;
-  private readonly OAUTH_TOKEN_URL = 'https://api.amazon.co.jp/auth/o2/token';
+  private readonly OAUTH_TOKEN_URL = 'https://api.amazon.com/auth/o2/token';
   private readonly API_BASE_URL = 'https://creatorsapi.amazon';
   private readonly MARKETPLACE = 'www.amazon.co.jp';
   private readonly CREDENTIAL_VERSION = '3.3';
@@ -107,6 +107,9 @@ export class CreatorsAPIClient {
     this.logger.debug('Refreshing OAuth access token...');
 
     try {
+      const credentials = `${this.credentials.credentialId}:${this.credentials.credentialSecret}`;
+      const authHeader = `Basic ${Buffer.from(credentials).toString('base64')}`;
+
       const params = new URLSearchParams();
       params.append('grant_type', 'client_credentials');
       params.append('scope', 'creatorsapi::default');
@@ -119,6 +122,7 @@ export class CreatorsAPIClient {
         {
           headers: {
             'Content-Type': 'application/x-www-form-urlencoded',
+            Authorization: authHeader,
           },
           timeout: 10000,
         },
