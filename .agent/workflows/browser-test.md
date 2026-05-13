@@ -14,10 +14,10 @@ WSL環境ではAntigravityの`browser_subagent`が動作しないため、Playwr
 
 ```bash
 # 推奨: 開発用設定で起動
-npm run server:dev
+pnpm run server:dev
 
 # または、バックグラウンドで起動する場合 (Windows PowerShell)
-Start-Process npm -ArgumentList "run", "server:dev" -WindowStyle Hidden
+Start-Process pnpm -ArgumentList "run", "server:dev" -WindowStyle Hidden
 ```
 
 サーバー起動後、約3-5秒待機してからアクセスする。

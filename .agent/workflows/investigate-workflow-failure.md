@@ -50,16 +50,16 @@ gh run view <実行ID> --web
 ### Lintエラーの場合
 ```powershell
 # 修正も同時に試みる場合
-npm run lint:fix
+pnpm run lint:fix
 
 # エラー箇所のみを確認
-npm run lint -- --quiet
+pnpm run lint -- --quiet
 ```
 
 ### テスト失敗の場合
 ```powershell
 # すべてのテストを実行
-npm test
+pnpm test
 
 # 特定のファイルのみ実行（高速）
 npx jest path/to/failing_test.ts
