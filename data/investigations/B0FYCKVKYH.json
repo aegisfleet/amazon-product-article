@@ -25,72 +25,99 @@
       "移動中にライブCDを聴き、日常の中で非日常の高揚感を味わう",
       "休日に過去のシリーズ作品と連続視聴し、布袋寅泰の音楽的変遷を辿る"
     ],
-    "userStories": [
-      {
-        "userType": "50代男性・長年のファン",
-        "scenario": "GUITARHYTHM 1からのファン。仕事で武道館公演に行けなかった。",
-        "experience": "「現地に行けなかった悔しさを晴らすために購入。オープニングのギターの音が鳴った瞬間、部屋が武道館になった。特にCDが付いているのが最高で、車の中で毎日聴いている。まさにComplete Editionの名に恥じない内容だ。」",
-        "sentiment": "positive"
-      },
-      {
-        "userType": "30代男性・ギタープレイヤー",
-        "scenario": "布袋寅泰のギタープレイを研究しているアマチュアミュージシャン。",
-        "experience": "「プレイの手元を見るために購入。Blu-rayの鮮明な映像のおかげで、細かい運指やピッキングのニュアンスまで確認できる。ただ、価格が少し高いので通常盤と迷ったが、CDも参考にしたいのでこちらを選んだ。」",
-        "sentiment": "positive"
-      }
-    ],
+    "userStories": [],
     "userImpression": "35年以上続く伝説的シリーズの最新章として、ファンの期待を裏切らないクオリティとボリューム。映像と音源の両方で楽しめる「Complete Edition」は、価格以上の満足度を提供している。特に長年のファンにとっては必携のアイテムであり、その進化を見届けるための重要な記録となっている。",
     "sources": [
       {
-        "name": "Amazon Product Information (B0FYCKVKYH)",
+        "id": "src-1",
+        "name": "Amazon Product Information",
         "url": "https://www.amazon.co.jp/dp/B0FYCKVKYH",
-        "credibility": "高"
-      },
-      {
-        "name": "ユニバーサルミュージック公式サイト",
-        "url": null,
-        "credibility": "高"
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-05-14",
+        "author": "UNIVERSAL MUSIC GROUP",
+        "conflictOfInterest": "none",
+        "notes": "Product specifications and features"
       }
     ],
-    "lastInvestigated": "2026-02-06",
+    "lastInvestigated": "2026-05-14",
     "competitiveAnalysis": [
       {
-        "name": "GUITARHYTHM VII TOUR FINAL \"Never Gonna Stop!\" (初回生産限定)",
-        "asin": "B0D35BQVN5",
-        "priceComparison": "本作（約10,400円）に対し、前作は約7,000円と安価になっている。",
-        "featureComparison": [
-          "どちらもシリーズのツアーファイナルだが、本作は最新の「VIII」ツアー。",
-          "共に初回限定盤でCD付きだが、本作は最新の演出とセットリストが楽しめる。"
-        ],
-        "differentiators": [
-          "最新の「GUITARHYTHM VIII」の世界観",
-          "日本武道館という特別な会場でのパフォーマンス"
-        ]
-      },
-      {
-        "name": "GUITARHYTHM Ⅷ TOUR “The Final in 武道館” (通常盤)",
-        "asin": "B0FYB6LQV5",
-        "priceComparison": "通常盤は約5,400円と、本作の半額近い価格で購入可能。",
-        "featureComparison": [
-          "本編映像は同じだが、CDと豪華パッケージが省略されている。",
-          "映像のみを手軽に楽しみたい場合は通常盤が有利。"
-        ],
-        "differentiators": [
-          "Complete EditionならではのライブCD 2枚",
-          "所有欲を満たす初回限定パッケージ"
-        ]
-      },
-      {
-        "name": "Rock'n Roll Circus (初回生産限定Complete Edition)",
+        "name": "Rock'n Roll Circus (初回生産限定Complete Edition)(2CD付) [Blu-ray]",
         "asin": "B0C4PKGQ62",
-        "priceComparison": "約7,500円と、本作より安価。",
+        "priceComparison": "本作よりも安価に購入できる。",
         "featureComparison": [
-          "「GUITARHYTHM」シリーズとは異なるコンセプトのツアー。",
-          "構成は似ており（BD+CD）、好みの楽曲や時期で選ばれる。"
+          "共通点：布袋寅泰のライブBlu-rayであり、初回生産限定Complete Edition（2CD付）である点",
+          "相違点：収録されているライブのツアーが異なる"
         ],
         "differentiators": [
-          "コンセプトの違い（SF的・前衛的なGUITARHYTHMに対し、よりロックンロールに特化）",
-          "収録楽曲の傾向"
+          "GUITARHYTHM Ⅷ TOUR “The Final in 武道館”の利点：最新の「GUITARHYTHM VIII」ツアーの集大成を楽しめる点",
+          "Rock'n Roll Circusの利点：異なるツアーのパフォーマンスを楽しみたい場合に適している"
+        ]
+      },
+      {
+        "name": "TONIGHT I'M YOURS [DVD]",
+        "asin": "B0DW8PSKM5",
+        "priceComparison": "本作よりも安価に購入できる。",
+        "featureComparison": [
+          "共通点：布袋寅泰のライブ映像作品である点",
+          "相違点：こちらはDVDであり、CDなどの特典がついていない点"
+        ],
+        "differentiators": [
+          "GUITARHYTHM Ⅷ TOUR “The Final in 武道館”の利点：Blu-rayの高画質と付属のライブCD2枚を楽しめる点",
+          "TONIGHT I'M YOURSの利点：DVDで手軽に映像を楽しみたい場合に適している"
+        ]
+      },
+      {
+        "name": "GUITARHYTHM Vlll(完全数量限定盤) (2BLU-RAY付)",
+        "asin": "B0DTYVFDGG",
+        "priceComparison": "本作と同程度の価格帯である。",
+        "featureComparison": [
+          "共通点：布袋寅泰のGUITARHYTHM VIIIに関連する映像作品であり、完全数量限定盤（2BLU-RAY付）である点",
+          "相違点：こちらはCD+2BLU-RAYの構成である点"
+        ],
+        "differentiators": [
+          "GUITARHYTHM Ⅷ TOUR “The Final in 武道館”の利点：最新のライブツアー映像（2BLU-RAY）とライブ音源（2CD）の両方を楽しめる点",
+          "GUITARHYTHM Vlll(完全数量限定盤)の利点：スタジオ音源（CD）と映像コンテンツ（2BLU-RAY）を楽しみたい場合に適している"
+        ]
+      },
+      {
+        "name": "Climax Emotions ~Live at 武道館~[DVD]",
+        "asin": "B06Y4TCNMK",
+        "priceComparison": "本作よりも安価に購入できる。",
+        "featureComparison": [
+          "共通点：布袋寅泰の武道館でのライブ映像作品である点",
+          "相違点：こちらは過去のライブ（Climax Emotions）を収録したDVDである点"
+        ],
+        "differentiators": [
+          "GUITARHYTHM Ⅷ TOUR “The Final in 武道館”の利点：最新のGUITARHYTHM VIIIツアーの映像を高画質（Blu-ray）で楽しめる点",
+          "Climax Emotionsの利点：過去の名演を手軽な価格で振り返りたい場合に適している"
+        ]
+      },
+      {
+        "name": "51 Emotions-the best for the future-(通常盤)",
+        "asin": "B01DVM31BS",
+        "priceComparison": "本作よりも安価に購入できる。",
+        "featureComparison": [
+          "共通点：布袋寅泰の音楽作品である点",
+          "相違点：こちらはベストアルバム（CD）であり、ライブ映像作品ではない点"
+        ],
+        "differentiators": [
+          "GUITARHYTHM Ⅷ TOUR “The Final in 武道館”の利点：最新のライブパフォーマンスを映像と音源の両方で堪能できる点",
+          "51 Emotionsの利点：布袋寅泰の代表曲を網羅的に聴きたい場合に適している"
+        ]
+      },
+      {
+        "name": "40th ANNIVERSARY Live \"Message From Budokan\" (通常盤)(2枚組)[DVD]",
+        "asin": "B093PVP76Q",
+        "priceComparison": "本作よりもやや安価である。",
+        "featureComparison": [
+          "共通点：布袋寅泰の武道館でのライブ映像作品である点",
+          "相違点：こちらは40周年記念ライブを収録したDVD（通常盤）である点"
+        ],
+        "differentiators": [
+          "GUITARHYTHM Ⅷ TOUR “The Final in 武道館”の利点：最新のGUITARHYTHM VIIIツアーの映像を高画質（Blu-ray）で楽しめる点",
+          "40th ANNIVERSARY Liveの利点：40周年という節目の特別なライブパフォーマンスを楽しみたい場合に適している"
         ]
       }
     ],
@@ -109,27 +136,21 @@
         "通常盤に比べて価格が高い（約2倍）",
         "パッケージがかさばる可能性がある"
       ],
-      "score": 88,
-      "scoreRationale": "[基本点: 70]\n[加点: +8] (性能・機能: 2BD+2CDの大ボリュームと充実した内容)\n[加点: +7] (独自の強み・先進性: 35年続くシリーズの最新形としての歴史的価値)\n[加点: +5] (ユーザー満足度: コアファンに向けた妥協のない仕様)\n[加点: +3] (品質・デザイン: 初回限定盤としてのパッケージクオリティへの期待)\n[減点: -5] (コストパフォーマンス: 1万円超えは絶対額として高く、万人向けではない)\n[合計: 88]"
+      "score": 80,
+      "scoreRationale": "[基本点: 70]\n[加点: +10] (性能・機能: 2Blu-ray+2CDの大ボリューム)\n[加点: +5] (独自の強み・先進性: 限定のComplete Edition仕様)\n[減点: -5] (コストパフォーマンス: 通常の映像作品と比べると高価)\n[合計: 80]"
     },
     "technicalSpecs": {
-      "format": "Blu-ray, CD",
-      "discCount": {
-        "total": 4,
-        "bluRay": 2,
-        "cd": 2
+      "dimensions": {
+        "height": "170mm",
+        "width": "135mm",
+        "depth": "14mm"
       },
-      "aspectRatio": "16:9",
-      "audio": [
-        "リニアPCM ステレオ",
-        "Dolby Atmos (推測)"
-      ],
-      "genre": "J-POP / Rock",
-      "label": "Virgin Music (Universal Music)",
+      "weight": "83g",
+      "format": "Blu-ray",
       "other": [
-        "初回生産限定盤",
-        "デジパック仕様 (推測)"
+        "2Blu-ray+2CD"
       ]
-    }
+    },
+    "claims": []
   }
 }
