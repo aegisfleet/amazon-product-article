@@ -3,16 +3,18 @@ updates:
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
-      interval: "daily"
+      interval: "weekly"
+      day: "monday"
     open-pull-requests-limit: 10
     labels:
       - "dependencies"
       - "github-actions"
 
-  - package-ecosystem: "npm"
+  - package-ecosystem: "pnpm"
     directory: "/"
     schedule:
       interval: "weekly"
+      day: "monday"
     groups:
       typescript-eslint:
         patterns:
@@ -24,4 +26,4 @@ updates:
           - "@eslint/*"
     labels:
       - "dependencies"
-      - "npm"
+      - "pnpm"
