@@ -1,0 +1,156 @@
+{
+  "analysis": {
+    "productName": "ギフト± 20",
+    "parentAsin": "B08L6P6CFR",
+    "productDescription": "ナガテユカによる日本の漫画作品。女子高生の鈴原環が、裏では凶悪犯を解体し臓器売買を行っているというサスペンス漫画。",
+    "productUsage": [
+      "読書",
+      "娯楽"
+    ],
+    "positivePoints": [
+      "独善的な死生観と臓器売買という重厚なテーマ",
+      "スリリングなストーリー展開"
+    ],
+    "negativePoints": [
+      "猟奇的な表現やグロテスクな描写が含まれる"
+    ],
+    "useCases": [
+      "空き時間の読書",
+      "サスペンス・猟奇的なストーリーを楽しむ"
+    ],
+    "userStories": [],
+    "userImpression": "重厚なテーマとスリリングなストーリーが評価されている一方で、グロテスクな描写が苦手な人には向かないという意見も見られる。",
+    "sources": [
+      {
+        "id": "src-1",
+        "name": "Wikipedia - ギフト±",
+        "url": "https://ja.wikipedia.org/wiki/%E3%82%AE%E3%83%95%E3%83%88%C2%B1",
+        "tier": "high",
+        "evidenceType": "secondary",
+        "publishedAt": "2026-05-14",
+        "author": "Wikipedia contributors",
+        "conflictOfInterest": "none",
+        "notes": "あらすじや登場人物、用語についての説明を確認"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "主人公の鈴原環が凶悪犯を解体し臓器売買を行っている",
+        "category": "durability",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "crossChecked": false,
+        "notes": "Wikipediaのあらすじに記載"
+      }
+    ],
+    "lastInvestigated": "2026-05-14",
+    "competitiveAnalysis": [
+      {
+        "name": "ニュークリア 6",
+        "asin": "B0GQZ2T7BJ",
+        "priceComparison": "同価格帯の漫画作品",
+        "featureComparison": [
+          "共通点：漫画ゴラク連載のサスペンス漫画",
+          "相違点：ストーリーやテーマ"
+        ],
+        "differentiators": [
+          "ギフト± 20の利点：臓器売買という独自のテーマ性",
+          "ニュークリア 6の利点：別のサスペンス展開が楽しめる"
+        ]
+      },
+      {
+        "name": "生贄家族 1",
+        "asin": "B0D44HSGYG",
+        "priceComparison": "同価格帯の漫画作品",
+        "featureComparison": [
+          "共通点：漫画ゴラク連載のサスペンス漫画",
+          "相違点：ストーリーやテーマ"
+        ],
+        "differentiators": [
+          "ギフト± 20の利点：既に20巻まで続く長期連載の安定感",
+          "生贄家族 1の利点：新規のストーリーを最初から楽しめる"
+        ]
+      },
+      {
+        "name": "鬼ゴロシ 8",
+        "asin": "B0BCWGKNYT",
+        "priceComparison": "同価格帯の漫画作品",
+        "featureComparison": [
+          "共通点：漫画ゴラク連載のサスペンス漫画",
+          "相違点：ストーリーやテーマ"
+        ],
+        "differentiators": [
+          "ギフト± 20の利点：主人公が女子高生というギャップ",
+          "鬼ゴロシ 8の利点：異なるアプローチのサスペンス"
+        ]
+      },
+      {
+        "name": "スマイリー 6",
+        "asin": "B0CGD62T7P",
+        "priceComparison": "同価格帯の漫画作品",
+        "featureComparison": [
+          "共通点：漫画ゴラク連載のサスペンス漫画",
+          "相違点：ストーリーやテーマ"
+        ],
+        "differentiators": [
+          "ギフト± 20の利点：医療や臓器売買といった裏社会の描写",
+          "スマイリー 6の利点：宗教や洗脳をテーマにした心理的恐怖"
+        ]
+      },
+      {
+        "name": "スマイリー 7",
+        "asin": "B0CNTB35YR",
+        "priceComparison": "同価格帯の漫画作品",
+        "featureComparison": [
+          "共通点：漫画ゴラク連載のサスペンス漫画",
+          "相違点：ストーリーやテーマ"
+        ],
+        "differentiators": [
+          "ギフト± 20の利点：主人公のバックボーンが複雑で深い",
+          "スマイリー 7の利点：先の読めない展開"
+        ]
+      },
+      {
+        "name": "鬼ゴロシ 9",
+        "asin": "B0BPG82YZN",
+        "priceComparison": "同価格帯の漫画作品",
+        "featureComparison": [
+          "共通点：漫画ゴラク連載のサスペンス漫画",
+          "相違点：ストーリーやテーマ"
+        ],
+        "differentiators": [
+          "ギフト± 20の利点：独自の死生観に基づくストーリー",
+          "鬼ゴロシ 9の利点：復讐劇としてのカタルシス"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "サスペンス漫画が好きな人",
+        "重厚なテーマの作品を読みたい人",
+        "猟奇的な表現に抵抗がない人"
+      ],
+      "pros": [
+        "独自のテーマ性",
+        "スリリングな展開"
+      ],
+      "cons": [
+        "グロテスクな描写がある"
+      ],
+      "score": 75,
+      "scoreRationale": "[基本点: 70]\n[加点: +5] (独自性の高いテーマと安定した連載実績による作品の質)\n[合計: 75]"
+    },
+    "technicalSpecs": {
+      "origin": "日本",
+      "other": [
+        "著者: ナガテユカ",
+        "出版社: 日本文芸社",
+        "レーベル: ニチブンコミックス",
+        "発売日: 2020-10-29",
+        "ISBN-13: 978-4537142985"
+      ]
+    }
+  }
+}
