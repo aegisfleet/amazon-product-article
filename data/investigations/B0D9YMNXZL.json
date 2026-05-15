@@ -1,125 +1,189 @@
 {
   "analysis": {
-    "productName": "Anker Soundcore Select 4 Go",
-    "parentAsin": "B0D9YMNXZL",
-    "productDescription": "手のひらサイズのコンパクトボディで最大20時間の連続再生を実現した、IP67防塵防水対応のBluetoothスピーカーです。",
+    "productName": "Anker Soundcore Select 4 Go ポータブルスピーカー",
+    "parentAsin": "B0DJ8RKSW2",
+    "productDescription": "手のひらサイズのコンパクト設計でありながら最大20時間の長時間再生が可能なBluetoothスピーカー。IP67の防塵・防水性能を備え、アウトドアでも安心して使用できます。",
     "productUsage": [
-      "キャンプやバーベキューなど、電源のないアウトドア環境での音楽再生",
-      "お風呂やキッチンなど、水濡れが心配な場所での使用",
-      "2台ペアリング機能を使用した、臨場感あるステレオサウンドの再生",
-      "バッグやリュックに取り付けて、移動中やハイキング時のBGMとして"
+      "自宅での音楽鑑賞",
+      "キャンプや水辺でのアウトドア",
+      "持ち運んでの外出先での使用"
     ],
     "positivePoints": [
-      "同クラスの競合製品を大きく上回る最大20時間の長時間再生",
-      "IP67の防塵防水規格に対応しており、水没や砂埃に強い",
-      "5W出力のドライバーとパッシブラジエーターによる、サイズを超えた迫力あるサウンド",
-      "3,000円台という非常に高いコストパフォーマンス",
-      "持ち運びに便利なストラップ付きのコンパクト設計"
+      "最大20時間という長寿命バッテリー",
+      "約265gと軽量でコンパクトな設計",
+      "IP67等級の高い防塵・防水性能"
     ],
     "negativePoints": [
-      "専用アプリには非対応で、イコライザー調整などができない",
-      "超小型サイズのため、重低音の深みには物理的な限界がある",
-      "有線接続（AUX入力）には非対応"
+      "出力が5Wと控えめなため、大音量を求めるシーンには不向き",
+      "一部の旧モデルや特定のファームウェア搭載機との2台同時ペアリングが非対応"
     ],
     "useCases": [
-      "充電を気にせず一日中音楽を流し続けたいキャンプやピクニック",
-      "毎日の入浴タイムのリラックス用スピーカー",
-      "スマートフォンのスピーカーでは物足りない時の動画視聴時の外部スピーカー"
+      "お風呂やキッチンなどの水回りでの音楽再生",
+      "キャンプなどのアウトドアアクティビティ",
+      "手軽に持ち運んで友人との集まりで使用"
     ],
-    "userStories": [
-      {
-        "userType": "20代 アウトドア愛好家",
-        "scenario": "キャンプ場での使用",
-        "experience": "以前使っていたスピーカーは夕方にはバッテリーが切れてしまったが、これは朝から晩まで流しっぱなしでも余裕があった。川遊びの際に少し水がかかったが全く問題なかった。",
-        "sentiment": "positive"
-      },
-      {
-        "userType": "30代 在宅ワーカー",
-        "scenario": "仕事中のBGM再生",
-        "experience": "デスクに置いても邪魔にならないサイズ感が良い。音質は作業用BGMとしては十分クリアだが、こだわりのある音楽を聴くには低音が少し物足りないかもしれない。",
-        "sentiment": "mixed"
-      }
-    ],
-    "userImpression": "ユーザーからは特に「バッテリー持ちの良さ」と「コストパフォーマンス」が高く評価されています。JBLなどの競合製品と比較しても、再生時間の長さが決め手となって選ばれることが多いようです。音質については「値段とサイズを考えれば十分満足」という声が大半ですが、アプリ非対応な点を残念がる声も一部見受けられます。",
+    "userStories": [],
+    "userImpression": "コンパクトで持ち運びやすく、特に長持ちするバッテリーと防水性能が高く評価されています。手軽な価格でどこでも音楽を楽しめるデバイスとして非常に使い勝手が良いという印象です。",
     "sources": [
       {
-        "name": "Amazon商品ページ",
-        "url": "https://www.amazon.co.jp/dp/B0D9YMNXZL",
-        "credibility": "高"
+        "id": "src-anker-official",
+        "name": "Anker Japan 公式オンラインストア",
+        "url": "https://www.ankerjapan.com/products/a31x1",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2024-10-01",
+        "author": "Anker Japan",
+        "conflictOfInterest": "disclosed",
+        "notes": "商品の詳細なスペック（サイズ、重量、Bluetoothバージョン等）を確認。"
       },
       {
-        "name": "Anker公式情報 (スペック確認)",
-        "url": null,
-        "credibility": "高"
+        "id": "src-amazon",
+        "name": "Amazon.co.jp 商品ページ",
+        "url": "https://www.amazon.co.jp/dp/B0D9YMNXZL",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2024-10-01",
+        "author": "Anker",
+        "conflictOfInterest": "disclosed",
+        "notes": "商品の価格、基本機能、ユーザーレビュー傾向を確認。"
       }
     ],
-    "lastInvestigated": "2026-02-07",
+    "claims": [
+      {
+        "claim": "最大20時間の長時間再生が可能",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-anker-official",
+          "src-amazon"
+        ],
+        "crossChecked": true,
+        "notes": "公式サイトおよびAmazonの製品仕様で確認。"
+      },
+      {
+        "claim": "IP67の防塵・防水性能",
+        "category": "durability",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-anker-official",
+          "src-amazon"
+        ],
+        "crossChecked": true,
+        "notes": "公式サイトおよびAmazonの製品仕様で確認。"
+      }
+    ],
+    "lastInvestigated": "2026-05-16",
     "competitiveAnalysis": [
       {
-        "name": "JBL GO 4",
-        "asin": "B0CZDP321W",
-        "priceComparison": "約6,900円 (本製品より約3,000円高い)",
+        "name": "Anker Soundcore 2",
+        "asin": "B01NAVANRX",
+        "priceComparison": "対象商品より約2000円高いが、12Wの出力とデュアルドライバーによる迫力あるサウンドを提供する。",
         "featureComparison": [
-          "アプリ対応でイコライザー調整が可能",
-          "再生時間は最大7時間 (本製品は20時間)",
-          "LE Audio対応など機能面は豊富"
+          "共通点：Bluetooth接続、防水規格(Soundcore 2はIPX7)、長持ちするバッテリー",
+          "相違点：Soundcore 2は12W出力でデュアルドライバー搭載。Select 4 Goは5W出力でよりコンパクト。"
         ],
         "differentiators": [
-          "JBLは機能とブランド力、デザイン性で勝る",
-          "Ankerは圧倒的なバッテリー持ちと価格の安さで勝る"
+          "Anker Soundcore Select 4 Go ポータブルスピーカーの利点：より小型軽量で持ち運びに便利であり、価格も安価。",
+          "Anker Soundcore 2の利点：より高出力でステレオサウンドを楽しめるため、音質や音量を重視する場合に適している。"
         ]
       },
       {
-        "name": "FUNLOGY Portable Mini",
-        "asin": "B0C4P51G18",
-        "priceComparison": "約2,600円 (本製品より約1,300円安い)",
+        "name": "SONY ワイヤレススピーカー SRS-XB100",
+        "asin": "B0C3Q65R9P",
+        "priceComparison": "対象商品より高価（約7000円弱）だが、ソニー独自の高音質技術と16時間再生を備える。",
         "featureComparison": [
-          "出力6W (本製品は5W)",
-          "再生時間は約10時間 (本製品は20時間)",
-          "有線接続に対応"
+          "共通点：コンパクトなポータブルスピーカー、IP67防塵・防水規格",
+          "相違点：SRS-XB100はクリアな高音と重低音再生に強みがあり、再生時間は約16時間と対象商品（約20時間）よりやや短い。"
         ],
         "differentiators": [
-          "FUNLOGYは安さと有線接続対応が強み",
-          "Ankerはバッテリー性能とブランドの信頼性で勝る"
+          "Anker Soundcore Select 4 Go ポータブルスピーカーの利点：再生時間がより長く、コストパフォーマンスに優れている。",
+          "SONY ワイヤレススピーカー SRS-XB100の利点：ソニーならではの音質チューニングがあり、音質にこだわるユーザーに適している。"
+        ]
+      },
+      {
+        "name": "JBL GO4 Bluetoothスピーカー",
+        "asin": "B0CZDCWM48",
+        "priceComparison": "対象商品と同程度の価格帯（約4500円）だが、JBL特有のパワフルなサウンドを持つ。",
+        "featureComparison": [
+          "共通点：手のひらサイズで持ち運びしやすい、IP67防塵・防水規格",
+          "相違点：再生時間はJBL GO4が短め。デザインやブランドによる音作りの傾向が異なる。"
+        ],
+        "differentiators": [
+          "Anker Soundcore Select 4 Go ポータブルスピーカーの利点：20時間という圧倒的な再生時間を誇る点。",
+          "JBL GO4 Bluetoothスピーカーの利点：JBLのパワフルなサウンドと特徴的なデザインを好む場合に適している。"
+        ]
+      },
+      {
+        "name": "Marshall ワイヤレスポータブル防水スピーカー Willen II",
+        "asin": "B0DFHCWZ81",
+        "priceComparison": "対象商品より大幅に高価（約18000円）で、プレミアムなデザインと音質を提供する。",
+        "featureComparison": [
+          "共通点：コンパクトなサイズ、IP67防塵・防水規格",
+          "相違点：Willen IIはMarshall特有のアイコニックなデザインと、プレミアムな音響チューニングが施されている。連続再生は約17時間。"
+        ],
+        "differentiators": [
+          "Anker Soundcore Select 4 Go ポータブルスピーカーの利点：圧倒的なコストパフォーマンスと、20時間の長い再生時間。",
+          "Marshall ワイヤレスポータブル防水スピーカー Willen IIの利点：Marshall独自のデザインと音質を求める層にとって、高い満足感を得られる。"
+        ]
+      },
+      {
+        "name": "SONY ワイヤレススピーカー SRS-ULT10",
+        "asin": "B0D13TBD9B",
+        "priceComparison": "対象商品より高価（約12000円）で、重低音（ULT FIELD 1）に特化している。",
+        "featureComparison": [
+          "共通点：ポータブルでIP67防水・防塵規格を備える",
+          "相違点：SRS-ULT10はパワフルな重低音を重視しており、サイズも対象商品より大きく、再生時間は約12時間。"
+        ],
+        "differentiators": [
+          "Anker Soundcore Select 4 Go ポータブルスピーカーの利点：より小型で軽量、かつ安価で再生時間が長いため、手軽に持ち運ぶのに適している。",
+          "SONY ワイヤレススピーカー SRS-ULT10の利点：屋外や広いスペースでパワフルな重低音を楽しみたい場合に適している。"
+        ]
+      },
+      {
+        "name": "JBL GO5 Bluetoothスピーカー",
+        "asin": "B0GWGPZ6R1",
+        "priceComparison": "対象商品より高価（約7000円）で、IP68の高い防塵防水性能やロスレス再生対応などの高度な機能を備える。",
+        "featureComparison": [
+          "共通点：ポータブルでコンパクトなデザイン",
+          "相違点：GO5はIP68規格、ロスレス再生、Auracast対応など最新機能を豊富に搭載している。"
+        ],
+        "differentiators": [
+          "Anker Soundcore Select 4 Go ポータブルスピーカーの利点：価格が手頃で、日常的な使用には十分な性能と長い再生時間を持つ。",
+          "JBL GO5 Bluetoothスピーカーの利点：より高い防塵防水性能や最新のオーディオ技術（ロスレス再生等）を求める場合に適している。"
         ]
       }
     ],
     "recommendation": {
       "targetUsers": [
-        "バッテリー残量を気にせず長時間音楽を楽しみたい人",
-        "アウトドアやお風呂でガシガシ使える頑丈なスピーカーが欲しい人",
-        "なるべく安く、でも信頼できるメーカーの製品が良い人"
+        "手軽に持ち運べるスピーカーを探している人",
+        "アウトドアやお風呂などで水濡れを気にせず使いたい人",
+        "安価でバッテリー持ちの良いスピーカーが欲しい人"
       ],
       "pros": [
-        "最大20時間のロングバッテリー",
-        "IP67防塵防水の安心感",
-        "手頃な価格設定"
+        "最大20時間の長時間バッテリー",
+        "IP67の高い防塵・防水性能",
+        "4000円以下で購入できる高いコストパフォーマンス"
       ],
       "cons": [
-        "音質の細かい調整ができない (アプリ非対応)",
-        "有線接続不可"
+        "5W出力のため大音量を求める場合には物足りない可能性がある",
+        "本格的な高音質や重低音を求めるユーザーには不向き"
       ],
-      "score": 90,
-      "scoreRationale": "[基本点: 70]\n[加点: +10] (同クラスの競合を圧倒する最大20時間の再生時間)\n[加点: +10] (IP67防水・5W出力を備えながら3,000円台という高いコストパフォーマンス)\n[加点: +0] (デザイン・品質は標準的)\n[減点: 0] (アプリ非対応は価格帯を考慮すれば許容範囲)\n[合計: 90]"
+      "score": 88,
+      "scoreRationale": "[基本点: 70]\n[加点: +10] (4000円以下の低価格でありながらIP67や20時間再生を備える高いコストパフォーマンス)\n[加点: +5] (コンパクトで約265gと軽量ながら必要十分な5W出力を備える優れた携帯性)\n[加点: +3] (ユーザーからの評価が高く、メーカーの信頼性も高い)\n[合計: 88]"
     },
     "technicalSpecs": {
       "dimensions": {
-        "description": "手のひらサイズ (具体的な数値は非公開)"
+        "height": "121mm",
+        "width": "83mm",
+        "depth": "49mm"
       },
-      "battery": {
-        "duration": "最大20時間",
-        "charging": "USB Type-C"
-      },
-      "connectivity": [
-        "Bluetooth",
-        "ワイヤレスステレオペアリング"
-      ],
-      "other": [
-        "IP67防塵防水",
-        "5W出力",
-        "パッシブラジエーター搭載",
-        "ストラップ付属"
-      ]
+      "weight": "265g",
+      "powerOutput": "5W",
+      "waterResistance": "IP67",
+      "connectivity": "Bluetooth 5.4",
+      "batteryLife": "最大20時間",
+      "chargingTime": "約4時間",
+      "chargingPort": "USB-C"
     }
   }
 }
