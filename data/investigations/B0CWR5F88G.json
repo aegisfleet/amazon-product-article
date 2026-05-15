@@ -1,133 +1,194 @@
 {
   "analysis": {
-    "productName": "TP-Link Archer BE550/A WiFi 7 無線LANルーター",
+    "productName": "TP-Link Archer BE550/A Wi-Fi 7 無線LANルーター",
     "parentAsin": "B0CWR5F88G",
-    "productDescription": "WiFi 7対応、320MHzトライバンドと5つの2.5Gbpsポートを搭載し、有線・無線共に高速通信を実現する高コスパルーターです。",
+    "productDescription": "最新規格のWi-Fi 7に対応し、BE9300クラスのトライバンド通信（6GHz: 5760Mbps、5GHz: 2880Mbps、2.4GHz: 688Mbps）を提供する高性能ルーターです。2.5Gbps対応の有線LANポートを5基搭載し、高速なインターネット回線を最大限に活用できます。",
     "productUsage": [
-      "マルチギガビット光回線（2.5Gbps以上）の性能をフル活用",
-      "VR/AR、8K動画ストリーミングなどの大容量データ通信",
-      "多数のスマート家電やIoTデバイスの同時接続管理",
-      "ゲーミングPCやサーバーとの高速有線LAN接続（全ポート2.5Gbps）",
-      "EasyMeshによるメッシュWi-Fi環境の構築"
+      "光回線などの高速インターネット接続",
+      "多数のデバイスが同時接続する家庭やオフィスでのネットワーク構築",
+      "4K/8K動画のストリーミング再生",
+      "遅延の少ないオンラインゲーム"
     ],
     "positivePoints": [
-      "全てのポート（WAN x1, LAN x4）が2.5Gbps対応で、ハブなしでも高速有線環境が整う",
-      "WiFi 7のトライバンド（6GHz帯含む）に対応し、将来性が高い",
-      "同スペックの競合他社製品と比較して価格が圧倒的に安い（2万円台半ば）",
-      "アンテナ内蔵型で、性能の割にコンパクトかつスタイリッシュなデザイン",
-      "Tetherアプリによる設定・管理が直感的で使いやすい"
+      "最新のWi-Fi 7規格に対応し、MLO（Multi-Link Operation）により高速かつ低遅延な通信が可能",
+      "トライバンド対応で6GHz帯を利用でき、電波干渉の少ない快適な通信環境を構築できる",
+      "2.5GbpsのWANポート×1とLANポート×4を備え、有線接続でもマルチギガビットの高速通信を実現"
     ],
     "negativePoints": [
-      "高性能ゆえに発熱があり、夏場などは設置場所の通気性に注意が必要",
-      "ハイエンドモデル（BE800/900など）に比べると、最大通信速度（特に6GHz帯）は抑えられている",
-      "壁掛け設置に標準対応していない（工夫が必要）",
-      "現時点でWiFi 7の真価を発揮できるクライアント端末がまだ少ない"
+      "本体サイズが比較的大きく、設置場所の確保が必要となる場合がある",
+      "Wi-Fi 7の性能をフルに発揮するためには、接続する端末側（スマートフォンやPC）もWi-Fi 7に対応している必要がある"
     ],
     "useCases": [
-      "2.5G/5G/10G光回線を導入済みで、ルーターがボトルネックになりたくないユーザー",
-      "NASを導入しており、PCとの間で高速なファイル転送を行いたいクリエイター",
-      "家族全員が同時に動画視聴やゲームをする、多デバイス接続環境の家庭"
+      "家族全員がスマートフォンやタブレット、PCを同時に利用するリビングルーム",
+      "大容量のゲームデータを高速にダウンロードしたいゲーミングPC周り",
+      "安定した有線接続が求められるNAS（ネットワーク対応HDD）の運用"
     ],
-    "userStories": [
-      {
-        "userType": "30代男性・在宅エンジニア",
-        "scenario": "自宅サーバーとPCを2.5Gbpsでリンクしつつ、リビングの家族の通信も安定させたい。",
-        "experience": "以前のWi-Fi 6ルーターでは有線が1Gbps止まりでNASへのバックアップに時間がかかっていたが、BE550に変えてから実測で2.3Gbps前後出るようになり快適になった。Wi-Fiも安定しており、Web会議中に子供が動画を見ても途切れなくなった。",
-        "sentiment": "positive"
-      },
-      {
-        "userType": "40代・ガジェット好き",
-        "scenario": "iPhone 16（Wi-Fi 7対応）を購入したので、ルーターも対応機種にしたかった。",
-        "experience": "セットアップはアプリで一瞬で終わった。iPhone 16でのスピードテストで驚異的な数字が出た。ただ、ルーター本体が結構温かくなるので、棚の中に閉じ込めるのはやめて棚の上に置くことにした。",
-        "sentiment": "mixed"
-      }
-    ],
-    "userImpression": "「全部入りでこの価格は価格破壊」という声が多く、特に全ポート2.5Gbps対応が評価されている。発熱やサイズ感に対する指摘はあるものの、機能と価格のバランスに対する満足度は非常に高い。",
+    "userStories": [],
+    "userImpression": "最新のWi-Fi 7とトライバンドに対応しつつ、2.5Gbps有線ポートを多数備えるなど、スペックに対するコストパフォーマンスの高さが評価されています。一方で、端末側のWi-Fi 7対応がこれからのため、将来性を見越した先行投資としての意味合いも強い製品です。",
     "sources": [
       {
-        "name": "PC Watch: TP-Link Archer BE550 レビュー",
-        "url": null,
-        "credibility": "高い"
+        "id": "src-tplink-official",
+        "name": "Archer BE550 製品ページ",
+        "url": "https://www.tp-link.com/jp/home-networking/wifi-router/archer-be550/",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2024-03-28",
+        "author": "TP-Link",
+        "conflictOfInterest": "disclosed",
+        "notes": "製品仕様、ポート構成、寸法（76 × 231.7 × 203mm）を確認"
       },
       {
-        "name": "Amazon カスタマーレビュー",
+        "id": "src-amazon-page",
+        "name": "Amazon商品ページ (B0CWR5F88G)",
         "url": "https://www.amazon.co.jp/dp/B0CWR5F88G",
-        "credibility": "中"
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2024-03-28",
+        "author": "Amazon/TP-Link",
+        "conflictOfInterest": "disclosed",
+        "notes": "価格（￥26,700）および基本スペック、iPhone 16対応などの情報を確認"
       }
     ],
-    "lastInvestigated": "2026-02-07",
+    "claims": [
+      {
+        "claim": "Wi-Fi 7 BE9300クラスのトライバンド（5760Mbps+2880Mbps+688Mbps）に対応",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-tplink-official",
+          "src-amazon-page"
+        ],
+        "crossChecked": true,
+        "notes": "公式サイトおよびAmazonの仕様で確認"
+      },
+      {
+        "claim": "2.5Gbps WANポートを1基、2.5Gbps LANポートを4基搭載",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-tplink-official",
+          "src-amazon-page"
+        ],
+        "crossChecked": true,
+        "notes": "公式サイトの仕様で確認"
+      }
+    ],
+    "lastInvestigated": "2026-05-16",
     "competitiveAnalysis": [
       {
-        "name": "NEC Aterm AM-7200D8BE",
-        "asin": "B0DWMPZ1MQ",
-        "priceComparison": "BE550より約6,000円高い（約3万円）。",
+        "name": "TP-Link Archer BE450",
+        "asin": "B0DG1JKNTQ",
+        "priceComparison": "対象商品よりも安価なエントリーモデル",
         "featureComparison": [
-          "NECは有線10Gbpsポートを持つが、Wi-Fiはデュアルバンド（BE550はトライバンド）。",
-          "NECはアンテナ内蔵でさらにコンパクトだが、BE550の方がポート数等の拡張性で勝る。"
+          "共通点：Wi-Fi 7およびEasyMesh対応である点",
+          "相違点：対象商品がBE9300トライバンドかつ2.5Gbps LAN×4なのに対し、本競合はBE7200デュアルバンドで10Gbps WAN/LAN×1・2.5Gbps WAN/LAN×1・1Gbps LAN×3のポート構成である点"
         ],
         "differentiators": [
-          "NEC: 10Gbps回線ユーザー向け、国内メーカーの安心感",
-          "TP-Link: トライバンドによる混雑回避、全ポート2.5Gbpsの汎用性"
+          "TP-Link Archer BE550/Aの利点：トライバンド対応で6GHz帯を利用でき、複数の2.5Gbps有線LANポートで多数の機器を高速有線接続できる点",
+          "TP-Link Archer BE450の利点：10Gbpsポートを1基備えつつ価格が抑えられており、コストを重視しつつ10G回線を導入したい場合に適している点"
         ]
       },
       {
-        "name": "BUFFALO WXR-11000BE10P",
-        "asin": "B0CQ8T51F7",
-        "priceComparison": "BE550の倍近い価格（ハイエンドモデル）。",
+        "name": "TP-Link Archer BE220",
+        "asin": "B0DJQMPKRH",
+        "priceComparison": "対象商品よりも大幅に安価な低価格モデル",
         "featureComparison": [
-          "WAN/LAN共に10Gbps対応で、有線スペックは圧倒的に上。",
-          "外部アンテナタイプで設置スペースを大きく取る。"
+          "共通点：Wi-Fi 7に対応している点",
+          "相違点：対象商品がトライバンド（BE9300）かつ2.5Gbps有線ポート搭載なのに対し、本競合はデュアルバンド（BE3600）で全ポートが1Gbpsである点"
         ],
         "differentiators": [
-          "究極の速度を求めるならBuffalo",
-          "コスパとバランス重視ならTP-Link"
+          "TP-Link Archer BE550/Aの利点：通信速度が圧倒的に速く、マルチギガビットの有線接続が可能である点",
+          "TP-Link Archer BE220の利点：1万円を切る低価格でWi-Fi 7環境を手軽に導入できる点"
+        ]
+      },
+      {
+        "name": "バッファロー WSR6500BE6P",
+        "asin": "B0FSCNXC6B",
+        "priceComparison": "対象商品と同価格帯の製品",
+        "featureComparison": [
+          "共通点：Wi-Fi 7および2.5Gbpsのインターネットポートに対応している点",
+          "相違点：対象商品がトライバンド（6GHz帯あり）なのに対し、本競合はデュアルバンド（5GHz+2.4GHz）である点"
+        ],
+        "differentiators": [
+          "TP-Link Archer BE550/Aの利点：同価格帯でありながらトライバンドに対応し、6GHz帯を用いた混雑の少ない通信が可能である点",
+          "バッファロー WSR6500BE6Pの利点：国内メーカー製でサポートに安心感がある点"
+        ]
+      },
+      {
+        "name": "TP-Link Archer BE260",
+        "asin": "B0FTDX1GSK",
+        "priceComparison": "対象商品より安価なミドルクラス",
+        "featureComparison": [
+          "共通点：Wi-Fi 7および2.5GbpsのLAN/WANポートに対応している点",
+          "相違点：対象商品がトライバンドなのに対し、本競合はデュアルバンド（BE5000）で2.5Gポートが2基（WAN×1, LAN×1）に限定される点"
+        ],
+        "differentiators": [
+          "TP-Link Archer BE550/Aの利点：トライバンド対応と2.5Gポートの多さで、よりヘビーなネットワーク用途に耐えうる点",
+          "TP-Link Archer BE260の利点：価格と性能のバランスが良く、適度な高速環境を低予算で構築できる点"
+        ]
+      },
+      {
+        "name": "ZTE Sora BE3600 Pro",
+        "asin": "B0FNX3TX7R",
+        "priceComparison": "対象商品より大幅に安価",
+        "featureComparison": [
+          "共通点：Wi-Fi 7および2.5GbpsのWANポートを搭載している点",
+          "相違点：対象商品がトライバンドなのに対し、本競合はデュアルバンド（BE3600）で全体的な通信速度の規格値が低い点"
+        ],
+        "differentiators": [
+          "TP-Link Archer BE550/Aの利点：トライバンドや多数の2.5Gポートなど、全体的なネットワーク性能が格段に高い点",
+          "ZTE Sora BE3600 Proの利点：1万円を切る価格で2.5GbpsのWANポートを備えており、コストパフォーマンスに優れる点"
+        ]
+      },
+      {
+        "name": "バッファロー WSR3600BE4P",
+        "asin": "B0F5B69SKC",
+        "priceComparison": "対象商品の半額程度のエントリーモデル",
+        "featureComparison": [
+          "共通点：Wi-Fi 7に対応している点",
+          "相違点：対象商品がトライバンドや2.5Gポートを搭載しているのに対し、本競合はデュアルバンドで有線ポートが1Gbpsである点"
+        ],
+        "differentiators": [
+          "TP-Link Archer BE550/Aの利点：圧倒的な無線・有線速度を誇り、光クロス（10G）などの高速回線を活かせる点",
+          "バッファロー WSR3600BE4Pの利点：小型で設置しやすく、価格が手頃な国内メーカー製である点"
         ]
       }
     ],
     "recommendation": {
       "targetUsers": [
-        "2.5Gbps以上の光回線契約者",
-        "有線LANデバイス（PC, NAS, ゲーム機）を複数持っている人",
-        "最新のWi-Fi 7を試したいが、ハイエンドモデルには手が出ない人"
+        "最新のWi-Fi 7環境をいち早く導入したいガジェット愛好家",
+        "2.5Gbps以上の光回線を契約しており、その速度を無線・有線でフルに活かしたいユーザー",
+        "NASやゲーミングPCなど、複数のデバイスを有線（2.5Gbps）で高速接続したい方"
       ],
       "pros": [
-        "WAN/LAN全ポート2.5Gbps対応",
-        "Wi-Fi 7トライバンド対応",
-        "圧倒的なコストパフォーマンス"
+        "Wi-Fi 7のトライバンド（BE9300）に対応し、非常に高速で安定した通信が可能",
+        "2.5Gbps対応のLANポートを4つ備え、有線接続デバイスが多い環境に最適",
+        "スペックに対して価格が抑えられており、コストパフォーマンスが高い"
       ],
       "cons": [
-        "発熱対策が必要",
-        "壁掛け非対応"
+        "ルーターの性能を完全に発揮するには、PCやスマホ側もWi-Fi 7に対応している必要がある",
+        "本体の設置スペースを確保する必要がある"
       ],
-      "score": 92,
-      "scoreRationale": "[基本点: 70]\n[加点: +10] 性能・機能: トライバンドWi-Fi 7と全ポート2.5Gbpsの実用性が極めて高い。\n[加点: +12] コストパフォーマンス: 競合がデュアルバンドや1Gポート混在の中で、この仕様で2.4万円は破格。\n[減点: -2] 品質・デザイン: 発熱への懸念と壁掛け不可の設置制約。\n[加点: +2] ユーザー満足度: アプリの使い勝手と安定性で高評価。\n[合計: 92]"
+      "score": 87,
+      "scoreRationale": "[基本点: 70]\n[加点: +8] (Wi-Fi 7 トライバンドによる高速・安定した無線通信性能)\n[加点: +7] (2.5Gbps対応ポートを合計5基搭載する充実した有線インターフェース)\n[加点: +5] (BE9300クラスとしては比較的安価な価格設定によるコストパフォーマンスの高さ)\n[減点: -3] (本体サイズがやや大きく設置の自由度が低めであること)\n[合計: 87]"
     },
     "technicalSpecs": {
-      "wifiStandard": "Wi-Fi 7 (IEEE 802.11be)",
-      "frequencyBands": ["6GHz", "5GHz", "2.4GHz"],
-      "maxDataRate": {
-        "total": "9214 Mbps",
-        "ghz6": "5760 Mbps",
-        "ghz5": "2880 Mbps",
-        "ghz2_4": "688 Mbps"
-      },
-      "ports": {
-        "wan": "1 x 2.5 Gbps",
-        "lan": "4 x 2.5 Gbps",
-        "usb": "1 x USB 3.0"
-      },
-      "processor": null,
-      "memory": null,
-      "antennas": "内蔵アンテナ",
-      "meshSupport": "EasyMesh",
-      "security": ["WPA3", "HomeShield"],
       "dimensions": {
-        "width": "211.5mm",
-        "depth": "59.5mm",
-        "height": "205.5mm",
-        "weight": null
+        "height": "203mm",
+        "width": "76mm",
+        "depth": "231.7mm"
       },
-      "other": ["MLO", "Multi-RU", "Preamble Puncturing"]
+      "wirelessStandard": "Wi-Fi 7 (802.11be), 802.11ax/ac/n/a/g/b",
+      "wirelessSpeed": "6GHz: 5760Mbps, 5GHz: 2880Mbps, 2.4GHz: 688Mbps",
+      "wiredPorts": "2.5Gbps WAN ×1, 2.5Gbps LAN ×4",
+      "usbPorts": "USB 3.0 ×1",
+      "features": [
+        "EasyMesh対応",
+        "HomeShield対応",
+        "MLO (Multi-Link Operation)"
+      ],
+      "warranty": "メーカー保証3年",
+      "origin": "中国 (TP-Link)"
     }
   }
 }
