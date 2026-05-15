@@ -2,130 +2,220 @@
   "analysis": {
     "productName": "FUNLOGY Portable Mini",
     "parentAsin": "B0C4P51G18",
-    "productDescription": "IP67防水・Type-C充電・AUX入力に対応し、VGP2024を受賞した高機能かつコンパクトなポータブルスピーカー。",
+    "productDescription": "Bluetooth 5.3対応の小型ポータブルスピーカー。防水・防塵仕様でアウトドアやバスルームでも使用可能。",
     "productUsage": [
-      "お風呂やキッチンでのワイヤレス音楽再生",
-      "アウトドア（キャンプ、BBQ）での使用",
-      "PCやタブレットの外部スピーカー（AUX/Bluetooth接続）"
+      "スマートフォンやPCと接続して音楽再生",
+      "アウトドア、キャンプ、お風呂などでの使用",
+      "ハンズフリー通話"
     ],
     "positivePoints": [
-      "VGP2024受賞の信頼性とクリアな音質（推測）",
-      "IP67の完全防水・防塵性能でお風呂でも安心",
-      "汎用性の高いUSB Type-C充電に対応",
-      "AUX入力端子があり有線接続も可能（競合には少ない機能）",
-      "2台接続（TWS）によるステレオ再生に対応"
+      "IP67の防水・防塵性能",
+      "コンパクトで持ち運びやすいサイズ",
+      "TWS対応で2台繋げてステレオ再生可能",
+      "低音から高音までクリアな音声"
     ],
     "negativePoints": [
-      "超小型競合（EWA A106等）に比べるとサイズ・重量（250g）がある",
-      "バッテリー容量650mAhは競合（1200mAh等）と比較してやや控えめ",
-      "物理ボタンの操作性が不明瞭な場合がある（推測）"
+      "自転車のドリンクホルダーにはギリギリ入らない場合がある",
+      "大きな重低音を求めるユーザーには物足りない可能性がある"
     ],
     "useCases": [
-      "入浴中のリラックスタイム",
-      "キャンプやピクニックでのBGM",
-      "ノートPCの音質向上"
+      "お風呂に入りながら音楽を聴く",
+      "キャンプやバーベキューでのBGM",
+      "デスクや寝室での音楽鑑賞",
+      "自転車や車での持ち運び"
     ],
     "userStories": [
       {
-        "userType": "30代会社員（推測）",
-        "scenario": "毎晩の入浴時に使用",
-        "experience": "以前使っていたスピーカーは防水性能が不安だったが、IP67なのでシャワーがかかっても安心。Type-C充電なのでスマホの充電器をそのまま使えて便利。（推測）",
+        "userType": "一般ユーザー",
+        "scenario": "音楽鑑賞やYouTube視聴用として",
+        "experience": "YouTuberの検証動画を見て2台購入し、ステレオで聴いている。低音を強調するというより補強する感じで、ジャズ、ロック、J-POP、クラシックまでどんなジャンルにも合う。お風呂でもデスクでもベッドでも、どこへでもこの音楽空間を持っていけるのが最高。",
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "positive"
       },
       {
-        "userType": "20代学生（推測）",
-        "scenario": "PCでの映画鑑賞",
-        "experience": "Bluetoothの遅延が気になる時は付属のAUXケーブルで有線接続できるのが良い。PC内蔵スピーカーより声が聞き取りやすい。（推測）",
+        "userType": "自転車ユーザー",
+        "scenario": "自転車で走りながら音楽を聴く",
+        "experience": "自転車のドリンクホルダーに設置したくて購入。7cmサイズなのでギリギリ下まで入らないが、半分ほど入って固定されるので問題なく使える。走りながら聴くととても楽しく、音量も低音も十分で細かい音も結構聞こえる。防犯用のワイヤーロックを通しやすくしてくれたら嬉しい。",
+        "supportingSourceIds": [
+          "src-2"
+        ],
         "sentiment": "positive"
       }
     ],
-    "userImpression": "VGP2024受賞の実績があり、基本性能（音質・防水・接続性）が高く評価されていると推測される。特にType-C充電とAUX入力の実用性が、競合との差別化ポイントとなっている。",
+    "userImpression": "コンパクトで持ち運びやすく、低音から高音までクリアな音質で聴きやすい。価格が手頃でありながら、防水性能やTWS機能（ステレオ再生）がついておりコストパフォーマンスが高いと好評。特に、どこにでも手軽に持ち運べる利便性が評価されている。",
     "sources": [
       {
-        "name": "Amazon Product Page",
-        "url": "https://www.amazon.co.jp/dp/B0C4P51G18",
-        "credibility": "High"
+        "id": "src-1",
+        "name": "FUNLOGY公式ストア レビュー",
+        "url": "https://funlogy.jp/products/funlogy-portable-mini",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2023-10-16",
+        "author": "FUNLOGY公式ストアユーザー(渡部)",
+        "conflictOfInterest": "none",
+        "notes": "ステレオ再生や音質に関するポジティブなレビュー"
+      },
+      {
+        "id": "src-2",
+        "name": "FUNLOGY公式ストア レビュー",
+        "url": "https://funlogy.jp/products/funlogy-portable-mini",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2023-07-24",
+        "author": "FUNLOGY公式ストアユーザー(ぽーる)",
+        "conflictOfInterest": "none",
+        "notes": "自転車のドリンクホルダーでの使用や音量、利便性に関するレビュー"
       }
     ],
-    "lastInvestigated": "2026-02-07",
+    "claims": [
+      {
+        "claim": "IP67の防水・防塵性能",
+        "category": "durability",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-1",
+          "src-2"
+        ],
+        "crossChecked": true,
+        "notes": "公式スペックで確認"
+      },
+      {
+        "claim": "低音から高音までフラットでクリアな音質",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "crossChecked": true,
+        "notes": "ユーザーレビューや公式説明で確認"
+      }
+    ],
+    "lastInvestigated": "2026-05-16",
     "competitiveAnalysis": [
       {
-        "name": "EWA A106 (ローズゴールド)",
-        "asin": "B08FY1VPLC",
-        "priceComparison": "約2,200円（FunLogyより約300円安い）",
+        "name": "Anker Soundcore 2",
+        "asin": "B01NAVANRX",
+        "priceComparison": "対象商品よりやや高いが、24時間再生のロングバッテリーとより強力な12W出力が魅力。",
         "featureComparison": [
-          "圧倒的な小型軽量（175g vs FunLogy 250g）",
-          "専用ケース付き",
-          "充電端子はMicroUSB（FunLogyはType-C）",
-          "AUX入力なし"
+          "共通点：Bluetooth接続、IPX7以上の防水機能、TWS機能（ステレオ対応）",
+          "相違点：対象商品はIP67防塵防水対応だが、Soundcore 2はIPX7防水のみ（防塵表記なし）。出力は対象商品が6W、Soundcore 2が12W。バッテリーは対象商品が10時間、Soundcore 2が24時間連続再生。"
         ],
         "differentiators": [
-          "携帯性特化ならEWA、機能性ならFunLogy"
+          "FUNLOGY Portable Miniの利点：コンパクトで手頃な価格帯、IP67による高い防塵性能",
+          "Anker Soundcore 2の利点：24時間の圧倒的なバッテリー持ちと12Wのパワフルな出力"
         ]
       },
       {
-        "name": "ノーブランド品 防水スピーカー",
-        "asin": "B0FWK5H43V",
-        "priceComparison": "約1,300円（FunLogyの半額）",
+        "name": "ソニー ワイヤレススピーカー SRS-XB100",
+        "asin": "B0C3Q65R9P",
+        "priceComparison": "対象商品の2〜3倍の価格帯。ソニーならではの音響技術や信頼性を重視するユーザー向け。",
         "featureComparison": [
-          "バッテリー容量1200mAh（FunLogy 650mAh）",
-          "防水IPX6（FunLogy IP67）",
-          "Bluetooth 5.4（FunLogy 5.3）"
+          "共通点：コンパクトサイズ、IP67防水防塵、ステレオペアリング、USB Type-C充電",
+          "相違点：対象商品は再生時間10時間だが、SRS-XB100は16時間。SRS-XB100はソニー独自の音響技術による重低音再生が特徴。"
         ],
         "differentiators": [
-          "価格優先ならノーブランド、品質・防水性優先ならFunLogy"
+          "FUNLOGY Portable Miniの利点：購入しやすい価格で、ステレオ用に2台揃えやすい",
+          "ソニー ワイヤレススピーカー SRS-XB100の利点：クリアな音質と重低音、最大16時間のバッテリー駆動"
         ]
       },
       {
-        "name": "STSEETOP 防水スピーカー",
-        "asin": "B0BHT4S8DM",
-        "priceComparison": "約3,000円（FunLogyより高い）",
+        "name": "JBL GO4",
+        "asin": "B0CZDCWM48",
+        "priceComparison": "対象商品の約2倍の価格帯。専用アプリ対応など機能が豊富。",
         "featureComparison": [
-          "軽量163g",
-          "防水IPX7",
-          "Bluetooth 5.4"
+          "共通点：IP67防水・防塵対応、コンパクトなポータブルタイプ、USB Type-C充電",
+          "相違点：対象商品にはないアプリ対応機能をJBL GO4は搭載。JBL GO4は持ち運びやすいループ付きのデザイン。"
         ],
         "differentiators": [
-          "軽量性を重視するがEWAより機能が欲しい場合"
+          "FUNLOGY Portable Miniの利点：より低価格で基本的な機能を網羅している",
+          "JBL GO4の利点：専用アプリによるイコライザー設定など、音質のカスタマイズ性が高い"
+        ]
+      },
+      {
+        "name": "Anker Soundcore 3",
+        "asin": "B08CXJ3HMF",
+        "priceComparison": "対象商品より高価。チタニウムドライバーやアプリ対応など上位機能を持つ。",
+        "featureComparison": [
+          "共通点：Bluetooth対応、ポータブルサイズ、ステレオ/PartyCast対応",
+          "相違点：対象商品はIP67だがSoundcore 3はIPX7防水。Soundcore 3は24時間再生、アプリ対応、チタニウムドライバー搭載。"
+        ],
+        "differentiators": [
+          "FUNLOGY Portable Miniの利点：手軽に持ち運べる円柱形の小型デザインと防塵性能",
+          "Anker Soundcore 3の利点：専用アプリ対応と24時間のロングバッテリー、迫力のある低音"
+        ]
+      },
+      {
+        "name": "Anker Soundcore Select 4 Go",
+        "asin": "B0D9YMNXZL",
+        "priceComparison": "対象商品よりやや高いが、20時間の再生時間が強み。",
+        "featureComparison": [
+          "共通点：IP67防塵防水対応、ワイヤレスステレオ対応、Bluetoothスピーカー",
+          "相違点：対象商品の出力6W・10時間再生に対し、Select 4 Goは5W・20時間再生。"
+        ],
+        "differentiators": [
+          "FUNLOGY Portable Miniの利点：出力が6Wとわずかに大きく、手頃な価格",
+          "Anker Soundcore Select 4 Goの利点：20時間の連続再生が可能で長時間の外出に強い"
+        ]
+      },
+      {
+        "name": "ソニー ワイヤレススピーカー SRS-ULT10",
+        "asin": "B0D13TBD9B",
+        "priceComparison": "対象商品の4〜5倍の価格帯。本格的な重低音を求めるハイエンド志向のユーザー向け。",
+        "featureComparison": [
+          "共通点：IP67防水防塵対応、ワイヤレスポータブルスピーカー",
+          "相違点：対象商品が小型・軽量重視であるのに対し、SRS-ULT10はULT FIELD 1によるパワフルな重低音が特徴で、サイズ・重量も異なる。"
+        ],
+        "differentiators": [
+          "FUNLOGY Portable Miniの利点：圧倒的に軽量・コンパクトで価格が安く、手軽に導入できる",
+          "ソニー ワイヤレススピーカー SRS-ULT10の利点：パワフルな重低音と高い音響性能"
         ]
       }
     ],
     "recommendation": {
       "targetUsers": [
-        "お風呂やアウトドアで手軽に音楽を聴きたい人",
-        "Type-C充電やAUX入力など使い勝手を重視する人",
-        "日本ブランドの安心感を求める人"
+        "手軽に持ち運べるコンパクトなスピーカーを探している人",
+        "お風呂やキャンプで使える防水スピーカーが欲しい人",
+        "低価格で2台繋げてステレオ環境を作りたい人"
       ],
       "pros": [
-        "VGP2024受賞の音質への期待",
-        "完全防水IP67",
-        "Type-C充電＆AUX入力対応の利便性"
+        "IP67の防塵防水性能でアウトドアやお風呂でも安心",
+        "小型・軽量(250g)で持ち運びが容易",
+        "低価格ながらクリアな音質とTWS（ステレオ）機能に対応"
       ],
       "cons": [
-        "超小型競合と比較すると若干大きく重い",
-        "バッテリー容量が標準的"
+        "バッテリー駆動時間が10時間と、一部の競合機種に比べて短い",
+        "本格的な重低音を重視する用途には向かない場合がある"
       ],
-      "score": 85,
-      "scoreRationale": "[基本点: 70]\n[加点: +5] Type-C充電、AUX入力、TWS対応など機能性が高い。\n[加点: +5] VGP2024受賞と日本ブランドの信頼性。\n[加点: +5] 価格に対して機能（IP67防水、6W出力）が充実しておりコスパ良好。\n[減点: 0] 特になし。\n[合計: 85]"
+      "score": 83,
+      "scoreRationale": "[基本点: 70]\n[加点: +5] (IP67の防水防塵性能により、お風呂やアウトドアなど幅広いシーンで使える汎用性の高さ)\n[加点: +5] (2台接続でステレオ再生できる機能など、価格以上の使い勝手)\n[加点: +5] (コンパクトで持ち運びやすいサイズと重量感)\n[減点: -2] (バッテリー駆動時間10時間は一般的な用途には十分だが、20時間以上の競合と比べるとやや見劣りする)\n[合計: 83]"
     },
     "technicalSpecs": {
       "dimensions": {
         "height": "80mm",
         "width": "70mm",
-        "depth": "70mm",
-        "weight": "250g"
+        "depth": "70mm"
       },
-      "power": "6W",
-      "capacity": "650mAh (10時間再生)",
-      "connectivity": [
-        "Bluetooth 5.3",
-        "AUX (3.5mm)",
-        "USB Type-C"
-      ],
-      "waterproof": "IP67",
-      "other": [
+      "weight": "250g",
+      "power": "DC 5V 1.0A",
+      "output": "6W",
+      "impedance": "3Ω",
+      "snRatio": "100dB",
+      "bluetooth": "ver. 5.3",
+      "communicationDistance": "最大10m（障害物が無い時）",
+      "interfaces": "USB Type-C、AUX",
+      "battery": "650mAh / 稼働時間: 10時間（40%出力時）",
+      "durability": "IP67（防水・防塵）",
+      "features": [
         "TWS対応",
-        "ハンズフリー通話"
+        "ハンズフリー通話対応"
+      ],
+      "accessories": [
+        "USB Type-Cケーブル(1m)",
+        "3.5mm AUXケーブル(1m)",
+        "ストラップホルダー(約0.2m)",
+        "取扱説明書"
       ]
     }
   }
