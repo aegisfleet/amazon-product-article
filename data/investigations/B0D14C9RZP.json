@@ -1,169 +1,193 @@
 {
   "analysis": {
-    "productName": "MINISFORUM UM790 Pro",
-    "parentAsin": "B0FQB1MR4S",
-    "productDescription": "MINISFORUM UM790 Proは、AMD Ryzen 9 7940HSプロセッサーを搭載し、クリエイティブ作業から本格的なPCゲームまで幅広く対応する、デスクトップクラスの性能を凝縮した高性能コンパクトPCです。",
+    "productName": "MINISFORUM UM790Pro ミニPC",
+    "parentAsin": "B0D14C9RZP",
+    "productDescription": "AMD Ryzen 9 7940HSとRadeon 780Mを搭載し、DDR5 32GBメモリ、1TB PCIe4.0 SSDを備えたハイパフォーマンス小型ゲーミングPCです。8Kディスプレイの4画面出力やUSB4、2.5Gbps LANにも対応しています。",
     "productUsage": [
-      "RAW現像や4K動画編集などの高負荷なクリエイティブ作業",
-      "設定を調整した上でのフルHD解像度（1080p）でのPCゲームプレイ",
-      "最大4画面の8K/4K出力による、プロフェッショナルな開発・トレーディング環境の構築",
-      "省スペースなリビングPCや、静音性を活かしたメディアサーバーとしての利用",
-      "USB4ドックと組み合わせた、ケーブル1本でのスマートなデスク環境構築"
+      "ゲームプレイ",
+      "動画編集などのクリエイティブワーク",
+      "プロフェッショナルAVシステム、デジタルサイネージ等",
+      "マルチモニターによるオフィスワーク"
     ],
     "positivePoints": [
-      "デスクトップPCに匹敵するクラス最高の処理性能（AMD Ryzen 9 7940HSとRadeon 780M）",
-      "RAW現像、動画編集、1080pでのゲーミングまで対応できる非常に高い汎用性",
-      "コンパクトな筐体にもかかわらず、高負荷時でもファンの音が静かで、耳障りな高周波音も少ない",
-      "USB4ポートを2つ備え、最大4画面出力に対応するなど、豊富なインターフェースと高い拡張性",
-      "メモリ（最大64GB）とストレージ（M.2 NVMeスロット×2）の増設が可能で、長期的な利用に対応できる将来性"
+      "最新のZen4アーキテクチャであるAMD Ryzen 9 7940HSを採用し、シングルコア・マルチコアともに非常に高い処理性能を持つ",
+      "Radeon 780M内蔵グラフィックスで、重量級ゲームでも設定次第で快適にプレイ可能",
+      "デュアルM.2 2280 PCIe4.0 SSDスロットで、サブストレージも高速なデータ転送を実現",
+      "HDMI×2とUSB4×2を搭載し、最大4画面（8K/4K）のディスプレイ出力に対応",
+      "高負荷時でもファン音が静かで、排熱もしっかりコントロールされている"
     ],
     "negativePoints": [
-      "内蔵Bluetoothの電波が弱く、接続が不安定になりがちで、多くの場合は別途USBドングルが必要になる",
-      "内部へのアクセスやパーツの増設・交換が非常に難しく、PC初心者には推奨できない（整備性の悪さ）",
-      "発売初期のドライバーが不安定で、OSのクリーンインストール後に手動での適用が必要になるなど、ソフトウェアサポートが不十分",
-      "一部のモニター（特に古いテレビなど）とのHDMI接続で表示に互換性の問題が出ることがある",
-      "USBポート間のノイズ干渉や、イヤホンジャックの出力ゲインが大きすぎるなど、ハードウェアにいくつかの癖がある"
+      "ACアダプタが少し大きめ（出力に比べればコンパクトだが本体と比較するとかさばる）"
     ],
     "useCases": [
-      "デスク周りをスッキリさせたいクリエイターのメインマシンとして",
-      "VESAマウントでモニター背面に設置し、完全に省スペース化された開発環境を構築",
-      "リビングのテレビに接続し、4K動画再生やPCゲームを楽しむ高性能なメディアセンターとして",
-      "大学や研究室でのシミュレーションやデータ解析用の省スペースなワークステーションとして"
+      "デスク上のスペースを節約しつつ、ハイスペックなメインPCとして活用する",
+      "高解像度モニターを複数接続して動画編集やプログラミングを行う",
+      "リビングルームのテレビに接続し、コンパクトなゲーミングPCとして楽しむ"
     ],
     "userStories": [
       {
-        "userType": "フリーランスのクリエイター（30代男性）",
-        "scenario": "自宅の作業スペースが限られているため、場所を取らずにRAW現像や動画編集を快適にこなせるPCを探していた。",
-        "experience": "「サブ機のつもりで購入しましたが、デスクトップPCと遜色ない性能に驚きました。高負荷な作業でもファンが静かで、デスクが広く使えるようになり、作業に集中できる時間が増えました。USB4で周辺機器がスッキリまとまるのも快適です。ただ、後からSSDを増設しようとした時、分解にかなり手こずったので、PC自作に慣れていない人には少し難しいかもしれません。」",
-        "sentiment": "mixed"
-      },
-      {
-        "userType": "カジュアルゲーマー（20代男性）",
-        "scenario": "大型のゲーミングPCを置くスペースはないが、休日にPCゲームを楽しめるコンパクトなマシンを探していた。",
-        "experience": "「実物を見ると想像以上に小さくて驚きました。ほとんどのゲームは1080pで設定を少し調整すれば、安定して60fpsで遊べます。何より、ゲーム中でも驚くほど静かなのが良いです。ただ、内蔵Bluetoothは使い物にならず、結局USBドングルを買いました。古いテレビにHDMIで繋いだら表示が乱れましたが、USB-Cアダプター経由なら問題ありませんでした。いくつかの癖を理解すれば、最高の小型ゲーミングPCです。」",
-        "sentiment": "mixed"
+        "userType": "ゲーマー・クリエイター",
+        "scenario": "動画編集やゲーム用途でのメインPCとしての利用",
+        "experience": "FF14ベンチマークでも「とても快適」のスコアを叩き出し、ゲームや動画編集にも余裕で耐えられる爆速機だと感じました。重いベンチマークを回してもファン音がそれほど気にならず、よくコントロールされているのが素晴らしいです。また、底面を開けるだけで簡単にストレージやメモリの換装ができる点も評価できます。",
+        "supportingSourceIds": [
+          "src-daily-gadget"
+        ],
+        "sentiment": "positive"
       }
     ],
-    "userImpression": "PC中級者以上向けの『じゃじゃ馬な高性能マシン』。圧倒的なコストパフォーマンスとコンパクトな筐体に、メインマシンとして通用する性能を凝縮している点が最大の魅力です。一方で、分解整備の難しさ、不安定なBluetooth、ドライバーの互換性問題など、PC初心者お断りな側面も併せ持っています。自力で情報収集し、トラブル解決できるスキルを持つユーザーにとっては、長く付き合える最高の相棒となりうる一台と言えるでしょう。",
+    "userImpression": "手のひらサイズのコンパクトボディながら、メタル外装で高級感があり、非常に処理性能が高い一台です。ファンの静音性や内部アクセスの容易さも高く評価されており、ゲームからクリエイティブワークまで幅広い用途で活躍する高コスパモデルとして評判です。",
     "sources": [
       {
-        "name": "MINISFORUM UM790 PRO レビュー",
-        "url": "https://hamuchan777.hatenablog.com/entry/minisforum-um790-pro-review",
-        "credibility": "高い（自腹購入による長期使用レビューであり、詳細なベンチマークと具体的な使用感が記載されている）"
-      },
-      {
-        "name": "UM790Proを1ヵ月使ってみた感想＆気になった点｜買いorナシ？【後編】",
-        "url": "https://note.com/kai_pc/n/ndc7a2e46c2f1",
-        "credibility": "高い（技術的な視点から、分解・整備やソフトウェアの問題点について深く掘り下げており、信頼性が高い）"
-      },
-      {
-        "name": "Reddit r/MiniPCs: Minisforum UM790 Pro Casual Gamer First Review",
-        "url": "https://www.reddit.com/r/MiniPCs/comments/14rubwv/minisforum_um790_pro_casual_gamer_first/",
-        "credibility": "高い（実際のユーザーによる具体的な長所・短所の詳細な報告）"
+        "id": "src-daily-gadget",
+        "name": "Ryzen 9 7940HS搭載で10万円の爆速ミニPCレビュー！【Minisforum UM790 Pro】 - デイリーガジェット",
+        "url": "https://daily-gadget.net/notepc/58744/",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2023-07-04",
+        "author": "デイリーガジェット編集部",
+        "conflictOfInterest": "none",
+        "notes": "実機レビュー。ベンチマークテスト結果（FF14、CrystalDiskMark、CINEBENCH R23）や、静音性、内部アクセスのしやすさについて高く評価している。"
       }
     ],
-    "lastInvestigated": "2026-02-07",
+    "claims": [
+      {
+        "claim": "重い負荷をかけてもファン音が静かである",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-daily-gadget"
+        ],
+        "crossChecked": false,
+        "notes": "実機レビューにて、重いベンチマークを回してもファン音はそれほど気にならないと明記されている。"
+      },
+      {
+        "claim": "FF14などのゲームが快適にプレイ可能",
+        "category": "performance",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-daily-gadget"
+        ],
+        "crossChecked": false,
+        "notes": "FF14ベンチ（標準品質/ノートPC、FullHD）で「とても快適（11,740）」のスコアを出している。"
+      }
+    ],
+    "lastInvestigated": "2026-05-16",
     "competitiveAnalysis": [
-      {
-        "name": "GEEKOM A8",
-        "asin": null,
-        "priceComparison": "UM790 Proの直接の競合。CPU性能がより新しく高性能な分、価格も高くなる傾向がある。",
-        "featureComparison": [
-          "CPUにAMD Ryzen 9 8945HSを搭載し、AI処理性能（NPU）が強化されている。",
-          "インターフェース構成はUM790 Proと非常によく似ており、高い拡張性を持つ。"
-        ],
-        "differentiators": [
-          "より新しいCPUによる将来性の高さ",
-          "強化されたAI処理性能"
-        ]
-      },
-      {
-        "name": "ASUS NUC 14 Pro",
-        "asin": null,
-        "priceComparison": "Intel Core Ultraプロセッサーを搭載し、価格帯はUM790 Proと同等かそれ以上。ブランドの信頼性や法人向けサポートで競合。",
-        "featureComparison": [
-          "最新のIntel Core Ultraプロセッサーは、AI処理性能（NPU）に優位性がある。",
-          "長年のNUCブランドで培われた安定性や、充実した法人向けサポートが期待できる。"
-        ],
-        "differentiators": [
-          "ブランドの信頼性と製品の安定性",
-          "ビジネス用途で重要な手厚いサポート体制"
-        ]
-      },
-      {
-        "name": "GEEKOM A6",
-        "asin": "B0DRP316J1",
-        "priceComparison": "UM790 Proより一世代前のCPU（Ryzen 9 6900HXなど）を搭載し、より安価。コストパフォーマンスで競合。",
-        "featureComparison": [
-          "CPU/GPU性能はUM790 Proに一歩譲るが、多くの用途で十分すぎる性能を持つ。",
-          "インターフェースはUM790 Proと同等に豊富で、最大4画面出力も可能。"
-        ],
-        "differentiators": [
-          "より手頃な価格設定",
-          "世代が古い分、ドライバーなどが安定している可能性がある"
-        ]
-      },
       {
         "name": "MINISFORUM UM760Slim",
         "asin": "B0DFH92ZTP",
-        "priceComparison": "UM790 Proの下位モデルにあたり、Ryzen 5 7640HSを搭載。価格はさらに安価で、ライトユーザーにとって魅力的な選択肢。",
+        "priceComparison": "対象商品より安価だが、CPUとGPUのスペックが1段階下がるため、処理能力が控えめ。",
         "featureComparison": [
-          "CPUコア数やGPU性能は抑えられているが、日常的なタスクや軽いゲームには十分。",
-          "筐体がよりスリムでスタイリッシュなデザイン。"
+          "共通点：MINISFORUM製のミニPCであり、DDR5メモリとPCIe4.0 SSDを搭載している点",
+          "相違点：対象商品がRyzen 9 7940HS (Radeon 780M) なのに対し、UM760SlimはRyzen 5 7640HS (Radeon 760M) を搭載し、メモリも16GBにとどまる"
         ],
         "differentiators": [
-          "コストと性能のバランス重視",
-          "スリムな筐体デザイン"
+          "MINISFORUM UM790Pro ミニPCの利点：より高い処理性能（Ryzen 9）と大容量メモリ（32GB）により、ゲームやクリエイティブ用途で優れる",
+          "MINISFORUM UM760Slimの利点：価格が抑えられており、日常的なタスクや軽い作業メインならコスパが良い"
+        ]
+      },
+      {
+        "name": "NiPoGi ミニpc AMD Ryzen 7 7735HS 24GB LPDDR5+1TB",
+        "asin": "B0GJ51FYT9",
+        "priceComparison": "対象商品より安価だが、CPU世代とアーキテクチャが古く、性能は大きく劣る。",
+        "featureComparison": [
+          "共通点：Ryzenプロセッサを搭載し、省スペースなミニPCである点",
+          "相違点：対象商品はZen4アーキテクチャのRyzen 9 7940HSだが、NiPoGiはZen3+ベースのRyzen 7 7735HSを搭載している。またメモリ規格も異なる"
+        ],
+        "differentiators": [
+          "MINISFORUM UM790Pro ミニPCの利点：Zen4の強力なCPU性能とRadeon 780Mにより、重量級の作業に強く、インターフェース（USB4×2など）も豊富",
+          "NiPoGi ミニpc AMD Ryzen 7 7735HS 24GB LPDDR5+1TBの利点：予算をかなり抑えてRyzen 7搭載機を入手できる"
+        ]
+      },
+      {
+        "name": "GMKtec NucBox K11 AMD Ryzen9 8945HS",
+        "asin": "B0DPCH1232",
+        "priceComparison": "対象商品と同程度の価格帯であり、より新しい世代のプロセッサを搭載している。",
+        "featureComparison": [
+          "共通点：Ryzen 9プロセッサ、32GBメモリ、1TB SSD、Radeon 780Mグラフィックスを搭載するハイエンドミニPCである点",
+          "相違点：対象商品はRyzen 9 7940HSだが、GMKtec K11は1世代新しいRyzen 9 8945HSを搭載し、Oculinkポートも備えている"
+        ],
+        "differentiators": [
+          "MINISFORUM UM790Pro ミニPCの利点：USB4ポートを2つ備えており、ディスプレイ出力と拡張性に優れる",
+          "GMKtec NucBox K11 AMD Ryzen9 8945HSの利点：より新しいプロセッサと、外付けGPU接続に有利なOculinkポートを備えている"
+        ]
+      },
+      {
+        "name": "MINISFORUM X1 Pro 370",
+        "asin": "B0DP7P3W4G",
+        "priceComparison": "対象商品よりも高価だが、最新のRyzen AI 9 HX 370を搭載している。",
+        "featureComparison": [
+          "共通点：MINISFORUMのハイスペックミニPCであり、大容量メモリとストレージを備える点",
+          "相違点：対象商品がRyzen 9 7940HSであるのに対し、X1 Proは最新のRyzen AI 9 HX 370とRadeon 890Mを搭載。Wi-Fi 7や5Gbps LANなどネットワーク周りも最新規格"
+        ],
+        "differentiators": [
+          "MINISFORUM UM790Pro ミニPCの利点：十分なハイパフォーマンスを持ちながらも、価格が抑えられておりバランスが良い",
+          "MINISFORUM X1 Pro 370の利点：最新世代のプロセッサと強力な内蔵GPU、次世代ネットワーク規格に対応している"
+        ]
+      },
+      {
+        "name": "GMKtec NucBox M8 AMD Ryzen 5 PRO 6650H",
+        "asin": "B0GD6VK2RL",
+        "priceComparison": "対象商品よりもかなり安価だが、性能面で大きく劣るエントリー～ミドルクラス機。",
+        "featureComparison": [
+          "共通点：コンパクトな筐体にRyzenプロセッサを搭載している点",
+          "相違点：対象商品がハイエンドなRyzen 9 7940HSなのに対し、M8は数世代前のRyzen 5 PRO 6650Hを搭載している"
+        ],
+        "differentiators": [
+          "MINISFORUM UM790Pro ミニPCの利点：CPU・GPUともに圧倒的に性能が高く、ゲームや動画編集などの重い処理に対応できる",
+          "GMKtec NucBox M8 AMD Ryzen 5 PRO 6650Hの利点：オフィス用途やウェブブラウジングなど、軽い用途に限定すれば非常に安価に導入できる"
+        ]
+      },
+      {
+        "name": "MINISFORUM MS-A2 AMD Ryzen 9 9955HX",
+        "asin": "B0F6NFQ3X4",
+        "priceComparison": "対象商品よりも高価なワークステーションモデルであり、用途が異なる。",
+        "featureComparison": [
+          "共通点：MINISFORUMのRyzen 9搭載ハイスペックモデルである点",
+          "相違点：対象商品がモバイル向けプロセッサを搭載した汎用ミニPCであるのに対し、MS-A2はデスクトップ級のRyzen 9 9955HXを搭載し、10G SFP+ポートを備えるなどワークステーションとしての性格が強い"
+        ],
+        "differentiators": [
+          "MINISFORUM UM790Pro ミニPCの利点：より小型で扱いやすく、一般的な用途やゲーミングにおいては十分な性能をリーズナブルに提供する",
+          "MINISFORUM MS-A2 AMD Ryzen 9 9955HXの利点：超高速なネットワーク環境や、デスクトップ級の圧倒的なCPUパワーを必要とする特殊な業務用途に向いている"
         ]
       }
     ],
     "recommendation": {
       "targetUsers": [
-        "PCの知識が豊富で、自分でトラブルシューティングができる中級〜上級者",
-        "コストパフォーマンスを最重視し、コンパクトで高性能なメインマシンを求めるクリエイターや開発者",
-        "大型のPCを置くスペースはないが、PCゲームも楽しみたいと考えているユーザー"
+        "省スペースで動画編集やゲームもできるハイスペックPCが欲しい人",
+        "複数台の4K/8Kモニターを出力して作業環境を構築したい人",
+        "将来的にメモリやストレージの増設を自分で行いたい人"
       ],
       "pros": [
-        "クラス最高レベルのCPU/GPU性能と、それに見合わない優れたコストパフォーマンス",
-        "デスク上のスペースをほとんど占有しないコンパクトな筐体と、高負荷時でも優れた静音性",
-        "USB4ポートや2.5G LANなど、将来性のある豊富なインターフェース"
+        "最新Ryzen 9による高いCPU性能と内蔵グラフィックス性能",
+        "USB4ポート×2による高い拡張性と最大4画面出力",
+        "高負荷時でも静音性に優れた冷却システム"
       ],
       "cons": [
-        "内蔵Bluetoothの接続が不安定で、多くの場合USBドングルが別途必要になる点",
-        "内部へのアクセスや分解・整備が非常に難しく、初心者には推奨できない点",
-        "OSのクリーンインストールなど、特殊な状況下でのソフトウェアサポートが不親切な点",
-        "ハードウェアの癖を理解し、ある程度の自己解決能力が求められる点"
+        "最新世代（Ryzen 8000/9000番台）が登場しているため、最新モデルを追い求める層には向かない",
+        "ACアダプタが約120Wと大きめ"
       ],
-      "score": 85,
-      "scoreRationale": "[基本点: 70]\n[加点: +15] (コストパフォーマンス: クラス最高の性能を考慮すると、価格が非常にリーズナブル)\n[加点: +10] (性能・機能: Ryzen 9 7940HSとRadeon 780Mは、クリエイティブ作業から1080pゲーミングまでこなせる高いポテンシャルを持つ)\n[加点: +5] (独自の強み・先進性: このコンパクトなサイズにUSB4を2ポート搭載し、最大4画面出力に対応する高い拡張性を持つ)\n[減点: -8] (ユーザー満足度: Bluetoothの不安定さ、ドライバーの互換性問題、分解の難しさなど、多くの「癖」があり、PC中級者以上でないとポテンシャルを最大限に引き出すのが難しい)\n[減点: -7] (品質・デザイン: コンパクトさは素晴らしいが、内部へのアクセスの悪さやポート間のノイズ干渉など、設計上の課題が散見される)\n[合計: 85]"
+      "score": 87,
+      "scoreRationale": "[基本点: 70]\n[加点: +5] (Ryzen 9 7940HSとRadeon 780Mによる高い処理性能)\n[加点: +3] (最大4画面のマルチディスプレイ対応力)\n[加点: +6] (デュアルPCIe4.0 M.2スロットなど、ミニPCながら内部拡張性に優れる)\n[加点: +5] (静音性の高さと発熱のコントロールが優秀)\n[減点: -2] (ACアダプタが本体サイズに対してやや大きく取り回しに影響する)\n[合計: 87]"
     },
     "technicalSpecs": {
-      "os": "Windows 11 Pro",
-      "cpu": "AMD Ryzen 9 7940HS (8コア/16スレッド, 最大5.2GHz)",
-      "gpu": "AMD Radeon 780M (12コア, 2800MHz)",
-      "ram": "32GB DDR5-5600 (2スロット, 最大64GBまで換装可能)",
-      "storage": "1TB M.2 2280 NVMe PCIe 4.0 SSD (空きM.2 2280 PCIe 4.0スロット x1)",
-      "display": {
-        "maxResolution": "8K@60Hz (USB4), 4K@120Hz (HDMI)",
-        "multiDisplay": "最大4画面出力"
-      },
-      "ports": {
-        "usb": "USB4 (最大40Gbps, DP1.4) x2, USB 3.2 Gen2 Type-A x4",
-        "video": "HDMI 2.1 x2",
-        "audio": "3.5mm コンボジャック x1",
-        "lan": "2.5G RJ45 LANポート x1"
-      },
-      "connectivity": {
-        "wifi": "Wi-Fi 6E (802.11ax)",
-        "bluetooth": "Bluetooth 5.3"
-      },
       "dimensions": {
-        "height": "54.7mm",
-        "width": "126mm",
-        "depth": "130mm",
-        "weight": "約650g"
+        "width": "130mm",
+        "depth": "126mm",
+        "height": "52mm"
       },
-      "power": "100W GaN 電源アダプター (DC 19V)"
+      "weight": "667g",
+      "capacity": "DDR5 32GB / PCIe 4.0 SSD 1TB",
+      "material": "メタル（外装）",
+      "origin": "中国",
+      "other": [
+        "CPU: AMD Ryzen 9 7940HS (8コア/16スレッド、最大5.2GHz)",
+        "GPU: AMD Radeon 780M",
+        "OS: Windows 11 Pro",
+        "ワイヤレス: Wi-Fi 6E, Bluetooth 5.3",
+        "有線LAN: 2.5Gbps LAN",
+        "映像出力: HDMI (4K@120Hz) ×2, USB4 (8K@60Hz) ×2"
+      ]
     }
   }
 }
