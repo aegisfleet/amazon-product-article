@@ -1,147 +1,165 @@
 {
   "analysis": {
-    "productName": "バッファロー WEX-1166DHPL/N (Wi-Fi 5対応 中継機)",
-    "parentAsin": "B0D2NXKK3X",
-    "productDescription": "家庭内のWi-Fi電波が届きにくいエリアを拡大するための無線LAN中継機。コンセントに直接挿すコンパクトな設計で、ボタン一つで設定が可能なエントリーモデル。",
-    "productUsage": [
-      "Wi-Fiルーターから離れた部屋（寝室や子供部屋）での電波改善",
-      "コンクリート壁などで電波が遮られやすい場所へのWi-Fiエリア拡大",
-      "有線LANポートを利用したテレビやゲーム機の無線化（ただし100Mbps制限あり）",
-      "WPSボタンによるワンタッチ設定で、専門知識不要で導入可能"
-    ],
-    "positivePoints": [
-      "約2,500円という非常に手頃な価格でWi-Fiエリアを拡張できるコストパフォーマンスの高さ。",
-      "コンセントに直挿ししても他の差込口を塞がないコンパクトな設計。",
-      "WPSボタンを押すだけで親機との接続が完了する簡単な初期設定。",
-      "動画視聴やウェブ閲覧など、日常的な利用には十分な通信速度（実測147.79Mbps程度）。"
-    ],
-    "negativePoints": [
-      "複数台（5台以上など）のデバイスを同時接続すると通信速度が大幅に低下する傾向がある。",
-      "最新のWi-Fi 6規格には非対応であり、将来的な拡張性や超高速通信には不向き。",
-      "搭載されている有線LANポートが最大100Mbpsのため、光回線の速度を活かしきれない。",
-      "通信の安定化機能（バンドステアリングやMU-MIMO）が搭載されていない。"
-    ],
-    "useCases": [
-      "Wi-Fiが不安定だった寝室に設置し、就寝前の動画視聴を快適にする。",
-      "テレワーク用の書斎に設置し、Web会議やメール送受信を安定させる。",
-      "子供部屋に設置し、オンライン学習やタブレット利用の通信環境を整える。"
-    ],
+    "productName": "バッファロー WiFi 無線LAN 中継機 WEX-1166DHPL/N",
+    "parentAsin": "B0FG7NDTDF",
+    "productDescription": "コンセント直挿しタイプのWi-Fi 5（11ac）対応無線LAN中継機。コンパクト設計でWi-Fiエリアを手軽に拡大できます。",
+    "productUsage": ["Wi-Fiの電波が届きにくい部屋の通信改善", "有線機器（テレビやゲーム機など）の無線化"],
+    "positivePoints": ["コンセント直挿しで場所を取らないコンパクト設計", "WPS/AOSSボタンによるかんたん設定", "日本メーカーならではの安心サポート"],
+    "negativePoints": ["有線LANポートが100Mbpsまでの対応", "Wi-Fi 6（11ax）には非対応"],
+    "useCases": ["階段の踊り場や廊下に設置し、2階の通信環境を改善", "テレビの裏に設置して、有線LANで接続"],
     "userStories": [
       {
-        "userType": "30代・在宅ワーカー",
-        "scenario": "ルーターから離れた書斎でのオンライン会議中に通信が途切れることが多く、ストレスを感じていた。",
-        "experience": "安価だったためダメ元で購入。コンセントに挿してボタンを押すだけで設定が完了し、驚くほど簡単に導入できた。通信速度は劇的ではないが、Zoom会議が途切れることはなくなり、仕事に集中できるようになった。コスパは最強だと思う。",
+        "userType": "戸建て2階住まい",
+        "scenario": "Wi-Fiが弱くスマホやSwitchの通信が不安定",
+        "experience": "コンセント直挿しで場所を取らず、WPSボタンで設定が数分で終わりました。中継後は2階でも通信が安定するようになり、ゲームや動画視聴が快適になりました。ただし有線LANやWi-Fi規格自体が最新ではないため、爆速を求めるよりは「つながらない場所を安定させる」目的での使用に最適です。",
+        "supportingSourceIds": ["src-review-1"],
         "sentiment": "positive"
-      },
-      {
-        "userType": "大学生・一人暮らし",
-        "scenario": "ワンルームのキッチン付近でWi-Fiが弱く、料理中に動画レシピが見られない。",
-        "experience": "コンパクトで邪魔にならず、狭いキッチン周りでも設置できた。スマホとタブレットくらいしか繋がないので速度も十分。ただ、友人が来て複数人でゲームをしようとしたらラグが発生したため、大人数での利用には向かないと感じた。",
-        "sentiment": "mixed"
       }
     ],
-    "userImpression": "「設定の簡単さ」「コンパクトさ」「安さ」の3点で非常に高い評価を得ている。特に機械が苦手な層や、とりあえずWi-Fiを繋げたいライトユーザーからの支持が厚い。一方で、速度や安定性を重視するユーザーや、多数のデバイスを接続するファミリー層からは、性能不足を指摘する声もあり、用途を割り切って使う製品として認識されている。",
+    "userImpression": "設定が非常に簡単で、電波の弱い部屋での通信が安定したという声が多く、手軽にWi-Fiエリアを拡張できるエントリーモデルとして高い評価を得ています。",
     "sources": [
       {
-        "name": "マイベスト: バッファロー Wi-Fi中継機 WEX-1166DHPLを徹底レビュー！",
-        "url": "https://my-best.com/products/2371066",
-        "credibility": "専門家による実測テストに基づいた詳細な検証結果であり、信頼性は高い。"
+        "id": "src-1",
+        "name": "バッファロー WEX-1166DHPL 公式ページ",
+        "url": "https://www.buffalo.jp/product/detail/wex-1166dhpl.html",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-05-16",
+        "author": "株式会社バッファロー",
+        "conflictOfInterest": "possible",
+        "notes": "製品仕様やアンテナ構造（2x2）、有線LAN規格（100BASE-TX）、寸法等の公式情報"
       },
       {
-        "name": "Amazon商品ページ (B0D2NXKK3X)",
+        "id": "src-review-1",
+        "name": "Amazon カスタマーレビュー",
         "url": "https://www.amazon.co.jp/dp/B0D2NXKK3X",
-        "credibility": "公式の商品仕様およびユーザーレビューの参照元。"
+        "tier": "medium",
+        "evidenceType": "secondary",
+        "publishedAt": "2026-05-16",
+        "author": "Amazon カスタマー",
+        "conflictOfInterest": "none",
+        "notes": "設定の容易さと「安定性改善」に特化した製品特性についてのユーザー評価"
       }
     ],
-    "lastInvestigated": "2026-02-07",
+    "claims": [
+      {
+        "claim": "Wi-Fi 5（11ac）に対応し、最大866Mbps（理論値）の通信が可能",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": ["src-1"],
+        "crossChecked": true,
+        "notes": "公式スペックに基づく"
+      },
+      {
+        "claim": "有線LANポートは100Mbps対応",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": ["src-1"],
+        "crossChecked": true,
+        "notes": "Giga非対応であることが公式仕様で確認可能"
+      }
+    ],
+    "lastInvestigated": "2026-05-16",
     "competitiveAnalysis": [
       {
-        "name": "バッファロー WEX-3000AX4",
+        "name": "バッファロー WEX-1166DHPS/N",
+        "asin": "B084LFPC5R",
+        "priceComparison": "対象商品と同等の価格帯で販売されており、本製品の有線Giga対応版としてコストパフォーマンスがより高い製品です。",
+        "featureComparison": [
+          "共通点：Wi-Fi 5（11ac）866+300Mbpsに対応し、コンセント直挿しのコンパクト筐体。",
+          "相違点：対象商品は有線LANが100Mbps対応ですが、こちらはGiga（1000Mbps）対応です。"
+        ],
+        "differentiators": [
+          "WEX-1166DHPL/Nの利点：機能がシンプルで必要十分な通信速度を提供します。",
+          "WEX-1166DHPS/Nの利点：有線LANがGiga対応のため、テレビやPCを有線接続した際の速度に優れています。"
+        ]
+      },
+      {
+        "name": "TP-Link RE330",
+        "asin": "B08Z3BR6KX",
+        "priceComparison": "対象商品よりやや安価で、付加機能を備えているためコスパに優れています。",
+        "featureComparison": [
+          "共通点：Wi-Fi 5対応で、最大867+300Mbpsの通信速度。",
+          "相違点：TP-Link独自の「OneMesh」機能に対応し、対応ルーターとメッシュWi-Fiを構築できます。"
+        ],
+        "differentiators": [
+          "WEX-1166DHPL/Nの利点：国内メーカー製品としての設定の分かりやすさやサポートの安心感があります。",
+          "TP-Link RE330の利点：OneMesh対応環境であれば、シームレスな通信環境の構築が可能です。"
+        ]
+      },
+      {
+        "name": "エレコム WTC-C1167GC-B",
+        "asin": "B08R6TDXVD",
+        "priceComparison": "対象商品よりやや高価ですが、特定の用途に向けた独自機能を持っています。",
+        "featureComparison": [
+          "共通点：Wi-Fi 5（11ac）対応でコンセント直挿し設計。",
+          "相違点：屋外利用可能な電波帯域を使用する「離れ家モード」を搭載しています。"
+        ],
+        "differentiators": [
+          "WEX-1166DHPL/Nの利点：屋内利用に特化し、シンプルで安価に導入できます。",
+          "エレコム WTC-C1167GC-Bの利点：母屋と離れ家など、屋外を挟んだ通信環境での法令順守と安定通信に適しています。"
+        ]
+      },
+      {
+        "name": "TP-Link RE450",
+        "asin": "B01M04UQT1",
+        "priceComparison": "対象商品より高価ですが、より上位の通信性能を持ちます。",
+        "featureComparison": [
+          "共通点：コンセント直挿し設計のWi-Fi中継機。",
+          "相違点：Wi-Fi 5対応ながら、より高速な1300+450Mbpsに対応し、アンテナが外部に露出しています。"
+        ],
+        "differentiators": [
+          "WEX-1166DHPL/Nの利点：アンテナ内蔵でスッキリしたデザインと低価格。",
+          "TP-Link RE450の利点：広範囲をカバーでき、より高速な通信が可能です。"
+        ]
+      },
+      {
+        "name": "バッファロー WEX-3000AX4/N",
         "asin": "B0DJVBC15T",
-        "priceComparison": "約7,200円。本商品の約3倍の価格。",
+        "priceComparison": "対象商品より大幅に高価ですが、次世代規格に対応しています。",
         "featureComparison": [
-          "Wi-Fi 6対応で、通信速度と同時接続性能が大幅に向上。",
-          "有線LANポートもギガビット対応しており、高速通信が可能。"
+          "共通点：バッファロー製のコンセント直挿し中継機。",
+          "相違点：Wi-Fi 6（11ax）に対応し、EasyMesh機能を有しています。"
         ],
         "differentiators": [
-          "予算があるなら間違いなくこちらを選ぶべき高性能モデル。",
-          "将来的な拡張性や複数人での利用を考えるなら本商品より優れている。"
+          "WEX-1166DHPL/Nの利点：Wi-Fi 5環境での安価な通信改善に最適です。",
+          "WEX-3000AX4/Nの利点：親機がWi-Fi 6対応の場合、最新の規格で高速・多台数接続が可能です。"
         ]
       },
       {
-        "name": "TP-Link RE600X/A",
-        "asin": "B09GRW7C2M",
-        "priceComparison": "約5,300円。本商品の約2倍の価格。",
+        "name": "TP-Link TL-WA850RE",
+        "asin": "B01GNP5UY6",
+        "priceComparison": "対象商品よりさらに安価なエントリーモデルです。",
         "featureComparison": [
-          "Wi-Fi 6対応のエントリー〜ミドルレンジモデル。",
-          "OneMesh対応ルーターと組み合わせればメッシュWi-Fi環境を構築可能。"
+          "共通点：コンパクトなコンセント直挿しタイプ。",
+          "相違点：本製品はWi-Fi 4（11n）のみの対応で、通信速度が最大300Mbpsに制限されます。"
         ],
         "differentiators": [
-          "性能と価格のバランスが良い。本商品では物足りないが、ハイエンドまでは不要という層に最適。",
-          "薄型デザインで設置場所を選ばない。"
-        ]
-      },
-      {
-        "name": "TP-Link Archer Air E5",
-        "asin": "B0CCXSF6CJ",
-        "priceComparison": "約9,000円。本商品の約3.5倍の価格。",
-        "featureComparison": [
-          "厚さ8mmという極薄デザインで、インテリアに溶け込む。",
-          "Wi-Fi 6対応で性能も高いが、有線LANポートは非搭載。"
-        ],
-        "differentiators": [
-          "デザイン性を最優先するユーザー向け。",
-          "有線接続が不要であれば、非常にスタイリッシュな選択肢。"
+          "WEX-1166DHPL/Nの利点：Wi-Fi 5対応により、高速かつ混信の少ない5GHz帯が利用可能です。",
+          "TP-Link TL-WA850REの利点：とにかく初期費用を抑えてWi-Fiエリアを拡張したい場合に適しています。"
         ]
       }
     ],
     "recommendation": {
-      "targetUsers": [
-        "とにかく安く、手軽にWi-Fiの死角を解消したい一人暮らしやライトユーザー",
-        "ネットワーク機器の設定に自信がなく、ボタン一つで済ませたい初心者",
-        "スマホでの動画視聴やウェブ閲覧がメインで、高速な通信を必要としない人"
-      ],
-      "pros": [
-        "約2,500円という圧倒的な安さとコストパフォーマンス",
-        "他社製品と比較しても非常に簡単な初期設定（WPSボタン）",
-        "コンセントを塞がないコンパクトな筐体デザイン"
-      ],
-      "cons": [
-        "複数台接続時の速度低下が著しく、家族全員での利用には不向き",
-        "有線LANポートが100Mbpsまでのため、光回線の速度を活かせない",
-        "Wi-Fi 5規格のため、将来的なデバイス更新に対応しきれない可能性がある"
-      ],
-      "score": 82,
-      "scoreRationale": "[基本点: 70]\n[加点: +12] (2,500円という価格は競合と比較しても圧倒的に安く、導入障壁が非常に低い)\n[加点: +5] (設定の容易さとコンパクトさは、ターゲット層のニーズに完璧に合致しており満足度が高い)\n[減点: -8] (Wi-Fi 5規格であること、LANポートが100Mbpsであること、複数台接続時の速度低下は明確な性能不足)\n[加点: +3] (コンセントの干渉を防ぐデザイン上の配慮)\n[合計: 82]"
+      "targetUsers": ["手軽にWi-Fiの届く範囲を広げたい人", "設定の簡単さを重視する人"],
+      "pros": ["コンセントに挿すだけの簡単設置", "日本の住宅事情に配慮したコンパクト設計", "WPSによるワンタッチ接続"],
+      "cons": ["有線LANは100Mbpsまで", "Wi-Fi 6の高速通信には非対応"],
+      "score": 75,
+      "scoreRationale": "[基本点: 70]\n[加点: +5] (コンパクト設計で上のコンセントを塞がない使い勝手)\n[加点: +5] (WPS/AOSSによるかんたん設定)\n[減点: -5] (有線LANポートがGiga非対応であり、同社同価格帯の製品より有線スペックが劣る)\n[合計: 75]"
     },
     "technicalSpecs": {
-      "wifiStandard": "Wi-Fi 5 (IEEE 802.11ac/n/a/g/b)",
-      "transferSpeed": {
-        "value": "866 + 300",
-        "unit": "Mbps"
-      },
-      "frequencyBands": ["5GHz", "2.4GHz"],
-      "antennas": {
-        "type": "内蔵アンテナ",
-        "count": "5GHz帯:2本, 2.4GHz帯:2本"
-      },
-      "lanPort": {
-        "type": "RJ-45",
-        "count": 1,
-        "speed": "100Mbps"
-      },
-      "dimensions": {
-        "width": "65mm",
-        "height": "95mm",
-        "depth": "40mm",
-        "weight": "約138g"
-      },
-      "power": {
-        "consumption": "最大7.1W",
-        "supply": "AC100V 50/60Hz"
-      },
-      "security": ["WPA2-PSK(AES)", "WPA-PSK(AES)", "WPA/WPA2 mixed PSK(AES/TKIP)", "WEP(128/64bit)"],
-      "other": ["WPSボタン搭載", "RoHS指令準拠", "コンセント直挿し"]
+      "dimensions": { "height": "95mm", "width": "65mm", "depth": "40mm" },
+      "weight": "122g",
+      "capacity": "",
+      "material": "プラスチック",
+      "origin": "未記載",
+      "other": [
+        "無線LAN規格: IEEE802.11ac / 11n / 11a / 11g / 11b",
+        "データ転送速度: 866Mbps（11ac）、300Mbps（11n）",
+        "アンテナ: 5GHz 2本、2.4GHz 2本 (内蔵)",
+        "有線LAN規格: IEEE802.3u（100BASE-TX）、IEEE802.3（10BASE-T）",
+        "最大消費電力: 6.6W"
+      ]
     }
   }
 }
