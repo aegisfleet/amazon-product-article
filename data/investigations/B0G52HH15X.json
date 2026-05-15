@@ -1,0 +1,184 @@
+{
+  "analysis": {
+    "productName": "NiPoGi ミニpc Ryzen 7 7730U",
+    "parentAsin": "B0G52HH15X",
+    "productDescription": "AMD Ryzen 7 7730Uプロセッサーを搭載した、16GBメモリ、512GB SSD内蔵のコンパクトなミニPC。",
+    "productUsage": [
+      "オフィス用途",
+      "在宅ワーク",
+      "オンライン授業",
+      "動画編集",
+      "4K動画ストリーミング"
+    ],
+    "positivePoints": [
+      "Ryzen 7 7730U搭載で処理能力が高く、複数タブや4K動画でも安定動作",
+      "Wi-Fi 6、Bluetooth 5.2、有線LAN対応で高速・安定した通信が可能",
+      "最大64GBメモリ、最大4TB SSDへの拡張スロットを備えており将来性がある",
+      "12.8x 12.8x 4.13cm、560gの小型軽量設計でVESAマウント対応",
+      "3画面出力(Type-C, DP, HDMI)に対応し作業効率が高い"
+    ],
+    "negativePoints": [
+      "SSD増設時に分解するための底面ゴム足の粘着テープが外しにくい場合がある",
+      "SSD固定用ネジの溝が浅めでなめやすい可能性がある"
+    ],
+    "useCases": [
+      "自宅でのテレワークや文書作成",
+      "自宅サーバー用途",
+      "リビングでのメディア視聴",
+      "マルチディスプレイ環境でのプログラミングや動画編集"
+    ],
+    "userStories": [
+      {
+        "userType": "自宅サーバー構築ユーザー",
+        "scenario": "自宅用の物理サーバーとして使用",
+        "experience": "内蔵SSDの増設に成功しました。脚の部分が粘着テープになっており、そこを外すと分解できます。SSDを止めるネジの溝が浅く精密ドライバーが合わずに苦戦しましたが、プライヤーを使って回しました。SSDはすぐに認識され、価格に対する満足度が非常に高いです。",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "sentiment": "positive"
+      }
+    ],
+    "userImpression": "総じて処理速度が高く、通信の安定性や拡張性など実用性に優れたミニPCとして評価されています。分解時に一部苦戦する点もありますが、価格に見合った満足度を提供しています。",
+    "sources": [
+      {
+        "id": "src-1",
+        "name": "Amazon.co.jp カスタマーレビュー",
+        "url": "https://www.amazon.co.jp/dp/B0G52HH15X",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-05-15",
+        "author": "Amazon カスタマー",
+        "conflictOfInterest": "none",
+        "notes": "SSD増設時の体験と満足度"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "最大64GBメモリ、最大4TB SSDに拡張可能",
+        "category": "durability",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "crossChecked": true,
+        "notes": "公式スペックおよびユーザーの増設成功報告"
+      }
+    ],
+    "lastInvestigated": "2026-05-15",
+    "competitiveAnalysis": [
+      {
+        "name": "GMKtec Nucbox M5 Ultra",
+        "asin": "B0FX1ZT1F3",
+        "priceComparison": "対象商品よりもやや高価格だが、有線LANが2.5Gに対応しているなど上位仕様",
+        "featureComparison": [
+          "共通点：AMD Ryzen 7 7730U搭載、DDR4メモリ、NVMe SSDサポート、Wi-Fi 6、3画面出力対応",
+          "相違点：GMKtec M5 Ultraは2.5G有線LANポートを搭載し、より高速な有線ネットワーク環境を構築可能"
+        ],
+        "differentiators": [
+          "NiPoGi ミニpcの利点：価格が抑えられており、基本的なオフィス作業や動画視聴においてコストパフォーマンスに優れる",
+          "GMKtec Nucbox M5 Ultraの利点：2.5Gbps対応の有線LANポートがあり、より高速なLAN環境を求めるユーザーに適している"
+        ]
+      },
+      {
+        "name": "ACEMAGIC PC-2025新型",
+        "asin": "B0FPCHS8L5",
+        "priceComparison": "対象商品よりも高価なため、ノートPCとしての携帯性が不要であれば対象商品のほうがコストパフォーマンスが高い",
+        "featureComparison": [
+          "共通点：AMD Ryzen 7 7730U搭載、16GBメモリ、512GB SSD",
+          "相違点：ACEMAGICは15.6インチのノートPCであり、ディスプレイやキーボード、バッテリーを内蔵している"
+        ],
+        "differentiators": [
+          "NiPoGi ミニpcの利点：据え置き用途で既存のモニターやキーボードを活用でき、省スペース・低価格で導入可能",
+          "ACEMAGIC PC-2025新型の利点：持ち運びが可能で、オールインワンで利用できるため外出先での使用に適している"
+        ]
+      },
+      {
+        "name": "GMKtec M5 Ultra 32GB+1TB",
+        "asin": "B0GDGHZ9LN",
+        "priceComparison": "対象商品よりも高価だが、メモリとストレージ容量が倍増している",
+        "featureComparison": [
+          "共通点：AMD Ryzen 7 7730U搭載",
+          "相違点：メモリが32GB、SSDが1TBと大容量化されており、重い作業や大量のデータ保存に対応"
+        ],
+        "differentiators": [
+          "NiPoGi ミニpcの利点：初期費用を抑えて導入でき、必要に応じて後から自身で増設可能",
+          "GMKtec M5 Ultra 32GB+1TBの利点：最初から大容量メモリとストレージを搭載しており、増設の手間なく快適に利用できる"
+        ]
+      },
+      {
+        "name": "NiPoGi E3B 32GB+512GB",
+        "asin": "B0DJQHPGZY",
+        "priceComparison": "対象商品よりやや高価だが、メモリが32GB搭載されている",
+        "featureComparison": [
+          "共通点：NiPoGiブランドの同型番(E3B)筐体、Ryzen 7 7730U搭載、インターフェース類",
+          "相違点：標準搭載メモリが16GBから32GBに増量されている"
+        ],
+        "differentiators": [
+          "NiPoGi ミニpcの利点：メモリ16GBで十分な用途であれば、より低価格で購入できる",
+          "NiPoGi E3B 32GB+512GBの利点：メモリを多く消費するアプリケーションを多用する場合、初期状態から余裕を持って動作する"
+        ]
+      },
+      {
+        "name": "AIOPCWA ミニPC AI301",
+        "asin": "B0CWXL9SJX",
+        "priceComparison": "対象商品よりも安いが、OS、メモリ、SSDが非搭載のベアボーンキット",
+        "featureComparison": [
+          "共通点：Ryzen 7 7730U搭載、コンパクト設計",
+          "相違点：AIOPCWAはファンレス仕様で、メモリ・SSD・OSが別売り（ベアボーン）。2つのLANポートを搭載"
+        ],
+        "differentiators": [
+          "NiPoGi ミニpcの利点：OS、メモリ、SSDが組み込み済みで、購入後すぐに使用開始できる",
+          "AIOPCWA ミニPC AI301の利点：完全な無音動作が可能であり、余っているパーツを再利用できる自作PC経験者向け"
+        ]
+      },
+      {
+        "name": "ノートパソコン Ryzen 7 7730U",
+        "asin": "B0FP98XCKZ",
+        "priceComparison": "対象商品よりも大幅に高価だが、ノートPCかつ32GBメモリ/1TB SSD搭載",
+        "featureComparison": [
+          "共通点：Ryzen 7 7730U搭載",
+          "相違点：15.6インチIPS液晶、バッテリー搭載のノートPCであり、メモリ32GB/SSD1TBと大容量"
+        ],
+        "differentiators": [
+          "NiPoGi ミニpcの利点：据え置きのデスクワーク中心で、既存の周辺機器を活かす場合はコストを低く抑えられる",
+          "ノートパソコン Ryzen 7 7730Uの利点：場所を選ばず作業が可能で、初めから大容量のスペックを求めるユーザーに最適"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "省スペースなデスクトップ環境を構築したい人",
+        "手頃な価格で高性能なPCを探している人",
+        "将来的にメモリやストレージを拡張したい人"
+      ],
+      "pros": [
+        "高性能なRyzen 7 7730U搭載",
+        "メモリ・ストレージの拡張性が高い",
+        "3画面同時出力に対応"
+      ],
+      "cons": [
+        "分解時にゴム足を剥がす必要があり、ネジの溝が浅い場合がある"
+      ],
+      "score": 83,
+      "scoreRationale": "[基本点: 70]\n[加点: +5] (Ryzen 7 7730Uによる優れた処理性能)\n[加点: +5] (最大64GBメモリ/4TB SSDまでの高い拡張性)\n[加点: +5] (5万円台の価格設定による高いコストパフォーマンス)\n[減点: -2] (内部アクセスのための分解手順とネジ品質の懸念)\n[合計: 83]"
+    },
+    "technicalSpecs": {
+      "dimensions": {
+        "width": "128mm",
+        "height": "41.3mm",
+        "depth": "128mm"
+      },
+      "weight": "560g",
+      "capacity": "16GB RAM, 512GB SSD",
+      "material": "アルミニウム(冷却モジュール一部)",
+      "origin": "不明",
+      "other": [
+        "CPU: AMD Ryzen 7 7730U (8コア16スレッド、最大4.5GHz)",
+        "OS: Windows 11 Pro",
+        "通信: Wi-Fi 6, Bluetooth 5.2, 10/100/1000Mbps RJ45イーサネット",
+        "インターフェース: USB 3.2 Gen 2x2 (Type-C, 10Gbps, DP1.4, PD出力), USB 3.2 Gen 1 x 4, DP 1.4b x 1, HDMI 2.0 x 1, 3.5mmオーディオジャック",
+        "付属品: VESAマウント対応"
+      ]
+    }
+  }
+}
