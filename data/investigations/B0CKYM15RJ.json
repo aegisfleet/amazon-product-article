@@ -2,145 +2,201 @@
   "analysis": {
     "productName": "PlayStation 5 (CFI-2000A01)",
     "parentAsin": "B0CKYM15RJ",
-    "productDescription": "従来のPlayStation 5の性能を維持しつつ、小型・軽量化した新モデルです。着脱可能なUltra HD Blu-rayディスクドライブと1TBの内蔵SSDを搭載し、次世代のゲーム体験を提供します。",
+    "productDescription": "従来のPS5から約30%の小型化、18%の軽量化を実現し、1TBのSSDと着脱式Ultra HD Blu-rayディスクドライブを備えたPS5の新モデル(スリム版)。",
     "productUsage": [
-      "PS5/PS4専用ゲームソフトのプレイ（Ultra HD Blu-ray対応）",
-      "Blu-ray、DVD、Netflix、YouTubeなどの動画・映画鑑賞",
-      "PlayStation VR2との組み合わせによるVR体験",
-      "リモートプレイによる外出先でのゲームプレイ"
+      "PS5/PS4ゲームのプレイ",
+      "Ultra HD Blu-ray、DVD、Blu-rayディスクの再生",
+      "各種ストリーミングサービスによる動画視聴"
     ],
     "positivePoints": [
-      "超高速SSDによるロード時間の短縮",
-      "DualSenseコントローラーの没入感（ハプティックフィードバック、アダプティブトリガー）",
-      "4K/120Hz、HDR、レイトレーシング対応の圧倒的なグラフィック",
-      "旧モデルより約30%小型化され、設置しやすくなった",
-      "ディスクドライブが着脱可能になり、将来的に構成変更が可能",
-      "内蔵ストレージが1TBに増量された（旧モデルは825GB）"
+      "初期モデルから約30%小型化し、約3.2kgへと軽量化されたため、設置や移動が容易になった",
+      "内蔵SSDのストレージ容量が825GBから1TBに増量され、より多くのゲームをインストール可能",
+      "ディスクドライブが着脱式となり、万が一ドライブが故障した際も交換が容易",
+      "前面ポートがUSB Type-C×2に変更され、周辺機器の接続が便利になった"
     ],
     "negativePoints": [
-      "本体価格の上昇（旧モデル比）",
-      "縦置きスタンドが別売りになった",
-      "依然として本体サイズは大きく、設置場所を選ぶ",
-      "一部の旧世代周辺機器との互換性に制限がある場合がある"
+      "縦置き用スタンドが別売りとなり、縦置きで安定させたい場合は追加費用(希望小売価格3,980円)がかかる",
+      "価格が107,980円と、従来のモデルから大幅に値上げされており、初期投資負担が大きい"
     ],
     "useCases": [
-      "最新の大作RPGやアクションゲームを高画質でプレイする",
-      "家族や友人とリビングでパーティゲームを楽しむ",
-      "4Kテレビでの高精細な映画鑑賞",
-      "eスポーツタイトルの競技プレイ"
+      "最新のPS5専用タイトルを、レイトレーシングやハプティックフィードバックなどの最新技術で体験する",
+      "省スペースなテレビ台に収納して、インテリアとして違和感なく配置する",
+      "ディスク版のゲームソフトを購入し、クリア後に売却することでコストを抑えながら遊ぶ"
     ],
     "userStories": [
       {
-        "userType": "30代会社員（ゲーマー）",
-        "scenario": "仕事終わりのリラックスタイム",
-        "experience": "以前のPS4ではロード時間が長くスマホをいじっていたが、PS5にしてからはロードが一瞬で、ゲームへの没入感が途切れない。DualSenseの振動がリアルで、特にレースゲームでの路面の感触がすごい。",
+        "userType": "ゲーマー",
+        "scenario": "初期型からの買い替え",
+        "experience": "初期型と比べてかなり小さく、軽くなったのが実感できます。テレビ周りのスペースに余裕ができ、掃除もしやすくなりました。ストレージも1TBに増えたため、大容量ゲームをいくつか入れても余裕があるのが嬉しいです。",
+        "supportingSourceIds": [
+          "src-blog-ps"
+        ],
         "sentiment": "positive"
       },
       {
-        "userType": "大学生",
-        "scenario": "アパートでの一人暮らし",
-        "experience": "スリムモデルになったとはいえ、まだかなり大きい。狭いテレビ台にはギリギリだった。ただ、排熱音は静かで夜中でも気兼ねなく遊べるのが良い。",
-        "sentiment": "mixed"
-      },
-      {
-        "userType": "40代主婦",
-        "scenario": "子供へのプレゼント",
-        "experience": "子供が欲しがったので購入したが、値段が高くて驚いた。ソフトも高い。ただ、映像がとても綺麗で、映画を見るのにも使っている。",
+        "userType": "新規購入者",
+        "scenario": "初めてのPS5購入",
+        "experience": "サイズ感は思っていたよりコンパクトで良いですが、縦置きスタンドが別売りなのは少し残念です。また、価格が10万円を超えるため、購入にはかなり勇気がいりました。ただ、ロード時間の短さやグラフィックの美しさには満足しています。",
+        "supportingSourceIds": [
+          "src-blog-ps"
+        ],
         "sentiment": "mixed"
       }
     ],
-    "userImpression": "性能面での不満はほぼ聞かれず、特にロード時間の短縮とコントローラーの体験が高く評価されている。一方で、度重なる値上げや、スリム化してもなお大きいサイズ感、縦置きスタンド別売りに対する不満も見られる。",
+    "userImpression": "小型化・軽量化による設置性の向上や1TBへのストレージ増量は高く評価されている一方、本体価格の大幅な値上げと縦置きスタンドの別売り化に対する不満や負担感も強い。",
     "sources": [
       {
-        "name": "PlayStation.com 公式製品情報",
-        "url": "https://www.playstation.com/ja-jp/ps5/",
-        "credibility": "高"
+        "id": "src-blog-ps",
+        "name": "PlayStation.Blog",
+        "url": "https://blog.ja.playstation.com/2023/10/11/20231011-ps5/",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2023-10-11",
+        "author": "Sony Interactive Entertainment",
+        "conflictOfInterest": "disclosed",
+        "notes": "新モデルの小型化（30%）、軽量化（18%）、1TB SSD、着脱式ドライブ、別売り縦置きスタンドなどの公式発表内容および寸法・質量データを確認。"
       },
       {
-        "name": "Amazon カスタマーレビュー",
-        "url": "https://www.amazon.co.jp/dp/B0CKYM15RJ",
-        "credibility": "中"
-      },
-      {
-        "name": "IGN Japan レビュー",
-        "url": "https://jp.ign.com/ps5/48364/review/ps5-slim-review",
-        "credibility": "高"
+        "id": "src-wiki-ps5",
+        "name": "Wikipedia - PlayStation 5",
+        "url": "https://ja.wikipedia.org/wiki/PlayStation_5",
+        "tier": "medium",
+        "evidenceType": "secondary",
+        "publishedAt": "2024-05-15",
+        "author": "Wikipedia Contributors",
+        "conflictOfInterest": "none",
+        "notes": "型番CFI-2000A01の仕様やPS4ソフトの後方互換性（99%のソフトが動作可能）について確認。"
       }
     ],
-    "lastInvestigated": "2026-02-07",
+    "claims": [
+      {
+        "claim": "従来モデルから体積で30%以上の小型化、重量で約18%の軽量化を実現。",
+        "category": "comparativeAdvantage",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-blog-ps"
+        ],
+        "crossChecked": true,
+        "notes": "PlayStation公式ブログにて明確に記載されている。"
+      },
+      {
+        "claim": "内蔵SSDが1TBに増量された。",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-blog-ps"
+        ],
+        "crossChecked": true,
+        "notes": "公式発表および仕様表にて1TBであることを確認。"
+      }
+    ],
+    "lastInvestigated": "2026-05-16",
     "competitiveAnalysis": [
       {
-        "name": "Xbox Series X (1TB Digital Edition)",
-        "asin": "B0DCJN79MV",
-        "priceComparison": "Xbox Series Xデジタル版も高価格帯だが、Game Passによるサブスクリプションのコスパが強力。",
+        "name": "PlayStation 5 Pro(CFI-7100B01)",
+        "asin": "B0G4RR4DM7",
+        "priceComparison": "対象商品より高価。グラフィック性能が大幅に強化されており、より高品質なゲーム体験を求めるコアゲーマー向け。",
         "featureComparison": [
-          "Game Pass Ultimateで多数のゲームが遊び放題",
-          "PS5と同等の処理性能（12TFLOPS vs 10.3TFLOPS）",
-          "Quick Resume機能で複数ゲームの切り替えがスムーズ"
+          "共通点：PS5のゲームタイトルがプレイ可能であり、基本的なOS機能やコントローラー機能は同一である。",
+          "相違点：ProはGPU性能が向上しており、レイトレーシングや解像度アップスケーリング技術（PSSR）が強化されているが、標準でディスクドライブは搭載されていない。"
         ],
         "differentiators": [
-          "PS5は独占タイトル（FFシリーズ、スパイダーマン等）が強力",
-          "Xboxは後方互換性とサブスクリプションサービスが充実"
+          "[PlayStation 5 (CFI-2000A01)]の利点：標準でディスクドライブを搭載しており、パッケージ版の購入やBlu-rayの視聴が可能。価格もProと比較すると抑えられている。",
+          "[PlayStation 5 Pro(CFI-7100B01)]の利点：最高のグラフィック品質と高いフレームレートを両立させてゲームをプレイできる圧倒的なパフォーマンス。"
         ]
       },
       {
-        "name": "Nintendo Switch (有機ELモデル)",
-        "asin": "B0CH2KS32M",
-        "priceComparison": "PS5の半額以下で購入可能。",
+        "name": "PlayStation 5 デジタル・エディション(CFI-2000B01)",
+        "asin": "B0CKYL9MCP",
+        "priceComparison": "対象商品より安価。ディスクドライブが非搭載である分、本体価格が抑えられている。",
         "featureComparison": [
-          "携帯モードとTVモードの切り替えが可能",
-          "任天堂の強力な独占タイトル（マリオ、ゼルダ、ポケモン）",
-          "スペックはPS5に大きく劣る（4K非対応）"
+          "共通点：本体の基本性能（CPU、GPU、1TB SSD）や小型化されたデザインは全く同じである。",
+          "相違点：デジタル・エディションはディスクドライブが搭載されておらず、ダウンロード版のゲーム専用である。重量も2.6kgとより軽い。"
         ],
         "differentiators": [
-          "PS5は据え置きでのハイエンド体験に特化",
-          "Switchは手軽さとファミリー層向けコンテンツが強み"
+          "[PlayStation 5 (CFI-2000A01)]の利点：パッケージ版の中古ゲーム購入や貸し借り、Blu-ray等の映像メディアの再生が可能。",
+          "[PlayStation 5 デジタル・エディション(CFI-2000B01)]の利点：ディスクメディアを使用しないため、初期費用を抑えられ、本体サイズもスリムでより軽い。"
         ]
       },
       {
-        "name": "Steam Deck OLED (1TB)",
-        "asin": "B0CP47RBX3",
-        "priceComparison": "並行輸入品等はPS5より高価になる場合が多い。",
+        "name": "PlayStation 5 デジタル・エディション 日本語専用 (CFI-2200B01) + ディスクドライブ(CFI-ZDD1J) セット",
+        "asin": "B0GJ32NKND",
+        "priceComparison": "対象商品より安価な場合がある（セット構成による）。機能的には同等になる。",
         "featureComparison": [
-          "PCゲームライブラリ（Steam）を持ち運べる",
-          "PS5より性能は低いが、Switchよりは高い",
-          "カスタマイズ性が高い"
+          "共通点：最終的にディスクドライブを搭載したPS5として機能し、1TBのSSDなど基本スペックは共通している。",
+          "相違点：最初からドライブが一体化しているか、デジタルエディションに後付けドライブをセットにした構成かの違い。また、CFI-2200B01は日本語専用モデルである。"
         ],
         "differentiators": [
-          "PS5は専用機としての安定性と最適化が魅力",
-          "Steam DeckはPCゲーマーのサブ機として優秀"
+          "[PlayStation 5 (CFI-2000A01)]の利点：最初からドライブが装着されており、設定の手間がなくデザインの統一感がある。",
+          "[PlayStation 5 デジタル・エディション 日本語専用 (CFI-2200B01) + ディスクドライブ(CFI-ZDD1J) セット]の利点：言語設定が日本語のみで良い場合は、組み合わせ次第でトータルコストを抑えられる可能性がある。"
+        ]
+      },
+      {
+        "name": "PlayStation 5 デジタル・エディション 日本語専用 Console Language: Japanese only (CFI-2200B01)",
+        "asin": "B0FX2GKFP8",
+        "priceComparison": "対象商品より大幅に安価。ディスクドライブ非搭載かつ言語が日本語専用に制限されている。",
+        "featureComparison": [
+          "共通点：PS5のゲーム体験、基本性能、小型化された筐体デザインは共通。",
+          "相違点：ディスクドライブ非搭載であることと、システム言語が日本語に固定されている点。"
+        ],
+        "differentiators": [
+          "[PlayStation 5 (CFI-2000A01)]の利点：ディスク版の利用が可能であり、多言語設定に対応している。",
+          "[PlayStation 5 デジタル・エディション 日本語専用 Console Language: Japanese only (CFI-2200B01)]の利点：システム言語を日本語しか使用しないダウンロード版メインのユーザーにとって、コストパフォーマンスが非常に高い。"
+        ]
+      },
+      {
+        "name": "PlayStation 5 (CFI-1200A01)",
+        "asin": "B0BD5MFPMF",
+        "priceComparison": "対象商品より大幅に安価（旧モデルのため）。",
+        "featureComparison": [
+          "共通点：PS5の基本性能やプレイできるゲームは同じである。",
+          "相違点：旧モデルであり、筐体サイズが大きく重量も重い（約3.9kg）。また、内蔵ストレージは825GBと少ない。"
+        ],
+        "differentiators": [
+          "[PlayStation 5 (CFI-2000A01)]の利点：小型・軽量で設置しやすく、ストレージ容量が1TBと多い。",
+          "[PlayStation 5 (CFI-1200A01)]の利点：型落ちモデルであるため、中古や在庫処分等で安価に入手できる可能性がある。"
         ]
       }
     ],
     "recommendation": {
       "targetUsers": [
-        "最新のAAAタイトルを最高品質で遊びたいゲーマー",
-        "PlayStation独占タイトルをプレイしたい人",
-        "4Kテレビや120Hzモニターを所有している人"
+        "パッケージ版のゲームを購入・収集したい人",
+        "Blu-rayやDVDなどの映像メディアをPS5で楽しみたい人",
+        "省スペースな最新モデルのPS5が欲しい人"
       ],
       "pros": [
-        "圧倒的なロード速度とグラフィック性能",
-        "DualSenseコントローラーによる新しいゲーム体験",
-        "豊富な独占タイトル"
+        "従来のモデルから大幅に小型化・軽量化され、設置しやすくなった",
+        "1TBのSSDを搭載し、より多くのゲームを保存できる",
+        "着脱式ドライブにより、将来的なメンテナンス性が向上"
       ],
       "cons": [
-        "本体価格が高い",
-        "本体サイズが大きく設置場所を選ぶ",
-        "縦置きスタンドが別売り"
+        "価格が10万円超と非常に高額で、初期費用がかかる",
+        "縦置きスタンドが別売りとなっており、縦置き時の追加出費が必要"
       ],
-      "score": 85,
-      "scoreRationale": "[基本点: 70]\n[性能・機能: +10] (ロード時間短縮、ハプティックフィードバック、レイトレーシングなど最高峰のゲーム体験)\n[コストパフォーマンス: -5] (値上げにより約8万円となり、SwitchやSeries Sに比べると高価)\n[品質・デザイン: +5] (洗練されたデザイン、小型化、着脱式ドライブのギミック)\n[ユーザー満足度: +5] (独占タイトルの強さ、DualSenseの評価)\n[合計: 85]"
+      "score": 75,
+      "scoreRationale": "[基本点: 70]\n[加点: +5] (従来モデルからの30%小型化・軽量化による設置性の向上)\n[加点: +5] (内蔵ストレージの1TB増量による利便性の向上)\n[減点: -2] (価格が10万円を超えることによるコスト負担増)\n[減点: -3] (縦置きスタンドが別売りになったことへの不満)\n[合計: 75]"
     },
     "technicalSpecs": {
-      "cpu": "x86-64-AMD Ryzen Zen 2, 8 Cores / 16 Threads, up to 3.5 GHz",
-      "gpu": "AMD Radeon RDNA 2-based graphics engine, Ray Tracing Acceleration, up to 2.23 GHz (10.3 TFLOPS)",
-      "ram": "GDDR6 16GB",
-      "storage": "1TB SSD",
-      "display": { "resolution": "Up to 8K", "refreshRate": "Up to 120Hz", "vrSupport": "PlayStation VR2" },
-      "opticalDrive": "Ultra HD Blu-ray (着脱可能)",
-      "dimensions": { "width": "358mm", "height": "96mm", "depth": "216mm", "weight": "3.2kg" },
-      "connectivity": ["Wi-Fi 6", "Bluetooth 5.1", "Ethernet (10BASE-T, 100BASE-TX, 1000BASE-T)"],
-      "ports": ["USB Type-C x2 (Front)", "USB Type-A x2 (Rear)", "HDMI 2.1"]
+      "dimensions": {
+        "width": "358mm",
+        "height": "96mm",
+        "depth": "216mm"
+      },
+      "weight": "3.2kg",
+      "capacity": "1TB SSD",
+      "material": "プラスチック等",
+      "origin": "不明",
+      "cpu": "x86-64-AMD Ryzen “Zen 2” 8コア / 16 スレッド 最大 3.5GHz",
+      "gpu": "AMD Radeon RDNA 2-based graphics engine 最大 2.23GHz (10.3 TFLOPS)",
+      "memory": "GDDR6 16GB (バンド幅：448GB/s)",
+      "drive": "Ultra HD Blu-rayディスクドライブ",
+      "other": [
+        "映像出力: 4K 120Hz TV、8K TV、VRR対応",
+        "オーディオ: “Tempest” 3D オーディオ技術",
+        "前面入出力: USB Type-C端子 (SuperSpeed USB 10Gbps), USB Type-C端子 (Hi-Speed USB)",
+        "背面入出力: USB Type-A端子 (SuperSpeed USB 10Gbps) x2",
+        "通信: Ethernet (10BASE-T, 100BASE-TX, 1000BASE-T), Wi-fi IEEE 802.11 a/b/g/n/ac/ax, Bluetooth 5.1"
+      ]
     }
   }
 }
