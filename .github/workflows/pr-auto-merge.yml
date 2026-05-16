@@ -17,8 +17,6 @@ jobs:
 
     steps:
     - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
-      with:
-        fetch-depth: 0
 
     - name: Install pnpm
       uses: pnpm/action-setup@0e279bb959325dab635dd2c09392533439d90093 # v6.0.8
@@ -40,7 +38,13 @@ jobs:
       env:
         AMAZON_PARTNER_TAG: ${{ secrets.AMAZON_PARTNER_TAG }}
       run: |
-        git fetch origin ${{ github.base_ref }}
+        # ベースブランチをフェッチ。履歴が足りない場合は unshallow する
+        git fetch origin ${{ github.base_ref }} --depth=1 || git fetch origin ${{ github.base_ref }}
+        
+        if ! git merge-base origin/${{ github.base_ref }} HEAD > /dev/null 2>&1; then
+          echo "Common ancestor not found, fetching more history..."
+          git fetch --unshallow || git fetch --prune
+        fi
         
         # Check for investigation changes
         INVESTIGATION_FILES=$(git diff --name-only origin/${{ github.base_ref }} HEAD -- 'data/investigations/*.json' | tr '\n' ' ')
