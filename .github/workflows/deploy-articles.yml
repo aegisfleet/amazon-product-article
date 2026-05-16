@@ -67,38 +67,8 @@ jobs:
     - name: Commit build artifacts
       if: always()
       run: |
-        git config --global user.name "github-actions[bot]"
-        git config --global user.email "github-actions[bot]@users.noreply.github.com"
-        git add data/cache/paapi-product-cache.json
-        # 変更がある場合のみコミット
-        if ! git diff --staged --quiet; then
-          git commit -m "ビルド成果物の更新 [skip ci]"
-          # プッシュに失敗した場合（競合など）、リベースして再試行
-          for i in 1 2 3; do
-            if git push; then
-              echo "Push succeeded on attempt $i"
-              break
-            else
-              echo "Push failed on attempt $i, pulling with rebase and retrying..."
-              # シャロークローンの場合は履歴を取得する必要がある
-              if [ "$(git rev-parse --is-shallow-repository)" = "true" ]; then
-                echo "Repository is shallow, fetching more history..."
-                git fetch --unshallow || git fetch --prune
-              fi
-              # --autostash を使用して、未ステージングの変更があってもリベース可能にする
-              if git pull --rebase --autostash origin main; then
-                if [ $i -eq 3 ]; then
-                  echo "Push failed after 3 attempts"
-                  exit 1
-                fi
-              else
-                echo "Rebase failed, aborting..."
-                git rebase --abort || true
-                exit 1
-              fi
-            fi
-          done
-        fi
+        chmod +x .github/workflows/scripts/git-commit-push.sh
+        ./.github/workflows/scripts/git-commit-push.sh "ビルド成果物の更新 [skip ci]" "data/cache/paapi-product-cache.json"
 
     - name: Build site with Hugo
       run: hugo --minify
