@@ -28,13 +28,13 @@ jobs:
       contents: write
       pages: write
       id-token: write
-    
+
     steps:
     - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
       with:
         fetch-depth: 0
         lfs: true
-    
+
     - name: Sync with latest main
       run: |
         git config --global user.name "github-actions[bot]"
@@ -50,13 +50,13 @@ jobs:
       with:
         node-version: '22'
         cache: 'pnpm'
-    
+
     - name: Install dependencies
       run: pnpm install --frozen-lockfile --ignore-scripts
-    
+
     - name: Build project
       run: pnpm run build
-    
+
     - name: Generate articles
       env:
         AMAZON_PARTNER_TAG: ${{ secrets.AMAZON_PARTNER_TAG }}
@@ -64,17 +64,16 @@ jobs:
         AMAZON_CREATORS_CREDENTIAL_ID: ${{ secrets.AMAZON_CREATORS_CREDENTIAL_ID }}
         AMAZON_CREATORS_CREDENTIAL_SECRET: ${{ secrets.AMAZON_CREATORS_CREDENTIAL_SECRET }}
       run: pnpm run generate:articles
-    
-    
+
     - name: Setup Hugo
       uses: peaceiris/actions-hugo@2752ce1d29631191ea3f27c23495fa06139a5b78 # v3.2.1
       with:
         hugo-version: 'latest'
         extended: true
-    
+
     - name: Prepare static data
       run: pnpm run prebuild:hugo
-    
+
     - name: Commit build artifacts
       if: always()
       run: |
@@ -105,13 +104,13 @@ jobs:
             fi
           done
         fi
-    
+
     - name: Build site with Hugo
       run: hugo --minify
-    
+
     - name: Setup Pages
       uses: actions/configure-pages@45bfe0192ca1faeb007ade9deae92b16b8254a0d # v6.0.0
-    
+
     - name: Upload artifact
       uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9 # v5.0.0
       with:
@@ -126,7 +125,7 @@ jobs:
     permissions:
       pages: write
       id-token: write
-    
+
     steps:
     - name: Deploy to GitHub Pages
       id: deployment
