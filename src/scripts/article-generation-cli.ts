@@ -67,8 +67,9 @@ async function commitAndPushChanges(message: string): Promise<void> {
         pushSuccess = true;
         logger.info(`Successfully pushed on attempt ${attempt}`);
         break;
-      } catch (_error) {
-        logger.warn(`Push attempt ${attempt} failed, retrying with rebase...`);
+      } catch (error) {
+        const errorMessage = error instanceof Error ? error.message : String(error);
+        logger.warn(`Push attempt ${attempt} failed: ${errorMessage}. Retrying with rebase...`);
         try {
           await execFileAsync('git', ['pull', '--rebase', '--autostash', 'origin', 'main']);
         } catch (rebaseError) {
