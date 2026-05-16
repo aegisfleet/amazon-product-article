@@ -554,10 +554,11 @@ ${infoRows.join('\n')}
           }
         };
 
-        const tierLabel: Record<'high' | 'medium' | 'low', string> = {
+        const tierLabel: Record<'high' | 'medium' | 'low' | 'primary', string> = {
           high: '高',
           medium: '中',
           low: '低',
+          primary: '高',
         };
         const evidenceTypeLabel: Record<'primary' | 'secondary', string> = {
           primary: '一次情報',

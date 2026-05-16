@@ -23,7 +23,7 @@ export const InvestigationFileSchema = z.looseObject({
       z.object({
         name: z.string().trim(),
         url: z.string().trim().nullable().optional(),
-        tier: z.enum(['high', 'medium', 'low']).optional(),
+        tier: z.enum(['high', 'medium', 'low', 'primary']).optional(),
         evidenceType: z.enum(['primary', 'secondary']).optional(),
         publishedAt: z.string().trim().optional(),
         author: z.string().trim().optional(),
