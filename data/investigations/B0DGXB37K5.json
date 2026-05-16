@@ -1,0 +1,182 @@
+{
+  "analysis": {
+    "productName": "Lenovo Chromebook Duet 11 Gen 9",
+    "parentAsin": "B0DGXB37K5",
+    "productDescription": "MediaTek Kompanio 838プロセッサーを搭載した10.95インチの2-in-1 Chromebook。キーボードとスタンドカバーが付属し、タブレットとしてもノートPCとしても利用可能。",
+    "productUsage": [
+      "Webブラウジングや動画視聴などの日常的な用途",
+      "キーボードを取り外してタブレットとしての利用",
+      "軽量なドキュメント作成や教育・学習用途"
+    ],
+    "positivePoints": [
+      "MediaTek Kompanio 838を搭載しており、ChromeOSでの動作がスムーズ",
+      "メモリ8GBを搭載し、マルチタスクや多数のタブを開いてのブラウジングに強い",
+      "キーボードとスタンドを含めても約1kg（タブレット単体で約510g）と軽量で持ち運びに便利"
+    ],
+    "negativePoints": [
+      "本格的な動画編集や重い処理を伴うPCゲームには向かない",
+      "10.95インチの画面サイズは、長時間の細かい作業にはやや小さく感じる場合がある"
+    ],
+    "useCases": [
+      "自宅のリビングや外出先での動画視聴、電子書籍閲覧",
+      "カフェや出張先でのメール返信や軽作業",
+      "オンライン授業や学習アプリの利用"
+    ],
+    "userStories": [],
+    "userImpression": "最新のMediaTek Kompanio 838プロセッサーと8GBメモリを搭載することで、従来のエントリークラスのChromebookと比べて明確なレスポンスの向上が期待できる。キーボードカバーを含めても約1kgと軽量であり、持ち運びやすさと実用性を高い次元で両立した2-in-1デバイスとしての評価が高い。",
+    "sources": [
+      {
+        "id": "src-1",
+        "name": "価格.com - Lenovo Chromebook Duet Gen 9",
+        "url": "https://kakaku.com/item/K0001661609/spec/",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2024-10-25",
+        "author": "価格.com",
+        "conflictOfInterest": "none",
+        "notes": "基本スペック（画面解像度1920x1200、重量、寸法、バッテリー駆動時間）の確認"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "キーボード・カバー装着時の重量が約1kgで持ち運びに適している",
+        "category": "comparativeAdvantage",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "crossChecked": true,
+        "notes": "Amazonの重量スペック（約1.0kg）とも一致"
+      },
+      {
+        "claim": "1920x1200の高解像度IPS液晶を搭載している",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "crossChecked": true,
+        "notes": "Kakakuスペック表で確認"
+      }
+    ],
+    "lastInvestigated": "2026-05-16",
+    "competitiveAnalysis": [
+      {
+        "name": "ASUS Chromebook Detachable CM30",
+        "asin": "B086ZTPCC5",
+        "priceComparison": "対象商品と同等の2-in-1タイプだが、対象商品の方が性能が高い分価格も上回る傾向にある",
+        "featureComparison": [
+          "共通点：キーボードを着脱可能な10インチクラスの2-in-1 Chromebookである点",
+          "相違点：対象商品はKompanio 838を搭載し解像度も高いが、CM30はKompanio 520で解像度がWUXGAに満たない"
+        ],
+        "differentiators": [
+          "Lenovo Chromebook Duet 11の利点：より高い処理性能と高解像度ディスプレイによる快適な作業環境",
+          "ASUS Chromebook Detachable CM30の利点：価格が手頃で、より軽量な本体設計"
+        ]
+      },
+      {
+        "name": "Lenovo IdeaPad Flex 3i Gen8",
+        "asin": "B0CCV3Q5V3",
+        "priceComparison": "対象商品よりも安価だが、メモリ容量とストレージが半分（4GB/64GB）である",
+        "featureComparison": [
+          "共通点：ChromeOSを搭載し、タッチ操作に対応している点",
+          "相違点：対象商品はキーボード着脱式の2-in-1だが、Flex 3iは360度回転ヒンジを採用したコンバーチブル型である"
+        ],
+        "differentiators": [
+          "Lenovo Chromebook Duet 11の利点：メモリ8GB搭載によるマルチタスク性能の高さと、タブレット単体での軽さ",
+          "Lenovo IdeaPad Flex 3i Gen8の利点：膝の上でタイピングする際の安定性と、安価な価格設定"
+        ]
+      },
+      {
+        "name": "Lenovo 300e Yoga",
+        "asin": "B0GSP7WLBL",
+        "priceComparison": "対象商品より大幅に安価だが、エントリー向けスペックに留まる",
+        "featureComparison": [
+          "共通点：教育現場等でも使われる堅牢性やタッチ対応機能を持つ点",
+          "相違点：対象商品はKompanio 838と8GBメモリを搭載するが、300e YogaはKompanio 528と4GBメモリである"
+        ],
+        "differentiators": [
+          "Lenovo Chromebook Duet 11の利点：高いCPU性能と広いメモリによる滑らかな動作",
+          "Lenovo 300e Yogaの利点：低予算での導入が可能であり、堅牢性に特化している点"
+        ]
+      },
+      {
+        "name": "Lenovo 14e Chromebook Gen 3",
+        "asin": "B0FV7W4K1Z",
+        "priceComparison": "対象商品より安価に購入できることが多いが、整備済み品としての流通が主である",
+        "featureComparison": [
+          "共通点：ChromeOSを搭載したノートPCである点",
+          "相違点：対象商品は10.95インチの2-in-1だが、14e Gen 3は14インチのクラムシェル型である"
+        ],
+        "differentiators": [
+          "Lenovo Chromebook Duet 11の利点：タブレットとしても使える柔軟性と携帯性の高さ",
+          "Lenovo 14e Chromebook Gen 3の利点：14インチの大画面による据え置き利用での快適さ"
+        ]
+      },
+      {
+        "name": "ASUS CX34 Chromebook Plus",
+        "asin": "B0GF7DZCT9",
+        "priceComparison": "対象商品と同程度の価格帯かやや高価で、Chromebook Plus基準を満たす高性能モデル",
+        "featureComparison": [
+          "共通点：8GBのメモリと128GBのストレージを搭載し、快適なChromeOS体験を提供する点",
+          "相違点：対象商品がコンパクトな2-in-1であるのに対し、CX34はCore 3プロセッサーを搭載した14インチの大型クラムシェルモデルである"
+        ],
+        "differentiators": [
+          "Lenovo Chromebook Duet 11の利点：持ち運びに優れた約1kgの軽さと、タブレットとしての機動力",
+          "ASUS CX34 Chromebook Plusの利点：Core 3による非常に高い処理性能と、14インチの広々とした画面"
+        ]
+      },
+      {
+        "name": "ASUS Chromebook CX1405CTA",
+        "asin": "B09BVSSC1Y",
+        "priceComparison": "対象商品よりも安価だが、プロセッサ性能とストレージ容量で劣る",
+        "featureComparison": [
+          "共通点：8GBのメモリを搭載している点",
+          "相違点：対象商品はARM系プロセッサ（MediaTek）で2-in-1だが、CX1405CTAはIntel N50搭載の14インチクラムシェル型である"
+        ],
+        "differentiators": [
+          "Lenovo Chromebook Duet 11の利点：長時間のバッテリー駆動と携帯性に優れ、ペン入力も可能な柔軟さ",
+          "ASUS Chromebook CX1405CTAの利点：14インチの大画面を持ちつつ、手頃な価格で8GBメモリを確保できる点"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "外出先やカフェ等に頻繁に持ち運ぶ軽量なPCを探している人",
+        "Androidアプリやブラウザゲーム、動画視聴を快適に楽しみたい人",
+        "タブレットとしてもノートPCとしても使いたい柔軟性を求める人"
+      ],
+      "pros": [
+        "実用的な処理性能を持つKompanio 838と8GBメモリの組み合わせ",
+        "キーボード装着時でも約1kgという優れた携帯性",
+        "高解像度（1920x1200）で視認性の高いIPSディスプレイ"
+      ],
+      "cons": [
+        "膝の上などでタイピングする際は、クラムシェル型（通常のノートPC）より安定感に欠ける",
+        "WindowsやMac向けの専用ソフトウェアは動作しない"
+      ],
+      "score": 83,
+      "scoreRationale": "[基本点: 70]\n[加点: +5] (Kompanio 838と8GBメモリによるChromeOS端末として十分な処理性能)\n[加点: +4] (キーボード込みで約1kgという優れた携帯性)\n[加点: +4] (1920x1200の高解像度IPSディスプレイを搭載し視認性が高い)\n[加点: +2] (タブレットとしてもPCとしても使える2-in-1の利便性)\n[減点: -2] (2-in-1特有の膝上でのタイピングのしにくさ)\n[合計: 83]"
+    },
+    "technicalSpecs": {
+      "dimensions": {
+        "width": "255.37mm",
+        "height": "166.92mm",
+        "depth": "7.6mm"
+      },
+      "weight": "1000g",
+      "capacity": "128GB",
+      "material": "プラスチック・金属等の複合素材",
+      "origin": "中国",
+      "other": [
+        "OS: Chrome OS",
+        "CPU: MediaTek Kompanio 838",
+        "Memory: 8GB",
+        "Display: 27.8cm IPS (1920x1200)",
+        "Interfaces: USB Type-C x2",
+        "Wireless: Wi-Fi 6, Bluetooth 5.3",
+        "Battery life: 約12時間"
+      ]
+    }
+  }
+}
