@@ -30,64 +30,6 @@ const execFileAsync = promisify(execFile);
 
 const logger = Logger.getInstance();
 
-/**
- * Gitの変更をコミットしてプッシュする（GitHub Actions環境用）
- */
-async function commitAndPushChanges(message: string): Promise<void> {
-  if (!process.env.GITHUB_ACTIONS) {
-    logger.info('Not in GitHub Actions environment, skipping intermediate git commit/push');
-    return;
-  }
-
-  try {
-    logger.info(`Intermediate commit and push: ${message}`);
-    
-    // Configure git
-    await execFileAsync('git', ['config', '--global', 'user.name', 'github-actions[bot]']);
-    await execFileAsync('git', ['config', '--global', 'user.email', 'github-actions[bot]@users.noreply.github.com']);
-    
-    // Add all changes
-    await execFileAsync('git', ['add', '.']);
-    
-    // Check for changes
-    const { stdout: status } = await execFileAsync('git', ['status', '--porcelain']);
-    if (!status.trim()) {
-      logger.info('No changes to commit');
-      return;
-    }
-
-    // Commit
-    await execFileAsync('git', ['commit', '-m', `${message} [skip ci]`]);
-    
-    // Push with retry/rebase
-    let pushSuccess = false;
-    for (let attempt = 1; attempt <= 3; attempt++) {
-      try {
-        await execFileAsync('git', ['push', 'origin', 'main']);
-        pushSuccess = true;
-        logger.info(`Successfully pushed on attempt ${attempt}`);
-        break;
-      } catch (error) {
-        const errorMessage = error instanceof Error ? error.message : String(error);
-        logger.warn(`Push attempt ${attempt} failed: ${errorMessage}. Retrying with rebase...`);
-        try {
-          await execFileAsync('git', ['pull', '--rebase', '--autostash', 'origin', 'main']);
-        } catch (rebaseError) {
-          logger.error('Git rebase failed:', rebaseError);
-          await execFileAsync('git', ['rebase', '--abort']).catch(() => {});
-          break;
-        }
-      }
-    }
-    
-    if (!pushSuccess) {
-      logger.error('Failed to push changes after multiple attempts');
-    }
-  } catch (error) {
-    logger.error('Error during intermediate commit/push:', error);
-  }
-}
-
 // Load environment variables
 dotenv.config();
 
@@ -434,11 +376,6 @@ async function fetchAsinsInBatches(
       if (i + chunkSize < missingAsins.length) {
         await new Promise((resolve) => setTimeout(resolve, 2000));
       }
-
-      // Commit every 10 batches (100 items)
-      if ((Math.floor(i / chunkSize) + 1) % 10 === 0) {
-        await commitAndPushChanges(`商品情報のバッチ取得進捗: ${i + chunk.length}/${missingAsins.length}`);
-      }
     } catch (error) {
       logger.warn(`Failed to fetch batch starting with ${chunk[0]}:`, error);
     }
@@ -558,11 +495,6 @@ async function processArticles(
       } catch (error) {
         logger.error(`Failed to commit article for ${data.product.asin}:`, error);
       }
-    }
-
-    // Commit every 10 batches (100 articles)
-    if ((Math.floor(i / chunkSize) + 1) % 10 === 0) {
-      await commitAndPushChanges(`記事生成進捗: ${i + chunk.length}/${investigations.length}`);
     }
   }
 
