@@ -31,15 +31,6 @@ jobs:
 
     steps:
     - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
-      with:
-        fetch-depth: 0
-
-    - name: Sync with latest main
-      run: |
-        git config --global user.name "github-actions[bot]"
-        git config --global user.email "github-actions[bot]@users.noreply.github.com"
-        git checkout -B main
-        git pull --rebase origin main
 
     - name: Install pnpm
       uses: pnpm/action-setup@0e279bb959325dab635dd2c09392533439d90093 # v6.0.8
@@ -89,6 +80,11 @@ jobs:
               break
             else
               echo "Push failed on attempt $i, pulling with rebase and retrying..."
+              # シャロークローンの場合は履歴を取得する必要がある
+              if [ "$(git rev-parse --is-shallow-repository)" = "true" ]; then
+                echo "Repository is shallow, fetching more history..."
+                git fetch --unshallow || git fetch --prune
+              fi
               # --autostash を使用して、未ステージングの変更があってもリベース可能にする
               if git pull --rebase --autostash origin main; then
                 if [ $i -eq 3 ]; then
