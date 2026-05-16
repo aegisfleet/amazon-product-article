@@ -206,7 +206,7 @@ ${specs}
         "id": "src-1",
         "name": "記事タイトル/サイト名",
         "url": "URL",
-        "tier": "high | medium | low",
+        "tier": "high | medium | low (※重要: primary ではなく、必ずこの3つのいずれかから選択)",
         "evidenceType": "primary | secondary",
         "publishedAt": "YYYY-MM-DD",
         "author": "執筆主体",
