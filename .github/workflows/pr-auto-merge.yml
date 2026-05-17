@@ -7,7 +7,6 @@ on:
 jobs:
   auto-merge:
     # JulesボットまたはJules関連のユーザーからのPRのみ処理
-    # JulesボットまたはJules関連のユーザーからのPRのみ処理
     if: github.actor == 'jules[bot]' || contains(github.actor, 'jules') || github.actor == 'aegisfleet' # zizmor: ignore[bot-conditions]
     runs-on: ubuntu-latest
 
