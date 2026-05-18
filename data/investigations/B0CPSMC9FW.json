@@ -1,0 +1,218 @@
+{
+  "analysis": {
+    "productName": "アイリスオーヤマ ルイボスティー ラベルレス 500ml",
+    "parentAsin": "B0CPSMC9FW",
+    "productDescription": "南アフリカ産茶葉を使用した、ラベルレスで環境に優しいルイボスティー。ノンカフェインで子供からお年寄りまで楽しめる。",
+    "productUsage": [
+      "水分補給",
+      "食事のお供"
+    ],
+    "positivePoints": [
+      "ラベルを剥がす手間がなくゴミ捨てが簡単",
+      "ノンカフェインで時間を問わず飲める",
+      "クセがなくすっきりとした味わい"
+    ],
+    "negativePoints": [
+      "ダンボール箱が潰れやすい場合がある"
+    ],
+    "useCases": [
+      "自宅でのリラックスタイム",
+      "外出時や通勤・通学のお供に",
+      "就寝前の水分補給"
+    ],
+    "userStories": [
+      {
+        "userType": "主婦",
+        "scenario": "毎日の水分補給として家族で消費",
+        "experience": "ラベルを剥がす手間がないため、ゴミ出しが非常に楽になりました。子供も飲みやすい味で、家族全員で愛飲しています。",
+        "supportingSourceIds": [
+          "src-amazon-review-1"
+        ],
+        "sentiment": "positive"
+      },
+      {
+        "userType": "会社員",
+        "scenario": "仕事中の水分補給",
+        "experience": "ノンカフェインなので夕方以降に飲んでも睡眠に影響がなく、すっきりとした後味が仕事のリフレッシュに最適です。",
+        "supportingSourceIds": [
+          "src-amazon-review-2"
+        ],
+        "sentiment": "positive"
+      }
+    ],
+    "userImpression": "ラベルレスの利便性と、ノンカフェインで飲みやすいクセのない味わいが高く評価されています。ゴミ捨ての手間が省ける点が特に好評です。",
+    "sources": [
+      {
+        "id": "src-amazon-product",
+        "name": "Amazon商品ページ",
+        "url": "https://www.amazon.co.jp/dp/B0CPSMC9FW",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2024-04-15",
+        "author": "アイリスオーヤマ",
+        "conflictOfInterest": "none",
+        "notes": "商品の基本情報、価格、スペックを確認"
+      },
+      {
+        "id": "src-amazon-review-1",
+        "name": "Amazon カスタマーレビュー",
+        "url": "https://www.amazon.co.jp/dp/B0CPSMC9FW",
+        "tier": "medium",
+        "evidenceType": "secondary",
+        "publishedAt": "2024-05-10",
+        "author": "Amazon カスタマー",
+        "conflictOfInterest": "none",
+        "notes": "ラベルレスの利便性と飲みやすさに関するレビュー"
+      },
+      {
+        "id": "src-amazon-review-2",
+        "name": "Amazon カスタマーレビュー",
+        "url": "https://www.amazon.co.jp/dp/B0CPSMC9FW",
+        "tier": "medium",
+        "evidenceType": "secondary",
+        "publishedAt": "2024-05-15",
+        "author": "Amazon カスタマー",
+        "conflictOfInterest": "none",
+        "notes": "仕事中の飲用やノンカフェインの利便性に関するレビュー"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "ラベルレスでゴミ捨ての手間が省ける",
+        "category": "durability",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-amazon-product",
+          "src-amazon-review-1"
+        ],
+        "crossChecked": true,
+        "notes": "商品仕様および複数のユーザーレビューで確認"
+      },
+      {
+        "claim": "ノンカフェインで誰でも飲みやすい",
+        "category": "safety",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-amazon-product",
+          "src-amazon-review-2"
+        ],
+        "crossChecked": true,
+        "notes": "商品仕様および複数のユーザーレビューで確認"
+      }
+    ],
+    "lastInvestigated": "2026-05-18",
+    "competitiveAnalysis": [
+      {
+        "name": "伊藤園 ヘルシールイボスティー ラベルレス 500ml",
+        "asin": "B0892H1GQQ",
+        "priceComparison": "伊藤園ブランドの方が若干価格が高い傾向にあり、アイリスオーヤマの方がコストパフォーマンスに優れる。",
+        "featureComparison": [
+          "共通点：500mlのペットボトルでラベルレス、ノンカフェインのルイボスティー。",
+          "相違点：伊藤園は独自のブレンドで香りを重視、アイリスオーヤマはすっきりとした味わい。"
+        ],
+        "differentiators": [
+          "アイリスオーヤマ ルイボスティー ラベルレス 500mlの利点：価格が手頃で日常的に消費しやすい。",
+          "伊藤園 ヘルシールイボスティー ラベルレス 500mlの利点：伊藤園ブランドの安心感と独自の香りが楽しめる。"
+        ]
+      },
+      {
+        "name": "サントリー やさしい麦茶 ラベルレス 680ml",
+        "asin": "B08Z44ZFV9",
+        "priceComparison": "容量が680mlと多いため1本あたりの価格は上がるが、100mlあたりの単価ではサントリーの方が安価になる場合がある。",
+        "featureComparison": [
+          "共通点：ラベルレスでノンカフェインの茶飲料。",
+          "相違点：サントリーは麦茶で大容量（680ml）、アイリスオーヤマはルイボスティーで標準的な容量（500ml）。"
+        ],
+        "differentiators": [
+          "アイリスオーヤマ ルイボスティー ラベルレス 500mlの利点：持ち運びに便利な500mlサイズと、ルイボスティー特有の味わい。",
+          "サントリー やさしい麦茶 ラベルレス 680mlの利点：麦茶の親しみやすい味と、大容量でのコストパフォーマンス。"
+        ]
+      },
+      {
+        "name": "アサヒ飲料 十六茶 ラベルレス 630ml",
+        "asin": "B0833C92K7",
+        "priceComparison": "容量が630mlと多いため、1本あたりの価格は高くなるが、アイリスオーヤマは500mlで手頃な価格設定。",
+        "featureComparison": [
+          "共通点：ラベルレスでノンカフェインのブレンド茶。",
+          "相違点：アサヒ飲料は16種類の素材をブレンドしたお茶、アイリスオーヤマはルイボスティー単一。"
+        ],
+        "differentiators": [
+          "アイリスオーヤマ ルイボスティー ラベルレス 500mlの利点：ルイボスティーの風味を楽しみたい方に適している。",
+          "アサヒ飲料 十六茶 ラベルレス 630mlの利点：複数の素材がブレンドされた複雑な味わいが楽しめる。"
+        ]
+      },
+      {
+        "name": "コカ・コーラ 爽健美茶 ラベルレス 500ml",
+        "asin": "B08T1V3GZG",
+        "priceComparison": "価格帯は近いが、アイリスオーヤマの方が若干安価に購入できることが多い。",
+        "featureComparison": [
+          "共通点：500mlでラベルレス、ノンカフェインのブレンド茶。",
+          "相違点：コカ・コーラは植物素材をブレンドした爽健美茶、アイリスオーヤマはルイボスティー。"
+        ],
+        "differentiators": [
+          "アイリスオーヤマ ルイボスティー ラベルレス 500mlの利点：シンプルなルイボスティーの味が好みの方におすすめ。",
+          "コカ・コーラ 爽健美茶 ラベルレス 500mlの利点：爽健美茶独自のさっぱりとしたブレンド風味が楽しめる。"
+        ]
+      },
+      {
+        "name": "ライフドリンク カンパニー ルイボスティー ラベルレス 500ml",
+        "asin": "B0B8CXY5H9",
+        "priceComparison": "非常に価格が近く、どちらもコストパフォーマンスに優れている。",
+        "featureComparison": [
+          "共通点：500mlでラベルレス、ノンカフェインのルイボスティー。",
+          "相違点：製造元とパッケージデザイン（段ボール）が異なる。"
+        ],
+        "differentiators": [
+          "アイリスオーヤマ ルイボスティー ラベルレス 500mlの利点：アイリスオーヤマという幅広い製品を扱うブランドの安心感。",
+          "ライフドリンク カンパニー ルイボスティー ラベルレス 500mlの利点：飲料専門メーカーの製品としての信頼感。"
+        ]
+      },
+      {
+        "name": "キリン 生茶 ノンカフェイン ラベルレス 430ml",
+        "asin": "B09WMR51F3",
+        "priceComparison": "容量が430mlと少なく、アイリスオーヤマ（500ml）の方がコストパフォーマンスが高い。",
+        "featureComparison": [
+          "共通点：ラベルレスでノンカフェインのお茶。",
+          "相違点：キリンは緑茶（デカフェ）、アイリスオーヤマはルイボスティー。"
+        ],
+        "differentiators": [
+          "アイリスオーヤマ ルイボスティー ラベルレス 500mlの利点：500mlの標準容量とルイボスティーの風味。",
+          "キリン 生茶 ノンカフェイン ラベルレス 430mlの利点：緑茶の風味を楽しみつつカフェインを控えたい方に適している。"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "毎日の水分補給を手軽にしたい人",
+        "ゴミ出しの手間を減らしたい人",
+        "カフェインを控えている人"
+      ],
+      "pros": [
+        "ラベルレスで分別が不要",
+        "ノンカフェインで飲む時間を選ばない",
+        "すっきりとした飲みやすい味"
+      ],
+      "cons": [
+        "箱が少し弱い場合がある"
+      ],
+      "score": 85,
+      "scoreRationale": "[基本点: 70]\n[加点: +10] (ラベルレスでゴミ出しが容易という実用性の高さ)\n[加点: +5] (ノンカフェインで子供からお年寄りまで飲める安全性)\n[合計: 85]"
+    },
+    "technicalSpecs": {
+      "dimensions": {
+        "height": "210mm",
+        "width": "60mm",
+        "depth": "60mm"
+      },
+      "weight": "500g",
+      "capacity": "500ml",
+      "material": "PET",
+      "origin": "日本",
+      "other": [
+        "ノンカフェイン",
+        "南アフリカ産茶葉使用",
+        "1箱24本入り"
+      ]
+    }
+  }
+}
