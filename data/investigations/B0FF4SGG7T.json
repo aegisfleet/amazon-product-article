@@ -1,0 +1,126 @@
+{
+  "analysis": {
+    "productName": "ISKALT 洗濯機台 4足4輪モデル",
+    "parentAsin": "B0FF4SGG7T",
+    "productDescription": "洗濯機や冷蔵庫の設置・移動を容易にする、4足4輪キャスター付きのかさ上げ台（防水パン）。幅・奥行が42～68cm、高さが10～13cmの範囲で調節可能で、最大500kgの耐荷重を誇る。",
+    "productUsage": ["洗濯機のかさ上げと移動", "冷蔵庫のかさ上げと移動", "食器棚やエアコン室外機などの土台", "床掃除や排水口の手入れ時の家電移動"],
+    "positivePoints": ["耐荷重500kgによる安定性", "幅・奥行き42～68cm、高さ10～13cmの柔軟なサイズ調整", "半完成品のため、パイルを入れてロックするだけの簡単な組み立て", "4輪キャスター付きで360度移動でき、掃除やメンテナンスが容易", "防振パッド付きで脱水時の振動や騒音を低減"],
+    "negativePoints": ["設置時のバランス調整が不十分だと、稼働中に揺れや異音が発生する可能性がある", "キャスターのロックを確実にかけないと、運転時に移動してしまう危険がある"],
+    "useCases": ["ドラム式洗濯機の設置による床面掃除スペースの確保", "排水トラップの点検や掃除を定期的に行いたい場合", "重い冷蔵庫を移動させて床掃除をしたい時"],
+    "userStories": [],
+    "userImpression": "組み立てが非常に簡単で、頑丈さも期待できるという印象。半完成品での配送により、面倒なネジ留めが不要な点が特に評価でき、耐荷重が500kgあるため、大型のドラム式洗濯機や冷蔵庫でも安心して使用できるという見方が大勢を占める。ただし、使用時のバランス調整が重要となる。",
+    "sources": [
+      {
+        "id": "src-1",
+        "name": "Amazon商品ページ",
+        "url": "https://www.amazon.co.jp/dp/B0FF4SGG7T",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-05-18",
+        "author": "ISKALT",
+        "conflictOfInterest": "none",
+        "notes": "商品の公式仕様（耐荷重500kg、4足4輪、幅・奥行の調整幅、高さなど）を確認"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "耐荷重500kg",
+        "category": "durability",
+        "confidence": "high",
+        "supportingSourceIds": ["src-1"],
+        "crossChecked": false,
+        "notes": "商品名に明記されている。"
+      },
+      {
+        "claim": "幅・奥行42～68cm、高さ10～13cmで調節可能",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": ["src-1"],
+        "crossChecked": false,
+        "notes": "商品仕様に明記されている。"
+      },
+      {
+        "claim": "半完成品で組み立て時間が約30秒",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": ["src-1"],
+        "crossChecked": false,
+        "notes": "商品説明で「面倒なネジ締め作業不要」「商品到着後30秒で組み立て完成」と主張されている。"
+      }
+    ],
+    "lastInvestigated": "2026-05-18",
+    "competitiveAnalysis": [
+      {
+        "name": "Bexeze 洗濯機 台 8足4輪",
+        "asin": "B088DB6S4M",
+        "priceComparison": "ISKALTより若干安価。",
+        "featureComparison": [
+          "共通点：幅・奥行きの調節が可能で、キャスター付きの移動式。",
+          "相違点：ISKALTが4足4輪（耐荷重500kg）であるのに対し、Bexezeは8足4輪（耐荷重500kg）。"
+        ],
+        "differentiators": [
+          "ISKALT 洗濯機台 4足4輪モデルの利点：半完成品で組み立てが極めて簡単。",
+          "Bexeze 洗濯機 台 8足4輪の利点：8本足による接地点の多さで、面での安定感に優れる可能性がある。"
+        ]
+      },
+      {
+        "name": "Huaniun 洗濯機 台 8足4輪",
+        "asin": "B0CS3716XL",
+        "priceComparison": "ISKALTよりわずかに安価。",
+        "featureComparison": [
+          "共通点：サイズ調節機能とキャスターによる移動機能を持つ。",
+          "相違点：ISKALTが4足4輪であるのに対し、Huaniunは8足4輪（耐荷重500kg）。"
+        ],
+        "differentiators": [
+          "ISKALT 洗濯機台 4足4輪モデルの利点：組み立ての容易さ。",
+          "Huaniun 洗濯機 台 8足4輪の利点：8つのジャッキで支えることによる安定性。"
+        ]
+      },
+      {
+        "name": "DEWEL 洗濯機 台 8輪4足",
+        "asin": "B0DHCXYHYY",
+        "priceComparison": "ISKALTよりやや高価。",
+        "featureComparison": [
+          "共通点：キャスター付きの洗濯機・冷蔵庫置き台。",
+          "相違点：DEWELは8輪4足仕様で、高度調節が14.3～14.5cmとやや高めの設定。"
+        ],
+        "differentiators": [
+          "ISKALT 洗濯機台 4足4輪モデルの利点：コストパフォーマンスに優れ、高さ10～13cmと一般的なかさ上げに丁度良いサイズ感。",
+          "DEWEL 洗濯機 台 8輪4足の利点：キャスターが8輪（ダブルホイール）となっており、よりスムーズな移動が期待できる。"
+        ]
+      },
+      {
+        "name": "FOCHIER F 洗濯機 台 8足4輪",
+        "asin": "B0GKCLMM5X",
+        "priceComparison": "ISKALTよりかなり安価。",
+        "featureComparison": [
+          "共通点：キャスターとジャッキを備えたサイズ調節可能な台。",
+          "相違点：ISKALTは4足4輪（耐荷重500kg）、FOCHIER Fは8足4輪（耐荷重500kg）。"
+        ],
+        "differentiators": [
+          "ISKALT 洗濯機台 4足4輪モデルの利点：面倒なネジ締め不要の半完成品である点。",
+          "FOCHIER F 洗濯機 台 8足4輪の利点：価格が安く、コストを重視する場合に選択肢となる。"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": ["ドラム式洗濯機などの重い家電を設置する人", "定期的に洗濯機や冷蔵庫の下を掃除したい人", "組み立て作業が苦手で、簡単に設置できる台を探している人"],
+      "pros": ["耐荷重500kgの安心感", "半完成品で組み立てが非常に簡単", "キャスター付きで移動・掃除が楽"],
+      "cons": ["設置時の水平出しやジャッキの調整を怠ると振動が大きくなる恐れがある"],
+      "score": 78,
+      "scoreRationale": "[基本点: 70]\n[加点: +5] (半完成品で組み立てが極めて容易である点)\n[加点: +3] (キャスターとジャッキの両方を備え実用性が高い)\n[合計: 78]"
+    },
+    "technicalSpecs": {
+      "dimensions": {
+        "height": "100mm～130mm",
+        "width": "420mm～680mm",
+        "depth": "420mm～680mm"
+      },
+      "weight": "不明",
+      "capacity": "耐荷重500kg",
+      "material": "ステンレス鋼、ABS樹脂",
+      "color": "ホワイト",
+      "other": ["4足4輪キャスター付き", "防振パッド付属", "360度回転可能", "伸縮式・高さ調整可能"]
+    }
+  }
+}
