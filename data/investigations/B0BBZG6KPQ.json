@@ -25,81 +25,99 @@
       "カフェでのリモートワーク",
       "デスクの配線をスッキリさせたい場合"
     ],
-    "userStories": [
-      {
-        "userType": "30代会社員",
-        "scenario": "出張時のホテル利用",
-        "experience": "（推測）出張が多く、ホテルのコンセントが足りない悩みを解消できた。以前はACアダプタと延長コードを持ち歩いていたが、これ1つで済むようになり荷物が減った。",
-        "sentiment": "positive"
-      },
-      {
-        "userType": "学生",
-        "scenario": "カフェでの学習",
-        "experience": "（推測）カフェで課題をする際、PCとスマホを同時に充電できるのが便利。友人とコンセントをシェアすることもできる。",
-        "sentiment": "positive"
-      },
-      {
-        "userType": "フリーランス",
-        "scenario": "自宅デスクでの使用",
-        "experience": "（推測）デスク周りがスッキリした。ACアダプタが干渉しにくい配置も良いが、モニターなどを繋ぐには口数が足りない。",
-        "sentiment": "mixed"
-      }
-    ],
+    "userStories": [],
     "userImpression": "スリムさと持ち運びやすさが最大の魅力だが、価格設定は少し高めと感じるユーザーもいるだろう。機能性とデザインのバランスが良い。",
     "sources": [
       {
-        "name": "Amazon商品ページ",
+        "id": "src-1",
+        "name": "Amazon商品ページ (Anker 511 USB Power Strip)",
         "url": "https://www.amazon.co.jp/dp/B0BBZG6KPQ",
-        "credibility": "High"
-      },
-      {
-        "name": "競合商品比較分析",
-        "url": null,
-        "credibility": "Medium"
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-05-19",
+        "author": "Amazon",
+        "conflictOfInterest": "none",
+        "notes": "商品仕様、価格、公式の宣伝文句を確認"
       }
     ],
-    "lastInvestigated": "2026-02-08",
+    "lastInvestigated": "2026-05-19",
     "competitiveAnalysis": [
       {
         "name": "Anker 521 Power Strip",
         "asin": "B09VB3BT3Y",
-        "priceComparison": "3,990円と本製品より1,000円安い",
+        "priceComparison": "対象商品よりも安価だが、ACポートが1つ多い。コストパフォーマンスに優れる。",
         "featureComparison": [
-          "AC差込口が3口で本製品より1つ多い",
-          "USB出力は同じ最大30W",
-          "サイズは本製品の方がスリム"
+          "共通点：USB-Cポート1つ、USB-Aポート2つを搭載し、最大30W出力に対応している",
+          "相違点：対象商品はAC差込口が2口のスリム設計に対し、本製品はAC差込口が3口で前面・背面に配置されている"
         ],
         "differentiators": [
-          "コスパ重視なら521",
-          "持ち運び・スリムさ重視なら511"
+          "Anker 511 USB Power Stripの利点：よりスリムで持ち運びに適している",
+          "Anker 521 Power Stripの利点：AC差込口が多く、据え置きでのコスパが良い"
         ]
       },
       {
         "name": "Anker USB Power Strip (10-in-1, 20W)",
         "asin": "B0CN3HPGRW",
-        "priceComparison": "2,990円と本製品より2,000円安い",
+        "priceComparison": "対象商品よりも安価だが、ACポートが大幅に多い反面、USB出力が低い。",
         "featureComparison": [
-          "AC差込口が6口と非常に多い",
-          "USB出力は最大20Wと低い",
-          "サイズは大きめ"
+          "共通点：延長コードが1.5mで、複数の機器を同時充電できる",
+          "相違点：対象商品はUSB出力が最大30Wだが、本製品は最大20Wで、代わりにAC差込口が6口ある"
         ],
         "differentiators": [
-          "多数の機器接続なら10-in-1",
-          "PC充電・携帯性なら511"
+          "Anker 511 USB Power Stripの利点：ノートPCを急速充電できる30Wの出力がある",
+          "Anker USB Power Strip (10-in-1, 20W)の利点：多くのAC機器を同時に接続できる"
         ]
       },
       {
-        "name": "エレコム ECT-3910WH",
-        "asin": "B0F449DWGV",
-        "priceComparison": "3,990円と本製品より安い",
+        "name": "エレコム 電源タップ USB コンセント 15W",
+        "asin": "B0FF9GRQ84",
+        "priceComparison": "対象商品より大幅に安価で、手軽に買える価格帯。",
         "featureComparison": [
-          "AC差込口が6口",
-          "USB-Cポートが2つある",
-          "サイズはタワー型または横長で大きい"
+          "共通点：コンパクトで持ち運びに適した電源タップである",
+          "相違点：対象商品はケーブル付きで30W出力だが、本製品は直挿しタイプで最大15W出力である"
         ],
         "differentiators": [
-          "据え置き利用ならエレコム",
-          "持ち運びならAnker 511"
+          "Anker 511 USB Power Stripの利点：延長ケーブルがあり、30Wの高出力でPC充電も可能",
+          "エレコム 電源タップ USB コンセント 15Wの利点：ケーブルレスでさらにコンパクトであり、安価である"
+        ]
+      },
+      {
+        "name": "Anker 615 USB Power Strip",
+        "asin": "B09VK1WN6L",
+        "priceComparison": "対象商品よりも高価だが、高出力（65W）に対応している。",
+        "featureComparison": [
+          "共通点：コンパクト設計で持ち運びを想定した電源タップである",
+          "相違点：対象商品は30W出力だが、本製品は65W出力に対応し、ケーブルを本体に収納できる"
+        ],
+        "differentiators": [
+          "Anker 511 USB Power Stripの利点：価格が抑えられており、よりスリムである",
+          "Anker 615 USB Power Stripの利点：65W出力で高性能ノートPCを素早く充電でき、ケーブル収納が可能"
+        ]
+      },
+      {
+        "name": "Anker Charging Station (8-in-1, 20W)",
+        "asin": "B0D8TDYY94",
+        "priceComparison": "対象商品よりも安価だが、USB出力が20Wに制限されている。",
+        "featureComparison": [
+          "共通点：1.5mの延長コードを備え、複数のUSBポートを搭載している",
+          "相違点：対象商品はAC2口・30W出力だが、本製品はAC4口・20W出力である"
+        ],
+        "differentiators": [
+          "Anker 511 USB Power Stripの利点：30W出力でノートPCも充電しやすい",
+          "Anker Charging Station (8-in-1, 20W)の利点：AC差込口が多く、据え置きで多数の機器を使える"
+        ]
+      },
+      {
+        "name": "Anker USB Power Strip (12-in-1, 35W)",
+        "asin": "B0D8TC1XP9",
+        "priceComparison": "対象商品よりも安価で、出力も高くコスパが非常に高い。",
+        "featureComparison": [
+          "共通点：1.5mの延長コードを持ち、薄型設計である",
+          "相違点：対象商品はAC2口で30W出力だが、本製品はAC8口で35W出力に対応している"
+        ],
+        "differentiators": [
+          "Anker 511 USB Power Stripの利点：縦長のスリムな形状で、隙間に収納しやすい",
+          "Anker USB Power Strip (12-in-1, 35W)の利点：差込口が圧倒的に多く、出力も35Wと高いため総合的な性能が高い"
         ]
       }
     ],
@@ -120,25 +138,44 @@
         "複数ポート使用時の出力低下"
       ],
       "score": 80,
-      "scoreRationale": "[基本点: 70]\n[加点: +5] スリムで持ち運びに特化したデザインが秀逸。\n[加点: +5] USB-C 30W対応で実用性が高い。\n[加点: +5] Anker独自の多重保護システムによる安心感。\n[減点: -5] 競合他社製品や自社の別モデルと比較して価格(4990円)が割高。\n[合計: 80]"
+      "scoreRationale": "[基本点: 70]\n[加点: +5] (厚さ約3cmのスリム設計で持ち運びが容易な点)\n[加点: +5] (USB-Cポートが最大30W出力に対応し、ノートPCも充電可能な点)\n[加点: +5] (独自の多重保護システムによる安全性の高さ)\n[減点: -5] (他のモデルや競合製品と比較して価格がやや高めな点)\n[合計: 80]"
     },
     "technicalSpecs": {
       "dimensions": {
-        "width": "約3cm (詳細不明だがスリム設計)",
-        "height": "約3cm",
-        "depth": "不明",
-        "weight": "不明"
+        "height": "30mm",
+        "width": "30mm",
+        "depth": "130mm"
       },
-      "power": {
-        "output": "最大30W (USB-C単ポート)",
-        "ports": "AC x2, USB-C x1, USB-A x2",
-        "input": "AC 100-125V"
-      },
+      "weight": "不明",
+      "power": "最大30W (USB-C単ポート)",
       "cableLength": "1.5m",
+      "ports": "AC x2, USB-C x1, USB-A x2",
       "other": [
         "PSE技術基準適合",
         "USB Power Delivery対応"
       ]
-    }
+    },
+    "claims": [
+      {
+        "claim": "厚さ約3cmのスリム設計で持ち運びに便利",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "crossChecked": false,
+        "notes": "公式商品ページに記載"
+      },
+      {
+        "claim": "USB-Cポートは最大30W出力に対応し、ノートPCも充電可能",
+        "category": "durability",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "crossChecked": false,
+        "notes": "公式商品ページに記載"
+      }
+    ]
   }
 }
