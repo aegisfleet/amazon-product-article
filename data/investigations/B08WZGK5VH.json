@@ -28,73 +28,99 @@
       "ガジェット好きのDIY愛好家",
       "デザイン重視のツールユーザー"
     ],
-    "userStories": [
-      {
-        "userType": "30代ガジェットブロガー",
-        "scenario": "スマートフォンのバッテリー交換作業",
-        "experience": "（推測）非常にスムーズにネジを外すことができ、手作業よりも大幅に時間を短縮できた。何よりデスクに置いた時の佇まいが美しく、作業のモチベーションが上がる。",
-        "sentiment": "positive"
-      },
-      {
-        "userType": "PC自作ユーザー",
-        "scenario": "M.2 SSDの取り付け",
-        "experience": "（推測）トルクが強すぎないので、基板を傷つける心配がなく安心して作業できた。ただ、ケースのファン固定ネジなど少し太いネジにはパワー不足を感じた。",
-        "sentiment": "mixed"
-      }
-    ],
+    "userStories": [],
     "userImpression": "デザイン性と質感の高さで多くのユーザーを魅了しているが、価格の高さと機能面（LEDなし、トルク不足）での不満も見られる。プロユースというよりは、所有欲を満たす高品質なホビー用ツールとしての評価が高い。",
     "sources": [
       {
+        "id": "src-1",
         "name": "Amazon Product Page",
         "url": "https://www.amazon.co.jp/dp/B08WZGK5VH",
-        "credibility": "medium"
-      },
-      {
-        "name": "General Knowledge (Xiaomi Mijia Electric Screwdriver)",
-        "url": null,
-        "credibility": "high"
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-05-19",
+        "author": "Amazon/LudusGear(ルーダスギア)",
+        "conflictOfInterest": "none",
+        "notes": "Amazon Creators APIから取得した公式な商品情報と仕様。"
       }
     ],
-    "lastInvestigated": "2026-02-08",
+    "lastInvestigated": "2026-05-19",
     "competitiveAnalysis": [
       {
-        "name": "efluky 電動精密ドライバー",
-        "asin": "B0DP73GXB4",
-        "priceComparison": "約3,980円とXiaomiの約半額で、コストパフォーマンスに優れる。",
-        "featureComparison": [
-          "68in1の多機能セット",
-          "LEDライト搭載",
-          "ペン型デザインだが質感は劣る可能性"
-        ],
-        "differentiators": [
-          "圧倒的なビット数と付属品",
-          "安価な価格設定"
-        ]
-      },
-      {
-        "name": "Fanttik E1 Max 電動精密ドライバー",
+        "name": "Fanttik E1 Max 電動精密ドライバー 50in1...",
         "asin": "B0BGWRWRX2",
         "priceComparison": "約12,000円とXiaomiよりさらに高価だが、高機能。",
         "featureComparison": [
-          "50in1セット",
-          "最大トルク3N·mと強力",
-          "LEDライト搭載"
+          "共通点：アルミニウム合金製のペン型でポップアップ収納ケースを採用。",
+          "相違点：50種類のビットが付属し、LEDライトを搭載。Xiaomiの最大0.2N・mに対して、最大0.2N・m(低0.05N.m)は同じだが、バッテリーは同等の350mAh。"
         ],
         "differentiators": [
-          "プロ向けの強力なトルクと機能性",
-          "高級感あるデザイン"
+          "Xiaomi Mijia 24in1 電動精密ドライバーの利点：価格がより手頃で、デザインがシンプル。",
+          "Fanttik E1 Maxの利点：50種類の豊富なビットとLEDライトを搭載し、より多くの状況に対応できる。"
         ]
       },
       {
-        "name": "Kryon 精密ドライバーセット",
-        "asin": "B0FXXZXYTN",
-        "priceComparison": "約2,500円と非常に安価。",
+        "name": "Fanttik E2 Ultra 電動精密ドライバー ミニド...",
+        "asin": "B0DSVKLNQR",
+        "priceComparison": "Xiaomiより高価だが、より強力なトルクとバッテリーを搭載。",
         "featureComparison": [
-          "46in1セット",
-          "基本的な機能は搭載"
+          "共通点：アルミニウム合金製のケースとポップアップ式収納を採用。",
+          "相違点：最大0.6N.mの強力なトルクと800mAhの大容量バッテリーを搭載（Xiaomiは0.2N.m、350mAh）。"
         ],
         "differentiators": [
-          "価格の安さ"
+          "Xiaomi Mijia 24in1 電動精密ドライバーの利点：より小型・軽量な設計。",
+          "Fanttik E2 Ultraの利点：5段階の精密トルク調整と、インジケーターによる視覚的な操作感。"
+        ]
+      },
+      {
+        "name": "Fanttik NEX S1 Pro 電動精密ドライバー 電...",
+        "asin": "B0C141QZVL",
+        "priceComparison": "約13,000円と高価だが、家具組み立てなどにも使える高トルク機。",
+        "featureComparison": [
+          "共通点：Type-C充電と磁気収納ケース。",
+          "相違点：Xiaomiが精密機器向け（最大0.2N.m）なのに対し、最大4.2N.mの高トルクで家具やPCの組み立てに対応。"
+        ],
+        "differentiators": [
+          "Xiaomi Mijia 24in1 電動精密ドライバーの利点：スマホやメガネなど、より微細な精密機器の修理に特化。",
+          "Fanttik NEX S1 Proの利点：1/4インチの太いビットを使用し、家具組み立てやPC自作などパワーが必要な作業に最適。"
+        ]
+      },
+      {
+        "name": "Fanttik S2 Pro 電動ドライバー 90°アングル...",
+        "asin": "B0F3X74WT9",
+        "priceComparison": "約14,000円と高価。精密作業からDIYまで対応できる汎用性がある。",
+        "featureComparison": [
+          "共通点：Type-C充電とケース付属。",
+          "相違点：最大6N.mのトルクと90°アングルアダプターが付属。Xiaomiは精密作業専用。"
+        ],
+        "differentiators": [
+          "Xiaomi Mijia 24in1 電動精密ドライバーの利点：ペン型で取り回しが良く、細かな作業に向いている。",
+          "Fanttik S2 Proの利点：7段階のトルク調整とアングルアダプターで、幅広いDIY作業や狭い場所での作業が可能。"
+        ]
+      },
+      {
+        "name": "AAL 電動ドライバー 小型 携帯 手持ち Type-C U...",
+        "asin": "B0D9H55775",
+        "priceComparison": "約2,000円以下と非常に安価。",
+        "featureComparison": [
+          "共通点：Type-C充電式で正逆転機能搭載。",
+          "相違点：Xiaomiのようなアルミニウムの高級感や精密なトルク制御機能はない。ビット数も14本と少なめ。"
+        ],
+        "differentiators": [
+          "Xiaomi Mijia 24in1 電動精密ドライバーの利点：圧倒的な質感と精密なトルク制御による安心感。",
+          "AAL 電動ドライバーの利点：とにかく安価に電動ドライバーを試したい初心者向け。"
+        ]
+      },
+      {
+        "name": "精密ドライバーセット,トルクス マイナス 三角 六角 プラス...",
+        "asin": "B096PHZQ2M",
+        "priceComparison": "約1,500円と非常に安価（※電動ではなく手動ドライバーのセット）。",
+        "featureComparison": [
+          "共通点：多種多様な精密ビットが付属。",
+          "相違点：Xiaomiが電動であるのに対し、こちらは完全な手動ツール。"
+        ],
+        "differentiators": [
+          "Xiaomi Mijia 24in1 電動精密ドライバーの利点：電動による作業効率の大幅な向上。",
+          "精密ドライバーセット(HEARTHFUN)の利点：電源不要で安価。25種類のビットが揃っており、たまにしか使わない人向け。"
         ]
       }
     ],
@@ -119,10 +145,9 @@
     },
     "technicalSpecs": {
       "dimensions": {
-        "height": "201mm",
-        "width": "74mm",
-        "depth": "25mm",
-        "weight": "353g"
+        "height": "26mm",
+        "width": "75mm",
+        "depth": "202mm"
       },
       "power": "USB-C充電 (350mAhリチウム電池)",
       "torque": "0.05N·m / 0.2N·m (電動), 3N·m (手動)",
@@ -131,7 +156,20 @@
       "other": [
         "プッシュポップアップ式収納ケース",
         "マグネット着脱式"
-      ]
-    }
+      ],
+      "weight": "400g"
+    },
+    "claims": [
+      {
+        "claim": "アルミニウム合金製の洗練されたデザインとプッシュ式の収納ケース",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "crossChecked": false,
+        "notes": "Amazonの商品情報に記載の機能"
+      }
+    ]
   }
 }
