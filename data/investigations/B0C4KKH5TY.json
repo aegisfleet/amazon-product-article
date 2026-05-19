@@ -2,138 +2,153 @@
   "analysis": {
     "productName": "MYTREX マイトレックス VIDO 電動頭皮ブラシ",
     "parentAsin": "B0C4KKH5TY",
-    "productDescription": "MYTREX VIDOは、「横振動」という新発想のアプローチで、頭皮と筋肉をWケアする電動頭皮ブラシです。",
+    "productDescription": "横振動のアプローチで、頭皮と筋肉をWケアする電動頭皮ブラシ。毎分約2,400回の高速振動で頭皮だけでなく首・肩・顔などのリフレッシュにも使用できる。",
     "productUsage": [
       "頭皮ケア",
       "リフトケア",
       "首・肩のリフレッシュ",
-      "全身の筋肉ケア",
-      "リラックスタイムのセルフケア"
+      "フェイスケア"
     ],
     "positivePoints": [
-      "横振動による深層筋肉への心地よいアプローチ",
-      "毎分約2,400回の高速振動で短時間でもスッキリ",
-      "5段階の振動レベルで好みの強さに調節可能",
-      "頭皮だけでなく、顔・首・肩など全身に使用可能",
-      "高級感のあるデザイン"
+      "横振動による深層筋肉へのアプローチ",
+      "毎分約2,400回の高速振動と5段階のレベル調節機能",
+      "頭皮だけでなく、顔・首・肩などにも使用できる汎用性の高さ",
+      "8mmのストロークで硬い頭皮もしっかり動かせる"
     ],
     "negativePoints": [
-      "（推測）振動が強すぎると感じる場合がある",
-      "（推測）本体重量が少しあるため長時間使用すると疲れる可能性がある",
-      "（推測）価格が競合製品より高価な可能性がある"
+      "競合製品と比較して価格が高めに設定されている"
     ],
     "useCases": [
-      "お風呂でのリラックスタイム",
-      "デスクワーク後の首・肩のリフレッシュ",
-      "就寝前の頭皮マッサージ",
-      "朝のメイク前の顔周りのケア"
+      "お風呂でのリラックスタイムや頭皮ケア",
+      "デスクワーク後などの首・肩のリフレッシュ",
+      "顔周りのリフトケア"
     ],
-    "userStories": [
-      {
-        "userType": "30代会社員（デスクワーク）",
-        "scenario": "仕事の合間に首筋や肩に使ってリフレッシュ",
-        "experience": "（推測）長時間デスクワークをしていると首や肩が凝り固まってしまうが、VIDOを使うと短時間でほぐれてスッキリする。頭皮だけでなく全身に使えるのが便利。",
-        "sentiment": "positive"
-      },
-      {
-        "userType": "40代主婦",
-        "scenario": "お風呂上がりに頭皮マッサージ",
-        "experience": "（推測）お風呂上がりにVIDOで頭皮マッサージをするのが日課。心地よい振動でリラックスでき、翌朝の髪の立ち上がりが良くなった気がする。",
-        "sentiment": "positive"
-      }
-    ],
-    "userImpression": "（推測）全体的に満足度が高く、特に横振動の刺激が新しいと好評。頭皮ケアだけでなく、全身のコリをほぐすのにも適しているという意見が多いと予想される。",
+    "userStories": [],
+    "userImpression": "横振動による心地よい刺激や、頭皮だけでなく全身に使える汎用性の高さが特徴的な製品である。高速振動によるスピーディーなリフレッシュ効果が期待できる。",
     "sources": [
       {
+        "id": "src-amazon",
         "name": "Amazon商品ページ",
         "url": "https://www.amazon.co.jp/dp/B0C4KKH5TY",
-        "credibility": "medium"
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-05-20",
+        "author": "Amazon",
+        "conflictOfInterest": "none",
+        "notes": "製品仕様、機能の説明"
+      },
+      {
+        "id": "src-mytrex-official",
+        "name": "MYTREX公式サイト VIDO製品ページ",
+        "url": "https://mytrex.jp/vido/",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-05-20",
+        "author": "株式会社創通メディカル",
+        "conflictOfInterest": "disclosed",
+        "notes": "正確なサイズ(213mm×51mm×75mm)、重量(約330g)、価格(16,280円)、バッテリー仕様等の詳細スペック"
       }
     ],
-    "lastInvestigated": "2026-02-08",
+    "claims": [
+      {
+        "claim": "毎分約2,400回の高速振動でスピーディーにリフレッシュできる",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-amazon",
+          "src-mytrex-official"
+        ],
+        "crossChecked": true,
+        "notes": "Amazon商品説明と公式サイトに記載あり"
+      },
+      {
+        "claim": "頭皮だけでなく、顔・首・肩のリフレッシュにも使用可能",
+        "category": "comparativeAdvantage",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-amazon",
+          "src-mytrex-official"
+        ],
+        "crossChecked": true,
+        "notes": "複数の部位に使用できる汎用性を確認"
+      }
+    ],
+    "lastInvestigated": "2026-05-20",
     "competitiveAnalysis": [
       {
-        "name": "RELX ヘッドスパ 電動頭皮ブラシ (B09CSXVJ2L)",
+        "name": "RELX ヘッドスパ 電動頭皮ブラシ",
         "asin": "B09CSXVJ2L",
-        "priceComparison": "約7,990円と比較的安価で、初めての人にも手が出しやすい価格。",
+        "priceComparison": "対象商品よりも安価であり、予算を抑えたい場合に適している。",
         "featureComparison": [
-          "IPX7防水",
-          "3D振動",
-          "日本企業企画"
+          "共通点：電動頭皮ブラシである点",
+          "相違点：対象商品は横振動に特化しているのに対し、競合は一般的な3D振動を採用"
         ],
         "differentiators": [
-          "シンプルな機能と価格のバランスが良い",
-          "防水性能が高くお風呂での使用に適している"
+          "MYTREX VIDOの利点：新発想の横振動により深くほぐれるような体感が得られ、全身ケアにも対応しやすい",
+          "RELX ヘッドスパの利点：価格が抑えられており、初めて電動頭皮ブラシを試す人にとってコストパフォーマンスが高い"
         ]
       },
       {
-        "name": "AQielev ヘッドスパ (B0F3XH2NLM)",
-        "asin": "B0F3XH2NLM",
-        "priceComparison": "約5,678円と非常に安価。",
+        "name": "MYTREX EMS HEAD SPA PRO",
+        "asin": "B0BRPQPMJH",
+        "priceComparison": "対象商品と同程度の価格帯。",
         "featureComparison": [
-          "赤青LED光搭載",
-          "AI仿生頭皮スパ",
-          "IPX7防水"
+          "共通点：同ブランド(MYTREX)の頭皮ケア製品である点",
+          "相違点：対象商品が横振動を特徴とするのに対し、競合はEMS(電気刺激)機能を搭載している点"
         ],
         "differentiators": [
-          "LED光エステ機能がついている",
-          "コストパフォーマンスが高い"
+          "MYTREX VIDOの利点：物理的な横振動で筋肉を動かすアプローチに特化している",
+          "MYTREX EMS HEAD SPA PROの利点：EMS機能による電気刺激を組み合わせたケアが可能"
         ]
       },
       {
-        "name": "NIPLUX EMS HEAD SPA PREMIUM (B0CHW51X8N)",
-        "asin": "B0CHW51X8N",
-        "priceComparison": "約14,554円と高価。",
+        "name": "arboleaf 電動頭皮ブラシ",
+        "asin": "B0DZWVF5VP",
+        "priceComparison": "対象商品よりも大幅に安価である。",
         "featureComparison": [
-          "EMS機能搭載",
-          "高輝度赤色LED",
-          "九州大学博士監修"
+          "共通点：頭皮だけでなく顔や全身に適用可能である点",
+          "相違点：対象商品は横振動によるアプローチを特徴とするが、競合は赤色LED搭載や3D振動を採用している"
         ],
         "differentiators": [
-          "EMSによる筋肉刺激でより効果的なリフトケアが可能",
-          "本格的なエステ体験を求める人向け"
+          "MYTREX VIDOの利点：独自ストロークによる横振動で、筋肉に深くアプローチできる",
+          "arboleaf 電動頭皮ブラシの利点：非常に低価格でありながら赤色LEDなどの多機能性を備えている"
         ]
       }
     ],
     "recommendation": {
       "targetUsers": [
-        "デスクワークで目や首が疲れやすい人",
-        "頭皮ケアだけでなく顔や体のリフトケアもしたい人",
-        "新しい美容家電を試してみたい人"
+        "頭皮が硬いと感じている人",
+        "首や肩のコリも一緒にケアしたい人",
+        "強い振動でのマッサージを好む人"
       ],
       "pros": [
-        "横振動による深いリラックス効果",
-        "高速振動での短時間ケアが可能",
-        "全身に使用できる汎用性の高さ"
+        "横振動による強力なアプローチ力",
+        "1台で頭皮、顔、首、肩などに使える",
+        "5段階の調節機能で好みの強さを選べる"
       ],
       "cons": [
-        "価格が競合より高い可能性がある",
-        "振動が強すぎると感じる場合がある"
+        "一部の安価な競合製品と比較して価格が高い"
       ],
       "score": 85,
-      "scoreRationale": "[基本点: 70]\n[加点: +10] (独自の横振動機能による差別化)\n[加点: +5] (毎分2400回の高速振動と多用途性)\n[減点: -5] (価格不明だが高価である可能性)\n[加点: +5] (全身ケアが可能)\n[合計: 85]"
+      "scoreRationale": "[基本点: 70]\n[加点: +10] (横振動という独自のアプローチで強力なマッサージ効果が期待できる)\n[加点: +5] (毎分約2,400回の高速振動と5段階のレベル調節機能)\n[加点: +5] (頭皮だけでなく顔・首・肩など全身に使用可能な汎用性の高さ)\n[減点: -5] (競合する一般的な頭皮ブラシと比較して価格設定が高め)\n[合計: 85]"
     },
     "technicalSpecs": {
       "dimensions": {
-        "height": "5.5インチ",
-        "width": "4.1インチ",
-        "depth": "4.1インチ",
-        "weight": "0.7ポンド"
+        "height": "213mm",
+        "width": "51mm",
+        "depth": "75mm"
       },
-      "power": "充電式",
-      "others": [
-        "横振動",
-        "5段階レベル調整",
-        "専用ACアダプター付属"
-      ],
-      "os": null,
-      "cpu": null,
-      "ram": null,
-      "storage": null,
-      "display": null,
-      "battery": null,
-      "camera": null,
-      "connectivity": null
+      "weight": "約330g",
+      "capacity": "1台",
+      "material": "PC-ABS樹脂、シリコン",
+      "origin": "中国",
+      "other": [
+        "カラー: 黒",
+        "定格電源: DC5.0V 2.0A",
+        "消費電力: 約10W",
+        "バッテリー: リチウムイオン電池 1000mAh/7.4V",
+        "タイマー: 10分自動オフ"
+      ]
     }
   }
 }
