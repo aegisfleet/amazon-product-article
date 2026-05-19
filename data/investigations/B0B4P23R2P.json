@@ -1,0 +1,160 @@
+{
+  "analysis": {
+    "productName": "強粘着 シリコンブラ",
+    "parentAsin": "B0B4P23R2P",
+    "productDescription": "やわらかいシリコン素材で自然な谷間メイクができる強粘着タイプのブラパッド。水や汗に強く、ドレスや水着など幅広いシーンで利用可能。",
+    "productUsage": ["谷間メイク", "水着・ドレス時のインナー", "ニップレス・ランジェリーパッド"],
+    "positivePoints": [
+      "やわらかいシリコン素材で誰でも簡単に谷間メイクが可能",
+      "水や汗に強い強粘着タイプで、海やプールでも1日中安心して着用できる",
+      "初めての方でも安心なつけ方説明書付き"
+    ],
+    "negativePoints": [
+      "色の指定ができない（ベージュまたはピンクのいずれかになる）",
+      "サイズ選びに工夫が必要（普段より1サイズ下げての購入が推奨されている）"
+    ],
+    "useCases": [
+      "水着やドレスの着用時",
+      "肩紐や背中の開いた服を着る時",
+      "海やプールでのレジャー"
+    ],
+    "userStories": [],
+    "userImpression": "水や汗に強く、海やプールなどのレジャーシーンからドレスアップまで幅広く活躍する使い勝手の良いシリコンブラ。",
+    "sources": [
+      {
+        "id": "src-amazon-product",
+        "name": "Amazon商品ページ",
+        "url": "https://www.amazon.co.jp/dp/B0B4P23R2P",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-05-19",
+        "author": "Amazon",
+        "conflictOfInterest": "none",
+        "notes": "商品仕様、価格、特徴（強粘着、水や汗に強い、つけ方説明書付きなど）を確認"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "水や汗に強く海やプールでも1日中安心して着用可能",
+        "category": "durability",
+        "confidence": "high",
+        "supportingSourceIds": ["src-amazon-product"],
+        "crossChecked": false,
+        "notes": "商品ページの特徴として明記されている"
+      },
+      {
+        "claim": "やわらかいシリコンブラで簡単に谷間メイクが可能",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": ["src-amazon-product"],
+        "crossChecked": false,
+        "notes": "商品の主な使用目的・特徴として記載"
+      }
+    ],
+    "lastInvestigated": "2026-05-19",
+    "competitiveAnalysis": [
+      {
+        "name": "Nowest シリコンブラ 強粘着 強密着タイプ",
+        "asin": "B0CQV6CKCC",
+        "priceComparison": "対象商品よりやや安い",
+        "featureComparison": [
+          "共通点：強粘着タイプのシリコンブラ、谷間メイク機能",
+          "相違点：対象商品は水着やプールでの使用を強くアピールしている点"
+        ],
+        "differentiators": [
+          "強粘着 シリコンブラの利点：説明書付きで初心者でも扱いやすい点",
+          "Nowest シリコンブラ 強粘着 強密着タイプの利点：現役モデル監修という点や価格が少し安い点"
+        ]
+      },
+      {
+        "name": "[MKY Company] 強粘着 シリコンブラ (A)",
+        "asin": "B0B4P1ZV7B",
+        "priceComparison": "対象商品と同価格",
+        "featureComparison": [
+          "共通点：同一ブランド・仕様のサイズ違い",
+          "相違点：サイズがAカップ用である点"
+        ],
+        "differentiators": [
+          "強粘着 シリコンブラの利点：普段Cカップ程度の方（1サイズ下げ推奨）に適している",
+          "[MKY Company] 強粘着 シリコンブラ (A)の利点：普段Bカップ程度の方に適している"
+        ]
+      },
+      {
+        "name": "プリンセスブラ",
+        "asin": "B07BVTWR8D",
+        "priceComparison": "対象商品と同価格",
+        "featureComparison": [
+          "共通点：同価格帯のシリコンブラ",
+          "相違点：ブランドやデザインの細部が異なる"
+        ],
+        "differentiators": [
+          "強粘着 シリコンブラの利点：水や汗への強さが明示されている点",
+          "プリンセスブラの利点：デザインの好みや特定のサイズ感に合う場合"
+        ]
+      },
+      {
+        "name": "[ICHIMIZU] 小胸さん向け 強粘着 シリコンブラ",
+        "asin": "B0FD35QD1K",
+        "priceComparison": "対象商品より安い",
+        "featureComparison": [
+          "共通点：強粘着、水着・ドレス用",
+          "相違点：ICHIMIZUは特に小胸向けをアピールしている"
+        ],
+        "differentiators": [
+          "強粘着 シリコンブラの利点：一般的なサイズ向けの汎用性",
+          "[ICHIMIZU] 小胸さん向け 強粘着 シリコンブラの利点：価格が安く、小胸の方に特化している点"
+        ]
+      },
+      {
+        "name": "[ＥＬＭＡ] 初心者向け 強粘着 シリコンブラ",
+        "asin": "B0DFNTPS72",
+        "priceComparison": "対象商品より安い",
+        "featureComparison": [
+          "共通点：初心者向け、強粘着、水着対応",
+          "相違点：ELMAは5倍盛りなど極端なバストアップを謳っている"
+        ],
+        "differentiators": [
+          "強粘着 シリコンブラの利点：自然な谷間メイクを求める場合に適している",
+          "[ＥＬＭＡ] 初心者向け 強粘着 シリコンブラの利点：価格が安く、とにかく大きく見せたい場合に適している"
+        ]
+      },
+      {
+        "name": "[ＬｉｌｙＮａ] シリコンブラ 強粘着タイプ",
+        "asin": "B0GR9GFZKV",
+        "priceComparison": "対象商品より安い",
+        "featureComparison": [
+          "共通点：強粘着タイプ、ドレスや水着に対応",
+          "相違点：LilyNaは軽量であることを強調している"
+        ],
+        "differentiators": [
+          "強粘着 シリコンブラの利点：初心者向けの説明書などサポートが充実している",
+          "[ＬｉｌｙＮａ] シリコンブラ 強粘着タイプの利点：価格が安く、軽量で負担が少ない点"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "水着やドレスを着る機会がある人",
+        "海やプールで使えるシリコンブラを探している人",
+        "初めてシリコンブラを使う人"
+      ],
+      "pros": [
+        "水や汗に強くレジャーにも適している",
+        "つけ方説明書付きで初心者でも安心"
+      ],
+      "cons": [
+        "ベージュかピンクの色指定ができない",
+        "普段より1サイズ下げて購入する必要がある"
+      ],
+      "score": 75,
+      "scoreRationale": "[基本点: 70]\n[加点: +3] (水や汗に強く海やプールでも使用できる実用性の高さ)\n[加点: +2] (つけ方説明書が付属し初心者への配慮がある)\n[減点: 0] (コスパは競合と比較して平均的であり特筆すべき加減点はなし)\n[合計: 75]"
+    },
+    "technicalSpecs": {
+      "size": "B（普段より1サイズ下げて購入推奨）",
+      "color": "ピンク（ベージュの場合もあり、指定不可）",
+      "material": "シリコン",
+      "waterResistance": "水・汗に強い（海やプールでの使用可）",
+      "accessories": "つけ方説明書"
+    }
+  }
+}
