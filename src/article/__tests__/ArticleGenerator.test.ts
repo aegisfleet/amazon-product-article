@@ -757,6 +757,53 @@ describe('ArticleGenerator', () => {
       const metadata = generator.generateSEOMetadata(featuredProduct, featuredInvestigation);
       expect(metadata.featured).toBe(true);
     });
+
+    it('should set noindex to true when score <= 75 and user stories are empty', () => {
+      const lowQualityInvestigation: InvestigationResult = {
+        ...mockInvestigation,
+        analysis: {
+          ...mockInvestigation.analysis,
+          recommendation: {
+            ...mockInvestigation.analysis.recommendation,
+            score: 70,
+          },
+          userStories: [], // Empty
+        },
+      };
+
+      const metadata = generator.generateSEOMetadata(mockProduct, lowQualityInvestigation);
+      expect(metadata.noindex).toBe(true);
+    });
+
+    it('should set noindex to true when description length is less than 30 characters', () => {
+      const shortDescInvestigation: InvestigationResult = {
+        ...mockInvestigation,
+        analysis: {
+          ...mockInvestigation.analysis,
+          productDescription: '短い説明', // Less than 30 chars
+        },
+      };
+
+      const metadata = generator.generateSEOMetadata(mockProduct, shortDescInvestigation);
+      expect(metadata.noindex).toBe(true);
+    });
+
+    it('should NOT set noindex to true when score > 75 even with empty user stories', () => {
+      const okQualityInvestigation: InvestigationResult = {
+        ...mockInvestigation,
+        analysis: {
+          ...mockInvestigation.analysis,
+          recommendation: {
+            ...mockInvestigation.analysis.recommendation,
+            score: 80,
+          },
+          userStories: [],
+        },
+      };
+
+      const metadata = generator.generateSEOMetadata(mockProduct, okQualityInvestigation);
+      expect(metadata.noindex).toBeUndefined();
+    });
   });
 
   describe('createMobileOptimizedLayout', () => {
