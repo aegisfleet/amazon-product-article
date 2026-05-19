@@ -1,20 +1,29 @@
 import fs from 'node:fs';
 import path from 'node:path';
 
-describe('head.html review schema conditions', () => {
+describe('head.html simplified SEO template', () => {
   const headTemplatePath = path.resolve(__dirname, '../../../layouts/partials/head.html');
 
-  it('requires reviewBody presence before emitting Review schema', () => {
+  it('contains simplified robots meta tags', () => {
     const template = fs.readFileSync(headTemplatePath, 'utf8');
 
-    expect(template).toContain('{{- $hasReviewBody := ne $reviewBody "" -}}');
-    expect(template).toContain('{{- if $hasReviewBody -}}');
+    expect(template).toContain('{{- if .Params.noindex -}}');
+    expect(template).toContain('<meta name="robots" content="noindex, follow">');
+    expect(template).toContain('<meta name="robots" content="index, follow">');
   });
 
-  it('uses safe defaults for review author and datePublished', () => {
+  it('contains simple meta description fallback', () => {
     const template = fs.readFileSync(headTemplatePath, 'utf8');
 
-    expect(template).toContain('{{- $reviewAuthor := .Site.Params.defaultReviewAuthor | default "編集部" -}}');
-    expect(template).toContain('{{- $reviewDatePublished := .Date | time.Format "2006-01-02" -}}');
+    expect(template).toContain('{{- $metaDescription := .Description | default .Summary | default .Site.Params.description -}}');
+  });
+
+  it('retains WebSite and BreadcrumbList schemas but no Product schema', () => {
+    const template = fs.readFileSync(headTemplatePath, 'utf8');
+
+    expect(template).toContain('"@type" "WebSite"');
+    expect(template).toContain('"@type" "BreadcrumbList"');
+    expect(template).not.toContain('"@type" "Product"');
+    expect(template).not.toContain('"@type" "FAQPage"');
   });
 });

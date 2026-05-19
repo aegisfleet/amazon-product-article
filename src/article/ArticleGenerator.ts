@@ -183,6 +183,10 @@ export class ArticleGenerator {
     const price = product.price.formatted;
     const score = investigation.analysis.recommendation.score;
 
+    // 品質に基づく noindex 判定
+    const hasStories = !!(investigation.analysis.userStories && investigation.analysis.userStories.length > 0);
+    const shouldNoindex = description.length < 30 || (score <= 75 && !hasStories);
+
     // 階層カテゴリ: Creators APIのcategoryInfoがあればそれを使用
     const subcategory = product.categoryInfo?.sub || this.determineSubcategory(product);
     const manufacturer = this.extractManufacturer(product);
@@ -222,6 +226,7 @@ export class ArticleGenerator {
       loyalty_points: product.loyaltyPoints,
       deal_badge: product.dealBadge,
       savings_percentage: product.savingsPercentage,
+      ...(shouldNoindex ? { noindex: true } : {}),
     };
 
     if (product.availability !== undefined) {
@@ -1461,6 +1466,7 @@ ${recommendationMessage}
     if (typeof metadata.mobileOptimized === 'boolean') lines.push(`mobile_optimized: ${metadata.mobileOptimized}`);
     if (metadata.lastInvestigated) lines.push(`last_investigated: "${metadata.lastInvestigated}"`);
     if (metadata.affiliate_url) lines.push(`affiliate_url: "${metadata.affiliate_url}"`);
+    if (metadata.noindex) lines.push(`noindex: ${metadata.noindex}`);
 
     if (metadata.images && metadata.images.length > 0) {
       lines.push(`images: ${this.formatArrayForFrontMatter(metadata.images)}`);
