@@ -138,7 +138,6 @@
 "name" $category
 "item" (printf "%scategories/%s/" .Site.BaseURL ($category | urlize))
 ) -}}
-{{- end -}}
 
 {{- $currentPosition := cond (ne $parentName "") 4 (cond (ne $category "") 3 2) -}}
 {{- $breadcrumbItems = $breadcrumbItems | append (dict
