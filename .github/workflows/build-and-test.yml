@@ -6,22 +6,28 @@ permissions:
 on:
   push:
     branches: [ main ]
-    paths-ignore:
-      - 'data/**'
-      - 'content/**'
-      - 'static/**'
-      - '**.md'
-      - 'LICENSE'
-      - '.gitignore'
+    paths:
+      - 'src/**/*.ts'
+      - 'data/brandgroups.json'
+      - 'data/categorygroups.json'
+      - 'package.json'
+      - 'biome.json'
+      - 'tsconfig.json'
+      - 'tsconfig.eslint.json'
+      - 'eslint.config.mjs'
+      - 'jest.config.js'
   pull_request:
     branches: [ main ]
-    paths-ignore:
-      - 'data/**'
-      - 'content/**'
-      - 'static/**'
-      - '**.md'
-      - 'LICENSE'
-      - '.gitignore'
+    paths:
+      - 'src/**/*.ts'
+      - 'data/brandgroups.json'
+      - 'data/categorygroups.json'
+      - 'package.json'
+      - 'biome.json'
+      - 'tsconfig.json'
+      - 'tsconfig.eslint.json'
+      - 'eslint.config.mjs'
+      - 'jest.config.js'
 
 jobs:
   test:

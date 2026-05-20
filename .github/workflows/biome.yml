@@ -6,13 +6,14 @@ permissions:
 on:
   pull_request:
     branches: [ main ]
-    paths-ignore:
-      - 'data/**'
-      - 'content/**'
-      - 'static/**'
-      - '**.md'
-      - 'LICENSE'
-      - '.gitignore'
+    paths:
+      - 'src/**/*.ts'
+      - 'data/brandgroups.json'
+      - 'data/categorygroups.json'
+      - 'package.json'
+      - 'biome.json'
+      - 'tsconfig.json'
+      - 'tsconfig.eslint.json'
 
 jobs:
   biome:
