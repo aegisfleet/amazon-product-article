@@ -2,168 +2,131 @@
   "analysis": {
     "productName": "NIPLUX EMS HEAD SPA",
     "parentAsin": "B0BFRFN6RN",
-    "productDescription": "EMSと赤色LEDを搭載し、頭皮と表情筋をケアする電動頭皮ブラシです。IPX7防水仕様で、バスタイムにも使用可能です。",
-    "productUsage": [
-      "頭皮のクレンジング＆マッサージ",
-      "フェイスラインのリフトケア",
-      "首・肩・全身のボディケア",
-      "お風呂でのリラックスタイム",
-      "育毛剤の浸透サポート"
-    ],
-    "positivePoints": [
-      "EMSによる頭皮と表情筋への刺激",
-      "サロン級のハンドテクニックを再現した3D振動",
-      "赤色LEDによる美肌効果",
-      "IPX7防水でお風呂でも使える",
-      "軽量で持ちやすいデザイン",
-      "アタッチメント交換で全身ケア可能"
-    ],
-    "negativePoints": [
-      "EMSの刺激が強すぎると感じる場合がある",
-      "充電時間がやや長い（約3時間）",
-      "アタッチメントの交換が手間",
-      "価格が安価な競合品より高い"
-    ],
-    "useCases": [
-      "バスタイムのリラックス",
-      "仕事中のリフレッシュ",
-      "朝のメイク前のフェイスケア",
-      "テレビを見ながらのながらケア"
-    ],
-    "userStories": [
-      {
-        "userType": "30代女性/会社員",
-        "scenario": "バスタイムでの使用",
-        "experience": "お風呂で使えるのが最高。EMSのピリピリ感が効いている感じで、顔周りがスッキリした気がする。",
-        "sentiment": "positive"
-      },
-      {
-        "userType": "40代男性/管理職",
-        "scenario": "就寝前の頭皮ケア",
-        "experience": "頭皮が硬いと言われて購入。揉みほぐしが気持ちよく、寝つきが良くなった。",
-        "sentiment": "positive"
-      },
-      {
-        "userType": "20代女性/学生",
-        "scenario": "週末のスペシャルケア",
-        "experience": "少し痛かったので弱めで使っています。効果はまだわからないけど続けてみます。",
-        "sentiment": "mixed"
-      }
-    ],
-    "userImpression": "EMSの刺激と揉みほぐしの気持ちよさが好評で、特にお風呂で使える点が評価されています。一部、刺激が強いという意見もありますが、調整可能なため多くのユーザーに受け入れられています。",
+    "productDescription": "独自のEMS波形パルス、毎分約8800回の3D振動、赤色LEDを搭載し、頭皮・フェイス・全身のケアが可能な電動頭皮ブラシ。",
+    "productUsage": ["頭皮の洗浄・揉みほぐし", "表情筋のリフトケア", "全身のボディケア"],
+    "positivePoints": ["EMS、振動、赤色LEDのトリプルアプローチが可能", "3種類のアタッチメントで全身ケアに対応", "IPX7防水でお風呂でも使用可能"],
+    "negativePoints": ["EMS特有の刺激（ピリピリ感）が苦手な人には合わない可能性がある"],
+    "useCases": ["お風呂でシャンプーしながらの頭皮洗浄", "入浴後のリラックスタイムにフェイスラインのケア", "デスクワーク後の首や肩のリフレッシュ"],
+    "userStories": [],
+    "userImpression": "EMS、振動、LEDの多機能性を持ち、頭皮だけでなく顔や全身に使える万能な美容家電として評価が高い。",
     "sources": [
       {
+        "id": "src-1",
         "name": "Amazon商品ページ",
         "url": "https://www.amazon.co.jp/dp/B0BFRFN6RN",
-        "credibility": "高"
-      },
-      {
-        "name": "NIPLUX公式サイト",
-        "url": "https://niplux.jp/",
-        "credibility": "高"
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-05-20",
+        "author": "株式会社日創プラス",
+        "conflictOfInterest": "possible",
+        "notes": "商品仕様、機能、価格情報"
       }
     ],
-    "lastInvestigated": "2026-02-08",
+    "claims": [
+      {
+        "claim": "独自のEMS機能、約8800回/分の振動、フォトフェイシャルLEDを搭載",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": ["src-1"],
+        "crossChecked": false,
+        "notes": "Amazon商品ページの公式説明より確認"
+      }
+    ],
+    "lastInvestigated": "2026-05-20",
     "competitiveAnalysis": [
       {
-        "name": "NIPLUX EMS HEAD SPA PREMIUM",
+        "name": "RELX EMS ヘッドスパ",
+        "asin": "B0B5RJ6XQ1",
+        "priceComparison": "対象商品より安価だが、アタッチメントの数が少なく振動機能が記載されていないため、多機能性を求めるなら対象商品が優位。",
+        "featureComparison": [
+          "共通点：EMS機能、IPX7防水仕様",
+          "相違点：対象商品は3種のアタッチメントと振動・LEDを備えるが、RELXは2種アタッチメントで構成がシンプル"
+        ],
+        "differentiators": [
+          "NIPLUX EMS HEAD SPAの利点：全身に使えるアタッチメントや振動機能など多機能である点",
+          "RELX EMS ヘッドスパの利点：機能がシンプルで価格が安く、より軽量である点"
+        ]
+      },
+      {
+        "name": "ヤーマン ミーゼ ニードルヘッドスパ EMS",
+        "asin": "B0F5WDPBDM",
+        "priceComparison": "対象商品より大幅に高価。ヤーマンブランドの信頼性や独自のニードル形状による刺激を重視する場合は選択肢になるが、コスパは対象商品が優れる。",
+        "featureComparison": [
+          "共通点：EMS機能搭載のヘッドスパ、お風呂での使用が可能",
+          "相違点：ヤーマンは点で刺激するニードルアタッチメントを採用している点"
+        ],
+        "differentiators": [
+          "NIPLUX EMS HEAD SPAの利点：半額以下の価格でLEDやEMSなど充実した機能を備える高いコストパフォーマンス",
+          "ヤーマン ミーゼ ニードルヘッドスパ EMSの利点：美容家電の有名ブランドである安心感と独自のニードル刺激"
+        ]
+      },
+      {
+        "name": "NIPLUX EMS ヘッドスパ PREMIUM",
         "asin": "B0CHW51X8N",
-        "priceComparison": "約14,554円（本製品より約3,000円高い）",
+        "priceComparison": "同ブランドの上位モデルで対象商品より高価。より強いもみ心地や金属製アタッチメントを求める場合は上位モデルが適している。",
         "featureComparison": [
-          "EMS機能強化（独自のパルス）",
-          "高出力赤色LED（12個搭載）",
-          "振動数約9,000回/分",
-          "IPX7防水"
+          "共通点：EMS、LED、振動機能を搭載し、全身に使える点",
+          "相違点：PREMIUMモデルはボディ用に金属製アタッチメントを採用し、振動数が最大9000回/分とやや高い"
         ],
         "differentiators": [
-          "より強力なEMSとLED",
-          "高級感のあるデザイン",
-          "バッテリー容量が大きい"
+          "NIPLUX EMS HEAD SPAの利点：上位モデルに近い機能を持ちながら、より手頃な価格で購入できる点",
+          "NIPLUX EMS ヘッドスパ PREMIUMの利点：金属製アタッチメントによる強い刺激とプロ仕様のもみ心地"
         ]
       },
       {
-        "name": "MYTREX VIDO",
-        "asin": "B0C4KKH5TY",
-        "priceComparison": "価格不明だが競合クラス",
+        "name": "YOUMAY ヘッドスパ EMS",
+        "asin": "B0CNXMT74W",
+        "priceComparison": "対象商品より安価。基本的なEMS・LED・振動機能を備えておりコスパが良いが、アタッチメントの豊富さでは対象商品が勝る。",
         "featureComparison": [
-          "横振動モーションブラシ",
-          "高速振動（毎分2,400回）",
-          "EMSの記載なし（要確認）"
+          "共通点：EMS機能、赤色LED、振動機能を搭載",
+          "相違点：対象商品は3種類のアタッチメントが付属するが、YOUMAYは2種類（頭皮・顔用）のみ"
         ],
         "differentiators": [
-          "横振動による独自の刺激",
-          "頭皮だけでなく顔・首・肩にも使用可能"
+          "NIPLUX EMS HEAD SPAの利点：洗顔用を含む3種のアタッチメントでより幅広い部位のケアができる点",
+          "YOUMAY ヘッドスパ EMSの利点：主要な機能を網羅しつつ価格が安く抑えられている点"
         ]
       },
       {
-        "name": "RELX ヘッドスパ",
-        "asin": "B09CSXVJ2L",
-        "priceComparison": "約7,990円（本製品より約3,500円安い）",
+        "name": "Tibnozt EMS ヘッドスパ",
+        "asin": "B0G5PXZ8ND",
+        "priceComparison": "対象商品より安価。安価ながら充実した機能を持つが、ブランド力や高級感を求めるなら対象商品が優位。",
         "featureComparison": [
-          "EMSなし",
-          "3D設計",
-          "IPX7防水",
-          "2種類のアタッチメント"
+          "共通点：EMS機能、赤色LED、振動機能（9000回/分）を搭載",
+          "相違点：対象商品は1200mAhなどの仕様が明確で洗練されたデザイン"
         ],
         "differentiators": [
-          "安価で基本機能に特化",
-          "EMSが苦手な人向け"
+          "NIPLUX EMS HEAD SPAの利点：美容家電としての知名度や実績があり、ギフトにも適した高級感がある点",
+          "Tibnozt EMS ヘッドスパの利点：収納ケースが付属し、価格が安価である点"
         ]
       },
       {
-        "name": "AQielev ヘッドスパ",
-        "asin": "B0F3XH2NLM",
-        "priceComparison": "約5,678円（本製品の半額以下）",
+        "name": "Tibnozt ヘッドスパ グリーン",
+        "asin": "B0GX5GW9J1",
+        "priceComparison": "対象商品より安価で小型。持ち運びやすさを重視するなら選択肢になる。",
         "featureComparison": [
-          "EMS搭載（詳細不明）",
-          "赤青LED搭載",
-          "3D振動",
-          "IPX7防水"
+          "共通点：防水仕様で頭皮ケアができる点",
+          "相違点：対象商品の方がサイズが大きく、EMSの詳細な機能調整が可能"
         ],
         "differentiators": [
-          "圧倒的な低価格",
-          "多機能だがブランド信頼性は不明"
+          "NIPLUX EMS HEAD SPAの利点：本格的なEMS機能と充実したアタッチメントを備える点",
+          "Tibnozt ヘッドスパ グリーンの利点：コンパクトで手軽に使いやすい点"
         ]
       }
     ],
     "recommendation": {
-      "targetUsers": [
-        "頭皮の硬さが気になる人",
-        "顔のたるみが気になる人",
-        "お風呂でリラックスしたい人",
-        "EMS美容家電に興味がある人"
-      ],
-      "pros": [
-        "EMSとLEDのW効果",
-        "信頼できるブランド（NIPLUX）",
-        "防水性能が高い",
-        "全身に使える"
-      ],
-      "cons": [
-        "価格が少し高め",
-        "EMSの刺激が苦手な人には不向き",
-        "充電の手間"
-      ],
+      "targetUsers": ["頭皮ケアだけでなく顔や全身のケアも同時に行いたい人", "お風呂でリラックスしながら本格的なスパ体験をしたい人", "コストパフォーマンスの良い美容家電を探している人"],
+      "pros": ["EMS・振動・LEDの3つの機能が揃っている", "3種のアタッチメントで全身をケア可能", "高級感がありギフトにも最適"],
+      "cons": ["EMSの刺激に個人差がある", "金属アタッチメントなど強い刺激を求める場合はPREMIUMモデルに劣る"],
       "score": 85,
-      "scoreRationale": "[基本点: 70]\n[加点: +5] (NIPLUXブランド、博士監修の信頼性)\n[加点: +5] (EMSと赤色LED搭載で多機能)\n[加点: +5] (IPX7防水で使い勝手が良い)\n[合計: 85]"
+      "scoreRationale": "[基本点: 70] (固定)\n[加点: +5] (全身に使える3種のアタッチメントによる機能性)\n[加点: +5] (毎分約8800回の振動による高い洗浄力)\n[加点: +5] (ヤーマン等の高級機に迫る機能を備えつつ価格を抑えた優れたコストパフォーマンス)\n[合計: 85]"
     },
     "technicalSpecs": {
-      "dimensions": {
-        "height": "130mm",
-        "width": "110mm",
-        "depth": "150mm",
-        "weight": "約350g"
-      },
-      "waterproof": "IPX7",
-      "battery": {
-        "type": "リチウムイオン電池",
-        "chargingTime": "約3時間"
-      },
-      "vibration": "毎分約8800回",
-      "ems": "5段階調整",
-      "led": "赤色LED（630nm）",
-      "modes": ["低速回転", "高速回転", "低速回転+振動", "高速回転+振動"],
-      "attachments": ["頭皮・ボディ用", "フェイス用", "洗顔用"]
+      "dimensions": { "height": "150mm", "width": "110mm", "depth": "130mm" },
+      "weight": "350g",
+      "capacity": "1台",
+      "material": "記載なし",
+      "origin": "記載なし",
+      "other": ["EMS強さ5段階調整", "赤色LED搭載", "IPX7防水", "10分タイマー", "毎分約8800回の振動", "乾湿両用"]
     }
   }
 }
