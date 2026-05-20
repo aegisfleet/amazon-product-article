@@ -1,0 +1,196 @@
+{
+  "analysis": {
+    "productName": "ホリ レーシングホイール エイペックス for PlayStation 5, PlayStation 4, PC",
+    "parentAsin": "B0DFC8HQ3K",
+    "productDescription": "PlayStation5、PlayStation4、PCに対応したホリ製の公式ライセンスステアリング型コントローラー。手軽に本格的なレーシング体験ができるエントリーモデル。",
+    "productUsage": [
+      "PlayStation 5でのレーシングゲームプレイ",
+      "PlayStation 4でのレーシングゲームプレイ",
+      "PC（Windows）でのレーシングゲームプレイ"
+    ],
+    "positivePoints": [
+      "SONYのPlayStation公式ライセンス商品で互換性と品質が保証されている",
+      "ステアリングの切れ角を180度に狭めて操作を容易にするウイニングモードを搭載",
+      "専用アプリを用いた詳細な設定（ボタンアサイン、デッドゾーン調整など）が可能",
+      "フォースフィードバック機能がない分、軽量で設置・取り回しがしやすい"
+    ],
+    "negativePoints": [
+      "フォースフィードバック（FFB）機能が非搭載のため、路面状況のリアルな手応えは得られない",
+      "本格的なシミュレーターを求める上級者には物足りないスペックである"
+    ],
+    "useCases": [
+      "グランツーリスモ7などのレーシングゲームをよりリアルな操作感で楽しむ",
+      "机などにクランプで手軽に固定してプレイする",
+      "子供から大人まで、手軽にステアリング操作のゲームを楽しむ"
+    ],
+    "userStories": [
+      {
+        "userType": "レーシングゲーム初心者",
+        "scenario": "グランツーリスモ7をパッドからステップアップしてプレイ",
+        "experience": "パッド（コントローラー）での操作に限界を感じて購入。フォースフィードバックがないためリアルさには欠けるが、ステアリングを切る感覚とペダルを踏む感覚が楽しく、タイムも安定するようになった。価格も手頃で入門用として満足している。",
+        "supportingSourceIds": [
+          "src-amazon-reviews"
+        ],
+        "sentiment": "positive"
+      }
+    ],
+    "userImpression": "フォースフィードバック機能がない点に注意が必要だが、公式ライセンス品の安心感と1万円台という手頃な価格から、初心者のエントリーモデルとして高く評価されている。操作性向上の第一歩として有用。",
+    "sources": [
+      {
+        "id": "src-amazon",
+        "name": "Amazon.co.jp 商品ページ",
+        "url": "https://www.amazon.co.jp/dp/B09P9S5JJ1",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2022-02-10",
+        "author": "ホリ(HORI)",
+        "conflictOfInterest": "none",
+        "notes": "商品の主な機能、仕様、価格（￥13,973）、公式ライセンス商品であることを確認。"
+      },
+      {
+        "id": "src-amazon-reviews",
+        "name": "Amazon.co.jp カスタマーレビュー",
+        "url": "https://www.amazon.co.jp/dp/B09P9S5JJ1",
+        "tier": "medium",
+        "evidenceType": "secondary",
+        "publishedAt": "2026-05-20",
+        "author": "Amazon購入者",
+        "conflictOfInterest": "none",
+        "notes": "評価は3.9/5（612件）。初心者向けとして使いやすいという意見が多い。"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "フォースフィードバック機能は搭載していない",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-amazon"
+        ],
+        "crossChecked": true,
+        "notes": "商品ページの特徴に明記されている"
+      },
+      {
+        "claim": "ウイニングモードによりステアリング切れ角を180度に設定可能",
+        "category": "durability",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-amazon"
+        ],
+        "crossChecked": true,
+        "notes": "ドリフトやカウンター操作がしやすくなる"
+      }
+    ],
+    "lastInvestigated": "2026-05-20",
+    "competitiveAnalysis": [
+      {
+        "name": "Thrustmaster T300 RS GT",
+        "asin": "B08XY6G7X5",
+        "priceComparison": "対象商品は約1.4万円、T300 RS GTは約5.3万円。T300は高価だが本格的なフォースフィードバックを搭載している。",
+        "featureComparison": [
+          "共通点：PlayStation公式ライセンス商品である点。PS5/PS4/PCに対応している点。",
+          "相違点：T300 RS GTは強力なフォースフィードバックモーターと金属製ペダルを備えた本格仕様。"
+        ],
+        "differentiators": [
+          "ホリ レーシングホイール エイペックスの利点：価格が圧倒的に安く、軽量で設置・片付けが容易。入門機として最適。",
+          "Thrustmaster T300 RS GTの利点：路面の凹凸やタイヤのグリップ喪失をリアルに伝えるフォースフィードバックがあり、本格的なシミュレーションを楽しめる。"
+        ]
+      },
+      {
+        "name": "Logicool G ハンコン G29",
+        "asin": "B07B9HR5CR",
+        "priceComparison": "対象商品は約1.4万円、G29は約5万円。G29はデュアルモーターのフォースフィードバックを搭載しクラッチペダルもある。",
+        "featureComparison": [
+          "共通点：PS5/PS4/PC対応のステアリングコントローラー。",
+          "相違点：G29は3ペダル（クラッチ付き）で、レザー調のステアリングとフォースフィードバックを備える。"
+        ],
+        "differentiators": [
+          "ホリ レーシングホイール エイペックスの利点：手軽に購入できる価格と、2ペダルでシンプルな構成。",
+          "Logicool G G29の利点：クラッチ操作やHパターンのシフター（別売）を用いた本格的なマニュアル運転体験が可能。"
+        ]
+      },
+      {
+        "name": "マリオカートレーシングホイール for Nintendo Switch",
+        "asin": "B07YC4TSSH",
+        "priceComparison": "対象商品は約1.4万円、マリオカート用は約7,300円。対応ハードが異なる。",
+        "featureComparison": [
+          "共通点：ホリ製の入門用レーシングホイール。",
+          "相違点：対象商品はPlayStation向け、こちらはNintendo Switch向け。"
+        ],
+        "differentiators": [
+          "ホリ レーシングホイール エイペックスの利点：PS5/PS4のリアルなレーシングゲーム（グランツーリスモなど）に対応し、より細かい設定が可能。",
+          "マリオカートレーシングホイールの利点：Switchでマリオカートを遊ぶのに最適化されたデザインと低価格。"
+        ]
+      },
+      {
+        "name": "Thrustmaster T80 RW Ferrari 488",
+        "asin": "B078214RS4",
+        "priceComparison": "対象商品は約1.4万円、T80は約2.1万円。T80の方がやや高価。",
+        "featureComparison": [
+          "共通点：フォースフィードバックを搭載しないエントリーモデル（バンジーコード方式）。",
+          "相違点：T80はフェラーリ公式ライセンスのデザインを採用している。"
+        ],
+        "differentiators": [
+          "ホリ レーシングホイール エイペックスの利点：ウイニングモードや専用アプリでの細かい調整機能があり、コストパフォーマンスが高い。",
+          "Thrustmaster T80の利点：フェラーリ488GTBのステアリングを再現したデザインで、フェラーリファンにとって魅力的。"
+        ]
+      },
+      {
+        "name": "Logicool G ハンコン G923d",
+        "asin": "B0BC156YBN",
+        "priceComparison": "対象商品は約1.4万円、G923dは約4万円。G923dは次世代フォースフィードバック「TRUEFORCE」を搭載。",
+        "featureComparison": [
+          "共通点：PS5/PS4対応のステアリングコントローラー。",
+          "相違点：G923dは高度な触覚フィードバック技術と3ペダルを搭載し、プレミアムな素材を使用。"
+        ],
+        "differentiators": [
+          "ホリ レーシングホイール エイペックスの利点：初期投資を抑えてレースゲームを楽しみたいユーザーに最適。",
+          "Logicool G G923dの利点：エンジン音や路面の振動を直接ステアリングに伝えるTRUEFORCEによる高い没入感。"
+        ]
+      },
+      {
+        "name": "Thrustmaster T98 Ferrari 296 GTB",
+        "asin": "B0FPXGJX5D",
+        "priceComparison": "対象商品は約1.4万円、T98は約2万円。",
+        "featureComparison": [
+          "共通点：PS5/PS4/PC対応のステアリングコントローラー。エントリークラス。",
+          "相違点：T98はFerrari 296 GTB公式ライセンスで、デザインや質感が異なる。"
+        ],
+        "differentiators": [
+          "ホリ レーシングホイール エイペックスの利点：アプリによるカスタマイズ性が高く、日本メーカーならではの安心感と使い勝手。",
+          "Thrustmaster T98の利点：フェラーリの最新モデルを模したデザインで没入感を得られる。"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "初めてレーシングコントローラーを購入する人",
+        "予算を抑えてグランツーリスモなどのレースゲームを楽しみたい人",
+        "フォースフィードバックの重いハンドル操作が苦手な人や子供"
+      ],
+      "pros": [
+        "PlayStation公式ライセンスの安心感",
+        "1万円台という手頃な価格",
+        "ウイニングモードやアプリによる高いカスタマイズ性"
+      ],
+      "cons": [
+        "フォースフィードバック機能がないためリアルさに欠ける",
+        "ハンドルの質感はプラスチック主体でチープさを感じる場合がある"
+      ],
+      "score": 80,
+      "scoreRationale": "[基本点: 70]\n[加点: +10] (1万円台という圧倒的なコストパフォーマンスの良さと入門機としての価値)\n[加点: +5] (ウイニングモードやアプリによるカスタマイズ性の高さ)\n[減点: -5] (フォースフィードバック非搭載によるシミュレーション性の低さ)\n[合計: 80]"
+    },
+    "technicalSpecs": {
+      "weight": "2943g",
+      "material": "プラスチック、ラバー等",
+      "compatibility": "PlayStation 5, PlayStation 4, PC (Windows 11 / 10)",
+      "connection": "USB有線接続",
+      "rotationAngle": "最大270度（ウイニングモード時180度）",
+      "other": [
+        "フォースフィードバック機能：非搭載（振動機能あり/なしは仕様要確認だがFFBはなし）",
+        "ペダル：2ペダル（アクセル、ブレーキ）",
+        "固定方式：クランプ式または吸盤式"
+      ]
+    }
+  }
+}
