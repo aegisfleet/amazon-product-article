@@ -1,0 +1,186 @@
+{
+  "analysis": {
+    "productName": "Logicool G ハンコン G923d",
+    "parentAsin": "B0GKG2YX16",
+    "productDescription": "Logicoolのレーシングシミュレーター向けステアリングコントローラー。次世代のフォースフィードバックシステム「TRUEFORCE」を搭載し、PS5/PS4/PCに対応しています。",
+    "productUsage": [
+      "レーシングゲーム（グランツーリスモ7、Assetto Corsaなど）のプレイ",
+      "リアルなドライビングシミュレーション体験"
+    ],
+    "positivePoints": [
+      "次世代システム「TRUEFORCE」によるリアルな路面感覚と高解像度なフォースフィードバック",
+      "スタート時のトラクションを最大化できる高精度のデュアルクラッチ機能",
+      "高級感のある本革製ステアリングと金属製ペダルの高いビルドクオリティ",
+      "プログレッシブスプリングを採用し、リアルな踏み心地を再現したブレーキペダル"
+    ],
+    "negativePoints": [
+      "フォースフィードバックの力が強すぎると感じるユーザーがおり、設定調整や強固な設置環境が必要",
+      "ブレーキペダルが実車より重く感じられ、ペダルを固定しないと床で滑る・移動する問題がある",
+      "駆動方式がギア式のため、ベルト式やダイレクトドライブ式と比較すると静音性や滑らかさで一歩譲る面がある"
+    ],
+    "useCases": [
+      "自宅で本格的なレースシミュレーション環境を構築したい場合",
+      "PS5のグランツーリスモ7等で、コントローラーでは得られない臨場感を味わいたい場合"
+    ],
+    "userStories": [
+      {
+        "userType": "レーシングゲーム初心者",
+        "scenario": "初めてのハンコンとして自宅でドライブ体験",
+        "experience": "本格的なデザインでカッコよく、黒一色のシックな感じが最高です。最初は操作に慣れませんでしたが、今は使いやすく、自宅でドライブ気分が味わえて楽しくなりました。レースゲームに必須のアイテムだと感じます。",
+        "supportingSourceIds": [
+          "src-kakaku-reviews"
+        ],
+        "sentiment": "positive"
+      },
+      {
+        "userType": "シムレーサー・経験者",
+        "scenario": "よりリアルなフォースフィードバックを求めて使用",
+        "experience": "フィードバック機能は強烈で、走っている実感を強く感じます。ただ、設定を最も弱くしても反力が実車以上に強すぎる印象があり、テーブルに固定するだけでは不安定になるため、レーシングコックピット等での強固な固定が必要です。また、ブレーキも実車よりかなり重く感じられました。",
+        "supportingSourceIds": [
+          "src-kakaku-reviews"
+        ],
+        "sentiment": "mixed"
+      }
+    ],
+    "userImpression": "ビルドクオリティが高く、「TRUEFORCE」による強力なフォースフィードバックと路面インフォメーションは高く評価されていますが、その反力が強すぎるため、強固な設置環境（レーシングコックピットや滑り止め）が求められます。ブレーキの重さについてもリアルだが調整が必要という意見が多いです。",
+    "sources": [
+      {
+        "id": "src-logicool-official",
+        "name": "Logicool G G923 公式製品ページ",
+        "url": "https://gaming.logicool.co.jp/ja-jp/products/driving/g923-trueforce-sim-racing-wheel.html",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2022-09-22",
+        "author": "Logicool G",
+        "conflictOfInterest": "possible",
+        "notes": "寸法、重量、TRUEFORCE技術の詳細、互換性などを確認"
+      },
+      {
+        "id": "src-kakaku-reviews",
+        "name": "価格.com G923 レビュー",
+        "url": "https://review.kakaku.com/review/K0001285399/",
+        "tier": "high",
+        "evidenceType": "secondary",
+        "publishedAt": "2024-05-20",
+        "author": "価格.comユーザー",
+        "conflictOfInterest": "none",
+        "notes": "フォースフィードバックの強さ、質感の高さ、ブレーキの重さや固定の必要性に関する実体験"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "次世代フォースフィードバック「TRUEFORCE」によるリアルな路面インフォメーションの再現",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-logicool-official",
+          "src-kakaku-reviews"
+        ],
+        "crossChecked": true,
+        "notes": "公式情報とユーザーレビューの両方で強力なフィードバックが言及されている"
+      },
+      {
+        "claim": "設置にはレーシングコックピットや滑り止めなどの強固な固定環境が必要",
+        "category": "durability",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-kakaku-reviews"
+        ],
+        "crossChecked": true,
+        "notes": "フォースフィードバックとブレーキが重いため、簡易的なデスク固定ではズレるとの報告が多数"
+      }
+    ],
+    "lastInvestigated": "2026-05-20",
+    "competitiveAnalysis": [
+      {
+        "name": "Logicool G29",
+        "asin": "B07B9HR5CR",
+        "priceComparison": "G29はG923の前世代モデルであり、基本設計は似ていますが、G923dの方が安価に設定されていることが多いです。G923dは最新機能がありながら価格が抑えられているためコスパに優れています。",
+        "featureComparison": [
+          "共通点：ギア駆動方式、ペダル構成、PS5/PS4/PC対応、ステアリングの基本デザイン。",
+          "相違点：G923は「TRUEFORCE」フォースフィードバック技術とデュアルクラッチを搭載し、より高解像度な路面情報を伝達します。G29は旧世代のフォースフィードバックです。"
+        ],
+        "differentiators": [
+          "Logicool G ハンコン G923dの利点：よりリアルで詳細な路面感覚を得られるTRUEFORCEと、スタートを有利にするデュアルクラッチ機能を備えている点。",
+          "Logicool G29の利点：既に市場で長く評価されている定番モデルであり、特定の旧環境・旧ゲームでの互換性が実証されている点。"
+        ]
+      },
+      {
+        "name": "Thrustmaster T300 RS GT",
+        "asin": "B08XY6G7X5",
+        "priceComparison": "対象商品よりも高価です。駆動方式の違い（ベルト式）による滑らかさと静音性にコストがかけられています。",
+        "featureComparison": [
+          "共通点：PS5/PS4/PC対応、フォースフィードバック搭載、3ペダル構成。",
+          "相違点：G923がギア式（TRUEFORCE搭載）であるのに対し、T300 RS GTはデュアルベルト式のブラシレスモーターを採用し、より滑らかで静音性の高いフィードバックを提供します。また、T300はステアリングホイールの交換が可能です。"
+        ],
+        "differentiators": [
+          "Logicool G ハンコン G923dの利点：TRUEFORCEによる独自の高解像度な振動表現と、ペダルの質感（金属製）および剛性の高さ。",
+          "Thrustmaster T300 RS GTの利点：ベルト駆動による滑らかなステアリングフィールと静音性、ステアリング交換による拡張性の高さ。"
+        ]
+      },
+      {
+        "name": "MOZA R3 ダイレクトドライブ",
+        "asin": "B0FGMWJP6Z",
+        "priceComparison": "対象商品と同価格帯またはやや高価ですが、ダイレクトドライブ方式を採用している点でコストパフォーマンスが高いです。",
+        "featureComparison": [
+          "共通点：フォースフィードバック搭載、PC対応シムレーシング入門～中級機。",
+          "相違点：G923がギア式であるのに対し、MOZA R3は3.9Nmのダイレクトドライブ（DD）方式を採用しており、ギアの引っ掛かり感がない滑らかでダイレクトな操作感を実現しています。一方G923はPS5/PS4に公式対応しています（R3はXbox/PC対応などが多い）。"
+        ],
+        "differentiators": [
+          "Logicool G ハンコン G923dの利点：PS5およびPS4への完全な公式対応と、グランツーリスモ7における最適化されたTRUEFORCE体験。",
+          "MOZA R3 ダイレクトドライブの利点：同価格帯でありながら上位機種に多いダイレクトドライブ方式を採用し、滑らかで遅延のないフォースフィードバックが得られる点。"
+        ]
+      },
+      {
+        "name": "Thrustmaster T80 RW Ferrari 488 GTB",
+        "asin": "B078214RS4",
+        "priceComparison": "対象商品の半額以下のエントリー価格帯ですが、機能面で大きく異なります。",
+        "featureComparison": [
+          "共通点：PS5/PS4/PC対応のレーシングコントローラー。",
+          "相違点：G923は強力なフォースフィードバックと3ペダルを搭載していますが、T80はバンジーコード方式（バネの抵抗のみ）でフォースフィードバックがなく、ペダルも2ペダル構成です。"
+        ],
+        "differentiators": [
+          "Logicool G ハンコン G923dの利点：フォースフィードバックによる圧倒的な没入感と、クラッチを含む3ペダルによる本格的なドライビング体験。",
+          "Thrustmaster T80 RW Ferrari 488 GTBの利点：フォースフィードバックが不要で、とにかく安価にハンコンを試してみたいカジュアルなゲーマーに向いている点。"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "PS5/PS4でグランツーリスモ7などのレーシングゲームを本格的に楽しみたい人",
+        "初めてフォースフィードバック付きのハンコンを購入する人",
+        "ペダルやステアリングの質感・剛性にこだわる人"
+      ],
+      "pros": [
+        "TRUEFORCEによる高解像度な路面フィードバック",
+        "金属と本革を使用した高いビルドクオリティ",
+        "PS公式ライセンスによる安心の互換性"
+      ],
+      "cons": [
+        "フィードバックとペダルが重いため、コックピット等の強固な設置環境が必要",
+        "ギア駆動特有の動作音や引っ掛かり感が多少ある"
+      ],
+      "score": 88,
+      "scoreRationale": "[基本点: 70]\n[加点: +8] (TRUEFORCE搭載によるリアルで詳細な路面情報の伝達と没入感の高さ)\n[加点: +7] (本革ステアリングや金属製ペダルによる高いビルドクオリティとデザイン性)\n[加点: +5] (前世代モデル(G29)等と比較しても価格競争力があり、コストパフォーマンスが良好)\n[減点: -2] (ギア駆動による動作音や、ベルト/DD方式と比較した際の滑らかさの不足)\n[合計: 88]"
+    },
+    "technicalSpecs": {
+      "// 注意": "調査で判明した仕様情報をここに網羅的に記載する",
+      "dimensions": {
+        "height": "270mm",
+        "width": "260mm",
+        "depth": "278mm"
+      },
+      "weight": "2250g (ケーブルなし)",
+      "pedalDimensions": {
+        "height": "167mm",
+        "width": "428.5mm",
+        "depth": "311mm"
+      },
+      "pedalWeight": "3100g (ケーブルなし)",
+      "material": "ステアリングシャフト:スチール, ホイールスポーク:メッキ加工アルミニウム, ホイールカバー:手縫いレザー, ペダルフレーム:冷間圧延板",
+      "rotation": "900度（ロック・トゥ・ロック）",
+      "forceFeedback": "TRUEFORCEデュアルモーター",
+      "compatibility": "PS5, PS4, PC (Windows 10/11)"
+    }
+  }
+}
