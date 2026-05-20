@@ -28,6 +28,8 @@ Amazon Creators APIの認証情報の取り扱いには、最優先でセキュ�
 
 いかなるタスクも、以下のコマンドが正常終了することを確認するまでは完了とみなしてはならない。
 
+- **Biome (コード・定義検証)**: `pnpm run biome:check`
+  - ソースコードおよび手動管理定義JSON（`brandgroups.json`, `categorygroups.json` 等）の構文・フォーマットエラーが0件であることを確認する。自動フォーマットを適用する場合は `pnpm run biome:fix` を使用すること。
 - **Lint**: `pnpm run lint`
   - ESLintエラーが0件であることを確認する。
 - **ビルド**: `pnpm run build`
@@ -40,7 +42,7 @@ Amazon Creators APIの認証情報の取り扱いには、最優先でセキュ�
   - 調査結果や推薦リストの生成・修正を行った場合は必ず実行すること。
 
 > [!IMPORTANT]
-> GitHub Actions CIはLintエラーがあると失敗する。実装完了前に必ず `pnpm run lint` を実行し、エラーが0件であることを確認すること。
+> GitHub Actions CIはLintやBiomeのエラーがあると失敗する。実装完了前に必ず `pnpm run biome:check` および `pnpm run lint` を実行し、エラーが0件であることを確認すること。
 
 ### 2.2 テスト駆動開発 (TDD)
 
@@ -120,6 +122,10 @@ Amazon Creators APIの認証情報の取り扱いには、最優先でセキュ�
 
 > [!NOTE]
 > 使用例の詳細はスクリプトのヘルプ、またはソースコードを参照すること。
+
+### 4.3 定義ファイルのフォーマットと整合性
+手動で編集するカテゴリ定義（`data/categorygroups.json`）およびブランド定義（`data/brandgroups.json`）は、ネストが深く括弧の記述ミスが発生しやすい。
+これらのファイルを編集した後は、必ず `pnpm run biome:check` を実行し、構文エラーがないことを検証すること。フォーマットの崩れは `pnpm run biome:fix` で自動整形できる。
 
 ---
 
