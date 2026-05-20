@@ -29,81 +29,99 @@
       "家事をしながらのおんぶ",
       "パパとママでの共有（サイズ調整が簡単）"
     ],
-    "userStories": [
-      {
-        "userType": "30代ママ（初めての育児）",
-        "scenario": "夏の外出時",
-        "experience": "以前使っていた抱っこ紐は暑くて子供があせもになってしまったが、SoftFlexに変えてからは背中の蒸れが解消された。（推測）",
-        "sentiment": "positive"
-      },
-      {
-        "userType": "パパ（体格大きめ）",
-        "scenario": "休日の長時間抱っこ",
-        "experience": "腰への負担が少なく、長時間抱っこしていても疲れにくい。サイズ調整もしやすいので夫婦で使いやすい。（推測）",
-        "sentiment": "positive"
-      },
-      {
-        "userType": "小柄なママ",
-        "scenario": "日常の買い物",
-        "experience": "しっかりした作りだが、少し大きくて装着したまま座ると邪魔に感じることがある。（推測）",
-        "sentiment": "mixed"
-      }
-    ],
+    "userStories": [],
     "userImpression": "通気性と腰への負担軽減において非常に高い評価を得ている。特に夏生まれの赤ちゃんや長時間抱っこをする親に人気がある一方、前向き抱きができない点や持ち運びのかさばりがネックになる場合もある。",
     "sources": [
       {
-        "name": "Amazon Product Page",
+        "id": "src-1",
+        "name": "Amazon商品ページ",
         "url": "https://www.amazon.co.jp/dp/B0C3LK3XX2",
-        "credibility": "High"
-      },
-      {
-        "name": "Ergobaby Official Site (General ADAPT Info)",
-        "url": null,
-        "credibility": "High"
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2023-05-12",
+        "author": "Ergobaby(エルゴベビー)",
+        "conflictOfInterest": "possible",
+        "notes": "商品の基本情報、仕様、メーカーによる公式説明"
       }
     ],
-    "lastInvestigated": "2026-02-08",
+    "lastInvestigated": "2026-05-20",
     "competitiveAnalysis": [
       {
         "name": "Ergobaby OMNI Breeze",
         "asin": "B0BX61CPNM",
-        "priceComparison": "約25,300円とADAPTより高価",
+        "priceComparison": "対象商品より高価だが、前向き抱きにも対応する上位モデルとしての価値がある",
         "featureComparison": [
-          "前向き抱きが可能",
-          "SoftFlexメッシュ採用",
-          "機能が多いため少し重い"
+          "共通点：SoftFlexメッシュ採用で高い通気性、人間工学に基づいた設計",
+          "相違点：OMNI Breezeは前向き抱きが可能だが、ADAPTは不可"
         ],
         "differentiators": [
-          "前向き抱きができる点が最大の違い",
-          "より多機能な上位モデル"
+          "Ergobaby(エルゴベビー) ADAPT SoftFlexの利点：機能がシンプルな分、価格が抑えられており、前向き抱きが不要な場合に適している",
+          "Ergobaby OMNI Breezeの利点：前向き抱きができ、より多様な抱き方に対応できる"
         ]
       },
       {
-        "name": "BabyBjörn HARMONY",
-        "asin": "B09QKYG6Z2",
-        "priceComparison": "約27,594円とADAPTより高価",
+        "name": "ベビービョルン ONE KAI Air",
+        "asin": "B07C2S4XK9",
+        "priceComparison": "対象商品とほぼ同等の価格帯であり、メッシュ素材による機能性を考慮すると妥当",
         "featureComparison": [
-          "フルメッシュで通気性が高い",
-          "バックルが前面にあり装着が簡単",
-          "スタイリッシュなデザイン"
+          "共通点：新生児から使用可能で、メッシュ素材を採用し通気性が高い",
+          "相違点：ベビービョルンは頭部サポートの形状やバックルの位置が異なり、前向き抱きが可能"
         ],
         "differentiators": [
-          "装着のしやすさとデザイン性",
-          "前向き抱きが可能"
+          "Ergobaby(エルゴベビー) ADAPT SoftFlexの利点：腰と肩に重さを分散する構造で、長時間抱っこの負担軽減に優れている",
+          "ベビービョルン ONE KAI Airの利点：バックルが体の前面にあり、コートを着たまま赤ちゃんを降ろすなど着脱が容易"
         ]
       },
       {
-        "name": "kerätä u-sling",
+        "name": "コニー抱っこ紐 FLEX",
+        "asin": "B09XTQKMVX",
+        "priceComparison": "対象商品より大幅に安く、サブの抱っこ紐として手が出しやすい",
+        "featureComparison": [
+          "共通点：メッシュ生地で通気性が良く、新生児の寝かしつけに適している",
+          "相違点：コニーは布で包み込むスリングラップ型であり、かさばらないが長時間のホールド力は対象商品に劣る"
+        ],
+        "differentiators": [
+          "Ergobaby(エルゴベビー) ADAPT SoftFlexの利点：長時間の外出やおんぶなど、しっかりとしたホールドが求められる場面で活躍する",
+          "コニー抱っこ紐 FLEXの利点：非常にコンパクトで持ち運びやすく、サイズ調整も容易なためちょっとしたお出かけに便利"
+        ]
+      },
+      {
+        "name": "(ケラッタ) u-sling",
         "asin": "B08SQD1CZL",
-        "priceComparison": "約3,280円と非常に安価",
+        "priceComparison": "対象商品と比べて非常に安価であり、用途を絞って使う分には十分な価格",
         "featureComparison": [
-          "簡易的なスリングタイプ",
-          "新生児から使えるが長時間は不向き",
-          "コンパクトに持ち運べる"
+          "共通点：新生児から使用できる",
+          "相違点：ケラッタは簡易的なスリングタイプであり、対象商品のような肩・腰の分散パッドを持たない"
         ],
         "differentiators": [
-          "圧倒的な低価格",
-          "手軽さと携帯性"
+          "Ergobaby(エルゴベビー) ADAPT SoftFlexの利点：構造がしっかりしており、成長して体重が増えても安定して抱っこできる",
+          "(ケラッタ) u-slingの利点：手軽に横抱きができ、低価格で持ち運びも容易なため新生児期の寝かしつけなどに特化している"
+        ]
+      },
+      {
+        "name": "bebeswan BTベスト ベビーキャリア",
+        "asin": "B0FMY11KMP",
+        "priceComparison": "対象商品より高価だが、ベスト型という独自構造による負担軽減を重視するなら選択肢になる",
+        "featureComparison": [
+          "共通点：新生児からおんぶまで対応し、メッシュ素材を使用している",
+          "相違点：bebeswanは着る「ベスト型」であり、服を着るように装着する構造"
+        ],
+        "differentiators": [
+          "Ergobaby(エルゴベビー) ADAPT SoftFlexの利点：価格が抑えられており、実績ある定番ブランドの安心感がある",
+          "bebeswan BTベスト ベビーキャリアの利点：ベスト型により肩や腰への負担を大きく分散でき、装着も簡単"
+        ]
+      },
+      {
+        "name": "Aprica(アップリカ) コランハグ ライト",
+        "asin": "B01LYRLTE2",
+        "priceComparison": "対象商品より安価で、日本人の体型に合わせた基本機能を備えておりコストパフォーマンスが良い",
+        "featureComparison": [
+          "共通点：長期間使用でき、複数の抱き方に対応している",
+          "相違点：アップリカは日本人の体型にフィットする設計を重視し、横抱きが可能（要専用シート）"
+        ],
+        "differentiators": [
+          "Ergobaby(エルゴベビー) ADAPT SoftFlexの利点：SoftFlexメッシュによる非常に高い通気性と、インサートなしで新生児から使える利便性",
+          "Aprica(アップリカ) コランハグ ライトの利点：日本人の体型に合わせた設計で、価格が手頃でありながら5WAYの抱き方に対応"
         ]
       }
     ],
@@ -125,16 +143,48 @@
         "持ち運びにかさばる",
         "小柄な人には大きく感じる場合がある"
       ],
-      "score": 85,
-      "scoreRationale": "[基本点: 70]\n[加点: +10] (通気性が高く快適)\n[加点: +5] (腰への負担軽減効果が高い)\n[加点: +5] (新生児から長く使える汎用性)\n[減点: -5] (前向き抱きができない)\n[合計: 85]"
+      "score": 80,
+      "scoreRationale": "[基本点: 70]\n[加点: +10] (信頼できるブランドであり、日本正規品による保証付きで安全性が高い)\n[加点: +5] (SoftFlexメッシュによる高い通気性と、新生児から48ヶ月まで長く使える機能性)\n[減点: -5] (競合製品と比較して価格がやや高め)\n[合計: 80]"
     },
     "technicalSpecs": {
-      "material": "SoftFlex™ Mesh (ポリエステル100%)",
-      "weight_limit": "3.2kg〜20.4kg",
-      "age_range": "0ヶ月〜48ヶ月",
-      "positions": ["対面抱き", "腰抱き", "おんぶ"],
+      "dimensions": {
+        "height": "268mm",
+        "width": "170mm",
+        "depth": "170mm"
+      },
+      "weight_limit": "3.2kg～20.4kg",
+      "age_range": "0ヶ月～48ヶ月",
+      "positions": [
+        "対面抱き",
+        "腰抱き",
+        "おんぶ"
+      ],
+      "material": "SoftFlex Mesh (ポリエステル100%)",
       "care_instructions": "洗濯機洗い可",
-      "warranty": "日本正規品保証付"
-    }
+      "warranty": "日本正規品保証付",
+      "color": "ナチュラルベージュ"
+    },
+    "claims": [
+      {
+        "claim": "新生児（0ヶ月）から48ヶ月までインサートなしで長期間使用可能",
+        "category": "durability",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "crossChecked": false,
+        "notes": "Amazonの商品説明で確認"
+      },
+      {
+        "claim": "SoftFlexメッシュを採用し、通気性に優れている",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "crossChecked": false,
+        "notes": "Amazonの商品説明で確認"
+      }
+    ]
   }
 }
