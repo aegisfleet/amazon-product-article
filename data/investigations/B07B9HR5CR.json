@@ -1,0 +1,152 @@
+{
+  "analysis": {
+    "productName": "Logicool G G29 ステアリングコントローラー",
+    "parentAsin": "B0G2BVLV33",
+    "productDescription": "PS5/PS4/PCなどに対応する、デュアルモーターのフォースフィードバックを搭載したステアリングコントローラー。リアルなレーシング体験を実現します。",
+    "productUsage": [
+      "レーシングゲームのプレイ",
+      "ドライビングシミュレーション"
+    ],
+    "positivePoints": [
+      "デュアルモーターのフォースフィードバックによるリアルな運転感覚",
+      "各種コントロールがハンドルに統合されており、コースから目を離さずに操作可能",
+      "感圧式ペダルを再現したノンリニアブレーキペダルによる正確なブレーキング"
+    ],
+    "negativePoints": [
+      "シフター（シフトレバー）は別売り",
+      "ギア駆動のため、上位のダイレクトドライブ方式に比べると静音性や滑らかさで劣る"
+    ],
+    "useCases": [
+      "自宅でのグランツーリスモ7のプレイ",
+      "PCでの本格的なレーシングシミュレーターの操作"
+    ],
+    "userStories": [],
+    "userImpression": "フォースフィードバックの力強さやペダルの踏みごたえなど、本格的なレーシング体験を手軽に味わえる製品として高く評価されている。一方で、ギアの動作音や別売りのシフターに関する言及も見られる。",
+    "sources": [
+      {
+        "id": "src-amazon-features",
+        "name": "Amazon 商品ページ仕様・特徴",
+        "url": "https://www.amazon.co.jp/dp/B07B9HR5CR",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-05-20",
+        "author": "Logicool G",
+        "conflictOfInterest": "none",
+        "notes": "フォースフィードバック、感圧式ペダル、ハンドル上のコントロールなどに関する仕様を確認。"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "デュアルモーターのフォースフィードバックによるリアルな体験",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-amazon-features"
+        ],
+        "crossChecked": true,
+        "notes": "商品仕様に明記されている。"
+      }
+    ],
+    "lastInvestigated": "2026-05-20",
+    "competitiveAnalysis": [
+      {
+        "name": "Thrustmaster T300 RS GT",
+        "asin": "B08XY6G7X5",
+        "priceComparison": "T300 RS GTの方がやや高価だが、ベルト駆動を採用しており、滑らかで静かな操作感を提供する。",
+        "featureComparison": [
+          "共通点：PS5/PS4/PC対応、フォースフィードバック搭載、3ペダル付属",
+          "相違点：G29がギア駆動であるのに対し、T300 RS GTはブラシレスモーターによるデュアルベルト駆動を採用している。"
+        ],
+        "differentiators": [
+          "Logicool G G29の利点：価格が抑えられており、ハンドル上にボタンが多数配置されているため操作性が良い。",
+          "Thrustmaster T300 RS GTの利点：ベルト駆動による滑らかで静かなフォースフィードバックと、ホイール交換可能なエコシステム。"
+        ]
+      },
+      {
+        "name": "ホリ レーシングホイール エイペックス",
+        "asin": "B09P9S5JJ1",
+        "priceComparison": "ホリ エイペックスの方が大幅に安いが、フォースフィードバック機能を搭載していない。",
+        "featureComparison": [
+          "共通点：PS5/PS4/PC対応、ステアリング型コントローラー",
+          "相違点：G29がフォースフィードバック搭載であるのに対し、ホリ エイペックスは非搭載（振動機能のみ）。"
+        ],
+        "differentiators": [
+          "Logicool G G29の利点：フォースフィードバックによるリアルな路面感覚やタイヤのグリップ感を体感できる。",
+          "ホリ レーシングホイール エイペックスの利点：非常に安価で入門用に適しており、フォースフィードバックがない分、設置や片付けが容易。"
+        ]
+      },
+      {
+        "name": "Logicool G G923",
+        "asin": "B08GFKV3SH",
+        "priceComparison": "G923の方が高価だが、次世代のフォースフィードバックシステム「TRUEFORCE」を搭載している。",
+        "featureComparison": [
+          "共通点：PS5/PS4/PC対応、ギア駆動、基本的なデザインとペダル構成",
+          "相違点：G923は「TRUEFORCE」を搭載し、ゲーム内の物理エンジンと直接連携してより高精細なフィードバックを提供する。また、デュアルクラッチ機能を備える。"
+        ],
+        "differentiators": [
+          "Logicool G G29の利点：基本性能を押さえつつ、価格が抑えられている。",
+          "Logicool G G923の利点：TRUEFORCEによる、エンジンの振動や路面の細かな変化まで伝える圧倒的な没入感。"
+        ]
+      },
+      {
+        "name": "Thrustmaster T128",
+        "asin": "B0BNH8HXLG",
+        "priceComparison": "T128の方が安価だが、ペダルが2ペダル（クラッチなし）である。",
+        "featureComparison": [
+          "共通点：PS5/PS4/PC対応、フォースフィードバック搭載",
+          "相違点：G29がギア駆動で3ペダル付属に対し、T128はギア・ベルトのハイブリッド駆動で2ペダル付属。"
+        ],
+        "differentiators": [
+          "Logicool G G29の利点：クラッチを含む3ペダルが標準付属しており、将来的にシフターを追加してのマニュアル操作に対応しやすい。",
+          "Thrustmaster T128の利点：より安価にフォースフィードバックを体験でき、ハイブリッド駆動により滑らかな感触を得られる。"
+        ]
+      },
+      {
+        "name": "Logicool G RS50 SYSTEM",
+        "asin": "B0FQ5KV377",
+        "priceComparison": "RS50 SYSTEMの方が圧倒的に高価だが、ダイレクトドライブ方式を採用したハイエンドモデル。",
+        "featureComparison": [
+          "共通点：PS5/PS4/PC対応、TRUEFORCE搭載",
+          "相違点：G29がギア駆動であるのに対し、RS50 SYSTEMは最大8Nmのダイレクトドライブ方式を採用し、より強力で精確なフィードバックを提供する。"
+        ],
+        "differentiators": [
+          "Logicool G G29の利点：価格が安く、ハンコン入門者でも手を出しやすい。",
+          "Logicool G RS50 SYSTEMの利点：ダイレクトドライブによる最高峰のフィードバックと、ホイール交換可能なカスタマイズ性。"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "本格的なレーシングゲームを始めたい入門者",
+        "予算を抑えつつフォースフィードバック付きのハンコンが欲しい人"
+      ],
+      "pros": [
+        "十分な強さのフォースフィードバック",
+        "高品質なレザー調ステアリングとステンレス製ペダル",
+        "ハンドル上に集約された使いやすいボタン類"
+      ],
+      "cons": [
+        "上位機種（ベルト駆動やDD）と比べるとギアの動作音が大きい",
+        "シフターは別売り"
+      ],
+      "score": 85,
+      "scoreRationale": "[基本点: 70]\n[加点: +10] (フォースフィードバック搭載による本格的な操作感と没入感)\n[加点: +5] (レザー調のステアリングやステンレス製ペダルによる高い質感と品質)\n[加点: +5] (多数のボタンやダイヤルがハンドルに集約されており操作性が高い)\n[減点: -5] (ギア駆動のため、ベルト駆動モデルと比較して動作音や滑らかさで見劣りする)\n[合計: 85]"
+    },
+    "technicalSpecs": {
+      "dimensions": {
+        "height": "270mm",
+        "width": "260mm",
+        "depth": "278mm"
+      },
+      "weight": "2250g",
+      "cableLength": "1.8m",
+      "material": "ステアリング：レザー調、ペダル：ステンレススチール",
+      "compatibility": "PlayStation 5, PlayStation 4, PlayStation 3, Windows PC, macOS",
+      "other": [
+        "デュアルモーター フォース フィードバック",
+        "ノンリニア ブレーキ ペダル",
+        "ステアリング回転角：900度（ロック・トゥ・ロック）"
+      ]
+    }
+  }
+}
