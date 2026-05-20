@@ -1,7 +1,7 @@
 {
   "Amazon": {
     "slug": "amazon",
-    "icon": "📱",
+    "icon": "🛍️",
     "matcher": {
       "type": "brand",
       "value": "^Amazon$"
@@ -46,7 +46,7 @@
   },
   "Apple": {
     "slug": "apple",
-    "icon": "🍏",
+    "icon": "🍎",
     "matcher": {
       "type": "title_prefix",
       "value": "Apple"
@@ -64,7 +64,7 @@
   },
   "UGREEN": {
     "slug": "ugreen",
-    "icon": "🖱️",
+    "icon": "🔋",
     "matcher": {
       "type": "title_prefix",
       "value": "UGREEN"
@@ -91,7 +91,7 @@
   },
   "パナソニック": {
     "slug": "panasonic",
-    "icon": "🍳",
+    "icon": "📺",
     "matcher": {
       "type": "title_prefix",
       "value": "パナソニック"
@@ -109,7 +109,7 @@
   },
   "無印良品": {
     "slug": "muji",
-    "icon": "🍱",
+    "icon": "🧺",
     "matcher": {
       "type": "title_prefix",
       "value": "無印良品"
@@ -118,7 +118,7 @@
   },
   "シャープ": {
     "slug": "sharp",
-    "icon": "🧊",
+    "icon": "🌬️",
     "matcher": {
       "type": "title_prefix",
       "value": "シャープ"
@@ -136,7 +136,7 @@
   },
   "山善": {
     "slug": "山善",
-    "icon": "🏠",
+    "icon": "🪑",
     "description": "山善の商品一覧",
     "matcher": {
       "type": "brand",
@@ -149,12 +149,12 @@
     "description": "Logicoolの商品一覧",
     "matcher": {
       "type": "brand",
-      "value": "Logicool|ロジクール"
+      "value": "Logicool|ロジクール|Logicool G"
     }
   },
   "タイガー魔法瓶": {
     "slug": "タイガー魔法瓶",
-    "icon": "🐯",
+    "icon": "🍚",
     "description": "タイガー魔法瓶の商品一覧",
     "matcher": {
       "type": "brand",
@@ -217,7 +217,7 @@
   },
   "COMFEE": {
     "slug": "comfee",
-    "icon": "🧊",
+    "icon": "🎛️",
     "description": "COMFEE (コンフィー) の商品一覧",
     "matcher": {
       "type": "regex",
@@ -253,7 +253,7 @@
   },
   "BOTANIST": {
     "slug": "botanist",
-    "icon": "🌿",
+    "icon": "🧴",
     "description": "BOTANISTの商品一覧",
     "matcher": {
       "type": "brand",
@@ -271,7 +271,7 @@
   },
   "サーモス": {
     "slug": "サーモス",
-    "icon": "☕",
+    "icon": "🥤",
     "description": "サーモスの商品一覧",
     "matcher": {
       "type": "brand",
@@ -316,11 +316,344 @@
   },
   "HUAWEI": {
     "slug": "huawei",
-    "icon": "📱",
+    "icon": "⌚",
     "description": "HUAWEIの商品一覧",
     "matcher": {
       "type": "brand",
       "value": "HUAWEI"
+    }
+  },
+  "サンワダイレクト": {
+    "slug": "sanwadirect",
+    "icon": "💻",
+    "description": "サンワダイレクトの商品一覧",
+    "matcher": {
+      "type": "brand",
+      "value": "サンワダイレクト"
+    }
+  },
+  "CASIO": {
+    "slug": "casio",
+    "icon": "⌚",
+    "description": "CASIO（カシオ）の商品一覧",
+    "matcher": {
+      "type": "brand",
+      "value": "CASIO|カシオ"
+    }
+  },
+  "LEGO": {
+    "slug": "lego",
+    "icon": "🧱",
+    "description": "LEGO（レゴ）の商品一覧",
+    "matcher": {
+      "type": "brand",
+      "value": "LEGO|レゴ"
+    }
+  },
+  "象印マホービン": {
+    "slug": "zojirushi",
+    "icon": "🐘",
+    "description": "象印マホービンの商品一覧",
+    "matcher": {
+      "type": "brand",
+      "value": "象印マホービン|象印"
+    }
+  },
+  "Coleman": {
+    "slug": "coleman",
+    "icon": "⛺",
+    "description": "Coleman（コールマン）の商品一覧",
+    "matcher": {
+      "type": "brand",
+      "value": "Coleman|コールマン"
+    }
+  },
+  "adidas": {
+    "slug": "adidas",
+    "icon": "🎽",
+    "description": "adidas（アディダス）の商品一覧",
+    "matcher": {
+      "type": "brand",
+      "value": "adidas|アディダス"
+    }
+  },
+  "東芝": {
+    "slug": "toshiba",
+    "icon": "💿",
+    "description": "東芝（TOSHIBA）の商品一覧",
+    "matcher": {
+      "type": "brand",
+      "value": "東芝|TOSHIBA"
+    }
+  },
+  "サンワサプライ": {
+    "slug": "sanwasupply",
+    "icon": "🖥️",
+    "description": "サンワサプライの商品一覧",
+    "matcher": {
+      "type": "brand",
+      "value": "サンワサプライ"
+    }
+  },
+  "セザンヌ": {
+    "slug": "cezanne",
+    "icon": "💄",
+    "description": "セザンヌ（CEZANNE）の商品一覧",
+    "matcher": {
+      "type": "brand",
+      "value": "セザンヌ|CEZANNE"
+    }
+  },
+  "PHILIPS": {
+    "slug": "philips",
+    "icon": "🪒",
+    "description": "PHILIPS（フィリップス）の商品一覧",
+    "matcher": {
+      "type": "brand",
+      "value": "PHILIPS|フィリップス"
+    }
+  },
+  "PUMA": {
+    "slug": "puma",
+    "icon": "🐆",
+    "description": "PUMA（プーマ）の商品一覧",
+    "matcher": {
+      "type": "brand",
+      "value": "PUMA|プーマ"
+    }
+  },
+  "三菱鉛筆": {
+    "slug": "mitsubishi-pencil",
+    "icon": "✏️",
+    "description": "三菱鉛筆の商品一覧",
+    "matcher": {
+      "type": "brand",
+      "value": "三菱鉛筆"
+    }
+  },
+  "Google": {
+    "slug": "google",
+    "icon": "🌐",
+    "description": "Googleの商品一覧",
+    "matcher": {
+      "type": "brand",
+      "value": "Google|グーグル"
+    }
+  },
+  "AGF": {
+    "slug": "agf",
+    "icon": "☕",
+    "description": "AGFの商品一覧",
+    "matcher": {
+      "type": "brand",
+      "value": "AGF"
+    }
+  },
+  "HARIO": {
+    "slug": "hario",
+    "icon": "🏺",
+    "description": "HARIO（ハリオ）の商品一覧",
+    "matcher": {
+      "type": "brand",
+      "value": "HARIO|ハリオ"
+    }
+  },
+  "キャプテンスタッグ": {
+    "slug": "captain-stag",
+    "icon": "🦌",
+    "description": "キャプテンスタッグの商品一覧",
+    "matcher": {
+      "type": "brand",
+      "value": "キャプテンスタッグ|CAPTAIN STAG"
+    }
+  },
+  "LUX": {
+    "slug": "lux",
+    "icon": "✨",
+    "description": "LUX（ラックス）の商品一覧",
+    "matcher": {
+      "type": "brand",
+      "value": "LUX|ラックス"
+    }
+  },
+  "Razer": {
+    "slug": "razer",
+    "icon": "🐍",
+    "description": "Razer（レイザー）の商品一覧",
+    "matcher": {
+      "type": "brand",
+      "value": "Razer|レイザー"
+    }
+  },
+  "PLUS": {
+    "slug": "plus",
+    "icon": "✂️",
+    "description": "PLUS（プラス）の商品一覧",
+    "matcher": {
+      "type": "brand",
+      "value": "PLUS|プラス"
+    }
+  },
+  "KAI": {
+    "slug": "kai",
+    "icon": "🔪",
+    "description": "貝印（KAI）の商品一覧",
+    "matcher": {
+      "type": "brand",
+      "value": "貝印|KAI"
+    }
+  },
+  "ヤマハ": {
+    "slug": "yamaha",
+    "icon": "🎹",
+    "description": "ヤマハ（YAMAHA）の商品一覧",
+    "matcher": {
+      "type": "brand",
+      "value": "ヤマハ|YAMAHA"
+    }
+  },
+  "オムロン": {
+    "slug": "omron",
+    "icon": "🩺",
+    "description": "オムロン（OMRON）の商品一覧",
+    "matcher": {
+      "type": "brand",
+      "value": "オムロン|OMRON"
+    }
+  },
+  "BANDAI SPIRITS": {
+    "slug": "bandai-spirits",
+    "icon": "🤖",
+    "description": "BANDAI SPIRITSの商品一覧",
+    "matcher": {
+      "type": "brand",
+      "value": "BANDAI SPIRITS"
+    }
+  },
+  "スイッチボット": {
+    "slug": "switchbot",
+    "icon": "🔑",
+    "description": "SwitchBot（スイッチボット）の商品一覧",
+    "matcher": {
+      "type": "brand",
+      "value": "SwitchBot|スイッチボット"
+    }
+  },
+  "Lenovo": {
+    "slug": "lenovo",
+    "icon": "💻",
+    "description": "Lenovo（レノボ）の商品一覧",
+    "matcher": {
+      "type": "brand",
+      "value": "Lenovo|レノボ"
+    }
+  },
+  "リファ": {
+    "slug": "refa",
+    "icon": "💆‍♀️",
+    "description": "ReFa（リファ）の商品一覧",
+    "matcher": {
+      "type": "brand",
+      "value": "ReFa|リファ"
+    }
+  },
+  "パンテーン": {
+    "slug": "pantene",
+    "icon": "🧴",
+    "description": "パンテーン（Pantene）の商品一覧",
+    "matcher": {
+      "type": "brand",
+      "value": "パンテーン|Pantene"
+    }
+  },
+  "CIO": {
+    "slug": "cio",
+    "icon": "⚡",
+    "description": "CIOの商品一覧",
+    "matcher": {
+      "type": "brand",
+      "value": "CIO"
+    }
+  },
+  "JBL": {
+    "slug": "jbl",
+    "icon": "🔊",
+    "description": "JBLの商品一覧",
+    "matcher": {
+      "type": "brand",
+      "value": "JBL"
+    }
+  },
+  "ASUS": {
+    "slug": "asus",
+    "icon": "💻",
+    "description": "ASUS（エイスース）の商品一覧",
+    "matcher": {
+      "type": "brand",
+      "value": "ASUS|エイスース"
+    }
+  },
+  "DJI": {
+    "slug": "dji",
+    "icon": "🛸",
+    "description": "DJIの商品一覧",
+    "matcher": {
+      "type": "brand",
+      "value": "DJI"
+    }
+  },
+  "タカラトミー": {
+    "slug": "takaratomy",
+    "icon": "🚗",
+    "description": "タカラトミーの商品一覧",
+    "matcher": {
+      "type": "brand",
+      "value": "タカラトミー"
+    }
+  },
+  "タンスのゲン": {
+    "slug": "tansu-no-gen",
+    "icon": "🛏️",
+    "description": "タンスのゲンの商品一覧",
+    "matcher": {
+      "type": "brand",
+      "value": "タンス of ゲン|タンスのゲン"
+    }
+  },
+  "DHC": {
+    "slug": "dhc",
+    "icon": "💊",
+    "description": "DHCの商品一覧",
+    "matcher": {
+      "type": "brand",
+      "value": "DHC"
+    }
+  },
+  "MYTREX": {
+    "slug": "mytrex",
+    "icon": "💆‍♂️",
+    "description": "MYTREX（マイトレックス）の商品一覧",
+    "matcher": {
+      "type": "brand",
+      "value": "MYTREX|マイトレックス"
+    }
+  },
+  "ゼンハイザー": {
+    "slug": "sennheiser",
+    "icon": "🎧",
+    "description": "ゼンハイザー（Sennheiser）の商品一覧",
+    "matcher": {
+      "type": "brand",
+      "value": "ゼンハイザー|Sennheiser"
+    }
+  },
+  "ピュリナ ワン": {
+    "slug": "purina-one",
+    "icon": "🐱",
+    "description": "ピュリナ ワンの商品一覧",
+    "matcher": {
+      "type": "brand",
+      "value": "ピュリナ ワン|ピュリナワン"
     }
   }
 }
