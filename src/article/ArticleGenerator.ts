@@ -30,56 +30,24 @@ import {
 export class ArticleGenerator {
   private static readonly REVIEW_AUTHOR_NAME = '編集部';
 
-  /** 見出しバリエーション: テンプレート感を低減するために複数パターンから選択 */
-  private static readonly FEATURES_HEADINGS = [
-    { section: '📦 商品の特徴', useCases: '💡 こんなシーンで活躍', usage: '🔧 使い方' },
-    { section: '🔍 商品の詳しい特徴', useCases: '✨ おすすめの使い方', usage: '📋 基本的な使い方' },
-    { section: '📋 商品スペックと特徴', useCases: '🎯 こんな場面で役立つ', usage: '💡 使い方ガイド' },
-  ];
+  /** 見出し定義（固定化） */
+  private static readonly FEATURES_HEADINGS = {
+    section: '📦 商品の特徴',
+    useCases: '💡 こんなシーンで活躍',
+    usage: '🔧 使い方',
+  };
 
-  private static readonly REVIEW_HEADINGS = [
-    {
-      section: '📊 ユーザーレビュー',
-      positive: '👍 ユーザーが評価している点',
-      negative: '👎 ユーザーが気になると感じている点',
-      useCases: '💡 実際の使用シーン',
-      voices: '🗣️ 購入者の声',
-    },
-    {
-      section: '💬 レビュー分析',
-      positive: '✅ 高評価のポイント',
-      negative: '⚠️ 注意すべきポイント',
-      useCases: '🎯 実際に使われているシーン',
-      voices: '📝 ユーザーの感想',
-    },
-    {
-      section: '⭐ ユーザー評価まとめ',
-      positive: '👍 評判の良い点',
-      negative: '👎 改善を望む声',
-      useCases: '💡 利用者の活用シーン',
-      voices: '🗣️ 利用者の体験談',
-    },
-  ];
+  private static readonly REVIEW_HEADINGS = {
+    section: '📊 ユーザーレビュー',
+    positive: '👍 ユーザーが評価している点',
+    negative: '👎 ユーザーが気になると感じている点',
+    useCases: '💡 実際の使用シーン',
+    voices: '🗣️ 購入者の声',
+  };
 
-  private static readonly RECOMMENDATION_MESSAGES_HIGH = [
-    '自信を持っておすすめできる商品です。',
-    '多くのユーザーに満足いただける品質の商品です。',
-    '購入して後悔する可能性が低い、安心の一品です。',
-    '総合力が高く、幅広いユーザーにおすすめできます。',
-  ];
-
-  private static readonly RECOMMENDATION_MESSAGES_MID = [
-    '用途を限定すれば良い選択肢となります。',
-    '特定のニーズに合えば、十分に価値のある選択肢です。',
-    '目的が明確であれば検討に値する商品です。',
-    '条件が合うユーザーにとっては魅力的な選択肢です。',
-  ];
-
-  private static readonly RECOMMENDATION_MESSAGES_LOW = [
-    '購入前に他の選択肢も検討することをおすすめします。',
-    '慎重に比較検討した上での購入判断をおすすめします。',
-    '同カテゴリの他商品とよく比較してから決めましょう。',
-  ];
+  private static readonly RECOMMENDATION_MESSAGE_HIGH = '自信を持っておすすめできる商品です。';
+  private static readonly RECOMMENDATION_MESSAGE_MID = '用途を限定すれば良い選択肢となります。';
+  private static readonly RECOMMENDATION_MESSAGE_LOW = '購入前に他の選択肢も検討することをおすすめします。';
 
   private readonly logger: Logger;
   private readonly defaultTemplate: ArticleTemplate;
@@ -411,7 +379,7 @@ export class ArticleGenerator {
     const affiliateTag = affiliatePartnerTag || process.env.AMAZON_PARTNER_TAG || 'your-affiliate-tag';
 
     const sections: ArticleSection[] = [
-      this.generateFeaturesSection(product, investigation),
+      this.generateFeaturesSection(investigation),
       await this.generateUserReviewsSection(investigation, reviewAnalysis, template.sections.userReviews),
     ];
 
@@ -614,8 +582,8 @@ ${sourcesList}`;
   /**
    * 商品の特徴と使い方セクションを生成
    */
-  private generateFeaturesSection(product: Product, investigation: InvestigationResult): ArticleSection {
-    const headingVariant = this.selectVariant(product.asin, ArticleGenerator.FEATURES_HEADINGS);
+  private generateFeaturesSection(investigation: InvestigationResult): ArticleSection {
+    const headingVariant = ArticleGenerator.FEATURES_HEADINGS;
 
     // 使用シーン
     const useCases = investigation.analysis.useCases
@@ -666,8 +634,7 @@ ${usageSection}`;
     template: TemplateSection,
   ): Promise<ArticleSection> {
     await Promise.resolve();
-    const asin = investigation.product?.asin || '';
-    const headingVariant = this.selectVariant(asin, ArticleGenerator.REVIEW_HEADINGS);
+    const headingVariant = ArticleGenerator.REVIEW_HEADINGS;
 
     const positivePoints = investigation.analysis.positivePoints.map((point) => `- ${point}`).join('\n');
 
@@ -877,11 +844,11 @@ ${investigation.analysis.recommendation.cons.map((con) => `- ${con}`).join('\n')
 
     let recommendationMessage: string;
     if (score >= 80) {
-      recommendationMessage = this.selectVariant(product.asin, ArticleGenerator.RECOMMENDATION_MESSAGES_HIGH);
+      recommendationMessage = ArticleGenerator.RECOMMENDATION_MESSAGE_HIGH;
     } else if (score >= 60) {
-      recommendationMessage = this.selectVariant(product.asin, ArticleGenerator.RECOMMENDATION_MESSAGES_MID);
+      recommendationMessage = ArticleGenerator.RECOMMENDATION_MESSAGE_MID;
     } else {
-      recommendationMessage = this.selectVariant(product.asin, ArticleGenerator.RECOMMENDATION_MESSAGES_LOW);
+      recommendationMessage = ArticleGenerator.RECOMMENDATION_MESSAGE_LOW;
     }
 
     const content = `## 🎯 最終結論：この商品は買いか？
@@ -1910,24 +1877,5 @@ ${confidenceLine}`;
     } catch {
       return dateStr;
     }
-  }
-
-  /**
-   * ASIN ベースの決定論的バリエーション選択
-   * 同一 ASIN に対して常に同じバリエーションを返す（再生成しても安定）
-   * 異なる ASIN に対しては異なるバリエーションが選ばれる可能性が高い
-   */
-  private selectVariant<T>(asin: string, variants: readonly T[]): T {
-    if (variants.length === 0) {
-      throw new Error('variants array must not be empty');
-    }
-    let hash = 0;
-    for (const char of asin) {
-      const codePoint = char.codePointAt(0) || 0;
-      hash = Math.trunc(hash * 31 + codePoint); // 小数点以下を切り捨て
-    }
-    const index = Math.abs(hash) % variants.length;
-    // variants.length > 0 を上でガード済みのため、index は常に有効な範囲
-    return variants[index] as T;
   }
 }
