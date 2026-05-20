@@ -15,7 +15,9 @@ describe('head.html simplified SEO template', () => {
   it('contains simple meta description fallback', () => {
     const template = fs.readFileSync(headTemplatePath, 'utf8');
 
-    expect(template).toContain('{{- $metaDescription := .Description | default .Summary | default .Site.Params.description -}}');
+    expect(template).toContain(
+      '{{- $metaDescription := .Description | default .Summary | default .Site.Params.description -}}',
+    );
   });
 
   it('retains WebSite and BreadcrumbList schemas but no Product schema', () => {
