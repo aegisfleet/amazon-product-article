@@ -1,0 +1,175 @@
+{
+  "analysis": {
+    "productName": "COROS 心拍センサー アームバンド",
+    "parentAsin": "B0CH8LJL3Y",
+    "productDescription": "腕に装着する光学式心拍センサー。快適なフィット感と約38時間の長時間稼働、Bluetoothによる複数デバイス同時接続が特徴。",
+    "productUsage": [
+      "サイクリング、ランニング、高強度インターバルトレーニング時の心拍計測",
+      "サイクルコンピューターやスマートウォッチ、屋内トレーナーとの連携"
+    ],
+    "positivePoints": [
+      "腕に装着するため、胸用センサーのような不快感がなく快適",
+      "最大38時間の長寿命バッテリーで頻繁な充電が不要",
+      "Bluetooth機器との同時接続が可能",
+      "自動装着検知機能によりボタン操作が不要"
+    ],
+    "negativePoints": [
+      "ANT+非対応のため、一部の古いサイクルコンピューターなどと連携できない",
+      "COROSアプリ単独での計測はできず、ウォッチや他デバイスとの併用が必須"
+    ],
+    "useCases": [
+      "長時間のサイクリングやマラソントレーニング",
+      "屋内でのZwiftやインドアトレーナーでのワークアウト",
+      "胸バンドの締め付けが苦手な方のトレーニング"
+    ],
+    "userStories": [],
+    "userImpression": "胸バンド特有の息苦しさやズレ落ちがなく、快適に長時間のトレーニングに集中できるという評価が多い。ANT+非対応な点に不便を感じるユーザーもいるが、長時間のバッテリー性能や自動オンオフ機能は高く評価されている。",
+    "sources": [
+      {
+        "id": "src-1",
+        "name": "COROS公式製品ページ（日本）",
+        "url": "https://jp.coros.com/heart-rate-monitor",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2024-01-01",
+        "author": "COROS Wearables",
+        "conflictOfInterest": "none",
+        "notes": "製品の主な特徴、38時間稼働、Bluetooth接続、自動装着検知などの仕様を確認"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "最大38時間のバッテリー稼働",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": ["src-1"],
+        "crossChecked": false,
+        "notes": "公式サイトおよびAmazon製品説明にて記載"
+      },
+      {
+        "claim": "自動装着検知機能による自動オン/オフ",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": ["src-1"],
+        "crossChecked": false,
+        "notes": "公式サイトにて機能確認"
+      }
+    ],
+    "lastInvestigated": "2026-05-21",
+    "competitiveAnalysis": [
+      {
+        "name": "POLAR H10 N 胸 心拍センサー",
+        "asin": "B07PM54P4N",
+        "priceComparison": "対象商品より高価。プロのスポーツ選手も使用する胸バンド式で最高精度を求めるユーザーに適している。",
+        "featureComparison": [
+          "共通点：Bluetooth対応で高精度の心拍計測が可能。",
+          "相違点：対象商品が腕（光学式）、POLARは胸（電気式）。POLARはANT+や5kHz通信にも対応し、バッテリーは電池式で最大400時間稼働。"
+        ],
+        "differentiators": [
+          "COROS 心拍センサー アームバンドの利点：胸への圧迫感がなく、充電式で取り扱いが手軽。自動装着検知で使いやすい。",
+          "POLAR H10 N 胸 心拍センサーの利点：医療レベルに近い最高精度、ANT+などの多様な通信規格対応、長寿命バッテリー。"
+        ]
+      },
+      {
+        "name": "Wahoo TICKR FIT",
+        "asin": "B078GRMFSN",
+        "priceComparison": "対象商品と同価格帯。用途によって通信規格の対応状況で選ばれる。",
+        "featureComparison": [
+          "共通点：腕（前腕など）に装着する光学式心拍センサーで、充電式バッテリーを採用。",
+          "相違点：対象商品が約38時間稼働でBluetoothのみ、Wahooは約30時間稼働でANT+とBluetooth両方に対応。"
+        ],
+        "differentiators": [
+          "COROS 心拍センサー アームバンドの利点：より長い稼働時間（約38時間）、自動装着検知によるスムーズな使用開始。",
+          "Wahoo TICKR FITの利点：ANT+対応により、古いサイクルコンピューターやより幅広い機器と連携可能。"
+        ]
+      },
+      {
+        "name": "iGPSPORT HR70",
+        "asin": "B0CSJYBXLV",
+        "priceComparison": "対象商品より安い。コストパフォーマンスと長時間稼働を重視するユーザー向け。",
+        "featureComparison": [
+          "共通点：腕に装着する光学式で、Bluetooth接続に対応。",
+          "相違点：iGPSPORTは最大65時間稼働し、ANT+にも対応。心拍ゾーンを示すLEDインジケーターを搭載。"
+        ],
+        "differentiators": [
+          "COROS 心拍センサー アームバンドの利点：COROSウォッチとの親和性、自動装着検知の使いやすさ。",
+          "iGPSPORT HR70の利点：ANT+対応、より長いバッテリー寿命、LEDによる心拍ゾーンの視覚的確認。"
+        ]
+      },
+      {
+        "name": "COOSPO H9Z",
+        "asin": "B0CW8TRCMY",
+        "priceComparison": "対象商品の1/3程度の価格。予算重視のエントリーユーザー向け。",
+        "featureComparison": [
+          "共通点：腕に装着する光学式心拍計。充電式バッテリーを搭載。",
+          "相違点：COOSPOはANT+とBluetooth両対応。最大50時間の稼働と心拍ゾーンLEDを搭載するが、ブランドの知名度やアプリの洗練度では異なる。"
+        ],
+        "differentiators": [
+          "COROS 心拍センサー アームバンドの利点：高い製品品質と専用アプリのエコシステム、自動電源オンオフ機能。",
+          "COOSPO H9Zの利点：圧倒的な安さ、ANT+対応、LEDインジケーターによる視認性。"
+        ]
+      },
+      {
+        "name": "iGPSPORT HR50",
+        "asin": "B0DZJ22SMJ",
+        "priceComparison": "対象商品の半額以下の価格。胸部装着のエントリーモデルとして選択される。",
+        "featureComparison": [
+          "共通点：Bluetooth接続によるスマートフォンやサイクルコンピューターとの連携。",
+          "相違点：対象商品は腕装着（光学式）、HR50は胸装着（電気式）。HR50はANT+対応。"
+        ],
+        "differentiators": [
+          "COROS 心拍センサー アームバンドの利点：胸の締め付けがない快適な装着感、充電式で電池交換不要。",
+          "iGPSPORT HR50の利点：価格が手頃で、ANT+通信が必要な環境でも利用可能。"
+        ]
+      },
+      {
+        "name": "COOSPO 心拍センサー",
+        "asin": "B07YXMPJ59",
+        "priceComparison": "対象商品の1/3以下の価格。胸ベルトタイプで安価なモデル。",
+        "featureComparison": [
+          "共通点：スマートウォッチやサイクルコンピューターに心拍データを提供。",
+          "相違点：対象商品が腕装着（充電式・光学式）、本製品が胸装着（ボタン電池式・電気式）。ANT+にも対応。"
+        ],
+        "differentiators": [
+          "COROS 心拍センサー アームバンドの利点：腕への装着による高い快適性、自動検知機能。",
+          "COOSPO 心拍センサーの利点：低価格で導入しやすく、ANT+とBluetooth両方に対応。"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "胸バンドの圧迫感や擦れが苦手なランナーやサイクリスト",
+        "COROS製スマートウォッチユーザーで連携を重視する方",
+        "長時間のトレーニングを行う方（ウルトラマラソンなど）"
+      ],
+      "pros": [
+        "腕装着による高い快適性",
+        "38時間の長時間バッテリー",
+        "自動装着検知機能による手間いらずの操作"
+      ],
+      "cons": [
+        "ANT+非対応のため、一部デバイスと接続できない",
+        "心拍計単体でのアプリ計測は不可"
+      ],
+      "score": 85,
+      "scoreRationale": "[基本点: 70]\n[加点: +3] 腕装着による快適性の高さ\n[加点: +2] 自動電源機能による使いやすさ\n[加点: +10] 長時間のバッテリー寿命（約38時間）\n[加点: +5] COROSエコシステムとの親和性・信頼性\n[減点: -5] ANT+非対応による汎用性の制限\n[合計: 85]"
+    },
+    "technicalSpecs": {
+      "dimensions": {
+        "height": "10mm",
+        "width": "35mm",
+        "depth": "42mm"
+      },
+      "weight": "19g",
+      "capacity": "充電式リチウムイオン",
+      "material": "ソフト生地（バンド）",
+      "origin": "中国",
+      "other": [
+        "稼働時間: 連続約38時間",
+        "通信規格: Bluetooth（複数同時接続対応、ANT+非対応）",
+        "自動装着検知機能搭載（ボタンなし）",
+        "マジックテープ式、洗濯可能（バックル調整可能）"
+      ]
+    }
+  }
+}
