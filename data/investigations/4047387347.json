@@ -1,0 +1,112 @@
+{
+  "analysis": {
+    "productName": "超かぐや姫! (ファミ通文庫)",
+    "parentAsin": "4047387347",
+    "productDescription": "Netflix等で展開される『超かぐや姫！』の世界観を元にした、桐山なると著・うらたあさおイラストによるファミ通文庫のライトノベル作品です。",
+    "productUsage": [
+      "読書",
+      "『超かぐや姫！』の世界観を楽しむ",
+      "ライトノベルとして楽しむ"
+    ],
+    "positivePoints": [
+      "人気作品のノベライズ版",
+      "桐山なると氏による独自の展開",
+      "うらたあさお氏の魅力的なイラスト"
+    ],
+    "negativePoints": [
+      "内容の詳細に関する情報が少ない",
+      "電子書籍版と紙版で価格差がある場合がある"
+    ],
+    "useCases": [
+      "通勤・通学中の読書",
+      "休日のリラックスタイム"
+    ],
+    "userStories": [],
+    "userImpression": "情報が限られているものの、原作ファンや著者のファンから注目されている作品です。",
+    "sources": [
+      {
+        "id": "src-1",
+        "name": "Amazon商品ページ",
+        "url": "https://www.amazon.co.jp/dp/4047387347",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-05-21",
+        "author": "Amazon",
+        "conflictOfInterest": "none",
+        "notes": "商品情報、ASIN、価格、サイズなどの仕様"
+      },
+      {
+        "id": "src-2",
+        "name": "国立国会図書館サーチ",
+        "url": "https://ndlsearch.ndl.go.jp/books/R100000002-I034533746",
+        "tier": "high",
+        "evidenceType": "secondary",
+        "publishedAt": "2026-05-21",
+        "author": "国立国会図書館",
+        "conflictOfInterest": "none",
+        "notes": "関連書籍・出版情報の確認"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "桐山なると氏とスタジオクロマト・スタジオコロリドによる作品",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "crossChecked": true,
+        "notes": "Amazon商品情報により確認"
+      }
+    ],
+    "lastInvestigated": "2026-05-21",
+    "competitiveAnalysis": [
+      {
+        "name": "四百二十連敗ガール",
+        "asin": "B00CFJK4CI",
+        "priceComparison": "同著者の過去作品。価格帯は比較的類似している。",
+        "featureComparison": [
+          "共通点：著者（桐山なると）が同じファミ通文庫作品",
+          "相違点：『超かぐや姫！』は原作付きのノベライズ、本作はオリジナルストーリー"
+        ],
+        "differentiators": [
+          "超かぐや姫! (ファミ通文庫)の利点：メディアミックス作品の世界観を小説で楽しめる点",
+          "四百二十連敗ガールの利点：著者のオリジナルストーリーを長く楽しめる点（シリーズ作品）"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "『超かぐや姫！』のファン",
+        "桐山なると氏のファン",
+        "ライトノベル読者"
+      ],
+      "pros": [
+        "人気アニメ映画の世界を小説で味わえる",
+        "著名クリエイターのコラボレーション"
+      ],
+      "cons": [
+        "詳細なあらすじ情報が少ない",
+        "前作を知らないと楽しめない可能性がある"
+      ],
+      "score": 70,
+      "scoreRationale": "[基本点: 70]\n[加点: 0] (基本のライトノベルとして標準的)\n[減点: 0] (特に減点要素なし)\n[合計: 70]"
+    },
+    "technicalSpecs": {
+      "dimensions": {
+        "height": "148mm",
+        "width": "15mm",
+        "depth": "107mm"
+      },
+      "weight": "不明",
+      "capacity": "1冊",
+      "material": "紙",
+      "origin": "日本",
+      "other": [
+        "レーベル: ファミ通文庫",
+        "出版社: KADOKAWA",
+        "発売日: 2026年1月30日"
+      ]
+    }
+  }
+}
