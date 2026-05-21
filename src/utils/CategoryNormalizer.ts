@@ -86,6 +86,8 @@ export class CategoryNormalizer {
     'カラコン',
     'キャンプ',
     'アウトドア',
+    'ハンドル',
+    'ハンドルコントローラー',
   ];
 
   /**
@@ -558,9 +560,15 @@ export class CategoryNormalizer {
     // Remove internal prefixes like PJ_
     const sanitized = name.replace(/^PJ_/i, '');
     // Normalize spaces (including NBSP \u00a0) and remove special characters
-    return sanitized
+    let finalName = sanitized
       .replaceAll(/[\u00a0\s]+/g, ' ')
       .replaceAll(/[【】|()（）_※]/g, '')
       .trim();
+
+    if (finalName.includes('ハンドル・ジョイスティック') || finalName === 'ハンドルコントローラー') {
+      finalName = 'ハンドルコントローラー';
+    }
+
+    return finalName;
   }
 }
