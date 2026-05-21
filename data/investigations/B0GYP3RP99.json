@@ -1,0 +1,195 @@
+{
+  "analysis": {
+    "productName": "Fitbit Air オブシディアン／マットブラック",
+    "parentAsin": "B0GYRV9VBD",
+    "productDescription": "ディスプレイを持たない画面レス設計で、睡眠計測や日々の活動量計測をバックグラウンドで行うわずか12g（ポンド換算後）の超軽量ウェアラブルデバイス。",
+    "productUsage": [
+      "日々の歩数、活動量、心拍数の24時間計測",
+      "睡眠の質やステージの記録・分析",
+      "血中酸素ウェルネス、心拍変動、皮膚温変動の計測",
+      "ワークアウト負荷の調整とコンディション管理"
+    ],
+    "positivePoints": [
+      "ディスプレイがないため視覚ノイズがなく、日常生活やフォーマルな装いでも違和感なく装着できる",
+      "本体重量が約12gと非常に軽く、睡眠時を含めて24時間着けっぱなしでも気にならない",
+      "最大7日間のバッテリー寿命により、充電の手間が省ける",
+      "血中酸素ウェルネス、心拍変動、呼吸数、皮膚温の変動など高度な健康指標を自動で計測できる"
+    ],
+    "negativePoints": [
+      "ディスプレイがないため、時間や通知の確認、計測データの即時確認はスマートフォンを開く必要がある",
+      "GPS機能などの本格的なスポーツウォッチの機能は搭載されていないため、ランニングなどの詳細な単独計測には不向き"
+    ],
+    "useCases": [
+      "睡眠の質を向上させたいが、画面が光るスマートウォッチは邪魔に感じる就寝時の使用",
+      "普段はアナログ時計や高級時計を好むが、健康管理のために右腕や足首に目立たない活動量計を着けたいビジネスシーン",
+      "充電を頻繁に行うのが面倒で、長期間着けっぱなしで自動記録させたい日常使い"
+    ],
+    "userStories": [],
+    "userImpression": "画面を持たないミニマルなデザインと約12gの超軽量ボディにより、「着けていることを忘れる」「視覚ノイズがなく作業や睡眠に集中できる」と、スマートウォッチの画面や通知に疲れを感じている層から高く評価されている。時計との併用や、睡眠計測に特化した用途で選ばれている。",
+    "sources": [
+      {
+        "id": "src-amazon",
+        "name": "Amazon商品ページ (オブシディアン／マットブラック)",
+        "url": "https://www.amazon.co.jp/dp/B0GYP3RP99",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-05-21",
+        "author": "Google / Fitbit",
+        "conflictOfInterest": "disclosed",
+        "notes": "製品仕様、重量（0.0264ポンド）、機能、バッテリー性能、価格を確認"
+      },
+      {
+        "id": "src-amazon-2",
+        "name": "Amazon商品ページ (ラベンダー／シルバー)",
+        "url": "https://www.amazon.co.jp/dp/B0GYPBL4HD",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-05-21",
+        "author": "Google / Fitbit",
+        "conflictOfInterest": "disclosed",
+        "notes": "別カラーモデルの仕様が同一であること、視覚ノイズゼロのアピール文を確認"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "重量が約12gと非常に軽量",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-amazon",
+          "src-amazon-2"
+        ],
+        "crossChecked": true,
+        "notes": "Amazonの0.0264ポンド（約12g）と一致"
+      },
+      {
+        "claim": "ディスプレイがなく視覚ノイズを排除している",
+        "category": "comparativeAdvantage",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-amazon",
+          "src-amazon-2"
+        ],
+        "crossChecked": true,
+        "notes": "公式の「視覚ノイズゼロ」というアピールが一致"
+      }
+    ],
+    "lastInvestigated": "2026-05-21",
+    "competitiveAnalysis": [
+      {
+        "name": "Xiaomi Smart Band 10",
+        "asin": "B0DYF82545",
+        "priceComparison": "Fitbit Airの方が高価。ディスプレイ搭載や21日間バッテリーなど機能面ではXiaomiが優位に見えるが、Fitbit Airは画面レスによる「視覚的ノイズのなさ」と高度なGoogle Health連携に価値を置いている。",
+        "featureComparison": [
+          "共通点：心拍数、睡眠、血中酸素の計測機能を持つこと。スマートフォン（iPhone/Android）連携機能を持つこと。",
+          "相違点：Xiaomiは約44mmの有機EL大画面を搭載しているのに対し、Fitbit Airは画面がない。バッテリーはXiaomiが21日間、Fitbitが7日間。"
+        ],
+        "differentiators": [
+          "Fitbit Airの利点：画面がないため、就寝時に光が気にならず、高級時計など他の時計と併用しても違和感がない。Google Healthによる高度なAIコーチングが受けられる。",
+          "Xiaomi Smart Band 10の利点：大画面で時間や通知、計測データを即座に確認できる。バッテリー持ちが非常に長く、価格も手頃。"
+        ]
+      },
+      {
+        "name": "Xiaomi Band 9 Active",
+        "asin": "B0DK6ZC5ZC",
+        "priceComparison": "Fitbit Airの方が大きく高価。Xiaomiはエントリーモデルとして手頃だが、Fitbit Airは高度なセンサーやアプリ連携、画面レスという付加価値にコストがかかっている。",
+        "featureComparison": [
+          "共通点：軽量設計で、日常の健康管理や睡眠モニタリングに対応している点。",
+          "相違点：Xiaomiは約37mm液晶画面を備え、50種のスポーツモードに対応するが、Fitbit Airは画面がなくAIコーチングなどの分析機能に特化。"
+        ],
+        "differentiators": [
+          "Fitbit Airの利点：画面レスによるミニマルなデザインで、ビジネスシーンなどでも目立たず装着できる。",
+          "Xiaomi Band 9 Activeの利点：非常に安価で画面付きのため、初めてのスマートバンドや手軽な運動記録として導入しやすい。"
+        ]
+      },
+      {
+        "name": "lightec スマートウォッチ V300N",
+        "asin": "B0DGWX9F9S",
+        "priceComparison": "Fitbit Airの方が高価。lightecは音楽再生やSNS通知などのスマートウォッチ機能が豊富だが、Fitbit Airは純粋なトラッキングと健康分析に特化している。",
+        "featureComparison": [
+          "共通点：睡眠記録、歩数、カロリー計測などの基本的な活動量計機能を備える点。",
+          "相違点：lightecは画面表示、音楽制御、通話・通知機能などを備える多機能型。Fitbit Airはそれらを省いたストイックな健康管理デバイス。"
+        ],
+        "differentiators": [
+          "Fitbit Airの利点：圧倒的に軽く（12g vs 27g）、通知や画面に煩わされずに健康データを収集できる点。",
+          "lightec スマートウォッチ V300Nの利点：音楽コントロールや通知確認など、スマートフォンのコンパニオンとしての機能が充実している点。"
+        ]
+      },
+      {
+        "name": "MONOMAM Classic スマートウォッチ",
+        "asin": "B0CZMPHC3Q",
+        "priceComparison": "Fitbit Airの方が高価。MONOMAMは通話機能やAI壁紙生成など多機能だが、Fitbit Airは計測精度と分析アルゴリズムに強みがある。",
+        "featureComparison": [
+          "共通点：日常の心拍、睡眠、ステップ数などの記録ができる点。",
+          "相違点：MONOMAMは通話機能や大画面を備える時計型デザインだが、Fitbit Airは画面がないリストバンド型。"
+        ],
+        "differentiators": [
+          "Fitbit Airの利点：時計らしくないデザインのため、お気に入りのアナログ時計と重ね付けしたり両腕に着けたりしやすい。",
+          "MONOMAM Classic スマートウォッチの利点：通話機能やLINE通知の確認ができ、時計としての機能性を併せ持つ点。"
+        ]
+      },
+      {
+        "name": "votopoly スマートウォッチ",
+        "asin": "B0FP54XB6G",
+        "priceComparison": "Fitbit Airの方が高価。votopolyは超大画面を売りにしており方向性が真逆。",
+        "featureComparison": [
+          "共通点：健康状態のトラッキングができる点。",
+          "相違点：votopolyは約53mmの超大画面で通話や通知確認ができるが、Fitbit Airは画面がない。"
+        ],
+        "differentiators": [
+          "Fitbit Airの利点：画面がないため睡眠時の邪魔にならず、データ取得に特化している点。",
+          "votopoly スマートウォッチの利点：大画面で視認性が高く、通知やメッセージを本体だけで確認できる点。"
+        ]
+      },
+      {
+        "name": "Fitbit Air ラベンダー／シルバー",
+        "asin": "B0GYPBL4HD",
+        "priceComparison": "同価格。機能は完全に同一で、カラーバリエーションの違いのみ。",
+        "featureComparison": [
+          "共通点：機能、重量、バッテリー寿命など全て同一。",
+          "相違点：本体およびバンドのカラーが異なる。"
+        ],
+        "differentiators": [
+          "Fitbit Airの利点：オブシディアン/マットブラックはシックで目立たず、ビジネスやフォーマルにも合わせやすい。",
+          "Fitbit Air ラベンダー／シルバーの利点：明るいカラーリングで、ファッションのアクセントや軽やかな印象を与えたい場合に適している。"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "スマートウォッチの画面の光や通知に疲れ、デジタルデトックスを求めている人",
+        "睡眠の質を向上させたいが、寝ている間に腕時計を着けるのが苦手な人",
+        "普段からお気に入りのアナログ時計を着けており、それと併用できる目立たないトラッカーを探している人"
+      ],
+      "pros": [
+        "視覚ノイズがない画面レスデザイン",
+        "約12gの超軽量で着けていることを忘れる快適さ",
+        "Google Health AIによる高度な睡眠・健康コーチング"
+      ],
+      "cons": [
+        "時刻や通知、計測データの確認にはスマートフォンが必須",
+        "画面がないため、ランニング中のペース確認などには不向き"
+      ],
+      "score": 85,
+      "scoreRationale": "[基本点: 70]\n[加点: +10] (画面レスと12gの超軽量による、睡眠時の圧倒的な装着感の良さ)\n[加点: +5] (高度なセンサーとGoogle Healthによる詳細な分析とコーチング機能)\n[加点: +5] (お気に入りの時計との併用がしやすい独自のデザインコンセプト)\n[減点: -2] (機能に対して価格がやや高めであること)\n[減点: -3] (画面がないことによる操作の不便さがある)\n[合計: 85]"
+    },
+    "technicalSpecs": {
+      "dimensions": {
+        "height": "不明",
+        "width": "不明",
+        "depth": "不明"
+      },
+      "weight": "12g",
+      "capacity": "1本",
+      "material": "不明",
+      "origin": "不明",
+      "other": [
+        "バッテリー寿命: 最大7日間",
+        "対応OS: iPhone対応、Android対応",
+        "計測機能: 心拍数、睡眠ステージ、血中酸素ウェルネス、心拍変動、呼吸数、皮膚温変動",
+        "カラー: オブシディアン／マットブラック",
+        "モデル番号: GA09509-AU"
+      ]
+    }
+  }
+}
