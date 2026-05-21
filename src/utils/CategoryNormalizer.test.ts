@@ -282,6 +282,20 @@ describe('CategoryNormalizer', () => {
       const result = CategoryNormalizer.normalize(node);
       expect(result.score).toBe(10);
     });
+
+    it('should sanitize "PS4ハンドル・ジョイスティック" to "ハンドルコントローラー"', () => {
+      const node: BrowseNode = { displayName: 'PS4ハンドル・ジョイスティック', id: '1' };
+      const result = CategoryNormalizer.normalize(node);
+      expect(result.main).toBe('ハンドルコントローラー');
+      expect(result.score).toBe(10);
+    });
+
+    it('should sanitize "PS5ハンドル・ジョイスティック" to "ハンドルコントローラー"', () => {
+      const node: BrowseNode = { displayName: 'PS5ハンドル・ジョイスティック', id: '1' };
+      const result = CategoryNormalizer.normalize(node);
+      expect(result.main).toBe('ハンドルコントローラー');
+      expect(result.score).toBe(10);
+    });
   });
 
   describe('Book categorization', () => {
