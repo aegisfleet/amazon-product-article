@@ -1,8 +1,8 @@
 {
   "analysis": {
-    "productName": "Apple 2025 MacBook Air (13インチ, M4チップ搭載モデル)",
+    "productName": "Apple 2025 MacBook Air (33cm, M4チップ搭載, 16GB RAM, 256GB SSD)",
     "parentAsin": "B0FXXB1CBB",
-    "productDescription": "Appleの次世代M4チップとAI機能「Apple Intelligence」を搭載した、薄型軽量デザインが特徴の13インチノートブックPCです。プロフェッショナルな作業から日常使いまで、圧倒的なパフォーマンスと最大18時間のバッテリー性能を両立します。",
+    "productDescription": "Appleの次世代M4チップとAI機能「Apple Intelligence」を搭載した、薄型軽量デザインが特徴の33cmノートブックPCです。プロフェッショナルな作業から日常使いまで、圧倒的なパフォーマンスと最大18時間のバッテリー性能を両立します。",
     "productUsage": [
       "外出先での資料作成、ビデオ会議、マルチタスク作業",
       "Apple Intelligenceを活用した文章作成、画像編集、情報収集",
@@ -31,20 +31,7 @@
       "場所にとらわれず、静かな環境でコーディングや執筆活動に集中したい開発者やライター",
       "リビングや寝室などで、気軽に高画質な動画コンテンツやゲームを楽しみたいホームユーザー"
     ],
-    "userStories": [
-      {
-        "userType": "フリーランスのWebデザイナー",
-        "scenario": "カフェでクライアント向けの新しいウェブサイトのデザインを作成中",
-        "experience": "M4チップのApple Intelligence支援機能を使って、デザイン案のラフを瞬時に複数生成できた。以前のモデルではカクついていた複雑なグラフィック処理もスムーズで、作業効率が劇的に向上した。バッテリー持ちも良く、一日中電源を気にせず作業に没頭できた。（商品説明と利用シーンからの推測）",
-        "sentiment": "positive"
-      },
-      {
-        "userType": "大学院生（情報科学専攻）",
-        "scenario": "研究室と自宅で、機械学習のモデルをトレーニング",
-        "experience": "M4のNeural Engine性能が素晴らしく、小規模なモデルであればMacBook Air単体で十分にトレーニングが可能になった。ファンレスなので、夜間に長時間実行しても動作音が全く気にならないのが良い。ただ、大規模なデータセットを扱うにはやはりポートが少なく、外部ストレージの接続にハブが必須なのが少し不便に感じる。（商品説明と利用シーンからの推測）",
-        "sentiment": "mixed"
-      }
-    ],
+    "userStories": [],
     "userImpression": "総じて、2025年モデルのMacBook Airは「究極のポータブル性能」をAI時代に合わせてさらに進化させた製品と評価できる。M4チップによる性能向上は、特にAIを活用するタスクやグラフィックス処理で顕著に感じられるだろう。デザイン、携帯性、静音性、バッテリー性能といった従来からの強みを維持しつつ、これまでMacBook Proが必要だったような専門的な作業も一部こなせるようになった。ただし、限定的なポート数や価格の高さは、依然として一部のユーザーにとっての懸念点となるだろう。",
     "sources": [
       {
@@ -58,48 +45,84 @@
         "credibility": "高（一般的なPC市場の動向と商品カテゴリの知見に基づく分析）"
       }
     ],
-    "lastInvestigated": "2026-02-08",
+    "lastInvestigated": "2026-05-23",
     "competitiveAnalysis": [
+      {
+        "name": "MacBook Pro 35.6cm (M4)",
+        "asin": "B0DZX1XRKF",
+        "priceComparison": "MacBook Airよりも高価だが、より高度な処理能力と豊富なポートを備える。",
+        "featureComparison": [
+          "共通点：M4世代のAppleシリコン搭載、長時間のバッテリー駆動",
+          "相違点：ProはLiquid Retina XDRディスプレイ（最大1600ニト）、ファン搭載による持続的な高パフォーマンス、HDMIやSDXCカードスロットなどの豊富なポートを搭載"
+        ],
+        "differentiators": [
+          "MacBook Air (M4)の利点：より薄く軽量で持ち運びに適しており、価格も手頃",
+          "MacBook Pro 35.6cm (M4)の利点：高負荷な動画編集や3Dレンダリングなどを持続的に行うプロフェッショナルな作業に最適"
+        ]
+      },
+      {
+        "name": "MacBook Air 38.1cm (M4)",
+        "asin": "B0GTLD8KN7",
+        "priceComparison": "33cmモデルよりも数万円高い設定。",
+        "featureComparison": [
+          "共通点：M4チップ搭載、ファンレス設計、薄型軽量な筐体",
+          "相違点：38.8cmの大画面ディスプレイ、より大型の筐体による迫力あるサウンド"
+        ],
+        "differentiators": [
+          "MacBook Air 33cm (M4)の利点：より軽量コンパクトで、頻繁に持ち運ぶ用途に最適",
+          "MacBook Air 38.1cm (M4)の利点：外部ディスプレイなしでも広い作業領域を確保でき、マルチタスクや動画鑑賞に適している"
+        ]
+      },
+      {
+        "name": "Microsoft Surface Laptop 7 (35cm)",
+        "asin": "B0D4TK5QPV",
+        "priceComparison": "MacBook Air 33cmとほぼ同価格帯の強力なライバル。",
+        "featureComparison": [
+          "共通点：最新のAI向けプロセッサ（M4 / Snapdragon X Plus）を搭載し、高い電力効率を誇る",
+          "相違点：Windows OS搭載、タッチスクリーン操作に対応"
+        ],
+        "differentiators": [
+          "MacBook Air (M4)の利点：Appleエコシステム（iPhoneなど）との強力な連携、シームレスなApple Intelligenceの利用",
+          "Surface Laptop 7の利点：Windows環境でのソフトウェア互換性、直感的なタッチスクリーン操作"
+        ]
+      },
       {
         "name": "Dell XPS 13 (9340)",
         "asin": "B0CY5G1TY8",
-        "priceComparison": "同程度のスペック構成ではMacBook Airに近い価格帯だが、時折セールで安くなることがある。",
+        "priceComparison": "同等スペックでMacBook Airに近い価格帯で競合する。",
         "featureComparison": [
-          "Windows 11 Home搭載",
-          "Core Ultra 7 155Hプロセッサによる高いAI性能",
-          "OLEDディスプレイオプションあり"
+          "共通点：洗練された薄型デザイン、長時間のバッテリー駆動",
+          "相違点：Windows OS搭載、シームレスなガラス製タッチパッド、OLEDディスプレイオプションの有無"
         ],
         "differentiators": [
-          "極薄ベゼルのInfinityEdgeディスプレイ",
-          "シームレスなガラス製タッチパッドと機能キー"
+          "MacBook Air (M4)の利点：ファンレス設計による完全な静音性、安定した高いパフォーマンス",
+          "Dell XPS 13の利点：極薄ベゼルの美しいInfinityEdgeディスプレイ、よりコンパクトなフットプリント"
         ]
       },
       {
         "name": "HP Spectre x360 14 (2024)",
         "asin": "B0FL7634MW",
-        "priceComparison": "MacBook Airより高価な場合が多いが、2-in-1機能が含まれる。",
+        "priceComparison": "MacBook Airよりもやや高価な場合が多いが、2-in-1機能が含まれる。",
         "featureComparison": [
-          "360度回転ヒンジでタブレットモードに変形可能",
-          "9MPの高解像度Webカメラ",
-          "タッチパネルとスタイラスペン標準対応"
+          "共通点：プレミアムな質感と高い基本性能",
+          "相違点：360度回転ヒンジによるタブレットモード、タッチパネルおよびスタイラスペン入力"
         ],
         "differentiators": [
-          "多様な使用モード（テント、スタンド、タブレット）",
-          "プライバシーカメラシャッターなどの物理セキュリティ機能"
+          "MacBook Air (M4)の利点：純粋なラップトップとしての洗練された使い勝手、M4チップによる業界最高クラスの電力効率",
+          "HP Spectre x360 14の利点：テントモードやタブレットモードなど多様なスタイルでの利用、手書き入力が可能"
         ]
       },
       {
-        "name": "Microsoft Surface Laptop 7 (13.8 inch)",
-        "asin": "B0DPJR9JHT",
-        "priceComparison": "MacBook Airとほぼ同価格帯で競合。",
+        "name": "Acer Aspire 14 AI",
+        "asin": "B0GX6VLQ5M",
+        "priceComparison": "MacBook Airよりも安価な価格設定が多く、コストパフォーマンスに優れる。",
         "featureComparison": [
-          "Snapdragon X Elite/Plus搭載によるARMベースのWindows体験",
-          "タッチスクリーン対応PixelSenseディスプレイ",
-          "AI機能（Copilot+ PC）に特化した設計"
+          "共通点：最新のAI向けプロセッサを搭載した薄型ノートPC",
+          "相違点：Windows搭載、AMD Ryzen AIプロセッサ採用、豊富なポート類（USB-A等）の有無"
         ],
         "differentiators": [
-          "Microsoft純正のハードウェアとソフトウェア統合",
-          "交換可能なSSDなど、メンテナンス性の向上"
+          "MacBook Air (M4)の利点：より高いビルドクオリティ、Apple独自のM4チップによる驚異的なパフォーマンス",
+          "Acer Aspire 14 AIの利点：より手頃な価格で最新のAI PC体験が得られる、レガシーポートを含む拡張性の高さ"
         ]
       }
     ],
@@ -120,15 +143,15 @@
         "競合商品と比較して高価であり、コストパフォーマンスを重視するユーザーには不向き。",
         "メモリやストレージが購入後に増設・交換できない。"
       ],
-      "score": 89,
-      "scoreRationale": "[基本点: 70]\n[加点: +10] (M4チップによる圧倒的な性能と電力効率)\n[加点: +10] (Apple Intelligenceという先進的なAI機能の搭載)\n[加点: +5] (業界最高水準のビルドクオリティとデザイン)\n[減点: -3] (限定的なポートによる拡張性の低さ)\n[減点: -3] (競合製品と比較した場合のコストパフォーマンス)\n[合計: 89]"
+      "score": 90,
+      "scoreRationale": "[基本点: 70] (固定)\n[加点: +10] (M4チップによる圧倒的な処理性能と電力効率の高さ)\n[加点: +5] (AI機能「Apple Intelligence」に最適化された先進的な設計)\n[加点: +5] (ファンレスによる完全な静音性と薄型軽量なデザインの優れた携帯性)\n[減点: -0] (限定的なポート拡張性だが、M4搭載の性能向上を評価し減点なし)\n[合計: 90]"
     },
     "technicalSpecs": {
       "cpu": "Apple M4 (8コアCPU / 10コアGPU)",
       "ram": "16GB ユニファイドメモリ",
       "storage": "256GB SSD",
       "display": {
-        "size": "13.6インチ",
+        "size": "34.5cm",
         "resolution": "2560 x 1664",
         "type": "Liquid Retina display"
       },
@@ -157,7 +180,8 @@
         "Touch ID",
         "空間オーディオ対応4スピーカーサウンドシステム",
         "3マイクアレイ"
-      ]
+      ],
+      "weight": "1.24kg"
     }
   }
 }
