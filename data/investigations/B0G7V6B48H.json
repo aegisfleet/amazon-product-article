@@ -1,0 +1,186 @@
+{
+  "analysis": {
+    "productName": "Samsung T7 Resurrected 1TB 外付けSSD MU-PD1T0G-IT/EC",
+    "parentAsin": "B0GFTJS7HK",
+    "productDescription": "最大1,050MB/秒の高速データ転送が可能な、コンパクトでスタイリッシュなポータブルSSD。USB3.2 Gen2対応で、パスワードロックなどのセキュリティ機能や2mの落下テストをクリアする高い耐久性を備えています。",
+    "productUsage": [
+      "大容量データの高速バックアップと保存",
+      "動画編集や写真編集の作業用ストレージ",
+      "パソコン、Mac、スマートフォン、タブレット間のデータ移動",
+      "ゲーム機(PlayStation等)の拡張ストレージ"
+    ],
+    "positivePoints": [
+      "最大1050MB/sの読み出し、1000MB/sの書き込みと高速なデータ転送",
+      "クレジットカードサイズで薄さ8mm、約72gという軽量・コンパクトなデザイン",
+      "最大2mからの落下テストをクリアした高い耐久性",
+      "AES 256bitハードウェア暗号化による強力なセキュリティ機能"
+    ],
+    "negativePoints": [
+      "最大速度を引き出すにはデバイス側がUSB 3.2 Gen 2かつUASPモード対応である必要がある",
+      "本モデル(MU-PD1T0G)は特定販路(Amazon等)向けパッケージであり、カラーバリエーションが限られる場合がある"
+    ],
+    "useCases": [
+      "外出先でノートPCやスマートフォンに繋いで大容量の動画ファイルを転送・編集する",
+      "重要なデータをAES暗号化で安全に持ち運ぶ",
+      "USB Type-CとType-Aケーブルが付属するため、新旧様々なデバイスでデータを共有する"
+    ],
+    "userStories": [],
+    "userImpression": "対象商品は発売されたばかりの販路限定モデル(2026年発売)またはレビュー未集積のため、現時点で具体的なユーザーレビューは確認できなかった。しかし、ベースモデルとなるT7は高速なデータ転送と極薄なアルミボディで評価されている製品であり、本製品も同等の性能が期待できる。",
+    "sources": [
+      {
+        "id": "src-itgm",
+        "name": "T7 Portable SSD（2024年モデル） 製品情報 / ITGマーケティング株式会社",
+        "url": "https://www.itgm.co.jp/product/portable-ssd-t7-2024.php",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2024-05-24",
+        "author": "ITGマーケティング株式会社",
+        "conflictOfInterest": "none",
+        "notes": "スペック(1050MB/s Read, 1000MB/s Write, 85x57x8mm, 約72g, AES 256bit暗号化, 2m落下テスト)および製品画像、特徴を確認。"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "最大転送速度1,050MB/秒",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-itgm"
+        ],
+        "crossChecked": false,
+        "notes": "メーカー公式スペックにて確認"
+      },
+      {
+        "claim": "最大2mの落下テストをクリア",
+        "category": "durability",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-itgm"
+        ],
+        "crossChecked": false,
+        "notes": "メーカー公式スペックにて確認"
+      }
+    ],
+    "lastInvestigated": "2026-05-23",
+    "competitiveAnalysis": [
+      {
+        "name": "エレコム SSD 外付け 1TB ESD-EMA1000GBK",
+        "asin": "B0BSDY8WDK",
+        "priceComparison": "対象商品より安価に設定されていることが多い。エントリー向けのため速度は控えめ。",
+        "featureComparison": [
+          "共通点：容量1TB、USB3.2 Gen2対応",
+          "相違点：エレコムは読込500MB/sでUSBメモリ型の直挿しタイプだが、対象商品(T7)は読込1050MB/sでケーブル接続タイプ。"
+        ],
+        "differentiators": [
+          "Samsung T7 Resurrected 1TB 外付けSSD MU-PD1T0G-IT/ECの利点：読込1050MB/s、書込1000MB/sという圧倒的な転送速度と、AES 256bitハードウェア暗号化によるセキュリティ。",
+          "エレコム SSD 外付け 1TB ESD-EMA1000GBKの利点：ケーブル不要で直接PCに挿せるUSBメモリサイズの手軽さと、比較的安価な価格設定。"
+        ]
+      },
+      {
+        "name": "エレコム 外付けSSD 1TB ESD-EMC1000GBK",
+        "asin": "B0BWHWPZX7",
+        "priceComparison": "対象商品より安価に設定されていることが多い。USB 5Gbps(Gen1)までの対応で速度に差がある。",
+        "featureComparison": [
+          "共通点：容量1TBのポータブルSSD",
+          "相違点：エレコムは読込400MB/s、書込380MB/sの直挿しタイプ。対象商品は読込1050MB/s、書込1000MB/sのケーブル接続タイプ。"
+        ],
+        "differentiators": [
+          "Samsung T7 Resurrected 1TB 外付けSSD MU-PD1T0G-IT/ECの利点：約2.5倍以上の高速なデータ転送速度と、パスワードロック機能、高い耐久性。",
+          "エレコム 外付けSSD 1TB ESD-EMC1000GBKの利点：ケーブル不要で持ち運びやすく、テレビ録画などにも手軽に使えるコストパフォーマンスの良さ。"
+        ]
+      },
+      {
+        "name": "エレコム 外付けSSD 1TB ノック式 ESD-EPK1000GWH",
+        "asin": "B096TM71FG",
+        "priceComparison": "対象商品より安価。手軽なノック式で人気。",
+        "featureComparison": [
+          "共通点：容量1TB、USB3.2 Gen2対応",
+          "相違点：エレコムは読込600MB/sのノック式直挿しタイプ。対象商品は読込1050MB/sのケーブル接続タイプ。"
+        ],
+        "differentiators": [
+          "Samsung T7 Resurrected 1TB 外付けSSD MU-PD1T0G-IT/ECの利点：より高速な転送速度と、AES 256bit暗号化によるビジネスユースに耐えうるセキュリティ機能。",
+          "エレコム 外付けSSD 1TB ノック式 ESD-EPK1000GWHの利点：キャップ紛失の心配がないノック式で、約11gと非常に軽くケーブルレスで使える利便性。"
+        ]
+      },
+      {
+        "name": "GiGimundo M201ポータブルSSD 1TB",
+        "asin": "B0FDQQP9VT",
+        "priceComparison": "対象商品よりかなり安価に設定されている。",
+        "featureComparison": [
+          "共通点：容量1TB、USB3.2 Gen2対応で読込1000MB/s",
+          "相違点：GiGimundoはType-CとType-Aのデュアルコネクタを搭載した直挿しスティック型。対象商品はケーブル接続の薄型アルミボディ型。"
+        ],
+        "differentiators": [
+          "Samsung T7 Resurrected 1TB 外付けSSD MU-PD1T0G-IT/ECの利点：サムスンという大手ブランドの信頼性、AES 256bitハードウェア暗号化による強固なセキュリティ。",
+          "GiGimundo M201ポータブルSSD 1TBの利点：Type-CとType-Aの両ポートを本体に内蔵しており、ケーブルを持ち運ぶ必要がなく、価格も非常に手頃。"
+        ]
+      },
+      {
+        "name": "icore storage SSD 外付け 1TB",
+        "asin": "B0FNRLQR6V",
+        "priceComparison": "対象商品より安価。",
+        "featureComparison": [
+          "共通点：容量1TB、USB3.2 Gen2 Type-C接続、最大1000MB/s",
+          "相違点：icore storageは本体に状態表示用ディスプレイを搭載。対象商品は薄型のシンプルなアルミボディと暗号化機能を持つ。"
+        ],
+        "differentiators": [
+          "Samsung T7 Resurrected 1TB 外付けSSD MU-PD1T0G-IT/ECの利点：クレジットカードサイズの極薄8mmボディと、パスワードロック機能、世界的なストレージブランドとしての実績。",
+          "icore storage SSD 外付け 1TBの利点：動作状態や温度などを確認できるディスプレイを搭載しているユニークな設計と手頃な価格。"
+        ]
+      },
+      {
+        "name": "キオクシア KIOXIA SSD 外付け 1TB SSD-PKP1.0U3G2BR",
+        "asin": "B0GVY16635",
+        "priceComparison": "対象商品とほぼ同価格帯、またはやや高価。",
+        "featureComparison": [
+          "共通点：容量1TB、USB3.2 Gen2対応、読込最大1050MB/s、アルミ筐体、パスワード保護対応",
+          "相違点：キオクシアは国産BiCS FLASHを搭載しMIL-STD準拠の耐衝撃性を持つ。対象商品(T7)はクレジットカードサイズで非常に薄い(8mm)。"
+        ],
+        "differentiators": [
+          "Samsung T7 Resurrected 1TB 外付けSSD MU-PD1T0G-IT/ECの利点：幅85mm、厚さ8mmという驚異的な薄さとコンパクトさで携帯性に優れる点。",
+          "キオクシア KIOXIA SSD 外付け 1TB SSD-PKP1.0U3G2BRの利点：国産BiCS FLASHを採用している点と、米国規格MIL-STD準拠の堅牢な耐衝撃性。"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "大容量データを素早く転送したいクリエイターやビジネスパーソン",
+        "携帯性に優れた薄型軽量のSSDを探しているユーザー",
+        "機密データを安全に持ち運びたいセキュリティ重視のユーザー"
+      ],
+      "pros": [
+        "最大1050MB/sの高速データ転送",
+        "極薄8mm・約72gのコンパクトなクレジットカードサイズ",
+        "AES 256bitハードウェア暗号化による高いセキュリティ",
+        "最大2mの落下テストをクリアしたアルミ筐体の耐久性"
+      ],
+      "cons": [
+        "性能をフルに発揮するにはホスト側がUSB 3.2 Gen 2に対応している必要がある",
+        "直挿しのスティック型SSDと比較するとケーブルを持ち歩く必要がある"
+      ],
+      "score": 85,
+      "scoreRationale": "[基本点: 70]\n[加点: +10] (読込1050MB/s、書込1000MB/sの優れた高速転送性能)\n[加点: +5] (極薄8mm、約72gの優れた携帯性とアルミ筐体の質感)\n[加点: +5] (AES 256bitハードウェア暗号化と2m落下耐性による高い安全性と信頼性)\n[減点: -5] (競合の安価なスティック型SSDと比較すると価格がやや高め)\n[合計: 85]"
+    },
+    "technicalSpecs": {
+      "dimensions": {
+        "height": "57mm",
+        "width": "85mm",
+        "depth": "8mm"
+      },
+      "weight": "72g",
+      "capacity": "1TB",
+      "material": "アルミニウム",
+      "origin": "韓国、中国など（製造時期により異なる）",
+      "other": [
+        "インターフェース: USB 3.2 Gen 2 (10Gbps)",
+        "最大読込速度: 1,050 MB/s",
+        "最大書込速度: 1,000 MB/s",
+        "セキュリティ: パスワードロック(任意設定)、AES 256bitハードウェア暗号化",
+        "耐久性: 最大2m落下テストクリア",
+        "互換性: Windows 7以降、Mac OS X 10.10以降、Android Lollipop以降",
+        "付属品: USB Type-C to Cケーブル、USB Type-C to Aケーブル",
+        "保証: 3年限定保証"
+      ]
+    }
+  }
+}
