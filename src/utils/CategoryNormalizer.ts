@@ -94,12 +94,12 @@ export class CategoryNormalizer {
    * Normalize a BrowseNode into a category
    * Policy: Use the Amazon category as is, but filter out inappropriate ones.
    */
-  public static normalize(node?: BrowseNode): NormalizedCategory {
+  public static normalize(node?: BrowseNode, title?: string): NormalizedCategory {
     if (!node) {
       return { main: 'その他／全般', sub: 'Unknown', nameCount: 0, score: -1 };
     }
 
-    const validNames = CategoryNormalizer.collectValidHierarchyNames(node);
+    const validNames = CategoryNormalizer.collectValidHierarchyNames(node, title);
 
     if (validNames.length > 0) {
       const main = validNames[0] ?? 'Unknown';
@@ -115,7 +115,7 @@ export class CategoryNormalizer {
   /**
    * Collect all valid display names up the tree
    */
-  private static collectValidHierarchyNames(node: BrowseNode): string[] {
+  private static collectValidHierarchyNames(node: BrowseNode, title?: string): string[] {
     const validNames: string[] = [];
     let currentNode: BrowseNode | undefined = node;
 
@@ -124,9 +124,9 @@ export class CategoryNormalizer {
       const dn = currentNode.displayName || currentNode.DisplayName;
 
       const validCFN =
-        cfn && CategoryNormalizer.isValidCategoryName(cfn) ? CategoryNormalizer.sanitizeCategoryName(cfn) : null;
+        cfn && CategoryNormalizer.isValidCategoryName(cfn) ? CategoryNormalizer.sanitizeCategoryName(cfn, title) : null;
       const validDN =
-        dn && CategoryNormalizer.isValidCategoryName(dn) ? CategoryNormalizer.sanitizeCategoryName(dn) : null;
+        dn && CategoryNormalizer.isValidCategoryName(dn) ? CategoryNormalizer.sanitizeCategoryName(dn, title) : null;
 
       const bestName = CategoryNormalizer.pickBestName(validCFN, validDN);
       if (bestName) {
@@ -193,15 +193,18 @@ export class CategoryNormalizer {
    * Select the best category from a list of BrowseNodes
    * Prioritizes specific categories (depth) and preferred keywords
    */
-  public static selectBestCategory(nodes: BrowseNode[]): NormalizedCategory & { browseNodeId?: string } {
+  public static selectBestCategory(
+    nodes: BrowseNode[],
+    title?: string,
+  ): NormalizedCategory & { browseNodeId?: string } {
     if (!nodes || nodes.length === 0) {
       return { main: 'その他／全般', sub: 'Unknown', nameCount: 0, score: -1 };
     }
 
     // 1. Normalize and Sort nodes
     const sortedNodes = [...nodes].sort((a: BrowseNode, b: BrowseNode) => {
-      const normA = CategoryNormalizer.normalize(a);
-      const normB = CategoryNormalizer.normalize(b);
+      const normA = CategoryNormalizer.normalize(a, title);
+      const normB = CategoryNormalizer.normalize(b, title);
 
       // Priority Policy: Depth (Specificity) > Score (Domain preference) > SalesRank
       // 1. Depth (Specificity): Prefer most specific leaf categories
@@ -220,10 +223,10 @@ export class CategoryNormalizer {
 
     // 2. Pick the first valid category
     for (const node of sortedNodes) {
-      const normalized = CategoryNormalizer.normalize(node);
+      const normalized = CategoryNormalizer.normalize(node, title);
 
       if (normalized.main !== 'その他／全般') {
-        CategoryNormalizer.resolveSubCategory(normalized, sortedNodes);
+        CategoryNormalizer.resolveSubCategory(normalized, sortedNodes, title);
         return CategoryNormalizer.attachBrowseNodeId(normalized, node);
       }
     }
@@ -231,7 +234,7 @@ export class CategoryNormalizer {
     // 3. Fallback to best available node even if it's "Other"
     const bestNode = sortedNodes[0];
     if (bestNode) {
-      return CategoryNormalizer.attachBrowseNodeId(CategoryNormalizer.normalize(bestNode), bestNode);
+      return CategoryNormalizer.attachBrowseNodeId(CategoryNormalizer.normalize(bestNode, title), bestNode);
     }
 
     return { main: 'その他／全般', sub: 'Unknown', nameCount: 0, score: -1 };
@@ -240,17 +243,17 @@ export class CategoryNormalizer {
   /**
    * Resolve sub-category when empty or too generic
    */
-  private static resolveSubCategory(normalized: NormalizedCategory, sortedNodes: BrowseNode[]): void {
+  private static resolveSubCategory(normalized: NormalizedCategory, sortedNodes: BrowseNode[], title?: string): void {
     if (normalized.sub && normalized.sub !== '一般') {
       return;
     }
 
     const subCandidate = sortedNodes.find((n: BrowseNode) => {
-      const sn = CategoryNormalizer.normalize(n);
+      const sn = CategoryNormalizer.normalize(n, title);
       return sn.main !== 'その他／全般' && sn.main !== normalized.main;
     });
 
-    normalized.sub = subCandidate ? CategoryNormalizer.normalize(subCandidate).main : '';
+    normalized.sub = subCandidate ? CategoryNormalizer.normalize(subCandidate, title).main : '';
   }
 
   /**
@@ -556,7 +559,7 @@ export class CategoryNormalizer {
     return true;
   }
 
-  private static sanitizeCategoryName(name: string): string {
+  private static sanitizeCategoryName(name: string, title?: string): string {
     // Remove internal prefixes like PJ_
     const sanitized = name.replace(/^PJ_/i, '');
     // Normalize spaces (including NBSP \u00a0) and remove special characters
@@ -566,7 +569,23 @@ export class CategoryNormalizer {
       .trim();
 
     if (finalName.includes('ハンドル・ジョイスティック') || finalName === 'ハンドルコントローラー') {
-      finalName = 'ハンドルコントローラー';
+      if (
+        title &&
+        (title.includes('コントローラー') ||
+          title.includes('ゲームパッド') ||
+          title.includes('DualSense') ||
+          title.includes('OCTA') ||
+          title.includes('コマンダー') ||
+          title.includes('パッド')) &&
+        !title.includes('ステアリング') &&
+        !title.includes('レーシングホイール') &&
+        !title.includes('ハンコン') &&
+        !title.includes('フライトスティック')
+      ) {
+        finalName = 'コントローラー・周辺機器';
+      } else {
+        finalName = 'ハンドルコントローラー';
+      }
     }
 
     return finalName;
