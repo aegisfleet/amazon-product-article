@@ -99,6 +99,14 @@ export class ConfigManager {
     return this.config;
   }
 
+  private parseNumericEnvVar(name: string, defaultValue: string, errorMessage?: string): number {
+    const value = Number.parseInt(this.getEnvVar(name, defaultValue), 10);
+    if (Number.isNaN(value)) {
+      throw new Error(errorMessage || `Invalid numeric value for environment variable ${name}`);
+    }
+    return value;
+  }
+
   private loadConfiguration(): SystemConfig {
     return {
       amazon: {
@@ -110,7 +118,7 @@ export class ConfigManager {
       jules: {
         apiKey: this.getRequiredEnvVar('JULES_API_KEY'),
         baseUrl: this.getEnvVar('JULES_BASE_URL', 'https://api.jules.google.com'),
-        timeout: Number.parseInt(this.getEnvVar('JULES_TIMEOUT', '30000'), 10),
+        timeout: this.parseNumericEnvVar('JULES_TIMEOUT', '30000', 'Jules timeout must be a number between 1s and 60s'),
       },
       github: {
         token: this.getRequiredEnvVar('GITHUB_TOKEN'),
@@ -119,17 +127,37 @@ export class ConfigManager {
       },
       system: {
         logLevel: this.getEnvVar('LOG_LEVEL', 'info'),
-        retryAttempts: Number.parseInt(this.getEnvVar('RETRY_ATTEMPTS', '3'), 10),
-        retryDelay: Number.parseInt(this.getEnvVar('RETRY_DELAY', '1000'), 10),
-        maxConcurrentRequests: Number.parseInt(this.getEnvVar('MAX_CONCURRENT_REQUESTS', '5'), 10),
+        retryAttempts: this.parseNumericEnvVar(
+          'RETRY_ATTEMPTS',
+          '3',
+          'Retry attempts must be a number between 0 and 10',
+        ),
+        retryDelay: this.parseNumericEnvVar(
+          'RETRY_DELAY',
+          '1000',
+          'Retry delay must be a number between 100ms and 60s',
+        ),
+        maxConcurrentRequests: this.parseNumericEnvVar(
+          'MAX_CONCURRENT_REQUESTS',
+          '5',
+          'Max concurrent requests must be a number between 1 and 20',
+        ),
       },
       productSearch: {
         categories: this.parseListEnvVar('PRODUCT_CATEGORIES', ''),
-        maxResultsPerCategory: Number.parseInt(this.getEnvVar('MAX_RESULTS_PER_CATEGORY', '10'), 10),
+        maxResultsPerCategory: this.parseNumericEnvVar(
+          'MAX_RESULTS_PER_CATEGORY',
+          '10',
+          'Max results per category must be a number between 1 and 50',
+        ),
       },
       articleGeneration: {
         outputPath: this.getEnvVar('ARTICLE_OUTPUT_PATH', './articles'),
-        minWordCount: Number.parseInt(this.getEnvVar('MIN_WORD_COUNT', '2000'), 10),
+        minWordCount: this.parseNumericEnvVar(
+          'MIN_WORD_COUNT',
+          '2000',
+          'Min word count must be a number between 500 and 10000',
+        ),
         includeImages: this.getEnvVar('INCLUDE_IMAGES', 'true') === 'true',
       },
     };
@@ -139,43 +167,27 @@ export class ConfigManager {
     const errors: string[] = [];
 
     // Validate numeric values
-    if (
-      Number.isNaN(config.system.retryAttempts) ||
-      config.system.retryAttempts < 0 ||
-      config.system.retryAttempts > 10
-    ) {
+    if (config.system.retryAttempts < 0 || config.system.retryAttempts > 10) {
       errors.push('Retry attempts must be a number between 0 and 10');
     }
 
-    if (Number.isNaN(config.system.retryDelay) || config.system.retryDelay < 100 || config.system.retryDelay > 60000) {
+    if (config.system.retryDelay < 100 || config.system.retryDelay > 60000) {
       errors.push('Retry delay must be a number between 100ms and 60s');
     }
 
-    if (
-      Number.isNaN(config.system.maxConcurrentRequests) ||
-      config.system.maxConcurrentRequests < 1 ||
-      config.system.maxConcurrentRequests > 20
-    ) {
+    if (config.system.maxConcurrentRequests < 1 || config.system.maxConcurrentRequests > 20) {
       errors.push('Max concurrent requests must be a number between 1 and 20');
     }
 
-    if (Number.isNaN(config.jules.timeout) || config.jules.timeout < 1000 || config.jules.timeout > 60000) {
+    if (config.jules.timeout < 1000 || config.jules.timeout > 60000) {
       errors.push('Jules timeout must be a number between 1s and 60s');
     }
 
-    if (
-      Number.isNaN(config.productSearch.maxResultsPerCategory) ||
-      config.productSearch.maxResultsPerCategory < 1 ||
-      config.productSearch.maxResultsPerCategory > 50
-    ) {
+    if (config.productSearch.maxResultsPerCategory < 1 || config.productSearch.maxResultsPerCategory > 50) {
       errors.push('Max results per category must be a number between 1 and 50');
     }
 
-    if (
-      Number.isNaN(config.articleGeneration.minWordCount) ||
-      config.articleGeneration.minWordCount < 500 ||
-      config.articleGeneration.minWordCount > 10000
-    ) {
+    if (config.articleGeneration.minWordCount < 500 || config.articleGeneration.minWordCount > 10000) {
       errors.push('Min word count must be a number between 500 and 10000');
     }
 
