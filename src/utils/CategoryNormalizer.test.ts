@@ -296,6 +296,20 @@ describe('CategoryNormalizer', () => {
       expect(result.main).toBe('ハンドルコントローラー');
       expect(result.score).toBe(10);
     });
+
+    it('should sanitize "PS5ハンドル・ジョイスティック" to "コントローラー・周辺機器" when title contains game pad keywords', () => {
+      const node: BrowseNode = { displayName: 'PS5ハンドル・ジョイスティック', id: '1' };
+      const result = CategoryNormalizer.normalize(node, '【純正品】DualSense ワイヤレスコントローラー');
+      expect(result.main).toBe('コントローラー・周辺機器');
+      expect(result.score).toBe(10);
+    });
+
+    it('should sanitize "PS5ハンドル・ジョイスティック" to "ハンドルコントローラー" when title does not contain game pad keywords', () => {
+      const node: BrowseNode = { displayName: 'PS5ハンドル・ジョイスティック', id: '1' };
+      const result = CategoryNormalizer.normalize(node, 'Logicool G レーシングコックピット');
+      expect(result.main).toBe('ハンドルコントローラー');
+      expect(result.score).toBe(10);
+    });
   });
 
   describe('Book categorization', () => {

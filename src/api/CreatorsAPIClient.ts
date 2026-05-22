@@ -769,7 +769,7 @@ export class CreatorsAPIClient {
     categoryInfo: { main: string; sub: string; browseNodeId?: string };
   } {
     const nodes = item.browseNodeInfo?.browseNodes || [];
-    const normalized = CategoryNormalizer.selectBestCategory(nodes);
+    const normalized = CategoryNormalizer.selectBestCategory(nodes, item.itemInfo?.title?.displayValue);
     const categoryInfo: { main: string; sub: string; browseNodeId?: string } = {
       main: normalized.main,
       sub: normalized.sub,
