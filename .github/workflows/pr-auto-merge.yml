@@ -81,7 +81,7 @@ jobs:
 
     - name: Validate and auto-merge PR
       env:
-        GITHUB_TOKEN: ${{ github.token }}
+        GITHUB_TOKEN: ${{ secrets.PAT_TOKEN || secrets.GITHUB_TOKEN }}
         PR_NUMBER: ${{ github.event.pull_request.number }}
         PR_AUTHOR: ${{ github.event.pull_request.user.login }}
       run: pnpm run merge:pr
@@ -92,7 +92,7 @@ jobs:
       env:
         TODAY_CHANGED: ${{ steps.analyze_changes.outputs.today_changed }}
       with:
-        github-token: ${{ github.token }}
+        github-token: ${{ secrets.PAT_TOKEN || secrets.GITHUB_TOKEN }}
         script: |
           // マージ後、少し待機してからワークフローをトリガー
           await new Promise(resolve => setTimeout(resolve, 5000));
