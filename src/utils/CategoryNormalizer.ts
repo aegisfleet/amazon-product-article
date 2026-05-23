@@ -489,6 +489,7 @@ export class CategoryNormalizer {
       '受験対策文房具',
       'コクヨの文房具・事務用品',
       '美容・健康家電',
+      '理美容・健康家電',
       '理美容家電',
       'kindle書籍',
       'kindle unlimited',
