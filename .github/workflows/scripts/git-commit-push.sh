@@ -66,9 +66,48 @@ for i in 1 2 3; do
     if git pull --rebase --autostash origin "$CURRENT_BRANCH"; then
       echo "Rebase successful, retrying push..."
     else
-      echo "Rebase failed, aborting..."
-      git rebase --abort || true
-      exit 1
+      # Check if the conflict is only in the product cache file
+      if git status --porcelain | grep -q "UU data/cache/paapi-product-cache.json"; then
+        echo "Conflict detected in data/cache/paapi-product-cache.json. Attempting automatic merge..."
+        
+        # Check if there are other conflicted files
+        OTHER_CONFLICTS=$(git status --porcelain | grep "^UU " | grep -v "data/cache/paapi-product-cache.json" || true)
+        if [ -n "$OTHER_CONFLICTS" ]; then
+          echo "Rebase failed due to multiple conflicting files:"
+          echo "$OTHER_CONFLICTS"
+          git rebase --abort || true
+          exit 1
+        fi
+        
+        echo "No other conflicts found. Extracting ours and theirs versions..."
+        git show :2:data/cache/paapi-product-cache.json > data/cache/paapi-product-cache.ours.json 2>/dev/null || true
+        git show :3:data/cache/paapi-product-cache.json > data/cache/paapi-product-cache.theirs.json 2>/dev/null || true
+        
+        echo "Running merge script..."
+        if pnpm exec ts-node scripts/merge-product-cache.ts data/cache/paapi-product-cache.ours.json data/cache/paapi-product-cache.theirs.json data/cache/paapi-product-cache.json; then
+          echo "Auto-merge succeeded. Staging resolved file..."
+          rm -f data/cache/paapi-product-cache.ours.json data/cache/paapi-product-cache.theirs.json
+          git add data/cache/paapi-product-cache.json
+          
+          echo "Continuing rebase..."
+          if GIT_EDITOR=true git rebase --continue; then
+            echo "Rebase completed successfully. Retrying push..."
+          else
+            echo "Rebase continue failed, aborting..."
+            git rebase --abort || true
+            exit 1
+          fi
+        else
+          echo "Auto-merge script failed, aborting rebase..."
+          rm -f data/cache/paapi-product-cache.ours.json data/cache/paapi-product-cache.theirs.json
+          git rebase --abort || true
+          exit 1
+        fi
+      else
+        echo "Rebase failed due to other conflicts or issues, aborting..."
+        git rebase --abort || true
+        exit 1
+      fi
     fi
   fi
 done
