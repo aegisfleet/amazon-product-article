@@ -374,6 +374,9 @@ export class CategoryNormalizer {
       // Brand-specific promotion/coordinated pages
       /(?:sony|ソニー|panasonic|パナソニック|logicool|ロジクール|elecom|エレコム).*(?:特集|一覧|プロモーション|キャンペーン|限定|コーディネート)/i,
       /(?:iris|アイリス|brother|ブラザー|nestle|ネスレ|cleansui|クリンスイ|luminous|ルミナス).*(?:特集|一覧|プロモーション|キャンペーン|限定|コーディネート)/i,
+      /^panasonic-ha-/i,
+      /^(?:philips|フィリップス)\s*(?:理美容|美容|ビューティ)/i,
+      /^おうちでヘアケア/i,
       /毎日使う水/i,
       /primeday|black\s*friday|ブラックフライデー|新生活|入園入学|父の日|母の日/i,
       /^燃料$/,
