@@ -1,8 +1,8 @@
 {
   "analysis": {
-    "productName": "Bloomtwin I37 ワイヤレスイヤホン",
+    "productName": "Bloomtwin ワイヤレスイヤホン",
     "parentAsin": "B0FL2627Y3",
-    "productDescription": "2026年最新のBluetooth 6.0技術を搭載したと謳う完全ワイヤレスイヤホン。IPX7の高い防水性能と充電ケース併用で最大60時間の長時間再生が可能。10mmダイナミックドライバーによるHIFI音質を提供する。",
+    "productDescription": "Bluetooth 6.0を謳う完全ワイヤレスイヤホン。IPX7防水と充電ケース併用で最大60時間再生が可能。10mmダイナミックドライバーを搭載。",
     "productUsage": [
       "スマートフォンと接続して音楽・動画鑑賞",
       "IPX7防水を活かしたスポーツ・ジムでの使用",
@@ -17,7 +17,6 @@
       "軽量設計で長時間の装着でも疲れにくい。"
     ],
     "negativePoints": [
-      "販売価格が16,162円と、同等スペックの競合他社製品（2,000円〜4,000円台）と比較して著しく高額。",
       "ブランド「Bloomtwin」の知名度が低く、信頼性やサポート体制が不明確。",
       "「Bluetooth 6.0」の搭載を謳っているが、2026年時点での普及状況や実装の質に疑問が残る。",
       "アクティブノイズキャンセリング(ANC)機能が搭載されていない。",
@@ -28,104 +27,138 @@
       "ランニングやトレーニング中の音楽鑑賞",
       "手軽にワイヤレスイヤホンを試したいユーザー（ただし価格に見合うかは疑問）"
     ],
-    "userStories": [
-      {
-        "userType": "ガジェット好きの会社員",
-        "scenario": "新規格への興味から購入",
-        "experience": "「Bluetooth 6.0」という言葉に惹かれて購入してみたが、手持ちのスマホが対応しておらず恩恵を感じられなかった。音質は普通だが、価格を考えるとコスパは悪いと感じた。（推測）",
-        "sentiment": "mixed"
-      },
-      {
-        "userType": "ランナー",
-        "scenario": "雨天時のトレーニング",
-        "experience": "急な雨でも壊れない防水性は評価できる。しかし、1万円以上出して買うなら、もっと有名なメーカーのスポーツモデルを選べばよかったと後悔している。（推測）",
-        "sentiment": "negative"
-      }
-    ],
-    "userImpression": "スペック上は魅力的だが、価格設定とブランドの信頼性に大きな疑問がある製品。特に16,000円を超える価格は、同等の機能を持つ競合製品（UGREENやAnkerなど）と比較して競争力が皆無。セールで大幅に安くならない限り、購入を推奨するのは難しい。",
+    "userStories": [],
+    "userImpression": "スペック上は魅力的だが、ブランドの信頼性に疑問がある製品。競合製品と比較して目立った強みが見当たらない。",
     "sources": [
       {
+        "id": "src-1",
         "name": "Amazon商品ページ (B0FL2627Y3)",
         "url": "https://www.amazon.co.jp/dp/B0FL2627Y3",
-        "credibility": "商品仕様の一次情報源だが、マーケティング用語が多用されている可能性あり。"
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-05-24",
+        "author": "Bloomtwin",
+        "conflictOfInterest": "possible",
+        "notes": "商品仕様の一次情報源だが、マーケティング用語が多用されている可能性あり。"
       },
       {
-        "name": "Amazon検索結果 (競合商品価格調査)",
-        "url": "https://www.amazon.co.jp/s?k=Bluetooth+6.0+earphone",
-        "credibility": "市場価格の比較に使用。"
+        "id": "src-2",
+        "name": "Amazon検索結果",
+        "url": "https://www.amazon.co.jp/s?k=Bluetooth%E3%82%A4%E3%83%A4%E3%83%9B%E3%83%B3+%E3%83%AF%E3%82%A4%E3%83%A4%E3%83%AC%E3%82%B9%E3%82%A4%E3%83%A4%E3%83%9B%E3%83%B3+IPX7%E9%98%B2%E6%B0%B4&i=electronics",
+        "tier": "medium",
+        "evidenceType": "secondary",
+        "publishedAt": "2026-05-24",
+        "author": "Amazon",
+        "conflictOfInterest": "none",
+        "notes": "競合商品の価格比較。"
       }
     ],
-    "lastInvestigated": "2026-02-08",
+    "lastInvestigated": "2026-05-24",
     "competitiveAnalysis": [
       {
-        "name": "UGREEN Dots ワイヤレスイヤホン (B0F94D2JB6)",
-        "asin": "B0F94D2JB6",
-        "priceComparison": "約2,500円で販売されており、本製品の約1/6の価格。圧倒的にコスパが良い。",
+        "name": "Bluetoothイヤホン ワイヤレスイヤホン IPX7防水 最大60時間再生 (B0GV3B8J7F)",
+        "asin": "B0GV3B8J7F",
+        "priceComparison": "価格はやや安い。仕様やデザインが酷似している可能性あり。",
         "featureComparison": [
-          "同じくBluetooth 6.0を謳っている。",
-          "信頼性の高いUGREENブランド。",
-          "IPX5防水だが、日常使用には十分。"
+          "共通点：Bluetooth 6.0対応、最大60時間再生、IPX7防水",
+          "相違点：カラーバリエーションの違い"
         ],
         "differentiators": [
-          "ブランドの信頼性と圧倒的な価格競争力。",
-          "専用アプリによるカスタマイズが可能。"
+          "Bloomtwin ワイヤレスイヤホンの利点：特になし",
+          "Bluetoothイヤホン ワイヤレスイヤホン IPX7防水 最大60時間再生 (B0GV3B8J7F)の利点：価格がやや安い"
         ]
       },
       {
-        "name": "Ysobook ワイヤレスイヤホン (B0FHHM9GWW)",
-        "asin": "B0FHHM9GWW",
-        "priceComparison": "約1,300円という激安価格。",
+        "name": "Bluetoothイヤホン ワイヤレスイヤホン IPX7防水 最大60時間再生 (B0GV3BV49K)",
+        "asin": "B0GV3BV49K",
+        "priceComparison": "価格はやや安い。仕様やデザインが酷似している可能性あり。",
         "featureComparison": [
-          "Bluetooth 5.3搭載。",
-          "ENCノイズキャンセリング機能付き。",
-          "48時間再生。"
+          "共通点：Bluetooth 6.0対応、最大60時間再生、IPX7防水",
+          "相違点：カラーバリエーション等の違い"
         ],
         "differentiators": [
-          "価格の安さ。",
-          "ENC機能による通話品質の向上。"
+          "Bloomtwin ワイヤレスイヤホンの利点：特になし",
+          "Bluetoothイヤホン ワイヤレスイヤホン IPX7防水 最大60時間再生 (B0GV3BV49K)の利点：価格がやや安い"
         ]
       },
       {
-        "name": "FLYARROW ワイヤレスイヤホン (B0G4CR39NP)",
-        "asin": "B0G4CR39NP",
-        "priceComparison": "約1,300円。",
+        "name": "Bluetoothイヤホン ワイヤレスイヤホン IPX7防水 (B0GQZM74N8)",
+        "asin": "B0GQZM74N8",
+        "priceComparison": "価格はやや高い。仕様は同等。",
         "featureComparison": [
-          "Bluetooth 5.4搭載。",
-          "AIスマートENC。",
-          "70時間再生とバッテリー性能で上回る。"
+          "共通点：Bluetooth 6.0対応、最大60時間再生、IPX7防水",
+          "相違点：本体色(white)など"
         ],
         "differentiators": [
-          "最新のBluetooth 5.4とAIノイズ除去機能。",
-          "バッテリー持続時間。"
+          "Bloomtwin ワイヤレスイヤホンの利点：価格がやや安い",
+          "Bluetoothイヤホン ワイヤレスイヤホン IPX7防水 (B0GQZM74N8)の利点：好みに合わせたカラー選択が可能"
+        ]
+      },
+      {
+        "name": "Bluetoothイヤホン ワイヤレスイヤホン IPX7防水 (001 white) (B0GCZG9PQQ)",
+        "asin": "B0GCZG9PQQ",
+        "priceComparison": "非常に安い(999円)。価格差が大きく品質に懸念がある。",
+        "featureComparison": [
+          "共通点：Bluetooth 6.0対応、最大60時間再生、IPX7防水",
+          "相違点：価格帯が大きく異なる"
+        ],
+        "differentiators": [
+          "Bloomtwin ワイヤレスイヤホンの利点：高すぎるほどの割引ではなく適正価格の可能性",
+          "Bluetoothイヤホン ワイヤレスイヤホン IPX7防水 (001 white) (B0GCZG9PQQ)の利点：圧倒的な低価格"
+        ]
+      },
+      {
+        "name": "Bluetoothイヤホン ワイヤレスイヤホン IPX7防水 (green) (B0FG2R4W82)",
+        "asin": "B0FG2R4W82",
+        "priceComparison": "非常に高額(12,615円)。同スペックに対して価格が見合っていない可能性あり。",
+        "featureComparison": [
+          "共通点：Bluetooth 6.0対応、最大60時間再生、IPX7防水",
+          "相違点：価格、カラー"
+        ],
+        "differentiators": [
+          "Bloomtwin ワイヤレスイヤホンの利点：同等スペックでありながら大幅に安価",
+          "Bluetoothイヤホン ワイヤレスイヤホン IPX7防水 (green) (B0FG2R4W82)の利点：特になし"
+        ]
+      },
+      {
+        "name": "Bluetoothイヤホン ワイヤレスイヤホン IPX7防水 (001 black) (B0GR19WDCF)",
+        "asin": "B0GR19WDCF",
+        "priceComparison": "価格が非常に安い(1,299円)。",
+        "featureComparison": [
+          "共通点：Bluetooth 6.0対応、最大60時間再生、IPX7防水",
+          "相違点：価格帯、カラー"
+        ],
+        "differentiators": [
+          "Bloomtwin ワイヤレスイヤホンの利点：特になし",
+          "Bluetoothイヤホン ワイヤレスイヤホン IPX7防水 (001 black) (B0GR19WDCF)の利点：圧倒的な低価格"
         ]
       }
     ],
     "recommendation": {
       "targetUsers": [
-        "どうしても「Bluetooth 6.0」を試してみたい新しもの好き（ただしリスクあり）",
-        "予算に余裕があり、マイナーブランドを開拓したい人"
+        "どうしても「Bluetooth 6.0」を試してみたい人",
+        "無名のブランドでも安価にワイヤレスイヤホンを試したい人"
       ],
       "pros": [
         "IPX7の防水性能",
-        "長時間のバッテリー駆動",
-        "最新規格への対応（公称）"
+        "最大60時間のバッテリー駆動"
       ],
       "cons": [
-        "競合と比較して異常に高い価格設定",
         "ブランドの信頼性が低い",
         "ノイズキャンセリング機能がない"
       ],
-      "score": 40,
-      "scoreRationale": "[基本点: 70]\n[減点: -15] (コストパフォーマンス: 競合が2,000円台の中、16,000円超えは論外)\n[減点: -10] (ユーザー満足度: レビュー皆無、信頼性低い)\n[減点: -5] (品質・デザイン: 中華OEMの汎用品の域を出ない)\n[合計: 40]"
+      "score": 50,
+      "scoreRationale": "[基本点: 70]\n[減点: -5] (コストパフォーマンス: 競合の同等品により安いものが存在し、相対的に割高)\n[減点: -10] (ユーザー満足度: レビューや実績がなく信頼性が低い)\n[減点: -5] (品質・デザイン: 中華OEMの汎用品の域を出ない)\n[合計: 50]"
     },
     "technicalSpecs": {
       "driver": "10mmダイナミックドライバー",
-      "codec": null,
       "battery": {
         "earbuds": "6時間",
         "withCase": "60時間"
       },
-      "connectivity": ["Bluetooth 6.0+EDR"],
+      "connectivity": [
+        "Bluetooth 6.0+EDR"
+      ],
       "noiseCancel": {
         "active": false,
         "enc": false
@@ -135,6 +168,28 @@
         "earbud": "4g",
         "case": "60.8g"
       }
-    }
+    },
+    "claims": [
+      {
+        "claim": "最大60時間の再生が可能",
+        "category": "durability",
+        "confidence": "medium",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "crossChecked": false,
+        "notes": "公称値であり実稼働時間は不明"
+      },
+      {
+        "claim": "IPX7の高い防水性能",
+        "category": "quality",
+        "confidence": "medium",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "crossChecked": false,
+        "notes": "公称値"
+      }
+    ]
   }
 }
