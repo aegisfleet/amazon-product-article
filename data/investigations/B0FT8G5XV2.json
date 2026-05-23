@@ -1,8 +1,8 @@
 {
   "analysis": {
-    "productName": "RELX 電気ブラシ EMS 美顔器",
+    "productName": "RELX 電気ブラシ EMS 美顔器 リフトブラシ",
     "parentAsin": "B0FT8G5XV2",
-    "productDescription": "日本企業が企画したEMSとLEDを搭載した軽量な電気ブラシです。",
+    "productDescription": "日本企業が企画したEMSとLEDを搭載した軽量・コンパクトな電気ブラシです。",
     "productUsage": [
       "頭皮ケア: 頭皮全体を刺激してリフレッシュ",
       "フェイスケア: 表情筋にアプローチして引き締め",
@@ -16,58 +16,119 @@
     ],
     "negativePoints": [
       "防水仕様ではないため、浴室での使用やお風呂場での保管には注意が必要",
-      "専用のACアダプターが付属していない（別途用意が必要）",
-      "高価格帯の美顔器に比べると機能がシンプルである可能性がある"
+      "専用のACアダプターが付属していない（別途用意が必要）"
     ],
     "useCases": [
       "仕事や家事の合間のリフレッシュタイムに",
       "お風呂上がりや寝る前のリラックスタイムに",
       "旅行先や出張先での携帯用美容機器として"
     ],
-    "userStories": [
-      {
-        "userType": "30代 会社員女性",
-        "scenario": "仕事でPC作業が多く、目の疲れや頭皮のコリを感じている",
-        "experience": "（推測）これまでは手でマッサージしていましたが、RELXのブラシを使うようになってから、短時間でスッキリする感覚があります。軽くて持ち運びもしやすいので、オフィスに置いて休憩中に使っています。日本企業企画ということで、初めての美容家電でも安心して購入できました。",
-        "sentiment": "positive"
-      },
-      {
-        "userType": "40代 主婦",
-        "scenario": "家事や育児で忙しく、エステに行く時間がない",
-        "experience": "（推測）高価な美顔器は手が出しにくいですが、RELXなら手頃な価格で試せると思い購入しました。EMSの刺激が心地よく、顔のむくみが取れたような気がします。防水ではないのでお風呂では使えませんが、リビングでテレビを見ながらケアできるのが良いです。",
-        "sentiment": "positive"
-      }
-    ],
+    "userStories": [],
     "userImpression": "日本企業企画という信頼性と、手頃な価格でEMSとLEDケアができる点が評価されています。軽量で使いやすく、初めての電気ブラシとしても導入しやすい製品です。",
     "sources": [
       {
+        "id": "src-1",
         "name": "Amazon Product Page",
         "url": "https://www.amazon.co.jp/dp/B0FT8G5XV2",
-        "credibility": "high"
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-05-24",
+        "author": "RELX",
+        "conflictOfInterest": "possible",
+        "notes": "商品仕様、特徴、使い方を確認"
       }
     ],
-    "lastInvestigated": "2026-02-08",
+    "claims": [
+      {
+        "claim": "115gの超軽量設計",
+        "category": "durability",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "crossChecked": false,
+        "notes": "製品仕様より"
+      }
+    ],
+    "lastInvestigated": "2026-05-24",
     "competitiveAnalysis": [
       {
-        "name": "Tibnozt 電気ブラシ",
-        "asin": "B0G4WJMYJG",
-        "priceComparison": "RELXより約1,200円安い",
-        "featureComparison": ["EMS, RF, 3D振動, LED, マイナスイオン搭載", "多機能"],
-        "differentiators": ["価格の安さと機能の豊富さが売りだが、ブランド信頼性ではRELXに分がある可能性がある"]
+        "name": "SALONIA サロニア EMS リフトブラシ",
+        "asin": "B0CXDNS6HN",
+        "priceComparison": "対象商品より高価。ブランドの信頼性と温感機能による付加価値がある。",
+        "featureComparison": [
+          "共通点：EMS搭載、全身ケア可能",
+          "相違点：SALONIAは温感機能と3Dフィットピンを搭載している"
+        ],
+        "differentiators": [
+          "RELX 電気ブラシ EMS 美顔器の利点：価格が安く、初めてでも手軽に導入できる",
+          "SALONIA サロニア EMS リフトブラシの利点：温感機能があり、筋肉を温めながらケアできる"
+        ]
       },
       {
-        "name": "SIWING 電気ブラシ",
-        "asin": "B0FSC47CC9",
-        "priceComparison": "RELXより約3,000円安い（半額程度）",
-        "featureComparison": ["4モード, 3種類LED", "非常に安価"],
-        "differentiators": ["圧倒的な低価格だが、耐久性や品質面での不安が残る可能性がある"]
+        "name": "MLBER MAKE LIFE BETTER 電気バリブラシ",
+        "asin": "B0GV41MMCK",
+        "priceComparison": "対象商品よりやや安価。",
+        "featureComparison": [
+          "共通点：EMSとLEDを搭載",
+          "相違点：MLBERはケア液（美容液など）を収納・塗布できるタンクを備えている"
+        ],
+        "differentiators": [
+          "RELX 電気ブラシ EMS 美顔器の利点：日本企業企画による安心のサポート体制がある",
+          "MLBER MAKE LIFE BETTER 電気バリブラシの利点：ケア液をブラシから直接塗布しながら使用できる"
+        ]
       },
       {
-        "name": "Brighte ELEKI BRUSH+",
-        "asin": "B0FN6F6THC",
-        "priceComparison": "RELXより約29,000円高い",
-        "featureComparison": ["佐々木希アンバサダー", "高級感のあるデザイン", "本格的なサロン級ケア"],
-        "differentiators": ["価格帯が全く異なるハイエンドモデル。RELXはエントリーモデルとして位置づけられる"]
+        "name": "Fyros 電気ブラシ",
+        "asin": "B0GVNN84WS",
+        "priceComparison": "対象商品より大幅に安価。低価格帯のエントリーモデル。",
+        "featureComparison": [
+          "共通点：EMS、LED、振動機能を搭載",
+          "相違点：Fyrosは3種類のLED光（赤/青/紫）を搭載し、液体収納ケースも備えている"
+        ],
+        "differentiators": [
+          "RELX 電気ブラシ EMS 美顔器の利点：日本企業企画であり、品質やサポート面での安心感が高い",
+          "Fyros 電気ブラシの利点：非常に安価でありながら多機能（ケア液タンクや多色LED）を備える"
+        ]
+      },
+      {
+        "name": "スカルプD ネクストプラス スタイルエレブラシ",
+        "asin": "B0FPQLMM8B",
+        "priceComparison": "対象商品よりかなり高価。アンファー（スカルプD）ブランドの高機能モデル。",
+        "featureComparison": [
+          "共通点：EMS搭載",
+          "相違点：スカルプDは331本のピンヘッドを採用し、トリートメントイオン機能も搭載している"
+        ],
+        "differentiators": [
+          "RELX 電気ブラシ EMS 美顔器の利点：コストパフォーマンスに優れ、手軽に試すことができる",
+          "スカルプD ネクストプラス スタイルエレブラシの利点：イオンケアや高密度のピンによる本格的な地肌・髪のケアが可能"
+        ]
+      },
+      {
+        "name": "Ni Zmir 美顔器 電気ブラシ EMS",
+        "asin": "B0GR4HGR8M",
+        "priceComparison": "対象商品と同程度の価格帯。",
+        "featureComparison": [
+          "共通点：EMS、LED搭載",
+          "相違点：Ni Zmirは9段階の細かなEMS調整と、IPX5防水性能を備えている"
+        ],
+        "differentiators": [
+          "RELX 電気ブラシ EMS 美顔器の利点：軽量かつ日本企業企画による安心感がある",
+          "Ni Zmir 美顔器 電気ブラシ EMSの利点：IPX5防水対応で、濡れた手でも使いやすくお手入れが容易"
+        ]
+      },
+      {
+        "name": "NIPLUX EMS LIFT BRUSH",
+        "asin": "B0CP92HGVW",
+        "priceComparison": "対象商品より高価。高出力な本格モデル。",
+        "featureComparison": [
+          "共通点：EMS、LED搭載",
+          "相違点：NIPLUXは独自のEMS波形と最大9000回/分の高速振動機能を備える"
+        ],
+        "differentiators": [
+          "RELX 電気ブラシ EMS 美顔器の利点：手頃な価格と約115gの軽量設計で日常使いしやすい",
+          "NIPLUX EMS LIFT BRUSHの利点：独自の低周波EMS波形や振動機能でより強い刺激や本格的なケアが可能"
+        ]
       }
     ],
     "recommendation": {
@@ -79,20 +140,31 @@
       "pros": [
         "日本企業企画による安心感",
         "手頃な価格でEMSとLEDケアが可能",
-        "軽量で使いやすい"
+        "約115gと軽量で使いやすい"
       ],
       "cons": [
         "防水機能がないため浴室で使用できない",
         "ACアダプターが別売り"
       ],
       "score": 82,
-      "scoreRationale": "[基本点: 70]\n[加点: +5] (日本企業企画による信頼性とサポート体制)\n[加点: +5] (5,990円という手頃な価格でEMS+LEDを実現)\n[加点: +2] (軽量・コンパクトで使いやすいデザイン)\n[合計: 82]"
+      "scoreRationale": "[基本点: 70]\n[加点: +5] (日本企業企画による信頼性とサポート体制)\n[加点: +5] (5000円以下の手頃な価格でEMS+LEDを実現しているコスパの良さ)\n[加点: +2] (約115gの軽量設計で使い勝手が良い)\n[合計: 82]"
     },
     "technicalSpecs": {
-      "dimensions": { "height": "約23cm", "width": "約5cm", "depth": "約3.7cm", "weight": "約115g" },
-      "power": "USB充電式 (Type-C)",
-      "capacity": "充電時間: 約2.5時間, 動作時間: 約2時間",
-      "other": ["EMSモード", "LEDモード (赤/青)", "4段階強度調整"]
+      "dimensions": {
+        "height": "230.9mm",
+        "width": "36.9mm",
+        "depth": "51.9mm"
+      },
+      "weight": "115g",
+      "capacity": "動作時間: 約2時間",
+      "material": "不明",
+      "origin": "日本企画 (製造国不明)",
+      "other": [
+        "充電時間: 約2.5時間",
+        "電源: USB Type-C (DC5V/1A対応アダプター別途必要)",
+        "機能: EMS (4段階), LED (赤/青/MIX)",
+        "防水性能: アタッチメントのみIPX4 (本体は非防水)"
+      ]
     }
   }
 }
