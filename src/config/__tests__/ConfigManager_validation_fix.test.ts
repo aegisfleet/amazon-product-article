@@ -33,43 +33,59 @@ describe('ConfigManager Validation Improvements', () => {
     );
   });
 
-  test('should throw if RETRY_ATTEMPTS is NaN', async () => {
+  test('should throw TypeError if RETRY_ATTEMPTS is NaN', async () => {
     process.env.RETRY_ATTEMPTS = 'invalid';
     const configManager = ConfigManager.getInstance();
-    await expect(configManager.initialize()).rejects.toThrow('Retry attempts must be a number between 0 and 10');
+    await expect(configManager.initialize()).rejects.toThrow(TypeError);
+    await expect(configManager.initialize()).rejects.toThrow('RETRY_ATTEMPTS must be a valid number');
   });
 
-  test('should throw if RETRY_DELAY is NaN', async () => {
+  test('should throw TypeError if RETRY_ATTEMPTS contains trailing characters like 123abc', async () => {
+    process.env.RETRY_ATTEMPTS = '123abc';
+    const configManager = ConfigManager.getInstance();
+    await expect(configManager.initialize()).rejects.toThrow(TypeError);
+    await expect(configManager.initialize()).rejects.toThrow('RETRY_ATTEMPTS must be a valid number');
+  });
+
+  test('should throw TypeError if RETRY_DELAY is NaN', async () => {
     process.env.RETRY_DELAY = 'invalid';
     const configManager = ConfigManager.getInstance();
-    await expect(configManager.initialize()).rejects.toThrow('Retry delay must be a number between 100ms and 60s');
+    await expect(configManager.initialize()).rejects.toThrow(TypeError);
+    await expect(configManager.initialize()).rejects.toThrow('RETRY_DELAY must be a valid number');
   });
 
-  test('should throw if MAX_CONCURRENT_REQUESTS is NaN', async () => {
+  test('should throw TypeError if RETRY_DELAY has invalid characters like 123abc', async () => {
+    process.env.RETRY_DELAY = '123abc';
+    const configManager = ConfigManager.getInstance();
+    await expect(configManager.initialize()).rejects.toThrow(TypeError);
+    await expect(configManager.initialize()).rejects.toThrow('RETRY_DELAY must be a valid number');
+  });
+
+  test('should throw TypeError if MAX_CONCURRENT_REQUESTS is NaN', async () => {
     process.env.MAX_CONCURRENT_REQUESTS = 'invalid';
     const configManager = ConfigManager.getInstance();
-    await expect(configManager.initialize()).rejects.toThrow(
-      'Max concurrent requests must be a number between 1 and 20',
-    );
+    await expect(configManager.initialize()).rejects.toThrow(TypeError);
+    await expect(configManager.initialize()).rejects.toThrow('MAX_CONCURRENT_REQUESTS must be a valid number');
   });
 
-  test('should throw if JULES_TIMEOUT is NaN', async () => {
+  test('should throw TypeError if JULES_TIMEOUT is NaN', async () => {
     process.env.JULES_TIMEOUT = 'invalid';
     const configManager = ConfigManager.getInstance();
-    await expect(configManager.initialize()).rejects.toThrow('Jules timeout must be a number between 1s and 60s');
+    await expect(configManager.initialize()).rejects.toThrow(TypeError);
+    await expect(configManager.initialize()).rejects.toThrow('JULES_TIMEOUT must be a valid number');
   });
 
-  test('should throw if MAX_RESULTS_PER_CATEGORY is NaN', async () => {
+  test('should throw TypeError if MAX_RESULTS_PER_CATEGORY is NaN', async () => {
     process.env.MAX_RESULTS_PER_CATEGORY = 'invalid';
     const configManager = ConfigManager.getInstance();
-    await expect(configManager.initialize()).rejects.toThrow(
-      'Max results per category must be a number between 1 and 50',
-    );
+    await expect(configManager.initialize()).rejects.toThrow(TypeError);
+    await expect(configManager.initialize()).rejects.toThrow('MAX_RESULTS_PER_CATEGORY must be a valid number');
   });
 
-  test('should throw if MIN_WORD_COUNT is NaN', async () => {
+  test('should throw TypeError if MIN_WORD_COUNT is NaN', async () => {
     process.env.MIN_WORD_COUNT = 'invalid';
     const configManager = ConfigManager.getInstance();
-    await expect(configManager.initialize()).rejects.toThrow('Min word count must be a number between 500 and 10000');
+    await expect(configManager.initialize()).rejects.toThrow(TypeError);
+    await expect(configManager.initialize()).rejects.toThrow('MIN_WORD_COUNT must be a valid number');
   });
 });
