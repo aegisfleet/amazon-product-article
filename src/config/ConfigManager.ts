@@ -99,10 +99,17 @@ export class ConfigManager {
     return this.config;
   }
 
-  private parseNumericEnvVar(name: string, defaultValue: string, errorMessage?: string): number {
-    const value = Number.parseInt(this.getEnvVar(name, defaultValue), 10);
+  private parseNumericEnvVar(name: string, defaultValue: number | string): number {
+    const raw = this.getEnvVar(name, String(defaultValue)).trim();
+
+    const numRegex = /^-?\d+(\.\d+)?$/;
+    if (!numRegex.test(raw) || String(Number(raw)) !== raw) {
+      throw new TypeError(`${name} must be a valid number`);
+    }
+
+    const value = Number(raw);
     if (Number.isNaN(value)) {
-      throw new Error(errorMessage || `Invalid numeric value for environment variable ${name}`);
+      throw new TypeError(`${name} must be a valid number`);
     }
     return value;
   }
@@ -118,7 +125,7 @@ export class ConfigManager {
       jules: {
         apiKey: this.getRequiredEnvVar('JULES_API_KEY'),
         baseUrl: this.getEnvVar('JULES_BASE_URL', 'https://api.jules.google.com'),
-        timeout: this.parseNumericEnvVar('JULES_TIMEOUT', '30000', 'Jules timeout must be a number between 1s and 60s'),
+        timeout: this.parseNumericEnvVar('JULES_TIMEOUT', 30000),
       },
       github: {
         token: this.getRequiredEnvVar('GITHUB_TOKEN'),
@@ -127,37 +134,17 @@ export class ConfigManager {
       },
       system: {
         logLevel: this.getEnvVar('LOG_LEVEL', 'info'),
-        retryAttempts: this.parseNumericEnvVar(
-          'RETRY_ATTEMPTS',
-          '3',
-          'Retry attempts must be a number between 0 and 10',
-        ),
-        retryDelay: this.parseNumericEnvVar(
-          'RETRY_DELAY',
-          '1000',
-          'Retry delay must be a number between 100ms and 60s',
-        ),
-        maxConcurrentRequests: this.parseNumericEnvVar(
-          'MAX_CONCURRENT_REQUESTS',
-          '5',
-          'Max concurrent requests must be a number between 1 and 20',
-        ),
+        retryAttempts: this.parseNumericEnvVar('RETRY_ATTEMPTS', 3),
+        retryDelay: this.parseNumericEnvVar('RETRY_DELAY', 1000),
+        maxConcurrentRequests: this.parseNumericEnvVar('MAX_CONCURRENT_REQUESTS', 5),
       },
       productSearch: {
         categories: this.parseListEnvVar('PRODUCT_CATEGORIES', ''),
-        maxResultsPerCategory: this.parseNumericEnvVar(
-          'MAX_RESULTS_PER_CATEGORY',
-          '10',
-          'Max results per category must be a number between 1 and 50',
-        ),
+        maxResultsPerCategory: this.parseNumericEnvVar('MAX_RESULTS_PER_CATEGORY', 10),
       },
       articleGeneration: {
         outputPath: this.getEnvVar('ARTICLE_OUTPUT_PATH', './articles'),
-        minWordCount: this.parseNumericEnvVar(
-          'MIN_WORD_COUNT',
-          '2000',
-          'Min word count must be a number between 500 and 10000',
-        ),
+        minWordCount: this.parseNumericEnvVar('MIN_WORD_COUNT', 2000),
         includeImages: this.getEnvVar('INCLUDE_IMAGES', 'true') === 'true',
       },
     };
