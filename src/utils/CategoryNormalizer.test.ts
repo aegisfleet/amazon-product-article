@@ -144,6 +144,7 @@ describe('CategoryNormalizer', () => {
         '第2類医薬品-濫用の恐れ無し',
         'CC installments Banner4',
         'ビューティー',
+        '理美容・健康家電',
         'ビューティーストア',
         '収納・生活雑貨',
         'GroAFC2409under2000',
