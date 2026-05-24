@@ -7,6 +7,7 @@ settings:
 overrides:
   crypto-js: ^4.2.0
   test-exclude>minimatch: 3.1.5
+  qs: ^6.15.2
 
 importers:
 
@@ -1816,8 +1817,8 @@ packages:
   pure-rand@8.4.0:
     resolution: {integrity: sha512-IoM8YF/jY0hiugFo/wOWqfmarlE6J0wc6fDK1PhftMk7MGhVZl88sZimmqBBFomLOCSmcCCpsfj7wXASCpvK9A==, tarball: https://registry.npmjs.org/pure-rand/-/pure-rand-8.4.0.tgz}
 
-  qs@6.15.1:
-    resolution: {integrity: sha512-6YHEFRL9mfgcAvql/XhwTvf5jKcOiiupt2FiJxHkiX1z4j7WL8J/jRHYLluORvc1XxB5rV20KoeK00gVJamspg==, tarball: https://registry.npmjs.org/qs/-/qs-6.15.1.tgz}
+  qs@6.15.2:
+    resolution: {integrity: sha512-Rzq0KEyX/w/tEybncDgdkZrJgVUsUMk3xjh3t5bv3S1HTAtg+uOYt72+ZfwiQwKdysThkTBdL/rTi6HDmX9Ddw==, tarball: https://registry.npmjs.org/qs/-/qs-6.15.2.tgz}
     engines: {node: '>=0.6'}
 
   react-is@18.3.1:
@@ -4133,7 +4134,7 @@ snapshots:
 
   pure-rand@8.4.0: {}
 
-  qs@6.15.1:
+  qs@6.15.2:
     dependencies:
       side-channel: 1.1.0
 
@@ -4277,7 +4278,7 @@ snapshots:
       formidable: 1.2.6
       methods: 1.1.2
       mime: 1.6.0
-      qs: 6.15.1
+      qs: 6.15.2
       readable-stream: 2.3.8
     transitivePeerDependencies:
       - supports-color

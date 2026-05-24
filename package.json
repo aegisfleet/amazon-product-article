@@ -68,7 +68,8 @@
   "pnpm": {
     "overrides": {
       "crypto-js": "^4.2.0",
-      "test-exclude>minimatch": "3.1.5"
+      "test-exclude>minimatch": "3.1.5",
+      "qs": "^6.15.2"
     },
     "onlyBuiltDependencies": [
       "unrs-resolver"
