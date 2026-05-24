@@ -36,7 +36,7 @@ export class BrandManager {
     if (!fs.existsSync(dir)) {
       fs.mkdirSync(dir, { recursive: true });
     }
-    fs.writeFileSync(this.configPath, JSON.stringify(this.brandGroups, null, 2), 'utf-8');
+    fs.writeFileSync(this.configPath, `${JSON.stringify(this.brandGroups, null, 2)}\n`, 'utf-8');
   }
 
   /**
