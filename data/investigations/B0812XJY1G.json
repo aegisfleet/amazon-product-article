@@ -1,0 +1,185 @@
+{
+  "analysis": {
+    "productName": "シリコンパワー P34A60シリーズ 256GB M.2 2280 PCIe3.0x4 NVMe SSD",
+    "parentAsin": "B09BJVLD1T",
+    "productDescription": "シリコンパワーの「P34A60シリーズ」256GB内蔵SSDです。PCIe Gen3x4インターフェースとNVMe 1.3プロトコルをサポートし、最大2100MB/sの読取速度と最大1200MB/sの書込速度を提供します。HMB（Host Memory Buffer）やSLCキャッシュテクノロジーを採用し、高いパフォーマンスと信頼性を実現しています。安心の5年保証付きです。",
+    "productUsage": [
+      "デスクトップPCのストレージ増設・換装",
+      "ノートPCのストレージアップグレード",
+      "システムの高速化",
+      "ゲームのロード時間短縮"
+    ],
+    "positivePoints": [
+      "最大2100MB/sの読み取り速度で、システムの起動やアプリケーションの読み込みが高速に行える",
+      "データ保護のためのRAIDエンジン搭載",
+      "HMB（Host Memory Buffer）およびSLCキャッシュ対応によるパフォーマンス向上",
+      "5年間の長期保証と国内サポート"
+    ],
+    "negativePoints": [
+      "PCIe Gen4x4など最新の規格と比較すると速度は劣る",
+      "256GBという容量は、大容量のゲームや動画編集には不足しがち",
+      "ヒートシンクが付属していないため、PC環境によっては別途熱対策が必要な場合がある"
+    ],
+    "useCases": [
+      "HDDからの換装によるPC全体のレスポンス向上",
+      "サブPCや事務用PCのメインストレージ",
+      "OSインストール用のCドライブとしての利用"
+    ],
+    "userStories": [],
+    "userImpression": "手頃な価格でありながらNVMe接続による十分な速度が得られ、HDDやSATA SSDからの乗り換えで大幅な速度向上を体感できると評価されています。5年保証がある点も安心感に繋がっていますが、発熱対策として別途ヒートシンクを用意するユーザーもいます。",
+    "sources": [
+      {
+        "id": "src-amazon",
+        "name": "Amazon商品ページ",
+        "url": "https://www.amazon.co.jp/dp/B0812XJY1G",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2019-11-18",
+        "author": "SP Silicon Power",
+        "conflictOfInterest": "possible",
+        "notes": "製品仕様、価格、保証内容を確認"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "最大読込速度2100MB/s、最大書込速度1200MB/s",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-amazon"
+        ],
+        "crossChecked": false,
+        "notes": "Amazon商品ページのスペック表記と一致"
+      },
+      {
+        "claim": "安心の5年保証",
+        "category": "durability",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-amazon"
+        ],
+        "crossChecked": false,
+        "notes": "Amazon商品ページのスペック表記と一致"
+      }
+    ],
+    "lastInvestigated": "2026-05-25",
+    "competitiveAnalysis": [
+      {
+        "name": "fanxiang S501 256GB",
+        "asin": "B0B1HJV9VZ",
+        "priceComparison": "対象商品より安価",
+        "featureComparison": [
+          "共通点：容量256GB、PCIe 3.0x4対応、NVMe規格、5年保証",
+          "相違点：対象商品は読込2100MB/s・書込1200MB/s。fanxiang S501は読込2050MB/s・書込800MB/sであり、対象商品の方が書込速度において優位。またS501はグラフェン素材の冷却ステッカーを採用している"
+        ],
+        "differentiators": [
+          "シリコンパワー P34A60シリーズの利点：より高速な書き込み速度（1200MB/s）と知名度の高いブランドによる安心感",
+          "fanxiang S501の利点：より安価であり、グラフェン冷却ステッカーを備えている点"
+        ]
+      },
+      {
+        "name": "fanxiang S500 Pro 256GB",
+        "asin": "B0B55SWRCY",
+        "priceComparison": "対象商品より安価",
+        "featureComparison": [
+          "共通点：容量256GB、PCIe 3.0x4対応、NVMe規格、5年保証",
+          "相違点：対象商品の読込2100MB/sに対して、S500 Proは最大読込3000MB/sと高速。一方、書込速度は対象商品が1200MB/s、S500 Proが900MB/sであり対象商品の方が速い"
+        ],
+        "differentiators": [
+          "シリコンパワー P34A60シリーズの利点：書き込み速度が速く、大容量ファイルの保存などに有利",
+          "fanxiang S500 Proの利点：読み込み速度が大幅に速く（3000MB/s）、システムの起動やゲームのロード時間短縮において有利"
+        ]
+      },
+      {
+        "name": "Patriot P320 256GB",
+        "asin": "B0D4S1F5R6",
+        "priceComparison": "対象商品よりやや高価",
+        "featureComparison": [
+          "共通点：容量256GB、PCIe 3.0x4対応、NVMe規格",
+          "相違点：対象商品は読込2100MB/s、Patriot P320は読込2200MB/sとほぼ同等。書込速度は共に1200MB/s"
+        ],
+        "differentiators": [
+          "シリコンパワー P34A60シリーズの利点：同等の性能を持ちながら価格が安く、コストパフォーマンスに優れる点",
+          "Patriot P320の利点：わずかに速い読み込み速度（2200MB/s）"
+        ]
+      },
+      {
+        "name": "Samsung PM981a 256GB (整備済み品)",
+        "asin": "B0GHMYN7ZD",
+        "priceComparison": "対象商品より安価（ただし整備済み品）",
+        "featureComparison": [
+          "共通点：容量256GB、PCIe 3.0x4対応、NVMe規格",
+          "相違点：対象商品は新品。PM981aは整備済み品（中古）であるが、読込3500MB/s・書込2900MB/sと非常に高速"
+        ],
+        "differentiators": [
+          "シリコンパワー P34A60シリーズの利点：新品であり、5年間の長期保証がついている安心感",
+          "Samsung PM981aの利点：整備済み品である分安価で、かつ非常に高い読み書き性能を誇る点"
+        ]
+      },
+      {
+        "name": "Ediloca EN600 PRO 256GB",
+        "asin": "B0C9T6M4NH",
+        "priceComparison": "対象商品より安価",
+        "featureComparison": [
+          "共通点：容量256GB、PCIe 3.0x4対応、NVMe規格",
+          "相違点：対象商品の読込2100MB/s・書込1200MB/sに対して、EN600 PROは読込2800MB/s・書込2000MB/sと両方の速度で上回る。対象商品は5年保証、EN600 PROは3年保証"
+        ],
+        "differentiators": [
+          "シリコンパワー P34A60シリーズの利点：より長い5年保証による長期的な安心感",
+          "Ediloca EN600 PROの利点：より安価でありながら、読み書き速度に優れている点"
+        ]
+      },
+      {
+        "name": "ジェネリック PM991a 256GB (整備済み品)",
+        "asin": "B0DTHLK3CV",
+        "priceComparison": "対象商品より安価（ただし整備済み品）",
+        "featureComparison": [
+          "共通点：容量256GB、PCIe対応、NVMe規格",
+          "相違点：対象商品は新品で5年保証。PM991aは整備済み品（180日保証）であるが、読込3100MB/sと高速"
+        ],
+        "differentiators": [
+          "シリコンパワー P34A60シリーズの利点：新品で長期保証（5年）が付属し、安心感が高い点",
+          "ジェネリック PM991aの利点：低価格でありながら、高い読み込み速度を備えている点"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "SATA SSDやHDDから手軽にシステムを高速化したいユーザー",
+        "信頼できるブランドの長期保証を重視するユーザー",
+        "事務用PCやサブPCのストレージとしてコストと性能のバランスを求めるユーザー"
+      ],
+      "pros": [
+        "5年間の長期保証で安心",
+        "日常用途には十分な読み書き速度（読込2100MB/s、書込1200MB/s）",
+        "HMBとSLCキャッシュ技術によるパフォーマンスの最適化"
+      ],
+      "cons": [
+        "最新のPCIe 4.0/5.0対応SSDと比較すると速度で見劣りする",
+        "大容量ファイルの頻繁なやり取りには256GBという容量や速度がボトルネックになる可能性がある"
+      ],
+      "score": 75,
+      "scoreRationale": "[基本点: 70]\n[加点: +5] (5年間の長期保証と国内サポートによる安心感)\n[加点: +5] (HMBとSLCキャッシュ対応による実用的なパフォーマンスの確保)\n[減点: -5] (競合する低価格帯SSDと比較して、読み込み速度や書き込み速度のスペックがやや控えめ)\n[合計: 75]"
+    },
+    "technicalSpecs": {
+      "dimensions": {
+        "height": "3.5mm",
+        "width": "22.0mm",
+        "depth": "80.0mm"
+      },
+      "weight": "8g",
+      "capacity": "256GB",
+      "interface": "PCIe Gen3x4, NVMe 1.3",
+      "formFactor": "M.2 2280",
+      "performance": "最大読込2100MB/s、最大書込1200MB/s",
+      "tbw": "150TB",
+      "other": [
+        "HMB (Host Memory Buffer) 対応",
+        "SLCキャッシュテクノロジー",
+        "RAIDエンジン搭載",
+        "LDPC (Low Density Parity Check) コーディング",
+        "E2Eデータ保護"
+      ]
+    }
+  }
+}
