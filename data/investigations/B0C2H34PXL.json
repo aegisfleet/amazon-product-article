@@ -1,8 +1,8 @@
 {
   "analysis": {
-    "productName": "ハイセンス 冷蔵庫 87L HR-K91HB (2ドア・小型)",
+    "productName": "ハイセンス 冷蔵庫 87L HR-K91HB",
     "parentAsin": "B0C2H34PXL",
-    "productDescription": "一人暮らしや寝室のサブ冷蔵庫に最適な、静音性とコンパクトさを兼ね備えた87L冷蔵庫です。",
+    "productDescription": "一人暮らしや寝室のサブ冷蔵庫に最適な、静音性とコンパクトさを兼ね備えた87L冷蔵庫。",
     "productUsage": [
       "一人暮らしのメイン冷蔵庫（自炊控えめ）",
       "寝室や書斎のセカンド冷蔵庫",
@@ -21,69 +21,102 @@
     ],
     "useCases": [
       "新生活を始める大学生や単身赴任者",
-      "テレワーク中のデスク周りのサブ冷蔵庫"
+      "寝室やテレワーク中のデスク周りのサブ冷蔵庫",
+      "オフィスや休憩室のドリンク・軽食用"
     ],
-    "userStories": [
-      {
-        "userType": "20代学生",
-        "scenario": "初めての一人暮らし",
-        "experience": "狭いワンルームでも圧迫感がなく、音も静かで快適です。（推測）",
-        "sentiment": "positive"
-      },
-      {
-        "userType": "30代会社員",
-        "scenario": "寝室のサブ冷蔵庫",
-        "experience": "寝室に置いてますが、モーター音が気にならずよく眠れます。（推測）",
-        "sentiment": "positive"
-      }
-    ],
+    "userStories": [],
     "userImpression": "全体的にコンパクトさと静音性が評価されており、デザインのシンプルさも好評です。ただし容量不足を感じるユーザーもいると推測されます。",
     "sources": [
       {
+        "id": "src-amazon",
         "name": "Amazon商品ページ",
         "url": "https://www.amazon.co.jp/dp/B0C2H34PXL",
-        "credibility": "medium"
+        "tier": "medium",
+        "evidenceType": "primary",
+        "publishedAt": "2026-05-25",
+        "author": "Hisense(ハイセンス)",
+        "conflictOfInterest": "none",
+        "notes": "公式の製品寸法や容量、騒音レベル(23dB)を確認。"
       }
     ],
-    "lastInvestigated": "2026-02-09",
+    "lastInvestigated": "2026-05-25",
     "competitiveAnalysis": [
-      {
-        "name": "COMFEE' 冷蔵庫 90L RCD90BL1JP(E)",
-        "asin": "B0FMK57N2B",
-        "priceComparison": "ほぼ同価格帯（約16,800円前後）",
-        "featureComparison": [
-          "容量90L（ハイセンスは87L）",
-          "インバーター搭載を謳っている（省エネ期待）"
-        ],
-        "differentiators": [
-          "COMFEE'の方がわずかに容量が大きい",
-          "ハイセンスは国内サポート体制への安心感がある（東芝グループ）"
-        ]
-      },
       {
         "name": "simplus 冷蔵庫 90L SP-90LD2",
         "asin": "B0D9LQF55V",
-        "priceComparison": "やや安価（約15,000円〜17,000円）",
+        "priceComparison": "対象商品よりやや安価な場合がある",
         "featureComparison": [
-          "容量90L",
-          "左右ドア開き対応モデルがある場合も"
+          "共通点：2ドアの小型冷蔵庫",
+          "相違点：simplusは容量90L。ハイセンスは87Lだが静音設計（23dB）をアピール。"
         ],
         "differentiators": [
-          "simplusは低価格重視",
-          "ハイセンスはデザインと静音性重視"
+          "ハイセンス 冷蔵庫 87L HR-K91HBの利点：静音設計で寝室など静かな環境に適している",
+          "simplus 冷蔵庫 90L SP-90LD2の利点：価格重視の場合や、わずかでも容量が多い方が良い場合"
         ]
       },
       {
-        "name": "アイリスオーヤマ 冷蔵庫 90L IRSD-9B",
-        "asin": "B08PY1SHTK",
-        "priceComparison": "高価格帯（約25,000円）",
+        "name": "COMFEE' 冷蔵庫 90L RCT90BL",
+        "asin": "B09M6SKBHC",
+        "priceComparison": "同価格帯",
         "featureComparison": [
-          "容量90L",
-          "静音設計"
+          "共通点：幅が47cm台のスリム設計",
+          "相違点：COMFEE'は容量90Lで耐熱天板を採用している。"
         ],
         "differentiators": [
-          "アイリスオーヤマは知名度と信頼性が高い",
-          "ハイセンスの方がコストパフォーマンスに優れる"
+          "ハイセンス 冷蔵庫 87L HR-K91HBの利点：静音性に優れており、ガラス棚で手入れがしやすい",
+          "COMFEE' 冷蔵庫 90L RCT90BLの利点：電子レンジを上に置く前提なら耐熱天板があるCOMFEE'が有利"
+        ]
+      },
+      {
+        "name": "アイリスオーヤマ 冷蔵庫 90L IRSD-9B-B",
+        "asin": "B08PY1SHTK",
+        "priceComparison": "対象商品より高価格帯の場合が多い",
+        "featureComparison": [
+          "共通点：静音設計、コンパクトなブラックモデル",
+          "相違点：アイリスオーヤマは知名度が高く、容量が90L"
+        ],
+        "differentiators": [
+          "ハイセンス 冷蔵庫 87L HR-K91HBの利点：コストパフォーマンスに優れる",
+          "アイリスオーヤマ 冷蔵庫 90L IRSD-9B-Bの利点：アイリスオーヤマブランドへの信頼感"
+        ]
+      },
+      {
+        "name": "COMFEE' 冷蔵庫 90L RCD90WH1JP",
+        "asin": "B0FMK8CYXN",
+        "priceComparison": "対象商品よりやや高価格帯の場合が多い",
+        "featureComparison": [
+          "共通点：2ドアの小型冷蔵庫",
+          "相違点：COMFEE'はインバーター搭載をアピールしている。"
+        ],
+        "differentiators": [
+          "ハイセンス 冷蔵庫 87L HR-K91HBの利点：価格重視で初期費用を抑えられる可能性がある",
+          "COMFEE' 冷蔵庫 90L RCD90WH1JPの利点：インバーター搭載による長期的な省エネ効果が期待できる"
+        ]
+      },
+      {
+        "name": "simplus 冷蔵庫 90L SP-90LD2 (グレー)",
+        "asin": "B0FJRTK1BP",
+        "priceComparison": "対象商品よりやや安価な場合がある",
+        "featureComparison": [
+          "共通点：コンパクトな2ドア冷蔵庫",
+          "相違点：カラー展開が異なり、simplusはグレーがある。"
+        ],
+        "differentiators": [
+          "ハイセンス 冷蔵庫 87L HR-K91HBの利点：静音設計（23dB）を公式にアピールしている",
+          "simplus 冷蔵庫 90L SP-90LD2 (グレー)の利点：インテリアに合わせてグレーを選びたい場合"
+        ]
+      },
+      {
+        "name": "アイリスオーヤマ 冷蔵庫 90L IRSD-9B-W (ホワイト)",
+        "asin": "B08PXZHN6L",
+        "priceComparison": "対象商品より高価格帯の場合が多い",
+        "featureComparison": [
+          "共通点：静音設計を謳うコンパクトモデル",
+          "相違点：本体カラーがホワイトで、ブランドがアイリスオーヤマ。"
+        ],
+        "differentiators": [
+          "ハイセンス 冷蔵庫 87L HR-K91HBの利点：スリムなブラックモデルでコストパフォーマンスに優れる",
+          "アイリスオーヤマ 冷蔵庫 90L IRSD-9B-W (ホワイト)の利点：明るい部屋に合うホワイトカラーと国内ブランドの安心感"
         ]
       }
     ],
@@ -102,25 +135,38 @@
         "霜取りの手間（直冷式の可能性）",
         "冷凍食品の買いだめには向かない容量"
       ],
-      "score": 75,
-      "scoreRationale": "[基本点: 70]\n[加点: +5] (静音性23dBとスリムなデザイン)\n[加点: +5] (1万円台で購入可能なコストパフォーマンス)\n[減点: -5] (87Lという容量の限界と直冷式の手間)\n[合計: 75]"
+      "score": 70,
+      "scoreRationale": "[基本点: 70]\n[加点: +3] (約23dBの静音設計で寝室にも置きやすい)\n[加点: +2] (幅47.5cmのスリムなボディで設置場所の自由度が高い)\n[減点: -5] (87Lという容量は自炊が多い用途には不十分)\n[合計: 70]"
     },
     "technicalSpecs": {
       "dimensions": {
-        "width": "475mm",
-        "height": "890mm",
-        "depth": "500mm",
-        "weight": "約24.5kg"
+        "width": "47.5cm",
+        "height": "86.2cm",
+        "depth": "50.7cm"
       },
+      "weight": "24.5kg",
       "capacity": {
         "total": "87L",
-        "fridge": "61L",
-        "freezer": "26L"
+        "fridge": "63L",
+        "freezer": "24L"
       },
-      "power": "電動機定格消費電力: 65/65W (50/60Hz)",
+      "power": "年間消費電力量: 約194kWh/年",
       "noise": "約23dB",
-      "cooling": "直冷式 (推測)",
-      "energy": "年間消費電力量: 約202kWh/年 (2021年基準)"
-    }
+      "cooling": "直冷式",
+      "material": "強化ガラス棚",
+      "origin": "不明"
+    },
+    "claims": [
+      {
+        "claim": "静音設計約23dBで生活空間に置いても音が気にならない",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-amazon"
+        ],
+        "crossChecked": false,
+        "notes": "Amazon商品ページ記載の内容。"
+      }
+    ]
   }
 }
