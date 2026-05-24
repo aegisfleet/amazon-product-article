@@ -1,0 +1,153 @@
+{
+  "analysis": {
+    "productName": "Brighte ELEKI LIFT",
+    "parentAsin": "B0GCC66PN1",
+    "productDescription": "サロン級のEMSやRF（ラジオ波）、青・赤LEDを搭載し、自宅で本格的なリフトケアが可能なブラシ型・かっさ型美顔器。",
+    "productUsage": [
+      "顔のたるみや乾燥小じわのエイジングケア",
+      "EMSによる表情筋への電気刺激での引き締め",
+      "RF(ラジオ波)を用いた温熱トリートメント"
+    ],
+    "positivePoints": [
+      "サロンレベルの3つのモード(CLEAN, LIFT, HEAT)を1台に搭載",
+      "独自のトリプル波EMSで痛みを抑えつつ心地よい刺激を実現",
+      "最高出力3MHzのRF搭載で1回から本格的な温熱ケアを体感できる",
+      "防水仕様(IPX6、電極ヘッド部のみ)で水や専用ジェルなどと併用しやすい"
+    ],
+    "negativePoints": [
+      "本体価格が58,000円(公式定価)と高価で、他社製品と比べ初期投資がかかる",
+      "電極ヘッド部以外は防水ではないため、丸洗いには注意が必要",
+      "ACアダプターが付属していないため、別途用意が必要"
+    ],
+    "useCases": [
+      "朝のメイク前や夜のスキンケア時のリフトアップ",
+      "お風呂上がりに専用ジェルや化粧水と併用しての徹底的なエイジングケア"
+    ],
+    "userStories": [],
+    "userImpression": "高機能なEMSとRFを備え、エステサロンレベルのケアが自宅で手軽にできると評価される一方、高価格帯であり取扱に注意が必要な点が挙げられる。全体的に即効性を感じやすい工夫が施された本格的なリフトケア美顔器である。",
+    "sources": [
+      {
+        "id": "src-1",
+        "name": "Brighte(ブライト)公式 - ELEKI LIFT",
+        "url": "https://brighte.jp/shop/products/BRT-FL170",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-05-24",
+        "author": "Brighte",
+        "conflictOfInterest": "disclosed",
+        "notes": "製品仕様(重量137g、寸法H169×W46×D35mm)、機能(CLEAN、LIFT、HEATモードの解説、IPX6防水)、定価58,000円であることを確認。"
+      },
+      {
+        "id": "src-2",
+        "name": "Amazon商品ページ(B0GCC66PN1)",
+        "url": "https://www.amazon.co.jp/dp/B0GCC66PN1",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-05-24",
+        "author": "Amazon",
+        "conflictOfInterest": "none",
+        "notes": "商品価格(18,800円と大幅割引されている)、付属品(ACアダプタなし)、安全警告を確認。"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "独自のトリプル波EMSで痛みを抑えつつ心地よい刺激を実現",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "crossChecked": false,
+        "notes": "公式の製品特徴にて記載あり"
+      },
+      {
+        "claim": "最高出力3MHzのRFにより、1回の使用で本格温熱ケアが実感できる",
+        "category": "quality",
+        "confidence": "medium",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "crossChecked": false,
+        "notes": "公式で3MHzの高出力RFを搭載していることが記載されている。"
+      }
+    ],
+    "lastInvestigated": "2026-05-24",
+    "competitiveAnalysis": [
+      {
+        "name": "パナソニック バイタリフト かっさ EH-SP86-K",
+        "asin": "B0F2DTCSKN",
+        "priceComparison": "対象商品と比べてパナソニック製は実売価格が同等かやや高め（対象商品は大幅割引されているため）。パナソニックは大手メーカーの信頼性がある。",
+        "featureComparison": [
+          "共通点：EMS機能を搭載し、顔のリフトケアに対応している点。専用ジェル等を併用できる点。",
+          "相違点：パナソニックは独自の「かっさ」形状に特化しており防水仕様も異なる。対象商品はブラシ型に近い形状で、RF（ラジオ波）や青・赤LEDなど複合的な機能を多く持つ。"
+        ],
+        "differentiators": [
+          "Brighte ELEKI LIFTの利点：EMSだけでなく、3MHzの強力なRFやLED機能を兼ね備え、多角的なエイジングケアが可能。",
+          "パナソニック バイタリフト かっさの利点：かっさ形状による物理的な引き上げとEMSの組み合わせに優れ、大手メーカーの安心感がある。"
+        ]
+      },
+      {
+        "name": "PLUEST マルチフェイシャルスパ",
+        "asin": "B0C4P8WPPB",
+        "priceComparison": "対象商品よりも実売価格が安く、手軽に導入しやすい価格帯。対象商品はより高出力なサロン級の機能を謳っている。",
+        "featureComparison": [
+          "共通点：EMS、RF、LED機能を備えた多機能美顔器である点。",
+          "相違点：PLUESTはピーリング機能やイオンクレンジングなど「落とすケア」にも注力した1台13役の多機能型。対象商品はリフトアップや温熱ケア（3MHz RF）に特化し高出力を特徴とする。"
+        ],
+        "differentiators": [
+          "Brighte ELEKI LIFTの利点：リフトケア・温熱ケアに特化し、最高出力3MHzのRFなどサロンレベルの本格的なスペックを備えている点。",
+          "PLUEST マルチフェイシャルスパの利点：ピーリングやクレンジングなど、落とすケアも含めて総合的なフェイスケアを1台で安価に済ませたい場合に適している。"
+        ]
+      },
+      {
+        "name": "Kiboer 美顔器 かっさ",
+        "asin": "B0C2Q2KK76",
+        "priceComparison": "対象商品に比べて圧倒的に安価（約3,000円台）。対象商品は本格的なサロン級の出力を持ち、価格差に応じた性能差がある。",
+        "featureComparison": [
+          "共通点：EMSやLED、温熱機能を搭載している点。",
+          "相違点：Kiboerはかっさ型で小型軽量（約90g）であり、温熱は約42度。対象商品は重量約137gで、3MHzの本格的なRF（ラジオ波）など高出力な仕様である。"
+        ],
+        "differentiators": [
+          "Brighte ELEKI LIFTの利点：出力や機能の本格さで勝り、しっかりとしたエイジングケアを求める人に適している。",
+          "Kiboer 美顔器 かっさの利点：非常に安価で小型軽量なため、初めて美顔器を試す人や旅行用などのサブ機として適している。"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "サロンレベルの本格的なEMSやRFを自宅で体験したい方",
+        "顔のたるみや乾燥小じわが気になり始めた方",
+        "多機能（EMS、RF、LED）を1台で効率的に使いたい方"
+      ],
+      "pros": [
+        "独自波形のEMSと高出力3MHzのRFを搭載",
+        "目的に合わせた3つのモードで簡単な操作",
+        "高級感のあるデザインでプレゼントにも向く"
+      ],
+      "cons": [
+        "定価は高価であり、公式価格は58,000円",
+        "丸洗いはできず、電極ヘッド部のみのIPX6防水"
+      ],
+      "score": 80,
+      "scoreRationale": "[基本点: 70] (固定)\n[加点: +5] (最高出力3MHzのRFなどサロンレベルの高機能なスペックを持つため)\n[加点: +5] (独自のトリプル波EMSで痛みを抑えつつ効果的なリフトケアが期待できるため)\n[加点: +5] (Amazonでの実売価格が大幅に割引されており、機能に対するコストパフォーマンスが高まっているため)\n[減点: -2] (本体が完全防水ではなく手入れにやや気を遣うため)\n[減点: -3] (ACアダプタが付属していないため)\n[合計: 80]"
+    },
+    "technicalSpecs": {
+      "dimensions": {
+        "height": "169mm",
+        "width": "46mm",
+        "depth": "35mm"
+      },
+      "weight": "137g",
+      "capacity": "N/A",
+      "material": "N/A",
+      "origin": "N/A",
+      "other": [
+        "定格電源: 5V/1A",
+        "消費電力: 最大14W",
+        "充電時間: 約3時間",
+        "搭載機能: EMS（トリプル波、低周波など）、RF（最高出力3MHz）、LED（赤・青）、エレクトロポレーション、イオン導入",
+        "防水性能: IPX6 (電極ヘッド部のみ)"
+      ]
+    }
+  }
+}
