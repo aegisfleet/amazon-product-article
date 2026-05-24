@@ -1,142 +1,180 @@
 {
   "analysis": {
-    "productName": "AmeToNana 雨七 ワイヤレスマウス",
-    "parentAsin": "B0CYCCYWWG",
-    "productDescription": "3台同時接続（Bluetooth×2 + 2.4GHz）に対応した薄型軽量の充電式ワイヤレスマウス。静音設計で場所を選ばず使用でき、Windows/Mac/iOS/Androidなど幅広いデバイスに対応。",
+    "productName": "AmeToNana 雨七 ワイヤレスマウス Bluetooth 静音マウス 薄型",
+    "parentAsin": "B0CTF9ZHXK",
+    "productDescription": "Bluetoothと2.4GHzワイヤレスの両方に対応した、薄型で静音設計の充電式ワイヤレスマウスです。65gという軽量設計で持ち運びにも便利です。",
     "productUsage": [
-      "USB Type-Cケーブルで充電して使用（電池交換不要）",
-      "付属のUSBレシーバーでPCに簡単接続（2.4GHzモード）",
-      "Bluetoothでタブレットやスマートフォンなど最大2台とペアリング",
-      "底面のボタンで接続デバイス（3台）をワンタッチ切り替え"
+      "オフィスでの作業",
+      "外出先やカフェでの作業",
+      "自宅でのリモートワーク"
     ],
     "positivePoints": [
-      "Type-C充電式で乾電池交換の手間がない",
-      "3台のデバイスを切り替えて使えるマルチペアリング機能",
-      "クリック音が静かで、カフェや図書館でも気にならない",
-      "薄型かつ65gと軽量で、持ち運びに非常に便利",
-      "2000円以下の低価格で高機能（充電式・3モード接続）"
+      "2.4Gと2つのBluetoothチャンネルで最大3台のデバイスを同時接続可能",
+      "Type-C充電式で電池交換が不要",
+      "重量が約65g（商品名記載）と非常に軽量で持ち運びに便利",
+      "静音設計でクリック音が気にならない"
     ],
     "negativePoints": [
-      "薄型デザインのため、長時間の使用では手が疲れやすい可能性がある",
-      "スリープモードからの復帰時に若干のラグを感じる場合がある",
-      "質感はプラスチック感があり、高級感には欠ける可能性がある",
-      "有名メーカー製に比べると耐久性やサポート面に不安が残る"
+      "薄型設計のため、手の大きい人には長時間の使用で疲れやすい可能性がある"
     ],
     "useCases": [
-      "カフェや図書館など静かな場所でのPC作業",
-      "出張や外出時の持ち運び用サブマウス",
-      "PCとタブレット（iPad等）を併用するマルチデバイス環境"
+      "複数のPCやタブレットを切り替えて作業する",
+      "静かなカフェや図書館で作業する",
+      "ノートPCと一緒に持ち運んで出先で作業する"
     ],
-    "userStories": [
-      {
-        "userType": "30代 リモートワーカー",
-        "scenario": "カフェでの仕事用",
-        "experience": "カチカチというクリック音がしないので、静かなカフェでも周囲を気にせず作業できます。薄いのでPCバッグのポケットにすっぽり収まるのが便利です。",
-        "sentiment": "positive"
-      },
-      {
-        "userType": "20代 大学生",
-        "scenario": "iPadとPCの併用",
-        "experience": "授業ではiPad、レポート作成ではPCを使うのですが、ボタン一つで切り替えられるのが最高に便利です。充電式なので電池切れの心配もありません。",
-        "sentiment": "positive"
-      },
-      {
-        "userType": "40代 ビジネスマン",
-        "scenario": "長時間のデスクワーク",
-        "experience": "機能は十分ですが、薄すぎて手のひらにフィットせず、長時間使うと手首が痛くなりました。メインのマウスとしては厳しいかもしれません。",
-        "sentiment": "mixed"
-      }
-    ],
-    "userImpression": "多機能（充電式、マルチペアリング、静音）でありながら低価格な点が評価されている。持ち運び用やサブ機としては優秀だが、メイン機としてのエルゴノミクス性には欠けるという意見が見られる。",
+    "userStories": [],
+    "userImpression": "薄型・軽量で持ち運びに適しており、複数デバイスの切り替えが便利な充電式ワイヤレスマウスです。静音設計のため場所を選ばず使用できます。",
     "sources": [
       {
-        "name": "Amazon Product Information (Features)",
-        "url": null,
-        "credibility": "High"
-      },
-      {
-        "name": "Comparative Analysis based on Specifications",
-        "url": null,
-        "credibility": "Medium"
+        "id": "src-1",
+        "name": "Amazon商品ページ",
+        "url": "https://www.amazon.co.jp/dp/B0CYCCYWWG",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-05-25",
+        "author": "Amazon",
+        "conflictOfInterest": "none",
+        "notes": "製品仕様、特徴を確認"
       }
     ],
-    "lastInvestigated": "2026-02-09",
+    "claims": [
+      {
+        "claim": "最大3台のデバイスを同時に接続可能",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "crossChecked": false,
+        "notes": "2.4G+BT1+BT2の接続方式"
+      },
+      {
+        "claim": "重量約65gの軽量設計",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "crossChecked": false,
+        "notes": "商品名に「薄型65g」と記載"
+      }
+    ],
+    "lastInvestigated": "2026-05-25",
     "competitiveAnalysis": [
       {
-        "name": "Logicool M240GRd Silent Wireless Mouse",
-        "asin": "B0D21S5SPG",
-        "priceComparison": "約2,100円（本製品より若干高い）",
-        "featureComparison": [
-          "Bluetooth接続のみ（2.4GHzなし）",
-          "乾電池式（寿命18ヶ月）",
-          "信頼性の高いロジクール製"
-        ],
-        "differentiators": [
-          "本製品は充電式だが、M240は電池式",
-          "本製品は2.4GHzレシーバーも使える",
-          "M240は保証やサポートが手厚い"
-        ]
-      },
-      {
-        "name": "ELECOM M-TM10BBBK/EC 薄型静音マウス",
+        "name": "エレコム ワイヤレスマウス Slint M-TM10BBBK/EC",
         "asin": "B08LMK3L5C",
-        "priceComparison": "約1,600円（本製品より安い）",
+        "priceComparison": "対象商品より安価であり、国内メーカーのエントリーモデルとして品質に一定の信頼が置ける",
         "featureComparison": [
-          "Bluetooth接続のみ",
-          "乾電池式",
-          "4ボタン仕様（戻るボタンなしの場合あり）",
-          "専用ポーチ付き"
+          "共通点：Bluetooth接続、薄型、静音設計",
+          "相違点：エレコム製品は電池式（単3電池1本）であるのに対し、対象商品はType-C充電式である点。また対象商品は3台同時接続が可能"
         ],
         "differentiators": [
-          "本製品は3台マルチペアリング対応",
-          "本製品は充電式"
+          "AmeToNana 雨七 ワイヤレスマウスの利点：Type-C充電式で電池交換が不要であり、最大3台のデバイスを切り替えて使用できる点",
+          "エレコム ワイヤレスマウス Slintの利点：国内大手メーカー製であり、価格が安価である点"
         ]
       },
       {
-        "name": "BUFFALO BSMBB335NBK 薄型マウス",
-        "asin": "B0956BPVC7",
-        "priceComparison": "約1,580円（本製品より安い）",
+        "name": "ロジクール 静音 ワイヤレスマウス M240GR",
+        "asin": "B0C2YK1CS6",
+        "priceComparison": "対象商品と同程度の価格帯であり、電池式の手間はあるが確かな品質とサポートが期待できる",
         "featureComparison": [
-          "Bluetooth接続",
-          "乾電池式",
-          "静音設計",
-          "MIL規格準拠の耐衝撃性"
+          "共通点：Bluetooth接続、静音設計、複数OS対応",
+          "相違点：ロジクールは単3電池式で最大18ヶ月の電池寿命を持つが、対象商品は充電式である。またロジクールは通常のマウス形状だが対象商品は薄型である"
         ],
         "differentiators": [
-          "本製品は充電式でランニングコストが良い",
-          "BUFFALOは耐久性（MIL規格）をアピール"
+          "AmeToNana 雨七 ワイヤレスマウスの利点：薄型軽量（65g）で持ち運びに適しており、充電式である点",
+          "ロジクール 静音 ワイヤレスマウス M240GRの利点：長寿命の電池式で頻繁な充電が不要であり、ロジクール製品としての信頼性が高い点"
+        ]
+      },
+      {
+        "name": "UGREEN ワイヤレス マウス 無線 Bluetooth&2.4GHz",
+        "asin": "B0FRLZRQ7Z",
+        "priceComparison": "対象商品と同程度の価格帯であり、多段階DPI調整などより高い機能性を求める価値がある",
+        "featureComparison": [
+          "共通点：Bluetoothと2.4GHz両対応、静音設計、USB-C充電式",
+          "相違点：UGREENは5段階のDPI調整（最大4000DPI）が可能であるのに対し、対象商品のDPI調整については詳細不明"
+        ],
+        "differentiators": [
+          "AmeToNana 雨七 ワイヤレスマウスの利点：約65gと非常に軽量で薄型である点",
+          "UGREEN ワイヤレス マウスの利点：最大4000DPIまでの5段階DPI調整が可能で、作業に応じた細かいカーソル操作ができる点"
+        ]
+      },
+      {
+        "name": "ロジクール Signature M650MGR",
+        "asin": "B09Q5SHDR3",
+        "priceComparison": "対象商品より高価だが、独自のスマートホイールや人間工学デザインなどの優れた操作性に価格相応の価値がある",
+        "featureComparison": [
+          "共通点：Bluetooth接続、静音設計、複数OS対応",
+          "相違点：ロジクールM650はスマートホイールを搭載しスクロールが快適であるが、電池式（単3電池）である。対象商品は充電式で薄型である"
+        ],
+        "differentiators": [
+          "AmeToNana 雨七 ワイヤレスマウスの利点：薄型・充電式であり、価格が安い点",
+          "ロジクール Signature M650MGRの利点：スマートホイールによる快適なスクロールと、手にフィットする形状で長時間の使用でも疲れにくい点"
+        ]
+      },
+      {
+        "name": "バッファロー マウス 無線 ワイヤレス 静音 5ボタン BSMBW325BK",
+        "asin": "B06WRN4VGJ",
+        "priceComparison": "対象商品より安価であり、Bluetooth非対応等の制限はあるもののコストを抑える分には十分な品質",
+        "featureComparison": [
+          "共通点：静音設計",
+          "相違点：バッファローは2.4GHz専用（USBレシーバー必須）で電池式であり、戻る/進むボタンを搭載している。対象商品はBluetooth対応で充電式"
+        ],
+        "differentiators": [
+          "AmeToNana 雨七 ワイヤレスマウスの利点：Bluetooth接続に対応しており、Type-C充電式でレシーバー不要でも使用できる点",
+          "バッファロー BSMBW325BKの利点：戻る/進むボタンを搭載しており、ブラウジングなどの操作性が高く、価格が安い点"
+        ]
+      },
+      {
+        "name": "エレコム ワイヤレスマウス EX-G M-XGM15BBSGM/EC",
+        "asin": "B09Y8G6FJJ",
+        "priceComparison": "対象商品よりやや高価だが、握りやすさを追求したエルゴノミクスデザインと長時間の快適性に価値がある",
+        "featureComparison": [
+          "共通点：Bluetooth接続、静音設計、マルチペアリング対応",
+          "相違点：エレコムEX-Gは「握りの極み」としてエルゴノミクスデザインを採用しており電池式。対象商品は薄型で充電式"
+        ],
+        "differentiators": [
+          "AmeToNana 雨七 ワイヤレスマウスの利点：薄型軽量で持ち運びに適しており、充電式である点",
+          "エレコム EX-G M-XGM15BBSGM/ECの利点：エルゴノミクスデザインにより握りやすく、長時間のPC作業でも手が疲れにくい点"
         ]
       }
     ],
     "recommendation": {
       "targetUsers": [
-        "持ち運び用の薄型マウスを探している人",
-        "PCとタブレットなど複数デバイスを使い分けたい人",
-        "乾電池の交換が面倒で充電式を好む人",
-        "コストパフォーマンスを最優先する人"
+        "頻繁にマウスを持ち運ぶ人",
+        "複数デバイス（PC、タブレット、スマホ等）を切り替えて使いたい人",
+        "電池交換の手間を省きたい人"
       ],
       "pros": [
-        "充電式で電池代がかからない",
-        "3台のデバイスを1つのマウスで操作可能",
-        "非常に安価ながら多機能",
-        "静音性が高く場所を選ばない"
+        "薄型で約65gと軽量",
+        "最大3台のデバイスと接続・切り替え可能",
+        "Type-C充電式で経済的"
       ],
       "cons": [
-        "有名メーカー製ではないため耐久性に不安がある",
-        "薄型形状のため長時間の使用には向かない場合がある",
-        "質感は価格相応"
+        "薄型のため長時間の使用では手が疲れやすい可能性がある",
+        "無名ブランドのため耐久性やサポートに不安がある"
       ],
-      "score": 82,
-      "scoreRationale": "[基本点: 70]\n[加点: +10] (3台マルチペアリング、充電式、2.4GHz対応と機能が非常に豊富)\n[加点: +10] (同機能を持つ他社製品と比較して圧倒的に安いコストパフォーマンス)\n[減点: -5] (有名ブランドと比較した際の品質・信頼性の懸念)\n[減点: -3] (薄型形状によるエルゴノミクス性の低さ)\n[合計: 82]"
+      "score": 75,
+      "scoreRationale": "[基本点: 70]\n[加点: +3] (Type-C充電式による利便性の高さ)\n[加点: +2] (最大3台のデバイスと接続可能な点)\n[加点: +5] (薄型かつ約65gという持ち運びに特化した軽量設計)\n[減点: -5] (無名ブランドであり耐久性や長期使用時のサポート体制に懸念がある点)\n[合計: 75]"
     },
     "technicalSpecs": {
-      "connectivity": ["Bluetooth 5.1 x 2", "2.4GHz Wireless (USB Receiver)"],
-      "battery": { "type": "Rechargeable", "port": "USB Type-C" },
-      "dimensions": { "weight": "65g", "type": "Ultra-slim" },
-      "compatibility": ["Windows", "Mac", "Chrome OS", "Android", "iPad OS"],
-      "sensor": { "type": "Optical", "dpi": "High Precision (Adjustable usually 800-1600)" },
-      "buttons": "Silent Click Buttons",
-      "other": ["Power Saving Mode", "3-Mode Connection Switch"]
+      "weight": "約65g",
+      "connectivity": [
+        "Bluetooth (BT1, BT2)",
+        "2.4GHzワイヤレス"
+      ],
+      "power": "Type-C充電式",
+      "color": "ホワイト",
+      "range": "最大10m",
+      "compatibility": [
+        "Windows",
+        "Mac OS",
+        "Chrome OS",
+        "Android",
+        "iPad OS",
+        "Surface"
+      ]
     }
   }
 }
