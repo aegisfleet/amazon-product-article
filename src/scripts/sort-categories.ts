@@ -20,5 +20,5 @@ for (const key in data) {
   }
 }
 
-fs.writeFileSync(filePath, JSON.stringify(data, null, 4), 'utf8');
+fs.writeFileSync(filePath, `${JSON.stringify(data, null, 4)}\n`, 'utf8');
 console.log('Successfully sorted categories using Node.js');
