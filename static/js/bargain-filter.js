@@ -146,7 +146,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const category = categorySelect ? categorySelect.value : '';
 
     if (minScore !== 80) params.set('minScore', String(minScore));
-    if (minPrice !== 0) params.set('minPrice', String(minPrice));
+    if (minPrice !== 100) params.set('minPrice', String(minPrice));
     if (maxPrice !== 2000) params.set('maxPrice', String(maxPrice));
     if (category) params.set('category', category);
     if (currentSort !== 'date') params.set('sort', currentSort);
@@ -259,7 +259,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // --- Reset ---
   function resetFilters() {
     scoreSlider.value = '80';
-    minPriceSlider.value = '0';
+    minPriceSlider.value = '20';
     priceSlider.value = '400';
     if (categorySelect) categorySelect.value = '';
     currentSort = 'date';
