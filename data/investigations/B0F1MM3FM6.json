@@ -27,77 +27,127 @@
     ],
     "userStories": [
       {
-        "userType": "リモートワーカー（30代）",
-        "scenario": "カフェでの作業時にポート不足を解消",
-        "experience": "（推測）MacBook Airのポートが少ないため購入しました。充電しながら外部モニターに出力でき、USBメモリも使えるので重宝しています。コンパクトで持ち運びやすいのも良いです。",
-        "sentiment": "positive"
+        "userType": "Macユーザー",
+        "scenario": "日常的な拡張ハブとして利用",
+        "experience": "Mac用に購入。コンパクトかつポート数もカードスロットもあり、非常に役立つ。ひとつ難を言えば、コードがもう少し長いバリエーションもあると助かる。",
+        "sentiment": "positive",
+        "supportingSourceIds": [
+          "src-anker-official"
+        ]
       },
       {
-        "userType": "クリエイター（20代）",
-        "scenario": "一眼レフで撮影した写真の取り込み",
-        "experience": "（推測）SDカードスロットがついているので、撮影したデータをすぐにPCに取り込めます。転送速度も十分速く、ストレスなく作業できています。",
-        "sentiment": "positive"
-      },
-      {
-        "userType": "学生（20代）",
-        "scenario": "オンライン授業での外部モニター利用",
-        "experience": "（推測）授業を大きな画面で受けるために購入しました。画質は綺麗ですが、大学の寮で有線LANを使いたかったのにポートがないことに気づかず、少し不便を感じました。",
-        "sentiment": "mixed"
+        "userType": "動画・写真撮影者",
+        "scenario": "Goproで撮影した動画の出力",
+        "experience": "夏休みの思い出をGoproで撮り大きな画面で見たくてハブ購入。iPhoneで見るより何倍も迫力あり、iPadでも見れるか試してみたい。",
+        "sentiment": "positive",
+        "supportingSourceIds": [
+          "src-anker-official"
+        ]
       }
     ],
     "userImpression": "全体的に機能バランスが良く、Anker製品ならではの安心感がある製品です。特に4K@60Hz出力とパススルー充電機能が評価されていますが、LANポートがない点と価格設定については好みが分かれる可能性があります。",
     "sources": [
       {
-        "name": "Amazon Product Page",
+        "id": "src-amazon",
+        "name": "Amazon商品ページ",
         "url": "https://www.amazon.co.jp/dp/B0F1MM3FM6",
-        "credibility": "High"
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-05-26",
+        "author": "Amazon",
+        "conflictOfInterest": "none",
+        "notes": "製品の基本仕様、価格等を確認"
       },
       {
-        "name": "Anker Official Site (General Reference)",
-        "url": "https://www.ankerjapan.com/",
-        "credibility": "High"
+        "id": "src-anker-official",
+        "name": "Anker Japan 公式サイト",
+        "url": "https://www.ankerjapan.com/products/a83d2",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-05-26",
+        "author": "Anker",
+        "conflictOfInterest": "disclosed",
+        "notes": "製品仕様およびユーザーレビューを確認"
       }
     ],
-    "lastInvestigated": "2026-02-09",
+    "lastInvestigated": "2026-05-26",
     "competitiveAnalysis": [
       {
-        "name": "UGREEN Revodok 107 USB Cハブ 7-IN-1",
+        "name": "UGREEN Revodok 1071 USB-Cハブ 7-...",
+        "asin": "B0BLNDNBG1",
+        "priceComparison": "対象商品(4,990円)より安価。",
+        "featureComparison": [
+          "共通点：4K HDMIポートやUSBポートを搭載した多機能ハブであること",
+          "相違点：ブランドの知名度と製品の保証期間、筐体のデザイン、搭載ポートの種類"
+        ],
+        "differentiators": [
+          "Anker Nano USB-C ハブ(7-in-1, 4K, HDMI)の利点：高いブランド信頼性と24ヶ月の長期保証",
+          "UGREEN Revodok 1071 USB-Cハブ 7-...の利点：価格の安さ"
+        ]
+      },
+      {
+        "name": "NOVOO 7-in-1 4K@60Hz HDMI USB ...",
+        "asin": "B0FVWB7VN6",
+        "priceComparison": "対象商品(4,990円)より安価。",
+        "featureComparison": [
+          "共通点：4K HDMIポートやUSBポートを搭載した多機能ハブであること",
+          "相違点：ブランドの知名度と製品の保証期間、筐体のデザイン、搭載ポートの種類"
+        ],
+        "differentiators": [
+          "Anker Nano USB-C ハブ(7-in-1, 4K, HDMI)の利点：高いブランド信頼性と24ヶ月の長期保証",
+          "NOVOO 7-in-1 4K@60Hz HDMI USB ...の利点：価格の安さ"
+        ]
+      },
+      {
+        "name": "Anker USB-C ハブ (7-in-1, Dual D...",
+        "asin": "B0D52GVLDP",
+        "priceComparison": "対象商品(4,990円)より安価。同じAnkerブランドだが機能面で違いがあるか検討が必要。",
+        "featureComparison": [
+          "共通点：4K HDMIポートやUSBポートを搭載した多機能ハブであること",
+          "相違点：ブランドの知名度と製品の保証期間、筐体のデザイン、搭載ポートの種類"
+        ],
+        "differentiators": [
+          "Anker Nano USB-C ハブ(7-in-1, 4K, HDMI)の利点：高いブランド信頼性と24ヶ月の長期保証",
+          "Anker USB-C ハブ (7-in-1, Dual D...の利点：価格の安さ"
+        ]
+      },
+      {
+        "name": "BENFEI 7-in-1 USB-Cハブ（HDMI 4K@...",
+        "asin": "B0DC7144W1",
+        "priceComparison": "対象商品(4,990円)より安価。",
+        "featureComparison": [
+          "共通点：4K HDMIポートやUSBポートを搭載した多機能ハブであること",
+          "相違点：ブランドの知名度と製品の保証期間、筐体のデザイン、搭載ポートの種類"
+        ],
+        "differentiators": [
+          "Anker Nano USB-C ハブ(7-in-1, 4K, HDMI)の利点：高いブランド信頼性と24ヶ月の長期保証",
+          "BENFEI 7-in-1 USB-Cハブ（HDMI 4K@...の利点：価格の安さ"
+        ]
+      },
+      {
+        "name": "UGREEN Revodok 107 USB Cハブ 7-I...",
         "asin": "B093FKT9BF",
-        "priceComparison": "約3,500円とAnkerより安価",
+        "priceComparison": "対象商品(4,990円)より安価。",
         "featureComparison": [
-          "LANポート（1Gbps）搭載",
-          "4K@60Hz HDMI対応",
-          "PD 100W対応"
+          "共通点：4K HDMIポートやUSBポートを搭載した多機能ハブであること",
+          "相違点：ブランドの知名度と製品の保証期間、筐体のデザイン、搭載ポートの種類"
         ],
         "differentiators": [
-          "LANポートがある点が大きなアドバンテージ",
-          "コストパフォーマンスに優れる"
+          "Anker Nano USB-C ハブ(7-in-1, 4K, HDMI)の利点：高いブランド信頼性と24ヶ月の長期保証",
+          "UGREEN Revodok 107 USB Cハブ 7-I...の利点：価格の安さ"
         ]
       },
       {
-        "name": "BENFEI 7-in-1 USB-Cハブ",
-        "asin": "B0DK8WTXBK",
-        "priceComparison": "約2,600円と非常に安価",
+        "name": "Yasoku USBハブ 7-in-1 Type-C 拡張ド...",
+        "asin": "B0F62ZRTMX",
+        "priceComparison": "対象商品(4,990円)より安価。",
         "featureComparison": [
-          "HDMI 4K@60Hz対応",
-          "基本的なポート構成は類似"
+          "共通点：4K HDMIポートやUSBポートを搭載した多機能ハブであること",
+          "相違点：ブランドの知名度と製品の保証期間、筐体のデザイン、搭載ポートの種類"
         ],
         "differentiators": [
-          "圧倒的な低価格",
-          "ブランド知名度ではAnkerに劣る"
-        ]
-      },
-      {
-        "name": "Acer USB C ハブ 7-in-1",
-        "asin": "B0CYLSGVNY",
-        "priceComparison": "約4,600円とAnkerに近い価格帯",
-        "featureComparison": [
-          "PD 100W対応",
-          "HDMI 4K@60Hz対応"
-        ],
-        "differentiators": [
-          "PCメーカー純正ブランドの安心感",
-          "機能面での大きな差は少ない"
+          "Anker Nano USB-C ハブ(7-in-1, 4K, HDMI)の利点：高いブランド信頼性と24ヶ月の長期保証",
+          "Yasoku USBハブ 7-in-1 Type-C 拡張ド...の利点：価格の安さ"
         ]
       }
     ],
@@ -116,33 +166,38 @@
         "有線LAN接続が必要な場合は別途アダプタが必要",
         "コストパフォーマンス重視なら他社製品も検討の余地あり"
       ],
-      "score": 75,
-      "scoreRationale": "[基本点: 70]\n[加点: +5] (4K@60Hz対応、USB-Cデータポートなど機能面で標準以上)\n[減点: -5] (LANポートがなく、競合他社と比較して割高感がある)\n[加点: +5] (Ankerブランドのビルドクオリティと信頼性)\n[合計: 75]"
+      "score": 80,
+      "scoreRationale": "[基本点: 70]\n[加点: +5] (4K 60Hz対応で高品質な映像出力が可能)\n[加点: +5] (Ankerブランドの信頼性と最大24ヶ月の長期保証)\n[加点: +5] (パススルー充電と多彩なポートを搭載し実用性が高い)\n[減点: -5] (競合品と比較してやや価格が高い)\n[合計: 80]"
     },
     "technicalSpecs": {
       "dimensions": {
-        "width": "3.7 cm",
-        "height": "1.2 cm",
-        "length": "13.2 cm",
-        "weight": "67 g"
+        "height": "12.0mm",
+        "width": "37.0mm",
+        "depth": "132.0mm"
       },
-      "connectivity": [
-        "USB-C (Host)",
-        "2x USB-A 3.2 Gen 1 (5Gbps)",
-        "1x USB-C Data (5Gbps)",
-        "1x USB-C PD (Max 85W Output)",
-        "1x HDMI (4K@60Hz)",
-        "SD Card Slot",
-        "microSD Card Slot"
-      ],
-      "power": {
-        "input": "Max 100W",
-        "output": "Max 85W (Pass-through)"
-      },
+      "weight": "67.0g",
+      "capacity": "なし",
+      "material": "不明",
+      "origin": "不明",
       "other": [
-        "24ヶ月保証",
-        "ケーブル一体型"
+        "HDMI (最大4K 60Hz)",
+        "USB-C 3.2 Gen 1 (5Gbps)",
+        "USB-A x 2 (5Gbps)",
+        "USB PD対応 USB-C (最大85Wパススルー充電対応)",
+        "microSD & SDカードスロット"
       ]
-    }
+    },
+    "claims": [
+      {
+        "claim": "Mac用に購入し、コンパクトで役立つ",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-anker-official"
+        ],
+        "crossChecked": false,
+        "notes": "Anker公式のユーザーレビュー"
+      }
+    ]
   }
 }
