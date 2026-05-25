@@ -44,7 +44,7 @@ function scoreClass(score) {
 function safeUrl(url) {
   if (!url) return '#';
   try {
-    const u = new URL(String(url), window.location.origin);
+    const u = new URL(String(url), globalThis.location.origin);
     if (u.protocol === 'http:' || u.protocol === 'https:') {
       return u.href;
     }
@@ -53,6 +53,20 @@ function safeUrl(url) {
   }
   return '#';
 }
+
+function safeImageUrl(url) {
+  if (!url) return 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7';
+  try {
+    const u = new URL(String(url), globalThis.location.origin);
+    if (u.protocol === 'http:' || u.protocol === 'https:' || u.protocol === 'data:') {
+      return u.href;
+    }
+  } catch {
+    // ignore invalid URL
+  }
+  return 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7';
+}
+
 
 // --- Render ---
 function renderCard(p) {
@@ -68,7 +82,7 @@ function renderCard(p) {
 
   if (p.image) {
     const img = document.createElement('img');
-    img.src = safeUrl(p.image);
+    img.src = safeImageUrl(p.image);
     img.alt = String(p.title || '');
     img.loading = 'lazy';
     img.decoding = 'async';

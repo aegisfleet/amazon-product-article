@@ -21,7 +21,7 @@ import { ArticleGenerator } from '../article/ArticleGenerator';
 import { GitHubPublisher } from '../github/GitHubPublisher';
 import { InvestigationFileSchema } from '../schemas/InvestigationSchema';
 import type { GeneratedArticle } from '../types/ArticleTypes';
-import type { InvestigationResult } from '../types/JulesTypes';
+import type { CompetitiveProduct, InvestigationResult, SourceReference } from '../types/JulesTypes';
 import type { Product, ProductDetail } from '../types/Product';
 import { setGitHubOutput } from '../utils/github-actions';
 import { Logger } from '../utils/Logger';
@@ -150,11 +150,64 @@ export async function loadInvestigationResults(targetFiles?: string[]): Promise<
             generatedAt = stats.mtime;
           }
 
+          // exactOptionalPropertyTypes に適合するようにマッピング
+          const rawAnalysis = parsed.analysis as any;
+          const analysis: InvestigationResult['analysis'] = {
+            positivePoints: parsed.analysis.positivePoints,
+            negativePoints: parsed.analysis.negativePoints,
+            useCases: parsed.analysis.useCases,
+            userImpression: parsed.analysis.userImpression,
+            recommendation: {
+              ...parsed.analysis.recommendation,
+              targetUsers: parsed.analysis.recommendation.targetUsers,
+              pros: parsed.analysis.recommendation.pros,
+              cons: parsed.analysis.recommendation.cons,
+              score: parsed.analysis.recommendation.score,
+            },
+            competitiveAnalysis: parsed.analysis.competitiveAnalysis.map((c) => {
+              const comp: CompetitiveProduct = {
+                name: c.name,
+                priceComparison: c.priceComparison,
+                featureComparison: c.featureComparison,
+                differentiators: c.differentiators,
+              };
+              if (c.asin) comp.asin = c.asin;
+              return comp;
+            }),
+            sources: parsed.analysis.sources.map((s) => {
+              const ref: SourceReference = {
+                name: s.name,
+              };
+              if (s.url) ref.url = s.url;
+              if (s.tier && s.tier !== 'primary') ref.tier = s.tier;
+              if (s.evidenceType) ref.evidenceType = s.evidenceType;
+              if (s.publishedAt) ref.publishedAt = s.publishedAt;
+              if (s.author) ref.author = s.author;
+              if (s.conflictOfInterest) ref.conflictOfInterest = s.conflictOfInterest;
+              if (s.notes) ref.notes = s.notes;
+              return ref;
+            }),
+            userStories: (parsed.analysis.userStories || []).map((s) => ({
+              userType: s.userType,
+              scenario: s.scenario,
+              experience: s.experience,
+              sentiment: s.sentiment,
+            })),
+          };
+
+          // その他の optional フィールドを安全に設定（exactOptionalPropertyTypes対策）
+          if (rawAnalysis.productName) analysis.productName = rawAnalysis.productName;
+          if (rawAnalysis.parentAsin) analysis.parentAsin = rawAnalysis.parentAsin;
+          if (rawAnalysis.lastInvestigated) analysis.lastInvestigated = rawAnalysis.lastInvestigated;
+          if (rawAnalysis.productDescription) analysis.productDescription = rawAnalysis.productDescription;
+          if (rawAnalysis.productUsage) analysis.productUsage = rawAnalysis.productUsage;
+          if (rawAnalysis.technicalSpecs) analysis.technicalSpecs = rawAnalysis.technicalSpecs;
+
           // InvestigationResultを構築
           const investigation: InvestigationResult = {
             sessionId: `file-${asin}`,
             product,
-            analysis: parsed.analysis as unknown as InvestigationResult['analysis'],
+            analysis,
             generatedAt: generatedAt,
           };
 
