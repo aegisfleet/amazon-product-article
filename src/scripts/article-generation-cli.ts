@@ -21,7 +21,7 @@ import { ArticleGenerator } from '../article/ArticleGenerator';
 import { GitHubPublisher } from '../github/GitHubPublisher';
 import { InvestigationFileSchema } from '../schemas/InvestigationSchema';
 import type { GeneratedArticle } from '../types/ArticleTypes';
-import type { InvestigationResult } from '../types/JulesTypes';
+import type { CompetitiveProduct, InvestigationResult, SourceReference } from '../types/JulesTypes';
 import type { Product, ProductDetail } from '../types/Product';
 import { setGitHubOutput } from '../utils/github-actions';
 import { Logger } from '../utils/Logger';
@@ -77,6 +77,148 @@ function getOptions(): CLIOptions {
 /**
  * ファイル名からASINを抽出し、JSON構造を変換してInvestigationDataを構築
  */
+/**
+ * 単一の調査結果ファイルをロードし、検証および変換を実行する
+ */
+async function loadAndValidateInvestigation(filePath: string): Promise<InvestigationData | null> {
+  try {
+    const rawData = await fs.readFile(filePath, 'utf-8');
+    const jsonParsed: unknown = JSON.parse(rawData);
+    const validation = InvestigationFileSchema.safeParse(jsonParsed);
+
+    if (!validation.success) {
+      logger.warn(`Invalid investigation file format ${filePath}:`, validation.error);
+      return null;
+    }
+
+    const parsed = validation.data;
+
+    const fileName = path.basename(filePath);
+    // Skip if not a JSON file or is summary
+    if (!fileName.endsWith('.json') || fileName === 'latest-summary.json') {
+      return null;
+    }
+
+    // ファイル名からASINを抽出 (e.g., "B07DZZJ2B9.json" -> "B07DZZJ2B9")
+    const asin = path.basename(fileName, '.json');
+
+    // 最小限のProduct情報を構築（ASINのみ必須、他はプレースホルダー）
+    const product: Product = {
+      asin,
+      title: `Product ${asin}`, // タイトルは後で記事生成時に更新可能
+      category: '',
+      price: { amount: 0, currency: 'JPY', formatted: '' },
+      images: { primary: '', thumbnails: [] },
+      specifications: {},
+      rating: { average: 0, count: 0 },
+    };
+
+    // lastInvestigatedがあればそれを優先、なければファイルの更新日時（fs.stat）を取得
+    let generatedAt: Date | null = null;
+    if (parsed.analysis.lastInvestigated) {
+      const parsedDate = new Date(parsed.analysis.lastInvestigated);
+      // Check if the date is valid
+      if (!Number.isNaN(parsedDate.getTime())) {
+        generatedAt = parsedDate;
+      }
+    }
+
+    if (!generatedAt) {
+      // ファイルの更新日時を取得（作成日時の代用）
+      const stats = await fs.stat(filePath);
+      generatedAt = stats.mtime;
+    }
+
+    // exactOptionalPropertyTypes に適合するようにマッピング
+    const analysis: InvestigationResult['analysis'] = {
+      positivePoints: parsed.analysis.positivePoints,
+      negativePoints: parsed.analysis.negativePoints,
+      useCases: parsed.analysis.useCases,
+      userImpression: parsed.analysis.userImpression,
+      recommendation: {
+        ...parsed.analysis.recommendation,
+        targetUsers: parsed.analysis.recommendation.targetUsers,
+        pros: parsed.analysis.recommendation.pros,
+        cons: parsed.analysis.recommendation.cons,
+        score: parsed.analysis.recommendation.score,
+      },
+      competitiveAnalysis: parsed.analysis.competitiveAnalysis.map((c) => {
+        const comp: CompetitiveProduct = {
+          name: c.name,
+          priceComparison: c.priceComparison,
+          featureComparison: c.featureComparison,
+          differentiators: c.differentiators,
+        };
+        if (c.asin) comp.asin = c.asin;
+        return comp;
+      }),
+      sources: parsed.analysis.sources.map((s) => {
+        const ref: SourceReference = {
+          name: s.name,
+        };
+        if (s.url) ref.url = s.url;
+        if (s.tier && s.tier !== 'primary') ref.tier = s.tier;
+        if (s.evidenceType) ref.evidenceType = s.evidenceType;
+        if (s.publishedAt) ref.publishedAt = s.publishedAt;
+        if (s.author) ref.author = s.author;
+        if (s.conflictOfInterest) ref.conflictOfInterest = s.conflictOfInterest;
+        if (s.notes) ref.notes = s.notes;
+        return ref;
+      }),
+      userStories: (parsed.analysis.userStories || []).map((s) => ({
+        userType: s.userType,
+        scenario: s.scenario,
+        experience: s.experience,
+        sentiment: s.sentiment,
+      })),
+    };
+
+    // その他の optional フィールドを安全に設定（exactOptionalPropertyTypes対策）
+    if (parsed.analysis.productName) {
+      analysis.productName = parsed.analysis.productName;
+    }
+    if (parsed.analysis.parentAsin) {
+      analysis.parentAsin = parsed.analysis.parentAsin;
+    }
+    if (parsed.analysis.lastInvestigated) {
+      analysis.lastInvestigated = parsed.analysis.lastInvestigated;
+    }
+    if (parsed.analysis.productDescription) {
+      analysis.productDescription = parsed.analysis.productDescription;
+    }
+    if (parsed.analysis.productUsage) {
+      analysis.productUsage = parsed.analysis.productUsage;
+    }
+    if (parsed.analysis.technicalSpecs) {
+      analysis.technicalSpecs = parsed.analysis.technicalSpecs;
+    }
+
+    // InvestigationResultを構築
+    const investigation: InvestigationResult = {
+      sessionId: `file-${asin}`,
+      product,
+      analysis,
+      generatedAt: generatedAt,
+    };
+
+    return {
+      product,
+      investigation,
+      timestamp: new Date().toISOString(),
+    };
+  } catch (error) {
+    if ((error as { code?: string }).code === 'ENOENT') {
+      logger.warn(`File not found: ${filePath}, skipping`);
+      return null;
+    }
+    logger.warn(`Failed to load investigation file ${filePath}:`, error);
+    return null;
+  }
+}
+
+/**
+ * ファイル名からASINを抽出し、JSON構造を変換してInvestigationDataを構築
+ */
 export async function loadInvestigationResults(targetFiles?: string[]): Promise<InvestigationData[]> {
   const investigationsDir = path.join(process.cwd(), 'data', 'investigations');
   let filesToProcess: string[];
@@ -100,79 +242,7 @@ export async function loadInvestigationResults(targetFiles?: string[]): Promise<
 
   for (let i = 0; i < filesToProcess.length; i += chunkSize) {
     const chunk = filesToProcess.slice(i, i + chunkSize);
-    const chunkResults = await Promise.all(
-      chunk.map(async (filePath) => {
-        try {
-          const rawData = await fs.readFile(filePath, 'utf-8');
-          const jsonParsed: unknown = JSON.parse(rawData);
-          const validation = InvestigationFileSchema.safeParse(jsonParsed);
-
-          if (!validation.success) {
-            logger.warn(`Invalid investigation file format ${filePath}:`, validation.error);
-            return null;
-          }
-
-          const parsed = validation.data;
-
-          const fileName = path.basename(filePath);
-          // Skip if not a JSON file or is summary
-          if (!fileName.endsWith('.json') || fileName === 'latest-summary.json') {
-            return null;
-          }
-
-          // ファイル名からASINを抽出 (e.g., "B07DZZJ2B9.json" -> "B07DZZJ2B9")
-          const asin = path.basename(fileName, '.json');
-
-          // 最小限のProduct情報を構築（ASINのみ必須、他はプレースホルダー）
-          const product: Product = {
-            asin,
-            title: `Product ${asin}`, // タイトルは後で記事生成時に更新可能
-            category: '',
-            price: { amount: 0, currency: 'JPY', formatted: '' },
-            images: { primary: '', thumbnails: [] },
-            specifications: {},
-            rating: { average: 0, count: 0 },
-          };
-
-          // lastInvestigatedがあればそれを優先、なければファイルの更新日時（fs.stat）を取得
-          let generatedAt: Date | null = null;
-          if (parsed.analysis.lastInvestigated) {
-            const parsedDate = new Date(parsed.analysis.lastInvestigated);
-            // Check if the date is valid
-            if (!Number.isNaN(parsedDate.getTime())) {
-              generatedAt = parsedDate;
-            }
-          }
-
-          if (!generatedAt) {
-            // ファイルの更新日時を取得（作成日時の代用）
-            const stats = await fs.stat(filePath);
-            generatedAt = stats.mtime;
-          }
-
-          // InvestigationResultを構築
-          const investigation: InvestigationResult = {
-            sessionId: `file-${asin}`,
-            product,
-            analysis: parsed.analysis as unknown as InvestigationResult['analysis'],
-            generatedAt: generatedAt,
-          };
-
-          return {
-            product,
-            investigation,
-            timestamp: new Date().toISOString(),
-          };
-        } catch (error) {
-          if ((error as { code?: string }).code === 'ENOENT') {
-            logger.warn(`File not found: ${filePath}, skipping`);
-            return null;
-          }
-          logger.warn(`Failed to load investigation file ${filePath}:`, error);
-          return null;
-        }
-      }),
-    );
+    const chunkResults = await Promise.all(chunk.map((filePath) => loadAndValidateInvestigation(filePath)));
 
     results.push(...chunkResults.filter((result): result is InvestigationData => result !== null));
   }

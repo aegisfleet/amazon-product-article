@@ -47,6 +47,11 @@ export const InvestigationFileSchema = z.looseObject({
       score: z.number(),
     }),
     lastInvestigated: z.string().trim().optional(),
+    productName: z.string().trim().optional(),
+    parentAsin: z.string().trim().optional(),
+    productDescription: z.string().trim().optional(),
+    productUsage: z.array(z.string().trim()).optional(),
+    technicalSpecs: z.record(z.string(), z.unknown()).optional(),
   }),
 });
 
