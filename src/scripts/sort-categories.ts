@@ -15,7 +15,11 @@ for (const key in data) {
   if (Object.hasOwn(data, key)) {
     const group = data[key];
     if (group?.categories && Array.isArray(group.categories)) {
-      group.categories.sort((a, b) => (a > b ? 1 : a < b ? -1 : 0));
+      group.categories.sort((a, b) => {
+        if (a > b) return 1;
+        if (a < b) return -1;
+        return 0;
+      });
     }
   }
 }
