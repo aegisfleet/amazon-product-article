@@ -41,44 +41,114 @@ function scoreClass(score) {
   return 'score-fair';
 }
 
+function safeUrl(url) {
+  if (!url) return '#';
+  try {
+    const u = new URL(String(url), window.location.origin);
+    if (u.protocol === 'http:' || u.protocol === 'https:') {
+      return u.href;
+    }
+  } catch {
+    // ignore invalid URL
+  }
+  return '#';
+}
+
 // --- Render ---
 function renderCard(p) {
-  const imgHtml = p.image
-    ? `<img src="${p.image}" alt="${p.title}" loading="lazy" decoding="async">`
-    : `<div class="bargain-card-noimage">画像なし</div>`;
+  const article = document.createElement('article');
+  article.className = 'bargain-card';
 
-  const amazonBadge = p.isAmazonDirect
-    ? `<span class="badge-amazon-direct">Amazon直販</span>`
-    : '';
+  const imageLink = document.createElement('a');
+  imageLink.className = 'bargain-card-image-link';
+  imageLink.href = safeUrl(p.url);
 
-  const pointsBadge = p.loyaltyPoints
-    ? `<span class="bargain-card-points">🎁 ${p.loyaltyPoints}pt</span>`
-    : '';
+  const imageWrap = document.createElement('div');
+  imageWrap.className = 'bargain-card-image';
 
-  const btnHtml = p.affiliateUrl
-    ? `<a href="${p.affiliateUrl}" class="btn-amazon-small" target="_blank" rel="noopener noreferrer">🛒 Amazonで見る</a>`
-    : `<a href="${p.url}" class="bargain-card-review-link">レビューを読む →</a>`;
+  if (p.image) {
+    const img = document.createElement('img');
+    img.src = safeUrl(p.image);
+    img.alt = String(p.title || '');
+    img.loading = 'lazy';
+    img.decoding = 'async';
+    imageWrap.appendChild(img);
+  } else {
+    const noImage = document.createElement('div');
+    noImage.className = 'bargain-card-noimage';
+    noImage.textContent = '画像なし';
+    imageWrap.appendChild(noImage);
+  }
 
-  return `
-    <article class="bargain-card">
-      <a href="${p.url}" class="bargain-card-image-link">
-        <div class="bargain-card-image">${imgHtml}</div>
-      </a>
-      <div class="bargain-card-body">
-        <div class="bargain-card-category">${p.category || ''}</div>
-        <h3 class="bargain-card-title">
-          <a href="${p.url}">${p.title}</a>
-        </h3>
-        <div class="bargain-card-meta">
-          <span class="bargain-card-price">${p.price || ''}</span>
-          <span class="card-score ${scoreClass(p.score)}">🏆 ${p.score}点</span>
-        </div>
-        <div class="bargain-card-badges">
-          ${amazonBadge}${pointsBadge}
-        </div>
-        <div class="bargain-card-actions">${btnHtml}</div>
-      </div>
-    </article>`;
+  imageLink.appendChild(imageWrap);
+  article.appendChild(imageLink);
+
+  const body = document.createElement('div');
+  body.className = 'bargain-card-body';
+
+  const category = document.createElement('div');
+  category.className = 'bargain-card-category';
+  category.textContent = String(p.category || '');
+  body.appendChild(category);
+
+  const title = document.createElement('h3');
+  title.className = 'bargain-card-title';
+  const titleLink = document.createElement('a');
+  titleLink.href = safeUrl(p.url);
+  titleLink.textContent = String(p.title || '');
+  title.appendChild(titleLink);
+  body.appendChild(title);
+
+  const meta = document.createElement('div');
+  meta.className = 'bargain-card-meta';
+
+  const price = document.createElement('span');
+  price.className = 'bargain-card-price';
+  price.textContent = String(p.price || '');
+  meta.appendChild(price);
+
+  const score = document.createElement('span');
+  score.className = `card-score ${scoreClass(p.score)}`;
+  score.textContent = `🏆 ${p.score}点`;
+  meta.appendChild(score);
+
+  body.appendChild(meta);
+
+  const badges = document.createElement('div');
+  badges.className = 'bargain-card-badges';
+  if (p.isAmazonDirect) {
+    const amazonBadge = document.createElement('span');
+    amazonBadge.className = 'badge-amazon-direct';
+    amazonBadge.textContent = 'Amazon直販';
+    badges.appendChild(amazonBadge);
+  }
+  if (p.loyaltyPoints) {
+    const pointsBadge = document.createElement('span');
+    pointsBadge.className = 'bargain-card-points';
+    pointsBadge.textContent = `🎁 ${p.loyaltyPoints}pt`;
+    badges.appendChild(pointsBadge);
+  }
+  body.appendChild(badges);
+
+  const actions = document.createElement('div');
+  actions.className = 'bargain-card-actions';
+  const btn = document.createElement('a');
+  if (p.affiliateUrl) {
+    btn.href = safeUrl(p.affiliateUrl);
+    btn.className = 'btn-amazon-small';
+    btn.target = '_blank';
+    btn.rel = 'noopener noreferrer';
+    btn.textContent = '🛒 Amazonで見る';
+  } else {
+    btn.href = safeUrl(p.url);
+    btn.className = 'bargain-card-review-link';
+    btn.textContent = 'レビューを読む →';
+  }
+  actions.appendChild(btn);
+  body.appendChild(actions);
+
+  article.appendChild(body);
+  return article;
 }
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -247,7 +317,7 @@ document.addEventListener('DOMContentLoaded', () => {
       } else {
         noResultsEl.style.display = 'none';
         gridEl.style.display = '';
-        gridEl.innerHTML = filtered.map(renderCard).join('');
+        gridEl.replaceChildren(...filtered.map(renderCard));
       }
       statsEl.textContent = String(filtered.length);
 
