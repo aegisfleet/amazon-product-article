@@ -15,7 +15,7 @@ for (const key in data) {
   if (Object.hasOwn(data, key)) {
     const group = data[key];
     if (group?.categories && Array.isArray(group.categories)) {
-      group.categories.sort((a, b) => a.localeCompare(b));
+      group.categories.sort();
     }
   }
 }
