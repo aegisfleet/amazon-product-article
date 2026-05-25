@@ -100,11 +100,13 @@ jobs:
 
     - name: Write ASINs to Job Summary
       if: github.event.inputs.asins != ''
+      env:
+        INPUT_ASINS: ${{ github.event.inputs.asins }}
       run: |
         echo "### 調査対象のASIN（手動入力）" >> $GITHUB_STEP_SUMMARY
         echo "以下のASINが指定されました：" >> $GITHUB_STEP_SUMMARY
         echo "" >> $GITHUB_STEP_SUMMARY
-        IFS=',' read -ra ASIN_ARR <<< "${{ github.event.inputs.asins }}"
+        IFS=',' read -ra ASIN_ARR <<< "$INPUT_ASINS"
         for asin in "${ASIN_ARR[@]}"; do
           trimmed_asin=$(echo "$asin" | xargs)
           echo "- \`$trimmed_asin\`" >> $GITHUB_STEP_SUMMARY
