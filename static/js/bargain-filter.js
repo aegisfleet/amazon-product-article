@@ -2,6 +2,85 @@
  * bargain-filter.js
  * 「あともう一品」特設ページのフィルタリング・ソート・表示を管理する。
  */
+
+// --- Price Slider Mapping Helpers ---
+function valueToPrice(v) {
+  if (v <= 400) {
+    const t = v / 400;
+    return Math.round(t * 20) * 100;
+  } else if (v <= 700) {
+    const t = (v - 400) / 300;
+    return 2000 + Math.round(t * 16) * 500;
+  } else {
+    const t = (v - 700) / 300;
+    return 10000 + Math.round(t * 40000);
+  }
+}
+
+function priceToValue(price) {
+  if (price <= 2000) {
+    return (price / 2000) * 400;
+  } else if (price <= 10000) {
+    return 400 + ((price - 2000) / (10000 - 2000)) * 300;
+  } else {
+    const clampedPrice = Math.min(50000, price);
+    return 700 + ((clampedPrice - 10000) / (50000 - 10000)) * 300;
+  }
+}
+
+// --- Format price ---
+function formatPrice(raw) {
+  if (!raw && raw !== 0) return '';
+  return '¥' + Number(raw).toLocaleString('ja-JP');
+}
+
+// --- Score class ---
+function scoreClass(score) {
+  if (score >= 80) return 'score-excellent';
+  if (score >= 60) return 'score-good';
+  return 'score-fair';
+}
+
+// --- Render ---
+function renderCard(p) {
+  const imgHtml = p.image
+    ? `<img src="${p.image}" alt="${p.title}" loading="lazy" decoding="async">`
+    : `<div class="bargain-card-noimage">画像なし</div>`;
+
+  const amazonBadge = p.isAmazonDirect
+    ? `<span class="badge-amazon-direct">Amazon直販</span>`
+    : '';
+
+  const pointsBadge = p.loyaltyPoints
+    ? `<span class="bargain-card-points">🎁 ${p.loyaltyPoints}pt</span>`
+    : '';
+
+  const btnHtml = p.affiliateUrl
+    ? `<a href="${p.affiliateUrl}" class="btn-amazon-small" target="_blank" rel="noopener noreferrer">🛒 Amazonで見る</a>`
+    : `<a href="${p.url}" class="bargain-card-review-link">レビューを読む →</a>`;
+
+  return `
+    <article class="bargain-card">
+      <a href="${p.url}" class="bargain-card-image-link">
+        <div class="bargain-card-image">${imgHtml}</div>
+      </a>
+      <div class="bargain-card-body">
+        <div class="bargain-card-category">${p.category || ''}</div>
+        <h3 class="bargain-card-title">
+          <a href="${p.url}">${p.title}</a>
+        </h3>
+        <div class="bargain-card-meta">
+          <span class="bargain-card-price">${p.price || ''}</span>
+          <span class="card-score ${scoreClass(p.score)}">🏆 ${p.score}点</span>
+        </div>
+        <div class="bargain-card-badges">
+          ${amazonBadge}${pointsBadge}
+        </div>
+        <div class="bargain-card-actions">${btnHtml}</div>
+      </div>
+    </article>`;
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   const dataEl = document.getElementById('bargain-data');
   if (!dataEl) return;
@@ -36,16 +115,16 @@ document.addEventListener('DOMContentLoaded', () => {
   function readUrlParams() {
     const params = new URLSearchParams(globalThis.location.search);
     if (params.has('minScore')) {
-      const v = parseInt(params.get('minScore'), 10);
-      if (!isNaN(v)) scoreSlider.value = String(Math.max(0, Math.min(100, v)));
+      const v = Number.parseInt(params.get('minScore'), 10);
+      if (!Number.isNaN(v)) scoreSlider.value = String(Math.max(0, Math.min(100, v)));
     }
     if (params.has('minPrice')) {
-      const v = parseInt(params.get('minPrice'), 10);
-      if (!isNaN(v)) minPriceSlider.value = String(Math.max(0, Math.min(50000, v)));
+      const v = Number.parseInt(params.get('minPrice'), 10);
+      if (!Number.isNaN(v)) minPriceSlider.value = String(Math.round(priceToValue(v)));
     }
     if (params.has('maxPrice')) {
-      const v = parseInt(params.get('maxPrice'), 10);
-      if (!isNaN(v)) priceSlider.value = String(Math.max(0, Math.min(50000, v)));
+      const v = Number.parseInt(params.get('maxPrice'), 10);
+      if (!Number.isNaN(v)) priceSlider.value = String(Math.round(priceToValue(v)));
     }
     if (params.has('category') && categorySelect) {
       // We will set this after populating categories
@@ -61,9 +140,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function updateUrlParams() {
     const params = new URLSearchParams();
-    const minScore = parseInt(scoreSlider.value, 10);
-    const minPrice = parseInt(minPriceSlider.value, 10);
-    const maxPrice = parseInt(priceSlider.value, 10);
+    const minScore = Number.parseInt(scoreSlider.value, 10);
+    const minPrice = valueToPrice(Number.parseInt(minPriceSlider.value, 10));
+    const maxPrice = valueToPrice(Number.parseInt(priceSlider.value, 10));
     const category = categorySelect ? categorySelect.value : '';
 
     if (minScore !== 80) params.set('minScore', String(minScore));
@@ -110,63 +189,10 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  // --- Format price ---
-  function formatPrice(raw) {
-    if (!raw && raw !== 0) return '';
-    return '¥' + Number(raw).toLocaleString('ja-JP');
-  }
-
-  // --- Score class ---
-  function scoreClass(score) {
-    if (score >= 80) return 'score-excellent';
-    if (score >= 60) return 'score-good';
-    return 'score-fair';
-  }
-
-  // --- Render ---
-  function renderCard(p) {
-    const imgHtml = p.image
-      ? `<img src="${p.image}" alt="${p.title}" loading="lazy" decoding="async">`
-      : `<div class="bargain-card-noimage">画像なし</div>`;
-
-    const amazonBadge = p.isAmazonDirect
-      ? `<span class="badge-amazon-direct">Amazon直販</span>`
-      : '';
-
-    const pointsBadge = p.loyaltyPoints
-      ? `<span class="bargain-card-points">🎁 ${p.loyaltyPoints}pt</span>`
-      : '';
-
-    const btnHtml = p.affiliateUrl
-      ? `<a href="${p.affiliateUrl}" class="btn-amazon-small" target="_blank" rel="noopener noreferrer">🛒 Amazonで見る</a>`
-      : `<a href="${p.url}" class="bargain-card-review-link">レビューを読む →</a>`;
-
-    return `
-      <article class="bargain-card">
-        <a href="${p.url}" class="bargain-card-image-link">
-          <div class="bargain-card-image">${imgHtml}</div>
-        </a>
-        <div class="bargain-card-body">
-          <div class="bargain-card-category">${p.category || ''}</div>
-          <h3 class="bargain-card-title">
-            <a href="${p.url}">${p.title}</a>
-          </h3>
-          <div class="bargain-card-meta">
-            <span class="bargain-card-price">${p.price || ''}</span>
-            <span class="card-score ${scoreClass(p.score)}">🏆 ${p.score}点</span>
-          </div>
-          <div class="bargain-card-badges">
-            ${amazonBadge}${pointsBadge}
-          </div>
-          <div class="bargain-card-actions">${btnHtml}</div>
-        </div>
-      </article>`;
-  }
-
   function applyFilters() {
-    const minScore = parseInt(scoreSlider.value, 10);
-    const minPrice = parseInt(minPriceSlider.value, 10);
-    const maxPrice = parseInt(priceSlider.value, 10);
+    const minScore = Number.parseInt(scoreSlider.value, 10);
+    const minPrice = valueToPrice(Number.parseInt(minPriceSlider.value, 10));
+    const maxPrice = valueToPrice(Number.parseInt(priceSlider.value, 10));
 
     // Ensure minPrice <= maxPrice for logical UX (optional, but good)
     if (minPrice > maxPrice) {
@@ -194,8 +220,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Step 3: Filter by selected category
     const category = categorySelect ? categorySelect.value : '';
     let filtered = preFiltered.filter(p => {
-      if (category && p.category !== category) return false;
-      return true;
+      return !category || p.category === category;
     });
 
     // Step 4: Sort
@@ -235,7 +260,7 @@ document.addEventListener('DOMContentLoaded', () => {
   function resetFilters() {
     scoreSlider.value = '80';
     minPriceSlider.value = '0';
-    priceSlider.value = '2000';
+    priceSlider.value = '400';
     if (categorySelect) categorySelect.value = '';
     currentSort = 'date';
     updateSortButtons();
