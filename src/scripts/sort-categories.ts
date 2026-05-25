@@ -15,10 +15,14 @@ for (const key in data) {
   if (Object.hasOwn(data, key)) {
     const group = data[key];
     if (group?.categories && Array.isArray(group.categories)) {
-      group.categories.sort();
+      group.categories.sort((a, b) => {
+        if (a > b) return 1;
+        if (a < b) return -1;
+        return 0;
+      });
     }
   }
 }
 
-fs.writeFileSync(filePath, `${JSON.stringify(data, null, 4)}\n`, 'utf8');
+fs.writeFileSync(filePath, `${JSON.stringify(data, null, 2)}\n`, 'utf8');
 console.log('Successfully sorted categories using Node.js');
