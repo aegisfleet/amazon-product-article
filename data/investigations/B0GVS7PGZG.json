@@ -1,0 +1,168 @@
+{
+  "analysis": {
+    "productName": "Insta360 Mic Pro グラファイト・ブラック 送信機",
+    "parentAsin": "B0GVS7PGZG",
+    "productDescription": "カスタマイズ可能なE-Inkディスプレイや32-bit Float録音機能を備えたワイヤレスミニラベリアマイク。Insta360エコシステムとのシームレスな連携やAIノイズキャンセリングにより、クリアな音声を収録できる動画撮影向けのマイクです。",
+    "productUsage": [
+      "Vlogや動画撮影時の音声収録",
+      "インタビューや対談の録音",
+      "屋外でのノイズが多い環境での録音"
+    ],
+    "positivePoints": [
+      "32-bit Float内部録音により音割れのリスクを低減",
+      "E-Inkディスプレイに独自のロゴや画像を表示可能",
+      "Insta360 X5やAce Pro 2などのカメラとレシーバーなしで直接接続可能",
+      "高性能AIチップによる強力なノイズキャンセリング機能"
+    ],
+    "negativePoints": [
+      "価格が18,500円と比較的高価",
+      "Insta360製以外のカメラで使用する場合は受信機（別売）などが必要になるケースがある（シームレス接続の恩恵が薄れる）"
+    ],
+    "useCases": [
+      "Insta360カメラを使ったアクティビティ撮影時の音声収録",
+      "スマートフォンや他のカメラを使用した屋外Vlog撮影",
+      "ブランドロゴをマイクに表示して行う企業や個人の動画配信"
+    ],
+    "userStories": [],
+    "userImpression": "Insta360カメラとの連携の良さと、32-bit Float録音やノイズキャンセリングによる高品質な音声収録が高く評価されています。E-Inkディスプレイによるカスタマイズ性も他のマイクにはない魅力として注目されています。",
+    "sources": [
+      {
+        "id": "src-1",
+        "name": "Amazon商品ページ",
+        "url": "https://www.amazon.co.jp/dp/B0GVS7PGZG",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-05-25",
+        "author": "Amazon",
+        "conflictOfInterest": "none",
+        "notes": "製品仕様、価格、機能の確認"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "32-bit Float内部録音対応で音割れリスクを低減",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "crossChecked": false,
+        "notes": "公式の製品特徴に記載あり"
+      },
+      {
+        "claim": "Insta360カメラ（X5、Ace Pro 2等）と受信機なしで直接接続可能",
+        "category": "durability",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "crossChecked": false,
+        "notes": "公式の製品特徴に記載あり"
+      }
+    ],
+    "lastInvestigated": "2026-05-25",
+    "competitiveAnalysis": [
+      {
+        "name": "DJI Mic Mini（2 TX + 1 RX + 充電ケース）",
+        "asin": "B0DDL8WGH5",
+        "priceComparison": "対象商品（送信機1台）よりもセット（送信機2台+受信機+ケース）で安い。ただし32-bit Float録音やE-Inkディスプレイといった独自機能はない。",
+        "featureComparison": [
+          "共通点：超軽量設計、強力なノイズキャンセリング搭載、自社カメラとの直接連携（DJIエコシステム）",
+          "相違点：対象商品は32-bit Float録音とE-Inkディスプレイを搭載。DJI Mic Miniは自動制限機能で音割れを防ぐ。"
+        ],
+        "differentiators": [
+          "Insta360 Mic Pro 送信機の利点：32-bit Float録音による究極の音割れ防止と、E-Inkでのデザインカスタマイズ。Insta360カメラユーザーに最適。",
+          "DJI Mic Mini（2 TX + 1 RX + 充電ケース）の利点：セット構成としてのコストパフォーマンスが圧倒的。DJI製品ユーザーに最適。"
+        ]
+      },
+      {
+        "name": "JBL QUANTUM STREAM WIRELESS クリップオンタイプ",
+        "asin": "B0CVX2LW2C",
+        "priceComparison": "対象商品より大幅に安い。価格重視のエントリー向けモデル。",
+        "featureComparison": [
+          "共通点：ノイズキャンセリング機能搭載、クリップオンでの装着",
+          "相違点：対象商品は32-bit Float録音やE-Inkディスプレイなどプロフェッショナルな機能を搭載。JBLは防水（IPX4）対応とシンプルなUSB-C接続が特徴。"
+        ],
+        "differentiators": [
+          "Insta360 Mic Pro 送信機の利点：32-bit Float録音や複数マイクアレイによる高音質録音が可能。",
+          "JBL QUANTUM STREAM WIRELESS クリップオンタイプの利点：低価格でIPX4の防水性能があり、手軽に導入できる。"
+        ]
+      },
+      {
+        "name": "BILIWAL 2025新型ピンマイク",
+        "asin": "B0D97NDYTZ",
+        "priceComparison": "対象商品より大幅に安く、コスパ特化の汎用品。",
+        "featureComparison": [
+          "共通点：ノイズリダクション機能搭載",
+          "相違点：対象商品は32-bit FloatやE-Inkといった高度な独自技術を搭載。BILIWALはLED表示と汎用性の高い3-in-1受信機が特徴。"
+        ],
+        "differentiators": [
+          "Insta360 Mic Pro 送信機の利点：圧倒的な音質（32-bit Float録音）とInsta360エコシステムでのシームレスな使用感。",
+          "BILIWAL 2025新型ピンマイクの利点：非常に安価で、スマホやPCなど幅広い機器に受信機ですぐに繋がる汎用性。"
+        ]
+      },
+      {
+        "name": "Newmight ワイヤレスラベリアマイク",
+        "asin": "B0F7WSFGN6",
+        "priceComparison": "対象商品より大幅に安い。",
+        "featureComparison": [
+          "共通点：ノイズ軽減機能",
+          "相違点：対象商品はプロユースにも耐える32-bit Float録音などの高機能。Newmightは最低限の機能を備えたエントリーモデル。"
+        ],
+        "differentiators": [
+          "Insta360 Mic Pro 送信機の利点：高音質とE-Inkによる外観カスタマイズ。",
+          "Newmight ワイヤレスラベリアマイクの利点：2000円以下で購入でき、最低限の音声収録を手軽に行える。"
+        ]
+      },
+      {
+        "name": "XIAOKOA ヘッドセット ピンマイク",
+        "asin": "B06Y5CBK6C",
+        "priceComparison": "対象商品より大幅に安い。用途が異なるPAデバイス向け。",
+        "featureComparison": [
+          "共通点：ワイヤレスでの音声伝送",
+          "相違点：対象商品は動画撮影・録音用（スマホ/カメラ連携）。XIAOKOAは拡声器やアンプなどに繋ぐプレゼン・イベント用。"
+        ],
+        "differentiators": [
+          "Insta360 Mic Pro 送信機の利点：動画用の高品質な録音（32-bit Float対応）が可能。",
+          "XIAOKOA ヘッドセット ピンマイクの利点：スピーカーやアンプに直接出力して拡声する用途に適している。"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "Insta360 X5やAce Pro 2などを使用しているユーザー",
+        "音割れを絶対に防ぎたいプロやハイアマチュアのクリエイター",
+        "マイクの外観（ロゴなど）をカスタマイズしてブランディングしたい配信者"
+      ],
+      "pros": [
+        "32-bit Float録音による広いダイナミックレンジ",
+        "E-Inkディスプレイによる自由なカスタマイズ",
+        "Insta360カメラとの受信機不要のシームレス接続"
+      ],
+      "cons": [
+        "送信機単体としては価格が高め",
+        "Insta360エコシステム以外での利用ではメリットが少し薄れる"
+      ],
+      "score": 85,
+      "scoreRationale": "[基本点: 70]\n[加点: +10] 32-bit Float録音対応という高い性能と実用性\n[加点: +10] E-InkディスプレイやInsta360カメラとの直接接続という他にない独自の強み・先進性\n[減点: -5] 競合（DJI等）のセット品と比較すると、送信機単体としてはやや割高なコストパフォーマンス\n[合計: 85]"
+    },
+    "technicalSpecs": {
+      "dimensions": {
+        "height": "情報なし",
+        "width": "情報なし",
+        "depth": "情報なし"
+      },
+      "weight": "情報なし",
+      "capacity": "情報なし",
+      "material": "情報なし",
+      "origin": "情報なし",
+      "other": [
+        "録音形式: 32-bit Float内部録音",
+        "マイク: 3マイクアレイ搭載",
+        "ディスプレイ: カスタマイズ可能なE-Inkディスプレイ",
+        "バッテリー駆動時間: 送信機単体で最大10時間",
+        "同梱物: 送信機×1、ボタンマグネット×1、クリップ×1、ウインドシールド×1、収納ポーチ×1、USB-Cケーブル×1"
+      ]
+    }
+  }
+}
