@@ -1,130 +1,183 @@
 {
   "analysis": {
-    "productName": "Hy+ arrows Alpha F-51F / M08 クリアケース",
-    "parentAsin": "B0FPFBNTP9",
-    "productDescription": "米軍MIL規格準拠の耐衝撃性能を持つ、arrows Alpha F-51F / M08 用の透明TPUケース。指紋認証対応で、落下時の衝撃から端末を保護します。",
+    "productName": "Hy+ arrows Alpha F-51F / M08 対応 TPUクリアケース",
+    "parentAsin": "B0GPPNCT97",
+    "productDescription": "arrows Alpha (F-51F / M08) 専用設計のクリアソフトケース。MIL規格に準拠した耐衝撃性と黄ばみ防止加工が特徴。",
     "productUsage": [
-      "スマートフォンの保護（傷・汚れ防止）",
-      "落下時の衝撃吸収（MIL規格準拠）",
-      "ストラップの取り付け（落下防止）"
+      "スマートフォン本体の保護",
+      "落下時の衝撃緩和",
+      "本体デザインを活かした保護"
     ],
     "positivePoints": [
-      "MIL規格(MIL-STD-810G)準拠の高い耐衝撃性",
-      "四隅のエアクッション構造による衝撃分散",
-      "指紋認証機能に対応した設計",
-      "ストラップホール付きで利便性が高い",
-      "日本国内での企画・検品による信頼性"
+      "MIL規格（MIL-STD-810G）に準拠した高い耐衝撃性",
+      "四隅のエアクッションによる衝撃吸収ポケット構造",
+      "黄ばみ防止加工が施された透明度の高いTPU素材",
+      "指紋認証機能に完全対応",
+      "便利なストラップホール付き"
     ],
     "negativePoints": [
-      "長期間使用での黄変の可能性（TPU素材特有の現象）",
-      "指紋や皮脂汚れが目立ちやすい（クリアケース全般の課題）"
+      "クリアケース特有の指紋の目立ちやすさ",
+      "長期間使用時の素材の劣化（黄変）は完全には防げない可能性がある",
+      "画面保護ガラスフィルムとの干渉に注意が必要"
     ],
     "useCases": [
-      "端末のデザインを活かしたい場合",
-      "落下による破損リスクを減らしたい場合",
-      "ストラップを使用して落下防止対策をしたい場合"
+      "端末のデザイン（カラー）をそのまま楽しみたい時",
+      "日常的な落下リスクからスマートフォンを守りたい時",
+      "ネックストラップ等をつけて落下を防止したい時"
     ],
-    "userStories": [
-      {
-        "userType": "一般的なHy+ユーザー（推測）",
-        "scenario": "日常生活での使用",
-        "experience": "透明度が高く、端末のデザインを損なわない。指紋認証もスムーズに行えるため、日常使いにストレスがない。（推測）",
-        "sentiment": "positive"
-      },
-      {
-        "userType": "スマホをよく落とすユーザー（推測）",
-        "scenario": "落下時の保護",
-        "experience": "以前の機種でもHy+のケースを使用していたが、何度落としても本体は無事だったため、今回もこのケースを選んだ。（推測）",
-        "sentiment": "positive"
-      }
-    ],
-    "userImpression": "MIL規格準拠の耐衝撃性と、日本ブランドによる品質管理が評価されている。シンプルなクリアケースとして、コストパフォーマンスと信頼性のバランスが良い製品。",
+    "userStories": [],
+    "userImpression": "クリアな透明感で端末のデザインを損なわず、MIL規格準拠の耐衝撃性能でしっかりと保護できる実用性の高いケースと評価されています。特に四隅のエアクッション構造とストラップホールが安心感に繋がっています。",
     "sources": [
       {
+        "id": "src-1",
         "name": "Amazon商品ページ",
         "url": "https://www.amazon.co.jp/dp/B0FPFBNTP9",
-        "credibility": "medium"
+        "tier": "medium",
+        "evidenceType": "primary",
+        "publishedAt": "2026-05-27",
+        "author": "Hy+",
+        "conflictOfInterest": "possible",
+        "notes": "製品の公式な仕様や特徴（MIL規格準拠、素材、サイズ等）を確認。"
       }
     ],
-    "lastInvestigated": "2026-02-09",
+    "claims": [
+      {
+        "claim": "MIL-STD-810G規格に準拠した耐衝撃性",
+        "category": "durability",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "crossChecked": false,
+        "notes": "製品の主要な仕様として謳われている"
+      },
+      {
+        "claim": "黄ばみ防止加工",
+        "category": "quality",
+        "confidence": "medium",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "crossChecked": false,
+        "notes": "製品特徴として記載されているが、使用環境による影響は避けられない可能性がある"
+      }
+    ],
+    "lastInvestigated": "2026-05-27",
     "competitiveAnalysis": [
       {
-        "name": "ラスタバナナ arrows Alpha F-51F 専用 ソフトケース TPU",
-        "asin": "B0FD3DNX34",
-        "priceComparison": "1,161円。Hy+とほぼ同価格帯。",
-        "featureComparison": [
-          "1.3mm厚のTPU素材",
-          "老舗ブランドの信頼性",
-          "マイクロドット加工"
-        ],
-        "differentiators": [
-          "より薄型の設計",
-          "老舗サプライヤーとしての知名度"
-        ]
-      },
-      {
-        "name": "ORANGA arrows Alpha 用 ケース クリア",
-        "asin": "B0FN4LHTMH",
-        "priceComparison": "1,399円。Hy+より約200円高い。",
-        "featureComparison": [
-          "ドイツバイエル製TPU素材",
-          "高い透明度と黄変防止性能を強調"
-        ],
-        "differentiators": [
-          "素材へのこだわり（バイエル製）",
-          "価格がやや高め"
-        ]
-      },
-      {
-        "name": "TEELOFU Arrows Alpha F-51F ケース",
+        "name": "TEELOFU Arrows Alpha F-51F ケース（クリア）",
         "asin": "B0FLQ15VB2",
-        "priceComparison": "690円。Hy+の約半額。",
+        "priceComparison": "対象商品より安価だが、MIL規格の明記がない。価格重視の場合の選択肢となる。",
         "featureComparison": [
-          "基本的なTPUクリアケース",
-          "軽量設計"
+          "共通点：クリアなTPU素材を使用し、耐衝撃性を持つ点",
+          "相違点：対象商品はMIL規格準拠と日本国内での企画・検品を明記しているが、競合は一般的なすり傷防止やレンズ保護をアピールしている"
         ],
         "differentiators": [
-          "圧倒的な低価格",
-          "ブランド知名度は低い"
+          "対象商品の利点：MIL規格準拠の耐衝撃性と日本国内での品質管理の信頼性",
+          "競合商品の利点：より安価で購入しやすい"
+        ]
+      },
+      {
+        "name": "エレコム arrows Alpha ケース ハイブリッド PM-F251HVCKCR",
+        "asin": "B0FLPLDKSF",
+        "priceComparison": "対象商品と同程度の価格帯。メーカーのブランド力がある。",
+        "featureComparison": [
+          "共通点：クリアな透明ケースで耐衝撃性を備えている点",
+          "相違点：対象商品はTPU単体だが、競合は硬度5Hの傷がつきにくいハイブリッド設計"
+        ],
+        "differentiators": [
+          "対象商品の利点：MIL規格準拠と柔らかいTPU素材による着脱のしやすさ",
+          "競合商品の利点：硬度5Hによる背面の傷つきにくさとエレコムブランドの安心感"
+        ]
+      },
+      {
+        "name": "TEELOFU Arrows Alpha F-51F ケース（ブラック）",
+        "asin": "B0FLQ16K2S",
+        "priceComparison": "対象商品より安価。",
+        "featureComparison": [
+          "共通点：TPU素材を使用し、耐衝撃性を持つ点",
+          "相違点：対象商品は透明で本体デザインを活かすが、競合はブラックカラーで指紋防止をアピールしている"
+        ],
+        "differentiators": [
+          "対象商品の利点：端末のデザインを楽しめるクリアな外観とMIL規格の耐衝撃性",
+          "競合商品の利点：指紋が目立ちにくいマットな質感と価格の安さ"
+        ]
+      },
+      {
+        "name": "エレコム arrows Alpha ショルダーストラップシート付 ケース PM-F251TSLFCBK",
+        "asin": "B0FLPQLL4Z",
+        "priceComparison": "対象商品より高い。",
+        "featureComparison": [
+          "共通点：クリアケースであり、耐衝撃性を備えている点",
+          "相違点：対象商品はシンプルなケースだが、競合はショルダーストラップ用のシートが付属している"
+        ],
+        "differentiators": [
+          "対象商品の利点：MIL規格準拠の耐衝撃性とコストパフォーマンスの高さ",
+          "競合商品の利点：ショルダーストラップ運用を前提とした利便性の高さ"
+        ]
+      },
+      {
+        "name": "Cexitesuo For Arrows Alpha F-51F ケース リング付き",
+        "asin": "B0FM41GFXL",
+        "priceComparison": "対象商品よりやや高い。",
+        "featureComparison": [
+          "共通点：クリアなTPU素材を使用している点",
+          "相違点：対象商品はシンプルなケースだが、競合は背面に360度回転するスマホリングを備えている"
+        ],
+        "differentiators": [
+          "対象商品の利点：MIL規格の安心感とシンプルな背面でワイヤレス充電等の干渉がない点",
+          "競合商品の利点：リングによる落下防止とスタンド機能、車載ホルダー対応の利便性"
+        ]
+      },
+      {
+        "name": "kakabote Arrows Alpha F-51F M08 ケース メッキ加工",
+        "asin": "B0FJ1RQY19",
+        "priceComparison": "対象商品よりやや高い。",
+        "featureComparison": [
+          "共通点：クリアなTPU素材をベースにしている点",
+          "相違点：対象商品は完全な透明だが、競合は縁にメッキ加工が施されておりデザイン性が異なる"
+        ],
+        "differentiators": [
+          "対象商品の利点：MIL規格の耐衝撃性と端末デザインを完全に活かせる点",
+          "競合商品の利点：メッキ加工による高級感のあるデザインアクセント"
         ]
       }
     ],
     "recommendation": {
       "targetUsers": [
-        "arrows Alpha F-51F / M08 ユーザー",
-        "端末のデザインを活かしたい人",
-        "耐衝撃性を重視する人",
-        "日本ブランドの製品を選びたい人"
+        "arrows Alpha のデザインやカラーを隠したくない人",
+        "落下の衝撃からしっかりスマートフォンを守りたい人",
+        "ストラップをつけて落下を防止したい人"
       ],
       "pros": [
-        "MIL規格準拠の耐衝撃性能",
-        "ストラップホール付き",
-        "日本国内企画・検品の安心感"
+        "MIL規格準拠の高い耐衝撃性",
+        "本体デザインを活かせる高い透明度",
+        "四隅のエアクッションによる安心感",
+        "ストラップホール搭載による利便性"
       ],
       "cons": [
-        "長期間使用による黄変リスク",
-        "指紋がつきやすい"
+        "クリアTPU素材特有の指紋のつきやすさ",
+        "長期間使用による黄ばみ・劣化の可能性"
       ],
       "score": 85,
-      "scoreRationale": "[基本点: 70]\n[加点: +5] (MIL規格準拠の耐衝撃性)\n[加点: +5] (コストパフォーマンスが高い)\n[加点: +5] (日本ブランドによる品質管理の安心感)\n[合計: 85]"
+      "scoreRationale": "[基本点: 70]\n[加点: +5] (MIL規格準拠の耐衝撃性による優れた保護性能)\n[加点: +5] (四隅のエアクッション構造による衝撃吸収の安心感)\n[加点: +5] (日本企画・検品による品質管理への信頼性)\n[加点: +5] (1,000円台という手頃な価格設定での高いコストパフォーマンス)\n[減点: -5] (TPUクリアケース特有の経年劣化や指紋付着の懸念)\n[合計: 85]"
     },
     "technicalSpecs": {
+      "dimensions": {
+        "height": "11.99mm",
+        "width": "159.00mm",
+        "depth": "74.99mm"
+      },
+      "weight": "28g",
       "material": "TPU（熱可塑性ポリウレタン）",
+      "color": "クリア",
+      "compatibility": "arrows Alpha (F-51F / M08)",
       "features": [
         "MIL-STD-810G準拠",
         "指紋認証対応",
-        "ストラップホール",
-        "衝撃吸収ポケット構造",
-        "マイクロドット加工（推測）"
-      ],
-      "color": "クリア",
-      "weight": "約28g",
-      "dimensions": {
-        "height": "約12mm",
-        "width": "約75mm",
-        "length": "約159mm"
-      },
-      "compatibility": ["arrows Alpha F-51F", "arrows Alpha M08"]
+        "ストラップホール付き",
+        "黄ばみ防止加工"
+      ]
     }
   }
 }
