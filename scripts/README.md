@@ -15,8 +15,10 @@ AMAZON_PARTNER_TAG=your_partner_tag
 
 ### 依存関係
 
+本リポジトリでは安全なパッケージ管理のために `uv` を使用します。依存関係をインストールするには以下を実行します：
+
 ```bash
-pip install requests
+uv sync
 ```
 
 ## creators_get_item.py
@@ -25,9 +27,11 @@ Amazon Creators API を使用して指定したASINの商品情報を取得す�
 
 ### 使い方
 
+`uv run` を使用し、ロックファイルに基づいた安全な仮想環境で起動します：
+
 ```bash
-python scripts/creators_get_item.py <ASIN>
-# 例: python scripts/creators_get_item.py B06WRS9737
+uv run python scripts/creators_get_item.py <ASIN>
+# 例: uv run python scripts/creators_get_item.py B06WRS9737
 ```
 
 ### 出力
@@ -51,8 +55,8 @@ Amazon Creators API を使用してキーワードで商品を検索するPython
 ### 使い方
 
 ```bash
-python scripts/creators_search_items.py "<検索キーワード>"
-# 例: python scripts/creators_search_items.py "アテックス ルルド ふくらはぎゅ"
+uv run python scripts/creators_search_items.py "<検索キーワード>"
+# 例: uv run python scripts/creators_search_items.py "アテックス ルルド ふくらはぎゅ"
 ```
 
 ### 出力

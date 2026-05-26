@@ -7,7 +7,7 @@ from the Amazon Creators API and saves the raw response to a JSON file.
 It is intended for debugging and technical investigation.
 
 Usage:
-    python scripts/debug_dump.py B0XXXXXXXX
+    uv run python scripts/debug_dump.py B0XXXXXXXX
 """
 
 import os
