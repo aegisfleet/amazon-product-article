@@ -1,0 +1,152 @@
+{
+  "analysis": {
+    "productName": "LangRay オープンイヤー型ワイヤレスイヤホン SX-02",
+    "parentAsin": "B0H25N1T32",
+    "productDescription": "Bluetooth 5.4に対応し、6つのマイクによるAI通話ノイズリダクション(ENC)を搭載した耳掛け式オープンイヤー型ワイヤレスイヤホン。",
+    "productUsage": [
+      "スポーツ・ランニング時の音楽再生",
+      "リモートワークや会議での通話",
+      "通勤・通学中のながら聴き"
+    ],
+    "positivePoints": [
+      "オープンイヤー型で耳を塞がず、周囲の音が聞こえるため安全",
+      "6つのマイクとAIノイズキャンセリング搭載でクリアな通話が可能",
+      "イヤホン単体で最大10時間、ケース込みで長時間の再生が可能",
+      "IPX7の防水防汗仕様でスポーツ時の汗や雨にも対応"
+    ],
+    "negativePoints": [
+      "オープンイヤー型のため、周囲が騒がしい場所では音が聞こえにくい可能性がある",
+      "低価格帯であり、音質面で高価格帯のモデルに劣る可能性がある",
+      "充電ケースは防水仕様ではないため、取り扱いに注意が必要"
+    ],
+    "useCases": [
+      "ランニングやジムなどのスポーツ中",
+      "オンライン会議でのハンズフリー通話",
+      "家事や作業中のながら聴き"
+    ],
+    "userStories": [],
+    "userImpression": "スポーツやながら聴きに適したオープンイヤー型イヤホンで、特に通話性能と防水性能、長時間再生が評価できる低価格モデルです。",
+    "sources": [
+      {
+        "id": "src-amazon-product-page",
+        "name": "Amazon商品ページ",
+        "url": "https://www.amazon.co.jp/dp/B0GTY8J5RP",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-05-27",
+        "author": "LangRay",
+        "conflictOfInterest": "possible",
+        "notes": "製品スペックと機能説明（Bluetooth 5.4、6マイクENC、IPX7、再生時間）"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "6つのシリコンマイク搭載とAIスマートENC通話ノイズリダクションによりクリアな通話が可能",
+        "category": "quality",
+        "confidence": "medium",
+        "supportingSourceIds": ["src-amazon-product-page"],
+        "crossChecked": false,
+        "notes": "メーカー公式ページの説明に基づく"
+      },
+      {
+        "claim": "IPX7防水防汗仕様",
+        "category": "durability",
+        "confidence": "medium",
+        "supportingSourceIds": ["src-amazon-product-page"],
+        "crossChecked": false,
+        "notes": "メーカー公式ページの説明に基づく"
+      }
+    ],
+    "lastInvestigated": "2026-05-27",
+    "competitiveAnalysis": [
+      {
+        "name": "Anker Soundcore C50i",
+        "asin": "B0FHVJH6J9",
+        "priceComparison": "Anker Soundcore C50iの方が価格が高いが、ブランドの信頼性とLDAC対応による高音質が期待できる。",
+        "featureComparison": [
+          "共通点：オープンイヤー型のワイヤレスイヤホンであること",
+          "相違点：AnkerはLDAC対応、マルチポイント接続対応。LangRayは低価格で6マイクENC搭載。"
+        ],
+        "differentiators": [
+          "LangRay オープンイヤー型ワイヤレスイヤホン SX-02の利点：価格が非常に安く、IPX7防水に対応している。",
+          "Anker Soundcore C50iの利点：高音質コーデック(LDAC)対応で、信頼できるブランドのサポートがある。"
+        ]
+      },
+      {
+        "name": "Anker Soundcore AeroFit",
+        "asin": "B0CDNXZPPP",
+        "priceComparison": "Anker Soundcore AeroFitの方が価格が高いが、防塵防水規格IP57とマルチポイント接続に対応している。",
+        "featureComparison": [
+          "共通点：オープンイヤー型で長時間の再生が可能",
+          "相違点：AeroFitはIP57防塵防水、マルチポイント対応。LangRayはより安価。"
+        ],
+        "differentiators": [
+          "LangRay オープンイヤー型ワイヤレスイヤホン SX-02の利点：コストパフォーマンスに優れている。",
+          "Anker Soundcore AeroFitの利点：防塵性能があり、複数端末の接続に便利。"
+        ]
+      },
+      {
+        "name": "UGREEN イヤーカフ イヤホン",
+        "asin": "B0DMZWD4JP",
+        "priceComparison": "UGREENの方がわずかに価格が高いが、イヤーカフ型のデザインが特徴。",
+        "featureComparison": [
+          "共通点：Bluetooth 5.4、ENCノイズキャンセリング搭載",
+          "相違点：UGREENはイヤーカフ型、IPX5防水。LangRayは耳掛け型でIPX7防水。"
+        ],
+        "differentiators": [
+          "LangRay オープンイヤー型ワイヤレスイヤホン SX-02の利点：防水性能がIPX7と高い。",
+          "UGREEN イヤーカフ イヤホンの利点：イヤーカフ型でよりアクセサリー感覚で装着可能。"
+        ]
+      },
+      {
+        "name": "Anker Soundcore C40i",
+        "asin": "B0DFCPRT83",
+        "priceComparison": "Anker Soundcore C40iの方が価格が高い。",
+        "featureComparison": [
+          "共通点：オープンイヤー型イヤホン",
+          "相違点：C40iはマルチポイント接続対応、IPX4防水。LangRayはIPX7防水で安価。"
+        ],
+        "differentiators": [
+          "LangRay オープンイヤー型ワイヤレスイヤホン SX-02の利点：IPX7防水と価格の安さ。",
+          "Anker Soundcore C40iの利点：マルチポイント接続による利便性。"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "低価格なオープンイヤー型イヤホンを探している人",
+        "スポーツやランニング中に使いたい人",
+        "通話品質を重視するリモートワーカー"
+      ],
+      "pros": [
+        "コストパフォーマンスが高い",
+        "耳を塞がないため安全で快適",
+        "IPX7防水でスポーツに最適"
+      ],
+      "cons": [
+        "無名ブランドのため品質やサポートに不安がある",
+        "音質面で高価格帯モデルには及ばない可能性",
+        "周囲の騒音が大きい場所では使いにくい"
+      ],
+      "score": 75,
+      "scoreRationale": "[基本点: 70]\n[加点: +10] (1,699円という非常に高いコストパフォーマンス)\n[加点: +5] (IPX7の高い防水性能)\n[減点: -10] (無名ブランドによる信頼性の懸念)\n[合計: 75]"
+    },
+    "technicalSpecs": {
+      "dimensions": {
+        "height": "112mm",
+        "width": "85mm",
+        "depth": "34mm"
+      },
+      "weight": "84.32g",
+      "capacity": "1個",
+      "material": "不明",
+      "origin": "不明",
+      "other": [
+        "Bluetoothバージョン: 5.4+EDR",
+        "防水性能: IPX7 (ケースは非防水)",
+        "再生時間: 10時間 (イヤホン単体)",
+        "マイク: 6つのシリコンマイク搭載, AIスマートENC"
+      ]
+    }
+  }
+}
