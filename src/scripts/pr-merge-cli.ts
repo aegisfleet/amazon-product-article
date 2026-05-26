@@ -170,8 +170,9 @@ async function validateAndRepairSingleJson(
       }
       throw parseError; // 修復不能な場合はそのままエラースロー
     }
-  } catch (error: any) {
-    if (error.status === 404) {
+  } catch (error: unknown) {
+    const err = error as { status?: number };
+    if (err.status === 404) {
       logger.info(`  File ${file} not found (likely deleted in PR). Skipping validation.`);
       return { passed: true };
     }
@@ -266,8 +267,9 @@ async function validateAndRepairSingleMarkdown(
       passed: false,
       message: `Invalid date format in ${file} that could not be auto-repaired.`,
     };
-  } catch (error: any) {
-    if (error.status === 404) {
+  } catch (error: unknown) {
+    const err = error as { status?: number };
+    if (err.status === 404) {
       logger.info(`  File ${file} not found (likely deleted in PR). Skipping validation.`);
       return { passed: true };
     }
@@ -517,6 +519,39 @@ async function enableAutoMergeWithRetry(_octokit: Octokit, options: CLIOptions, 
   }
 }
 
+/**
+ * マージ可否判定の結果を処理する
+ */
+function handleMergeDecision(decision: {
+  shouldMerge: boolean;
+  reason?: string;
+  validationResults: { check: string; passed: boolean; message?: string }[];
+}): void {
+  logger.info(`Merge decision: ${decision.shouldMerge ? 'APPROVE' : 'REJECT'}`);
+  if (!decision.shouldMerge) {
+    logger.warn(`PR validation failed: ${decision.reason}`);
+    for (const r of decision.validationResults) {
+      logger.info(`  ${r.check}: ${r.passed ? 'OK' : 'FAIL'} - ${r.message}`);
+    }
+    process.exit(0);
+  }
+}
+
+/**
+ * PR に含まれるコンテンツ（JSON、Markdown）の整合性を検証する
+ */
+async function validatePrContents(octokit: Octokit, options: CLIOptions, pr: PullRequest): Promise<void> {
+  const jsonResult = await validateJsonFiles(octokit, options.owner, options.repo, pr.head, pr.changedFiles);
+  if (!(await processValidationResult(octokit, options, jsonResult, 'JSON'))) {
+    process.exit(jsonResult.repaired ? 0 : 1);
+  }
+
+  const mdResult = await validateMarkdownFiles(octokit, options.owner, options.repo, pr.head, pr.changedFiles);
+  if (!(await processValidationResult(octokit, options, mdResult, 'Markdown'))) {
+    process.exit(mdResult.repaired ? 0 : 1);
+  }
+}
+
 async function main(): Promise<void> {
   logger.info('Starting PR merge CLI...');
 
@@ -545,26 +580,10 @@ async function main(): Promise<void> {
     // AutoMergeManager で検証
     const mergeManager = new AutoMergeManager();
     const decision = mergeManager.validatePullRequest(pr);
-
-    logger.info(`Merge decision: ${decision.shouldMerge ? 'APPROVE' : 'REJECT'}`);
-    if (!decision.shouldMerge) {
-      logger.warn(`PR validation failed: ${decision.reason}`);
-      for (const r of decision.validationResults) {
-        logger.info(`  ${r.check}: ${r.passed ? 'OK' : 'FAIL'} - ${r.message}`);
-      }
-      process.exit(0);
-    }
+    handleMergeDecision(decision);
 
     // コンテンツのバリデーション
-    const jsonResult = await validateJsonFiles(octokit, options.owner, options.repo, pr.head, pr.changedFiles);
-    if (!(await processValidationResult(octokit, options, jsonResult, 'JSON'))) {
-      process.exit(jsonResult.repaired ? 0 : 1);
-    }
-
-    const mdResult = await validateMarkdownFiles(octokit, options.owner, options.repo, pr.head, pr.changedFiles);
-    if (!(await processValidationResult(octokit, options, mdResult, 'Markdown'))) {
-      process.exit(mdResult.repaired ? 0 : 1);
-    }
+    await validatePrContents(octokit, options, pr);
 
     // 自動マージ有効化
     await enableAutoMergeWithRetry(octokit, options, pr.title);
