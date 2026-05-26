@@ -50,11 +50,14 @@ echo "Pushing to branch: $CURRENT_BRANCH"
 
 # Retry loop for push
 for i in 1 2 3; do
+  # Remove stale lock file if it exists from previous attempts or crashed processes
+  rm -f .git/index.lock
+
   if git push origin "$CURRENT_BRANCH"; then
     echo "Push succeeded on attempt $i"
     exit 0
   else
-    echo "Push failed on attempt $i, pulling with rebase and retrying..."
+    echo "Push failed on attempt $i, pulling and merging..."
     
     # Check if shallow
     if [ "$(git rev-parse --is-shallow-repository)" = "true" ]; then
@@ -62,10 +65,22 @@ for i in 1 2 3; do
       git fetch --unshallow || git fetch --prune
     fi
     
-    # Pull with rebase
-    if git pull --rebase --autostash origin "$CURRENT_BRANCH"; then
-      echo "Rebase successful, retrying push..."
+    # Clean index.lock before merge operations
+    rm -f .git/index.lock
+
+    # Fetch latest remote changes
+    git fetch origin "$CURRENT_BRANCH"
+
+    # Try to merge remote branch
+    # Note: --no-edit to avoid prompting for commit message
+    if git merge origin/"$CURRENT_BRANCH" -m "Merge remote-tracking branch 'origin/$CURRENT_BRANCH' [skip ci]" --no-edit; then
+      echo "Merge successful, retrying push..."
     else
+      echo "Merge conflict or error detected. Checking if the conflict is only in the product cache file..."
+      
+      # Clean index.lock if merge crash left it
+      rm -f .git/index.lock
+
       # Check if the conflict is only in the product cache file
       if git status --porcelain | grep -q "UU data/cache/paapi-product-cache.json"; then
         echo "Conflict detected in data/cache/paapi-product-cache.json. Attempting automatic merge..."
@@ -73,9 +88,10 @@ for i in 1 2 3; do
         # Check if there are other conflicted files
         OTHER_CONFLICTS=$(git status --porcelain | grep "^UU " | grep -v "data/cache/paapi-product-cache.json" || true)
         if [ -n "$OTHER_CONFLICTS" ]; then
-          echo "Rebase failed due to multiple conflicting files:"
+          echo "Merge failed due to multiple conflicting files:"
           echo "$OTHER_CONFLICTS"
-          git rebase --abort || true
+          git merge --abort || true
+          rm -f .git/index.lock
           exit 1
         fi
         
@@ -89,23 +105,27 @@ for i in 1 2 3; do
           rm -f data/cache/paapi-product-cache.ours.json data/cache/paapi-product-cache.theirs.json
           git add data/cache/paapi-product-cache.json
           
-          echo "Continuing rebase..."
-          if GIT_EDITOR=true git rebase --continue; then
-            echo "Rebase completed successfully. Retrying push..."
+          echo "Completing merge..."
+          rm -f .git/index.lock
+          if GIT_EDITOR=true git commit --no-edit; then
+            echo "Merge completed successfully. Retrying push..."
           else
-            echo "Rebase continue failed, aborting..."
-            git rebase --abort || true
+            echo "Merge completion failed, aborting..."
+            git merge --abort || true
+            rm -f .git/index.lock
             exit 1
           fi
         else
-          echo "Auto-merge script failed, aborting rebase..."
+          echo "Auto-merge script failed, aborting merge..."
           rm -f data/cache/paapi-product-cache.ours.json data/cache/paapi-product-cache.theirs.json
-          git rebase --abort || true
+          git merge --abort || true
+          rm -f .git/index.lock
           exit 1
         fi
       else
-        echo "Rebase failed due to other conflicts or issues, aborting..."
-        git rebase --abort || true
+        echo "Merge failed due to other conflicts or issues, aborting..."
+        git merge --abort || true
+        rm -f .git/index.lock
         exit 1
       fi
     fi
