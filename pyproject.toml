@@ -1,0 +1,9 @@
+[project]
+name = "amazon-product-research-system-python-scripts"
+version = "0.1.0"
+description = "Python scripts for Amazon Product Research System"
+requires-python = ">=3.10"
+dependencies = [
+    "requests>=2.31.0",
+    "python-dotenv>=1.0.1",
+]

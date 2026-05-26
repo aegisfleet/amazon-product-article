@@ -38,7 +38,7 @@ Amazon Creators APIの認証情報の取り扱いには、最優先でセキュ�
   - ブラウザでの動作確認（`browser_subagent` 等）を行う場合は、事前にバックグラウンド等でサーバーを起動しておくこと。
 - **テスト**: `pnpm test`
   - すべてのユニットテストおよびプロパティベースのテストがパスすることを確認する。
-- **アーティファクト検証**: `python scripts/validate_artifact.py <生成したJSONファイル>`
+- **アーティファクト検証**: `uv run python scripts/validate_artifact.py <生成したJSONファイル>`
   - 調査結果や推薦リストの生成・修正を行った場合は必ず実行すること。
 
 > [!IMPORTANT]
@@ -64,6 +64,7 @@ Amazon Creators APIの認証情報の取り扱いには、最優先でセキュ�
 - **ローカルサーバー**: `http://localhost:1313/`
 - **サーバー起動手順**:
   ブラウザテストや目視確認を行う前には、以下のコマンドでサーバーを起動すること。
+
   ```bash
   # バックグラウンドで起動する場合 (Windows PowerShell)
   Start-Process pnpm -ArgumentList "run", "server:dev" -WindowStyle Hidden
@@ -71,6 +72,7 @@ Amazon Creators APIの認証情報の取り扱いには、最優先でセキュ�
   # または通常通り起動
   pnpm run server:dev
   ```
+
 - **サーバー停止手順**:
   作業終了後、不要になったサーバーは `Ctrl+C` またはプロセス終了で停止すること。
 
@@ -124,6 +126,7 @@ Amazon Creators APIの認証情報の取り扱いには、最優先でセキュ�
 > 使用例の詳細はスクリプトのヘルプ、またはソースコードを参照すること。
 
 ### 4.3 定義ファイルのフォーマットと整合性
+
 手動で編集するカテゴリ定義（`data/categorygroups.json`）およびブランド定義（`data/brandgroups.json`）は、ネストが深く括弧の記述ミスが発生しやすい。
 これらのファイルを編集した後は、必ず `pnpm run biome:check` を実行し、構文エラーがないことを検証すること。フォーマットの崩れは `pnpm run biome:fix` で自動整形できる。
 
@@ -139,6 +142,12 @@ Amazon Creators APIの認証情報の取り扱いには、最優先でセキュ�
 |---|---|---|
 | `scripts/creators_get_item.py` | 商品詳細取得 | `tmp/product_info.json` |
 | `scripts/creators_search_items.py` | 競合商品検索 | `tmp/search_results.json` |
+
+### 5.1.1 安全な Python 実行環境（uv の使用）
+
+pipによるサプライチェーン攻撃を防ぐため、Python スクリプトの実行時は `uv run python scripts/...` を使用すること。これにより、`uv.lock` に基づいた安全で一貫性のある仮想環境が自動構築され、外部パッケージの改ざんや不正な即時アップデートのリスクを完全に排除した状態でスクリプトを起動できる。
+
+- 実行例: `uv run python scripts/validate_artifact.py <生成したJSONファイル>`
 
 ### 5.2 プロンプト管理（JulesInvestigator）
 
