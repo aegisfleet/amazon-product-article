@@ -6,7 +6,7 @@ This script retrieves product information from Amazon Creators API
 and saves it to a JSON file for use by Jules or other automated processes.
 
 Usage:
-    python creators_get_item.py B06WRS9737
+    uv run python scripts/creators_get_item.py B06WRS9737
 
 Required Environment Variables:
     - AMAZON_CREATORS_APPLICATION_ID: Your Creators API application ID

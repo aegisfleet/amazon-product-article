@@ -271,7 +271,7 @@ if __name__ == "__main__":
         except Exception as e:
             print(f"Error: {e}")
     else:
-        print("Usage: python creators_api_client.py <ASIN>")
+        print("Usage: uv run python scripts/creators_api_client.py <ASIN>")
         print("\nTesting SearchItems API...")
         try:
             result = client.search_items(keywords="PlayStation 5", search_index="VideoGames", item_count=1)

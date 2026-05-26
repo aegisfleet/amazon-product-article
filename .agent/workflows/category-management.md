@@ -20,7 +20,7 @@ grep "キーワード" data/cache/paapi-product-cache.json
 Amazon Creators APIから返される生のBrowseNode情報を確認します。
 
 ```bash
-python scripts/debug_dump.py <ASIN>
+uv run python scripts/debug_dump.py <ASIN>
 ```
 実行すると `tmp/debug_output.json` に生成されます。
 

@@ -6,7 +6,7 @@ This script searches for products on Amazon using the Creators API
 and saves the results to a JSON file.
 
 Usage:
-    python creators_search_items.py "アテックス ルルド ふくらはぎゅ"
+    uv run python scripts/creators_search_items.py "アテックス ルルド ふくらはぎゅ"
 
 Required Environment Variables:
     - AMAZON_CREATORS_APPLICATION_ID: Your Creators API application ID
