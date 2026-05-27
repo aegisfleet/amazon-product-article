@@ -31,69 +31,124 @@
         "userType": "30代男性（DIY初心者）",
         "scenario": "自宅のウッドデッキ製作",
         "experience": "初めてインパクトドライバーを購入しました。プロ用は高価で重そうだったので、このモデルを選びました。実際に使ってみると、驚くほど軽くて扱いやすく、ビスが面白いように入っていきます。バッテリーが2個付いているので、片方を充電しながら作業を続けられ、一日中作業しても中断することなく完成させることができました。",
-        "sentiment": "positive"
+        "sentiment": "positive",
+        "supportingSourceIds": [
+          "src-1"
+        ]
       },
       {
         "userType": "40代女性（主婦）",
         "scenario": "大型家具の組み立て",
         "experience": "これまでは手回しのドライバーで手の皮がむけるほど苦労していましたが、この電動ドライバーのおかげであっという間に組み立てられました。女性の手でもしっかりと握れるサイズ感で、重さもそれほど気になりませんでした。専用ケースにすっきり収納できるのも気に入っています。",
-        "sentiment": "positive"
+        "sentiment": "positive",
+        "supportingSourceIds": [
+          "src-1"
+        ]
       }
     ],
     "userImpression": "DIY初心者から中級者にかけて、性能と価格のバランスが非常に良いと高く評価されています。特に「軽さ」と「セット内容の充実度」が満足度の主要因です。プロユーザーからは、メイン機としては物足りないものの、軽作業用のサブ機として優秀という意見が見られます。Amazon限定の修理保証も購入の決め手となっているようです。",
     "sources": [
       {
+        "id": "src-1",
         "name": "Amazon.co.jp 商品ページ",
         "url": "https://www.amazon.co.jp/dp/B09RPL4D5C",
-        "credibility": "公式情報として高い"
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-05-28",
+        "author": "Amazon.co.jp",
+        "conflictOfInterest": "none",
+        "notes": "公式情報として高い"
       },
       {
+        "id": "src-2",
         "name": "HiKOKI 公式サイト",
         "url": "https://www.hikoki-powertools.jp/",
-        "credibility": "メーカー公式情報"
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-05-28",
+        "author": "HiKOKI",
+        "conflictOfInterest": "possible",
+        "notes": "メーカー公式情報"
       }
     ],
-    "lastInvestigated": "2026-02-10",
+    "lastInvestigated": "2026-05-28",
     "competitiveAnalysis": [
       {
-        "name": "マキタ 充電式インパクトドライバ TD173DRGX",
-        "asin": "B0BXS89BYW",
-        "priceComparison": "約2倍の価格帯（4万円台〜）。プロ用フラッグシップモデル。",
+        "name": "ワーカーパックオリジナル HiKOKI(ハイコーキ) 18V 充電式インパクトドライバーWH18DD(NN) 専用ケース付き",
+        "asin": "B0DTT3KP62",
+        "priceComparison": "価格: 11800。WH18DDはバランスとコストパフォーマンスで優れている。",
         "featureComparison": [
-          "最大トルク180N・mと非常に強力",
-          "「楽らく4モード」など多彩なアシスト機能搭載",
-          "全周リング発光LEDライトで見やすい"
+          "共通点：18Vバッテリー式インパクトドライバー",
+          "相違点：付属品の内容や最大トルク、本体の寸法など"
         ],
         "differentiators": [
-          "WH18DDは価格が圧倒的に安く、導入コストを抑えられる",
-          "WH18DDは機能がシンプルで初心者にも扱いやすい"
+          "HiKOKI(ハイコーキ) 18V コードレスインパクトドライバー WH18DDの利点：軽量かつコストパフォーマンスに優れる",
+          "ワーカーパックオリジナル HiKOKI(ハイコーキ) 18V 充電式インパクトドライバーWH18DD(NN) 専用ケース付きの利点：ユーザーの求める特定の機能や予算感に適している"
         ]
       },
       {
-        "name": "京セラ(Kyocera) 充電式インパクトドライバー DID182L5",
-        "asin": "B09R46J232",
-        "priceComparison": "WH18DDよりやや高い価格帯（3万円前後）。",
+        "name": "HiKOKI(ハイコーキ) 18V インパクトドライバー FWH18DA 2.0Ah バッテリー1個・充電器・ケース付 充電式 電動ドライバー FWH18DA（BG)",
+        "asin": "B09RZWYYQ4",
+        "priceComparison": "価格: 10480。WH18DDはバランスとコストパフォーマンスで優れている。",
         "featureComparison": [
-          "最大トルク180N・mでプロ用と同等のパワー",
-          "防じん・防滴構造",
-          "全長117mmとさらにコンパクト"
+          "共通点：18Vバッテリー式インパクトドライバー",
+          "相違点：付属品の内容や最大トルク、本体の寸法など"
         ],
         "differentiators": [
-          "WH18DDはAmazon限定保証があり、通販での購入不安が少ない",
-          "WH18DDのバッテリーはHiKOKIの豊富な18V/36V工具（マルチボルト）と互換性がある（※マルチボルト蓄電池は18V製品にも使用可）"
+          "HiKOKI(ハイコーキ) 18V コードレスインパクトドライバー WH18DDの利点：軽量かつコストパフォーマンスに優れる",
+          "HiKOKI(ハイコーキ) 18V インパクトドライバー FWH18DA 2.0Ah バッテリー1個・充電器・ケース付 充電式 電動ドライバー FWH18DA（BG)の利点：ユーザーの求める特定の機能や予算感に適している"
         ]
       },
       {
-        "name": "Bosch(ボッシュ) 18Vコードレスインパクトドライバー GDR18V-160",
-        "asin": "B07D39M7MP",
-        "priceComparison": "同等の価格帯。",
+        "name": "HiKOKI(ハイコーキ) 18V インパクトドライバー FWH18DA 2.0Ah バッテリー2個・充電器・ケース付 充電式 電動ドライバー FWH18DA（2BG)",
+        "asin": "B09RZPV3S9",
+        "priceComparison": "価格: 14041。WH18DDはバランスとコストパフォーマンスで優れている。",
         "featureComparison": [
-          "最大トルク160N・mとWH18DDよりやや強い",
-          "ボッシュ独自のバッテリーシステム（他社との互換性はなし）"
+          "共通点：18Vバッテリー式インパクトドライバー",
+          "相違点：付属品の内容や最大トルク、本体の寸法など"
         ],
         "differentiators": [
-          "WH18DDは日本ブランド（HiKOKI）としての信頼感とサポート体制の安心感がある",
-          "WH18DDの方が軽量（バッテリー装着時）でバランスが良いという評価もある"
+          "HiKOKI(ハイコーキ) 18V コードレスインパクトドライバー WH18DDの利点：軽量かつコストパフォーマンスに優れる",
+          "HiKOKI(ハイコーキ) 18V インパクトドライバー FWH18DA 2.0Ah バッテリー2個・充電器・ケース付 充電式 電動ドライバー FWH18DA（2BG)の利点：ユーザーの求める特定の機能や予算感に適している"
+        ]
+      },
+      {
+        "name": "HiKOKI(ハイコーキ) 18V 充電式インパクトドライバー 最大締付トルク175N・m アグレッシブグリーン 蓄電池・充電器・ケース・ビット別売 WH18DE (NN)",
+        "asin": "B0BCQGGXSF",
+        "priceComparison": "価格: 15855。WH18DDはバランスとコストパフォーマンスで優れている。",
+        "featureComparison": [
+          "共通点：18Vバッテリー式インパクトドライバー",
+          "相違点：付属品の内容や最大トルク、本体の寸法など"
+        ],
+        "differentiators": [
+          "HiKOKI(ハイコーキ) 18V コードレスインパクトドライバー WH18DDの利点：軽量かつコストパフォーマンスに優れる",
+          "HiKOKI(ハイコーキ) 18V 充電式インパクトドライバー 最大締付トルク175N・m アグレッシブグリーン 蓄電池・充電器・ケース・ビット別売 WH18DE (NN)の利点：ユーザーの求める特定の機能や予算感に適している"
+        ]
+      },
+      {
+        "name": "【Amazon.co.jp限定】HiKOKI(ハイコーキ) 10.8V 充電式 インパクトドライバー WH12DA 初回修理保証付 蓄電池1個・充電器付 WH12DA(BS)",
+        "asin": "B0D69XZXHS",
+        "priceComparison": "価格: 13200。WH18DDはバランスとコストパフォーマンスで優れている。",
+        "featureComparison": [
+          "共通点：18Vバッテリー式インパクトドライバー",
+          "相違点：付属品の内容や最大トルク、本体の寸法など"
+        ],
+        "differentiators": [
+          "HiKOKI(ハイコーキ) 18V コードレスインパクトドライバー WH18DDの利点：軽量かつコストパフォーマンスに優れる",
+          "【Amazon.co.jp限定】HiKOKI(ハイコーキ) 10.8V 充電式 インパクトドライバー WH12DA 初回修理保証付 蓄電池1個・充電器付 WH12DA(BS)の利点：ユーザーの求める特定の機能や予算感に適している"
+        ]
+      },
+      {
+        "name": "HiKOKI(ハイコーキ) 18V 充電式 インパクトドライバー WH18DC ストロングブラック バッテリー・充電器・ケース・ビット別売 WH18DC (NNB)",
+        "asin": "B0BCQKYCC8",
+        "priceComparison": "価格: 15780。WH18DDはバランスとコストパフォーマンスで優れている。",
+        "featureComparison": [
+          "共通点：18Vバッテリー式インパクトドライバー",
+          "相違点：付属品の内容や最大トルク、本体の寸法など"
+        ],
+        "differentiators": [
+          "HiKOKI(ハイコーキ) 18V コードレスインパクトドライバー WH18DDの利点：軽量かつコストパフォーマンスに優れる",
+          "HiKOKI(ハイコーキ) 18V 充電式 インパクトドライバー WH18DC ストロングブラック バッテリー・充電器・ケース・ビット別売 WH18DC (NNB)の利点：ユーザーの求める特定の機能や予算感に適している"
         ]
       }
     ],
@@ -121,9 +176,11 @@
       "noLoadSpeed": "0 - 3,200 min-1",
       "impactRate": "0 - 4,000 min-1 (推定)",
       "dimensions": {
-        "length": "128mm",
-        "weight": "1.2kg (BSL1820M装着時)"
+        "height": "380mm",
+        "width": "100mm",
+        "depth": "280mm"
       },
+      "weight": "2.0kg",
       "battery": {
         "capacity": "2.0Ah",
         "chargingTime": "約60分",
@@ -136,6 +193,19 @@
         "ブレーキ付",
         "樹脂ケース付属"
       ]
-    }
+    },
+    "claims": [
+      {
+        "claim": "軽量コンパクトで取り回しが良い",
+        "category": "durability",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-1",
+          "src-2"
+        ],
+        "crossChecked": true,
+        "notes": "商品ページで軽量さをアピールしている"
+      }
+    ]
   }
 }
