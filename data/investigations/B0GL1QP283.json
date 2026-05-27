@@ -1,0 +1,176 @@
+{
+  "analysis": {
+    "productName": "Znines Type-C 有線イヤホン",
+    "parentAsin": "B0GL1QP283",
+    "productDescription": "iPhone15以降や各種Android/タブレットに対応するType-C接続の有線イヤホン。14mmドライバーによるハイレゾ対応、マイク付きリモコン搭載で通話やWeb会議にも適した超軽量モデルです。",
+    "productUsage": [
+      "音楽鑑賞",
+      "通話・Web会議",
+      "動画視聴",
+      "ゲーム"
+    ],
+    "positivePoints": [
+      "変換アダプタ不要で最新のスマホ・タブレットに直挿しできる",
+      "片耳わずか3gの超軽量設計で長時間の装着でも疲れにくい",
+      "手元で操作可能なマイク付きリモコンを搭載し、クリアな通話が可能",
+      "14mmの大型ドライバーにより迫力のある低音とクリアな音質を提供",
+      "絡まりにくいTPE素材のケーブルと高い耐久性を備える"
+    ],
+    "negativePoints": [
+      "Lightning端子や3.5mmイヤホンジャックの機器では使用できない",
+      "有線特有のケーブルの煩わしさがある",
+      "ノートPCなど一部の機器ではリモコンボタンが正常に動作しない可能性がある"
+    ],
+    "useCases": [
+      "通勤・通学時の音楽鑑賞",
+      "自宅でのオンライン授業やリモートワーク",
+      "動画視聴やゲームプレイ（遅延なし）",
+      "運動中の音楽再生（防水・防汗仕様）"
+    ],
+    "userStories": [],
+    "userImpression": "Type-C接続に特化した手軽で高音質な有線イヤホンとして、変換アダプタの手間なく最新機器で使用できる点が評価されると予想されます。超軽量で長時間の使用にも適しており、通話機能も備えているため、日常使いからビジネスまで幅広いシーンで活躍する印象です。",
+    "sources": [
+      {
+        "id": "src-1",
+        "name": "Amazon商品ページ",
+        "url": "https://www.amazon.co.jp/dp/B0GL1QP283",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-05-27",
+        "author": "Znines",
+        "conflictOfInterest": "disclosed",
+        "notes": "製品の仕様、特徴（14mmドライバー、マイク内蔵、3g軽量設計、対応機種など）を確認"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "iPhone15シリーズおよび各種Type-C搭載機器に対応",
+        "category": "durability",
+        "confidence": "high",
+        "supportingSourceIds": ["src-1"],
+        "crossChecked": false,
+        "notes": "商品仕様から確認"
+      },
+      {
+        "claim": "片耳3gの超軽量設計",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": ["src-1"],
+        "crossChecked": false,
+        "notes": "商品仕様から確認"
+      }
+    ],
+    "lastInvestigated": "2026-05-27",
+    "competitiveAnalysis": [
+      {
+        "name": "Antool Type-C 有線イヤホン G19",
+        "asin": "B0DNSZPZF8",
+        "priceComparison": "対象商品と同価格帯であり、どちらも手頃な価格で提供されている",
+        "featureComparison": [
+          "共通点：Type-C接続、マイク付きリモコン搭載、軽量設計",
+          "相違点：対象商品は14mmドライバーを搭載している"
+        ],
+        "differentiators": [
+          "Zninesの利点：片耳3gという具体的な超軽量設計が明記されている",
+          "Antool G19の利点：特になし（同等スペック）"
+        ]
+      },
+      {
+        "name": "Apple EarPods (USB-C)",
+        "asin": "B0DCJGJ1K8",
+        "priceComparison": "対象商品より高価だが、Apple純正の安心感がある",
+        "featureComparison": [
+          "共通点：Type-C接続、リモコン内蔵、マイク付き",
+          "相違点：EarPodsはApple純正品であり、独自のイヤーピース形状を持つ"
+        ],
+        "differentiators": [
+          "Zninesの利点：安価であり、密閉性の高いカナル型（インイヤー型）を採用",
+          "Apple EarPodsの利点：Apple製品とのシームレスな連携と純正品の信頼性"
+        ]
+      },
+      {
+        "name": "ソニー IER-EX15C",
+        "asin": "B0FRMQ2FZV",
+        "priceComparison": "対象商品より高価だが、大手オーディオメーカーの音質が期待できる",
+        "featureComparison": [
+          "共通点：Type-C接続、有線イヤホン",
+          "相違点：ソニー製は独自開発ドライバーを搭載し、音質のバランスに定評がある"
+        ],
+        "differentiators": [
+          "Zninesの利点：価格が安く、コストパフォーマンスに優れる",
+          "ソニー IER-EX15Cの利点：大手音響メーカーの信頼性と安定した音質"
+        ]
+      },
+      {
+        "name": "JBL TUNE310C",
+        "asin": "B0CVWV1531",
+        "priceComparison": "対象商品より高価だが、DAC内蔵やハイレゾ対応など高機能",
+        "featureComparison": [
+          "共通点：Type-C接続、マイク付きリモコン、ハイレゾ対応",
+          "相違点：JBL製は96kHz/24bit DACを内蔵し、3種のプリセットイコライザーを搭載"
+        ],
+        "differentiators": [
+          "Zninesの利点：1,000円以下の手頃な価格で購入可能",
+          "JBL TUNE310Cの利点：イコライザー機能やDAC内蔵によるワンランク上の音質"
+        ]
+      },
+      {
+        "name": "オーディオテクニカ ATH-CKD3C",
+        "asin": "B095BVLNV5",
+        "priceComparison": "対象商品より高価だが、国内メーカーの品質が保証されている",
+        "featureComparison": [
+          "共通点：Type-C接続、マイク付き",
+          "相違点：オーディオテクニカ製はGoogleアシスタント対応など機能が充実"
+        ],
+        "differentiators": [
+          "Zninesの利点：低価格で基本的な機能を網羅している",
+          "オーディオテクニカ ATH-CKD3Cの利点：音声アシスタント対応や国内メーカーの安心感"
+        ]
+      },
+      {
+        "name": "Znines Type-C 有線イヤホン (2024年モデル)",
+        "asin": "B0D3CBYBYS",
+        "priceComparison": "対象商品と同価格帯",
+        "featureComparison": [
+          "共通点：Type-C接続、14mmドライバー、片耳3g",
+          "相違点：対象商品は2025年新版であり、ノイズアイソレーション設計が強化されている"
+        ],
+        "differentiators": [
+          "Znines (2025年版)の利点：最新のノイズアイソレーション設計が採用されている",
+          "Znines (2024年版)の利点：特になし"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "iPhone15以降や最新のAndroidスマホユーザー",
+        "手頃な価格でType-C対応の有線イヤホンを探している人",
+        "充電不要で遅延のないイヤホンを求めている人",
+        "Web会議や通話でマイク付きイヤホンが必要な人"
+      ],
+      "pros": [
+        "最新機器に直挿しできるType-C端子",
+        "片耳3gの超軽量で快適な装着感",
+        "1,000円以下の優れたコストパフォーマンス"
+      ],
+      "cons": [
+        "旧型iPhone（Lightning）や3.5mmジャック機器では使えない",
+        "大手メーカー製と比較すると音質の好みが分かれる可能性がある"
+      ],
+      "score": 85,
+      "scoreRationale": "[基本点: 70]\n[加点: +10] 1,000円以下の価格設定による優れたコストパフォーマンス\n[加点: +5] 片耳3gの超軽量設計と14mmドライバーによる基本性能の高さ\n[合計: 85]"
+    },
+    "technicalSpecs": {
+      "dimensions": {
+        "height": "18mm",
+        "width": "70mm",
+        "depth": "70mm"
+      },
+      "weight": "10g",
+      "connection": "USB Type-C",
+      "driver": "14mm大型スピーカー",
+      "cableType": "TPE素材（絡まり防止）",
+      "features": ["マイク内蔵", "リモコン付き", "防水仕様"]
+    }
+  }
+}
