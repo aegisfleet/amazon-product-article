@@ -1,0 +1,171 @@
+{
+  "analysis": {
+    "productName": "VisionOwl デュアルモバイルモニター 14インチ DB-14",
+    "parentAsin": "B0G2HJ6R27",
+    "productDescription": "14インチのデュアルモバイルディスプレイ。1本のType-Cケーブルで2画面拡張が可能で、統合モードや重力感知による画面回転機能を備える。",
+    "productUsage": ["ノートPCのサブモニター", "ゲーム機（PS4/Switch/Xbox）用モニター", "対面商談時の画面共有"],
+    "positivePoints": [
+      "Type-Cケーブル1本で2画面拡張可能（Windows PCでDP Alt Mode対応の場合）",
+      "2画面を統合して19.2インチ相当として使用できる統合モード搭載",
+      "重力感知による画面の自動上下回転機能（上画面）",
+      "無段階調整可能な自立スタンドと4穴VESAマウント対応",
+      "2つの端末を別々に接続して同時利用が可能"
+    ],
+    "negativePoints": [
+      "Mac OSでの2画面拡張にはそれぞれケーブル接続が必要で、1本では不可",
+      "Mac OSで「拡張を停止」をクリックするとモニターが認識されなくなるバグがある（要注意）",
+      "2画面駆動のため消費電力が大きく、外部電源アダプタによる給電が推奨される",
+      "一番上のType-C端子は映像転送専用で給電不可"
+    ],
+    "useCases": [
+      "外出先や在宅ワークでノートパソコンの作業領域を大幅に広げる",
+      "商談時に相手に上側の画面を回転させて資料を共有する",
+      "1画面でゲームをプレイしつつ、もう1画面でPCの作業を行う"
+    ],
+    "userStories": [],
+    "userImpression": "ドライバー不要で手軽にマルチディスプレイ環境を構築でき、作業効率が大幅に向上する点が評価される一方、Macユーザーには接続上の制約やバグがあるため注意が必要。",
+    "sources": [
+      {
+        "id": "src-amazon",
+        "name": "Amazon商品ページ",
+        "url": "https://www.amazon.co.jp/dp/B0FW4R7PJT",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-05-28",
+        "author": "VisionOwl",
+        "conflictOfInterest": "possible",
+        "notes": "製品仕様、価格、機能説明、Mac OSのバグについての警告を確認"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "Type-Cケーブル1本で2画面拡張可能",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": ["src-amazon"],
+        "crossChecked": false,
+        "notes": "DP Alt Mode対応のWindows PCの場合。Mac OSでは不可。"
+      },
+      {
+        "claim": "重力感知で上画面が自動回転",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": ["src-amazon"],
+        "crossChecked": false,
+        "notes": "ボタン操作不要で回転する"
+      }
+    ],
+    "lastInvestigated": "2026-05-28",
+    "competitiveAnalysis": [
+      {
+        "name": "Upperizon デュアルモバイルモニター G-14W",
+        "asin": "B0FNQK1PYK",
+        "priceComparison": "対象商品と同価格帯（25,999円）",
+        "featureComparison": [
+          "共通点：14インチデュアル画面、1920×1200解像度、自立スタンド",
+          "相違点：対象商品は重力感知回転や画面統合モードをアピールしている。"
+        ],
+        "differentiators": [
+          "VisionOwl デュアルモバイルモニター DB-14の利点：画面統合モードや重力感知による自動回転など、ユニークな機能が搭載されている",
+          "Upperizon デュアルモバイルモニター G-14Wの利点：アスペクト比16:10で、より広範な用途で使いやすいデザイン"
+        ]
+      },
+      {
+        "name": "MyDual デュアルモバイルモニター 14インチ",
+        "asin": "B0FBRKMKFX",
+        "priceComparison": "対象商品と同価格帯（26,597円）",
+        "featureComparison": [
+          "共通点：14インチの上下2画面拡張ポータブルモニター",
+          "相違点：対象商品は画面統合モードと重力感知による回転機能を持つ"
+        ],
+        "differentiators": [
+          "VisionOwl デュアルモバイルモニター DB-14の利点：重力感知による自動回転機能があり、対面での商談などで使いやすい",
+          "MyDual デュアルモバイルモニター 14インチの利点：VESA対応や縦横表示など、柔軟な設置オプションを強調している"
+        ]
+      },
+      {
+        "name": "JAPANNEXT デュアルモバイルモニター JN-DMD-IPS14WX",
+        "asin": "B0FQ9WQFXT",
+        "priceComparison": "対象商品より高価（36,345円）",
+        "featureComparison": [
+          "共通点：14インチWUXGA解像度のデュアル画面",
+          "相違点：JAPANNEXTは国内メーカーとしてのサポートと2年保証をアピール"
+        ],
+        "differentiators": [
+          "VisionOwl デュアルモバイルモニター DB-14の利点：約1万円安く購入でき、コストパフォーマンスに優れる",
+          "JAPANNEXT JN-DMD-IPS14WXの利点：国内ブランドの安心感と2年間の長期保証"
+        ]
+      },
+      {
+        "name": "Laptomo デュアルモニター 14インチ",
+        "asin": "B0FWQSC3C9",
+        "priceComparison": "対象商品より大幅に安価（12,998円）",
+        "featureComparison": [
+          "共通点：14インチのデュアルディスプレイ",
+          "相違点：対象商品はWUXGA(1920x1200)だが、こちらはFHD(1920x1080)解像度"
+        ],
+        "differentiators": [
+          "VisionOwl デュアルモバイルモニター DB-14の利点：より高解像度なWUXGA(1920x1200)パネルを採用している",
+          "Laptomo デュアルモニター 14インチの利点：初期投資を大幅に抑えることができる"
+        ]
+      },
+      {
+        "name": "IODATA デュアル モバイルモニター EX-YC1412D",
+        "asin": "B0GQRLLC7M",
+        "priceComparison": "対象商品よりかなり高価（44,820円）",
+        "featureComparison": [
+          "共通点：14インチ上下2画面、折りたたみ式",
+          "相違点：IODATAはADSパネル採用で、国内メーカーの手厚いサポートを提供"
+        ],
+        "differentiators": [
+          "VisionOwl デュアルモバイルモニター DB-14の利点：より安価に導入可能で、IPSパネルを採用している",
+          "IODATA EX-YC1412Dの利点：国内大手メーカーならではの信頼性とサポート体制"
+        ]
+      },
+      {
+        "name": "KEEPTIME デュアルディスプレイ 14インチ",
+        "asin": "B0FH4QTYWY",
+        "priceComparison": "対象商品と同価格帯（25,990円）",
+        "featureComparison": [
+          "共通点：14インチのデュアルモバイルモニター、Type-C接続",
+          "相違点：対象商品はWUXGA解像度だが、KEEPTIMEはFHD(1080P)解像度"
+        ],
+        "differentiators": [
+          "VisionOwl デュアルモバイルモニター DB-14の利点：縦方向の解像度が広いWUXGA(1920x1200)を採用し、作業領域が広い",
+          "KEEPTIME デュアルディスプレイ 14インチの利点：一般的な16:9コンテンツ(動画など)に適したFHD解像度"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "WindowsノートPCの作業領域を手軽に広げたいユーザー",
+        "対面での打ち合わせや商談が多いビジネスパーソン",
+        "持ち運べるマルチモニター環境を構築したい人"
+      ],
+      "pros": [
+        "ケーブル1本で2画面出力可能（Windowsのみ）",
+        "WUXGA解像度で作業スペースが広い",
+        "画面統合や重力感知回転などの便利機能"
+      ],
+      "cons": [
+        "Mac OS環境では使い勝手に制限・バグがある",
+        "2画面分の電力を消費するため給電に注意が必要"
+      ],
+      "score": 77,
+      "scoreRationale": "[基本点: 70]\n[加点: +5] (Type-Cケーブル1本で2画面拡張可能な利便性(Windowsの場合))\n[加点: +3] (画面統合モードや重力感知回転などのユニークな機能)\n[加点: +2] (WUXGA解像度による広い作業領域)\n[減点: -3] (Mac OSでの動作制限および認識不良バグのリスク)\n[合計: 77]"
+    },
+    "technicalSpecs": {
+      "dimensions": {
+        "height": "210mm",
+        "width": "312mm",
+        "depth": "28mm"
+      },
+      "weight": "不明",
+      "panelType": "非光沢IPSパネル",
+      "resolution": "WUXGA (1920x1200)",
+      "brightness": "350nit",
+      "colorGamut": "100％sRGB",
+      "mount": "4穴VESA対応"
+    }
+  }
+}
