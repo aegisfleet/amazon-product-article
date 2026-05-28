@@ -1,0 +1,138 @@
+{
+  "analysis": {
+    "productName": "Goldmax 冷風扇",
+    "parentAsin": "B0GRBYJPXH",
+    "productDescription": "4000mAhバッテリーを内蔵し、コードレスで最大7時間使用可能な卓上冷風扇。送風・加湿・冷却の1台3役をこなし、わずか8Wの省エネ設計です。",
+    "productUsage": [
+      "デスク周りの冷却",
+      "寝室での利用",
+      "車中泊での暑さ対策"
+    ],
+    "positivePoints": [
+      "4000mAhバッテリー内蔵でコードレス使用可能",
+      "上部給水式で水補充やお手入れが簡単",
+      "消費電力8Wで省エネ"
+    ],
+    "negativePoints": [
+      "水タンク容量が280mlと比較的少なめ"
+    ],
+    "useCases": [
+      "コンセントがない場所での利用",
+      "エアコンの風が苦手な方の冷却手段",
+      "パーソナルスペースのスポット冷却"
+    ],
+    "userStories": [],
+    "userImpression": "バッテリー内蔵のコードレス仕様で、持ち運びのしやすさや省エネ性能が高く評価できるコンパクト冷風扇です。",
+    "sources": [
+      {
+        "id": "src-amazon",
+        "name": "Amazon商品ページ",
+        "url": "https://www.amazon.co.jp/dp/B0GRBYJPXH",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-05-28",
+        "author": "Goldmax",
+        "conflictOfInterest": "possible",
+        "notes": "製品仕様、特徴、機能、価格の確認"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "最大-12℃の冷却効果",
+        "category": "quality",
+        "confidence": "low",
+        "supportingSourceIds": [
+          "src-amazon"
+        ],
+        "crossChecked": false,
+        "notes": "メーカー主張のみ"
+      },
+      {
+        "claim": "8Wの省電力設計",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-amazon"
+        ],
+        "crossChecked": true,
+        "notes": "仕様に明記されている"
+      }
+    ],
+    "lastInvestigated": "2026-05-28",
+    "competitiveAnalysis": [
+      {
+        "name": "Dibuy 冷風機",
+        "asin": "B0GQ47Q1G4",
+        "priceComparison": "価格はほぼ同等（4979円）",
+        "featureComparison": [
+          "共通点：卓上サイズ、充電式",
+          "相違点：B0GRBYJPXHは4000mAhバッテリーだが、こちらは3000mAh。こちらはUV除菌・アロマ機能付きで1台6役。"
+        ],
+        "differentiators": [
+          "Goldmax 冷風扇の利点：バッテリー容量が大きく長時間のコードレス使用が可能。",
+          "Dibuy 冷風機の利点：UV除菌やアロマ機能など、付加機能が豊富。"
+        ]
+      },
+      {
+        "name": "Saluyar 卓上冷風機",
+        "asin": "B0GWDHRR8Z",
+        "priceComparison": "対象商品より約1000円安い",
+        "featureComparison": [
+          "共通点：卓上サイズ",
+          "相違点：B0GWDHRR8Zは1000mlの大容量タンクを備えるが、USB給電式でバッテリーは非搭載。"
+        ],
+        "differentiators": [
+          "Goldmax 冷風扇の利点：バッテリー内蔵で完全なコードレス使用が可能。",
+          "Saluyar 卓上冷風機の利点：大容量タンクで長時間の加湿・冷却が可能で、価格も安い。"
+        ]
+      },
+      {
+        "name": "冷風機 6L水冷式",
+        "asin": "B0GST4CDDC",
+        "priceComparison": "対象商品の約2倍の価格",
+        "featureComparison": [
+          "共通点：水冷式の冷風機",
+          "相違点：B0GST4CDDCは6Lの大型タンクを搭載し、60WのAC電源で動作する据え置き型。B0GRBYJPXHは卓上型で8Wの省エネ充電式。"
+        ],
+        "differentiators": [
+          "Goldmax 冷風扇の利点：卓上サイズで持ち運びができ、消費電力が非常に少ない。",
+          "冷風機 6L水冷式の利点：広い部屋全体を冷却するほどのパワフルな送風と、頻繁な給水が不要な大容量タンク。"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "パーソナルスペースを冷却したい人",
+        "コードレスで持ち運びたい人",
+        "省エネな冷風扇を探している人"
+      ],
+      "pros": [
+        "4000mAhバッテリーによるコードレス駆動",
+        "8Wの超省エネ設計",
+        "お手入れが簡単な上部給水"
+      ],
+      "cons": [
+        "タンク容量が280mlと少なく頻繁な給水が必要になる可能性がある",
+        "広い空間の冷却には不向き"
+      ],
+      "score": 83,
+      "scoreRationale": "[基本点: 70]\n[加点: +2] (4000mAhバッテリー内蔵でコードレス使用可能)\n[加点: +2] (送風・加湿・冷却の1台3役の性能)\n[加点: +6] (4980円で8Wの超省エネ設計、競合と同価格帯でコスパ良好)\n[加点: +1] (748gの軽量設計で持ち運びやすい)\n[加点: +2] (上部給水でお手入れが容易)\n[合計: 83]"
+    },
+    "technicalSpecs": {
+      "dimensions": {
+        "height": "120mm",
+        "width": "230mm",
+        "depth": "150mm"
+      },
+      "weight": "748g",
+      "capacity": "280ml",
+      "material": "ABS",
+      "origin": "不明",
+      "other": [
+        "消費電力: 8W",
+        "バッテリー: 4000mAh",
+        "充電端子: Type-C"
+      ]
+    }
+  }
+}
