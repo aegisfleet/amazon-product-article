@@ -25,66 +25,60 @@
       "かわいいデザインのガジェットを探している学生や女性向けギフト",
       "出張や旅行時のサブバッテリーとして"
     ],
-    "userStories": [
-      {
-        "userType": "20代女性・学生",
-        "scenario": "通学用のバッグが小さく、重い荷物を持ち歩きたくない。",
-        "experience": "「しろちゃん」のデザインに一目惚れして購入。リップクリームと同じくらいの感覚でポーチに入れて持ち運べるので、急な充電切れの心配がなくなった。友達にも「それ何？」と聞かれることが多く、会話のきっかけにもなっている。（推測）",
-        "sentiment": "positive"
-      }
-    ],
+    "userStories": [],
     "userImpression": "エレコム EC-C12WFは、スペックよりも「携帯性」と「デザイン」に特化した製品です。15W出力や5000mAhという容量は必要十分なレベルですが、その分、軽量・コンパクトで持ち運びやすく、何より「しろちゃん」というキャラクター性が所有欲を満たしてくれます。ガジェット特有の無機質さを嫌う層や、荷物を軽くしたいミニマリスト層に強く支持されるでしょう。",
     "sources": [
       {
-        "name": "エレコム公式サイト：EC-C12WF詳細",
-        "url": "https://www.elecom.co.jp/products/EC-C12WF.html",
-        "credibility": "Official"
-      },
-      {
         "name": "Amazon商品ページ：EC-C12WF",
         "url": "https://www.amazon.co.jp/dp/B0CTZM28VV",
-        "credibility": "Retailer"
+        "id": "src-amazon",
+        "tier": "medium",
+        "evidenceType": "primary",
+        "author": "Amazon User / Retailer",
+        "conflictOfInterest": "possible",
+        "notes": "Amazon商品ページからの基本情報とレビュー",
+        "publishedAt": "2024-02-22"
       }
     ],
-    "lastInvestigated": "2026-02-10",
+    "lastInvestigated": "2026-05-29",
     "competitiveAnalysis": [
       {
         "name": "Anker Nano Power Bank (22.5W, Built-In USB-C Connector)",
         "asin": "B0CCJFY2V4",
-        "priceComparison": "Anker製品は約3,490円と高価ですが、ケーブルレスの利便性と22.5Wの高出力があります。",
+        "priceComparison": "対象商品より高価ですが、ケーブルレスの利便性と22.5Wの高出力があり、価格に見合う価値があります。",
         "featureComparison": [
-          "ケーブル一体型で別途ケーブル不要",
-          "22.5W出力で急速充電に対応"
+          "共通点：容量5000mAhのコンパクトなモバイルバッテリーである点",
+          "相違点：Ankerは端子一体型でケーブル不要、22.5Wの高出力に対応"
         ],
         "differentiators": [
-          "ケーブルレスの利便性とブランド力",
-          "充電速度重視のユーザー向け"
+          "エレコム EC-C12WFの利点：USB-CとUSB-Aの2ポートを備え、汎用性が高い",
+          "Anker Nano Power Bank (22.5W, Built-In USB-C Connector)の利点：ケーブル不要でスマートに持ち運べ、急速充電が可能"
         ]
       },
       {
         "name": "Fusoku モバイルバッテリー 5000mAh",
         "asin": "B0FSRKGJRW",
-        "priceComparison": "約1,498円とエレコムより安価で、ケーブル内蔵かつスタンド機能も搭載しています。",
+        "priceComparison": "対象商品と同等の価格帯ですが、ケーブル内蔵やスタンド機能など多機能で、コスパに優れています。",
         "featureComparison": [
-          "ケーブル2本内蔵で多機能",
-          "スマホスタンド機能付き"
+          "共通点：容量5000mAhで軽量コンパクトな点",
+          "相違点：Fusokuは2種類のケーブル内蔵とスマホスタンド機能を搭載している"
         ],
         "differentiators": [
-          "圧倒的なコストパフォーマンスと多機能性",
-          "ブランドよりも実用性と安さを重視する層向け"
+          "エレコム EC-C12WFの利点：国内メーカー製で、愛らしいキャラクターデザイン",
+          "Fusoku モバイルバッテリー 5000mAhの利点：ケーブルを持ち歩く必要がなく、スタンドとしても使える多機能性"
         ]
       },
       {
-        "name": "エレコム EC-C15BK",
-        "asin": "B0CZPT35N1",
-        "priceComparison": "約1,490円とさらに安価ですが、USB-C 1ポートのみのシンプルな構成です。",
+        "name": "CIO SMARTCOBY SLIM 20W",
+        "asin": "B0CHVXW6FV",
+        "priceComparison": "対象商品より高価ですが、12mmの極薄設計と20W急速充電、パススルー充電に対応しています。",
         "featureComparison": [
-          "USB-Cポート1つのみの潔い仕様",
-          "デザインはシンプルでビジネスライク"
+          "共通点：容量5000mAhで薄型・軽量なモバイルバッテリーである点",
+          "相違点：CIOは厚さ12mmとさらに薄く、最大20Wの急速充電とパススルー充電に対応"
         ],
         "differentiators": [
-          "必要最低限の機能で最安値を追求",
-          "デザイン性よりも実用性を取る層向け"
+          "エレコム EC-C12WFの利点：低価格でUSB-Aポートも搭載しており、旧来の機器にも対応しやすい",
+          "CIO SMARTCOBY SLIM 20Wの利点：極薄設計でスマホとの重ね持ちに最適であり、パススルー充電でバッテリーとスマホを同時に充電可能"
         ]
       }
     ],
@@ -105,17 +99,16 @@
         "容量5000mAhはヘビーユーザーには物足りない"
       ],
       "score": 75,
-      "scoreRationale": "[基本点: 70]\n[加点: +5] (コストパフォーマンス：1,890円という手頃な価格設定。)\n[加点: +5] (品質・デザイン：「しろちゃん」のデザイン性と、約110gという軽量性は大きな魅力。)\n[減点: -5] (性能・機能：15W出力は平凡で、PD急速充電非対応の可能性が高いため。)\n[合計: 75]"
+      "scoreRationale": "[基本点: 70] (固定)\n[加点: +5] (コストパフォーマンス: 手頃な価格設定)\n[加点: +5] (品質・デザイン: 「しろちゃん」のデザイン性と、約110gという軽量性)\n[減点: -5] (性能・機能: 15W出力で、PD急速充電非対応のため)\n[合計: 75]"
     },
     "technicalSpecs": {
       "capacity": "5000mAh",
       "input": "USB Type-C (5V/3A)",
       "output": "合計15W (USB Type-C: 5V/3A, USB-A: 5V/2.4A)",
       "dimensions": {
-        "height": "約104mm",
-        "width": "約65mm",
-        "depth": "約13.5mm",
-        "weight": "約110g"
+        "height": "104mm",
+        "width": "65mm",
+        "depth": "13.5mm"
       },
       "chargingTime": "約2時間40分 (5V/2.4A AC充電器使用時)",
       "connectivity": [
@@ -126,7 +119,20 @@
         "おまかせ充電対応",
         "PSE適合",
         "しろちゃんデザイン"
-      ]
-    }
+      ],
+      "weight": "110g"
+    },
+    "claims": [
+      {
+        "claim": "厚さ約13.5mm、重さ約110gのコンパクト設計で携帯性に優れる",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-amazon"
+        ],
+        "crossChecked": true,
+        "notes": "商品仕様に記載あり"
+      }
+    ]
   }
 }
