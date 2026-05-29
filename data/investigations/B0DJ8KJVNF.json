@@ -1,0 +1,149 @@
+{
+  "analysis": {
+    "productName": "エレコム WRC-W701-B",
+    "parentAsin": "B0DJ8KJVNF",
+    "productDescription": "最新規格Wi-Fi 7に対応し、最大2882+688Mbpsの高速通信を実現する無線LANルーターです。MLOやMulti-RUなどの技術により、低遅延で安定した接続環境を提供します。",
+    "productUsage": [
+      "家庭内での高速なインターネット接続",
+      "大容量ファイルのダウンロードやストリーミング",
+      "複数デバイスの同時接続時の安定通信"
+    ],
+    "positivePoints": [
+      "最新のWi-Fi 7規格に対応し、2882Mbps(5GHz)+688Mbps(2.4GHz)の高速通信が可能",
+      "MLO対応により、複数バンドを同時に利用して高速・低遅延通信を実現",
+      "Multi-RUとプリアンブルパンクチャリングにより、電波干渉を回避し通信の安定性が向上",
+      "Wi-Fi 7ルーターとしては非常に安価な7,000円台という高いコストパフォーマンス"
+    ],
+    "negativePoints": [
+      "有線LANポートの速度仕様（10Gbpsや2.5Gbps対応か）が明記されておらず、ボトルネックになる可能性がある",
+      "Wi-Fi 7の性能をフルに発揮するには端末側もWi-Fi 7に対応している必要がある"
+    ],
+    "useCases": [
+      "最新のWi-Fi 7対応スマートフォンやPCを利用する環境",
+      "家族全員で多数のデバイスを同時にインターネット接続する家庭",
+      "コストを抑えつつ最新規格のルーターを導入したいユーザー"
+    ],
+    "userStories": [],
+    "userImpression": "Wi-Fi 7対応ながら1万円を切る価格設定が最大の特徴であり、コストパフォーマンスに優れた最新規格のエントリーモデルとして評価できます。機能面でもMLOやMulti-RUといったWi-Fi 7ならではの技術をサポートし、安定した通信環境の構築が期待できます。",
+    "sources": [
+      {
+        "id": "src-amazon",
+        "name": "Amazon商品ページ",
+        "url": "https://www.amazon.co.jp/dp/B0DJ8KJVNF?tag=aegis-22&linkCode=ogi&th=1&psc=1",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-05-30",
+        "author": "Amazon",
+        "conflictOfInterest": "possible",
+        "notes": "商品の基本仕様（Wi-Fi 7対応、2882+688Mbps、IPv6対応）、MLO、Multi-RU、プリアンブルパンクチャリング対応などの機能情報を確認。価格が7,980円であることを確認。"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "Wi-Fi 7対応で2882+688Mbpsの通信速度を実現",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-amazon"
+        ],
+        "crossChecked": false,
+        "notes": "製品情報として明記"
+      },
+      {
+        "claim": "MLO対応により高速なデータ通信と低遅延を実現",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-amazon"
+        ],
+        "crossChecked": false,
+        "notes": "製品情報として明記"
+      }
+    ],
+    "lastInvestigated": "2026-05-30",
+    "competitiveAnalysis": [
+      {
+        "name": "HUAWEI WiFi BE3",
+        "asin": "B0GTNS4VZ3",
+        "priceComparison": "両者とも同等の通信速度（2882+688Mbps）を持つWi-Fi 7エントリー機ですが、対象商品の方がより価格が抑えられています。安価ですが基本的なWi-Fi 7機能は網羅されており懸念はありません。",
+        "featureComparison": [
+          "共通点：Wi-Fi 7対応、最大通信速度2882+688Mbps",
+          "相違点：HUAWEIは2.5GイーサネットポートやWi-Fi診断機能などを備えている点"
+        ],
+        "differentiators": [
+          "エレコム WRC-W701-Bの利点：国産ブランド（エレコム）のサポートやIPv6(IPoE)環境への親和性、価格の安さ",
+          "HUAWEI WiFi BE3の利点：2.5Gイーサネットポート搭載により有線側でも高速通信が可能な点"
+        ]
+      },
+      {
+        "name": "TP-Link Archer BE400",
+        "asin": "B0DRHSSLFS",
+        "priceComparison": "Archer BE400はより高速な通信（5764Mbps）と2.5Gポートを備えており、上位の性能を持ちます。対象商品の方が大幅に安価で初期費用を抑えられます。",
+        "featureComparison": [
+          "共通点：Wi-Fi 7対応",
+          "相違点：Archer BE400は最大通信速度が5764+688Mbpsと高く、2.5Gポートを搭載している点"
+        ],
+        "differentiators": [
+          "エレコム WRC-W701-Bの利点：初期投資を大幅に抑えてWi-Fi 7環境を構築できる圧倒的なコストパフォーマンス",
+          "TP-Link Archer BE400の利点：より高速なWi-Fi通信速度と2.5G有線ポートによる上位性能"
+        ]
+      },
+      {
+        "name": "TP-Link Archer BE450",
+        "asin": "B0DG1JKNTQ",
+        "priceComparison": "Archer BE450は10Gポートを備える上位モデルであり、価格帯が異なります。対象商品は機能は制限されますが、非常に導入しやすい価格帯です。",
+        "featureComparison": [
+          "共通点：Wi-Fi 7対応",
+          "相違点：Archer BE450は10Gポートを搭載し、通信速度（5764+1376Mbps）も高速である点"
+        ],
+        "differentiators": [
+          "エレコム WRC-W701-Bの利点：手軽に導入できるエントリー向け価格",
+          "TP-Link Archer BE450の利点：10G光回線の性能を活かせる10Gbps有線ポートと高い無線性能"
+        ]
+      },
+      {
+        "name": "NEC Aterm 7200D8BE",
+        "asin": "B0FCFF6SFP",
+        "priceComparison": "Atermは国内大手のハイエンド寄りの製品であり、対象商品はエントリークラスとしての位置づけです。対象商品はより安価でWi-Fi 7を体験できます。",
+        "featureComparison": [
+          "共通点：国内メーカー製のWi-Fi 7対応ルーター",
+          "相違点：Atermは上位性能と安定性に定評があり価格が高い"
+        ],
+        "differentiators": [
+          "エレコム WRC-W701-Bの利点：圧倒的な安さでWi-Fi 7を体験できる点",
+          "NEC Aterm 7200D8BEの利点：長年の実績による高い信頼性と上位の通信性能"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "コストを最小限に抑えてWi-Fi 7ルーターを導入したい方",
+        "国内メーカーの製品を安心して使いたい方",
+        "通信速度2882Mbpsクラスで十分な方"
+      ],
+      "pros": [
+        "Wi-Fi 7対応ながら7,000円台という非常に高いコストパフォーマンス",
+        "MLOやMulti-RUなどWi-Fi 7の主要機能に対応",
+        "IPv6(IPoE)接続に対応し、混雑に強い通信が可能"
+      ],
+      "cons": [
+        "有線LANポートが2.5G/10G非対応（または未記載）の可能性がある",
+        "上位のWi-Fi 7ルーターに比べると最大通信速度は控えめ"
+      ],
+      "score": 85,
+      "scoreRationale": "[基本点: 70]\n[加点: +15] (Wi-Fi 7対応ながら7000円台という圧倒的なコストパフォーマンス)\n[加点: +5] (MLOやMulti-RUなどのWi-Fi 7独自機能に対応し通信の安定性が向上)\n[減点: -5] (有線ポートの詳細スペックが不明であり上位機能に欠ける懸念)\n[合計: 85]"
+    },
+    "technicalSpecs": {
+      "model": "WRC-W701-B",
+      "wirelessStandard": "Wi-Fi 7 (IEEE 802.11be)",
+      "wirelessSpeed": "2882Mbps (5GHz) + 688Mbps (2.4GHz)",
+      "supportedFeatures": [
+        "MLO",
+        "Multi-RU",
+        "Preamble Puncturing",
+        "IPv6(IPoE)"
+      ],
+      "package": "エコパッケージ"
+    }
+  }
+}
