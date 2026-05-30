@@ -1,0 +1,140 @@
+{
+  "analysis": {
+    "productName": "VECELO 折りたたみ椅子 伸縮式",
+    "parentAsin": "B0D2HN5VJG",
+    "productDescription": "1秒で開閉可能な伸縮式の超軽量折りたたみ椅子。高さ7～45cmに調節可能で、アウトドアやインドアなど幅広いシーンで活躍します。",
+    "productUsage": ["キャンプ", "釣り", "BBQ", "登山", "お花見", "サイクリング", "ピクニック", "スポーツ観戦", "花火大会", "防災グッズ"],
+    "positivePoints": ["約1.1kgと軽量で持ち運びが容易", "耐荷重150kgの高耐久性", "高さが7～45cmに無段階で調節可能", "収納時は厚さ7cmと非常にコンパクト"],
+    "negativePoints": ["座面がプラスチック製のため、長時間座るとお尻が痛くなる可能性がある", "地面が平らでない場所では安定性が低下する恐れがある"],
+    "useCases": ["キャンプやBBQでの補助椅子として", "釣りやスポーツ観戦での休憩用として", "テーマパークでの行列待ちの際に", "防災グッズとして非常時の備えに"],
+    "userStories": [],
+    "userImpression": "軽量でコンパクトながら耐荷重が高く、高さ調節機能が便利という意見が多く見られます。一方で、座面の硬さや不安定な地面での使用に対する懸念もあるようです。",
+    "sources": [
+      {
+        "id": "src-amazon-features",
+        "name": "Amazon商品ページ",
+        "url": "https://www.amazon.co.jp/dp/B0D2HN5VJG",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-05-30",
+        "author": "VECELO",
+        "conflictOfInterest": "possible",
+        "notes": "商品の特徴、仕様、サイズ、重量などの情報を取得"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "耐荷重150kgで安定感がある",
+        "category": "durability",
+        "confidence": "high",
+        "supportingSourceIds": ["src-amazon-features"],
+        "crossChecked": false,
+        "notes": "公式情報として耐荷重150kgと記載されている"
+      },
+      {
+        "claim": "高さが7～45cmに自由に調節可能",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": ["src-amazon-features"],
+        "crossChecked": false,
+        "notes": "伸縮式で高さを無段階に近い形で調整できる"
+      }
+    ],
+    "lastInvestigated": "2026-05-30",
+    "competitiveAnalysis": [
+      {
+        "name": "Ecolam 折りたたみ椅子",
+        "asin": "B0CL416X2R",
+        "priceComparison": "対象商品よりやや安い。基本的な伸縮機能は同じだが、耐荷重に違いがある可能性がある。",
+        "featureComparison": [
+          "共通点：プラスチック製の伸縮式折りたたみ椅子で、軽量・コンパクトであること",
+          "相違点：対象商品は耐荷重150kgを明記しているが、Ecolamの正確な耐荷重は要確認"
+        ],
+        "differentiators": [
+          "VECELO 折りたたみ椅子の利点：耐荷重150kgの明記と安定感",
+          "Ecolam 折りたたみ椅子の利点：わずかに価格が安い可能性がある"
+        ]
+      },
+      {
+        "name": "VECELO 折りたたみ椅子 伸縮式 プラスチック",
+        "asin": "B0D2H2WSTF",
+        "priceComparison": "対象商品とほぼ同等かやや高い価格設定。",
+        "featureComparison": [
+          "共通点：同ブランドの伸縮式折りたたみ椅子で、基本スペック（耐荷重150kg、高さ調節など）は同じ",
+          "相違点：カラーやデザインの違いと思われる"
+        ],
+        "differentiators": [
+          "VECELO 折りたたみ椅子（ブルー）の利点：価格がわずかに安い",
+          "VECELO 折りたたみ椅子（別カラー）の利点：好みのカラーを選べる"
+        ]
+      },
+      {
+        "name": "Faoeny 折りたたみ椅子",
+        "asin": "B0FCFF928W",
+        "priceComparison": "対象商品より価格が高い。耐荷重180kgを謳っており、より頑丈な作りになっている。",
+        "featureComparison": [
+          "共通点：伸縮式の折りたたみ椅子で、様々なシーンで利用できること",
+          "相違点：Faoenyは耐荷重180kgで日本特許取得を謳っている点"
+        ],
+        "differentiators": [
+          "VECELO 折りたたみ椅子の利点：軽量さ（1.1kg）と価格の安さ",
+          "Faoeny 折りたたみ椅子の利点：耐荷重180kgの頑丈さと特許取得の信頼性"
+        ]
+      },
+      {
+        "name": "Sunfra 折りたたみ椅子",
+        "asin": "B0FNKP7LF5",
+        "priceComparison": "対象商品と同程度の価格。",
+        "featureComparison": [
+          "共通点：手提げやショルダーに対応し、持ち運びに便利な伸縮式椅子",
+          "相違点：Sunfraは耐荷重250kgを謳っている"
+        ],
+        "differentiators": [
+          "VECELO 折りたたみ椅子の利点：ブルーのカラーと1.1kgという軽さ",
+          "Sunfra 折りたたみ椅子の利点：公称の耐荷重が250kgと非常に高い点"
+        ]
+      },
+      {
+        "name": "GD XIUPLS 折りたたみ椅子",
+        "asin": "B0FS1WNM2B",
+        "priceComparison": "対象商品と同程度の価格。",
+        "featureComparison": [
+          "共通点：アウトドアやキャンプ向けの伸縮式スツール",
+          "相違点：並行輸入品であり、詳細なスペック表記が異なる可能性がある"
+        ],
+        "differentiators": [
+          "VECELO 折りたたみ椅子の利点：国内正規販売と思われる点",
+          "GD XIUPLS 折りたたみ椅子の利点：特になし（情報不足）"
+        ]
+      },
+      {
+        "name": "SwiftReach 折りたたみ椅子",
+        "asin": "B0FRZZLTGM",
+        "priceComparison": "対象商品より安い。",
+        "featureComparison": [
+          "共通点：伸縮式で軽量コンパクトな点",
+          "相違点：SwiftReachは耐荷重180kgを謳っている"
+        ],
+        "differentiators": [
+          "VECELO 折りたたみ椅子の利点：ブルーカラー",
+          "SwiftReach 折りたたみ椅子の利点：価格の安さと耐荷重180kg"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": ["キャンプやフェスなどのアウトドアによく行く人", "行列に並ぶことが多い人", "コンパクトな予備の椅子が欲しい人"],
+      "pros": ["軽量で持ち運びしやすい", "コンパクトに収納できる", "高さ調節が可能", "耐荷重150kgと丈夫"],
+      "cons": ["長時間座ると疲れる", "不整地では不安定になる可能性がある"],
+      "score": 75,
+      "scoreRationale": "[基本点: 70]\n[加点: +5] 軽量（1.1kg）かつコンパクト（厚さ7cm）で携行性に優れる\n[加点: +5] 耐荷重150kgと丈夫で安心感がある\n[加点: +5] 1,459円という手頃な価格でコストパフォーマンスが良い\n[減点: -10] 競合他社に耐荷重180kgや250kgで同価格帯・安価な製品が多く見られ、相対的な競争力がやや低い\n[合計: 75]"
+    },
+    "technicalSpecs": {
+      "dimensions": { "height": "70mm～450mm", "width": "250mm", "depth": "250mm" },
+      "weight": "1.1kg",
+      "capacity": "耐荷重: 150kg",
+      "material": "高品質プラスチック",
+      "origin": "不明",
+      "other": ["収納時サイズ: 直径25cm×高さ7cm", "高さ調節: 7～45cm"]
+    }
+  }
+}
