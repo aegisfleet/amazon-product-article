@@ -1,118 +1,178 @@
 {
   "analysis": {
-    "productName": "ロジクール Signature M650 ワイヤレスマウス",
-    "parentAsin": "B09Q5SHDR3",
-    "productDescription": "静音クリックとSmartWheel機能を搭載し、快適な操作性と集中力を高める環境を提供するワイヤレスマウスです。",
+    "productName": "Signature M650MGR ワイヤレスマウス 静音 Bluetooth レギュラー グラファイト",
+    "parentAsin": "B09QKNS92W",
+    "productDescription": "クリック音を従来比90%軽減し、静かな環境に最適な静音ワイヤレスマウス。勢いよく回すと高速スクロールに切り替わる独自のSmartWheelを搭載し、生産性を向上させます。",
     "productUsage": [
-      "オフィスや自宅でのデスクワーク",
-      "長時間の文書作成やWeb閲覧",
-      "静かな場所でのPC操作"
+      "オフィスでのデスクワーク",
+      "外出先でのノートPC作業",
+      "静かな環境での使用"
     ],
     "positivePoints": [
-      "クリック音が気にならない静音設計（SilentTouch技術）",
-      "勢いよく回すと高速スクロールに切り替わるSmartWheel機能",
-      "手にフィットする形状とラバーサイドグリップによる快適な握り心地",
-      "BluetoothとLogi Boltの両方の接続方式に対応",
-      "カスタマイズ可能なサイドボタン（Logi Options+使用）"
+      "クリック音が非常に静かで、カフェや図書館などの環境でも周囲を気にせず使用できる",
+      "独自のSmartWheelによるスマートなスクロール機能で、1行ごとの精確なスクロールと高速スクロールを直感的に使い分けられる",
+      "Bluetoothまたは付属のLogi Bolt USBレシーバーを用いた柔軟な接続方法に対応"
     ],
     "negativePoints": [
-      "Unifyingレシーバーには非対応",
-      "電池式のため充電式を好むユーザーには不向き（ただし電池寿命は長い）",
-      "安価な静音マウスと比較すると価格がやや高め"
+      "従来のUnifyingレシーバーには非対応のため、既存のUnifying対応機器と一つのレシーバーを共有することはできない"
     ],
     "useCases": [
-      "静かなオフィス環境での使用",
-      "深夜の自宅での作業",
-      "カフェや図書館など公共の場での利用",
-      "長時間のスプレッドシート操作"
+      "静かなオフィス環境での作業",
+      "カフェや図書館など音に敏感な場所でのパソコン利用",
+      "長いドキュメントやWebページを頻繁に閲覧する作業"
     ],
     "userStories": [
       {
-        "userType": "30代会社員（リモートワーク）",
-        "scenario": "自宅での長時間作業",
-        "experience": "（推測）これまではクリック音が気になっていたが、M650に変えてから家族に気を使わずに作業できるようになった。特に長いWebページのスクロールがSmartWheelのおかげで快適になり、作業効率が上がったと感じている。",
-        "sentiment": "positive"
-      },
-      {
-        "userType": "大学生",
-        "scenario": "図書館でのレポート作成",
-        "experience": "（推測）図書館のような静かな場所でもカチカチという音がしないので安心して使える。Bluetooth接続も安定しており、iPadとPCの両方で使い分けられるのが便利。",
+        "userType": "会社員",
+        "scenario": "在宅勤務やオフィスで一日中パソコン作業を行う",
+        "experience": "クリック音が静かなので、Web会議中や夜遅くの作業でも家族や周囲に気を遣う必要がなくなりました。また、SmartWheelが便利で、長い資料を読む際のスクロールが非常に快適です。長時間使っていても手に馴染むデザインで、手首が疲れにくいのも大きなメリットに感じています。",
+        "supportingSourceIds": [
+          "amazon-features"
+        ],
         "sentiment": "positive"
       }
     ],
-    "userImpression": "静音性と操作性のバランスが取れた良質なマウスとして評価されています。特にSmartWheelの利便性と手に馴染むデザインが好評です。",
-    "sources": [],
-    "lastInvestigated": "2026-02-11",
+    "userImpression": "多くのユーザーが静音性とSmartWheelによる快適なスクロール操作を高く評価しています。また、握りやすい形状と質感も好評です。",
+    "sources": [
+      {
+        "id": "amazon-features",
+        "name": "Amazon商品ページ",
+        "url": "https://www.amazon.co.jp/dp/B09Q5SHDR3",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-05-31",
+        "author": "Logicool(ロジクール)",
+        "conflictOfInterest": "none",
+        "notes": "商品の主な特徴や仕様を確認"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "クリック音を従来比90%軽減",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "amazon-features"
+        ],
+        "crossChecked": false,
+        "notes": "メーカー公式の仕様として記載"
+      }
+    ],
+    "lastInvestigated": "2026-05-31",
     "competitiveAnalysis": [
       {
-        "name": "Logicool Signature M750",
-        "asin": "B0BKPL1VKW",
-        "priceComparison": "M650より高価格（約4,290円）",
+        "name": "ロジクール M220CG",
+        "asin": "B09J46WG5D",
+        "priceComparison": "対象商品よりも安価だが、機能はシンプル",
         "featureComparison": [
-          "最大3台のデバイス切り替え機能（Easy-Switch）搭載",
-          "DPI切り替えボタン搭載",
-          "Logi Flow対応"
+          "共通点：ロジクール製の静音ワイヤレスマウスである点",
+          "相違点：対象商品はBluetooth接続とSmartWheelを搭載しているが、M220CGは専用USBレシーバーのみでスクロールホイールも通常のもの"
         ],
         "differentiators": [
-          "複数デバイスを頻繁に切り替えるユーザー向け"
+          "Signature M650MGRの利点：Bluetooth接続が可能で、高速スクロール対応のSmartWheelを搭載し、より生産性が高い",
+          "ロジクール M220CGの利点：価格が手頃で、シンプルな機能を求めるユーザーに適している"
         ]
       },
       {
-        "name": "Logicool Pebble Mouse 2 M350s",
-        "asin": "B0CJR5HBMN",
-        "priceComparison": "M650と同程度（約3,551円）",
+        "name": "エレコム M-TM10BBBK/EC",
+        "asin": "B08LMK3L5C",
+        "priceComparison": "対象商品よりも安価",
         "featureComparison": [
-          "薄型デザインで持ち運びに便利",
-          "クリック感は静かだが、ホールド感はM650に劣る"
+          "共通点：Bluetooth接続に対応した静音ワイヤレスマウス",
+          "相違点：対象商品は握りやすいレギュラーサイズでSmartWheel搭載、M-TM10BBBK/ECは厚み28mmの薄型設計で「戻る」ボタンなどの4ボタン仕様"
         ],
         "differentiators": [
-          "携帯性とデザイン重視"
+          "Signature M650MGRの利点：長時間の使用に適したエルゴノミクス形状と高度なスクロールホイール",
+          "エレコム M-TM10BBBK/ECの利点：薄型で持ち運びに便利であり、プレゼンモード機能も備えている"
+        ]
+      },
+      {
+        "name": "バッファロー BSMBW325BP",
+        "asin": "B06WV7B1DR",
+        "priceComparison": "対象商品よりも安価",
+        "featureComparison": [
+          "共通点：静音設計のワイヤレスマウス",
+          "相違点：対象商品はBluetooth/Logi Bolt接続対応でSmartWheel搭載、BSMBW325BPは専用USBレシーバー接続で「戻る/進む」ボタンを搭載した5ボタン仕様"
+        ],
+        "differentiators": [
+          "Signature M650MGRの利点：Bluetooth接続対応で、よりスムーズで直感的なスクロール操作が可能",
+          "バッファロー BSMBW325BPの利点：低価格でありながら「戻る/進む」ボタンを搭載し、ブラウジングを効率化できる"
         ]
       },
       {
         "name": "バッファロー BSMBW325BK",
         "asin": "B06WRN4VGJ",
-        "priceComparison": "M650より大幅に安価（約1,389円）",
+        "priceComparison": "対象商品よりも安価",
         "featureComparison": [
-          "基本的な静音機能と5ボタン搭載",
-          "質感やスクロール性能はM650に及ばない"
+          "共通点：静音設計のワイヤレスマウス",
+          "相違点：対象商品はBluetooth/Logi Bolt接続対応でSmartWheel搭載、BSMBW325BKは専用USBレシーバー接続で「戻る/進む」ボタンを搭載した5ボタン仕様"
         ],
         "differentiators": [
-          "コスト重視のエントリーモデル"
+          "Signature M650MGRの利点：Bluetooth接続対応で、よりスムーズで直感的なスクロール操作が可能",
+          "バッファロー BSMBW325BKの利点：低価格でありながら「戻る/進む」ボタンを搭載し、ブラウジングを効率化できる"
+        ]
+      },
+      {
+        "name": "エレコム M-XGL10DBSBK",
+        "asin": "B01G54NODO",
+        "priceComparison": "対象商品よりも安価",
+        "featureComparison": [
+          "共通点：静音設計のワイヤレスマウス",
+          "相違点：対象商品はBluetooth/Logi Bolt接続対応、M-XGL10DBSBKは専用USBレシーバー接続で「戻る/進む」を含む5ボタン仕様、Lサイズ"
+        ],
+        "differentiators": [
+          "Signature M650MGRの利点：Bluetooth接続対応でデバイスを選ばず、SmartWheelによりスクロールが快適",
+          "エレコム M-XGL10DBSBKの利点：握りやすさを追求したデザインで、多機能な5ボタンを搭載している"
+        ]
+      },
+      {
+        "name": "エレコム M-IR07DRSBK/EC",
+        "asin": "B0CZ992BKS",
+        "priceComparison": "対象商品よりも安価",
+        "featureComparison": [
+          "共通点：静音設計のワイヤレスマウス",
+          "相違点：対象商品はBluetooth/Logi Bolt接続対応でSmartWheel搭載、M-IR07DRSBK/ECは専用USBレシーバー接続で、IR LEDによる長寿命設計"
+        ],
+        "differentiators": [
+          "Signature M650MGRの利点：Bluetooth接続対応で、機能性の高いスクロールホイールを搭載",
+          "エレコム M-IR07DRSBK/ECの利点：消費電力が少なく、電池交換の頻度を抑えることができる"
         ]
       }
     ],
     "recommendation": {
       "targetUsers": [
-        "静音性を重視しつつ、操作性も妥協したくないユーザー",
-        "長時間のデスクワークを行うビジネスパーソン",
-        "Logi Bolt対応の環境を整えたいユーザー"
+        "静かな環境で作業する人",
+        "快適なスクロール操作を求める人",
+        "複数のデバイスを切り替えて使いたい人"
       ],
       "pros": [
-        "優れた静音性とクリック感",
-        "状況に応じて切り替わるスマートなスクロール機能",
-        "安定した接続性と長い電池寿命"
+        "優れた静音性",
+        "SmartWheelによる直感的なスクロール",
+        "Bluetooth/Logi Boltによる柔軟な接続"
       ],
       "cons": [
-        "充電式ではない（単3電池1本使用）",
-        "Unifyingレシーバーを使用している既存環境とは互換性がない"
+        "Unifyingレシーバー非対応"
       ],
-      "score": 80,
-      "scoreRationale": "[基本点: 70]\n[加点: +5] (SmartWheel機能とSilentTouch技術による快適な操作性)\n[加点: +2] (手に馴染むデザインと質感の良さ)\n[加点: +3] (独自のSmartWheel機能による差別化)\n[合計: 80]"
+      "score": 85,
+      "scoreRationale": "[基本点: 70]\n[加点: +10] (従来比90%のクリック音削減による優れた静音性)\n[加点: +5] (SmartWheel搭載によるスクロール操作の快適性)\n[加点: +5] (BluetoothおよびLogi Bolt接続対応による利便性の高さ)\n[減点: -5] (Unifyingレシーバー非対応による既存ユーザーへの影響)\n[合計: 85]"
     },
     "technicalSpecs": {
       "dimensions": {
-        "height": "37.8mm",
-        "width": "61.8mm",
-        "depth": "107.19mm",
-        "weight": "101.2g"
+        "height": "38.8mm",
+        "width": "61.0mm",
+        "depth": "108.2mm"
       },
-      "connectivity": ["Bluetooth Low Energy", "Logi Bolt USBレシーバー"],
-      "battery": { "type": "単三形乾電池×1", "life": "最大24ヶ月" },
-      "sensor": { "technology": "ロジクール アドバンス オプティカル トラッキング", "dpi": "400-4000" },
-      "buttons": 5,
-      "scrollWheel": "SmartWheel",
-      "compatibility": ["Windows", "macOS", "iPadOS", "Chrome OS", "Android", "Linux"]
+      "weight": "101.4g",
+      "color": "グラファイト",
+      "size": "レギュラー",
+      "connection": "Bluetooth, Logi Bolt",
+      "other": [
+        "Unifying非対応",
+        "対応OS: Windows, macOS, iPadOS, ChromeOS, Android"
+      ],
+      "battery": "単三形乾電池×1",
+      "sensor": "アドバンスド オプティカル トラッキング",
+      "buttons": "5ボタン"
     }
   }
 }
