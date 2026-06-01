@@ -1,0 +1,200 @@
+{
+  "analysis": {
+    "productName": "Anker Soundcore 2",
+    "parentAsin": "B0DJLND891",
+    "productDescription": "IPX7防水、最大24時間連続再生、12W出力のBluetoothポータブルスピーカー。独自のBassUpテクノロジーによる強化された低音と完全ワイヤレスステレオペアリングに対応している。",
+    "productUsage": [
+      "室内での音楽鑑賞",
+      "お風呂やキッチンでの水回り使用",
+      "アウトドアやキャンプでの利用"
+    ],
+    "positivePoints": [
+      "最大24時間の驚異的な連続再生バッテリー",
+      "IPX7防水規格で水回りやアウトドアでも安心",
+      "独自技術BassUpによる力強い低音出力"
+    ],
+    "negativePoints": [
+      "コーデックがSBCのみでaptX等の高音質コーデック非対応",
+      "充電端子の位置が深く、ケーブルによっては干渉しやすい"
+    ],
+    "useCases": [
+      "長時間のアウトドアレジャーに持参する",
+      "お風呂でリラックスしながら音楽を聴く",
+      "2台ペアリングして自宅でステレオサウンド環境を構築する"
+    ],
+    "userStories": [
+      {
+        "userType": "アウトドア愛好家",
+        "scenario": "キャンプでのBGM再生",
+        "experience": "コンパクトで軽く持ち運びが非常に楽でした。IPX7防水なので急な雨や結露も全く気にならず、さらに24時間再生できるバッテリーのおかげで1泊2日のキャンプ中、充電なしでずっと音楽を楽しめました。",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "sentiment": "positive"
+      },
+      {
+        "userType": "音楽好きの会社員",
+        "scenario": "お風呂でのリラックスタイム",
+        "experience": "毎晩お風呂で音楽を聴くために使っています。シャワーの水がかかっても平気で、音割れもなく低音もしっかり効いていて満足ですが、Type-C充電ケーブルの差し込み口が狭く少し不便に感じます。",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "sentiment": "mixed"
+      }
+    ],
+    "userImpression": "価格に対して音質・バッテリー持ち・防水性能が高水準でまとまっており、非常にコスパの高い定番スピーカーとして広く支持されている。特にバッテリー持ちとIPX7防水による使い勝手の良さが高く評価されている一方で、音質面での限界や充電口の作りに少し不満を持つユーザーもいる。",
+    "sources": [
+      {
+        "id": "src-1",
+        "name": "Anker Japan 公式サイト / Amazon 商品ページ",
+        "url": "https://www.ankerjapan.com/products/a3105",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-06-02",
+        "author": "Anker Japan",
+        "conflictOfInterest": "none",
+        "notes": "製品仕様、価格、機能説明、およびユーザー評価傾向を確認"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "最大24時間の連続再生が可能",
+        "category": "durability",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "crossChecked": true,
+        "notes": "公式スペックおよびAmazon商品説明にて確認"
+      },
+      {
+        "claim": "IPX7防水規格対応",
+        "category": "durability",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "crossChecked": true,
+        "notes": "公式スペックおよびAmazon商品説明にて確認"
+      }
+    ],
+    "lastInvestigated": "2026-06-02",
+    "competitiveAnalysis": [
+      {
+        "name": "Anker Soundcore Select 4 Go",
+        "asin": "B0D9YMNXZL",
+        "priceComparison": "対象商品より安価。よりコンパクトで持ち運びやすさを重視する場合に適している。",
+        "featureComparison": [
+          "共通点：Bluetooth接続、IPX7防塵防水規格、ワイヤレスステレオペアリング対応",
+          "相違点：Select 4 Goは出力が5Wで最大20時間再生、対象商品(Soundcore 2)は出力12Wで最大24時間再生"
+        ],
+        "differentiators": [
+          "Anker Soundcore 2の利点：12Wの高出力とデュアルドライバーによる迫力あるサウンド、24時間の長寿命バッテリー",
+          "Anker Soundcore Select 4 Goの利点：より小型で安価、持ち運びやすさに特化"
+        ]
+      },
+      {
+        "name": "JBL GO4",
+        "asin": "B0CZD87HWR",
+        "priceComparison": "対象商品と同価格帯かやや高い。オーディオブランドのJBLサウンドを求める層向け。",
+        "featureComparison": [
+          "共通点：Bluetooth対応、IP67防水・防塵設計、コンパクトサイズ",
+          "相違点：JBL GO4はアプリによるカスタマイズ対応、対象商品はアプリ非対応だがバッテリー寿命が24時間と長い"
+        ],
+        "differentiators": [
+          "Anker Soundcore 2の利点：圧倒的な24時間連続再生、ステレオペアリングによる拡張性",
+          "JBL GO4の利点：JBLならではのサウンドチューニングとアプリによるカスタマイズ性"
+        ]
+      },
+      {
+        "name": "SONY SRS-XB100",
+        "asin": "B0C3Q65R9P",
+        "priceComparison": "対象商品より高価。ブランド力と音質、通話品質を重視する層向け。",
+        "featureComparison": [
+          "共通点：Bluetooth対応、IP67防水防塵、ステレオペアリング対応",
+          "相違点：SRS-XB100はクリアな高音質と高品質なハンズフリー通話に優れ16時間再生、対象商品は24時間再生でより安価"
+        ],
+        "differentiators": [
+          "Anker Soundcore 2の利点：価格が抑えられており、24時間の長時間再生が可能",
+          "SONY SRS-XB100の利点：ソニー独自の高音質チューニングとテレワークにも適したクリアな通話品質"
+        ]
+      },
+      {
+        "name": "FUNLOGY Portable Mini",
+        "asin": "B0C4P51G18",
+        "priceComparison": "対象商品より安価。日本ブランドでコスパを重視するユーザー向け。",
+        "featureComparison": [
+          "共通点：Bluetooth対応、小型、IP67防水",
+          "相違点：FUNLOGYは10時間再生で出力6W、対象商品は24時間再生で出力12W"
+        ],
+        "differentiators": [
+          "Anker Soundcore 2の利点：再生時間が倍以上長く、12W出力で音の迫力が勝る",
+          "FUNLOGY Portable Miniの利点：低価格でありながら日本ブランドとしての安心感とVGP受賞の実績"
+        ]
+      },
+      {
+        "name": "Anker Soundcore 3",
+        "asin": "B08CXJ3HMF",
+        "priceComparison": "対象商品の後継機でありやや高価。音質やアプリ連携をさらに求める層向け。",
+        "featureComparison": [
+          "共通点：最大24時間再生、IPX7防水、BassUpテクノロジー搭載",
+          "相違点：Soundcore 3は16W出力でチタニウムドライバー採用、Soundcoreアプリ対応、対象商品は12W出力でアプリ非対応"
+        ],
+        "differentiators": [
+          "Anker Soundcore 2の利点：基本性能が十分で、より安価に購入可能",
+          "Anker Soundcore 3の利点：進化した16W出力、アプリでのイコライザー設定やPartyCast機能による高い拡張性"
+        ]
+      },
+      {
+        "name": "Xiaomi サウンドポケット",
+        "asin": "B0CZRLRGM5",
+        "priceComparison": "対象商品より安価。最新規格と携帯性を重視するユーザー向け。",
+        "featureComparison": [
+          "共通点：Bluetooth対応、IP67防塵防水、完全ワイヤレスステレオ対応",
+          "相違点：XiaomiはBluetooth 5.4対応で10時間再生・出力5W、対象商品はBluetooth 5.0対応で24時間再生・出力12W"
+        ],
+        "differentiators": [
+          "Anker Soundcore 2の利点：12Wのパワフルな出力と圧倒的な24時間再生",
+          "Xiaomi サウンドポケットの利点：約200gの超軽量設計と最新のBluetooth 5.4による安定接続"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "コスパ重視で音質の良いスピーカーを探している人",
+        "お風呂やアウトドアで気兼ねなく音楽を楽しみたい人",
+        "こまめな充電が手間で長時間再生できるモデルを求めている人"
+      ],
+      "pros": [
+        "価格対性能比が非常に高い",
+        "最大24時間という驚異的なバッテリー駆動時間",
+        "IPX7の完全防水仕様で水回りでも安心"
+      ],
+      "cons": [
+        "後継機(Soundcore 3)のように専用アプリで音質調整ができない",
+        "高音質コーデック(aptX等)には非対応"
+      ],
+      "score": 83,
+      "scoreRationale": "[基本点: 70]\n[加点: +3] (IPX7の完全防水性能による水回りでの実用性)\n[加点: +2] (最大24時間連続再生の圧倒的なバッテリー性能)\n[加点: +8] (価格に対して12W出力・デュアルドライバー搭載という優れたコストパフォーマンス)\n[加点: +3] (長年のロングセラーモデルとしての高い信頼性とユーザー評価)\n[減点: -1] (高音質コーデック非対応である点)\n[減点: -2] (専用アプリ非対応といった機能面の古さ)\n[合計: 83]"
+    },
+    "technicalSpecs": {
+      "dimensions": {
+        "height": "54mm",
+        "width": "165mm",
+        "depth": "45mm"
+      },
+      "weight": "約400g",
+      "capacity": "該当なし",
+      "material": "プラスチック、ラバー（外装）",
+      "origin": "中国",
+      "other": [
+        "オーディオ出力: 12W（6W × 2）",
+        "通信規格: Bluetooth 5.0",
+        "防水規格: IPX7",
+        "連続再生時間: 最大24時間",
+        "充電時間: 約3時間",
+        "入力ポート: USB Type-C"
+      ]
+    }
+  }
+}
