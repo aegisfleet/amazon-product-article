@@ -1,0 +1,131 @@
+{
+  "analysis": {
+    "productName": "Narwal Flow Performance ロボット掃除機",
+    "parentAsin": "B0FX49FSVC",
+    "productDescription": "日本初のクローラーモップを搭載し、リアルタイムでのモップ洗浄と20,000Paの強力吸引を両立した水拭き両用ロボット掃除機。",
+    "productUsage": [
+      "フローリングやカーペットの吸引・水拭き掃除",
+      "障害物が多い室内での自動清掃"
+    ],
+    "positivePoints": [
+      "日本初のクローラーモップと45℃温水・1.02kgの圧力による高い水拭き性能",
+      "20,000Paの強力吸引と、髪の毛が絡まらないデュアルフロー絡まり防止システム",
+      "デュアルRGBカメラによる150種類以上の物体認識・障害物回避",
+      "クローラーモップが壁際5mmまで接近するEdgeReach機能",
+      "最大4cmまでの段差を乗り越えられる高い走破性"
+    ],
+    "negativePoints": [
+      "価格が15万円台と非常に高価"
+    ],
+    "useCases": [
+      "ペットや子供がいて床が汚れやすい家庭での水拭き掃除",
+      "カーペットとフローリングが混在する家での掃除",
+      "家具やケーブル類が多く、障害物回避機能が必要な部屋での清掃"
+    ],
+    "userStories": [],
+    "userImpression": "日本初のクローラーモップによる高い水拭き性能や、20,000Paという超強力な吸引力、高度な障害物回避を備えたハイエンドモデル。価格は高いものの、最新機能を求めるユーザーにとって魅力的な製品。",
+    "sources": [
+      {
+        "id": "src-1",
+        "name": "Amazon商品ページ",
+        "url": "https://www.amazon.co.jp/dp/B0FPXFBJQ7",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-06-01",
+        "author": "NARWAL",
+        "conflictOfInterest": "possible",
+        "notes": "商品の基本情報、クローラーモップ、20,000Paの吸引力、150種類の障害物回避、4cmの段差乗り越えなどを確認"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "日本初のクローラーモップを採用し、面で水拭きを行う",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "crossChecked": false,
+        "notes": "Amazonの商品説明で確認"
+      },
+      {
+        "claim": "20,000Paの強力な吸引力と絡まり防止システムを搭載",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "crossChecked": false,
+        "notes": "Amazonの商品説明で確認"
+      }
+    ],
+    "lastInvestigated": "2026-06-01",
+    "competitiveAnalysis": [
+      {
+        "name": "Anker Eufy X10 Pro Omni",
+        "asin": "B0CPHYJRRP",
+        "priceComparison": "対象商品（約15万円）よりも圧倒的に安価（約5.5万円）",
+        "featureComparison": [
+          "共通点：水拭き対応、自動ゴミ収集、モップ自動洗浄・乾燥、障害物回避機能",
+          "相違点：対象商品は20,000Paの吸引力とクローラーモップを搭載、競合商品は8,000Paで加圧式デュアル回転モップを採用"
+        ],
+        "differentiators": [
+          "Narwal Flow Performanceの利点：圧倒的な吸引力（20,000Pa）と、クローラーモップによる強力な水拭き性能",
+          "Anker Eufy X10 Pro Omniの利点：約5.5万円という非常に高いコストパフォーマンス"
+        ]
+      },
+      {
+        "name": "ECOVACS T50 OMNI",
+        "asin": "B0FSL5MRPG",
+        "priceComparison": "対象商品よりも安価（約5.3万円）",
+        "featureComparison": [
+          "共通点：強力な吸引力、水拭き対応、モップの自動洗浄・乾燥、毛が絡みにくい構造",
+          "相違点：対象商品は20,000Pa、競合商品は15,000Pa。対象商品はクローラーモップ、競合商品は回転式デュアルモップ。対象商品は段差4cmまで対応"
+        ],
+        "differentiators": [
+          "Narwal Flow Performanceの利点：より高い吸引力と、4cmという高い段差走破性、クローラーモップの面での拭き掃除",
+          "ECOVACS T50 OMNIの利点：本体の高さが8.1cmと薄型で、低い家具の下にも入りやすい点。またコストパフォーマンスに優れる"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "最新のロボット掃除機技術（クローラーモップなど）を体験したい人",
+        "高い吸引力（20,000Pa）を求める人",
+        "段差が多い家や、毛足の長いカーペットを敷いている人"
+      ],
+      "pros": [
+        "20,000Paの超強力吸引",
+        "クローラーモップによる面での高い水拭き性能",
+        "最大4cmまでの高い段差走破能力"
+      ],
+      "cons": [
+        "約15万円と非常に高価格"
+      ],
+      "score": 75,
+      "scoreRationale": "[基本点: 70]\n[加点: +5] (20,000Paの圧倒的な吸引力)\n[加点: +5] (クローラーモップの革新的な性能)\n[加点: +3] (4cmの高い段差走破能力)\n[加点: +2] (高度な障害物回避機能)\n[減点: -10] (約15万円とハイエンド機の中でも高価格でコスパが悪い)\n[合計: 75]"
+    },
+    "technicalSpecs": {
+      "dimensions": {
+        "height": "95mm",
+        "width": "未記載",
+        "depth": "未記載"
+      },
+      "weight": "未記載",
+      "capacity": "未記載",
+      "material": "未記載",
+      "origin": "未記載",
+      "other": [
+        "吸引力: 20,000Pa",
+        "段差乗り越え: 最大4cm",
+        "モップ洗浄温度: 45℃",
+        "モップ圧力: 1.02kg",
+        "壁際清掃距離: 5mm",
+        "障害物認識: 150種類以上 (デュアルRGBカメラ搭載)",
+        "カラー: ホワイト",
+        "モデル番号: YJCC026A",
+        "発売日: 2025-11-07"
+      ]
+    }
+  }
+}
