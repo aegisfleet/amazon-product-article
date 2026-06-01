@@ -1,133 +1,210 @@
 {
   "analysis": {
-    "productName": "オーディオテクニカ ATH-CKS550XiS CG イヤホン",
-    "parentAsin": "B07CNHXB8V",
-    "productDescription": "スマートフォンの操作や通話に対応するマイク付きリモートコントローラーを搭載した、「SOLID BASS」シリーズの有線カナル型イヤホンです。独自のφ9.8mmドライバーにより、コンパクトなボディながらキレのある重低音とハイレゾ音源の再生を実現しています。",
+    "productName": "ATH-CKS550XiS",
+    "parentAsin": "B0DG27MQ1L",
+    "productDescription": "ハイレゾ音源対応で、キレのある重低音を楽しめる有線カナル型イヤホンです。スマートフォンでの通話や操作に対応するマイク付きリモコンを搭載しています。",
     "productUsage": [
-      "スマートフォンでの音楽鑑賞（特にEDM、ロック等の低音重視ジャンル）",
-      "通勤・通学中のリスニング",
-      "動画コンテンツの視聴",
-      "ハンズフリー通話"
+      "スマートフォンでの音楽鑑賞",
+      "Web会議や通話",
+      "動画視聴"
     ],
     "positivePoints": [
-      "独自のφ9.8mm SOLID BASS HDドライバーによる、価格を超えた力強い重低音再生",
-      "スマートフォン操作・通話に便利なマイク付きリモートコントローラーを搭載",
-      "小型ボディで装着性が高く、音漏れしにくい",
-      "ハイレゾ音源に対応し、低域から高域まで広帯域再生が可能"
+      "キレのある重低音とハイレゾ対応による高音質",
+      "小型ボディで密着感が高く、音漏れしにくい",
+      "マイク付きリモコン搭載で通話やスマホ操作に便利",
+      "コストパフォーマンスが高い"
     ],
     "negativePoints": [
-      "ケーブルが着脱不可のため、断線時の修理・交換が困難",
-      "重低音特化のチューニングのため、フラットで繊細な音質を求めるユーザーには不向き",
-      "タッチノイズ（ケーブルが衣服に擦れる音）が発生しやすい"
+      "コードが服に触れたときのタッチノイズが大きめ",
+      "デザインはシンプルで好みが分かれる"
     ],
     "useCases": [
-      "電車やバスでの移動中に、周囲の騒音を遮断して迫力ある低音を楽しみたい時",
-      "スマホでYouTubeやNetflixなどの動画を視聴し、臨場感を高めたい時",
-      "外出先での急な着信に、スマホを取り出さずに応答したい時"
+      "通勤・通学中の音楽鑑賞",
+      "テレワークやオンライン会議での利用",
+      "外出先でのワイヤレスイヤホンの予備として"
     ],
     "userStories": [
       {
-        "userType": "大学生",
-        "scenario": "毎日の通学",
-        "experience": "ワイヤレスイヤホンの充電切れや紛失が心配で、サブ機として購入しました。この価格でこれだけの重低音が出ることに驚きました。ロックやヒップホップを聴くとテンションが上がります。リモコンで曲送りや音量調整ができるのも便利です。",
+        "userType": "テレワーカー",
+        "scenario": "Web会議用として",
+        "experience": "ビデオ会議用にマイク付きの有線イヤホンを探していて購入。中音がしっかり出ていて相手の声が聞き取りやすく、こちらの声もクリアに伝わります。長時間の会議でも耳が疲れにくいです。",
+        "supportingSourceIds": [
+          "kakaku-reviews"
+        ],
         "sentiment": "positive"
       },
       {
-        "userType": "30代会社員",
-        "scenario": "リモートワークと音楽鑑賞",
-        "experience": "Web会議用にマイク付きの有線イヤホンを探していました。会議での通話品質はクリアで問題ありません。仕事の合間に音楽を聴く際も、しっかりとした低音が楽しめるので気分転換になります。長時間着けていても耳が痛くなりにくいのも良い点です。",
+        "userType": "音楽ファン",
+        "scenario": "日常の音楽鑑賞",
+        "experience": "低音強めの売り文句ですが、全体的にバランスが取れた音質。密着性が高く音漏れも少ないので、電車内でも使いやすいです。価格以上の音質だと感じています。",
+        "supportingSourceIds": [
+          "kakaku-reviews"
+        ],
         "sentiment": "positive"
       }
     ],
-    "userImpression": "多くのユーザーから「価格以上の重低音」「コスパ最強」と評価されています。特に、安価なイヤホンからのステップアップとして購入した層からの満足度が高いです。一方で、ケーブルの細さやタッチノイズを気にする声もありますが、この価格帯としては許容範囲と捉えられています。",
+    "userImpression": "3,000円台という手頃な価格ながら、ハイレゾ対応とバランスの良い音質（特にキレのある重低音）で高く評価されています。マイク付きでテレワーク用途にも適しており、コストパフォーマンスの高さが多くのユーザーから支持されています。ただし、ケーブルのタッチノイズが気になるという声もあります。",
     "sources": [
       {
-        "name": "Amazon Product Page",
-        "url": "https://www.amazon.co.jp/dp/B07CNHXB8V",
-        "credibility": "高"
+        "id": "kakaku-reviews",
+        "name": "価格.com レビュー",
+        "url": "https://review.kakaku.com/review/J0000027384/#tab",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-06-02",
+        "author": "価格.comユーザー",
+        "conflictOfInterest": "none",
+        "notes": "音質、装着感、マイク性能に関する高評価な口コミを確認"
       },
       {
-        "name": "Audio-Technica Official Website (SOLID BASS Series)",
+        "id": "audio-technica-official",
+        "name": "オーディオテクニカ公式製品ページ",
         "url": "https://www.audio-technica.co.jp/product/ATH-CKS550XiS",
-        "credibility": "高"
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-06-02",
+        "author": "オーディオテクニカ",
+        "conflictOfInterest": "disclosed",
+        "notes": "製品仕様、ドライバーサイズ（9.8mm）、ハイレゾ対応等の公式情報を確認"
       }
     ],
-    "lastInvestigated": "2026-02-12",
+    "claims": [
+      {
+        "claim": "キレのある重低音とハイレゾ音源対応",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "kakaku-reviews",
+          "audio-technica-official"
+        ],
+        "crossChecked": true,
+        "notes": "公式情報とユーザーレビューの両方で確認"
+      },
+      {
+        "claim": "スマートフォン用のマイク付きリモコン搭載で通話に便利",
+        "category": "durability",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "kakaku-reviews",
+          "audio-technica-official"
+        ],
+        "crossChecked": true,
+        "notes": "公式仕様とテレワーク利用のレビューで確認"
+      }
+    ],
+    "lastInvestigated": "2026-06-02",
     "competitiveAnalysis": [
       {
-        "name": "Audio-Technica ATH-CKS770X",
-        "asin": "B07CNJGDX5",
-        "priceComparison": "当製品より約3,000円高い上位モデル。",
+        "name": "オーディオテクニカ ATH-CKS1100X",
+        "asin": "B07CNMRDLH",
+        "priceComparison": "上位モデルのため価格は高いが、より高い解像度と着脱式ケーブルを採用",
         "featureComparison": [
-          "φ11mmドライバー搭載により、さらに深みのある低音再生が可能。",
-          "切削無垢アルミニウムエンクロージャーを採用し、不要共振を低減。"
+          "共通点：カナル型、ハイレゾ対応、SOLID BASSシリーズの有線イヤホン",
+          "相違点：ATH-CKS1100Xは11mmドライバー搭載でケーブル着脱式（A2DC）。ATH-CKS550XiSは9.8mmドライバーでマイク付き"
         ],
         "differentiators": [
-          "CKS770Xはより本格的な音質を求める層向け。",
-          "当製品はコスパと手軽さを重視するエントリー層向け。"
+          "ATH-CKS550XiSの利点：価格が手頃でマイク付きリモコンがあり、スマートフォンでの通話や日常使いに便利",
+          "ATH-CKS1100Xの利点：より本格的な重低音と高解像度サウンドを求め、ケーブル交換（リケーブル）を楽しみたいケースに最適"
         ]
       },
       {
-        "name": "Sony MDR-XB55AP",
-        "asin": "B09D5CMYXD",
-        "priceComparison": "当製品より約6,000円高い。",
+        "name": "ARKARTECH T6",
+        "asin": "B07BQDQ7DL",
+        "priceComparison": "同価格帯",
         "featureComparison": [
-          "φ12mmドライバー搭載。",
-          "ベースブースター機能による量感のある重低音が特徴。",
-          "グルーヴ感をダイレクトに伝達するベースブースター搭載。"
+          "共通点：有線カナル型、ハイレゾ対応、マイク付き",
+          "相違点：ARKARTECH T6はデュアルドライバー（計4基）搭載。ATH-CKS550XiSは単一の9.8mmドライバーで、国内ブランドの信頼性がある"
         ],
         "differentiators": [
-          "Sonyは「量感」のある低音、Audio-Technicaは「キレ」のある低音という音作りの違い。",
-          "当製品の方が圧倒的に安価で導入しやすい。"
+          "ATH-CKS550XiSの利点：国内有名オーディオブランドの製品としての安心感と、洗練された重低音サウンド",
+          "ARKARTECH T6の利点：デュアルドライバー搭載による独特の音響設計に興味がある場合"
         ]
       },
       {
-        "name": "radius HP-NHR11",
-        "asin": "B00Y2F6S9Q",
-        "priceComparison": "当製品より約3,400円高い。",
+        "name": "Victor HA-FR29UC",
+        "asin": "B0DK4GJXC7",
+        "priceComparison": "同価格帯",
         "featureComparison": [
-          "High-MFD構造ドライバー搭載。",
-          "ハイレゾ対応。",
-          "ディープマウントイヤーピースによる高い遮音性。"
+          "共通点：有線カナル型、ハイレゾ対応、マイク付き",
+          "相違点：Victor HA-FR29UCはUSB Type-C接続。ATH-CKS550XiSは3.5mmイヤホンジャック接続"
         ],
         "differentiators": [
-          "radiusは独自技術による高音質と装着感を追求。",
-          "当製品は標準的な機能を備えつつ、価格を抑えている点が強み。"
+          "ATH-CKS550XiSの利点：従来の3.5mmイヤホンジャックを搭載した機器（PCや一部のスマートフォン）で変換なしで使用可能",
+          "Victor HA-FR29UCの利点：イヤホンジャックがない最新のスマートフォンやタブレットにUSB Type-Cで直接接続できる点"
+        ]
+      },
+      {
+        "name": "オーディオテクニカ ATH-CKS770X",
+        "asin": "B07CNJDGDQ",
+        "priceComparison": "ワンランク上の価格帯",
+        "featureComparison": [
+          "共通点：カナル型、ハイレゾ対応、SOLID BASSシリーズ",
+          "相違点：ATH-CKS770Xは11mmドライバー搭載でアルミニウムエンクロージャー採用。ATH-CKS550XiSはマイク付き"
+        ],
+        "differentiators": [
+          "ATH-CKS550XiSの利点：マイク付きでスマホ通話に対応し、価格も安価な点",
+          "オーディオテクニカ ATH-CKS770Xの利点：アルミニウム筐体による不要な共振を抑えた、よりクリアで深みのある重低音"
+        ]
+      },
+      {
+        "name": "ラディウス HP-NX10",
+        "asin": "B08PFFCDSZ",
+        "priceComparison": "やや安い",
+        "featureComparison": [
+          "共通点：カナル型、ハイレゾ対応、マイク付き有線イヤホン",
+          "相違点：HP-NX10はFLW構造ドライバーとディープマウントイヤーピースを採用し「寝ホン」としても訴求。ATH-CKS550XiSは重低音特化型"
+        ],
+        "differentiators": [
+          "ATH-CKS550XiSの利点：オーディオテクニカ独自のSOLID BASSチューニングによる、キレのある力強い低域",
+          "ラディウス HP-NX10の利点：独自のイヤーピース形状によるフィット感と、寝ながらでも使いやすいコンパクト設計"
+        ]
+      },
+      {
+        "name": "ラディウス HP-NX30",
+        "asin": "B081JNM4BK",
+        "priceComparison": "上位モデルのため価格は高い",
+        "featureComparison": [
+          "共通点：カナル型、有線、ハイレゾ対応",
+          "相違点：HP-NX30はFLW構造ドライバーを採用し、機能美を追求したデザイン。ATH-CKS550XiSはマイク搭載で実用性重視"
+        ],
+        "differentiators": [
+          "ATH-CKS550XiSの利点：リモコンマイク付きで通話が可能であり、コストパフォーマンスに優れている",
+          "ラディウス HP-NX30の利点：より高品質なドライバー構造による歪みの少ないサウンド"
         ]
       }
     ],
     "recommendation": {
       "targetUsers": [
-        "低価格で本格的な重低音を楽しみたい学生・若年層",
-        "スマホでの音楽鑑賞・通話を1本で済ませたいユーザー",
-        "ワイヤレスイヤホンのサブ機として有線を探している人"
+        "手頃な価格でハイレゾ対応イヤホンを探している方",
+        "スマートフォンやPCでWeb会議・通話をする機会が多い方",
+        "バランスが良く、かつキレのある低音を楽しみたい方"
       ],
       "pros": [
-        "同クラスの重低音イヤホンの中で圧倒的な低価格。",
-        "ハイレゾ対応かつマイク付きという高い機能性。",
-        "小型で軽量なため、長時間使用でも快適。"
+        "マイク付きリモコン搭載で通話や操作が快適",
+        "3,000円台でハイレゾ音源に対応",
+        "SOLID BASSシリーズ特有の迫力あるサウンド"
       ],
       "cons": [
-        "ケーブル着脱不可による断線リスク。",
-        "タッチノイズが発生しやすい。",
-        "音質傾向が低音寄りなため、好みが分かれる。"
+        "ケーブルが服に擦れる際のノイズが気になる場合がある",
+        "3.5mmイヤホンジャックがないスマホには変換アダプタが必要"
       ],
-      "score": 85,
-      "scoreRationale": "[基本点: 70]\n[加点: +10] (同クラスの重低音イヤホンの中で圧倒的な低価格)\n[加点: +5] (ハイレゾ対応かつマイク付きという機能性の高さ)\n[減点: -0] (この価格帯のエントリーモデルとしては欠点が見当たらない)\n[合計: 85]"
+      "score": 83,
+      "scoreRationale": "[基本点: 70]\n[加点: +5] (3,000円台でハイレゾ対応というコストパフォーマンスの高さ)\n[加点: +5] (マイク付きリモコンによる実用性とテレワーク適性の高さ)\n[加点: +5] (SOLID BASS独自のバランスの良い重低音サウンド)\n[減点: -2] (タッチノイズがやや気になるという声があるため)\n[合計: 83]"
     },
     "technicalSpecs": {
-      "driver": "φ9.8mm SOLID BASS HDドライバー",
-      "codec": null,
-      "battery": null,
-      "connectivity": "φ3.5mm 4極ステレオミニプラグ (L型)",
-      "noiseCancel": null,
-      "frequencyResponse": "5～40,000Hz",
-      "impedance": "16Ω",
-      "weight": "約6g (コード除く)",
+      "type": "カナル型（ダイナミック型）",
+      "driverSize": "9.8mm",
+      "frequencyResponse": "ハイレゾ音源対応",
+      "sensitivity": "105dB/mW",
+      "cableLength": "1.2m",
+      "weight": "約6g",
+      "microphone": "インラインマイク付きリモートコントローラー",
+      "connection": "3.5mmステレオミニプラグ",
+      "color": "シャンパンゴールド",
+      "origin": "中国",
       "other": [
-        "ハイレゾ音源対応",
-        "マイク付きリモートコントローラー",
-        "コード長: 1.2m (Y型)"
+        "イヤホン収納用ポーチ付属",
+        "イヤーピース4サイズ付属"
       ]
     }
   }
