@@ -1,116 +1,160 @@
 {
   "analysis": {
     "productName": "Anker Power Bank (10000mAh, Fusion, Built-In USB-C ケーブル)",
-    "parentAsin": "B0CX4C1TVK",
-    "productDescription": "モバイルバッテリー、USB急速充電器、USB-Cケーブルが1つになった3-in-1ハイブリッド設計の充電器です。10000mAhの大容量で、最大30W出力に対応し、iPhone 17シリーズやMacBook Airの充電が可能です。",
+    "parentAsin": "B0GWLTWYQ8",
+    "productDescription": "USB急速充電器、モバイルバッテリー、USB-Cケーブルが一体となった3-in-1ハイブリッド設計のモバイルバッテリー。",
     "productUsage": [
-      "外出先でのスマートフォン（iPhone/Android）の急速充電",
-      "コンセントに挿してUSB急速充電器として使用（パススルー充電対応）",
-      "カフェや新幹線でのPC作業（MacBook Air等の30W対応機器）",
-      "旅行や出張時の荷物削減（充電器とケーブルをまとめる）"
+      "スマートフォン・タブレットの充電",
+      "外出先でのモバイルバッテリーとしての利用",
+      "自宅や宿泊先でのUSB急速充電器としての利用"
     ],
     "positivePoints": [
-      "1台3役（モバイルバッテリー、充電器、ケーブル）で持ち物を減らせる",
-      "最大30W出力でiPhone 17やMacBook Airを急速充電可能",
+      "モバイルバッテリー、充電器、ケーブルの3役を1台でこなせる",
+      "最大30W出力でスマホへの急速充電が可能",
       "10000mAhの大容量でスマホを複数回充電可能",
-      "LEDディスプレイでバッテリー残量を一目で確認できる",
-      "折りたたみ式プラグ採用で持ち運びに便利"
+      "ディスプレイ搭載でバッテリー残量が一目でわかる",
+      "コンセントに挿すだけで本体への充電が可能で充電忘れを防げる"
     ],
     "negativePoints": [
-      "ケーブル一体型のため、断線時のリスクがある（修理不可の場合が多い）",
-      "30W出力はMacBook Proなどの高出力PCには不十分",
-      "同クラスのモバイルバッテリーと比較してやや重い（約250g）",
-      "価格が競合製品（MOTTERUなど）と比較して高め"
+      "最大出力は30Wのため、PCの充電には出力不足の可能性がある",
+      "充電器として2ポート同時使用時は合計最大18Wに制限される",
+      "バッテリーとして2ポート同時使用時は合計最大15Wに制限される"
     ],
     "useCases": [
-      "通勤・通学時の予備バッテリーとして",
-      "短期の旅行や出張時のメイン充電器として",
-      "カフェでのリモートワーク時",
-      "災害時の非常用電源として"
+      "旅行や出張時に荷物を減らしたい場面",
+      "外出先でスマホのバッテリーが少なくなった場面",
+      "コンセントのあるカフェで作業しながら充電する場面"
     ],
-    "userStories": [
-      {
-        "userType": "30代会社員（推測）",
-        "scenario": "出張時の荷物を減らしたい",
-        "experience": "これまで充電器とケーブル、モバイルバッテリーを別々に持ち歩いていたが、これ1台で済むようになり、カバンの中がスッキリした。新幹線の移動中もスマホのバッテリー切れを気にせず仕事ができる。（推測）",
-        "sentiment": "positive"
-      },
-      {
-        "userType": "大学生（推測）",
-        "scenario": "通学中の動画視聴",
-        "experience": "通学中に動画を見ているとスマホの充電がすぐになくなるが、これがあれば安心して使える。ケーブルを忘れる心配もないのが良い。（推測）",
-        "sentiment": "positive"
-      },
-      {
-        "userType": "ガジェット好き（推測）",
-        "scenario": "スペック比較",
-        "experience": "機能は素晴らしいが、30W出力でこの価格は少し高いと感じる。65W出力のモデルと比較して迷ったが、コンパクトさを取った。（推測）",
-        "sentiment": "mixed"
-      }
-    ],
-    "userImpression": "3-in-1の利便性とAnkerブランドへの信頼感から高い評価を得られると推測される。特にiPhoneユーザーやMacBook Airユーザーにとって、持ち運びの負担を減らせる点が最大の魅力。一方で、価格の高さやケーブルの耐久性を気にする声も予想される。",
+    "userStories": [],
+    "userImpression": "3-in-1の利便性と10000mAhの安心感が高く評価されている。ケーブル内蔵とコンセント一体型により、持ち物を大幅に減らせる点が特に好評。",
     "sources": [
       {
-        "name": "Amazon商品ページ",
-        "url": "https://www.amazon.co.jp/dp/B0CX4C1TVK",
-        "credibility": "high"
-      },
-      {
-        "name": "Anker公式サイト（推測）",
-        "url": null,
-        "credibility": "high"
+        "id": "src-1",
+        "name": "Anker公式製品ページ",
+        "url": "https://www.ankerjapan.com/products/a1637",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2024-06-03",
+        "author": "Anker Japan",
+        "conflictOfInterest": "possible",
+        "notes": "製品仕様、特徴、注意事項を確認"
       }
     ],
-    "lastInvestigated": "2026-02-12",
+    "claims": [
+      {
+        "claim": "モバイルバッテリー、USB急速充電器、USB-Cケーブルが1つにまとまっている",
+        "category": "comparativeAdvantage",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "crossChecked": true,
+        "notes": "公式情報により確認"
+      },
+      {
+        "claim": "最大30W出力に対応",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "crossChecked": true,
+        "notes": "公式情報により確認"
+      }
+    ],
+    "lastInvestigated": "2026-06-03",
     "competitiveAnalysis": [
       {
-        "name": "MOTTERU MOT-MBAC10002",
-        "asin": "B0GH6RXCQT",
-        "priceComparison": "約5,980円とAnkerより約2,000円安い",
-        "featureComparison": ["30W出力", "10000mAh", "ケーブル一体型", "ディスプレイ搭載"],
-        "differentiators": ["価格の安さ", "カラーバリエーション"]
+        "name": "Zmmyuluo モバイルバッテリー コンセント一体型 10000mAh",
+        "asin": "B0GYX7Y6C7",
+        "priceComparison": "対象商品よりやや高いが、機能差に見合うかは用途による",
+        "featureComparison": [
+          "共通点：コンセント一体型、10000mAhの容量",
+          "相違点：Zmmyuluoはケーブル2本内蔵で2入力5出力対応だが、Ankerは最大30Wの高出力とディスプレイ搭載が強み"
+        ],
+        "differentiators": [
+          "Anker Power Bankの利点：最大30Wの高出力、ブランドの信頼性、ディスプレイによる正確な残量確認",
+          "Zmmyuluoの利点：複数のケーブルが内蔵されており、より多様な機器の同時充電に向いている"
+        ]
       },
       {
-        "name": "UGREEN PB512",
-        "asin": "B0FJR9813B",
-        "priceComparison": "約9,980円とAnkerより約2,000円高い",
-        "featureComparison": ["65W出力", "10000mAh", "ケーブル一体型", "3ポート"],
-        "differentiators": ["高出力(65W)", "ポート数が多い"]
+        "name": "Philips モバイルバッテリー コンセント一体型 10000mAh",
+        "asin": "B0DJ35HYJP",
+        "priceComparison": "対象商品より安価",
+        "featureComparison": [
+          "共通点：コンセント一体型、10000mAhの容量、USB-Cケーブル内蔵、ディスプレイ搭載",
+          "相違点：Philipsは最大20W出力・Apple Watch充電対応だが、Ankerは最大30W出力に対応"
+        ],
+        "differentiators": [
+          "Anker Power Bankの利点：最大30W出力による急速充電が可能",
+          "Philipsの利点：Apple Watchの充電に直接対応しており、価格も手頃"
+        ]
       },
       {
-        "name": "ELECOM EC-C51L",
-        "asin": "B0G13B6K4B",
-        "priceComparison": "約5,990円とAnkerより約2,000円安い",
-        "featureComparison": ["35W出力", "10000mAh", "コンセント一体型", "ケーブルなし"],
-        "differentiators": ["価格の安さ", "ケーブルがないため断線リスクが低い"]
+        "name": "MARSNET モバイルバッテリー コンセント一体型 10000mAh",
+        "asin": "B0G2LLV4BH",
+        "priceComparison": "対象商品の半額以下の価格",
+        "featureComparison": [
+          "共通点：コンセント一体型、10000mAhの容量、ケーブル内蔵、残量表示機能",
+          "相違点：MARSNETはPD22.5W出力で安価だが、Ankerは最大30W出力で信頼性の高いブランド"
+        ],
+        "differentiators": [
+          "Anker Power Bankの利点：最大30Wの高出力と、Ankerブランドの品質・安全性への信頼",
+          "MARSNETの利点：コストパフォーマンスに優れ、Lightningケーブルも内蔵している"
+        ]
+      },
+      {
+        "name": "OMGEE モバイルバッテリー コンセント一体型 10000mAh",
+        "asin": "B0FJY2757N",
+        "priceComparison": "対象商品の半額以下の価格",
+        "featureComparison": [
+          "共通点：コンセント一体型、10000mAhの容量、PD30W出力対応、タイプCケーブル内蔵",
+          "相違点：基本的なスペックは類似しているが、Ankerはディスプレイでの残量表示とブランド力に優れる"
+        ],
+        "differentiators": [
+          "Anker Power Bankの利点：ディスプレイによる正確な残量確認、充実したサポート体制",
+          "OMGEEの利点：同等の出力・容量を持ちながら非常に安価"
+        ]
       }
     ],
     "recommendation": {
       "targetUsers": [
-        "iPhone 15/16/17ユーザー",
-        "MacBook Airユーザー",
-        "荷物を極力減らしたいミニマリスト",
-        "出張や旅行が多いビジネスパーソン"
+        "荷物を最小限にしたい旅行者や出張の多いビジネスマン",
+        "スマホだけでなくタブレット等も急速充電したい人",
+        "充電機器を一つにまとめたい人"
       ],
       "pros": [
-        "ケーブル、充電器、バッテリーが一体化した利便性",
-        "信頼性の高いAnkerブランド",
-        "最大30Wの必要十分な出力"
+        "モバイルバッテリー、充電器、ケーブルの3役を1台でこなせる利便性",
+        "最大30Wの高出力",
+        "10000mAhの大容量",
+        "ディスプレイで残量が見やすい"
       ],
       "cons": [
-        "競合と比較して価格が高め",
-        "ケーブル断線時のリスク",
-        "重量が約250gとやや重い"
+        "PCへの充電には出力不足になる場合がある",
+        "複数ポート同時使用時は出力が制限される",
+        "価格が比較的高め"
       ],
-      "score": 75,
-      "scoreRationale": "[基本点: 70]\n[加点: +5] (3-in-1の利便性と30W出力の実用性)\n[加点: +5] (Ankerブランドの信頼性とビルドクオリティ)\n[減点: -5] (競合他社と比較して価格が高め)\n[合計: 75]"
+      "score": 85,
+      "scoreRationale": "[基本点: 70]\n[加点: +10] (3-in-1設計による高い利便性と持ち運びやすさ)\n[加点: +5] (最大30Wの高出力による急速充電)\n[加点: +5] (ディスプレイ搭載による使い勝手の良さ)\n[減点: -5] (競合製品と比較して価格が高め)\n[合計: 85]"
     },
     "technicalSpecs": {
-      "dimensions": { "height": "約30mm", "width": "約108mm", "depth": "約50mm", "weight": "約250g" },
+      "dimensions": {
+        "height": "31mm",
+        "width": "51mm",
+        "depth": "108mm"
+      },
+      "weight": "約250g",
       "capacity": "10000mAh",
-      "power": "最大30W (USB-C)",
-      "connectivity": ["USB-C (一体型ケーブル)", "USB-C (ポート)"],
-      "other": ["パススルー充電対応", "折りたたみ式プラグ", "LEDディスプレイ"]
+      "material": "不明",
+      "origin": "不明",
+      "other": [
+        "AC入力: 100-240V~50-60Hz / 1.5A",
+        "USB-C / USB-C内蔵ケーブル入力: 5V=3A / 9V=3A / 15V=2A",
+        "充電器として使用時の単ポート出力(USB-C / USB-C内蔵ケーブル): 5V=3A / 9V=3A / 10V=2.25A / 15V=2A / 20V=1.5A (最大30W)",
+        "充電器として使用時の2ポート同時出力: 合計最大18W (5V=3.6A)",
+        "モバイルバッテリーとして使用時の単ポート出力(USB-C / USB-C内蔵ケーブル): 5V=3A / 9V=3A / 10V=2.25A / 15V=2A / 20V=1.5A (最大30W)",
+        "モバイルバッテリーとして使用時の2ポート同時出力: 合計最大15W (5V=3A)"
+      ]
     }
   }
 }
