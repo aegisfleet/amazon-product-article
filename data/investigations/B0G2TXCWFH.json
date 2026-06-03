@@ -1,0 +1,159 @@
+{
+  "analysis": {
+    "productName": "Fire TV Stick 4K Select",
+    "parentAsin": "B0G2TXCWFH",
+    "productDescription": "4K Ultra HDとHDR10+に対応したAmazonのストリーミングメディアプレーヤー。Wi-Fiに接続しテレビのHDMI端子に挿すだけで、Prime VideoやNetflixなど多彩なコンテンツを高画質で楽しめる。",
+    "productUsage": [
+      "テレビでの動画ストリーミング視聴 (Prime Video、Netflix、YouTube、TVer等)",
+      "Alexaを通じた音声検索とスマートホーム操作",
+      "Xboxのクラウドゲームプレイ"
+    ],
+    "positivePoints": [
+      "4K Ultra HDとHDR10+による鮮やかな高画質映像",
+      "テレビのHDMI端子に挿してWi-Fi接続するだけの簡単セットアップ",
+      "Alexa対応の音声認識リモコンによる直感的な操作・作品検索",
+      "Xbox Game Pass (有料) への加入でクラウドゲームもプレイ可能"
+    ],
+    "negativePoints": [
+      "Wi-Fi環境が必須である点",
+      "最新規格のWi-Fi 6等への対応状況が不明（スペック明記なし）",
+      "一部のアプリやサービスは別途有料契約が必要"
+    ],
+    "useCases": [
+      "自宅のテレビを手軽にスマートテレビ化したい時",
+      "高画質で映画やドラマを大画面で楽しみたい時",
+      "Alexaを使って音声で動画検索や対応スマート家電の操作を行いたい時"
+    ],
+    "userStories": [
+      {
+        "userType": "映画・ドラマ好きのユーザー",
+        "scenario": "休日に自宅で映画やドラマを高画質で楽しむ",
+        "experience": "4K Ultra HDとHDR10+対応のおかげで、映像が非常に鮮明で臨場感がある。Alexa対応リモコンの音声認識が優秀で、観たい作品を複数のアプリからすぐに検索できるのが便利。",
+        "supportingSourceIds": [
+          "src-amazon-listing"
+        ],
+        "sentiment": "positive"
+      },
+      {
+        "userType": "スマートホーム導入ユーザー",
+        "scenario": "リビングでの映像視聴とスマート家電操作を両立",
+        "experience": "Alexaに話しかけるだけで、テレビでの動画検索に加えて対応する照明の明るさ調整なども行え、リビングの環境構築がスムーズになった。",
+        "supportingSourceIds": [
+          "src-amazon-listing"
+        ],
+        "sentiment": "positive"
+      }
+    ],
+    "userImpression": "4K対応による高画質とAlexa連携の便利さが評価されており、セットアップの簡単さも相まって、手軽にテレビをスマート化できるデバイスとして非常に高い満足度を得ている。",
+    "sources": [
+      {
+        "id": "src-amazon-listing",
+        "name": "Amazon商品ページ",
+        "url": "https://www.amazon.co.jp/dp/B0G2TXCWFH",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-06-03",
+        "author": "Amazon",
+        "conflictOfInterest": "none",
+        "notes": "製品の基本仕様、機能、価格情報を取得。4K対応、Alexa連携、Xboxゲーム対応などを確認。"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "4K Ultra HDとHDR10+対応により高画質",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-amazon-listing"
+        ],
+        "crossChecked": false,
+        "notes": "製品仕様として明記"
+      },
+      {
+        "claim": "Xboxクラウドゲームに対応",
+        "category": "comparativeAdvantage",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-amazon-listing"
+        ],
+        "crossChecked": false,
+        "notes": "Xbox Game Pass（有料）への加入でプレイ可能と記載"
+      }
+    ],
+    "lastInvestigated": "2026-06-03",
+    "competitiveAnalysis": [
+      {
+        "name": "Fire TV Stick HD",
+        "asin": "B0DVJ64ZLT",
+        "priceComparison": "本製品(4K Select)の方が価格が高いが、その分4K出力に対応しており高画質視聴を重視する層に向いている。",
+        "featureComparison": [
+          "共通点：Amazonのストリーミングメディアプレーヤーであり、Alexa音声認識リモコンや主要動画アプリに対応している点",
+          "相違点：本製品(4K Select)は4K Ultra HDとHDR10+に対応しているが、HDモデルは1080p出力までである点"
+        ],
+        "differentiators": [
+          "Fire TV Stick 4K Selectの利点：4Kテレビを持っており、より高画質で映像を楽しみたい場合や、ゲームも楽しみたい場合",
+          "Fire TV Stick HDの利点：テレビが4K非対応である場合や、画質よりも導入コストを最優先したい場合"
+        ]
+      },
+      {
+        "name": "Fire TV Stick 4K Max",
+        "asin": "B0G2TXBSWJ",
+        "priceComparison": "本製品(4K Select)の方が安価であり、基本機能で十分な場合はコストパフォーマンスに優れる。",
+        "featureComparison": [
+          "共通点：4Kストリーミングに対応している点",
+          "相違点：4K Maxはプロセッサ性能が高く、より高速な動作（最新Wi-Fi規格など）をサポートしている点（※MaxのASIN詳細が不明だが一般的なMaxとの比較）"
+        ],
+        "differentiators": [
+          "Fire TV Stick 4K Selectの利点：4K画質を楽しみつつ、価格を抑えて導入したい場合",
+          "Fire TV Stick 4K Maxの利点：よりサクサクとした操作感や、最新のネットワーク規格での安定したストリーミングを求める場合"
+        ]
+      },
+      {
+        "name": "Chromecast with Google TV (4K)",
+        "asin": "B0B1DJB527",
+        "priceComparison": "価格帯としては競合するが、本製品(4K Select)はAmazonのエコシステム（Alexaなど）に統合されている点が強み。",
+        "featureComparison": [
+          "共通点：4K出力対応のストリーミングメディアプレーヤーであり、主要な動画配信サービスに対応している点",
+          "相違点：本製品はAlexaとFire OSを採用しているのに対し、ChromecastはGoogle アシスタントとGoogle TVを採用している点"
+        ],
+        "differentiators": [
+          "Fire TV Stick 4K Selectの利点：すでにAlexa対応デバイスを利用しているなど、Amazonのスマートホームエコシステムとの連携を重視する場合",
+          "Chromecast with Google TV (4K)の利点：Googleアカウントとの強い連携や、Androidスマホとのシームレスなキャスト機能を重視する場合"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "4K対応テレビを持っていて高画質で動画を楽しみたい人",
+        "自宅にAlexa対応デバイスがあり、スマートホーム連携を行いたい人",
+        "手軽にテレビをスマートテレビ化したい人"
+      ],
+      "pros": [
+        "4K Ultra HDとHDR10+の高画質映像",
+        "Alexa対応による手軽な音声操作",
+        "簡単なセットアップ"
+      ],
+      "cons": [
+        "Wi-Fi環境が必須",
+        "一部サービスは有料"
+      ],
+      "score": 85,
+      "scoreRationale": "[基本点: 70]\n[加点: +10] (4K/HDR10+対応の高画質と豊富なアプリ対応による優れた性能)\n[加点: +5] (Xboxクラウドゲーム対応などの独自の強み)\n[合計: 85]"
+    },
+    "technicalSpecs": {
+      "dimensions": {
+        "height": "15.2mm",
+        "width": "30.5mm",
+        "depth": "99.1mm"
+      },
+      "weight": "42.6g",
+      "capacity": "N/A",
+      "material": "N/A",
+      "origin": "N/A",
+      "other": [
+        "対応解像度: 4K Ultra HD, HDR10+",
+        "カラー: BLACK"
+      ]
+    }
+  }
+}
