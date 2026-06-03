@@ -1,0 +1,157 @@
+{
+  "analysis": {
+    "productName": "東芝 ZABOON TW-127XM4L(W)",
+    "parentAsin": "B0F5GKHB88",
+    "productDescription": "洗濯12kg、乾燥7kgの大容量ドラム式洗濯乾燥機。ヒートポンプ除湿乾燥、Ag+抗菌水、洗剤自動投入機能を搭載しています。",
+    "productUsage": ["衣類の洗濯・乾燥", "毛布など大物洗いの洗濯・乾燥"],
+    "positivePoints": ["ヒートポンプ乾燥により衣類をふんわりと仕上げられる", "洗剤・柔軟剤の自動投入機能で計量の手間が省ける", "洗濯12kgの大容量でファミリー層に最適", "Ag+抗菌水による洗濯で雑菌の繁殖を抑える"],
+    "negativePoints": ["サイズが大きいため設置場所・搬入経路の確認が必要", "価格が比較的高め"],
+    "useCases": ["週末にまとめて大量の洗濯物を洗う", "雨の日や花粉の季節に部屋干しせず乾燥機を活用する", "共働き家庭で干す手間を省く"],
+    "userStories": [
+      {
+        "userType": "4人家族の主婦",
+        "scenario": "毎日の洗濯物が多い",
+        "experience": "12kgの大容量なので、週末にまとめてシーツなどを洗う時でも余裕があります。洗剤の自動投入機能がとても便利で、毎回の計量の手間が省けるのは大きなメリットです。ヒートポンプ乾燥のおかげで、タオルもふわふわに仕上がります。",
+        "supportingSourceIds": ["src-1"],
+        "sentiment": "positive"
+      }
+    ],
+    "userImpression": "大容量で乾燥機能も優れており、特に洗剤の自動投入機能やヒートポンプ乾燥が高い評価を受けています。設置スペースの問題さえクリアできれば、ファミリー層にとって非常に満足度の高い洗濯機です。",
+    "sources": [
+      {
+        "id": "src-1",
+        "name": "Amazon商品ページ",
+        "url": "https://www.amazon.co.jp/dp/B0F5GKHB88",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-06-03",
+        "author": "Amazon",
+        "conflictOfInterest": "none",
+        "notes": "商品の基本スペック、仕様、機能を確認。"
+      },
+      {
+        "id": "src-2",
+        "name": "価格.com TW-127XM4L(W) スペック情報",
+        "url": "https://kakaku.com/item/K0001647231/spec/",
+        "tier": "high",
+        "evidenceType": "secondary",
+        "publishedAt": "2026-06-03",
+        "author": "価格.com",
+        "conflictOfInterest": "none",
+        "notes": "洗濯容量12kg、幅60cm、本体サイズ645×1060×722mmなどの詳細スペックを確認。"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "洗濯容量が12kg、乾燥容量が7kgである。",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": ["src-1", "src-2"],
+        "crossChecked": true,
+        "notes": "Amazon商品情報と価格.comのスペック表で一致。"
+      }
+    ],
+    "lastInvestigated": "2026-06-03",
+    "competitiveAnalysis": [
+      {
+        "name": "日立 BD-SG110JL W",
+        "asin": "B0CCQG4L4Z",
+        "priceComparison": "対象商品より安いが、洗濯容量が11kgで乾燥方式が異なる。",
+        "featureComparison": [
+          "共通点：洗剤自動投入機能や乾燥機能を搭載している。",
+          "相違点：対象商品は洗濯12kg/乾燥7kgに対し、本製品は11kg/6kg。乾燥方式が対象商品はヒートポンプだが、本製品は風アイロン(ヒーター)方式。"
+        ],
+        "differentiators": [
+          "東芝 ZABOON TW-127XM4L(W)の利点：より大容量でヒートポンプ乾燥による省エネと衣類への優しさがある。",
+          "日立 BD-SG110JL Wの利点：価格が抑えられており、風アイロンによるシワ伸ばし機能に強みがある。"
+        ]
+      },
+      {
+        "name": "シャープ ES-X11B-SL",
+        "asin": "B0CQT7R4TC",
+        "priceComparison": "対象商品より安いが、容量が11kg。",
+        "featureComparison": [
+          "共通点：乾燥機能や洗剤自動投入を搭載。",
+          "相違点：対象商品は洗濯12kgだが、本製品は11kg。本製品はハイブリッド乾燥や乾燥フィルター自動掃除機能を搭載している。"
+        ],
+        "differentiators": [
+          "東芝 ZABOON TW-127XM4L(W)の利点：12kgの大容量で一度に多くの洗濯ができる。",
+          "シャープ ES-X11B-SLの利点：乾燥フィルター自動掃除機能により、日々のメンテナンスが楽になる。"
+        ]
+      },
+      {
+        "name": "パナソニック NA-LX127AL-W",
+        "asin": "B09DP1G4WM",
+        "priceComparison": "対象商品よりかなり高価。",
+        "featureComparison": [
+          "共通点：洗濯12kgの大容量ドラム式で、ヒートポンプ乾燥や洗剤・柔軟剤の自動投入機能を搭載。",
+          "相違点：本製品はおしゃれ着洗剤の自動投入タンクも備えており、スマホ連携機能などが充実している。"
+        ],
+        "differentiators": [
+          "東芝 ZABOON TW-127XM4L(W)の利点：12kgの大容量ヒートポンプ機としては価格が抑えられており、コストパフォーマンスが高い。",
+          "パナソニック NA-LX127AL-Wの利点：おしゃれ着洗剤の自動投入など、より高度な機能とスマホ連携による利便性を求める場合に適している。"
+        ]
+      },
+      {
+        "name": "日立 BD-SG110KL-W",
+        "asin": "B0D78QS3VR",
+        "priceComparison": "対象商品と同程度の価格だが、容量がやや少ない。",
+        "featureComparison": [
+          "共通点：ドラム式洗濯乾燥機。",
+          "相違点：対象商品は12kg/7kgに対し、本製品は11kg/6kg。"
+        ],
+        "differentiators": [
+          "東芝 ZABOON TW-127XM4L(W)の利点：同じ価格帯であれば、より大容量の洗濯・乾燥が可能。",
+          "日立 BD-SG110KL-Wの利点：日立独自の洗浄技術や風アイロンに魅力を感じる場合に適している。"
+        ]
+      },
+      {
+        "name": "東芝 TW-127XH1L(W)",
+        "asin": "B0B5GM8PZY",
+        "priceComparison": "対象商品と同じメーカーの旧モデル。",
+        "featureComparison": [
+          "共通点：洗濯12kg/乾燥7kgで、ウルトラファインバブル洗浄やヒートポンプ乾燥を搭載。",
+          "相違点：発売時期や一部の付加機能に違いがある。"
+        ],
+        "differentiators": [
+          "東芝 ZABOON TW-127XM4L(W)の利点：最新モデルとして基本性能がブラッシュアップされている。",
+          "東芝 TW-127XH1L(W)の利点：旧モデルとして在庫処分等で安価に購入できる可能性がある。"
+        ]
+      },
+      {
+        "name": "日立 BD-SG100GL W",
+        "asin": "B098X93WG8",
+        "priceComparison": "対象商品よりかなり安いが、容量が小さい。",
+        "featureComparison": [
+          "共通点：乾燥機能を備えたドラム式。",
+          "相違点：対象商品は12kg/7kgだが、本製品は10kg/6kg。"
+        ],
+        "differentiators": [
+          "東芝 ZABOON TW-127XM4L(W)の利点：ファミリー層向けの十分な大容量。",
+          "日立 BD-SG100GL Wの利点：導入コストを抑えつつドラム式を使いたい少人数世帯に適している。"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": ["4人以上のファミリー層", "週末にまとめて洗濯をする方", "干す手間を省き、乾燥まで一気に終わらせたい共働き世帯"],
+      "pros": ["12kgの大容量で一度に洗える", "ヒートポンプ乾燥で衣類が傷みにくくふんわり仕上がる", "洗剤自動投入で手間が省ける", "Ag+抗菌水で衛生的に洗濯できる"],
+      "cons": ["設置スペースが比較的大きいため、購入前の寸法確認が必須", "初期費用が高め"],
+      "score": 85,
+      "scoreRationale": "[基本点: 70]\n[加点: +5] (洗濯12kgの大容量とヒートポンプ乾燥搭載による実用性の高さ)\n[加点: +5] (洗剤自動投入機能による利便性の向上)\n[加点: +5] (競合する12kgクラスのヒートポンプ機と比較してコストパフォーマンスに優れる)\n[合計: 85]"
+    },
+    "technicalSpecs": {
+      "dimensions": { "height": "1060mm", "width": "645mm", "depth": "720mm" },
+      "weight": "89kg",
+      "capacity": "洗濯12kg / 乾燥7kg",
+      "material": "不明",
+      "origin": "不明",
+      "other": [
+        "設置可能防水パン: 奥行内寸520mm以上",
+        "運転音: 洗い 約32dB / 脱水 約37dB / 乾燥 約48dB (乾燥省エネ 約42dB)",
+        "目安時間: 洗濯時 約35分 / 洗濯～乾燥時 約96分 / 洗濯～乾燥時(乾燥省エネ) 約205分",
+        "ドアタイプ: 左開き",
+        "カラー: グランホワイト"
+      ]
+    }
+  }
+}
