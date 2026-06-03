@@ -1,0 +1,157 @@
+{
+  "analysis": {
+    "productName": "Amazon eギフトカード",
+    "parentAsin": "B0DR2KFBGJ",
+    "productDescription": "Eメールやショートメッセージで送れるAmazonギフトカード。様々なシーンに合うデザインを選べます。",
+    "productUsage": [
+      "誕生日や記念日のプレゼント",
+      "お礼やお祝いの贈り物",
+      "イベントの景品やキャンペーンの賞品"
+    ],
+    "positivePoints": [
+      "注文完了から通常1時間以内にお届け可能",
+      "EメールやSMSで送信できるため、住所を知らない相手にも贈れる",
+      "10年間の長い有効期限がある"
+    ],
+    "negativePoints": [
+      "Amazonギフトカードの購入や一部制限のあるサービスには使用不可",
+      "購入後の返金や返品ができない",
+      "実物のカードが手元に残らない"
+    ],
+    "useCases": [
+      "遠方に住む友人への誕生日プレゼント",
+      "SNSで知り合った相手へのちょっとしたお礼",
+      "社内イベントの景品としての配布"
+    ],
+    "userStories": [
+      {
+        "userType": "会社員",
+        "scenario": "遠方に住む友人への誕生日プレゼント",
+        "experience": "友人の誕生日に間に合うようにプレゼントを探していたところ、Amazon eギフトカードならすぐに送れることを知りました。デザインも豊富で、メールでサクッと送れたのでとても助かりました。",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "sentiment": "positive"
+      }
+    ],
+    "userImpression": "すぐに送れて便利、住所を知らない相手にも送れるといった点で高く評価されています。急な贈り物やちょっとしたお礼に最適という声が多いです。",
+    "sources": [
+      {
+        "id": "src-1",
+        "name": "Amazon eギフトカード 商品ページ",
+        "url": "https://www.amazon.co.jp/dp/B06X982RQ9",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-06-04",
+        "author": "Amazon",
+        "conflictOfInterest": "none",
+        "notes": "商品の特徴、仕様、レビュー内容"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "注文完了から通常1時間以内にお届け可能",
+        "category": "durability",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "crossChecked": false,
+        "notes": "商品ページの特徴に記載あり"
+      },
+      {
+        "claim": "EメールやSMSで送信可能",
+        "category": "durability",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "crossChecked": false,
+        "notes": "商品ページの特徴に記載あり"
+      }
+    ],
+    "lastInvestigated": "2026-06-04",
+    "competitiveAnalysis": [
+      {
+        "name": "Amazonギフトカード ボックス",
+        "asin": "B0DKWTZPKD",
+        "priceComparison": "価格は同じですが、こちらはボックス入りの実物のカードです。",
+        "featureComparison": [
+          "共通点：Amazon.co.jpで利用可能なギフトカードであること",
+          "相違点：対象商品はEメールで届くのに対し、こちらは物理的なボックスとカードが届く点"
+        ],
+        "differentiators": [
+          "Amazon eギフトカードの利点：すぐに送れて、住所が分からない相手にも送れる点",
+          "Amazonギフトカード ボックスの利点：手渡ししたい場合や、プレゼントとしての特別感を演出したいケースに適している点"
+        ]
+      },
+      {
+        "name": "Amazonギフトカード ミニ封筒",
+        "asin": "B0DKW898KY",
+        "priceComparison": "価格は同じですが、こちらはミニ封筒に入った実物のカードです。",
+        "featureComparison": [
+          "共通点：Amazon.co.jpで利用可能なギフトカードであること",
+          "相違点：対象商品はデジタルで届くのに対し、こちらは物理的な封筒とカードが届く点"
+        ],
+        "differentiators": [
+          "Amazon eギフトカードの利点：即時発行・送信が可能で、デジタルのやり取りで完結する点",
+          "Amazonギフトカード ミニ封筒の利点：直接手渡しして気持ちを伝えたい場合や、手紙と一緒に贈りたいケースに適している点"
+        ]
+      },
+      {
+        "name": "Google Play ギフトコード",
+        "asin": "B0FP2SKQZX",
+        "priceComparison": "同額のデジタルギフトコードです。",
+        "featureComparison": [
+          "共通点：デジタルで送信されるギフトコードであること",
+          "相違点：利用できるプラットフォームが異なる（AmazonかGoogle Playストアか）"
+        ],
+        "differentiators": [
+          "Amazon eギフトカードの利点：Amazonで販売されている幅広い商品の購入に利用できる点",
+          "Google Play ギフトコードの利点：Android端末のアプリやゲームの課金に特化してプレゼントしたいケースに適している点"
+        ]
+      },
+      {
+        "name": "Apple Gift Card",
+        "asin": "B0FP2R8M58",
+        "priceComparison": "こちらは10,000円からなどのバリエーションがありますが、用途が異なります。",
+        "featureComparison": [
+          "共通点：デジタルで送信されるギフトカードであること",
+          "相違点：利用できるプラットフォームが異なる（AmazonかAppleのエコシステムか）"
+        ],
+        "differentiators": [
+          "Amazon eギフトカードの利点：日用品から家電まで幅広い商品の購入に使える汎用性の高さ",
+          "Apple Gift Cardの利点：iPhoneユーザーやApple MusicなどのAppleのサービスを利用している相手に贈るのに適している点"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "すぐにお祝いやプレゼントを贈りたい人",
+        "SNS等で繋がっているが住所を知らない相手に贈りたい人"
+      ],
+      "pros": [
+        "即座に送れる",
+        "住所を知らなくても送れる",
+        "デザインを選べる"
+      ],
+      "cons": [
+        "実物がないため手渡しには不向き",
+        "返品・返金不可"
+      ],
+      "score": 90,
+      "scoreRationale": "[基本点: 70]\n[加点: +10] (即座に送れる利便性と、住所不要で送れる柔軟性の高さ)\n[加点: +10] (Amazonで幅広く使える実用性と汎用性の高さ)\n[合計: 90]"
+    },
+    "technicalSpecs": {
+      "dimensions": {
+        "height": "25.4mm",
+        "width": "25.4mm",
+        "length": "25.4mm"
+      },
+      "weight": "1g",
+      "formats": "電子メールギフト券",
+      "model": "501_JP_Email",
+      "size": "S"
+    }
+  }
+}
