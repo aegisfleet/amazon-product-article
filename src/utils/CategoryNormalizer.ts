@@ -393,6 +393,7 @@ export class CategoryNormalizer {
       /その他の.*(?:書籍|本|関連)$/,
       /banner|installments|membership/i,
       /productalert|stampcard/i,
+      /3m[\s_-]*aone/i,
     ];
 
     if (invalidPatterns.some((pattern) => pattern.test(name))) {

@@ -161,6 +161,8 @@ describe('CategoryNormalizer', () => {
         'ゲーミングチェア＆デスク',
         'ProductAlertStampcard3500',
         'Multibuy Experiment',
+        '3MAone人気アイテム',
+        '3M_Aone_人気アイテム',
       ];
       invalidNames.forEach((name) => {
         expect(CategoryNormalizer.isValidCategoryName(name)).toBe(false);
