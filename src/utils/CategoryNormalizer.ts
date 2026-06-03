@@ -360,6 +360,7 @@ export class CategoryNormalizer {
       /\w*afc[\s\d]*under/i,
       /\w+[\s\d]*under\d+/i,
       /^\d{2}\s*ビジネス/,
+      /^\d{2}\s*リビング/,
       /spring must haves/i,
       /(?:kindle|無料|[0-9０-９]+万円|円|テスト|test|マッサージャーほか健康家電|[>＞]|表示されている方限定|widget)/i,
       /(?:amazon\s*global|amazonglobal|babel|コクヨ|beauty|パントリー|本日の|特選品|cml|customers' most-loved|ソニー|9999$|ポイント還元本|書籍タイトル|free\s*shipping)/i,
