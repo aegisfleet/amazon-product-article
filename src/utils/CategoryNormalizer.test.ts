@@ -159,6 +159,7 @@ describe('CategoryNormalizer', () => {
         'タケオキクチ、コムサイズム他 ビジネスファッション・小物',
         '【最大60％OFF】タケオキクチ、コムサイズム他 就活・ビジネスファッション',
         'ゲーミングチェア＆デスク',
+        'ProductAlertStampcard3500',
       ];
       invalidNames.forEach((name) => {
         expect(CategoryNormalizer.isValidCategoryName(name)).toBe(false);
