@@ -97,6 +97,8 @@ describe('CategoryNormalizer', () => {
         'N&NBeauty9999',
         'PBSports&Outdoor9999',
         '08ビジネス',
+        '02_リビング_リビング収納_チェスト',
+        '02 リビング リビング収納 チェスト',
         'Spring Must Haves Womens',
         'Kindle Unlimited:読み放題 ジャンル',
         'Kindleオーナー ライブラリー',
