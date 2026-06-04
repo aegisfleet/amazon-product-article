@@ -28,58 +28,56 @@
       "物理的なスペースが限られるコンパクトなデスク環境の構築。",
       "紙の資料と画面を交互に見る作業での、手元の明かり確保。"
     ],
-    "userStories": [
-      {
-        "userType": "30代・在宅プログラマー",
-        "scenario": "長時間のコーディング作業",
-        "experience": "以前はスタンドライトを使用していたが、画面への映り込みと目の乾きに悩まされていた。ScreenBarを導入してからは、画面がクリアに見えるようになり、目の疲労感が劇的に改善された。特に自動調光機能が優秀で、日中から夜間まで明るさを意識することなく作業に没頭できるようになった。",
-        "sentiment": "positive"
-      },
-      {
-        "userType": "20代・学生",
-        "scenario": "オンライン授業とレポート作成",
-        "experience": "一人暮らしの狭いデスクでは、ライトを置くスペースを確保するのが難しかった。モニターの上に設置できるScreenBarのおかげでデスクが広々と使えるようになり、手元の教科書やノートも明るく見やすい。集中したいレポート作成時は白色光、リラックスして動画を見たい時は暖色光と使い分けられる点も気に入っている。",
-        "sentiment": "positive"
-      },
-      {
-        "userType": "40代・オフィスワーカー",
-        "scenario": "Webカメラとの併用",
-        "experience": "製品の性能には満足しているが、唯一の誤算はWebカメラの設置場所。モニターの中央にしか置けず、ScreenBarと物理的に干渉してしまった。今はモニターの端に少しずらして設置しているが、見栄えが悪くなってしまったのが残念。（推測）",
-        "sentiment": "mixed"
-      }
-    ],
+    "userStories": [],
     "userImpression": "BenQ ScreenBarは、高価ながらもその価格に見合うだけの価値がある「モニターライトの標準機」として広く評価されています。特に、独自の光学技術による「目に優しい光」は多くのユーザーから信頼されており、安価な類似品とは一線を画す品質と認識されています。一方で、より高機能な上位モデル（Pro/Halo）や、安価でリモコン付きの競合製品が登場したことで、「あえてこのスタンダードモデルを選ぶ理由」が問われる場面も増えていますが、シンプルさと基本性能の高さで依然として根強い人気があります。",
     "sources": [
       {
         "name": "BenQ公式サイト | ScreenBar 製品情報",
-        "url": "https://www.benq.com/ja-jp/lighting/screenbar-lamp/screenbar.html",
-        "credibility": "high"
+        "url": "https://www.benq.com/ja-jp/lighting/monitor-light/screenbar.html",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-06-05",
+        "author": "BenQ",
+        "conflictOfInterest": "disclosed",
+        "notes": "公式サイトの製品情報",
+        "id": "src-screenbar"
       },
       {
         "name": "BenQ ScreenBar Pro 製品情報",
-        "url": "https://www.benq.com/ja-jp/lighting/screenbar-lamp/screenbar-pro.html",
-        "credibility": "high"
+        "url": "https://www.benq.com/ja-jp/lighting/monitor-light/screenbar-pro.html",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-06-05",
+        "author": "BenQ",
+        "conflictOfInterest": "disclosed",
+        "notes": "公式サイトの製品情報",
+        "id": "src-screenbar-pro"
       },
       {
-        "name": "BenQ ScreenBar Halo 2 製品情報",
-        "url": "https://www.benq.com/ja-jp/lighting/screenbar-lamp/screenbar-halo-2.html",
-        "credibility": "high"
+        "name": "BenQ ScreenBar Halo 製品情報",
+        "url": "https://www.benq.com/ja-jp/lighting/monitor-light/screenbar-halo.html",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-06-05",
+        "author": "BenQ",
+        "conflictOfInterest": "disclosed",
+        "notes": "公式サイトの製品情報",
+        "id": "src-screenbar-halo"
       }
     ],
-    "lastInvestigated": "2026-02-13",
+    "lastInvestigated": "2026-06-05",
     "competitiveAnalysis": [
       {
         "name": "Xiaomi Mi Computer Monitor Light Bar",
         "asin": "B08W2C5W59",
         "priceComparison": "BenQの約1/3の価格（約6,000円）で購入でき、非常に安価。",
         "featureComparison": [
-          "BenQにはない2.4GHzワイヤレスリモコンが標準付属し、手元操作が可能。",
-          "自動調光機能は搭載されていない。",
-          "演色性はRa95と高く、BenQと同等のスペックを謳う。"
+          "共通点：モニター上部に設置する掛け式ライト。",
+          "相違点：BenQにはない2.4GHzワイヤレスリモコンが標準付属し、手元操作が可能。 / 自動調光機能は搭載されていない。 / 演色性はRa95と高く、BenQと同等のスペックを謳う。"
         ],
         "differentiators": [
-          "圧倒的なコストパフォーマンス。",
-          "ワイヤレスリモコンによる操作性。"
+          "BenQ ScreenBarの利点：実績あるブランドの信頼性と高品質な非対称光学設計。",
+          "Xiaomi Mi Computer Monitor Light Barの利点：圧倒的なコストパフォーマンス。 / ワイヤレスリモコンによる操作性。"
         ]
       },
       {
@@ -87,13 +85,12 @@
         "asin": "B08T6H2W93",
         "priceComparison": "BenQの約1/3の価格（約5,700円）で、導入しやすい。",
         "featureComparison": [
-          "BenQと同様に自動調光機能を搭載している（ただし精度や挙動は異なる可能性がある）。",
-          "52cmとBenQより長く、大型モニターにも合わせやすい。",
-          "タッチセンサー操作でリモコンはない。"
+          "共通点：モニター上部に設置する掛け式ライト。",
+          "相違点：BenQと同様に自動調光機能を搭載している（ただし精度や挙動は異なる可能性がある）。 / 52cmとBenQより長く、大型モニターにも合わせやすい。 / タッチセンサー操作でリモコンはない。"
         ],
         "differentiators": [
-          "低価格ながら自動調光機能を搭載。",
-          "52cmのロングサイズ。"
+          "BenQ ScreenBarの利点：実績あるブランドの信頼性と高品質な非対称光学設計。",
+          "Quntis BasicPlus モニターライトの利点：低価格ながら自動調光機能を搭載。 / 52cmのロングサイズ。"
         ]
       },
       {
@@ -101,15 +98,12 @@
         "asin": "B0CZ9P1QW9",
         "priceComparison": "本製品より約4,000円高い（約19,900円）。",
         "featureComparison": [
-          "人感センサーを搭載し、自動点灯・消灯が可能。",
-          "照射範囲が広く（85cm x 50cm）、湾曲モニターにも対応する新型クランプ。",
-          "Webカメラ設置用のアタッチメントが付属。",
-          "USB Type-C給電。"
+          "共通点：モニター上部に設置する掛け式ライト。",
+          "相違点：人感センサーを搭載し、自動点灯・消灯が可能。 / 照射範囲が広く（85cm x 50cm）、湾曲モニターにも対応する新型クランプ。 / Webカメラ設置用のアタッチメントが付属。 / USB Type-C給電。"
         ],
         "differentiators": [
-          "より広い照射範囲と湾曲モニター対応。",
-          "人感センサーによる自動化。",
-          "Webカメラとの親和性。"
+          "BenQ ScreenBarの利点：実績あるブランドの信頼性と高品質な非対称光学設計。",
+          "BenQ ScreenBar Proの利点：より広い照射範囲と湾曲モニター対応。 / 人感センサーによる自動化。 / Webカメラとの親和性。"
         ]
       },
       {
@@ -117,14 +111,12 @@
         "asin": "B0DK59YKRS",
         "priceComparison": "本製品より約11,000円高い最上位モデル（約26,900円）。",
         "featureComparison": [
-          "モニター背面を照らすバックライトを搭載し、没入感を向上。",
-          "数値表示付きの無線リモコンが付属し、操作性が最高レベル。",
-          "Pro同様、広範囲照射や人感センサー、湾曲対応を備える。"
+          "共通点：モニター上部に設置する掛け式ライト。",
+          "相違点：モニター背面を照らすバックライトを搭載し、没入感を向上。 / 数値表示付きの無線リモコンが付属し、操作性が最高レベル。 / Pro同様、広範囲照射や人感センサー、湾曲対応を備える。"
         ],
         "differentiators": [
-          "間接照明（バックライト）機能。",
-          "高機能な無線リモコン。",
-          "あらゆるモニター環境に対応する柔軟性。"
+          "BenQ ScreenBarの利点：実績あるブランドの信頼性と高品質な非対称光学設計。",
+          "BenQ ScreenBar Halo 2の利点：間接照明（バックライト）機能。 / 高機能な無線リモコン。 / あらゆるモニター環境に対応する柔軟性。"
         ]
       }
     ],
@@ -156,9 +148,8 @@
       "material": "アルミニウム合金, ポリカーボネート(PC)",
       "dimensions": {
         "width": "45cm",
-        "depth": "9.0cm",
-        "height": "9.2cm",
-        "weight": "約530g"
+        "depth": "9cm",
+        "height": "9.2cm"
       },
       "features": [
         "自動調光機能 (内蔵環境光センサー)",
@@ -166,7 +157,8 @@
         "15段階輝度調整",
         "タッチセンサーコントロール",
         "適合モニター厚: 1cm 〜 3cm"
-      ]
+      ],
+      "weight": "約530g"
     }
   }
 }
