@@ -67,9 +67,6 @@ export class CategoryNormalizer {
     'キャットフード',
     'ドッグフード',
     'ヘアケア',
-    'シャンプー',
-    'トリートメント',
-    'リンス',
     'マイク',
     'ビジネス・経済',
     'マネープラン',
@@ -79,15 +76,36 @@ export class CategoryNormalizer {
     '実用書',
     'コミック・ラノベ',
     '暮らし・健康・子育て',
-    '育毛',
-    'トニック',
-    'スカルプ',
     'コンタクトレンズ',
     'カラコン',
     'キャンプ',
     'アウトドア',
     'ハンドル',
     'ハンドルコントローラー',
+  ];
+
+  private static readonly HIGH_PRIORITY_KEYWORDS = [
+    'ヘアドライヤー',
+    'ドライヤー',
+    'カールドライヤー',
+    '電動頭皮ブラシ',
+    '頭皮マッサージ',
+    'ヘッドスパ',
+    '頭皮マッサージブラシ',
+    'ヘアアイロン',
+    'ヘアストレートアイロン',
+    'ヘアストレートナー',
+    'ヘアマルチスタイラー',
+    'ヘアブラシ',
+    'ヘアオイル',
+    'ヘアワックス',
+    'ヘアカラー',
+    'シャンプー',
+    'トリートメント',
+    'リンス',
+    '育毛',
+    'トニック',
+    'スカルプ',
   ];
 
   /**
@@ -165,6 +183,13 @@ export class CategoryNormalizer {
    * Calculate score based on preferred keywords
    */
   private static calculateScore(names: string[]): number {
+    const hasHighPriorityKeyword = names.some((name) =>
+      CategoryNormalizer.HIGH_PRIORITY_KEYWORDS.some((keyword) => name.toLowerCase().includes(keyword.toLowerCase())),
+    );
+    if (hasHighPriorityKeyword) {
+      return 20;
+    }
+
     const hasPreferredKeyword = names.some((name) =>
       CategoryNormalizer.PREFERRED_KEYWORDS.some((keyword) => name.toLowerCase().includes(keyword.toLowerCase())),
     );

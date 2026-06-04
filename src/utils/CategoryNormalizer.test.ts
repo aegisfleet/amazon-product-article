@@ -271,7 +271,7 @@ describe('CategoryNormalizer', () => {
       };
       const result = CategoryNormalizer.normalize(shampooNode);
       expect(result.main).toBe('シャンプー');
-      expect(result.score).toBe(10);
+      expect(result.score).toBe(20);
 
       const fuelNode: BrowseNode = {
         contextFreeName: '燃料',
@@ -282,16 +282,16 @@ describe('CategoryNormalizer', () => {
       expect(fuelResult.main).toBe('その他／全般'); // Because '燃料' is invalid
     });
 
-    it('should score "育毛・養毛用トニック・エッセンス" as 10', () => {
+    it('should score "育毛・養毛用トニック・エッセンス" as 20', () => {
       const node: BrowseNode = { displayName: '育毛・養毛用トニック・エッセンス', id: '1' };
       const result = CategoryNormalizer.normalize(node);
-      expect(result.score).toBe(10);
+      expect(result.score).toBe(20);
     });
 
-    it('should score categories with "スカルプ" as 10', () => {
+    it('should score categories with "スカルプ" as 20', () => {
       const node: BrowseNode = { displayName: 'スカルプシャンプー', id: '1' };
       const result = CategoryNormalizer.normalize(node);
-      expect(result.score).toBe(10);
+      expect(result.score).toBe(20);
     });
 
     it('should sanitize "PS4ハンドル・ジョイスティック" to "ハンドルコントローラー"', () => {
@@ -355,7 +355,7 @@ describe('CategoryNormalizer', () => {
 
       const result = CategoryNormalizer.selectBestCategory(nodes);
       expect(result.main).toBe('シャンプー');
-      expect(result.score).toBe(10);
+      expect(result.score).toBe(20);
     });
 
     it('should exclude "日用品・生活必需品 - ペット用品" and prefer specific pet food category', () => {
@@ -367,6 +367,28 @@ describe('CategoryNormalizer', () => {
       const result = CategoryNormalizer.selectBestCategory([junkNode, specificNode]);
       expect(result.main).toBe('ドライキャットフード');
       expect(result.score).toBe(10);
+    });
+
+    it('should prefer specific hair dryers over generic haircare category', () => {
+      const nodes: BrowseNode[] = [
+        { displayName: 'ヘアケア', id: '212411571051' },
+        { displayName: 'ヘアドライヤー', id: '212411570051' },
+      ];
+
+      const result = CategoryNormalizer.selectBestCategory(nodes);
+      expect(result.main).toBe('ヘアドライヤー');
+      expect(result.score).toBe(20);
+    });
+
+    it('should prefer head spa appliances over generic haircare category', () => {
+      const nodes: BrowseNode[] = [
+        { displayName: 'ヘアケア', id: '212411571051' },
+        { displayName: '電動頭皮ブラシ', id: '212411562051' },
+      ];
+
+      const result = CategoryNormalizer.selectBestCategory(nodes);
+      expect(result.main).toBe('電動頭皮ブラシ');
+      expect(result.score).toBe(20);
     });
   });
 });
