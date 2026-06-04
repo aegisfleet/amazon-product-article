@@ -1,0 +1,188 @@
+{
+  "analysis": {
+    "productName": "山善 昇降デスク 電動 一枚板 スタンディングデスク 120×60cm AED-1260 BK/MBK",
+    "parentAsin": "B0CMX88TM6",
+    "productDescription": "山善の電動昇降デスク。120cm×60cmのサイズで、衝突検知機能、メモリー機能（3つまで）、USBポート（Type-A、Type-C各1口）を搭載。日本のメーカーが企画・開発し、JIS規格に基づいた品質試験を実施している。",
+    "productUsage": [
+      "テレワークでのPC作業",
+      "オフィスでのスタンディングワーク",
+      "趣味や勉強などの作業デスク"
+    ],
+    "positivePoints": [
+      "衝突検知機能やメモリー機能など、便利な機能が充実している",
+      "USBポート(Type-AとType-C)が付属しており、デバイスの充電などに便利",
+      "日本で企画・開発され、厳しい基準の品質試験をクリアしているため信頼性が高い",
+      "デスク幅が120cm、奥行きが60cmあり、作業スペースとして十分な広さがある"
+    ],
+    "negativePoints": [
+      "価格が約3万3千円と、同サイズの廉価な競合他社モデルに比べて高め",
+      "重量が約31kgあり、組み立てや移動の際に労力がかかる"
+    ],
+    "useCases": [
+      "在宅勤務で長時間座りっぱなしを防ぐため、立って作業したい時",
+      "家族で共有し、それぞれの好みの高さ（座り姿勢・立ち姿勢）を登録して使う時"
+    ],
+    "userStories": [],
+    "userImpression": "日本メーカーの製品という安心感があり、便利な機能（USBポート、メモリー機能など）を備えた品質の高い昇降デスクという印象。価格はやや高めだが、品質や機能面を考慮すると十分な価値がある。",
+    "sources": [
+      {
+        "id": "src-1",
+        "name": "Amazon商品ページ",
+        "url": "https://www.amazon.co.jp/dp/B0CMX88TM6",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2023-11-22",
+        "author": "山善",
+        "conflictOfInterest": "possible",
+        "notes": "商品の詳細仕様、機能、メーカーの品質試験についての記述を確認"
+      },
+      {
+        "id": "src-2",
+        "name": "サクラチェッカー B0CMX88TM6",
+        "url": "https://sakura-checker.jp/search/B0CMX88TM6/",
+        "tier": "medium",
+        "evidenceType": "secondary",
+        "publishedAt": "2026-06-04",
+        "author": "サクラチェッカー",
+        "conflictOfInterest": "none",
+        "notes": "評価件数263件でレビューの多い人気商品。サクラの可能性が低く信頼できる評価であることを確認"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "JIS規格に基づいた品質試験を実施している",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "crossChecked": false,
+        "notes": "Amazonの商品説明（メーカー公式）に明記されている"
+      },
+      {
+        "claim": "USBポート(Type-A、Type-C)が付属している",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "crossChecked": false,
+        "notes": "Amazonの商品説明および商品画像で確認"
+      }
+    ],
+    "lastInvestigated": "2026-06-04",
+    "competitiveAnalysis": [
+      {
+        "name": "ErGear 電動 昇降式デスク 120cm B0BXLD2YXQ",
+        "asin": "B0BXLD2YXQ",
+        "priceComparison": "対象商品よりかなり安価だが、USBポートやJIS規格の試験実施などの記述は見られず、品質や機能面で差がある。",
+        "featureComparison": [
+          "共通点：幅120cm×奥行60cm、高さメモリー機能付き",
+          "相違点：対象商品はUSBポート付きで耐荷重60kgだが、ErGearはUSBポートなしで耐荷重80kg。対象商品は衝突検知機能が明記されている。"
+        ],
+        "differentiators": [
+          "山善の利点：日本メーカーによる企画・品質試験の安心感と、USBポート、衝突検知機能の存在。",
+          "ErGearの利点：価格が大幅に安いことと、耐荷重が大きい（80kg）こと。"
+        ]
+      },
+      {
+        "name": "YIHAYO 昇降デスク 120cm B0D12SP4L3",
+        "asin": "B0D12SP4L3",
+        "priceComparison": "対象商品より大幅に安価。基本的な昇降機能は備えているが、品質やサポート面での安心感は対象商品が勝る。",
+        "featureComparison": [
+          "共通点：幅120cm×奥行60cm、高さメモリー機能付き",
+          "相違点：対象商品はUSBポートや衝突検知機能があるが、YIHAYOには明記されていない。"
+        ],
+        "differentiators": [
+          "山善の利点：衝突検知やUSBポートといった付加機能と、メーカーの信頼性。",
+          "YIHAYOの利点：圧倒的な価格の安さ。"
+        ]
+      },
+      {
+        "name": "FEZIBO 昇降デスク 120cm B0F99CQZM2",
+        "asin": "B0F99CQZM2",
+        "priceComparison": "対象商品よりかなり安価だが、衝突検知機能や高さメモリー機能を備えている。",
+        "featureComparison": [
+          "共通点：幅120cm×奥行60cm、高さメモリー機能、衝突検知機能付き",
+          "相違点：対象商品はUSBポートが付いており、日本メーカーによる厳しい品質試験を実施している。"
+        ],
+        "differentiators": [
+          "山善の利点：USBポートが付属している点と、日本メーカーによる品質基準と安心感。",
+          "FEZIBOの利点：必要な機能（メモリー・衝突検知）を備えつつ、価格が安い。"
+        ]
+      },
+      {
+        "name": "Skyvance 電動 昇降デスク 120cm B0FV6THV3R",
+        "asin": "B0FV6THV3R",
+        "priceComparison": "対象商品より安価で、耐荷重が80kgと高い。",
+        "featureComparison": [
+          "共通点：幅120cm×奥行60cm、高さメモリー機能付き",
+          "相違点：Skyvanceは昇降範囲が65～110cmで対象商品(71～116cm)より低め。耐荷重はSkyvanceが80kgと大きい。"
+        ],
+        "differentiators": [
+          "山善の利点：USBポートや衝突検知機能があり、より高くまで昇降できる（116cm）。",
+          "Skyvanceの利点：より低い位置（65cm）まで下げられる点と、耐荷重が大きいこと。"
+        ]
+      },
+      {
+        "name": "ErGear 電動 昇降式デスク 120cm（ブラック） B0C4SQ6HPH",
+        "asin": "B0C4SQ6HPH",
+        "priceComparison": "対象商品より安価で、収納フックが付いている。",
+        "featureComparison": [
+          "共通点：幅120cm×奥行60cm、ブラックカラー、高さメモリー機能",
+          "相違点：対象商品はUSBポートと衝突検知機能がある。ErGearは耐荷重80kgで収納フック付き。"
+        ],
+        "differentiators": [
+          "山善の利点：USBポート、衝突検知機能があり、メーカーの品質基準に基づく安心感がある。",
+          "ErGearの利点：価格が安く、耐荷重が大きく、収納フックなどの付属品がある。"
+        ]
+      },
+      {
+        "name": "FLEXISPOT スタンディングデスク EF1 B092CVT2GH",
+        "asin": "B092CVT2GH",
+        "priceComparison": "対象商品より少し高い。FLEXISPOTは昇降デスクの有名ブランドであり、価格差に見合うブランド力がある。",
+        "featureComparison": [
+          "共通点：幅120cm×奥行60cm、高さメモリー機能付き",
+          "相違点：対象商品はUSBポートと衝突検知機能が標準で付いている。"
+        ],
+        "differentiators": [
+          "山善の利点：同価格帯でもUSBポートや衝突検知機能といった付加機能が充実している点。",
+          "FLEXISPOTの利点：昇降デスク専業・有名ブランドとしての実績と信頼性。"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "初めて電動昇降デスクを購入する人で、安心できるメーカーを選びたい人",
+        "USBポートを使って手元でスマートフォンなどを充電したい人",
+        "家族で異なる高さ設定を共有して使いたい人"
+      ],
+      "pros": [
+        "日本メーカー（山善）の厳しい品質試験をクリアした信頼性",
+        "衝突検知機能による安全性の高さ",
+        "手元で使える便利なUSBポート（Type-A、Type-C）"
+      ],
+      "cons": [
+        "ノーブランドや廉価メーカーの製品と比較すると価格が高い",
+        "重量が重く、組み立てや移動が少し大変"
+      ],
+      "score": 85,
+      "scoreRationale": "[基本点: 70]\n[加点: +10] (日本の有名メーカー製で第三者機関によるJIS規格ベースの品質試験を実施しており信頼性が高い)\n[加点: +5] (メモリー機能と衝突検知機能がついており利便性と安全性が高い)\n[加点: +5] (USBポート(Type-A, Type-C)が付属しており使い勝手が良い)\n[減点: -5] (機能が充実している分、同価格帯・同サイズの他社廉価モデルと比較すると価格が高め)\n[合計: 85]"
+    },
+    "technicalSpecs": {
+      "dimensions": {
+        "height": "710～1160mm",
+        "width": "1200mm",
+        "depth": "600mm"
+      },
+      "weight": "31kg",
+      "material": "天板/合成樹脂化粧パーティクルボード(メラミン樹脂)、脚部/スチール",
+      "loadCapacity": "60kg",
+      "features": [
+        "高さメモリー機能(3つ)",
+        "衝突検知機能",
+        "USBポート(Type-A 1口、Type-C 1口)"
+      ]
+    }
+  }
+}
