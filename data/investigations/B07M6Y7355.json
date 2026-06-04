@@ -31,72 +31,65 @@
     "userStories": [
       {
         "userType": "在宅勤務の会社員",
-        "scenario": "ノートPC内蔵カメラの画質に不満があり、安価に改善したかった",
-        "experience": "EMEET C960を導入したことで、取引先とのWeb会議で映像がクリアになり好印象を与えられた。USBを挿すだけで設定不要だったのが非常に楽だった。ただし、マイクの音質はイマイチだったので、手持ちのヘッドセットを併用している。（推測）",
-        "sentiment": "positive"
-      },
-      {
-        "userType": "大学生",
-        "scenario": "就職活動のオンライン面接用に広角なカメラを探していた",
-        "experience": "画質は綺麗で満足しているが、部屋全体が映ってしまうほど広角なので、背景を整理するかバーチャル背景を使う必要がある。価格が安いので学生には助かる。（推測）",
-        "sentiment": "mixed"
+        "scenario": "手軽にWeb会議の画質を向上させたい",
+        "experience": "ドライバー不要で、USBポートに接続するだけで使用できました。デバイスドライバやインストーラーが不要で設置が非常に楽でした。画質も手持ちのノートPCのWebカメラよりワンランク上のフルHDで満足しています。",
+        "sentiment": "positive",
+        "supportingSourceIds": [
+          "src-2"
+        ]
       }
     ],
     "userImpression": "EMEET C960は、3,000円以下という手頃な価格ながら、クリアな1080p画質と簡単なセットアップを実現しており、コストパフォーマンスが非常に高いと評価されている。特に「安くて画質が良い」という点が最大の魅力。一方で、内蔵マイクの品質に対する不満や、広すぎる画角による背景映り込みへの懸念も散見される。UGREENなどのさらに安価な競合が登場しているが、実績ある定番モデルとして依然人気がある。",
     "sources": [
       {
+        "id": "src-1",
         "name": "GADGENEKO: 【eMeet C960 レビュー】",
         "url": "https://gadgeneko.jp/emeet-c960-review",
-        "credibility": "詳細なレビューを行う個人ブログ。"
+        "tier": "medium",
+        "evidenceType": "secondary",
+        "publishedAt": "2021-09-04",
+        "author": "ねこおいしい",
+        "conflictOfInterest": "unknown",
+        "notes": "個人ブログによる製品レビュー"
       },
       {
+        "id": "src-2",
         "name": "ウインタブ: eMeet C960 ウェブカメラの実機レビュー",
         "url": "https://win-tab.net/acc/emeet_c960_web_camera_review_2012302/",
-        "credibility": "ガジェット専門レビューサイト。"
+        "tier": "medium",
+        "evidenceType": "secondary",
+        "publishedAt": "2020-12-30",
+        "author": "ウインタブ",
+        "conflictOfInterest": "disclosed",
+        "notes": "メーカー提供品（レビュー用）のレビュー記事。設定の容易さと画質を評価。"
       }
     ],
-    "lastInvestigated": "2026-02-13",
+    "lastInvestigated": "2026-06-05",
     "competitiveAnalysis": [
       {
-        "name": "Logicool C270nd HDウェブカメラ",
+        "name": "ロジクール ウェブカメラ C270nd HD 720P",
         "asin": "B0D21FZ5KN",
-        "priceComparison": "EMEET C960とほぼ同価格帯（約2,500円）。",
+        "priceComparison": "対象商品とほぼ同価格（￥2,490）。",
         "featureComparison": [
-          "解像度はHD(720p)であり、C960のフルHD(1080p)に劣る。",
-          "画角が55°と狭く、個人利用に特化しており背景映り込みが少ない。",
-          "Logicoolブランドの信頼性とRightLight技術による安定した自動光補正。"
+          "共通点：低価格帯のウェブカメラ、USB接続、マイク内蔵",
+          "相違点：C270ndは解像度がHD(720P)であり、C960のフルHD(1080P)より劣る。また、画角が狭く個人利用に向いている。"
         ],
         "differentiators": [
-          "画質重視ならC960、ブランド信頼性と個人用画角ならC270nd。",
-          "Amazon限定モデルで入手性が良い。"
+          "EMEET ウェブカメラ C960の利点：フルHD(1080p)の高画質と90°の広角レンズ。",
+          "ロジクール ウェブカメラ C270ndの利点：Logicoolブランドの信頼性と、背景映り込みが少ない狭い画角。"
         ]
       },
       {
-        "name": "UGREEN ウェブカメラ FHD 1080P",
-        "asin": "B0C76ZD7KV",
-        "priceComparison": "EMEET C960よりもさらに安価（約2,000円以下）。",
-        "featureComparison": [
-          "解像度（1080p）や画角（85°）がC960（90°）と非常に近いスペック。",
-          "360度回転可能なスタンドを持ち、設置の自由度が高い。",
-          "デュアルノイズリダクションマイクを搭載。"
-        ],
-        "differentiators": [
-          "圧倒的なコストパフォーマンス。",
-          "C960よりもさらに安く同等のスペックを提供している強力なライバル。"
-        ]
-      },
-      {
-        "name": "Logicool Brio 100",
+        "name": "ロジクール ウェブカメラ Brio 100",
         "asin": "B0CGLP26ZR",
-        "priceComparison": "EMEET C960より1,500円以上高い（約4,300円）。",
+        "priceComparison": "対象商品よりやや高価（￥4,335）。",
         "featureComparison": [
-          "解像度は同じフルHD(1080p)。",
-          "物理的なプライバシーシャッターを搭載しており、セキュリティ面で安心。",
-          "デザイン性が高く、デスク周りに馴染むカラーバリエーション。"
+          "共通点：1080PフルHD解像度、マイク内蔵、自動光補正",
+          "相違点：Brio 100は物理的なプライバシーシャッターを搭載している。"
         ],
         "differentiators": [
-          "価格は高いが、プライバシー保護機能とデザイン、ブランド力で差別化。",
-          "予算に余裕があるならこちらが安全な選択肢。"
+          "EMEET ウェブカメラ C960の利点：より安価に1080p画質を導入できる。",
+          "ロジクール ウェブカメラ Brio 100の利点：プライバシーシャッターによる安全性とデザイン性。"
         ]
       }
     ],
@@ -116,8 +109,8 @@
         "広角すぎて個人利用では部屋の背景が映り込みやすい",
         "プライバシーカバーがなく、物理的にカメラを隠せない"
       ],
-      "score": 78,
-      "scoreRationale": "[基本点: 70]\n[加点: +12] (2,000円台で1080p画質を実現しており、依然としてコストパフォーマンスが高い)\n[加点: +5] (長年の販売実績と多くのユーザーレビューによる信頼性)\n[減点: -8] (内蔵マイクの音質が低く、実用レベルではない)\n[減点: -1] (プライバシーカバーがなく、セキュリティ面で配慮が必要)\n[合計: 78]"
+      "score": 86,
+      "scoreRationale": "[基本点: 70]\n[加点: +12] (2,000円台で1080p画質を実現しておりコストパフォーマンスが高い)\n[加点: +5] (プラグアンドプレイで設定が容易な点)\n[減点: -1] (物理的なプライバシーカバーが付属しない点)\n[合計: 86]"
     },
     "technicalSpecs": {
       "resolution": "Full HD 1080p (1920x1080)",
@@ -125,10 +118,59 @@
       "fieldOfView": "90°",
       "focusType": "固定フォーカス (0.5m - 5m)",
       "microphone": "デュアル全方向性マイク (ノイズキャンセリング)",
-      "connectivity": ["USB 2.0 Type-A (ケーブル長1.8m)"],
-      "supportedOS": ["Windows 7/10/11", "macOS 10.10+", "Android", "Linux"],
-      "dimensions": { "width": "不明", "height": "不明", "depth": "不明", "weight": "不明" },
-      "other": ["自動光補正", "1/4インチ三脚穴", "プライバシーカバーなし"]
-    }
+      "connectivity": [
+        "USB 2.0 Type-A (ケーブル長1.8m)"
+      ],
+      "supportedOS": [
+        "Windows 7/10/11",
+        "macOS 10.10+",
+        "Android",
+        "Linux"
+      ],
+      "dimensions": {
+        "height": "88.9mm",
+        "width": "21.6mm",
+        "depth": "127mm"
+      },
+      "other": [
+        "自動光補正",
+        "三脚穴 (6.35mm)",
+        "プライバシーカバーなし"
+      ],
+      "weight": "160g"
+    },
+    "claims": [
+      {
+        "claim": "ドライバー不要で、USB接続だけで利用できる",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-1",
+          "src-2"
+        ],
+        "crossChecked": true,
+        "notes": "GADGENEKOとウインタブの両レビュー記事で、プラグアンドプレイで簡単に使用できることが確認された。"
+      },
+      {
+        "claim": "ノートPCの内蔵カメラよりも画質が良い（フルHD 1080p）",
+        "category": "comparativeAdvantage",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-2"
+        ],
+        "crossChecked": false,
+        "notes": "ウインタブのレビューにて、ASUS ZenBook 14の内蔵カメラよりも画質が良いと評価されている。"
+      },
+      {
+        "claim": "内蔵マイクの音質が低く、くぐもって聞こえる",
+        "category": "quality",
+        "confidence": "medium",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "crossChecked": false,
+        "notes": "GADGENEKOのレビューにて、本体上部のマイクの音質が悪いと指摘されている。"
+      }
+    ]
   }
 }
