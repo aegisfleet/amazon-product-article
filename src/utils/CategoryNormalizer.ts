@@ -557,6 +557,7 @@ export class CategoryNormalizer {
       '収納・生活雑貨',
       'タケオキクチ、コムサイズム他 ビジネスファッション・小物',
       'ゲーミングチェア＆デスク',
+      '特選健康家電 オムロン、タニタ、ルルド、スライブ',
     ];
 
     if (blacklist.includes(name)) {

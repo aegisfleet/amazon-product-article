@@ -165,6 +165,7 @@ describe('CategoryNormalizer', () => {
         'Multibuy Experiment',
         '3MAone人気アイテム',
         '3M_Aone_人気アイテム',
+        '特選健康家電 オムロン、タニタ、ルルド、スライブ',
       ];
       invalidNames.forEach((name) => {
         expect(CategoryNormalizer.isValidCategoryName(name)).toBe(false);
