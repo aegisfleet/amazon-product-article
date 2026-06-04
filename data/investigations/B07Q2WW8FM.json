@@ -1,0 +1,173 @@
+{
+  "analysis": {
+    "productName": "タニタ 体重計 体組成計 スマホ連動 BC-768",
+    "parentAsin": "B07Q2WW8FM",
+    "productDescription": "スマホ連携機能を備え、乗るだけで自動認識する「乗るピタ機能」搭載の体組成計。",
+    "productUsage": [
+      "体重測定",
+      "体組成測定",
+      "健康管理データ連携"
+    ],
+    "positivePoints": [
+      "スマホとの連動でデータ管理が簡単",
+      "「乗るピタ機能」により乗るだけで測定がスタート",
+      "立てかけ収納が可能で場所を取らない"
+    ],
+    "negativePoints": [
+      "iPad、iPod touch、Androidタブレットには対応していない",
+      "Bluetooth接続がうまくいかない場合がある"
+    ],
+    "useCases": [
+      "ダイエット時の日々の記録",
+      "筋肉量や基礎代謝量の推移確認",
+      "家族間での健康データの共有と管理"
+    ],
+    "userStories": [
+      {
+        "userType": "ダイエット目的のユーザー",
+        "scenario": "日々の減量記録を簡単に行いたい",
+        "experience": "商品の発送も迅速でした。商品は利便性が高く、減量に励むことができそうです。",
+        "supportingSourceIds": [
+          "src-amazon"
+        ],
+        "sentiment": "positive"
+      }
+    ],
+    "userImpression": "スマホへのデータ自動転送による手間の削減が好評。乗るだけで測定を開始できる手軽さも評価されているが、一部の端末（タブレット等）には非対応である点に注意が必要。",
+    "sources": [
+      {
+        "id": "src-amazon",
+        "name": "Amazon商品ページ",
+        "url": "https://www.amazon.co.jp/dp/B07Q2WW8FM",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-06-04",
+        "author": "Amazon",
+        "conflictOfInterest": "possible",
+        "notes": "製品仕様、価格(6,980円)、特徴(スマホ連動、乗るピタ機能)、ユーザーレビュー(利便性が高く減量に励める)を確認。"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "乗るピタ機能により乗るだけで測定を開始できる",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-amazon"
+        ],
+        "crossChecked": false,
+        "notes": "Amazonの商品概要・特徴にて確認"
+      },
+      {
+        "claim": "スマホと連動し、専用アプリで健康データを管理できる",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-amazon"
+        ],
+        "crossChecked": false,
+        "notes": "商品タイトル及び説明から確認"
+      }
+    ],
+    "lastInvestigated": "2026-06-04",
+    "competitiveAnalysis": [
+      {
+        "name": "オムロン カラダスキャン KRD-403T-BG",
+        "asin": "B0DDQ6CNH2",
+        "priceComparison": "同価格帯で、どちらもスマホ連動や自動認識機能を搭載している。",
+        "featureComparison": [
+          "共通点：スマホ連動機能、自動認識機能（乗るだけで測定開始）",
+          "相違点：オムロンはA4サイズのコンパクト設計やモカベージュのカラー展開が特徴。タニタは「乗るピタ機能」など独自のアルゴリズムに強み。"
+        ],
+        "differentiators": [
+          "タニタ 体重計 体組成計 スマホ連動 BC-768の利点：測定アルゴリズムへの信頼性や、シンプルなホワイトデザインを好むユーザーに適している。",
+          "オムロン カラダスキャン KRD-403T-BGの利点：A4サイズとよりコンパクトな設計で、収納スペースが限られている場合に適している。"
+        ]
+      },
+      {
+        "name": "Anker Eufy Smart Scale P2 Pro",
+        "asin": "B0B1VJNWJD",
+        "priceComparison": "同価格帯で、より多くの測定項目（心拍数など）に対応している。",
+        "featureComparison": [
+          "共通点：スマホ連携によるデータ管理",
+          "相違点：AnkerはWi-FiとBluetoothの両方に対応し、心拍数測定など16項目のデータが取得可能。タニタはBluetoothのみで基本的な体組成測定に特化。"
+        ],
+        "differentiators": [
+          "タニタ 体重計 体組成計 スマホ連動 BC-768の利点：国内老舗メーカーとしての安心感と、基礎的な測定項目で十分なユーザー向け。",
+          "Anker Eufy Smart Scale P2 Proの利点：Wi-Fi接続による自動同期や、心拍数などより詳細なデータを求めるユーザー向け。"
+        ]
+      },
+      {
+        "name": "エレコム 体組成計 EFSBT01WH",
+        "asin": "B0DP6CSY2D",
+        "priceComparison": "対象商品よりも安価だが、測定単位が100g単位となっている。",
+        "featureComparison": [
+          "共通点：スマホアプリとの連携、自動ONOFF機能",
+          "相違点：エレコムはバックライトを搭載し暗い場所でも見やすいが、測定精度（100g単位）で劣る可能性がある。タニタはより精緻な測定が期待できる。"
+        ],
+        "differentiators": [
+          "タニタ 体重計 体組成計 スマホ連動 BC-768の利点：精度と長年の実績を重視するユーザー向け。",
+          "エレコム 体組成計 EFSBT01WHの利点：コストを抑えたいユーザーや、バックライト機能が必要なユーザー向け。"
+        ]
+      },
+      {
+        "name": "Anker Eufy Smart Scale A1",
+        "asin": "B0CPYCRHFN",
+        "priceComparison": "対象商品よりも半額以下で安価なエントリーモデル。",
+        "featureComparison": [
+          "共通点：スマホ連携、コンパクトなデザイン",
+          "相違点：A1は測定項目が12項目と少なめで、価格を抑えたエントリー機。タニタはより本格的な体組成測定が可能。"
+        ],
+        "differentiators": [
+          "タニタ 体重計 体組成計 スマホ連動 BC-768の利点：より詳細な体組成データと国内メーカーの信頼性を重視するユーザー向け。",
+          "Anker Eufy Smart Scale A1の利点：とにかく安くスマホ連動の体重計を手に入れたいユーザー向け。"
+        ]
+      },
+      {
+        "name": "オムロン カラダスキャン KRD-703T",
+        "asin": "B07YLPHPHB",
+        "priceComparison": "対象商品よりも高価な両手両足測定のハイエンドモデル。",
+        "featureComparison": [
+          "共通点：スマホ連携、オムロン/タニタという国内大手メーカー製",
+          "相違点：KRD-703Tは両手両足測定により部位別の体組成が測れる高精度モデル。タニタは両足のみの標準的な測定方法。"
+        ],
+        "differentiators": [
+          "タニタ 体重計 体組成計 スマホ連動 BC-768の利点：手軽に乗るだけで測定でき、価格と性能のバランスが良い。",
+          "オムロン カラダスキャン KRD-703Tの利点：部位別の筋肉量や脂肪率など、より本格的なトレーニングやダイエットのデータを求めるユーザー向け。"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "スマホで簡単に体重や体組成を記録・管理したい人",
+        "ダイエットや健康管理を始めたばかりの人",
+        "国内老舗メーカーの安心感を求める人"
+      ],
+      "pros": [
+        "乗るだけで自動で人を認識し測定が始まる手軽さ",
+        "専用アプリによるグラフ化でモチベーションが維持しやすい",
+        "国内メーカーの信頼性と精度"
+      ],
+      "cons": [
+        "タブレット端末(iPad, Androidタブレット等)には非対応",
+        "Wi-Fi機能はなくBluetooth通信のみ"
+      ],
+      "score": 83,
+      "scoreRationale": "[基本点: 70]\n[加点: +5] (スマホ連動でデータ管理が簡単)\n[加点: +5] (「乗るピタ機能」による測定の手軽さ)\n[加点: +5] (国内メーカーとしての信頼性と品質)\n[減点: -2] (タブレット端末非対応の制約)\n[合計: 83]"
+    },
+    "technicalSpecs": {
+      "dimensions": {
+        "height": "27mm",
+        "width": "217mm",
+        "length": "316mm"
+      },
+      "weight": "1500g",
+      "power": "DC6V 単4乾電池×4本",
+      "accessories": "本体、お試し用電池(単4乾電池×4本)",
+      "color": "ホワイト",
+      "other": [
+        "対応機器: スマートフォン (iPad、iPod touch、Androidタブレット非対応)"
+      ]
+    }
+  }
+}
