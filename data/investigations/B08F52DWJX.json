@@ -1,0 +1,106 @@
+{
+  "analysis": {
+    "productName": "ユピテル ドライブレコーダー WDT510c",
+    "parentAsin": "B08F52DWJX",
+    "productDescription": "フロント200万画素(Full HD)、リア100万画素でクリアに記録できる、ユピテルの前後2カメラ式スタンダードドライブレコーダー。",
+    "productUsage": ["自動車の走行録画", "事故時の証拠映像記録"],
+    "positivePoints": ["フロントカメラはHDR搭載で白とびや黒つぶれを抑えたクリアな映像", "GPSおよびGセンサーを搭載し充実した基本機能", "16GB microSDカードとロングリアカメラケーブル(約9m)が付属"],
+    "negativePoints": ["リアカメラは100万画素のため、上位モデルよりは解像度が劣る", "駐車監視機能を使用するにはオプション電源直結コードが別途必要"],
+    "useCases": ["日々の通勤やドライブの記録", "万が一の事故の際の証拠確保"],
+    "userStories": [],
+    "userImpression": "スタンダードモデルながらフロントは200万画素(Full HD)とHDRに対応しており、基本機能がしっかり搭載されているため、コストパフォーマンスが高いと評価されている。",
+    "sources": [
+      {
+        "id": "src-1",
+        "name": "Amazon商品ページ",
+        "url": "https://www.amazon.co.jp/dp/B08F52DWJX",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-06-04",
+        "author": "Amazon",
+        "conflictOfInterest": "none",
+        "notes": "製品仕様、特徴、付属品情報の確認"
+      },
+      {
+        "id": "src-2",
+        "name": "ユピテル公式 製品仕様ページ",
+        "url": "https://www.yupiteru.co.jp/products/drive_recorder/wdt510c/spec.html",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-06-04",
+        "author": "ユピテル",
+        "conflictOfInterest": "none",
+        "notes": "正確な外形寸法、重量、カメラ性能（画角、画素数）などの技術仕様の確認"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "フロントカメラは200万画素Full HDおよびHDRに対応している",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": ["src-1", "src-2"],
+        "crossChecked": true,
+        "notes": "Amazon商品説明および公式仕様表で一致"
+      },
+      {
+        "claim": "GPSおよびGセンサーを搭載している",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": ["src-1", "src-2"],
+        "crossChecked": true,
+        "notes": "両ソースで基本機能として記載あり"
+      }
+    ],
+    "lastInvestigated": "2026-06-04",
+    "competitiveAnalysis": [
+      {
+        "name": "ユピテル WDT620d",
+        "asin": "B0CJRB1P2G",
+        "priceComparison": "WDT620dのほうがやや高価だが、その分機能が向上している。",
+        "featureComparison": [
+          "共通点：前後2カメラ構成、16GBmicroSDカード付属",
+          "相違点：WDT620dは前後ともに200万画素でHDRおよび夜間記録機能「SUPER NIGHT」を搭載しているのに対し、WDT510cはフロントのみ200万画素・HDR搭載でリアは100万画素"
+        ],
+        "differentiators": [
+          "ユピテル WDT510cの利点：基本的な機能を押さえつつ、より手頃な価格で導入可能",
+          "ユピテル WDT620dの利点：前後ともに高画質で、夜間のプライバシーガラス越しでも明るく記録できるため夜間走行が多い場合に適している"
+        ]
+      },
+      {
+        "name": "コムテック ZDR058",
+        "asin": "B09HQM3RSL",
+        "priceComparison": "ZDR058のほうが高価だが、通信機能など高度な付加価値を備えている。",
+        "featureComparison": [
+          "共通点：前後2カメラで車両周辺を記録できる",
+          "相違点：ZDR058は4G LTE通信機能によるクラウド連携やSTARVIS搭載による高画質録画、安全運転支援機能などを備える高機能モデルであるのに対し、WDT510cは通信機能のないスタンダードなモデル"
+        ],
+        "differentiators": [
+          "ユピテル WDT510cの利点：不要な機能を省き、シンプルな構成で初期費用やランニングコストを抑えられる",
+          "コムテック ZDR058の利点：クラウド保存や運転支援など、高度な機能により一層の安心を得られる"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": ["初めてドライブレコーダーを取り付ける人", "基本的な機能が揃った信頼性の高いモデルを低コストで探している人"],
+      "pros": ["コストパフォーマンスが高い", "フロントカメラの画質が良い", "大手メーカー製の安心感"],
+      "cons": ["リアカメラの画質はフロントに劣る", "駐車監視機能には追加費用がかかる"],
+      "score": 80,
+      "scoreRationale": "[基本点: 70]\n[加点: +5] フロント200万画素/リア100万画素とHDR搭載による十分な視認性と画質\n[加点: +5] GPS、Gセンサー搭載など必要十分な基本機能\n[加点: +5] 16GBのmicroSDカードやロングケーブルが付属し初期導入ハードルが低い\n[減点: -5] 駐車監視機能はオプション対応が必要\n[合計: 80]"
+    },
+    "technicalSpecs": {
+      "dimensions": { "height": "フロント: 49mm / リア: 25mm(直径)", "width": "フロント: 64mm / リア: 58mm", "depth": "フロント: 32mm / リア: -" },
+      "weight": "フロント: 約69g (microSD含む) / リア: 約19g",
+      "capacity": "-",
+      "material": "-",
+      "origin": "-",
+      "other": [
+        "記録画角: フロント対角160度(水平138度、垂直85度) / リア対角150度(水平120度、垂直62度)",
+        "GPS: 有",
+        "Gセンサー: 有(感度設定可能)",
+        "付属記録媒体: 16GB microSDカード",
+        "電源: 12Vシガープラグコード(約4m)",
+        "リアカメラケーブル: 約9m"
+      ]
+    }
+  }
+}
