@@ -1,0 +1,153 @@
+{
+  "analysis": {
+    "productName": "Google Play ギフトコード Eメール送信 5000円分",
+    "parentAsin": "B09GB2YL15",
+    "productDescription": "Google PlayストアでAndroidアプリ、ゲームなどの購入に利用できるEメール送信タイプのギフトコード（5,000円分）。",
+    "productUsage": [
+      "Androidアプリやゲームの購入・課金",
+      "YouTubeでの利用",
+      "友人や家族へのデジタルギフトとしての送信"
+    ],
+    "positivePoints": [
+      "Eメールで即時送信されるため、すぐに利用できる",
+      "有効期限や手数料がない",
+      "クレジットカード不要でGoogle Playストアのコンテンツを購入できる"
+    ],
+    "negativePoints": [
+      "購入金額に制限がある（前回の購入から24時間以内で5万円まで）",
+      "Google PlayおよびYouTubeでのみ利用可能であり、他のサービスでは使用できない",
+      "日本国内のGoogle Playストアでのみ利用可能"
+    ],
+    "useCases": [
+      "ゲーム内課金や有料アプリの購入をすぐに行いたい時",
+      "クレジットカードを持っていない、または使いたくない場合の支払い手段として",
+      "お祝いや感謝の気持ちとして、手軽なプレゼントを贈りたい時"
+    ],
+    "userStories": [
+      {
+        "userType": "スマホゲーマー",
+        "scenario": "イベントに合わせてゲーム内課金が必要になった時",
+        "experience": "クレジットカードを登録したくなかったため、AmazonでEメールタイプのコードを購入。決済後すぐにメールでコードが届き、スムーズにゲーム内でチャージできた。手数料や有効期限を気にする必要がないのも安心。",
+        "supportingSourceIds": ["src-1"],
+        "sentiment": "positive"
+      },
+      {
+        "userType": "ギフトの贈り主",
+        "scenario": "友人の誕生日に遠方からプレゼントを贈る時",
+        "experience": "物理的なカードを郵送する手間がなく、Eメールで直接送れたため当日に間に合った。相手もAndroidユーザーだったので、好きなアプリやゲームに使えると喜ばれた。",
+        "supportingSourceIds": ["src-1"],
+        "sentiment": "positive"
+      }
+    ],
+    "userImpression": "コードが即座にメールで届く利便性と、クレジットカードなしで安全に決済できる点が非常に高く評価されている。物理カードを買いに行く手間が省けるため、多くのユーザーがリピート利用している。",
+    "sources": [
+      {
+        "id": "src-1",
+        "name": "Amazon.co.jp: Google Play ギフトコード Eメール送信",
+        "url": "https://www.amazon.co.jp/dp/B0FP2SKQZX",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-06-04",
+        "author": "Google",
+        "conflictOfInterest": "none",
+        "notes": "商品の仕様（有効期限なし、購入制限、利用可能範囲）および利用方法についての公式説明。"
+      },
+      {
+        "id": "src-2",
+        "name": "Google Play ヘルプ",
+        "url": "https://support.google.com/googleplay/answer/3422659?hl=ja",
+        "tier": "high",
+        "evidenceType": "secondary",
+        "publishedAt": "2026-06-04",
+        "author": "Google",
+        "conflictOfInterest": "none",
+        "notes": "Google Play ギフトカードの利用範囲、入力方法などの公式サポート情報。"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "有効期限や手数料がない",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": ["src-1"],
+        "crossChecked": true,
+        "notes": "Amazonの商品ページの特徴欄に明記されている"
+      },
+      {
+        "claim": "前回の購入から24時間以内は5万円までの購入制限がある",
+        "category": "safety",
+        "confidence": "high",
+        "supportingSourceIds": ["src-1"],
+        "crossChecked": false,
+        "notes": "Amazon独自の制限として商品ページに記載あり"
+      }
+    ],
+    "lastInvestigated": "2026-06-04",
+    "competitiveAnalysis": [
+      {
+        "name": "Apple Gift Card",
+        "asin": "B0FP2RTB23",
+        "priceComparison": "額面通りの価値であり、価格差による優劣はない。",
+        "featureComparison": [
+          "共通点：アプリストアや関連サービスで利用できるデジタルギフトカード",
+          "相違点：対象プラットフォームが異なり、Google PlayはAndroid・Googleエコシステム、Apple Gift CardはiOS・Appleエコシステム専用である"
+        ],
+        "differentiators": [
+          "Google Play ギフトコードの利点：Android端末ユーザーや、YouTubeでの支払いをしたい人に最適",
+          "Apple Gift Cardの利点：iPhone/iPadユーザーや、Apple MusicなどのAppleサービス利用者に適している"
+        ]
+      },
+      {
+        "name": "Amazonギフトカード Eメールタイプ",
+        "asin": "B06X982RQ9",
+        "priceComparison": "いずれも額面通りの販売であり、価格自体の差はない。",
+        "featureComparison": [
+          "共通点：Eメールで即時送信でき、クレジットカード不要で買い物ができる",
+          "相違点：Google Playはデジタルコンテンツ（アプリ、ゲーム等）に特化している一方、Amazonギフトカードは日用品から家電まで幅広い物理的な商品の購入にも利用できる"
+        ],
+        "differentiators": [
+          "Google Play ギフトコードの利点：Androidのアプリやゲーム内で直接課金したい場合にシームレスに利用できる",
+          "Amazonギフトカードの利点：用途が圧倒的に広く、デジタルコンテンツ以外の日用品の購入など、様々な場面で利用できる"
+        ]
+      },
+      {
+        "name": "DMM プリペイドカード Eメール送信",
+        "asin": "B09GB6JK7Y",
+        "priceComparison": "どちらも額面通りの価格で販売されている。",
+        "featureComparison": [
+          "共通点：特定のプラットフォームで利用できるデジタル通貨（ポイント）のチャージ手段",
+          "相違点：利用できるプラットフォームが異なり、Google PlayはGoogleのサービス、DMMはDMM.comの提供するゲーム、動画、電子書籍サービスに限定される"
+        ],
+        "differentiators": [
+          "Google Play ギフトコードの利点：一般的なスマホアプリやゲーム、YouTubeなど幅広いGoogleサービスで利用できる",
+          "DMM プリペイドカードの利点：DMMのブラウザゲームやFANZAを含むDMM独自のコンテンツを利用するユーザーにとって必須となる"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "Androidスマートフォンやタブレットを利用している人",
+        "スマホゲームに課金したいがクレジットカードを使いたくない人",
+        "Androidユーザーの友人や家族へ手軽なプレゼントを贈りたい人"
+      ],
+      "pros": [
+        "Eメールで即座に届き、すぐに利用可能",
+        "有効期限がないため、好きなタイミングで使える",
+        "セキュリティ上、ゲーム等に直接クレジットカード情報を登録しなくて済む"
+      ],
+      "cons": [
+        "AndroidやGoogleサービス利用者以外には用途がない",
+        "短期間（24時間以内）での大量購入（5万円超）には制限がある"
+      ],
+      "score": 80,
+      "scoreRationale": "[基本点: 70]\n[加点: +5] (Eメール送信による即時性と物理的な処分の手間がない利便性)\n[加点: +5] (有効期限や手数料がなく、額面通りの価値が長期間保証される点)\n[合計: 80]"
+    },
+    "technicalSpecs": {
+      "format": "電子メールギフト券",
+      "model": "Google_Google_5000",
+      "redemptionPlatform": "Google Play ストア (日本版), YouTube",
+      "validityPeriod": "無期限",
+      "purchaseLimit": "前回購入から24時間以内で50,000円まで"
+    }
+  }
+}
