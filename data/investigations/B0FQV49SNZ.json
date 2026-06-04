@@ -1,0 +1,198 @@
+{
+  "analysis": {
+    "productName": "ASUS VP327Q 31.5インチ 4Kモニター",
+    "parentAsin": "B0FQV49SNZ",
+    "productDescription": "178度の広視野角と4K UHD (3840 x 2160) 解像度を備えた31.5インチモニター。アイケア技術を搭載し、長時間の作業やエンターテインメントに最適。",
+    "productUsage": [
+      "オフィスワーク・ドキュメント作成",
+      "動画鑑賞・エンターテインメント",
+      "クリエイティブ作業のサブモニター"
+    ],
+    "positivePoints": [
+      "31.5インチの大画面で4K UHD解像度に対応し、広い作業領域と高精細な映像表現が可能",
+      "sRGB 99%カバーとHDR-10対応により、豊かで正確な色再現を実現",
+      "フリッカーフリーとブルーライト軽減機能(ASUS Eye Care)搭載で長時間の使用でも目が疲れにくい"
+    ],
+    "negativePoints": [
+      "リフレッシュレートなどのゲーミング性能に関する高いスペックは有しておらず、本格的なゲーム用途には不向き",
+      "USB Type-Cポートが非搭載であり、最新のノートPCとのケーブル1本での接続・給電ができない"
+    ],
+    "useCases": [
+      "在宅ワークで複数のウィンドウを並べて作業する",
+      "4Kコンテンツを大画面で楽しむ",
+      "写真や動画の編集作業を行う"
+    ],
+    "userStories": [],
+    "userImpression": "大画面・高解像度による作業効率の向上と、アイケア機能による目への負担軽減が高く評価されている。一方で、最新の接続規格（USB-C）に非対応な点やゲーミング性能には限界がある点も認識されている。",
+    "sources": [
+      {
+        "id": "src-amazon-api",
+        "name": "Amazon商品ページ",
+        "url": "https://www.amazon.co.jp/dp/B0FQV49SNZ",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2025-12-01",
+        "author": "ASUS",
+        "conflictOfInterest": "none",
+        "notes": "スペック情報、価格、公式の特徴情報を取得"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "31.5インチの大画面で4K UHD解像度に対応",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-amazon-api"
+        ],
+        "crossChecked": false,
+        "notes": "公式スペックで確認"
+      },
+      {
+        "claim": "フリッカーフリーとブルーライト軽減機能(ASUS Eye Care)搭載",
+        "category": "safety",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-amazon-api"
+        ],
+        "crossChecked": false,
+        "notes": "製品名および特徴説明で確認"
+      }
+    ],
+    "lastInvestigated": "2026-06-04",
+    "competitiveAnalysis": [
+      {
+        "name": "LG 32UR500K-B",
+        "asin": "B0D73QXZVQ",
+        "priceComparison": "価格帯は同等レベル（約39,000円前後）。両者ともエントリークラスの31.5インチ4Kモニターとして競合する。",
+        "featureComparison": [
+          "共通点：31.5インチ、4K UHD解像度、HDR10対応、アイケア機能（ブルーライト低減・フリッカーセーフ）搭載",
+          "相違点：ASUSはsRGB 99%、LGはDCI-P3 90%カバー。LGは5W+5Wスピーカーを内蔵。"
+        ],
+        "differentiators": [
+          "ASUS VP327Qの利点：正確なsRGB色域（99%）を求める用途や、ASUS独自のEye Care機能に魅力を感じる場合。",
+          "LG 32UR500K-Bの利点：DCI-P3 90%の広色域と、5W+5Wのステレオスピーカーが内蔵されている点。"
+        ]
+      },
+      {
+        "name": "Dell S2725QC-A",
+        "asin": "B0F23FWBJL",
+        "priceComparison": "Dellの方がやや高価（約45,000円）だが、USB Type-C給電やスタンドの柔軟性が優れる。",
+        "featureComparison": [
+          "共通点：4K UHD解像度、sRGB 99%カバー、スピーカー内蔵",
+          "相違点：ASUSは31.5インチの大画面、Dellは27インチでUSB Type-C（給電対応）搭載、さらに縦横回転や高さ調整が可能なスタンドを採用。"
+        ],
+        "differentiators": [
+          "ASUS VP327Qの利点：より大きな画面（31.5インチ）で作業領域を広く確保したい場合。",
+          "Dell S2725QC-Aの利点：USB Type-Cケーブル1本でノートPCと接続・給電したい場合や、柔軟なスタンド調整機能を求める場合。"
+        ]
+      },
+      {
+        "name": "LG 32UN880-B",
+        "asin": "B08DNQXFPG",
+        "priceComparison": "LGの方が高価（約57,000円）。エルゴノミクススタンドとUSB Type-C搭載による付加価値が価格差に反映されている。",
+        "featureComparison": [
+          "共通点：31.5インチ、4K UHD解像度、HDR対応、スピーカー内蔵",
+          "相違点：ASUSは一般的なスタンド、LGはアーム型エルゴノミクススタンドを採用し、USB Type-C接続にも対応。"
+        ],
+        "differentiators": [
+          "ASUS VP327Qの利点：初期費用を抑えて大画面4Kモニターを導入したい場合。",
+          "LG 32UN880-Bの利点：デスクスペースを有効活用できるアームスタンドが最初から欲しい場合や、USB Type-C接続が必須な場合。"
+        ]
+      },
+      {
+        "name": "LG 32SQ730S-W",
+        "asin": "B0BV6BZPZN",
+        "priceComparison": "LGの方が高価（約57,800円）。こちらはスマートモニターとしての機能（webOS）を持つため価格が異なる。",
+        "featureComparison": [
+          "共通点：31.5インチ、4K UHD解像度",
+          "相違点：ASUSは純粋なPCモニター、LGはwebOS22を搭載し単体で動画配信サービスなどを視聴可能なスマートモニター。"
+        ],
+        "differentiators": [
+          "ASUS VP327Qの利点：PC接続をメインとする純粋なPCモニターが必要で、コストを抑えたい場合。",
+          "LG 32SQ730S-Wの利点：PCを使わずに動画配信サービスを楽しみたい、またはApple AirPlay 2などを利用したい場合。"
+        ]
+      },
+      {
+        "name": "LG 27UP600K-W",
+        "asin": "B0DSH5TT8F",
+        "priceComparison": "LGの方が安価（約29,800円）。画面サイズが27インチと小さい分、価格が抑えられている。",
+        "featureComparison": [
+          "共通点：4K UHD解像度、IPS系パネルと同等の広視野角、アイケア機能",
+          "相違点：ASUSは31.5インチ、LGは27インチ。LGはDCI-P3 95%の広色域をカバー。"
+        ],
+        "differentiators": [
+          "ASUS VP327Qの利点：より大きな31.5インチの画面で迫力ある映像を楽しみたい、または文字を大きく表示したい場合。",
+          "LG 27UP600K-Wの利点：予算を重視しつつ、4Kの精細さと広色域（DCI-P3 95%）を求める場合。"
+        ]
+      },
+      {
+        "name": "LG 32UQ850V-W",
+        "asin": "B0CTKBY3J3",
+        "priceComparison": "LGの方が大幅に高価（約74,800円）。IPS BlackパネルやKVMスイッチなど、よりハイエンドな仕様を持つ。",
+        "featureComparison": [
+          "共通点：31.5インチ、4K UHD解像度",
+          "相違点：ASUSは標準的なパネルと機能、LGは黒の表現に優れるIPS Blackパネルを採用し、USB Type-C給電、KVMスイッチなどの高度な機能を搭載。"
+        ],
+        "differentiators": [
+          "ASUS VP327Qの利点：クリエイティブな用途よりも日常的な作業やエンタメ用途で、コストパフォーマンスを最重視する場合。",
+          "LG 32UQ850V-Wの利点：プロレベルの色再現性（DCI-P3 98%）や高いコントラスト、複数PCの操作（KVMスイッチ）など高度な生産性を求める場合。"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "リモートワークで広い作業領域を必要とするビジネスパーソン",
+        "大画面で高精細な動画コンテンツを楽しみたいユーザー",
+        "長時間の作業を行うため、目への負担を減らしたい人",
+        "コストパフォーマンス良く31.5インチの4Kモニターを導入したい人"
+      ],
+      "pros": [
+        "31.5インチの大画面と4K解像度による圧倒的な作業領域",
+        "sRGB 99%対応による自然な色再現",
+        "ASUS独自のEye Care技術による目への優しさ",
+        "31.5インチ4Kとしては手頃な価格帯"
+      ],
+      "cons": [
+        "USB Type-Cポート非搭載のため、ケーブル1本での接続・給電は不可",
+        "高リフレッシュレートには非対応なため、FPSなどの本格的なゲームには不向き",
+        "スタンドの調整機能（高さ・回転など）が限られている可能性"
+      ],
+      "score": 82,
+      "scoreRationale": "[基本点: 70]\n[加点: +5] 31.5インチ4Kモニターとして3万円台というコストパフォーマンスの高さ\n[加点: +4] ASUS Eye Care技術（フリッカーフリー、ブルーライト軽減）による目への負担軽減機能の充実\n[加点: +3] sRGB 99%対応による正確な色再現性\n[加点: +2] Adaptive-Sync対応で映像のティアリングを抑えられる点\n[減点: -2] USB Type-C非搭載による最新機器との接続性の制約\n[合計: 82]"
+    },
+    "technicalSpecs": {
+      "dimensions": {
+        "height": "48.6cm",
+        "width": "71.5cm",
+        "depth": "20.2cm"
+      },
+      "weight": "7.8kg",
+      "size": "80cm (31.5型)",
+      "resolution": "4K UHD (3840 x 2160)",
+      "panelType": "アンチグレア（LEDバックライト）",
+      "colorSpace": "99% sRGB",
+      "hdr": "HDR-10対応",
+      "brightness": "350cd/m2",
+      "contrastRatio": "3000:1",
+      "viewingAngle": "水平178°/垂直178°",
+      "responseTime": "4ms(GTG)",
+      "ports": [
+        "DisplayPort 1.2 x 1",
+        "HDMI(v2.0) x 2",
+        "3.5mmステレオミニジャック"
+      ],
+      "features": [
+        "Adaptive-Sync",
+        "フリッカーフリー",
+        "ブルーライト軽減機能",
+        "壁掛け対応"
+      ],
+      "warranty": "購入日より3年間の日本国内保証",
+      "color": "ブラック",
+      "other": [
+        "画素ピッチ: 0.182mm"
+      ]
+    }
+  }
+}
