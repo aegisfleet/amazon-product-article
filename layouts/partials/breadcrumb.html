@@ -19,7 +19,7 @@
         {{- /* 親カテゴリを検索 */ -}}
         {{- $parentName := "" -}}
         {{- $parentSlug := "" -}}
-        {{- range $parent, $data := site.Data.categorygroups -}}
+        {{- range $parent, $data := hugo.Data.categorygroups -}}
         {{- range $data.categories -}}
         {{- if eq . $category -}}
         {{- $parentName = $parent -}}
@@ -56,7 +56,7 @@
         {{- /* 親カテゴリを検索 */ -}}
         {{- $parentName := "" -}}
         {{- $parentSlug := "" -}}
-        {{- range $parent, $data := site.Data.categorygroups -}}
+        {{- range $parent, $data := hugo.Data.categorygroups -}}
         {{- range $data.categories -}}
         {{- if eq . $categoryName -}}
         {{- $parentName = $parent -}}
