@@ -3,7 +3,7 @@
 {{- $parentCategory := .Params.parent_category | default "" -}}
 {{- $categoryData := "" -}}
 {{- if ne $parentCategory "" -}}
-{{- $categoryData = index .Site.Data.categories.parents $parentCategory -}}
+{{- $categoryData = index hugo.Data.categories.parents $parentCategory -}}
 {{- end -}}
 
 {{- /* Error if no products (excluding "その他") */ -}}
@@ -50,7 +50,7 @@
     {{- if eq $parentCategory "その他／全般" -}}
     {{- /* Collect ALL categories from ALL parent groups */ -}}
     {{- $allCategorizedItems := slice -}}
-    {{- range $groupName, $groupData := .Site.Data.categories.parents -}}
+    {{- range $groupName, $groupData := hugo.Data.categories.parents -}}
     {{- range $groupData.childrenWithCounts -}}
     {{- $allCategorizedItems = $allCategorizedItems | append .name -}}
     {{- end -}}

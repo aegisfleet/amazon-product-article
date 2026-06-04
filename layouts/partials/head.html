@@ -111,7 +111,7 @@
 
 {{- if $category -}}
 {{- /* 親カテゴリを検索 */ -}}
-{{- range $parent, $data := site.Data.categorygroups -}}
+{{- range $parent, $data := hugo.Data.categorygroups -}}
 {{- range $data.categories -}}
 {{- if eq . $category -}}
 {{- $parentName = $parent -}}

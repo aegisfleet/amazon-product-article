@@ -203,7 +203,7 @@
     <div id="category-grouped-view" class="category-grouped-view"></div>
 
     <!-- Brand Section -->
-    {{- $brandData := .Site.Data.brandgroups -}}
+    {{- $brandData := hugo.Data.brandgroups -}}
     {{- if $brandData -}}
     {{- $brandList := slice -}}
     {{- range $brandName, $brand := $brandData -}}
