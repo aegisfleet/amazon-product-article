@@ -1,0 +1,138 @@
+{
+  "analysis": {
+    "productName": "Apple Gift Card Eメール送信 5,000円",
+    "parentAsin": "B09T37DLG6",
+    "productDescription": "Apple製のハードウェア、アクセサリ、アプリ、ゲーム、音楽、映画、iCloud+などの購入に利用できるEメールタイプのギフトカードです。",
+    "productUsage": ["App Storeでのアプリやゲームの購入", "iTunesでの音楽や映画の購入", "Apple Storeでのハードウェアやアクセサリの購入", "iCloud+やApple Oneなどのサブスクリプションの支払い"],
+    "positivePoints": ["Appleのあらゆる製品・サービスに1枚で対応可能", "Eメール送信タイプのため、すぐに届き相手に素早く贈れる", "有効期限がないため、自分のタイミングで利用できる"],
+    "negativePoints": ["購入できる金額には制限があり、前回の購入から24時間以内は5万円までという制限がある", "返品や払い戻しは一切不可"],
+    "useCases": ["友人や家族への誕生日・記念日のギフト", "自分用のアプリ購入やサブスクリプション支払いの事前チャージ"],
+    "userStories": [],
+    "userImpression": "多くのユーザーは、Eメールですぐに受け取れる利便性と、Appleの全サービス・ハードウェアで統一して使える汎用性の高さを評価しています。一方で、クレジットカード決済時のセキュリティチェックによる配送遅延や、購入金額の制限（24時間で5万円まで）に注意が必要との声も散見されます。",
+    "sources": [
+      {
+        "id": "src-1",
+        "name": "Apple Gift Card - Apple（日本）",
+        "url": "https://www.apple.com/jp/shop/gift-cards",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-06-04",
+        "author": "Apple",
+        "conflictOfInterest": "none",
+        "notes": "公式サイトからギフトカードの用途（ハードウェア、アプリ、サブスクリプションなど）、有効期限がないこと、および利用に関する注意事項を確認。"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "Apple製ハードウェアからアプリ・サブスクリプションまで幅広く利用可能である。",
+        "category": "comparativeAdvantage",
+        "confidence": "high",
+        "supportingSourceIds": ["src-1"],
+        "crossChecked": true,
+        "notes": "Apple公式サイトの記述と一致。"
+      },
+      {
+        "claim": "ギフトカードには有効期限がない。",
+        "category": "durability",
+        "confidence": "high",
+        "supportingSourceIds": ["src-1"],
+        "crossChecked": true,
+        "notes": "公式サイトにて有効期限がないことを確認。"
+      }
+    ],
+    "lastInvestigated": "2026-06-04",
+    "competitiveAnalysis": [
+      {
+        "name": "Google Play ギフトコード Eメール送信",
+        "asin": "B0FP2VDYQT",
+        "priceComparison": "定価販売のため価格は同等。",
+        "featureComparison": [
+          "共通点：Eメール送信タイプであり、デジタルコンテンツ（アプリ、ゲーム、サブスクリプション）の購入に利用可能。有効期限がない。",
+          "相違点：Apple Gift CardはAppleのエコシステム（iOSデバイス、Mac、Apple Storeのハードウェア）で利用できるのに対し、Google PlayギフトコードはAndroidアプリやGoogleのエコシステムに特化している。"
+        ],
+        "differentiators": [
+          "Apple Gift Card Eメール送信 5,000円の利点：iPhoneユーザーやMacユーザー向けのギフトとして最適であり、ハードウェアの購入にも使える点。",
+          "Google Play ギフトコード Eメール送信の利点：Androidユーザー向けのギフトや、Google Playストアでのコンテンツ購入を主目的とする場合に適している。"
+        ]
+      },
+      {
+        "name": "Amazon eギフトカード - Amazonロゴ",
+        "asin": "B06X982RQ9",
+        "priceComparison": "定価販売のため価格は同等。",
+        "featureComparison": [
+          "共通点：Eメールやショートメッセージで送信でき、オンラインショッピングですぐに利用可能なデジタルギフトカードであること。",
+          "相違点：Apple Gift CardはApple製品・サービス専用であり有効期限がないが、Amazon eギフトカードはAmazon.co.jpでの幅広い商品購入に利用可能であり、発行から10年の有効期限がある。"
+        ],
+        "differentiators": [
+          "Apple Gift Card Eメール送信 5,000円の利点：Appleのハードウェアやアプリ、デジタルコンテンツに用途を限定してプレゼントしたい場合に最適。",
+          "Amazon eギフトカード - Amazonロゴの利点：日用品から家電まで、Amazonの幅広い商品群から相手が自由に選べるようにしたい場合に適している。"
+        ]
+      },
+      {
+        "name": "Apple Gift Card Eメール送信 10,000円",
+        "asin": "B0FP2R8M58",
+        "priceComparison": "10,000円の額面であり、用途に応じた価格帯の違いのみ。",
+        "featureComparison": [
+          "共通点：Eメール送信タイプのApple Gift Cardであり、基本的な機能や用途、有効期限の有無は同一。",
+          "相違点：額面が5,000円か10,000円かの違いのみ。"
+        ],
+        "differentiators": [
+          "Apple Gift Card Eメール送信 5,000円の利点：ちょっとしたお礼や誕生日プレゼントなど、手軽な金額で贈るのに適している。",
+          "Apple Gift Card Eメール送信 10,000円の利点：高額なアプリの購入や、ハードウェア購入資金の足しにするなど、より高価なギフトを贈る際に適している。"
+        ]
+      },
+      {
+        "name": "Apple Gift Card 配送タイプ 5,000円",
+        "asin": "B0FKB8FLGX",
+        "priceComparison": "定価販売のため価格は同等。",
+        "featureComparison": [
+          "共通点：Appleのエコシステムで利用できる5,000円分のギフトカードであり、有効期限がない。",
+          "相違点：本商品はEメールで即時送信されるのに対し、配送タイプは物理的なカードが指定の住所に配送される。また、配送タイプはギフトラッピングが可能。"
+        ],
+        "differentiators": [
+          "Apple Gift Card Eメール送信 5,000円の利点：購入後すぐに相手に届くため、急ぎのギフトに最適であり、送料もかからない点。",
+          "Apple Gift Card 配送タイプ 5,000円の利点：物理的なカードとして手渡ししたい場合や、ギフトラッピングを施してフォーマルに贈りたい場合に適している。"
+        ]
+      },
+      {
+        "name": "Apple Gift Card 配送タイプ 30,000円",
+        "asin": "B0FKBDMNZD",
+        "priceComparison": "30,000円の額面であり、価格帯と配送形態が異なる。",
+        "featureComparison": [
+          "共通点：Appleのエコシステムで利用できるギフトカードであり、有効期限がない。",
+          "相違点：本商品は5,000円のEメールタイプであり、相手にすぐ届く。対してこちらは30,000円と高額で、物理的なカードとして配送される。"
+        ],
+        "differentiators": [
+          "Apple Gift Card Eメール送信 5,000円の利点：手頃な価格帯で、即座にオンラインで完結する手軽なギフトに適している。",
+          "Apple Gift Card 配送タイプ 30,000円の利点：デバイス購入などの高額な支出をサポートするための本格的なギフトとして、形に残るカードで贈りたい場合に適している。"
+        ]
+      },
+      {
+        "name": "Apple Gift Card Eメール送信 1,000円",
+        "asin": "B09T39S12J",
+        "priceComparison": "1,000円の額面であり、少額ギフトとしての違いのみ。",
+        "featureComparison": [
+          "共通点：EメールタイプのApple Gift Cardであり、即座に送信できる点。",
+          "相違点：額面が5,000円か1,000円かの違いのみ。"
+        ],
+        "differentiators": [
+          "Apple Gift Card Eメール送信 5,000円の利点：ある程度まとまった金額のアプリ購入やサブスクの数ヶ月分の支払いに適した、満足感のあるギフトとなる点。",
+          "Apple Gift Card Eメール送信 1,000円の利点：ほんの気持ち程度のプチギフトや、不足分の少額チャージ用途に最適。"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": ["iPhoneやMacのユーザー", "Appleのサブスクリプション(iCloud+, Apple Music等)を利用している人", "友人や家族へすぐに届くギフトを探している人"],
+      "pros": ["Appleのあらゆるサービス・製品に利用可能", "Eメールですぐに届く", "有効期限がない"],
+      "cons": ["購入金額に24時間で5万円までの制限がある", "返品・払い戻し不可"],
+      "score": 85,
+      "scoreRationale": "[基本点: 70]\n[加点: +10] (Appleのエコシステム全体で利用できる汎用性の高さ)\n[加点: +5] (Eメール送信による即時性と利便性)\n[加点: +5] (有効期限がない安心感)\n[減点: -5] (購入金額制限があるための不便さ)\n[合計: 85]"
+    },
+    "technicalSpecs": {
+      "formats": "電子メールギフト券",
+      "model": "Apple(アップル)_1_5000",
+      "validityPeriod": "無期限",
+      "purchaseLimit": "前回の購入から24時間以内は5万円まで"
+    }
+  }
+}
