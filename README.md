@@ -77,6 +77,9 @@ pnpm run build
 
 # 開発モードで実行
 pnpm run dev
+
+# ビルド成果物(dist)のクリーンアップ
+pnpm run clean
 ```
 
 ### テスト
@@ -92,13 +95,19 @@ pnpm run test:watch
 pnpm run test:coverage
 ```
 
-### Lint
+### コード検証・整形 (Lint/Biome)
 
 ```bash
-# Lint実行
+# Biomeによる高速なコード・JSON検証
+pnpm run biome:check
+
+# Biomeによる自動フォーマット修正
+pnpm run biome:fix
+
+# ESLintによる静的解析
 pnpm run lint
 
-# Lint自動修正
+# ESLint自動修正
 pnpm run lint:fix
 ```
 
@@ -111,12 +120,21 @@ pnpm run search:products
 # Jules調査依頼
 pnpm run investigate
 
+# 『今日』のおすすめ商品の調査・生成
+pnpm run investigate:recommendations
+
 # 記事生成
 pnpm run generate:articles
 
 # オプションをつけて記事生成
 # --asin <ASIN>: 指定したASINのみ処理（例: pnpm run generate:articles -- --asin B0007TT7I0）
 # --skip-creators-api: Creators API呼び出しをスキップ（例: pnpm run generate:articles -- --skip-creators-api）
+
+# Markdownフロントマターのデータサニタイズ
+pnpm run sanitize:frontmatter
+
+# Hugoビルド前のカテゴリ階層の補強処理（categories.yml等の自動生成）
+pnpm run prebuild:hugo
 
 # PRマージ
 pnpm run merge:pr
@@ -131,15 +149,24 @@ pnpm run sort:categories
 ### Hugo（静的サイト生成）
 
 ```bash
-# 開発サーバー起動
-hugo server -D
+# 開発サーバー起動（推奨: 起動高速化・マウント最適化オプション付き）
+pnpm run server:dev
+
+# 高速リビルド用起動（FastRender無効、メモリ最適化）
+pnpm run server:fast
+
+# または通常の起動
+hugo server
 ```
 
 開発サーバーを起動した際は、以下のURLでサイトを確認できます：
 [http://localhost:1313/](http://localhost:1313/)
 
+> [!NOTE]
+> 開発用サーバー（`server:dev`）は起動高速化のため、一部の巨大データキャッシュや不要な調査データ（investigations）のマウント除外、およびGit履歴探索の無効化（`enableGitInfo = false`）が自動で適用されます。
+
 ```bash
-# 静的サイトビルド
+# 静的サイトビルド (本番ビルド)
 hugo
 ```
 
