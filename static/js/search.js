@@ -649,119 +649,123 @@ document.addEventListener('DOMContentLoaded', function () {
         container.appendChild(header);
     }
 
+    function renderEmptyState() {
+        const emptyState = document.createElement('div');
+        emptyState.className = 'search-empty-state';
+
+        // 空結果時もヘッダー（0件 + フィルタチップ）を表示する
+        renderResultHeader(0, emptyState);
+
+        const svgNamespace = "http://www.w3.org/2000/svg";
+        const svg = document.createElementNS(svgNamespace, 'svg');
+        svg.setAttribute('class', 'empty-icon');
+        svg.setAttribute('width', '48');
+        svg.setAttribute('height', '48');
+        svg.setAttribute('viewBox', '0 0 24 24');
+        svg.setAttribute('fill', 'none');
+        svg.setAttribute('stroke', 'currentColor');
+        svg.setAttribute('stroke-width', '1.5');
+        svg.setAttribute('stroke-linecap', 'round');
+        svg.setAttribute('stroke-linejoin', 'round');
+
+        const circle = document.createElementNS(svgNamespace, 'circle');
+        circle.setAttribute('cx', '11');
+        circle.setAttribute('cy', '11');
+        circle.setAttribute('r', '8');
+        svg.appendChild(circle);
+
+        const lines = [
+            {x1: '21', y1: '21', x2: '16.65', y2: '16.65'},
+            {x1: '11', y1: '8', x2: '11', y2: '14'},
+            {x1: '8', y1: '11', x2: '14', y2: '11'}
+        ];
+        lines.forEach(coords => {
+            const line = document.createElementNS(svgNamespace, 'line');
+            Object.entries(coords).forEach(([key, value]) => line.setAttribute(key, value));
+            svg.appendChild(line);
+        });
+        emptyState.appendChild(svg);
+
+        const title = document.createElement('span');
+        title.className = 'empty-title';
+        title.textContent = '見つかりませんでした';
+        emptyState.appendChild(title);
+
+        const desc = document.createElement('span');
+        desc.className = 'empty-desc';
+        desc.textContent = '条件を変えて再度お試しください。';
+        emptyState.appendChild(desc);
+
+        // 次アクションのヒント
+        const hints = [];
+        const scoreMinEl = document.getElementById('filter-score-min');
+        const scoreMaxEl = document.getElementById('filter-score-max');
+        const priceMinEl = document.getElementById('filter-price-min');
+        const priceMaxEl = document.getElementById('filter-price-max');
+        const query = searchInput.value.replaceAll('　', ' ').trim();
+
+        if (query.length >= 2 && query.includes(' ')) {
+            hints.push({ text: 'キーワードを短くしてみる', type: 'keyword' });
+        }
+        if (scoreMinEl && Number.parseFloat(scoreMinEl.value) > 0) {
+            hints.push({ text: 'スコア下限を下げる', type: 'score-min', resetValue: '0' });
+        }
+        if (scoreMaxEl && scoreMaxEl.value !== '') {
+            hints.push({ text: 'スコア上限を解除する', type: 'score-max' });
+        }
+        if (priceMinEl && priceMinEl.value !== '') {
+            hints.push({ text: '価格下限を解除する', type: 'price-min' });
+        }
+        if (priceMaxEl && priceMaxEl.value !== '') {
+            hints.push({ text: '価格上限を解除する', type: 'price-max' });
+        }
+
+        if (hints.length > 0) {
+            const hintArea = document.createElement('div');
+            hintArea.className = 'empty-hints';
+            const hintLabel = document.createElement('span');
+            hintLabel.className = 'empty-hints-label';
+            hintLabel.textContent = '試してみてください:';
+            hintArea.appendChild(hintLabel);
+
+            hints.forEach(hint => {
+                const btn = document.createElement('button');
+                btn.type = 'button';
+                btn.className = 'empty-hint-btn';
+                btn.textContent = `→ ${hint.text}`;
+                btn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    if (hint.resetValue === undefined) {
+                        clearFilter(hint.type);
+                    } else {
+                        const idMap = {
+                            'score-min': 'filter-score-min',
+                            'score-max': 'filter-score-max',
+                            'price-min': 'filter-price-min',
+                            'price-max': 'filter-price-max'
+                        };
+                        const el = document.getElementById(idMap[hint.type] || 'filter-price-max');
+                        if (el) el.value = hint.resetValue;
+                        const q = searchInput.value.replaceAll('　', ' ');
+                        if (q.trim().length >= 2) handleSearch(q);
+                    }
+                });
+                hintArea.appendChild(btn);
+            });
+
+            emptyState.appendChild(hintArea);
+        }
+
+        searchResults.appendChild(emptyState);
+        searchResults.classList.add('active');
+        updateSearchResultsHeight();
+    }
+
     function displayResults(results) {
         searchResults.textContent = '';
 
         if (results.length === 0) {
-            const emptyState = document.createElement('div');
-            emptyState.className = 'search-empty-state';
-
-            // 空結果時もヘッダー（0件 + フィルタチップ）を表示する
-            renderResultHeader(0, emptyState);
-
-            const svgNamespace = "http://www.w3.org/2000/svg";
-            const svg = document.createElementNS(svgNamespace, 'svg');
-            svg.setAttribute('class', 'empty-icon');
-            svg.setAttribute('width', '48');
-            svg.setAttribute('height', '48');
-            svg.setAttribute('viewBox', '0 0 24 24');
-            svg.setAttribute('fill', 'none');
-            svg.setAttribute('stroke', 'currentColor');
-            svg.setAttribute('stroke-width', '1.5');
-            svg.setAttribute('stroke-linecap', 'round');
-            svg.setAttribute('stroke-linejoin', 'round');
-
-            const circle = document.createElementNS(svgNamespace, 'circle');
-            circle.setAttribute('cx', '11');
-            circle.setAttribute('cy', '11');
-            circle.setAttribute('r', '8');
-            svg.appendChild(circle);
-
-            const lines = [
-                {x1: '21', y1: '21', x2: '16.65', y2: '16.65'},
-                {x1: '11', y1: '8', x2: '11', y2: '14'},
-                {x1: '8', y1: '11', x2: '14', y2: '11'}
-            ];
-            lines.forEach(coords => {
-                const line = document.createElementNS(svgNamespace, 'line');
-                Object.entries(coords).forEach(([key, value]) => line.setAttribute(key, value));
-                svg.appendChild(line);
-            });
-            emptyState.appendChild(svg);
-
-            const title = document.createElement('span');
-            title.className = 'empty-title';
-            title.textContent = '見つかりませんでした';
-            emptyState.appendChild(title);
-
-            const desc = document.createElement('span');
-            desc.className = 'empty-desc';
-            desc.textContent = '条件を変えて再度お試しください。';
-            emptyState.appendChild(desc);
-
-            // 次アクションのヒント
-            const hints = [];
-            const scoreMinEl = document.getElementById('filter-score-min');
-            const scoreMaxEl = document.getElementById('filter-score-max');
-            const priceMinEl = document.getElementById('filter-price-min');
-            const priceMaxEl = document.getElementById('filter-price-max');
-            const query = searchInput.value.replaceAll('　', ' ').trim();
-
-            if (query.length >= 2 && query.includes(' ')) {
-                hints.push({ text: 'キーワードを短くしてみる', type: 'keyword' });
-            }
-            if (scoreMinEl && Number.parseFloat(scoreMinEl.value) > 0) {
-                hints.push({ text: 'スコア下限を下げる', type: 'score-min', resetValue: '0' });
-            }
-            if (scoreMaxEl && scoreMaxEl.value !== '') {
-                hints.push({ text: 'スコア上限を解除する', type: 'score-max' });
-            }
-            if (priceMinEl && priceMinEl.value !== '') {
-                hints.push({ text: '価格下限を解除する', type: 'price-min' });
-            }
-            if (priceMaxEl && priceMaxEl.value !== '') {
-                hints.push({ text: '価格上限を解除する', type: 'price-max' });
-            }
-
-            if (hints.length > 0) {
-                const hintArea = document.createElement('div');
-                hintArea.className = 'empty-hints';
-                const hintLabel = document.createElement('span');
-                hintLabel.className = 'empty-hints-label';
-                hintLabel.textContent = '試してみてください:';
-                hintArea.appendChild(hintLabel);
-
-                hints.forEach(hint => {
-                    const btn = document.createElement('button');
-                    btn.type = 'button';
-                    btn.className = 'empty-hint-btn';
-                    btn.textContent = `→ ${hint.text}`;
-                    btn.addEventListener('click', (e) => {
-                        e.stopPropagation();
-                        if (hint.resetValue === undefined) {
-                            clearFilter(hint.type);
-                        } else {
-                            const idMap = {
-                                'score-min': 'filter-score-min',
-                                'score-max': 'filter-score-max',
-                                'price-min': 'filter-price-min',
-                                'price-max': 'filter-price-max'
-                            };
-                            const el = document.getElementById(idMap[hint.type] || 'filter-price-max');
-                            if (el) el.value = hint.resetValue;
-                            const q = searchInput.value.replaceAll('　', ' ');
-                            if (q.trim().length >= 2) handleSearch(q);
-                        }
-                    });
-                    hintArea.appendChild(btn);
-                });
-
-                emptyState.appendChild(hintArea);
-            }
-
-            searchResults.appendChild(emptyState);
-            searchResults.classList.add('active');
-            updateSearchResultsHeight();
+            renderEmptyState();
             return;
         }
 
