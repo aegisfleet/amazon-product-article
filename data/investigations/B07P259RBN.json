@@ -1,0 +1,177 @@
+{
+  "analysis": {
+    "productName": "SUCCUL ACアダプター 7.5V 0.5A センタープラス スイッチング式 最大出力3.75W",
+    "parentAsin": "B07P259RBN",
+    "productDescription": "出力DC7.5V 0.5A (最大出力3.75W)、出力プラグ外径5.5mm×内径2.1mmのセンタープラス仕様の汎用ACアダプター。大手メーカーOEM社製品で、PSEマークを取得しています。",
+    "productUsage": [
+      "LEDライトや防犯カメラなど、対応する電子機器への電源供給",
+      "オーディオ・ビデオ・無線ルーター・HUBなどの各種小型機器の電源"
+    ],
+    "positivePoints": [
+      "入力電圧AC100-240Vのワールドワイド対応仕様で幅広く使える",
+      "過圧、過熱、過流、回路短絡保護などの各種保護機能を搭載",
+      "高信頼性の電解コンデンサーを使用し、耐久性に配慮",
+      "手頃な価格設定"
+    ],
+    "negativePoints": [
+      "充電器としての使用は不可",
+      "精密機器や医療機器など高い信頼性を必要とする用途には不向き",
+      "モーターなど電源投入時に定格を超えるピーク電流が発生する機器には非対応の場合がある"
+    ],
+    "useCases": [
+      "家庭用の小型電子機器の交換用電源アダプターとして",
+      "対応する仕様（7.5V/0.5A/センタープラス）を持つ周辺機器の運用"
+    ],
+    "userStories": [],
+    "userImpression": "安価で汎用性が高い標準的なACアダプターとして利用可能。仕様（電圧、電流、極性、プラグ径）が一致する機器での使用が前提となります。",
+    "sources": [
+      {
+        "id": "src-1",
+        "name": "Amazon商品ページ B07P259RBN",
+        "url": "https://www.amazon.co.jp/dp/B07P259RBN",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-06-05",
+        "author": "サクル株式会社 (SUCCUL)",
+        "conflictOfInterest": "disclosed",
+        "notes": "商品の基本仕様、保護機能、使用上の注意点について確認"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "過圧保護、過熱保護、過流保護、回路短絡保護機能搭載",
+        "category": "safety",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "crossChecked": false,
+        "notes": "メーカー公式の仕様として明記されている"
+      },
+      {
+        "claim": "PSEマーク取得品",
+        "category": "safety",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "crossChecked": false,
+        "notes": "商品名に明記されている"
+      }
+    ],
+    "lastInvestigated": "2026-06-05",
+    "competitiveAnalysis": [
+      {
+        "name": "KOZATO ACアダプター 7.5V 0.5A",
+        "asin": "B0BWWQMJ74",
+        "priceComparison": "対象商品と同価格帯。両者ともサクル株式会社が関与しており、OEM元が同じか同一製品のブランド違いの可能性が高い。",
+        "featureComparison": [
+          "共通点：出力7.5V 0.5A、センタープラス、最大出力3.75W、PSE取得",
+          "相違点：販売ブランド名（KOZATOはAmazon限定ブランドとして展開）"
+        ],
+        "differentiators": [
+          "SUCCULの利点：SUCCULブランドでの展開を好む場合",
+          "KOZATOの利点：Amazon限定ブランドとしての安心感を求める場合"
+        ]
+      },
+      {
+        "name": "DADJ ACアダプター 7.5V 0.5A",
+        "asin": "B0DY7N248F",
+        "priceComparison": "対象商品よりも若干安価。基本的な仕様は同等。",
+        "featureComparison": [
+          "共通点：出力7.5V 0.5A、センタープラス、外径5.5mm(内径2.1mm)、PSE取得",
+          "相違点：販売元ブランド"
+        ],
+        "differentiators": [
+          "SUCCULの利点：実績のあるサクル株式会社が販売元である点",
+          "DADJの利点：初期コストを少しでも抑えたい場合"
+        ]
+      },
+      {
+        "name": "Ascoa ACアダプター 7.5V 0.5A",
+        "asin": "B0CKYZQP8F",
+        "priceComparison": "対象商品よりも若干安価（同価格帯）。アステラ株式会社が製造。",
+        "featureComparison": [
+          "共通点：出力7.5V 0.5A、センタープラス、最大出力3.75W、PSE取得",
+          "相違点：製造元（サクル株式会社 vs アステラ株式会社）"
+        ],
+        "differentiators": [
+          "SUCCULの利点：サクル株式会社の製品を好む場合",
+          "Ascoaの利点：価格が僅かに安く設定されていることが多い点"
+        ]
+      },
+      {
+        "name": "Sibling ACアダプター 7.5V 0.5A",
+        "asin": "B0DYJDWTKR",
+        "priceComparison": "対象商品よりも若干高価。",
+        "featureComparison": [
+          "共通点：出力7.5V 0.5A、センタープラス、外径5.5mm(内径2.1mm)、PSE適合",
+          "相違点：日本現地法人販売を謳っている点"
+        ],
+        "differentiators": [
+          "SUCCULの利点：価格が安くコストパフォーマンスに優れる点",
+          "Siblingの利点：現地法人販売によるサポートに期待する場合"
+        ]
+      },
+      {
+        "name": "AKIRARI ACアダプター 7.5V",
+        "asin": "B0BNYCTN5R",
+        "priceComparison": "対象商品と同価格帯（Amazon限定ブランドとして展開）。",
+        "featureComparison": [
+          "共通点：出力7.5V 0.5A、汎用センタープラス、PSE適合",
+          "相違点：ブランド名（AKIRARI）"
+        ],
+        "differentiators": [
+          "SUCCULの利点：基本仕様が同じで必要十分な機能",
+          "AKIRARIの利点：Amazon限定ブランドによるサポート体制を重視する場合"
+        ]
+      },
+      {
+        "name": "FUMITAKE AC DC アダプター 7.5V 0.5A (変換プラグ付)",
+        "asin": "B0GZZR792D",
+        "priceComparison": "対象商品よりも高価。ただし、8種の変換プラグが付属しているため用途による。",
+        "featureComparison": [
+          "共通点：出力7.5V 0.5A、センタープラス",
+          "相違点：8種類の変換プラグの有無、価格"
+        ],
+        "differentiators": [
+          "SUCCULの利点：プラグ径（5.5x2.1mm）が確定しており、不要な付属品を省いて安価に済ませたい場合",
+          "FUMITAKEの利点：機器側のプラグ形状が不明な場合や、様々な機器に使い回したい場合"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "7.5V/0.5A/センタープラス仕様のACアダプタが故障した、または紛失したユーザー",
+        "LEDライトや小型ルーターなど定格内の機器を動かしたいユーザー"
+      ],
+      "pros": [
+        "低価格でコストパフォーマンスが高い",
+        "ワールドワイド対応(AC100-240V)で汎用性が高い",
+        "過圧・過熱等の各種保護機能を搭載"
+      ],
+      "cons": [
+        "充電器としての利用不可",
+        "精密機器やモーターなどピーク電流が大きい機器には不向き"
+      ],
+      "score": 75,
+      "scoreRationale": "[基本点: 70]\n[加点: +5] (基本仕様を満たしつつ保護機能が充実しており実用的)\n[加点: +5] (低価格であり汎用アダプターとしてコストパフォーマンスが高い)\n[減点: -5] (充電器や精密機器には不向きなど用途に制約がある)\n[合計: 75]"
+    },
+    "technicalSpecs": {
+      "input": "AC100-240V 50/60Hz 0.2A",
+      "output": "DC7.5V 0.5A (最大出力3.75W)",
+      "plugType": "外径5.5mm × 内径2.1mm",
+      "polarity": "センタープラス",
+      "weight": "80g",
+      "certifications": [
+        "PSE取得品"
+      ],
+      "other": [
+        "過圧保護",
+        "過熱保護",
+        "過流保護",
+        "回路短絡保護"
+      ]
+    }
+  }
+}
