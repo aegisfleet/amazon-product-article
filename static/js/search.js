@@ -13,6 +13,7 @@ function sanitizeCategoryUrl(rawUrl) {
         if (parsed.protocol !== 'http:' && parsed.protocol !== 'https:') return null;
         return parsed.href;
     } catch (e) {
+        console.warn('Failed to sanitize category URL:', e);
         return null;
     }
 }
