@@ -11,7 +11,7 @@
     </div>
 
     <!-- Overview Section -->
-    <div class="pros-cons-grid" style="grid-template-columns: 1fr; margin-bottom: var(--spacing-xl);">
+    <div class="pros-cons-grid" style="grid-template-columns: 1fr; margin-bottom: var(--spacing-lg);">
         <div class="pros-card"
             style="background: linear-gradient(to right, var(--bg-competitor-preview), var(--color-bg-body)); border-color: #fde68a;">
             <h2
@@ -19,9 +19,37 @@
                 <span style="font-size: 1.5rem;">✨</span>
                 {{- $todayData.headline -}}
             </h2>
-            <p style="font-size: 1.05rem; line-height: 1.7; color: var(--color-text-main);">
+            <p style="font-size: 1.05rem; line-height: 1.7; color: var(--color-text-main); margin-bottom: 0;">
                 {{- $todayData.searchContext.todayOverview -}}
             </p>
+        </div>
+    </div>
+
+    <!-- Selection Policy / Legend Section -->
+    <div class="policy-card" style="background: var(--color-bg-secondary); border: 1px solid var(--color-border); border-radius: var(--radius-md); padding: var(--spacing-md); margin-bottom: var(--spacing-xl); font-size: 0.95rem; line-height: 1.6;">
+        <h3 style="margin-top: 0; margin-bottom: var(--spacing-xs); color: var(--color-text-main); font-size: 1.1rem; display: flex; align-items: center; gap: 0.5rem;">
+            <span>ℹ️</span> 本日の10選 選定ポリシーと評価について
+        </h3>
+        <p style="margin-bottom: var(--spacing-sm); color: var(--color-text-secondary);">
+            「本日の注目商品10選」は、日々のAmazonセール情報やトレンド、実用性、割引率、およびカテゴリの多様性を考慮し、AIが総合的に判断して<strong>おすすめ順</strong>にランキング化しています。
+        </p>
+        <div style="display: flex; gap: var(--spacing-md); flex-wrap: wrap; margin-top: var(--spacing-sm);">
+            <div style="flex: 1; min-width: 250px;">
+                <strong>📊 選定基準（重視度）：</strong>
+                <ul style="margin: var(--spacing-xs) 0 0; padding-left: 1.2rem; color: var(--color-text-secondary); list-style-type: disc;">
+                    <li style="margin-bottom: 0.25rem;"><strong>割引率・お得度:</strong> ★★★★★ (非常に対象になりやすい)</li>
+                    <li style="margin-bottom: 0.25rem;"><strong>実用性・トレンド:</strong> ★★★★☆</li>
+                    <li style="margin-bottom: 0.25rem;"><strong>カテゴリ分散:</strong> ★★★★☆ (ジャンル重複を回避)</li>
+                    <li style="margin-bottom: 0.25rem;"><strong>商品評価スコア:</strong> ★★★☆☆ (低スコアでも割引率が高ければ入る場合があります)</li>
+                </ul>
+            </div>
+            <div style="flex: 1; min-width: 250px;">
+                <strong>⚠️ スコアと順位の違い：</strong>
+                <ul style="margin: var(--spacing-xs) 0 0; padding-left: 1.2rem; color: var(--color-text-secondary); list-style-type: disc;">
+                    <li style="margin-bottom: 0.25rem;"><strong>おすすめ順位 (1〜10位):</strong> 「今この瞬間に買うメリット」の大きさを示します。</li>
+                    <li style="margin-bottom: 0.25rem;"><strong>商品評価スコア (🏆点数):</strong> サイト内の詳細レビューに基づいた、商品の恒久的な品質・満足度評価です。</li>
+                </ul>
+            </div>
         </div>
     </div>
 
@@ -63,8 +91,13 @@
                 <div
                     style="flex-grow: 1; min-width: 0; display: flex; flex-direction: column; gap: var(--spacing-sm); align-self: stretch;">
 
-                    <div>
-                        <span class="card-tag">{{- $rec.category -}}</span>
+                    <div style="display: flex; gap: var(--spacing-xs); flex-wrap: wrap; align-items: center; margin-bottom: var(--spacing-sm);">
+                        <span class="card-tag" style="margin-bottom: 0;">{{- $rec.category -}}</span>
+                        {{- if $rec.rankReason -}}
+                        <span class="card-tag" style="margin-bottom: 0; background-color: var(--color-bg-secondary); color: var(--color-text-main); border: 1px solid var(--color-border);">
+                            🎯 {{- $rec.rankReason -}}
+                        </span>
+                        {{- end -}}
                     </div>
 
                     <div style="font-size: 1.75rem; font-weight: bold; color: var(--color-danger); line-height: 1.2;">
@@ -75,6 +108,13 @@
                         <a href='{{ printf "https://www.amazon.co.jp/dp/%s?tag=aegis-22" $rec.asin }}' target="_blank"
                             rel="noopener noreferrer">{{- $rec.title -}}</a>
                     </h3>
+
+                    {{- if and $rec.scoreDisclaimer (ne $rec.scoreDisclaimer "") -}}
+                    <div style="margin: var(--spacing-sm) 0 var(--spacing-xs); padding: var(--spacing-sm) var(--spacing-md); background: #fef2f2; border: 1px solid #fca5a5; border-radius: var(--radius-md); display: flex; align-items: center; gap: 0.5rem; color: #b91c1c; font-size: 0.9rem; font-weight: bold;">
+                        <span style="font-size: 1.1rem;">⚠️</span>
+                        <span>注意: {{- $rec.scoreDisclaimer -}}</span>
+                    </div>
+                    {{- end -}}
 
                     <div
                         style="margin: var(--spacing-sm) 0 var(--spacing-md); padding: var(--spacing-md); background: var(--bg-competitor-preview); border-radius: var(--radius-md); border-left: 3px solid #ff9900;">
