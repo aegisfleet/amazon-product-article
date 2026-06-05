@@ -79,3 +79,30 @@ enableGitInfo = true
 [taxonomies]
   category = "categories"
   tag = "tags"
+
+# Module mounts - exclude investigations directory to speed up build
+[module]
+  [[module.mounts]]
+    source = "content"
+    target = "content"
+  [[module.mounts]]
+    source = "layouts"
+    target = "layouts"
+  [[module.mounts]]
+    source = "static"
+    target = "static"
+  [[module.mounts]]
+    source = "data/brandgroups.json"
+    target = "data/brandgroups.json"
+  [[module.mounts]]
+    source = "data/categories.yml"
+    target = "data/categories.yml"
+  [[module.mounts]]
+    source = "data/categorygroups.json"
+    target = "data/categorygroups.json"
+  [[module.mounts]]
+    source = "data/recommendations"
+    target = "data/recommendations"
+  [[module.mounts]]
+    source = "data/cache"
+    target = "data/cache"

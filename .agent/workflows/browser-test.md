@@ -20,6 +20,9 @@ pnpm run server:dev
 Start-Process pnpm -ArgumentList "run", "server:dev" -WindowStyle Hidden
 ```
 
+> [!NOTE]
+> 開発用サーバー（`server:dev`）は起動高速化のため、約56MBの巨大キャッシュをロードせず軽量なダミーキャッシュ（空のJSON `{}`）をマウントして起動します。そのため、ブラウザ確認時に一部の画像が `No Image` にフォールバックされる場合がありますが、本番ビルド時には正常にキャッシュから取得され表示されます。
+
 サーバー起動後、約3-5秒待機してからアクセスする。
 
 ## 使用方法
