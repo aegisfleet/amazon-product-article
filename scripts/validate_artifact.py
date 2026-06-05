@@ -74,39 +74,30 @@ def _validate_recommendation(analysis: Dict[str, Any], errors: List[str]):
         if not re.search(r'\[基本点:\s*\d+\]', rationale):
             errors.append("'scoreRationale' に計算根拠が記載されていない可能性があります。")
 
-def validate_content(data: Any) -> List[str]:
-    """成果物の品質ガイドラインへの準拠を確認する"""
-    errors = []
+def _validate_recommendations_list(data: Any, errors: List[str]):
+    """推薦商品リスト (today.json) の形式チェック"""
+    required_fields = ["date", "headline", "searchContext", "recommendations"]
+    for field in required_fields:
+        if field not in data:
+            errors.append(f"必須フィールド '{field}' が見つかりません。")
     
-    # 推薦商品リスト (today.json) の形式チェック
-    if "recommendations" in data and "headline" in data:
-        required_fields = ["date", "headline", "searchContext", "recommendations"]
-        for field in required_fields:
-            if field not in data:
-                errors.append(f"必須フィールド '{field}' が見つかりません。")
+    recs = data.get("recommendations", [])
+    if not isinstance(recs, list):
+        errors.append("'recommendations' が配列ではありません。")
+        return
         
-        # 各商品（recommendations要素）のチェック
-        recs = data.get("recommendations", [])
-        if not isinstance(recs, list):
-            errors.append("'recommendations' が配列ではありません。")
-        else:
-            required_rec_fields = [
-                "asin", "title", "price", "category", "reason", 
-                "whyBuyNow", "source", "highlights", "url", 
-                "rankReason", "scoreDisclaimer"
-            ]
-            for i, rec in enumerate(recs):
-                for rf in required_rec_fields:
-                    if rf not in rec:
-                        errors.append(f"recommendations[{i}] (ASIN: {rec.get('asin', 'unknown')}) に必須フィールド '{rf}' が見つかりません。")
-        return errors
+    required_rec_fields = [
+        "asin", "title", "price", "category", "reason", 
+        "whyBuyNow", "source", "highlights", "url", 
+        "rankReason", "scoreDisclaimer"
+    ]
+    for i, rec in enumerate(recs):
+        for rf in required_rec_fields:
+            if rf not in rec:
+                errors.append(f"recommendations[{i}] (ASIN: {rec.get('asin', 'unknown')}) に必須フィールド '{rf}' が見つかりません。")
 
-    # 通常のアーティファクト (調査結果) の形式チェック
-    analysis = data.get("analysis", {})
-    if not analysis:
-        # どちらの形式でもない場合はバリデーションエラーとはせず、全般的なチェックのみ行う
-        return []
-
+def _validate_investigation_artifact(analysis: Dict[str, Any], data: Any, errors: List[str]):
+    """通常のアーティファクト (調査結果) の形式チェック"""
     required_fields = [
         "productName", "productDescription", "userStories", 
         "sources", "competitiveAnalysis", "recommendation", "technicalSpecs"
@@ -121,6 +112,22 @@ def validate_content(data: Any) -> List[str]:
     _validate_metrics(data, errors)
     _validate_recommendation(analysis, errors)
 
+def validate_content(data: Any) -> List[str]:
+    """成果物の品質ガイドラインへの準拠を確認する"""
+    errors = []
+    
+    # 推薦商品リスト (today.json) の形式チェック
+    if "recommendations" in data and "headline" in data:
+        _validate_recommendations_list(data, errors)
+        return errors
+
+    # 通常のアーティファクト (調査結果) の形式チェック
+    analysis = data.get("analysis", {})
+    if not analysis:
+        # どちらの形式でもない場合はバリデーションエラーとはせず、全般的なチェックのみ行う
+        return []
+
+    _validate_investigation_artifact(analysis, data, errors)
     return errors
 
 def check_url(url: str) -> Dict[str, Any]:
