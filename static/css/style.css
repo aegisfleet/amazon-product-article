@@ -2780,6 +2780,22 @@ a.competitor-preview:hover {
   flex-direction: column;
 }
 
+.pickup-card-category-label {
+  font-size: 0.625rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  background: var(--bg-tag);
+  padding: 0.1rem 0.4rem;
+  border-radius: var(--radius-sm);
+  align-self: flex-start;
+  margin-bottom: var(--spacing-xs);
+  display: inline-block;
+  max-width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 .pickup-card-title {
   font-size: 0.75rem;
   font-weight: 600;
