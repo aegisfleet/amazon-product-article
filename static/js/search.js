@@ -9,7 +9,7 @@ function toYen(value, unit) {
 function sanitizeCategoryUrl(rawUrl) {
     if (typeof rawUrl !== 'string' || rawUrl.trim() === '') return null;
     try {
-        const parsed = new URL(rawUrl, window.location.origin);
+        const parsed = new URL(rawUrl, globalThis.location.origin);
         if (parsed.protocol !== 'http:' && parsed.protocol !== 'https:') return null;
         return parsed.href;
     } catch (e) {
