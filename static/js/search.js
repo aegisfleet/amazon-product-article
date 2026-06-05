@@ -741,11 +741,13 @@ document.addEventListener('DOMContentLoaded', function () {
                         if (hint.resetValue === undefined) {
                             clearFilter(hint.type);
                         } else {
-                            const el = document.getElementById(
-                                hint.type === 'score-min' ? 'filter-score-min' :
-                                hint.type === 'score-max' ? 'filter-score-max' :
-                                hint.type === 'price-min' ? 'filter-price-min' : 'filter-price-max'
-                            );
+                            const idMap = {
+                                'score-min': 'filter-score-min',
+                                'score-max': 'filter-score-max',
+                                'price-min': 'filter-price-min',
+                                'price-max': 'filter-price-max'
+                            };
+                            const el = document.getElementById(idMap[hint.type] || 'filter-price-max');
                             if (el) el.value = hint.resetValue;
                             const q = searchInput.value.replaceAll('　', ' ');
                             if (q.trim().length >= 2) handleSearch(q);
