@@ -73,6 +73,12 @@ Amazon Creators APIの認証情報の取り扱いには、最優先でセキュ�
   pnpm run server:dev
   ```
 
+  > [!NOTE]
+  > 開発用サーバー（`server:dev`）は、起動およびビルド時間短縮のために以下の最適化が施されている：
+  > - **不要データの除外**: テンプレートで参照されない `data/investigations/` 配下の数千件のJSONファイルは、本番・開発ともにマウント設定（`config.toml`）でロード対象から完全に除外されている。
+  > - **キャッシュの軽量化**: 約56MBある本番用キャッシュ `data/cache/paapi-product-cache.json` はロードされず、空のダミーキャッシュ（`data/cache/paapi-product-cache.dev.json`）を代わりにマウントして起動する。そのため、一部の画像が開発環境では `No Image` にフォールバックされるが、本番ビルド時には正常にキャッシュから取得される。
+  > - **Git情報の無効化**: 8400件超のコミット履歴探索をスキップするため、`hugo.dev.toml` にて `enableGitInfo = false` を設定している。
+
 - **サーバー停止手順**:
   作業終了後、不要になったサーバーは `Ctrl+C` またはプロセス終了で停止すること。
 

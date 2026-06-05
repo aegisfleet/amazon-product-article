@@ -102,3 +102,6 @@ pnpm run generate:articles
 ```
 
 `content/articles/<ASIN>.md` を開き、`categories` や `subcategory` が意図通りになっているか確認してください。
+
+> [!NOTE]
+> 開発用サーバー（`pnpm run server:dev`）上で表示確認を行う場合、起動高速化に伴う開発キャッシュ制限の影響により、一部の画像が `No Image` と表示される場合があります。本番ビルド時には正常に元の巨大キャッシュから取得され表示されます。
