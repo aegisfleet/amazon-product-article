@@ -65,9 +65,10 @@
         <div id="keepa-graph-section" class="keepa-section" style="display: none;">
             <h3 class="keepa-section-title">📈 価格推移（Keepa）</h3>
             <div class="keepa-graph-container">
-                <a href="https://keepa.com/#!product/5-{{ .Params.asin }}" target="_blank" rel="noopener noreferrer">
+                <a href="https://keepa.com/#!product/5-{{ .Params.asin }}" target="_blank" rel="noopener noreferrer"
+                    aria-label="Keepaで価格推移を見る (新しいタブで開く)" title="Keepaで価格推移を見る">
                     <img src="https://graph.keepa.com/pricehistory.png?asin={{ .Params.asin }}&domain=5&amazon=1&new=1&used=1&salesrank=1&bb=1&range=365&width=700&height=350"
-                        alt="価格履歴グラフ" class="keepa-graph-image" loading="lazy" decoding="async"
+                        alt="{{ .Title }} の価格履歴グラフ" class="keepa-graph-image" loading="lazy" decoding="async"
                         referrerpolicy="no-referrer">
                 </a>
                 <p class="keepa-note">※ クリックで Keepa の詳細ページを開きます</p>

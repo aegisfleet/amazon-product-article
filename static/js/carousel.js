@@ -131,9 +131,19 @@ document.addEventListener('DOMContentLoaded', () => {
             images.forEach((_, i) => {
                 const dot = document.createElement('div');
                 dot.classList.add('dot');
+                dot.setAttribute('role', 'button');
+                dot.setAttribute('tabindex', '0');
+                dot.setAttribute('aria-label', `${i + 1}枚目の画像を表示`);
                 if (i === 0) dot.classList.add('active');
-                dot.addEventListener('click', () => {
+                const goToSlide = () => {
                     track.scrollTo({ left: track.offsetWidth * i, behavior: 'smooth' });
+                };
+                dot.addEventListener('click', goToSlide);
+                dot.addEventListener('keydown', (e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        goToSlide();
+                    }
                 });
                 dotsContainer.appendChild(dot);
             });
