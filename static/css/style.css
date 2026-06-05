@@ -13,6 +13,7 @@ body {
   color: var(--color-text-main);
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
+  overflow-wrap: break-word;
 }
 
 img {
@@ -439,6 +440,8 @@ a:hover {
   font-weight: 700;
   margin-bottom: var(--spacing-sm);
   color: var(--color-text-main);
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 
 .card-title a {
