@@ -738,7 +738,9 @@ document.addEventListener('DOMContentLoaded', function () {
                     btn.textContent = `→ ${hint.text}`;
                     btn.addEventListener('click', (e) => {
                         e.stopPropagation();
-                        if (hint.resetValue !== undefined) {
+                        if (hint.resetValue === undefined) {
+                            clearFilter(hint.type);
+                        } else {
                             const el = document.getElementById(
                                 hint.type === 'score-min' ? 'filter-score-min' :
                                 hint.type === 'score-max' ? 'filter-score-max' :
@@ -747,8 +749,6 @@ document.addEventListener('DOMContentLoaded', function () {
                             if (el) el.value = hint.resetValue;
                             const q = searchInput.value.replaceAll('　', ' ');
                             if (q.trim().length >= 2) handleSearch(q);
-                        } else {
-                            clearFilter(hint.type);
                         }
                     });
                     hintArea.appendChild(btn);
