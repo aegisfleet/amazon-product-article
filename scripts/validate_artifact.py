@@ -84,6 +84,21 @@ def validate_content(data: Any) -> List[str]:
         for field in required_fields:
             if field not in data:
                 errors.append(f"必須フィールド '{field}' が見つかりません。")
+        
+        # 各商品（recommendations要素）のチェック
+        recs = data.get("recommendations", [])
+        if not isinstance(recs, list):
+            errors.append("'recommendations' が配列ではありません。")
+        else:
+            required_rec_fields = [
+                "asin", "title", "price", "category", "reason", 
+                "whyBuyNow", "source", "highlights", "url", 
+                "rankReason", "scoreDisclaimer"
+            ]
+            for i, rec in enumerate(recs):
+                for rf in required_rec_fields:
+                    if rf not in rec:
+                        errors.append(f"recommendations[{i}] (ASIN: {rec.get('asin', 'unknown')}) に必須フィールド '{rf}' が見つかりません。")
         return errors
 
     # 通常のアーティファクト (調査結果) の形式チェック
@@ -178,17 +193,20 @@ def process_file(file_path: str, check_links: bool, check_content: bool) -> bool
         print(f"❌ JSONの読み込みに失敗しました: {e}")
         return False
 
+    success = True
     if check_content:
         content_errors = validate_content(data)
         if content_errors:
             print("⚠️ 成果物の品質に関する指摘事項:")
             for err in content_errors:
                 print(f"  - {err}")
+            success = False
 
     if check_links:
-        return _handle_link_checks(data)
+        links_ok = _handle_link_checks(data)
+        return success and links_ok
             
-    return True
+    return success
 
 JSON_EXT = ".json"
 
