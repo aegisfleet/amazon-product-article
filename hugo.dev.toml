@@ -2,16 +2,46 @@
 # この設定は開発時の起動速度を向上させるために使用されます。
 # ほとんどの記事（7000件超）を除外し、約200件程度のみを対象にします。
 
+# Git情報を無効化して開発起動を高速化
+enableGitInfo = false
+
 # 不要な出力を無効化
 disableKinds = ["RSS", "sitemap", "robotsTXT"]
+
+# B00で始まる商品記事以外を無視する（約250件に制限、Windows/Unix対応）
+ignoreFiles = [
+  "articles[\\\\/][0-9].*",      # 数字で始まる記事
+  "articles[\\\\/]B[A-Z1-9].*",   # Bの次に0以外の文字が来る記事 (B1-B9, BA-BZ)
+  "articles[\\\\/]B0[A-Z1-9].*",  # B0の次に0以外の文字が来る記事 (B01-B09, B0A-B0Z)
+]
 
 [params]
   isDev = true
 
-[build]
-  # B00で始まる商品記事以外を無視する（約250件に制限）
-  ignoreFiles = [
-    "content/articles/[0-9].*",      # 数字で始まる記事
-    "content/articles/B[1-9].*",     # B1-B9で始まる記事
-    "content/articles/B0[1-9].*",    # B01-B09で始まる記事
-  ]
+# 開発用モジュールマウント設定
+[module]
+  [[module.mounts]]
+    source = "content"
+    target = "content"
+  [[module.mounts]]
+    source = "layouts"
+    target = "layouts"
+  [[module.mounts]]
+    source = "static"
+    target = "static"
+  [[module.mounts]]
+    source = "data/brandgroups.json"
+    target = "data/brandgroups.json"
+  [[module.mounts]]
+    source = "data/categories.yml"
+    target = "data/categories.yml"
+  [[module.mounts]]
+    source = "data/categorygroups.json"
+    target = "data/categorygroups.json"
+  [[module.mounts]]
+    source = "data/recommendations"
+    target = "data/recommendations"
+  # 本番用の巨大キャッシュ（56MB）の代わりにダミー軽量ファイルをマウント
+  [[module.mounts]]
+    source = "data/cache/paapi-product-cache.dev.json"
+    target = "data/cache/paapi-product-cache.json"

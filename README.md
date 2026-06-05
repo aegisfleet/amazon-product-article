@@ -131,15 +131,21 @@ pnpm run sort:categories
 ### Hugo（静的サイト生成）
 
 ```bash
-# 開発サーバー起動
-hugo server -D
+# 開発サーバー起動（推奨: 起動高速化オプション付き）
+pnpm run server:dev
+
+# または通常の起動
+hugo server
 ```
 
 開発サーバーを起動した際は、以下のURLでサイトを確認できます：
 [http://localhost:1313/](http://localhost:1313/)
 
+> [!NOTE]
+> 開発用サーバー（`server:dev`）は起動高速化のため、一部の巨大データキャッシュや不要な調査データ（investigations）のマウント除外、およびGit履歴探索の無効化（`enableGitInfo = false`）が自動で適用されます。
+
 ```bash
-# 静的サイトビルド
+# 静的サイトビルド (本番ビルド)
 hugo
 ```
 
