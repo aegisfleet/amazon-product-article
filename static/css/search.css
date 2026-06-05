@@ -569,3 +569,167 @@
         transform: translateY(0);
     }
 }
+
+/* ===================================================
+   検索結果ヘッダー（件数バナー + フィルタチップ）
+   =================================================== */
+
+.search-result-header {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 0.6rem 1rem;
+    border-bottom: 1px solid var(--color-border);
+    background: var(--color-bg-secondary);
+}
+
+/* 件数バナー */
+.search-result-count {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--color-text-secondary);
+    letter-spacing: 0.02em;
+}
+
+/* アクティブフィルタチップ列 */
+.active-filters {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+/* 個別フィルタチップ */
+.active-filter-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    padding: 0.2rem 0.5rem 0.2rem 0.65rem;
+    background: color-mix(in srgb, var(--color-primary) 12%, transparent);
+    border: 1px solid color-mix(in srgb, var(--color-primary) 35%, transparent);
+    border-radius: 9999px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--color-primary);
+    white-space: nowrap;
+}
+
+/* チップ内の ✕ ボタン */
+.chip-clear-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.1rem;
+    height: 1.1rem;
+    padding: 0;
+    border: none;
+    border-radius: 50%;
+    background: color-mix(in srgb, var(--color-primary) 20%, transparent);
+    color: var(--color-primary);
+    font-size: 0.6rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.15s ease, transform 0.15s ease;
+    line-height: 1;
+    flex-shrink: 0;
+}
+
+.chip-clear-btn:hover {
+    background: color-mix(in srgb, var(--color-primary) 35%, transparent);
+    transform: scale(1.15);
+}
+
+/* 「すべてクリア」ボタン */
+.clear-all-filters-btn {
+    padding: 0.2rem 0.65rem;
+    border: 1px solid var(--color-border);
+    border-radius: 9999px;
+    background: transparent;
+    color: var(--color-text-secondary);
+    font-size: 0.75rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.15s ease;
+    white-space: nowrap;
+}
+
+.clear-all-filters-btn:hover {
+    border-color: var(--color-primary);
+    color: var(--color-primary);
+    background: color-mix(in srgb, var(--color-primary) 8%, transparent);
+}
+
+/* ダークモード */
+[data-theme="dark"] .search-result-header {
+    background: rgba(255, 255, 255, 0.02);
+}
+
+[data-theme="dark"] .active-filter-chip {
+    background: color-mix(in srgb, var(--color-primary) 18%, transparent);
+    border-color: color-mix(in srgb, var(--color-primary) 45%, transparent);
+}
+
+/* ===================================================
+   0件時のヒントエリア
+   =================================================== */
+
+.empty-hints {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    margin-top: 1rem;
+    padding: 0.75rem 1rem;
+    background: var(--color-bg-secondary);
+    border: 1px solid var(--color-border);
+    border-radius: 10px;
+    width: 100%;
+}
+
+.empty-hints-label {
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: var(--color-text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    margin-bottom: 0.2rem;
+}
+
+.empty-hint-btn {
+    display: block;
+    width: 100%;
+    padding: 0.45rem 0.75rem;
+    text-align: left;
+    background: transparent;
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    font-size: 0.875rem;
+    color: var(--color-primary);
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.15s ease;
+}
+
+.empty-hint-btn:hover {
+    background: color-mix(in srgb, var(--color-primary) 8%, transparent);
+    border-color: var(--color-primary);
+    transform: translateX(3px);
+}
+
+[data-theme="dark"] .empty-hints {
+    background: rgba(255, 255, 255, 0.03);
+}
+
+[data-theme="dark"] .empty-hint-btn {
+    background: rgba(255, 255, 255, 0.03);
+}
+
+[data-theme="dark"] .empty-hint-btn:hover {
+    background: color-mix(in srgb, var(--color-primary) 15%, transparent);
+}
+
+/* 0件時ヘッダー内のフィルタチップは縦方向に中央揃え */
+.search-empty-state .search-result-header {
+    border-radius: 10px;
+    border: 1px solid var(--color-border);
+    margin-bottom: 0.75rem;
+}
