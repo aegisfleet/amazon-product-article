@@ -1,0 +1,182 @@
+{
+  "analysis": {
+    "productName": "Tasavz 筋膜リリースガン",
+    "parentAsin": "B0GKV5HSNP",
+    "productDescription": "AIセンサー搭載で押し当てる力に合わせて振動を自動調節できるハンディマッサージャー。320gの軽量ボディに5種類のアタッチメントが付属し、最長12時間の連続使用が可能です。",
+    "productUsage": [
+      "筋肉の緊張やコリの緩和",
+      "運動前後のケア",
+      "日常的なリフレッシュ"
+    ],
+    "positivePoints": [
+      "AI自適応モードにより、押し当てる強さで自動的に振動数が調整され初心者でも扱いやすい",
+      "320gと軽量で片手でも長時間の操作が疲れにくい",
+      "1回のフル充電で最長12時間使用可能な大容量バッテリー（4,000mAh）搭載"
+    ],
+    "negativePoints": [
+      "AIによる自動調節が意図しないタイミングで強さが変わる可能性がある",
+      "振幅8mmはミニサイズとしては優秀だが、プロ向け機と比べると深部へのアプローチはややマイルド"
+    ],
+    "useCases": [
+      "長時間のデスクワーク後の肩や首のケア",
+      "ジムでのトレーニング後の筋肉のクールダウン",
+      "就寝前の全身リラックス"
+    ],
+    "userStories": [],
+    "userImpression": "コンパクトで軽量ながらもAIによる自動強弱機能があり、日常使いしやすいという評価が期待される。特にバッテリー持ちの良さとアタッチメントの豊富さが魅力。",
+    "sources": [
+      {
+        "id": "src-amazon-B0GKV5HSNP",
+        "name": "Amazon 商品ページ",
+        "url": "https://www.amazon.co.jp/dp/B0GKV5HSNP",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-06-06",
+        "author": "Amazon",
+        "conflictOfInterest": "disclosed",
+        "notes": "商品の公式スペックおよび商品説明文から情報を抽出"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "AIセンサーにより押し当てる強さに応じて振動の頻度を自動調節する",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-amazon-B0GKV5HSNP"
+        ],
+        "crossChecked": false,
+        "notes": "商品説明に明記されている機能"
+      },
+      {
+        "claim": "重量320gの超軽量設計",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-amazon-B0GKV5HSNP"
+        ],
+        "crossChecked": false,
+        "notes": "公式スペック"
+      }
+    ],
+    "lastInvestigated": "2026-06-06",
+    "competitiveAnalysis": [
+      {
+        "name": "Mucuru ハンディガン B0GX5JKQTJ",
+        "asin": "B0GX5JKQTJ",
+        "priceComparison": "対象商品と比較して安価。AI自適応モードなど類似の機能を持つため、価格重視の場合はMucuruが優位。",
+        "featureComparison": [
+          "共通点：AI自適応モード搭載、Type-C充電",
+          "相違点：対象商品はバッテリー持ちが最長12時間だが、Mucuruのバッテリー性能は商品ページ詳細での確認が必要"
+        ],
+        "differentiators": [
+          "Tasavz 筋膜リリースガンの利点：12時間の連続使用時間というバッテリー容量への明確な強み",
+          "Mucuru ハンディガン B0GX5JKQTJの利点：価格の安さ"
+        ]
+      },
+      {
+        "name": "arboleaf 筋膜リリースガン B093B4TSPM",
+        "asin": "B093B4TSPM",
+        "priceComparison": "対象商品と同等の価格帯。",
+        "featureComparison": [
+          "共通点：自適応モード搭載、軽量設計（対象商品は320g、arboleafは370g）",
+          "相違点：対象商品は12時間使用可能だが、arboleafは8時間以上"
+        ],
+        "differentiators": [
+          "Tasavz 筋膜リリースガンの利点：より軽量（320g）でバッテリー駆動時間も長い",
+          "arboleaf 筋膜リリースガン B093B4TSPMの利点：知名度や販売実績に基づく信頼性（推測）"
+        ]
+      },
+      {
+        "name": "MERACH ハンディガン B0H1MDK3SB",
+        "asin": "B0H1MDK3SB",
+        "priceComparison": "対象商品より安価。",
+        "featureComparison": [
+          "共通点：軽量コンパクト、Type-C充電",
+          "相違点：MERACHは228gと圧倒的に軽いが、対象商品はAI自動調整機能がある"
+        ],
+        "differentiators": [
+          "Tasavz 筋膜リリースガンの利点：AI自動調整機能による初心者への扱いやすさ",
+          "MERACH ハンディガン B0H1MDK3SBの利点：228gというさらなる携帯性の高さ"
+        ]
+      },
+      {
+        "name": "MYTREX REBIVE 2 B0F9KFPD9G",
+        "asin": "B0F9KFPD9G",
+        "priceComparison": "対象商品と比較して非常に高価。その分、医療機器としての機能と品質が保証されている。",
+        "featureComparison": [
+          "共通点：筋膜リリース機能",
+          "相違点：MYTREXは医療機器認定を受けており、本格的な効果が期待できる"
+        ],
+        "differentiators": [
+          "Tasavz 筋膜リリースガンの利点：圧倒的なコストパフォーマンスと軽量性",
+          "MYTREX REBIVE 2 B0F9KFPD9Gの利点：医療機器としての信頼性と品質"
+        ]
+      },
+      {
+        "name": "Zruim 筋膜リリースガン B0GW5QFMRJ",
+        "asin": "B0GW5QFMRJ",
+        "priceComparison": "対象商品と比較して安価。",
+        "featureComparison": [
+          "共通点：Type-C急速充電、静音設計",
+          "相違点：Zruimは延長アームが付いており背中まで届く設計だが、対象商品は標準的なガン形状"
+        ],
+        "differentiators": [
+          "Tasavz 筋膜リリースガンの利点：AI自動調節モード搭載で操作がシンプル",
+          "Zruim 筋膜リリースガン B0GW5QFMRJの利点：延長アームによる背中へのアプローチのしやすさ"
+        ]
+      },
+      {
+        "name": "LIHILIS 筋膜リリースガン B0DD7B3VGB",
+        "asin": "B0DD7B3VGB",
+        "priceComparison": "対象商品より安価。",
+        "featureComparison": [
+          "共通点：AI自適応モード搭載、Type-C急速充電",
+          "相違点：LIHILISは10mm深層振幅、対象商品は8mm"
+        ],
+        "differentiators": [
+          "Tasavz 筋膜リリースガンの利点：320gという軽量さと4000mAhの大容量バッテリー",
+          "LIHILIS 筋膜リリースガン B0DD7B3VGBの利点：10mmの深い振幅による強力なアプローチ"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "初めて筋膜リリースガンを購入する人",
+        "軽量で持ち運びやすいモデルを探している人",
+        "充電の手間を減らしたい人"
+      ],
+      "pros": [
+        "AIによる強さ自動調節機能搭載",
+        "320gの超軽量設計",
+        "1回の充電で12時間使える大容量バッテリー"
+      ],
+      "cons": [
+        "価格重視の類似スペック製品が複数存在する"
+      ],
+      "score": 80,
+      "scoreRationale": "[基本点: 70]\n[加点: +5] (AI自適応モードにより初心者でも簡単に適切な力でマッサージ可能)\n[加点: +3] (320gの超軽量設計で操作性が高い)\n[加点: +2] (4000mAhの大容量バッテリーを搭載し携帯性に優れる)\n[加点: +3] (5種類のアタッチメントが付属し全身ケアが可能)\n[減点: -3] (類似スペックの競合製品の中ではやや高めの価格設定)\n[合計: 80]"
+    },
+    "technicalSpecs": {
+      "dimensions": {
+        "height": "140.0mm",
+        "width": "42.0mm",
+        "depth": "83.0mm"
+      },
+      "weight": "320g",
+      "capacity": "バッテリー容量 4000mAh",
+      "material": "記載なし",
+      "origin": "記載なし",
+      "other": [
+        "カラー：はいいろ",
+        "連続使用時間：最長約12時間",
+        "振幅：8mm",
+        "回転数：2000-3200回転/分（5段階調整）",
+        "動作音：45dB",
+        "充電ポート：Type-C",
+        "オートオフ：10分",
+        "アタッチメント：ボール型、フラット型、円柱型、U字型、スカルプ用（計5種）"
+      ]
+    }
+  }
+}
