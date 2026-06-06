@@ -186,6 +186,9 @@
     .rec-summary-cat {
         white-space: nowrap;
     }
+    .rec-summary-score {
+        white-space: nowrap;
+    }
     .rec-summary-actions {
         display: flex;
         gap: 0.4rem;
@@ -325,7 +328,7 @@
                         <span class="card-tag" style="margin-bottom:0; font-size:0.78rem; padding:0.15rem 0.5rem;">{{- $rec.category -}}</span>
                     </td>
                     <td class="rec-summary-price">{{- partial "utils-price-format.html" $rec.price -}}</td>
-                    <td>
+                    <td class="rec-summary-score">
                         {{- if $score -}}
                         {{- $scoreClass := "score-fair" -}}
                         {{- if ge $score 80 -}}{{- $scoreClass = "score-excellent" -}}
