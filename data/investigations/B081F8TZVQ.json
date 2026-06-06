@@ -28,114 +28,175 @@
     ],
     "userStories": [
       {
-        "userType": "古いノートPCを持つ学生",
-        "scenario": "大学のレポート作成やオンライン授業で使う5年前のノートPCが、起動やブラウザのタブを複数開くだけで固まるようになり、ストレスを感じていた。",
-        "experience": "（推測）価格の手頃さから本製品を購入し、HDDから換装。起動時間は数分の一に短縮され、複数のアプリケーションを同時に開いても快適に動作するようになった。PCを買い替えることなく、最小限の投資でパフォーマンスを大幅に改善でき、学業に集中できるようになった。",
+        "userType": "古いPCの延命・サブ機利用者",
+        "scenario": "古いノートパソコンの動作が遅く、HDDから安価なSSDへの換装を検討していた。",
+        "experience": "HDDと比べればOSの起動やソフトの立ち上がりは圧倒的に速くなり、日常のブラウジング等では十分快適になった。付属のAcronis True Imageソフトが使いやすく、初心者でもデータ移行（クローン）が簡単にできた点に満足している。",
+        "supportingSourceIds": [
+          "src-kakaku-bx500-ct2000"
+        ],
         "sentiment": "positive"
       },
       {
-        "userType": "PCゲーマー",
-        "scenario": "増え続けるゲームライブラリを保存するため、安価で大容量のストレージを探していた。",
-        "experience": "（推測）2TBという容量と価格のバランスから本製品を選択。ゲームのインストール先として指定したところ、HDD時代とは比較にならないほどロード時間が短縮された。ただし、数百GB単位のゲームをインストールする際、途中で書き込み速度が低下し、完了までに予想以上の時間がかかった。",
-        "sentiment": "mixed"
+        "userType": "データ保存用（倉庫用）ストレージを求めるユーザー",
+        "scenario": "動画や画像などの大容量データを保存するため、安価なSATA SSDを追加しようと考えた。",
+        "experience": "DRAMキャッシュレスかつQLC NAND搭載のため、空き容量が減ってきたり、数十GB以上の大容量データを連続で書き込んだりすると、極端な速度低下（10〜50MB/s程度）が発生し、ストレスを感じた。書き込みメインの用途には向いておらず、一度データを保存した後の読み出し専用としての割り切りが必要だと感じた。",
+        "supportingSourceIds": [
+          "src-chimolog-bx500",
+          "src-kakaku-bx500-ct2000"
+        ],
+        "sentiment": "negative"
       },
       {
-        "userType": "動画編集者",
-        "scenario": "4K動画の編集プロジェクト用の作業ドライブとして、安価なSSDを導入した。",
-        "experience": "（推測）一時的な作業用として購入したが、数十GBの動画素材を書き込む際に速度が極端に低下し、作業効率が著しく悪化した。DRAMキャッシュレスの限界を感じ、最終的に上位モデルのMX500に買い替えることになった。用途によっては「安物買いの銭失い」になると痛感した。",
-        "sentiment": "negative"
+        "userType": "コストと信頼性のバランスを求めるユーザー",
+        "scenario": "無名の中華系SSDは故障が不安だが、ハイエンドモデルは高すぎるため、大手メーカーのエントリーモデルを選んだ。",
+        "experience": "ベンチマーク上のランダムアクセス性能は低いものの、体感速度は問題ない。負荷をかけても発熱が50度台と低く抑えられており、サーマルスロットリングの心配がない。Micronブランドという安心感はあるが、性能面では過度な期待は禁物である。",
+        "supportingSourceIds": [
+          "src-chimolog-bx500"
+        ],
+        "sentiment": "mixed"
       }
     ],
-    "userImpression": "ユーザーからは「HDDからの乗り換えで世界が変わった」という速度向上への評価が圧倒的。特に古いPCの延命用途では満足度が高い。一方で、大量のデータ転送時の速度低下や発熱を指摘する声もあり、パワーユーザーからは「もう少し出してMX500を買うべき」との意見も根強い。2026年に入り、SATA SSD全体の品薄・価格上昇傾向があり、「以前のような激安感はなくなった」という声も見受けられる。",
+    "userImpression": "「HDDからの換装で劇的に速くなった」「クローンソフトが無料で使えて便利」など、安価にPCを延命したいユーザーからは高い評価を得ている。一方で、DRAMキャッシュレスかつQLC NAND採用のため、大容量ファイルの連続書き込み時にはHDDを下回る速度（10〜50MB/s）まで低下するという検証結果や報告が多く、「システムドライブや頻繁な書き込みには向かない」「価格が許すならMX500を選ぶべき」という厳しい意見も目立つ。発熱が低く、読み込み中心のデータ倉庫用途であれば無難に使える製品として認識されている。",
     "sources": [
       {
-        "name": "Tom's Hardware: Crucial BX500 SSD Review",
-        "url": "https://www.tomshardware.com/reviews/crucial-bx500-ssd,5377.html",
-        "credibility": "高い"
+        "id": "src-chimolog-bx500",
+        "name": "Crucial BX500（2025）レビュー：酷い性能でも競争がなければ売れるSATA SSD市場 / ちもろぐ",
+        "url": "https://chimolog.co/crucial-bx500-2025/",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2025-09-07",
+        "author": "やかもち（管理人）",
+        "conflictOfInterest": "possible",
+        "notes": "性能が低く書き込み速度が非常に遅いこと、QLC NANDとDRAMレスコントローラの組み合わせであること、発熱が低く耐久性は十分であることを詳細に検証。"
       },
       {
-        "name": "PCMag: Crucial BX500 Review",
-        "url": "https://www.pcmag.com/reviews/crucial-bx500",
-        "credibility": "高い"
-      },
-      {
-        "name": "AnandTech: The Crucial BX500 SSD Review",
-        "url": "https://www.anandtech.com/show/13354/the-crucial-bx500-ssd-review",
-        "credibility": "高い"
+        "id": "src-kakaku-bx500-ct2000",
+        "name": "BX500 CT2000BX500SSD1JP レビュー・評価 / 価格.com",
+        "url": "https://review.kakaku.com/review/K0001233856/",
+        "tier": "medium",
+        "evidenceType": "primary",
+        "publishedAt": "2024-03-26",
+        "author": "価格.comユーザー",
+        "conflictOfInterest": "none",
+        "notes": "データ保存用としては十分な速度だが、速度よりも信頼性重視で選ばれている。初期不良等の保証利用者の報告あり。"
       }
     ],
-    "lastInvestigated": "2026-02-13",
+    "lastInvestigated": "2026-06-07",
     "competitiveAnalysis": [
       {
         "name": "Crucial MX500 2TB",
-        "asin": "B078C515QL",
-        "priceComparison": "BX500の上位モデルだが、現在は市場在庫が少なく価格が高騰している傾向がある。",
+        "asin": "B07B3QRCZ8",
+        "priceComparison": "BX500の上位モデルで価格も高いが、DRAMキャッシュ搭載により性能が安定している。",
         "featureComparison": [
-          "DRAMキャッシュ搭載で書き込み性能が安定",
-          "金属筐体で放熱性に優れる",
-          "耐久性(TBW)が高い"
+          "共通点：Crucial製の2.5インチSATA SSD。",
+          "相違点：BX500はDRAMレスでQLC NAND搭載（一部ロット）の廉価版だが、MX500はDRAM搭載でTLC NANDを採用し、金属筐体で5年保証が付帯する。"
         ],
         "differentiators": [
-          "SATA SSDの決定版としての信頼性と性能",
-          "5年保証（BX500は3年）"
+          "Crucial BX500 2TBの利点：MX500に比べて価格が安く、データ倉庫などのライトユースに適している。",
+          "Crucial MX500 2TBの利点：OSドライブやゲームのインストール先など、安定した書き込み性能と高い耐久性が求められる用途に適している。"
         ]
       },
       {
         "name": "Samsung 870 EVO 2TB",
-        "asin": "B08Q83J1K3",
-        "priceComparison": "性能・価格ともにSATA SSDの最高峰だが、入手性が悪化している可能性がある。",
+        "asin": "B0FWP8F4CP",
+        "priceComparison": "SATA SSDの最高峰であり、BX500より大幅に高価である。",
         "featureComparison": [
-          "業界最高水準のランダムアクセス性能",
-          "自社製コントローラとV-NANDによる高い信頼性"
+          "共通点：2.5インチSATA SSD。",
+          "相違点：870 EVOは自社製コントローラとTLC V-NAND、DRAMキャッシュを搭載しており、書き込み耐性(TBW)もBX500の約1.6倍(1200TBW)と高く、5年保証である。"
         ],
         "differentiators": [
-          "プロフェッショナル用途にも耐えうる性能と耐久性",
-          "Samsung Magicianソフトウェアによる充実した管理機能"
+          "Crucial BX500 2TBの利点：導入コストを極力抑えたい場合に適している。",
+          "Samsung 870 EVO 2TBの利点：SATA規格の上限に迫る高い性能と信頼性があり、過酷な使用環境にも耐えうる。"
         ]
       },
       {
-        "name": "ORICO Y20 2TB",
-        "asin": "B0CG1QQP3Y",
-        "priceComparison": "約3万円（2026年2月時点）。大手メーカー品が品薄な中、比較的入手しやすい。",
+        "name": "KingSpec SSD 2TB",
+        "asin": "B0DRBNK26Y",
+        "priceComparison": "BX500と同等かやや安価な価格帯である。",
         "featureComparison": [
-          "アルミ合金筐体を採用し放熱性に配慮",
-          "3D NAND採用のエントリーモデル"
+          "共通点：安価な2.5インチSATA SSDである点と、3年保証である点。",
+          "相違点：KingSpecはより低価格を追求したモデルだが、品質の安定性においてはMicron傘下のCrucialブランドであるBX500の方が一般的に信頼性が高いとされる。"
         ],
         "differentiators": [
-          "現在安定して購入可能な2TB SATA SSDの選択肢",
-          "コストパフォーマンス重視の代替案"
+          "Crucial BX500 2TBの利点：自社でNANDを製造するMicronブランドの製品であり、一定の品質基準とサポートが期待できる。",
+          "KingSpec SSD 2TBの利点：BX500よりもさらに低予算で購入できる場合がある。"
+        ]
+      },
+      {
+        "name": "シリコンパワー SSD 2TB",
+        "asin": "B08G838VTV",
+        "priceComparison": "BX500と同等の価格帯で販売されている。",
+        "featureComparison": [
+          "共通点：エントリークラスの2.5インチSATA SSDであり、3D NANDを搭載している。",
+          "相違点：シリコンパワーA58はSLCキャッシュ技術を採用しているが、BX500はMicron製NANDを指定して採用している。"
+        ],
+        "differentiators": [
+          "Crucial BX500 2TBの利点：Micron純正のNANDフラッシュが搭載されていることによる安心感。",
+          "シリコンパワー SSD 2TBの利点：BX500と同様に安価な選択肢として比較検討でき、セール等でより安く入手できる場合がある。"
+        ]
+      },
+      {
+        "name": "Fikwot FX815 SSD 2TB",
+        "asin": "B0CXJ1W6F9",
+        "priceComparison": "BX500よりも安価に購入可能である。",
+        "featureComparison": [
+          "共通点：SATA3.0対応の2.5インチSSD。",
+          "相違点：BX500の保証期間が3年であるのに対し、FX815はメーカー5年保証を謳っている。"
+        ],
+        "differentiators": [
+          "Crucial BX500 2TBの利点：半導体大手Micronのブランドであり、搭載NANDの出所が明確で信頼性が高い。",
+          "Fikwot FX815 SSD 2TBの利点：より安価でありながら、5年という長めの保証期間が設定されている。"
+        ]
+      },
+      {
+        "name": "TEAMGROUP AX2 SSD 2TB",
+        "asin": "B08GCKFZXS",
+        "priceComparison": "BX500とほぼ同じか少し安い価格帯である。",
+        "featureComparison": [
+          "共通点：2.5インチSATA接続、SLCキャッシュ技術対応、3年保証。",
+          "相違点：BX500はMicron製NANDを使用しているが、AX2はサードパーティ製である。"
+        ],
+        "differentiators": [
+          "Crucial BX500 2TBの利点：Acronis True Image for Crucial（クローン作成ソフト）が無料で利用できるため、換装作業が容易。",
+          "TEAMGROUP AX2 SSD 2TBの利点：同等のスペックを持ちつつ、価格動向によっては安価に入手可能。"
         ]
       }
     ],
     "recommendation": {
       "targetUsers": [
-        "HDD搭載の古いPCの動作を安価に改善したいライトユーザー",
-        "OSやアプリケーションの起動ドライブ用としてSSDの高速化を体験したい初心者",
-        "頻繁な書き込みを行わないデータ保管用ストレージを探している人"
+        "HDD搭載の古いPC（ノート・デスクトップ）を低予算で高速化したい人",
+        "OSクローンソフトを無料で使って簡単にデータ移行を行いたい初心者",
+        "頻繁な書き込みを行わず、読み出しメインの安価な大容量データ保管庫を探している人"
       ],
       "pros": [
         "HDDからの換装による劇的な体感速度の向上",
-        "Micron製NAND採用による品質への信頼感",
-        "クローンソフト付属で換装作業のハードルが低い"
+        "無料で使えるAcronis True Image for Crucialによる容易なデータ移行",
+        "Micron純正NAND採用の安心感と、発熱が少なく安定した動作"
       ],
       "cons": [
-        "DRAMキャッシュレスによる大容量書き込み時の速度低下",
-        "プラスチック筐体による放熱性の懸念",
-        "市場全体の価格上昇により、以前ほどの圧倒的な割安感が薄れている"
+        "DRAMキャッシュレス・QLC NAND採用による、大容量ファイル連続書き込み時の極端な速度低下",
+        "他社の格安SATA SSDと比較して、やや割高な価格設定",
+        "ランダムアクセス性能が上位モデルやNVMe SSDと比較して低い"
       ],
-      "score": 65,
-      "scoreRationale": "[基本点: 70]\n[加点: +10] HDDからの換装用途においては、依然として十分な性能向上と満足度を提供する。\n[減点: -10] DRAMキャッシュレスによる書き込み性能の低下は明確な弱点。\n[減点: -5] 2026年現在、SATA SSD市場の価格上昇と品薄により、かつてのような圧倒的なコストパフォーマンス（安さ）を感じにくくなっているため。\n[合計: 65]"
+      "score": 62,
+      "scoreRationale": "[基本点: 70]\n[加点: +5] Micron純正NANDの採用と、発熱の少なさによる安定した動作。\n[加点: +5] Acronisクローンソフトが無料で利用でき、初心者の換装ハードルを下げている点。\n[減点: -10] DRAMレスかつQLC NAND特有の、キャッシュ切れによる連続書き込み時の極端な速度低下（実用性に影響あり）。\n[減点: -8] 他の格安SATA SSDと比較して価格設定がやや高く、コストパフォーマンスにおいて優位性が薄い点。\n[合計: 62]"
     },
     "technicalSpecs": {
+      "dimensions": {
+        "width": "100.45mm",
+        "height": "69.85mm",
+        "depth": "7.0mm"
+      },
+      "weight": "70g",
       "capacity": "2TB",
-      "interface": "SATA 6.0Gb/s (SATA III)",
-      "formFactor": "2.5-inch (7mm)",
-      "sequentialRead": "540 MB/s",
-      "sequentialWrite": "500 MB/s",
-      "nandType": "Micron 3D NAND",
-      "endurance": "720 TBW",
-      "warranty": "3-year limited",
-      "controller": "SMI SM2258XT (DRAM-less)"
+      "interface": "SATA 6.0Gb/s",
+      "formFactor": "2.5型 (約63.5mm)",
+      "sequentialRead": "540MB/s",
+      "sequentialWrite": "500MB/s",
+      "nandType": "Micron 176層 3D QLC NAND",
+      "endurance": "720TBW",
+      "warranty": "3年",
+      "controller": "SMI SM2259XT2 (DRAMレス)"
     }
   }
 }
