@@ -80,15 +80,26 @@
         padding: 0.35rem 0.75rem;
         border-radius: var(--radius-md);
         border: 1.5px solid var(--color-border);
-        background: var(--color-bg-secondary);
+        background: var(--color-bg-body);
         color: var(--color-text-main);
         font-size: 0.9rem;
         cursor: pointer;
         outline: none;
         transition: border-color 0.15s ease;
+        color-scheme: light dark;
     }
     .rec-sort-select:focus {
         border-color: var(--color-primary);
+    }
+    @media (prefers-color-scheme: dark) {
+        :root:not([data-theme="light"]) .rec-sort-select {
+            background: var(--color-bg-body);
+            color: var(--color-text-main);
+        }
+    }
+    [data-theme="dark"] .rec-sort-select {
+        background: var(--color-bg-body);
+        color: var(--color-text-main);
     }
 
     /* ---- 比較サマリーテーブル ---- */
