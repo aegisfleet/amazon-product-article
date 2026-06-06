@@ -24,6 +24,216 @@
             font-size: 1.25rem !important;
         }
     }
+
+    /* ---- フィルタ・ソートUI ---- */
+    .rec-controls {
+        margin-bottom: var(--spacing-lg);
+        display: flex;
+        flex-wrap: wrap;
+        gap: var(--spacing-md);
+        align-items: flex-start;
+    }
+    .rec-filter-group {
+        display: flex;
+        flex-direction: column;
+        gap: var(--spacing-xs);
+        flex: 1;
+        min-width: 0;
+    }
+    .rec-filter-label {
+        font-size: 0.8rem;
+        font-weight: 600;
+        color: var(--color-text-muted);
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+    }
+    .rec-chip-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.4rem;
+    }
+    .rec-chip {
+        display: inline-flex;
+        align-items: center;
+        padding: 0.3rem 0.75rem;
+        border-radius: 999px;
+        border: 1.5px solid var(--color-border);
+        background: var(--color-bg-secondary);
+        color: var(--color-text-secondary);
+        font-size: 0.85rem;
+        cursor: pointer;
+        transition: all 0.15s ease;
+        white-space: nowrap;
+        user-select: none;
+    }
+    .rec-chip:hover {
+        border-color: var(--color-primary);
+        color: var(--color-primary);
+    }
+    .rec-chip.active {
+        background: var(--color-primary);
+        border-color: var(--color-primary);
+        color: #fff;
+        font-weight: 600;
+    }
+    .rec-sort-select {
+        padding: 0.35rem 0.75rem;
+        border-radius: var(--radius-md);
+        border: 1.5px solid var(--color-border);
+        background: var(--color-bg-body);
+        color: var(--color-text-main);
+        font-size: 0.9rem;
+        cursor: pointer;
+        outline: none;
+        transition: border-color 0.15s ease;
+        color-scheme: light dark;
+    }
+    .rec-sort-select:focus {
+        border-color: var(--color-primary);
+    }
+    @media (prefers-color-scheme: dark) {
+        :root:not([data-theme="light"]) .rec-sort-select {
+            background: var(--color-bg-body);
+            color: var(--color-text-main);
+        }
+    }
+    [data-theme="dark"] .rec-sort-select {
+        background: var(--color-bg-body);
+        color: var(--color-text-main);
+    }
+
+    /* ---- 比較サマリーテーブル ---- */
+    .rec-summary-toggle {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        width: 100%;
+        background: var(--color-bg-secondary);
+        border: 1.5px solid var(--color-border);
+        border-radius: var(--radius-md);
+        padding: 0.6rem 1rem;
+        cursor: pointer;
+        font-size: 0.95rem;
+        font-weight: 600;
+        color: var(--color-text-main);
+        margin-bottom: var(--spacing-md);
+        transition: background 0.15s ease;
+    }
+    .rec-summary-toggle:hover {
+        background: var(--color-bg-body);
+    }
+    .rec-summary-toggle .toggle-icon {
+        margin-left: auto;
+        transition: transform 0.2s ease;
+        font-style: normal;
+    }
+    .rec-summary-toggle.open .toggle-icon {
+        transform: rotate(180deg);
+    }
+    .rec-summary-panel {
+        display: none;
+        overflow-x: auto;
+        margin-bottom: var(--spacing-lg);
+        border: 1px solid var(--color-border);
+        border-radius: var(--radius-md);
+    }
+    .rec-summary-panel.open {
+        display: block;
+    }
+    .rec-summary-table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 0.88rem;
+        min-width: 560px;
+    }
+    .rec-summary-table th {
+        background: var(--color-bg-secondary);
+        padding: 0.6rem 0.75rem;
+        text-align: left;
+        font-weight: 600;
+        color: var(--color-text-muted);
+        border-bottom: 1.5px solid var(--color-border);
+        white-space: nowrap;
+    }
+    .rec-summary-table td {
+        padding: 0.55rem 0.75rem;
+        border-bottom: 1px solid var(--color-border);
+        color: var(--color-text-main);
+        vertical-align: middle;
+    }
+    .rec-summary-table tr:last-child td {
+        border-bottom: none;
+    }
+    .rec-summary-table tr:hover td {
+        background: var(--color-bg-secondary);
+    }
+    .rec-summary-rank {
+        font-weight: bold;
+        color: var(--color-primary);
+        text-align: center;
+    }
+    .rec-summary-price {
+        font-weight: bold;
+        color: var(--color-danger);
+        white-space: nowrap;
+    }
+    .rec-summary-name {
+        max-width: 220px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    .rec-summary-cat {
+        white-space: nowrap;
+    }
+    .rec-summary-actions {
+        display: flex;
+        gap: 0.4rem;
+        align-items: center;
+        white-space: nowrap;
+    }
+    .rec-summary-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 2px;
+        padding: 0.2rem 0.55rem;
+        border-radius: var(--radius-sm);
+        font-size: 0.8rem;
+        font-weight: 600;
+        text-decoration: none;
+        border: 1.5px solid transparent;
+        transition: opacity 0.15s;
+    }
+    .rec-summary-btn:hover {
+        opacity: 0.8;
+    }
+    .rec-summary-btn-internal {
+        background: transparent;
+        border-color: var(--color-primary);
+        color: var(--color-primary);
+    }
+    .rec-summary-btn-amazon {
+        background: #ff9900;
+        color: #fff;
+        border-color: #ff9900;
+    }
+
+    /* 非表示カード */
+    .competitor-card.hidden {
+        display: none !important;
+    }
+
+    /* 結果ゼロ表示 */
+    .rec-no-results {
+        display: none;
+        text-align: center;
+        padding: var(--spacing-xl);
+        color: var(--color-text-muted);
+        font-size: 1rem;
+    }
+    .rec-no-results.visible {
+        display: block;
+    }
 </style>
 <div class="container recommendations-container">
     {{- partial "breadcrumb.html" . -}}
@@ -79,11 +289,100 @@
         </div>
     </div>
 
+    <!-- 比較サマリーテーブル（折りたたみ） -->
+    <button class="rec-summary-toggle" id="rec-summary-toggle" aria-expanded="false" aria-controls="rec-summary-panel">
+        <span>📋</span>
+        <span>比較サマリーを表示する</span>
+        <em class="toggle-icon">▼</em>
+    </button>
+    <div class="rec-summary-panel" id="rec-summary-panel" role="region" aria-labelledby="rec-summary-toggle">
+        <table class="rec-summary-table">
+            <thead>
+                <tr>
+                    <th style="text-align:center;">順位</th>
+                    <th>商品名</th>
+                    <th>カテゴリ</th>
+                    <th>価格</th>
+                    <th>スコア</th>
+                    <th>リンク</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{- range $index, $rec := $todayData.recommendations -}}
+                {{- $articlePage := site.GetPage (printf "/articles/%s" $rec.asin) -}}
+                {{- $score := 0 -}}
+                {{- if $articlePage -}}{{- $score = $articlePage.Params.score | default 0 -}}{{- end -}}
+                <tr>
+                    <td class="rec-summary-rank">{{ add $index 1 }}</td>
+                    <td class="rec-summary-name" title="{{ $rec.title }}">
+                        {{- if $articlePage -}}
+                        <a href="{{ $articlePage.RelPermalink }}">{{- $rec.title -}}</a>
+                        {{- else -}}
+                        {{- $rec.title -}}
+                        {{- end -}}
+                    </td>
+                    <td class="rec-summary-cat">
+                        <span class="card-tag" style="margin-bottom:0; font-size:0.78rem; padding:0.15rem 0.5rem;">{{- $rec.category -}}</span>
+                    </td>
+                    <td class="rec-summary-price">{{- partial "utils-price-format.html" $rec.price -}}</td>
+                    <td>
+                        {{- if $score -}}
+                        {{- $scoreClass := "score-fair" -}}
+                        {{- if ge $score 80 -}}{{- $scoreClass = "score-excellent" -}}
+                        {{- else if ge $score 60 -}}{{- $scoreClass = "score-good" -}}
+                        {{- end -}}
+                        <span class="card-score {{ $scoreClass }}" style="font-size:0.78rem; padding:2px 6px;">🏆 {{- $score -}}点</span>
+                        {{- else -}}
+                        <span style="color: var(--color-text-muted); font-size:0.82rem;">—</span>
+                        {{- end -}}
+                    </td>
+                    <td>
+                        <div class="rec-summary-actions">
+                            {{- if $articlePage -}}
+                            <a href="{{ $articlePage.RelPermalink }}" class="rec-summary-btn rec-summary-btn-internal">✍️ レビュー</a>
+                            {{- end -}}
+                            <a href='{{ printf "https://www.amazon.co.jp/dp/%s?tag=aegis-22" $rec.asin }}' class="rec-summary-btn rec-summary-btn-amazon" target="_blank" rel="noopener noreferrer">🛒 Amazon</a>
+                        </div>
+                    </td>
+                </tr>
+                {{- end -}}
+            </tbody>
+        </table>
+    </div>
+
+    <!-- フィルタ & ソートUI -->
+    <div class="rec-controls" id="rec-controls">
+        <div class="rec-filter-group">
+            <span class="rec-filter-label">カテゴリ</span>
+            <div class="rec-chip-row" id="rec-category-chips">
+                <button class="rec-chip active" data-category="all" id="chip-all">すべて</button>
+                {{- range $todayData.recommendations -}}
+                <button class="rec-chip" data-category="{{ .category }}">{{- .category -}}</button>
+                {{- end -}}
+            </div>
+        </div>
+        <div class="rec-filter-group" style="flex: 0 0 auto; min-width: 0;">
+            <label class="rec-filter-label" for="rec-sort-select">並び替え</label>
+            <select class="rec-sort-select" id="rec-sort-select">
+                <option value="rank">おすすめ順</option>
+                <option value="price-asc">価格が安い順</option>
+                <option value="price-desc">価格が高い順</option>
+                <option value="score-desc">スコアが高い順</option>
+            </select>
+        </div>
+    </div>
+
     <!-- Recommendations List -->
-    <div class="competitor-cards">
+    <div class="competitor-cards" id="rec-card-list">
         {{- range $index, $rec := $todayData.recommendations -}}
         {{- $articlePage := site.GetPage (printf "/articles/%s" $rec.asin) -}}
+        {{- $score := 0 -}}
+        {{- if $articlePage -}}{{- $score = $articlePage.Params.score | default 0 -}}{{- end -}}
         <div class="competitor-card"
+            data-rank="{{ add $index 1 }}"
+            data-category="{{ $rec.category }}"
+            data-price="{{ $rec.price }}"
+            data-score="{{ $score }}"
             style="display: flex; flex-direction: column; gap: var(--spacing-md); border-left: 4px solid var(--color-primary); position: relative; padding: var(--spacing-md) 32px; margin-top: 12px;">
             <!-- Rank Badge -->
             <div class="rank-badge"
@@ -203,8 +502,6 @@
                     <div
                         style="text-align: right; margin-top: auto; padding-top: var(--spacing-sm); display: flex; gap: var(--spacing-sm); justify-content: flex-end; align-items: center; flex-wrap: wrap;">
                         {{- if $articlePage -}}
-                        {{- /* 記事の Front Matter からスコアを取得 */ -}}
-                        {{- $score := $articlePage.Params.score | default 0 -}}
                         {{- if $score -}}
                         {{- $scoreClass := "score-fair" -}}
                         {{- if ge $score 80 -}}
@@ -234,5 +531,115 @@
         </div>
         {{- end -}}
     </div>
+
+    <!-- 結果ゼロ -->
+    <p class="rec-no-results" id="rec-no-results" role="alert">
+        該当する商品が見つかりませんでした。
+    </p>
 </div>
+
+<script>
+(function () {
+    "use strict";
+
+    /* ---- サマリーテーブル 開閉 ---- */
+    var toggleBtn = document.getElementById("rec-summary-toggle");
+    var summaryPanel = document.getElementById("rec-summary-panel");
+    if (toggleBtn && summaryPanel) {
+        toggleBtn.addEventListener("click", function () {
+            var isOpen = summaryPanel.classList.toggle("open");
+            toggleBtn.classList.toggle("open", isOpen);
+            toggleBtn.setAttribute("aria-expanded", isOpen ? "true" : "false");
+        });
+    }
+
+    /* ---- フィルタ & ソート ---- */
+    var chipsContainer = document.getElementById("rec-category-chips");
+    var sortSelect = document.getElementById("rec-sort-select");
+    var cardList = document.getElementById("rec-card-list");
+    var noResults = document.getElementById("rec-no-results");
+
+    if (!chipsContainer || !sortSelect || !cardList) return;
+
+    // カテゴリチップの重複除去
+    var chips = Array.from(chipsContainer.querySelectorAll(".rec-chip[data-category]"));
+    var seen = new Set();
+    chips.forEach(function (chip) {
+        var cat = chip.dataset.category;
+        if (cat === "all") { seen.add("all"); return; }
+        if (seen.has(cat)) {
+            chip.parentNode.removeChild(chip);
+        } else {
+            seen.add(cat);
+        }
+    });
+
+    var activeCategory = "all";
+
+    function getCards() {
+        return Array.from(cardList.querySelectorAll(".competitor-card"));
+    }
+
+    function applyFilter() {
+        var cards = getCards();
+        var sortVal = sortSelect.value;
+
+        // フィルタ
+        cards.forEach(function (card) {
+            var cat = card.dataset.category || "";
+            if (activeCategory === "all" || cat === activeCategory) {
+                card.classList.remove("hidden");
+            } else {
+                card.classList.add("hidden");
+            }
+        });
+
+        // ソート（表示カードのみ）
+        var visibleCards = cards.filter(function (c) { return !c.classList.contains("hidden"); });
+        visibleCards.sort(function (a, b) {
+            if (sortVal === "price-asc") {
+                return Number(a.dataset.price) - Number(b.dataset.price);
+            } else if (sortVal === "price-desc") {
+                return Number(b.dataset.price) - Number(a.dataset.price);
+            } else if (sortVal === "score-desc") {
+                var sa = Number(a.dataset.score) || 0;
+                var sb = Number(b.dataset.score) || 0;
+                if (sb !== sa) return sb - sa;
+                return Number(a.dataset.rank) - Number(b.dataset.rank);
+            } else {
+                // おすすめ順（元の順位）
+                return Number(a.dataset.rank) - Number(b.dataset.rank);
+            }
+        });
+
+        // DOMに反映（非表示カードは末尾に）
+        var hiddenCards = cards.filter(function (c) { return c.classList.contains("hidden"); });
+        visibleCards.concat(hiddenCards).forEach(function (card) {
+            cardList.appendChild(card);
+        });
+
+        // 結果ゼロ表示
+        if (noResults) {
+            noResults.classList.toggle("visible", visibleCards.length === 0);
+        }
+    }
+
+    // カテゴリチップのクリック
+    chipsContainer.addEventListener("click", function (e) {
+        var chip = e.target.closest(".rec-chip");
+        if (!chip) return;
+        activeCategory = chip.dataset.category || "all";
+        Array.from(chipsContainer.querySelectorAll(".rec-chip")).forEach(function (c) {
+            c.classList.toggle("active", c === chip);
+        });
+        applyFilter();
+    });
+
+    // ソート変更
+    sortSelect.addEventListener("change", applyFilter);
+
+    // 初期適用（チップ重複除去後）
+    applyFilter();
+})();
+</script>
 {{- end -}}
