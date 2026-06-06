@@ -2590,25 +2590,27 @@ a.competitor-preview:hover {
    ===================================================== */
 
 .pickup-section {
-  background: linear-gradient(135deg, #fef3c7 0%, #fcd34d 100%);
-  border: 2px solid #f59e0b;
+  background: #fffbeb;
+  border: 2px solid #fde68a;
   border-radius: var(--radius-xl);
   padding: var(--spacing-lg);
   margin-bottom: var(--spacing-xl);
-  box-shadow: 0 4px 15px rgba(245, 158, 11, 0.15);
+  box-shadow: 0 2px 8px rgba(245, 158, 11, 0.08);
 }
 
 [data-theme="dark"] .pickup-section {
-  background: linear-gradient(135deg, #78350f 0%, #92400e 100%);
-  border-color: #d97706;
-  box-shadow: 0 4px 15px rgba(217, 119, 6, 0.2);
+  background: #1a2234;
+  border: 1px solid #374151;
+  border-left: 3px solid #fbbf24;
+  box-shadow: none;
 }
 
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) .pickup-section {
-    background: linear-gradient(135deg, #78350f 0%, #92400e 100%);
-    border-color: #d97706;
-    box-shadow: 0 4px 15px rgba(217, 119, 6, 0.2);
+    background: #1a2234;
+    border: 1px solid #374151;
+    border-left: 3px solid #fbbf24;
+    box-shadow: none;
   }
 }
 
@@ -2628,12 +2630,12 @@ a.competitor-preview:hover {
 }
 
 [data-theme="dark"] .pickup-title {
-  color: #fcd34d;
+  color: #fbbf24;
 }
 
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) .pickup-title {
-    color: #fcd34d;
+    color: #fbbf24;
   }
 }
 
@@ -2658,31 +2660,26 @@ a.competitor-preview:hover {
   }
 }
 
-/* シャッフルボタン */
+/* シャッフルボタン（閲覧履歴リセット）: 補助操作のため neutral outline */
 .shuffle-btn {
   margin-left: auto;
-  background: linear-gradient(135deg, #92400e, #78350f);
-  /* Amber 800 to 900 */
-  color: white;
-  border: none;
+  background: transparent;
+  color: var(--color-text-muted);
+  border: 1px solid var(--color-border);
   padding: 0.5rem 1rem;
   border-radius: var(--radius-md);
   font-weight: 600;
   font-size: 0.875rem;
   cursor: pointer;
   transition: var(--transition-base);
-  box-shadow: 0 2px 6px rgba(120, 53, 15, 0.3);
-}
-
-[data-theme="dark"] .shuffle-btn {
-  background: linear-gradient(135deg, #78350f, #451a03);
-  /* Amber 900 to 950 */
-  border: 1px solid #d97706;
+  box-shadow: none;
 }
 
 .shuffle-btn:hover {
   transform: scale(1.05);
-  box-shadow: 0 4px 12px rgba(217, 119, 6, 0.4);
+  background: var(--color-bg-body);
+  border-color: var(--color-text-muted);
+  box-shadow: var(--shadow-sm);
 }
 
 .shuffle-btn:active {
@@ -2801,7 +2798,7 @@ a.competitor-preview:hover {
 
 .pickup-card-title {
   font-size: 0.75rem;
-  font-weight: 600;
+  font-weight: 700;
   color: var(--color-text-main);
   margin: 0 0 var(--spacing-xs) 0;
   line-height: 1.3;
