@@ -166,6 +166,8 @@ describe('CategoryNormalizer', () => {
         '3MAone人気アイテム',
         '3M_Aone_人気アイテム',
         '特選健康家電 オムロン、タニタ、ルルド、スライブ',
+        'CosPOP_26PD_exclude',
+        'CosPOP26PDexclude',
       ];
       invalidNames.forEach((name) => {
         expect(CategoryNormalizer.isValidCategoryName(name)).toBe(false);
