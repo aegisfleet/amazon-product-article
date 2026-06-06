@@ -2591,11 +2591,12 @@ a.competitor-preview:hover {
 
 .pickup-section {
   background: #fffbeb;
-  border: 2px solid #fde68a;
+  border: 1px solid #fde68a;
+  border-left: 3px solid #f59e0b;
   border-radius: var(--radius-xl);
   padding: var(--spacing-lg);
   margin-bottom: var(--spacing-xl);
-  box-shadow: 0 2px 8px rgba(245, 158, 11, 0.08);
+  box-shadow: none;
 }
 
 [data-theme="dark"] .pickup-section {
@@ -2642,7 +2643,7 @@ a.competitor-preview:hover {
 .pickup-subtitle {
   font-size: 0.8rem;
   color: #a16207;
-  background: rgba(255, 255, 255, 0.6);
+  background: transparent;
   padding: 0.2rem 0.6rem;
   border-radius: 9999px;
   font-weight: 500;
