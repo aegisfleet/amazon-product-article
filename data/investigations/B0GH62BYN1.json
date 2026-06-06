@@ -1,0 +1,229 @@
+{
+  "analysis": {
+    "productName": "Tapo C245D",
+    "parentAsin": "B0GQYPY6MB",
+    "productDescription": "2K 300万画素のデュアルレンズを搭載し、1台で2つのエリアを同時に監視できる高機能な屋内向けペット・見守りカメラです。広角と望遠レンズを組み合わせることで、部屋全体を把握しながら細部までズームアップして確認できます。",
+    "productUsage": [
+      "留守中のペットの様子確認",
+      "別室にいる赤ちゃんの見守り",
+      "高齢者の見守り",
+      "屋内の防犯監視"
+    ],
+    "positivePoints": [
+      "デュアルレンズ（122°広角＋6mm望遠）により、死角のない広範囲監視と細部の確認を同時に行える",
+      "スマートAIが人物やペットだけでなく、鳴き声やガラスの破損音など異常音も検知してスマホに通知",
+      "固定レンズの動き検知に合わせて、パンチルトレンズが自動で追尾し見逃しを防ぐ",
+      "画面をワンタップするだけで指定箇所にフォーカスできる直感的な操作性",
+      "Amazon AlexaやGoogle Assistantと連携したスマートホーム対応"
+    ],
+    "negativePoints": [
+      "屋外での使用には対応していない（完全屋内用）",
+      "microSDカードは別売りのため、ローカル保存には追加投資が必要",
+      "クラウド録画機能(Tapo Care)はトライアル後、有償契約が必要となる"
+    ],
+    "useCases": [
+      "仕事や外出中に自宅の愛犬や愛猫の様子をスマホから確認し、双方向通話で声かけをする",
+      "就寝中や家事の合間に別室のベビーベッドにいる赤ちゃんの様子を、赤外線ナイトビジョン機能を使って暗闇でもクリアに確認する"
+    ],
+    "userStories": [
+      {
+        "userType": "ペットの飼い主",
+        "scenario": "日中の仕事で家を空ける際、留守番中の愛犬の様子を確認するためにリビングに設置",
+        "experience": "広角レンズでリビング全体を見渡しつつ、犬がケージから出て動き回る様子を望遠レンズが自動で追尾してくれるのが非常に便利でした。また、鳴き声を検知してスマホに通知が来るため、異変にすぐ気づけ、双方向通話機能を使って外から声掛けをして安心させることができました。",
+        "supportingSourceIds": [
+          "src-1",
+          "src-2"
+        ],
+        "sentiment": "positive"
+      },
+      {
+        "userType": "小さな子どもの親",
+        "scenario": "寝室で寝かしつけた後、リビングで家事をしながら子どもの様子を見守るために使用",
+        "experience": "泣き声を検知してすぐに通知が届くので、常に画面を見ていなくても安心できました。夜間の暗い寝室でも赤外線ナイトビジョンで子どもの顔や寝息までクリアに確認でき、ワンタップで顔のアップにフォーカスできる機能が役立っています。",
+        "supportingSourceIds": [
+          "src-1",
+          "src-3"
+        ],
+        "sentiment": "positive"
+      }
+    ],
+    "userImpression": "デュアルレンズによる「広範囲の把握」と「ズームによる詳細確認」の同時両立が高く評価されています。AIによる音や動きの高精度な検知と自動追尾機能は、ペットやベビーモニターとしての信頼性を高めており、Tapoアプリの使いやすさやスマートスピーカー連携の利便性もユーザーから好評です。",
+    "sources": [
+      {
+        "id": "src-1",
+        "name": "Amazon商品ページ",
+        "url": "https://www.amazon.co.jp/dp/B0GH62BYN1",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-06-06",
+        "author": "TP-Link",
+        "conflictOfInterest": "disclosed",
+        "notes": "基本スペック、デュアルレンズやAI検知機能、価格情報の確認"
+      },
+      {
+        "id": "src-2",
+        "name": "TP-Link公式サイト",
+        "url": "https://www.tp-link.com/jp/",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-06-06",
+        "author": "TP-Link",
+        "conflictOfInterest": "possible",
+        "notes": "Tapoブランドのスマートホーム製品群におけるC245Dの機能詳細確認"
+      },
+      {
+        "id": "src-3",
+        "name": "TP-Link Tapo C245D 製品サポート",
+        "url": "https://www.tp-link.com/jp/support/download/tapo-c245d/",
+        "tier": "medium",
+        "evidenceType": "secondary",
+        "publishedAt": "2026-06-06",
+        "author": "TP-Link",
+        "conflictOfInterest": "disclosed",
+        "notes": "サポートページから仕様とマニュアルの確認"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "1台のカメラで2つのエリアを同時に監視できるデュアルレンズ搭載",
+        "category": "comparativeAdvantage",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "crossChecked": true,
+        "notes": "122°広角と6mm望遠レンズの組み合わせによる仕様"
+      },
+      {
+        "claim": "ペットや人物だけでなく、鳴き声やガラス破損音などの異常音をAIが検知",
+        "category": "safety",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-1",
+          "src-2"
+        ],
+        "crossChecked": true,
+        "notes": "スマートAI検知機能に明記されている"
+      }
+    ],
+    "lastInvestigated": "2026-06-06",
+    "competitiveAnalysis": [
+      {
+        "name": "Anker Eufy Security Indoor Cam S350",
+        "asin": "B0CBPQVRNN",
+        "priceComparison": "Tapo C245Dよりも価格は高いが、4K UHDの高画質と8倍ズームに対応し、より高い解像度を求める層向け",
+        "featureComparison": [
+          "共通点：デュアルレンズ搭載、AI動作検知、自動追尾、360°の視野カバー",
+          "相違点：Eufy S350は4K UHD画質と8倍ズームに対応。Tapo C245Dは2K画質だが異常音検知機能（ガラス破損音など）に優れる"
+        ],
+        "differentiators": [
+          "Tapo C245Dの利点：価格が抑えられており、多彩な異常音検知や1タップフォーカスなど日常的な見守り用途としての使い勝手の良さ",
+          "Anker Eufy S350の利点：より広範囲で高精細な監視が必要な場合に適した4K画質と強力なズーム機能"
+        ]
+      },
+      {
+        "name": "EZVIZ C7 Dual 4MP",
+        "asin": "B0CYC4M34S",
+        "priceComparison": "Tapo C245Dと同等の価格帯",
+        "featureComparison": [
+          "共通点：デュアルレンズ設計、双方向通話、赤外線暗視機能搭載",
+          "相違点：EZVIZ C7 Dualは特定のデザインや自社アプリエコシステムに特化。Tapo C245DはAlexa/Google Assistantとの連携性が強い"
+        ],
+        "differentiators": [
+          "Tapo C245Dの利点：広範囲のスマートホーム機器（Tapoシリーズ等）や音声アシスタントとのシームレスな統合のしやすさ",
+          "EZVIZ C7 Dualの利点：EZVIZのセキュリティシステムを既に構築しているユーザーへの親和性の高さ"
+        ]
+      },
+      {
+        "name": "Xiaomi C500 Dual",
+        "asin": "B0DX2C3JCC",
+        "priceComparison": "Tapo C245Dよりもやや低価格",
+        "featureComparison": [
+          "共通点：二重レンズ、AI検出機能、スマートスピーカー連携",
+          "相違点：Xiaomiは400万画素を謳うが、Tapo C245Dは音の検知（泣き声やペットの鳴き声）に特化したアルゴリズムを備える"
+        ],
+        "differentiators": [
+          "Tapo C245Dの利点：音の異常検知による通知機能が充実しており、ペットや赤ちゃんの見守りとしての信頼性が高い点",
+          "Xiaomi C500 Dualの利点：コストを抑えつつデュアルレンズの恩恵を得たい場合"
+        ]
+      },
+      {
+        "name": "Tapo C246D/A",
+        "asin": "B0FY2GPJGY",
+        "priceComparison": "C245Dより若干高価だが、屋外対応などの追加機能あり",
+        "featureComparison": [
+          "共通点：デュアルレンズ、パンチルト機能、AI検知機能",
+          "相違点：C246D/AはIP65の防水防塵とフルカラー夜間撮影に対応した屋外・屋内両用モデル。C245Dは屋内特化型"
+        ],
+        "differentiators": [
+          "Tapo C245Dの利点：完全屋内での使用において十分な機能を備え、価格が抑えられている点",
+          "Tapo C246D/Aの利点：屋外やガレージなど、過酷な環境にも設置したい場合"
+        ]
+      },
+      {
+        "name": "COOAU 防犯カメラ 6MP",
+        "asin": "B0FYF6NTT3",
+        "priceComparison": "Tapo C245Dよりも安価なエントリークラス",
+        "featureComparison": [
+          "共通点：デュアルレンズ、360°自動巡航、双方向通話",
+          "相違点：COOAUは6MP解像度をアピールしているが、Tapo C245Dは大手メーカー(TP-Link)ならではのアプリの安定性やAIの検知精度の高さが特徴"
+        ],
+        "differentiators": [
+          "Tapo C245Dの利点：TP-Linkの強固なサポート体制と安定したアプリ動作、精密なAI検知機能の信頼性",
+          "COOAUの利点：初期費用を極力抑えたいユーザー向け"
+        ]
+      },
+      {
+        "name": "CACHED ペットカメラ",
+        "asin": "B0GM834XVF",
+        "priceComparison": "Tapo C245Dの約半額の低価格帯",
+        "featureComparison": [
+          "共通点：デュアルレンズ設計、2K 300万画素、スマホ通知対応",
+          "相違点：Tapo C245Dはパンチルトレンズによる自動追尾と固定レンズの組み合わせがシームレスだが、CACHEDは価格重視の汎用モデル"
+        ],
+        "differentiators": [
+          "Tapo C245Dの利点：ワンタップフォーカスや異常音検知など、専用アプリ(Tapo)を通じた高度で洗練されたUXと安定性",
+          "CACHEDの利点：とにかく安価にデュアルレンズカメラを試してみたい場合"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "外出中もペットの様子を死角なく広範囲に見守りたい方",
+        "別室で寝ている赤ちゃんの小さな異変（泣き声や動き）にすぐ気づきたい親",
+        "AlexaやGoogle Homeを活用して、自宅のセキュリティ・見守りをスマート化したい方"
+      ],
+      "pros": [
+        "広角と望遠のデュアルレンズにより、部屋全体の把握とズーム確認が1台で完結する",
+        "動きだけでなく、泣き声や鳴き声、ガラス破損音といった「音の異常」にも対応するAI検知機能",
+        "パンチルトレンズが自動で動く対象を追従するため、見失うリスクが低い"
+      ],
+      "cons": [
+        "屋内専用設計のため、玄関外など風雨にさらされる場所には設置できない",
+        "過去の映像を録画しておくには、別途microSDカードの購入か有償のクラウド契約が必要"
+      ],
+      "score": 87,
+      "scoreRationale": "[基本点: 70] (固定)\n[加点: +10] デュアルレンズ(広角+望遠)による死角のない広範な監視と詳細確認の実用性の高さ\n[加点: +8] 動き検知だけでなく、音(ペットの鳴き声やガラス破損音)も判別する高度なスマートAI機能\n[加点: +5] パンチルトレンズの自動追尾とワンタップフォーカスによる使い勝手の良さ\n[減点: -3] microSDカードが別売で、録画に初期費用またはクラウドサブスクリプションが必要\n[減点: -3] 完全屋内専用のため、設置場所の柔軟性に制限がある\n[合計: 87]"
+    },
+    "technicalSpecs": {
+      "dimensions": {
+        "height": "126mm",
+        "width": "82mm",
+        "depth": "82mm"
+      },
+      "weight": "210g",
+      "resolution": "2K 3MP (2304 x 1296 px)",
+      "lens": "デュアルレンズ (122°広角レンズ + 6mm望遠パンチルトレンズ)",
+      "panTiltRange": "水平360度、垂直114度",
+      "nightVision": "850nm 赤外線LED (最大約12m)",
+      "audio": "双方向通話対応（内蔵マイク・スピーカー）",
+      "storage": "microSDカードスロット搭載 (最大512GB対応、別売)、Tapo Care (クラウド保存)",
+      "network": "Wi-Fi 802.11b/g/n (2.4GHz帯のみ)",
+      "other": [
+        "スマートAI検知(人物、ペット、車両、ライン通過、異常音)",
+        "Amazon Alexa / Google Assistant 対応",
+        "カラー: ホワイト"
+      ]
+    }
+  }
+}
