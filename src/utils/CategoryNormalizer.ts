@@ -420,6 +420,7 @@ export class CategoryNormalizer {
       /banner|installments|membership/i,
       /productalert|stampcard/i,
       /3m[\s_-]*aone/i,
+      /cospop/i,
     ];
 
     if (invalidPatterns.some((pattern) => pattern.test(name))) {
