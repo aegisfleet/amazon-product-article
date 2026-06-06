@@ -214,7 +214,7 @@
     }
     .rec-summary-btn-amazon {
         background: #ff9900;
-        color: #fff;
+        color: #111;
         border-color: #ff9900;
     }
 
@@ -295,7 +295,7 @@
         <span>比較サマリーを表示する</span>
         <em class="toggle-icon">▼</em>
     </button>
-    <div class="rec-summary-panel" id="rec-summary-panel" role="region" aria-labelledby="rec-summary-toggle">
+    <section class="rec-summary-panel" id="rec-summary-panel" aria-labelledby="rec-summary-toggle">
         <table class="rec-summary-table">
             <thead>
                 <tr>
@@ -348,7 +348,7 @@
                 {{- end -}}
             </tbody>
         </table>
-    </div>
+    </section>
 
     <!-- フィルタ & ソートUI -->
     <div class="rec-controls" id="rec-controls">
@@ -568,7 +568,7 @@
         var cat = chip.dataset.category;
         if (cat === "all") { seen.add("all"); return; }
         if (seen.has(cat)) {
-            chip.parentNode.removeChild(chip);
+            chip.remove();
         } else {
             seen.add(cat);
         }
