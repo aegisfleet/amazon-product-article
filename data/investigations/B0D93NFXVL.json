@@ -1,0 +1,174 @@
+{
+  "analysis": {
+    "productName": "Edifier M60 マルチメディアスピーカー",
+    "parentAsin": "B0D93NFXVL",
+    "productDescription": "66Wの高出力とLDAC対応によるハイレゾ再生が可能なコンパクトなマルチメディアスピーカーです。タッチパネルや専用スピーカースタンドを備え、使い勝手と音質を両立させています。",
+    "productUsage": ["PCやスマートフォンと接続しての高音質な音楽鑑賞", "デスクトップ環境での映画鑑賞やゲームプレイ"],
+    "positivePoints": [
+      "合計66Wの高出力で強力かつ鮮明な音を提供する",
+      "Bluetooth 5.3対応でLDACコーデックによるハイレゾオーディオ再生が可能",
+      "15度の角度がつけられた専用アルミスピーカースタンドが付属し、反射音を軽減できる",
+      "手が近づくと点灯する自動バックライト機能付きのタッチパネルで操作がしやすい"
+    ],
+    "negativePoints": [
+      "同メーカーの他のモデルと比較してやや高価な価格設定"
+    ],
+    "useCases": [
+      "デスクトップPCのモニター横に配置し、専用スタンドで角度をつけてリスニングする",
+      "Bluetoothを使用してスマートフォンからLDACの高音質で音楽をストリーミング再生する",
+      "USB-CケーブルでPCと接続し、高品質なデジタルオーディオ出力として使用する"
+    ],
+    "userStories": [],
+    "userImpression": "VGP2025金賞を受賞し、コンパクトながら66Wという大出力とハイレゾ対応（LDAC）による高音質が高く評価されています。また、スタンドが付属している点やUSB-C接続ができる点が現代のデスクトップ環境に適していると好評です。",
+    "sources": [
+      {
+        "id": "src-1",
+        "name": "Amazon商品ページ",
+        "url": "https://www.amazon.co.jp/dp/B0D93NFXVL",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-06-07",
+        "author": "Amazon",
+        "conflictOfInterest": "none",
+        "notes": "スペック情報、価格、商品説明（出力66W、Bluetooth 5.3 LDAC対応、タッチパネル、スタンド付属等）を確認"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "最大66W RMSの強力な出力",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": ["src-1"],
+        "crossChecked": false,
+        "notes": "商品説明にて明確に記載"
+      },
+      {
+        "claim": "LDAC対応によるハイレゾワイヤレス再生",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": ["src-1"],
+        "crossChecked": false,
+        "notes": "Bluetooth 5.3でのLDAC対応が明記されている"
+      }
+    ],
+    "lastInvestigated": "2026-06-07",
+    "competitiveAnalysis": [
+      {
+        "name": "Edifier MR3 スタジオモニタースピーカー",
+        "asin": "B0D93LP3TJ",
+        "priceComparison": "M60よりも安価であり、手軽に導入できる",
+        "featureComparison": [
+          "共通点：Bluetooth接続対応のコンパクトなアクティブスピーカー",
+          "相違点：M60は66W出力・LDAC対応・タッチパネル搭載・スタンド付属。MR3は36W出力・TRSバランス入力対応・ヘッドホン出力搭載"
+        ],
+        "differentiators": [
+          "Edifier M60の利点：より高い出力とLDACによる高音質ワイヤレス再生、便利なタッチパネル操作",
+          "Edifier MR3の利点：価格が抑えられており、バランス入力やヘッドホン端子が必要な用途に適している"
+        ]
+      },
+      {
+        "name": "Edifier MR4 アクティブニアフィールドモニタースピーカー",
+        "asin": "B09DKV849B",
+        "priceComparison": "M60よりも安価なモニター向けスピーカー",
+        "featureComparison": [
+          "共通点：高音質なリスニングが可能なデスクトップスピーカー",
+          "相違点：M60はワイヤレス（LDAC）やUSB-C接続に特化。MR4は42W出力で、アナログ接続（TRS/RCA/AUX）を主軸としている"
+        ],
+        "differentiators": [
+          "Edifier M60の利点：LDACでの高音質ワイヤレス接続やUSB-C接続に対応しており、最新デバイスとの親和性が高い",
+          "Edifier MR4の利点：アナログ機器との接続に優れ、価格が安価である"
+        ]
+      },
+      {
+        "name": "Edifier QR30 PCスピーカー",
+        "asin": "B0DN67ZQMK",
+        "priceComparison": "M60よりも安価なマルチメディアスピーカー",
+        "featureComparison": [
+          "共通点：Bluetooth、USB、AUX接続に対応したPC向けスピーカー",
+          "相違点：M60は66WでLDAC対応の高音質志向。QR30は30W出力でRGBライトを搭載したゲーミング/カジュアル志向"
+        ],
+        "differentiators": [
+          "Edifier M60の利点：出力が大きく、LDAC対応により高品位な音楽リスニングが可能",
+          "Edifier QR30の利点：RGBライトを搭載しており、デスク周りの装飾やゲーム用途で視覚的に楽しめる"
+        ]
+      },
+      {
+        "name": "オーディオテクニカ AT-SP3X ブックシェルフ スピーカー",
+        "asin": "B0D6RM9BT9",
+        "priceComparison": "M60よりもやや高価",
+        "featureComparison": [
+          "共通点：Bluetooth接続対応のデスクトップスピーカー",
+          "相違点：M60は66W出力でLDAC対応。AT-SP3Xはレコードプレーヤーなどとの接続も想定されたマルチポイント対応モデル"
+        ],
+        "differentiators": [
+          "Edifier M60の利点：より安価でありながらLDAC対応やUSB-C入力といった最新デジタルオーディオ環境に適した機能を備えている",
+          "オーディオテクニカ AT-SP3Xの利点：同社製のレコードプレーヤーやアナログ機器との組み合わせで実績と安心感がある"
+        ]
+      },
+      {
+        "name": "Edifier MP230 ワイヤレススピーカー",
+        "asin": "B09MTKMKS2",
+        "priceComparison": "M60よりも安価なポータブルスピーカー",
+        "featureComparison": [
+          "共通点：Bluetooth対応で木製デザインを採用",
+          "相違点：M60は据え置き型の2chスピーカーで高出力。MP230はバッテリー内蔵のポータブル一体型スピーカー"
+        ],
+        "differentiators": [
+          "Edifier M60の利点：左右独立の2chステレオによる広がりのある音場と、66Wの圧倒的な高出力",
+          "Edifier MP230の利点：バッテリー駆動で持ち運びが可能であり、レトロなデザインが特徴"
+        ]
+      },
+      {
+        "name": "Nylavee PCスピーカー",
+        "asin": "B0DSB9DKR6",
+        "priceComparison": "M60よりも大幅に安価",
+        "featureComparison": [
+          "共通点：BluetoothおよびAUX接続が可能なPCスピーカー",
+          "相違点：M60は左右セパレート型で66W高出力・高音質。Nylaveeはサウンドバー形状で10WのUSB給電式"
+        ],
+        "differentiators": [
+          "Edifier M60の利点：本格的なオーディオ体験が可能な高音質・高出力設計",
+          "Nylavee PCスピーカーの利点：モニター下などに省スペースで設置できるサウンドバー形状と安価な価格"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "デスクトップ環境で本格的な高音質リスニングを求めるユーザー",
+        "スマートフォンからワイヤレスで高音質な音楽(LDAC)を楽しみたいユーザー",
+        "USB-Cケーブル一本でPCから簡単にデジタル接続したいユーザー"
+      ],
+      "pros": [
+        "66Wの高出力で迫力のあるサウンド",
+        "LDAC対応によるハイレゾワイヤレス再生",
+        "専用スタンドが標準で付属する",
+        "自動点灯するタッチパネルで操作がスタイリッシュ"
+      ],
+      "cons": [
+        "同社のエントリー向けスピーカーと比べるとやや高価"
+      ],
+      "score": 85,
+      "scoreRationale": "[基本点: 70]\n[加点: +10] (66Wの高出力とLDAC対応により、サイズを超えた本格的な高音質再生が可能)\n[加点: +5] (最適なリスニング角度を確保する専用アルミスピーカースタンドが標準で付属する)\n[加点: +5] (近接センサーによる自動バックライトを備えたタッチパネルで、高い操作性とデザイン性を両立)\n[減点: -5] (競合するエントリーモデルと比べてやや価格が高く、導入のハードルが少しある)\n[合計: 85]"
+    },
+    "technicalSpecs": {
+      "dimensions": {
+        "height": "168mm",
+        "width": "100mm",
+        "depth": "147mm"
+      },
+      "weight": "未公開",
+      "power": "合計66W RMS",
+      "connection": "Bluetooth 5.3 (LDAC対応), USB-C入力, AUX入力",
+      "material": "MDF製 (木製キャビネット)",
+      "color": "ブラック",
+      "other": [
+        "24-bit/96kHz対応",
+        "25.4mm シルクドームツイーター",
+        "76.2mm アルミミッドバスドライバー",
+        "Texas Instruments製 クローズドループDクラスアンプ",
+        "専用アプリ (EDIFIER ConneX) 対応",
+        "専用アルミスピーカースタンド付属 (15度傾斜)"
+      ]
+    }
+  }
+}
