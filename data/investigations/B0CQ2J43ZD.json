@@ -1,0 +1,172 @@
+{
+  "analysis": {
+    "productName": "ODK デスク 幅80cm 奥行40cm ビンテージ",
+    "parentAsin": "B0CQ2J43ZD",
+    "productDescription": "幅80cm、奥行40cmのコンパクトなパソコンデスク。メラミン樹脂加工の天板とX型バックフレームを採用し、傷や汚れに強く、安定感のある作業スペースを提供します。",
+    "productUsage": ["パソコンデスク", "ゲーミングデスク", "学習机", "在宅ワーク用デスク"],
+    "positivePoints": ["コンパクトで限られたスペースにも設置しやすい", "メラミン樹脂加工で傷・水・熱に強い", "X型バックフレームによる横揺れ防止設計", "組み立てが簡単（約15分程度）"],
+    "negativePoints": ["天板の厚みが15mmとやや薄く、クランプ式機器の使用には補強プレートが推奨される", "一部のレビューでサクラチェッカーの危険判定（サクラ度99%）が出ているため、品質にばらつきがある可能性がある"],
+    "useCases": ["一人暮らしのコンパクトな部屋でのテレワーク", "ノートパソコンでの軽作業", "子供の学習机として"],
+    "userStories": [
+      {
+        "userType": "一人暮らしの社会人",
+        "scenario": "在宅ワーク用のコンパクトなデスクを探していた",
+        "experience": "部屋が狭いため、幅80cm・奥行40cmのサイズ感がちょうど良く、圧迫感なく設置できました。ノートパソコンとマウス、飲み物を置くのに十分な広さです。組み立ても簡単で、届いてすぐに使えたのが助かりました。",
+        "supportingSourceIds": ["src-1"],
+        "sentiment": "positive"
+      },
+      {
+        "userType": "ゲーマー",
+        "scenario": "モニターアームを取り付けて使用したかった",
+        "experience": "天板が15mmと薄いため、クランプ式のモニターアームを直接取り付けると天板がしなる不安がありました。補強プレートを追加して使用していますが、最初からもう少し厚みがあると良かったです。",
+        "supportingSourceIds": ["src-1"],
+        "sentiment": "mixed"
+      }
+    ],
+    "userImpression": "コンパクトなサイズと組み立てやすさ、手頃な価格が評価されている一方、天板の薄さやサクラレビューの存在を懸念する声も見られます。",
+    "sources": [
+      {
+        "id": "src-1",
+        "name": "Amazon商品ページ (B0CQ2J43ZD)",
+        "url": "https://www.amazon.co.jp/dp/B0CQ2J43ZD",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-06-07",
+        "author": "Amazon",
+        "conflictOfInterest": "possible",
+        "notes": "商品の仕様、特徴、カスタマーレビューの傾向を確認。"
+      },
+      {
+        "id": "src-2",
+        "name": "サクラチェッカー 分析結果",
+        "url": "https://sakura-checker.jp/search/B0CQ2J43ZD/",
+        "tier": "high",
+        "evidenceType": "secondary",
+        "publishedAt": "2026-06-07",
+        "author": "サクラチェッカー",
+        "conflictOfInterest": "none",
+        "notes": "サクラ度99%（危険）判定。評価件数がカテゴリ平均より多く、不自然な高評価の可能性を指摘。"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "傷・熱・水に強いメラミン樹脂加工の天板",
+        "category": "durability",
+        "confidence": "high",
+        "supportingSourceIds": ["src-1"],
+        "crossChecked": false,
+        "notes": "メーカーの商品説明に基づく。"
+      },
+      {
+        "claim": "X型バックフレームで横揺れを防止",
+        "category": "durability",
+        "confidence": "high",
+        "supportingSourceIds": ["src-1"],
+        "crossChecked": false,
+        "notes": "メーカーの商品説明および商品画像で構造を確認。"
+      },
+      {
+        "claim": "サクラレビューによる高評価の疑い",
+        "category": "safety",
+        "confidence": "high",
+        "supportingSourceIds": ["src-2"],
+        "crossChecked": true,
+        "notes": "サクラチェッカーの分析結果でサクラ度99%の判定が出ている。"
+      }
+    ],
+    "lastInvestigated": "2026-06-07",
+    "competitiveAnalysis": [
+      {
+        "name": "YeTom デスク",
+        "asin": "B0BB676W8L",
+        "priceComparison": "対象商品と同等の価格帯。",
+        "featureComparison": [
+          "共通点：幅80cm×奥行40cm、ビンテージカラー、スチールフレーム",
+          "相違点：YeTomは収納袋とフックが付属し、天板にコードを通す隙間がある。天板の厚さはどちらも15mm。"
+        ],
+        "differentiators": [
+          "ODK デスクの利点：X型バックフレームによる横揺れ防止設計が強調されている。",
+          "YeTom デスクの利点：収納袋やフックなどの便利な付属品があり、デスク周りの整理整頓がしやすい。"
+        ]
+      },
+      {
+        "name": "Embrace life シンプルワークデスク",
+        "asin": "B0F7HJNLCD",
+        "priceComparison": "対象商品よりやや高い。",
+        "featureComparison": [
+          "共通点：幅80cm×奥行40cm、シンプルなデザイン",
+          "相違点：Embrace lifeは仕切り板（収納スペース）があり、X型ではなく横フレーム2本で補強している。"
+        ],
+        "differentiators": [
+          "ODK デスクの利点：価格が安く、X型バックフレームで安定感がある。",
+          "Embrace life シンプルワークデスクの利点：ちょっとした収納スペース（仕切り板）がある。"
+        ]
+      },
+      {
+        "name": "YASUADS 折りたたみデスク",
+        "asin": "B0GL8KTC63",
+        "priceComparison": "対象商品より高い。",
+        "featureComparison": [
+          "共通点：幅80cm×奥行40cm、X型フレーム構造",
+          "相違点：YASUADSは折りたたみ可能で、組み立てが不要。"
+        ],
+        "differentiators": [
+          "ODK デスクの利点：常設用として安定感があり、価格が安い。",
+          "YASUADS 折りたたみデスクの利点：使わない時は折りたたんで収納でき、組み立て作業が不要。"
+        ]
+      },
+      {
+        "name": "Rshtong パソコンデスク",
+        "asin": "B0DKVKDM9V",
+        "priceComparison": "対象商品よりやや高い。",
+        "featureComparison": [
+          "共通点：幅80cm×奥行40cm",
+          "相違点：Rshtongは台形フレーム（ハの字型）を採用し、天板に人間工学に基づいた凹型弧設計を施している。"
+        ],
+        "differentiators": [
+          "ODK デスクの利点：価格が安い。",
+          "Rshtong パソコンデスクの利点：ハの字型の脚部による安定感と、体にフィットしやすい凹型カーブの天板。"
+        ]
+      },
+      {
+        "name": "YEAR COLOR パソコンデスク",
+        "asin": "B0B7667976",
+        "priceComparison": "対象商品よりやや高い。",
+        "featureComparison": [
+          "共通点：幅80cm×奥行40cm、折りたたみ構造",
+          "相違点：YEAR COLORは折りたたみ式で、スナップ設計により30秒で組み立て可能。"
+        ],
+        "differentiators": [
+          "ODK デスクの利点：常設用としてのシンプルな構造と低価格。",
+          "YEAR COLOR パソコンデスクの利点：組み立てが非常に簡単で、折りたたんで収納できる。"
+        ]
+      },
+      {
+        "name": "アイリスプラザ パソコンデスク",
+        "asin": "B0F8NWFQNC",
+        "priceComparison": "対象商品より高い。",
+        "featureComparison": [
+          "共通点：幅80cm×奥行40cm、シンプルなデザイン",
+          "相違点：アイリスプラザは国内ブランド（アイリスオーヤマグループ）の製品である。"
+        ],
+        "differentiators": [
+          "ODK デスクの利点：価格が大幅に安い。",
+          "アイリスプラザ パソコンデスクの利点：国内有名ブランドの安心感がある。"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": ["価格を最優先でコンパクトなデスクを探している人", "サクラレビューのリスクを理解した上で購入できる人"],
+      "pros": ["コンパクトで場所を取らない", "価格が安い"],
+      "cons": ["サクラ度99%（危険）判定が出ており、品質に懸念がある", "天板が15mmと薄いため、クランプ式機器の使用には注意が必要"],
+      "score": 50,
+      "scoreRationale": "[基本点: 70]\n[加点: +5] (コンパクトで狭い部屋にも設置しやすいサイズ感)\n[加点: +5] (同サイズ帯の競合商品と比較して安価でコストパフォーマンスが高い)\n[減点: -20] (サクラチェッカーで「サクラ度99%（危険）」の判定があり、レビューの信頼性が極めて低い)\n[減点: -5] (天板が15mmと薄く、モニターアーム等の使用に制限がある)\n[減点: -5] (販売元の信頼性に懸念がある)\n[合計: 50]"
+    },
+    "technicalSpecs": {
+      "dimensions": { "height": "740mm", "width": "800mm", "depth": "400mm" },
+      "weight": "5.7kg",
+      "material": "天板：メラミン樹脂加工、フレーム：スチール",
+      "other": ["天板の厚み：15mm", "X型バックフレーム搭載", "アジャスター付き"]
+    }
+  }
+}
