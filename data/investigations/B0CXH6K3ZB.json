@@ -1,0 +1,181 @@
+{
+  "analysis": {
+    "productName": "ヤマハ チューナーメトロノーム TDM-710",
+    "parentAsin": "B0CXH6K3ZB",
+    "productDescription": "チューナーとメトロノーム機能を同時に使用でき、日常の練習から本番前のチューニングまで幅広くサポートする定番アイテム。従来モデルから画面表示が見やすくなり、「サウンドバック」「トラック」「フォーカス」などの新機能が追加されました。",
+    "productUsage": [
+      "吹奏楽、オーケストラ、ブラスバンドでの楽器のピッチ合わせやテンポ練習",
+      "自宅での個人練習時のメトロノーム活用",
+      "コンガなどの打楽器のチューニング",
+      "ハープなどの弦楽器の細かなピッチ合わせ"
+    ],
+    "positivePoints": [
+      "2段階バックライト付きの大型液晶で、少し暗いステージ袖や広い練習場でもピッチがパッと目に飛び込んでくる視認性の高さ",
+      "チューバのような低音域でも、正しいピッチを聴きながら合わせる練習ができるサウンドバック機能",
+      "ピッチの表示範囲を通常の±50セントから±25セントに変更でき、より詳細にピッチの傾向をつかめるフォーカス機能",
+      "単4形乾電池2本駆動で電池切れ時にも対応しやすく、最大130時間のロングライフ設計"
+    ],
+    "negativePoints": [
+      "電池が別売りであるため、使用開始前に別途用意する必要がある",
+      "多機能なため、従来モデルより若干重みを感じる場合がある",
+      "スマホアプリでもチューニング自体は可能なため、アプリで十分と考える人には不要"
+    ],
+    "useCases": [
+      "学校の吹奏楽部での日々の部活や合奏練習",
+      "暗い舞台袖での本番直前の最終チューニング",
+      "自宅で楽器を練習する際のテンポやピッチの確認"
+    ],
+    "userStories": [
+      {
+        "userType": "吹奏楽部の保護者",
+        "scenario": "中学生になった子どもが吹奏楽部に入部し、学校指定に近いヤマハのチューナーを必要とした。",
+        "experience": "YAMAHAのチューナーが欲しいとのことで購入しました。メトロノームとチューナーが同時に使えて便利だと言って、毎日家でも部活でも重宝して使っているようです。画面が見やすく機能が充実しており、親としても安心できる商品でした。",
+        "supportingSourceIds": ["src-yahoo-reviews-1"],
+        "sentiment": "positive"
+      },
+      {
+        "userType": "吹奏楽経験者",
+        "scenario": "長年使ってきた旧モデルから新しいTDM-710に買い替えた。",
+        "experience": "画面の鮮明さに驚きました。アイボリーの本体は上品で、譜面台に置いても主張しすぎず馴染みます。新機能の「トラックモード」が自分の音を客観的に聴くのに非常に役立っており、低音域でも安定してチューニングできています。",
+        "supportingSourceIds": ["src-amazon-reviews-1"],
+        "sentiment": "positive"
+      },
+      {
+        "userType": "楽器愛好家",
+        "scenario": "価格の安いチューナーメトロノームを探して購入した。",
+        "experience": "機能的にはしっかりしていてチューニングできますが、外装がプラスチックで安っぽく感じるのが残念です。とはいえ予算内でしたし、拍も取ってくれるので毎日の練習には問題なく使えています。",
+        "supportingSourceIds": ["src-amazon-reviews-2"],
+        "sentiment": "mixed"
+      }
+    ],
+    "userImpression": "ヤマハならではの信頼性と精度の高さが高く評価されており、特に吹奏楽部員や楽器学習者の定番品として厚い支持を集めています。従来モデルから進化した液晶の視認性や、新機能（トラックモード、フォーカスモード）が実践的な練習に役立つと好評です。一部に外装の質感を指摘する声もありますが、全体的には「使いやすい」「買ってよかった」という声が大半を占めています。",
+    "sources": [
+      {
+        "id": "src-yamaha-official",
+        "name": "ヤマハ | TDM-710 製品情報",
+        "url": "https://jp.yamaha.com/products/musical_instruments/winds/accessories/tuners/tdm-710/index.html",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2024-03-09",
+        "author": "ヤマハ株式会社",
+        "conflictOfInterest": "none",
+        "notes": "製品の仕様（寸法、質量、機能、電池寿命など）および特長を確認。"
+      },
+      {
+        "id": "src-yahoo-reviews-1",
+        "name": "Yahoo!ショッピング TDM-710 レビュー",
+        "url": "https://shopping.yahoo.co.jp/review/item/list?store_id=chuya-online&page_key=s26056&sc_i=shopping-pc-web-result-item-rsltlst-rvw",
+        "tier": "medium",
+        "evidenceType": "secondary",
+        "publishedAt": "2024-05-01",
+        "author": "Yahoo!ショッピング ユーザー",
+        "conflictOfInterest": "none",
+        "notes": "吹奏楽部で必要になった保護者の声や、マイクとのセットでの購入が多いことを確認。"
+      },
+      {
+        "id": "src-amazon-reviews-1",
+        "name": "Amazon TDM-710 カスタマーレビュー",
+        "url": "https://www.amazon.co.jp/dp/B0CXH6K3ZB",
+        "tier": "medium",
+        "evidenceType": "secondary",
+        "publishedAt": "2024-04-15",
+        "author": "Amazon ユーザー",
+        "conflictOfInterest": "none",
+        "notes": "旧モデルからの買い替えで画面の見やすさやトラックモードを評価する声を確認。"
+      },
+      {
+        "id": "src-amazon-reviews-2",
+        "name": "Amazon TDM-710 英語レビュー",
+        "url": "https://www.amazon.co.jp/dp/B0CXH48JB8",
+        "tier": "low",
+        "evidenceType": "secondary",
+        "publishedAt": "2025-12-27",
+        "author": "Kristen (Amazon US)",
+        "conflictOfInterest": "none",
+        "notes": "機能は問題ないが、外装がプラスチックで安っぽく感じるというレビューを確認（ゴールドモデルの別バリエーション）。"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "液晶が従来モデルより見やすくなり、2段階のバックライトを搭載している。",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": ["src-yamaha-official", "src-amazon-reviews-1"],
+        "crossChecked": true,
+        "notes": "公式サイトの仕様および複数のユーザーレビューで言及されている。"
+      },
+      {
+        "claim": "サウンドバックモード、トラックモード、フォーカスモードなど練習をサポートする新機能が追加されている。",
+        "category": "comparativeAdvantage",
+        "confidence": "high",
+        "supportingSourceIds": ["src-yamaha-official", "src-amazon-reviews-1"],
+        "crossChecked": true,
+        "notes": "ヤマハ公式サイトの特長ページおよびユーザーの体験談から確認。"
+      }
+    ],
+    "lastInvestigated": "2026-06-08",
+    "competitiveAnalysis": [
+      {
+        "name": "KORG TM-70F",
+        "asin": "B0CXJCBV2Y",
+        "priceComparison": "KORG TM-70FはTDM-710とほぼ同等の価格帯で販売されており、機能的にも真っ向から競合するモデルです。",
+        "featureComparison": [
+          "共通点：チューナーとメトロノームの同時使用が可能。フォーカスモード搭載、単4電池駆動など。",
+          "相違点：TM-70Fは前モデルからさらに小型化されているのに対し、TDM-710は液晶の見やすさや独自の「トラックモード」などに強みを持つ。電池の持ちはTM-70Fの方が公称値で長い（最大250時間）。"
+        ],
+        "differentiators": [
+          "ヤマハ TDM-710の利点：吹奏楽の現場での定番としての絶大な信頼性と、演奏後のピッチ揺れ幅を確認できるトラックモードがある点。",
+          "KORG TM-70Fの利点：より小型でポケットに収まりやすいサイズ感と、長時間の電池寿命。"
+        ]
+      },
+      {
+        "name": "SEIKO STH200",
+        "asin": "B0DW3SW3CX",
+        "priceComparison": "SEIKO STH200はTDM-710よりも安価に購入できることが多い製品です。",
+        "featureComparison": [
+          "共通点：チューナーとメトロノームの同時使用機能。",
+          "相違点：STH200は譜面台のパネル部にそのまま取り付けられるスリットを備えており、単4電池1本で駆動する。一方、TDM-710のような大型のバックライト付き液晶は非搭載。"
+        ],
+        "differentiators": [
+          "ヤマハ TDM-710の利点：暗い場所でも圧倒的に見やすい大型バックライト液晶と、高度な練習をサポートする多彩なモード。",
+          "SEIKO STH200の利点：価格が手頃であり、譜面台に直接スマートに取り付けられる構造と、クラリネット風の大音量基準音。"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "吹奏楽部やオーケストラで楽器を始めたばかりの学生",
+        "日々の基礎練習でピッチとテンポを同時に鍛えたい方",
+        "暗いステージや屋外など、さまざまな環境で演奏する方"
+      ],
+      "pros": [
+        "定番品としての高い信頼性と使いやすさ",
+        "見やすい大型液晶と2段階バックライト",
+        "「トラックモード」や「フォーカスモード」など、ワンランク上の練習に役立つ機能"
+      ],
+      "cons": [
+        "単4乾電池2本が必要（別売り）",
+        "外装がプラスチック製でややチープに感じる場合がある"
+      ],
+      "score": 83,
+      "scoreRationale": "[基本点: 70]\n[加点: +5] (長年の定番モデルとしての圧倒的な信頼性とユーザー満足度の高さ)\n[加点: +5] (視認性の高い大型液晶と2段階バックライトの搭載)\n[加点: +5] (「トラックモード」など、楽器の上達を促す独自の練習サポート機能)\n[減点: -2] (電池が別売りであり、購入してすぐ使えない場合がある点)\n[合計: 83]"
+    },
+    "technicalSpecs": {
+      "dimensions": { "height": "72mm", "width": "106mm", "depth": "18mm" },
+      "weight": "79g (電池除く)",
+      "display": "バックライト付き（オフ/ソフト/オートの2段階+オフ）",
+      "tuningRange": "C1（30.47 Hz）～C8（4566.56 Hz）",
+      "calibrationRange": "A4=410～480 Hz（1 Hz単位）",
+      "tempoRange": "30～252回/分",
+      "powerSupply": "単4形アルカリ乾電池2本 (3V)",
+      "batteryLife": "チューナー: 約130/55/36時間 (バックライト オフ/ソフト/オート), メトロノーム: 約130/55/36時間",
+      "connections": "INPUT端子 (3.5mmモノラル・ミニ・ジャック), PHONE端子 (3.5mmステレオ・ミニ・ジャック)",
+      "speaker": "ダイナミック・スピーカー（23mm）",
+      "other": [
+        "純正長三度、短三度マーク付き",
+        "サウンドバック・モード、トラック・モード、フォーカス・モード搭載",
+        "メモリーバックアップ機能"
+      ]
+    }
+  }
+}
