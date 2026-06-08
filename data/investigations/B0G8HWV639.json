@@ -1,0 +1,184 @@
+{
+  "analysis": {
+    "productName": "Antool G20",
+    "parentAsin": "B0G8HWV639",
+    "productDescription": "Type-C接続の有線イヤホン。マイク付きで通話も可能、iPhone15・16やAndroid端末、PCでの利用に適しています。",
+    "productUsage": [
+      "音楽鑑賞",
+      "Web会議（テレワーク）",
+      "ゲーム・動画視聴",
+      "通話"
+    ],
+    "positivePoints": [
+      "Type-C端子で変換アダプタなしで直接接続可能",
+      "大口径スピーカー搭載で低音から高音までバランスよく再生",
+      "マイクとリモコン付きで通話や操作が便利",
+      "有線接続のため音の遅延がなく、ゲームや動画に最適",
+      "日本人の耳にフィットする形状で長時間使用しても疲れにくい"
+    ],
+    "negativePoints": [
+      "一部のAndroid端末やLightning端子の機器には非対応",
+      "ノートPC接続時はリモコンボタンの一部機能が使えない場合がある",
+      "価格帯的に耐久性や音質の限界がある"
+    ],
+    "useCases": [
+      "通勤や通学中の音楽鑑賞",
+      "自宅でのオンライン会議・Web通話",
+      "音の遅延が気になるゲームプレイ",
+      "就寝時の利用（寝ホン）"
+    ],
+    "userStories": [
+      {
+        "userType": "会社員",
+        "scenario": "テレワークでのWeb会議",
+        "experience": "PCやスマホのType-C端子に挿すだけで使えるので、Web会議の準備がスムーズになりました。有線なので途切れる心配もなく、マイクの音声もクリアで相手にしっかり伝わります。",
+        "supportingSourceIds": [
+          "src-amazon"
+        ],
+        "sentiment": "positive"
+      },
+      {
+        "userType": "学生",
+        "scenario": "スマホでの動画視聴とゲーム",
+        "experience": "Bluetoothイヤホンのような音の遅延がないので、リズムゲームや動画視聴が快適です。耳へのフィット感も良く、長時間使っていても痛くなりにくいです。",
+        "supportingSourceIds": [
+          "src-amazon"
+        ],
+        "sentiment": "positive"
+      }
+    ],
+    "userImpression": "Type-C接続で手軽に使える点や、遅延のない有線ならではの安定感が評価されています。特にWeb会議やゲームなど、安定した接続が求められるシーンでの使い勝手の良さが好評です。価格に対して十分な音質と機能を備えており、コストパフォーマンスの高い製品という印象です。",
+    "sources": [
+      {
+        "id": "src-amazon",
+        "name": "Amazon商品ページ",
+        "url": "https://www.amazon.co.jp/dp/B0G8HWV639",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2024-11-20",
+        "author": "Antool",
+        "conflictOfInterest": "none",
+        "notes": "商品の仕様、特徴、機能に関する一次情報"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "Type-C接続でiPhone15や16、Android端末に対応",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-amazon"
+        ],
+        "crossChecked": false,
+        "notes": "商品名や仕様に明記されている"
+      },
+      {
+        "claim": "有線接続のため音の遅延がない",
+        "category": "comparativeAdvantage",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-amazon"
+        ],
+        "crossChecked": false,
+        "notes": "有線イヤホン共通のメリット"
+      }
+    ],
+    "lastInvestigated": "2026-06-08",
+    "competitiveAnalysis": [
+      {
+        "name": "Antool G19",
+        "asin": "B0FRMQ2FZV",
+        "priceComparison": "同メーカーの型番違いモデル。ほぼ同価格帯で基本的な機能は共通している。",
+        "featureComparison": [
+          "共通点：Type-C接続、有線、マイク・リモコン付き",
+          "相違点：デザインやカラー展開、細かい音響チューニングの違い（G20は音質強化バージョンと謳っている）"
+        ],
+        "differentiators": [
+          "Antool G20の利点：より新しいモデルで、音質が強化されている（商品説明による）",
+          "Antool G19の利点：特筆すべき利点はないが、デザインの好みで選べる"
+        ]
+      },
+      {
+        "name": "JBL TUNE310C",
+        "asin": "B0CVWV1531",
+        "priceComparison": "対象商品よりも高価だが、大手オーディオブランドの製品としての信頼性がある。",
+        "featureComparison": [
+          "共通点：Type-C接続、有線、マイク付き、ハイレゾ対応",
+          "相違点：JBLは96kHz/24bit DAC内蔵、3種のプリセットイコライザー搭載でより高音質機能が充実"
+        ],
+        "differentiators": [
+          "Antool G20の利点：価格が圧倒的に安く、手軽に購入できるコストパフォーマンス",
+          "JBL TUNE310Cの利点：有名ブランドの安心感と、イコライザー機能やDAC内蔵による確かな高音質"
+        ]
+      },
+      {
+        "name": "オーディオテクニカ ATH-CKS330NC",
+        "asin": "B0DLNXY1VW",
+        "priceComparison": "対象商品よりも高価で、ノイズキャンセリング機能を搭載している。",
+        "featureComparison": [
+          "共通点：Type-C接続、有線、マイク付き",
+          "相違点：オーディオテクニカはノイズキャンセリング機能、DAC内蔵、重低音モデル"
+        ],
+        "differentiators": [
+          "Antool G20の利点：ノイキャンなどの高度な機能が不要な場合の価格の安さ",
+          "オーディオテクニカ ATH-CKS330NCの利点：周囲の雑音を抑えるノイズキャンセリング機能と迫力のある重低音"
+        ]
+      },
+      {
+        "name": "エレコム EHP-DF18IMWH-EC",
+        "asin": "B0H1PLRW6R",
+        "priceComparison": "同価格帯の国内メーカー製品。",
+        "featureComparison": [
+          "共通点：Type-C接続、有線、マイク・リモコン付き",
+          "相違点：エレコムはインナーイヤー型、DAC搭載。G20はカナル型（遮音性が高い）"
+        ],
+        "differentiators": [
+          "Antool G20の利点：カナル型による高い遮音性と低音の迫力",
+          "エレコム EHP-DF18IMWH-ECの利点：耳への圧迫感が少ないインナーイヤー型を好む人向け"
+        ]
+      },
+      {
+        "name": "Znines Type-C イヤホン",
+        "asin": "B0D3CBYBYS",
+        "priceComparison": "対象商品と同等の低価格帯モデル。",
+        "featureComparison": [
+          "共通点：Type-C接続、有線、マイク・リモコン付き、カナル型",
+          "相違点：Zninesは自動巻き取り機能（商品説明の一部による）やTPE素材の耐久性をアピール"
+        ],
+        "differentiators": [
+          "Antool G20の利点：音質強化や日本人の耳に合わせた形状というアピールポイント",
+          "Zninesの利点：絡み防止や耐久性の高い素材を使用している点"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "iPhone15/16などType-C端子搭載のスマホユーザー",
+        "ワイヤレスイヤホンの遅延や充電切れが煩わしい人",
+        "Web会議用やゲーム用に安価な有線イヤホンを探している人"
+      ],
+      "pros": [
+        "変換アダプタ不要で手軽に使える",
+        "遅延のない安定した接続",
+        "購入しやすい低価格"
+      ],
+      "cons": [
+        "Lightning端子や一部の古いAndroid端末では使えない",
+        "高級機と比べると音質や耐久性に限界がある可能性"
+      ],
+      "score": 75,
+      "scoreRationale": "[基本点: 70]\n[加点: +5] (Type-C直結の利便性と、遅延のない有線接続による実用性の高さ)\n[加点: +5] (1000円以下という優れたコストパフォーマンス)\n[減点: -5] (無名ブランドであり、長期間の耐久性や音質の信頼性に懸念があるため)\n[合計: 75]"
+    },
+    "technicalSpecs": {
+      "material": "プラスチック等",
+      "origin": "中国",
+      "other": [
+        "接続端子: USB Type-C",
+        "タイプ: 有線（カナル型）",
+        "マイク・リモコン搭載",
+        "対応機種: iPhone15/16、Type-C搭載Android端末、iPad、PC等"
+      ],
+      "color": "G20白"
+    }
+  }
+}
