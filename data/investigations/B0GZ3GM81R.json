@@ -1,0 +1,195 @@
+{
+  "analysis": {
+    "productName": "ALLDOCUBE iPlay 80 mini Pro",
+    "parentAsin": "B0GZ3GM81R",
+    "productDescription": "約21.3cmのコンパクトボディにUnisoc T7300 8コアプロセッサ、24GBメモリ(実8GB+仮想16GB)、128GBストレージを搭載した高性能Android 16タブレット。90Hz駆動のFHD+ディスプレイ、Widevine L1対応でエンターテイメントから日常のマルチタスクまで快適にこなせます。",
+    "productUsage": [
+      "動画視聴（Netflix, Amazon Prime Videoなど）",
+      "ウェブブラウジング・SNS閲覧",
+      "電子書籍の閲覧",
+      "カジュアルなゲームプレイ",
+      "外出先でのナビゲーション・軽作業"
+    ],
+    "positivePoints": [
+      "Unisoc T7300と大容量メモリによる高い処理性能（Antutu約65万点）",
+      "90Hz高リフレッシュレートで滑らかな画面操作が可能",
+      "Widevine L1対応で主要ストリーミングサービスのHD再生が可能",
+      "4G LTE通信とGPSに対応し、外出先でも便利",
+      "6050mAhの大容量バッテリーと18W急速充電対応"
+    ],
+    "negativePoints": [
+      "3.5mmイヤホンジャックがType-Cポートと兼用（変換アダプタは付属）",
+      "付属の充電器は5V2A（10W）であり、18W急速充電には別途PD対応充電器が必要"
+    ],
+    "useCases": [
+      "通勤・通学の電車内で電子書籍を読んだり、動画を視聴する",
+      "自宅のソファやベッドでリラックスしながらネットサーフィンやSNSを楽しむ",
+      "外出先でカーナビ代わりとして利用し、SIMを入れてリアルタイムな渋滞情報を取得する"
+    ],
+    "userStories": [],
+    "userImpression": "20cmクラスのコンパクトタブレットとして、十分な基本性能（T7300、大容量メモリ）とエンタメ機能（90Hz、Widevine L1）を高次元でバランスさせたコストパフォーマンスに優れたモデルです。携帯性と性能を両立させたいユーザーに高く評価される傾向にあります。",
+    "sources": [
+      {
+        "id": "src-alldocube-official",
+        "name": "ALLDOCUBE公式 iPlay 80 mini Pro 製品ページ",
+        "url": "https://www.alldocube.com/jp/products/iplay80minipro/",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-06-09",
+        "author": "ALLDOCUBE",
+        "conflictOfInterest": "none",
+        "notes": "製品の公式仕様（Unisoc T7300、90Hz、6050mAhバッテリー、Widevine L1等）の確認"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "Antutuベンチマークスコアは約65万点を誇り、ゲームからマルチタスクまでスムーズな操作が可能",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-alldocube-official"
+        ],
+        "crossChecked": false,
+        "notes": "公式の製品特徴として記載あり"
+      },
+      {
+        "claim": "Widevine L1に対応し、Amazon Prime VideoやHuluなどで高画質なHDコンテンツを楽しめる",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-alldocube-official"
+        ],
+        "crossChecked": false,
+        "notes": "公式ページおよびAmazon販売ページで確認"
+      }
+    ],
+    "lastInvestigated": "2026-06-09",
+    "competitiveAnalysis": [
+      {
+        "name": "BNCF Bpad T1",
+        "asin": "B0GCCMWCN3",
+        "priceComparison": "対象商品よりも安価だが、ブランドの信頼性や公式サポート、バッテリー容量の差を考慮すると、より安心して長く使いたい場合は対象商品の価値がある。",
+        "featureComparison": [
+          "共通点：Unisoc T7300搭載、約21.3cm FHD+、90Hzリフレッシュレート、Widevine L1対応。",
+          "相違点：Bpad T1はバッテリーが5500mAhとやや少なく、実装メモリが8GB（仮想拡張で24GB）。本製品は6050mAh。"
+        ],
+        "differentiators": [
+          "ALLDOCUBE iPlay 80 mini Proの利点：バッテリー容量が6050mAhと大きく、長時間の使用に有利。ALLDOCUBEというブランドの知名度と信頼性。",
+          "BNCF Bpad T1の利点：より安価でありながら同等のSoCと基本スペックを備えている。"
+        ]
+      },
+      {
+        "name": "Headwolf Gemini対応タブレット",
+        "asin": "B0GZ3FVT9Q",
+        "priceComparison": "対象商品よりも安価であり120Hz駆動などの利点はあるが、SoC性能やFHD+の高解像度ディスプレイを重視する場合は対象商品の価格差に見合う価値がある。",
+        "featureComparison": [
+          "共通点：Android 16搭載、Widevine L1、4G LTE対応。",
+          "相違点：HeadwolfはHelio G99を搭載し、ディスプレイは約22.1cm(1340×800)で120Hz駆動。本製品はT7300搭載で約21.3cmFHD+(1920×1200)の90Hz駆動。"
+        ],
+        "differentiators": [
+          "ALLDOCUBE iPlay 80 mini Proの利点：ディスプレイの解像度が高く（FHD+）、電子書籍や動画の高精細な表示に向いている。SoC性能（T7300）がG99より高い。",
+          "Headwolf Gemini対応タブレットの利点：120Hzの高リフレッシュレートに対応し、Gemini AI機能が統合されている。"
+        ]
+      },
+      {
+        "name": "RebotAi A9",
+        "asin": "B0GT4HDF4S",
+        "priceComparison": "対象商品よりも大幅に安価であり、スペック上の懸念も少ないためコストパフォーマンスは非常に高いが、T7300のさらに高い処理性能を求めるかどうかで評価が分かれる。",
+        "featureComparison": [
+          "共通点：Widevine L1対応、4G LTE通話対応、90Hzリフレッシュレート。",
+          "相違点：RebotAi A9はHelio G100を搭載し、ディスプレイは約22cm(1340×800)。バッテリーは5000mAh。"
+        ],
+        "differentiators": [
+          "ALLDOCUBE iPlay 80 mini Proの利点：T7300プロセッサの処理性能とFHD+の高解像度ディスプレイ、6050mAhの大容量バッテリー。",
+          "RebotAi A9の利点：価格が非常に手頃であり、コストパフォーマンスに優れている。"
+        ]
+      },
+      {
+        "name": "Bmax I8 Plus",
+        "asin": "B0DYNB39BK",
+        "priceComparison": "対象商品よりも安価だが、Wi-Fi専用モデルである点やSoC性能の違いを考慮すると、4G LTE通信やより高い性能を求める場合は対象商品を選ぶ価値がある。",
+        "featureComparison": [
+          "共通点：Android 16搭載、90Hzリフレッシュレート、Widevine L1対応。",
+          "相違点：Bmax I8 PlusはUnisoc T7250を搭載し、Wi-Fi専用モデル。ディスプレイは約22.1cm(1340×800)。"
+        ],
+        "differentiators": [
+          "ALLDOCUBE iPlay 80 mini Proの利点：4G LTEに対応しており外出先での単独通信が可能。SoCの性能も高く、ディスプレイ解像度も優れている。",
+          "Bmax I8 Plusの利点：Wi-Fi専用で問題ないユーザーにとっては、価格が安く手に入れやすい。"
+        ]
+      },
+      {
+        "name": "FPD Mini Pad",
+        "asin": "B0DZ6L2HZK",
+        "priceComparison": "対象商品よりも安価だが、Wi-Fi専用モデルでありSoC性能も劣るため、通信の利便性やパフォーマンスを重視する場合は対象商品の価格差に見合う価値がある。",
+        "featureComparison": [
+          "共通点：約21.3cm FHD+ディスプレイ搭載。",
+          "相違点：FPD Mini PadはUnisoc T620を搭載し、Wi-Fi専用。重量が約340g。本製品はT7300搭載で4G LTE対応。"
+        ],
+        "differentiators": [
+          "ALLDOCUBE iPlay 80 mini Proの利点：プロセッサ性能が大幅に高く、4G LTE通信に対応しているため汎用性が高い。",
+          "FPD Mini Padの利点：低価格でありながらFHD+ディスプレイを搭載しており、コストを抑えたいユーザーに適している。"
+        ]
+      },
+      {
+        "name": "BMSE A80",
+        "asin": "B0GF1SV4ZH",
+        "priceComparison": "対象商品よりも大幅に安価だが、CPU性能や解像度がエントリークラス相当であるため、快適なマルチタスクやエンタメ体験を求める場合は対象商品の方が圧倒的に優位である。",
+        "featureComparison": [
+          "共通点：Android 16搭載、Widevine L1対応、約20.3cmクラス。",
+          "相違点：BMSE A80はCortex-A53ベースのエントリークラスCPU、ディスプレイは1280×800。Wi-Fi 6対応。"
+        ],
+        "differentiators": [
+          "ALLDOCUBE iPlay 80 mini Proの利点：基本性能が圧倒的に高く、高解像度・高リフレッシュレートディスプレイにより快適な操作感が得られる。",
+          "BMSE A80の利点：非常に安価であり、入門用や子供用として手軽に購入できる。"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "コンパクトで高性能なAndroidタブレットを探している人",
+        "外出先で動画視聴や電子書籍を快適に楽しみたい人",
+        "マルチタスクや軽いゲームもサクサク動かしたい人"
+      ],
+      "pros": [
+        "Antutu約65万点の高い処理能力",
+        "90Hz駆動のFHD+ディスプレイによる滑らかで精細な表示",
+        "Widevine L1対応で高画質ストリーミングが可能",
+        "4G LTE通信対応で外出先でも便利"
+      ],
+      "cons": [
+        "イヤホンジャックがType-C兼用（変換アダプタが必要）",
+        "付属充電器が18W急速充電非対応（10W）"
+      ],
+      "score": 85,
+      "scoreRationale": "[基本点: 70]\n[加点: +10] (性能・機能: T7300搭載や大容量メモリなどによる高い処理性能)\n[加点: +5] (性能・機能: 4G LTE対応や90Hzディスプレイなど実用性とエンタメ性の両立)\n[加点: +5] (品質・デザイン: 約300gの軽量メタルボディ)\n[減点: -3] (性能・機能: イヤホンジャック非搭載)\n[減点: -2] (コストパフォーマンス: 付属充電器の出力不足で別途PD充電器の購入が推奨される点)\n[合計: 85]"
+    },
+    "technicalSpecs": {
+      "dimensions": {
+        "height": "202.7mm",
+        "width": "126mm",
+        "depth": "7.3mm"
+      },
+      "weight": "300g",
+      "display": "約21.3cm IPS In-cell",
+      "resolution": "1920×1200",
+      "refreshRate": "90Hz",
+      "brightness": "450nit",
+      "cpu": "UNISOC T7300 (6nm, 8コア: Cortex-A78 x2 + Cortex-A55 x6)",
+      "memory": "8GB LPDDR4X (最大16GB拡張可能)",
+      "storage": "128GB UFS (最大1TBのmicroSDXC対応)",
+      "battery": "6050mAh",
+      "charging": "PD18W 急速充電対応",
+      "cameras": "背面13MP / 前面5MP",
+      "os": "Android 16 (ALLDOCUBE OS 5.0L)",
+      "network": "4G LTE (GSM: B2/3/5/8, WCDMA: B1/2/5/8, FDD: B1/2/3/5/7/8/18/19/20/26/28A/28B, TDD: B38/40/41)",
+      "connectivity": "Wi-Fi 6, Bluetooth 5.4, GPS (L1+L5デュアルバンド), Beidou, Galileo, Glonass",
+      "sensors": "ジャイロセンサー, 重力センサー, 光センサー, 電子コンパス, ホールセンサー",
+      "audio": "デュアルスピーカー",
+      "other": [
+        "Widevine L1対応",
+        "顔認証対応",
+        "Type-Cポート (USB 2.0 / OTG対応)"
+      ]
+    }
+  }
+}
