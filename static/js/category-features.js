@@ -164,6 +164,9 @@ function initCategoryFeatures() {
 
     if (!sortSelect || !productGrid) return;
 
+    // Get the default sort value from HTML state before applying URL params
+    const defaultSortValue = sortSelect.value || 'date-desc';
+
     // Store original cards for filtering
     let allCards = Array.from(productGrid.querySelectorAll('.card'));
     let activePreset = '';
@@ -403,7 +406,7 @@ function initCategoryFeatures() {
         const params = new URLSearchParams();
 
         // Sort
-        if (sortSelect.value && sortSelect.value !== 'date-desc') {
+        if (sortSelect.value && sortSelect.value !== defaultSortValue) {
             params.set('sort', sortSelect.value);
         }
 
@@ -604,7 +607,7 @@ function initCategoryFeatures() {
 
         // Re-apply the sort to match the preserved select value
         const currentValue = sortSelect.value;
-        if (currentValue && currentValue !== 'date-desc') {
+        if (currentValue) {
             sortCards(currentValue);
         }
 
