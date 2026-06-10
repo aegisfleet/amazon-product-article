@@ -1,134 +1,187 @@
 {
   "analysis": {
-    "productName": "【Hi-Unit】HSE-A2000NC ノイズキャンセリング搭載 Type-C有線イヤホン",
-    "parentAsin": "B0FV2PRSW2",
-    "productDescription": "スマートフォンやPCのType-C端子に直接接続できる、アクティブノイズキャンセリング(ANC)搭載の有線イヤホン。グラフェンコート振動板を採用し、クリアな高音質と静寂なリスニング環境を低価格で実現。",
+    "productName": "Hi-Unit HSE-A2000NC ANC搭載 有線イヤホン",
+    "parentAsin": "B0H44GCS2P",
+    "productDescription": "ハイレゾ対応の名機A2000の系譜を引き継ぐ、アクティブノイズキャンセリング（ANC）搭載のType-C有線イヤホンです。グラフェンコート振動板を採用し、高音質と静寂なリスニング環境を両立しています。",
     "productUsage": [
-      "通勤・通学時の音楽鑑賞（周囲の騒音をANCで低減）",
-      "カフェやオフィスでの集中作業（耳栓代わりとしても活用可能）",
-      "オンライン会議や通話（マイク付きリモコンで快適な通話）",
-      "動画視聴やゲームプレイ（有線接続による遅延の少なさ）"
+      "スマートフォンやPCでの音楽鑑賞",
+      "通勤・通学時のノイズ低減",
+      "オンライン会議や通話"
     ],
     "positivePoints": [
-      "3,000円台という手頃な価格でアクティブノイズキャンセリング(ANC)を搭載",
-      "グラフェンコート振動板ダイナミックドライバーによる歪みの少ないクリアなサウンド",
-      "アルミ削り出しのガンメタリックボディによる高級感と耐久性",
-      "有線接続ならではの音質劣化の少なさと低遅延",
-      "VGP2026受賞の実力派モデル"
+      "ノイズキャンセリング機能により、周囲の騒音を抑えて音に集中できる",
+      "Type-C接続のため、最新のスマートフォンやPCにアダプタなしで直挿し可能",
+      "グラフェンコート振動板とアルミ削り出しボディによる高品位なサウンドと質感",
+      "国内最大級のオーディオビジュアルアワード「VGP2026」を受賞した確かな評価"
     ],
     "negativePoints": [
-      "デバイスのバッテリーを消費する（Type-C給電のため推測）",
-      "ケーブルの取り回しが煩わしい場合がある（有線特有のデメリット）",
-      "充電しながらの使用ができない（Type-Cポートが塞がるため推測）"
+      "有線特有のケーブルの煩わしさがある"
     ],
     "useCases": [
-      "電車やバスでの移動中",
-      "カフェでのテレワーク",
-      "スマホゲーム（FPSや音ゲーなど遅延が気になるジャンル）",
-      "長時間のWeb会議"
+      "電車やバスでの通勤・通学時に、周囲のノイズを抑えて音楽を楽しみたい時",
+      "カフェなどの騒がしい場所で、仕事や勉強に集中したい時",
+      "マイク付きリモコンを活用して、手軽にハンズフリー通話をしたい時"
     ],
-    "userStories": [
-      {
-        "userType": "通勤中の会社員",
-        "scenario": "毎朝の満員電車での使用",
-        "experience": "周囲の走行音や話し声がANC機能によってスッと消え、自分だけの空間で音楽に没頭できた。（機能からの推測）",
-        "sentiment": "positive"
-      },
-      {
-        "userType": "リモートワーカー",
-        "scenario": "カフェでの作業中",
-        "experience": "周囲の雑音が気にならなくなり、仕事の集中力が格段に上がった。マイクの音質も良く、Web会議もスムーズに行えた。（機能からの推測）",
-        "sentiment": "positive"
-      },
-      {
-        "userType": "スマホゲーマー",
-        "scenario": "FPSゲームのプレイ中",
-        "experience": "Bluetoothイヤホンのような遅延がなく、敵の足音がリアルタイムに聞こえるため、有利にプレイできた。（有線接続の特性からの推測）",
-        "sentiment": "positive"
-      }
-    ],
-    "userImpression": "VGP2026を受賞した実績と、3,000円台でANCを搭載するという圧倒的なコストパフォーマンスが最大の魅力。アルミ削り出しの質感やグラフェンコート振動板など、音質・品質へのこだわりも感じられ、エントリーモデルながら高い満足度が期待される。",
+    "userStories": [],
+    "userImpression": "Type-C接続で手軽に使えるノイズキャンセリングイヤホンとして、音質と機能性のバランスが評価されています。特に、名機A2000の音質傾向を受け継ぎつつANCを搭載した点や、アルミボディの高い質感が好印象を与えています。",
     "sources": [
       {
+        "id": "src-amazon-b0fv2prsw2",
         "name": "Amazon商品ページ",
         "url": "https://www.amazon.co.jp/dp/B0FV2PRSW2",
-        "credibility": "高"
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2024-01-01",
+        "author": "Amazon",
+        "conflictOfInterest": "none",
+        "notes": "価格（3500円）、製品特徴（Type-C接続、ANC搭載、グラフェンコート振動板、VGP2026受賞）"
+      },
+      {
+        "id": "src-hi-unit-official",
+        "name": "Hi-Unit 公式サイト HSE-A2000NC",
+        "url": "https://hi-unit.jp/blogs/products/hse-a2000nc",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2024-01-01",
+        "author": "Hi-Unit branding.",
+        "conflictOfInterest": "none",
+        "notes": "詳細なスペック（φ8mm高磁力マグネット、再生周波数帯域5～40,000Hz、ANC効果−30±2dBなど）を確認"
       }
     ],
-    "lastInvestigated": "2026-02-14",
+    "claims": [
+      {
+        "claim": "国内最大級のオーディオビジュアルアワード「VGP2026」を受賞",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-amazon-b0fv2prsw2"
+        ],
+        "crossChecked": false,
+        "notes": "Amazon商品ページの特徴に記載あり"
+      },
+      {
+        "claim": "ANCノイキャン効果は−30±2dB",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-hi-unit-official"
+        ],
+        "crossChecked": false,
+        "notes": "公式サイトのスペック表に記載"
+      }
+    ],
+    "lastInvestigated": "2026-06-11",
     "competitiveAnalysis": [
       {
-        "name": "JBL TUNE310C (B0CVXG14D4)",
-        "asin": "B0CVXG14D4",
-        "priceComparison": "約3,400円と同価格帯だが、ANC機能は搭載していない。",
-        "featureComparison": [
-          "JBLは96kHz/24bit DAC内蔵でハイレゾ対応を強調",
-          "HSE-A2000NCはANC搭載で騒音低減機能を重視",
-          "JBLはフラットケーブル採用で絡みにくい"
-        ],
-        "differentiators": [
-          "HSE-A2000NCの強みは圧倒的に「ANC機能」の有無",
-          "JBLは「JBLサウンド」というブランド力とアプリ対応（EQ設定など）"
-        ]
-      },
-      {
-        "name": "Victor HA-FR29UC (B0DK4GD7PR)",
-        "asin": "B0DK4GD7PR",
-        "priceComparison": "約3,600円と同価格帯。ANC機能なし。",
-        "featureComparison": [
-          "Victorはハイレゾ対応と小型軽量設計をアピール",
-          "HSE-A2000NCはアルミボディの質感とANC機能で差別化"
-        ],
-        "differentiators": [
-          "Victorは国内老舗ブランドの信頼感とポップなカラー展開",
-          "HSE-A2000NCは機能性（ANC）と高級感（アルミ）"
-        ]
-      },
-      {
-        "name": "Audio-Technica ATH-CKS330NC (B0DLNXY1VW)",
+        "name": "オーディオテクニカ ATH-CKS330NC",
         "asin": "B0DLNXY1VW",
-        "priceComparison": "約5,400円とHSE-A2000NCより約1,500円高い。",
+        "priceComparison": "対象商品より高い。",
         "featureComparison": [
-          "両機種ともType-C接続かつANC搭載",
-          "オーテクは重低音（SOLID BASS）と遅延なしを強調"
+          "共通点：Type-C接続、有線カナル型イヤホン、アクティブノイズキャンセリング搭載、マイク付きリモコン",
+          "相違点：ATH-CKS330NCは重低音再生に特化したSOLID BASS HDドライバーを搭載し、ケーブルがU型コードを採用している。一方、HSE-A2000NCはグラフェンコート振動板を採用し、アルミ削り出しボディである。"
         ],
         "differentiators": [
-          "HSE-A2000NCは価格優位性が高い（より安価にANCを導入可能）",
-          "オーテクは重低音好きに向けた音作り"
+          "Hi-Unit HSE-A2000NCの利点：価格が手頃であり、ハイレゾ対応の高解像度なサウンドと高い質感のアルミボディを備えている。",
+          "オーディオテクニカ ATH-CKS330NCの利点：重低音を重視したサウンド設計であり、首掛けに便利なU型コードを採用している。"
+        ]
+      },
+      {
+        "name": "オーディオテクニカ ATH-CKD7NC",
+        "asin": "B0GKZWG25T",
+        "priceComparison": "対象商品より大幅に高い。",
+        "featureComparison": [
+          "共通点：Type-C接続、アクティブノイズキャンセリング搭載、ハイレゾ対応、マイク付き",
+          "相違点：ATH-CKD7NCは高精度ハイブリッドノイズキャンセリング機能を搭載し、外音取り込み（ヒアスルー）機能や通話品質を高めるENCマイクを備えている。"
+        ],
+        "differentiators": [
+          "Hi-Unit HSE-A2000NCの利点：機能がシンプルにまとまっており、低価格で導入しやすい。",
+          "オーディオテクニカ ATH-CKD7NCの利点：ハイブリッドANCや外音取り込み機能など、より高度な機能と静寂性を求める場合に適している。"
+        ]
+      },
+      {
+        "name": "JVCケンウッド Victor HA-FR29UC",
+        "asin": "B0DK4HFZFH",
+        "priceComparison": "対象商品とほぼ同価格帯。",
+        "featureComparison": [
+          "共通点：Type-C接続、ハイレゾ対応、マイク付きリモコン",
+          "相違点：HA-FR29UCはアクティブノイズキャンセリング機能非搭載だが、3つのサウンドモード（FLAT/BASS/CLEAR）の切り替え機能を備えている。"
+        ],
+        "differentiators": [
+          "Hi-Unit HSE-A2000NCの利点：アクティブノイズキャンセリング機能を搭載しており、騒音環境下でのリスニングに優れている。",
+          "JVCケンウッド Victor HA-FR29UCの利点：気分や楽曲に合わせてサウンドモードを切り替えて楽しむことができる。"
+        ]
+      },
+      {
+        "name": "UGREEN タイプCイヤホン",
+        "asin": "B08TQKNC62",
+        "priceComparison": "対象商品より安い。",
+        "featureComparison": [
+          "共通点：Type-C接続、マイク付きリモコン、DAC内蔵",
+          "相違点：UGREEN製品は通話時の環境ノイズキャンセリング（ENC）は搭載しているが、音楽再生時のアクティブノイズキャンセリング（ANC）は非搭載。"
+        ],
+        "differentiators": [
+          "Hi-Unit HSE-A2000NCの利点：音楽再生時のアクティブノイズキャンセリング機能を搭載し、グラフェンコート振動板など音質にもこだわっている。",
+          "UGREEN タイプCイヤホンの利点：価格が非常に安く、とりあえずType-Cイヤホンが必要な場合のコストパフォーマンスに優れる。"
+        ]
+      },
+      {
+        "name": "acrivo 有線 ノイズキャンセリング イヤホン ACR-ACX2ANC",
+        "asin": "B0GLPC36BH",
+        "priceComparison": "対象商品とほぼ同価格帯。",
+        "featureComparison": [
+          "共通点：Type-C接続、アクティブノイズキャンセリング搭載、マイク付き",
+          "相違点：ACR-ACX2ANCは外音取り込み機能や手元ミュート機能を搭載している。"
+        ],
+        "differentiators": [
+          "Hi-Unit HSE-A2000NCの利点：VGP受賞の実績やアルミ削り出しボディなど、オーディオ製品としての信頼性と質感が高い。",
+          "acrivo ACR-ACX2ANCの利点：外音取り込み機能やミュートボタンなど、オンライン会議等での利便性を高める機能を備えている。"
+        ]
+      },
+      {
+        "name": "オーディオテクニカ ATH-CKD3C",
+        "asin": "B095BCB5YS",
+        "priceComparison": "対象商品より安い。",
+        "featureComparison": [
+          "共通点：Type-C接続、マイク付きリモコン",
+          "相違点：ATH-CKD3Cはノイズキャンセリング機能非搭載のシンプルなType-Cイヤホンである。"
+        ],
+        "differentiators": [
+          "Hi-Unit HSE-A2000NCの利点：アクティブノイズキャンセリング機能を搭載しており、騒がしい環境での没入感が高い。",
+          "オーディオテクニカ ATH-CKD3Cの利点：手頃な価格であり、ANCが不要なユーザーに適している。"
         ]
       }
     ],
     "recommendation": {
       "targetUsers": [
-        "安価にノイズキャンセリング機能を試してみたい人",
-        "スマホで手軽に高音質を楽しみたいType-Cユーザー",
-        "ゲームや動画視聴で遅延を気にする人",
-        "質感の良いイヤホンを求めている人"
+        "最新のスマートフォン（イヤホンジャック非搭載）で手軽に有線接続したい人",
+        "充電を気にせずノイズキャンセリング機能を使いたい人",
+        "手頃な価格でハイレゾ対応の高音質イヤホンを求める人"
       ],
       "pros": [
-        "3,000円台でANC搭載という高いコストパフォーマンス",
-        "グラフェンコート振動板によるクリアな音質",
-        "アルミ削り出しボディの高い質感と耐久性",
-        "有線接続による低遅延と音質劣化の少なさ"
+        "アダプタ不要のType-C直結で、音の遅延や途切れがない",
+        "ANC搭載で騒がしい場所でも快適にリスニングできる",
+        "グラフェンコート振動板とアルミボディによる高音質・高品位な仕上がり"
       ],
       "cons": [
-        "スマホの充電をしながら使用できない（ワイヤレス充電非併用時）",
-        "ケーブルのタッチノイズや取り回しの煩わしさ",
-        "デバイスのバッテリー消費が早くなる可能性がある"
+        "有線のためケーブルが引っかかるなどの取り回しの不便さがある",
+        "ハイエンドモデルのような高度なノイズキャンセリング機能（外音取り込みなど）は備えていない"
       ],
-      "score": 90,
-      "scoreRationale": "[基本点: 70]\n[加点: +5] (ANC搭載、グラフェンコート振動板など価格以上の機能)\n[加点: +10] (3,000円台でANC付きは競合と比較しても破格のコスパ)\n[加点: +5] (アルミ削り出しボディの質感、VGP受賞の実績)\n[合計: 90] (ユーザーレビュー不在だが、スペックと価格のバランスが極めて優秀)"
+      "score": 80,
+      "scoreRationale": "[基本点: 70]\n[加点: +5] (手頃な価格帯ながらANC搭載とハイレゾ対応による高いコストパフォーマンス)\n[加点: +5] (グラフェンコート振動板採用とアルミ削り出しボディによる品質とデザイン性)\n[合計: 80]"
     },
     "technicalSpecs": {
-      "driver": "グラフェンコート振動板ダイナミックドライバー",
-      "codec": "DAC内蔵 (詳細スペック不明)",
-      "battery": "不要 (デバイスからType-C給電)",
-      "connectivity": "USB Type-C (有線)",
-      "noiseCancel": "アクティブノイズキャンセリング (ANC)",
-      "microphone": "インラインマイク付きリモコン",
-      "material": "アルミニウム (ハウジング)",
-      "cableLength": "不明 (標準的な1.2m程度と推測)",
-      "other": "VGP2026 受賞"
+      "driver": "φ8mm高磁力マグネット（グラフェンコート振動板採用）",
+      "type": "密閉ダイナミック型",
+      "frequencyResponse": "5～40,000Hz（ハイレゾ対応）",
+      "impedance": "16Ω",
+      "plug": "USB Type-C端子",
+      "sensitivity": "92dB",
+      "maxInputPower": "5mW",
+      "ancMethod": "Feedforward方式",
+      "ancEffect": "−30±2dB",
+      "accessories": "イヤーピースS/M/Lサイズ付属（Mは本体に装着）、保証書兼説明書",
+      "dimensions": {},
+      "weight": "20g前後（推定値、公式な記載なし）"
     }
   }
 }
