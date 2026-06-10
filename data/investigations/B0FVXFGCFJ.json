@@ -1,117 +1,173 @@
 {
   "analysis": {
-    "productName": "明誠 For Google Pixel 10 Pro Fold フィルム",
-    "parentAsin": "B0FVXFGCFJ",
-    "productDescription": "Google Pixel 10 Pro Foldのメイン画面（折りたたみ画面）専用のTPU製保護フィルムです。柔軟性のある素材を使用し、折りたたみ機構に対応しています。",
+    "productName": "明誠 Google Pixel 10 Pro Fold TPUフィルム",
+    "parentAsin": "B0D9VN2VP6",
+    "productDescription": "Google Pixel 10 Pro Foldの折りたたみ画面に対応した柔軟なTPU製ソフトヒドロゲル保護フィルム。気泡自動修復機能や指紋防止コーティングを備える。",
     "productUsage": [
-      "Pixel 10 Pro Foldのメインディスプレイ保護",
-      "画面の小さな傷の自己修復",
-      "指紋や汚れの付着防止"
+      "スマートフォンのディスプレイ保護",
+      "折りたたみ画面の傷・汚れ防止"
     ],
     "positivePoints": [
-      "柔軟なTPU素材で、折りたたみ画面の開閉に追従し剥がれにくい",
-      "自己修復機能があり、小さな擦り傷程度なら時間の経過とともに消える",
-      "気泡自動修復機能により、貼り付け時の微細な気泡が抜けやすい"
+      "柔軟なTPU素材で折りたたみ画面の曲面にもフィットする",
+      "自己修復機能により小さな擦り傷などが自然に消えやすい",
+      "薄型でタッチ感度が高く、操作性に影響を与えにくい",
+      "指紋防止の疎水性・疎油性コーティングが施されている"
     ],
     "negativePoints": [
-      "ガラスフィルムに比べると指滑りが若干劣る場合がある（TPU特有の質感）",
-      "貼り付け難易度がガラスフィルムより高い傾向がある（位置合わせや気泡抜き）",
-      "衝撃吸収性はガラスより劣る可能性がある"
+      "TPU素材のため、ガラスフィルムと比較して強い衝撃に対する防御力は低い可能性がある",
+      "競合のTPUフィルム製品（複数枚セットなど）と比較すると価格がやや高めに設定されている"
     ],
     "useCases": [
-      "高価なPixel 10 Pro Foldのメイン画面を傷から守りたい場合",
-      "ケースと干渉しにくい薄型フィルムを探している場合"
+      "日常的なスマートフォンの操作",
+      "画面を折りたたんでの持ち運びや開閉時の保護"
     ],
-    "userStories": [
-      {
-        "userType": "30代ガジェット好き会社員",
-        "scenario": "Pixel 10 Pro Foldを購入したが、メイン画面の保護に不安があったため購入。",
-        "experience": "貼り付けは少し緊張したが、気泡は数日で消えた。折り目部分も浮いてこず、安心して開閉できるようになった。",
-        "sentiment": "positive"
-      },
-      {
-        "userType": "40代主婦",
-        "scenario": "子供が触ることもあるため、画面保護のために導入。",
-        "experience": "（推測）指紋がつきにくくなり、画面が見やすくなったが、少し指の滑りが引っかかる感じがする。",
-        "sentiment": "mixed"
-      }
-    ],
-    "userImpression": "折りたたみスマホ特有の「メイン画面保護」という課題に対し、柔軟性と自己修復機能で応える標準的なTPUフィルムとして評価されている。",
+    "userStories": [],
+    "userImpression": "新機種向け製品のため具体的な使用レビューは乏しいが、スペック上は折りたたみ特有の構造に適したヒドロゲル素材と自己修復機能により、柔軟性と耐久性を兼ね備えた保護性能が期待される。",
     "sources": [
       {
-        "name": "Amazon商品ページ",
+        "id": "src-amazon-main",
+        "name": "Amazon商品ページ (明誠 For Google Pixel 10 Pro Fold フィルム)",
         "url": "https://www.amazon.co.jp/dp/B0FVXFGCFJ",
-        "credibility": "高"
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-06-11",
+        "author": "Amazon.co.jp",
+        "conflictOfInterest": "none",
+        "notes": "商品の特徴、仕様、価格を確認"
       }
     ],
-    "lastInvestigated": "2026-02-14",
+    "claims": [
+      {
+        "claim": "柔軟なソフトヒドロゲル素材を使用し折りたたみに対応",
+        "category": "durability",
+        "confidence": "high",
+        "supportingSourceIds": ["src-amazon-main"],
+        "crossChecked": false,
+        "notes": "商品仕様に明記されている"
+      },
+      {
+        "claim": "小さな傷を自己修復する機能を搭載",
+        "category": "durability",
+        "confidence": "medium",
+        "supportingSourceIds": ["src-amazon-main"],
+        "crossChecked": false,
+        "notes": "素材の特性として自己修復機能が謳われている"
+      }
+    ],
+    "lastInvestigated": "2026-06-11",
     "competitiveAnalysis": [
       {
-        "name": "FILMEXT フィルム Google Pixel 10 Pro Fold (メイン画面) 用",
-        "asin": "B0FN7D244M",
-        "priceComparison": "約1,485円。明誠（1,280円）より若干高い。",
+        "name": "larfbulroc Google Pixel 10 Pro Fold TPUフィルム",
+        "asin": "B0FR8RM4VR",
+        "priceComparison": "対象商品よりも安価であり、複数枚セットである可能性が高くコストパフォーマンスで優位。",
         "featureComparison": [
-          "日本製素材を使用",
-          "反射低減機能に注力"
+          "共通点：Google Pixel 10 Pro Fold対応のTPU製フィルムで、超薄型・高透過率を謳っている。",
+          "相違点：対象商品は自己修復機能がアピールされているが、本競合は価格の安さと貼り付けやすさを強調している。"
         ],
         "differentiators": [
-          "日本製という安心感",
-          "反射防止タイプで屋外視認性が高い"
+          "明誠 Google Pixel 10 Pro Fold TPUフィルムの利点：明確な自己修復機能による長期間の傷防止効果が期待できる。",
+          "larfbulroc TPUフィルムの利点：価格が抑えられており、コストを重視するユーザーに適している。"
         ]
       },
       {
-        "name": "Mosasa For Google Pixel 10 Pro Fold フィルム(4枚)+カメラフィルム(2枚)",
-        "asin": "B0FRMFPCMM",
-        "priceComparison": "約1,699円。枚数が多く単価は安い。",
+        "name": "NEWZEROL Google Pixel 10 Pro Fold 保護フィルムセット",
+        "asin": "B0FSRRS7Q2",
+        "priceComparison": "対象商品よりやや高いが、メイン画面・前画面・カメラの計6枚セットであり総合的なコストパフォーマンスは高い。",
         "featureComparison": [
-          "メイン、サブ、カメラ用がセットになっている",
-          "ガラス+TPUのハイブリッド構成（サブ画面用はガラスか）"
+          "共通点：TPU製のメイン画面保護フィルムを含む。",
+          "相違点：対象商品はTPUフィルム単体だが、本競合は前面ガラスやカメラ用ガラスもセットになっている。"
         ],
         "differentiators": [
-          "フルセットでのコストパフォーマンス",
-          "予備フィルムが豊富"
+          "明誠 Google Pixel 10 Pro Fold TPUフィルムの利点：メイン画面用のフィルムの品質（指紋防止コーティングなど）に特化している。",
+          "NEWZEROL 保護フィルムセットの利点：端末全体の保護を一括で揃えたい場合に非常にコストパフォーマンスが高い。"
         ]
       },
       {
-        "name": "seninhi 対応 Google Pixel 10 Pro Fold ガラスフイルム",
+        "name": "seninhi Google Pixel 10 Pro Fold ガラスフィルム",
         "asin": "B0FHQJH5G1",
-        "priceComparison": "約712円。圧倒的に安い。",
+        "priceComparison": "対象商品より安価で、2枚セットのガラスフィルムとカメラフィルムが付属する。",
         "featureComparison": [
-          "ガラスフィルムと表記されているが、メイン画面への適合性は不明瞭（通常はTPU）",
-          "2+2枚セット"
+          "共通点：Google Pixel 10 Pro Fold用の保護フィルム。",
+          "相違点：対象商品はメインの折りたたみ画面向けのTPUフィルムだが、本競合はカバーディスプレイ向けの強化ガラス素材である。"
         ],
         "differentiators": [
-          "低価格",
-          "ガラス素材（サブ画面用としては強みだがメイン用としては疑問）"
+          "明誠 Google Pixel 10 Pro Fold TPUフィルムの利点：折りたたみ画面（メインディスプレイ）の保護・開閉に対応している。",
+          "seninhi ガラスフィルムの利点：カバーディスプレイの耐衝撃性を強化したい場合に適している。"
+        ]
+      },
+      {
+        "name": "KPNS Google Pixel 10 Pro Fold ガラスフィルム",
+        "asin": "B0FLHZP6P2",
+        "priceComparison": "対象商品よりも安価で、前面とカメラ用のセット。",
+        "featureComparison": [
+          "共通点：Google Pixel 10 Pro Foldの保護を目的としている。",
+          "相違点：対象商品は柔軟なTPU素材だが、本競合は硬度を重視した日本素材製強化ガラスを使用している。"
+        ],
+        "differentiators": [
+          "明誠 Google Pixel 10 Pro Fold TPUフィルムの利点：メインディスプレイ側の曲面や折りたたみに追従できる柔軟性がある。",
+          "KPNS ガラスフィルムの利点：表面の硬さやクリアな透明感を重視するカバーディスプレイの保護に向いている。"
+        ]
+      },
+      {
+        "name": "Spigen Pixel 10 Pro Fold カメラ保護フィルム",
+        "asin": "B0FBDHTGM9",
+        "priceComparison": "対象商品より高価であり、プレミアムブランドのカメラ専用保護フィルム。",
+        "featureComparison": [
+          "共通点：Google Pixel 10 Pro Fold専用の保護アクセサリー。",
+          "相違点：対象商品はディスプレイ用だが、本競合はカメラレンズ専用のガラスフィルムである。"
+        ],
+        "differentiators": [
+          "明誠 Google Pixel 10 Pro Fold TPUフィルムの利点：画面自体の保護に特化している。",
+          "Spigen カメラ保護フィルムの利点：公式認定（Made for Google）を受けており、カメラレンズ保護の信頼性が高い。"
+        ]
+      },
+      {
+        "name": "Gosento Pixel 10 Pro Fold カメラフィルム",
+        "asin": "B0FRDLHGCG",
+        "priceComparison": "対象商品より安価で、カメラ保護に特化している。",
+        "featureComparison": [
+          "共通点：Google Pixel 10 Pro Fold用の保護アクセサリー。",
+          "相違点：対象商品はディスプレイ用TPUフィルムだが、本競合は硬度9Hのカメラレンズ用ガラスフィルムである。"
+        ],
+        "differentiators": [
+          "明誠 Google Pixel 10 Pro Fold TPUフィルムの利点：ディスプレイの傷防止と操作性維持に貢献する。",
+          "Gosento カメラフィルムの利点：安価にカメラレンズ部分のみを保護したい場合に適している。"
         ]
       }
     ],
     "recommendation": {
       "targetUsers": [
-        "Pixel 10 Pro Foldのメイン画面を安価に保護したいユーザー",
-        "ガラスフィルムの厚みや割れが気になるユーザー",
-        "自己修復機能を重視するユーザー"
+        "Google Pixel 10 Pro Foldの折りたたみ画面を保護したい人",
+        "細かい擦り傷を気にしたくない人",
+        "フィルムの厚みによるタッチ感度の低下を避けたい人"
       ],
       "pros": [
-        "折りたたみ画面に最適なTPU素材",
-        "自己修復機能で微細な傷が目立たない",
-        "比較的安価で購入しやすい"
+        "折りたたみに強い柔軟なTPU素材",
+        "自己修復機能による傷への強さ",
+        "薄型で高いタッチ感度"
       ],
       "cons": [
-        "貼り付け難易度がやや高い",
-        "指滑りはガラスに劣る"
+        "ガラスフィルムに比べると落下などの強い衝撃には弱い",
+        "単体フィルムとしては価格が少し高め"
       ],
       "score": 75,
-      "scoreRationale": "[基本点: 70]\n[加点: +5] 折りたたみ画面に適したTPU素材と自己修復機能の実用性\n[加点: +5] 競合の日本製フィルムより安価で手に取りやすい\n[減点: -5] 激安セット品（seninhiなど）と比較するとコストパフォーマンスで見劣りする部分も\n[合計: 75]"
+      "scoreRationale": "[基本点: 70]\n[加点: +5] (TPU製で折りたたみ画面にフィットし、気泡自動修復機能があるため)\n[加点: +5] (薄型でタッチ感度が良く、指紋防止コーティングが施されているため)\n[減点: -5] (競合製品と比較して価格がやや高めであるため)\n[合計: 75]"
     },
     "technicalSpecs": {
-      "material": "TPU (熱可塑性ポリウレタン)",
-      "type": "ソフトヒドロゲルフィルム",
-      "compatibility": "Google Pixel 10 Pro Fold",
-      "thickness": "超薄型",
-      "hardness": null,
-      "features": ["自己修復", "気泡自動修復", "指紋防止", "曲面対応", "高透過率"],
-      "other": ["メインディスプレイ用", "ケース干渉しにくい設計"]
+      "dimensions": {
+        "height": "非公開",
+        "width": "非公開",
+        "depth": "超薄型（詳細非公開）"
+      },
+      "weight": "非公開",
+      "capacity": "非該当",
+      "material": "TPU（ソフトヒドロゲル素材）",
+      "origin": "非公開",
+      "other": [
+        "対応機種: Google Pixel 10 Pro Fold",
+        "コーティング: 疎水性および疎油性コーティング",
+        "機能: 気泡自動修復、指紋防止、高透過率"
+      ]
     }
   }
 }
