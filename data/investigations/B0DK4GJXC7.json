@@ -29,62 +29,136 @@
     ],
     "userStories": [
       {
-        "userType": "30代会社員（リモートワーク）",
-        "scenario": "重要なオンライン会議での使用",
-        "experience": "以前使っていたBluetoothイヤホンの接続が不安定で会議中に切断された経験から、信頼性の高い有線イヤホンとして購入。マイク音質が非常にクリアで、相手から声が聞き取りやすいと言われた。（推測）",
+        "userType": "iPhoneユーザー",
+        "scenario": "音楽・動画鑑賞のためType-C直挿しイヤホンを使用",
+        "experience": "iPhoneに直接繋いで聴いてみたところ、音量MAX近くにしても蚊の鳴くような小さい音しか出なかった。また、暗闇で左右の判別がつきにくく、リモコンの位置も耳に近すぎて使いづらさを感じた。唯一優れているのはコードが絡まりにくい点だった。",
+        "supportingSourceIds": [
+          "src-2"
+        ],
+        "sentiment": "negative"
+      },
+      {
+        "userType": "PCユーザー（長時間リスニング）",
+        "scenario": "PCに繋いで音楽を聴く",
+        "experience": "音はこもりもなく十分な高音質。高音はマイルドで耳当たりがソフト、低音は量感が豊かで全体的に厚みがある。ドラムのアタックなどは控えめなので、メリハリよりも長時間じっくり聴くのに向いている。小型軽量でフィット感も良く、ケーブルが絡みにくいのも扱いやすい。",
+        "supportingSourceIds": [
+          "src-2"
+        ],
         "sentiment": "positive"
       },
       {
-        "userType": "20代学生（ゲーマー）",
-        "scenario": "FPSゲーム（Apex Legendsなど）のプレイ",
-        "experience": "ワイヤレスイヤホンの僅かな遅延が気になり導入。足音の方向や銃声のタイミングがズレなく聞こえるようになり、プレイの質が向上した。長時間の使用でも耳が痛くなりにくい。（推測）",
-        "sentiment": "positive"
-      },
-      {
-        "userType": "40代音楽愛好家",
-        "scenario": "ハイレゾ音源のリスニング",
-        "experience": "スマホで手軽にいい音を聴きたくて購入。FLATモードでは楽器の音が自然に聞こえ、BASSモードにするとロックやEDMの迫力が増す。気分に合わせて音質を変えられるのが楽しい。（推測）",
+        "userType": "スマホユーザー（イヤホンジャックなし）",
+        "scenario": "スマホでの音楽リスニング",
+        "experience": "最初はこもった感じがしたが、エージングで徐々に良くなった。ブーミーすぎない締まった低音で、イコライザーでバスを選んでも自然に量感がアップする。ドンシャリではなく、レンジの広さや透明感を感じられるバランスの良い音だった。",
+        "supportingSourceIds": [
+          "src-2"
+        ],
         "sentiment": "positive"
       }
     ],
-    "userImpression": "音質、マイク性能、機能性のバランスが取れた高品質な有線イヤホンとして、ワイヤレスからの回帰ユーザーやゲーマーからの支持が期待される。",
+    "userImpression": "全体的な音の傾向は、ドンシャリではなくマイルドで聴きやすいバランス型。高域の刺さりが少なく、低音は量感があって長時間のリスニングに向いていると評価されている。ケーブルが絡みにくい点やフィット感の良さは好評だが、一方でiPhoneなど一部環境での音量不足、左右の視認性の悪さ（LRの判別のしにくさ）、リモコンの配置などに使いづらさを感じる声もある。",
     "sources": [
       {
+        "id": "src-1",
         "name": "Amazon Product Page",
         "url": "https://www.amazon.co.jp/dp/B0DK4GJXC7",
-        "credibility": "High"
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2024-11-21",
+        "author": "Victor / JVCケンウッド",
+        "conflictOfInterest": "possible",
+        "notes": "製品の公式仕様や特徴の確認"
+      },
+      {
+        "id": "src-2",
+        "name": "価格.com - Victor HA-FR29UC レビュー・評価",
+        "url": "https://review.kakaku.com/review/J0000046467/",
+        "tier": "high",
+        "evidenceType": "secondary",
+        "publishedAt": "2025-01-01",
+        "author": "購入ユーザー",
+        "conflictOfInterest": "none",
+        "notes": "音質、装着感などの実際の使用感の確認"
       }
     ],
-    "lastInvestigated": "2026-02-14",
+    "lastInvestigated": "2026-06-11",
     "competitiveAnalysis": [
       {
-        "name": "JBL TUNE 305C",
-        "asin": "B0D4F2Z8N6",
-        "priceComparison": "約2,800円（Victorより約800円安い）",
+        "name": "オーディオテクニカ ATH-CKS330NC BK",
+        "asin": "B0DLNRKH1G",
+        "priceComparison": "対象商品より約1,900円高い。ノイズキャンセリング機能付きであるため価格差に妥当性がある。",
         "featureComparison": [
-          "オープンタイプ（インイヤー）で軽い装着感",
-          "12.5mmドライバー搭載",
-          "プリセットEQ機能あり"
+          "共通点：有線Type-C接続、DAC内蔵、マイク付き",
+          "相違点：ATH-CKS330NCはアクティブノイズキャンセリング(ANC)を搭載している点と、重低音(SOLID BASS)に特化している点。"
         ],
         "differentiators": [
-          "Victorはカナル型で遮音性が高い",
-          "Victorは手元リモコンでサウンドモード切替が可能",
-          "JBLはオープン型で外音が聞こえやすい"
+          "Victor HA-FR29UCの利点：価格が安く、3つのサウンドモード（FLAT/BASS/CLEAR）で好みの音質に切り替えられる点。",
+          "オーディオテクニカ ATH-CKS330NCの利点：ノイズキャンセリング機能を搭載しており、騒音環境下でのリスニングに優れる点。重低音特化型である点。"
         ]
       },
       {
-        "name": "Chayoo USB Type-C イヤホン",
-        "asin": "B0G397GC4Y",
-        "priceComparison": "約950円（Victorの約1/4の価格）",
+        "name": "オーディオテクニカ ATH-CKD3C WH",
+        "asin": "B095BCB5YS",
+        "priceComparison": "対象商品より約700円安い。同価格帯のライバルとなる。",
         "featureComparison": [
-          "ハイレゾ対応（詳細スペック不明）",
-          "カナル型",
-          "基本的なリモコン機能"
+          "共通点：有線Type-C接続、マイク付きリモコン搭載、カナル型",
+          "相違点：Victor HA-FR29UCはハイレゾ対応と3サウンドモード切り替え機能を持つが、ATH-CKD3CはベーシックなDAC内蔵モデルである点。"
         ],
         "differentiators": [
-          "Victorは信頼できる国内ブランド",
-          "VictorはDAC性能やマイク品質が明記されている",
-          "Chayooは圧倒的に安価だが品質のばらつきリスクあり"
+          "Victor HA-FR29UCの利点：ハイレゾ対応であり、楽曲に合わせてサウンドモードを切り替えられる点。",
+          "オーディオテクニカ ATH-CKD3Cの利点：より安価であり、Web会議などに必要十分な性能を低コストで導入できる点。"
+        ]
+      },
+      {
+        "name": "JBL TUNE 305C",
+        "asin": "B0D4F1C5W4",
+        "priceComparison": "対象商品とほぼ同価格帯（約300円高い）。",
+        "featureComparison": [
+          "共通点：有線Type-C接続、ハイレゾ対応DAC内蔵、マイク付き",
+          "相違点：Victorはカナル型（耳栓型）であるのに対し、JBLはオープンタイプ（インナーイヤー型）で、12.5mmの大型ドライバーを搭載している点。"
+        ],
+        "differentiators": [
+          "Victor HA-FR29UCの利点：カナル型による高い遮音性と、しっかりとしたフィット感。",
+          "JBL TUNE 305Cの利点：オープン型による耳への圧迫感の少なさと、周囲の音が聞こえやすい安全性。"
+        ]
+      },
+      {
+        "name": "JBL Endurance Run 3 USB-C",
+        "asin": "B0G1YR7CLH",
+        "priceComparison": "対象商品より約1,000円高い。",
+        "featureComparison": [
+          "共通点：有線Type-C接続、ハイレゾ対応、マイク付き",
+          "相違点：JBL Endurance Run 3はスポーツ向けに特化しており、IP65防水防塵と、耳掛けもできるフリップフックデザインを採用している点。"
+        ],
+        "differentiators": [
+          "Victor HA-FR29UCの利点：サウンドモード切り替え機能があり、日常的な音楽鑑賞やゲーミングに向いている点。",
+          "JBL Endurance Run 3の利点：防水防塵性能が高く、激しい動きでも外れにくいため、ランニング等のスポーツ用途に最適な点。"
+        ]
+      },
+      {
+        "name": "JVC HA-FR9UC",
+        "asin": "B0C2T7TB96",
+        "priceComparison": "対象商品より約600円安い。同メーカーの下位モデル。",
+        "featureComparison": [
+          "共通点：有線Type-C接続、カナル型、マイク付き、JVCブランド",
+          "相違点：HA-FR29UCがハイレゾ対応やサウンドモード切替を備えた上位機であるのに対し、HA-FR9UCはよりシンプルなスタンダードモデルである点。"
+        ],
+        "differentiators": [
+          "Victor HA-FR29UCの利点：ハイレゾ音源の再生能力や、サウンドモードで音質を好みに変えられる点。",
+          "JVC HA-FR9UCの利点：機能がシンプルな分、より手頃な価格で購入できる点。"
+        ]
+      },
+      {
+        "name": "KIOTEET 有線イヤホン タイプC",
+        "asin": "B0GV8TW46N",
+        "priceComparison": "対象商品より約1,200円安い。",
+        "featureComparison": [
+          "共通点：有線Type-C接続、マイク付き、音量調節可能",
+          "相違点：Victorが国内有名ブランドで品質保証が明確なのに対し、KIOTEETは低価格帯のノーブランド（新興）製品である点。"
+        ],
+        "differentiators": [
+          "Victor HA-FR29UCの利点：国内メーカーとしての音質チューニングの信頼性と、サポート体制の安心感。",
+          "KIOTEETの利点：約2,000円以下で購入できる圧倒的な安さ。"
         ]
       }
     ],
@@ -105,10 +179,16 @@
         "ケーブルの取り回しが必要",
         "スマホの充電ポートを占有する"
       ],
-      "score": 85,
-      "scoreRationale": "[基本点: 70]\n[加点: +10] (ハイレゾ対応、DAC搭載、高音質マイク)\n[加点: +5] (3つのサウンドモード切替機能)\n[加点: +5] (Victorブランドの信頼性、国内メーカーサポート)\n[減点: -5] (競合JBL(2816円)よりやや高価)\n[合計: 85]"
+      "score": 80,
+      "scoreRationale": "[基本点: 70]\n[加点: +8] (ハイレゾ対応DAC内蔵と大型マイクによる基本性能の高さ)\n[加点: +5] (3つのサウンドモード切り替え機能を搭載する独自性)\n[加点: +2] (絡みにくいケーブルと質感の高いデザイン)\n[減点: -5] (特定の環境で音量が不足するというユーザーレビューの懸念点)\n[合計: 80]"
     },
     "technicalSpecs": {
+      "dimensions": {
+        "height": "80mm",
+        "width": "40mm",
+        "depth": "20mm"
+      },
+      "weight": "17g",
       "driver": "10mm高磁力ネオジムドライバー",
       "codec": "DAC搭載 (ハイレゾ対応)",
       "connectivity": "USB Type-C (有線)",
@@ -116,8 +196,39 @@
       "cableLength": "1.2m (Y型)",
       "remote": "3ボタン+スライドスイッチ (ボリューム/再生/通話/サウンドモード切替)",
       "accessories": "イヤーピース(XS/S/M/L)、キャリングポーチ、ロゴステッカー",
-      "weight": "約13g (ケーブル含む・推測)",
       "color": "ブルー (他: ブラック, ホワイト, ピンク)"
-    }
+    },
+    "claims": [
+      {
+        "claim": "DACを通さないと十分な音量が出ないことがある。I-Phoneなどで直接接続しても音量が不十分に感じられる場合がある。",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-2"
+        ],
+        "crossChecked": false,
+        "notes": "ユーザーレビューにて指摘あり。"
+      },
+      {
+        "claim": "高域はマイルドで聴きやすく、低音は量感が豊かで厚みがある。解像感を求めるよりは長時間のリスニング向け。",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-2"
+        ],
+        "crossChecked": false,
+        "notes": "複数のユーザーレビューで傾向が一致。"
+      },
+      {
+        "claim": "LRの判別がしにくい。暗闇などで左右を見分けるのが困難で、左側の小さな突起も分かりづらいという指摘がある。",
+        "category": "quality",
+        "confidence": "medium",
+        "supportingSourceIds": [
+          "src-2"
+        ],
+        "crossChecked": false,
+        "notes": "ユーザーレビューにて指摘あり。"
+      }
+    ]
   }
 }
