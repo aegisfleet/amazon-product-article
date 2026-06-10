@@ -1,0 +1,136 @@
+{
+  "analysis": {
+    "productName": "TP-Link Tapo C230/A 3K 5MP ネットワークWi-Fiカメラ",
+    "parentAsin": "B0DMV9TL7G",
+    "productDescription": "3K 5MPの高解像度に対応したパン・チルト対応の屋内用ネットワークWi-Fiカメラ。スマートAI検知機能を搭載し、ズームしても細部までクリアに見通せます。",
+    "productUsage": ["屋内用見守りカメラ", "ペットモニター", "ホームセキュリティ"],
+    "positivePoints": ["3K 5MPの高解像度による鮮明な映像", "水平360°、垂直114°の広範囲をカバーするパン・チルト機能", "無料のスマートAI検知機能", "スマホアプリからの簡単な設定と操作"],
+    "negativePoints": ["有線LANポート非搭載 (Wi-Fi専用)"],
+    "useCases": ["留守番中のペットの様子を高画質で確認する", "外出先から自宅の防犯状況を確認する", "別室にいる子どもの見守り"],
+    "userStories": [],
+    "userImpression": "3K 5MPの高解像度とパンチルト機能により、広範囲を鮮明にモニタリングできるため、コストパフォーマンスの高い見守りカメラとして評価できる機能性を備えています。",
+    "sources": [
+      {
+        "id": "src-amazon-B0DMV9TL7G",
+        "name": "Amazon: TP-Link Tapo C230/A",
+        "url": "https://www.amazon.co.jp/dp/B0DMV9TL7G",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2024-12-13",
+        "author": "Amazon",
+        "conflictOfInterest": "none",
+        "notes": "基本仕様、機能、価格(6800円)を確認。"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "3K 5MPの高解像度に対応し、細部までクリアな映像を実現",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": ["src-amazon-B0DMV9TL7G"],
+        "crossChecked": false,
+        "notes": "商品仕様にて確認"
+      }
+    ],
+    "lastInvestigated": "2026-06-10",
+    "competitiveAnalysis": [
+      {
+        "name": "TP-Link Tapo C232",
+        "asin": "B0F58FWJ1P",
+        "priceComparison": "対象商品の方がやや安価。有線LANポートの有無が価格差に現れている。",
+        "featureComparison": [
+          "共通点：3K 5MPの高解像度、パンチルト機能、夜間撮影、AI検知対応",
+          "相違点：C232は有線LANポート（イーサネットポート）を搭載しているのに対し、C230/AはWi-Fi専用"
+        ],
+        "differentiators": [
+          "TP-Link Tapo C230/A 3K 5MP ネットワークWi-Fiカメラの利点：Wi-Fi接続のみで十分な環境であれば、より低価格で購入できる",
+          "TP-Link Tapo C232の利点：有線LAN接続による安定した通信環境を構築したいケースに適している"
+        ]
+      },
+      {
+        "name": "TP-Link Tapo C222",
+        "asin": "B0DCJZHRL5",
+        "priceComparison": "対象商品の方が高価。解像度の高さによる価格差がある。",
+        "featureComparison": [
+          "共通点：パンチルト機能、夜間撮影、双方向通話、スマートAI検知機能",
+          "相違点：解像度がC222は2K QHD（4MP）だがC230/Aは3K 5MP。C222は有線LANポートを搭載"
+        ],
+        "differentiators": [
+          "TP-Link Tapo C230/A 3K 5MP ネットワークWi-Fiカメラの利点：より高解像度な3K映像で細部まで鮮明に確認できる",
+          "TP-Link Tapo C222の利点：解像度を2Kに抑えつつ、有線LAN対応と低価格を求める場合に適している"
+        ]
+      },
+      {
+        "name": "TP-Link Tapo C225/A v2",
+        "asin": "B0BWCM6JFN",
+        "priceComparison": "対象商品の方が安価。付加機能の違いによる価格差がある。",
+        "featureComparison": [
+          "共通点：パンチルト対応、夜間撮影、双方向通話機能",
+          "相違点：C225/A v2は物理的なプライバシーボタン（レンズ収納機能）や低照度カラー撮影対応（スターライトセンサー）を搭載しているが解像度は2K QHD。C230/Aは3K 5MP"
+        ],
+        "differentiators": [
+          "TP-Link Tapo C230/A 3K 5MP ネットワークWi-Fiカメラの利点：プライバシーシャッター機能が不要で、より高い解像度（3K）を求める場合にコストを抑えられる",
+          "TP-Link Tapo C225/A v2の利点：物理的にレンズを隠せる安心感や、暗所でのカラー撮影が必要なケースに適している"
+        ]
+      },
+      {
+        "name": "TP-Link Tapo C220",
+        "asin": "B0CKWS1VWR",
+        "priceComparison": "対象商品の方が高価。解像度の高さによる価格差がある。",
+        "featureComparison": [
+          "共通点：パンチルト機能、夜間撮影、動的検知機能",
+          "相違点：C220は2K QHD（4MP）解像度。C230/Aは3K 5MP解像度"
+        ],
+        "differentiators": [
+          "TP-Link Tapo C230/A 3K 5MP ネットワークWi-Fiカメラの利点：より解像度が高く、ズーム時にも映像が粗くなりにくい",
+          "TP-Link Tapo C220の利点：2K解像度で十分な場合、非常に高いコストパフォーマンスを発揮する"
+        ]
+      },
+      {
+        "name": "TP-Link Tapo C200",
+        "asin": "B07YG7RNF2",
+        "priceComparison": "対象商品の方が高価。解像度の圧倒的な違いによる価格差がある。",
+        "featureComparison": [
+          "共通点：パンチルト機能、動作検知、相互音声会話",
+          "相違点：C200は1080p（207万画素）解像度。C230/Aは3K 5MP解像度"
+        ],
+        "differentiators": [
+          "TP-Link Tapo C230/A 3K 5MP ネットワークWi-Fiカメラの利点：フルHDと比べて圧倒的に高精細な映像で記録・確認ができる",
+          "TP-Link Tapo C200の利点：解像度にこだわらず、とにかく安価にパンチルト対応のカメラを導入したい場合に適している"
+        ]
+      },
+      {
+        "name": "TP-Link Tapo C206",
+        "asin": "B0F2S9QGZ9",
+        "priceComparison": "対象商品の方が高価。屋内特化の高解像度と、屋外兼用モデルの違いによる。",
+        "featureComparison": [
+          "共通点：パンチルト機能、AI検知機能",
+          "相違点：C206はIP65防水防塵の屋外・屋内兼用モデルでType-C充電対応だが解像度は1080p。C230/Aは屋内専用で3K 5MP解像度"
+        ],
+        "differentiators": [
+          "TP-Link Tapo C230/A 3K 5MP ネットワークWi-Fiカメラの利点：屋内用途に特化し、より高解像度な3K映像でモニタリングができる",
+          "TP-Link Tapo C206の利点：屋外にも設置できる防水防塵性能や、Type-C給電の柔軟性を求めるケースに適している"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": ["高解像度でペットや子供を見守りたい人", "Wi-Fi接続で簡単に設定できるカメラを探している人", "屋内の広範囲を1台でカバーしたい人"],
+      "pros": ["3K 5MPの高画質による鮮明な映像", "広範囲をカバーできるパン・チルト機能", "無料のスマートAI検知機能"],
+      "cons": ["有線LAN接続には非対応"],
+      "score": 83,
+      "scoreRationale": "[基本点: 70]\n[加点: +5] (3K 5MPの高解像度による鮮明な映像)\n[加点: +3] (パンチルト機能による広範囲なモニタリング)\n[加点: +3] (無料のAI検知機能による実用性の高さ)\n[加点: +2] (6,000円台で3K解像度を備える良好なコスパ)\n[合計: 83]"
+    },
+    "technicalSpecs": {
+      "dimensions": {
+        "height": "117.7mm",
+        "width": "86.8mm",
+        "depth": "85.4mm"
+      },
+      "resolution": "3K 5MP",
+      "color": "ホワイト",
+      "connectivity": "Wi-Fi専用",
+      "features": ["パン・チルト対応", "スマートAI検知", "ナイトビジョン"],
+      "warranty": "メーカー保証3年"
+    }
+  }
+}
