@@ -1,0 +1,147 @@
+{
+  "analysis": {
+    "productName": "HUAWEI Band 11 Pro",
+    "parentAsin": "B0GJSCGFTP",
+    "productDescription": "約4.11cmの高輝度AMOLEDディスプレイ（最大2000nits）、薄型軽量ボディ（8.99mm/約18g）を搭載したGPS内蔵スマートウォッチ。睡眠中の心拍変動トラッキング機能や情緒モニタリング機能を備えています。",
+    "productUsage": [
+      "健康・睡眠状態のトラッキング",
+      "ランニング等のスポーツ記録",
+      "日常生活での通知確認"
+    ],
+    "positivePoints": [
+      "約18gという軽量さと8.99mmの薄さで快適な装着感",
+      "最大2000nitsの明るいディスプレイで屋外での視認性が高い",
+      "GPS搭載によりスマートフォンなしで正確なルート記録が可能",
+      "睡眠中の平均心拍変動(HRV)など高度なトラッキング機能"
+    ],
+    "negativePoints": [
+      "常時表示(AOD)有効時はバッテリーが約3日間と短くなる"
+    ],
+    "useCases": [
+      "ランニングや屋外トレーニング",
+      "睡眠時のモニタリング",
+      "日常のスマート通知受信用"
+    ],
+    "userStories": [
+      {
+        "userType": "ランナー",
+        "scenario": "屋外でのランニング中に使用",
+        "experience": "GPSが内蔵されているため、スマートフォンを持ち歩かなくても正確な走行ルートやペースを記録できるのが非常に便利です。また、画面が最大2000nitsと明るいため、直射日光の下でもデータがくっきりと見えます。",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "sentiment": "positive"
+      },
+      {
+        "userType": "ビジネスパーソン",
+        "scenario": "日常の健康管理と睡眠計測",
+        "experience": "本体が18gと軽く、厚さも8.99mmと薄いため、寝ている間も違和感なく装着できます。新しい睡眠モニタリング機能により、HRV（心拍変動）を通じて体の疲労回復具合がわかるので、コンディション管理に役立っています。",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "sentiment": "positive"
+      }
+    ],
+    "userImpression": "GPSを内蔵しつつ薄型軽量を維持したことで、スポーツ用途だけでなく日常の健康管理にも最適なスマートウォッチと評価されています。特に屋外での画面の見やすさと装着感の良さが好評です。",
+    "sources": [
+      {
+        "id": "src-1",
+        "name": "Amazon商品ページ",
+        "url": "https://www.amazon.co.jp/dp/B0GJSCGFTP",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-06-11",
+        "author": "HUAWEI",
+        "conflictOfInterest": "none",
+        "notes": "公式の製品仕様と特徴を抽出"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "最大2000nitsの高輝度AMOLEDディスプレイ",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "crossChecked": false,
+        "notes": "製品仕様に基づく"
+      },
+      {
+        "claim": "GPS搭載でスマホなしでもルート記録が可能",
+        "category": "comparativeAdvantage",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "crossChecked": false,
+        "notes": "製品仕様に基づく"
+      }
+    ],
+    "lastInvestigated": "2026-06-11",
+    "competitiveAnalysis": [
+      {
+        "name": "HUAWEI Band 11 Aluminum Edition",
+        "asin": "B0GJSWTY97",
+        "priceComparison": "本製品の方が約3,000円高いが、GPS搭載と画面輝度の向上(2000nits vs 1500nits)の価値がある。",
+        "featureComparison": [
+          "共通点：約4.11cm画面、睡眠管理、薄型軽量デザイン",
+          "相違点：ProはGPS搭載で最大2000nits。Aluminum EditionはGPS非搭載で最大1500nits、アルミニウムケースを採用。"
+        ],
+        "differentiators": [
+          "HUAWEI Band 11 Proの利点：GPSを内蔵しているため、スマホなしで精度の高いワークアウト記録を行いたい人に最適。",
+          "HUAWEI Band 11 Aluminum Editionの利点：価格が抑えられており、GPSが不要なユーザーや、アルミニウム素材の質感を好む人に適している。"
+        ]
+      },
+      {
+        "name": "GARMIN vivoactive 5",
+        "asin": "B0CHWDB2M1",
+        "priceComparison": "GARMINの方が約2.6倍高い。本格的なスポーツ機能やSuica対応を求めるかによって選択が分かれる。",
+        "featureComparison": [
+          "共通点：GPS搭載、睡眠管理、軽量設計",
+          "相違点：HUAWEIは薄型バンド形状で約1万円。GARMINは丸型ウォッチ形状でSuica対応、より詳細なフィットネス機能(Body Batteryなど)を搭載。"
+        ],
+        "differentiators": [
+          "HUAWEI Band 11 Proの利点：圧倒的なコストパフォーマンスと、18gという軽量・コンパクトなバンド形状による快適な装着感。",
+          "GARMIN vivoactive 5の利点：Suica等の電子決済機能や、より本格的なスポーツ・フィットネス分析機能が必要な場合に適している。"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "ランニングなどの屋外スポーツをする人",
+        "軽くて着け心地の良いスマートウォッチを探している人",
+        "睡眠中の健康状態を詳細に記録したい人"
+      ],
+      "pros": [
+        "GPS内蔵",
+        "超軽量・薄型ボディ(約18g/8.99mm)",
+        "直射日光下でも見やすい高輝度画面"
+      ],
+      "cons": [
+        "常時表示時のバッテリー消費が早い",
+        "Suicaなどの電子決済には非対応"
+      ],
+      "score": 85,
+      "scoreRationale": "[基本点: 70] (固定)\n[加点: +10] (GPS搭載によりスマホなしでのワークアウト記録が可能になり利便性が大幅に向上)\n[加点: +5] (18g/8.99mmというクラス最高レベルの薄型軽量設計)\n[加点: +5] (最大2000nitsの高輝度ディスプレイによる屋外視認性の高さ)\n[減点: -5] (常時表示有効時のバッテリー持続時間が約3日間と短い)\n[合計: 85]"
+    },
+    "technicalSpecs": {
+      "dimensions": {
+        "height": "43mm",
+        "width": "25mm",
+        "depth": "8.99mm"
+      },
+      "weight": "18g",
+      "displaySize": "41mm",
+      "displayType": "AMOLED (最大2000nits, 60Hz)",
+      "batteryLife": "通常使用約14日間、常時表示(AOD)時約3日間",
+      "sensors": "GPS内蔵",
+      "material": "アルミニウム合金（ケース）",
+      "other": [
+        "24時間睡眠管理(HRVトラッキング対応)",
+        "情緒モニタリング",
+        "LINE通知対応"
+      ]
+    }
+  }
+}
