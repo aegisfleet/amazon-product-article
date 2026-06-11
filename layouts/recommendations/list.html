@@ -441,6 +441,17 @@
                         {{- end -}}
                     </h3>
 
+                    <!-- Keepa Price Graph -->
+                    <div class="keepa-graph-container" style="margin-top: var(--spacing-sm); margin-bottom: var(--spacing-sm); max-width: 500px; text-align: left;">
+                        <a href="https://keepa.com/#!product/5-{{ $rec.asin }}" target="_blank" rel="noopener noreferrer"
+                            aria-label="Keepaで価格推移を見る (新しいタブで開く)" title="Keepaで価格推移を見る">
+                            <img src="https://graph.keepa.com/pricehistory.png?asin={{ $rec.asin }}&domain=5&amazon=1&new=1&used=1&salesrank=1&bb=1&range=90&width=600&height=300"
+                                alt="{{ $rec.title }} の価格履歴グラフ" class="keepa-graph-image" loading="lazy" decoding="async"
+                                referrerpolicy="no-referrer" style="width: 100%; height: auto; border-radius: var(--radius-sm); border: 1px solid var(--color-border); background: #fff; padding: 4px; margin-left: 0;">
+                        </a>
+                        <p class="keepa-note" style="margin-top: var(--spacing-xs); font-size: 0.75rem; text-align: left;">※ クリックで Keepa の詳細ページを開きます</p>
+                    </div>
+
                     {{- if and $rec.scoreDisclaimer (ne $rec.scoreDisclaimer "") -}}
                     <div style="margin: var(--spacing-sm) 0 var(--spacing-xs); padding: var(--spacing-sm) var(--spacing-md); background: #fef2f2; border: 1px solid #fca5a5; border-radius: var(--radius-md); display: flex; align-items: center; gap: 0.5rem; color: #b91c1c; font-size: 0.9rem; font-weight: bold;">
                         <span style="font-size: 1.1rem;">⚠️</span>
