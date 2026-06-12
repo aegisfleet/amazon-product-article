@@ -1,6 +1,6 @@
 {
   "analysis": {
-    "productName": "Gudluky LEDテープライト 10m RGB 1600万色 アプリ＋リモコン版",
+    "productName": "Gudluky LEDテープライト 10m",
     "parentAsin": "B0DHQTYYST",
     "productDescription": "1600万色のRGB調整が可能で、アプリとリモコンの両方で操作できる10mのLEDテープライトです。音楽連動機能やタイマー機能を搭載し、お部屋の雰囲気を自由自在に演出できます。",
     "productUsage": [
@@ -28,70 +28,107 @@
     ],
     "userStories": [
       {
-        "userType": "20代学生・一人暮らし",
-        "scenario": "部屋の雰囲気を変えたくて購入。",
-        "experience": "スマホアプリで寝ながら色を変えられるのが便利。友達が来た時は音楽連動モードで盛り上がる。（推測）",
-        "sentiment": "positive"
-      },
-      {
-        "userType": "30代主婦",
-        "scenario": "キッチンの棚下に設置。",
-        "experience": "料理中の手元を明るくするだけでなく、夜は少し暗めにしてバーのような雰囲気を楽しんでいる。（推測）",
-        "sentiment": "positive"
+        "userType": "一般ユーザー",
+        "scenario": "部屋の雰囲気作り",
+        "experience": "スマホアプリから簡単に色を変えられ、音楽連動機能も楽しめるため、部屋の雰囲気が大きく変わった。",
+        "sentiment": "positive",
+        "supportingSourceIds": [
+          "src-1"
+        ]
       }
     ],
     "userImpression": "価格に対して機能が豊富で、特にアプリ連携の手軽さが好評。防水性能や耐久性には不安があるものの、エントリーモデルとしては十分すぎるスペック。",
     "sources": [
       {
+        "id": "src-1",
         "name": "Amazon Product Page",
         "url": "https://www.amazon.co.jp/dp/B0DHQTYYST",
-        "credibility": "High"
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2024-01-01",
+        "author": "Gudluky",
+        "conflictOfInterest": "none",
+        "notes": "Product specifications and features"
       }
     ],
-    "lastInvestigated": "2026-02-15",
+    "lastInvestigated": "2026-06-13",
     "competitiveAnalysis": [
       {
-        "name": "Lepro LEDテープライト SMD 5050 10m",
-        "asin": "B08734NBB4",
-        "priceComparison": "2,804円 (本製品より高い)",
+        "name": "Lepro LED テープライト 10m 電球色・昼光色・昼白色 (B08D3H44V1)",
+        "asin": "B08D3H44V1",
+        "priceComparison": "対象商品よりやや高いが、日常の照明として自然な白色系の調光が可能。",
         "featureComparison": [
-          "RGB",
-          "防水(IP65?)",
-          "44キーリモコン",
-          "DC12V"
+          "共通点：10mの長さで無段階調光が可能。",
+          "相違点：本商品がRGBフルカラーであるのに対し、こちらは電球色〜昼光色の白色系に特化している。"
         ],
         "differentiators": [
-          "防水性能が明記されている点が強み。",
-          "価格は本製品の方が安い。"
+          "Gudluky LEDテープライト 10mの利点：RGBカラーや音楽連動機能でパーティーなどの演出に向いている。",
+          "Lepro LED テープライト (B08D3H44V1)の利点：日常の間接照明として自然な明かりを求める場合に適している。"
         ]
       },
       {
-        "name": "Lamomo 10M COB LEDテープライト",
+        "name": "Lepro テープライト LEDテープ 10m 電球色 (B089D81CVV)",
+        "asin": "B089D81CVV",
+        "priceComparison": "対象商品より高いが、高演色の電球色LEDを採用しており上質な空間演出が可能。",
+        "featureComparison": [
+          "共通点：10mのテープライトで切断可能。",
+          "相違点：本商品がRGBで多様な色を出せるのに対し、こちらは電球色単色で間接照明向け。"
+        ],
+        "differentiators": [
+          "Gudluky LEDテープライト 10mの利点：アプリ操作や多彩な発色で動きのある演出ができる。",
+          "Lepro テープライト 電球色 (B089D81CVV)の利点：落ち着いた電球色の間接照明として、高い演色性で空間を綺麗に見せることができる。"
+        ]
+      },
+      {
+        "name": "Lepro テープライト ledテープ 10m 昼光色 (B089D7HLH5)",
+        "asin": "B089D7HLH5",
+        "priceComparison": "対象商品より高いが、高輝度な昼光色単色で実用的な明るさを確保できる。",
+        "featureComparison": [
+          "共通点：10mの長さと無段階調光機能。",
+          "相違点：本商品はRGBカラー対応で演出向けだが、こちらは昼光色6000Kで作業用や実用的な照明向け。"
+        ],
+        "differentiators": [
+          "Gudluky LEDテープライト 10mの利点：多彩なカラーバリエーションと音楽連動機能を持つ。",
+          "Lepro テープライト 昼光色 (B089D7HLH5)の利点：くっきりとした白い光で、作業空間などの実用的な照明に向いている。"
+        ]
+      },
+      {
+        "name": "Pozold LEDテープライト10m SMD5050 RGB (B0C7KR6XG4)",
+        "asin": "B0C7KR6XG4",
+        "priceComparison": "対象商品と同価格帯だが、リモコンが40キーとボタン数が多く操作性に違いがある。",
+        "featureComparison": [
+          "共通点：10m、RGB対応、音楽同期機能、アプリ・リモコン制御対応。",
+          "相違点：本商品はPSE認証アダプタを強調しているが、機能面は類似している。"
+        ],
+        "differentiators": [
+          "Gudluky LEDテープライト 10mの利点：22種類の演出モードや明確なタイマー機能で細かな設定が可能。",
+          "Pozold LEDテープライト10m (B0C7KR6XG4)の利点：40キーリモコンで手元での直感的な操作がしやすい可能性がある。"
+        ]
+      },
+      {
+        "name": "Lamomo 10M COB LEDテープライト (B0G13BVYCN)",
         "asin": "B0G13BVYCN",
-        "priceComparison": "5,999円 (本製品より大幅に高い)",
+        "priceComparison": "対象商品の約3倍と高価だが、COB LEDによる均一な光とIP65防水を備える。",
         "featureComparison": [
-          "COB LED (ドット感がない)",
-          "IP65防水",
-          "24V",
-          "アプリ操作"
+          "共通点：10mの長さでアプリ・リモコン操作が可能。",
+          "相違点：本商品はSMDチップで非防水（推測）だが、LamomoはCOBチップでドット感がなくIP65防水対応。"
         ],
         "differentiators": [
-          "COBタイプで光が均一。",
-          "価格差が大きい。"
+          "Gudluky LEDテープライト 10mの利点：圧倒的に安価で、手軽に10mのRGB照明を導入できる。",
+          "Lamomo 10M COB LEDテープライト (B0G13BVYCN)の利点：ドット感のない美しい光と防水性能で、キッチンや水回り、質の高い間接照明に適している。"
         ]
       },
       {
-        "name": "Gudluky LEDテープライト 10m (同ブランド)",
-        "asin": "B0FS1VY1WP",
-        "priceComparison": "2,999円 (本製品より高い)",
+        "name": "Lamomo LEDテープライト10M 調光調色 ネオンチューブ (B0CJ53SCM8)",
+        "asin": "B0CJ53SCM8",
+        "priceComparison": "対象商品より大幅に高いが、ネオンチューブ型でより均一で柔らかい光を実現している。",
         "featureComparison": [
-          "電球色・昼白色・昼光色",
-          "調光調色",
-          "COBではないSMD?"
+          "共通点：10mの長さでRGBカラー、音楽同期、アプリ操作対応。",
+          "相違点：本商品は通常のテープ型だが、Lamomoはネオンチューブ型でIP65防水。"
         ],
         "differentiators": [
-          "日常使いの照明としてはこちらが向いている。",
-          "本製品はRGBで演出向け。"
+          "Gudluky LEDテープライト 10mの利点：非常に低価格で導入しやすく、棚下などの隠す照明に向いている。",
+          "Lamomo LEDテープライト10M ネオンチューブ (B0CJ53SCM8)の利点：ネオン管のような均一な光で、直接見せる装飾や屋外での使用に適している。"
         ]
       }
     ],
@@ -110,16 +147,33 @@
         "耐久性は未知数"
       ],
       "score": 85,
-      "scoreRationale": "[基本点: 70]\n[加点: +5] (アプリ操作と多機能性)\n[加点: +15] (圧倒的なコストパフォーマンス)\n[減点: -5] (防水性能不明、耐久性の懸念)\n[合計: 85]"
+      "scoreRationale": "[基本点: 70]\n[加点: +5] (アプリ操作と多機能性)\n[加点: +15] (圧倒的なコストパフォーマンス)\n[減点: -5] (非防水による用途制限)\n[合計: 85]"
     },
     "technicalSpecs": {
       "length": "10m",
-      "ledType": "SMD 5050 (推測)",
+      "ledType": "SMD3535",
       "color": "RGB 1600万色",
-      "control": "アプリ, リモコン, マイク連動",
-      "power": "ACアダプター (PSE認証)",
-      "waterproof": "非防水 (推測)",
-      "features": ["タイマー", "音楽連動", "カット可能"]
-    }
+      "control": "アプリ連携、リモコン付属、マイク内蔵",
+      "power": "ACアダプター（PSE認証: AM20C04）",
+      "features": [
+        "22種類演出モード",
+        "無段階調光",
+        "音楽連動",
+        "タイマー機能",
+        "切断可能"
+      ]
+    },
+    "claims": [
+      {
+        "claim": "1600万色の調色機能搭載",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "crossChecked": true,
+        "notes": "Amazon商品説明より確認"
+      }
+    ]
   }
 }
