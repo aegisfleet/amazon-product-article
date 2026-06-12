@@ -1,0 +1,177 @@
+{
+  "analysis": {
+    "productName": "Pramie AIスマートグラス",
+    "parentAsin": "B0GX9165HJ",
+    "productDescription": "130以上の言語に対応したAIリアルタイム翻訳機能を搭載し、音楽再生や通話も可能なオープンイヤー型のスマートグラス。",
+    "productUsage": [
+      "海外旅行やビジネスシーンでのリアルタイム翻訳",
+      "ランニングやサイクリング時の音楽再生",
+      "日常的なハンズフリー通話と音声アシスタント利用"
+    ],
+    "positivePoints": [
+      "100言語以上のリアルタイム翻訳機能と双方向対話モードに対応",
+      "オープンイヤー設計で周囲の音を聞きながら安全に音楽を楽しめる",
+      "最大8時間の連続再生が可能な長寿命バッテリー搭載",
+      "40gの軽量設計とブルーライトカットレンズで日常使いしやすい"
+    ],
+    "negativePoints": [
+      "商品ページ内でカメラの有無に関する表記が混在しており仕様が分かりにくい",
+      "IP54防水のため、激しい雨や水没には対応しない"
+    ],
+    "useCases": [
+      "海外旅行先での現地人とのコミュニケーション",
+      "周囲の安全に気を配る必要がある屋外スポーツ時の音楽鑑賞",
+      "PC作業中のブルーライト対策とウェブ会議用ヘッドセットとしての利用"
+    ],
+    "userStories": [],
+    "userImpression": "多機能なスマートグラスとして、特に語学学習や海外旅行に役立つ翻訳機能と、日常生活での使いやすさを両立している点が評価できる。ただし、カメラの有無など一部仕様が不明瞭な点には注意が必要である。",
+    "sources": [
+      {
+        "id": "src-1",
+        "name": "Amazon商品ページ",
+        "url": "https://www.amazon.co.jp/dp/B0GX9165HJ",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-06-12",
+        "author": "Amazon",
+        "conflictOfInterest": "disclosed",
+        "notes": "商品の基本スペック、機能紹介、価格情報を確認"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "130以上の言語に対応したリアルタイム翻訳機能",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": ["src-1"],
+        "crossChecked": false,
+        "notes": "商品説明文に記載あり。遅延0.5秒での高速翻訳を謳う"
+      },
+      {
+        "claim": "最大8時間の連続再生",
+        "category": "durability",
+        "confidence": "high",
+        "supportingSourceIds": ["src-1"],
+        "crossChecked": false,
+        "notes": "2時間の充電で最大8時間再生、200時間待機が可能"
+      }
+    ],
+    "lastInvestigated": "2026-06-12",
+    "competitiveAnalysis": [
+      {
+        "name": "Pramie AIスマートグラス 調光メガネ",
+        "asin": "B0GLXWQJFQ",
+        "priceComparison": "価格はほぼ同等。",
+        "featureComparison": [
+          "共通点：AI翻訳機能、Bluetoothスピーカー機能",
+          "相違点：対象商品は標準でブルーライトカットレンズが付属しているが、競合品は調光レンズを採用している"
+        ],
+        "differentiators": [
+          "Pramie AIスマートグラスの利点：PC作業などでのブルーライト対策に適している",
+          "Pramie AIスマートグラス 調光メガネの利点：屋外と屋内でレンズの色が変わるため、常に装着するのに適している"
+        ]
+      },
+      {
+        "name": "Mingtawn スマートグラス",
+        "asin": "B0GS57BNHX",
+        "priceComparison": "対象商品よりも高価。",
+        "featureComparison": [
+          "共通点：Bluetooth 5.4対応、オープンイヤー設計",
+          "相違点：対象商品はAI翻訳機能がメインであるが、競合品は最新のスマートメガネとしての基本機能に特化している可能性がある"
+        ],
+        "differentiators": [
+          "Pramie AIスマートグラスの利点：多言語翻訳機能を搭載しており、価格も手頃",
+          "Mingtawn スマートグラスの利点：競合商品独自の最新設計やデザインが好みに合う場合がある"
+        ]
+      },
+      {
+        "name": "PAXA S7PRO 自動調光 スマートグラス",
+        "asin": "B0FYFF8FCT",
+        "priceComparison": "対象商品よりも高価。",
+        "featureComparison": [
+          "共通点：Bluetooth 5.4、通話/音楽再生機能",
+          "相違点：対象商品はAI翻訳を搭載、競合品はウーファー搭載やノイズキャンセリング機能などオーディオ性能に注力している"
+        ],
+        "differentiators": [
+          "Pramie AIスマートグラスの利点：AI翻訳などコミュニケーション支援機能が充実",
+          "PAXA S7PRO 自動調光 スマートグラスの利点：より高品質なオーディオ体験を求めるユーザーに適している"
+        ]
+      },
+      {
+        "name": "Joautrial スマートグラス",
+        "asin": "B0GY8KG9ZC",
+        "priceComparison": "対象商品よりも高価。",
+        "featureComparison": [
+          "共通点：Bluetooth 5.4、音声制御、ブルーライトレンズ",
+          "相違点：対象商品はAI翻訳の対応言語が明記されているが、競合品はAI機能の具体的な詳細が異なる可能性がある"
+        ],
+        "differentiators": [
+          "Pramie AIスマートグラスの利点：安価でありながら130言語以上の翻訳に対応している",
+          "Joautrial スマートグラスの利点：最新の2026年モデルとしての独自の強みがある場合がある"
+        ]
+      },
+      {
+        "name": "Pramie スマートメガネ",
+        "asin": "B0FW4YTP5Y",
+        "priceComparison": "対象商品よりも安価。",
+        "featureComparison": [
+          "共通点：Pramieブランド、Bluetoothスピーカー機能",
+          "相違点：対象商品はAI翻訳機能を搭載しているが、競合品は翻訳機能を搭載していない"
+        ],
+        "differentiators": [
+          "Pramie AIスマートグラスの利点：リアルタイムの多言語翻訳機能を利用できる",
+          "Pramie スマートメガネの利点：翻訳機能が不要で、純粋にオーディオグラスとして使いたい場合に安く購入できる"
+        ]
+      },
+      {
+        "name": "Pramie スマートメガネ 調光",
+        "asin": "B0FVS2JDYP",
+        "priceComparison": "対象商品よりも安価。",
+        "featureComparison": [
+          "共通点：Pramieブランド、Bluetoothスピーカー機能",
+          "相違点：対象商品はAI翻訳機能を搭載しているが、競合品は翻訳機能がなく調光レンズを採用している"
+        ],
+        "differentiators": [
+          "Pramie AIスマートグラスの利点：海外旅行やビジネスでの翻訳用途に使える",
+          "Pramie スマートメガネ 調光の利点：屋内外で快適に使える調光レンズを安価に入手できる"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "海外旅行や出張で言葉の壁を感じている人",
+        "ランニングなどのスポーツ中に安全に音楽を楽しみたい人",
+        "PC作業が多く、ブルーライト対策とイヤホンを兼用したい人"
+      ],
+      "pros": [
+        "130以上の言語に対応する強力なAI翻訳機能",
+        "Bluetooth 5.4対応の安定したワイヤレス接続",
+        "周囲の音が聞こえる安全なオープンイヤー設計",
+        "40gという軽量で長時間の使用でも疲れにくい"
+      ],
+      "cons": [
+        "IP54防滴レベルのため水没には注意が必要",
+        "商品ページ内のカメラの有無に関する説明に矛盾がある"
+      ],
+      "score": 92,
+      "scoreRationale": "[基本点: 70]\n[加点: +8] (130言語対応のAI翻訳やOCR機能など多機能)\n[加点: +7] (多機能ながら4000円台という高いコストパフォーマンス)\n[加点: +2] (40gの軽量設計で日常使いしやすいデザイン)\n[加点: +5] (リアルタイムの双方向翻訳機能という独自の強み)\n[合計: 92]"
+    },
+    "technicalSpecs": {
+      "weight": "40g (パッケージ重量: 約33g)",
+      "connectivity": "Bluetooth 5.4",
+      "waterproof": "IP54",
+      "batteryLife": "最大8時間再生",
+      "chargingTime": "2時間",
+      "standbyTime": "最大200時間",
+      "color": "ホワイト",
+      "features": [
+        "130+言語 AIリアルタイム翻訳",
+        "OCR認識・翻訳",
+        "オープンイヤースピーカー",
+        "ブルーライトカットレンズ",
+        "UV400保護",
+        "物理ボタンコントロール"
+      ]
+    }
+  }
+}
