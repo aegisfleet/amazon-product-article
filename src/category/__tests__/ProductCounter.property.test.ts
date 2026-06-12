@@ -6,27 +6,6 @@ import * as yaml from 'js-yaml';
 import { ProductCounter } from '../ProductCounter';
 
 describe('ProductCounter Properties', () => {
-  let tempDir: string;
-
-  beforeAll(() => {
-    tempDir = fs.mkdtempSync(path.join(os.tmpdir(), 'product-counter-prop-test-'));
-  });
-
-  afterAll(() => {
-    if (tempDir && fs.existsSync(tempDir)) {
-      fs.rmSync(tempDir, { recursive: true, force: true });
-    }
-  });
-
-  const clearTempDir = () => {
-    if (fs.existsSync(tempDir)) {
-      const files = fs.readdirSync(tempDir);
-      for (const file of files) {
-        fs.unlinkSync(path.join(tempDir, file));
-      }
-    }
-  };
-
   // Feature: dynamic-category-control, Property 7: 商品数カウントの正確性
   test('商品数カウントの正確性', () => {
     fc.assert(
@@ -41,33 +20,38 @@ describe('ProductCounter Properties', () => {
           { maxLength: 50 },
         ),
         (products) => {
-          clearTempDir();
+          const runTempDir = fs.mkdtempSync(path.join(os.tmpdir(), 'product-counter-prop-run-'));
+          try {
+            let fileIndex = 0;
+            const expectedCounts = new Map<string, number>();
 
-          let fileIndex = 0;
-          const expectedCounts = new Map<string, number>();
+            for (const product of products) {
+              const normalizedCategories = Array.from(
+                new Set(product.categories.map((c) => c.trim()).filter((c) => c.length > 0)),
+              );
 
-          products.forEach((product) => {
-            const normalizedCategories = Array.from(
-              new Set(product.categories.map((c) => c.trim()).filter((c) => c.length > 0)),
-            );
+              if (normalizedCategories.length === 0) continue;
 
-            if (normalizedCategories.length === 0) return;
+              const frontMatter = yaml.dump({ categories: product.categories });
+              const content = `---\n${frontMatter}---\ncontent`;
+              fs.writeFileSync(path.join(runTempDir, `product_${fileIndex++}.md`), content);
 
-            const frontMatter = yaml.dump({ categories: product.categories });
-            const content = `---\n${frontMatter}---\ncontent`;
-            fs.writeFileSync(path.join(tempDir, `product_${fileIndex++}.md`), content);
+              for (const category of normalizedCategories) {
+                expectedCounts.set(category, (expectedCounts.get(category) || 0) + 1);
+              }
+            }
 
-            normalizedCategories.forEach((category) => {
-              expectedCounts.set(category, (expectedCounts.get(category) || 0) + 1);
+            const counter = new ProductCounter(runTempDir);
+            counter.countProductsByCategory();
+
+            expectedCounts.forEach((count, category) => {
+              expect(counter.getProductCount(category)).toBe(count);
             });
-          });
-
-          const counter = new ProductCounter(tempDir);
-          counter.countProductsByCategory();
-
-          expectedCounts.forEach((count, category) => {
-            expect(counter.getProductCount(category)).toBe(count);
-          });
+          } finally {
+            if (fs.existsSync(runTempDir)) {
+              fs.rmSync(runTempDir, { recursive: true, force: true });
+            }
+          }
         },
       ),
       { numRuns: 100 },
@@ -83,22 +67,27 @@ describe('ProductCounter Properties', () => {
           { minLength: 1, maxLength: 10 },
         ),
         (categories) => {
-          clearTempDir();
-          const frontMatterData = yaml.dump({ categories });
-          const frontMatter = `---\n${frontMatterData}---`;
-          fs.writeFileSync(path.join(tempDir, 'test.md'), frontMatter);
+          const runTempDir = fs.mkdtempSync(path.join(os.tmpdir(), 'product-counter-prop-extract-'));
+          try {
+            const frontMatterData = yaml.dump({ categories });
+            const frontMatter = `---\n${frontMatterData}---`;
+            fs.writeFileSync(path.join(runTempDir, 'test.md'), frontMatter);
 
-          const counter = new ProductCounter(tempDir);
-          counter.countProductsByCategory();
+            const counter = new ProductCounter(runTempDir);
+            counter.countProductsByCategory();
 
-          const normalizedCategories = Array.from(new Set(categories.map((c) => c.trim()).filter((c) => c.length > 0)));
+            const normalizedCategories = Array.from(
+              new Set(categories.map((c) => c.trim()).filter((c) => c.length > 0)),
+            );
 
-          normalizedCategories.forEach((category) => {
-            expect(counter.getProductCount(category)).toBe(1);
-          });
-
-          // 期待されるユニークなカテゴリ数と実際のMapのサイズを比較
-          // ただし他のテストの影響を避けるため独立した比較は難しいがここでは各カテゴリの確認で十分
+            for (const category of normalizedCategories) {
+              expect(counter.getProductCount(category)).toBe(1);
+            }
+          } finally {
+            if (fs.existsSync(runTempDir)) {
+              fs.rmSync(runTempDir, { recursive: true, force: true });
+            }
+          }
         },
       ),
       { numRuns: 100 },

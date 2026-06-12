@@ -6,20 +6,13 @@ import { ProductCounter } from '../ProductCounter';
 describe('ProductCounter', () => {
   let tempDir: string;
 
-  beforeAll(() => {
+  beforeEach(() => {
     tempDir = fs.mkdtempSync(path.join(os.tmpdir(), 'product-counter-test-'));
   });
 
-  afterAll(() => {
+  afterEach(() => {
     if (tempDir && fs.existsSync(tempDir)) {
       fs.rmSync(tempDir, { recursive: true, force: true });
-    }
-  });
-
-  beforeEach(() => {
-    const files = fs.readdirSync(tempDir);
-    for (const file of files) {
-      fs.unlinkSync(path.join(tempDir, file));
     }
   });
 
