@@ -19,6 +19,7 @@ import path from 'node:path';
 import dotenv from 'dotenv';
 import { CreatorsAPIClient } from '../api/CreatorsAPIClient';
 import { ProductSearcher, type SearchSession } from '../search/ProductSearcher';
+import { parseInputAsin } from '../utils/amazon';
 import { setGitHubOutput } from '../utils/github-actions';
 import { Logger } from '../utils/Logger';
 
@@ -104,6 +105,26 @@ async function ensureOutputDirectories(): Promise<void> {
   }
 }
 
+/**
+ * 入力されたASINまたはURLのリストを解決し、ASINのリストにして返す。
+ */
+async function resolveInputAsins(inputs: string[]): Promise<string[]> {
+  logger.info('Resolving input ASINs/URLs...');
+  const resolvedAsins: string[] = [];
+  for (const input of inputs) {
+    try {
+      const resolved = await parseInputAsin(input);
+      resolvedAsins.push(resolved);
+      logger.info(`Resolved: "${input}" -> "${resolved}"`);
+    } catch (error) {
+      throw new Error(`Failed to resolve input "${input}": ${error instanceof Error ? error.message : String(error)}`, {
+        cause: error,
+      });
+    }
+  }
+  return resolvedAsins;
+}
+
 async function main(): Promise<void> {
   logger.info('Starting product search CLI...');
 
@@ -113,6 +134,8 @@ async function main(): Promise<void> {
     logger.info(`Max results per category: ${options.maxResults}`);
 
     if (options.asins && options.asins.length > 0) {
+      options.asins = await resolveInputAsins(options.asins);
+
       logger.info(`Manual ASIN mode: investigating ${options.asins.length} products`);
       logger.info(`Target ASINs: ${options.asins.join(', ')}`);
     }
