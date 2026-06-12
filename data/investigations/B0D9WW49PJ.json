@@ -29,80 +29,97 @@
       "アスリートやトレーニーのコンディション管理",
       "健康意識が高い層の日常的なバイタルモニタリング"
     ],
-    "userStories": [
-      {
-        "userType": "30代 男性 ビジネスパーソン",
-        "scenario": "睡眠改善と日中のパフォーマンス向上",
-        "experience": "以前はスマートウォッチを使っていたが、充電の煩わしさと就寝時の装着感に不満があった。Oura Ringに変えてからは、着けていることを忘れるほど快適で、バッテリーも週に1回の充電で済むためストレスフリー。毎朝のコンディションスコアを見て、その日の仕事のペース配分を決めるようになった。",
-        "sentiment": "positive"
-      },
-      {
-        "userType": "20代 女性 ヨガインストラクター",
-        "scenario": "生理周期と体調管理",
-        "experience": "体温変化から生理周期を予測してくれる機能が非常に便利。自分の体のリズムを把握しやすくなり、無理のないスケジュール管理ができるようになった。アクセサリーとしてもシンプルでどんな服装にも合うのが嬉しい。",
-        "sentiment": "positive"
-      },
-      {
-        "userType": "40代 男性 会社員",
-        "scenario": "購入検討とコスト",
-        "experience": "機能には満足しているが、本体価格に加えてサブスクリプション費用がかかるのが痛い。安価なスマートリングも出ているが、精度の面でOuraを選んだ。もう少し安ければ家族にも勧めたい。",
-        "sentiment": "mixed"
-      }
-    ],
+    "userStories": [],
     "userImpression": "「着けるだけで健康管理ができる」という手軽さと、高い計測精度が評価されている。特に睡眠トラッキングの質に関しては他のデバイスを圧倒するとの声が多い。一方で、高額な本体価格とランニングコスト（サブスク）が導入のハードルとなっている。",
     "sources": [
       {
         "name": "Oura Ring 公式サイト",
-        "url": "https://ouraring.com/jp",
-        "credibility": "high"
+        "url": "https://ouraring.com/ja",
+        "id": "src-1",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2025-07-17",
+        "author": "Oura Health Oy",
+        "conflictOfInterest": "disclosed",
+        "notes": "公式サイトの製品情報"
       },
       {
         "name": "Amazon商品ページ",
         "url": "https://www.amazon.co.jp/dp/B0D9WW49PJ",
-        "credibility": "medium"
+        "id": "src-2",
+        "tier": "medium",
+        "evidenceType": "secondary",
+        "publishedAt": "2025-07-17",
+        "author": "Amazon",
+        "conflictOfInterest": "possible",
+        "notes": "Amazon商品ページでのスペック確認"
       }
     ],
-    "lastInvestigated": "2026-02-15",
+    "lastInvestigated": "2026-06-13",
     "competitiveAnalysis": [
       {
-        "name": "b.ring スマートリング G1",
-        "asin": "B0DQ7Z3CDC",
-        "priceComparison": "約8,800円〜11,000円と、Oura Ringの約5分の1の価格。",
+        "name": "SOXAI RING 1.1",
+        "asin": "B0F59W82K1",
+        "priceComparison": "Oura Ringより安価で、サブスクリプションが不要なためランニングコストもかからない。",
         "featureComparison": [
-          "基本的な歩数、心拍計測は可能だが精度は劣る",
-          "アプリの使い勝手や分析機能はOuraが圧倒的に上",
-          "バッテリー持ちは最大7日間と近い"
+          "共通点：睡眠、心拍、歩数などの健康指標を追跡可能。チタン製で防水機能あり。",
+          "相違点：Ouraは20以上の健康指標を計測可能で精度が高い。SOXAIは日本企業による日本人向けの設計とサポートが特徴。"
         ],
         "differentiators": [
-          "圧倒的な低価格",
-          "サブスクリプション不要"
-        ]
-      },
-      {
-        "name": "POSOKONN スマートリング",
-        "asin": "B0G3DS1F7P",
-        "priceComparison": "約5,700円と非常に安価。",
-        "featureComparison": [
-          "ジェスチャー操作機能など独自機能があるが、健康管理機能は簡易的",
-          "防水性能や素材の質感が劣る可能性がある"
-        ],
-        "differentiators": [
-          "低価格",
-          "ジェスチャー操作"
+          "Oura Ring 第4世代 スマートリングの利点：圧倒的な計測精度と洗練されたアプリ体験、世界的なユーザーベースによる信頼性。",
+          "SOXAI RING 1.1の利点：サブスク不要でコストパフォーマンスに優れ、日本人向けのサポート体制が充実している。"
         ]
       },
       {
         "name": "Samsung Galaxy Ring",
-        "asin": null,
-        "priceComparison": "海外価格は約400ドル（約6万円）とOura Ringと同等かそれ以上。",
+        "asin": "B0DQP9SFR3",
+        "priceComparison": "Oura Ringよりやや高価。",
         "featureComparison": [
-          "Galaxyスマートフォンとの連携機能が強力",
-          "充電ケースが付属しており使い勝手が良い",
-          "サブスクリプション不要のモデルもある"
+          "共通点：睡眠、心拍などの健康管理機能を搭載し、チタン素材で耐久性が高い。",
+          "相違点：Galaxy RingはGalaxy AIに対応し、Galaxyデバイスとの連携が強力。"
         ],
         "differentiators": [
-          "Samsungエコシステムとの統合",
-          "充電ケース標準付属"
+          "Oura Ring 第4世代 スマートリングの利点：デバイスを選ばずiOS/Android両方で高精度の計測とアプリの利便性を享受できる。",
+          "Samsung Galaxy Ringの利点：Samsungのエコシステム内でシームレスな連携が可能。"
+        ]
+      },
+      {
+        "name": "EVERING",
+        "asin": "B0FFB9VY3S",
+        "priceComparison": "Oura Ringの1/4以下の価格。",
+        "featureComparison": [
+          "共通点：指輪型のウェアラブルデバイスである点。",
+          "相違点：Oura Ringが健康管理に特化しているのに対し、EVERINGは決済機能（NFC TypeA）に特化しており、充電が不要。"
+        ],
+        "differentiators": [
+          "Oura Ring 第4世代 スマートリングの利点：睡眠や活動量など、詳細な健康管理が可能。",
+          "EVERINGの利点：充電不要で日常的な決済をスマートに行える点。"
+        ]
+      },
+      {
+        "name": "RingConn Gen 2 Air",
+        "asin": "B0DWJTV3J5",
+        "priceComparison": "Oura Ringより安価。",
+        "featureComparison": [
+          "共通点：睡眠、心拍、ストレスなどの健康トラッキングが可能。",
+          "相違点：RingConnは標準機能のサブスクリプション料金が不要で、最大10日間のバッテリー寿命を持つ。"
+        ],
+        "differentiators": [
+          "Oura Ring 第4世代 スマートリングの利点：長年培われたアルゴリズムによる高い精度と信頼性。",
+          "RingConn Gen 2 Airの利点：サブスクリプション不要で、長期間のバッテリー駆動が可能。"
+        ]
+      },
+      {
+        "name": "RingConn Gen 2",
+        "asin": "B0DG2S6GC1",
+        "priceComparison": "Oura Ringと同等の価格。",
+        "featureComparison": [
+          "共通点：睡眠、心拍、ストレス追跡などの詳細な健康管理機能を持つ。",
+          "相違点：RingConn Gen 2はサブスクリプション不要で、最大12日間という非常に長いバッテリー駆動時間を実現。"
+        ],
+        "differentiators": [
+          "Oura Ring 第4世代 スマートリングの利点：業界標準とも言える高い計測精度と、洗練されたアプリのUI/UX。",
+          "RingConn Gen 2の利点：サブスク不要で追加コストがかからず、充電の頻度をさらに減らせる点。"
         ]
       }
     ],
@@ -127,30 +144,21 @@
       "scoreRationale": "[基本点: 70]\n[加点: +10] (業界最高峰の計測精度と洗練されたアプリ体験)\n[減点: -10] (高額な本体価格とサブスクリプションコスト)\n[加点: +5] (チタン素材の高級感と耐久性)\n[加点: +5] (スマートリングのパイオニアとしての高い信頼性とブランド力)\n[加点: +5] (第4世代でのデザイン改良と快適性向上)\n[合計: 85]"
     },
     "technicalSpecs": {
-      "material": "チタン（PVDコーティング）",
-      "connectivity": "Bluetooth Low Energy (BLE)",
-      "battery": {
-        "life": "最長8日間",
-        "charging": "専用充電器にて約20〜80分で満充電"
-      },
-      "sensors": [
-        "赤外線光学式脈拍センサー",
-        "赤色LEDセンサー（血中酸素ウェルネス）",
-        "3D加速度センサー",
-        "皮膚温センサー"
-      ],
-      "waterResistance": "100m防水",
       "dimensions": {
-        "width": "7.9mm",
-        "thickness": "2.55mm",
-        "weight": "4〜6g（サイズによる）"
+        "height": "7.0mm",
+        "width": "28.0mm",
+        "depth": "28.0mm"
       },
-      "compatibility": "iOS, Android",
+      "weight": "5.2g",
+      "capacity": "なし",
+      "material": "航空宇宙グレードのチタン",
+      "origin": "不明",
       "other": [
-        "画面なし",
-        "振動なし",
-        "サイズキット対応"
+        "バッテリー: 最長8日間",
+        "防水: 100m防水",
+        "機能: 睡眠、心拍、フィットネス、ストレス、血中酸素ウェルネス計測"
       ]
-    }
+    },
+    "claims": []
   }
 }
