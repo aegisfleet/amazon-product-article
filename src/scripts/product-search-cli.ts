@@ -125,6 +125,36 @@ async function resolveInputAsins(inputs: string[]): Promise<string[]> {
   return resolvedAsins;
 }
 
+/**
+ * 解決されたASINのリストをGitHub ActionsのJob Summaryに出力する。
+ */
+async function writeToStepSummary(inputs: string[], resolved: string[]): Promise<void> {
+  const summaryFile = process.env.GITHUB_STEP_SUMMARY;
+  if (!summaryFile) return;
+
+  const lines = [
+    '### 調査対象のASIN（手動入力）',
+    '以下のASINが指定された。',
+    '',
+    '| 入力された内容 | 解析後のASIN |',
+    '| :--- | :--- |',
+  ];
+
+  for (let i = 0; i < inputs.length; i++) {
+    const input = inputs[i];
+    const resolvedAsin = resolved[i];
+    lines.push(`| \`${input}\` | \`${resolvedAsin}\` |`);
+  }
+
+  lines.push('');
+
+  try {
+    await fs.appendFile(summaryFile, lines.join('\n'));
+  } catch (error) {
+    logger.error('Failed to write to GITHUB_STEP_SUMMARY:', error);
+  }
+}
+
 async function main(): Promise<void> {
   logger.info('Starting product search CLI...');
 
@@ -134,10 +164,14 @@ async function main(): Promise<void> {
     logger.info(`Max results per category: ${options.maxResults}`);
 
     if (options.asins && options.asins.length > 0) {
+      const originalAsins = [...options.asins];
       options.asins = await resolveInputAsins(options.asins);
 
       logger.info(`Manual ASIN mode: investigating ${options.asins.length} products`);
       logger.info(`Target ASINs: ${options.asins.join(', ')}`);
+
+      // Write resolved ASINs to GitHub Job Summary
+      await writeToStepSummary(originalAsins, options.asins);
     }
 
     await ensureOutputDirectories();
