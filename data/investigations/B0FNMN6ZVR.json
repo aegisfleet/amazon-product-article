@@ -1,0 +1,181 @@
+{
+  "analysis": {
+    "productName": "Tapo C113",
+    "parentAsin": "B0FXKPDP3B",
+    "productDescription": "IP65の防水・防塵性能を備え、屋内外での見守りや防犯に使える2K高画質のスマートカメラ。フルカラーナイトビジョンやAI検知機能を搭載。",
+    "productUsage": [
+      "玄関や庭の防犯カメラとして",
+      "リビングや子供部屋の見守りカメラとして",
+      "離れた場所からの双方向音声通話用"
+    ],
+    "positivePoints": [
+      "IP65防水防塵で屋外でも使用可能",
+      "2K 300万画素の高画質で細かい部分も鮮明に録画できる",
+      "AIが人物や動きを判別し、必要な通知だけを受け取れる",
+      "スポットライト搭載により夜間でもフルカラー撮影が可能"
+    ],
+    "negativePoints": [
+      "水平360度のパン・チルト（首振り）機能には対応していない",
+      "クラウド保存（Tapo Care）の利用は有料（フリートライアルあり）"
+    ],
+    "useCases": [
+      "外出先からスマホで留守中の家やペットの様子を確認する",
+      "夜間に屋外で不審な動きがあった際にアプリで通知を受け取り、威嚇する"
+    ],
+    "userStories": [],
+    "userImpression": "屋内外のどちらでも使用でき、防水性能とフルカラーナイトビジョン機能により、幅広い環境で安定した見守り・防犯対策ができる高コスパなカメラとして評価が高い。",
+    "sources": [
+      {
+        "id": "src-1",
+        "name": "TP-Link公式サイト Tapo C113",
+        "url": "https://www.tp-link.com/jp/home-networking/cloud-camera/tapo-c113/#specifications",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-06-12",
+        "author": "TP-Link",
+        "conflictOfInterest": "none",
+        "notes": "製品仕様、2K 300万画素、IP65防塵防水、フルカラーナイトビジョン、AI検知機能などを確認"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "IP65の防水・防塵性能により屋内外で使用可能",
+        "category": "durability",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "crossChecked": false,
+        "notes": "メーカー公式仕様でIP65を確認"
+      },
+      {
+        "claim": "スポットライト搭載で夜間もフルカラー撮影が可能",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "crossChecked": false,
+        "notes": "白色ライト×2・赤外線ライト×2搭載を確認"
+      }
+    ],
+    "lastInvestigated": "2026-06-12",
+    "competitiveAnalysis": [
+      {
+        "name": "ZOSI C518",
+        "asin": "B0CHMJNRPK",
+        "priceComparison": "Tapo C113より少し安い価格帯。屋内に特化しパン・チルト機能（首振り）を重視する場合に適している。",
+        "featureComparison": [
+          "共通点：2K 300万画素の高画質、双方向通話対応、AI人体検知対応、夜間カラー撮影対応",
+          "相違点：Tapo C113はIP65防塵防水で屋外対応だが首振り機能なし。ZOSI C518は屋内専用で360°首振りと自動追跡機能がある。"
+        ],
+        "differentiators": [
+          "Tapo C113の利点：IP65防水防塵で屋外の設置にも対応している点",
+          "ZOSI C518の利点：カメラの向きを遠隔で変えられる首振り機能と自動追跡がある点"
+        ]
+      },
+      {
+        "name": "blurams デュアルレンズカメラ",
+        "asin": "B0F3HW4J2J",
+        "priceComparison": "Tapo C113とほぼ同等の価格帯。デュアルレンズで2箇所の同時監視が可能。",
+        "featureComparison": [
+          "共通点：2K 300万画素、フルカラー暗視、双方向通話対応、AI検知対応",
+          "相違点：Tapo C113はIP65屋外対応。bluramsは屋内専用だがデュアルレンズ搭載でパンチルト（首振り）機能付き。"
+        ],
+        "differentiators": [
+          "Tapo C113の利点：屋外にも設置できる高い防水防塵性能を持つ点",
+          "bluramsの利点：2つのカメラで同時に複数の方向を監視できる点"
+        ]
+      },
+      {
+        "name": "EZVIZ CP1 Pro",
+        "asin": "B09N98PSRW",
+        "priceComparison": "Tapo C113と同等の価格帯。首振り機能とスマート連携が強みの屋内専用モデル。",
+        "featureComparison": [
+          "共通点：2K 300万画素、カラー暗視対応、双方向通話対応",
+          "相違点：Tapo C113は屋外対応。EZVIZ CP1 Proは屋内専用でパンチルト（首振り）や自動追尾、ノイズ検知機能がある。"
+        ],
+        "differentiators": [
+          "Tapo C113の利点：IP65対応で玄関やベランダなど雨のかかる場所にも設置できる点",
+          "EZVIZ CP1 Proの利点：ペットや人の動きに合わせた自動追尾機能を持つ点"
+        ]
+      },
+      {
+        "name": "Tapo C216",
+        "asin": "B0F66MV8F3",
+        "priceComparison": "Tapo C113より少し高い価格帯。IP65防水に加えてパンチルト機能を搭載。",
+        "featureComparison": [
+          "共通点：同じTP-Link製でIP65防水防塵、2K 300万画素、フルカラー暗視対応",
+          "相違点：Tapo C113は固定カメラ。Tapo C216はパンチルト（首振り）機能を搭載している。"
+        ],
+        "differentiators": [
+          "Tapo C113の利点：より安価に屋外用カメラを導入できる点",
+          "Tapo C216の利点：屋外でもカメラの向きを遠隔操作して広範囲を見渡せる点"
+        ]
+      },
+      {
+        "name": "BHOMEA 見守りカメラ",
+        "asin": "B0FCMKWNCY",
+        "priceComparison": "Tapo C113よりやや安い価格帯。基本的な機能を押さえた屋内用モデル。",
+        "featureComparison": [
+          "共通点：300万画素（1080PフルHDより高精細）、双方向通話対応",
+          "相違点：Tapo C113はIP65対応で屋外に設置可能。BHOMEAは屋内専用でパンチルト（首振り）機能付き。"
+        ],
+        "differentiators": [
+          "Tapo C113の利点：屋外利用が可能で、メーカーの知名度とアプリの安定性が高い点",
+          "BHOMEAの利点：手頃な価格で首振り機能付きの屋内カメラが手に入る点"
+        ]
+      },
+      {
+        "name": "Tapo TC70",
+        "asin": "B08YDQWV3Y",
+        "priceComparison": "Tapo C113と同等の価格帯。屋内向けの1080P/パンチルト対応モデル。",
+        "featureComparison": [
+          "共通点：TP-Link製、双方向通話対応、動作検知対応",
+          "相違点：Tapo C113は屋外対応（IP65）で2K 300万画素。TC70は屋内専用で1080p（207万画素）、パンチルト対応。"
+        ],
+        "differentiators": [
+          "Tapo C113の利点：屋外設置が可能で、より高画質な映像が記録できる点",
+          "Tapo TC70の利点：屋内での首振り監視に特化している点"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "手頃な価格で屋外用の高画質カメラを探している人",
+        "夜間でもカラーで鮮明な映像を確認したい人",
+        "玄関やガレージのセキュリティ対策を強化したい人"
+      ],
+      "pros": [
+        "IP65の防水防塵仕様で屋内外を問わず設置可能",
+        "2K 300万画素の高解像度とフルカラー暗視による鮮明な録画",
+        "AI検知により必要な通知のみを受け取れる"
+      ],
+      "cons": [
+        "パンチルト（遠隔首振り）機能は搭載していない",
+        "クラウド録画は有料オプションとなる"
+      ],
+      "score": 85,
+      "scoreRationale": "[基本点: 70]\n[加点: +5] (IP65防塵防水で屋外への設置に柔軟に対応)\n[加点: +5] (2K 300万画素の高解像度とフルカラーナイトビジョンによる高い基本性能)\n[加点: +5] (AI検知など十分な防犯機能とコストパフォーマンスの良さ)\n[合計: 85]"
+    },
+    "technicalSpecs": {
+      "dimensions": {
+        "height": "92.0mm",
+        "width": "60.5mm",
+        "depth": "61.1mm"
+      },
+      "lens": "焦点距離：3.16mm、絞り：F1.6",
+      "resolution": "2K 3MP (2304×1296px)",
+      "frameRate": "15/20/25/30fps",
+      "nightVision": "850nm IR LED (最長12m)、フルカラーナイトビジョン",
+      "connectivity": "2.4GHz Wi-Fi",
+      "storage": "microSDカード (最大512GB対応、別売)、クラウド保存 (Tapo Care有償)",
+      "waterResistance": "IP65",
+      "other": [
+        "内蔵マイク・スピーカー (双方向通話対応)",
+        "AI検知 (動体検知、人物検知、赤ちゃんの泣き声検知)",
+        "USB Type-C電源"
+      ]
+    }
+  }
+}
