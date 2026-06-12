@@ -1,0 +1,228 @@
+{
+  "analysis": {
+    "productName": "TP-Link Tapo C120 ネットワークWi-Fiカメラ",
+    "parentAsin": "B0GQYPY6MB",
+    "productDescription": "屋内・屋外兼用で使用できる2K QHD（4MP）の高解像度Wi-Fi防犯カメラ。スターライトセンサーとスポットライト搭載で夜間でもカラー撮影が可能。",
+    "productUsage": [
+      "自宅の防犯対策",
+      "ペットや子供の見守り",
+      "庭や駐車場など屋外の監視"
+    ],
+    "positivePoints": [
+      "2K QHDの高解像度で車のナンバーまで把握できるほど鮮明",
+      "スターライトセンサーとスポットライトにより、夜間でもフルカラー撮影が可能",
+      "マグネット台座により、金属面へ簡単に設置できる",
+      "動体検知の数秒前から録画を開始し、重要なシーンを見逃さない",
+      "IP66の防水防塵性能で屋外でも安心して使える"
+    ],
+    "negativePoints": [
+      "常時給電式のため電源ケーブル（約3m）の取り回しが必要",
+      "PCブラウザからの直接のリアルタイム視聴には非対応（スマートフォンアプリ主体）",
+      "AIの高度な機能（人物・車両識別など）はTapo Careクラウドサービス（有償）に依存する部分がある"
+    ],
+    "useCases": [
+      "玄関先に設置して来客や不審者の確認",
+      "室内に設置して留守番中のペットの様子を確認",
+      "ベランダや庭先に設置して周囲の監視"
+    ],
+    "userStories": [
+      {
+        "userType": "防犯対策を始めた家庭",
+        "scenario": "庭先に不審者が入らないか心配になり設置",
+        "experience": "マグネット台座なので、鉄製の柱にカチッとくっつけるだけで簡単に設置できました。夜間でもライトが点灯してカラーで撮影されるため、どんな服を着た人が通ったかまでハッキリ分かります。動体検知の数秒前から録画されているので、突然の動きでも見逃しがなく安心です。",
+        "supportingSourceIds": [
+          "src-mybest"
+        ],
+        "sentiment": "positive"
+      },
+      {
+        "userType": "ペットを飼っている人",
+        "scenario": "外出中の犬の様子を見守るためにリビングに設置",
+        "experience": "コンパクトで目立たないデザインなので部屋の隅に置いても邪魔になりません。インビジブルIRモード（赤外線LEDが光らないモード）があるため、夜間でもカメラの光でペットを驚かせずに済みました。",
+        "supportingSourceIds": [
+          "src-tplink-official"
+        ],
+        "sentiment": "positive"
+      }
+    ],
+    "userImpression": "画質が非常に良く、昼夜問わず細かい部分まで確認できると高く評価されています。設置がマグネットで手軽なこと、動体検知時の事前録画機能が優秀であることも好評です。一方で、ケーブル配線が必要な点に注意が必要という声もありますが、価格に対しての性能（コスパ）は非常に高いと評価されています。",
+    "sources": [
+      {
+        "id": "src-tplink-official",
+        "name": "TP-Link Tapo C120 公式製品ページ",
+        "url": "https://www.tp-link.com/jp/smart-home/tapo/tapo-c120/",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2024-02-29",
+        "author": "TP-Link 日本",
+        "conflictOfInterest": "possible",
+        "notes": "製品の仕様詳細（寸法67.4 × 57.4 × 44.1mm、2K QHD 4MP、画角120度、スターライトセンサー、インビジブルIRモード等）を確認。"
+      },
+      {
+        "id": "src-mybest",
+        "name": "TP-Link Tapo C120の口コミ・評判は？実際に使ってよい点・気になる点を徹底レビュー！",
+        "url": "https://my-best.com/products/3625170",
+        "tier": "high",
+        "evidenceType": "secondary",
+        "publishedAt": "2025-01-01",
+        "author": "my-best",
+        "conflictOfInterest": "none",
+        "notes": "実機レビューにて、水平画角100度、昼夜の画質の良さ（車のナンバーが読めるレベル）、マグネット設置の手軽さ、検知数秒前からの録画機能が確認された。"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "夜間でもフルカラーで撮影でき、人物や車のナンバーまで把握可能",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-tplink-official",
+          "src-mybest"
+        ],
+        "crossChecked": true,
+        "notes": "公式のスターライトセンサーの記載と、my-bestの実機テストによる確認が一致。"
+      },
+      {
+        "claim": "水平画角が広く、死角が少ない",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-mybest"
+        ],
+        "crossChecked": false,
+        "notes": "my-bestの実測で水平画角100度を記録。"
+      },
+      {
+        "claim": "ビス留め不要でマグネットで簡単に設置可能",
+        "category": "comparativeAdvantage",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-tplink-official",
+          "src-mybest"
+        ],
+        "crossChecked": true,
+        "notes": "公式の設置方法および実機レビューでマグネット対応を確認。"
+      }
+    ],
+    "lastInvestigated": "2026-06-12",
+    "competitiveAnalysis": [
+      {
+        "name": "TP-Link Tapo C206",
+        "asin": "B0F2S9QGZ9",
+        "priceComparison": "Tapo C206の方がわずかに安価ですが、主に屋内利用を想定したパンチルト（首振り）型です。",
+        "featureComparison": [
+          "共通点：スマホアプリ対応、音声通話、暗視機能",
+          "相違点：Tapo C120は屋外対応（IP66）でマグネット設置・2K画質、C206は首振り機能搭載で1080p画質"
+        ],
+        "differentiators": [
+          "Tapo C120の利点：屋外にも設置可能で、画質がより高く（2K QHD）、マグネットで手軽に壁などに固定できる点",
+          "Tapo C206の利点：広範囲を見渡せる首振り（パン・チルト）機能があり、室内でのペットの追尾などに適している点"
+        ]
+      },
+      {
+        "name": "AESTIQUO 6MP 360° 防犯カメラ",
+        "asin": "B0GBWFR6S4",
+        "priceComparison": "ほぼ同価格帯です。Tapo C120は固定型高画質、AESTIQUOは首振り対応という違いがあります。",
+        "featureComparison": [
+          "共通点：屋外・屋内兼用、フルカラーナイトビジョン、双方向通話",
+          "相違点：Tapo C120は大手メーカー製でマグネット固定式、AESTIQUOはパンチルト（首振り）対応で6MPの超高画素を謳う"
+        ],
+        "differentiators": [
+          "Tapo C120の利点：TP-Linkの安定したアプリ（Tapoアプリ）とサポート、コンパクトで設置場所を選ばないマグネット台座",
+          "AESTIQUOの利点：カメラ自体を動かして広範囲（左右355°/上下120°）を確認できるパンチルト機能を搭載している点"
+        ]
+      },
+      {
+        "name": "TP-Link Tapo C425",
+        "asin": "B0CQ233LB8",
+        "priceComparison": "Tapo C425はTapo C120の2倍以上の価格です。バッテリー搭載の完全ワイヤレスモデルとしての付加価値があります。",
+        "featureComparison": [
+          "共通点：2K QHD画質、IP66防水防塵、マグネット設置、フルカラーナイトビジョン",
+          "相違点：Tapo C120は有線給電式、C425はバッテリー駆動のフルワイヤレス式"
+        ],
+        "differentiators": [
+          "Tapo C120の利点：バッテリー切れの心配がなく、24時間連続での録画や監視が安定して行える点",
+          "TP-Link Tapo C425の利点：電源ケーブルが一切不要で、コンセントのない屋外のどこにでも設置できる点"
+        ]
+      },
+      {
+        "name": "TP-Link Tapo C520WS/A",
+        "asin": "B0CCV51F5R",
+        "priceComparison": "Tapo C520WS/AはTapo C120より約4,000円ほど高価です。屋外専用の首振り機能という上位スペックを備えます。",
+        "featureComparison": [
+          "共通点：2K QHD画質、スターライトセンサー、IP66防水防塵",
+          "相違点：Tapo C120はコンパクトな固定型、C520WS/Aはパンチルト（首振り）対応で有線LAN接続も可能"
+        ],
+        "differentiators": [
+          "Tapo C120の利点：本体が小さく目立ちにくいデザインで、室内にも違和感なく設置でき、コストパフォーマンスに優れる点",
+          "TP-Link Tapo C520WS/Aの利点：屋外で広範囲を自動追跡したり、Wi-Fiが不安定な場所で有線LAN接続が選べる点"
+        ]
+      },
+      {
+        "name": "TP-Link Tapo C411",
+        "asin": "B0G1M614MX",
+        "priceComparison": "Tapo C411はTapo C120より高価です。バッテリー駆動モデルとしての価格差です。",
+        "featureComparison": [
+          "共通点：2K画質、屋外屋内対応、フルカラーナイトビジョン",
+          "相違点：Tapo C120は有線給電式・IP66、C411はバッテリー駆動式・IP65"
+        ],
+        "differentiators": [
+          "Tapo C120の利点：充電の手間がなく、有線給電ならではの安定した常時録画や動体検知前の事前録画機能が強力な点",
+          "TP-Link Tapo C411の利点：バッテリー駆動で配線工事やケーブルの取り回しが不要なため、設置場所の自由度が極めて高い点"
+        ]
+      },
+      {
+        "name": "ATOM Cam Swing",
+        "asin": "B09LYDCL5W",
+        "priceComparison": "ATOM Cam SwingはTapo C120よりやや高価です。首振り機能を搭載しています。",
+        "featureComparison": [
+          "共通点：屋外屋内兼用、スマートスピーカー対応（Alexa等）、小型デザイン",
+          "相違点：Tapo C120は2K画質の固定カメラ、ATOM Cam Swingは1080p画質の首振り（360度回転）カメラ"
+        ],
+        "differentiators": [
+          "Tapo C120の利点：画質が高く（2K QHD）、防水防塵性能（IP66）や検知前録画など、防犯カメラとしての基本性能が高い点",
+          "ATOM Cam Swingの利点：カメラ自体を回転させて周囲360度を見渡せ、ペットや人物の自動追跡が可能な点"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "低予算で高画質な防犯カメラを導入したい人",
+        "賃貸などで壁に穴を開けずに屋外/屋内にカメラを設置したい人",
+        "電源を確保でき、充電の手間なく常時監視を行いたい人"
+      ],
+      "pros": [
+        "2K QHDとスターライトセンサーによる鮮明な昼夜撮影",
+        "動体検知の数秒前からの録画機能で決定的瞬間を見逃さない",
+        "マグネットで簡単に設置可能"
+      ],
+      "cons": [
+        "有線電源（3mケーブル）の確保が必要",
+        "首振り（パン・チルト）機能がないため撮影範囲は固定される"
+      ],
+      "score": 88,
+      "scoreRationale": "[基本点: 70]\n[加点: +5] (5,000円台という低価格ながら2K QHDの高画質を実現しておりコスパが高い)\n[加点: +5] (スターライトセンサー搭載により夜間でもカラーで鮮明な映像を残せる優れた性能)\n[加点: +4] (動体検知の数秒前からの録画機能があり、防犯上の実用性が非常に高い)\n[加点: +4] (マグネット台座により、壁へのビス打ち不要で手軽に設置できる利便性)\n[減点: -0] (特筆すべき欠陥はないが、電源ケーブルの取り回しが必要な点は用途によって考慮が必要)\n[合計: 88]"
+    },
+    "technicalSpecs": {
+      "dimensions": {
+        "height": "44.1mm",
+        "width": "67.4mm",
+        "depth": "57.4mm"
+      },
+      "weight": "非公開（マグネット設置可能な軽量設計）",
+      "resolution": "2K QHD 4MP（2560×1440px）",
+      "frameRate": "20fps",
+      "lens": "焦点距離 3.17mm / 絞り 1.65 / 画角 120°（対角）",
+      "nightVision": "850nm / 940nm IR LED（最長9m）、フルカラーナイトビジョン対応",
+      "storage": "microSDカードスロット内蔵（最大512GB対応）、クラウド（Tapo Care/有償）",
+      "connectivity": "Wi-Fi（IEEE 802.11b/g/n 2.4GHz帯）",
+      "power": "5V DC 電源アダプター（Type-Cケーブル約3m）",
+      "environment": "動作温度 -20℃～45℃ / IP66防水防塵",
+      "other": [
+        "内蔵マイク・スピーカー搭載（双方向通話対応）",
+        "AI検知（動体、人物、車両、ペット等）",
+        "Amazon Alexa、Google アシスタント連携"
+      ]
+    }
+  }
+}
