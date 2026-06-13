@@ -376,6 +376,20 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // --- Category Click Filter ---
+  if (gridEl) {
+    gridEl.addEventListener('click', (e) => {
+      const catEl = e.target.closest('.bargain-card-category');
+      if (catEl) {
+        const catText = catEl.textContent.trim();
+        if (catText && categorySelect) {
+          categorySelect.value = catText;
+          applyFilters();
+        }
+      }
+    });
+  }
+
   // --- Init ---
   readUrlParams();
   updateSortButtons();
