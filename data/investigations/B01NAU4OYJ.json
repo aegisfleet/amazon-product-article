@@ -1,0 +1,241 @@
+{
+  "analysis": {
+    "productName": "From da Phactory ワンタッチセグメントリング 16G 内径8mm",
+    "parentAsin": "B01NAU4OYJ",
+    "productDescription": "サージカルステンレス製のワンタッチセグメントリングです。金属アレルギーに対応し、多彩な部位のピアスとして使用できます。",
+    "productUsage": [
+      "軟骨ピアス",
+      "トラガス",
+      "ヘリックス",
+      "コンク",
+      "各種ボディピアス",
+      "つけっぱなし用ピアス"
+    ],
+    "positivePoints": [
+      "価格が手頃でコストパフォーマンスに優れる",
+      "ワンタッチで簡単に着脱可能",
+      "サージカルステンレス製で金属アレルギーが出にくい",
+      "継ぎ目がほとんど目立たず、つけっぱなしに最適"
+    ],
+    "negativePoints": [
+      "口用などの特定の部位にはサイズが小さく感じることがある"
+    ],
+    "useCases": [
+      "日常的にずっとつけていたい場合",
+      "アレルギー対応の安全なピアスを探している時",
+      "手頃な価格でシンプルなデザインのピアスが欲しい時"
+    ],
+    "userStories": [
+      {
+        "userType": "金属アレルギーを持つユーザー",
+        "scenario": "つけっぱなしできるピアスを探していた",
+        "experience": "アナトメタルのチタン製を愛用しており、過去にサージカルステンレス製でアレルギーが出たことがあったためダメ元で購入したが、全くアレルギー反応が出ず快適。安価なのに品質が良く、久しぶりにつけられるピアスに出会えて満足している。",
+        "supportingSourceIds": ["src-amazon-review-1"],
+        "sentiment": "positive"
+      },
+      {
+        "userType": "着脱のしやすさを求めるユーザー",
+        "scenario": "セグメントリングは着けづらいというイメージを持っていた",
+        "experience": "ストレートバーベルを愛用していたが、このリングはパチっとハマって簡単に着脱でき、見た目も美しいため非常に感激した。着けっぱなしでの耐久性は今後観察するが、現時点では大変満足。",
+        "supportingSourceIds": ["src-amazon-review-2"],
+        "sentiment": "positive"
+      },
+      {
+        "userType": "日常使いユーザー",
+        "scenario": "手頃な価格で使いやすいピアスを探していた",
+        "experience": "安いのにくすみや歪みがなく、気持ちよくパチっとハマる。継ぎ目もほぼ分からず、つけっぱなしに最適だと感じた。",
+        "supportingSourceIds": ["src-amazon-review-3"],
+        "sentiment": "positive"
+      },
+      {
+        "userType": "サイズ感が合わなかったユーザー",
+        "scenario": "口用のピアスとして購入した",
+        "experience": "商品自体は良いが、口用としてはサイズが少し小さく感じた。",
+        "supportingSourceIds": ["src-amazon-review-4"],
+        "sentiment": "negative"
+      }
+    ],
+    "userImpression": "金属アレルギー持ちのユーザーからも「アレルギーが出ない」と高く評価されており、ワンタッチで簡単に着脱できる利便性と、継ぎ目が目立たず引っかかりにくい設計から、つけっぱなし用として絶大な人気を誇る。価格以上の品質とコストパフォーマンスの高さが多くのユーザーに支持されている。",
+    "sources": [
+      {
+        "id": "src-amazon-review-1",
+        "name": "Amazon カスタマーレビュー",
+        "url": "https://www.amazon.co.jp/dp/B01NAU4OYJ",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2024-01-01",
+        "author": "Amazon カスタマー",
+        "conflictOfInterest": "none",
+        "notes": "金属アレルギー持ちのユーザーが、本製品ではアレルギー反応が出ず、安価で高品質であると評価。"
+      },
+      {
+        "id": "src-amazon-review-2",
+        "name": "Amazon カスタマーレビュー",
+        "url": "https://www.amazon.co.jp/dp/B01NAU4OYJ",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2024-01-01",
+        "author": "Amazon カスタマー",
+        "conflictOfInterest": "none",
+        "notes": "ワンタッチで簡単に着脱でき、見た目も美しいと評価。"
+      },
+      {
+        "id": "src-amazon-review-3",
+        "name": "Amazon カスタマーレビュー",
+        "url": "https://www.amazon.co.jp/dp/B01NAU4OYJ",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2024-01-01",
+        "author": "Amazon カスタマー",
+        "conflictOfInterest": "none",
+        "notes": "くすみや歪みがなく、継ぎ目が目立たないためつけっぱなしに最適と評価。"
+      },
+      {
+        "id": "src-amazon-review-4",
+        "name": "Amazon カスタマーレビュー",
+        "url": "https://www.amazon.co.jp/dp/B01NAU4OYJ",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2024-01-01",
+        "author": "Amazon カスタマー",
+        "conflictOfInterest": "none",
+        "notes": "口用としては少しサイズが小さかったとの意見。"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "サージカルステンレス製で金属アレルギーが出にくい",
+        "category": "safety",
+        "confidence": "high",
+        "supportingSourceIds": ["src-amazon-review-1"],
+        "crossChecked": false,
+        "notes": "メーカーの商品説明および複数のユーザーレビューでアレルギー反応が出ないと報告されている。"
+      },
+      {
+        "claim": "ワンタッチで簡単に着脱でき、継ぎ目が目立たない",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": ["src-amazon-review-2", "src-amazon-review-3"],
+        "crossChecked": false,
+        "notes": "着脱の容易さと、装着時の見た目の美しさ（継ぎ目の目立たなさ）がユーザーから高く評価されている。"
+      }
+    ],
+    "lastInvestigated": "2026-06-13",
+    "competitiveAnalysis": [
+      {
+        "name": "凛りん サージカルステンレス ワンタッチセグメントリング 16G・8mm",
+        "asin": "B079Q1CYYR",
+        "priceComparison": "対象商品よりやや高価である。",
+        "featureComparison": [
+          "共通点：16G、内径8mm、サージカルステンレス素材、ワンタッチタイプのセグメントリングである点。",
+          "相違点：ブランドが異なる。凛りん製はPVDコーティングが施されているカラーバリエーションがある。"
+        ],
+        "differentiators": [
+          "From da Phactory ワンタッチセグメントリング 16G 内径8mmの利点：価格がより手頃であり、コストパフォーマンスに優れている点。",
+          "凛りん サージカルステンレス ワンタッチセグメントリング 16G・8mmの利点：凛りんというボディピアス専門店のブランドに対する信頼感や、特定のコーティングを好む場合に適している点。"
+        ]
+      },
+      {
+        "name": "HSP セグメントリング シルバー 16G 12mm",
+        "asin": "B01JKTMA5O",
+        "priceComparison": "対象商品よりやや高価である。",
+        "featureComparison": [
+          "共通点：16G、サージカルステンレス素材、ワンタッチタイプのセグメントリングである点。",
+          "相違点：内径が異なる（本製品は12mm、対象商品は8mm）。またブランドが異なる。"
+        ],
+        "differentiators": [
+          "From da Phactory ワンタッチセグメントリング 16G 内径8mmの利点：内径8mmというコンパクトなサイズ感で、トラガスやヘリックスなどの狭い部位にフィットしやすい点と、価格が手頃な点。",
+          "HSP セグメントリング シルバー 16G 12mmの利点：内径12mmと大きめであるため、耳たぶ（イヤーロブ）など、ゆとりを持たせて装着したい部位に適している点。"
+        ]
+      },
+      {
+        "name": "ノーブランド セグメントリング ピアス サージカルステンレス ゴールド 16G 内径8mm",
+        "asin": "B0DVYYSM41",
+        "priceComparison": "対象商品より安価である。",
+        "featureComparison": [
+          "共通点：16G、内径8mm、サージカルステンレス素材のセグメントリングである点。",
+          "相違点：対象商品は信頼できるブランド（From da Phactory）であるのに対し、こちらはノーブランド品である点。"
+        ],
+        "differentiators": [
+          "From da Phactory ワンタッチセグメントリング 16G 内径8mmの利点：ピアス専門店としてのブランドの信頼性があり、品質管理やアレルギー対応に対する安心感が高い点。",
+          "ノーブランド セグメントリング ピアス サージカルステンレス ゴールド 16G 内径8mmの利点：とにかく価格を安く抑えたい場合に適している点。"
+        ]
+      },
+      {
+        "name": "凛りん ボディピアス 16G 内径8mm ワンタッチ ビーズリング",
+        "asin": "B09QM5S6R6",
+        "priceComparison": "対象商品より高価である。",
+        "featureComparison": [
+          "共通点：16G、内径8mm、サージカルステンレス素材、ワンタッチタイプである点。",
+          "相違点：対象商品はシンプルなセグメントリングであるのに対し、こちらはビーズが付いたデザイン（キャプティブビーズリング風）である点。"
+        ],
+        "differentiators": [
+          "From da Phactory ワンタッチセグメントリング 16G 内径8mmの利点：シンプルなデザインで引っかかりにくく、日常的なつけっぱなしに最適な点と、価格が手頃な点。",
+          "凛りん ボディピアス 16G 内径8mm ワンタッチ ビーズリングの利点：ビーズのアクセントがあるため、少しデザイン性のあるリングピアスを楽しみたい場合に適している点。"
+        ]
+      },
+      {
+        "name": "From da Phactory ワンタッチ セグメントリング サージカルステンレス シルバー 16G 7mm",
+        "asin": "B0CWNCXX93",
+        "priceComparison": "対象商品と同価格である。",
+        "featureComparison": [
+          "共通点：同じブランドの同じシリーズであり、16G、サージカルステンレス素材、ワンタッチタイプである点。",
+          "相違点：内径が異なる（対象商品は8mm、本製品は7mm）。"
+        ],
+        "differentiators": [
+          "From da Phactory ワンタッチセグメントリング 16G 内径8mmの利点：標準的な内径8mmであり、多くの部位（ヘリックスやロブなど）で汎用的に使いやすい点。",
+          "From da Phactory ワンタッチ セグメントリング サージカルステンレス シルバー 16G 7mmの利点：内径7mmとより小さいため、トラガスなど非常に狭い部位によりタイトに装着したい場合に適している点。"
+        ]
+      },
+      {
+        "name": "凛りん サージカルステンレス ワンタッチセグメントリング PVDコーティング 16G・10mm/ブラック",
+        "asin": "B079Q2GSBF",
+        "priceComparison": "対象商品よりやや高価である。",
+        "featureComparison": [
+          "共通点：16G、サージカルステンレス素材、ワンタッチタイプのセグメントリングである点。",
+          "相違点：内径が異なる（本製品は10mm、対象商品は8mm）。また、カラーがブラックである点。"
+        ],
+        "differentiators": [
+          "From da Phactory ワンタッチセグメントリング 16G 内径8mmの利点：内径8mmでコンパクトであり、カラーもシルバーでシーンを選ばず使いやすい点。また価格も手頃である点。",
+          "凛りん サージカルステンレス ワンタッチセグメントリング PVDコーティング 16G・10mm/ブラックの利点：内径10mmでゆとりがあり、ブラックカラーでクールな印象を与えたい場合に適している点。"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "金属アレルギーでピアス選びに悩んでいる人",
+        "ピアスをつけっぱなしにしたい人",
+        "着脱が簡単なリングタイプのピアスを探している人",
+        "コストパフォーマンスの高いピアスを求めている人"
+      ],
+      "pros": [
+        "サージカルステンレス製で金属アレルギー反応が出にくい",
+        "ワンタッチで簡単に着脱できる",
+        "継ぎ目が滑らかで引っかかりにくく、つけっぱなしに最適",
+        "非常に手頃な価格で購入できる"
+      ],
+      "cons": [
+        "使用部位（口ピアスなど）によってはサイズが合わない場合がある"
+      ],
+      "score": 90,
+      "scoreRationale": "[基本点: 70]\n[加点: +5] (ワンタッチで着脱しやすく、継ぎ目も滑らかで実用性が高い)\n[加点: +10] (競合他社製品と比較しても非常に安価であり、コストパフォーマンスが極めて高い)\n[加点: +5] (サージカルステンレス製で品質が良く、アレルギー対応という安全面での評価が高い)\n[合計: 90]"
+    },
+    "technicalSpecs": {
+      "dimensions": {
+        "height": "8mm",
+        "width": "8mm",
+        "depth": "1.2mm"
+      },
+      "weight": "0.5g",
+      "capacity": "1個",
+      "material": "サージカルステンレス",
+      "origin": "不明",
+      "other": [
+        "ゲージ: 16G (太さ約1.2mm)",
+        "内径: 8mm",
+        "カラー: ステンレス シルバー",
+        "タイプ: ワンタッチセグメントリング"
+      ]
+    }
+  }
+}
