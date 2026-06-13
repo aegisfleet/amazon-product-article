@@ -4263,6 +4263,19 @@ a.competitor-preview:hover {
   font-size: 0.75rem;
   font-weight: 600;
   width: fit-content;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  user-select: none;
+}
+
+.bargain-card-category:hover {
+  background: var(--color-primary);
+  color: white;
+  transform: translateY(-1px) scale(1.03);
+}
+
+.bargain-card-category:active {
+  transform: translateY(0) scale(0.98);
 }
 
 .bargain-card-title {
