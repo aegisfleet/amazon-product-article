@@ -150,5 +150,21 @@
             data-price-bucket="{{ $priceBucket }}" data-price="{{ $product.price }}">🛒
             Amazonで詳細を見る</a>
         {{- end -}}
+
+        <div class="hero-favorite-row">
+            <button type="button" class="btn-favorite-hero" data-favorite-btn="1"
+                data-asin="{{ $product.asin }}"
+                data-title="{{ .Title }}"
+                data-url="{{ .RelPermalink }}"
+                data-image="{{ if $product.images }}{{ index $product.images 0 }}{{ end }}"
+                data-price="{{ $product.price }}"
+                data-score="{{ $product.score | default 0 }}"
+                data-category="{{ $trackingCategory }}"
+                aria-pressed="false"
+                aria-label="お気に入りに追加">
+                <span class="fav-icon" aria-hidden="true">🤍</span>
+                <span class="fav-label">お気に入りに追加</span>
+            </button>
+        </div>
     </div>
 </div>

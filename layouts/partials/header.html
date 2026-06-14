@@ -5,8 +5,14 @@
             {{ .Site.Title }}
         </a>
 
-        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Dark Mode">
-            <span class="theme-toggle-icon"></span>
-        </button>
+        <div class="header-actions">
+            <a href="{{ `favorites/` | relURL }}" class="favorites-nav-btn" id="favorites-nav-btn" aria-label="お気に入りリスト">
+                <span class="fav-nav-icon" aria-hidden="true">🤍</span>
+                <span class="favorites-badge" id="favorites-badge" style="display:none;" aria-live="polite"></span>
+            </a>
+            <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Dark Mode">
+                <span class="theme-toggle-icon"></span>
+            </button>
+        </div>
     </div>
 </header>
