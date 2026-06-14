@@ -4128,9 +4128,9 @@ a.competitor-preview:hover {
 }
 
 .bargain-category-reset-btn:hover:not(:disabled) {
-  border-color: #ef4444;
-  color: #ef4444;
-  background: rgba(239, 68, 68, 0.05);
+  border-color: #b91c1c;
+  color: #b91c1c;
+  background: #fbf4f4;
 }
 
 .bargain-category-reset-btn:focus-visible {
@@ -4147,7 +4147,9 @@ a.competitor-preview:hover {
 }
 
 [data-theme="dark"] .bargain-category-reset-btn:hover:not(:disabled) {
-  background: rgba(239, 68, 68, 0.1);
+  border-color: #fca5a5;
+  color: #fca5a5;
+  background: #353542;
 }
 
 /* --- Sort Buttons --- */
