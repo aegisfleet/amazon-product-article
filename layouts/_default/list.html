@@ -159,6 +159,15 @@
         {{- end -}}
         {{- end -}}
         {{- $specsString := delimit ($specTokens | uniq) "," -}}
+        {{- $trackingCategory := "" -}}
+        {{- $trackingTerms := .GetTerms "categories" -}}
+        {{- if $trackingTerms -}}
+        {{- $trackingCategory = (index $trackingTerms 0).LinkTitle -}}
+        {{- else if .Params.categories -}}
+        {{- $trackingCategory = index .Params.categories 0 -}}
+        {{- else if .Params.category -}}
+        {{- $trackingCategory = .Params.category -}}
+        {{- end -}}
 
         <article class="card" data-price="{{ $priceRaw }}" data-score="{{ .Params.score | default 0 }}"
             data-date="{{ $dateRaw }}" data-specs="{{ $specsString }}">
