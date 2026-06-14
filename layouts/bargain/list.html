@@ -65,9 +65,12 @@
                     <span class="bargain-filter-icon">📂</span>
                     カテゴリ
                 </label>
-                <select id="bargain-category-select" class="bargain-select">
-                    <option value="">すべてのカテゴリ</option>
-                </select>
+                <div class="bargain-category-wrapper">
+                    <select id="bargain-category-select" class="bargain-select">
+                        <option value="">すべてのカテゴリ</option>
+                    </select>
+                    <button type="button" id="bargain-category-reset-btn" class="bargain-category-reset-btn" title="カテゴリ選択を解除" aria-label="カテゴリ選択を解除" disabled>✕</button>
+                </div>
             </div>
 
             <div class="bargain-filter-group">
