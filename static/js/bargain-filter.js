@@ -190,6 +190,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const statsEl = document.getElementById('bargain-result-count');
   const noResultsEl = document.getElementById('bargain-no-results');
   const resetBtn = document.getElementById('bargain-reset-btn');
+  const categoryResetBtn = document.getElementById('bargain-category-reset-btn');
 
   if (!scoreSlider || !priceSlider || !gridEl) return;
 
@@ -335,6 +336,10 @@ document.addEventListener('DOMContentLoaded', () => {
       }
       statsEl.textContent = String(filtered.length);
 
+      if (categoryResetBtn && categorySelect) {
+        categoryResetBtn.disabled = (categorySelect.value === '');
+      }
+
       gridEl.classList.remove('bargain-grid-fade');
       updateUrlParams();
     }, 200);
@@ -365,6 +370,14 @@ document.addEventListener('DOMContentLoaded', () => {
   priceSlider.addEventListener('input', applyFilters);
   if (categorySelect) categorySelect.addEventListener('change', applyFilters);
   if (resetBtn) resetBtn.addEventListener('click', resetFilters);
+  if (categoryResetBtn) {
+    categoryResetBtn.addEventListener('click', () => {
+      if (categorySelect && categorySelect.value !== '') {
+        categorySelect.value = '';
+        applyFilters();
+      }
+    });
+  }
 
   if (sortButtons) {
     sortButtons.addEventListener('click', (e) => {
