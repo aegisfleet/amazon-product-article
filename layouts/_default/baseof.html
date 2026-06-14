@@ -13,6 +13,8 @@
   {{- $pageTitle = printf "あともう一品！高評価お手頃商品 | %s" .Site.Title -}}
   {{- else if eq .Type "categories" -}}
   {{- $pageTitle = printf "Amazon %s おすすめ比較ランキング | AI徹底調査 | %s" .Title .Site.Title -}}
+  {{- else if eq .Type "favorites" -}}
+  {{- $pageTitle = printf "%s | %s" .Title .Site.Title -}}
   {{- else -}}
   {{- $pageTitle = printf "%s レビュー | %s" .Title .Site.Title -}}
   {{- end -}}
