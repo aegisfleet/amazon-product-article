@@ -4090,6 +4090,8 @@ a.competitor-preview:hover {
   font-size: 0.9rem;
   cursor: pointer;
   transition: var(--transition-base);
+  width: 100%;
+  max-width: 100%;
 }
 
 .bargain-select:hover {
