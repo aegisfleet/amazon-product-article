@@ -21,8 +21,8 @@
                     <option value="price-desc">価格の高い順</option>
                 </select>
             </div>
-            <button type="button" class="fav-clear-btn" data-favorites-clear="1" aria-label="お気に入りをすべて削除">
-                🗑️ すべて削除
+            <button type="button" class="fav-clear-btn" data-favorites-clear="1">
+                <span aria-hidden="true">🗑️</span> すべて削除
             </button>
         </div>
     </div>
@@ -83,7 +83,7 @@
 
     .fav-clear-btn:hover {
         background: #fef2f2;
-        color: #dc2626;
+        color: #b91c1c;
         border-color: #fca5a5;
     }
 
@@ -118,7 +118,7 @@
         font-size: 1.1rem;
         line-height: 1;
         transition: transform 0.2s ease;
-        color: #e11d48;
+        color: #be123c;
     }
 
     .fav-remove-btn:hover {
@@ -152,7 +152,7 @@
 
     function parsePrice(str) {
         if (!str) return 0;
-        const m = String(str).replace(/,/g, '').match(/\d+/);
+        const m = String(str).replaceAll(',', '').match(/\d+/);
         return m ? Number(m[0]) : 0;
     }
 

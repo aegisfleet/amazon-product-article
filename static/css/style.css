@@ -4498,12 +4498,12 @@ a.competitor-preview:hover {
 }
 
 .favorites-nav-btn:hover {
-  background-color: rgba(0, 0, 0, 0.05);
-  color: #e11d48;
+  background-color: #f3f4f6;
+  color: #be123c;
 }
 
 [data-theme="dark"] .favorites-nav-btn:hover {
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: #2d3748;
   color: #fda4af;
 }
 
@@ -4612,11 +4612,11 @@ a.competitor-preview:hover {
 }
 
 .btn-favorite-hero:hover {
-  border-color: #e11d48;
+  border-color: #be123c;
   background: #fef2f2;
-  color: #e11d48;
+  color: #be123c;
   transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(225, 29, 72, 0.2);
+  box-shadow: 0 4px 12px rgba(190, 18, 60, 0.2);
 }
 
 [data-theme="dark"] .btn-favorite-hero:hover {
@@ -4626,9 +4626,9 @@ a.competitor-preview:hover {
 }
 
 .btn-favorite-hero.is-favorited {
-  border-color: #e11d48;
+  border-color: #be123c;
   background: linear-gradient(135deg, #fff1f2, #fce7f3);
-  color: #e11d48;
+  color: #be123c;
 }
 
 [data-theme="dark"] .btn-favorite-hero.is-favorited {
