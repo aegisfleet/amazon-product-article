@@ -111,6 +111,7 @@
                     data-asin="{{ .Params.asin }}"
                     data-title="{{ .Title }}"
                     data-url="{{ .RelPermalink }}"
+                    data-affiliate-url="{{ .Params.affiliate_url }}"
                     data-image="{{ if .Params.images }}{{ index .Params.images 0 }}{{ end }}"
                     data-price="{{ .Params.price }}"
                     data-score="{{ .Params.score | default 0 }}"

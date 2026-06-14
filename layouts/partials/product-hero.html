@@ -156,6 +156,7 @@
                 data-asin="{{ $product.asin }}"
                 data-title="{{ .Title }}"
                 data-url="{{ .RelPermalink }}"
+                data-affiliate-url="{{ $product.affiliate_url }}"
                 data-image="{{ if $product.images }}{{ index $product.images 0 }}{{ end }}"
                 data-price="{{ $product.price }}"
                 data-score="{{ $product.score | default 0 }}"

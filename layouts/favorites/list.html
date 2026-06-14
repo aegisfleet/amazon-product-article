@@ -209,7 +209,10 @@
                 <div class="card-footer">
                     <span class="article-meta">登録日: ${formatDate(item.savedAt)}</span>
                     <div style="display:flex; gap: var(--spacing-sm); align-items: center;">
-                        <a href="${escapeHTML(item.url)}" class="btn-amazon-small" style="font-size: 0.8rem; padding: 0.3rem 0.75rem;">📖 詳細を見る</a>
+                        ${item.affiliateUrl
+                            ? `<a href="${escapeHTML(item.affiliateUrl)}" class="btn-amazon-small" target="_blank" rel="noopener noreferrer" style="font-size: 0.8rem; padding: 0.3rem 0.75rem;">🛒 Amazonで見る</a>`
+                            : `<a href="${escapeHTML(item.url)}" class="btn-amazon-small" style="font-size: 0.8rem; padding: 0.3rem 0.75rem;">📖 詳細を見る</a>`
+                        }
                         <button type="button" class="fav-remove-btn" data-remove-asin="${escapeHTML(item.asin)}" aria-label="${escapeHTML(item.title)}をお気に入りから削除" title="お気に入りから削除">❌</button>
                     </div>
                 </div>
