@@ -1,111 +1,179 @@
 {
   "analysis": {
-    "productName": "水月雨 MOONDROP SPACE TRAVEL 2 ULTRA",
+    "productName": "MOONDROP SPACE TRAVEL 2 ULTRA",
     "parentAsin": "B0FSZH9TG9",
-    "productDescription": "「水月雨 MOONDROP SPACE TRAVEL 2 ULTRA」は、13mm平面磁界ドライバーとLDACコーデックに対応し、低価格ながら驚異的な高音質を実現したノイズキャンセリング機能付き完全ワイヤレスイヤホンです。",
+    "productDescription": "水月雨が手掛ける、特許取得済みの13mmリング型片面駆動平面磁界ドライバーを搭載したハイレゾ対応(LDAC)の高音質ワイヤレスノイズキャンセリングイヤホン。",
     "productUsage": [
-      "LDAC対応スマートフォンでのハイレゾ相当の高音質音楽鑑賞",
-      "PCとスマートフォンを同時接続してのオンライン会議と音楽再生の切り替え",
-      "コストを抑えつつ、平面磁界ドライバーの繊細なサウンドを体験したい時の入門機として",
-      "カフェや自宅での集中したリスニング（ANC使用）"
+      "高音質な音楽鑑賞",
+      "通話やリモート会議",
+      "遅延を抑えたゲームプレイ"
     ],
     "positivePoints": [
-      "5,000円台という低価格ながら、通常は高級機に採用される13mm平面磁界ドライバーを搭載。",
-      "高音質コーデック「LDAC」に対応し、従来のダイナミック型とは一線を画す解像度を実現。",
-      "2台のデバイスに同時接続できるマルチポイント機能に対応。",
-      "最新のBluetooth 6.0に対応し、接続安定性と省電力性が向上（※規格上）。",
-      "同価格帯のダイナミック版（Space Travel 2）とほぼ同価格で上位スペックを入手可能。"
+      "13mmの平面磁界ドライバーによる低歪みでワイドレンジなHiFi音質",
+      "LDACコーデックに対応し、最大24bit/96kHzのハイレゾ音源を楽しめる",
+      "ハードウェアレベルのAI ENCによる効果的なノイズキャンセリングとクリアな通話",
+      "通信遅延55msのゲームモードを搭載",
+      "MOONDROPアプリ連携で自動EQ機能など使い勝手が良い"
     ],
     "negativePoints": [
-      "アクティブノイズキャンセリング機能は強力とは言えず、交通機関などの騒がしい環境ではAnker等に劣る。",
-      "専用アプリの完成度が低く、接続や設定に手間取ることがある（前作からの課題）。",
-      "ケースからイヤホンが取り出しにくいデザインは前作から継承されている可能性あり。",
-      "LDAC使用時はバッテリー消費が激しくなる可能性がある。"
+      "再生時間が最大31時間（ケース込み）と競合に比べるとやや短め",
+      "ノイズキャンセリングがフィードフォワード方式のみのため、強烈な消音効果を求めるユーザーには物足りない可能性がある"
     ],
     "useCases": [
-      "静かな部屋でじっくり音楽を楽しむ",
-      "通勤・通学（音質優先）",
-      "テレワークでのWeb会議（マルチポイント活用）"
+      "通勤・通学中での高音質な音楽リスニング",
+      "スマートフォンやPCでのゲームプレイ時の低遅延接続",
+      "静かな環境を構築しての集中作業"
     ],
-    "userStories": [
-      {
-        "userType": "20代 オーディオファン",
-        "scenario": "安価で音質の良いサブ機を探している。",
-        "experience": "（推測）5000円台で平面磁界ドライバー搭載というスペックに惹かれて購入。箱出し直後から、同価格帯のダイナミック型イヤホンとは明らかに違う、繊細で解像度の高い高音域に驚かされた。低音は少し軽めだが、イコライザーで調整すれば十分。ノイキャンはそこそこだが、この音質なら文句はない。",
-        "sentiment": "positive"
-      },
-      {
-        "userType": "30代 会社員",
-        "scenario": "仕事中にスマホとPCを同時に接続したい。",
-        "experience": "（推測）マルチポイント対応ということで購入。PCでWeb会議をしつつ、終わったらスマホで音楽を聴くという切り替えがスムーズにできる。ただ、アプリの接続がたまに不安定になるのがストレス。音質は文句なしに良いので、アプリの改善を期待したい。",
-        "sentiment": "mixed"
-      }
-    ],
-    "userImpression": "ユーザーレビューはまだ少ないが、スペック（平面磁界ドライバー、LDAC、Bluetooth 6.0）に対するコストパフォーマンスの高さに注目が集まっている。特にダイナミック版との価格差がほとんどないため、「迷ったらUltra」という評価が定着しつつある。",
+    "userStories": [],
+    "userImpression": "5000円台という価格ながら平面磁界ドライバーとLDACを搭載しており、音質に対する評価が非常に高い。ノイズキャンセリングは音質を損なわないようチューニングされており、クリアなサウンド体験を重視するユーザーに適している。",
     "sources": [
       {
-        "name": "Amazon商品ページ",
+        "id": "src-main",
+        "name": "Amazon商品ページ - 水月雨 MOONDROP SPACE TRAVEL 2 ULTRA",
         "url": "https://www.amazon.co.jp/dp/B0FSZH9TG9",
-        "credibility": "高"
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-06-15",
+        "author": "Amazon",
+        "conflictOfInterest": "none",
+        "notes": "商品の公式スペックおよび特徴を抽出"
       }
     ],
-    "lastInvestigated": "2026-02-15",
+    "claims": [
+      {
+        "claim": "全帯域における全高調波歪み（THD）が0.05％未満",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-main"
+        ],
+        "crossChecked": false,
+        "notes": "商品詳細からの情報"
+      },
+      {
+        "claim": "特許取得済みの13mmリング型片面駆動平面磁界ドライバー搭載",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-main"
+        ],
+        "crossChecked": false,
+        "notes": "商品詳細からの情報"
+      }
+    ],
+    "lastInvestigated": "2026-06-15",
     "competitiveAnalysis": [
       {
-        "name": "Moondrop Space Travel 2 (Dynamic)",
-        "asin": "B0FXFBJCT6",
-        "priceComparison": "約20円差（ほぼ同価格）。",
+        "name": "水月雨 SPACE TRAVEL 2",
+        "asin": "B0FL72QDM7",
+        "priceComparison": "対象商品より安価",
         "featureComparison": [
-          "ドライバーは13mmダイナミック型。",
-          "LDAC対応の明記なし（Ultraは明記あり）。",
-          "その他の機能（マルチポイント、Bluetooth 6.0）は共通。"
+          "共通点：Bluetooth 6.0、ノイズキャンセリング、マルチポイント接続、55ms低遅延ゲームモード",
+          "相違点：対象商品は13mm平面磁界ドライバーとLDACに対応し最大31時間再生だが、本競合は13mmダイナミックドライバーでLDAC非対応、最大39時間再生"
         ],
         "differentiators": [
-          "Ultraの方がドライバー性能で明確に勝る。",
-          "価格差がないため、現状ではUltra一択。"
+          "MOONDROP SPACE TRAVEL 2 ULTRAの利点：平面磁界ドライバーとLDACによる圧倒的な高音質",
+          "水月雨 SPACE TRAVEL 2の利点：価格がより手頃で、バッテリー持続時間がやや長い"
         ]
       },
       {
-        "name": "Anker Soundcore P40i",
-        "asin": "B0CP4RQZ3L",
-        "priceComparison": "約2,400円高い。",
+        "name": "水月雨 Ultrasonic",
+        "asin": "B0DK2TZG99",
+        "priceComparison": "対象商品より高価",
         "featureComparison": [
-          "ウルトラノイズキャンセリング2.0搭載でANC性能は圧倒的に上。",
-          "再生時間が長い（ケース込み60時間 vs 31時間）。",
-          "LDAC非対応、ドライバーは11mmダイナミック型。"
+          "共通点：ノイズキャンセリング、LDAC対応、55ms低遅延ゲームモード",
+          "相違点：対象商品は平面磁界ドライバー搭載だが、本競合は1DD+1BAのハイブリッド構成でLE Audio (LC3)にも対応"
         ],
         "differentiators": [
-          "Ankerは機能と安心感重視。",
-          "Moondrop Ultraは音質とコスパ重視。"
+          "MOONDROP SPACE TRAVEL 2 ULTRAの利点：価格が大幅に安く、平面磁界ドライバー独自の音質が楽しめる",
+          "水月雨 Ultrasonicの利点：ハイブリッドドライバーによる高解像度サウンドとLC3コーデックによる低遅延・高音質対応"
+        ]
+      },
+      {
+        "name": "Anker Soundcore P31i",
+        "asin": "B0FNRS5WB2",
+        "priceComparison": "対象商品と同価格帯",
+        "featureComparison": [
+          "共通点：ノイズキャンセリング、マルチポイント接続対応",
+          "相違点：対象商品はLDAC対応と平面磁界ドライバー搭載だが、本競合は11mmダイナミックドライバーでLDAC非対応、最大50時間再生に対応"
+        ],
+        "differentiators": [
+          "MOONDROP SPACE TRAVEL 2 ULTRAの利点：LDAC対応と平面磁界ドライバーによる高音質な音楽体験",
+          "Anker Soundcore P31iの利点：最大50時間の長時間バッテリーとAnker独自技術の低音強化(BassUp)"
+        ]
+      },
+      {
+        "name": "EarFun Air Pro 3",
+        "asin": "B0C1Z5SGY3",
+        "priceComparison": "対象商品よりやや高価",
+        "featureComparison": [
+          "共通点：ノイズキャンセリング、マルチポイント接続、低遅延モード",
+          "相違点：対象商品はLDAC対応だが、本競合はaptX Adaptive対応で最大43dBの強力なノイズキャンセリングを備える"
+        ],
+        "differentiators": [
+          "MOONDROP SPACE TRAVEL 2 ULTRAの利点：平面磁界ドライバーによる解像度の高い音質とLDAC対応",
+          "EarFun Air Pro 3の利点：強力なノイズキャンセリング性能(-43dB)とaptX Adaptiveによる安定した接続"
+        ]
+      },
+      {
+        "name": "SOUNDPEATS C30",
+        "asin": "B0FWC7ZSTK",
+        "priceComparison": "対象商品より安価",
+        "featureComparison": [
+          "共通点：ノイズキャンセリング、LDAC対応、マルチポイント接続",
+          "相違点：対象商品は平面磁界ドライバー搭載だが、本競合は12mmチタン複合ドライバー搭載で、最大-52dBの強力なANCと最大52時間再生を備える"
+        ],
+        "differentiators": [
+          "MOONDROP SPACE TRAVEL 2 ULTRAの利点：水月雨独自のチューニングと平面磁界ドライバーによる繊細な音表現",
+          "SOUNDPEATS C30の利点：低価格ながら強力なANC性能(-52dB)と長時間バッテリー(52時間)"
+        ]
+      },
+      {
+        "name": "SOUNDPEATS Air5 Pro",
+        "asin": "B0DWDWL25T",
+        "priceComparison": "対象商品よりやや高価",
+        "featureComparison": [
+          "共通点：ノイズキャンセリング、LDAC対応、マルチポイント接続",
+          "相違点：対象商品は13mm平面磁界ドライバー搭載だが、本競合は10mm DD搭載でaptX Losslessにも対応し、ANC性能が最大-55dB"
+        ],
+        "differentiators": [
+          "MOONDROP SPACE TRAVEL 2 ULTRAの利点：平面磁界ドライバーによる歪みの少ない自然な高音質",
+          "SOUNDPEATS Air5 Proの利点：aptX Lossless対応によるロスレス伝送と、強力なアダプティブANC(-55dB)"
         ]
       }
     ],
     "recommendation": {
       "targetUsers": [
-        "予算5,000円台で最高の音質を求める人",
-        "平面磁界ドライバーの音を体験してみたい人",
-        "最新スペック（Bluetooth 6.0, LDAC）を試したいガジェット好き"
+        "手頃な価格でハイエンドクラスの高音質（平面磁界ドライバー・LDAC）を体験したいオーディオファン",
+        "音質とノイズキャンセリングのバランスを求めるユーザー",
+        "デザイン性や独自のチューニングを好む水月雨（Moondrop）ファン"
       ],
       "pros": [
-        "5,000円台で平面磁界ドライバー＋LDACという破格のスペック",
-        "マルチポイント対応で利便性が高い",
-        "ダイナミック版とほぼ同価格で上位互換の性能"
+        "5000円台という価格ながら13mm平面磁界ドライバーを搭載",
+        "ハイレゾ相当の音質を楽しめるLDACコーデックに対応",
+        "自動EQ機能やマルチポイント、低遅延モードなど実用的な機能が充実"
       ],
       "cons": [
-        "ノイズキャンセリング性能は価格なり",
-        "アプリの安定性に不安あり",
-        "バッテリー持ちは標準的"
+        "バッテリー持続時間が最大31時間と、同価格帯の競合（50時間超え）に比べて短め",
+        "強力なノイズキャンセリングを重視するユーザーにはフィードフォワード方式のみのため物足りない可能性がある"
       ],
-      "score": 92,
-      "scoreRationale": "[基本点: 70]\n[加点: +15] (5,600円で平面磁界ドライバーとLDAC対応という驚異的なコストパフォーマンス)\n[加点: +10] (同価格帯の競合と比較しても音質スペックで圧倒)\n[加点: +5] (マルチポイント、Bluetooth 6.0対応)\n[減点: -5] (ノイズキャンセリング性能の弱さ)\n[減点: -3] (アプリの安定性への懸念)\n[合計: 92]"
+      "score": 95,
+      "scoreRationale": "[基本点: 70]\n[加点: +8] (13mm平面磁界ドライバー搭載、LDAC対応、マルチポイント、低遅延モードなど性能・機能が極めて充実)\n[加点: +8] (5000円台で平面磁界ドライバーとLDACを両立しており、圧倒的なコストパフォーマンス)\n[加点: +2] (水月雨ブランドの洗練されたデザインと優れた音質チューニング)\n[加点: +2] (自動EQプロチューニングによる使いやすさと高い満足度)\n[加点: +5] (同価格帯で特許取得済みの平面磁界ドライバーを搭載する先進性と独自の強み)\n[合計: 95]"
     },
     "technicalSpecs": {
+      "connectivity": "Bluetooth 6.0",
+      "codec": "LDAC",
       "driver": "13mmリング型片面駆動平面磁界ドライバー",
-      "codec": ["LDAC", "AAC", "SBC"],
-      "battery": "最大31時間 (ケース込み)",
-      "connectivity": ["Bluetooth 6.0", "マルチポイント接続"],
-      "noiseCancel": "ANC (フィードフォワード方式), 通話時AIノイズキャンセリング",
-      "other": ["低遅延ゲームモード (55ms)"]
+      "batteryLife": "最大31時間",
+      "chargingPort": "USB Type-C",
+      "color": "グレー",
+      "features": [
+        "アクティブノイズキャンセリング(フィードフォワード方式)",
+        "マルチポイント接続",
+        "55ms低遅延ゲームモード",
+        "AI ENC通話ノイズ低減",
+        "自動EQプロチューニング"
+      ]
     }
   }
 }
