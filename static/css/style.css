@@ -4470,3 +4470,193 @@ a.competitor-preview:hover {
     font-size: 0.85rem;
   }
 }
+
+/* ============================================================
+   お気に入り機能スタイル
+   ============================================================ */
+
+/* ヘッダーのアクション群ラッパー */
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+/* ヘッダーのお気に入りリンクボタン */
+.favorites-nav-btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: var(--radius-md);
+  color: var(--color-text-main);
+  text-decoration: none;
+  transition: var(--transition-base);
+  font-size: 1.25rem;
+}
+
+.favorites-nav-btn:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+  color: #e11d48;
+}
+
+[data-theme="dark"] .favorites-nav-btn:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #fda4af;
+}
+
+.fav-nav-icon {
+  line-height: 1;
+  transition: transform 0.2s ease;
+}
+
+.favorites-nav-btn:hover .fav-nav-icon {
+  transform: scale(1.15);
+}
+
+/* お気に入りバッジ（件数表示） */
+.favorites-badge {
+  position: absolute;
+  top: 0.1rem;
+  right: 0.1rem;
+  min-width: 1.1rem;
+  height: 1.1rem;
+  padding: 0 0.25rem;
+  border-radius: 9999px;
+  background: #e11d48;
+  color: #fff;
+  font-size: 0.65rem;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  pointer-events: none;
+}
+
+/* -------------------------------------------------- */
+/* カードのフッターボタン配置                            */
+/* -------------------------------------------------- */
+.card-footer-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+}
+
+/* -------------------------------------------------- */
+/* カード用ハートボタン (小)                             */
+/* -------------------------------------------------- */
+.btn-favorite-card {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  border: 1px solid var(--color-border);
+  border-radius: 50%;
+  background: var(--color-bg-card);
+  cursor: pointer;
+  font-size: 1rem;
+  line-height: 1;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+
+.btn-favorite-card:hover {
+  border-color: #e11d48;
+  background: #fef2f2;
+  transform: scale(1.15);
+}
+
+[data-theme="dark"] .btn-favorite-card:hover {
+  border-color: #fda4af;
+  background: rgba(225, 29, 72, 0.15);
+}
+
+.btn-favorite-card.is-favorited {
+  border-color: #e11d48;
+  background: #fef2f2;
+}
+
+[data-theme="dark"] .btn-favorite-card.is-favorited {
+  border-color: #fda4af;
+  background: rgba(225, 29, 72, 0.15);
+}
+
+/* -------------------------------------------------- */
+/* ヒーロー用ハートボタン (大)                           */
+/* -------------------------------------------------- */
+.hero-favorite-row {
+  margin-top: var(--spacing-md);
+}
+
+.btn-favorite-hero {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  padding: 0.65rem 1.25rem;
+  border: 2px solid var(--color-border);
+  border-radius: 9999px;
+  background: var(--color-bg-card);
+  color: var(--color-text-main);
+  cursor: pointer;
+  font-size: 0.95rem;
+  font-weight: 600;
+  font-family: inherit;
+  transition: all 0.2s ease;
+  width: 100%;
+  justify-content: center;
+}
+
+.btn-favorite-hero:hover {
+  border-color: #e11d48;
+  background: #fef2f2;
+  color: #e11d48;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(225, 29, 72, 0.2);
+}
+
+[data-theme="dark"] .btn-favorite-hero:hover {
+  border-color: #fda4af;
+  background: rgba(225, 29, 72, 0.15);
+  color: #fda4af;
+}
+
+.btn-favorite-hero.is-favorited {
+  border-color: #e11d48;
+  background: linear-gradient(135deg, #fff1f2, #fce7f3);
+  color: #e11d48;
+}
+
+[data-theme="dark"] .btn-favorite-hero.is-favorited {
+  border-color: #fda4af;
+  background: rgba(225, 29, 72, 0.2);
+  color: #fda4af;
+}
+
+.btn-favorite-hero .fav-icon {
+  font-size: 1.1rem;
+  line-height: 1;
+}
+
+/* -------------------------------------------------- */
+/* お気に入り追加時のバウンスアニメーション              */
+/* -------------------------------------------------- */
+@keyframes fav-bounce {
+  0%   { transform: scale(1); }
+  30%  { transform: scale(1.35); }
+  55%  { transform: scale(0.9); }
+  75%  { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+.fav-bounce {
+  animation: fav-bounce 0.6s cubic-bezier(0.36, 0.07, 0.19, 0.97);
+}
+
+/* ================================================== */
+/* お気に入り一覧ページ専用スタイルはlist.html内に記述 */
+/* ================================================== */
