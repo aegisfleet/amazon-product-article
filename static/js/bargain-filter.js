@@ -383,7 +383,11 @@ document.addEventListener('DOMContentLoaded', () => {
       if (catEl) {
         const catText = catEl.textContent.trim();
         if (catText && categorySelect) {
-          categorySelect.value = catText;
+          if (categorySelect.value === catText) {
+            categorySelect.value = '';
+          } else {
+            categorySelect.value = catText;
+          }
           applyFilters();
         }
       }
