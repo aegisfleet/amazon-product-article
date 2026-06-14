@@ -1,0 +1,278 @@
+{{- define "main" -}}
+<div class="container" style="padding-top: var(--spacing-xl); padding-bottom: var(--spacing-2xl);">
+    {{- partial "breadcrumb.html" . -}}
+
+    <div class="article-header">
+        <h1>❤️ お気に入りリスト</h1>
+        <p class="article-meta">お気に入り登録した商品を一覧で確認できる。データはこのブラウザにのみ保存されている。</p>
+    </div>
+
+    {{- /* 操作バー */ -}}
+    <div class="fav-page-toolbar" id="fav-toolbar" style="display:none;">
+        <span id="fav-count-label" class="fav-count-label"></span>
+        <div class="fav-toolbar-actions">
+            <div style="display: flex; align-items: center; gap: var(--spacing-sm);">
+                <label for="fav-sort" style="font-size: 0.875rem; color: var(--color-text-secondary); font-weight: 600;">並び替え:</label>
+                <select id="fav-sort" class="sort-select" style="padding: 0.4rem 2rem 0.4rem 0.75rem; border: 1px solid var(--color-border); border-radius: 8px; background-color: var(--color-bg-card); color: var(--color-text-primary); font-size: 0.875rem; cursor: pointer; font-family: inherit;">
+                    <option value="saved-desc">登録が新しい順</option>
+                    <option value="saved-asc">登録が古い順</option>
+                    <option value="score-desc">評価の高い順</option>
+                    <option value="price-asc">価格の安い順</option>
+                    <option value="price-desc">価格の高い順</option>
+                </select>
+            </div>
+            <button type="button" class="fav-clear-btn" data-favorites-clear="1" aria-label="お気に入りをすべて削除">
+                🗑️ すべて削除
+            </button>
+        </div>
+    </div>
+
+    {{- /* 商品グリッド（JSでレンダリング） */ -}}
+    <div id="fav-grid" class="card-grid" style="margin-top: var(--spacing-lg);"></div>
+
+    {{- /* 空状態（JSで表示切替） */ -}}
+    <div id="fav-empty" class="fav-empty-state" style="display:none;">
+        <div class="fav-empty-icon">🤍</div>
+        <h2 class="fav-empty-title">お気に入りがまだありません</h2>
+        <p class="fav-empty-desc">気になった商品のハートボタンを押すと、ここに保存されます。</p>
+        <a href="{{ `` | relURL }}" class="btn-amazon-hero" style="display: inline-block; margin-top: var(--spacing-lg);">
+            🔍 商品を探す
+        </a>
+    </div>
+</div>
+
+<style>
+    /* お気に入りページ固有スタイル */
+    .fav-page-toolbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: var(--spacing-md);
+        margin-bottom: var(--spacing-md);
+        padding: var(--spacing-md) var(--spacing-lg);
+        background: var(--color-bg-card);
+        border: 1px solid var(--color-border);
+        border-radius: 12px;
+    }
+
+    .fav-count-label {
+        font-size: 0.9rem;
+        color: var(--color-text-secondary);
+        font-weight: 600;
+    }
+
+    .fav-toolbar-actions {
+        display: flex;
+        align-items: center;
+        gap: var(--spacing-md);
+        flex-wrap: wrap;
+    }
+
+    .fav-clear-btn {
+        background: transparent;
+        border: 1px solid var(--color-border);
+        border-radius: 8px;
+        padding: 0.4rem 0.875rem;
+        font-size: 0.8125rem;
+        color: var(--color-text-secondary);
+        cursor: pointer;
+        font-family: inherit;
+        transition: all 0.2s ease;
+    }
+
+    .fav-clear-btn:hover {
+        background: #fef2f2;
+        color: #dc2626;
+        border-color: #fca5a5;
+    }
+
+    .fav-empty-state {
+        text-align: center;
+        padding: var(--spacing-2xl) var(--spacing-lg);
+    }
+
+    .fav-empty-icon {
+        font-size: 4rem;
+        margin-bottom: var(--spacing-md);
+        line-height: 1;
+    }
+
+    .fav-empty-title {
+        font-size: 1.5rem;
+        margin-bottom: var(--spacing-sm);
+        color: var(--color-text-primary);
+    }
+
+    .fav-empty-desc {
+        color: var(--color-text-secondary);
+        font-size: 0.95rem;
+    }
+
+    /* お気に入りカードのハートボタン（一覧ページ用） */
+    .fav-remove-btn {
+        background: transparent;
+        border: none;
+        padding: 0;
+        cursor: pointer;
+        font-size: 1.1rem;
+        line-height: 1;
+        transition: transform 0.2s ease;
+        color: #e11d48;
+    }
+
+    .fav-remove-btn:hover {
+        transform: scale(1.2);
+    }
+
+    @media (max-width: 640px) {
+        .fav-page-toolbar {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+    }
+</style>
+
+<script>
+(function () {
+    const STORAGE_KEY = 'apa-favorites-v1';
+
+    function loadFavorites() {
+        try {
+            const raw = globalThis.localStorage.getItem(STORAGE_KEY);
+            if (!raw) return [];
+            const parsed = JSON.parse(raw);
+            return Array.isArray(parsed) ? parsed.filter(function (i) { return i && i.asin; }) : [];
+        } catch { return []; }
+    }
+
+    function saveFavorites(list) {
+        try { globalThis.localStorage.setItem(STORAGE_KEY, JSON.stringify(list)); } catch {}
+    }
+
+    function parsePrice(str) {
+        if (!str) return 0;
+        const m = String(str).replace(/,/g, '').match(/\d+/);
+        return m ? Number(m[0]) : 0;
+    }
+
+    function sortList(list, mode) {
+        const copy = list.slice();
+        switch (mode) {
+            case 'saved-asc':   return copy.sort(function (a, b) { return (a.savedAt || 0) - (b.savedAt || 0); });
+            case 'score-desc':  return copy.sort(function (a, b) { return (b.score || 0) - (a.score || 0); });
+            case 'price-asc':   return copy.sort(function (a, b) { return parsePrice(a.price) - parsePrice(b.price); });
+            case 'price-desc':  return copy.sort(function (a, b) { return parsePrice(b.price) - parsePrice(a.price); });
+            default:            return copy.sort(function (a, b) { return (b.savedAt || 0) - (a.savedAt || 0); }); // saved-desc
+        }
+    }
+
+    function scoreClass(score) {
+        if (score >= 80) return 'score-excellent';
+        if (score >= 60) return 'score-good';
+        return 'score-fair';
+    }
+
+    function renderCard(item) {
+        const img = item.image
+            ? `<img src="${escapeHTML(item.image)}" alt="${escapeHTML(item.title)}" loading="lazy" decoding="async">`
+            : `<div class="card-image-noimage" aria-hidden="true">画像なし</div>`;
+
+        const scoreHTML = item.score
+            ? `<span class="card-score ${scoreClass(item.score)}"><span aria-hidden="true">🏆</span> ${item.score}点</span>`
+            : '';
+        const priceHTML = item.price
+            ? `<span class="card-price"><span aria-hidden="true">💰</span> ${escapeHTML(item.price)}</span>`
+            : '';
+        const categoryHTML = item.category
+            ? `<span class="card-tag">${escapeHTML(item.category)}</span>`
+            : '';
+
+        return `
+        <article class="card fav-card" data-asin="${escapeHTML(item.asin)}">
+            <div class="card-image">
+                <a href="${escapeHTML(item.url)}">${img}</a>
+            </div>
+            <div class="card-content">
+                <div class="card-header">
+                    ${categoryHTML}
+                    <h3 class="card-title">
+                        <a href="${escapeHTML(item.url)}">${escapeHTML(item.title)}</a>
+                    </h3>
+                </div>
+                <div class="card-meta-ext">
+                    <div class="meta-main-row">
+                        ${priceHTML}
+                        ${scoreHTML}
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <span class="article-meta">登録日: ${formatDate(item.savedAt)}</span>
+                    <div style="display:flex; gap: var(--spacing-sm); align-items: center;">
+                        <a href="${escapeHTML(item.url)}" class="btn-amazon-small" style="font-size: 0.8rem; padding: 0.3rem 0.75rem;">📖 詳細を見る</a>
+                        <button type="button" class="fav-remove-btn" data-remove-asin="${escapeHTML(item.asin)}" aria-label="${escapeHTML(item.title)}をお気に入りから削除" title="お気に入りから削除">❌</button>
+                    </div>
+                </div>
+            </div>
+        </article>`;
+    }
+
+    function escapeHTML(str) {
+        return String(str || '').replace(/[&<>"']/g, function (c) {
+            return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
+        });
+    }
+
+    function formatDate(ts) {
+        if (!ts) return '不明';
+        const d = new Date(ts);
+        return `${d.getFullYear()}年${d.getMonth() + 1}月${d.getDate()}日`;
+    }
+
+    function render() {
+        const grid = document.getElementById('fav-grid');
+        const empty = document.getElementById('fav-empty');
+        const toolbar = document.getElementById('fav-toolbar');
+        const countLabel = document.getElementById('fav-count-label');
+        const sortSel = document.getElementById('fav-sort');
+        if (!grid || !empty) return;
+
+        const list = sortList(loadFavorites(), sortSel ? sortSel.value : 'saved-desc');
+
+        if (list.length === 0) {
+            grid.innerHTML = '';
+            empty.style.display = 'block';
+            if (toolbar) toolbar.style.display = 'none';
+        } else {
+            empty.style.display = 'none';
+            if (toolbar) toolbar.style.display = 'flex';
+            if (countLabel) countLabel.textContent = `${list.length}件のお気に入り`;
+            grid.innerHTML = list.map(renderCard).join('');
+        }
+    }
+
+    // 個別削除ボタン
+    document.addEventListener('click', function (e) {
+        const btn = e.target.closest('[data-remove-asin]');
+        if (!btn) return;
+        e.preventDefault();
+        const asin = btn.dataset.removeAsin;
+        if (!asin) return;
+        const list = loadFavorites().filter(function (i) { return i.asin !== asin; });
+        saveFavorites(list);
+        // Favorites グローバルと同期
+        if (globalThis.Favorites) globalThis.Favorites.sync();
+        render();
+    });
+
+    // 並び替え
+    const sortSel = document.getElementById('fav-sort');
+    if (sortSel) sortSel.addEventListener('change', render);
+
+    // クリア後に再レンダリング
+    globalThis.FavoritesPage = { render: render };
+
+    render();
+})();
+</script>
+{{- end -}}
