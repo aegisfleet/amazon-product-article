@@ -4109,9 +4109,11 @@ a.competitor-preview:hover {
 
 .bargain-category-wrapper .bargain-select {
   flex: 1;
+  min-width: 0;
 }
 
 .bargain-category-reset-btn {
+  flex-shrink: 0;
   padding: 0.5rem 0.75rem;
   border: 1px solid var(--color-border);
   border-radius: var(--radius-md);
