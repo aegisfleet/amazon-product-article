@@ -107,17 +107,12 @@
                 {{- else -}}
                 <a href="{{ .RelPermalink }}" class="read-more">レビューを読む →</a>
                 {{- end -}}
-                <button type="button" class="btn-favorite-card" data-favorite-btn="1"
-                    data-asin="{{ .Params.asin }}"
-                    data-title="{{ .Title }}"
-                    data-url="{{ .RelPermalink }}"
+                <button type="button" class="btn-favorite-card" data-favorite-btn="1" data-asin="{{ .Params.asin }}"
+                    data-title="{{ .Title }}" data-url="{{ .RelPermalink }}"
                     data-affiliate-url="{{ .Params.affiliate_url }}"
                     data-image="{{ if .Params.images }}{{ index .Params.images 0 }}{{ end }}"
-                    data-price="{{ .Params.price }}"
-                    data-score="{{ .Params.score | default 0 }}"
-                    data-category="{{ $trackingCategory }}"
-                    aria-pressed="false"
-                    aria-label="お気に入りに追加">
+                    data-price="{{ .Params.price }}" data-score="{{ .Params.score | default 0 }}"
+                    data-category="{{ $trackingCategory }}" aria-pressed="false" aria-label="お気に入りに追加">
                     <span class="fav-icon" aria-hidden="true">🤍</span>
                 </button>
             </div>
