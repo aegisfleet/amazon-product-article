@@ -292,21 +292,21 @@
         </div>
     </div>
 
-    <!-- 比較サマリーテーブル（折りたたみ） -->
-    <button class="rec-summary-toggle" id="rec-summary-toggle" aria-expanded="false" aria-controls="rec-summary-panel">
+    <!-- 比較サマリーテーブル（デフォルト表示） -->
+    <button class="rec-summary-toggle open" id="rec-summary-toggle" aria-expanded="true" aria-controls="rec-summary-panel">
         <span>📋</span>
         <span>比較サマリーを表示する</span>
         <em class="toggle-icon">▼</em>
     </button>
-    <section class="rec-summary-panel" id="rec-summary-panel" aria-labelledby="rec-summary-toggle">
+    <section class="rec-summary-panel open" id="rec-summary-panel" aria-labelledby="rec-summary-toggle">
         <table class="rec-summary-table">
             <thead>
                 <tr>
                     <th style="text-align:center;">順位</th>
+                    <th>スコア</th>
                     <th>商品名</th>
                     <th>カテゴリ</th>
                     <th>価格</th>
-                    <th>スコア</th>
                     <th>リンク</th>
                 </tr>
             </thead>
@@ -317,17 +317,6 @@
                 {{- if $articlePage -}}{{- $score = $articlePage.Params.score | default 0 -}}{{- end -}}
                 <tr>
                     <td class="rec-summary-rank">{{ add $index 1 }}</td>
-                    <td class="rec-summary-name" title="{{ $rec.title }}">
-                        {{- if $articlePage -}}
-                        <a href="{{ $articlePage.RelPermalink }}">{{- $rec.title -}}</a>
-                        {{- else -}}
-                        {{- $rec.title -}}
-                        {{- end -}}
-                    </td>
-                    <td class="rec-summary-cat">
-                        <span class="card-tag" style="margin-bottom:0; font-size:0.78rem; padding:0.15rem 0.5rem;">{{- $rec.category -}}</span>
-                    </td>
-                    <td class="rec-summary-price">{{- partial "utils-price-format.html" $rec.price -}}</td>
                     <td class="rec-summary-score">
                         {{- if $score -}}
                         {{- $scoreClass := "score-fair" -}}
@@ -339,6 +328,17 @@
                         <span style="color: var(--color-text-muted); font-size:0.82rem;">—</span>
                         {{- end -}}
                     </td>
+                    <td class="rec-summary-name" title="{{ $rec.title }}">
+                        {{- if $articlePage -}}
+                        <a href="{{ $articlePage.RelPermalink }}">{{- $rec.title -}}</a>
+                        {{- else -}}
+                        {{- $rec.title -}}
+                        {{- end -}}
+                    </td>
+                    <td class="rec-summary-cat">
+                        <span class="card-tag" style="margin-bottom:0; font-size:0.78rem; padding:0.15rem 0.5rem;">{{- $rec.category -}}</span>
+                    </td>
+                    <td class="rec-summary-price">{{- partial "utils-price-format.html" $rec.price -}}</td>
                     <td>
                         <div class="rec-summary-actions">
                             {{- if $articlePage -}}
@@ -425,6 +425,18 @@
                         {{- if $rec.rankReason -}}
                         <span class="card-tag" style="margin-bottom: 0; background-color: var(--color-bg-secondary); color: var(--color-text-main); border: 1px solid var(--color-border);">
                             🎯 {{- $rec.rankReason -}}
+                        </span>
+                        {{- end -}}
+                        {{- if $score -}}
+                        {{- $scoreClass := "score-fair" -}}
+                        {{- if ge $score 80 -}}
+                        {{- $scoreClass = "score-excellent" -}}
+                        {{- else if ge $score 60 -}}
+                        {{- $scoreClass = "score-good" -}}
+                        {{- end -}}
+                        <span class="card-score {{ $scoreClass }}"
+                            style="font-size: 0.85rem; padding: 2px 8px;">
+                            🏆 {{- $score -}}点
                         </span>
                         {{- end -}}
                     </div>
@@ -516,18 +528,6 @@
                     <div
                         style="text-align: right; margin-top: auto; padding-top: var(--spacing-sm); display: flex; gap: var(--spacing-sm); justify-content: flex-end; align-items: center; flex-wrap: wrap;">
                         {{- if $articlePage -}}
-                        {{- if $score -}}
-                        {{- $scoreClass := "score-fair" -}}
-                        {{- if ge $score 80 -}}
-                        {{- $scoreClass = "score-excellent" -}}
-                        {{- else if ge $score 60 -}}
-                        {{- $scoreClass = "score-good" -}}
-                        {{- end -}}
-                        <span class="card-score {{ $scoreClass }}"
-                            style="font-size: 0.85rem; padding: 2px 8px; margin-top: var(--spacing-sm);">
-                            🏆 {{- $score -}}点
-                        </span>
-                        {{- end -}}
                         <a href="{{ $articlePage.RelPermalink }}" class="btn-internal-small"
                             style="margin-top: var(--spacing-sm);">
                             ✍️ サイト内レビューを見る
