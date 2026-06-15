@@ -1,109 +1,218 @@
 {
   "analysis": {
-    "productName": "COMFEE' 全自動洗濯機 5.5kg ガラスドア CAC06EW55/W-S1",
-    "parentAsin": "B0DJFVXJHX",
-    "productDescription": "透明なガラスドアを採用し、洗濯中の様子が見える安心感と高級感を兼ね備えた5.5kg全自動洗濯機。一人暮らしに最適なサイズで、制振カバーにより静音性にも配慮されています。",
+    "productName": "COMFEE' 洗濯機 5.5kg 全自動",
+    "parentAsin": "B0GBSWNWMY",
+    "productDescription": "透明ガラス制振カバーを採用し、狭いスペースにも置けるコンパクトな5.5kg全自動洗濯機。風乾燥機能や槽洗浄機能を備え、一人暮らしや二人暮らしに適している。",
     "productUsage": [
-      "一人暮らしの日常的な洗濯（容量5.5kgで2〜3日分まとめ洗い可能）",
-      "部屋干し時の乾燥時間短縮（風乾燥機能）",
-      "おしゃれ着や毛布の洗濯（専用コース搭載）"
+      "衣類の洗濯",
+      "風乾燥による部屋干しサポート"
     ],
     "positivePoints": [
-      "高級感のある強化ガラスドア（傷に強く、中が見えて安心）",
-      "制振カバーによる静音設計（夜間の洗濯も安心）",
-      "8種類の豊富な洗濯コース（つけおき、毛布、槽洗浄など）",
-      "薄型ボディで狭いスペースにも設置しやすい"
+      "中が見えるガラスドアカバーが耐摩耗性・耐傷性に優れている",
+      "5.5kgながらスリムな設計で設置場所を選ばない",
+      "風乾燥機能搭載でヒーターを使わずに部屋干しの時間を短縮可能",
+      "自動槽洗浄・槽乾燥機能があり清潔に保ちやすい"
     ],
     "negativePoints": [
-      "インバーター制御非搭載のため、上位機種に比べると運転音が気になる可能性",
-      "乾燥機能は簡易的な「風乾燥」のみ（ヒーター乾燥ではない）",
-      "風呂水ポンプ機能は非搭載"
+      "風乾燥のみで完全な温風乾燥は不可",
+      "5.5kgのため、ファミリー向けなど大量の洗濯には向かない"
     ],
     "useCases": [
-      "初めての一人暮らしで、デザイン性の高い家電を揃えたい場合",
-      "夜遅くに帰宅して洗濯することが多いライフスタイル",
-      "洗濯中の様子を確認したい（ペットの毛などが気になる）場合"
+      "単身赴任や一人暮らしの毎日の洗濯",
+      "部屋干しが多い環境での洗濯時間の短縮"
     ],
-    "userStories": [
-      {
-        "userType": "20代 一人暮らし (推測)",
-        "scenario": "初めての洗濯機購入",
-        "experience": "（推測）初めての一人暮らしで購入。ガラスドアがかっこよくて気に入っている。音も思ったより静かで、夜でも使える。",
-        "sentiment": "positive"
-      },
-      {
-        "userType": "30代 単身赴任 (推測)",
-        "scenario": "おしゃれ着洗い",
-        "experience": "（推測）中が見えるのが意外と便利。ちゃんと洗えているか確認できるし、何よりデザインが良いのでランドリースペースがおしゃれになった。",
-        "sentiment": "mixed"
-      }
-    ],
-    "userImpression": "（推測）デザイン性とコストパフォーマンスの高さで満足度が高い。特にガラスドアの質感は価格以上と評価されている。機能面では必要十分だが、乾燥機能に過度な期待は禁物。",
+    "userStories": [],
+    "userImpression": "価格に対して必要十分な機能が備わっており、特にガラス扉のデザインや風乾燥機能、設置しやすいコンパクトさが評価されやすい。",
     "sources": [
       {
-        "name": "Amazon Product Page",
+        "id": "src-comfee",
+        "name": "Amazon商品ページ: COMFEE' 洗濯機 5.5kg 全自動",
         "url": "https://www.amazon.co.jp/dp/B0DJFVXJHX",
-        "credibility": "High"
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-06-16",
+        "author": "COMFEE'",
+        "conflictOfInterest": "possible",
+        "notes": "商品スペック、価格（25,000円）、機能詳細を確認"
+      },
+      {
+        "id": "src-skk",
+        "name": "Amazon商品ページ: SKK 洗濯機 5.5kg",
+        "url": "https://www.amazon.co.jp/dp/B0F12CS3TL",
+        "tier": "medium",
+        "evidenceType": "primary",
+        "publishedAt": "2026-06-16",
+        "author": "SKK",
+        "conflictOfInterest": "none",
+        "notes": "競合SKKの価格・スペックを確認"
+      },
+      {
+        "id": "src-haier",
+        "name": "Amazon商品ページ: ハイアール(Haier) 洗濯機 5.5kg",
+        "url": "https://www.amazon.co.jp/dp/B0CJB93SZT",
+        "tier": "medium",
+        "evidenceType": "primary",
+        "publishedAt": "2026-06-16",
+        "author": "Haier",
+        "conflictOfInterest": "none",
+        "notes": "競合Haierの価格・スペックを確認"
+      },
+      {
+        "id": "src-iris",
+        "name": "Amazon商品ページ: アイリスオーヤマ 洗濯機 5.0kg",
+        "url": "https://www.amazon.co.jp/dp/B09TSBGDN4",
+        "tier": "medium",
+        "evidenceType": "primary",
+        "publishedAt": "2026-06-16",
+        "author": "アイリスオーヤマ",
+        "conflictOfInterest": "none",
+        "notes": "競合アイリスオーヤマの価格・スペックを確認"
+      },
+      {
+        "id": "src-topfilm",
+        "name": "Amazon商品ページ: TOP FILM 洗濯機 5.5kg",
+        "url": "https://www.amazon.co.jp/dp/B0DZB8X1T2",
+        "tier": "medium",
+        "evidenceType": "primary",
+        "publishedAt": "2026-06-16",
+        "author": "TOP FILM",
+        "conflictOfInterest": "none",
+        "notes": "競合TOP FILMの価格・スペックを確認"
+      },
+      {
+        "id": "src-clasimple",
+        "name": "Amazon商品ページ: clasimple 洗濯機",
+        "url": "https://www.amazon.co.jp/dp/B0G4LYLWSZ",
+        "tier": "medium",
+        "evidenceType": "primary",
+        "publishedAt": "2026-06-16",
+        "author": "clasimple",
+        "conflictOfInterest": "none",
+        "notes": "競合clasimpleの価格・スペックを確認"
       }
     ],
-    "lastInvestigated": "2026-02-16",
+    "claims": [
+      {
+        "claim": "ガラスドアカバーは耐摩耗性・耐傷性・耐久性に優れた強化ガラス素材。",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-comfee"
+        ],
+        "crossChecked": false,
+        "notes": "商品仕様に記載あり"
+      },
+      {
+        "claim": "風乾燥機能によりヒーターを使用せず部屋干しの乾燥時間を短縮できる。",
+        "category": "comparativeAdvantage",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-comfee"
+        ],
+        "crossChecked": false,
+        "notes": "商品仕様に記載あり"
+      }
+    ],
+    "lastInvestigated": "2026-06-16",
     "competitiveAnalysis": [
       {
-        "name": "Haier JW-HS55C",
-        "asin": "B0CJB93SZT",
-        "priceComparison": "約2,000円安い（￥25,680 vs ￥27,800）",
+        "name": "SKK 洗濯機 5.5kg",
+        "asin": "B0F12CS3TL",
+        "priceComparison": "対象商品より約4,600円安く、コスパ重視の層には魅力的だが、ガラスドアや外観の質感ではCOMFEEが勝る。",
         "featureComparison": [
-          "Haier: しわケア脱水、お急ぎ10分",
-          "COMFEE: ガラスドア、制振カバー"
+          "共通点：容量5.5kgの全自動洗濯機で風乾燥機能を備える点。",
+          "相違点：COMFEEはガラス扉を採用しているが、SKKはほぐし運転機能をアピールしている。"
         ],
         "differentiators": [
-          "Haier: 時短とお手入れのしやすさ重視",
-          "COMFEE: デザインと静音性重視"
+          "COMFEE'の利点：中が見えるおしゃれなガラス扉と、清潔さを保つ槽洗浄・槽乾燥機能。",
+          "SKK 洗濯機 5.5kgの利点：価格が2万円前後と非常に安く、初期投資を抑えられる。"
         ]
       },
       {
-        "name": "Hisense HW-K55B",
-        "asin": "B0DDPQ3HWZ",
-        "priceComparison": "同価格帯（￥27,800）",
+        "name": "ハイアール(Haier) 洗濯機 5.5kg",
+        "asin": "B0CJB93SZT",
+        "priceComparison": "対象商品とほぼ同等の価格帯（約24,000円台）であり、ブランドの知名度で競合する。",
         "featureComparison": [
-          "Hisense: 最短14分洗濯、激流洗浄",
-          "COMFEE: ガラスドア、制振カバー"
+          "共通点：5.5kgの全自動洗濯機で、槽風乾燥やお急ぎコースを搭載している点。",
+          "相違点：Haierは最短10分のお急ぎコースやしわケア脱水に特化しているが、COMFEEはガラス扉デザインが特徴。"
         ],
         "differentiators": [
-          "Hisense: スリム設計と洗浄力重視",
-          "COMFEE: 高級感のあるデザイン重視"
+          "COMFEE'の利点：ガラスドアカバーの採用でデザイン性が高く、傷にも強い。",
+          "ハイアール(Haier) 洗濯機 5.5kgの利点：家電メーカーとしての実績と、10分お急ぎコースによる時短性能。"
+        ]
+      },
+      {
+        "name": "アイリスオーヤマ 洗濯機 5.0kg",
+        "asin": "B09TSBGDN4",
+        "priceComparison": "対象商品と同価格帯（約24,000円）だが、容量が0.5kg少ない。",
+        "featureComparison": [
+          "共通点：コンパクトなサイズ感で部屋干しモード（風乾燥）を備える点。",
+          "相違点：アイリスオーヤマは5.0kgと容量がやや小さく、COMFEEは5.5kgでガラス扉を備える。"
+        ],
+        "differentiators": [
+          "COMFEE'の利点：0.5kg容量が大きく、透明ガラス制振カバーが使い勝手を向上させている。",
+          "アイリスオーヤマ 洗濯機 5.0kgの利点：国内ブランドとしての安心感と、ガチ落ち大水流洗浄。"
+        ]
+      },
+      {
+        "name": "TOP FILM 洗濯機 5.5kg",
+        "asin": "B0DZB8X1T2",
+        "priceComparison": "対象商品より約3,500円安く、安価な価格設定。",
+        "featureComparison": [
+          "共通点：5.5kgの全自動洗濯機で、風乾燥機能やタイマー機能を備える点。",
+          "相違点：TOP FILMはほぐし運転機能を搭載しているが、デザイン面ではCOMFEEのガラス扉が目立つ。"
+        ],
+        "differentiators": [
+          "COMFEE'の利点：ガラス扉と安全制振カバーにより、高級感と安全性が高い。",
+          "TOP FILM 洗濯機 5.5kgの利点：低価格でありながら多機能（10コースやほぐし運転）を搭載。"
+        ]
+      },
+      {
+        "name": "clasimple 洗濯機",
+        "asin": "B0G4LYLWSZ",
+        "priceComparison": "対象商品より約5,000円安いが、こちらは4.5kgモデルの表示が混在しており直接の比較では容量差がある点に注意。",
+        "featureComparison": [
+          "共通点：一人暮らし向けのコンパクトな全自動洗濯機。",
+          "相違点：COMFEEが5.5kgであるのに対し、clasimpleは4.5kg（同価格帯）または別容量での展開となっている。"
+        ],
+        "differentiators": [
+          "COMFEE'の利点：十分な5.5kg容量と、ガラス扉によるデザイン性と耐久性。",
+          "clasimple 洗濯機の利点：初期費用が2万円以下と安く抑えられる。"
         ]
       }
     ],
     "recommendation": {
       "targetUsers": [
-        "デザイン重視の一人暮らし",
-        "中が見える安心感が欲しい人",
-        "静音性を気にする人"
+        "デザイン性も重視する一人暮らしの方",
+        "部屋干しが多く風乾燥機能を活用したい方"
       ],
       "pros": [
-        "ガラスドアの高級感",
-        "制振設計",
-        "コスパ良好"
+        "傷がつきにくい透明ガラス扉",
+        "スリムで置き場所を選ばない",
+        "清潔に保てる槽洗浄・槽乾燥機能"
       ],
       "cons": [
-        "完全乾燥機能なし",
-        "インバーターなし"
+        "温風による完全乾燥はできない",
+        "知名度の高い国内大手メーカーではない"
       ],
-      "score": 85,
-      "scoreRationale": "[基本点: 70]\n[品質・デザイン: +10] (ガラスドアの高級感と視認性)\n[性能・機能: +5] (制振設計、必要十分なコース)\n[コストパフォーマンス: +5] (この価格でガラスドア搭載は優秀)\n[競合比較: -5] (機能特化型ではないため)\n[合計: 85]"
+      "score": 77,
+      "scoreRationale": "[基本点: 70]\n[加点: +3] (透明ガラス扉の採用によるデザイン性と耐久性の向上)\n[加点: +2] (スリムボディで設置しやすい実用性)\n[加点: +3] (風乾燥や槽洗浄機能による使い勝手の良さ)\n[減点: -1] (無名ブランドや格安競合モデルと比較すると価格面で少し割高)\n[合計: 77]"
     },
     "technicalSpecs": {
       "dimensions": {
         "height": "994mm",
         "width": "560mm",
-        "depth": "555mm",
-        "weight": "約25kg"
+        "depth": "555mm"
       },
+      "weight": "不明",
       "capacity": "5.5kg",
-      "power": "AC 100V",
-      "features": ["風乾燥", "槽洗浄", "予約機能", "ガラスドア", "制振カバー"],
-      "other": ["8コース搭載"]
+      "material": "ガラス（ドアカバー部）",
+      "origin": "不明",
+      "other": [
+        "color: ホワイト",
+        "model: CAC06EW55/W-S1",
+        "機能: 洗濯8コース、風乾燥、槽洗浄、槽乾燥、予約タイマー"
+      ]
     }
   }
 }
