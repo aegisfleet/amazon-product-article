@@ -1,0 +1,178 @@
+{
+  "analysis": {
+    "productName": "FUUJOY 電動ドライバー",
+    "parentAsin": "B0GQXNWTKR",
+    "productDescription": "電動・手動兼用の小型充電式ドライバー。高輝度LEDライト搭載で、14本の合金製ビットが付属しています。",
+    "productUsage": [
+      "家具の組み立て",
+      "家電の修理",
+      "DIY",
+      "精密機器のメンテナンス"
+    ],
+    "positivePoints": [
+      "電動（最大3N・m）と手動（最大10N・m）の切り替えができ、微調整が容易",
+      "1800mAhの大容量バッテリー搭載で長時間使用が可能",
+      "高輝度LEDライト付きで暗所での作業に便利",
+      "Type-C充電で手軽に充電可能",
+      "14本の高品質な合金ビットが付属"
+    ],
+    "negativePoints": [
+      "本格的なプロ用・重作業（硬い木材への長尺ネジ打ちなど）にはパワー不足の可能性がある"
+    ],
+    "useCases": [
+      "リビングでの家具の組み立て",
+      "暗い隙間でのネジ締め",
+      "自転車や家電の簡単なメンテナンス"
+    ],
+    "userStories": [
+      {
+        "userType": "DIY初心者",
+        "scenario": "新しい本棚の組み立て",
+        "experience": "初めて電動ドライバーを使いましたが、ボタン一つで正逆転が切り替えられて直感的に操作できました。電動である程度締めた後に手動で微調整できるので、ネジをなめる心配もなく、スムーズに組み立てが完了しました。",
+        "supportingSourceIds": [
+          "src-amazon-review"
+        ],
+        "sentiment": "positive"
+      }
+    ],
+    "userImpression": "小型で軽く、扱いやすい設計が初心者や女性にも好評。大容量バッテリーやLEDライトなどの実用的な機能が充実しており、家庭での日常的な作業に十分な性能を備えている。",
+    "sources": [
+      {
+        "id": "src-amazon-review",
+        "name": "Amazon商品ページ",
+        "url": "https://www.amazon.co.jp/dp/B0GQXNWTKR",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-06-15",
+        "author": "Amazon",
+        "conflictOfInterest": "possible",
+        "notes": "商品仕様、特徴（電動・手動兼用、1800mAhバッテリー、14本ビット付属）を確認。"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "1800mAhの大容量バッテリーで最大80分の連続使用が可能",
+        "category": "durability",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-amazon-review"
+        ],
+        "crossChecked": false,
+        "notes": "メーカー公称値として商品ページに記載。"
+      }
+    ],
+    "lastInvestigated": "2026-06-15",
+    "competitiveAnalysis": [
+      {
+        "name": "AAL 電動ドライバー 小型",
+        "asin": "B0D9H55775",
+        "priceComparison": "AALのほうが安価だが、対象商品はバッテリー容量や付属ビットの品質で優位性が期待できる。",
+        "featureComparison": [
+          "共通点：Type-C充電、小型・手動兼用、LEDライト搭載",
+          "相違点：対象商品は1800mAhの大容量バッテリーを搭載し、高耐久の合金製ビットを採用しているのに対し、AAL製品のバッテリー容量は公称されていない。"
+        ],
+        "differentiators": [
+          "FUUJOY 電動ドライバーの利点：1800mAhの大容量バッテリーにより長時間の作業が可能で、頻繁な充電が不要な点",
+          "AAL 電動ドライバー 小型の利点：より安価に購入できる点"
+        ]
+      },
+      {
+        "name": "SENTOOL 電動ドリル TCD36A",
+        "asin": "B0CFTMC743",
+        "priceComparison": "SENTOOLのほうがやや安価である。",
+        "featureComparison": [
+          "共通点：USB Type-C充電式、小型軽量、LEDライト付き",
+          "相違点：対象商品は電動・手動兼用で最大手動トルク10N・mを誇り、細かい作業に向くのに対し、SENTOOLはピストル型寄りのドリルドライバー形状である。"
+        ],
+        "differentiators": [
+          "FUUJOY 電動ドライバーの利点：手動での微調整がしやすく、家具の組み立てなど繊細な作業に優れる点",
+          "SENTOOL 電動ドリル TCD36Aの利点：ドリル形状で力を入れやすく、木工の穴あけ作業にも対応している点"
+        ]
+      },
+      {
+        "name": "KREBS 電動ドライバー ペン型",
+        "asin": "B0D3LRZL6Q",
+        "priceComparison": "KREBSのほうがやや安価である。",
+        "featureComparison": [
+          "共通点：ペン型、Type-C充電、LEDライト搭載",
+          "相違点：対象商品は14本の合金製ビットが付属するのに対し、KREBSは13本である。"
+        ],
+        "differentiators": [
+          "FUUJOY 電動ドライバーの利点：より多くのビットが付属し、多様なネジに対応可能な点",
+          "KREBS 電動ドライバー ペン型の利点：超軽量設計で卓上修理などに特化している点"
+        ]
+      },
+      {
+        "name": "Pycuse 電動ドライバー",
+        "asin": "B0GZ6K5PHM",
+        "priceComparison": "価格はほぼ同等である。",
+        "featureComparison": [
+          "共通点：小型軽量、USB充電式、LEDライト搭載",
+          "相違点：対象商品はペン型で手動兼用に特化しているのに対し、Pycuseはガン型とペン型に変形可能で3000mAhのさらに大容量バッテリーと45本ビットを備える。"
+        ],
+        "differentiators": [
+          "FUUJOY 電動ドライバーの利点：手動時のトルク10N・mによる手締め微調整が容易で、シンプルなペン型としての取り回しの良さ",
+          "Pycuse 電動ドライバーの利点：ガン型への変形機構とより長時間の稼働、圧倒的なビット数を誇る点"
+        ]
+      },
+      {
+        "name": "アイリスプラザ ペン型電動ドライバーセット",
+        "asin": "B0B8YYRYJZ",
+        "priceComparison": "価格はほぼ同等である。",
+        "featureComparison": [
+          "共通点：ペン型、充電式",
+          "相違点：対象商品はType-C充電やLEDライトなどモダンな機能を備えているのに対し、アイリスプラザ製品は基本的な機能に留まる。"
+        ],
+        "differentiators": [
+          "FUUJOY 電動ドライバーの利点：Type-C充電や大容量バッテリー、LEDライトなど実用的な機能が充実している点",
+          "アイリスプラザ ペン型電動ドライバーセットの利点：国内有名ブランド（アイリスオーヤマ関連）の安心感"
+        ]
+      },
+      {
+        "name": "Yacooda 電動ドライバー",
+        "asin": "B0GDF677RX",
+        "priceComparison": "対象商品のほうが大幅に安価である。",
+        "featureComparison": [
+          "共通点：小型、手動兼用、USB-C充電、LEDライト付き",
+          "相違点：Yacoodaは電動6N.m、手動15N.mとより強力なトルクを誇るが価格が高い。"
+        ],
+        "differentiators": [
+          "FUUJOY 電動ドライバーの利点：家庭用として十分な性能を持ちながら、はるかに安価で購入できるコストパフォーマンスの高さ",
+          "Yacooda 電動ドライバーの利点：より強力なトルクで、少し重めの作業にも対応できるパワー"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "DIY初心者",
+        "家具の組み立てを頻繁に行う人",
+        "女性やご年配の方"
+      ],
+      "pros": [
+        "手動と電動の使い分けによるネジ舐め防止",
+        "大容量バッテリーによる長時間の使用",
+        "充実した付属ビット"
+      ],
+      "cons": [
+        "本格的なプロ用途には不向き"
+      ],
+      "score": 85,
+      "scoreRationale": "[基本点: 70]\n[加点: +5] (電動と手動の兼用により、初心者でもネジの微調整が容易で使い勝手が良いため)\n[加点: +5] (1800mAhの大容量バッテリーを搭載し、連続使用時間が長く実用性が高いため)\n[加点: +5] (安価ながら14本の合金製ビットやLEDライトを標準装備し、コストパフォーマンスに優れるため)\n[合計: 85]"
+    },
+    "technicalSpecs": {
+      "torque": "電動最大 3N・m、手動最大 10N・m",
+      "battery": "1800mAh",
+      "chargingType": "USB Type-C",
+      "chargingTime": "約100分",
+      "usageTime": "最大80分連続使用可能",
+      "bits": "合金製ビット14本付属（PH1、PH2、PH3、H3、H4、H5、T15、T20、T25、SL4、SL5、SL6など）",
+      "features": [
+        "高輝度LEDライト搭載",
+        "正逆転切り替え",
+        "手動兼用"
+      ],
+      "color": "ブラック",
+      "size": "XXL"
+    }
+  }
+}
