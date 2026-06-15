@@ -29,56 +29,100 @@
       "自身の睡眠の質やストレスレベルを詳細に把握・改善したい健康志向の人",
       "Googleのエコシステム（Androidスマホなど）を積極的に活用しているユーザー"
     ],
-    "userStories": [
-      {
-        "userType": "30代会社員（男性）",
-        "scenario": "毎朝のランニングと通勤",
-        "experience": "ランニング後にコンビニで水を買う際、財布もスマホも持たずにFitbitだけでSuica決済できるのが非常に便利です。（推測）",
-        "sentiment": "positive"
-      },
-      {
-        "userType": "40代主婦",
-        "scenario": "健康管理と家事",
-        "experience": "家事の合間にストレスチェックを行い、深呼吸セッションでリラックスする習慣がつきました。睡眠スコアも毎朝チェックしています。（推測）",
-        "sentiment": "positive"
-      },
-      {
-        "userType": "20代学生",
-        "scenario": "通学と外出",
-        "experience": "Googleマップのナビが手元で見られるので、初めて行く場所でも迷わずに済みます。ただ、充電を忘れると不安になります。（推測）",
-        "sentiment": "mixed"
-      }
-    ],
+    "userStories": [],
     "userImpression": "SuicaやGoogle機能の統合による利便性の向上が高く評価されています。一方で、バッテリー持ちや高度計の欠如に関する指摘も見受けられます。",
     "sources": [
       {
-        "name": "Fitbit Official Product Page",
-        "url": "https://www.fitbit.com/global/jp/products/trackers/charge6",
-        "credibility": "High"
+        "id": "src-1",
+        "name": "Fitbit Official Product Page (Google Store)",
+        "url": "https://store.google.com/jp/product/fitbit_charge_6",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-06-16",
+        "author": "Google",
+        "conflictOfInterest": "possible",
+        "notes": "Official specs and features"
       }
     ],
-    "lastInvestigated": "2026-02-16",
+    "lastInvestigated": "2026-06-16",
     "competitiveAnalysis": [
       {
         "name": "Xiaomi Smart Band 10",
         "asin": "B0DYF82545",
-        "priceComparison": "約6,000円とFitbitの1/3以下の価格で圧倒的なコストパフォーマンス",
-        "featureComparison": ["21日間の超長持ちバッテリー", "1.72インチ大型有機ELディスプレイ", "Suica非対応", "Googleサービス連携なし"],
-        "differentiators": ["圧倒的な安さとバッテリー寿命", "大画面による視認性の良さ", "HyperOSエコシステムとの連携"]
+        "priceComparison": "約6,000円と安価。Fitbitの約1/3の価格でコストパフォーマンスに優れる。",
+        "featureComparison": [
+          "共通点：軽量コンパクトなバンド型、心拍数・睡眠・血中酸素測定などの基本的な健康管理機能",
+          "相違点：FitbitがSuica対応、GPS搭載、EDAセンサー搭載であるのに対し、Xiaomiは非搭載だが最大21日間のバッテリー寿命と大画面を備える"
+        ],
+        "differentiators": [
+          "Fitbit Charge 6の利点：Suicaでの決済が可能。GoogleマップやYouTube MusicなどGoogleエコシステムとの連携が強力",
+          "Xiaomi Smart Band 10の利点：圧倒的な安さと、充電頻度を劇的に減らせる超長寿命バッテリー"
+        ]
       },
       {
-        "name": "HUAWEI Band 10",
-        "asin": "B0DZH1XVYN",
-        "priceComparison": "約5,500円と非常に安価",
-        "featureComparison": ["14日間のバッテリー持続", "厚さ8.99mmの薄型軽量設計", "Suica非対応", "独自の情緒モニタリング機能"],
-        "differentiators": ["装着感の良い薄型軽量ボディ", "急速充電機能", "独自の健康・感情管理機能"]
+        "name": "Fitbit Inspire 3",
+        "asin": "B0B75RC9C3",
+        "priceComparison": "約11,000円とCharge 6より安価なエントリーモデル。",
+        "featureComparison": [
+          "共通点：Fitbitエコシステムの優れた健康管理アプリ、睡眠・心拍数測定機能、iOS/Android対応",
+          "相違点：Charge 6がSuica決済、GPS、EDAセンサー(ストレス管理)、ECGを搭載しているのに対し、Inspire 3はそれらが非搭載でよりシンプル"
+        ],
+        "differentiators": [
+          "Fitbit Charge 6の利点：スマホなしでのSuica決済やGPSトラッキングが可能で、より高度な健康・ストレス管理ができる",
+          "Fitbit Inspire 3の利点：価格が安く、よりスリムで目立たないデザイン。バッテリーも最大10日間とCharge 6より長い"
+        ]
       },
       {
         "name": "Garmin vívosmart 5",
         "asin": "B09XGYX7JF",
-        "priceComparison": "約1.8万円とFitbitに近い価格帯",
-        "featureComparison": ["Body Batteryエネルギーモニター", "物理ボタン搭載", "GPS非搭載（コネクテッドGPS）", "Suica非対応"],
-        "differentiators": ["Garmin Connectによる詳細なデータ分析", "Body Batteryによるエネルギー管理"]
+        "priceComparison": "約18,000円とFitbit Charge 6に近い価格帯。",
+        "featureComparison": [
+          "共通点：スリムなバンド型、精密な健康トラッキング、ストレスモニタリング、睡眠分析",
+          "相違点：FitbitはSuica決済とGPSを搭載。Garminは決済機能やGPSを内蔵しないが、Body Battery機能による独自のエネルギー管理を備える"
+        ],
+        "differentiators": [
+          "Fitbit Charge 6の利点：Suica対応で日常の買い物が便利。内蔵GPSによりスマホを持たずにランニングのルート記録が可能",
+          "Garmin vívosmart 5の利点：Garmin特有のBody Battery機能で体のエネルギー残量を可視化でき、Garmin Connectアプリの詳細な分析が利用できる"
+        ]
+      },
+      {
+        "name": "HUAWEI Band 11",
+        "asin": "B0DT9CBMYX",
+        "priceComparison": "約6,800円と非常に安価。",
+        "featureComparison": [
+          "共通点：バンド型のスマートウォッチ、心拍数・睡眠トラッキング、豊富な運動モード",
+          "相違点：FitbitはSuica、内蔵GPS、Googleサービス連携に対応。HUAWEIはそれらに非対応だが、薄型軽量で最大14日間のバッテリーを備える"
+        ],
+        "differentiators": [
+          "Fitbit Charge 6の利点：非接触決済（Suica）とGoogleマップ連携機能があり、外出時の利便性が非常に高い",
+          "HUAWEI Band 11の利点：価格が手頃で、非常に薄く軽量なため睡眠時の装着感が良い。バッテリーも長持ちする"
+        ]
+      },
+      {
+        "name": "Fitbit Sense 2",
+        "asin": "B0B75WWC8F",
+        "priceComparison": "約29,000円でCharge 6よりも上位の高価格帯モデル。",
+        "featureComparison": [
+          "共通点：Suica対応、GPS内蔵、高度な健康トラッキング(心拍、睡眠、ストレス、ECG)",
+          "相違点：Charge 6がスリムなトラッカー型であるのに対し、Sense 2は大画面のスマートウォッチ型。またSense 2はBluetooth通話やAlexaに対応している"
+        ],
+        "differentiators": [
+          "Fitbit Charge 6の利点：スリムで軽量なため、運動中や睡眠中も気になりにくい。価格もSense 2より抑えられている",
+          "Fitbit Sense 2の利点：大画面で通知やデータが見やすく、スマートウォッチとしての機能（通話応答など）が充実している"
+        ]
+      },
+      {
+        "name": "Fitbit Versa 4",
+        "asin": "B0B75TVZZZ",
+        "priceComparison": "約25,000円でCharge 6よりやや高価。",
+        "featureComparison": [
+          "共通点：Suica対応、GPS搭載、睡眠・心拍測定、Googleマップ対応",
+          "相違点：Charge 6はスリムなバンド型でECG・EDAセンサーを搭載。Versa 4はスマートウォッチ型で画面が大きいが、ECG・EDAセンサーは非搭載"
+        ],
+        "differentiators": [
+          "Fitbit Charge 6の利点：ECG（心電図）アプリやEDAセンサーによる高度な健康・ストレス管理機能を備えつつ、コンパクトで価格も安い",
+          "Fitbit Versa 4の利点：時計型の大きなディスプレイで視認性が良く、Bluetooth通話やAlexaに対応している"
+        ]
       }
     ],
     "recommendation": {
@@ -100,15 +144,55 @@
         "高度計（階数計測）機能がない"
       ],
       "score": 85,
-      "scoreRationale": "[基本点: 70]\n[加点: +10] (Suica対応、Googleマップ/ウォレット/YouTube Music連携という独自の強み)\n[加点: +5] (心拍数、睡眠、ストレス、ECG、EDAなど高度な健康管理機能)\n[減点: -5] (競合（Xiaomi/HUAWEI）に比べて価格が高く、バッテリー持ちが短い)\n[加点: +5] (信頼性の高いブランドとアプリの使いやすさ)\n[合計: 85]"
+      "scoreRationale": "[基本点: 70]\n[加点: +10] (Suica対応、Googleマップ/ウォレット/YouTube Music連携という独自の強み)\n[加点: +5] (心拍数、睡眠、ストレス、ECG、EDAなど高度な健康管理機能)\n[減点: -3] (XiaomiやHUAWEIなどの競合に比べて価格が高い)\n[減点: -2] (競合に比べてバッテリー持ちが最大7日間と短い)\n[加点: +5] (信頼性の高いブランドとアプリの使いやすさ)\n[合計: 85]"
     },
     "technicalSpecs": {
-      "display": { "size": "1.04インチ", "type": "AMOLED" },
-      "battery": { "capacity": "最大7日間", "charging": "約2時間" },
-      "connectivity": ["Bluetooth", "GPS", "NFC (Suica)", "GLONASS"],
-      "sensors": ["光学式心拍センサー", "赤外線センサー(血中酸素)", "皮膚電気活動(EDA)センサー", "3軸加速度計", "環境光センサー"],
-      "dimensions": { "height": "11.2mm", "width": "23.1mm", "depth": "36.7mm", "weight": "非公開" },
-      "other": ["5気圧防水", "ECGアプリ対応", "常時表示モード", "スマートウェイクアラーム"]
-    }
+      "dimensions": {
+        "height": "11.2mm",
+        "width": "23.1mm",
+        "depth": "36.7mm"
+      },
+      "weight": "30g",
+      "capacity": "非該当",
+      "material": "アルミニウム、樹脂",
+      "origin": "不明",
+      "other": [
+        "5気圧防水",
+        "ECGアプリ対応",
+        "常時表示モード",
+        "スマートウェイクアラーム",
+        "光学式心拍センサー",
+        "赤外線センサー(血中酸素)",
+        "皮膚電気活動(EDA)センサー",
+        "3軸加速度計",
+        "環境光センサー"
+      ],
+      "display": {
+        "size": "2.6cm",
+        "type": "AMOLED"
+      },
+      "battery": {
+        "capacity": "最大7日間",
+        "charging": "約2時間"
+      },
+      "connectivity": [
+        "Bluetooth",
+        "GPS",
+        "NFC (Suica)",
+        "GLONASS"
+      ]
+    },
+    "claims": [
+      {
+        "claim": "心拍数測定の精度が最大60%アップ（前モデル比）",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "crossChecked": false,
+        "notes": "Google公式サイトに記載"
+      }
+    ]
   }
 }
