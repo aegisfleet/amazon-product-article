@@ -1,0 +1,174 @@
+{
+  "analysis": {
+    "productName": "Sweguard USB-A to USB-C ケーブル 0.5m 2本セット",
+    "parentAsin": "B0GH4HDHL1",
+    "productDescription": "QC3.0急速充電と最大480Mbpsデータ転送に対応した、0.5mのナイロン編み高耐久USB-A to USB-Cケーブル2本セット。",
+    "productUsage": [
+      "スマートフォンの充電・データ転送",
+      "モバイルバッテリーとの接続",
+      "タブレットの充電"
+    ],
+    "positivePoints": [
+      "2本セットでコスパが良い",
+      "0.5mと短いのでモバイルバッテリーとの使用や車内での取り回しに便利",
+      "ナイロン編みで断線しにくい"
+    ],
+    "negativePoints": [
+      "PD（Power Delivery）充電には非対応",
+      "映像出力には非対応"
+    ],
+    "useCases": [
+      "外出時のモバイルバッテリー用",
+      "車内のカーチャージャー接続用",
+      "デスクでのスマホ充電"
+    ],
+    "userStories": [],
+    "userImpression": "0.5mという長さがモバイルバッテリーでの使用や車内での使用にちょうど良く、2本セットで予備も確保できるため実用性が高いとの評価が予想される。",
+    "sources": [
+      {
+        "id": "src-1",
+        "name": "Amazon商品ページ",
+        "url": "https://www.amazon.co.jp/dp/B0GH4HDHL1",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-06-15",
+        "author": "sweguard",
+        "conflictOfInterest": "possible",
+        "notes": "製品仕様、価格、機能説明を確認"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "15000回以上の曲げ試験に合格",
+        "category": "durability",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "crossChecked": false,
+        "notes": "メーカーのスペック表より"
+      },
+      {
+        "claim": "最大3AのQC3.0急速充電に対応",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "crossChecked": false,
+        "notes": "メーカーのスペック表より"
+      }
+    ],
+    "lastInvestigated": "2026-06-15",
+    "competitiveAnalysis": [
+      {
+        "name": "オーム(OHM) AudioComm USB-C to USB-C 0.5m",
+        "asin": "B0F9F8MTBF",
+        "priceComparison": "対象商品はUSB-A to Cで2本999円だが、こちらはUSB-C to Cで1本397円。CtoCでPD充電を求めるなら競合が安価。",
+        "featureComparison": [
+          "共通点：ケーブル長が0.5mであること",
+          "相違点：対象商品はUSB-A to Cでナイロン被覆(2本セット)、競合はUSB-C to CでPD60W対応(1本)"
+        ],
+        "differentiators": [
+          "Sweguardの利点：2本セットでお得感があり、従来のUSB-A充電器を利用できる点、ナイロン編みで高耐久な点",
+          "オーム(OHM)の利点：PD対応で最大60Wの高速充電が可能な点、CtoC環境に対応している点"
+        ]
+      },
+      {
+        "name": "Boanxin USB A to USB C ケーブル 0.5M",
+        "asin": "B0FY33QR12",
+        "priceComparison": "対象商品(999円/2本)に対し、競合は699円/1本。1本あたりの価格は対象商品の方が安い。",
+        "featureComparison": [
+          "共通点：USB-A to C、0.5m、ナイロン編み、QC3.0対応であること",
+          "相違点：対象商品はデータ転送速度が480Mbpsで2本セット、競合は10Gbpsの超高速転送に対応しているが1本"
+        ],
+        "differentiators": [
+          "Sweguardの利点：2本セットで1本あたりの価格が安く、充電メインの用途でコスパに優れる点",
+          "Boanxinの利点：10Gbpsの超高速データ転送に対応しており、大容量ファイルの移動に適している点"
+        ]
+      },
+      {
+        "name": "WANSUN USB-A to USB-C ケーブル 0.5m",
+        "asin": "B0FXWJCMGH",
+        "priceComparison": "対象商品(999円/2本)に対し、競合は499円/1本。1本あたりの価格は同等。",
+        "featureComparison": [
+          "共通点：USB-A to C、0.5m、QC3.0(3A)対応であること",
+          "相違点：対象商品はナイロン編みでデータ転送480Mbps(2本セット)、競合はシリコン素材でデータ転送10Gbps(1本)"
+        ],
+        "differentiators": [
+          "Sweguardの利点：2本セットで買い足しが不要な点、ナイロン被覆による頑丈さ",
+          "WANSUNの利点：柔らかく扱いやすいシリコン素材を採用している点、10Gbpsの高速データ転送が可能な点"
+        ]
+      },
+      {
+        "name": "SLEIJAOOE USB Type C ケーブル 0.5m 2本セット",
+        "asin": "B0FPWQFKV7",
+        "priceComparison": "対象商品(999円)に対し、競合は899円。競合の方がわずかに安い。",
+        "featureComparison": [
+          "共通点：USB-A to C、0.5mの2本セット、データ転送480Mbpsであること",
+          "相違点：対象商品はナイロン編み素材、競合はもっちり触感のシリコン素材を採用していること"
+        ],
+        "differentiators": [
+          "Sweguardの利点：ナイロン編みによる摩擦への強さ、耐久性の高さ",
+          "SLEIJAOOEの利点：柔らかく絡みにくいシリコン素材で、収納や取り回しがしやすい点"
+        ]
+      },
+      {
+        "name": "Suptopwxm USB Type C ケーブル 0.5m 2本セット (C to C)",
+        "asin": "B0GVGN8TS5",
+        "priceComparison": "対象商品(999円)に対し、競合は699円。CtoC環境が前提なら競合の方が安い。",
+        "featureComparison": [
+          "共通点：0.5mの2本セット、データ転送480Mbpsであること",
+          "相違点：対象商品はUSB-A to CでQC3.0対応、競合はUSB-C to CでPD60W対応"
+        ],
+        "differentiators": [
+          "Sweguardの利点：従来のUSB-Aポートを備えた充電器やPCでそのまま利用できる点",
+          "Suptopwxmの利点：最新のUSB-Cポート環境に対応し、PD60Wのより高速な充電が可能な点"
+        ]
+      },
+      {
+        "name": "YITONGXXSUN USB Type C ケーブル 0.5m 2本セット",
+        "asin": "B0GRFDN9PX",
+        "priceComparison": "対象商品(999円)に対し、競合は669円。競合の方が安い。",
+        "featureComparison": [
+          "共通点：USB-A to C、0.5mの2本セット、3A充電対応、データ転送480Mbpsであること",
+          "相違点：対象商品はナイロン編み被覆、競合はTPE素材を使用していること"
+        ],
+        "differentiators": [
+          "Sweguardの利点：ナイロン編み素材による高い耐久性と断線への強さ",
+          "YITONGXXSUNの利点：価格が安く、初期投資を抑えられる点"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "モバイルバッテリーと一緒に持ち歩きたい人",
+        "車載用に短いケーブルを探している人",
+        "USB-A出力の充電器を使っている人"
+      ],
+      "pros": [
+        "0.5mで取り回しが良い",
+        "2本セットでコスパが高い",
+        "ナイロン編みで断線しにくい"
+      ],
+      "cons": [
+        "PD充電には非対応",
+        "映像出力には非対応"
+      ],
+      "score": 75,
+      "scoreRationale": "[基本点: 70]\n[加点: +5] (2本セットで1本あたり約500円というコストパフォーマンスの良さ)\n[加点: +5] (ナイロン編みで15000回の曲げ試験をクリアする高い耐久性)\n[減点: -5] (データ転送が480Mbpsと標準的であり、高速転送やPD充電には非対応)\n[合計: 75]"
+    },
+    "technicalSpecs": {
+      "length": "0.5m",
+      "quantity": "2本セット",
+      "connectorType": "USB Type-A to USB Type-C",
+      "maxCurrent": "3.1A (QC3.0対応)",
+      "dataTransferRate": "最大480Mbps (USB 2.0基準)",
+      "material": "ナイロンファイバー被覆、金メッキコネクタ",
+      "other": [
+        "56kΩレジスタ内蔵",
+        "映像出力非対応"
+      ]
+    }
+  }
+}
