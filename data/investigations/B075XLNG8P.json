@@ -1,6 +1,6 @@
 {
   "analysis": {
-    "productName": "エーモン ギボシ端子セット 50セット (4901)",
+    "productName": "エーモン(amon) ギボシ端子セット 50セット (4901)",
     "parentAsin": "B075XLNG8P",
     "productDescription": "自動車の電装品取り付けや配線加工に必須のギボシ端子セット。信頼性の高いエーモン製の業務用大容量50セットパック。",
     "productUsage": [
@@ -27,50 +27,100 @@
       "バイクのウインカーやホーンの交換",
       "経年劣化した配線端子のリフレッシュ"
     ],
-    "userStories": [
-      {
-        "userType": "DIY初心者",
-        "scenario": "初めてのドラレコ取り付けで失敗しても予備がたくさんあるので安心。",
-        "experience": "最初はカシメに失敗して端子を無駄にしてしまいましたが、50個入りだったので買い足しに行く必要がなく、無事に取り付け完了しました。",
-        "sentiment": "positive"
-      },
-      {
-        "userType": "サンデーメカニック",
-        "scenario": "頻繁に配線をいじるので、この量は助かる。",
-        "experience": "週末に車のいじりをするたびに端子が必要になるので、まとめて買っておくと安心です。品質も安定していて作業が捗ります。",
-        "sentiment": "positive"
-      }
-    ],
+    "userStories": [],
     "userImpression": "DIYユーザーにとって非常にコストパフォーマンスが高く、品質も信頼できる定番商品。大量に使うユーザーや、失敗を恐れず作業したい初心者に最適。",
     "sources": [
       {
+        "id": "src-1",
         "name": "Amazon商品ページ",
         "url": "https://www.amazon.co.jp/dp/B075XLNG8P",
-        "credibility": "高"
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-06-17",
+        "author": "Amazon",
+        "conflictOfInterest": "none",
+        "notes": "商品の基本情報、仕様、価格"
       }
     ],
-    "lastInvestigated": "2026-02-17",
+    "lastInvestigated": "2026-06-17",
     "competitiveAnalysis": [
       {
         "name": "エーモン ギボシ端子セット 100セット (4902)",
         "asin": "B075XM2JHV",
-        "priceComparison": "単価はさらに安くなるが、個人では使いきれない量。",
-        "featureComparison": ["100セット入り", "品質は同等"],
-        "differentiators": ["さらに大容量"]
+        "priceComparison": "本商品（50セット、744円）と比較して、100セット（1,390円）で容量あたりの単価は少し安いが、個人で使い切るには多すぎる場合がある。",
+        "featureComparison": [
+          "共通点：品質、ブランド、適合コードサイズ（AV(S)0.5～2sq）",
+          "相違点：入り数（50セット vs 100セット）と価格"
+        ],
+        "differentiators": [
+          "エーモン(amon) ギボシ端子セット パック 4901の利点：個人でも使い切りやすい量でありつつ、単価も十分に安い",
+          "エーモン(amon) ギボシ端子セット 100セット 4902の利点：さらに大容量で、単価がわずかに安い"
+        ]
       },
       {
         "name": "エーモン ギボシ端子セット 12セット (3301)",
         "asin": "B086XBZP4S",
-        "priceComparison": "単価は割高になるが、少量必要な場合に最適。",
-        "featureComparison": ["12セット入り", "品質は同等"],
-        "differentiators": ["使い切りサイズ"]
+        "priceComparison": "本商品と比較して、12セット（267円）で容量あたりの単価は割高である。",
+        "featureComparison": [
+          "共通点：品質、ブランド、適合コードサイズ（AV(S)0.5～2sq）",
+          "相違点：入り数（50セット vs 12セット）と価格"
+        ],
+        "differentiators": [
+          "エーモン(amon) ギボシ端子セット パック 4901の利点：容量あたりの単価が安く、頻繁に使う場合にお得",
+          "エーモン(amon) ギボシ端子セット 12セット 3301の利点：少量だけ必要な場合に無駄なく購入できる"
+        ]
       },
       {
         "name": "Kenizoy ギボシ端子セット 280個",
         "asin": "B0CXLC2BW8",
-        "priceComparison": "1個あたりの単価は非常に安い。",
-        "featureComparison": ["280個入り（約140セット相当）", "端子の厚みや強度が劣る場合がある"],
-        "differentiators": ["圧倒的な安さ", "ケース付き"]
+        "priceComparison": "本商品と比較して、圧倒的に低価格である。",
+        "featureComparison": [
+          "共通点：ギボシ端子セットであること",
+          "相違点：ブランドの信頼性、価格、ケースの有無"
+        ],
+        "differentiators": [
+          "エーモン(amon) ギボシ端子セット パック 4901の利点：信頼と実績のあるエーモン製で、品質が安定している",
+          "Kenizoy ギボシ端子セット 280個の利点：圧倒的な安さと、ケース付きである点"
+        ]
+      },
+      {
+        "name": "CHARYZA ギボシ端子 400個セット",
+        "asin": "B09TDLV358",
+        "priceComparison": "本商品と比較して、圧倒的に低価格である。",
+        "featureComparison": [
+          "共通点：ギボシ端子セットであること",
+          "相違点：ブランドの信頼性、圧倒的な大容量と低価格"
+        ],
+        "differentiators": [
+          "エーモン(amon) ギボシ端子セット パック 4901の利点：信頼と実績のあるエーモン製で、品質が安定している",
+          "CHARYZA ギボシ端子 400個セットの利点：圧倒的な安さと大容量である点"
+        ]
+      },
+      {
+        "name": "FINGOOO ギボシ端子 400個セット",
+        "asin": "B0F134JSLS",
+        "priceComparison": "本商品と比較して、圧倒的に低価格である。",
+        "featureComparison": [
+          "共通点：ギボシ端子セットであること",
+          "相違点：ブランドの信頼性、圧倒的な大容量と低価格"
+        ],
+        "differentiators": [
+          "エーモン(amon) ギボシ端子セット パック 4901の利点：信頼と実績のあるエーモン製で、品質が安定している",
+          "FINGOOO ギボシ端子 400個セットの利点：圧倒的な安さと大容量である点"
+        ]
+      },
+      {
+        "name": "Tibemi ギボシ端子セット 280個",
+        "asin": "B0FDQJLSRW",
+        "priceComparison": "本商品と比較して、圧倒的に低価格である。",
+        "featureComparison": [
+          "共通点：ギボシ端子セットであること",
+          "相違点：ブランドの信頼性、様々な種類の端子が含まれている点、価格"
+        ],
+        "differentiators": [
+          "エーモン(amon) ギボシ端子セット パック 4901の利点：信頼と実績のあるエーモン製で、品質が安定している",
+          "Tibemi ギボシ端子セット 280個の利点：様々な種類の端子が含まれており、ケース付きで安価である点"
+        ]
       }
     ],
     "recommendation": {
@@ -88,8 +138,8 @@
         "保管用のケースが必要になる",
         "量が多すぎる場合がある"
       ],
-      "score": 85,
-      "scoreRationale": "[基本点: 70]\n[加点: +5] (エーモンブランドの信頼性と品質)\n[加点: +10] (50セット入りで高いコストパフォーマンス)\n[加点: +5] (カシメやすく作業性が高い)\n[減点: -5] (保管ケースが付属しない)\n[合計: 85]"
+      "score": 95,
+      "scoreRationale": "[基本点: 70]\n[加点: +5] (安定した品質)\n[加点: +5] (専用工具でかしめやすい使い勝手の良さ)\n[加点: +10] (大容量によるコスパの高さ)\n[加点: +5] (信頼のブランド)\n[合計: 95]"
     },
     "technicalSpecs": {
       "os": null,
@@ -99,14 +149,23 @@
       "display": null,
       "battery": null,
       "camera": null,
-      "dimensions": null,
+      "dimensions": {
+        "height": "200mm",
+        "width": "100mm",
+        "depth": "22mm"
+      },
       "connectivity": null,
       "other": [
-        "適合コード: AV(S)0.5~2.0sq",
+        "適合コード: AV(S)0.5～2.0sq",
         "使用可能電力: DC12V 200W以下 / DC24V 400W以下",
         "材質: 端子(黄銅/スズメッキ)、スリーブ(PVC)",
         "入り数: 50セット"
-      ]
-    }
+      ],
+      "weight": "103g",
+      "capacity": "50セット",
+      "material": "端子:黄銅/スズメッキ、スリーブ:PVC",
+      "origin": "不明"
+    },
+    "claims": []
   }
 }
