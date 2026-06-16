@@ -1,0 +1,207 @@
+{
+  "analysis": {
+    "productName": "Morpilot ペットキャリーバッグ 4way Mサイズ",
+    "parentAsin": "B0G4WD7P3F",
+    "productDescription": "手提げ、肩掛け、ドライブボックス、スーツケース用の4通りで使える折りたたみ可能なペットキャリーバッグです。通気性に優れたメッシュ窓と飛び出し防止リードを備え、安全性と快適性を両立しています。",
+    "productUsage": [
+      "通院、ドライブ、散歩、旅行時のペットの移動",
+      "災害時の避難用キャリー"
+    ],
+    "positivePoints": [
+      "4wayで様々なシーンに対応できる利便性",
+      "通気性が良く、引っ掻き傷に強いメッシュ素材",
+      "ロック式のダブルファスナーと飛び出し防止リードによる高い安全性"
+    ],
+    "negativePoints": [
+      "耐荷重が7kgまでのため、大型犬や大きめの猫には不向きな場合がある"
+    ],
+    "useCases": [
+      "動物病院への通院時",
+      "車での旅行やドライブ",
+      "電車や公共交通機関での移動時"
+    ],
+    "userStories": [
+      {
+        "userType": "小型犬の飼い主",
+        "scenario": "車でのドライブ",
+        "experience": "シートベルトで固定できるので、車での移動時も安定しています。メッシュ部分から外の景色が見えるので、愛犬も落ち着いて過ごせています。",
+        "supportingSourceIds": [
+          "src-amazon-reviews"
+        ],
+        "sentiment": "positive"
+      },
+      {
+        "userType": "猫の飼い主",
+        "scenario": "動物病院への通院",
+        "experience": "上部とサイドから出し入れができるので、病院で猫を出すときにスムーズです。ファスナーにロックがついているので、移動中も安心感があります。",
+        "supportingSourceIds": [
+          "src-amazon-reviews"
+        ],
+        "sentiment": "positive"
+      }
+    ],
+    "userImpression": "価格に対して機能性が高く、通気性や安全性などの基本機能がしっかりとしていると評価されています。折りたたみ可能で収納しやすい点も好評です。",
+    "sources": [
+      {
+        "id": "src-amazon-official",
+        "name": "Amazon商品ページ",
+        "url": "https://www.amazon.co.jp/dp/B089VRS8N4",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-06-16",
+        "author": "Morpilot",
+        "conflictOfInterest": "possible",
+        "notes": "製品仕様、機能説明、価格を確認"
+      },
+      {
+        "id": "src-amazon-reviews",
+        "name": "Amazon カスタマーレビュー",
+        "url": "https://www.amazon.co.jp/dp/B089VRS8N4#customerReviews",
+        "tier": "medium",
+        "evidenceType": "secondary",
+        "publishedAt": "2026-06-16",
+        "author": "Amazonユーザー",
+        "conflictOfInterest": "none",
+        "notes": "実際の使用感、使い勝手の良さ、耐久性に関する評価を確認"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "通気性が高く、引っ掻き傷に強いメッシュ素材を使用",
+        "category": "durability",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-amazon-official"
+        ],
+        "crossChecked": true,
+        "notes": "公式の製品仕様に記載"
+      },
+      {
+        "claim": "ロック式のダブルファスナーと飛び出し防止リード付き",
+        "category": "safety",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-amazon-official"
+        ],
+        "crossChecked": true,
+        "notes": "公式の機能説明に記載"
+      }
+    ],
+    "lastInvestigated": "2026-06-16",
+    "competitiveAnalysis": [
+      {
+        "name": "SunStarsPets ペットキャリー",
+        "asin": "B0CB65WSCT",
+        "priceComparison": "Morpilotとほぼ同価格帯。",
+        "featureComparison": [
+          "共通点：4way仕様、耐荷重7kg、折りたたみ可能、通気性の良いメッシュ窓。",
+          "相違点：SunStarsPetsは本体重量が約1180gとやや軽量、Morpilotは犬の鉢が付属している。"
+        ],
+        "differentiators": [
+          "Morpilotの利点：犬の鉢が付属しており、旅行時などの食事に便利。",
+          "SunStarsPetsの利点：本体重量が約1180gと軽量で持ち運びやすい。"
+        ]
+      },
+      {
+        "name": "アイリスプラザ ペット用キャリーバック",
+        "asin": "B06WLLTTH7",
+        "priceComparison": "Morpilotより高価だが、信頼のブランド製品として価値がある。",
+        "featureComparison": [
+          "共通点：4way仕様。",
+          "相違点：アイリスプラザは本体重量が2.8kgと重く、しっかりとした作りになっている。"
+        ],
+        "differentiators": [
+          "Morpilotの利点：本体重量が1.28kgと軽量で、折りたたみ可能で収納しやすい。",
+          "アイリスプラザの利点：作りがしっかりしており、耐久性や安定感に優れる。"
+        ]
+      },
+      {
+        "name": "Tresbro 次世代 ペットキャリー リュック",
+        "asin": "B0CGTKP7VL",
+        "priceComparison": "Morpilotより高価だが、キャスター付きで移動が楽。",
+        "featureComparison": [
+          "共通点：通気性の良いメッシュ窓、飛び出し防止機能。",
+          "相違点：Tresbroはキャスター付きのリュック型で、分離可能。"
+        ],
+        "differentiators": [
+          "Morpilotの利点：軽量で価格が手頃、手提げや肩掛けなどシーンに合わせて使い分けやすい。",
+          "Tresbroの利点：キャスター付きで重いペットの移動や長距離の移動に便利。"
+        ]
+      },
+      {
+        "name": "HOVONO ペット 2匹 キャリー リュック",
+        "asin": "B0GBX8PL8Y",
+        "priceComparison": "Morpilotより大幅に高価だが、2匹用・キャスター付きの高機能モデル。",
+        "featureComparison": [
+          "共通点：通気性の良いメッシュ窓。",
+          "相違点：HOVONOは2段式で2匹のペットを収納でき、キャスターが付いている。"
+        ],
+        "differentiators": [
+          "Morpilotの利点：コンパクトで軽量、手軽に持ち運べる。",
+          "HOVONOの利点：多頭飼いの方や、大きめのペットを運ぶのに適している。"
+        ]
+      },
+      {
+        "name": "Honeypet 四季通用 ペットキャリーバッグ",
+        "asin": "B09948C12W",
+        "priceComparison": "Morpilotよりやや安価。",
+        "featureComparison": [
+          "共通点：4way仕様、折りたたみ可能、耐荷重(Honeypetは8kg)。",
+          "相違点：Honeypetは両側のカーテンを巻き上げ・閉鎖できる四季通用デザイン。"
+        ],
+        "differentiators": [
+          "Morpilotの利点：犬の鉢が付属しており、付属品が充実している。",
+          "Honeypetの利点：季節や気温に合わせてカーテンで通気性・保温性を調整できる。"
+        ]
+      },
+      {
+        "name": "LONGYULI ペットキャリー バッグ",
+        "asin": "B0FDFVQTQ7",
+        "priceComparison": "Morpilotより安価で、コストパフォーマンスに優れる。",
+        "featureComparison": [
+          "共通点：4way仕様、耐荷重7kg、折りたたみ可能。",
+          "相違点：LONGYULIは本体重量が720gと非常に軽量。"
+        ],
+        "differentiators": [
+          "Morpilotの利点：犬の鉢などの付属品が充実しており、品質面での安心感がある。",
+          "LONGYULIの利点：非常に軽量（720g）で、とにかく価格を抑えたい場合に適している。"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "小型ペット（7kg以内）の飼い主",
+        "様々な持ち運び方（手提げ、肩掛け、車載など）をしたい方",
+        "通院や旅行で安全にペットを移動させたい方"
+      ],
+      "pros": [
+        "4way仕様で状況に応じた使い方が可能",
+        "ロック式ファスナーや飛び出し防止リードによる高い安全性",
+        "通気性が良く、ペットが快適に過ごせる設計"
+      ],
+      "cons": [
+        "耐荷重7kgのため、中型犬以上には使用できない",
+        "軽量だが、ハードタイプのキャリーと比べると外部からの衝撃への耐性は劣る"
+      ],
+      "score": 85,
+      "scoreRationale": "[基本点: 70]\n[加点: +5] (4wayで様々なシーンに対応でき、利便性が高い)\n[加点: +5] (ロック式ファスナーや飛び出し防止リードなど安全機能が充実)\n[加点: +5] (折りたたみ可能で収納しやすく、メッシュ窓で通気性も良好)\n[減点: 0] (特筆すべき欠点は見当たらない)\n[合計: 85]"
+    },
+    "technicalSpecs": {
+      "dimensions": {
+        "height": "350mm",
+        "width": "280mm",
+        "depth": "430mm"
+      },
+      "weight": "1280g",
+      "capacity": "耐荷重: 7kg以内",
+      "material": "オックスフォード生地、メッシュ素材（引っ掻き傷に強い）",
+      "origin": "記載なし",
+      "other": [
+        "付属品: 外部/肩掛けベルト、内部/飛び出し防止リード、犬の鉢、やわらか中敷きマット",
+        "4way仕様（手提げ、肩掛け、ドライブボックス、スーツケース用）",
+        "折りたたみ可能",
+        "ロック式のダブルファスナー"
+      ]
+    }
+  }
+}
