@@ -69,9 +69,9 @@ export class ProductCounter {
         engines: {
           yaml: {
             parse: (str: string) => yaml.load(str) as Record<string, any>,
-            stringify: (obj: any) => yaml.dump(obj)
-          }
-        }
+            stringify: (obj: any) => yaml.dump(obj),
+          },
+        },
       });
 
       if (parsed.data && Array.isArray(parsed.data.categories)) {
