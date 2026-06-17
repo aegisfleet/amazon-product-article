@@ -1,0 +1,200 @@
+{
+  "analysis": {
+    "productName": "Thunderbolt 4 ケーブル L字型 1m",
+    "parentAsin": "B0GF7RKFN6",
+    "productDescription": "最大240Wの急速充電と40Gbpsの高速データ転送、最大8K/60Hzの映像出力に対応したL字型のThunderbolt 4ケーブルです。",
+    "productUsage": [
+      "ノートPCやスマートフォンへの急速充電",
+      "高解像度ディスプレイへの映像出力",
+      "大容量データの高速転送"
+    ],
+    "positivePoints": [
+      "L字型コネクタにより、狭いデスク上でもケーブルの取り回しがしやすい",
+      "無理にケーブルを曲げる必要がなく、デバイス側のポートにかかる負担を軽減できる",
+      "ドッキングステーション経由での給電（90Wなど）も安定して行える",
+      "テザー撮影などの用途でも使用可能"
+    ],
+    "negativePoints": [
+      "接続部が硬く、L字型であるため抜きにくい場合がある",
+      "ケーブル自体が硬めで柔軟性に欠ける",
+      "特定のハブやドッキングステーション（例：一部のSSD/HDDハブやUGREEN製TB4ドックなど）と接続した際に、認識しなかったり接続が切れるなどの相性問題が報告されている"
+    ],
+    "useCases": [
+      "ノートPCをモニターに接続し、映像出力と給電を同時に行う",
+      "デスクの壁際や狭小スペースでデバイスを充電・接続する",
+      "カメラとPCを接続してテザー撮影を行う"
+    ],
+    "userStories": [
+      {
+        "userType": "デスクワーカー",
+        "scenario": "狭小なテーブルでノートPCを使用する",
+        "experience": "L字型コネクタをPC側に挿すことで、ケーブルの取り回しが非常に楽になり、限られたスペースを有効に使えるようになりました。無理にケーブルを曲げる必要がないので、ポートの保護にも役立っています。",
+        "supportingSourceIds": ["src-amazon-reviews"],
+        "sentiment": "positive"
+      },
+      {
+        "userType": "一般ユーザー",
+        "scenario": "周辺機器の接続と取り外しを行う",
+        "experience": "ケーブルの接続部が硬めで、さらにL字型なので、ポートから抜きにくいと感じました。ケーブル自体も硬いため、もう少し柔らかいと扱いやすいです。",
+        "supportingSourceIds": ["src-amazon-reviews"],
+        "sentiment": "negative"
+      },
+      {
+        "userType": "周辺機器ユーザー",
+        "scenario": "ハブやドッキングステーションと接続する",
+        "experience": "PCへの直つなぎや特定のドッキングステーションでの給電は問題ありませんでしたが、一部のSSD・HDD接続用ハブやTB4ドックでは認識しなかったり、頻繁に接続が切れたりする不安定な動作が見られました。",
+        "supportingSourceIds": ["src-amazon-reviews"],
+        "sentiment": "mixed"
+      }
+    ],
+    "userImpression": "L字型コネクタによる省スペース性や取り回しの良さ、高いスペック（240W充電・40Gbps転送・8K出力）は評価されている一方で、ケーブルやコネクタの硬さ、一部のハブやドッキングステーションとの相性問題（接続の不安定さ）に不満を持つユーザーが一定数存在します。",
+    "sources": [
+      {
+        "id": "src-amazon-reviews",
+        "name": "Amazon カスタマーレビュー",
+        "url": "https://www.amazon.co.jp/dp/B0DH2847B2",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-06-13",
+        "author": "Amazon購入者",
+        "conflictOfInterest": "none",
+        "notes": "L字型の取り回しの良さ、抜きにくさ、ケーブルの硬さ、ハブ・ドックとの相性問題について確認。"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "L字型設計によりポートの負担を軽減し、省スペースで利用可能",
+        "category": "durability",
+        "confidence": "high",
+        "supportingSourceIds": ["src-amazon-reviews"],
+        "crossChecked": false,
+        "notes": "複数のレビューでL字型のメリットが言及されている。"
+      },
+      {
+        "claim": "一部のハブやドッキングステーションとの接続で不安定になる場合がある",
+        "category": "quality",
+        "confidence": "medium",
+        "supportingSourceIds": ["src-amazon-reviews"],
+        "crossChecked": false,
+        "notes": "特定のハブで認識しない、接続が切れるという報告が複数存在する。"
+      }
+    ],
+    "lastInvestigated": "2026-06-17",
+    "competitiveAnalysis": [
+      {
+        "name": "Leehitech 1M 40Gbps双方向伝送 Thunderbolt 4 ケーブル",
+        "asin": "B0D9VVXCJL",
+        "priceComparison": "対象商品よりやや安い。スペックは同等。",
+        "featureComparison": [
+          "共通点：40Gbps転送、240W急速充電、8K/60Hz映像出力対応のL字型ケーブル",
+          "相違点：ブランドと価格設定の違い"
+        ],
+        "differentiators": [
+          "Thunderbolt 4 ケーブル L字型 1mの利点：特筆すべき明確な優位性は少ないが、タイムセール時の割引率が高い場合がある",
+          "Leehitech 1M 40Gbps双方向伝送 Thunderbolt 4 ケーブルの利点：通常価格がやや安く、コストを抑えたい場合に適している"
+        ]
+      },
+      {
+        "name": "Fasgear USB4 ケーブル l字 1m",
+        "asin": "B0CBRYKHRR",
+        "priceComparison": "対象商品と同程度の価格帯。",
+        "featureComparison": [
+          "共通点：40Gbps転送、240W急速充電、8K/60Hz映像出力対応のL字型ケーブル（1m）",
+          "相違点：FasgearはTPE素材を採用し、USB4ケーブルとして販売されている"
+        ],
+        "differentiators": [
+          "Thunderbolt 4 ケーブル L字型 1mの利点：Thunderbolt 4ケーブルとしての互換性を求める場合に適している",
+          "Fasgear USB4 ケーブル l字 1mの利点：USB4規格を重視する場合や、ブランドの信頼性を考慮するケース"
+        ]
+      },
+      {
+        "name": "XAOSUN USB4 V2 80Gケーブル L字",
+        "asin": "B0DKHF7S66",
+        "priceComparison": "対象商品より高い。その分、より上位の規格に対応している。",
+        "featureComparison": [
+          "共通点：L字型コネクタ、240W PD3.1急速充電対応、8K映像出力対応",
+          "相違点：XAOSUNはUSB4 V2 (80Gbps) / Thunderbolt 5対応で、USB-IF認証を取得している"
+        ],
+        "differentiators": [
+          "Thunderbolt 4 ケーブル L字型 1mの利点：価格が手頃で、一般的なThunderbolt 4のスペックで十分な場合に適している",
+          "XAOSUN USB4 V2 80Gケーブル L字の利点：将来性を見越した80Gbpsの転送速度や、USB-IF認証による信頼性を求める場合に最適"
+        ]
+      },
+      {
+        "name": "UGREEN L字 USB Cケーブル (2M)",
+        "asin": "B08QCM4R44",
+        "priceComparison": "対象商品より高いが、長さが2mである。",
+        "featureComparison": [
+          "共通点：L字型コネクタを採用したType-Cケーブル",
+          "相違点：UGREENは100W充電、5Gbps転送、4K/60Hz出力対応であり、スペック面では本製品より劣るが、ケーブル長が2mある"
+        ],
+        "differentiators": [
+          "Thunderbolt 4 ケーブル L字型 1mの利点：240W急速充電や40Gbps転送、8K出力といった高いスペックを必要とする場合に圧倒的に優位",
+          "UGREEN L字 USB Cケーブル (2M)の利点：高いスペックは不要だが、2mという長さが必要で、かつ安定した品質のブランドを求める場合"
+        ]
+      },
+      {
+        "name": "CIO シリコンL字ケーブル 1m",
+        "asin": "B0CDKMWHMF",
+        "priceComparison": "対象商品より高い。",
+        "featureComparison": [
+          "共通点：L字型コネクタ、240W急速充電対応の1mケーブル",
+          "相違点：CIOは柔らかく絡まないシリコン素材を採用しており、転送速度は20Gbps、出力は4Kである"
+        ],
+        "differentiators": [
+          "Thunderbolt 4 ケーブル L字型 1mの利点：40Gbpsの高速転送や8K出力など、より高い通信スペックを求める場合に適している",
+          "CIO シリコンL字ケーブル 1mの利点：ケーブルの柔らかさや取り回しのしやすさを最重視する場合に最適"
+        ]
+      },
+      {
+        "name": "Duttek L字USB C ケーブル シリコン",
+        "asin": "B0CDQ2ZV2N",
+        "priceComparison": "対象商品より高いが、長さは60cmと短い。",
+        "featureComparison": [
+          "共通点：L字型コネクタ、40Gbpsデータ転送、240W PD急速充電対応",
+          "相違点：Duttekは柔らかいシリコン素材を採用しており、映像出力は8K/6K対応"
+        ],
+        "differentiators": [
+          "Thunderbolt 4 ケーブル L字型 1mの利点：1mの長さがあり、価格も安価である",
+          "Duttek L字USB C ケーブル シリコンの利点：ケーブルの柔らかさを重視し、短いケーブル（60cm）で取り回しを良くしたい場合"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "デスク上でケーブルを省スペースに配線したいユーザー",
+        "ノートPCに給電しながら高解像度モニターへ出力したいユーザー",
+        "安価にThunderbolt 4対応のL字ケーブルを手に入れたいユーザー"
+      ],
+      "pros": [
+        "L字型コネクタにより省スペースで取り回しが良い",
+        "240W急速充電、40Gbps転送、8K映像出力のハイスペック対応",
+        "同等スペックの他社製品と比較して手頃な価格設定"
+      ],
+      "cons": [
+        "ケーブルやコネクタが硬く、抜き差ししづらい場合がある",
+        "一部のハブやドッキングステーションと相性問題が発生する可能性がある"
+      ],
+      "score": 68,
+      "scoreRationale": "[基本点: 70]\n[加点: +5] L字型コネクタによる省スペースな取り回しと、デバイス側ポートの負担軽減\n[加点: +3] 240W充電や40Gbps転送に対応しつつ、手頃な価格設定による良好なコスパ\n[減点: -5] 一部のハブやドッキングステーションとの接続における相性問題（不安定さ）の報告\n[減点: -5] ケーブルやコネクタが硬く、抜きにくいという使い勝手の悪さ\n[合計: 68]"
+    },
+    "technicalSpecs": {
+      "dimensions": {
+        "height": "",
+        "width": "",
+        "depth": ""
+      },
+      "length": "1m",
+      "weight": "",
+      "color": "ブラック",
+      "connectorType": "USB Type-C",
+      "dataTransferRate": "最大40Gbps",
+      "powerDelivery": "最大240W (48V/5A)",
+      "videoOutput": "最大8K/60Hz (またはデュアル4K/60Hz)",
+      "compatibility": "Thunderbolt 4 / USB-C 対応機器",
+      "other": [
+        "L字型コネクタ"
+      ]
+    }
+  }
+}
