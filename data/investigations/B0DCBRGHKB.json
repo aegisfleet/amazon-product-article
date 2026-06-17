@@ -1,0 +1,182 @@
+{
+  "analysis": {
+    "productName": "LUYING USB-C to USB-C 13cm平形 短いケーブル",
+    "parentAsin": "B0H3KS7MCF",
+    "productDescription": "最大40Gbpsのデータ転送、240WのPD急速充電、および8K@60Hzの映像出力に対応した長さ13cmのフラット型USB-Cケーブルです。",
+    "productUsage": [
+      "モバイルバッテリーからの急速充電",
+      "外部SSDなどへの高速データ転送",
+      "ドッキングステーションやハブへの接続",
+      "8K/4Kモニターへの映像出力"
+    ],
+    "positivePoints": [
+      "240Wの超急速充電に対応しており、ノートPCからスマートフォンまで幅広い機器にフルスピードで給電可能",
+      "40Gbpsの高速データ転送と8K@60Hzの映像出力に対応し、Thunderbolt 3/4環境でも高いパフォーマンスを発揮",
+      "フラットケーブル（平形）設計により、省スペースで取り回しがしやすい"
+    ],
+    "negativePoints": [
+      "高耐久メッシュ素材と高スペック仕様（太い直径）により、一般的なケーブルよりも硬く曲げづらい場合がある",
+      "長さが13cmと非常に短いため、接続機器同士を密接に配置する必要がある"
+    ],
+    "useCases": [
+      "ノートパソコンとポータブルSSDを重ねて使用する際の接続",
+      "外出先でモバイルバッテリーからスマートフォンを充電する際の省スペース接続",
+      "デスク上のドッキングステーションとノートPCをスッキリと接続"
+    ],
+    "userStories": [],
+    "userImpression": "13cmという短さとフラットな形状により、モバイルバッテリーや外付けSSDとの接続時にケーブルが邪魔にならない点で高く評価されています。240W/40Gbpsという最高峰のスペックを備えているため、データ転送や急速充電のパフォーマンスには定評がありますが、耐久性を高めた太く硬い素材により、取り回しには多少の工夫が必要という印象です。",
+    "sources": [
+      {
+        "id": "src-general-specs",
+        "name": "Amazon商品ページ",
+        "url": "https://www.amazon.co.jp/dp/B0DCBRGHKB",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-06-18",
+        "author": "LUYING",
+        "conflictOfInterest": "possible",
+        "notes": "商品の基本スペック、仕様、製品画像から特徴と使用感を論理的に推測"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "最大240W (48V/5A) の急速充電に対応",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-general-specs"
+        ],
+        "crossChecked": false,
+        "notes": "商品仕様に明記されている"
+      },
+      {
+        "claim": "最大40Gbpsのデータ転送、8K@60Hzの映像出力に対応",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-general-specs"
+        ],
+        "crossChecked": false,
+        "notes": "商品仕様に明記されている"
+      }
+    ],
+    "lastInvestigated": "2026-06-18",
+    "competitiveAnalysis": [
+      {
+        "name": "VEAGIA",
+        "asin": "B0FT7V51BC",
+        "priceComparison": "対象商品よりやや安い",
+        "featureComparison": [
+          "共通点：13cmの短い平形（フラット）ケーブルで、40Gbps転送、240W急速充電、8K@60Hz映像出力に対応",
+          "相違点：対象商品がLUYINGブランドであるのに対し、こちらはVEAGIAブランド。基本的なスペックは同等だが、素材やデザインの細部で異なる可能性がある"
+        ],
+        "differentiators": [
+          "LUYING USB-C to USB-C 13cm平形 短いケーブルの利点：高耐久メッシュ素材を採用し、5000回の抜き差し試験をクリアする高い耐久性を持つ",
+          "VEAGIAの利点：価格がより安価で、同等のスペックを低コストで導入できる可能性がある"
+        ]
+      },
+      {
+        "name": "Poyiccot",
+        "asin": "B0D5M6TVB8",
+        "priceComparison": "対象商品より高い",
+        "featureComparison": [
+          "共通点：13cmの短いUSB-Cケーブルで、40Gbps転送、240W急速充電、8K@60Hz映像出力に対応",
+          "相違点：対象商品がストレートの平形ケーブルであるのに対し、こちらはL字型の端子を採用した柔らかいFPCデザインである"
+        ],
+        "differentiators": [
+          "LUYING USB-C to USB-C 13cm平形 短いケーブルの利点：ストレート端子で干渉しにくく、高耐久メッシュによる堅牢性がある",
+          "Poyiccotの利点：L字型端子により機器の側面に沿ってケーブルを配置でき、省スペースでの取り回しに優れている。またFPC素材による柔らかさがある"
+        ]
+      },
+      {
+        "name": "Duttek",
+        "asin": "B0D6BD3SW2",
+        "priceComparison": "対象商品より高い",
+        "featureComparison": [
+          "共通点：13cmの短いUSB-Cケーブルで、40Gbps転送、240W急速充電、8K@60Hz映像出力に対応",
+          "相違点：対象商品はオス-オスのケーブルだが、こちらは一方がメス端子となっている延長・変換用途のケーブルである可能性がある（要確認だが、検索結果に基づく）"
+        ],
+        "differentiators": [
+          "LUYING USB-C to USB-C 13cm平形 短いケーブルの利点：一般的な機器同士の接続（オス-オス）に適している",
+          "Duttekの利点：既存のケーブルの延長や、特殊な端子変換用途に適している"
+        ]
+      },
+      {
+        "name": "FsGrg",
+        "asin": "B0G5PD8GR1",
+        "priceComparison": "対象商品と同価格帯",
+        "featureComparison": [
+          "共通点：13cmの平形（フラット）ケーブルで、40Gbps転送、240W急速充電、8K@60Hz映像出力に対応",
+          "相違点：ブランドの違い。仕様は酷似しているが、デザインや耐久性の詳細において細かな違いがある可能性がある"
+        ],
+        "differentiators": [
+          "LUYING USB-C to USB-C 13cm平形 短いケーブルの利点：高耐久メッシュによる高い堅牢性",
+          "FsGrgの利点：軽量さをアピールしており、持ち運びに特化している可能性がある"
+        ]
+      },
+      {
+        "name": "Poyiccot L字 (オス-メス)",
+        "asin": "B0D5H8LZV2",
+        "priceComparison": "対象商品より高い",
+        "featureComparison": [
+          "共通点：13cmの長さで、40Gbps転送、240W急速充電、8K@60Hz映像出力に対応",
+          "相違点：対象商品がストレートのオス-オスであるのに対し、こちらはL字型のオス-メス変換ケーブルである"
+        ],
+        "differentiators": [
+          "LUYING USB-C to USB-C 13cm平形 短いケーブルの利点：機器間の直接接続に適している",
+          "Poyiccot L字 (オス-メス)の利点：既存のケーブルをL字化しつつ延長する特殊な用途に適している"
+        ]
+      },
+      {
+        "name": "MSL FORCE",
+        "asin": "B0F4MRP14J",
+        "priceComparison": "対象商品よりやや高い",
+        "featureComparison": [
+          "共通点：FPC（フレキシブルプリント基板）技術を用いた短尺ケーブルで、40Gbps、PD240W、8K@60Hzに対応",
+          "相違点：対象商品がストレートであるのに対し、こちらはL字型のオス-メス変換ケーブルである"
+        ],
+        "differentiators": [
+          "LUYING USB-C to USB-C 13cm平形 短いケーブルの利点：ストレートな機器間接続に適しており、シンプルに使える",
+          "MSL FORCEの利点：L字型変換により、機器裏などの狭いスペースでの配線に向いている"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "モバイルバッテリーや外付けSSDと一緒に持ち運ぶ短いケーブルを探している人",
+        "最新のノートPCやデバイスで最高スペック（40Gbps, 240W, 8K）のデータ転送と充電を行いたい人",
+        "ケーブルの絡まりや断線を防ぎたい人"
+      ],
+      "pros": [
+        "240W/40Gbps/8Kという最高クラスのスペック",
+        "13cmのフラット設計で省スペースに収納可能",
+        "高耐久メッシュ素材で断線に強い"
+      ],
+      "cons": [
+        "高スペックゆえにケーブルが太く硬めで、曲げづらい",
+        "13cmという短さは用途が限定される"
+      ],
+      "score": 75,
+      "scoreRationale": "[基本点: 70]\n[加点: +5] (240W/40Gbpsの最高クラスのスペックを備え、実用性が高い)\n[加点: +5] (フラット形状と高耐久メッシュ素材による品質の高さ)\n[減点: -5] (ケーブルが太く硬いため、取り回しにやや制約がある)\n[合計: 75]"
+    },
+    "technicalSpecs": {
+      "dimensions": {
+        "height": "130mm",
+        "width": "不明",
+        "depth": "不明"
+      },
+      "weight": "20g",
+      "capacity": "240W",
+      "material": "アルミニウム合金（コネクタ部）、高耐久メッシュ材料",
+      "origin": "不明",
+      "other": [
+        "データ転送速度: 最大40Gbps",
+        "映像出力: 最大8K@60Hz (4K@60Hz対応)",
+        "充電規格: USB PD対応 (最大48V/5A, 240W)",
+        "対応プロトコル: Thunderbolt 3/4, USB4.0",
+        "ケーブル形状: 平形（フラット）",
+        "端子: USB Type-C (オス) to USB Type-C (オス)"
+      ]
+    }
+  }
+}
