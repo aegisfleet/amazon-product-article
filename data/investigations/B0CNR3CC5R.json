@@ -1,0 +1,132 @@
+{
+  "analysis": {
+    "productName": "Angusplay Thunderbolt 4 ケーブル 1m",
+    "parentAsin": "B0DB2H97DS",
+    "productDescription": "最大40Gbpsのデータ転送、100W PD急速充電、8K映像出力に対応したThunderbolt 4互換の1m USB-Cケーブル。",
+    "productUsage": ["ノートPCやスマートフォンの充電", "外部ディスプレイへの高画質映像出力", "外付けストレージ等との高速データ転送"],
+    "positivePoints": ["Thunderbolt 4対応ケーブルとしては安価に購入できる", "40Gbpsの高速データ転送と8K出力に対応"],
+    "negativePoints": ["最大100W充電までで、最新の240W (EPR) には非対応", "Intelの正規認証(Intel Certified)を受けている記載がない"],
+    "useCases": ["MacBook Proと外部モニターを接続してデュアルディスプレイ環境を構築する", "大容量の動画ファイルをポータブルSSDへ高速でバックアップする"],
+    "userStories": [],
+    "userImpression": "安価で一通りのThunderbolt 4機能を使えるためコストパフォーマンスは評価できるが、最新規格である240W給電に対応していない点やIntel認証の有無について気にする声がある。",
+    "sources": [
+      {
+        "id": "src-1",
+        "name": "Amazon Product Page",
+        "url": "https://www.amazon.co.jp/dp/B0CNR3CC5R",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-06-17",
+        "author": "Angusplay",
+        "conflictOfInterest": "possible",
+        "notes": "商品の公式スペック(40Gbps, 100W充電, 8K対応, 1m)と価格(1,799円)を確認"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "最大40Gbpsの高速データ転送と100W急速充電に対応",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": ["src-1"],
+        "crossChecked": false,
+        "notes": "公式の製品仕様より"
+      }
+    ],
+    "lastInvestigated": "2026-06-17",
+    "competitiveAnalysis": [
+      {
+        "name": "UGREEN USB4 ケーブル 1m (B0DZP21RXY)",
+        "asin": "B0DZP21RXY",
+        "priceComparison": "本製品よりも若干高いが、UGREENという知名度の高いブランドであり240W充電にも対応している。",
+        "featureComparison": [
+          "共通点：40Gbpsのデータ転送、8K映像出力に対応している点",
+          "相違点：本製品が100W充電対応に対し、UGREENは240W (PD3.1) 急速充電に対応している点"
+        ],
+        "differentiators": [
+          "Angusplay Thunderbolt 4 ケーブル 1mの利点：価格を極力安く抑えたい場合",
+          "UGREEN USB4 ケーブル 1m (B0DZP21RXY)の利点：240Wの超急速充電が必要な場合や、より信頼性の高いブランドを求める場合"
+        ]
+      },
+      {
+        "name": "Maxonar Thunderbolt 4 ケーブル 1M (B0F42RRTHJ)",
+        "asin": "B0F42RRTHJ",
+        "priceComparison": "本製品と同価格帯でありながら、240Wの急速充電に対応している。",
+        "featureComparison": [
+          "共通点：ケーブル長が1mで、40Gbps転送や8K出力に対応している点",
+          "相違点：本製品は100W充電対応だが、Maxonar製は240Wに対応している点"
+        ],
+        "differentiators": [
+          "Angusplay Thunderbolt 4 ケーブル 1mの利点：特になし（同価格帯で充電性能に差があるため）",
+          "Maxonar Thunderbolt 4 ケーブル 1M (B0F42RRTHJ)の利点：同じ予算で、より高出力な240W急速充電機能を得たい場合"
+        ]
+      },
+      {
+        "name": "Cable Matters 40Gbps 編組Thunderbolt 4 ケーブル 1m (B0CFG85PW4)",
+        "asin": "B0CFG85PW4",
+        "priceComparison": "本製品よりも高価だが、Intel認定を受けており編組仕様で耐久性にも優れる。",
+        "featureComparison": [
+          "共通点：40Gbpsのデータ転送、8K映像出力に対応している点",
+          "相違点：本製品は100W対応でIntel認証の記載がないが、Cable Matters製は240W対応かつIntel認定を取得しており、ケーブルが編組素材である点"
+        ],
+        "differentiators": [
+          "Angusplay Thunderbolt 4 ケーブル 1mの利点：初期費用をできるだけ安く抑えたい場合",
+          "Cable Matters 40Gbps 編組Thunderbolt 4 ケーブル 1m (B0CFG85PW4)の利点：高価なPC周辺機器を接続するため、Intel認定済みの確かな品質と高い耐久性（編組）を求める場合"
+        ]
+      },
+      {
+        "name": "Belkin USB-Cケーブル Thunderbolt 4 1m (B09PQPSPTS)",
+        "asin": "B09PQPSPTS",
+        "priceComparison": "本製品の2倍以上の価格だが、大手アクセサリメーカーのBelkin製でありIntel認証およびUSB-IF認証を取得している。",
+        "featureComparison": [
+          "共通点：最大100Wの充電と40Gbpsのデータ転送、8K映像出力に対応している点",
+          "相違点：本製品は各種認証が不明だが、Belkin製はIntel認証およびUSB-IF認証を明確に取得している点"
+        ],
+        "differentiators": [
+          "Angusplay Thunderbolt 4 ケーブル 1mの利点：価格重視で手軽にThunderbolt 4の環境を構築したい場合",
+          "Belkin USB-Cケーブル Thunderbolt 4 1m (B09PQPSPTS)の利点：機器へのダメージを防ぐため、厳格な規格認証(Intel / USB-IF)をクリアした信頼性の高い製品を選びたい場合"
+        ]
+      },
+      {
+        "name": "Cable Matters 40Gbps Thunderbolt 4 ケーブル 1m (B08YS59V4K)",
+        "asin": "B08YS59V4K",
+        "priceComparison": "本製品よりも高価だが、Intel認定を受けており240W充電に対応している。",
+        "featureComparison": [
+          "共通点：40Gbpsのデータ転送、8K映像出力に対応している点",
+          "相違点：本製品は100W対応だが、Cable Matters製は240W対応で、かつIntel認定を取得している点"
+        ],
+        "differentiators": [
+          "Angusplay Thunderbolt 4 ケーブル 1mの利点：予算を抑えてThunderbolt 4ケーブルを入手したい場合",
+          "Cable Matters 40Gbps Thunderbolt 4 ケーブル 1m (B08YS59V4K)の利点：Intel認定の安心感と、将来的な240W対応機器への備えが必要な場合"
+        ]
+      },
+      {
+        "name": "ノーブランド Thunderbolt 4 ケーブル 1M (B0FYYKZDH1)",
+        "asin": "B0FYYKZDH1",
+        "priceComparison": "本製品と同価格帯でありながら、240Wの急速充電に対応している。",
+        "featureComparison": [
+          "共通点：ケーブル長が1mで、40Gbps転送や8K出力に対応している点",
+          "相違点：本製品は100W充電対応だが、こちらは240Wに対応している点"
+        ],
+        "differentiators": [
+          "Angusplay Thunderbolt 4 ケーブル 1mの利点：特になし（同価格帯で充電性能に差があるため）",
+          "ノーブランド Thunderbolt 4 ケーブル 1M (B0FYYKZDH1)の利点：同じ予算で、より高出力な240W急速充電機能を得たい場合"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": ["とにかく安価にThunderbolt 4対応のケーブルが欲しい人", "100Wまでの充電環境で十分な人"],
+      "pros": ["手頃な価格設定", "40Gbpsデータ転送・8K出力の基本スペック網羅"],
+      "cons": ["最新の240W充電には非対応", "Intel認証の記載がなく高額な機器に接続する際の安心感に欠ける", "同価格帯の競合製品にスペックで劣る場合がある"],
+      "score": 65,
+      "scoreRationale": "[基本点: 70]\n[加点: +5] (Thunderbolt 4ケーブルとしては非常に安価な価格設定によるコストパフォーマンス)\n[減点: -5] (同価格帯の競合他社製品の多くが240W対応であるのに対し100Wにとどまる性能面)\n[減点: -5] (Intel認証等の記載がなく信頼性に懸念が残る点)\n[合計: 65]"
+    },
+    "technicalSpecs": {
+      "dimensions": { "height": "未公表", "width": "未公表", "depth": "未公表" },
+      "weight": "45.36g",
+      "capacity": "1m",
+      "material": "未公表",
+      "origin": "未公表",
+      "other": ["転送速度: 40Gbps", "最大出力: 100W", "映像出力: 最大8K 60Hz"]
+    }
+  }
+}
