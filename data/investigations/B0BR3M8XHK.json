@@ -1,148 +1,224 @@
 {
   "analysis": {
     "productName": "UGREEN Revodok 105 USB C ハブ 5-in-1",
-    "parentAsin": "B0BR3M8XHK",
-    "productDescription": "USB-Cポート1つをHDMI、USB 3.0、USB 2.0×2、PD充電ポートの5つに拡張する、スリムでコストパフォーマンスに優れたUSBハブです。",
+    "parentAsin": "B0H4T9D5ZD",
+    "productDescription": "HDMI 4K@30Hz、100W PD急速充電、USB-A 3.0(5Gbps)×1、USB-A 2.0×2を搭載したスリムな5-in-1 USB-Cハブです。",
     "productUsage": [
-      "ノートPCのポート拡張（USB-A機器の接続）",
-      "HDMIによる外部モニター・プロジェクターへの映像出力（最大4K@30Hz）",
-      "USB PD対応PCへの急速充電（最大100W入力対応）",
-      "マウスやキーボードなど、速度を要さない周辺機器の接続"
+      "ノートパソコンやタブレットのUSB-Cポート拡張",
+      "HDMIケーブルを介した外部ディスプレイへの映像出力",
+      "USBメモリやマウス・キーボードなどの周辺機器の接続",
+      "PD対応充電器を使用したデバイスへの急速給電(最大95W)"
     ],
     "positivePoints": [
-      "他社競合製品と比較して圧倒的に安価（1,000円台前半）",
-      "最大100WのPD急速充電に対応しており、ハイスペックなノートPCでも使用可能",
-      "スリムで軽量なデザインで持ち運びに便利",
-      "必要最低限の機能を網羅しており、ライトユーザーには最適",
-      "USB 2.0ポートを2つ搭載しており、マウス・キーボードの無線ドングル接続時にUSB 3.0の干渉を受けにくい可能性がある"
+      "1,000円台という非常に手頃な価格で基本的なポート(HDMI/PD充電/USB-A×3)が揃う",
+      "100W PD入力(最大95W出力)に対応し、PCを充電しながら使用可能",
+      "アルミニウム製で放熱性に優れ、スリムで持ち運びに便利",
+      "24ヶ月の長期保証付きで安心感がある"
     ],
     "negativePoints": [
-      "USB 3.0ポートが1つしかなく、複数の高速データ転送機器を接続するには不向き",
-      "HDMI出力が4K@30Hzまでのため、動きの速い動画やゲームには適さない（ビジネス用途なら問題なし）",
-      "SDカードスロットやLANポートは非搭載",
-      "USB-Cポートは充電専用でデータ転送には非対応"
+      "HDMI出力が4K@30Hzまでとなり、4K@60Hzなどの滑らかな表示には非対応",
+      "USBポートはA端子のみで、Type-Cデータ転送ポートがない",
+      "SDカードリーダーや有線LANポートは非搭載"
     ],
     "useCases": [
-      "MacBook Airなどのポートが少ないノートPCでの日常的な周辺機器接続",
-      "出張や旅行時の持ち運び用サブハブ",
-      "マウス、キーボード、HDMIモニターを定位置で接続するためのドッキングステーション代わり",
-      "テレワークでのWeb会議（カメラ、マイク、モニター接続）"
+      "外出先でのプレゼン用にプロジェクターやモニターへ接続する",
+      "自宅のテレワーク環境で、ノートPCの充電と周辺機器の接続をケーブル1本でまとめる",
+      "iPad ProなどのUSB-C搭載タブレットで、マウスやキーボードを利用する"
     ],
     "userStories": [
       {
-        "userType": "MacBook Airユーザー（推測）",
-        "scenario": "外出先での作業",
-        "experience": "カフェで作業する際、充電しながらUSBメモリを使いたかったが、純正アダプタは高価で大きく不便だった。このハブならコンパクトで持ち運びやすく、充電も問題なくできるため重宝している。",
+        "userType": "テレワーカー",
+        "scenario": "自宅のMacBook Airで作業環境を構築",
+        "experience": "安価ながらMacBookの充電、外部モニターへの出力、ワイヤレスマウスのレシーバー接続がこれ1つで完結し、デスク周りがスッキリしました。本体は金属製で安っぽくなく、発熱もほんのり温かくなる程度で安定しています。",
+        "supportingSourceIds": [
+          "src-amazon-reviews"
+        ],
         "sentiment": "positive"
       },
       {
-        "userType": "一般オフィスワーカー（推測）",
-        "scenario": "デスク環境の構築",
-        "experience": "会社支給のPCにUSBポートが少なく、無線マウスとキーボード、外部モニターを接続するために購入。USB 2.0ポートが2つあるおかげでマウスとキーボードを安定して接続でき、遅延も感じない。価格も安く満足。",
-        "sentiment": "positive"
-      },
-      {
-        "userType": "動画編集者（推測）",
-        "scenario": "大容量データの転送",
-        "experience": "安さに惹かれて購入したが、USB 3.0ポートが1つしかないことに後で気づいた。外付けSSDを複数繋いでデータをコピーしようとしたが、片方がUSB 2.0速度になってしまい時間がかかった。",
+        "userType": "クリエイター",
+        "scenario": "4Kモニターでの動画編集作業",
+        "experience": "価格につられて購入しましたが、4Kモニターにつなぐと30Hz(リフレッシュレート)までしか出ないため、マウスカーソルの動きに少しカクツキを感じます。文書作成なら問題ないですが、動画視聴や編集には少し物足りないスペックでした。",
+        "supportingSourceIds": [
+          "src-amazon-reviews"
+        ],
         "sentiment": "mixed"
       }
     ],
-    "userImpression": "徹底したコストダウンにより「必要十分」を追求した製品。高速転送や高リフレッシュレートを求めない一般的なビジネス用途や家庭用途であれば、非常に満足度が高い。USB 2.0ポートの存在を理解して使う分には最強のコスパを誇る。",
+    "userImpression": "とにかくコストパフォーマンスに優れており、必要最低限の拡張性を求めているユーザーから高く評価されています。一方で、4K 60Hz出力やSDカードリーダー等が必要なユーザーにとってはスペック不足となるため、用途が明確な人向けの製品という印象です。",
     "sources": [
       {
-        "name": "Amazon Product Page Features",
+        "id": "src-amazon-reviews",
+        "name": "Amazon カスタマーレビュー",
         "url": "https://www.amazon.co.jp/dp/B0BR3M8XHK",
-        "credibility": "high"
+        "tier": "medium",
+        "evidenceType": "primary",
+        "publishedAt": "2026-06-18",
+        "author": "Amazon購入者",
+        "conflictOfInterest": "none",
+        "notes": "コスパの良さとアルミ外装の質感が高評価。4K 30Hz仕様に対する不満も一部見られる。"
       },
       {
-        "name": "UGREEN Official Site (General Spec Info)",
-        "url": "https://www.ugreen.com/",
-        "credibility": "high"
+        "id": "src-amazon-page",
+        "name": "Amazon 商品ページ",
+        "url": "https://www.amazon.co.jp/dp/B0BR3M8XHK",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-06-18",
+        "author": "UGREEN",
+        "conflictOfInterest": "disclosed",
+        "notes": "仕様、価格（1299円）、ポート構成などを確認。"
+      },
+      {
+        "id": "src-sakura-checker",
+        "name": "サクラチェッカー",
+        "url": "https://sakura-checker.jp/search/B0BR3M8XHK/",
+        "tier": "medium",
+        "evidenceType": "secondary",
+        "publishedAt": "2026-06-18",
+        "author": "サクラチェッカー",
+        "conflictOfInterest": "none",
+        "notes": "サクラ度0％(合格メーカー)。サクラレビューのリスクが極めて低く、信頼性が高い。"
       }
     ],
-    "lastInvestigated": "2026-02-17",
+    "claims": [
+      {
+        "claim": "100WのUSB PD入力に対応し、最大95Wでデバイスに給電可能",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-amazon-page"
+        ],
+        "crossChecked": true,
+        "notes": "公式仕様通り。"
+      },
+      {
+        "claim": "サクラレビューの危険性がなく、レビューの信頼性が高い",
+        "category": "durability",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-sakura-checker"
+        ],
+        "crossChecked": true,
+        "notes": "サクラチェッカーで「サクラ度0%」と判定されている。"
+      }
+    ],
+    "lastInvestigated": "2026-06-18",
     "competitiveAnalysis": [
       {
-        "name": "Anker USB-C ハブ (5-in-1, 4K, HDMI)",
-        "asin": "B0DLWDJJQ8",
-        "priceComparison": "約2倍の価格（2,790円）",
+        "name": "Acer USB-C ハブ HDMI [5-in-1]",
+        "asin": "B0FJ1FF294",
+        "priceComparison": "対象商品よりも高く、機能もほぼ同じ(4K@30Hz、PD100W、USB-A×3)ため、ブランドにこだわりがなければ対象商品の方がコスパが高い。",
         "featureComparison": [
-          "ブランドの知名度が高い",
-          "ポート構成は類似しているが、品質管理等の信頼性で勝る可能性がある"
+          "共通点：4K@30Hz出力、100W PD充電、USB-A×3(3.0×1, 2.0×2)のポート構成。",
+          "相違点：ブランドとデザインが異なる。Acer製の方が高価。"
         ],
         "differentiators": [
-          "Ankerの18ヶ月保証",
-          "価格が高い"
+          "UGREEN Revodok 105の利点：機能が同等ながら価格が圧倒的に安い。",
+          "Acer USB-C ハブ HDMI [5-in-1]の利点：大手PCメーカーであるAcerのブランド力。"
         ]
       },
       {
-        "name": "QIDOOR USB C ハブ 5-in-1",
-        "asin": "B0DD6SQKV7",
-        "priceComparison": "約1.5倍の価格（1,999円）",
+        "name": "エレコム USB-C ハブ ドッキングステーション 5in1 (DST-W01)",
+        "asin": "B0CQ29L3RM",
+        "priceComparison": "対象商品より高価だが、国内メーカー製という安心感がある。",
         "featureComparison": [
-          "機能はほぼ同等"
+          "共通点：5-in-1、4K@30Hz出力、100W PD充電。",
+          "相違点：エレコムは国内メーカー。USBポートの仕様詳細が異なる可能性がある。"
         ],
         "differentiators": [
-          "UGREENの方が安価でブランド認知もあるため、QIDOORを選ぶ理由は薄い"
+          "UGREEN Revodok 105の利点：価格が安い点。",
+          "エレコム DST-W01の利点：日本の有名サプライメーカー製によるサポート体制への安心感。"
         ]
       },
       {
-        "name": "UGREEN Revodok 6-in-1",
+        "name": "Anker PowerExpand+ 5-in-1 USB-C イーサネットハブ",
+        "asin": "B07X7VQ9HN",
+        "priceComparison": "対象商品よりも高価だが、LANポートを搭載している。",
+        "featureComparison": [
+          "共通点：4K対応HDMI出力ポート、USB-A 3.0ポートを搭載。",
+          "相違点：Anker製は1Gbpsイーサネット(有線LAN)ポートを搭載しているが、PD充電ポートはない。UGREENはPD充電ポートがあるがLANポートはない。"
+        ],
+        "differentiators": [
+          "UGREEN Revodok 105の利点：充電しながらの作業が可能(PD対応)、価格が安い。",
+          "Anker PowerExpand+ 5-in-1の利点：有線LAN接続が必要な場合に適している。"
+        ]
+      },
+      {
+        "name": "バッファロー USB-C ハブ ドッキングステーション 5-in-1 (LUD-U3-CGHDBK/N)",
+        "asin": "B09YY2SJYK",
+        "priceComparison": "対象商品よりもかなり高価だが、LANポートとPD充電の両方を備える。",
+        "featureComparison": [
+          "共通点：100W PD充電、4K対応HDMI出力を搭載。",
+          "相違点：バッファロー製は有線LANポートを搭載。USBの構成(Type-C/A)も異なる。"
+        ],
+        "differentiators": [
+          "UGREEN Revodok 105の利点：LANポートが不要であれば、非常に安価に導入できる。",
+          "バッファロー 5-in-1の利点：有線LANとPD充電の両方が必要な場合に最適。"
+        ]
+      },
+      {
+        "name": "LENTION 1m 超長 USB C ハブ 8in1 (c37)",
+        "asin": "B086MH64JW",
+        "priceComparison": "対象商品の約3倍の価格だが、ケーブル長が1mあり、ポート数も多い。",
+        "featureComparison": [
+          "共通点：4K HDMI、100W PD充電を搭載。",
+          "相違点：LENTION製はSD/MicroSDスロット、オーディオジャックを備え、ケーブルが1mと長い。"
+        ],
+        "differentiators": [
+          "UGREEN Revodok 105の利点：圧倒的に安価でコンパクト。",
+          "LENTION 8in1 c37の利点：デスクトップPCの背面から手元に伸ばしたい場合や、SDカード等の多彩な接続が必要な場合。"
+        ]
+      },
+      {
+        "name": "UGREEN Revodok USB-C ハブ 6in1",
         "asin": "B0D1XLNWP2",
-        "priceComparison": "約1.5倍の価格（2,000円）",
+        "priceComparison": "対象商品より高価だが、4K@60Hz出力やUSB-Cデータポートに対応する上位モデル。",
         "featureComparison": [
-          "USBポートが多い",
-          "より多機能"
+          "共通点：UGREEN製、100W PD充電対応。",
+          "相違点：上位モデルは4K@60Hz出力に対応し、10Gbps対応のUSB-CおよびUSB-Aポートを備える。"
         ],
         "differentiators": [
-          "機能性を求めるならこちらだが、シンプルさと安さなら本製品"
+          "UGREEN Revodok 105の利点：とにかく価格を抑えたい場合。",
+          "UGREEN Revodok 6in1の利点：4Kモニターでの滑らかな表示(60Hz)や、より高速なデータ転送が必要な場合。"
         ]
       }
     ],
     "recommendation": {
       "targetUsers": [
-        "とにかく安くUSBハブを手に入れたい人",
-        "マウスやキーボードの接続がメインの人",
-        "持ち運び用のサブ機を探している人",
-        "MacBook AirなどのUSB-CポートしかないPCを使っているライトユーザー"
+        "とにかく安くUSB-Cハブを手に入れたい人",
+        "FHD(1080p)モニターや、フレームレートを気にしない用途で外部出力したい人",
+        "有線LANやSDカードリーダーは不要で、USB-Aポートと充電機能だけがあれば十分な人"
       ],
       "pros": [
-        "圧倒的な低価格",
-        "コンパクトで軽量",
-        "PD 100W対応で充電も安心"
+        "約1,300円という圧倒的な低価格",
+        "100WのPD急速充電に対応",
+        "コンパクトで金属製の質感も良い"
       ],
       "cons": [
-        "USB 3.0ポートが1つのみ（残りは低速なUSB 2.0）",
-        "HDMIが4K@30Hzまで",
-        "SDカードリーダーなし"
+        "HDMI出力が4K@30Hz止まり",
+        "Type-Cのデータ転送ポートがない",
+        "SDカードスロットやLANポートがない"
       ],
       "score": 85,
-      "scoreRationale": "[基本点: 70]\n[加点: +15] (競合他社製品の半額近い価格設定による圧倒的なコストパフォーマンス)\n[減点: -5] (USB 3.0が1ポートのみ、HDMIが30Hz止まりという機能制限)\n[加点: +2] (安価ながらアルミ筐体を採用し質感は悪くない)\n[加点: +3] (UGREENブランドの信頼性と安定した評価)\n[合計: 85]"
+      "scoreRationale": "[基本点: 70]\n[加点: +15] (他社製品と比較して圧倒的に価格が安く、基本的なポートが揃っているコスパの良さ)\n[加点: +5] (100W PD対応でPCへの急速充電が可能)\n[加点: +5] (アルミ外装による放熱性とスリムなデザイン)\n[減点: -10] (HDMI出力が4K@30Hzまでとなり、用途が限られる点)\n[合計: 85]"
     },
     "technicalSpecs": {
-      "connectivity": [
-        "USB-C (PC接続用)",
-        "HDMI (4K@30Hz)",
-        "USB-A 3.0 x1 (5Gbps)",
-        "USB-A 2.0 x2 (480Mbps)",
-        "USB-C PD In (最大100W)"
-      ],
       "dimensions": {
-        "length": "12.16 cm (推定)",
-        "width": "2.78 cm (推定)",
-        "height": "1.2 cm (推定)",
-        "cableLength": "約20cm (推定)"
+        "height": "12mm",
+        "width": "28mm",
+        "depth": "122mm"
       },
-      "weight": "約51g (推定)",
+      "weight": "91g",
+      "ports": [
+        "HDMI (最大 4K@30Hz)",
+        "USB Type-C (PD給電専用 最大100W入力 / 95W出力)",
+        "USB-A 3.0 (最大5Gbps)",
+        "USB-A 2.0 × 2 (最大480Mbps)"
+      ],
       "material": "アルミニウム合金",
-      "compatibility": [
-        "Windows",
-        "macOS",
-        "Linux",
-        "Android",
-        "iPadOS"
-      ]
+      "color": "シルバーグレー",
+      "compatibility": "Windows, macOS, Linux, iOS, Android (MacBook Pro/Air, iPad Proなどに対応)"
     }
   }
 }
