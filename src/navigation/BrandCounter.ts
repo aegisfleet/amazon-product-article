@@ -62,9 +62,9 @@ export class BrandCounter {
         engines: {
           yaml: {
             parse: (str: string) => yaml.load(str) as Record<string, any>,
-            stringify: (obj: any) => yaml.dump(obj)
-          }
-        }
+            stringify: (obj: any) => yaml.dump(obj),
+          },
+        },
       });
       if (data.brand && typeof data.brand === 'string') {
         return BrandCounter.normalizeBrandName(data.brand);
