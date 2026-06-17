@@ -1,6 +1,7 @@
 import * as fs from 'node:fs';
 import * as path from 'node:path';
 import matter from 'gray-matter';
+import * as yaml from 'js-yaml';
 
 export interface BrandCount {
   name: string;
@@ -57,7 +58,14 @@ export class BrandCounter {
   private extractBrand(filePath: string): string | null {
     try {
       const content = fs.readFileSync(filePath, 'utf-8');
-      const { data } = matter(content);
+      const { data } = matter(content, {
+        engines: {
+          yaml: {
+            parse: (str: string) => yaml.load(str) as Record<string, any>,
+            stringify: (obj: any) => yaml.dump(obj)
+          }
+        }
+      });
       if (data.brand && typeof data.brand === 'string') {
         return BrandCounter.normalizeBrandName(data.brand);
       }
