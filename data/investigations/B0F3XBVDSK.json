@@ -1,0 +1,194 @@
+{
+  "analysis": {
+    "productName": "Maxonar Thunderbolt 5 ケーブル 1M",
+    "parentAsin": "B0GMFB4PF6",
+    "productDescription": "120Gbpsの超高速転送と最大240WのPD急速充電に対応した、Thunderbolt 5規格の1mケーブル。8K@60Hzの映像出力が可能で、高耐久ナイロン編組とアルミ合金コネクタを採用している。",
+    "productUsage": [
+      "MacBook Pro等のノートPCや大型モニターの急速給電(最大240W)",
+      "8K/複数の4Kディスプレイへの映像出力",
+      "外付けSSDやドッキングステーションとの超高速データ転送(最大120Gbps)"
+    ],
+    "positivePoints": [
+      "最新規格のThunderbolt 5対応で、最大120Gbpsの圧倒的なデータ転送速度を実現している",
+      "240W PD充電に対応しており、高消費電力の機器へも迅速に給電可能",
+      "Thunderbolt 4/3、USB4との完全な下位互換性があり、旧規格のデバイスとも接続可能",
+      "15,000回以上の曲げ試験をクリアした高密度ナイロン編組とアルミ合金コネクタによる高い耐久性",
+      "E-Markerチップを搭載し、過電流や過熱などの保護機能を備えている"
+    ],
+    "negativePoints": [
+      "外付けケース等の接続先機器がThunderbolt非対応の場合、本来の性能(速度)が発揮できない"
+    ],
+    "useCases": [
+      "動画編集や3Dレンダリングなど、大容量データを扱うプロフェッショナルの作業環境",
+      "40.6cm(16インチ)のMacBook ProやハイスペックゲーミングPCへの給電",
+      "新旧のデバイスが混在するオフィスや自宅でのドッキングステーション接続"
+    ],
+    "userStories": [],
+    "userImpression": "公式データや仕様に基づく高い性能と耐久性、幅広い互換性を持つケーブルとして、最新機器を導入するユーザーの要求を満たすスペックを備えている。",
+    "sources": [
+      {
+        "id": "src-1",
+        "name": "Amazon公式商品ページ",
+        "url": "https://www.amazon.co.jp/dp/B0F3XBVDSK",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-06-17",
+        "author": "Amazon/Maxonar",
+        "conflictOfInterest": "possible",
+        "notes": "商品の仕様、120Gbps転送、240W PD充電、8K@60Hz映像出力、Thunderbolt 5対応、耐久性試験(15,000回以上)などの公式情報を確認"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "最大120Gbpsのデータ転送速度に対応",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "crossChecked": false,
+        "notes": "Thunderbolt 5規格としての基本仕様"
+      },
+      {
+        "claim": "最大240WのPD3.1急速充電に対応",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "crossChecked": false,
+        "notes": "E-Marker内蔵による最適な電力供給"
+      },
+      {
+        "claim": "15,000回以上の繰り返し曲げ試験に合格する高耐久設計",
+        "category": "durability",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "crossChecked": false,
+        "notes": "高密度ナイロン編組素材とアルミ合金コネクタを採用"
+      }
+    ],
+    "lastInvestigated": "2026-06-17",
+    "competitiveAnalysis": [
+      {
+        "name": "Belkin Thunderbolt 5 ケーブル 1m",
+        "asin": "B0DW7YXR3Q",
+        "priceComparison": "Belkin製の方が高価。BelkinはUSB-IF認証などをアピールしておりブランドの信頼性にコストがかかっているが、基本スペックは同等。",
+        "featureComparison": [
+          "共通点：Thunderbolt 5対応、最大120Gbps転送、240W PD給電、長さ1m",
+          "相違点：BelkinはUSB-IF認証を明確に記載している一方、Maxonarは低価格で提供されている"
+        ],
+        "differentiators": [
+          "Maxonar Thunderbolt 5 ケーブル 1Mの利点：同等の基本性能を持ちながら、価格が安くコストパフォーマンスに優れる",
+          "Belkin Thunderbolt 5 ケーブル 1mの利点：大手ブランドの安心感とUSB-IF認証による信頼性の高さ"
+        ]
+      },
+      {
+        "name": "Cable Matters [Intel認証] 80Gbps Thunderbolt 5 ケーブル 1m",
+        "asin": "B0CP8K1C59",
+        "priceComparison": "Cable Matters製の方が高価。Intel認証取得済みであることが価格差の要因と考えられる。",
+        "featureComparison": [
+          "共通点：Thunderbolt 5対応、最大120Gbps帯域幅ブースト、240W充電、長さ1m",
+          "相違点：Cable MattersはIntel認証を取得している点。Maxonarは認証の明記がないが価格が安い"
+        ],
+        "differentiators": [
+          "Maxonar Thunderbolt 5 ケーブル 1Mの利点：コストを抑えつつ最新規格の機能を利用できる",
+          "Cable Matters [Intel認証] 80Gbps Thunderbolt 5 ケーブル 1mの利点：Intel認証による動作の確実性と高い信頼性"
+        ]
+      },
+      {
+        "name": "エレコム USB-C Thunderbolt 5 ケーブル 1m",
+        "asin": "B0DNF3NPCD",
+        "priceComparison": "エレコム製の方が高価。国内有名メーカーのサポートとIntel正規認証品の安心感が価格に反映されている。",
+        "featureComparison": [
+          "共通点：Thunderbolt 5対応、最大120Gbps転送、240W給電、長さ1m",
+          "相違点：エレコムはIntel正規認証品でありスリムケーブルを採用している"
+        ],
+        "differentiators": [
+          "Maxonar Thunderbolt 5 ケーブル 1Mの利点：安価でナイロン編組の高耐久設計である点",
+          "エレコム USB-C Thunderbolt 5 ケーブル 1mの利点：Intel正規認証と国内メーカーの充実したサポート、取り回しやすいスリム設計"
+        ]
+      },
+      {
+        "name": "UGREEN Thunderbolt5 [Intel認定] ケーブル 1m",
+        "asin": "B0DGXQPMV5",
+        "priceComparison": "UGREEN製の方が高価。Intel認定を取得しており、アクセサリー大手のブランド力がある。",
+        "featureComparison": [
+          "共通点：Thunderbolt 5対応、最大120Gbps(80Gbps双方向)転送、240W充電、長さ1m",
+          "相違点：UGREENはIntel認定品。Maxonarはより手頃な価格設定"
+        ],
+        "differentiators": [
+          "Maxonar Thunderbolt 5 ケーブル 1Mの利点：性能要件を満たしつつ導入コストを抑えられる点",
+          "UGREEN Thunderbolt5 [Intel認定] ケーブル 1mの利点：Intel認定と有力ブランドによる確実な互換性と品質保証"
+        ]
+      },
+      {
+        "name": "IVANKY Thunderbolt 5 ケーブル 1m",
+        "asin": "B0DS5NZ54T",
+        "priceComparison": "IVANKY製の方が高価。Intel正規認証品として販売されている。",
+        "featureComparison": [
+          "共通点：Thunderbolt 5対応、最大120Gbps転送、240W充電、長さ1m",
+          "相違点：IVANKYはIntel正規認証品を謳っている点"
+        ],
+        "differentiators": [
+          "Maxonar Thunderbolt 5 ケーブル 1Mの利点：競合の中で特に価格が抑えられている",
+          "IVANKY Thunderbolt 5 ケーブル 1mの利点：Intel認証による安定性と信頼性を重視する場合に適している"
+        ]
+      },
+      {
+        "name": "OWC Thunderbolt 5 (USB-C) ケーブル 1.0m",
+        "asin": "B0DH7PFRD1",
+        "priceComparison": "OWC製の方が高価。Mac周辺機器専門ブランドのプレミアム価格となっている。",
+        "featureComparison": [
+          "共通点：Thunderbolt 5対応、240W給電、長さ1m",
+          "相違点：OWCはMacユーザーに厚い支持を受ける専門ブランドからの提供"
+        ],
+        "differentiators": [
+          "Maxonar Thunderbolt 5 ケーブル 1Mの利点：OWC製と比べ半額以下の圧倒的なコストパフォーマンス",
+          "OWC Thunderbolt 5 (USB-C) ケーブル 1.0mの利点：Macエコシステムにおける長年の実績と高い信頼性"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "最新のThunderbolt 5対応機器（MacBook Pro M4搭載モデルなど）の性能を最大限に引き出したいユーザー",
+        "大容量データを頻繁に転送するクリエイターやエンジニア",
+        "高耐久で断線しにくいケーブルを求めているユーザー"
+      ],
+      "pros": [
+        "Thunderbolt 5の超高速転送(120Gbps)に対応",
+        "最大240WのPD急速充電が可能で様々な機器に対応",
+        "競合他社製品と比較してコストパフォーマンスに優れる",
+        "旧規格(Thunderbolt 4/3, USB4)との高い互換性"
+      ],
+      "cons": [
+        "Intel正規認証品であるとの明確な記載がない",
+        "非対応デバイス(ケース等)との組み合わせでは性能が制限される"
+      ],
+      "score": 77,
+      "scoreRationale": "[基本点: 70]\n[加点: +5] (Thunderbolt 5の基本性能(120Gbps/240W/8K出力)を網羅した高いスペック)\n[加点: +5] (競合品と比較して2,599円と安価で高いコストパフォーマンス)\n[加点: +2] (15,000回の曲げ試験をクリアした高耐久ナイロン編組とアルミ合金採用による優れたビルドクオリティ)\n[減点: -5] (多くの競合が取得しているIntel正規認証やUSB-IF認証の明記がないため、信頼性の面で少し劣る)\n[合計: 77]"
+    },
+    "technicalSpecs": {
+      "dimensions": {
+        "height": "未記載",
+        "width": "未記載",
+        "depth": "未記載"
+      },
+      "weight": "未記載",
+      "length": "1m",
+      "color": "グレー",
+      "material": "ナイロン編組(外装)、アルミ合金(コネクタ)、錫メッキ銅線(内部)",
+      "transferSpeed": "最大120Gbps",
+      "powerDelivery": "最大240W (48V/5A)",
+      "videoOutput": "8K@60Hz (複数4Kモニター対応)",
+      "compatibility": "Thunderbolt 5 / 4 / 3, USB4, USB-C",
+      "safetyFeatures": "E-Markerチップ内蔵、過電流保護、過熱保護、ショート保護",
+      "other": [
+        "15,000回以上の繰り返し曲げ試験合格",
+        "24ヶ月品質保証"
+      ]
+    }
+  }
+}
