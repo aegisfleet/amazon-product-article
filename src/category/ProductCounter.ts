@@ -1,6 +1,7 @@
 import * as fs from 'node:fs';
 import * as path from 'node:path';
 import matter from 'gray-matter';
+import * as yaml from 'js-yaml';
 
 export class ProductCounter {
   private readonly contentPath: string;
@@ -64,7 +65,14 @@ export class ProductCounter {
   private extractCategories(filePath: string): string[] {
     try {
       const fileContent = fs.readFileSync(filePath, 'utf-8');
-      const parsed = matter(fileContent);
+      const parsed = matter(fileContent, {
+        engines: {
+          yaml: {
+            parse: (str: string) => yaml.load(str) as Record<string, any>,
+            stringify: (obj: any) => yaml.dump(obj)
+          }
+        }
+      });
 
       if (parsed.data && Array.isArray(parsed.data.categories)) {
         const normalizedCategories = parsed.data.categories
