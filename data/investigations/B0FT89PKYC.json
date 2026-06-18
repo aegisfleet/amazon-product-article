@@ -1,0 +1,185 @@
+{
+  "analysis": {
+    "productName": "ActionRing ストリームコントローラーデック N3",
+    "parentAsin": "B0FT8BWJ3N",
+    "productDescription": "6つのカスタマイズ可能なマクロキー（LCD付き）と3つのダイヤルを備えた左手デバイスです。OBSや各種ソフトウェアのショートカットを割り当て可能で、作業効率化に貢献します。",
+    "productUsage": [
+      "OBSなどでの配信時のシーン切り替えや操作",
+      "PowerPoint、Excel、Wordなどでのオフィスワーク効率化",
+      "Photoshop、Premiere Proなどでのクリエイティブ作業のショートカット",
+      "メディアコントロールやシステム音量調整"
+    ],
+    "positivePoints": [
+      "各キーにLCDディスプレイを備え、好きなアイコンを設定可能",
+      "3つのダイヤルで直感的なパラメータ調整（音量、拡大縮小、タイムライン移動など）が可能",
+      "WindowsおよびMacに両対応し、幅広いソフトウェアで活用できる",
+      "プラグインによる拡張機能（時計、天気、ストップウォッチなど）が豊富"
+    ],
+    "negativePoints": [
+      "マイナーブランドのため、ソフトウェアの安定性や長期的なサポートに懸念がある",
+      "競合のElgatoやLoupedeckと比べると、日本語の情報やコミュニティが少ない"
+    ],
+    "useCases": [
+      "ライブ配信で複数のシーンや音源をスムーズに切り替える",
+      "動画編集時にダイヤルを使ってタイムラインをシームレスにスクロールする",
+      "よく使うアプリケーションやウェブサイトをワンボタンで起動する"
+    ],
+    "userStories": [],
+    "userImpression": "多機能なLCDキーと直感的なダイヤルを備えたコストパフォーマンスの高いデバイスとして、作業効率化に期待できる仕様となっています。ただし、マイナーブランドのためサポート体制やソフトウェアの安定性に関する懸念も残ります。",
+    "sources": [
+      {
+        "id": "src-specs",
+        "name": "Amazon商品ページ仕様情報",
+        "url": "https://www.amazon.co.jp/dp/B0FT89PKYC",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-06-19",
+        "author": "Amazon/ActionRing",
+        "conflictOfInterest": "possible",
+        "notes": "製品の主な仕様（6 LCDキー、3ダイヤル）、対応OS（Windows/Mac）、対応ソフトウェアなどを確認。"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "6つのカスタマイズ可能なLCDキーと3つのダイヤルを搭載している",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-specs"
+        ],
+        "crossChecked": false,
+        "notes": "商品仕様から確認"
+      },
+      {
+        "claim": "WindowsおよびmacOSに対応している",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-specs"
+        ],
+        "crossChecked": false,
+        "notes": "商品仕様から確認"
+      }
+    ],
+    "lastInvestigated": "2026-06-19",
+    "competitiveAnalysis": [
+      {
+        "name": "Elgato Stream Deck MK.2",
+        "asin": "B0CDWSNF8J",
+        "priceComparison": "ActionRingはElgatoより大幅に安価に設定されており、機能あたりのコストパフォーマンスが高い。Elgatoは高価だが、ソフトウェアの安定性やエコシステムで圧倒的な優位性がある。",
+        "featureComparison": [
+          "共通点：各キーにLCDディスプレイを搭載し、アイコンを自由にカスタマイズ可能。Windows/Mac両対応。",
+          "相違点：ActionRingは6キー＋3ダイヤルであるのに対し、Stream Deck MK.2は15キーでダイヤルなし。ソフトウェアのエコシステムやプラグインの豊富さはElgatoが優れる。"
+        ],
+        "differentiators": [
+          "ActionRing ストリームコントローラーデック N3の利点：ダイヤルを3つ搭載しており、音量やタイムライン調整など直感的なアナログ操作が可能。また、価格が手頃。",
+          "Elgato Stream Deck MK.2の利点：15個のキーでより多くのショートカットを配置でき、圧倒的なプラグイン数とソフトウェアの安定性、巨大なユーザーコミュニティによる情報量の多さがある。"
+        ]
+      },
+      {
+        "name": "ロジクール MX クリエイティブ コンソール KXCCGR",
+        "asin": "B0DGQ3WW4N",
+        "priceComparison": "ActionRingの方が大幅に安価。ロジクールは高価格帯だが、Adobe製品との深い連携や、高品質なビルドクオリティを提供する。",
+        "featureComparison": [
+          "共通点：クリエイティブ作業の効率化を目的とした左手デバイス。カスタマイズ可能なキーやダイヤルを搭載。",
+          "相違点：ロジクールはダイヤルパッドとLCD搭載キーパッドが分離したデザインで、Bluetooth接続やAdobe専用プラグインに強みを持つ。ActionRingは一体型で安価。"
+        ],
+        "differentiators": [
+          "ActionRing ストリームコントローラーデック N3の利点：本体が1つにまとまっており、非常に低価格でLCDキーとダイヤル操作の両方を導入できる。",
+          "ロジクール MX クリエイティブ コンソール KXCCGRの利点：分離型で自由な配置が可能。高品質なアルミ製ダイヤルと、Adobeアプリとのシームレスなネイティブ連携がある。"
+        ]
+      },
+      {
+        "name": "Razer Tartarus Pro Mercury White",
+        "asin": "B07ZDDYQCT",
+        "priceComparison": "ActionRingの方が安価。Razerはゲーミング特化のハイエンドモデルであり、アナログスイッチ搭載のため価格が高い。",
+        "featureComparison": [
+          "共通点：PC操作を効率化する左手デバイスで、カスタマイズ可能なキーを備える。",
+          "相違点：Razerはゲーム向けにアナログ光学スイッチとサムパッドを搭載しているが、LCDキーやダイヤルはない。ActionRingはクリエイターや配信者向けにLCDキーとダイヤルを搭載。"
+        ],
+        "differentiators": [
+          "ActionRing ストリームコントローラーデック N3の利点：LCDキーで機能が視覚的にわかりやすく、ダイヤルによるアナログ操作が可能。クリエイティブ作業や配信に特化。",
+          "Razer Tartarus Pro Mercury Whiteの利点：キーの押し込み深さを感知するアナログスイッチと、エルゴノミクスデザインのパームレストで、ゲームプレイにおいて圧倒的な操作性を提供する。"
+        ]
+      },
+      {
+        "name": "Elgato Stream Deck +",
+        "asin": "B0BDK67Z5S",
+        "priceComparison": "ActionRingはStream Deck +の1/3程度の価格で提供されており、入門機として非常に手頃。Stream Deck +は高価だが、ソフトウェアの完成度やタッチストリップなどの機能で勝る。",
+        "featureComparison": [
+          "共通点：LCD付きマクロキーと操作用ダイヤルを搭載した配信・クリエイター向けコントローラー。",
+          "相違点：Stream Deck +は8キー、4ダイヤルに加えタッチストリップを搭載し、Elgatoの強力なソフトウェアエコシステムを利用できる。ActionRingは6キー、3ダイヤルでシンプルかつ安価。"
+        ],
+        "differentiators": [
+          "ActionRing ストリームコントローラーデック N3の利点：LCDキーとダイヤルを備えたデバイスとしては破格の安さで導入できる。",
+          "Elgato Stream Deck +の利点：タッチストリップによる直感的なスワイプ操作、4つのダイヤル、そして圧倒的に豊富で安定したプラグインエコシステムとコミュニティのサポートがある。"
+        ]
+      },
+      {
+        "name": "iClever テンキー IC-KP08",
+        "asin": "B081NJGDZB",
+        "priceComparison": "iCleverのテンキーの方が安価。用途が異なるため単純比較は難しいが、単なる数字入力や簡単なショートカットであればテンキーで十分な場合もある。",
+        "featureComparison": [
+          "共通点：PC作業を補助する入力デバイス。",
+          "相違点：iCleverはBluetooth対応のシンプルなテンキーボードで、数字入力や簡単なショートカット割り当て（別途ソフトが必要な場合あり）用。ActionRingはLCDキーとダイヤルを備えた多機能な専用マクロコントローラー。"
+        ],
+        "differentiators": [
+          "ActionRing ストリームコントローラーデック N3の利点：LCDで機能アイコンを表示でき、ダイヤルによる直感的な操作や、複雑なマクロの実行が標準ソフトで簡単に設定できる。",
+          "iClever テンキー IC-KP08の利点：安価でワイヤレス接続が可能。Excelなどの表計算ソフトでの数字入力に最適。"
+        ]
+      },
+      {
+        "name": "Docooler 3-キー マクロキーボード",
+        "asin": "B0DCP78FH1",
+        "priceComparison": "Docoolerの方がさらに安価だが、キー数がわずか3つでLCDやダイヤルもないため、機能に大きな差がある。",
+        "featureComparison": [
+          "共通点：カスタマイズ可能なマクロキーボード。",
+          "相違点：Docoolerは非常にシンプルな3キーのみの構成で、ダイヤルやLCDはない。ActionRingは6つのLCDキーと3つのダイヤルを搭載し、はるかに多機能。"
+        ],
+        "differentiators": [
+          "ActionRing ストリームコントローラーデック N3の利点：より多くの機能を割り当て可能で、LCDアイコンによる視認性の高さとダイヤル操作の利便性がある。",
+          "Docooler 3-キー マクロキーボードの利点：極めてコンパクトで安価、無線接続にも対応しており、最小限のショートカットだけを物理キー化したい場合に適している。"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "配信用のコントローラーを安価に導入したい人",
+        "動画編集や写真編集でダイヤル操作を活用したいクリエイター",
+        "デスクに置くマクロキーパッドとして、コストパフォーマンスを重視する人"
+      ],
+      "pros": [
+        "LCDキーとダイヤルを両搭載しながらも非常に安価",
+        "各ボタンに好きなアイコンを設定でき、視認性が高い",
+        "WindowsとMacの両方に対応"
+      ],
+      "cons": [
+        "有名ブランドほどのソフトウェア安定性やプラグインの豊富さは期待できない",
+        "日本語での情報やユーザーコミュニティが少ない"
+      ],
+      "score": 75,
+      "scoreRationale": "[基本点: 70]\n[加点: +10] (LCDキー6個とダイヤル3個を搭載しながら約8,000円という高いコストパフォーマンス)\n[加点: +5] (Windows/Mac両対応で多様なソフトウェアのショートカットに使える利便性)\n[減点: -10] (マイナーブランドゆえのソフトウェアの安定性やサポート、プラグイン拡張性への懸念)\n[合計: 75]"
+    },
+    "technicalSpecs": {
+      "dimensions": {
+        "height": "不明",
+        "width": "不明",
+        "depth": "不明"
+      },
+      "weight": "不明",
+      "capacity": "対象外",
+      "material": "不明（プラスチック系と推定）",
+      "origin": "中国",
+      "other": [
+        "6つのカスタマイズ可能なLCDキー",
+        "3つのカスタマイズ可能なダイヤル",
+        "対応OS: Windows 10以降 / macOS 14.0以降",
+        "対応ソフトウェア: OBS, PowerPoint, Excel, Word, Photoshop, Adobe Premiere Pro, YouTube, Twitter, Discordなど",
+        "画像/アニメーション設定機能（JPG, PNG, GIF対応）",
+        "アクションフロー機能（複数のマクロアクションを順次実行）",
+        "保証期間: 24か月",
+        "カラー: ブラック"
+      ]
+    }
+  }
+}
