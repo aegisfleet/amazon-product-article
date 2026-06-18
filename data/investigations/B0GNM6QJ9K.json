@@ -1,0 +1,79 @@
+{
+  "analysis": {
+    "productName": "ファッション！！【電子単行本版】8 (OUR FEEL)",
+    "parentAsin": "B0GNM6QJ9K",
+    "productDescription": "はるな檸檬による人気コミック「ファッション！！」の電子単行本第8巻。ファッション業界を舞台にした人間ドラマを描く。",
+    "productUsage": ["電子書籍リーダーでの読書", "スマートフォン・タブレットでの閲覧"],
+    "positivePoints": ["シリーズ読者にとって待望の続編", "場所を取らずにすぐ読める電子版の利便性", "Kindle端末やアプリで快適に読める"],
+    "negativePoints": ["紙の単行本のような物理的な所有感はない", "電子書籍のプラットフォームに依存する"],
+    "useCases": ["通勤・通学時間での読書", "自宅でのリラックスタイムに楽しむ"],
+    "userStories": [],
+    "userImpression": "人気シリーズの続刊として、ファッション業界のリアルな描写や人間関係の展開が期待される作品。電子版の手軽さが評価される。",
+    "sources": [
+      {
+        "id": "src-amazon",
+        "name": "Amazon商品ページ",
+        "url": "https://www.amazon.co.jp/dp/B0GNM6QJ9K",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-06-19",
+        "author": "Amazon",
+        "conflictOfInterest": "none",
+        "notes": "商品の基本情報、価格、仕様を確認。"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "「ファッション！！」シリーズの電子単行本第8巻である",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": ["src-amazon"],
+        "crossChecked": false,
+        "notes": "商品名およびシリーズ情報から確認。"
+      }
+    ],
+    "lastInvestigated": "2026-06-19",
+    "competitiveAnalysis": [
+      {
+        "name": "ファッション！！【電子単行本版】7 (OUR FEEL)",
+        "asin": "B0FLPYK3R9",
+        "priceComparison": "シリーズの前巻。価格は異なる場合があるが、ストーリーが繋がっているため比較検討というより合わせて読む作品。",
+        "featureComparison": [
+          "共通点：はるな檸檬作、ファッション業界を舞台にした同シリーズの電子単行本",
+          "相違点：収録されているストーリー（7巻と8巻の違い）"
+        ],
+        "differentiators": [
+          "ファッション！！【電子単行本版】8 (OUR FEEL)の利点：最新のストーリー展開を楽しめる",
+          "ファッション！！【電子単行本版】7 (OUR FEEL)の利点：8巻を読む前にこれまでのストーリーを復習・把握できる"
+        ]
+      },
+      {
+        "name": "ファッション！！【電子単行本版】6 (OUR FEEL)",
+        "asin": "B0DT6G64S8",
+        "priceComparison": "シリーズの既刊。同じくストーリーの進行による違いのみ。",
+        "featureComparison": [
+          "共通点：同シリーズの電子版",
+          "相違点：収録エピソードの違い"
+        ],
+        "differentiators": [
+          "ファッション！！【電子単行本版】8 (OUR FEEL)の利点：より進んだ先の展開を読める",
+          "ファッション！！【電子単行本版】6 (OUR FEEL)の利点：過去のエピソードを振り返ることができる"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": ["「ファッション！！」シリーズのファン", "ファッション業界に関心がある読者", "電子書籍でのコミック読書を好む人"],
+      "pros": ["人気シリーズの最新巻をすぐに読める", "持ち運びに便利な電子形式"],
+      "cons": ["これまでの巻を読んでいないと内容が分かりにくい可能性がある"],
+      "score": 75,
+      "scoreRationale": "[基本点: 70]\n[加点: +5] (人気シリーズの続刊として楽しめる点)\n[減点: 0] (特筆すべき欠点なし)\n[合計: 75]"
+    },
+    "technicalSpecs": {
+      "format": "Kindle本",
+      "author": "はるな檸檬",
+      "publisher": "シュークリーム",
+      "isAdultProduct": "false",
+      "releaseDate": "2026-03-16"
+    }
+  }
+}
