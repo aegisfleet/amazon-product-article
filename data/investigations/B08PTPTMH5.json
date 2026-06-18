@@ -1,0 +1,183 @@
+{
+  "analysis": {
+    "productName": "KIOXIA microSD 128GB EXCERIA KLMEA128G",
+    "parentAsin": "B0DQDN9Y17",
+    "productDescription": "KIOXIA（旧東芝メモリ）の128GB microSDXCカードです。UHS-I Class10に対応し、最大読出速度は100MB/s。Nintendo Switchでの動作が確認されており、国内サポートと5年間のメーカー保証が付帯します。",
+    "productUsage": [
+      "スマートフォン・タブレットのストレージ拡張",
+      "Nintendo Switchのデータ保存用",
+      "デジタルカメラでの写真・動画撮影用"
+    ],
+    "positivePoints": [
+      "信頼性の高いKIOXIA（旧東芝メモリ）ブランドの国内正規品で安心感がある",
+      "最大読出速度100MB/sでデータの読み込みがスムーズ",
+      "Nintendo Switchでの動作確認済みでゲーム用に使いやすい",
+      "メーカー5年保証が付帯しており長期的な利用も安心"
+    ],
+    "negativePoints": [
+      "書込速度の表記がなく、書込速度を重視する4K動画撮影などには上位モデル（EXCERIA PLUSなど）が推奨される",
+      "UHSスピードクラス1（U1）のため、U3が要求される高負荷な用途には向かない"
+    ],
+    "useCases": [
+      "Nintendo Switchのダウンロードソフトやセーブデータの保存",
+      "スマートフォンで撮影した写真や動画のバックアップ",
+      "フルHD動画の撮影や保存"
+    ],
+    "userStories": [],
+    "userImpression": "国内メーカー（旧東芝メモリ）の信頼性と5年保証が評価されており、特にNintendo Switch用やスマートフォンの容量拡張など、日常的な用途においてコストパフォーマンスの高いSDカードとして認識されています。一方で、高速な書き込みが求められる用途には不向きとの声もあります。",
+    "sources": [
+      {
+        "id": "src-1",
+        "name": "Amazon商品ページ",
+        "url": "https://www.amazon.co.jp/dp/B08PTPTMH5",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-06-18",
+        "author": "KIOXIA",
+        "conflictOfInterest": "disclosed",
+        "notes": "製品仕様（128GB、最大読出100MB/s、5年保証、Nintendo Switch動作確認済み）を確認"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "Nintendo Switchでの動作が確認されている",
+        "category": "durability",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "crossChecked": false,
+        "notes": "商品情報に明記"
+      },
+      {
+        "claim": "最大読出速度は100MB/sである",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "crossChecked": false,
+        "notes": "商品仕様に明記"
+      }
+    ],
+    "lastInvestigated": "2026-06-18",
+    "competitiveAnalysis": [
+      {
+        "name": "KIOXIA EXCERIA PLUS microSD 128GB KLMPAE128G",
+        "asin": "B0DPZXTP74",
+        "priceComparison": "対象商品より高価だが、最大書込速度60MB/sやU3・V30対応などの上位スペックを持つ",
+        "featureComparison": [
+          "共通点：KIOXIA製、容量128GB、Nintendo Switch動作確認済み",
+          "相違点：EXCERIA PLUSは書込速度60MB/s、U3、V30に対応し4K動画撮影に向く。対象商品はU1で書込速度非公表。"
+        ],
+        "differentiators": [
+          "KIOXIA microSD 128GB EXCERIA KLMEA128Gの利点：価格が安く、ゲームや一般的な用途で十分な性能を持つ",
+          "KIOXIA EXCERIA PLUS microSD 128GB KLMPAE128Gの利点：書込速度が高速で、4K動画撮影やGoProなどでも快適に使用できる"
+        ]
+      },
+      {
+        "name": "SanDisk microSD 128GB Extreme SDSQXAA-128G-GH3MA",
+        "asin": "B0B21BDBN6",
+        "priceComparison": "対象商品より高価。U3、V30に対応し、書込最大90MB/sと高性能",
+        "featureComparison": [
+          "共通点：容量128GBのmicroSDXCカード",
+          "相違点：SanDisk Extremeは書込速度が最大90MB/sでU3、V30に対応。対象商品はU1対応。"
+        ],
+        "differentiators": [
+          "KIOXIA microSD 128GB EXCERIA KLMEA128Gの利点：手頃な価格で購入でき、日常用途に最適",
+          "SanDisk microSD 128GB Extreme SDSQXAA-128G-GH3MAの利点：高速な書き込みが可能で、高解像度の動画撮影や連続撮影に強い"
+        ]
+      },
+      {
+        "name": "SanDisk microSD カード 128GB Ultra SDSQUAB-128G-GH3MA",
+        "asin": "B0CH2X5LBX",
+        "priceComparison": "対象商品より高価だが、10年間限定保証がつくなど保証期間が長い",
+        "featureComparison": [
+          "共通点：容量128GB、UHS-I U1 Class10、Nintendo Switch動作確認済み",
+          "相違点：SanDisk Ultraは10年保証を提供。対象商品は5年保証。"
+        ],
+        "differentiators": [
+          "KIOXIA microSD 128GB EXCERIA KLMEA128Gの利点：初期費用を抑えて、国内サポート正規品を購入できる",
+          "SanDisk microSD カード 128GB Ultra SDSQUAB-128G-GH3MAの利点：10年間の長期保証で、より長く安心して使用できる"
+        ]
+      },
+      {
+        "name": "Silicon Power microSD カード 128GB SP128GBSTXDV3V20SP",
+        "asin": "B08H5SRBRN",
+        "priceComparison": "対象商品と同価格帯（やや高い程度）で、U3に対応している",
+        "featureComparison": [
+          "共通点：容量128GB、Nintendo Switch動作確認済み、最大読込100MB/s",
+          "相違点：Silicon Power製はU3に対応し4K対応をうたう。対象商品はU1。"
+        ],
+        "differentiators": [
+          "KIOXIA microSD 128GB EXCERIA KLMEA128Gの利点：国内工場生産のフラッシュメモリを使用した旧東芝メモリの高い信頼性がある",
+          "Silicon Power microSD カード 128GB SP128GBSTXDV3V20SPの利点：同価格帯でU3に対応しており、動画撮影などの書き込み性能で優位性がある"
+        ]
+      },
+      {
+        "name": "BUFFALO microSD 128GB RMSD-128U11HA/N",
+        "asin": "B09378JC6B",
+        "priceComparison": "対象商品より高価。国内メーカーのバッファロー製でNintendo Switch対応",
+        "featureComparison": [
+          "共通点：容量128GB、UHS-I U1、読込100MB/s、Nintendo Switch対応",
+          "相違点：BUFFALO製はIPX7防水やA1規格に対応している。"
+        ],
+        "differentiators": [
+          "KIOXIA microSD 128GB EXCERIA KLMEA128Gの利点：より安価に購入でき、基本的な用途においては十分な性能を持つ",
+          "BUFFALO microSD 128GB RMSD-128U11HA/Nの利点：A1規格対応でアプリの起動が速く、防水性能（IPX7）で耐久性が高い"
+        ]
+      },
+      {
+        "name": "SanDisk 高耐久 ドライブレコーダー アクションカメラ対応 microSDXC 128GB SDSQQNR-128G",
+        "asin": "B07NY23WBG",
+        "priceComparison": "対象商品より高価で、ドライブレコーダーなどの高耐久用途向け",
+        "featureComparison": [
+          "共通点：容量128GBのmicroSDXCカード",
+          "相違点：SanDisk 高耐久モデルはドライブレコーダーなど常時録画向けに設計されている。対象商品は一般用途向け。"
+        ],
+        "differentiators": [
+          "KIOXIA microSD 128GB EXCERIA KLMEA128Gの利点：一般的な用途において安価で手軽に購入できる",
+          "SanDisk 高耐久 ドライブレコーダー アクションカメラ対応 microSDXC 128GB SDSQQNR-128Gの利点：高耐久設計により、ドラレコなどの過酷な書き込み環境でも故障しにくい"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "Nintendo Switchの容量を安価に拡張したい人",
+        "スマホやタブレットの写真・動画を手軽にバックアップしたい人",
+        "国内メーカーの信頼性を重視する人"
+      ],
+      "pros": [
+        "信頼性の高いKIOXIAブランドの国内正規品である",
+        "日常用途（Switch、スマホ等）に必要十分な読み込み性能（100MB/s）を持つ",
+        "手頃な価格で購入できコストパフォーマンスが高い"
+      ],
+      "cons": [
+        "書き込み速度が明記されておらず、高速書き込みが必要な用途には向かない",
+        "UHSスピードクラス1（U1）のため4K動画撮影には推奨されない"
+      ],
+      "score": 80,
+      "scoreRationale": "[基本点: 70]\n[加点: +5] (KIOXIAブランドの国内正規品という信頼性の高さ)\n[加点: +5] (Switch動作確認済みで、日常用途において十分なコスパを持つ)\n[合計: 80]"
+    },
+    "technicalSpecs": {
+      "dimensions": {
+        "height": "1mm",
+        "width": "11mm",
+        "depth": "15mm"
+      },
+      "weight": "不明",
+      "capacity": "128GB",
+      "material": "不明",
+      "origin": "国内または海外（フラッシュメモリは自社国内工場生産）",
+      "other": [
+        "UHS-I",
+        "UHSスピードクラス1",
+        "SDスピードクラス10",
+        "最大読出速度: 100MB/s",
+        "Nintendo Switch動作確認済（※Nintendo Switch 2は非対応）",
+        "メーカー保証5年",
+        "著作権保護機能（CPRM）非対応"
+      ]
+    }
+  }
+}
