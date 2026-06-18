@@ -1,133 +1,177 @@
 {
   "analysis": {
-    "productName": "UGREEN Revodok USB-C ハブ 6in1 10Gbps",
+    "productName": "Revodok USB-C ハブ 6in1 100W",
     "parentAsin": "B0D1XLNWP2",
-    "productDescription": "USB-CとUSB-Aのデータポートを各2つ搭載し、いずれも最大10Gbpsの高速転送に対応した6-in-1 USB-Cハブです。",
+    "productDescription": "10Gbpsの高速データ転送と4K 60Hz出力に対応した6in1のUSB-Cハブ。100W PD給電にも対応し、MacBookやiPadなどの多様なデバイスで利用可能です。",
     "productUsage": [
-      "MacBookやiPadなどのUSB-Cポート拡張",
-      "外付けSSDなどの高速データ転送（最大10Gbps）",
-      "4K 60Hz対応モニターへの高画質映像出力",
-      "最大100WのUSB PDパススルー充電"
+      "ノートパソコンのポート拡張",
+      "外部ディスプレイへの4K 60Hz出力",
+      "最大10Gbpsでの高速データ転送"
     ],
     "positivePoints": [
-      "USB-CとUSB-Aの両方で10Gbpsの高速転送に対応している",
-      "4K 60HzのHDMI出力に対応し、滑らかな映像を楽しめる",
-      "2,000円台という非常に高いコストパフォーマンス",
-      "コンパクトで持ち運びに便利なサイズ感"
+      "2つのUSB-Cと2つのUSB-Aポートで最大10Gbpsの高速データ転送が可能",
+      "最大100WのUSB PD対応でノートPCを充電しながら使用可能",
+      "4K 60Hzの高画質出力に対応し、滑らかな映像を楽しめる",
+      "幅広いデバイスとの互換性があり、ドライバー不要で即座に使用可能"
     ],
     "negativePoints": [
-      "有線LANポート（Ethernet）が搭載されていない",
-      "高速データ転送時に本体が発熱する場合がある",
-      "SDカードスロットが搭載されていない"
+      "データ転送専用のUSB-Cポートは映像出力や充電に非対応",
+      "SDカードスロットやLANポートは搭載されていない"
     ],
     "useCases": [
-      "外出先でのプレゼンテーションや会議（HDMI出力）",
-      "大容量データの高速バックアップ（10Gbps転送）",
-      "ポート数が少ないノートPC（MacBook Air等）の機能拡張"
+      "デュアルモニター環境での快適な作業やオンライン会議",
+      "大容量の動画や写真の高速転送",
+      "外出先や出張先でのノートPCの拡張ポートとして"
     ],
-    "userStories": [
-      {
-        "userType": "映像クリエイター（推測）",
-        "scenario": "外出先での動画編集作業",
-        "experience": "撮影した大容量の動画データを外付けSSDからPCに転送する際、10Gbpsの速度が出るため待ち時間が大幅に短縮された。USB-Cポートが2つあるのも助かる。",
-        "sentiment": "positive"
-      },
-      {
-        "userType": "ビジネスパーソン（推測）",
-        "scenario": "オフィスでのデスクワーク",
-        "experience": "4Kモニターに接続して作業しているが、60Hz対応なのでマウスの動きが滑らかで目が疲れにくい。充電しながら使えるのでバッテリーの心配もない。",
-        "sentiment": "positive"
-      }
-    ],
-    "userImpression": "ユーザーレビューはまだ少ないものの、スペックに対する価格の安さとUGREENブランドへの信頼から、データ転送速度を重視するユーザーにとって非常に魅力的な選択肢となっている。",
+    "userStories": [],
+    "userImpression": "10Gbpsの高速転送や4K 60Hz出力といった高い基本性能を備えつつ、シンプルで持ち運びやすい設計が好評です。",
     "sources": [
       {
-        "name": "Amazon商品ページ",
+        "id": "src-1",
+        "name": "Amazon Product Page",
         "url": "https://www.amazon.co.jp/dp/B0D1XLNWP2",
-        "credibility": "high"
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2024-05-01",
+        "author": "UGREEN",
+        "conflictOfInterest": "possible",
+        "notes": "商品の主な仕様、ポート構成、互換性などを確認"
       }
     ],
-    "lastInvestigated": "2026-02-17",
+    "claims": [
+      {
+        "claim": "最大10Gbpsの高速データ転送が可能",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "crossChecked": false,
+        "notes": "商品仕様から確認"
+      },
+      {
+        "claim": "4K 60Hzの映像出力に対応",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "crossChecked": false,
+        "notes": "商品仕様から確認"
+      }
+    ],
+    "lastInvestigated": "2026-06-19",
     "competitiveAnalysis": [
       {
-        "name": "UGREEN Revodok 1061 (B0BW2TLQ8S)",
-        "asin": "B0BW2TLQ8S",
-        "priceComparison": "約2,800円（本製品より高い）",
+        "name": "UGREEN 7 in 1 Revodok Pro",
+        "asin": "B0D1XSKZRJ",
+        "priceComparison": "対象商品より高価。HDMIポートが2つ搭載されているためデュアルディスプレイ出力が可能。",
         "featureComparison": [
-          "USBポートは5Gbps止まり",
-          "有線LANポート搭載",
-          "HDMIは4K 30Hz"
+          "共通点：4K 60Hz出力、100W PD充電、10Gbpsデータ転送",
+          "相違点：競合はHDMI出力が2ポートあり、ポート数が7in1"
         ],
         "differentiators": [
-          "LANポートが必要ならRevodok 1061、速度と画質重視なら本製品"
+          "Revodok USB-C ハブ 6in1 100Wの利点：価格が抑えられており、コンパクトで携帯性に優れる",
+          "UGREEN 7 in 1 Revodok Proの利点：2つのHDMIポートを搭載し、デュアルディスプレイ出力に対応"
         ]
       },
       {
-        "name": "Anker PowerExpand 6-in-1 (B08C74W2QK)",
-        "asin": "B08C74W2QK",
-        "priceComparison": "約5,000円（本製品の倍以上）",
+        "name": "UGREEN Revodok Pro 8-in-1",
+        "asin": "B0DY1BD3T2",
+        "priceComparison": "対象商品よりやや高価。SD/microSDカードスロットが追加されている分、価格が上がっている。",
         "featureComparison": [
-          "USBポートは5Gbps",
-          "有線LANポート搭載",
-          "信頼性の高いブランド"
+          "共通点：4K 60Hz出力、100W PD充電、10Gbpsデータ転送",
+          "相違点：競合はSD/microSDカードスロットを搭載した8in1ハブ"
         ],
         "differentiators": [
-          "価格差が大きく、スペック面でも本製品が優位な点が多い"
+          "Revodok USB-C ハブ 6in1 100Wの利点：SDカードを必要としないユーザーにとってコストパフォーマンスが高い",
+          "UGREEN Revodok Pro 8-in-1の利点：カメラなどでSD/microSDカードを頻繁に使用するユーザーに最適"
         ]
       },
       {
-        "name": "UGREEN Uno 6 in 1 (B0D2Q5XJY9)",
-        "asin": "B0D2Q5XJY9",
-        "priceComparison": "約4,300円（本製品より高い）",
+        "name": "Anker USB-C ハブ (7-in-1)",
+        "asin": "B0D52GVLDP",
+        "priceComparison": "対象商品より大幅に高価。ブランドの信頼性やデュアルディスプレイ出力(4K 30Hz)に対応している点が価格に反映されていると考えられる。",
         "featureComparison": [
-          "10Gbps対応",
-          "ディスプレイ付きのユニークなデザイン",
-          "HDMI 4K 60Hz"
+          "共通点：100W PD充電",
+          "相違点：競合はHDMIが4K 30Hz出力だがデュアルディスプレイ対応。対象商品は4K 60Hzだがシングルディスプレイ。"
         ],
         "differentiators": [
-          "デザインとギミック重視ならUno、コスパ重視なら本製品"
+          "Revodok USB-C ハブ 6in1 100Wの利点：4K 60Hzの滑らかな映像出力が可能で、価格も安い",
+          "Anker USB-C ハブ (7-in-1)の利点：Ankerブランドの信頼性と、最大3画面出力(HDMI×2)に対応"
+        ]
+      },
+      {
+        "name": "Anker PowerExpand 8-in-1",
+        "asin": "B087TB7YM7",
+        "priceComparison": "対象商品より大幅に高価。イーサネットやSDカードスロットなど、ポート構成がより豊富。",
+        "featureComparison": [
+          "共通点：4K 60Hz出力、100W PD充電、10Gbpsデータ転送",
+          "相違点：競合はイーサネット(有線LAN)ポートやSDカードスロットを搭載した8in1ハブ"
+        ],
+        "differentiators": [
+          "Revodok USB-C ハブ 6in1 100Wの利点：必要最低限のポートに絞ることで低価格・小型化を実現",
+          "Anker PowerExpand 8-in-1の利点：有線LAN接続やSDカードの読み込みなど、幅広い用途に対応"
+        ]
+      },
+      {
+        "name": "Belkin USB-C ハブ 8-in-1",
+        "asin": "B0FXDVQMQG",
+        "priceComparison": "対象商品より大幅に高価。2.5Gbps有線LANポートやSDカードスロットなど、より高性能なポートを備えている。",
+        "featureComparison": [
+          "共通点：4K 60Hz出力、100W PD充電、10Gbpsデータ転送",
+          "相違点：競合は2.5Gbpsの高速有線LANポートやSDカードスロットを搭載した8in1ハブ"
+        ],
+        "differentiators": [
+          "Revodok USB-C ハブ 6in1 100Wの利点：価格が圧倒的に安く、有線LANが不要なユーザーには最適",
+          "Belkin USB-C ハブ 8-in-1の利点：2.5Gbpsの高速有線LAN接続が可能で、より安定したネットワーク環境を構築できる"
+        ]
+      },
+      {
+        "name": "BENFEI 3in1 USB C ハブ",
+        "asin": "B0DQQBC88X",
+        "priceComparison": "対象商品より安価。ポート数が3つに絞られているため低価格。",
+        "featureComparison": [
+          "共通点：4K 60Hz出力、100W PD充電、10Gbpsデータ転送",
+          "相違点：競合はUSB-A、HDMI、PDの3ポートのみ"
+        ],
+        "differentiators": [
+          "Revodok USB-C ハブ 6in1 100Wの利点：複数のUSBポートを備えており、より多くの周辺機器を接続できる",
+          "BENFEI 3in1 USB C ハブの利点：極小設計で持ち運びに便利、必要最小限のポートで低価格"
         ]
       }
     ],
     "recommendation": {
       "targetUsers": [
-        "動画編集など大容量データを扱うユーザー",
-        "MacBook Air/Proを使用しているユーザー",
-        "安価に高性能なハブを探しているユーザー"
+        "外出先でノートPCのポートを拡張したいビジネスパーソン",
+        "SDカードスロットや有線LANポートが不要で、基本的なUSBハブ機能を安価に求めている人",
+        "4K 60Hzの滑らかな映像出力が必要なクリエイターやゲーマー"
       ],
       "pros": [
-        "USB-C/A両方で10Gbpsの高速転送が可能",
-        "4K 60Hzの高画質出力",
-        "圧倒的なコストパフォーマンス"
+        "2,000円という価格で10Gbps転送・4K 60Hz出力・100W PDに対応し、非常にコストパフォーマンスが高い",
+        "計4つのUSBポート(Type-C x2, Type-A x2)を備え、拡張性が高い"
       ],
       "cons": [
-        "有線LANポートがない",
-        "SDカードリーダーがない"
+        "SDカードスロットや有線LANポートは非搭載"
       ],
-      "score": 91,
-      "scoreRationale": "[基本点: 70]\n[加点: +8] (USB-C/A 10Gbps x2ずつ搭載、4K 60Hz出力)\n[加点: +10] (2,000円という圧倒的なコストパフォーマンス)\n[加点: +3] (UGREENの信頼性と質感)\n[加点: +2] (他製品にはないUSBポート特化構成)\n[減点: -2] (高速転送時の発熱リスク)\n[合計: 91]"
+      "score": 85,
+      "scoreRationale": "[基本点: 70]\n[加点: +10] (2,000円という安価な価格ながら10Gbps転送や4K 60Hzに対応しコストパフォーマンスが非常に高い)\n[加点: +5] (USB-CとUSB-Aのポートを計4つ搭載し、高速データ転送の使い勝手が良い)\n[合計: 85]"
     },
     "technicalSpecs": {
       "dimensions": {
-        "length": "115mm",
-        "width": "35mm",
         "height": "12.5mm",
-        "weight": "約180g"
+        "width": "35mm",
+        "depth": "115mm"
       },
-      "ports": {
-        "usb_c_data": "2x USB-C 3.2 Gen 2 (10Gbps)",
-        "usb_a_data": "2x USB-A 3.2 Gen 2 (10Gbps)",
-        "hdmi": "1x HDMI (4K@60Hz)",
-        "pd_input": "1x USB-C PD (100W Pass-through)"
-      },
-      "compatibility": [
-        "MacBook Pro/Air",
-        "iPad Pro",
-        "Surface",
-        "XPS",
-        "ThinkPad",
-        "Steam Deck",
-        "Rog Ally"
+      "weight": "180g",
+      "capacity": "なし",
+      "material": "不明",
+      "origin": "不明",
+      "other": [
+        "ポート構成: USB-C 3.2 Gen 2 (10Gbps) × 2, USB-A 3.2 Gen 2 (10Gbps) × 2, HDMI (4K@60Hz) × 1, USB-C PD (100W) × 1",
+        "対応OS: Windows, macOS, iPadOS, Chrome OSなど",
+        "保証期間: 24ヶ月",
+        "カラー: グレー"
       ]
     }
   }
