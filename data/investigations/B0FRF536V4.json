@@ -1,155 +1,193 @@
 {
   "analysis": {
-    "productName": "Lenovo IdeaPad D330 10.1型 2-in-1 タブレットPC",
-    "parentAsin": "B0FRF536V4",
-    "productDescription": "着脱式キーボードを備えた10.1型2-in-1ノートPC。Windows 11 Proを搭載し、タブレットとしてもノートPCとしても利用可能なコストパフォーマンスに優れた整備済み品です。",
+    "productName": "IdeaPad D330 10.1型 2-in-1 タブレットPC (整備済み品)",
+    "parentAsin": "B0FRK56GWY",
+    "productDescription": "着脱式キーボードを搭載し、ノートPCとしてもタブレットとしても使える10.1型の2-in-1デバイスです。学習や外出先での軽い作業に適した基本性能を備えています。",
     "productUsage": [
-      "外出先での文書閲覧・作成",
-      "タブレットモードでの動画視聴・Webブラウジング",
-      "子供向けのプログラミング学習（Scratchなど）",
-      "サブ機としてのメールチェック・予定管理"
+      "学習用",
+      "オンライン授業",
+      "外出先での書類作成",
+      "動画視聴"
     ],
     "positivePoints": [
-      "1万円台で手に入るWindows 11 Pro搭載2-in-1",
-      "タブレットとキーボードを分離して使える利便性",
-      "USB Type-Cポート搭載で拡張性が高い",
-      "IPS液晶で見やすい画面",
-      "microSDカード対応でストレージ拡張が可能"
+      "キーボード着脱式でノートPCとタブレットの2つのスタイルで使える",
+      "タブレット本体は約600g、キーボード装着時でも約1.14kgと軽量で持ち運びやすい",
+      "10点マルチタッチ対応の非光沢IPS液晶で画面が見やすい",
+      "USB Type-Cからのデータ・画面出力やmicroSDによる容量拡張に対応"
     ],
     "negativePoints": [
-      "Celeron N4000と4GBメモリのため動作が緩慢になりやすい",
-      "64GB eMMCストレージは空き容量が逼迫しやすい",
-      "最新の3Dゲームや動画編集などの重い作業には向かない",
-      "整備済み品のため、バッテリー劣化や外装の小傷がある可能性がある"
+      "Celeron N4000と4GBメモリのため、重い作業やマルチタスクには不向き",
+      "ストレージが64GB eMMCと少なく、OSで半分程度消費されるため追加ストレージが必須",
+      "整備済み品であるため、バッテリーの劣化具合や外観の傷に個体差がある"
     ],
     "useCases": [
-      "ビジネスマンの出張用サブマシン",
-      "学生のレポート閲覧用・オンライン授業視聴用",
-      "子供の初めてのパソコン",
-      "リビングでの動画視聴端末"
+      "毎日の通学や通勤での持ち歩き",
+      "自宅のソファやベッドでの動画鑑賞・ブラウジング",
+      "カフェでのメールチェックや簡単な資料修正"
     ],
-    "userStories": [
-      {
-        "userType": "ビジネスマン",
-        "scenario": "出張時のメールチェックと資料修正",
-        "experience": "メインPCを持ち運ぶほどではない外出時に、これ1台でメール返信やOfficeファイルの簡単な修正ができるので便利。動作は少しもっさりするが、価格を考えれば許容範囲。（推測）",
-        "sentiment": "positive"
-      },
-      {
-        "userType": "主婦",
-        "scenario": "家計簿入力とネットサーフィン",
-        "experience": "スマホより画面が大きく、キーボードがあるので家計簿入力が楽になった。Youtubeを見るときはキーボードを外してタブレットとして使えるのが良い。（推測）",
-        "sentiment": "positive"
-      },
-      {
-        "userType": "学生",
-        "scenario": "オンライン授業と課題作成",
-        "experience": "Zoomとブラウザを同時に開くと動作が重くなることがある。レポート作成だけなら問題ないが、マルチタスクは厳しい。（推測）",
-        "sentiment": "mixed"
-      }
-    ],
-    "userImpression": "価格相応の性能だが、Windowsが動く2-in-1としてのコストパフォーマンスは非常に高い。割り切った使い方をするサブ機として最適。",
+    "userStories": [],
+    "userImpression": "用途を限定（Web閲覧、動画視聴、軽い文書作成）すれば非常にコストパフォーマンスが高いモバイル機。軽量で扱いやすい反面、基本スペックが高くないため、メインPCとしての利用には適さないという意見が多いです。",
     "sources": [
       {
-        "name": "Lenovo IdeaPad D330 公式製品情報（参考）",
-        "url": "https://www.lenovo.com/jp/ja/p/laptops/ideapad/ideapad-d-series/ideapad-d330/88ipid31095",
-        "credibility": "高"
-      },
-      {
-        "name": "Amazon商品ページ",
-        "url": "https://www.amazon.co.jp/dp/B0FRF536V4",
-        "credibility": "高"
+        "id": "src-lenovo-pdf",
+        "name": "Lenovo IdeaPad D330-10IGL Product Specifications Reference",
+        "url": "https://psref.lenovo.com/syspool/Sys/PDF/IdeaPad/ideapad_D330_10IGL/ideapad_D330_10IGL_Spec.pdf",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2022-06-07",
+        "author": "Lenovo",
+        "conflictOfInterest": "none",
+        "notes": "製品の公式スペックシート。寸法(249x178x9.5mm / 249x186x8.5mm)、重量(タブレット約600g/キーボード込約1135g)、インターフェース(USB 2.0x2, USB-C 3.2 Gen1)などを確認。"
       }
     ],
-    "lastInvestigated": "2026-02-17",
+    "claims": [
+      {
+        "claim": "タブレット本体は約600g、キーボード装着時でも約1.14kgと軽量",
+        "category": "durability",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-lenovo-pdf"
+        ],
+        "crossChecked": true,
+        "notes": "メーカーの公式スペックシートの重量記載と一致。"
+      },
+      {
+        "claim": "マルチタッチ対応の非光沢IPS液晶を搭載",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-lenovo-pdf"
+        ],
+        "crossChecked": true,
+        "notes": "メーカー仕様で10点マルチタッチ対応、IPSパネルであることが確認できた。"
+      }
+    ],
+    "lastInvestigated": "2026-06-19",
     "competitiveAnalysis": [
       {
-        "name": "BMAX I10S Androidタブレット",
-        "asin": "B0G5PQD5MK",
-        "priceComparison": "約10,998円。D330よりさらに安価だがキーボードは付属しない。",
+        "name": "ASUS Chromebook Detachable CM3",
+        "asin": "B0BBP7QZHL",
+        "priceComparison": "同価格帯。ただし本商品はWindows OS搭載で、競合はChrome OS搭載のChromebookである。",
         "featureComparison": [
-          "Android OSのためWindowsソフトは動作しない",
-          "アプリの動作は軽快な場合が多い",
-          "キーボード別売り"
+          "共通点：キーボードが着脱可能で、タブレットとしても使える2-in-1デバイス。ストレージが64GBでメモリが4GBという基本構成が同じ。",
+          "相違点：対象商品はWindows 11 Proを搭載しているのに対し、競合商品はChrome OSを搭載している。また競合はペンが付属する。"
         ],
         "differentiators": [
-          "Androidアプリのエコシステム",
-          "より軽量で持ち運びに特化"
+          "IdeaPad D330の利点：Windows OSを搭載しているため、一般的なWindows向けソフト（MS Office等）を利用したい場合に適している。",
+          "ASUS Chromebookの利点：Chrome OSで動作が比較的軽く、Androidアプリを利用しやすい。専用ペンが付属するため手書き入力が容易。"
         ]
       },
       {
-        "name": "Lenovo Chromebook 100e",
-        "asin": "B0DGXF4WSG",
-        "priceComparison": "約18,500円。D330より少し高い。",
+        "name": "富士通 2in1ノートパソコン V727",
+        "asin": "B0FF3FLF8C",
+        "priceComparison": "対象商品よりもやや安価。ただし、本商品はキーボードがなく本体のみである点に注意が必要。",
         "featureComparison": [
-          "Chrome OS搭載で起動が高速",
-          "クラムシェル型でタブレットにはならない",
-          "教育向けで堅牢性が高い"
+          "共通点：中古整備済み品のWindowsタブレット・2-in-1デバイスである点。",
+          "相違点：対象商品が10.1型でキーボード付属なのに対し、競合商品は12.3型でCore m3、8GBメモリ、128GB SSDを搭載するが、本体のみ（キーボード無し）である。"
         ],
         "differentiators": [
-          "セキュリティと管理の容易さ",
-          "Androidアプリ対応（一部）"
+          "IdeaPad D330の利点：専用キーボードが付属しており、購入後すぐにノートPCスタイルでタイピング作業が行える。",
+          "富士通 V727の利点：画面サイズが大きく、CPU性能やメモリ・ストレージ容量が充実しているため、キーボードを別途用意できるなら処理性能はこちらが上。"
         ]
       },
       {
-        "name": "Fire HD 10 タブレット (2023)",
-        "asin": "B0C2XN8HKD",
-        "priceComparison": "約19,980円（定価）。セール時は同等価格になることも。",
+        "name": "Let's note CF-SV7",
+        "asin": "B0CZSYDR5H",
+        "priceComparison": "対象商品よりも価格は高いが、基本スペック（Core i5, 8GBメモリ, 256GB SSD）が大きく上回る。",
         "featureComparison": [
-          "Fire OS (Androidベース) 搭載",
-          "Amazonコンテンツとの親和性が高い",
-          "キーボードカバーは別売りで高価"
+          "共通点：整備済みのモバイルノートパソコンであり、持ち運びに適したサイズである点。",
+          "相違点：対象商品はキーボード着脱式の2-in-1タブレットPCだが、競合商品は一般的なクラムシェル型のノートPCである。またスペックに大きな差がある。"
         ],
         "differentiators": [
-          "高精細なディスプレイと長時間バッテリー",
-          "エンターテインメントに特化"
+          "IdeaPad D330の利点：タブレット単体として使えるため、動画視聴や電子書籍の閲覧などで自由な姿勢で使いやすい。",
+          "Let's note CF-SV7の利点：処理能力が高く、メインPCとしても十分に活躍できるだけの性能を備えている。"
+        ]
+      },
+      {
+        "name": "Let's note CF-SZ6",
+        "asin": "B09LD469FN",
+        "priceComparison": "対象商品とほぼ同じ価格帯。2-in-1が必要か、通常のノートPCが必要かで選択が分かれる。",
+        "featureComparison": [
+          "共通点：安価に購入できる整備済みのモバイルWindows PCである点。",
+          "相違点：対象商品はタブレットとしても使える2-in-1タイプだがスペックは控えめ。競合商品はクラムシェル型で、第7世代Core i5と8GBメモリを搭載している。"
+        ],
+        "differentiators": [
+          "IdeaPad D330の利点：キーボードを取り外してタブレットとして使える汎用性と、タッチ操作の手軽さ。",
+          "Let's note CF-SZ6の利点：同じ価格帯でありながら、CPU性能とメモリ容量で大きく勝るため、ビジネス用途やマルチタスクにより適している。"
+        ]
+      },
+      {
+        "name": "Surface Book 2",
+        "asin": "B0GL4RTM1N",
+        "priceComparison": "対象商品の約3倍の価格だが、その分高品質なディスプレイと高い処理能力を持つハイエンド2-in-1である。",
+        "featureComparison": [
+          "共通点：キーボードが着脱可能で、タブレットとしても使用できるWindows搭載の2-in-1デバイス。",
+          "相違点：対象商品はエントリークラスの性能・解像度だが、競合は13.5インチの3K高解像度ディスプレイとCore i5、8GBメモリを搭載したハイエンドモデル。"
+        ],
+        "differentiators": [
+          "IdeaPad D330の利点：価格が非常に安く、子供の学習用や気軽なサブ機として手が出しやすい。",
+          "Surface Book 2の利点：画面が美しく処理能力も高いため、クリエイティブな作業やメインPCとしての利用に向いている。"
+        ]
+      },
+      {
+        "name": "LIFEBOOK U937",
+        "asin": "B0CBCMNF39",
+        "priceComparison": "対象商品よりも高いが、より薄型軽量で高性能なビジネスモバイルPCである。",
+        "featureComparison": [
+          "共通点：持ち運びに便利な整備済みの軽量モバイルパソコン。",
+          "相違点：対象商品が10.1型の2-in-1タブレットであるのに対し、競合は13.3型のクラムシェル型ノートPCであり、Core i5搭載で基本性能が高い。"
+        ],
+        "differentiators": [
+          "IdeaPad D330の利点：より小型でタッチ操作やタブレットスタイルでの利用が可能な点。",
+          "LIFEBOOK U937の利点：画面が大きくタイピングもしやすいため、長時間の書類作成など本格的な作業に適している。"
         ]
       }
     ],
     "recommendation": {
       "targetUsers": [
-        "とにかく安くWindows PCを手に入れたい人",
-        "用途が限定的なサブ機を探している人",
-        "子供用の入門機を探している親御さん"
+        "安価なサブPCを探している人",
+        "Web閲覧や動画視聴がメインのユーザー",
+        "子供の学習用端末を探している保護者"
       ],
       "pros": [
-        "圧倒的な低価格",
-        "タブレットとしても使える柔軟性",
-        "Windows 11 Pro搭載でビジネス用途にも対応"
+        "1万円台前半という非常に安価な価格",
+        "タブレットとノートPCの2つのスタイルで使える利便性",
+        "持ち運びに便利な軽量コンパクトサイズ"
       ],
       "cons": [
-        "重い作業は不可",
-        "ストレージ容量の管理が必要",
-        "整備済み品であることの理解が必要"
+        "CPU・メモリのスペックが低く、動作が重くなりやすい",
+        "ストレージが64GBと少なく容量不足になりがち",
+        "整備済み品のため状態に個体差がある"
       ],
-      "score": 75,
-      "scoreRationale": "[基本点: 70]\n[加点: +15] (1.5万円以下でWindows 11 Pro搭載2-in-1という圧倒的なコストパフォーマンス)\n[減点: -10] (Celeron N4000/4GBメモリ/64GB eMMCという最小構成のスペックによる動作の制約)\n[合計: 75]"
+      "score": 70,
+      "scoreRationale": "[基本点: 70]\n[加点: +5] (キーボード着脱式で2-in-1として使える汎用性の高さ)\n[加点: +5] (本体約600gという持ち運びやすい軽量設計)\n[加点: +5] (1万円台という導入しやすい低価格)\n[減点: -10] (Celeron N4000/4GBメモリによる処理性能の限界)\n[減点: -5] (64GBという限られたストレージ容量)\n[合計: 70]"
     },
     "technicalSpecs": {
-      "cpu": "Intel Celeron N4000 (Gemini Lake)",
-      "ram": "4GB LPDDR4",
-      "storage": "64GB eMMC",
-      "display": {
-        "size": "10.1インチ",
-        "resolution": "1280x800",
-        "type": "IPS"
+      "dimensions": {
+        "height": "178mm",
+        "width": "249mm",
+        "depth": "9.5mm"
       },
-      "battery": {
-        "capacity": "39Wh (新品時参考)",
-        "charging": "USB Type-C (PD対応)"
+      "weight": "1135g",
+      "display": "10.1型 HD IPS液晶 (1280x800) 10点マルチタッチ対応 非光沢",
+      "cpu": "Intel Celeron N4000",
+      "memory": "4GB LPDDR4-2133 (オンボード)",
+      "storage": "64GB eMMC 5.1",
+      "os": "Windows 11 Pro",
+      "camera": "前面200万画素 / 背面500万画素",
+      "interfaces": "USB-C 3.2 Gen 1 x1, USB 2.0 x2 (キーボード側), ヘッドホン/マイクコンボジャック, microSDカードリーダー",
+      "battery": "39Wh リチウムポリマーバッテリー",
+      "keyboardDimensions": {
+        "height": "186mm",
+        "width": "249mm",
+        "depth": "8.5mm"
       },
-      "gpu": "Intel UHD Graphics 600",
-      "connectivity": [
-        "Wi-Fi 5 (802.11ac)",
-        "Bluetooth 4.2",
-        "USB Type-C",
-        "USB 2.0 (キーボード側)"
-      ],
-      "camera": {
-        "main": "5MP",
-        "front": "2MP"
-      },
-      "os": "Windows 11 Pro"
+      "other": [
+        "タブレット単体重量: 約610g (LTEモデル) / 約600g (WiFiモデル)",
+        "キーボード単体重量: 約535g",
+        "Wi-Fi (802.11ac 1x1) / Bluetooth 4.2対応",
+        "ステレオスピーカー (1W x2) Dolby Audio Premium対応"
+      ]
     }
   }
 }
