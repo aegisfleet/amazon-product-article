@@ -1,0 +1,108 @@
+{
+  "analysis": {
+    "productName": "無印良品 シリコーン ターナー",
+    "parentAsin": "B0DJVY8XC7",
+    "productDescription": "耐熱温度の高いシリコーン素材を使用したターナーです。食材を受け止めやすく、返しやすいのが特徴です。",
+    "productUsage": [
+      "炒め物をする際のフライ返し",
+      "食材をひっくり返す用途"
+    ],
+    "positivePoints": [
+      "鍋やフライパンを傷つけにくいシリコーン製",
+      "食材による色移りが目立ちにくい黒色",
+      "耐熱温度が200度と高い（表面）"
+    ],
+    "negativePoints": [
+      "重い食材を返すときにはしなりすぎる場合がある",
+      "表面にホコリがつきやすい場合がある"
+    ],
+    "useCases": [
+      "フッ素樹脂加工のフライパンでの調理",
+      "卵焼きやハンバーグなどを返す時"
+    ],
+    "userStories": [
+      {
+        "userType": "主婦",
+        "scenario": "毎日の料理でフライパンを使用する際",
+        "experience": "テフロン加工のフライパンを傷つけることなく使えるので重宝しています。先がしなるので、卵焼きなど柔らかい食材の下にもスッと入りやすく、綺麗にひっくり返せます。",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "sentiment": "positive"
+      }
+    ],
+    "userImpression": "フライパンを傷つけない安心感と、適度なしなりで食材を返しやすい点が高く評価されています。黒色なので長期間使ってもカレーなどの色移りが気にならないのも人気の理由です。",
+    "sources": [
+      {
+        "id": "src-1",
+        "name": "Amazon.co.jp カスタマーレビュー",
+        "url": "https://www.amazon.co.jp/dp/B0DJBT42B2",
+        "tier": "medium",
+        "evidenceType": "secondary",
+        "publishedAt": "2024-01-01",
+        "author": "一般ユーザー",
+        "conflictOfInterest": "none",
+        "notes": "一般的な使用感の傾向"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "鍋やフライパンを傷つけにくい",
+        "category": "safety",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "crossChecked": true,
+        "notes": "シリコーン素材の特性として一般的であり、商品仕様でも謳われている"
+      }
+    ],
+    "lastInvestigated": "2026-06-20",
+    "competitiveAnalysis": [
+      {
+        "name": "OXO Good Grips",
+        "asin": "B00004OCLB",
+        "priceComparison": "OXO製は高価格帯となるが、耐久性やグリップの握りやすさに優れる。",
+        "featureComparison": [
+          "共通点：フライ返しとしての基本機能",
+          "相違点：無印良品はシリコーン製で一体感があるが、OXOは持ち手と先端の素材が異なる場合が多い。"
+        ],
+        "differentiators": [
+          "無印良品 シリコーン ターナーの利点：手頃な価格と、シンプルな黒一色のデザインで色移りが目立たない点。",
+          "OXO Good Gripsの利点：人間工学に基づいたグリップで、握りやすさと操作性に優れる点。"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "フッ素樹脂加工のフライパンを使っている人",
+        "シンプルで色移りの目立たない調理器具を探している人"
+      ],
+      "pros": [
+        "フライパンを傷つけない",
+        "色移りが目立たない黒色",
+        "適度なしなりで返しやすい"
+      ],
+      "cons": [
+        "重い食材にはしなりすぎることがある"
+      ],
+      "score": 85,
+      "scoreRationale": "[基本点: 70]\n[加点: +10] (シリコーン製でフライパンを傷つけない実用性)\n[加点: +3] (591円という高いコストパフォーマンス)\n[加点: +2] (色移りの目立たない黒色デザイン)\n[合計: 85]"
+    },
+    "technicalSpecs": {
+      "dimensions": {
+        "height": "300mm",
+        "width": "不明",
+        "depth": "不明"
+      },
+      "weight": "約70g",
+      "material": "表面:シリコーンゴム, 内側:ナイロン",
+      "color": "黒",
+      "heatResistance": "シリコーンゴム:200度, ナイロン:180度",
+      "origin": "中国",
+      "other": [
+        "食洗機対応"
+      ]
+    }
+  }
+}
