@@ -1,100 +1,164 @@
 {
   "analysis": {
-    "productName": "GOHHME ステンレス時計バンド 22mm",
+    "productName": "GOHHME 時計バンド ステンレス (ブラック, 22mm)",
     "parentAsin": "B09DFMJG9P",
-    "productDescription": "スマートウォッチや通常の腕時計に対応する、耐久性の高い304ステンレススチール製の交換用メタルバンド。",
+    "productDescription": "304ステンレススチール製のスマートウォッチ・腕時計向け交換用金属バンド。クイックリリース技術によるワンタッチ中留機能を備え、工具不要で簡単に着脱可能です。",
     "productUsage": [
-      "古くなった時計バンドの交換",
-      "スマートウォッチのカスタマイズ（シリコンからメタルへ）",
-      "ビジネスシーンでの使用（高級感アップ）",
-      "スポーツ後の洗浄も可能（ステンレス製）"
+      "スマートウォッチや腕時計のバンド交換",
+      "ビジネス、オフィス、ジムなどでの着用"
     ],
     "positivePoints": [
-      "圧倒的な低価格（880円）",
-      "クイックリリース機能で着脱が簡単",
-      "錆びにくい304ステンレススチール使用",
-      "ブラックカラーでスマートウォッチとの相性が良い"
+      "ワンタッチ中留機能で数秒で着脱可能",
+      "304ステンレススチール製で錆びにくく耐久性がある",
+      "890円という安価な価格設定"
     ],
     "negativePoints": [
-      "バンド調整工具が付属しているか不明確",
-      "安価なため塗装（ブラック）の耐久性に懸念あり",
-      "重量があるため、軽量なシリコンバンドからの移行では重く感じる可能性"
+      "サクラチェッカーで「危険」判定となっており、サクラレビューの可能性が高い",
+      "相場価格より極端に安く、長期的な耐久性や品質に懸念がある"
     ],
     "useCases": [
-      "ビジネスシーンでのスマートウォッチ着用",
-      "汗をかく季節のシリコンバンドの代替",
-      "気分転換のためのバンド交換"
+      "古くなった腕時計のバンドを安価に金属製に交換したい時",
+      "フォーマルな場での着用に合わせたバンドへの変更"
     ],
-    "userStories": [
-      {
-        "userType": "30代男性、会社員",
-        "scenario": "スマートウォッチを通勤で使う",
-        "experience": "付属のシリコンバンドだとカジュアルすぎるので、このメタルバンドに交換。見た目が引き締まり、スーツにも合うようになった。（推測）",
-        "sentiment": "positive"
-      },
-      {
-        "userType": "スマートウォッチ初心者",
-        "scenario": "初めてのバンド交換",
-        "experience": "クイックリリースのおかげで工具なしで本体への取り付けはできたが、腕周りのサイズ調整（コマ詰め）に手こずった。（推測）",
-        "sentiment": "mixed"
-      }
-    ],
-    "userImpression": "価格以上の見た目と機能性を提供する高コスパ商品だが、サイズ調整の手間や塗装の耐久性には注意が必要。",
+    "userStories": [],
+    "userImpression": "価格の安さとワンタッチ装着の利便性がアピールされているが、サクラチェッカーでの危険判定や「要注意メーカー」指定により、実際の品質や耐久性には慎重な検討が必要な商品という印象です。",
     "sources": [
       {
-        "name": "Amazon商品ページ",
+        "id": "src-1",
+        "name": "サクラチェッカー",
+        "url": "https://sakura-checker.jp/search/B09DFMJG9P/",
+        "tier": "medium",
+        "evidenceType": "secondary",
+        "publishedAt": "2026-06-20",
+        "author": "サクラチェッカー",
+        "conflictOfInterest": "none",
+        "notes": "サクラ度「危険」判定、要注意メーカー、相場価格より極端な値下げの警告あり。"
+      },
+      {
+        "id": "src-2",
+        "name": "Amazon公式サイト B09DFMJG9P",
         "url": "https://www.amazon.co.jp/dp/B09DFMJG9P",
-        "credibility": "medium"
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-06-20",
+        "author": "Amazon",
+        "conflictOfInterest": "possible",
+        "notes": "商品の仕様、特徴、価格情報を確認。"
       }
     ],
-    "lastInvestigated": "2026-02-18",
+    "claims": [
+      {
+        "claim": "サクラレビューの危険性が高い",
+        "category": "durability",
+        "confidence": "high",
+        "supportingSourceIds": ["src-1"],
+        "crossChecked": false,
+        "notes": "サクラチェッカーでの判定"
+      }
+    ],
+    "lastInvestigated": "2026-06-20",
     "competitiveAnalysis": [
       {
-        "name": "Fullmosa ステンレスバンド",
+        "name": "ToVioc ステンレスバンド 22ミリ",
+        "asin": "B09SDCCDLB",
+        "priceComparison": "対象商品より高いが、サイズ調整工具が付属しより信頼性が高い",
+        "featureComparison": [
+          "共通点：22mmのステンレス製時計バンド、クイックリリース対応",
+          "相違点：ToViocはサイズ調整工具が付属し、価格が高い"
+        ],
+        "differentiators": [
+          "GOHHMEの利点：価格が安い",
+          "ToViocの利点：サイズ調整工具が付属しており、初期のフィッティングが容易"
+        ]
+      },
+      {
+        "name": "SIWENGDE 時計バンド 22mm",
+        "asin": "B0BJK1SGRS",
+        "priceComparison": "対象商品とほぼ同価格帯",
+        "featureComparison": [
+          "共通点：22mmのステンレス製時計バンド、低価格帯",
+          "相違点：SIWENGDEは無段階長さ調節が可能"
+        ],
+        "differentiators": [
+          "GOHHMEの利点：ワンタッチ中留機能で着脱が容易",
+          "SIWENGDEの利点：無段階長さ調節により、手首のサイズにより細かくフィットさせられる"
+        ]
+      },
+      {
+        "name": "Fullmosa スマートウォッチ 交換ベルト 22mm",
         "asin": "B07F238H7R",
-        "priceComparison": "約3倍の価格（2,699円）",
-        "featureComparison": ["ブランド知名度が高い", "調整工具が確実に付属"],
-        "differentiators": ["品質の安定性と充実した付属品"]
+        "priceComparison": "対象商品より大幅に高いが、有名ブランドで品質への信頼性が高い",
+        "featureComparison": [
+          "共通点：22mmのステンレス製スマートウォッチ対応バンド",
+          "相違点：Fullmosaはブランドの知名度が高く、流線美を意識したデザインと365日保証付き"
+        ],
+        "differentiators": [
+          "GOHHMEの利点：価格が圧倒的に安い",
+          "Fullmosaの利点：長期保証と高い品質管理、フォーマルにも合う洗練されたデザイン"
+        ]
       },
       {
-        "name": "Qosea 時計バンド",
-        "asin": "B0DCZKKJVQ",
-        "priceComparison": "同価格帯（999円）",
-        "featureComparison": ["調整工具付きを明記", "デザインは類似"],
-        "differentiators": ["工具付属の安心感"]
+        "name": "WOCCI 時計ベルト メタル 22mm",
+        "asin": "B0DFCJ3MT2",
+        "priceComparison": "対象商品よりかなり高いが、SUS316Lを採用し耐久性に優れる",
+        "featureComparison": [
+          "共通点：22mmのメタルバンド、クイックリリース採用",
+          "相違点：WOCCIはより高品質なSUS316Lステンレススチールを使用し、厚みのある三連ブレス構造"
+        ],
+        "differentiators": [
+          "GOHHMEの利点：コストパフォーマンスに優れる",
+          "WOCCIの利点：素材の質が高く、重厚感と長寿命が期待できる"
+        ]
       },
       {
-        "name": "WOCCI 時計ベルト",
-        "asin": "B0DFCH12D3",
-        "priceComparison": "高価格帯（3,899円）",
-        "featureComparison": ["316Lステンレス（より高品質）を使用"],
-        "differentiators": ["素材のグレードが高い"]
+        "name": "Qosea 時計バンド 22mm",
+        "asin": "B0F1F65VVK",
+        "priceComparison": "対象商品と同価格帯",
+        "featureComparison": [
+          "共通点：低価格な304ステンレススチール製、ワンタッチ中留機能",
+          "相違点：Qoseaは調整工具が付属し、3つの株で仕上げたデザイン"
+        ],
+        "differentiators": [
+          "GOHHMEの利点：シンプルなデザインを好む場合に適する",
+          "Qoseaの利点：調整工具が付属し、届いてすぐに長さ調整が可能"
+        ]
+      },
+      {
+        "name": "LEIXIUER マグネット スマートウォッチ用 交換ベルト 22mm",
+        "asin": "B0BJ9Y25JW",
+        "priceComparison": "対象商品より高いが、ミラネーゼバンドで通気性が良い",
+        "featureComparison": [
+          "共通点：22mmのスマートウォッチ向け金属交換ベルト",
+          "相違点：LEIXIUERはメッシュ構造のミラネーゼループでマグネット固定式"
+        ],
+        "differentiators": [
+          "GOHHMEの利点：従来のリンク式でしっかりとしたホールド感がある",
+          "LEIXIUERの利点：マグネット式で無段階調整が可能、軽量で通気性に優れる"
+        ]
       }
     ],
     "recommendation": {
       "targetUsers": [
-        "とにかく安くメタルバンドを試したい人",
-        "自分でバンド調整ができる人",
-        "スマートウォッチの雰囲気を変えたい人"
+        "とにかく安価に金属バンドを試してみたい方",
+        "ワンタッチ着脱の利便性を重視する方"
       ],
       "pros": [
-        "圧倒的なコストパフォーマンス",
-        "クイックリリースで取り付け簡単"
+        "ワンタッチで簡単に着脱可能",
+        "890円という非常に手頃な価格"
       ],
       "cons": [
-        "サイズ調整工具の有無が不明",
-        "塗装剥げのリスク"
+        "サクラレビューの疑いがあり、実際の品質や耐久性が不透明",
+        "長期間の使用におけるサビや破損のリスク"
       ],
-      "score": 80,
-      "scoreRationale": "[基本点: 70]\n[加点: +15] (880円という圧倒的な低価格)\n[加点: +5] (304ステンレス使用)\n[減点: -5] (調整工具の付属が不明確)\n[減点: -5] (塗装耐久性への懸念)\n[合計: 80]"
+      "score": 50,
+      "scoreRationale": "[基本点: 70]\n[加点: +5] (890円という低価格でコスパが良い)\n[加点: +5] (ワンタッチ中留機能による着脱のしやすさ)\n[減点: -20] (サクラチェッカーで「危険」判定を受けており、品質と信頼性に大きな懸念がある)\n[減点: -10] (価格相応の耐久性やチープさに対する懸念)\n[合計: 50]"
     },
     "technicalSpecs": {
-      "material": "304ステンレススチール",
-      "width": "22mm",
       "color": "ブラック",
-      "mechanism": "クイックリリース",
-      "waterResistance": "あり（ステンレス製）",
-      "other": "汎用（ほとんどの時計に対応）"
+      "size": "22mm",
+      "material": "304ステンレススチール",
+      "features": "ワンタッチ中留機能、クイックリリース",
+      "compatibility": "ラグ幅22mmの時計、スマートウォッチ"
     }
   }
 }
