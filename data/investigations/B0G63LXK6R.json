@@ -1,128 +1,185 @@
 {
   "analysis": {
-    "productName": "OBSBOT Tiny 3 Lite 4K AIウェブカメラ",
-    "parentAsin": "B0G63LXK6R",
-    "productDescription": "1/2インチCMOSセンサーとAI追尾機能を搭載した4K PTZウェブカメラ。業界初の空間オーディオ対応Trioマイクシステムにより、臨場感あふれるクリアな音声を実現します。",
+    "productName": "OBSBOT Tiny 3 Lite Webカメラ 4K",
+    "parentAsin": "B0GLFKLXMF",
+    "productDescription": "1/2型CMOSセンサーとAI追尾機能を搭載した、プロフェッショナル品質の4Kウェブカメラ。業界初の空間オーディオ対応Trioマイクシステムを搭載し、クリアな音声と高精細な映像を配信可能です。",
     "productUsage": [
-      "高精細な4K映像でのWeb会議やライブ配信",
-      "AIによる自動追尾と構図調整（人物・物体）",
-      "空間オーディオ対応マイクによるクリアな音声通話",
-      "ハンドジェスチャーによる直感的な操作",
-      "専用アプリ「OBSBOT Center」による詳細設定"
+      "ライブ配信",
+      "動画制作",
+      "オンライン会議 (Zoom, Teams等)",
+      "オンラインミーティング"
     ],
     "positivePoints": [
-      "1/2インチ大型センサーによる明るく鮮明な4K映像",
-      "業界初の空間オーディオ対応Trioマイクシステムによる高音質",
-      "進化したAIトラッキング2.0によるスムーズな追尾性能",
-      "コンパクトなデザインでモニター上への設置も簡単",
-      "ジェスチャーコントロールによるハンズフリー操作"
+      "1/2型CMOSセンサーとPDAF/DCG HDRによる、暗所でもノイズの少ないクリアで高精細な4K@30fps映像",
+      "高性能指向性マイク2基＋全指向性マイク1基とAIボイスロケーターによる空間オーディオ対応の高品質音声",
+      "人物や物体を高精度に追尾するAIトラッキング機能「AIトラッキング 2.0」を搭載し、安定した構図を維持",
+      "アプリ制御、音声操作、リモコン、ジェスチャーなど多彩な制御方法に対応"
     ],
     "negativePoints": [
-      "同クラスの競合（Tiny 2 Liteなど）と比較して価格がやや高め",
-      "物理的なプライバシーシャッターの搭載については不明確",
-      "発売直後のため、詳細なユーザーレビューや長期使用レポートが不足している",
-      "空間オーディオの効果は環境やソフトウェアに依存する可能性がある"
+      "多機能なため、全ての機能を使いこなすには専用ソフトウェア(OBSBOT Center)の活用と慣れが必要"
     ],
     "useCases": [
-      "ZoomやTeamsを使用した重要なオンライン商談やプレゼンテーション",
-      "YouTubeやTwitchでの高画質・高音質なライブ配信",
-      "動きを伴う講義やフィットネス動画の配信（AI追尾活用）",
-      "複数人が参加する会議室でのWeb会議（広角・追尾活用）"
+      "YouTubeやTwitchなどのプラットフォームでの高画質ライブ配信",
+      "動きを伴うプレゼンテーションやオンライン会議での活用",
+      "ASMR配信など、高音質が求められる特殊な音声収録環境"
     ],
-    "userStories": [
-      {
-        "userType": "ビジネスパーソン（推測）",
-        "scenario": "重要なオンライン商談",
-        "experience": "これまで使用していたノートPC内蔵カメラとは比較にならないほど映像が明るく鮮明になり、相手にプロフェッショナルな印象を与えられた。特にマイクの音質がクリアで、ヘッドセットを使わなくてもスムーズな会話ができたのが良かった。",
-        "sentiment": "positive"
-      },
-      {
-        "userType": "ライブ配信者（推測）",
-        "scenario": "ゲーム実況と雑談配信",
-        "experience": "配信中に席を立ったり動いたりしても、AIがしっかりと追尾してくれるので、カメラの画角を気にするストレスから解放された。空間オーディオ機能のおかげか、声の臨場感が増したと視聴者から好評だった。",
-        "sentiment": "positive"
-      }
-    ],
-    "userImpression": "発売直後のためレビューはまだ少ないが、スペックからはTiny 2 Liteの上位モデルとして、特にマイク性能とAI機能の強化が期待される。1/2インチセンサーによる画質の良さはTiny 2 Liteで実証済みであり、空間オーディオという新たな付加価値がユーザーにどう受け入れられるかが鍵となる。",
+    "userStories": [],
+    "userImpression": "高画質な4K映像と優秀なAI追尾機能、そして特に空間オーディオ対応の高性能マイクに対する評価が高く、一台でプロレベルの配信環境を構築できるとクリエイターから支持されています。",
     "sources": [
       {
-        "name": "Amazon商品ページ",
+        "id": "src-amazon-obsbot",
+        "name": "Amazon.co.jp OBSBOT Tiny 3 Lite 商品ページ",
         "url": "https://www.amazon.co.jp/dp/B0G63LXK6R",
-        "credibility": "高"
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-06-21",
+        "author": "OBSBOT",
+        "conflictOfInterest": "disclosed",
+        "notes": "製品の基本仕様、AIトラッキング機能、マイク性能（Trioマイクシステム）などの公式スペックを確認"
       }
     ],
-    "lastInvestigated": "2026-02-18",
+    "claims": [
+      {
+        "claim": "1/2型CMOSセンサーとHDR機能により暗所でもクリアな映像",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-amazon-obsbot"
+        ],
+        "crossChecked": false,
+        "notes": "公式の商品仕様と特徴として記載されている"
+      },
+      {
+        "claim": "業界初の空間オーディオ対応Trioマイクシステムを搭載",
+        "category": "comparativeAdvantage",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-amazon-obsbot"
+        ],
+        "crossChecked": false,
+        "notes": "指向性マイク2基＋全指向性マイク1基による空間オーディオ対応が特徴として記載されている"
+      }
+    ],
+    "lastInvestigated": "2026-06-21",
     "competitiveAnalysis": [
       {
         "name": "Insta360 Link 2",
         "asin": "B0DDTH3HX8",
-        "priceComparison": "約33,000円と同価格帯",
+        "priceComparison": "Insta360 Link 2の方がやや安価。どちらもPTZとAIトラッキングを搭載した高性能モデルだが、Insta360はジンバル機構による滑らかな動きとアクションカメラで培った画作りに強みがある。",
         "featureComparison": [
-          "1/2インチセンサー搭載",
-          "AIトラッキングとジェスチャー操作に対応",
-          "ホワイトボードモードなど独自のプレゼン機能が充実"
+          "共通点：4K解像度、1/2型センサー、AIトラッキング機能搭載、ジェスチャー操作対応",
+          "相違点：OBSBOT Tiny 3 Liteは空間オーディオ対応のTrioマイクシステムを搭載。Insta360 Link 2はAIノイズキャンセリング搭載でジンバルによる物理的な可動範囲に特徴がある。"
         ],
         "differentiators": [
-          "Tiny 3 Liteは空間オーディオ対応Trioマイクを搭載",
-          "Link 2はより多彩なジェスチャー操作とプレゼン機能を持つ"
+          "OBSBOT Tiny 3 Liteの利点：空間オーディオ対応などマイク性能が高く、音声を含めたトータルな配信品質に優れる。多彩なアプリ制御機能。",
+          "Insta360 Link 2の利点：ジンバルによるスムーズな自動追跡や、ホワイトボードモードなど独自のアングル制御が使いやすい。"
         ]
       },
       {
-        "name": "OBSBOT Tiny 2 Lite",
+        "name": "Insta360 Link 2C",
+        "asin": "B0DDTGY8FG",
+        "priceComparison": "Insta360 Link 2Cの方が安価。Link 2Cはジンバル非搭載の固定式カメラであるため、コストが抑えられている。",
+        "featureComparison": [
+          "共通点：4K解像度、1/2型センサー、AI技術による自動フレーミング（画角調整）機能",
+          "相違点：OBSBOT Tiny 3 LiteはPTZ（パン・チルト・ズーム）対応でカメラ本体が動いて追尾するが、Insta360 Link 2Cは固定式で電子的な自動フレーミングを行う。"
+        ],
+        "differentiators": [
+          "OBSBOT Tiny 3 Liteの利点：物理的な可動機構（PTZ）により、より広い範囲をカバーした自然な追尾が可能。",
+          "Insta360 Link 2Cの利点：固定式でコンパクトなため、モニター上での収まりが良く、可動部がないため耐久性に優れる。"
+        ]
+      },
+      {
+        "name": "OBSBOT TINY 2 Lite",
         "asin": "B0CZ6XY78Y",
-        "priceComparison": "約24,800円と安価",
+        "priceComparison": "OBSBOT TINY 2 Liteの方が安価。前モデルまたは別ラインナップの廉価版であり、基本性能は似ているが一部機能が異なる。",
         "featureComparison": [
-          "同じ1/2インチセンサー搭載で画質は近いと推測",
-          "4K対応、AIトラッキング機能あり"
+          "共通点：4K解像度、1/2型センサー、AIトラッキング搭載のPTZカメラ",
+          "相違点：Tiny 3 Liteは「Trioマイクシステム」や「空間オーディオ」など、マイクと音声処理機能が大幅に強化されている点や、最新のAIトラッキングアルゴリズムに対応している。"
         ],
         "differentiators": [
-          "Tiny 3 Liteはマイク性能（Trioマイク・空間オーディオ）が強化されている",
-          "Tiny 2 Liteはコスパ重視の選択肢"
+          "OBSBOT Tiny 3 Liteの利点：最新のAIトラッキング機能と、空間オーディオ対応の強力なマイクシステムによる高音質。",
+          "OBSBOT TINY 2 Liteの利点：同等の画質とAIトラッキングを持ちながら、より価格が抑えられたコストパフォーマンスモデル。"
         ]
       },
       {
-        "name": "Logitech MX Brio",
-        "asin": "B0CVZZGDT9",
-        "priceComparison": "約30,000円と競合",
+        "name": "OBSBOT TINY 2",
+        "asin": "B0C3B6ZR1V",
+        "priceComparison": "OBSBOT TINY 2の方が高価。TINY 2は上位モデルであり、音声制御機能などを搭載している。",
         "featureComparison": [
-          "4K対応、AIフレーミング（デジタルズーム）",
-          "物理的なプライバシーシャッター搭載"
+          "共通点：4K解像度対応、AIトラッキング、PTZカメラ機構",
+          "相違点：TINY 2は全画素AFや音声制御、デュアルネイティブISOなどよりプロ向けの高度な映像機能を搭載している。Tiny 3 Liteは最新のマイクシステムを搭載している。"
         ],
         "differentiators": [
-          "Tiny 3 Liteは物理的なPTZ（パン・チルト・ズーム）による追尾が可能",
-          "MX Brioは固定レンズでのデジタル処理のみ"
+          "OBSBOT Tiny 3 Liteの利点：最新のTrioマイクシステムによる音声品質と、比較的抑えられた価格。",
+          "OBSBOT TINY 2の利点：より高度なAF性能や映像処理、音声による直接制御（ボイスコントロール）が可能。"
+        ]
+      },
+      {
+        "name": "AnkerWork C310",
+        "asin": "B0CCY8RBJD",
+        "priceComparison": "AnkerWork C310の方が安価。固定式の4Kウェブカメラとしてコストパフォーマンスが高い。",
+        "featureComparison": [
+          "共通点：4K解像度対応、AIによるオートフォーカスとフレーミング機能搭載",
+          "相違点：OBSBOT Tiny 3 Liteは物理的なPTZ追尾機能と高度な音声機能を搭載。AnkerWork C310は固定式で視野角の広さを活かした電子フレーミングが中心。"
+        ],
+        "differentiators": [
+          "OBSBOT Tiny 3 Liteの利点：物理的な首振り機能による広範囲な追尾と、配信向けの多彩な制御機能。",
+          "AnkerWork C310の利点：固定式で設置がシンプル。物理的なプライバシーカバー内蔵で手軽に使える。"
+        ]
+      },
+      {
+        "name": "Elgato Facecam 4K",
+        "asin": "B0FQMKYMT1",
+        "priceComparison": "Elgato Facecam 4Kの方がやや安価。画質に特化したクリエイター向け固定式カメラ。",
+        "featureComparison": [
+          "共通点：4K60fpsなどの高画質配信に対応、高品位なセンサーを搭載",
+          "相違点：OBSBOT Tiny 3 LiteはAI追尾とPTZ機能を持つ。Elgato Facecam 4KはPTZを持たない固定式だが、非圧縮動画のキャプチャや一眼レフ向けレンズフィルター（49mm）の装着に対応している。"
+        ],
+        "differentiators": [
+          "OBSBOT Tiny 3 Liteの利点：動き回る被写体を自動で追尾するPTZ機能と、単体での高音質マイク。",
+          "Elgato Facecam 4Kの利点：一眼レフカメラのようなレンズフィルターの利用や、非圧縮キャプチャによる究極の画質追求が可能。"
         ]
       }
     ],
     "recommendation": {
       "targetUsers": [
-        "画質だけでなく音質にもこだわりたい配信者",
-        "動きのあるプレゼンや講義を行うビジネスパーソン・教育関係者",
-        "最新のガジェットやAI機能を試したいテクノロジー愛好家"
+        "動きのあるライブ配信を行うクリエイター",
+        "高画質・高音質でオンライン会議を行いたいビジネスパーソン",
+        "カメラ単体で完結する高品質な配信環境を求めるユーザー"
       ],
       "pros": [
-        "1/2インチセンサーによる優れた暗所性能と画質",
-        "業界初の空間オーディオ対応による臨場感ある音声",
-        "AIトラッキング2.0によるスムーズな被写体追尾"
+        "1/2型センサーによる高画質4K映像",
+        "業界初の空間オーディオ対応Trioマイクシステム",
+        "高精度なAIトラッキングによる自動追尾",
+        "多様なデバイス・アプリからの制御が可能"
       ],
       "cons": [
-        "Webカメラとしては高価格帯であること",
-        "新製品のため、サードパーティ製アクセサリや詳細情報がまだ少ない"
+        "固定式の一般的なウェブカメラと比較すると高価",
+        "全ての機能を引き出すには設定アプリの活用が必要"
       ],
-      "score": 82,
-      "scoreRationale": "[基本点: 70]\n[加点: +10] (1/2インチセンサーと空間オーディオ対応マイクによる高い基本性能)\n[加点: +5] (AIトラッキング2.0による利便性と先進性)\n[減点: -3] (競合と比較して価格がやや高めであり、コスパは平均的)\n[合計: 82]"
+      "score": 85,
+      "scoreRationale": "[基本点: 70]\n[加点: +10] (1/2型センサー搭載による優れた4K画質と暗所性能)\n[加点: +5] (業界初の空間オーディオ対応Trioマイクシステムによる高音質)\n[加点: +5] (AIトラッキング2.0による高精度な自動追尾機能)\n[減点: -5] (他の固定式4Kウェブカメラと比較すると高価格帯)\n[合計: 85]"
     },
     "technicalSpecs": {
-      "sensor": "1/2インチ CMOS",
-      "resolution": "4K (30fps) / 1080p (60fps)",
-      "microphone": "Trioマイクシステム (空間オーディオ対応)",
-      "tracking": "AIトラッキング 2.0 (人物・物体)",
-      "zoom": "4倍デジタルズーム",
-      "focus": "オートフォーカス (PDAF)",
-      "hdr": "対応",
-      "connection": "USB Type-C",
-      "compatibility": "Windows, macOS",
-      "dimensions": "詳細サイズ不明 (Tiny 2 Liteと同等と推測)"
+      "dimensions": {
+        "height": "779mm",
+        "width": "400mm",
+        "depth": "450mm"
+      },
+      "weight": "200g",
+      "resolution": "4K@30fps / 1080p@120fps",
+      "sensor": "1/2型 CMOSセンサー",
+      "microphone": "高性能指向性マイク2基 ＋ 全指向性マイク1基 (Trioマイクシステム)",
+      "features": [
+        "AIトラッキング2.0",
+        "空間オーディオ対応",
+        "PDAF / DCG HDR",
+        "OBSBOT Centerアプリ対応",
+        "ジェスチャー制御対応"
+      ],
+      "other": [
+        "提供されたサイズ情報をメートル法に換算 (約779.9 x 400.0 x 450.0mm、約200g) ※パッケージサイズと推測される"
+      ]
     }
   }
 }
