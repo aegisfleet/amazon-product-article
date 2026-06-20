@@ -1,117 +1,250 @@
 {
   "analysis": {
-    "productName": "OBSBOT Tiny SE",
+    "productName": "OBSBOT TINY SE Webカメラ",
     "parentAsin": "B0DMF4GLR8",
-    "productDescription": "AI追跡とジェスチャー操作を備えたフルHDウェブカメラ。2軸ジンバルにより、プレゼンやライブ配信時に話者の動きを滑らかに自動追尾します。",
+    "productDescription": "1080P/100fpsの高画質と滑らかなPTZ（パン・チルト・ズーム）機能を備え、AIによる高精度な自動追跡やジェスチャーコントロールに対応した高性能ウェブカメラです。",
     "productUsage": [
-      "オンライン会議・授業での話者追尾",
-      "動きのあるライブ配信（フィットネス、料理、ダンス）",
-      "ジェスチャー操作によるカメラコントロール"
+      "オンライン会議",
+      "ライブ配信",
+      "オンライン授業・プレゼンテーション",
+      "ビデオ通話"
     ],
     "positivePoints": [
-      "物理ジンバルによる非常にスムーズなAI自動追跡",
-      "PCやリモコンに触れずに操作できるジェスチャー機能（手のひら/指差し）",
-      "フルHDながら100fpsの高フレームレート対応で動きが滑らか",
-      "プライバシーモード対応（カメラを下向きに収納可能）",
-      "USB Type-Cケーブル1本で接続可能"
+      "内蔵AIによる高精度で滑らかな自動追跡機能により、動いても被写体を常にフレーム内に維持できる",
+      "ジェスチャーコントロールにより、離れた場所からでも追跡のオン・オフやズーム操作が直感的に行える",
+      "1/2.8インチのCMOSセンサーやデュアルネイティブISO、Staggered HDRにより、暗所や逆光でもクリアな映像を実現",
+      "1080p/100fpsの高フレームレートに対応し、動きの速い被写体でも滑らかに撮影可能",
+      "専用ソフト「OBSBOT Center」によるBeauty機能や画質調整、プリセット機能が充実している"
     ],
     "negativePoints": [
-      "最大解像度が1080p（4K非対応）",
-      "センサーサイズが1/2.8インチと標準的（競合の上位モデルは1/2インチ以上が多い）",
-      "数千円の追加で4K対応の競合モデル（Insta360 Linkなど）が購入できるため、コストパフォーマンスは低い"
+      "上位モデル（Tiny 2）と比較して、最大解像度が4Kではなく1080pに留まる",
+      "上位モデルに搭載されている音声操作機能が省かれている",
+      "オートフォーカスの速度や精度が、高価格帯のモデルに比べると若干劣る場合がある"
     ],
     "useCases": [
-      "ホワイトボードを使った講義やセミナー配信",
-      "自宅でのフィットネスレッスン配信",
-      "ZoomやTeamsを使った日常的なビデオ会議"
+      "ホワイトボードの前で動きながら説明を行うオンライン授業やプレゼンテーション",
+      "商品紹介やゲーム配信など、動きの多いライブストリーミング",
+      "会議室を動き回るようなダイナミックなビデオ会議"
     ],
     "userStories": [
       {
-        "userType": "オンライン講師（推測）",
-        "scenario": "ホワイトボードを使って授業を行う際、カメラが自動で自分を追尾してくれる。",
-        "experience": "以前は固定カメラだったため、画角から外れないように気を使っていたが、Tiny SEなら自由に動き回りながら説明できるため、生徒への伝わりやすさが向上した。（推測）",
+        "userType": "オンライン講師",
+        "scenario": "ホワイトボードを使ったオンライン授業",
+        "experience": "AI自動追跡機能のおかげで、ホワイトボードの前を動き回ってもカメラが自動で追いかけてくれるため、カメラマンがいなくてもスムーズな授業ができました。ジェスチャーでズームできるのも便利です。",
+        "supportingSourceIds": [
+          "src-1",
+          "src-2"
+        ],
         "sentiment": "positive"
       },
       {
-        "userType": "在宅勤務の会社員（推測）",
-        "scenario": "Zoom会議中に立ち上がって資料を取りに行く。",
-        "experience": "ジェスチャーで簡単に追尾をオンオフできるので、会議中に席を立つ際もカメラアングルを気にしなくて済むのが便利。（推測）",
+        "userType": "テレワーカー",
+        "scenario": "自宅でのビデオ通話・会議",
+        "experience": "部屋が少し暗くても、HDR機能のおかげで顔が明るく鮮明に映ります。専用アプリで肌のトーンなどを調整できるので、写りを気にせずに会議に集中できます。",
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "positive"
+      },
+      {
+        "userType": "コンテンツクリエイター",
+        "scenario": "ライブ配信での使用",
+        "experience": "1080p/100fpsの滑らかな映像は素晴らしいですが、激しく動いた際のオートフォーカスが上位機種のTiny 2と比べると少し迷うことがあります。ただ、この価格帯としては十分すぎる性能です。",
+        "supportingSourceIds": [
+          "src-2"
+        ],
+        "sentiment": "mixed"
       }
     ],
-    "userImpression": "ユーザーレビューはまだ少ないが、スペックからは「物理ジンバルによる追跡機能」を安価に提供する製品と推測される。画質よりも動きへの追従性を重視する層に向けた製品。",
+    "userImpression": "1080pながら高画質で、特に強力なAI自動追跡機能とPTZ（パン・チルト・ズーム）機能が高く評価されています。4K解像度や音声操作といった上位機種の機能は省かれていますが、その分コストパフォーマンスが非常に高く、「動き回る配信や会議」において最強クラスのコスパを誇るウェブカメラとして支持されています。",
     "sources": [
       {
-        "name": "Amazon Product Page",
-        "url": "https://www.amazon.co.jp/dp/B0DMF4GLR8",
-        "credibility": "high"
+        "id": "src-1",
+        "name": "PCMag: Obsbot Tiny SE Review",
+        "url": "https://www.pcmag.com/reviews/obsbot-tiny-se",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2025-02-06",
+        "author": "Will Greenwald",
+        "conflictOfInterest": "none",
+        "notes": "1080pでの高画質、暗所性能の高さ、PTZ機能と自動追跡の優秀さを評価。一方で、オートフォーカスやジンバルの動きが上位機種（Tiny 2）より少し遅い点や、音声コントロールがない点を指摘。"
+      },
+      {
+        "id": "src-2",
+        "name": "TechRadar: Obsbot Tiny SE review",
+        "url": "https://www.techradar.com/computing/webcams/obsbot-tiny-se-review-a-conference-room-camera-king",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2024-11-01",
+        "author": "TechRadar",
+        "conflictOfInterest": "none",
+        "notes": "低価格ながらAIトラッキングと滑らかな100fps映像が素晴らしいと評価。オートフォーカスに若干の迷いがある点と、マイク性能が平均的であることを指摘。コスパは非常に高いと結論。"
       }
     ],
-    "lastInvestigated": "2026-02-18",
+    "claims": [
+      {
+        "claim": "AIによる自動追跡とPTZ機能が搭載されており、被写体を滑らかにフレームに収めることができる",
+        "category": "comparativeAdvantage",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-1",
+          "src-2"
+        ],
+        "crossChecked": true,
+        "notes": "複数のレビュー記事で、この価格帯としては破格のトラッキング性能であると評価されている。"
+      },
+      {
+        "claim": "1080p解像度だが、HDRやデュアルネイティブISOにより暗所でもノイズの少ないクリアな映像を提供できる",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "crossChecked": false,
+        "notes": "PCMagのレビューで暗所性能の高さが実証されている。"
+      },
+      {
+        "claim": "オートフォーカスやジンバルの反応速度は、上位モデルのTiny 2と比較するとわずかに遅い",
+        "category": "durability",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-1",
+          "src-2"
+        ],
+        "crossChecked": true,
+        "notes": "両方のレビューで、AFの迷いやジンバルの反応速度に関する妥協点が指摘されている。"
+      }
+    ],
+    "lastInvestigated": "2026-06-21",
     "competitiveAnalysis": [
       {
-        "name": "OBSBOT Tiny 2 Lite",
-        "asin": "B0CZ6XY78Y",
-        "priceComparison": "約+8,000円で4K対応、1/2インチセンサー搭載。",
-        "featureComparison": ["4K解像度", "1/2インチ大型センサー", "より高度なAI追跡"],
-        "differentiators": ["画質とセンサーサイズで大きく上回る"]
+        "name": "Angetube 4K Webカメラ 913AI",
+        "asin": "B0BYCPNT1F",
+        "priceComparison": "対象商品より安価。4K解像度に対応しているが、物理的なPTZ（ジンバル）ではなく電子的なオートフレーミングを採用している。",
+        "featureComparison": [
+          "共通点：AIを活用した人物追跡（フレーミング）機能やノイズキャンセリングマイクを搭載している点",
+          "相違点：対象商品が物理的なジンバルによる滑らかなPTZと1080P/100fpsに対応しているのに対し、競合は電子的なオートフレーミングと4K/30fps対応である点"
+        ],
+        "differentiators": [
+          "OBSBOT TINY SEの利点：物理ジンバルによる追従範囲の広さと滑らかさ、ジェスチャー操作の利便性",
+          "Angetube 4K Webカメラの利点：より安価でありながら4Kの高解像度に対応している点"
+        ]
       },
       {
-        "name": "Insta360 Link",
-        "asin": "B0C2CFW1QV",
-        "priceComparison": "約+5,600円で4K対応、ジンバル搭載。",
-        "featureComparison": ["4K解像度", "3軸ジンバル（Tiny SEは2軸の可能性が高い）", "1/2インチセンサー"],
-        "differentiators": ["4K画質とジンバル性能で優位"]
-      },
-      {
-        "name": "EMEET PIXY",
+        "name": "EMEET PIXY webカメラ 4K",
         "asin": "B0F9N8RBF3",
-        "priceComparison": "約+4,000円で4K対応。",
-        "featureComparison": ["4K解像度", "AI追跡"],
-        "differentiators": ["4K対応だがジンバル性能はOBSBOTの方が評判が良いことが多い"]
+        "priceComparison": "対象商品より安価。デュアルカメラとAIチップを搭載し、4K解像度とPTZ機能に対応している。",
+        "featureComparison": [
+          "共通点：AIによる自動追跡機能、PTZ操作、ジェスチャー操作に対応している点",
+          "相違点：対象商品は1080pで100fpsの滑らかさを重視しているが、競合は4K解像度に対応し、補助AIカメラとのデュアルレンズ構成を採用している点"
+        ],
+        "differentiators": [
+          "OBSBOT TINY SEの利点：100fpsの高フレームレートによる滑らかな映像と、専用アプリによるきめ細かな設定・ビューティー機能",
+          "EMEET PIXYの利点：より低価格で4K解像度に対応し、デュアルカメラによる高速なオートフォーカスを実現している点"
+        ]
+      },
+      {
+        "name": "MT-VIKI Webカメラ 1080P 100FPS",
+        "asin": "B0F99D17MX",
+        "priceComparison": "対象商品より安価。同じく1080P/100FPSや自動追跡に対応している。",
+        "featureComparison": [
+          "共通点：1080P/100fpsの高フレームレート、AI自動追跡、HDR対応、ジェスチャー操作機能を持つ点",
+          "相違点：対象商品はOBSBOT独自の高度なアルゴリズムや専用ソフトウェアでの細かな調整が可能だが、競合はリモコン操作に強みがある点"
+        ],
+        "differentiators": [
+          "OBSBOT TINY SEの利点：ソフトウェア（OBSBOT Center）の完成度が高く、顔の補正や詳細な追跡設定が可能な点",
+          "MT-VIKI Webカメラの利点：より安価で、リモコンが付属しておりプリセットの呼び出しが容易な点"
+        ]
+      },
+      {
+        "name": "OBSBOT MEET SE",
+        "asin": "B0DQ8TNZ4J",
+        "priceComparison": "対象商品より安価。同じOBSBOTブランドの製品だが、PTZ（ジンバル）機構を持たない固定型。",
+        "featureComparison": [
+          "共通点：1080P/100fps対応、HDR、ジェスチャーコントロール、専用ソフト（OBSBOT Center）を利用できる点",
+          "相違点：対象商品はジンバルによる物理的な追跡（PTZ）が可能だが、競合は電子的なオートフレーミング（クロップ）による追跡である点"
+        ],
+        "differentiators": [
+          "OBSBOT TINY SEの利点：物理的なカメラの首振りにより、広範囲で画質を落とさずに被写体を追従できる点",
+          "OBSBOT MEET SEの利点：ジンバル機構がないためよりコンパクトで安価であり、固定カメラとして十分な性能を持つ点"
+        ]
+      },
+      {
+        "name": "OBSBOT TINY 2 Lite",
+        "asin": "B0CZ6XY78Y",
+        "priceComparison": "対象商品より高価。対象商品の上位モデル（Lite版）にあたり、4K解像度とより高性能なAFを搭載している。",
+        "featureComparison": [
+          "共通点：2軸ジンバルによるPTZ、AI自動追跡、ジェスチャー操作、専用ソフト対応といったOBSBOT TINYシリーズの特徴を共有している点",
+          "相違点：対象商品は1080p解像度だが、競合は1/2インチセンサーを搭載し4K解像度とPDAF（位相差オートフォーカス）に対応している点"
+        ],
+        "differentiators": [
+          "OBSBOT TINY SEの利点：PTZ機能や自動追跡を維持しつつ、価格が抑えられておりコストパフォーマンスに優れる点",
+          "OBSBOT TINY 2 Liteの利点：より大型のセンサーと4K解像度による高精細な映像、高速なオートフォーカスが可能な点"
+        ]
+      },
+      {
+        "name": "Insta360 Link三脚キット",
+        "asin": "B0BC65YMTY",
+        "priceComparison": "対象商品より高価。4K解像度と1/2インチの大型センサー、3軸ジンバルを搭載するハイエンド機。",
+        "featureComparison": [
+          "共通点：AIによる高精度な自動追跡、ジェスチャー操作、HDRに対応し、ジンバルを用いた滑らかなPTZが可能である点",
+          "相違点：対象商品は2軸ジンバル・1080pだが、競合は3軸ジンバル・4K解像度・ホワイトボードモードなどの多彩な機能を持つ点"
+        ],
+        "differentiators": [
+          "OBSBOT TINY SEの利点：PTZ機能を備えながらも価格が手頃であり、日常的な配信や会議には十分すぎる性能を持つ点",
+          "Insta360 Linkの利点：4Kの高画質、3軸ジンバルによるさらに滑らかな動き、デスクビューなどの高度な機能を持つ点"
+        ]
       }
     ],
     "recommendation": {
       "targetUsers": [
-        "予算を抑えつつ、物理的な自動追跡機能が欲しいユーザー",
-        "4K画質は不要だが、滑らかな動き（60fps/100fps）を重視する配信者",
-        "オンライン授業やプレゼンで動き回る講師"
+        "授業やプレゼンテーションで動き回りながら配信するオンライン講師",
+        "PTZカメラや自動追跡機能を使いたいが、予算を抑えたいライブ配信者",
+        "高画質かつ自然な明るさでビデオ会議に参加したいテレワーカー"
       ],
       "pros": [
-        "設定不要で使えるAI追跡機能",
-        "直感的なジェスチャー操作",
-        "高フレームレート対応（1080p/100fps）"
+        "価格を抑えつつ、物理ジンバルによる高精度なAI自動追跡機能を実現",
+        "1080p/100fpsの滑らかな映像と、HDRによる暗所でのクリアな画質",
+        "専用ソフトウェアによる詳細な画質調整やBeauty機能が充実",
+        "ジェスチャーによる直感的な操作が可能"
       ],
       "cons": [
-        "画質重視なら数千円プラスして4Kモデルを買うべき",
-        "センサーサイズが小さいため暗所性能は標準的"
+        "4K解像度には非対応（最大1080p）",
+        "上位モデルと比べるとオートフォーカスの速度や精度がやや劣る",
+        "マイクの音質は標準的で、本格的な配信には外部マイクが推奨される"
       ],
-      "score": 70,
-      "scoreRationale": "[基本点: 70]\n[加点: +5] (物理ジンバルによるAI追跡とジェスチャー操作は非常に便利)\n[減点: -5] (数千円の差で4K/大型センサー搭載の競合モデルが購入できるため、相対的なコスパはやや低い)\n[合計: 70] (機能は優秀だが、市場価格と比較すると「絶対買い」とは言い難い)"
+      "score": 86,
+      "scoreRationale": "[基本点: 70]\n[加点: +8] (物理ジンバルによる滑らかで高精度なAI自動追跡機能が優秀なため)\n[加点: +5] (1080p/100fpsの高フレームレートとHDR対応で、暗所でもクリアな映像を実現しているため)\n[加点: +5] (高価なPTZカメラの機能を低価格帯で実現しており、コストパフォーマンスが非常に高いため)\n[加点: +3] (専用ソフトウェアによる画質調整やBeauty機能、ジェスチャー操作の利便性が高いため)\n[減点: -3] (上位モデルと比較するとオートフォーカスが迷う場面があり、追従性にわずかな妥協があるため)\n[減点: -2] (内蔵マイクの性能が平均的であり、本格的な用途には外部マイクが必要になる場合があるため)\n[合計: 86]"
     },
     "technicalSpecs": {
-      "os": "Windows 10+, macOS 11+",
-      "cpu": null,
-      "ram": null,
-      "storage": null,
-      "display": {
-          "size": null,
-          "resolution": "1920x1080 (Full HD)",
-          "type": null
-      },
-      "battery": null,
-      "camera": {
-          "main": "1080p/60fps, 1080p/100fps",
-          "ultrawide": null
-      },
       "dimensions": {
-          "height": "1.5 in",
-          "width": "1.9 in",
-          "depth": "1.8 in",
-          "weight": null
+        "height": "38mm",
+        "width": "48mm",
+        "depth": "46mm"
       },
-      "connectivity": ["USB Type-C"],
-      "other": ["2-Axis Gimbal", "AI Tracking", "Gesture Control", "Privacy Mode", "HDR"]
+      "weight": "95g",
+      "resolution": "最大 1080p@100fps / 1080p@60fps / 720p@150fps",
+      "sensor": "約9mm (1/2.8型) CMOS",
+      "focus": "位相差検出AF (PDAF)",
+      "zoom": "最大 4倍デジタルズーム",
+      "features": [
+        "AI自動追跡",
+        "ジェスチャーコントロール2.0",
+        "Staggered HDR",
+        "デュアルネイティブISO",
+        "ビューティーモード",
+        "プライバシーモード"
+      ],
+      "audio": "ノイズ低減マイク内蔵",
+      "connectivity": "USB Type-C",
+      "osCompatibility": [
+        "Windows 10 以降 (64ビット)",
+        "macOS 11 以降"
+      ],
+      "other": [
+        "2軸ジンバルによるパン・チルト対応",
+        "一般的な三脚ネジ穴(6.35mm)搭載"
+      ]
     }
   }
 }
