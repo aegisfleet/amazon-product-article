@@ -36,34 +36,58 @@
         "userType": "デュオキャンパー",
         "scenario": "カップルでのキャンプ、シェルターとしても活用したい",
         "experience": "付属のインナーテントではなく、別売りのソロインナーテントを使用してカンガルースタイルにしている。120cm幅でちょうど2人入れ、残りのスペースをリビングとして使えるので狭いサイトでも快適。設営も非常に早く、収納も余裕がある。ただ、スカートがないので冬は寒いのが難点。",
-        "sentiment": "mixed"
+        "sentiment": "mixed",
+        "supportingSourceIds": [
+          "src-hanmio"
+        ]
       },
       {
         "userType": "キャンプ初心者ファミリー",
         "scenario": "初めてのテント購入、設営への不安",
         "experience": "スノーピークは敷居が高いイメージだったが、価格改定で手が届くようになり購入。評判通り設営が非常に簡単で、逆Y字フレームのおかげで迷わず組み立てられた。一人でも余裕で設営でき、キャンプのハードルが下がった。雨天時の防水性に少し不安はあるが、価格を考えれば大満足。",
-        "sentiment": "positive"
+        "sentiment": "positive",
+        "supportingSourceIds": [
+          "src-yahoo"
+        ]
       }
     ],
     "userImpression": "「ランドネストドームM」は、キャンプにおける最大のハードルである「設営の面倒さ」を劇的に解消したテントとして、特に初心者や子育て世代から絶大な支持を得ている。価格改定によりコストパフォーマンスが飛躍的に向上し、「スノーピーク＝高い」というイメージを覆すエントリーモデルの決定版となった。一方で、スカート非搭載や防水性への不安など、コストカットの影響も見られるが、それを補って余りある設営の手軽さとブランドへの信頼感が評価されている。",
     "sources": [
       {
+        "id": "src-yahoo",
         "name": "Yahoo!ショッピング - ランドネストドーム M テント 幕体のレビュー・口コミ",
         "url": "https://shopping.yahoo.co.jp/review/item/list?store_id=zozo&page_key=74556173",
-        "credibility": "実際に購入したユーザーによる多数のレビューがあり、信頼性は高い"
+        "tier": "medium",
+        "evidenceType": "primary",
+        "publishedAt": "2023-08-01",
+        "author": "Yahoo!ショッピング ユーザー",
+        "conflictOfInterest": "none",
+        "notes": "購入者による設営のしやすさやコストパフォーマンスに対する好意的なレビューが多数"
       },
       {
-        "name": "BE-PAL - テントはやっぱりスノーピーク！ キャンプデビューには「タープセット」がおすすめですよー【PR】",
+        "id": "src-bepal",
+        "name": "BE-PAL - テントはやっぱりスノーピーク！",
         "url": "https://www.bepal.net/archives/420523",
-        "credibility": "アウトドア専門メディアによるレビュー"
+        "tier": "high",
+        "evidenceType": "secondary",
+        "publishedAt": "2024-03-24",
+        "author": "BE-PAL",
+        "conflictOfInterest": "disclosed",
+        "notes": "製品特徴の解説およびレビュー。PR表記あり。"
       },
       {
+        "id": "src-hanmio",
         "name": "外の空気が好きです。 - スノーピーク「ランドネストM」レビュー",
         "url": "https://hanmio.blog/land-nest",
-        "credibility": "個人ブロガーによる詳細なレビュー"
+        "tier": "low",
+        "evidenceType": "secondary",
+        "publishedAt": "2023-06-15",
+        "author": "hanmio",
+        "conflictOfInterest": "none",
+        "notes": "個人ブロガーによる、カンガルースタイルや実際の設営・撤収に関する詳細な感想"
       }
     ],
-    "lastInvestigated": "2026-02-18",
+    "lastInvestigated": "2026-06-20",
     "competitiveAnalysis": [
       {
         "name": "スノーピーク エントリーパックTT (SET-250RH)",
@@ -136,34 +160,46 @@
         "グランドシート等が付属しないため、初期投資がテント本体価格に加えて必要になる"
       ],
       "score": 91,
-      "scoreRationale": "[基本点: 70]\n[加点: +8] 性能・機能: 初心者でも迷わず建てられる革新的な設営しやすさを高く評価。\n[加点: +10] コストパフォーマンス: スノーピーク製品が2万円台後半で手に入るという点で、市場競争力は非常に高い。\n[加点: +3] 品質・デザイン: エントリーモデルながらブランドイメージを損なわないデザイン。ただし防水性の懸念で少し抑えめ。\n[加点: +5] ユーザー満足度: 多くのレビューで設営の手軽さが絶賛されており、高い満足度に繋がっている。\n[減点: -5] 性能・機能: スカート非搭載による冬の使いづらさと、防水性への不安要素。\n[合計: 91]"
+      "scoreRationale": "[基本点: 70] (固定)\n[加点: +8] (初心者でも迷わず建てられる革新的な設営しやすさ)\n[加点: +10] (スノーピーク製品が2万円台後半で手に入る圧倒的なコストパフォーマンス)\n[加点: +3] (エントリーモデルながらブランドイメージを損なわない高いデザイン性)\n[加点: +5] (多くのレビューで設営の手軽さが絶賛されている高い満足度)\n[減点: -5] (スカート非搭載による冬の使いづらさと防水性への不安)\n[合計: 91]"
     },
     "technicalSpecs": {
       "dimensions": {
-        "setupSize": "幅450cm x 奥行280cm x 高さ160cm",
-        "storageSize": "70cm x 21cm x 25(h)cm",
-        "weight": "8.7kg"
+        "height": "160cm",
+        "width": "280cm",
+        "depth": "450cm"
       },
+      "weight": "8.7kg",
       "capacity": "3-4名",
-      "materials": {
-        "flySheet": "75Dポリエステルタフタ・PUコーティング耐水圧1,800mmミニマム・撥水加工・UVカット加工",
-        "innerWall": "68Dポリエステルタフタ",
-        "bottom": "210Dポリエステルオックス・PUコーティング耐水圧1,800mmミニマム",
-        "frame": "A6061（φ13mm)"
-      },
-      "waterResistance": "1,800mmミニマム",
-      "contents": [
-        "テント本体",
-        "インナーテント",
-        "センターフレーム（×1）",
-        "Aフレーム（×2）",
-        "Cフレーム（×2）",
-        "ジュラルミンペグ（21cm×14）",
-        "自在付ロープ（3m×6）",
-        "キャリーバッグ",
-        "フレームケース",
-        "ペグケース"
+      "material": "フライシート: 75Dポリエステルタフタ, ボトム: 210Dポリエステルオックス, フレーム: A6061",
+      "origin": "不明",
+      "other": [
+        "耐水圧: 1,800mm",
+        "収納サイズ: 70cm x 21cm x 25cm"
       ]
-    }
+    },
+    "claims": [
+      {
+        "claim": "設営のしやすさ",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-yahoo",
+          "src-hanmio"
+        ],
+        "crossChecked": true,
+        "notes": "複数のブログ、Yahoo!ショッピングレビューで「一人でも設営できる」「逆Y字フレームが立てやすい」と言及されている"
+      },
+      {
+        "claim": "スカート非搭載による防寒性の低さ",
+        "category": "durability",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-yahoo",
+          "src-hanmio"
+        ],
+        "crossChecked": true,
+        "notes": "仕様上スカートがなく、レビューでも「冬は寒い」との声が共通して挙げられている"
+      }
+    ]
   }
 }
