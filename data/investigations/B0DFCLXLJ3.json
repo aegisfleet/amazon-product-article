@@ -1,8 +1,8 @@
 {
   "analysis": {
-    "productName": "Pixio PS1D Wave Black モニターアーム デュアル",
+    "productName": "Pixio PS1D Wave ブラック モニターアーム デュアル",
     "parentAsin": "B0DFCLXLJ3",
-    "productDescription": "Pixio PS1D Wave Blackは、ガススプリング式を採用したデュアルモニターアームです。17〜32インチのモニターに対応し、スムーズな位置調整が可能で、デスク周りのスペースを有効活用できます。",
+    "productDescription": "Pixio PS1D Waveは、ガススプリング式を採用したデュアルモニターアームです。約43cm〜81cmクラスのモニターに対応し、スムーズな位置調整が可能で、デスク周りのスペースを有効活用できます。",
     "productUsage": [
       "デュアルモニター環境の構築と位置調整",
       "デスク上のスペース確保と整理整頓",
@@ -12,11 +12,11 @@
       "7色のカラーバリエーションでインテリアに合わせやすい",
       "ガススプリング式によるスムーズな動きと調整",
       "Pixio製モニターとのデザイン的な統一感",
-      "2年間の長期保証と国内サポート"
+      "2年間の長期保証"
     ],
     "negativePoints": [
       "同等スペックの他社製品に比べて価格が高め",
-      "耐荷重9kgは一般的で、大型ウルトラワイドなどには不向き",
+      "耐荷重約9kgは一般的で、大型ウルトラワイドなどには不向き",
       "クランプ式設置には天板の厚みや形状に制限がある"
     ],
     "useCases": [
@@ -24,70 +24,96 @@
       "頻繁にモニターの位置を調整するクリエイティブ作業",
       "限られたデスクスペースで2画面を使用する場合"
     ],
-    "userStories": [
-      {
-        "userType": "ゲーマー（推測）",
-        "scenario": "白いデスク環境に合わせてホワイトモデルを購入",
-        "experience": "モニターアームは黒やシルバーが多い中、デスクやデバイスの色と合わせることができ、統一感のある理想のゲーム部屋が完成した。",
-        "sentiment": "positive"
-      },
-      {
-        "userType": "在宅ワーカー（推測）",
-        "scenario": "デュアルモニターで作業効率を上げたい",
-        "experience": "ガススプリング式なので、軽い力で画面の位置を変えられるのが便利。ただ、組み立て時に調整が必要で少し手間取った。",
-        "sentiment": "mixed"
-      }
-    ],
-    "userImpression": "デザイン性、特にカラーバリエーションを評価する声が多いと推測される。機能面では標準的なガススプリング式アームとして十分な性能を持つが、コストパフォーマンス重視のユーザーには価格がネックになる可能性がある。",
+    "userStories": [],
+    "userImpression": "デザイン性、特にカラーバリエーションが特徴的な製品です。機能面では標準的なガススプリング式アームとして十分な性能を持っていますが、コストパフォーマンス重視のユーザーには他社製品との比較検討が推奨されます。",
     "sources": [
       {
+        "id": "src-1",
         "name": "Amazon商品ページ",
         "url": "https://www.amazon.co.jp/dp/B0DFCLXLJ3",
-        "credibility": "高"
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-06-21",
+        "author": "Pixio",
+        "conflictOfInterest": "none",
+        "notes": "製品スペック、特徴、価格情報を取得"
       }
     ],
-    "lastInvestigated": "2026-02-18",
+    "claims": [
+      {
+        "claim": "7色のカラーバリエーションによりデスク環境の統一感を出せる",
+        "category": "comparativeAdvantage",
+        "confidence": "high",
+        "supportingSourceIds": ["src-1"],
+        "crossChecked": false,
+        "notes": "商品詳細情報から確認"
+      }
+    ],
+    "lastInvestigated": "2026-06-21",
     "competitiveAnalysis": [
       {
         "name": "エレコム モニターアーム デュアル (DPA-DS07BK)",
         "asin": "B0C7VPZ8ZK",
-        "priceComparison": "約6,000円とPixioの1/3程度の価格で非常に安価。",
+        "priceComparison": "Pixio製品の半額以下で非常に安価。",
         "featureComparison": [
-          "同じくガススプリング式で17-32インチ対応",
-          "耐荷重9kgと同等のスペック",
-          "カラーは黒のみでデザインはシンプル"
+          "共通点：ガススプリング式で約43cm-81cm対応、耐荷重約9kg",
+          "相違点：エレコムはブラック1色のみ展開"
         ],
         "differentiators": [
-          "圧倒的なコストパフォーマンス",
-          "国内有名メーカーの安心感"
+          "Pixio PS1D Waveの利点：豊富なカラーバリエーションとデザイン性",
+          "エレコム DPA-DS07BKの利点：圧倒的なコストパフォーマンス"
         ]
       },
       {
-        "name": "COFO 無重力モニターアーム Pro デュアル",
-        "asin": "B0DX23SK6G",
-        "priceComparison": "約33,000円とPixioよりさらに高価格帯。",
+        "name": "HUANUO モニターアーム デュアル (HNDMA119B)",
+        "asin": "B0GKM47GV5",
+        "priceComparison": "Pixio製品の1/3以下の価格で非常に安価。",
         "featureComparison": [
-          "耐荷重14kgまで対応し、40インチクラスも搭載可能",
-          "メカニカルスプリング式で経年劣化に強い",
-          "高級感のあるアルミ合金製"
+          "共通点：約43cm-81cm対応、耐荷重約9kg",
+          "相違点：HUANUOはメカスプリング式を採用している"
         ],
         "differentiators": [
-          "大型・重量級モニターへの対応力",
-          "無重力のようなスムーズな操作感"
+          "Pixio PS1D Waveの利点：ガススプリング式によるスムーズな調整",
+          "HUANUO HNDMA119Bの利点：価格の安さ"
         ]
       },
       {
-        "name": "グリーンハウス モニターアーム デュアル (GH-AMDX2H-WH)",
-        "asin": "B0G34FLD5C",
-        "priceComparison": "約8,000円とPixioより安価。",
+        "name": "Acer モニターアーム デュアル",
+        "asin": "B0FR4TLST6",
+        "priceComparison": "Pixio製品の半額程度で安価。",
         "featureComparison": [
-          "メカニカルスプリング式を採用",
-          "17-32インチ対応、耐荷重9kgと同等",
-          "ホワイトモデルもありカラー選択が可能"
+          "共通点：ガススプリング式で約43cm-81cm対応、耐荷重約9kg",
+          "相違点：メーカーブランドの違い"
         ],
         "differentiators": [
-          "メカニカルスプリングによる耐久性",
-          "コストと機能のバランスが良い"
+          "Pixio PS1D Waveの利点：カラーバリエーション",
+          "Acer モニターアームの利点：価格と機能のバランス"
+        ]
+      },
+      {
+        "name": "Pixio PS2D",
+        "asin": "B0BXSPFQQS",
+        "priceComparison": "Pixio PS1D Waveよりやや高価格。",
+        "featureComparison": [
+          "共通点：Pixio製モニターアーム",
+          "相違点：PS2Dは最大約89cm、耐荷重15kgまで対応の大型モデル"
+        ],
+        "differentiators": [
+          "Pixio PS1D Waveの利点：カラーバリエーションとコンパクトさ",
+          "Pixio PS2Dの利点：大型・重量級モニターへの対応"
+        ]
+      },
+      {
+        "name": "Amazonベーシック モニターデスクマウント",
+        "asin": "B0CQTPZNV8",
+        "priceComparison": "Pixio製品の1/5以下の価格で非常に安価。",
+        "featureComparison": [
+          "共通点：デュアルモニター対応",
+          "相違点：ガススプリングやメカスプリングの記載がなく、固定機構の違いがある"
+        ],
+        "differentiators": [
+          "Pixio PS1D Waveの利点：ガススプリング式による快適な調整",
+          "Amazonベーシックの利点：価格の圧倒的な安さ"
         ]
       }
     ],
@@ -103,21 +129,19 @@
         "ガススプリング式による快適な調整機能"
       ],
       "cons": [
-        "同等の機能を持つ他社製品より価格が高い",
-        "重量級モニター（9kg超）には対応していない"
+        "同等の機能を持つ他社製品より価格が高い"
       ],
-      "score": 75,
-      "scoreRationale": "[基本点: 70]\n[加点: +5] (ガススプリング式で標準的な機能を網羅)\n[減点: -10] (同等スペックの競合他社製品と比較して価格が高い)\n[加点: +5] (7色のカラーバリエーションとデザイン性)\n[加点: +5] (Pixioブランドのモニターとの親和性と独自性)\n[合計: 75]"
+      "score": 65,
+      "scoreRationale": "[基本点: 70]\n[加点: +5] (7色のカラーバリエーションによるデザイン性の高さ)\n[加点: +5] (ガススプリング式によるスムーズな位置調整機能)\n[減点: -15] (同等スペックの競合他社製品と比較して価格が大幅に高い)\n[合計: 65]"
     },
     "technicalSpecs": {
       "dimensions": {
-        "height": "970mm (最大)",
-        "width": "1140mm (最大)",
-        "depth": "115mm",
-        "weight": "約5kg"
+        "height": "約970mm",
+        "width": "約565mm",
+        "depth": "約115mm"
       },
-      "capacity": "1-9kg (各アーム)",
-      "monitorSize": "17-32インチ",
+      "capacity": "約1kg-9kg (各アーム)",
+      "monitorSize": "約43cm-81cm",
       "vesa": "75x75mm, 100x100mm",
       "type": "ガススプリング式",
       "tilt": "上90° / 下45°",
