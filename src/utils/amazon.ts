@@ -81,11 +81,20 @@ export async function resolveUrl(url: string): Promise<string> {
   const maxRedirects = 5;
 
   for (let i = 0; i < maxRedirects; i++) {
+    // すでにURLからASINが抽出できる場合は、余計なリダイレクト追跡によるHTTPリクエスト送信（および500等のエラー）を防ぐため、即時リターンする
+    if (extractAsinFromUrl(currentUrl)) {
+      return currentUrl;
+    }
+
     const nextUrl = await resolveSingleRedirect(currentUrl);
     if (nextUrl === null) {
       return currentUrl;
     }
     currentUrl = nextUrl;
+  }
+
+  if (extractAsinFromUrl(currentUrl)) {
+    return currentUrl;
   }
 
   throw new Error(`Too many redirects (max: ${maxRedirects}) for URL: ${url}`);

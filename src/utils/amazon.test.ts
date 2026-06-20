@@ -55,38 +55,28 @@ describe('amazon utility', () => {
 
   describe('resolveUrl', () => {
     it('should resolve a redirect using HEAD request', async () => {
-      mockedAxios.head
-        .mockResolvedValueOnce({
-          status: 301,
-          headers: { location: 'https://www.amazon.co.jp/dp/B0BGJHQCFQ' },
-        } as any)
-        .mockResolvedValueOnce({
-          status: 200,
-          headers: {},
-        } as any);
+      mockedAxios.head.mockResolvedValueOnce({
+        status: 301,
+        headers: { location: 'https://www.amazon.co.jp/dp/B0BGJHQCFQ' },
+      } as any);
 
       const resolved = await resolveUrl('https://amzn.to/3S68KbB');
       expect(resolved).toBe('https://www.amazon.co.jp/dp/B0BGJHQCFQ');
-      expect(mockedAxios.head).toHaveBeenCalledTimes(2);
+      expect(mockedAxios.head).toHaveBeenCalledTimes(1);
       expect(mockedAxios.get).not.toHaveBeenCalled();
     });
 
     it('should fallback to GET if HEAD request fails', async () => {
       mockedAxios.head.mockRejectedValueOnce(new Error('Method Not Allowed'));
-      mockedAxios.get
-        .mockResolvedValueOnce({
-          status: 301,
-          headers: { location: 'https://www.amazon.co.jp/dp/B0BGJHQCFQ' },
-        } as any)
-        .mockResolvedValueOnce({
-          status: 200,
-          headers: {},
-        } as any);
+      mockedAxios.get.mockResolvedValueOnce({
+        status: 301,
+        headers: { location: 'https://www.amazon.co.jp/dp/B0BGJHQCFQ' },
+      } as any);
 
       const resolved = await resolveUrl('https://amzn.to/3S68KbB');
       expect(resolved).toBe('https://www.amazon.co.jp/dp/B0BGJHQCFQ');
-      expect(mockedAxios.head).toHaveBeenCalledTimes(2);
-      expect(mockedAxios.get).toHaveBeenCalledTimes(2);
+      expect(mockedAxios.head).toHaveBeenCalledTimes(1);
+      expect(mockedAxios.get).toHaveBeenCalledTimes(1);
     });
 
     it('should throw an error if both HEAD and GET fail', async () => {
@@ -120,19 +110,14 @@ describe('amazon utility', () => {
     });
 
     it('should resolve short URL and extract ASIN', async () => {
-      mockedAxios.head
-        .mockResolvedValueOnce({
-          status: 301,
-          headers: { location: 'https://www.amazon.co.jp/dp/B0BGJHQCFQ' },
-        } as any)
-        .mockResolvedValueOnce({
-          status: 200,
-          headers: {},
-        } as any);
+      mockedAxios.head.mockResolvedValueOnce({
+        status: 301,
+        headers: { location: 'https://www.amazon.co.jp/dp/B0BGJHQCFQ' },
+      } as any);
 
       const result = await parseInputAsin('https://amzn.asia/d/02UXOkBM');
       expect(result).toBe('B0BGJHQCFQ');
-      expect(mockedAxios.head).toHaveBeenCalledTimes(2);
+      expect(mockedAxios.head).toHaveBeenCalledTimes(1);
     });
 
     it('should throw error if input is not ASIN or Amazon URL', async () => {
