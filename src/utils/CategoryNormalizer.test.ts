@@ -168,6 +168,14 @@ describe('CategoryNormalizer', () => {
         '特選健康家電 オムロン、タニタ、ルルド、スライブ',
         'CosPOP_26PD_exclude',
         'CosPOP26PDexclude',
+        '6',
+        '100',
+        '０',
+        'デジタルの日',
+        'pony k',
+        'ebook non series',
+        '高評価・レビュー多数の書籍',
+        '注目の著者',
       ];
       invalidNames.forEach((name) => {
         expect(CategoryNormalizer.isValidCategoryName(name)).toBe(false);

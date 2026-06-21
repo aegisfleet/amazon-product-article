@@ -369,6 +369,12 @@ export class CategoryNormalizer {
       /^アクセサリ$/,
       /^アクセサリー$/,
       /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}/i,
+      // Block numeric-only names (e.g. "6", "100")
+      /^[0-9\uff10-\uff19]+$/,
+      /デジタルの日/,
+      /non\s*series/i,
+      /高評価/,
+      /注目/,
       // Block "Name [ID]" pattern (e.g. "家電 [124048011]")
       /[^[\]]{1,200} \[\d+\]/,
       /arborist merchandising root/i,
@@ -436,6 +442,7 @@ export class CategoryNormalizer {
     // 4. Blacklist (Full Match after normalization)
     const blacklist = [
       'arborist merchandising root',
+      'pony k',
       'babel 6-2',
       'calendar test',
       'test',
