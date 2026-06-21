@@ -14,6 +14,8 @@ fi
 # Configure git
 git config --global user.name "github-actions[bot]"
 git config --global user.email "github-actions[bot]@users.noreply.github.com"
+# Prevent memory map issues and Bus errors for large files
+git config --global core.bigFileThreshold 10m
 
 # Add files
 # shellcheck disable=SC2086
