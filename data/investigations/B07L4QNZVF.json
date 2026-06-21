@@ -1,0 +1,204 @@
+{
+  "analysis": {
+    "productName": "SwitchBot 温湿度計 デジタル",
+    "parentAsin": "B0GRV6SL2W",
+    "productDescription": "スイス製高精度センサーを搭載したコンパクトなスマート温湿度計。スマホアプリからの確認や、スマートスピーカーとの連携、ハブと組み合わせた他のスマート家電の自動制御が可能。",
+    "productUsage": [
+      "室内の温度・湿度管理",
+      "熱中症・インフルエンザ・乾燥対策",
+      "他のSwitchBot家電の自動制御のトリガー"
+    ],
+    "positivePoints": [
+      "コンパクトで設置場所を選ばない（置く、壁掛け、マグネット）",
+      "スイス製高精度センサー搭載で信頼性が高い",
+      "SwitchBotハブと連携することで、エアコンや加湿器の自動制御ができる",
+      "アプリで長期間（ハブ連携で2年間）のデータ記録やグラフ化、CSV出力が可能",
+      "アレクサなどスマートスピーカー連携で音声で温度確認ができる"
+    ],
+    "negativePoints": [
+      "遠隔確認やスマート家電との連携、音声アシスタント利用には別途ハブ（SwitchBotハブミニ等）が必要",
+      "液晶パネルを強く押すと破損の恐れがある"
+    ],
+    "useCases": [
+      "リビングや寝室での日常的な温湿度管理",
+      "ペットや赤ちゃんのいる部屋の環境モニタリング",
+      "爬虫類や植物の温室管理",
+      "不在時の室温異常の通知受け取り"
+    ],
+    "userStories": [
+      {
+        "userType": "一般家庭",
+        "scenario": "冬場の乾燥対策や夏場の熱中症対策",
+        "experience": "冬は乾燥の具合を定量的に測り記録しておけることによって加湿しなきゃ、とアクションを起こせるので気に入りました。加湿器との連携も便利です。",
+        "supportingSourceIds": [
+          "src-switchbot-official"
+        ],
+        "sentiment": "positive"
+      },
+      {
+        "userType": "ペット飼育者",
+        "scenario": "不在時のペットの部屋の温度管理",
+        "experience": "屋内犬を飼っているので設定温度になるとエアコンが作動しているのでとても良かったと思います。",
+        "supportingSourceIds": [
+          "src-switchbot-official"
+        ],
+        "sentiment": "positive"
+      }
+    ],
+    "userImpression": "コンパクトで設置しやすく、精度の高い温湿度計として高評価。特にSwitchBotハブと連携させた家電の自動制御や、スマホでのグラフ確認が便利だと感じているユーザーが多い。コスパの良さも評価されている。",
+    "sources": [
+      {
+        "id": "src-switchbot-official",
+        "name": "SwitchBot 温湿度計 製品ページ/SwitchBot公式サイト",
+        "url": "https://www.switchbot.jp/products/switchbot-meter",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-06-21",
+        "author": "SwitchBot",
+        "conflictOfInterest": "possible",
+        "notes": "製品仕様（サイズ55×55×24mm）、データ保存期間（本体36日、アプリ2年）、ハブとの連携機能、ユーザーレビューを確認"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "スイス製高精度センサー搭載",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-switchbot-official"
+        ],
+        "crossChecked": true,
+        "notes": "公式サイトとAmazonの製品情報の両方で確認"
+      },
+      {
+        "claim": "ハブとの連携で家電の自動制御が可能",
+        "category": "comparativeAdvantage",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-switchbot-official"
+        ],
+        "crossChecked": true,
+        "notes": "SwitchBotエコシステムの強みとして両ソースで確認"
+      }
+    ],
+    "lastInvestigated": "2026-06-21",
+    "competitiveAnalysis": [
+      {
+        "name": "SwitchBot 防水温湿度計",
+        "asin": "B0BVLYPYT1",
+        "priceComparison": "対象商品と同程度の価格帯。",
+        "featureComparison": [
+          "共通点：Bluetooth接続、高精度センサー搭載、ハブ連携でのスマート家電制御",
+          "相違点：防水温湿度計はIP65防水防塵に対応し屋外でも使用可能。対象商品は防水非対応。"
+        ],
+        "differentiators": [
+          "SwitchBot 温湿度計 デジタル（本製品）の利点：室内での一般的な使用において必要十分な機能を持つ標準モデル。",
+          "SwitchBot 防水温湿度計の利点：屋外や浴室など水濡れのリスクがある場所での使用に適している。"
+        ]
+      },
+      {
+        "name": "SwitchBot 温湿度計 プロ",
+        "asin": "B0DBLDKVDW",
+        "priceComparison": "対象商品より価格が高い。",
+        "featureComparison": [
+          "共通点：Bluetooth接続、ハブ連携機能、高精度センサー",
+          "相違点：プロは画面が大きく、日時、天気予報（ハブ必要）、2カ所の温湿度を同時に表示できるなど多機能。"
+        ],
+        "differentiators": [
+          "SwitchBot 温湿度計 デジタル（本製品）の利点：コンパクトで場所を取らず、価格が手頃。",
+          "SwitchBot 温湿度計 プロの利点：画面が大きく情報量が豊富で、日時や天気予報も一目で確認したい場合に適している。"
+        ]
+      },
+      {
+        "name": "Xiaomiスマート温湿度計 3",
+        "asin": "B0DLBN1RRJ",
+        "priceComparison": "対象商品と同程度の価格帯。",
+        "featureComparison": [
+          "共通点：Bluetooth接続、高精度センサー、スマホアプリでの管理",
+          "相違点：Xiaomiは時計や日付も表示できる大画面。スマートホームの連携先（エコシステム）が異なる。"
+        ],
+        "differentiators": [
+          "SwitchBot 温湿度計 デジタル（本製品）の利点：SwitchBotの充実したスマートホーム家電（リモコン、加湿器など）と連携しやすい。",
+          "Xiaomiスマート温湿度計 3の利点：時計表示も欲しい場合や、Xiaomiのスマートホーム製品で揃えている場合に適している。"
+        ]
+      },
+      {
+        "name": "Xiaomi スマート温湿度計 3 Mini",
+        "asin": "B0FDQSYPJ7",
+        "priceComparison": "対象商品より価格が安い。",
+        "featureComparison": [
+          "共通点：Bluetooth連携、高精度センサー、コンパクトサイズ",
+          "相違点：Xiaomi Miniはより安価だが、機能はシンプル。スマート家電連携のエコシステムが異なる。"
+        ],
+        "differentiators": [
+          "SwitchBot 温湿度計 デジタル（本製品）の利点：SwitchBotハブと連携して家電を自動制御するトリガーとして優れている。",
+          "Xiaomi スマート温湿度計 3 Miniの利点：とにかく安価に複数の部屋の温湿度をモニタリングしたい場合に適している。"
+        ]
+      },
+      {
+        "name": "TP-Link Tapo スマート温湿度計 T315",
+        "asin": "B0BWCL335L",
+        "priceComparison": "対象商品より価格が高い。",
+        "featureComparison": [
+          "共通点：高精度センサー、アプリ管理、スマートホーム連携",
+          "相違点：T315は視認性の高い電子ペーパーLCDを採用。通信方式がSub-1GHz（Tapoハブ必須）。"
+        ],
+        "differentiators": [
+          "SwitchBot 温湿度計 デジタル（本製品）の利点：Bluetooth単体でもスマホから直接データ確認が可能。SwitchBot製品との連携に強み。",
+          "TP-Link Tapo T315の利点：電子ペーパーでどの角度からも見やすく、Tapoエコシステムで揃えている場合に適している。"
+        ]
+      },
+      {
+        "name": "TP-Link Tapo スマート温湿度計 T310",
+        "asin": "B0BLRQ5HTT",
+        "priceComparison": "対象商品より少し価格が高い。",
+        "featureComparison": [
+          "共通点：コンパクトサイズ、高精度センサー、スマートホーム連携",
+          "相違点：T310は画面がない極小サイズ。通信方式がSub-1GHzでTapoスマートハブが必須。"
+        ],
+        "differentiators": [
+          "SwitchBot 温湿度計 デジタル（本製品）の利点：本体に液晶画面があり、その場で温湿度を確認できる。",
+          "TP-Link Tapo T310の利点：目立たない場所に設置したい場合や、Tapoエコシステムを使用している場合に適している。"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "室内の温湿度を正確にスマホで管理したい人",
+        "ペットや赤ちゃんの熱中症対策・乾燥対策をしたい人",
+        "SwitchBotの他のスマート家電（エアコン、加湿器など）を自動制御したい人"
+      ],
+      "pros": [
+        "高精度センサーで正確な温湿度管理が可能",
+        "コンパクトで設置方法が豊富（置く、壁掛け、マグネット）",
+        "SwitchBotハブと連携した強力なスマート家電制御機能"
+      ],
+      "cons": [
+        "遠隔での確認や音声操作、家電の自動制御には別途ハブが必要",
+        "液晶に強い力を加えると破損する恐れがある"
+      ],
+      "score": 85,
+      "scoreRationale": "[基本点: 70]\n[加点: +5] (スイス製高精度センサーによる正確な測定)\n[加点: +10] (SwitchBotエコシステムとの連携による高い拡張性・利便性)\n[加点: +5] (コンパクトで視認性が良く、3WAYで設置しやすいデザイン)\n[減点: -5] (遠隔確認や自動制御に別途ハブが必要な点)\n[合計: 85]"
+    },
+    "technicalSpecs": {
+      "dimensions": {
+        "height": "55mm",
+        "width": "55mm",
+        "depth": "24mm"
+      },
+      "weight": "70g",
+      "material": "プラスチック等",
+      "power": "単4形アルカリ乾電池 2本",
+      "batteryLife": "約1年間",
+      "wireless": "Bluetooth",
+      "dataStorage": "本体: 過去36日間 / クラウド(ハブ連携時): 2年間",
+      "temperatureRange": "-10°C～60°C",
+      "humidityRange": "20%～85%RH",
+      "other": [
+        "アラート通知機能（ハブ連携時）",
+        "CSVデータエクスポート対応",
+        "スマートスピーカー対応（Alexa、Google アシスタント、Siri等 ※ハブ連携時）"
+      ]
+    }
+  }
+}
