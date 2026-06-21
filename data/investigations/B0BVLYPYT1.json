@@ -1,0 +1,170 @@
+{
+  "analysis": {
+    "productName": "SwitchBot 防水温湿度計",
+    "parentAsin": "B0GRV6SL2W",
+    "productDescription": "屋内外で使える防水・防塵設計（IP65規格）のスマート温湿度計です。スマホで温湿度の管理ができ、Hubを経由することで外出先からの確認や他のスマート家電との連携も可能です。",
+    "productUsage": [
+      "屋外やベランダの気温・湿度の把握",
+      "キャンプやアウトドアでの気温記録",
+      "浴室など水しぶきがかかる場所の温湿度管理",
+      "ペットや植物の環境管理"
+    ],
+    "positivePoints": [
+      "IP65規格の防水・防塵設計で雨や水しぶきに強い",
+      "コンパクトサイズでストラップも付属し持ち運びやすい",
+      "スイス製の高精度センサーを搭載し0.1℃、1%単位での細かな計測が可能",
+      "長寿命バッテリー（単4電池2本で約2年稼働）"
+    ],
+    "negativePoints": [
+      "本体にディスプレイがなく、データの確認にはスマホアプリが必須",
+      "Hubなしで外出先へ持ち出す場合、データの自動同期がされず一部データが欠落しやすい仕様のクセがある",
+      "アプリUIの更新により、接続状態やデータの記録タイミングが分かりにくくなった"
+    ],
+    "useCases": [
+      "キャンプでテント外の気温を記録する",
+      "自宅の窓外に設置して外の気温を知る",
+      "水に濡れやすい浴室に置いて温度管理を行う"
+    ],
+    "userStories": [
+      {
+        "userType": "キャンパー",
+        "scenario": "月1回のキャンプで現地の気温を記録",
+        "experience": "手のひらサイズで極小、かつストラップ付きなので持ち運びやすい。テントの外にぶら下げて現地の気温が何度になっているかをスマホから手軽に確認・記録できた。",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "sentiment": "positive"
+      },
+      {
+        "userType": "スマートホーム利用者",
+        "scenario": "自宅と外出先で併用",
+        "experience": "自宅でHub経由でクラウド接続オンにして使っていたが、そのまま外出先に持ち出すとBluetoothでデータが読み込まれず、更新しても時間が新しくなるだけでグラフのデータが欠落してしまった。外出時は手動でクラウド設定をオフにする必要がありクセが強い。",
+        "supportingSourceIds": [
+          "src-2"
+        ],
+        "sentiment": "mixed"
+      }
+    ],
+    "userImpression": "約2000円と安価ながら精度の高い温湿度センサーと高い防水・防塵性能を備え、屋外や水回りでの使用に非常に便利です。ただし、本体に画面がないためスマホ確認が必須であり、自宅（Hubあり）と外出先（Hubなし）の両方で併用する場合にはデータ欠落を防ぐための設定切り替え（クラウドサービスON/OFF）が必要で、運用にややクセがあると評価されています。",
+    "sources": [
+      {
+        "id": "src-1",
+        "name": "【SwitchBot】キャンプで気温を記録する用にBluetoothの防水温湿度計を購入してみた/ネタフル",
+        "url": "https://netaful.jp/gadget/0145586.html",
+        "tier": "high",
+        "evidenceType": "secondary",
+        "publishedAt": "2024-02-18",
+        "author": "コグレマサト",
+        "conflictOfInterest": "none",
+        "notes": "キャンプでの使用体験、防水・防塵機能、持ち運びやすさについて評価。"
+      },
+      {
+        "id": "src-2",
+        "name": "SwitchBotで実売1980円！ アプリ連携できる「防水温湿度計」を試して分かった使い勝手の“クセ”とは：山口真弘のスマートスピーカー暮らし/ITmedia PC USER",
+        "url": "https://www.itmedia.co.jp/pcuser/articles/2306/23/news099.html",
+        "tier": "high",
+        "evidenceType": "secondary",
+        "publishedAt": "2023-06-23",
+        "author": "山口真弘",
+        "conflictOfInterest": "none",
+        "notes": "Hubを使ったクラウド接続と外出先でのBluetooth接続との切り替え仕様のクセ、データが欠落した場合のグラフ表示の問題、アプリのUI変更に対する指摘。"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "IP65規格の防水・防塵性能を持つ",
+        "category": "durability",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "crossChecked": true,
+        "notes": "Amazonの公式スペックおよびレビュー記事で確認。"
+      },
+      {
+        "claim": "Hub経由とBluetooth直結を切り替える際に、設定を合わせないとデータが欠落する場合がある",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-2"
+        ],
+        "crossChecked": false,
+        "notes": "ITmediaの詳細なレビューにて指摘されている。"
+      }
+    ],
+    "lastInvestigated": "2026-06-21",
+    "competitiveAnalysis": [
+      {
+        "name": "ThermoPro 温湿度計 (B0FKBJHCQH)",
+        "asin": "B0FKBJHCQH",
+        "priceComparison": "同等価格帯の防水モデル",
+        "featureComparison": [
+          "共通点：どちらも防水性能を備えている。",
+          "相違点：ThermoProは本体にディスプレイ（LCD画面）があり顔マークなどで状態が確認できるが、スマホ連携のスマート機能はない。SwitchBotは画面がないがスマホでデータ管理が可能。"
+        ],
+        "differentiators": [
+          "SwitchBot 防水温湿度計の利点：スマホで過去のグラフ記録や異常時のアラート機能が利用できる。また他のスマート家電と連携可能。",
+          "ThermoPro 温湿度計の利点：スマホを取り出さなくても、本体の画面で直接現在の温湿度が確認できる。"
+        ]
+      },
+      {
+        "name": "SwitchBot 温湿度計 (B07L4QNZVF)",
+        "asin": "B07L4QNZVF",
+        "priceComparison": "同等価格帯の同ブランド非防水モデル",
+        "featureComparison": [
+          "共通点：どちらもSwitchBotアプリに連携でき、Hub経由での遠隔確認やスマート家電連携が可能。",
+          "相違点：標準モデルはディスプレイがある代わりに防水機能がない。防水モデルは防水・防塵（IP65）だがディスプレイを持たない。"
+        ],
+        "differentiators": [
+          "SwitchBot 防水温湿度計の利点：防水・防塵性能により、屋外や浴室、ベランダなどの過酷な環境に設置できる。",
+          "SwitchBot 温湿度計の利点：本体に液晶画面があるため、室内などに置いて通りがかりに現在の温湿度をサッと確認する用途に向いている。"
+        ]
+      },
+      {
+        "name": "Govee WiFi 温度計 湿度計 (B09BR8PDKM)",
+        "asin": "B09BR8PDKM",
+        "priceComparison": "やや高めのスマート温湿度計モデル",
+        "featureComparison": [
+          "共通点：スマホアプリで温湿度のグラフ記録やアラート通知を利用できるスマートデバイス。",
+          "相違点：Goveeモデルは直接WiFiに接続できる（2.4GHz）ため、別途Hubを必要とせず遠隔でデータ確認が可能。ただし防水性能は記載がない。"
+        ],
+        "differentiators": [
+          "SwitchBot 防水温湿度計の利点：IP65の防水・防塵性能を持ち、屋外や濡れやすい場所で使用できる。",
+          "Govee WiFi 温度計 湿度計の利点：別途ハブを用意しなくても、Wi-Fi環境があれば遠隔地からデータを確認できる。"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "屋外や浴室の温湿度を管理したい人",
+        "キャンプの気温を記録したい人",
+        "すでにSwitchBot Hubを導入している人"
+      ],
+      "pros": [
+        "屋外や水回りでも安心のIP65防水・防塵性能",
+        "アプリで簡単に過去の温湿度変化をグラフ化できる",
+        "コンパクトで設置場所を選ばない"
+      ],
+      "cons": [
+        "本体にディスプレイがなく、スマホを開かないと確認できない",
+        "自宅（Hub）と外出先の併用だとデータの同期にクセがある"
+      ],
+      "score": 74,
+      "scoreRationale": "[基本点: 70]\n[加点: +5] (IP65の優れた防水防塵性能により、屋外や水回りなど幅広い場所に設置可能)\n[加点: +3] (コンパクトでストラップ付きなど携帯性・設置性に優れる)\n[減点: -4] (本体に画面がなくスマホ必須であり、外出先と自宅の併用時にデータ同期の仕様にやや難がある)\n[合計: 74]"
+    },
+    "technicalSpecs": {
+      "dimensions": {
+        "height": "20mm",
+        "width": "28mm",
+        "depth": "60mm"
+      },
+      "weight": "44g",
+      "waterproof": "IP65規格(防水・防塵)",
+      "sensor": "スイス製高精度センサー(温度0.1℃、湿度1%単位)",
+      "battery": "単4電池×2(寿命約2年)",
+      "connectivity": "Bluetooth (Hub連携でWi-Fi遠隔管理可能)",
+      "dataStorage": "本体に68日分記録可能(Hub利用でクラウド2年保存)",
+      "color": "ホワイト"
+    }
+  }
+}
