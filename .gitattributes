@@ -8,3 +8,7 @@
 *.yml text eol=lf
 *.yaml text eol=lf
 *.md text eol=lf
+
+# Disable line ending normalization for huge product cache JSON to prevent git mmap/Bus errors
+data/cache/paapi-product-cache.json -text
+
