@@ -1,0 +1,184 @@
+{
+  "analysis": {
+    "productName": "ケンジントン オービットワイヤレストラックボールウィズスクロールリング K70992JP",
+    "parentAsin": "B0BFH1MXFV",
+    "productDescription": "直径40mmの中型ボールとスクロールリングを搭載した左右対称デザインのワイヤレストラックボール。Bluetoothと2.4GHz USB接続の両方に対応しています。",
+    "productUsage": [
+      "長時間のパソコン作業",
+      "省スペースでのカーソル操作",
+      "手首や腕の負担軽減"
+    ],
+    "positivePoints": [
+      "左右対称で右利き・左利きどちらでも使いやすい",
+      "スクロールリングによる直感的な上下スクロール",
+      "2種類のワイヤレス接続（Bluetooth / 2.4GHz USB）対応",
+      "ボタン機能のカスタマイズが可能（KensingtonWorks使用）",
+      "4段階のDPI調整（400/800/1200/1600）"
+    ],
+    "negativePoints": [
+      "ボールの直径が40mmと少し小さめ（人によっては操作感の好みが分かれる）",
+      "親指操作タイプのトラックボールに慣れている人には最初は違和感があるかもしれない"
+    ],
+    "useCases": [
+      "自宅やオフィスでのデスクワーク",
+      "机のスペースが限られている環境",
+      "マウスの移動による手首の疲労を軽減したい場合"
+    ],
+    "userStories": [],
+    "userImpression": "スクロールリングの使い勝手が良く、手首を動かさずに快適に操作できる点が評価されています。左右対称デザインのため、左手デバイスとしても活用されることが多いです。",
+    "sources": [
+      {
+        "id": "src-amazon",
+        "name": "Amazon商品ページ",
+        "url": "https://www.amazon.co.jp/dp/B09J8M9LTV",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2021-10-29",
+        "author": "Kensington",
+        "conflictOfInterest": "possible",
+        "notes": "製品仕様、機能、寸法を確認"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "128ビットAES暗号化通信で2.4GHzまたはBluetoothによるワイヤレス接続が可能",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-amazon"
+        ],
+        "crossChecked": false,
+        "notes": "商品スペックで確認"
+      },
+      {
+        "claim": "4段階のDPI設定（400、800、1200、1600）が可能",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-amazon"
+        ],
+        "crossChecked": false,
+        "notes": "商品スペックで確認"
+      }
+    ],
+    "lastInvestigated": "2026-06-21",
+    "competitiveAnalysis": [
+      {
+        "name": "ロジクール M575SPGR (静音モデル)",
+        "asin": "B0DC5WQQ2J",
+        "priceComparison": "対象商品よりやや高価。",
+        "featureComparison": [
+          "共通点：ワイヤレス接続(Bluetooth等)に対応するトラックボール",
+          "相違点：対象商品は人差し指/中指操作の左右対称型。本製品は親指操作で右利き専用、静音スイッチを採用"
+        ],
+        "differentiators": [
+          "対象商品の利点：左右対称デザインで左利きでも使用可能、スクロールリング搭載",
+          "競合商品の利点：エルゴノミクスデザインで親指操作に慣れている人に最適、クリック音が静か"
+        ]
+      },
+      {
+        "name": "エレコム M-XT3DRBK (握りの極み)",
+        "asin": "B016QCPNUW",
+        "priceComparison": "対象商品より安価。",
+        "featureComparison": [
+          "共通点：2.4GHzワイヤレス接続に対応",
+          "相違点：対象商品は人差し指操作の左右対称型。本製品は親指操作型で「進む/戻る」を含む6ボタンを搭載"
+        ],
+        "differentiators": [
+          "対象商品の利点：スクロールリングによる直感的な操作、左右対称",
+          "競合商品の利点：ボタン数が多く、戻る・進む操作などが割り当てやすい"
+        ]
+      },
+      {
+        "name": "EWiN ワイヤレス トラックボール (B0D8HRRBKH)",
+        "asin": "B0D8HRRBKH",
+        "priceComparison": "対象商品より安価。",
+        "featureComparison": [
+          "共通点：Bluetoothと2.4GHz接続の両対応",
+          "相違点：対象商品は乾電池式で左右対称。本製品はType-C充電式(500mAh)で親指操作型"
+        ],
+        "differentiators": [
+          "対象商品の利点：老舗Kensingtonのスクロールリング搭載、左利き対応",
+          "競合商品の利点：充電式で電池交換が不要、DPIが最大2400まで対応"
+        ]
+      },
+      {
+        "name": "Nulea M501 ワイヤレストラックボール",
+        "asin": "B0GS97GBZJ",
+        "priceComparison": "対象商品より安価。",
+        "featureComparison": [
+          "共通点：Bluetoothと2.4GHz接続の両対応",
+          "相違点：対象商品は左右対称の中指操作。本製品は右利き用親指操作、充電式"
+        ],
+        "differentiators": [
+          "対象商品の利点：特徴的なスクロールリングと左右対称デザイン",
+          "競合商品の利点：充電式で長持ち、進む・戻るボタン搭載"
+        ]
+      },
+      {
+        "name": "Kensington ExpertMouse K72359JP",
+        "asin": "B01BXS17N6",
+        "priceComparison": "対象商品よりかなり高価。",
+        "featureComparison": [
+          "共通点：Kensington製、スクロールリング搭載、左右対称デザイン、ワイヤレス",
+          "相違点：対象商品は40mmボール。本製品は55mm大玉ボールを搭載し、リストレストが付属"
+        ],
+        "differentiators": [
+          "対象商品の利点：比較的コンパクトで価格も抑えめ",
+          "競合商品の利点：大玉ボールによる精密な操作性、パームレストによる快適性向上"
+        ]
+      },
+      {
+        "name": "Kensington OrbitTrackball 有線モデル 72337JP",
+        "asin": "B004QE4JXA",
+        "priceComparison": "対象商品とほぼ同価格帯。",
+        "featureComparison": [
+          "共通点：Kensington製、40mmボール、スクロールリング搭載、左右対称",
+          "相違点：対象商品はワイヤレス(Bluetooth/2.4GHz)。本製品は有線(USB)接続"
+        ],
+        "differentiators": [
+          "対象商品の利点：ワイヤレスでデスク周りがすっきりし、持ち運びもしやすい",
+          "競合商品の利点：電池切れや通信途絶の心配がない有線接続"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "左利きでトラックボールを使いたい人",
+        "スクロールリングの操作感が好きな人",
+        "マウスによる手首の痛みを軽減したい人",
+        "ワイヤレス環境を構築したい人"
+      ],
+      "pros": [
+        "独自のスクロールリングによる快適なスクロール操作",
+        "右利き・左利きを問わない左右対称デザイン",
+        "Bluetoothと2.4GHz両対応で様々な機器に接続可能",
+        "DPI設定を4段階から選択可能"
+      ],
+      "cons": [
+        "進む・戻るなどの専用サイドボタンがない",
+        "親指操作のトラックボールからの移行には慣れが必要"
+      ],
+      "score": 85,
+      "scoreRationale": "[基本点: 70]\n[加点: +5] (直感的なスクロールリング搭載)\n[加点: +5] (左右対称デザインで左利きも使用可能)\n[加点: +5] (BluetoothとUSBレシーバーの2つのワイヤレス接続に対応)\n[加点: +5] (老舗ブランドKensingtonの信頼性)\n[減点: -5] (専用の進む/戻るボタンが物理的に存在しない)\n[合計: 85]"
+    },
+    "technicalSpecs": {
+      "dimensions": {
+        "height": "47.0mm",
+        "width": "115.0mm",
+        "depth": "138.0mm"
+      },
+      "weight": "162g",
+      "connection": "Bluetooth (3.0またはLE), 2.4GHz USBレシーバー",
+      "dpi": "400, 800, 1200, 1600 (4段階調整)",
+      "ballSize": "直径40mm",
+      "color": "ブラック＆レッド",
+      "features": [
+        "128ビットAES暗号化ワイヤレス接続",
+        "スクロールリング搭載",
+        "左右対称デザイン",
+        "KensingtonWorksでカスタマイズ可能"
+      ]
+    }
+  }
+}
