@@ -1,0 +1,202 @@
+{
+  "analysis": {
+    "productName": "Nulea M505 無線 トラックボールマウス (人差し指操作)",
+    "parentAsin": "B0FJRQ68Q1",
+    "productDescription": "人間工学に基づいたエルゴノミクスデザインと44mmの大玉を採用した人差し指操作タイプのワイヤレストラックボールマウス。Bluetoothと2.4GHz接続の両方に対応し、最大3台のデバイスを切り替えて使用可能です。",
+    "productUsage": [
+      "省スペースでのPC操作",
+      "複数デバイス（PC、タブレット等）間のシームレスな入力切り替え",
+      "手首や腕の負担を軽減するためのデスクワーク"
+    ],
+    "positivePoints": [
+      "44mmの大玉で精密かつ滑らかなカーソル操作が可能",
+      "Bluetooth 5.0と2.4GHzの両対応で最大3台のデバイスとマルチペアリング可能",
+      "充電式バッテリー内蔵で、乾電池の交換が不要",
+      "200から1600まで5段階のDPI調整に対応",
+      "3,000円台（調査時点）と、多機能トラックボールとしては非常に優れたコストパフォーマンス"
+    ],
+    "negativePoints": [
+      "人差し指操作タイプのため、親指操作タイプに慣れているユーザーには適応期間が必要",
+      "ボタンのカスタマイズ用ソフトウェアの有無や詳細が公式情報から読み取れない",
+      "Amazon上の寸法データ（高さ約1mm）に明らかな記載ミスがあり、正確なサイズ感が把握しづらい"
+    ],
+    "useCases": [
+      "デスクスペースが限られている環境（狭い机やベッド上など）での作業",
+      "Windows PCとMac、iPadなどを同時に使用するマルチデバイス環境",
+      "長時間の文書作成やブラウジングによる手首の疲労対策"
+    ],
+    "userStories": [
+      {
+        "userType": "デスクワーカー",
+        "scenario": "限られたスペースでのテレワーク",
+        "experience": "本体を動かす必要がないため、狭いデスクでも快適に操作可能。44mmの大玉は人差し指でスムーズに回転でき、手首への負担も大幅に軽減された。",
+        "supportingSourceIds": [
+          "src-amazon-page"
+        ],
+        "sentiment": "positive"
+      },
+      {
+        "userType": "マルチデバイスユーザー",
+        "scenario": "PCとタブレットの併用",
+        "experience": "BluetoothとUSBレシーバーを組み合わせて最大3台まで接続でき、ボタン一つで瞬時にデバイスを切り替えられるため作業効率が向上した。",
+        "supportingSourceIds": [
+          "src-amazon-page"
+        ],
+        "sentiment": "positive"
+      }
+    ],
+    "userImpression": "大玉による滑らかな操作性と、マルチペアリング、充電式といった充実した機能を備えながら低価格を実現しており、コストパフォーマンスの高さが評価される。人差し指操作に慣れれば非常に快適な入力デバイスとして機能する。",
+    "sources": [
+      {
+        "id": "src-amazon-page",
+        "name": "Amazon商品ページ",
+        "url": "https://www.amazon.co.jp/dp/B0F5HFVL3H",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-06-21",
+        "author": "Nulea",
+        "conflictOfInterest": "possible",
+        "notes": "商品の基本スペック、機能、価格情報を確認"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "最大3台のデバイスと同時接続・切り替えが可能",
+        "category": "comparativeAdvantage",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-amazon-page"
+        ],
+        "crossChecked": false,
+        "notes": "商品仕様にBluetooth 5.0と2.4GHzワイヤレスレシーバーのデュアルモード対応と明記"
+      },
+      {
+        "claim": "フル充電で数ヶ月の連続使用が可能",
+        "category": "quality",
+        "confidence": "medium",
+        "supportingSourceIds": [
+          "src-amazon-page"
+        ],
+        "crossChecked": false,
+        "notes": "公式情報としての記載だが、実際の使用期間は環境に依存する可能性がある"
+      }
+    ],
+    "lastInvestigated": "2026-06-21",
+    "competitiveAnalysis": [
+      {
+        "name": "エレコム マウス ワイヤレス M-DT2DRBK",
+        "asin": "B0171QQ7FM",
+        "priceComparison": "対象商品（Nulea M505）とほぼ同等の価格帯だが、対象商品はBluetooth対応や充電式である点で機能的に優位性がある",
+        "featureComparison": [
+          "共通点：人差し指操作タイプのワイヤレストラックボールである点",
+          "相違点：対象商品はBluetooth接続に対応し充電式だが、M-DT2DRBKはUSBレシーバー(2.4GHz)のみで乾電池駆動。また、M-DT2DRBKはボタン数が8ボタンと多い"
+        ],
+        "differentiators": [
+          "Nulea M505の利点：Bluetooth接続によるマルチペアリングが可能で、乾電池交換が不要な充電式である点",
+          "エレコム M-DT2DRBKの利点：8個のボタンを搭載しており、ショートカットの割り当てなどカスタマイズ性が高い点"
+        ]
+      },
+      {
+        "name": "ProtoArc EM03 NL",
+        "asin": "B0FVXTH7F2",
+        "priceComparison": "対象商品の方が大幅に安く、予算重視のユーザーにとって魅力的な選択肢となっている",
+        "featureComparison": [
+          "共通点：大玉を採用した人差し指・中指操作タイプで、Bluetoothと2.4GHzのマルチペアリング、充電式である点",
+          "相違点：機能的には似通っているが、デザインの形状やブランドが異なる"
+        ],
+        "differentiators": [
+          "Nulea M505の利点：同等の基本機能を備えながら、非常にコストパフォーマンスに優れている点",
+          "ProtoArc EM03 NLの利点：人差し指・中指両方での操作を想定した設計や独自のエルゴノミクス形状"
+        ]
+      },
+      {
+        "name": "エレコム トラックボールマウス 大玉 M-HT1DRXBK",
+        "asin": "B079FDQZXQ",
+        "priceComparison": "対象商品の方が安価に購入できる",
+        "featureComparison": [
+          "共通点：大玉を搭載した人差し指操作タイプのワイヤレストラックボールである点",
+          "相違点：対象商品は充電式・Bluetooth対応。M-HT1DRXBKは乾電池式・2.4GHz専用だが、パームレスト一体型の大型筐体と8ボタンを搭載"
+        ],
+        "differentiators": [
+          "Nulea M505の利点：Bluetooth接続による柔軟なマルチデバイス運用と、充電式による利便性",
+          "エレコム M-HT1DRXBKの利点：パームレストによる手首のサポートと、豊富な8ボタンによる拡張性"
+        ]
+      },
+      {
+        "name": "Kensington オービットワイヤレストラックボール K70992JP",
+        "asin": "B09J8M9LTV",
+        "priceComparison": "対象商品の方が安価である",
+        "featureComparison": [
+          "共通点：Bluetoothおよび2.4GHzワイヤレス接続に対応している点",
+          "相違点：対象商品は人差し指操作タイプ（サイド配置）だが、Kensingtonは中央配置のボールとスクロールリングを搭載"
+        ],
+        "differentiators": [
+          "Nulea M505の利点：一般的なマウスの形状に近く、大玉を人差し指で操作しやすいエルゴノミクスデザインと低価格",
+          "Kensington K70992JPの利点：独自のスクロールリングによる直感的な上下スクロール操作と左右対称デザイン"
+        ]
+      },
+      {
+        "name": "エレコム トラックボールマウス bitra M-MT2MRSABK",
+        "asin": "B0FZG9YXQ4",
+        "priceComparison": "対象商品の方が大幅に安価である",
+        "featureComparison": [
+          "共通点：人差し指操作でBluetooth・2.4GHz両対応のマルチペアリング機能を持つ点",
+          "相違点：対象商品は据え置き用途向けの大玉・充電式。bitraはモバイル向けの小型軽量設計で専用ケース付き"
+        ],
+        "differentiators": [
+          "Nulea M505の利点：大玉による緻密な操作性と充電式の利便性、高いコストパフォーマンス",
+          "エレコム bitraの利点：持ち運びに特化したコンパクト設計と静音スイッチの採用"
+        ]
+      },
+      {
+        "name": "エレコム トラックボールマウス M-DPT1MRXBK",
+        "asin": "B07C9T4TTW",
+        "priceComparison": "対象商品の方が大幅に安価である",
+        "featureComparison": [
+          "共通点：人差し指操作タイプで、Bluetoothおよび無線2.4GHz接続に対応している点",
+          "相違点：対象商品は充電式だが、M-DPT1MRXBKは有線接続にも対応した3WAY接続で、8ボタンとチルトホイールを搭載"
+        ],
+        "differentiators": [
+          "Nulea M505の利点：手軽に導入できる低価格と、内蔵バッテリーによる充電機能",
+          "エレコム M-DPT1MRXBKの利点：有線接続の安定性、チルトホイール（横スクロール）や多ボタンによる高度な操作性"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "初めて人差し指操作のトラックボールを試してみたい方",
+        "PCとタブレットなど複数デバイスを1つのマウスで切り替えて操作したい方",
+        "電池交換の手間を省きたい方"
+      ],
+      "pros": [
+        "3,000円台という優れたコストパフォーマンス",
+        "最大3台のデバイスとマルチペアリング可能",
+        "44mmの大玉により滑らかで細かい操作がしやすい",
+        "内蔵バッテリーによる充電式"
+      ],
+      "cons": [
+        "ボタンカスタマイズ機能などの拡張性が不明確",
+        "横スクロール（チルト機能）は非搭載"
+      ],
+      "score": 83,
+      "scoreRationale": "[基本点: 70]\n[加点: +5] (3,000円台という非常に優れたコストパフォーマンス)\n[加点: +3] (Bluetoothと2.4GHzによる最大3台のマルチペアリング機能)\n[加点: +3] (44mm大玉採用による操作性の高さ)\n[加点: +2] (電池交換不要の充電式バッテリー内蔵)\n[合計: 83]"
+    },
+    "technicalSpecs": {
+      "dimensions": {
+        "height": "1mm",
+        "width": "104mm",
+        "depth": "168mm"
+      },
+      "weight": "200g",
+      "connection": "Bluetooth 5.0, 2.4GHzワイヤレス",
+      "power": "充電式バッテリー内蔵",
+      "color": "レッド",
+      "dpi": "200/400/800/1200/1600 (5段階調整可)",
+      "buttons": "5ボタン (進む/戻るボタン含む)",
+      "other": [
+        "ボールサイズ: 44mm",
+        "Amazon上の高さ(寸法)は1mmと記載があるが、明らかな入力ミスと考えられるため注意が必要"
+      ]
+    }
+  }
+}
