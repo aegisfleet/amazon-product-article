@@ -1,0 +1,209 @@
+{
+  "analysis": {
+    "productName": "エレコム トラックボールマウス DEFT PRO",
+    "parentAsin": "B07CG1R3JT",
+    "productDescription": "有線・無線(2.4GHz)・Bluetoothの3つの接続方式に対応した、人差し指操作タイプの8ボタントラックボールマウス。",
+    "productUsage": [
+      "長時間のPC作業",
+      "デスクスペースが限られた環境での操作",
+      "複数デバイス（PC、タブレット等）の切り替え操作"
+    ],
+    "positivePoints": [
+      "有線・無線・Bluetoothの3種類の接続方式を選べる",
+      "OMRON社製の高耐久スイッチや光学式エンコーダなどの長寿命部品を採用",
+      "8ボタン搭載で機能割り当てが可能",
+      "人差し指操作タイプでポインターを広範囲かつ繊細に動かせる"
+    ],
+    "negativePoints": [
+      "長期間使用するとチャタリング（意図しない連続クリック）が発生しやすいという口コミがある",
+      "大型のため手の小さい人にはフィットしにくい場合がある",
+      "ボールの回転の微調整に慣れが必要"
+    ],
+    "useCases": [
+      "オフィスワークやリモートワークでの長時間使用",
+      "3DモデリングやCAD、デザイン作業",
+      "狭いデスクでのPC操作"
+    ],
+    "userStories": [
+      {
+        "userType": "一般ユーザー",
+        "scenario": "複数PCの切り替え",
+        "experience": "Bluetoothや無線2.4GHz、有線と複数の接続方式が選べるのが便利。千円以下の安いマウスと比べてクリック感や動作感度が良く、ポインターの動きもスムーズです。",
+        "supportingSourceIds": ["src-kakaku-review"],
+        "sentiment": "positive"
+      },
+      {
+        "userType": "一般ユーザー",
+        "scenario": "長期間の使用",
+        "experience": "最初は快適に使えていたが、使用から約半年〜1年程度でクリック時にチャタリング（意図せずダブルクリックになってしまう現象）が発生するようになった。保証で交換してもらったが、耐久性に少し不安が残る。",
+        "supportingSourceIds": ["src-kakaku-review"],
+        "sentiment": "negative"
+      },
+      {
+        "userType": "手の大きいユーザー",
+        "scenario": "日常的な操作",
+        "experience": "ボールが大きめで操作しやすい。ただ、パームレスト部分が少し短く、手をそのまま置くと指の第二関節付近でボールを操作することになり、少し扱いづらい時がある。",
+        "supportingSourceIds": ["src-kakaku-review"],
+        "sentiment": "mixed"
+      }
+    ],
+    "userImpression": "3つの接続方式が選べる利便性や、高耐久スイッチ採用による基本性能の高さは評価されている一方、長期間使用時のチャタリング発生報告や、手の大きさによるフィット感の違いについて賛否が分かれている印象。",
+    "sources": [
+      {
+        "id": "src-kakaku-review",
+        "name": "エレコム M-DPT1MRBK レビュー・評価/価格.com",
+        "url": "https://kakaku.com/item/K0001045615/review/",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2024-05-10",
+        "author": "価格.comユーザー",
+        "conflictOfInterest": "none",
+        "notes": "チャタリングの発生、サイズ感、接続の切り替えに関するユーザーの意見を抽出"
+      },
+      {
+        "id": "src-kakaku-spec",
+        "name": "エレコム M-DPT1MRBK スペック・仕様/価格.com",
+        "url": "https://kakaku.com/item/K0001045615/spec/",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2024-05-10",
+        "author": "価格.com",
+        "conflictOfInterest": "none",
+        "notes": "基本スペック、サイズ（91.4x57.3x133.4 mm）、重量（162g）を確認"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "有線・無線・Bluetoothの3つの接続方式に対応",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": ["src-kakaku-spec"],
+        "crossChecked": true,
+        "notes": "公式情報および価格.comスペックで一致"
+      },
+      {
+        "claim": "チャタリングが発生しやすい個体がある",
+        "category": "durability",
+        "confidence": "medium",
+        "supportingSourceIds": ["src-kakaku-review"],
+        "crossChecked": false,
+        "notes": "ユーザーレビューにて複数報告あり"
+      }
+    ],
+    "lastInvestigated": "2026-06-21",
+    "competitiveAnalysis": [
+      {
+        "name": "エレコム トラックボールマウス IST PRO (M-IPT10MRSABK)",
+        "asin": "B0DQWP6LX1",
+        "priceComparison": "対象商品より高価。高性能ベアリングや最大6台の接続切り替えなど、より高度な機能を持つハイグレードモデル。",
+        "featureComparison": [
+          "共通点：Bluetooth/無線/有線の複数接続に対応、人差し指・中指操作向け",
+          "相違点：IST PROは高性能ベアリングを採用し滑らかな操作を実現。最大6台のマルチペアリングに対応し、ボタン数も10個と多い。"
+        ],
+        "differentiators": [
+          "エレコム トラックボールマウス DEFT PROの利点：価格が抑えられており、基本的な機能が揃っている。コストパフォーマンスに優れる。",
+          "エレコム トラックボールマウス IST PRO (M-IPT10MRSABK)の利点：ベアリング支持による滑らかな操作感や、より多いボタン数、最大6台の接続切り替え機能など、より高度なカスタマイズ性と操作性を求める場合に適している。"
+        ]
+      },
+      {
+        "name": "エレコム トラックボールマウス bitra (M-MT2MRSABK)",
+        "asin": "B0FZG9YXQ4",
+        "priceComparison": "対象商品と同程度の価格帯だが、こちらはモバイル用途に特化している。",
+        "featureComparison": [
+          "共通点：Bluetoothおよび無線2.4GHz接続に対応、人差し指操作タイプ",
+          "相違点：bitraはモバイル向けに小型化されており、専用収納ケースが付属する。ボタン数は5つと少ない。静音スイッチを採用している。"
+        ],
+        "differentiators": [
+          "エレコム トラックボールマウス DEFT PROの利点：本体が大きく、デスクトップでの長時間の安定した操作に適している。ボタン数も多くカスタマイズ性が高い。",
+          "エレコム トラックボールマウス bitra (M-MT2MRSABK)の利点：コンパクトで持ち運びに便利。静音スイッチを搭載しており、外出先や音が気になる場所での使用に適している。"
+        ]
+      },
+      {
+        "name": "エレコム トラックボールマウス HUGE (M-HT1URXBK)",
+        "asin": "B079FBN9VQ",
+        "priceComparison": "対象商品より安価。有線専用モデル。",
+        "featureComparison": [
+          "共通点：人差し指・中指操作タイプ、8ボタン搭載",
+          "相違点：HUGEは直径52mmの超大型ボールを搭載し、有線接続のみに対応。パームレストが一体化している。"
+        ],
+        "differentiators": [
+          "エレコム トラックボールマウス DEFT PROの利点：無線およびBluetooth接続に対応しており、ケーブルの煩わしさがない。サイズもHUGEほど大きすぎない。",
+          "エレコム トラックボールマウス HUGE (M-HT1URXBK)の利点：大型ボールと大型パームレストにより、手のひら全体を預けて楽に操作できる。電池不要で安定した有線接続を好む場合に適している。"
+        ]
+      },
+      {
+        "name": "Kensington オービットワイヤレストラックボール K70992JP",
+        "asin": "B09J8M9LTV",
+        "priceComparison": "対象商品より安価。",
+        "featureComparison": [
+          "共通点：無線接続に対応",
+          "相違点：Kensingtonは左右対称デザインで、スクロールリングを搭載。接続は2.4GHzまたはBluetooth。"
+        ],
+        "differentiators": [
+          "エレコム トラックボールマウス DEFT PROの利点：ボタン数が多く、専用ソフトウェアによるカスタマイズの幅が広い。右利きに特化したエルゴノミクス形状。",
+          "Kensington オービットワイヤレストラックボール K70992JPの利点：左右対称デザインで左利きでも使用可能。スクロールリングによる直感的な操作が特徴。"
+        ]
+      },
+      {
+        "name": "ProtoArc EM03 NL トラックボールマウス",
+        "asin": "B0FVXTH7F2",
+        "priceComparison": "対象商品と同程度の価格帯。",
+        "featureComparison": [
+          "共通点：Bluetoothおよび無線2.4GHz接続に対応、人差し指操作タイプ",
+          "相違点：ProtoArc EM03はType-C充電式。3台までの同時接続切り替えに対応し、手首への負担を軽減する縦型に近いデザイン。"
+        ],
+        "differentiators": [
+          "エレコム トラックボールマウス DEFT PROの利点：有線接続にも対応しており、電池切れの際も安心して使用できる。長寿命部品を使用している。",
+          "ProtoArc EM03 NL トラックボールマウスの利点：USB充電式で電池交換が不要。手首の角度が自然になるエルゴノミクスデザインを採用している。"
+        ]
+      },
+      {
+        "name": "エレコム トラックボールマウス DEFT PRO (M-DPT1MRXBK)",
+        "asin": "B07C9T4TTW",
+        "priceComparison": "対象商品とほぼ同じ価格帯。",
+        "featureComparison": [
+          "共通点：仕様は完全に同一（有線・無線・Bluetooth対応、8ボタン、長寿命部品）",
+          "相違点：型番末尾の「XBK」は量販店向けなどのパッケージ違いや流通経路の違いであり、製品自体の仕様は同一とみられる。"
+        ],
+        "differentiators": [
+          "エレコム トラックボールマウス DEFT PROの利点：製品自体の機能差はないため、購入時の価格や在庫状況で選んで問題ない。",
+          "エレコム トラックボールマウス DEFT PRO (M-DPT1MRXBK)の利点：製品自体の機能差はないため、購入時の価格や在庫状況で選んで問題ない。"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "複数のPCやデバイスを使い分ける人",
+        "ボタンを多く使って作業を効率化したい人",
+        "省スペースでポインター操作を行いたい人"
+      ],
+      "pros": [
+        "有線、無線、Bluetoothの3つの接続方式を選べる",
+        "8つのボタンに機能を割り当て可能",
+        "高耐久部品を採用"
+      ],
+      "cons": [
+        "一部でチャタリングの発生報告がある",
+        "手の大きさによってはフィットしにくい場合がある"
+      ],
+      "score": 77,
+      "scoreRationale": "[基本点: 70]\n[加点: +5] (有線・無線・Bluetoothの3接続方式対応による利便性)\n[加点: +5] (8ボタン搭載による高いカスタマイズ性)\n[減点: -3] (長期間使用時のチャタリング発生報告)\n[合計: 77]"
+    },
+    "technicalSpecs": {
+      "dimensions": {
+        "height": "133.4mm",
+        "width": "91.4mm",
+        "depth": "57.3mm"
+      },
+      "weight": "162g",
+      "connectivity": "Bluetooth 4.0、USB有線、無線2.4GHz",
+      "buttons": "8ボタン（チルトホイール含む）",
+      "resolution": "500/1000/1500 DPI",
+      "battery": "単3形乾電池1本",
+      "other": [
+        "長寿命部品採用（OMRON社製スイッチ等）",
+        "人差し指操作タイプ"
+      ]
+    }
+  }
+}
