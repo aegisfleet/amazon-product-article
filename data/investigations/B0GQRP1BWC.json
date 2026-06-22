@@ -1,0 +1,164 @@
+{
+  "analysis": {
+    "productName": "Elgato Wave XLR Dock MK.2",
+    "parentAsin": "B0GQRP1BWC",
+    "productDescription": "Stream Deck +用のオーディオインターフェース拡張アクセサリー。80dBのゲインを備え、DSPエフェクトを内蔵。XLRマイクをStream Deck +を通して接続し、一体化したミキサーとして活用できます。",
+    "productUsage": [
+      "マイクプリアンプ",
+      "オーディオインターフェース"
+    ],
+    "positivePoints": [
+      "Stream Deck +と完全に統合でき、省スペース",
+      "最大80dBの高いゲインで、ダイナミックマイクも余裕で駆動可能",
+      "DSPエフェクト（ボイスエンハンサー、コンプレッサー、EQなど）を内蔵",
+      "Clipguard 2.0テクノロジーにより、大音量時の音割れを防止",
+      "ファンタム電源対応でコンデンサーマイクも使用可能"
+    ],
+    "negativePoints": [
+      "単体では使用できず、Stream Deck +本体が必須",
+      "前モデル（最大75dB）と比較して価格が高め"
+    ],
+    "useCases": [
+      "ゲーム実況・ストリーミング配信での高音質マイク入力",
+      "ポッドキャスト収録",
+      "テレワークやビデオ会議での音声向上"
+    ],
+    "userStories": [],
+    "userImpression": "Stream Deck +を使用している配信者やクリエイターにとって、マイク入力とミキサーコントロールを物理的に1つにまとめられる非常に便利な拡張モジュールです。ゲインが80dBに強化され、DSPエフェクトも内蔵されたことで、より高音質かつ柔軟な音声処理が可能になっています。",
+    "sources": [
+      {
+        "id": "src-amazon",
+        "name": "Amazon商品ページ",
+        "url": "https://www.amazon.co.jp/dp/B0GQRP1BWC",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-03-31",
+        "author": "Elgato",
+        "conflictOfInterest": "possible",
+        "notes": "スペック、価格、機能の確認"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "最大80dBのゲインとDSPエフェクトを備え、Stream Deck +を高性能なオーディオインターフェースにアップグレードする",
+        "category": "comparativeAdvantage",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-amazon"
+        ],
+        "crossChecked": false,
+        "notes": "メーカー公式情報として確認"
+      }
+    ],
+    "lastInvestigated": "2026-06-22",
+    "competitiveAnalysis": [
+      {
+        "name": "Elgato XLRドック",
+        "asin": "B0D7M9821X",
+        "priceComparison": "旧モデル（XLRドック）と比較して、本機は高価です。ゲインが75dBから80dBに向上し、DSPエフェクトが内蔵されるなどの機能強化が価格差に反映されています。",
+        "featureComparison": [
+          "共通点：Stream Deck +の背面に装着して使用するXLRマイク用インターフェースモジュールである点。",
+          "相違点：旧モデルはゲインが最大75dBでDSPエフェクト非搭載ですが、本機(MK.2)はゲインが最大80dBに強化され、DSPエフェクト（ボイスエンハンサー、コンプレッサー、EQなど）とClipguard 2.0を内蔵しています。"
+        ],
+        "differentiators": [
+          "Elgato Wave XLR Dock MK.2の利点：より高いゲインと内蔵DSPエフェクトにより、PCの負荷を減らしつつ高品質な音声処理が可能な点",
+          "Elgato XLRドックの利点：基本的なマイク接続機能のみを求める場合、コストを抑えて導入できる点"
+        ]
+      },
+      {
+        "name": "Cloudlifter CL-1",
+        "asin": "B09SB487CN",
+        "priceComparison": "本機と同価格帯ですが、CL-1は単なるマイクプリアンプ（インラインブースター）であり、機能が全く異なります。",
+        "featureComparison": [
+          "共通点：マイクのゲインを稼ぐための機器である点。",
+          "相違点：CL-1はオーディオインターフェースとマイクの間に接続して+25dBのゲインを追加するアナログ機器ですが、本機はStream Deck +専用のデジタルオーディオインターフェース（A/D変換内蔵）です。"
+        ],
+        "differentiators": [
+          "Elgato Wave XLR Dock MK.2の利点：PC接続用のインターフェース機能やDSPエフェクト、ミキサー機能などを統合している点",
+          "Cloudlifter CL-1の利点：既存のオーディオインターフェース環境に純粋なゲイン増幅だけを追加できる汎用性の高さ"
+        ]
+      },
+      {
+        "name": "オーディオテクニカ AT-MA2",
+        "asin": "B00008B5DL",
+        "priceComparison": "本機と比較して大幅に安価ですが、機能が非常に限定的です。",
+        "featureComparison": [
+          "共通点：マイク信号を増幅する機能を持つ点。",
+          "相違点：AT-MA2はアナログのマイクアンプであり、PCへの直接接続（USBインターフェース機能）を持っていません。一方、本機はUSB接続（Stream Deck +経由）でPCにデジタル入力が可能です。"
+        ],
+        "differentiators": [
+          "Elgato Wave XLR Dock MK.2の利点：PCとの親和性が高く、デジタル接続とソフトウェア連携（Wave Link）による高度な制御が可能な点",
+          "オーディオテクニカ AT-MA2の利点：アナログ機器への接続用途や、とにかく安価にマイク音量を上げたい用途に適している点"
+        ]
+      },
+      {
+        "name": "FIFINE K688CTW",
+        "asin": "B0DQPH81TT",
+        "priceComparison": "本機より安価ですが、K688CTWはマイク本体にUSBインターフェース機能を内蔵した製品であり、比較軸が異なります。",
+        "featureComparison": [
+          "共通点：PCで高音質なマイク入力を実現する手段である点。",
+          "相違点：K688CTWはUSB/XLR両対応のダイナミックマイクそのものですが、本機は好きなXLRマイクを接続するためのインターフェースモジュールです。"
+        ],
+        "differentiators": [
+          "Elgato Wave XLR Dock MK.2の利点：好みのXLRマイク（コンデンサー/ダイナミック問わず）を自由に選んで接続できる拡張性の高さ",
+          "FIFINE K688CTWの利点：別途インターフェースを用意しなくても、これ1台でPCに直接接続して高音質録音を始められる点"
+        ]
+      },
+      {
+        "name": "Audio Technica AT2020 CWH",
+        "asin": "B0DG2GLMS2",
+        "priceComparison": "本機と同価格帯ですが、こちらはXLR接続のコンデンサーマイク本体です。",
+        "featureComparison": [
+          "共通点：高音質な音声収録に関連する機材である点。",
+          "相違点：AT2020はマイク本体であり、PCに接続するには別途本機のようなオーディオインターフェースが必要です。"
+        ],
+        "differentiators": [
+          "Elgato Wave XLR Dock MK.2の利点：Stream Deck +と組み合わせて、多彩なコントロールと高音質入力を実現するシステムの中核となる点",
+          "Audio Technica AT2020 CWHの利点：高音質な音声入力の入り口（マイク本体）として、様々なインターフェースと組み合わせて使用できる点"
+        ]
+      },
+      {
+        "name": "PROZOR XLR+RCAオーディオスイッチャー",
+        "asin": "B0FF9MMMNP",
+        "priceComparison": "本機と比較して非常に安価ですが、用途が全く異なります。",
+        "featureComparison": [
+          "共通点：オーディオ機器の接続に使用する機材である点。",
+          "相違点：PROZORは複数のオーディオソースを切り替えるアナログスイッチャーですが、本機はPCに音声を取り込むためのUSBオーディオインターフェースです。"
+        ],
+        "differentiators": [
+          "Elgato Wave XLR Dock MK.2の利点：マイクの音声信号をデジタル化し、PCで録音・配信するための機能が揃っている点",
+          "PROZOR XLR+RCAオーディオスイッチャーの利点：複数のアナログ音源やスピーカーのルーティングを物理スイッチで簡単に切り替えられる点"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "既にStream Deck +を所有している配信者・クリエイター",
+        "デスク上の機材（オーディオインターフェースとコントローラー）を1つにまとめたい人",
+        "ゲインの低いダイナミックマイクを高音質で使いたい人"
+      ],
+      "pros": [
+        "Stream Deck +との一体化による省スペース性",
+        "80dBの高ゲインとClipguard 2.0による余裕のある入力",
+        "DSPエフェクト内蔵によるPC負荷の軽減"
+      ],
+      "cons": [
+        "Stream Deck +本体（別売）がないと使用できない",
+        "単体のオーディオインターフェースと比較すると割高"
+      ],
+      "score": 85,
+      "scoreRationale": "[基本点: 70]\n[加点: +5] (Stream Deck +との統合によるデスク環境の改善と省スペース化)\n[加点: +5] (80dBの高ゲインによるプリアンプとしての優れた基本性能)\n[加点: +5] (DSPエフェクト内蔵による高品質な音声処理)\n[加点: +5] (Wave Linkアプリによる強力なソフトウェア連携)\n[減点: -5] (単独での使用不可および導入コストの高さ)\n[合計: 85]"
+    },
+    "technicalSpecs": {
+      "weight": "181g",
+      "preampGain": "最大80dB",
+      "phantomPower": "対応",
+      "features": [
+        "Clipguard 2.0",
+        "DSPエフェクト内蔵"
+      ],
+      "connection": "USB-C",
+      "compatibility": "Elgato Stream Deck + 専用"
+    }
+  }
+}
