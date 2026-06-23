@@ -1,153 +1,174 @@
 {
   "analysis": {
-    "productName": "Xiaomi REDMI Buds 8 Lite",
-    "parentAsin": "B0FRSCXWSV",
-    "productDescription": "驚異的なコストパフォーマンスを誇るXiaomiのエントリー向け完全ワイヤレスイヤホンです。3,000円台という価格ながら、最大42dBのアクティブノイズキャンセリング、マルチポイント接続、Google Fast Pairなど、上位機種に匹敵する機能を搭載しています。",
-    "productUsage": [
-      "通勤・通学時の音楽鑑賞（強力なANCで騒音をカット）",
-      "オンライン会議やハンズフリー通話（AIノイズリダクション機能）",
-      "勉強や仕事への集中（周囲の音を遮断）",
-      "PCとスマートフォンの同時接続（マルチポイント機能）"
-    ],
+    "productName": "Xiaomi REDMI Buds 8 Lite ワイヤレスイヤホン",
+    "parentAsin": "B0H325615T",
+    "productDescription": "最大42dBのアクティブノイズキャンセリングや36時間の長寿命バッテリーを搭載したXiaomiの完全ワイヤレスイヤホンです。通話時のAIノイズリダクションやマルチポイント接続にも対応しています。",
+    "productUsage": ["音楽・動画視聴", "通話", "通勤・通学"],
     "positivePoints": [
-      "3,000円台とは思えない最大42dBの強力なノイズキャンセリング性能",
-      "12.4mm大型チタニウムドライバーによる迫力ある低音",
-      "マルチポイント接続に対応しており、2台のデバイスをシームレスに切り替え可能",
-      "Google Fast Pair対応でAndroid端末との接続が非常にスムーズ",
-      "イヤホン単体で長時間再生が可能（ケース込み最大36時間）",
-      "専用アプリでイコライザー調整やタッチ操作のカスタマイズが可能"
+      "最大42dBの強力なハイブリッドアクティブノイズキャンセリングを搭載",
+      "12.4mmのチタニウム製大型ドライバーによる高音質とカスタムEQ対応",
+      "最大36時間の長寿命バッテリーと10分で2時間再生できる急速充電",
+      "Google Fast Pairやマルチポイント接続に対応し、デバイスの切り替えがスムーズ"
     ],
     "negativePoints": [
-      "高音域の解像度が高級機に比べるとやや粗い（価格相応）",
-      "ワイヤレス充電には非対応",
-      "ケースの質感がプラスチック感強めで滑りやすい",
-      "外音取り込みモード時のホワイトノイズが若干気になる場合がある"
+      "対応コーデックがSBC/AACのみ（LDAC非対応）",
+      "ワイヤレス充電には対応していない可能性がある"
     ],
     "useCases": [
-      "毎日の通勤電車での騒音低減",
-      "カフェでの作業用耳栓代わり",
-      "ジョギングや軽い運動（IP54防滴相当と推測）",
-      "学生の初めてのノイズキャンセリングイヤホンとして"
+      "騒がしい電車やカフェでの作業時にノイズキャンセリングを活用する",
+      "パソコンとスマートフォンの両方に接続して仕事とプライベートをシームレスに切り替える",
+      "長時間の移動時にバッテリーを気にせず音楽を楽しむ"
     ],
-    "userStories": [
-      {
-        "userType": "大学生",
-        "scenario": "通学と図書館での勉強",
-        "experience": "これまで1万円以上のイヤホンを使っていましたが、紛失してしまい繋ぎとして購入しました。正直、ノイキャンの効きに驚きました。電車の走行音がスッと消えて、勉強に集中できます。音質も低音がしっかりしていてEDMを聴くのに最高です。安っぽい見た目以外は文句なしです。（推測）",
-        "sentiment": "positive"
-      },
-      {
-        "userType": "30代会社員",
-        "scenario": "リモートワークと出張",
-        "experience": "PCでWeb会議をしつつ、スマホの着信も待ちたいのでマルチポイント対応の安い機種を探していました。接続の切り替えがスムーズで、通話品質もAIノイズリダクションのおかげかクリアだと相手に言われます。バッテリー持ちも良く、出張の移動中も充電切れの心配がありません。（推測）",
-        "sentiment": "positive"
-      },
-      {
-        "userType": "ガジェット好き",
-        "scenario": "サブ機としての運用",
-        "experience": "メインはソニーを使っていますが、寝ホンやラフに使う用として購入。3,000円でここまでできるのかとXiaomiの技術力に感心しました。アプリのEQで「音声増幅」を選ぶとボーカルが聞きやすくなります。ただ、タッチ操作が敏感すぎて枕に触れると反応してしまうのが難点。（推測）",
-        "sentiment": "mixed"
-      }
-    ],
-    "userImpression": "「価格破壊」という言葉が最も似合う製品です。音質や質感に妥協は見られるものの、ノイズキャンセリング性能と機能性（マルチポイント、Fast Pair）においては価格以上の価値を提供しており、多くのユーザーが満足しています。",
+    "userStories": [],
+    "userImpression": "低価格帯ながら強力なノイズキャンセリング機能と長寿命バッテリーを備えており、マルチポイント接続など日常使いに便利な機能が充実しているコストパフォーマンスの高い製品という印象です。",
     "sources": [
       {
-        "name": "Amazon製品ページ詳細情報",
+        "id": "src-1",
+        "name": "Amazon商品ページ",
         "url": "https://www.amazon.co.jp/dp/B0FRSCXWSV",
-        "credibility": "High"
-      },
-      {
-        "name": "Xiaomi公式スペック情報（Redmi Budsシリーズ傾向分析）",
-        "url": null,
-        "credibility": "Medium"
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-01-15",
+        "author": "Xiaomi公式",
+        "conflictOfInterest": "none",
+        "notes": "製品仕様、機能、価格(3480円)を確認。"
       }
     ],
-    "lastInvestigated": "2026-02-19",
+    "claims": [
+      {
+        "claim": "最大42dBのアクティブノイズキャンセリングに対応",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": ["src-1"],
+        "crossChecked": false,
+        "notes": "Amazon商品ページの公式説明より"
+      },
+      {
+        "claim": "最大36時間の再生が可能",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": ["src-1"],
+        "crossChecked": false,
+        "notes": "Amazon商品ページの公式説明より"
+      }
+    ],
+    "lastInvestigated": "2026-06-24",
     "competitiveAnalysis": [
       {
-        "name": "QCY T13 ANC",
-        "asin": "B0BYJ5Z8J2",
-        "priceComparison": "価格帯はほぼ同じ（2,000円台後半〜3,000円台）。直接のライバル。",
+        "name": "Anker Soundcore P31i",
+        "asin": "B0FNRS5WB2",
+        "priceComparison": "対象商品より高価（5990円）。バッテリー持続時間が長く、ブランドの信頼性がある。",
         "featureComparison": [
-          "QCYは10mmドライバーに対し、Redmi Buds 8 Liteは12.4mmと大型",
-          "両者ともANC対応だが、Redmiの方がカタログスペック上の低減値が高い（42dB vs 非公表/28dB程度）",
-          "RedmiはGoogle Fast Pairに対応"
+          "共通点：アクティブノイズキャンセリング搭載、マルチポイント接続対応",
+          "相違点：P31iは最大50時間再生に対応しているが、REDMI Buds 8 Liteは最大36時間"
         ],
         "differentiators": [
-          "Redmi Buds 8 Liteの方がドライバーサイズが大きく、低音再生に有利",
-          "Xiaomiエコシステム（スマホ）との連携機能"
+          "Xiaomi REDMI Buds 8 Liteの利点：価格が安く、コストパフォーマンスに優れる",
+          "Anker Soundcore P31iの利点：バッテリーの持続時間が長く、より長時間の使用に適している"
         ]
       },
       {
-        "name": "Anker Soundcore P40i",
-        "asin": "B0CP4RQZ3L",
-        "priceComparison": "Ankerは約8,000円と倍以上の価格。",
+        "name": "SOUNDPEATS C30",
+        "asin": "B0FWC7ZSTK",
+        "priceComparison": "対象商品よりやや高価（4980円）。より強力なANCやLDAC対応などの高機能を持つ。",
         "featureComparison": [
-          "Ankerはウルトラノイズキャンセリング2.0搭載で静寂性は上",
-          "Ankerはスマホスタンド付きケースなどユニークな機能あり",
-          "再生時間はAnkerが最大60時間と長い"
+          "共通点：ノイズキャンセリング搭載、マルチポイント対応",
+          "相違点：C30はLDAC＆Hi-Res対応で-52dBのANCを持つ一方、対象商品はAAC/SBC対応で-42dBのANC"
         ],
         "differentiators": [
-          "圧倒的な価格差（Redmiは半額以下）",
-          "Ankerは保証期間が長くサポートが手厚い"
+          "Xiaomi REDMI Buds 8 Liteの利点：価格がより手頃",
+          "SOUNDPEATS C30の利点：高音質コーデック(LDAC)対応と、より強力なノイズキャンセリング機能"
         ]
       },
       {
-        "name": "EarFun Air Pro 4",
-        "asin": "B0D4Z8KJXY",
-        "priceComparison": "EarFunは約1万円弱。クラスが一つ上。",
+        "name": "ソニー WF-C510",
+        "asin": "B0DDKHF9XY",
+        "priceComparison": "対象商品より高価（8600円）。ソニー独自の高音質と軽量・小型デザインが特徴。",
         "featureComparison": [
-          "EarFunはLDAC対応でハイレゾ再生が可能",
-          "ANC性能も50dBクラスと更に強力",
-          "ワイヤレス充電対応"
+          "共通点：マルチポイント対応",
+          "相違点：対象商品はノイズキャンセリングを搭載しているが、WF-C510は非搭載（外音取り込みのみ対応）"
         ],
         "differentiators": [
-          "Redmiは「安さ」と「必要十分な機能」に特化",
-          "音質と機能の全部入りを求めるならEarFun"
+          "Xiaomi REDMI Buds 8 Liteの利点：ノイズキャンセリング機能が搭載されており、価格も安い",
+          "ソニー WF-C510の利点：ソニーブランドの音質への信頼性と、4.6gの小型軽量デザイン"
         ]
       },
       {
-        "name": "SoundPEATS Air4 Pro",
-        "asin": "B0DWDWL25T",
-        "priceComparison": "SoundPEATSは約8,500円。価格差あり。",
+        "name": "Xiaomi Redmi buds 6 Play",
+        "asin": "B0DBHRWRKC",
+        "priceComparison": "対象商品より安価（1596円）。同ブランドのエントリーモデル。",
         "featureComparison": [
-          "SoundPEATSはaptX Lossless対応など音質重視",
-          "インナーイヤー型に近い装着感（モデルによるがAir4 Proはカナル）"
+          "共通点：Xiaomi製で、最大36時間の再生に対応し、Google Fast Pairに対応",
+          "相違点：対象商品はアクティブノイズキャンセリングとマルチポイント接続に対応しているが、本製品は非対応"
         ],
         "differentiators": [
-          "音質へのこだわりならSoundPEATS",
-          "コスパなら圧倒的にRedmi"
+          "Xiaomi REDMI Buds 8 Liteの利点：アクティブノイズキャンセリングやマルチポイント接続などの上位機能が搭載されている",
+          "Xiaomi Redmi buds 6 Playの利点：非常に安価で、最低限の機能で十分なユーザーに適している"
+        ]
+      },
+      {
+        "name": "EDIFIER X1 Lite",
+        "asin": "B0F137R99Q",
+        "priceComparison": "対象商品よりやや高価（4580円）。低遅延ゲームモードが特徴。",
+        "featureComparison": [
+          "共通点：Bluetooth 5.4対応",
+          "相違点：対象商品は音楽視聴向けのアクティブノイズキャンセリングを搭載しているが、本製品は通話時ノイズキャンセリングのみ搭載し、低遅延ゲームモードを備える"
+        ],
+        "differentiators": [
+          "Xiaomi REDMI Buds 8 Liteの利点：アクティブノイズキャンセリング機能があり、音楽に集中しやすい。価格も安い",
+          "EDIFIER X1 Liteの利点：60msの超低遅延ゲームモードを搭載しており、ゲーム用途に適している"
+        ]
+      },
+      {
+        "name": "OPPO Enco Buds3 Pro",
+        "asin": "B0F9FNKY3K",
+        "priceComparison": "対象商品より安価（2980円）。同価格帯の競合モデル。",
+        "featureComparison": [
+          "共通点：スマートフォンメーカー製のエントリー向け完全ワイヤレスイヤホン",
+          "相違点：対象商品はアクティブノイズキャンセリングやマルチポイントを搭載している"
+        ],
+        "differentiators": [
+          "Xiaomi REDMI Buds 8 Liteの利点：低価格ながらアクティブノイズキャンセリングやマルチポイント接続を備えている",
+          "OPPO Enco Buds3 Proの利点：価格がより安い"
         ]
       }
     ],
     "recommendation": {
       "targetUsers": [
-        "初めてノイズキャンセリングイヤホンを試してみたい人",
-        "学生や予算を抑えたいユーザー",
-        "通勤・通学用のサブ機を探している人",
-        "Androidスマートフォン（特にXiaomi端末）ユーザー"
+        "低価格でノイズキャンセリング機能を求める方",
+        "複数のデバイス（スマホとPCなど）を同時に接続したい方",
+        "長時間のバッテリー駆動を重視する方"
       ],
       "pros": [
-        "3,000円台で買える強力なノイズキャンセリング",
-        "マルチポイント接続で2台同時待ち受けが可能",
-        "Google Fast Pairによる簡単接続"
+        "3000円台という低価格でアクティブノイズキャンセリングとマルチポイント接続に対応",
+        "最大36時間の長いバッテリー持続時間",
+        "12.4mmの大型ドライバー搭載によるパワフルな音質"
       ],
       "cons": [
-        "ワイヤレス充電ができない",
-        "高音質コーデック（LDAC/aptX）には非対応",
-        "タッチ操作のカスタマイズ性が限定的"
+        "ハイレゾ相当の高音質コーデック（LDACやaptX）には非対応"
       ],
-      "score": 92,
-      "scoreRationale": "[基本点: 70]\n[加点: +15] コストパフォーマンス (3,000円台で42dB ANC、マルチポイント搭載は市場破壊レベル)\n[加点: +5] 性能・機能 (Google Fast Pair, 12.4mmドライバーなど価格以上のスペック)\n[減点: -3] 性能・機能 (LDAC/aptX非対応、ワイヤレス充電非対応)\n[加点: +3] ユーザー満足度 (Xiaomi製品の安定した品質と信頼性)\n[加点: +2] 独自の強み (Xiaomiエコシステムとの連携)\n[合計: 92]"
+      "score": 90,
+      "scoreRationale": "[基本点: 70]\n[加点: +10] (3000円台でANCとマルチポイント対応という非常に高いコストパフォーマンス)\n[加点: +5] (最大36時間のロングバッテリーと急速充電の利便性)\n[加点: +5] (Google Fast Pairなどの使い勝手の良い機能)\n[合計: 90]"
     },
     "technicalSpecs": {
-      "driver": "12.4mm チタニウム製ダイナミックドライバー",
-      "codec": "AAC, SBC",
-      "battery": "イヤホン単体不明 / ケース込み最大36時間 (10分の充電で2時間再生)",
-      "connectivity": ["Bluetooth 5.4", "Google Fast Pair", "マルチポイント接続"],
-      "noiseCancel": "最大42dB アクティブノイズキャンセリング (AI通話ノイズリダクション)",
-      "dimensions": { "weight": "小型軽量 (詳細は実機計測必要だが片耳4g程度と推測)" },
-      "other": ["カスタムEQモード", "デュアルマイク", "低遅延モード"]
+      "dimensions": {
+        "height": "23.5mm",
+        "width": "21.4mm",
+        "depth": "31.0mm"
+      },
+      "weight": "39g",
+      "capacity": "充電ケース併用で最大36時間",
+      "material": "不明",
+      "origin": "不明",
+      "other": [
+        "カラー: ブラック",
+        "ドライバー: 12.4mmチタニウム製ダイナミックドライバー",
+        "ノイズキャンセリング: 最大42dBハイブリッドANC",
+        "対応コーデック: SBC/AAC",
+        "Bluetoothバージョン: 5.4",
+        "機能: Google Fast Pair対応、マルチポイント接続、カスタムEQモード、通話AIノイズリダクション",
+        "急速充電: 10分の充電で最大2時間再生"
+      ]
     }
   }
 }
