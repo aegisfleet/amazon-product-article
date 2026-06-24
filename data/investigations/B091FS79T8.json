@@ -28,56 +28,100 @@
       "予算を抑えたい場合のテレビ録画用",
       "ゲーム機のサブストレージ"
     ],
-    "userStories": [
-      {
-        "userType": "学生",
-        "scenario": "課題データのバックアップ",
-        "experience": "（推測）PCの容量が足りなくなったため購入。USBメモリより大容量で安価な点が魅力。速度はそこそこだが、写真や文書の保存には十分使える。",
-        "sentiment": "positive"
-      },
-      {
-        "userType": "ゲーマー",
-        "scenario": "PS4の容量拡張",
-        "experience": "（推測）PS4のゲームをインストールするために使用。ロード時間は内蔵HDDと変わらないが、安く容量を増やせたので満足している。",
-        "sentiment": "positive"
-      },
-      {
-        "userType": "一般ユーザー",
-        "scenario": "テレビ録画",
-        "experience": "（推測）テレビの録画用として購入。たまに認識しないことがあるという噂を聞いて不安だったが、今のところ問題なく録画できている。",
-        "sentiment": "mixed"
-      }
-    ],
+    "userStories": [],
     "userImpression": "コストパフォーマンスを最優先するユーザーに適した製品。ブランド知名度は低いが、基本的な機能は備えており、安価にストレージを追加したい場合の選択肢となる。ただし、重要なデータの長期保存には有名メーカー製やSSDを検討すべき。",
     "sources": [
       {
+        "id": "src-amazon",
         "name": "Amazon商品ページ",
         "url": "https://www.amazon.co.jp/dp/B091FS79T8",
-        "credibility": "高"
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-06-25",
+        "author": "Amazon",
+        "conflictOfInterest": "possible",
+        "notes": "商品の基本スペック、価格、機能を確認"
       }
     ],
-    "lastInvestigated": "2026-02-20",
+    "lastInvestigated": "2026-06-25",
     "competitiveAnalysis": [
       {
-        "name": "I-O DATA ポータブルHDD 500GB HDPC-UT500KE",
-        "asin": "B00S8RXZLI",
-        "priceComparison": "約3,000円とUnionSineよりさらに安い（旧モデル特価の可能性あり）。",
-        "featureComparison": ["信頼性の高い日本製メーカー", "USB 3.0対応", "コンパクトサイズ"],
-        "differentiators": ["圧倒的な安さ", "メーカーの信頼性"]
+        "name": "Tyohlesa 外付けハードディスク 500GB",
+        "asin": "B0GVMWTWG4",
+        "priceComparison": "対象商品よりも安価だが、ブランド知名度は同等レベル。",
+        "featureComparison": [
+          "共通点：USB 3.0対応、500GB容量、PC/Mac/PS4/TV録画対応",
+          "相違点：Tyohlesaは収納袋が付属している。"
+        ],
+        "differentiators": [
+          "UnionSine 500GBの利点：特になし（価格では劣る）",
+          "Tyohlesa 500GBの利点：価格がより安く、収納袋が付属している点"
+        ]
       },
       {
-        "name": "BUFFALO ポータブルSSD 480GB SSD-PG480U3-B/NL",
-        "asin": "B07S9X55BX",
-        "priceComparison": "約8,100円とUnionSineの約2倍。",
-        "featureComparison": ["SSDなので高速", "耐衝撃性に優れる", "日本製メーカー"],
-        "differentiators": ["速度", "耐久性", "静音性"]
+        "name": "バッファロー BUFFALO USB3.1(Gen.1)対応 ポータブルHDD 500GB HD-PCG500U3-WA",
+        "asin": "B07D75QTCN",
+        "priceComparison": "対象商品より大幅に高価だが、国内有名メーカーの信頼性がある。",
+        "featureComparison": [
+          "共通点：500GB容量、PC/Mac対応",
+          "相違点：バッファローはUSB3.1(Gen.1)対応を明記。国内メーカーによる手厚いサポートや専用ソフトウェアの提供がある。"
+        ],
+        "differentiators": [
+          "UnionSine 500GBの利点：圧倒的に安価である点",
+          "バッファロー 500GBの利点：国内メーカーの信頼性、サポート体制、保証"
+        ]
       },
       {
-        "name": "HCMA 外付けHDD 500GB",
-        "asin": "B0FP9T7KKK",
-        "priceComparison": "約5,000円とUnionSineより若干高い。",
-        "featureComparison": ["UnionSineとほぼ同等のスペック", "中華系ブランド"],
-        "differentiators": ["特になし（価格でUnionSineが有利）"]
+        "name": "Cirago (AIOLO INNOVATION) 外付けHDD 500GB A3-500G-BLK-AJ",
+        "asin": "B0CC8NVG2T",
+        "priceComparison": "対象商品よりも安価。",
+        "featureComparison": [
+          "共通点：500GB容量、PC/Mac/PS4/TV録画対応",
+          "相違点：CiragoはUSB3.2対応を謳っており、3年保証を掲げている。"
+        ],
+        "differentiators": [
+          "UnionSine 500GBの利点：特になし（価格では劣る）",
+          "Cirago 500GBの利点：価格が安く、3年保証がついている点、USB3.2対応表記"
+        ]
+      },
+      {
+        "name": "Feruxial 外付けハードディスク 500GB",
+        "asin": "B0H1KR4WQP",
+        "priceComparison": "対象商品よりも少し安価。",
+        "featureComparison": [
+          "共通点：USB 3.0対応、500GB容量、PC/Mac/PS4/TV録画対応",
+          "相違点：Feruxialは収納袋が付属している。"
+        ],
+        "differentiators": [
+          "UnionSine 500GBの利点：特になし",
+          "Feruxial 500GBの利点：価格が安く、収納袋が付属している点"
+        ]
+      },
+      {
+        "name": "【整備済み品】NiceFuse ポータブルハードディスク 500GB",
+        "asin": "B0CMGVDGN3",
+        "priceComparison": "対象商品の半額近い安さだが、整備済み品（中古・リフレッシュ品）である。",
+        "featureComparison": [
+          "共通点：500GB容量、USB3.0対応",
+          "相違点：対象商品は新品、NiceFuseは整備済み品。"
+        ],
+        "differentiators": [
+          "UnionSine 500GBの利点：新品であることの安心感",
+          "NiceFuse 500GBの利点：とにかく安く済む点（ただし整備済み品）"
+        ]
+      },
+      {
+        "name": "VOKTECHGY 外付けHDD 500GB",
+        "asin": "B0DYJT6F51",
+        "priceComparison": "対象商品より安価。",
+        "featureComparison": [
+          "共通点：USB 3.0対応、PC/TV/Mac/PS4/XBox互換",
+          "相違点：自動バックアップ機能を謳っている。"
+        ],
+        "differentiators": [
+          "UnionSine 500GBの利点：特になし",
+          "VOKTECHGY 500GBの利点：より安価である点"
+        ]
       }
     ],
     "recommendation": {
@@ -96,22 +140,30 @@
         "耐衝撃性が低い",
         "ブランドの信頼性が不透明"
       ],
-      "score": 65,
-      "scoreRationale": "[基本点: 70]\n[加点: +5] (新品HDDとしては安価な部類)\n[減点: -5] (SSD全盛の時代にHDDの速度は物足りない)\n[減点: -5] (ブランド知名度が低く、信頼性に不安が残る)\n[合計: 65]"
+      "score": 60,
+      "scoreRationale": "[基本点: 70]\n[加点: +5] (5,000円台という安価な価格設定によるコストパフォーマンス)\n[加点: +5] (幅広いデバイス互換性とプラグアンドプレイの利便性)\n[減点: -10] (同価格帯、あるいはより安価な競合他社製品が多数存在し、価格面での優位性が薄い)\n[減点: -5] (SSD全盛の時代におけるHDD特有の転送速度の限界)\n[減点: -5] (無名ブランドゆえの信頼性や長期耐久性への懸念)\n[合計: 60]"
     },
     "technicalSpecs": {
       "capacity": "500GB",
       "interface": "USB 3.0 / USB 2.0",
       "dimensions": {
-        "height": "1.3cm",
-        "width": "8.0cm",
-        "depth": "11.6cm",
-        "weight": "約220g"
+        "height": "12.7mm",
+        "width": "80mm",
+        "depth": "116mm"
       },
-      "compatibility": ["Windows", "Mac", "Linux", "Android", "PS4", "Xbox", "TV"],
+      "compatibility": [
+        "Windows",
+        "Mac",
+        "Linux",
+        "Android",
+        "PS4",
+        "Xbox",
+        "TV"
+      ],
       "speed": "最大書き込み速度 103MB/s（理論値）",
       "material": "アルミニウム混信防止層、ABSプラスチック",
-      "rpm": "不明（通常5400rpm）"
+      "rpm": "不明（通常5400rpm）",
+      "weight": "約220g"
     }
   }
 }
