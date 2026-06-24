@@ -700,5 +700,14 @@
       "type": "brand",
       "value": "エバーカラー"
     }
+  },
+  "ヒツジのいらない枕": {
+    "slug": "hitsuji-no-iranai-makura",
+    "icon": "🐏",
+    "description": "ヒツジのいらない枕の商品一覧",
+    "matcher": {
+      "type": "regex",
+      "value": "ヒツジのいらない枕"
+    }
   }
 }
