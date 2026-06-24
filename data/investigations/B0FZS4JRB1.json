@@ -1,0 +1,179 @@
+{
+  "analysis": {
+    "productName": "Santek EZ Sign NFC 電子ペーパーディスプレイ 4色表示 2.9インチ ブラック",
+    "parentAsin": "B0FZTT6B34",
+    "productDescription": "NFC対応のスマートフォンをかざすだけで表示内容を更新できる、電池不要の2.9インチ電子ペーパーディスプレイです。4色（白・黒・赤・黄）表示に対応し、IP65の防滴防塵性能を備えています。",
+    "productUsage": [
+      "オフィスでの卓上ネームプレートや会議室の表示",
+      "店舗や飲食店でのメニュー表、プライスカード",
+      "社員証やイベントでの予約案内、バックヤードの棚表示"
+    ],
+    "positivePoints": [
+      "NFC給電により電池交換や充電が不要で、ランニングコストを削減できる",
+      "厚さ3.4mm、重さ約30gと非常に薄型・軽量で設置や持ち運びが容易",
+      "IP65の防滴防塵性能により、水回りや粉塵の多い環境でも使用可能",
+      "白・黒・赤・黄の4色表示に対応し、視認性が高い"
+    ],
+    "negativePoints": [
+      "表示の書き換えに約30秒かかり、頻繁な即時更新には不向き",
+      "PCからの更新には別途市販のNFCリーダーが必要",
+      "表面にガラスを使用しているため、強い衝撃を与えると破損の恐れがある"
+    ],
+    "useCases": [
+      "店舗の価格表示をデジタル化し、書き換え作業を効率化",
+      "フリーアドレスのオフィスで、一時的な座席のネームプレートとして活用",
+      "倉庫の棚札として、ホコリや水滴が飛ぶ環境でも安全に表示"
+    ],
+    "userStories": [],
+    "userImpression": "電池不要でスマホから手軽に表示を更新できる点が評価されています。特に4色表示による視認性の高さや、防滴防塵対応により多様な環境で使える点が利便性を高めています。一方で、書き換えに約30秒かかるため、大量のラベルを一度に更新する用途よりは、定期的な表示変更に向いているとの印象があります。",
+    "sources": [
+      {
+        "id": "src-1",
+        "name": "Amazon商品ページ",
+        "url": "https://www.amazon.co.jp/dp/B0FZS4JRB1",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-06-24",
+        "author": "Santek",
+        "conflictOfInterest": "disclosed",
+        "notes": "商品仕様、特徴、価格の確認"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "NFC給電による電池不要駆動",
+        "category": "durability",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "crossChecked": false,
+        "notes": "公式情報より確認"
+      },
+      {
+        "claim": "IP65防滴防塵性能",
+        "category": "safety",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "crossChecked": false,
+        "notes": "公式情報より確認"
+      }
+    ],
+    "lastInvestigated": "2026-06-24",
+    "competitiveAnalysis": [
+      {
+        "name": "[Santek] EZ Sign NFC 電子ペーパーディスプレイ 2色表示 2.9インチ",
+        "asin": "B0FZV5FTBW",
+        "priceComparison": "同価格",
+        "featureComparison": [
+          "共通点：画面サイズ(2.9インチ)、電池不要(NFC給電)、薄型・軽量設計、IP65防滴防塵",
+          "相違点：対象商品は4色(白・黒・赤・黄)表示で書き換えに約30秒。本競合品は2色(白・黒)表示で書き換えが約2〜3秒と高速"
+        ],
+        "differentiators": [
+          "Santek EZ Sign 4色表示(本品)の利点：4色による高い表現力と視認性。注意喚起や目立たせたい情報の表示に最適",
+          "Santek EZ Sign 2色表示の利点：書き換え速度が約2〜3秒と圧倒的に速く、頻繁な更新が必要な業務ラベルやQRコード表示に適している"
+        ]
+      },
+      {
+        "name": "Hibeauty NFC電子ペーパー名札 3.7インチ",
+        "asin": "B0H1C1Q5V9",
+        "priceComparison": "対象商品より高い",
+        "featureComparison": [
+          "共通点：NFC給電で電池不要、防滴対応、iOSアプリ連携",
+          "相違点：対象商品は2.9インチで4色表示。本競合品は3.7インチと画面が大きく、書き換え時間が10秒以内"
+        ],
+        "differentiators": [
+          "Santek EZ Sign 4色表示(本品)の利点：4色表示による高い視認性と、よりコンパクトなサイズ感。価格が手頃",
+          "Hibeauty NFC電子ペーパー名札の利点：画面サイズが大きく、一度により多くの情報を表示可能"
+        ]
+      },
+      {
+        "name": "Quote/0 電子ペーパー",
+        "asin": "B0GBVMJCQY",
+        "priceComparison": "対象商品より高い",
+        "featureComparison": [
+          "共通点：電子ペーパー採用、NFCタッチ対応",
+          "相違点：対象商品はNFC給電で完全に電池不要。本競合品はWi-Fi自動更新や遠隔伝言、RSS対応などの多機能を備える"
+        ],
+        "differentiators": [
+          "Santek EZ Sign 4色表示(本品)の利点：電池完全不要でメンテナンスフリー。名札やPOPとしての単一表示用途に特化",
+          "Quote/0 電子ペーパーの利点：Wi-Fi連携による自動情報更新や天気・ToDo管理など、スマートディスプレイとしての活用が可能"
+        ]
+      },
+      {
+        "name": "［ Santek ］ EZ Sign NFC 電子ペーパー 4色表示 4.2インチ シルバー",
+        "asin": "B0FZRYR47J",
+        "priceComparison": "対象商品より高い",
+        "featureComparison": [
+          "共通点：NFC給電(電池不要)、4色表示(白・黒・赤・黄)、IP65防滴防塵",
+          "相違点：対象商品は2.9インチ。本競合品は4.2インチと一回り大きい"
+        ],
+        "differentiators": [
+          "Santek EZ Sign 2.9インチ(本品)の利点：より小型・軽量で、名札や小さな棚札として設置スペースを選ばない。価格が手頃",
+          "Santek EZ Sign 4.2インチの利点：画面が大きく、メニュー表や詳細な情報掲示など、視認面積が必要な用途に適している"
+        ]
+      },
+      {
+        "name": "[Santek] EZ Sign NFC 電子ペーパーディスプレイ 2色表示 4.2インチ",
+        "asin": "B0FZTZJS3Z",
+        "priceComparison": "対象商品より高い",
+        "featureComparison": [
+          "共通点：NFC給電(電池不要)、IP65防滴防塵",
+          "相違点：対象商品は2.9インチ・4色表示・書き換え30秒。本競合品は4.2インチ・2色表示・書き換え2〜3秒"
+        ],
+        "differentiators": [
+          "Santek EZ Sign 4色表示 2.9インチ(本品)の利点：多彩な色で目を引く表示が可能。小型で価格が抑えられている",
+          "Santek EZ Sign 2色表示 4.2インチの利点：大画面でありながら、書き換えが高速で白黒はっきりとした情報の更新に優れる"
+        ]
+      },
+      {
+        "name": "［ Santek ］ EZ Sign NFC 電子ペーパー 4色表示 2.9インチ シルバー",
+        "asin": "B0FZS2G6XQ",
+        "priceComparison": "同価格",
+        "featureComparison": [
+          "共通点：機能・スペック・価格すべて同一",
+          "相違点：本体カラーが対象商品はブラック、本競合品はシルバー"
+        ],
+        "differentiators": [
+          "Santek EZ Sign ブラック(本品)の利点：黒いベゼルで画面のコントラストが引き締まり、目立たせたくない環境に馴染む",
+          "Santek EZ Sign シルバーの利点：明るい色合いで清潔感があり、オフィスやクリニックなどの環境に合わせやすい"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "店舗やオフィスで紙のラベル・名札の印刷手間を省きたい方",
+        "電源や配線が確保できない場所に情報表示デバイスを設置したい方",
+        "水回りや粉塵が舞う環境で電子ラベルを使いたい方"
+      ],
+      "pros": [
+        "NFC給電で電池交換・充電が一切不要",
+        "4色表示により重要情報の視認性が高い",
+        "IP65の防滴防塵で設置場所を選ばない"
+      ],
+      "cons": [
+        "画面の書き換えに約30秒かかる",
+        "スマホ(NFC対応)または専用リーダーがないと更新できない"
+      ],
+      "score": 75,
+      "scoreRationale": "[基本点: 70]\n[加点: +5] 電池交換・充電不要という極めて高い利便性とランニングコスト削減効果\n[加点: +5] IP65防滴防塵設計により、様々な過酷な環境での使用を可能にしている点\n[加点: +3] 4色表示対応で、白黒だけの電子ペーパーよりも高い表現力を持つ\n[減点: -5] 1回の表示書き換えに約30秒かかり、即時性や大量更新には不向き\n[減点: -3] 表面がガラス製であり、落下などの強い衝撃に弱い点\n[合計: 75]"
+    },
+    "technicalSpecs": {
+      "dimensions": {
+        "height": "10.0mm",
+        "width": "80.0mm",
+        "depth": "93.0mm"
+      },
+      "weight": "約30g",
+      "displaySize": "2.9インチ",
+      "displayColors": "4色（白・黒・赤・黄）",
+      "powerSupply": "NFC給電（電池不要）",
+      "durability": "IP65防滴防塵",
+      "updateTime": "約30秒",
+      "compatibleOS": "iOS, Android, Windows",
+      "material": "表面ガラス仕様"
+    }
+  }
+}
