@@ -88,13 +88,9 @@
 {{- $trackingCategoryMeta = .Params.category -}}
 {{- end -}}
 {{- $priceBucketMeta := partial "utils-price-bucket.html" .Params.price -}}
-<meta name="page-type" content="product"
-  data-asin="{{ .Params.asin }}"
-  data-product-title="{{ .Title }}"
-  data-category="{{ $trackingCategoryMeta }}"
-  data-price="{{ .Params.price }}"
-  data-price-bucket="{{ $priceBucketMeta }}"
-  data-score="{{ .Params.score | default 0 }}">
+<meta name="page-type" content="product" data-asin="{{ .Params.asin }}" data-product-title="{{ .Title }}"
+  data-category="{{ $trackingCategoryMeta }}" data-price="{{ .Params.price }}"
+  data-price-bucket="{{ $priceBucketMeta }}" data-score="{{ .Params.score | default 0 }}">
 {{- end -}}
 
 <!-- Structured Data (JSON-LD) -->
