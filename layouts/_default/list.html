@@ -90,7 +90,7 @@
         <span id="product-count" class="product-count"></span>
         <div style="display: flex; align-items: center; gap: var(--spacing-md); flex-wrap: wrap;">
             <div class="search-bar-container" style="position: relative; flex-grow: 1; min-width: 250px;">
-                <input type="text" id="keyword-search" placeholder="商品名、スペックで検索..."
+                <input type="text" id="keyword-search" placeholder="商品名、スペックで検索..." aria-label="商品名・スペックで絞り込み検索"
                     style="width: 100%; padding: 0.5rem 1rem 0.5rem 2.5rem; border: 1px solid var(--color-border); border-radius: 8px; background-color: var(--color-bg-card); color: var(--color-text-primary); font-family: inherit; font-size: 0.875rem;">
                 <span
                     style="position: absolute; left: 0.875rem; top: 50%; transform: translateY(-50%); color: var(--color-text-secondary); pointer-events: none;"
@@ -265,12 +265,11 @@
                     <div class="card-footer-actions">
                         {{- if .Params.affiliate_url -}}
                         <a href="{{ .Params.affiliate_url }}" class="btn-amazon-small" target="_blank"
-                            rel="noopener noreferrer"
-                            data-track-product="1" data-asin="{{ .Params.asin }}"
+                            rel="noopener noreferrer" data-track-product="1" data-asin="{{ .Params.asin }}"
                             data-category="{{ $trackingCategory }}"
                             data-price-bucket="{{ partial `utils-price-bucket.html` .Params.price }}"
-                            data-price="{{ .Params.price }}"
-                            data-score="{{ .Params.score | default 0 }}"><span aria-hidden="true">🛒</span> Amazonで見る</a>
+                            data-price="{{ .Params.price }}" data-score="{{ .Params.score | default 0 }}"><span
+                                aria-hidden="true">🛒</span> Amazonで見る</a>
                         {{- else -}}
                         <a href="{{ .RelPermalink }}" class="read-more">レビューを読む →</a>
                         {{- end -}}
