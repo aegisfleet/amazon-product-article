@@ -1,0 +1,102 @@
+{
+  "analysis": {
+    "productName": "充電の達人 MagSafe対応 薄型モバイルバッテリー 8000mAh",
+    "parentAsin": "B0FPF4LLN4",
+    "productDescription": "約8.1mmの極薄設計を実現したMagSafe対応8000mAhの小型モバイルバッテリー。最大20W出力、3台同時充電、パススルー機能など実用性に優れる安価な製品。",
+    "productUsage": [
+      "iPhone等のMagSafe対応機器のワイヤレス充電",
+      "旅行や出張、日常使いでの持ち運び",
+      "複数デバイスの同時充電（最大3台）"
+    ],
+    "positivePoints": [
+      "約8.1mmという業界トップクラスの極薄設計",
+      "MagSafe対応かつ8000mAhの実用的容量で2,000円台という圧倒的な安さ",
+      "パススルー充電や最大20Wの有線充電にも対応"
+    ],
+    "negativePoints": [
+      "無名メーカー(充電の達人)による販売で、長期的な品質やサポートに懸念がある",
+      "「2026極薄設計」など不自然な誇張表現があり、製品への不信感を抱かせる"
+    ],
+    "useCases": [
+      "荷物を最小限に抑えたい外出時や通勤通学",
+      "充電しながらスマートフォンを操作したい時",
+      "安価にMagSafe充電環境を整えたい場合"
+    ],
+    "userStories": [],
+    "userImpression": "薄型で安価に手に入る実用的なモバイルバッテリーだが、ブランドの信頼性が低く、安かろう悪かろうになるリスクをはらんでいる。",
+    "sources": [
+      {
+        "id": "src-1",
+        "name": "Amazon商品ページ B0FPF4LLN4",
+        "url": "https://www.amazon.co.jp/dp/B0FPF4LLN4",
+        "tier": "medium",
+        "evidenceType": "primary",
+        "publishedAt": "2026-06-25",
+        "author": "充電の達人",
+        "conflictOfInterest": "possible",
+        "notes": "スペック、価格(2,952円)、特徴等の確認"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "厚さ約8.1mmの極薄設計",
+        "category": "durability",
+        "confidence": "low",
+        "supportingSourceIds": ["src-1"],
+        "crossChecked": false,
+        "notes": "メーカー公称値だが、信頼性に欠ける"
+      },
+      {
+        "claim": "最大20W出力と3台同時充電に対応",
+        "category": "quality",
+        "confidence": "low",
+        "supportingSourceIds": ["src-1"],
+        "crossChecked": false,
+        "notes": "メーカー公称値"
+      }
+    ],
+    "lastInvestigated": "2026-06-25",
+    "competitiveAnalysis": [
+      {
+        "name": "Anker Nano Power Bank (5000mAh)",
+        "asin": "B0F6LBDFC7",
+        "priceComparison": "対象商品はAnker製品の半額以下であり、価格優位性は非常に高い。",
+        "featureComparison": [
+          "共通点：MagSafe対応のワイヤレス充電、薄型設計のモバイルバッテリー。",
+          "相違点：対象商品は8000mAhだが、Ankerは5000mAh。一方、AnkerはQi2認証を取得しておりブランドの信頼性が高い。"
+        ],
+        "differentiators": [
+          "充電の達人 MagSafe対応 薄型モバイルバッテリーの利点：圧倒的な価格の安さと容量の大きさ。",
+          "Anker Nano Power Bankの利点：高いブランド信頼性、安全性、充実したサポート体制とQi2認証。"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "とにかく安くMagSafe対応バッテリーを手に入れたい人",
+        "薄さや軽さを最優先し、一時的な利用と割り切れる人"
+      ],
+      "pros": [
+        "2,000円台という破格の安さ",
+        "約8.1mmの薄型設計で持ち運びに便利"
+      ],
+      "cons": [
+        "メーカーの信頼性が低く、安全性に懸念がある",
+        "初期不良や短期間での故障リスクが考えられる"
+      ],
+      "score": 80,
+      "scoreRationale": "[基本点: 70]\n[加点: +10] (約8.1mmの極薄設計と8000mAhの容量のバランス)\n[加点: +10] (MagSafe対応で2,000円台という圧倒的な価格の安さ)\n[減点: -10] (ブランドの信頼性が低く、「2026極薄設計」等の誇張表現による不信感)\n[合計: 80]"
+    },
+    "technicalSpecs": {
+      "dimensions": {
+        "depth": "8.1mm",
+        "height": "100mm",
+        "width": "65mm"
+      },
+      "capacity": "8000mAh",
+      "output": "最大20W (Type-C) / ワイヤレス充電",
+      "color": "ホワイト",
+      "features": ["MagSafe対応", "3台同時充電", "パススルー充電対応", "PSE認証済"]
+    }
+  }
+}
