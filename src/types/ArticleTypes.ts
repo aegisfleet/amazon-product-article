@@ -9,7 +9,6 @@ export interface ArticleMetadata {
   description: string;
   category: string;
   subcategory?: string | undefined;
-  noindex?: boolean | undefined;
   manufacturer?: string | undefined;
   tags: string[];
   publishDate: Date;
