@@ -71,8 +71,30 @@
   })();
 </script>
 <script src="{{ `js/theme.js` | relURL }}" defer></script>
+<script src="{{ `js/analytics.js` | relURL }}" defer></script>
 {{- if .Params.asin -}}
 <script src="{{ `js/carousel.js` | relURL }}" defer></script>
+{{- end -}}
+
+{{- /* 商品詳細ページ用トラッキングメタタグ */ -}}
+{{- if .Params.asin -}}
+{{- $trackingCategoryMeta := "" -}}
+{{- $termsMeta := .GetTerms "categories" -}}
+{{- if $termsMeta -}}
+{{- $trackingCategoryMeta = (index $termsMeta 0).LinkTitle -}}
+{{- else if .Params.categories -}}
+{{- $trackingCategoryMeta = index .Params.categories 0 -}}
+{{- else if .Params.category -}}
+{{- $trackingCategoryMeta = .Params.category -}}
+{{- end -}}
+{{- $priceBucketMeta := partial "utils-price-bucket.html" .Params.price -}}
+<meta name="page-type" content="product"
+  data-asin="{{ .Params.asin }}"
+  data-product-title="{{ .Title }}"
+  data-category="{{ $trackingCategoryMeta }}"
+  data-price="{{ .Params.price }}"
+  data-price-bucket="{{ $priceBucketMeta }}"
+  data-score="{{ .Params.score | default 0 }}">
 {{- end -}}
 
 <!-- Structured Data (JSON-LD) -->
