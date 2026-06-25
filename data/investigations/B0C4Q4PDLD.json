@@ -1,0 +1,173 @@
+{
+  "analysis": {
+    "productName": "富士通 LIFEBOOK A574 整備済み品 第4世代Core i7 16GB 256GB",
+    "parentAsin": "B0C4Q4PDLD",
+    "productDescription": "第4世代Intel Core i7プロセッサと16GBのメモリ、256GBのSSDを搭載した15.6インチの整備済みノートパソコンです。Windows 11とOffice 2019を標準搭載しています。",
+    "productUsage": [
+      "在宅勤務",
+      "学習用",
+      "事務処理",
+      "ウェブ閲覧"
+    ],
+    "positivePoints": [
+      "16GBの大容量メモリによるマルチタスクの快適性",
+      "テンキー搭載で数値入力が容易",
+      "Office 2019とWindows 11が初期設定済みですぐに使える"
+    ],
+    "negativePoints": [
+      "第4世代Core i7と古めのCPUのため、最新の重い処理には不向き",
+      "整備済み品（中古再生品）であるため、外観に多少の使用感がある可能性がある"
+    ],
+    "useCases": [
+      "自宅でのリモートワークやオンライン授業",
+      "Excel等のOfficeソフトを利用した書類作成"
+    ],
+    "userStories": [],
+    "userImpression": "価格を抑えつつメモリ16GBを確保しており、ウェブブラウジングやOfficeソフトの利用といった事務作業に十分な性能を備えたコストパフォーマンスの高い整備済みPCという評価です。",
+    "sources": [
+      {
+        "id": "src-amazon-b0c4q4pdld",
+        "name": "Amazon商品ページ (B0C4Q4PDLD)",
+        "url": "https://www.amazon.co.jp/dp/B0C4Q4PDLD",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-06-25",
+        "author": "HCMA (Amazon出品者)",
+        "conflictOfInterest": "possible",
+        "notes": "製品仕様、特徴、価格情報を確認"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "16GBの大容量メモリとSSD搭載で事務作業が快適",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-amazon-b0c4q4pdld"
+        ],
+        "crossChecked": false,
+        "notes": "商品仕様に記載"
+      }
+    ],
+    "lastInvestigated": "2026-06-25",
+    "competitiveAnalysis": [
+      {
+        "name": "NEC VK26/VK27 第3世代Core i7 16GB 256GB (整備済み品)",
+        "asin": "B0CBVSRTYS",
+        "priceComparison": "対象商品は第4世代CPUを搭載しているため、第3世代の本機よりも価格が高いが、その分処理性能が向上している。",
+        "featureComparison": [
+          "共通点：メモリ16GB、SSD 256GB、テンキー内蔵、Office 2019搭載、Windows 11搭載",
+          "相違点：対象商品は富士通製で第4世代Core i7、本機はNEC製で第3世代Core i7搭載"
+        ],
+        "differentiators": [
+          "対象商品の利点：より新しい第4世代CPUを搭載しており、性能面でわずかに有利",
+          "NEC VK26/VK27 第3世代の利点：価格がより安価で導入コストを抑えられる"
+        ]
+      },
+      {
+        "name": "NEC VK26/VK27 第3世代Core i7 16GB 512GB (整備済み品)",
+        "asin": "B0CBVV73CR",
+        "priceComparison": "本機の方がSSD容量が倍（512GB）でありながら対象商品より安い。対象商品は第4世代CPUという利点がある。",
+        "featureComparison": [
+          "共通点：メモリ16GB、テンキー内蔵、Office 2019、Windows 11",
+          "相違点：対象商品はSSD 256GB・第4世代Core i7、本機はSSD 512GB・第3世代Core i7"
+        ],
+        "differentiators": [
+          "対象商品の利点：CPU世代が一つ新しく、処理能力がやや高い",
+          "NEC VK26/VK27 第3世代(512GB)の利点：大容量のSSDを搭載しており、多くのデータを保存できる上に価格も安い"
+        ]
+      },
+      {
+        "name": "NEC VK26 VK27 第4世代Core i7 16GB 512GB (整備済み品)",
+        "asin": "B0C543TJM2",
+        "priceComparison": "本機は対象商品と同世代のCPUだがSSD容量が多く、その分価格も対象商品より高い。",
+        "featureComparison": [
+          "共通点：第4世代Core i7、メモリ16GB、テンキー内蔵、Office 2019搭載",
+          "相違点：対象商品はSSD 256GB、本機はSSD 512GB"
+        ],
+        "differentiators": [
+          "対象商品の利点：ストレージ容量は少ないが価格が安く、コストパフォーマンスに優れる",
+          "NEC VK26 VK27 第4世代(512GB)の利点：大容量SSDを搭載し、ストレージ容量に余裕がある"
+        ]
+      },
+      {
+        "name": "東芝 ハイスペック ノートPC 第4世代Core i7 16GB 256GB (整備済み品)",
+        "asin": "B0C7YV3Y27",
+        "priceComparison": "スペックがほぼ同等であるが、本機の方が価格が安い。",
+        "featureComparison": [
+          "共通点：第4世代Core i7、メモリ16GB、SSD 256GB、Office 2019、Windows 11搭載",
+          "相違点：対象商品は富士通製でテンキー内蔵、本機は東芝製"
+        ],
+        "differentiators": [
+          "対象商品の利点：テンキーを内蔵しており、数値入力が多い作業に向いている",
+          "東芝 ハイスペックPCの利点：同等スペックながら価格が安い"
+        ]
+      },
+      {
+        "name": "NEC VersaPro Vシリーズ 第8世代Core i5 16GB 256GB (整備済み品)",
+        "asin": "B0CTZJ4CM9",
+        "priceComparison": "本機は第8世代CPUを搭載しているため、対象商品よりも価格が大幅に高い。",
+        "featureComparison": [
+          "共通点：メモリ16GB、SSD 256GB、テンキー搭載、15.6インチ画面",
+          "相違点：対象商品は第4世代Core i7、本機は第8世代Core i5でWebカメラとBluetoothを内蔵"
+        ],
+        "differentiators": [
+          "対象商品の利点：古い世代のCPUだが価格が安く、手軽に導入できる",
+          "NEC VersaPro 第8世代Core i5の利点：比較的新しい第8世代CPUを搭載し、WebカメラやBluetoothも内蔵しているためリモート会議に便利"
+        ]
+      },
+      {
+        "name": "Surface Book 第8世代Core i7 16GB 512GB (整備済み品)",
+        "asin": "B0F1MGWQ31",
+        "priceComparison": "本機は第8世代Core i7、GTX1060搭載のハイエンドモデルのため、対象商品より2倍以上高価である。",
+        "featureComparison": [
+          "共通点：メモリ16GB",
+          "相違点：対象商品は第4世代Core i7・SSD 256GBの一般向けノート、本機は第8世代Core i7・GTX1060搭載のクリエイター向け2in1ノート"
+        ],
+        "differentiators": [
+          "対象商品の利点：安価で基本的な事務作業に必要な性能を十分備えている",
+          "Surface Book 第8世代Core i7の利点：動画編集や軽いゲームも可能なグラフィック性能と、高解像度タッチパネルを備えている"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "低予算で事務用や学習用のパソコンを探している人",
+        "Excel等でテンキー入力を行う頻度が高い人"
+      ],
+      "pros": [
+        "16GBの余裕のあるメモリ",
+        "テンキー搭載",
+        "Office 2019搭載済み"
+      ],
+      "cons": [
+        "CPU世代が古く、高い処理能力は期待できない",
+        "Webカメラ内蔵の記載がなく、別途用意が必要な可能性がある"
+      ],
+      "score": 75,
+      "scoreRationale": "[基本点: 70]\n[加点: +5] (16GBの大容量メモリによるマルチタスクの快適性)\n[加点: +5] (テンキー内蔵で事務作業に向いている実用性)\n[減点: -5] (第4世代とCPUが古く、基本処理性能に限界がある)\n[合計: 75]"
+    },
+    "technicalSpecs": {
+      "dimensions": {
+        "height": "不明",
+        "width": "不明",
+        "depth": "不明"
+      },
+      "weight": "不明",
+      "capacity": "画面サイズ 396mm",
+      "material": "不明",
+      "origin": "不明",
+      "other": [
+        "画面サイズ: 396mm (15.6型に相当)",
+        "メモリ: 16GB",
+        "ストレージ: 256GB SSD",
+        "OS: Windows 11",
+        "Office: Microsoft Office 2019",
+        "キーボード: テンキー内蔵",
+        "光学ドライブ: DVDドライブ",
+        "ネットワーク: 無線LAN (Wi-Fi), 有線LAN",
+        "外部出力: HDMI"
+      ]
+    }
+  }
+}
