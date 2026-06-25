@@ -55,6 +55,10 @@
             savedAt: Date.now()
         });
         saveFavorites(list);
+        // GA4 トラッキング (analytics.js が提供するフック)
+        if (globalThis.ApaAnalytics && typeof globalThis.ApaAnalytics.trackFavoriteAdd === 'function') {
+            globalThis.ApaAnalytics.trackFavoriteAdd(data);
+        }
         return true;
     }
 

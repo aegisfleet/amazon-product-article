@@ -513,6 +513,10 @@ function initCategoryFeatures() {
     sortSelect.addEventListener('change', function () {
         sortCards(this.value);
         updateUrl();
+        // GA4 トラッキング
+        if (globalThis.ApaAnalytics && typeof globalThis.ApaAnalytics.trackFilterUse === 'function') {
+            globalThis.ApaAnalytics.trackFilterUse('sort', this.value);
+        }
     });
 
     // Handle filter toggle        // フィルターヘッダーのクリックイベント（スマホ開閉用）
@@ -533,10 +537,16 @@ function initCategoryFeatures() {
 
     // Handle category filter changes
     if (categoryFilters) {
-        categoryFilters.addEventListener('change', function () {
+        categoryFilters.addEventListener('change', function (e) {
             clearActivePreset();
             filterCards();
             updateUrl();
+            // GA4 トラッキング
+            if (globalThis.ApaAnalytics && typeof globalThis.ApaAnalytics.trackFilterUse === 'function') {
+                const cb = e.target instanceof HTMLInputElement ? e.target : null;
+                const visibleCount = document.querySelectorAll('#product-grid .card:not([hidden])').length;
+                globalThis.ApaAnalytics.trackFilterUse('category', cb ? cb.value : '', visibleCount);
+            }
         });
     }
 
@@ -546,6 +556,11 @@ function initCategoryFeatures() {
             clearActivePreset();
             filterCards();
             updateUrl();
+            // GA4 トラッキング
+            if (globalThis.ApaAnalytics && typeof globalThis.ApaAnalytics.trackFilterUse === 'function') {
+                const checked = document.querySelector('input[name="price-filter"]:checked');
+                globalThis.ApaAnalytics.trackFilterUse('price', checked ? checked.value : '');
+            }
         });
     });
 
@@ -555,16 +570,26 @@ function initCategoryFeatures() {
             clearActivePreset();
             filterCards();
             updateUrl();
+            // GA4 トラッキング
+            if (globalThis.ApaAnalytics && typeof globalThis.ApaAnalytics.trackFilterUse === 'function') {
+                const checked = document.querySelector('input[name="score-filter"]:checked');
+                globalThis.ApaAnalytics.trackFilterUse('score', checked ? checked.value : '');
+            }
         });
     });
 
     // Handle spec filter changes
     const specFilters = document.getElementById('spec-filters');
     if (specFilters) {
-        specFilters.addEventListener('change', function () {
+        specFilters.addEventListener('change', function (e) {
             clearActivePreset();
             filterCards();
             updateUrl();
+            // GA4 トラッキング
+            if (globalThis.ApaAnalytics && typeof globalThis.ApaAnalytics.trackFilterUse === 'function') {
+                const cb = e.target instanceof HTMLInputElement ? e.target : null;
+                globalThis.ApaAnalytics.trackFilterUse('spec', cb ? cb.value : '');
+            }
         });
     }
 
@@ -590,10 +615,18 @@ function initCategoryFeatures() {
                 clearActivePreset();
                 filterCards();
                 updateUrl();
+                // GA4 トラッキング
+                if (globalThis.ApaAnalytics && typeof globalThis.ApaAnalytics.trackFilterUse === 'function') {
+                    globalThis.ApaAnalytics.trackFilterUse('preset', '');
+                }
                 return;
             }
 
             applyPreset(presetKey);
+            // GA4 トラッキング
+            if (globalThis.ApaAnalytics && typeof globalThis.ApaAnalytics.trackFilterUse === 'function') {
+                globalThis.ApaAnalytics.trackFilterUse('preset', presetKey);
+            }
         });
     });
 

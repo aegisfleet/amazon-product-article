@@ -147,7 +147,8 @@
         {{- if $product.affiliate_url -}}
         <a href="{{ $product.affiliate_url }}" class="btn-amazon-hero" target="_blank" rel="noopener noreferrer"
             data-track-product="1" data-asin="{{ $product.asin }}" data-category="{{ $trackingCategory }}"
-            data-price-bucket="{{ $priceBucket }}" data-price="{{ $product.price }}">🛒
+            data-price-bucket="{{ $priceBucket }}" data-price="{{ $product.price }}"
+            data-score="{{ $product.score | default 0 }}" data-position="0">🛒
             Amazonで詳細を見る</a>
         {{- end -}}
 

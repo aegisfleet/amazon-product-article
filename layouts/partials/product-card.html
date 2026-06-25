@@ -102,7 +102,8 @@
                 {{- if .Params.affiliate_url -}}
                 <a href="{{ .Params.affiliate_url }}" class="btn-amazon-small" target="_blank" rel="noopener noreferrer"
                     data-track-product="1" data-asin="{{ .Params.asin }}" data-category="{{ $trackingCategory }}"
-                    data-price-bucket="{{ $priceBucket }}" data-price="{{ .Params.price }}">🛒
+                    data-price-bucket="{{ $priceBucket }}" data-price="{{ .Params.price }}"
+                    data-score="{{ .Params.score | default 0 }}">🛒
                     Amazonで見る</a>
                 {{- else -}}
                 <a href="{{ .RelPermalink }}" class="read-more">レビューを読む →</a>
