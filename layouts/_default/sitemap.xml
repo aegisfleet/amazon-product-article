@@ -2,7 +2,6 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
   {{- range .Data.Pages }}
-  {{- if not .Params.noindex }}
   {{- /* Determine priority and changeFreq based on page type */ -}}
   {{- $priority := 0.5 -}}
   {{- $changeFreq := "monthly" -}}
@@ -43,6 +42,5 @@
     <changefreq>{{ $changeFreq }}</changefreq>
     <priority>{{ printf "%.1f" $priority }}</priority>
   </url>
-  {{- end }}
   {{- end }}
 </urlset>

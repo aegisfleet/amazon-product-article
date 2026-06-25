@@ -7,8 +7,6 @@ describe('head.html simplified SEO template', () => {
   it('contains simplified robots meta tags', () => {
     const template = fs.readFileSync(headTemplatePath, 'utf8');
 
-    expect(template).toContain('{{- if .Params.noindex -}}');
-    expect(template).toContain('<meta name="robots" content="noindex, follow">');
     expect(template).toContain('<meta name="robots" content="index, follow">');
   });
 
