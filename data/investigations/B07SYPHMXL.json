@@ -1,0 +1,254 @@
+{
+  "analysis": {
+    "productName": "SELFBEAUTY ユニコニック グロウ メイクアップフィクサー 100ml",
+    "parentAsin": "B07SYPHMXL",
+    "productDescription": "ヒアルロン酸などの保湿成分を配合し、うるおいと自然なツヤ肌を演出しながらメイクを長時間キープするミストタイプのメイクアップフィクサー。",
+    "productUsage": [
+      "メイク崩れ・テカリ防止",
+      "乾燥対策・うるおい補給",
+      "ツヤ肌仕上げ"
+    ],
+    "positivePoints": [
+      "細かなミストで顔全体にムラなく均一に広がる",
+      "自然なツヤ感を与えつつ、メイクを長時間キープする",
+      "保湿成分（ヒアルロン酸等）や植物エキス配合で、乾燥しにくく肌に優しい",
+      "香りがあまり気にならず使いやすい"
+    ],
+    "negativePoints": [
+      "スプレーの出方が粗く、水滴が大きく付着する場合がある（個体差または押し方の影響）",
+      "マットな仕上がりを求める人には向かない"
+    ],
+    "useCases": [
+      "メイクの最後の仕上げとして",
+      "外出先でのメイク直しや乾燥が気になる時",
+      "夏場の汗や皮脂によるメイク崩れ対策として"
+    ],
+    "userStories": [
+      {
+        "userType": "40代女性",
+        "scenario": "湿度の高い地域に住んでおり、年齢による肌の変化に合わせてメイク崩れを防ぎたい",
+        "experience": "湿度が高い環境でもメイクが崩れず、懸念していたテカりやベタつきもなく、適度なツヤ感が出て満足している。",
+        "supportingSourceIds": ["src-rev-renee"],
+        "sentiment": "positive"
+      },
+      {
+        "userType": "ツヤ肌を求めるユーザー",
+        "scenario": "海外コスメに懸念を持っていたが、自然なツヤ肌を目指して使用",
+        "experience": "肌荒れすることもなく、コーティング感がなく毛穴も詰まらない。細かいミストで自然なツヤ肌になり、周りからも褒められた。",
+        "supportingSourceIds": ["src-rev-yakiniku"],
+        "sentiment": "positive"
+      },
+      {
+        "userType": "細かいミストを求めるユーザー",
+        "scenario": "夏のメイク崩れ対策としてSNSの情報をきっかけに購入",
+        "experience": "メイクスポンジに含ませて使うなどの工夫をしている。ミストの粒子が細かく、香りも気にならない上、減りが遅いためコスパが良いと感じている。",
+        "supportingSourceIds": ["src-rev-gelatoni"],
+        "sentiment": "positive"
+      },
+      {
+        "userType": "スプレーの出方に不満を持つユーザー",
+        "scenario": "ツヤ肌になることを期待して購入",
+        "experience": "ツヤ肌にならず、何よりスプレーが荒く出てミスト状にならないため使いづらいと感じた。",
+        "supportingSourceIds": ["src-rev-yodobashi"],
+        "sentiment": "negative"
+      }
+    ],
+    "userImpression": "総じてミストの細かさや自然なツヤ感、高いメイクキープ力について多くのユーザーから高く評価されている。保湿成分や植物エキス配合による肌への優しさも好評。一方で、一部のユーザーからはスプレーの噴射が荒い（水滴状になる）という指摘もあり、使用感や仕上がりに多少の個人差が見受けられる。",
+    "sources": [
+      {
+        "id": "src-amazon-page",
+        "name": "Amazon商品ページ",
+        "url": "https://www.amazon.co.jp/dp/B07SYPHMXL",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-06-25",
+        "author": "Amazon",
+        "conflictOfInterest": "none",
+        "notes": "商品の基本仕様、価格（2,180円）、特徴、公式の訴求内容を確認"
+      },
+      {
+        "id": "src-rev-renee",
+        "name": "Amazonカスタマーレビュー (Renee)",
+        "url": "https://www.amazon.co.jp/dp/B07SYPHMXL",
+        "tier": "medium",
+        "evidenceType": "secondary",
+        "publishedAt": "2021-06-21",
+        "author": "Amazon カスタマー",
+        "conflictOfInterest": "none",
+        "notes": "40代、湿度の高い環境でのキープ力とツヤ感を評価"
+      },
+      {
+        "id": "src-rev-yakiniku",
+        "name": "Amazonカスタマーレビュー (焼肉)",
+        "url": "https://www.amazon.co.jp/dp/B07SYPHMXL",
+        "tier": "medium",
+        "evidenceType": "secondary",
+        "publishedAt": "2026-03-06",
+        "author": "Amazon カスタマー",
+        "conflictOfInterest": "none",
+        "notes": "自然なツヤ肌仕上がり、肌トラブルのなさ、ミストの細かさを評価"
+      },
+      {
+        "id": "src-rev-gelatoni",
+        "name": "Amazonカスタマーレビュー (ジェラトーニ)",
+        "url": "https://www.amazon.co.jp/dp/B07SYPHMXL",
+        "tier": "medium",
+        "evidenceType": "secondary",
+        "publishedAt": "2025-07-26",
+        "author": "Amazon カスタマー",
+        "conflictOfInterest": "none",
+        "notes": "コスパの良さ、ミストの細かさ、香りが気にならない点を評価"
+      },
+      {
+        "id": "src-rev-yodobashi",
+        "name": "Amazonカスタマーレビュー (ヨドバシは全て送料無料)",
+        "url": "https://www.amazon.co.jp/dp/B07SYPHMXL",
+        "tier": "medium",
+        "evidenceType": "secondary",
+        "publishedAt": "2025-12-31",
+        "author": "Amazon カスタマー",
+        "conflictOfInterest": "none",
+        "notes": "スプレーの出方が荒い点に対する不満"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "ヒアルロン酸などの保湿成分や植物エキスが配合されている",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": ["src-amazon-page"],
+        "crossChecked": false,
+        "notes": "商品ページの成分説明より確認"
+      },
+      {
+        "claim": "超微細ミストの霧噴射ポンプを採用している",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": ["src-amazon-page", "src-rev-yakiniku", "src-rev-gelatoni"],
+        "crossChecked": true,
+        "notes": "メーカー訴求内容と複数のユーザーレビューが一致（ただし一部不満の声あり）"
+      },
+      {
+        "claim": "メイクを長時間キープし、ツヤ肌に仕上げる",
+        "category": "durability",
+        "confidence": "high",
+        "supportingSourceIds": ["src-amazon-page", "src-rev-renee", "src-rev-yakiniku"],
+        "crossChecked": true,
+        "notes": "メーカーの主張とユーザーの実体験が一致"
+      }
+    ],
+    "lastInvestigated": "2026-06-25",
+    "competitiveAnalysis": [
+      {
+        "name": "so natural メイクアップフィクサー FIXX ノーマルタイプ 75ml",
+        "asin": "B01460UIU6",
+        "priceComparison": "対象商品と同程度の価格帯だが容量が少ないため、容量あたりの単価は高い。メイクキープという点では実績があり高い評価を得ている。",
+        "featureComparison": [
+          "共通点：メイク後にスプレーすることでメイク崩れを防ぐミストタイプのフィクサーである点",
+          "相違点：対象商品がツヤ感を重視しているのに対し、so naturalは密着力と定着固定力に特化したノーマルな仕上がり。"
+        ],
+        "differentiators": [
+          "SELFBEAUTY ユニコニック グロウ メイクアップフィクサーの利点：ツヤ肌仕上げと保湿ケアを求める場合や、容量あたりのコストパフォーマンスを重視する場合に適している",
+          "so natural メイクアップフィクサーの利点：韓国での実績や知名度が高く、より強力なメイク固定力を重視する場合に適している"
+        ]
+      },
+      {
+        "name": "so natural WATER GLOW MAKE UP SETTING FIXX グロウタイプ 75ml",
+        "asin": "B0F7RDX2SR",
+        "priceComparison": "対象商品よりも容量単価が高い。ツヤ肌仕上げの直接的な競合。",
+        "featureComparison": [
+          "共通点：ツヤ肌（グロウ）仕上げを目的としたメイクキープミストである点。美容成分（保湿・鎮静）を配合している点",
+          "相違点：so naturalはツボクサエキスやパンテノールなどを配合し、よりスキンケア効果を強調している。対象商品は100mlと容量が多い。"
+        ],
+        "differentiators": [
+          "SELFBEAUTY ユニコニック グロウ メイクアップフィクサーの利点：大容量（100ml）でコストパフォーマンスに優れている点",
+          "so natural WATER GLOW MAKE UP SETTING FIXXの利点：ツボクサエキスなどの美容成分によるスキンケア効果をより期待する場合に適している"
+        ]
+      },
+      {
+        "name": "コーセー メイク キープ ミスト EX + 80ml",
+        "asin": "B07YMZ7ZLF",
+        "priceComparison": "対象商品より安価で容量も十分あり、コストパフォーマンスに優れる。",
+        "featureComparison": [
+          "共通点：細かいミストでメイクを固定し、皮脂や汗からメイクを守る点。保湿成分（シカ、ヒアルロン酸等）を配合している点",
+          "相違点：コーセーはウォータープルーフ効果やテカリ・毛穴落ち防止など強力なキープ力と機能性に特化している。対象商品はツヤ感をより強調している。"
+        ],
+        "differentiators": [
+          "SELFBEAUTY ユニコニック グロウ メイクアップフィクサーの利点：ツヤ肌仕上げを重視し、乾燥を防ぎながら自然な輝きを演出したい場合に適している",
+          "コーセー メイク キープ ミスト EX +の利点：圧倒的な知名度と手頃な価格、強力なウォータープルーフ効果やテカリ防止など、確実なキープ力を求める場合に適している"
+        ]
+      },
+      {
+        "name": "d'Alba オールデイセラムメイクアップフィクサー 80ml",
+        "asin": "B0G5Y5XVBP",
+        "priceComparison": "対象商品よりやや高い価格帯。容量は80ml。",
+        "featureComparison": [
+          "共通点：ツヤ肌仕上げを目的とし、ミスト噴射でメイクをキープする点。ヒアルロン酸などの保湿成分を配合している点",
+          "相違点：d'Albaは8つのヒアルロン酸など、よりセラム（美容液）に近い保湿力を強調している。対象商品の方が容量が多く価格も手頃。"
+        ],
+        "differentiators": [
+          "SELFBEAUTY ユニコニック グロウ メイクアップフィクサーの利点：100mlと容量が多く、日常的にたっぷりと使いやすいコストパフォーマンスの良さ",
+          "d'Alba オールデイセラムメイクアップフィクサーの利点：低刺激処方で、より美容液感覚で深い保湿とツヤ感を求める場合に適している"
+        ]
+      },
+      {
+        "name": "VT COSMETICS CICA スキンフィット メイクアップフィクサー 50ml",
+        "asin": "B0CV7K1N99",
+        "priceComparison": "絶対的な価格は安いが、容量が50mlと少ないため容量単価は対象商品と同等かやや割高になる可能性がある。",
+        "featureComparison": [
+          "共通点：美容成分配合でうるおいを与えながらメイク崩れを防ぐミストである点",
+          "相違点：VTはCICA（ツボクサエキス）を主成分としたゆらぎケアに特化している。対象商品はツヤ感と保湿（ヒアルロン酸等）に焦点を当てている。"
+        ],
+        "differentiators": [
+          "SELFBEAUTY ユニコニック グロウ メイクアップフィクサーの利点：ツヤ肌仕上げと100mlのたっぷりとした容量を求める場合に適している",
+          "VT COSMETICS CICA スキンフィット メイクアップフィクサーの利点：CICA成分による肌荒れケアを重視し、持ち運びに便利な小容量を好む場合に適している"
+        ]
+      },
+      {
+        "name": "SELFBEAUTY ユニコニック グロウ メイクアップフィクサー 50ml",
+        "asin": "B0FKBMQW3F",
+        "priceComparison": "同一製品の容量違い（50ml）。100ml版（対象商品）の方が容量あたりの単価が安くコストパフォーマンスが高い。",
+        "featureComparison": [
+          "共通点：メーカー、基本的な機能、成分、ツヤ肌仕上げというコンセプトが完全に一致",
+          "相違点：容量が50mlと100mlで異なる。"
+        ],
+        "differentiators": [
+          "SELFBEAUTY ユニコニック グロウ メイクアップフィクサー 100mlの利点：自宅に置いて日常的にたっぷりと使用したい、容量あたりのコスパを重視する方に適している",
+          "SELFBEAUTY ユニコニック グロウ メイクアップフィクサー 50mlの利点：外出先でのメイク直し用として持ち歩きたい方や、初めて試してみたい方に適している"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "メイク崩れを防ぎつつ、自然なツヤ肌に仕上げたい人",
+        "乾燥肌で、メイク後もうるおいをキープしたい人",
+        "コスパの良い大容量のメイクキープミストを探している人"
+      ],
+      "pros": [
+        "細かいミストで顔全体をムラなくコーティングできる",
+        "ヒアルロン酸や植物エキス配合で乾燥を防ぐ",
+        "100mlと十分な容量でコストパフォーマンスが良い"
+      ],
+      "cons": [
+        "個体差か押し方によりスプレーの出方が荒くなる場合がある",
+        "マットな仕上がりを好む人には向かない"
+      ],
+      "score": 83,
+      "scoreRationale": "[基本点: 70]\n[加点: +5] (保湿成分と植物エキスによる良好なスキンケア効果と肌への優しさ)\n[加点: +5] (100mlという大容量で日常使いしやすいコストパフォーマンスの高さ)\n[加点: +5] (超微細ミストによる使用感の良さと自然なツヤ仕上がりへの高い評価)\n[減点: -2] (一部ユーザーからスプレーの出方に対する不満あり)\n[合計: 83]"
+    },
+    "technicalSpecs": {
+      "capacity": "100ml",
+      "dimensions": {
+        "height": "140mm",
+        "width": "40mm",
+        "depth": "40mm"
+      },
+      "weight": "136g",
+      "ingredients": "ヒアルロン酸、植物エキス（スペアミント、オレガノ、レモンバーム等）",
+      "finishType": "ツヤ（グロウ）",
+      "other": [
+        "フランス産アルベアポンプ採用"
+      ]
+    }
+  }
+}
