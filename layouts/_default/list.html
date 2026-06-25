@@ -265,7 +265,12 @@
                     <div class="card-footer-actions">
                         {{- if .Params.affiliate_url -}}
                         <a href="{{ .Params.affiliate_url }}" class="btn-amazon-small" target="_blank"
-                            rel="noopener noreferrer"><span aria-hidden="true">🛒</span> Amazonで見る</a>
+                            rel="noopener noreferrer"
+                            data-track-product="1" data-asin="{{ .Params.asin }}"
+                            data-category="{{ $trackingCategory }}"
+                            data-price-bucket="{{ partial `utils-price-bucket.html` .Params.price }}"
+                            data-price="{{ .Params.price }}"
+                            data-score="{{ .Params.score | default 0 }}"><span aria-hidden="true">🛒</span> Amazonで見る</a>
                         {{- else -}}
                         <a href="{{ .RelPermalink }}" class="read-more">レビューを読む →</a>
                         {{- end -}}
