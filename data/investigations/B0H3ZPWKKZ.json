@@ -1,0 +1,119 @@
+{
+  "analysis": {
+    "productName": "エレコム 指紋認証リーダー CR-FI50UBK",
+    "parentAsin": "B0H3ZG414N",
+    "productDescription": "Windows Hello対応、USB-A有線接続タイプの指紋認証リーダー。MoC方式で高いセキュリティを実現。",
+    "productUsage": [
+      "デスクトップパソコンへのログイン",
+      "Webサイト等のパスキー認証対応サービスへのログイン"
+    ],
+    "positivePoints": [
+      "Windows Hello対応で瞬時にログイン可能",
+      "MoC(Match-on-Chip)方式採用により指紋情報がデバイス内に留まりセキュア",
+      "360度どの角度からでも指紋を認識できるため使い勝手が良い",
+      "有線独立タイプのため、デスクトップPCなどポートから離れた場所での利用に便利"
+    ],
+    "negativePoints": [
+      "USB-Aポートが必要",
+      "ケーブルがあるため、持ち運び用途のノートPCには不向きな場合がある"
+    ],
+    "useCases": [
+      "オフィスや自宅のデスクトップPCを安全かつスムーズに立ち上げたい場合",
+      "共有PCで複数ユーザーのアカウントを安全に切り替えたい場合"
+    ],
+    "userStories": [],
+    "userImpression": "Windows Hello対応のデスクトップ環境で、手軽にセキュアな指紋認証ログインを導入できる製品として期待されている。特にMoC方式によるセキュリティ面の安心感と、360度対応センサーによる利便性の高さが特徴である。",
+    "sources": [
+      {
+        "id": "src-1",
+        "name": "Amazon商品ページ B0H3ZPWKKZ",
+        "url": "https://www.amazon.co.jp/dp/B0H3ZPWKKZ",
+        "tier": "medium",
+        "evidenceType": "primary",
+        "publishedAt": "2026-06-12",
+        "author": "エレコム",
+        "conflictOfInterest": "possible",
+        "notes": "製品仕様、機能（MoC方式、Windows Hello対応、360度認識）を確認"
+      },
+      {
+        "id": "src-2",
+        "name": "Amazon商品ページ B09LHCBN3S (サンワダイレクト 400-FPRD1)",
+        "url": "https://www.amazon.co.jp/dp/B09LHCBN3S",
+        "tier": "medium",
+        "evidenceType": "secondary",
+        "publishedAt": "2026-06-26",
+        "author": "サンワダイレクト",
+        "conflictOfInterest": "possible",
+        "notes": "競合商品の仕様を確認"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "MoC方式により指紋データがデバイス内に暗号化され、パソコンに送信されないためセキュリティが高い",
+        "category": "safety",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "crossChecked": false,
+        "notes": "メーカー公式の仕様説明に基づく"
+      },
+      {
+        "claim": "360度どの角度からでも指紋を正確に読み取れる",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "crossChecked": false,
+        "notes": "センサーの基本性能"
+      }
+    ],
+    "lastInvestigated": "2026-06-26",
+    "competitiveAnalysis": [
+      {
+        "name": "サンワダイレクト 400-FPRD1",
+        "asin": "B09LHCBN3S",
+        "priceComparison": "対象商品の方がやや高価だが、MoC方式（デバイス内暗号化）を採用しているためセキュリティ面で優位性がある。競合商品はより安価で基本的な指紋認証機能を提供する。",
+        "featureComparison": [
+          "共通点：USB接続、Windows Hello対応、360度認識機能",
+          "相違点：対象商品はMoC方式を採用しセキュリティを強化。競合商品は基本機能に特化し安価。"
+        ],
+        "differentiators": [
+          "エレコム 指紋認証リーダー CR-FI50UBKの利点：MoC方式により指紋情報がパソコン側に送られず、セキュリティを重視する環境に最適",
+          "サンワダイレクト 400-FPRD1の利点：価格が抑えられており、手軽にWindows Hello対応の指紋認証を導入したい場合に適している"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "デスクトップPCユーザー",
+        "セキュリティを重視するビジネスパーソン",
+        "パスワード入力の手間を省きたい人"
+      ],
+      "pros": [
+        "MoC方式による高いセキュリティ",
+        "Windows Helloおよびパスキー対応",
+        "360度対応で指の向きを気にせず使える",
+        "有線式で手元に設置しやすい"
+      ],
+      "cons": [
+        "USB-Aポートを占有する",
+        "ノートPC等ではケーブルが邪魔になる可能性がある"
+      ],
+      "score": 80,
+      "scoreRationale": "[基本点: 70]\n[加点: +10] (MoC方式によるセキュリティの高さとパスキー対応の先進性)\n[加点: +5] (有線独立型によるデスクトップ環境での使い勝手の良さ)\n[減点: -5] (競合製品と比較して価格がやや高め)\n[合計: 80]"
+    },
+    "technicalSpecs": {
+      "color": "ブラック",
+      "type": "有線独立タイプ",
+      "interface": "USB-Aプラグ",
+      "authenticationMethod": "MoC (Match-on-Chip) 方式",
+      "compatibleOS": "Windows 11/10 (Windows Hello対応)",
+      "other": [
+        "360度指紋認識対応",
+        "パスキー対応"
+      ]
+    }
+  }
+}
