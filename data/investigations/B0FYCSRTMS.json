@@ -1,0 +1,228 @@
+{
+  "analysis": {
+    "productName": "Dyson V12 Detect Slim Fluffy (SV46 FF EX)",
+    "parentAsin": "B0FYCSRTMS",
+    "productDescription": "見えないホコリを可視化するLaser Slim Fluffyクリーナーヘッドを搭載し、自動で吸引力を調整するコードレスクリーナー。",
+    "productUsage": [
+      "フローリングの掃除",
+      "カーペットやラグの掃除",
+      "家具の下や隙間の掃除"
+    ],
+    "positivePoints": [
+      "高機能LEDにより見えない微細なホコリを可視化し、取り逃しを防ぐ",
+      "ピエゾセンサーにより、ゴミの量とサイズを検知し自動で最適な吸引力に調整する",
+      "液晶ディスプレイに吸引したゴミをサイズごとに分類してリアルタイムで表示し、バッテリー残時間も分かる",
+      "トリガー式からボタン式に変更されたため、指が痛くならない",
+      "一般的なコードタイプの掃除機と比べて取り回しが良く、ボタン一つですぐに使える"
+    ],
+    "negativePoints": [
+      "他社製や旧モデルと比較して価格が高価",
+      "フィルターが1か所になり、後方フィルターまでゴミが届きやすいため水洗いの手間が増える",
+      "充電ドックにセットして付属品を付けるとサイズが大きくなる"
+    ],
+    "useCases": [
+      "部屋の隅々やフローリングの見えないホコリまで徹底的に掃除したい場合",
+      "バッテリー残時間や吸引したゴミの量をディスプレイで確認しながら計画的に掃除したい場合",
+      "指に負担をかけずに長時間の掃除を行いたい場合"
+    ],
+    "userStories": [
+      {
+        "userType": "初めてコードレスを使用するユーザー",
+        "scenario": "日常的な掃除機がけ",
+        "experience": "初めてコードレス掃除機を購入しましたが、一般的なコードタイプと比べて取り回しが非常に良いです。ボタン一つですぐに使える点が便利で、緑のライトが埃を浮かび上がらせるため掃除が楽しくなりました。騒音も煩くなく気に入っています。",
+        "supportingSourceIds": [
+          "src-kakaku-1"
+        ],
+        "sentiment": "positive"
+      },
+      {
+        "userType": "旧モデル（v8）からの買い替えユーザー",
+        "scenario": "先進機能を活用した家中の掃除",
+        "experience": "LEDによるゴミ視認性の向上が素晴らしく、昼間でも見えやすいです。液晶ディスプレイでゴミのサイズや量、バッテリー残時間が分かるのが便利です。吸引力自動調整のオート機能も地味に役立ちますし、ゴミ捨て時に舞い上がる量も減ったように感じます。",
+        "supportingSourceIds": [
+          "src-kakaku-1"
+        ],
+        "sentiment": "positive"
+      },
+      {
+        "userType": "ダイソン旧モデルからの買い替えユーザー",
+        "scenario": "手入れや操作性の評価",
+        "experience": "トリガー式からスイッチ式になり、指が痛くならなくなりました。Digital Slimより重いですが気になりません。ただ、フィルターが1か所になったことでゴミがフィルターまで来てしまい、水洗いする手間が増えた点は少し残念です。",
+        "supportingSourceIds": [
+          "src-kakaku-1"
+        ],
+        "sentiment": "mixed"
+      }
+    ],
+    "userImpression": "LEDによるホコリの可視化機能により「掃除が楽しくなる」という声が多く、高く評価されています。また、スイッチ式の採用による指への負担軽減やディスプレイ表示、コードレスならではの取り回しの良さも好評です。一方で、フィルターの手入れに少し手間がかかるという意見もあります。",
+    "sources": [
+      {
+        "id": "src-kakaku-1",
+        "name": "Dyson V12 Detect Slim Fluffy SV46 FF EX レビュー・評価",
+        "url": "https://kakaku.com/item/K0001690844/",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2025-05-20",
+        "author": "価格.comユーザー",
+        "conflictOfInterest": "none",
+        "notes": "SV46 FF EXモデル専用のページから、LED機能の評価、スイッチ式への変更の感想、フィルター手入れに関するレビューを確認。"
+      },
+      {
+        "id": "src-amazon-1",
+        "name": "Amazon B0FYCSRTMS 商品ページ",
+        "url": "https://www.amazon.co.jp/dp/B0FYCSRTMS",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2025-11-01",
+        "author": "Dyson(ダイソン)",
+        "conflictOfInterest": "disclosed",
+        "notes": "製品仕様、サイズ、機能、価格(￥69,192)の確認。"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "正確に照射角度を調整した光がフローリングの見えないホコリを可視化する",
+        "category": "comparativeAdvantage",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-kakaku-1",
+          "src-amazon-1"
+        ],
+        "crossChecked": true,
+        "notes": "メーカー公式の仕様であり、複数のユーザーレビューでも最も高く評価されている機能。"
+      },
+      {
+        "claim": "ピエゾセンサーにより最適な吸引力に自動調整される",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-amazon-1",
+          "src-kakaku-1"
+        ],
+        "crossChecked": true,
+        "notes": "オートモードでの自動可変機能が便利であるとレビューでも言及されている。"
+      }
+    ],
+    "lastInvestigated": "2026-06-26",
+    "competitiveAnalysis": [
+      {
+        "name": "Dyson V12 Detect Slim Fluffy SV46 FF",
+        "asin": "B0DZ2QQJB5",
+        "priceComparison": "EXの付かない同等モデルで、価格が安く設定されている。基本性能は同一だが付属品に差があるため、必要な付属品に応じて選択する価値がある。",
+        "featureComparison": [
+          "共通点：軽量で高回転なHyperdymiumモーター、ホコリを可視化するLED搭載、ピエゾセンサーによる自動吸引力調整機能など基本性能は同じ。",
+          "相違点：本体色や同梱されるツール・スタンドの構成が異なる可能性がある。"
+        ],
+        "differentiators": [
+          "Dyson V12 Detect Slim Fluffy (SV46 FF EX)の利点：特定の限定カラーや専用スタンド・付属品が揃っている場合、追加購入なしで充実した環境が整う。",
+          "Dyson V12 Detect Slim Fluffy SV46 FFの利点：基本性能が同じでありながら価格が抑えられており、コストパフォーマンスに優れている。"
+        ]
+      },
+      {
+        "name": "Dyson Micro Plus SV33 FF PL",
+        "asin": "B0CLL1CMMB",
+        "priceComparison": "対象商品より安価である。軽量性とコンパクトさに特化している分、最大稼働時間やダストカップ容量に制限があるため、用途によって価値が変わる。",
+        "featureComparison": [
+          "共通点：軽量なコードレススティッククリーナーで、Dysonの強力なモーター技術を搭載している。",
+          "相違点：Micro Plusは本体重量が約1.54kgと非常に軽くダスト容量が0.2L、最長稼働時間が約25分。V12は最長約60分稼働し、ピエゾセンサーや液晶ディスプレイ等の上位機能を搭載。"
+        ],
+        "differentiators": [
+          "Dyson V12 Detect Slim Fluffy (SV46 FF EX)の利点：長時間の稼働が可能で、ゴミの可視化や吸引量の表示など高機能。広い部屋やメインの掃除機として最適。",
+          "Dyson Micro Plus SV33 FF PLの利点：圧倒的に軽く取り回しがしやすいため、狭い部屋や階段、手軽なサブ掃除機としての利用に適している。"
+        ]
+      },
+      {
+        "name": "Dyson V8 Origin SV25 RD2",
+        "asin": "B0DNSY6Y2X",
+        "priceComparison": "対象商品より大幅に安い。価格差分の機能削減（LEDライト無し、稼働時間の短さ、重量増）を許容できるかどうかが鍵となる。",
+        "featureComparison": [
+          "共通点：Dysonのサイクロン技術を搭載し、コードレスで使用できる点。",
+          "相違点：V8 Originはやや古い世代のモーターを使用しており、標準重量2.55kgと重く、稼働時間が最長40分。V12のようなLEDホコリ可視化機能や液晶ディスプレイは非搭載。"
+        ],
+        "differentiators": [
+          "Dyson V12 Detect Slim Fluffy (SV46 FF EX)の利点：より軽量で、最新のホコリ可視化機能や自動吸引力調整など、快適な掃除をサポートする機能が充実している。",
+          "Dyson V8 Origin SV25 RD2の利点：ダイソンの吸引力を低価格で導入できる点。"
+        ]
+      },
+      {
+        "name": "Dyson Digital Slim Fluffy SV18 FF H",
+        "asin": "B0DZ2RBLJ8",
+        "priceComparison": "対象商品よりやや安い。軽量さを重視するなら価値があるが、V12ならではのLED機能などが必要かで判断が分かれる。",
+        "featureComparison": [
+          "共通点：軽量モデルであり、液晶ディスプレイを搭載している。",
+          "相違点：Digital Slimは約1.9kgで最長40分稼働。V12 Detect SlimはLEDホコリ可視化機能やピエゾセンサーを備え、最長60分稼働する。"
+        ],
+        "differentiators": [
+          "Dyson V12 Detect Slim Fluffy (SV46 FF EX)の利点：レーザー/LEDによるホコリ可視化機能と、長くなったバッテリー稼働時間。",
+          "Dyson Digital Slim Fluffy SV18 FF Hの利点：V12よりさらに軽量(1.9kg)であり、価格も抑えられている点。"
+        ]
+      },
+      {
+        "name": "Dyson V12 Detect Slim Absolute SV46 ABL",
+        "asin": "B0F7X49XXK",
+        "priceComparison": "対象商品と価格帯が近く、よりカーペット向けのアタッチメントが付属するため、住環境によっては価格に見合う価値が高い。",
+        "featureComparison": [
+          "共通点：V12 Detect Slimシリーズであり、モーター、LEDヘッド、ピエゾセンサーなどの基本スペックは完全に同一。",
+          "相違点：Absoluteには「Motorbarクリーナーヘッド」など、カーペットの毛絡みを防ぐ追加のアタッチメントが付属する。"
+        ],
+        "differentiators": [
+          "Dyson V12 Detect Slim Fluffy (SV46 FF EX)の利点：主にフローリングの掃除がメインであれば、Fluffyヘッドのみの構成で十分である。",
+          "Dyson V12 Detect Slim Absolute SV46 ABLの利点：カーペットやラグが多い環境、またはペットを飼っている環境で、専用ヘッドを活用できる点。"
+        ]
+      },
+      {
+        "name": "Dyson Micro Origin SV33 FF OR",
+        "asin": "B0CLL1FB1P",
+        "priceComparison": "対象商品よりもかなり安価。最も軽いエントリーモデルであり、価格優先か機能優先かで明確に分かれる。",
+        "featureComparison": [
+          "共通点：コードレスで手軽に使えるスティッククリーナーであること。",
+          "相違点：Micro Originは約1.5kgと超軽量だが機能は最小限。V12は重量が若干増えるが、LED可視化、自動調整、液晶ディスプレイなど多機能。"
+        ],
+        "differentiators": [
+          "Dyson V12 Detect Slim Fluffy (SV46 FF EX)の利点：多機能で長時間の掃除に対応でき、掃除の質を高める機能が揃っている。",
+          "Dyson Micro Origin SV33 FF ORの利点：圧倒的な軽さと手軽な価格で、少しのゴミをサッと掃除する用途に特化している。"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "フローリングの微細なホコリを見逃さずに徹底的に掃除したい人",
+        "最新の便利機能（LED可視化、自動吸引調整、ディスプレイ）を体験したい人",
+        "トリガー式ではなくボタン式で指の負担を減らしたい人"
+      ],
+      "pros": [
+        "LED照射で驚くほどホコリがよく見える",
+        "ゴミの量に応じて自動で吸引力が調整される",
+        "ボタン式の採用で操作が快適"
+      ],
+      "cons": [
+        "価格が高い",
+        "フィルターの手入れ頻度がやや高い",
+        "充電ドック設置に場所を取る"
+      ],
+      "score": 85,
+      "scoreRationale": "[基本点: 70]\n[加点: +5] (125,000rpmの強力なモーター性能)\n[加点: +3] (高機能LEDによるホコリ可視化機能)\n[加点: +3] (ピエゾセンサーによる自動吸引調整機能)\n[減点: -5] (通常版(SV46 FF)などの競合と比較して価格が高価で割高)\n[加点: +4] (ダイソン特有の優れたデザイン)\n[加点: +5] (ボタン式採用による使い勝手の向上と高いユーザー満足度)\n[合計: 85]"
+    },
+    "technicalSpecs": {
+      "dimensions": {
+        "height": "1095mm",
+        "width": "234mm",
+        "depth": "250mm"
+      },
+      "weight": "2.2kg",
+      "capacity": "0.35L",
+      "material": "プラスチック、アルミニウム",
+      "origin": "マレーシアまたはフィリピン等（ダイソン自社工場）",
+      "other": [
+        "充電時間: 約3.5時間",
+        "最長運転時間: 約60分（エコモードでモーター駆動のないツール使用時）",
+        "集じん方式: サイクロン（フィルターあり）",
+        "HEPAフィルター: あり（0.1ミクロンの微細な粒子を99.99%捕集）",
+        "ヘッド種類: モーター式（Laser Slim Fluffyクリーナーヘッド）",
+        "カラー: ニッケル/アイアン/ブラック",
+        "モーター: Hyperdymiumモーター (毎分最大125,000回転)",
+        "ディスプレイ: 液晶ディスプレイ (ゴミのサイズ・量、残りの運転時間等を表示)"
+      ]
+    }
+  }
+}
