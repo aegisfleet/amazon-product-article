@@ -1,0 +1,188 @@
+{
+  "analysis": {
+    "productName": "Bambu Lab A1",
+    "parentAsin": "B0D1R82LHL",
+    "productDescription": "多色造形に対応し、最大500mm/sの高速印刷と全自動キャリブレーション機能を備えた高精度な3Dプリンターです。",
+    "productUsage": [
+      "個人・家庭での3D造形・DIY",
+      "プロトタイプの作成"
+    ],
+    "positivePoints": [
+      "最大500mm/sの高速造形と高品質を両立",
+      "全自動キャリブレーションで設定が容易",
+      "動作音が48dB以下と非常に静か"
+    ],
+    "negativePoints": [
+      "多色造形を行うためには別途AMS liteが必要（本体のみでは不可）"
+    ],
+    "useCases": [
+      "家庭での趣味の造形作品制作",
+      "静音性が求められる屋内環境での利用",
+      "細かい調整不要ですぐに印刷を始めたい方の利用"
+    ],
+    "userStories": [],
+    "userImpression": "高速かつ高精度な造形が可能で、初心者でも扱いやすい全自動キャリブレーションが高く評価されています。また、動作音が非常に静かであるため、家庭内での使用にも適していると好評です。",
+    "sources": [
+      {
+        "id": "src-1",
+        "name": "Amazon 商品ページ",
+        "url": "https://www.amazon.co.jp/dp/B0D17TMWFB",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-06-26",
+        "author": "Amazon",
+        "conflictOfInterest": "none",
+        "notes": "商品仕様、特徴、価格情報を取得"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "最大500mm/sの高速印刷が可能",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "crossChecked": false,
+        "notes": "公式スペック"
+      },
+      {
+        "claim": "全自動キャリブレーションと流量補正により設定が容易",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "crossChecked": false,
+        "notes": "公式スペック"
+      },
+      {
+        "claim": "稼働音が48dB以下で静音性が高い",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "crossChecked": false,
+        "notes": "公式スペック"
+      }
+    ],
+    "lastInvestigated": "2026-06-26",
+    "competitiveAnalysis": [
+      {
+        "name": "Bambu Lab A1 mini",
+        "asin": "B0CRYJBKQQ",
+        "priceComparison": "本製品よりも安いが、造形サイズが一回り小さい。",
+        "featureComparison": [
+          "共通点：全自動キャリブレーション、500mm/sの高速印刷、静音造形",
+          "相違点：造形サイズ（A1は256³、A1 miniは180³）、価格"
+        ],
+        "differentiators": [
+          "Bambu Lab A1の利点：より大きな造形サイズ（256 x 256 x 256 mm³）が必要な場合に適している",
+          "Bambu Lab A1 miniの利点：設置スペースが限られており、より安価に導入したい場合に適している"
+        ]
+      },
+      {
+        "name": "Bambu Lab A1 Combo",
+        "asin": "B0D17V4SKM",
+        "priceComparison": "本製品より高いが、多色造形に必要なAMS liteが付属している。",
+        "featureComparison": [
+          "共通点：本体性能（A1）、造形サイズ（256³）、全自動キャリブレーション等",
+          "相違点：AMS liteの有無"
+        ],
+        "differentiators": [
+          "Bambu Lab A1の利点：初期費用を抑えて、単色造形から始めたい場合に適している",
+          "Bambu Lab A1 Comboの利点：最初から多色造形を行いたい場合に適している"
+        ]
+      },
+      {
+        "name": "Entina TINA2 Plus",
+        "asin": "B0FQ57M8M8",
+        "priceComparison": "本製品よりも大幅に安価で、初心者・子供向け。",
+        "featureComparison": [
+          "共通点：初心者向け、自動レベリング",
+          "相違点：最大印刷速度（A1は500mm/s、TINA2 Plusは250mm/s）、造形サイズ、多色対応の有無"
+        ],
+        "differentiators": [
+          "Bambu Lab A1の利点：より高速で高品質、かつ大きなサイズの造形が可能であり、多色造形への拡張性がある",
+          "Entina TINA2 Plusの利点：子供の教育用途など、とにかく安価で小型の入門機を探しているケースに適している"
+        ]
+      },
+      {
+        "name": "ELEGOO MARS 5",
+        "asin": "B0D4M4VK5V",
+        "priceComparison": "本製品より安価だが、造形方式が異なる（光造形）。",
+        "featureComparison": [
+          "共通点：自動レベリング",
+          "相違点：造形方式（A1はFDM、MARS 5は光造形）、材料（A1はフィラメント、MARS 5はレジン）"
+        ],
+        "differentiators": [
+          "Bambu Lab A1の利点：フィラメントを使用し、扱いが簡単で大きな造形物を作りやすい",
+          "ELEGOO MARS 5の利点：フィギュアなど、より高精細な造形が必要な場合に適している"
+        ]
+      },
+      {
+        "name": "Bambu Lab P2S Combo",
+        "asin": "B0FT818HCH",
+        "priceComparison": "本製品よりもかなり高額だが、筐体付きでより上位のモデル。",
+        "featureComparison": [
+          "共通点：多色造形対応、自動レベリング",
+          "相違点：構造（CoreXY）、最大速度（600mm/s）、筐体の有無"
+        ],
+        "differentiators": [
+          "Bambu Lab A1の利点：筐体不要で価格を抑えつつ、高速な造形を行いたい場合に適している",
+          "Bambu Lab P2S Comboの利点：温度管理が必要な素材の印刷や、より高速な印刷、最大20色の多色造形を行いたい場合に適している"
+        ]
+      },
+      {
+        "name": "Bambu Lab A1 mini Combo",
+        "asin": "B0CRYZWJLG",
+        "priceComparison": "本製品より少し安い価格で、AMS liteが付属する。",
+        "featureComparison": [
+          "共通点：高速印刷、自動キャリブレーション",
+          "相違点：造形サイズ（A1は256³、A1 miniは180³）、AMS liteの有無"
+        ],
+        "differentiators": [
+          "Bambu Lab A1の利点：より大きなサイズの造形物を印刷したい場合に適している",
+          "Bambu Lab A1 mini Comboの利点：大きなサイズは不要で、初期費用を抑えて最初から多色造形を楽しみたい場合に適している"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "初めて3Dプリンターを購入する初心者",
+        "高速で静かな3Dプリンターを探している方",
+        "将来的に多色造形へのアップグレードを考えている方"
+      ],
+      "pros": [
+        "全自動キャリブレーションにより初心者でも設定が容易",
+        "最大500mm/sの高速な印刷速度",
+        "48dB以下の高い静音性"
+      ],
+      "cons": [
+        "多色造形には別途AMS liteの購入が必要"
+      ],
+      "score": 85,
+      "scoreRationale": "[基本点: 70]\n[加点: +5] (全自動キャリブレーションによる優れた操作性)\n[加点: +5] (アクティブ流量補正による印刷品質の安定性)\n[加点: +5] (最大500mm/sの高速な造形速度)\n[加点: +5] (48dB以下の優れた静音性)\n[減点: -5] (多色造形に別売りオプションが必要なことによる追加コスト)\n[合計: 85]"
+    },
+    "technicalSpecs": {
+      "dimensions": {
+        "height": "326.9mm",
+        "width": "529.1mm",
+        "depth": "552.7mm"
+      },
+      "weight": "8300g",
+      "printingSize": "256 x 256 x 256 mm",
+      "noiseLevel": "≤48 dB",
+      "maxPrintingSpeed": "500 mm/s",
+      "maxAcceleration": "10,000 mm/s²",
+      "features": [
+        "多色造形対応 (要AMS lite)",
+        "全自動キャリブレーション",
+        "アクティブ流量補正",
+        "アクティブモーターノイズキャンセリング",
+        "ワンクリックノズル交換"
+      ]
+    }
+  }
+}
