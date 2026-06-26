@@ -1,0 +1,172 @@
+{
+  "analysis": {
+    "productName": "SEKC USB指紋認証キー SFSD-01",
+    "parentAsin": "B07GLRQPHP",
+    "productDescription": "Windows Helloに対応したUSB指紋認証キー。0.05秒の高速認証で最大10個の指紋を登録可能。",
+    "productUsage": [
+      "PCのログイン認証",
+      "セキュリティ強化"
+    ],
+    "positivePoints": [
+      "0.05秒の高速認証",
+      "360度からの読み取り対応",
+      "Windows 10/11のWindows Hello機能に標準対応",
+      "複数人・複数指の登録が可能(最大10指紋)"
+    ],
+    "negativePoints": [
+      "デスクトップPCの背面など、挿す場所によっては使いにくい"
+    ],
+    "useCases": [
+      "パスワード入力の手間を省きたい時",
+      "共有PCでアカウントを使い分けたい時",
+      "外出先で素早くセキュアにログインしたい時"
+    ],
+    "userStories": [],
+    "userImpression": "Windows Hello対応で設定が簡単であり、パスワード入力の手間を省ける。",
+    "sources": [
+      {
+        "id": "amazon-features",
+        "name": "Amazon商品ページ 仕様・特徴",
+        "url": "https://www.amazon.co.jp/dp/B07GLRQPHP",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-06-26",
+        "author": "SEKC",
+        "conflictOfInterest": "disclosed",
+        "notes": "0.05秒の高速認証、360度検出、Windows 11/10 Hello対応、最大10本の指紋登録などの特徴を確認。"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "0.05秒で高速認証可能",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "amazon-features"
+        ],
+        "crossChecked": false,
+        "notes": "メーカー公称値として確認。"
+      },
+      {
+        "claim": "Windows 11および10向けHello機能搭載",
+        "category": "durability",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "amazon-features"
+        ],
+        "crossChecked": false,
+        "notes": "OS標準機能として対応。"
+      }
+    ],
+    "lastInvestigated": "2026-06-26",
+    "competitiveAnalysis": [
+      {
+        "name": "アルカナイト AKFSD-07",
+        "asin": "B07VK71TST",
+        "priceComparison": "対象商品より安いが、基本スペックは同等であり品質に特段の懸念は見られない。コストパフォーマンスに優れる。",
+        "featureComparison": [
+          "共通点：Windows Hello対応、0.05秒の高速認証、USB接続",
+          "相違点：ブランドが異なる"
+        ],
+        "differentiators": [
+          "SEKC USB指紋認証キー SFSD-01の利点：特になし（同等スペック）",
+          "アルカナイト AKFSD-07の利点：価格がやや安い"
+        ]
+      },
+      {
+        "name": "サンワサプライ FP-RD5",
+        "asin": "B0F74948S2",
+        "priceComparison": "対象商品より高価だが、国内メーカーの手厚いサポートや安心感を求めるユーザーにはその価値がある。",
+        "featureComparison": [
+          "共通点：Windows Hello対応、360度認証、USB接続",
+          "相違点：国内有名ブランド製品である点"
+        ],
+        "differentiators": [
+          "SEKC USB指紋認証キー SFSD-01の利点：圧倒的にコストパフォーマンスが高い",
+          "サンワサプライ FP-RD5の利点：国内メーカー製という安心感とサポート体制"
+        ]
+      },
+      {
+        "name": "エレコム CR-FI50UBK",
+        "asin": "B0H3ZPWKKZ",
+        "priceComparison": "対象商品より高価だが、ケーブル付きで設置場所を選ばないため、デスクトップ環境での使い勝手を重視するユーザーにはその価値がある。",
+        "featureComparison": [
+          "共通点：Windows Hello対応、USB接続",
+          "相違点：有線独立タイプで設置場所を自由に選べる点"
+        ],
+        "differentiators": [
+          "SEKC USB指紋認証キー SFSD-01の利点：直挿しタイプでコンパクト、価格が安い",
+          "エレコム CR-FI50UBKの利点：ケーブル付きで手元に設置できるため、デスクトップPCでも使いやすい"
+        ]
+      },
+      {
+        "name": "Kensington VeriMark K62330WWA",
+        "asin": "B0FV7X6K1Z",
+        "priceComparison": "対象商品よりかなり高価だが、FIDO U2FやWebAuthnなどより高度なセキュリティ規格に対応しており、ビジネス用途として十分な価値がある。",
+        "featureComparison": [
+          "共通点：Windows Hello対応",
+          "相違点：FIDO U2F認証、FIDO WebAuthnに対応し、より高度なセキュリティ用途に使える"
+        ],
+        "differentiators": [
+          "SEKC USB指紋認証キー SFSD-01の利点：低価格でPCログイン用途としては十分",
+          "Kensington VeriMark K62330WWAの利点：Webサービスなど多様な生体認証に対応しており、ビジネス用途に最適"
+        ]
+      },
+      {
+        "name": "エアリア SD-FINGER01-B",
+        "asin": "B0GW7MMFYZ",
+        "priceComparison": "対象商品より高いが、国内サポートを受けられる可能性があり、安心感に対する価値がある。",
+        "featureComparison": [
+          "共通点：Windows Hello対応、最大10件登録",
+          "相違点：特になし（同等スペック）"
+        ],
+        "differentiators": [
+          "SEKC USB指紋認証キー SFSD-01の利点：価格が安い",
+          "エアリア SD-FINGER01-Bの利点：国内サポートが受けられる可能性がある"
+        ]
+      },
+      {
+        "name": "zmart USB指紋リーダー",
+        "asin": "B0FBM5W27J",
+        "priceComparison": "価格はほぼ同等であり、デザインの好みで選んで問題ない。",
+        "featureComparison": [
+          "共通点：Windows Hello対応、USB接続",
+          "相違点：デザインの違い"
+        ],
+        "differentiators": [
+          "SEKC USB指紋認証キー SFSD-01の利点：商品仕様が明確で0.05秒の高速認証をうたっている",
+          "zmart USB指紋リーダーの利点：特になし（同等スペック）"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "手軽にWindows PCのセキュリティを向上させたい人",
+        "パスワード入力を面倒に感じている人",
+        "低予算で指紋認証を導入したい人"
+      ],
+      "pros": [
+        "0.05秒の高速な認証速度",
+        "360度どこからでも認識可能",
+        "比較的安価で導入しやすい"
+      ],
+      "cons": [
+        "USBポートを1つ塞いでしまう",
+        "挿す場所によっては指を当てにくい"
+      ],
+      "score": 85,
+      "scoreRationale": "[基本点: 70]\n[加点: +10] (3,000円台という手頃な価格でコストパフォーマンスに優れる)\n[加点: +5] (0.05秒の高速認証で実用性が高い)\n[合計: 85]"
+    },
+    "technicalSpecs": {
+      "color": "ホワイト",
+      "model": "SFSD-01",
+      "interface": "USB",
+      "supportedOS": "Windows 11 / Windows 10 (Windows Hello機能対応)",
+      "recognitionTime": "0.05秒以内",
+      "recognitionAngle": "360度",
+      "fingerprintCapacity": "最大10本",
+      "warranty": "1年間保証",
+      "origin": "中国"
+    }
+  }
+}
