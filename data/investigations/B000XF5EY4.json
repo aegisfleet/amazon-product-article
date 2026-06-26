@@ -31,85 +31,99 @@
       "アウトドアやキャンプで、一本で様々な食材に対応する万能ナイフとして",
       "料理初心者が、ストレスなく野菜や果物のカットを練習するシーン"
     ],
-    "userStories": [
-      {
-        "userType": "30代 主婦",
-        "scenario": "毎日の調理",
-        "experience": "今までトマトを切るのがストレスだったが、このナイフを使い始めてから全く潰れなくなり、料理が楽しくなった。あまりの切れ味に感動し、友人にもプレゼントしている。",
-        "sentiment": "positive"
-      },
-      {
-        "userType": "パン作りが趣味の40代 男性",
-        "scenario": "焼き立てのパンのカット",
-        "experience": "高価なパン切り包丁も持っているが、硬いハード系のパンも柔らかい食パンも、このナイフが一番綺麗に切れる。軽くて扱いやすいため、結局いつもこればかり使ってしまう。",
-        "sentiment": "positive"
-      },
-      {
-        "userType": "20代 一人暮らしの学生",
-        "scenario": "自炊",
-        "experience": "（推測）料理はあまりしないが、これ一本あれば果物やパン、簡単な調理がこなせるので重宝している。価格が安いので気軽に試せたし、メンテナンスも楽。",
-        "sentiment": "positive"
-      }
-    ],
+    "userStories": [],
     "userImpression": "ユーザーからは「価格からは信じられないほどの切れ味」という評価が圧倒的に多く、”もっと早く買えばよかった”という声が多数聞かれる。特に、トマトやパンを綺麗に切れない悩みを解決してくれる点が高く評価されている。軽量で扱いやすく、手入れも簡単なことから、料理のプロから初心者まで幅広い層に支持されている。一度使うと手放せなくなるという声が多く、リピート購入やプレゼントとしての需要も高い。",
     "sources": [
       {
-        "name": "モノシル: VICTORINOX スイスクラシック トマト＆テーブルナイフの口コミ・評判",
-        "url": "https://monocil.jp/items/6682/",
-        "credibility": "高い（複数のユーザーによる実体験レビュー）"
-      },
-      {
-        "name": "楽天市場: VICTORINOX トマト＆テーブルナイフ みんなのレビュー・口コミ",
-        "url": "https://review.rakuten.co.jp/item/1/203472_10002569/1.0/",
-        "credibility": "高い（多数の購入者によるレビュー）"
-      },
-      {
-        "name": "Amazon.co.jp: カスタマーレビュー",
-        "url": "https://www.amazon.co.jp/product-reviews/B000XF5EY4",
-        "credibility": "高い（多数の購入者によるレビュー）"
+        "id": "src-1",
+        "name": "Amazon.co.jp カスタマーレビュー",
+        "url": "https://www.amazon.co.jp/dp/B000XF5EY4",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-06-27",
+        "author": "Amazon",
+        "conflictOfInterest": "none",
+        "notes": "ユーザーからの全体的な高評価、切れ味の良さが確認できる"
       }
     ],
-    "lastInvestigated": "2026-02-21",
+    "lastInvestigated": "2026-06-27",
     "competitiveAnalysis": [
       {
-        "name": "VICTORINOX スイスモダン トマト&テーブルナイフ",
+        "name": "VICTORINOX スイスモダン トマト&テーブルナイフ 11cm",
         "asin": "B0F1F85WDT",
-        "priceComparison": "約1,583円と、スイスクラシックより数百円高い。",
+        "priceComparison": "対象商品よりやや高い。よりデザイン性を求めるユーザー向け。",
         "featureComparison": [
-          "刃の性能はスイスクラシックと同じ波刃。",
-          "ハンドルが人間工学に基づいたモダンなデザインで、握りやすさが向上している。",
-          "カラーバリエーションはシックな色合いが多い。"
+          "共通点：11cmの波刃、ステンレススチール刃、食洗機対応",
+          "相違点：ハンドルが人間工学に基づいたモダンなデザインになっており、よりエレガントな印象"
         ],
         "differentiators": [
-          "デザイン性を重視するユーザーに向けた上位モデル。",
-          "実用性重視ならスイスクラシックの方がコストパフォーマンスが良い。"
+          "対象商品の利点：ベーシックなデザインで価格が安く、コストパフォーマンスが高い",
+          "VICTORINOX スイスモダンの利点：洗練されたデザインと人間工学に基づいた握りやすさ"
         ]
       },
       {
-        "name": "Thunder Group トマトナイフ",
-        "asin": "B0FGMJQHGH",
-        "priceComparison": "約1,190円と、VICTORINOXより安価。",
+        "name": "トラモンティーナ プレナス 先丸 ペティナイフ 波刃",
+        "asin": "B0787CXV3R",
+        "priceComparison": "対象商品より安い。とにかく安価に揃えたい場合に適しているが、品質を重視するなら対象商品がおすすめ。",
         "featureComparison": [
-          "波刃でトマトやパンのカットに適している点は同じ。",
-          "業務用として設計されており、耐久性重視。",
-          "デザインはシンプルで実用本位。"
+          "共通点：波刃仕様、食洗機対応、軽量",
+          "相違点：刃渡りが12cmと少し長く、価格が半分程度。ブラジル製。"
         ],
         "differentiators": [
-          "価格の安さが最大の魅力。",
-          "家庭での使用においては、VICTORINOXの方がデザインやカラーバリエーションで優れる。"
+          "対象商品の利点：スイス製の高い品質と信頼性、抜群の切れ味の持続性",
+          "トラモンティーナ プレナスの利点：圧倒的な低価格と少し長めの刃渡り"
         ]
       },
       {
-        "name": "OMORI トマトナイフ",
-        "asin": "B0CDZXJXVY",
-        "priceComparison": "約999円と、1000円を切る価格。",
+        "name": "VICTORINOX パーリングナイフ 8cm 波刃",
+        "asin": "B000XF751E",
+        "priceComparison": "対象商品より安い。刃渡りが短いため価格が抑えられている。",
         "featureComparison": [
-          "VICTORINOXの類似品として機能する波刃ナイフ。",
-          "切れ味の持続性や刃の品質についてはVICTORINOXに劣る可能性がある。"
+          "共通点：VICTORINOXの波刃仕様、食洗機対応",
+          "相違点：刃渡りが8cmと短く、細かい作業（皮むきなど）により特化している"
         ],
         "differentiators": [
-          "とにかく安く手に入れたいユーザー向け。",
-          "ブランドの信頼性や長期使用を考えるとVICTORINOXが推奨される。"
+          "対象商品の利点：刃渡りが11cmあり、パンや少し大きめの果物を切るのにより適している",
+          "VICTORINOX パーリングナイフ 8cmの利点：刃が短いため、皮むきなどのより細かい作業がしやすい"
+        ]
+      },
+      {
+        "name": "VICTORINOX スイスクラシック パーリングナイフ 10cm 波刃",
+        "asin": "B000XF76M2",
+        "priceComparison": "対象商品よりやや安い。",
+        "featureComparison": [
+          "共通点：VICTORINOXの波刃仕様、食洗機対応、ブラックカラー",
+          "相違点：刃先が尖っており（パーリングナイフ）、刃渡りが10cmと1cm短い"
+        ],
+        "differentiators": [
+          "対象商品の利点：先端が丸く（先丸）、食卓でのバターナイフやテーブルナイフとしても使いやすく安全",
+          "VICTORINOX パーリングナイフ 10cmの利点：先端が尖っているため、食材に切り込みを入れたりくり抜いたりする作業がしやすい"
+        ]
+      },
+      {
+        "name": "VICTORINOX スイスクラシック パーリングナイフ 10cm 波刃 レッド",
+        "asin": "B000XF76AE",
+        "priceComparison": "対象商品と同程度の価格。",
+        "featureComparison": [
+          "共通点：VICTORINOXの波刃仕様、食洗機対応",
+          "相違点：刃渡り10cmで先端が尖っている。カラーがレッド"
+        ],
+        "differentiators": [
+          "対象商品の利点：先端が丸く安全性が高い。汎用的なブラックカラー",
+          "VICTORINOX パーリングナイフ 10cm レッドの利点：キッチンを明るくするレッドカラー。細かい細工切りがしやすい尖った刃先"
+        ]
+      },
+      {
+        "name": "VICTORINOX スイスクラシック パーリングナイフ 10cm 波刃 オレンジ",
+        "asin": "B010PP2IFO",
+        "priceComparison": "対象商品より少し高い。",
+        "featureComparison": [
+          "共通点：VICTORINOXの波刃仕様、食洗機対応",
+          "相違点：刃渡り10cmで先端が尖っている。明るいオレンジカラー"
+        ],
+        "differentiators": [
+          "対象商品の利点：先端が丸く安全。パン切りなどにも適した11cmの刃渡り",
+          "VICTORINOX パーリングナイフ 10cm オレンジの利点：視認性の高いオレンジカラーで、先端を使った細かい作業に向いている"
         ]
       }
     ],
@@ -135,21 +149,21 @@
       "scoreRationale": "[基本点: 70]\n[加点: +10] (性能・機能: 特化分野での性能は満点だが、用途が限定的なため)\n[加点: +15] (コストパフォーマンス: 1000円台とは思えない性能で、他の追随を許さないレベル)\n[加点: +5] (ユーザー満足度: レビュー評価が極めて高く、リピーターも多い)\n[減点: -5] (品質・デザイン: ハンドルがプラスチックで少し安っぽく見える)\n[合計: 95]"
     },
     "technicalSpecs": {
-        "bladeMaterial": "ステンレススチール",
-        "handleMaterial": "ポリプロピレン",
-        "bladeLength": "11cm",
-        "totalLength": "22.3cm",
-        "weight": "28g",
-        "edgeType": "波刃 (Wavy Edge)",
-        "dishWasherSafe": true,
-        "countryOfOrigin": "スイス",
-        "heatResistance": "110℃",
-        "dimensions": {
-            "height": "1.2cm",
-            "width": "2.2cm",
-            "depth": "22.3cm",
-            "weight": "28g"
-        }
-    }
+      "dimensions": {
+        "height": "223mm",
+        "width": "12mm",
+        "depth": "22mm"
+      },
+      "weight": "28g",
+      "bladeMaterial": "ステンレススチール",
+      "handleMaterial": "ポリプロピレン",
+      "bladeLength": "110mm",
+      "totalLength": "223mm",
+      "edgeType": "波刃 (Wavy Edge)",
+      "dishWasherSafe": "true",
+      "countryOfOrigin": "スイス",
+      "heatResistance": "110℃"
+    },
+    "claims": []
   }
 }
