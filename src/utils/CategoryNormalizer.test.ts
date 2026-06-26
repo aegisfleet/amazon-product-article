@@ -9,6 +9,8 @@ describe('CategoryNormalizer', () => {
       expect(CategoryNormalizer.isValidCategoryName('草刈機・刈払機パーツ・アクセサリ')).toBe(true);
       expect(CategoryNormalizer.isValidCategoryName('category_with_dash')).toBe(true);
       expect(CategoryNormalizer.isValidCategoryName('育毛・養毛用トニック・エッセンス')).toBe(true);
+      expect(CategoryNormalizer.isValidCategoryName('魚介類・水産加工品ギフト')).toBe(true);
+      expect(CategoryNormalizer.isValidCategoryName('グルメギフト')).toBe(true);
     });
 
     it('should return false for empty or undefined names', () => {
@@ -21,6 +23,9 @@ describe('CategoryNormalizer', () => {
 
     it('should return false for names matching invalid patterns', () => {
       const invalidNames = [
+        '3P grocery',
+        '3P beauty',
+        '3p grocery',
         'Fire TV 商品一覧ページ',
         'L202StorageItems02Sub',
         'ブラックフライデー',
