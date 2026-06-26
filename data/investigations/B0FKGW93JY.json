@@ -1,0 +1,174 @@
+{
+  "analysis": {
+    "productName": "サンワダイレクト 指紋認証リーダー 400-FPRD3",
+    "parentAsin": "B0FKGW93JY",
+    "productDescription": "デスクトップPCでも使いやすいケーブル長1.5mのUSB接続指紋認証リーダー。MoC（Match-on-Chip）搭載でセキュアなWindows Helloログインを実現します。",
+    "productUsage": [
+      "パソコンへの安全なログイン",
+      "個人情報・データの盗難防止"
+    ],
+    "positivePoints": [
+      "MoC搭載により認証データがドングル内で処理され、外部流出のリスクが低い",
+      "ケーブル長1.5mでデスクトップPCでも手元に設置しやすい",
+      "Windows 11/10のWindows Helloにドライバなしで対応",
+      "360度どの角度からでも指紋を読み取れる"
+    ],
+    "negativePoints": [
+      "直挿しタイプと比較してケーブルが煩わしい場合がある",
+      "他のUSB指紋認証リーダーと比較して価格が高め"
+    ],
+    "useCases": [
+      "デスクトップパソコンを机の下に置いている環境での生体認証ログイン",
+      "複数人で共有するパソコンでのユーザー切り替え（最大10件の指紋登録に対応）"
+    ],
+    "userStories": [],
+    "userImpression": "ケーブル付きのため、デスクトップPCユーザーから高い利便性が評価されています。またMoC搭載による高いセキュリティとWindows Helloへの簡単な設定も支持されています。",
+    "sources": [
+      {
+        "id": "src-1",
+        "name": "Amazon商品ページ",
+        "url": "https://www.amazon.co.jp/dp/B0FKGW93JY",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-06-26",
+        "author": "サンワダイレクト",
+        "conflictOfInterest": "disclosed",
+        "notes": "MoC搭載、ケーブル長1.5m、Windows Hello対応、指紋10件登録可能などの基本スペックを確認。"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "認証データが外部に流出しにくいMoCタイプ",
+        "category": "safety",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "crossChecked": false,
+        "notes": "メーカー公式スペックによる主張"
+      },
+      {
+        "claim": "ケーブル長が1.5mでデスクトップパソコンに対応",
+        "category": "comparativeAdvantage",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "crossChecked": false,
+        "notes": "直挿しタイプに対する明確な優位性"
+      }
+    ],
+    "lastInvestigated": "2026-06-26",
+    "competitiveAnalysis": [
+      {
+        "name": "エレコム 指紋認証リーダー CR-FI50UBK",
+        "asin": "B0H3ZPWKKZ",
+        "priceComparison": "対象商品よりやや安い。どちらも有線独立タイプ・MoC方式だが価格差がある。",
+        "featureComparison": [
+          "共通点：USB有線接続の独立タイプであり、MoC方式を採用してWindows Helloに対応している点",
+          "相違点：ブランドとデザイン、ケーブルの長さや取り回しの仕様"
+        ],
+        "differentiators": [
+          "サンワダイレクト 400-FPRD3の利点：サンワダイレクト製品のエコシステムやデザインを好む場合",
+          "エレコム CR-FI50UBKの利点：大手メーカー製で同等の機能をより安価に導入したい場合"
+        ]
+      },
+      {
+        "name": "サンワサプライ USB指紋認証リーダー FP-RD5",
+        "asin": "B0F74948S2",
+        "priceComparison": "対象商品より安い。USB直挿しタイプのためケーブル不要な分安価に設定されている。",
+        "featureComparison": [
+          "共通点：MoC搭載、360度認証、Windows Hello対応である点",
+          "相違点：対象商品は1.5mケーブル付きであるのに対し、FP-RD5はUSBポート直挿しタイプである点"
+        ],
+        "differentiators": [
+          "サンワダイレクト 400-FPRD3の利点：デスクトップPCなど、手元から離れた位置にUSBポートがある場合",
+          "サンワサプライ FP-RD5の利点：ノートPCなど、ポートに直接挿して省スペースで利用したい場合"
+        ]
+      },
+      {
+        "name": "サンワダイレクト USB 指紋認証リーダー 400-FPRD1",
+        "asin": "B09LHCBN3S",
+        "priceComparison": "対象商品の約半額。直挿しタイプでMoC非搭載（あるいはアピールなし）のため安価。",
+        "featureComparison": [
+          "共通点：サンワダイレクト製のWindows Hello対応指紋認証リーダー",
+          "相違点：対象商品はケーブル付き・MoC搭載であるのに対し、400-FPRD1は直挿しタイプでセキュリティ仕様が異なる"
+        ],
+        "differentiators": [
+          "サンワダイレクト 400-FPRD3の利点：より高度なセキュリティ（MoC）とデスクトップ環境での利便性を求める場合",
+          "サンワダイレクト 400-FPRD1の利点：ノートPC用でとにかくコストを抑えたい場合"
+        ]
+      },
+      {
+        "name": "アルカナイト USB指紋認証リーダー AKFSD-07",
+        "asin": "B07VK71TST",
+        "priceComparison": "対象商品の約1/3の価格。直挿しタイプで機能がシンプルなため安価。",
+        "featureComparison": [
+          "共通点：Windows Helloに対応し、指紋認証でログインできる点",
+          "相違点：対象商品はケーブル付き・MoC搭載。AKFSD-07は直挿しで0.05秒の高速認証をアピール。"
+        ],
+        "differentiators": [
+          "サンワダイレクト 400-FPRD3の利点：MoCによる高い安全性と、デスクトップでの設置のしやすさ",
+          "アルカナイト AKFSD-07の利点：ノートPCに常時挿しておけるコンパクトさと圧倒的な安さ"
+        ]
+      },
+      {
+        "name": "ヤングトップ USB 指紋認証リーダー ケーブルタイプ",
+        "asin": "B0GZ3N3BL1",
+        "priceComparison": "対象商品の約1/3の価格。ノーブランド品のため非常に安価。",
+        "featureComparison": [
+          "共通点：ケーブル長1.5mのデスクトップ対応指紋認証リーダー",
+          "相違点：対象商品は有名ブランドでMoCを搭載しているが、こちらはノーブランド品で詳細なセキュリティ仕様が不明"
+        ],
+        "differentiators": [
+          "サンワダイレクト 400-FPRD3の利点：国内メーカーの信頼性と、MoC搭載による確実なセキュリティを確保できる点",
+          "ヤングトップ ケーブルタイプの利点：デスクトップ環境でケーブル付きを最安クラスで導入したい場合"
+        ]
+      },
+      {
+        "name": "エアリア USB指紋認証リーダー SD-FINGER01-B",
+        "asin": "B0GW7MMFYZ",
+        "priceComparison": "対象商品の半額以下。直挿しタイプのため安価。",
+        "featureComparison": [
+          "共通点：Windows Hello対応で最大10件の指紋登録が可能な点",
+          "相違点：対象商品は1.5mのケーブル付きでMoC搭載。エアリアはコンパクトな直挿しタイプ。"
+        ],
+        "differentiators": [
+          "サンワダイレクト 400-FPRD3の利点：デスクトップPCでの使用を前提とした取り回しの良さと高セキュリティ",
+          "エアリア SD-FINGER01-Bの利点：ノートPC用の安価な直挿しリーダーを求めている場合"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "デスクトップPCを机の下に設置しているユーザー",
+        "指紋認証時のセキュリティ（MoC方式）を重視する法人・個人ユーザー",
+        "毎回パスワードを手入力する手間を省きたいWindowsユーザー"
+      ],
+      "pros": [
+        "ケーブル長1.5mで手元に設置可能",
+        "MoC搭載で認証データが外部に流出しにくい",
+        "Windows Hello対応で簡単セットアップ"
+      ],
+      "cons": [
+        "直挿しタイプと比較して価格が高い",
+        "ノートPCで使用するにはケーブルが邪魔になる可能性"
+      ],
+      "score": 75,
+      "scoreRationale": "[基本点: 70]\n[加点: +5] MoC（Match-on-Chip）搭載による高いセキュリティ性能\n[加点: +5] デスクトップPCで使いやすい1.5mケーブルの利便性\n[減点: -5] 他の直挿しタイプの指紋認証リーダーと比較して価格が割高\n[合計: 75]"
+    },
+    "technicalSpecs": {
+      "interface": "USB接続",
+      "cableLength": "1.5m",
+      "securityFeature": "MoC (Match-on-Chip) 搭載",
+      "supportedOS": [
+        "Windows 11",
+        "Windows 10"
+      ],
+      "authenticationMethod": "Windows Hello対応",
+      "fingerprintCapacity": "最大10件登録",
+      "readingAngle": "360度",
+      "warranty": "ご購入日より6ヶ月"
+    }
+  }
+}
