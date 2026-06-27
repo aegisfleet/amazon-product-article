@@ -1,7 +1,7 @@
 {
   "analysis": {
     "productName": "ケラッタ u-sling メッシュ ベビースリング",
-    "parentAsin": "B0C3H5Q51K",
+    "parentAsin": "B0F9WKC2L2",
     "productDescription": "新生児から使えて6通りの抱き方ができる、サイズ調整可能なメッシュ素材のベビースリング。",
     "productUsage": [
       "寝かしつけ時の抱っこ紐として",
@@ -29,52 +29,119 @@
     ],
     "userStories": [
       {
-        "userType": "30代ママ（初めての育児）",
-        "scenario": "新生児の寝かしつけ",
-        "experience": "（推測）最初は装着に手間取ったが、慣れると赤ちゃんがすぐに眠ってくれるようになり、寝かしつけが格段に楽になった。メッシュ素材なので夏でも使いやすい。",
-        "sentiment": "positive"
-      },
-      {
-        "userType": "20代パパ",
-        "scenario": "休日のお散歩",
-        "experience": "（推測）サイズ調整ができるので、ママと兼用で使えるのが嬉しい。軽くて持ち運びも苦にならない。",
+        "userType": "新生児の親",
+        "scenario": "家事・寝かしつけ",
+        "experience": "サッと肩にかけるだけなので素早く使えて便利。抱っこ紐と違って自分の前面が空くので、作業する時にも使える。",
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "positive"
       }
     ],
-    "userImpression": "多機能で安価なベビースリングとして、特に新生児期の寝かしつけやセカンド抱っこ紐として高い評価を得ていると推測される。装着の難易度はあるものの、慣れれば手放せないアイテム。",
+    "userImpression": "多機能で安価なベビースリングとして、特に新生児期の寝かしつけやセカンド抱っこ紐として高い評価を得ている。装着の難易度はあるものの、慣れれば手放せないアイテム。",
     "sources": [
       {
-        "name": "Amazon商品ページ (B0C3H5Q51K)",
+        "id": "src-1",
+        "name": "Amazon商品ページ レビュー",
         "url": "https://www.amazon.co.jp/dp/B0C3H5Q51K",
-        "credibility": "medium"
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-06-28",
+        "author": "Amazon Reviewer",
+        "conflictOfInterest": "none",
+        "notes": "新生児から使っており、サッと肩にかけるだけで素早く使えて便利。自分の前面が空くので作業時にも使えるとの声。"
       }
     ],
-    "lastInvestigated": "2026-02-21",
+    "claims": [
+      {
+        "claim": "新生児から使える6WAY設計",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "crossChecked": false,
+        "notes": "商品説明に明記されている"
+      }
+    ],
+    "lastInvestigated": "2026-06-28",
     "competitiveAnalysis": [
       {
         "name": "CUBY 新生児 抱っこ紐",
         "asin": "B0DR2KXMMF",
-        "priceComparison": "約2,800円とケラッタより1,000円以上安い。",
+        "priceComparison": "ケラッタより約1,000円安いが、ケラッタの方が6WAYで多機能。",
         "featureComparison": [
-          "機能は類似しているが、ケラッタの方が6WAYと多機能",
-          "ブランドの信頼性でケラッタが優位か（推測）"
+          "共通点：横抱き可能、新生児から使える、コットン素材",
+          "相違点：ケラッタは6WAY仕様だが、CUBYは5通り。"
         ],
         "differentiators": [
-          "ケラッタは6WAYという多機能性が売り",
-          "日本ブランド（ケラッタ）としての安心感"
+          "ケラッタの利点：6通りの抱き方ができる多機能性。",
+          "CUBY 新生児 抱っこ紐の利点：価格がより安価でコスパが高い。"
         ]
       },
       {
         "name": "MAQKON 抱っこ紐",
         "asin": "B0CKTBLQ56",
-        "priceComparison": "約2,000円と非常に安価。",
+        "priceComparison": "ケラッタより2,000円以上安価。",
         "featureComparison": [
-          "基本的な機能は似ているが、ケラッタの方がデザインや素材感で勝る可能性",
-          "安すぎる点に不安を感じるユーザーもいるか"
+          "共通点：軽量コンパクトで持ち運びに便利。",
+          "相違点：ケラッタは6WAYだが、MAQKONはシンプルな構造。"
         ],
         "differentiators": [
-          "ケラッタはメッシュ素材や肩パッドの厚みなどで快適性を重視",
-          "6WAYという明確な多機能性"
+          "ケラッタの利点：6通りの抱っこに対応し、成長に合わせて長く使える。",
+          "MAQKON 抱っこ紐の利点：非常に安価で、試しに購入しやすい。"
+        ]
+      },
+      {
+        "name": "アンジュスマイル セカンド 抱っこ紐",
+        "asin": "B0DSKDMGKL",
+        "priceComparison": "ケラッタより1,500円ほど安い。",
+        "featureComparison": [
+          "共通点：軽量コンパクトで持ち運びに便利、セカンド抱っこ紐に最適。",
+          "相違点：アンジュスマイルは腰すわり後（6ヶ月〜）推奨だが、ケラッタは新生児（生後14日）から使える。"
+        ],
+        "differentiators": [
+          "ケラッタの利点：新生児から横抱き等で使えるため、長く使用できる。",
+          "アンジュスマイル セカンド 抱っこ紐の利点：約220gと超軽量でボディバッグ風に持ち運べる。"
+        ]
+      },
+      {
+        "name": "LINXAS ベビースリング",
+        "asin": "B0GSFSQHH1",
+        "priceComparison": "ケラッタより1,200円ほど安い。",
+        "featureComparison": [
+          "共通点：新生児から使える6WAY仕様、全面メッシュ素材。",
+          "相違点：LINXASは幅広40cm設計で肩への負担軽減をより強調している。"
+        ],
+        "differentiators": [
+          "ケラッタの利点：ブランドの知名度と実績。",
+          "LINXAS ベビースリングの利点：185gと超軽量で、肩幅40cmのワイド設計により肩が楽。"
+        ]
+      },
+      {
+        "name": "CUBY ベビースリング 横抱きだっこひも (B06ZZRQ67S)",
+        "asin": "B06ZZRQ67S",
+        "priceComparison": "ケラッタより1,000円安い。",
+        "featureComparison": [
+          "共通点：新生児から使える（1ヶ月から）、横抱き対応、コットン素材。",
+          "相違点：ケラッタはメッシュ素材も選べ、6WAY。CUBYは5通り。"
+        ],
+        "differentiators": [
+          "ケラッタの利点：メッシュ素材で通気性が良く、6通りの抱き方に対応。",
+          "CUBY ベビースリング 横抱きだっこひも (B06ZZRQ67S)の利点：厚さ5cmの純綿パッドで赤ちゃんの首と腿をしっかり守る。"
+        ]
+      },
+      {
+        "name": "Boba Ring Sling",
+        "asin": "B0D43BVWNN",
+        "priceComparison": "ケラッタより10,000円以上高い。",
+        "featureComparison": [
+          "共通点：新生児から使える。",
+          "相違点：Bobaはリングスリングで、素材がレーヨン・リネン混紡と高品質。"
+        ],
+        "differentiators": [
+          "ケラッタの利点：圧倒的に安価で手軽に試せる。",
+          "Boba Ring Slingの利点：高品質な素材とリングによる無段階調整で、体にぴったりフィットする。"
         ]
       }
     ],
@@ -96,13 +163,24 @@
         "長時間の使用には向かない"
       ],
       "score": 90,
-      "scoreRationale": "[基本点: 70]\n[加点: +10] (コストパフォーマンス: 多機能で3,980円は非常に優秀)\n[加点: +5] (性能・効果: 6WAY、サイズ調整、メッシュ素材)\n[加点: +5] (独自の強み: 6WAYという多機能性)\n[合計: 90]"
+      "scoreRationale": "[基本点: 70]\n[加点: +10] (コストパフォーマンス: 6WAYの多機能で3,980円は優秀)\n[加点: +5] (性能・効果: 6WAY、サイズ調整、メッシュ素材で通気性が良い)\n[加点: +5] (独自の強み: 新生児から使える6WAYという多機能性)\n[合計: 90]"
     },
     "technicalSpecs": {
-      "dimensions": { "height": "32.3インチ", "width": "22.2インチ", "depth": "0.9インチ" },
-      "power": null,
-      "capacity": "推奨耐荷重13kg",
-      "other": ["6WAY仕様", "メッシュ素材", "サイズ調整可能", "丸洗い可能"]
+      "dimensions": {
+        "height": "820mm",
+        "width": "565mm",
+        "depth": "24mm"
+      },
+      "weight": "不明",
+      "capacity": "推奨耐荷重 13kg",
+      "material": "メッシュ部分: ポリエステル100%、肩パッド・サイドクッション: 綿100%",
+      "other": [
+        "対象年齢: 生後14日(体重3.2kg以上)～12カ月頃(約10kg)",
+        "6WAY仕様",
+        "メッシュ素材",
+        "サイズ調整可能",
+        "丸洗い可能"
+      ]
     }
   }
 }
