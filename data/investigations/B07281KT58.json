@@ -25,84 +25,99 @@
       "リモートワークでのノートPC拡張",
       "出張時のデータ入力用"
     ],
-    "userStories": [
-      {
-        "userType": "事務職",
-        "scenario": "日々の売上入力",
-        "experience": "Excelでの入力作業が格段に楽になりました。特にTabキーと00キーがあるおかげで、マウスに持ち替える回数が減りました。",
-        "sentiment": "positive"
-      },
-      {
-        "userType": "学生",
-        "scenario": "レポート作成",
-        "experience": "ノートPCのキーボード配置に慣れず購入しましたが、数字入力が早くなり、レポート作成の効率が上がりました。",
-        "sentiment": "positive"
-      },
-      {
-        "userType": "在宅勤務者",
-        "scenario": "自宅での仕事",
-        "experience": "安くて丈夫そうですが、深夜に作業すると打鍵音が少し響くのが気になります。",
-        "sentiment": "mixed"
-      }
-    ],
+    "userStories": [],
     "userImpression": "コスパ重視の実用的なテンキーとして評価されています。機能は必要十分で、耐久性も期待できるため、事務作業の効率化に貢献します。",
     "sources": [
       {
-        "name": "エレコム公式サイト",
-        "url": "https://www.elecom.co.jp/products/TK-TDM017BK.html",
-        "credibility": "高"
-      },
-      {
+        "id": "src-1",
         "name": "Amazon商品ページ",
         "url": "https://www.amazon.co.jp/dp/B07281KT58",
-        "credibility": "中"
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-06-28",
+        "author": "Amazon カスタマー",
+        "conflictOfInterest": "none",
+        "notes": "商品の仕様、特徴、機能を確認。"
       }
     ],
-    "lastInvestigated": "2026-02-21",
+    "lastInvestigated": "2026-06-28",
     "competitiveAnalysis": [
       {
         "name": "エレコム TK-TBP020BK",
         "asin": "B07FR4ZRX4",
-        "priceComparison": "約1,000円高い（2,681円）",
+        "priceComparison": "対象商品より高価だが、薄型設計の価値がある",
         "featureComparison": [
-          "Bluetooth接続",
-          "パンタグラフ式キー",
-          "薄型デザイン"
+          "共通点：エレコム製",
+          "相違点：Bluetooth接続かUSBレシーバーか、パンタグラフ式かメンブレン式か、薄型デザインか"
         ],
         "differentiators": [
-          "USBポートを塞がないBluetooth接続",
-          "ノートPCと同じパンタグラフ式で軽いタッチ",
-          "持ち運びに便利な薄型設計"
+          "エレコム TK-TDM017BK ワイヤレス テンキーの利点：安価で手に入れやすい",
+          "エレコム TK-TBP020BKの利点：薄型で持ち運びに便利"
         ]
       },
       {
         "name": "iClever IC-KP10",
         "asin": "B0B6J4Q3KH",
-        "priceComparison": "約2,200円高い（3,799円）",
+        "priceComparison": "対象商品より高価だが、多機能で充電式という価値がある",
         "featureComparison": [
-          "Bluetooth接続",
-          "充電式バッテリー",
-          "34キー搭載"
+          "共通点：ワイヤレス接続",
+          "相違点：Bluetooth接続、充電式バッテリー、34キー搭載"
         ],
         "differentiators": [
-          "電池交換不要の充電式",
-          "多機能キー搭載で効率アップ",
-          "高級感のあるデザイン"
+          "エレコム TK-TDM017BK ワイヤレス テンキーの利点：単三電池で動くため急なバッテリー切れに対応しやすい",
+          "iClever IC-KP10の利点：電池交換不要で34キーによる多機能"
         ]
       },
       {
         "name": "サンワサプライ NT-WL27BK",
         "asin": "B0DMVQR1W7",
-        "priceComparison": "約3,200円高い（4,836円）",
+        "priceComparison": "対象商品より高価だが、表計算に特化しているため業務効率が上がる",
         "featureComparison": [
-          "ワイヤレス接続",
-          "表計算特化キー配置",
-          "高価格帯"
+          "共通点：ワイヤレス接続",
+          "相違点：表計算特化キー配置"
         ],
         "differentiators": [
-          "表計算ソフトでの使用を想定した特殊キー配置",
-          "しっかりとした打鍵感",
-          "プロ向けの仕様"
+          "エレコム TK-TDM017BK ワイヤレス テンキーの利点：汎用性が高く安価",
+          "サンワサプライ NT-WL27BKの利点：Excelなどの表計算ソフトでの作業効率が非常に高い"
+        ]
+      },
+      {
+        "name": "8BitDo レトロ 18 メカニカル テンパッド",
+        "asin": "B0D4QGX9QB",
+        "priceComparison": "対象商品よりかなり高価だが、メカニカルキーの打鍵感とレトロなデザインの価値がある",
+        "featureComparison": [
+          "共通点：ワイヤレス接続対応",
+          "相違点：メカニカルスイッチ採用、レトロデザイン、Bluetooth対応"
+        ],
+        "differentiators": [
+          "エレコム TK-TDM017BK ワイヤレス テンキーの利点：安価で手軽に導入できる",
+          "8BitDo レトロ 18 メカニカル テンパッドの利点：メカニカルキーの快適な打鍵感と個性的なデザイン"
+        ]
+      },
+      {
+        "name": "エレコム TK-TCM011BK",
+        "asin": "B00J57KYCI",
+        "priceComparison": "対象商品より安価で、有線接続で十分な場合はコストパフォーマンスが高い",
+        "featureComparison": [
+          "共通点：エレコム製、メンブレン式",
+          "相違点：有線接続かワイヤレス接続か"
+        ],
+        "differentiators": [
+          "エレコム TK-TDM017BK ワイヤレス テンキーの利点：ケーブルを気にせず配置できる",
+          "エレコム TK-TCM011BKの利点：有線のため電池交換不要で、より安価"
+        ]
+      },
+      {
+        "name": "EPOMAKER EK21 VIA",
+        "asin": "B0FD3GXFTM",
+        "priceComparison": "対象商品より高価だが、ガスケットマウントやアルミ合金ノブなど高級感がある",
+        "featureComparison": [
+          "共通点：ワイヤレス接続対応",
+          "相違点：メカニカルスイッチ（ホットスワップ）、アルミ合金製ノブ、Bluetooth対応"
+        ],
+        "differentiators": [
+          "エレコム TK-TDM017BK ワイヤレス テンキーの利点：シンプルで安価なため事務作業用として気軽に使える",
+          "EPOMAKER EK21 VIAの利点：カスタマイズ性と高級感があり、ゲームや趣味用としても満足度が高い"
         ]
       }
     ],
@@ -123,19 +138,41 @@
         "Bluetooth非対応"
       ],
       "score": 85,
-      "scoreRationale": "[基本点: 70]\n[加点: +5] (Tabキー、00キー、NumLock非連動など実用的な機能を搭載)\n[加点: +10] (競合と比較しても非常に安価でコストパフォーマンスが高い)\n[合計: 85]"
+      "scoreRationale": "[基本点: 70]\n[加点: +5] (Tabキー、00キー、NumLock非連動など実用的な機能を搭載)\n[加点: +10] (非常に安価でコストパフォーマンスが高い)\n[合計: 85]"
     },
     "technicalSpecs": {
+      "dimensions": {
+        "width": "90mm",
+        "height": "27mm",
+        "depth": "140mm"
+      },
+      "weight": "約107g (電池含まず)",
       "connection": "2.4GHzワイヤレス (USB-Aレシーバー)",
       "keySwitch": "メンブレン",
+      "os": "Windows 10/8.1/7/XP",
+      "other": [
+        "NumLock非連動",
+        "Tabキー",
+        "00キー",
+        "電源スイッチ",
+        "電池残量表示"
+      ],
       "keyPitch": "19mm",
       "keyStroke": "深め",
       "battery": "単3形乾電池×1",
-      "batteryLife": "約1.3年 (想定)",
-      "size": "幅90×奥行140×高さ27mm",
-      "weight": "約107g (電池含まず)",
-      "os": "Windows 10/8.1/7/XP",
-      "other": "NumLock非連動, Tabキー, 00キー, 電源スイッチ, 電池残量表示"
-    }
+      "batteryLife": "約1.3年 (想定)"
+    },
+    "claims": [
+      {
+        "claim": "最大1000万回のキーストロークに耐える高耐久キーを採用",
+        "category": "durability",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "crossChecked": false,
+        "notes": "Amazonの商品説明から抽出"
+      }
+    ]
   }
 }
