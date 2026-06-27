@@ -1,0 +1,173 @@
+{
+  "analysis": {
+    "productName": "USB 指紋認証リーダー 小型 Type-C",
+    "parentAsin": "B0H3DQNK4V",
+    "productDescription": "Windows 10/11のWindows Hello機能に対応した、USB Type-C接続の小型指紋認証リーダー。自動ドライバーインストールにより、手軽にパスワードレスログインを導入できます。",
+    "productUsage": [
+      "Windowsパソコンへのログイン",
+      "パスワード入力の手間の削減",
+      "ノートPCのセキュリティ強化"
+    ],
+    "positivePoints": [
+      "Type-Cポートに直接接続できる希少なモデル",
+      "2.1×1.7×1.2cmの小型設計でノートPCに挿したままでも邪魔にならない",
+      "Windows 10/11では通常ドライバーが自動でインストールされるため設定が簡単",
+      "競合のType-Cモデルと比較して非常に安価"
+    ],
+    "negativePoints": [
+      "Mac OS、Chrome OS、Android、iPhoneなどWindows以外の環境では使用不可",
+      "タッチ式であり、指をスライドさせると認識エラーになる場合がある"
+    ],
+    "useCases": [
+      "Type-Cポートのみを搭載した最新の薄型ノートPCでの利用",
+      "オフィスやカフェなどの外出先でパスワードを見られずに安全にログインしたい時",
+      "毎回パスワードを打つのが面倒な自宅用デスクトップPCでの利用"
+    ],
+    "userStories": [],
+    "userImpression": "Type-C接続に対応した数少ない指紋認証リーダーであり、価格も手頃なため、Type-Aポートがない最新のノートパソコンユーザーにとって導入しやすいセキュリティデバイスです。",
+    "sources": [
+      {
+        "id": "src-1",
+        "name": "Amazon.co.jp 商品ページ",
+        "url": "https://www.amazon.co.jp/dp/B0H3DP3FCH",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2024-01-01",
+        "author": "スモールラボ",
+        "conflictOfInterest": "possible",
+        "notes": "製品仕様、価格、対応OS（Windows 10/11）、本体サイズ（2.1×1.7×1.2cm）を確認。"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "Windows 10 / 11のWindows Helloに対応",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "crossChecked": false,
+        "notes": "公式の製品仕様にて確認"
+      },
+      {
+        "claim": "USB Type-C接続に対応",
+        "category": "comparativeAdvantage",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "crossChecked": false,
+        "notes": "公式の製品仕様および商品名にて確認"
+      }
+    ],
+    "lastInvestigated": "2026-06-27",
+    "competitiveAnalysis": [
+      {
+        "name": "サンワダイレクト 400-FPRD2",
+        "asin": "B0CYGQBBXR",
+        "priceComparison": "対象商品の方が大幅に安価に設定されている。",
+        "featureComparison": [
+          "共通点：USB Type-C接続でWindows Helloに対応している点",
+          "相違点：対象商品は価格が安く設定されているのに対し、サンワダイレクト製品は360度どの角度からも読み取れる機能性を謳っている点"
+        ],
+        "differentiators": [
+          "USB 指紋認証リーダー 小型 Type-Cの利点：Type-C対応ながらも導入コストを大幅に抑えられる点",
+          "サンワダイレクト 400-FPRD2の利点：国内有名周辺機器メーカーとしての信頼性とサポート体制がある点"
+        ]
+      },
+      {
+        "name": "ノーブランド品 Type-C 指紋認証リーダー",
+        "asin": "B0GZ6NDFDG",
+        "priceComparison": "対象商品の方が安価に設定されている。",
+        "featureComparison": [
+          "共通点：Windows 10/11対応のUSB Type-C接続で小型設計である点",
+          "相違点：対象商品はシンプルなタッチ式であるのに対し、競合は0.05秒の超高速認証や360度認識を謳っている点"
+        ],
+        "differentiators": [
+          "USB 指紋認証リーダー 小型 Type-Cの利点：機能がシンプルで価格が安く設定されている点",
+          "ノーブランド品 Type-C 指紋認証リーダーの利点：360度認識や高速認証など、より高機能な仕様を備えている点"
+        ]
+      },
+      {
+        "name": "サンワサプライ FP-RD5",
+        "asin": "B0F74948S2",
+        "priceComparison": "対象商品の方が大幅に安価に設定されている。",
+        "featureComparison": [
+          "共通点：Windows Helloに対応した指紋認証リーダーである点",
+          "相違点：対象商品はType-C接続であるのに対し、競合はType-A接続であり、指紋情報をデバイス内で暗号化するMoC(Match-on-Chip)方式を採用している点"
+        ],
+        "differentiators": [
+          "USB 指紋認証リーダー 小型 Type-Cの利点：Type-Cポートに直挿しでき、低価格で導入できる点",
+          "サンワサプライ FP-RD5の利点：MoC方式により指紋データがPC側に送信されないため、より高度なセキュリティを確保できる点"
+        ]
+      },
+      {
+        "name": "サンワダイレクト 400-FPRD3",
+        "asin": "B0FKGW93JY",
+        "priceComparison": "対象商品の方が大幅に安価に設定されている。",
+        "featureComparison": [
+          "共通点：Windows Helloに対応している点",
+          "相違点：対象商品はドングルタイプ（直挿し）であるのに対し、競合は1.5mのケーブルを備えたデスクトップ向けの据え置きタイプである点"
+        ],
+        "differentiators": [
+          "USB 指紋認証リーダー 小型 Type-Cの利点：ノートPCに挿したままでも邪魔にならない超小型設計である点",
+          "サンワダイレクト 400-FPRD3の利点：ケーブル式で設置位置の自由度が高く、デスクトップPCでの使用に適している点"
+        ]
+      },
+      {
+        "name": "エレコム CR-FI01UBK",
+        "asin": "B0H3ZTXLQ5",
+        "priceComparison": "対象商品の方が大幅に安価に設定されている。",
+        "featureComparison": [
+          "共通点：Windows Helloに対応した小型の指紋認証リーダーである点",
+          "相違点：対象商品はType-C接続であるのに対し、競合はType-A接続であり、Microsoft社認証済みのICとMoC認証方式を採用している点"
+        ],
+        "differentiators": [
+          "USB 指紋認証リーダー 小型 Type-Cの利点：最新のノートPCに多いType-Cポートに変換アダプタなしで接続でき、導入コストが低い点",
+          "エレコム CR-FI01UBKの利点：MoC方式やMicrosoft認証ICの採用など、セキュリティと信頼性が担保されている点"
+        ]
+      },
+      {
+        "name": "ARCANITE AKFSD-07",
+        "asin": "B07VK71TST",
+        "priceComparison": "価格はほぼ同等である。",
+        "featureComparison": [
+          "共通点：Windows Hello対応で低価格帯の指紋認証リーダーである点",
+          "相違点：対象商品はType-C接続であるのに対し、競合はType-A接続である点"
+        ],
+        "differentiators": [
+          "USB 指紋認証リーダー 小型 Type-Cの利点：Type-Cポートに直接接続できる点",
+          "ARCANITE AKFSD-07の利点：Type-Aポートを搭載した従来のパソコンで使用できる点"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "Type-AポートがなくType-Cポートのみを搭載した薄型ノートPCのユーザー",
+        "安価にWindows Hello環境を構築したいWindows 10/11ユーザー",
+        "パスワード入力の手間を省きたいオフィスワーカー"
+      ],
+      "pros": [
+        "変換アダプタ不要のType-C接続",
+        "2.1×1.7×1.2cmの小型設計",
+        "競合と比較して非常に高いコストパフォーマンス"
+      ],
+      "cons": [
+        "Windows 10/11専用で他のOSでは使用できない",
+        "指をスライドさせると認識エラーになる（タッチ式）"
+      ],
+      "score": 85,
+      "scoreRationale": "[基本点: 70]\n[加点: +5] (Windows Hello対応かつType-C接続により、最新ノートPCで変換不要の快適なログイン環境を実現)\n[加点: +10] (競合のType-Cモデルと比較して非常に優れたコストパフォーマンス)\n[加点: +5] (2.1×1.7×1.2cmの小型設計でノートPCに挿したままでも邪魔にならない)\n[減点: -5] (MoC方式などの高度なセキュリティ技術の記載がなく、機能がシンプルにとどまるため)\n[合計: 85]"
+    },
+    "technicalSpecs": {
+      "dimensions": {
+        "height": "12mm",
+        "width": "17mm",
+        "depth": "21mm"
+      },
+      "connectionType": "USB Type-C",
+      "compatibleOS": "Windows 10 / Windows 11専用",
+      "authenticationMethod": "タッチ式指紋認証 (Windows Hello対応)"
+    }
+  }
+}
