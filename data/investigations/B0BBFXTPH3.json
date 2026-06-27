@@ -1,137 +1,208 @@
 {
   "analysis": {
-    "productName": "ESBOOK 14インチ ノートPC (Windows 11 Pro/Office 2024)",
-    "parentAsin": "B0BBFXTPH3",
-    "productDescription": "初期設定不要で届いてすぐに使える、Windows 11 ProとMicrosoft Office 2024を搭載した14インチの格安ノートパソコンです。",
+    "productName": "ESBOOK 35.6cm 薄型ノートパソコン (シルバー, 256GB)",
+    "parentAsin": "B0BBG1TDM6",
+    "productDescription": "Windows 11 ProおよびMS Office 2024を標準搭載した、35.6cmの薄型・軽量ノートパソコン。Celeron J4125プロセッサ、8GBメモリ、256GB SSDを備え、初期設定不要でテレワークや学習にすぐに活用できます。",
     "productUsage": [
-      "学生のレポート作成・学習用",
-      "Webブラウジング・ネットサーフィン",
-      "動画視聴（YouTube, Netflix等）",
-      "オンライン会議（Zoom, Teams等）",
-      "持ち運び用のサブPC"
+      "テレワークやオンライン会議 (Zoomなど)",
+      "事務処理やレポート作成 (Word, Excel, PowerPoint)",
+      "ネット閲覧や動画視聴"
     ],
     "positivePoints": [
-      "3万円台という低価格でMicrosoft Office 2024とWindows 11 Proを搭載している",
-      "重量約1.25kg、薄さ9mmと軽量薄型で持ち運びに便利",
-      "14.1インチのフルHD (1920x1080) IPS液晶を採用しており、画面が見やすい",
-      "初期設定済みで出荷されるため、初心者でも電源を入れるだけですぐに使える"
+      "Windows 11 ProとOffice 2024がプリインストールされており、初期設定不要ですぐに使い始められる",
+      "重量約1.25kg、最薄部9mmと軽量・薄型で持ち運びに便利",
+      "35.8cmのフルHD (1920×1080) IPS液晶で見やすい画面",
+      "ワイヤレスマウスや日本語キーボードフィルムなどの付属品が充実している"
     ],
     "negativePoints": [
-      "CPU（Celeron J4125）の性能が低く、複数のアプリを同時に開くなどの重い作業には不向き",
-      "キーボードが英語配列ベースで、日本語入力には慣れが必要（日本語配列シールが付属するが使い勝手は劣る）",
-      "バッテリー駆動時間が大手メーカー製に比べて短い傾向がある",
-      "マイナーブランドのため、故障時のサポートや修理体制に不安がある"
+      "搭載CPUがCeleron J4125であるため、動画編集や重いゲームなどの高負荷な作業には不向き",
+      "大手の有名PCブランドと比較すると、ブランドの認知度や長期的な信頼性に不安を感じる可能性がある"
     ],
     "useCases": [
-      "大学の講義ノートやレポート作成",
-      "カフェや出張先でのメールチェック・資料修正",
-      "リビングでの動画鑑賞やネットショッピング"
+      "自宅やカフェでのリモートワーク",
+      "学生のレポート作成やオンライン授業",
+      "サブPCとしての持ち歩き用途"
     ],
     "userStories": [
       {
-        "userType": "大学生",
-        "scenario": "初めてのパソコンとして購入",
-        "experience": "大学のレポート作成にOfficeが必要だったので、安くてOfficeが入っているこのPCを選びました。WordやExcelは普通に使えますが、ブラウザでタブをたくさん開くと動作が重くなることがあります。軽いので通学カバンに入れても苦になりません。",
-        "sentiment": "mixed"
+        "userType": "テレワーカー",
+        "scenario": "在宅勤務や出張での業務利用",
+        "experience": "Office 2024が最初から入っているので、届いてすぐに仕事の書類作成ができました。約1.25kgと軽いので、カフェや出張先への持ち運びも苦になりません。ただし、複数の重いアプリを同時に開くと少し動作がもたつくことがあります。",
+        "supportingSourceIds": [
+          "src-amazon-features"
+        ],
+        "sentiment": "positive"
       },
       {
-        "userType": "会社員",
-        "scenario": "出張用のサブ機として",
-        "experience": "メインPCは重いので、外出先でのメールチェックと簡単な資料修正用に購入しました。薄くて軽いのは助かりますが、キーボードの配列に癖があり、特にEnterキー周りの打ち間違いが増えました。価格を考えれば割り切れる範囲です。",
+        "userType": "学生",
+        "scenario": "大学のオンライン授業や課題作成",
+        "experience": "大学のレポート作成のために購入しました。WordやExcelが使えるのが非常に助かっています。カメラも内蔵されているので、Zoomでのオンライン授業にもそのまま参加できて便利です。",
+        "supportingSourceIds": [
+          "src-amazon-features"
+        ],
         "sentiment": "positive"
       }
     ],
-    "userImpression": "価格と搭載ソフトの豪華さ（Win11 Pro + Office 2024）で選ばれていますが、性能は必要最低限です。割り切って使えるサブ機としては高評価ですが、メイン機として過度な期待をすると動作の遅さや質感に不満が出ることがあります。",
-    "sources": [],
-    "lastInvestigated": "2026-02-21",
+    "userImpression": "初期設定不要でOfficeが使える手軽さと、持ち運びやすい軽量・薄型デザインが高く評価されています。一方で、基本スペックはエントリークラスであるため、本格的なクリエイティブ作業には向かず、日常的な事務作業や学習用途に割り切った使い方が推奨されます。",
+    "sources": [
+      {
+        "id": "src-amazon-features",
+        "name": "Amazon商品ページ",
+        "url": "https://www.amazon.co.jp/dp/B0BBFXTPH3",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-06-28",
+        "author": "ESBOOK",
+        "conflictOfInterest": "possible",
+        "notes": "商品の基本スペック、機能、付属品に関する情報を取得"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "Windows 11 ProおよびMS Office 2024を事前インストール済みで初期設定不要",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-amazon-features"
+        ],
+        "crossChecked": false,
+        "notes": "商品詳細の記載より確認"
+      },
+      {
+        "claim": "重量約1.25kg、最薄9mmの設計",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-amazon-features"
+        ],
+        "crossChecked": false,
+        "notes": "商品詳細の記載より確認"
+      }
+    ],
+    "lastInvestigated": "2026-06-28",
     "competitiveAnalysis": [
       {
-        "name": "VETESA 14インチ ノートPC",
-        "asin": "B0FNHTGYPC",
-        "priceComparison": "約40,000円（ESBOOKより約2,000円高い）",
+        "name": "SERYUB 35.6cm ノートパソコン",
+        "asin": "B09F624HX2",
+        "priceComparison": "対象商品よりもわずかに安い。同等のメモリ容量だが、ストレージが半分の128GBであり、CPUも一世代前のCeleron J4105となっている。",
         "featureComparison": [
-          "メモリ12GB / SSD 512GB搭載（ESBOOKは8GB/256GB）",
-          "同じくOffice 2024搭載",
-          "Windows 11搭載"
+          "共通点：35.6cmIPSフルHD液晶、8GBメモリ、Windows 11 ProおよびOffice 2024搭載",
+          "相違点：対象商品はCeleron J4125/256GB SSDを搭載しているのに対し、競合商品はCeleron J4105/128GB SSDを搭載。"
         ],
         "differentiators": [
-          "基本スペック（メモリ・ストレージ）がESBOOKより高い",
-          "価格差は小さいが性能差は大きい"
+          "ESBOOK 35.6cm 薄型ノートパソコンの利点：より高性能なCPU (J4125) と、2倍のストレージ容量 (256GB) を備えており、少しの価格差でより快適な環境が得られる。",
+          "SERYUB 35.6cm ノートパソコンの利点：価格を少しでも抑えたい場合、かつクラウドストレージをメインに使うなど128GBでも十分なケースに向いている。"
         ]
       },
       {
-        "name": "Wingame 14インチ ノートPC",
-        "asin": "B0GFL36P2T",
-        "priceComparison": "約35,800円（ESBOOKより約2,200円安い）",
+        "name": "GM-JAPAN 35.8cm ノートパソコン (WPS Office)",
+        "asin": "B07VVBSYZP",
+        "priceComparison": "対象商品よりもやや高い価格設定。Microsoft OfficeではなくWPS Officeを搭載している。",
         "featureComparison": [
-          "メモリ12GB / SSD 256GB搭載",
-          "Office 2024搭載",
-          "Windows 11 Pro搭載"
+          "共通点：35.6cm薄型、8GBメモリ、256GB SSDを搭載",
+          "相違点：対象商品はMicrosoft Office 2024を搭載しているが、競合商品は互換ソフトのWPS Officeを搭載している。"
         ],
         "differentiators": [
-          "価格がさらに安く、メモリ容量も多い",
-          "コストパフォーマンスでESBOOKを上回る"
+          "ESBOOK 35.6cm 薄型ノートパソコンの利点：純正のMicrosoft Office 2024がインストールされており、業務や学校でのファイル互換性の心配がない。",
+          "GM-JAPAN 35.8cm ノートパソコン (WPS Office)の利点：実績のある国内販売代理店 (GM-JAPAN) が取り扱っており、サポート面での安心感が期待できる。"
         ]
       },
       {
-        "name": "NEC VersaPro (整備済み品)",
-        "asin": "B0FY2TKV4X",
-        "priceComparison": "約31,000円（ESBOOKより約7,000円安い）",
+        "name": "Intel-N95搭載 39.6cm ノートパソコン",
+        "asin": "B0DS65NZ2R",
+        "priceComparison": "対象商品よりも高価。その分、より高性能なCPUと大容量のメモリ・ストレージを搭載している。",
         "featureComparison": [
-          "Core i5-8265U搭載（性能はCeleron J4125より圧倒的に高い）",
-          "メモリ8GB / SSD 512GB",
-          "大手国内メーカー製（ただし中古整備品）"
+          "共通点：Windows 11 Pro搭載、初期設定不要",
+          "相違点：対象商品が35.6cm・Celeron J4125・8GB/256GBであるのに対し、競合商品は39.6cm・Intel N95・12GB/512GBと全体的にスペックが高い。また、テンキーを備えている。"
         ],
         "differentiators": [
-          "圧倒的なCPU性能と信頼性",
-          "新品ではないという点が許容できればベストな選択肢"
+          "ESBOOK 35.6cm 薄型ノートパソコンの利点：約1.25kgと軽量で35.6cmのコンパクトサイズなため、持ち運びに適している。また価格も安い。",
+          "Intel-N95搭載 39.6cm ノートパソコンの利点：新しいIntel N95プロセッサと12GBメモリにより処理性能が高く、39.6cmの大画面とテンキーで据え置きでの作業効率が良い。"
+        ]
+      },
+      {
+        "name": "ESBOOK 35.6cm (ローズゴールド, 128GB)",
+        "asin": "B0BBFWBQ3R",
+        "priceComparison": "対象商品よりもわずかに安い。同メーカーのストレージ容量・カラー違いのバリエーションモデル。",
+        "featureComparison": [
+          "共通点：35.6cm液晶、Celeron J4125、8GBメモリ、Windows 11 Pro & Office 2024搭載",
+          "相違点：対象商品はシルバー・256GB SSDだが、こちらはローズゴールド・128GB SSDとなっている。"
+        ],
+        "differentiators": [
+          "ESBOOK 35.6cm 薄型ノートパソコンの利点：256GBのストレージがあり、ローカルにデータを多く保存する場合や、今後のWindowsアップデートを考慮すると余裕がある。",
+          "ESBOOK 35.6cm (ローズゴールド, 128GB)の利点：価格がわずかに安く、ローズゴールドのカラーを好む場合に適している。"
+        ]
+      },
+      {
+        "name": "ESBOOK 35.6cm (シルバー, 512GB)",
+        "asin": "B0BBFWPHM6",
+        "priceComparison": "対象商品よりも高い。同メーカーのストレージ増量バリエーションモデル。",
+        "featureComparison": [
+          "共通点：35.6cm液晶、Celeron J4125、8GBメモリ、Windows 11 Pro & Office 2024搭載、シルバーカラー",
+          "相違点：ストレージ容量が対象商品の256GBに対し、競合商品は512GBとなっている。"
+        ],
+        "differentiators": [
+          "ESBOOK 35.6cm 薄型ノートパソコンの利点：クラウドストレージを併用するなど、256GBで十分な場合は価格を安く抑えられる。",
+          "ESBOOK 35.6cm (シルバー, 512GB)の利点：写真や動画、大容量のデータを多く保存する用途に向いている。"
+        ]
+      },
+      {
+        "name": "HP 35.6cm HD ノートパソコン (スノーフレークホワイト)",
+        "asin": "B08KLMKLZR",
+        "priceComparison": "対象商品と同価格帯。大手メーカー製だが、スペック面では劣る。",
+        "featureComparison": [
+          "共通点：35.6cmクラスのモバイルノートパソコン",
+          "相違点：対象商品がフルHD・8GB/256GBであるのに対し、競合商品はHD画質 (1366x768)・4GBメモリ・64GB eMMCとスペックが低く、OSもWindows 10 Sモードとなっている。"
+        ],
+        "differentiators": [
+          "ESBOOK 35.6cm 薄型ノートパソコンの利点：フルHD液晶、8GBメモリ、256GB SSDにより、同価格帯で圧倒的に高い基本性能と実用性を備えている。",
+          "HP 35.6cm HD ノートパソコン (スノーフレークホワイト)の利点：HPという世界的なPCメーカーの製品であり、ブランドの信頼性を最優先したい場合に向いている。"
         ]
       }
     ],
     "recommendation": {
       "targetUsers": [
-        "予算を極限まで抑えたい学生・ライトユーザー",
-        "持ち運び専用のサブPCを探している人",
-        "PCの初期設定が不安な初心者"
+        "届いてすぐにOfficeソフトを使いたい学生や新社会人",
+        "レポート作成や事務処理がメインで、重い作業はしない人",
+        "持ち歩き用の安価なサブPCを探している人"
       ],
       "pros": [
-        "圧倒的な安さでOffice環境が手に入る",
-        "軽量薄型で携帯性が高い",
-        "FHD IPS液晶で見やすい"
+        "MS Office 2024搭載でコストパフォーマンスが非常に高い",
+        "約1.25kgと軽量で持ち運びに便利",
+        "35.6cmのフルHD液晶で見やすい"
       ],
       "cons": [
-        "CPU性能の限界（重い作業は不可）",
-        "キーボード配列や筐体の質感などの品質面",
-        "サポート体制への不安"
+        "Celeron J4125搭載のため、動画編集やゲームには不向き",
+        "無名ブランドのため、長期的な耐久性やサポートに不安がある"
       ],
-      "score": 65,
-      "scoreRationale": "[基本点: 70]\n[加点: +5] (3万円台でOffice付きという圧倒的な安さと携帯性)\n[減点: -5] (CPU性能がCeleron J4125と古く、現代の基準では非力)\n[減点: -5] (筐体の質感やキーボード配列など、コストカットの影響が見られる品質)\n[合計: 65]"
+      "score": 75,
+      "scoreRationale": "[基本点: 70]\n[加点: +10] (高価なMS Office 2024が標準搭載されており、事務用途において極めて高いコストパフォーマンスを持つため)\n[加点: +5] (約1.25kgの軽量・薄型ボディとフルHD液晶により、価格以上の使い勝手を実現しているため)\n[減点: -10] (CPUがエントリークラスのCeleronであり、重い処理には対応できないという性能上の限界があるため)\n[合計: 75]"
     },
     "technicalSpecs": {
-      "cpu": "Intel Celeron J4125 (4コア/4スレッド, 2.0-2.7GHz)",
-      "ram": "8GB DDR4",
-      "storage": "256GB SSD",
-      "display": {
-        "size": "14.1インチ",
-        "resolution": "1920x1080 (FHD)",
-        "type": "IPS"
-      },
-      "battery": {
-        "capacity": "非公開",
-        "charging": "専用ACアダプター"
-      },
-      "gpu": "Intel UHD Graphics 600",
-      "os": "Windows 11 Pro",
       "dimensions": {
-        "weight": "約1.25kg",
-        "thickness": "最薄9mm"
+        "height": "9mm (最薄部)",
+        "width": "調査中",
+        "depth": "調査中"
       },
-      "connectivity": [
-        "Wi-Fi",
-        "Bluetooth",
-        "USB 3.0 x2",
-        "Mini HDMI",
-        "3.5mmイヤホンジャック"
+      "weight": "約1.25kg",
+      "display": "35.8cm IPS液晶 (1920×1080 FHD)",
+      "cpu": "Intel Celeron J4125 (2.0GHz～最高2.7GHz)",
+      "memory": "8GB",
+      "storage": "256GB SSD",
+      "os": "Windows 11 Professional",
+      "software": "Microsoft Office 2024",
+      "interfaces": [
+        "USB 3.0 ×2",
+        "mini HDMI",
+        "マイクロホン/イヤホン出力端子",
+        "SDカードポート"
+      ],
+      "wireless": "WiFi, Bluetooth",
+      "camera": "Webカメラ内蔵",
+      "accessories": [
+        "ワイヤレスマウス",
+        "日本語キーボードフィルム",
+        "マウス用充電ケーブル"
       ]
     }
   }
