@@ -68,8 +68,8 @@ export class ProductCounter {
       const parsed = matter(fileContent, {
         engines: {
           yaml: {
-            parse: (str: string) => yaml.load(str) as Record<string, any>,
-            stringify: (obj: any) => yaml.dump(obj),
+            parse: (str: string) => yaml.load(str) as Record<string, unknown>,
+            stringify: (obj: unknown) => yaml.dump(obj),
           },
         },
       });
