@@ -74,9 +74,8 @@
       "js-yaml": "^5.2.0",
       "form-data": "^2.5.6"
     },
-    "onlyBuiltDependencies": [
+    "ignoredBuiltDependencies": [
       "unrs-resolver"
     ]
-  },
-  "packageManager": "pnpm@10.5.2"
+  }
 }
