@@ -1,0 +1,212 @@
+{
+  "analysis": {
+    "productName": "Creative Pebble",
+    "parentAsin": "B077XF3XJK",
+    "productDescription": "USBバスパワー駆動のコンパクトな2chアクティブスピーカー。45度の上向きドライバーと背面のパッシブラジエーターにより、ダイレクトで重低音の効いたサウンドを提供する。",
+    "productUsage": [
+      "PCやノートパソコンの外部スピーカーとして",
+      "テレビの外部スピーカーとして（USB電源アダプター別途用意）"
+    ],
+    "positivePoints": [
+      "2,000円台という低価格ながらバランスの良い高音質",
+      "45度上向きドライバーにより、音が直接耳に届きやすい設計",
+      "背面のパッシブラジエーターでサイズ以上の重低音を実現",
+      "電源とボリューム調整が右スピーカー前面で簡単に操作可能"
+    ],
+    "negativePoints": [
+      "入力が3.5mmアナログ端子のみで、Bluetoothなどのワイヤレス接続に非対応",
+      "給電用のUSBケーブルと音声用のケーブルが分かれており、配線がやや煩雑になる",
+      "丸い形状のため、見た目以上にデスク上の設置スペースを占有する"
+    ],
+    "useCases": [
+      "デスクトップPCやノートPCでの音楽鑑賞・動画視聴",
+      "オンライン会議での音声確認（クリアな音声再生）"
+    ],
+    "userStories": [
+      {
+        "userType": "デスクトップPCユーザー",
+        "scenario": "動画視聴やゲームプレイの音質向上",
+        "experience": "2,000円台という価格にもかかわらず、高域から低域までバランスが良く、特に人の声が非常に聞き取りやすいです。パッシブラジエーターのおかげで低音もしっかり響き、価格以上の音質に大変満足しています。ただ、丸い形状なのでモニター下に置く際は意外と場所を取る印象です。",
+        "supportingSourceIds": [
+          "src-kakaku-review"
+        ],
+        "sentiment": "positive"
+      },
+      {
+        "userType": "ノートPCユーザー",
+        "scenario": "ノートPCのスピーカー代わりとして利用",
+        "experience": "ノートPCのUSBポートから電源を取れるため、起動と連動して使えるのが便利です。音量調節ノブが前面にあるので操作しやすく、コンパクトながら十分な音量が出ます。配線が2本（USBと3.5mm）必要なため、デスク周りのケーブル管理には少し工夫が必要です。",
+        "supportingSourceIds": [
+          "src-creative-official",
+          "src-kakaku-review"
+        ],
+        "sentiment": "mixed"
+      }
+    ],
+    "userImpression": "多くのユーザーが「価格以上の音質」と高く評価しており、特に中高域のクリアさや低音の豊かさが支持されています。コストパフォーマンスの高さから定番PCスピーカーとして人気がありますが、アナログ接続とUSB給電のケーブル2本が必要な点や、球状デザインによる設置スペースの確保が課題として挙げられます。",
+    "sources": [
+      {
+        "id": "src-kakaku-review",
+        "name": "Creative Pebble SP-PBL-BK [ブラック] レビュー・評価",
+        "url": "https://review.kakaku.com/review/K0001230852/",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2025-09-26",
+        "author": "価格.com",
+        "conflictOfInterest": "none",
+        "notes": "ユーザーレビューにて、価格に対する音質の高さ、パッシブラジエーターの効果、設置スペースに関する意見を確認"
+      },
+      {
+        "id": "src-creative-official",
+        "name": "Creative Pebble 製品ページ",
+        "url": "https://jp.creative.com/p/speakers/creative-pebble",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2024-01-01",
+        "author": "Creative",
+        "conflictOfInterest": "possible",
+        "notes": "製品仕様、特徴、45度上向きドライバーやパッシブラジエーターの搭載、寸法・重量などを確認"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "2000円台の価格帯でありながら、パッシブラジエーターと45度上向きドライバーにより高音質を実現している",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-kakaku-review",
+          "src-creative-official"
+        ],
+        "crossChecked": true,
+        "notes": "公式サイトの仕様説明と、多数のユーザーレビューにおける高評価で一致"
+      },
+      {
+        "claim": "USBバスパワー駆動でACアダプターが不要",
+        "category": "durability",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-creative-official"
+        ],
+        "crossChecked": false,
+        "notes": "公式の製品仕様で確認"
+      }
+    ],
+    "lastInvestigated": "2026-06-28",
+    "competitiveAnalysis": [
+      {
+        "name": "Creative Pebble V3",
+        "asin": "B0BKPSDKY2",
+        "priceComparison": "Creative Pebble V3は対象商品より価格が高いが、Bluetoothワイヤレス接続とUSBオーディオ再生（USB Type-C）に対応し、総合出力も8W RMSに向上している。",
+        "featureComparison": [
+          "共通点：45度上向きドライバー設計、パッシブラジエーター搭載、球状デザイン",
+          "相違点：V3はBluetoothとUSBオーディオ接続に対応、ピーク出力が16Wに向上（本製品はアナログ接続のみで出力4.4W）"
+        ],
+        "differentiators": [
+          "Creative Pebbleの利点：価格が圧倒的に安く、有線での基本的な音声出力だけで十分な場合にコストパフォーマンスが高い",
+          "Creative Pebble V3の利点：Bluetooth接続でスマホの音楽も再生したい場合や、ケーブル1本（USB）でスッキリ接続したい場合に適している"
+        ]
+      },
+      {
+        "name": "FUNLOGY Speaker",
+        "asin": "B0D4TRVKGG",
+        "priceComparison": "FUNLOGY Speakerは対象商品と同等または若干安い価格帯であり、同価格帯での競争力を持つ。",
+        "featureComparison": [
+          "共通点：USB給電、3.5mmアナログ入力、上向き角度設計による音の聞き取りやすさ",
+          "相違点：FUNLOGYは総合出力が14W（7Wx2）と高く、四角いボックス形状を採用。本製品は出力4.4Wで球状デザイン"
+        ],
+        "differentiators": [
+          "Creative Pebbleの利点：独特な球状デザインでインテリア性が高く、パッシブラジエーターによる低音の質感が評価されている",
+          "FUNLOGY Speakerの利点：総合出力14Wによる大音量が可能で、デュアルディスプレイに対応しやすい長めのケーブル（130cm）を備えている"
+        ]
+      },
+      {
+        "name": "オーディオテクニカ AT-SP95",
+        "asin": "B09K75F8V8",
+        "priceComparison": "対象商品よりもやや高い価格帯であるが、有名オーディオブランドの安心感がある。",
+        "featureComparison": [
+          "共通点：USBバスパワー給電、3.5mmステレオミニプラグ入力",
+          "相違点：AT-SP95は前面にヘッドホン端子を搭載し、省スペースな縦型デザイン。出力は4W（2W+2W）"
+        ],
+        "differentiators": [
+          "Creative Pebbleの利点：パッシブラジエーター搭載による迫力ある低音と、ユニークな球状デザイン",
+          "オーディオテクニカ AT-SP95の利点：前面のヘッドホン端子で簡単にイヤホンに切り替え可能で、狭いスペースにも置きやすいスリム設計"
+        ]
+      },
+      {
+        "name": "サンワダイレクト 400-SP099",
+        "asin": "B09MT68ZGR",
+        "priceComparison": "対象商品よりやや高い価格帯。サウンドバータイプのため用途や設置場所が異なる。",
+        "featureComparison": [
+          "共通点：USB給電、3.5mmアナログ接続、上向き角度設計",
+          "相違点：サンワダイレクトはモニター下に置けるサウンドバー形状で、前面にヘッドホンとマイクジャックを搭載"
+        ],
+        "differentiators": [
+          "Creative Pebbleの利点：左右セパレート型によるステレオ感の広がりと、デスク上の配置の自由度",
+          "サンワダイレクト 400-SP099の利点：モニター下のデッドスペースにすっきり収まるスリム形状と、手元でのヘッドセット接続の利便性"
+        ]
+      },
+      {
+        "name": "バッファロー BSSP105UBK",
+        "asin": "B07ZCYH8TW",
+        "priceComparison": "対象商品よりも安価な約1000円台のエントリーモデル。",
+        "featureComparison": [
+          "共通点：USB給電、3.5mmアナログ接続の有線PCスピーカー",
+          "相違点：バッファローは四角いコンパクト形状で出力3.6W。本製品は球状デザイン、出力4.4Wでパッシブラジエーター搭載"
+        ],
+        "differentiators": [
+          "Creative Pebbleの利点：低音再生に優れるパッシブラジエーターと出力で、音質面での満足度が高い",
+          "バッファロー BSSP105UBKの利点：極めて安価で、とにかく音が出れば良いという用途においてコストを最小限に抑えられる"
+        ]
+      },
+      {
+        "name": "オーディオテクニカ AT-SP105",
+        "asin": "B0D72YVDWB",
+        "priceComparison": "対象商品と比べて大幅に高い価格帯。上位クラスの機能と音質を備える。",
+        "featureComparison": [
+          "共通点：PC向けアクティブスピーカー",
+          "相違点：AT-SP105はUSBデジタル入力に対応（DAC内蔵）、低音域調整ノブを搭載。本製品はアナログ入力のみのシンプル設計"
+        ],
+        "differentiators": [
+          "Creative Pebbleの利点：手軽に購入できる価格と、価格以上のバランスの取れた音質",
+          "オーディオテクニカ AT-SP105の利点：USBデジタル接続による高音質と、低音域の手元調整ノブ、高級感のあるデザイン"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "低予算でPCの音質を向上させたいユーザー",
+        "音楽鑑賞や動画視聴を手軽なステレオ環境で楽しみたい方",
+        "デザイン性のある丸みを帯びたスピーカーを好む方"
+      ],
+      "pros": [
+        "2000円台という圧倒的なコストパフォーマンス",
+        "45度上向きとパッシブラジエーターによるクリアな高音と響く低音",
+        "インテリアに馴染む可愛らしい球状デザイン"
+      ],
+      "cons": [
+        "アナログ音声とUSB給電の2本のケーブル接続が必要",
+        "デスク上での設置面積（フットプリント）が意外と大きい",
+        "Bluetoothなどのワイヤレス接続には対応していない"
+      ],
+      "score": 90,
+      "scoreRationale": "[基本点: 70]\n[加点: +5] (45度上向きドライバーとパッシブラジエーターによるクリアな音質と豊かな低音)\n[加点: +10] (2000円台という安価な設定に対し、同価格帯を上回る圧倒的なコストパフォーマンス)\n[加点: +3] (丸みを帯びたコンパクトでインテリアに馴染む球状デザイン)\n[加点: +5] (価格.comプロダクトアワード受賞など、ユーザー満足度が非常に高い)\n[減点: -3] (電源と音声用の2本のケーブルが必要で、Bluetooth等ワイヤレスに非対応)\n[合計: 90]"
+    },
+    "technicalSpecs": {
+      "dimensions": {
+        "height": "115mm",
+        "width": "122mm",
+        "depth": "116mm"
+      },
+      "weight": "645g",
+      "capacity": "N/A",
+      "material": "プラスチック等（製品仕様に詳細記載なし）",
+      "origin": "不明",
+      "speakerOutput": "総合4.4W RMS",
+      "drivers": "約50.8mm フルレンジドライバー",
+      "frequencyResponse": "100Hz～17kHz",
+      "snRatio": "86dB",
+      "input": "φ3.5 mmステレオライン入力",
+      "powerSupply": "USBバスパワー (5V/1A推奨)"
+    }
+  }
+}
