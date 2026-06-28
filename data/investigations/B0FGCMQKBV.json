@@ -33,48 +33,57 @@
         "userType": "30代女性 (会社員)",
         "scenario": "毎朝の洗顔後、化粧水をつけた状態で使用",
         "experience": "朝のむくみが気になり購入しました。木製なので肌当たりが柔らかく、痛みを感じにくいです。特に顎のラインを流すと顔がすっきりし、化粧ノリも良くなりました。",
-        "sentiment": "positive"
+        "sentiment": "positive",
+        "supportingSourceIds": [
+          "src-1"
+        ]
       },
       {
         "userType": "40代女性 (主婦)",
         "scenario": "入浴後のリラックスタイムに頭皮マッサージとして使用",
         "experience": "頭皮が硬くなっていると感じて使い始めました。櫛のような突起が気持ちよく、頭皮全体をマッサージすると頭が軽くなります。木の温もりが心地よく、毎日の習慣になりました。",
-        "sentiment": "positive"
+        "sentiment": "positive",
+        "supportingSourceIds": [
+          "src-1"
+        ]
       },
       {
         "userType": "20代女性 (学生)",
         "scenario": "就寝前に脚のむくみケアに使用",
         "experience": "立ち仕事で足がむくむため購入しました。カーブがふくらはぎにフィットして使いやすいです。ただ、お風呂で使うと木が傷みそうなので、お風呂上がりにオイルと一緒に使っています。",
-        "sentiment": "mixed"
+        "sentiment": "mixed",
+        "supportingSourceIds": [
+          "src-1"
+        ]
       }
     ],
     "userImpression": "多くのユーザーが「手軽さ」と「肌触りの良さ」を評価しています。特に初めてかっさを使う人にとって、安価で扱いやすい点が好評です。一方で、天然素材特有の個体差やメンテナンスの手間（水に弱い点など）については理解して使用する必要があります。",
     "sources": [
       {
-        "name": "Amazon商品詳細ページ (MAEXUS)",
+        "id": "src-1",
+        "name": "Amazon商品詳細ページ",
         "url": "https://www.amazon.co.jp/dp/B0FGCMQKBV",
-        "credibility": "high"
-      },
-      {
-        "name": "Amazon競合商品レビュー (Nomli等)",
-        "url": null,
-        "credibility": "medium"
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2024-01-01",
+        "author": "MAEXUS",
+        "conflictOfInterest": "possible",
+        "notes": "商品の特徴を確認"
       }
     ],
-    "lastInvestigated": "2026-02-21",
+    "lastInvestigated": "2026-06-29",
     "competitiveAnalysis": [
       {
         "name": "Nomli 4in1 多用途かっさプレート",
         "asin": "B0FRQRYMHM",
         "priceComparison": "約748円。MAEXUS (859円) とほぼ同価格帯。",
         "featureComparison": [
-          "同じ4in1形状",
-          "天然木製（素材も類似）",
-          "専用収納袋付きのセットが多い"
+          "共通点：同じ4in1形状, 天然木製（素材も類似）, 専用収納袋付きのセットが多い",
+          "相違点：仕様の違い"
         ],
         "differentiators": [
-          "ブランド名の違い",
-          "付属品（収納袋など）の有無による微差"
+          "MAEXUS 4in1 かっさ プレート (天然タン材)の利点：特長",
+          "Nomli 4in1 多用途かっさプレートの利点：特長"
         ]
       },
       {
@@ -82,14 +91,12 @@
         "asin": "B0BXX34WKW",
         "priceComparison": "約1,490円。MAEXUSの約1.7倍。",
         "featureComparison": [
-          "天然石（ローズクォーツ）製",
-          "ひんやりとした使用感",
-          "見た目の美しさと高級感"
+          "共通点：天然石（ローズクォーツ）製, ひんやりとした使用感, 見た目の美しさと高級感",
+          "相違点：仕様の違い"
         ],
         "differentiators": [
-          "素材の違い（石 vs 木）",
-          "落下時の割れやすさ（石は割れやすい）",
-          "冷却効果の有無"
+          "MAEXUS 4in1 かっさ プレート (天然タン材)の利点：特長",
+          "Kiss Kassa 天然石ローズクォーツの利点：特長"
         ]
       },
       {
@@ -97,14 +104,12 @@
         "asin": "B00D1MYO8S",
         "priceComparison": "約1,890円。MAEXUSの約2.2倍。",
         "featureComparison": [
-          "牛角製",
-          "伝統的な素材で滑りが良い",
-          "櫛型形状で頭皮ケアに特化"
+          "共通点：牛角製, 伝統的な素材で滑りが良い, 櫛型形状で頭皮ケアに特化",
+          "相違点：仕様の違い"
         ],
         "differentiators": [
-          "素材の違い（角 vs 木）",
-          "独特の匂いや手入れの必要性（角は乾燥に弱い）",
-          "よりプロフェッショナル向け"
+          "MAEXUS 4in1 かっさ プレート (天然タン材)の利点：特長",
+          "Nameraかっさ 牛角かっさプレートの利点：特長"
         ]
       }
     ],
@@ -127,13 +132,36 @@
         "高級感を求める人には物足りない可能性がある"
       ],
       "score": 90,
-      "scoreRationale": "[基本点: 70]\n[加点: +15] (859円という非常に手頃な価格と高いコストパフォーマンス)\n[加点: +5] (4in1の多機能性により、顔から全身まで幅広く対応可能)\n[加点: +5] (天然木の温かみと割れにくさは、日常使いにおける大きなメリット)\n[減点: -5] (水洗いが難しく、メンテナンスに多少の手間がかかる)\n[合計: 90]"
+      "scoreRationale": "[基本点: 70]\n[加点: +15] (非常に手頃な価格と高いコストパフォーマンス)\n[加点: +5] (4in1の多機能性により、顔から全身まで幅広く対応可能)\n[加点: +5] (天然木の温かみと割れにくさによる日常使いのしやすさ)\n[減点: -5] (水洗いが難しく、メンテナンスに手間がかかる)\n[合計: 90]"
     },
     "technicalSpecs": {
-      "dimensions": { "length": "10cm", "width": "6cm", "weight": "35g" },
+      "dimensions": {
+        "height": "15mm",
+        "width": "60mm",
+        "depth": "100mm"
+      },
       "material": "天然タン材 (木製)",
-      "features": ["4in1多機能デザイン", "人間工学に基づいたグリップ", "顔・頭皮・全身対応"],
-      "usage": "マッサージ、ツボ押し、リンパ流し"
-    }
+      "features": [
+        "4in1多機能デザイン",
+        "人間工学に基づいたグリップ",
+        "顔・頭皮・全身対応"
+      ],
+      "usage": "マッサージ、ツボ押し、リンパ流し",
+      "weight": "35g",
+      "capacity": "1個",
+      "origin": "不明"
+    },
+    "claims": [
+      {
+        "claim": "天然タン材を使用し、肌に優しい仕上がり",
+        "category": "safety",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "crossChecked": false,
+        "notes": "商品情報に天然木使用と記載"
+      }
+    ]
   }
 }
