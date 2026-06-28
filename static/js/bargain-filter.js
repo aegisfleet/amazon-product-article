@@ -79,10 +79,7 @@ function safeImageUrl(url) {
 
 
 // --- Render ---
-function renderCard(p) {
-  const article = document.createElement('article');
-  article.className = 'card';
-
+function renderImageLink(p) {
   const imageLink = document.createElement('a');
   imageLink.className = 'card-image-link';
   imageLink.href = safeUrl(p.url);
@@ -107,11 +104,10 @@ function renderCard(p) {
   }
 
   imageLink.appendChild(imageWrap);
-  article.appendChild(imageLink);
+  return imageLink;
+}
 
-  const body = document.createElement('div');
-  body.className = 'card-content';
-
+function renderCardHeader(p) {
   const header = document.createElement('div');
   header.className = 'card-header';
 
@@ -135,22 +131,10 @@ function renderCard(p) {
   titleLink.textContent = String(p.title || '');
   title.appendChild(titleLink);
   header.appendChild(title);
-  body.appendChild(header);
+  return header;
+}
 
-  if (p.description) {
-    const excerpt = document.createElement('p');
-    excerpt.className = 'card-excerpt';
-    excerpt.textContent = String(p.description);
-    body.appendChild(excerpt);
-  }
-
-  if (p.specsHtml) {
-    const specsWrap = document.createElement('div');
-    specsWrap.className = 'card-specs';
-    specsWrap.innerHTML = p.specsHtml;
-    body.appendChild(specsWrap);
-  }
-
+function renderCardMeta(p) {
   const metaExt = document.createElement('div');
   metaExt.className = 'card-meta-ext';
 
@@ -214,32 +198,26 @@ function renderCard(p) {
     metaExt.appendChild(detailsRow);
   }
 
-  body.appendChild(metaExt);
+  return metaExt;
+}
 
-  const footer = document.createElement('div');
-  footer.className = 'card-footer';
-
-  const dateSpan = document.createElement('span');
-  dateSpan.className = 'article-meta';
-  if (p.lastInvestigated) {
-    try {
-      const d = new Date(p.lastInvestigated);
-      if (!isNaN(d.getTime())) {
-        const year = d.getFullYear();
-        const month = String(d.getMonth() + 1).padStart(2, '0');
-        const day = String(d.getDate()).padStart(2, '0');
-        dateSpan.textContent = `${year}年${month}月${day}日`;
-      } else {
-        dateSpan.textContent = p.lastInvestigated;
-      }
-    } catch {
-      dateSpan.textContent = p.lastInvestigated;
+function formatInvestigatedDate(lastInvestigated) {
+  if (!lastInvestigated) return '';
+  try {
+    const d = new Date(lastInvestigated);
+    if (!Number.isNaN(d.getTime())) {
+      const year = d.getFullYear();
+      const month = String(d.getMonth() + 1).padStart(2, '0');
+      const day = String(d.getDate()).padStart(2, '0');
+      return `${year}年${month}月${day}日`;
     }
-  } else {
-    dateSpan.textContent = '';
+  } catch {
+    // ignore
   }
-  footer.appendChild(dateSpan);
+  return lastInvestigated;
+}
 
+function renderCardActions(p) {
   const actions = document.createElement('div');
   actions.className = 'card-footer-actions';
 
@@ -293,7 +271,55 @@ function renderCard(p) {
   favBtn.appendChild(favIcon);
   actions.appendChild(favBtn);
 
+  return actions;
+}
+
+function renderCardFooter(p) {
+  const footer = document.createElement('div');
+  footer.className = 'card-footer';
+
+  const dateSpan = document.createElement('span');
+  dateSpan.className = 'article-meta';
+  dateSpan.textContent = formatInvestigatedDate(p.lastInvestigated);
+  footer.appendChild(dateSpan);
+
+  const actions = renderCardActions(p);
   footer.appendChild(actions);
+
+  return footer;
+}
+
+function renderCard(p) {
+  const article = document.createElement('article');
+  article.className = 'card';
+
+  const imageLink = renderImageLink(p);
+  article.appendChild(imageLink);
+
+  const body = document.createElement('div');
+  body.className = 'card-content';
+
+  const header = renderCardHeader(p);
+  body.appendChild(header);
+
+  if (p.description) {
+    const excerpt = document.createElement('p');
+    excerpt.className = 'card-excerpt';
+    excerpt.textContent = String(p.description);
+    body.appendChild(excerpt);
+  }
+
+  if (p.specsHtml) {
+    const specsWrap = document.createElement('div');
+    specsWrap.className = 'card-specs';
+    specsWrap.innerHTML = p.specsHtml;
+    body.appendChild(specsWrap);
+  }
+
+  const metaExt = renderCardMeta(p);
+  body.appendChild(metaExt);
+
+  const footer = renderCardFooter(p);
   body.appendChild(footer);
 
   article.appendChild(body);
