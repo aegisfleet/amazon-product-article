@@ -206,6 +206,16 @@
         {{- $cats = $cats | append . -}}
         {{- end -}}
         {{- $catString := delimit $cats "," -}}
+        {{- $trackingCategory := "" -}}
+        {{- $trackingTerms := .GetTerms "categories" -}}
+        {{- if $trackingTerms -}}
+        {{- $trackingCategory = (index $trackingTerms 0).LinkTitle -}}
+        {{- else if .Params.categories -}}
+        {{- $trackingCategory = index .Params.categories 0 -}}
+        {{- else if .Params.category -}}
+        {{- $trackingCategory = .Params.category -}}
+        {{- end -}}
+
 
         {{- /* Get price as number */ -}}
         {{- $priceRaw := 0 -}}
@@ -292,12 +302,28 @@
                     </div>
                 </div>
                 <div class="card-footer">
-                    {{- if .Params.affiliate_url -}}
-                    <a href="{{ .Params.affiliate_url }}" class="btn-amazon-small" target="_blank"
-                        rel="noopener noreferrer">🛒 Amazonで見る</a>
-                    {{- else -}}
-                    <a href="{{ .RelPermalink }}" class="read-more">レビューを読む →</a>
-                    {{- end -}}
+                    <span class="article-meta">{{- with .Params.last_investigated -}}{{ time . | dateFormat "2006年01月02日"
+                        }}{{- else -}}{{ .Date.Format "2006年01月02日" }}{{- end -}}</span>
+                    <div class="card-footer-actions">
+                        {{- if .Params.affiliate_url -}}
+                        <a href="{{ .Params.affiliate_url }}" class="btn-amazon-small" target="_blank"
+                            rel="noopener noreferrer" data-track-product="1" data-asin="{{ .Params.asin }}"
+                            data-category="{{ $trackingCategory }}"
+                            data-price-bucket="{{ partial `utils-price-bucket.html` .Params.price }}"
+                            data-price="{{ .Params.price }}" data-score="{{ .Params.score | default 0 }}"><span
+                                aria-hidden="true">🛒</span> Amazonで見る</a>
+                        {{- else -}}
+                        <a href="{{ .RelPermalink }}" class="read-more">レビューを読む →</a>
+                        {{- end -}}
+                        <button type="button" class="btn-favorite-card" data-favorite-btn="1"
+                            data-asin="{{ .Params.asin }}" data-title="{{ .Title }}" data-url="{{ .RelPermalink }}"
+                            data-affiliate-url="{{ .Params.affiliate_url }}"
+                            data-image="{{ if .Params.images }}{{ index .Params.images 0 }}{{ end }}"
+                            data-price="{{ .Params.price }}" data-score="{{ .Params.score | default 0 }}"
+                            data-category="{{ $trackingCategory }}" aria-pressed="false" aria-label="お気に入りに追加">
+                            <span class="fav-icon" aria-hidden="true">🤍</span>
+                        </button>
+                    </div>
                 </div>
             </div>
         </article>
