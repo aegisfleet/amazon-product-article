@@ -130,7 +130,8 @@
 
     <div class="filter-section" id="filter-section">
         <div class="filter-header">
-            <button type="button" class="filter-toggle" id="filter-toggle" aria-controls="filter-content" aria-expanded="true">
+            <button type="button" class="filter-toggle" id="filter-toggle" aria-controls="filter-content"
+                aria-expanded="true">
                 <span class="filter-icon" aria-hidden="true">🔍</span>
                 <span>フィルター</span>
                 <span class="filter-arrow" aria-hidden="true">▼</span>
@@ -138,12 +139,16 @@
             <button type="button" class="filter-reset-btn" id="filter-reset">リセット</button>
         </div>
         <div class="filter-content" id="filter-content">
-        <div class="filter-presets" aria-label="おすすめプリセット">
-            <button type="button" class="filter-preset-btn" data-preset="cost-performance" aria-pressed="false">コスパ重視</button>
-            <button type="button" class="filter-preset-btn" data-preset="high-performance" aria-pressed="false">高性能</button>
-            <button type="button" class="filter-preset-btn" data-preset="beginner" aria-pressed="false">入門向け</button>
-            <button type="button" class="filter-preset-btn" data-preset="lightweight" aria-pressed="false">軽量・持ち運び</button>
-        </div>
+            <div class="filter-presets" aria-label="おすすめプリセット">
+                <button type="button" class="filter-preset-btn" data-preset="cost-performance"
+                    aria-pressed="false">コスパ重視</button>
+                <button type="button" class="filter-preset-btn" data-preset="high-performance"
+                    aria-pressed="false">高性能</button>
+                <button type="button" class="filter-preset-btn" data-preset="beginner"
+                    aria-pressed="false">入門向け</button>
+                <button type="button" class="filter-preset-btn" data-preset="lightweight"
+                    aria-pressed="false">軽量・持ち運び</button>
+            </div>
             {{- /* Category Filter */ -}}
             <div class="filter-group">
                 <h4 class="filter-group-title">カテゴリ</h4>
@@ -154,7 +159,8 @@
                     {{- if gt $count 0 -}}
                     <label class="filter-checkbox">
                         <input type="checkbox" name="category" value="{{ $cat }}">
-                        <span class="filter-label">{{- $cat -}} <span class="filter-count">({{- $count -}})</span></span>
+                        <span class="filter-label">{{- $cat -}} <span class="filter-count">({{- $count
+                                -}})</span></span>
                     </label>
                     {{- end -}}
                     {{- end -}}
@@ -252,10 +258,11 @@
             件の商品</span>
         <div style="display: flex; align-items: center; gap: var(--spacing-md); flex-wrap: wrap;">
             <div class="search-bar-container" style="position: relative; flex-grow: 1; min-width: 250px;">
-                <input type="text" id="keyword-search" placeholder="商品名、スペックで検索..."
+                <input type="text" id="keyword-search" placeholder="商品名、スペックで検索..." aria-label="商品名・スペックで絞り込み検索"
                     style="width: 100%; padding: 0.5rem 1rem 0.5rem 2.5rem; border: 1px solid var(--color-border); border-radius: 8px; background-color: var(--color-bg-card); color: var(--color-text-primary); font-family: inherit; font-size: 0.875rem;">
                 <span
-                    style="position: absolute; left: 0.875rem; top: 50%; transform: translateY(-50%); color: var(--color-text-secondary); pointer-events: none;">🔍</span>
+                    style="position: absolute; left: 0.875rem; top: 50%; transform: translateY(-50%); color: var(--color-text-secondary); pointer-events: none;"
+                    aria-hidden="true">🔍</span>
             </div>
             <div style="display: flex; align-items: center; gap: var(--spacing-sm);">
                 <label for="sort-select"
@@ -281,6 +288,16 @@
         {{- $cats = $cats | append . -}}
         {{- end -}}
         {{- $catString := delimit $cats "," -}}
+        {{- $trackingCategory := "" -}}
+        {{- $trackingTerms := .GetTerms "categories" -}}
+        {{- if $trackingTerms -}}
+        {{- $trackingCategory = (index $trackingTerms 0).LinkTitle -}}
+        {{- else if .Params.categories -}}
+        {{- $trackingCategory = index .Params.categories 0 -}}
+        {{- else if .Params.category -}}
+        {{- $trackingCategory = .Params.category -}}
+        {{- end -}}
+
 
         {{- /* Get price as number */ -}}
         {{- $priceRaw := 0 -}}
@@ -299,7 +316,8 @@
         {{- range . -}}
         {{- if in (. | lower) "5g" -}}{{- $specs = $specs | append "5g" -}}{{- end -}}
         {{- if in (. | lower) "gps" -}}{{- $specs = $specs | append "gps" -}}{{- end -}}
-        {{- if or (in (. | lower) "felica") (in (. | lower) "nfc") -}}{{- $specs = $specs | append "felica" -}}{{- end -}}
+        {{- if or (in (. | lower) "felica") (in (. | lower) "nfc") -}}{{- $specs = $specs | append "felica" -}}{{- end
+        -}}
         {{- end -}}
         {{- else -}}
         {{- $connStr := . | lower -}}
@@ -310,14 +328,16 @@
         {{- end -}}
         {{- /* Check for AMOLED/OLED display */ -}}
         {{- with .display_type -}}
-        {{- if or (in (. | lower) "amoled") (in (. | lower) "oled") (in (. | lower) "有機el") -}}{{- $specs = $specs | append
+        {{- if or (in (. | lower) "amoled") (in (. | lower) "oled") (in (. | lower) "有機el") -}}{{- $specs = $specs |
+        append
         "amoled" -}}{{- end -}}
         {{- end -}}
         {{- /* Check for waterproof in other_specs - handle both array and string */ -}}
         {{- with .other_specs -}}
         {{- if reflect.IsSlice . -}}
         {{- range . -}}
-        {{- if or (in (. | lower) "防水") (in (. | lower) "ip6") (in (. | lower) "ip5") (in (. | lower) "atm") -}}{{- $specs
+        {{- if or (in (. | lower) "防水") (in (. | lower) "ip6") (in (. | lower) "ip5") (in (. | lower) "atm") -}}{{-
+        $specs
         = $specs | append "waterproof" -}}{{- end -}}
         {{- if or (in (. | lower) "felica") (in (. | lower) "suica") (in (. | lower) "おサイフ") -}}{{- $specs = $specs |
         append "felica" -}}{{- end -}}
@@ -325,7 +345,8 @@
         {{- end -}}
         {{- else -}}
         {{- $specStr := . | lower -}}
-        {{- if or (in $specStr "防水") (in $specStr "ip6") (in $specStr "ip5") (in $specStr "atm") -}}{{- $specs = $specs |
+        {{- if or (in $specStr "防水") (in $specStr "ip6") (in $specStr "ip5") (in $specStr "atm") -}}{{- $specs = $specs
+        |
         append "waterproof" -}}{{- end -}}
         {{- if or (in $specStr "felica") (in $specStr "suica") (in $specStr "おサイフ") -}}{{- $specs = $specs | append
         "felica" -}}{{- end -}}
@@ -334,10 +355,12 @@
         {{- end -}}
         {{- with .weight -}}
         {{- $weightLower := . | lower -}}
-        {{- if or (in $weightLower "軽") (in $weightLower "light") -}}{{- $specs = $specs | append "lightweight" -}}{{- end -}}
+        {{- if or (in $weightLower "軽") (in $weightLower "light") -}}{{- $specs = $specs | append "lightweight" -}}{{-
+        end -}}
         {{- if not (in $weightLower "kg") -}}
         {{- $weightValue := replaceRE "[^0-9]" "" $weightLower | replaceRE "^0+" "" | int -}}
-        {{- if and (gt $weightValue 0) (le $weightValue 200) -}}{{- $specs = $specs | append "lightweight" -}}{{- end -}}
+        {{- if and (gt $weightValue 0) (le $weightValue 200) -}}{{- $specs = $specs | append "lightweight" -}}{{- end
+        -}}
         {{- end -}}
         {{- end -}}
         {{- end -}}
@@ -348,8 +371,7 @@
             <div class="card-image">
                 <a href="{{ .RelPermalink }}" tabindex="-1" aria-hidden="true">
                     {{- if .Params.images -}}
-                    <img src="{{ index .Params.images 0 }}" alt="{{ .Title }}"
-                        loading="lazy" decoding="async">
+                    <img src="{{ index .Params.images 0 }}" alt="{{ .Title }}" loading="lazy" decoding="async">
                     {{- else -}}
                     <div class="card-image-noimage" aria-hidden="true">
                         画像なし
@@ -421,14 +443,29 @@
                     </div>
                 </div>
                 <div class="card-footer">
-                    <span class="article-meta">{{- with .Params.last_investigated -}}{{ time . | dateFormat "2006年01月02日"
+                    <span class="article-meta">{{- with .Params.last_investigated -}}{{ time . | dateFormat
+                        "2006年01月02日"
                         }}{{- else -}}{{ .Date.Format "2006年01月02日" }}{{- end -}}</span>
-                    {{- if .Params.affiliate_url -}}
-                    <a href="{{ .Params.affiliate_url }}" class="btn-amazon-small" target="_blank"
-                        rel="noopener noreferrer">🛒 Amazonで見る</a>
-                    {{- else -}}
-                    <a href="{{ .RelPermalink }}" class="read-more">レビューを読む →</a>
-                    {{- end -}}
+                    <div class="card-footer-actions">
+                        {{- if .Params.affiliate_url -}}
+                        <a href="{{ .Params.affiliate_url }}" class="btn-amazon-small" target="_blank"
+                            rel="noopener noreferrer" data-track-product="1" data-asin="{{ .Params.asin }}"
+                            data-category="{{ $trackingCategory }}"
+                            data-price-bucket="{{ partial `utils-price-bucket.html` .Params.price }}"
+                            data-price="{{ .Params.price }}" data-score="{{ .Params.score | default 0 }}"><span
+                                aria-hidden="true">🛒</span> Amazonで見る</a>
+                        {{- else -}}
+                        <a href="{{ .RelPermalink }}" class="read-more">レビューを読む →</a>
+                        {{- end -}}
+                        <button type="button" class="btn-favorite-card" data-favorite-btn="1"
+                            data-asin="{{ .Params.asin }}" data-title="{{ .Title }}" data-url="{{ .RelPermalink }}"
+                            data-affiliate-url="{{ .Params.affiliate_url }}"
+                            data-image="{{ if .Params.images }}{{ index .Params.images 0 }}{{ end }}"
+                            data-price="{{ .Params.price }}" data-score="{{ .Params.score | default 0 }}"
+                            data-category="{{ $trackingCategory }}" aria-pressed="false" aria-label="お気に入りに追加">
+                            <span class="fav-icon" aria-hidden="true">🤍</span>
+                        </button>
+                    </div>
                 </div>
             </div>
         </article>
