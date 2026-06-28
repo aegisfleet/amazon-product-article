@@ -1,8 +1,8 @@
 {
   "analysis": {
-    "productName": "富士通 LIFEBOOK U9310 超軽量モバイルノート (整備済み品)",
+    "productName": "富士通 LIFEBOOK U9310 整備済み品",
     "parentAsin": "B0FCMR16WZ",
-    "productDescription": "わずか約900gの超軽量ボディに第10世代Core i5とWindows 11を搭載した、ビジネスパーソンに最適な13.3型モバイルノートパソコンです。",
+    "productDescription": "わずか約777g（仕様値）の超軽量ボディに第10世代Core i5、8GBメモリ、256GB SSDとWindows 11を搭載した、13.3型モバイルノートパソコン（整備済み品）。Office 2019も付属し、ビジネスから日常使いまで幅広く対応します。",
     "productUsage": [
       "出張や移動が多いビジネスパーソンのサブ機",
       "大学生のレポート作成・オンライン授業用",
@@ -25,71 +25,99 @@
       "カフェでの短時間のWeb会議",
       "自宅のリビングや寝室での気軽なネットサーフィン"
     ],
-    "userStories": [
-      {
-        "userType": "30代営業職",
-        "scenario": "外出先でのメールチェックと資料修正",
-        "experience": "以前使っていたPCより圧倒的に軽く、カバンに入れても気にならない重さ。急ぎのメール対応もサクサクこなせて助かっている。（推測）",
-        "sentiment": "positive"
-      },
-      {
-        "userType": "大学生",
-        "scenario": "キャンパス内での持ち運びとレポート作成",
-        "experience": "毎日持ち歩くので軽さは正義。バッテリー持ちが少し心もとないので、モバイルバッテリーか充電器は必須。（推測）",
-        "sentiment": "mixed"
-      },
-      {
-        "userType": "在宅ワーカー",
-        "scenario": "Web会議とOffice作業",
-        "experience": "第10世代CPUのおかげでZoom背景を使っても動作が遅くならない。画面も綺麗で見やすい。（推測）",
-        "sentiment": "positive"
-      }
-    ],
-    "userImpression": "新品時は高価な超軽量モバイルノートが、整備済み品として手頃な価格で入手できる点が好評。バッテリーの持ちについては妥協が必要だが、軽さと性能のバランスは非常に高い。",
+    "userStories": [],
+    "userImpression": "新品時は高価な超軽量モバイルノートが、整備済み品として手頃な価格で入手できる点が好評です。持ち運びに便利な軽さと、第10世代Core i5による実用的な性能のバランスが高く評価されています。",
     "sources": [
       {
+        "id": "src-1",
         "name": "Amazon商品ページ",
         "url": "https://www.amazon.co.jp/dp/B0FCMR16WZ",
-        "credibility": "高"
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-06-29",
+        "author": "§Ｇ∞ＧＭＪ",
+        "conflictOfInterest": "possible",
+        "notes": "商品仕様、価格、重量（仕様値777g、商品情報1.5kg）、付属品情報を確認"
       }
     ],
-    "lastInvestigated": "2026-02-21",
+    "lastInvestigated": "2026-06-29",
     "competitiveAnalysis": [
       {
-        "name": "Panasonic Let's note CF-SV7 (整備済み品)",
-        "asin": "B0CJFQWJ7S",
-        "priceComparison": "約42,800円と価格帯は近い。",
+        "name": "富士通 LIFEBOOK U9310 (メモリ8GB/SSD256GBモデル)",
+        "asin": "B0GRZWTSCJ",
+        "priceComparison": "対象商品より約13,000円安い（￥31,800）。",
         "featureComparison": [
-          "CPUは第8世代Core i5で、U9310の第10世代より古い",
-          "堅牢性は高いが、厚みがありU9310より重い"
+          "共通点：第10世代Core i5、メモリ8GB、SSD256GB、13.3型FHD、超軽量設計",
+          "相違点：対象商品はOffice 2019付属だが、こちらはOffice 2021付属。また、販売元や整備基準の違いにより価格差が生じている可能性がある"
         ],
         "differentiators": [
-          "U9310はより新しく高性能なCPUを搭載",
-          "U9310の方が薄型軽量でスタイリッシュ"
+          "対象商品の利点：ブランド（§Ｇ∞ＧＭＪ）や販売元の独自保証・サポート体制に魅力を感じる場合",
+          "競合商品の利点：より新しいOffice 2021が付属しつつ、価格が大幅に安いためコスパに優れる"
         ]
       },
       {
-        "name": "富士通 LIFEBOOK U938/U939 (整備済み品)",
-        "asin": "B0DCJRHNQ9",
-        "priceComparison": "約30,800円と1万円以上安い。",
+        "name": "富士通 LIFEBOOK U9310 (メモリ4GBモデル)",
+        "asin": "B0F1N8FFHW",
+        "priceComparison": "対象商品より約19,000円安い（￥25,800）。",
         "featureComparison": [
-          "同じシリーズの旧モデル（第8世代Core i5）",
-          "軽さは同等だが、処理性能は劣る"
+          "共通点：第10世代Core i5、SSD256GB、13.3型FHD、超軽量設計、Office 2019付属",
+          "相違点：対象商品はメモリ8GBだが、こちらはメモリ4GB"
         ],
         "differentiators": [
-          "コスト最優先ならU938だが、長く使うなら第10世代のU9310がおすすめ"
+          "対象商品の利点：メモリ8GB搭載により、複数アプリの同時起動やWeb会議など、より快適なマルチタスクが可能",
+          "競合商品の利点：メモリ4GBで十分な軽作業中心の用途であれば、初期費用を大きく抑えられる"
         ]
       },
       {
-        "name": "Panasonic CF-SZ6 (整備済み品)",
-        "asin": "B09K6442M9",
-        "priceComparison": "約16,500円と圧倒的に安い。",
+        "name": "富士通 LIFEBOOK U9310 (メモリ8GB/SSD512GBモデル)",
+        "asin": "B0FPCLTF1H",
+        "priceComparison": "対象商品より約6,500円安い（￥38,300）。",
         "featureComparison": [
-          "第7世代Core i5でWindows 11の正規サポート外の可能性が高い（無理やり入れている場合あり）",
-          "液晶解像度は1920x1200で縦に広い"
+          "共通点：第10世代Core i5、メモリ8GB、13.3型FHD、超軽量設計",
+          "相違点：対象商品はSSD256GB・Office2019だが、こちらはSSD512GB・Office2021付属"
         ],
         "differentiators": [
-          "安さは魅力だが、性能と将来性でU9310に分がある"
+          "対象商品の利点：特定の販売元（GMJ）からの購入を希望する場合",
+          "競合商品の利点：価格が安い上にストレージ容量が倍（512GB）で、より新しいOffice 2021が付属するため、スペック重視の場合に適している"
+        ]
+      },
+      {
+        "name": "富士通 LIFEBOOK U9310 (メモリ16GB/SSD512GBモデル)",
+        "asin": "B0GLFT4N9R",
+        "priceComparison": "対象商品より約11,000円高い（￥56,249）。",
+        "featureComparison": [
+          "共通点：第10世代Core i5、13.3型FHD、超軽量設計、Office 2019付属",
+          "相違点：対象商品はメモリ8GB/SSD256GBだが、こちらはメモリ16GB/SSD512GBと大容量"
+        ],
+        "differentiators": [
+          "対象商品の利点：一般的なビジネス用途や日常使いに十分なスペックを備えつつ、価格が抑えられている",
+          "競合商品の利点：より重い作業や多くのデータを扱う場合、将来性を考慮して大容量メモリ・ストレージが必要な場合に適している"
+        ]
+      },
+      {
+        "name": "富士通 LIFEBOOK U9310 (タッチ対応モデル)",
+        "asin": "B0GPVQKVQY",
+        "priceComparison": "対象商品より2,000円高い（￥46,800）。",
+        "featureComparison": [
+          "共通点：第10世代Core i5、メモリ8GB、SSD256GB、13.3型FHD、Office 2019付属、販売元（GMJ）",
+          "相違点：対象商品は非タッチパネルだが、こちらはタッチ対応ディスプレイを搭載"
+        ],
+        "differentiators": [
+          "対象商品の利点：タッチ操作が不要で、少しでも価格を抑えたい場合",
+          "競合商品の利点：直感的なタッチ操作が可能で、資料への書き込みやプレゼンなどで便利"
+        ]
+      },
+      {
+        "name": "富士通 LIFEBOOK U939 (旧モデル)",
+        "asin": "B0GX5ZSSQ3",
+        "priceComparison": "対象商品より約16,000円安い（￥28,800）。",
+        "featureComparison": [
+          "共通点：メモリ8GB、13.3型FHD、超軽量設計",
+          "相違点：対象商品は第10世代Core i5/SSD256GBだが、こちらは一世代古い第8世代Core i5/SSD512GB"
+        ],
+        "differentiators": [
+          "対象商品の利点：より新しく処理性能の高い第10世代CPUを搭載している",
+          "競合商品の利点：CPU性能よりストレージ容量（512GB）と低価格を優先する場合に適している"
         ]
       }
     ],
@@ -108,42 +136,50 @@
         "整備済み品のためバッテリー劣化の可能性がある",
         "外装の傷やキーボードの使用感は個体差がある"
       ],
-      "score": 85,
-      "scoreRationale": "[基本点: 70]\n[加点: +5] (第10世代Core i5搭載で実用的なスペック)\n[加点: +10] (4万円台でこの性能と軽さはコストパフォーマンスが高い)\n[加点: +5] (1kgを切る超軽量設計と豊富な端子類)\n[減点: -5] (整備済み品特有のバッテリー劣化リスク)\n[合計: 85]"
+      "score": 70,
+      "scoreRationale": "[基本点: 70]\n[加点: +10] (第10世代Core i5と超軽量ボディで実用性が高い)\n[減点: -10] (同等の整備済み品の中で割高な価格設定のためコスパが低い)\n[合計: 70]"
     },
     "technicalSpecs": {
-      "cpu": "Intel Core i5-10210U (1.6GHz)",
+      "cpu": "Intel Core i5-10210U",
       "ram": "8GB",
       "storage": "256GB SSD",
-      "display": {
-        "size": "13.3インチ",
-        "resolution": "1920x1080 (FHD)",
-        "type": "TFTカラーLCD"
-      },
-      "battery": {
-        "capacity": "不明",
-        "charging": "ACアダプター"
-      },
-      "gpu": "Intel UHD Graphics",
+      "display": "13.3型ワイド フルHD (1920×1080)",
+      "weight": "約777g (仕様値。本商品ページには1.5kgと記載があるが、これは梱包重量等の可能性が高い)",
       "dimensions": {
-        "height": "15.5mm",
-        "width": "309mm",
-        "depth": "212mm",
-        "weight": "約898g"
+        "height": "15.5mm (仕様値)",
+        "width": "309mm (仕様値)",
+        "depth": "212mm (仕様値)"
       },
-      "connectivity": [
-        "Wi-Fi",
-        "Bluetooth",
-        "USB 3.0 Type-A x2",
-        "USB Type-C",
-        "HDMI",
-        "LANポート"
-      ],
+      "os": "Windows 11",
+      "software": "Microsoft Office 2019",
+      "warranty": "6ヶ月保証",
+      "battery": "YOUTUBE連続再生約2.5時間、Office作業約3時間 (目安)",
       "other": [
         "Webカメラ内蔵",
-        "指紋認証（モデルにより異なる可能性あり）",
-        "Windows 11 Pro"
+        "初期設定済み"
       ]
-    }
+    },
+    "claims": [
+      {
+        "claim": "13.3型フルHD液晶を搭載し、本体重量は約777g（仕様値）の超軽量設計である",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "crossChecked": false,
+        "notes": "Amazonの商品説明（メーカー仕様）にて確認"
+      },
+      {
+        "claim": "第10世代Core i5、8GBメモリ、256GB SSDを搭載し、日常作業からビジネス用途まで快適にこなせる",
+        "category": "comparativeAdvantage",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "crossChecked": false,
+        "notes": "Amazonの商品説明にてスペック構成を確認"
+      }
+    ]
   }
 }
