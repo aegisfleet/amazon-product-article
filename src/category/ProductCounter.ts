@@ -67,7 +67,10 @@ export class ProductCounter {
       const fileContent = fs.readFileSync(filePath, 'utf-8');
       const parsed = matter(fileContent, {
         engines: {
-          yaml: (str: string) => yaml.load(str) as Record<string, any>,
+          yaml: {
+            parse: (str: string) => yaml.load(str) as Record<string, unknown>,
+            stringify: (obj: unknown) => yaml.dump(obj),
+          },
         },
       });
 
