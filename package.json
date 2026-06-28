@@ -76,7 +76,10 @@
     },
     "onlyBuiltDependencies": [
       "unrs-resolver"
-    ]
+    ],
+    "patchedDependencies": {
+      "gray-matter@4.0.3": "patches/gray-matter@4.0.3.patch"
+    }
   },
   "packageManager": "pnpm@10.5.2",
   "resolutions": {
