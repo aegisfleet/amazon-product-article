@@ -449,6 +449,7 @@ export class CreatorsAPIClient {
           errorMessage.includes('InvalidParameterValue') ||
           errorMessage.includes('not found') ||
           errorMessage.includes('404') ||
+          errorMessage.includes('ItemNotAccessible') ||
           errorMessage.includes('ResourceNotFoundException')
         ) {
           permanentFailures.add(asin);
