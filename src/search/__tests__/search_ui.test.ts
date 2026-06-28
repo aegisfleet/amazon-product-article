@@ -28,7 +28,7 @@ const createMockElement = (tagName: string) => {
     get innerHTML() {
       throw new Error('innerHTML usage detected! Use textContent or appendChild instead.');
     },
-    set innerHTML(val) {
+    set innerHTML(_val) {
       throw new Error('innerHTML assignment detected! Use textContent or appendChild instead.');
     },
     _children: children,
@@ -58,7 +58,7 @@ describe('Search UI XSS Protection', () => {
         return createMockElement('div');
       }),
       createElement: jest.fn((tag) => createMockElement(tag)),
-      createElementNS: jest.fn((ns, tag) => createMockElement(tag)),
+      createElementNS: jest.fn((_ns, tag) => createMockElement(tag)),
       addEventListener: jest.fn(),
       querySelector: jest.fn(() => createMockElement('div')),
     };

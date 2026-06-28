@@ -233,7 +233,7 @@ export class ArticleQualityManager {
 
     const frontMatterMatch = article.match(/^---\n([\s\S]*?)\n---/);
 
-    if (!frontMatterMatch || !frontMatterMatch[1]) {
+    if (!frontMatterMatch?.[1]) {
       errors.push({
         type: 'error',
         category: 'structure',

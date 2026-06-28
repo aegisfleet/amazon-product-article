@@ -1527,12 +1527,7 @@ ${recommendationMessage}
       const linkText = match[1];
       const linkUrl = match[2];
 
-      if (
-        linkText &&
-        linkUrl &&
-        linkUrl.includes('amazon.co.jp') &&
-        (linkUrl.includes('tag=') || linkUrl.includes('/dp/'))
-      ) {
+      if (linkText && linkUrl?.includes('amazon.co.jp') && (linkUrl.includes('tag=') || linkUrl.includes('/dp/'))) {
         const asinMatch = /\/dp\/([A-Z0-9]{10})/.exec(linkUrl);
         if (asinMatch?.[1]) {
           links.push({

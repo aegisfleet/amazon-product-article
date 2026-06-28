@@ -47,7 +47,6 @@ export class CreatorsAPIClient {
   private readonly OAUTH_TOKEN_URL = 'https://api.amazon.com/auth/o2/token';
   private readonly API_BASE_URL = 'https://creatorsapi.amazon';
   private readonly MARKETPLACE = 'www.amazon.co.jp';
-  private readonly CREDENTIAL_VERSION = '3.3';
 
   constructor() {
     // Rate limit configuration - can be adjusted via environment variables
@@ -800,9 +799,9 @@ export class CreatorsAPIClient {
   private extractProductInfoSpecs(pInfo: ProductInfoType | undefined, specs: Record<string, string>): void {
     if (!pInfo) return;
 
-    if (pInfo.color?.displayValue) specs['color'] = pInfo.color.displayValue;
-    if (pInfo.size?.displayValue) specs['size'] = pInfo.size.displayValue;
-    if (pInfo.unitCount?.displayValue) specs['unitCount'] = String(pInfo.unitCount.displayValue);
+    if (pInfo.color?.displayValue) specs.color = pInfo.color.displayValue;
+    if (pInfo.size?.displayValue) specs.size = pInfo.size.displayValue;
+    if (pInfo.unitCount?.displayValue) specs.unitCount = String(pInfo.unitCount.displayValue);
 
     this.extractDimensionSpecs(pInfo.itemDimensions, specs);
     this.extractArbitraryProductSpecs(pInfo, specs);
@@ -810,10 +809,10 @@ export class CreatorsAPIClient {
 
   private extractDimensionSpecs(dims: ItemDimensionsType | undefined, specs: Record<string, string>): void {
     if (!dims) return;
-    if (dims.height) specs['height'] = `${dims.height.displayValue} ${dims.height.unit}`;
-    if (dims.width) specs['width'] = `${dims.width.displayValue} ${dims.width.unit}`;
-    if (dims.length) specs['length'] = `${dims.length.displayValue} ${dims.length.unit}`;
-    if (dims.weight) specs['weight'] = `${dims.weight.displayValue} ${dims.weight.unit}`;
+    if (dims.height) specs.height = `${dims.height.displayValue} ${dims.height.unit}`;
+    if (dims.width) specs.width = `${dims.width.displayValue} ${dims.width.unit}`;
+    if (dims.length) specs.length = `${dims.length.displayValue} ${dims.length.unit}`;
+    if (dims.weight) specs.weight = `${dims.weight.displayValue} ${dims.weight.unit}`;
   }
 
   private extractArbitraryProductSpecs(pInfo: ProductInfoType | undefined, specs: Record<string, string>): void {
@@ -843,7 +842,7 @@ export class CreatorsAPIClient {
 
   private extractManufacturerInfoSpecs(mInfo: ManufactureInfoType | undefined, specs: Record<string, string>): void {
     if (!mInfo) return;
-    if (mInfo.brand?.displayValue) specs['brand'] = mInfo.brand.displayValue;
-    if (mInfo.model?.displayValue) specs['model'] = mInfo.model.displayValue;
+    if (mInfo.brand?.displayValue) specs.brand = mInfo.brand.displayValue;
+    if (mInfo.model?.displayValue) specs.model = mInfo.model.displayValue;
   }
 }
