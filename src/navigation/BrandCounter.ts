@@ -60,10 +60,7 @@ export class BrandCounter {
       const content = fs.readFileSync(filePath, 'utf-8');
       const { data } = matter(content, {
         engines: {
-          yaml: {
-            parse: (str: string) => yaml.load(str) as Record<string, any>,
-            stringify: (obj: any) => yaml.dump(obj),
-          },
+          yaml: (str: string) => yaml.load(str) as Record<string, any>,
         },
       });
       if (data.brand && typeof data.brand === 'string') {
