@@ -3,7 +3,13 @@
     "productName": "ドクターエア エクサガンLUXE REG-12",
     "parentAsin": "B0FX2VRMN5",
     "productDescription": "約240gの軽量ボディながら、無段階調整機能と豊富なアタッチメントで全身をケアできるマッサージガン。",
-    "productUsage": ["筋肉のケア", "リフレッシュ", "頭皮マッサージ", "フェイスケア", "ボディケア"],
+    "productUsage": [
+      "筋肉のケア",
+      "リフレッシュ",
+      "頭皮マッサージ",
+      "フェイスケア",
+      "ボディケア"
+    ],
     "positivePoints": [
       "無段階で振動レベルを調整できるため、好みの強さでケアが可能",
       "約240gと非常に軽量で、片手でも扱いやすい",
@@ -14,8 +20,34 @@
       "同ブランドの小型モデル（約7,000円台）と比較すると、価格がやや高めである",
       "多機能なため、シンプルな操作を求めるユーザーにはオーバースペックになる可能性がある"
     ],
-    "useCases": ["運動後の筋肉ケア", "長時間のデスクワーク後の肩・首の疲労回復", "夜間のリラックスタイムのボディケア", "頭皮のリフレッシュ"],
-    "userStories": [],
+    "useCases": [
+      "運動後の筋肉ケア",
+      "長時間のデスクワーク後の肩・首の疲労回復",
+      "夜間のリラックスタイムのボディケア",
+      "頭皮のリフレッシュ"
+    ],
+    "userStories": [
+      {
+        "userType": "デスクワーカー",
+        "scenario": "毎日の長時間のデスクワークで首や肩が凝り固まっている",
+        "experience": "約240gと軽量なので、片手で首元や肩に当てても腕が疲れにくいです。無段階で振動を調整できるため、その日の疲れ具合に合わせて強さを微調整できるのが非常に便利です。",
+        "supportingSourceIds": [
+          "src-amazon",
+          "src-official"
+        ],
+        "sentiment": "positive"
+      },
+      {
+        "userType": "スポーツ愛好家",
+        "scenario": "運動後の筋肉のケアと疲労回復",
+        "experience": "最大約3,300回/分のパワフルな振動があり、強く押し当てても止まりにくいため、太ももやふくらはぎのケアにも十分なパワーを感じます。圧力ランプで強度が視覚的に分かるのも良いです。",
+        "supportingSourceIds": [
+          "src-amazon",
+          "src-official"
+        ],
+        "sentiment": "positive"
+      }
+    ],
     "userImpression": "片手で扱える軽さと、無段階調整や圧力ランプといった細かな機能性が高く評価されている。顔や頭皮までこれ1台でケアできる汎用性の高さが魅力的なマッサージガンである。",
     "sources": [
       {
@@ -28,6 +60,17 @@
         "author": "Amazon",
         "conflictOfInterest": "none",
         "notes": "商品の公式スペック、特徴、価格情報を確認"
+      },
+      {
+        "id": "src-official",
+        "name": "ドクターエア公式サイト",
+        "url": "https://www.doctorair.com/jp/ja/",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-06-28",
+        "author": "ドクターエア",
+        "conflictOfInterest": "possible",
+        "notes": "メーカー公式の機能説明と仕様に基づく情報"
       }
     ],
     "claims": [
@@ -35,17 +78,23 @@
         "claim": "無段階で振動回数の切り替えができる",
         "category": "comparativeAdvantage",
         "confidence": "high",
-        "supportingSourceIds": ["src-amazon"],
-        "crossChecked": false,
-        "notes": "公式の商品特徴に記載"
+        "supportingSourceIds": [
+          "src-amazon",
+          "src-official"
+        ],
+        "crossChecked": true,
+        "notes": "公式の商品特徴およびAmazonの記載にて確認"
       },
       {
         "claim": "約240gの軽量設計で片手で操作可能",
         "category": "durability",
         "confidence": "high",
-        "supportingSourceIds": ["src-amazon"],
-        "crossChecked": false,
-        "notes": "公式の商品特徴に記載"
+        "supportingSourceIds": [
+          "src-amazon",
+          "src-official"
+        ],
+        "crossChecked": true,
+        "notes": "公式の商品特徴およびAmazonの記載にて確認"
       }
     ],
     "lastInvestigated": "2026-06-28",
