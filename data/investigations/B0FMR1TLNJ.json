@@ -1,105 +1,206 @@
 {
   "analysis": {
-    "productName": "Dynabook G83 (第10世代Core i5/8GB/256GB)",
-    "parentAsin": "B0FMR1TLNJ",
-    "productDescription": "Dynabook G83は、約0.8kgという驚異的な軽さと堅牢性を両立した、ビジネス向けモバイルノートPCの整備済み品です。",
+    "productName": "Dynabook G83",
+    "parentAsin": "B0FMR87LWV",
+    "productDescription": "約800gの超軽量・薄型ノートパソコン（画面サイズ約33.8cm）の整備済み品。第10世代Core i5、8GBメモリ、256GB SSD、MS Office 2021を搭載し、即戦力として活躍します。",
     "productUsage": [
-      "外出先でのドキュメント作成やメールチェック",
-      "HDMIや有線LANを活用したプレゼンテーションや会議",
-      "テレワークやオンライン会議（Webカメラ搭載）",
-      "軽量さを活かした持ち運び用サブマシン"
+      "ビジネス用途での資料作成・メール処理",
+      "出張や外出先でのモバイルワーク",
+      "リモート会議（Webカメラ内蔵）",
+      "学生のレポート作成・オンライン授業"
     ],
     "positivePoints": [
-      "重量約0.8kgと非常に軽量で、毎日の持ち運びが苦にならない",
-      "第10世代Core i5とSSD搭載により、ビジネスアプリが快適に動作",
-      "HDMI、有線LAN、USB Type-Cなど、ビジネスに必要な端子を網羅",
-      "3万円台前半という圧倒的なコストパフォーマンス"
+      "約800gと非常に軽量で持ち運びに便利",
+      "MS Office 2021がインストール済みで到着後すぐに使用可能",
+      "フルHD（1920×1080）解像度の非光沢ディスプレイ搭載で作業がしやすい",
+      "Wi-Fi、Bluetooth、Type-C、Webカメラなど必要十分なインターフェースを装備"
     ],
     "negativePoints": [
-      "整備済み品のため、筐体に傷や使用感がある場合がある",
-      "バッテリーの持ちは個体差があり、新品時より劣化している可能性がある",
-      "メモリ8GBは増設不可の場合が多く、重い作業には不向き"
+      "整備済み品のため、バッテリーの劣化具合や外装の細かい傷に個体差がある",
+      "メモリ8GBは軽作業には十分だが、重いマルチタスクやクリエイティブ用途には不足する可能性がある",
+      "SSD 256GBは大量のデータを保存するにはやや少なめ"
     ],
     "useCases": [
-      "営業職の外回り用端末",
-      "大学生のレポート作成・オンライン授業用",
-      "出張の多いビジネスパーソンのメインマシン"
+      "カフェやコワーキングスペースでのリモートワーク",
+      "営業先へのプレゼン資料の持ち運び",
+      "出張用サブマシンとしての活用"
     ],
-    "userStories": [
-      {
-        "userType": "30代営業職（推測）",
-        "scenario": "毎日の外回りで持ち歩く",
-        "experience": "以前使っていた1.3kgのPCと比べて肩への負担が激減しました。カバンに入れているのを忘れるほどの軽さです。バッテリーも半日は持つので助かっています。",
-        "sentiment": "positive"
-      },
-      {
-        "userType": "大学生（推測）",
-        "scenario": "キャンパスへの持ち運びとレポート作成",
-        "experience": "新品のPCは高くて手が出ませんでしたが、この価格でOfficeも付いていて満足です。少し傷はありましたが、機能には問題なく、サクサク動きます。",
-        "sentiment": "positive"
-      },
-      {
-        "userType": "40代会社員（推測）",
-        "scenario": "在宅勤務と出社のハイブリッド",
-        "experience": "キーボードの打鍵感が浅めで少し慣れが必要でしたが、この軽さは正義です。有線LANポートがあるのも、オフィスの環境によっては便利です。",
-        "sentiment": "mixed"
-      }
-    ],
-    "userImpression": "圧倒的な軽さとコストパフォーマンスが高く評価されています。整備済み品としての外観の個体差やバッテリーへの懸念はあるものの、実用性を重視するユーザーにとっては非常に満足度の高い選択肢となっています。",
+    "userStories": [],
+    "userImpression": "非常に軽量で持ち運びやすく、Officeソフトが標準搭載されているため、特にビジネスパーソンや学生から「コストパフォーマンスが高い」と評価されています。一方で、整備済み品特有のバッテリーの持ちや、メモリ8GBの限界に懸念を示す声も見られますが、価格を考慮すれば総じて満足度の高い実用的なモバイルノートPCです。",
     "sources": [
       {
-        "name": "Amazon商品ページ",
+        "id": "src-1",
+        "name": "Amazon Product Page",
         "url": "https://www.amazon.co.jp/dp/B0FMR1TLNJ",
-        "credibility": "medium"
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-06-29",
+        "author": "Amazon",
+        "conflictOfInterest": "none",
+        "notes": "製品の基本仕様、価格（42,800円）、重量（0.8kg）、機能（Office 2021等）を確認"
       },
-       {
-        "name": "Dynabook G83 シリーズ 製品情報（参考）",
-        "url": null,
-        "credibility": "high"
+      {
+        "id": "src-2",
+        "name": "Dynabook G83 製品情報",
+        "url": "https://kakaku.com/item/K0001723984/spec/",
+        "tier": "medium",
+        "evidenceType": "secondary",
+        "publishedAt": "2026-06-29",
+        "author": "価格.com",
+        "conflictOfInterest": "none",
+        "notes": "Dynabook G83シリーズの寸法（306x17.9x210 mm）および基本重量レンジを確認"
       }
     ],
-    "lastInvestigated": "2026-02-21",
+    "claims": [
+      {
+        "claim": "重量が約800gと非常に軽量である",
+        "category": "durability",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-1",
+          "src-2"
+        ],
+        "crossChecked": true,
+        "notes": "Amazonの製品情報および価格.comの仕様データで軽量であることが確認できる"
+      },
+      {
+        "claim": "コストパフォーマンスに優れる",
+        "category": "comparativeAdvantage",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "crossChecked": false,
+        "notes": "Office 2021付属で4万円台前半という価格設定から"
+      }
+    ],
+    "lastInvestigated": "2026-06-29",
     "competitiveAnalysis": [
       {
-        "name": "NEC VersaPro VC-6 (整備済み品)",
-        "asin": "B0G2Y3QZ5T",
-        "priceComparison": "約2.6万円とさらに安価だが、画面サイズが12.5型と小さい。",
-        "featureComparison": ["画面サイズ: 12.5型 vs 13.3型", "重量: 約0.9kg vs 約0.8kg"],
-        "differentiators": ["圧倒的な安さ", "コンパクトなサイズ感"]
+        "name": "dynabook G83/HS (第11世代Core i5, 16GB/256GB)",
+        "asin": "B0DR9BRG8B",
+        "priceComparison": "対象商品よりやや高いが、メモリが16GBで第11世代CPUを搭載しているため、長期的なパフォーマンスに優れる。",
+        "featureComparison": [
+          "共通点：約33.8cmFHD、整備済み品、MS Office 2021搭載、軽量設計",
+          "相違点：CPU世代（本製品:第10世代 vs 競合:第11世代）、メモリ容量（本製品:8GB vs 競合:16GB）"
+        ],
+        "differentiators": [
+          "Dynabook G83の利点：価格がより安価で、初期投資を抑えたい場合に適している。",
+          "dynabook G83/HS (第11世代Core i5, 16GB/256GB)の利点：メモリが16GBあり、より多くのアプリケーションを同時起動する用途に適している。"
+        ]
       },
       {
-        "name": "Lenovo ThinkPad X13 Gen 1 (整備済み品)",
-        "asin": "B0GH59G9VS",
-        "priceComparison": "約3.7万円と少し高い。",
-        "featureComparison": ["ストレージ: 128GB vs 256GB", "キーボード: ThinkPadの方が打鍵感が良いとされる"],
-        "differentiators": ["ThinkPad特有のトラックポイントとキーボード", "堅牢性"]
+        "name": "dynabook G83 (第11世代Core i5, 16GB/256GB, マウス付)",
+        "asin": "B0H13W698B",
+        "priceComparison": "対象商品と同程度の価格帯ながら、メモリ16GBと第11世代CPUを搭載し、マウスも付属しているため、コスパが高い。",
+        "featureComparison": [
+          "共通点：約33.8cmFHD、整備済み品、MS Office 2021搭載",
+          "相違点：CPU世代、メモリ容量、付属品（競合はマウス付き）"
+        ],
+        "differentiators": [
+          "Dynabook G83の利点：特筆すべき優位性は少なく、価格差とブランド・販売元の信頼性で選ぶことになる。",
+          "dynabook G83 (第11世代Core i5, 16GB/256GB, マウス付)の利点：同価格帯で基本スペック（CPU、メモリ）が一段上であり、マウスも付属する。"
+        ]
       },
       {
-        "name": "Fujitsu LIFEBOOK U9310 (整備済み品)",
-        "asin": "B0FCMR16WZ",
-        "priceComparison": "約4.5万円と1万円以上高い。",
-        "featureComparison": ["重量: 約0.7kg台 vs 約0.8kg", "画面サイズ: 同じ13.3型"],
-        "differentiators": ["さらなる軽量さ", "指紋認証などのセキュリティ機能（モデルによる）"]
+        "name": "dynabook G83 (第11世代Core i5, 16GB/512GB)",
+        "asin": "B0FNMYLXH5",
+        "priceComparison": "対象商品よりやや高いが、メモリ16GBと大容量512GB SSDを搭載している。",
+        "featureComparison": [
+          "共通点：約33.8cmFHD、整備済み品、MS Office 2021搭載",
+          "相違点：CPU世代、メモリ容量、ストレージ容量（本製品:256GB vs 競合:512GB）"
+        ],
+        "differentiators": [
+          "Dynabook G83の利点：購入価格を少しでも抑えたい場合に有利。",
+          "dynabook G83 (第11世代Core i5, 16GB/512GB)の利点：ストレージが倍の512GBあり、データ保存量が多いユーザーに適している。"
+        ]
+      },
+      {
+        "name": "dynabook G83 (第11世代Core i5, 16GB/256GB, Office 2019)",
+        "asin": "B0FLF27S63",
+        "priceComparison": "対象商品より安価で、メモリ16GBを搭載しているが、付属のOfficeが古いバージョン(2019)となっている。",
+        "featureComparison": [
+          "共通点：約33.8cmFHD、整備済み品",
+          "相違点：CPU世代、メモリ容量、Officeバージョン（本製品:2021 vs 競合:2019）"
+        ],
+        "differentiators": [
+          "Dynabook G83の利点：より新しいMS Office 2021が利用できる。",
+          "dynabook G83 (第11世代Core i5, 16GB/256GB, Office 2019)の利点：本体価格が安く、かつメモリが16GB搭載されている。"
+        ]
+      },
+      {
+        "name": "Dynabook G83 (第11世代Core i5, 8GB/256GB)",
+        "asin": "B0FKNH1Y4C",
+        "priceComparison": "対象商品より少し安価で、CPU世代が新しい。",
+        "featureComparison": [
+          "共通点：約33.8cmFHD、整備済み品、メモリ8GB/SSD256GB、MS Office 2021搭載",
+          "相違点：CPU世代（本製品:第10世代 vs 競合:第11世代）、付属品（競合はマウス付き）"
+        ],
+        "differentiators": [
+          "Dynabook G83の利点：価格差が小さいため、販売元のサポート体制や在庫状況で選定できる。",
+          "Dynabook G83 (第11世代Core i5, 8GB/256GB)の利点：より新しい世代のCPUを搭載し、価格も安価な傾向がある。"
+        ]
+      },
+      {
+        "name": "Dynabook G83 (詳細スペック不明, 8GB/256GB)",
+        "asin": "B0DM4MLLHT",
+        "priceComparison": "対象商品より大幅に安価だが、CPU世代や詳細スペックの記載が不明瞭な点に注意が必要。",
+        "featureComparison": [
+          "共通点：約33.8cm、整備済み品、メモリ8GB/SSD256GB、軽量",
+          "相違点：CPU仕様の詳細（対象商品は第10世代と明記されているが、競合は不明瞭）"
+        ],
+        "differentiators": [
+          "Dynabook G83の利点：CPU世代が明記されており、性能の予測がつきやすい。",
+          "Dynabook G83 (詳細スペック不明, 8GB/256GB)の利点：価格が非常に安く、とりあえずPCが必要な用途に向く。"
+        ]
       }
     ],
     "recommendation": {
-      "targetUsers": ["とにかく軽いPCを安く手に入れたい人", "持ち運び頻度が高いビジネスパーソン", "予算を抑えたい学生"],
-      "pros": ["驚異的な軽さ (約0.8kg)", "高いコストパフォーマンス", "充実したインターフェース"],
-      "cons": ["整備済み品のリスク（傷、バッテリー）", "メモリ増設の難しさ", "質感はプラスチッキー"],
-      "score": 90,
-      "scoreRationale": "[基本点: 70]\n[性能・機能: +5] (第10世代i5、FHD液晶、充実したポート類)\n[コストパフォーマンス: +15] (3万円台前半でこの軽さとスペックは破格)\n[品質・デザイン: -5] (整備済み品特有の傷や使用感、バッテリー劣化のリスク)\n[ユーザー満足度: +3] (軽さと実用性への評価は高い)\n[独自の強み: +2] (有線LAN等のフルポートを備えつつ超軽量)\n[合計: 90]"
+      "targetUsers": [
+        "出張や移動が多く、軽量なノートPCを求めるビジネスパーソン",
+        "Officeソフトを利用したレポート作成やオンライン授業が多い学生",
+        "初期投資を抑えつつ実用的なスペックのPCを探している方"
+      ],
+      "pros": [
+        "約800gの超軽量ボディで持ち運びが苦にならない",
+        "MS Office 2021付属で、追加コストなしにビジネスソフトが利用可能",
+        "Webカメラ内蔵でオンライン会議にも即対応可能"
+      ],
+      "cons": [
+        "整備済み品のため、バッテリー状態や外観の傷に個体差がある",
+        "メモリ8GBのため、負荷の高い並行作業には向かない"
+      ],
+      "score": 75,
+      "scoreRationale": "[基本点: 70]\n[加点: +10] (約800gという卓越した軽量性とモバイル性能)\n[加点: +5] (MS Office 2021搭載によるコストパフォーマンスの高さ)\n[減点: -5] (整備済み品であることによるバッテリー劣化や外装リスク)\n[減点: -5] (同価格帯の競合商品に第11世代CPU/16GBメモリ搭載機が存在するため、相対的なスペック優位性がやや低い)\n[合計: 75]"
     },
     "technicalSpecs": {
-      "os": "Windows 11 Pro",
-      "cpu": "Intel Core i5-10210U (第10世代)",
-      "ram": "8GB",
+      "dimensions": {
+        "width": "306mm",
+        "height": "17.9mm",
+        "depth": "210mm"
+      },
+      "weight": "800g",
+      "cpu": "Intel Core i5-10210U 1.6GHz (第10世代)",
+      "memory": "8GB DDR4",
       "storage": "256GB M.2 SSD",
-      "display": { "size": "13.3インチ", "resolution": "1920x1080 (FHD)", "type": "非光沢" },
-      "battery": { "capacity": "不明 (整備済み品のため劣化の可能性あり)", "charging": "ACアダプター付属" },
-      "gpu": "Intel UHD Graphics",
-      "connectivity": ["Wi-Fi", "Bluetooth", "有線LAN"],
-      "dimensions": { "weight": "約0.8kg" },
-      "other": ["Webカメラ内蔵", "Microsoft Office 2021搭載", "USB Type-C", "HDMI"]
+      "display": "約33.8cm LED バックライト付TFTカラーLCD、非光沢 (1920×1080 フルHD)",
+      "os": "Windows 11 Pro",
+      "software": "MS Office 2021",
+      "interfaces": [
+        "USB3.0",
+        "USB Type-C",
+        "HDMI",
+        "ヘッドホン/マイク"
+      ],
+      "wireless": [
+        "無線LAN搭載",
+        "Bluetooth搭載"
+      ],
+      "camera": "Webカメラ内蔵",
+      "color": "ブラック",
+      "accessories": [
+        "ACアダプター"
+      ]
     }
   }
 }
