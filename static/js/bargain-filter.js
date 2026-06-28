@@ -28,6 +28,16 @@ function priceToValue(price) {
   }
 }
 
+// --- Price Slider Mapping Helpers ---
+function getPriceBucket(priceRaw) {
+  if (!priceRaw || priceRaw <= 0) return 'unknown';
+  if (priceRaw < 3000) return 'under-3000';
+  if (priceRaw < 7000) return '3000-6999';
+  if (priceRaw < 15000) return '7000-14999';
+  if (priceRaw < 30000) return '15000-29999';
+  return '30000-plus';
+}
+
 // --- Format price ---
 function formatPrice(raw) {
   if (!raw && raw !== 0) return '';
@@ -71,14 +81,16 @@ function safeImageUrl(url) {
 // --- Render ---
 function renderCard(p) {
   const article = document.createElement('article');
-  article.className = 'bargain-card';
+  article.className = 'card';
 
   const imageLink = document.createElement('a');
-  imageLink.className = 'bargain-card-image-link';
+  imageLink.className = 'card-image-link';
   imageLink.href = safeUrl(p.url);
+  imageLink.tabIndex = -1;
+  imageLink.setAttribute('aria-hidden', 'true');
 
   const imageWrap = document.createElement('div');
-  imageWrap.className = 'bargain-card-image';
+  imageWrap.className = 'card-image';
 
   if (p.image) {
     const img = document.createElement('img');
@@ -89,7 +101,7 @@ function renderCard(p) {
     imageWrap.appendChild(img);
   } else {
     const noImage = document.createElement('div');
-    noImage.className = 'bargain-card-noimage';
+    noImage.className = 'card-image-noimage';
     noImage.textContent = '画像なし';
     imageWrap.appendChild(noImage);
   }
@@ -98,68 +110,191 @@ function renderCard(p) {
   article.appendChild(imageLink);
 
   const body = document.createElement('div');
-  body.className = 'bargain-card-body';
+  body.className = 'card-content';
 
-  const category = document.createElement('div');
-  category.className = 'bargain-card-category';
-  category.textContent = String(p.category || '');
-  body.appendChild(category);
+  const header = document.createElement('div');
+  header.className = 'card-header';
+
+  if (p.category) {
+    const category = document.createElement('span');
+    category.className = 'card-tag bargain-card-category';
+    category.textContent = String(p.category || '');
+    header.appendChild(category);
+  }
+  if (p.subcategory) {
+    const subcat = document.createElement('span');
+    subcat.className = 'card-tag-sub';
+    subcat.textContent = String(p.subcategory);
+    header.appendChild(subcat);
+  }
 
   const title = document.createElement('h3');
-  title.className = 'bargain-card-title';
+  title.className = 'card-title';
   const titleLink = document.createElement('a');
   titleLink.href = safeUrl(p.url);
   titleLink.textContent = String(p.title || '');
   title.appendChild(titleLink);
-  body.appendChild(title);
+  header.appendChild(title);
+  body.appendChild(header);
 
-  const meta = document.createElement('div');
-  meta.className = 'bargain-card-meta';
-
-  const price = document.createElement('span');
-  price.className = 'bargain-card-price';
-  price.textContent = String(p.price || '');
-  meta.appendChild(price);
-
-  const score = document.createElement('span');
-  score.className = `card-score ${scoreClass(p.score)}`;
-  score.textContent = `🏆 ${p.score}点`;
-  meta.appendChild(score);
-
-  body.appendChild(meta);
-
-  const badges = document.createElement('div');
-  badges.className = 'bargain-card-badges';
-  if (p.isAmazonDirect) {
-    const amazonBadge = document.createElement('span');
-    amazonBadge.className = 'badge-amazon-direct';
-    amazonBadge.textContent = 'Amazon直販';
-    badges.appendChild(amazonBadge);
+  if (p.description) {
+    const excerpt = document.createElement('p');
+    excerpt.className = 'card-excerpt';
+    excerpt.textContent = String(p.description);
+    body.appendChild(excerpt);
   }
+
+  if (p.specsHtml) {
+    const specsWrap = document.createElement('div');
+    specsWrap.className = 'card-specs';
+    specsWrap.innerHTML = p.specsHtml;
+    body.appendChild(specsWrap);
+  }
+
+  const metaExt = document.createElement('div');
+  metaExt.className = 'card-meta-ext';
+
+  const mainRow = document.createElement('div');
+  mainRow.className = 'meta-main-row';
+
+  if (p.price) {
+    const price = document.createElement('span');
+    price.className = 'card-price';
+    price.innerHTML = `<span aria-hidden="true">💰</span> ${p.price}`;
+    mainRow.appendChild(price);
+  }
+
   if (p.loyaltyPoints) {
-    const pointsBadge = document.createElement('span');
-    pointsBadge.className = 'bargain-card-points';
-    pointsBadge.textContent = `🎁 ${p.loyaltyPoints}pt`;
-    badges.appendChild(pointsBadge);
+    const points = document.createElement('span');
+    points.className = 'card-points';
+    points.innerHTML = `<span aria-hidden="true">🎁</span> ${p.loyaltyPoints}pt`;
+    mainRow.appendChild(points);
   }
-  body.appendChild(badges);
+
+  if (p.score) {
+    const score = document.createElement('span');
+    score.className = `card-score ${scoreClass(p.score)}`;
+    score.innerHTML = `<span aria-hidden="true">🏆</span> ${p.score}点`;
+    mainRow.appendChild(score);
+  }
+  metaExt.appendChild(mainRow);
+
+  const detailsRow = document.createElement('div');
+  detailsRow.className = 'meta-details-row';
+
+  if (p.isAmazonDirect) {
+    const direct = document.createElement('span');
+    direct.className = 'badge-amazon-direct';
+    direct.textContent = 'Amazon直販';
+    detailsRow.appendChild(direct);
+  }
+
+  if (p.dealBadge) {
+    const deal = document.createElement('span');
+    deal.className = 'badge-deal';
+    deal.textContent = p.dealBadge;
+    detailsRow.appendChild(deal);
+  }
+
+  if (p.savingsPercentage) {
+    const savings = document.createElement('span');
+    savings.className = 'badge-savings';
+    savings.textContent = `${p.savingsPercentage}% OFF`;
+    detailsRow.appendChild(savings);
+  }
+
+  if (p.availability) {
+    const avail = document.createElement('span');
+    avail.className = 'badge-availability';
+    avail.textContent = p.availability;
+    detailsRow.appendChild(avail);
+  }
+
+  if (detailsRow.children.length > 0) {
+    metaExt.appendChild(detailsRow);
+  }
+
+  body.appendChild(metaExt);
+
+  const footer = document.createElement('div');
+  footer.className = 'card-footer';
+
+  const dateSpan = document.createElement('span');
+  dateSpan.className = 'article-meta';
+  if (p.lastInvestigated) {
+    try {
+      const d = new Date(p.lastInvestigated);
+      if (!isNaN(d.getTime())) {
+        const year = d.getFullYear();
+        const month = String(d.getMonth() + 1).padStart(2, '0');
+        const day = String(d.getDate()).padStart(2, '0');
+        dateSpan.textContent = `${year}年${month}月${day}日`;
+      } else {
+        dateSpan.textContent = p.lastInvestigated;
+      }
+    } catch {
+      dateSpan.textContent = p.lastInvestigated;
+    }
+  } else {
+    dateSpan.textContent = '';
+  }
+  footer.appendChild(dateSpan);
 
   const actions = document.createElement('div');
-  actions.className = 'bargain-card-actions';
-  const btn = document.createElement('a');
+  actions.className = 'card-footer-actions';
+
+  const actionBtn = document.createElement('a');
   if (p.affiliateUrl) {
-    btn.href = safeUrl(p.affiliateUrl);
-    btn.className = 'btn-amazon-small';
-    btn.target = '_blank';
-    btn.rel = 'noopener noreferrer';
-    btn.textContent = '🛒 Amazonで見る';
+    actionBtn.href = safeUrl(p.affiliateUrl);
+    actionBtn.className = 'btn-amazon-small';
+    actionBtn.target = '_blank';
+    actionBtn.rel = 'noopener noreferrer';
+    actionBtn.innerHTML = '<span aria-hidden="true">🛒</span> Amazonで見る';
+    actionBtn.dataset.trackProduct = '1';
+    actionBtn.dataset.asin = p.asin || '';
+    actionBtn.dataset.category = p.category || '';
+    actionBtn.dataset.priceBucket = getPriceBucket(p.priceRaw);
+    actionBtn.dataset.price = p.price || '';
+    actionBtn.dataset.score = String(p.score || 0);
   } else {
-    btn.href = safeUrl(p.url);
-    btn.className = 'bargain-card-review-link';
-    btn.textContent = 'レビューを読む →';
+    actionBtn.href = safeUrl(p.url);
+    actionBtn.className = 'read-more';
+    actionBtn.textContent = 'レビューを読む →';
   }
-  actions.appendChild(btn);
-  body.appendChild(actions);
+  actions.appendChild(actionBtn);
+
+  const favBtn = document.createElement('button');
+  favBtn.type = 'button';
+  favBtn.className = 'btn-favorite-card';
+  favBtn.dataset.favoriteBtn = '1';
+  favBtn.dataset.asin = p.asin || '';
+  favBtn.dataset.title = p.title || '';
+  favBtn.dataset.url = p.url || '';
+  favBtn.dataset.affiliateUrl = p.affiliateUrl || '';
+  favBtn.dataset.image = p.image || '';
+  favBtn.dataset.price = p.price || '';
+  favBtn.dataset.score = String(p.score || 0);
+  favBtn.dataset.category = p.category || '';
+  favBtn.setAttribute('aria-pressed', 'false');
+  favBtn.setAttribute('aria-label', 'お気に入りに追加');
+
+  const favIcon = document.createElement('span');
+  favIcon.className = 'fav-icon';
+  favIcon.setAttribute('aria-hidden', 'true');
+  const isFav = globalThis.Favorites && typeof globalThis.Favorites.isFavorite === 'function' && globalThis.Favorites.isFavorite(p.asin);
+  if (isFav) {
+    favBtn.classList.add('is-favorited');
+    favBtn.setAttribute('aria-pressed', 'true');
+    favBtn.setAttribute('aria-label', 'お気に入りから削除');
+    favIcon.textContent = '❤️';
+  } else {
+    favIcon.textContent = '🤍';
+  }
+  favBtn.appendChild(favIcon);
+  actions.appendChild(favBtn);
+
+  footer.appendChild(actions);
+  body.appendChild(footer);
 
   article.appendChild(body);
   return article;
@@ -253,11 +388,11 @@ document.addEventListener('DOMContentLoaded', () => {
         cats.set(p.category, (cats.get(p.category) || 0) + 1);
       }
     }
-    
+
     // Clear and rebuild
     categorySelect.innerHTML = '<option value="">すべてのカテゴリ</option>';
     const sorted = [...cats.entries()].sort((a, b) => b[1] - a[1]);
-    
+
     let exists = false;
     for (const [cat, count] of sorted) {
       const opt = document.createElement('option');

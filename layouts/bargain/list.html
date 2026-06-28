@@ -21,8 +21,8 @@
                     <span class="bargain-filter-icon">🏆</span>
                     最低スコア: <span id="bargain-score-value" class="bargain-filter-value">80</span>点以上
                 </label>
-                <input type="range" id="bargain-score-slider" class="bargain-slider"
-                    min="0" max="100" step="5" value="80">
+                <input type="range" id="bargain-score-slider" class="bargain-slider" min="0" max="100" step="5"
+                    value="80">
                 <div class="bargain-slider-labels">
                     <span>0</span><span>50</span><span>100</span>
                 </div>
@@ -34,9 +34,10 @@
                         <span class="bargain-filter-icon">💰</span>
                         最低価格: <span id="bargain-min-price-value" class="bargain-filter-value">¥100</span>
                     </label>
-                    <input type="range" id="bargain-min-price-slider" class="bargain-slider"
-                        min="0" max="1000" step="1" value="20">
-                    <div class="bargain-slider-labels" style="position: relative; height: 1.25rem; margin-top: 4px; font-size: 0.7rem;">
+                    <input type="range" id="bargain-min-price-slider" class="bargain-slider" min="0" max="1000" step="1"
+                        value="20">
+                    <div class="bargain-slider-labels"
+                        style="position: relative; height: 1.25rem; margin-top: 4px; font-size: 0.7rem;">
                         <span style="position: absolute; left: 0%; transform: none;">¥0</span>
                         <span style="position: absolute; left: 40%; transform: translateX(-50%);">¥2k</span>
                         <span style="position: absolute; left: 70%; transform: translateX(-50%);">¥10k</span>
@@ -47,9 +48,10 @@
                     <label for="bargain-price-slider" class="bargain-filter-label">
                         上限価格: <span id="bargain-price-value" class="bargain-filter-value">¥2,000</span>以下
                     </label>
-                    <input type="range" id="bargain-price-slider" class="bargain-slider"
-                        min="0" max="1000" step="1" value="400">
-                    <div class="bargain-slider-labels" style="position: relative; height: 1.25rem; margin-top: 4px; font-size: 0.7rem;">
+                    <input type="range" id="bargain-price-slider" class="bargain-slider" min="0" max="1000" step="1"
+                        value="400">
+                    <div class="bargain-slider-labels"
+                        style="position: relative; height: 1.25rem; margin-top: 4px; font-size: 0.7rem;">
                         <span style="position: absolute; left: 0%; transform: none;">¥0</span>
                         <span style="position: absolute; left: 40%; transform: translateX(-50%);">¥2k</span>
                         <span style="position: absolute; left: 70%; transform: translateX(-50%);">¥10k</span>
@@ -69,7 +71,8 @@
                     <select id="bargain-category-select" class="bargain-select">
                         <option value="">すべてのカテゴリ</option>
                     </select>
-                    <button type="button" id="bargain-category-reset-btn" class="bargain-category-reset-btn" title="カテゴリ選択を解除" aria-label="カテゴリ選択を解除" disabled>✕</button>
+                    <button type="button" id="bargain-category-reset-btn" class="bargain-category-reset-btn"
+                        title="カテゴリ選択を解除" aria-label="カテゴリ選択を解除" disabled>✕</button>
                 </div>
             </div>
 
@@ -115,7 +118,8 @@
     {{- $priceRaw = index (findRE "[0-9]+" (replace .Params.price "," "")) 0 | default 0 -}}
     {{- end -}}
     {{- $category := "" -}}
-    {{- if .Params.categories -}}{{- $category = index .Params.categories 0 -}}{{- else if .Params.category -}}{{- $category = .Params.category -}}{{- end -}}
+    {{- if .Params.categories -}}{{- $category = index .Params.categories 0 -}}{{- else if .Params.category -}}{{-
+    $category = .Params.category -}}{{- end -}}
     {{- $lastInvestigated := "" -}}
     {{- with .Params.last_investigated -}}{{- $lastInvestigated = . -}}{{- end -}}
     {{- $bargainData = $bargainData | append (dict
@@ -126,11 +130,19 @@
     "priceRaw" $priceRaw
     "asin" (.Params.asin | default "")
     "category" $category
+    "subcategory" (.Params.subcategory | default "")
+    "brand" (.Params.brand | default "")
+    "description" (.Description | default (.Summary | truncate 100))
     "image" (cond (and .Params.images (gt (len .Params.images) 0)) (index .Params.images 0) "")
     "affiliateUrl" (.Params.affiliate_url | default "")
     "lastInvestigated" $lastInvestigated
     "isAmazonDirect" (.Params.is_amazon_direct | default false)
     "loyaltyPoints" (.Params.loyalty_points | default 0)
+    "savingsPercentage" (.Params.savings_percentage | default 0)
+    "availability" (.Params.availability | default "")
+    "dealBadge" (.Params.deal_badge | default "")
+    "specsHtml" (cond (not (not .Params.specs)) (partial "product-spec-tags.html" (dict "specs" .Params.specs "tagClass"
+    "card-spec-tag")) "")
     ) -}}
     {{- end -}}
     {{- end -}}
