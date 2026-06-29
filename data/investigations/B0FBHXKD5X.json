@@ -1,0 +1,158 @@
+{
+  "analysis": {
+    "productName": "BUTTER (Audible Audio Edition)",
+    "parentAsin": "B0FBHXKD5X",
+    "productDescription": "2007年から2009年にかけて発生した首都圏連続不審死事件をモチーフにした、柚木麻子によるサスペンス小説のAudible（オーディオブック）版。食と女性の欲望を軸に、逮捕された女性と彼女を取材する女性記者の変貌を描く。",
+    "productUsage": ["オーディオブックとしての読書体験", "ミステリー・サスペンス作品の鑑賞"],
+    "positivePoints": ["食に関する魅力的な描写が多い", "フェミニズムの観点からも高く評価されている", "ダガー賞翻訳部門ノミネートなど海外でも高い評価を得ている"],
+    "negativePoints": ["食の描写がリアルで食欲を刺激されすぎる（バターを買い込みたくなるなど）"],
+    "useCases": ["通勤・通学中のオーディオブック聴取", "家事などをしながらのながら聞き"],
+    "userStories": [
+      {
+        "userType": "一般読者",
+        "scenario": "オーディオブックを聴取中",
+        "experience": "食事の描写がとにかく魅力的で、バターを醤油でとかしてご飯にかけて食べるシーンなどでお腹が空く。読みながら何度もキッチンに立ちたくなり、結局スーパーでいいバターを買ってしまった。",
+        "supportingSourceIds": ["src-1"],
+        "sentiment": "positive"
+      }
+    ],
+    "userImpression": "食の魅力的な描写と、それを巡る人間模様・サスペンス要素が高く評価されている。特にバターに関する描写が読者の食欲を強く刺激する。",
+    "sources": [
+      {
+        "id": "src-1",
+        "name": "Amazon カスタマーレビュー",
+        "url": "https://www.amazon.co.jp/dp/B0FBHXKD5X",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-06-29",
+        "author": "Amazon Reviewer",
+        "conflictOfInterest": "none",
+        "notes": "「結局私もスーパーでいいバターを買ってしまいました」という感想を確認"
+      },
+      {
+        "id": "src-2",
+        "name": "Wikipedia - BUTTER (小説)",
+        "url": "https://ja.wikipedia.org/wiki/BUTTER",
+        "tier": "medium",
+        "evidenceType": "secondary",
+        "publishedAt": "2026-06-29",
+        "author": "Wikipedia Contributors",
+        "conflictOfInterest": "none",
+        "notes": "あらすじや海外での評価（The Bestseller Awards 2026 Breakthrough Author受賞、ダガー賞翻訳部門ノミネートなど）を確認"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "首都圏連続不審死事件をモチーフにしている",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": ["src-2"],
+        "crossChecked": false,
+        "notes": "Wikipediaの記述より"
+      },
+      {
+        "claim": "海外の文学賞でも評価されている",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": ["src-2"],
+        "crossChecked": false,
+        "notes": "The Bestseller Awardsやダガー賞など"
+      }
+    ],
+    "lastInvestigated": "2026-06-29",
+    "competitiveAnalysis": [
+      {
+        "name": "ナイルパーチの女子会 (文春文庫)",
+        "asin": "B079JW546B",
+        "priceComparison": "Audible版の本作と比較して、文庫本であり安価な傾向にある",
+        "featureComparison": [
+          "共通点：柚木麻子による、女性同士の関係性や心理を描いた作品",
+          "相違点：本作が「食と欲望」「サスペンス」に比重を置いているのに対し、ナイルパーチは「SNSを通じた女性同士の依存と狂気」に焦点を当てている点"
+        ],
+        "differentiators": [
+          "BUTTERの利点：サスペンス要素や、食に関する官能的とも言える描写を楽しみたい場合。オーディオブックで手軽に聴取したい場合",
+          "ナイルパーチの女子会 (文春文庫)の利点：現代の女性同士の複雑な関係性やSNS社会の闇をテーマにした作品を読みたい場合"
+        ]
+      },
+      {
+        "name": "老人ホテル",
+        "asin": "B0CCYL9GF9",
+        "priceComparison": "どちらもAudible版であり、Audible会員であれば追加料金なしで楽しめる",
+        "featureComparison": [
+          "共通点：柚木麻子による作品のAudible版",
+          "相違点：本作が実際の事件をモチーフにしたサスペンスであるのに対し、老人ホテルは投資トラブルなどを背景にしたエンタメ作品である点"
+        ],
+        "differentiators": [
+          "BUTTERの利点：重厚なテーマと食の描写を味わいたい場合",
+          "老人ホテルの利点：社会問題を取り入れつつも、テンポの良いエンターテイメント作品を楽しみたい場合"
+        ]
+      },
+      {
+        "name": "けむたい後輩 (幻冬舎文庫)",
+        "asin": "B01N2JHL52",
+        "priceComparison": "文庫本のため、買い切りとしては比較的手頃",
+        "featureComparison": [
+          "共通点：柚木麻子による小説",
+          "相違点：本作が長編サスペンスであるのに対し、こちらは女子大生やOLなどの日常や人間関係を描いた連作短編集・エッセイ要素が強い点"
+        ],
+        "differentiators": [
+          "BUTTERの利点：一つの大きな事件を巡る長編サスペンスに没頭したい場合",
+          "けむたい後輩 (幻冬舎文庫)の利点：短編でサクッと読める、日常的な女性の心理描写を楽しみたい場合"
+        ]
+      },
+      {
+        "name": "あいにくあんたのためじゃない",
+        "asin": "B0CV3YSY4G",
+        "priceComparison": "こちらは無料お試し版（漫画等の可能性あり）のため、価格比較の対象外",
+        "featureComparison": [
+          "共通点：柚木麻子による作品（原作等）",
+          "相違点：本作が重いテーマを扱うのに対し、あいにくあんたのためじゃないは、理不尽な状況に立ち向かう女性たちの痛快な物語である点"
+        ],
+        "differentiators": [
+          "BUTTERの利点：人間の業や欲望といった深いテーマに向き合いたい場合",
+          "あいにくあんたのためじゃないの利点：スカッとする痛快なストーリーを求めている場合"
+        ]
+      },
+      {
+        "name": "幹事のアッコちゃん",
+        "asin": "B0GR8S6KJZ",
+        "priceComparison": "同じくAudible版",
+        "featureComparison": [
+          "共通点：柚木麻子作品のAudible版",
+          "相違点：本作がシリアスなサスペンスであるのに対し、アッコちゃんシリーズはお仕事小説・人間ドラマとして明るく前向きなトーンである点"
+        ],
+        "differentiators": [
+          "BUTTERの利点：ドロドロとした人間心理やサスペンスを楽しみたい場合",
+          "幹事のアッコちゃんの利点：元気が出る、前向きなお仕事小説を楽しみたい場合"
+        ]
+      },
+      {
+        "name": "私にふさわしいホテル (扶桑社ＢＯＯＫＳ)",
+        "asin": "B00C90XESY",
+        "priceComparison": "文庫/単行本のため、メディアが異なる",
+        "featureComparison": [
+          "共通点：柚木麻子の小説",
+          "相違点：本作がサスペンスであるのに対し、こちらは新人小説家が成り上がるための文壇サバイバルコメディである点"
+        ],
+        "differentiators": [
+          "BUTTERの利点：実際の事件をベースにしたミステリー・サスペンスを味わいたい場合",
+          "私にふさわしいホテル (扶桑社ＢＯＯＫＳ)の利点：出版業界を舞台にしたコメディチックなサバイバルストーリーを楽しみたい場合"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": ["ミステリー・サスペンス好き", "食に関する描写が豊かな小説が好きな人", "女性心理を深く掘り下げた作品に興味がある人", "Audibleでじっくりと長編を楽しみたい人"],
+      "pros": ["食の描写が極めて魅力的", "実際の事件をモチーフにした引き込まれるサスペンス", "海外でも高く評価される文学性"],
+      "cons": ["食の描写がリアルすぎて深夜に聴くのは危険", "事件がモチーフのため重いテーマ性がある"],
+      "score": 90,
+      "scoreRationale": "[基本点: 70]\n[加点: +10] (The Bestseller Awardsなど海外での高い評価実績)\n[加点: +5] (食の描写の魅力と読者の高い反響)\n[加点: +5] (実際の事件を巧みに取り入れたサスペンスとしての完成度)\n[合計: 90]"
+    },
+    "technicalSpecs": {
+      "// 注意": "Audible作品のため、物理的なサイズ等はなし",
+      "format": "Audible Audio Edition",
+      "author": "柚木 麻子",
+      "narrator": "松井 暁波",
+      "publisher": "Audible Studios"
+    }
+  }
+}
