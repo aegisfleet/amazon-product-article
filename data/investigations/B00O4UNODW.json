@@ -1,102 +1,205 @@
 {
   "analysis": {
-    "productName": "SEED ヒロインメイク ワンデー UV (ヒロインブラウン) 10枚入×3箱",
+    "productName": "ヒロインメイク ワンデー UV M 10枚×3箱",
     "parentAsin": "B00O4UNODW",
-    "productDescription": "コンタクトレンズメーカー「シード」とメイクブランド「ヒロインメイク」が共同開発した、瞳を自然に大きく見せるサークルレンズ。UVカット機能を備え、1日使い捨てタイプで清潔に使用できる。",
+    "productDescription": "シードとヒロインメイクが共同開発した、1日使い捨てのサークルレンズ（カラコン）です。超薄型UVカット付きで、瞳に自然な輝きを与えます。",
     "productUsage": [
-      "毎日のメイクの一部として",
-      "特別な日のドレスアップに",
-      "UV対策として"
+      "日常的な視力補正および瞳のドレスアップ",
+      "紫外線対策を兼ねたカラーコンタクトとしての利用"
     ],
     "positivePoints": [
-      "シード製という安心感",
-      "自然なデカ目効果",
-      "乾燥しにくい（うるおい成分配合）",
-      "UVカット機能付き"
+      "シードとヒロインメイクの共同開発で信頼性が高い",
+      "UVカット機能（UV-A波75%、UV-B波95%カット）付きで瞳に優しい",
+      "天然保湿成分「アルギン酸」配合で乾きにくい",
+      "インナーカラー構造で色素が直接瞳に触れず安全",
+      "中心厚0.05mmの超薄型とスムース・エッジ・デザインで装用感が良い"
     ],
     "negativePoints": [
-      "他社製品よりやや価格が高め",
-      "デザインのバリエーションが少ない",
-      "ベースカーブが合わない場合がある"
+      "価格が一部の格安カラコンと比較してやや高め"
     ],
     "useCases": [
-      "職場や学校での普段使い",
-      "デートや結婚式などの特別な場面",
-      "長時間屋外にいる日のUV対策"
+      "毎日のメイクアップに合わせて瞳の印象を変えたい時",
+      "外出時の紫外線対策としてUVカット機能付きのレンズを使いたい時",
+      "イベントや特別な日のドレスアップに"
     ],
-    "userStories": [
-      {
-        "userType": "20代女性",
-        "scenario": "毎日のオフィスワークで使用",
-        "experience": "「派手すぎず、自然に瞳が大きく見えるので職場でも浮かない。シード製なので長時間つけていても安心感がある。」（推測）",
-        "sentiment": "positive"
-      },
-      {
-        "userType": "30代女性",
-        "scenario": "休日のデートで使用",
-        "experience": "「ヒロインブラウンの色味が絶妙で、大人っぽく華やかな印象になる。UVカットがついているのも嬉しい。」（推測）",
-        "sentiment": "positive"
-      }
-    ],
-    "userImpression": "自然な仕上がりと国内メーカーの安心感が高く評価されている一方、価格面では少し高めと感じる声もある。",
+    "userStories": [],
+    "userImpression": "自然に瞳を大きく見せることができ、乾燥しにくく使い心地が良いと評判です。特に30代など大人の女性でも使いやすいデザインが支持されています。",
     "sources": [
       {
-        "name": "Amazon商品ページ (画像)",
-        "url": "https://www.amazon.co.jp/dp/B00O4UNODW",
-        "credibility": "High"
+        "id": "src-1",
+        "name": "シード公式 ヒロインメイク 1day UV M",
+        "url": "https://www.seed.co.jp/products/contact/soft/1day_heroinemakeM.html",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-06-30",
+        "author": "株式会社シード",
+        "conflictOfInterest": "none",
+        "notes": "製品仕様、特徴、UVカット率などの公式情報"
+      },
+      {
+        "id": "src-2",
+        "name": "価格.com ヒロインメイク ワンデーUV M",
+        "url": "https://kakaku.com/contactlens/color/C0000000139/",
+        "tier": "high",
+        "evidenceType": "secondary",
+        "publishedAt": "2026-06-30",
+        "author": "価格.com",
+        "conflictOfInterest": "none",
+        "notes": "最安価格、スペック情報、販売店の比較"
       }
     ],
-    "lastInvestigated": "2026-02-22",
+    "claims": [
+      {
+        "claim": "UV-A波を75%、UV-B波を95%カットする",
+        "category": "safety",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-1",
+          "src-2"
+        ],
+        "crossChecked": true,
+        "notes": "公式サイトおよび価格.comのスペック表で確認"
+      },
+      {
+        "claim": "天然保湿成分アルギン酸を配合している",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-1",
+          "src-2"
+        ],
+        "crossChecked": true,
+        "notes": "公式サイトおよび価格.comの商品説明で確認"
+      },
+      {
+        "claim": "色素が瞳に直接触れないインナーカラー構造を採用している",
+        "category": "safety",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "crossChecked": false,
+        "notes": "公式サイトで確認"
+      }
+    ],
+    "lastInvestigated": "2026-06-30",
     "competitiveAnalysis": [
       {
-        "name": "LILMOON 0.03ZEROシリーズ",
-        "asin": "B0DC678LR7",
-        "priceComparison": "10枚入り1,100円と本製品より安価。",
-        "featureComparison": ["極薄レンズ(0.03mm)", "低含水", "ハーフ系デザイン"],
-        "differentiators": ["薄さによる装用感の良さ", "より派手なデザイン"]
+        "name": "ビューイットカラーワンデーUV",
+        "asin": "B0CMZNK55B",
+        "priceComparison": "対象商品より安い価格設定ですが、対象商品はシードという国内有名メーカーの信頼性とヒロインメイクとの共同開発によるデザイン性が魅力です。",
+        "featureComparison": [
+          "共通点：1日使い捨てのUVカット付きカラーコンタクトレンズ",
+          "相違点：対象商品はシード製で天然保湿成分アルギン酸を配合。競合商品はGrandPrix製。"
+        ],
+        "differentiators": [
+          "対象商品の利点：大手メーカー製による品質の信頼性と、ヒロインメイクのブランド力によるデザイン性の高さ",
+          "ビューイットカラーワンデーUVの利点：価格を抑えたい場合に適している"
+        ]
       },
       {
-        "name": "エバーカラーワンデーナチュラル",
-        "asin": "B0D7QHV1KZ",
-        "priceComparison": "20枚入り2,493円とコストパフォーマンスが良い。",
-        "featureComparison": ["着色直径が大きく盛れる", "豊富なカラーバリエーション"],
-        "differentiators": ["より大きな瞳に見せる効果", "ナチュラルさと華やかさのバランス"]
+        "name": "アイコフレワンデーUVM",
+        "asin": "B07KRYZZNT",
+        "priceComparison": "同等メーカー（シード）で価格帯も類似しています。",
+        "featureComparison": [
+          "共通点：シード製、1日使い捨て、UVカット、天然保湿成分アルギン酸配合",
+          "相違点：デザインとカラーバリエーションが異なる。対象商品はヒロインメイクとのコラボデザイン。"
+        ],
+        "differentiators": [
+          "対象商品の利点：ヒロインメイクの世界観や独自のデザイン（光のブラウンなど）を好む方に適している",
+          "アイコフレワンデーUVMの利点：より幅広いデザインラインナップから選びたい場合に適している"
+        ]
       },
       {
-        "name": "FLANMY (フランミー)",
-        "asin": "B0DFM2P2VZ",
-        "priceComparison": "10枚入り1,640円と本製品よりやや高価。",
-        "featureComparison": ["高含水レンズ", "佐々木希プロデュース"],
-        "differentiators": ["高い含水率によるつけ心地の良さ（ただし乾燥注意）", "トレンド感のあるデザイン"]
+        "name": "LILMOON(リルムーン)0.03ZEROシリーズ",
+        "asin": "B0DC673KPS",
+        "priceComparison": "対象商品より安い価格設定です。",
+        "featureComparison": [
+          "共通点：1日使い捨てのカラーコンタクトレンズ",
+          "相違点：対象商品はUVカット機能やアルギン酸配合など機能面に優れる。競合はPIA製でモデルプロデュース。"
+        ],
+        "differentiators": [
+          "対象商品の利点：UVカットや保湿成分など、瞳の健康への配慮が手厚い",
+          "LILMOON(リルムーン)の利点：特定のモデルのデザインを好む方や価格を抑えたい方に適している"
+        ]
+      },
+      {
+        "name": "TOPARDS (トパーズ) ワンデー",
+        "asin": "B0C64R8GTG",
+        "priceComparison": "対象商品より安い価格設定です。",
+        "featureComparison": [
+          "共通点：1日使い捨てのカラーコンタクトレンズ",
+          "相違点：対象商品はシード製で機能性が高い。競合は指原莉乃プロデュースのPIA製。"
+        ],
+        "differentiators": [
+          "対象商品の利点：シード製の安心感と、UVカット・保湿成分による機能性の高さ",
+          "TOPARDS (トパーズ) の利点：プロデュースしたモデルのファンや、透明感を重視したデザインを好む方に適している"
+        ]
+      },
+      {
+        "name": "PUUUUCHU 1Day プーチュ ワンデー",
+        "asin": "B0DK4WYRQM",
+        "priceComparison": "対象商品より安い価格設定です。",
+        "featureComparison": [
+          "共通点：1日使い捨てのカラーコンタクトレンズ",
+          "相違点：対象商品はシード製で機能性が高い。競合はPIA製。"
+        ],
+        "differentiators": [
+          "対象商品の利点：シード製の安心感と、UVカット・保湿成分による機能性の高さ",
+          "PUUUUCHU 1Dayの利点：異なるカラーバリエーションやデザインを楽しみたい方に適している"
+        ]
+      },
+      {
+        "name": "アーティラル UV＆モイスト",
+        "asin": "B07KM6GXX6",
+        "priceComparison": "対象商品と比較して価格帯は類似またはやや高めです。",
+        "featureComparison": [
+          "共通点：1日使い捨て、UVカット、モイスト成分配合",
+          "相違点：対象商品はシード製でヒロインメイクデザイン。競合は粧美堂製でよりナチュラル志向のデザイン。"
+        ],
+        "differentiators": [
+          "対象商品の利点：シード製の安心感と、ヒロインメイクらしい華やかなデザイン",
+          "アーティラル UV＆モイストの利点：よりすっぴん風のナチュラルな瞳を求める方に適している"
+        ]
       }
     ],
     "recommendation": {
       "targetUsers": [
-        "安全性を重視する人",
-        "自然に瞳を大きく見せたい人",
-        "UV対策も同時に行いたい人"
+        "自然に瞳を大きく見せたい女性",
+        "UVカットなど瞳の健康に配慮したカラコンを使いたい方",
+        "信頼できる国内メーカー（シード）のカラコンを使いたい方"
       ],
       "pros": [
-        "国内メーカー（シード）の信頼性",
-        "UVカット機能付き",
-        "自然なデザイン"
+        "シード製で品質への信頼性が高い",
+        "UVカットや保湿成分配合など機能面が充実",
+        "インナーカラー構造など安全面に配慮されている"
       ],
       "cons": [
-        "価格が少し高い",
-        "デザインの種類が少ない"
+        "格安メーカーのものと比較すると価格はやや高め",
+        "デザインの選択肢が限られている"
       ],
-      "score": 85,
-      "scoreRationale": "[基本点: 70]\n[加点: +10] (シード製という高い信頼性と安全性)\n[加点: +5] (UVカット機能付き)\n[加点: +5] (自然で使いやすいデザイン)\n[減点: -5] (競合と比較して価格がやや高め)\n[合計: 85]"
+      "score": 88,
+      "scoreRationale": "[基本点: 70]\n[加点: +10] (シード製で安全性・品質が非常に高い)\n[加点: +5] (UVカット機能やアルギン酸配合などの機能性)\n[加点: +5] (インナーカラー構造による安全性の確保)\n[減点: -2] (価格が一部格安製品より高め)\n[合計: 88]"
     },
     "technicalSpecs": {
-      "type": "1日使い捨てソフトコンタクトレンズ",
-      "content": "10枚入り×3箱 (計30枚)",
-      "bc": null,
-      "dia": null,
-      "color": "ヒロインブラウン",
-      "uvCut": "あり",
-      "manufacturer": "シード (SEED)",
-      "power": "±0.00 (度なし)"
+      "approvalNumber": "23000BZX00077000",
+      "powerRange": "±0.00D / -0.25D～-6.00D(0.25Dステップ) / -6.50D～-10.00D(0.50Dステップ)",
+      "baseCurve": "8.70mm",
+      "diameter": "14.0mm (ヒロインブラウン) / 14.2mm (光のブラウン、煌めきピンク)",
+      "coloredDiameter": "13.4mm (ヒロインブラウン、光のブラウン) / 13.6mm (煌めきピンク)",
+      "waterContent": "38%",
+      "centerThickness": "0.05mm (-3.00Dの場合)",
+      "oxygenTransmissibility_Dk": "12",
+      "oxygenTransmissibility_DkL": "24",
+      "uvCut": "UV-A波75%カット、UV-B波95%カット",
+      "moisturizingIngredient": "アルギン酸",
+      "lensStructure": "インナーカラー構造",
+      "materialGroup": "グループI(非イオン性/低含水)",
+      "quantity": "1箱10枚入り × 3箱",
+      "manufacturer": "株式会社シード",
+      "other": [
+        "超薄型レンズデザイン（スムース・エッジ・デザイン）"
+      ]
     }
   }
 }

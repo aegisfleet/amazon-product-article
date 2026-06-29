@@ -26,68 +26,100 @@
       "キャッシュレス派の外出用財布代わり",
       "オフィスでの入館証ホルダーとして"
     ],
-    "userStories": [
-      {
-        "userType": "30代男性・会社員",
-        "scenario": "毎日の通勤時",
-        "experience": "以前は財布を取り出して改札を通っていたが、これに変えてからはiPhoneだけでスムーズに通れるようになった。ただ、読み取りエラーが起きることがあり、間に干渉防止シートを挟んで対応している。",
-        "sentiment": "positive"
-      },
-      {
-        "userType": "20代女性・大学生",
-        "scenario": "キャンパス内での移動",
-        "experience": "学生証とクレジットカードを入れている。必要なものだけを持って身軽に移動できるのが嬉しい。レザーの質感が良く、安っぽくないので気に入っている。",
-        "sentiment": "positive"
-      },
-      {
-        "userType": "40代男性・自営業",
-        "scenario": "カフェでの動画視聴（推測）",
-        "experience": "（推測）質感は良いが、カフェで動画を見ながら休憩したい時にスタンド機能がないのが不便。結局別のスマホスタンドを持ち歩くことになり、荷物が減らなかった。",
-        "sentiment": "mixed"
-      }
-    ],
+    "userStories": [],
     "userImpression": "質感の高さとスリムさは高く評価されているが、スタンド機能の欠如や価格に対するコストパフォーマンスについては賛否が分かれる。シンプルさを追求するユーザーには満足度が高い。",
     "sources": [
       {
+        "id": "src-1",
         "name": "Amazon Product Page",
         "url": "https://www.amazon.co.jp/dp/B08NFJ7Z3J",
-        "credibility": "high"
-      },
-      {
-        "name": "General Tech Reviews (Inferred from category knowledge)",
-        "url": null,
-        "credibility": "medium"
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-06-30",
+        "author": "Amazon",
+        "conflictOfInterest": "none",
+        "notes": "商品仕様、価格、機能説明"
       }
     ],
-    "lastInvestigated": "2026-02-22",
+    "lastInvestigated": "2026-06-30",
     "competitiveAnalysis": [
       {
-        "name": "UGREEN MagSafe カードケース (スタンド付)",
+        "name": "UGREEN スマホスタンド Magsafe対応 カードケース",
         "asin": "B0CY55LCT3",
-        "priceComparison": "約1,800円とSpigenより1,000円以上安価",
-        "featureComparison": ["スタンド機能搭載", "カード2-3枚収納", "強力磁力"],
-        "differentiators": ["圧倒的なコストパフォーマンス", "スタンド機能の有無"]
+        "priceComparison": "対象商品と同価格帯であるが、スタンド機能を備えている",
+        "featureComparison": [
+          "共通点：MagSafe対応、カード収納機能",
+          "相違点：UGREENはスマホスタンドやスマホグリップとしての機能も備え、多機能である点"
+        ],
+        "differentiators": [
+          "Spigenの利点：機能がシンプルな分、スリムでかさばらない",
+          "UGREENの利点：スタンド機能が欲しい場合に便利"
+        ]
       },
       {
-        "name": "MOFT Snap-On Stand & Wallet",
-        "asin": "B0CJ8RSWFC",
-        "priceComparison": "約4,500円とSpigenより高価",
-        "featureComparison": ["多角度スタンド機能", "カード3枚収納", "豊富なカラー"],
-        "differentiators": ["スタンドとしての汎用性", "デザインバリエーション"]
+        "name": "iFace MagSynq カードウォレット MagSafe 対応 (クリア)",
+        "asin": "B0F8N6P215",
+        "priceComparison": "対象商品と同価格帯",
+        "featureComparison": [
+          "共通点：MagSafe対応、カード2枚収納",
+          "相違点：iFaceはデザインがクリアで、非接触式ICカードタッチ決済に対応している"
+        ],
+        "differentiators": [
+          "Spigenの利点：ヴィーガンレザーの落ち着いたデザインで高級感がある",
+          "iFaceの利点：透明デザインでスマホの背面カラーを活かせる"
+        ]
       },
       {
-        "name": "ESR MagSafe カードケース (HaloLock)",
-        "asin": "B0DXZ9FWRV",
-        "priceComparison": "約1,900円とSpigenより安価",
-        "featureComparison": ["最大5枚収納", "RFIDブロック機能", "強力な磁力"],
-        "differentiators": ["カード収納力", "セキュリティ機能"]
+        "name": "TUCCH スマホカードケース",
+        "asin": "B0FLD4LJTJ",
+        "priceComparison": "対象商品よりやや高いが、収納力と機能性が高い",
+        "featureComparison": [
+          "共通点：MagSafe対応",
+          "相違点：TUCCHは6枚カード収納可能で、RFIDブロッキング機能を搭載している"
+        ],
+        "differentiators": [
+          "Spigenの利点：2枚収納で非常にスリム",
+          "TUCCHの利点：多くのカードを持ち運びたい場合やセキュリティを重視する場合に適している"
+        ]
       },
       {
-        "name": "iFace MagSynq カードウォレット",
-        "asin": "B0CT2CTRFB",
-        "priceComparison": "約3,000円と同価格帯",
-        "featureComparison": ["カード収納2枚", "磁気・電波干渉防止機能"],
-        "differentiators": ["iFaceブランドとの親和性", "ポップなデザイン"]
+        "name": "Miimall MagSafe対応 カードケース",
+        "asin": "B0H1Z7FJLF",
+        "priceComparison": "対象商品よりわずかに高いが、両面マグネットなど高機能",
+        "featureComparison": [
+          "共通点：MagSafe対応、RFIDブロック機能",
+          "相違点：Miimallは3枚収納で、両面マグネット機能や固定クリップを内蔵している"
+        ],
+        "differentiators": [
+          "Spigenの利点：シンプルなデザインとブランドの信頼性",
+          "Miimallの利点：両面マグネット機能など独自の使い勝手がある"
+        ]
+      },
+      {
+        "name": "UGREEN スマホスタンド Magsafe対応 スマホグリップ付き",
+        "asin": "B0CY55BLYY",
+        "priceComparison": "対象商品よりわずかに高いが、スマホグリップ機能を搭載",
+        "featureComparison": [
+          "共通点：MagSafe対応、カード収納",
+          "相違点：UGREENはグリップとスタンド機能が一体化している"
+        ],
+        "differentiators": [
+          "Spigenの利点：グリップがない分、平面に置いた際に安定しやすくポケットへの出し入れがスムーズ",
+          "UGREENの利点：落下防止のグリップやスタンドが欲しい場合に最適"
+        ]
+      },
+      {
+        "name": "MAGCA マグネット式カード型 iPhone カードホルダー",
+        "asin": "B0GMYVYZYX",
+        "priceComparison": "対象商品より安価",
+        "featureComparison": [
+          "共通点：MagSafe対応",
+          "相違点：MAGCAは横スタンド機能を備えつつ価格が抑えられている"
+        ],
+        "differentiators": [
+          "Spigenの利点：高級感のあるヴィーガンレザーと全体の質感が高い",
+          "MAGCAの利点：スタンド機能付きで価格が安い"
+        ]
       }
     ],
     "recommendation": {
@@ -106,21 +138,44 @@
         "競合製品と比較して割高な価格設定",
         "カード収納枚数が2枚までと限定的"
       ],
-      "score": 72,
-      "scoreRationale": "[基本点: 70]\n[加点: +3] 高級感のあるヴィーガンレザーの質感と仕上げ\n[加点: +2] 底部のカード取り出し穴の実用性\n[加点: +2] Spigenブランドの信頼性とケースとの相性\n[減点: -5] スタンド機能がなく、競合他社と比較して価格が割高\n[合計: 72]"
+      "score": 80,
+      "scoreRationale": "[基本点: 70]\n[加点: +5] (スリムで使い勝手がよく、アクセスホール設計によりカードの取り出しがスムーズ)\n[加点: +5] (ヴィーガンレザーを使用し、上質な質感と耐久性を両立)\n[合計: 80]"
     },
     "technicalSpecs": {
       "dimensions": {
         "height": "95mm",
         "width": "64mm",
-        "depth": "7mm",
-        "weight": "28g"
+        "depth": "7mm"
       },
-      "material": "プレミアムヴィーガンレザー (PU)",
-      "compatibility": "iPhone 12/13/14/15/16/17シリーズ, Pixel (MagSafeケース装着時)",
+      "weight": "28g",
       "capacity": "カード最大2枚",
-      "colors": ["ブラック"],
-      "other": ["底面アクセスポート"]
-    }
+      "material": "ヴィーガンレザー (PU)",
+      "compatibility": "iPhone 12/13/14/15/16/17シリーズ, Pixel 10a (MagSafe対応/PixelSnap対応)",
+      "other": [
+        "底面アクセスポート"
+      ]
+    },
+    "claims": [
+      {
+        "claim": "最大2枚のカードを収納可能",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "crossChecked": false,
+        "notes": "公式スペック"
+      },
+      {
+        "claim": "ヴィーガンレザーを使用し、環境に配慮しつつ上質な質感を提供",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "crossChecked": false,
+        "notes": "公式説明"
+      }
+    ]
   }
 }
