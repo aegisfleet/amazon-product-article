@@ -2,186 +2,185 @@
   "analysis": {
     "productName": "DJI Osmo Pocket 3",
     "parentAsin": "B0FKMNQ21W",
-    "productDescription": "1インチCMOSセンサーと2インチ回転式タッチスクリーンを搭載した、Vlog撮影に最適な3軸ジンバル内蔵のコンパクトカメラ。",
+    "productDescription": "25.4mmCMOSセンサーを搭載し、4K/120fpsの動画撮影に対応したVlog用ジンバルカメラ。3軸スタビライザーによる強力な手ブレ補正と、回転式50.8mmタッチスクリーンによる操作性が特徴です。",
     "productUsage": [
-      "Vlog動画の撮影",
-      "旅行やアウトドアでの記録",
-      "日常の風景や人物の撮影",
-      "自撮り動画"
+      "Vlog撮影",
+      "旅行の記録",
+      "スポーツ・アクティビティ撮影",
+      "ライブストリーミング"
     ],
     "positivePoints": [
-      "1インチCMOSセンサー搭載による暗所性能の向上と高画質(4K/120fps対応)",
-      "2インチの大型タッチスクリーン搭載で、画面を回転させるだけで縦・横撮影の切り替えが可能",
+      "25.4mmCMOSセンサー搭載による高画質（暗所にも強い）",
       "3軸メカニカルジンバルによる強力な手ブレ補正",
-      "ActiveTrack 6.0による優秀な被写体追従性能",
-      "コンパクトで持ち運びしやすいデザイン"
+      "50.8mm回転式タッチスクリーンで縦横撮影の切り替えや構図確認が容易",
+      "ActiveTrack 6.0による高速・高精度な被写体追従",
+      "10-bit D-Log Mカラーモード対応で後編集の自由度が高い",
+      "コンパクトで携帯性に優れている"
     ],
     "negativePoints": [
-      "光学ズームは非搭載（デジタルズームのみ）",
-      "激しいアクション（スポーツなど）には専用のアクションカメラの方が適している場合がある",
-      "本体価格が高め"
+      "バッテリー内蔵型のため、長時間の連続撮影時はモバイルバッテリーや充電グリップが必要",
+      "アクションカメラ（防水・防塵）と比較すると取り扱いに気を使う",
+      "広角レンズやマイクなどのアクセサリーを揃えるとコストが高くなる"
     ],
     "useCases": [
       "旅行先での歩き撮り",
-      "YouTubeやTikTokなどのSNS向け動画撮影",
-      "子供やペットの日常記録"
+      "ペットや子供の追いかけ撮影",
+      "YouTubeやTikTok用の動画制作"
     ],
     "userStories": [],
-    "userImpression": "圧倒的な手ブレ補正と1インチセンサーの高画質により、Vlogカメラの決定版として高く評価されています。特に2インチの回転式スクリーンと優れたAF/トラッキング性能が使いやすさを大幅に向上させています。",
+    "userImpression": "画質（特に暗所性能）と手ブレ補正の強力さがVlog用途で高く評価されています。回転式スクリーンの使い勝手も良く、前モデル（Pocket 2）からの正当かつ大幅な進化を感じるユーザーが多いです。一方で、バッテリー交換ができない点や耐久性への懸念は一部残っています。",
     "sources": [
       {
-        "id": "src-amazon-features",
-        "name": "Amazon Product Detail Page",
+        "id": "src-amazon",
+        "name": "Amazon商品ページ仕様",
         "url": "https://www.amazon.co.jp/dp/B0CG19QXWD",
         "tier": "high",
         "evidenceType": "primary",
         "publishedAt": "2023-10-25",
         "author": "DJI",
         "conflictOfInterest": "none",
-        "notes": "Features section details the 1-inch CMOS, 4K/120fps, 2-inch rotating screen, ActiveTrack 6.0, and 3-axis stabilization."
+        "notes": "製品仕様、機能説明（25.4mmセンサー、4K/120fps、ActiveTrack 6.0、50.8mm回転式スクリーン）"
       }
     ],
     "claims": [
       {
-        "claim": "1インチCMOSセンサーにより4K/120fpsの高画質撮影が可能",
+        "claim": "25.4mmCMOSセンサー搭載で驚きの4K/120fps撮影が可能",
         "category": "quality",
         "confidence": "high",
         "supportingSourceIds": [
-          "src-amazon-features"
+          "src-amazon"
         ],
         "crossChecked": true,
-        "notes": "Amazon product title and features directly state this specification."
+        "notes": "公式スペック"
       },
       {
-        "claim": "3軸メカニカルジンバルによる高い手ブレ補正性能",
-        "category": "comparativeAdvantage",
+        "claim": "高度な3軸メカニカルスタビライズ機構による優れた手ブレ補正",
+        "category": "quality",
         "confidence": "high",
         "supportingSourceIds": [
-          "src-amazon-features"
+          "src-amazon"
         ],
         "crossChecked": true,
-        "notes": "Standard feature of the Osmo Pocket series, confirmed in product description."
+        "notes": "公式スペック"
       }
     ],
-    "lastInvestigated": "2026-04-03",
+    "lastInvestigated": "2026-06-29",
     "competitiveAnalysis": [
       {
         "name": "DJI Pocket 2",
         "asin": "B08KRZ94W2",
-        "priceComparison": "Pocket 2の方が安価",
+        "priceComparison": "Pocket 3と比較して安価。旧モデルのため手軽に始めたいユーザー向けだが、センサーサイズや画面の使いやすさでPocket 3が勝る。",
         "featureComparison": [
-          "共通点：3軸ジンバル搭載、コンパクトなスティック型デザイン",
-          "相違点：Pocket 3は1インチセンサーと2インチ回転式スクリーンを搭載しているのに対し、Pocket 2は1/1.7インチセンサーと小型スクリーンである。"
+          "共通点：コンパクトな3軸ジンバル内蔵カメラ",
+          "相違点：Pocket 3は25.4mmセンサー・50.8mm回転画面。Pocket 2は約14.9mmセンサー・小型固定画面。"
         ],
         "differentiators": [
-          "DJI Osmo Pocket 3の利点：暗所での画質やボケ味、画面の視認性や縦撮りのしやすさで圧倒的に優れている。",
-          "DJI Pocket 2の利点：より小型軽量で価格が安いため、コストを抑えたい場合に適している。"
+          "DJI Osmo Pocket 3の利点：圧倒的な画質（特に暗所）と使いやすい大型画面、縦向き撮影へのスムーズな移行",
+          "DJI Pocket 2の利点：より軽量コンパクトで価格が抑えられている点"
         ]
       },
       {
-        "name": "DJI Osmo Pocket 3 クリエイターコンボ",
-        "asin": "B0CG19FGQ5",
-        "priceComparison": "クリエイターコンボの方が高価（約1.6万円差）",
+        "name": "GoPro HERO12 Black",
+        "asin": "B0CHCJHDGQ",
+        "priceComparison": "GoProの方が安価だが、用途が異なる。激しいアクティビティ向けか、日常Vlog向けかの違い。",
         "featureComparison": [
-          "共通点：カメラ本体の性能や機能は完全に同一",
-          "相違点：クリエイターコンボには、DJI Mic 2、バッテリーハンドル、広角レンズ、ミニ三脚などのアクセサリが多数同梱されている。"
+          "共通点：4K以上（GoProは5.3K）の高画質撮影、強力な手ブレ補正機構を搭載",
+          "相違点：Pocket 3は物理ジンバル。GoProは電子式手ブレ補正で防水・防塵・耐衝撃性に優れるアクションカメラ。"
         ],
         "differentiators": [
-          "DJI Osmo Pocket 3の利点：本体のみで十分な場合や、アクセサリを個別で揃えたい場合にコストを抑えられる。",
-          "DJI Osmo Pocket 3 クリエイターコンボの利点：ワイヤレスマイクやバッテリーハンドルなど、本格的なVlog撮影に必要な機材が最初から揃う。"
+          "DJI Osmo Pocket 3の利点：物理ジンバルによる自然な滑らかさと、25.4mmセンサーによる暗所画質の良さ、背景ボケ",
+          "GoPro HERO12 Blackの利点：防水・防塵・耐衝撃で、水中や激しいスポーツなど過酷な環境での撮影に強い"
+        ]
+      },
+      {
+        "name": "DJI Osmo Action 4",
+        "asin": "B0C783YNW7",
+        "priceComparison": "Osmo Action 4の方が安価。GoPro同様アクション向け。",
+        "featureComparison": [
+          "共通点：DJI製、高画質、カラーグレーディング対応（10-bit D-Log M）",
+          "相違点：Pocket 3は25.4mmセンサー+ジンバル。Action 4は約19.5mmセンサーの防水アクションカメラ。"
+        ],
+        "differentiators": [
+          "DJI Osmo Pocket 3の利点：ジンバルによる歩行時の縦揺れ吸収能力、より大型のセンサーによる暗所性能",
+          "DJI Osmo Action 4の利点：防水・タフネスボディでマウントの自由度が高い、広角撮影"
+        ]
+      },
+      {
+        "name": "Insta360 GO 3S",
+        "asin": "B0D3X3WS5C",
+        "priceComparison": "Insta360 GO 3Sの方が安価。超小型でハンズフリー撮影に特化。",
+        "featureComparison": [
+          "共通点：VlogやPOV（一人称視点）撮影に適した小型カメラ",
+          "相違点：Pocket 3は画質とジンバル安定性重視。GO 3Sはカメラ部分が分離・超小型で服や帽子にマウントして手軽に撮るスタイル。"
+        ],
+        "differentiators": [
+          "DJI Osmo Pocket 3の利点：25.4mmセンサーによる高画質、光学的な安定性、長時間の本格的な撮影",
+          "Insta360 GO 3Sの利点：圧倒的な小型軽量さによるマウントの自由度、目立ちにくさ"
         ]
       },
       {
         "name": "SONY VLOGCAM ZV-1F",
-        "asin": "B0BJ5L8RCG",
-        "priceComparison": "ZV-1Fの方が高価（約7万円台後半）",
+        "asin": "B0BJ6HXBJZ",
+        "priceComparison": "価格帯は近い。ZV-1Fはセンサーサイズは同じ（1型）だが、レンズやジンバル有無が異なる。",
         "featureComparison": [
-          "共通点：1インチセンサーを搭載し、Vlog撮影に特化している",
-          "相違点：Pocket 3はメカニカルジンバルによる物理的な手ブレ補正を持つが、ZV-1Fは電子式手ブレ補正であり、カメラらしい形状をしている。"
+          "共通点：25.4mmセンサー搭載のVlog向けカメラ",
+          "相違点：Pocket 3はジンバル一体型。ZV-1Fはコンパクトデジカメ型で超広角単焦点（20mm）、手ブレ補正は電子式。"
         ],
         "differentiators": [
-          "DJI Osmo Pocket 3の利点：歩きながらの撮影における手ブレ補正能力が圧倒的に高く、ジンバルならではの滑らかな映像が撮れる。",
-          "SONY VLOGCAM ZV-1Fの利点：静止画の撮影機能が充実しており、レンズ交換式のカメラのような操作感が楽しめる。"
+          "DJI Osmo Pocket 3の利点：ジンバル内蔵で歩き撮りの安定性が段違い、よりコンパクト",
+          "SONY VLOGCAM ZV-1Fの利点：コンデジとしての使い勝手（写真撮影含む）、ソニーの色作りやAF性能、超広角での自撮りのしやすさ"
         ]
       },
       {
-        "name": "Vlogカメラ 4K アクションカメラ B0G51QKDHV",
-        "asin": "B0G51QKDHV",
-        "priceComparison": "B0G51QKDHVの方が圧倒的に安価（1万円以下などの低価格帯）",
+        "name": "SONY VLOGCAM ZV-1",
+        "asin": "B0897H9322",
+        "priceComparison": "ZV-1の方がやや高価。ズーム機能が必要かどうかの違い。",
         "featureComparison": [
-          "共通点：Vlogやアクション撮影を目的とした小型カメラ",
-          "相違点：Pocket 3はメカニカルジンバルと1インチセンサーを搭載しているが、B0G51QKDHVは電子式手ブレ補正で安価なセンサーを搭載している可能性が高い。"
+          "共通点：25.4mmセンサー搭載のVlog向けカメラ",
+          "相違点：Pocket 3は単焦点+ジンバル。ZV-1は光学ズーム（24-70mm）搭載のコンデジ型。"
         ],
         "differentiators": [
-          "DJI Osmo Pocket 3の利点：画質、手ブレ補正、AF性能、信頼性など、カメラとしての基本性能が格段に高い。",
-          "Vlogカメラ 4K アクションカメラ B0G51QKDHVの利点：非常に安価なため、壊れても良い状況でのサブカメラや入門機として選びやすい。"
-        ]
-      },
-      {
-        "name": "ZAIDER アクションカメラ B0GDXFJ8QD",
-        "asin": "B0GDXFJ8QD",
-        "priceComparison": "B0GDXFJ8QDの方が圧倒的に安価",
-        "featureComparison": [
-          "共通点：動画撮影用の小型ボディ",
-          "相違点：Pocket 3は本格的なジンバル機構を持つが、こちらはクリップ式の安価なボディカメラに近い。"
-        ],
-        "differentiators": [
-          "DJI Osmo Pocket 3の利点：シネマティックで高品質なVlog映像が撮影でき、手ブレ補正が完璧。",
-          "ZAIDER アクションカメラ B0GDXFJ8QDの利点：服にクリップで留めての簡易的な録画や、ドライブレコーダー代わりなどのラフな用途に向いている。"
-        ]
-      },
-      {
-        "name": "DJI Osmo Mobile SE",
-        "asin": "B0B7XCG225",
-        "priceComparison": "Osmo Mobile SEの方が圧倒的に安価",
-        "featureComparison": [
-          "共通点：DJI製のジンバル技術（手ブレ補正）を搭載",
-          "相違点：Pocket 3はカメラ一体型ジンバルだが、Osmo Mobile SEはスマートフォンを取り付けて使うスマホ用ジンバル。"
-        ],
-        "differentiators": [
-          "DJI Osmo Pocket 3の利点：スマホのバッテリーや容量を気にせず、すぐに取り出して高品質な撮影が開始できる。",
-          "DJI Osmo Mobile SEの利点：手持ちの高性能なスマートフォンのカメラを活かしつつ、低コストでジンバル撮影が体験できる。"
+          "DJI Osmo Pocket 3の利点：圧倒的な手ブレ補正、取り出してすぐ撮れる機動力",
+          "SONY VLOGCAM ZV-1の利点：光学ズームを活かした多彩な画角での撮影、内蔵NDフィルター、本格的な写真撮影機能"
         ]
       }
     ],
     "recommendation": {
       "targetUsers": [
-        "歩きながらの自撮りや風景撮影を行うVlogger",
-        "スマホの動画撮影からステップアップして、より高画質でブレのない映像を撮りたい人",
-        "旅行や日常を手軽に高画質で記録したい人"
+        "高品質なVlogを撮影したいYouTuber・クリエイター",
+        "旅行や日常の記録を手ブレのない滑らかな映像で残したい人",
+        "暗所（夜景や室内）での撮影が多い人"
       ],
       "pros": [
-        "1インチセンサーによる優れた画質と暗所性能",
-        "3軸メカニカルジンバルによる圧倒的な手ブレ補正",
-        "縦撮り・横撮りの切り替えが簡単な2インチ回転式スクリーン"
+        "25.4mmセンサーによる暗所性能とボケ味",
+        "ジンバルによる圧倒的な手ブレ補正",
+        "50.8mm回転画面による操作性と縦動画への対応"
       ],
       "cons": [
-        "ズーム撮影には不向き（デジタルズームのみ）",
-        "本体のみではマイクなどの拡張性が限られる（本格的に使うならコンボ推奨）"
+        "防水・防塵・耐衝撃性能はないため取り扱いに注意が必要",
+        "バッテリー交換不可"
       ],
-      "score": 93,
-      "scoreRationale": "[基本点: 70]\n[加点: +10] (1インチセンサー搭載と4K/120fps対応で性能・機能が極めて高い)\n[加点: +8] (2インチ回転式スクリーンとActiveTrack 6.0による独自の強み・先進性)\n[加点: +7] (強力な3軸ジンバルによる揺れのない映像でユーザー満足度が高い)\n[減点: -2] (本体価格が高く、アクセサリを揃えるとさらにコストがかかる)\n[合計: 93]"
+      "score": 85,
+      "scoreRationale": "[基本点: 70] (固定)\n[加点: +10] (25.4mmセンサー搭載による優れた暗所性能と高画質)\n[加点: +10] (3軸ジンバルによる極めて優秀な手ブレ補正能力)\n[加点: +5] (50.8mm回転式スクリーンによる操作性向上と縦型動画への対応)\n[減点: -10] (防水防塵性能がなく、アクションカメラに比べて耐久性に劣り取扱いに注意が必要な点)\n[合計: 85]"
     },
     "technicalSpecs": {
       "dimensions": {
-        "width": "42.2mm",
         "height": "139.7mm",
+        "width": "42.2mm",
         "depth": "33.5mm"
       },
       "weight": "179g",
-      "sensor": "1.0型 CMOS",
-      "display": "50.8mm タッチスクリーン (回転式)",
-      "videoResolution": "4K (最大120fps)",
-      "stabilization": "3軸メカニカルジンバル",
-      "connectivity": [
-        "Wi-Fi",
-        "Bluetooth",
-        "USB Type-C"
-      ],
+      "capacity": "1300mAh (内蔵バッテリー)",
+      "material": "プラスチック・金属",
+      "origin": "中国",
       "other": [
-        "ActiveTrack 6.0",
-        "ステレオマイク内蔵",
-        "高速フォーカス対応"
+        "センサー: 25.4mmCMOS",
+        "動画解像度: 最大4K/120fps",
+        "ジンバル: 3軸メカニカル",
+        "スクリーン: 50.8mm回転式タッチスクリーン",
+        "トラッキング機能: ActiveTrack 6.0",
+        "カラーモード: 10-bit D-Log M",
+        "オーディオ: ステレオ録音対応"
       ]
     }
   }
