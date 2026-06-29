@@ -1,0 +1,240 @@
+{
+  "analysis": {
+    "productName": "スノーピーク ギガパワーバッテリー 30000 ES-122",
+    "parentAsin": "B0DGG1WCPP",
+    "productDescription": "Snow PeakとAnkerの共同開発によるOD缶形状の30000mAh大容量モバイルバッテリー。最大65Wの高出力に対応し、専用のギガパワーランタンと組み合わせることでキャンプサイトの照明としても機能する。",
+    "productUsage": [
+      "スマートフォン、タブレット、ノートPCなどの充電",
+      "専用ランタン（ギガパワーランタン TL/HL）への給電と自立型スタンドとしての利用",
+      "アウトドア、キャンプでの電源確保"
+    ],
+    "positivePoints": [
+      "Snow PeakのOD缶（ガスカートリッジ）と同じ形状で、キャンプサイトに馴染む洗練されたデザイン",
+      "安全性が高く長寿命なリン酸鉄リチウムイオン電池を採用",
+      "30000mAhの大容量と単ポート最大65Wの高出力でノートPCも充電可能",
+      "専用のギガパワーランタンと組み合わせることで非常にスタイリッシュな照明になる"
+    ],
+    "negativePoints": [
+      "容量のわりに価格が約3万2千円と非常に高価で、単純なモバイルバッテリーとしてのコスパは悪い",
+      "重量が約1.1kgあり、日常の持ち歩きには重すぎる",
+      "3台同時充電が可能だが、合計出力の制限により複数機器の急速充電には向かない場合がある"
+    ],
+    "useCases": [
+      "キャンプでの連泊時のメインバッテリーとして",
+      "専用ランタンと組み合わせたテーブル上のメイン照明やサイトの装飾として",
+      "防災時や車中泊でのバックアップ電源として"
+    ],
+    "userStories": [
+      {
+        "userType": "キャンパー",
+        "scenario": "オートキャンプで専用のギガパワーランタンと組み合わせて使用",
+        "experience": "価格は高いがOD缶の形をしたデザインがキャンプサイトに最高にマッチする。重量は1kgを超えるが、車移動メインのオートキャンプなら気にならず、専用ランタンとセットで使うと非常に満足感が高い。",
+        "supportingSourceIds": [
+          "src-2",
+          "src-3"
+        ],
+        "sentiment": "positive"
+      },
+      {
+        "userType": "一般ユーザー",
+        "scenario": "日常的なモバイルバッテリーとしての利用を検討",
+        "experience": "30000mAhの大容量は魅力だが、価格が一般的な同容量のモバイルバッテリーの倍以上であり、重さもあるため、単なる充電器として買うにはコスパが悪すぎる。",
+        "supportingSourceIds": [
+          "src-2"
+        ],
+        "sentiment": "mixed"
+      }
+    ],
+    "userImpression": "Snow Peakのデザイン性とAnkerのバッテリー性能が融合した、キャンプ愛好家向けの「ロマン枠」製品。価格の高さや重量から純粋なモバイルバッテリーとしてのコスパは良くないが、専用ランタンとセットで使用した際の世界観や満足度に対する評価は非常に高い。",
+    "sources": [
+      {
+        "id": "src-1",
+        "name": "Ankerと共同開発した大容量モバイルバッテリー 「ギガパワーバッテリー」を10月5日（土）より発売開始いたします。/ スノーピーク公式サイト",
+        "url": "https://www.snowpeak.co.jp/news/p20241003/",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2024-10-03",
+        "author": "株式会社スノーピーク",
+        "conflictOfInterest": "disclosed",
+        "notes": "製品の基本仕様、リン酸鉄リチウムイオン電池採用、最大65W出力、専用オプションランタンについての記載"
+      },
+      {
+        "id": "src-2",
+        "name": "スノーピーク ギガパワーバッテリーレビュー / 坊主キャンパー",
+        "url": "https://kinbozu.com/blog/snow-battery/",
+        "tier": "low",
+        "evidenceType": "secondary",
+        "publishedAt": "2024-12-04",
+        "author": "坊主キャンパー",
+        "conflictOfInterest": "possible",
+        "notes": "OD缶形状の魅力、専用ランタンを使わないと自立しない点、価格の高さ、オートキャンプ向けである点などの実使用感"
+      },
+      {
+        "id": "src-3",
+        "name": "【Snow Peak×Anker】ギガパワーバッテリー 15000レビュー｜超浪漫型バッテリー / ガジェラッシュ",
+        "url": "https://www.eqfdw.com/giga-power-battery-review/",
+        "tier": "low",
+        "evidenceType": "secondary",
+        "publishedAt": "2025-02-14",
+        "author": "ガジェラッシュ",
+        "conflictOfInterest": "possible",
+        "notes": "15000mAh版のレビューだが、シリーズ共通の魅力（底面三脚ネジ、OD缶との共通性、ランタンと組み合わせた際の完成度など）が記載されている。※3台同時充電は厳しいとの記述あり。"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "一般的なモバイルバッテリーよりも長寿命なリン酸鉄リチウムイオン電池を採用している",
+        "category": "durability",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "crossChecked": false,
+        "notes": "メーカー公式リリースにて明記"
+      },
+      {
+        "claim": "専用のギガパワーランタンと組み合わせることで真価を発揮するデザインである",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-1",
+          "src-2",
+          "src-3"
+        ],
+        "crossChecked": true,
+        "notes": "公式発表および複数のレビュアーが一致して言及"
+      },
+      {
+        "claim": "同容量の他社製モバイルバッテリーと比較して価格が非常に高い",
+        "category": "comparativeAdvantage",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-2",
+          "src-3"
+        ],
+        "crossChecked": true,
+        "notes": "レビュアーからの共通した意見"
+      }
+    ],
+    "lastInvestigated": "2026-06-29",
+    "competitiveAnalysis": [
+      {
+        "name": "エレコム モバイルバッテリー リン酸鉄 30000mAh",
+        "asin": "B0C61C1WCH",
+        "priceComparison": "対象商品（約31,900円）と比較して非常に安価（約9,700円）。同じ30000mAhでリン酸鉄を採用しているが価格差が大きい。",
+        "featureComparison": [
+          "共通点：容量30000mAh、リン酸鉄リチウムイオン電池を採用",
+          "相違点：エレコムは最大45W出力・平型デザインであるのに対し、スノーピークは最大65W出力・OD缶形状である"
+        ],
+        "differentiators": [
+          "スノーピーク ギガパワーバッテリー 30000 ES-122の利点：ノートPCをより高速に充電できる65W出力、専用ランタンとの組み合わせ、キャンプに合うデザイン性",
+          "エレコム モバイルバッテリー リン酸鉄 30000mAhの利点：実用十分なスペックでありながら価格が3分の1以下と圧倒的にコスパが高い"
+        ]
+      },
+      {
+        "name": "Anker Power Bank (25000mAh, Built-In & 巻取り式USB-Cケーブル)",
+        "asin": "B0DT4RGDSJ",
+        "priceComparison": "対象商品より安価だが、モバイルバッテリーとしては高価格帯（約15,000円）。",
+        "featureComparison": [
+          "共通点：Ankerの技術が使われている大容量・高出力モデル",
+          "相違点：Anker機は25000mAhでケーブル内蔵・より持ち運びやすい形状。スノーピークは30000mAhでOD缶形状。"
+        ],
+        "differentiators": [
+          "スノーピーク ギガパワーバッテリー 30000 ES-122の利点：大容量（30000mAh）とアウトドア特化の機能美、ランタン接続",
+          "Anker Power Bank (25000mAh, Built-In & 巻取り式USB-Cケーブル)の利点：ケーブル内蔵でスマートに持ち運べる実用性とコンパクトさ"
+        ]
+      },
+      {
+        "name": "Anker Power Bank (20000mAh, 30W)",
+        "asin": "B0CQY7SRTY",
+        "priceComparison": "対象商品の5分の1以下の価格（約6,000円）で購入できる。",
+        "featureComparison": [
+          "共通点：Anker製のモバイルバッテリー",
+          "相違点：Anker機は20000mAhで最大30W出力・ディスプレイ搭載の薄型。スノーピークは30000mAhで最大65W出力のOD缶形状。"
+        ],
+        "differentiators": [
+          "スノーピーク ギガパワーバッテリー 30000 ES-122の利点：PC充電が可能な高出力と大容量、キャンプでのデザイン性",
+          "Anker Power Bank (20000mAh, 30W)の利点：スマホ充電メインであれば十分なスペックで、価格が安く持ち運びやすい"
+        ]
+      },
+      {
+        "name": "Anker Zolo Power Bank (20000mAh, 45W, Built-In USB-Cケーブル)",
+        "asin": "B0FS5XT48F",
+        "priceComparison": "対象商品と比べて非常に安価（約6,000円）。",
+        "featureComparison": [
+          "共通点：USB-C対応の大容量バッテリー",
+          "相違点：Anker Zoloは20000mAhで45W出力・ケーブル一体型。スノーピークは30000mAhで65W出力。"
+        ],
+        "differentiators": [
+          "スノーピーク ギガパワーバッテリー 30000 ES-122の利点：より大容量で高出力、専用のLEDランタンシステムを使える",
+          "Anker Zolo Power Bank (20000mAh, 45W)の利点：ケーブルを持ち歩く必要がなく、日常使いにおいて圧倒的に高コスパ"
+        ]
+      },
+      {
+        "name": "エレコム モバイルバッテリー 大容量 急速充電 12000mAh リン酸鉄",
+        "asin": "B0B7J5B78B",
+        "priceComparison": "対象商品より大幅に安い（約4,000円）。",
+        "featureComparison": [
+          "共通点：リン酸鉄リチウムイオン電池を採用",
+          "相違点：エレコムは12000mAhで20W出力の小型モデル。スノーピークは30000mAhで65W出力。"
+        ],
+        "differentiators": [
+          "スノーピーク ギガパワーバッテリー 30000 ES-122の利点：ノートPC充電や連泊キャンプに耐えうる圧倒的な大容量・高出力",
+          "エレコム モバイルバッテリー 12000mAhの利点：日常的に持ち歩ける軽さと安さ"
+        ]
+      },
+      {
+        "name": "Anker Zolo Power Bank (20000mAh, 30W, Built-In USB-Cケーブル)",
+        "asin": "B0DRFQNPDQ",
+        "priceComparison": "対象商品と比べて非常に安価（約5,000円）。",
+        "featureComparison": [
+          "共通点：Anker製の大容量バッテリー",
+          "相違点：Zoloは20000mAhで30W出力・ケーブル内蔵。スノーピークは30000mAhで65W出力。"
+        ],
+        "differentiators": [
+          "スノーピーク ギガパワーバッテリー 30000 ES-122の利点：PC充電対応の高出力と、アウトドア向けの堅牢なデザイン",
+          "Anker Zolo Power Bank (20000mAh, 30W)の利点：スマホ充電に十分な性能と、圧倒的なコストパフォーマンス"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "スノーピーク製品を愛用しているキャンパー",
+        "キャンプサイトの雰囲気を損なわない大容量バッテリーを探している人",
+        "ギガパワーランタンを使用したい人"
+      ],
+      "pros": [
+        "キャンプギアとして洗練されたOD缶形状デザイン",
+        "リン酸鉄リチウムイオン電池採用による高い安全性と長寿命",
+        "単ポート最大65W出力でノートPCの充電も可能",
+        "専用ランタンのバッテリー兼スタンドとして機能する"
+      ],
+      "cons": [
+        "モバイルバッテリーとしてのコストパフォーマンスは非常に悪い",
+        "約1.1kgと重く、日常の持ち歩きには不向き"
+      ],
+      "score": 65,
+      "scoreRationale": "[基本点: 70]\n[加点: +5] (キャンプサイトに馴染む洗練されたOD缶形状と専用ランタン連携による独自性)\n[加点: +5] (リン酸鉄リチウムイオン電池採用による高い安全性と長寿命)\n[加点: +5] (30000mAhの大容量と最大65Wの高出力)\n[減点: -15] (他社競合製品と比較して容量・性能のわりに価格が非常に高く、コスパが悪い)\n[減点: -5] (約1.1kgという重量により携帯性が低い)\n[合計: 65]"
+    },
+    "technicalSpecs": {
+      "// 注意": "調査で判明した仕様情報をここに網羅的に記載する（サイズはメートル法のみ、インチ不要）",
+      "dimensions": {
+        "height": "160mm",
+        "width": "110mm",
+        "depth": "110mm"
+      },
+      "weight": "1100g",
+      "capacity": "30000mAh",
+      "material": "本体: ポリカーボネート樹脂、ABS樹脂、シリコーンゴム / 収納ケース: ポリエステル / USB-C & USB-C ケーブル: PVC",
+      "batteryType": "リン酸鉄リチウムイオン電池",
+      "input": "USB-C1, USB-C2: 5V ⎓ 3A, 9V ⎓ 3A, 12V ⎓ 3A, 15V ⎓ 3A, 20V ⎓ 3.25A (最大65W)",
+      "output": "USB-C1, USB-C2: 5V ⎓ 3A, 9V ⎓ 3A, 12V ⎓ 3A, 15V ⎓ 3A, 20V ⎓ 3.25A (単ポート最大65W), USB-A: 5V ⎓ 3A, 9V ⎓ 2A, 10V ⎓ 2.25A, 12V ⎓ 1.5A (単ポート最大22.5W)",
+      "operatingTemperature": "動作時/0℃～35℃、充電時/0℃～35℃、保管時/0℃～35℃",
+      "waterResistance": "IPX4 (オプション製品接続時)",
+      "other": [
+        "3ポート同時使用可能",
+        "パッケージ内容: 本体、収納ケース、USB-C & USB-Cケーブル"
+      ]
+    }
+  }
+}
