@@ -1,144 +1,151 @@
 {
   "analysis": {
-    "productName": "LeLib 15.6インチ ノートパソコン (Intel N150, 16GB/512GB)",
+    "productName": "LeLib 15.6インチ フルHD ノートパソコン (Intel N150 / 16GB / SSD256GB)",
     "parentAsin": "B0FXXM6TMC",
-    "productDescription": "Intel N150（詳細不明だがN97相当と推測）を搭載した15.6インチの格安ノートパソコンです。Microsoft OfficeとWindows 11を標準搭載し、5万円台という低価格を実現しています。",
+    "productDescription": "Intel N150プロセッサ、16GBメモリ、256GB SSDを搭載し、Windows 11とMS Officeがプリインストールされた15.6インチのノートパソコン。事務作業やオンライン学習など、日常の基本的な用途に最適化されています。",
     "productUsage": [
-      "Webブラウジングや動画視聴などの日常用途",
-      "Word、Excel、PowerPointを使用した文書作成",
-      "ZoomやTeamsを使用したオンライン会議",
-      "学習用やサブ機としての利用"
+      "書類作成（Word、Excel等）",
+      "オンライン授業・ビデオ会議",
+      "Web閲覧・動画視聴",
+      "在宅ワーク"
     ],
     "positivePoints": [
-      "5万円台でMicrosoft Office搭載という圧倒的なコストパフォーマンス",
-      "メモリ16GB搭載で、複数のアプリを開いても動作が安定していると推測される",
-      "15.6インチのフルHD液晶で見やすく、テンキー付きで数値入力が楽",
-      "日本語キーボードカバーが付属しており、英語配列に不慣れな人への配慮がある"
+      "Windows 11とMS Officeがプリインストールされており、到着後すぐに使用可能",
+      "16GBの余裕のあるメモリ容量で、複数アプリの同時起動でもスムーズに動作",
+      "15.6インチのフルHD画面とテンキー搭載で、表計算や資料作成が快適"
     ],
     "negativePoints": [
-      "「Intel N150」というCPUは公式には存在せず、スペックの実態が不明瞭（N97またはオーバークロック版N100の可能性が高い）",
-      "キーボードが英語配列（US配列）であり、日本語カバーを使用しても一部記号の入力に違和感がある可能性がある",
-      "ブランド「LeLib」の知名度が低く、サポート体制や耐久性に不安が残る",
-      "USB-Cポートの有無や仕様（PD充電対応など）が不明確"
+      "高負荷の3Dゲームや本格的な動画編集には不向き",
+      "キーボードが英語配列（日本語カバー付属で対応）"
     ],
     "useCases": [
-      "予算を抑えたい学生のレポート作成用PCとして",
-      "家庭でのWeb閲覧や家計簿管理用の共用PCとして",
-      "メインPC故障時の緊急用サブ機として"
+      "自宅でのリモートワークやオンライン授業",
+      "リビングでのWebブラウジングや動画鑑賞",
+      "学生のレポート作成や表計算"
     ],
-    "userStories": [
-      {
-        "userType": "学生・ライトユーザー（推測）",
-        "scenario": "大学の課題レポート作成と動画視聴",
-        "experience": "「Intel N150」という聞き慣れないCPUだが、Web閲覧やYouTube視聴、Wordでのレポート作成程度ならサクサク動く。5万円台でOfficeもついてくるので、予算が限られている学生にはありがたい選択肢だ。（推測）",
-        "sentiment": "positive"
-      },
-      {
-        "userType": "在宅ワーカー（推測）",
-        "scenario": "サブ機としての利用",
-        "experience": "メイン機が故障したため急遽購入。キーボードがUS配列にシリコンカバーを被せるタイプなので、打鍵感はいまいちだが、Zoom会議やメール返信には十分使える。ただ、長期間メインとして使うには耐久性が心配。（推測）",
-        "sentiment": "mixed"
-      }
-    ],
-    "userImpression": "スペック上は非常にコストパフォーマンスが高いが、「Intel N150」という謎のCPUやマイナーブランドであることから、信頼性には懸念が残る。初心者向けというよりは、トラブルに対処できる中級者以上のサブ機として適している。",
-    "sources": [
-      {
-        "name": "Amazon商品ページ (B0FXXM6TMC)",
-        "url": "https://www.amazon.co.jp/dp/B0FXXM6TMC",
-        "credibility": "medium"
-      },
-      {
-        "name": "Intel Product Specifications (Comparison of N-series)",
-        "url": "https://ark.intel.com/",
-        "credibility": "high"
-      }
-    ],
-    "lastInvestigated": "2026-02-21",
+    "userStories": [],
+    "userImpression": "初期設定不要でOfficeも使えるため、PC初心者や事務作業メインのユーザーにとってコストパフォーマンスが高く実用的な選択肢となっています。キーボードがUS配列である点は好みが分かれるものの、カバーが付属することでカバーされています。",
+    "sources": [],
+    "claims": [],
+    "lastInvestigated": "2026-06-30",
     "competitiveAnalysis": [
       {
-        "name": "ACEMAGIC ノートパソコン (Intel N97)",
-        "asin": "B0D56WRGWC",
-        "priceComparison": "約7万円。LeLibより約1.6万円高い。",
+        "name": "BINTEC ノートパソコン 14インチ 高性能Alder Lake-N150搭載",
+        "asin": "B0DN62MVWN",
+        "priceComparison": "同価格帯の製品であり、対象商品は画面サイズが大きく（15.6インチ）、こちらは携帯性を重視した14インチで解像度が高い（2K）という違いがある。",
         "featureComparison": [
-          "CPU: Intel N97 (最大3.6GHz)",
-          "画面サイズ: 17.3インチ",
-          "メモリ: 16GB"
+          "共通点：Intel N150プロセッサ、16GBメモリ、256GB SSD搭載、Office 2024付属",
+          "相違点：対象商品が15.6インチFHD・テンキー付きに対し、こちらは14インチ2K液晶・指紋認証搭載"
         ],
         "differentiators": [
-          "ACEMAGICはミニPC等で一定の知名度がある",
-          "画面が大きく作業しやすいが、持ち運びには不向き"
+          "LeLib 15.6インチ フルHD ノートパソコンの利点：大画面とテンキーがあり、据え置きでの事務作業や数字入力に優れる。",
+          "BINTEC ノートパソコンの利点：軽量・コンパクトで高解像度液晶を搭載し、持ち運びに適している。"
         ]
       },
       {
-        "name": "SERYUB ノートパソコン (Intel N150)",
-        "asin": "B0G1M66KJV",
-        "priceComparison": "約6.9万円。LeLibより約1.5万円高い。",
+        "name": "GMJ ノートパソコン GLM-15-150-P",
+        "asin": "B0GK8PD23S",
+        "priceComparison": "対象商品よりも安価だが、メモリが8GBとなっており、マルチタスクの快適さでは対象商品が上回る。",
         "featureComparison": [
-          "CPU: Intel N150 (最大3.6GHz)",
-          "画面サイズ: 17.3インチ",
-          "メモリ: 16GB"
+          "共通点：Intel N150プロセッサ、256GB SSD、15.6インチFHD液晶、テンキー搭載",
+          "相違点：対象商品が16GBメモリ搭載に対し、こちらは8GBメモリ。OfficeソフトがこちらはWPS Office"
         ],
         "differentiators": [
-          "同じ「Intel N150」を謳う競合",
-          "価格面ではLeLibの方が有利"
+          "LeLib 15.6インチ フルHD ノートパソコンの利点：16GBメモリ搭載で、多数のタブやアプリを開いても快適に動作し、MS Officeも付属する。",
+          "GMJ ノートパソコンの利点：価格が抑えられており、基本的な用途に絞れば初期費用を抑えられる。"
         ]
       },
       {
-        "name": "CHUWI GemiBook XPro (Intel N100)",
-        "asin": "B0C1Z6J7P4",
-        "priceComparison": "約4-5万円台。価格帯は近い。",
+        "name": "CHUWI MiniBook X",
+        "asin": "B0F5WDGQS7",
+        "priceComparison": "同価格帯であるが、形状が全く異なる2in1タイプの製品。用途に応じて選ぶ必要がある。",
         "featureComparison": [
-          "CPU: Intel N100 (最大3.4GHz)",
-          "画面サイズ: 14.1インチ",
-          "メモリ: 8GB"
+          "共通点：Intel N150プロセッサ、16GBメモリ搭載",
+          "相違点：対象商品が15.6インチのクラムシェル型に対し、こちらは10.51インチのタッチ対応2in1（512GB SSD搭載）"
         ],
         "differentiators": [
-          "CHUWIは中華PCの中では比較的知名度が高い",
-          "メモリが8GBと少ない点が劣る"
+          "LeLib 15.6インチ フルHD ノートパソコンの利点：大画面で視認性が高く、テンキー付きで長時間の入力作業に向く。",
+          "CHUWI MiniBook Xの利点：タブレットとしても使用可能で、コンパクトかつタッチ操作ができるため機動性に優れる。"
+        ]
+      },
+      {
+        "name": "MonstaStorage ノートパソコン",
+        "asin": "B0FXV4BFCS",
+        "priceComparison": "同価格帯でSSD容量が倍（512GB）になっており、ストレージを多く必要とする場合は競合が有利。",
+        "featureComparison": [
+          "共通点：Intel N150プロセッサ、16GBメモリ搭載、15.6インチFHD液晶、Officeソフト付属",
+          "相違点：対象商品が256GB SSDに対し、こちらは512GB SSD（NVMe）搭載"
+        ],
+        "differentiators": [
+          "LeLib 15.6インチ フルHD ノートパソコンの利点：英語配列キーボード（日本語カバー付き）を採用しており、US配列を好むユーザーに適する。",
+          "MonstaStorage ノートパソコンの利点：SSD容量が512GBと大きく、より多くのデータを保存できる。"
+        ]
+      },
+      {
+        "name": "Yijowi 16インチ ノートPC",
+        "asin": "B0F9FB94C1",
+        "priceComparison": "同価格帯だが、競合は16インチの3K高画質液晶を搭載しており、画面の精細さで差がある。",
+        "featureComparison": [
+          "共通点：Intel N150プロセッサ、16GBメモリ搭載、テンキー搭載",
+          "相違点：対象商品が15.6インチFHD（256GB SSD）に対し、こちらは16インチ3K液晶（512GB SSD）"
+        ],
+        "differentiators": [
+          "LeLib 15.6インチ フルHD ノートパソコンの利点：汎用的な15.6インチサイズで、標準的な解像度によりバッテリー消費などを抑えやすい。",
+          "Yijowi 16インチ ノートPCの利点：3K高画質液晶で写真や動画をより精細に表示でき、SSD容量も512GBと多い。"
+        ]
+      },
+      {
+        "name": "Pasoul ノートパソコン NC15J",
+        "asin": "B0CKDH729C",
+        "priceComparison": "対象商品よりも安価だが、CPU性能が低いため、用途に合わせて検討する必要がある。",
+        "featureComparison": [
+          "共通点：15.6インチFHD液晶搭載、256GB SSD搭載",
+          "相違点：対象商品がIntel N150 / 16GBメモリに対し、こちらはPentium Gold 6500Y / 12GBメモリ。OfficeソフトがWPS"
+        ],
+        "differentiators": [
+          "LeLib 15.6インチ フルHD ノートパソコンの利点：より新しいIntel N150プロセッサと16GBメモリで、全体のパフォーマンスが高い。",
+          "Pasoul ノートパソコン NC15Jの利点：価格が抑えられており、WPS Officeでも十分な軽作業向け。"
         ]
       }
     ],
     "recommendation": {
       "targetUsers": [
-        "とにかく安くOffice付きのノートPCが欲しい人",
-        "PCのトラブルを自分で解決できる中級者以上のサブ機需要",
-        "子供のプログラミング学習やオンライン授業用"
+        "事務作業やレポート作成を主な用途とする学生・社会人",
+        "届いてすぐにPCを使いたい初心者",
+        "オンライン授業やWeb会議用のPCを探している方"
       ],
       "pros": [
-        "5万円台でOffice付きという驚異的なコストパフォーマンス",
-        "メモリ16GB搭載でマルチタスクに強い",
-        "FHD液晶で見やすい"
+        "Windows 11とMS Officeが初期設定済みで即利用可能",
+        "16GBメモリ搭載でブラウザやOfficeアプリが快適に動作",
+        "15.6インチ大画面とテンキーで作業効率が良い"
       ],
       "cons": [
-        "「Intel N150」というCPUの実態が不明瞭（おそらくN97相当）",
-        "キーボードがUS配列＋日本語カバーという仕様",
-        "ブランドの信頼性とサポート体制が未知数"
+        "重い3Dゲームや動画編集にはスペック不足",
+        "キーボード本体は英語配列（カバーで対応）"
       ],
       "score": 75,
-      "scoreRationale": "[基本点: 70]\n[加点: +5] (N97相当と推測されるCPU性能は、同価格帯のN100より若干高い)\n[加点: +15] (5万円台で16GBメモリ、512GB SSD、Office搭載は破格のコスパ)\n[減点: -10] (実在しないCPU型番の使用やブランドの信頼性欠如)\n[減点: -5] (キーボードがUS配列＋カバーという簡易的な仕様)\n[合計: 75]"
+      "scoreRationale": "[基本点: 70] (固定)\n[加点: +5] (16GBメモリ搭載により事務作業等のマルチタスクが快適)\n[加点: +5] (MS Officeプリインストールで到着後すぐに使用可能)\n[減点: -5] (キーボードが英語配列であり、日本語カバーによる対応は好みが分かれる)\n[合計: 75]"
     },
     "technicalSpecs": {
-      "cpu": "Intel N150 (詳細不明, 推定: Intel Processor N97相当, 4コア/4スレッド, 最大3.6GHz)",
-      "ram": "16GB",
-      "storage": "512GB SSD",
-      "display": {
-        "size": "15.6インチ",
-        "resolution": "1920x1080 (FHD)",
-        "type": "IPS (推定)"
+      "dimensions": {
+        "height": "",
+        "width": "",
+        "depth": ""
       },
-      "battery": {
-        "capacity": "詳細不明",
-        "charging": "ACアダプター付属"
-      },
-      "gpu": "Intel UHD Graphics (CPU内蔵)",
-      "connectivity": [
-        "Wi-Fi 5",
-        "Bluetooth",
-        "USBポート (詳細不明)",
-        "HDMI (詳細不明)"
-      ],
+      "weight": "1400g",
+      "capacity": "SSD 256GB / メモリ 16GB",
+      "material": "",
+      "origin": "",
+      "display": "15.6インチ フルHD（1920×1080）",
+      "cpu": "Intel N150 (4コア/4スレッド 最大3.6GHz)",
       "os": "Windows 11",
-      "office": "Microsoft Office (詳細不明)"
+      "software": "Microsoft Office",
+      "other": [
+        "Webカメラ搭載",
+        "Wi-Fi 5対応",
+        "テンキー搭載",
+        "日本語キーボードカバー付属"
+      ]
     }
   }
 }
