@@ -1,132 +1,177 @@
 {
   "analysis": {
-    "productName": "Spigen MagSafe対応 カードケース スタンド (Smart Fold)",
+    "productName": "Spigen MagSafe対応 カードケース スマート・フォールド",
     "parentAsin": "B08S1XM54D",
-    "productDescription": "iPhone 12以降のMagSafeに対応した、スリムで機能的なカード収納付き折りたたみ式スタンド。",
+    "productDescription": "三つ折り構造のスタンド機能を搭載した、MagSafe対応のスリムなカードケース。最大2枚のカードを収納でき、使用していない時はカードが見えないプライバシーに配慮した設計です。",
     "productUsage": [
-      "MagSafeでiPhone背面に装着して使用",
-      "最大2枚のカードを収納可能",
-      "3段折りのスタンド機能で縦置き・横置きに対応",
-      "カードを完全に隠してプライバシーを保護"
+      "スマートフォン背面に装着してのカード収納",
+      "動画視聴時などのスマートフォンスタンド",
+      "MagSafe機能を用いた簡単な着脱"
     ],
     "positivePoints": [
-      "スリムなデザインでポケットに入れても邪魔になりにくい",
-      "3段折り構造によりスタンド使用時の安定性が高い",
-      "カードが外から見えない設計でセキュリティ面でも安心",
-      "Spigenブランドならではの信頼性と高品質なPUレザー素材"
+      "三つ折り構造による便利なスタンド機能",
+      "スリム設計でスマートフォンに装着しても持ちやすい",
+      "カードが外から見えないプライバシー保護設計",
+      "高品質なPUファブリックによる質感と耐久性"
     ],
     "negativePoints": [
-      "カードが完全に隠れるため、取り出しにくい場合がある",
-      "カードを2枚収納すると厚みが増し、出し入れがきつくなる傾向がある",
-      "MOFTの磁力強化版と比較すると、吸着力が標準的である可能性がある"
+      "カードの収納枚数が最大2枚と少なめ",
+      "MagSafeまたはPixelSnap対応ケース以外では使用不可"
     ],
     "useCases": [
-      "動画視聴やビデオ通話時のスタンドとして",
-      "通勤・通学時のICカードホルダーとして",
-      "キャッシュレス決済メイン時の予備クレジットカード入れとして"
+      "身分証やクレジットカードなど必要最低限のカードをスマートに持ち歩く",
+      "デスクワーク中や食事中にスマートフォンを立てて動画を視聴する"
     ],
-    "userStories": [
-      {
-        "userType": "30代男性、会社員",
-        "scenario": "通勤時の改札通過とオフィスでのデスクワーク",
-        "experience": "定期券を入れて使用している。改札は問題なく通れるが、チャージが必要な時にカードを取り出すのが少し面倒に感じることがある。（推測）",
-        "sentiment": "mixed"
-      },
-      {
-        "userType": "20代女性、学生",
-        "scenario": "自宅での動画視聴",
-        "experience": "YouTubeを見るときに縦置きスタンドとして重宝している。デザインがシンプルでiPhoneの見た目を損なわないのが気に入っている。（推測）",
-        "sentiment": "positive"
-      }
-    ],
-    "userImpression": "シンプルで実用的なデザインが評価されている一方、カードの出し入れに関しては慣れが必要という意見も散見されると推測される。価格と機能のバランスが良い製品。",
+    "userStories": [],
+    "userImpression": "スリムなデザインとスタンド機能を両立しており、カードが外部から見えない安心設計が特徴的な製品です。価格も手頃で、日常的な使い勝手に優れたMagSafe対応ウォレットと言えます。",
     "sources": [
       {
-        "name": "Spigen 公式サイト製品情報",
-        "url": "https://www.spigen.com/",
-        "credibility": "高"
-      },
-      {
-        "name": "Amazon 商品詳細ページ",
+        "id": "src-1",
+        "name": "Amazon.co.jp 商品ページ",
         "url": "https://www.amazon.co.jp/dp/B08S1XM54D",
-        "credibility": "高"
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-06-30",
+        "author": "Spigen",
+        "conflictOfInterest": "disclosed",
+        "notes": "公式の商品仕様および特徴を抽出"
       }
     ],
-    "lastInvestigated": "2026-02-22",
+    "claims": [
+      {
+        "claim": "最大2枚のカードを収納可能で、外から見えない設計",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "crossChecked": true,
+        "notes": "商品仕様に明記されている"
+      },
+      {
+        "claim": "三つ折り構造のスタンド機能を搭載",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "crossChecked": true,
+        "notes": "商品説明の主要機能として記載されている"
+      }
+    ],
+    "lastInvestigated": "2026-06-30",
     "competitiveAnalysis": [
       {
-        "name": "MOFT Snap-On スマホスタンド (MOVAS版)",
-        "asin": "B0CHW9BMGQ",
-        "priceComparison": "4,480円とSpigenより高価だが、素材と機能性に優れる。",
+        "name": "MOFT",
+        "asin": "B0FSD7Q16C",
+        "priceComparison": "対象商品よりも高価であるが、独自のMOVAS耐久素材を採用しているため価格差の価値がある。",
         "featureComparison": [
-          "耐久性の高いMOVAS素材を使用",
-          "磁力が強化されている",
-          "多角度調整が可能"
+          "共通点：MagSafe対応、スタンド機能付きのカードケース",
+          "相違点：MOFTは独自のMOVAS耐久素材を採用しているが、SpigenはPUファブリックを採用している"
         ],
         "differentiators": [
-          "カラーバリエーションが豊富",
-          "より高級感があるが価格も高い"
+          "Spigen MagSafe対応 カードケース スマート・フォールドの利点：価格が手頃で導入しやすい",
+          "MOFTの利点：より高い耐久性を持つ素材を求める場合"
         ]
       },
       {
-        "name": "Sinjimoru M-Band Stand",
-        "asin": "B0DG2K4RJ8",
-        "priceComparison": "2,980円とSpigenと同価格帯。",
-        "featureComparison": [
-          "グリップ機能が付いている",
-          "スタンド機能もあるが構造が異なる"
-        ],
-        "differentiators": [
-          "片手操作を補助するバンド機能がある点が大きな違い"
-        ]
-      },
-      {
-        "name": "Lamicall MagSafe カードケース",
+        "name": "Lamicall",
         "asin": "B0CWKDYSJ1",
-        "priceComparison": "2,571円とSpigenより安価。",
+        "priceComparison": "対象商品と同等の価格帯であるが、3枚収納可能でコストパフォーマンスは拮抗している。",
         "featureComparison": [
-          "3枚収納可能を謳っている",
-          "ヴィーガンレザー使用"
+          "共通点：MagSafe対応、スタンド機能付きのレザー調カードケース",
+          "相違点：Lamicallは最大3枚のカードを収納できるが、Spigenは最大2枚の収納に限定されている"
         ],
         "differentiators": [
-          "コストパフォーマンスに優れるが、ブランド力ではSpigenに劣る可能性がある"
+          "Spigen MagSafe対応 カードケース スマート・フォールドの利点：2枚収納に絞ったことでよりスリムな設計となっている",
+          "Lamicallの利点：3枚のカードを持ち歩きたい場合"
+        ]
+      },
+      {
+        "name": "ESR",
+        "asin": "B0DWMM7KBV",
+        "priceComparison": "対象商品よりやや高価だが、5枚収納やRFIDブロック機能が追加されている分、妥当な価格設定と言える。",
+        "featureComparison": [
+          "共通点：MagSafe対応、スタンド機能を備えたカードケース",
+          "相違点：ESRは最大5枚の収納とRFIDブロック機能を備えているが、Spigenは2枚収納でシンプルである"
+        ],
+        "differentiators": [
+          "Spigen MagSafe対応 カードケース スマート・フォールドの利点：収納枚数を抑えたことで軽量かつスリムに収まる",
+          "ESRの利点：複数のカードを収納しつつ、スキミング防止によるセキュリティを高めたい場合"
+        ]
+      },
+      {
+        "name": "ESR",
+        "asin": "B0F1YC5TB4",
+        "priceComparison": "対象商品の約2倍の価格であり、「探す」機能への対応に大きな価値を見出すユーザー向けである。",
+        "featureComparison": [
+          "共通点：MagSafe対応、スタンド機能付き",
+          "相違点：ESRはAppleの「探す」機能にフル対応し、落下防止指掛けが付いているが、Spigenはそれらの機能を省いたシンプル設計である"
+        ],
+        "differentiators": [
+          "Spigen MagSafe対応 カードケース スマート・フォールドの利点：シンプルな機能に絞り価格が抑えられている",
+          "ESRの利点：財布代わりとして紛失時のトラッキング機能が必須の場合"
+        ]
+      },
+      {
+        "name": "MOFT",
+        "asin": "B0CJ8RSWFC",
+        "priceComparison": "対象商品よりも高価であるが、磁力強化とMOVAS素材を採用しており、品質に見合った価格差がある。",
+        "featureComparison": [
+          "共通点：MagSafe対応、折り畳み式のスタンド機能を搭載",
+          "相違点：MOFTは磁力強化版であり、より強固に吸着する仕様だが、Spigenは標準的な磁力を想定している"
+        ],
+        "differentiators": [
+          "Spigen MagSafe対応 カードケース スマート・フォールドの利点：十分な基本機能を低価格で手に入れられる",
+          "MOFTの利点：より強力なマグネット吸着力による安定感を重視する場合"
+        ]
+      },
+      {
+        "name": "MOFT",
+        "asin": "B0D5CKSQ81",
+        "priceComparison": "対象商品より高価だが、電磁波干渉防止などの細かな機能が追加されている。",
+        "featureComparison": [
+          "共通点：MagSafe対応のウォレットスタンド",
+          "相違点：MOFTは電磁波干渉防止シートを内蔵しているが、Spigenは特に記載がない"
+        ],
+        "differentiators": [
+          "Spigen MagSafe対応 カードケース スマート・フォールドの利点：価格と機能のバランスが良く、気軽に購入できる",
+          "MOFTの利点：磁気カードの干渉による読み取りエラーを防ぎたい場合"
         ]
       }
     ],
     "recommendation": {
       "targetUsers": [
-        "シンプルなデザインを好む人",
-        "信頼できるブランドの製品を安価に手に入れたい人",
-        "カードを隠して持ち歩きたい人"
+        "スリムで邪魔にならないMagSafeウォレットを探している人",
+        "カード情報を外から見られないようにしたい人",
+        "手頃な価格でスマホスタンド機能を利用したい人"
       ],
       "pros": [
-        "コストパフォーマンスが良い",
-        "スリムで邪魔にならない",
-        "カードが見えないセキュリティ設計"
+        "スリムで持ちやすいデザイン",
+        "便利な三つ折りスタンド機能",
+        "カードが隠れるプライバシー保護設計",
+        "2000円台という手頃な価格"
       ],
       "cons": [
-        "カードの出し入れが少ししにくい可能性がある",
-        "多機能性（角度調整など）はMOFTに劣る"
+        "カード収納枚数が最大2枚に限られる",
+        "MagSafe非対応ケースでは使用できない"
       ],
       "score": 85,
-      "scoreRationale": "[基本点: 70]\n[加点: +10] (MOFTなどの競合と比較して安価でコストパフォーマンスが良い)\n[加点: +5] (Spigenブランドの信頼性とスリムなデザイン)\n[加点: +5] (スタンドの安定性とカード保護機能)\n[減点: -5] (カードの取り出しにくさが懸念される)\n[合計: 85]"
+      "scoreRationale": "[基本点: 70]\n[加点: +5] (スタンド機能とカード非表示設計による高い実用性)\n[加点: +10] (競合と比較して手に入れやすい価格設定)\n[合計: 85]"
     },
     "technicalSpecs": {
       "dimensions": {
         "height": "95.2mm",
         "width": "65.2mm",
-        "depth": "5.4mm",
-        "weight": "30g"
+        "depth": "5.4mm"
       },
-      "material": "PUレザー",
-      "compatibility": "iPhone 12以降のMagSafe対応機種",
-      "cardCapacity": "最大2枚",
-      "features": [
-        "3段折りスタンド",
-        "MagSafe吸着",
-        "カード収納"
-      ],
-      "colors": ["ブラック"]
+      "weight": "30g",
+      "capacity": "最大2枚",
+      "material": "PUファブリック",
+      "other": [
+        "三つ折りスタンド構造",
+        "MagSafe / PixelSnap対応"
+      ]
     }
   }
 }
