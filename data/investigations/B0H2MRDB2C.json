@@ -1,0 +1,184 @@
+{
+  "analysis": {
+    "productName": "DJI Osmo Pocket 4P スタンダードコンボ",
+    "parentAsin": "B0H2MRDB2C",
+    "productDescription": "デュアルレンズを搭載した4K対応の1インチCMOSセンサー搭載Vlogカメラ。",
+    "productUsage": [
+      "Vlog撮影",
+      "風景撮影",
+      "ポートレート撮影",
+      "日常の記録"
+    ],
+    "positivePoints": [
+      "広角と中望遠のデュアルカメラ搭載で多彩な撮影が可能",
+      "1インチCMOSセンサーと17ストップのダイナミックレンジで暗所にも強い",
+      "4K/240fpsのスローモーション撮影に対応",
+      "103GBの内蔵ストレージと高速データ転送"
+    ],
+    "negativePoints": [
+      "バッテリー充電器が別売り",
+      "高価格帯（99,000円）"
+    ],
+    "useCases": [
+      "旅行時の風景と自分を切り替えて撮影",
+      "暗い室内でのVlog撮影"
+    ],
+    "userStories": [],
+    "userImpression": "公式のスペック情報に基づくと、前モデルからデュアルレンズやストレージが強化され、プロフェッショナルなVlog撮影をより手軽に行えるように進化したモデルという印象を受けます。",
+    "sources": [
+      {
+        "id": "src-1",
+        "name": "Amazon商品ページ",
+        "url": "https://www.amazon.co.jp/dp/B0H2MRDB2C",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-06-29",
+        "author": "Amazon",
+        "conflictOfInterest": "none",
+        "notes": "製品の主な特徴（デュアルレンズ、1インチCMOS、内蔵ストレージ等）を確認"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "広角と中望遠のデュアルカメラを搭載している",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "crossChecked": false,
+        "notes": "Amazon商品ページの「デュアルカメラでシネマティックな映像を撮影」から確認"
+      },
+      {
+        "claim": "1インチCMOSセンサーを搭載",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "crossChecked": false,
+        "notes": "Amazon商品ページの「強化された1インチCMOSセンサー」から確認"
+      }
+    ],
+    "lastInvestigated": "2026-06-29",
+    "competitiveAnalysis": [
+      {
+        "name": "DJI Osmo Pocket 3",
+        "asin": "B0CG19QXWD",
+        "priceComparison": "Osmo Pocket 4Pの方が高価（新モデルかつデュアルレンズ等の追加機能があるため）。",
+        "featureComparison": [
+          "共通点：1インチCMOSセンサー搭載、ジンバルによる手ブレ補正",
+          "相違点：Osmo Pocket 4Pはデュアルレンズと103GB内蔵ストレージを搭載、Osmo Pocket 3はシングルレンズ"
+        ],
+        "differentiators": [
+          "DJI Osmo Pocket 4P スタンダードコンボの利点：デュアルレンズによる多彩な画角での撮影、103GBの内蔵大容量ストレージ",
+          "DJI Osmo Pocket 3の利点：価格が抑えられており、基本的な高画質Vlog用途には十分"
+        ]
+      },
+      {
+        "name": "Insta360 Luna Ultra",
+        "asin": "B0GXJRJ2MK",
+        "priceComparison": "Insta360 Luna Ultra（119,800円）と比較してやや安価。",
+        "featureComparison": [
+          "共通点：1インチセンサー、高性能ジンバルカメラ",
+          "相違点：Luna Ultraは8K対応・12倍ズーム・トリプルAIチップ搭載に対し、Osmo Pocket 4Pは4K対応・デュアルレンズ搭載"
+        ],
+        "differentiators": [
+          "DJI Osmo Pocket 4P スタンダードコンボの利点：デュアルレンズ構成による直感的な画角切り替えと実績のあるDJIのカラーサイエンス（D-Log 2）",
+          "Insta360 Luna Ultraの利点：8Kの超高解像度撮影とAIによる強力な編集機能"
+        ]
+      },
+      {
+        "name": "DJI Osmo Pocket 4 スタンダードコンボ",
+        "asin": "B0FKTBGNR8",
+        "priceComparison": "Osmo Pocket 4P（99,000円）はOsmo Pocket 4（79,200円）より高価。",
+        "featureComparison": [
+          "共通点：1インチCMOSセンサー、内蔵ストレージ（Pocket 4は107GB）",
+          "相違点：4Pはデュアルレンズと4K/240fpsスローモーションに対応。無印4は2倍ロスレスズーム"
+        ],
+        "differentiators": [
+          "DJI Osmo Pocket 4P スタンダードコンボの利点：デュアルレンズによる物理的な広角・中望遠の切り替えでより高品質な映像表現が可能",
+          "DJI Osmo Pocket 4 スタンダードコンボの利点：価格が抑えられており、シングルレンズでもロスレスズームにより十分な実用性を備える"
+        ]
+      },
+      {
+        "name": "AiMike アクションカメラ (ブラック)",
+        "asin": "B0H15291KM",
+        "priceComparison": "AiMikeアクションカメラ（15,980円）と比較して非常に高価。クラスが異なる。",
+        "featureComparison": [
+          "共通点：小型で持ち運びやすいVlog向けカメラ",
+          "相違点：Osmo Pocket 4Pはプロシューマー向けの本格的なジンバル・1インチセンサー搭載、AiMikeは低価格帯のエントリーアクションカメラ"
+        ],
+        "differentiators": [
+          "DJI Osmo Pocket 4P スタンダードコンボの利点：圧倒的な画質、1インチセンサーによる暗所性能、ハードウェアジンバルによる手ブレ補正",
+          "AiMike アクションカメラ (ブラック)の利点：非常に安価で気軽に導入できる"
+        ]
+      },
+      {
+        "name": "TANGMI Vlogカメラ",
+        "asin": "B0G51QKDHV",
+        "priceComparison": "TANGMI Vlogカメラ（19,500円）と比較して非常に高価。クラスが異なる。",
+        "featureComparison": [
+          "共通点：小型のVlog向けカメラ",
+          "相違点：Osmo Pocket 4Pは本格的なメカニカル3軸ジンバルを搭載、TANGMIは電子式手ブレ補正"
+        ],
+        "differentiators": [
+          "DJI Osmo Pocket 4P スタンダードコンボの利点：メカニカルジンバルによる完璧な手ブレ補正と、デュアルレンズによる高い表現力",
+          "TANGMI Vlogカメラの利点：安価で軽量・コンパクト、初心者でも扱いやすい"
+        ]
+      },
+      {
+        "name": "ZAIDER アクションカメラ 5K",
+        "asin": "B0GDXFJ8QD",
+        "priceComparison": "ZAIDERアクションカメラ（9,612円）と比較して非常に高価。完全にターゲット層が異なる。",
+        "featureComparison": [
+          "共通点：小型カメラ、Vlog撮影用途",
+          "相違点：Osmo Pocket 4Pは1インチセンサーとジンバル搭載のハイエンド機、ZAIDERは低価格なウェアラブルアクションカム"
+        ],
+        "differentiators": [
+          "DJI Osmo Pocket 4P スタンダードコンボの利点：映画のような高画質映像を撮影できる圧倒的な基本性能",
+          "ZAIDER アクションカメラ 5Kの利点：低予算で購入でき、ドライブレコーダーやボディカメラとして雑に扱える"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "より高品質なVlogを制作したいクリエイター",
+        "スマートフォン以上の画質とボケ感を求めるユーザー",
+        "旅行先での思い出を高画質で残したい人"
+      ],
+      "pros": [
+        "デュアルレンズによる多彩な表現",
+        "1インチセンサーとジンバルによる高画質・ブレのない映像",
+        "103GB内蔵ストレージ"
+      ],
+      "cons": [
+        "10万円近い高価格設定",
+        "充電器が別売り"
+      ],
+      "score": 85,
+      "scoreRationale": "[基本点: 70]\n[加点: +10] (1インチCMOSとデュアルレンズによる優れた映像品質と表現力)\n[加点: +5] (103GBの内蔵大容量ストレージによる利便性)\n[加点: +5] (4K/240fpsスローモーションやD-Log 2などのプロ向け機能)\n[減点: -5] (約10万円という高価格でエントリー層には手が出しにくい)\n[合計: 85]"
+    },
+    "technicalSpecs": {
+      "dimensions": {
+        "height": "600mm",
+        "width": "300mm",
+        "depth": "1400mm"
+      },
+      "weight": "不明",
+      "capacity": "103GB (内蔵ストレージ)",
+      "material": "不明",
+      "origin": "不明",
+      "other": [
+        "デュアルカメラ（広角カメラ、中望遠カメラ）",
+        "1型CMOSセンサー搭載",
+        "17ストップ ダイナミックレンジ",
+        "10ビットD-Log 2カラープロファイル",
+        "動画解像度・フレームレート: 4K/240fps (広角), 4K/200fps (中望遠)",
+        "3軸手ブレ補正",
+        "アクティブトラック搭載",
+        "データ転送速度: 800 MB/s"
+      ]
+    }
+  }
+}
