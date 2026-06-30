@@ -1,0 +1,119 @@
+{
+  "analysis": {
+    "productName": "アニサポ ハーレスト ブラック Sサイズ",
+    "parentAsin": "B08KYN6Q5P",
+    "productDescription": "ダイヤ工業のペットブランド「anifull」が手掛ける、日本製の犬用ハーネス。本体重量33gと軽量な設計が特徴です。",
+    "productUsage": [
+      "散歩時の犬の負担軽減",
+      "日常の犬用胴輪としての利用"
+    ],
+    "positivePoints": [
+      "本体重量33gと非常に軽量であり、犬の動きを妨げにくい",
+      "日本国内で製造された品質の高さ"
+    ],
+    "negativePoints": [
+      "競合の類似製品と比較して価格設定が高めである"
+    ],
+    "useCases": [
+      "小型犬の毎日の散歩",
+      "首への負担を減らしたい場合のハーネス利用"
+    ],
+    "userStories": [],
+    "userImpression": "軽量で犬への負担が少ない点が評価されているが、価格面でハードルを感じる可能性がある。",
+    "sources": [
+      {
+        "id": "src-1",
+        "name": "Amazon商品ページ",
+        "url": "https://www.amazon.co.jp/dp/B08KYN6Q5P",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-06-30",
+        "author": "Amazon",
+        "conflictOfInterest": "none",
+        "notes": "商品の基本情報、価格、仕様の確認"
+      }
+    ],
+    "claims": [],
+    "lastInvestigated": "2026-06-30",
+    "competitiveAnalysis": [
+      {
+        "name": "BowNya Cauda 気管虚脱 アクティブハーネス Mサイズ",
+        "asin": "B0DJ7RN4Q3",
+        "priceComparison": "対象商品より大幅に安いが、中国製（日本企画）である。",
+        "featureComparison": [
+          "共通点：犬用のハーネスである点",
+          "相違点：対象商品が日本製で33gであるのに対し、こちらは中国製である。"
+        ],
+        "differentiators": [
+          "アニサポ ハーレスト ブラック Sサイズの利点：日本製による品質への信頼感と33gという軽量さ",
+          "BowNya Cauda 気管虚脱 アクティブハーネス Mサイズの利点：価格が抑えられており、5カ所の調整域がある点"
+        ]
+      },
+      {
+        "name": "CROWN KONI 犬用ハーネス",
+        "asin": "B09SZ2DQJM",
+        "priceComparison": "対象商品より安いが、厚みのあるクッション材を使用している。",
+        "featureComparison": [
+          "共通点：首への負担軽減を目的とした設計",
+          "相違点：対象商品が非常に軽量であるのに対し、こちらは厚みのあるクッション材を採用している。"
+        ],
+        "differentiators": [
+          "アニサポ ハーレスト ブラック Sサイズの利点：軽さを重視したシンプルな設計",
+          "CROWN KONI 犬用ハーネスの利点：クッション性が高く、衝撃吸収に優れている点"
+        ]
+      },
+      {
+        "name": "KAMAKURA DOG メガネ型ハーネス",
+        "asin": "B0F28GS8QH",
+        "priceComparison": "対象商品より安い。",
+        "featureComparison": [
+          "共通点：小型犬向けのハーネスである点",
+          "相違点：対象商品が機能性重視であるのに対し、こちらは人工皮革やスウェード調でファッション性を重視している。"
+        ],
+        "differentiators": [
+          "アニサポ ハーレスト ブラック Sサイズの利点：機能性と軽さに特化している点",
+          "KAMAKURA DOG メガネ型ハーネスの利点：洋服とコーディネートしやすいデザイン性"
+        ]
+      },
+      {
+        "name": "Miru pochi 犬 ハーネス XXS",
+        "asin": "B09K39ZFLC",
+        "priceComparison": "対象商品より大幅に安い。",
+        "featureComparison": [
+          "共通点：軽量を謳う犬用ハーネスである点",
+          "相違点：対象商品が33gであるのに対し、こちらは約50gである。またこちらは光反射材を装備している。"
+        ],
+        "differentiators": [
+          "アニサポ ハーレスト ブラック Sサイズの利点：より軽量（33g）で負担が少ない点",
+          "Miru pochi 犬 ハーネス XXSの利点：光反射材が付いており夜間の安全性に配慮されている点、および安価である点"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "愛犬の負担を極力減らしたい飼い主",
+        "日本製のペット用品を好むユーザー"
+      ],
+      "pros": [
+        "33gという非常に軽量な設計",
+        "安心の日本製"
+      ],
+      "cons": [
+        "他社製品に比べて価格が高い"
+      ],
+      "score": 75,
+      "scoreRationale": "[基本点: 70]\n[加点: +5] (33gという軽量設計による機能性・実用性の高さ)\n[加点: +5] (日本製であることによる品質の高さ)\n[減点: -5] (競合製品と比較して価格が高く、コストパフォーマンスで劣る)\n[合計: 75]"
+    },
+    "technicalSpecs": {
+      "dimensions": {
+        "height": "130mm",
+        "width": "500mm",
+        "depth": "10mm"
+      },
+      "weight": "33g",
+      "origin": "日本",
+      "color": "ブラック",
+      "size": "S"
+    }
+  }
+}
