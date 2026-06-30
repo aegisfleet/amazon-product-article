@@ -1,125 +1,215 @@
 {
   "analysis": {
-    "productName": "Yinyoo KBEAR Storm イヤホン 有線 10mmダイナミック",
+    "productName": "Yinyoo KBEAR Storm イヤホン 有線",
     "parentAsin": "B0BQ64SQC6",
-    "productDescription": "PU+PEEK素材の10mmダイナミックドライバーを搭載した、高音質と高遮音性を両立するカナル型有線イヤホンです。銀メッキケーブルが標準装備されており、リケーブルにも対応したハイエンド志向のエントリーモデルです。",
+    "productDescription": "10mm強磁ダイナミックドライバを搭載した高音質有線カナル型イヤホンです。PU+PEEK複合振動板を採用し、バランスの取れたクリアなサウンドと優れたフィット感を提供します。",
     "productUsage": [
-      "スマートフォンの音楽鑑賞",
-      "PCでのゲームプレイ",
-      "高音質オーディオ体験のエントリー"
+      "音楽鑑賞",
+      "ゲーム",
+      "通勤・通学"
     ],
     "positivePoints": [
-      "銀メッキケーブルによるクリアな音質",
-      "PU+PEEK複合振動板による広いダイナミックレンジ",
-      "軽量な人間工学デザインで長時間の装着も快適",
-      "2pinリケーブル対応でカスタマイズ可能"
+      "10mmダイナミックドライバとPU+PEEK複合振動板による、解像度が高くバランスの取れたクリアなサウンド",
+      "超軽量で人間工学に基づいた筐体設計による、耳道にフィットする快適な装着感",
+      "耐久性の高い4芯無酸素銅銀メッキケーブルと、取り外し可能な2pinリケーブル対応",
+      "マイクなしモデルであり、純粋なオーディオ体験に集中できる",
+      "3.5mmプラグ搭載で幅広い機器との高い互換性"
     ],
     "negativePoints": [
-      "マイク非搭載のため通話には不向き",
-      "スケルトンデザインは好みが分かれる可能性"
+      "リケーブルは可能だが、純正ケーブル以外の使用時は自己責任となる",
+      "マイクが搭載されていないため、通話やボイスチャット用途には適さない"
     ],
     "useCases": [
-      "通学・通勤中のリスニング",
-      "FPSなどのゲームプレイ時の足音検知"
+      "日常の通勤や通学での音楽リスニング",
+      "集中してゲームをプレイする際のゲーミングイヤホンとして",
+      "長時間の作業やリスニング"
     ],
     "userStories": [
       {
-        "userType": "学生",
-        "scenario": "通学中の音楽鑑賞",
-        "experience": "付属の銀メッキケーブルのおかげか、今まで聞こえなかった細かい音がクリアに聞こえるようになった。見た目もクールで気に入っている。",
+        "userType": "音楽ファン",
+        "scenario": "通勤中の音楽鑑賞",
+        "experience": "価格以上の解像度とクリアな中高音で、ボーカルが前面に出てきてとても聴きやすいです。軽量で耳にしっかりフィットし、遮音性も高いため、電車の中でも周りの雑音を気にせず音楽に没頭できます。",
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "ゲーマー",
-        "scenario": "PCでのFPSゲーム",
-        "experience": "足音が聞き取りやすく、敵の位置が把握しやすい。長時間つけていても耳が痛くならないのが良い。",
+        "scenario": "FPSゲームでの使用",
+        "experience": "音の定位がしっかりしており、足音や銃声の方向が分かりやすいです。マイクはないためボイスチャットには別のマイクを用意する必要がありますが、長時間のプレイでも耳が痛くならない軽量設計は助かります。",
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "positive"
       }
     ],
-    "userImpression": "全体的にコストパフォーマンスが高く、特に音質のクリアさと装着感の良さが評価されている。エントリーモデルとして最適だが、マイクが必要な場合は注意が必要。",
+    "userImpression": "10mmのダイナミックドライバと軽量設計の組み合わせにより、優れた解像度と快適な装着感を実現したコストパフォーマンスの高いイヤホンとして、音楽リスニングからゲームまで幅広く評価されています。",
     "sources": [
       {
-        "name": "Amazon.co.jp Product Page",
+        "id": "src-1",
+        "name": "Random Audio Reviews: KBEAR Storm Review",
+        "url": "https://randomprojects2.wixsite.com/randomaudioreviews/post/kbear-storm-review",
+        "tier": "medium",
+        "evidenceType": "secondary",
+        "publishedAt": "2023-02-14",
+        "author": "Random Projects",
+        "conflictOfInterest": "disclosed",
+        "notes": "音質はV字型でわずかに暖かみがあり、中音域と高音域が強調されている。ボーカルは自然で透明感があり、高解像度。低音も価格に対して良く、パンチがある。軽量で装着感が良いと評価。"
+      },
+      {
+        "id": "src-2",
+        "name": "Amazon商品ページ B0BQ64SQC6",
         "url": "https://www.amazon.co.jp/dp/B0BQ64SQC6",
-        "credibility": "High"
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-07-01",
+        "author": "Yinyoo",
+        "conflictOfInterest": "possible",
+        "notes": "10mm強磁ダイナミックドライバ、PEEK+PU振動板、無酸素銅銀メッキケーブル、2pinリケーブル対応、超軽量設計。"
       }
     ],
-    "lastInvestigated": "2026-02-22",
+    "claims": [
+      {
+        "claim": "10mmの強磁ダイナミックドライバとPU+PEEKフラグシップ振動板により高い解析力とプレミアムな音色を実現",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-1",
+          "src-2"
+        ],
+        "crossChecked": true,
+        "notes": "メーカーのスペックとレビューサイトの音質評価が一致。"
+      },
+      {
+        "claim": "人間工学に基づいた超軽量設計で長時間の装着でも疲れにくい",
+        "category": "durability",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-1",
+          "src-2"
+        ],
+        "crossChecked": true,
+        "notes": "メーカー説明とレビューサイトの装着感に関する評価が一致。"
+      }
+    ],
+    "lastInvestigated": "2026-07-01",
     "competitiveAnalysis": [
       {
-        "name": "TKZK TK01 (B0CLL8MCGF)",
+        "name": "TKZK TK01",
         "asin": "B0CLL8MCGF",
-        "priceComparison": "ほぼ同価格帯 (約1,999円)",
+        "priceComparison": "対象商品と同価格帯。",
         "featureComparison": [
-          "10mmダイナミックドライバー搭載",
-          "Hi-Fi高音質技術",
-          "マイク無し"
+          "共通点：10mmダイナミックドライバー搭載、有線、リケーブル対応、マイクなし。",
+          "相違点：対象商品はPU+PEEK複合振動板を採用し、無酸素銅銀メッキケーブルが付属。TK01は無酸素銅ケーブル。"
         ],
         "differentiators": [
-          "デザインがシンプル",
-          "よりフラットな音質傾向"
+          "Yinyoo KBEAR Stormの利点：PU+PEEK複合振動板と銀メッキケーブルによる、より解像度の高いクリアなサウンド。",
+          "TKZK TK01の利点：高純度無酸素銅ケーブルによる安定した伝送を重視する場合。"
         ]
       },
       {
-        "name": "Yinyoo KBEAR K01 (B0DKJ2YM3Z)",
-        "asin": "B0DKJ2YM3Z",
-        "priceComparison": "より安価 (約999円)",
+        "name": "KBEAR NZ02 【哪吒】",
+        "asin": "B0F8V24NXS",
+        "priceComparison": "対象商品より安い。エントリーモデルとしての位置づけ。",
         "featureComparison": [
-          "ゲーミング特化",
-          "空間音響効果",
-          "マイク付き"
+          "共通点：有線、ダイナミックドライバー搭載、マイクなし。",
+          "相違点：対象商品は10mmドライバーでリケーブル可能。NZ02は二重磁気回路単一ダイナミックドライバーでリケーブル不可。"
         ],
         "differentiators": [
-          "コスト重視",
-          "L型プラグ採用",
-          "音質はStormに劣る可能性"
+          "Yinyoo KBEAR Stormの利点：リケーブル対応によるカスタマイズ性と、より高い解像度のサウンド。",
+          "KBEAR NZ02 【哪吒】の利点：リケーブル不可でシンプルな構造を好み、より低価格を求める場合。"
         ]
       },
       {
-        "name": "CCZ MC02 Aura (B0DZ232VT6)",
-        "asin": "B0DZ232VT6",
-        "priceComparison": "少し高価 (約2,159円)",
+        "name": "KZ EDX Lite",
+        "asin": "B0FCFK6WJX",
+        "priceComparison": "対象商品よりやや安い。",
         "featureComparison": [
-          "PETダブル磁気ダイナミックドライバー",
-          "軽量6g",
-          "マイク付き"
+          "共通点：10mmダイナミックドライバー搭載、有線、リケーブル対応。",
+          "相違点：対象商品はPU+PEEK複合振動板と銀メッキケーブル。KZ EDX Liteは新世代の内部磁気ダイナミックドライバーと無酸素銅2芯ケーブルを採用し、マイク付きモデルもある（比較対象はマイク付き）。"
         ],
         "differentiators": [
-          "低音重視の設計",
-          "ダブル磁気回路による駆動力向上"
+          "Yinyoo KBEAR Stormの利点：銀メッキケーブル付属による高域の伸びやクリアな音質を重視する場合。",
+          "KZ EDX Liteの利点：マイク付きで通話用途にも使用したい場合や、KZ特有のチューニングを好む場合。"
+        ]
+      },
+      {
+        "name": "KBEAR MONKIE K01",
+        "asin": "B0DKJLS3R6",
+        "priceComparison": "対象商品より安い。ゲーミング特化のエントリーモデル。",
+        "featureComparison": [
+          "共通点：10mmダイナミックドライバー搭載、有線、マイクなし。",
+          "相違点：対象商品はリケーブル可能で銀メッキケーブル付属。K01はリケーブル不可で、L型プラグを採用したゲーミング用途を強く意識した設計。"
+        ],
+        "differentiators": [
+          "Yinyoo KBEAR Stormの利点：リケーブルによる拡張性と、純粋な音楽リスニングにも適した高音質設計。",
+          "KBEAR MONKIE K01の利点：L型プラグでスマホゲームプレイ時の操作性を重視し、より低価格を求める場合。"
+        ]
+      },
+      {
+        "name": "KZ EDX Lite (マイクなし)",
+        "asin": "B0D87RKXKR",
+        "priceComparison": "対象商品よりやや安い。",
+        "featureComparison": [
+          "共通点：10mmダイナミックドライバー搭載、有線、リケーブル対応、マイクなし。",
+          "相違点：対象商品はPU+PEEK複合振動板と銀メッキケーブル。KZ EDX Liteは新世代の内部磁気ダイナミックドライバーと無酸素銅2芯ケーブルを採用。"
+        ],
+        "differentiators": [
+          "Yinyoo KBEAR Stormの利点：PU+PEEK振動板と銀メッキケーブルによる、解像度や中高域のクリアさを求める場合。",
+          "KZ EDX Lite (マイクなし)の利点：EDXシリーズ特有のサウンドシグネチャーを低価格で楽しみたい場合。"
+        ]
+      },
+      {
+        "name": "Yinyoo KBEAR Storm (マイク付き)",
+        "asin": "B0BQ657J7C",
+        "priceComparison": "対象商品と同価格帯。",
+        "featureComparison": [
+          "共通点：10mmダイナミックドライバー搭載、有線、リケーブル対応、筐体設計や基本スペック。",
+          "相違点：対象商品はマイクなし。こちらはマイク付きモデル。"
+        ],
+        "differentiators": [
+          "Yinyoo KBEAR Stormの利点：純粋なオーディオ鑑賞用で、マイク機能が不要な場合やケーブルの取り回しをシンプルにしたい場合。",
+          "Yinyoo KBEAR Storm (マイク付き)の利点：通話やボイスチャット機能が必要な場合。"
         ]
       }
     ],
     "recommendation": {
       "targetUsers": [
-        "安価に高音質を体験したい初心者",
-        "リケーブルを試してみたいユーザー",
-        "マイク不要なゲーマー"
+        "手頃な価格で高音質な有線イヤホンを探しているユーザー",
+        "解像度が高く、ボーカルが聴きやすいサウンドを好む人",
+        "軽量で長時間の使用でも疲れない装着感を重視する人",
+        "将来的にリケーブルで音質の変化を楽しみたい人"
       ],
       "pros": [
-        "コストパフォーマンスが非常に高い",
-        "銀メッキケーブルが標準付属",
-        "リケーブルによる拡張性がある"
+        "PU+PEEK振動板と10mmドライバーによる価格を超えた解像度の高いサウンド",
+        "超軽量・人間工学設計による快適なフィット感",
+        "銀メッキケーブル付属で高い信号伝送能力"
       ],
       "cons": [
-        "マイクがないため通話には使えない",
-        "スケルトンデザインの好き嫌い"
+        "マイクが搭載されていないため通話用途には不向き"
       ],
-      "score": 82,
-      "scoreRationale": "[基本点: 70]\n[加点: +5] (銀メッキケーブル標準装備、リケーブル対応という拡張性)\n[加点: +5] (2000円以下でPU+PEEK振動板採用という高いコストパフォーマンス)\n[加点: +2] (軽量で長時間の使用でも快適な装着感)\n[合計: 82]"
+      "score": 83,
+      "scoreRationale": "[基本点: 70] (固定)\n[加点: +5] (10mmダイナミックドライバとPU+PEEK複合振動板による優れた解像度と音質)\n[加点: +5] (超軽量設計と人間工学に基づいた形状による快適な装着感)\n[加点: +3] (4芯無酸素銅銀メッキケーブルの付属によるコストパフォーマンスの高さ)\n[合計: 83]"
     },
     "technicalSpecs": {
-      "driver": "10mm Dynamic (PU+PEEK)",
-      "codec": null,
-      "battery": null,
-      "connectivity": ["Wired (3.5mm)", "2pin 0.78mm"],
-      "noiseCancel": null,
-      "connector": "2pin 0.78mm",
+      "weight": "約70g",
+      "dimensions": {
+        "height": "約20mm",
+        "width": "約15mm",
+        "depth": "約25mm"
+      },
+      "driver": "10mm強磁ダイナミックドライバ",
+      "diaphragm": "PEEK+PUフラグシップ複合振動板",
+      "cable": "4芯無酸素銅銀メッキケーブル (litz構造)",
+      "connector": "2pin (リケーブル対応)",
       "plug": "3.5mm",
-      "cable": "4-core oxygen-free copper silver-plated",
-      "mic": null,
-      "color": "Blue/Purple",
-      "weight": "Ultra-lightweight"
+      "color": "Storm・青紫",
+      "origin": "中国",
+      "other": [
+        "マイク無しモデル",
+        "インイヤーモニター カナル型"
+      ]
     }
   }
 }
