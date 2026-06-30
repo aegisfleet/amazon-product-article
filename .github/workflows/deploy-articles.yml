@@ -67,8 +67,12 @@ jobs:
     - name: Commit build artifacts
       if: always()
       run: |
-        chmod +x .github/workflows/scripts/git-commit-push.sh
-        ./.github/workflows/scripts/git-commit-push.sh "ビルド成果物の更新 [skip ci]" "data/cache/paapi-product-cache.json"
+        if node -e "const fs = require('fs'); JSON.parse(fs.readFileSync('data/cache/paapi-product-cache.json', 'utf8'));" 2>/dev/null; then
+          chmod +x .github/workflows/scripts/git-commit-push.sh
+          ./.github/workflows/scripts/git-commit-push.sh "ビルド成果物の更新 [skip ci]" "data/cache/paapi-product-cache.json"
+        else
+          echo "Warning: Cache file is invalid or broken. Skipping commit."
+        fi
 
     - name: Build site with Hugo
       run: hugo --minify

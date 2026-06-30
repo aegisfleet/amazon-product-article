@@ -116,8 +116,11 @@ export class CreatorsAPICache {
   public async save(): Promise<void> {
     try {
       await this.ensureDirectoryAsync();
-      // Use fs.promises.writeFile to avoid blocking the event loop
-      await fs.promises.writeFile(this.cachePath, JSON.stringify(this.cache, null, 2), 'utf-8');
+      const tmpPath = `${this.cachePath}.tmp`;
+      // Use fs.promises.writeFile to write to a temporary file first
+      await fs.promises.writeFile(tmpPath, JSON.stringify(this.cache, null, 2), 'utf-8');
+      // Rename atomically to replace the actual cache file
+      await fs.promises.rename(tmpPath, this.cachePath);
       this.logger.info('Creators API Cache saved to disk');
     } catch (error) {
       this.logger.error('Failed to save Creators API Cache:', error);
