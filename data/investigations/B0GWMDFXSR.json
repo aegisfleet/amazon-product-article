@@ -1,0 +1,177 @@
+{
+  "analysis": {
+    "productName": "BlazeChip スマートウォッチ (ピンク)",
+    "parentAsin": "B0H49LWW4S",
+    "productDescription": "Bluetooth通話や活動量計、100種類の運動モードを搭載した約47mm大画面スマートウォッチ。",
+    "productUsage": [
+      "毎日の歩数、睡眠などの活動ログの記録",
+      "スマホを取り出さずに電話の応答やLINE通知の確認"
+    ],
+    "positivePoints": [
+      "2,999円という低価格ながらBluetooth通話機能に対応している",
+      "約47mmの大画面で見やすく、直感的なタッチ操作が可能",
+      "IP68防水に対応し、汗や雨に強い",
+      "VeryFitアプリが日本語に完全対応しており、1年保証が付属する"
+    ],
+    "negativePoints": [
+      "入浴やサウナなど高温・多湿環境での使用は推奨されていない",
+      "GPSなどの高度なセンサーは非搭載（スマホのGPSに依存する可能性あり）"
+    ],
+    "useCases": [
+      "運転中や家事中にハンズフリーで通話したい時",
+      "ウォーキングやランニングの軽い運動データを記録したい時"
+    ],
+    "userStories": [],
+    "userImpression": "低価格で充実した機能を備えており、初めてのスマートウォッチとして手軽に導入しやすい。VeryFitアプリは使い勝手が良く日本語対応な点も安心感がある。",
+    "sources": [
+      {
+        "id": "src-amazon",
+        "name": "Amazon 商品ページ",
+        "url": "https://www.amazon.co.jp/dp/B0GWMDFXSR",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-06-30",
+        "author": "BlazeChip",
+        "conflictOfInterest": "disclosed",
+        "notes": "製品仕様、機能詳細、保証に関する情報を取得。"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "Bluetooth 5.3に対応し、ウォッチ本体での通話やLINE通知の確認が可能",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": ["src-amazon"],
+        "crossChecked": false,
+        "notes": "商品仕様からの事実に基づく"
+      },
+      {
+        "claim": "IP68防水に対応するが、入浴・サウナ等には非対応",
+        "category": "durability",
+        "confidence": "high",
+        "supportingSourceIds": ["src-amazon"],
+        "crossChecked": false,
+        "notes": "メーカーによる注意書きとして明記"
+      }
+    ],
+    "lastInvestigated": "2026-06-30",
+    "competitiveAnalysis": [
+      {
+        "name": "fixwink スマートウォッチ TGW01",
+        "asin": "B0GQGMV6H1",
+        "priceComparison": "対象商品よりもわずかに安価な設定",
+        "featureComparison": [
+          "共通点：約47mm大画面、Bluetooth通話機能付き、100種類運動モード",
+          "相違点：対象商品は専用アプリVeryFitに対応し1年保証が明記されている"
+        ],
+        "differentiators": [
+          "BlazeChip スマートウォッチの利点：VeryFitアプリによる安定した日本語対応と1年間の公式保証",
+          "fixwink スマートウォッチ TGW01の利点：初期投資を数百円でも安く抑えたい場合"
+        ]
+      },
+      {
+        "name": "RUIMEN スマートウォッチ",
+        "asin": "B0H3KWY5N4",
+        "priceComparison": "対象商品よりやや安い価格設定",
+        "featureComparison": [
+          "共通点：約47mm大画面、通話機能、IP68防水機能",
+          "相違点：対象商品はピンクカラー展開で女性やプレゼント向けに訴求している一方、競合は懐中電灯機能をアピール"
+        ],
+        "differentiators": [
+          "BlazeChip スマートウォッチの利点：女性向けのデザインとカラー（ピンク）を求める場合",
+          "RUIMEN スマートウォッチの利点：懐中電灯など実用的な追加機能を求める場合"
+        ]
+      },
+      {
+        "name": "JOEME スマートウォッチ (B0GH72XWJP)",
+        "asin": "B0GH72XWJP",
+        "priceComparison": "対象商品より高価だが、その分日本製センサーを搭載し高機能をうたう",
+        "featureComparison": [
+          "共通点：約47mm大画面、通話機能、ピンク色、メッセージ通知機能",
+          "相違点：競合は日本製センサーを搭載し、DIY文字盤やカメラ制御などの多機能性を強調している"
+        ],
+        "differentiators": [
+          "BlazeChip スマートウォッチの利点：約3000円という低価格で十分な基本機能を利用できるコストパフォーマンスの高さ",
+          "JOEME スマートウォッチの利点：より精度が高い（と主張する）日本製センサーを求める場合"
+        ]
+      },
+      {
+        "name": "JOEME スマートウォッチ (B0GHVF46R8)",
+        "asin": "B0GHVF46R8",
+        "priceComparison": "対象商品より高価（2色バンド付き）",
+        "featureComparison": [
+          "共通点：約47mm画面、通話機能、健康管理機能",
+          "相違点：競合はパープルとピンクの2色のバンドが最初から付属している"
+        ],
+        "differentiators": [
+          "BlazeChip スマートウォッチの利点：単色で価格が安く、初期コストが低い",
+          "JOEME スマートウォッチの利点：最初から着せ替え用のバンドが欲しい場合"
+        ]
+      },
+      {
+        "name": "BabyHelper スマートウォッチ",
+        "asin": "B0GYF529DH",
+        "priceComparison": "対象商品の2倍以上の価格",
+        "featureComparison": [
+          "共通点：約47mm画面、通話機能付き",
+          "相違点：競合は価格が高く、独自の付加価値は不明瞭（機能面での大きな差が見られない）"
+        ],
+        "differentiators": [
+          "BlazeChip スマートウォッチの利点：圧倒的な価格の安さとコストパフォーマンス",
+          "BabyHelper スマートウォッチの利点：具体的なメリットは不明確（詳細な仕様による可能性がある）"
+        ]
+      },
+      {
+        "name": "JOEME スマートウォッチ (B0H2LHFFBR)",
+        "asin": "B0H2LHFFBR",
+        "priceComparison": "対象商品より高価",
+        "featureComparison": [
+          "共通点：通話機能、ピンク色のベルト",
+          "相違点：競合はTPUバンドとギフトが付属している"
+        ],
+        "differentiators": [
+          "BlazeChip スマートウォッチの利点：安価に基本機能が揃う",
+          "JOEME スマートウォッチの利点：ギフトパッケージや特典を重視する場合"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "初めてスマートウォッチを購入する人",
+        "低予算で通話機能やLINE通知を確認したい人",
+        "ピンク色のデザインを好む女性"
+      ],
+      "pros": [
+        "通話機能や通知など必須機能が揃っている",
+        "3,000円以下と非常に安価",
+        "VeryFitアプリの日本語対応と1年保証"
+      ],
+      "cons": [
+        "入浴時などには使えない（IP68でも水蒸気等に弱い）",
+        "詳細なセンサー精度は上位機種に劣る可能性がある"
+      ],
+      "score": 80,
+      "scoreRationale": "[基本点: 70]\n[加点: +10] (3,000円以下で通話・通知・活動量計に対応する優れたコストパフォーマンス)\n[加点: +5] (日本語対応アプリ「VeryFit」と1年保証による安心感)\n[減点: -5] (入浴やサウナ等の高温多湿環境での防水非対応など耐久性の制限)\n[合計: 80]"
+    },
+    "technicalSpecs": {
+      "dimensions": {
+        "height": "不明",
+        "width": "不明",
+        "depth": "不明"
+      },
+      "weight": "不明（薄型軽量）",
+      "capacity": "-",
+      "material": "不明",
+      "origin": "不明",
+      "other": [
+        "画面サイズ: 47mm",
+        "Bluetoothバージョン: 5.3",
+        "対応OS: iOS 12.0以上 / Android 6.0以上",
+        "防水規格: IP68",
+        "専用アプリ: VeryFit",
+        "運動モード数: 100種類",
+        "文字盤種類: 250種類以上"
+      ]
+    }
+  }
+}
