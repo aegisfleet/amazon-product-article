@@ -1,0 +1,179 @@
+{
+  "analysis": {
+    "productName": "PUPTECK 犬用ハーネス",
+    "parentAsin": "B0F1FTJ97T",
+    "productDescription": "愛犬の体に負担をかけにくい設計と、可愛い迷子札が特徴の犬用ハーネス。着脱が簡単で耐久性に優れ、散歩や訓練など幅広いシーンで活躍します。",
+    "productUsage": [
+      "毎日の散歩",
+      "アウトドア活動",
+      "しつけ・訓練"
+    ],
+    "positivePoints": [
+      "引っ張り防止設計で首への負担を軽減",
+      "ステップインタイプで着脱が簡単",
+      "金属製の可愛いIDタグ（迷子札）が付属",
+      "耐久性と快適性を兼ね備えたポリエステル素材を使用"
+    ],
+    "negativePoints": [
+      "噛みつき防止仕様ではないため、一人にする際は外す必要がある"
+    ],
+    "useCases": [
+      "忙しい朝の散歩",
+      "夜間の外出（夜間反射材付き）",
+      "引っ張り癖のある犬の散歩"
+    ],
+    "userStories": [],
+    "userImpression": "着脱が簡単なステップインタイプと、体への負担を軽減する設計が評価されています。特に迷子札が付属している点や、夜間反射材など安全面に配慮されている点が魅力です。ポリエステル素材で耐久性がありながらも快適に過ごせるため、日常使いに適しています。",
+    "sources": [
+      {
+        "id": "src-1",
+        "name": "Amazon商品ページ",
+        "url": "https://www.amazon.co.jp/dp/B0F1FVH7ZH",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-07-01",
+        "author": "PUPTECK",
+        "conflictOfInterest": "possible",
+        "notes": "商品の特徴、仕様、価格を確認"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "引っ張り防止設計で力が首ではなく胸全体に分散される",
+        "category": "safety",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "crossChecked": false,
+        "notes": "公式情報より"
+      },
+      {
+        "claim": "ステップインタイプで着脱が簡単",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "crossChecked": false,
+        "notes": "公式情報より"
+      }
+    ],
+    "lastInvestigated": "2026-07-01",
+    "competitiveAnalysis": [
+      {
+        "name": "Rabbitgoo 犬ハーネス",
+        "asin": "B0DX6N2DL8",
+        "priceComparison": "Rabbitgooの方がやや高価ですが、ソフトマジックテープや反射素材など機能性が豊富です。PUPTECKは手頃な価格で迷子札が付いている点で優れています。",
+        "featureComparison": [
+          "共通点：引っ張り防止、抜けにくい設計、反射材付き、着脱が簡単",
+          "相違点：Rabbitgooはマジックテープ付きでよりソフトな素材を使用。PUPTECKは迷子札（IDタグ）が付属する。"
+        ],
+        "differentiators": [
+          "PUPTECK 犬用ハーネスの利点：可愛い迷子札が付属し、万が一の際にも安心。価格も手頃。",
+          "Rabbitgoo 犬ハーネスの利点：より柔らかい素材やマジックテープを採用しており、快適性を重視するケースに適している。"
+        ]
+      },
+      {
+        "name": "PUKAKO 犬 ハーネス",
+        "asin": "B0CZLQPQ8V",
+        "priceComparison": "価格帯は同程度です。PUKAKOはメッシュ素材を採用しており、通気性に優れています。PUPTECKはポリエステル素材で耐久性を重視しています。",
+        "featureComparison": [
+          "共通点：引っ張り防止、反射材付き、着脱が簡単",
+          "相違点：PUKAKOはメッシュ素材を使用し服のようなデザイン。PUPTECKはシンプルなストラップ型で迷子札が付く。"
+        ],
+        "differentiators": [
+          "PUPTECK 犬用ハーネスの利点：迷子札が付属し、よりシンプルなデザインで耐久性に優れる。",
+          "PUKAKO 犬 ハーネスの利点：メッシュ素材で通気性が良く、服のようなデザインを好む場合に適している。"
+        ]
+      },
+      {
+        "name": "Liberte harness 犬 ハーネス",
+        "asin": "B0B2JPQGTS",
+        "priceComparison": "Liberte harnessの方が高価です。ドッグトレーナー推薦という点で信頼性が高く、ネームプレートも付きますが、PUPTECKはより手頃な価格で同等の安全機能を提供します。",
+        "featureComparison": [
+          "共通点：喉に優しい設計、ネームプレート（迷子札）付き",
+          "相違点：Liberteはドッグトレーナー推薦で価格が高い。PUPTECKはより低価格で基本的な機能を網羅。"
+        ],
+        "differentiators": [
+          "PUPTECK 犬用ハーネスの利点：価格が抑えられており、コストパフォーマンスに優れる。",
+          "Liberte harness 犬 ハーネスの利点：ドッグトレーナー推薦の信頼性と、より洗練されたデザインを求める場合に適している。"
+        ]
+      },
+      {
+        "name": "PetGround 犬 ハーネス",
+        "asin": "B09FX8THLS",
+        "priceComparison": "価格は同程度です。PetGroundはナイロン製でデザイン性が高いのが特徴です。PUPTECKはポリエステル製で迷子札が付く実用性を重視しています。",
+        "featureComparison": [
+          "共通点：ソフトで負担が少ない設計、夜間反射付き",
+          "相違点：PetGroundはユニオンジャックなどおしゃれなデザイン。PUPTECKは迷子札付属とステップインタイプで実用性が高い。"
+        ],
+        "differentiators": [
+          "PUPTECK 犬用ハーネスの利点：迷子札が付属し、ステップインタイプで着脱がより簡単。",
+          "PetGround 犬 ハーネスの利点：ユニオンジャックなどのデザインを好む場合に適している。"
+        ]
+      },
+      {
+        "name": "rabbitgoo 最新型犬ハーネス",
+        "asin": "B0D1XZR1R5",
+        "priceComparison": "rabbitgooの方が高価です。アタマを通さずに着脱できる機能や介護用途など、より多機能です。PUPTECKはシンプルで低価格なのが魅力です。",
+        "featureComparison": [
+          "共通点：引っ張り防止、抜けない設計、夜間反射材、着脱が簡単",
+          "相違点：rabbitgooはアタマを通さず着脱できる設計で、介護や歩行補助にも対応。PUPTECKはシンプルで迷子札が付く。"
+        ],
+        "differentiators": [
+          "PUPTECK 犬用ハーネスの利点：シンプルで軽量、価格が手頃で迷子札が付くため、日常的な散歩に最適。",
+          "rabbitgoo 最新型犬ハーネスの利点：アタマを通すのが苦手な犬や、老犬の歩行補助・介護用途で使いたい場合に適している。"
+        ]
+      },
+      {
+        "name": "Rabbitgoo 犬 ハーネス 中型犬用",
+        "asin": "B01M75DR11",
+        "priceComparison": "Rabbitgooの方が高価です。クッション性や運動向きの設計が特徴です。PUPTECKはよりシンプルで小型・中型犬の日常使いに適しています。",
+        "featureComparison": [
+          "共通点：負担が少ない、サイズ調整可能、夜間反射付き",
+          "相違点：Rabbitgooはよりクッション性が高く運動向き。PUPTECKは迷子札付きで日常的な散歩向き。"
+        ],
+        "differentiators": [
+          "PUPTECK 犬用ハーネスの利点：低価格で迷子札が付属し、軽量で着脱が簡単なため、日常のお出かけに便利。",
+          "Rabbitgoo 犬 ハーネス 中型犬用の利点：運動量が多い犬や、よりしっかりとしたホールド感を求める場合に適している。"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "初めて犬を飼う方",
+        "着脱が簡単なハーネスを探している方",
+        "迷子札付きのハーネスが欲しい方",
+        "コストパフォーマンスを重視する方"
+      ],
+      "pros": [
+        "ステップインタイプで着脱が簡単",
+        "迷子札（IDタグ）が付属して安全性が高い",
+        "引っ張り防止設計で犬への負担が少ない",
+        "手頃な価格で機能が充実"
+      ],
+      "cons": [
+        "噛みつき防止仕様ではないため注意が必要"
+      ],
+      "score": 83,
+      "scoreRationale": "[基本点: 70]\n[加点: +5] (引っ張り防止設計や夜間反射材による安全性の高さ)\n[加点: +5] (ステップインタイプによる着脱のしやすさと実用性)\n[加点: +5] (迷子札が標準で付属する独自の強み)\n[減点: -2] (噛みつき防止仕様ではないという注意点)\n[合計: 83]"
+    },
+    "technicalSpecs": {
+      "dimensions": {
+        "height": "10mm",
+        "width": "10mm",
+        "depth": "10mm"
+      },
+      "weight": "不明",
+      "capacity": "不明",
+      "material": "ポリエステル（ストラップ）、金属（IDタグ）",
+      "origin": "不明",
+      "other": [
+        "カラー: レッド",
+        "サイズ: S (胴回り 37.6〜52.1cm、ストラップ幅 1.3cm)",
+        "付属品: IDタグ（迷子札）"
+      ]
+    }
+  }
+}
