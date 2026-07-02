@@ -1,0 +1,179 @@
+{
+  "analysis": {
+    "productName": "BaoCheng 犬ハーネス",
+    "parentAsin": "B0CY335SPD",
+    "productDescription": "引っ張り防止・咳き込み軽減に配慮された、首と胸の3つのバックルで着脱が簡単な犬用ハーネスです。夜間反射材や通気性のあるメッシュ生地を使用し、快適な散歩をサポートします。",
+    "productUsage": [
+      "犬の日常的な散歩",
+      "引っ張り癖のある犬のしつけ・訓練",
+      "階段や車乗降時の歩行補助"
+    ],
+    "positivePoints": [
+      "首輪を通さず、3つのバックルで簡単に着脱可能",
+      "胸と背中の両方で支えるため引っ張り時の首への負担が少ない",
+      "夜間反射材付きで暗い夜道の散歩も安全",
+      "背中のハンドルにより緊急時や介助時のコントロールがしやすい",
+      "首回りと胸回りの4箇所でサイズ調整が可能"
+    ],
+    "negativePoints": [
+      "ブランドとしての知名度が低く、情報が少ない",
+      "詳細な耐久性に関する長期間の検証情報が不明"
+    ],
+    "useCases": [
+      "夜間や早朝の暗い時間帯の散歩",
+      "車での移動時におけるシートベルトとの併用",
+      "シニア犬の歩行介助"
+    ],
+    "userStories": [],
+    "userImpression": "着脱の容易さと、首への負担を軽減する構造が特徴的で、日常の散歩からしつけまで幅広く対応できる実用的なハーネスという印象です。",
+    "sources": [
+      {
+        "id": "src-amazon-api",
+        "name": "Amazon Product API",
+        "url": "https://www.amazon.co.jp/dp/B0C4LHWN2Z",
+        "tier": "medium",
+        "evidenceType": "primary",
+        "publishedAt": "2026-07-02",
+        "author": "Amazon",
+        "conflictOfInterest": "none",
+        "notes": "商品仕様、特徴、価格情報を取得"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "3つのバックルでアタマを通さずに着脱可能",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-amazon-api"
+        ],
+        "crossChecked": false,
+        "notes": "Amazon商品説明より確認"
+      },
+      {
+        "claim": "夜間反射素材を使用",
+        "category": "safety",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-amazon-api"
+        ],
+        "crossChecked": false,
+        "notes": "Amazon商品説明より確認"
+      }
+    ],
+    "lastInvestigated": "2026-07-02",
+    "competitiveAnalysis": [
+      {
+        "name": "Rabbitgoo 犬 ハーネス",
+        "asin": "B01M75DR11",
+        "priceComparison": "Rabbitgooの方が安価。知名度も高いが、BaoChengは首のバックルも備えており、アタマを通さない着脱に特化している。",
+        "featureComparison": [
+          "共通点：引っ張り防止、夜間反射材、通気性メッシュ、背中のハンドル",
+          "相違点：BaoChengは首に1つ、胸に2つの計3つバックルがありアタマを通さない。Rabbitgooは胴回りの2つバックルが主。"
+        ],
+        "differentiators": [
+          "BaoCheng 犬ハーネスの利点：首元のバックルにより、頭を通すのを嫌がる犬でもより簡単に着脱できる。",
+          "Rabbitgoo 犬 ハーネスの利点：知名度が高く、豊富なレビューに基づいた信頼性がある。"
+        ]
+      },
+      {
+        "name": "BELLA & PAL 犬用 ハーネス",
+        "asin": "B0BMTDJ7C5",
+        "priceComparison": "BELLA & PALの方が安価であり、リードもセットになっているためコストパフォーマンスに優れる。",
+        "featureComparison": [
+          "共通点：夜間反射、メッシュ素材、簡単着脱",
+          "相違点：BELLA & PALは差し込み式のステップインタイプでリード付き。BaoChengは首と胸を個別に調整・固定するタイプ。"
+        ],
+        "differentiators": [
+          "BaoCheng 犬ハーネスの利点：4箇所の調整でより細かなサイズ合わせが可能であり、背中ハンドルがあるため大型犬や力強い犬の制御に向く。",
+          "BELLA & PAL 犬用 ハーネスの利点：リードセットでお得であり、足を入れるだけのステップイン方式が手軽。"
+        ]
+      },
+      {
+        "name": "PUPTECK 犬 ハーネス",
+        "asin": "B0F1FTR8R1",
+        "priceComparison": "PUPTECKの方が安価。",
+        "featureComparison": [
+          "共通点：引っ張り防止、簡単着脱",
+          "相違点：PUPTECKはステップインタイプで迷子札IDタグ付き。BaoChengは首と胸のバックル固定式で背中ハンドル付き。"
+        ],
+        "differentiators": [
+          "BaoCheng 犬ハーネスの利点：背中のハンドルにより、緊急時のサポートや車載機能など多目的に使える。",
+          "PUPTECK 犬 ハーネスの利点：安価であり、迷子札IDタグが付属している。"
+        ]
+      },
+      {
+        "name": "PUKAKO 犬 ハーネス",
+        "asin": "B0CZLNP3QH",
+        "priceComparison": "PUKAKOの方が安価でリードセット。",
+        "featureComparison": [
+          "共通点：メッシュ素材、反射材付き、着脱簡単",
+          "相違点：PUKAKOはマジックテープとバックルの併用によるベスト型でリード付き。BaoChengはストラップ調整型。"
+        ],
+        "differentiators": [
+          "BaoCheng 犬ハーネスの利点：ストラップで4箇所個別に調整できるため、体型に合わせたしっかりとしたフィット感を得やすい。",
+          "PUKAKO 犬 ハーネスの利点：ベスト型でより体を包み込む形になっており、リード付きでコストパフォーマンスが高い。"
+        ]
+      },
+      {
+        "name": "cocomall 喉に優しい犬用ハーネス",
+        "asin": "B0928QSK6Z",
+        "priceComparison": "価格は同程度。",
+        "featureComparison": [
+          "共通点：ナイロンメッシュ、反射材、背中ハンドル",
+          "相違点：cocomallは頭からかぶるタイプ。BaoChengは首元のバックルが開くため頭を通す必要がない。"
+        ],
+        "differentiators": [
+          "BaoCheng 犬ハーネスの利点：頭を通す必要がないため、頭を触られるのを嫌がる犬に適している。",
+          "cocomall 喉に優しい犬用ハーネスの利点：Duraflex社製バックルや亜鉛合金の留め具など、素材の品質・耐久性を明記している。"
+        ]
+      },
+      {
+        "name": "Sunraymascota 犬 ハーネス",
+        "asin": "B0GY6VJ7TH",
+        "priceComparison": "Sunraymascotaの方が安価。",
+        "featureComparison": [
+          "共通点：アタマを通さず着脱可能、メッシュ素材、反射板付き",
+          "相違点：Sunraymascotaは前後マジックテープ式でネームプレート付き。BaoChengはバックル固定式。"
+        ],
+        "differentiators": [
+          "BaoCheng 犬ハーネスの利点：バックル固定と4箇所のアジャスターにより、マジックテープよりも外れにくく確実な固定ができる。",
+          "Sunraymascota 犬 ハーネスの利点：マジックテープで瞬時に着脱でき、ネームプレートを付け替えることができる。"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "頭をハーネスに通すのを嫌がる犬の飼い主",
+        "引っ張り癖のある犬の飼い主",
+        "夜間に散歩をすることが多い飼い主"
+      ],
+      "pros": [
+        "首バックル付きでアタマを通さず簡単着脱",
+        "4箇所の調整部分で体型にフィット",
+        "背中ハンドル付きで行動サポートが容易"
+      ],
+      "cons": [
+        "有名ブランドほどの知名度・レビュー実績がない",
+        "リードは別売りである"
+      ],
+      "score": 75,
+      "scoreRationale": "[基本点: 70]\n[加点: +5] (首元が開く3つバックル設計による着脱の容易さと機能性)\n[減点: -0] (特筆すべきマイナス要素なし)\n[合計: 75]"
+    },
+    "technicalSpecs": {
+      "dimensions": {
+        "height": "30mm",
+        "width": "120mm",
+        "depth": "200mm"
+      },
+      "color": "カーキ",
+      "size": "XS (首周り25～35cm、胸周り32～52cm)",
+      "material": "オックスフォード生地、メッシュ裏地",
+      "other": [
+        "夜間反射材",
+        "背中ハンドル",
+        "首元ロック機能付きバックル"
+      ]
+    }
+  }
+}
