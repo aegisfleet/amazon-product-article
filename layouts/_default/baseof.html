@@ -4,7 +4,7 @@
 <head>
   {{- $pageTitle := "" -}}
   {{- if .IsHome -}}
-  {{- $pageTitle = printf "Amazon おすすめ 比較 徹底調査レポート | %s" .Site.Title -}}
+  {{- $pageTitle = printf "「どれが良い？」がすぐわかる。Amazon商品の徹底比較レポート | %s" .Site.Title -}}
   {{- else if .Params.score -}}
   {{- $pageTitle = printf "【%v点】%s %s レビュー | %s" .Params.score .Title (.Params.price | default "") .Site.Title -}}
   {{- else if eq .Section "recommendations" -}}
