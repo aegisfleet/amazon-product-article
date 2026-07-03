@@ -600,6 +600,31 @@ ${sourcesList}`;
       usageSection = `### ${headingVariant.usage}\n\n${usageList}`;
     }
 
+    // 強みと弱み
+    const pros = investigation.analysis.recommendation.pros.map((pro) => `- ${pro}`).join('\n');
+    const cons = investigation.analysis.recommendation.cons.map((con) => `- ${con}`).join('\n');
+    const prosConsSection = `### ⚔️ この商品の強みと弱み
+
+<div class="pros-cons-grid">
+
+<div class="pros-card">
+<h4>👍 良い点</h4>
+
+${pros}
+
+</div>
+
+<div class="cons-card">
+<h4>👎 気になる点</h4>
+
+${cons}
+
+</div>
+
+</div>`;
+
+    const usagePart = usageSection ? `${usageSection}\n\n` : '';
+
     const content = `## ${headingVariant.section}
 
 ### ${headingVariant.useCases}
@@ -610,7 +635,7 @@ ${useCases}
 
 </div>
 
-${usageSection}`;
+${usagePart}${prosConsSection}`;
 
     return {
       title: '商品の特徴',
@@ -786,26 +811,6 @@ ${competitorLink}
     ).join('\n\n');
 
     const content = `## 🥊 競合商品との比較
-
-### ⚔️ この商品の強みと弱み
-
-<div class="pros-cons-grid">
-
-<div class="pros-card">
-<h4>👍 良い点</h4>
-
-${investigation.analysis.recommendation.pros.map((pro) => `- ${pro}`).join('\n')}
-
-</div>
-
-<div class="cons-card">
-<h4>👎 気になる点</h4>
-
-${investigation.analysis.recommendation.cons.map((con) => `- ${con}`).join('\n')}
-
-</div>
-
-</div>
 
 <div class="competitor-cards">
 
