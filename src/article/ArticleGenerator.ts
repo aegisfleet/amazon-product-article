@@ -39,9 +39,9 @@ export class ArticleGenerator {
 
   private static readonly REVIEW_HEADINGS = {
     section: '📊 ユーザーレビュー',
-    positive: '👍 ユーザーが評価している点',
-    negative: '👎 ユーザーが気になると感じている点',
-    useCases: '💡 実際の使用シーン',
+    positive: '👍 良い点',
+    negative: '👎 気になる点',
+    useCases: '💡 使用シーン',
     voices: '🗣️ 購入者の声',
   };
 
@@ -787,13 +787,7 @@ ${competitorLink}
 
     const content = `## 🥊 競合商品との比較
 
-<div class="competitor-cards">
-
-${competitorCards}
-
-</div>
-
-### ⚔️ 総合的な競合優位性
+### ⚔️ この商品の強みと弱み
 
 <div class="pros-cons-grid">
 
@@ -810,6 +804,12 @@ ${investigation.analysis.recommendation.pros.map((pro) => `- ${pro}`).join('\n')
 ${investigation.analysis.recommendation.cons.map((con) => `- ${con}`).join('\n')}
 
 </div>
+
+</div>
+
+<div class="competitor-cards">
+
+${competitorCards}
 
 </div>`;
 
@@ -846,19 +846,19 @@ ${investigation.analysis.recommendation.cons.map((con) => `- ${con}`).join('\n')
       recommendationMessage = ArticleGenerator.RECOMMENDATION_MESSAGE_LOW;
     }
 
-    const content = `## 🎯 最終結論：この商品は買いか？
+    const content = `## 🎯 まとめ
 
 ### こんな方におすすめ
 
 ${targetUsers}
 
-### 購入時の注意点
+### 注意点
 
 ${investigation.analysis.recommendation.cons.map((con) => `- ⚠️ ${con}`).join('\n')}
 
-### コストパフォーマンス評価
+### コスパ評価
 
-この商品は${scoreText}の評価となりました。特に${investigation.analysis.recommendation.pros[0] || '品質面'}での優位性が認められます。
+総合評価は${scoreText}。${investigation.analysis.recommendation.pros[0] || '品質面'}が特に評価できる点である。
 
 ${recommendationMessage}
 
@@ -867,7 +867,7 @@ ${recommendationMessage}
 </div>`;
 
     return {
-      title: '🎯 最終結論：この商品は買いか？',
+      title: '🎯 まとめ',
       content,
       wordCount: this.calculateWordCount(content),
       requiredElements: template.requiredElements,
