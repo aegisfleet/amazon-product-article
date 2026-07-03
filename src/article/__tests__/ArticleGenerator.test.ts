@@ -254,7 +254,7 @@ describe('ArticleGenerator', () => {
       expect(result.content).toContain('## 📦 商品の特徴');
       expect(result.content).toContain('## 📊 ユーザーレビュー');
       expect(result.content).toContain('## 🥊 競合商品との比較');
-      expect(result.content).toContain('## 🎯 最終結論：この商品は買いか？');
+      expect(result.content).toContain('## 🎯 まとめ');
       expect(result.content).toContain('## 🛒 商品詳細');
       expect(result.content).toContain('## 🔗 参考情報ソース');
       // 見出しが正しく含まれることを確認
