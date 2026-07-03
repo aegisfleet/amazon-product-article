@@ -1,0 +1,196 @@
+{
+  "analysis": {
+    "productName": "Brighte ELEKI LIFT エレキリフト",
+    "parentAsin": "B0FV7HT2BY",
+    "productDescription": "1台15役をこなし、3MHzの高出力RFやEMS、イオン導出入、赤青LEDを搭載した多機能リフト美顔器です。",
+    "productUsage": [
+      "日々の洗顔後のフェイスケア",
+      "CLEANモードやLIFTモードでのデイリーケア",
+      "HEATモードを利用したスペシャルケア"
+    ],
+    "positivePoints": [
+      "3MHzの高出力RFやEMS、LEDなどサロン級の機能を1台に集約している",
+      "CLEAN、LIFT、HEATの3つのモードで目的に合わせたケアが可能",
+      "電極ヘッド部分はIPX6の防水仕様で水洗いが可能",
+      "美容家電部門など多数のアワードを受賞し信頼性が高い",
+      "2万円を切る価格で高機能かつコストパフォーマンスに優れる"
+    ],
+    "negativePoints": [
+      "顔や首、胸などに一部使用できない部位がある",
+      "肌トラブルを避けるため炎症がある部分への使用は控える必要がある"
+    ],
+    "useCases": [
+      "フェイスラインのもたつきが気になるときの引き締めケア",
+      "化粧水の浸透をサポートしたいときのイオン導入ケア",
+      "コットンと併用したCLEANモードによる毛穴汚れの拭き取り"
+    ],
+    "userStories": [
+      {
+        "userType": "エイジングケアに関心があるユーザー",
+        "scenario": "日々のスキンケアにサロン級の機能を取り入れたい時",
+        "experience": "3MHzの高出力RFやEMS機能が搭載されており、自宅にいながら本格的なリフトケアが可能です。CLEANモードを使えば洗顔では落としきれない汚れもすっきりと拭き取れ、その後のスキンケアの浸透が良くなるのを実感できます。ヘッド部分が水洗いできるのも衛生的で毎日のケアに取り入れやすいです。",
+        "supportingSourceIds": ["src-1", "src-2"],
+        "sentiment": "positive"
+      }
+    ],
+    "userImpression": "高機能でありながらシンプルな3つのモードで使いやすく、自宅で手軽にサロン級のケアができると評価されています。価格も2万円以下と手に取りやすく、防水仕様でお手入れが簡単な点も好評です。",
+    "sources": [
+      {
+        "id": "src-1",
+        "name": "Brighte公式ブランドサイト ELEKI LIFT",
+        "url": "https://brighte.jp/shop/products/BRT-FL170",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-06-26",
+        "author": "Brighte",
+        "conflictOfInterest": "possible",
+        "notes": "製品の仕様、機能、使用方法、寸法（H169×W46×D35mm, 137g）、防水性能（IPX6）、モード詳細を確認。"
+      },
+      {
+        "id": "src-2",
+        "name": "Amazon商品ページ B0FV7HT2BY",
+        "url": "https://www.amazon.co.jp/dp/B0FV7HT2BY",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-07-03",
+        "author": "Amazon",
+        "conflictOfInterest": "possible",
+        "notes": "商品の価格、アワード受賞歴、使用上の注意点を確認。"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "3MHzの高出力RFを搭載し、サロン級のケアが可能",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": ["src-1"],
+        "crossChecked": false,
+        "notes": "公式サイトにて3MHz RF搭載の記載を確認"
+      },
+      {
+        "claim": "電極ヘッド部分は完全防水（IPX6）で水洗い可能",
+        "category": "durability",
+        "confidence": "high",
+        "supportingSourceIds": ["src-1", "src-2"],
+        "crossChecked": true,
+        "notes": "公式サイトおよびAmazon商品情報で防水仕様を確認"
+      }
+    ],
+    "lastInvestigated": "2026-07-03",
+    "competitiveAnalysis": [
+      {
+        "name": "パナソニック 美顔器 バイタリフト RF",
+        "asin": "B0BCF5HXJF",
+        "priceComparison": "対象商品よりも高価格帯であり、より豊富な機能と実績のある大手ブランドの安心感を求めるユーザーに適している。",
+        "featureComparison": [
+          "共通点：RF、EMS、LED、イオン導出入機能を搭載した多機能美顔器",
+          "相違点：パナソニックはD型リフトヘッドを採用し、1台9役を謳う高価格帯モデルであるのに対し、対象商品はより手頃な価格で1台15役の機能性をアピールしている"
+        ],
+        "differentiators": [
+          "Brighte ELEKI LIFTの利点：2万円以下の手頃な価格でありながら、3MHzのRFなど本格的な機能が備わっておりコストパフォーマンスに優れる",
+          "パナソニック バイタリフト RFの利点：長年の美容家電開発の知見が詰まっており、ブランドの信頼性や独自のヘッド形状による使いやすさが魅力"
+        ]
+      },
+      {
+        "name": "BIOAESTECH DUAL ORB DEEP LIFT",
+        "asin": "B0GSZ18VMS",
+        "priceComparison": "対象商品よりも高価格であり、独自開発のEMS波形や韓国美容皮膚科医監修による専門性を重視する層向け。",
+        "featureComparison": [
+          "共通点：EMSによる表情筋へのアプローチやリフトアップケアに特化している",
+          "相違点：対象商品はRFやLEDなど複合的な機能を搭載しているのに対し、BIOAESTECHはリフトアップに特化した独自EMS波形を強調している"
+        ],
+        "differentiators": [
+          "Brighte ELEKI LIFTの利点：RFやイオン導出など多彩なモードを備えており、1台で総合的なスキンケアが可能",
+          "BIOAESTECH DUAL ORB DEEP LIFTの利点：医師監修のもと設計されており、専門的なリフトアップケアに特化している"
+        ]
+      },
+      {
+        "name": "ANLAN リフト美顔器PRO",
+        "asin": "B0GY8TLHK7",
+        "priceComparison": "対象商品よりも安価であり、予算を抑えて手軽に多機能美顔器を試したいユーザー向け。",
+        "featureComparison": [
+          "共通点：EMS、温熱、光エステ（LED）機能を搭載している",
+          "相違点：対象商品は3MHzの高出力RFを搭載しサロン級を謳うが、ANLANは天然石ローラーを組み合わせた独自のアプローチを採用している"
+        ],
+        "differentiators": [
+          "Brighte ELEKI LIFTの利点：高出力なRF機能や著名な美容アワードの受賞歴があり、より本格的なケアへの信頼感が高い",
+          "ANLAN リフト美顔器PROの利点：1万円未満の低価格で天然石ローラーによるマッサージも同時に楽しめる"
+        ]
+      },
+      {
+        "name": "Brighte ELEKI LIFT ICE BLUE",
+        "asin": "B0GR2B9TR1",
+        "priceComparison": "対象商品と同価格であり、好みのカラーバリエーションで選ぶことができる。",
+        "featureComparison": [
+          "共通点：機能やスペックは全く同じ同一製品のカラーバリエーション",
+          "相違点：本体カラーが異なる点や、付属するパンフレット等の有無（限定仕様の違い）"
+        ],
+        "differentiators": [
+          "Brighte ELEKI LIFT（対象商品）の利点：Amazon.co.jp限定の公式パンフレットが付帯する",
+          "Brighte ELEKI LIFT ICE BLUEの利点：爽やかなアイスブルーのカラーを選択できる"
+        ]
+      },
+      {
+        "name": "Kiboer 美顔器 かっさ",
+        "asin": "B0C2Q2KK76",
+        "priceComparison": "対象商品よりもかなり安価であり、主にかっさとしての機能を求めるユーザー向け。",
+        "featureComparison": [
+          "共通点：EMS機能やLED光、温熱機能を搭載しフェイスケアを行う",
+          "相違点：対象商品はRFを搭載した高機能な美顔器であるのに対し、Kiboerはかっさ形状にEMSやLEDを付加したシンプルな構造である"
+        ],
+        "differentiators": [
+          "Brighte ELEKI LIFTの利点：RFによる本格的な温めやイオン導出入による総合的な肌ケアが可能",
+          "Kiboer 美顔器 かっさの利点：コンパクトで軽量（約90g）であり、手軽にかっさケアとして全身のツボ押し等にも使いやすい"
+        ]
+      },
+      {
+        "name": "Brighte ELEKI LIFT 単品",
+        "asin": "B0GCC66PN1",
+        "priceComparison": "対象商品と同価格であり、機能面は同一のバリエーション製品。",
+        "featureComparison": [
+          "共通点：基本となる美顔器の性能や仕様は完全に同一",
+          "相違点：限定パンフレットなどの付帯物の有無や販売パッケージの違い"
+        ],
+        "differentiators": [
+          "Brighte ELEKI LIFT（対象商品）の利点：Amazon.co.jp限定の公式パンフレットが付属している",
+          "Brighte ELEKI LIFT 単品の利点：特になし（製品自体は同一であるため、好みのパッケージや在庫状況で選ぶ）"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "サロン級の本格的なスキンケアを自宅で行いたい方",
+        "1台で毛穴ケアからリフトケアまで済ませたい方",
+        "高機能でありながらコストパフォーマンスの良い美顔器を探している方"
+      ],
+      "pros": [
+        "3MHzの高出力RFやEMS、イオン導出入など多機能",
+        "IPX6防水仕様（ヘッド部）でお手入れが衛生的",
+        "多くの美容アワードを受賞した高い実績"
+      ],
+      "cons": [
+        "使用できない部位（炎症部位等）への注意が必要"
+      ],
+      "score": 87,
+      "scoreRationale": "[基本点: 70]\n[加点: +7] (多数の美容アワード受賞歴によるブランドの信頼性とユーザー評価の高さ)\n[加点: +7] (3MHzの高出力RFやイオン導出入・LEDなどサロン級の機能性)\n[加点: +5] (多彩な機能を搭載しつつ1万円台に抑えた優れたコストパフォーマンス)\n[減点: -2] (使用できない部位や炎症部分への注意が必要な点)\n[合計: 87]"
+    },
+    "technicalSpecs": {
+      "dimensions": {
+        "height": "169mm",
+        "width": "46mm",
+        "depth": "35mm"
+      },
+      "weight": "137g",
+      "power": "最大14W",
+      "powerSupply": "5V/1A",
+      "chargingTime": "約3時間",
+      "waterproof": "IPX6 (電極ヘッド部分のみ)",
+      "modes": ["CLEAN", "LIFT", "HEAT"],
+      "accessories": ["本体", "充電用USBケーブル", "取扱説明書", "公式パンフレット"],
+      "other": [
+        "3MHzの高出力RF搭載",
+        "赤青2色のLED搭載"
+      ]
+    }
+  }
+}
