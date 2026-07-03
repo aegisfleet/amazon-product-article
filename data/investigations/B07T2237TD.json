@@ -1,0 +1,173 @@
+{
+  "analysis": {
+    "productName": "UAテック2.0 ショートスリーブ Tシャツ",
+    "parentAsin": "B07T2237TD",
+    "productDescription": "アンダーアーマーの定番ファブリックを使用した、吸汗速乾性と伸縮性に優れたトレーニングTシャツ。",
+    "productUsage": [
+      "ワークアウト",
+      "ランニング",
+      "ジムトレーニング",
+      "日常着"
+    ],
+    "positivePoints": [
+      "吸汗速乾性に優れ、身体をドライに保つ",
+      "抗菌防臭機能により嫌な臭いを抑制",
+      "柔らかな肌触りで長時間の着用でも快適"
+    ],
+    "negativePoints": [
+      "スポーツブランドの中ではやや価格が高め",
+      "デザインがシンプルすぎるため好みが分かれる"
+    ],
+    "useCases": [
+      "激しい運動時のウェアとして",
+      "夏場のアウトドアやキャンプ",
+      "部屋着や日常のカジュアルウェア"
+    ],
+    "userStories": [],
+    "userImpression": "吸汗速乾や抗菌防臭といった基本性能が高く、トレーニング用途としては定番の安定感がある。",
+    "sources": [
+      {
+        "id": "src-amazon-target",
+        "name": "Amazon商品ページ",
+        "url": "https://www.amazon.co.jp/dp/B07T2237TD",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-07-03",
+        "author": "Amazon",
+        "conflictOfInterest": "possible",
+        "notes": "商品の基本仕様、特徴（吸汗速乾、抗菌防臭）を確認"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "吸汗速乾性と伸縮性を兼ね備えた生地を採用している",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-amazon-target"
+        ],
+        "crossChecked": false,
+        "notes": "公式の商品仕様から確認"
+      },
+      {
+        "claim": "抗菌防臭機能により細菌の増殖を抑制する",
+        "category": "durability",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-amazon-target"
+        ],
+        "crossChecked": false,
+        "notes": "公式の商品仕様から確認"
+      }
+    ],
+    "lastInvestigated": "2026-07-03",
+    "competitiveAnalysis": [
+      {
+        "name": "MIZUNO ナビドライ Tシャツ",
+        "asin": "B0D6GD5NVC",
+        "priceComparison": "対象商品より安価である。コストパフォーマンスを重視するユーザーには魅力的な選択肢となる。",
+        "featureComparison": [
+          "共通点：吸汗速乾性を備えたスポーツ向けTシャツである点",
+          "相違点：MIZUNOはUPF15の紫外線保護機能を持つが、対象商品は抗菌防臭機能を持つ点"
+        ],
+        "differentiators": [
+          "UAテック2.0 ショートスリーブ Tシャツの利点：抗菌防臭機能があり、汗の臭いを抑えやすい",
+          "MIZUNO ナビドライ Tシャツの利点：価格が安く、紫外線対策（UPF15）が明記されている"
+        ]
+      },
+      {
+        "name": "asics ドライワンポイント半袖シャツ",
+        "asin": "B0C68K8PNH",
+        "priceComparison": "対象商品とほぼ同等の価格帯である。ブランドの好みで選ばれることが多い。",
+        "featureComparison": [
+          "共通点：大手スポーツブランドの吸汗速乾Tシャツである点",
+          "相違点：デザインやフィット感のブランドごとの違い"
+        ],
+        "differentiators": [
+          "UAテック2.0 ショートスリーブ Tシャツの利点：定番のUAテック素材による柔らかな肌触りと抗菌防臭機能",
+          "asics ドライワンポイント半袖シャツの利点：アシックスブランドへの信頼やデザインの好み"
+        ]
+      },
+      {
+        "name": "United Athle 4.1オンス ドライアスレチック Tシャツ",
+        "asin": "B00E92EZM4",
+        "priceComparison": "対象商品より大幅に安価である。大量に揃えたい場合に適している。",
+        "featureComparison": [
+          "共通点：無地のドライTシャツである点",
+          "相違点：対象商品のような抗菌防臭などの高付加価値機能はなく、よりシンプルな作りである点"
+        ],
+        "differentiators": [
+          "UAテック2.0 ショートスリーブ Tシャツの利点：スポーツに特化した機能性（抗菌防臭、伸縮性）が高い",
+          "United Athle 4.1オンス ドライアスレチック Tシャツの利点：圧倒的な低価格で複数枚の購入が容易"
+        ]
+      },
+      {
+        "name": "PUMA ESS スモール プーマロゴ ポリ Tシャツ",
+        "asin": "B0D5CD9M2Q",
+        "priceComparison": "対象商品とほぼ同等の価格帯である。",
+        "featureComparison": [
+          "共通点：スポーツブランドのロゴ入りトレーニングTシャツである点",
+          "相違点：対象商品は抗菌防臭機能を強調している点"
+        ],
+        "differentiators": [
+          "UAテック2.0 ショートスリーブ Tシャツの利点：定番ファブリックによる高い吸汗速乾性と防臭効果",
+          "PUMA ESS スモール プーマロゴ ポリ Tシャツの利点：プーマのロゴデザインを好むユーザー向け"
+        ]
+      },
+      {
+        "name": "Champion ショートスリーブドライTシャツ",
+        "asin": "B0F9WFKXZZ",
+        "priceComparison": "対象商品と同程度の価格帯である。",
+        "featureComparison": [
+          "共通点：抗菌防臭機能と速乾性を備えている点",
+          "相違点：Championはリサイクルポリエステルを使用し、UVカット機能を持つ点"
+        ],
+        "differentiators": [
+          "UAテック2.0 ショートスリーブ Tシャツの利点：トレーニングに特化したアンダーアーマー定番の素材感",
+          "Champion ショートスリーブドライTシャツの利点：UVカット機能と環境に配慮した素材選び"
+        ]
+      },
+      {
+        "name": "TACVASEN スポーツtシャツ",
+        "asin": "B0C3HN5F22",
+        "priceComparison": "対象商品より安価である。",
+        "featureComparison": [
+          "共通点：吸汗速乾性を備えたスポーツウェアである点",
+          "相違点：TACVASENは接触冷感素材や反射ストリップを備えている点"
+        ],
+        "differentiators": [
+          "UAテック2.0 ショートスリーブ Tシャツの利点：有名ブランドの安心感と実績ある定番素材",
+          "TACVASEN スポーツtシャツの利点：低価格でありながら冷感機能や夜間用の反射材を備えている"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "日常的にジムやランニングを行う人",
+        "汗の臭いが気になる人",
+        "ゆったりしたサイズ感（3XLなど）を求める人"
+      ],
+      "pros": [
+        "高い吸汗速乾性と抗菌防臭機能",
+        "柔らかな肌触りで快適な着心地",
+        "スポーツウェアの定番ブランドの安心感"
+      ],
+      "cons": [
+        "ノンブランドや一部の競合と比べると価格がやや高い",
+        "デザインが非常にシンプル"
+      ],
+      "score": 80,
+      "scoreRationale": "[基本点: 70]\n[加点: +2] (吸汗速乾機能により身体をドライに保つ高い実用性)\n[加点: +2] (抗菌防臭機能により汗の臭いを抑制する効果)\n[加点: +1] (定番ファブリックによる柔らかな肌触り)\n[加点: +3] (シンプルなデザインによる幅広いシーンでの高い汎用性)\n[加点: +2] (スポーツウェアの定番ブランドとしての信頼性と実績)\n[合計: 80]"
+    },
+    "technicalSpecs": {
+      "color": "ブラック グラファイト",
+      "size": "3XL",
+      "material": "ポリエステル",
+      "origin": "不明",
+      "other": [
+        "吸汗速乾機能",
+        "抗菌防臭機能"
+      ]
+    }
+  }
+}
