@@ -1,0 +1,204 @@
+{
+  "analysis": {
+    "productName": "SUZIYER 犬用 通気性シューズ 滑り止めゴム底",
+    "parentAsin": "B0GHRJ48JD",
+    "productDescription": "通気性に優れたメッシュ素材と耐磨耗性のあるゴム底を採用した犬用シューズ。散歩後の足拭きが不要になり、室内を清潔に保つことができます。",
+    "productUsage": [
+      "春から秋の愛犬の散歩",
+      "雨の日の泥汚れ防止",
+      "室内の清潔維持"
+    ],
+    "positivePoints": [
+      "メッシュ素材で通気性が良く、蒸れにくい",
+      "ゴム底採用で滑り止め効果があり、耐久性が高い",
+      "マジックテープで簡単に装着可能"
+    ],
+    "negativePoints": [
+      "底が硬いため、歩行中にズレて脱げやすいという指摘がある"
+    ],
+    "useCases": [
+      "毎日の散歩時に足の汚れを防ぐ",
+      "帰宅後に足を拭く手間を省く"
+    ],
+    "userStories": [
+      {
+        "userType": "犬の飼い主",
+        "scenario": "日々の散歩に使用",
+        "experience": "愛犬の散歩用として購入し、最初はデザインと通気性の良さに満足していました。\nしかし、実際に履かせて外を歩いてみると、底が硬く設計されているためか、歩行するうちに徐々にズレてきました。\n結果的に少し歩いただけで直ぐに脱げてしまい、実用面で不便を感じました。",
+        "supportingSourceIds": [
+          "src-amazon-review-1"
+        ],
+        "sentiment": "negative"
+      }
+    ],
+    "userImpression": "通気性やデザインの良さは評価できる一方で、靴底が硬く歩行中に脱げやすいという実用面での課題が指摘されています。",
+    "sources": [
+      {
+        "id": "src-amazon-review-1",
+        "name": "Amazonカスタマーレビュー",
+        "url": "https://www.amazon.co.jp/dp/B0GHRLLGZX",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-06-19",
+        "author": "Amazon カスタマー",
+        "conflictOfInterest": "none",
+        "notes": "靴底が硬く脱げやすいとの評価"
+      },
+      {
+        "id": "src-amazon-page",
+        "name": "Amazon商品ページ",
+        "url": "https://www.amazon.co.jp/dp/B0GHRLLGZX",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-07-03",
+        "author": "SUZIYER",
+        "conflictOfInterest": "disclosed",
+        "notes": "通気性メッシュ、ゴム底、マジックテープ固定などの製品仕様を確認"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "通気性の高いメッシュ素材を使用している",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-amazon-page"
+        ],
+        "crossChecked": false,
+        "notes": "商品仕様として明記されている"
+      },
+      {
+        "claim": "滑り止めゴム底で耐久性が高い",
+        "category": "durability",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-amazon-page"
+        ],
+        "crossChecked": false,
+        "notes": "商品仕様として明記されている"
+      },
+      {
+        "claim": "底が硬く脱げやすい",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-amazon-review-1"
+        ],
+        "crossChecked": false,
+        "notes": "実際のユーザーレビューにて確認"
+      }
+    ],
+    "lastInvestigated": "2026-07-03",
+    "competitiveAnalysis": [
+      {
+        "name": "SENMUUP 犬用ブーツ",
+        "asin": "B0GTN76BCF",
+        "priceComparison": "対象商品とほぼ同価格帯。",
+        "featureComparison": [
+          "共通点：軽量通気メッシュ、滑り止めゴム底",
+          "相違点：SENMUUPは夜間反射テープが付いており、夜間の散歩に適している"
+        ],
+        "differentiators": [
+          "SUZIYERの利点：カラーバリエーションが豊富で可愛いデザイン",
+          "SENMUUPの利点：夜間反射テープがあり安全性が高い"
+        ]
+      },
+      {
+        "name": "SENMUUP 犬用ブーツ 春夏用 2重ストラップ",
+        "asin": "B0GZLHKHQY",
+        "priceComparison": "対象商品よりも高価。その分、機能性が追加されているか確認が必要。",
+        "featureComparison": [
+          "共通点：軽量通気メッシュ、滑り止めゴム底",
+          "相違点：SENMUUPは2重ストラップで脱げにくさを強化している"
+        ],
+        "differentiators": [
+          "SUZIYERの利点：価格が抑えられており、手軽に導入できる",
+          "SENMUUPの利点：2重ストラップにより、歩行中に脱げにくい構造になっている"
+        ]
+      },
+      {
+        "name": "LIKOKLIN ドッグブーツ 2#",
+        "asin": "B0CPY5LKSW",
+        "priceComparison": "対象商品よりも安価。コスト重視の場合に有利。",
+        "featureComparison": [
+          "共通点：軽量通気メッシュ、滑り止めゴム底、反射テープ",
+          "相違点：LIKOKLINは2個入りでの販売となっている可能性があり、価格設定が異なる"
+        ],
+        "differentiators": [
+          "SUZIYERの利点：4個（1セット）での販売であれば、足全体をカバーするのに適している",
+          "LIKOKLINの利点：2個入りのため、必要な分だけ安価に購入できる"
+        ]
+      },
+      {
+        "name": "SENMUUP 犬用ブーツ ブラック",
+        "asin": "B0GW2V1H8B",
+        "priceComparison": "対象商品とほぼ同価格帯。",
+        "featureComparison": [
+          "共通点：軽量通気メッシュ、滑り止めゴム底",
+          "相違点：SENMUUPは2重構造テープを採用している"
+        ],
+        "differentiators": [
+          "SUZIYERの利点：シンプルなマジックテープで簡単に着脱可能",
+          "SENMUUPの利点：2重構造テープでよりしっかりと固定できる"
+        ]
+      },
+      {
+        "name": "LIKOKLIN ドッグブーツ 3#",
+        "asin": "B0CPY54WYK",
+        "priceComparison": "対象商品よりも安価。",
+        "featureComparison": [
+          "共通点：通気性メッシュ、ゴム底",
+          "相違点：サイズ展開と販売単位（2個入り）の違い"
+        ],
+        "differentiators": [
+          "SUZIYERの利点：標準的な犬用シューズとしての用途を満たす",
+          "LIKOKLINの利点：必要に応じて少ない数から購入可能"
+        ]
+      },
+      {
+        "name": "Doggy Hug ドギーハグ メッシュスニーカー",
+        "asin": "B0FPLPZDC2",
+        "priceComparison": "対象商品よりも高価。柔らかいゴム底など品質面での違いがある。",
+        "featureComparison": [
+          "共通点：通気性、ゴム底",
+          "相違点：Doggy Hugはやわらかいゴム底を謳っており、フィット感が異なる"
+        ],
+        "differentiators": [
+          "SUZIYERの利点：価格が安く、手に入れやすい",
+          "Doggy Hugの利点：やわらかいゴム底で、歩行時に脱げにくく犬の足にフィットしやすい"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "帰宅後の足拭きの手間を減らしたい飼い主",
+        "デザイン性を重視する飼い主"
+      ],
+      "pros": [
+        "通気性の高いメッシュ素材",
+        "豊富なカラーバリエーション"
+      ],
+      "cons": [
+        "底が硬く、歩行中に脱げやすい恐れがある"
+      ],
+      "score": 67,
+      "scoreRationale": "[基本点: 70]\n[加点: +5] (通気性の高いメッシュ素材を採用)\n[加点: +2] (耐久性のあるゴム底を採用)\n[減点: -5] (底が硬く歩行中にズレやすい構造上の懸念)\n[減点: -5] (ユーザーレビューで指摘された脱げやすさ)\n[合計: 67]"
+    },
+    "technicalSpecs": {
+      "dimensions": {
+        "height": "不明",
+        "width": "不明",
+        "depth": "不明"
+      },
+      "weight": "不明",
+      "capacity": "不明",
+      "material": "メッシュ素材、ゴム(底面)",
+      "origin": "不明",
+      "other": [
+        "サイズ: M (体重1.5〜9kg対応の5サイズ展開のうちの1つ)",
+        "カラー: ブルー",
+        "装着方式: 調整可能なマジックテープ"
+      ]
+    }
+  }
+}
