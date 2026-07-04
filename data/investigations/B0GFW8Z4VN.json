@@ -1,0 +1,189 @@
+{
+  "analysis": {
+    "productName": "SwitchBot 防犯カメラ 屋外 500万画素",
+    "parentAsin": "B0GFW8Z4VN",
+    "productDescription": "2026年発売のVLM(AI機能)を搭載した、屋外設置対応の500万画素パンチルトカメラです。AIによる高度な状況認識と360度全方位の見守り機能を備えています。",
+    "productUsage": [
+      "屋外の防犯・監視",
+      "玄関先の訪問者確認や荷物の見守り",
+      "駐車場や庭の安全確認"
+    ],
+    "positivePoints": [
+      "AIによる状況を文章で通知する高度な認識機能",
+      "500万画素の高画質と夜間フルカラー撮影による鮮明な映像記録",
+      "360度パン/チルトと自動追跡で死角のない監視",
+      "Wi-Fiと有線LANの両方に対応した安定した接続"
+    ],
+    "negativePoints": [
+      "有線給電（DC 12V・2A）専用であり、バッテリーやソーラーには非対応",
+      "電源アダプターは非防水のため、屋内のコンセントを使用する必要がある"
+    ],
+    "useCases": [
+      "外出中にスマートフォンで自宅周辺の様子をリアルタイムに確認する",
+      "AI映像検索を使って、特定の出来事を後から簡単に振り返る",
+      "AlexaやGoogle Assistantと連携してスマートディスプレイで映像を確認する"
+    ],
+    "userStories": [
+      {
+        "userType": "戸建て住宅の居住者",
+        "scenario": "玄関と駐車場の監視に導入",
+        "experience": "500万画素の画質は非常に鮮明で、夜間でも車のナンバーまでしっかり確認できます。AIが「配達員が荷物を置いた」など具体的に通知してくれるので、いちいち映像を確認する手間が省けました。設置は有線電源が必要でしたが、安定して稼働しています。",
+        "supportingSourceIds": ["src-1"],
+        "sentiment": "positive"
+      }
+    ],
+    "userImpression": "高解像度と革新的なAI機能によるスマートな監視体験が高く評価されています。一方で、有線給電専用であるため、設置場所と電源の確保には事前の確認が必要です。",
+    "sources": [
+      {
+        "id": "src-1",
+        "name": "Amazon商品ページ仕様",
+        "url": "https://www.amazon.co.jp/dp/B0GFW8Z4VN",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-07-04",
+        "author": "SwitchBot",
+        "conflictOfInterest": "possible",
+        "notes": "製品の仕様、AI機能、解像度、接続方式、給電方法などの詳細を確認"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "500万画素の高画質とF1.6大口径レンズにより細部まで鮮明に記録",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": ["src-1"],
+        "crossChecked": true,
+        "notes": "商品仕様として明記されている"
+      },
+      {
+        "claim": "AIが映像を理解し、状況をテキストで通知する",
+        "category": "comparativeAdvantage",
+        "confidence": "high",
+        "supportingSourceIds": ["src-1"],
+        "crossChecked": true,
+        "notes": "2026年モデルの目玉機能として記載"
+      }
+    ],
+    "lastInvestigated": "2026-07-04",
+    "competitiveAnalysis": [
+      {
+        "name": "ieGeek 防犯カメラ 屋外 500万画素",
+        "asin": "B0BPJZXZ81",
+        "priceComparison": "対象商品と同程度の価格帯です。",
+        "featureComparison": [
+          "共通点：500万画素、屋外対応、パン/チルト機能、カラー夜間撮影対応",
+          "相違点：対象商品はVLM(AI機能)によるテキスト通知とAI映像検索に対応している点"
+        ],
+        "differentiators": [
+          "SwitchBot 防犯カメラ 屋外 500万画素の利点：高度なAI機能による状況のテキスト通知と、他のSwitchBot製品とのスマートホーム連携機能",
+          "ieGeek 防犯カメラ 屋外 500万画素の利点：よりシンプルな運用を好むユーザー向け"
+        ]
+      },
+      {
+        "name": "ANRAN 防犯カメラ 屋外 5MP",
+        "asin": "B0BWJNTRMR",
+        "priceComparison": "対象商品と同程度の価格帯です。",
+        "featureComparison": [
+          "共通点：500万画素、パン/チルト機能、夜間カラー撮影、Alexa対応",
+          "相違点：対象商品はAIによる高度なテキスト通知が可能。ANRANは声光威嚇機能に特化している点"
+        ],
+        "differentiators": [
+          "SwitchBot 防犯カメラ 屋外 500万画素の利点：AIによる詳細な状況把握と過去映像のスマート検索",
+          "ANRAN 防犯カメラ 屋外 5MPの利点：威嚇機能など物理的な防犯効果を重視する場合"
+        ]
+      },
+      {
+        "name": "COOAU 防犯カメラ 屋外 5MP",
+        "asin": "B0BRXYCTZK",
+        "priceComparison": "対象商品よりやや高い価格設定ですが、基本的なスペックは似ています。",
+        "featureComparison": [
+          "共通点：500万画素、パン/チルト360°広角撮影、自動追跡",
+          "相違点：対象商品はSwitchBotエコシステムに統合されており、AI要約機能を持つ点"
+        ],
+        "differentiators": [
+          "SwitchBot 防犯カメラ 屋外 500万画素の利点：最新のAI技術を活用したスマートな通知と管理",
+          "COOAU 防犯カメラ 屋外 5MPの利点：5dBiアンテナなどWi-Fi接続の安定性を強調している点"
+        ]
+      },
+      {
+        "name": "ANRAN ソーラー防犯カメラ 500万画素",
+        "asin": "B0DRFNCN5T",
+        "priceComparison": "対象商品より高い価格です。ソーラーパネル付属が価格差の要因です。",
+        "featureComparison": [
+          "共通点：500万画素、パン/チルト機能、屋外防水",
+          "相違点：対象商品は有線給電（DC）専用だが、ANRANはソーラーパネルで電源不要"
+        ],
+        "differentiators": [
+          "SwitchBot 防犯カメラ 屋外 500万画素の利点：有線給電による安定した24時間常時録画と高度なAI解析",
+          "ANRAN ソーラー防犯カメラ 500万画素の利点：電源確保が難しい場所への設置が容易な点"
+        ]
+      },
+      {
+        "name": "Tapo 防犯カメラ 屋外 ソーラー 3K",
+        "asin": "B0FRDNX4JJ",
+        "priceComparison": "対象商品より大幅に高い価格です。ソーラーパネル付属が価格差の要因です。",
+        "featureComparison": [
+          "共通点：500万画素(3K)、パン/チルト機能、AI検知",
+          "相違点：対象商品は有線給電、Tapoはソーラー給電で配線工事不要"
+        ],
+        "differentiators": [
+          "SwitchBot 防犯カメラ 屋外 500万画素の利点：コストパフォーマンスに優れ、有線給電による安定稼働",
+          "Tapo 防犯カメラ 屋外 ソーラー 3Kの利点：完全ワイヤレスで設置場所を選ばない点"
+        ]
+      },
+      {
+        "name": "ELEPRO 防犯カメラ 屋外",
+        "asin": "B0CX16ZTZN",
+        "priceComparison": "対象商品と同程度の価格帯です。",
+        "featureComparison": [
+          "共通点：500万画素、PTZ360全方位監視、フルカラーナイトビジョン",
+          "相違点：対象商品はSwitchBotアプリによる統合管理と高度なAI通知に対応"
+        ],
+        "differentiators": [
+          "SwitchBot 防犯カメラ 屋外 500万画素の利点：AIによる「配達員が荷物を置いた」などの具体的なテキスト通知機能",
+          "ELEPRO 防犯カメラ 屋外の利点：基本的な防犯機能を備えた低価格な選択肢"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "最新のAI機能でスマートに防犯対策をしたい人",
+        "すでにSwitchBot製品を利用しており、アプリを統一したい人",
+        "電源が確保できる屋外の場所を高画質で監視したい人"
+      ],
+      "pros": [
+        "高度なAI機能による具体的なテキスト通知",
+        "500万画素の高画質と夜間カラー撮影",
+        "360度パン/チルトによる広範囲のカバー",
+        "スマートホーム(Alexa等)との強力な連携"
+      ],
+      "cons": [
+        "有線給電（DC）が必須で、電源アダプターの防水対策が必要"
+      ],
+      "score": 83,
+      "scoreRationale": "[基本点: 70]\n[加点: +10] (AIによる状況のテキスト通知など高度な先進機能)\n[加点: +5] (500万画素の高画質と360度パンチルトによる高い性能)\n[加点: +3] (他のスマートホーム機器との連携やアプリの使い勝手)\n[減点: -5] (有線給電専用で、電源アダプターが非防水であることによる設置の制約)\n[合計: 83]"
+    },
+    "technicalSpecs": {
+      "dimensions": {
+        "height": "83mm",
+        "width": "86mm",
+        "depth": "86mm"
+      },
+      "color": "ホワイト",
+      "resolution": "500万画素 (3K)",
+      "lens": "F1.6大口径レンズ、110°広角",
+      "panTilt": "パン（水平360°）、チルト（垂直90°）",
+      "nightVision": "赤外線（白黒）、フルカラー（赤外線LED×4／白色LED×4搭載）",
+      "power": "有線給電（DC 12V・2A、電源コード長約3m）",
+      "waterproof": "IP66（※電源アダプターは非防水）",
+      "connectivity": "Wi-Fi、有線LAN（ケーブル別売）",
+      "storage": "microSDカード（最大512GB対応、別売）、クラウド保存",
+      "smartHome": "Alexa、Google Assistant対応",
+      "other": [
+        "VLM(AI機能)搭載",
+        "-20℃までの耐寒性能",
+        "双方向通話（ノイズキャンセリング搭載）"
+      ]
+    }
+  }
+}
