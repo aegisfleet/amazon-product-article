@@ -1,0 +1,182 @@
+{
+  "analysis": {
+    "productName": "Axlgax 1080P 超小型隠しカメラ",
+    "parentAsin": "B0D7M97L8S",
+    "productDescription": "1920×1080Pの高画質で録画可能な超小型カメラ。動体検知機能や上書き録画に対応し、最大6時間の連続録画が可能です。",
+    "productUsage": [
+      "防犯監視",
+      "会議や商談の記録",
+      "証拠撮影"
+    ],
+    "positivePoints": [
+      "1080PフルHD解像度での鮮明な映像記録",
+      "動体検知による自動録画とストレージ節約",
+      "650mAhバッテリー搭載で最大6時間連続録画",
+      "録画しながらの充電に対応"
+    ],
+    "negativePoints": [
+      "暗所での撮影に弱く十分な光量が必要",
+      "撮影時にレンズを静止させる必要がある",
+      "高温環境や密閉空間での使用に制限がある"
+    ],
+    "useCases": [
+      "自宅の防犯対策",
+      "オフィスでの会議記録",
+      "トラブル時の証拠保全"
+    ],
+    "userStories": [],
+    "userImpression": "安価でありながら動体検知や上書き録画といった実用的な機能を備えている。一方で暗所に弱く、撮影時の手ブレや発熱に注意が必要である。",
+    "sources": [
+      {
+        "id": "src-1",
+        "name": "Amazon商品ページ",
+        "url": "https://www.amazon.co.jp/dp/B0D7M97L8S",
+        "tier": "low",
+        "evidenceType": "primary",
+        "publishedAt": "2026-07-04",
+        "author": "Axlgax",
+        "conflictOfInterest": "disclosed",
+        "notes": "メーカー公式のスペック・機能説明"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "最大6時間の連続録画が可能",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "crossChecked": false,
+        "notes": "650mAhバッテリー内蔵によるメーカー公称値"
+      },
+      {
+        "claim": "動体検知機能を搭載",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "crossChecked": false,
+        "notes": "動きを検知して5分間録画する機能"
+      }
+    ],
+    "lastInvestigated": "2026-07-04",
+    "competitiveAnalysis": [
+      {
+        "name": "Cyi 小型カメラ wifi タワー式",
+        "asin": "B09TR1M5RF",
+        "priceComparison": "本製品よりも高価だが、Wi-Fi接続による遠隔監視が可能。",
+        "featureComparison": [
+          "共通点：1080P録画、動体検知機能",
+          "相違点：本製品は単体のカメラだが、本競合製品はUSBコンセントタワー型でWi-Fi遠隔操作に対応"
+        ],
+        "differentiators": [
+          "Axlgax 1080P 超小型隠しカメラの利点：安価でシンプルな設計のため、設置の自由度が高い",
+          "Cyi 小型カメラ wifi タワー式の利点：Wi-Fi対応でスマートフォンからリアルタイム監視が可能"
+        ]
+      },
+      {
+        "name": "Rettru 超小型隠しカメラ",
+        "asin": "B0GYHGLPMN",
+        "priceComparison": "価格帯は同等。本製品の方が長時間録画向けだが、競合製品は暗視機能を持つ。",
+        "featureComparison": [
+          "共通点：1080P録画、動体検知機能",
+          "相違点：本製品はバッテリーで最大6時間録画可能だが、競合製品はWi-Fiと暗視機能を備える"
+        ],
+        "differentiators": [
+          "Axlgax 1080P 超小型隠しカメラの利点：650mAhバッテリー内蔵により電源なしで長時間（6時間）の連続録画が可能",
+          "Rettru 超小型隠しカメラの利点：暗視機能があるため夜間や暗所での撮影に適している"
+        ]
+      },
+      {
+        "name": "IUOSOR 小型カメラ 長時間録画",
+        "asin": "B0CBKKPJT3",
+        "priceComparison": "価格帯は同等。競合製品はさらに長い11時間録画を謳う。",
+        "featureComparison": [
+          "共通点：1080P画質、動体検知機能",
+          "相違点：本製品は最大6時間録画だが、競合製品は最大11時間連続録画を謳う"
+        ],
+        "differentiators": [
+          "Axlgax 1080P 超小型隠しカメラの利点：128GBまでのSDカード対応と上書き機能によるシンプルな運用",
+          "IUOSOR 小型カメラ 長時間録画の利点：バッテリー容量が大きく、より長時間の連続録画が可能"
+        ]
+      },
+      {
+        "name": "LXMIMI 隠しカメラ USB充電器型",
+        "asin": "B0BY8B3R3J",
+        "priceComparison": "価格帯は同等。競合製品はコンセントに直接挿して使うため運用方法が異なる。",
+        "featureComparison": [
+          "共通点：1080P画質、動体検知機能",
+          "相違点：本製品は独立したバッテリー駆動カメラだが、競合製品はUSB充電器（ACアダプター）に擬装している"
+        ],
+        "differentiators": [
+          "Axlgax 1080P 超小型隠しカメラの利点：バッテリー内蔵でコンセントがない場所でも自由に設置可能",
+          "LXMIMI 隠しカメラ USB充電器型の利点：コンセント給電によりバッテリー切れの心配がなく、24時間常時録画に向く"
+        ]
+      },
+      {
+        "name": "KSFDOOL 超小型カメラ 10000mAh",
+        "asin": "B0GVYQ8QLV",
+        "priceComparison": "本製品よりもやや高価。大容量バッテリーによる50時間録画に対応。",
+        "featureComparison": [
+          "共通点：1080P画質、動体検知機能",
+          "相違点：本製品は650mAhバッテリーだが、競合製品は10000mAhの大容量バッテリーを搭載し暗視機能もある"
+        ],
+        "differentiators": [
+          "Axlgax 1080P 超小型隠しカメラの利点：軽量かつコンパクトで設置場所を選ばない",
+          "KSFDOOL 超小型カメラ 10000mAhの利点：10000mAhバッテリー内蔵で最大50時間の超長期間録画が可能"
+        ]
+      },
+      {
+        "name": "Axlgax 小型カメラ USBメモリー型",
+        "asin": "B0D6VSPKG6",
+        "priceComparison": "同ブランドの別モデルで価格帯は同等。",
+        "featureComparison": [
+          "共通点：ブランド（Axlgax）、1080P画質、動体検知機能、6時間連続録画",
+          "相違点：本製品は汎用的な小型カメラ形状だが、競合製品はUSBメモリーに擬装した形状"
+        ],
+        "differentiators": [
+          "Axlgax 1080P 超小型隠しカメラの利点：レンズ周りの形状がシンプルで、DIYでの組み込み等に活用しやすい",
+          "Axlgax 小型カメラ USBメモリー型の利点：USBメモリー型のため、オフィス等の卓上に置いても違和感がない"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "手軽に防犯対策を始めたい人",
+        "会議や商談の記録を残したい人",
+        "電源がない場所で数時間の監視録画をしたい人"
+      ],
+      "pros": [
+        "安価で導入しやすい",
+        "動体検知機能で不要な録画を省略できる",
+        "バッテリー単体で約6時間の連続動作が可能"
+      ],
+      "cons": [
+        "暗視機能がないため夜間の撮影には不向き",
+        "Wi-Fi非対応でリアルタイムの映像確認ができない"
+      ],
+      "score": 75,
+      "scoreRationale": "[基本点: 70]\n[加点: +10] (650mAhバッテリーによる6時間の連続録画機能)\n[加点: +5] (動体検知機能搭載でメモリー容量を節約できる)\n[減点: -10] (暗視機能が無く暗所での撮影に不適)\n[合計: 75]"
+    },
+    "technicalSpecs": {
+      "dimensions": {
+        "height": "0mm",
+        "width": "0mm",
+        "depth": "0mm"
+      },
+      "weight": "0g",
+      "resolution": "1920×1080P (30fps)",
+      "battery": "650mAh",
+      "batteryLife": "最大6時間",
+      "storage": "最大128GBのSDカード対応",
+      "features": [
+        "動体検知",
+        "上書き録画",
+        "充電中の録画対応"
+      ],
+      "color": "ブラック"
+    }
+  }
+}
