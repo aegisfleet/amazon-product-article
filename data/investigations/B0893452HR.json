@@ -1,0 +1,177 @@
+{
+  "analysis": {
+    "productName": "Belkin USB-C to HDMI + USB-C 60W PD 変換アダプタ",
+    "parentAsin": "B0893452HR",
+    "productDescription": "USB-Cポートから最大4K/60Hzの映像出力と最大60WのPD急速充電を同時に行える変換アダプタ。",
+    "productUsage": [
+      "ノートPCやタブレットの映像を外部モニターに出力",
+      "映像出力と同時にデバイスを充電"
+    ],
+    "positivePoints": [
+      "4K/60Hzの高画質映像出力に対応",
+      "最大60WのUSB PD給電に対応し、長時間の使用も安心",
+      "MacBook、iPad Pro、Surfaceなど幅広いUSB-Cデバイスに対応",
+      "安心の2年保証と日本語サポート"
+    ],
+    "negativePoints": [
+      "USB-Cポートは充電専用でデータ転送には非対応（推測される仕様）",
+      "4K/60Hz出力には接続するデバイスとモニター、ケーブルが全て対応している必要がある"
+    ],
+    "useCases": [
+      "プレゼンテーション時にPCを充電しながらプロジェクターに映像出力",
+      "iPad Proを外部モニターに接続して大画面で作業"
+    ],
+    "userStories": [
+      {
+        "userType": "ビジネスパーソン",
+        "scenario": "長時間のプレゼンや会議",
+        "experience": "MacBook Proを使ってプレゼンをする際、バッテリーの減りが気になるが、このアダプターを使えば充電しながらHDMIでプロジェクターに出力できるため、バッテリー切れの心配なく進行に集中できた。",
+        "supportingSourceIds": ["src-amazon-reviews"],
+        "sentiment": "positive"
+      },
+      {
+        "userType": "クリエイター",
+        "scenario": "自宅でのデュアルモニター環境構築",
+        "experience": "iPad Proを外部モニターに接続して大画面で作業する際に使用。4K/60Hz出力に対応しているため、遅延や画質の劣化を感じることなく快適に作業ができた。",
+        "supportingSourceIds": ["src-amazon-reviews"],
+        "sentiment": "positive"
+      }
+    ],
+    "userImpression": "総じて、充電しながら映像出力ができる点が非常に高く評価されている。特にMacBookやiPadユーザーからの支持が厚く、動作の安定性やBelkinブランドへの信頼感も高評価の要因となっている。",
+    "sources": [
+      {
+        "id": "src-amazon-reviews",
+        "name": "Amazon.co.jp カスタマーレビュー",
+        "url": "https://www.amazon.co.jp/dp/B0893452HR",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-07-04",
+        "author": "Amazon購入者",
+        "conflictOfInterest": "none",
+        "notes": "2,310件のレビューで平均星4.3と高い評価を獲得している。"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "4K/60Hzの映像出力に対応",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": ["src-amazon-reviews"],
+        "crossChecked": true,
+        "notes": "製品仕様として明記されており、レビューでも確認済み。"
+      },
+      {
+        "claim": "最大60WのPD充電に対応",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": ["src-amazon-reviews"],
+        "crossChecked": true,
+        "notes": "製品仕様として明記されている。"
+      }
+    ],
+    "lastInvestigated": "2026-07-04",
+    "competitiveAnalysis": [
+      {
+        "name": "Brook USB-C to HDMI アダプター",
+        "asin": "2151835051",
+        "priceComparison": "対象商品とほぼ同価格帯。",
+        "featureComparison": [
+          "共通点：4K 60Hz出力対応、PD充電対応",
+          "相違点：Brookは最大100W PD充電に対応しているが、対象商品は60Wまで。"
+        ],
+        "differentiators": [
+          "Belkin USB-C to HDMI + USB-C 60W PD 変換アダプタの利点：ブランドの信頼性と2年間の保証",
+          "Brook USB-C to HDMI アダプターの利点：100W PD充電に対応しており、高出力が必要なPCに適している"
+        ]
+      },
+      {
+        "name": "GADEBAO USB C Type C HDMI 変換アダプター",
+        "asin": "B0DTTBZ6KJ",
+        "priceComparison": "対象商品よりも安価。",
+        "featureComparison": [
+          "共通点：4K 60Hz出力対応、PD充電対応",
+          "相違点：GADEBAOは最大100W PD充電に対応。対象商品はBelkin製で2年保証がある。"
+        ],
+        "differentiators": [
+          "Belkin USB-C to HDMI + USB-C 60W PD 変換アダプタの利点：大手ブランドの安心感と手厚いサポート",
+          "GADEBAO USB C Type C HDMI 変換アダプターの利点：安価でありながら100W PD充電に対応しているコスパの良さ"
+        ]
+      },
+      {
+        "name": "ゴッパ(GOPPA) USB Type-C to HDMI変換アダプタ",
+        "asin": "B08VWGVCTQ",
+        "priceComparison": "対象商品とほぼ同価格帯。",
+        "featureComparison": [
+          "共通点：USB-CからHDMIへの変換、PD充電対応",
+          "相違点：対象商品は4K 60Hzを明記しているが、GOPPAは仕様詳細が不明確。"
+        ],
+        "differentiators": [
+          "Belkin USB-C to HDMI + USB-C 60W PD 変換アダプタの利点：4K 60Hz出力の保証と、MacBookやiPadとの高い互換性",
+          "ゴッパ(GOPPA) USB Type-C to HDMI変換アダプタの利点：国内メーカー製であることの安心感"
+        ]
+      },
+      {
+        "name": "Hanx Commerce DST-7CH2 ドッキングステーション",
+        "asin": "B0GM6Z176W",
+        "priceComparison": "対象商品よりもわずかに安価。",
+        "featureComparison": [
+          "共通点：PD 60W充電対応",
+          "相違点：HanxはUSB 3.0ポート等を含む4in1のドッキングステーションであるのに対し、対象商品はHDMIと充電用USB-Cのみのシンプルな構成。"
+        ],
+        "differentiators": [
+          "Belkin USB-C to HDMI + USB-C 60W PD 変換アダプタの利点：コンパクトで持ち運びに便利、シンプルな用途に最適",
+          "Hanx Commerce DST-7CH2 ドッキングステーションの利点：USB-Aポートなど複数のポートを備え、拡張性が高い"
+        ]
+      },
+      {
+        "name": "Muchfox 4-in-1 Type C to HDMI アダプタ",
+        "asin": "B0H3KSX7X2",
+        "priceComparison": "対象商品よりも高価。",
+        "featureComparison": [
+          "共通点：4K 60Hz出力、PD充電対応",
+          "相違点：MuchfoxはデュアルHDMIとUSB-Aポートを備えるマルチアダプタ。"
+        ],
+        "differentiators": [
+          "Belkin USB-C to HDMI + USB-C 60W PD 変換アダプタの利点：単一ディスプレイ出力に特化したシンプルさと安定性",
+          "Muchfox 4-in-1 Type C to HDMI アダプタの利点：2画面への同時出力やUSB-A機器の接続が可能"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "MacBookやiPad Proを愛用しており、ブランドの信頼性を重視する人",
+        "プレゼンや会議で長時間の映像出力を頻繁に行うビジネスパーソン",
+        "シンプルなHDMI変換と充電機能だけを求めている人"
+      ],
+      "pros": [
+        "充電しながらの安定した4K/60Hz映像出力",
+        "Belkinブランドの信頼性と2年保証",
+        "コンパクトで持ち運びに便利"
+      ],
+      "cons": [
+        "100Wなどの高出力PD充電には非対応（最大60W）",
+        "USB-Aなどの拡張ポートはない"
+      ],
+      "score": 85,
+      "scoreRationale": "[基本点: 70] (固定)\n[加点: +5] (Belkinブランドの信頼性と2年保証による安心感)\n[加点: +5] (4K/60Hz出力と60W PD充電を両立する安定した性能)\n[加点: +5] (コンパクトで取り回しが良いデザイン)\n[合計: 85]"
+    },
+    "technicalSpecs": {
+      "dimensions": {
+        "height": "129mm",
+        "width": "101mm",
+        "depth": "28mm"
+      },
+      "weight": "50g",
+      "capacity": "なし",
+      "material": "プラスチック（推測）",
+      "origin": "中国（推測）",
+      "other": [
+        "最大解像度: 4K (60Hz)",
+        "入力ポート: USB Type-C (Thunderbolt 3対応)",
+        "出力ポート: HDMI",
+        "給電ポート: USB Type-C (最大60W PD対応)",
+        "対応OS: Mac OS、Windows、iPadOS、Chrome OS"
+      ]
+    }
+  }
+}
