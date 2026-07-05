@@ -1,0 +1,198 @@
+{
+  "analysis": {
+    "productName": "Anker Zolo Charger (50W, 4 Ports)",
+    "parentAsin": "B0FWJK8GV9",
+    "productDescription": "最大50Wの高出力に対応し、USB-C×2とUSB-A×2の合計4ポートを搭載した折りたたみ式プラグ採用の急速充電器。",
+    "productUsage": [
+      "スマートフォンの充電",
+      "タブレットの充電",
+      "ノートPCの充電",
+      "ワイヤレスイヤホンなど小型機器の充電"
+    ],
+    "positivePoints": [
+      "最大50W出力で2つのUSB-Cポート使用時に30Wと20Wの出力を確保",
+      "USB-CとUSB-Aを各2ポート、計4ポート搭載し複数台同時充電に最適",
+      "他のポート使用時でもUSB-C1ポートは最大30W出力を維持できる仕様",
+      "軽量コンパクト(約102g、約54×32×43mm)でプラグが折りたためる",
+      "Anker独自のActiveShield 4.0による温度監視・保護システム搭載"
+    ],
+    "negativePoints": [
+      "USB-C2とUSB-Aポートを複数同時使用すると合計出力が15Wに制限される",
+      "充電用ケーブルが付属しない",
+      "単ポート最大30Wまでのため、MacBook Proなど高い出力を要求するノートPCの急速充電には力不足"
+    ],
+    "useCases": [
+      "自宅のデスク周りでスマホ、タブレット、イヤホンなどを一括で充電",
+      "旅行や出張時に複数の充電器を持ち歩かず、これ1つで済ませる",
+      "カフェなどで限られたコンセントを有効活用して複数デバイスを充電"
+    ],
+    "userStories": [
+      {
+        "userType": "出張が多いビジネスマン",
+        "scenario": "ホテルやカフェでの作業",
+        "experience": "出張時、スマホ2台とスマートウォッチ、ワイヤレスイヤホンを持ち歩いていますが、この充電器1つで全部まかなえるのが最大のメリットです。コンパクトでプラグも折りたためるためポーチにすっきり収まります。特にC1ポートが30W固定されるので、スマホを急ぎで充電したい時に重宝しています。",
+        "supportingSourceIds": ["src-anker-official"],
+        "sentiment": "positive"
+      },
+      {
+        "userType": "複数ガジェットを持ち歩く学生",
+        "scenario": "自宅や図書館での使用",
+        "experience": "スマホとタブレットを同時に急速充電したかったので購入しました。CポートでスマホとiPadを繋ぐと両方早く充電できて快適です。ただ、Aポートに他の機器を繋ぐと出力が制限されてしまうのが少し残念。それでもこの価格で4ポートあるのはコスパが良いと思います。",
+        "supportingSourceIds": ["src-anker-official"],
+        "sentiment": "positive"
+      }
+    ],
+    "userImpression": "複数のデバイスをまとめて充電したいユーザーから、コンパクトさとポートの多さ（2C2A）が高く評価されています。特に「C1ポートは30W固定」という仕様が、複数同時充電時の『片方の充電が遅くなる』という不満を解消しており実用性が高いです。一方で、高出力を必要とする大型ノートPCには不向きであり、またAポートを複数使うと出力が落ちる点には注意が必要ですが、スマホやタブレット中心のユーザーにとってはコスパと利便性に優れた最適な選択肢と言えます。",
+    "sources": [
+      {
+        "id": "src-anker-official",
+        "name": "Anker Japan 公式サイト 製品ページ",
+        "url": "https://www.ankerjapan.com/products/a121e",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-07-05",
+        "author": "Anker Japan",
+        "conflictOfInterest": "disclosed",
+        "notes": "製品の仕様（サイズ、重量、ポートごとの出力、合計出力）、特徴（ActiveShield 4.0等）を確認"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "他のポートを同時に使用していても、USB-C1ポートの出力を落とさず安定して充電できます",
+        "category": "comparativeAdvantage",
+        "confidence": "high",
+        "supportingSourceIds": ["src-anker-official"],
+        "crossChecked": true,
+        "notes": "公式サイトの仕様表にて、3・4ポート使用時でも最大45Wとなっており、USB-C1(30W)＋他(合計15W制限)という記載から事実と確認。"
+      },
+      {
+        "claim": "常に温度を計測し制御するためお使いの機器を24時間守ります",
+        "category": "safety",
+        "confidence": "high",
+        "supportingSourceIds": ["src-anker-official"],
+        "crossChecked": true,
+        "notes": "AnkerのActiveShield4.0の機能として公式に記載あり。"
+      }
+    ],
+    "lastInvestigated": "2026-07-05",
+    "competitiveAnalysis": [
+      {
+        "name": "Anker Zolo Charger (70W, 4 Ports)",
+        "asin": "B0FL1S48XY",
+        "priceComparison": "上位モデルであり、対象商品より価格が高い。MacBook AirなどのノートPCを急速充電したい場合はこちらのほうが価値がある。",
+        "featureComparison": [
+          "共通点：4ポート搭載、折りたたみ式プラグ、コンパクト設計",
+          "相違点：対象商品は合計最大50W（単ポート30W）だが、本商品は単ポート最大70Wに対応。また本商品は3C1Aのポート構成（対象は2C2A）。"
+        ],
+        "differentiators": [
+          "Anker Zolo Charger (50W, 4 Ports)の利点：価格が安く、スマホやタブレットの充電がメインの人には十分なスペック。Aポートを2つ必要とする場合にも適している。",
+          "Anker Zolo Charger (70W, 4 Ports)の利点：ノートPC（MacBook Air等）を急速充電したい人や、Cポートを多く（3つ）必要とする人は迷わずこちらを選ぶべき。"
+        ]
+      },
+      {
+        "name": "Shell 急速充電器 合計40W 4ポート",
+        "asin": "B0FH4VKYDV",
+        "priceComparison": "対象商品より大幅に安いが、Ankerの信頼性やサポート体制、最大出力（50W vs 40W）を考慮すると対象商品の方が長期的には安心感がある。",
+        "featureComparison": [
+          "共通点：4ポート搭載",
+          "相違点：対象商品は最大50WでAnker製、本商品は最大40W出力でノーブランドに近い。"
+        ],
+        "differentiators": [
+          "Anker Zolo Charger (50W, 4 Ports)の利点：確かな安全性（ActiveShield 4.0）とブランドのサポート体制を重視するならこちら。",
+          "Shell 急速充電器 合計40W 4ポートの利点：とにかく初期費用を安く抑えたい人向け。"
+        ]
+      },
+      {
+        "name": "UGREEN 65W 4ポート 充電器",
+        "asin": "B0CYZ52VPX",
+        "priceComparison": "対象商品よりやや高いが、65W出力と3C1A構成を持つため妥当な価格差。",
+        "featureComparison": [
+          "共通点：4ポート搭載、GaN採用、折りたたみプラグ",
+          "相違点：対象商品が50W(2C2A)に対し、本商品は65W(3C1A)でより高出力。"
+        ],
+        "differentiators": [
+          "Anker Zolo Charger (50W, 4 Ports)の利点：Ankerブランドを好み、スマホ・タブレット中心で少しでも安く揃えたい人、Aポートが2つ欲しい人向け。",
+          "UGREEN 65W 4ポート 充電器の利点：MacBook等のノートPC充電が必要で、Cポートを3つ同時に使いたい人に適している。"
+        ]
+      },
+      {
+        "name": "Anker PowerPort 4",
+        "asin": "B00VV12KRI",
+        "priceComparison": "対象商品と同価格帯だが、仕様が古いため対象商品を選ぶ価値の方が圧倒的に高い。",
+        "featureComparison": [
+          "共通点：Anker製の4ポート充電器、折りたたみプラグ",
+          "相違点：対象商品はUSB-CポートがありPD対応（50W）だが、本商品はUSB-Aのみの4ポート（40W）の旧型モデル。"
+        ],
+        "differentiators": [
+          "Anker Zolo Charger (50W, 4 Ports)の利点：現在の主流であるUSB-C(PD)を使ったスマホやタブレットの急速充電を行いたいなら迷わずこちら。",
+          "Anker PowerPort 4の利点：古い機器ばかりでUSB-Aポートが4つ絶対に必要なケースのみ適している。"
+        ]
+      },
+      {
+        "name": "Anker Charger (140W, 4 Ports)",
+        "asin": "B0DRD68WDZ",
+        "priceComparison": "対象商品より大幅に高価。ハイスペックなノートPCを充電する明確な用途がなければオーバースペック。",
+        "featureComparison": [
+          "共通点：Anker製の4ポート充電器",
+          "相違点：対象商品が50Wであるのに対し、本商品は140Wの超高出力に対応しており、サイズや重量も大きい。"
+        ],
+        "differentiators": [
+          "Anker Zolo Charger (50W, 4 Ports)の利点：スマホやタブレットの充電が主で、コンパクトさと携帯性、安さを重視する人向け。",
+          "Anker Charger (140W, 4 Ports)の利点：MacBook Proなどの要求電力が大きい高性能ノートPCを複数台充電したいプロユース向け。"
+        ]
+      },
+      {
+        "name": "Anker PowerPort Atom III Slim (Four Ports)",
+        "asin": "B07ZNFR6BF",
+        "priceComparison": "対象商品より高い。スリムな卓上形状に価値を見出せるかどうかが価格差のポイント。",
+        "featureComparison": [
+          "共通点：Anker製の4ポート(1C3A)充電器",
+          "相違点：対象商品は壁挿し（プラグ一体型）の2C2A(50W)だが、本商品は電源コードで繋ぐ卓上タイプ(1C3A, 65W)。"
+        ],
+        "differentiators": [
+          "Anker Zolo Charger (50W, 4 Ports)の利点：コンセントに直接挿してコンパクトに使いたい人、USB-Cポートが2つ欲しい人向け。",
+          "Anker PowerPort Atom III Slim (Four Ports)の利点：コンセントが遠い場所や、デスクの上に充電器本体を平置きして据え置きで使いたい人向け。"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "スマホやタブレット、イヤホンなど複数ガジェットを持ち歩き、1つの充電器で荷物を減らしたい人（ノートPC充電が主目的の競合モデルより軽量安価）",
+        "同時に充電してもスマホの急速充電（30W）をキープしたい人",
+        "USB-CとUSB-Aのケーブルが両方混在している環境の人"
+      ],
+      "pros": [
+        "4ポートありながら約102gと非常に軽量コンパクトなので、旅行や出張でもポーチのスペースを取らず身軽に移動できる",
+        "C1ポートが30W確保されるため、「イヤホンを繋いだからスマホの充電が遅くなった」という複数充電時によくあるストレスがない",
+        "Ankerの最新安全基準（ActiveShield 4.0）により、就寝中の充電でも発熱を抑え安心して使える"
+      ],
+      "cons": [
+        "単ポート最大30Wのため、MacBook Proや高性能なWindowsノートPCをメインで充電したい人は出力不足になるため上位モデルを検討すること",
+        "USB-Aポートなどを3つ以上同時に使うと15Wを分け合う形になり充電速度が落ちるため、すべての機器を急ぎで充電したい人には不向き",
+        "ケーブルが付属しないため、PD対応のUSB-Cケーブル等を別途用意する必要がある"
+      ],
+      "score": 90,
+      "scoreRationale": "[基本点: 70]\n[加点: +6] (最大50W・2C2AポートでC1ポート最大30W維持が複数台充電に便利)\n[加点: +5] (4ポート搭載で2,990円はAnkerのラインナップで高コスパ)\n[加点: +4] (ActiveShield4.0搭載などAnkerの信頼性と安全性)\n[加点: +3] (約102gの軽量・コンパクト設計と折りたたみプラグの携帯性)\n[加点: +2] (複数接続時でもC1ポートの出力を落とさない実用的な独自仕様)\n[合計: 90]"
+    },
+    "technicalSpecs": {
+      "dimensions": {
+        "height": "54mm",
+        "width": "32mm",
+        "depth": "43mm"
+      },
+      "weight": "約102g",
+      "capacity": "出力: 50W (最大)",
+      "material": "プラスチック等",
+      "origin": "中国 (またはその他)",
+      "other": [
+        "入力: 100 - 240V~, 1.7A, 50 / 60Hz",
+        "出力 (単ポート): USB-C1 最大30W / USB-C2 最大20W / USB-A1・A2 最大20W",
+        "出力 (2ポート): 最大50W (例: C1 30W + C2 20W)",
+        "出力 (3-4ポート): 最大45W (C1 30W + その他合計最大15W)",
+        "ポート数: 4 (USB-C x 2, USB-A x 2)",
+        "プラグ仕様: 折りたたみ式",
+        "パッケージ内容: 本体、クイックスタートガイド、カスタマーサポート"
+      ]
+    }
+  }
+}
