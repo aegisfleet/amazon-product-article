@@ -31,6 +31,9 @@ updates:
     labels:
       - "dependencies"
       - "pnpm"
+    ignore:
+      - dependency-name: "js-yaml"
+        update-types: ["version-update:semver-major"]
 
   - package-ecosystem: "pip"
     directory: "/"
