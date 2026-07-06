@@ -175,7 +175,8 @@ function renderCardMeta(p) {
 
   if (p.dealBadge) {
     const deal = document.createElement('span');
-    deal.className = 'badge-deal';
+    const isPrime = p.dealAccessType === 'PRIME_EXCLUSIVE' || p.dealAccessType === 'PRIME_EARLY_ACCESS';
+    deal.className = `badge-deal ${isPrime ? 'deal-prime' : 'deal-standard'}`;
     deal.textContent = p.dealBadge;
     detailsRow.appendChild(deal);
   }
