@@ -141,6 +141,7 @@
     "savingsPercentage" (.Params.savings_percentage | default 0)
     "availability" (.Params.availability | default "")
     "dealBadge" (.Params.deal_badge | default "")
+    "dealAccessType" (.Params.deal_access_type | default "")
     "specsHtml" (cond (not (not .Params.specs)) (partial "product-spec-tags.html" (dict "specs" .Params.specs "tagClass"
     "card-spec-tag")) "")
     ) -}}

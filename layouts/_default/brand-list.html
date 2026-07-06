@@ -291,7 +291,11 @@
                         <span class="badge-amazon-direct">Amazon直販</span>
                         {{- end -}}
                         {{- with .Params.deal_badge -}}
-                        <span class="badge-deal">{{ . }}</span>
+                        {{- $dealClass := "deal-standard" -}}
+                        {{- if or (eq $.Params.deal_access_type "PRIME_EXCLUSIVE") (eq $.Params.deal_access_type "PRIME_EARLY_ACCESS") -}}
+                        {{- $dealClass = "deal-prime" -}}
+                        {{- end -}}
+                        <span class="badge-deal {{ $dealClass }}">{{ . }}</span>
                         {{- end -}}
                         {{- if .Params.savings_percentage -}}
                         <span class="badge-savings">{{ .Params.savings_percentage }}% OFF</span>

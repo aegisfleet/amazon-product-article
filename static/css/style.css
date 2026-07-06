@@ -570,20 +570,8 @@ a:hover {
   font-size: 0.9em;
 }
 
-.badge-deal.deal-prime {
-  background: #e7f4fc;
-  color: #0066c0;
-  border-color: #a2d2f5;
-}
-
 .badge-deal.deal-prime::before {
   content: "👑";
-}
-
-[data-theme="dark"] .badge-deal.deal-prime {
-  background: #0d233a;
-  color: #3fa9f5;
-  border-color: #1a4d7c;
 }
 
 .card-score {
