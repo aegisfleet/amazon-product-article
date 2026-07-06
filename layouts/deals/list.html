@@ -1,0 +1,184 @@
+{{- define "main" -}}
+<div class="container" style="padding-top: var(--spacing-xl);">
+    {{- partial "breadcrumb.html" . -}}
+
+    <!-- Page Header -->
+    <div class="bargain-hero" style="background: linear-gradient(135deg, #ff4e50 0%, #f9d423 100%); color: var(--color-white);">
+        <div class="bargain-hero-icon">🔥</div>
+        <h1 class="bargain-hero-title" style="color: var(--color-white);">セール対象商品一覧</h1>
+        <p class="bargain-hero-subtitle" style="color: rgba(255, 255, 255, 0.9);">お得なタイムセール & 限定セール開催中</p>
+        <p class="bargain-hero-desc" style="color: rgba(255, 255, 255, 0.85); max-width: 700px; margin: 0 auto;">
+            現在Amazonでセール対象になっている商品をリアルタイムで一覧表示。
+            割引率やスコア、価格帯で絞り込んで、本当にお得な厳選商品を見つけましょう。
+        </p>
+    </div>
+
+    <!-- Filter Panel -->
+    <div class="bargain-filter-panel" id="deals-filter-panel">
+        <!-- Row 1: Score & Price -->
+        <div class="bargain-filter-row">
+            <div class="bargain-filter-group">
+                <label for="deals-score-slider" class="bargain-filter-label">
+                    <span class="bargain-filter-icon">🏆</span>
+                    最低スコア: <span id="deals-score-value" class="bargain-filter-value">60</span>点以上
+                </label>
+                <input type="range" id="deals-score-slider" class="bargain-slider" min="0" max="100" step="5"
+                    value="60">
+                <div class="bargain-slider-labels">
+                    <span>0</span><span>50</span><span>100</span>
+                </div>
+            </div>
+
+            <div class="bargain-filter-group-price">
+                <div class="bargain-filter-group">
+                    <label for="deals-min-price-slider" class="bargain-filter-label">
+                        <span class="bargain-filter-icon">💰</span>
+                        最低価格: <span id="deals-min-price-value" class="bargain-filter-value">¥0</span>
+                    </label>
+                    <input type="range" id="deals-min-price-slider" class="bargain-slider" min="0" max="1000" step="1"
+                        value="0">
+                    <div class="bargain-slider-labels"
+                        style="position: relative; height: 1.25rem; margin-top: 4px; font-size: 0.7rem;">
+                        <span style="position: absolute; left: 0%; transform: none;">¥0</span>
+                        <span style="position: absolute; left: 40%; transform: translateX(-50%);">¥2k</span>
+                        <span style="position: absolute; left: 70%; transform: translateX(-50%);">¥10k</span>
+                        <span style="position: absolute; left: 100%; transform: translateX(-100%);">¥50k</span>
+                    </div>
+                </div>
+                <div class="bargain-filter-group">
+                    <label for="deals-price-slider" class="bargain-filter-label">
+                        上限価格: <span id="deals-price-value" class="bargain-filter-value">上限なし</span>
+                    </label>
+                    <input type="range" id="deals-price-slider" class="bargain-slider" min="0" max="1000" step="1"
+                        value="1000">
+                    <div class="bargain-slider-labels"
+                        style="position: relative; height: 1.25rem; margin-top: 4px; font-size: 0.7rem;">
+                        <span style="position: absolute; left: 0%; transform: none;">¥0</span>
+                        <span style="position: absolute; left: 40%; transform: translateX(-50%);">¥2k</span>
+                        <span style="position: absolute; left: 70%; transform: translateX(-50%);">¥10k</span>
+                        <span style="position: absolute; left: 100%; transform: translateX(-100%);">¥50k</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Row 2: Discount & Deal Type -->
+        <div class="bargain-filter-row">
+            <div class="bargain-filter-group">
+                <label for="deals-discount-slider" class="bargain-filter-label">
+                    <span class="bargain-filter-icon">📉</span>
+                    最低割引率: <span id="deals-discount-value" class="bargain-filter-value">0</span>%以上
+                </label>
+                <input type="range" id="deals-discount-slider" class="bargain-slider" min="0" max="50" step="5"
+                    value="0">
+                <div class="bargain-slider-labels">
+                    <span>0%</span><span>25%</span><span>50%</span>
+                </div>
+            </div>
+
+            <div class="bargain-filter-group">
+                <label for="deals-type-select" class="bargain-filter-label">
+                    <span class="bargain-filter-icon">🏷️</span>
+                    セールの種類
+                </label>
+                <div class="bargain-category-wrapper">
+                    <select id="deals-type-select" class="bargain-select" style="width: 100%; max-width: 100%; min-width: 0;">
+                        <option value="">すべてのセール</option>
+                        <option value="prime">👑 プライム会員限定</option>
+                        <option value="standard">🔥 タイムセール</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <!-- Row 3: Category & Sort -->
+        <div class="bargain-filter-row bargain-filter-row-bottom">
+            <div class="bargain-filter-group">
+                <label for="deals-category-select" class="bargain-filter-label">
+                    <span class="bargain-filter-icon">📂</span>
+                    カテゴリ
+                </label>
+                <div class="bargain-category-wrapper">
+                    <select id="deals-category-select" class="bargain-select" style="width: 100%; max-width: 100%; min-width: 0;">
+                        <option value="">すべてのカテゴリ</option>
+                    </select>
+                    <button type="button" id="deals-category-reset-btn" class="bargain-category-reset-btn"
+                        title="カテゴリ選択を解除" aria-label="カテゴリ選択を解除" disabled>✕</button>
+                </div>
+            </div>
+
+            <div class="bargain-filter-group">
+                <span class="bargain-filter-label">
+                    <span class="bargain-filter-icon">🔄</span>
+                    ソート
+                </span>
+                <div class="bargain-sort-buttons" id="deals-sort-buttons">
+                    <button type="button" class="bargain-sort-btn active" data-sort="discount">割引率順</button>
+                    <button type="button" class="bargain-sort-btn" data-sort="score">スコア順</button>
+                    <button type="button" class="bargain-sort-btn" data-sort="price">価格の安い順</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Results Stats -->
+    <div class="bargain-stats" id="deals-stats">
+        <span class="bargain-stats-icon">📊</span>
+        <span id="deals-result-count">0</span>件のセール商品が見つかりました
+    </div>
+
+    <!-- Product Grid -->
+    <div class="bargain-grid" id="deals-grid"></div>
+
+    <!-- No Results Message -->
+    <div class="bargain-no-results" id="deals-no-results" style="display: none;">
+        <div class="bargain-no-results-icon">🔍</div>
+        <p class="bargain-no-results-text">条件に一致するセール商品が見つかりませんでした。</p>
+        <p class="bargain-no-results-hint">フィルタ条件を変更してお試しください。</p>
+        <button type="button" class="bargain-reset-btn" id="deals-reset-btn">フィルタをリセット</button>
+    </div>
+
+    <!-- Product Data (Hugo build-time) -->
+    {{- $articles := where .Site.RegularPages "Section" "articles" -}}
+    {{- $dealsData := slice -}}
+    {{- range $articles -}}
+    {{- if .Params.deal_badge -}}
+    {{- $score := .Params.score | default 0 -}}
+    {{- $priceRaw := 0 -}}
+    {{- if .Params.price -}}
+    {{- $priceRaw = index (findRE "[0-9]+" (replace .Params.price "," "")) 0 | default 0 -}}
+    {{- end -}}
+    {{- $category := "" -}}
+    {{- if .Params.categories -}}{{- $category = index .Params.categories 0 -}}{{- else if .Params.category -}}{{-
+    $category = .Params.category -}}{{- end -}}
+    {{- $lastInvestigated := "" -}}
+    {{- with .Params.last_investigated -}}{{- $lastInvestigated = . -}}{{- end -}}
+    {{- $dealsData = $dealsData | append (dict
+    "title" .Title
+    "url" .RelPermalink
+    "score" $score
+    "price" (.Params.price | default "")
+    "priceRaw" $priceRaw
+    "asin" (.Params.asin | default "")
+    "category" $category
+    "subcategory" (.Params.subcategory | default "")
+    "brand" (.Params.brand | default "")
+    "description" (.Description | default (.Summary | truncate 100))
+    "image" (cond (and .Params.images (gt (len .Params.images) 0)) (index .Params.images 0) "")
+    "affiliateUrl" (.Params.affiliate_url | default "")
+    "lastInvestigated" $lastInvestigated
+    "isAmazonDirect" (.Params.is_amazon_direct | default false)
+    "loyaltyPoints" (.Params.loyalty_points | default 0)
+    "savingsPercentage" (.Params.savings_percentage | default 0)
+    "availability" (.Params.availability | default "")
+    "dealBadge" (.Params.deal_badge | default "")
+    "dealAccessType" (.Params.deal_access_type | default "")
+    "specsHtml" (cond (not (not .Params.specs)) (partial "product-spec-tags.html" (dict "specs" .Params.specs "tagClass"
+    "card-spec-tag")) "")
+    ) -}}
+    {{- end -}}
+    {{- end -}}
+    <script id="deals-data" type="application/json">{{- $dealsData | jsonify | safeJS -}}</script>
+</div>
+<script src="{{ `js/deals-filter.js` | relURL }}" defer></script>
+{{- end -}}

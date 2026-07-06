@@ -200,7 +200,10 @@ export interface CreatorsAPIItem {
         points: number;
       };
       dealDetails?: {
-        dealBadge?: string;
+        badge?: string;
+        accessType?: string;
+        startTime?: string;
+        endTime?: string;
       };
     }>;
     summaries?: Array<{
