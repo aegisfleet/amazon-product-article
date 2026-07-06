@@ -228,6 +228,8 @@ document.addEventListener('DOMContentLoaded', function () {
     } else {
         const script = document.createElement('script');
         script.src = 'https://cdn.jsdelivr.net/npm/fuse.js@6.6.2';
+        script.integrity = 'sha256-xXM5w/oWsdadmmtGdJqBOe+NT8m7/kgUT/iXqn1CIuw=';
+        script.crossOrigin = 'anonymous';
         script.onload = initializeSearch;
         document.head.appendChild(script);
     }
