@@ -31,6 +31,7 @@ export interface ArticleMetadata {
   availability?: string | undefined;
   loyalty_points?: number | undefined;
   deal_badge?: string | undefined;
+  deal_access_type?: string | undefined;
   savings_percentage?: number | undefined;
   technicalSpecs?: TechnicalSpecs | undefined; // 詳細スペック情報（カテゴリ依存）
   hero?: {
