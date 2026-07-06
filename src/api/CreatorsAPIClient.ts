@@ -659,7 +659,17 @@ export class CreatorsAPIClient {
       isAmazonDirect: listing?.merchantInfo?.name === 'Amazon.co.jp',
       brand: item.itemInfo?.byLineInfo?.brand?.displayValue || item.itemInfo?.manufactureInfo?.brand?.displayValue,
       loyaltyPoints: listing?.loyaltyPoints?.points ?? undefined,
-      dealBadge: listing?.dealDetails?.dealBadge,
+      dealBadge: (() => {
+        let badge = listing?.dealDetails?.badge;
+        const accessType = listing?.dealDetails?.accessType;
+        if (accessType === 'PRIME_EXCLUSIVE' || accessType === 'PRIME_EARLY_ACCESS') {
+          if (!badge || badge === 'プライムで') {
+            badge = 'プライム会員限定セール';
+          }
+        }
+        return badge;
+      })(),
+      dealAccessType: listing?.dealDetails?.accessType,
       savingsPercentage: listing?.price?.savings?.percentage ?? undefined,
     };
 

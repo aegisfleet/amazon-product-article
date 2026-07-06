@@ -189,6 +189,7 @@ export class ArticleGenerator {
       releaseDate: this.formatToJapaneseDate(productDetail.releaseDate),
       loyalty_points: product.loyaltyPoints,
       deal_badge: product.dealBadge,
+      deal_access_type: product.dealAccessType,
       savings_percentage: product.savingsPercentage,
     };
 
@@ -1396,6 +1397,8 @@ ${recommendationMessage}
     if (metadata.loyalty_points !== undefined) lines.push(`loyalty_points: ${metadata.loyalty_points}`);
     if (metadata.savings_percentage !== undefined) lines.push(`savings_percentage: ${metadata.savings_percentage}`);
     if (metadata.deal_badge) lines.push(`deal_badge: "${this.escapeForFrontMatter(metadata.deal_badge)}"`);
+    if (metadata.deal_access_type)
+      lines.push(`deal_access_type: "${this.escapeForFrontMatter(metadata.deal_access_type)}"`);
     if (metadata.rating !== undefined) lines.push(`rating: ${metadata.rating}`);
     if (metadata.ratingCount !== undefined) lines.push(`rating_count: ${metadata.ratingCount}`);
 

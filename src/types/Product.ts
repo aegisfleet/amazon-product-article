@@ -39,6 +39,7 @@ export interface Product {
   brand?: string | undefined;
   loyaltyPoints?: number | undefined;
   dealBadge?: string | undefined;
+  dealAccessType?: string | undefined;
   savingsPercentage?: number | undefined;
 }
 

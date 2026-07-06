@@ -570,6 +570,22 @@ a:hover {
   font-size: 0.9em;
 }
 
+.badge-deal.deal-prime {
+  background: #e7f4fc;
+  color: #0066c0;
+  border-color: #a2d2f5;
+}
+
+.badge-deal.deal-prime::before {
+  content: "👑";
+}
+
+[data-theme="dark"] .badge-deal.deal-prime {
+  background: #0d233a;
+  color: #3fa9f5;
+  border-color: #1a4d7c;
+}
+
 .card-score {
   font-weight: 700;
   font-size: 0.9em;
@@ -3851,6 +3867,58 @@ a.competitor-preview:hover {
 .bargain-link-icon {
   font-size: 1.1rem;
   line-height: 1;
+}
+
+/* --- Home Page: Deals Link Button --- */
+.deals-link {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  background: linear-gradient(135deg, #ff4e50, #f9d423);
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border: 1px solid #e13e40;
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-decoration: none;
+  box-shadow: 0 2px 8px rgba(239, 68, 68, 0.25);
+  transition: all 0.2s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.deals-link:hover {
+  background: linear-gradient(135deg, #e13e40, #f5a623);
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(239, 68, 68, 0.35);
+}
+
+.deals-link:visited,
+.deals-link:active {
+  color: #fff;
+}
+
+.deals-link:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+[data-theme="dark"] .deals-link {
+  background: linear-gradient(135deg, #dc2626, #b91c1c);
+  border-color: #ef4444;
+  box-shadow: 0 2px 8px rgba(239, 68, 68, 0.2);
+}
+
+[data-theme="dark"] .deals-link:hover {
+  background: linear-gradient(135deg, #b91c1c, #991b1b);
+  color: #fff;
+}
+
+[data-theme="dark"] .deals-link:visited,
+[data-theme="dark"] .deals-link:active {
+  color: #fff;
 }
 
 /* --- Bargain Hero --- */
