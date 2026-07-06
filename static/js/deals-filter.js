@@ -326,6 +326,17 @@ function renderCard(p) {
   return article;
 }
 
+// --- URL Params Helper ---
+function setSliderFromParam(params, key, slider, transformFn, minVal = null, maxVal = null) {
+  if (!params.has(key)) return;
+  const v = Number.parseInt(params.get(key), 10);
+  if (Number.isNaN(v)) return;
+  let val = transformFn ? transformFn(v) : v;
+  if (minVal !== null) val = Math.max(minVal, val);
+  if (maxVal !== null) val = Math.min(maxVal, val);
+  slider.value = String(val);
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   const dataEl = document.getElementById('deals-data');
   if (!dataEl) return;
@@ -364,33 +375,20 @@ document.addEventListener('DOMContentLoaded', () => {
   // --- URL Params ---
   function readUrlParams() {
     const params = new URLSearchParams(globalThis.location.search);
-    if (params.has('minScore')) {
-      const v = Number.parseInt(params.get('minScore'), 10);
-      if (!Number.isNaN(v)) scoreSlider.value = String(Math.max(0, Math.min(100, v)));
-    }
-    if (params.has('minPrice')) {
-      const v = Number.parseInt(params.get('minPrice'), 10);
-      if (!Number.isNaN(v)) minPriceSlider.value = String(Math.round(priceToValue(v)));
-    }
-    if (params.has('maxPrice')) {
-      const v = Number.parseInt(params.get('maxPrice'), 10);
-      if (!Number.isNaN(v)) priceSlider.value = String(Math.round(priceToValue(v)));
-    }
-    if (params.has('minDiscount')) {
-      const v = Number.parseInt(params.get('minDiscount'), 10);
-      if (!Number.isNaN(v)) discountSlider.value = String(Math.max(0, Math.min(100, v)));
-    }
-    if (params.has('dealType') && dealTypeSelect) {
+    setSliderFromParam(params, 'minScore', scoreSlider, null, 0, 100);
+    setSliderFromParam(params, 'minPrice', minPriceSlider, (v) => Math.round(priceToValue(v)));
+    setSliderFromParam(params, 'maxPrice', priceSlider, (v) => Math.round(priceToValue(v)));
+    setSliderFromParam(params, 'minDiscount', discountSlider, null, 0, 100);
+
+    if (dealTypeSelect && params.has('dealType')) {
       dealTypeSelect.value = params.get('dealType');
     }
-    if (params.has('category') && categorySelect) {
+    if (categorySelect && params.has('category')) {
       categorySelect.dataset.pendingValue = params.get('category');
     }
-    if (params.has('sort')) {
-      const s = params.get('sort');
-      if (['score', 'price', 'discount'].includes(s)) {
-        currentSort = s;
-      }
+    const s = params.get('sort');
+    if (s && ['score', 'price', 'discount'].includes(s)) {
+      currentSort = s;
     }
   }
 
