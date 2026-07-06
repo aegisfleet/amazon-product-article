@@ -403,8 +403,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const dealType = dealTypeSelect ? dealTypeSelect.value : '';
     const category = categorySelect ? categorySelect.value : '';
 
-    if (minScore !== 60) params.set('minScore', String(minScore));
-    if (minPrice !== 0) params.set('minPrice', String(minPrice));
+    if (minScore !== 80) params.set('minScore', String(minScore));
+    if (minPrice !== 100) params.set('minPrice', String(minPrice));
     if (maxPrice !== 50000) params.set('maxPrice', String(maxPrice));
     if (minDiscount !== 0) params.set('minDiscount', String(minDiscount));
     if (dealType) params.set('dealType', dealType);
@@ -524,8 +524,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // --- Reset ---
   function resetFilters() {
-    scoreSlider.value = '60';
-    minPriceSlider.value = '0';
+    scoreSlider.value = '80';
+    minPriceSlider.value = '20';
     priceSlider.value = '1000'; // max
     discountSlider.value = '0';
     if (dealTypeSelect) dealTypeSelect.value = '';
