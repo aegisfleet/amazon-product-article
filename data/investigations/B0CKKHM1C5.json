@@ -1,0 +1,170 @@
+{
+  "analysis": {
+    "productName": "IODATA スティック型外付けSSD SSPS-US1GRE 1TB",
+    "parentAsin": "B0CPHG4V8C",
+    "productDescription": "ケーブル不要で直挿しできる、USBメモリー同等サイズの小型スティック型外付けSSD。読み込み最大500MB/sの高速転送と、独自の静音ランク「PLATINUM」を取得した静音設計が特徴です。",
+    "productUsage": [
+      "ノートPCの容量不足解消",
+      "テレビの録画用ストレージ",
+      "PS5/PS4のゲームデータ保存"
+    ],
+    "positivePoints": [
+      "ケーブルレスでPCやテレビに直接挿入可能なスティックタイプ",
+      "キャップ紛失の心配がないスライド式コネクタ採用",
+      "読み込み速度最大500MB/s（HDDの約4倍高速）",
+      "全国家庭電気製品公正取引協議会の基準をクリアした静音ランク「PLATINUM」認定",
+      "PCやテレビの電源ON/OFFに連動するスタンバイ機能搭載"
+    ],
+    "negativePoints": [
+      "本体幅（23.5mm）があるため、隣接するUSBポートと干渉する可能性がある",
+      "アクセスランプ（LED）が非搭載のため、読み書き状態が視覚的に確認できない",
+      "出荷時のフォーマットがNTFSのため、Mac環境で書き込みを行う場合はexFAT等への再フォーマットが必要になる",
+      "長時間の高負荷使用時に本体が熱を持ちやすい構造"
+    ],
+    "useCases": [
+      "壁掛けテレビの背面にすっきりと録画用ストレージを設置したい時",
+      "出張先や外出先に大容量のデータを持ち運んでノートPCで使用したい時",
+      "PS5の空き容量を手軽に拡張したい時"
+    ],
+    "userStories": [
+      {
+        "userType": "ノートPCユーザー",
+        "scenario": "内蔵ストレージの容量不足解消のために購入",
+        "experience": "内蔵HDD（500GB）が圧迫されてきたため、OneDriveのローカル保存先として導入しました。スライド式でキャップがなく使いやすい反面、USBハブに挿すと本体の幅で隣のポートが使えなくなってしまうのが難点です。",
+        "supportingSourceIds": [
+          "src-amazon-review"
+        ],
+        "sentiment": "mixed"
+      },
+      {
+        "userType": "MacBookユーザー",
+        "scenario": "音楽制作（DTM）用の大容量音源データ保存",
+        "experience": "他社のスティックSSDでは電源の入れ直しのたびに認識しなくなり抜き挿しが必要でしたが、この製品は一度挿せば再起動後も勝手に認識してくれるので非常に快適です。オーケストラ音源など重いデータを扱っても遅延なく動作しています。",
+        "supportingSourceIds": [
+          "src-amazon-review"
+        ],
+        "sentiment": "positive"
+      },
+      {
+        "userType": "テレビ録画ユーザー",
+        "scenario": "テレビの録画番組保存用として使用",
+        "experience": "ケーブルがいらないのでテレビ周りがスッキリしました。録画容量も十分ですが、アクセス時のLED点滅がないため、データ書き込み中かどうかがパッと見で分かりづらいのが少し不安に感じます。",
+        "supportingSourceIds": [
+          "src-amazon-review"
+        ],
+        "sentiment": "positive"
+      }
+    ],
+    "userImpression": "ケーブルレスでスマートに設置できる利便性と、再起動時の認識の安定性が高く評価されています。テレビ周りの配線をスッキリさせたい層や、Mac等での拡張ストレージとして満足度が高い一方で、アクセスLEDがないことによる動作確認のしづらさや、本体幅による隣接ポートとの干渉が不満点として挙げられています。総じて「挿しっぱなしで安定稼働させたい人」には好評ですが、「頻繁に抜き挿しする人」「複数デバイスを密集して繋ぐ人」には工夫が必要です。",
+    "sources": [
+      {
+        "id": "src-iodata-official",
+        "name": "SSPS-USシリーズ 製品情報 / I-O DATA",
+        "url": "https://www.iodata.jp/product/hdd/ssd/ssps-us/index.htm",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2023-10-18",
+        "author": "株式会社アイ・オー・データ機器",
+        "conflictOfInterest": "possible",
+        "notes": "製品特長（スライド式、静音ランクPLATINUM、テレビ対応、電源連動機能、読込500MB/s）および仕様（サイズ、重量）を確認。"
+      },
+      {
+        "id": "src-amazon-review",
+        "name": "Amazon カスタマーレビュー / IODATA SSPS-US1GRE",
+        "url": "https://www.amazon.co.jp/dp/B0CKKHM1C5",
+        "tier": "medium",
+        "evidenceType": "secondary",
+        "publishedAt": "2024-02-22",
+        "author": "Amazon購入者",
+        "conflictOfInterest": "none",
+        "notes": "USBポート干渉の問題、アクセスLEDがないことへの不満、Macでの認識の安定性に関する実体験を確認。"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "作動時に全く音が聞こえない「静音ランクPLATINUM」",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-iodata-official"
+        ],
+        "crossChecked": true,
+        "notes": "全国家庭電気製品公正取引協議会の基準をクリア。SSDであるため物理的な駆動パーツがなく、静音性は事実として裏付けられる。"
+      },
+      {
+        "claim": "キャップ紛失の心配がないスライド式",
+        "category": "durability",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-iodata-official",
+          "src-amazon-review"
+        ],
+        "crossChecked": true,
+        "notes": "ユーザーレビューでも「キャップの必要ないスライド式なのでとても使いやすい」と評価されており事実と一致。"
+      }
+    ],
+    "lastInvestigated": "2026-07-07",
+    "competitiveAnalysis": [
+      {
+        "name": "バッファロー SSD-PUT1.0U3-B/N",
+        "asin": "B099W2R7WZ",
+        "priceComparison": "バッファロー製品とほぼ同等の価格帯。価格面での決定的な差は少なく、機能面やブランドの好みで選ばれる。",
+        "featureComparison": [
+          "共通点：ケーブルレスのスティック型形状、USB 3.2(Gen 1)接続での高速転送、スライド式コネクタ採用。",
+          "相違点：バッファロー製品はMIL規格準拠の耐衝撃設計をアピールしているのに対し、アイ・オー・データ製品は「静音性（PLATINUMランク）」と「電源連動による省電力」をより強調している点。"
+        ],
+        "differentiators": [
+          "IODATA SSPS-US1GREの利点：テレビ録画用として寝室などに設置する際、少しの動作音も気にしたくない方や、PC再起動時の認識の安定性を重視する方に適しています。",
+          "バッファロー SSD-PUT1.0U3-B/Nの利点：持ち運び時の落下リスクに備えたい方や、MILスペックの耐衝撃性を求める方に適しています。"
+        ]
+      },
+      {
+        "name": "Silicon Power DS72 SJ001TBUC3S72V1KSC",
+        "asin": "B0D14SRLLM",
+        "priceComparison": "Silicon Power製品の方が数千円安価な傾向があり、コストを抑えたいユーザーの比較対象となる。",
+        "featureComparison": [
+          "共通点：スティック型で1TBの容量を持つ外付けSSD。",
+          "相違点：Silicon Power製品はUSB Type-AとType-Cの両対応（デュアルコネクタ）で読込最大1050MB/sを謳うのに対し、本商品はType-A専用で読込最大500MB/s。"
+        ],
+        "differentiators": [
+          "IODATA SSPS-US1GREの利点：国内メーカーの安心感や、国内家電メーカーのテレビ・レコーダーとの詳細な動作確認情報を重視する方（録画用途など）に適しています。",
+          "Silicon Power DS72の利点：MacBookや最新のスマホなど、Type-Cポートを多用する環境で、より高速な転送速度（1000MB/s超）を安価に導入したい方に適しています。"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "壁掛けテレビやレコーダーの背面に、ケーブルなしでスッキリと録画用ストレージを増設したい人",
+        "PC再起動時やスリープ復帰時に、USBデバイスの認識外れによるストレスを感じたくない人"
+      ],
+      "pros": [
+        "ケーブル不要の直挿し設計により、テレビ背面やPC周りの配線がごちゃつかず、スッキリとした作業・視聴環境を維持できます",
+        "PCやテレビの電源に連動して待機状態になるため、常時挿しっぱなしでも無駄な電力を消費しません"
+      ],
+      "cons": [
+        "本体の幅が約23.5mmあるため、隣接するUSBポートとの間隔が狭いPCやハブを使用している人は、他の機器と干渉しないか事前に確認が必要です",
+        "アクセスLEDが搭載されていないため、データ転送中かどうかが視覚的に分からず、取り外しのタイミングに不安を感じる人には不向きです"
+      ],
+      "score": 75,
+      "scoreRationale": "[基本点: 70]\n[加点: +5] (ケーブルレスのスライド式筐体と静音PLATINUMランクによる高い取り回し性)\n[加点: +5] (国内メーカーとしての手厚いテレビ・レコーダー動作確認と安定した認識性能)\n[減点: -5] (アクセスLED非搭載により、読み書き状態が目視で確認できないUI上の不便さ)\n[合計: 75]"
+    },
+    "technicalSpecs": {
+      "dimensions": {
+        "height": "11.3mm",
+        "width": "23.5mm",
+        "depth": "68.8mm"
+      },
+      "weight": "13g",
+      "capacity": "1TB",
+      "material": "プラスチック（スライド式筐体）",
+      "origin": "非公開（日本メーカー企画）",
+      "other": [
+        "インターフェイス: USB 10Gbps（USB 3.2 Gen2）",
+        "コネクター形状: USB-A",
+        "転送速度: 読み込み最大500MB/s",
+        "フォーマット: NTFS（出荷時）",
+        "電源: USBバスパワー"
+      ]
+    }
+  }
+}
