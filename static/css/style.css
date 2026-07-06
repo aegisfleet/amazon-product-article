@@ -4727,4 +4727,80 @@ a.competitor-preview:hover {
 
 /* ================================================== */
 /* お気に入り一覧ページ専用スタイルはlist.html内に記述 */
-/* ================================================== */
+/* ================================================== */
+
+/* =====================================================
+   DEALS PAGE OVERRIDES — セール対象商品特設ページ（オレンジ基調）
+   ===================================================== */
+
+/* スライダーのオレンジ化 */
+#deals-filter-panel .bargain-slider {
+  background: linear-gradient(90deg, #ff7e5f, #feb47b);
+}
+
+#deals-filter-panel .bargain-slider::-webkit-slider-thumb {
+  background: linear-gradient(135deg, #ea580c, #f97316);
+  box-shadow: 0 2px 8px rgba(233, 88, 12, 0.35);
+}
+
+#deals-filter-panel .bargain-slider::-moz-range-thumb {
+  background: linear-gradient(135deg, #ea580c, #f97316);
+  box-shadow: 0 2px 8px rgba(233, 88, 12, 0.35);
+}
+
+[data-theme="dark"] #deals-filter-panel .bargain-slider {
+  background: linear-gradient(90deg, #c2410c, #fb923c);
+}
+
+/* カードホバー時の淵（ボーダー）と影のオレンジ化 */
+#deals-grid .card:hover {
+  border-color: #f97316;
+  box-shadow: 0 10px 25px rgba(249, 115, 22, 0.25);
+}
+
+/* セレクトボックスのフォーカス時とホバー時のオレンジ化 */
+#deals-filter-panel .bargain-select:hover {
+  border-color: #f97316;
+}
+
+#deals-filter-panel .bargain-select:focus {
+  border-color: #f97316;
+  box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.15);
+}
+
+/* カテゴリ解除ボタンのオレンジ化 */
+#deals-filter-panel .bargain-category-reset-btn:hover:not(:disabled) {
+  border-color: #f97316;
+  color: #f97316;
+}
+
+/* ソートボタンのホバー・アクティブ時のオレンジ化 */
+#deals-filter-panel .bargain-sort-btn:hover {
+  border-color: #f97316;
+  color: #f97316;
+}
+
+#deals-filter-panel .bargain-sort-btn.active {
+  background: linear-gradient(135deg, #ff4e50, #f9d423);
+  color: white;
+  border-color: transparent;
+  box-shadow: 0 2px 6px rgba(249, 115, 22, 0.3);
+}
+
+/* ヒーローエリアのオレンジ化 */
+.deals-hero {
+  border-color: #f97316 !important;
+  box-shadow: 0 4px 20px rgba(249, 115, 22, 0.2) !important;
+}
+
+[data-theme="dark"] .deals-hero {
+  border-color: #fb923c !important;
+  box-shadow: 0 4px 20px rgba(251, 146, 60, 0.15) !important;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .deals-hero {
+    border-color: #fb923c !important;
+    box-shadow: 0 4px 20px rgba(251, 146, 60, 0.15) !important;
+  }
+}
