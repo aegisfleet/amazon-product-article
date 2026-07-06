@@ -1,6 +1,6 @@
 import * as fs from 'node:fs';
 import * as path from 'node:path';
-import matter from 'gray-matter';
+import matter from '@11ty/gray-matter';
 import * as yaml from 'js-yaml';
 
 export class ProductCounter {
