@@ -403,7 +403,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     if (params.has('sort')) {
       const s = params.get('sort');
-      if (['score', 'price', 'date'].includes(s)) {
+      if (['score', 'price', 'date', 'discount'].includes(s)) {
         currentSort = s;
       }
     }
@@ -516,6 +516,8 @@ document.addEventListener('DOMContentLoaded', () => {
         const db = b.lastInvestigated || '';
         return db.localeCompare(da) || b.score - a.score;
       });
+    } else if (currentSort === 'discount') {
+      filtered.sort((a, b) => b.savingsPercentage - a.savingsPercentage || b.score - a.score);
     }
 
     // Animate
