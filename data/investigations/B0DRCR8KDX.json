@@ -1,0 +1,195 @@
+{
+  "analysis": {
+    "productName": "GoPro HERO CHDHF-131-JP",
+    "parentAsin": "B0DRCR8KDX",
+    "productDescription": "GoPro史上最小かつ最軽量となる86gのコンパクトな4K対応アクションカメラです。タッチスクリーンを搭載し、操作をシンプルにしたエントリーからミドル向けの製品です。",
+    "productUsage": [
+      "旅行やスナップ撮影",
+      "手軽な動画撮影",
+      "ヘルメットマウントなどのアクション撮影"
+    ],
+    "positivePoints": [
+      "重量わずか86gでGoProシリーズで最小・最軽量の設計",
+      "Enduroバッテリー内蔵により、省電力モードで長時間の撮影が可能",
+      "マウントフィンガーがカメラ底面に内蔵され、よりコンパクトにマウント可能",
+      "交換可能な撥水レンズカバーを採用"
+    ],
+    "negativePoints": [
+      "撮影モードが制限されており、高度な詳細設定変更ができない",
+      "カメラ本体に手ブレ補正機能が内蔵されておらず、Quikアプリでの処理が必要",
+      "The Remote(GoPro用リモコン)が使用不可",
+      "ズーム機能がなく、画角変更も制限されている",
+      "アプリとの連携が前提となっており、PC単体でのデータ読み込みに制約があるとの報告あり"
+    ],
+    "useCases": [
+      "旅行や日常の風景を記録する",
+      "バイクのヘルメットに取り付けてツーリングを録画する"
+    ],
+    "userStories": [
+      {
+        "userType": "初心者・日常使いユーザー",
+        "scenario": "旅行や日常のスナップ撮影",
+        "experience": "高度な設定がなく、録画ボタンを押すだけで簡単に撮影できます。ただ、ズーム機能がなかったりアプリがないとデータ転送に手間取ったりと、買う前に仕様を理解していないと不満が出ます。携帯性は抜群です。",
+        "supportingSourceIds": [
+          "kakaku-rev-1974726",
+          "kakaku-rev-1987522"
+        ],
+        "sentiment": "mixed"
+      },
+      {
+        "userType": "バイク乗り",
+        "scenario": "ヘルメット（アゴ）にマウントしてのツーリング動画撮影",
+        "experience": "ヘルメットにカメラを付けると首が疲れますが、このHEROは86gと非常に軽く、マウントを含めても負担が少ないです。撮影モードの制限はありますが、用途が合えば非常に使い勝手が良いです。",
+        "supportingSourceIds": [
+          "kakaku-rev-1910853"
+        ],
+        "sentiment": "positive"
+      }
+    ],
+    "userImpression": "「圧倒的な軽さとコンパクトさ」が高く評価されている一方で、「手ブレ補正がアプリ依存であること」や「撮影モードや画角などの詳細設定ができないこと」に不満を感じるユーザーもいます。割り切った機能と軽さに価値を見出せる人には非常に好評ですが、高機能を求める人は上位機種を選ぶべきという声が多いです。",
+    "sources": [
+      {
+        "id": "amazon-official",
+        "name": "Amazon商品ページ",
+        "url": "https://www.amazon.co.jp/dp/B0DRCR8KDX",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2024-09-11",
+        "author": "GoPro",
+        "conflictOfInterest": "disclosed",
+        "notes": "スペック情報、価格、商品の特徴"
+      },
+      {
+        "id": "kakaku-rev-1910853",
+        "name": "価格.com レビュー: ホントに小さく、軽い",
+        "url": "https://review.kakaku.com/review/K0001650658/ReviewCD=1910853/#tab",
+        "tier": "high",
+        "evidenceType": "secondary",
+        "publishedAt": "2024-11-28",
+        "author": "価格.comユーザー",
+        "conflictOfInterest": "none",
+        "notes": "バイク撮影での軽さの評価、手ブレ補正がアプリ依存、機能制限について"
+      },
+      {
+        "id": "kakaku-rev-1987522",
+        "name": "価格.com レビュー: お手軽アクションカメラとしては悪くない",
+        "url": "https://review.kakaku.com/review/K0001650658/ReviewCD=1987522/#tab",
+        "tier": "medium",
+        "evidenceType": "secondary",
+        "publishedAt": "2024-11-05",
+        "author": "価格.comユーザー",
+        "conflictOfInterest": "none",
+        "notes": "録画の簡単さ、手ブレ補正内蔵への要望、定価への割高感"
+      },
+      {
+        "id": "kakaku-rev-1974726",
+        "name": "価格.com レビュー: 購入前に読んでください",
+        "url": "https://review.kakaku.com/review/K0001650658/ReviewCD=1974726/#tab",
+        "tier": "medium",
+        "evidenceType": "secondary",
+        "publishedAt": "2024-09-24",
+        "author": "価格.comユーザー",
+        "conflictOfInterest": "none",
+        "notes": "ズーム機能がない、アプリ連携が必須であることへの不満"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "GoPro最小の4Kカメラで86gの超軽量",
+        "category": "comparativeAdvantage",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "amazon-official",
+          "kakaku-rev-1910853"
+        ],
+        "crossChecked": true,
+        "notes": "メーカー主張であり、ユーザーレビューでもその軽さが最大の特徴として高く評価されている"
+      },
+      {
+        "claim": "3つのイージーモードで操作が簡単",
+        "category": "quality",
+        "confidence": "medium",
+        "supportingSourceIds": [
+          "amazon-official",
+          "kakaku-rev-1987522",
+          "kakaku-rev-1974726"
+        ],
+        "crossChecked": true,
+        "notes": "簡単である反面、詳細設定ができないため不満を持つユーザーもいる"
+      }
+    ],
+    "lastInvestigated": "2026-07-08",
+    "competitiveAnalysis": [
+      {
+        "name": "AKASO EK7000 Pro",
+        "asin": "B0G93LS8S3",
+        "priceComparison": "AKASO EK7000 ProはGoPro HEROの半額以下で購入できるエントリーモデル。価格重視ならAKASOが魅力的。",
+        "featureComparison": [
+          "共通点：4K撮影対応、タッチパネル操作可能",
+          "相違点：GoPro HEROは超軽量86gでアプリ連携機能に特化。AKASO EK7000 Proは豊富なアクセサリーが付属し、SDカードも同梱されるが、ブランドの信頼性やアプリの使い勝手ではGoProに劣る。"
+        ],
+        "differentiators": [
+          "GoPro HERO CHDHF-131-JPの利点：圧倒的な軽さとコンパクトさ。Quikアプリによる簡単な編集機能を求めるならこちら。",
+          "AKASO EK7000 Proの利点：とにかく安く4Kアクションカメラを始めたい、最初からアクセサリーがたくさん欲しい人向け。"
+        ]
+      },
+      {
+        "name": "AiMike アクションカメラ ポケットサイズ",
+        "asin": "B0H14YBNZK",
+        "priceComparison": "AiMikeのアクションカメラもGoPro HEROの約半額。コストパフォーマンスに優れる。",
+        "featureComparison": [
+          "共通点：4K撮影対応、小型軽量設計、タッチ操作対応",
+          "相違点：AiMikeは自動追尾機能やVlog向けの美肌機能などユニークな機能を搭載。GoPro HEROは防水性やタフネスさ、GoProマウントの汎用性に優れる。"
+        ],
+        "differentiators": [
+          "GoPro HERO CHDHF-131-JPの利点：過酷な環境での使用や、GoProの豊富なマウントアクセサリー資産を活用したいならこちら。",
+          "AiMike アクションカメラ ポケットサイズの利点：Vlog撮影や推し活など、自動追尾機能を活かした手軽な動画撮影を低価格で行いたい人向け。"
+        ]
+      },
+      {
+        "name": "Cheergo アクションカメラ",
+        "asin": "B0GYW5D751",
+        "priceComparison": "CheergoアクションカメラもGoPro HEROの約半額程度。",
+        "featureComparison": [
+          "共通点：4K動画対応、タッチパネル搭載、コンパクト設計",
+          "相違点：Cheergoはポケットジンバル機能や自動追尾、美肌補正に特化したVlogカメラ。GoPro HEROは純粋なアクションカムとして防水性や耐久性を重視。"
+        ],
+        "differentiators": [
+          "GoPro HERO CHDHF-131-JPの利点：スポーツやアウトドアなど、防水性が必要なアクティブなシーンで使うなら迷わずこちら。",
+          "Cheergo アクションカメラの利点：街歩きやライブ配信など、人物撮影を中心としたVlog用途向け。"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "とにかく小さくて軽いアクションカメラを探している人（ヘルメットマウントなど）",
+        "細かい設定は不要で、録画ボタンを押すだけで手軽に撮影したい人"
+      ],
+      "pros": [
+        "86gという圧倒的な軽さにより、ヘルメットなどに長時間装着しても負担になりにくい。",
+        "複雑な設定が不要なため、カメラの知識がなくてもすぐに撮影を始められる。"
+      ],
+      "cons": [
+        "手ブレ補正が本体に内蔵されておらずアプリ経由での処理になるため、PCで直接データ編集したい人には不便。",
+        "画角の微調整やズーム機能がないため、凝った映像表現をしたい人には不向き。"
+      ],
+      "score": 65,
+      "scoreRationale": "[基本点: 70]\n[加点: +10] (86gという圧倒的な軽量コンパクト設計)\n[加点: +5] (イージーモードによる手軽な操作性)\n[減点: -10] (カメラ本体に手ブレ補正がなくアプリ依存である点)\n[減点: -5] (機能制限が多く、詳細設定ができない点)\n[減点: -5] (価格に対して機能が限定的で割高感がある点)\n[合計: 65]"
+    },
+    "technicalSpecs": {
+      "dimensions": {
+        "height": "47.7mm",
+        "width": "56.6mm",
+        "depth": "29.4mm"
+      },
+      "weight": "86g",
+      "color": "ブラック",
+      "videoResolution": "4K (16:9) 30/25fps, 2.7K (4:3) 60/50fps, 1080p (16:9) 30/25fps",
+      "photoResolution": "12MP",
+      "battery": "内蔵型Enduroバッテリー",
+      "waterproof": "水深5mまで",
+      "connectivity": "Wi-Fi, Bluetooth",
+      "mount": "内蔵マウントフィンガー"
+    }
+  }
+}
