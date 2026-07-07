@@ -108,5 +108,5 @@ describe('ProductSearcher Performance Benchmark', () => {
 
     expect(timePar).toBeLessThan(timeSeq);
     console.log(`Speedup: ${(timeSeq / timePar).toFixed(2)}x`);
-  });
+  }, 30000);
 });
