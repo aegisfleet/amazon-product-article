@@ -218,7 +218,7 @@ document.addEventListener('DOMContentLoaded', () => {
       } else {
         noResultsEl.style.display = 'none';
         gridEl.style.display = '';
-        gridEl.replaceChildren(...filtered.map(renderCard));
+        gridEl.replaceChildren(...filtered.map(p => renderCard(p)));
       }
       statsEl.textContent = String(filtered.length);
 
