@@ -904,11 +904,6 @@ a:hover {
 @media (min-width: 768px) {
   .product-hero-card {
     padding: var(--spacing-xl);
-  }
-}
-
-@media (min-width: 768px) {
-  .product-hero-card {
     grid-template-columns: 400px 1fr;
   }
 }
@@ -4817,7 +4812,7 @@ a.competitor-preview:hover {
 
 #deals-filter-panel .bargain-sort-btn.active {
   background: linear-gradient(135deg, #ff4e50, #f9d423);
-  color: white;
+  color: #111827;
   border-color: transparent;
   box-shadow: 0 2px 6px rgba(249, 115, 22, 0.3);
 }
