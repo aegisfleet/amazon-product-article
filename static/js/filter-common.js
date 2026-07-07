@@ -358,3 +358,13 @@ function setSliderFromParam(params, key, slider, transformFn, minVal = null, max
   if (maxVal !== null) val = Math.min(maxVal, val);
   slider.value = String(val);
 }
+
+// --- Debounce Helper ---
+function debounce(func, wait) {
+  let timeout;
+  return function (...args) {
+    clearTimeout(timeout);
+    timeout = setTimeout(() => func.apply(this, args), wait);
+  };
+}
+

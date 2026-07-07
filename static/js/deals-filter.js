@@ -164,18 +164,28 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
+  function updateSliderDisplays() {
+    const minScore = Number.parseInt(scoreSlider.value, 10);
+    const minPrice = valueToPrice(Number.parseInt(minPriceSlider.value, 10));
+    const maxPrice = valueToPrice(Number.parseInt(priceSlider.value, 10));
+    const minDiscount = Number.parseInt(discountSlider.value, 10);
+
+    scoreValueEl.textContent = String(minScore);
+    minPriceValueEl.textContent = formatPrice(minPrice);
+    priceValueEl.textContent = maxPrice >= 50000 ? '上限なし' : formatPrice(maxPrice) + '以下';
+    discountValueEl.textContent = String(minDiscount);
+  }
+
+  const debouncedApplyFilters = debounce(applyFilters, 300);
+
   function applyFilters() {
+    updateSliderDisplays();
+
     const minScore = Number.parseInt(scoreSlider.value, 10);
     const minPrice = valueToPrice(Number.parseInt(minPriceSlider.value, 10));
     const maxPrice = valueToPrice(Number.parseInt(priceSlider.value, 10));
     const minDiscount = Number.parseInt(discountSlider.value, 10);
     const dealType = dealTypeSelect ? dealTypeSelect.value : '';
-
-    // Update display values
-    scoreValueEl.textContent = String(minScore);
-    minPriceValueEl.textContent = formatPrice(minPrice);
-    priceValueEl.textContent = maxPrice >= 50000 ? '上限なし' : formatPrice(maxPrice) + '以下';
-    discountValueEl.textContent = String(minDiscount);
 
     const rawQ = keywordInput ? keywordInput.value : '';
     const normalizedQ = normalizeText(rawQ);
@@ -258,11 +268,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // --- Events ---
   if (keywordInput) {
-    keywordInput.addEventListener('input', () => {
+    keywordInput.addEventListener('input', (e) => {
       if (keywordClearBtn) {
         keywordClearBtn.style.display = keywordInput.value ? 'block' : 'none';
       }
-      applyFilters();
+      if (e.isComposing) return;
+      debouncedApplyFilters();
+    });
+
+    keywordInput.addEventListener('compositionend', () => {
+      debouncedApplyFilters();
     });
   }
   if (keywordClearBtn) {
@@ -274,10 +289,22 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  scoreSlider.addEventListener('input', applyFilters);
-  minPriceSlider.addEventListener('input', applyFilters);
-  priceSlider.addEventListener('input', applyFilters);
-  discountSlider.addEventListener('input', applyFilters);
+  scoreSlider.addEventListener('input', () => {
+    updateSliderDisplays();
+    debouncedApplyFilters();
+  });
+  minPriceSlider.addEventListener('input', () => {
+    updateSliderDisplays();
+    debouncedApplyFilters();
+  });
+  priceSlider.addEventListener('input', () => {
+    updateSliderDisplays();
+    debouncedApplyFilters();
+  });
+  discountSlider.addEventListener('input', () => {
+    updateSliderDisplays();
+    debouncedApplyFilters();
+  });
   if (dealTypeSelect) dealTypeSelect.addEventListener('change', applyFilters);
   if (categorySelect) categorySelect.addEventListener('change', applyFilters);
   if (resetBtn) resetBtn.addEventListener('click', resetFilters);
