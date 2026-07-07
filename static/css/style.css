@@ -3906,8 +3906,8 @@ a.competitor-preview:hover {
 /* --- Bargain Hero --- */
 .bargain-hero {
   text-align: center;
-  padding: var(--spacing-xl) var(--spacing-md);
-  margin-bottom: var(--spacing-xl);
+  padding: var(--spacing-lg) var(--spacing-md);
+  margin-bottom: var(--spacing-lg);
   background: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 50%, #a7f3d0 100%);
   border-radius: var(--radius-xl);
   border: 2px solid #10b981;
@@ -3929,8 +3929,8 @@ a.competitor-preview:hover {
 }
 
 .bargain-hero-icon {
-  font-size: 3rem;
-  margin-bottom: var(--spacing-sm);
+  font-size: 2rem;
+  margin-bottom: var(--spacing-xs);
   animation: bargain-bounce 2s ease-in-out infinite;
 }
 
@@ -3942,12 +3942,12 @@ a.competitor-preview:hover {
   }
 
   50% {
-    transform: translateY(-8px);
+    transform: translateY(-4px);
   }
 }
 
 .bargain-hero-title {
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-weight: 800;
   color: #065f46;
   margin-bottom: var(--spacing-xs);
@@ -3964,10 +3964,10 @@ a.competitor-preview:hover {
 }
 
 .bargain-hero-subtitle {
-  font-size: 1.1rem;
+  font-size: 0.95rem;
   font-weight: 600;
   color: #047857;
-  margin-bottom: var(--spacing-md);
+  margin-bottom: var(--spacing-sm);
 }
 
 [data-theme="dark"] .bargain-hero-subtitle {
@@ -3981,7 +3981,7 @@ a.competitor-preview:hover {
 }
 
 .bargain-hero-desc {
-  font-size: 0.95rem;
+  font-size: 0.85rem;
   color: #374151;
   max-width: 600px;
   margin: 0 auto;
@@ -4586,16 +4586,26 @@ a.competitor-preview:hover {
 
 /* --- Mobile Responsive: Bargain Hero --- */
 @media (max-width: 640px) {
+  .bargain-hero {
+    padding: var(--spacing-md) var(--spacing-sm);
+    margin-bottom: var(--spacing-md);
+  }
+
+  .bargain-hero-icon {
+    font-size: 1.75rem;
+  }
+
   .bargain-hero-title {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
   }
 
   .bargain-hero-subtitle {
-    font-size: 0.95rem;
+    font-size: 0.85rem;
+    margin-bottom: var(--spacing-xs);
   }
 
   .bargain-hero-desc {
-    font-size: 0.85rem;
+    font-size: 0.75rem;
   }
 }
 

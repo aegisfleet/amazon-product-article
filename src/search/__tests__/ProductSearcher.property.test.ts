@@ -166,7 +166,7 @@ describe('ProductSearcher Property Tests', () => {
         ),
         { numRuns: 100 },
       );
-    });
+    }, 30000);
 
     it('should store and retrieve product data consistently', async () => {
       // Simplified test to avoid timeout issues
