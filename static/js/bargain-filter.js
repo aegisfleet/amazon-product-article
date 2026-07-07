@@ -38,6 +38,17 @@ function getPriceBucket(priceRaw) {
   return '30000-plus';
 }
 
+// --- Normalize text for fuzzy search ---
+function normalizeText(text) {
+  if (!text) return '';
+  return String(text)
+    .toLowerCase()
+    .replace(/[Ａ-Ｚａ-ｚ０-９]/g, (s) => String.fromCharCode(s.charCodeAt(0) - 0xFEE0))
+    .replace(/[\u30a1-\u30f6]/g, (s) => String.fromCharCode(s.charCodeAt(0) - 0x60))
+    .replace(/　/g, ' ')
+    .trim();
+}
+
 // --- Format price ---
 function formatPrice(raw) {
   if (!raw && raw !== 0) return '';
@@ -353,6 +364,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const noResultsEl = document.getElementById('bargain-no-results');
   const resetBtn = document.getElementById('bargain-reset-btn');
   const categoryResetBtn = document.getElementById('bargain-category-reset-btn');
+  const keywordInput = document.getElementById('bargain-keyword-input');
+  const keywordClearBtn = document.getElementById('bargain-keyword-clear-btn');
 
   if (!scoreSlider || !priceSlider || !gridEl) return;
 
@@ -383,6 +396,10 @@ document.addEventListener('DOMContentLoaded', () => {
         currentSort = s;
       }
     }
+    if (params.has('q') && keywordInput) {
+      keywordInput.value = params.get('q');
+      if (keywordClearBtn) keywordClearBtn.style.display = 'block';
+    }
   }
 
   function updateUrlParams() {
@@ -397,6 +414,8 @@ document.addEventListener('DOMContentLoaded', () => {
     if (maxPrice !== 2000) params.set('maxPrice', String(maxPrice));
     if (category) params.set('category', category);
     if (currentSort !== 'date') params.set('sort', currentSort);
+    const q = keywordInput ? keywordInput.value.trim() : '';
+    if (q) params.set('q', q);
 
     const qs = params.toString();
     const newUrl = globalThis.location.pathname + (qs ? '?' + qs : '');
@@ -452,12 +471,26 @@ document.addEventListener('DOMContentLoaded', () => {
     minPriceValueEl.textContent = formatPrice(minPrice);
     priceValueEl.textContent = formatPrice(maxPrice);
 
-    // Step 1: Filter by Score and Price range
+    const rawQ = keywordInput ? keywordInput.value : '';
+    const normalizedQ = normalizeText(rawQ);
+    const keywords = normalizedQ.split(/\s+/).filter(Boolean);
+
+    // Step 1: Filter by Score, Price range, and Keyword
     let preFiltered = allProducts.filter(p => {
       if (p.score < minScore) return false;
       if (p.priceRaw < minPrice) return false;
       if (maxPrice > 0 && p.priceRaw > maxPrice) return false;
       if (maxPrice === 0 && p.priceRaw > 0) return false;
+
+      if (keywords.length > 0) {
+        const specsText = p.specsHtml ? p.specsHtml.replace(/<[^>]*>/g, ' ') : '';
+        const searchableText = normalizeText(
+          [p.title, p.category, p.subcategory, p.brand, p.description, specsText].filter(Boolean).join(' ')
+        );
+        const matches = keywords.every(keyword => searchableText.includes(keyword));
+        if (!matches) return false;
+      }
+
       return true;
     });
 
@@ -513,6 +546,8 @@ document.addEventListener('DOMContentLoaded', () => {
     minPriceSlider.value = '20';
     priceSlider.value = '400';
     if (categorySelect) categorySelect.value = '';
+    if (keywordInput) keywordInput.value = '';
+    if (keywordClearBtn) keywordClearBtn.style.display = 'none';
     currentSort = 'date';
     updateSortButtons();
     applyFilters();
@@ -527,6 +562,23 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // --- Events ---
+  if (keywordInput) {
+    keywordInput.addEventListener('input', () => {
+      if (keywordClearBtn) {
+        keywordClearBtn.style.display = keywordInput.value ? 'block' : 'none';
+      }
+      applyFilters();
+    });
+  }
+  if (keywordClearBtn) {
+    keywordClearBtn.addEventListener('click', () => {
+      keywordInput.value = '';
+      keywordClearBtn.style.display = 'none';
+      keywordInput.focus();
+      applyFilters();
+    });
+  }
+
   scoreSlider.addEventListener('input', applyFilters);
   minPriceSlider.addEventListener('input', applyFilters);
   priceSlider.addEventListener('input', applyFilters);

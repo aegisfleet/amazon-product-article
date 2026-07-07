@@ -16,6 +16,20 @@
 
     <!-- Filter Panel -->
     <div class="bargain-filter-panel" id="deals-filter-panel">
+        <!-- Row 0: Keyword Search -->
+        <div class="bargain-filter-row" style="margin-bottom: var(--spacing-lg); padding-bottom: var(--spacing-lg); border-bottom: 1px solid var(--color-border); grid-template-columns: 1fr;">
+            <div class="bargain-filter-group">
+                <label for="deals-keyword-input" class="bargain-filter-label">
+                    <span class="bargain-filter-icon">🔍</span>
+                    キーワード検索
+                </label>
+                <div class="bargain-keyword-wrapper">
+                    <input type="text" id="deals-keyword-input" class="bargain-input" placeholder="商品名、ブランド、カテゴリ、商品説明などから検索...">
+                    <button type="button" id="deals-keyword-clear-btn" class="bargain-keyword-clear-btn" title="キーワードをクリア" aria-label="キーワードをクリア">✕</button>
+                </div>
+            </div>
+        </div>
+
         <!-- Row 1: Score & Price -->
         <div class="bargain-filter-row">
             <div class="bargain-filter-group">
