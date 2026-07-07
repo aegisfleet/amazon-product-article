@@ -38,6 +38,26 @@ function getPriceBucket(priceRaw) {
   return '30000-plus';
 }
 
+// --- Normalize text for fuzzy search ---
+function normalizeText(text) {
+  if (!text) return '';
+  return String(text)
+    .toLowerCase()
+    .replace(/[Ａ-Ｚａ-ｚ０-９]/g, (s) => String.fromCharCode(s.charCodeAt(0) - 0xFEE0))
+    .replace(/[\u30a1-\u30f6]/g, (s) => String.fromCharCode(s.charCodeAt(0) - 0x60))
+    .replace(/　/g, ' ')
+    .trim();
+}
+
+function matchesKeywords(p, keywords) {
+  if (keywords.length === 0) return true;
+  const specsText = p.specsHtml ? p.specsHtml.replace(/<[^>]*>/g, ' ') : '';
+  const searchableText = normalizeText(
+    [p.title, p.category, p.subcategory, p.brand, p.description, specsText].filter(Boolean).join(' ')
+  );
+  return keywords.every(keyword => searchableText.includes(keyword));
+}
+
 // --- Format price ---
 function formatPrice(raw) {
   if (!raw && raw !== 0) return '';
@@ -327,6 +347,17 @@ function renderCard(p) {
   return article;
 }
 
+// --- URL Params Helper ---
+function setSliderFromParam(params, key, slider, transformFn, minVal = null, maxVal = null) {
+  if (!params.has(key)) return;
+  const v = Number.parseInt(params.get(key), 10);
+  if (Number.isNaN(v)) return;
+  let val = transformFn ? transformFn(v) : v;
+  if (minVal !== null) val = Math.max(minVal, val);
+  if (maxVal !== null) val = Math.min(maxVal, val);
+  slider.value = String(val);
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   const dataEl = document.getElementById('bargain-data');
   if (!dataEl) return;
@@ -353,6 +384,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const noResultsEl = document.getElementById('bargain-no-results');
   const resetBtn = document.getElementById('bargain-reset-btn');
   const categoryResetBtn = document.getElementById('bargain-category-reset-btn');
+  const keywordInput = document.getElementById('bargain-keyword-input');
+  const keywordClearBtn = document.getElementById('bargain-keyword-clear-btn');
 
   if (!scoreSlider || !priceSlider || !gridEl) return;
 
@@ -361,18 +394,9 @@ document.addEventListener('DOMContentLoaded', () => {
   // --- URL Params ---
   function readUrlParams() {
     const params = new URLSearchParams(globalThis.location.search);
-    if (params.has('minScore')) {
-      const v = Number.parseInt(params.get('minScore'), 10);
-      if (!Number.isNaN(v)) scoreSlider.value = String(Math.max(0, Math.min(100, v)));
-    }
-    if (params.has('minPrice')) {
-      const v = Number.parseInt(params.get('minPrice'), 10);
-      if (!Number.isNaN(v)) minPriceSlider.value = String(Math.round(priceToValue(v)));
-    }
-    if (params.has('maxPrice')) {
-      const v = Number.parseInt(params.get('maxPrice'), 10);
-      if (!Number.isNaN(v)) priceSlider.value = String(Math.round(priceToValue(v)));
-    }
+    setSliderFromParam(params, 'minScore', scoreSlider, null, 0, 100);
+    setSliderFromParam(params, 'minPrice', minPriceSlider, (v) => Math.round(priceToValue(v)));
+    setSliderFromParam(params, 'maxPrice', priceSlider, (v) => Math.round(priceToValue(v)));
     if (params.has('category') && categorySelect) {
       // We will set this after populating categories
       categorySelect.dataset.pendingValue = params.get('category');
@@ -382,6 +406,10 @@ document.addEventListener('DOMContentLoaded', () => {
       if (['score', 'price', 'date'].includes(s)) {
         currentSort = s;
       }
+    }
+    if (params.has('q') && keywordInput) {
+      keywordInput.value = params.get('q');
+      if (keywordClearBtn) keywordClearBtn.style.display = 'block';
     }
   }
 
@@ -397,6 +425,8 @@ document.addEventListener('DOMContentLoaded', () => {
     if (maxPrice !== 2000) params.set('maxPrice', String(maxPrice));
     if (category) params.set('category', category);
     if (currentSort !== 'date') params.set('sort', currentSort);
+    const q = keywordInput ? keywordInput.value.trim() : '';
+    if (q) params.set('q', q);
 
     const qs = params.toString();
     const newUrl = globalThis.location.pathname + (qs ? '?' + qs : '');
@@ -452,12 +482,17 @@ document.addEventListener('DOMContentLoaded', () => {
     minPriceValueEl.textContent = formatPrice(minPrice);
     priceValueEl.textContent = formatPrice(maxPrice);
 
-    // Step 1: Filter by Score and Price range
+    const rawQ = keywordInput ? keywordInput.value : '';
+    const normalizedQ = normalizeText(rawQ);
+    const keywords = normalizedQ.split(/\s+/).filter(Boolean);
+
+    // Step 1: Filter by Score, Price range, and Keyword
     let preFiltered = allProducts.filter(p => {
       if (p.score < minScore) return false;
       if (p.priceRaw < minPrice) return false;
       if (maxPrice > 0 && p.priceRaw > maxPrice) return false;
       if (maxPrice === 0 && p.priceRaw > 0) return false;
+      if (!matchesKeywords(p, keywords)) return false;
       return true;
     });
 
@@ -513,6 +548,8 @@ document.addEventListener('DOMContentLoaded', () => {
     minPriceSlider.value = '20';
     priceSlider.value = '400';
     if (categorySelect) categorySelect.value = '';
+    if (keywordInput) keywordInput.value = '';
+    if (keywordClearBtn) keywordClearBtn.style.display = 'none';
     currentSort = 'date';
     updateSortButtons();
     applyFilters();
@@ -527,6 +564,23 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // --- Events ---
+  if (keywordInput) {
+    keywordInput.addEventListener('input', () => {
+      if (keywordClearBtn) {
+        keywordClearBtn.style.display = keywordInput.value ? 'block' : 'none';
+      }
+      applyFilters();
+    });
+  }
+  if (keywordClearBtn) {
+    keywordClearBtn.addEventListener('click', () => {
+      keywordInput.value = '';
+      keywordClearBtn.style.display = 'none';
+      keywordInput.focus();
+      applyFilters();
+    });
+  }
+
   scoreSlider.addEventListener('input', applyFilters);
   minPriceSlider.addEventListener('input', applyFilters);
   priceSlider.addEventListener('input', applyFilters);
