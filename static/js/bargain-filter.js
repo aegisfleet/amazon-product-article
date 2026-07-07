@@ -49,6 +49,15 @@ function normalizeText(text) {
     .trim();
 }
 
+function matchesKeywords(p, keywords) {
+  if (keywords.length === 0) return true;
+  const specsText = p.specsHtml ? p.specsHtml.replace(/<[^>]*>/g, ' ') : '';
+  const searchableText = normalizeText(
+    [p.title, p.category, p.subcategory, p.brand, p.description, specsText].filter(Boolean).join(' ')
+  );
+  return keywords.every(keyword => searchableText.includes(keyword));
+}
+
 // --- Format price ---
 function formatPrice(raw) {
   if (!raw && raw !== 0) return '';
@@ -481,16 +490,7 @@ document.addEventListener('DOMContentLoaded', () => {
       if (p.priceRaw < minPrice) return false;
       if (maxPrice > 0 && p.priceRaw > maxPrice) return false;
       if (maxPrice === 0 && p.priceRaw > 0) return false;
-
-      if (keywords.length > 0) {
-        const specsText = p.specsHtml ? p.specsHtml.replace(/<[^>]*>/g, ' ') : '';
-        const searchableText = normalizeText(
-          [p.title, p.category, p.subcategory, p.brand, p.description, specsText].filter(Boolean).join(' ')
-        );
-        const matches = keywords.every(keyword => searchableText.includes(keyword));
-        if (!matches) return false;
-      }
-
+      if (!matchesKeywords(p, keywords)) return false;
       return true;
     });
 

@@ -49,6 +49,23 @@ function normalizeText(text) {
     .trim();
 }
 
+function matchesDealType(p, dealType) {
+  if (!dealType) return true;
+  const isPrime = p.dealAccessType === 'PRIME_EXCLUSIVE' || p.dealAccessType === 'PRIME_EARLY_ACCESS';
+  if (dealType === 'prime') return isPrime;
+  if (dealType === 'standard') return !isPrime;
+  return true;
+}
+
+function matchesKeywords(p, keywords) {
+  if (keywords.length === 0) return true;
+  const specsText = p.specsHtml ? p.specsHtml.replace(/<[^>]*>/g, ' ') : '';
+  const searchableText = normalizeText(
+    [p.title, p.category, p.subcategory, p.brand, p.description, specsText].filter(Boolean).join(' ')
+  );
+  return keywords.every(keyword => searchableText.includes(keyword));
+}
+
 // --- Format price ---
 function formatPrice(raw) {
   if (!raw && raw !== 0) return '';
@@ -489,24 +506,8 @@ document.addEventListener('DOMContentLoaded', () => {
       if (p.priceRaw < minPrice) return false;
       if (maxPrice < 50000 && p.priceRaw > maxPrice) return false;
       if (p.savingsPercentage < minDiscount) return false;
-
-      if (dealType === 'prime') {
-        const isPrime = p.dealAccessType === 'PRIME_EXCLUSIVE' || p.dealAccessType === 'PRIME_EARLY_ACCESS';
-        if (!isPrime) return false;
-      } else if (dealType === 'standard') {
-        const isPrime = p.dealAccessType === 'PRIME_EXCLUSIVE' || p.dealAccessType === 'PRIME_EARLY_ACCESS';
-        if (isPrime) return false;
-      }
-
-      if (keywords.length > 0) {
-        const specsText = p.specsHtml ? p.specsHtml.replace(/<[^>]*>/g, ' ') : '';
-        const searchableText = normalizeText(
-          [p.title, p.category, p.subcategory, p.brand, p.description, specsText].filter(Boolean).join(' ')
-        );
-        const matches = keywords.every(keyword => searchableText.includes(keyword));
-        if (!matches) return false;
-      }
-
+      if (!matchesDealType(p, dealType)) return false;
+      if (!matchesKeywords(p, keywords)) return false;
       return true;
     });
 
