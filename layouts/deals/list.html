@@ -199,5 +199,6 @@
     {{- end -}}
     <script id="deals-data" type="application/json">{{- $dealsData | jsonify | safeJS -}}</script>
 </div>
+<script src="{{ `js/filter-common.js` | relURL }}" defer></script>
 <script src="{{ `js/deals-filter.js` | relURL }}" defer></script>
 {{- end -}}
