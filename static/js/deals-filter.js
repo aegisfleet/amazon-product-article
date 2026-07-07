@@ -43,9 +43,9 @@ function normalizeText(text) {
   if (!text) return '';
   return String(text)
     .toLowerCase()
-    .replace(/[Ａ-Ｚａ-ｚ０-９]/g, (s) => String.fromCharCode(s.charCodeAt(0) - 0xFEE0))
-    .replace(/[\u30a1-\u30f6]/g, (s) => String.fromCharCode(s.charCodeAt(0) - 0x60))
-    .replace(/　/g, ' ')
+    .replace(/[Ａ-Ｚａ-ｚ０-９]/g, (s) => String.fromCodePoint(s.codePointAt(0) - 0xFEE0))
+    .replace(/[\u30a1-\u30f6]/g, (s) => String.fromCodePoint(s.codePointAt(0) - 0x60))
+    .replaceAll('　', ' ')
     .trim();
 }
 
