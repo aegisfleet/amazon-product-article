@@ -19,7 +19,7 @@ try {
     }
 
     if (count > 0) {
-      fs.writeFileSync(cachePath, JSON.stringify(cache, null, 2), 'utf8');
+      fs.writeFileSync(cachePath, JSON.stringify(cache), 'utf8');
       console.log(`Successfully deleted ${count} permanent_invalid entries from cache.`);
     } else {
       console.log('No permanent_invalid entries found in cache.');

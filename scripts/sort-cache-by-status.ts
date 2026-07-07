@@ -81,7 +81,7 @@ function sortCacheByStatus() {
   });
 
   console.log('💾 Writing sorted cache to file...');
-  fs.writeFileSync(CACHE_FILE_PATH, JSON.stringify(sortedCache, null, 2));
+  fs.writeFileSync(CACHE_FILE_PATH, JSON.stringify(sortedCache));
   console.log('✅ Cache sorted successfully.');
 }
 
