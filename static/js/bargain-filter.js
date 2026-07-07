@@ -111,7 +111,21 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
+  function updateSliderDisplays() {
+    const minScore = Number.parseInt(scoreSlider.value, 10);
+    const minPrice = valueToPrice(Number.parseInt(minPriceSlider.value, 10));
+    const maxPrice = valueToPrice(Number.parseInt(priceSlider.value, 10));
+
+    scoreValueEl.textContent = String(minScore);
+    minPriceValueEl.textContent = formatPrice(minPrice);
+    priceValueEl.textContent = formatPrice(maxPrice);
+  }
+
+  const debouncedApplyFilters = debounce(applyFilters, 300);
+
   function applyFilters() {
+    updateSliderDisplays();
+
     const minScore = Number.parseInt(scoreSlider.value, 10);
     const minPrice = valueToPrice(Number.parseInt(minPriceSlider.value, 10));
     const maxPrice = valueToPrice(Number.parseInt(priceSlider.value, 10));
@@ -121,11 +135,6 @@ document.addEventListener('DOMContentLoaded', () => {
       // You could either sync them or just let the filter handle it
       // Let's just update display for now
     }
-
-    // Update display values
-    scoreValueEl.textContent = String(minScore);
-    minPriceValueEl.textContent = formatPrice(minPrice);
-    priceValueEl.textContent = formatPrice(maxPrice);
 
     const rawQ = keywordInput ? keywordInput.value : '';
     const normalizedQ = normalizeText(rawQ);
@@ -230,11 +239,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // --- Events ---
   if (keywordInput) {
-    keywordInput.addEventListener('input', () => {
+    keywordInput.addEventListener('input', (e) => {
       if (keywordClearBtn) {
         keywordClearBtn.style.display = keywordInput.value ? 'block' : 'none';
       }
-      applyFilters();
+      if (e.isComposing) return;
+      debouncedApplyFilters();
+    });
+
+    keywordInput.addEventListener('compositionend', () => {
+      debouncedApplyFilters();
     });
   }
   if (keywordClearBtn) {
@@ -246,9 +260,18 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  scoreSlider.addEventListener('input', applyFilters);
-  minPriceSlider.addEventListener('input', applyFilters);
-  priceSlider.addEventListener('input', applyFilters);
+  scoreSlider.addEventListener('input', () => {
+    updateSliderDisplays();
+    debouncedApplyFilters();
+  });
+  minPriceSlider.addEventListener('input', () => {
+    updateSliderDisplays();
+    debouncedApplyFilters();
+  });
+  priceSlider.addEventListener('input', () => {
+    updateSliderDisplays();
+    debouncedApplyFilters();
+  });
   if (categorySelect) categorySelect.addEventListener('change', applyFilters);
   if (resetBtn) resetBtn.addEventListener('click', resetFilters);
   if (categoryResetBtn) {
