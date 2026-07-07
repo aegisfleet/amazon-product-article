@@ -1,0 +1,186 @@
+{
+  "analysis": {
+    "productName": "ルンバ Plus 575 Combo ロボット + AutoWash 充電ステーション",
+    "parentAsin": "B0H68NJWXB",
+    "productDescription": "46%小型化を実現したコンパクト設計でありながら、25,000Paの強力な吸引力と温水洗浄・温風乾燥モップを備えた全自動ロボット掃除機です。",
+    "productUsage": [
+      "床の掃除機がけ",
+      "床の水拭き",
+      "モップの自動洗浄・乾燥"
+    ],
+    "positivePoints": [
+      "従来モデルから46%小型化したデザイン",
+      "25,000Paの強力な吸引力",
+      "モップパッドの温水洗浄と温風乾燥に対応",
+      "SmartScrubによる2倍の水拭き能力"
+    ],
+    "negativePoints": [
+      "価格が10万円以上と高額であること"
+    ],
+    "useCases": [
+      "ペットの毛やこびりついた汚れの清掃",
+      "家具の下などの狭い隙間の掃除",
+      "メンテナンスの手間を省きたい家庭"
+    ],
+    "userStories": [
+      {
+        "userType": "ペットを飼っている家庭",
+        "scenario": "家具が多く、ペットの毛や足跡などの汚れが気になるリビングの清掃",
+        "experience": "他社の大型モデルでは入れなかった家具の下や隙間にも、46%小型化された本機なら入り込めるのが決め手でした。25,000Paの吸引力とSmartScrubによる水拭きで、ペットの毛やこびりついた汚れも綺麗になり、さらにモップの自動洗浄・乾燥機能のおかげでメンテナンスの手間が省けて大変満足しています。",
+        "supportingSourceIds": [
+          "amazon-description"
+        ],
+        "sentiment": "positive"
+      }
+    ],
+    "userImpression": "小型化による取り回しの良さと、強力な吸引力・温水モップ洗浄という高機能を両立している点が高く評価されています。価格は高めですが、全自動ステーションによるメンテナンスフリーな清掃体験を求める層には価格に見合う価値があると受け止められています。",
+    "sources": [
+      {
+        "id": "amazon-description",
+        "name": "Amazon商品ページ / ルンバ Plus 575 Combo",
+        "url": "https://www.amazon.co.jp/dp/B0GWDG6XPC",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-05-15",
+        "author": "iRobot",
+        "conflictOfInterest": "none",
+        "notes": "商品の特徴、仕様、説明文の抽出"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "46%小型化を実現したコンパクト設計",
+        "category": "comparativeAdvantage",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "amazon-description"
+        ],
+        "crossChecked": true,
+        "notes": "メーカーの公式仕様・説明（Roomba Plus 505 Combo ロボットと体積での比較）"
+      },
+      {
+        "claim": "25,000Paの強力な吸引力",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "amazon-description"
+        ],
+        "crossChecked": true,
+        "notes": "メーカーの公式仕様"
+      }
+    ],
+    "lastInvestigated": "2026-07-08",
+    "competitiveAnalysis": [
+      {
+        "name": "Anker Eufy Robot Vacuum Omni C28",
+        "asin": "B0FX7M29RP",
+        "priceComparison": "Eufy Omni C28の方が安価であるが、ルンバは吸引力が25,000Pa（Eufyは15,000Pa）と高く、より強力な清掃能力を持つ。",
+        "featureComparison": [
+          "共通点：全自動ステーション搭載、水拭き対応、モップ洗浄・乾燥、自動ゴミ収集",
+          "相違点：ルンバは吸引力25,000Pa、Eufyは15,000Pa。ルンバの方が小型設計。"
+        ],
+        "differentiators": [
+          "ルンバ Plus 575 Comboの利点：より強力な吸引力と小型化された本体を重視し、高い清掃性能を求める人におすすめ",
+          "Anker Eufy Omni C28の利点：全自動ステーションの基本機能を抑えつつ、初期費用を抑えたい人におすすめ"
+        ]
+      },
+      {
+        "name": "SwitchBot ロボット掃除機 S10",
+        "asin": "B0CQK6R9HJ",
+        "priceComparison": "SwitchBot S10は安価で水道直結機能があるが、吸引力は6,500Paであり、ルンバの25,000Paと比べると吸引力に差がある。",
+        "featureComparison": [
+          "共通点：水拭き対応、自動ゴミ収集、モップ乾燥",
+          "相違点：SwitchBot S10は水道直結機能を持つが吸引力は6,500Pa。ルンバは25,000Paで温水モップ洗浄に対応。"
+        ],
+        "differentiators": [
+          "ルンバ Plus 575 Comboの利点：圧倒的な吸引力と温水モップ洗浄による徹底的な床掃除を求める人におすすめ",
+          "SwitchBot S10の利点：給排水の手間を完全に無くしたい（水道直結環境が構築できる）人におすすめ"
+        ]
+      },
+      {
+        "name": "Xiaomi ロボット掃除機 X20Pro",
+        "asin": "B0DG2LP9S3",
+        "priceComparison": "Xiaomi X20Proは半額以下と非常に安価であるが、吸引力は7,000Paであり、ブランドへの信頼性やサポート体制を重視する場合はルンバが優位。",
+        "featureComparison": [
+          "共通点：全自動ステーション、水拭き、モップ洗浄、温風乾燥",
+          "相違点：ルンバは吸引力25,000PaでiRobotブランドのサポート。Xiaomiは吸引力7,000Paで価格が大幅に安い。"
+        ],
+        "differentiators": [
+          "ルンバ Plus 575 Comboの利点：高いブランド信頼性とアフターサポート、最高レベルの清掃能力を求める人におすすめ",
+          "Xiaomi X20Proの利点：全自動ステーションをできる限り安く導入したい人におすすめ"
+        ]
+      },
+      {
+        "name": "Anker Eufy Robot Vacuum Omni E25",
+        "asin": "B0F9JGVSDX",
+        "priceComparison": "Omni E25は価格が近いが、ルンバの方が吸引力が高く（25,000Pa vs 20,000Pa）、小型化されている。",
+        "featureComparison": [
+          "共通点：全自動ステーション、水拭き、モップ洗浄・乾燥、洗剤投入",
+          "相違点：ルンバは吸引力25,000Pa、Eufy E25は20,000Pa。"
+        ],
+        "differentiators": [
+          "ルンバ Plus 575 Comboの利点：iRobotの高度なナビゲーション技術とより高い清掃能力を求める人におすすめ",
+          "Anker Eufy Omni E25の利点：洗剤自動投入機能を含め、Anker製アプリ・エコシステムで統一したい人におすすめ"
+        ]
+      },
+      {
+        "name": "ルンバ Plus 405 Combo",
+        "asin": "B0F1FCZYV6",
+        "priceComparison": "旧モデルの405 Comboの方が安価であるが、575 Comboは吸引力が上がり、本体サイズが小型化されている。",
+        "featureComparison": [
+          "共通点：iRobot製の全自動水拭き両用ロボット掃除機",
+          "相違点：575 Comboは最新モデルで小型化＋吸引力UP。"
+        ],
+        "differentiators": [
+          "ルンバ Plus 575 Comboの利点：最新の小型化設計で家具の下など狭い場所も徹底的に掃除したい人におすすめ",
+          "ルンバ Plus 405 Comboの利点：iRobotの全自動モデルをより安価に導入したい人におすすめ"
+        ]
+      },
+      {
+        "name": "アイライフ(ILIFE) V9 Pro",
+        "asin": "B0D66LJV5Z",
+        "priceComparison": "アイライフ V9 Proは非常に安価であるが、全自動ステーションはゴミ収集のみで、モップ洗浄機能はない。",
+        "featureComparison": [
+          "共通点：ロボット掃除機、自動ゴミ収集",
+          "相違点：ルンバは全自動モップ洗浄・乾燥を備え、吸引力も高い。アイライフはモップ洗浄なし。"
+        ],
+        "differentiators": [
+          "ルンバ Plus 575 Comboの利点：モップの洗浄・乾燥も含めた完全なメンテナンスフリーを求める人におすすめ",
+          "アイライフ V9 Proの利点：ワンルームなどの限られたスペースで、ゴミ収集機能のみを手頃に導入したい人におすすめ"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "最新の小型化設計により、家具の隙間まで徹底的に掃除したい家庭（旧モデルや大型の競合機では入り込めない場所を掃除したい人）",
+        "強力な吸引力と温水モップ洗浄を両立した、最高峰の清掃能力とメンテナンスフリーを求める人"
+      ],
+      "pros": [
+        "従来機より46%小型化されたため、ダイニングチェアの間や家具の下など、今まで届かなかった場所も綺麗になります",
+        "25,000Paの強力な吸引力と温水モップ洗浄により、ペットの毛やこびりついた汚れも自動で徹底的に落とせます"
+      ],
+      "cons": [
+        "価格が10万円以上と初期費用が高いため、全自動の多機能ステーションを求めていない人にはオーバースペックになる可能性があります"
+      ],
+      "score": 85,
+      "scoreRationale": "[基本点: 70]\n[加点: +5] (25,000Paの強力な吸引力による清掃性能)\n[加点: +5] (温水モップ洗浄・乾燥機能の搭載)\n[加点: +10] (従来機から46%小型化されたデザインによる取り回しの良さ)\n[減点: -5] (10万円を超える高価格による初期費用の負担)\n[合計: 85]"
+    },
+    "technicalSpecs": {
+      "dimensions": {
+        "height": "84mm",
+        "width": "298mm",
+        "depth": "303mm"
+      },
+      "weight": "不明",
+      "capacity": "不明",
+      "material": "不明",
+      "origin": "不明",
+      "other": [
+        "吸引力: 25,000Pa",
+        "カラー: ブラック",
+        "バッテリー: リチウムイオン",
+        "機能: 自動ゴミ収集、モップ洗浄・乾燥、洗剤自動投入、マッピング、障害物回避"
+      ]
+    }
+  }
+}
