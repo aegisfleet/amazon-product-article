@@ -365,6 +365,23 @@ function setSliderFromParam(params, key, slider, transformFn, minVal = null, max
   slider.value = String(val);
 }
 
+// --- Sort Helper ---
+function sortFilteredProducts(filtered, sortType) {
+  if (sortType === 'date') {
+    filtered.sort((a, b) => {
+      const da = a.lastInvestigated || '';
+      const db = b.lastInvestigated || '';
+      return db.localeCompare(da) || b.score - a.score;
+    });
+  } else if (sortType === 'discount') {
+    filtered.sort((a, b) => b.savingsPercentage - a.savingsPercentage || b.score - a.score);
+  } else if (sortType === 'score') {
+    filtered.sort((a, b) => b.score - a.score || b.savingsPercentage - a.savingsPercentage);
+  } else if (sortType === 'price') {
+    filtered.sort((a, b) => a.priceRaw - b.priceRaw || b.score - a.score);
+  }
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   const dataEl = document.getElementById('deals-data');
   if (!dataEl) return;
@@ -483,6 +500,24 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
+  // --- Keyword Badge Helper ---
+  function updateKeywordBadge(filteredCount, keywords) {
+    const badgeEl = document.getElementById('deals-keyword-count-badge');
+    if (!badgeEl) return;
+
+    if (keywords.length > 0) {
+      badgeEl.textContent = `${filteredCount}件`;
+      badgeEl.style.display = 'inline-flex';
+      if (filteredCount === 0) {
+        badgeEl.classList.add('zero-results');
+      } else {
+        badgeEl.classList.remove('zero-results');
+      }
+    } else {
+      badgeEl.style.display = 'none';
+    }
+  }
+
   function applyFilters() {
     const minScore = Number.parseInt(scoreSlider.value, 10);
     const minPrice = valueToPrice(Number.parseInt(minPriceSlider.value, 10));
@@ -521,35 +556,10 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Step 4: Sort
-    if (currentSort === 'date') {
-      filtered.sort((a, b) => {
-        const da = a.lastInvestigated || '';
-        const db = b.lastInvestigated || '';
-        return db.localeCompare(da) || b.score - a.score;
-      });
-    } else if (currentSort === 'discount') {
-      filtered.sort((a, b) => b.savingsPercentage - a.savingsPercentage || b.score - a.score);
-    } else if (currentSort === 'score') {
-      filtered.sort((a, b) => b.score - a.score || b.savingsPercentage - a.savingsPercentage);
-    } else if (currentSort === 'price') {
-      filtered.sort((a, b) => a.priceRaw - b.priceRaw || b.score - a.score);
-    }
+    sortFilteredProducts(filtered, currentSort);
 
     // Update Keyword count badge
-    const badgeEl = document.getElementById('deals-keyword-count-badge');
-    if (badgeEl) {
-      if (keywords.length > 0) {
-        badgeEl.textContent = `${filtered.length}件`;
-        badgeEl.style.display = 'inline-flex';
-        if (filtered.length === 0) {
-          badgeEl.classList.add('zero-results');
-        } else {
-          badgeEl.classList.remove('zero-results');
-        }
-      } else {
-        badgeEl.style.display = 'none';
-      }
-    }
+    updateKeywordBadge(filtered.length, keywords);
 
     // Animate
     gridEl.classList.add('bargain-grid-fade');
