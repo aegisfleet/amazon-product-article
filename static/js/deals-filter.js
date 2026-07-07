@@ -400,7 +400,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (!scoreSlider || !priceSlider || !gridEl) return;
 
-  let currentSort = 'discount'; // Default to highest discount rate
+  let currentSort = 'date'; // Default to newest/last investigated date
 
   // --- URL Params ---
   function readUrlParams() {
@@ -417,7 +417,7 @@ document.addEventListener('DOMContentLoaded', () => {
       categorySelect.dataset.pendingValue = params.get('category');
     }
     const s = params.get('sort');
-    if (s && ['score', 'price', 'discount'].includes(s)) {
+    if (s && ['score', 'price', 'discount', 'date'].includes(s)) {
       currentSort = s;
     }
     if (params.has('q') && keywordInput) {
@@ -441,7 +441,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (minDiscount !== 0) params.set('minDiscount', String(minDiscount));
     if (dealType) params.set('dealType', dealType);
     if (category) params.set('category', category);
-    if (currentSort !== 'discount') params.set('sort', currentSort);
+    if (currentSort !== 'date') params.set('sort', currentSort);
     const q = keywordInput ? keywordInput.value.trim() : '';
     if (q) params.set('q', q);
 
@@ -521,7 +521,13 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Step 4: Sort
-    if (currentSort === 'discount') {
+    if (currentSort === 'date') {
+      filtered.sort((a, b) => {
+        const da = a.lastInvestigated || '';
+        const db = b.lastInvestigated || '';
+        return db.localeCompare(da) || b.score - a.score;
+      });
+    } else if (currentSort === 'discount') {
       filtered.sort((a, b) => b.savingsPercentage - a.savingsPercentage || b.score - a.score);
     } else if (currentSort === 'score') {
       filtered.sort((a, b) => b.score - a.score || b.savingsPercentage - a.savingsPercentage);
@@ -563,7 +569,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (categorySelect) categorySelect.value = '';
     if (keywordInput) keywordInput.value = '';
     if (keywordClearBtn) keywordClearBtn.style.display = 'none';
-    currentSort = 'discount';
+    currentSort = 'date';
     updateSortButtons();
     applyFilters();
   }
