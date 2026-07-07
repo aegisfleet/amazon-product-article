@@ -4215,7 +4215,7 @@ a.competitor-preview:hover {
 }
 
 .bargain-input {
-  padding: 0.5rem 2.5rem 0.5rem 0.75rem;
+  padding: 0.5rem 5rem 0.5rem 0.75rem;
   border: 1px solid var(--color-border);
   border-radius: var(--radius-md);
   background: var(--color-bg-card);
@@ -4247,6 +4247,37 @@ a.competitor-preview:hover {
   padding: 4px;
   line-height: 1;
   transition: var(--transition-base);
+}
+
+.bargain-keyword-count-badge {
+  position: absolute;
+  right: 2.25rem;
+  font-size: 0.75rem;
+  padding: 2px 6px;
+  border-radius: var(--radius-sm);
+  background: var(--color-bg-body);
+  color: var(--color-text-muted);
+  border: 1px solid var(--color-border);
+  pointer-events: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  height: 1.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.bargain-keyword-count-badge.zero-results {
+  background: #fee2e2;
+  color: #ef4444;
+  border-color: #fca5a5;
+}
+
+[data-theme="dark"] .bargain-keyword-count-badge.zero-results {
+  background: #7f1d1d;
+  color: #fca5a5;
+  border-color: #991b1b;
 }
 
 .bargain-keyword-clear-btn:hover {

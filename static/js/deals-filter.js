@@ -535,6 +535,22 @@ document.addEventListener('DOMContentLoaded', () => {
       filtered.sort((a, b) => a.priceRaw - b.priceRaw || b.score - a.score);
     }
 
+    // Update Keyword count badge
+    const badgeEl = document.getElementById('deals-keyword-count-badge');
+    if (badgeEl) {
+      if (keywords.length > 0) {
+        badgeEl.textContent = `${filtered.length}件`;
+        badgeEl.style.display = 'inline-flex';
+        if (filtered.length === 0) {
+          badgeEl.classList.add('zero-results');
+        } else {
+          badgeEl.classList.remove('zero-results');
+        }
+      } else {
+        badgeEl.style.display = 'none';
+      }
+    }
+
     // Animate
     gridEl.classList.add('bargain-grid-fade');
     setTimeout(() => {
@@ -569,6 +585,8 @@ document.addEventListener('DOMContentLoaded', () => {
     if (categorySelect) categorySelect.value = '';
     if (keywordInput) keywordInput.value = '';
     if (keywordClearBtn) keywordClearBtn.style.display = 'none';
+    const badgeEl = document.getElementById('deals-keyword-count-badge');
+    if (badgeEl) badgeEl.style.display = 'none';
     currentSort = 'date';
     updateSortButtons();
     applyFilters();
