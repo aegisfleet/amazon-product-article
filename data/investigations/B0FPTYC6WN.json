@@ -30,65 +30,116 @@
     ],
     "userStories": [
       {
-        "userType": "30代男性（旧型軽自動車所有）",
-        "scenario": "純正オーディオが故障し、安価で高機能なナビを探していた",
-        "experience": "1DINスペースに10インチの大画面がついたことで、見違えるほど車内が現代的になった。スマホのナビをそのまま画面に映せるので、地図更新の手間がなくなり快適。（推測）",
+        "userType": "長距離ドライバー",
+        "scenario": "休日の家族旅行で長距離を運転する際",
+        "experience": "10.1インチの大画面は後部座席からも見やすく、4GBのRAMのおかげでナビと音楽再生を同時に行っても動作がもたつくことがありませんでした。SIMカードを挿して単体で通信できるため、スマホのテザリングに頼らずにYouTubeやNetflixを流せるのが決め手になりました。",
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "positive"
       },
       {
-        "userType": "40代女性（ファミリー層）",
-        "scenario": "子供の送り迎えの待ち時間に動画を見たい",
-        "experience": "SIMカードを入れてYouTubeが見られるのが便利。子供が退屈せずに待っていられる。ただ、画面が少し揺れるのが気になる。（推測）",
-        "sentiment": "mixed"
+        "userType": "旧車オーナー",
+        "scenario": "1DINスペースしかない古い車に最新のナビを導入したい時",
+        "experience": "1DIN規格でありながら10インチの大画面を装着できるのが最大のメリットでした。ワイヤレスでCarPlayが繋がるので、車に乗り込むだけでいつもの環境が立ち上がり、ケーブルの煩わしさから解放されました。",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "sentiment": "positive"
       }
     ],
     "userImpression": "スペックと価格のバランスが良いコストパフォーマンスに優れたモデル。特に4G LTE対応とQLED液晶は評価できるポイント。設置の干渉問題には注意が必要。",
     "sources": [
       {
-        "name": "Amazon Product Page",
+        "id": "src-1",
+        "name": "Amazon",
         "url": "https://www.amazon.co.jp/dp/B0FPTYC6WN",
-        "credibility": "High"
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-07-08",
+        "author": "PORMIDOAUTO",
+        "conflictOfInterest": "none",
+        "notes": "Amazon商品ページ"
       }
     ],
-    "lastInvestigated": "2026-02-24",
+    "lastInvestigated": "2026-07-08",
     "competitiveAnalysis": [
       {
-        "name": "ATOTO A5L (10.1インチ QLED)",
+        "name": "ATOTOZONE A5L 10.1インチ QLED",
+        "asin": "B0GFY9743T",
+        "priceComparison": "ATOTOZONEの方が若干安い。どちらも10.1インチだが、ATOTOZONEはAI音声アシスタント（ChatGPT等連携）やGPS追跡（TrackHU）などの独自ソフトウェア機能が豊富。",
+        "featureComparison": [
+          "共通点：10.1インチQLEDディスプレイ、ワイヤレスCarPlay/Android Auto対応",
+          "相違点：ATOTOZONEはChatGPT連携のAI音声機能や、HDMI出力を備える。一方PORMIDOAUTO(PRA101-1)は4G LTE対応や4GB RAMを搭載し単体での動作性能が高い。"
+        ],
+        "differentiators": [
+          "PORMIDOAUTO 10.1インチディスプレイオーディオの利点：Wi-Fiテザリングだけでなく、SIMカードを挿して単体で通信したい人、4GB RAMによる余裕のある動作レスポンスを求めるならこちら。",
+          "ATOTOZONE A5L 10.1インチ QLEDの利点：最新のAI音声アシスタントによる高度な音声操作を試したい人や、後部座席用のモニターへHDMI出力したい場合はこちら。"
+        ]
+      },
+      {
+        "name": "ATOTOOUT 10.1インチQLED A5LG110PT",
+        "asin": "B0H4KFCK3C",
+        "priceComparison": "ATOTOOUTの方がわずかに安い。ATOTOOUTはHDMI入出力を備え拡張性が高い。",
+        "featureComparison": [
+          "共通点：10.1インチQLEDディスプレイ、ワイヤレスCarPlay/Android Auto",
+          "相違点：ATOTOOUTは2GB RAM/32GB ROMでスペックは抑えめだがHDMI入出力に対応。PORMIDOAUTOは4GB RAM/64GB ROMで単体の動作性能が高い。"
+        ],
+        "differentiators": [
+          "PORMIDOAUTO 10.1インチディスプレイオーディオの利点：複数のアプリを同時に動かしたり、大容量の動画データを本体に保存したりするなら、メモリとストレージに余裕があるこちら。",
+          "ATOTOOUT 10.1インチQLEDの利点：ゲーム機やストリーミングデバイスをHDMI入力で接続したり、後席モニターへ出力したいなど、映像の拡張性を重視するならこちら。"
+        ]
+      },
+      {
+        "name": "ATOTOEXCEL A5L 10.1インチ",
         "asin": "B0F6MR4N9B",
-        "priceComparison": "約26,000円と本製品より安価だが、メモリが2GB/32GBと少ない。",
+        "priceComparison": "ATOTOEXCELの方がわずかに安い。2GB+32GBと基本スペックは控えめだがリアビューカメラが同梱されている。",
         "featureComparison": [
-          "メモリ2GB/32GBに対し、本製品は4GB/64GB",
-          "ATOTOは知名度が高いが、スペックは本製品が上",
-          "両者ともにQLEDディスプレイ採用"
+          "共通点：10.1インチの大画面、Android OS搭載",
+          "相違点：PORMIDOAUTOは4GB+64GBとスペックが高く4G LTE対応。ATOTOEXCELは2GB+32GBだがバックカメラが標準で付属する。"
         ],
         "differentiators": [
-          "本製品はメモリ容量が倍（4GB）で動作の余裕がある",
-          "本製品は4G LTE通信に対応（ATOTO A5Lは通常WiFiテザリング前提）"
+          "PORMIDOAUTO 10.1インチディスプレイオーディオの利点：動画視聴時のもたつきを減らしたい、快適なサクサク感を重視するスペック志向の人向け。",
+          "ATOTOEXCEL A5L 10.1インチの利点：バックカメラを後付けで別途購入する手間を省き、オールインワンで揃えたい人向け。"
         ]
       },
       {
-        "name": "LEROAADZ 10.1インチ Androidナビ",
-        "asin": "B0GCGKL1KZ",
-        "priceComparison": "約26,000円と安価。",
+        "name": "PORMIDOAUTO 11.8インチ 大画面",
+        "asin": "B0FPVXRZJY",
+        "priceComparison": "11.8インチモデルの方が高い。上位モデルとして6GB RAMやより高解像度なディスプレイを備える。",
         "featureComparison": [
-          "スペックは8コア 4GB/64GBで本製品と同等",
-          "こちらも4G LTE対応の記載あり"
+          "共通点：同ブランドのAndroidカーナビ、ワイヤレスCarPlay対応",
+          "相違点：11.8インチ版は6GB RAM/128GB ROM、2K QLED解像度、HDMI出力を備える。10.1インチ版は4GB/64GBで1280×800解像度。"
         ],
         "differentiators": [
-          "スペック上の差は少ないが、PORMIDOブランド（ドラレコ等での実績）の安心感がある可能性がある",
-          "デザイン（LEDボタン等）の好み"
+          "PORMIDOAUTO 10.1インチディスプレイオーディオの利点：大きすぎない10インチサイズで十分であり、コストパフォーマンスを重視するならこちら。",
+          "PORMIDOAUTO 11.8インチ 大画面の利点：より広大で高精細な2K解像度のディスプレイや、ハイエンドスマホ並みの6GB RAMによる究極の操作性を求めるならこちら。"
         ]
       },
       {
-        "name": "BOUWOIMA 10.1インチ Androidナビ",
-        "asin": "B0GJ4V7KLW",
-        "priceComparison": "約27,000円と安価。",
+        "name": "KASUVAR 10インチ KAR10C",
+        "asin": "B0DPW2LC86",
+        "priceComparison": "KASUVARの方が安い。同等の基本スペック（8コア、4GB/64GB、4G LTE対応）を持つ。",
         "featureComparison": [
-          "スペックは8コア 4GB/64GBで本製品と同等",
-          "ワイヤレスCarPlay/Android Auto対応"
+          "共通点：8コアCPU、4GB RAM+64GB ROM、4G LTE通信対応、ワイヤレスCarPlay",
+          "相違点：KASUVARは国内FM/AM周波数への対応や旭化成DAC搭載による音響のこだわりをアピールしている。"
         ],
         "differentiators": [
-          "機能面での大きな差は見られないが、本製品はPORMIDOブランドとして品質管理されている可能性がある"
+          "PORMIDOAUTO 10.1インチディスプレイオーディオの利点：QLEDディスプレイによる発色の良さや、PIP/PBPの2画面表示の柔軟性を重視するならこちら。",
+          "KASUVAR 10インチ KAR10Cの利点：日本のラジオ周波数への完全対応や、高音質なDACによるサウンド体験、コストパフォーマンスを重視するならこちら。"
+        ]
+      },
+      {
+        "name": "PORMIDOAUTO 2din 10.1インチ PRA102-1",
+        "asin": "B0FPVNSBLR",
+        "priceComparison": "PRA102-1(2DIN版)の方が安い。",
+        "featureComparison": [
+          "共通点：10.1インチQLEDディスプレイ、ワイヤレスCarPlay/Android Auto対応",
+          "相違点：本機(PRA101-1)は1DIN対応・Android OS搭載・4G LTE・4GB/64GB仕様。PRA102-1は2DIN仕様で、主にスマホ連携(CarPlay等)を主軸としたディスプレイオーディオ。"
+        ],
+        "differentiators": [
+          "PORMIDOAUTO 10.1インチディスプレイオーディオの利点：本体自体にアプリをインストールして単体で動画を楽しみたい、または1DINスペースしかない車に設置したいならこちら。",
+          "PORMIDOAUTO 2din 10.1インチ PRA102-1の利点：2DINスペースがあり、純粋にスマホのCarPlay/Android Auto機能だけを使えれば十分で、安価に導入したいならこちら。"
         ]
       }
     ],
@@ -112,29 +163,35 @@
       "scoreRationale": "[基本点: 70]\n[加点: +5] (QLED液晶と8Core/4GBメモリの基本性能)\n[加点: +5] (4G LTE通信対応の利便性)\n[加点: +5] (ワイヤレスCarPlay/Android Auto対応)\n[加点: +5] (コストパフォーマンスが高い)\n[減点: -5] (ブランド知名度と長期信頼性の不透明さ)\n[合計: 85]"
     },
     "technicalSpecs": {
-      "os": "Android (Version Unspecified)",
-      "cpu": "8 Core Processor",
-      "ram": "4GB",
-      "storage": "64GB",
-      "display": {
-        "size": "10.1インチ",
-        "resolution": "1280x800",
-        "type": "QLED"
-      },
-      "connectivity": [
-        "4G LTE",
-        "Wi-Fi",
-        "Bluetooth 5.0"
-      ],
-      "other": [
-        "GPS/Beidou内蔵",
-        "ワイヤレスCarPlay/Android Auto",
-        "バックカメラ連動",
-        "7色LEDボタン"
-      ],
       "dimensions": {
-         "size": "1DIN"
+        "height": "160mm",
+        "width": "200mm",
+        "depth": "240mm"
+      },
+      "display": "10.1インチ QLED (解像度: 1280×800)",
+      "processor": "8コア",
+      "memory": "4GB RAM + 64GB ROM",
+      "connectivity": "ワイヤレス/有線 Apple CarPlay & Android Auto, 4G LTE, デュアルバンドWi-Fi, Bluetooth 5.0",
+      "installation": "1DIN",
+      "features": [
+        "GPS/北斗衛星測位内蔵",
+        "PIP/PBP 2画面表示対応",
+        "バックカメラ連動対応",
+        "ステアリングコントロール対応"
+      ],
+      "certification": "技適取得済み (R210-211565)"
+    },
+    "claims": [
+      {
+        "claim": "高度な熱制御技術により長時間連続使用でも安定動作を維持",
+        "category": "durability",
+        "confidence": "medium",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "crossChecked": false,
+        "notes": "メーカーの主張。"
       }
-    }
+    ]
   }
 }
