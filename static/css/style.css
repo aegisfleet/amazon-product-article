@@ -3856,25 +3856,25 @@ a.competitor-preview:hover {
   display: flex;
   align-items: center;
   gap: var(--spacing-sm);
-  background: linear-gradient(135deg, #ff4e50, #f9d423);
+  background: linear-gradient(135deg, #dc2626, #c2410c);
   color: #fff;
   padding: 0.5rem 1rem;
-  border: 1px solid #e13e40;
+  border: 1px solid #b91c1c;
   border-radius: var(--radius-md);
   font-weight: 600;
   font-size: 0.95rem;
   text-decoration: none;
-  box-shadow: 0 2px 8px rgba(239, 68, 68, 0.25);
+  box-shadow: 0 2px 8px rgba(220, 38, 38, 0.25);
   transition: all 0.2s ease;
   position: relative;
   overflow: hidden;
 }
 
 .deals-link:hover {
-  background: linear-gradient(135deg, #e13e40, #f5a623);
+  background: linear-gradient(135deg, #b91c1c, #9a3412);
   color: #fff;
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(239, 68, 68, 0.35);
+  box-shadow: 0 4px 12px rgba(185, 28, 28, 0.35);
 }
 
 .deals-link:visited,
@@ -4718,7 +4718,7 @@ a.competitor-preview:hover {
 
 [data-theme="dark"] .btn-favorite-hero:hover {
   border-color: #fda4af;
-  background: rgba(225, 29, 72, 0.15);
+  background: #3c273a;
   color: #fda4af;
 }
 
@@ -4730,7 +4730,7 @@ a.competitor-preview:hover {
 
 [data-theme="dark"] .btn-favorite-hero.is-favorited {
   border-color: #fda4af;
-  background: rgba(225, 29, 72, 0.2);
+  background: #46273a;
   color: #fda4af;
 }
 
@@ -4810,10 +4810,10 @@ a.competitor-preview:hover {
 }
 
 #deals-filter-panel .bargain-sort-btn.active {
-  background: linear-gradient(135deg, #ff4e50, #f9d423);
-  color: #111827;
+  background: linear-gradient(135deg, #dc2626, #c2410c);
+  color: white;
   border-color: transparent;
-  box-shadow: 0 2px 6px rgba(249, 115, 22, 0.3);
+  box-shadow: 0 2px 6px rgba(220, 38, 38, 0.3);
 }
 
 /* ヒーローエリアのオレンジ化 */
