@@ -38,6 +38,17 @@ function getPriceBucket(priceRaw) {
   return '30000-plus';
 }
 
+// --- Normalize text for fuzzy search ---
+function normalizeText(text) {
+  if (!text) return '';
+  return String(text)
+    .toLowerCase()
+    .replace(/[Ａ-Ｚａ-ｚ０-９]/g, (s) => String.fromCharCode(s.charCodeAt(0) - 0xFEE0))
+    .replace(/[\u30a1-\u30f6]/g, (s) => String.fromCharCode(s.charCodeAt(0) - 0x60))
+    .replace(/　/g, ' ')
+    .trim();
+}
+
 // --- Format price ---
 function formatPrice(raw) {
   if (!raw && raw !== 0) return '';
@@ -362,6 +373,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const noResultsEl = document.getElementById('deals-no-results');
   const resetBtn = document.getElementById('deals-reset-btn');
   const categoryResetBtn = document.getElementById('deals-category-reset-btn');
+  const keywordInput = document.getElementById('deals-keyword-input');
+  const keywordClearBtn = document.getElementById('deals-keyword-clear-btn');
 
   const scoreValueEl = document.getElementById('deals-score-value');
   const minPriceValueEl = document.getElementById('deals-min-price-value');
@@ -390,6 +403,10 @@ document.addEventListener('DOMContentLoaded', () => {
     if (s && ['score', 'price', 'discount'].includes(s)) {
       currentSort = s;
     }
+    if (params.has('q') && keywordInput) {
+      keywordInput.value = params.get('q');
+      if (keywordClearBtn) keywordClearBtn.style.display = 'block';
+    }
   }
 
   function updateUrlParams() {
@@ -408,6 +425,8 @@ document.addEventListener('DOMContentLoaded', () => {
     if (dealType) params.set('dealType', dealType);
     if (category) params.set('category', category);
     if (currentSort !== 'discount') params.set('sort', currentSort);
+    const q = keywordInput ? keywordInput.value.trim() : '';
+    if (q) params.set('q', q);
 
     const qs = params.toString();
     const newUrl = globalThis.location.pathname + (qs ? '?' + qs : '');
@@ -460,7 +479,11 @@ document.addEventListener('DOMContentLoaded', () => {
     priceValueEl.textContent = maxPrice >= 50000 ? '上限なし' : formatPrice(maxPrice) + '以下';
     discountValueEl.textContent = String(minDiscount);
 
-    // Step 1: Filter by Score, Price, Discount, and Deal Type
+    const rawQ = keywordInput ? keywordInput.value : '';
+    const normalizedQ = normalizeText(rawQ);
+    const keywords = normalizedQ.split(/\s+/).filter(Boolean);
+
+    // Step 1: Filter by Score, Price, Discount, Deal Type, and Keyword
     let preFiltered = allProducts.filter(p => {
       if (p.score < minScore) return false;
       if (p.priceRaw < minPrice) return false;
@@ -473,6 +496,15 @@ document.addEventListener('DOMContentLoaded', () => {
       } else if (dealType === 'standard') {
         const isPrime = p.dealAccessType === 'PRIME_EXCLUSIVE' || p.dealAccessType === 'PRIME_EARLY_ACCESS';
         if (isPrime) return false;
+      }
+
+      if (keywords.length > 0) {
+        const specsText = p.specsHtml ? p.specsHtml.replace(/<[^>]*>/g, ' ') : '';
+        const searchableText = normalizeText(
+          [p.title, p.category, p.subcategory, p.brand, p.description, specsText].filter(Boolean).join(' ')
+        );
+        const matches = keywords.every(keyword => searchableText.includes(keyword));
+        if (!matches) return false;
       }
 
       return true;
@@ -528,6 +560,8 @@ document.addEventListener('DOMContentLoaded', () => {
     discountSlider.value = '0';
     if (dealTypeSelect) dealTypeSelect.value = '';
     if (categorySelect) categorySelect.value = '';
+    if (keywordInput) keywordInput.value = '';
+    if (keywordClearBtn) keywordClearBtn.style.display = 'none';
     currentSort = 'discount';
     updateSortButtons();
     applyFilters();
@@ -542,6 +576,23 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // --- Events ---
+  if (keywordInput) {
+    keywordInput.addEventListener('input', () => {
+      if (keywordClearBtn) {
+        keywordClearBtn.style.display = keywordInput.value ? 'block' : 'none';
+      }
+      applyFilters();
+    });
+  }
+  if (keywordClearBtn) {
+    keywordClearBtn.addEventListener('click', () => {
+      keywordInput.value = '';
+      keywordClearBtn.style.display = 'none';
+      keywordInput.focus();
+      applyFilters();
+    });
+  }
+
   scoreSlider.addEventListener('input', applyFilters);
   minPriceSlider.addEventListener('input', applyFilters);
   priceSlider.addEventListener('input', applyFilters);
