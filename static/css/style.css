@@ -4212,6 +4212,53 @@ a.competitor-preview:hover {
   background: #353542;
 }
 
+/* --- Keyword Search --- */
+.bargain-keyword-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.bargain-input {
+  padding: 0.5rem 2.5rem 0.5rem 0.75rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-bg-card);
+  color: var(--color-text-main);
+  font-size: 0.9rem;
+  transition: var(--transition-base);
+  width: 100%;
+  max-width: 100%;
+}
+
+.bargain-input:hover {
+  border-color: var(--color-primary);
+}
+
+.bargain-input:focus {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 1px;
+}
+
+.bargain-keyword-clear-btn {
+  position: absolute;
+  right: 0.5rem;
+  background: transparent;
+  border: none;
+  font-size: 1.1rem;
+  cursor: pointer;
+  color: var(--color-text-muted);
+  display: none;
+  padding: 4px;
+  line-height: 1;
+  transition: var(--transition-base);
+}
+
+.bargain-keyword-clear-btn:hover {
+  color: var(--color-primary);
+}
+
 /* --- Sort Buttons --- */
 .bargain-sort-buttons {
   display: flex;
