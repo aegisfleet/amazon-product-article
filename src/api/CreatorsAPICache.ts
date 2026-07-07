@@ -88,6 +88,12 @@ export class CreatorsAPICache {
    * Normalize an entry, providing defaults for missing status (migration)
    */
   private normalizeCacheEntry(entry: Partial<CacheEntry> & Record<string, unknown>): CacheEntry {
+    // Trim description and features to reduce file size
+    if (entry.data) {
+      delete (entry.data as any).description;
+      (entry.data as any).features = [];
+    }
+
     if (entry.status) {
       return entry as CacheEntry;
     }
@@ -118,7 +124,7 @@ export class CreatorsAPICache {
       await this.ensureDirectoryAsync();
       const tmpPath = `${this.cachePath}.tmp`;
       // Use fs.promises.writeFile to write to a temporary file first
-      await fs.promises.writeFile(tmpPath, JSON.stringify(this.cache, null, 2), 'utf-8');
+      await fs.promises.writeFile(tmpPath, JSON.stringify(this.cache), 'utf-8');
       // Rename atomically to replace the actual cache file
       await fs.promises.rename(tmpPath, this.cachePath);
       this.logger.info('Creators API Cache saved to disk');
@@ -271,6 +277,10 @@ export class CreatorsAPICache {
       );
       sanitizedData.price = existingEntry.data.price;
     }
+
+    // Trim description and features to reduce file size
+    delete (sanitizedData as any).description;
+    (sanitizedData as any).features = [];
 
     this.cache[asin] = {
       data: sanitizedData,
