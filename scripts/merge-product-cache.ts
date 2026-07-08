@@ -11,7 +11,7 @@ interface CacheFile {
   [asin: string]: CacheEntry;
 }
 
-function loadJSON(filePath: string): CacheFile {
+export function loadJSON(filePath: string): CacheFile {
   try {
     if (!fs.existsSync(filePath)) {
       console.log(`ℹ️ File not found, treating as empty: ${filePath}`);
@@ -28,7 +28,7 @@ function loadJSON(filePath: string): CacheFile {
   }
 }
 
-function mergeCaches() {
+export function mergeCaches() {
   const oursPath = process.argv[2];
   const theirsPath = process.argv[3];
   const outputPath = process.argv[4];

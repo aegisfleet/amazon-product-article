@@ -134,7 +134,7 @@ export class ArticleGenerator {
    * SEOメタデータを生成
    */
   generateSEOMetadata(product: Product, investigation: InvestigationResult): ArticleMetadata {
-    const productDetail = product as ProductDetail;
+    const productDetail = product as unknown as ProductDetail;
     // productName があればそれを使用、なければ ASIN からフォールバック
     const displayName = investigation.analysis.productName || `Product ${product.asin}`;
     // タイトルをシンプルに商品名のみにする
@@ -426,7 +426,7 @@ export class ArticleGenerator {
     ];
 
     // 追加プロパティ（メーカー・ブランドなど）
-    const productDetail = product as ProductDetail;
+    const productDetail = product as unknown as ProductDetail;
     if (productDetail.manufacturer) {
       infoRows.push(`| メーカー | ${productDetail.manufacturer} |`);
     }
