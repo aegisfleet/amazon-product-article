@@ -249,33 +249,53 @@
                 </div>
             </div>
             {{- end -}}
+
+            {{- /* Sale Filter */ -}}
+            <div class="filter-group">
+                <h4 class="filter-group-title">セール状況</h4>
+                <div class="filter-options">
+                    <label class="filter-checkbox">
+                        <input type="checkbox" id="deal-filter" name="deal-filter" value="active">
+                        <span class="filter-label">タイムセール対象</span>
+                    </label>
+                </div>
+            </div>
+
+            {{- /* Keyword Search Filter */ -}}
+            <div class="filter-group">
+                <h4 class="filter-group-title">キーワード検索</h4>
+                <div class="filter-options">
+                    <div class="search-bar-container" style="position: relative; width: 100%;">
+                        <input type="text" id="keyword-search" placeholder="商品名、スペックで検索..." aria-label="商品名・スペックで絞り込み検索"
+                            style="width: 100%; padding: 0.5rem 1rem 0.5rem 2.5rem; border: 1px solid var(--color-border); border-radius: 8px; background-color: var(--color-bg-card); color: var(--color-text-primary); font-family: inherit; font-size: 0.875rem;">
+                        <span
+                            style="position: absolute; left: 0.875rem; top: 50%; transform: translateY(-50%); color: var(--color-text-secondary); pointer-events: none;"
+                            aria-hidden="true">🔍</span>
+                    </div>
+                </div>
+            </div>
+
+            {{- /* Sort Filter */ -}}
+            <div class="filter-group">
+                <h4 class="filter-group-title">並び替え</h4>
+                <div class="filter-options">
+                    <div style="position: relative; width: 100%;">
+                        <select id="sort-select" class="sort-select" aria-label="並び替え"
+                            style="width: 100%; padding: 0.5rem 2rem 0.5rem 1rem; border: 1px solid var(--color-border); border-radius: 8px; background-color: var(--color-bg-card); color: var(--color-text-primary); font-family: inherit; font-size: 0.875rem; cursor: pointer; appearance: none; background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%20fill%3D%22none%22%20stroke%3D%22currentColor%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpolyline%20points%3D%226%209%2012%2015%2018%209%22%3E%3C/polyline%3E%3C/svg%3E'); background-repeat: no-repeat; background-position: right 0.5rem center; background-size: 1.25rem;">
+                            <option value="date-desc">新着順</option>
+                            <option value="price-asc">価格の安い順</option>
+                            <option value="price-desc">価格の高い順</option>
+                            <option value="score-desc">評価の高い順</option>
+                            <option value="savings-desc">割引率の高い順</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
-    <div class="sorting-controls"
-        style="margin-bottom: var(--spacing-lg); display: flex; justify-content: space-between; align-items: center; gap: var(--spacing-sm); flex-wrap: wrap;">
-        <span id="product-count" style="font-size: 0.875rem; color: var(--color-text-secondary);">{{ len $sorted }}
-            件の商品</span>
-        <div style="display: flex; align-items: center; gap: var(--spacing-md); flex-wrap: wrap;">
-            <div class="search-bar-container" style="position: relative; flex-grow: 1; min-width: 250px;">
-                <input type="text" id="keyword-search" placeholder="商品名、スペックで検索..." aria-label="商品名・スペックで絞り込み検索"
-                    style="width: 100%; padding: 0.5rem 1rem 0.5rem 2.5rem; border: 1px solid var(--color-border); border-radius: 8px; background-color: var(--color-bg-card); color: var(--color-text-primary); font-family: inherit; font-size: 0.875rem;">
-                <span
-                    style="position: absolute; left: 0.875rem; top: 50%; transform: translateY(-50%); color: var(--color-text-secondary); pointer-events: none;"
-                    aria-hidden="true">🔍</span>
-            </div>
-            <div style="display: flex; align-items: center; gap: var(--spacing-sm);">
-                <label for="sort-select"
-                    style="font-weight: 600; font-size: 0.875rem; color: var(--color-text-secondary);">並び替え:</label>
-                <select id="sort-select" class="sort-select"
-                    style="padding: 0.5rem 2rem 0.5rem 1rem; border: 1px solid var(--color-border); border-radius: 8px; background-color: var(--color-bg-card); color: var(--color-text-primary); font-family: inherit; font-size: 0.875rem; cursor: pointer; appearance: none; background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%20fill%3D%22none%22%20stroke%3D%22currentColor%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpolyline%20points%3D%226%209%2012%2015%2018%209%22%3E%3C/polyline%3E%3C/svg%3E'); background-repeat: no-repeat; background-position: right 0.5rem center; background-size: 1.25rem;">
-                    <option value="date-desc">新着順</option>
-                    <option value="price-asc">価格の安い順</option>
-                    <option value="price-desc">価格の高い順</option>
-                    <option value="score-desc">評価の高い順</option>
-                </select>
-            </div>
-        </div>
+    <div class="product-count-container" style="margin-bottom: var(--spacing-md); display: flex; justify-content: space-between; align-items: center;">
+        <span id="product-count" class="product-count" style="font-size: 0.875rem; color: var(--color-text-secondary);"></span>
     </div>
 
 
@@ -366,8 +386,13 @@
         {{- end -}}
         {{- $specsString := delimit ($specs | uniq) "," -}}
 
+        {{- $hasDeal := false -}}
+        {{- if or .Params.deal_badge .Params.savings_percentage -}}
+        {{- $hasDeal = true -}}
+        {{- end -}}
         <article class="card" data-price="{{ $priceRaw }}" data-score="{{ .Params.score | default 0 }}"
-            data-date="{{ $dateRaw }}" data-categories="{{ $catString }}" data-specs="{{ $specsString }}">
+            data-date="{{ $dateRaw }}" data-categories="{{ $catString }}" data-specs="{{ $specsString }}"
+            data-has-deal="{{ $hasDeal }}" data-savings-percentage="{{ .Params.savings_percentage | default 0 }}">
             <div class="card-image">
                 <a href="{{ .RelPermalink }}" tabindex="-1" aria-hidden="true">
                     {{- if .Params.images -}}
