@@ -73,6 +73,10 @@ for i in 1 2 3; do
     # Fetch latest remote changes
     git fetch origin "$CURRENT_BRANCH"
 
+    # Reset cache file in working directory to HEAD to avoid "Your local changes..." error on merge
+    # Since we already committed our changes, this is safe and will match the committed index.
+    git checkout HEAD -- data/cache/paapi-product-cache.json || true
+
     # Try to merge remote branch
     # Note: --no-edit to avoid prompting for commit message
     if git merge origin/"$CURRENT_BRANCH" -m "Merge remote-tracking branch 'origin/$CURRENT_BRANCH' [skip ci]" --no-edit; then
