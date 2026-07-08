@@ -56,6 +56,14 @@ function matchesSpecs(card, requiredSpecs) {
     return requiredSpecs.every(spec => cardSpecs.has(spec));
 }
 
+/**
+ * Check if a card matches the selected deal status
+ */
+function matchesDeal(card, showOnlyDeals) {
+    if (!showOnlyDeals) return true;
+    return card.dataset.hasDeal === 'true';
+}
+
 
 /**
  * Check if a card matches the active preset constraints
@@ -89,6 +97,7 @@ function isCardVisible(card, filters) {
     if (!matchesPrice(card, filters.priceRange)) return false;
     if (!matchesScore(card, filters.scoreRange)) return false;
     if (!matchesSpecs(card, filters.requiredSpecs)) return false;
+    if (!matchesDeal(card, filters.showOnlyDeals)) return false;
     if (!matchesPreset(card, filters.activePreset, filters.presetDefinitions)) return false;
     return true;
 }
@@ -133,7 +142,7 @@ function updateCheckboxState(params, paramName, container, checkboxName) {
  */
 function updateFilterSectionState(params, filterSection, filterToggle) {
     if (params.toString()) {
-        const hasOtherFilters = params.has('price') || params.has('score') || params.has('categories') || params.has('specs') || params.has('preset');
+        const hasOtherFilters = params.has('price') || params.has('score') || params.has('categories') || params.has('specs') || params.has('preset') || params.has('deal');
         if (hasOtherFilters && filterSection?.classList.contains('collapsed')) {
             filterSection.classList.remove('collapsed');
             filterToggle?.setAttribute('aria-expanded', 'true');
@@ -345,12 +354,14 @@ function initCategoryFeatures() {
      * Apply all filters to cards
      */
     function filterCards() {
+        const dealFilter = document.getElementById('deal-filter');
         const filters = {
             selectedCategories: new Set(getSelectedCategories()),
             priceRange: getSelectedPriceRange(),
             scoreRange: getScoreRange(),
             searchQuery: keywordSearch?.value.trim().toLowerCase() || '',
             requiredSpecs: getSelectedSpecs(),
+            showOnlyDeals: dealFilter ? dealFilter.checked : false,
             activePreset,
             presetDefinitions
         };
@@ -374,6 +385,10 @@ function initCategoryFeatures() {
             let valA, valB;
 
             switch (sortValue) {
+                case 'savings-desc':
+                    valA = Number.parseInt(a.dataset.savingsPercentage) || 0;
+                    valB = Number.parseInt(b.dataset.savingsPercentage) || 0;
+                    return valB - valA;
                 case 'price-asc':
                     valA = Number.parseInt(a.dataset.price) || 0;
                     valB = Number.parseInt(b.dataset.price) || 0;
@@ -439,6 +454,12 @@ function initCategoryFeatures() {
             params.set('q', keywordSearch.value.trim());
         }
 
+        // Deal
+        const dealFilter = document.getElementById('deal-filter');
+        if (dealFilter && dealFilter.checked) {
+            params.set('deal', 'active');
+        }
+
         if (activePreset) {
             params.set('preset', activePreset);
         }
@@ -470,6 +491,11 @@ function initCategoryFeatures() {
 
         updateFilterSectionState(params, filterSection, filterToggle);
         updateSearchState(params, keywordSearch);
+
+        const dealFilter = document.getElementById('deal-filter');
+        if (dealFilter) {
+            dealFilter.checked = params.get('deal') === 'active';
+        }
     }
 
     /**
@@ -500,6 +526,12 @@ function initCategoryFeatures() {
         // Reset keyword search
         if (keywordSearch) {
             keywordSearch.value = '';
+        }
+
+        // Reset deal filter
+        const dealFilter = document.getElementById('deal-filter');
+        if (dealFilter) {
+            dealFilter.checked = false;
         }
 
         clearActivePreset();
@@ -589,6 +621,20 @@ function initCategoryFeatures() {
             if (globalThis.ApaAnalytics && typeof globalThis.ApaAnalytics.trackFilterUse === 'function') {
                 const cb = e.target instanceof HTMLInputElement ? e.target : null;
                 globalThis.ApaAnalytics.trackFilterUse('spec', cb ? cb.value : '');
+            }
+        });
+    }
+
+    // Handle deal filter changes
+    const dealFilter = document.getElementById('deal-filter');
+    if (dealFilter) {
+        dealFilter.addEventListener('change', () => {
+            clearActivePreset();
+            filterCards();
+            updateUrl();
+            // GA4 トラッキング
+            if (globalThis.ApaAnalytics && typeof globalThis.ApaAnalytics.trackFilterUse === 'function') {
+                globalThis.ApaAnalytics.trackFilterUse('deal', dealFilter.checked ? 'active' : '');
             }
         });
     }
