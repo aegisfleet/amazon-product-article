@@ -373,8 +373,10 @@
         {{- $specsString := delimit ($specs | uniq) "," -}}
 
         {{- $hasDeal := false -}}
-        {{- if or .Params.deal_badge .Params.savings_percentage -}}
+        {{- if .Params.deal_badge -}}
+        {{- if in .Params.deal_badge "セール" -}}
         {{- $hasDeal = true -}}
+        {{- end -}}
         {{- end -}}
         <article class="card" data-price="{{ $priceRaw }}" data-score="{{ .Params.score | default 0 }}"
             data-date="{{ $dateRaw }}" data-categories="{{ $catString }}" data-specs="{{ $specsString }}"
