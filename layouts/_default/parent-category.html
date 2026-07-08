@@ -182,8 +182,38 @@
             </div>
         </div>
 
-        <!-- Row 2: Category & Sort -->
+        <!-- Row 2: Deal & Sort -->
         <div class="bargain-filter-row bargain-filter-row-bottom">
+            <div class="bargain-filter-group">
+                <span class="bargain-filter-label">
+                    <span class="bargain-filter-icon">🏷️</span>
+                    セール状況
+                </span>
+                <div style="display: flex; flex-wrap: wrap; gap: var(--spacing-sm); align-items: center; width: 100%; min-width: 0;">
+                    <label class="filter-checkbox" style="padding: 0; margin-right: var(--spacing-md); display: inline-flex; align-items: center; gap: var(--spacing-xs); cursor: pointer; flex-shrink: 0;">
+                        <input type="checkbox" id="deal-filter" name="deal-filter" value="active" style="width: 18px; height: 18px; accent-color: var(--color-primary);">
+                        <span class="filter-label" style="font-size: 0.9rem; font-weight: 600;">タイムセール対象のみ</span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="bargain-filter-group">
+                <span class="bargain-filter-label">
+                    <span class="bargain-filter-icon">🔄</span>
+                    並び替え
+                </span>
+                <div class="bargain-sort-buttons" id="sort-buttons">
+                    <button type="button" class="bargain-sort-btn" data-sort="date-desc">新着順</button>
+                    <button type="button" class="bargain-sort-btn" data-sort="savings-desc">割引率順</button>
+                    <button type="button" class="bargain-sort-btn active" data-sort="score-desc">スコア順</button>
+                    <button type="button" class="bargain-sort-btn" data-sort="price-asc">価格の安い順</button>
+                    <button type="button" class="bargain-sort-btn" data-sort="price-desc">価格の高い順</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Row 3: Category & Keyword Search -->
+        <div class="bargain-filter-row" style="margin-top: var(--spacing-lg); padding-top: var(--spacing-lg); border-top: 1px solid var(--color-border);">
             <div class="bargain-filter-group">
                 <label for="category-select" class="bargain-filter-label">
                     <span class="bargain-filter-icon">📂</span>
@@ -203,30 +233,6 @@
                     <button type="button" id="category-reset-btn" class="bargain-category-reset-btn"
                         title="カテゴリ選択を解除" aria-label="カテゴリ選択を解除" disabled>✕</button>
                 </div>
-            </div>
-
-            <div class="bargain-filter-group">
-                <span class="bargain-filter-label">
-                    <span class="bargain-filter-icon">🔄</span>
-                    並び替え
-                </span>
-                <div class="bargain-sort-buttons" id="sort-buttons">
-                    <button type="button" class="bargain-sort-btn" data-sort="date-desc">新着順</button>
-                    <button type="button" class="bargain-sort-btn" data-sort="savings-desc">割引率順</button>
-                    <button type="button" class="bargain-sort-btn active" data-sort="score-desc">スコア順</button>
-                    <button type="button" class="bargain-sort-btn" data-sort="price-asc">価格の安い順</button>
-                    <button type="button" class="bargain-sort-btn" data-sort="price-desc">価格の高い順</button>
-                </div>
-            </div>
-        </div>
-
-        <!-- Row 3: Deal & Keyword Search -->
-        <div class="bargain-filter-row" style="margin-top: var(--spacing-lg); padding-top: var(--spacing-lg); border-top: 1px solid var(--color-border);">
-            <div class="bargain-filter-group" style="display: flex; flex-direction: row; gap: var(--spacing-md); align-items: center; grid-column: span 1;">
-                <label class="filter-checkbox" style="padding: 0; display: inline-flex; align-items: center; gap: var(--spacing-xs); cursor: pointer; margin-top: 1.5rem;">
-                    <input type="checkbox" id="deal-filter" name="deal-filter" value="active" style="width: 18px; height: 18px; accent-color: var(--color-primary);">
-                    <span class="filter-label" style="font-size: 0.9rem; font-weight: 600;">タイムセール対象のみ</span>
-                </label>
             </div>
 
             <div class="bargain-filter-group">
