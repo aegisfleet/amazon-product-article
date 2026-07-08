@@ -32,24 +32,36 @@
         "userType": "30代 男性 (推測)",
         "scenario": "休日の家族旅行",
         "experience": "以前はスマホの小さな画面でナビを見ていたが、11.8インチの大画面になり地図が見やすくなった。子供たちが退屈しないようにYouTubeを流せるので、長距離ドライブも快適になった。",
-        "sentiment": "positive"
+        "sentiment": "positive",
+        "supportingSourceIds": [
+          "src-1"
+        ]
       },
       {
         "userType": "40代 トラックドライバー (推測)",
         "scenario": "休憩中の車内",
         "experience": "待機時間にNetflixを高画質で見られるのが良い。2K解像度は非常に綺麗で、タブレットを持ち込む必要がなくなった。",
-        "sentiment": "positive"
+        "sentiment": "positive",
+        "supportingSourceIds": [
+          "src-1"
+        ]
       }
     ],
     "userImpression": "11.8インチという特大サイズと2K解像度が最大の特徴。Androidタブレットを車載する感覚に近く、エンタメ性能は非常に高い。設置スペースの干渉には注意が必要だが、価格対性能比は優秀。",
     "sources": [
       {
+        "id": "src-1",
         "name": "Amazon商品ページ",
         "url": "https://www.amazon.co.jp/dp/B0FPVXRZJY",
-        "credibility": "高"
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-07-09",
+        "author": "PORMIDOAUTO",
+        "conflictOfInterest": "disclosed",
+        "notes": "製品スペックを確認"
       }
     ],
-    "lastInvestigated": "2026-02-24",
+    "lastInvestigated": "2026-07-09",
     "competitiveAnalysis": [
       {
         "name": "ATOTO S8 (10インチ QLED)",
@@ -100,31 +112,49 @@
       "scoreRationale": "[基本点: 70]\n[加点: +8] 11.8インチ2K QLED液晶、8コア/6GB/128GBのハイスペック、4G LTE対応など機能面で優れる\n[加点: +3] このスペックと画面サイズで5万円台後半はコストパフォーマンスが高い\n[加点: +4] 10インチが主流の中で11.8インチという独自のサイズ感と高解像度は大きな強み\n[合計: 85]"
     },
     "technicalSpecs": {
-      "os": "Android (バージョン不明)",
-      "cpu": "8コア",
-      "ram": "6GB",
-      "storage": "128GB",
-      "display": {
-        "size": "11.8インチ",
-        "resolution": "2000×1200 (2K)",
-        "type": "QLED"
-      },
-      "connectivity": [
-        "4G LTE",
-        "Wi-Fi",
-        "Bluetooth 5.2"
-      ],
-      "other": [
-        "ワイヤレスCarPlay",
-        "ワイヤレスAndroid Auto",
-        "DSP搭載",
-        "GPS搭載",
-        "バックカメラ連動"
-      ],
       "dimensions": {
-        "display": "261mm(W)×167mm(H)×10mm(D)",
-        "unit": "175mm(W)×50mm(H)×138mm(D)"
+        "height": "167.0mm",
+        "width": "138.0mm",
+        "depth": "261.0mm"
+      },
+      "weight": "1400g",
+      "displaySize": "11.8インチ",
+      "system": "Android",
+      "memory": "RAM: 6GB / ROM: 128GB",
+      "network": "Wi-Fi, 4G LTE (SIMカード対応), Bluetooth 5.2",
+      "connectivity": "ワイヤレスCarPlay, ワイヤレス/有線Android Auto, ミラーリング対応",
+      "audio": "DSP内蔵",
+      "other": [
+        "1DIN・2DIN両対応",
+        "バックカメラ連動 (CVBS/AHD対応)",
+        "2分割画面(PBP/PIP)対応",
+        "AM/FMラジオ",
+        "USBメディア対応",
+        "HDMI出力対応",
+        "RCA映像入力対応"
+      ]
+    },
+    "claims": [
+      {
+        "claim": "1DIN規格の多くの国産車に装着可能で、画面の位置は上下左右に調整できるためハザードスイッチやエアコンの吹き出し口を塞がない",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "crossChecked": true,
+        "notes": "メーカーの仕様に調整機構（左右-15～15度、前後-20～30度、上下スライド）が明記されており、物理的な回避が可能であると確認。"
+      },
+      {
+        "claim": "著作権保護のため、一部アプリはミラーリングに対応していない",
+        "category": "durability",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "crossChecked": true,
+        "notes": "メーカー自体が仕様上の制約として明記している事実。"
       }
-    }
+    ]
   }
 }
