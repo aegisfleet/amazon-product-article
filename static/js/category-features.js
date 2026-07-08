@@ -65,6 +65,17 @@ function isCardVisible(card, filters) {
     return true;
 }
 
+/**
+ * Helper to apply slider values from URL parameters
+ */
+function applySliderState(params, paramName, slider, isPrice) {
+    if (!slider || !params.has(paramName)) return;
+    const rawVal = Number.parseInt(params.get(paramName), 10);
+    slider.value = isPrice
+        ? String(Math.round(priceToValue(rawVal)))
+        : String(rawVal);
+}
+
 // Handle both early and late script loading
 function initCategoryFeatures() {
     const scoreSlider = document.getElementById('score-slider');
@@ -136,11 +147,9 @@ function initCategoryFeatures() {
     }
 
     /**
-     * Apply all filters to cards
+     * Get current filter values from DOM elements
      */
-    function filterCards() {
-        updateSliderDisplays();
-
+    function getFilterValues() {
         const minScore = scoreSlider ? Number.parseInt(scoreSlider.value, 10) : 0;
         const minPrice = minPriceSlider ? valueToPrice(Number.parseInt(minPriceSlider.value, 10)) : 0;
         const maxPrice = priceSlider ? valueToPrice(Number.parseInt(priceSlider.value, 10)) : 50000;
@@ -148,13 +157,12 @@ function initCategoryFeatures() {
         const showOnlyDeals = dealFilter ? dealFilter.checked : false;
 
         const rawQ = keywordSearch ? keywordSearch.value : '';
-        const normalizedQ = normalizeText(rawQ);
-        const keywords = normalizedQ.split(/\s+/).filter(Boolean);
+        const keywords = normalizeText(rawQ).split(/\s+/).filter(Boolean);
 
         const specFilters = document.getElementById('spec-filters');
         const requiredSpecs = specFilters ? Array.from(specFilters.querySelectorAll('input[name="spec"]:checked')).map(cb => cb.value) : [];
 
-        const filters = {
+        return {
             category,
             minPrice,
             maxPrice,
@@ -163,33 +171,23 @@ function initCategoryFeatures() {
             keywords,
             requiredSpecs
         };
+    }
 
-        allCards.forEach(card => {
-            const visible = isCardVisible(card, filters);
-            card.style.display = visible ? '' : 'none';
-        });
-
-        // Update counts
-        const visibleCount = allCards.filter(card => card.style.display !== 'none').length;
-        const totalCount = allCards.length;
+    /**
+     * Update UI counts and badges based on filter results
+     */
+    function updateUIElements(visibleCount, totalCount, keywords) {
         if (productCount) {
-            if (visibleCount === totalCount) {
-                productCount.textContent = `${totalCount} 件の商品`;
-            } else {
-                productCount.textContent = `${visibleCount} / ${totalCount} 件の商品`;
-            }
+            productCount.textContent = visibleCount === totalCount
+                ? `${totalCount} 件の商品`
+                : `${visibleCount} / ${totalCount} 件の商品`;
         }
 
-        // Update Keyword count badge
         if (keywordCountBadge) {
             if (keywords.length > 0) {
                 keywordCountBadge.textContent = `${visibleCount}件`;
                 keywordCountBadge.style.display = 'inline-flex';
-                if (visibleCount === 0) {
-                    keywordCountBadge.classList.add('zero-results');
-                } else {
-                    keywordCountBadge.classList.remove('zero-results');
-                }
+                keywordCountBadge.classList.toggle('zero-results', visibleCount === 0);
             } else {
                 keywordCountBadge.style.display = 'none';
             }
@@ -198,8 +196,24 @@ function initCategoryFeatures() {
         if (categoryResetBtn && categorySelect) {
             categoryResetBtn.disabled = (categorySelect.value === '');
         }
+    }
 
-        updateUrl();
+    /**
+     * Apply all filters to cards
+     */
+    function filterCards() {
+        updateSliderDisplays();
+
+        const filters = getFilterValues();
+
+        allCards.forEach(card => {
+            card.style.display = isCardVisible(card, filters) ? '' : 'none';
+        });
+
+        const visibleCount = allCards.filter(card => card.style.display !== 'none').length;
+        updateUIElements(visibleCount, allCards.length, filters.keywords);
+
+        updateUrl(filters);
     }
 
     const debouncedFilterCards = debounce(filterCards, 300);
@@ -256,45 +270,39 @@ function initCategoryFeatures() {
     /**
      * Update URL with current filter/sort state
      */
-    function updateUrl() {
+    function updateUrl(filters) {
         const params = new URLSearchParams();
 
         if (currentSort && currentSort !== 'score-desc') {
             params.set('sort', currentSort);
         }
 
-        const minScore = scoreSlider ? scoreSlider.value : '0';
-        if (minScore !== '0') {
-            params.set('minScore', minScore);
+        if (filters.minScore !== 0) {
+            params.set('minScore', String(filters.minScore));
         }
 
-        const minPrice = minPriceSlider ? valueToPrice(Number.parseInt(minPriceSlider.value, 10)) : 0;
-        if (minPrice !== 0) {
-            params.set('minPrice', String(minPrice));
+        if (filters.minPrice !== 0) {
+            params.set('minPrice', String(filters.minPrice));
         }
 
-        const maxPrice = priceSlider ? valueToPrice(Number.parseInt(priceSlider.value, 10)) : 50000;
-        if (maxPrice < 50000) {
-            params.set('maxPrice', String(maxPrice));
+        if (filters.maxPrice < 50000) {
+            params.set('maxPrice', String(filters.maxPrice));
         }
 
-        if (categorySelect && categorySelect.value) {
-            params.set('category', categorySelect.value);
+        if (filters.category) {
+            params.set('category', filters.category);
         }
 
-        const specFilters = document.getElementById('spec-filters');
-        if (specFilters) {
-            const selectedSpecs = Array.from(specFilters.querySelectorAll('input[name="spec"]:checked')).map(cb => cb.value);
-            if (selectedSpecs.length > 0) {
-                params.set('specs', selectedSpecs.join(','));
-            }
+        if (filters.requiredSpecs.length > 0) {
+            params.set('specs', filters.requiredSpecs.join(','));
         }
 
-        if (keywordSearch && keywordSearch.value.trim()) {
-            params.set('q', keywordSearch.value.trim());
+        const rawQ = keywordSearch ? keywordSearch.value.trim() : '';
+        if (rawQ) {
+            params.set('q', rawQ);
         }
 
-        if (dealFilter && dealFilter.checked) {
+        if (filters.showOnlyDeals) {
             params.set('deal', 'active');
         }
 
@@ -302,8 +310,34 @@ function initCategoryFeatures() {
             params.set('preset', activePreset);
         }
 
-        const newUrl = globalThis.location.pathname + (params.toString() ? '?' + params.toString() : '');
+        const queryStr = params.toString();
+        const newUrl = globalThis.location.pathname + (queryStr ? '?' + queryStr : '');
         globalThis.history.replaceState({ path: newUrl }, '', newUrl);
+    }
+
+    /**
+     * Helper to apply specs checkboxes from URL parameters
+     */
+    function applySpecsState(params) {
+        if (!params.has('specs')) return;
+        const specFilters = document.getElementById('spec-filters');
+        if (!specFilters) return;
+
+        const values = new Set(params.get('specs').split(','));
+        specFilters.querySelectorAll('input[name="spec"]').forEach(cb => {
+            cb.checked = values.has(cb.value);
+        });
+    }
+
+    /**
+     * Helper to apply keyword search value from URL parameters
+     */
+    function applyKeywordState(params) {
+        if (!keywordSearch || !params.has('q')) return;
+        keywordSearch.value = params.get('q');
+        if (keywordClearBtn) {
+            keywordClearBtn.style.display = 'block';
+        }
     }
 
     /**
@@ -322,36 +356,16 @@ function initCategoryFeatures() {
             updateSortButtons();
         }
 
-        if (params.has('minScore') && scoreSlider) {
-            scoreSlider.value = params.get('minScore');
-        }
-
-        if (params.has('minPrice') && minPriceSlider) {
-            minPriceSlider.value = String(Math.round(priceToValue(Number.parseInt(params.get('minPrice'), 10))));
-        }
-
-        if (params.has('maxPrice') && priceSlider) {
-            priceSlider.value = String(Math.round(priceToValue(Number.parseInt(params.get('maxPrice'), 10))));
-        }
+        applySliderState(params, 'minScore', scoreSlider, false);
+        applySliderState(params, 'minPrice', minPriceSlider, true);
+        applySliderState(params, 'maxPrice', priceSlider, true);
 
         if (params.has('category') && categorySelect) {
             categorySelect.value = params.get('category');
         }
 
-        if (params.has('specs')) {
-            const specFilters = document.getElementById('spec-filters');
-            if (specFilters) {
-                const values = new Set(params.get('specs').split(','));
-                specFilters.querySelectorAll('input[name="spec"]').forEach(cb => {
-                    cb.checked = values.has(cb.value);
-                });
-            }
-        }
-
-        if (params.has('q') && keywordSearch) {
-            keywordSearch.value = params.get('q');
-            if (keywordClearBtn) keywordClearBtn.style.display = 'block';
-        }
+        applySpecsState(params);
+        applyKeywordState(params);
 
         if (dealFilter) {
             dealFilter.checked = params.get('deal') === 'active';
