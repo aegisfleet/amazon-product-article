@@ -17,7 +17,10 @@ try {
     if (cache[asin]) {
       console.log(`Found cache for ${asin}. Current timestamp: ${cache[asin].timestamp}`);
       cache[asin].timestamp = 0; // Reset timestamp to force refresh
-      fs.writeFileSync(cachePath, JSON.stringify(cache, null, 2), 'utf8');
+      const sortedKeys = Object.keys(cache).sort((a, b) => a.localeCompare(b));
+      const lines = sortedKeys.map((key) => `  "${key}": ${JSON.stringify(cache[key])}`);
+      const jsonContent = `{\n${lines.join(',\n')}\n}`;
+      fs.writeFileSync(cachePath, jsonContent, 'utf8');
       console.log(`Reset timestamp for ${asin} to 0 at ${cachePath}`);
     } else {
       console.log(`No cache found for ${asin}.`);
