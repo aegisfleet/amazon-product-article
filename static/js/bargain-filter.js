@@ -239,27 +239,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // --- Events ---
-  if (keywordInput) {
-    keywordInput.addEventListener('input', (e) => {
-      if (keywordClearBtn) {
-        keywordClearBtn.style.display = keywordInput.value ? 'block' : 'none';
-      }
-      if (e.isComposing) return;
-      debouncedApplyFilters();
-    });
-
-    keywordInput.addEventListener('compositionend', () => {
-      debouncedApplyFilters();
-    });
-  }
-  if (keywordClearBtn) {
-    keywordClearBtn.addEventListener('click', () => {
-      keywordInput.value = '';
-      keywordClearBtn.style.display = 'none';
-      keywordInput.focus();
-      applyFilters();
-    });
-  }
+  initKeywordSearch(keywordInput, keywordClearBtn, debouncedApplyFilters, applyFilters);
 
   scoreSlider.addEventListener('input', () => {
     updateSliderDisplays();
