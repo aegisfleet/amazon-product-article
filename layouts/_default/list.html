@@ -7,130 +7,120 @@
         {{- with .Description -}}<p class="article-meta">{{ . }}</p>{{- end -}}
     </div>
 
-    {{- /* Filter Section */ -}}
-    <div class="filter-section" id="filter-section">
-        <div class="filter-header">
-            <button type="button" class="filter-toggle" id="filter-toggle" aria-controls="filter-content"
-                aria-expanded="true">
-                <span class="filter-icon" aria-hidden="true">🔍</span>
-                <span>フィルター</span>
-                <span class="filter-arrow" aria-hidden="true">▼</span>
-            </button>
-            <button type="button" class="filter-reset-btn" id="filter-reset">リセット</button>
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--spacing-sm);">
+        <h2 style="font-size: 1.1rem; font-weight: bold; margin: 0; color: var(--color-text-main);">商品絞り込み</h2>
+        <button type="button" id="filter-reset" class="bargain-category-reset-btn" style="padding: 0.4rem 0.8rem; font-size: 0.85rem; font-weight: 600; display: inline-flex; align-items: center; height: auto; min-width: auto;">フィルタをリセット</button>
+    </div>
+
+    <!-- Filter Panel -->
+    <div class="bargain-filter-panel theme-blue" id="filter-panel">
+        <!-- Row 1: Score & Price -->
+        <div class="bargain-filter-row">
+            <div class="bargain-filter-group">
+                <label for="score-slider" class="bargain-filter-label">
+                    <span class="bargain-filter-icon">🏆</span>
+                    最低スコア: <span id="score-value" class="bargain-filter-value">0</span>点以上
+                </label>
+                <input type="range" id="score-slider" class="bargain-slider" min="0" max="100" step="5"
+                    value="0">
+                <div class="bargain-slider-labels">
+                    <span>0</span><span>50</span><span>100</span>
+                </div>
+            </div>
+
+            <div class="bargain-filter-group-price">
+                <div class="bargain-filter-group">
+                    <label for="min-price-slider" class="bargain-filter-label">
+                        <span class="bargain-filter-icon">💰</span>
+                        最低価格: <span id="min-price-value" class="bargain-filter-value">¥0</span>
+                    </label>
+                    <input type="range" id="min-price-slider" class="bargain-slider" min="0" max="1000" step="1"
+                        value="0">
+                    <div class="bargain-slider-labels"
+                        style="position: relative; height: 1.25rem; margin-top: 4px; font-size: 0.7rem;">
+                        <span style="position: absolute; left: 0%; transform: none;">¥0</span>
+                        <span style="position: absolute; left: 40%; transform: translateX(-50%);">¥2k</span>
+                        <span style="position: absolute; left: 70%; transform: translateX(-50%);">¥10k</span>
+                        <span style="position: absolute; left: 100%; transform: translateX(-100%);">¥50k</span>
+                    </div>
+                </div>
+                <div class="bargain-filter-group">
+                    <label for="price-slider" class="bargain-filter-label">
+                        上限価格: <span id="price-value" class="bargain-filter-value">上限なし</span>
+                    </label>
+                    <input type="range" id="price-slider" class="bargain-slider" min="0" max="1000" step="1"
+                        value="1000">
+                    <div class="bargain-slider-labels"
+                        style="position: relative; height: 1.25rem; margin-top: 4px; font-size: 0.7rem;">
+                        <span style="position: absolute; left: 0%; transform: none;">¥0</span>
+                        <span style="position: absolute; left: 40%; transform: translateX(-50%);">¥2k</span>
+                        <span style="position: absolute; left: 70%; transform: translateX(-50%);">¥10k</span>
+                        <span style="position: absolute; left: 100%; transform: translateX(-100%);">¥50k</span>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="filter-content" id="filter-content">
-            <div class="filter-presets" aria-label="おすすめプリセット">
-                <button type="button" class="filter-preset-btn" data-preset="cost-performance"
-                    aria-pressed="false">コスパ重視</button>
-                <button type="button" class="filter-preset-btn" data-preset="high-performance"
-                    aria-pressed="false">高性能</button>
-                <button type="button" class="filter-preset-btn" data-preset="beginner"
-                    aria-pressed="false">入門向け</button>
-                <button type="button" class="filter-preset-btn" data-preset="lightweight"
-                    aria-pressed="false">軽量・持ち運び</button>
-            </div>
-            {{- /* Price Filter */ -}}
-            <div class="filter-group">
-                <h4 class="filter-group-title">価格帯</h4>
-                <div class="filter-options">
-                    <label class="filter-radio">
-                        <input type="radio" name="price-filter" value="all" checked>
-                        <span class="filter-label">すべて</span>
-                    </label>
-                    <label class="filter-radio">
-                        <input type="radio" name="price-filter" value="0-5000">
-                        <span class="filter-label">¥5,000以下</span>
-                    </label>
-                    <label class="filter-radio">
-                        <input type="radio" name="price-filter" value="5000-20000">
-                        <span class="filter-label">¥5,000〜¥20,000</span>
-                    </label>
-                    <label class="filter-radio">
-                        <input type="radio" name="price-filter" value="20000-50000">
-                        <span class="filter-label">¥20,000〜¥50,000</span>
-                    </label>
-                    <label class="filter-radio">
-                        <input type="radio" name="price-filter" value="50000-">
-                        <span class="filter-label">¥50,000以上</span>
-                    </label>
+
+        <!-- Row 2: Sort & Deal/Presets -->
+        <div class="bargain-filter-row bargain-filter-row-bottom">
+            <div class="bargain-filter-group">
+                <span class="bargain-filter-label">
+                    <span class="bargain-filter-icon">🔄</span>
+                    並び替え
+                </span>
+                <div class="bargain-sort-buttons" id="sort-buttons">
+                    <button type="button" class="bargain-sort-btn" data-sort="date-desc">新着順</button>
+                    <button type="button" class="bargain-sort-btn" data-sort="savings-desc">割引率順</button>
+                    <button type="button" class="bargain-sort-btn active" data-sort="score-desc">スコア順</button>
+                    <button type="button" class="bargain-sort-btn" data-sort="price-asc">価格の安い順</button>
+                    <button type="button" class="bargain-sort-btn" data-sort="price-desc">価格の高い順</button>
                 </div>
             </div>
 
-            {{- /* Score Filter */ -}}
-            <div class="filter-group">
-                <h4 class="filter-group-title">評価スコア</h4>
-                <div class="filter-options">
-                    <label class="filter-radio">
-                        <input type="radio" name="score-filter" value="all" checked>
-                        <span class="filter-label">すべて</span>
+            <div class="bargain-filter-group">
+                <span class="bargain-filter-label">
+                    <span class="bargain-filter-icon">🏷️</span>
+                    セール状況・プリセット
+                </span>
+                <div style="display: flex; flex-wrap: wrap; gap: var(--spacing-sm); align-items: center; width: 100%; min-width: 0;">
+                    <label class="filter-checkbox" style="padding: 0; margin-right: var(--spacing-md); display: inline-flex; align-items: center; gap: var(--spacing-xs); cursor: pointer; flex-shrink: 0;">
+                        <input type="checkbox" id="deal-filter" name="deal-filter" value="active" style="width: 18px; height: 18px; accent-color: var(--color-primary);">
+                        <span class="filter-label" style="font-size: 0.9rem; font-weight: 600;">タイムセール対象</span>
                     </label>
-                    <label class="filter-radio">
-                        <input type="radio" name="score-filter" value="90-100">
-                        <span class="filter-label">90点以上</span>
-                    </label>
-                    <label class="filter-radio">
-                        <input type="radio" name="score-filter" value="80-90">
-                        <span class="filter-label">80〜90点</span>
-                    </label>
-                    <label class="filter-radio">
-                        <input type="radio" name="score-filter" value="70-80">
-                        <span class="filter-label">70〜80点</span>
-                    </label>
-                    <label class="filter-radio">
-                        <input type="radio" name="score-filter" value="0-70">
-                        <span class="filter-label">70点以下</span>
-                    </label>
-                </div>
-            </div>
-
-            {{- /* Sale Filter */ -}}
-            <div class="filter-group">
-                <h4 class="filter-group-title">セール状況</h4>
-                <div class="filter-options">
-                    <label class="filter-checkbox">
-                        <input type="checkbox" id="deal-filter" name="deal-filter" value="active">
-                        <span class="filter-label">タイムセール対象</span>
-                    </label>
-                </div>
-            </div>
-
-            {{- /* Keyword Search Filter */ -}}
-            <div class="filter-group">
-                <h4 class="filter-group-title">キーワード検索</h4>
-                <div class="filter-options">
-                    <div class="search-bar-container" style="position: relative; width: 100%;">
-                        <input type="text" id="keyword-search" placeholder="商品名、スペックで検索..." aria-label="商品名・スペックで絞り込み検索"
-                            style="width: 100%; padding: 0.5rem 1rem 0.5rem 2.5rem; border: 1px solid var(--color-border); border-radius: 8px; background-color: var(--color-bg-card); color: var(--color-text-primary); font-family: inherit; font-size: 0.875rem;">
-                        <span
-                            style="position: absolute; left: 0.875rem; top: 50%; transform: translateY(-50%); color: var(--color-text-secondary); pointer-events: none;"
-                            aria-hidden="true">🔍</span>
+                    
+                    <div class="filter-presets" id="filter-presets" style="display: inline-flex; gap: var(--spacing-xs); flex-wrap: wrap; flex: 1; min-width: 0;">
+                        <button type="button" class="filter-preset-btn" data-preset="cost-performance" style="border-radius: 6px; padding: 0.3rem 0.6rem; font-size: 0.8rem;">コスパ重視</button>
+                        <button type="button" class="filter-preset-btn" data-preset="high-performance" style="border-radius: 6px; padding: 0.3rem 0.6rem; font-size: 0.8rem;">高性能</button>
+                        <button type="button" class="filter-preset-btn" data-preset="beginner" style="border-radius: 6px; padding: 0.3rem 0.6rem; font-size: 0.8rem;">入門向け</button>
+                        <button type="button" class="filter-preset-btn" data-preset="lightweight" style="border-radius: 6px; padding: 0.3rem 0.6rem; font-size: 0.8rem;">軽量</button>
                     </div>
                 </div>
             </div>
+        </div>
 
-            {{- /* Sort Filter */ -}}
-            <div class="filter-group">
-                <h4 class="filter-group-title">並び替え</h4>
-                <div class="filter-options">
-                    <div style="position: relative; width: 100%;">
-                        <select id="sort-select" class="sort-select" aria-label="並び替え"
-                            style="width: 100%; padding: 0.5rem 2rem 0.5rem 1rem; border: 1px solid var(--color-border); border-radius: 8px; background-color: var(--color-bg-card); color: var(--color-text-primary); font-family: inherit; font-size: 0.875rem; cursor: pointer; appearance: none; background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%20fill%3D%22none%22%20stroke%3D%22currentColor%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpolyline%20points%3D%226%209%2012%2015%2018%209%22%3E%3C/polyline%3E%3C/svg%3E'); background-repeat: no-repeat; background-position: right 0.5rem center; background-size: 1.25rem;">
-                            <option value="date-desc">新着順</option>
-                            <option value="price-asc">価格の安い順</option>
-                            <option value="price-desc">価格の高い順</option>
-                            <option value="score-desc" selected>評価の高い順</option>
-                            <option value="savings-desc">割引率の高い順</option>
-                        </select>
-                    </div>
+        <!-- Row 3: Keyword Search -->
+        <div class="bargain-filter-row" style="margin-top: var(--spacing-lg); padding-top: var(--spacing-lg); border-top: 1px solid var(--color-border); grid-template-columns: 1fr;">
+            <div class="bargain-filter-group">
+                <label for="keyword-search" class="bargain-filter-label">
+                    <span class="bargain-filter-icon">🔍</span>
+                    キーワード検索
+                </label>
+                <div class="bargain-keyword-wrapper">
+                    <input type="text" id="keyword-search" class="bargain-input"
+                        placeholder="商品名、ブランド、スペック、商品説明などから検索...">
+                    <span id="keyword-count-badge" class="bargain-keyword-count-badge"
+                        style="display: none;"></span>
+                    <button type="button" id="keyword-clear-btn" class="bargain-keyword-clear-btn"
+                        title="キーワードをクリア" aria-label="キーワードをクリア">✕</button>
                 </div>
             </div>
         </div>
     </div>
 
     <div class="product-count-container"
-        style="margin-bottom: var(--spacing-md); display: flex; justify-content: space-between; align-items: center;">
+        style="margin-top: var(--spacing-md); margin-bottom: var(--spacing-md); display: flex; justify-content: space-between; align-items: center;">
         <span id="product-count" class="product-count"
-            style="font-size: 0.875rem; color: var(--color-text-secondary);"></span>
+            style="font-size: 0.875rem; color: var(--color-text-secondary); font-weight: 600;"></span>
     </div>
 
     <div id="product-grid" class="card-grid">
@@ -497,5 +487,6 @@
         }
     }, true);
 </script>
+<script src="{{ `js/filter-common.js` | relURL }}"></script>
 <script src="{{ `js/category-features.js` | relURL }}"></script>
 {{- end -}}

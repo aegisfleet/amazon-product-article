@@ -1,50 +1,31 @@
 /**
- * Check if a card matches the keyword search query
+ * category-features.js
+ * カテゴリページ（親・子）のフィルタリング・ソート・表示を管理する。
  */
-function matchesKeyword(card, query) {
-    if (!query) return true;
-    const title = card.querySelector('.card-title')?.textContent.toLowerCase() || '';
-    const excerpt = card.querySelector('.card-excerpt')?.textContent.toLowerCase() || '';
-    const specs = Array.from(card.querySelectorAll('.card-spec-tag')).map(tag => tag.textContent.toLowerCase()).join(' ');
-
-    return title.includes(query) || excerpt.includes(query) || specs.includes(query);
-}
 
 /**
- * Check if a card matches the selected categories
+ * Check if a card matches the selected category
  */
-function matchesCategory(card, selectedCategories) {
-    if (selectedCategories.size === 0) return true;
-    const cardCategories = (card.dataset.categories || '').split(',');
-    return cardCategories.some(cat => selectedCategories.has(cat.trim()));
+function matchesCategory(card, selectedCategory) {
+    if (!selectedCategory) return true;
+    const cardCategories = (card.dataset.categories || '').split(',').map(c => c.trim());
+    return cardCategories.includes(selectedCategory);
 }
 
 /**
  * Check if a card matches the selected price range
  */
-function matchesPrice(card, priceRange) {
-    if (!priceRange) return true;
+function matchesPrice(card, minPrice, maxPrice) {
     const price = Number.parseInt(card.dataset.price) || 0;
-    return price >= priceRange.min && price <= priceRange.max;
+    return price >= minPrice && (maxPrice >= 50000 || price <= maxPrice);
 }
 
 /**
  * Check if a card matches the selected score range
  */
-function matchesScore(card, scoreRange) {
-    if (!scoreRange) return true;
+function matchesScore(card, minScore) {
     const score = Number.parseFloat(card.dataset.score) || 0;
-
-    // Special case for "90-100" (90点以上): score >= 90
-    if (scoreRange.max === 100) {
-        return score >= scoreRange.min;
-    }
-    // Special case for "0-70" (70点以下): score < 70
-    if (scoreRange.min === 0) {
-        return score < scoreRange.max;
-    }
-    // Normal range: min <= score < max
-    return score >= scoreRange.min && score < scoreRange.max;
+    return score >= minScore;
 }
 
 /**
@@ -64,119 +45,57 @@ function matchesDeal(card, showOnlyDeals) {
     return card.dataset.hasDeal === 'true';
 }
 
-
-/**
- * Check if a card matches the active preset constraints
- */
-function matchesPreset(card, presetKey, presetDefinitions) {
-    if (!presetKey) return true;
-    const preset = presetDefinitions[presetKey];
-    if (!preset) return true;
-
-    const price = Number.parseInt(card.dataset.price) || 0;
-    const score = Number.parseFloat(card.dataset.score) || 0;
-    const cardSpecs = (card.dataset.specs || '').toLowerCase();
-
-    if (typeof preset.minScore === 'number' && score < preset.minScore) return false;
-    if (typeof preset.maxPrice === 'number' && price > preset.maxPrice) return false;
-
-    if (Array.isArray(preset.requiredAnySpecs) && preset.requiredAnySpecs.length > 0) {
-        const hasAnySpec = preset.requiredAnySpecs.some(spec => cardSpecs.includes(spec.toLowerCase()));
-        if (!hasAnySpec) return false;
-    }
-
-    return true;
-}
-
 /**
  * Master check to see if a card should be visible
  */
 function isCardVisible(card, filters) {
-    if (!matchesKeyword(card, filters.searchQuery)) return false;
-    if (!matchesCategory(card, filters.selectedCategories)) return false;
-    if (!matchesPrice(card, filters.priceRange)) return false;
-    if (!matchesScore(card, filters.scoreRange)) return false;
+    if (!matchesCategory(card, filters.category)) return false;
+    if (!matchesPrice(card, filters.minPrice, filters.maxPrice)) return false;
+    if (!matchesScore(card, filters.minScore)) return false;
     if (!matchesSpecs(card, filters.requiredSpecs)) return false;
     if (!matchesDeal(card, filters.showOnlyDeals)) return false;
-    if (!matchesPreset(card, filters.activePreset, filters.presetDefinitions)) return false;
+
+    if (filters.keywords.length > 0) {
+        const title = card.querySelector('.card-title')?.textContent || '';
+        const excerpt = card.querySelector('.card-excerpt')?.textContent || '';
+        const specs = Array.from(card.querySelectorAll('.card-spec-tag')).map(tag => tag.textContent).join(' ');
+        const text = normalizeText([title, excerpt, specs].join(' '));
+        return filters.keywords.every(kw => text.includes(kw));
+    }
     return true;
-}
-
-/**
- * Update sort selection from URL params
- */
-function updateSortState(params, sortSelect) {
-    if (params.has('sort')) {
-        sortSelect.value = params.get('sort');
-    }
-}
-
-/**
- * Update radio button state from URL params
- */
-function updateRadioState(params, paramName, radioGroupName) {
-    if (params.has(paramName)) {
-        const value = params.get(paramName);
-        const radio = document.querySelector(`input[name="${radioGroupName}"][value="${value}"]`);
-        if (radio) {
-            document.querySelectorAll(`input[name="${radioGroupName}"]`).forEach(r => r.checked = false);
-            radio.checked = true;
-        }
-    }
-}
-
-/**
- * Update checkbox states from URL params
- */
-function updateCheckboxState(params, paramName, container, checkboxName) {
-    if (params.has(paramName) && container) {
-        const values = new Set(params.get(paramName).split(','));
-        container.querySelectorAll(`input[name="${checkboxName}"]`).forEach(cb => {
-            cb.checked = values.has(cb.value);
-        });
-    }
-}
-
-/**
- * Update filter section expansion state
- */
-function updateFilterSectionState(params, filterSection, filterToggle) {
-    if (params.toString()) {
-        const hasOtherFilters = params.has('price') || params.has('score') || params.has('categories') || params.has('specs') || params.has('preset') || params.has('deal');
-        if (hasOtherFilters && filterSection?.classList.contains('collapsed')) {
-            filterSection.classList.remove('collapsed');
-            filterToggle?.setAttribute('aria-expanded', 'true');
-        }
-    }
-}
-
-/**
- * Update keyword search input from URL params
- */
-function updateSearchState(params, keywordSearch) {
-    if (params.has('q') && keywordSearch) {
-        keywordSearch.value = params.get('q');
-    }
 }
 
 // Handle both early and late script loading
 function initCategoryFeatures() {
-    const sortSelect = document.getElementById('sort-select');
+    const scoreSlider = document.getElementById('score-slider');
+    const minPriceSlider = document.getElementById('min-price-slider');
+    const priceSlider = document.getElementById('price-slider');
+
+    const scoreValueEl = document.getElementById('score-value');
+    const minPriceValueEl = document.getElementById('min-price-value');
+    const priceValueEl = document.getElementById('price-value');
+
+    const categorySelect = document.getElementById('category-select');
+    const categoryResetBtn = document.getElementById('category-reset-btn');
+    const sortButtons = document.getElementById('sort-buttons');
+    const dealFilter = document.getElementById('deal-filter');
+    const keywordSearch = document.getElementById('keyword-search');
+    const keywordClearBtn = document.getElementById('keyword-clear-btn');
+    const keywordCountBadge = document.getElementById('keyword-count-badge');
+    const filterReset = document.getElementById('filter-reset');
+
     const productGrid = document.getElementById('product-grid');
     const productCount = document.getElementById('product-count');
-    const filterSection = document.getElementById('filter-section');
-    const filterToggle = document.getElementById('filter-toggle');
-    const filterReset = document.getElementById('filter-reset');
-    const categoryFilters = document.getElementById('category-filters');
-    const keywordSearch = document.getElementById('keyword-search');
-    const presetButtons = Array.from(document.querySelectorAll('.filter-preset-btn'));
 
-    if (!sortSelect || !productGrid) return;
+    if (!productGrid) return;
 
     // Get the default sort value from HTML state before applying URL params
-    const defaultSortValue = sortSelect.value || 'date-desc';
+    let currentSort = 'score-desc';
+    if (sortButtons) {
+        const activeBtn = sortButtons.querySelector('.bargain-sort-btn.active');
+        if (activeBtn) currentSort = activeBtn.dataset.sort || 'score-desc';
+    }
 
-    // Store original cards for filtering
     let allCards = Array.from(productGrid.querySelectorAll('.card'));
     let activePreset = '';
 
@@ -186,184 +105,63 @@ function initCategoryFeatures() {
             maxPrice: 20000
         },
         'high-performance': {
-            minScore: 90
+            minScore: 90,
+            maxPrice: 50000
         },
-        beginner: {
+        'beginner': {
+            minScore: 0,
             maxPrice: 10000,
-            requiredAnySpecs: ['5g', 'gps', 'amoled']
+            specs: ['5g', 'gps', 'amoled']
         },
-        lightweight: {
-            requiredAnySpecs: ['lightweight', 'portable', 'weight-light', 'weight', '軽量']
+        'lightweight': {
+            minScore: 0,
+            maxPrice: 50000,
+            specs: ['lightweight']
         }
     };
 
     /**
-     * Get currently visible cards based on filters
-     * @returns {HTMLElement[]} Array of visible card elements
+     * Update slider text displays
      */
-    function getVisibleCards() {
-        const cards = Array.from(productGrid.querySelectorAll('.card'));
-        return cards.filter(card => card.style.display !== 'none');
-    }
+    function updateSliderDisplays() {
+        const minScore = scoreSlider ? Number.parseInt(scoreSlider.value, 10) : 0;
+        const minPrice = minPriceSlider ? valueToPrice(Number.parseInt(minPriceSlider.value, 10)) : 0;
+        const maxPrice = priceSlider ? valueToPrice(Number.parseInt(priceSlider.value, 10)) : 50000;
 
-    /**
-     * Update the product count display
-     */
-    function updateProductCount() {
-        if (!productCount) return;
-        const visibleCount = getVisibleCards().length;
-        const totalCount = allCards.length;
-        if (visibleCount === totalCount) {
-            productCount.textContent = `${totalCount} 件の商品`;
-        } else {
-            productCount.textContent = `${visibleCount} / ${totalCount} 件の商品`;
+        if (scoreValueEl) scoreValueEl.textContent = String(minScore);
+        if (minPriceValueEl) minPriceValueEl.textContent = formatPrice(minPrice);
+        if (priceValueEl) {
+            priceValueEl.textContent = maxPrice >= 50000 ? '上限なし' : formatPrice(maxPrice) + '以下';
         }
     }
-
-    /**
-     * Get selected categories from checkboxes
-     * @returns {string[]} Array of selected category names
-     */
-    function getSelectedCategories() {
-        if (!categoryFilters) return [];
-        const checkboxes = categoryFilters.querySelectorAll('input[name="category"]:checked');
-        return Array.from(checkboxes).map(cb => cb.value);
-    }
-
-    /**
-     * Get selected price range
-     * @returns {{min: number, max: number} | null} Price range or null for all
-     */
-    function getSelectedPriceRange() {
-        const selected = document.querySelector('input[name="price-filter"]:checked');
-        if (!selected || selected.value === 'all') return null;
-
-        const value = selected.value;
-        if (value.endsWith('-')) {
-            // e.g., "50000-" means 50000 and above
-            return { min: Number.parseInt(value), max: Infinity };
-        } else if (value.startsWith('0-')) {
-            // e.g., "0-5000" means up to 5000
-            return { min: 0, max: Number.parseInt(value.split('-')[1]) };
-        } else {
-            // e.g., "5000-20000"
-            const [min, max] = value.split('-').map(Number);
-            return { min, max };
-        }
-    }
-
-    /**
-     * Get score filter range
-     * @returns {{min: number, max: number} | null} Score range or null for all
-     */
-    function getScoreRange() {
-        const selected = document.querySelector('input[name="score-filter"]:checked');
-        if (!selected || selected.value === 'all') return null;
-
-        const value = selected.value;
-        const [min, max] = value.split('-').map(Number);
-        return { min, max };
-    }
-
-    /**
-     * Get selected specs from checkboxes
-     * @returns {string[]} Array of selected spec values
-     */
-    function getSelectedSpecs() {
-        const specFilters = document.getElementById('spec-filters');
-        if (!specFilters) return [];
-        const checkboxes = specFilters.querySelectorAll('input[name="spec"]:checked');
-        return Array.from(checkboxes).map(cb => cb.value);
-    }
-
-    function setActivePreset(presetKey) {
-        activePreset = presetKey;
-        presetButtons.forEach(button => {
-            const isActive = button.dataset.preset === presetKey;
-            button.classList.toggle('is-active', isActive);
-            button.setAttribute('aria-pressed', String(isActive));
-        });
-    }
-
-    function clearActivePreset() {
-        setActivePreset('');
-    }
-
-    function setRadioValue(groupName, value) {
-        const target = document.querySelector(`input[name="${groupName}"][value="${value}"]`);
-        if (target) {
-            document.querySelectorAll(`input[name="${groupName}"]`).forEach(input => {
-                input.checked = false;
-            });
-            target.checked = true;
-        }
-    }
-
-    function setSpecValues(specValues) {
-        const specFilters = document.getElementById('spec-filters');
-        if (!specFilters) return;
-
-        const checkboxes = Array.from(specFilters.querySelectorAll('input[name="spec"]'));
-        checkboxes.forEach(checkbox => {
-            checkbox.checked = false;
-        });
-
-        if (specValues.length === 0) return;
-
-        const loweredTargets = specValues.map(value => value.toLowerCase());
-        let hasMatched = false;
-
-        checkboxes.forEach(checkbox => {
-            const labelText = checkbox.closest('label')?.textContent.toLowerCase() || '';
-            const valueText = checkbox.value.toLowerCase();
-            const matched = loweredTargets.some(target => valueText.includes(target) || labelText.includes(target));
-            if (matched) {
-                checkbox.checked = true;
-                hasMatched = true;
-            }
-        });
-
-        if (!hasMatched && loweredTargets.includes('軽量')) {
-            const fallbackKeywords = ['weight', '軽量', '持ち運び'];
-            checkboxes.forEach(checkbox => {
-                const labelText = checkbox.closest('label')?.textContent.toLowerCase() || '';
-                const valueText = checkbox.value.toLowerCase();
-                const matched = fallbackKeywords.some(keyword => valueText.includes(keyword) || labelText.includes(keyword));
-                if (matched) {
-                    checkbox.checked = true;
-                }
-            });
-        }
-    }
-
-    function applyPreset(presetKey) {
-        const preset = presetDefinitions[presetKey];
-        if (!preset) return;
-
-        setRadioValue('price-filter', 'all');
-        setRadioValue('score-filter', 'all');
-        setSpecValues([]);
-        setActivePreset(presetKey);
-        filterCards();
-        updateUrl();
-    }
-
-
 
     /**
      * Apply all filters to cards
      */
     function filterCards() {
-        const dealFilter = document.getElementById('deal-filter');
+        updateSliderDisplays();
+
+        const minScore = scoreSlider ? Number.parseInt(scoreSlider.value, 10) : 0;
+        const minPrice = minPriceSlider ? valueToPrice(Number.parseInt(minPriceSlider.value, 10)) : 0;
+        const maxPrice = priceSlider ? valueToPrice(Number.parseInt(priceSlider.value, 10)) : 50000;
+        const category = categorySelect ? categorySelect.value : '';
+        const showOnlyDeals = dealFilter ? dealFilter.checked : false;
+
+        const rawQ = keywordSearch ? keywordSearch.value : '';
+        const normalizedQ = normalizeText(rawQ);
+        const keywords = normalizedQ.split(/\s+/).filter(Boolean);
+
+        const specFilters = document.getElementById('spec-filters');
+        const requiredSpecs = specFilters ? Array.from(specFilters.querySelectorAll('input[name="spec"]:checked')).map(cb => cb.value) : [];
+
         const filters = {
-            selectedCategories: new Set(getSelectedCategories()),
-            priceRange: getSelectedPriceRange(),
-            scoreRange: getScoreRange(),
-            searchQuery: keywordSearch?.value.trim().toLowerCase() || '',
-            requiredSpecs: getSelectedSpecs(),
-            showOnlyDeals: dealFilter ? dealFilter.checked : false,
-            activePreset,
-            presetDefinitions
+            category,
+            minPrice,
+            maxPrice,
+            minScore,
+            showOnlyDeals,
+            keywords,
+            requiredSpecs
         };
 
         allCards.forEach(card => {
@@ -371,12 +169,43 @@ function initCategoryFeatures() {
             card.style.display = visible ? '' : 'none';
         });
 
-        updateProductCount();
+        // Update counts
+        const visibleCount = allCards.filter(card => card.style.display !== 'none').length;
+        const totalCount = allCards.length;
+        if (productCount) {
+            if (visibleCount === totalCount) {
+                productCount.textContent = `${totalCount} 件の商品`;
+            } else {
+                productCount.textContent = `${visibleCount} / ${totalCount} 件の商品`;
+            }
+        }
+
+        // Update Keyword count badge
+        if (keywordCountBadge) {
+            if (keywords.length > 0) {
+                keywordCountBadge.textContent = `${visibleCount}件`;
+                keywordCountBadge.style.display = 'inline-flex';
+                if (visibleCount === 0) {
+                    keywordCountBadge.classList.add('zero-results');
+                } else {
+                    keywordCountBadge.classList.remove('zero-results');
+                }
+            } else {
+                keywordCountBadge.style.display = 'none';
+            }
+        }
+
+        if (categoryResetBtn && categorySelect) {
+            categoryResetBtn.disabled = (categorySelect.value === '');
+        }
+
+        updateUrl();
     }
+
+    const debouncedFilterCards = debounce(filterCards, 300);
 
     /**
      * Sort cards based on the given sort value
-     * @param {string} sortValue - The sort criteria
      */
     function sortCards(sortValue) {
         const cards = Array.from(productGrid.querySelectorAll('.card'));
@@ -415,48 +244,57 @@ function initCategoryFeatures() {
     }
 
     /**
+     * Update active sort button states
+     */
+    function updateSortButtons() {
+        if (!sortButtons) return;
+        sortButtons.querySelectorAll('.bargain-sort-btn').forEach(btn => {
+            btn.classList.toggle('active', btn.dataset.sort === currentSort);
+        });
+    }
+
+    /**
      * Update URL with current filter/sort state
      */
     function updateUrl() {
         const params = new URLSearchParams();
 
-        // Sort
-        if (sortSelect.value && sortSelect.value !== defaultSortValue) {
-            params.set('sort', sortSelect.value);
+        if (currentSort && currentSort !== 'score-desc') {
+            params.set('sort', currentSort);
         }
 
-        // Price
-        const selectedPrice = document.querySelector('input[name="price-filter"]:checked');
-        if (selectedPrice && selectedPrice.value !== 'all') {
-            params.set('price', selectedPrice.value);
+        const minScore = scoreSlider ? scoreSlider.value : '0';
+        if (minScore !== '0') {
+            params.set('minScore', minScore);
         }
 
-        // Score
-        const selectedScore = document.querySelector('input[name="score-filter"]:checked');
-        if (selectedScore && selectedScore.value !== 'all') {
-            params.set('score', selectedScore.value);
+        const minPrice = minPriceSlider ? valueToPrice(Number.parseInt(minPriceSlider.value, 10)) : 0;
+        if (minPrice !== 0) {
+            params.set('minPrice', String(minPrice));
         }
 
-        // Categories
-        const selectedCats = getSelectedCategories();
-        if (selectedCats.length > 0) {
-            params.set('categories', selectedCats.join(','));
+        const maxPrice = priceSlider ? valueToPrice(Number.parseInt(priceSlider.value, 10)) : 50000;
+        if (maxPrice < 50000) {
+            params.set('maxPrice', String(maxPrice));
         }
 
-        // Specs
-        const selectedSpecs = getSelectedSpecs();
-        if (selectedSpecs.length > 0) {
-            params.set('specs', selectedSpecs.join(','));
+        if (categorySelect && categorySelect.value) {
+            params.set('category', categorySelect.value);
         }
 
-        // Search Query
-        if (keywordSearch?.value.trim()) {
+        const specFilters = document.getElementById('spec-filters');
+        if (specFilters) {
+            const selectedSpecs = Array.from(specFilters.querySelectorAll('input[name="spec"]:checked')).map(cb => cb.value);
+            if (selectedSpecs.length > 0) {
+                params.set('specs', selectedSpecs.join(','));
+            }
+        }
+
+        if (keywordSearch && keywordSearch.value.trim()) {
             params.set('q', keywordSearch.value.trim());
         }
 
-        // Deal
-        const dealFilter = document.getElementById('deal-filter');
-        if (dealFilter?.checked) {
+        if (dealFilter && dealFilter.checked) {
             params.set('deal', 'active');
         }
 
@@ -475,239 +313,230 @@ function initCategoryFeatures() {
         const params = new URLSearchParams(globalThis.location.search);
 
         if (params.has('preset')) {
-            const presetKey = params.get('preset');
-            if (presetKey && presetDefinitions[presetKey]) {
-                setActivePreset(presetKey);
+            activePreset = params.get('preset');
+            updatePresetButtons();
+        }
+
+        if (params.has('sort')) {
+            currentSort = params.get('sort');
+            updateSortButtons();
+        }
+
+        if (params.has('minScore') && scoreSlider) {
+            scoreSlider.value = params.get('minScore');
+        }
+
+        if (params.has('minPrice') && minPriceSlider) {
+            minPriceSlider.value = String(Math.round(priceToValue(Number.parseInt(params.get('minPrice'), 10))));
+        }
+
+        if (params.has('maxPrice') && priceSlider) {
+            priceSlider.value = String(Math.round(priceToValue(Number.parseInt(params.get('maxPrice'), 10))));
+        }
+
+        if (params.has('category') && categorySelect) {
+            categorySelect.value = params.get('category');
+        }
+
+        if (params.has('specs')) {
+            const specFilters = document.getElementById('spec-filters');
+            if (specFilters) {
+                const values = new Set(params.get('specs').split(','));
+                specFilters.querySelectorAll('input[name="spec"]').forEach(cb => {
+                    cb.checked = values.has(cb.value);
+                });
             }
         }
 
-        updateSortState(params, sortSelect);
-        updateRadioState(params, 'price', 'price-filter');
-        updateRadioState(params, 'score', 'score-filter');
-        updateCheckboxState(params, 'categories', categoryFilters, 'category');
+        if (params.has('q') && keywordSearch) {
+            keywordSearch.value = params.get('q');
+            if (keywordClearBtn) keywordClearBtn.style.display = 'block';
+        }
 
-        const specFilters = document.getElementById('spec-filters');
-        updateCheckboxState(params, 'specs', specFilters, 'spec');
-
-        updateFilterSectionState(params, filterSection, filterToggle);
-        updateSearchState(params, keywordSearch);
-
-        const dealFilter = document.getElementById('deal-filter');
         if (dealFilter) {
             dealFilter.checked = params.get('deal') === 'active';
         }
     }
 
     /**
+     * Apply active preset variables to sliders and check state
+     */
+    function applyPreset(presetKey) {
+        const preset = presetDefinitions[presetKey];
+        if (!preset) return;
+
+        activePreset = presetKey;
+        updatePresetButtons();
+
+        if (scoreSlider) scoreSlider.value = String(preset.minScore);
+        if (minPriceSlider) minPriceSlider.value = '0';
+        if (priceSlider) {
+            priceSlider.value = String(Math.round(priceToValue(preset.maxPrice)));
+        }
+
+        const specFilters = document.getElementById('spec-filters');
+        if (specFilters) {
+            specFilters.querySelectorAll('input[name="spec"]').forEach(cb => {
+                cb.checked = preset.specs ? preset.specs.includes(cb.value) : false;
+            });
+        }
+
+        filterCards();
+    }
+
+    function updatePresetButtons() {
+        document.querySelectorAll('.filter-preset-btn').forEach(btn => {
+            const isActive = btn.dataset.preset === activePreset;
+            btn.classList.toggle('is-active', isActive);
+            btn.setAttribute('aria-pressed', String(isActive));
+        });
+    }
+
+    /**
      * Reset all filters to default state
      */
     function resetFilters() {
-        // Reset category checkboxes - uncheck all (default state)
-        if (categoryFilters) {
-            const checkboxes = categoryFilters.querySelectorAll('input[name="category"]');
-            checkboxes.forEach(cb => cb.checked = false);
-        }
+        if (scoreSlider) scoreSlider.value = '0';
+        if (minPriceSlider) minPriceSlider.value = '0';
+        if (priceSlider) priceSlider.value = '1000';
+        if (categorySelect) categorySelect.value = '';
+        if (dealFilter) dealFilter.checked = false;
 
-        // Reset price filter
-        const priceAll = document.querySelector('input[name="price-filter"][value="all"]');
-        if (priceAll) priceAll.checked = true;
-
-        // Reset score filter
-        const scoreAll = document.querySelector('input[name="score-filter"][value="all"]');
-        if (scoreAll) scoreAll.checked = true;
-
-        // Reset spec filters - uncheck all
         const specFilters = document.getElementById('spec-filters');
         if (specFilters) {
-            const specCheckboxes = specFilters.querySelectorAll('input[name="spec"]');
-            specCheckboxes.forEach(cb => cb.checked = false);
+            specFilters.querySelectorAll('input[name="spec"]').forEach(cb => {
+                cb.checked = false;
+            });
         }
 
-        // Reset keyword search
         if (keywordSearch) {
             keywordSearch.value = '';
         }
-
-        // Reset deal filter
-        const dealFilter = document.getElementById('deal-filter');
-        if (dealFilter) {
-            dealFilter.checked = false;
+        if (keywordClearBtn) {
+            keywordClearBtn.style.display = 'none';
         }
 
-        clearActivePreset();
+        activePreset = '';
+        updatePresetButtons();
 
-        // Apply filters
         filterCards();
-        updateUrl();
     }
 
-    // Handle sort selection change
-    sortSelect.addEventListener('change', function () {
-        sortCards(this.value);
-        updateUrl();
-        // GA4 トラッキング
-        if (globalThis.ApaAnalytics && typeof globalThis.ApaAnalytics.trackFilterUse === 'function') {
-            globalThis.ApaAnalytics.trackFilterUse('sort', this.value);
-        }
-    });
-
-    // Handle filter toggle        // フィルターヘッダーのクリックイベント（スマホ開閉用）
-    if (filterToggle && filterSection) {
-        filterToggle.addEventListener('click', () => {
-            const isCollapsed = filterSection.classList.toggle('collapsed');
-            filterToggle?.setAttribute('aria-expanded', !isCollapsed);
+    // --- Slider Events ---
+    if (scoreSlider) {
+        scoreSlider.addEventListener('input', () => {
+            updateSliderDisplays();
+            debouncedFilterCards();
+        });
+    }
+    if (minPriceSlider) {
+        minPriceSlider.addEventListener('input', () => {
+            updateSliderDisplays();
+            debouncedFilterCards();
+        });
+    }
+    if (priceSlider) {
+        priceSlider.addEventListener('input', () => {
+            updateSliderDisplays();
+            debouncedFilterCards();
         });
     }
 
-    // Handle filter reset
-    if (filterReset) {
-        filterReset.addEventListener('click', function (e) {
-            e.stopPropagation(); // Don't trigger toggle
-            resetFilters();
-        });
+    // --- Category Select Events ---
+    if (categorySelect) {
+        categorySelect.addEventListener('change', filterCards);
     }
-
-    // Handle category filter changes
-    if (categoryFilters) {
-        categoryFilters.addEventListener('change', function (e) {
-            clearActivePreset();
-            filterCards();
-            updateUrl();
-            // GA4 トラッキング
-            if (globalThis.ApaAnalytics && typeof globalThis.ApaAnalytics.trackFilterUse === 'function') {
-                const cb = e.target instanceof HTMLInputElement ? e.target : null;
-                const visibleCount = document.querySelectorAll('#product-grid .card:not([hidden])').length;
-                globalThis.ApaAnalytics.trackFilterUse('category', cb ? cb.value : '', visibleCount);
+    if (categoryResetBtn) {
+        categoryResetBtn.addEventListener('click', () => {
+            if (categorySelect && categorySelect.value !== '') {
+                categorySelect.value = '';
+                filterCards();
             }
         });
     }
 
-    // Handle price filter changes
-    document.querySelectorAll('input[name="price-filter"]').forEach(radio => {
-        radio.addEventListener('change', () => {
-            clearActivePreset();
-            filterCards();
+    // --- Deal Filter Event ---
+    if (dealFilter) {
+        dealFilter.addEventListener('change', filterCards);
+    }
+
+    // --- Sort Button Events ---
+    if (sortButtons) {
+        sortButtons.addEventListener('click', (e) => {
+            const btn = e.target.closest('.bargain-sort-btn');
+            if (!btn) return;
+            currentSort = btn.dataset.sort;
+            updateSortButtons();
+            sortCards(currentSort);
             updateUrl();
-            // GA4 トラッキング
             if (globalThis.ApaAnalytics && typeof globalThis.ApaAnalytics.trackFilterUse === 'function') {
-                const checked = document.querySelector('input[name="price-filter"]:checked');
-                globalThis.ApaAnalytics.trackFilterUse('price', checked ? checked.value : '');
+                globalThis.ApaAnalytics.trackFilterUse('sort', currentSort);
             }
         });
-    });
+    }
 
-    // Handle score filter changes
-    document.querySelectorAll('input[name="score-filter"]').forEach(radio => {
-        radio.addEventListener('change', () => {
-            clearActivePreset();
-            filterCards();
-            updateUrl();
-            // GA4 トラッキング
-            if (globalThis.ApaAnalytics && typeof globalThis.ApaAnalytics.trackFilterUse === 'function') {
-                const checked = document.querySelector('input[name="score-filter"]:checked');
-                globalThis.ApaAnalytics.trackFilterUse('score', checked ? checked.value : '');
+    // --- Keyword Search Events ---
+    if (keywordSearch) {
+        keywordSearch.addEventListener('input', (e) => {
+            if (keywordClearBtn) {
+                keywordClearBtn.style.display = keywordSearch.value ? 'block' : 'none';
             }
+            if (e.isComposing) return;
+            debouncedFilterCards();
         });
-    });
+    }
+    if (keywordClearBtn) {
+        keywordClearBtn.addEventListener('click', () => {
+            keywordSearch.value = '';
+            keywordClearBtn.style.display = 'none';
+            keywordSearch.focus();
+            filterCards();
+        });
+    }
 
-    // Handle spec filter changes
+    // --- Spec Filters Event ---
     const specFilters = document.getElementById('spec-filters');
     if (specFilters) {
-        specFilters.addEventListener('change', function (e) {
-            clearActivePreset();
+        specFilters.addEventListener('change', () => {
+            activePreset = '';
+            updatePresetButtons();
             filterCards();
-            updateUrl();
-            // GA4 トラッキング
-            if (globalThis.ApaAnalytics && typeof globalThis.ApaAnalytics.trackFilterUse === 'function') {
-                const cb = e.target instanceof HTMLInputElement ? e.target : null;
-                globalThis.ApaAnalytics.trackFilterUse('spec', cb ? cb.value : '');
-            }
         });
     }
 
-    // Handle deal filter changes
-    const dealFilter = document.getElementById('deal-filter');
-    if (dealFilter) {
-        dealFilter.addEventListener('change', () => {
-            clearActivePreset();
-            filterCards();
-            updateUrl();
-            // GA4 トラッキング
-            if (globalThis.ApaAnalytics && typeof globalThis.ApaAnalytics.trackFilterUse === 'function') {
-                globalThis.ApaAnalytics.trackFilterUse('deal', dealFilter.checked ? 'active' : '');
-            }
-        });
-    }
-
-    // Handle keyword search input
-    if (keywordSearch) {
-        let debounceTimer;
-        keywordSearch.addEventListener('input', function () {
-            clearTimeout(debounceTimer);
-            debounceTimer = setTimeout(() => {
-                clearActivePreset();
-                filterCards();
-                updateUrl();
-            }, 300);
-        });
-    }
-
-    presetButtons.forEach(button => {
-        button.addEventListener('click', () => {
-            const presetKey = button.dataset.preset || '';
-            if (!presetKey) return;
-
-            if (activePreset === presetKey) {
-                clearActivePreset();
-                filterCards();
-                updateUrl();
-                // GA4 トラッキング
-                if (globalThis.ApaAnalytics && typeof globalThis.ApaAnalytics.trackFilterUse === 'function') {
-                    globalThis.ApaAnalytics.trackFilterUse('preset', '');
-                }
-                return;
-            }
-
-            applyPreset(presetKey);
-            // GA4 トラッキング
-            if (globalThis.ApaAnalytics && typeof globalThis.ApaAnalytics.trackFilterUse === 'function') {
-                globalThis.ApaAnalytics.trackFilterUse('preset', presetKey);
+    // --- Preset Button Events ---
+    document.querySelectorAll('.filter-preset-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            const preset = btn.dataset.preset;
+            if (activePreset === preset) {
+                activePreset = '';
+                updatePresetButtons();
+                resetFilters();
+            } else {
+                applyPreset(preset);
             }
         });
     });
 
-    // Handle bfcache restoration: re-apply sort and filters when page is restored
-    globalThis.addEventListener('pageshow', function (event) {
-        // Re-store all cards reference
+    if (filterReset) {
+        filterReset.addEventListener('click', resetFilters);
+    }
+
+    // Handle bfcache restoration
+    globalThis.addEventListener('pageshow', () => {
         allCards = Array.from(productGrid.querySelectorAll('.card'));
-
-        // Re-apply the URL state in case it was modified
         applyUrlState();
-
-        // Re-apply the sort to match the preserved select value
-        const currentValue = sortSelect.value;
-        if (currentValue) {
-            sortCards(currentValue);
-        }
-
-        // Re-apply filters
+        updateSortButtons();
+        updateSliderDisplays();
+        sortCards(currentSort);
         filterCards();
     });
 
-    // Initial load from URL
+    // Initial load
     applyUrlState();
-
-    if (activePreset) {
-        applyPreset(activePreset);
-    }
-
-    // Initial count update
-    updateProductCount();
-
-    // Initial sort to ensure display matches the default "Newest" selection
-    sortCards(sortSelect.value);
-
-    // Initial filter application
+    updateSortButtons();
+    updateSliderDisplays();
+    sortCards(currentSort);
     filterCards();
 }
 
