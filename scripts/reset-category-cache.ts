@@ -65,7 +65,10 @@ try {
         }
 
         if (resetCount > 0) {
-            fs.writeFileSync(cachePath, JSON.stringify(cache, null, 2), 'utf8');
+            const sortedKeys = Object.keys(cache).sort((a, b) => a.localeCompare(b));
+            const lines = sortedKeys.map((key) => `  "${key}": ${JSON.stringify(cache[key])}`);
+            const jsonContent = `{\n${lines.join(',\n')}\n}`;
+            fs.writeFileSync(cachePath, jsonContent, 'utf8');
             console.log(`Successfully reset timestamp for ${resetCount} items matching category "${targetCategory}".`);
         } else {
             console.log(`No items found with category "${targetCategory}" to reset.`);

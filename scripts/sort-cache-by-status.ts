@@ -81,7 +81,9 @@ function sortCacheByStatus() {
   });
 
   console.log('💾 Writing sorted cache to file...');
-  fs.writeFileSync(CACHE_FILE_PATH, JSON.stringify(sortedCache));
+  const lines = entries.map(([key, value]) => `  "${key}": ${JSON.stringify(value)}`);
+  const jsonContent = `{\n${lines.join(',\n')}\n}`;
+  fs.writeFileSync(CACHE_FILE_PATH, jsonContent, 'utf8');
   console.log('✅ Cache sorted successfully.');
 }
 
