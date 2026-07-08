@@ -125,7 +125,7 @@ export class CreatorsAPICache {
       const tmpPath = `${this.cachePath}.tmp`;
 
       // Sort keys to maintain consistent output order and format each entry on a single line
-      const sortedKeys = Object.keys(this.cache).sort();
+      const sortedKeys = Object.keys(this.cache).sort((a, b) => a.localeCompare(b));
       const lines = sortedKeys.map((key) => `  "${key}": ${JSON.stringify(this.cache[key])}`);
       const jsonContent = `{\n${lines.join(',\n')}\n}`;
 
