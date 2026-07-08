@@ -368,3 +368,39 @@ function debounce(func, wait) {
   };
 }
 
+/**
+ * キーワード検索の共通イベントセットアップ
+ * @param {HTMLInputElement} keywordInput
+ * @param {HTMLElement} keywordClearBtn
+ * @param {Function} onSearchInput
+ * @param {Function} onSearchClear
+ */
+function initKeywordSearch(keywordInput, keywordClearBtn, onSearchInput, onSearchClear) {
+  if (!keywordInput) return;
+
+  keywordInput.addEventListener('input', (e) => {
+    if (keywordClearBtn) {
+      keywordClearBtn.style.display = keywordInput.value ? 'block' : 'none';
+    }
+    if (e.isComposing) return;
+    onSearchInput();
+  });
+
+  keywordInput.addEventListener('compositionend', () => {
+    if (keywordClearBtn) {
+      keywordClearBtn.style.display = keywordInput.value ? 'block' : 'none';
+    }
+    onSearchInput();
+  });
+
+  if (keywordClearBtn) {
+    keywordClearBtn.addEventListener('click', () => {
+      keywordInput.value = '';
+      keywordClearBtn.style.display = 'none';
+      keywordInput.focus();
+      onSearchClear();
+    });
+  }
+}
+
+
