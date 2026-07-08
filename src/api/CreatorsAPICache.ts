@@ -123,8 +123,14 @@ export class CreatorsAPICache {
     try {
       await this.ensureDirectoryAsync();
       const tmpPath = `${this.cachePath}.tmp`;
+
+      // Sort keys to maintain consistent output order and format each entry on a single line
+      const sortedKeys = Object.keys(this.cache).sort();
+      const lines = sortedKeys.map((key) => `  "${key}": ${JSON.stringify(this.cache[key])}`);
+      const jsonContent = `{\n${lines.join(',\n')}\n}`;
+
       // Use fs.promises.writeFile to write to a temporary file first
-      await fs.promises.writeFile(tmpPath, JSON.stringify(this.cache), 'utf-8');
+      await fs.promises.writeFile(tmpPath, jsonContent, 'utf-8');
       // Rename atomically to replace the actual cache file
       await fs.promises.rename(tmpPath, this.cachePath);
       this.logger.info('Creators API Cache saved to disk');

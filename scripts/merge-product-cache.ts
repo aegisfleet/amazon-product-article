@@ -91,7 +91,14 @@ function mergeCaches() {
       fs.mkdirSync(dir, { recursive: true });
     }
 
-    fs.writeFileSync(outputPath, JSON.stringify(merged, null, 2), 'utf-8');
+    // Sort keys to maintain consistent output order and format each entry on a single line
+    const sortedKeys = Object.keys(merged).sort();
+    const lines = sortedKeys.map(
+      (key) => `  "${key}": ${JSON.stringify(merged[key])}`,
+    );
+    const jsonContent = `{\n${lines.join(',\n')}\n}`;
+
+    fs.writeFileSync(outputPath, jsonContent, 'utf-8');
     console.log(`✅ Successfully wrote merged cache to ${outputPath}`);
     process.exit(0);
   } catch (error) {
