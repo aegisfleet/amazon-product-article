@@ -108,28 +108,7 @@ function initCategoryFeatures() {
     }
 
     let allCards = Array.from(productGrid.querySelectorAll('.card'));
-    let activePreset = '';
 
-    const presetDefinitions = {
-        'cost-performance': {
-            minScore: 80,
-            maxPrice: 20000
-        },
-        'high-performance': {
-            minScore: 90,
-            maxPrice: 50000
-        },
-        'beginner': {
-            minScore: 0,
-            maxPrice: 10000,
-            specs: ['5g', 'gps', 'amoled']
-        },
-        'lightweight': {
-            minScore: 0,
-            maxPrice: 50000,
-            specs: ['lightweight']
-        }
-    };
 
     /**
      * Update slider text displays
@@ -306,9 +285,7 @@ function initCategoryFeatures() {
             params.set('deal', 'active');
         }
 
-        if (activePreset) {
-            params.set('preset', activePreset);
-        }
+
 
         const queryStr = params.toString();
         const newUrl = globalThis.location.pathname + (queryStr ? '?' + queryStr : '');
@@ -346,10 +323,7 @@ function initCategoryFeatures() {
     function applyUrlState() {
         const params = new URLSearchParams(globalThis.location.search);
 
-        if (params.has('preset')) {
-            activePreset = params.get('preset');
-            updatePresetButtons();
-        }
+
 
         if (params.has('sort')) {
             currentSort = params.get('sort');
@@ -372,39 +346,7 @@ function initCategoryFeatures() {
         }
     }
 
-    /**
-     * Apply active preset variables to sliders and check state
-     */
-    function applyPreset(presetKey) {
-        const preset = presetDefinitions[presetKey];
-        if (!preset) return;
 
-        activePreset = presetKey;
-        updatePresetButtons();
-
-        if (scoreSlider) scoreSlider.value = String(preset.minScore);
-        if (minPriceSlider) minPriceSlider.value = '0';
-        if (priceSlider) {
-            priceSlider.value = String(Math.round(priceToValue(preset.maxPrice)));
-        }
-
-        const specFilters = document.getElementById('spec-filters');
-        if (specFilters) {
-            specFilters.querySelectorAll('input[name="spec"]').forEach(cb => {
-                cb.checked = preset.specs ? preset.specs.includes(cb.value) : false;
-            });
-        }
-
-        filterCards();
-    }
-
-    function updatePresetButtons() {
-        document.querySelectorAll('.filter-preset-btn').forEach(btn => {
-            const isActive = btn.dataset.preset === activePreset;
-            btn.classList.toggle('is-active', isActive);
-            btn.setAttribute('aria-pressed', String(isActive));
-        });
-    }
 
     /**
      * Reset all filters to default state
@@ -430,8 +372,7 @@ function initCategoryFeatures() {
             keywordClearBtn.style.display = 'none';
         }
 
-        activePreset = '';
-        updatePresetButtons();
+
 
         filterCards();
     }
@@ -512,25 +453,11 @@ function initCategoryFeatures() {
     const specFilters = document.getElementById('spec-filters');
     if (specFilters) {
         specFilters.addEventListener('change', () => {
-            activePreset = '';
-            updatePresetButtons();
             filterCards();
         });
     }
 
-    // --- Preset Button Events ---
-    document.querySelectorAll('.filter-preset-btn').forEach(btn => {
-        btn.addEventListener('click', () => {
-            const preset = btn.dataset.preset;
-            if (activePreset === preset) {
-                activePreset = '';
-                updatePresetButtons();
-                resetFilters();
-            } else {
-                applyPreset(preset);
-            }
-        });
-    });
+
 
     if (filterReset) {
         filterReset.addEventListener('click', resetFilters);

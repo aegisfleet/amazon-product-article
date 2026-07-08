@@ -1,5 +1,6 @@
 /* Global Variables */
 :root {
+    color-scheme: light;
     /* Brand Colors */
     --color-primary: #4F46E5;
     --color-primary-rgb: 79, 70, 229;
@@ -114,6 +115,7 @@
 /* Dark Mode (System Preference) */
 @media (prefers-color-scheme: dark) {
     :root:not([data-theme="light"]) {
+        color-scheme: dark;
         --color-bg-body: #111827;
         /* Gray 900 */
         --color-bg-card: #1F2937;
@@ -188,6 +190,7 @@
 
 /* Dark Mode (Manual Override) */
 [data-theme="dark"] {
+    color-scheme: dark;
     --color-bg-body: #111827;
     /* Gray 900 */
     --color-bg-card: #1F2937;
