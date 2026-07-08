@@ -23,8 +23,10 @@ function sortFilteredProducts(filtered, sortType) {
     filtered.sort((a, b) => b.savingsPercentage - a.savingsPercentage || b.score - a.score);
   } else if (sortType === 'score') {
     filtered.sort((a, b) => b.score - a.score || b.savingsPercentage - a.savingsPercentage);
-  } else if (sortType === 'price') {
+  } else if (sortType === 'price-asc') {
     filtered.sort((a, b) => a.priceRaw - b.priceRaw || b.score - a.score);
+  } else if (sortType === 'price-desc') {
+    filtered.sort((a, b) => b.priceRaw - a.priceRaw || b.score - a.score);
   }
 }
 
@@ -80,7 +82,7 @@ document.addEventListener('DOMContentLoaded', () => {
       categorySelect.dataset.pendingValue = params.get('category');
     }
     const s = params.get('sort');
-    if (s && ['score', 'price', 'discount', 'date'].includes(s)) {
+    if (s && ['score', 'price-asc', 'price-desc', 'discount', 'date'].includes(s)) {
       currentSort = s;
     }
     if (params.has('q') && keywordInput) {
