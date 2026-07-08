@@ -28,6 +28,25 @@ export function loadJSON(filePath: string): CacheFile {
   }
 }
 
+function processEntry(key: string, oursEntry: CacheEntry, theirsEntry: CacheEntry | undefined, merged: CacheFile, stats: { added: number, updated: number, kept: number }) {
+  if (!theirsEntry) {
+    // Only exists in ours
+    merged[key] = oursEntry;
+    stats.added++;
+  } else {
+    // Exists in both, compare timestamps
+    const oursTime = oursEntry.timestamp || 0;
+    const theirsTime = theirsEntry.timestamp || 0;
+
+    if (oursTime > theirsTime) {
+      merged[key] = oursEntry;
+      stats.updated++;
+    } else {
+      stats.kept++;
+    }
+  }
+}
+
 export function mergeCaches() {
   const oursPath = process.argv[2];
   const theirsPath = process.argv[3];
@@ -38,6 +57,11 @@ export function mergeCaches() {
     process.exit(1);
   }
 
+  const resolvedOutputPath = path.resolve(outputPath);
+  if (!resolvedOutputPath.includes('.cache')) {
+      console.warn(`⚠️ Warning: output path ${outputPath} may not be a cache directory.`);
+  }
+
   console.log(`📦 Loading ours: ${oursPath}`);
   const ours = loadJSON(oursPath);
 
@@ -46,56 +70,36 @@ export function mergeCaches() {
 
   console.log('🔄 Merging cache entries...');
 
-  // Start with a copy of theirs to preserve all its keys
   const merged: CacheFile = { ...theirs };
-
-  let addedFromOurs = 0;
-  let updatedFromOurs = 0;
-  let keptTheirs = 0;
+  const stats = { added: 0, updated: 0, kept: 0 };
 
   for (const key in ours) {
-    if (Object.prototype.hasOwnProperty.call(ours, key)) {
+    if (Object.hasOwn(ours, key)) {
       const oursEntry = ours[key];
       if (!oursEntry) continue;
 
       const theirsEntry = theirs[key];
-
-      if (!theirsEntry) {
-        // Only exists in ours
-        merged[key] = oursEntry;
-        addedFromOurs++;
-      } else {
-        // Exists in both, compare timestamps
-        const oursTime = oursEntry.timestamp || 0;
-        const theirsTime = theirsEntry.timestamp || 0;
-
-        if (oursTime > theirsTime) {
-          merged[key] = oursEntry;
-          updatedFromOurs++;
-        } else {
-          keptTheirs++;
-        }
-      }
+      processEntry(key, oursEntry, theirsEntry, merged, stats);
     }
   }
 
   console.log(`📊 Merge summary:`);
-  console.log(`   - Added from ours (new entries): ${addedFromOurs}`);
-  console.log(`   - Updated from ours (newer timestamp): ${updatedFromOurs}`);
-  console.log(`   - Kept from theirs (newer/same timestamp): ${keptTheirs}`);
+  console.log(`   - Added from ours (new entries): ${stats.added}`);
+  console.log(`   - Updated from ours (newer timestamp): ${stats.updated}`);
+  console.log(`   - Kept from theirs (newer/same timestamp): ${stats.kept}`);
   console.log(`   - Total merged entries: ${Object.keys(merged).length}`);
 
   try {
-    const dir = path.dirname(outputPath);
+    const dir = path.dirname(resolvedOutputPath);
     if (!fs.existsSync(dir)) {
       fs.mkdirSync(dir, { recursive: true });
     }
 
-    fs.writeFileSync(outputPath, JSON.stringify(merged, null, 2), 'utf-8');
-    console.log(`✅ Successfully wrote merged cache to ${outputPath}`);
+    fs.writeFileSync(resolvedOutputPath, JSON.stringify(merged, null, 2), 'utf-8');
+    console.log(`✅ Successfully wrote merged cache to ${resolvedOutputPath}`);
     process.exit(0);
   } catch (error) {
-    console.error(`❌ Failed to write merged cache to ${outputPath}:`, error);
+    console.error(`❌ Failed to write merged cache to ${resolvedOutputPath}:`, error);
     process.exit(1);
   }
 }

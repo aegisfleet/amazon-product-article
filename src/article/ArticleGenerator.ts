@@ -133,61 +133,27 @@ export class ArticleGenerator {
   /**
    * SEOメタデータを生成
    */
-  generateSEOMetadata(product: Product, investigation: InvestigationResult): ArticleMetadata {
-    const productDetail = product as unknown as ProductDetail;
-    // productName があればそれを使用、なければ ASIN からフォールバック
+  private createBaseMetadata(product: Product, productDetail: ProductDetail, investigation: InvestigationResult, shouldNoindex: boolean): ArticleMetadata {
     const displayName = investigation.analysis.productName || `Product ${product.asin}`;
-    // タイトルをシンプルに商品名のみにする
-    const title = displayName;
+    const description = investigation.analysis.productDescription || `${displayName}の実際のユーザーレビューを分析し、競合商品との比較を通じて購買判断をサポート`;
 
-    // card-excerpt用にproductDescriptionを使用（なければ従来の生成ロジックへフォールバック）
-    const description =
-      investigation.analysis.productDescription ||
-      `${displayName}の実際のユーザーレビューを分析し、競合商品との比較を通じて購買判断をサポート`;
-
-    const tags = this.generateTags(product, investigation);
-    const seoKeywords = this.generateSEOKeywords(product, investigation);
-    const priceRange = this.determinePriceRange(product.price.amount);
-    const price = product.price.formatted;
-    const score = investigation.analysis.recommendation.score;
-
-    // 品質に基づく noindex 判定
-    const hasStories = !!(investigation.analysis.userStories && investigation.analysis.userStories.length > 0);
-    const shouldNoindex = description.length < 30 || (score <= 75 && !hasStories);
-
-    // 階層カテゴリ: Creators APIのcategoryInfoがあればそれを使用
-    const subcategory = product.categoryInfo?.sub || this.determineSubcategory(product);
-    const manufacturer = this.extractManufacturer(product);
-
-    // Product images for Hugo front matter (primary + thumbnails)
-    const images = [product.images.primary, ...product.images.thumbnails].filter(Boolean);
-
-    // Fallback to default image if no images are available
-    if (images.length === 0) {
-      images.push(DEFAULT_IMAGE_URL);
-    }
-
-    // Affiliate URL generation
-    const affiliateLink = this.affiliateManager.generateLinkFromProduct(product);
-    const affiliateUrl = affiliateLink.url;
-
-    const metadata: ArticleMetadata = {
-      title,
+    return {
+      title: displayName,
       description,
       category: product.categoryInfo?.main || product.category,
-      tags,
+      tags: this.generateTags(product, investigation),
       publishDate: investigation.generatedAt || new Date(),
       asin: product.asin,
-      priceRange,
-      price,
-      score,
+      priceRange: this.determinePriceRange(product.price.amount),
+      price: product.price.formatted,
+      score: investigation.analysis.recommendation.score,
       ...(product.rating.average > 0 && product.rating.average <= 5 ? { rating: product.rating.average } : {}),
       ...(product.rating.count > 0 ? { ratingCount: product.rating.count } : {}),
       featured: this.shouldBeFeatured(product, investigation),
       mobileOptimized: true,
-      seoKeywords,
+      seoKeywords: this.generateSEOKeywords(product, investigation),
       is_amazon_direct: product.isAmazonDirect,
-      affiliate_url: affiliateUrl,
+      affiliate_url: this.affiliateManager.generateLinkFromProduct(product).url,
       brand: product.brand,
       model: productDetail.model,
       releaseDate: this.formatToJapaneseDate(productDetail.releaseDate),
@@ -196,41 +162,36 @@ export class ArticleGenerator {
       savings_percentage: product.savingsPercentage,
       ...(shouldNoindex ? { noindex: true } : {}),
     };
+  }
 
-    if (product.availability !== undefined) {
-      metadata.availability = product.availability;
-    }
+  generateSEOMetadata(product: Product, investigation: InvestigationResult): ArticleMetadata {
+    const productDetail = product as unknown as ProductDetail;
+    const score = investigation.analysis.recommendation.score;
+    const description = investigation.analysis.productDescription || `Product ${product.asin}の実際のユーザーレビューを分析し、競合商品との比較を通じて購買判断をサポート`;
+    const hasStories = !!(investigation.analysis.userStories && investigation.analysis.userStories.length > 0);
+    const shouldNoindex = description.length < 30 || (score <= 75 && !hasStories);
 
-    if (subcategory) {
-      metadata.subcategory = subcategory;
-    }
+    const metadata = this.createBaseMetadata(product, productDetail, investigation, shouldNoindex);
 
-    // APIから取得したmanufacturerがあれば最優先、なければextractManufacturerの結果
-    const finalManufacturer = productDetail.manufacturer || manufacturer;
-    if (finalManufacturer) {
-      metadata.manufacturer = finalManufacturer;
-    }
+    if (product.availability !== undefined) metadata.availability = product.availability;
 
-    if (investigation.analysis.lastInvestigated) {
-      metadata.lastInvestigated = investigation.analysis.lastInvestigated;
-    }
-    if (images.length > 0) {
-      metadata.images = images;
-    }
+    const subcategory = product.categoryInfo?.sub || this.determineSubcategory(product);
+    if (subcategory) metadata.subcategory = subcategory;
 
-    // 詳細スペック情報（technicalSpecs）があれば追加
-    if (investigation.analysis.technicalSpecs) {
-      metadata.technicalSpecs = investigation.analysis.technicalSpecs;
-    }
+    const finalManufacturer = productDetail.manufacturer || this.extractManufacturer(product);
+    if (finalManufacturer) metadata.manufacturer = finalManufacturer;
 
-    // Hero Front Matter Data
+    if (investigation.analysis.lastInvestigated) metadata.lastInvestigated = investigation.analysis.lastInvestigated;
+
+    const images = [product.images.primary, ...product.images.thumbnails].filter(Boolean);
+    if (images.length === 0) images.push(DEFAULT_IMAGE_URL);
+    if (images.length > 0) metadata.images = images;
+
+    if (investigation.analysis.technicalSpecs) metadata.technicalSpecs = investigation.analysis.technicalSpecs;
+
     const { plus, minus } = this.extractScoreRationaleItems(investigation.analysis.recommendation.scoreRationale);
-
     metadata.hero = {
-      score_rationale: {
-        plus,
-        minus,
-      },
+      score_rationale: { plus, minus },
       target_users: investigation.analysis.recommendation.targetUsers,
       warnings: investigation.analysis.recommendation.cons || [],
       specs: investigation.analysis.technicalSpecs || {},

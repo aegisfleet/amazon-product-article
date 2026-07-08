@@ -425,7 +425,7 @@ a:hover {
   border-radius: var(--radius-sm);
   border: 1px solid var(--color-border);
   line-height: 1.35;
-  word-break: break-word;
+  word-break: normal; overflow-wrap: anywhere;
 }
 
 .card-spec-tag {
@@ -1558,7 +1558,7 @@ a.competitor-preview:hover {
   padding: var(--spacing-sm) var(--spacing-md);
   border: 1px solid var(--color-border);
   text-align: left;
-  word-break: break-word;
+  word-break: normal; overflow-wrap: anywhere;
 }
 
 /* 項目列（最初の列）は幅を固定 */
@@ -3379,7 +3379,7 @@ a.competitor-preview:hover {
   opacity: 1;
   flex: 1;
   min-width: 0;
-  word-break: break-word;
+  word-break: normal; overflow-wrap: anywhere;
   white-space: normal;
 }
 
@@ -3494,7 +3494,7 @@ a.competitor-preview:hover {
   .hero-score-item-desc {
     flex: 1;
     min-width: 0;
-    word-break: break-word;
+    word-break: normal; overflow-wrap: anywhere;
     white-space: normal;
     max-width: none;
     text-overflow: unset;
