@@ -127,8 +127,10 @@
         </div>
     </div>
 
-    <div class="product-count-container" style="margin-bottom: var(--spacing-md); display: flex; justify-content: space-between; align-items: center;">
-        <span id="product-count" class="product-count" style="font-size: 0.875rem; color: var(--color-text-secondary);"></span>
+    <div class="product-count-container"
+        style="margin-bottom: var(--spacing-md); display: flex; justify-content: space-between; align-items: center;">
+        <span id="product-count" class="product-count"
+            style="font-size: 0.875rem; color: var(--color-text-secondary);"></span>
     </div>
 
     <div id="product-grid" class="card-grid">
@@ -208,8 +210,8 @@
         {{- $hasDeal = true -}}
         {{- end -}}
         <article class="card" data-price="{{ $priceRaw }}" data-score="{{ .Params.score | default 0 }}"
-            data-date="{{ $dateRaw }}" data-specs="{{ $specsString }}"
-            data-has-deal="{{ $hasDeal }}" data-savings-percentage="{{ .Params.savings_percentage | default 0 }}">
+            data-date="{{ $dateRaw }}" data-specs="{{ $specsString }}" data-has-deal="{{ $hasDeal }}"
+            data-savings-percentage="{{ .Params.savings_percentage | default 0 }}">
             <div class="card-image">
                 <a href="{{ .RelPermalink }}" aria-hidden="true" tabindex="-1">
                     {{- if .Params.images -}}
@@ -275,7 +277,8 @@
                         {{- end -}}
                         {{- with .Params.deal_badge -}}
                         {{- $dealClass := "deal-standard" -}}
-                        {{- if or (eq $.Params.deal_access_type "PRIME_EXCLUSIVE") (eq $.Params.deal_access_type "PRIME_EARLY_ACCESS") -}}
+                        {{- if or (eq $.Params.deal_access_type "PRIME_EXCLUSIVE") (eq $.Params.deal_access_type
+                        "PRIME_EARLY_ACCESS") -}}
                         {{- $dealClass = "deal-prime" -}}
                         {{- end -}}
                         <span class="badge-deal {{ $dealClass }}">{{ . }}</span>
