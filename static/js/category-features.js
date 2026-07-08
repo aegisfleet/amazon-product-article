@@ -456,7 +456,7 @@ function initCategoryFeatures() {
 
         // Deal
         const dealFilter = document.getElementById('deal-filter');
-        if (dealFilter && dealFilter.checked) {
+        if (dealFilter?.checked) {
             params.set('deal', 'active');
         }
 
