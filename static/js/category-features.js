@@ -431,23 +431,7 @@ function initCategoryFeatures() {
     }
 
     // --- Keyword Search Events ---
-    if (keywordSearch) {
-        keywordSearch.addEventListener('input', (e) => {
-            if (keywordClearBtn) {
-                keywordClearBtn.style.display = keywordSearch.value ? 'block' : 'none';
-            }
-            if (e.isComposing) return;
-            debouncedFilterCards();
-        });
-    }
-    if (keywordClearBtn) {
-        keywordClearBtn.addEventListener('click', () => {
-            keywordSearch.value = '';
-            keywordClearBtn.style.display = 'none';
-            keywordSearch.focus();
-            filterCards();
-        });
-    }
+    initKeywordSearch(keywordSearch, keywordClearBtn, debouncedFilterCards, filterCards);
 
     // --- Spec Filters Event ---
     const specFilters = document.getElementById('spec-filters');
