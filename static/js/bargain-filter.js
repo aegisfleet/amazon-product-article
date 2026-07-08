@@ -3,6 +3,28 @@
  * 「あともう一品」特設ページのフィルタリング・ソート・表示を管理する。
  */
 
+/**
+ * Sort products based on sort selection
+ */
+function sortProducts(products, sortValue) {
+  products.sort((a, b) => {
+    switch (sortValue) {
+      case 'score':
+        return b.score - a.score || a.priceRaw - b.priceRaw;
+      case 'price-asc':
+        return a.priceRaw - b.priceRaw || b.score - a.score;
+      case 'price-desc':
+        return b.priceRaw - a.priceRaw || b.score - a.score;
+      case 'date':
+        return (b.lastInvestigated || '').localeCompare(a.lastInvestigated || '') || b.score - a.score;
+      case 'discount':
+        return b.savingsPercentage - a.savingsPercentage || b.score - a.score;
+      default:
+        return 0;
+    }
+  });
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   const dataEl = document.getElementById('bargain-data');
   if (!dataEl) return;
@@ -123,79 +145,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const debouncedApplyFilters = debounce(applyFilters, 300);
 
-  function applyFilters() {
-    updateSliderDisplays();
-
-    const minScore = Number.parseInt(scoreSlider.value, 10);
-    const minPrice = valueToPrice(Number.parseInt(minPriceSlider.value, 10));
-    const maxPrice = valueToPrice(Number.parseInt(priceSlider.value, 10));
-
-    // Ensure minPrice <= maxPrice for logical UX (optional, but good)
-    if (minPrice > maxPrice) {
-      // You could either sync them or just let the filter handle it
-      // Let's just update display for now
-    }
-
-    const rawQ = keywordInput ? keywordInput.value : '';
-    const normalizedQ = normalizeText(rawQ);
-    const keywords = normalizedQ.split(/\s+/).filter(Boolean);
-
-    // Step 1: Filter by Score, Price range, and Keyword
-    let preFiltered = allProducts.filter(p => {
-      if (p.score < minScore) return false;
-      if (p.priceRaw < minPrice) return false;
-      if (maxPrice > 0 && p.priceRaw > maxPrice) return false;
-      if (maxPrice === 0 && p.priceRaw > 0) return false;
-      if (!matchesKeywords(p, keywords)) return false;
-      return true;
-    });
-
-    // Step 2: Update Category options based on Score and Price range
-    updateCategoryOptions(preFiltered);
-
-    // Step 3: Filter by selected category
-    const category = categorySelect ? categorySelect.value : '';
-    let filtered = preFiltered.filter(p => {
-      return !category || p.category === category;
-    });
-
-    // Step 4: Sort
-    if (currentSort === 'score') {
-      filtered.sort((a, b) => b.score - a.score || a.priceRaw - b.priceRaw);
-    } else if (currentSort === 'price-asc') {
-      filtered.sort((a, b) => a.priceRaw - b.priceRaw || b.score - a.score);
-    } else if (currentSort === 'price-desc') {
-      filtered.sort((a, b) => b.priceRaw - a.priceRaw || b.score - a.score);
-    } else if (currentSort === 'date') {
-      filtered.sort((a, b) => {
-        const da = a.lastInvestigated || '';
-        const db = b.lastInvestigated || '';
-        return db.localeCompare(da) || b.score - a.score;
-      });
-    } else if (currentSort === 'discount') {
-      filtered.sort((a, b) => b.savingsPercentage - a.savingsPercentage || b.score - a.score);
-    }
-
-    // Update Keyword count badge
+  /**
+   * Update badges, list DOM rendering, and grid stats
+   */
+  function updateFilterUI(filtered, keywords) {
     const badgeEl = document.getElementById('bargain-keyword-count-badge');
     if (badgeEl) {
       if (keywords.length > 0) {
         badgeEl.textContent = `${filtered.length}件`;
         badgeEl.style.display = 'inline-flex';
-        if (filtered.length === 0) {
-          badgeEl.classList.add('zero-results');
-        } else {
-          badgeEl.classList.remove('zero-results');
-        }
+        badgeEl.classList.toggle('zero-results', filtered.length === 0);
       } else {
         badgeEl.style.display = 'none';
       }
     }
 
-    // Animate
     gridEl.classList.add('bargain-grid-fade');
     setTimeout(() => {
-      // Render
       if (filtered.length === 0) {
         gridEl.innerHTML = '';
         gridEl.style.display = 'none';
@@ -214,6 +180,39 @@ document.addEventListener('DOMContentLoaded', () => {
       gridEl.classList.remove('bargain-grid-fade');
       updateUrlParams();
     }, 200);
+  }
+
+  function applyFilters() {
+    updateSliderDisplays();
+
+    const minScore = Number.parseInt(scoreSlider.value, 10);
+    const minPrice = valueToPrice(Number.parseInt(minPriceSlider.value, 10));
+    const maxPrice = valueToPrice(Number.parseInt(priceSlider.value, 10));
+
+    const rawQ = keywordInput ? keywordInput.value : '';
+    const keywords = normalizeText(rawQ).split(/\s+/).filter(Boolean);
+
+    // Step 1: Filter by Score, Price range, and Keyword
+    const preFiltered = allProducts.filter(p => {
+      if (p.score < minScore) return false;
+      if (p.priceRaw < minPrice) return false;
+      if (maxPrice > 0 && p.priceRaw > maxPrice) return false;
+      if (maxPrice === 0 && p.priceRaw > 0) return false;
+      return matchesKeywords(p, keywords);
+    });
+
+    // Step 2: Update Category options based on Score and Price range
+    updateCategoryOptions(preFiltered);
+
+    // Step 3: Filter by selected category
+    const category = categorySelect ? categorySelect.value : '';
+    const filtered = preFiltered.filter(p => !category || p.category === category);
+
+    // Step 4: Sort
+    sortProducts(filtered, currentSort);
+
+    // Step 5: Update UI
+    updateFilterUI(filtered, keywords);
   }
 
   // --- Reset ---
