@@ -28,33 +28,21 @@ function loadJSON(filePath: string): CacheFile {
   }
 }
 
-function mergeCaches() {
-  const oursPath = process.argv[2];
-  const theirsPath = process.argv[3];
-  const outputPath = process.argv[4];
+interface MergeResult {
+  merged: CacheFile;
+  addedFromOurs: number;
+  updatedFromOurs: number;
+  keptTheirs: number;
+}
 
-  if (!oursPath || !theirsPath || !outputPath) {
-    console.error('❌ Usage: pnpm exec ts-node scripts/merge-product-cache.ts <ours.json> <theirs.json> <output.json>');
-    process.exit(1);
-  }
-
-  console.log(`📦 Loading ours: ${oursPath}`);
-  const ours = loadJSON(oursPath);
-
-  console.log(`📦 Loading theirs: ${theirsPath}`);
-  const theirs = loadJSON(theirsPath);
-
-  console.log('🔄 Merging cache entries...');
-
-  // Start with a copy of theirs to preserve all its keys
+function mergeCacheObjects(ours: CacheFile, theirs: CacheFile): MergeResult {
   const merged: CacheFile = { ...theirs };
-
   let addedFromOurs = 0;
   let updatedFromOurs = 0;
   let keptTheirs = 0;
 
   for (const key in ours) {
-    if (Object.prototype.hasOwnProperty.call(ours, key)) {
+    if (Object.hasOwn(ours, key)) {
       const oursEntry = ours[key];
       if (!oursEntry) continue;
 
@@ -78,6 +66,34 @@ function mergeCaches() {
       }
     }
   }
+
+  return {
+    merged,
+    addedFromOurs,
+    updatedFromOurs,
+    keptTheirs,
+  };
+}
+
+function mergeCaches() {
+  const oursPath = process.argv[2];
+  const theirsPath = process.argv[3];
+  const outputPath = process.argv[4];
+
+  if (!oursPath || !theirsPath || !outputPath) {
+    console.error('❌ Usage: pnpm exec ts-node scripts/merge-product-cache.ts <ours.json> <theirs.json> <output.json>');
+    process.exit(1);
+  }
+
+  console.log(`📦 Loading ours: ${oursPath}`);
+  const ours = loadJSON(oursPath);
+
+  console.log(`📦 Loading theirs: ${theirsPath}`);
+  const theirs = loadJSON(theirsPath);
+
+  console.log('🔄 Merging cache entries...');
+
+  const { merged, addedFromOurs, updatedFromOurs, keptTheirs } = mergeCacheObjects(ours, theirs);
 
   console.log(`📊 Merge summary:`);
   console.log(`   - Added from ours (new entries): ${addedFromOurs}`);
