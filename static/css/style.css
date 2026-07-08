@@ -3790,6 +3790,73 @@ a.competitor-preview:hover {
   font-size: 0.9rem;
 }
 
+/* --- Special Page Color Themes --- */
+.theme-green {
+  --color-primary: #10b981;
+  --color-primary-rgb: 16, 185, 129;
+  --color-primary-dark: #059669;
+  --color-primary-light: #34d399;
+  --color-primary-light-rgb: 52, 211, 153;
+  --color-secondary: #059669;
+  --bg-tag: #ecfdf5;
+  --text-tag: #047857;
+}
+
+[data-theme="dark"] .theme-green {
+  --color-primary: #34d399;
+  --color-primary-rgb: 52, 211, 153;
+  --color-primary-dark: #064e3b;
+  --color-primary-light: #6ee7b7;
+  --color-primary-light-rgb: 110, 231, 183;
+  --color-secondary: #34d399;
+  --bg-tag: #064e3b;
+  --text-tag: #a7f3d0;
+}
+
+.theme-blue {
+  --color-primary: #2563eb;
+  --color-primary-rgb: 37, 99, 235;
+  --color-primary-dark: #1d4ed8;
+  --color-primary-light: #3b82f6;
+  --color-primary-light-rgb: 59, 130, 246;
+  --color-secondary: #3b82f6;
+  --bg-tag: #eff6ff;
+  --text-tag: #1d4ed8;
+}
+
+[data-theme="dark"] .theme-blue {
+  --color-primary: #60a5fa;
+  --color-primary-rgb: 96, 165, 250;
+  --color-primary-dark: #1e3a8a;
+  --color-primary-light: #93c5fd;
+  --color-primary-light-rgb: 147, 197, 253;
+  --color-secondary: #60a5fa;
+  --bg-tag: #1e3a8a;
+  --text-tag: #93c5fd;
+}
+
+.theme-red {
+  --color-primary: #dc2626;
+  --color-primary-rgb: 220, 38, 38;
+  --color-primary-dark: #991b1b;
+  --color-primary-light: #fca5a5;
+  --color-primary-light-rgb: 252, 165, 165;
+  --color-secondary: #fca5a5;
+  --bg-tag: #fee2e2;
+  --text-tag: #991b1b;
+}
+
+[data-theme="dark"] .theme-red {
+  --color-primary: #fca5a5;
+  --color-primary-rgb: 252, 165, 165;
+  --color-primary-dark: #7f1d1d;
+  --color-primary-light: #fca5a5;
+  --color-primary-light-rgb: 252, 165, 165;
+  --color-secondary: #fca5a5;
+  --bg-tag: #7f1d1d;
+  --text-tag: #fca5a5;
+}
+
 /* =====================================================
    BARGAIN PAGE — 「あともう一品」特設ページ
    ===================================================== */
@@ -4077,7 +4144,7 @@ a.competitor-preview:hover {
   appearance: none;
   width: 100%;
   height: 6px;
-  background: linear-gradient(90deg, #10b981, #6ee7b7);
+  background: linear-gradient(90deg, var(--color-primary), var(--color-primary-light));
   border-radius: 3px;
   outline: none;
   cursor: pointer;
@@ -4089,9 +4156,9 @@ a.competitor-preview:hover {
   width: 22px;
   height: 22px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #059669, #10b981);
+  background: linear-gradient(135deg, var(--color-primary-dark), var(--color-primary));
   border: 3px solid white;
-  box-shadow: 0 2px 8px rgba(5, 150, 105, 0.35);
+  box-shadow: 0 2px 8px rgba(var(--color-primary-rgb), 0.35);
   cursor: pointer;
   transition: transform 0.15s ease;
 }
@@ -4104,14 +4171,10 @@ a.competitor-preview:hover {
   width: 22px;
   height: 22px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #059669, #10b981);
+  background: linear-gradient(135deg, var(--color-primary-dark), var(--color-primary));
   border: 3px solid white;
-  box-shadow: 0 2px 8px rgba(5, 150, 105, 0.35);
+  box-shadow: 0 2px 8px rgba(var(--color-primary-rgb), 0.35);
   cursor: pointer;
-}
-
-[data-theme="dark"] .bargain-slider {
-  background: linear-gradient(90deg, #047857, #34d399);
 }
 
 [data-theme="dark"] .bargain-slider::-webkit-slider-thumb {
@@ -4309,7 +4372,7 @@ a.competitor-preview:hover {
 }
 
 .bargain-sort-btn.active {
-  background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+  background: linear-gradient(135deg, var(--color-primary), var(--color-primary-light));
   color: white;
   border-color: transparent;
   box-shadow: 0 2px 6px rgba(var(--color-primary-rgb), 0.3);

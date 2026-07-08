@@ -48,7 +48,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     if (params.has('sort')) {
       const s = params.get('sort');
-      if (['score', 'price', 'date', 'discount'].includes(s)) {
+      if (['score', 'price-asc', 'price-desc', 'date', 'discount'].includes(s)) {
         currentSort = s;
       }
     }
@@ -162,8 +162,10 @@ document.addEventListener('DOMContentLoaded', () => {
     // Step 4: Sort
     if (currentSort === 'score') {
       filtered.sort((a, b) => b.score - a.score || a.priceRaw - b.priceRaw);
-    } else if (currentSort === 'price') {
+    } else if (currentSort === 'price-asc') {
       filtered.sort((a, b) => a.priceRaw - b.priceRaw || b.score - a.score);
+    } else if (currentSort === 'price-desc') {
+      filtered.sort((a, b) => b.priceRaw - a.priceRaw || b.score - a.score);
     } else if (currentSort === 'date') {
       filtered.sort((a, b) => {
         const da = a.lastInvestigated || '';
