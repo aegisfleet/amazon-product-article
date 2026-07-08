@@ -30,11 +30,9 @@ export function loadJSON(filePath: string): CacheFile {
 
 function processEntry(key: string, oursEntry: CacheEntry, theirsEntry: CacheEntry | undefined, merged: CacheFile, stats: { added: number, updated: number, kept: number }) {
   if (!theirsEntry) {
-    // Only exists in ours
     merged[key] = oursEntry;
     stats.added++;
   } else {
-    // Exists in both, compare timestamps
     const oursTime = oursEntry.timestamp || 0;
     const theirsTime = theirsEntry.timestamp || 0;
 
@@ -57,9 +55,13 @@ export function mergeCaches() {
     process.exit(1);
   }
 
-  const resolvedOutputPath = path.resolve(outputPath);
-  if (!resolvedOutputPath.includes('.cache')) {
-      console.warn(`⚠️ Warning: output path ${outputPath} may not be a cache directory.`);
+  // SonarCloud: properly sanitize paths to ensure they're within the intended workspace
+  const workspaceRoot = path.resolve(process.cwd());
+  const resolvedOutputPath = path.resolve(workspaceRoot, outputPath);
+
+  if (!resolvedOutputPath.startsWith(workspaceRoot)) {
+    console.error(`❌ Invalid output path: ${resolvedOutputPath}. Path must be within the current working directory.`);
+    process.exit(1);
   }
 
   console.log(`📦 Loading ours: ${oursPath}`);
@@ -77,9 +79,7 @@ export function mergeCaches() {
     if (Object.hasOwn(ours, key)) {
       const oursEntry = ours[key];
       if (!oursEntry) continue;
-
-      const theirsEntry = theirs[key];
-      processEntry(key, oursEntry, theirsEntry, merged, stats);
+      processEntry(key, oursEntry, theirs[key], merged, stats);
     }
   }
 
