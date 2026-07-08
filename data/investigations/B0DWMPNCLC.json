@@ -1,0 +1,196 @@
+{
+  "analysis": {
+    "productName": "Anker Eufy SmartTrack Card E30",
+    "parentAsin": "B0H73W6Z4S",
+    "productDescription": "1回の充電で最長1年使用できる、Appleの「探す」に対応した厚さ約2.6mmのカード型紛失防止トラッカー。",
+    "productUsage": [
+      "財布やカードケースの紛失防止",
+      "パスポートや書類ケースの紛失防止",
+      "旅行時のロストバゲージ対策"
+    ],
+    "positivePoints": [
+      "1回の充電で最長1年間使用可能な充電式バッテリー搭載",
+      "厚さ約2.6mmの極薄カード型デザイン",
+      "Appleの「探す」ネットワークに対応",
+      "スマホからトラッカーを鳴らし、トラッカーからスマホを鳴らせる双方向探知機能搭載",
+      "持ち物を置き忘れた際のアラート通知機能搭載"
+    ],
+    "negativePoints": [
+      "Androidスマートフォンには非対応（iOS端末専用）",
+      "専用のマグネット式充電器とUSB Type-A充電器（別売り）が必要"
+    ],
+    "useCases": [
+      "財布に入れて日常の紛失防止対策に",
+      "パスポートやカードケースに入れて旅行時の安全管理に"
+    ],
+    "userStories": [
+      {
+        "userType": "iPhoneユーザー",
+        "scenario": "冬服などでポケットが多く財布を見失いやすい時",
+        "experience": "冬服になるとポケットが多くてどのポケットに入れたか分からなくなることがあるが、そんな時に役立ちます。専用の充電ケーブルが必要な点は少し不安だが、使い勝手が良く満足している。",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "sentiment": "positive"
+      },
+      {
+        "userType": "以前他社製を使っていたユーザー",
+        "scenario": "使い捨てタイプの電池寿命に不満があった",
+        "experience": "前は他社の使い捨てタイプを購入しましたが、半年しか電池が持たずガッカリでした。この製品は充電可能だし電池の持ちも良いので気に入っています。",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "sentiment": "positive"
+      },
+      {
+        "userType": "友人へのプレゼントを探していた人",
+        "scenario": "友人が財布を失くして困っていた",
+        "experience": "友人が財布を無くして大変な事になっていた為購入しました。カード2枚分ほどの厚さで充電出来るのが素敵です！",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "sentiment": "positive"
+      }
+    ],
+    "userImpression": "従来の使い捨て電池タイプのカード型トラッカーに対する不満を解消した「充電式」であることが高く評価されている。約2.6mmの薄さで財布等に入れやすく、Appleの「探す」に対応しているため追跡も容易。専用の充電ケーブルを紛失しないか心配する声もあるが、充電可能で長寿命な点から全体的な使い勝手の良さに対する満足度は非常に高い。一方で、Androidユーザーが誤って購入してしまい全く使えずに後悔するケースや、一般的なType-Cケーブルで充電したいと考えていた人が専用ケーブルを煩わしく感じて不満を持つケースも想定される。",
+    "sources": [
+      {
+        "id": "src-1",
+        "name": "Anker公式オンラインストア レビュー",
+        "url": "https://www.ankerjapan.com/products/t87b1",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-07-08",
+        "author": "購入者",
+        "conflictOfInterest": "none",
+        "notes": "充電式であることへの高評価、専用充電器に対するわずかな懸念などを確認"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "1回の充電で最長1年間使用可能",
+        "category": "durability",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "crossChecked": true,
+        "notes": "公式サイトの仕様およびユーザーレビューの電池持ちへの満足の声と一致"
+      }
+    ],
+    "lastInvestigated": "2026-07-08",
+    "competitiveAnalysis": [
+      {
+        "name": "UGREEN FineTrack Slim Duo",
+        "asin": "B0FH4YZ1ZW",
+        "priceComparison": "対象商品と同価格帯。対象商品が充電式であるのに対し、こちらは使い捨て（最長5年）である代わりにGoogle/Apple両システムに対応している。",
+        "featureComparison": [
+          "共通点：厚さが1.7mm〜2.6mm程度の超薄型カードデザイン。防水防塵対応。",
+          "相違点：対象商品は充電式だがiOSのみ対応。競合は使い捨て（最長5年）だがGoogle/Appleの両システムに対応し、厚さが1.7mmとさらに薄い。"
+        ],
+        "differentiators": [
+          "Anker Eufy SmartTrack Card E30の利点：充電して繰り返し長く使いたいiPhoneユーザーなら迷わずこちら。",
+          "UGREEN FineTrack Slim Duoの利点：Androidユーザーや、より薄い1.7mmサイズを求める人、使い捨てでも長寿命（5年）なら手間がなくて良いという人に適している。"
+        ]
+      },
+      {
+        "name": "FujiGlide エアタグ カード型",
+        "asin": "B0GQPB5ZJX",
+        "priceComparison": "対象商品より安い。低価格を重視する層向け。",
+        "featureComparison": [
+          "共通点：Appleの「探す」に対応した極薄カード型トラッカー。",
+          "相違点：対象商品は充電式だが、競合は15年長寿命の使い捨てLi-Po電池を搭載し、厚さ1.5mmと対象商品より薄い。"
+        ],
+        "differentiators": [
+          "Anker Eufy SmartTrack Card E30の利点：Ankerグループの高いブランド信頼性と、充電して半永久的に使える運用コストの安さを重視するならこちら。",
+          "FujiGlide エアタグ カード型の利点：導入コストの低さと、1.5mmという極薄設計を最優先する人に適している。"
+        ]
+      },
+      {
+        "name": "Gudluky エアタグ カード",
+        "asin": "B0F29G9GPQ",
+        "priceComparison": "対象商品より安い。低コストで導入可能。",
+        "featureComparison": [
+          "共通点：Appleの「探す」ネットワークに対応し、iOS端末のみ対応する点。防水防塵仕様。",
+          "相違点：対象商品は充電式であるのに対し、競合は10年間交換不要の使い捨てバッテリー。競合は厚さ1.6mmと対象商品（約2.6mm）より薄い。"
+        ],
+        "differentiators": [
+          "Anker Eufy SmartTrack Card E30の利点：Ankerの高いブランド信頼性やカスタマーサポート、充電式という確実な再利用性を求める人に最適。",
+          "Gudluky エアタグ カードの利点：より薄い1.6mmサイズと初期費用の安さを求める人に適している。"
+        ]
+      },
+      {
+        "name": "Anker Eufy Security SmartTrack Card (従来品)",
+        "asin": "B0BJCQCQ7Z",
+        "priceComparison": "対象商品より安い。機能差による妥当な価格差。",
+        "featureComparison": [
+          "共通点：Appleの「探す」に対応し、Anker Eufyブランドのカード型トラッカーである点。",
+          "相違点：対象商品は充電式だが、従来品（競合）は電池交換不可の使い捨てタイプ（最大3年）。"
+        ],
+        "differentiators": [
+          "Anker Eufy SmartTrack Card E30の利点：使い捨てではなく、充電して繰り返し使いたいなら迷わずこちら。",
+          "Anker Eufy Security SmartTrack Card (従来品)の利点：初期費用を少しでも抑えたい場合に適している。"
+        ]
+      },
+      {
+        "name": "Anker Eufy SmartTrack Card (Android用)",
+        "asin": "B0D9VVC187",
+        "priceComparison": "対象商品より安い。Android向けの別モデル。",
+        "featureComparison": [
+          "共通点：Anker Eufyブランドのカード型トラッカー。",
+          "相違点：対象商品はiOS専用で充電式だが、競合はAndroid（Google「検索ハブ」）専用で使い捨てタイプ。"
+        ],
+        "differentiators": [
+          "Anker Eufy SmartTrack Card E30の利点：iPhoneを使用していて、充電式のトラッカーを探している人に適している。",
+          "Anker Eufy SmartTrack Card (Android用)の利点：Androidスマートフォンを使用している場合は、システム対応の都合上こちらを選ぶ必要がある。"
+        ]
+      },
+      {
+        "name": "Anker Eufy Security SmartTrack Card 2個入り",
+        "asin": "B0CSDGGTGK",
+        "priceComparison": "対象商品より高い。複数個パックのため単価は安い。",
+        "featureComparison": [
+          "共通点：Appleの「探す」に対応したAnker Eufyブランドのカード型トラッカー。",
+          "相違点：対象商品は1個入りで充電式だが、競合は2個入りで使い捨てタイプ（最大3年）。"
+        ],
+        "differentiators": [
+          "Anker Eufy SmartTrack Card E30の利点：使い捨てを避け、1つのトラッカーを充電して長く使いたい人に適している。",
+          "Anker Eufy Security SmartTrack Card 2個入りの利点：財布とパスポートなど、複数の持ち物に同時にトラッカーを入れたい場合で、1個あたりの単価を安く抑えたい人に適している。"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "従来の使い捨て型トラッカーの電池切れによる買い替えに不満があり、充電式を求めるiPhoneユーザー"
+      ],
+      "pros": [
+        "充電式で繰り返し使えるため、数年おきに買い替えるコストや手間がかからない",
+        "厚さ約2.6mmと薄く、財布やカードケースに入れてもかさばらず自然に携帯できる"
+      ],
+      "cons": [
+        "Androidスマートフォンでは利用できないため、Androidユーザーは購入してはいけない",
+        "専用のマグネット式充電器を紛失すると充電できなくなるため、充電器の保管場所には注意が必要"
+      ],
+      "score": 80,
+      "scoreRationale": "[基本点: 70]\n[加点: +5] (充電式で繰り返し使える環境配慮と長期的なコスパの良さ)\n[加点: +5] (財布に入れやすい厚さ2.6mmの薄型設計)\n[加点: +5] (Appleの「探す」ネットワーク対応による高い追跡性能)\n[減点: -2] (Androidスマートフォン非対応)\n[減点: -3] (専用のマグネット式充電ケーブルが必要な点)\n[合計: 80]"
+    },
+    "technicalSpecs": {
+      "dimensions": {
+        "height": "85mm",
+        "width": "54mm",
+        "depth": "2.6mm"
+      },
+      "weight": "15.4g",
+      "capacity": "1",
+      "material": "不明",
+      "origin": "不明",
+      "other": [
+        "1回の充電で最長1年間使用可能",
+        "Apple「探す」ネットワーク対応",
+        "専用マグネット式充電器付属",
+        "置き忘れ防止機能",
+        "双方向探知機能搭載"
+      ]
+    }
+  }
+}
