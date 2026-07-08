@@ -65,6 +65,19 @@
         <div class="bargain-filter-row bargain-filter-row-bottom">
             <div class="bargain-filter-group">
                 <span class="bargain-filter-label">
+                    <span class="bargain-filter-icon">🏷️</span>
+                    セール状況
+                </span>
+                <div style="display: flex; flex-wrap: wrap; gap: var(--spacing-sm); align-items: center; width: 100%; min-width: 0;">
+                    <label class="filter-checkbox" style="padding: 0; margin-right: var(--spacing-md); display: inline-flex; align-items: center; gap: var(--spacing-xs); cursor: pointer; flex-shrink: 0;">
+                        <input type="checkbox" id="deal-filter" name="deal-filter" value="active" style="width: 18px; height: 18px; accent-color: var(--color-primary);">
+                        <span class="filter-label" style="font-size: 0.9rem; font-weight: 600;">タイムセール対象</span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="bargain-filter-group">
+                <span class="bargain-filter-label">
                     <span class="bargain-filter-icon">🔄</span>
                     並び替え
                 </span>
@@ -74,19 +87,6 @@
                     <button type="button" class="bargain-sort-btn active" data-sort="score-desc">スコア順</button>
                     <button type="button" class="bargain-sort-btn" data-sort="price-asc">価格の安い順</button>
                     <button type="button" class="bargain-sort-btn" data-sort="price-desc">価格の高い順</button>
-                </div>
-            </div>
-
-            <div class="bargain-filter-group">
-                <span class="bargain-filter-label">
-                    <span class="bargain-filter-icon">🏷️</span>
-                    セール状況
-                </span>
-                <div style="display: flex; flex-wrap: wrap; gap: var(--spacing-sm); align-items: center; width: 100%; min-width: 0;">
-                    <label class="filter-checkbox" style="padding: 0; margin-right: var(--spacing-md); display: inline-flex; align-items: center; gap: var(--spacing-xs); cursor: pointer; flex-shrink: 0;">
-                        <input type="checkbox" id="deal-filter" name="deal-filter" value="active" style="width: 18px; height: 18px; accent-color: var(--color-primary);">
-                        <span class="filter-label" style="font-size: 0.9rem; font-weight: 600;">タイムセール対象</span>
-                    </label>
                 </div>
             </div>
         </div>
