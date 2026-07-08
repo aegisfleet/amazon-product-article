@@ -1,0 +1,209 @@
+{
+  "analysis": {
+    "productName": "HIKMICRO Mini2 V2 サーモグラフィー",
+    "parentAsin": "B0D9HH5F3B",
+    "productDescription": "HIKMICROのMini2 V2は、iOSとAndroid両対応のスマホ向け超小型サーマルカメラです。256x192の赤外線解像度とSuperIR技術により高画質な熱画像を撮影でき、バッテリー不要で利用可能です。",
+    "productUsage": [
+      "電気設備の点検",
+      "配管の漏れ確認",
+      "住宅の断熱性チェック",
+      "DIYや電子工作の発熱箇所の特定"
+    ],
+    "positivePoints": [
+      "256x192の赤外線解像度に加え、SuperIR技術により画像処理が強化されている",
+      "iOS(Lightning)とAndroid(USB-C)両方のデバイスに接続できる付属品が揃っている",
+      "バッテリーレス設計のため、本体の充電不要でスマホに接続するだけで即座に利用できる",
+      "50°の広角レンズにより、一度に広い範囲の温度分布を確認できる",
+      "20gの超軽量・コンパクト設計で持ち運びに適している"
+    ],
+    "negativePoints": [
+      "ズーム機能（可変フォーカス）や可視光カメラとの合成機能は非搭載（上位機種には搭載）",
+      "スマートフォンから給電するため、長時間の使用時はスマホ側のバッテリー消費に注意が必要",
+      "ケースを装着したスマホの場合、コネクタが奥まで挿さらず延長ケーブルが必要になることがある"
+    ],
+    "useCases": [
+      "住宅の壁や窓際の断熱材の欠損確認",
+      "自作PCの基板上の発熱部品の特定",
+      "車のエンジンルームやエアコン吹き出し口の温度確認"
+    ],
+    "userStories": [
+      {
+        "userType": "DIY・電子工作愛好家",
+        "scenario": "自作PCと電子工作の基板チェックのために購入",
+        "experience": "以前は非接触の温度計を使って一つ一つ確認していましたが、Mini2 V2を導入してからは基板全体の発熱状況がひと目でわかるようになりました。256x192の解像度は十分高く、小さなICチップの発熱もはっきりと捉えられます。バッテリー充電が不要なので、思い立ったときにすぐスマホに挿して使える手軽さが決め手でした。",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "sentiment": "positive"
+      },
+      {
+        "userType": "戸建て住宅のオーナー",
+        "scenario": "冬場の隙間風や断熱不足の箇所を特定するために利用",
+        "experience": "家のどこから冷気が入ってくるのか視覚化したくて購入しました。50度の広角レンズのおかげで壁面全体を撮影しやすく、窓枠の隙間から冷たい空気が入っているのがはっきりと青く表示されて驚きました。スマホケースを外さないと直接挿さらない点は少し不便ですが、付属の延長ケーブルを使えば問題ありませんでした。",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "sentiment": "positive"
+      }
+    ],
+    "userImpression": "高解像度（256x192）と手頃な価格、そしてiOS/Android両対応の使い勝手の良さから、電子工作やDIY用途、自宅の簡易点検など幅広いユーザーに高く評価されています。フォーカス調整や可視光合成機能は省かれていますが、その分小型軽量で「スマホに挿すだけで使える手軽さ」が最大の魅力となっています。スマホケースとの干渉については延長ケーブルで対処できるため、大きな不満には繋がっていません。",
+    "sources": [
+      {
+        "id": "src-1",
+        "name": "Amazon商品ページ 仕様・特徴",
+        "url": "https://www.amazon.co.jp/dp/B0D9HH5F3B",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2024-07-01",
+        "author": "HIKMICRO",
+        "conflictOfInterest": "none",
+        "notes": "解像度、SuperIR技術、広角レンズ、バッテリー不要などの主要スペックを確認。iOS/Android対応。"
+      },
+      {
+        "id": "src-2",
+        "name": "Amazon競合製品ページ",
+        "url": "https://www.amazon.co.jp/dp/B0FKMXW2KN",
+        "tier": "high",
+        "evidenceType": "secondary",
+        "publishedAt": "2024-05-01",
+        "author": "Amazon",
+        "conflictOfInterest": "none",
+        "notes": "TOPDON TC002Cとの価格および仕様の比較。"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "SuperIRテクノロジーによる高画質化（解像感の向上）",
+        "category": "comparativeAdvantage",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "crossChecked": true,
+        "notes": "ハードウェアの256x192解像度に加え、ソフトウェア処理による高画質化を謳っている。"
+      }
+    ],
+    "lastInvestigated": "2026-07-08",
+    "competitiveAnalysis": [
+      {
+        "name": "TOPDON TC002C Duo",
+        "asin": "B0FKMXW2KN",
+        "priceComparison": "対象商品とほぼ同等（数千円の差）。TOPDONは解像度が高くiOS/Android両対応。",
+        "featureComparison": [
+          "共通点：iOS/Android両対応のスマホ直差し型サーモグラフィー。バッテリー不要設計。",
+          "相違点：対象商品は256x192解像度・50度広角に対し、競合はソフトウェア処理で512x384（ハードウェア解像度256x192同等）を謳う。"
+        ],
+        "differentiators": [
+          "HIKMICRO Mini2 V2の利点：サーマルカメラの専門ブランドとしての信頼性と、HIKMICRO Analyzerなど専用アプリの使い勝手を重視するならこちら。",
+          "TOPDON TC002C Duoの利点：自動車整備ツールなどで実績のあるTOPDONブランドを好む場合や、独自の画像処理（TISR）に期待するならこちら。"
+        ]
+      },
+      {
+        "name": "HIKMICRO Mini2Plus V2",
+        "asin": "B0D9HDF73F",
+        "priceComparison": "対象商品より約6,000円高い。上位機種の価格差分。",
+        "featureComparison": [
+          "共通点：HIKMICROの同世代製品。iOS/Android両対応。基本解像度は256x192で共通。",
+          "相違点：対象商品は固定フォーカス（広角）だが、競合（Plus）はマニュアルフォーカス（調整可能なレンズ）を搭載しており、遠近のピント調整が可能。"
+        ],
+        "differentiators": [
+          "HIKMICRO Mini2 V2の利点：近距離の基板チェックや室内の壁面確認など、ピント調整を気にせず手軽に広範囲を見たいならこちら。",
+          "HIKMICRO Mini2Plus V2の利点：電子部品の微小な発熱を接写で見たい、あるいは遠くの設備を正確に確認したいなど、ピントを精密に合わせる必要があるならこちら。"
+        ]
+      },
+      {
+        "name": "HIKMICRO MiniE",
+        "asin": "B0DKWPDK7G",
+        "priceComparison": "対象商品より約13,000円安い。エントリーモデルとしての価格設定。",
+        "featureComparison": [
+          "共通点：HIKMICROのスマホ用サーマルカメラ。iOS/Android両対応の付属品あり。",
+          "相違点：対象商品は256x192解像度だが、競合（MiniE）は192x192と解像度が低い。"
+        ],
+        "differentiators": [
+          "HIKMICRO Mini2 V2の利点：微小な温度差や細かな部品の発熱をより鮮明な画像で確認したいならこちら。",
+          "HIKMICRO MiniEの利点：用途が大まかな温度分布の確認（配管の大きな水漏れなど）に限られ、予算を少しでも抑えたいならこちら。"
+        ]
+      },
+      {
+        "name": "HIKMICRO Mini2 V2 (Android専用版)",
+        "asin": "B0FCMCK6W5",
+        "priceComparison": "対象商品よりわずかに安い（約1,200円差）。付属品の違い。",
+        "featureComparison": [
+          "共通点：カメラ本体の性能（256x192解像度、50度広角）は全く同じ。",
+          "相違点：対象商品はiOS用変換アダプタ付きだが、競合はType-C（AndroidおよびiPhone 15以降）専用パッケージ。"
+        ],
+        "differentiators": [
+          "HIKMICRO Mini2 V2（本製品）の利点：Lightning端子の古いiPhone（iPhone 14以前）でも使用したい、あるいは将来的な端末変更に備えて両方のコネクタを持っておきたいならこちら。",
+          "HIKMICRO Mini2 V2 (Android専用版)の利点：使用するスマートフォンが確実にType-C搭載機（AndroidやiPhone 15以降）であり、変換アダプタが不要ならこちら。"
+        ]
+      },
+      {
+        "name": "HIKMICRO Mini2W",
+        "asin": "B0DCFZ6BXL",
+        "priceComparison": "対象商品より約20,000円高い。上位の高機能モデル。",
+        "featureComparison": [
+          "共通点：iOS/Android両対応。基本の赤外線解像度は256x192。",
+          "相違点：対象商品は赤外線カメラのみだが、競合（Mini2W）は可視光カメラも搭載し、熱画像と実際の風景を重ね合わせて表示（フュージョン表示）できる。さらにフォーカス調整も可能。"
+        ],
+        "differentiators": [
+          "HIKMICRO Mini2 V2の利点：熱画像のみで十分な用途であり、コストとサイズ・重量を抑えたいならこちら。",
+          "HIKMICRO Mini2Wの利点：配管や壁内の配線など、熱源が実際の風景のどこにあるかを正確に重ね合わせてレポート等に記録したいならこちら。"
+        ]
+      },
+      {
+        "name": "HIKMICRO Mini2 (旧モデル)",
+        "asin": "B0BWYQ85P1",
+        "priceComparison": "対象商品より約6,500円安い。旧モデルのAndroid専用版。",
+        "featureComparison": [
+          "共通点：256x192解像度、50度広角の基本性能。",
+          "相違点：対象商品（V2）はiOSにも対応し測定温度範囲などの仕様が改善されているが、競合（旧モデル）はAndroid専用でiPhone非対応。"
+        ],
+        "differentiators": [
+          "HIKMICRO Mini2 V2の利点：iPhoneでの使用を想定している、または最新の仕様・ソフトウェア機能を利用したいならこちら。",
+          "HIKMICRO Mini2 (旧モデル)の利点：Android端末専用で割り切っており、型落ちによる安さを最優先するならこちら。"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "DIYや自作PCの基板チェック、自宅の簡易な点検をしたいが、本格的なピント調整や可視光カメラ合成までは不要で、手軽に高画質な熱画像を得たい人（下位のMiniEより高精細で、上位のMini2Wより安価なベストバランスを求める人）"
+      ],
+      "pros": [
+        "256x192の高解像度とSuperIR技術により、基板上の小さなICチップの発熱や壁のわずかな温度差も鮮明に確認できる",
+        "iOSとAndroid両方のコネクタが付属しているため、家族間で端末が異なる場合や、将来スマホを買い替えた際も引き続き利用できる",
+        "バッテリーレス設計のため、使いたい時にスマホに挿すだけで即座に起動でき、事前の充電管理という煩わしさがない"
+      ],
+      "cons": [
+        "マニュアルフォーカス非搭載の広角レンズのため、極端な接写でミリ単位の精密な部品を見たい場合は、ピント調整可能な上位モデル（Plus）を検討すること",
+        "可視光カメラは搭載していないため、報告書作成などで実際の風景と熱画像を重ね合わせた写真が必要な業務用途には向かない"
+      ],
+      "score": 85,
+      "scoreRationale": "[基本点: 70]\n[加点: +10] (256x192の高解像度とSuperIRによる優れた画質・性能)\n[加点: +5] (iOS/Android両対応の汎用性とバッテリーレスによる高い実用性)\n[加点: +5] (性能に対する3万円以下という優れたコストパフォーマンス)\n[減点: -5] (可変フォーカス非搭載による近接撮影の限界)\n[合計: 85]"
+    },
+    "technicalSpecs": {
+      "resolution": "256x192",
+      "fov": "50度 (広角)",
+      "frameRate": "25Hz",
+      "power": "0.36W (スマートフォンから給電)",
+      "weight": "20g",
+      "dimensions": {
+        "height": "420mm (パッケージ寸法)",
+        "width": "330mm (パッケージ寸法)",
+        "depth": "210mm (パッケージ寸法)"
+      },
+      "interface": "USB Type-C / Lightning (変換アダプター付属)",
+      "compatibility": "iOS / Android対応",
+      "features": [
+        "SuperIR技術",
+        "バッテリー不要",
+        "ビデオ録画対応"
+      ],
+      "accessories": [
+        "延長ケーブル(60cm)",
+        "USB-C延長アダプター",
+        "Lightning変換アダプター",
+        "収納バッグ"
+      ]
+    }
+  }
+}
