@@ -29,74 +29,60 @@
       "3Dデータ共有サイトからダウンロードしたおもちゃやフィギュアの出力。",
       "壊れた家電パーツの代替部品を設計・出力して修理。"
     ],
-    "userStories": [
-      {
-        "userType": "30代 エンジニア（DIY初心者）",
-        "scenario": "自宅のデスク周りを整理するためのカスタム収納を作りたかったが、3Dプリンターの調整が難しそうで敬遠していた。",
-        "experience": "AnkerMake M5Cを購入して驚いたのは、組み立てが本当に15分で終わり、オートレベリングのおかげで最初のプリントまで一切迷わなかったこと。スマホアプリからデータを送るだけで、寝ている間に複雑な形状のケーブルオーガナイザーが完成していた。動作音は少し気になったが、この手軽さは手放せない。（出典：Amazonレビューより要約）",
-        "sentiment": "positive"
-      },
-      {
-        "userType": "40代 ホビーユーザー",
-        "scenario": "以前は安価なキット式プリンターを使っていたが、調整に時間を取られすぎて創作意欲が削がれていた。",
-        "experience": "M5Cに乗り換えてからは「調整の時間」が「作る時間」に変わった。500mm/sの速度は圧倒的で、失敗してもすぐに再出力できるため試行錯誤のサイクルが劇的に早まった。ただ、本体で一時停止などの操作ができない点は少し不便に感じることもある。（出典：Tom's Hardwareレビューに基づく推測）",
-        "sentiment": "positive"
-      }
-    ],
+    "userStories": [],
     "userImpression": "「高速・簡単・安定」という評価が大多数を占める。特にアプリの使い勝手と組み立ての容易さは、初心者から高い支持を得ている。一方で、ファンの騒音と本体ディスプレイの欠如については賛否が分かれるポイント。最近の競合機種の低価格化により、コスパ面での厳しさを指摘する声も増えている。",
     "sources": [
       {
-        "name": "Tom's Hardware: AnkerMake M5C Review",
-        "url": "https://www.tomshardware.com/reviews/ankermake-m5c-3d-printer",
-        "credibility": "詳細なベンチマークテストと競合比較を行っており信頼性が高い。"
-      },
-      {
-        "name": "All3DP: AnkerMake M5C Review",
-        "url": "https://all3dp.com/1/ankermake-m5c-review-3d-printer-specs-price/",
-        "credibility": "3Dプリンター専門メディアとしての深い洞察がある。"
+        "id": "src-1",
+        "name": "Amazon Product Data",
+        "url": "https://www.amazon.co.jp/dp/B0CB3B4CJT",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-07-09",
+        "author": "Anker",
+        "conflictOfInterest": "none",
+        "notes": "公式スペックと特徴"
       }
     ],
-    "lastInvestigated": "2026-02-25",
+    "lastInvestigated": "2026-07-09",
     "competitiveAnalysis": [
       {
         "name": "Bambu Lab A1 mini",
         "asin": "B0CRYJBKQQ",
-        "priceComparison": "約30,000円（M5Cの定価の半額以下）と圧倒的に安価。",
+        "priceComparison": "M5Cの定価の半額以下と圧倒的に安価。価格重視の場合は強力な対抗馬となる。",
         "featureComparison": [
-          "造形サイズは180x180x180mmとM5Cより小さい。",
-          "AMS liteを使用することで4色マルチカラー印刷が可能。",
-          "動作音が非常に静か。"
+          "共通点：初心者向けのコンパクトなデスクトップ型3Dプリンター。",
+          "相違点：Bambu Lab A1 miniはAMS liteによるマルチカラー印刷に対応し、静音性に優れるが造形サイズは180x180x180mm。AnkerMake M5Cは単色ながら最大500mm/sの高速印刷と220x220x250mmのより大きな造形サイズを持つ。"
         ],
         "differentiators": [
-          "マルチカラー対応と圧倒的な静音性。",
-          "コストパフォーマンスが極めて高いが、造形サイズは小さい。"
+          "AnkerMake M5Cの利点：より大きな造形サイズと、スマホアプリ一つで完結する手軽で高速な造形環境を求めるなら迷わずこちら。",
+          "Bambu Lab A1 miniの利点：低コストで多色プリントを楽しみたい場合や、静音性を最重視するならこちら。"
         ]
       },
       {
         "name": "Creality Ender-3 V3 KE",
         "asin": "B0CLXR2W8N",
-        "priceComparison": "約47,000円とM5Cより安価。",
+        "priceComparison": "M5Cより安価な設定。単体操作可能なディスプレイなどコストパフォーマンスに優れる。",
         "featureComparison": [
-          "最大500mm/sの高速印刷でスペックは同等。",
-          "本体にタッチパネルを搭載しており、単体での操作性が良い。",
-          "造形サイズは220x220x240mmとほぼ同等。"
+          "共通点：最大500mm/sの高速印刷に対応し、造形サイズもほぼ同等。",
+          "相違点：Ender-3 V3 KEは本体にタッチスクリーンを搭載し単体操作が可能で、オープンソースベースの拡張性が高い。AnkerMake M5Cは本体ディスプレイを廃し、スマホアプリ連携に特化している。"
         ],
         "differentiators": [
-          "ディスプレイ搭載による操作性の良さ。",
-          "オープンソースベースの拡張性。"
+          "AnkerMake M5Cの利点：デザインの洗練さと、アプリ連携による現代的で直感的な操作体験を重視するなら迷わずこちら。",
+          "Creality Ender-3 V3 KEの利点：本体のタッチスクリーンで直接操作したい場合や、オープンソースの拡張性を活かしてカスタマイズしたいならこちら。"
         ]
       },
       {
         "name": "Creality Ender-3 V3 SE",
         "asin": "B0FQ4NLJ6V",
-        "priceComparison": "約32,000円と非常に安価。",
+        "priceComparison": "非常に安価なエントリー機。速度を妥協できれば低コストで導入可能。",
         "featureComparison": [
-          "最大速度は250mm/sとM5Cの半分。",
-          "オートレベリング等の基本機能は搭載している。"
+          "共通点：オートレベリング機能を備え、初心者の初期設定が容易。",
+          "相違点：Ender-3 V3 SEは最大速度が250mm/sに留まるが徹底した低価格。AnkerMake M5Cはその倍の500mm/sの高速印刷に対応。"
         ],
         "differentiators": [
-          "徹底した低価格。",
-          "速度を重視しない入門者向け。"
+          "AnkerMake M5Cの利点：造形の待ち時間を減らす圧倒的なスピードとスマホ操作の利便性を重視するなら迷わずこちら。",
+          "Creality Ender-3 V3 SEの利点：印刷速度には妥協できるので、とにかく本体価格を抑えたいならこちら。"
         ]
       }
     ],
@@ -116,8 +102,8 @@
         "Bambu Lab A1 mini等の強力な競合に対し、価格面で不利。",
         "動作音が大きめ。"
       ],
-      "score": 78,
-      "scoreRationale": "[基本点: 70]\n[加点: +8] (性能・機能: 500mm/sの高速性とアプリの完成度は依然として高水準)\n[加点: +2] (品質・デザイン: Ankerらしいビルドクオリティの高さ)\n[加点: +5] (ユーザー満足度: 初心者でも挫折しない使いやすさは高評価)\n[減点: -5] (コストパフォーマンス: 競合（特にBambu Lab A1 mini）が半額近い価格で高性能機を出しており、相対的な価値が低下)\n[減点: -2] (性能・機能: ディスプレイなしの不便さと騒音)\n[合計: 78]"
+      "score": 71,
+      "scoreRationale": "[基本点: 70]\n[加点: +5] (500mm/sの高速プリント性能)\n[加点: +3] (スマホアプリによる直感的な操作性)\n[加点: +2] (オートレベリングによる初期設定の容易さ)\n[減点: -5] (競合機と比較した際の価格の割高感)\n[減点: -2] (本体ディスプレイの欠如)\n[減点: -2] (高速動作時のファンの騒音)\n[合計: 71]"
     },
     "technicalSpecs": {
       "printTechnology": "FDM (熱溶解積層法)",
@@ -134,15 +120,41 @@
         "maxTemperature": "100℃",
         "surface": "PEIマグネットシート"
       },
-      "connectivity": ["Wi-Fi", "Bluetooth", "USB-C"],
-      "supportedMaterials": ["PLA", "PETG", "ABS", "TPU", "PA"],
+      "connectivity": [
+        "Wi-Fi",
+        "Bluetooth",
+        "USB-C"
+      ],
+      "supportedMaterials": [
+        "PLA",
+        "PETG",
+        "ABS",
+        "TPU",
+        "PA"
+      ],
       "dimensions": {
         "width": "466mm",
         "depth": "374mm",
         "height": "480mm",
         "weight": "11kg"
       },
-      "other": ["オートレベリング(7x7)", "フィラメント切れ検知", "停電復帰機能"]
-    }
+      "other": [
+        "オートレベリング(7x7)",
+        "フィラメント切れ検知",
+        "停電復帰機能"
+      ]
+    },
+    "claims": [
+      {
+        "claim": "最大移動速度500mm/sの高速プリント",
+        "category": "comparativeAdvantage",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "crossChecked": false,
+        "notes": "公式スペックにより確認。"
+      }
+    ]
   }
 }
