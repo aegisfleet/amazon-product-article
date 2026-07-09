@@ -273,7 +273,7 @@
         display: block;
     }
 </style>
-<div class="container recommendations-container theme-orange">
+<div class="container recommendations-container">
     {{- partial "breadcrumb.html" . -}}
 
     {{- $todayData := hugo.Data.recommendations.today -}}
@@ -392,7 +392,7 @@
     </section>
 
     <!-- フィルタ & ソートUI -->
-    <div class="rec-controls" id="rec-controls">
+    <div class="rec-controls theme-orange" id="rec-controls">
         <div class="rec-filter-group">
             <span class="rec-filter-label">カテゴリ</span>
             <div class="rec-chip-row" id="rec-category-chips">
