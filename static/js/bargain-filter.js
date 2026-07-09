@@ -245,14 +245,17 @@ document.addEventListener('DOMContentLoaded', () => {
     updateSliderDisplays();
     debouncedApplyFilters();
   });
+  setupSliderTouchPrevention(scoreSlider);
   minPriceSlider.addEventListener('input', () => {
     updateSliderDisplays();
     debouncedApplyFilters();
   });
+  setupSliderTouchPrevention(minPriceSlider);
   priceSlider.addEventListener('input', () => {
     updateSliderDisplays();
     debouncedApplyFilters();
   });
+  setupSliderTouchPrevention(priceSlider);
   if (categorySelect) categorySelect.addEventListener('change', applyFilters);
   if (resetBtn) resetBtn.addEventListener('click', resetFilters);
   if (categoryResetBtn) {
