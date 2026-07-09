@@ -22,29 +22,22 @@
       "家事や育児の合間の短い休憩",
       "勉強中の糖分補給"
     ],
-    "userStories": [
-      {
-        "userType": "30代 会社員",
-        "scenario": "職場のデスクでの休憩時間",
-        "experience": "（推測）忙しい仕事の合間に、手軽に甘いものでリフレッシュしたい時に重宝しています。お湯を注ぐだけですぐに濃厚なミルクティーが完成するので、時間を有効に使えます。個包装でデスクの引き出しに常備できるのも嬉しいポイントです。",
-        "sentiment": "positive"
-      },
-      {
-        "userType": "20代 学生",
-        "scenario": "試験勉強中の夜食",
-        "experience": "（推測）勉強で疲れた頭に甘いものが欲しくなる時にぴったりです。コストパフォーマンスが良いので、毎日飲んでもお財布に優しいのが助かります。ただ、少し人工的な甘さが舌に残る感じがするので、好みが分かれるかもしれません。",
-        "sentiment": "mixed"
-      }
-    ],
+    "userStories": [],
     "userImpression": "手軽さとコストパフォーマンスを最優先するユーザー向けの製品。お湯を注ぐだけで手軽に甘くてクリーミーなミルクティーを楽しめる点が最大の魅力です。一方で、味の好み、特に甘味料の使用については評価が分かれる可能性があります。本格的な紅茶の風味を求めるよりは、日常的な飲料として気軽に楽しむのに適しています。",
     "sources": [
       {
+        "id": "src-amazon",
         "name": "Amazon Product Page (via PA-API)",
         "url": "https://www.amazon.co.jp/dp/B0DVSHDJL5",
-        "credibility": "Official product information"
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-07-10",
+        "author": "AGF",
+        "conflictOfInterest": "disclosed",
+        "notes": "Official product information"
       }
     ],
-    "lastInvestigated": "2026-02-25",
+    "lastInvestigated": "2026-07-10",
     "competitiveAnalysis": [
       {
         "name": "ネスレ ふわラテ 香るミルクティー 26P",
@@ -103,19 +96,20 @@
       "scoreRationale": "[基本点: 70]\n[加点: +15] (コストパフォーマンス: 1杯約27円という価格は非常に魅力的)\n[加点: +5] (性能・機能: お湯だけで誰でも簡単に作れる手軽さは明確な強み)\n[減点: -5] (品質・デザイン: 人工甘味料を使用しているため、味の好みが分かれ、品質面で万人に受け入れられるとは言えない)\n[減点: -5] (ユーザー満足度: 新商品でレビューがまだなく、市場での評価が未知数であるため)\n[合計: 80]"
     },
     "technicalSpecs": {
-      "ingredients": "クリーミングパウダー（乳成分を含む）（国内製造）、砂糖、脱脂粉乳、紅茶エキス、デキストリン ／ pH調整剤、乳たん白、香料（乳由来）、甘味料（アスパルテーム・L-フェニルアラニン化合物、アセスルファムK）、乳化剤、微粒酸化ケイ素、調味料（アミノ酸等）",
-      "content": "24本 (1箱あたり)",
-      "caloriesPerServing": null,
-      "allergens": [
-        "乳成分"
-      ],
-      "packageDimensions": {
+      "dimensions": {
         "height": "13.2cm",
         "width": "14.1cm",
-        "depth": "7cm",
-        "weight": null
+        "depth": "7cm"
       },
-      "servingSize": null
-    }
+      "weight": "不明",
+      "capacity": "24本",
+      "material": "不明",
+      "origin": "国内製造（原材料の一部）",
+      "other": [
+        "原材料:クリーミングパウダー（乳成分を含む）（国内製造）、砂糖、脱脂粉乳、紅茶エキス、デキストリン ／ pH調整剤、乳たん白、香料（乳由来）、甘味料（アスパルテーム・L-フェニルアラニン化合物、アセスルファムK）、乳化剤、微粒酸化ケイ素、調味料（アミノ酸等）",
+        "アレルゲン: 乳成分"
+      ]
+    },
+    "claims": []
   }
 }
