@@ -412,9 +412,11 @@ function setupSliderTouchPrevention(slider) {
 
   let startX = 0;
   let startY = 0;
-  let startVal = '';
+  let startVal = slider.value;
   let isScrolling = false;
   let isSliding = false;
+  let isTouchActive = false;
+  let hasDispatched = false;
 
   slider.addEventListener('touchstart', (e) => {
     const touch = e.touches[0];
@@ -423,41 +425,64 @@ function setupSliderTouchPrevention(slider) {
     startVal = slider.value;
     isScrolling = false;
     isSliding = false;
+    isTouchActive = true;
+    hasDispatched = false;
   }, { passive: true });
 
   slider.addEventListener('touchmove', (e) => {
-    if (isScrolling) return;
+    if (!isTouchActive) return;
 
     const touch = e.touches[0];
     const dx = touch.clientX - startX;
     const dy = touch.clientY - startY;
 
     if (!isScrolling && !isSliding) {
-      if (Math.abs(dy) > Math.abs(dx) && Math.abs(dy) > 5) {
+      if (Math.abs(dy) > Math.abs(dx) && Math.abs(dy) > 8) {
         isScrolling = true;
-        if (slider.value !== startVal) {
-          slider.value = startVal;
-          slider.dispatchEvent(new Event('input', { bubbles: true }));
-        }
-      } else if (Math.abs(dx) > Math.abs(dy) && Math.abs(dx) > 5) {
+      } else if (Math.abs(dx) > Math.abs(dy) && Math.abs(dx) > 8) {
         isSliding = true;
+        if (!hasDispatched) {
+          hasDispatched = true;
+          const customEvent = new CustomEvent('input', {
+            bubbles: true,
+            cancelable: true,
+            detail: { sentBySystem: true }
+          });
+          slider.dispatchEvent(customEvent);
+        }
       }
     }
 
     if (isScrolling) {
-      if (slider.value !== startVal) {
-        slider.value = startVal;
-        slider.dispatchEvent(new Event('input', { bubbles: true }));
-      }
+      slider.value = startVal;
     }
   }, { passive: true });
 
   slider.addEventListener('touchend', () => {
+    isTouchActive = false;
     if (isScrolling) {
-      if (slider.value !== startVal) {
-        slider.value = startVal;
-        slider.dispatchEvent(new Event('input', { bubbles: true }));
-      }
+      slider.value = startVal;
+    } else if (!isSliding && !isScrolling) {
+      hasDispatched = true;
+      const customEvent = new CustomEvent('input', {
+        bubbles: true,
+        cancelable: true,
+        detail: { sentBySystem: true }
+      });
+      slider.dispatchEvent(customEvent);
     }
   }, { passive: true });
+
+  slider.addEventListener('input', (e) => {
+    if (e.detail?.sentBySystem) {
+      return;
+    }
+
+    if (isTouchActive) {
+      if (isScrolling || !isSliding) {
+        e.stopImmediatePropagation();
+        e.preventDefault();
+      }
+    }
+  }, true);
 }
