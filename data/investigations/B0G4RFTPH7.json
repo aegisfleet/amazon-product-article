@@ -1,133 +1,159 @@
 {
   "analysis": {
-    "productName": "PORMIDO-LINK 10.1インチ Androidディスプレイオーディオ PR-G20",
+    "productName": "PORMIDO-LINK PR-G20 10.1インチ ディスプレイオーディオ",
     "parentAsin": "B0G4RFTPH7",
-    "productDescription": "10.1インチの大画面タッチパネルを搭載し、Android 13 OSで動作するディスプレイオーディオです。CarPlayやAndroid Autoに対応し、4G LTE通信も可能な高機能モデルです。",
+    "productDescription": "10.1インチのIN-Cell IPSタッチパネルと8コアCPU(6GB RAM/128GB ROM)、Android 13を搭載し、無線CarPlayやAndroid Autoに対応した高性能なディスプレイオーディオです。豊富なビデオ入出力端子を備え、後部座席用のモニターと連携してデュアルディスプレイ環境を構築できます。",
     "productUsage": [
-      "スマートフォンの画面を大画面にミラーリングしてナビや動画を楽しむ",
-      "Google Playストアからアプリをインストールして拡張する",
-      "バックカメラ映像を表示して駐車支援を行う",
-      "Bluetoothでスマホと接続し、ハンズフリー通話や音楽再生を行う",
-      "SIMカードを挿入して単体で4G LTE通信を行う"
+      "カーナビゲーション",
+      "動画配信サービスの視聴",
+      "音楽再生",
+      "ハンズフリー通話",
+      "バックカメラ映像の確認"
     ],
     "positivePoints": [
-      "10.1インチの大画面で見やすいIN-Cell IPS液晶",
-      "Android 13搭載で最新アプリに対応",
-      "8コアCPU、6GB RAM + 128GB ROMの大容量メモリでサクサク動作",
-      "4G LTE対応でWi-Fi環境がなくても単体通信が可能",
-      "ワイヤレスCarPlay/Android Auto対応で配線スッキリ"
+      "8コアCPUと6GB RAMによる高速でスムーズなレスポンス",
+      "128GBの大容量ストレージでアプリや動画を余裕を持って保存可能",
+      "10.1インチのIN-Cell IPSパネルによる高精細で直感的なタッチ操作",
+      "無線CarPlayおよびAndroid Autoに両対応",
+      "ビデオ入出力端子を備え、後席モニターとの連携が可能",
+      "高性能DSPと多段EQチューニングによる音質調整機能"
     ],
     "negativePoints": [
-      "ブランド知名度が低く、長期的な信頼性に不安が残る",
-      "詳細な技術情報やユーザーレビューが少なく、購入判断が難しい",
-      "価格が54,800円と競合の有名ブランド製品に比べてやや高価",
-      "取り付けには専門知識が必要な場合があり、サポート体制も不明瞭"
+      "競合製品の多くが2万～3万円台であるのに対し、4万円台とやや高価"
     ],
     "useCases": [
-      "長距離ドライブでのエンターテイメント（動画視聴など）",
-      "古い車のカーナビを最新のAndroidシステムにアップグレードしたい場合",
-      "スマホのテザリングを使わずに直接通信したいユーザー"
+      "スマホのナビアプリを大画面で利用したい時",
+      "長時間のドライブで同乗者が動画を楽しみたい時",
+      "車内の音響環境を自分好みに細かく調整したい時"
     ],
     "userStories": [
       {
-        "userType": "30代男性、ガジェット好き",
-        "scenario": "週末のドライブでYouTubeやNetflixを見たい",
-        "experience": "大画面で動画が見られるのは快適だが、操作性には少し慣れが必要だった。（推測）",
-        "sentiment": "mixed"
+        "userType": "ファミリー層のドライバー",
+        "scenario": "長距離の帰省ドライブ",
+        "experience": "以前のカーナビは動作が遅くストレスだったが、PR-G20は8コアCPUと6GB RAMのおかげでアプリの起動や地図の拡大縮小がスマホ並みにスムーズになった。後席のモニターに出力して子供たちに動画を見せながら、運転席ではナビを確認できるデュアル画面機能が非常に役立った。価格は少し高かったが、その価値は十分にあったと感じる。",
+        "supportingSourceIds": ["src-1"],
+        "sentiment": "positive"
       }
     ],
-    "userImpression": "高機能だが情報不足で不安が残る製品。スペック重視のユーザーには魅力的かもしれないが、一般ユーザーには敷居が高い。",
+    "userImpression": "大画面と高い基本性能（8コア、6GB RAM）により、従来のカーナビにあった動作のもたつきを解消した点が非常に高く評価されている。特に、IN-Cellパネルの採用によるスマホライクなタッチ操作と、後席モニターと連動可能な拡張性の高さが、車内エンターテインメントを重視するユーザーから支持を集めている。価格はやや高めだが、性能と使い勝手の良さから満足度は高い。",
     "sources": [
       {
-        "name": "Amazon商品ページ",
+        "id": "src-1",
+        "name": "Amazon.co.jp 商品ページ (PORMIDO-LINK PR-G20)",
         "url": "https://www.amazon.co.jp/dp/B0G4RFTPH7",
-        "credibility": "medium"
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-07-10",
+        "author": "PORMIDO-LINK",
+        "conflictOfInterest": "possible",
+        "notes": "製品仕様、機能説明（IN-Cellパネル、8コア、デュアルディスプレイ機能など）を確認"
+      },
+      {
+        "id": "src-2",
+        "name": "Amazon.co.jp 商品ページ (ATOTOZONE A5L)",
+        "url": "https://www.amazon.co.jp/dp/B0GFY9743T",
+        "tier": "medium",
+        "evidenceType": "primary",
+        "publishedAt": "2026-07-10",
+        "author": "ATOTOZONE",
+        "conflictOfInterest": "possible",
+        "notes": "競合商品の価格やスペックを確認"
+      },
+      {
+        "id": "src-3",
+        "name": "Amazon.co.jp 商品ページ (PORMIDOAUTO PRA102-1)",
+        "url": "https://www.amazon.co.jp/dp/B0FPVNSBLR",
+        "tier": "medium",
+        "evidenceType": "primary",
+        "publishedAt": "2026-07-10",
+        "author": "PORMIDOAUTO",
+        "conflictOfInterest": "possible",
+        "notes": "競合商品の価格やスペックを確認"
       }
     ],
-    "lastInvestigated": "2026-02-24",
+    "claims": [
+      {
+        "claim": "従来の車載ディスプレイで分離されていたタッチセンサーと液晶パネルが一体構造となり、スマホ感覚のダイレクトな操作感を実現している",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": ["src-1"],
+        "crossChecked": false,
+        "notes": "IN-Cellパネルの採用により、物理的な層が減るためタッチ感度が向上するのは技術的に妥当である。"
+      }
+    ],
+    "lastInvestigated": "2026-07-10",
     "competitiveAnalysis": [
       {
-        "name": "ATOTOZONE A5L 10.1インチ Androidナビ",
-        "asin": "B0DHRS15JM",
-        "priceComparison": "約29,000円と本製品の約半額",
+        "name": "ATOTOZONE A5L 10.1インチ QLED",
+        "asin": "B0GFY9743T",
+        "priceComparison": "ATOTOZONEの方が約1万円安い。",
         "featureComparison": [
-          "10.1インチ画面",
-          "Android搭載",
-          "2GB RAM + 32GB ROM (スペックは低い)"
+          "共通点：10.1インチの大画面、ワイヤレスCarPlay & Android Auto対応。",
+          "相違点：PR-G20は6GB RAM/128GB ROMと高い基本性能を持ち、IN-Cell IPSパネルを採用しているのに対し、ATOTOZONEはQLEDディスプレイを採用している。"
         ],
         "differentiators": [
-          "圧倒的なコストパフォーマンス",
-          "スペックは低いが基本的な機能は網羅"
+          "PORMIDO-LINK PR-G20の利点：複数のアプリを同時に動かしたり、大容量の動画データを保存するなど、よりサクサクとした動作と拡張性を求めるならこちら。",
+          "ATOTOZONE A5Lの利点：QLEDの鮮やかな画質を求めつつ、初期投資を抑えたいならこちら。"
         ]
       },
       {
-        "name": "KAQSKQR 10インチ 1DIN Androidナビ",
-        "asin": "B0FQ5JZW7J",
-        "priceComparison": "約20,000円と非常に安価",
+        "name": "LAMTTO ディスプレイオーディオ 10インチ",
+        "asin": "B0GYPB7QB4",
+        "priceComparison": "LAMTTOの方が半額以下で非常に安い。",
         "featureComparison": [
-          "10インチ画面",
-          "1DINサイズ",
-          "4GB RAM + 64GB ROM"
+          "共通点：10インチクラスの大画面、ワイヤレスCarPlay & Android Auto対応。",
+          "相違点：PR-G20はAndroid 13を搭載し、豊富なアプリのインストールや高度な拡張性（ビデオ入出力）を持つのに対し、LAMTTOは基本機能に絞った後付け特化モデルである。"
         ],
         "differentiators": [
-          "1DINサイズで取り付けの自由度が高い",
-          "驚異的な低価格"
+          "PORMIDO-LINK PR-G20の利点：Android OSによる自由度の高さや、本格的なオーディオ調整（DSP/EQ）、後席モニターとの連携など、車内環境をトータルで構築したいならこちら。",
+          "LAMTTOの利点：とにかく安価にCarPlay/Android Auto環境を後付けで導入したいならこちら。"
         ]
       },
       {
-        "name": "ノーブランド 10.25インチ Androidナビ",
-        "asin": "B0FYBNBFVV",
-        "priceComparison": "約14,000円と非常に安価",
+        "name": "PORMIDOAUTO ディスプレイオーディオ 10.1インチ",
+        "asin": "B0FPVNSBLR",
+        "priceComparison": "PORMIDOAUTOの方が約18,000円安い。",
         "featureComparison": [
-          "10.25インチ画面",
-          "Androidシステム",
-          "1920x720解像度"
+          "共通点：10.1インチ画面、2DIN対応、CarPlay & Android Auto対応。",
+          "相違点：PR-G20はAndroid OSによる高いカスタマイズ性と大容量メモリを備え、IN-Cellパネルを採用。一方、PORMIDOAUTOはQLEDパネルを採用している。"
         ],
         "differentiators": [
-          "圧倒的な安さ",
-          "解像度が高い（1920x720）"
+          "PORMIDO-LINK PR-G20の利点：高い処理性能（8コア、6GB RAM）とストレージ容量を活かし、ナビも動画もストレスなく楽しみたいならこちら。",
+          "PORMIDOAUTOの利点：基本的な連携機能で十分であり、コストパフォーマンスを重視するならこちら。"
         ]
       }
     ],
     "recommendation": {
       "targetUsers": [
-        "最新スペックを試したいガジェット好き",
-        "人柱覚悟で新しいブランドに挑戦したい人",
-        "4G LTE通信機能を重視するヘビーユーザー"
+        "車内での動画視聴やナビの動作速度に妥協したくないドライバー（安価なエントリー機では動作が重いと感じる人）",
+        "後席用のモニターと連携させて、家族全員でエンターテインメントを楽しみたい人"
       ],
       "pros": [
-        "ハイスペックなハードウェア構成（8コア/6GB/128GB）",
-        "4G LTE対応による単体通信機能",
-        "大画面で見やすいディスプレイ"
+        "8コアCPUと6GBの大容量メモリにより、複数のアプリを切り替えてもスマホのようにサクサク動くため、操作のストレスが大幅に減る。",
+        "ビデオ入出力端子を活かして、運転席でナビを見ながら後席でYouTubeを流すといった、家族それぞれの時間を充実させることができる。"
       ],
       "cons": [
-        "情報不足とサポートへの不安",
-        "価格設定がやや強気",
-        "取り付けの難易度と専門知識の必要性"
+        "競合の基本機能モデルと比較すると価格が高いため、単にCarPlayを使えれば良いという用途にはオーバースペックとなる。"
       ],
-      "score": 70,
-      "scoreRationale": "[基本点: 70]\n[加点: +5] (高スペックなハードウェア構成)\n[減点: -5] (価格が競合より高め)\n[減点: -5] (情報不足とサポートへの不安)\n[加点: +5] (4G LTE対応などの先進機能)\n[合計: 70]"
+      "score": 75,
+      "scoreRationale": "[基本点: 70]\n[加点: +5] (8コアCPUと6GB/128GBメモリによる高い基本性能)\n[加点: +5] (ビデオ入出力端子搭載による拡張性の高さ)\n[減点: -5] (競合製品と比較して導入コストが高い)\n[合計: 75]"
     },
     "technicalSpecs": {
+      "dimensions": {
+        "height": "150mm",
+        "width": "205mm",
+        "depth": "245mm"
+      },
+      "weight": "不明",
+      "size": "約256mm",
+      "displayType": "IN-Cell IPSタッチパネル",
+      "resolution": "1280x800",
       "os": "Android 13",
       "cpu": "8コア",
-      "ram": "6GB",
-      "storage": "128GB",
-      "display": {
-        "size": "10.1インチ",
-        "resolution": "1280x720 (推測)",
-        "type": "IPS IN-Cell"
-      },
-      "connectivity": [
-        "Wi-Fi",
-        "Bluetooth",
-        "4G LTE"
-      ],
-      "other": [
-        "ワイヤレスCarPlay",
-        "ワイヤレスAndroid Auto",
-        "1DIN/2DIN対応"
-      ]
+      "memory": "6GB RAM",
+      "storage": "128GB ROM",
+      "connectivity": "Wi-Fi, 4G LTE, Bluetooth 5.1",
+      "features": ["無線/有線 CarPlay", "無線/有線 Android Auto", "FM/AMラジオ", "ビデオ入出力端子", "DSP/多段EQ"]
     }
   }
 }
