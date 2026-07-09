@@ -1733,15 +1733,15 @@ a.competitor-preview:hover {
   display: flex;
   align-items: center;
   gap: var(--spacing-sm);
-  background: linear-gradient(to bottom, #f7dfa5, #f0c14b);
-  color: #111;
+  background: linear-gradient(135deg, #f97316, #d97706);
+  color: #fff;
   padding: 0.5rem 1rem;
-  border: 1px solid #a88734;
+  border: 1px solid #d97706;
   border-radius: var(--radius-md);
   font-weight: 600;
   font-size: 0.95rem;
   text-decoration: none;
-  box-shadow: 0 1px 0 rgba(255, 255, 255, .4) inset;
+  box-shadow: 0 2px 8px rgba(249, 115, 22, 0.25);
   transition: all 0.2s ease;
   position: relative;
   overflow: hidden;
@@ -1749,14 +1749,14 @@ a.competitor-preview:hover {
 
 .today-recommendation-link:visited,
 .today-recommendation-link:active {
-  color: #111;
+  color: #fff;
 }
 
 .today-recommendation-link:hover {
-  background: linear-gradient(to bottom, #f5d78e, #eeb933);
-  color: #111;
+  background: linear-gradient(135deg, #ea580c, #b45309);
+  color: #fff;
   transform: translateY(-2px);
-  box-shadow: 0 1px 0 rgba(255, 255, 255, .4) inset, 0 2px 5px rgba(0, 0, 0, .12);
+  box-shadow: 0 4px 12px rgba(249, 115, 22, 0.35);
   cursor: pointer;
 }
 
@@ -1766,20 +1766,20 @@ a.competitor-preview:hover {
 }
 
 [data-theme="dark"] .today-recommendation-link {
-  background: linear-gradient(to bottom, #ffad33, #ff9900);
-  border-color: #c47900;
-  color: #232f3e;
-  box-shadow: 0 1px 0 rgba(255, 255, 255, .2) inset;
+  background: linear-gradient(135deg, #f97316, #ea580c);
+  border-color: #fb923c;
+  color: #fff;
+  box-shadow: 0 2px 8px rgba(251, 146, 60, 0.2);
 }
 
 [data-theme="dark"] .today-recommendation-link:hover {
-  background: linear-gradient(to bottom, #ffb84d, #ffa31a);
-  color: #232f3e;
+  background: linear-gradient(135deg, #ea580c, #c2410c);
+  color: #fff;
 }
 
 [data-theme="dark"] .today-recommendation-link:visited,
 [data-theme="dark"] .today-recommendation-link:active {
-  color: #232f3e;
+  color: #fff;
 }
 
 .today-recommendation-icon {
@@ -3857,6 +3857,28 @@ a.competitor-preview:hover {
   --text-tag: #fca5a5;
 }
 
+.theme-orange {
+  --color-primary: #ea580c;
+  --color-primary-rgb: 234, 88, 12;
+  --color-primary-dark: #c2410c;
+  --color-primary-light: #fef2f2;
+  --color-primary-light-rgb: 254, 242, 242;
+  --color-secondary: #f97316;
+  --bg-tag: #ffedd5;
+  --text-tag: #c2410c;
+}
+
+[data-theme="dark"] .theme-orange {
+  --color-primary: #f97316;
+  --color-primary-rgb: 249, 115, 22;
+  --color-primary-dark: #7c2d12;
+  --color-primary-light: #fdbb74;
+  --color-primary-light-rgb: 253, 187, 116;
+  --color-secondary: #fb923c;
+  --bg-tag: #7c2d12;
+  --text-tag: #ffedd5;
+}
+
 /* =====================================================
    BARGAIN PAGE — 「あともう一品」特設ページ
    ===================================================== */
@@ -4936,5 +4958,63 @@ a.competitor-preview:hover {
   :root:not([data-theme="light"]) .deals-hero {
     border-color: #fb923c !important;
     box-shadow: 0 4px 20px rgba(251, 146, 60, 0.15) !important;
+  }
+}
+
+/* --- Recommendations Hero --- */
+.recommendations-hero {
+  text-align: center;
+  padding: var(--spacing-lg) var(--spacing-md);
+  margin-bottom: var(--spacing-lg);
+  background: linear-gradient(135deg, #ffedd5 0%, #fed7aa 50%, #fdbb74 100%) !important;
+  border-radius: var(--radius-xl);
+  border: 2px solid #ea580c !important;
+  box-shadow: 0 4px 20px rgba(234, 88, 12, 0.15) !important;
+}
+
+.recommendations-hero .bargain-hero-title {
+  color: #ea580c !important;
+}
+
+.recommendations-hero .bargain-hero-subtitle {
+  color: #c2410c !important;
+}
+
+.recommendations-hero .bargain-hero-desc {
+  color: #374151 !important;
+}
+
+[data-theme="dark"] .recommendations-hero {
+  background: linear-gradient(135deg, #7c2d12 0%, #9a3412 50%, #ea580c 100%) !important;
+  border-color: #f97316 !important;
+  box-shadow: 0 4px 20px rgba(249, 115, 22, 0.2) !important;
+}
+
+[data-theme="dark"] .recommendations-hero .bargain-hero-title {
+  color: #ffedd5 !important;
+}
+
+[data-theme="dark"] .recommendations-hero .bargain-hero-subtitle {
+  color: #fed7aa !important;
+}
+
+[data-theme="dark"] .recommendations-hero .bargain-hero-desc {
+  color: #f3f4f6 !important;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .recommendations-hero {
+    background: linear-gradient(135deg, #7c2d12 0%, #9a3412 50%, #ea580c 100%) !important;
+    border-color: #f97316 !important;
+    box-shadow: 0 4px 20px rgba(249, 115, 22, 0.2) !important;
+  }
+  :root:not([data-theme="light"]) .recommendations-hero .bargain-hero-title {
+    color: #ffedd5 !important;
+  }
+  :root:not([data-theme="light"]) .recommendations-hero .bargain-hero-subtitle {
+    color: #fed7aa !important;
+  }
+  :root:not([data-theme="light"]) .recommendations-hero .bargain-hero-desc {
+    color: #f3f4f6 !important;
   }
 }
