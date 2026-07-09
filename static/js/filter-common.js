@@ -403,4 +403,61 @@ function initKeywordSearch(keywordInput, keywordClearBtn, onSearchInput, onSearc
   }
 }
 
+/**
+ * モバイル端末でのスライダーの誤操作（スクロール時の意図しない値変化）を防止する
+ * @param {HTMLInputElement} slider 
+ */
+function setupSliderTouchPrevention(slider) {
+  if (!slider) return;
 
+  let startX = 0;
+  let startY = 0;
+  let startVal = '';
+  let isScrolling = false;
+  let isSliding = false;
+
+  slider.addEventListener('touchstart', (e) => {
+    const touch = e.touches[0];
+    startX = touch.clientX;
+    startY = touch.clientY;
+    startVal = slider.value;
+    isScrolling = false;
+    isSliding = false;
+  }, { passive: true });
+
+  slider.addEventListener('touchmove', (e) => {
+    if (isScrolling) return;
+
+    const touch = e.touches[0];
+    const dx = touch.clientX - startX;
+    const dy = touch.clientY - startY;
+
+    if (!isScrolling && !isSliding) {
+      if (Math.abs(dy) > Math.abs(dx) && Math.abs(dy) > 5) {
+        isScrolling = true;
+        if (slider.value !== startVal) {
+          slider.value = startVal;
+          slider.dispatchEvent(new Event('input', { bubbles: true }));
+        }
+      } else if (Math.abs(dx) > Math.abs(dy) && Math.abs(dx) > 5) {
+        isSliding = true;
+      }
+    }
+
+    if (isScrolling) {
+      if (slider.value !== startVal) {
+        slider.value = startVal;
+        slider.dispatchEvent(new Event('input', { bubbles: true }));
+      }
+    }
+  }, { passive: true });
+
+  slider.addEventListener('touchend', () => {
+    if (isScrolling) {
+      if (slider.value !== startVal) {
+        slider.value = startVal;
+        slider.dispatchEvent(new Event('input', { bubbles: true }));
+      }
+    }
+  }, { passive: true });
+}
