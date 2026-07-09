@@ -5034,7 +5034,7 @@ a.competitor-preview:hover {
 }
 
 [data-theme="dark"] .recommendations-container .rank-badge {
-  background: #ea580c !important;
+  background: #c2410c !important;
   color: #fff !important;
 }
 
@@ -5043,7 +5043,7 @@ a.competitor-preview:hover {
     border-left-color: #ea580c !important;
   }
   :root:not([data-theme="light"]) .recommendations-container .rank-badge {
-    background: #ea580c !important;
+    background: #c2410c !important;
     color: #fff !important;
   }
 }
