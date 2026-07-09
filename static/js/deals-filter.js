@@ -275,18 +275,22 @@ document.addEventListener('DOMContentLoaded', () => {
     updateSliderDisplays();
     debouncedApplyFilters();
   });
+  setupSliderTouchPrevention(scoreSlider);
   minPriceSlider.addEventListener('input', () => {
     updateSliderDisplays();
     debouncedApplyFilters();
   });
+  setupSliderTouchPrevention(minPriceSlider);
   priceSlider.addEventListener('input', () => {
     updateSliderDisplays();
     debouncedApplyFilters();
   });
+  setupSliderTouchPrevention(priceSlider);
   discountSlider.addEventListener('input', () => {
     updateSliderDisplays();
     debouncedApplyFilters();
   });
+  setupSliderTouchPrevention(discountSlider);
   if (dealTypeSelect) dealTypeSelect.addEventListener('change', applyFilters);
   if (categorySelect) categorySelect.addEventListener('change', applyFilters);
   if (resetBtn) resetBtn.addEventListener('click', resetFilters);

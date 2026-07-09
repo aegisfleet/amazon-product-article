@@ -383,18 +383,21 @@ function initCategoryFeatures() {
             updateSliderDisplays();
             debouncedFilterCards();
         });
+        setupSliderTouchPrevention(scoreSlider);
     }
     if (minPriceSlider) {
         minPriceSlider.addEventListener('input', () => {
             updateSliderDisplays();
             debouncedFilterCards();
         });
+        setupSliderTouchPrevention(minPriceSlider);
     }
     if (priceSlider) {
         priceSlider.addEventListener('input', () => {
             updateSliderDisplays();
             debouncedFilterCards();
         });
+        setupSliderTouchPrevention(priceSlider);
     }
 
     // --- Category Select Events ---
