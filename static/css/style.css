@@ -1733,15 +1733,15 @@ a.competitor-preview:hover {
   display: flex;
   align-items: center;
   gap: var(--spacing-sm);
-  background: linear-gradient(135deg, #f97316, #d97706);
+  background: linear-gradient(135deg, #c2410c, #9a3412);
   color: #fff;
   padding: 0.5rem 1rem;
-  border: 1px solid #d97706;
+  border: 1px solid #9a3412;
   border-radius: var(--radius-md);
   font-weight: 600;
   font-size: 0.95rem;
   text-decoration: none;
-  box-shadow: 0 2px 8px rgba(249, 115, 22, 0.25);
+  box-shadow: 0 2px 8px rgba(194, 65, 12, 0.25);
   transition: all 0.2s ease;
   position: relative;
   overflow: hidden;
@@ -1753,10 +1753,10 @@ a.competitor-preview:hover {
 }
 
 .today-recommendation-link:hover {
-  background: linear-gradient(135deg, #ea580c, #b45309);
+  background: linear-gradient(135deg, #9a3412, #7c2d12);
   color: #fff;
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(249, 115, 22, 0.35);
+  box-shadow: 0 4px 12px rgba(154, 52, 18, 0.35);
   cursor: pointer;
 }
 
@@ -1766,14 +1766,14 @@ a.competitor-preview:hover {
 }
 
 [data-theme="dark"] .today-recommendation-link {
-  background: linear-gradient(135deg, #f97316, #ea580c);
-  border-color: #fb923c;
+  background: linear-gradient(135deg, #c2410c, #9a3412);
+  border-color: #ea580c;
   color: #fff;
-  box-shadow: 0 2px 8px rgba(251, 146, 60, 0.2);
+  box-shadow: 0 2px 8px rgba(194, 65, 12, 0.2);
 }
 
 [data-theme="dark"] .today-recommendation-link:hover {
-  background: linear-gradient(135deg, #ea580c, #c2410c);
+  background: linear-gradient(135deg, #9a3412, #7c2d12);
   color: #fff;
 }
 
