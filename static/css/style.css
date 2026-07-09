@@ -4148,6 +4148,7 @@ a.competitor-preview:hover {
   border-radius: 3px;
   outline: none;
   cursor: pointer;
+  touch-action: pan-y;
 }
 
 .bargain-slider::-webkit-slider-thumb {
