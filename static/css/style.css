@@ -5017,4 +5017,33 @@ a.competitor-preview:hover {
   :root:not([data-theme="light"]) .recommendations-hero .bargain-hero-desc {
     color: #f3f4f6 !important;
   }
+}
+
+/* --- Recommendations Specific Card & Badge styles --- */
+.recommendations-container .competitor-card {
+  border-left-color: #c2410c !important;
+}
+
+.recommendations-container .rank-badge {
+  background: #c2410c !important;
+  color: #fff !important;
+}
+
+[data-theme="dark"] .recommendations-container .competitor-card {
+  border-left-color: #ea580c !important;
+}
+
+[data-theme="dark"] .recommendations-container .rank-badge {
+  background: #ea580c !important;
+  color: #fff !important;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .recommendations-container .competitor-card {
+    border-left-color: #ea580c !important;
+  }
+  :root:not([data-theme="light"]) .recommendations-container .rank-badge {
+    background: #ea580c !important;
+    color: #fff !important;
+  }
 }
