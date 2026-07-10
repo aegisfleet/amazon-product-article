@@ -84,6 +84,7 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         PR_NUMBER: ${{ github.event.pull_request.number }}
         PR_AUTHOR: ${{ github.event.pull_request.user.login }}
+        GITHUB_REPOSITORY: ${{ github.repository }}
       run: pnpm run merge:pr
 
     - name: Trigger subsequent workflows
@@ -126,6 +127,7 @@ jobs:
       env:
         PR_NUMBER: ${{ github.event.pull_request.number }}
         PR_AUTHOR: ${{ github.event.pull_request.user.login }}
+        GITHUB_REPOSITORY: ${{ github.repository }}
       run: |
         echo "PR #$PR_NUMBER processing completed"
         echo "Author: $PR_AUTHOR"
