@@ -19,7 +19,7 @@
 
 .search-input {
     width: 100%;
-    padding: 1rem 1.5rem 1rem 3rem;
+    padding: 1rem 3rem 1rem 3rem;
     font-size: 1.1rem;
     border: 1px solid var(--color-border);
     border-radius: 9999px;
@@ -732,4 +732,34 @@
     border-radius: 10px;
     border: 1px solid var(--color-border);
     margin-bottom: 0.75rem;
+}
+
+/* ===================================================
+   検索窓のローディングスピナー
+   =================================================== */
+.search-input-wrapper::after {
+    content: "";
+    position: absolute;
+    right: 1.25rem;
+    width: 1.25rem;
+    height: 1.25rem;
+    border: 2px solid var(--color-border);
+    border-top-color: var(--color-primary);
+    border-radius: 50%;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.15s ease;
+    box-sizing: border-box;
+    z-index: 2;
+}
+
+.search-input-wrapper.is-loading::after {
+    opacity: 1;
+    animation: search-spin 0.6s linear infinite;
+}
+
+@keyframes search-spin {
+    to {
+        transform: rotate(360deg);
+    }
 }
