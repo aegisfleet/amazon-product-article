@@ -207,6 +207,13 @@ function renderCardMeta(p) {
     detailsRow.appendChild(savings);
   }
 
+  if (p.pointsRate && p.pointsRate >= 10.0) {
+    const pointsRateBadge = document.createElement('span');
+    pointsRateBadge.className = 'badge-points-rate';
+    pointsRateBadge.textContent = `ポイント還元率${Math.round(p.pointsRate)}%`;
+    detailsRow.appendChild(pointsRateBadge);
+  }
+
   if (p.availability) {
     const avail = document.createElement('span');
     avail.className = 'badge-availability';
