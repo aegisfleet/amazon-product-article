@@ -1,0 +1,236 @@
+{
+  "analysis": {
+    "productName": "siroca(シロカ) 食器洗い乾燥機 PDW-M151",
+    "parentAsin": "B0GKFRFPJQ",
+    "productDescription": "1〜3人用のコンパクトな食器洗い乾燥機。水道工事不要のタンク式と分岐水栓式の2way仕様で、設置場所を選びません。",
+    "productUsage": [
+      "毎日の食器洗い",
+      "手荒れを防ぐ",
+      "家事の時短"
+    ],
+    "positivePoints": [
+      "水道工事不要のタンク式と分岐水栓式の2way対応",
+      "標準、念入り、おいそぎ、低温の4つの洗浄コースを搭載",
+      "うずマックス洗浄により汚れをしっかり落とす",
+      "使用水量が約5Lと節水設計",
+      "標準収納容量16点（大皿2点、中皿2点、小皿2点、中鉢2点、小鉢2点など）",
+      "直径23cmまでの大皿に対応"
+    ],
+    "negativePoints": [
+      "タンク式の場合、毎回約5Lの手動給水が必要",
+      "乾燥方式が送風乾燥のみで、ヒーター乾燥（温風乾燥）は非搭載",
+      "ファミリー向けの大型食洗機と比較して収納容量が少なめ"
+    ],
+    "useCases": [
+      "賃貸住宅やアパートで水道工事ができないキッチンの場合",
+      "1人〜3人の少人数家族で、毎日の食器洗いを手軽に済ませたい場合"
+    ],
+    "userStories": [
+      {
+        "userType": "賃貸住まいの2人暮らし",
+        "scenario": "共働きで夜遅く帰宅し、食器洗いが負担になっていた",
+        "experience": "分岐水栓の工事が不要で、すぐに使い始めることができました。毎回の給水は少し手間ですが、手洗いに比べて大幅に時間が浮き、食後のリラックスタイムが増えました。送風乾燥なので完全に乾ききらないこともありますが、価格とコンパクトさを考えれば十分満足しています。",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "sentiment": "positive"
+      }
+    ],
+    "userImpression": "工事不要の手軽さと、キッチンのスペースを取らないコンパクトな設計が高く評価されています。一方で、タンク給水の手間や、温風乾燥機能がないこと（送風乾燥のため乾き残しがある点）については、購入前に理解しておくべき妥協点として挙げられています。総じて、予算を抑えつつ初めて食洗機を導入する少人数世帯にとって、コストパフォーマンスの高い選択肢となっています。",
+    "sources": [
+      {
+        "id": "src-1",
+        "name": "Amazon Product Data",
+        "url": "https://www.amazon.co.jp/dp/B0GKFRFPJQ",
+        "tier": "medium",
+        "evidenceType": "primary",
+        "publishedAt": "2026-07-11",
+        "author": "siroca(シロカ)",
+        "conflictOfInterest": "possible",
+        "notes": "商品の基本スペック、機能、価格情報を確認"
+      },
+      {
+        "id": "src-2",
+        "name": "Amazon Product Data (THANKO ラクアmini Plus)",
+        "url": "https://www.amazon.co.jp/dp/B0BJD5XCKT",
+        "tier": "medium",
+        "evidenceType": "primary",
+        "publishedAt": "2026-07-11",
+        "author": "THANKO",
+        "conflictOfInterest": "possible",
+        "notes": "競合商品のスペック、価格を確認"
+      },
+      {
+        "id": "src-3",
+        "name": "Amazon Product Data (THANKO ラクア ファミリースリム)",
+        "url": "https://www.amazon.co.jp/dp/B0DJLRRXS9",
+        "tier": "medium",
+        "evidenceType": "primary",
+        "publishedAt": "2026-07-11",
+        "author": "THANKO",
+        "conflictOfInterest": "possible",
+        "notes": "競合商品のスペック、価格を確認"
+      },
+      {
+        "id": "src-4",
+        "name": "Amazon Product Data (パナソニック SOLOTA)",
+        "url": "https://www.amazon.co.jp/dp/B0BSGFTN29",
+        "tier": "medium",
+        "evidenceType": "primary",
+        "publishedAt": "2026-07-11",
+        "author": "パナソニック",
+        "conflictOfInterest": "possible",
+        "notes": "競合商品のスペック、価格を確認"
+      },
+      {
+        "id": "src-5",
+        "name": "Amazon Product Data (アイリスオーヤマ PZSH-5T-W)",
+        "url": "https://www.amazon.co.jp/dp/B08XTL856B",
+        "tier": "medium",
+        "evidenceType": "primary",
+        "publishedAt": "2026-07-11",
+        "author": "アイリスオーヤマ",
+        "conflictOfInterest": "possible",
+        "notes": "競合商品のスペック、価格を確認"
+      },
+      {
+        "id": "src-6",
+        "name": "Amazon Product Data (AIRMSEN)",
+        "url": "https://www.amazon.co.jp/dp/B0GLP5P73G",
+        "tier": "medium",
+        "evidenceType": "primary",
+        "publishedAt": "2026-07-11",
+        "author": "AIRMSEN",
+        "conflictOfInterest": "possible",
+        "notes": "競合商品のスペック、価格を確認"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "うずマックス洗浄",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "crossChecked": true,
+        "notes": "商品スペックの洗浄方式として回転ノズル噴射式を採用していることを確認"
+      }
+    ],
+    "lastInvestigated": "2026-07-11",
+    "competitiveAnalysis": [
+      {
+        "name": "THANKO ラクアmini Plus (マットブラック)",
+        "asin": "B0BJD5XCKT",
+        "priceComparison": "本商品とほぼ同価格帯（やや安価）。",
+        "featureComparison": [
+          "共通点：タンク式で工事不要、コンパクト設計。",
+          "相違点：ラクアmini Plusは熱風乾燥を搭載しているが、本商品は送風乾燥。また、ラクアmini Plusは1〜2人用（11〜12点）であるのに対し、本商品は1〜3人用（16点）と容量が大きい。"
+        ],
+        "differentiators": [
+          "siroca PDW-M151の利点：一度により多くの食器を洗いたい方や、直径23cmまでの大皿を洗いたい方に適している。",
+          "THANKO ラクアmini Plusの利点：少量の食器洗いが中心で、熱風乾燥によるしっかりとした乾燥を求める単身者や2人暮らしの方に適している。"
+        ]
+      },
+      {
+        "name": "パナソニック SOLOTA NP-TML1-W",
+        "asin": "B0BSGFTN29",
+        "priceComparison": "本商品よりやや高価。",
+        "featureComparison": [
+          "共通点：タンク式で工事不要。",
+          "相違点：SOLOTAはパーソナル（1人用）に特化した超コンパクトモデルであり、本商品よりも設置面積が小さい。"
+        ],
+        "differentiators": [
+          "siroca PDW-M151の利点：2〜3人分の食器を一度に洗う必要がある家庭に適している。",
+          "パナソニック SOLOTA NP-TML1-Wの利点：キッチンスペースが極端に限られている一人暮らしの方や、ブランドの信頼性（ストリーム除菌洗浄など）を重視する方に適している。"
+        ]
+      },
+      {
+        "name": "THANKO ラクア ファミリースリム TKDWSLHWH",
+        "asin": "B0DJLRRXS9",
+        "priceComparison": "本商品よりやや高価。",
+        "featureComparison": [
+          "共通点：タンク式対応。",
+          "相違点：ラクア ファミリースリムは3〜4人用（21点収納）で大容量。また、高温+送風方式の乾燥機能を備える。"
+        ],
+        "differentiators": [
+          "siroca PDW-M151の利点：初期費用を3万円以内に抑えつつ、標準的なコンパクトサイズの食洗機を導入したい方に適している。",
+          "THANKO ラクア ファミリースリムの利点：設置スペースの奥行きを確保でき、フライパンなどの大きな調理器具も一緒に洗いたい家族に適している。"
+        ]
+      },
+      {
+        "name": "アイリスオーヤマ PZSH-5T-W",
+        "asin": "B08XTL856B",
+        "priceComparison": "本商品より大幅に安価（約半額）。",
+        "featureComparison": [
+          "共通点：タンク式で工事不要、コンパクト設計。",
+          "相違点：アイリスオーヤマ製は価格が非常に安いが、重量は軽くシンプルな機能に絞られている。"
+        ],
+        "differentiators": [
+          "siroca PDW-M151の利点：1〜3人分（16点）をしっかり収納できるレイアウトやデザイン性を求める方に適している。",
+          "アイリスオーヤマ PZSH-5T-Wの利点：とにかく価格を最優先し、手頃な予算で食洗機を導入したい方に適している。"
+        ]
+      },
+      {
+        "name": "AIRMSEN 食洗機",
+        "asin": "B0GLP5P73G",
+        "priceComparison": "本商品よりやや高価。",
+        "featureComparison": [
+          "共通点：タンク式で工事不要。",
+          "相違点：AIRMSENは最大40点収納の大容量で、PTC熱風乾燥と72時間エアーリフレッシュ機能を搭載している。"
+        ],
+        "differentiators": [
+          "siroca PDW-M151の利点：国内ブランドの安心感を求め、必要十分な機能をコンパクトにまとめたい方に適している。",
+          "AIRMSEN 食洗機の利点：4人家族などで食器の量が多く、熱風乾燥による衛生的な保管を重視する方に適している。"
+        ]
+      },
+      {
+        "name": "THANKO ラクア ファミリーワイド TKDWWDHWH",
+        "asin": "B0DJLRFRSC",
+        "priceComparison": "本商品よりやや高価。",
+        "featureComparison": [
+          "共通点：タンク式対応。",
+          "相違点：ラクア ファミリーワイドは3〜5人用（21点収納）で、横幅のあるワイドタイプ。"
+        ],
+        "differentiators": [
+          "siroca PDW-M151の利点：キッチンの横幅スペースが限られている場合に適している。",
+          "THANKO ラクア ファミリーワイドの利点：横幅を確保でき、鍋や大皿も頻繁に洗う家族世帯に適している。"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "賃貸住宅などで分岐水栓の工事ができず、1〜3人分の食器を洗える手頃なサイズの食洗機を探している人（パーソナル向けよりは大きく、ファミリー向けよりはコンパクトなサイズを求める人）"
+      ],
+      "pros": [
+        "設置工事が不要で届いたその日からすぐに使えるため、賃貸でも安心して導入できる",
+        "23cmまでの大皿も入り、2〜3人分の食器なら一度に洗えるため家事の負担が大きく減る",
+        "分岐水栓にも対応しているため、将来的に引っ越しなどで環境が変わっても使い続けられる"
+      ],
+      "cons": [
+        "乾燥方式が送風乾燥のみのため、熱風乾燥を搭載した競合機（ラクアなど）に比べると水滴が残りやすい。乾燥力を重視する人は購入前に確認すること",
+        "タンク式で使う場合、毎回約5Lの水を手動で入れる手間がかかる点を許容できるか確認すること"
+      ],
+      "score": 75,
+      "scoreRationale": "[基本点: 70]\n[加点: +10] (分岐水栓とタンク式の2way仕様で設置の柔軟性が高い)\n[加点: +5] (コンパクトながら16点収納と23cm大皿対応の実用性)\n[減点: -10] (乾燥方式が送風乾燥のみで、乾燥性能に課題がある)\n[合計: 75]"
+    },
+    "technicalSpecs": {
+      "dimensions": {
+        "height": "43.5cm",
+        "width": "42.0cm",
+        "depth": "43.5cm"
+      },
+      "weight": "13.0kg",
+      "capacity": "標準収納容量 約16点",
+      "waterUsage": "約5L",
+      "washingModes": "標準 / 念入り / おいそぎ / 低温",
+      "dryingMethod": "送風乾燥",
+      "waterPressure": "0.04 MPa ～ 1 MPa",
+      "other": [
+        "洗浄方式：回転ノズル噴射式",
+        "すすぎ方式：ためすすぎ",
+        "給水方式：タンク式（手動給水）/ 分岐水栓式"
+      ]
+    }
+  }
+}
