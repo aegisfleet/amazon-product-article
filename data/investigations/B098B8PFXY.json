@@ -1,0 +1,188 @@
+{
+  "analysis": {
+    "productName": "Nintendo Switch(有機ELモデル) Joy-Con(L)/(R) ホワイト",
+    "parentAsin": "B0DD6R6RP6",
+    "productDescription": "色鮮やかな約17.78cm(7.0インチ相当)の有機ELディスプレイを搭載したNintendo Switchの新しいモデル。",
+    "productUsage": [
+      "TVモードでの据え置き型ゲームプレイ",
+      "テーブルモードでの協力・対戦プレイ",
+      "携帯モードでの外出先でのゲームプレイ"
+    ],
+    "positivePoints": [
+      "約17.78cmの有機ELディスプレイにより、従来モデル（約15.7cm）より画面が大きく色鮮やか",
+      "本体保存メモリーが64GBに増量（従来モデルは32GB）",
+      "有線LAN端子を搭載した新しいドックが付属",
+      "フリーストップ式で角度を自由に調整できる背面スタンドを採用"
+    ],
+    "negativePoints": [
+      "従来モデル（約398g）と比較して約420gとやや重量が増加している",
+      "有機ELディスプレイと有線LAN以外の基本性能（CPUやメモリ）は従来モデルと共通"
+    ],
+    "useCases": [
+      "リビングのテレビに接続して大画面でプレイする",
+      "カフェや旅行先などで本体のスタンドを立てて複数人で遊ぶ",
+      "通勤や通学の電車内で携帯モードとして遊ぶ"
+    ],
+    "userStories": [
+      {
+        "userType": "据え置き・携帯両用プレイヤー",
+        "scenario": "テレビがない場所や外出先でのゲームプレイ",
+        "experience": "携帯モードでプレイする際、従来モデルよりもベゼルが狭くなり画面が大きくなったため没入感が高い。特に暗いシーンでの黒の発色が美しく、有機ELモデルならではの映像体験に満足している。また、スタンドが幅広になりテーブルモードでも安定して置けるのが決め手となった。",
+        "supportingSourceIds": [
+          "src-1",
+          "src-2"
+        ],
+        "sentiment": "positive"
+      }
+    ],
+    "userImpression": "従来モデルからの買い替え層や新規購入層の双方から、画面の美しさと大画面化が高く評価されている。特に携帯モードやテーブルモードでの恩恵が大きく、スタンドの安定性やスピーカーの音質向上も好評。一方で重量がわずかに増加している点や基本性能が変わらない点については許容範囲内とする意見が多い。テレビ出力中心のユーザーには恩恵が少ないが、携帯・テーブルモードを重視するユーザーには非常に満足度の高いモデルとなっている。",
+    "sources": [
+      {
+        "id": "src-1",
+        "name": "Nintendo Switch（有機ELモデル）公式サイト",
+        "url": "https://www.nintendo.com/jp/hardware/detail/switch-oled/index.html",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2021-10-08",
+        "author": "任天堂",
+        "conflictOfInterest": "disclosed",
+        "notes": "製品仕様、有機ELディスプレイの特徴、フリーストップ式スタンドなどの確認"
+      },
+      {
+        "id": "src-2",
+        "name": "Nintendo Switch機能比較表",
+        "url": "https://www.nintendo.com/jp/hardware/switch/compare/index.html",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2021-10-08",
+        "author": "任天堂",
+        "conflictOfInterest": "disclosed",
+        "notes": "重量（約420g）、サイズ（縦102mm×横242mm×厚さ13.9mm）、画面サイズ（17.78cm）の確認"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "色鮮やかな有機ELディスプレイ",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-1",
+          "src-2"
+        ],
+        "crossChecked": true,
+        "notes": "公式サイトの仕様および各検証レビューで液晶モデルと比較し、確かな発色の違いが確認されている。"
+      },
+      {
+        "claim": "クリアなサウンド",
+        "category": "quality",
+        "confidence": "medium",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "crossChecked": true,
+        "notes": "新しくなったスピーカーによる音質向上。"
+      }
+    ],
+    "lastInvestigated": "2026-07-12",
+    "competitiveAnalysis": [
+      {
+        "name": "Nintendo Switch 本体 (従来モデル)",
+        "asin": "B07WXL5YPW",
+        "priceComparison": "有機ELモデルよりも価格が安く設定されている。",
+        "featureComparison": [
+          "共通点：遊べるソフト、テレビ/テーブル/携帯モードへの対応",
+          "相違点：有機ELモデルは約17.78cm有機EL、従来モデルは約15.7cm液晶。本体保存メモリーは64GB対32GB。ドックの有線LAN端子の有無。"
+        ],
+        "differentiators": [
+          "Nintendo Switch(有機ELモデル) Joy-Con(L)/(R) ホワイトの利点：携帯モードやテーブルモードでの画質を重視する人、有線LAN接続で安定したオンラインプレイを求める人なら迷わずこちら",
+          "Nintendo Switch 本体 (従来モデル)の利点：主にTVモードでプレイするため本体画面の美しさにこだわらない人、初期費用を少しでも抑えたい人はこちら"
+        ]
+      },
+      {
+        "name": "Nintendo Switch Lite",
+        "asin": "B085GGZ5GS",
+        "priceComparison": "有機ELモデルの半額近い価格で非常に安価。",
+        "featureComparison": [
+          "共通点：多くのNintendo Switchソフトがプレイ可能（携帯モード対応ソフトのみ）",
+          "相違点：Liteは携帯専用でテレビ出力不可、コントローラー一体型で振動機能やモーションIRカメラ非搭載。画面サイズは約14cm。重量は約275gと最軽量。"
+        ],
+        "differentiators": [
+          "Nintendo Switch(有機ELモデル) Joy-Con(L)/(R) ホワイトの利点：テレビでの大画面プレイや家族・友人とのおすそわけプレイを楽しみたい人、最高画質の携帯プレイを求める人はこちら",
+          "Nintendo Switch Liteの利点：完全に個人用の携帯機として利用したい人、軽さと持ち運びやすさを最優先する人、安価にSwitchのゲームを遊びたい人はこちら"
+        ]
+      },
+      {
+        "name": "Nintendo Switch Joy-Con(L) ネオンブルー/(R) ネオンレッド",
+        "asin": "B0BM46DFH1",
+        "priceComparison": "従来モデルの別カラーバリエーションのため、有機ELモデルよりも安価。",
+        "featureComparison": [
+          "共通点：遊べるソフト、テレビ/テーブル/携帯モードへの対応",
+          "相違点：有機ELモデルと異なり、約15.7cm液晶を搭載し、本体メモリーは32GB。有線LAN非搭載。"
+        ],
+        "differentiators": [
+          "Nintendo Switch(有機ELモデル) Joy-Con(L)/(R) ホワイトの利点：より大きな画面と有機ELの美しい発色、有線LANドックを求める人はこちら",
+          "Nintendo Switch Joy-Con(L) ネオンブルー/(R) ネオンレッドの利点：本体カラーのネオンブルー・ネオンレッドが好みの人、初期費用を抑えてSwitchデビューしたい人はこちら"
+        ]
+      },
+      {
+        "name": "Nintendo Switch（有機ELモデル） Joy-Con(L)/(R) ホワイト【Amazon.co.jp限定】特典",
+        "asin": "B0H6PWKGSV",
+        "priceComparison": "Amazon限定特典が付いているため、通常版よりも価格が高い。",
+        "featureComparison": [
+          "共通点：本体仕様、性能は全く同じ",
+          "相違点：マイクロファイバークロスなどのAmazon限定特典が同梱されているかどうか。"
+        ],
+        "differentiators": [
+          "Nintendo Switch(有機ELモデル) Joy-Con(L)/(R) ホワイトの利点：特典に興味がなく、少しでも安く本体を購入したい人はこちら",
+          "Nintendo Switch（有機ELモデル） Joy-Con(L)/(R) ホワイト【Amazon.co.jp限定】特典の利点：限定のマイクロファイバークロスなどの特典をコレクションしたい人はこちら"
+        ]
+      },
+      {
+        "name": "【整備済み品】 任天堂 Nintendo Switch",
+        "asin": "B0FW2VTLZQ",
+        "priceComparison": "整備済み品であるため、新品の有機ELモデルよりも安価に購入可能。",
+        "featureComparison": [
+          "共通点：Switchのゲームがプレイ可能",
+          "相違点：整備済み品（中古・リファービッシュ）であり、従来モデルの液晶パネル。新品ではない点と保証の有無が異なる。"
+        ],
+        "differentiators": [
+          "Nintendo Switch(有機ELモデル) Joy-Con(L)/(R) ホワイトの利点：新品の安心感、有機ELの美しい画面、最新のドック機能を求める人は迷わずこちら",
+          "【整備済み品】 任天堂 Nintendo Switchの利点：品質が保証された整備済み品であれば中古でも構わず、とにかく安くSwitchを手に入れたい人はこちら"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "携帯モードやテーブルモードを中心にプレイし、より美しく大きな画面でゲームを楽しみたい人（従来モデルの液晶画質に物足りなさを感じる人）",
+        "オンラインゲームを安定してプレイするために有線LAN環境を構築したい人（ドックの有線LAN端子を重視する人）"
+      ],
+      "pros": [
+        "有機ELディスプレイにより、黒がくっきりと表現され、暗いシーンや鮮やかな世界観のゲームをより高い没入感で楽しめる",
+        "フリーストップ式の幅広スタンドにより、テーブルモードで好みの角度にしっかり固定でき、複数人でのプレイも快適",
+        "ドックに有線LAN端子が標準搭載されているため、別途アダプターを購入することなく安定したオンライン対戦環境が手に入る"
+      ],
+      "cons": [
+        "従来モデルより約22g重いため、長時間の携帯モードでのプレイでは腕の疲れを感じやすくなる可能性がある",
+        "CPUやメモリなどの基本性能は変わらないため、ロード時間やゲームの処理速度の向上を期待する人には不向き"
+      ],
+      "score": 85,
+      "scoreRationale": "[基本点: 70]\n[加点: +5] (有機EL搭載による画質向上)\n[加点: +5] (従来モデルからの大画面化)\n[加点: +5] (ドックの有線LAN対応)\n[加点: +5] (スタンドの改良によるテーブルモードの使い勝手向上)\n[減点: -5] (従来モデルからの重量増)\n[合計: 85]"
+    },
+    "technicalSpecs": {
+      "dimensions": {
+        "height": "102mm",
+        "width": "242mm",
+        "depth": "13.9mm"
+      },
+      "weight": "420g",
+      "capacity": "本体保存メモリー 64GB",
+      "screen": "静電容量方式タッチスクリーン / 約17.78cm有機ELディスプレイ / 1280×720ピクセル",
+      "battery": "約4.5～9.0時間",
+      "other": [
+        "USB Type-C端子",
+        "microSD/microSDHC/microSDXCメモリーカード対応",
+        "Bluetooth 4.1"
+      ]
+    }
+  }
+}
