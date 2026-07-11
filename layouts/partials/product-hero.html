@@ -98,6 +98,15 @@
                 {{- if .Params.savings_percentage -}}
                 <span class="badge-savings">{{ .Params.savings_percentage }}% OFF</span>
                 {{- end -}}
+                {{- if and $product.price $product.loyalty_points -}}
+                  {{- $priceNum := index (findRE "[0-9]+" (replace $product.price "," "")) 0 | default 0 | int -}}
+                  {{- if gt $priceNum 0 -}}
+                    {{- $rate := mul (div (float $product.loyalty_points) (float $priceNum)) 100 -}}
+                    {{- if ge $rate 10.0 -}}
+                    <span class="badge-points-rate">ポイント還元率 {{- printf "%.0f" $rate -}}%</span>
+                    {{- end -}}
+                  {{- end -}}
+                {{- end -}}
                 {{- with $hero.availability -}}<span class="badge-availability">{{ . }}</span>{{- end -}}
             </div>
         </div>
