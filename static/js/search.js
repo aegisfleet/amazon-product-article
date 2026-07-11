@@ -237,6 +237,8 @@ document.addEventListener('DOMContentLoaded', function () {
     function initializeSearch() {
         if (fuse) return; // Already initialized
 
+        const searchInputWrapper = document.querySelector('.search-input-wrapper');
+
         // Fetch index.json dynamically from data attribute
         const searchIndexUrl = searchInput.dataset.searchIndexUrl || '/index.json';
         fetch(searchIndexUrl)
@@ -265,11 +267,13 @@ document.addEventListener('DOMContentLoaded', function () {
             const trimmedQuery = query.trim();
             if (trimmedQuery.length === 0) {
                 displaySearchTips();
+                if (searchInputWrapper) searchInputWrapper.classList.remove('is-loading');
                 return;
             }
 
             if (trimmedQuery.length < 2) {
                 // 1文字のときはアクションを起こさない（ヒントまたは前回の結果を維持）
+                if (searchInputWrapper) searchInputWrapper.classList.remove('is-loading');
                 return;
             }
 
@@ -291,6 +295,10 @@ document.addEventListener('DOMContentLoaded', function () {
             // 検索と表示
             const results = searchWithRerank(query);
             displayResults(results);
+
+            if (searchInputWrapper) {
+                searchInputWrapper.classList.remove('is-loading');
+            }
         }, 300);
 
 
@@ -304,6 +312,12 @@ document.addEventListener('DOMContentLoaded', function () {
             if (e.isComposing) return;
 
             const query = e.target.value.replaceAll('　', ' ');
+            const trimmedQuery = query.trim();
+            if (trimmedQuery.length >= 2) {
+                if (searchInputWrapper) searchInputWrapper.classList.add('is-loading');
+            } else {
+                if (searchInputWrapper) searchInputWrapper.classList.remove('is-loading');
+            }
             handleSearch(query);
         });
 
@@ -311,8 +325,12 @@ document.addEventListener('DOMContentLoaded', function () {
         searchInput.addEventListener('compositionend', (e) => {
             if (!fuse) return;
             const query = e.target.value.replaceAll('　', ' ');
-            if (query.trim().length >= 2) {
+            const trimmedQuery = query.trim();
+            if (trimmedQuery.length >= 2) {
+                if (searchInputWrapper) searchInputWrapper.classList.add('is-loading');
                 handleSearch(query);
+            } else {
+                if (searchInputWrapper) searchInputWrapper.classList.remove('is-loading');
             }
         });
 
@@ -323,6 +341,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 el.addEventListener('input', () => {
                     const query = searchInput.value.replaceAll('　', ' ');
                     if (query.trim().length >= 2) {
+                        if (searchInputWrapper) searchInputWrapper.classList.add('is-loading');
                         handleSearch(query);
                     }
                 });
