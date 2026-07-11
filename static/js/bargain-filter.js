@@ -91,7 +91,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (minScore !== 80) params.set('minScore', String(minScore));
     if (minPrice !== 100) params.set('minPrice', String(minPrice));
-    if (maxPrice !== 2000) params.set('maxPrice', String(maxPrice));
+    if (maxPrice < 50000) params.set('maxPrice', String(maxPrice));
     if (category) params.set('category', category);
     if (currentSort !== 'date') params.set('sort', currentSort);
     const q = keywordInput ? keywordInput.value.trim() : '';
@@ -142,7 +142,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     scoreValueEl.textContent = String(minScore);
     minPriceValueEl.textContent = formatPrice(minPrice);
-    priceValueEl.textContent = formatPrice(maxPrice);
+    priceValueEl.textContent = maxPrice >= 50000 ? '上限なし' : formatPrice(maxPrice) + '以下';
   }
 
   const debouncedApplyFilters = debounce(applyFilters, 300);
@@ -198,8 +198,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const preFiltered = allProducts.filter(p => {
       if (p.score < minScore) return false;
       if (p.priceRaw < minPrice) return false;
-      if (maxPrice > 0 && p.priceRaw > maxPrice) return false;
-      if (maxPrice === 0 && p.priceRaw > 0) return false;
+      if (maxPrice < 50000 && p.priceRaw > maxPrice) return false;
       return matchesKeywords(p, keywords);
     });
 
