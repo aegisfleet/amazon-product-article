@@ -10,10 +10,10 @@ function valueToPrice(v) {
     return Math.round(t * 20) * 100;
   } else if (v <= 700) {
     const t = (v - 400) / 300;
-    return 2000 + Math.round(t * 16) * 500;
+    return 2000 + Math.round(t * 8) * 1000;
   } else {
     const t = (v - 700) / 300;
-    return 10000 + Math.round(t * 40000);
+    return 10000 + Math.round(t * 8) * 5000;
   }
 }
 
