@@ -569,6 +569,24 @@ a:hover {
   font-size: 0.9em;
 }
 
+.badge-points-rate {
+  background: var(--badge-points-bg);
+  color: var(--badge-points-text);
+  padding: 0.15rem 0.5rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--badge-points-border);
+  font-size: 0.75rem;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+}
+
+.badge-points-rate::before {
+  content: "🎁";
+  font-size: 0.9em;
+}
+
 .badge-deal.deal-prime::before {
   content: "👑";
 }
