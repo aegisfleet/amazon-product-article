@@ -19,6 +19,8 @@ function sortProducts(products, sortValue) {
         return (b.lastInvestigated || '').localeCompare(a.lastInvestigated || '') || b.score - a.score;
       case 'discount':
         return b.savingsPercentage - a.savingsPercentage || b.score - a.score;
+      case 'points-rate':
+        return (b.pointsRate || 0) - (a.pointsRate || 0) || b.score - a.score;
       default:
         return 0;
     }
@@ -70,7 +72,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     if (params.has('sort')) {
       const s = params.get('sort');
-      if (['score', 'price-asc', 'price-desc', 'date', 'discount'].includes(s)) {
+      if (['score', 'price-asc', 'price-desc', 'date', 'discount', 'points-rate'].includes(s)) {
         currentSort = s;
       }
     }

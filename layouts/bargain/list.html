@@ -84,6 +84,7 @@
                 <div class="bargain-sort-buttons" id="bargain-sort-buttons">
                     <button type="button" class="bargain-sort-btn active" data-sort="date">新着順</button>
                     <button type="button" class="bargain-sort-btn" data-sort="discount">割引率順</button>
+                    <button type="button" class="bargain-sort-btn" data-sort="points-rate">ポイント還元率順</button>
                     <button type="button" class="bargain-sort-btn" data-sort="score">スコア順</button>
                     <button type="button" class="bargain-sort-btn" data-sort="price-asc">価格の安い順</button>
                     <button type="button" class="bargain-sort-btn" data-sort="price-desc">価格の高い順</button>
@@ -138,6 +139,12 @@
     {{- if .Params.price -}}
     {{- $priceRaw = index (findRE "[0-9]+" (replace .Params.price "," "")) 0 | default 0 -}}
     {{- end -}}
+    {{- $pointsRate := 0 -}}
+    {{- if and .Params.price .Params.loyalty_points -}}
+      {{- if gt (int $priceRaw) 0 -}}
+        {{- $pointsRate = mul (div (float .Params.loyalty_points) (float $priceRaw)) 100 -}}
+      {{- end -}}
+    {{- end -}}
     {{- $category := "" -}}
     {{- if .Params.categories -}}{{- $category = index .Params.categories 0 -}}{{- else if .Params.category -}}{{-
     $category = .Params.category -}}{{- end -}}
@@ -159,6 +166,7 @@
     "lastInvestigated" $lastInvestigated
     "isAmazonDirect" (.Params.is_amazon_direct | default false)
     "loyaltyPoints" (.Params.loyalty_points | default 0)
+    "pointsRate" $pointsRate
     "savingsPercentage" (.Params.savings_percentage | default 0)
     "availability" (.Params.availability | default "")
     "dealBadge" (.Params.deal_badge | default "")
