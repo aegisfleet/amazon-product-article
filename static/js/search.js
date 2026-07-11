@@ -1,3 +1,13 @@
+function isValidQuery(query) {
+    if (typeof query !== 'string') return false;
+    const trimmed = query.trim();
+    if (trimmed.length === 0) return false;
+    if (trimmed.length >= 2) return true;
+    // 1文字の場合、ひらがな以外の文字種であれば有効とする
+    const isHiraganaSingle = /^[ぁ-ん]$/.test(trimmed);
+    return !isHiraganaSingle;
+}
+
 function toYen(value, unit) {
     const num = Number.parseFloat(value);
     if (!Number.isFinite(num)) return 0;
@@ -271,8 +281,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 return;
             }
 
-            if (trimmedQuery.length < 2) {
-                // 1文字のときはアクションを起こさない（ヒントまたは前回の結果を維持）
+            if (!isValidQuery(query)) {
+                // 有効なクエリでない（平仮名1文字など）ときはアクションを起こさない（ヒントまたは前回の結果を維持）
                 if (searchInputWrapper) searchInputWrapper.classList.remove('is-loading');
                 return;
             }
@@ -312,8 +322,7 @@ document.addEventListener('DOMContentLoaded', function () {
             if (e.isComposing) return;
 
             const query = e.target.value.replaceAll('　', ' ');
-            const trimmedQuery = query.trim();
-            if (trimmedQuery.length >= 2) {
+            if (isValidQuery(query)) {
                 if (searchInputWrapper) searchInputWrapper.classList.add('is-loading');
             } else {
                 if (searchInputWrapper) searchInputWrapper.classList.remove('is-loading');
@@ -325,8 +334,7 @@ document.addEventListener('DOMContentLoaded', function () {
         searchInput.addEventListener('compositionend', (e) => {
             if (!fuse) return;
             const query = e.target.value.replaceAll('　', ' ');
-            const trimmedQuery = query.trim();
-            if (trimmedQuery.length >= 2) {
+            if (isValidQuery(query)) {
                 if (searchInputWrapper) searchInputWrapper.classList.add('is-loading');
                 handleSearch(query);
             } else {
@@ -340,7 +348,7 @@ document.addEventListener('DOMContentLoaded', function () {
             if (el) {
                 el.addEventListener('input', () => {
                     const query = searchInput.value.replaceAll('　', ' ');
-                    if (query.trim().length >= 2) {
+                    if (isValidQuery(query)) {
                         if (searchInputWrapper) searchInputWrapper.classList.add('is-loading');
                         handleSearch(query);
                     }
@@ -482,7 +490,7 @@ document.addEventListener('DOMContentLoaded', function () {
             }
 
             const query = e.target.value.replaceAll('　', ' ');
-            if (query.trim().length < 2) {
+            if (!isValidQuery(query)) {
                 displaySearchTips();
             } else if (fuse) {
                 displayResults(searchWithRerank(query));
@@ -504,7 +512,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
             // 検索結果を表示
             const query = e.target.value.replaceAll('　', ' ');
-            if (query.trim().length < 2) {
+            if (!isValidQuery(query)) {
                 displaySearchTips();
             } else if (fuse) {
                 displayResults(searchWithRerank(query));
@@ -548,9 +556,9 @@ document.addEventListener('DOMContentLoaded', function () {
     // アクティブフィルタ情報を収集する
     function getActiveFilters() {
         const filters = [];
-        const query = searchInput.value.replaceAll('　', ' ').trim();
-        if (query.length >= 2) {
-            filters.push({ label: `キーワード: ${query}`, type: 'keyword' });
+        const query = searchInput.value.replaceAll('　', ' ');
+        if (isValidQuery(query)) {
+            filters.push({ label: `キーワード: ${query.trim()}`, type: 'keyword' });
         }
         const scoreMinEl = document.getElementById('filter-score-min');
         const scoreMaxEl = document.getElementById('filter-score-max');
@@ -595,7 +603,7 @@ document.addEventListener('DOMContentLoaded', function () {
             priceMaxEl.value = '';
         }
         const query = searchInput.value.replaceAll('　', ' ');
-        if (query.trim().length >= 2) {
+        if (isValidQuery(query)) {
             handleSearch(query);
         } else {
             displaySearchTips();
@@ -769,7 +777,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         const el = document.getElementById(idMap[hint.type] || 'filter-price-max');
                         if (el) el.value = hint.resetValue;
                         const q = searchInput.value.replaceAll('　', ' ');
-                        if (q.trim().length >= 2) handleSearch(q);
+                        if (isValidQuery(q)) handleSearch(q);
                     }
                 });
                 hintArea.appendChild(btn);
