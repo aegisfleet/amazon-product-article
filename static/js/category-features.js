@@ -211,6 +211,10 @@ function initCategoryFeatures() {
                     valA = Number.parseInt(a.dataset.savingsPercentage) || 0;
                     valB = Number.parseInt(b.dataset.savingsPercentage) || 0;
                     return valB - valA;
+                case 'points-desc':
+                    valA = Number.parseFloat(a.dataset.pointsRate) || 0;
+                    valB = Number.parseFloat(b.dataset.pointsRate) || 0;
+                    return valB - valA;
                 case 'price-asc':
                     valA = Number.parseInt(a.dataset.price) || 0;
                     valB = Number.parseInt(b.dataset.price) || 0;

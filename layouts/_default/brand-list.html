@@ -164,6 +164,7 @@
                 <div class="bargain-sort-buttons" id="sort-buttons">
                     <button type="button" class="bargain-sort-btn" data-sort="date-desc">新着順</button>
                     <button type="button" class="bargain-sort-btn" data-sort="savings-desc">割引率順</button>
+                    <button type="button" class="bargain-sort-btn" data-sort="points-desc">ポイント還元率順</button>
                     <button type="button" class="bargain-sort-btn active" data-sort="score-desc">スコア順</button>
                     <button type="button" class="bargain-sort-btn" data-sort="price-asc">価格の安い順</button>
                     <button type="button" class="bargain-sort-btn" data-sort="price-desc">価格の高い順</button>
@@ -240,6 +241,12 @@
         {{- if .Params.price -}}
         {{- $priceRaw = index (findRE "[0-9]+" (replace .Params.price "," "")) 0 | default 0 -}}
         {{- end -}}
+        {{- $pointsRate := 0 -}}
+        {{- if and .Params.price .Params.loyalty_points -}}
+          {{- if gt (int $priceRaw) 0 -}}
+            {{- $pointsRate = mul (div (float .Params.loyalty_points) (float $priceRaw)) 100 -}}
+          {{- end -}}
+        {{- end -}}
         {{- $dateRaw := .Date.Unix -}}
         {{- with .Params.last_investigated -}}{{- $dateRaw = (time .).Unix -}}{{- end -}}
 
@@ -253,7 +260,7 @@
 
         <article class="card" data-price="{{ $priceRaw }}" data-score="{{ .Params.score | default 0 }}"
             data-date="{{ $dateRaw }}" data-categories="{{ $catString }}"
-            data-has-deal="{{ $hasDeal }}" data-savings-percentage="{{ .Params.savings_percentage | default 0 }}">
+            data-has-deal="{{ $hasDeal }}" data-savings-percentage="{{ .Params.savings_percentage | default 0 }}" data-points-rate="{{ $pointsRate }}">
             <div class="card-image">
                 <a href="{{ .RelPermalink }}" tabindex="-1" aria-hidden="true">
                     {{- if .Params.images -}}
@@ -327,14 +334,8 @@
                         {{- if .Params.savings_percentage -}}
                         <span class="badge-savings">{{ .Params.savings_percentage }}% OFF</span>
                         {{- end -}}
-                        {{- if and .Params.price .Params.loyalty_points -}}
-                          {{- $priceNum := index (findRE "[0-9]+" (replace .Params.price "," "")) 0 | default 0 | int -}}
-                          {{- if gt $priceNum 0 -}}
-                            {{- $rate := mul (div (float .Params.loyalty_points) (float $priceNum)) 100 -}}
-                            {{- if ge $rate 10.0 -}}
-                            <span class="badge-points-rate">ポイント還元率 {{- printf "%.0f" $rate -}}%</span>
-                            {{- end -}}
-                          {{- end -}}
+                        {{- if ge $pointsRate 10.0 -}}
+                        <span class="badge-points-rate">ポイント還元率 {{- printf "%.0f" $pointsRate -}}%</span>
                         {{- end -}}
                         {{- with .Params.availability -}}
                         <span class="badge-availability">{{ . }}</span>
