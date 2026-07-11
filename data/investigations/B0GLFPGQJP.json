@@ -1,106 +1,137 @@
 {
   "analysis": {
-    "productName": "水月雨 Moondrop Old Fashioned",
+    "productName": "Moondrop Old Fashioned",
     "parentAsin": "B0GLFPGQJP",
-    "productDescription": "40mm大型ダイナミックドライバーを搭載した軽量開放型オンイヤーヘッドホン。レトロなデザインながら、0.78mm 2pinリケーブルに対応する現代的なスペックを備える。",
+    "productDescription": "Moondrop（水月雨）が展開する40mm大型ダイナミックドライバーを搭載した小型ポータブル有線オンイヤーヘッドホン。独自開発のオープン音響構造とレトロなデザインが特徴で、軽量ながら優れたサウンド性能を追求したモデルです。",
     "productUsage": [
-      "ポータブルオーディオプレーヤーやスマートフォンでの音楽鑑賞",
-      "レトロファッションアイテムとしてのコーディネート",
-      "リケーブルによる音質カスタマイズ",
-      "長時間のリラックスリスニング"
+      "音楽鑑賞",
+      "ポータブル用途"
     ],
     "positivePoints": [
-      "40mm大型ダイナミックドライバーによる豊かな低音と広がりのある音場",
-      "0.78mm 2pinコネクタ採用でリケーブルが可能",
-      "軽量かつコンパクトなオンイヤーデザインで持ち運びに便利",
-      "レトロでスタイリッシュな外観",
-      "コストパフォーマンスが高い（競合より安価で多機能）"
+      "40mmの大型ダイナミックドライバーを搭載し、小型ながら深い低音と高音質なサウンド性能を両立",
+      "0.78mm 2pinコネクタを採用しており、ケーブルの着脱やリケーブル（交換）が可能",
+      "DF-HRTF（拡散音場頭部伝達関数）特性に忠実な周波数レスポンスを実現",
+      "独自開発のオープン音響構造による開放的なサウンド",
+      "従来の小型ヘッドホンのデザインを洗練させたレトロな外観と、快適な装着感を追求した設計"
     ],
     "negativePoints": [
-      "開放型のため音漏れがあり、静かな場所での使用には不向き",
-      "オンイヤー型特有の装着感（長時間使用時の耳への圧迫感の懸念）",
-      "知名度が低く、サードパーティ製アクセサリ（イヤーパッド等）が少ない可能性"
+      "開放型（オープン型）のため、音漏れが生じやすく公共の場での使用には注意が必要",
+      "有線接続専用であり、ワイヤレス（Bluetooth）には非対応",
+      "イヤーパッドが耳の上に載るオンイヤー型のため、長時間の使用で耳が痛くなる可能性がある"
     ],
     "useCases": [
-      "カフェでのリラックスタイム",
-      "散歩や軽い外出時のBGM",
-      "自宅でのサブ機としての使用"
+      "自宅でのリラックスした音楽鑑賞",
+      "静かな環境でのポータブルリスニング",
+      "リケーブルによる音質カスタマイズを楽しむ"
     ],
-    "userStories": [
-      {
-        "userType": "オーディオ愛好家（男性・20代）",
-        "scenario": "外出先でも高音質を楽しみたいが、大型ヘッドホンは荷物になる",
-        "experience": "（推測）KOSS Porta Proのような軽快さを持ちつつ、手持ちの高級ケーブルを活用できる点が気に入った。音質も予想以上に本格的で、特にボーカルの艶やかさがMoondropらしい。",
-        "sentiment": "positive"
-      },
-      {
-        "userType": "ファッション重視の学生（女性・10代）",
-        "scenario": "SNSで見かけたレトロなヘッドホンに憧れて購入",
-        "experience": "（推測）オレンジ色のデザインが可愛くて購入。軽くて長時間つけていても疲れにくいし、友達にも褒められた。音もスマホ付属のイヤホンよりずっと良い。",
-        "sentiment": "positive"
-      }
-    ],
-    "userImpression": "レトロな見た目とは裏腹に、Moondropらしい繊細な音作りと現代的なスペック（リケーブル対応）を兼ね備えた意欲作。特にリケーブル対応である点は競合に対する大きなアドバンテージとなっており、オーディオファンからの評価が高い。",
+    "userStories": [],
+    "userImpression": "レトロな外観と本格的な音質を兼ね備えたマニア向けの小型ヘッドホンです。0.78mm 2pinでのリケーブルに対応している点が大きな特徴であり、ケーブルによる音の変化を楽しみたいオーディオファンに適しています。ただし、開放型であるため音漏れや遮音性の低さといった制約があり、使用シーンを選ぶ製品です。ポータブルでありながらワイヤレスではないため、有線ならではの音質を重視するユーザーに向けたこだわりのアイテムと言えます。",
     "sources": [
       {
-        "name": "Moondrop Official Product Page (Hypothetical based on specs)",
-        "url": null,
-        "credibility": "High"
+        "id": "src-amazon",
+        "name": "Amazon商品ページ",
+        "url": "https://www.amazon.co.jp/dp/B0GLFPGQJP",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2024-11-20",
+        "author": "Moondrop",
+        "conflictOfInterest": "possible",
+        "notes": "商品の基本情報、価格、主な特徴を確認"
       },
       {
-        "name": "Amazon Product Detail Page",
-        "url": "https://www.amazon.co.jp/dp/B0GLFPGQJP",
-        "credibility": "High"
+        "id": "src-official",
+        "name": "Moondrop Official Website",
+        "url": "https://moondroplab.com/en/products/old-fashioned",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2024-01-01",
+        "author": "Moondrop",
+        "conflictOfInterest": "possible",
+        "notes": "詳細なスペック（インピーダンス、感度など）を確認"
       }
     ],
-    "lastInvestigated": "2026-02-25",
+    "claims": [
+      {
+        "claim": "DF-HRTF特性に忠実な周波数レスポンスを発揮",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-amazon",
+          "src-official"
+        ],
+        "crossChecked": true,
+        "notes": "メーカーの音響設計思想として公式に記載されている"
+      }
+    ],
+    "lastInvestigated": "2026-07-12",
     "competitiveAnalysis": [
       {
-        "name": "KOSS Porta Pro",
+        "name": "ROSE TECHNICS DISTANT MOUNTAIN",
+        "asin": "B0DSBMQMG8",
+        "priceComparison": "対象商品よりも高価です。より高価格帯のセミオープン型レトロデザインヘッドホンとして、素材や音響チューニングにさらなるコストがかけられています。",
+        "featureComparison": [
+          "共通点：レトロなデザインを採用した有線の半開放型（セミオープン）オンイヤーヘッドホンである点。",
+          "相違点：DISTANT MOUNTAINはVGP受賞歴があるなどよりプレミアムな位置づけであり、価格帯も異なります。また、コネクタなどの詳細な仕様にも違いがあります。"
+        ],
+        "differentiators": [
+          "Moondrop Old Fashionedの利点：手頃な価格で、0.78mm 2pinというイヤホンで一般的な規格のリケーブルを楽しめる点。Moondropの音響設計（DF-HRTF）を好む方に適しています。",
+          "ROSE TECHNICS DISTANT MOUNTAINの利点：より高い予算で、VGPを受賞した評価の高いモデルを求める方。デザインや質感、ブランドのチューニングにこだわりたい方に適しています。"
+        ]
+      },
+      {
+        "name": "KOSS PORTAPRO",
         "asin": "B00001P4ZH",
-        "priceComparison": "約7,500円（本製品より約3,000円高い）",
-        "featureComparison": ["リケーブル不可", "折りたたみ機構あり", "60Ωの高インピーダンス"],
-        "differentiators": ["圧倒的な知名度とロングセラーの実績", "独特な装着感調整機能（Comfort Zone）"]
+        "priceComparison": "対象商品と近い価格帯、もしくは少し高価です。長年のベストセラーとして安定した価格で販売されています。",
+        "featureComparison": [
+          "共通点：軽量でコンパクトな有線の開放型オンイヤーヘッドホンである点。",
+          "相違点：PORTAPROは折りたたみ可能な独自のメカニズムと、長年愛される独特の低音重視のサウンドを持っています。一方、Old Fashionedは0.78mm 2pinのリケーブルに対応し、DF-HRTFを意識したモダンなチューニングです。"
+        ],
+        "differentiators": [
+          "Moondrop Old Fashionedの利点：ケーブルの着脱・交換が可能で、断線時の対応や音質のカスタマイズが容易な点。より現代的な音響設計を求める方に適しています。",
+          "KOSS PORTAPROの利点：折りたたんでコンパクトに持ち運べる点と、長年多くのファンに支持されている独特のパンチのある低音を楽しみたい方に適しています。"
+        ]
       },
       {
-        "name": "ASHIDAVOX ST-90-05-H",
-        "asin": "B08H7LPPR4",
-        "priceComparison": "約7,300円（本製品より約2,600円高い）",
-        "featureComparison": ["リケーブル不可", "業務用由来の堅牢性", "日本製"],
-        "differentiators": ["質実剛健なデザイン", "プロユースの信頼性"]
-      },
-      {
-        "name": "Audio-Technica ATH-S100",
-        "asin": "B00FFKJ37Q",
-        "priceComparison": "約2,000円（本製品より安い）",
-        "featureComparison": ["密閉型", "プラスチック感が強い", "リケーブル不可"],
-        "differentiators": ["圧倒的な低価格", "遮音性が高い（密閉型）"]
+        "name": "KOSS KPH40",
+        "asin": "B0FV2WVM49",
+        "priceComparison": "対象商品よりも高価です。シンプルながら洗練されたデザインで人気を集めています。",
+        "featureComparison": [
+          "共通点：軽量でレトロなデザインの開放型オンイヤーヘッドホンである点。",
+          "相違点：KPH40はフラットなステンレススチール製ヘッドバンドを採用し、非常にミニマルなデザインです。Old Fashionedは2pinリケーブルに対応していますが、KPH40はケーブル途中の独自コネクタで接続を切り替える方式を採用しています。"
+        ],
+        "differentiators": [
+          "Moondrop Old Fashionedの利点：一般的なイヤホン用の0.78mm 2pinケーブルを流用でき、リケーブルの自由度が高い点。40mmの大型ドライバーを搭載している点。",
+          "KOSS KPH40の利点：極限まで無駄を削ぎ落としたミニマルなデザインと、驚くほどの軽さを求める方に適しています。"
+        ]
       }
     ],
     "recommendation": {
       "targetUsers": [
-        "レトロなデザインのヘッドホンを探している人",
-        "リケーブルで音質を調整したいオーディオファン",
-        "KOSS Porta Pro等のサブ機を探している人"
+        "リケーブル可能な手軽な有線ヘッドホンを探しているオーディオファン（Bluetoothの利便性より有線の音質と拡張性を重視する人）",
+        "レトロなデザインの開放型ヘッドホンを静かな環境で楽しみたい人"
       ],
       "pros": [
-        "0.78mm 2pinによるリケーブル対応",
-        "40mm大型ドライバーによる高音質",
-        "軽量で取り回しが良い"
+        "0.78mm 2pinコネクタにより、手持ちのイヤホン用ケーブルを活用して音質の変化を楽しんだり、断線時に容易に交換したりできます。",
+        "40mm大型ドライバーと独自設計により、コンパクトながら広がりのある開放的なサウンドを楽しめます。"
       ],
       "cons": [
-        "開放型のため音漏れする",
-        "知名度がまだ低く、情報の少なさが不安材料"
+        "開放型であるため盛大に音漏れします。電車内やオフィスなど、周囲に人がいる環境での使用には向いていません。",
+        "有線専用のため、スマートフォンでイヤホンジャックがない場合は別途変換アダプタやDACが必要です。"
       ],
-      "score": 78,
-      "scoreRationale": "[基本点: 70]\n[加点: +5] (0.78mm 2pinリケーブル対応という競合にはない機能性)\n[加点: +5] (40mm大型ドライバー搭載)\n[加点: +3] (4,680円という手頃な価格設定)\n[減点: -5] (知名度不足とレビューの少なさ)\n[合計: 78]"
+      "score": 75,
+      "scoreRationale": "[基本点: 70]\n[加点: +5] (0.78mm 2pinリケーブル対応による高いカスタマイズ性と耐久性)\n[加点: +5] (40mm大型ドライバーとDF-HRTF特性に忠実な音響設計)\n[減点: -5] (開放型特有の音漏れによる使用シーンの制限)\n[合計: 75]"
     },
     "technicalSpecs": {
-      "driver": "40mmダイナミックドライバー",
-      "codec": null,
-      "battery": null,
-      "connectivity": ["有線 (3.5mm)", "0.78mm 2pinリケーブル対応"],
-      "noiseCancel": null
+      "weight": "不明",
+      "driver": "40mm ダイナミックドライバー",
+      "impedance": "32Ω±15% (@1kHz)",
+      "sensitivity": "109dB/Vrms (@1kHz)",
+      "frequencyResponse": "20Hz - 32kHz (IEC61094, Free Field)",
+      "effectiveFrequencyResponse": "20Hz - 20kHz (IEC60318-4, -3dB)",
+      "thd": "THD≤0.2% (@94dB, 1kHz)",
+      "connector": "0.78mm 2pin",
+      "plug": "3.5mm ステレオプラグ",
+      "color": "オレンジ"
     }
   }
 }
