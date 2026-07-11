@@ -2,6 +2,12 @@
 {{- if .Params.price -}}
 {{- $priceRaw = index (findRE "[0-9]+" (replace .Params.price "," "")) 0 | default 0 -}}
 {{- end -}}
+{{- $pointsRate := 0 -}}
+{{- if and .Params.price .Params.loyalty_points -}}
+  {{- if gt (int $priceRaw) 0 -}}
+    {{- $pointsRate = mul (div (float .Params.loyalty_points) (float $priceRaw)) 100 -}}
+  {{- end -}}
+{{- end -}}
 {{- $dateRaw := .Date.Unix -}}
 {{- with .Params.last_investigated -}}{{- $dateRaw = (time .).Unix -}}{{- end -}}
 {{- $trackingCategory := "" -}}
@@ -15,7 +21,7 @@
 {{- end -}}
 {{- $priceBucket := partial "utils-price-bucket.html" .Params.price -}}
 <article class="card" data-price="{{ $priceRaw }}" data-score="{{ .Params.score | default 0 }}"
-    data-date="{{ $dateRaw }}">
+    data-date="{{ $dateRaw }}" data-points-rate="{{ $pointsRate }}">
     <div class="card-image">
         <a href="{{ .RelPermalink }}" data-track-product="1" data-asin="{{ .Params.asin }}"
             data-category="{{ $trackingCategory }}" data-price-bucket="{{ $priceBucket }}"
@@ -94,14 +100,8 @@
                 {{- if .Params.savings_percentage -}}
                 <span class="badge-savings">{{ .Params.savings_percentage }}% OFF</span>
                 {{- end -}}
-                {{- if and .Params.price .Params.loyalty_points -}}
-                  {{- $priceNum := index (findRE "[0-9]+" (replace .Params.price "," "")) 0 | default 0 | int -}}
-                  {{- if gt $priceNum 0 -}}
-                    {{- $rate := mul (div (float .Params.loyalty_points) (float $priceNum)) 100 -}}
-                    {{- if ge $rate 10.0 -}}
-                    <span class="badge-points-rate">ポイント還元率 {{- printf "%.0f" $rate -}}%</span>
-                    {{- end -}}
-                  {{- end -}}
+                {{- if ge $pointsRate 10.0 -}}
+                <span class="badge-points-rate">ポイント還元率 {{- printf "%.0f" $pointsRate -}}%</span>
                 {{- end -}}
                 {{- with .Params.availability -}}
                 <span class="badge-availability">{{ . }}</span>
