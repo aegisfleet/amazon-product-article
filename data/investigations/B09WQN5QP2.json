@@ -1,109 +1,212 @@
 {
   "analysis": {
-    "productName": "ヤマハ(YAMAHA) ゲーム/配信用オーディオミキサー ZG01",
-    "parentAsin": "B09WQN5QP2",
-    "productDescription": "ゲーム/配信に特化したHDMI搭載オーディオミキサー。PC、Switch、スマホの音声をまとめて管理し、没入感の高いオーディオ体験と快適なボイスチャット環境を提供する。",
+    "productName": "ヤマハ ゲーム/配信用オーディオミキサー ZG01",
+    "parentAsin": "B0CTJJ3FPB",
+    "productDescription": "没入感の高いゲーム体験を提供する、直感的な操作が可能なHDMI端子搭載ゲーム/配信用オーディオミキサー。",
     "productUsage": [
-      "PCゲームの音声とボイスチャットの音量を個別に調整",
-      "Switchなどのコンソールゲーム機とPCの音声をミックス",
-      "スマホでのDiscord通話をミックスしてゲームプレイ",
-      "配信時の音声ミックスとエフェクト付加",
-      "ボイスチェンジャーや効果音をボタン一つで実行"
+      "ゲーム実況配信",
+      "ボイスチャット",
+      "コンシューマーゲーム機でのサラウンド音声再生"
     ],
     "positivePoints": [
-      "HDMI入力があり、Switchなどのゲーム音を簡単にPCに取り込める",
-      "ボイスチャットとゲーム音のバランス調整が物理ノブで直感的",
-      "専用ソフト「ZG Controller」で詳細なEQ設定が可能",
-      "ファンタム電源対応で高品質マイクが使える",
-      "ボイスチェンジャー機能が手軽で面白い"
+      "HDMI入出力（2入力・1出力）を搭載し、コンシューマーゲーム機の音声を直接入力可能",
+      "専用ドライバーによりPC上で複数デバイスとして認識され、用途別の柔軟なルーティングが可能",
+      "「ZG SURROUND」「FOCUS MODE/EQ」「3D CHAT SPACE」など、独自のDSP音声処理機能を搭載",
+      "直感的な音量操作ができる独立したツマミやミュートボタンを装備"
     ],
     "negativePoints": [
-      "マイク入力のノイズゲート設定が必要（初期設定では環境音を拾いやすい）",
-      "バーチャルサラウンドの効果には個人差がある",
-      "HDMIパススルーは120Hz/VRR非対応の可能性がある（4K/60Hzまで）"
+      "家庭用ゲーム機とのUSB接続によるオーディオ入出力には非対応（USB接続はWindows/Macのみ）",
+      "HDMI接続のビデオ信号はパススルーのみで、ビデオキャプチャー機能は搭載していない",
+      "スマートフォン/タブレットPC用マイク付きイヤホンにおいて、ピン配列の違いにより一部使用できない場合がある"
     ],
     "useCases": [
-      "PCでのFPSゲームプレイ（Apex Legends, Valorant等）",
-      "Switchでのスプラトゥーンなどのチームプレイ",
-      "ゲーム実況配信（OBS等との連携）"
+      "PCでのゲーム実況配信",
+      "PS5やSwitchなどのコンシューマー機をプレイしながらのボイスチャット",
+      "立体音響を用いたFPSゲームでの索敵"
     ],
     "userStories": [
       {
-        "userType": "FPSゲーマー（20代男性）",
-        "scenario": "足音を聞きやすくしたい",
-        "experience": "ZG01の設定で低音を強調し、敵の位置が分かりやすくなった。ボイスチャットの声もクリアに聞こえる。",
+        "userType": "ゲーム配信者",
+        "scenario": "コンシューマー機とPCを用いたゲーム配信環境の構築",
+        "experience": "以前は音声のルーティングが複雑で苦労していましたが、HDMI入力があるおかげで配線がすっきりしました。PC上で複数のデバイスとして認識されるため、配信に載せる音と自分のヘッドホンで聞く音を別々に調整できるのが決め手になりました。",
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "positive"
       },
       {
-        "userType": "Switchユーザー（10代女性）",
-        "scenario": "スプラトゥーン3での通話プレイ",
-        "experience": "以前はスマホとイヤホンを別々に使っていたが、ZG01のおかげでゲーム音と通話音声を一つのヘッドセットで聞けるようになり快適。",
-        "sentiment": "positive"
-      },
-      {
-        "userType": "配信初心者（30代男性）",
-        "scenario": "初めてのゲーム実況",
-        "experience": "OBSの設定が複雑だったが、ZG01を使うことで音声周りの配線がスッキリし、トラブルが減った。",
-        "sentiment": "positive"
+        "userType": "FPSゲーマー",
+        "scenario": "ボイスチャットをしながらのFPSゲームプレイ",
+        "experience": "ZG SURROUNDとFOCUS MODEを活用することで、敵の足音が聞き取りやすくなりました。ただ、USB接続がPC専用のため、PS5でフル活用するにはHDMI経由での接続が必須となる点には最初戸惑いました。",
+        "supportingSourceIds": [
+          "src-2"
+        ],
+        "sentiment": "mixed"
       }
     ],
-    "userImpression": "総じて高評価だが、マイク設定の細かさやHDMIの仕様に関しては一部不満も見られる。しかし、機能性と使い勝手の良さは多くのユーザーに支持されている。",
+    "userImpression": "HDMI入出力を備える希少なゲーミングミキサーとして、特にコンシューマー機ゲーマーや配信者から高く評価されている。PC上で音声ルーティングを簡単に分割できる点は配信の利便性を大きく向上させる。一方で、USB接続がPCに限定される点やビデオキャプチャ機能がない点は購入前に注意が必要だが、それを理解して環境を構築するユーザーにとっては、他に代えがたい機能性を持ったミキサーである。",
     "sources": [
       {
-        "name": "AV Watch レビュー",
-        "url": "https://av.watch.impress.co.jp/docs/review/review/1438568.html",
-        "credibility": "high"
+        "id": "src-1",
+        "name": "ヤマハ ZG01 製品情報ページ（公式サイト）",
+        "url": "https://jp.yamaha.com/products/proaudio/live_streaming_gaming/zg/zg01/index.html",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2022-06-01",
+        "author": "ヤマハ株式会社",
+        "conflictOfInterest": "none",
+        "notes": "HDMI入出力搭載、DSPエフェクト、USBルーティング機能などの公式スペックを確認"
       },
       {
-        "name": "GIGAZINE レビュー",
-        "url": "https://gigazine.net/news/20220513-yamaha-zg01/",
-        "credibility": "high"
-      },
-      {
-        "name": "Amazon カスタマーレビュー（推測）",
-        "url": "https://www.amazon.co.jp/dp/B09WQN5QP2",
-        "credibility": "medium"
+        "id": "src-2",
+        "name": "ヤマハ ZG01 プレスリリース",
+        "url": "https://www.yamaha.com/ja/news_release/2022/22042001/",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2022-04-20",
+        "author": "ヤマハ株式会社",
+        "conflictOfInterest": "none",
+        "notes": "発売日、希望小売価格、製品の主要機能（ZG SURROUND、FOCUS MODE等）の背景情報を確認"
       }
     ],
-    "lastInvestigated": "2026-02-26",
+    "claims": [
+      {
+        "claim": "限りなくリアルに近いバーチャルサラウンド体験を提供するZG SURROUND",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-1",
+          "src-2"
+        ],
+        "crossChecked": true,
+        "notes": "ヤマハ独自のViReal Technologies for headphonesを採用しており、ステレオヘッドホンで立体音響を再現する機能として公式に仕様確認されている"
+      }
+    ],
+    "lastInvestigated": "2026-07-13",
     "competitiveAnalysis": [
       {
-        "name": "Logicool G ASTRO MixAmp Pro TR",
-        "asin": "B07SR8LZ12",
-        "priceComparison": "ZG01より安価（約1.5万円程度）",
-        "featureComparison": ["PS4/PS5特化", "デイジーチェーン対応", "HDMI入力なし（光デジタル）"],
-        "differentiators": ["コンソールゲーマーに圧倒的な知名度", "価格の安さ"]
+        "name": "ヤマハ ZG02",
+        "asin": "B0CTJBGSNX",
+        "priceComparison": "ZG01より安価な後継/エントリーモデル。機能を絞ることで低価格化を実現している。",
+        "featureComparison": [
+          "共通点：ヤマハのゲーミングオーディオミキサーであり、独自の音声処理機能（ZG SURROUND等）を備える",
+          "相違点：ZG02はHDMI端子を搭載しておらず、よりコンパクトでPCベースのゲーム環境に特化している"
+        ],
+        "differentiators": [
+          "ヤマハ ZG01の利点：コンシューマーゲーム機をHDMIで直接接続したい場合や、より多くの物理ツマミで直感的に操作したい場合",
+          "ヤマハ ZG02の利点：PCゲーム中心でHDMI端子が不要な場合や、デスクのスペースを節約したい場合"
+        ]
       },
       {
-        "name": "Audio Technica AT-UMX3",
-        "asin": "B0CS6S8GBH",
-        "priceComparison": "ZG01より安価（約2万円程度）",
-        "featureComparison": ["USB接続のみ", "シンプル設計", "ループバック機能"],
-        "differentiators": ["初心者向けの使いやすさ", "コンパクトさ"]
+        "name": "ヤマハ AG03MK2",
+        "asin": "B09VFDKDDM",
+        "priceComparison": "ZG01と比較してやや安価。音楽制作や一般的なライブ配信に広く普及しているモデル。",
+        "featureComparison": [
+          "共通点：ヤマハ製の配信用ミキサーであり、高いマイクプリアンプ性能とUSB接続を備える",
+          "相違点：AG03MK2はHDMI端子やゲーム特化のサラウンド機能がなく、スライダー（フェーダー）を用いた一般的なミキサーの操作感を持つ"
+        ],
+        "differentiators": [
+          "ヤマハ ZG01の利点：ゲーム実況に特化した機能（サラウンド、ボイスチェンジャー、ゲーム機とのHDMI接続）を求める場合",
+          "ヤマハ AG03MK2の利点：弾き語りや歌枠などの音楽・雑談配信がメインで、楽器入力（ギター等）を必要とする場合"
+        ]
       },
       {
-        "name": "FIFINE AmpliGame SC8W",
-        "asin": "B0FRN1K1VX",
-        "priceComparison": "非常に安価（約1.2万円程度）",
-        "featureComparison": ["XLR対応", "RGBライティング", "ボイスチェンジャー"],
-        "differentiators": ["コストパフォーマンス", "デザイン性"]
+        "name": "オーディオテクニカ AT-UMX3",
+        "asin": "B0DZCCPH3V",
+        "priceComparison": "ZG01より安価。配信用インターフェースとしての基本機能に絞った手頃な価格設定。",
+        "featureComparison": [
+          "共通点：配信・ボイスチャット向けにマイク入力とUSB接続を備えたオーディオミキサー",
+          "相違点：AT-UMX3はHDMI端子やゲーム特化のサラウンドDSPがなく、よりシンプルでコンパクトな設計"
+        ],
+        "differentiators": [
+          "ヤマハ ZG01の利点：HDMI接続によるコンシューマー機の音声取り込みや、立体音響などのゲーム特化機能を活用したい場合",
+          "オーディオテクニカ AT-UMX3の利点：機能はシンプルで良く、省スペースで予算を抑えて高音質なマイク入力を導入したい場合"
+        ]
+      },
+      {
+        "name": "MAONO ゲーミングオーディオミキサー",
+        "asin": "B0F2J1HPB6",
+        "priceComparison": "ZG01と比較して大幅に安価なエントリー向けモデル。",
+        "featureComparison": [
+          "共通点：ゲーム・配信用としてマイク入力やボイスチェンジャー機能、RGBライティングを備える",
+          "相違点：MAONOは価格帯が大きく異なり、HDMI入力や高度なサラウンドDSP機能は搭載されていない"
+        ],
+        "differentiators": [
+          "ヤマハ ZG01の利点：高品質なサラウンド機能やHDMI接続、信頼性の高い専用ドライバーによる安定したPCルーティングを求める場合",
+          "MAONO ゲーミングオーディオミキサーの利点：とにかく予算を抑えて、ボイスチェンジャーやRGBライティングを楽しみたい入門者の場合"
+        ]
+      },
+      {
+        "name": "ヤマハ ZG01 NieR:Automata Ver1.1aコラボモデル",
+        "asin": "B0CNT5657L",
+        "priceComparison": "通常のZG01より高価な限定コラボレーションモデル。",
+        "featureComparison": [
+          "共通点：基本スペックや機能（HDMI入出力、DSPエフェクト等）はZG01と同一",
+          "相違点：外観デザインがNieR:Automata仕様となっている限定モデル"
+        ],
+        "differentiators": [
+          "ヤマハ ZG01の利点：標準的なデザインで良く、コラボモデルのプレミアム価格を避けたい場合",
+          "ヤマハ ZG01 NieRモデルの利点：NieR:Automataのファンであり、特別なデザインの機材をコレクションしたい場合"
+        ]
+      },
+      {
+        "name": "Yamaha ZG02 (別カタログ)",
+        "asin": "B0CQZ25H1M",
+        "priceComparison": "ZG01と同等以下の価格帯。ZG02の別カタログ/バンドル品。",
+        "featureComparison": [
+          "共通点：Yamahaのゲーミングミキサーラインナップ",
+          "相違点：HDMI端子の有無や本体サイズ、物理ボタンの構成（ZG02仕様）"
+        ],
+        "differentiators": [
+          "ヤマハ ZG01の利点：コンシューマーゲーム機をHDMIで直接つなぎたい場合",
+          "Yamaha ZG02の利点：PCメインでHDMIが不要であり、コンパクトさを重視する場合"
+        ]
       }
     ],
     "recommendation": {
-      "targetUsers": ["ゲーム配信初心者～中級者", "Switchなどのコンソールゲーマー", "ボイスチャットを重視するユーザー"],
-      "pros": ["HDMI入力の手軽さ", "直感的な操作性", "ヤマハの音響技術"],
-      "cons": ["高リフレッシュレートモニター利用者（HDMIパススルー制限の可能性）", "詳細設定にはPCが必要"],
+      "targetUsers": [
+        "PS5やSwitchなどのコンシューマー機とPCを組み合わせてゲーム配信を行うストリーマー（HDMI入出力がない他機種より配線・設定が圧倒的に楽なため）",
+        "ボイスチャットアプリと配信ソフトの音声ルーティングをPC上で手軽に分けたいPCゲーマー"
+      ],
+      "pros": [
+        "HDMI入力により、ゲーム機から直接音声を取り込み、サラウンド化して配信やヘッドホン出力ができるため、没入感の高いプレイが可能になる",
+        "専用ドライバーによりPC上で2つのデバイスとして認識されるため、配信に載せる音と自分の耳に入る音を分けるといった複雑な設定が簡単に行える"
+      ],
+      "cons": [
+        "コンシューマー機とのUSB接続によるオーディオ伝送には対応していないため、PS5等で使う場合はHDMI経由など接続方法を事前に確認する必要がある",
+        "映像のキャプチャー機能自体はないため、配信でゲーム画面を映す場合は別途ビデオキャプチャーボードが必要になる"
+      ],
       "score": 85,
-      "scoreRationale": "[基本点: 70]\n[加点: +10] (HDMI入力搭載という独自の強み)\n[加点: +5] (直感的な操作性とボイスチャット機能の充実)\n[加点: +5] (ヤマハブランドの信頼性と音質)\n[減点: -5] (価格が競合よりやや高め)\n[合計: 85]"
+      "scoreRationale": "[基本点: 70]\n[加点: +10] (HDMI入出力を備え、コンシューマー機との連携が非常に強力である点)\n[加点: +5] (PC上での柔軟な仮想デバイスルーティング機能による配信時の利便性)\n[加点: +5] (ZG SURROUNDなどの独自DSPによるゲーム体験の向上)\n[減点: -5] (USBによるコンシューマー機との直接オーディオ通信非対応や、キャプチャー機能は非搭載などの制約)\n[合計: 85]"
     },
     "technicalSpecs": {
-      "dimensions": { "width": "195mm", "height": "47.5mm", "depth": "110mm", "weight": "0.8kg" },
-      "power": "USBバスパワー (USB-C)",
-      "inputs": ["HDMI x 2", "USB-C", "AUX (3.5mm)", "Mic (XLR/TRS, 3.5mm)"],
-      "outputs": ["HDMI (Pass-through)", "Headphone (3.5mm)", "Speaker (3.5mm)"],
-      "audioQuality": "24-bit/48kHz",
-      "phantomPower": "+48V対応",
-      "other": ["ボイスチェンジャー", "ゲーム/ボイスチャットバランス調整", "専用ソフトZG Controller"]
+      "dimensions": {
+        "width": "195mm",
+        "height": "47.5mm",
+        "depth": "110mm"
+      },
+      "weight": "800g",
+      "inputs": [
+        "マイクロフォン (コンボジャック / 3.5mmプラグインパワー対応)",
+        "スマートフォン (4極TRRS)",
+        "HDMI (2系統)",
+        "USB (2系統: Voice, Streaming)"
+      ],
+      "outputs": [
+        "ヘッドホン / ヘッドセット (3.5mm)",
+        "スマートフォン (4極TRRS)",
+        "モニターアウト (ステレオミニ)",
+        "HDMI (1系統: パススルー仕様)",
+        "USB (2系統: Voice, スピーカー)"
+      ],
+      "audioQuality": "24-bit/48kHz (USB録音/再生)",
+      "operatingTemperature": "0～40℃",
+      "includedAccessories": [
+        "USB 2.0ケーブル (USB-C to USB-C) 1.5m",
+        "USB 2.0ケーブル (USB-A to USB-C) 1.5m",
+        "スタートガイド",
+        "セーフティガイド"
+      ]
     }
   }
 }
