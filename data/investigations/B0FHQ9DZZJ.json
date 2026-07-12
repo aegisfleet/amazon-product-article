@@ -1,0 +1,164 @@
+{
+  "analysis": {
+    "productName": "XREAL One Pro",
+    "parentAsin": "B0H2VG5GD6",
+    "productDescription": "X1チップと新搭載X Prism光学エンジンにより、ネイティブ3DoFトラッキングと超低遅延を実現した高性能ARグラス。最大約10.87m（428インチ相当）のフルHD仮想スクリーンを57度の広視野角で投影し、快適で没入感のある映像体験を提供する。",
+    "productUsage": [
+      "映画・動画などのエンターテインメント視聴",
+      "Steam DeckやROG Ally、PCでのゲームプレイ",
+      "複数画面での仮想ワークスペース構築"
+    ],
+    "positivePoints": [
+      "X1チップ搭載によりネイティブな3DoFトラッキングと3msの超低遅延を実現",
+      "X Prism光学エンジンにより57°の広視野角で最大約10.87m（428インチ相当）の仮想スクリーンを投影",
+      "120Hzリフレッシュレート対応のソニー製マイクロOLED搭載",
+      "700ニトの高輝度および電気調光レンズにより屋外でもクリアな視界",
+      "IPD（瞳孔間距離）に合わせたM/Lの2サイズ展開でユーザーに最適なフィット感を提供"
+    ],
+    "negativePoints": [
+      "別売りのXREAL Beam Proが一部機能で必要になる場合がある",
+      "DRM保護された一部アプリケーションとは直接併用できない",
+      "iPhone 15/16のeシリーズや非DP対応のAndroid端末には非対応"
+    ],
+    "useCases": [
+      "出張中の新幹線や飛行機内でのパーソナルシアターとして",
+      "ベッドでくつろぎながら大画面でゲームをプレイ",
+      "カフェでの作業時にマルチスクリーンを構築してのマルチタスク"
+    ],
+    "userStories": [],
+    "userImpression": "広い視野角と明るいディスプレイ、そして専用チップによる安定した3DoF表示が高く評価されるポテンシャルを持つ。特に、サイズ展開（M/L）が用意されていることで従来のグラス型デバイスにおける『合わない』という不満が解消されやすい点が好評。一方で、すべての機能を引き出すための周辺機器（Beam Pro等）が必要となる点には注意が必要である。",
+    "sources": [
+      {
+        "id": "src-amazon-listing",
+        "name": "Amazon商品ページ",
+        "url": "https://www.amazon.co.jp/dp/B0FHQ9DZZJ",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-07-12",
+        "author": "XREAL",
+        "conflictOfInterest": "possible",
+        "notes": "製品の特徴、仕様、対応デバイス情報等"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "ネイティブな3DoFトラッキングと超低遅延（3ms）",
+        "category": "comparativeAdvantage",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-amazon-listing"
+        ],
+        "crossChecked": false,
+        "notes": "独自チップ（X1チップ）搭載によるハードウェアベースの優位性"
+      }
+    ],
+    "lastInvestigated": "2026-07-12",
+    "competitiveAnalysis": [
+      {
+        "name": "VITURE Luma Ultra",
+        "asin": "B0GCZMGP1T",
+        "priceComparison": "対象商品と同価格帯（わずかに安い）だが、VITURE Luma Ultraは視野角52°、対象商品は57°。VITURE Luma Ultraは1500ニットと明るさで勝る。",
+        "featureComparison": [
+          "共通点：高解像度OLEDディスプレイ、120Hzリフレッシュレート対応、電子調光レンズ機能",
+          "相違点：対象商品はX1チップによるネイティブ3DoFと57°広視野角、サイズ展開（M/L）がある。VITURE Luma Ultraは1500ニットの高輝度を誇る。"
+        ],
+        "differentiators": [
+          "XREAL One Proの利点：ネイティブ3DoFによる安定したトラッキングと、IPDサイズ展開による自分に合ったフィット感、広い視野角（57°）を求めるならこちら。",
+          "VITURE Luma Ultraの利点：屋外などさらに強い日差しの下で使用するため、1500ニットという圧倒的なピーク輝度が必要な場合はこちら。"
+        ]
+      },
+      {
+        "name": "XREAL 1S",
+        "asin": "B0GLYFHF71",
+        "priceComparison": "対象商品の方が高価。対象商品はProモデルとして視野角（57°対52°）や輝度に優れる。",
+        "featureComparison": [
+          "共通点：ネイティブ3DoF、X1チップ搭載、3Dリアル変換機能",
+          "相違点：対象商品は視野角57°（1Sは52°）、700ニト高輝度、M/Lの2サイズ展開などハードウェアが上位仕様。"
+        ],
+        "differentiators": [
+          "XREAL One Proの利点：より広い視野角と高い輝度、自分に合ったIPDサイズによるワンランク上の没入感と快適性を重視するならこちら。",
+          "XREAL 1Sの利点：X1チップ搭載による快適な3DoF体験をより手軽な価格で体験したい場合はこちら。"
+        ]
+      },
+      {
+        "name": "VITURE Beast",
+        "asin": "B0FG81WF3N",
+        "priceComparison": "対象商品の方がやや安価。VITURE Beastは58°の視野角と1250ニトの高輝度を持つプレミアムモデル。",
+        "featureComparison": [
+          "共通点：広視野角（57° vs 58°）、ネイティブ3DoF、電子調光、120Hz対応",
+          "相違点：対象商品はIPDサイズ展開（M/L）がある点。VITURE Beastは1250ニトの輝度とやや広い視野角（58°）。"
+        ],
+        "differentiators": [
+          "XREAL One Proの利点：自身のIPDにしっかり合わせて映像のぼやけや疲れを防ぎたい、フィット感を重視するならこちら。",
+          "VITURE Beastの利点：最高クラスの視野角と輝度、家電批評などでの高い評価・実績を重視するならこちら。"
+        ]
+      },
+      {
+        "name": "RayNeo Air 4 Pro",
+        "asin": "B0GF714YK1",
+        "priceComparison": "対象商品の方が約2倍高価。RayNeoは価格を抑えつつHDR10対応を実現。",
+        "featureComparison": [
+          "共通点：120Hz対応、3D映像機能",
+          "相違点：対象商品は専用チップによるネイティブ3DoFと広視野角。RayNeo Air 4 ProはHDR10対応と価格の安さに特化。"
+        ],
+        "differentiators": [
+          "XREAL One Proの利点：空間に画面を固定する3DoF/6DoF体験や広い視野角など、ARグラスとしての本格的な空間体験を求めるならこちら。",
+          "RayNeo Air 4 Proの利点：HDR10対応の鮮やかな色表現を、コストパフォーマンス良く手に入れたい場合はこちら。"
+        ]
+      },
+      {
+        "name": "ROG XREAL R1",
+        "asin": "B099X2YZKQ",
+        "priceComparison": "対象商品の方が大幅に安価。ROGは240Hz対応のゲーマー向け超高価格帯モデル。",
+        "featureComparison": [
+          "共通点：OLEDディスプレイ搭載",
+          "相違点：対象商品は120Hz対応、ROG XREAL R1は240Hzの超ハイリフレッシュレート対応。"
+        ],
+        "differentiators": [
+          "XREAL One Proの利点：一般的なゲームや映画視聴において、十分な高性能（120Hz、広視野角）を現実的な価格で手に入れたいならこちら。",
+          "ROG XREAL R1の利点：FPSなどの競技ゲーム向けに240Hzの極限の滑らかさを追求するコアゲーマーならこちら。"
+        ]
+      },
+      {
+        "name": "VITURE Luma",
+        "asin": "B0FFT61X6F",
+        "priceComparison": "対象商品の方が高価。VITURE Lumaは1000ニットの明るさを持つが視野角は50°。",
+        "featureComparison": [
+          "共通点：120Hzリフレッシュレート",
+          "相違点：対象商品は視野角57°とネイティブ3DoF。VITURE Lumaは視野角50°、明るさ1000ニット。"
+        ],
+        "differentiators": [
+          "XREAL One Proの利点：より広い視野角（57°）とネイティブ3DoFによる安定した映像体験を重視するならこちら。",
+          "VITURE Lumaの利点：明るさ（1000ニット）と価格のバランスを重視し、手軽にスマートグラスを導入したい場合はこちら。"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "自分の瞳孔間距離（IPD）に合ったサイズのARグラスで、疲れにくく鮮明な映像を楽しみたいユーザー（汎用サイズでピントが合わなかった経験がある人）",
+        "専用チップのネイティブ3DoFによる、酔いにくく安定した空間固定映像を求める人",
+        "出張や旅行など移動中に映画館クラスの没入感を手軽に持ち運びたい人"
+      ],
+      "pros": [
+        "M/Lの2サイズ展開により、自分のIPDにぴったり合ったレンズ位置で映像のぼやけや眼精疲労を防げる",
+        "X1チップによるネイティブ3DoF機能で、首を振っても映像が空中にしっかり固定され、映像酔いを防ぎながら快適に視聴できる",
+        "57°の広視野角と最大約10.87m（428インチ相当）の画面で、映画やゲームの没入感が格段に向上する"
+      ],
+      "cons": [
+        "XREAL Beam Proなどの別売アクセサリーがないと機能が制限される場面があるため、追加コストがかかる可能性を想定しておくこと",
+        "iPhone 15/16のeシリーズなど非対応機種があるため、自身のデバイスがDP出力対応のUSB-Cポートを持っているか必ず購入前に確認すること"
+      ],
+      "score": 85,
+      "scoreRationale": "[基本点: 70]\n[加点: +5] (IPDに合わせたサイズ展開により、個人差による視覚的な不満を解消しやすい設計)\n[加点: +5] (X1チップ搭載によるハードウェアレベルでの低遅延ネイティブ3DoF)\n[加点: +5] (57°の広視野角と高い輝度・電子調光機能の搭載)\n[合計: 85]"
+    },
+    "technicalSpecs": {
+      "size": "M (IPD 57-66mm)",
+      "fieldOfView": "57°",
+      "refreshRate": "最大120Hz",
+      "displayType": "ソニー製マイクロOLED (約14mm)",
+      "brightness": "700ニト",
+      "tracking": "ネイティブ3DoF (X1チップ), 6DoF (別売XREAL Eye併用時)",
+      "connectivity": "USB-C (DP映像出力対応)"
+    }
+  }
+}
