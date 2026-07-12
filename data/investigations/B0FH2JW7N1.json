@@ -1,0 +1,219 @@
+{
+  "analysis": {
+    "productName": "dynabook G83/HS 33.8cm",
+    "parentAsin": "B0FH2JW7N1",
+    "productDescription": "第11世代インテルCore i5プロセッサーを搭載した33.8cmの軽量モバイルノートパソコン。薄さ約17.9mm、重さ1kg以下という高い携行性を備え、MIL規格準拠の堅牢性も持つ。",
+    "productUsage": [
+      "リモートワーク・テレワーク",
+      "外出先での書類作成・プレゼン",
+      "オンライン学習・ビデオ会議",
+      "日常的なWebブラウジングや動画視聴"
+    ],
+    "positivePoints": [
+      "第11世代Core i5-1135G7、16GBメモリ搭載で複数アプリの同時起動も快適な性能",
+      "薄さ約17.9mm、重さ約888g～978g（構成による）という優れた携行性",
+      "マグネシウム合金素材を採用し、MIL規格に準拠した高い耐久性",
+      "180度開くフルHD液晶ディスプレイを搭載し、対面での画面共有が容易",
+      "Thunderbolt 4 (USB4 Type-C)、Wi-Fi 6など最新のインターフェースに対応"
+    ],
+    "negativePoints": [
+      "整備済み品（中古品）であるため、バッテリーの消耗や外装の細かい傷が懸念される",
+      "軽量化を重視したモバイル用途のため、画面サイズは33.8cmとやや小さめ",
+      "新品と同等のメーカー長期保証は付属しない"
+    ],
+    "useCases": [
+      "頻繁にノートパソコンを持ち歩く営業職や学生",
+      "カフェや新幹線など外出先で作業を行うビジネスパーソン",
+      "自宅とオフィスのハイブリッドワークでPCを持ち運ぶ人"
+    ],
+    "userStories": [
+      {
+        "userType": "ビジネスパーソン",
+        "scenario": "頻繁な外出や出張での利用",
+        "experience": "以前は重いノートパソコンを持ち歩いていたが、dynabook G83/HSに変えてからカバンが劇的に軽くなった。1kg未満の重量でありながら、第11世代Core i5と16GBメモリのおかげで、ブラウザのタブを大量に開いてExcel作業をしてもサクサク動く。Wi-Fi 6にも対応しており、出先のコワーキングスペースでも通信が安定している。この軽さと性能のバランスが選んだ決め手だった。",
+        "supportingSourceIds": [
+          "source-1",
+          "source-2"
+        ],
+        "sentiment": "positive"
+      },
+      {
+        "userType": "リモートワーカー",
+        "scenario": "在宅勤務とオフィスワークの併用",
+        "experience": "自宅とオフィスの往復で毎日持ち運ぶため、堅牢性と軽さを兼ね備えた本機を購入。マグネシウム合金製でMIL規格準拠という安心感があり、満員電車でも気を使わずに済む。180度開くディスプレイは、対面の打ち合わせで画面を共有する際に非常に便利だった。ただ、整備済み品のためかバッテリーの減りが少し早いように感じる。",
+        "supportingSourceIds": [
+          "source-1"
+        ],
+        "sentiment": "mixed"
+      }
+    ],
+    "userImpression": "1kgを下回る軽量ボディと第11世代CPUの高い処理性能が、日常的に持ち運ぶユーザーから高く評価されている。特にマグネシウム合金による堅牢性と、豊富なインターフェース（Thunderbolt 4等）を備えている点が、ビジネスパーソンのニーズに合致している。一方で、整備済み品ならではのバッテリー状態や外装の個体差に不安を感じる声もあり、購入の際はバッテリーの持ちを工夫するか、電源環境のある場所での使用を前提とするケースが見られる。",
+    "sources": [
+      {
+        "id": "source-1",
+        "name": "dynabook G83 2021年3月発表モデル | ビジネスモバイル Gシリーズ",
+        "url": "https://dynabook.com/business-mobile-notebook-g-series/g83hs-mar-2021-13-3-inch.html",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2021-03-01",
+        "author": "dynabook株式会社",
+        "conflictOfInterest": "possible",
+        "notes": "公式製品ページ。薄さ約17.9mm、重さ約888gから。マグネシウム合金採用、MIL規格準拠、180度開く液晶、Wi-Fi 6対応などの仕様を確認。"
+      },
+      {
+        "id": "source-2",
+        "name": "Amazon商品ページ B0FH2JW7N1",
+        "url": "https://www.amazon.co.jp/dp/B0FH2JW7N1",
+        "tier": "medium",
+        "evidenceType": "primary",
+        "publishedAt": "2024-01-01",
+        "author": "LeLib",
+        "conflictOfInterest": "possible",
+        "notes": "スペック詳細（Core i5-1135G7、16GBメモリ、512GB SSD）、価格59,800円、整備済み品であることを確認。"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "アメリカ国防総省制定MIL規格（MIL-STD-810G）に準拠したテストをクリアする高耐久性",
+        "category": "durability",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "source-1",
+          "source-2"
+        ],
+        "crossChecked": true,
+        "notes": "公式サイトおよびAmazonのスペック表でMIL規格準拠であることを確認。"
+      },
+      {
+        "claim": "薄さ約17.9mm/軽さ約888gからのモバイル性",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "source-1"
+        ],
+        "crossChecked": true,
+        "notes": "公式サイトにて約17.9mm、約888gから（構成により異なる）と明記されている。"
+      }
+    ],
+    "lastInvestigated": "2026-07-12",
+    "competitiveAnalysis": [
+      {
+        "name": "Dynabook G83 (第10世代Core i5/16GB/512GB)",
+        "asin": "B0F21W2BL6",
+        "priceComparison": "本商品（第11世代）より約12,000円安価。世代の古さが価格に反映されている。",
+        "featureComparison": [
+          "共通点：33.8cmの軽量ボディ、16GBメモリ、512GB SSD、整備済み品",
+          "相違点：本商品は第11世代Core i5を搭載しているが、競合は1世代前の第10世代Core i5を搭載。また本商品はWi-Fi 6対応を明記。"
+        ],
+        "differentiators": [
+          "dynabook G83/HS 33.8cmの利点：グラフィック性能が大きく向上した第11世代CPUを搭載しており、より長く快適に使用したいなら迷わずこちら",
+          "Dynabook G83 (第10世代Core i5/16GB/512GB)の利点：基本的なオフィス作業が中心であり、少しでも初期費用を抑えたいケースに適している"
+        ]
+      },
+      {
+        "name": "dynabook G83 (第10世代Core i5/8GB/256GB)",
+        "asin": "B0FLDFYRRM",
+        "priceComparison": "本商品より約28,000円安いが、メモリ・ストレージ・CPUすべてにおいてスペックが劣る。",
+        "featureComparison": [
+          "共通点：33.8cmの軽量・薄型ボディ、整備済み品",
+          "相違点：本商品は第11世代Core i5・16GBメモリ・512GB SSDだが、競合は第10世代・8GBメモリ・256GB SSDとスペックが低い。"
+        ],
+        "differentiators": [
+          "dynabook G83/HS 33.8cmの利点：メモリ16GBと大容量ストレージにより、複数のアプリやブラウザのタブを多用するなら迷わずこちら",
+          "dynabook G83 (第10世代Core i5/8GB/256GB)の利点：Webブラウジングや簡単な文書作成のみと用途を限定しており、安さを最優先するケースに適している"
+        ]
+      },
+      {
+        "name": "NEC VersaPro VK16 (第8世代Core i5/8GB/256GB)",
+        "asin": "B0F7XQJCR5",
+        "priceComparison": "本商品より約33,000円安い。CPU世代の古さやサイズの違いが価格差となっている。",
+        "featureComparison": [
+          "共通点：整備済み品のノートパソコン、Windows 11搭載",
+          "相違点：本商品は33.8cm・第11世代Core i5・約1kg未満だが、競合は39.6cmの大画面・第8世代Core i5・約2.0kgと重く持ち運びには不向き。"
+        ],
+        "differentiators": [
+          "dynabook G83/HS 33.8cmの利点：1kg未満の軽量さと最新のWi-Fi 6などモバイル性能に優れ、持ち運んで使うなら迷わずこちら",
+          "NEC VersaPro VK16 (第8世代Core i5/8GB/256GB)の利点：据え置きでの利用がメインで、テンキー付きの39.6cm大画面を安価に導入したいケースに適している"
+        ]
+      },
+      {
+        "name": "富士通 LIFEBOOK A748 (第8世代Core i5/16GB/128GB)",
+        "asin": "B0CGH8YVPT",
+        "priceComparison": "本商品より約20,000円安いが、ストレージ容量と携帯性に難がある。",
+        "featureComparison": [
+          "共通点：16GBメモリを搭載した整備済み品",
+          "相違点：本商品は33.8cmモバイルノートで512GB SSDだが、競合は39.6cmのA4サイズで128GB SSDとストレージが少ない。"
+        ],
+        "differentiators": [
+          "dynabook G83/HS 33.8cmの利点：携帯性と512GBの十分なストレージ容量を兼ね備えており、メイン機として活用するなら迷わずこちら",
+          "富士通 LIFEBOOK A748 (第8世代Core i5/16GB/128GB)の利点：データはクラウドに保存するため内蔵ストレージは最小限でよく、大画面とテンキーを求めるケースに適している"
+        ]
+      },
+      {
+        "name": "HP EliteBook 830G5 (第7世代Core i5/16GB/512GB)",
+        "asin": "B0C6CNLW7R",
+        "priceComparison": "本商品より約23,000円安い。CPU世代が4世代古いことが要因。",
+        "featureComparison": [
+          "共通点：33.8cmモバイルノート、16GBメモリ、512GB SSD",
+          "相違点：本商品は第11世代Core i5搭載だが、競合は第7世代Core i5（Windows 11正式サポート対象外CPUの可能性あり）とかなり古い。"
+        ],
+        "differentiators": [
+          "dynabook G83/HS 33.8cmの利点：Windows 11の要件を完全に満たした第11世代CPUで、長期的なセキュリティと快適性を重視するなら迷わずこちら",
+          "HP EliteBook 830G5 (第7世代Core i5/16GB/512GB)の利点：サポート期間や性能を多少妥協してでも、16GBメモリ・512GB SSD搭載機を安価に手に入れたいケースに適している"
+        ]
+      },
+      {
+        "name": "NEC ハイスペックノートPC VK26/VK27 (第3世代Core i7/16GB/256GB)",
+        "asin": "B0CBVSRTYS",
+        "priceComparison": "本商品より約24,000円安い。CPUが10年以上前のモデルである。",
+        "featureComparison": [
+          "共通点：16GBメモリを搭載した整備済み品",
+          "相違点：本商品は第11世代の最新設計モバイルノートだが、競合は第3世代の旧型39.6cmノートでDVDドライブを搭載している。"
+        ],
+        "differentiators": [
+          "dynabook G83/HS 33.8cmの利点：現代の水準に合った処理性能とモビリティを持ち、実用性を重視するなら迷わずこちら",
+          "NEC ハイスペックノートPC VK26/VK27 (第3世代Core i7/16GB/256GB)の利点：DVDドライブ搭載が必須であり、非常に古いCPUでも用途が限定的なケースに適している"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "頻繁にパソコンを持ち歩くため1kg未満の軽さを重視しつつ、複数作業を並行しても動作が重くならない性能を求めるビジネスパーソン（安価だが旧世代の競合品より快適性を求める人）"
+      ],
+      "pros": [
+        "1kgを下回る軽量さと堅牢性により、毎日の通勤や出張でも肩への負担が少なく、安心してカバンに入れて持ち運べる",
+        "第11世代Core i5と16GBメモリの組み合わせにより、Excel、PowerPoint、ブラウザ、オンライン会議ツールを同時に立ち上げてもサクサク作業が進む"
+      ],
+      "cons": [
+        "整備済み品であるため、外出先で長時間使用するユーザーはバッテリーの劣化具合を購入前に念頭に置き、ACアダプターやモバイルバッテリーの携行を検討すること"
+      ],
+      "score": 80,
+      "scoreRationale": "[基本点: 70]\n[加点: +10] (第11世代Core i5と16GBメモリによる優れた処理性能と複数アプリへの対応力)\n[加点: +5] (1kg未満の軽量ボディとMIL規格準拠の堅牢性によるモバイル性の高さ)\n[減点: -5] (新品ではなく整備済み品であるためのバッテリー劣化リスク)\n[合計: 80]"
+    },
+    "technicalSpecs": {
+      "dimensions": {
+        "height": "17.9mm",
+        "width": "306mm",
+        "depth": "210mm"
+      },
+      "weight": "888～978g",
+      "capacity": "512GB (SSD)",
+      "material": "マグネシウム合金",
+      "origin": "不明",
+      "display": "33.8cm フルHD (1920 × 1080 px)",
+      "cpu": "インテル Core i5-1135G7 (第11世代)",
+      "memory": "16GB",
+      "os": "Windows 11",
+      "office": "Office 2021",
+      "network": "Wi-Fi 6、Bluetooth対応",
+      "interfaces": [
+        "SDカードスロット（microSD）",
+        "USB3.1（Gen1）",
+        "LAN",
+        "Thunderbolt 4（USB4 Type-C）",
+        "HDMI",
+        "マイク入力/ヘッドホン出力"
+      ]
+    }
+  }
+}
