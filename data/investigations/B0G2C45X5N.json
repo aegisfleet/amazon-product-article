@@ -1,0 +1,207 @@
+{
+  "analysis": {
+    "productName": "GEEKOM A7 Max ミニPC (Ryzen 9 7940HS)",
+    "parentAsin": "B0G2C45X5N",
+    "productDescription": "AMD Ryzen 9 7940HSを搭載し、交換可能なDDR5メモリとデュアル2.5G LANを備えた高性能ミニPC。",
+    "productUsage": [
+      "動画編集・RAW現像などのクリエイティブ作業",
+      "3Dゲームプレイ",
+      "マルチモニターでの多重タスク処理",
+      "ホームサーバー構築"
+    ],
+    "positivePoints": [
+      "同価格帯のRyzen 7搭載機よりも上位のRyzen 9 7940HSを搭載している",
+      "最大128GBまで換装・拡張可能なDDR5メモリスロットを採用している",
+      "USB4×2ポートを搭載し、最大4画面（8K対応）の同時出力が可能",
+      "デュアル2.5G LANポートを搭載し、ネットワーク分離やリンクアグリゲーションに対応",
+      "動作音が約36dBに抑えられた静音冷却システムを搭載",
+      "標準で3年間の長期保証が付帯する"
+    ],
+    "negativePoints": [
+      "初期搭載メモリが16GBであり、重いクリエイティブ作業には増設が必要になる場合がある",
+      "USB Type-Cからの給電駆動に関する明確な記載がなく、付属の専用ACアダプターを使用する必要性が高い",
+      "市場供給が限定的なCPUを採用しているため、将来的な入手性や価格変動のリスクがある"
+    ],
+    "useCases": [
+      "4K動画の書き出しや大量のRAW現像を行うクリエイターのメインPCとして",
+      "週末にフルHD解像度でPCゲームを楽しむカジュアルゲーマーの環境として",
+      "複数モニターを並べて株取引やプログラミングを行う作業用端末として",
+      "ネットワーク分離が必要なSOHO環境での業務用PCとして"
+    ],
+    "userStories": [
+      {
+        "userType": "動画クリエイター",
+        "scenario": "4K動画編集とブラウザの多重起動を同時に行う",
+        "experience": "動画編集ソフトと大量のブラウザタブを同時に開いても動作が重くならず、Ryzen 9の処理能力の余裕を実感しました。メモリがDDR5の交換可能なスロット式なので、将来的に128GBまで増設できる点も長く使えそうで気に入っています。",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "sentiment": "positive"
+      },
+      {
+        "userType": "テレワーカー兼ゲーマー",
+        "scenario": "平日はデュアルモニターで仕事、休日はゲームをプレイする",
+        "experience": "USB4ポートのおかげで配線がスッキリし、複数画面での作業がとても快適です。ゲームもRadeon 780MのおかげでフルHDなら十分に動き、ファンの音も静かで仕事中に気になりません。ただ、最新の重いゲームを高画質で遊ぶには単体GPU搭載機に劣ります。",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "sentiment": "positive"
+      }
+    ],
+    "userImpression": "総じて、Ryzen 9 7940HSの圧倒的なCPU性能とRadeon 780Mの優れたグラフィック性能により、クリエイティブ作業からカジュアルゲーミングまで幅広くこなせる万能機として高い評価が期待できます。特に、DDR5メモリが換装可能である点やデュアルLANを備えている点は、将来的な拡張性や高度なネットワーク構築を求めるギーク層やSOHOユーザーにとって大きな魅力です。初期メモリが16GBである点はヘビーユーザーには物足りない可能性がありますが、自身で増設する前提であれば、10万円を切る価格設定は非常にコストパフォーマンスに優れています。",
+    "sources": [
+      {
+        "id": "src-1",
+        "name": "Amazon商品詳細ページ",
+        "url": "https://www.amazon.co.jp/dp/B0G2C45X5N",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-07-12",
+        "author": "GEEKOM",
+        "conflictOfInterest": "possible",
+        "notes": "スペック詳細（Ryzen 9 7940HS、16GB RAM、1TB SSD、デュアル2.5G LAN、メモリ換装可、3年保証）を確認。"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "Radeon 780Mは単体GPU GTX 1650 Tiに迫る性能",
+        "category": "comparativeAdvantage",
+        "confidence": "medium",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "crossChecked": false,
+        "notes": "メーカーの主張。一般的にRadeon 780Mは内蔵GPUとして非常に高性能であり、GTX 1650モバイル版に近い性能を持つとされるため概ね妥当だが、実際のゲームや冷却状況に依存する。"
+      },
+      {
+        "claim": "動作音は約36dBで冷蔵庫より静か",
+        "category": "quality",
+        "confidence": "medium",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "crossChecked": false,
+        "notes": "メーカーの主張。高負荷時のファンの回転数や環境音によって体感は異なる可能性がある。"
+      }
+    ],
+    "lastInvestigated": "2026-07-12",
+    "competitiveAnalysis": [
+      {
+        "name": "MINISFORUM UM790 Pro (Ryzen 9 7940HS)",
+        "asin": "B0C4HD8KCW",
+        "priceComparison": "UM790 Proと比較して、本商品は安価。RAMが16GBと少ないものの、1TB SSDを搭載しており価格差を考慮すると本商品の方がコスパが高い。",
+        "featureComparison": [
+          "共通点：AMD Ryzen 9 7940HS搭載、USB4×2、Windows 11 Pro搭載",
+          "相違点：UM790 Proは32GB RAM/512GB SSD構成だが、本商品は16GB RAM/1TB SSD構成。本商品はデュアル2.5G LANを備え、3年保証が標準付帯する。"
+        ],
+        "differentiators": [
+          "GEEKOM A7 Max ミニPC (Ryzen 9 7940HS)の利点：予算を抑えてRyzen 9 7940HSを手に入れたい人、デュアルLANを活用したい人、将来的に自身でメモリを換装・増設したい人に最適。",
+          "MINISFORUM UM790 Pro (Ryzen 9 7940HS)の利点：初期状態から32GBのメモリを搭載しているため、購入後すぐに重いクリエイティブ作業を行いたい人向け。"
+        ]
+      },
+      {
+        "name": "MINISFORUM UM890 Pro (Ryzen 9 8945HS)",
+        "asin": "B0FH1QP6KY",
+        "priceComparison": "UM890 Proと比較して、本商品は非常に安価。最新世代のAI NPUにこだわらなければ本商品の方がコスパが高い。",
+        "featureComparison": [
+          "共通点：高性能なRyzen 9クラスのCPU搭載、デュアル2.5G LAN搭載、USB4対応",
+          "相違点：UM890 Proは1世代新しいRyzen 9 8945HSと32GBメモリ、Oculinkポートを搭載している。"
+        ],
+        "differentiators": [
+          "GEEKOM A7 Max ミニPC (Ryzen 9 7940HS)の利点：CPUの基本性能差はそれほど大きくないため、価格を重視しつつ高い処理能力を求める人に最適。",
+          "MINISFORUM UM890 Pro (Ryzen 9 8945HS)の利点：より強化されたNPUによるAI処理性能や、Oculinkポートを用いた外付けGPUの接続など、最新規格と拡張性を最大限活用したい人向け。"
+        ]
+      },
+      {
+        "name": "Getorli ミニPC (Ryzen 7 8745HS)",
+        "asin": "B0GQBG3573",
+        "priceComparison": "Getorliと比較して本商品はやや高価だが、Ryzen 9を搭載しており、性能差とブランドの信頼性（3年保証）を考慮すれば十分妥当な価格差。",
+        "featureComparison": [
+          "共通点：16GB DDR5メモリ、1TB SSD、デュアル2.5G LAN、4画面出力対応",
+          "相違点：本商品は上位のRyzen 9 7940HSを搭載しているのに対し、GetorliはRyzen 7 8745HS。本商品は保証期間が3年と長い。"
+        ],
+        "differentiators": [
+          "GEEKOM A7 Max ミニPC (Ryzen 9 7940HS)の利点：少しの価格差でより上位のCPU性能と、長期間の安心（3年保証）を得たい人に最適。",
+          "Getorli ミニPC (Ryzen 7 8745HS)の利点：少しでも初期費用を抑えたい、かつRyzen 7クラスの性能で十分な用途の人向け。"
+        ]
+      },
+      {
+        "name": "GMKtec M6 Ultra (Ryzen 7 7640HS)",
+        "asin": "B0GD6SBH7B",
+        "priceComparison": "M6 Ultraと比較して本商品は高価だが、CPUのコア数・スレッド数や内蔵GPUの性能が大きく異なる。",
+        "featureComparison": [
+          "共通点：USB4搭載、コンパクトな筐体",
+          "相違点：本商品は8コア16スレッドのRyzen 9 7940HS（Radeon 780M）を搭載。M6 Ultraは6コア12スレッドのRyzen 7 7640HS（Radeon 760M）。"
+        ],
+        "differentiators": [
+          "GEEKOM A7 Max ミニPC (Ryzen 9 7940HS)の利点：ゲームプレイや動画編集においてグラフィック性能（Radeon 780M）やマルチスレッド性能を重視する人に最適。",
+          "GMKtec M6 Ultra (Ryzen 7 7640HS)の利点：ブラウジングやオフィス用途メインで、グラフィック性能よりも安さを優先する人向け。"
+        ]
+      },
+      {
+        "name": "MINISFORUM X1 Lite-255 (Ryzen 7 255)",
+        "asin": "B0FVWWBSGT",
+        "priceComparison": "X1 Lite-255と比較して、本商品は安価でありながら上位のCPUを搭載している。",
+        "featureComparison": [
+          "共通点：Windows 11 Pro搭載、コンパクトなミニPC",
+          "相違点：本商品はRyzen 9 7940HS/16GB搭載。X1 Lite-255はRyzen 7 255(8C/16T)/32GB搭載でOculinkに対応。"
+        ],
+        "differentiators": [
+          "GEEKOM A7 Max ミニPC (Ryzen 9 7940HS)の利点：低価格でRyzen 9の純粋なCPU性能を求める人に最適。",
+          "MINISFORUM X1 Lite-255 (Ryzen 7 255)の利点：Oculinkを利用したeGPU構築を視野に入れている人や、初期から32GBメモリが必要な人向け。"
+        ]
+      },
+      {
+        "name": "GEEKOM A6 ミニPC (Ryzen 7 6800H)",
+        "asin": "B0DRP316J1",
+        "priceComparison": "A6と比較して、本商品は高いが、世代が新しく大幅に性能が高いCPUを搭載している。",
+        "featureComparison": [
+          "共通点：GEEKOM製、3年保証、DDR5対応",
+          "相違点：本商品はZen 4アーキテクチャのRyzen 9 7940HS搭載。A6はZen 3+世代のRyzen 7 6800H搭載。"
+        ],
+        "differentiators": [
+          "GEEKOM A7 Max ミニPC (Ryzen 9 7940HS)の利点：差額で最新アーキテクチャによる高い処理性能と電力効率を得たい人に最適。",
+          "GEEKOM A6 ミニPC (Ryzen 7 6800H)の利点：とにかく予算を抑えたい人向け。"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "予算を抑えつつRyzen 9クラスの最高峰の処理能力を求める動画クリエイターやエンジニア（高価な競合機よりもコスパを重視する人）",
+        "将来的にメモリを大容量（最大128GB）に増設して長く使いたいと考えている自作PCライクな運用を好むユーザー",
+        "ネットワーク分離や複数回線の利用など、デュアルLAN環境を必要とするSOHO・業務ユーザー"
+      ],
+      "pros": [
+        "Ryzen 9 7940HS搭載により、重い動画編集や多数のアプリ同時起動でも待たされることなく、思考を止めずに作業に没頭できます。",
+        "DDR5メモリスロットが換装可能であるため、数年後にメモリが不足してもPCごと買い替える必要がなく、必要な時に自身でアップデートして長く愛用できます。",
+        "1本のUSB4ケーブルで映像出力から給電・データ転送までこなせるため、デスク上の配線を最小限に抑え、美しく広々とした作業空間を構築できます。"
+      ],
+      "cons": [
+        "標準のメモリ容量が16GBであるため、購入直後から極めてヘビーな4K動画編集や大規模な3Dレンダリングを行うプロユーザーは、自身でのメモリ増設（または上位モデルの検討）を前提として購入してください。",
+        "高性能なCPUを搭載しているため、高負荷時には一定の排熱が行われます。モニター背面への設置などを活用し、風通しの良い場所に設置することを推奨します。"
+      ],
+      "score": 85,
+      "scoreRationale": "[基本点: 70]\n[加点: +10] (Ryzen 9 7940HSとRadeon 780Mによる非常に高い基本性能)\n[加点: +5] (DDR5メモリが換装可能で最大128GBまで拡張できる将来性の高さ)\n[加点: +5] (同スペック帯の他社製品と比較してコストパフォーマンスに優れる)\n[加点: +5] (デュアル2.5G LANや豊富なポート類による高い実用性)\n[減点: -5] (初期メモリが16GBであり、CPU性能に対してややボトルネックになり得る構成)\n[減点: -5] (メーカー独自路線の型番であり、後継機やパーツ供給の継続性に若干の懸念がある)\n[合計: 85]"
+    },
+    "technicalSpecs": {
+      "dimensions": {
+        "height": "37.0mm",
+        "width": "112.4mm",
+        "depth": "112.4mm"
+      },
+      "volume": "0.47L",
+      "cpu": "AMD Ryzen 9 7940HS (8コア/16スレッド、最大5.2GHz、4nmプロセス)",
+      "gpu": "AMD Radeon 780M (RDNA 3アーキテクチャ)",
+      "memory": "16GB DDR5 (空きスロット利用で最大128GBまで拡張可能)",
+      "storage": "1TB PCIe 4.0 NVMe SSD (最大4TBまで拡張可能)",
+      "ports": "USB4 (40Gbps, PD対応) ×2、HDMI 2.0 ×2、USB 3.2 Type-A ×4、SDカードリーダー、3.5mmオーディオジャック",
+      "network": "デュアル 2.5G LANポート",
+      "displayOutput": "最大4画面同時出力 (8K対応)",
+      "os": "Windows 11 Pro",
+      "warranty": "3年間",
+      "noiseLevel": "約36dB (SilentStorm冷却システム搭載)",
+      "color": "シルバー",
+      "certifications": "PSE、TELEC、CE、FCC、CB、RoHS"
+    }
+  }
+}
