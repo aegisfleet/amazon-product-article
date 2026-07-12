@@ -184,10 +184,30 @@ function rerankResults(results, query) {
         .sort((a, b) => b.rerankScore - a.rerankScore);
 }
 
+function isStateEqual(state1, state2) {
+    if (!state1 || !state2) return false;
+    return state1.query === state2.query &&
+           state1.scoreMin === state2.scoreMin &&
+           state1.scoreMax === state2.scoreMax &&
+           state1.priceMin === state2.priceMin &&
+           state1.priceMax === state2.priceMax;
+}
+
 document.addEventListener('DOMContentLoaded', function () {
     const searchInput = document.getElementById('search-input');
     const searchResults = document.getElementById('search-results');
     let fuse;
+    let lastSearchState = null;
+
+    function getSearchState() {
+        return {
+            query: searchInput.value.replaceAll('　', ' '),
+            scoreMin: document.getElementById('filter-score-min')?.value || '',
+            scoreMax: document.getElementById('filter-score-max')?.value || '',
+            priceMin: document.getElementById('filter-price-min')?.value || '',
+            priceMax: document.getElementById('filter-price-max')?.value || ''
+        };
+    }
 
     if (!searchInput || !searchResults) return;
 
@@ -489,11 +509,17 @@ document.addEventListener('DOMContentLoaded', function () {
                 return;
             }
 
-            const query = e.target.value.replaceAll('　', ' ');
-            if (!isValidQuery(query)) {
-                displaySearchTips();
-            } else if (fuse) {
-                displayResults(searchWithRerank(query));
+            const currentState = getSearchState();
+            if (isStateEqual(currentState, lastSearchState)) {
+                searchResults.classList.add('active');
+                updateSearchResultsHeight();
+            } else {
+                const query = currentState.query;
+                if (!isValidQuery(query)) {
+                    displaySearchTips();
+                } else if (fuse) {
+                    displayResults(searchWithRerank(query));
+                }
             }
 
             triggerScroll();
@@ -511,11 +537,17 @@ document.addEventListener('DOMContentLoaded', function () {
             }, 100);
 
             // 検索結果を表示
-            const query = e.target.value.replaceAll('　', ' ');
-            if (!isValidQuery(query)) {
-                displaySearchTips();
-            } else if (fuse) {
-                displayResults(searchWithRerank(query));
+            const currentState = getSearchState();
+            if (isStateEqual(currentState, lastSearchState)) {
+                searchResults.classList.add('active');
+                updateSearchResultsHeight();
+            } else {
+                const query = currentState.query;
+                if (!isValidQuery(query)) {
+                    displaySearchTips();
+                } else if (fuse) {
+                    displayResults(searchWithRerank(query));
+                }
             }
         });
 
@@ -789,6 +821,7 @@ document.addEventListener('DOMContentLoaded', function () {
         searchResults.appendChild(emptyState);
         searchResults.classList.add('active');
         updateSearchResultsHeight();
+        lastSearchState = getSearchState();
     }
 
     function displayResults(results) {
@@ -964,6 +997,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         searchResults.classList.add('active');
         updateSearchResultsHeight();
+        lastSearchState = getSearchState();
     }
 
     function displaySearchTips() {
@@ -1069,5 +1103,6 @@ document.addEventListener('DOMContentLoaded', function () {
         searchResults.appendChild(container);
         searchResults.classList.add('active');
         updateSearchResultsHeight();
+        lastSearchState = getSearchState();
     }
 });
