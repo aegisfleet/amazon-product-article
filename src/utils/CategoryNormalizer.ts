@@ -11,6 +11,8 @@ export interface NormalizedCategory {
 
 export class CategoryNormalizer {
   private static readonly PREFERRED_KEYWORDS = [
+    'マスク',
+    '使い捨てマスク',
     'ボードゲーム',
     'アナログゲーム',
     'カードゲーム',
@@ -418,7 +420,7 @@ export class CategoryNormalizer {
       /文房具・オフィス用品ヤスいいね対象/,
       /日本ヒルズ・コルゲート/i,
       /umall/i,
-      /祝い|(?<!グルメ|水産加工品|魚介類|スイーツ|お菓子|調味料)ギフト/i,
+      /祝い|(?<!グルメ|水産加工品|魚介類|スイーツ|お菓子|調味料|スープ|ドリンク)ギフト/i,
       /brandname変更/i,
       /deal/i,
       /^hpc/i,
@@ -534,6 +536,8 @@ export class CategoryNormalizer {
       'pb_pc',
       'ベビー＆マタニティ',
       'ホーム＆キッチン',
+      '食品',
+      '酒のみ',
       '食品・飲料・お酒',
       '服＆ファッション小物',
       'beauty store',

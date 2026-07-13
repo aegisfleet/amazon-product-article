@@ -14,6 +14,8 @@ describe('CategoryNormalizer', () => {
       expect(CategoryNormalizer.isValidCategoryName('肩こり・腰痛・筋肉痛緩和')).toBe(true);
       expect(CategoryNormalizer.isValidCategoryName('保温・保冷カップ・マグ')).toBe(true);
       expect(CategoryNormalizer.isValidCategoryName('アダプタ・充電器・ケーブル')).toBe(true);
+      expect(CategoryNormalizer.isValidCategoryName('スープギフト')).toBe(true);
+      expect(CategoryNormalizer.isValidCategoryName('ドリンクギフト')).toBe(true);
     });
 
     it('should return false for empty or undefined names', () => {
@@ -185,6 +187,8 @@ describe('CategoryNormalizer', () => {
         '高評価・レビュー多数の書籍',
         '注目の著者',
         'electronics',
+        '食品',
+        '酒のみ',
       ];
       invalidNames.forEach((name) => {
         expect(CategoryNormalizer.isValidCategoryName(name)).toBe(false);
