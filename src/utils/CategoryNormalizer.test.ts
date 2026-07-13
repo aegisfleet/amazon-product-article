@@ -340,6 +340,14 @@ describe('CategoryNormalizer', () => {
       expect(result.main).toBe('ハンドルコントローラー');
       expect(result.score).toBe(10);
     });
+
+    it('should sanitize "60型以上テレビ" to "液晶テレビ" or "有機ELテレビ" based on title', () => {
+      const node: BrowseNode = { displayName: '60型以上テレビ', id: '5335535051' };
+      const res1 = CategoryNormalizer.normalize(node, 'TCL テレビ 75V型 4K 量子ドット 液晶 75T6C');
+      expect(res1.main).toBe('液晶テレビ');
+      const res2 = CategoryNormalizer.normalize(node, 'LG OLED テレビ 65型 有機EL');
+      expect(res2.main).toBe('有機ELテレビ');
+    });
   });
 
   describe('Book categorization', () => {
