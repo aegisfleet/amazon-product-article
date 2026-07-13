@@ -34,15 +34,7 @@ describe('CreatorsAPIClient Category Parsing', () => {
       'Diapers',
     ];
 
-    const validNames = [
-      'Books',
-      'Electronics',
-      'Kitchen',
-      'Computers',
-      'Video Games',
-      'Toys & Games',
-      'Category_with_dash',
-    ];
+    const validNames = ['Books', 'Kitchen', 'Computers', 'Video Games', 'Toys & Games', 'Category_with_dash'];
 
     test.each(invalidNames)('should return false for invalid name: %s', (name) => {
       expect(CategoryNormalizer.isValidCategoryName(name)).toBe(false);
@@ -58,13 +50,13 @@ describe('CreatorsAPIClient Category Parsing', () => {
     test('should extract simple valid category', () => {
       const item: Partial<CreatorsAPIItem> = {
         browseNodeInfo: {
-          browseNodes: [{ id: '1', displayName: 'Electronics', contextFreeName: 'Electronics' }],
+          browseNodes: [{ id: '1', displayName: 'Computers', contextFreeName: 'Computers' }],
         },
       };
 
       const result = clientAny.extractCategoryInfo(item);
-      expect(result.category).toBe('Electronics');
-      expect(result.categoryInfo.main).toBe('Electronics');
+      expect(result.category).toBe('Computers');
+      expect(result.categoryInfo.main).toBe('Computers');
       expect(result.categoryInfo.browseNodeId).toBe('1');
     });
 

@@ -3,7 +3,6 @@ import { type BrowseNode, CategoryNormalizer } from './CategoryNormalizer';
 describe('CategoryNormalizer', () => {
   describe('isValidCategoryName', () => {
     it('should return true for valid category names', () => {
-      expect(CategoryNormalizer.isValidCategoryName('electronics')).toBe(true);
       expect(CategoryNormalizer.isValidCategoryName('ビジネス・経済')).toBe(true);
       expect(CategoryNormalizer.isValidCategoryName('ボードゲーム')).toBe(true);
       expect(CategoryNormalizer.isValidCategoryName('草刈機・刈払機パーツ・アクセサリ')).toBe(true);
@@ -185,6 +184,7 @@ describe('CategoryNormalizer', () => {
         'ebook non series',
         '高評価・レビュー多数の書籍',
         '注目の著者',
+        'electronics',
       ];
       invalidNames.forEach((name) => {
         expect(CategoryNormalizer.isValidCategoryName(name)).toBe(false);
