@@ -142,9 +142,13 @@ export class CategoryNormalizer {
       const dn = currentNode.displayName || currentNode.DisplayName;
 
       const validCFN =
-        cfn && CategoryNormalizer.isValidCategoryName(cfn) ? CategoryNormalizer.sanitizeCategoryName(cfn, title) : null;
+        cfn && CategoryNormalizer.isValidCategoryName(cfn, title)
+          ? CategoryNormalizer.sanitizeCategoryName(cfn, title)
+          : null;
       const validDN =
-        dn && CategoryNormalizer.isValidCategoryName(dn) ? CategoryNormalizer.sanitizeCategoryName(dn, title) : null;
+        dn && CategoryNormalizer.isValidCategoryName(dn, title)
+          ? CategoryNormalizer.sanitizeCategoryName(dn, title)
+          : null;
 
       const bestName = CategoryNormalizer.pickBestName(validCFN, validDN);
       if (bestName) {
@@ -310,7 +314,7 @@ export class CategoryNormalizer {
   /**
    * Check if a category name is valid
    */
-  public static isValidCategoryName(originalName: string): boolean {
+  public static isValidCategoryName(originalName: string, title?: string): boolean {
     if (!originalName) return false;
 
     const name = CategoryNormalizer.getComparisonName(originalName);
@@ -322,6 +326,27 @@ export class CategoryNormalizer {
       name === 'アダプタ・充電器・ケーブル'
     ) {
       return true;
+    }
+
+    // 特定の広範なカテゴリをタイトルから推測して救済
+    if ((name === '家電＆カメラ' || name === 'カテゴリー別') && title) {
+      const lowerTitle = title.toLowerCase();
+      if (
+        lowerTitle.includes('イヤホン') ||
+        lowerTitle.includes('ヘッドホン') ||
+        lowerTitle.includes('ヘッドセット') ||
+        lowerTitle.includes('イヤーバッド') ||
+        lowerTitle.includes('earbuds') ||
+        lowerTitle.includes('headphones')
+      ) {
+        return true;
+      }
+      if (lowerTitle.includes('テレビ') || lowerTitle.includes('tv')) {
+        return true;
+      }
+      if (lowerTitle.includes('充電器') || lowerTitle.includes('急速充電器') || lowerTitle.includes('usb充電器')) {
+        return true;
+      }
     }
 
     // 1. Whitelist (Highest Priority)
@@ -451,6 +476,9 @@ export class CategoryNormalizer {
 
     // 4. Blacklist (Full Match after normalization)
     const blacklist = [
+      '家電＆カメラ',
+      '家電・カメラ',
+      'electronics',
       'arborist merchandising root',
       'pony k',
       'babel 6-2',
@@ -664,6 +692,36 @@ export class CategoryNormalizer {
         }
       } else {
         finalName = '液晶テレビ';
+      }
+    }
+
+    if (finalName === 'イヤ・ヘッド') {
+      finalName = 'イヤホン・ヘッドホン';
+    }
+
+    if ((finalName === '家電＆カメラ' || finalName === 'カテゴリー別') && title) {
+      const lowerTitle = title.toLowerCase();
+      if (
+        lowerTitle.includes('イヤホン') ||
+        lowerTitle.includes('ヘッドホン') ||
+        lowerTitle.includes('ヘッドセット') ||
+        lowerTitle.includes('イヤーバッド') ||
+        lowerTitle.includes('earbuds') ||
+        lowerTitle.includes('headphones')
+      ) {
+        finalName = 'イヤホン・ヘッドホン';
+      } else if (lowerTitle.includes('テレビ') || lowerTitle.includes('tv')) {
+        if (lowerTitle.includes('有機el') || lowerTitle.includes('oled')) {
+          finalName = '有機ELテレビ';
+        } else {
+          finalName = '液晶テレビ';
+        }
+      } else if (
+        lowerTitle.includes('充電器') ||
+        lowerTitle.includes('急速充電器') ||
+        lowerTitle.includes('usb充電器')
+      ) {
+        finalName = 'アダプタ・充電器・ケーブル';
       }
     }
 
