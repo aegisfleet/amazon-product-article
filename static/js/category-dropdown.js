@@ -163,9 +163,7 @@
                 }).filter(Boolean);
                 if (available.length > 0 || parentCategoryUrls[group]) {
                     filteredGroups[group] = available;
-                    if (categoryCounts[group] === undefined) {
-                        categoryCounts[group] = groupProductCount;
-                    }
+                    categoryCounts[group] = groupProductCount;
                 }
             }
 
