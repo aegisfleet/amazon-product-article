@@ -639,6 +639,34 @@ export class CategoryNormalizer {
       }
     }
 
+    // テレビ本体のカテゴリをパネル方式で分類
+    const lowerName = finalName.toLowerCase();
+    if (
+      (lowerName.endsWith('テレビ') || lowerName.startsWith('テレビ') || lowerName.includes('tv')) &&
+      !lowerName.includes('hdd') &&
+      !lowerName.includes('リモコン') &&
+      !lowerName.includes('チューナー') &&
+      !lowerName.includes('壁掛け') &&
+      !lowerName.includes('台') &&
+      !lowerName.includes('スタンド') &&
+      !lowerName.includes('パーツ') &&
+      !lowerName.includes('部品') &&
+      !lowerName.includes('カバー') &&
+      !lowerName.includes('アンテナ') &&
+      !lowerName.includes('ゲーム')
+    ) {
+      if (title) {
+        const lowerTitle = title.toLowerCase();
+        if (lowerTitle.includes('有機el') || lowerTitle.includes('oled')) {
+          finalName = '有機ELテレビ';
+        } else {
+          finalName = '液晶テレビ';
+        }
+      } else {
+        finalName = '液晶テレビ';
+      }
+    }
+
     return finalName;
   }
 }
