@@ -145,6 +145,11 @@
                 }
             }
 
+            // Save snapshot of per-category counts BEFORE first pass overwrites
+            // group-name keys (e.g. 'その他／全般' group total overwrites child count).
+            // The second pass needs the original child-level counts, not the group totals.
+            const childCounts = { ...categoryCounts };
+
             const availableCategories = Object.keys(urls);
             const categorizedItems = new Set();
 
@@ -154,8 +159,8 @@
                 const available = categories.filter(cat => {
                     if (availableCategories.includes(cat)) {
                         categorizedItems.add(cat);
-                        if (categoryCounts[cat] !== undefined) {
-                            groupProductCount += categoryCounts[cat];
+                        if (childCounts[cat] !== undefined) {
+                            groupProductCount += childCounts[cat];
                         }
                         return true;
                     }
@@ -174,19 +179,18 @@
                     filteredGroups['その他／全般'] = [];
                 }
                 filteredGroups['その他／全般'] = [...filteredGroups['その他／全般'], ...uncategorized];
-                
+
+                // Use snapshot (childCounts) to get original child-category counts.
+                // This avoids using the group total that was written into categoryCounts[group]
+                // during the first pass (e.g. 'その他／全般' group total would otherwise
+                // self-reference and corrupt the sum).
                 let othersCount = 0;
                 uncategorized.forEach(cat => {
-                    // 「その他／全般」カテゴリ自身は「その他／全般」グループに合算しない（重複防止）
-                    if (cat !== 'その他／全般' && categoryCounts[cat] !== undefined) {
-                        othersCount += categoryCounts[cat];
+                    if (childCounts[cat] !== undefined) {
+                        othersCount += childCounts[cat];
                     }
                 });
-                if (categoryCounts['その他／全般'] === undefined) {
-                    categoryCounts['その他／全般'] = othersCount;
-                } else {
-                    categoryCounts['その他／全般'] += othersCount;
-                }
+                categoryCounts['その他／全般'] = (categoryCounts['その他／全般'] || 0) + othersCount;
             }
         }
         return filteredGroups;
