@@ -464,6 +464,8 @@ export class CategoryNormalizer {
       /productalert|stampcard/i,
       /3m[\s_-]*aone/i,
       /cospop/i,
+      /など.*お得/,
+      /のサポートアイテム$/,
     ];
 
     if (invalidPatterns.some((pattern) => pattern.test(name))) {

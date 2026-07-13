@@ -11,6 +11,7 @@ describe('CategoryNormalizer', () => {
       expect(CategoryNormalizer.isValidCategoryName('魚介類・水産加工品ギフト')).toBe(true);
       expect(CategoryNormalizer.isValidCategoryName('グルメギフト')).toBe(true);
       expect(CategoryNormalizer.isValidCategoryName('ドラッグストア')).toBe(true);
+      expect(CategoryNormalizer.isValidCategoryName('腰・腰椎用サポーター')).toBe(true);
       expect(CategoryNormalizer.isValidCategoryName('肩こり・腰痛・筋肉痛緩和')).toBe(true);
       expect(CategoryNormalizer.isValidCategoryName('保温・保冷カップ・マグ')).toBe(true);
       expect(CategoryNormalizer.isValidCategoryName('アダプタ・充電器・ケーブル')).toBe(true);
@@ -178,6 +179,8 @@ describe('CategoryNormalizer', () => {
         '特選健康家電 オムロン、タニタ、ルルド、スライブ',
         'CosPOP_26PD_exclude',
         'CosPOP26PDexclude',
+        'スリムウォーク、マスク、スマートルーペなどがお得',
+        'スポーツプレイヤーのサポートアイテム',
         '6',
         '100',
         '０',
