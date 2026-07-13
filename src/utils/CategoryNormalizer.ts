@@ -315,7 +315,12 @@ export class CategoryNormalizer {
 
     const name = CategoryNormalizer.getComparisonName(originalName);
 
-    if (name === 'ドラッグストア' || name === '肩こり・腰痛・筋肉痛緩和' || name === '保温・保冷カップ・マグ') {
+    if (
+      name === 'ドラッグストア' ||
+      name === '肩こり・腰痛・筋肉痛緩和' ||
+      name === '保温・保冷カップ・マグ' ||
+      name === 'アダプタ・充電器・ケーブル'
+    ) {
       return true;
     }
 

@@ -14,6 +14,7 @@ describe('CategoryNormalizer', () => {
       expect(CategoryNormalizer.isValidCategoryName('ドラッグストア')).toBe(true);
       expect(CategoryNormalizer.isValidCategoryName('肩こり・腰痛・筋肉痛緩和')).toBe(true);
       expect(CategoryNormalizer.isValidCategoryName('保温・保冷カップ・マグ')).toBe(true);
+      expect(CategoryNormalizer.isValidCategoryName('アダプタ・充電器・ケーブル')).toBe(true);
     });
 
     it('should return false for empty or undefined names', () => {
