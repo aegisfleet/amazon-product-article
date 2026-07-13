@@ -315,6 +315,10 @@ export class CategoryNormalizer {
 
     const name = CategoryNormalizer.getComparisonName(originalName);
 
+    if (name === 'ドラッグストア' || name === '肩こり・腰痛・筋肉痛緩和') {
+      return true;
+    }
+
     // 1. Whitelist (Highest Priority)
     const whitelist = [
       '磁気・チタン・ゲルマニウムアクセサリー',
