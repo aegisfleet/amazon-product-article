@@ -11,6 +11,8 @@ describe('CategoryNormalizer', () => {
       expect(CategoryNormalizer.isValidCategoryName('育毛・養毛用トニック・エッセンス')).toBe(true);
       expect(CategoryNormalizer.isValidCategoryName('魚介類・水産加工品ギフト')).toBe(true);
       expect(CategoryNormalizer.isValidCategoryName('グルメギフト')).toBe(true);
+      expect(CategoryNormalizer.isValidCategoryName('ドラッグストア')).toBe(true);
+      expect(CategoryNormalizer.isValidCategoryName('肩こり・腰痛・筋肉痛緩和')).toBe(true);
     });
 
     it('should return false for empty or undefined names', () => {
