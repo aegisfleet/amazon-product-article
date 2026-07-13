@@ -348,6 +348,31 @@ describe('CategoryNormalizer', () => {
       const res2 = CategoryNormalizer.normalize(node, 'LG OLED テレビ 65型 有機EL');
       expect(res2.main).toBe('有機ELテレビ');
     });
+
+    it('should sanitize "イヤ・ヘッド" to "イヤホン・ヘッドホン"', () => {
+      const node: BrowseNode = { displayName: 'イヤ・ヘッド', id: '7356944051' };
+      const res = CategoryNormalizer.normalize(node);
+      expect(res.main).toBe('イヤホン・ヘッドホン');
+    });
+
+    it('should sanitize "家電＆カメラ" or "カテゴリー別" to detailed category based on title', () => {
+      const node: BrowseNode = { displayName: 'カテゴリー別', contextFreeName: '家電＆カメラ', id: '3210991' };
+
+      const res1 = CategoryNormalizer.normalize(node, 'ゼンハイザー HD 599 SE 開放型スタジオヘッドホン');
+      expect(res1.main).toBe('イヤホン・ヘッドホン');
+
+      const res2 = CategoryNormalizer.normalize(node, 'イヤホン bluetooth 耳掛け ワイヤレスイヤホン');
+      expect(res2.main).toBe('イヤホン・ヘッドホン');
+
+      const res3 = CategoryNormalizer.normalize(node, 'TCL テレビ 75V型 液晶テレビ');
+      expect(res3.main).toBe('液晶テレビ');
+
+      const res4 = CategoryNormalizer.normalize(node, 'Anker Nano Charger 急速充電器');
+      expect(res4.main).toBe('アダプタ・充電器・ケーブル');
+
+      const resEmpty = CategoryNormalizer.normalize(node, '全然関係ない商品');
+      expect(resEmpty.main).toBe('その他／全般');
+    });
   });
 
   describe('Book categorization', () => {
