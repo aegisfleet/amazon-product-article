@@ -3,6 +3,7 @@
  */
 
 import fs from 'node:fs';
+import yaml from 'js-yaml';
 import type { ReviewAnalysisResult } from '../../analysis/ReviewAnalyzer';
 import type { InvestigationResult } from '../../types/JulesTypes';
 import type { Product, ProductDetail } from '../../types/Product';
@@ -378,6 +379,23 @@ describe('ArticleGenerator', () => {
       expect(result.content).toContain('summary: "第三者検証あり"');
       expect(result.content).toContain('rating: 4.2');
       expect(result.content).toContain('rating_count: 150');
+    });
+
+    it('should escape newlines in front matter strings correctly to prevent parser issues', async () => {
+      mockInvestigation.analysis.productDescription = '一行目。\n\n二行目。';
+      mockInvestigation.analysis.recommendation.cons = ['警告１。\n\n警告２。'];
+      const result = await generator.generateArticle(mockProduct, mockInvestigation);
+
+      const frontMatterMatch = result.content.match(/^---\n([\s\S]*?)\n---/);
+      expect(frontMatterMatch).not.toBeNull();
+
+      const frontMatterStr = frontMatterMatch![1];
+      expect(frontMatterStr).toContain('description: "一行目。\\n\\n二行目。"');
+      expect(frontMatterStr).toContain('warnings: ["警告１。\\n\\n警告２。"]');
+
+      expect(() => {
+        yaml.load(frontMatterStr as string);
+      }).not.toThrow();
     });
 
     it('should include availability in front matter and hero section', async () => {
