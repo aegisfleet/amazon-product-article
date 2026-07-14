@@ -667,6 +667,12 @@ export class CreatorsAPIClient {
             badge = 'プライム会員限定セール';
           }
         }
+        if (badge) {
+          const trimmed = badge.trim();
+          if (trimmed === '終了まで:' || trimmed === '終了まで') {
+            badge = 'タイムセール';
+          }
+        }
         return badge;
       })(),
       dealAccessType: listing?.dealDetails?.accessType,
