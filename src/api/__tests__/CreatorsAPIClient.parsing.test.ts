@@ -54,4 +54,107 @@ describe('CreatorsAPIClient Parsing Tests', () => {
       expect(product.specifications).toEqual({});
     });
   });
+
+  describe('dealBadge parsing and normalization', () => {
+    it('should parse normal dealBadge', () => {
+      const mockItem: any = {
+        asin: 'B0CHYRJN4M',
+        offersV2: {
+          listings: [
+            {
+              dealDetails: {
+                badge: '特選タイムセール',
+                accessType: 'ALL',
+              },
+            },
+          ],
+        },
+      };
+      const product = (client as any).parseProduct(mockItem as CreatorsAPIItem);
+      expect(product.dealBadge).toBe('特選タイムセール');
+    });
+
+    it('should normalize PRIME_EXCLUSIVE dealBadge when badge is missing or "プライムで"', () => {
+      const mockItem1: any = {
+        asin: 'B0CHYRJN4M',
+        offersV2: {
+          listings: [
+            {
+              dealDetails: {
+                accessType: 'PRIME_EXCLUSIVE',
+              },
+            },
+          ],
+        },
+      };
+      const product1 = (client as any).parseProduct(mockItem1 as CreatorsAPIItem);
+      expect(product1.dealBadge).toBe('プライム会員限定セール');
+
+      const mockItem2: any = {
+        asin: 'B0CHYRJN4M',
+        offersV2: {
+          listings: [
+            {
+              dealDetails: {
+                badge: 'プライムで',
+                accessType: 'PRIME_EXCLUSIVE',
+              },
+            },
+          ],
+        },
+      };
+      const product2 = (client as any).parseProduct(mockItem2 as CreatorsAPIItem);
+      expect(product2.dealBadge).toBe('プライム会員限定セール');
+    });
+
+    it('should normalize incomplete time-limit badge like "終了まで: " or "終了まで" to "タイムセール"', () => {
+      const mockItem1: any = {
+        asin: 'B0CHYRJN4M',
+        offersV2: {
+          listings: [
+            {
+              dealDetails: {
+                badge: '終了まで: ',
+                accessType: 'ALL',
+              },
+            },
+          ],
+        },
+      };
+      const product1 = (client as any).parseProduct(mockItem1 as CreatorsAPIItem);
+      expect(product1.dealBadge).toBe('タイムセール');
+
+      const mockItem2: any = {
+        asin: 'B0CHYRJN4M',
+        offersV2: {
+          listings: [
+            {
+              dealDetails: {
+                badge: '終了まで:',
+                accessType: 'ALL',
+              },
+            },
+          ],
+        },
+      };
+      const product2 = (client as any).parseProduct(mockItem2 as CreatorsAPIItem);
+      expect(product2.dealBadge).toBe('タイムセール');
+
+      const mockItem3: any = {
+        asin: 'B0CHYRJN4M',
+        offersV2: {
+          listings: [
+            {
+              dealDetails: {
+                badge: '終了まで',
+                accessType: 'ALL',
+              },
+            },
+          ],
+        },
+      };
+      const product3 = (client as any).parseProduct(mockItem3 as CreatorsAPIItem);
+      expect(product3.dealBadge).toBe('タイムセール');
+    });
+  });
 });
