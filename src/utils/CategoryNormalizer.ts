@@ -466,6 +466,10 @@ export class CategoryNormalizer {
       /cospop/i,
       /など.*お得/,
       /のサポートアイテム$/,
+      /^おうちで/i,
+      /野外フェス/i,
+      /鈴鹿\d*耐/i,
+      /で役立つ/i,
     ];
 
     if (invalidPatterns.some((pattern) => pattern.test(name))) {
