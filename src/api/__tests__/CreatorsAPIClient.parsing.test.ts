@@ -107,7 +107,7 @@ describe('CreatorsAPIClient Parsing Tests', () => {
       expect(product2.dealBadge).toBe('プライム会員限定セール');
     });
 
-    it('should normalize incomplete time-limit badge like "終了まで: " or "終了まで" to "タイムセール"', () => {
+    it('should normalize incomplete time-limit badge like "終了まで: " or "終了まで" to "限定タイムセール"', () => {
       const mockItem1: any = {
         asin: 'B0CHYRJN4M',
         offersV2: {
@@ -122,7 +122,7 @@ describe('CreatorsAPIClient Parsing Tests', () => {
         },
       };
       const product1 = (client as any).parseProduct(mockItem1 as CreatorsAPIItem);
-      expect(product1.dealBadge).toBe('タイムセール');
+      expect(product1.dealBadge).toBe('限定タイムセール');
 
       const mockItem2: any = {
         asin: 'B0CHYRJN4M',
@@ -138,7 +138,7 @@ describe('CreatorsAPIClient Parsing Tests', () => {
         },
       };
       const product2 = (client as any).parseProduct(mockItem2 as CreatorsAPIItem);
-      expect(product2.dealBadge).toBe('タイムセール');
+      expect(product2.dealBadge).toBe('限定タイムセール');
 
       const mockItem3: any = {
         asin: 'B0CHYRJN4M',
@@ -154,7 +154,7 @@ describe('CreatorsAPIClient Parsing Tests', () => {
         },
       };
       const product3 = (client as any).parseProduct(mockItem3 as CreatorsAPIItem);
-      expect(product3.dealBadge).toBe('タイムセール');
+      expect(product3.dealBadge).toBe('限定タイムセール');
     });
   });
 });
