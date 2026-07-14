@@ -11,6 +11,7 @@
     let parentCategoryUrls = {};
     let categoryIcons = {}; // NEW: Store icons for parent categories
     let categoryCounts = {}; // NEW: Store product counts for child categories
+    let groupCounts = {}; // NEW: Store product counts for parent category groups
     let dataLoaded = false;
 
     /**
@@ -168,7 +169,7 @@
                 }).filter(Boolean);
                 if (available.length > 0 || parentCategoryUrls[group]) {
                     filteredGroups[group] = available;
-                    categoryCounts[group] = groupProductCount;
+                    groupCounts[group] = groupProductCount;
                 }
             }
 
@@ -190,7 +191,7 @@
                         othersCount += childCounts[cat];
                     }
                 });
-                categoryCounts['その他／全般'] = (categoryCounts['その他／全般'] || 0) + othersCount;
+                groupCounts['その他／全般'] = (groupCounts['その他／全般'] || 0) + othersCount;
             }
         }
         return filteredGroups;
@@ -232,7 +233,7 @@
             if (slug) {
                 const viewAllOption = document.createElement('option');
                 viewAllOption.value = `__all__:${slug}`;
-                const parentCount = categoryCounts[selectedGroup];
+                const parentCount = groupCounts[selectedGroup];
                 viewAllOption.textContent = parentCount !== undefined 
                     ? `📁 ${selectedGroup}のすべてを見る (${parentCount})`
                     : `📁 ${selectedGroup}のすべてを見る`;
@@ -362,7 +363,7 @@
                 const viewAllTag = document.createElement('a');
                 viewAllTag.href = parentUrl;
                 viewAllTag.className = 'category-tag-link category-view-all';
-                const parentCount = categoryCounts[groupName];
+                const parentCount = groupCounts[groupName];
                 viewAllTag.textContent = parentCount !== undefined
                     ? `📁 ${groupName}のすべてを見る (${parentCount})`
                     : `📁 ${groupName}のすべてを見る`;
