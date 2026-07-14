@@ -1042,7 +1042,7 @@ ${recommendationMessage}
    * フロントマターを生成
    */
   private escapeForFrontMatter(value: string): string {
-    return value.replaceAll('\\', String.raw`\\`).replaceAll('"', String.raw`\"`);
+    return value.replaceAll('\\', String.raw`\\`).replaceAll('"', String.raw`\"`).replaceAll('\n', '\\n');
   }
 
   private generateFrontMatter(metadata: ArticleMetadata): string {
