@@ -192,6 +192,9 @@ describe('CategoryNormalizer', () => {
         'electronics',
         '食品',
         '酒のみ',
+        '鈴鹿8耐で役立つキャンプ用品',
+        'おうちでキャンプ',
+        '野外フェス用品',
       ];
       invalidNames.forEach((name) => {
         expect(CategoryNormalizer.isValidCategoryName(name)).toBe(false);
