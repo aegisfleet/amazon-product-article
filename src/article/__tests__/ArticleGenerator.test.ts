@@ -1039,28 +1039,14 @@ describe('ArticleGenerator', () => {
     });
 
     describe('calculateWordCount', () => {
-      it('should count Japanese characters', () => {
-        const text = 'こんにちは世界'; // 7 chars
+      it.each([
+        { text: 'こんにちは世界', expected: 7, desc: 'Japanese characters' },
+        { text: 'Hello World', expected: 0, desc: 'English text' },
+        { text: 'Hello こんにちは World 世界', expected: 7, desc: 'mixed text' },
+        { text: '', expected: 0, desc: 'empty string' },
+      ])('should return $expected for $desc', ({ text, expected }) => {
         const count = (generator as any).calculateWordCount(text);
-        expect(count).toBe(7);
-      });
-
-      it('should return 0 for English text', () => {
-        const text = 'Hello World';
-        const count = (generator as any).calculateWordCount(text);
-        expect(count).toBe(0);
-      });
-
-      it('should count only Japanese characters in mixed text', () => {
-        const text = 'Hello こんにちは World 世界';
-        // 'こんにちは' (5) + '世界' (2) = 7
-        const count = (generator as any).calculateWordCount(text);
-        expect(count).toBe(7);
-      });
-
-      it('should return 0 for empty string', () => {
-        const count = (generator as any).calculateWordCount('');
-        expect(count).toBe(0);
+        expect(count).toBe(expected);
       });
     });
 
