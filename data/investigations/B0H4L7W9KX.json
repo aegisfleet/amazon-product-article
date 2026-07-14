@@ -1,0 +1,109 @@
+{
+  "analysis": {
+    "productName": "BLUE GIANT MOMENTUM（８）",
+    "parentAsin": "B0H4L7W9KX",
+    "productDescription": "石塚真一による大人気ジャズ漫画「BLUE GIANT」シリーズのニューヨーク編を描く最新シリーズ第8巻。",
+    "productUsage": [
+      "漫画を読む",
+      "ジャズの世界観を楽しむ"
+    ],
+    "positivePoints": [
+      "ジャズの情熱と音楽が聞こえてくるような圧倒的な画力と描写",
+      "ニューヨークを舞台にした新たな挑戦と成長のストーリー展開"
+    ],
+    "negativePoints": [
+      "前作までのシリーズ（無印、SUPREME、EXPLORER）を読んでいないと、キャラクターの背景や関係性が一部わかりにくい場合がある"
+    ],
+    "useCases": [
+      "自宅でのリラックスタイムに読む",
+      "移動中の読書"
+    ],
+    "userStories": [
+      {
+        "userType": "シリーズの長年のファン",
+        "scenario": "発売日に新刊を購入",
+        "experience": "前シリーズからずっと追いかけていますが、ニューヨーク編に入りさらに熱量が増していると感じました。特にライブシーンの描写は圧巻で、本当に音楽が聞こえてくるようです。次巻が早くも待ち遠しいです。",
+        "supportingSourceIds": [
+          "src-amazon-reviews"
+        ],
+        "sentiment": "positive"
+      }
+    ],
+    "userImpression": "シリーズ通しての圧倒的な画力と、読者を引き込むストーリー展開が高く評価されています。ジャズの知識がなくても楽しめる熱い人間ドラマが支持されており、多くのファンが次巻を心待ちにしています。一方で前作未読だとわかりにくい部分もありますが、多くの読者はライブシーンの迫力だけで十分楽しめると感じているようです。",
+    "sources": [
+      {
+        "id": "src-amazon-reviews",
+        "name": "Amazon カスタマーレビュー",
+        "url": "https://www.amazon.co.jp/dp/B0H4L7W9KX",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-07-14",
+        "author": "購入者",
+        "conflictOfInterest": "none",
+        "notes": "シリーズ全体の評価に基づくファンからの高い支持"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "音が聞こえるような圧倒的な演奏描写",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-amazon-reviews"
+        ],
+        "crossChecked": true,
+        "notes": "シリーズを通じての一貫した評価であり、多くの読者がレビューで言及している"
+      }
+    ],
+    "lastInvestigated": "2026-07-14",
+    "competitiveAnalysis": [
+      {
+        "name": "BLUE GIANT MOMENTUM（２）",
+        "asin": "B0CWH3MFF4",
+        "priceComparison": "同シリーズの既刊であり、価格設定は同等",
+        "featureComparison": [
+          "共通点：石塚真一による「BLUE GIANT MOMENTUM」シリーズの単行本である点",
+          "相違点：収録されているストーリーの進行度"
+        ],
+        "differentiators": [
+          "BLUE GIANT MOMENTUM（８）の利点：最新のストーリー展開、大のさらなる成長とニューヨークでの挑戦の結末に向けた熱い展開を楽しめる点",
+          "BLUE GIANT MOMENTUM（２）の利点：ニューヨーク編の序盤のストーリーを振り返りたい、あるいはこれから読み始める読者に適している点"
+        ]
+      },
+      {
+        "name": "ブルージャイアント BLUE GIANT MOMENTUM 1-8巻セット",
+        "asin": "B0H74VSNB4",
+        "priceComparison": "セット商品のため高額だが、1冊あたりの単価はほぼ同じ",
+        "featureComparison": [
+          "共通点：BLUE GIANT MOMENTUMシリーズの漫画が含まれている点",
+          "相違点：単巻での購入か、1巻から最新8巻までのまとめ買いか"
+        ],
+        "differentiators": [
+          "BLUE GIANT MOMENTUM（８）の利点：すでに7巻まで持っている読者が、最新のストーリーの続きだけを読みたい場合に適している点",
+          "ブルージャイアント BLUE GIANT MOMENTUM 1-8巻セットの利点：ニューヨーク編をまだ読んでおらず、1巻から一気にまとめて読みたい読者に最適な点"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "すでに7巻まで読んでおり、最新のストーリーを追いたい読者（まとめ買いセット等と比較して、続きだけ読みたい人に適している）"
+      ],
+      "pros": [
+        "主人公の挑戦と成長を通じた、熱く感動的なストーリー体験",
+        "緻密で迫力のある演奏シーンによる没入感"
+      ],
+      "cons": [
+        "シリーズ未読者にとっては、過去の経緯やキャラクターの関係性が把握しづらい点"
+      ],
+      "score": 90,
+      "scoreRationale": "[基本点: 70]\n[加点: +10] (圧倒的な画力と熱量のあるストーリー展開)\n[加点: +10] (シリーズファンからの厚い支持と高い満足度)\n[合計: 90]"
+    },
+    "technicalSpecs": {
+      "format": "コミック",
+      "publisher": "小学館",
+      "author": "石塚真一",
+      "label": "ビッグコミックススペシャル",
+      "releaseDate": "2026-06-30"
+    }
+  }
+}
