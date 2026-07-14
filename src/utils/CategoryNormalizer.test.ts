@@ -195,6 +195,8 @@ describe('CategoryNormalizer', () => {
         '鈴鹿8耐で役立つキャンプ用品',
         'おうちでキャンプ',
         '野外フェス用品',
+        'Data Warehouse Queries with Dynamic Selection',
+        'ExcludeASIN',
       ];
       invalidNames.forEach((name) => {
         expect(CategoryNormalizer.isValidCategoryName(name)).toBe(false);
