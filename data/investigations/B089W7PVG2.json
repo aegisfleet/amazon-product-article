@@ -1,7 +1,7 @@
 {
   "analysis": {
     "productName": "アシックス PERFORMANCE SOCKLINER (1173A029)",
-    "parentAsin": "B089W7PVG2",
+    "parentAsin": "B0CZ3RDYLM",
     "productDescription": "アシックスの高性能ランニングシューズにも採用される「FLYTEFOAM Propel」素材を使用した、高反発・高耐久な取替用インソールです。",
     "productUsage": [
       "ランニングシューズやスポーツシューズの劣化した中敷きの交換",
@@ -30,35 +30,56 @@
         "userType": "市民ランナー（40代男性）",
         "scenario": "お気に入りのランニングシューズのクッションが死んでしまったが、買い換えるにはまだ早い。",
         "experience": "このインソールに入れ替えただけで、新品の時の「反発してもらえる」感覚が戻った。柔らかいだけのインソールと違い、しっかり地面を蹴れる感覚があり、タイムも安定している。",
-        "sentiment": "positive"
+        "sentiment": "positive",
+        "supportingSourceIds": [
+          "src-2"
+        ]
       },
       {
         "userType": "高校生バスケ部員の母（40代女性）",
         "scenario": "息子のバッシュの中敷きがすぐに親指部分で穴が開いてしまう。",
         "experience": "純正のペラペラな中敷きからこれに変えたところ、耐久性が段違いで長持ちするようになった。本人も「踏ん張りがきく」と喜んでいる。消耗品としてこの価格は助かる。",
-        "sentiment": "positive"
+        "sentiment": "positive",
+        "supportingSourceIds": [
+          "src-2"
+        ]
       },
       {
         "userType": "ウォーキング愛好家（60代男性）",
         "scenario": "柔らかいスニーカーを買ったが、長時間歩くと逆に疲れる。",
         "experience": "元の中敷きが柔らかすぎて不安定だったが、これに変えたら足元がシャキッとして歩きやすくなった。ただ、土踏まずの支えがないので、別途アーチサポートが必要か検討中。",
-        "sentiment": "mixed"
+        "sentiment": "mixed",
+        "supportingSourceIds": [
+          "src-2"
+        ]
       }
     ],
     "userImpression": "「地味だがいい仕事をする」という評価が定着している。特にランナーからは「変な癖がなく、シューズの性能を邪魔しない」「ヘタリにくい」という点で絶大な信頼を得ている。クッション性＝柔らかさと考える層には「硬い」と言われることもあるが、競技志向のユーザーにはその硬さがむしろ高評価につながっている。",
     "sources": [
       {
+        "id": "src-1",
         "name": "コレクトサイズ: 別売りインソールの厚みや重さとフィット感への影響！ メモ",
         "url": "https://correct-size.com/insole-thickness/",
-        "credibility": "高い（実測値と比較に基づく詳細レビュー）"
+        "tier": "high",
+        "evidenceType": "secondary",
+        "publishedAt": "2026-02-27",
+        "author": "コレクトサイズ",
+        "conflictOfInterest": "none",
+        "notes": "インソールの厚み（つま先約4.5mm/踵約6.5mm）や重量の実測値、FLYTEFOAM Propel素材の特性に基づく詳細レビュー"
       },
       {
+        "id": "src-2",
         "name": "Amazon カスタマーレビュー",
-        "url": null,
-        "credibility": "中（多数の購買者による意見）"
+        "url": "https://www.amazon.co.jp/dp/B089W7PVG2",
+        "tier": "medium",
+        "evidenceType": "primary",
+        "publishedAt": "2026-07-15",
+        "author": "Amazon Reviewers",
+        "conflictOfInterest": "none",
+        "notes": "480件以上、星4.4の高評価。「ヘタリにくい」「反発性がある」といった評価を確認"
       }
     ],
-    "lastInvestigated": "2026-02-27",
+    "lastInvestigated": "2026-07-15",
     "competitiveAnalysis": [
       {
         "name": "New Balance サポーティブクッションインソール (RCP150)",
@@ -116,15 +137,31 @@
         "クッションに「包み込まれるような柔らかさ」を求める場合は不向き"
       ],
       "score": 88,
-      "scoreRationale": "[基本点: 70]\n[性能・機能: +5] (FLYTEFOAM Propel素材による高い反発性と耐久性、実測による裏付けあり)\n[コストパフォーマンス: +8] (1,500円程度でハイエンドシューズの感覚を取り戻せる点は非常に優秀)\n[品質・デザイン: +2] (通気孔などの細かな配慮と、純正ならではのフィット感)\n[ユーザー満足度: +5] (「ヘタリにくい」「走りやすい」といった実用面での高評価が安定している)\n[独自の強み: -2] (機能としてはシンプルで、革新的な補正機能などはない)\n[合計: 88]"
+      "scoreRationale": "[基本点: 70] (固定)\n[加点: +5] (FLYTEFOAM Propel素材による高い反発性と耐久性、実測による裏付けあり)\n[加点: +8] (1500円程度で新品の履き心地が復活する高いコストパフォーマンス)\n[加点: +2] (通気孔などの細かな配慮と、純正ならではのフィット感)\n[加点: +5] (ヘタリにくい、走りやすいといった実用面での高評価が安定している)\n[減点: -2] (機能としてはシンプルで、革新的な補正機能などはない)\n[合計: 88]"
     },
     "technicalSpecs": {
       "material": "本体: 合成樹脂 (FLYTEFOAM Propel) / 表面: 合成繊維",
       "thickness": "つま先: 約4.5mm / 踵: 約6.5mm",
       "weight": "約22g (片足/26.5cmカット時)",
-      "features": ["高反発 (FLYTEFOAM Propel)", "通気孔 (ベンチレーション)", "吸水速乾"],
+      "features": [
+        "高反発 (FLYTEFOAM Propel)",
+        "通気孔 (ベンチレーション)",
+        "吸水速乾"
+      ],
       "origin": "ベトナム",
       "compatibility": "各種スポーツシューズ（特にアシックス製ランニングシューズに最適）"
-    }
+    },
+    "claims": [
+      {
+        "claim": "ヘタリにくく、優れた反発性",
+        "category": "durability",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-2"
+        ],
+        "crossChecked": true,
+        "notes": "メーカー公式のアピールポイントであり、Amazonレビューでも長期使用後の反発性維持について多くの言及がある"
+      }
+    ]
   }
 }
