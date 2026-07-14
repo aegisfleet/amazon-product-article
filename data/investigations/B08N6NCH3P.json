@@ -1,144 +1,117 @@
 {
   "analysis": {
     "productName": "Xiaomi POCO F7",
-    "parentAsin": "B08N6NCH3P",
-    "productDescription": "Snapdragon 8s Gen 4と6500mAhバッテリーを搭載し、圧倒的な処理性能と長時間駆動を両立したハイエンド・コスパスマートフォン。",
+    "parentAsin": "B0FHJT2869",
+    "productDescription": "Snapdragon 8s Gen 4を搭載し、6500mAhの大容量バッテリーと90W急速充電を備えた高性能SIMフリースマートフォンです。6.83インチの1.5K有機ELディスプレイとマルチモーダルAIにより、快適な操作性とエンターテインメント体験を提供します。",
     "productUsage": [
-      "原神やスターレイルなどの高負荷3Dゲームプレイ",
-      "120Hz有機ELディスプレイでの動画視聴",
-      "90W急速充電を活用した短時間での充電",
-      "長時間の外出時におけるメイン端末としての利用"
+      "ゲームプレイ",
+      "動画視聴",
+      "写真・動画撮影",
+      "AIアシスタントの活用"
     ],
     "positivePoints": [
-      "最新のSnapdragon 8s Gen 4搭載によるフラッグシップ級の処理性能",
-      "6500mAhという規格外の大容量バッテリー",
-      "わずかな時間で充電完了する90Wハイパーチャージ",
-      "12GB RAM + 512GB ROMの大容量構成で約6.4万円という驚異的な安さ",
-      "1.5K 120Hz 有機ELディスプレイの美しい画面"
+      "Snapdragon 8s Gen 4（最大3.21GHz）を搭載し、高負荷なタスクやゲームを快適に処理できる",
+      "6500mAhの大容量バッテリーを搭載し、90Wのハイパーチャージ（急速充電）および22.5Wのリバース充電に対応している",
+      "6.83インチの1.5K（2772×1280）120Hz有機ELディスプレイを採用している",
+      "ソニー製IMX882センサーを採用した5000万画素のメインカメラ（光学式手ブレ補正対応）を搭載している"
     ],
     "negativePoints": [
-      "ワイヤレス充電には非対応",
-      "カメラ性能は標準的（望遠レンズなし）",
-      "防水防塵性能が完全防水（IP68）であるか明記がない（生活防水レベルの可能性あり）"
+      "本体重量や厚みに関する公式データが提供されておらず、6500mAhの大容量バッテリー搭載による重量増が懸念される",
+      "外部MicroSDカードによるストレージ拡張についての明記がない"
     ],
     "useCases": [
-      "重いゲームを最高設定で快適にプレイしたい",
-      "モバイルバッテリーを持ち歩かずに一日中スマホを使いたい",
-      "ハイエンドスマホが欲しいが10万円以上は出したくない"
+      "外出先での長時間のゲームプレイ",
+      "大画面での高画質な動画視聴",
+      "旅行先での風景撮影"
     ],
-    "userStories": [
-      {
-        "userType": "ヘビーゲーマー",
-        "scenario": "通勤時間や休憩中のゲームプレイ",
-        "experience": "（推測）これまでのスマホでは発熱してカクついていた最新ゲームが、最高画質設定でも驚くほどスムーズに動く。バッテリーの減りも遅く、発熱も抑えられているので長時間プレイに没頭できる。",
-        "sentiment": "positive"
-      },
-      {
-        "userType": "動画視聴メインのユーザー",
-        "scenario": "自宅や移動中での動画鑑賞",
-        "experience": "（推測）画面が大きく綺麗で、120Hzのリフレッシュレートによりスクロールも滑らか。バッテリー切れを気にせず映画やドラマを何本も観られるのが最高。",
-        "sentiment": "positive"
-      }
-    ],
-    "userImpression": "「性能怪獣」の名に恥じないスペックと価格設定で、特にゲーマーやバッテリー持ちを重視する層から熱烈な支持を受けると予想される。",
+    "userStories": [],
+    "userImpression": "最新のSnapdragon 8s Gen 4や6500mAhの大容量バッテリー、90W急速充電など、高いパフォーマンスと利便性を備えている点が最大の特徴です。重量に関する懸念はあるものの、高い処理性能を求めるユーザーや、バッテリー持ちを重視するユーザーにとって、満足度の高い選択肢となります。",
     "sources": [
       {
+        "id": "src-amazon",
         "name": "Amazon商品ページ",
         "url": "https://www.amazon.co.jp/dp/B08N6NCH3P",
-        "credibility": "High"
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2025-07-08",
+        "author": "シャオミ(Xiaomi)",
+        "conflictOfInterest": "possible",
+        "notes": "スペック情報（Snapdragon 8s Gen 4, 6500mAh, 90W急速充電, 6.83インチ有機EL）を確認"
       }
     ],
-    "lastInvestigated": "2026-02-27",
+    "claims": [
+      {
+        "claim": "負荷の高いタスクも快適かつスムーズにこなす",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-amazon"
+        ],
+        "crossChecked": false,
+        "notes": "Snapdragon 8s Gen 4の性能に基づくメーカーの主張。"
+      }
+    ],
+    "lastInvestigated": "2026-07-15",
     "competitiveAnalysis": [
       {
-        "name": "Xiaomi 15T",
-        "asin": "B0FNM83JRM",
-        "priceComparison": "価格はほぼ同等（約6.5万円）。",
+        "name": "Xiaomi POCO M8 5G",
+        "asin": "B0H33MBST1",
+        "priceComparison": "対象商品より安価であるが、プロセッサ性能（Snapdragon 8s Gen 4 vs 6 Gen 3）やバッテリー容量（6500mAh vs 5520mAh）などのスペック差に価格差以上の価値を見出せるかがポイントとなる。",
         "featureComparison": [
-          "SoC: POCO F7 (Snapdragon 8s Gen 4) vs 15T (Dimensity 8400-Ultra)",
-          "カメラ: 15Tはライカ監修レンズ搭載でカメラ重視",
-          "バッテリー: POCO F7の方が大容量 (6500mAh)"
+          "共通点：120Hz対応の有機ELディスプレイを搭載し、5000万画素カメラを備えている点",
+          "相違点：POCO F7はより高性能なSnapdragon 8s Gen 4を搭載し、バッテリー容量も6500mAhと大きく、90W急速充電に対応している点"
         ],
         "differentiators": [
-          "POCO F7はゲーム性能とバッテリー重視",
-          "Xiaomi 15Tはカメラ画質と質感重視"
+          "Xiaomi POCO F7の利点：最高クラスの処理性能と圧倒的なバッテリー持ち、超高速充電を求めるなら迷わずこちら",
+          "Xiaomi POCO M8 5Gの利点：初期費用を抑えつつ、日常利用に十分な性能と画面の綺麗さを求めるならこちら"
         ]
       },
       {
-        "name": "Sony Xperia 10 VII",
-        "asin": "B0FRSX29JX",
-        "priceComparison": "Xperia 10 VIIは約7.5万円で、POCO F7より1万円以上高い。",
+        "name": "REDMI 15 5G",
+        "asin": "B0G2KSRKD1",
+        "priceComparison": "対象商品より大幅に安価であるが、プロセッサ性能や充電速度、ディスプレイの品質において対象商品が圧倒的に優位である。",
         "featureComparison": [
-          "処理性能はPOCO F7が圧倒的に上",
-          "Xperiaは軽量、防水防塵、オーディオジャック搭載が強み"
+          "共通点：大容量バッテリーを搭載している点",
+          "相違点：REDMI 15 5Gは7000mAhとさらに大容量だが、充電速度は33Wに留まる。また、ディスプレイは液晶（FHD）であり、プロセッサもエントリー向けのSnapdragon 6s Gen 3である点"
         ],
         "differentiators": [
-          "POCO F7は圧倒的なコスパとパワー",
-          "Xperiaは持ちやすさと日常機能の充実"
-        ]
-      },
-      {
-        "name": "iPhone 14 (整備済み品)",
-        "asin": "B0BLY4F4WM",
-        "priceComparison": "整備済み品なら約6万円で、POCO F7より少し安い。",
-        "featureComparison": [
-          "OSが異なる (Android vs iOS)",
-          "iPhoneはリセールバリューと安定性が高いが、画面は60Hz",
-          "POCO F7は120Hz画面と最新SoCでゲーム体験が上"
-        ],
-        "differentiators": [
-          "iPhoneはエコシステム重視",
-          "POCO F7はスペック重視"
+          "Xiaomi POCO F7の利点：ゲームなどの高負荷な処理を快適に行い、高精細な有機ELディスプレイで映像を楽しみたいなら迷わずこちら",
+          "REDMI 15 5Gの利点：処理性能にはこだわらず、とにかく価格の安さとバッテリー容量の大きさを最優先するならこちら"
         ]
       }
     ],
     "recommendation": {
       "targetUsers": [
-        "最新の3Dゲームを快適に遊びたいゲーマー",
-        "バッテリー持ちを最優先するユーザー",
-        "最高のコストパフォーマンスを求める人"
+        "最新のゲームを快適にプレイしたいが、フラッグシップモデルほどの価格は出せないゲーマー",
+        "外出先での利用が多く、モバイルバッテリーを持ち歩かずに1日中スマートフォンを使いたい人"
       ],
       "pros": [
-        "6万円台で買える最高峰の処理性能",
-        "安心の6500mAhバッテリーと90W充電",
-        "大容量512GBストレージ標準搭載"
+        "最新プロセッサにより、重いゲームや複数のアプリを同時に起動してもサクサク動くため、ストレスのない操作感が得られる",
+        "6500mAhの大容量と90W急速充電により、長時間の外出でもバッテリー切れの不安がなく、隙間時間で一気に充電できる"
       ],
       "cons": [
-        "ワイヤレス充電非対応",
-        "カメラ性能はそこそこ",
-        "おサイフケータイ以外の日本独自機能（完全防水等）への対応詳細要確認"
+        "大容量バッテリーを搭載しているため、本体が重く、長時間の片手操作では手首が疲れやすい可能性がある"
       ],
-      "score": 96,
-      "scoreRationale": "[基本点: 70]\n[加点: +10] (Snapdragon 8s Gen 4搭載により、同価格帯で敵なしの処理性能)\n[加点: +15] (この性能と512GBストレージで6万円台前半は破格のコスパ)\n[加点: +5] (6500mAhバッテリーは市場最大級の強み)\n[減点: -2] (ワイヤレス充電非対応)\n[減点: -2] (カメラ性能は価格なり)\n[合計: 96]"
+      "score": 85,
+      "scoreRationale": "[基本点: 70]\n[加点: +5] (Snapdragon 8s Gen 4による高い処理性能)\n[加点: +5] (1.5K 120Hz有機ELディスプレイ搭載)\n[加点: +5] (6500mAhの大容量バッテリー搭載)\n[加点: +5] (90W急速充電対応)\n[減点: -5] (大容量バッテリー搭載に伴う本体重量増の懸念)\n[合計: 85]"
     },
     "technicalSpecs": {
-      "os": "Android (HyperOS)",
-      "cpu": "Snapdragon 8s Gen 4",
-      "ram": "12GB",
-      "storage": "512GB",
-      "display": {
-        "size": "6.83インチ",
-        "resolution": "1.5K (2772×1280)",
-        "type": "OLED 120Hz"
+      "dimensions": {
+        "height": "未公開",
+        "width": "未公開",
+        "depth": "未公開"
       },
-      "battery": {
-        "capacity": "6500mAh",
-        "charging": "90W急速充電"
-      },
-      "camera": {
-        "main": "50MP (OIS)",
-        "ultrawide": null
-      },
-      "dimensions": null,
-      "connectivity": [
-        "5G",
-        "Wi-Fi",
-        "Bluetooth"
-      ],
+      "weight": "未公開",
+      "capacity": "12GB RAM / 512GB ROM",
+      "material": "未公開",
+      "origin": "未公開",
       "other": [
-        "リバース充電対応 (22.5W)",
-        "指紋認証",
-        "顔認証"
+        "SoC: Snapdragon 8s Gen 4 (TSMC 4nm, 最大3.21GHz)",
+        "バッテリー: 6500mAh",
+        "充電: 90W有線急速充電, 22.5Wリバース充電",
+        "ディスプレイ: 画面サイズ約17.3cm 1.5K(2772×1280) 120Hz 有機EL",
+        "メインカメラ: 5000万画素 (ソニー IMX882, OIS対応)",
+        "カラー: シルバー"
       ]
     }
   }
