@@ -470,6 +470,9 @@ export class CategoryNormalizer {
       /野外フェス/i,
       /鈴鹿\d*耐/i,
       /で役立つ/i,
+      /data\s*warehouse/i,
+      /dynamic\s*selection/i,
+      /ExcludeASIN/i,
     ];
 
     if (invalidPatterns.some((pattern) => pattern.test(name))) {
