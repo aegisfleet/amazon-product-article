@@ -670,7 +670,7 @@ export class CreatorsAPIClient {
         if (badge) {
           const trimmed = badge.trim();
           if (trimmed === '終了まで:' || trimmed === '終了まで') {
-            badge = 'タイムセール';
+            badge = '限定タイムセール';
           }
         }
         return badge;
