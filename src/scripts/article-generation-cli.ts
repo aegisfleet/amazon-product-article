@@ -380,10 +380,17 @@ function categorizeAsins(
     }
   }
 
-  const PERMANENT_INVALID_RETRY_LIMIT = 100;
+  // 自動再試行上限数を 0 にして無駄な API アクセスを防ぐ
+  const PERMANENT_INVALID_RETRY_LIMIT = 0;
   const retries = expiredPerm.slice(0, PERMANENT_INVALID_RETRY_LIMIT);
+  const unretriedPerm = expiredPerm.slice(PERMANENT_INVALID_RETRY_LIMIT);
+
+  // リトライされなかった期限切れ permanent_invalid は ignored に戻して統計の整合性を保つ
+  ignored.push(...unretriedPerm);
+
   const missingAsins = [...validMissing, ...retries];
-  const invalidCount = ignored.filter((asin) => cache.isInvalid(asin)).length;
+  // ignored に unretriedPerm が含まれるため、cache.isInvalid(asin) もしくは cache.isExpiredPermanentInvalid(asin) のどちらかであれば無効と判定する
+  const invalidCount = ignored.filter((asin) => cache.isInvalid(asin) || cache.isExpiredPermanentInvalid(asin)).length;
 
   return {
     missingAsins,
