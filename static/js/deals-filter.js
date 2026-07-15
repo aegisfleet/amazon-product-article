@@ -6,8 +6,10 @@
 function matchesDealType(p, dealType) {
   if (!dealType) return true;
   const isPrime = p.dealAccessType === 'PRIME_EXCLUSIVE' || p.dealAccessType === 'PRIME_EARLY_ACCESS';
+  const isLimited = p.dealBadge === '限定タイムセール';
   if (dealType === 'prime') return isPrime;
-  if (dealType === 'standard') return !isPrime;
+  if (dealType === 'limited') return isLimited;
+  if (dealType === 'standard') return !isPrime && !isLimited;
   return true;
 }
 
