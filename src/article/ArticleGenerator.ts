@@ -91,11 +91,16 @@ export class ArticleGenerator {
         competitorDetails,
       );
 
-      const content = this.assembleArticle(sections, metadata);
-      const mobileOptimizedContent = this.createMobileOptimizedLayout(content);
+      // 本文（セクション）を結合
+      const sectionsContent = sections.map((section) => section.content).join('\n\n');
 
-      // AffiliateLinkManagerを使用してリンクを管理
-      const contentWithAffiliateLinks = this.insertAffiliateLinks(mobileOptimizedContent, product, affiliatePartnerTag);
+      // 本文部分のみをモバイル最適化し、アフィリエイトリンクを挿入する
+      const mobileOptimizedContent = this.createMobileOptimizedLayout(sectionsContent);
+      const bodyWithAffiliateLinks = this.insertAffiliateLinks(mobileOptimizedContent, product, affiliatePartnerTag);
+
+      // 最後にフロントマターを生成して、最適化された本文と結合する
+      const frontMatter = this.generateFrontMatter(metadata);
+      const contentWithAffiliateLinks = `${frontMatter}\n\n${bodyWithAffiliateLinks}`;
 
       const affiliateLinks = this.extractAffiliateLinks(contentWithAffiliateLinks);
       const wordCount = this.calculateWordCount(contentWithAffiliateLinks);
@@ -1026,16 +1031,6 @@ ${recommendationMessage}
     }
 
     return label;
-  }
-
-  /**
-   * 記事を組み立て
-   */
-  private assembleArticle(sections: ArticleSection[], metadata: ArticleMetadata): string {
-    const frontMatter = this.generateFrontMatter(metadata);
-    const sectionsContent = sections.map((section) => section.content).join('\n\n');
-
-    return `${frontMatter}\n\n${sectionsContent}`;
   }
 
   /**
