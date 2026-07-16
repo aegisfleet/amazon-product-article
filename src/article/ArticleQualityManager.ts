@@ -15,9 +15,9 @@ import type {
 import { Logger } from '../utils/Logger';
 
 export class ArticleQualityManager {
-  private logger: Logger;
-  private defaultRequirements: ContentRequirements;
-  private defaultStyleRules: StyleRule[];
+  private readonly logger: Logger;
+  private readonly defaultRequirements: ContentRequirements;
+  private readonly defaultStyleRules: StyleRule[];
 
   private static readonly TONE_LABEL_MAP: Record<string, string> = {
     professional: 'プロフェッショナルで信頼性の高い',
@@ -231,9 +231,9 @@ export class ArticleQualityManager {
     const errors: QualityIssue[] = [];
     const warnings: QualityIssue[] = [];
 
-    const frontMatterMatch = article.match(/^---\n([\s\S]*?)\n---/);
+    const frontMatterMatch = /^---\n([\s\S]*?)\n---/.exec(article);
 
-    if (!frontMatterMatch || !frontMatterMatch[1]) {
+    if (!frontMatterMatch?.[1]) {
       errors.push({
         type: 'error',
         category: 'structure',
@@ -455,10 +455,10 @@ export class ArticleQualityManager {
     let score = 0.5;
 
     // フロントマターチェック
-    if (article.match(/^---\n[\s\S]*?\n---/)) score += 0.2;
+    if (/^---\n[\s\S]*?\n---/.exec(article)) score += 0.2;
 
     // タイトル(h1)チェック
-    if (article.match(/^# /m)) score += 0.1;
+    if (/^# /m.exec(article)) score += 0.1;
 
     // カテゴリ・タグチェック
     if (article.includes('category:')) score += 0.1;
@@ -507,7 +507,7 @@ export class ArticleQualityManager {
    * 必須要素があるかチェック
    */
   private checkRequiredElements(article: string): boolean {
-    const hasFrontMatter = article.match(/^---\n[\s\S]*?\n---/) !== null;
+    const hasFrontMatter = /^---\n[\s\S]*?\n---/.exec(article) !== null;
     const hasAffiliateLink = article.includes('amazon') || article.includes('amzn');
 
     return hasFrontMatter && hasAffiliateLink;
@@ -583,9 +583,18 @@ export class ArticleQualityManager {
    * プロンプトを構築
    */
   private buildPrompt(config: QualityPromptConfig): string {
+    const sectionNumberMap: Record<string, string> = {
+      introduction: '1',
+      userReviews: '2',
+      competitiveAnalysis: '3',
+      recommendation: '4',
+    };
+
     const sections = Object.entries(config.sectionRequirements)
       .map(([key, section]) => {
-        return `${key === 'introduction' ? '1' : key === 'userReviews' ? '2' : key === 'competitiveAnalysis' ? '3' : key === 'recommendation' ? '4' : '5'}. **${section.title}** (${section.minWordCount}${section.maxWordCount ? `-${section.maxWordCount}` : '+'}文字)
+        const sectionNum = sectionNumberMap[key] || '5';
+        const limitStr = section.maxWordCount ? `-${section.maxWordCount}` : '+';
+        return `${sectionNum}. **${section.title}** (${section.minWordCount}${limitStr}文字)
    - 必須要素: ${section.requiredElements.join(', ')}
    - 構成: ${section.structure}`;
       })
