@@ -35,6 +35,7 @@ export interface Product {
   };
 
   isAmazonDirect?: boolean | undefined;
+  isAmazonHaul?: boolean | undefined;
   availability?: string | undefined;
   brand?: string | undefined;
   loyaltyPoints?: number | undefined;

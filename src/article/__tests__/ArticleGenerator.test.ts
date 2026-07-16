@@ -561,6 +561,34 @@ describe('ArticleGenerator', () => {
       expect(result.content).not.toContain('<div class="competitor-preview">');
     });
 
+    it('should show amazon haul badge in competitor preview if isAmazonHaul is true', async () => {
+      (fs.promises.readFile as jest.Mock).mockResolvedValue(
+        JSON.stringify({ ...mockInvestigation, generatedAt: new Date().toISOString() }),
+      );
+      (fs.existsSync as jest.Mock).mockImplementation((pathStr: string) => {
+        return pathStr.includes('B08COMPET1');
+      });
+
+      const mockDetail: ProductDetail = {
+        ...mockProduct,
+        asin: 'B08COMPET1',
+        isAmazonHaul: true,
+      } as any;
+      const mockCompetitorDetails = new Map<string, ProductDetail>();
+      mockCompetitorDetails.set('B08COMPET1', mockDetail);
+
+      const result = await generator.generateArticle(
+        mockProduct,
+        mockInvestigation,
+        undefined,
+        undefined,
+        undefined,
+        mockCompetitorDetails,
+      );
+
+      expect(result.content).toContain('<span class="badge-amazon-haul">Amazon Haul</span>');
+    });
+
     it('should NOT show internal link if investigation file does not exist', async () => {
       // Mock fs.existsSync to return false
       // Mock fs.promises.readFile to reject
