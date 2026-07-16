@@ -28,35 +28,22 @@
       "小さなお子様がいる家庭での安全対策（転倒ロック）",
       "忙しい朝の短時間での湯沸かし"
     ],
-    "userStories": [
-      {
-        "userType": "高齢の女性",
-        "scenario": "毎朝のお茶の時間",
-        "experience": "以前使っていたケトルは重くて手首に負担がかかっていましたが、これは軽くて持ちやすく、お湯を入れても楽に注げます。（推測）",
-        "sentiment": "positive"
-      },
-      {
-        "userType": "子育て中の母親",
-        "scenario": "子供が走り回るリビングでの使用",
-        "experience": "万が一子供がテーブルにぶつかってケトルを倒してしまっても、お湯漏れロックがあるので火傷のリスクが低く安心感があります。（推測）",
-        "sentiment": "positive"
-      },
-      {
-        "userType": "30代会社員",
-        "scenario": "出勤前のコーヒータイム",
-        "experience": "忙しい朝でもスイッチを入れて着替えている間にすぐにお湯が沸くので助かっています。注ぎ口のキレも良く、コーヒーを淹れやすいです。（推測）",
-        "sentiment": "positive"
-      }
-    ],
+    "userStories": [],
     "userImpression": "「アプレシア」シリーズはティファールの定番として信頼性が高く、特に軽さと安全機能（ロック・省スチーム）が高く評価されています。デザインの可愛らしさ（セージグリーン）も魅力の一つです。",
     "sources": [
       {
+        "id": "src-1",
         "name": "Amazon Product Page",
         "url": "https://www.amazon.co.jp/dp/B0FNPRPD54",
-        "credibility": "high"
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-07-17",
+        "author": "Amazon",
+        "conflictOfInterest": "none",
+        "notes": "スペックや特徴の確認"
       }
     ],
-    "lastInvestigated": "2026-02-27",
+    "lastInvestigated": "2026-07-17",
     "competitiveAnalysis": [
       {
         "name": "ティファール パフォーマ ロック 0.8L",
@@ -117,20 +104,37 @@
         "コスパだけで選ぶなら他シリーズや他社製品に分がある"
       ],
       "score": 75,
-      "scoreRationale": "[基本点: 70]\n[性能・機能: +5] (1250Wの急速沸騰、転倒ロック、清潔な注ぎ口カバーなど基本性能が高い)\n[コストパフォーマンス: -5] (機能に対して価格がやや高め。同社下位モデルや多機能な競合他社製品の方が安い)\n[品質・デザイン: +5] (セージグリーンの色合い、ウルトラポリッシュ底面などの質感)\n[合計: 75]"
+      "scoreRationale": "[基本点: 70]\n[加点: +5] (1250Wの急速沸騰、転倒ロック、清潔な注ぎ口カバーなど基本性能が高い)\n[減点: -5] (機能に対して価格がやや高め。同社下位モデルや多機能な競合他社製品の方が安い)\n[加点: +5] (セージグリーンの色合い、ウルトラポリッシュ底面などの質感)\n[合計: 75]"
     },
     "technicalSpecs": {
       "dimensions": {
-        "weight": "770g"
+        "height": "190mm",
+        "width": "215mm",
+        "depth": "153mm"
       },
+      "weight": "約770g",
       "capacity": "0.8L",
-      "power": "1250W",
+      "material": "プラスチック等",
+      "origin": "不明",
       "other": [
+        "消費電力: 1250W",
         "転倒お湯もれロック",
         "省スチーム設計",
         "ウルトラポリッシュ底面",
         "注ぎ口カバー"
       ]
-    }
+    },
+    "claims": [
+      {
+        "claim": "水温・室温23℃の条件で、カップ1杯分（140mL）のお湯が約70秒でスピード沸騰",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "crossChecked": false,
+        "notes": "Amazonの商品説明（メーカー公式事実）に基づく。"
+      }
+    ]
   }
 }
