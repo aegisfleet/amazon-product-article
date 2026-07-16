@@ -657,6 +657,7 @@ export class CreatorsAPIClient {
       },
       availability: listing?.availability?.message,
       isAmazonDirect: listing?.merchantInfo?.name === 'Amazon.co.jp',
+      isAmazonHaul: listing?.merchantInfo?.name === 'Haul Global' || listing?.merchantInfo?.id === 'A1EJGP084HULR',
       brand: item.itemInfo?.byLineInfo?.brand?.displayValue || item.itemInfo?.manufactureInfo?.brand?.displayValue,
       loyaltyPoints: listing?.loyaltyPoints?.points ?? undefined,
       dealBadge: (() => {

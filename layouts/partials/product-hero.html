@@ -88,9 +88,13 @@
                 {{- if .Params.is_amazon_direct -}}
                 <span class="badge-amazon-direct">Amazon直販</span>
                 {{- end -}}
+                {{- if .Params.is_amazon_haul -}}
+                <span class="badge-amazon-haul">Amazon Haul</span>
+                {{- end -}}
                 {{- with .Params.deal_badge -}}
                 {{- $dealClass := "deal-standard" -}}
-                {{- if or (eq $.Params.deal_access_type "PRIME_EXCLUSIVE") (eq $.Params.deal_access_type "PRIME_EARLY_ACCESS") -}}
+                {{- if or (eq $.Params.deal_access_type "PRIME_EXCLUSIVE") (eq $.Params.deal_access_type
+                "PRIME_EARLY_ACCESS") -}}
                 {{- $dealClass = "deal-prime" -}}
                 {{- end -}}
                 <span class="badge-deal {{ $dealClass }}">{{ . }}</span>
@@ -99,13 +103,13 @@
                 <span class="badge-savings">{{ .Params.savings_percentage }}% OFF</span>
                 {{- end -}}
                 {{- if and $product.price $product.loyalty_points -}}
-                  {{- $priceNum := index (findRE "[0-9]+" (replace $product.price "," "")) 0 | default 0 | int -}}
-                  {{- if gt $priceNum 0 -}}
-                    {{- $rate := mul (div (float $product.loyalty_points) (float $priceNum)) 100 -}}
-                    {{- if ge $rate 10.0 -}}
-                    <span class="badge-points-rate">ポイント還元率 {{- printf "%.0f" $rate -}}%</span>
-                    {{- end -}}
-                  {{- end -}}
+                {{- $priceNum := index (findRE "[0-9]+" (replace $product.price "," "")) 0 | default 0 | int -}}
+                {{- if gt $priceNum 0 -}}
+                {{- $rate := mul (div (float $product.loyalty_points) (float $priceNum)) 100 -}}
+                {{- if ge $rate 10.0 -}}
+                <span class="badge-points-rate">ポイント還元率 {{- printf "%.0f" $rate -}}%</span>
+                {{- end -}}
+                {{- end -}}
                 {{- end -}}
                 {{- with $hero.availability -}}<span class="badge-availability">{{ . }}</span>{{- end -}}
             </div>

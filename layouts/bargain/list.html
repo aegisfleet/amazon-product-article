@@ -141,9 +141,9 @@
     {{- end -}}
     {{- $pointsRate := 0 -}}
     {{- if and .Params.price .Params.loyalty_points -}}
-      {{- if gt (int $priceRaw) 0 -}}
-        {{- $pointsRate = mul (div (float .Params.loyalty_points) (float $priceRaw)) 100 -}}
-      {{- end -}}
+    {{- if gt (int $priceRaw) 0 -}}
+    {{- $pointsRate = mul (div (float .Params.loyalty_points) (float $priceRaw)) 100 -}}
+    {{- end -}}
     {{- end -}}
     {{- $category := "" -}}
     {{- if .Params.categories -}}{{- $category = index .Params.categories 0 -}}{{- else if .Params.category -}}{{-
@@ -165,6 +165,7 @@
     "affiliateUrl" (.Params.affiliate_url | default "")
     "lastInvestigated" $lastInvestigated
     "isAmazonDirect" (.Params.is_amazon_direct | default false)
+    "isAmazonHaul" (.Params.is_amazon_haul | default false)
     "loyaltyPoints" (.Params.loyalty_points | default 0)
     "pointsRate" $pointsRate
     "savingsPercentage" (.Params.savings_percentage | default 0)

@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const dataEl = document.getElementById('bargain-data');
   if (!dataEl) return;
 
-  /** @type {Array<{title:string, url:string, score:number, price:string, priceRaw:number, asin:string, category:string, image:string, affiliateUrl:string, lastInvestigated:string, isAmazonDirect:boolean, loyaltyPoints:number}>} */
+  /** @type {Array<{title:string, url:string, score:number, price:string, priceRaw:number, asin:string, category:string, image:string, affiliateUrl:string, lastInvestigated:string, isAmazonDirect:boolean, isAmazonHaul:boolean, loyaltyPoints:number}>} */
   let allProducts;
   try {
     allProducts = JSON.parse(dataEl.textContent);

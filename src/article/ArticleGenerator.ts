@@ -188,6 +188,7 @@ export class ArticleGenerator {
       mobileOptimized: true,
       seoKeywords,
       is_amazon_direct: product.isAmazonDirect,
+      is_amazon_haul: product.isAmazonHaul,
       affiliate_url: affiliateUrl,
       brand: product.brand,
       model: productDetail.model,
@@ -1386,6 +1387,7 @@ ${recommendationMessage}
   private addMetricsMetadata(lines: string[], metadata: ArticleMetadata): void {
     if (metadata.score) lines.push(`score: ${metadata.score}`);
     if (metadata.is_amazon_direct !== undefined) lines.push(`is_amazon_direct: ${metadata.is_amazon_direct}`);
+    if (metadata.is_amazon_haul !== undefined) lines.push(`is_amazon_haul: ${metadata.is_amazon_haul}`);
     if (metadata.model) lines.push(`model: "${this.escapeForFrontMatter(metadata.model)}"`);
     if (metadata.releaseDate) lines.push(`release_date: "${this.escapeForFrontMatter(metadata.releaseDate)}"`);
     if (metadata.availability) lines.push(`availability: "${this.escapeForFrontMatter(metadata.availability)}"`);
@@ -1729,6 +1731,7 @@ ${confidenceLine}`;
     const competitorPriceAmount = detail.price?.amount || 0;
     const availabilityText = detail.availability || '';
     const isAmazonDirect = detail.isAmazonDirect;
+    const isAmazonHaul = detail.isAmazonHaul;
     const loyaltyPoints = detail.loyaltyPoints;
     const dealBadge = detail.dealBadge;
     const savingsPercentage = detail.savingsPercentage;
@@ -1746,6 +1749,7 @@ ${confidenceLine}`;
       ? `<span class="competitor-actual-price">${this.escapeHtml(priceText)}${priceDiffHtml}${pointsHtml}</span>`
       : '';
     const amazonDirectHtml = isAmazonDirect ? '<span class="badge-amazon-direct">Amazon直販</span>' : '';
+    const amazonHaulHtml = isAmazonHaul ? '<span class="badge-amazon-haul">Amazon Haul</span>' : '';
     const dealBadgeHtml = dealBadge ? `<span class="badge-deal">${this.escapeHtml(dealBadge)}</span>` : '';
     const savingsPercentageHtml = savingsPercentage
       ? `<span class="badge-savings">${savingsPercentage}% OFF</span>`
@@ -1758,7 +1762,7 @@ ${confidenceLine}`;
       ? `<div class="competitor-preview-tags">${this.renderSpecTags(specs, 'hero-tag')}</div>`
       : '';
 
-    return `<${previewTag}${previewAttrs} class="competitor-preview"><img src="${this.escapeHtml(imageUrl)}" alt="${this.escapeHtml(name)}" class="competitor-preview-img"><div class="competitor-preview-content"><div class="competitor-preview-main">${scoreHtml}${actualPriceHtml}</div><div class="competitor-preview-meta">${amazonDirectHtml}${dealBadgeHtml}${savingsPercentageHtml}${availabilityHtml}</div>${specTagsHtml}</div></${previewTag}>`;
+    return `<${previewTag}${previewAttrs} class="competitor-preview"><img src="${this.escapeHtml(imageUrl)}" alt="${this.escapeHtml(name)}" class="competitor-preview-img"><div class="competitor-preview-content"><div class="competitor-preview-main">${scoreHtml}${actualPriceHtml}</div><div class="competitor-preview-meta">${amazonDirectHtml}${amazonHaulHtml}${dealBadgeHtml}${savingsPercentageHtml}${availabilityHtml}</div>${specTagsHtml}</div></${previewTag}>`;
   }
 
   /**

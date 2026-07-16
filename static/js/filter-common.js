@@ -192,6 +192,13 @@ function renderCardMeta(p) {
     detailsRow.appendChild(direct);
   }
 
+  if (p.isAmazonHaul) {
+    const haul = document.createElement('span');
+    haul.className = 'badge-amazon-haul';
+    haul.textContent = 'Amazon Haul';
+    detailsRow.appendChild(haul);
+  }
+
   if (p.dealBadge) {
     const deal = document.createElement('span');
     const isPrime = p.dealAccessType === 'PRIME_EXCLUSIVE' || p.dealAccessType === 'PRIME_EARLY_ACCESS';
