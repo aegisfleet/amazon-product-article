@@ -4,9 +4,9 @@
 {{- end -}}
 {{- $pointsRate := 0 -}}
 {{- if and .Params.price .Params.loyalty_points -}}
-  {{- if gt (int $priceRaw) 0 -}}
-    {{- $pointsRate = mul (div (float .Params.loyalty_points) (float $priceRaw)) 100 -}}
-  {{- end -}}
+{{- if gt (int $priceRaw) 0 -}}
+{{- $pointsRate = mul (div (float .Params.loyalty_points) (float $priceRaw)) 100 -}}
+{{- end -}}
 {{- end -}}
 {{- $dateRaw := .Date.Unix -}}
 {{- with .Params.last_investigated -}}{{- $dateRaw = (time .).Unix -}}{{- end -}}
@@ -90,9 +90,13 @@
                 {{- if .Params.is_amazon_direct -}}
                 <span class="badge-amazon-direct">Amazon直販</span>
                 {{- end -}}
+                {{- if .Params.is_amazon_haul -}}
+                <span class="badge-amazon-haul">Amazon Haul</span>
+                {{- end -}}
                 {{- with .Params.deal_badge -}}
                 {{- $dealClass := "deal-standard" -}}
-                {{- if or (eq $.Params.deal_access_type "PRIME_EXCLUSIVE") (eq $.Params.deal_access_type "PRIME_EARLY_ACCESS") -}}
+                {{- if or (eq $.Params.deal_access_type "PRIME_EXCLUSIVE") (eq $.Params.deal_access_type
+                "PRIME_EARLY_ACCESS") -}}
                 {{- $dealClass = "deal-prime" -}}
                 {{- end -}}
                 <span class="badge-deal {{ $dealClass }}">{{ . }}</span>

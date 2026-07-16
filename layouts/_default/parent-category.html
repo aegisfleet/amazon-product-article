@@ -130,7 +130,8 @@
 
     <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--spacing-sm);">
         <h2 style="font-size: 1.1rem; font-weight: bold; margin: 0; color: var(--color-text-main);">商品絞り込み</h2>
-        <button type="button" id="filter-reset" class="bargain-category-reset-btn" style="padding: 0.4rem 0.8rem; font-size: 0.85rem; font-weight: 600; display: inline-flex; align-items: center; height: auto; min-width: auto;">フィルタをリセット</button>
+        <button type="button" id="filter-reset" class="bargain-category-reset-btn"
+            style="padding: 0.4rem 0.8rem; font-size: 0.85rem; font-weight: 600; display: inline-flex; align-items: center; height: auto; min-width: auto;">フィルタをリセット</button>
     </div>
 
     <!-- Filter Panel -->
@@ -142,8 +143,7 @@
                     <span class="bargain-filter-icon">🏆</span>
                     最低スコア: <span id="score-value" class="bargain-filter-value">0</span>点以上
                 </label>
-                <input type="range" id="score-slider" class="bargain-slider" min="0" max="100" step="5"
-                    value="0">
+                <input type="range" id="score-slider" class="bargain-slider" min="0" max="100" step="5" value="0">
                 <div class="bargain-slider-labels">
                     <span>0</span><span>50</span><span>100</span>
                 </div>
@@ -189,9 +189,12 @@
                     <span class="bargain-filter-icon">🏷️</span>
                     セール状況
                 </span>
-                <div style="display: flex; flex-wrap: wrap; gap: var(--spacing-sm); align-items: center; width: 100%; min-width: 0;">
-                    <label class="filter-checkbox" style="padding: 0; margin-right: var(--spacing-md); display: inline-flex; align-items: center; gap: var(--spacing-xs); cursor: pointer; flex-shrink: 0;">
-                        <input type="checkbox" id="deal-filter" name="deal-filter" value="active" style="width: 18px; height: 18px; accent-color: var(--color-primary);">
+                <div
+                    style="display: flex; flex-wrap: wrap; gap: var(--spacing-sm); align-items: center; width: 100%; min-width: 0;">
+                    <label class="filter-checkbox"
+                        style="padding: 0; margin-right: var(--spacing-md); display: inline-flex; align-items: center; gap: var(--spacing-xs); cursor: pointer; flex-shrink: 0;">
+                        <input type="checkbox" id="deal-filter" name="deal-filter" value="active"
+                            style="width: 18px; height: 18px; accent-color: var(--color-primary);">
                         <span class="filter-label" style="font-size: 0.9rem; font-weight: 600;">タイムセール対象のみ</span>
                     </label>
                 </div>
@@ -214,14 +217,16 @@
         </div>
 
         <!-- Row 3: Category & Keyword Search -->
-        <div class="bargain-filter-row" style="margin-top: var(--spacing-lg); padding-top: var(--spacing-lg); border-top: 1px solid var(--color-border);">
+        <div class="bargain-filter-row"
+            style="margin-top: var(--spacing-lg); padding-top: var(--spacing-lg); border-top: 1px solid var(--color-border);">
             <div class="bargain-filter-group">
                 <label for="category-select" class="bargain-filter-label">
                     <span class="bargain-filter-icon">📂</span>
                     カテゴリ
                 </label>
                 <div class="bargain-category-wrapper">
-                    <select id="category-select" class="bargain-select" style="width: 100%; max-width: 100%; min-width: 0;">
+                    <select id="category-select" class="bargain-select"
+                        style="width: 100%; max-width: 100%; min-width: 0;">
                         <option value="">すべてのカテゴリ</option>
                         {{- range $displayCategories -}}
                         {{- $cat := . -}}
@@ -231,8 +236,8 @@
                         {{- end -}}
                         {{- end -}}
                     </select>
-                    <button type="button" id="category-reset-btn" class="bargain-category-reset-btn"
-                        title="カテゴリ選択を解除" aria-label="カテゴリ選択を解除" disabled>✕</button>
+                    <button type="button" id="category-reset-btn" class="bargain-category-reset-btn" title="カテゴリ選択を解除"
+                        aria-label="カテゴリ選択を解除" disabled>✕</button>
                 </div>
             </div>
 
@@ -244,41 +249,52 @@
                 <div class="bargain-keyword-wrapper">
                     <input type="text" id="keyword-search" class="bargain-input"
                         placeholder="商品名、ブランド、スペック、商品説明などから検索...">
-                    <span id="keyword-count-badge" class="bargain-keyword-count-badge"
-                        style="display: none;"></span>
-                    <button type="button" id="keyword-clear-btn" class="bargain-keyword-clear-btn"
-                        title="キーワードをクリア" aria-label="キーワードをクリア">✕</button>
+                    <span id="keyword-count-badge" class="bargain-keyword-count-badge" style="display: none;"></span>
+                    <button type="button" id="keyword-clear-btn" class="bargain-keyword-clear-btn" title="キーワードをクリア"
+                        aria-label="キーワードをクリア">✕</button>
                 </div>
             </div>
         </div>
 
         {{- if eq $parentCategory "スマホ・タブレット本体" -}}
         <!-- Row 4: Specs (Only for Smartphone parent category) -->
-        <div class="bargain-filter-row" style="margin-top: var(--spacing-lg); padding-top: var(--spacing-lg); border-top: 1px solid var(--color-border);">
+        <div class="bargain-filter-row"
+            style="margin-top: var(--spacing-lg); padding-top: var(--spacing-lg); border-top: 1px solid var(--color-border);">
             <div class="bargain-filter-group" style="grid-column: 1 / -1;">
                 <span class="bargain-filter-label">
                     <span class="bargain-filter-icon">⚙️</span>
                     スペック絞り込み
                 </span>
-                <div class="filter-options spec-filters" id="spec-filters" style="display: flex; flex-wrap: wrap; gap: var(--spacing-md); margin-top: var(--spacing-xs);">
-                    <label class="filter-checkbox" style="padding: 0; display: inline-flex; align-items: center; gap: var(--spacing-xs); cursor: pointer;">
-                        <input type="checkbox" name="spec" value="5g" style="width: 18px; height: 18px; accent-color: var(--color-primary);">
+                <div class="filter-options spec-filters" id="spec-filters"
+                    style="display: flex; flex-wrap: wrap; gap: var(--spacing-md); margin-top: var(--spacing-xs);">
+                    <label class="filter-checkbox"
+                        style="padding: 0; display: inline-flex; align-items: center; gap: var(--spacing-xs); cursor: pointer;">
+                        <input type="checkbox" name="spec" value="5g"
+                            style="width: 18px; height: 18px; accent-color: var(--color-primary);">
                         <span class="filter-label" style="font-size: 0.9rem; font-weight: 600;">5G対応</span>
                     </label>
-                    <label class="filter-checkbox" style="padding: 0; display: inline-flex; align-items: center; gap: var(--spacing-xs); cursor: pointer;">
-                        <input type="checkbox" name="spec" value="amoled" style="width: 18px; height: 18px; accent-color: var(--color-primary);">
+                    <label class="filter-checkbox"
+                        style="padding: 0; display: inline-flex; align-items: center; gap: var(--spacing-xs); cursor: pointer;">
+                        <input type="checkbox" name="spec" value="amoled"
+                            style="width: 18px; height: 18px; accent-color: var(--color-primary);">
                         <span class="filter-label" style="font-size: 0.9rem; font-weight: 600;">有機EL (AMOLED)</span>
                     </label>
-                    <label class="filter-checkbox" style="padding: 0; display: inline-flex; align-items: center; gap: var(--spacing-xs); cursor: pointer;">
-                        <input type="checkbox" name="spec" value="gps" style="width: 18px; height: 18px; accent-color: var(--color-primary);">
+                    <label class="filter-checkbox"
+                        style="padding: 0; display: inline-flex; align-items: center; gap: var(--spacing-xs); cursor: pointer;">
+                        <input type="checkbox" name="spec" value="gps"
+                            style="width: 18px; height: 18px; accent-color: var(--color-primary);">
                         <span class="filter-label" style="font-size: 0.9rem; font-weight: 600;">GPS内蔵</span>
                     </label>
-                    <label class="filter-checkbox" style="padding: 0; display: inline-flex; align-items: center; gap: var(--spacing-xs); cursor: pointer;">
-                        <input type="checkbox" name="spec" value="felica" style="width: 18px; height: 18px; accent-color: var(--color-primary);">
+                    <label class="filter-checkbox"
+                        style="padding: 0; display: inline-flex; align-items: center; gap: var(--spacing-xs); cursor: pointer;">
+                        <input type="checkbox" name="spec" value="felica"
+                            style="width: 18px; height: 18px; accent-color: var(--color-primary);">
                         <span class="filter-label" style="font-size: 0.9rem; font-weight: 600;">FeliCa/おサイフケータイ</span>
                     </label>
-                    <label class="filter-checkbox" style="padding: 0; display: inline-flex; align-items: center; gap: var(--spacing-xs); cursor: pointer;">
-                        <input type="checkbox" name="spec" value="waterproof" style="width: 18px; height: 18px; accent-color: var(--color-primary);">
+                    <label class="filter-checkbox"
+                        style="padding: 0; display: inline-flex; align-items: center; gap: var(--spacing-xs); cursor: pointer;">
+                        <input type="checkbox" name="spec" value="waterproof"
+                            style="width: 18px; height: 18px; accent-color: var(--color-primary);">
                         <span class="filter-label" style="font-size: 0.9rem; font-weight: 600;">防水対応</span>
                     </label>
                 </div>
@@ -319,9 +335,9 @@
         {{- end -}}
         {{- $pointsRate := 0 -}}
         {{- if and .Params.price .Params.loyalty_points -}}
-          {{- if gt (int $priceRaw) 0 -}}
-            {{- $pointsRate = mul (div (float .Params.loyalty_points) (float $priceRaw)) 100 -}}
-          {{- end -}}
+        {{- if gt (int $priceRaw) 0 -}}
+        {{- $pointsRate = mul (div (float .Params.loyalty_points) (float $priceRaw)) 100 -}}
+        {{- end -}}
         {{- end -}}
         {{- $dateRaw := .Date.Unix -}}
         {{- with .Params.last_investigated -}}{{- $dateRaw = (time .).Unix -}}{{- end -}}
@@ -393,7 +409,8 @@
         {{- end -}}
         <article class="card" data-price="{{ $priceRaw }}" data-score="{{ .Params.score | default 0 }}"
             data-date="{{ $dateRaw }}" data-categories="{{ $catString }}" data-specs="{{ $specsString }}"
-            data-has-deal="{{ $hasDeal }}" data-savings-percentage="{{ .Params.savings_percentage | default 0 }}" data-points-rate="{{ $pointsRate }}">
+            data-has-deal="{{ $hasDeal }}" data-savings-percentage="{{ .Params.savings_percentage | default 0 }}"
+            data-points-rate="{{ $pointsRate }}">
             <div class="card-image">
                 <a href="{{ .RelPermalink }}" tabindex="-1" aria-hidden="true">
                     {{- if .Params.images -}}
@@ -456,6 +473,9 @@
                     <div class="meta-details-row">
                         {{- if .Params.is_amazon_direct -}}
                         <span class="badge-amazon-direct">Amazon直販</span>
+                        {{- end -}}
+                        {{- if .Params.is_amazon_haul -}}
+                        <span class="badge-amazon-haul">Amazon Haul</span>
                         {{- end -}}
                         {{- with .Params.deal_badge -}}
                         {{- $dealClass := "deal-standard" -}}
