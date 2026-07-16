@@ -146,7 +146,7 @@ export interface SessionStatus {
 
 export interface CompetitiveProduct {
   name: string;
-  asin?: string;
+  asin?: string | undefined;
   priceComparison: string;
   featureComparison: string[];
   differentiators: string[];
