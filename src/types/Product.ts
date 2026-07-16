@@ -8,8 +8,8 @@
  */
 export interface CategoryInfo {
   main: string; // メインカテゴリ（上位カテゴリ）
-  sub?: string | undefined; // サブカテゴリ（詳細カテゴリ）
-  browseNodeId?: string | undefined; // Creators API BrowseNode ID（将来の拡張用）
+  sub?: string; // サブカテゴリ（詳細カテゴリ）
+  browseNodeId?: string; // Creators API BrowseNode ID（将来の拡張用）
 }
 
 export interface Product {
@@ -17,8 +17,8 @@ export interface Product {
   title: string;
   category: string; // 後方互換性のため維持（メインカテゴリ）
   categoryInfo?: CategoryInfo; // 新規: 階層カテゴリ情報
-  parentAsin?: string | undefined; // 親ASIN（バリエーション商品の識引用）
-  detailPageUrl?: string | undefined; // Amazon DetailPageURL (affiliate link)
+  parentAsin?: string; // 親ASIN（バリエーション商品の識引用）
+  detailPageUrl?: string; // Amazon DetailPageURL (affiliate link)
   price: {
     amount: number;
     currency: string;
@@ -34,38 +34,34 @@ export interface Product {
     count: number;
   };
 
-  isAmazonDirect?: boolean | undefined;
-  isAmazonHaul?: boolean | undefined;
-  availability?: string | undefined;
-  brand?: string | undefined;
-  loyaltyPoints?: number | undefined;
-  dealBadge?: string | undefined;
-  dealAccessType?: string | undefined;
-  savingsPercentage?: number | undefined;
+  isAmazonDirect?: boolean;
+  isAmazonHaul?: boolean;
+  availability?: string;
+  brand?: string;
+  loyaltyPoints?: number;
+  dealBadge?: string;
+  dealAccessType?: string;
+  savingsPercentage?: number;
 }
 
 export interface ProductDetail extends Product {
-  description?: string | undefined;
+  description?: string;
   features: string[];
-  dimensions?:
-    | {
-        height?: string | undefined;
-        width?: string | undefined;
-        length?: string | undefined;
-        weight?: string | undefined;
-      }
-    | undefined;
-  manufacturer?: string | undefined;
-  model?: string | undefined;
+  dimensions?: {
+    height?: string;
+    width?: string;
+    length?: string;
+    weight?: string;
+  };
+  manufacturer?: string;
+  model?: string;
   // 新規追加フィールド（Creators API拡張）
-  releaseDate?: string | undefined;
-  externalIds?:
-    | {
-        ean?: string | undefined;
-        isbn?: string | undefined;
-        upc?: string | undefined;
-      }
-    | undefined;
+  releaseDate?: string;
+  externalIds?: {
+    ean?: string;
+    isbn?: string;
+    upc?: string;
+  };
   languages?: string[];
   contributors?: Array<{
     name: string;
