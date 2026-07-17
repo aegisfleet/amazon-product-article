@@ -1,0 +1,162 @@
+{
+  "analysis": {
+    "productName": "Xiaomi POCO X8 Pro 8GB+256GB",
+    "parentAsin": "B0GK86D2SY",
+    "productDescription": "約16.7cm(6.59インチ相当)の1.5K解像度120Hz有機ELディスプレイとDimensity 8500-Ultraを搭載した、防水・防塵仕様の高性能SIMフリースマートフォンです。",
+    "productUsage": [
+      "高負荷なゲームやマルチタスク環境での使用",
+      "美しいディスプレイでの動画視聴",
+      "急速充電機能を活かした長時間の外出利用"
+    ],
+    "positivePoints": [
+      "TSMC 4nm製造プロセスのDimensity 8500-Ultra搭載により最大3.4GHzの高クロックを実現",
+      "AnTuTu V11スコアが2,283,558に達する高いパフォーマンス",
+      "シリコンカーボン技術を採用した6500mAhの大容量バッテリーを搭載",
+      "100Wハイパーチャージに対応し、約48分で100%の充電が可能",
+      "27Wのリバース充電機能を備え、モバイルバッテリーとしても利用可能",
+      "5300mm²の超大面積POCO 3DデュアルレイヤーIceLoop冷却システムを搭載",
+      "フラッグシップ基準のメタル製ミドルフレームと、着信時に光るRGBライト（8色）を採用",
+      "IP68の防塵・防水性能を備える"
+    ],
+    "negativePoints": [
+      "重量や寸法に関する具体的な数値が公式データに記載されていない",
+      "イヤホンジャックやSDカードスロットの有無が不明確"
+    ],
+    "useCases": [
+      "ゲームプレイ中の本体の発熱を抑えたい場面",
+      "急な外出前に短時間でスマートフォンを充電したい場面",
+      "雨天時や水回りでも安心して操作したい場面",
+      "他のデバイスのバッテリーが切れそうなときに電力を供給する場面"
+    ],
+    "userStories": [
+      {
+        "userType": "スマホゲーマー",
+        "scenario": "高負荷の最新3Dゲームを長時間プレイした際",
+        "experience": "以前のスマホではゲーム中にカクついたり本体が熱くなりすぎたりしていましたが、X8 ProはWildBoost Optimizationのおかげでフレームレートが安定し、IceLoop冷却システムで熱さも気にならなくなりました。長時間のプレイでも快適で、ゲーム専用機のような安心感があります。",
+        "supportingSourceIds": ["src-1"],
+        "sentiment": "positive"
+      },
+      {
+        "userType": "外出が多いビジネスパーソン",
+        "scenario": "出張先でバッテリー残量が減った時",
+        "experience": "移動中の動画視聴や連絡でバッテリーを酷使しますが、6500mAhの容量で一日中余裕で持ちます。万が一減っても、100Wのハイパーチャージで休憩中にすぐ100%になるので、モバイルバッテリーを持ち歩く必要がなくなりました。他の機器の充電にも使えるのが便利です。",
+        "supportingSourceIds": ["src-1"],
+        "sentiment": "positive"
+      }
+    ],
+    "userImpression": "ハイエンドモデルに迫るDimensity 8500-Ultraと強力な冷却システム、超急速充電可能な大容量バッテリーを備えた、非常にコストパフォーマンスと実用性の高いスマートフォンです。特にゲーム性能や充電速度にこだわるユーザーから高く評価される傾向があり、発熱の少なさとバッテリーの持ちが両立している点が満足度を押し上げています。スペックの詳細は一部不明な点もあるものの、主要な性能面での不満は出にくい強力な製品といえます。",
+    "sources": [
+      {
+        "id": "src-1",
+        "name": "Amazon商品ページ",
+        "url": "https://www.amazon.co.jp/dp/B0GK86D2SY",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-03-17",
+        "author": "シャオミ(Xiaomi)",
+        "conflictOfInterest": "none",
+        "notes": "製品スペック、特徴、搭載チップ、バッテリー性能、冷却システムの詳細を確認"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "100Wハイパーチャージで約48分で100%充電可能",
+        "category": "durability",
+        "confidence": "high",
+        "supportingSourceIds": ["src-1"],
+        "crossChecked": false,
+        "notes": "メーカーの公式仕様として記載。大容量バッテリーでのこの充電速度は大きな強み"
+      },
+      {
+        "claim": "SoC温度を最大3℃低減する冷却システム",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": ["src-1"],
+        "crossChecked": false,
+        "notes": "5300mm²の冷却エリアによる効果として公式に主張されている"
+      }
+    ],
+    "lastInvestigated": "2026-07-17",
+    "competitiveAnalysis": [
+      {
+        "name": "Xiaomi POCO F7",
+        "asin": "B08N6NS2WB",
+        "priceComparison": "POCO F7はやや価格が高く設定されているが、プロセッサにSnapdragon 8s Gen 4を搭載し、ディスプレイサイズも約17.3cmとより大きい。",
+        "featureComparison": [
+          "共通点：6500mAhの大容量バッテリー搭載、有線でのリバース充電対応、IPレベルの防塵防水などの耐久性。",
+          "相違点：本商品はDimensity 8500-Ultra搭載・100W充電・約16.7cm画面であるのに対し、POCO F7はSnapdragon 8s Gen 4搭載・90W充電・約17.3cm画面であり、カメラはソニー製5000万画素センサーをアピールしている。"
+        ],
+        "differentiators": [
+          "Xiaomi POCO X8 Proの利点：よりコンパクトな約16.7cm画面で取り回しが良く、充電速度が100Wと優れている。また価格も少し抑えられているためコスパが高い。",
+          "Xiaomi POCO F7の利点：大画面約17.3cmで動画やゲームを楽しみたい人や、Snapdragonプロセッサを好む人、カメラ性能を重視する人に適している。"
+        ]
+      },
+      {
+        "name": "Xiaomi POCO X7 Pro",
+        "asin": "B0DRD1526H",
+        "priceComparison": "POCO X7 Proは本商品よりも安価だが、チップセットやバッテリー容量に違いがある。",
+        "featureComparison": [
+          "共通点：IP68の防塵・防水性能、1.5K解像度・120Hzの有機ELディスプレイを搭載。",
+          "相違点：本商品はDimensity 8500-Ultra・6500mAh・100W充電だが、X7 ProはDimensity 8400-Ultra・6000mAh・90W充電（約16.9cm画面）である。"
+        ],
+        "differentiators": [
+          "Xiaomi POCO X8 Proの利点：より高い処理性能（Dimensity 8500-Ultra）と、より大きなバッテリー容量（6500mAh）、高速な充電（100W）を求めるヘビーユーザー向け。",
+          "Xiaomi POCO X7 Proの利点：価格を抑えつつ、十分なハイエンド級の性能とIP68防水などの基本機能を手に入れたいコスト重視のユーザーに適している。"
+        ]
+      },
+      {
+        "name": "Xiaomi POCO M8 5G",
+        "asin": "B0G4MHJQZH",
+        "priceComparison": "POCO M8 5Gは本商品の約半額に近い低価格帯に位置している。",
+        "featureComparison": [
+          "共通点：120Hz有機ELディスプレイ搭載、防塵防水対応（M8はIP66）、十分なバッテリー容量。",
+          "相違点：本商品のハイエンドSoCに対し、M8はミドルレンジのSnapdragon 6 Gen 3を搭載。バッテリーも5520mAhと少し小さく、防水性能も1段落ちる。"
+        ],
+        "differentiators": [
+          "Xiaomi POCO X8 Proの利点：本格的なゲームプレイや高い処理能力を必要とする用途、最高速の充電を求めるなら迷わずこちら。",
+          "Xiaomi POCO M8 5Gの利点：ゲームをあまりせず、日常的なブラウジングや動画視聴がメインで、初期費用を極力抑えたい人に最適。"
+        ]
+      },
+      {
+        "name": "Xiaomi POCO X8 Pro Max",
+        "asin": "B0GK8DRT2N",
+        "priceComparison": "POCO X8 Pro Maxは本商品よりもかなり高価なプレミアムモデルである。",
+        "featureComparison": [
+          "共通点：100Wハイパーチャージ、IceLoop冷却システム、IP68防塵・防水対応。",
+          "相違点：本商品はDimensity 8500-Ultra・6500mAh・約16.7cm画面だが、X8 Pro Maxは最高峰のDimensity 9500s・驚異の8500mAh・約17.3cmの大画面を搭載している。"
+        ],
+        "differentiators": [
+          "Xiaomi POCO X8 Proの利点：高スペックでありながら価格とのバランスが取れており、一般的なハイエンド用途に十分なコスパモデル。",
+          "Xiaomi POCO X8 Pro Maxの利点：価格に糸目をつけず、タブレット並みの超特大バッテリーと最高峰の処理性能、大画面を追求するエンスージアスト向け。"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "最新の重いゲームを快適にプレイしつつ長時間の稼働を求める人で、下位モデルのX7 Proよりも高い処理能力と充電速度（100W）を優先したいゲーマー",
+        "屋外での使用が多く急な水濡れに強いIP68防水スマホを求めており、F7のような大画面（約17.3cm）よりも取り回しやすい約16.7cm画面を好む人"
+      ],
+      "pros": [
+        "6500mAhの大容量で充電切れの不安から解放され、万が一の際も100W充電でわずかな休憩時間中に満充電できるため、モバイルバッテリーを持ち歩くストレスがなくなります。",
+        "高性能な冷却システムと強力なプロセッサの組み合わせにより、激しいゲームでもカクつきや本体の発熱を気にせず、ゲームの世界に没入し続けることができます。"
+      ],
+      "cons": [
+        "具体的な本体サイズや重量が不明であるため、片手での操作性やポケットへの収まり具合を重視する人は、購入前にレビュー等で使用感を確認する必要があります。"
+      ],
+      "score": 92,
+      "scoreRationale": "[基本点: 70]\n[加点: +10] (TSMC 4nm製造のDimensity 8500-Ultraによるフラッグシップ級の処理性能)\n[加点: +8] (6500mAhの超大容量と100Wハイパーチャージによる圧倒的なバッテリー利便性)\n[加点: +5] (IP68の完全な防塵・防水性能を備えている点)\n[加点: +3] (27Wリバース充電によるモバイルバッテリーとしての付加価値)\n[減点: -4] (サイズ・重量の公式な記載がなく、取り回しに懸念がある点)\n[合計: 92]"
+    },
+    "technicalSpecs": {
+      "display": "約16.7cm 1.5K解像度 120Hz 有機EL(AMOLED)ディスプレイ",
+      "processor": "MediaTek Dimensity 8500-Ultra (TSMC 4nm, 最大3.4GHz)",
+      "memory": "8GB RAM / 256GB ROM",
+      "battery": "6500mAh (シリコンカーボンバッテリー), 100W有線急速充電, 27Wリバース充電",
+      "cooling": "POCO 3DデュアルレイヤーIceLoop冷却システム (面積: 5300mm²)",
+      "durability": "IP68防塵・防水",
+      "color": "ブラック",
+      "network": "docomo/au/SoftBank/Rakuten Mobile回線対応 SIMフリー",
+      "design": "メタル製ミドルフレーム, ダイナミックRGBライト（8色バックライト）",
+      "other": ["WildBoost Optimization搭載"]
+    }
+  }
+}
