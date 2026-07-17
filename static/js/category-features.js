@@ -264,7 +264,7 @@ function initCategoryFeatures() {
             params.set('minScore', String(filters.minScore));
         }
 
-        if (filters.minPrice !== 0) {
+        if (filters.minPrice !== 100) {
             params.set('minPrice', String(filters.minPrice));
         }
 
@@ -357,7 +357,7 @@ function initCategoryFeatures() {
      */
     function resetFilters() {
         if (scoreSlider) scoreSlider.value = '0';
-        if (minPriceSlider) minPriceSlider.value = '0';
+        if (minPriceSlider) minPriceSlider.value = '20';
         if (priceSlider) priceSlider.value = '1000';
         if (categorySelect) categorySelect.value = '';
         if (dealFilter) dealFilter.checked = false;
