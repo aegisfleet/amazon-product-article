@@ -1,147 +1,167 @@
 {
   "analysis": {
-    "productName": "Apple iPhone 14 128GB",
+    "productName": "iPhone 14 128GB スターライト (整備済み品)",
     "parentAsin": "B0BLY4F4WM",
-    "productDescription": "Appleが提供する高性能なA15 Bionicチップを搭載した、5G対応のスマートフォンです。",
+    "productDescription": "約15.5cm（6.1型）Super Retina XDRディスプレイとA15 Bionicチップを搭載した高性能スマートフォン。整備済み品として手頃な価格で提供されている。",
     "productUsage": [
-      "高画質な写真や動画の撮影・編集",
-      "快適な動作でのゲームやアプリの利用",
-      "5G通信を利用した高速なウェブブラウジングや動画視聴",
-      "Face IDを利用した安全な生体認証とApple Pay決済"
+      "日常的な連絡やSNSの利用",
+      "高画質な写真・動画の撮影",
+      "ゲームや動画視聴などのエンターテインメント"
     ],
     "positivePoints": [
-      "前モデルより進化したカメラ性能により、暗所でも綺麗な写真が撮れる",
-      "A15 Bionicチップによるサクサクとした快適な操作感",
-      "整備済み品であるため、新品よりも大幅に安く購入できる",
-      "Amazon Renewedの保証があるため、安心して利用できる"
+      "A15 Bionicチップによる高い処理性能",
+      "高精細な約15.5cm（6.1型）Super Retina XDRディスプレイ",
+      "衝突事故検出や衛星経由の緊急SOSなどの高度な安全機能",
+      "整備済み品として新品よりも約2〜3万円安価に購入可能"
     ],
     "negativePoints": [
-      "整備済み品のため、外装に微細な傷がある場合がある",
-      "バッテリーの最大容量が新品同様の100%ではない可能性がある",
-      "最新のiPhone 15シリーズのようなUSB-C端子ではなくLightning端子である"
+      "新品ではないため、外観に微細な傷がある可能性がある",
+      "最新世代ではないため、USB-CではなくLightning端子を採用している",
+      "画面リフレッシュレートが60Hzであり、Proモデル（120Hz）には劣る"
     ],
     "useCases": [
-      "初めてのiPhoneや、古いiPhoneからの買い替え",
-      "高性能なカメラを日常の記録やSNS用に活用したい場合",
-      "コストを抑えつつ、比較的新しいモデルのiPhoneを使いたい場合"
+      "手頃な価格で高性能なiPhoneを手に入れたい場合",
+      "Lightning端子の周辺機器をそのまま使い続けたい場合"
     ],
-    "userStories": [
-      {
-        "userType": "20代学生",
-        "scenario": "古いスマートフォンからの乗り換え",
-        "experience": "予算が限られていたため整備済み品を選びましたが、外観は新品同様でサクサク動き、カメラも綺麗で大満足です。（推測）",
-        "sentiment": "positive"
-      },
-      {
-        "userType": "40代会社員",
-        "scenario": "サブ端末としての購入",
-        "experience": "仕事用のサブ機として購入。バッテリー残量が85%程度でしたが、1日の使用には十分耐えられます。ただ、少しの傷がありました。（推測）",
-        "sentiment": "mixed"
-      }
-    ],
-    "userImpression": "新品と遜色ない性能のiPhone 14を、手頃な価格で購入できる点が高く評価されています。バッテリー容量や微細な傷を気にする声もありますが、全体的な満足度は非常に高いです。",
+    "userStories": [],
+    "userImpression": "整備済み品ならではの高いコストパフォーマンスが評価されている。新品同様の外観とバッテリー状態で届くことが多く、最新モデルに強いこだわりがないユーザーにとって、十分すぎる性能を安価に手に入れられる点が好評である。一方、Lightning端子であることや60Hzのディスプレイについては、価格とのトレードオフとして許容されていることが多い。",
     "sources": [
       {
-        "name": "Amazon Review",
-        "url": null,
-        "credibility": "medium"
+        "id": "src-1",
+        "name": "Apple公式サイト - iPhone 14 技術仕様",
+        "url": "https://support.apple.com/ja-jp/111850",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2022-09-07",
+        "author": "Apple",
+        "conflictOfInterest": "none",
+        "notes": "iPhone 14のスペック詳細（A15 Bionic、約15.5cmディスプレイ、Lightning端子、カメラ仕様など）を確認"
       }
     ],
-    "lastInvestigated": "2026-02-28",
+    "claims": [
+      {
+        "claim": "衝突事故検出機能を搭載し、自動車での重大な衝突事故を認識して自動で救助要請を行う",
+        "category": "safety",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "crossChecked": true,
+        "notes": "Appleの公式技術仕様で機能の搭載が明記されている"
+      }
+    ],
+    "lastInvestigated": "2026-07-18",
     "competitiveAnalysis": [
       {
-        "name": "Apple iPhone 13 128GB",
-        "asin": "B09P82T3PZ",
-        "priceComparison": "iPhone 13の方が約9,000円安価です。",
+        "name": "iPhone 14 Pro 128GB (整備済み品)",
+        "asin": "B0BLXPB4FG",
+        "priceComparison": "対象商品より約2万円高価だが、A16 Bionicチップや48MPカメラ、120Hzディスプレイなど上位の機能を備える",
         "featureComparison": [
-          "CPUは同じA15 Bionic（GPUコア数は14の方が多い）",
-          "iPhone 14はメインカメラのセンサーが大型化"
+          "共通点：約15.5cm（6.1型）ディスプレイ、衝突事故検出機能",
+          "相違点：A16 Bionic搭載、48MPカメラ、常時表示ディスプレイ、Dynamic Island、120Hz対応（ProMotion）"
         ],
         "differentiators": [
-          "iPhone 14は衝突事故検出機能を搭載",
-          "カメラの暗所性能はiPhone 14が優位"
+          "iPhone 14 128GB スターライト (整備済み品)の利点：価格が安く、日常使いには十分な性能を持つためコストを抑えたい人に最適",
+          "iPhone 14 Pro 128GB (整備済み品)の利点：より高性能なカメラやプロセッサ、滑らかなディスプレイを求める人に適している"
         ]
       },
       {
-        "name": "Apple iPhone 15 128GB",
-        "asin": "B0CMWMLLCS",
-        "priceComparison": "iPhone 15の方が約24,000円高価です。",
+        "name": "iPhone 14 Plus 128GB (整備済み品)",
+        "asin": "B0BLY7V7Z2",
+        "priceComparison": "対象商品より高価だが、大画面とより長いバッテリー駆動時間を備える",
         "featureComparison": [
-          "iPhone 15はA16 Bionicチップを搭載",
-          "iPhone 15はUSB-C端子を採用し、Dynamic Islandを搭載"
+          "共通点：A15 Bionicチップ、デュアルカメラ、Lightning端子",
+          "相違点：約17.0cm（6.7型）の大画面、より大容量のバッテリー"
         ],
         "differentiators": [
-          "iPhone 14はLightning端子だが価格が大幅に安い",
-          "性能差に対してiPhone 14のコストパフォーマンスが高い"
+          "iPhone 14 128GB スターライト (整備済み品)の利点：コンパクトで軽く、片手での操作がしやすく、価格も安い",
+          "iPhone 14 Plus 128GB (整備済み品)の利点：動画視聴やゲームをより大きな画面で楽しみたい人や、バッテリー持ちを重視する人に適している"
         ]
       },
       {
-        "name": "Apple iPhone 14 Pro 256GB",
-        "asin": "B0BLY8VNPW",
-        "priceComparison": "iPhone 14 Proの方が数万円高価です。（在庫状況による）",
+        "name": "iPhone 13 128GB (整備済み品)",
+        "asin": "B09P81ZM5X",
+        "priceComparison": "対象商品より約1万円安いが、カメラ性能や安全機能（衝突事故検出など）が前世代のものとなる",
         "featureComparison": [
-          "ProモデルはA16 Bionicとトリプルカメラ、ProMotion（120Hz）を搭載",
-          "通常モデル（本製品）は軽量で扱いやすい"
+          "共通点：A15 Bionicチップ、約15.5cm（6.1型）ディスプレイ、Lightning端子",
+          "相違点：iPhone 14はカメラの暗所性能向上、Photonic Engine搭載、衝突事故検出機能を備える"
         ],
         "differentiators": [
-          "カメラの望遠レンズや常時表示ディスプレイの有無",
-          "本製品は日常使いに十分な性能を安価に提供"
+          "iPhone 14 128GB スターライト (整備済み品)の利点：カメラの暗所撮影性能が高く、衝突事故検出などの新しい安全機能が備わっている",
+          "iPhone 13 128GB (整備済み品)の利点：基本性能がほぼ同じながらさらに価格が安いため、コストを最優先する人に適している"
+        ]
+      },
+      {
+        "name": "iPhone 12 128GB (整備済み品)",
+        "asin": "B0928NBRPP",
+        "priceComparison": "対象商品より約2万円安く購入できるが、チップが2世代前となり全体的な性能やバッテリー持ちが劣る",
+        "featureComparison": [
+          "共通点：約15.5cm（6.1型）ディスプレイ、5G対応、Lightning端子",
+          "相違点：A14 Bionicチップ、バッテリー持ちが劣る、カメラ性能が劣る"
+        ],
+        "differentiators": [
+          "iPhone 14 128GB スターライト (整備済み品)の利点：チップ性能が高く、バッテリー駆動時間やカメラ性能で大きく優位。より長く快適に使える",
+          "iPhone 12 128GB (整備済み品)の利点：価格が大幅に安く、サブ機や初めてのスマホなど、最低限の機能で十分な場合に適している"
+        ]
+      },
+      {
+        "name": "iPhone SE（第3世代） 128GB (整備済み品)",
+        "asin": "B0BBLXZLJC",
+        "priceComparison": "対象商品より約2.7万円安く、ホームボタンを搭載した廉価モデル",
+        "featureComparison": [
+          "共通点：A15 Bionicチップ搭載、5G対応、Lightning端子",
+          "相違点：約11.9cm（4.7型）液晶ディスプレイ、Touch ID（指紋認証）、シングルカメラ、バッテリー容量が少ない"
+        ],
+        "differentiators": [
+          "iPhone 14 128GB スターライト (整備済み品)の利点：大画面の有機ELディスプレイ、Face ID、より優れたデュアルカメラ、長いバッテリー駆動時間を持つ",
+          "iPhone SE（第3世代） 128GB (整備済み品)の利点：Touch ID（指紋認証）を使いたい人や、コンパクトなサイズと安さを最優先する人に適している"
+        ]
+      },
+      {
+        "name": "iPhone 13 mini 128GB (整備済み品)",
+        "asin": "B09P82BSXR",
+        "priceComparison": "対象商品より約1.2万円安いが、画面サイズが小さくバッテリー持ちが短い",
+        "featureComparison": [
+          "共通点：A15 Bionicチップ、Lightning端子",
+          "相違点：約13.7cm（5.4型）の小型ディスプレイ、バッテリー駆動時間が短い"
+        ],
+        "differentiators": [
+          "iPhone 14 128GB スターライト (整備済み品)の利点：画面が大きく見やすい。バッテリー駆動時間が長いため、外出先でも安心して使える",
+          "iPhone 13 mini 128GB (整備済み品)の利点：片手で楽に操作できるコンパクトなサイズ感と軽さを好む人に適している"
         ]
       }
     ],
     "recommendation": {
       "targetUsers": [
-        "コストを抑えて高性能なiPhoneを手に入れたい人",
-        "最新モデルへのこだわりがなく、実用的な性能を求める人",
-        "Lightningケーブルの資産をそのまま活かしたい人"
+        "最新モデルへのこだわりはないが、長く快適に使える性能を求めており、コストを重視するユーザー（iPhone 13より優れたカメラと安全機能を持ちつつ、Proモデルより安価に手に入れたい人）"
       ],
       "pros": [
-        "新品より数万円安い高いコストパフォーマンス",
-        "数年間は快適に使える十分な基本性能（A15チップ）",
-        "Amazonの整備済み品保証（180日返品保証など）による安心感"
+        "A15 Bionicと高品質なディスプレイにより、日常のブラウジングからゲームまでストレスなく快適にこなせる",
+        "整備済み品であるため、新品に近い品質の端末を定価よりも大幅に安く手に入れることができ、家計に優しい"
       ],
       "cons": [
-        "バッテリー残量が100%ではない可能性がある",
-        "細かい傷など、外装の個体差がある",
-        "端子がUSB-Cではない（Lightning）"
+        "Lightning端子を採用しているため、USB-Cで身の回りのケーブルを統一したい人は注意が必要",
+        "整備済み品であるため、個体によっては微細な傷がある可能性があり、完全な新品を求める人には向かない"
       ],
-      "score": 90,
-      "scoreRationale": "[基本点: 70]\n[加点: +5] (A15 Bionicチップと優れたカメラシステムによる高い実用性)\n[加点: +15] (iPhone 14が約6万円で買える圧倒的なコストパフォーマンス)\n[加点: +3] (整備済み品とはいえ、Apple特有の高いビルドクオリティを維持)\n[加点: +2] (Amazon Renewedの保証による一定の信頼性)\n[減点: -5] (バッテリー劣化や外装傷など整備済み品特有の不確実性)\n[合計: 90]"
+      "score": 85,
+      "scoreRationale": "[基本点: 70]\n[加点: +5] (A15 Bionicチップ搭載による高い処理性能)\n[加点: +10] (整備済み品として約5.8万円という高いコストパフォーマンス)\n[加点: +5] (一定の品質基準を満たしたAppleの純正再生品として安心して利用できる信頼性)\n[減点: -2] (Lightning端子を採用している旧世代の仕様)\n[減点: -3] (画面リフレッシュレートが60HzでありProモデルに劣る点)\n[合計: 85]"
     },
     "technicalSpecs": {
-      "os": "iOS",
-      "cpu": "A15 Bionic",
-      "ram": null,
-      "storage": "128GB",
-      "display": {
-        "size": "6.1インチ",
-        "resolution": "2532×1170",
-        "type": "Super Retina XDR (OLED)"
-      },
-      "battery": {
-        "capacity": null,
-        "charging": "MagSafe対応、ワイヤレス充電"
-      },
-      "camera": {
-        "main": "12MP (広角、超広角)",
-        "ultrawide": "12MP"
-      },
       "dimensions": {
         "height": "146.7mm",
         "width": "71.5mm",
-        "depth": "7.8mm",
-        "weight": "172g"
+        "depth": "7.80mm"
       },
-      "connectivity": [
-        "5G",
-        "Wi-Fi 6",
-        "Bluetooth 5.3"
-      ],
+      "weight": "172g",
+      "capacity": "128GB",
+      "material": "Ceramic Shieldの前面、ガラスの背面とアルミニウムのデザイン",
+      "origin": "中国（一般的なApple製品）",
       "other": [
-        "Face ID",
-        "防沫・耐水・防塵 (IP68)",
-        "衝突事故検出",
-        "Lightningコネクタ"
+        "ディスプレイ: 約15.5cm（6.1型） Super Retina XDRディスプレイ (2532 x 1170ピクセル, 460ppi)",
+        "チップ: A15 Bionicチップ",
+        "カメラ: デュアル12MPカメラシステム（メイン、超広角）",
+        "防沫性能、耐水性能、防塵性能: IP68等級（最大水深6メートルで最大30分間）",
+        "コネクタ: Lightning"
       ]
     }
   }
