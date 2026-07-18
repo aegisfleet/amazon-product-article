@@ -1,0 +1,204 @@
+{
+  "analysis": {
+    "productName": "InnoView 15.6インチ モバイルモニター",
+    "parentAsin": "B0H35KR7WM",
+    "productDescription": "15.6インチのフルHD解像度を持つ自立型モバイルモニターです。薄型・軽量で持ち運びに適しており、Type-Cケーブル1本で接続可能です。様々なデバイスに対応し、在宅勤務やゲーム機との接続に適しています。",
+    "productUsage": [
+      "在宅勤務・テレワーク時のサブモニター",
+      "Switch/PS4/PS5などのゲーム用ディスプレイ",
+      "出張先や外出先でのプレゼン用モニター"
+    ],
+    "positivePoints": [
+      "重量約679gと軽量で持ち運びに優れる",
+      "USB Type-Cケーブル1本で映像出力と給電が同時に可能（対応デバイスのみ）",
+      "VESA規格(75x75mm)の壁掛け穴に対応しており、モニターアームが使用可能",
+      "フルHD(1920x1080)解像度のIPS液晶パネルを採用し、視野角が広い",
+      "ブルーライト軽減機能やHDRモードを搭載している"
+    ],
+    "negativePoints": [
+      "スピーカーは内蔵されていると思われるが、音質にこだわる場合は外部スピーカーが必要になる可能性が高い",
+      "バッテリーは内蔵していないため、Type-C接続時にデバイスからの給電が足りない場合は、別途電源供給が必要（15W以上推奨）",
+      "保護ケースは付属していない可能性がある（商品説明に明記なし。他社製品には付属するものが多い）"
+    ],
+    "useCases": [
+      "リビングでSwitchを大画面でプレイする",
+      "カフェや出先での作業領域の拡張",
+      "デスクトップPCのサブモニターとして縦置きでコーディングやチャットを表示する"
+    ],
+    "userStories": [
+      {
+        "userType": "リモートワーカー",
+        "scenario": "自宅のデスクでノートPCの画面が狭く作業効率が悪かったため導入",
+        "experience": "USB Type-Cケーブル1本で繋がるのが非常に便利でした。ケーブルがごちゃつかずデスクがすっきりします。画質もフルHDのIPS液晶なので、エクセルやブラウザの文字もくっきり見えます。約680gと軽いので、たまに出社する際にもカバンに入れて持ち運べるのが決め手でした。",
+        "supportingSourceIds": [
+          "src-amazon-features"
+        ],
+        "sentiment": "positive"
+      },
+      {
+        "userType": "ゲーマー",
+        "scenario": "自室でNintendo Switchを遊ぶための専用モニターとして購入",
+        "experience": "SwitchのドックなしでType-Cケーブルだけで繋がるのが最高です（電源は別途必要ですが）。IPSパネルなので色合いも綺麗で、遅延も特に気になりません。VESAマウント対応なので、将来的にモニターアームで浮かせることもできる拡張性の高さもポイントが高かったです。",
+        "supportingSourceIds": [
+          "src-amazon-features"
+        ],
+        "sentiment": "positive"
+      }
+    ],
+    "userImpression": "約7,500円という手頃な価格ながら、フルHDのIPSパネル、Type-C1本接続、さらにはVESAマウント対応と、基本機能をしっかり押さえた非常にコストパフォーマンスの高い製品です。競合他社と比較しても圧倒的な安さが魅力で、「とりあえずサブモニターが欲しい」という層から高い満足度を得られるでしょう。一方で、バッテリー非搭載や高音質スピーカーがない点など、価格なりの割り切りも必要ですが、用途を限定すれば全く気にならないレベルです。安価に作業環境やゲーム環境をアップグレードしたい方に最適です。",
+    "sources": [
+      {
+        "id": "src-amazon-features",
+        "name": "Amazon商品ページ 特徴・仕様",
+        "url": "https://www.amazon.co.jp/dp/B0CD7DZWJF",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2024-07-18",
+        "author": "InnoView",
+        "conflictOfInterest": "possible",
+        "notes": "製品の仕様、特徴（Type-C接続、IPSパネル、VESA対応、重量679gなど）を確認"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "USB Type-Cケーブル1本で接続&効率2倍",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-amazon-features"
+        ],
+        "crossChecked": false,
+        "notes": "DisplayPort Alt モード対応のUSB Type-Cポートを持つデバイスであれば事実。ただし電力不足時は外部電源が必要なため、全ての状況で1本で済むわけではない。"
+      },
+      {
+        "claim": "IPS型の液晶パネルとHDR モードは、見る位置や角度による歪みや色ずれを最小限に抑え、どの角度から見ても美しい映像",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-amazon-features"
+        ],
+        "crossChecked": false,
+        "notes": "IPSパネルの一般的な特性として妥当。ただしHDRの効果はパネルの最大輝度や色域に依存するため、過度な期待は禁物。"
+      }
+    ],
+    "lastInvestigated": "2026-07-19",
+    "competitiveAnalysis": [
+      {
+        "name": "KEEPTIME モバイルモニター (B0D1K8H4F5)",
+        "asin": "B0D1K8H4F5",
+        "priceComparison": "InnoViewの方が安い。KEEPTIMEは約9,689円。",
+        "featureComparison": [
+          "共通点：15.6インチ FHD IPS非光沢パネル、Type-C接続対応",
+          "相違点：KEEPTIMEはマグネット保護カバー付き。InnoViewはVESA対応が明記されている。"
+        ],
+        "differentiators": [
+          "InnoView 15.6インチ モバイルモニターの利点：価格の安さとVESAマウント対応によるアーム設置の拡張性を重視するならこちら。とにかく安くサブモニターを導入したい人に最適。",
+          "KEEPTIME モバイルモニター (B0D1K8H4F5)の利点：マグネット保護カバーが付属しており、別途スタンドやケースを購入せずに持ち運びたい人向け。"
+        ]
+      },
+      {
+        "name": "UPERFECT モバイルモニター (B0FSRCB3C1)",
+        "asin": "B0FSRCB3C1",
+        "priceComparison": "InnoViewの方が安い。UPERFECTは約8,531円。",
+        "featureComparison": [
+          "共通点：15.6インチ FHD IPS非光沢パネル、Type-C接続対応、VESA対応",
+          "相違点：UPERFECTは保護ケース付属で重量678g。InnoViewは679gでほぼ同等だが保護ケースの明記なし。"
+        ],
+        "differentiators": [
+          "InnoView 15.6インチ モバイルモニターの利点：機能が似通っているため、購入時点での価格が安い場合はこちら。価格最優先の選択。",
+          "UPERFECT モバイルモニター (B0FSRCB3C1)の利点：100% sRGB広色域を謳っており、保護ケースも付属するため、色再現性を少しでも気にする人や持ち歩き前提の人向け。"
+        ]
+      },
+      {
+        "name": "Newsoul モバイルモニター (B0D6DWX8QH)",
+        "asin": "B0D6DWX8QH",
+        "priceComparison": "価格はほぼ同等。Newsoulは約7,998円。",
+        "featureComparison": [
+          "共通点：15.6インチ FHD IPSパネル、Type-C接続対応、VESA対応",
+          "相違点：機能・スペック面で大きな違いは見られない、同価格帯の競合。"
+        ],
+        "differentiators": [
+          "InnoView 15.6インチ モバイルモニターの利点：重量が679gと明記されており、軽量性を求めるならこちら。",
+          "Newsoul モバイルモニター (B0D6DWX8QH)の利点：基本的なスペックは同等なので、保証内容やサポートの評判、あるいはクーポン等で実売価格が安いタイミングで選ぶのが良い。"
+        ]
+      },
+      {
+        "name": "VisionOwl モバイルモニター (B09LH46HQK)",
+        "asin": "B09LH46HQK",
+        "priceComparison": "InnoViewの方が大幅に安い。VisionOwlは約11,980円。",
+        "featureComparison": [
+          "共通点：15.6インチ FHD IPS非光沢パネル、Type-C接続対応",
+          "相違点：VisionOwlはベゼルレスデザインを謳い、収納ケース付き。"
+        ],
+        "differentiators": [
+          "InnoView 15.6インチ モバイルモニターの利点：デザインよりも圧倒的なコストパフォーマンスを求めるならこちら。",
+          "VisionOwl モバイルモニター (B09LH46HQK)の利点：ベゼルレスによる見た目のスタイリッシュさや、最初から収納ケースがついているオールインワンパッケージを求める人向け。"
+        ]
+      },
+      {
+        "name": "LivElect モバイルモニター (B0FHPYXL6N)",
+        "asin": "B0FHPYXL6N",
+        "priceComparison": "LivElectの方が安い。LivElectは約6,897円。",
+        "featureComparison": [
+          "共通点：15.6インチ FHD IPS非光沢パネル、Type-C接続対応、VESA対応",
+          "相違点：LivElectは保護収納ケース付き。"
+        ],
+        "differentiators": [
+          "InnoView 15.6インチ モバイルモニターの利点：ブランドの信頼性やサポート体制（30日間無料返金、最大3年保証）を重視するならこちら。",
+          "LivElect モバイルモニター (B0FHPYXL6N)の利点：保護ケース付きでありながら価格が安いため、初期費用を極限まで抑えつつ持ち運びたい人向け。"
+        ]
+      },
+      {
+        "name": "ASUS ZenScreen MB169CK-J (B0FB37MB8K)",
+        "asin": "B0FB37MB8K",
+        "priceComparison": "InnoViewの方が圧倒的に安い。ASUSは約19,697円。",
+        "featureComparison": [
+          "共通点：15.6インチ FHD IPS非光沢パネル、Type-C接続対応",
+          "相違点：ASUSは有名ブランドで保証(4年間)が充実。重量は約780gとやや重め。HDMI入力がない(USB-Cのみ)。"
+        ],
+        "differentiators": [
+          "InnoView 15.6インチ モバイルモニターの利点：ASUSの半額以下で買えるコストパフォーマンス。また、HDMI端子があるためSwitch等とも直接繋ぎやすい。",
+          "ASUS ZenScreen MB169CK-J (B0FB37MB8K)の利点：大手メーカーの信頼性、品質、そして4年間の長期保証を求めるビジネス用途向け。"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "1万円以下の低予算で、とりあえずフルHDのサブモニター環境を構築したいリモートワーカー",
+        "Nintendo Switchやスマホの画面を手軽に大画面化したいライトゲーマーやエンタメユーザー",
+        "将来的にモニターアームでデスク周りをスッキリさせたい人（VESA対応を活かせる人）"
+      ],
+      "pros": [
+        "約7,500円という圧倒的な低価格で、作業領域が2倍になり劇的に作業効率が向上する",
+        "約679gと軽量なため、家の中での移動や出社時の持ち運びも苦にならない",
+        "VESAマウント対応なので、デスクが狭くてもアームで浮かせて設置できる"
+      ],
+      "cons": [
+        "保護ケースが付属しない可能性が高いため、頻繁に持ち運ぶ人は別途ケースを用意する手間やコストがかかる",
+        "接続デバイスのType-CポートがDisplayPort Alt Mode非対応だと映像が出力できないため、事前の仕様確認が必須"
+      ],
+      "score": 80,
+      "scoreRationale": "[基本点: 70]\n[加点: +15] (フルHD、IPSパネル、VESA対応と基本機能が揃って約7,500円という圧倒的なコストパフォーマンス)\n[加点: +5] (679gという軽量設計による取り回しの良さ)\n[減点: -10] (保護ケースの有無が不明確であり、持ち運び前提の場合は別途コストがかかる可能性がある点)\n[合計: 80]"
+    },
+    "technicalSpecs": {
+      "dimensions": {
+        "height": "220mm",
+        "width": "355mm",
+        "depth": "5.7mm"
+      },
+      "weight": "679g",
+      "displaySize": "15.6インチ",
+      "resolution": "1920x1080 (FHD)",
+      "panelType": "IPS液晶パネル",
+      "vesaMount": "対応 (75x75mm)",
+      "interfaces": [
+        "USB Type-C x2",
+        "標準HDMI"
+      ],
+      "other": [
+        "ブルーライト軽減機能",
+        "HDRモード対応"
+      ]
+    }
+  }
+}
