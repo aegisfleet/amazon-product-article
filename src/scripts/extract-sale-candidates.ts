@@ -20,6 +20,7 @@ export interface SaleCandidate {
   };
   savingsPercentage?: number | undefined;
   dealBadge?: string | undefined;
+  isLimitedTimeSale?: boolean | undefined;
   rating?:
     | {
         average: number;
@@ -43,6 +44,13 @@ interface CacheEntry {
 
 interface CacheStore {
   [asin: string]: CacheEntry;
+}
+
+const LIMITED_SALE_KEYWORDS = ['限定', '24時間', '特選', '数量限定', '本日限定'];
+
+function isLimitedTimeSaleBadge(badge?: string): boolean {
+  if (!badge) return false;
+  return LIMITED_SALE_KEYWORDS.some((kw) => badge.includes(kw));
 }
 
 function ensureDirectory(filePath: string): void {
@@ -98,6 +106,8 @@ export async function extractSaleCandidates(
 
       if (!hasDealBadge && !hasValidDiscount) continue;
 
+      const isLimitedTimeSale = isLimitedTimeSaleBadge(dealBadge);
+
       candidates.push({
         asin,
         title: product.title,
@@ -105,16 +115,22 @@ export async function extractSaleCandidates(
         price: product.price,
         savingsPercentage: product.savingsPercentage,
         dealBadge: product.dealBadge,
+        isLimitedTimeSale,
         rating: product.rating,
         timestamp: entry.timestamp,
       });
     }
 
     // ソート順:
-    // 1. dealBadge あり優先
-    // 2. savingsPercentage 高い順
-    // 3. timestamp 新しい順
+    // 1. isLimitedTimeSale（限定・特選・24時間セール）優先
+    // 2. dealBadge あり優先
+    // 3. savingsPercentage 高い順
+    // 4. timestamp 新しい順
     candidates.sort((a, b) => {
+      const aLimited = a.isLimitedTimeSale ? 1 : 0;
+      const bLimited = b.isLimitedTimeSale ? 1 : 0;
+      if (aLimited !== bLimited) return bLimited - aLimited;
+
       const aBadge = a.dealBadge ? 1 : 0;
       const bBadge = b.dealBadge ? 1 : 0;
       if (aBadge !== bBadge) return bBadge - aBadge;
