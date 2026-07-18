@@ -60,6 +60,73 @@ function ensureDirectory(filePath: string): void {
   }
 }
 
+function parseCandidateFromEntry(asin: string, entry: CacheEntry): SaleCandidate | null {
+  if (entry.status !== 'valid' || !entry.data) return null;
+
+  const product = entry.data;
+  if (!product.price || product.price.amount <= 0) return null;
+
+  const dealBadge = product.dealBadge && product.dealBadge.trim() !== '' ? product.dealBadge.trim() : undefined;
+  const savingsPercentage = product.savingsPercentage;
+
+  // 異常割引率（80%以上）は二重価格等の可能性があるため除外
+  if (savingsPercentage && savingsPercentage >= 80) return null;
+
+  // 判定: dealBadge が存在するか、または savingsPercentage が 10% 以上 75% 以下
+  const hasDealBadge = Boolean(dealBadge);
+  const hasValidDiscount = Boolean(savingsPercentage && savingsPercentage >= 10 && savingsPercentage <= 75);
+
+  if (!hasDealBadge && !hasValidDiscount) return null;
+
+  return {
+    asin,
+    title: product.title,
+    category: product.category || 'その他',
+    price: product.price,
+    savingsPercentage: product.savingsPercentage,
+    dealBadge: product.dealBadge,
+    isLimitedTimeSale: isLimitedTimeSaleBadge(dealBadge),
+    rating: product.rating,
+    timestamp: entry.timestamp,
+  };
+}
+
+function sortCandidates(candidates: SaleCandidate[]): void {
+  candidates.sort((a, b) => {
+    const aLimited = a.isLimitedTimeSale ? 1 : 0;
+    const bLimited = b.isLimitedTimeSale ? 1 : 0;
+    if (aLimited !== bLimited) return bLimited - aLimited;
+
+    const aBadge = a.dealBadge ? 1 : 0;
+    const bBadge = b.dealBadge ? 1 : 0;
+    if (aBadge !== bBadge) return bBadge - aBadge;
+
+    const aDiscount = a.savingsPercentage || 0;
+    const bDiscount = b.savingsPercentage || 0;
+    if (aDiscount !== bDiscount) return bDiscount - aDiscount;
+
+    return b.timestamp - a.timestamp;
+  });
+}
+
+function filterByCategory(candidates: SaleCandidate[], maxTotal: number, maxPerCategory: number): SaleCandidate[] {
+  const categoryCounts: Record<string, number> = {};
+  const filteredCandidates: SaleCandidate[] = [];
+
+  for (const item of candidates) {
+    const cat = item.category;
+    const currentCount = categoryCounts[cat] || 0;
+
+    if (currentCount < maxPerCategory) {
+      filteredCandidates.push(item);
+      categoryCounts[cat] = currentCount + 1;
+      if (filteredCandidates.length >= maxTotal) break;
+    }
+  }
+
+  return filteredCandidates;
+}
+
 export async function extractSaleCandidates(
   cacheFilePath?: string,
   outputFilePath?: string,
@@ -89,73 +156,14 @@ export async function extractSaleCandidates(
     const candidates: SaleCandidate[] = [];
 
     for (const [asin, entry] of Object.entries(cache)) {
-      if (entry.status !== 'valid' || !entry.data) continue;
-
-      const product = entry.data;
-      if (!product.price || product.price.amount <= 0) continue;
-
-      const dealBadge = product.dealBadge && product.dealBadge.trim() !== '' ? product.dealBadge.trim() : undefined;
-      const savingsPercentage = product.savingsPercentage;
-
-      // 異常割引率（80%以上）は二重価格等の可能性があるため除外
-      if (savingsPercentage && savingsPercentage >= 80) continue;
-
-      // 判定: dealBadge が存在するか、または savingsPercentage が 10% 以上 75% 以下
-      const hasDealBadge = Boolean(dealBadge);
-      const hasValidDiscount = Boolean(savingsPercentage && savingsPercentage >= 10 && savingsPercentage <= 75);
-
-      if (!hasDealBadge && !hasValidDiscount) continue;
-
-      const isLimitedTimeSale = isLimitedTimeSaleBadge(dealBadge);
-
-      candidates.push({
-        asin,
-        title: product.title,
-        category: product.category || 'その他',
-        price: product.price,
-        savingsPercentage: product.savingsPercentage,
-        dealBadge: product.dealBadge,
-        isLimitedTimeSale,
-        rating: product.rating,
-        timestamp: entry.timestamp,
-      });
-    }
-
-    // ソート順:
-    // 1. isLimitedTimeSale（限定・特選・24時間セール）優先
-    // 2. dealBadge あり優先
-    // 3. savingsPercentage 高い順
-    // 4. timestamp 新しい順
-    candidates.sort((a, b) => {
-      const aLimited = a.isLimitedTimeSale ? 1 : 0;
-      const bLimited = b.isLimitedTimeSale ? 1 : 0;
-      if (aLimited !== bLimited) return bLimited - aLimited;
-
-      const aBadge = a.dealBadge ? 1 : 0;
-      const bBadge = b.dealBadge ? 1 : 0;
-      if (aBadge !== bBadge) return bBadge - aBadge;
-
-      const aDiscount = a.savingsPercentage || 0;
-      const bDiscount = b.savingsPercentage || 0;
-      if (aDiscount !== bDiscount) return bDiscount - aDiscount;
-
-      return b.timestamp - a.timestamp;
-    });
-
-    // カテゴリごとに制限し、多様性を確保
-    const categoryCounts: Record<string, number> = {};
-    const filteredCandidates: SaleCandidate[] = [];
-
-    for (const item of candidates) {
-      const cat = item.category;
-      const currentCount = categoryCounts[cat] || 0;
-
-      if (currentCount < maxPerCategory) {
-        filteredCandidates.push(item);
-        categoryCounts[cat] = currentCount + 1;
-        if (filteredCandidates.length >= maxTotal) break;
+      const candidate = parseCandidateFromEntry(asin, entry);
+      if (candidate) {
+        candidates.push(candidate);
       }
     }
+
+    sortCandidates(candidates);
+    const filteredCandidates = filterByCategory(candidates, maxTotal, maxPerCategory);
 
     const result: SaleCandidatesFile = {
       extractedAt: new Date().toISOString(),
@@ -170,12 +178,11 @@ export async function extractSaleCandidates(
     return result;
   } catch (error) {
     logger.error('Failed to extract sale candidates:', error);
-    const emptyResult: SaleCandidatesFile = {
+    return {
       extractedAt: new Date().toISOString(),
       totalCandidates: 0,
       candidates: [],
     };
-    return emptyResult;
   }
 }
 
