@@ -16,6 +16,10 @@ describe('Logger', () => {
 
     originalEnv = process.env;
     process.env = { ...originalEnv };
+    delete process.env.GITHUB_ACTIONS;
+    delete process.env.LOG_LEVEL;
+    delete process.env.RUNNER_DEBUG;
+    delete process.env.ACTIONS_STEP_DEBUG;
   });
 
   afterEach(() => {
