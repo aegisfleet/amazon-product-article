@@ -268,7 +268,7 @@ export async function saveArticle(article: GeneratedArticle, asin: string): Prom
   const filePath = path.join(articlesDir, filename);
 
   await fs.writeFile(filePath, article.content);
-  logger.info(`Article saved: ${filename}`);
+  logger.debug(`Article saved: ${filename}`);
 
   return filePath;
 }
@@ -420,10 +420,10 @@ async function handleBatchResults(
   for (const asin of chunk) {
     if (!results.has(asin)) {
       if (permanentFailures.has(asin)) {
-        logger.info(`Marking ASIN ${asin} as permanent_invalid (not found in Creators API)`);
+        logger.debug(`Marking ASIN ${asin} as permanent_invalid (not found in Creators API)`);
         cache.markPermanentInvalid(asin);
       } else {
-        logger.info(`Marking ASIN ${asin} as invalid (temporary failure)`);
+        logger.debug(`Marking ASIN ${asin} as invalid (temporary failure)`);
         cache.markInvalid(asin);
       }
     }
@@ -495,84 +495,97 @@ async function processArticles(
   const generatedArticles: string[] = [];
   const chunkSize = 10;
 
-  for (let i = 0; i < investigations.length; i += chunkSize) {
-    const chunk = investigations.slice(i, i + chunkSize);
+  logger.group(`Generating ${investigations.length} Articles`);
 
-    // Step 1: Generate articles in parallel
-    const chunkResults = await Promise.all(
-      chunk.map(async (data) => {
-        try {
-          const cachedProduct = cache.get(data.product.asin, { ignoreExpiration: true, allowInvalid: true });
-          if (cachedProduct) {
-            data.product = { ...data.product, ...cachedProduct };
-            data.investigation.product = data.product;
-            logger.info(`Used cached product data for ${data.product.asin}`);
-          } else if (skipApi) {
-            logger.info(`Using dummy data for ${data.product.asin} (skip-creators-api mode)`);
-            data.product = {
-              ...data.product,
-              title: `商品調査中 (${data.product.asin})`,
-              category: 'その他／全般',
-              price: { amount: 9999, currency: 'JPY', formatted: '¥9,999' },
-              images: { primary: 'https://via.placeholder.com/500x500.png?text=No+Image', thumbnails: [] },
-              specifications: {},
-              rating: { average: 4, count: 100 },
-            };
-            data.investigation.product = data.product;
-          } else if (useApi) {
-            logger.warn(`Product data not found for ${data.product.asin}, proceeding with basic info`);
-          }
+  try {
+    for (let i = 0; i < investigations.length; i += chunkSize) {
+      const chunk = investigations.slice(i, i + chunkSize);
+      const batchNum = Math.floor(i / chunkSize) + 1;
+      const totalBatches = Math.ceil(investigations.length / chunkSize);
+      const currentEnd = Math.min(i + chunkSize, investigations.length);
 
-          const competitorDetails = new Map<string, ProductDetail>();
-          const competitorAsins = data.investigation.analysis.competitiveAnalysis
-            .filter((c) => c.asin)
-            .map((c) => c.asin!);
+      logger.info(
+        `Processing batch ${batchNum}/${totalBatches} (Articles ${i + 1}-${currentEnd} of ${investigations.length})...`,
+      );
 
-          if (competitorAsins.length > 0) {
-            const cachedCompetitors = cache.getMultiple(competitorAsins, {
-              ignoreExpiration: true,
-              allowInvalid: true,
-            });
-            for (const [asin, detail] of cachedCompetitors.entries()) {
-              competitorDetails.set(asin, detail);
+      // Step 1: Generate articles in parallel
+      const chunkResults = await Promise.all(
+        chunk.map(async (data) => {
+          try {
+            const cachedProduct = cache.get(data.product.asin, { ignoreExpiration: true, allowInvalid: true });
+            if (cachedProduct) {
+              data.product = { ...data.product, ...cachedProduct };
+              data.investigation.product = data.product;
+              logger.debug(`Used cached product data for ${data.product.asin}`);
+            } else if (skipApi) {
+              logger.debug(`Using dummy data for ${data.product.asin} (skip-creators-api mode)`);
+              data.product = {
+                ...data.product,
+                title: `商品調査中 (${data.product.asin})`,
+                category: 'その他／全般',
+                price: { amount: 9999, currency: 'JPY', formatted: '¥9,999' },
+                images: { primary: 'https://via.placeholder.com/500x500.png?text=No+Image', thumbnails: [] },
+                specifications: {},
+                rating: { average: 4, count: 100 },
+              };
+              data.investigation.product = data.product;
+            } else if (useApi) {
+              logger.warn(`Product data not found for ${data.product.asin}, proceeding with basic info`);
             }
+
+            const competitorDetails = new Map<string, ProductDetail>();
+            const competitorAsins = data.investigation.analysis.competitiveAnalysis
+              .filter((c) => c.asin)
+              .map((c) => c.asin!);
+
+            if (competitorAsins.length > 0) {
+              const cachedCompetitors = cache.getMultiple(competitorAsins, {
+                ignoreExpiration: true,
+                allowInvalid: true,
+              });
+              for (const [asin, detail] of cachedCompetitors.entries()) {
+                competitorDetails.set(asin, detail);
+              }
+            }
+
+            logger.debug(`Generating article for: ${data.product.title}`);
+            const article = await generator.generateArticle(
+              data.product,
+              data.investigation,
+              undefined,
+              undefined,
+              options.partnerTag,
+              competitorDetails,
+            );
+
+            const articlePath = await saveArticle(article, data.product.asin);
+            return { data, article, articlePath };
+          } catch (error) {
+            logger.error(`Failed to generate article for ${data.product.asin}:`, error);
+            return null;
           }
+        }),
+      );
 
-          logger.info(`Generating article for: ${data.product.title}`);
-          const article = await generator.generateArticle(
-            data.product,
-            data.investigation,
-            undefined,
-            undefined,
-            options.partnerTag,
-            competitorDetails,
-          );
-
-          const articlePath = await saveArticle(article, data.product.asin);
-          return { data, article, articlePath };
+      // Step 2: Commit sequentially to avoid race conditions
+      for (const result of chunkResults) {
+        if (!result) continue;
+        const { data, article, articlePath } = result;
+        try {
+          generatedArticles.push(articlePath);
+          if (publisher) {
+            await publisher.commitArticle(article.content, article.metadata);
+            logger.debug(`Article committed for ${data.product.asin}`);
+          }
+          generatedCount++;
+          logger.debug(`Article generated for ${data.product.asin}`);
         } catch (error) {
-          logger.error(`Failed to generate article for ${data.product.asin}:`, error);
-          return null;
+          logger.error(`Failed to commit article for ${data.product.asin}:`, error);
         }
-      }),
-    );
-
-    // Step 2: Commit sequentially to avoid race conditions
-    for (const result of chunkResults) {
-      if (!result) continue;
-      const { data, article, articlePath } = result;
-      try {
-        generatedArticles.push(articlePath);
-        if (publisher) {
-          await publisher.commitArticle(article.content, article.metadata);
-          logger.info(`Article committed for ${data.product.asin}`);
-        }
-        generatedCount++;
-        logger.info(`Article generated for ${data.product.asin}`);
-      } catch (error) {
-        logger.error(`Failed to commit article for ${data.product.asin}:`, error);
       }
     }
+  } finally {
+    logger.endGroup();
   }
 
   return { count: generatedCount, paths: generatedArticles };
@@ -612,7 +625,7 @@ async function runPostProcessing(): Promise<void> {
   try {
     logger.info('Running frontmatter sanitization...');
     const { stdout, stderr } = await execFileAsync('npm', ['run', 'sanitize:frontmatter']);
-    if (stdout) console.log(stdout);
+    if (stdout) logger.debug(stdout);
     if (stderr) console.error(stderr);
   } catch (error) {
     logger.warn('Frontmatter sanitization failed:', error);

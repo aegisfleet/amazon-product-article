@@ -26,6 +26,8 @@ export class Logger {
     const envLogLevel = process.env.LOG_LEVEL?.toUpperCase();
     if (envLogLevel && envLogLevel in LogLevel) {
       this.logLevel = LogLevel[envLogLevel as keyof typeof LogLevel];
+    } else if (process.env.RUNNER_DEBUG === '1' || process.env.ACTIONS_STEP_DEBUG === 'true') {
+      this.logLevel = LogLevel.DEBUG;
     }
   }
 
@@ -67,6 +69,20 @@ export class Logger {
     this.log(LogLevel.DEBUG, message, data);
   }
 
+  public group(name: string): void {
+    if (process.env.GITHUB_ACTIONS === 'true') {
+      console.log(`::group::${name}`);
+    } else {
+      this.info(`=== ${name} ===`);
+    }
+  }
+
+  public endGroup(): void {
+    if (process.env.GITHUB_ACTIONS === 'true') {
+      console.log('::endgroup::');
+    }
+  }
+
   private log(level: LogLevel, message: string, data?: unknown, error?: Error): void {
     if (level > this.logLevel) {
       return;
@@ -98,7 +114,36 @@ export class Logger {
   }
 
   private formatLogEntry(entry: LogEntry): string {
+    if (process.env.GITHUB_ACTIONS === 'true') {
+      if (entry.level === 'DEBUG') {
+        return `::debug::${this.formatMessageOnly(entry)}`;
+      }
+      if (entry.level === 'WARN') {
+        return `::warning::${this.formatMessageOnly(entry)}`;
+      }
+      if (entry.level === 'ERROR') {
+        return `::error::${this.formatMessageOnly(entry)}`;
+      }
+    }
+
     const parts = [`[${entry.timestamp}]`, `[${entry.level}]`, entry.message];
+
+    if (entry.data) {
+      parts.push(`Data: ${JSON.stringify(entry.data)}`);
+    }
+
+    if (entry.error) {
+      parts.push(`Error: ${entry.error.message}`);
+      if (entry.error.stack) {
+        parts.push(`Stack: ${entry.error.stack}`);
+      }
+    }
+
+    return parts.join(' ');
+  }
+
+  private formatMessageOnly(entry: LogEntry): string {
+    const parts = [entry.message];
 
     if (entry.data) {
       parts.push(`Data: ${JSON.stringify(entry.data)}`);
