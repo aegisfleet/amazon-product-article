@@ -50,12 +50,71 @@ describe('Logger', () => {
       expect((consoleLogSpy.mock.calls[0] as string[])[0]).toContain('[DEBUG]');
     });
 
+    it('should initialize with DEBUG level if process.env.RUNNER_DEBUG is 1', () => {
+      process.env.RUNNER_DEBUG = '1';
+      const logger = Logger.getInstance();
+
+      logger.debug('test debug runner');
+      expect(consoleLogSpy).toHaveBeenCalledTimes(1);
+      expect((consoleLogSpy.mock.calls[0] as string[])[0]).toContain('[DEBUG]');
+    });
+
     it('should fallback to INFO if process.env.LOG_LEVEL is invalid', () => {
       process.env.LOG_LEVEL = 'INVALID';
       const logger = Logger.getInstance();
 
       logger.debug('test debug');
       expect(consoleLogSpy).not.toHaveBeenCalled();
+    });
+  });
+
+  describe('GitHub Actions Integration', () => {
+    it('should format debug logs with ::debug:: in GitHub Actions environment', () => {
+      process.env.GITHUB_ACTIONS = 'true';
+      const logger = Logger.getInstance();
+      logger.setLogLevel(LogLevel.DEBUG);
+
+      logger.debug('test action debug');
+      expect(consoleLogSpy).toHaveBeenCalledTimes(1);
+      expect(consoleLogSpy).toHaveBeenCalledWith('::debug::test action debug');
+    });
+
+    it('should format warn logs with ::warning:: in GitHub Actions environment', () => {
+      process.env.GITHUB_ACTIONS = 'true';
+      const logger = Logger.getInstance();
+
+      logger.warn('test action warn');
+      expect(consoleWarnSpy).toHaveBeenCalledTimes(1);
+      expect(consoleWarnSpy).toHaveBeenCalledWith('::warning::test action warn');
+    });
+
+    it('should format error logs with ::error:: in GitHub Actions environment', () => {
+      process.env.GITHUB_ACTIONS = 'true';
+      const logger = Logger.getInstance();
+
+      logger.error('test action error');
+      expect(consoleErrorSpy).toHaveBeenCalledTimes(1);
+      expect(consoleErrorSpy).toHaveBeenCalledWith('::error::test action error');
+    });
+
+    it('should output ::group:: and ::endgroup:: in GitHub Actions environment', () => {
+      process.env.GITHUB_ACTIONS = 'true';
+      const logger = Logger.getInstance();
+
+      logger.group('test group');
+      expect(consoleLogSpy).toHaveBeenCalledWith('::group::test group');
+
+      logger.endGroup();
+      expect(consoleLogSpy).toHaveBeenCalledWith('::endgroup::');
+    });
+
+    it('should fallback to info for group in non-GitHub Actions environment', () => {
+      process.env.GITHUB_ACTIONS = 'false';
+      const logger = Logger.getInstance();
+
+      logger.group('local group');
+      expect(consoleLogSpy).toHaveBeenCalledTimes(1);
+      expect((consoleLogSpy.mock.calls[0] as string[])[0]).toContain('=== local group ===');
     });
   });
 
