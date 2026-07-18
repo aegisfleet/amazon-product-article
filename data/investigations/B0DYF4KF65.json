@@ -1,159 +1,149 @@
 {
   "analysis": {
-    "productName": "Xiaomi POCO M7 Pro 5G 8GB+256GB",
+    "productName": "Xiaomi POCO M7 Pro 5G",
     "parentAsin": "B0DYF4KF65",
-    "productDescription": "120Hz有機ELディスプレイとDimensity 7025-Ultraを搭載した、高コスパなミドルレンジスマートフォンです。",
+    "productDescription": "Dimensity 7025-Ultraと約16.9cmの120Hz有機ELディスプレイを搭載した5G対応ミドルレンジスマートフォン。5110mAhの大容量バッテリーと5000万画素のソニー製OIS対応カメラを備える。",
     "productUsage": [
-      "高精細な有機EL画面での動画視聴やWebブラウジング",
-      "5110mAh大容量バッテリーと45W急速充電による長時間利用",
-      "5000万画素OIS搭載カメラでの写真・動画撮影"
+      "日常的なブラウジングやSNSの閲覧",
+      "動画コンテンツの高画質視聴",
+      "快適なモバイルゲーミング",
+      "手ブレを抑えた写真・動画撮影"
     ],
     "positivePoints": [
-      "約3万円という低価格ながら120Hz有機ELディスプレイを搭載",
-      "8GB RAM + 256GBストレージの大容量構成",
-      "OIS（光学手ブレ補正）搭載の5000万画素メインカメラ",
-      "45W急速充電に対応し、短時間で充電可能",
-      "軽量かつ薄型のスタイリッシュなデザイン"
+      "Dimensity 7025-Ultraプロセッサによる安定した処理性能",
+      "120Hzリフレッシュレート対応の約16.9cm高精細AMOLEDディスプレイ",
+      "5110mAhの大容量バッテリーと45W急速充電対応",
+      "ソニー製5000万画素センサーおよびOIS（光学式手ブレ補正）搭載カメラ",
+      "画面内指紋認証対応のCorning Gorilla Glass 5採用スクリーン",
+      "持ち心地を向上させる4面カーブの背面デザイン",
+      "256GBの大容量ストレージを標準搭載"
     ],
     "negativePoints": [
+      "防水防塵性能がIP64（防滴レベル）にとどまる",
       "FeliCa（おサイフケータイ）に非対応",
-      "防水性能がIP64（防滴レベル）に留まる",
-      "超広角カメラを搭載していない"
+      "ワイヤレス充電には非対応"
     ],
     "useCases": [
-      "通勤・通学中の動画視聴やSNSチェック",
-      "サブ機としての利用や、子供・学生の初めてのスマホ",
+      "長時間の動画視聴やゲームプレイ",
+      "日常の風景や人物の撮影",
       "バッテリー持ちを重視するライト〜ミドルユーザーのメイン機"
     ],
-    "userStories": [
-      {
-        "userType": "学生",
-        "scenario": "初めての自分用スマホとして購入",
-        "experience": "価格が安いのに画面がとても綺麗で、YouTubeやTikTokを見るのに最適だと感じた。ゲームも設定を下げれば問題なく動く。（推測）",
-        "sentiment": "positive"
-      },
-      {
-        "userType": "社会人（サブ機利用）",
-        "scenario": "仕事用のサブ端末として導入",
-        "experience": "バッテリー持ちが良く、充電も速いので重宝している。おサイフケータイが使えないのは残念だが、サブ機なので割り切れる。（推測）",
-        "sentiment": "mixed"
-      }
-    ],
-    "userImpression": "おサイフケータイ非対応という点を除けば、同価格帯で最高クラスの画面と基本スペックを持つ「コスパモンスター」。動画視聴やSNS中心のユーザーから高い評価が予想される。",
+    "userStories": [],
+    "userImpression": "スペックシートから読み取れる印象として、Dimensity 7025-Ultraや120Hz有機EL、OIS対応5000万画素カメラなど、ミドルレンジモデルとして非常にバランスの取れた性能を持っている。特にディスプレイの美しさと45W急速充電の実用性が高い。FeliCa非対応である点とIP64の防滴レベルにとどまる点は日本市場において一部ユーザーの要件から外れる可能性があるが、全体的なコストパフォーマンスの高さで十分にカバーできる範囲である。",
     "sources": [
       {
-        "name": "ケータイ Watch: 「POCO M7 Pro 5G」クイックフォトレビュー",
-        "url": "https://k-tai.watch.impress.co.jp/docs/review/2002364.html",
-        "credibility": "高"
-      },
-      {
-        "name": "YasuSuma: 「POCO M7 Pro 5G」実機レビュー",
-        "url": "https://yasu-suma.jp/poco-m7-pro-5g-review",
-        "credibility": "中"
-      },
-      {
-        "name": "Xiaomi Japan 公式サイト",
-        "url": "https://www.mi.com/jp/product/poco-m7-pro-5g/",
-        "credibility": "高"
+        "id": "src-1",
+        "name": "Amazon商品ページ",
+        "url": "https://www.amazon.co.jp/dp/B0DYF4KF65",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-07-19",
+        "author": "Xiaomi",
+        "conflictOfInterest": "disclosed",
+        "notes": "製品の基本仕様、機能、スペック情報を確認"
       }
     ],
-    "lastInvestigated": "2026-02-28",
+    "claims": [
+      {
+        "claim": "一日中たっぷりスマホを使ったあとでも素早く充電を回復することができる（45Wターボチャージ）",
+        "category": "durability",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "crossChecked": false,
+        "notes": "Amazon商品ページのメーカー説明に基づく"
+      },
+      {
+        "claim": "インセンサーズームで2倍まで画質劣化なく撮影可能",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "crossChecked": false,
+        "notes": "5000万画素センサーのクロップによるズーム機能として一般的な仕様であり妥当"
+      }
+    ],
+    "lastInvestigated": "2026-07-19",
     "competitiveAnalysis": [
       {
-        "name": "Motorola moto g64 5G",
-        "asin": "B0D6YJW5VC",
-        "priceComparison": "価格帯は近い（約3.5万円）。",
+        "name": "Xiaomi POCO M8 5G",
+        "asin": "B0G4MHJQZH",
+        "priceComparison": "M8 5Gは同クラスの機種であり、チップセットがSnapdragon 6 Gen 3に変更され、バッテリーが5520mAhに増量、IP66防水防塵にも対応している。",
         "featureComparison": [
-          "SoCは同じDimensity 7025",
-          "moto g64はFeliCa対応だが液晶ディスプレイ",
-          "POCO M7 ProはFeliCa非対応だが有機ELディスプレイ"
+          "共通点：120Hz有機ELディスプレイ搭載、5000万画素メインカメラ搭載、大容量バッテリー",
+          "相違点：M7 ProがDimensity 7025-Ultra・5110mAh・45W充電・約16.9cm画面に対し、M8 5GはSnapdragon 6 Gen 3・5520mAh・IP66防水防塵・約17.2cm画面と全体的にスペックアップしている。"
         ],
         "differentiators": [
-          "FeliCaの有無",
-          "ディスプレイ品質（有機EL vs 液晶）"
+          "Xiaomi POCO M7 Pro 5Gの利点：Sony製センサーやOIS（光学式手ブレ補正）による確実なカメラ性能を求める人や、45Wのより高速な充電速度を重視する人に適している。",
+          "Xiaomi POCO M8 5Gの利点：IP66の強力な防水防塵性能や、より大きなバッテリー容量、最新のSnapdragonチップを求める人に適している。"
         ]
       },
       {
-        "name": "OPPO A79 5G",
-        "asin": "B0CQTD77SY",
-        "priceComparison": "価格帯は近い。",
+        "name": "REDMI 15 5G",
+        "asin": "B0G2KVYFZH",
+        "priceComparison": "REDMI 15 5Gは3万円台半ばで7000mAhの超大容量バッテリーを搭載するスタミナ特化モデル。",
         "featureComparison": [
-          "FeliCa対応",
-          "液晶ディスプレイ（90Hz）",
-          "33W急速充電"
+          "共通点：5000万画素カメラ、日常用途に十分なプロセッサ、大容量バッテリー搭載",
+          "相違点：M7 Proが5110mAh・45W充電・有機EL搭載に対し、REDMI 15 5Gは7000mAh・33W充電・約17.5cm液晶(FHD+)であり、REDMIはバッテリー特化の構成となっている。"
         ],
         "differentiators": [
-          "POCOの方が画面性能と充電速度で勝る",
-          "OPPOはFeliCa対応で生活防水も安心感あり"
+          "Xiaomi POCO M7 Pro 5Gの利点：有機ELによる鮮やかな画面表示や、OIS搭載カメラによる高品質な撮影体験、45Wの急速充電など、エンタメとカメラのバランスを重視する人に適している。",
+          "REDMI 15 5Gの利点：とにかくバッテリー持ちを最優先し、充電の頻度を極限まで減らしたい人に適している。"
         ]
       },
       {
-        "name": "Samsung Galaxy A25 5G",
-        "asin": "B0DYH9TCH2",
-        "priceComparison": "価格帯は非常に近い（約2.8万円）。",
+        "name": "Xiaomi POCO X7 Pro",
+        "asin": "B0DSP68N92",
+        "priceComparison": "POCO X7 Proは4万円台後半でDimensity 8400-Ultraを搭載する上位モデルであり、予算に余裕があればより高性能な体験が可能。",
         "featureComparison": [
-          "有機EL 120Hz搭載で画面性能は互角",
-          "GalaxyはFeliCa対応",
-          "充電速度はPOCO（45W）の方が速い（Galaxyは25W）"
+          "共通点：120Hz有機ELディスプレイ、5000万画素カメラ",
+          "相違点：X7 Proは6000mAhバッテリー、90W急速充電、IP68防水防塵、より高性能なDimensity 8400-Ultraを搭載しており、M7 Proの完全上位互換のスペックを持つ。"
         ],
         "differentiators": [
-          "FeliCaの有無",
-          "充電速度",
-          "One UI vs HyperOS"
+          "Xiaomi POCO M7 Pro 5Gの利点：必要十分なミドルレンジ性能を備えつつ、より価格を抑えてコストパフォーマンス良くスマートフォンを手に入れたい人に適している。",
+          "Xiaomi POCO X7 Proの利点：IP68の完全防水防塵、90Wの超急速充電、より重いゲームも動かせる高い処理性能など、ハイエンドに近い体験を求める人に適している。"
         ]
       }
     ],
     "recommendation": {
       "targetUsers": [
         "おサイフケータイを使わない人",
-        "動画視聴を重視し、綺麗な画面を求める人",
-        "コストパフォーマンス最優先のユーザー"
+        "日常的なアプリや軽いゲームを快適にこなしつつ、有機ELの綺麗な画面で動画を楽しみたい人",
+        "カメラの手ブレ補正（OIS）を重視し、夜景や動画をきれいに撮影したい人",
+        "防水防塵性能は妥協できるが、充電速度（45W）や基本的な処理性能のバランスを求める人"
       ],
       "pros": [
-        "3万円切りで手に入る120Hz有機ELディスプレイ",
-        "256GBの大容量ストレージ標準搭載",
-        "45W急速充電対応"
+        "120Hz駆動のAMOLEDディスプレイにより、動画視聴やスクロール操作が非常に滑らかで没入感が高い",
+        "OIS（光学式手ブレ補正）搭載により、暗い場所や動きのある被写体でも失敗の少ない写真・動画撮影が可能",
+        "45Wターボチャージにより、朝の短い時間でも1日使えるだけのバッテリーを素早く補給できる"
       ],
       "cons": [
-        "おサイフケータイ（FeliCa）が使えない",
-        "防水性能が低い（IP64）"
+        "おサイフケータイ（FeliCa）が使えないため、モバイルSuica等を利用するユーザーは注意が必要",
+        "防水防塵性能がIP64にとどまるため、お風呂での使用や水没リスクが高い環境での利用には適さない"
       ],
-      "score": 85,
-      "scoreRationale": "[基本点: 70]\n[加点: +5] (有機EL 120Hz, OIS, 256GBは価格帯を超えたスペック)\n[加点: +15] (3万円以下でこの構成は驚異的なコストパフォーマンス)\n[減点: -5] (FeliCa非対応とおサイフ需要のミスマッチによる一部ユーザーの満足度低下)\n[合計: 85]"
+      "score": 82,
+      "scoreRationale": "[基本点: 70]\n[加点: +5] (Dimensity 7025-Ultraや120Hz有機ELなど充実したミドルレンジスペック)\n[加点: +5] (OIS搭載のソニー製5000万画素カメラによる高い撮影性能)\n[加点: +5] (45W急速充電の実用性の高さと256GB大容量ストレージ)\n[減点: -3] (IP64防滴レベルの防水性能による使用シーンの制限)\n[合計: 82]"
     },
     "technicalSpecs": {
-      "os": "Android 14 (Xiaomi HyperOS)",
-      "cpu": "MediaTek Dimensity 7025-Ultra",
-      "ram": "8GB (LPDDR4X)",
-      "storage": "256GB (UFS 2.2)",
-      "display": {
-        "size": "6.67インチ",
-        "resolution": "2400×1080 (FHD+)",
-        "type": "AMOLED (有機EL) 120Hz"
-      },
-      "battery": {
-        "capacity": "5110mAh",
-        "charging": "45W急速充電"
-      },
-      "camera": {
-        "main": "50MP (OIS) + 2MP (深度)",
-        "front": "20MP"
-      },
       "dimensions": {
         "height": "162.4mm",
         "width": "75.7mm",
-        "depth": "7.99mm",
-        "weight": "190g"
+        "depth": "7.99mm"
       },
-      "connectivity": [
-        "5G",
-        "Wi-Fi 5 (ac)",
-        "Bluetooth 5.3",
-        "NFC (FeliCa非対応)"
-      ],
+      "weight": "190g",
+      "display": "約16.9cm 有機EL(AMOLED), FHD+ (2400 x 1080), 120Hzリフレッシュレート",
+      "processor": "MediaTek Dimensity 7025-Ultra (6nm 5Gプロセッサ)",
+      "memory": "8GB RAM + 256GB ROM",
+      "battery": "5110mAh, 45Wターボチャージ対応",
+      "mainCamera": "5000万画素 ソニー製センサー, OIS(光学式手ブレ補正)+EIS, インセンサーズーム対応",
+      "glass": "Corning Gorilla Glass 5",
+      "authentication": "画面内指紋認証",
+      "color": "グリーン",
       "other": [
         "IP64防滴防塵",
-        "画面内指紋認証",
+        "NFC対応 (FeliCa非対応)",
         "顔認証",
         "イヤホンジャックあり"
       ]
