@@ -1,11 +1,16 @@
+import fs from 'node:fs';
+import path from 'node:path';
+import type { SaleCandidatesFile } from '../scripts/extract-sale-candidates';
+
 /**
  * RecommendationPromptBuilder - 本日の注目商品10選を調査するためのプロンプトを構築
  */
 
 export class RecommendationPromptBuilder {
   private readonly today: string;
+  private readonly candidatesPath: string;
 
-  constructor() {
+  constructor(candidatesPath?: string) {
     // JSTで現在の日付を取得 (YYYY-MM-DD)
     this.today = new Date()
       .toLocaleDateString('ja-JP', {
@@ -15,20 +20,57 @@ export class RecommendationPromptBuilder {
         day: '2-digit',
       })
       .replaceAll('/', '-');
+
+    this.candidatesPath = candidatesPath || path.join(process.cwd(), 'tmp/sale_candidates.json');
+  }
+
+  private loadSaleCandidatesPromptSection(): string {
+    if (!fs.existsSync(this.candidatesPath)) {
+      return '';
+    }
+
+    try {
+      const raw = fs.readFileSync(this.candidatesPath, 'utf-8');
+      const data = JSON.parse(raw) as SaleCandidatesFile;
+
+      if (!data.candidates || data.candidates.length === 0) {
+        return '';
+      }
+
+      const candidateLines = data.candidates.slice(0, 25).map((item, index) => {
+        const badge = item.dealBadge ? ` [${item.dealBadge}]` : '';
+        const discount = item.savingsPercentage ? ` (${item.savingsPercentage}% OFF)` : '';
+        return `${index + 1}. ASIN: ${item.asin} | ${item.title} | カテゴリ: ${item.category} | 価格: ${item.price.formatted}${badge}${discount}`;
+      });
+
+      return `
+---
+
+## 【事前抽出されたタイムセール・値引き候補商品 (paapi-product-cacheより)】
+以下の商品は、キャッシュから抽出されたタイムセール中または割引率が高いおすすめ商品候補である。
+これらの商品も強力な候補として積極的に \`uv run python scripts/creators_get_item.py <ASIN>\` で最新状態を確認し、他ECサイト価格比較を行って本日の10選に活用せよ：
+
+${candidateLines.join('\n')}
+`;
+    } catch {
+      return '';
+    }
   }
 
   public build(): string {
+    const saleCandidatesSection = this.loadSaleCandidatesPromptSection();
+
     return `【ミッション：本日（${this.today}）の「今買うべき」多様なおすすめ10選と、そのエビデンスの調査】
-あなたは優秀なAIエージェントとして、Amazon商品の調査・選定を行う。
+あなたはお買い得で価値の高い商品を見つける優秀なAIエージェントとして、Amazon商品の調査・選定を行う。
 本日は、特定のジャンルに偏らず、幅広いカテゴリから10個の商品を厳選せよ。
 既存の \`data/recommendations/today.json\` の内容は考慮不要。毎日新しい情報を上書きするため、過去のデータと大きく乖離しても問題ない。本日の最新トレンドとセール情報に基づいた、最高の10選を提案せよ。
 最重要ルールは、**「なぜ今日おすすめするのか（Why Buy Now）」の根拠となる『情報元（エビデンス）』を必ず明記せよ**。客観的な事実に基づかない推奨は無価値である。
-
+${saleCandidatesSection}
 ---
 
 ## 自律性に関する基本原則（重要：アドバイス要求の禁止）
 - **自律的判断と完遂の義務**: あなたには、提供されたツールを駆使してミッションを完遂する全責任がある。ツールのエラーや一時的な情報不足で作業を中断してはならない。
-- **代替手段の模索**: Amazon内での検索で十分な結果が得られない場合は、自律的にキーワードを調整したり、Google検索（\`google_search\`）を併用して外部のトレンドやセール情報を収集せよ。
+- **代替手段の模索**: Amazon内での検索で十分な結果が得られない場合は、自律的にキーワードを調整したり、Google検索（\`google_search\`）を併用して外部のトレンドやセール情報を収集せよ。また上記に事前抽出されたタイムセール・値引き候補がある場合は積極的に検証・採用せよ。
 - **自己レビューと自律的リトライ**: 選定した商品が不適切（エビデンスが弱い、セールの実態がない、カテゴリが重複しているなど）であると自己レビューで気づいた場合は、立ち止まらずにそれらを除外し、代わりの候補を自律的に探せ。10個すべてが「自信を持って今日おすすめできる」状態になるまで、繰り返し調査と選定を行え。
 - **ユーザーへのアドバイス・質問の完全禁止 (最重要)**: どのような状況であっても、ユーザー（人間）に質問を投げかけたり、アドバイスを求めて処理を中断したりしてはならない。ユーザーからの回答は一切得られない。曖昧な仕様や未決定事項がある場合、またはツールの実行エラーに直面した場合は、手元のデータや文脈から自律的かつ合理的に判断し、あなたの判断だけで処理を完遂すること。どうしても致命的なエラーで続行できない場合は、質問するのではなく、処理をエラーとして失敗終了させよ。
 
@@ -36,12 +78,12 @@ export class RecommendationPromptBuilder {
 
 ## 調査の進め方
 1. **トレンド・セール情報の収集と「エビデンス」の確保**:
-   - 本日の日付（${this.today}）における、時事ニュース、SNSのトレンドワード、本日のAmazon特選タイムセールなどを幅広く検索・把握せよ。
+   - 本日の日付（${this.today}）における、時事ニュース、SNSのトレンドワード、本日のAmazon特選タイムセールなどを幅広く検索・把握せよ。事前抽出候補リストがある場合はそれらも重要候補として活用せよ。
    - その際、「どのサイト（URL）で話題になっていたか」「どの公式ページでセールが告知されているか」という**情報元（ソース）のリンクや名称を必ず記録する**。
 2. **多角的な商品検索（カテゴリの分散）**:
    - 意図的にジャンルを分散させ（例：PC周辺機器、食品、日用品、家電、エンタメなど）、それぞれ異なるキーワードで \`uv run python scripts/creators_search_items.py\` を実行せよ。1つのテーマに偏らないように注意する。
 3. **10商品の厳選と詳細調査**:
-   - 検索結果から、明確なフック（大幅値引き、新発売、トレンド合致など）がある商品を、カテゴリが被らないように10点ピックアップせよ。
+   - 検索結果および事前抽出候補から、明確なフック（大幅値引き、新発売、トレンド合致など）がある商品を、カテゴリが被らないように10点ピックアップせよ。
    - **自律的なリトライ**: 10個の商品が見つかるまで、キーワードや検索インデックスを変えて繰り返し検索を実行せよ。
    - **注意**: Amazon内の割引率の高さは重視しないこと。商品がお得かどうかの判定は、必ず「他の競合ECサイト（楽天市場、Yahoo!ショッピング、ヨドバシ.comなど）の価格と比較して安いか」という観点で行うこと（例: \`google_search\` ツールを用いて \`site:rakuten.co.jp <商品名>\` のように検索し価格を比較する）。
    - **異常割引率の除外**: 異常割引率（例: 80%～90%）の商品は二重価格等の可能性が高いため、他のECサイトとの価格比較を行うまでもなく評価・選定対象から除外すること。
