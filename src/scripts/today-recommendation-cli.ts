@@ -9,6 +9,7 @@ import { JulesInvestigator } from '../jules/JulesInvestigator';
 import type { JulesCredentials, SourceContext } from '../types/JulesTypes';
 import { setGitHubOutput } from '../utils/github-actions';
 import { Logger } from '../utils/Logger';
+import { extractSaleCandidates } from './extract-sale-candidates';
 
 const logger = Logger.getInstance();
 
@@ -45,6 +46,10 @@ async function main(): Promise<void> {
     const options = getOptions();
     logger.info(`Source: ${options.source}`);
     logger.info(`Starting Branch: ${options.startingBranch}`);
+
+    // キャッシュからセール・値引き候補商品を事前抽出
+    logger.info('Extracting sale candidates from cache...');
+    await extractSaleCandidates();
 
     // Jules Investigator を初期化
     const credentials: JulesCredentials = {
