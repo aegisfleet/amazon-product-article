@@ -134,4 +134,43 @@ describe('extractSaleCandidates', () => {
 
     expect(result.totalCandidates).toBe(2);
   });
+
+  it('should prioritize isLimitedTimeSale candidates over standard deals', async () => {
+    const dummyCacheData = {
+      ASIN_NORMAL_DEAL: {
+        status: 'valid',
+        timestamp: Date.now(),
+        data: {
+          asin: 'ASIN_NORMAL_DEAL',
+          title: '通常セール商品',
+          category: '家電',
+          price: { amount: 2000, currency: 'JPY', formatted: '￥2,000' },
+          savingsPercentage: 50,
+          dealBadge: 'セール',
+        },
+      },
+      ASIN_LIMITED_DEAL: {
+        status: 'valid',
+        timestamp: Date.now() - 1000,
+        data: {
+          asin: 'ASIN_LIMITED_DEAL',
+          title: '特選タイムセール商品',
+          category: 'PC',
+          price: { amount: 5000, currency: 'JPY', formatted: '￥5,000' },
+          savingsPercentage: 30,
+          dealBadge: '特選タイムセール',
+        },
+      },
+    };
+
+    fs.writeFileSync(dummyCachePath, JSON.stringify(dummyCacheData, null, 2), 'utf-8');
+
+    const result = await extractSaleCandidates(dummyCachePath, outputPath, 10, 3);
+
+    expect(result.totalCandidates).toBe(2);
+    expect(result.candidates[0]?.asin).toBe('ASIN_LIMITED_DEAL');
+    expect(result.candidates[0]?.isLimitedTimeSale).toBe(true);
+    expect(result.candidates[1]?.asin).toBe('ASIN_NORMAL_DEAL');
+    expect(result.candidates[1]?.isLimitedTimeSale).toBe(false);
+  });
 });
