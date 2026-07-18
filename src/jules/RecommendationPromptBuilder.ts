@@ -38,9 +38,10 @@ export class RecommendationPromptBuilder {
       }
 
       const candidateLines = data.candidates.slice(0, 25).map((item, index) => {
+        const limitedLabel = item.isLimitedTimeSale ? '🔥【限定セール】' : '';
         const badge = item.dealBadge ? ` [${item.dealBadge}]` : '';
         const discount = item.savingsPercentage ? ` (${item.savingsPercentage}% OFF)` : '';
-        return `${index + 1}. ASIN: ${item.asin} | ${item.title} | カテゴリ: ${item.category} | 価格: ${item.price.formatted}${badge}${discount}`;
+        return `${index + 1}. ${limitedLabel}ASIN: ${item.asin} | ${item.title} | カテゴリ: ${item.category} | 価格: ${item.price.formatted}${badge}${discount}`;
       });
 
       return `
@@ -48,7 +49,8 @@ export class RecommendationPromptBuilder {
 
 ## 【事前抽出されたタイムセール・値引き候補商品 (paapi-product-cacheより)】
 以下の商品は、キャッシュから抽出されたタイムセール中または割引率が高いおすすめ商品候補である。
-これらの商品も強力な候補として積極的に \`uv run python scripts/creators_get_item.py <ASIN>\` で最新状態を確認し、他ECサイト価格比較を行って本日の10選に活用せよ：
+特に 🔥【限定セール】 マークが付いた商品は、「24時間限定」「数量限定」「特選タイムセール」などの緊急性・お得度が高い商品であるため、「なぜ今日買うべきか（whyBuyNow）」のエビデンスとして最適である。
+これらの商品も強力な候補として積極的に \`uv run python scripts/creators_get_item.py <ASIN>\` で最新状態を確認し、他ECサイト価格比較を行って本日の10選に優先活用せよ：
 
 ${candidateLines.join('\n')}
 `;
