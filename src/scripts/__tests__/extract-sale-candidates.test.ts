@@ -29,7 +29,7 @@ describe('extractSaleCandidates', () => {
     expect(fs.existsSync(outputPath)).toBe(true);
   });
 
-  it('should extract valid deal and discount candidates and filter out abnormal discounts', async () => {
+  it('should extract valid deal candidates with official dealBadge and filter out items without dealBadge', async () => {
     const dummyCacheData = {
       ASIN001: {
         status: 'valid',
@@ -51,6 +51,7 @@ describe('extractSaleCandidates', () => {
           title: '割引商品2',
           category: 'PC周辺機器',
           price: { amount: 5000, currency: 'JPY', formatted: '￥5,000' },
+          dealBadge: 'プライム会員限定セール',
           savingsPercentage: 30,
         },
       },
@@ -59,10 +60,10 @@ describe('extractSaleCandidates', () => {
         timestamp: Date.now(),
         data: {
           asin: 'ASIN003',
-          title: '異常割引商品',
+          title: '単なる割引表示（dealBadgeなし）',
           category: 'ファッション',
           price: { amount: 100, currency: 'JPY', formatted: '￥100' },
-          savingsPercentage: 90, // 80%以上は除外されるべき
+          savingsPercentage: 50, // dealBadgeがないため除外されるべき
         },
       },
       ASIN004: {
@@ -87,8 +88,8 @@ describe('extractSaleCandidates', () => {
     const result = await extractSaleCandidates(dummyCachePath, outputPath, 10, 3);
 
     expect(result.totalCandidates).toBe(2);
-    expect(result.candidates.map((c) => c.asin)).toEqual(['ASIN001', 'ASIN002']);
-    expect(result.candidates[0]?.dealBadge).toBe('タイムセール');
+    expect(result.candidates.map((c) => c.asin)).toEqual(['ASIN002', 'ASIN001']);
+    expect(result.candidates[0]?.dealBadge).toBe('プライム会員限定セール');
   });
 
   it('should respect category limits', async () => {
