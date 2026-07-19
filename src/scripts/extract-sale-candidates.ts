@@ -67,7 +67,6 @@ function parseCandidateFromEntry(asin: string, entry: CacheEntry): SaleCandidate
   if (!product.price || product.price.amount <= 0) return null;
 
   const dealBadge = product.dealBadge && product.dealBadge.trim() !== '' ? product.dealBadge.trim() : undefined;
-  const savingsPercentage = product.savingsPercentage;
 
   // 二重価格（参考価格吊り上げによる常時割引表示）を排除するため、
   // Amazon公式のセールバッジ (dealBadge) が明示されている商品のみを抽出対象とする。
