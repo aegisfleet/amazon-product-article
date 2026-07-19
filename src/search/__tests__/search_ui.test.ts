@@ -81,4 +81,9 @@ describe('Search UI XSS Protection', () => {
     expect(searchJsContent).toContain('document.createElement');
     expect(searchJsContent).toContain('textContent');
   });
+
+  test('static/js/search.js should contain paste event listener and insertFromPaste handling', () => {
+    expect(searchJsContent).toContain("searchInput.addEventListener('paste'");
+    expect(searchJsContent).toContain('insertFromPaste');
+  });
 });

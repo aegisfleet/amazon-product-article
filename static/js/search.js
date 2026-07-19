@@ -339,7 +339,8 @@ document.addEventListener('DOMContentLoaded', function () {
         // Event Listeners
         searchInput.addEventListener('input', (e) => {
             if (!fuse) return;
-            if (e.isComposing) return;
+            const isPaste = e.inputType === 'insertFromPaste' || e.inputType === 'insertFromYank';
+            if (e.isComposing && !isPaste) return;
 
             const query = e.target.value.replaceAll('　', ' ');
             if (isValidQuery(query)) {
@@ -348,6 +349,20 @@ document.addEventListener('DOMContentLoaded', function () {
                 if (searchInputWrapper) searchInputWrapper.classList.remove('is-loading');
             }
             handleSearch(query);
+        });
+
+        // コピペ（ペースト）時にも即時に検索を実行
+        searchInput.addEventListener('paste', () => {
+            if (!fuse) return;
+            setTimeout(() => {
+                const query = searchInput.value.replaceAll('　', ' ');
+                if (isValidQuery(query)) {
+                    if (searchInputWrapper) searchInputWrapper.classList.add('is-loading');
+                } else {
+                    if (searchInputWrapper) searchInputWrapper.classList.remove('is-loading');
+                }
+                handleSearch(query);
+            }, 0);
         });
 
         // IME入力確定時にも検索を実行
