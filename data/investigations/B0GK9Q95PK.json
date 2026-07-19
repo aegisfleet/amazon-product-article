@@ -1,146 +1,101 @@
 {
   "analysis": {
-    "productName": "Samsung Galaxy S26 Ultra 256GB (スカイブルー)",
+    "productName": "Samsung Galaxy S26 Ultra",
     "parentAsin": "B0GK9Q95PK",
-    "productDescription": "Samsungのフラッグシップスマートフォン「Galaxy S26 Ultra」の256GB・スカイブルーモデルです。Galaxy AIを搭載し、カメラ性能や処理速度が大幅に向上しています。",
+    "productDescription": "Galaxy AI対応、QHD+ディスプレイを備えた最新のスマートフォン。",
     "productUsage": [
-      "AIを活用したリアルタイム翻訳や高度な写真編集",
-      "高性能カメラによる高品質な写真・動画撮影",
-      "大画面・高性能を活かした3Dゲームや動画視聴",
-      "おサイフケータイ(FeliCa)を利用したキャッシュレス決済"
+      "スマートフォンの日常利用",
+      "Galaxy AIを活用したタスク処理",
+      "大画面での動画視聴やゲーム"
     ],
     "positivePoints": [
-      "Galaxy AIによる高度な機能（かこって検索、リアルタイム翻訳など）が便利",
-      "6.9インチの大画面ながら比較的軽量（約214g）",
-      "5,000mAhの大容量バッテリーによる長時間のバッテリー駆動"
+      "約17.5cmのQHD+大画面ディスプレイ",
+      "Galaxy AI対応",
+      "5,000mAhの大容量バッテリー",
+      "IP68の防水防塵性能"
     ],
     "negativePoints": [
-      "218,900円という非常に高価な価格設定",
-      "軽量化されたとはいえ、一般的なスマホと比べるとまだ大きくて重い"
+      "21万円を超える高価格設定",
+      "約214gと比較的重い重量"
     ],
     "useCases": [
-      "海外旅行や出張でのリアルタイム翻訳・通訳ツールとして",
-      "クリエイターやカメラマンのサブカメラ・編集デバイスとして",
-      "高負荷な3Dゲームを快適にプレイするためのゲーミング端末として"
+      "AI機能を使ったテキスト作成や翻訳",
+      "大容量バッテリーによる長時間の屋外利用",
+      "大画面でのマルチタスク作業"
     ],
-    "userStories": [
-      {
-        "userType": "30代ビジネスパーソン",
-        "scenario": "海外出張時のコミュニケーション",
-        "experience": "英語でのミーティングや現地でのやり取りに不安がありましたが、Galaxy AIのリアルタイム通訳機能が想像以上に正確で、スムーズに会話できました。（推測）",
-        "sentiment": "positive"
-      },
-      {
-        "userType": "20代カメラ愛好家",
-        "scenario": "旅行先での風景撮影と編集",
-        "experience": "カメラ性能が圧倒的で、遠くの景色も綺麗に撮れます。さらにAIを使った不要なオブジェクト消去などの編集が本体だけで完結するのが最高です。（推測）",
-        "sentiment": "positive"
-      },
-      {
-        "userType": "40代会社員",
-        "scenario": "日常的な持ち歩き",
-        "experience": "画面が大きくて見やすいのは良いのですが、やはりポケットに入れるとずっしりと重さを感じます。価格も高いのでケース選びにも気を使います。（推測）",
-        "sentiment": "mixed"
-      }
-    ],
-    "userImpression": "最高峰の性能とAI機能を求めるユーザーからは圧倒的な支持を得ている一方で、20万円超えという価格とサイズ感がネックになり、人を選ぶ「プロ向け」デバイスという印象が強いです。",
+    "userStories": [],
+    "userImpression": "Galaxy AIや大画面ディスプレイに期待が寄せられる一方、価格の高さや重量がネックになる可能性がある。最新技術やハイエンドのスペックを求めるユーザーには魅力的な選択肢だが、コストパフォーマンスを重視するユーザーにはハードルが高い。",
     "sources": [
       {
-        "name": "Amazonの商品ページ",
+        "id": "src-1",
+        "name": "Amazon商品ページ",
         "url": "https://www.amazon.co.jp/dp/B0GK9Q95PK",
-        "credibility": "高"
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-03-12",
+        "author": "Samsung",
+        "conflictOfInterest": "none",
+        "notes": "スペック情報の確認"
       }
     ],
-    "lastInvestigated": "2026-02-28",
+    "claims": [],
+    "lastInvestigated": "2026-07-20",
     "competitiveAnalysis": [
       {
-        "name": "Apple iPhone 16 Pro Max 256GB",
+        "name": "iPhone 16 Pro Max",
         "asin": "B0DJXRX46W",
-        "priceComparison": "iPhone 16 Pro Max (約168,000円〜) はGalaxy S26 Ultra (218,900円) より安価な設定",
+        "priceComparison": "対象商品（約21.8万円）に対し、iPhone 16 Pro Max（約16.8万円〜）の方が安価な設定となっている。iOSとAndroidの違いはあるものの、価格面ではiPhoneが優位。",
         "featureComparison": [
-          "OSエコシステム (iOS vs Android)",
-          "Apple Intelligence vs Galaxy AI"
+          "共通点：ともに各OSの最上位モデルであり、大画面ディスプレイと高性能を備える",
+          "相違点：対象商品はGalaxy AI対応やQHD+ディスプレイが特徴。iPhoneはiOSエコシステムとの連携が強み"
         ],
         "differentiators": [
-          "Galaxy AIによる高度な翻訳機能と写真編集",
-          "カメラの性能とカスタマイズ性"
+          "Samsung Galaxy S26 Ultraの利点：Android OSやGalaxy AIの高度な機能を活用したいなら迷わずこちら",
+          "iPhone 16 Pro Maxの利点：MacやiPad等iOSエコシステムとの連携を重視するなら迷わずこちら"
         ]
       },
       {
-        "name": "Google Pixel 9 Pro Fold 256GB",
-        "asin": "B0DG25LT7Z",
-        "priceComparison": "Pixel 9 Pro Fold (約208,000円) はGalaxy S26 Ultraよりわずかに安い",
+        "name": "Google Pixel 9 Pro Fold",
+        "asin": "B0DKCNGF5L",
+        "priceComparison": "対象商品（約21.8万円）に対し、Pixel 9 Pro Fold（約13.5万円〜）の方が安価。折りたたみ式とストレート式という構造の違いがある。",
         "featureComparison": [
-          "フォームファクタ (折りたたみ vs ストレート)",
-          "AI機能 (Google AI vs Galaxy AI)"
+          "共通点：ともにAI機能をアピールするハイエンドAndroidスマートフォン",
+          "相違点：対象商品はストレート型で防水防塵IP68など堅牢な作り。Pixelは折りたたみ式のディスプレイを持つ"
         ],
         "differentiators": [
-          "Galaxy S26 Ultraは折りたたみではないが、カメラ性能で勝る",
-          "Pixelは開くとタブレットサイズになる点が最大の違い"
-        ]
-      },
-      {
-        "name": "Sony Xperia 1 VI 256GB",
-        "asin": "B0D46F8ZLZ",
-        "priceComparison": "Xperia 1 VI (約147,800円〜) はGalaxy S26 Ultraより安価",
-        "featureComparison": [
-          "ディスプレイの比率とオーディオ機能"
-        ],
-        "differentiators": [
-          "Xperiaはカメラのシャッターボタンなどクリエイター向けの物理機能に強み",
-          "GalaxyはAIと統合的なソフトウェア体験で勝る"
+          "Samsung Galaxy S26 Ultraの利点：ストレート形状での最高峰スペックと耐久性（IP68等）を求めるなら迷わずこちら",
+          "Google Pixel 9 Pro Foldの利点：折りたたみによる大画面と手頃な価格でGoogleのAI機能を試したいなら迷わずこちら"
         ]
       }
     ],
     "recommendation": {
       "targetUsers": [
-        "最新のAI機能をフル活用したいガジェット好き",
-        "スマホカメラに妥協したくない人"
+        "価格を問わず最新のAI機能と最高峰のAndroidスペックを求める人",
+        "約17.5cmの大画面と長持ちする大容量バッテリー（5000mAh）を重視する人"
       ],
       "pros": [
-        "現行スマホで最高クラスの性能とカメラ",
-        "オンデバイスAIを含む強力なGalaxy AI"
+        "約17.5cmのQHD+ディスプレイにより、動画視聴やマルチタスクが快適に行える",
+        "5,000mAhの大容量バッテリーで、外出先でも長時間の利用が期待できる",
+        "Galaxy AIによる高度なサポートが得られる"
       ],
       "cons": [
-        "21万円を超える高額な出費",
-        "片手操作が難しいサイズと重量感"
+        "本体重量が約214gあるため、長時間の片手操作では負担になる可能性がある",
+        "価格が非常に高いため、予算に余裕がない人には不向き"
       ],
-      "score": 85,
-      "scoreRationale": "[基本点: 70]\n[加点: +8] 性能・機能 (最新SoC、卓越したカメラ性能)\n[減点: -8] コストパフォーマンス (21万円超えは非常に高価であり、競合のiPhone 16 Pro Maxより高い)\n[加点: +5] 品質・デザイン (フラットディスプレイや高級感のあるデザイン)\n[加点: +5] ユーザー満足度 (Android最高峰としての高いブランド力)\n[加点: +5] 独自の強み・先進性 (他社を一歩リードする高度なGalaxy AI)\n[合計: 85]"
+      "score": 80,
+      "scoreRationale": "[基本点: 70] (固定)\n[加点: +5] (高度なAI機能)\n[加点: +5] (大容量バッテリー)\n[加点: +5] (約17.5cmの高品質なQHD+ディスプレイ)\n[減点: -5] (競合と比較しても高価)\n[合計: 80] (最終的なスコア)"
     },
     "technicalSpecs": {
-      "os": "Android",
-      "cpu": "Snapdragon (推測)",
-      "ram": null,
-      "storage": "256GB",
-      "display": {
-        "size": "6.9インチ",
-        "resolution": "QHD+",
-        "type": null
-      },
-      "battery": {
-        "capacity": "5000mAh",
-        "charging": null
-      },
-      "camera": {
-        "main": null,
-        "ultrawide": null
-      },
-      "dimensions": {
-        "height": null,
-        "width": null,
-        "depth": null,
-        "weight": "約214g"
-      },
-      "connectivity": [
-        "5G対応 (推測)",
-        "Wi-Fi対応 (推測)",
-        "Bluetooth対応 (推測)"
-      ],
+      "display": "約17.5cm QHD+",
+      "weight": "約214g",
+      "battery": "5,000mAh",
+      "waterResistance": "IP68防水防塵",
+      "color": "スカイブルー",
+      "capacity": "256GB",
       "other": [
-        "IP68防水防塵",
-        "FeliCa対応",
-        "Galaxy AI対応"
+        "Galaxy AI対応",
+        "SIMフリー",
+        "FeliCa対応"
       ]
     }
   }
