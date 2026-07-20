@@ -429,6 +429,23 @@ a:hover {
   overflow-wrap: break-word;
 }
 
+a.hero-tag-brand {
+  text-decoration: none;
+  background: var(--bg-surface-elevated, #f0f4f8);
+  color: var(--color-primary, #0066cc);
+  border-color: var(--color-primary-light, #b3d4ff);
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.2rem;
+}
+
+a.hero-tag-brand:hover {
+  background: var(--color-primary, #0066cc);
+  color: #ffffff;
+  border-color: var(--color-primary, #0066cc);
+}
+
 .card-spec-tag {
   background: var(--bg-tag);
   color: var(--color-text-muted);
@@ -4741,6 +4758,33 @@ a.competitor-preview:hover {
   display: flex;
   align-items: center;
   gap: var(--spacing-sm);
+}
+
+/* ヘッダーのナビゲーションリンクボタン */
+.header-nav-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.35rem 0.65rem;
+  border-radius: var(--radius-md);
+  color: var(--color-text-main);
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 600;
+  transition: var(--transition-base);
+  border: 1px solid transparent;
+}
+
+.header-nav-btn:hover {
+  background-color: var(--bg-surface-elevated, #f3f4f6);
+  border-color: var(--color-border);
+  color: var(--color-primary, #0066cc);
+}
+
+[data-theme="dark"] .header-nav-btn:hover {
+  background-color: #2d3748;
+  border-color: #4a5568;
+  color: var(--color-primary-light, #60a5fa);
 }
 
 /* ヘッダーのお気に入りリンクボタン */

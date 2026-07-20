@@ -167,10 +167,36 @@
             {{- if and $currentBrand (gt (len $sameBrand) 0) -}}
             {{- $sameBrandExcluded := where $sameBrand "Params.asin" "not in" $shownAsins -}}
             {{- if gt (len $sameBrandExcluded) 0 -}}
+            {{- $brandSlug := "" -}}
+            {{- range $name, $b := hugo.Data.brandgroups -}}
+            {{- if eq $name $currentBrand -}}
+            {{- $brandSlug = $b.slug -}}
+            {{- else if and (not $brandSlug) $b.matcher -}}
+            {{- if eq $b.matcher.type "title_prefix" -}}
+            {{- if eq $b.matcher.value $currentBrand -}}
+            {{- $brandSlug = $b.slug -}}
+            {{- end -}}
+            {{- else if eq $b.matcher.type "brand" -}}
+            {{- if findRE $b.matcher.value $currentBrand -}}
+            {{- $brandSlug = $b.slug -}}
+            {{- end -}}
+            {{- end -}}
+            {{- end -}}
+            {{- end -}}
             <section class="related-section" style="margin-top: var(--spacing-lg);">
-                <h3 class="related-section-title">🏢 同ブランドの候補 ({{ $currentBrand }})</h3>
+                <div
+                    style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--spacing-sm); flex-wrap: wrap; gap: 0.5rem;">
+                    <h3 class="related-section-title" style="margin-bottom: 0;">🏢 同ブランドの候補 ({{ $currentBrand }})</h3>
+                    {{- if $brandSlug -}}
+                    <a href="{{ printf `brand/%s/` $brandSlug | relURL }}" class="brand-more-link"
+                        style="font-size: 0.85rem; font-weight: 600; text-decoration: none; color: var(--color-primary);">
+                        {{ $currentBrand }} の全商品を見る →
+                    </a>
+                    {{- end -}}
+                </div>
                 <div class="related-grid">
-                    {{- $rankedSameBrand := partial "product-composite-ranked-pages.html" (dict "pages" $sameBrandExcluded
+                    {{- $rankedSameBrand := partial "product-composite-ranked-pages.html" (dict "pages"
+                    $sameBrandExcluded
                     "randomize" true) -}}
                     {{- range first 4 $rankedSameBrand -}}
                     {{- $shownAsins = $shownAsins | append .Params.asin -}}
@@ -410,25 +436,25 @@
     {{- end -}}
     {{- end -}}
 
-        {{- /* 関連記事 (同じカテゴリの他商品) */ -}}
-        {{- if .Params.categories -}}
-        {{- $category := index .Params.categories 0 -}}
-        {{- $related := where (where .Site.RegularPages "Section" "articles") "Params.categories" "intersect" (slice
-        $category) -}}
-        {{- $related = where $related "Permalink" "ne" .Permalink -}}
-        {{- if gt (len $related) 0 -}}
-        <section class="related-articles-container"
-            style="margin-top: var(--spacing-xxl); padding-top: var(--spacing-xl); border-top: 1px solid var(--color-border);">
-            <div class="header-content" style="margin-bottom: var(--spacing-lg);">
-                <h2 style="font-size: 1.5rem;">🔍 あわせて読みたい：{{ $category }}の調査結果</h2>
-            </div>
-            <div class="card-grid">
-                {{- range first 3 (shuffle $related) -}}
-                {{- partial "product-card.html" . -}}
-                {{- end -}}
-            </div>
-        </section>
-        {{- end -}}
-        {{- end -}}
+    {{- /* 関連記事 (同じカテゴリの他商品) */ -}}
+    {{- if .Params.categories -}}
+    {{- $category := index .Params.categories 0 -}}
+    {{- $related := where (where .Site.RegularPages "Section" "articles") "Params.categories" "intersect" (slice
+    $category) -}}
+    {{- $related = where $related "Permalink" "ne" .Permalink -}}
+    {{- if gt (len $related) 0 -}}
+    <section class="related-articles-container"
+        style="margin-top: var(--spacing-xxl); padding-top: var(--spacing-xl); border-top: 1px solid var(--color-border);">
+        <div class="header-content" style="margin-bottom: var(--spacing-lg);">
+            <h2 style="font-size: 1.5rem;">🔍 あわせて読みたい：{{ $category }}の調査結果</h2>
+        </div>
+        <div class="card-grid">
+            {{- range first 3 (shuffle $related) -}}
+            {{- partial "product-card.html" . -}}
+            {{- end -}}
+        </div>
+    </section>
+    {{- end -}}
+    {{- end -}}
 </div>
 {{- end -}}

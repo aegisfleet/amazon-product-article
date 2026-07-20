@@ -1,5 +1,17 @@
 <footer class="site-footer">
     <div class="container">
+        <div class="footer-links"
+            style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; margin-bottom: 1rem; font-size: 0.85rem;">
+            <a href="{{ `` | relURL }}" style="color: var(--color-text-muted); text-decoration: none;">🏠 ホーム</a>
+            <a href="{{ `recommendations/` | relURL }}"
+                style="color: var(--color-text-muted); text-decoration: none;">🎯 注目商品10選</a>
+            <a href="{{ `deals/` | relURL }}" style="color: var(--color-text-muted); text-decoration: none;">🔥
+                セール対象</a>
+            <a href="{{ `bargain/` | relURL }}" style="color: var(--color-text-muted); text-decoration: none;">🎁
+                あともう一品</a>
+            <a href="{{ `brand/` | relURL }}" style="color: var(--color-text-muted); text-decoration: none;">🏷️
+                ブランド一覧</a>
+        </div>
         <p style="font-size: 0.8rem; margin-bottom: 1rem;">
             {{ .Site.Title
             }}は、Amazon.co.jpを宣伝しリンクすることによってサイトが紹介料を獲得できる手段を提供することを目的に設定されたアフィリエイトプログラムである、Amazonアソシエイト・プログラムの参加者です。
