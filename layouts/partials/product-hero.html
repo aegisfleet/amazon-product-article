@@ -140,31 +140,7 @@
         </div>
 
         <div class="hero-meta-tags">
-            {{- with $product.brand -}}
-            {{- if ne . "不明" -}}
-            {{- $brandSlug := "" -}}
-            {{- $brandIcon := "🏷️" -}}
-            {{- $targetBrand := . -}}
-            {{- range $name, $b := hugo.Data.brandgroups -}}
-            {{- if not $brandSlug -}}
-            {{- $mValue := $b.matcher.value | default $name -}}
-            {{- if or (eq $name $targetBrand) (eq $mValue $targetBrand) (hasPrefix $targetBrand $name) (hasPrefix
-            $targetBrand $mValue) (findRE $mValue $targetBrand) (findRE $name $targetBrand) -}}
-            {{- $brandSlug = $b.slug -}}
-            {{- if $b.icon -}}{{- $brandIcon = $b.icon -}}{{- end -}}
-            {{- end -}}
-            {{- end -}}
-            {{- end -}}
-            {{- if $brandSlug -}}
-            <a href="{{ printf `brand/%s/` $brandSlug | relURL }}" class="hero-tag hero-tag-brand"
-                title="{{ . }}のブランドページへ">
-                {{ $brandIcon }} {{ . }}
-            </a>
-            {{- else -}}
-            <span class="hero-tag">{{ . }}</span>
-            {{- end -}}
-            {{- end -}}
-            {{- end -}}
+            {{- partial "product-brand-tag.html" (dict "brand" $product.brand "class" "hero-tag hero-tag-brand") -}}
             {{- partial "product-spec-tags.html" (dict "specs" $product.specs "tagClass" "hero-tag") -}}
         </div>
 
