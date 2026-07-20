@@ -386,14 +386,19 @@ a:hover {
   font-size: 0.75rem;
   font-weight: 600;
   margin-bottom: var(--spacing-sm);
+  margin-right: 0.5rem;
   width: fit-content;
   text-decoration: none;
   transition: var(--transition-base);
 }
 
-.card-tag:hover {
+a.card-tag:hover {
   background-color: var(--color-primary);
   color: white;
+}
+
+span.card-tag {
+  cursor: default;
 }
 
 .card-tag-sub {
@@ -406,6 +411,7 @@ a:hover {
   font-size: 0.7rem;
   font-weight: 500;
   margin-left: 0.25rem;
+  margin-right: 0.5rem;
   margin-bottom: var(--spacing-sm);
 }
 
@@ -413,7 +419,7 @@ a:hover {
 .card-specs {
   display: flex;
   flex-wrap: wrap;
-  gap: var(--spacing-xs);
+  gap: var(--spacing-sm);
   margin-bottom: var(--spacing-sm);
 }
 
@@ -3516,7 +3522,7 @@ a.competitor-preview:hover {
 .hero-meta-tags {
   display: flex;
   flex-wrap: wrap;
-  gap: var(--spacing-xs);
+  gap: var(--spacing-sm);
   margin-bottom: var(--spacing-sm);
 }
 
