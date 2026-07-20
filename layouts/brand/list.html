@@ -70,8 +70,15 @@
         var brandSelect = document.getElementById('brand-select');
         if (brandSelect) {
             brandSelect.addEventListener('change', function () {
-                if (this.value) {
-                    window.location.href = this.value;
+                var val = this.value;
+                if (!val) return;
+                try {
+                    var targetUrl = new URL(val, window.location.origin);
+                    if (targetUrl.origin === window.location.origin && (targetUrl.protocol === 'http:' || targetUrl.protocol === 'https:')) {
+                        window.location.href = targetUrl.href;
+                    }
+                } catch (e) {
+                    console.warn('Invalid navigation URL:', val, e);
                 }
             });
         }
