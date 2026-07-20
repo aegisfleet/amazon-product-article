@@ -169,17 +169,11 @@
             {{- if gt (len $sameBrandExcluded) 0 -}}
             {{- $brandSlug := "" -}}
             {{- range $name, $b := hugo.Data.brandgroups -}}
-            {{- if eq $name $currentBrand -}}
+            {{- if not $brandSlug -}}
+            {{- $mValue := $b.matcher.value | default $name -}}
+            {{- if or (eq $name $currentBrand) (eq $mValue $currentBrand) (hasPrefix $currentBrand $name) (hasPrefix
+            $currentBrand $mValue) (findRE $mValue $currentBrand) (findRE $name $currentBrand) -}}
             {{- $brandSlug = $b.slug -}}
-            {{- else if and (not $brandSlug) $b.matcher -}}
-            {{- if eq $b.matcher.type "title_prefix" -}}
-            {{- if eq $b.matcher.value $currentBrand -}}
-            {{- $brandSlug = $b.slug -}}
-            {{- end -}}
-            {{- else if eq $b.matcher.type "brand" -}}
-            {{- if findRE $b.matcher.value $currentBrand -}}
-            {{- $brandSlug = $b.slug -}}
-            {{- end -}}
             {{- end -}}
             {{- end -}}
             {{- end -}}
