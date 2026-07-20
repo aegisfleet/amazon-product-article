@@ -59,12 +59,12 @@ hasCJKLanguage = true
   changeFreq = "monthly"
   priority = 0.5
 
-# Git info for automatic lastmod
-enableGitInfo = true
+# Git info for automatic lastmod (Disabled for build performance)
+enableGitInfo = false
 
 # Front matter date resolution
 [frontmatter]
-  lastmod = [":git", "lastmod", "last_investigated", "date"]
+  lastmod = ["last_investigated", "date", "lastmod"]
 
 # Minify output
 [minify]
