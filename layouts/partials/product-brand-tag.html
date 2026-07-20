@@ -1,0 +1,26 @@
+{{- $brand := .brand -}}
+{{- $class := .class | default "card-tag card-tag-brand" -}}
+{{- with $brand -}}
+{{- if ne . "不明" -}}
+{{- $brandSlug := "" -}}
+{{- $brandIcon := "🏷️" -}}
+{{- $targetBrand := . -}}
+{{- range $name, $b := hugo.Data.brandgroups -}}
+{{- if not $brandSlug -}}
+{{- $mValue := $b.matcher.value | default $name -}}
+{{- if or (eq $name $targetBrand) (eq $mValue $targetBrand) (hasPrefix $targetBrand $name) (hasPrefix $targetBrand
+$mValue) (findRE $mValue $targetBrand) (findRE $name $targetBrand) -}}
+{{- $brandSlug = $b.slug -}}
+{{- if $b.icon -}}{{- $brandIcon = $b.icon -}}{{- end -}}
+{{- end -}}
+{{- end -}}
+{{- end -}}
+{{- if $brandSlug -}}
+<a href="{{ printf `brand/%s/` $brandSlug | relURL }}" class="{{ $class }}" title="{{ . }}のブランドページへ">
+    <span class="brand-tag-icon">{{ $brandIcon }}</span> {{ . }}
+</a>
+{{- else -}}
+<span class="{{ $class }} card-tag-brand-text">{{ . }}</span>
+{{- end -}}
+{{- end -}}
+{{- end -}}
