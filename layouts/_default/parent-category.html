@@ -35,51 +35,42 @@
     {{- end -}}
     {{- end -}}
 
-    {{- /* Collect all articles from child categories */ -}}
+    {{- /* Collect all articles from child categories in a single pass */ -}}
     {{- $articles := slice -}}
-    {{- range $childCategories -}}
-    {{- $cat := . -}}
-    {{- range where $.Site.RegularPages "Section" "articles" -}}
-    {{- if in .Params.categories $cat -}}
-    {{- $articles = $articles | append . -}}
-    {{- end -}}
-    {{- end -}}
-    {{- end -}}
-
-    {{- /* Special handling for "その他" - also include uncategorized articles */ -}}
+    {{- $allArticles := where $.Site.RegularPages "Section" "articles" -}}
     {{- if eq $parentCategory "その他／全般" -}}
-    {{- /* Collect ALL categories from ALL parent groups */ -}}
     {{- $allCategorizedItems := slice -}}
     {{- range $groupName, $groupData := hugo.Data.categories.parents -}}
     {{- range $groupData.childrenWithCounts -}}
     {{- $allCategorizedItems = $allCategorizedItems | append .name -}}
     {{- end -}}
     {{- end -}}
-
-    {{- /* Find articles whose categories are NOT in any parent group */ -}}
-    {{- range where $.Site.RegularPages "Section" "articles" -}}
-    {{- $article := . -}}
-    {{- $isCategorized := false -}}
-    {{- range $article.Params.categories -}}
-    {{- if in $allCategorizedItems . -}}
-    {{- $isCategorized = true -}}
+    {{- range $article := $allArticles -}}
+    {{- $match := false -}}
+    {{- range $cat := $article.Params.categories -}}
+    {{- if or (in $childCategories $cat) (not (in $allCategorizedItems $cat)) -}}
+    {{- $match = true -}}
     {{- end -}}
     {{- end -}}
-    {{- if not $isCategorized -}}
+    {{- if $match -}}
+    {{- $articles = $articles | append $article -}}
+    {{- end -}}
+    {{- end -}}
+    {{- else -}}
+    {{- range $article := $allArticles -}}
+    {{- $match := false -}}
+    {{- range $cat := $article.Params.categories -}}
+    {{- if in $childCategories $cat -}}
+    {{- $match = true -}}
+    {{- end -}}
+    {{- end -}}
+    {{- if $match -}}
     {{- $articles = $articles | append $article -}}
     {{- end -}}
     {{- end -}}
     {{- end -}}
 
-    {{- /* Remove duplicates by using a map */ -}}
-    {{- $uniqueArticles := slice -}}
-    {{- $seenPaths := slice -}}
-    {{- range $articles -}}
-    {{- if not (in $seenPaths .RelPermalink) -}}
-    {{- $uniqueArticles = $uniqueArticles | append . -}}
-    {{- $seenPaths = $seenPaths | append .RelPermalink -}}
-    {{- end -}}
-    {{- end -}}
+    {{- $uniqueArticles := $articles -}}
 
     {{- /* Sort by last_investigated desc */ -}}
     {{- $sorted := sort $uniqueArticles ".Params.last_investigated" "desc" -}}
@@ -433,8 +424,8 @@
                     <span class="card-tag">{{ .Params.category }}</span>
                     {{- with .Params.subcategory -}}<span class="card-tag-sub">{{ . }}</span>{{- end -}}
                     {{- end -}}
-                    {{- partial "product-brand-tag.html" (dict "brand" .Params.brand "class" "card-tag card-tag-brand")
-                    -}}
+                    {{- partialCached "product-brand-tag.html" (dict "brand" .Params.brand "class" "card-tag
+                    card-tag-brand") .Params.brand "card-tag card-tag-brand" -}}
                     <h3 class="card-title">
                         <a href="{{ .RelPermalink }}">{{ .Title }}</a>
                     </h3>

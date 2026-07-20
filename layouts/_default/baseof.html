@@ -24,7 +24,7 @@
 </head>
 
 <body>
-  {{- partial "header.html" . -}}
+  {{- partialCached "header.html" . -}}
 
   <main>
     {{- block "main" . -}}{{- end -}}
