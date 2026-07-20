@@ -7,7 +7,14 @@
         </li>
 
         {{- if .IsPage -}}
-        {{- /* 商品ページの場合 */ -}}
+        {{- if eq .Section "brand" -}}
+        {{- /* ブランド個別ページの場合 */ -}}
+        <li class="breadcrumb-item">
+            <span class="breadcrumb-separator">›</span>
+            <a href="{{ `brand/` | relURL }}">ブランド一覧</a>
+        </li>
+        {{- else -}}
+        {{- /* 商品ページ等の場合 */ -}}
         {{- $category := "" -}}
         {{- if .Params.categories -}}
         {{- $category = index .Params.categories 0 -}}
@@ -41,6 +48,7 @@
             <span class="breadcrumb-separator">›</span>
             <a href="{{ printf `categories/%s/` ($category | urlize) | relURL }}">{{- $category -}}</a>
         </li>
+        {{- end -}}
         {{- end -}}
 
         {{- /* 現在のページ（商品名） */ -}}
@@ -83,7 +91,7 @@
         {{- /* セクションページの場合 */ -}}
         <li class="breadcrumb-item current">
             <span class="breadcrumb-separator">›</span>
-            <span>{{ .Title }}</span>
+            <span>{{ if eq .Section "brand" }}ブランド一覧{{ else }}{{ .Title }}{{ end }}</span>
         </li>
         {{- end -}}
     </ol>
