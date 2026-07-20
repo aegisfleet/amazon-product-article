@@ -233,11 +233,12 @@
     {{- $brandCount = add $brandCount 1 -}}
     {{- end -}}
     {{- end -}}
-    {{- if ge $brandCount 10 -}}
+    {{- if ge $brandCount 1 -}}
     {{- $brandList = $brandList | append (dict "name" $brandName "slug" $brand.slug "icon" ($brand.icon | default "🏷️")
     "count" $brandCount) -}}
     {{- end -}}
     {{- end -}}
+    {{- $topBrands := first 20 (sort $brandList "count" "desc") -}}
 
     <div class="header-content" id="brand-section">
         <h2>ブランドから探す</h2>
@@ -248,7 +249,7 @@
         <label for="brand-select" class="category-dropdown-label">ブランド</label>
         <select id="brand-select" class="category-dropdown-select">
             <option value="">ブランドを選択...</option>
-            {{- range $brandList -}}
+            {{- range $topBrands -}}
             <option value="{{ `brand/` | relURL }}{{ .slug }}/">{{ .icon }} {{ .name }} ({{ .count }}件)</option>
             {{- end -}}
         </select>
@@ -256,13 +257,20 @@
 
     <!-- Desktop: Brand Grid -->
     <div class="brand-grid">
-        {{- range $brandList -}}
+        {{- range $topBrands -}}
         <a href="{{ `brand/` | relURL }}{{ .slug }}/" class="brand-card">
             <span class="brand-grid-icon">{{ .icon }}</span>
             <span class="brand-name">{{ .name }}</span>
             <span class="brand-count">{{ .count }}件</span>
         </a>
         {{- end -}}
+    </div>
+
+    <div class="brand-more-container"
+        style="text-align: center; margin-top: var(--spacing-lg); margin-bottom: var(--spacing-xl);">
+        <a href="{{ `brand/` | relURL }}" class="btn-all-brands">
+            🏷️ すべてのブランド一覧を見る (全{{ len $brandList }}件) →
+        </a>
     </div>
     {{- end -}}
 
