@@ -5185,13 +5185,15 @@ a.competitor-preview:hover {
 }
 
 /* --- Brand Tag Link inside Cards --- */
-a.card-tag-brand {
+a.card-tag-brand,
+span.card-tag-brand,
+span.card-tag-brand-text {
   display: inline-flex;
   align-items: center;
   gap: 0.25rem;
-  background: var(--bg-tag, #e0f2fe);
-  color: var(--color-primary-dark, #0369a1);
-  border: 1px solid var(--color-border, #bae6fd);
+  background: #f0f9ff;
+  color: #0369a1;
+  border: 1px solid #bae6fd;
   border-radius: var(--radius-sm, 4px);
   padding: 0.15rem 0.5rem;
   font-size: 0.75rem;
@@ -5201,19 +5203,21 @@ a.card-tag-brand {
 }
 
 a.card-tag-brand:hover {
-  background: var(--color-primary, #0284c7);
+  background: #0369a1;
   color: #ffffff;
-  border-color: var(--color-primary, #0284c7);
+  border-color: #0369a1;
 }
 
-[data-theme="dark"] a.card-tag-brand {
+[data-theme="dark"] a.card-tag-brand,
+[data-theme="dark"] span.card-tag-brand,
+[data-theme="dark"] span.card-tag-brand-text {
   background: #1e293b;
   color: #38bdf8;
   border-color: #334155;
 }
 
 [data-theme="dark"] a.card-tag-brand:hover {
-  background: #0284c7;
+  background: #0369a1;
   color: #ffffff;
-  border-color: #0284c7;
+  border-color: #0369a1;
 }
