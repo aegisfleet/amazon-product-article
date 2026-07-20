@@ -146,20 +146,12 @@
             {{- $brandIcon := "🏷️" -}}
             {{- $targetBrand := . -}}
             {{- range $name, $b := hugo.Data.brandgroups -}}
-            {{- if eq $name $targetBrand -}}
+            {{- if not $brandSlug -}}
+            {{- $mValue := $b.matcher.value | default $name -}}
+            {{- if or (eq $name $targetBrand) (eq $mValue $targetBrand) (hasPrefix $targetBrand $name) (hasPrefix
+            $targetBrand $mValue) (findRE $mValue $targetBrand) (findRE $name $targetBrand) -}}
             {{- $brandSlug = $b.slug -}}
             {{- if $b.icon -}}{{- $brandIcon = $b.icon -}}{{- end -}}
-            {{- else if and (not $brandSlug) $b.matcher -}}
-            {{- if eq $b.matcher.type "title_prefix" -}}
-            {{- if eq $b.matcher.value $targetBrand -}}
-            {{- $brandSlug = $b.slug -}}
-            {{- if $b.icon -}}{{- $brandIcon = $b.icon -}}{{- end -}}
-            {{- end -}}
-            {{- else if eq $b.matcher.type "brand" -}}
-            {{- if findRE $b.matcher.value $targetBrand -}}
-            {{- $brandSlug = $b.slug -}}
-            {{- if $b.icon -}}{{- $brandIcon = $b.icon -}}{{- end -}}
-            {{- end -}}
             {{- end -}}
             {{- end -}}
             {{- end -}}
