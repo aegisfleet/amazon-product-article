@@ -47,8 +47,7 @@
             <span class="card-tag">{{ .Params.category }}</span>
             {{- with .Params.subcategory -}}<span class="card-tag-sub">{{ . }}</span>{{- end -}}
             {{- end -}}
-            {{- partialCached "product-brand-tag.html" (dict "brand" .Params.brand "class" "card-tag card-tag-brand")
-            .Params.brand "card-tag card-tag-brand" -}}
+            {{- partialCached "product-brand-tag.html" (dict "brand" .Params.brand "class" "card-tag card-tag-brand") .Params.brand "card-tag card-tag-brand" -}}
             <h3 class="card-title">
                 <a href="{{ .RelPermalink }}" data-track-product="1" data-asin="{{ .Params.asin }}"
                     data-category="{{ $trackingCategory }}" data-price-bucket="{{ $priceBucket }}"
