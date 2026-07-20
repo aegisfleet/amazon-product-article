@@ -1,4 +1,7 @@
 {{- define "main" -}}
+{{- if and (eq .Section "brand") (not .Params.brand_name) -}}
+{{- partial "brand-index-content.html" . -}}
+{{- else -}}
 <div class="container" style="padding-top: var(--spacing-xl);">
     {{- partial "breadcrumb.html" . -}}
 
@@ -472,4 +475,5 @@
 </script>
 <script src="{{ `js/filter-common.js` | relURL }}"></script>
 <script src="{{ `js/category-features.js` | relURL }}"></script>
+{{- end -}}
 {{- end -}}

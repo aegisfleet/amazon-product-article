@@ -1,0 +1,78 @@
+<div class="container" style="padding-top: var(--spacing-xl);">
+    {{- partial "breadcrumb.html" . -}}
+
+    <div class="article-header">
+        <h1>ブランド一覧</h1>
+        {{- with .Description -}}<p class="article-meta">{{ . }}</p>{{- end -}}
+    </div>
+
+    {{- $brandData := hugo.Data.brandgroups -}}
+    {{- if $brandData -}}
+    {{- $brandList := slice -}}
+    {{- range $brandName, $brand := $brandData -}}
+    {{- $brandCount := 0 -}}
+    {{- $matcherType := "title_prefix" -}}
+    {{- $matcherValue := $brandName -}}
+    {{- with $brand.matcher -}}
+    {{- $matcherType = .type | default "title_prefix" -}}
+    {{- $matcherValue = .value | default $brandName -}}
+    {{- end -}}
+    {{- range where $.Site.RegularPages "Section" "articles" -}}
+    {{- if eq $matcherType "title_prefix" -}}
+    {{- if hasPrefix .Title $matcherValue -}}
+    {{- $brandCount = add $brandCount 1 -}}
+    {{- end -}}
+    {{- else if eq $matcherType "brand" -}}
+    {{- with .Params.brand -}}
+    {{- if findRE $matcherValue . -}}
+    {{- $brandCount = add $brandCount 1 -}}
+    {{- end -}}
+    {{- end -}}
+    {{- end -}}
+    {{- end -}}
+    {{- if ge $brandCount 1 -}}
+    {{- $brandList = $brandList | append (dict "name" $brandName "slug" $brand.slug "icon" ($brand.icon | default "🏷️")
+    "count" $brandCount "description" ($brand.description | default "")) -}}
+    {{- end -}}
+    {{- end -}}
+
+    <div class="header-content" style="margin-bottom: var(--spacing-md);">
+        <p style="color: var(--color-text-muted); font-size: 0.95rem;">
+            全 <strong>{{ len $brandList }}</strong> ブランドの調査レポート
+        </p>
+    </div>
+
+    <div class="brand-dropdown-container" style="margin-bottom: var(--spacing-xl);">
+        <label for="brand-select" class="category-dropdown-label">ブランドを選択して移動</label>
+        <select id="brand-select" class="category-dropdown-select" style="width: 100%; max-width: 100%;">
+            <option value="">-- ブランドを選択 --</option>
+            {{- range $brandList -}}
+            <option value="{{ `brand/` | relURL }}{{ .slug }}/">{{ .icon }} {{ .name }} ({{ .count }}件)</option>
+            {{- end -}}
+        </select>
+    </div>
+
+    <div class="brand-grid">
+        {{- range $brandList -}}
+        <a href="{{ `brand/` | relURL }}{{ .slug }}/" class="brand-card">
+            <span class="brand-grid-icon">{{ .icon }}</span>
+            <span class="brand-name">{{ .name }}</span>
+            <span class="brand-count">{{ .count }}件</span>
+        </a>
+        {{- end -}}
+    </div>
+    {{- end -}}
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var brandSelect = document.getElementById('brand-select');
+        if (brandSelect) {
+            brandSelect.addEventListener('change', function () {
+                if (this.value) {
+                    window.location.href = this.value;
+                }
+            });
+        }
+    });
+</script>
