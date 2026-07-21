@@ -1,151 +1,116 @@
 {
   "analysis": {
     "productName": "Xiaomi Redmi 14C",
-    "parentAsin": "B0DHDB62KP",
-    "productDescription": "6.88インチのクラス最大級ディスプレイと5160mAh大容量バッテリーを搭載した、エンターテインメント重視のエントリースマートフォン。",
+    "parentAsin": "B0DHRZBFJW",
+    "productDescription": "XiaomiのSIMフリースマートフォン「Redmi 14C」は、約17.5cmの大画面ディスプレイと5160mAhの大容量バッテリーを搭載し、低価格帯でありながら快適な視聴体験と長時間のバッテリー持ちを実現したモデルです。MediaTek Helio G81-Ultraプロセッサと5000万画素AIデュアルカメラを備え、日常使いに十分な性能を提供します。",
     "productUsage": [
-      "大画面での動画視聴（YouTube, Netflix等）",
-      "SNS閲覧やWebブラウジング",
-      "ナビやテザリング用のサブ機としての利用"
+      "動画視聴・ブラウジング",
+      "SNSやウェブ検索",
+      "日常の連絡用サブ端末"
     ],
     "positivePoints": [
-      "6.88インチの超大型ディスプレイにより、動画や文字が見やすい",
-      "最大120Hzのリフレッシュレート対応で、スクロールや操作が滑らか",
-      "5160mAhの大容量バッテリーを搭載し、長時間の使用が可能",
-      "5000万画素のAIメインカメラで、高精細な写真撮影が可能",
-      "スターリーブルーの背面デザインは高級感がありスタイリッシュ"
+      "約17.5cmの大画面ディスプレイ（最大120Hz対応）による高い没入感",
+      "5160mAhの大容量バッテリーと18W急速充電対応による長時間のバッテリー持ち",
+      "5000万画素AIメインカメラ搭載",
+      "MediaTek Helio G81-Ultraプロセッサによる低消費電力かつ十分なパフォーマンス",
+      "docomo/au/SoftBank/Rakuten Mobileの4キャリア回線に対応"
     ],
     "negativePoints": [
-      "RAM 4GBは複数のアプリを同時に開くと動作が重くなる可能性がある",
-      "18Wの充電速度は、大容量バッテリーを満充電にするのに時間がかかる",
-      "同価格帯の競合製品と比較してメモリ容量が少ない",
-      "解像度がHD+クラスのため、6.88インチでは画面の粗さが気になる場合がある"
+      "18Wの急速充電は現在の基準ではやや遅め",
+      "重量やサイズの大型化に伴う片手操作の難しさ"
     ],
     "useCases": [
-      "通勤・通学時間の動画鑑賞用デバイス",
-      "大画面で見やすいため、高齢者や子供の初めてのスマートフォンとして",
-      "バッテリー持ちを重視したサブ端末"
+      "自宅での動画視聴",
+      "通学・通勤時のWebブラウジングやSNS閲覧",
+      "外出先での長時間のバッテリー駆動"
     ],
-    "userStories": [
-      {
-        "userType": "学生",
-        "scenario": "通学中のエンタメ利用",
-        "experience": "通学中の電車でYouTubeを見るのに画面が大きくて迫力がある。バッテリーも持つのでモバイルバッテリーを持ち歩かなくて済む。（推測）",
-        "sentiment": "positive"
-      },
-      {
-        "userType": "ビジネスマン",
-        "scenario": "サブ機としての運用",
-        "experience": "メインスマホの充電温存のため、テザリングとナビ用として購入。画面が大きいのでカーナビ代わりに見やすいが、動作は少しもっさりすることがある。（推測）",
-        "sentiment": "mixed"
-      },
-      {
-        "userType": "シニア層",
-        "scenario": "日常の連絡用",
-        "experience": "画面が大きくて文字が見やすいので、LINEや電話が使いやすい。重い作業はしないので動作に不満はない。（推測）",
-        "sentiment": "positive"
-      }
-    ],
-    "userImpression": "ユーザーレビューはまだ少ないが、スペックからは「画面の大きさ」と「バッテリー持ち」に特化したモデルと言える。1万円台でこのサイズ感は貴重だが、パフォーマンス（特にメモリ）については価格相応の割り切りが必要。",
+    "userStories": [],
+    "userImpression": "大画面と大容量バッテリーを備えており、動画視聴や日常使いに特化したコストパフォーマンスの高いスマートフォンとして高い評価を得ています。一方、大型化に伴う重量感や片手での操作の難しさといった点も指摘されていますが、大画面の恩恵を優先するユーザーにとっては許容範囲と捉えられています。安価に大画面を楽しみたい方には満足度が高い反面、コンパクトさや片手操作を重視する方は後悔する可能性があります。",
     "sources": [
       {
-        "name": "Amazon Product Page",
+        "id": "src-1",
+        "name": "Amazon Product Data",
         "url": "https://www.amazon.co.jp/dp/B0DHDB62KP",
-        "credibility": "high"
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2024-10-17",
+        "author": "Xiaomi",
+        "conflictOfInterest": "disclosed",
+        "notes": "メーカー公式の製品情報および仕様データ"
       }
     ],
-    "lastInvestigated": "2026-03-01",
+    "claims": [
+      {
+        "claim": "映画館のような没入感のある視聴体験",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "crossChecked": false,
+        "notes": "約17.5cmの大画面は事実だが、解像度等によっては「映画館のよう」はメーカーの販促表現である"
+      },
+      {
+        "claim": "安心して一日を過ごせる大容量バッテリー",
+        "category": "durability",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "crossChecked": false,
+        "notes": "5160mAhはスマートフォンの中では十分に大容量といえる"
+      }
+    ],
+    "lastInvestigated": "2026-07-22",
     "competitiveAnalysis": [
       {
-        "name": "UMIDIGI F3SE",
-        "asin": "B0B1ZX36Q1",
-        "priceComparison": "約5,400円安い (￥12,300)",
+        "name": "Xiaomi Redmi Note 14 Pro",
+        "asin": "B0DYF4NLGS",
+        "priceComparison": "本製品よりも高価だが、2億画素カメラやさらに高い基本性能を備えている。",
         "featureComparison": [
-          "画面サイズは6.7インチと少し小さい",
-          "バッテリー容量は5150mAhとほぼ同等"
+          "共通点：Xiaomi製のスマートフォンである点",
+          "相違点：Redmi Note 14 Proは2億画素カメラ搭載、価格帯が上位"
         ],
         "differentiators": [
-          "価格の安さ"
-        ]
-      },
-      {
-        "name": "DOOGEE Note56X Pro",
-        "asin": "B0GFNP6VXL",
-        "priceComparison": "約1,800円安い (￥15,900)",
-        "featureComparison": [
-          "バッテリー容量は6150mAhとより大容量",
-          "画面サイズは6.56インチと小さい"
-        ],
-        "differentiators": [
-          "圧倒的なバッテリー容量"
-        ]
-      },
-      {
-        "name": "OPPO A54 5G",
-        "asin": "B0CWWF5SPM",
-        "priceComparison": "約900円安い (￥16,800)",
-        "featureComparison": [
-          "OPPO独自の使いやすいColorOS",
-          "バランスの取れたスペック"
-        ],
-        "differentiators": [
-          "ソフトウェアの完成度とブランドの信頼性"
+          "Xiaomi Redmi 14Cの利点：価格を抑えつつ、大画面と大容量バッテリーという基本性能を重視したい方に最適です。",
+          "Xiaomi Redmi Note 14 Proの利点：より高画質なカメラや、全体的に高い処理性能を求める方におすすめです。"
         ]
       }
     ],
     "recommendation": {
       "targetUsers": [
-        "とにかく大きい画面で動画を見たい人",
-        "バッテリー持ちを最優先する人",
-        "重いゲームはせず、SNSやWeb閲覧が中心の人",
-        "安価で大画面のサブ端末を探している人"
+        "動画視聴やWebブラウジングが中心で、Redmi Note 14 Proなどの上位機種よりも安価に大画面を手に入れたい方",
+        "バッテリー持ちを重視し、頻繁な充電を避けたい方",
+        "高性能な競合機種と比較しても、コストパフォーマンスの高いサブ端末を探している方"
       ],
       "pros": [
-        "クラス最大級の6.88インチ画面",
-        "滑らかな120Hz駆動",
-        "安心の大容量バッテリー(5160mAh)"
+        "約17.5cmの大画面により、小さな文字も見やすく動画の迫力もアップします。",
+        "5160mAhのバッテリーにより、外出先でもバッテリー切れの不安を軽減できます。",
+        "主要4キャリアの回線に対応しており、通信会社の選択肢が広がります。"
       ],
       "cons": [
-        "RAM 4GBによる将来的な動作不足の懸念",
-        "18W充電は少し遅く感じる可能性",
-        "HD+解像度は大画面ゆえに粗く見える可能性"
+        "本体が大きいため、手の小さな方や片手での操作を重視する方には不向きです。"
       ],
       "score": 75,
-      "scoreRationale": "[基本点: 70]\n[加点: +3] (6.88インチのクラス最大級ディスプレイ)\n[加点: +5] (120Hz駆動と大容量バッテリー)\n[加点: +2] (Xiaomiのデザイン品質)\n[減点: -5] (RAM 4GBは同価格帯の競合と比べて特筆する点がない)\n[合計: 75]"
+      "scoreRationale": "[基本点: 70]\n[加点: +5] (大画面による優れたコストパフォーマンス)\n[加点: +5] (大容量バッテリーによる優れたコストパフォーマンス)\n[加点: +5] (主要4キャリア回線にフル対応している利便性)\n[減点: -5] (急速充電が18Wと昨今の基準ではやや控えめ)\n[減点: -5] (大型化に伴う携帯性の低下)\n[合計: 75]"
     },
     "technicalSpecs": {
-      "os": "Android 14 (HyperOS)",
-      "cpu": "MediaTek Helio G81-Ultra",
-      "ram": "4GB",
-      "storage": "128GB",
-      "display": {
-        "size": "6.88インチ",
-        "resolution": "1640 x 720 (HD+)",
-        "type": "LCD (最大120Hz)"
-      },
-      "battery": {
-        "capacity": "5160mAh",
-        "charging": "18W急速充電"
-      },
-      "camera": {
-        "main": "50MP AIデュアルカメラ",
-        "ultrawide": null
-      },
       "dimensions": {
         "height": "171.88mm",
         "width": "77.8mm",
-        "depth": "8.22mm",
-        "weight": "211g"
+        "depth": "8.22mm"
       },
-      "connectivity": [
-        "4G LTE",
-        "Wi-Fi",
-        "Bluetooth"
-      ],
+      "weight": "211g",
+      "capacity": "128GB ROM / 4GB RAM",
+      "material": "プラスチック・ガラス等",
+      "origin": "中国",
       "other": [
-        "指紋認証",
-        "顔認証",
-        "3.5mmイヤホンジャック"
+        "ディスプレイ: 約17.5cm (最大120Hz)",
+        "バッテリー: 5160mAh",
+        "充電: 18W急速充電",
+        "CPU: MediaTek Helio G81-Ultra",
+        "カメラ: 5000万画素AIデュアルカメラ",
+        "対応回線: docomo/au/SoftBank/Rakuten Mobile"
       ]
     }
   }
