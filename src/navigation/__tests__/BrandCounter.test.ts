@@ -37,12 +37,20 @@ describe('BrandCounter & BrandManager Integration', () => {
   });
 
   test('Omron / OMRON / オムロン の表記揺れを既存ブランド「オムロン」に名寄せしてカウントする', () => {
-    const counter = new BrandCounter(articlesDir, 10, brandGroupsPath);
+    const counter = new BrandCounter(articlesDir, 5, brandGroupsPath);
     const topBrands = counter.getTopBrands();
 
     expect(topBrands).toHaveLength(1);
     expect(topBrands[0]!.name).toBe('オムロン');
     expect(topBrands[0]!.count).toBe(10);
+  });
+
+  test('デフォルト閾値(5個)で正しくフィルタリングされること', () => {
+    const counter = new BrandCounter(articlesDir, undefined, brandGroupsPath);
+    const topBrands = counter.getTopBrands();
+
+    expect(topBrands).toHaveLength(1);
+    expect(topBrands[0]!.name).toBe('オムロン');
   });
 
   test('BrandManager.matchBrandKey が大文字小文字を無視して一致する', () => {
