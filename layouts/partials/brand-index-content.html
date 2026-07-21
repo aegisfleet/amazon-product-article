@@ -2,7 +2,7 @@
     {{- partial "breadcrumb.html" . -}}
 
     <div class="article-header">
-        <h1>{{ .Title }}</h1>
+        <h1>{{ if or (eq .Title "Brands") (not .Title) }}ブランド一覧{{ else }}{{ .Title }}{{ end }}</h1>
         {{- with .Description -}}<p class="article-meta">{{ . }}</p>{{- end -}}
     </div>
 
