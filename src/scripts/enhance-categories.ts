@@ -23,7 +23,7 @@ const brandContentDir = path.resolve(contentPath, 'brand');
 function updateBrandGroups(): void {
   console.log('--- Brand Auto-Extraction ---');
   const articlesPath = path.resolve(process.cwd(), 'content/articles');
-  const counter = new BrandCounter(articlesPath);
+  const counter = new BrandCounter(articlesPath, 10, brandGroupsSourcePath);
   const topBrands = counter.getTopBrands();
   console.log(`Found ${topBrands.length} brands with 10+ products.`);
 
