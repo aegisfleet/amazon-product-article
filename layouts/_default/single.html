@@ -52,6 +52,7 @@
                 class="card-tag">{{
                 . }}</a>{{- end -}}
             {{- end -}}
+            {{- partialCached "product-brand-tag.html" (dict "brand" .Params.brand "class" "hero-tag hero-tag-brand") .Params.brand "hero-tag hero-tag-brand" -}}
             <h1 class="hero-title" style="margin-top: var(--spacing-sm);">{{ .Title }}</h1>
             <div class="article-meta">
                 <span>更新日: {{ .Lastmod.Format "2006年01月02日" }}</span>
