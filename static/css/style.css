@@ -2393,8 +2393,9 @@ a.competitor-preview:hover {
 }
 
 .brand-card {
-  display: inline-flex;
+  display: flex;
   align-items: center;
+  justify-content: center;
   gap: var(--spacing-sm);
   padding: var(--spacing-sm) var(--spacing-md);
   background: var(--color-bg-card);
@@ -2403,7 +2404,7 @@ a.competitor-preview:hover {
   text-decoration: none;
   color: var(--color-text-main);
   transition: all 0.2s ease;
-  width: auto;
+  flex: 1 0 auto;
 }
 
 @media (max-width: 480px) {
