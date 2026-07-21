@@ -3,6 +3,8 @@ import * as path from 'node:path';
 import matter from '@11ty/gray-matter';
 import * as yaml from 'js-yaml';
 
+import { BrandManager } from './BrandManager';
+
 export interface BrandCount {
   name: string;
   count: number;
@@ -12,11 +14,17 @@ export class BrandCounter {
   private readonly contentPath: string;
   private readonly threshold: number;
   private readonly blocklist: Set<string>;
+  private brandManager?: BrandManager;
 
-  constructor(contentPath: string, threshold = 10) {
+  constructor(contentPath: string, threshold = 10, brandGroupsPath?: string) {
     this.contentPath = contentPath;
     this.threshold = threshold;
     this.blocklist = new Set(['ノーブランド品', 'Generic', 'Generic Brand']);
+
+    if (brandGroupsPath && fs.existsSync(brandGroupsPath)) {
+      this.brandManager = new BrandManager(brandGroupsPath);
+      this.brandManager.load();
+    }
   }
 
   /**
@@ -66,9 +74,28 @@ export class BrandCounter {
           },
         },
       });
-      if (data.brand && typeof data.brand === 'string') {
-        return BrandCounter.normalizeBrandName(data.brand);
+
+      const rawBrand = typeof data.brand === 'string' ? data.brand : null;
+      const rawManufacturer = typeof data.manufacturer === 'string' ? data.manufacturer : null;
+
+      const brandCandidate = rawBrand || rawManufacturer;
+
+      if (!brandCandidate) return null;
+
+      const normalizedCandidate = BrandCounter.normalizeBrandName(brandCandidate);
+
+      if (this.brandManager) {
+        const matchedKey = this.brandManager.matchBrandKey(
+          rawBrand,
+          rawManufacturer,
+          typeof data.title === 'string' ? data.title : undefined,
+        );
+        if (matchedKey) {
+          return matchedKey;
+        }
       }
+
+      return normalizedCandidate;
     } catch (e) {
       const message = e instanceof Error ? e.message : String(e);
       console.warn(`Failed to extract brand from ${filePath}: ${message}`);

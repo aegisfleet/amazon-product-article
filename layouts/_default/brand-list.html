@@ -9,14 +9,23 @@
 {{- $scratch.Set "articles" slice -}}
 {{- range where site.RegularPages "Section" "articles" -}}
 {{- $match := false -}}
+{{- $pattern := $matcherValue -}}
+{{- if not (hasPrefix $pattern "(?i)") -}}
+{{- $pattern = printf "(?i)%s" $pattern -}}
+{{- end -}}
 {{- if eq $matcherType "title_prefix" -}}
-{{- if hasPrefix .Title $matcherValue -}}{{- $match = true -}}{{- end -}}
+{{- if findRE (printf "(?i)^%s" $matcherValue) .Title -}}{{- $match = true -}}{{- end -}}
 {{- else if eq $matcherType "brand" -}}
 {{- with .Params.brand -}}
-{{- if findRE $matcherValue . -}}{{- $match = true -}}{{- end -}}
+{{- if findRE $pattern . -}}{{- $match = true -}}{{- end -}}
+{{- end -}}
+{{- if not $match -}}
+{{- with .Params.manufacturer -}}
+{{- if findRE $pattern . -}}{{- $match = true -}}{{- end -}}
+{{- end -}}
 {{- end -}}
 {{- else if eq $matcherType "regex" -}}
-{{- if findRE $matcherValue .Title -}}{{- $match = true -}}{{- end -}}
+{{- if findRE $pattern .Title -}}{{- $match = true -}}{{- end -}}
 {{- end -}}
 {{- if $match -}}
 {{- $scratch.Add "articles" (slice .) -}}
