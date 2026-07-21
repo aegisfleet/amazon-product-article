@@ -18,16 +18,27 @@
     {{- $matcherValue = .value | default $brandName -}}
     {{- end -}}
     {{- range where $.Site.RegularPages "Section" "articles" -}}
-    {{- if eq $matcherType "title_prefix" -}}
-    {{- if hasPrefix .Title $matcherValue -}}
-    {{- $brandCount = add $brandCount 1 -}}
+    {{- $match := false -}}
+    {{- $pattern := $matcherValue -}}
+    {{- if not (hasPrefix $pattern "(?i)") -}}
+    {{- $pattern = printf "(?i)%s" $pattern -}}
     {{- end -}}
+    {{- if eq $matcherType "title_prefix" -}}
+    {{- if findRE (printf "(?i)^%s" $matcherValue) .Title -}}{{- $match = true -}}{{- end -}}
     {{- else if eq $matcherType "brand" -}}
     {{- with .Params.brand -}}
-    {{- if findRE $matcherValue . -}}
+    {{- if findRE $pattern . -}}{{- $match = true -}}{{- end -}}
+    {{- end -}}
+    {{- if not $match -}}
+    {{- with .Params.manufacturer -}}
+    {{- if findRE $pattern . -}}{{- $match = true -}}{{- end -}}
+    {{- end -}}
+    {{- end -}}
+    {{- else if eq $matcherType "regex" -}}
+    {{- if findRE $pattern .Title -}}{{- $match = true -}}{{- end -}}
+    {{- end -}}
+    {{- if $match -}}
     {{- $brandCount = add $brandCount 1 -}}
-    {{- end -}}
-    {{- end -}}
     {{- end -}}
     {{- end -}}
     {{- if ge $brandCount 1 -}}

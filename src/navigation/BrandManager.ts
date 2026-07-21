@@ -90,6 +90,52 @@ export class BrandManager {
   }
 
   /**
+   * ブランド名、メーカー名、タイトルから既存のブランド定義キーにマッチするか評価する
+   */
+  public matchBrandKey(rawBrand?: string | null, rawManufacturer?: string | null, title?: string): string | null {
+    const normalizedMap = this.createNormalizedMap();
+    const candidates = [rawBrand, rawManufacturer].filter((c): c is string => Boolean(c));
+
+    for (const candidate of candidates) {
+      const normalized = BrandManager.normalizeBrandName(candidate);
+      const key = this.findExistingKey(candidate, normalized, normalizedMap);
+      if (key) return key;
+    }
+
+    for (const [key, entry] of Object.entries(this.brandGroups)) {
+      const matcher = entry.matcher;
+      if (!matcher?.value) continue;
+
+      const matcherType = matcher.type || 'title_prefix';
+      const matcherValue = matcher.value;
+
+      try {
+        const regex = new RegExp(matcherValue, 'i');
+        if (matcherType === 'title_prefix' && title) {
+          if (title.toLowerCase().startsWith(matcherValue.toLowerCase())) {
+            return key;
+          }
+        } else if (matcherType === 'regex' && title) {
+          if (regex.test(title)) {
+            return key;
+          }
+        } else if (matcherType === 'brand') {
+          for (const candidate of candidates) {
+            if (regex.test(candidate)) {
+              return key;
+            }
+          }
+        }
+      } catch (e) {
+        const message = e instanceof Error ? e.message : String(e);
+        console.warn(`Invalid matcher regex for "${key}": ${message}`);
+      }
+    }
+
+    return null;
+  }
+
+  /**
    * 正規表現マッチャーを使用して既存ブランドキーを検索する
    */
   private findKeyByRegex(brandName: string, normalizedName: string): string | null {
