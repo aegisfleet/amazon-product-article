@@ -15,6 +15,12 @@
   {{- $pageTitle = printf "Amazon %s おすすめ比較ランキング | AI徹底調査 | %s" .Title .Site.Title -}}
   {{- else if eq .Type "favorites" -}}
   {{- $pageTitle = printf "%s | %s" .Title .Site.Title -}}
+  {{- else if eq .Section "brand" -}}
+  {{- if or .IsSection (not .Params.brand_name) -}}
+  {{- $pageTitle = printf "ブランド一覧 | %s" .Site.Title -}}
+  {{- else -}}
+  {{- $pageTitle = printf "【Amazon】%sのおすすめ商品・調査レポート | %s" .Title .Site.Title -}}
+  {{- end -}}
   {{- else -}}
   {{- $pageTitle = printf "%s レビュー | %s" .Title .Site.Title -}}
   {{- end -}}
