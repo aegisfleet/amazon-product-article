@@ -26,62 +26,68 @@
     ],
     "userStories": [
       {
-        "userType": "30代会社員",
-        "scenario": "寝室でのスマホ充電用として",
-        "experience": "付属の短いケーブルでは不便だったため2mのものを購入。ベッドで寝転びながら操作しても余裕があり快適に充電できています。ナイロン編みで丈夫そうなのも良いです。（推測）",
+        "userType": "寝室でスマホを使うユーザー",
+        "scenario": "コンセントからベッドまでの距離がある環境での充電",
+        "experience": "2mという長さのおかげで、ベッドで寝転がりながらスマホを充電して使えるようになりました。ケーブルもナイロン製でしっかりしており、断線の心配が少ないのが良いです。",
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "positive"
-      },
-      {
-        "userType": "20代学生",
-        "scenario": "ノートPCへの充電",
-        "experience": "スマホの充電は問題なく早いですが、MacBookへの充電は出力不足で遅いため、ノートPC用には別途PD対応ケーブルと充電器が必要でした。購入前に仕様の確認が必要です。（推測）",
-        "sentiment": "mixed"
       }
     ],
     "userImpression": "2mという使い勝手の良い長さの2本セットで、約1,100円という高いコストパフォーマンスが評価されるモデル。スマートフォンやタブレットの普段使いの充電用として、耐久性も期待でき満足度が高いと推測される。一方で、PD充電や映像出力といった高度な機能は省かれているため、用途に応じた選択が必要。",
     "sources": [
       {
-        "name": "Amazon: Sweguard USB Type C ケーブル 商品ページ",
+        "id": "src-1",
+        "name": "Amazon商品ページ",
         "url": "https://www.amazon.co.jp/dp/B0B21CCHTY",
-        "credibility": "高（公式仕様・特徴情報）"
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-07-22",
+        "author": "sweguard",
+        "conflictOfInterest": "possible",
+        "notes": "製品仕様、価格、特徴を確認"
       }
     ],
-    "lastInvestigated": "2026-03-01",
+    "lastInvestigated": "2026-07-22",
     "competitiveAnalysis": [
       {
-        "name": "NIMASO USB Type C ケーブル 【2m/2本セット】",
-        "asin": "B09NNM15VJ",
-        "priceComparison": "同価格（1,099円）",
+        "name": "Cardill usb c ケーブル",
+        "asin": "B0FDWC9CW2",
+        "priceComparison": "対象商品は1,099円、競合商品は999円（1m2本、2m2本の4本セット）。競合は本数とバリエーションが多くコストパフォーマンスに優れる。",
         "featureComparison": [
-          "QC3.0 3A急速充電対応",
-          "ナイロン編み高耐久仕様"
+          "共通点：QC3.0急速充電対応、ナイロン素材の高耐久仕様",
+          "相違点：対象商品は2mが2本。競合商品は1mと2mが各2本の計4本セットとなっている。"
         ],
         "differentiators": [
-          "スペック・価格共にほぼ同等だが、NIMASOは保護フィルム等で知名度・ブランド力があり安心感がある"
+          "対象商品の利点：2mの長さのみを2本必要とするユーザーにとってシンプルで使いやすい。",
+          "競合商品の利点：様々な利用シーンに合わせて1mと2mの長さを使い分けたい人、より多くの本数を求める人に適している。"
         ]
       },
       {
-        "name": "RAVIAD USB Type C ケーブル【2m/3本セット】",
-        "asin": "B0DL1RD49G",
-        "priceComparison": "本商品より安価（999円）",
+        "name": "etguuds USB Type C ケーブル",
+        "asin": "B0D17QBP7C",
+        "priceComparison": "対象商品と同価格（1,099円）で、提供される本数（2m×2本）も同じ。",
         "featureComparison": [
-          "QC3.0対応",
-          "USB 2.0データ転送"
+          "共通点：2m×2本セット、Type-A to Type-C、QC3.0対応、ナイロン編み高耐久",
+          "相違点：対象商品は金メッキ端子をアピールしているのに対し、競合は20,000回以上の曲げ試験合格をアピールしている。性能面はほぼ同等。"
         ],
         "differentiators": [
-          "本商品より安価でありながら3本セットとなっており、圧倒的なコストパフォーマンスを誇る"
+          "対象商品の利点：接続端子の耐食性を重視し、金メッキ加工を求める人に適している。",
+          "競合商品の利点：より高い曲げ耐性（20000回試験クリア）を求める人に適している。"
         ]
       },
       {
-        "name": "UGREEN USB Type C ケーブル 【PD対応 60W 急速充電】2本セット",
+        "name": "UGREEN USB Type C ケーブル",
         "asin": "B086PSF44H",
-        "priceComparison": "本商品よりやや高価（1,599円）",
+        "priceComparison": "対象商品は1,099円、競合商品は987円。競合はType-C to Type-Cケーブル。",
         "featureComparison": [
-          "PD 60W急速充電対応",
-          "USB-C to USB-C接続"
+          "共通点：2m×2本セット",
+          "相違点：対象商品はType-A to Type-CでQC3.0対応。競合はType-C to Type-CでPD60W対応。"
         ],
         "differentiators": [
-          "両端がType-CでPD充電に対応しているため、スマホだけでなくMacBook等のノートPCの充電にも適している"
+          "対象商品の利点：USB-A充電器を使いたい環境に適している。",
+          "競合商品の利点：Type-C充電器を使ってPD急速充電（最大60W）を行いたい人に適している。"
         ]
       }
     ],
@@ -105,13 +111,30 @@
       "scoreRationale": "[基本点: 70]\n[加点: +5] (2本セットで1,099円とコストパフォーマンスが良い)\n[加点: +3] (15,000回の曲げテスト合格の高耐久ナイロン素材で実用性が高い)\n[減点: -3] (PD急速充電や映像出力には非対応で、最新機器への適応力が限定される)\n[合計: 75]"
     },
     "technicalSpecs": {
-      "length": "2m",
-      "quantity": "2本セット",
-      "power": "最大3A (QC3.0対応)",
-      "dataTransfer": "最大480Mbps (USB 2.0基準)",
-      "material": "ナイロンファイバー被覆、金メッキコネクタ",
-      "videoOutput": "非対応",
-      "compatibility": "Type-C搭載のスマートフォン、タブレット等（MacBook等PCへの給電は非推奨）"
-    }
+      "dimensions": {
+        "height": "10mm",
+        "width": "40mm",
+        "depth": "80mm"
+      },
+      "size": "2m",
+      "color": "灰",
+      "connectorType": "USB Type-A to USB Type-C",
+      "chargingStandard": "Quick Charge 3.0 (最大3A)",
+      "dataTransferRate": "最大480Mbps (USB 2.0基準)",
+      "material": "ナイロンファイバー被覆、金メッキ加工端子",
+      "safetyFeatures": "56kΩレジスタ実装"
+    },
+    "claims": [
+      {
+        "claim": "15000回以上の曲げ試験に合格し寿命を4倍以上に向上",
+        "category": "durability",
+        "confidence": "medium",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "crossChecked": false,
+        "notes": "メーカーの仕様説明に基づく"
+      }
+    ]
   }
 }
