@@ -101,8 +101,8 @@
             clearBtn.style.display = 'block';
 
             brandCards.forEach(function (card) {
-                var name = card.getAttribute('data-brand-name') || '';
-                var slug = card.getAttribute('data-brand-slug') || '';
+                var name = card.dataset.brandName || '';
+                var slug = card.dataset.brandSlug || '';
                 var text = card.textContent.toLowerCase();
 
                 if (name.includes(query) || slug.includes(query) || text.includes(query)) {
