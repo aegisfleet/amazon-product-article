@@ -739,7 +739,7 @@
   },
   "Eufy": {
     "slug": "eufy",
-    "icon": "🏷️",
+    "icon": "🤖",
     "description": "Eufyの商品一覧",
     "matcher": {
       "type": "brand",
@@ -748,7 +748,7 @@
   },
   "ダイヤモンド社": {
     "slug": "ダイヤモンド社",
-    "icon": "🏷️",
+    "icon": "📚",
     "description": "ダイヤモンド社の商品一覧",
     "matcher": {
       "type": "brand",
@@ -757,11 +757,974 @@
   },
   "スクウェア・エニックス": {
     "slug": "スクウェア・エニックス",
-    "icon": "🏷️",
+    "icon": "🎮",
     "description": "スクウェア・エニックスの商品一覧",
     "matcher": {
       "type": "brand",
       "value": "スクウェア・エニックス"
+    }
+  },
+  "天馬": {
+    "slug": "天馬",
+    "icon": "📦",
+    "description": "天馬の商品一覧",
+    "matcher": {
+      "type": "brand",
+      "value": "天馬"
+    }
+  },
+  "猫壱": {
+    "slug": "猫壱",
+    "icon": "🐱",
+    "description": "猫壱の商品一覧",
+    "matcher": {
+      "type": "brand",
+      "value": "猫壱"
+    }
+  },
+  "和平フレイズ": {
+    "slug": "和平フレイズ",
+    "icon": "🍳",
+    "description": "和平フレイズの商品一覧",
+    "matcher": {
+      "type": "brand",
+      "value": "和平フレイズ"
+    }
+  },
+  "ANUA": {
+    "slug": "anua",
+    "icon": "🌿",
+    "description": "ANUAの商品一覧",
+    "matcher": {
+      "type": "brand",
+      "value": "ANUA"
+    }
+  },
+  "双葉社": {
+    "slug": "双葉社",
+    "icon": "📖",
+    "description": "双葉社の商品一覧",
+    "matcher": {
+      "type": "brand",
+      "value": "双葉社"
+    }
+  },
+  "SBクリエイティブ": {
+    "slug": "sbクリエイティブ",
+    "icon": "📘",
+    "description": "SBクリエイティブの商品一覧",
+    "matcher": {
+      "type": "brand",
+      "value": "SBクリエイティブ"
+    }
+  },
+  "ベッセル": {
+    "slug": "ベッセル",
+    "icon": "🛠️",
+    "description": "ベッセルの商品一覧",
+    "matcher": {
+      "type": "brand",
+      "value": "ベッセル"
+    }
+  },
+  "スリーエム": {
+    "slug": "スリーエム",
+    "icon": "🩹",
+    "description": "スリーエムの商品一覧",
+    "matcher": {
+      "type": "brand",
+      "value": "スリーエム"
+    }
+  },
+  "ファンケル": {
+    "slug": "ファンケル",
+    "icon": "🧴",
+    "description": "ファンケルの商品一覧",
+    "matcher": {
+      "type": "brand",
+      "value": "ファンケル"
+    }
+  },
+  "ザバス": {
+    "slug": "ザバス",
+    "icon": "🥛",
+    "description": "ザバスの商品一覧",
+    "matcher": {
+      "type": "brand",
+      "value": "ザバス"
+    }
+  },
+  "swars": {
+    "slug": "swars",
+    "icon": "🎧",
+    "description": "swarsの商品一覧",
+    "matcher": {
+      "type": "brand",
+      "value": "swars"
+    }
+  },
+  "アテックス": {
+    "slug": "アテックス",
+    "icon": "💆",
+    "description": "アテックスの商品一覧",
+    "matcher": {
+      "type": "brand",
+      "value": "アテックス"
+    }
+  },
+  "文藝春秋": {
+    "slug": "文藝春秋",
+    "icon": "📕",
+    "description": "文藝春秋の商品一覧",
+    "matcher": {
+      "type": "brand",
+      "value": "文藝春秋"
+    }
+  },
+  "不二貿易": {
+    "slug": "不二貿易",
+    "icon": "🪑",
+    "description": "不二貿易の商品一覧",
+    "matcher": {
+      "type": "brand",
+      "value": "不二貿易"
+    }
+  },
+  "キュレル": {
+    "slug": "キュレル",
+    "icon": "🧴",
+    "description": "キュレルの商品一覧",
+    "matcher": {
+      "type": "brand",
+      "value": "キュレル"
+    }
+  },
+  "Pixio": {
+    "slug": "pixio",
+    "icon": "🖥️",
+    "description": "Pixioの商品一覧",
+    "matcher": {
+      "type": "brand",
+      "value": "Pixio"
+    }
+  },
+  "ジアニスト": {
+    "slug": "ジアニスト",
+    "icon": "🧴",
+    "description": "ジアニストの商品一覧",
+    "matcher": {
+      "type": "brand",
+      "value": "ジアニスト"
+    }
+  },
+  "Kate": {
+    "slug": "kate",
+    "icon": "💄",
+    "description": "Kateの商品一覧",
+    "matcher": {
+      "type": "brand",
+      "value": "Kate"
+    }
+  },
+  "コムテック": {
+    "slug": "コムテック",
+    "icon": "📹",
+    "description": "コムテックの商品一覧",
+    "matcher": {
+      "type": "brand",
+      "value": "コムテック"
+    }
+  },
+  "HUANUO": {
+    "slug": "huanuo",
+    "icon": "🖥️",
+    "description": "HUANUOの商品一覧",
+    "matcher": {
+      "type": "brand",
+      "value": "HUANUO"
+    }
+  },
+  "Diane": {
+    "slug": "diane",
+    "icon": "🧴",
+    "description": "Dianeの商品一覧",
+    "matcher": {
+      "type": "brand",
+      "value": "Diane"
+    }
+  },
+  "VT COSMETICS": {
+    "slug": "vt-cosmetics",
+    "icon": "🌿",
+    "description": "VT COSMETICSの商品一覧",
+    "matcher": {
+      "type": "brand",
+      "value": "VT COSMETICS"
+    }
+  },
+  "パンパース": {
+    "slug": "パンパース",
+    "icon": "👶",
+    "description": "パンパースの商品一覧",
+    "matcher": {
+      "type": "brand",
+      "value": "パンパース"
+    }
+  },
+  "小学館": {
+    "slug": "小学館",
+    "icon": "📕",
+    "description": "小学館の商品一覧",
+    "matcher": {
+      "type": "brand",
+      "value": "小学館"
+    }
+  },
+  "medicube": {
+    "slug": "medicube",
+    "icon": "💆",
+    "description": "medicubeの商品一覧",
+    "matcher": {
+      "type": "brand",
+      "value": "medicube"
+    }
+  },
+  "RELX": {
+    "slug": "relx",
+    "icon": "💆",
+    "description": "RELXの商品一覧",
+    "matcher": {
+      "type": "brand",
+      "value": "RELX"
+    }
+  },
+  "LG": {
+    "slug": "lg",
+    "icon": "🖥️",
+    "description": "LGの商品一覧",
+    "matcher": {
+      "type": "brand",
+      "value": "LG"
+    }
+  },
+  "Combi": {
+    "slug": "combi",
+    "icon": "👶",
+    "description": "Combiの商品一覧",
+    "matcher": {
+      "type": "brand",
+      "value": "Combi"
+    }
+  },
+  "エッセンシャル": {
+    "slug": "エッセンシャル",
+    "icon": "🧴",
+    "description": "エッセンシャルの商品一覧",
+    "matcher": {
+      "type": "brand",
+      "value": "エッセンシャル"
+    }
+  },
+  "ドウシシャ": {
+    "slug": "ドウシシャ",
+    "icon": "🏠",
+    "description": "ドウシシャの商品一覧",
+    "matcher": {
+      "type": "brand",
+      "value": "ドウシシャ"
+    }
+  },
+  "Moondrop": {
+    "slug": "moondrop",
+    "icon": "🎧",
+    "description": "Moondropの商品一覧",
+    "matcher": {
+      "type": "brand",
+      "value": "Moondrop"
+    }
+  },
+  "Motorola": {
+    "slug": "motorola",
+    "icon": "📱",
+    "description": "Motorolaの商品一覧",
+    "matcher": {
+      "type": "brand",
+      "value": "Motorola"
+    }
+  },
+  "Merit": {
+    "slug": "merit",
+    "icon": "🧴",
+    "description": "Meritの商品一覧",
+    "matcher": {
+      "type": "brand",
+      "value": "Merit"
+    }
+  },
+  "melt": {
+    "slug": "melt",
+    "icon": "🧴",
+    "description": "meltの商品一覧",
+    "matcher": {
+      "type": "brand",
+      "value": "melt"
+    }
+  },
+  "集英社": {
+    "slug": "集英社",
+    "icon": "📙",
+    "description": "集英社の商品一覧",
+    "matcher": {
+      "type": "brand",
+      "value": "集英社"
+    }
+  },
+  "ディスカヴァー・トゥエンティワン": {
+    "slug": "ディスカヴァー・トゥエンティワン",
+    "icon": "📘",
+    "description": "ディスカヴァー・トゥエンティワンの商品一覧",
+    "matcher": {
+      "type": "brand",
+      "value": "ディスカヴァー・トゥエンティワン"
+    }
+  },
+  "Mattel Games": {
+    "slug": "mattel-games",
+    "icon": "🎲",
+    "description": "Mattel Gamesの商品一覧",
+    "matcher": {
+      "type": "brand",
+      "value": "Mattel Games"
+    }
+  },
+  "エーモン": {
+    "slug": "エーモン",
+    "icon": "🚗",
+    "description": "エーモンの商品一覧",
+    "matcher": {
+      "type": "brand",
+      "value": "エーモン"
+    }
+  },
+  "Makita": {
+    "slug": "makita",
+    "icon": "🛠️",
+    "description": "Makitaの商品一覧",
+    "matcher": {
+      "type": "brand",
+      "value": "Makita"
+    }
+  },
+  "クラシエの漢方": {
+    "slug": "クラシエの漢方",
+    "icon": "💊",
+    "description": "クラシエの漢方の商品一覧",
+    "matcher": {
+      "type": "brand",
+      "value": "クラシエの漢方"
+    }
+  },
+  "Seiko": {
+    "slug": "seiko",
+    "icon": "⌚",
+    "description": "Seikoの商品一覧",
+    "matcher": {
+      "type": "brand",
+      "value": "Seiko"
+    }
+  },
+  "Shure": {
+    "slug": "shure",
+    "icon": "🎙️",
+    "description": "Shureの商品一覧",
+    "matcher": {
+      "type": "brand",
+      "value": "Shure"
+    }
+  },
+  "HiKOKI": {
+    "slug": "hikoki",
+    "icon": "🛠️",
+    "description": "HiKOKIの商品一覧",
+    "matcher": {
+      "type": "brand",
+      "value": "HiKOKI"
+    }
+  },
+  "綾鷹": {
+    "slug": "綾鷹",
+    "icon": "🍵",
+    "description": "綾鷹の商品一覧",
+    "matcher": {
+      "type": "brand",
+      "value": "綾鷹"
+    }
+  },
+  "iwaki": {
+    "slug": "iwaki",
+    "icon": "🥣",
+    "description": "iwakiの商品一覧",
+    "matcher": {
+      "type": "brand",
+      "value": "iwaki"
+    }
+  },
+  "MARO": {
+    "slug": "maro",
+    "icon": "🧴",
+    "description": "MAROの商品一覧",
+    "matcher": {
+      "type": "brand",
+      "value": "MARO"
+    }
+  },
+  "ZAMST": {
+    "slug": "zamst",
+    "icon": "🦵",
+    "description": "ZAMSTの商品一覧",
+    "matcher": {
+      "type": "brand",
+      "value": "ZAMST"
+    }
+  },
+  "Under Armour": {
+    "slug": "under-armour",
+    "icon": "👕",
+    "description": "Under Armourの商品一覧",
+    "matcher": {
+      "type": "brand",
+      "value": "Under Armour"
+    }
+  },
+  "激落ちくん": {
+    "slug": "激落ちくん",
+    "icon": "🧽",
+    "description": "激落ちくんの商品一覧",
+    "matcher": {
+      "type": "brand",
+      "value": "激落ちくん"
+    }
+  },
+  "松屋": {
+    "slug": "松屋",
+    "icon": "🍛",
+    "description": "松屋の商品一覧",
+    "matcher": {
+      "type": "brand",
+      "value": "松屋"
+    }
+  },
+  "ファイナル": {
+    "slug": "ファイナル",
+    "icon": "🎧",
+    "description": "ファイナルの商品一覧",
+    "matcher": {
+      "type": "brand",
+      "value": "ファイナル"
+    }
+  },
+  "suptek": {
+    "slug": "suptek",
+    "icon": "🖥️",
+    "description": "suptekの商品一覧",
+    "matcher": {
+      "type": "brand",
+      "value": "suptek"
+    }
+  },
+  "Yinyoo": {
+    "slug": "yinyoo",
+    "icon": "🎧",
+    "description": "Yinyooの商品一覧",
+    "matcher": {
+      "type": "brand",
+      "value": "Yinyoo"
+    }
+  },
+  "プリマソーレ": {
+    "slug": "プリマソーレ",
+    "icon": "🧘",
+    "description": "プリマソーレの商品一覧",
+    "matcher": {
+      "type": "brand",
+      "value": "プリマソーレ"
+    }
+  },
+  "Bioré": {
+    "slug": "bior",
+    "icon": "🧼",
+    "description": "Bioréの商品一覧",
+    "matcher": {
+      "type": "brand",
+      "value": "Bioré"
+    }
+  },
+  "seninhi": {
+    "slug": "seninhi",
+    "icon": "📱",
+    "description": "seninhiの商品一覧",
+    "matcher": {
+      "type": "brand",
+      "value": "seninhi"
+    }
+  },
+  "SHOKZ": {
+    "slug": "shokz",
+    "icon": "🎧",
+    "description": "SHOKZの商品一覧",
+    "matcher": {
+      "type": "brand",
+      "value": "SHOKZ"
+    }
+  },
+  "Nile": {
+    "slug": "nile",
+    "icon": "🧴",
+    "description": "Nileの商品一覧",
+    "matcher": {
+      "type": "brand",
+      "value": "Nile"
+    }
+  },
+  "REYS": {
+    "slug": "reys",
+    "icon": "🥛",
+    "description": "REYSの商品一覧",
+    "matcher": {
+      "type": "brand",
+      "value": "REYS"
+    }
+  },
+  "GTPLAYER": {
+    "slug": "gtplayer",
+    "icon": "🪑",
+    "description": "GTPLAYERの商品一覧",
+    "matcher": {
+      "type": "brand",
+      "value": "GTPLAYER"
+    }
+  },
+  "FAMROLLS": {
+    "slug": "famrolls",
+    "icon": "🖥️",
+    "description": "FAMROLLSの商品一覧",
+    "matcher": {
+      "type": "brand",
+      "value": "FAMROLLS"
+    }
+  },
+  "Insta360": {
+    "slug": "insta360",
+    "icon": "📷",
+    "description": "Insta360の商品一覧",
+    "matcher": {
+      "type": "brand",
+      "value": "Insta360"
+    }
+  },
+  "Dyson": {
+    "slug": "dyson",
+    "icon": "🧹",
+    "description": "Dysonの商品一覧",
+    "matcher": {
+      "type": "brand",
+      "value": "Dyson"
+    }
+  },
+  "THE ANSWER": {
+    "slug": "the-answer",
+    "icon": "🧴",
+    "description": "THE ANSWERの商品一覧",
+    "matcher": {
+      "type": "brand",
+      "value": "THE ANSWER"
+    }
+  },
+  "朝日新聞出版": {
+    "slug": "朝日新聞出版",
+    "icon": "📰",
+    "description": "朝日新聞出版の商品一覧",
+    "matcher": {
+      "type": "brand",
+      "value": "朝日新聞出版"
+    }
+  },
+  "徳間書店": {
+    "slug": "徳間書店",
+    "icon": "📚",
+    "description": "徳間書店の商品一覧",
+    "matcher": {
+      "type": "brand",
+      "value": "徳間書店"
+    }
+  },
+  "おーいお茶": {
+    "slug": "おーいお茶",
+    "icon": "🍵",
+    "description": "おーいお茶の商品一覧",
+    "matcher": {
+      "type": "brand",
+      "value": "おーいお茶"
+    }
+  },
+  "トラスコ中山": {
+    "slug": "トラスコ中山",
+    "icon": "🧰",
+    "description": "トラスコ中山の商品一覧",
+    "matcher": {
+      "type": "brand",
+      "value": "トラスコ中山"
+    }
+  },
+  "ぺんてる": {
+    "slug": "ぺんてる",
+    "icon": "✏️",
+    "description": "ぺんてるの商品一覧",
+    "matcher": {
+      "type": "brand",
+      "value": "ぺんてる"
+    }
+  },
+  "Ziploc": {
+    "slug": "ziploc",
+    "icon": "🛍️",
+    "description": "Ziplocの商品一覧",
+    "matcher": {
+      "type": "brand",
+      "value": "Ziploc"
+    }
+  },
+  "プロスタッフ": {
+    "slug": "プロスタッフ",
+    "icon": "🚗",
+    "description": "プロスタッフの商品一覧",
+    "matcher": {
+      "type": "brand",
+      "value": "プロスタッフ"
+    }
+  },
+  "Q＆Q": {
+    "slug": "q-q",
+    "icon": "⌚",
+    "description": "Q＆Qの商品一覧",
+    "matcher": {
+      "type": "brand",
+      "value": "Q＆Q"
+    }
+  },
+  "リンレイ": {
+    "slug": "リンレイ",
+    "icon": "🧹",
+    "description": "リンレイの商品一覧",
+    "matcher": {
+      "type": "brand",
+      "value": "リンレイ"
+    }
+  },
+  "ミツカン": {
+    "slug": "ミツカン",
+    "icon": "🍶",
+    "description": "ミツカンの商品一覧",
+    "matcher": {
+      "type": "brand",
+      "value": "ミツカン"
+    }
+  },
+  "From da Phactory": {
+    "slug": "from-da-phactory",
+    "icon": "👂",
+    "description": "From da Phactoryの商品一覧",
+    "matcher": {
+      "type": "brand",
+      "value": "From da Phactory"
+    }
+  },
+  "オルビス": {
+    "slug": "オルビス",
+    "icon": "🧴",
+    "description": "オルビスの商品一覧",
+    "matcher": {
+      "type": "brand",
+      "value": "オルビス"
+    }
+  },
+  "メイベリン": {
+    "slug": "メイベリン",
+    "icon": "💄",
+    "description": "メイベリンの商品一覧",
+    "matcher": {
+      "type": "brand",
+      "value": "メイベリン"
+    }
+  },
+  "DECORATIVE EYES": {
+    "slug": "decorative-eyes",
+    "icon": "👀",
+    "description": "DECORATIVE EYESの商品一覧",
+    "matcher": {
+      "type": "brand",
+      "value": "DECORATIVE EYES"
+    }
+  },
+  "NIMASO": {
+    "slug": "nimaso",
+    "icon": "📱",
+    "description": "NIMASOの商品一覧",
+    "matcher": {
+      "type": "brand",
+      "value": "NIMASO"
+    }
+  },
+  "Ergotron": {
+    "slug": "ergotron",
+    "icon": "🖥️",
+    "description": "Ergotronの商品一覧",
+    "matcher": {
+      "type": "brand",
+      "value": "Ergotron"
+    }
+  },
+  "午後の紅茶": {
+    "slug": "午後の紅茶",
+    "icon": "🫖",
+    "description": "午後の紅茶の商品一覧",
+    "matcher": {
+      "type": "brand",
+      "value": "午後の紅茶"
+    }
+  },
+  "ＳＣＡＬＰＤ": {
+    "slug": "",
+    "icon": "💇",
+    "description": "ＳＣＡＬＰＤの商品一覧",
+    "matcher": {
+      "type": "brand",
+      "value": "ＳＣＡＬＰＤ"
+    }
+  },
+  "Cybex": {
+    "slug": "cybex",
+    "icon": "👶",
+    "description": "Cybexの商品一覧",
+    "matcher": {
+      "type": "brand",
+      "value": "Cybex"
+    }
+  },
+  "アイリスプラザ": {
+    "slug": "アイリスプラザ",
+    "icon": "🏠",
+    "description": "アイリスプラザの商品一覧",
+    "matcher": {
+      "type": "brand",
+      "value": "アイリスプラザ"
+    }
+  },
+  "Belkin": {
+    "slug": "belkin",
+    "icon": "🔌",
+    "description": "Belkinの商品一覧",
+    "matcher": {
+      "type": "brand",
+      "value": "Belkin"
+    }
+  },
+  "asics": {
+    "slug": "asics",
+    "icon": "👟",
+    "description": "asicsの商品一覧",
+    "matcher": {
+      "type": "brand",
+      "value": "asics"
+    }
+  },
+  "マニフィーク": {
+    "slug": "マニフィーク",
+    "icon": "🧴",
+    "description": "マニフィークの商品一覧",
+    "matcher": {
+      "type": "brand",
+      "value": "マニフィーク"
+    }
+  },
+  "マーナ": {
+    "slug": "マーナ",
+    "icon": "🧹",
+    "description": "マーナの商品一覧",
+    "matcher": {
+      "type": "brand",
+      "value": "マーナ"
+    }
+  },
+  "ROOMMATE": {
+    "slug": "roommate",
+    "icon": "🍳",
+    "description": "ROOMMATEの商品一覧",
+    "matcher": {
+      "type": "brand",
+      "value": "ROOMMATE"
+    }
+  },
+  "UNIVERSAL MUSIC GROUP": {
+    "slug": "universal-music-group",
+    "icon": "🎵",
+    "description": "UNIVERSAL MUSIC GROUPの商品一覧",
+    "matcher": {
+      "type": "brand",
+      "value": "UNIVERSAL MUSIC GROUP"
+    }
+  },
+  "ケンウッド": {
+    "slug": "ケンウッド",
+    "icon": "📻",
+    "description": "ケンウッドの商品一覧",
+    "matcher": {
+      "type": "brand",
+      "value": "ケンウッド"
+    }
+  },
+  "槌屋ヤック": {
+    "slug": "槌屋ヤック",
+    "icon": "🚗",
+    "description": "槌屋ヤックの商品一覧",
+    "matcher": {
+      "type": "brand",
+      "value": "槌屋ヤック"
+    }
+  },
+  "Lululun": {
+    "slug": "lululun",
+    "icon": "🎭",
+    "description": "Lululunの商品一覧",
+    "matcher": {
+      "type": "brand",
+      "value": "Lululun"
+    }
+  },
+  "THE NORTH FACE": {
+    "slug": "the-north-face",
+    "icon": "🧥",
+    "description": "THE NORTH FACEの商品一覧",
+    "matcher": {
+      "type": "brand",
+      "value": "THE NORTH FACE"
+    }
+  },
+  "ハイパーエックス": {
+    "slug": "ハイパーエックス",
+    "icon": "🎧",
+    "description": "ハイパーエックスの商品一覧",
+    "matcher": {
+      "type": "brand",
+      "value": "ハイパーエックス"
+    }
+  },
+  "d'alba Piedmont": {
+    "slug": "d-alba-piedmont",
+    "icon": "🧴",
+    "description": "d'alba Piedmontの商品一覧",
+    "matcher": {
+      "type": "brand",
+      "value": "d'alba Piedmont"
+    }
+  },
+  "ドリップコーヒーファクトリー": {
+    "slug": "ドリップコーヒーファクトリー",
+    "icon": "☕",
+    "description": "ドリップコーヒーファクトリーの商品一覧",
+    "matcher": {
+      "type": "brand",
+      "value": "ドリップコーヒーファクトリー"
+    }
+  },
+  "ガーミン": {
+    "slug": "ガーミン",
+    "icon": "⌚",
+    "description": "ガーミンの商品一覧",
+    "matcher": {
+      "type": "brand",
+      "value": "ガーミン"
+    }
+  },
+  "AMBiQUE": {
+    "slug": "ambique",
+    "icon": "🧴",
+    "description": "AMBiQUEの商品一覧",
+    "matcher": {
+      "type": "brand",
+      "value": "AMBiQUE"
+    }
+  },
+  "アイ・オー・データ": {
+    "slug": "アイ・オー・データ",
+    "icon": "💾",
+    "description": "アイ・オー・データの商品一覧",
+    "matcher": {
+      "type": "brand",
+      "value": "アイ・オー・データ"
+    }
+  },
+  "VECELO": {
+    "slug": "vecelo",
+    "icon": "🪑",
+    "description": "VECELOの商品一覧",
+    "matcher": {
+      "type": "brand",
+      "value": "VECELO"
+    }
+  },
+  "悩み解決ラボ": {
+    "slug": "悩み解決ラボ",
+    "icon": "💡",
+    "description": "悩み解決ラボの商品一覧",
+    "matcher": {
+      "type": "brand",
+      "value": "悩み解決ラボ"
+    }
+  },
+  "Dell": {
+    "slug": "dell",
+    "icon": "💻",
+    "description": "Dellの商品一覧",
+    "matcher": {
+      "type": "brand",
+      "value": "Dell"
+    }
+  },
+  "KÄRCHER": {
+    "slug": "k-rcher",
+    "icon": "🧹",
+    "description": "KÄRCHERの商品一覧",
+    "matcher": {
+      "type": "brand",
+      "value": "KÄRCHER"
+    }
+  },
+  "ECOVACS": {
+    "slug": "ecovacs",
+    "icon": "🤖",
+    "description": "ECOVACSの商品一覧",
+    "matcher": {
+      "type": "brand",
+      "value": "ECOVACS"
+    }
+  },
+  "PYKES PEAK": {
+    "slug": "pykes-peak",
+    "icon": "⛺",
+    "description": "PYKES PEAKの商品一覧",
+    "matcher": {
+      "type": "brand",
+      "value": "PYKES PEAK"
+    }
+  },
+  "Aliliy": {
+    "slug": "aliliy",
+    "icon": "📱",
+    "description": "Aliliyの商品一覧",
+    "matcher": {
+      "type": "brand",
+      "value": "Aliliy"
     }
   }
 }

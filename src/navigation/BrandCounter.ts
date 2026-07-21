@@ -16,7 +16,7 @@ export class BrandCounter {
   private readonly blocklist: Set<string>;
   private brandManager?: BrandManager;
 
-  constructor(contentPath: string, threshold = 10, brandGroupsPath?: string) {
+  constructor(contentPath: string, threshold = 5, brandGroupsPath?: string) {
     this.contentPath = contentPath;
     this.threshold = threshold;
     this.blocklist = new Set(['ノーブランド品', 'Generic', 'Generic Brand']);
