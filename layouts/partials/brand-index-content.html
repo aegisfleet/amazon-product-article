@@ -43,7 +43,7 @@
     {{- end -}}
     {{- if ge $brandCount 1 -}}
     {{- $brandList = $brandList | append (dict "name" $brandName "slug" $brand.slug "icon" ($brand.icon | default "🏷️")
-    "count" $brandCount "description" ($brand.description | default "")) -}}
+    "count" $brandCount "description" ($brand.description | default "") "sort_key" ($brandName | lower)) -}}
     {{- end -}}
     {{- end -}}
 
@@ -67,7 +67,7 @@
 
     <!-- Brand Grid -->
     <div id="brand-grid" class="brand-grid">
-        {{- range $brandList -}}
+        {{- range sort $brandList "sort_key" "asc" -}}
         <a href="{{ `brand/` | relURL }}{{ .slug }}/" class="brand-card" data-brand-name="{{ .name | lower }}" data-brand-slug="{{ .slug | lower }}">
             <span class="brand-grid-icon">{{ .icon }}</span>
             <span class="brand-name">{{ .name }}</span>
