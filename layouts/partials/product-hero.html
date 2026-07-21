@@ -139,10 +139,11 @@
             {{- end -}}
         </div>
 
+        {{- if $product.specs -}}
         <div class="hero-meta-tags">
-            {{- partialCached "product-brand-tag.html" (dict "brand" $product.brand "class" "hero-tag hero-tag-brand") $product.brand "hero-tag hero-tag-brand" -}}
             {{- partial "product-spec-tags.html" (dict "specs" $product.specs "tagClass" "hero-tag") -}}
         </div>
+        {{- end -}}
 
         {{- $trackingCategory := "" -}}
         {{- $terms := .GetTerms "categories" -}}
