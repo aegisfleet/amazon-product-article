@@ -2,7 +2,7 @@
     {{- partial "breadcrumb.html" . -}}
 
     <div class="article-header">
-        <h1>ブランド一覧</h1>
+        <h1>{{ .Title }}</h1>
         {{- with .Description -}}<p class="article-meta">{{ . }}</p>{{- end -}}
     </div>
 
@@ -42,44 +42,91 @@
         </p>
     </div>
 
-    <div class="brand-dropdown-container" style="margin-bottom: var(--spacing-xl);">
-        <label for="brand-select" class="category-dropdown-label">ブランドを選択して移動</label>
-        <select id="brand-select" class="category-dropdown-select" style="width: 100%; max-width: 100%;">
-            <option value="">-- ブランドを選択 --</option>
-            {{- range $brandList -}}
-            <option value="{{ `brand/` | relURL }}{{ .slug }}/">{{ .icon }} {{ .name }} ({{ .count }}件)</option>
-            {{- end -}}
-        </select>
+    <!-- Keyword Filter -->
+    <div class="brand-filter-container">
+        <div class="brand-search-wrapper">
+            <span class="brand-search-icon" aria-hidden="true">🔍</span>
+            <input type="text" id="brand-search-input" class="brand-search-input" placeholder="ブランド名で絞り込み..." aria-label="ブランド名で絞り込み">
+            <button type="button" id="brand-search-clear" class="brand-search-clear-btn" style="display: none;" title="検索をクリア" aria-label="検索をクリア">✕</button>
+        </div>
+        <div id="brand-search-status" class="brand-search-status" style="display: none;">
+            該当ブランド: <strong id="filtered-brand-count">0</strong> 件 / 全 {{ len $brandList }} 件
+        </div>
     </div>
 
-    <div class="brand-grid">
+    <!-- Brand Grid -->
+    <div id="brand-grid" class="brand-grid">
         {{- range $brandList -}}
-        <a href="{{ `brand/` | relURL }}{{ .slug }}/" class="brand-card">
+        <a href="{{ `brand/` | relURL }}{{ .slug }}/" class="brand-card" data-brand-name="{{ .name | lower }}" data-brand-slug="{{ .slug | lower }}">
             <span class="brand-grid-icon">{{ .icon }}</span>
             <span class="brand-name">{{ .name }}</span>
             <span class="brand-count">{{ .count }}件</span>
         </a>
         {{- end -}}
     </div>
+
+    <!-- No Results Message -->
+    <div id="brand-no-results" class="brand-no-results" style="display: none;">
+        <p class="no-results-title">該当するブランドが見つかりませんでした</p>
+        <p class="no-results-desc">別のキーワードで検索をお試しください。</p>
+    </div>
     {{- end -}}
 </div>
 
 <script>
     document.addEventListener('DOMContentLoaded', function () {
-        var brandSelect = document.getElementById('brand-select');
-        if (brandSelect) {
-            brandSelect.addEventListener('change', function () {
-                var val = this.value;
-                if (!val) return;
-                try {
-                    var targetUrl = new URL(val, window.location.origin);
-                    if (targetUrl.origin === window.location.origin && (targetUrl.protocol === 'http:' || targetUrl.protocol === 'https:')) {
-                        window.location.href = targetUrl.href;
-                    }
-                } catch (e) {
-                    console.warn('Invalid navigation URL:', val, e);
+        var searchInput = document.getElementById('brand-search-input');
+        var clearBtn = document.getElementById('brand-search-clear');
+        var searchStatus = document.getElementById('brand-search-status');
+        var filteredCountEl = document.getElementById('filtered-brand-count');
+        var brandCards = document.querySelectorAll('.brand-grid .brand-card');
+        var noResults = document.getElementById('brand-no-results');
+
+        if (!searchInput || brandCards.length === 0) return;
+
+        function filterBrands() {
+            var query = searchInput.value.trim().toLowerCase();
+            var visibleCount = 0;
+
+            if (query === '') {
+                clearBtn.style.display = 'none';
+                searchStatus.style.display = 'none';
+                if (noResults) noResults.style.display = 'none';
+                brandCards.forEach(function (card) {
+                    card.style.display = '';
+                });
+                return;
+            }
+
+            clearBtn.style.display = 'block';
+
+            brandCards.forEach(function (card) {
+                var name = card.getAttribute('data-brand-name') || '';
+                var slug = card.getAttribute('data-brand-slug') || '';
+                var text = card.textContent.toLowerCase();
+
+                if (name.includes(query) || slug.includes(query) || text.includes(query)) {
+                    card.style.display = '';
+                    visibleCount++;
+                } else {
+                    card.style.display = 'none';
                 }
             });
+
+            if (filteredCountEl) filteredCountEl.textContent = visibleCount;
+            searchStatus.style.display = 'block';
+
+            if (noResults) {
+                noResults.style.display = (visibleCount === 0) ? 'block' : 'none';
+            }
         }
+
+        searchInput.addEventListener('input', filterBrands);
+
+        clearBtn.addEventListener('click', function () {
+            searchInput.value = '';
+            filterBrands();
+            searchInput.focus();
+        });
     });
 </script>
