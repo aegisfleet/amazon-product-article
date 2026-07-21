@@ -8,8 +8,15 @@
 {{- range $name, $b := hugo.Data.brandgroups -}}
 {{- if not $brandSlug -}}
 {{- $mValue := $b.matcher.value | default $name -}}
-{{- if or (eq $name $targetBrand) (eq $mValue $targetBrand) (hasPrefix $targetBrand $name) (hasPrefix $targetBrand
-$mValue) (findRE $mValue $targetBrand) (findRE $name $targetBrand) -}}
+{{- $pattern := $mValue -}}
+{{- if not (hasPrefix $pattern "(?i)") -}}
+{{- $pattern = printf "(?i)%s" $pattern -}}
+{{- end -}}
+{{- $namePattern := printf "(?i)%s" $name -}}
+{{- $targetLower := lower $targetBrand -}}
+{{- $nameLower := lower $name -}}
+{{- $mValueLower := lower $mValue -}}
+{{- if or (eq $nameLower $targetLower) (eq $mValueLower $targetLower) (hasPrefix $targetLower $nameLower) (hasPrefix $targetLower $mValueLower) (findRE $pattern $targetBrand) (findRE $namePattern $targetBrand) -}}
 {{- $brandSlug = $b.slug -}}
 {{- if $b.icon -}}{{- $brandIcon = $b.icon -}}{{- end -}}
 {{- end -}}
