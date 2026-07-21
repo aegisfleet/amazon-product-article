@@ -77,7 +77,7 @@ jobs:
       run: pnpm run prebuild:hugo
 
     - name: Build site with Hugo
-      run: hugo --minify
+      run: hugo
 
     - name: Validate and auto-merge PR
       env:
