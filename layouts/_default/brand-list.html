@@ -80,17 +80,12 @@
     {{- end -}}
     {{- end -}}
 
-    {{- /* Category Pills (links to category pages) */ -}}
+    {{- /* Category Pills (filter buttons for category) */ -}}
     <div class="category-pills-container" style="margin-bottom: var(--spacing-lg);">
         <div style="display: flex; flex-wrap: wrap; gap: var(--spacing-sm);">
             {{- range $brandCategories -}}
             {{- $cat := . -}}
-            {{- range $name, $taxonomy := $.Site.Taxonomies.categories -}}
-            {{- $catPage := $.Site.GetPage (printf "/categories/%s" $name) -}}
-            {{- if and $catPage (eq $catPage.LinkTitle $cat) -}}
-            <a href="{{ $catPage.RelPermalink }}" class="category-pill">{{ $cat }}</a>
-            {{- end -}}
-            {{- end -}}
+            <button type="button" class="category-pill" data-category="{{ $cat }}">{{ $cat }}</button>
             {{- end -}}
         </div>
     </div>
@@ -290,10 +285,10 @@
                     {{- $categories := .GetTerms "categories" -}}
                     {{- if $categories -}}
                     {{- $firstCat := index $categories 0 -}}
-                    <a href="{{- $firstCat.RelPermalink -}}" class="card-tag">{{- $firstCat.LinkTitle -}}</a>
+                    <span class="card-tag bargain-card-category" data-category="{{- $firstCat.LinkTitle -}}" role="button" tabindex="0">{{- $firstCat.LinkTitle -}}</span>
                     {{- with .Params.subcategory -}}<span class="card-tag-sub">{{ . }}</span>{{- end -}}
                     {{- else if .Params.category -}}
-                    <span class="card-tag">{{ .Params.category }}</span>
+                    <span class="card-tag bargain-card-category" data-category="{{ .Params.category }}" role="button" tabindex="0">{{ .Params.category }}</span>
                     {{- with .Params.subcategory -}}<span class="card-tag-sub">{{ . }}</span>{{- end -}}
                     {{- end -}}
                     <h3 class="card-title">

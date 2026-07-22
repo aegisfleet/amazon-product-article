@@ -2185,6 +2185,22 @@ a.competitor-preview:hover {
   border-color: var(--color-primary);
 }
 
+button.category-pill {
+  font-family: inherit;
+  cursor: pointer;
+  line-height: normal;
+}
+
+.category-pill.active {
+  background: var(--color-primary);
+  color: white;
+  border-color: var(--color-primary);
+}
+
+.card-tag.bargain-card-category {
+  cursor: pointer;
+}
+
 .category-tags-container {
   display: flex;
   flex-wrap: wrap;

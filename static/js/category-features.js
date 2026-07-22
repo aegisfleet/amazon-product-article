@@ -175,6 +175,15 @@ function initCategoryFeatures() {
         if (categoryResetBtn && categorySelect) {
             categoryResetBtn.disabled = (categorySelect.value === '');
         }
+
+        const categoryPillElements = document.querySelectorAll('.category-pill');
+        if (categoryPillElements.length > 0 && categorySelect) {
+            const currentCat = categorySelect.value;
+            categoryPillElements.forEach(pill => {
+                const pCat = pill.dataset.category || pill.textContent.trim();
+                pill.classList.toggle('active', pCat === currentCat && currentCat !== '');
+            });
+        }
     }
 
     /**
@@ -412,6 +421,42 @@ function initCategoryFeatures() {
         categoryResetBtn.addEventListener('click', () => {
             if (categorySelect && categorySelect.value !== '') {
                 categorySelect.value = '';
+                filterCards();
+            }
+        });
+    }
+
+    // --- Category Click Filters (Pill & Card Tag) ---
+    const categoryPillsContainer = document.querySelector('.category-pills-container');
+    if (categoryPillsContainer) {
+        categoryPillsContainer.addEventListener('click', (e) => {
+            const pill = e.target.closest('.category-pill');
+            if (!pill) return;
+            e.preventDefault();
+            const cat = pill.dataset.category || pill.textContent.trim();
+            if (cat && categorySelect) {
+                if (categorySelect.value === cat) {
+                    categorySelect.value = '';
+                } else {
+                    categorySelect.value = cat;
+                }
+                filterCards();
+            }
+        });
+    }
+
+    if (productGrid) {
+        productGrid.addEventListener('click', (e) => {
+            const catEl = e.target.closest('.bargain-card-category, .card-tag');
+            if (!catEl || catEl.classList.contains('card-tag-sub')) return;
+            e.preventDefault();
+            const cat = catEl.dataset.category || catEl.textContent.trim();
+            if (cat && categorySelect) {
+                if (categorySelect.value === cat) {
+                    categorySelect.value = '';
+                } else {
+                    categorySelect.value = cat;
+                }
                 filterCards();
             }
         });
