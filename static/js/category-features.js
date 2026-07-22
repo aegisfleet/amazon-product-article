@@ -448,7 +448,7 @@ function initCategoryFeatures() {
     if (productGrid) {
         productGrid.addEventListener('click', (e) => {
             const catEl = e.target.closest('.bargain-card-category, .card-tag');
-            if (!catEl || catEl.classList.contains('card-tag-sub')) return;
+            if (!catEl || catEl.classList.contains('card-tag-sub') || catEl.classList.contains('card-tag-brand') || catEl.tagName === 'A' || catEl.closest('a')) return;
             e.preventDefault();
             const cat = catEl.dataset.category || catEl.textContent.trim();
             if (cat && categorySelect) {
