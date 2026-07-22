@@ -4717,6 +4717,9 @@ button.category-pill {
   cursor: pointer;
   transition: all 0.2s ease;
   user-select: none;
+  border: none;
+  font-family: inherit;
+  line-height: normal;
 }
 
 .bargain-card-category:hover {
