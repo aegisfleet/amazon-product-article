@@ -18,19 +18,6 @@ document.addEventListener('DOMContentLoaded', () => {
     let initialScale = 1;
     let lastTapTime = 0;
 
-    // Helper: Convert Amazon image URL to responsive high-res version
-    function getHighResImageUrl(url) {
-        if (!url) return '';
-        // Amazon Media CDN pattern check
-        if (url.includes('media-amazon.com') || url.includes('images-amazon.com') || url.includes('ssl-images-amazon.com')) {
-            const isMobile = window.innerWidth < 768;
-            // Mobile uses SL1000 for Retina display without excessive data transfer; PC uses SL1500
-            const targetModifier = isMobile ? '._SL1000_.' : '._SL1500_.';
-            return url.replace(/\._[A-Za-z0-9_,-]+_\./i, targetModifier);
-        }
-        return url;
-    }
-
     // Create modal element once
     const modal = document.createElement('div');
     modal.className = 'image-modal';
@@ -117,8 +104,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function updateModalImage() {
         if (currentImages.length === 0) return;
         resetZoom(false);
-        const originalSrc = currentImages[currentIndex].src;
-        modalImg.src = getHighResImageUrl(originalSrc);
+        modalImg.src = currentImages[currentIndex].src;
         modalImg.alt = currentImages[currentIndex].alt || '';
 
         // Update counter and nav visibility
