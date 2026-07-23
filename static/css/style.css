@@ -1166,6 +1166,8 @@ a.hero-tag-brand:hover {
   -webkit-user-drag: none;
   transform-origin: center center;
   will-change: transform;
+  image-rendering: high-quality;
+  filter: url(#image-sharpen-filter) contrast(1.08) brightness(1.02);
 }
 
 .image-modal-close {

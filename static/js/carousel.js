@@ -22,6 +22,16 @@ document.addEventListener('DOMContentLoaded', () => {
     const modal = document.createElement('div');
     modal.className = 'image-modal';
     modal.innerHTML = `
+        <svg class="image-modal-svg-filters" aria-hidden="true" style="position: absolute; width: 0; height: 0; overflow: hidden;">
+            <defs>
+                <filter id="image-sharpen-filter">
+                    <feConvolveMatrix order="3 3" preserveAlpha="true" kernelMatrix="
+                         0 -0.7    0
+                      -0.7  3.8 -0.7
+                         0 -0.7    0"/>
+                </filter>
+            </defs>
+        </svg>
         <button class="image-modal-close" aria-label="閉じる">✕</button>
         <button class="image-modal-nav prev" aria-label="前の画像">❮</button>
         <div class="image-modal-content">
@@ -81,7 +91,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function zoomTo(targetScale, centerX = null, centerY = null) {
         const oldScale = scale;
-        const newScale = Math.min(Math.max(1, targetScale), 5);
+        const newScale = Math.min(Math.max(1, targetScale), 7);
         if (newScale === oldScale) return;
 
         if (newScale === 1) {
@@ -184,7 +194,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (dragDist > 5) return;
 
         if (scale <= 1) {
-            zoomTo(2.5, e.clientX, e.clientY);
+            zoomTo(3.2, e.clientX, e.clientY);
         } else {
             resetZoom(true);
         }
