@@ -235,14 +235,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Touch Interaction (Pinch Zoom, Pan, Double-tap & Swipe)
     let touchStartX = 0;
-    let touchStartY = 0;
     let isTouchPanning = false;
-
-    function getTouchDistance(touches) {
-        const dx = touches[0].clientX - touches[1].clientX;
-        const dy = touches[0].clientY - touches[1].clientY;
-        return Math.hypot(dx, dy);
-    }
 
     modalContent.addEventListener('touchstart', (e) => {
         if (e.touches.length === 2) {
@@ -252,7 +245,6 @@ document.addEventListener('DOMContentLoaded', () => {
         } else if (e.touches.length === 1) {
             const touch = e.touches[0];
             touchStartX = touch.clientX;
-            touchStartY = touch.clientY;
 
             if (scale > 1) {
                 isTouchPanning = true;
@@ -309,7 +301,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             }
             touchStartX = 0;
-            touchStartY = 0;
         }
     }, { passive: true });
 
@@ -400,4 +391,16 @@ document.addEventListener('DOMContentLoaded', () => {
     // Initialize all carousels
     document.querySelectorAll('.product-image-carousel').forEach(initCarousel);
 });
+
+/**
+ * Utility: Calculate distance between two touch points for pinch zoom
+ * @param {TouchList} touches
+ * @returns {number}
+ */
+function getTouchDistance(touches) {
+    const dx = touches[0].clientX - touches[1].clientX;
+    const dy = touches[0].clientY - touches[1].clientY;
+    return Math.hypot(dx, dy);
+}
+
 
