@@ -60,6 +60,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const zoomOutBtn = modal.querySelector('.image-modal-zoom-btn.zoom-out');
     const zoomResetBtn = modal.querySelector('.image-modal-zoom-btn.zoom-reset');
 
+    let mouseDownX = 0;
+    let mouseDownY = 0;
+
     function applyTransform(transition = false) {
         if (scale <= 1) {
             scale = 1;
@@ -67,7 +70,7 @@ document.addEventListener('DOMContentLoaded', () => {
             translateY = 0;
             modalImg.style.cursor = 'zoom-in';
         } else {
-            modalImg.style.cursor = isDragging ? 'grabbing' : 'grab';
+            modalImg.style.cursor = isDragging ? 'grabbing' : 'zoom-out';
         }
 
         if (transition) {
@@ -188,24 +191,32 @@ document.addEventListener('DOMContentLoaded', () => {
         zoomTo(scale + delta, e.clientX, e.clientY);
     }, { passive: false });
 
-    // Double click to toggle zoom
-    modalImg.addEventListener('dblclick', (e) => {
-        e.preventDefault();
-        if (scale > 1) {
-            resetZoom(true);
-        } else {
+    // Single click / Double click to toggle zoom
+    modalImg.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const dragDist = Math.hypot(e.clientX - mouseDownX, e.clientY - mouseDownY);
+        if (dragDist > 5) return;
+
+        if (scale <= 1) {
             zoomTo(2.5, e.clientX, e.clientY);
+        } else {
+            resetZoom(true);
         }
     });
 
     // Mouse Dragging (Panning when zoomed)
     modalImg.addEventListener('mousedown', (e) => {
-        if (scale <= 1) return;
         e.preventDefault();
-        isDragging = true;
-        startX = e.clientX - translateX;
-        startY = e.clientY - translateY;
-        modalImg.style.cursor = 'grabbing';
+        e.stopPropagation();
+        mouseDownX = e.clientX;
+        mouseDownY = e.clientY;
+
+        if (scale > 1) {
+            isDragging = true;
+            startX = e.clientX - translateX;
+            startY = e.clientY - translateY;
+            modalImg.style.cursor = 'grabbing';
+        }
     });
 
     window.addEventListener('mousemove', (e) => {
