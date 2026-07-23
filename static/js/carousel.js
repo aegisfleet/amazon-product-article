@@ -1,11 +1,35 @@
 /**
  * Product Image Carousel Controller
- * Handles swipe/scroll synchronization, navigation buttons/dots, and image modal (lightbox)
+ * Handles swipe/scroll synchronization, navigation buttons/dots, and image modal (lightbox) with zoom/pan
  */
 document.addEventListener('DOMContentLoaded', () => {
     // Modal state and elements
     let currentImages = [];
     let currentIndex = 0;
+
+    // Zoom and pan state
+    let scale = 1;
+    let translateX = 0;
+    let translateY = 0;
+    let isDragging = false;
+    let startX = 0;
+    let startY = 0;
+    let initialPinchDistance = null;
+    let initialScale = 1;
+    let lastTapTime = 0;
+
+    // Helper: Convert Amazon image URL to responsive high-res version
+    function getHighResImageUrl(url) {
+        if (!url) return '';
+        // Amazon Media CDN pattern check
+        if (url.includes('media-amazon.com') || url.includes('images-amazon.com') || url.includes('ssl-images-amazon.com')) {
+            const isMobile = window.innerWidth < 768;
+            // Mobile uses SL1000 for Retina display without excessive data transfer; PC uses SL1500
+            const targetModifier = isMobile ? '._SL1000_.' : '._SL1500_.';
+            return url.replace(/\._[A-Za-z0-9_,-]+_\./i, targetModifier);
+        }
+        return url;
+    }
 
     // Create modal element once
     const modal = document.createElement('div');
@@ -17,19 +41,81 @@ document.addEventListener('DOMContentLoaded', () => {
             <img class="image-modal-img" src="" alt="">
         </div>
         <button class="image-modal-nav next" aria-label="次の画像">❯</button>
+        <div class="image-modal-zoom-controls">
+            <button class="image-modal-zoom-btn zoom-in" title="拡大" aria-label="拡大">＋</button>
+            <button class="image-modal-zoom-btn zoom-out" title="縮小" aria-label="縮小">－</button>
+            <button class="image-modal-zoom-btn zoom-reset" title="リセット" aria-label="リセット">↺</button>
+        </div>
         <div class="image-modal-counter"></div>
     `;
     document.body.appendChild(modal);
 
+    const modalContent = modal.querySelector('.image-modal-content');
     const modalImg = modal.querySelector('.image-modal-img');
     const modalClose = modal.querySelector('.image-modal-close');
     const modalPrev = modal.querySelector('.image-modal-nav.prev');
     const modalNext = modal.querySelector('.image-modal-nav.next');
     const modalCounter = modal.querySelector('.image-modal-counter');
+    const zoomInBtn = modal.querySelector('.image-modal-zoom-btn.zoom-in');
+    const zoomOutBtn = modal.querySelector('.image-modal-zoom-btn.zoom-out');
+    const zoomResetBtn = modal.querySelector('.image-modal-zoom-btn.zoom-reset');
+
+    function applyTransform(transition = false) {
+        if (scale <= 1) {
+            scale = 1;
+            translateX = 0;
+            translateY = 0;
+            modalImg.style.cursor = 'zoom-in';
+        } else {
+            modalImg.style.cursor = isDragging ? 'grabbing' : 'grab';
+        }
+
+        if (transition) {
+            modalImg.style.transition = 'transform 0.2s cubic-bezier(0.25, 1, 0.5, 1)';
+            setTimeout(() => {
+                modalImg.style.transition = '';
+            }, 200);
+        } else {
+            modalImg.style.transition = '';
+        }
+
+        modalImg.style.transform = `translate(${translateX}px, ${translateY}px) scale(${scale})`;
+    }
+
+    function resetZoom(transition = true) {
+        scale = 1;
+        translateX = 0;
+        translateY = 0;
+        applyTransform(transition);
+    }
+
+    function zoomTo(targetScale, centerX = null, centerY = null) {
+        const oldScale = scale;
+        const newScale = Math.min(Math.max(1, targetScale), 5);
+        if (newScale === oldScale) return;
+
+        if (newScale === 1) {
+            resetZoom(true);
+            return;
+        }
+
+        if (centerX !== null && centerY !== null) {
+            const rect = modalImg.getBoundingClientRect();
+            const offsetX = centerX - (rect.left + rect.width / 2);
+            const offsetY = centerY - (rect.top + rect.height / 2);
+            translateX -= (offsetX / oldScale) * (newScale - oldScale);
+            translateY -= (offsetY / oldScale) * (newScale - oldScale);
+        }
+
+        scale = newScale;
+        applyTransform(true);
+    }
 
     function updateModalImage() {
         if (currentImages.length === 0) return;
-        modalImg.src = currentImages[currentIndex].src;
+        resetZoom(false);
+        const originalSrc = currentImages[currentIndex].src;
+        modalImg.src = getHighResImageUrl(originalSrc);
         modalImg.alt = currentImages[currentIndex].alt || '';
 
         // Update counter and nav visibility
@@ -56,6 +142,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function closeModal() {
         modal.classList.remove('active');
         document.body.style.overflow = '';
+        resetZoom(false);
     }
 
     function showPrev() {
@@ -75,30 +162,154 @@ document.addEventListener('DOMContentLoaded', () => {
     modalPrev.addEventListener('click', showPrev);
     modalNext.addEventListener('click', showNext);
     modal.addEventListener('click', (e) => {
-        if (e.target === modal) closeModal();
+        if (e.target === modal || e.target === modalContent) closeModal();
     });
 
+    // Zoom Buttons
+    zoomInBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        zoomTo(scale + 0.5);
+    });
+
+    zoomOutBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        zoomTo(scale - 0.5);
+    });
+
+    zoomResetBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        resetZoom(true);
+    });
+
+    // Mouse Wheel Zooming
+    modalContent.addEventListener('wheel', (e) => {
+        e.preventDefault();
+        const delta = e.deltaY < 0 ? 0.25 : -0.25;
+        zoomTo(scale + delta, e.clientX, e.clientY);
+    }, { passive: false });
+
+    // Double click to toggle zoom
+    modalImg.addEventListener('dblclick', (e) => {
+        e.preventDefault();
+        if (scale > 1) {
+            resetZoom(true);
+        } else {
+            zoomTo(2.5, e.clientX, e.clientY);
+        }
+    });
+
+    // Mouse Dragging (Panning when zoomed)
+    modalImg.addEventListener('mousedown', (e) => {
+        if (scale <= 1) return;
+        e.preventDefault();
+        isDragging = true;
+        startX = e.clientX - translateX;
+        startY = e.clientY - translateY;
+        modalImg.style.cursor = 'grabbing';
+    });
+
+    window.addEventListener('mousemove', (e) => {
+        if (!isDragging || scale <= 1) return;
+        translateX = e.clientX - startX;
+        translateY = e.clientY - startY;
+        applyTransform(false);
+    });
+
+    window.addEventListener('mouseup', () => {
+        if (isDragging) {
+            isDragging = false;
+            applyTransform(false);
+        }
+    });
+
+    // Keyboard Navigation & Escape
     document.addEventListener('keydown', (e) => {
         if (!modal.classList.contains('active')) return;
         if (e.key === 'Escape') closeModal();
-        else if (e.key === 'ArrowLeft') showPrev();
-        else if (e.key === 'ArrowRight') showNext();
+        else if (e.key === 'ArrowLeft' && scale === 1) showPrev();
+        else if (e.key === 'ArrowRight' && scale === 1) showNext();
+        else if (e.key === '+' || e.key === '=') zoomTo(scale + 0.5);
+        else if (e.key === '-') zoomTo(scale - 0.5);
+        else if (e.key === '0') resetZoom(true);
     });
 
-    // Touch swipe support for modal
+    // Touch Interaction (Pinch Zoom, Pan, Double-tap & Swipe)
     let touchStartX = 0;
-    modal.addEventListener('touchstart', (e) => {
-        touchStartX = e.changedTouches[0].screenX;
-    }, { passive: true });
+    let touchStartY = 0;
+    let isTouchPanning = false;
 
-    modal.addEventListener('touchend', (e) => {
-        const touchEndX = e.changedTouches[0].screenX;
-        const swipeDistance = touchEndX - touchStartX;
-        const minSwipeDistance = 50;
+    function getTouchDistance(touches) {
+        const dx = touches[0].clientX - touches[1].clientX;
+        const dy = touches[0].clientY - touches[1].clientY;
+        return Math.hypot(dx, dy);
+    }
 
-        if (Math.abs(swipeDistance) > minSwipeDistance) {
-            if (swipeDistance > 0) showPrev();
-            else showNext();
+    modalContent.addEventListener('touchstart', (e) => {
+        if (e.touches.length === 2) {
+            // Pinch zoom start
+            initialPinchDistance = getTouchDistance(e.touches);
+            initialScale = scale;
+        } else if (e.touches.length === 1) {
+            const touch = e.touches[0];
+            touchStartX = touch.clientX;
+            touchStartY = touch.clientY;
+
+            if (scale > 1) {
+                isTouchPanning = true;
+                startX = touch.clientX - translateX;
+                startY = touch.clientY - translateY;
+            }
+
+            // Double tap detection
+            const now = Date.now();
+            if (now - lastTapTime < 300) {
+                e.preventDefault();
+                if (scale > 1) {
+                    resetZoom(true);
+                } else {
+                    zoomTo(2.5, touch.clientX, touch.clientY);
+                }
+            }
+            lastTapTime = now;
+        }
+    }, { passive: false });
+
+    modalContent.addEventListener('touchmove', (e) => {
+        if (e.touches.length === 2 && initialPinchDistance) {
+            e.preventDefault();
+            const currentDistance = getTouchDistance(e.touches);
+            const factor = currentDistance / initialPinchDistance;
+            const centerMidX = (e.touches[0].clientX + e.touches[1].clientX) / 2;
+            const centerMidY = (e.touches[0].clientY + e.touches[1].clientY) / 2;
+            zoomTo(initialScale * factor, centerMidX, centerMidY);
+        } else if (e.touches.length === 1 && isTouchPanning && scale > 1) {
+            e.preventDefault();
+            const touch = e.touches[0];
+            translateX = touch.clientX - startX;
+            translateY = touch.clientY - startY;
+            applyTransform(false);
+        }
+    }, { passive: false });
+
+    modalContent.addEventListener('touchend', (e) => {
+        if (e.touches.length < 2) {
+            initialPinchDistance = null;
+        }
+        if (e.touches.length === 0) {
+            if (isTouchPanning) {
+                isTouchPanning = false;
+            } else if (scale === 1 && touchStartX) {
+                const touchEndX = e.changedTouches[0].clientX;
+                const swipeDistance = touchEndX - touchStartX;
+                const minSwipeDistance = 50;
+
+                if (Math.abs(swipeDistance) > minSwipeDistance) {
+                    if (swipeDistance > 0) showPrev();
+                    else showNext();
+                }
+            }
+            touchStartX = 0;
+            touchStartY = 0;
         }
     }, { passive: true });
 
@@ -189,3 +400,4 @@ document.addEventListener('DOMContentLoaded', () => {
     // Initialize all carousels
     document.querySelectorAll('.product-image-carousel').forEach(initCarousel);
 });
+
