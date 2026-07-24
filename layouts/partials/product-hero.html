@@ -166,15 +166,7 @@
 
         {{- $priceBucket := partial "utils-price-bucket.html" $product.price -}}
 
-        {{- if $product.affiliate_url -}}
-        <a href="{{ $product.affiliate_url }}" class="btn-amazon-hero" target="_blank" rel="noopener noreferrer"
-            data-track-product="1" data-asin="{{ $product.asin }}" data-category="{{ $trackingCategory }}"
-            data-price-bucket="{{ $priceBucket }}" data-price="{{ $product.price }}"
-            data-score="{{ $product.score | default 0 }}" data-position="0">🛒
-            Amazonで詳細を見る</a>
-        {{- end -}}
-
-        <div class="hero-favorite-row">
+        <div class="hero-actions">
             <button type="button" class="btn-favorite-hero" data-favorite-btn="1" data-asin="{{ $product.asin }}"
                 data-title="{{ .Title }}" data-url="{{ .RelPermalink }}"
                 data-affiliate-url="{{ $product.affiliate_url }}"
@@ -184,6 +176,14 @@
                 <span class="fav-icon" aria-hidden="true">🤍</span>
                 <span class="fav-label">お気に入りに追加</span>
             </button>
+
+            {{- if $product.affiliate_url -}}
+            <a href="{{ $product.affiliate_url }}" class="btn-amazon-hero" target="_blank" rel="noopener noreferrer"
+                data-track-product="1" data-asin="{{ $product.asin }}" data-category="{{ $trackingCategory }}"
+                data-price-bucket="{{ $priceBucket }}" data-price="{{ $product.price }}"
+                data-score="{{ $product.score | default 0 }}" data-position="0">🛒
+                <span>Amazonで詳細を見る</span></a>
+            {{- end -}}
         </div>
     </div>
 </div>
