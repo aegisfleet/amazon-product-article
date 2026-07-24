@@ -3508,7 +3508,7 @@ button.category-pill {
    ===================================================== */
 
 .hero-description {
-  max-width: 600px;
+  max-width: none;
   font-size: 0.95rem;
   line-height: 1.6;
   color: var(--color-text-main);
