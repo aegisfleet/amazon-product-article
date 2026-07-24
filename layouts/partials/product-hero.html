@@ -114,31 +114,35 @@
                 {{- with $hero.availability -}}<span class="badge-availability">{{ . }}</span>{{- end -}}
             </div>
         </div>
+    </div>
 
-        <div class="hero-evaluation-section">
-            {{- if $hero.target_users -}}
-            <div class="hero-eval-block hero-eval-pros">
-                <span class="hero-eval-title">👍 こんな方におすすめ</span>
-                <ul>
-                    {{- range $hero.target_users -}}
-                    <li>{{ . }}</li>
-                    {{- end -}}
-                </ul>
-            </div>
-            {{- end -}}
-
-            {{- if $hero.warnings -}}
-            <div class="hero-eval-block hero-eval-cons">
-                <span class="hero-eval-title">⚠️ 購入時の注意点</span>
-                <ul>
-                    {{- range $hero.warnings -}}
-                    <li>{{ . }}</li>
-                    {{- end -}}
-                </ul>
-            </div>
-            {{- end -}}
+    {{- if or $hero.target_users $hero.warnings -}}
+    <div class="hero-evaluation-section">
+        {{- if $hero.target_users -}}
+        <div class="hero-eval-block hero-eval-pros">
+            <span class="hero-eval-title">👍 こんな方におすすめ</span>
+            <ul>
+                {{- range $hero.target_users -}}
+                <li>{{ . }}</li>
+                {{- end -}}
+            </ul>
         </div>
+        {{- end -}}
 
+        {{- if $hero.warnings -}}
+        <div class="hero-eval-block hero-eval-cons">
+            <span class="hero-eval-title">⚠️ 購入時の注意点</span>
+            <ul>
+                {{- range $hero.warnings -}}
+                <li>{{ . }}</li>
+                {{- end -}}
+            </ul>
+        </div>
+        {{- end -}}
+    </div>
+    {{- end -}}
+
+    <div class="product-hero-footer">
         {{- if $product.specs -}}
         <div class="hero-meta-tags">
             {{- partial "product-spec-tags.html" (dict "specs" $product.specs "tagClass" "hero-tag") -}}
