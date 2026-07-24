@@ -268,6 +268,30 @@ document.addEventListener('DOMContentLoaded', function () {
         if (fuse) return; // Already initialized
 
         const searchInputWrapper = document.querySelector('.search-input-wrapper');
+        const searchClearBtn = document.getElementById('search-clear-btn');
+
+        function updateClearButtonState() {
+            if (!searchInputWrapper) return;
+            if (searchInput.value.length > 0) {
+                searchInputWrapper.classList.add('has-value');
+            } else {
+                searchInputWrapper.classList.remove('has-value');
+            }
+        }
+
+        // 初期表示時のボタン状態更新
+        updateClearButtonState();
+
+        if (searchClearBtn) {
+            searchClearBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                searchInput.value = '';
+                updateClearButtonState();
+                if (searchInputWrapper) searchInputWrapper.classList.remove('is-loading');
+                handleSearch('');
+                searchInput.focus();
+            });
+        }
 
         // Fetch index.json dynamically from data attribute
         const searchIndexUrl = searchInput.dataset.searchIndexUrl || '/index.json';
@@ -338,6 +362,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         // Event Listeners
         searchInput.addEventListener('input', (e) => {
+            updateClearButtonState();
             if (!fuse) return;
             const isPaste = e.inputType === 'insertFromPaste' || e.inputType === 'insertFromYank';
             if (e.isComposing && !isPaste) return;
@@ -353,8 +378,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
         // コピペ（ペースト）時にも即時に検索を実行
         searchInput.addEventListener('paste', () => {
+            updateClearButtonState();
             if (!fuse) return;
             setTimeout(() => {
+                updateClearButtonState();
                 const query = searchInput.value.replaceAll('　', ' ');
                 if (isValidQuery(query)) {
                     if (searchInputWrapper) searchInputWrapper.classList.add('is-loading');
@@ -367,6 +394,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         // IME入力確定時にも検索を実行
         searchInput.addEventListener('compositionend', (e) => {
+            updateClearButtonState();
             if (!fuse) return;
             const query = e.target.value.replaceAll('　', ' ');
             if (isValidQuery(query)) {
