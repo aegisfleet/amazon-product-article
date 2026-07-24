@@ -1539,20 +1539,42 @@ a.competitor-preview:hover {
 }
 
 .competitor-links {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--spacing-md);
-  align-items: center;
-  margin-top: var(--spacing-sm);
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--spacing-sm);
+  margin-top: var(--spacing-md);
+  width: 100%;
 }
 
-.competitor-links .btn-amazon-small,
-.competitor-links .btn-internal-small {
+.competitor-links a.btn-amazon-small,
+.competitor-links a.btn-internal-small,
+.competitor-links p a.btn-amazon-small,
+.competitor-links p a.btn-internal-small {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: var(--spacing-sm) var(--spacing-xs);
+  font-size: 0.85rem;
+  font-weight: 600;
   margin-top: 0;
+  white-space: nowrap;
+  box-sizing: border-box;
 }
 
 .competitor-links p {
   margin: 0;
+  grid-column: 2;
+  width: 100%;
+  display: flex;
+}
+
+.competitor-links a.btn-internal-small {
+  grid-column: 1;
+}
+
+.competitor-links a.btn-amazon-small {
+  grid-column: 2;
 }
 
 /* Feature Grid */
