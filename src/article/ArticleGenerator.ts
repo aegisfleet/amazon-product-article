@@ -792,6 +792,8 @@ ${reviewAnalysis ? this.generateSentimentAnalysis(reviewAnalysis) : ''}`;
 
           const differentiators = competitor.differentiators.map((diff) => `<li>${normalize(diff)}</li>`).join('\n');
 
+          const links = [internalLink, competitorLink].filter(Boolean).join('\n');
+
           return `<div class="competitor-card">
 <h4>${this.escapeHtml(competitor.name)}</h4>
 <p class="competitor-price">💰 ${this.escapeHtml(priceComparison)}</p>
@@ -809,8 +811,7 @@ ${differentiators}
 </div>
 ${productPreview}
 <div class="competitor-links">
-${internalLink}
-${competitorLink}
+${links}
 </div>
 </div>`;
         }),
