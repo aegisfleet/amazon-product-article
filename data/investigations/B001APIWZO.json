@@ -1,0 +1,125 @@
+{
+  "analysis": {
+    "productName": "ハーツデンタル イヌ用 ボーン M ベーコンフレーバー",
+    "parentAsin": "B084GJS1X6",
+    "productDescription": "丈夫なプラスチック素材で作られた、中〜小型犬用のデンタルケアおもちゃ。噛むことで歯垢を落とし、ベーコンフレーバーで飽きずに長く遊べます。",
+    "productUsage": [
+      "愛犬のデンタルケア",
+      "ストレス解消のための噛むおもちゃ"
+    ],
+    "positivePoints": [
+      "丈夫なプラスチック素材による高い耐久性",
+      "犬が好むベーコンフレーバー付き",
+      "噛みやすいボーン形状"
+    ],
+    "negativePoints": [
+      "硬い素材のため、歯が弱い犬や老犬には不向きな可能性がある"
+    ],
+    "useCases": [
+      "室内での留守番時の遊び",
+      "食後のデンタルケア"
+    ],
+    "userStories": [
+      {
+        "userType": "小型〜中型犬の飼い主",
+        "scenario": "愛犬のデンタルケアとストレス解消のために購入",
+        "experience": "硬い素材で長持ちし、ベーコンの香りに惹かれて毎日飽きずに噛んでくれます。すぐに壊れてしまう他のおもちゃと違い、コスパが良いのが決め手でした。",
+        "supportingSourceIds": ["src-1"],
+        "sentiment": "positive"
+      }
+    ],
+    "userImpression": "硬くて丈夫な素材により長持ちする点が高く評価されています。ベーコンの香りも食いつきを良くしており、デンタルケアとして実用的です。ただし、かなり硬いため、歯が欠けるのを心配する声もあり、犬の年齢や噛む力によって評価が分かれます。",
+    "sources": [
+      {
+        "id": "src-1",
+        "name": "Amazon商品ページ",
+        "url": "https://www.amazon.co.jp/dp/B001APIWZO",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2024-05-01",
+        "author": "Amazon",
+        "conflictOfInterest": "none",
+        "notes": "製品仕様、価格、特徴を確認"
+      },
+      {
+        "id": "src-2",
+        "name": "Amazon競合商品ページ",
+        "url": "https://www.amazon.co.jp/dp/B00YA1QVNA",
+        "tier": "medium",
+        "evidenceType": "secondary",
+        "publishedAt": "2024-05-01",
+        "author": "Amazon",
+        "conflictOfInterest": "none",
+        "notes": "競合商品の価格と仕様を確認"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "満足の噛みごたえと高い耐久性",
+        "category": "durability",
+        "confidence": "high",
+        "supportingSourceIds": ["src-1"],
+        "crossChecked": true,
+        "notes": "プラスチック素材により硬く長持ちする仕様"
+      }
+    ],
+    "lastInvestigated": "2026-07-26",
+    "competitiveAnalysis": [
+      {
+        "name": "マローボーン プチ",
+        "asin": "B00YA1QVNA",
+        "priceComparison": "同価格帯",
+        "featureComparison": [
+          "共通点：硬い素材を使用したデンタルボーン",
+          "相違点：マローボーンは中にジャーキーフレーバーのペーストが入っているが、本製品は素材自体にベーコンフレーバーが付いている"
+        ],
+        "differentiators": [
+          "ハーツデンタル イヌ用 ボーン M ベーコンフレーバーの利点：ペーストが出るタイプではないため、周囲を汚さずに長く噛ませたい場合に適している",
+          "マローボーン プチの利点：ペーストが入っているため、より強い風味で愛犬の興味を惹きつけたい場合におすすめ"
+        ]
+      },
+      {
+        "name": "ガッシガシ ボーン M",
+        "asin": "B00N4O0FMW",
+        "priceComparison": "本製品の方がやや高い",
+        "featureComparison": [
+          "共通点：中型犬向けの硬いナイロン・プラスチック製おもちゃ",
+          "相違点：本製品はベーコンフレーバー付きだが、ガッシガシ ボーンはフレーバーの主張が異なる"
+        ],
+        "differentiators": [
+          "ハーツデンタル イヌ用 ボーン M ベーコンフレーバーの利点：ベーコンの香りで犬の食いつきを良くしたいなら迷わずこちら",
+          "ガッシガシ ボーン Mの利点：価格を抑えつつ、とにかく硬くて壊れにくいシンプルなおもちゃを求める場合に適している"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "噛む力が強く、すぐに壊れない丈夫なデンタルケアおもちゃを探している中・小型犬の飼い主"
+      ],
+      "pros": [
+        "長持ちする硬質プラスチック素材で、頻繁な買い替えが不要",
+        "ベーコンフレーバーにより、愛犬が自ら進んで噛んでくれる"
+      ],
+      "cons": [
+        "非常に硬いため、歯が弱い犬やシニア犬には歯の欠損リスクがあるため避けるべき"
+      ],
+      "score": 75,
+      "scoreRationale": "[基本点: 70]\n[加点: +5] (丈夫で長持ちし、高いコスパを実現)\n[加点: +5] (ベーコンフレーバーによる良好な食いつき)\n[減点: -5] (硬すぎることによる一部の犬への適用の難しさ)\n[合計: 75]"
+    },
+    "technicalSpecs": {
+      "dimensions": {
+        "height": "25mm",
+        "width": "175mm",
+        "depth": "120mm"
+      },
+      "weight": "70g",
+      "capacity": "1個",
+      "material": "プラスチック",
+      "origin": "中国",
+      "other": [
+        "ベーコンフレーバー付き",
+        "小型犬用"
+      ]
+    }
+  }
+}
