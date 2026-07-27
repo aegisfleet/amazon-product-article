@@ -1,0 +1,145 @@
+{
+  "analysis": {
+    "productName": "Yeecan パーカー メンズ",
+    "parentAsin": "B0DFWBLJ2K",
+    "productDescription": "通気性と柔らかさに優れた、ゆったりサイズのジップアップメンズパーカー。",
+    "productUsage": ["カジュアルウェア", "アウトドア", "通勤・通学", "旅行", "部屋着"],
+    "positivePoints": [
+      "通気性が良くムレにくい設計",
+      "柔らかい素材で高い質感を確保",
+      "オーバーサイズでリラックス感のあるシルエット",
+      "無地で様々なスタイリングに対応可能な汎用性"
+    ],
+    "negativePoints": [
+      "プラスベルベット（裏起毛）のため、夏場の着用には適さない",
+      "特筆すべき機能性（防水、UVカットなど）についての記載がない"
+    ],
+    "useCases": ["肌寒い季節のちょっとした外出", "リラックスしたい日の部屋着", "通勤時の体温調節用のアウター"],
+    "userStories": [],
+    "userImpression": "着心地が柔らかく、ゆったりとしたシルエットで日常使いしやすいベーシックなパーカー。無地でシンプルなため、着回し力が高く、肌寒い時期のアウターとして重宝される。ただし、特別な機能性はないため、純粋な着心地やデザインを重視するユーザーに向いている。",
+    "sources": [
+      {
+        "id": "src-1",
+        "name": "Amazon商品ページ",
+        "url": "https://www.amazon.co.jp/dp/B0D9BF37YR",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-07-27",
+        "author": "Yeecan",
+        "conflictOfInterest": "possible",
+        "notes": "商品スペック、価格、特徴を確認"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "通気性が良くムレにくく快適です。 肌ざわりも最高です。",
+        "category": "quality",
+        "confidence": "medium",
+        "supportingSourceIds": ["src-1"],
+        "crossChecked": false,
+        "notes": "メーカーの主張。裏起毛（プラスベルベット）製品の場合、通気性との両立には個人の感じ方による差が大きいため中程度の確度。"
+      }
+    ],
+    "lastInvestigated": "2026-07-27",
+    "competitiveAnalysis": [
+      {
+        "name": "uptoyou ジップパーカー",
+        "asin": "B0DX6V975K",
+        "priceComparison": "対象商品とほぼ同価格帯。",
+        "featureComparison": [
+          "共通点：無地のジップアップパーカー、ゆったりとしたシルエット",
+          "相違点：uptoyouは12.3オンスのヘビーウェイト生地を採用しており、より厚手。"
+        ],
+        "differentiators": [
+          "Yeecanの利点：柔らかく軽い着心地を求めるならこちら",
+          "uptoyouの利点：しっかりとした厚手の生地感を求めるならこちら"
+        ]
+      },
+      {
+        "name": "Tshirt.st ジップアップパーカー",
+        "asin": "B00K65QLWA",
+        "priceComparison": "対象商品よりやや高い。",
+        "featureComparison": [
+          "共通点：無地のジップアップパーカー",
+          "相違点：Tshirt.stは6.5ozの薄手裏パイル仕様で半袖。"
+        ],
+        "differentiators": [
+          "Yeecanの利点：秋冬向けの暖かい長袖アウターを求めるならこちら",
+          "Tshirt.stの利点：春夏向けの薄手・半袖パーカーを求めるならこちら"
+        ]
+      },
+      {
+        "name": "Amazon Essentials パーカー",
+        "asin": "B08J93CGRB",
+        "priceComparison": "対象商品よりやや高い。",
+        "featureComparison": [
+          "共通点：無地のジップアップパーカー、ゆったりフィット",
+          "相違点：Amazon Essentialsはライトウエイトのフレンチテリー素材。"
+        ],
+        "differentiators": [
+          "Yeecanの利点：秋冬向けに裏起毛（プラスベルベット）の暖かさを重視するならこちら",
+          "Amazon Essentialsの利点：季節を問わず使いやすいフレンチテリー素材を好むならこちら"
+        ]
+      },
+      {
+        "name": "JHIJSC ジップアップパーカー",
+        "asin": "B08YDFQ781",
+        "priceComparison": "対象商品より高い。",
+        "featureComparison": [
+          "共通点：無地のジップアップパーカー、ゆったりサイズ",
+          "相違点：JHIJSCはよりデザイン性が高く、カラー展開も異なる。"
+        ],
+        "differentiators": [
+          "Yeecanの利点：コストパフォーマンスを重視し、シンプルなデザインを好むならこちら",
+          "JHIJSCの利点：より洗練されたデザイン性を求めるならこちら"
+        ]
+      },
+      {
+        "name": "EASTEMPO ジップアップパーカー",
+        "asin": "B0BTXX33SF",
+        "priceComparison": "対象商品よりやや高い。",
+        "featureComparison": [
+          "共通点：無地のジップアップパーカー、ゆったりサイズ",
+          "相違点：EASTEMPOは夏向けの薄手・半袖仕様。"
+        ],
+        "differentiators": [
+          "Yeecanの利点：秋冬に着用する防寒性を求めるならこちら",
+          "EASTEMPOの利点：夏場の冷房対策や日焼け防止に薄手の半袖を求めるならこちら"
+        ]
+      },
+      {
+        "name": "Ｋａｙｉｙａｓｕ ジップパーカー",
+        "asin": "B0GGH8VNBZ",
+        "priceComparison": "対象商品より少し安い。",
+        "featureComparison": [
+          "共通点：無地のジップアップパーカー、ゆったりサイズ",
+          "相違点：Ｋａｙｉｙａｓｕは12.4オンスと厚手ながら「薄手 春服」と表記があるなど生地感に違いがある可能性がある。"
+        ],
+        "differentiators": [
+          "Yeecanの利点：明確な秋冬向けアウターを探しているならこちら",
+          "Ｋａｙｉｙａｓｕの利点：春先など少し肌寒い時期の羽織りとして価格を抑えたいならこちら"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": ["シンプルで着回ししやすい秋冬向けの防寒アウターを求める人", "ゆったりとしたシルエットでリラックスした着心地を好む人"],
+      "pros": [
+        "無地でシンプルなため、様々なコーディネートに合わせやすい",
+        "ゆったりとした作りと柔らかい素材で、長時間の着用でもストレスが少ない"
+      ],
+      "cons": [
+        "裏起毛素材のため、暖かい季節には適さない"
+      ],
+      "score": 75,
+      "scoreRationale": "[基本点: 70]\n[加点: +3] (汎用性の高いシンプルなデザイン)\n[加点: +2] (柔らかく快適な着心地)\n[合計: 75]"
+    },
+    "technicalSpecs": {
+      "dimensions": { "height": "", "width": "", "depth": "" },
+      "weight": "",
+      "capacity": "",
+      "material": "プラスベルベット(裏起毛)",
+      "origin": "",
+      "other": ["color: G7.ダークグレー", "size: XL", "袖丈: 長袖", "仕様: フード付き、ジップアップ"]
+    }
+  }
+}
