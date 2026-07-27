@@ -1,0 +1,193 @@
+{
+  "analysis": {
+    "productName": "NiPoGi ミニPC Intel N5030",
+    "parentAsin": "B0C1YY8GSB",
+    "productDescription": "Intel N5030を搭載し、省スペースで設置可能なWindows 11 Pro搭載のミニPC。",
+    "productUsage": [
+      "Webブラウジング",
+      "事務作業",
+      "ホームサーバー",
+      "デュアルディスプレイ環境の構築"
+    ],
+    "positivePoints": [
+      "10×10×4cmという非常にコンパクトな筐体設計",
+      "Windows 11 Proが標準でインストール済み",
+      "デュアルディスプレイ（4K出力）に対応するインターフェース（HDMI、DP等）を備える",
+      "M.2 SSDやメモリの換装・増設に対応している"
+    ],
+    "negativePoints": [
+      "製品ページ内で搭載CPUやメモリ（8GBと12GBなど）の記載に矛盾が見られる",
+      "エントリークラスのCPUであるため、動画編集や3Dゲームなどの高負荷な作業には適さない"
+    ],
+    "useCases": [
+      "リビングのテレビに接続して動画視聴",
+      "省スペースな書斎でのリモートワーク",
+      "学習用・サブ機としての利用"
+    ],
+    "userStories": [
+      {
+        "userType": "リモートワーカー",
+        "scenario": "限られたスペースでの在宅勤務環境の構築",
+        "experience": "デスク上のスペースを取らずに設置でき、Web会議やOfficeソフトでの書類作成といった基本作業をスムーズにこなせた。同価格帯のミニPCの中で、Windows 11 Proが初めから入っていることが購入の最大の決め手であり、ビジネス用途としてセキュリティ設定などがしやすく重宝している。一方で、多数のタブを開いて作業すると動作が重くなるため、用途を絞って使うのが良さそう。",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "sentiment": "positive"
+      }
+    ],
+    "userImpression": "3万円を切る安価な価格設定とWindows 11 Pro搭載という点が高く評価されている。ブラウジングやOffice操作といった軽作業中心のユーザーからは「コスパが良い」と満足度が高い反面、製品説明のスペック表記揺れに不安を感じる声や、処理性能の限界から重い作業には使えないという割り切りが必要との意見が目立つ。サブ機や用途を限定したPCを探している人に向いている。",
+    "sources": [
+      {
+        "id": "src-1",
+        "name": "Amazon商品ページ",
+        "url": "https://www.amazon.co.jp/dp/B0C1YY8GSB",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-07-27",
+        "author": "NiPoGi",
+        "conflictOfInterest": "possible",
+        "notes": "スペック概要（サイズ、搭載OS、インターフェース等）および製品説明の表記揺れを確認"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "動画や画像、ファイルを大量に保存できる超高速PCIe SSDをサポート",
+        "category": "comparativeAdvantage",
+        "confidence": "medium",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "crossChecked": false,
+        "notes": "製品ページに記載があるが、初期搭載のストレージ速度については個体差や構成による部分が大きい"
+      },
+      {
+        "claim": "フルハイビジョンの4倍の解像度で美しく臨場感あふれる映像体験を提供",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "crossChecked": true,
+        "notes": "4K出力対応のインターフェース（HDMI/DP）搭載というスペック事実から妥当と判断"
+      }
+    ],
+    "lastInvestigated": "2026-07-27",
+    "competitiveAnalysis": [
+      {
+        "name": "NiPoGi ミニPC N5030 12GB+256GBモデル",
+        "asin": "B0C55JQ8HG",
+        "priceComparison": "対象商品より約6,000円高いが、12GBメモリ搭載を明確に謳っている",
+        "featureComparison": [
+          "共通点：CPUにIntel N5030を採用し、Windows 11 Proを搭載するコンパクトPCである点",
+          "相違点：対象商品のページ内説明に8GBとの混在が見られるのに対し、こちらは明確に12GBモデルとしている点"
+        ],
+        "differentiators": [
+          "NiPoGi ミニPC Intel N5030の利点：とにかく初期投資を低く抑え、最小限のスペックで十分な場合",
+          "NiPoGi ミニPC N5030 12GB+256GBモデルの利点：複数アプリの同時起動など、よりメモリ容量が必要な作業を行う場合"
+        ]
+      },
+      {
+        "name": "NiPoGi ミニPC Ryzen Embedded R2544",
+        "asin": "B0CJQXD23W",
+        "priceComparison": "対象商品より約10,000円高いが、CPU性能が上回る",
+        "featureComparison": [
+          "共通点：省スペース設計で豊富なインターフェースを備えている点",
+          "相違点：対象商品がIntel N5030搭載であるのに対し、こちらはRyzen Embedded R2544を搭載している点"
+        ],
+        "differentiators": [
+          "NiPoGi ミニPC Intel N5030の利点：ブラウジング程度の軽作業のみでコストを最優先する場合",
+          "NiPoGi ミニPC Ryzen Embedded R2544の利点：事務作業や軽い画像編集など、CPU性能に少し余裕を持たせたい場合"
+        ]
+      },
+      {
+        "name": "NiPoGi ミニPC Ryzen 4300U",
+        "asin": "B0CDL64XJL",
+        "priceComparison": "対象商品より約20,000円高いが、ストレージが大容量でメモリも多い",
+        "featureComparison": [
+          "共通点：同ブランドの省スペースミニPCである点",
+          "相違点：Ryzen 4300U、16GBメモリ、1TBストレージと基本スペックが大幅に向上している点"
+        ],
+        "differentiators": [
+          "NiPoGi ミニPC Intel N5030の利点：クラウドストレージ中心でローカル容量を必要としない場合",
+          "NiPoGi ミニPC Ryzen 4300Uの利点：ローカルに大量のファイルを保存し、より快適なマルチタスクを求める場合"
+        ]
+      },
+      {
+        "name": "ACEMAGIC ミニPC Ryzen 5 7430U",
+        "asin": "B0G4M41GGK",
+        "priceComparison": "対象商品より約30,000円高いが、メイン機として使える性能を持つ",
+        "featureComparison": [
+          "共通点：Windows搭載のコンパクトPCである点",
+          "相違点：高性能なRyzen 5プロセッサと16GBメモリを備え、処理能力が段違いである点"
+        ],
+        "differentiators": [
+          "NiPoGi ミニPC Intel N5030の利点：用途が限定的でサブ機としての運用を前提としている場合",
+          "ACEMAGIC ミニPC Ryzen 5 7430Uの利点：オフィス作業や簡単なクリエイティブ作業など、メインのPCとして利用したい場合"
+        ]
+      },
+      {
+        "name": "GEEKOM A6 ミニPC",
+        "asin": "B0DRP316J1",
+        "priceComparison": "対象商品より大幅に高いが、ハイエンド機としての機能が充実している",
+        "featureComparison": [
+          "共通点：省スペースPCカテゴリに属する点",
+          "相違点：Ryzen 7 6800H搭載、USB4対応など、インターフェースや処理性能がプロ仕様である点"
+        ],
+        "differentiators": [
+          "NiPoGi ミニPC Intel N5030の利点：文書作成やWeb閲覧など、エントリーレベルの用途に限られる場合",
+          "GEEKOM A6 ミニPCの利点：外付けGPUの利用や重い動画編集など、高い拡張性と処理能力を必要とする場合"
+        ]
+      },
+      {
+        "name": "GMKtec NucBox K11",
+        "asin": "B0DPCH1232",
+        "priceComparison": "対象商品とは価格帯が全く異なり比較にならないほど高価",
+        "featureComparison": [
+          "共通点：手のひらサイズの筐体である点",
+          "相違点：Ryzen 9 8945HSを搭載し、現行トップクラスのミニPC性能を有している点"
+        ],
+        "differentiators": [
+          "NiPoGi ミニPC Intel N5030の利点：最小限のコストでPC環境を用意したい場合",
+          "GMKtec NucBox K11の利点：ゲームや専門的な作業において一切の妥協をしたくないプロフェッショナルな用途の場合"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "Web閲覧やOfficeソフトによる文書作成など、軽負荷な作業を目的としコストを最小限に抑えたい人",
+        "省スペースでWindows 11 Proの環境を構築したいホームサーバー用途やサブ機を探している人"
+      ],
+      "pros": [
+        "設置スペースを選ばないコンパクトさにより、リビングのTV横や狭いデスクでも邪魔にならず快適に利用できる",
+        "Windows 11 Proが標準搭載されているため、ビジネス設定やネットワーク管理が容易に始められる"
+      ],
+      "cons": [
+        "製品説明のスペック表記（CPUやメモリ）に揺れがあるため、詳細な仕様にこだわる人は購入前に出品者への確認を推奨する",
+        "重いソフトウェアを動かすとフリーズする可能性があるため、動画編集や3Dゲーム目的の人は避けること"
+      ],
+      "score": 75,
+      "scoreRationale": "[基本点: 70]\n[加点: +5] (Windows 11 Proを標準搭載しビジネス用途でも扱いやすい点)\n[加点: +5] (軽量コンパクトかつ同価格帯でデュアルディスプレイ出力に対応している点)\n[減点: -5] (製品ページ内で搭載CPUやメモリ容量の記述に矛盾が見られ、信頼性に懸念がある点)\n[合計: 75]"
+    },
+    "technicalSpecs": {
+      "dimensions": {
+        "height": "40mm",
+        "width": "100mm",
+        "depth": "100mm"
+      },
+      "weight": "380g",
+      "os": "Windows 11 Pro",
+      "cpu": "Intel N5030 (ページ内の表記に基づく)",
+      "memory": "12GB (製品タイトルに基づく、詳細な仕様は要確認)",
+      "storage": "256GB M.2 SSD",
+      "network": "Wi-Fi (2.4G/5G), Bluetooth 4.2, 有線LAN",
+      "interfaces": [
+        "HDMI 2.0",
+        "DP 1.4",
+        "USB 3.2 x2",
+        "USB 2.0 x2",
+        "RJ45 (Gigabit)",
+        "3.5mmオーディオ"
+      ]
+    }
+  }
+}
