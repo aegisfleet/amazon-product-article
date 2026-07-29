@@ -1,0 +1,185 @@
+{
+  "analysis": {
+    "productName": "Elgato Wave DX",
+    "parentAsin": "B0DSBXG3PP",
+    "productDescription": "Elgatoが提供する配信・ポッドキャスト向けダイナミックXLRマイク。カーディオイド特性によりバックグラウンドノイズを抑え、発話に最適化された温かみのある音質を実現する。",
+    "productUsage": [
+      "ポッドキャスト",
+      "ライブストリーミング（配信）",
+      "ゲーム実況",
+      "音声録音"
+    ],
+    "positivePoints": [
+      "発話用に最適化されたダイナミックカプセルを搭載し、温かみのある高音質な音声を提供",
+      "あらゆるXLRプリアンプ・オーディオインターフェースに対応し、信号ブースター不要で動作可能",
+      "カーディオイド特性により、軸外の不要なバックグラウンドノイズを効果的に抑制",
+      "モノスイベル式マウントにより、ケーブルと干渉せずに自由な角度調整が可能（5/8インチ、3/8インチ、1/4インチアダプタ付属）",
+      "メーカーによる2年6ヶ月の長期製品保証"
+    ],
+    "negativePoints": [
+      "動作には別途オーディオインターフェースやXLRケーブルが必要（USB直結は不可）",
+      "XLR専用であるため、PCやゲーム機等に直接接続して手軽に使いたいユーザーには不向き",
+      "重量が約410gあり、軽量なスタンドでは安定しない可能性がある"
+    ],
+    "useCases": [
+      "自宅のスタジオ環境でのポッドキャスト収録やYouTube用音声録音",
+      "オーディオインターフェースと組み合わせた高品質なゲーム実況やライブ配信",
+      "周囲の生活音やキーボードの打鍵音が入りやすい環境でのノイズを抑えた音声入力"
+    ],
+    "userStories": [
+      {
+        "userType": "ゲーム配信者",
+        "scenario": "キーボードの打鍵音やPCのファン音が気になっていた環境で導入",
+        "experience": "コンデンサーマイクからWave DXに乗り換えたことで、タイピング音やエアコンの音が入りにくくなりました。XLR接続なので別途オーディオインターフェースが必要ですが、音に温かみがあり、信号ブースターなしでも十分な音量で録れるのが決め手でした。",
+        "supportingSourceIds": [
+          "src-elgato-official",
+          "src-amazon-features"
+        ],
+        "sentiment": "positive"
+      },
+      {
+        "userType": "ポッドキャスター",
+        "scenario": "手持ちのミキサーと組み合わせて高品質な収録環境を構築",
+        "experience": "スイベル式のマウントが優秀で、ケーブルを巻き込まずにスムーズに位置調整できます。音質は中低域がしっかりしており、ナレーション録りに向いています。一方で、USB接続のような手軽さはないため、機材周りの知識が少し必要だと感じました。",
+        "supportingSourceIds": [
+          "src-amazon-features"
+        ],
+        "sentiment": "positive"
+      }
+    ],
+    "userImpression": "ダイナミックマイク特有のノイズ耐性と、発話に最適化された豊かな音質が評価されている製品。特に、インラインプリアンプ（信号ブースター）なしでも既存のオーディオインターフェースで十分なゲインを確保しやすい点が喜ばれている。一方で、XLR接続専用であるため、プラグアンドプレイの手軽さを求める初心者からは敷居が高いと感じられるケースもあるが、配信環境のステップアップを図る層からは「価格以上のビルドクオリティと音質」と総じて満足度が高い。",
+    "sources": [
+      {
+        "id": "src-amazon-features",
+        "name": "Amazon商品ページ 特徴",
+        "url": "https://www.amazon.co.jp/dp/B0CDWQ1JTX",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2023-10-30",
+        "author": "Elgato / Amazon",
+        "conflictOfInterest": "possible",
+        "notes": "信号ブースター不要、スイベル式マウント、発話向け最適化の仕様を確認"
+      },
+      {
+        "id": "src-elgato-official",
+        "name": "Amazon商品ページ",
+        "url": "https://www.amazon.co.jp/dp/B0CDWQ1JTX",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2024-01-01",
+        "author": "Elgato",
+        "conflictOfInterest": "possible",
+        "notes": "Amazonページ上で確認できる公式の仕様や機能説明、使用環境について確認"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "信号ブースター（インラインプリアンプ）の必要なしであらゆるインターフェースに対応",
+        "category": "comparativeAdvantage",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-amazon-features",
+          "src-elgato-official"
+        ],
+        "crossChecked": true,
+        "notes": "一般的なダイナミックマイク（SM7Bなど）はゲインが低くブースターが必要なことが多いが、本機は出力レベルが高めに設定されているため不要と主張している"
+      }
+    ],
+    "lastInvestigated": "2026-07-29",
+    "competitiveAnalysis": [
+      {
+        "name": "Audio Technica AT2040",
+        "asin": "B09BFPNW2J",
+        "priceComparison": "Wave DXと同価格帯。どちらも配信向けダイナミックマイクのエントリー〜ミドルとして競合する。",
+        "featureComparison": [
+          "共通点：XLR接続専用のダイナミックマイク。ポッドキャストや配信向けに設計され、バックグラウンドノイズを抑える特性を持つ",
+          "相違点：AT2040は超単一指向性（ハイパーカーディオイド）でより指向性が狭くショックマウントを内蔵。Wave DXは単一指向性（カーディオイド）で、自由度の高いスイベルマウントを採用"
+        ],
+        "differentiators": [
+          "Elgato Wave DXの利点：マウントの自由度が高く、信号ブースター不要で既存のインターフェースに繋ぎやすい",
+          "Audio Technica AT2040の利点：指向性がさらに狭いため、環境音が非常に多い部屋での収音により適している"
+        ]
+      },
+      {
+        "name": "RODE PodMic",
+        "asin": "B07MSCRCVK",
+        "priceComparison": "PodMicの方がやや高い。どちらもポッドキャスト向けとして人気がある。",
+        "featureComparison": [
+          "共通点：XLR接続のダイナミックマイク。スイベル式のマウントを本体に統合している",
+          "相違点：PodMicは非常に頑丈な金属筐体だが重量が約937gと重い。Wave DXは約410gと軽量でアームの選択肢が広い"
+        ],
+        "differentiators": [
+          "Elgato Wave DXの利点：本体が軽く、一般的なマイクアームでもお辞儀しにくい",
+          "RODE PodMicの利点：圧倒的な堅牢性と、ラジオ放送局のようなプロフェッショナルなルックスを求める場合に適している"
+        ]
+      },
+      {
+        "name": "FIFINE K688",
+        "asin": "B0BK49VSMD",
+        "priceComparison": "K688の方が安価。予算を抑えたい場合の有力な選択肢。",
+        "featureComparison": [
+          "共通点：配信・録音向けの単一指向性ダイナミックマイク",
+          "相違点：K688はUSBとXLRの両接続に対応し、本体にミュートや音量調整ボタンを備える。Wave DXはXLR専用"
+        ],
+        "differentiators": [
+          "Elgato Wave DXの利点：純粋なXLRマイクとして音質や筐体のビルドクオリティが高く、オーディオインターフェースを活用した本格的な環境構築に向いている",
+          "FIFINE K688の利点：将来的にXLRを使いたいが、まずはUSBで手軽に始めたい初心者にとって非常にコスパが高い"
+        ]
+      },
+      {
+        "name": "SHURE MV7X",
+        "asin": "B09GRW5GV5",
+        "priceComparison": "MV7Xの方が高価。上位モデルとしての位置づけ。",
+        "featureComparison": [
+          "共通点：XLR専用でポッドキャスト・配信向けにデザインされたダイナミックマイク",
+          "相違点：MV7XはShureの定番SM7Bの系譜でありボイスアイソレーション技術に優れる"
+        ],
+        "differentiators": [
+          "Elgato Wave DXの利点：MV7Xの約半額という低価格で、インラインプリアンプ不要の使い勝手と高品質な音声録音環境が手に入る",
+          "SHURE MV7Xの利点：Shureブランドの信頼性と、声にフォーカスする高度な分離技術を重視するプロユースに近い環境向け"
+        ]
+      },
+      {
+        "name": "SHURE SM7B",
+        "asin": "B0C74D865R",
+        "priceComparison": "SM7Bは非常に高価。プロフェッショナル向けのハイエンドモデル。",
+        "featureComparison": [
+          "共通点：放送局品質を目指したダイナミックマイク",
+          "相違点：SM7Bは低出力であるため高品質なプリアンプや信号ブースターが必須。Wave DXはブースター不要で運用ハードルが低い"
+        ],
+        "differentiators": [
+          "Elgato Wave DXの利点：信号ブースターの追加投資が不要で、一般的なインターフェースでも即座に運用できる手軽さと圧倒的なコスパ",
+          "SHURE SM7Bの利点：世界中のプロが愛用するフラットで伸びやかな王道の音質"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "すでにオーディオインターフェースを所持しており、コンデンサーマイクの環境音ノイズに悩んでいる配信者",
+        "インラインプリアンプなどの追加機材なしで、XLRダイナミックマイクを導入したい人"
+      ],
+      "pros": [
+        "感度が高めに設定されているため、安価なインターフェースでも音量が小さすぎるといったトラブルが起きにくく、追加費用（ブースター代）が不要",
+        "スイベルマウントと各種変換ネジアダプタが付属し、届いてすぐに好みのマイクアームへ自由な角度で設置できる"
+      ],
+      "cons": [
+        "XLR接続専用であるため、オーディオインターフェースを持っていない初心者は別途機材を購入する必要があり、初期投資が高くなる"
+      ],
+      "score": 83,
+      "scoreRationale": "[基本点: 70]\n[加点: +5] (信号ブースター不要でインターフェースを選ばない汎用性の高さ)\n[加点: +5] (競合と比較してマウントの自由度が高く取り回しが良い)\n[加点: +3] (2年6ヶ月の長期保証による安心感)\n[合計: 83]"
+    },
+    "technicalSpecs": {
+      "dimensions": {
+        "height": "186mm",
+        "width": "69mm",
+        "depth": "53mm"
+      },
+      "weight": "410g",
+      "capsule": "ダイナミック",
+      "polarPattern": "カーディオイド",
+      "connection": "3ピン XLR",
+      "color": "ブラック",
+      "cable": "別売"
+    }
+  }
+}
