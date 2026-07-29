@@ -473,7 +473,7 @@
     "description": "LUX（ラックス）の商品一覧",
     "matcher": {
       "type": "brand",
-      "value": "LUX|ラックス"
+      "value": "\\bLUX\\b|ラックス"
     }
   },
   "Razer": {
