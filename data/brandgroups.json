@@ -21,8 +21,8 @@
     "slug": "amazon-basics",
     "icon": "🛒",
     "matcher": {
-      "type": "title_prefix",
-      "value": "Amazonベーシック"
+      "type": "brand",
+      "value": "Amazonベーシック|Amazon Basics"
     },
     "description": "Amazonベーシックの商品一覧"
   },
@@ -302,7 +302,7 @@
     "description": "DEFINEの商品一覧",
     "matcher": {
       "type": "brand",
-      "value": "DEFINE"
+      "value": "\\bDEFINE\\b"
     }
   },
   "Hisense": {
@@ -473,7 +473,7 @@
     "description": "LUX（ラックス）の商品一覧",
     "matcher": {
       "type": "brand",
-      "value": "LUX|ラックス"
+      "value": "\\bLUX\\b|ラックス"
     }
   },
   "Razer": {
@@ -491,7 +491,7 @@
     "description": "PLUS（プラス）の商品一覧",
     "matcher": {
       "type": "brand",
-      "value": "PLUS|プラス"
+      "value": "\\bPLUS\\b|プラス"
     }
   },
   "KAI": {
@@ -500,7 +500,7 @@
     "description": "貝印（KAI）の商品一覧",
     "matcher": {
       "type": "brand",
-      "value": "貝印|KAI"
+      "value": "貝印|\\bKAI\\b"
     }
   },
   "ヤマハ": {
@@ -572,7 +572,7 @@
     "description": "CIOの商品一覧",
     "matcher": {
       "type": "brand",
-      "value": "CIO"
+      "value": "\\bCIO\\b"
     }
   },
   "JBL": {
@@ -590,7 +590,7 @@
     "description": "ASUS（エイスース）の商品一覧",
     "matcher": {
       "type": "brand",
-      "value": "ASUS|エイスース"
+      "value": "\\bASUS\\b|エイスース"
     }
   },
   "DJI": {
@@ -923,7 +923,7 @@
     "description": "Kateの商品一覧",
     "matcher": {
       "type": "brand",
-      "value": "Kate"
+      "value": "\\bKate\\b|ケイト"
     }
   },
   "コムテック": {
@@ -1004,7 +1004,7 @@
     "description": "LGの商品一覧",
     "matcher": {
       "type": "brand",
-      "value": "LG"
+      "value": "\\bLG\\b"
     }
   },
   "Combi": {
@@ -1175,7 +1175,7 @@
     "description": "MAROの商品一覧",
     "matcher": {
       "type": "brand",
-      "value": "MARO"
+      "value": "\\bMARO\\b|マーロ"
     }
   },
   "ZAMST": {
@@ -1535,7 +1535,7 @@
     "description": "asicsの商品一覧",
     "matcher": {
       "type": "brand",
-      "value": "asics"
+      "value": "\\basics\\b|アシックス"
     }
   },
   "マニフィーク": {
@@ -1688,7 +1688,7 @@
     "description": "Dellの商品一覧",
     "matcher": {
       "type": "brand",
-      "value": "Dell"
+      "value": "\\bDell\\b"
     }
   },
   "KÄRCHER": {
@@ -1725,6 +1725,150 @@
     "matcher": {
       "type": "brand",
       "value": "Aliliy"
+    }
+  },
+  "KINBOOFI": {
+    "slug": "kinboofi",
+    "icon": "🏷️",
+    "description": "KINBOOFIの商品一覧",
+    "matcher": {
+      "type": "brand",
+      "value": "KINBOOFI"
+    }
+  },
+  "Audible": {
+    "slug": "audible",
+    "icon": "🏷️",
+    "description": "Audibleの商品一覧",
+    "matcher": {
+      "type": "brand",
+      "value": "Audible"
+    }
+  },
+  "FLEXISPOT": {
+    "slug": "flexispot",
+    "icon": "🏷️",
+    "description": "FLEXISPOTの商品一覧",
+    "matcher": {
+      "type": "brand",
+      "value": "FLEXISPOT"
+    }
+  },
+  "Gleon": {
+    "slug": "gleon",
+    "icon": "🏷️",
+    "description": "Gleonの商品一覧",
+    "matcher": {
+      "type": "brand",
+      "value": "Gleon"
+    }
+  },
+  "OPEN FARM": {
+    "slug": "open-farm",
+    "icon": "🏷️",
+    "description": "OPEN FARMの商品一覧",
+    "matcher": {
+      "type": "brand",
+      "value": "OPEN FARM"
+    }
+  },
+  "吉野家": {
+    "slug": "吉野家",
+    "icon": "🏷️",
+    "description": "吉野家の商品一覧",
+    "matcher": {
+      "type": "brand",
+      "value": "吉野家"
+    }
+  },
+  "雪印メグミルク": {
+    "slug": "雪印メグミルク",
+    "icon": "🏷️",
+    "description": "雪印メグミルクの商品一覧",
+    "matcher": {
+      "type": "brand",
+      "value": "雪印メグミルク"
+    }
+  },
+  "漢方セレクト": {
+    "slug": "漢方セレクト",
+    "icon": "🏷️",
+    "description": "漢方セレクトの商品一覧",
+    "matcher": {
+      "type": "brand",
+      "value": "漢方セレクト"
+    }
+  },
+  "kerätä": {
+    "slug": "ker-t",
+    "icon": "🏷️",
+    "description": "kerätäの商品一覧",
+    "matcher": {
+      "type": "brand",
+      "value": "kerätä"
+    }
+  },
+  "トゥヴェール": {
+    "slug": "トゥヴェール",
+    "icon": "🏷️",
+    "description": "トゥヴェールの商品一覧",
+    "matcher": {
+      "type": "brand",
+      "value": "トゥヴェール"
+    }
+  },
+  "ケロッグ": {
+    "slug": "ケロッグ",
+    "icon": "🏷️",
+    "description": "ケロッグの商品一覧",
+    "matcher": {
+      "type": "brand",
+      "value": "ケロッグ"
+    }
+  },
+  "LISEN": {
+    "slug": "lisen",
+    "icon": "🏷️",
+    "description": "LISENの商品一覧",
+    "matcher": {
+      "type": "brand",
+      "value": "LISEN"
+    }
+  },
+  "アイオーデータ": {
+    "slug": "アイオーデータ",
+    "icon": "🏷️",
+    "description": "アイオーデータの商品一覧",
+    "matcher": {
+      "type": "brand",
+      "value": "アイオーデータ"
+    }
+  },
+  "アタック": {
+    "slug": "アタック",
+    "icon": "🏷️",
+    "description": "アタックの商品一覧",
+    "matcher": {
+      "type": "brand",
+      "value": "アタック"
+    }
+  },
+  "Lamicall": {
+    "slug": "lamicall",
+    "icon": "🏷️",
+    "description": "Lamicallの商品一覧",
+    "matcher": {
+      "type": "brand",
+      "value": "Lamicall"
+    }
+  },
+  "SKECHERS": {
+    "slug": "skechers",
+    "icon": "🏷️",
+    "description": "SKECHERSの商品一覧",
+    "matcher": {
+      "type": "brand",
+      "value": "SKECHERS"
     }
   }
 }
