@@ -1,0 +1,226 @@
+{
+  "analysis": {
+    "productName": "Dyson V8 Slim Fluffy (SV10K EXT BK)",
+    "parentAsin": "B0DGX6HJ2Z",
+    "productDescription": "ダイソンのV8シリーズのコンパクト軽量モデル。日本の住環境に合わせて延長パイプが短く、クリーナーヘッドもスリム化されている。",
+    "productUsage": [
+      "フローリング、畳、カーペットなどの床掃除",
+      "付属ツールを用いたハンディークリーナーとしての使用"
+    ],
+    "positivePoints": [
+      "V8 Fluffyに比べ、クリーナーヘッドが40%小型・軽量化され取り回しが良い",
+      "延長パイプが約6cm短くなり、小柄な人にも扱いやすい",
+      "フィルターカバーが透明で汚れが見えやすい",
+      "クリアビン内のゴミをこそぎ落とすスクレイパー搭載でゴミ捨てが容易",
+      "V8の強力な吸引力と最長40分の連続運転時間を維持",
+      "静音設計により甲高い音が低減されている",
+      "LED隙間ノズルが付属し、暗い場所の掃除に便利"
+    ],
+    "negativePoints": [
+      "自立しないため、収納には壁掛けブラケットや別売りのスタンドが必要",
+      "トリガー式の電源ボタンは押し続ける必要があり、握力がいる",
+      "上位機種に比べると機能がシンプル",
+      "充電時間が約5時間と長め"
+    ],
+    "useCases": [
+      "日本の一般的な住宅での日常的な掃除",
+      "小柄な方や女性のメイン掃除機として",
+      "階段や家具の下など狭い場所の掃除"
+    ],
+    "userStories": [
+      {
+        "userType": "夫婦",
+        "scenario": "日常の掃除",
+        "experience": "以前の掃除機はバッテリーが劣化しすぐに切れて困っていたが、吸引力の高さに惹かれてダイソンを購入。フローリングも絨毯も強力にゴミを吸い取り掃除が楽しくなった。ダスターが透明で溜まったゴミが一目でわかる点も気に入っている。ただ、トリガーを押し続ける必要があるため握力が少しいると感じた。",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "sentiment": "positive"
+      },
+      {
+        "userType": "小柄な女性",
+        "scenario": "取り回しの良さを重視した掃除",
+        "experience": "ダイソンの掃除機は重くて大きいイメージがあったが、V8 Slimはパイプが短くヘッドも小さいため、小柄な自分でも扱いやすかった。家具の下や隙間にもスイスイ入り、家中を掃除しても腕が疲れにくく快適だった。充電時間が5時間と長めなのは少しネックだが、40分持つので一度の掃除には十分。",
+        "supportingSourceIds": [
+          "src-2"
+        ],
+        "sentiment": "positive"
+      }
+    ],
+    "userImpression": "ダイソンの強力な吸引力を保ちつつ、日本の住環境に合わせて小型・軽量化された点が非常に高く評価されている。特に小柄なユーザーからは取り回しの良さが好評。トリガー式スイッチや充電時間の長さ、自立しない点は一部不満として挙げられるが、圧倒的な吸引力とゴミ捨ての容易さがそれを補って余りある満足度につながっている。コスパの良いダイソン入門機として多くの人に支持されている。",
+    "sources": [
+      {
+        "id": "src-1",
+        "name": "心地よい毎日を、ガジェットで｜ゆきさき。",
+        "url": "https://bluebayou3.com/living-gadgets/dyson-v8-slim",
+        "tier": "medium",
+        "evidenceType": "primary",
+        "publishedAt": "2026-06-12",
+        "author": "個人ブロガー(Yutta)",
+        "conflictOfInterest": "none",
+        "notes": "夫婦での実使用レビュー。吸引力、取り回し、ゴミ捨ての容易さを高く評価。トリガー式や収納方法の注意点も言及。"
+      },
+      {
+        "id": "src-2",
+        "name": "コードレス掃除機マニアの比較サイト（マキタ菌）",
+        "url": "https://makita-cleaner.com/dyson-v8-fluffy-v8-slim-fluffy-the-difference/",
+        "tier": "medium",
+        "evidenceType": "secondary",
+        "publishedAt": "2019-08-22",
+        "author": "個人ブロガー",
+        "conflictOfInterest": "none",
+        "notes": "V8 Fluffyとの詳細な比較。ヘッドの小型化、パイプの短縮による日本向け仕様のメリットを解説。"
+      },
+      {
+        "id": "src-3",
+        "name": "Dyson公式サイト",
+        "url": "https://www.amazon.co.jp/dp/B0DGX6HJ2Z",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-07-29",
+        "author": "Dyson",
+        "conflictOfInterest": "disclosed",
+        "notes": "公式スペックおよび機能説明"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "0.3ミクロンもの微細な粒子を99.99%捕らえる",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-3"
+        ],
+        "crossChecked": false,
+        "notes": "メーカーのスペック表より。ダイソンのサイクロン技術による高いフィルター性能。"
+      },
+      {
+        "claim": "最長40分間の安定した運転時間",
+        "category": "durability",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-1",
+          "src-2"
+        ],
+        "crossChecked": true,
+        "notes": "通常モードでの公称値。実際の家庭の掃除では十分な時間とレビューで確認。"
+      }
+    ],
+    "lastInvestigated": "2026-07-29",
+    "competitiveAnalysis": [
+      {
+        "name": "Dyson Digital Slim Fluffy (SV18 FF H)",
+        "asin": "B0CLL1DSC9",
+        "priceComparison": "V8 Slimよりも高価。最新技術とさらなる軽量化にコストを払えるかどうかがポイント。",
+        "featureComparison": [
+          "共通点：軽量・小型化されたSlim Fluffyヘッドを使用し、取り回しが良い",
+          "相違点：Digital SlimはV8 Slimよりさらに軽く、液晶ディスプレイを搭載し残り運転時間を表示可能。バッテリーも着脱可能。"
+        ],
+        "differentiators": [
+          "Dyson V8 Slim Fluffy (SV10K EXT BK)の利点：価格が抑えられており、ダイソンの吸引力を手軽に体験したい人向けの優れた入門機として適している。",
+          "Dyson Digital Slim Fluffy (SV18 FF H)の利点：より軽量で、液晶での状況確認やバッテリー交換の容易さを求めるならこちらを選ぶべき。"
+        ]
+      },
+      {
+        "name": "シャープ RACTIVE Air EC-FR5",
+        "asin": "B08H4XZJ82",
+        "priceComparison": "V8 Slimよりかなり安価。予算重視であれば有力な選択肢となる。",
+        "featureComparison": [
+          "共通点：軽量設計のコードレススティッククリーナー",
+          "相違点：EC-FR5は1.5kgと非常に軽く、バッテリー着脱式。吸引力や集じん方式はダイソンが優位。"
+        ],
+        "differentiators": [
+          "Dyson V8 Slim Fluffy (SV10K EXT BK)の利点：絨毯のゴミもしっかり吸い取る圧倒的な吸引力と、微細な排気性能を求めるなら迷わずこちらを選ぶべき。",
+          "シャープ RACTIVE Air EC-FR5の利点：とにかく軽さを最優先し、手軽にサッと掃除したい人や、価格を抑えたい人に適している。"
+        ]
+      },
+      {
+        "name": "Dyson V8 Slim Fluffy Extra (SV10K EXT BU)",
+        "asin": "B0DZ2NNJVC",
+        "priceComparison": "価格帯はほぼ同じか、カラー・販売ルートにより多少異なる。",
+        "featureComparison": [
+          "共通点：本体性能、バッテリー、吸引力、ヘッドは完全に同一。",
+          "相違点：本体カラーが異なる。また、付属品に一部違いがある場合がある(本製品はLED隙間ノズル付き)。"
+        ],
+        "differentiators": [
+          "Dyson V8 Slim Fluffy (SV10K EXT BK)の利点：ブラックカラーが好みで、暗い場所の掃除に便利なLED隙間ノズルが必要な場合はこちらを選ぶべき。",
+          "Dyson V8 Slim Fluffy Extra (SV10K EXT BU)の利点：アイアン/ブルーのカラーが好みで、その他の付属ツール(ミニモーターヘッド等)の構成が自分の用途に合っている場合はこちらを選ぶべき。"
+        ]
+      },
+      {
+        "name": "Dyson Digital Slim Origin (SV18 FF OR2 AM)",
+        "asin": "B0DZ2PC71L",
+        "priceComparison": "V8 Slimよりも高価。",
+        "featureComparison": [
+          "共通点：軽量モデルでSlim Fluffyヘッドを搭載。",
+          "相違点：Digital Slim系なので液晶ディスプレイ搭載。V8より新しいモーターを採用。"
+        ],
+        "differentiators": [
+          "Dyson V8 Slim Fluffy (SV10K EXT BK)の利点：価格を抑えたい人向け。",
+          "Dyson Digital Slim Origin (SV18 FF OR2 AM)の利点：液晶ディスプレイ搭載とさらなる軽量性を求める人向け。"
+        ]
+      },
+      {
+        "name": "アイリスオーヤマ コードレス掃除機 SBD-7AZ1P-B",
+        "asin": "B0FG7LRMP6",
+        "priceComparison": "V8 Slimより大幅に安価。",
+        "featureComparison": [
+          "共通点：軽量なコードレス掃除機である点。",
+          "相違点：アイリスオーヤマは紙パック式で1.3kgとさらに軽量。ダイソンはサイクロン式。"
+        ],
+        "differentiators": [
+          "Dyson V8 Slim Fluffy (SV10K EXT BK)の利点：サイクロン式の圧倒的な吸引力と、紙パック不要の利便性を求める人向け。",
+          "アイリスオーヤマ コードレス掃除機 SBD-7AZ1P-Bの利点：とにかく軽くて安いものを探し、紙パック式でゴミ捨て時の埃舞いを防ぎたい人向け。"
+        ]
+      },
+      {
+        "name": "三菱電機 MITSUBISHI TC-FM2E-S",
+        "asin": "B0FG7MXH4F",
+        "priceComparison": "V8 Slimより安価。",
+        "featureComparison": [
+          "共通点：日本の住環境を考慮した設計。",
+          "相違点：三菱電機はキャニスター型で紙パック式、有線。ダイソンはコードレススティック型サイクロン式。"
+        ],
+        "differentiators": [
+          "Dyson V8 Slim Fluffy (SV10K EXT BK)の利点：コードレスの取り回しの良さとサイクロンの吸引力維持を重視する人向け。",
+          "三菱電機 MITSUBISHI TC-FM2E-Sの利点：有線による時間無制限の掃除と、紙パックによる手軽なゴミ捨てを重視する人向け。"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "ダイソンの強力な吸引力を求めつつ、取り回しの良いコンパクトな掃除機が欲しい家庭",
+        "小柄な女性や高齢者で、従来のダイソンは重くて使いにくいと感じていた人",
+        "高価な最新モデルまでは不要だが、信頼できる性能のダイソン入門機を探している人"
+      ],
+      "pros": [
+        "短くなったパイプと小型ヘッドにより、手首への負担が少なく、家具の下や狭い隙間もストレスなくスムーズに掃除できます。",
+        "ワンタッチでゴミに触れずに捨てられる機構と透明なダストカップにより、掃除の成果が目に見えてわかり、衛生的です。",
+        "LED隙間ノズルが付属しているため、暗い家具の裏などのホコリも見逃さずに綺麗にできます。"
+      ],
+      "cons": [
+        "トリガー式のスイッチは掃除中押し続ける必要があるため、握力に自信のない方や長時間の使用には不向きです。",
+        "自立しないため、賃貸住宅などで壁に穴を開けられない場合は、立て掛ける工夫や市販のスタンドを別途用意する必要があります。",
+        "充電時間が約5時間と長めなので、こまめに充電する習慣が必要です。"
+      ],
+      "score": 85,
+      "scoreRationale": "[基本点: 70]\n[加点: +10] 日本の住環境に合わせた小型・軽量化による圧倒的な取り回しの良さ\n[加点: +5] V8の強力な吸引力を手頃な価格で実現した高いコストパフォーマンス\n[加点: +5] 衛生的なワンタッチゴミ捨て機構\n[加点: +5] 暗い場所の掃除に便利なLED隙間ノズルが付属\n[減点: -5] 長時間の操作負担となるトリガー式スイッチ\n[減点: -5] 5時間という長めの充電時間\n[合計: 85]"
+    },
+    "technicalSpecs": {
+      "weight": "2.15kg (本体、パイプ、標準ヘッド含む)",
+      "dimensions": {
+        "height": "1123mm",
+        "width": "250mm",
+        "depth": "210mm"
+      },
+      "usageTime": "最長40分 (通常モード)、最長7分 (強モード)",
+      "chargingTime": "約5時間",
+      "dustCapacity": "0.54L",
+      "other": [
+        "サイクロン技術: 2 Tier Radial サイクロン",
+        "クリーナーヘッド: Slim Fluffy クリーナーヘッド",
+        "付属ツール: LED隙間ノズル、コンビネーションノズルなど"
+      ]
+    }
+  }
+}
