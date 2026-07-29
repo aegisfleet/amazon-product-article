@@ -141,7 +141,18 @@ GitHub Actions CIはLintやBiomeのエラーがあると失敗するため、い
 - **ソート順**: Unicodeコードポイント順（英数字 > ひらがな > カタカナ > 漢字）を維持すること。迷った場合は `pnpm run sort:categories` を実行すること。
 - **新規追加後の手順**: `pnpm run prebuild:hugo` を実行し、`data/categories.yml` 等が自動生成・更新されることを確認すること。
 
-### 5.2 キャッシュ管理ツール
+### 5.2 ブランドグループ管理（`data/brandgroups.json`）
+
+ブランドの定義やマッチャーの編集・追加を行う際は、以下の注意事項を必ず遵守すること。
+
+- **単語境界の活用（誤判定の防止）**:
+  短いアルファベット表記のブランド（例: `LUX`, `CIO`, `LG`, `ASUS`, `KAI`, `PLUS`, `Kate`, `DEFINE`, `Dell` 等）を `matcher.value` に定義する際は、他社ブランド（例: `NIPLUX`, `Elgato`, `FRECIOUS`, `abrAsus`, `Vacplus` 等）に部分一致で誤ヒットすることを防止するため、必ず単語境界 `\b`（JSON内では `\\b`）を使用すること。
+  - 例: `"value": "\\bLUX\\b|ラックス"` , `"value": "\\bLG\\b"` , `"value": "\\bASUS\\b|エイスース"`
+- **親ブランドとサブブランドの区別**:
+  `Amazon` と `Amazonベーシック` や `by Amazon` のように親ブランドとサブブランドで独立したページが存在する場合、親ブランドのマッチャーは `type: "brand"` かつ完全一致 `^Amazon$` 等で定義し、タイトルや `brand` フィールドにサブブランドが明記されている商品が誤判定・重複表示されないように留意すること。
+- **編集後の手順**: `data/brandgroups.json` を変更した後は、必ず `pnpm run prebuild:hugo` を実行して `static/data/brandgroups.json` および `content/brand/` 配下のマークダウンページを自動同期すること。
+
+### 5.3 キャッシュ管理ツール
 
 キャッシュ操作時は自作スクリプトを作成せず、以下のツールを優先的に使用すること。
 
@@ -153,7 +164,7 @@ GitHub Actions CIはLintやBiomeのエラーがあると失敗するため、い
 > [!NOTE]
 > 使用例の詳細はスクリプトのヘルプ、またはソースコードを参照すること。
 
-### 5.3 定義ファイルのフォーマットと整合性
+### 5.4 定義ファイルのフォーマットと整合性
 
 手動で編集するカテゴリ定義（`data/categorygroups.json`）およびブランド定義（`data/brandgroups.json`）は、ネストが深く括弧の記述ミスが発生しやすい。
 これらのファイルを編集した後は、必ず `pnpm run biome:check` を実行し、構文エラーがないことを検証すること。フォーマットの崩れは `pnpm run biome:fix` で自動整形できる。
