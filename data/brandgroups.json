@@ -302,7 +302,7 @@
     "description": "DEFINEの商品一覧",
     "matcher": {
       "type": "brand",
-      "value": "DEFINE"
+      "value": "\\bDEFINE\\b"
     }
   },
   "Hisense": {
@@ -491,7 +491,7 @@
     "description": "PLUS（プラス）の商品一覧",
     "matcher": {
       "type": "brand",
-      "value": "PLUS|プラス"
+      "value": "\\bPLUS\\b|プラス"
     }
   },
   "KAI": {
@@ -500,7 +500,7 @@
     "description": "貝印（KAI）の商品一覧",
     "matcher": {
       "type": "brand",
-      "value": "貝印|KAI"
+      "value": "貝印|\\bKAI\\b"
     }
   },
   "ヤマハ": {
@@ -572,7 +572,7 @@
     "description": "CIOの商品一覧",
     "matcher": {
       "type": "brand",
-      "value": "CIO"
+      "value": "\\bCIO\\b"
     }
   },
   "JBL": {
@@ -590,7 +590,7 @@
     "description": "ASUS（エイスース）の商品一覧",
     "matcher": {
       "type": "brand",
-      "value": "ASUS|エイスース"
+      "value": "\\bASUS\\b|エイスース"
     }
   },
   "DJI": {
@@ -923,7 +923,7 @@
     "description": "Kateの商品一覧",
     "matcher": {
       "type": "brand",
-      "value": "Kate"
+      "value": "\\bKate\\b|ケイト"
     }
   },
   "コムテック": {
@@ -1004,7 +1004,7 @@
     "description": "LGの商品一覧",
     "matcher": {
       "type": "brand",
-      "value": "LG"
+      "value": "\\bLG\\b"
     }
   },
   "Combi": {
@@ -1175,7 +1175,7 @@
     "description": "MAROの商品一覧",
     "matcher": {
       "type": "brand",
-      "value": "MARO"
+      "value": "\\bMARO\\b|マーロ"
     }
   },
   "ZAMST": {
@@ -1688,7 +1688,7 @@
     "description": "Dellの商品一覧",
     "matcher": {
       "type": "brand",
-      "value": "Dell"
+      "value": "\\bDell\\b"
     }
   },
   "KÄRCHER": {
