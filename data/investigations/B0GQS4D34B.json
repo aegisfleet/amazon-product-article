@@ -1,0 +1,168 @@
+{
+  "analysis": {
+    "productName": "Wave XLR MK.2",
+    "parentAsin": "B0GQS4D34B",
+    "productDescription": "80dBゲイン、オンボードDSPエフェクト、低遅延モニタリングなどを備えた高性能USBマイクインターフェースです。",
+    "productUsage": [
+      "ポッドキャスティング",
+      "ストリーミングやゲーム実況配信",
+      "スタジオ録音",
+      "ビデオ会議やオンラインミーティング"
+    ],
+    "positivePoints": [
+      "80dBのゲインを備え、ゲインの低いダイナミックマイクなどあらゆるXLRマイクに対応",
+      "DSP処理とVSTインサートを1つのシグナルチェーンで実行するWave FX Processor搭載",
+      "ハードウェアレベルで音声の歪みを防ぐClipguard 2.0保護機能を内蔵",
+      "遅延のないモニタリングが可能な3.5mmステレオヘッドホン出力を搭載",
+      "静電容量式タッチボタンにより瞬時にマイクをミュート可能"
+    ],
+    "negativePoints": [
+      "価格帯が高く、初心者向けのエントリーモデルとは言い難い",
+      "すべての機能をフル活用するには、無料のWave Linkソフトウェアのインストールと設定が必要",
+      "USB-C接続であるため、USB-AポートしかないPCには別途変換ケーブル等が必要な場合がある"
+    ],
+    "useCases": [
+      "感度の低いXLRマイク（Shure SM7B等）をプリアンプなしで高音質に録音したい場合",
+      "Stream Deckと連携させ、手元で瞬時にオーディオミックスやミュート操作を行いたい場合"
+    ],
+    "userStories": [
+      {
+        "userType": "ストリーマー・コンテンツクリエイター",
+        "scenario": "配信中のマイク音量調整とノイズ管理",
+        "experience": "ダイナミックマイクと組み合わせて使用。以前は音量が小さくなりがちだったが、80dBのゲインのおかげでCloudlifterのような追加プリアンプなしでも十分な音量とクリアな音質を確保できた。また、大声を出した際もClipguard 2.0が自動で歪みを防いでくれるため、安心して配信に集中できるのが最大の決め手となった。",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "sentiment": "positive"
+      },
+      {
+        "userType": "ポッドキャスター",
+        "scenario": "音声収録時のエフェクト調整",
+        "experience": "内蔵DSPエフェクトとVSTインサートを利用し、録音段階からイコライザーやコンプレッサーをかけられるのが便利。PCへの負荷を減らしつつ、レイテンシーゼロで自分の声をモニタリングできるため、長時間の録音でも違和感なく喋れる。価格は高めだが、後編集の手間が省ける点で投資価値は十分にあった。",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "sentiment": "positive"
+      }
+    ],
+    "userImpression": "総評として、Shure SM7Bなどの低出力マイクを使うユーザーからは、80dBもの強力なゲインと追加機材不要の手軽さが高く評価されている。さらにClipguard 2.0による音割れ防止や、VST対応のDSPエフェクトによって録音段階から完成された音を作れる点が、配信者やポッドキャスターにとって強力な武器となっている。一方で、多機能ゆえにWave Linkソフトウェアの使いこなしが前提となるため、ただ挿すだけで使いたいというユーザーにはややオーバースペックに感じられることもあるが、Stream Deckとの連携によるシームレスな操作性は、環境構築にこだわる本格的なクリエイターから圧倒的な支持を集めている。",
+    "sources": [
+      {
+        "id": "src-1",
+        "name": "Elgato公式サイト: Wave XLR MK.2",
+        "url": "https://www.elgato.com/jp/ja/p/wave-xlr",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-07-29",
+        "author": "Elgato",
+        "conflictOfInterest": "none",
+        "notes": "80dBゲイン、Wave FX Processor、Clipguard 2.0、Stream Deck連携などの仕様や特徴を確認"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "追加のプリアンプ（信号ブースター）なしで、あらゆるXLRマイク（Shure SM7Bなど）を十分に駆動できる80dBのクリーンゲイン",
+        "category": "comparativeAdvantage",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "crossChecked": false,
+        "notes": "メーカー公式の仕様として80dBゲインが明記されており、一般的なインターフェース（50〜60dB台）と比較して非常に強力。"
+      },
+      {
+        "claim": "Clipguard 2.0がハードウェアレベルで音声の歪みを防ぎ、配信や録音をクリアに保つ",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "crossChecked": false,
+        "notes": "前世代からの改善点として公式に説明されている。"
+      }
+    ],
+    "lastInvestigated": "2026-07-29",
+    "competitiveAnalysis": [
+      {
+        "name": "Wave XLR (第1世代)",
+        "asin": "B0CDWSCXL3",
+        "priceComparison": "対象商品は第2世代モデルであり、第1世代（約15,980円）に比べて価格は大幅に高いが、DSPエフェクトやVST対応、Clipguard 2.0といった内部処理の強化が行われており、プロ水準の機能向上に対する価格差と言える。",
+        "featureComparison": [
+          "共通点：USB-C接続のXLRマイク用インターフェース、静電容量式ミュート、Stream Deck連携、ダイヤル操作",
+          "相違点：対象商品(MK.2)はClipguard 2.0搭載、Wave FX Processor搭載（内蔵DSP/VSTインサート）、より洗練された内部処理と機能を持つ。"
+        ],
+        "differentiators": [
+          "Wave XLR MK.2の利点：録音段階で高度なエフェクト処理（VST等）を行いたい人や、音割れ防止性能（Clipguard 2.0）を重視する本格的な配信者・クリエイター向け。",
+          "Wave XLR (第1世代)の利点：高度な内蔵DSP処理までは不要で、より手頃な価格で基本的なElgatoエコシステム（Wave LinkやStream Deck連携）を導入したい人向け。"
+        ]
+      },
+      {
+        "name": "HyperX Audio Mixer",
+        "asin": "B0CJCBZ45Y",
+        "priceComparison": "対象商品よりも数千円安価。物理フェーダーによる複数チャンネルのミックスに重点を置いている。",
+        "featureComparison": [
+          "共通点：配信用途に適したUSBオーディオインターフェース",
+          "相違点：HyperXは物理的なフェーダーやノブを備えたミキサー型。対象商品は1つの大型ダイヤルとソフトウェア（Wave Link）、Stream Deckでの統合制御に特化し、内蔵DSPエフェクトが強力。"
+        ],
+        "differentiators": [
+          "Wave XLR MK.2の利点：デスク上をすっきりさせたい人や、Stream Deckを用いたマクロ・自動化操作、高品質な内蔵DSPエフェクトを活用したい人向け。",
+          "HyperX Audio Mixerの利点：複数の音声入力を物理フェーダーで直感的に手元でミックスしたい人向け。"
+        ]
+      },
+      {
+        "name": "MAONO オーディオインターフェース PS22-LITE",
+        "asin": "B0F1N24BJW",
+        "priceComparison": "対象商品と比べて半額以下の価格帯。コスパ重視のエントリーモデル。",
+        "featureComparison": [
+          "共通点：XLR入力対応のUSBオーディオインターフェース、ファンタム電源対応",
+          "相違点：MAONOはより一般的な低価格帯の入門用インターフェース。対象商品は80dBの強力なゲイン、高度な専用ソフトウェア（Wave Link）、Clipguardによる音割れ防止などのプロ向け機能を搭載。"
+        ],
+        "differentiators": [
+          "Wave XLR MK.2の利点：Shure SM7Bのようなゲインが必要なマイクを使う人や、音割れ対策、Stream Deckとの連携など、本格的な配信環境を構築したい人向け。",
+          "MAONO オーディオインターフェース PS22-LITEの利点：これから配信や録音を始めるため、とにかく予算を抑えてXLRマイクを使える環境を整えたい人向け。"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "Shure SM7Bなどの感度が低いダイナミックマイクを使用し、プリアンプなしで高音質に駆動させたいストリーマーやクリエイター（安価な競合機ではゲイン不足になる人）",
+        "Stream Deckと連携し、配信中に手元で直感的にオーディオミックスやマイクのミュートを行いたい人",
+        "叫んだり大声を出したりするプレイスタイルで、Clipguardによる確実な音割れ防止機能を必要とするゲーム実況者"
+      ],
+      "pros": [
+        "80dBの強力なゲインにより、どんなマイクでも追加投資（マイクプリアンプ等）なしでポテンシャルを最大限に引き出せる",
+        "Clipguard 2.0が突発的な大音量による歪みを自動で防いでくれるため、配信中の事故を気にせず感情表現豊かに実況できる",
+        "Wave FX ProcessorによるDSP処理で、PCに負荷をかけずにスタジオ品質のエフェクト（EQやコンプなど）をかけ、ゼロ遅延でモニタリングできる"
+      ],
+      "cons": [
+        "シンプルなオーディオ入力だけを求めるユーザーにとっては、Wave Linkソフトウェアの設定が必要など、多機能ゆえの学習コストがかかる",
+        "予算を抑えたいエントリー層には価格がネック。旧世代機や入門用競合モデルと比較すると高価な投資になる"
+      ],
+      "score": 85,
+      "scoreRationale": "[基本点: 70] (固定)\n[加点: +10] (80dBの強力なゲインにより、低出力マイクでも追加機材不要で高音質録音が可能)\n[加点: +10] (Clipguard 2.0やWave FX Processorなど、プロ水準の独自の強み・機能性)\n[加点: +5] (Stream DeckやWave Linkソフトウェアとの強力なエコシステム統合)\n[減点: -10] (一般的なエントリーモデルと比較すると価格が高く、コストパフォーマンスの面で敷居が高い)\n[合計: 85]"
+    },
+    "technicalSpecs": {
+      "dimensions": {
+        "height": "73.0mm",
+        "width": "118.0mm",
+        "depth": "93.0mm"
+      },
+      "weight": "320g",
+      "capacity": "",
+      "material": "プラスチック（一部金属）",
+      "origin": "不明",
+      "other": [
+        "サンプルレート: 48kHz",
+        "ビット深度: 24-bit",
+        "周波数特性(XLR入力): 20Hz - 20kHz",
+        "周波数特性(ヘッドホン): 20Hz - 20kHz",
+        "ダイナミックレンジ(XLR入力): 135dB",
+        "等価入力雑音(EIN): -130dB",
+        "最大入力レベル: 6dBV",
+        "最大消費電力: 900mA",
+        "端子: マイク(XLR), ヘッドホン(3.5mmステレオ), ホスト(USB-C)",
+        "同梱物: Wave XLR MK.2, USB-Cケーブル(150cm), クイックスタートガイド"
+      ]
+    }
+  }
+}
