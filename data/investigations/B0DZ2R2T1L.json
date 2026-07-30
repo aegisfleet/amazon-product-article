@@ -1,0 +1,201 @@
+{
+  "analysis": {
+    "productName": "Dyson Micro Plus SV33",
+    "parentAsin": "B0DZ2R2T1L",
+    "productDescription": "ダイソンのサイクロン式コードレスクリーナーにおいて最軽量クラスとなる1.5kgのスティック掃除機。Fluffy Opticクリーナーヘッドを搭載し、見えないホコリを可視化しながら掃除できる。",
+    "productUsage": [
+      "フローリングや畳などの床面の日常的な掃除",
+      "ハンディクリーナーとして車内や階段、家具の上の掃除",
+      "付属ツールを使用した布団やソファの掃除"
+    ],
+    "positivePoints": [
+      "ダイソンのコードレスクリーナーの中で最軽量クラス（約1.54kg）の設計",
+      "Fluffy Opticクリーナーヘッドにより床の表面のホコリを緑色の光で可視化",
+      "0.1ミクロンもの微細な粒子を99.99%捕集する5段階の捕集設計",
+      "スティック、ハンディ、布団クリーナーとして使える1台3役の設計",
+      "変わらない吸引力を実現するダイソンの革新的なサイクロンテクノロジー"
+    ],
+    "negativePoints": [
+      "軽量化を優先しているため、ダストビン容量が小さく頻繁なゴミ捨てが必要",
+      "バッテリーの最長運転時間がエコモードで約20分と短め",
+      "カーペットの奥に入り込んだゴミの吸引など、強い吸引力が必要な場面では上位機種に劣る"
+    ],
+    "useCases": [
+      "毎日のちょっとした床掃除を負担なく行いたいシーン",
+      "高い場所や階段など、本体を持ち上げながら掃除するシーン",
+      "ホコリが見えにくい暗い場所や家具の下を掃除するシーン"
+    ],
+    "userStories": [
+      {
+        "userType": "一人暮らしの会社員",
+        "scenario": "仕事から帰宅後の夜や休日の短い時間での掃除",
+        "experience": "とにかく1.5kg台と非常に軽いため、片手でスイスイ動かせて掃除のハードルが大きく下がりました。ヘッドの緑色の光でホコリがくっきりと浮かび上がるので、今まで見逃していたゴミがよく見え、綺麗になっている実感があります。ゴミ捨ての頻度が多くなるのが少し手間ですが、手軽さを優先してこの機種を選んで正解でした。",
+        "supportingSourceIds": ["src-amazon-review-1"],
+        "sentiment": "positive"
+      },
+      {
+        "userType": "ペットを飼っている家庭",
+        "scenario": "フローリングの抜け毛や微細なホコリの掃除",
+        "experience": "以前使っていたダイソンは重くて腕が疲れましたが、これは別次元の軽さです。また、ペットの抜け毛が光で照らされてよく見えるので掃除残しがなくなりました。ただ、カーペット部分では少し吸引力が物足りなく感じることもあり、我が家ではフローリング専用として割り切って使っています。全体的には軽さが決め手となり満足しています。",
+        "supportingSourceIds": ["src-amazon-review-2"],
+        "sentiment": "mixed"
+      }
+    ],
+    "userImpression": "『ダイソンは重い』という印象を覆す1.5kg台の軽量設計と、ホコリを可視化する機能が高く評価されています。手軽にサッと取り出して掃除できるため、日常的な掃除のハードルが下がったという声が多数あります。一方で、軽量化とのトレードオフとしてダストビンが小さく、カーペットでの絶対的な吸引力やバッテリー持ちは上位機種に譲るため、広い一軒家やカーペット中心の家庭よりも、フローリング中心のマンションや、2台目のサブ機として導入する人に非常に満足度が高い傾向があります。",
+    "sources": [
+      {
+        "id": "src-amazon-review-1",
+        "name": "Amazon カスタマーレビュー / ダイソン公式ストア",
+        "url": "https://www.amazon.co.jp/dp/B0DZ2R2T1L",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2024-03-30",
+        "author": "Amazon カスタマー",
+        "conflictOfInterest": "none",
+        "notes": "軽さとホコリの可視化に対する高評価。ゴミ捨て頻度の多さについても言及。"
+      },
+      {
+        "id": "src-amazon-review-2",
+        "name": "Amazon カスタマーレビュー / Dyson Micro Plus B0CLL1CMMB",
+        "url": "https://www.amazon.co.jp/dp/B0CLL1CMMB",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2023-10-01",
+        "author": "Amazon カスタマー",
+        "conflictOfInterest": "none",
+        "notes": "同型機のレビューにおいて、フローリングでの使い勝手の良さとカーペットでのパワー不足に関する言及を確認。"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "他のどの軽量コードレスクリーナーよりも目に見えないゴミを可視化する",
+        "category": "comparativeAdvantage",
+        "confidence": "high",
+        "supportingSourceIds": ["src-amazon-review-1"],
+        "crossChecked": true,
+        "notes": "Fluffy Opticクリーナーヘッドの緑色の光は実際にホコリを鮮明に浮かび上がらせるため、ユーザーレビューでも『非常に良く見える』と高く評価されており、メーカーの主張と一致している。"
+      },
+      {
+        "claim": "変わらない吸引力を実現する",
+        "category": "quality",
+        "confidence": "medium",
+        "supportingSourceIds": ["src-amazon-review-2"],
+        "crossChecked": true,
+        "notes": "サイクロンテクノロジーによりフィルターの目詰まりが少なく吸引力が持続する点は事実だが、本機自体が軽量モデルであり絶対的な吸引力はV12等より低いため、ユーザーによっては『吸わない』と誤解するケースがある。"
+      }
+    ],
+    "lastInvestigated": "2026-07-30",
+    "competitiveAnalysis": [
+      {
+        "name": "Dyson V12 Detect Slim Fluffy (SV46 FF AM)",
+        "asin": "B0DZ2QQJB5",
+        "priceComparison": "対象商品と同程度の価格帯だが、タイミングによってはV12の方が安い場合がある。V12は上位モデルのため価格が逆転している場合はV12の方が総合的なコスパが高い。",
+        "featureComparison": [
+          "共通点：Fluffy Opticクリーナーヘッドによるホコリの可視化機能を持つコードレススティック掃除機。",
+          "相違点：V12はピエゾセンサーを搭載しゴミの量を計測可能で吸引力も高いが、重量が約2.2kgと重い。Micro Plusは約1.54kgと非常に軽い。"
+        ],
+        "differentiators": [
+          "Dyson Micro Plus SV33の利点：手への負担を最小限に抑えたい人、高い所や階段の掃除を頻繁に行うなら圧倒的な軽さのこちら。",
+          "Dyson V12 Detect Slim Fluffy (SV46 FF AM)の利点：メイン掃除機として家全体を掃除するための十分な吸引力とバッテリー性能、詳細なゴミの検知機能を求めるならこちら。"
+        ]
+      },
+      {
+        "name": "Dyson Digital Slim Origin (SV18 FF OR2 AM)",
+        "asin": "B0DZ2PC71L",
+        "priceComparison": "対象商品より大幅に安い。機能は一世代前だが価格差を考慮するとコストパフォーマンスに優れる。",
+        "featureComparison": [
+          "共通点：軽量化を意識したダイソンのコードレスクリーナー。",
+          "相違点：Digital Slimは約1.9kgで対象商品より重く、ホコリの可視化機能（Fluffy Optic）を搭載していない。"
+        ],
+        "differentiators": [
+          "Dyson Micro Plus SV33の利点：ホコリを可視化する最新ヘッドと、1.5kg台という極限の軽さに価値を感じる人向け。",
+          "Dyson Digital Slim Origin (SV18 FF OR2 AM)の利点：価格を抑えつつ、ある程度の軽さとダイソンならではの吸引力のバランスを重視するコスパ志向の人向け。"
+        ]
+      },
+      {
+        "name": "Dyson Micro Plus (SV33 FF PL)",
+        "asin": "B0CLL1CMMB",
+        "priceComparison": "対象商品（AMモデル）より実売価格が安い傾向がある。全く同じ基本スペックのため、安い方を選ぶのが合理的。",
+        "featureComparison": [
+          "共通点：基本性能、重量（1.54kg）、Fluffy Opticヘッドなど全て同じDyson Micro Plusモデル。",
+          "相違点：流通ルート（Amazon限定AMモデルかどうか）や付属品の微細な違いのみ。"
+        ],
+        "differentiators": [
+          "Dyson Micro Plus SV33の利点：Amazon独自のキャンペーンやポイント還元などで、実質価格が逆転する場合に選ぶべき。",
+          "Dyson Micro Plus (SV33 FF PL)の利点：基本性能が同じであるため、純粋に販売価格が安いタイミングであれば迷わずこちらを選ぶべき。"
+        ]
+      },
+      {
+        "name": "Dyson V8 Origin (SV25 RD2 AM)",
+        "asin": "B0DNSY6Y2X",
+        "priceComparison": "対象商品より大幅に安く、ダイソンの入門機として手頃な価格設定。",
+        "featureComparison": [
+          "共通点：ダイソンのサイクロン式コードレスクリーナー。",
+          "相違点：V8は約2.61kgと対象商品より1kg以上重く、ホコリ可視化機能がない。ただしダストビン容量は大きい。"
+        ],
+        "differentiators": [
+          "Dyson Micro Plus SV33の利点：腕への負担を減らし、ホコリを見ながら効率的に掃除したい人向け。",
+          "Dyson V8 Origin (SV25 RD2 AM)の利点：重さは妥協できるので、とにかく初期費用を抑えてダイソンを導入したい人向け。"
+        ]
+      },
+      {
+        "name": "Dyson WashG1 (WR01)",
+        "asin": "B0DGX7VQ3H",
+        "priceComparison": "対象商品より安い。ただし用途が全く異なるため単純比較はできない。",
+        "featureComparison": [
+          "共通点：ダイソンのコードレスクリーナー。",
+          "相違点：WashG1は水拭き専用であり、液体や固形物をローラーで拭き取る方式。対象商品は吸引式の掃除機。"
+        ],
+        "differentiators": [
+          "Dyson Micro Plus SV33の利点：日常のホコリやゴミをサッと吸い取る、一般的な乾式掃除機としての用途を求める人向け。",
+          "Dyson WashG1 (WR01)の利点：フローリングのベタつき汚れや液体のこぼし跡など、水拭きでしっかり汚れを落としたい人向け。"
+        ]
+      },
+      {
+        "name": "Dyson V8 Slim Fluffy Extra (SV10K EXT BU AM)",
+        "asin": "B0DZ2NNJVC",
+        "priceComparison": "対象商品より安い。V8を軽量化したモデル。",
+        "featureComparison": [
+          "共通点：軽量化を意識した設計。",
+          "相違点：V8 Slimは約2.15kgで対象商品(1.54kg)よりは重い。ホコリの可視化機能はない。"
+        ],
+        "differentiators": [
+          "Dyson Micro Plus SV33の利点：さらなる軽さと、ホコリの可視化による掃除の効率化を最優先する人向け。",
+          "Dyson V8 Slim Fluffy Extra (SV10K EXT BU AM)の利点：V8のパワーを維持しつつ少しだけ軽くしたモデルを、手頃な価格で手に入れたい人向け。"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "毎日こまめに掃除機をかけるため、腕への負担が少ない超軽量モデルを求める人（V12等の上位モデルの重さがネックになる人）",
+        "フローリングの割合が多く、ホコリの取り残しを無くしたいマンション住まいの人"
+      ],
+      "pros": [
+        "1.5kg台という驚異的な軽さにより、高い場所や階段などでも片手でスイスイ掃除でき、毎日の掃除のハードルが劇的に下がる",
+        "緑色の光でホコリを可視化するため、今まで見逃していた微細なゴミまでしっかり認識して取り除くことができる"
+      ],
+      "cons": [
+        "ダストビンが小さいため、広い家やペットの毛が多い環境では頻繁にゴミ捨てを行う必要がある",
+        "バッテリー容量が小さく、カーペットでの強い吸引力もないため、家全体のメイン掃除機としてよりはサブ機やフローリング専用機として運用する想定が必要"
+      ],
+      "score": 75,
+      "scoreRationale": "[基本点: 70]\n[加点: +5] (1.5kg台の超軽量設計による手軽さ)\n[加点: +5] (Fluffy Opticヘッドによるホコリ可視化機能の実用性)\n[減点: -5] (通常版と比較して実売価格が割高になりがちでコスパにやや難あり)\n[合計: 75]"
+    },
+    "technicalSpecs": {
+      "dimensions": {
+        "height": "1091mm",
+        "width": "222mm",
+        "depth": "250mm"
+      },
+      "weight": "1.54kg",
+      "capacity": "ダストビン容量: 0.2L",
+      "material": "プラスチック、アルミニウム等",
+      "origin": "マレーシアまたはフィリピン等",
+      "other": [
+        "最長運転時間: エコモード約20分",
+        "充電時間: 約3.5時間",
+        "クリーナーヘッド: Fluffy Optic クリーナーヘッド"
+      ]
+    }
+  }
+}
