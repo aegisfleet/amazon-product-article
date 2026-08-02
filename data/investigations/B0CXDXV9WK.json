@@ -1,178 +1,157 @@
 {
   "analysis": {
-    "productName": "Lenovo Tab B11 (ZADA0284JP)",
-    "parentAsin": "B0CXDXV9WK",
-    "productDescription": "Lenovo Tab B11は、11インチの大画面と4つのスピーカーを搭載し、専用スタイラスペンまで同梱されたコストパフォーマンス抜群のAndroidタブレットです。",
+    "productName": "Lenovo Tab B11",
+    "parentAsin": "B0H1Q9NRNK",
+    "productDescription": "MediaTek Helio G88を搭載した10.95インチAndroid 13タブレットです。4GBのメモリと128GBのストレージを備え、日常的な動画視聴やブラウジングに適しています。",
     "productUsage": [
-      "YouTubeやNetflixなどの高画質動画視聴（Widevine L1対応）",
-      "同梱のペンを使用した手書きメモやイラスト作成",
-      "PCのサブモニターとしての利用（Lenovo Freestyle対応）",
-      "電子書籍の閲覧やブラウジング"
+      "動画視聴",
+      "ブラウジング",
+      "電子書籍の閲覧"
     ],
     "positivePoints": [
-      "2万円台半ばでスタイラスペン（Lenovo Tab Pen）が同梱されている",
-      "Dolby Atmos対応の4スピーカーで、価格以上の音質体験",
-      "IP52相当の防塵・防滴性能があり、キッチンなどでも使いやすい",
-      "PCのサブモニターとして使える「Lenovo Freestyle」に対応",
-      "高級感のあるメタルユニボディデザイン"
+      "10.95インチ（1920x1200）のIPSワイドパネルを搭載",
+      "MediaTek Helio G88プロセッサー、4GBメモリ、128GBストレージを搭載",
+      "満充電にせず80%で充電を止めるなど、バッテリー寿命を延ばす充電制御機能を持つ",
+      "Dolby Atmos対応のクアッドスピーカーを搭載し、音響面も充実"
     ],
     "negativePoints": [
-      "SoC（Helio G88）の性能は控えめで、重い3Dゲームには向かない",
-      "Wi-Fi 6には非対応（Wi-Fi 5まで）",
-      "充電速度が急速充電対応機種に比べるとやや遅め"
+      "SoC（Helio G88）の性能により、高負荷な作業やゲームでは処理速度にもっさり感（遅さ）を感じる場合がある",
+      "一部ユーザーから初期不良時のサポート対応について不満の声が上がっている"
     ],
     "useCases": [
-      "大学生の講義ノートや資料閲覧用デバイスとして",
-      "家庭内でのエンターテインメント（動画・雑誌）消費用",
-      "ビジネスマンの出張用サブ機・サブモニターとして"
+      "自宅での動画鑑賞",
+      "日常的なウェブサイトの閲覧",
+      "家族共用のタブレット"
     ],
     "userStories": [
       {
-        "userType": "大学生",
-        "scenario": "講義中のノート取りとレポート作成",
-        "experience": "以前はノートPCを持ち歩いていたが、Tab B11に変えてから荷物が軽くなった。付属のペンでPDFに直接書き込めるのが非常に便利。カフェでの課題もこれ一台でこなせる。（推測）",
+        "userType": "一般ユーザー",
+        "scenario": "動画視聴や日常利用のタブレットとして使用",
+        "experience": "処理速度にはわかっていたものの多少のもっさり感はあるが、それ以外は問題なく性能通り。満充電にせずに80%で充電を止め、残量に応じて充電を再開するバッテリー制御機能が秀逸で、バッテリーの劣化を防げるのが良いと感じた。マルチタスクをしなければ十分なコスパだと思う。",
+        "supportingSourceIds": [
+          "src-3"
+        ],
         "sentiment": "positive"
       },
       {
-        "userType": "30代会社員",
-        "scenario": "自宅での動画視聴とPCのサブモニター",
-        "experience": "仕事中はPCの横に置いてチャットツールの表示用サブモニターとして使用。夜はベッドでNetflixを見るのに使っている。4つのスピーカーのおかげで、イヤホンなしでも迫力がある。（推測）",
-        "sentiment": "positive"
-      },
-      {
-        "userType": "スマホゲーマー",
-        "scenario": "原神などの3Dゲームプレイ",
-        "experience": "大画面でゲームをしたくて買ったが、画質設定を最低にしてもカクつく場面がある。軽いパズルゲームなら問題ないが、本格的なゲーム用としては力不足を感じた。（推測）",
-        "sentiment": "mixed"
+        "userType": "サポートを重視するユーザー",
+        "scenario": "初期不良が発生した際の対応",
+        "experience": "使用開始1週間後からスリープ状態になるなどの不具合が多発。リペアセンターに送ったがハード面の故障ではないとして返送され、不満を感じた。サポート体制に不安を覚える結果となった。",
+        "supportingSourceIds": [
+          "src-3"
+        ],
+        "sentiment": "negative"
       }
     ],
-    "userImpression": "「価格以上の満足感」という評価が支配的。特にペンが最初から付いている点と、動画視聴機としての完成度（画面・音質）が高く評価されている。一方で、処理性能については割り切りが必要という共通認識があり、ゲーム用途で購入したユーザーからは不満も見られるが、用途を理解して購入した層の満足度は非常に高い。",
+    "userImpression": "総じて、動画視聴やブラウジングといったライトな用途には十分なコストパフォーマンスを発揮し、特にバッテリーの充電制御機能が長寿命化に役立つと評価されています。一方で、SoCの性能上、動作にもっさり感を感じるという声もあり、高負荷な用途には向きません。また、初期不良時のサポート対応に不満を抱くユーザーもいるため、購入時には用途の割り切りとサポートへの理解が必要です。",
     "sources": [
       {
-        "name": "Lenovo Tab B11の実機レビュー - パソコンガイド",
-        "url": "https://for-real.jp/lenovo-tab-b11-review/",
-        "credibility": "high"
+        "id": "src-1",
+        "name": "Amazon商品ページ",
+        "url": "https://www.amazon.co.jp/dp/B0CXDXV9WK",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2024-03-15",
+        "author": "Lenovo",
+        "conflictOfInterest": "possible",
+        "notes": "製品の基本仕様（Helio G88, 4GB RAM, 128GB ROM, 10.95インチ画面など）を確認"
       },
       {
-        "name": "Amazon Customer Reviews",
-        "url": null,
-        "credibility": "medium"
+        "id": "src-2",
+        "name": "価格.com 製品スペックページ",
+        "url": "https://kakaku.com/item/K0001608393/spec/",
+        "tier": "high",
+        "evidenceType": "secondary",
+        "publishedAt": "2024-02-22",
+        "author": "価格.com",
+        "conflictOfInterest": "none",
+        "notes": "詳細スペック（バッテリー7040mAh、サイズ、重量など）を確認"
+      },
+      {
+        "id": "src-3",
+        "name": "価格.com レビュー",
+        "url": "https://kakaku.com/item/K0001608393/review/",
+        "tier": "high",
+        "evidenceType": "secondary",
+        "publishedAt": "2024-06-09",
+        "author": "購入者",
+        "conflictOfInterest": "none",
+        "notes": "もっさり感、充電制御機能の優秀さ、サポート対応への不満などの使用感を確認"
       }
     ],
-    "lastInvestigated": "2026-03-06",
+    "claims": [
+      {
+        "claim": "臨場感あふれるサウンド",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-2"
+        ],
+        "crossChecked": true,
+        "notes": "価格.comの製品特徴として、ドルビー・アトモス対応クアッドスピーカーによる臨場感あふれるサウンドが謳われている"
+      }
+    ],
+    "lastInvestigated": "2026-08-03",
     "competitiveAnalysis": [
       {
-        "name": "Xiaomi Redmi Pad 2",
+        "name": "Lenovo Tab One",
+        "asin": "B0F8VC313L",
+        "priceComparison": "対象商品は10.95インチと画面が大きく、本競合は8.7インチでLTEモデルという違いがある。",
+        "featureComparison": [
+          "共通点：Lenovo製のAndroidタブレットであり、MediaTekプロセッサ、4GBメモリ、128GBストレージを搭載している。",
+          "相違点：対象商品は10.95インチでHelio G88搭載（Wi-Fiモデル）、競合は8.7インチでHelio G85搭載（LTEモデル）と、画面サイズと通信方式が異なる。"
+        ],
+        "differentiators": [
+          "Lenovo Tab B11の利点：より大きな画面（10.95インチ）で動画やコンテンツを楽しみたい、自宅でのWi-Fi利用がメインの人に最適である。",
+          "Lenovo Tab Oneの利点：外出先でも単体で通信したい（LTE対応）、または片手でも持ちやすい8.7インチのコンパクトさを重視する人に適している。"
+        ]
+      },
+      {
+        "name": "Redmi Pad 2",
         "asin": "B0F9P4719Q",
-        "priceComparison": "Tab B11より安価（約1.9万円）。コスト重視の選択肢。",
+        "priceComparison": "競合の方が安価で、リフレッシュレートやバッテリー容量で上回る場合がある。",
         "featureComparison": [
-          "SoCはHelio G100-UltraでB11より新しい",
-          "大容量9000mAhバッテリー",
-          "ペンは非付属"
+          "共通点：11インチクラスの画面、4GBメモリ、128GBストレージを搭載したエントリー〜ミドルクラスのAndroidタブレット。",
+          "相違点：対象商品はHelio G88搭載、競合はHelio G100-Ultraを搭載し、バッテリー容量も9000mAhと競合の方が大きい。"
         ],
         "differentiators": [
-          "圧倒的な安さとバッテリー容量",
-          "Xiaomiエコシステムとの連携"
-        ]
-      },
-      {
-        "name": "UBDXBD M70",
-        "asin": "B0GD12PH9F",
-        "priceComparison": "Tab B11よりさらに安価（約1.4万円）。",
-        "featureComparison": [
-          "Android 16（仕様上は確認が必要）",
-          "RAM20GB(拡張含む)+ROM128GBの表記",
-          "Widevine L1対応"
-        ],
-        "differentiators": [
-          "価格破壊レベルの安さ",
-          "仕様上のハイスペック表記（実性能は未知数）"
-        ]
-      },
-      {
-        "name": "AGM タブレット",
-        "asin": "B0F9XVV7CL",
-        "priceComparison": "Tab B11より圧倒的に安価（約1万円）。",
-        "featureComparison": [
-          "Android 14搭載",
-          "Widevine L1対応",
-          "バッテリーは7000mAhで同等"
-        ],
-        "differentiators": [
-          "1万円台前半の超低価格",
-          "必要十分な動画視聴スペック"
-        ]
-      },
-      {
-        "name": "DOOGEE U11",
-        "asin": "B0G5ZJW1Q6",
-        "priceComparison": "Tab B11より安価（約1.4万円）。",
-        "featureComparison": [
-          "Android 16搭載（表記上）",
-          "8580mAhの大容量バッテリー",
-          "Widevine L1対応"
-        ],
-        "differentiators": [
-          "価格に対するバッテリー容量の大きさ",
-          "Gemini AI搭載アピール"
+          "Lenovo Tab B11の利点：Lenovoブランドの安定性や、優秀な充電制御機能（80%で充電を止める等）によるバッテリーの長寿命化を重視する人に向いている。",
+          "Redmi Pad 2の利点：より高い処理性能や大容量バッテリー（9000mAh）を重視し、Xiaomi製デバイス間の連携機能を活かしたい人に適している。"
         ]
       }
     ],
     "recommendation": {
       "targetUsers": [
-        "初めてタブレットを購入する学生やライトユーザー",
-        "動画視聴と手書きメモを低予算で両立させたい人",
-        "PCのサブモニターとしても使えるタブレットを探している人"
+        "動画視聴やウェブサイトの閲覧など、軽めの用途に限定して大画面タブレットを使いたい人",
+        "バッテリー劣化を防ぐ充電制御機能に魅力を感じ、長くデバイスを使い続けたい人"
       ],
       "pros": [
-        "スタイラスペン同梱で3万円台前半のコスパ",
-        "動画視聴に最適な広視野角画面と4スピーカー",
-        "Lenovo FreestyleによるPC連携機能"
+        "10.95インチの大きな画面とDolby Atmos対応スピーカーにより、動画コンテンツを迫力ある音と映像で楽しめる",
+        "バッテリーの過充電を防ぐ機能があるため、据え置き中心の使い方でもバッテリー劣化を抑えやすい"
       ],
       "cons": [
-        "重い3Dゲームには不向き",
-        "生体認証が顔認証のみ",
-        "Wi-Fi 6非対応"
+        "処理性能はエントリークラスのため、重いゲームや複数のアプリを同時に使うような用途には向いていない",
+        "初期不良時のサポート対応に不満の声があるため、手厚いサポートを期待する人には注意が必要"
       ],
-      "score": 85,
-      "scoreRationale": "[基本点: 70]\n[性能・機能: -2] (Helio G88は動画やWebには十分だが、重いゲームには力不足)\n[コストパフォーマンス: +7] (ペン同梱で約3.2万円は優秀。競合の超低価格帯の存在を考慮しても高評価)\n[品質・デザイン: +2] (メタルユニボディとIP52防塵防滴対応)\n[ユーザー満足度: +3] (価格以上の体験として好評)\n[独自の強み: +5] (ペン同梱とPCサブモニター化機能)\n[合計: 85]"
+      "score": 65,
+      "scoreRationale": "[基本点: 70]\n[加点: +3] (10.95インチの大きな画面による視認性の高さ)\n[加点: +2] (充電制御機能によるバッテリー寿命の延長)\n[減点: -5] (処理性能のもっさり感)\n[減点: -5] (サポート対応に関する懸念)\n[合計: 65]"
     },
     "technicalSpecs": {
-      "os": "Android 13",
-      "cpu": "MediaTek Helio G88",
-      "ram": "4GB LPDDR4x",
-      "storage": "128GB (microSD対応 最大1TB)",
-      "display": {
-        "size": "10.95インチ",
-        "resolution": "1920x1200 (WUXGA)",
-        "type": "IPS液晶, 90Hz, 10点マルチタッチ"
-      },
-      "battery": {
-        "capacity": "7040mAh",
-        "charging": "約3.6時間 (付属充電器)"
-      },
-      "camera": {
-        "main": "800万画素",
-        "front": "800万画素"
-      },
       "dimensions": {
         "height": "255.3mm",
         "width": "166.3mm",
-        "depth": "7.2mm",
-        "weight": "465g"
+        "depth": "7.2mm"
       },
-      "connectivity": [
-        "Wi-Fi 5 (802.11ac)",
-        "Bluetooth 5.1"
-      ],
+      "weight": "465g",
+      "capacity": "128GB",
+      "material": "情報なし",
+      "origin": "情報なし",
       "other": [
-        "Dolby Atmos対応4スピーカー",
-        "顔認証",
-        "Lenovo Tab Pen同梱",
-        "IP52防滴防塵",
-        "Widevine L1対応",
-        "USB 2.0 Type-C (OTG対応)",
-        "マイクロホン/ヘッドホン・コンボ・ジャック"
+        "OS: Android 13",
+        "CPU: MediaTek Helio G88",
+        "メモリ: 4GB",
+        "ディスプレイ: 10.95型 (1920x1200)",
+        "バッテリー: 7040mAh"
       ]
     }
   }
