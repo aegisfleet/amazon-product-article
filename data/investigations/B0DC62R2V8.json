@@ -1,154 +1,161 @@
 {
   "analysis": {
-    "productName": "ナカバヤシ Kindle Paperwhite (第12世代) / Colorsoft用 液晶保護フィルム (フッ素コーティング・反射防止・2枚入)",
+    "productName": "Kindle Paperwhite 第12世代・Colorsoft用 保護フィルム フッ素コーティング 反射防止 2枚入り",
     "parentAsin": "B0DC62R2V8",
-    "productDescription": "2024年発売のKindle Paperwhite (第12世代) および Kindle Colorsoft 用の液晶保護フィルム。国内メーカー「ナカバヤシ」製で、フッ素コーティングによる滑らかな指すべりと反射防止（アンチグレア）機能を備え、貼り付けに失敗しても安心な2枚セットとなっている。",
+    "productDescription": "Kindle Paperwhite (第12世代) および Kindle Colorsoft 向けに設計された、反射防止とフッ素コーティングを施した保護フィルム2枚セット。指すべりが良く汚れが付きにくいのが特徴。",
     "productUsage": [
-      "Kindle Paperwhite (第12世代) の画面保護",
-      "Kindle Colorsoft の画面保護",
-      "読書時の光の映り込み防止（アンチグレア）",
-      "指紋や汚れの付着防止（フッ素コーティング）"
+      "Kindle端末の画面保護",
+      "読書中の光の反射防止",
+      "指紋や汚れの付着防止"
     ],
     "positivePoints": [
-      "国内事務用品メーカー「ナカバヤシ」製の安心感",
-      "2枚入りで1,580円（1枚あたり790円）という良好なコストパフォーマンス",
-      "フッ素コーティングにより、指紋が付きにくく拭き取りやすい",
-      "気泡レス加工で、貼り付け時の失敗リスクが低い",
-      "反射防止（AG）加工により、照明の下や屋外でも画面が見やすい"
+      "AG抗菌フッ素コート層により撥水防水効果が高く指滑りが軽い",
+      "汚れや油分をはじき、拭き取るだけで綺麗な状態を保てる",
+      "自己吸着タイプで画面にぴったり貼り付く",
+      "2枚入りで失敗時や張り替え時の予備がある"
     ],
     "negativePoints": [
-      "アンチグレア特有の画面の白っぽさや粒状感が出る可能性がある（推測）",
-      "ガラスフィルムに比べると耐衝撃性は劣る（PETフィルムのため）",
-      "貼り付けガイド枠などの補助ツールが付属しているか不明（商品情報に記載なし）"
+      "Kindleの枠ギリギリのジャストサイズ設計のため、数ミリのズレも許されず貼り付け難易度が高い"
     ],
     "useCases": [
-      "通勤電車など、蛍光灯の映り込みが気になる場所での読書",
-      "お風呂での読書（撥水効果による水滴対策）",
-      "就寝前の読書（指紋ベタつき防止）"
+      "Kindle PaperwhiteやColorsoftを購入してすぐの画面保護",
+      "屋外など光の反射が気になる場所での読書",
+      "画面の指紋や汚れが気になる場合の対策"
     ],
     "userStories": [
       {
-        "userType": "Kindleユーザー（通勤利用者）",
-        "scenario": "電車内での読書",
-        "experience": "電車の強い蛍光灯の下でも、反射防止加工のおかげで画面への映り込みが抑えられ、文字が読みやすい。フッ素コーティングでページめくりの指すべりもスムーズである。（推測）",
-        "sentiment": "positive"
-      },
-      {
-        "userType": "初めて保護フィルムを貼るユーザー",
-        "scenario": "購入後の貼り付け作業",
-        "experience": "気泡レス加工のおかげで、万が一気泡が入っても指で押し出しやすく、自然に抜けていくため綺麗に仕上げることができる。2枚入りなので失敗しても予備があるという安心感がある。（推測）",
-        "sentiment": "positive"
+        "userType": "Kindleユーザー",
+        "scenario": "新品のKindleの画面を保護するために購入",
+        "experience": "綺麗に張る事さえできれば値段に対してのパフォーマンスはとてもよい商品です。指の滑りやさわり心地も良好です。ただ、壊滅的に張り辛く、大きさがかなりピッタリでKindle Paperwhiteの枠ギリギリなので数ミリの誤差も許されません。",
+        "supportingSourceIds": [
+          "src-amazon-reviews"
+        ],
+        "sentiment": "mixed"
       }
     ],
-    "userImpression": "国内メーカー製という信頼性と、実用的な機能（反射防止・防汚）を兼ね備えたスタンダードなフィルム。特に2枚セットである点は、コストパフォーマンスと貼り付けの安心感の両面で評価できる。",
+    "userImpression": "コストパフォーマンスの良さと、フッ素コーティングによる指滑りの良さや汚れ防止機能は高く評価されています。しかし、画面サイズに対してジャストサイズすぎる設計のため、貼り付けの難易度が非常に高く、少しでもズレると失敗しやすい点がユーザーにとって大きなハードルとなっています。器用な人や貼り付けに慣れている人には満足度が高いですが、そうでない人には苦労を強いる製品です。",
     "sources": [
       {
-        "name": "Amazon商品ページ",
+        "id": "src-amazon-api",
+        "name": "Amazon Product API",
         "url": "https://www.amazon.co.jp/dp/B0DC62R2V8",
-        "credibility": "high"
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2024-10-16",
+        "author": "Amazon",
+        "conflictOfInterest": "none",
+        "notes": "製品仕様、価格、公式な特徴を取得"
       },
       {
-        "name": "Pocket-lint: Kindle Paperwhite (2024) review",
-        "url": "https://www.pocket-lint.com/kindle-paperwhite-2024-review/",
-        "credibility": "high"
+        "id": "src-amazon-reviews",
+        "name": "Amazon カスタマーレビュー",
+        "url": "https://www.amazon.co.jp/dp/B0DC62R2V8",
+        "tier": "medium",
+        "evidenceType": "primary",
+        "publishedAt": "2024-11-01",
+        "author": "Amazonユーザー",
+        "conflictOfInterest": "none",
+        "notes": "「綺麗に張る事さえできればコスパは良いが、枠ギリギリで張り辛い」というレビューを確認"
       }
     ],
-    "lastInvestigated": "2026-03-06",
+    "claims": [
+      {
+        "claim": "抗菌率99.9%により清潔できれいな状態を長く保ちます。",
+        "category": "safety",
+        "confidence": "medium",
+        "supportingSourceIds": [
+          "src-amazon-api"
+        ],
+        "crossChecked": false,
+        "notes": "メーカーの公式な主張であり、第三者機関の証明までは確認できていない"
+      }
+    ],
+    "lastInvestigated": "2026-08-03",
     "competitiveAnalysis": [
       {
-        "name": "FILMEXT フィルム Kindle Colorsoft/Paperwhite 保護フィルム ブルーライトカット 反射低減",
-        "asin": "B0DKF9K6FJ",
-        "priceComparison": "1,590円で本製品と同価格帯。こちらは1枚入りの可能性が高いが、ブルーライトカット機能を備えている。",
-        "featureComparison": [
-          "ブルーライトカット",
-          "反射低減"
-        ],
-        "differentiators": [
-          "ブルーライトカット機能を求めるユーザー向け"
-        ]
-      },
-      {
-        "name": "Lifeinnotech Kindle Colorsoft/Paperwhite 保護フィルム ARフィルム 反射防止",
+        "name": "Lifeinnotech Kindle Colorsoft / Paperwhite シグニチャーエディション 第12世代 保護フィルム",
         "asin": "B0FJX3KML5",
-        "priceComparison": "1,266円と本製品より安価。",
+        "priceComparison": "対象商品よりやや安い（￥1,266）が、こちらは1枚入りの可能性があるため、2枚入りの対象商品の方がコストパフォーマンスが高い。",
         "featureComparison": [
-          "アンチリフレクション(AR)フィルム",
-          "反射防止",
-          "指紋防止"
+          "共通点：Kindle Paperwhite 第12世代対応、反射防止機能",
+          "相違点：対象商品はフッ素コーティングや抗菌機能に優れている"
         ],
         "differentiators": [
-          "価格を抑えつつARフィルムを試したいユーザー向け",
-          "価格重視"
+          "Kindle Paperwhite 第12世代・Colorsoft用 保護フィルム フッ素コーティング 反射防止 2枚入り（本製品）の利点：2枚入りで貼り直しや予備が必要な人、指滑りの良さを重視する人に最適。",
+          "Lifeinnotech Kindle Colorsoft / Paperwhite シグニチャーエディション 第12世代 保護フィルムの利点：少しでも初期費用を抑えたい人に適している。"
         ]
       },
       {
-        "name": "FILMEXT フィルム Kindle Colorsoft/Paperwhite 保護フィルム 9H (強化ガラス同等) 超透明 日本製",
+        "name": "FILMEXT フィルム Kindle Colorsoft / Paperwhite 第12世代 用 保護フィルム 9H ブルーライトカット",
         "asin": "B0FJXYY5P8",
-        "priceComparison": "1,390円と本製品よりやや安価。",
+        "priceComparison": "対象商品よりわずかに安い（￥1,390）が、こちらはガラス同等の高硬度(9H)とブルーライトカット機能を持つ。",
         "featureComparison": [
-          "9H高硬度(強化ガラス同等)",
-          "超透明"
+          "共通点：Kindle Paperwhite 第12世代対応",
+          "相違点：対象商品は柔軟なフィルムで反射防止に特化。競合製品は9H硬度とブルーライトカットを重視。"
         ],
         "differentiators": [
-          "ガラスのような硬度と透明度を求めるユーザー向け",
-          "傷つきにくさ重視"
+          "Kindle Paperwhite 第12世代・Colorsoft用 保護フィルム フッ素コーティング 反射防止 2枚入り（本製品）の利点：ガラスのような厚みや重さを避けたい人、2枚入りで予備を持っておきたい人向け。",
+          "FILMEXT フィルム Kindle Colorsoft / Paperwhite 第12世代 用 保護フィルム 9H ブルーライトカットの利点：画面の保護力（硬度9H）やブルーライトカットによる目の疲れ軽減を重視する人向け。"
         ]
       },
       {
-        "name": "TiMOVO 保護フィルム (3枚セット)",
-        "asin": "B0FL23X9D3",
-        "priceComparison": "1,199円で3枚入りと、圧倒的に単価が安い。",
+        "name": "Greerass For Kindle Paperwhite 第12世代 2024 フィルム 強化ガラス",
+        "asin": "B0DP4MTY8R",
+        "priceComparison": "対象商品の半額以下（￥649）と非常に安価。",
         "featureComparison": [
-          "PET素材",
-          "アンチグレア"
+          "共通点：Kindle Paperwhite 第12世代対応、指紋防止",
+          "相違点：対象商品はフィルム素材で2枚入り。競合製品は強化ガラス製で1枚入り。"
         ],
         "differentiators": [
-          "とにかく安さと枚数を求めるユーザー向け",
-          "海外ブランド"
+          "Kindle Paperwhite 第12世代・Colorsoft用 保護フィルム フッ素コーティング 反射防止 2枚入り（本製品）の利点：ガラスフィルム特有の厚みや光沢（または不自然な反射）を嫌う人、2枚セットの安心感が欲しい人向け。",
+          "Greerass For Kindle Paperwhite 第12世代 2024 フィルム 強化ガラスの利点：とにかく安く画面保護を済ませたい人や、ガラス特有の滑らかな触り心地を好む人向け。"
+        ]
+      },
+      {
+        "name": "FILMEXT 360度 覗き見防止 Kindle Colorsoft / Paperwhite 第12世代 用 保護フィルム",
+        "asin": "B0FJXZ72LF",
+        "priceComparison": "対象商品の約2倍（￥2,990）と高価。",
+        "featureComparison": [
+          "共通点：Kindle Paperwhite 第12世代対応、反射低減",
+          "相違点：対象商品は通常の透明/反射防止タイプ。競合製品は覗き見防止機能がメイン。"
+        ],
+        "differentiators": [
+          "Kindle Paperwhite 第12世代・Colorsoft用 保護フィルム フッ素コーティング 反射防止 2枚入り（本製品）の利点：価格を抑えつつ、純粋に画面の保護と見やすさ（反射防止）を求める人に最適。",
+          "FILMEXT 360度 覗き見防止 Kindle Colorsoft / Paperwhite 第12世代 用 保護フィルムの利点：電車の中など、外出先で周囲からの視線が気になる環境で頻繁に読書をする人向け。"
         ]
       }
     ],
     "recommendation": {
       "targetUsers": [
-        "国内メーカーの製品を選びたい慎重派のユーザー",
-        "フィルム貼りに自信がなく、予備（2枚目）が欲しいユーザー",
-        "指紋汚れを気にするユーザー"
+        "コストパフォーマンスを重視し、失敗しても安心な2枚入りフィルムを求める人",
+        "指滑りの良さと汚れへの強さ（フッ素コーティング）を重視する人",
+        "フィルムの貼り付け作業に自信がある、または慎重に作業できる人"
       ],
       "pros": [
-        "ナカバヤシ製という安心感",
-        "2枚入りで失敗しても安心、かつ高コスパ",
-        "フッ素コーティングによる高い防汚性と操作性"
+        "2枚入りなので、万が一貼り付けに失敗してもすぐにやり直せる安心感があります。",
+        "フッ素コーティングにより指滑りがなめらかで、読書中のページめくりが快適に行えます。"
       ],
       "cons": [
-        "ガイド枠などの貼り付け補助具がない可能性がある",
-        "ブルーライトカット機能はない"
+        "画面枠に対してギリギリのサイズ設計のため、貼り付け時には細心の注意が必要です。不器用な方は苦戦する可能性があります。"
       ],
-      "score": 80,
-      "scoreRationale": "[基本点: 70]\n[加点: +5] フッ素コーティングによる防汚・操作性向上\n[加点: +5] 2枚入りで1,580円（1枚790円）という良好なコストパフォーマンス\n[合計: 80]"
+      "score": 75,
+      "scoreRationale": "[基本点: 70]\n[加点: +5] (2枚入りで1,580円というコストパフォーマンスの良さ)\n[加点: +5] (フッ素コーティングによる優れた指滑りと汚れ防止機能)\n[減点: -5] (ジャストサイズすぎる設計による貼り付け難易度の高さ)\n[合計: 75]"
     },
     "technicalSpecs": {
       "dimensions": {
-        "height": "約170mm",
-        "width": "約121mm",
-        "depth": null,
-        "weight": null
+        "height": "12.7mm",
+        "width": "121.0mm",
+        "depth": "170.0mm"
       },
-      "os": null,
-      "cpu": null,
-      "ram": null,
-      "storage": null,
-      "display": null,
-      "battery": null,
-      "camera": null,
-      "connectivity": null,
-      "power": null,
-      "capacity": null,
+      "weight": "不明",
+      "capacity": "2枚入り",
+      "material": "PET (自己吸着タイプ)",
+      "origin": "不明",
       "other": [
-        "PET素材(フッ素コーティング)",
-        "反射防止(AG)",
-        "抗菌(99.9%)",
-        "気泡レス",
-        "2枚入り"
+        "AG抗菌フッ素コート",
+        "反射防止(アンチグレア)",
+        "抗菌率99.9%",
+        "気泡レス加工"
       ]
     }
   }
