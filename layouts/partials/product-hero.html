@@ -172,7 +172,7 @@
                 data-affiliate-url="{{ $product.affiliate_url }}"
                 data-image="{{ if $product.images }}{{ index $product.images 0 }}{{ end }}"
                 data-price="{{ $product.price }}" data-score="{{ $product.score | default 0 }}"
-                data-category="{{ $trackingCategory }}" aria-pressed="false" aria-label="お気に入りに追加">
+                data-category="{{ $trackingCategory }}" aria-pressed="false" aria-label="{{ .Title }}をお気に入りに追加">
                 <span class="fav-icon" aria-hidden="true">🤍</span>
                 <span class="fav-label">お気に入りに追加</span>
             </button>
@@ -181,7 +181,9 @@
             <a href="{{ $product.affiliate_url }}" class="btn-amazon-hero" target="_blank" rel="noopener noreferrer"
                 data-track-product="1" data-asin="{{ $product.asin }}" data-category="{{ $trackingCategory }}"
                 data-price-bucket="{{ $priceBucket }}" data-price="{{ $product.price }}"
-                data-score="{{ $product.score | default 0 }}" data-position="0">🛒
+                data-score="{{ $product.score | default 0 }}" data-position="0"
+                aria-label="{{ .Title }}をAmazonで詳細を見る">
+                <span aria-hidden="true">🛒</span>
                 <span>Amazonで詳細を見る</span></a>
             {{- end -}}
         </div>

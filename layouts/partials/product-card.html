@@ -66,11 +66,11 @@
             <div class="meta-main-row">
                 {{- if .Params.price -}}
                 <span class="card-price">
-                    💰 {{ partial "utils-price-format.html" .Params.price }}
+                    <span aria-hidden="true">💰</span> {{ partial "utils-price-format.html" .Params.price }}
                 </span>
                 {{- if .Params.loyalty_points -}}
                 <span class="card-points">
-                    🎁 {{ .Params.loyalty_points }}pt
+                    <span aria-hidden="true">🎁</span> {{ .Params.loyalty_points }}pt
                 </span>
                 {{- end -}}
                 {{- end -}}
@@ -83,7 +83,7 @@
                 {{- $scoreClass = "score-good" -}}
                 {{- end -}}
                 <span class="card-score {{ $scoreClass }}">
-                    🏆 {{ .Params.score }}点
+                    <span aria-hidden="true">🏆</span> {{ .Params.score }}点
                 </span>
                 {{- end -}}
             </div>
@@ -121,8 +121,7 @@
                 <a href="{{ .Params.affiliate_url }}" class="btn-amazon-small" target="_blank" rel="noopener noreferrer"
                     data-track-product="1" data-asin="{{ .Params.asin }}" data-category="{{ $trackingCategory }}"
                     data-price-bucket="{{ $priceBucket }}" data-price="{{ .Params.price }}"
-                    data-score="{{ .Params.score | default 0 }}">🛒
-                    Amazonで見る</a>
+                    data-score="{{ .Params.score | default 0 }}" aria-label="{{ .Title }}をAmazonで見る"><span aria-hidden="true">🛒</span> Amazonで見る</a>
                 {{- else -}}
                 <a href="{{ .RelPermalink }}" class="read-more">レビューを読む →</a>
                 {{- end -}}
@@ -131,7 +130,7 @@
                     data-affiliate-url="{{ .Params.affiliate_url }}"
                     data-image="{{ if .Params.images }}{{ index .Params.images 0 }}{{ end }}"
                     data-price="{{ .Params.price }}" data-score="{{ .Params.score | default 0 }}"
-                    data-category="{{ $trackingCategory }}" aria-pressed="false" aria-label="お気に入りに追加">
+                    data-category="{{ $trackingCategory }}" aria-pressed="false" aria-label="{{ .Title }}をお気に入りに追加">
                     <span class="fav-icon" aria-hidden="true">🤍</span>
                 </button>
             </div>
