@@ -100,7 +100,8 @@
             const active = isFavorite(asin);
             btn.classList.toggle('is-favorited', active);
             btn.setAttribute('aria-pressed', String(active));
-            btn.setAttribute('aria-label', active ? 'お気に入りから削除' : 'お気に入りに追加');
+            const titlePrefix = btn.dataset.title ? `${btn.dataset.title}を` : '';
+            btn.setAttribute('aria-label', active ? `${titlePrefix}お気に入りから削除` : `${titlePrefix}お気に入りに追加`);
             const icon = btn.querySelector('.fav-icon');
             if (icon) icon.textContent = active ? '❤️' : '🤍';
         });

@@ -42,15 +42,15 @@
                 点</span>
         </div>
         <a href="{{ `recommendations/` | relURL }}" class="today-recommendation-link">
-            <span class="today-recommendation-icon">🎯</span>
+            <span class="today-recommendation-icon" aria-hidden="true">🎯</span>
             <span class="today-recommendation-text">本日の注目商品10選</span>
         </a>
         <a href="{{ `bargain/` | relURL }}" class="bargain-link" id="bargain-link">
-            <span class="bargain-link-icon">🎁</span>
+            <span class="bargain-link-icon" aria-hidden="true">🎁</span>
             <span>あともう一品</span>
         </a>
         <a href="{{ `deals/` | relURL }}" class="deals-link" id="deals-link">
-            <span class="deals-link-icon">🔥</span>
+            <span class="deals-link-icon" aria-hidden="true">🔥</span>
             <span>セール対象商品</span>
         </a>
     </div>
@@ -81,10 +81,10 @@
     {{- end -}}
     <div class="pickup-section">
         <div class="pickup-header">
-            <h3 class="pickup-title">🏆 高評価おすすめ</h3>
+            <h3 class="pickup-title"><span aria-hidden="true">🏆</span> 高評価おすすめ</h3>
             <span class="pickup-subtitle">80点以上の厳選商品</span>
             <button type="button" class="shuffle-btn" data-reset-history="1">
-                🧹 閲覧履歴をリセット
+                <span aria-hidden="true">🧹</span> 閲覧履歴をリセット
             </button>
         </div>
         <div class="pickup-grid is-loading" id="pickup-grid">
@@ -118,7 +118,7 @@
                         {{- else if ge $score 60 -}}
                         {{- $scoreClass = "score-good" -}}
                         {{- end -}}
-                        <span class="pickup-card-score {{ $scoreClass }}">🏆 {{ .Params.score }}点</span>
+                        <span class="pickup-card-score {{ $scoreClass }}"><span aria-hidden="true">🏆</span> {{ .Params.score }}点</span>
                         {{- if .Params.price -}}
                         <span class="pickup-card-price">{{ .Params.price }}</span>
                         {{- end -}}
@@ -134,32 +134,36 @@
     <!-- Search Section -->
     <div class="search-header" id="search-section" style="text-align: center;">
         <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 0.5rem; color: var(--color-text-primary);">
-            🔍 商品を検索する</h3>
-        <p style="font-size: 0.875rem; color: var(--color-text-secondary);">商品名、スペック、特徴から商品を探せます✨</p>
+            <span aria-hidden="true">🔍</span> 商品を検索する</h3>
+        <p style="font-size: 0.875rem; color: var(--color-text-secondary);">商品名、スペック、特徴から商品を探せます<span aria-hidden="true">✨</span></p>
     </div>
 
     <div class="search-container">
         <div class="search-filters">
             <div class="filter-group">
-                <label for="filter-score-min" class="filter-label">
-                    <span class="filter-icon">🏆</span> スコア
-                </label>
+                <span class="filter-label">
+                    <span class="filter-icon" aria-hidden="true">🏆</span> スコア
+                </span>
                 <div class="filter-inputs">
+                    <label for="filter-score-min" class="sr-only">スコア下限</label>
                     <input type="number" id="filter-score-min" class="filter-input-small" value="70" min="0" max="100"
                         step="10" placeholder="70" aria-label="スコア下限">
-                    <span class="filter-separator">〜</span>
+                    <span class="filter-separator" aria-hidden="true">〜</span>
+                    <label for="filter-score-max" class="sr-only">スコア上限</label>
                     <input type="number" id="filter-score-max" class="filter-input-small" min="0" max="100" step="10"
                         placeholder="100" aria-label="スコア上限">
                 </div>
             </div>
             <div class="filter-group">
-                <label for="filter-price-min" class="filter-label">
-                    <span class="filter-icon">💰</span> 価格 (円)
-                </label>
+                <span class="filter-label">
+                    <span class="filter-icon" aria-hidden="true">💰</span> 価格 (円)
+                </span>
                 <div class="filter-inputs">
+                    <label for="filter-price-min" class="sr-only">価格下限 (円)</label>
                     <input type="number" id="filter-price-min" class="filter-input-medium" min="0" step="1000"
                         placeholder="下限なし" aria-label="価格下限 (円)">
-                    <span class="filter-separator">〜</span>
+                    <span class="filter-separator" aria-hidden="true">〜</span>
+                    <label for="filter-price-max" class="sr-only">価格上限 (円)</label>
                     <input type="number" id="filter-price-max" class="filter-input-medium" min="0" step="1000"
                         placeholder="上限なし" aria-label="価格上限 (円)">
                 </div>
@@ -167,14 +171,15 @@
         </div>
         <div class="search-input-wrapper">
             <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
-                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                 <circle cx="11" cy="11" r="8"></circle>
                 <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
             </svg>
+            <label for="search-input" class="sr-only">キーワード検索</label>
             <input type="text" id="search-input" class="search-input" placeholder="キーワードで探す (AND検索可)" autocomplete="off"
                 aria-label="キーワード検索" data-search-index-url="{{ `index.json` | relURL }}">
             <button type="button" class="search-clear-btn" id="search-clear-btn" aria-label="検索キーワードをクリア" tabindex="-1">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                     <line x1="18" y1="6" x2="6" y2="18"></line>
                     <line x1="6" y1="6" x2="18" y2="18"></line>
                 </svg>
@@ -265,7 +270,7 @@
     <div class="brand-grid">
         {{- range $topBrands -}}
         <a href="{{ `brand/` | relURL }}{{ .slug }}/" class="brand-card">
-            <span class="brand-grid-icon">{{ .icon }}</span>
+            <span class="brand-grid-icon" aria-hidden="true">{{ .icon }}</span>
             <span class="brand-name">{{ .name }}</span>
             <span class="brand-count">{{ .count }}件</span>
         </a>
@@ -275,7 +280,7 @@
     <div class="brand-more-container"
         style="text-align: center; margin-top: var(--spacing-lg); margin-bottom: var(--spacing-xl);">
         <a href="{{ `brand/` | relURL }}" class="btn-all-brands">
-            🏷️ すべてのブランド一覧を見る (全{{ len $brandList }}件) →
+            <span aria-hidden="true">🏷️</span> すべてのブランド一覧を見る (全{{ len $brandList }}件) →
         </a>
     </div>
     {{- end -}}

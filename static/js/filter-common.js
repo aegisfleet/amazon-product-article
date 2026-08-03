@@ -262,6 +262,9 @@ function renderCardActions(p) {
     actionBtn.target = '_blank';
     actionBtn.rel = 'noopener noreferrer';
     actionBtn.innerHTML = '<span aria-hidden="true">🛒</span> Amazonで見る';
+    if (p.title) {
+      actionBtn.setAttribute('aria-label', `${p.title}をAmazonで見る`);
+    }
     actionBtn.dataset.trackProduct = '1';
     actionBtn.dataset.asin = p.asin || '';
     actionBtn.dataset.category = p.category || '';
@@ -288,7 +291,9 @@ function renderCardActions(p) {
   favBtn.dataset.score = String(p.score || 0);
   favBtn.dataset.category = p.category || '';
   favBtn.setAttribute('aria-pressed', 'false');
-  favBtn.setAttribute('aria-label', 'お気に入りに追加');
+
+  const titlePrefix = p.title ? `${p.title}を` : '';
+  favBtn.setAttribute('aria-label', `${titlePrefix}お気に入りに追加`);
 
   const favIcon = document.createElement('span');
   favIcon.className = 'fav-icon';
@@ -297,7 +302,7 @@ function renderCardActions(p) {
   if (isFav) {
     favBtn.classList.add('is-favorited');
     favBtn.setAttribute('aria-pressed', 'true');
-    favBtn.setAttribute('aria-label', 'お気に入りから削除');
+    favBtn.setAttribute('aria-label', `${titlePrefix}お気に入りから削除`);
     favIcon.textContent = '❤️';
   } else {
     favIcon.textContent = '🤍';
