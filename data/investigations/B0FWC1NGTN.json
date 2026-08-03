@@ -1,0 +1,189 @@
+{
+  "analysis": {
+    "productName": "TARLESS NEXT2 スマッシュメンソール スターターセット",
+    "parentAsin": "B0FWC1NGTN",
+    "productDescription": "デュアルメッシュ構造を採用し、ノーマルとブーストの2種類の吸引モードを搭載したカートリッジ交換式電子タバコ。ニコチン・タール0で濃厚なミストと強いキック感を楽しめます。",
+    "productUsage": [
+      "禁煙や減煙時のリフレッシュ",
+      "リラックスタイムの嗜好品"
+    ],
+    "positivePoints": [
+      "デュアルメッシュ構造による濃厚な煙量と強いキック感",
+      "ノーマルモード（約4000回）とブーストモード（約2000回）の切り替え機能",
+      "ニコチン・タールが含まれていない",
+      "カートリッジ交換式でメンテナンスが手軽"
+    ],
+    "negativePoints": [
+      "使い捨て電子タバコと比較して初期費用がやや高い",
+      "ブーストモード使用時は吸引可能回数が半減する"
+    ],
+    "useCases": [
+      "仕事の休憩時間のリフレッシュ",
+      "自宅でのリラックスタイム",
+      "外出先での気軽な喫煙代替"
+    ],
+    "userStories": [
+      {
+        "userType": "禁煙を試みている会社員",
+        "scenario": "タバコの代替品を探していた時",
+        "experience": "タバコに近い強い吸いごたえ（キック感）があり、ニコチンゼロでも満足感を得られました。ブーストモードにすると煙の量が多くなり、リフレッシュに最適です。",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "sentiment": "positive"
+      },
+      {
+        "userType": "シーシャ好きのユーザー",
+        "scenario": "自宅で手軽にシーシャを楽しみたい時",
+        "experience": "フレーバーの味が濃く、煙の量も多いためシーシャ気分を味わえます。カートリッジ交換式なので液漏れの心配もなく使いやすいです。",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "sentiment": "positive"
+      }
+    ],
+    "userImpression": "デュアルメッシュ構造による強い吸いごたえと濃厚な味わいが高く評価されています。特にノーマルとブーストの2つのモードを切り替えられる点が好評で、シーンに合わせて煙量を調節できるのが強みです。一方で、ブーストモードを多用するとカートリッジの消費が早くなる点に留意する必要がありますが、本格的な吸いごたえを求めるユーザーには非常に満足度の高い製品となっています。",
+    "sources": [
+      {
+        "id": "src-1",
+        "name": "Amazon商品ページ (TARLESS NEXT2 スマッシュメンソール)",
+        "url": "https://www.amazon.co.jp/dp/B0FWC1NGTN",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-08-03",
+        "author": "Amazon",
+        "conflictOfInterest": "none",
+        "notes": "製品仕様、特徴、機能を確認"
+      },
+      {
+        "id": "src-2",
+        "name": "Amazon商品ページ (DR.VAPE Model3)",
+        "url": "https://www.amazon.co.jp/dp/B0CTFMBZHQ",
+        "tier": "medium",
+        "evidenceType": "secondary",
+        "publishedAt": "2026-08-03",
+        "author": "Amazon",
+        "conflictOfInterest": "none",
+        "notes": "競合商品(DR.VAPE)の価格と仕様を確認"
+      },
+      {
+        "id": "src-3",
+        "name": "Amazon商品ページ (VAPENGIN MODEL3)",
+        "url": "https://www.amazon.co.jp/dp/B0FWRF664D",
+        "tier": "medium",
+        "evidenceType": "secondary",
+        "publishedAt": "2026-08-03",
+        "author": "Amazon",
+        "conflictOfInterest": "none",
+        "notes": "競合商品(VAPENGIN)の価格と仕様を確認"
+      },
+      {
+        "id": "src-4",
+        "name": "Amazon商品ページ (TARLESS NEXT)",
+        "url": "https://www.amazon.co.jp/dp/B0DGPVD1R2",
+        "tier": "medium",
+        "evidenceType": "secondary",
+        "publishedAt": "2026-08-03",
+        "author": "Amazon",
+        "conflictOfInterest": "none",
+        "notes": "旧モデル(TARLESS NEXT)との仕様比較"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "ノーマルモードで最大約4000回、ブーストモードで最大約2000回の吸引が可能",
+        "category": "durability",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "crossChecked": true,
+        "notes": "メーカー公称値。使用状況により変動する旨が記載されている。"
+      },
+      {
+        "claim": "デュアルメッシュ構造による濃厚な煙量とキック感",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "crossChecked": true,
+        "notes": "デュアルメッシュ採用により味わいや煙量が向上している事実を確認。"
+      }
+    ],
+    "lastInvestigated": "2026-08-03",
+    "competitiveAnalysis": [
+      {
+        "name": "DR.VAPE Model3 スターターキット",
+        "asin": "B0CTFMBZHQ",
+        "priceComparison": "対象商品よりやや安価。",
+        "featureComparison": [
+          "共通点：ニコチン・タールゼロのカートリッジ交換式電子タバコ",
+          "相違点：DR.VAPEはスマートなデザインと専用フレーバーが特徴。本商品はモード切り替え機能とデュアルメッシュ構造による強い吸いごたえが特徴。"
+        ],
+        "differentiators": [
+          "TARLESS NEXT2の利点：吸いごたえを気分で変えたい方や、より爆煙を楽しみたい方に最適。",
+          "DR.VAPE Model3の利点：スタイリッシュなデザインを好み、知名度の高いブランドの製品を選びたい方におすすめ。"
+        ]
+      },
+      {
+        "name": "VAPENGIN MODEL3 スターター",
+        "asin": "B0FWRF664D",
+        "priceComparison": "対象商品よりやや安価。",
+        "featureComparison": [
+          "共通点：ニコチン・タールゼロで、ノーマル/ターボ(ブースト)のモード切り替え機能を搭載",
+          "相違点：VAPENGINはシーシャフレーバー主体でクリアな本体デザイン。本商品はスマッシュメンソールなど強メンソール系に強みがあり、デュアルメッシュでキック感を重視している。"
+        ],
+        "differentiators": [
+          "TARLESS NEXT2の利点：メンソールの強い爽快感と、タバコに近いキック感を求める方におすすめ。",
+          "VAPENGIN MODEL3の利点：フルーツ系やシーシャ系の甘いフレーバーを濃厚に楽しみたい方に適している。"
+        ]
+      },
+      {
+        "name": "TARLESS NEXT スターターセット",
+        "asin": "B0DGPVD1R2",
+        "priceComparison": "ほぼ同価格。",
+        "featureComparison": [
+          "共通点：同ブランドのニコチン・タールゼロ電子タバコ。カートリッジ交換式で吸い口を隠せるキャップ機能がある点。",
+          "相違点：NEXT2はデュアルメッシュやブーストモードに対応し、より吸いごたえが進化している。"
+        ],
+        "differentiators": [
+          "TARLESS NEXT2の利点：最新のデュアルメッシュ構造とモード切り替え機能で、より強いキック感を楽しみたい方に迷わずおすすめ。",
+          "TARLESS NEXTの利点：既存のフレーバー（スイートレモン等）を好む場合や、ブースト機能が不要でシンプルな使い勝手を求める方に適している。"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "禁煙・減煙中で、競合のDR.VAPE等と比較してもよりタバコに近い強い吸いごたえ（キック感）を求める人",
+        "気分に合わせて煙量や味の濃さを調節（ノーマル/ブースト）したい人",
+        "使い捨てタイプではなく、カートリッジ交換式で手軽に本格的なVAPEを楽しみたい人"
+      ],
+      "pros": [
+        "モード切り替えにより、リラックスしたい時はノーマル、強い刺激が欲しい時はブーストと使い分けられるため満足度が高い",
+        "デュアルメッシュ構造によりフレーバーが濃厚で、メンソールの爽快感をしっかり味わえる"
+      ],
+      "cons": [
+        "ブーストモードを常用するとカートリッジの消費が早くなるため、ランニングコストを重視する人は吸い方に注意が必要"
+      ],
+      "score": 79,
+      "scoreRationale": "[基本点: 70]\n[加点: +4] (デュアルメッシュ構造とモード切り替え機能による高い機能性)\n[加点: +3] (タバコ代替としての強い吸いごたえ・キック感の実現)\n[加点: +2] (最大4000回吸引可能な大容量設計によるコスパの良さ)\n[合計: 79]"
+    },
+    "technicalSpecs": {
+      "dimensions": {
+        "height": "116mm",
+        "width": "42.2mm",
+        "depth": "18.3mm"
+      },
+      "color": "ブラック",
+      "flavor": "スマッシュメンソール",
+      "features": [
+        "ニコチン・タール0",
+        "ノーマルモード/ブーストモード搭載",
+        "デュアルメッシュ構造",
+        "カートリッジ交換式"
+      ],
+      "puffs": "ノーマルモード: 最大約4000回 / ブーストモード: 最大約2000回"
+    }
+  }
+}
