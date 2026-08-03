@@ -1,0 +1,57 @@
+{{- if .Params.hero -}}
+<!-- Mobile Sticky CTA Bar (Issue #9253) -->
+<div id="sticky-cta-bar" class="sticky-cta-bar" aria-hidden="true">
+    <div class="sticky-cta-container">
+        <div class="sticky-cta-info">
+            {{- $images := .Params.images -}}
+            {{- if and $images (gt (len $images) 0) -}}
+            <img src="{{ index $images 0 }}" alt="{{ .Title }}" class="sticky-cta-thumb" loading="lazy" decoding="async">
+            {{- end -}}
+            <div class="sticky-cta-details">
+                <span class="sticky-cta-title">{{ .Title }}</span>
+                {{- if .Params.price -}}
+                <span class="sticky-cta-price">{{ .Params.price }}</span>
+                {{- end -}}
+            </div>
+        </div>
+        {{- if .Params.asin -}}
+        <a href="https://www.amazon.co.jp/dp/{{ .Params.asin }}" target="_blank" rel="noopener noreferrer" class="sticky-cta-button" data-track-product="1" data-asin="{{ .Params.asin }}" data-position="sticky_cta">
+            Amazonで見る
+        </a>
+        {{- end -}}
+    </div>
+</div>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    var heroCard = document.querySelector('.product-hero-card');
+    var stickyBar = document.getElementById('sticky-cta-bar');
+    if (!heroCard || !stickyBar) return;
+
+    if ('IntersectionObserver' in window) {
+        var observer = new IntersectionObserver(function(entries) {
+            entries.forEach(function(entry) {
+                if (!entry.isIntersecting && entry.boundingClientRect.top < 0) {
+                    stickyBar.classList.add('is-visible');
+                    stickyBar.setAttribute('aria-hidden', 'false');
+                } else {
+                    stickyBar.classList.remove('is-visible');
+                    stickyBar.setAttribute('aria-hidden', 'true');
+                }
+            });
+        }, { threshold: 0 });
+        observer.observe(heroCard);
+    } else {
+        window.addEventListener('scroll', function() {
+            var rect = heroCard.getBoundingClientRect();
+            if (rect.bottom < 0) {
+                stickyBar.classList.add('is-visible');
+                stickyBar.setAttribute('aria-hidden', 'false');
+            } else {
+                stickyBar.classList.remove('is-visible');
+                stickyBar.setAttribute('aria-hidden', 'true');
+            }
+        });
+    }
+});
+</script>
+{{- end -}}
