@@ -1,0 +1,38 @@
+{{- if and .Params.asin .Params.affiliate_url -}}
+{{- $product := .Params -}}
+{{- $trackingCategory := "" -}}
+{{- $terms := .GetTerms "categories" -}}
+{{- if $terms -}}
+{{- $trackingCategory = (index $terms 0).LinkTitle -}}
+{{- else if $product.categories -}}
+{{- $trackingCategory = index $product.categories 0 -}}
+{{- else if $product.category -}}
+{{- $trackingCategory = $product.category -}}
+{{- end -}}
+{{- $priceBucket := partial "utils-price-bucket.html" $product.price -}}
+
+<div id="sticky-cta-bar" class="sticky-cta-bar" aria-hidden="true">
+    <div class="sticky-cta-container">
+        <div class="sticky-cta-info">
+            {{- if $product.images -}}
+            <img src="{{ index $product.images 0 }}" alt="{{ .Title }}" class="sticky-cta-image" loading="lazy"
+                decoding="async">
+            {{- else -}}
+            <div class="sticky-cta-noimage">画像なし</div>
+            {{- end -}}
+            <div class="sticky-cta-details">
+                <div class="sticky-cta-title">{{ .Title }}</div>
+                <div class="sticky-cta-price">{{ partial "utils-price-format.html" $product.price }}</div>
+            </div>
+        </div>
+        <a href="{{ $product.affiliate_url }}" class="sticky-cta-btn btn-amazon-small" target="_blank"
+            rel="noopener noreferrer" data-track-product="1" data-asin="{{ $product.asin }}"
+            data-category="{{ $trackingCategory }}" data-price-bucket="{{ $priceBucket }}"
+            data-price="{{ $product.price }}" data-score="{{ $product.score | default 0 }}" data-position="sticky"
+            aria-label="{{ .Title }}をAmazonで詳細を見る">
+            <span aria-hidden="true">🛒</span>
+            <span>Amazonで見る</span>
+        </a>
+    </div>
+</div>
+{{- end -}}
