@@ -5772,4 +5772,127 @@ body.menu-open .nav-menu-floating-toggle {
   opacity: 0;
   pointer-events: none;
   transform: translateY(-50%) translateX(100%);
-}
+}
+
+/* ==========================================================================
+   Mobile Sticky CTA Bar
+   ========================================================================== */
+.sticky-cta-bar {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background-color: var(--color-bg-card, #ffffff);
+  border-top: 1px solid var(--color-border, #e5e7eb);
+  box-shadow: 0 -4px 16px rgba(0, 0, 0, 0.12);
+  padding: 8px 12px;
+  padding-bottom: calc(8px + env(safe-area-inset-bottom));
+  transform: translateY(100%);
+  opacity: 0;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease;
+  pointer-events: none;
+}
+
+@media (max-width: 640px) {
+  .sticky-cta-bar {
+    display: block;
+  }
+}
+
+.sticky-cta-bar.is-active {
+  transform: translateY(0);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.sticky-cta-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  max-width: 100%;
+}
+
+.sticky-cta-info {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+  flex: 1;
+}
+
+.sticky-cta-image {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  border-radius: var(--radius-sm, 6px);
+  flex-shrink: 0;
+  border: 1px solid var(--color-border, #e5e7eb);
+}
+
+.sticky-cta-noimage {
+  width: 40px;
+  height: 40px;
+  background-color: var(--color-bg-body, #f3f4f6);
+  border-radius: var(--radius-sm, 6px);
+  font-size: 0.65rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text-muted, #6b7280);
+  flex-shrink: 0;
+  border: 1px solid var(--color-border, #e5e7eb);
+}
+
+.sticky-cta-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-width: 0;
+  flex: 1;
+}
+
+.sticky-cta-title {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--color-text-main, #111827);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 1.2;
+}
+
+.sticky-cta-price {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--color-price-up, #dc2626);
+  line-height: 1.2;
+  margin-top: 2px;
+}
+
+.sticky-cta-btn {
+  flex-shrink: 0;
+  padding: 8px 14px;
+  font-size: 0.8rem;
+  border-radius: var(--radius-md, 8px);
+  white-space: nowrap;
+}
+
+/* Dark Theme Overrides for Sticky CTA */
+[data-theme="dark"] .sticky-cta-bar {
+  background-color: var(--color-bg-card, #1f2937);
+  border-top-color: var(--color-border, #374151);
+  box-shadow: 0 -4px 16px rgba(0, 0, 0, 0.4);
+}
+
+[data-theme="dark"] .sticky-cta-title {
+  color: var(--color-text-main, #f9fafb);
+}
+
+[data-theme="dark"] .sticky-cta-image,
+[data-theme="dark"] .sticky-cta-noimage {
+  border-color: var(--color-border, #374151);
+}
+
