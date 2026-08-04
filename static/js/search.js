@@ -198,6 +198,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const searchResults = document.getElementById('search-results');
     let fuse;
     let lastSearchState = null;
+    let handleSearch;
 
     function getSearchState() {
         return {
@@ -217,40 +218,114 @@ document.addEventListener('DOMContentLoaded', function () {
     }
     searchInput.dataset.searchInitialized = 'true';
 
-    // スマートフォンでの検索結果の高さを動的に調整（仮想キーボード対応）
-    function updateSearchResultsHeight() {
-        // モバイル判定（640px以下）
-        if (globalThis.innerWidth > 640) {
-            searchResults.style.maxHeight = '';
-            return;
+    // 絞り込みフィルターの条件数バッジ更新と折りたたみUIの制御
+    function getActiveFilterCount() {
+        let count = 0;
+        const scoreMinEl = document.getElementById('filter-score-min');
+        const scoreMaxEl = document.getElementById('filter-score-max');
+        const priceMinEl = document.getElementById('filter-price-min');
+        const priceMaxEl = document.getElementById('filter-price-max');
+
+        if (scoreMinEl && scoreMinEl.value !== '' && scoreMinEl.value !== '70') {
+            count++;
         }
+        if (scoreMaxEl && scoreMaxEl.value.trim() !== '') {
+            count++;
+        }
+        if (priceMinEl && priceMinEl.value.trim() !== '') {
+            count++;
+        }
+        if (priceMaxEl && priceMaxEl.value.trim() !== '') {
+            count++;
+        }
+        return count;
+    }
 
-        // Visual Viewport APIが利用可能な場合
-        if (globalThis.visualViewport) {
-            const viewport = globalThis.visualViewport;
-            const searchContainer = document.querySelector('.search-container');
-            if (!searchContainer) return;
-
-            // 検索コンテナの下端からvisual viewportの下端までの高さを計算
-            const containerRect = searchContainer.getBoundingClientRect();
-            const searchInputHeight = searchInput.offsetHeight;
-            const containerBottom = containerRect.top + searchInputHeight + 8; // 8px = 検索結果のtop margin
-            const availableHeight = viewport.height - containerBottom - 20; // 20px = 下部余白
-
-            // 最小200px、最大none
-            const maxHeight = Math.max(200, availableHeight);
-            searchResults.style.maxHeight = `${maxHeight}px`;
+    function updateFilterBadge() {
+        const badge = document.getElementById('filter-count-badge');
+        if (!badge) return;
+        const count = getActiveFilterCount();
+        badge.textContent = String(count);
+        if (count > 0) {
+            badge.style.display = 'inline-flex';
+        } else {
+            badge.style.display = 'none';
         }
     }
 
-    // Visual Viewport resize イベントで高さを動的に更新
+    const filterToggleBtn = document.getElementById('search-filter-toggle-btn');
+    const filtersWrapper = document.getElementById('search-filters-wrapper');
+    if (filterToggleBtn && filtersWrapper) {
+        filterToggleBtn.addEventListener('click', () => {
+            const isOpen = filtersWrapper.classList.toggle('is-open');
+            filterToggleBtn.classList.toggle('is-open', isOpen);
+            filterToggleBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+            setTimeout(updateSearchResultsHeight, 50);
+            setTimeout(updateSearchResultsHeight, 310);
+        });
+    }
+
+    const filterResetBtn = document.getElementById('filter-reset-btn');
+    if (filterResetBtn) {
+        filterResetBtn.addEventListener('click', () => {
+            const scoreMinEl = document.getElementById('filter-score-min');
+            const scoreMaxEl = document.getElementById('filter-score-max');
+            const priceMinEl = document.getElementById('filter-price-min');
+            const priceMaxEl = document.getElementById('filter-price-max');
+
+            if (scoreMinEl) scoreMinEl.value = '70';
+            if (scoreMaxEl) scoreMaxEl.value = '';
+            if (priceMinEl) priceMinEl.value = '';
+            if (priceMaxEl) priceMaxEl.value = '';
+
+            updateFilterBadge();
+
+            const searchInputWrapper = document.querySelector('.search-input-wrapper');
+            if (searchInputWrapper) searchInputWrapper.classList.remove('is-loading');
+
+            const query = searchInput.value.replaceAll('　', ' ');
+            if (typeof handleSearch === 'function') {
+                if (isValidQuery(query) && searchInputWrapper) {
+                    searchInputWrapper.classList.add('is-loading');
+                }
+                handleSearch(query);
+            }
+        });
+    }
+
+    updateFilterBadge();
+
+    // 画面サイズ・デバイス問わず、検索結果の高さを動的に調整（画面下部へのはみ出し・見切れを防止）
+    function updateSearchResultsHeight() {
+        const searchContainer = document.querySelector('.search-container');
+        if (!searchContainer || !searchResults) return;
+
+        // Visual Viewport または window.innerHeight から現在のビューポート高さを取得
+        const viewportHeight = globalThis.visualViewport
+            ? globalThis.visualViewport.height
+            : globalThis.innerHeight;
+
+        // 検索コンテナの下端位置を取得（フィルター開閉状態・画面スクロール位置に追従）
+        const containerRect = searchContainer.getBoundingClientRect();
+        const containerBottom = containerRect.bottom;
+
+        // 検索コンテナの底から Viewport の底までの空き高さを算出 (20px = 下部マージン)
+        const availableHeight = viewportHeight - containerBottom - 20;
+
+        // 最小200pxを確保
+        const maxHeight = Math.max(200, availableHeight);
+        searchResults.style.maxHeight = `${maxHeight}px`;
+    }
+
+    // Visual Viewport resize/scroll イベントで高さを動的に更新
     if (globalThis.visualViewport) {
         globalThis.visualViewport.addEventListener('resize', updateSearchResultsHeight);
         globalThis.visualViewport.addEventListener('scroll', updateSearchResultsHeight);
     }
 
-    // ウィンドウリサイズ時も更新
+    // ウィンドウリサイズ・スクロール時も更新
     globalThis.addEventListener('resize', updateSearchResultsHeight);
+    globalThis.addEventListener('scroll', updateSearchResultsHeight, { passive: true });
 
     // Load Fuse.js if not already loaded
     if (globalThis.Fuse) {
@@ -317,7 +392,7 @@ document.addEventListener('DOMContentLoaded', function () {
             })
             .catch(err => console.error('Error loading search index:', err));
 
-        const handleSearch = debounce((query) => {
+        handleSearch = debounce((query) => {
             const trimmedQuery = query.trim();
             if (trimmedQuery.length === 0) {
                 displaySearchTips();
@@ -410,6 +485,7 @@ document.addEventListener('DOMContentLoaded', function () {
             const el = document.getElementById(id);
             if (el) {
                 el.addEventListener('input', () => {
+                    updateFilterBadge();
                     const query = searchInput.value.replaceAll('　', ' ');
                     if (isValidQuery(query)) {
                         if (searchInputWrapper) searchInputWrapper.classList.add('is-loading');
@@ -594,10 +670,14 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         });
 
-        // 外側クリック時: 検索結果を閉じる
+        // 外側クリック時: 検索結果を閉じる（.search-container 内のフィルターやボタン操作では閉じない）
         document.addEventListener('click', (e) => {
             if (isSearchInputMouseDown) {
                 isSearchInputMouseDown = false;
+                return;
+            }
+            const searchContainer = document.querySelector('.search-container');
+            if (searchContainer && searchContainer.contains(e.target)) {
                 return;
             }
             if (!searchInput.contains(e.target) && !searchResults.contains(e.target)) {
