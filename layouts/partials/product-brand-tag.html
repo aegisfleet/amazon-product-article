@@ -2,29 +2,10 @@
 {{- $class := .class | default "card-tag card-tag-brand" -}}
 {{- with $brand -}}
 {{- if ne . "不明" -}}
-{{- $brandSlug := "" -}}
-{{- $brandIcon := "🏷️" -}}
-{{- $targetBrand := . -}}
-{{- range $name, $b := hugo.Data.brandgroups -}}
-{{- if not $brandSlug -}}
-{{- $mValue := $b.matcher.value | default $name -}}
-{{- $pattern := $mValue -}}
-{{- if not (hasPrefix $pattern "(?i)") -}}
-{{- $pattern = printf "(?i)%s" $pattern -}}
-{{- end -}}
-{{- $namePattern := printf "(?i)%s" $name -}}
-{{- $targetLower := lower $targetBrand -}}
-{{- $nameLower := lower $name -}}
-{{- $mValueLower := lower $mValue -}}
-{{- if or (eq $nameLower $targetLower) (eq $mValueLower $targetLower) (hasPrefix $targetLower $nameLower) (hasPrefix $targetLower $mValueLower) (findRE $pattern $targetBrand) (findRE $namePattern $targetBrand) -}}
-{{- $brandSlug = $b.slug -}}
-{{- if $b.icon -}}{{- $brandIcon = $b.icon -}}{{- end -}}
-{{- end -}}
-{{- end -}}
-{{- end -}}
-{{- if $brandSlug -}}
-<a href="{{ printf `brand/%s/` $brandSlug | relURL }}" class="{{ $class }}" title="{{ . }}のブランドページへ">
-    <span class="brand-tag-icon">{{ $brandIcon }}</span> {{ . }}
+{{- $info := partial "get-brand-info.html" . -}}
+{{- if $info.slug -}}
+<a href="{{ printf `brand/%s/` $info.slug | relURL }}" class="{{ $class }}" title="{{ . }}のブランドページへ">
+    <span class="brand-tag-icon">{{ $info.icon }}</span> {{ . }}
 </a>
 {{- else -}}
 <span class="{{ $class }} card-tag-brand-text">{{ . }}</span>
