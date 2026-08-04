@@ -1,0 +1,63 @@
+{{- $targetBrand := . -}}
+{{- $result := dict "slug" "" "icon" "🏷️" -}}
+{{- if and $targetBrand (ne $targetBrand "不明") -}}
+  {{- $targetLower := lower $targetBrand -}}
+  {{- $foundSlug := "" -}}
+  {{- $foundIcon := "" -}}
+
+  {{- /* 第一パス: 完全一致 (キー名, matcher.value 直値, または matcher.value を ^(...)$ で囲んだ正規表現) */ -}}
+  {{- range $name, $b := hugo.Data.brandgroups -}}
+    {{- if not $foundSlug -}}
+      {{- $nameLower := lower $name -}}
+      {{- $mValue := $b.matcher.value | default $name -}}
+      {{- $mValueLower := lower $mValue -}}
+      {{- if or (eq $nameLower $targetLower) (eq $mValueLower $targetLower) -}}
+        {{- $foundSlug = $b.slug -}}
+        {{- $foundIcon = $b.icon | default "🏷️" -}}
+      {{- else -}}
+        {{- $exactPattern := $mValue -}}
+        {{- if not (hasPrefix $exactPattern "^") -}}
+          {{- $exactPattern = printf "^(?:%s)$" $exactPattern -}}
+        {{- end -}}
+        {{- if not (hasPrefix $exactPattern "(?i)") -}}
+          {{- $exactPattern = printf "(?i)%s" $exactPattern -}}
+        {{- end -}}
+        {{- if findRE $exactPattern $targetBrand -}}
+          {{- $foundSlug = $b.slug -}}
+          {{- $foundIcon = $b.icon | default "🏷️" -}}
+        {{- end -}}
+      {{- end -}}
+    {{- end -}}
+  {{- end -}}
+
+  {{- /* 第二パス: 完全一致で見つからなかった場合のマッチャー評価 */ -}}
+  {{- if not $foundSlug -}}
+    {{- range $name, $b := hugo.Data.brandgroups -}}
+      {{- if not $foundSlug -}}
+        {{- $mType := $b.matcher.type | default "title_prefix" -}}
+        {{- $mValue := $b.matcher.value | default $name -}}
+        {{- $pattern := $mValue -}}
+        {{- if not (hasPrefix $pattern "(?i)") -}}
+          {{- $pattern = printf "(?i)%s" $pattern -}}
+        {{- end -}}
+        {{- if eq $mType "brand" -}}
+          {{- if findRE $pattern $targetBrand -}}
+            {{- $foundSlug = $b.slug -}}
+            {{- $foundIcon = $b.icon | default "🏷️" -}}
+          {{- end -}}
+        {{- else -}}
+          {{- $nameLower := lower $name -}}
+          {{- if or (hasPrefix $targetLower $nameLower) (findRE $pattern $targetBrand) -}}
+            {{- $foundSlug = $b.slug -}}
+            {{- $foundIcon = $b.icon | default "🏷️" -}}
+          {{- end -}}
+        {{- end -}}
+      {{- end -}}
+    {{- end -}}
+  {{- end -}}
+
+  {{- if $foundSlug -}}
+    {{- $result = dict "slug" $foundSlug "icon" $foundIcon -}}
+  {{- end -}}
+{{- end -}}
+{{- return $result -}}
