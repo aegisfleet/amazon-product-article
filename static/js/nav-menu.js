@@ -73,18 +73,14 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     const firstElement = focusables[0];
-    const lastElement = focusables[focusables.length - 1];
+    const lastElement = focusables.at(-1);
 
-    if (e.shiftKey) {
-      if (document.activeElement === firstElement) {
-        lastElement.focus();
-        e.preventDefault();
-      }
-    } else {
-      if (document.activeElement === lastElement) {
-        firstElement.focus();
-        e.preventDefault();
-      }
+    if (e.shiftKey && document.activeElement === firstElement) {
+      lastElement.focus();
+      e.preventDefault();
+    } else if (!e.shiftKey && document.activeElement === lastElement) {
+      firstElement.focus();
+      e.preventDefault();
     }
   });
 });
