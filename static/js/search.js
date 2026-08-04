@@ -677,7 +677,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 return;
             }
             const searchContainer = document.querySelector('.search-container');
-            if (searchContainer && searchContainer.contains(e.target)) {
+            if (searchContainer?.contains(e.target)) {
                 return;
             }
             if (!searchInput.contains(e.target) && !searchResults.contains(e.target)) {
