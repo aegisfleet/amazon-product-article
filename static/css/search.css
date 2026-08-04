@@ -59,7 +59,7 @@
     padding: 0.5rem 0;
 }
 
-/* スマートフォン: 検索結果の高さはJSで動的に設定（キーボード表示状態に応じて調整）
+/* 検索結果の高さはJSで画面サイズ・デバイス問わず動的に設定（画面下端までの高さを維持）
    JSが動作しない場合のフォールバック値 */
 @media (max-width: 640px) {
     #search-results {
@@ -362,11 +362,109 @@
 }
 
 /* Search Filters Styling */
+.search-filter-toggle-wrapper {
+    display: none;
+    justify-content: center;
+    margin-top: 0.75rem;
+}
+
+@media (max-width: 1024px) {
+    .search-filter-toggle-wrapper {
+        display: flex;
+    }
+}
+
+.search-filter-toggle-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    background: var(--color-bg-card);
+    border: 1px solid var(--color-border);
+    border-radius: 9999px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--color-text-primary);
+    box-shadow: var(--shadow-sm);
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    -webkit-tap-highlight-color: transparent;
+}
+
+.search-filter-toggle-btn:hover {
+    border-color: var(--color-primary);
+    color: var(--color-primary);
+    box-shadow: var(--shadow-md);
+}
+
+.search-filter-toggle-btn:focus-visible {
+    outline: none;
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+.filter-toggle-icon {
+    color: var(--color-text-secondary);
+    transition: color 0.2s ease;
+}
+
+.search-filter-toggle-btn:hover .filter-toggle-icon {
+    color: var(--color-primary);
+}
+
+.filter-chevron-icon {
+    color: var(--color-text-secondary);
+    transition: transform 0.25s ease, color 0.2s ease;
+}
+
+.search-filter-toggle-btn[aria-expanded="true"] .filter-chevron-icon,
+.search-filter-toggle-btn.is-open .filter-chevron-icon {
+    transform: rotate(180deg);
+}
+
+.filter-count-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--color-primary);
+    color: white;
+    font-size: 0.75rem;
+    font-weight: 700;
+    min-width: 1.25rem;
+    height: 1.25rem;
+    padding: 0 0.35rem;
+    border-radius: 9999px;
+    line-height: 1;
+}
+
+.search-filters-wrapper {
+    margin-top: 1rem;
+    margin-bottom: 1.5rem;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@media (max-width: 1024px) {
+    .search-filters-wrapper {
+        max-height: 0;
+        opacity: 0;
+        overflow: hidden;
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+    .search-filters-wrapper.is-open {
+        max-height: 500px;
+        opacity: 1;
+        margin-top: 0.75rem;
+        margin-bottom: 1rem;
+        overflow: visible;
+    }
+}
+
 .search-filters {
     display: flex;
     flex-direction: column;
     gap: 1rem;
-    margin-bottom: 1.5rem;
     padding: 1.25rem;
     background: var(--color-bg-secondary);
     border: 1px solid var(--color-border);
@@ -447,6 +545,39 @@
     font-size: 0.85rem;
     color: var(--color-text-secondary);
     font-weight: 500;
+}
+
+/* Filter Actions & Reset Button */
+.filter-actions {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.filter-reset-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.4rem 0.75rem;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--color-text-secondary);
+    background: transparent;
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.filter-reset-btn:hover {
+    color: var(--color-primary);
+    border-color: var(--color-primary);
+    background: var(--color-bg-card);
+}
+
+.filter-reset-btn:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.2);
 }
 
 /* Chrome, Safari, Edge, Opera: Remove number input arrows if we want a cleaner look, 

@@ -86,4 +86,14 @@ describe('Search UI XSS Protection', () => {
     expect(searchJsContent).toContain("searchInput.addEventListener('paste'");
     expect(searchJsContent).toContain('insertFromPaste');
   });
+
+  test('static/js/search.js should contain filter accordion toggle, count badge, and reset functionality', () => {
+    expect(searchJsContent).toContain('search-filter-toggle-btn');
+    expect(searchJsContent).toContain('search-filters-wrapper');
+    expect(searchJsContent).toContain('filter-count-badge');
+    expect(searchJsContent).toContain('filter-reset-btn');
+    expect(searchJsContent).toContain('getActiveFilterCount');
+    expect(searchJsContent).toContain('updateFilterBadge');
+    expect(searchJsContent).toContain('aria-expanded');
+  });
 });
