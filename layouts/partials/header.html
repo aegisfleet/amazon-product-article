@@ -17,3 +17,61 @@
         </div>
     </div>
 </header>
+
+<div id="nav-drawer-overlay" class="nav-drawer-overlay" aria-hidden="true"></div>
+
+<aside id="site-nav-drawer" class="nav-drawer" aria-label="サイドナビゲーション" aria-hidden="true">
+    <div class="nav-drawer-header">
+        <h2 class="nav-drawer-title">メニュー</h2>
+        <button id="nav-menu-close" class="nav-drawer-close" aria-label="メニューを閉じる">✕</button>
+    </div>
+    <nav class="nav-drawer-body">
+        <ul class="nav-drawer-list">
+            <li>
+                <a href="{{ `` | relURL }}" class="nav-drawer-item">
+                    <span class="nav-drawer-icon" aria-hidden="true">🏠</span>
+                    <span class="nav-drawer-label">ホーム</span>
+                </a>
+            </li>
+            <li>
+                <a href="{{ `recommendations/` | relURL }}" class="nav-drawer-item">
+                    <span class="nav-drawer-icon" aria-hidden="true">🌟</span>
+                    <span class="nav-drawer-label">注目商品10選</span>
+                </a>
+            </li>
+            <li>
+                <a href="{{ `deals/` | relURL }}" class="nav-drawer-item">
+                    <span class="nav-drawer-icon" aria-hidden="true">🏷️</span>
+                    <span class="nav-drawer-label">セール・お買い得</span>
+                </a>
+            </li>
+            <li>
+                <a href="{{ `bargain/` | relURL }}" class="nav-drawer-item">
+                    <span class="nav-drawer-icon" aria-hidden="true">💎</span>
+                    <span class="nav-drawer-label">高評価お手頃</span>
+                </a>
+            </li>
+            <li>
+                <a href="{{ `favorites/` | relURL }}" class="nav-drawer-item">
+                    <span class="nav-drawer-icon" aria-hidden="true">🤍</span>
+                    <span class="nav-drawer-label">お気に入り</span>
+                </a>
+            </li>
+            <li>
+                <a href="{{ `brand/` | relURL }}" class="nav-drawer-item">
+                    <span class="nav-drawer-icon" aria-hidden="true">🏢</span>
+                    <span class="nav-drawer-label">ブランド一覧</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</aside>
+
+<button id="nav-menu-floating-toggle" class="nav-menu-toggle nav-menu-floating-toggle" aria-label="ナビゲーションメニューを開く" aria-expanded="false" aria-controls="site-nav-drawer">
+    <span class="nav-toggle-icon" aria-hidden="true">
+        <span></span>
+        <span></span>
+        <span></span>
+    </span>
+    <span class="nav-toggle-text">メニュー</span>
+</button>
