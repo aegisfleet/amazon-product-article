@@ -18,7 +18,9 @@
     --color-bg-card: #FFFFFF;
     --color-text-main: #111827;
     /* Gray 900 */
-    --color-text-muted: #4B5563;
+    --color-text-secondary: #4B5563;
+    /* Gray 600 */
+    --color-text-muted: #6B7280;
     /* Gray 500 */
     --color-border: #D1D5DB;
     /* Gray 200 */
@@ -68,6 +70,8 @@
     /* Pink 200 border */
     --badge-haul-shadow: transparent;
 
+    --badge-availability-bg: #ECFDF5;
+    --badge-availability-text: #059669;
     --badge-availability-border: #10b981;
     --badge-availability-shadow: transparent;
 
@@ -134,10 +138,12 @@
         /* Gray 800 */
         --color-text-main: #F9FAFB;
         /* Gray 50 */
-        --color-text-muted: #CBD5E1;
+        --color-text-secondary: #9CA3AF;
         /* Gray 400 */
-        --color-border: #475569;
-        /* Gray 700 */
+        --color-text-muted: #D1D5DB;
+        /* Gray 300 */
+        --color-border: #64748B;
+        /* Slate 500 */
 
         --color-primary: #818CF8;
         --color-primary-rgb: 129, 140, 248;
@@ -152,8 +158,8 @@
         --bg-gradient-cons: linear-gradient(135deg, #7f1d1d, #991b1b);
         --bg-gradient-purchase: linear-gradient(135deg, #78350f, #92400e);
 
-        --bg-tag: #334155;
-        --text-tag: #A5B4FC;
+        --bg-tag: rgba(51, 65, 85, 0.8);
+        --text-tag: #C7D2FE;
 
         --bg-table-stripe: rgba(255, 255, 255, 0.05);
         --bg-competitor-preview: linear-gradient(135deg, #1f2937 0%, #111827 100%);
@@ -170,36 +176,39 @@
         --color-price-down: #6ee7b7;
 
         /* Score Colors (Dark Mode Override) */
-        --gradient-score-excellent: linear-gradient(135deg, #064e3b, #022c22);
-        --border-score-excellent: #059669;
-        --gradient-score-good: linear-gradient(135deg, #78350f, #451a03);
-        --border-score-good: #d97706;
-        --gradient-score-fair: linear-gradient(135deg, #1f2937, #111827);
-        --border-score-fair: #4b5563;
+        --gradient-score-excellent: linear-gradient(135deg, #065f46, #047857);
+        --border-score-excellent: #34d399;
+        --gradient-score-good: linear-gradient(135deg, #92400e, #b45309);
+        --border-score-good: #fbbf24;
+        --gradient-score-fair: linear-gradient(135deg, #374151, #4b5563);
+        --border-score-fair: #9ca3af;
+
         /* Badge & Tag Colors (Dark Mode Override) */
-        --badge-amazon-bg: rgba(255, 153, 0, 0.1);
-        --badge-amazon-text: #FF9900;
-        --badge-amazon-border: #FF9900;
+        --badge-amazon-bg: rgba(255, 153, 0, 0.15);
+        --badge-amazon-text: #FFB84D;
+        --badge-amazon-border: rgba(255, 153, 0, 0.5);
         --badge-amazon-shadow: transparent;
 
-        --badge-haul-bg: rgba(219, 39, 119, 0.1);
+        --badge-haul-bg: rgba(219, 39, 119, 0.15);
         --badge-haul-text: #F472B6;
-        --badge-haul-border: rgba(219, 39, 119, 0.4);
+        --badge-haul-border: rgba(244, 114, 182, 0.5);
         --badge-haul-shadow: transparent;
 
-        --badge-availability-border: #059669;
+        --badge-availability-bg: rgba(16, 185, 129, 0.15);
+        --badge-availability-text: #6EE7B7;
+        --badge-availability-border: rgba(110, 231, 183, 0.5);
 
-        --badge-savings-bg: rgba(220, 38, 38, 0.15);
-        --badge-savings-text: #fca5a5;
-        --badge-savings-border: #dc2626;
+        --badge-savings-bg: rgba(220, 38, 38, 0.18);
+        --badge-savings-text: #FCA5A5;
+        --badge-savings-border: rgba(252, 165, 165, 0.5);
 
-        --badge-points-bg: rgba(126, 34, 206, 0.15);
-        --badge-points-text: #c084fc;
-        --badge-points-border: #7e22ce;
+        --badge-points-bg: rgba(126, 34, 206, 0.2);
+        --badge-points-text: #D8B4FE;
+        --badge-points-border: rgba(216, 180, 254, 0.5);
 
-        --badge-deal-bg: rgba(225, 29, 72, 0.15);
-        --badge-deal-text: #fda4af;
-        --badge-deal-border: #e11d48;
+        --badge-deal-bg: rgba(225, 29, 72, 0.18);
+        --badge-deal-text: #FDA4AF;
+        --badge-deal-border: rgba(253, 164, 175, 0.5);
 
         --bg-score-default: #451a03;
         --text-score-default: #fef3c7;
@@ -218,10 +227,12 @@
     /* Gray 800 */
     --color-text-main: #F9FAFB;
     /* Gray 50 */
-    --color-text-muted: #CBD5E1;
+    --color-text-secondary: #9CA3AF;
     /* Gray 400 */
-    --color-border: #475569;
-    /* Gray 700 */
+    --color-text-muted: #D1D5DB;
+    /* Gray 300 */
+    --color-border: #64748B;
+    /* Slate 500 */
 
     --color-primary: #818CF8;
     --color-primary-rgb: 129, 140, 248;
@@ -236,8 +247,8 @@
     --bg-gradient-cons: linear-gradient(135deg, #7f1d1d, #991b1b);
     --bg-gradient-purchase: linear-gradient(135deg, #78350f, #92400e);
 
-    --bg-tag: #334155;
-    --text-tag: #A5B4FC;
+    --bg-tag: rgba(51, 65, 85, 0.8);
+    --text-tag: #C7D2FE;
 
     --bg-table-stripe: rgba(255, 255, 255, 0.05);
     --bg-competitor-preview: linear-gradient(135deg, #1f2937 0%, #111827 100%);
@@ -250,37 +261,39 @@
     --text-cons-title: #FCA5A5;
 
     /* Score Colors (Dark Mode Override) */
-    --gradient-score-excellent: linear-gradient(135deg, #064e3b, #022c22);
-    --border-score-excellent: #059669;
-    --gradient-score-good: linear-gradient(135deg, #78350f, #451a03);
-    --border-score-good: #d97706;
-    --gradient-score-fair: linear-gradient(135deg, #1f2937, #111827);
-    --border-score-fair: #4b5563;
+    --gradient-score-excellent: linear-gradient(135deg, #065f46, #047857);
+    --border-score-excellent: #34d399;
+    --gradient-score-good: linear-gradient(135deg, #92400e, #b45309);
+    --border-score-good: #fbbf24;
+    --gradient-score-fair: linear-gradient(135deg, #374151, #4b5563);
+    --border-score-fair: #9ca3af;
+
     /* Badge & Tag Colors (Dark Mode) */
-    --badge-amazon-bg: rgba(255, 153, 0, 0.1);
-    --badge-amazon-text: #FF9900;
-    --badge-amazon-border: #FF9900;
+    --badge-amazon-bg: rgba(255, 153, 0, 0.15);
+    --badge-amazon-text: #FFB84D;
+    --badge-amazon-border: rgba(255, 153, 0, 0.5);
     --badge-amazon-shadow: transparent;
 
-    --badge-haul-bg: rgba(219, 39, 119, 0.1);
+    --badge-haul-bg: rgba(219, 39, 119, 0.15);
     --badge-haul-text: #F472B6;
-    --badge-haul-border: rgba(219, 39, 119, 0.4);
+    --badge-haul-border: rgba(244, 114, 182, 0.5);
     --badge-haul-shadow: transparent;
 
+    --badge-availability-bg: rgba(16, 185, 129, 0.15);
+    --badge-availability-text: #6EE7B7;
+    --badge-availability-border: rgba(110, 231, 183, 0.5);
 
-    --badge-availability-border: #059669;
+    --badge-savings-bg: rgba(220, 38, 38, 0.18);
+    --badge-savings-text: #FCA5A5;
+    --badge-savings-border: rgba(252, 165, 165, 0.5);
 
-    --badge-savings-bg: rgba(220, 38, 38, 0.15);
-    --badge-savings-text: #fca5a5;
-    --badge-savings-border: #dc2626;
+    --badge-points-bg: rgba(126, 34, 206, 0.2);
+    --badge-points-text: #D8B4FE;
+    --badge-points-border: rgba(216, 180, 254, 0.5);
 
-    --badge-points-bg: rgba(126, 34, 206, 0.15);
-    --badge-points-text: #c084fc;
-    --badge-points-border: #7e22ce;
-
-    --badge-deal-bg: rgba(225, 29, 72, 0.15);
-    --badge-deal-text: #fda4af;
-    --badge-deal-border: #e11d48;
+    --badge-deal-bg: rgba(225, 29, 72, 0.18);
+    --badge-deal-text: #FDA4AF;
+    --badge-deal-border: rgba(253, 164, 175, 0.5);
 
     --bg-score-default: #451a03;
     --text-score-default: #fef3c7;
