@@ -778,7 +778,7 @@ ${reviewAnalysis ? this.generateSentimentAnalysis(reviewAnalysis) : ''}`;
           // アフィリエイトリンクを生成
           const shouldShowLink = normalizedAsin && (!competitorDetails || competitorDetails.has(normalizedAsin));
           const competitorLink = shouldShowLink
-            ? `<a href="${this.escapeHtml(detail?.detailPageUrl || this.affiliateManager.generateAffiliateLink(normalizedAsin).url)}" class="btn-amazon-small" target="_blank" rel="noopener noreferrer">🛒 Amazonで見る</a>`
+            ? `<a href="${this.escapeHtml(detail?.detailPageUrl || this.affiliateManager.generateAffiliateLink(normalizedAsin).url)}" class="btn-amazon-small" target="_blank" rel="noopener noreferrer">🛒 Amazonで見る <span class="external-icon" aria-hidden="true">↗</span></a>`
             : '';
 
           const productName = investigation.analysis.productName || investigation.product.title;
