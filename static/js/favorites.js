@@ -9,6 +9,8 @@
     const STORAGE_KEY = 'apa-favorites-v1';
     const MAX_FAVORITES = 200;
 
+    let toastTimer = null;
+
     // ---- データ操作 ----
 
     function loadFavorites() {
@@ -38,12 +40,29 @@
         return loadFavorites().some(function (item) { return item.asin === asin; });
     }
 
+    function dispatchFavoritesUpdatedEvent(action, asin, item) {
+        const count = loadFavorites().length;
+        try {
+            const event = new CustomEvent('favoritesUpdated', {
+                detail: {
+                    action: action, // 'add' | 'remove' | 'clear'
+                    asin: asin || null,
+                    item: item || null,
+                    count: count
+                }
+            });
+            document.dispatchEvent(event);
+        } catch {
+            // イベント作成失敗時は無視
+        }
+    }
+
     function addFavorite(data) {
         const asin = (data.asin || '').trim();
         if (!asin) return false;
         const list = loadFavorites();
         if (list.some(function (item) { return item.asin === asin; })) return false; // 重複防止
-        list.push({
+        const newItem = {
             asin: asin,
             title: (data.title || '').trim(),
             url: (data.url || '').trim(),
@@ -53,12 +72,14 @@
             score: Number(data.score) || 0,
             category: (data.category || '').trim(),
             savedAt: Date.now()
-        });
+        };
+        list.push(newItem);
         saveFavorites(list);
         // GA4 トラッキング (analytics.js が提供するフック)
         if (globalThis.ApaAnalytics && typeof globalThis.ApaAnalytics.trackFavoriteAdd === 'function') {
             globalThis.ApaAnalytics.trackFavoriteAdd(data);
         }
+        dispatchFavoritesUpdatedEvent('add', asin, newItem);
         return true;
     }
 
@@ -68,27 +89,85 @@
         const next = list.filter(function (item) { return item.asin !== asin; });
         if (next.length === list.length) return false; // 変化なし
         saveFavorites(next);
+        dispatchFavoritesUpdatedEvent('remove', asin, null);
         return true;
     }
 
     function clearFavorites() {
         try {
             globalThis.localStorage.removeItem(STORAGE_KEY);
+            dispatchFavoritesUpdatedEvent('clear', null, null);
             return true;
         } catch {
             return false;
         }
     }
 
-    // ---- UI 更新 ----
+    // ---- UI 更新 & トースト表示 ----
 
-    /** ヘッダーのバッジ件数を更新する */
-    function updateBadge() {
-        const badge = document.getElementById('favorites-badge');
-        if (!badge) return;
+    function escapeHtml(str) {
+        if (!str) return '';
+        return String(str)
+            .replace(/&/g, '&amp;')
+            .replace(/</g, '&lt;')
+            .replace(/>/g, '&gt;')
+            .replace(/"/g, '&quot;')
+            .replace(/'/g, '&#039;');
+    }
+
+    /** トースト通知を表示する */
+    function showToast(message, actionType) {
+        let toast = document.getElementById('favorite-toast');
+        if (!toast) {
+            toast = document.createElement('div');
+            toast.id = 'favorite-toast';
+            toast.className = 'favorite-toast';
+            toast.setAttribute('role', 'status');
+            toast.setAttribute('aria-live', 'polite');
+            document.body.appendChild(toast);
+        }
+
+        const favNavBtn = document.getElementById('favorites-nav-btn');
+        const favUrl = favNavBtn ? favNavBtn.getAttribute('href') : '/favorites/';
+
+        if (actionType === 'add') {
+            toast.innerHTML = `
+                <span class="favorite-toast-msg">${escapeHtml(message)}</span>
+                <a href="${escapeHtml(favUrl)}" class="favorite-toast-link">お気に入りを見る →</a>
+            `;
+        } else {
+            toast.innerHTML = `<span class="favorite-toast-msg">${escapeHtml(message)}</span>`;
+        }
+
+        toast.classList.add('is-visible');
+
+        if (toastTimer) {
+            clearTimeout(toastTimer);
+        }
+        toastTimer = setTimeout(function () {
+            toast.classList.remove('is-visible');
+        }, 3000);
+    }
+
+    /** ヘッダーおよびドロワーのバッジ件数を更新する */
+    function updateBadge(animate) {
+        const badges = document.querySelectorAll('.favorites-badge');
+        if (!badges.length) return;
         const count = loadFavorites().length;
-        badge.textContent = count > 0 ? String(count > 99 ? '99+' : count) : '';
-        badge.style.display = count > 0 ? 'inline-flex' : 'none';
+        const text = count > 0 ? String(count > 99 ? '99+' : count) : '';
+
+        badges.forEach(function (badge) {
+            badge.textContent = text;
+            badge.style.display = count > 0 ? 'inline-flex' : 'none';
+            if (animate) {
+                badge.classList.remove('fav-badge-pop');
+                void badge.offsetWidth; // リフローを発生させてアニメーションを再起動
+                badge.classList.add('fav-badge-pop');
+                setTimeout(function () {
+                    badge.classList.remove('fav-badge-pop');
+                }, 400);
+            }
+        });
     }
 
     /** ページ上のすべてのお気に入りボタンの表示を同期する */
@@ -111,9 +190,8 @@
                 label.textContent = active ? activeText : defaultText;
             }
         });
-        updateBadge();
+        updateBadge(false);
     }
-
 
     /** ボタンのデータ属性から商品情報を収集する */
     function extractDataFromButton(btn) {
@@ -145,12 +223,17 @@
             if (!asin) return;
 
             if (isFavorite(asin)) {
-                removeFavorite(asin);
+                if (removeFavorite(asin)) {
+                    showToast('お気に入りから削除しました', 'remove');
+                }
             } else {
-                addFavorite(extractDataFromButton(btn));
-                // 追加時のマイクロアニメーション
-                btn.classList.add('fav-bounce');
-                setTimeout(function () { btn.classList.remove('fav-bounce'); }, 600);
+                const itemData = extractDataFromButton(btn);
+                if (addFavorite(itemData)) {
+                    // 追加時のマイクロアニメーション
+                    btn.classList.add('fav-bounce');
+                    setTimeout(function () { btn.classList.remove('fav-bounce'); }, 600);
+                    showToast('お気に入りに追加しました', 'add');
+                }
             }
             syncAllButtons();
         });
@@ -165,7 +248,9 @@
 
             event.preventDefault();
             if (!confirm('お気に入りをすべて削除しますか？')) return;
-            clearFavorites();
+            if (clearFavorites()) {
+                showToast('お気に入りをすべて削除しました', 'clear');
+            }
             syncAllButtons();
             // お気に入り一覧ページならリロードして空状態を表示
             if (globalThis.FavoritesPage) {
@@ -180,6 +265,12 @@
         syncAllButtons();
         bindFavoriteButtons();
         bindClearButton();
+
+        // 外部からの更新イベントの購読
+        document.addEventListener('favoritesUpdated', function () {
+            updateBadge(true);
+            syncAllButtons();
+        });
     }
 
     if (document.readyState === 'loading') {
@@ -195,6 +286,7 @@
         remove: removeFavorite,
         clear: clearFavorites,
         isFavorite: isFavorite,
-        sync: syncAllButtons
+        sync: syncAllButtons,
+        showToast: showToast
     };
 })();
