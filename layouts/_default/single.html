@@ -17,6 +17,10 @@
 {{- $allArticles := where (where .Site.RegularPages "Section" "articles") "Params.asin" "!=" $currentAsin -}}
 {{- $shownAsins := slice $currentAsin -}}
 
+<div id="scroll-progress-container" class="scroll-progress-container" aria-hidden="true">
+    <div id="scroll-progress-bar" class="scroll-progress-bar"></div>
+</div>
+
 <div id="product-tracking-info" data-asin="{{ .Params.asin }}" data-category="{{ $currentCategory }}"
     data-price-bucket="{{ $currentPriceBucket }}" data-price="{{ .Params.price }}" style="display: none;"></div>
 
@@ -55,8 +59,18 @@
             {{- partialCached "product-brand-tag.html" (dict "brand" .Params.brand "class" "hero-tag hero-tag-brand") .Params.brand "hero-tag hero-tag-brand" -}}
             <h1 class="hero-title" style="margin-top: var(--spacing-sm);">{{ .Title }}</h1>
             <div class="article-meta">
-                <span>更新日: {{ .Lastmod.Format "2006年01月02日" }}</span>
-                {{- with .Params.author -}}<span> • 著者: {{ . }}</span>{{- end -}}
+                <div class="article-meta-info">
+                    <span>更新日: {{ .Lastmod.Format "2006年01月02日" }}</span>
+                    {{- with .Params.author -}}<span> • 著者: {{ . }}</span>{{- end -}}
+                </div>
+                <fieldset class="font-size-switcher" aria-label="文字サイズ変更">
+                    <legend class="font-size-label">文字サイズ:</legend>
+                    <div class="font-size-btn-group">
+                        <button type="button" class="font-size-btn" data-size="sm" aria-label="文字サイズ小" title="文字サイズ小">小</button>
+                        <button type="button" class="font-size-btn is-active" data-size="md" aria-label="文字サイズ標準" title="文字サイズ標準">標準</button>
+                        <button type="button" class="font-size-btn" data-size="lg" aria-label="文字サイズ大" title="文字サイズ大">大</button>
+                    </div>
+                </fieldset>
             </div>
         </header>
 

@@ -7167,4 +7167,124 @@ body.menu-open .nav-menu-floating-toggle {
     #1e293b 63%
   );
   background-size: 400% 100%;
-}
+}
+
+/* ==========================================================================
+   Article Reading Features (Scroll Progress Bar & Font Size Switcher)
+   ========================================================================== */
+
+/* Scroll Progress Bar */
+.scroll-progress-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background-color: transparent;
+  z-index: 1001;
+  pointer-events: none;
+}
+
+.scroll-progress-bar {
+  height: 100%;
+  width: 0%;
+  background-color: var(--color-primary, #2563eb);
+  transition: width 0.1s linear;
+}
+
+/* Article Meta Layout for Font Switcher */
+.article-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.5rem 1rem;
+}
+
+/* Font Size Switcher */
+fieldset.font-size-switcher {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  font-size: 0.8125rem;
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+legend.font-size-label {
+  color: var(--color-text-muted, #6b7280);
+  font-size: 0.75rem;
+  white-space: nowrap;
+  padding: 0;
+  float: left;
+}
+
+.font-size-btn-group {
+  display: inline-flex;
+  border: 1px solid var(--color-border, #d1d5db);
+  border-radius: var(--radius-md, 6px);
+  overflow: hidden;
+  background-color: var(--color-bg-secondary, #f3f4f6);
+}
+
+.font-size-btn {
+  padding: 0.25rem 0.625rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  border: none;
+  background: transparent;
+  color: var(--color-text-main, #374151);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  line-height: 1.2;
+}
+
+.font-size-btn:not(:last-child) {
+  border-right: 1px solid var(--color-border, #d1d5db);
+}
+
+.font-size-btn:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.font-size-btn.is-active {
+  background-color: var(--color-primary, #2563eb);
+  color: #ffffff;
+}
+
+[data-theme="dark"] .font-size-btn-group {
+  background-color: var(--color-bg-card, #1f2937);
+  border-color: var(--color-border, #374151);
+}
+
+[data-theme="dark"] .font-size-btn {
+  color: var(--color-text-muted, #9ca3af);
+}
+
+[data-theme="dark"] .font-size-btn:not(:last-child) {
+  border-right-color: var(--color-border, #374151);
+}
+
+[data-theme="dark"] .font-size-btn:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+[data-theme="dark"] .font-size-btn.is-active {
+  background-color: var(--color-primary, #3b82f6);
+  color: #ffffff;
+}
+
+/* Article Content Font Size Modifiers */
+.article-content .content.font-size-sm {
+  font-size: 14px;
+}
+
+.article-content .content.font-size-md {
+  font-size: 16px;
+}
+
+.article-content .content.font-size-lg {
+  font-size: 18px;
+}
+

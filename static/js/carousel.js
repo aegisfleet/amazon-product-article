@@ -247,31 +247,59 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Keyboard Navigation, Focus Trap & Escape
+    const handleTabKey = (e) => {
+        const focusables = getFocusableElements();
+        if (focusables.length === 0) return;
+        const first = focusables[0];
+        const last = focusables.at(-1);
+        const active = document.activeElement;
+        const isOutsideOrEdge = (target) => active === target || !modal.contains(active);
+
+        if (e.shiftKey && isOutsideOrEdge(first)) {
+            e.preventDefault();
+            last.focus();
+        } else if (!e.shiftKey && isOutsideOrEdge(last)) {
+            e.preventDefault();
+            first.focus();
+        }
+    };
+
     document.addEventListener('keydown', (e) => {
         if (!modal.classList.contains('active')) return;
+
         if (e.key === 'Escape') {
             closeModal();
-        } else if (e.key === 'Tab') {
-            const focusables = getFocusableElements();
-            if (focusables.length === 0) return;
-            const first = focusables[0];
-            const last = focusables[focusables.length - 1];
-            if (e.shiftKey) {
-                if (document.activeElement === first || !modal.contains(document.activeElement)) {
-                    e.preventDefault();
-                    last.focus();
-                }
-            } else {
-                if (document.activeElement === last || !modal.contains(document.activeElement)) {
-                    e.preventDefault();
-                    first.focus();
-                }
+            return;
+        }
+
+        if (e.key === 'Tab') {
+            handleTabKey(e);
+            return;
+        }
+
+        if (scale === 1) {
+            if (e.key === 'ArrowLeft') {
+                showPrev();
+                return;
             }
-        } else if (e.key === 'ArrowLeft' && scale === 1) showPrev();
-        else if (e.key === 'ArrowRight' && scale === 1) showNext();
-        else if (e.key === '+' || e.key === '=') zoomTo(scale + 0.5);
-        else if (e.key === '-') zoomTo(scale - 0.5);
-        else if (e.key === '0') resetZoom(true);
+            if (e.key === 'ArrowRight') {
+                showNext();
+                return;
+            }
+        }
+
+        switch (e.key) {
+            case '+':
+            case '=':
+                zoomTo(scale + 0.5);
+                break;
+            case '-':
+                zoomTo(scale - 0.5);
+                break;
+            case '0':
+                resetZoom(true);
+                break;
+        }
     });
 
     // Touch Interaction (Pinch Zoom, Pan, Double-tap & Swipe)
