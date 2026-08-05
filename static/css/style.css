@@ -5900,44 +5900,125 @@ body.menu-open .nav-menu-floating-toggle {
    Compare Feature Styles (比較機能 / トレイ & モーダル)
    ========================================================================== */
 
-/* 1. Compare Buttons (商品カード & HERO) */
-.btn-compare-card,
-.btn-compare-hero {
+/* 1. Product Card Footer & Buttons (商品カード 2行構成フッター & ボタンデザイン統一) */
+.card-footer {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: auto;
+  padding-top: 0.625rem;
+  border-top: 1px solid var(--color-border, #f3f4f6);
+}
+
+.card-footer-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+/* 1行目: 比較・保存ボタン (幅50%ずつ) */
+.card-footer-row-sub {
+  gap: 0.5rem;
+}
+
+.card-footer-row-sub .btn-compare-card,
+.card-footer-row-sub .btn-favorite-card {
+  flex: 1;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 0.375rem;
+  height: 34px;
+  min-height: 34px;
+  padding: 0 0.5rem;
+  font-size: 0.8125rem;
+  font-weight: 600;
   background-color: var(--color-bg-secondary, #f3f4f6);
   color: var(--color-text-main, #374151);
   border: 1px solid var(--color-border, #d1d5db);
   border-radius: var(--radius-md, 8px);
-  padding: 0.375rem 0.625rem;
-  font-size: 0.8125rem;
-  font-weight: 600;
   cursor: pointer;
+  white-space: nowrap;
   transition: all 0.2s ease;
   user-select: none;
+  box-sizing: border-box;
 }
 
+/* 2行目: 日付・Amazonボタン */
+.card-footer-row-main {
+  gap: 0.5rem;
+}
+
+.card-footer-row-main .article-meta {
+  font-size: 0.78125rem;
+  color: var(--color-text-muted, #6b7280);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.card-footer-row-main .btn-amazon-small,
+.card-footer-row-main .read-more {
+  flex: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 36px;
+  min-height: 36px;
+  padding: 0 0.75rem;
+  font-size: 0.84375rem;
+  font-weight: 700;
+  border-radius: var(--radius-md, 8px);
+  margin-top: 0;
+  white-space: nowrap;
+  box-sizing: border-box;
+}
+
+
+
 .btn-compare-card:hover,
-.btn-compare-hero:hover {
+.btn-favorite-card:hover {
   background-color: var(--color-bg-hover, #e5e7eb);
   color: var(--color-primary, #2563eb);
   border-color: var(--color-primary, #2563eb);
   transform: translateY(-1px);
 }
 
-.btn-compare-card.is-compared,
-.btn-compare-hero.is-compared {
+.btn-compare-card.is-compared {
   background-color: rgba(37, 99, 235, 0.1);
   color: var(--color-primary, #2563eb);
   border-color: var(--color-primary, #2563eb);
   font-weight: 700;
 }
 
-.btn-compare-hero {
+.btn-favorite-card.is-favorited {
+  background-color: rgba(225, 29, 72, 0.1);
+  color: #e11d48;
+  border-color: #e11d48;
+  font-weight: 700;
+}
+
+/* HEROアクションボタン */
+.btn-compare-hero,
+.btn-favorite-hero {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.375rem;
   padding: 0.65rem var(--spacing-md, 1rem);
   font-size: 0.9375rem;
+  font-weight: 600;
+  min-height: 48px;
+  border-radius: var(--radius-md, 8px);
+  border: 1px solid var(--color-border, #d1d5db);
+  background-color: var(--color-bg-secondary, #f3f4f6);
+  color: var(--color-text-main, #374151);
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.2s ease;
+  box-sizing: border-box;
+}
+
   min-height: 48px;
   box-sizing: border-box;
 }
