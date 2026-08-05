@@ -106,8 +106,8 @@
             if (icon) icon.textContent = active ? '❤️' : '🤍';
             const label = btn.querySelector('.fav-label');
             if (label) {
-                const defaultText = btn.classList.contains('btn-favorite-hero') ? 'お気に入りに追加' : '保存';
-                const activeText = btn.classList.contains('btn-favorite-hero') ? '保存済み' : '保存済み';
+                const defaultText = '保存';
+                const activeText = '保存済み';
                 label.textContent = active ? activeText : defaultText;
             }
         });
