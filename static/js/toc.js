@@ -27,10 +27,19 @@ document.addEventListener('DOMContentLoaded', () => {
   const tocModalOverlay = document.getElementById('toc-modal-overlay');
   const tocModalClose = document.getElementById('toc-modal-close');
 
+  let closeTimeout;
+
   function openTocModal() {
     if (!tocModal) return;
-    tocModal.classList.add('is-open');
-    tocModal.setAttribute('aria-hidden', 'false');
+    if (closeTimeout) clearTimeout(closeTimeout);
+
+    if (typeof tocModal.showModal === 'function' && !tocModal.open) {
+      tocModal.showModal();
+    }
+    requestAnimationFrame(() => {
+      tocModal.classList.add('is-open');
+    });
+
     if (tocFab) tocFab.setAttribute('aria-expanded', 'true');
     document.body.classList.add('toc-modal-open');
   }
@@ -38,9 +47,21 @@ document.addEventListener('DOMContentLoaded', () => {
   function closeTocModal() {
     if (!tocModal) return;
     tocModal.classList.remove('is-open');
-    tocModal.setAttribute('aria-hidden', 'true');
     if (tocFab) tocFab.setAttribute('aria-expanded', 'false');
     document.body.classList.remove('toc-modal-open');
+
+    closeTimeout = setTimeout(() => {
+      if (typeof tocModal.close === 'function' && tocModal.open) {
+        tocModal.close();
+      }
+    }, 300);
+  }
+
+  if (tocModal) {
+    tocModal.addEventListener('cancel', (e) => {
+      e.preventDefault();
+      closeTocModal();
+    });
   }
 
   if (tocFab) {
