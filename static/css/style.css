@@ -7202,17 +7202,22 @@ body.menu-open .nav-menu-floating-toggle {
 }
 
 /* Font Size Switcher */
-.font-size-switcher {
+fieldset.font-size-switcher {
   display: inline-flex;
   align-items: center;
   gap: 0.375rem;
   font-size: 0.8125rem;
+  border: none;
+  padding: 0;
+  margin: 0;
 }
 
-.font-size-label {
+legend.font-size-label {
   color: var(--color-text-muted, #6b7280);
   font-size: 0.75rem;
   white-space: nowrap;
+  padding: 0;
+  float: left;
 }
 
 .font-size-btn-group {
