@@ -255,6 +255,41 @@
         border-color: #ff9900;
     }
 
+    /* ---- Recommendations Card Actions ---- */
+    .rec-card-actions {
+        width: 100%;
+        margin-top: auto;
+        padding-top: var(--spacing-sm);
+        display: flex;
+        gap: var(--spacing-sm);
+        align-items: stretch;
+    }
+
+    .rec-card-actions a.btn-internal-small,
+    .rec-card-actions a.btn-amazon-small {
+        flex: 1 1 0%;
+        min-width: 0;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 48px;
+        padding: 0.625rem 0.5rem;
+        font-size: 0.875rem;
+        font-weight: 700;
+        margin-top: 0;
+        box-sizing: border-box;
+        text-align: center;
+        white-space: nowrap;
+    }
+
+    @media (max-width: 480px) {
+        .rec-card-actions a.btn-internal-small,
+        .rec-card-actions a.btn-amazon-small {
+            font-size: 0.8rem;
+            padding: 0.625rem 0.25rem;
+        }
+    }
+
     /* 非表示カード */
     .competitor-card.hidden {
         display: none !important;
@@ -575,17 +610,14 @@
                     </ul>
                     {{- end -}}
 
-                    <div
-                        style="text-align: right; margin-top: auto; padding-top: var(--spacing-sm); display: flex; gap: var(--spacing-sm); justify-content: flex-end; align-items: center; flex-wrap: wrap;">
+                    <div class="rec-card-actions">
                         {{- if $articlePage -}}
-                        <a href="{{ $articlePage.RelPermalink }}" class="btn-internal-small"
-                            style="margin-top: var(--spacing-sm);">
+                        <a href="{{ $articlePage.RelPermalink }}" class="btn-internal-small">
                             ✍️ サイト内レビュー
                         </a>
                         {{- end -}}
                         <a href='{{ printf "https://www.amazon.co.jp/dp/%s?tag=aegis-22" $rec.asin }}'
-                            class="btn-amazon-small" target="_blank" rel="noopener noreferrer"
-                            style="margin-top: var(--spacing-sm);">
+                            class="btn-amazon-small" target="_blank" rel="noopener noreferrer">
                             🛒 Amazonで見る
                             <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24"
                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
