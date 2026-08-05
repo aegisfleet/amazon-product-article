@@ -108,6 +108,22 @@
         };
     }
 
+    function getRandomFloat() {
+        let cryptoObj = null;
+        if (typeof globalThis !== 'undefined' && globalThis.crypto) {
+            cryptoObj = globalThis.crypto;
+        } else if (typeof window !== 'undefined' && window.crypto) {
+            cryptoObj = window.crypto;
+        }
+
+        if (cryptoObj && typeof cryptoObj.getRandomValues === 'function') {
+            const array = new Uint32Array(1);
+            cryptoObj.getRandomValues(array);
+            return array[0] / 4294967296;
+        }
+        return (Date.now() % 1000000) / 1000000;
+    }
+
     function rankItems(items, categoryToGroup) {
         if (!Array.isArray(items)) return [];
         const preferences = getPreferences(30, categoryToGroup);
@@ -116,7 +132,7 @@
         const itemsWithOrder = items.map((item, index) => ({
             item,
             originalIndex: index,
-            randomOrder: Math.random()
+            randomOrder: getRandomFloat()
         }));
 
         // STAGE 2: Perform the sort
