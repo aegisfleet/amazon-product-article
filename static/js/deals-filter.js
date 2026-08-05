@@ -182,9 +182,20 @@ document.addEventListener('DOMContentLoaded', () => {
     discountValueEl.textContent = String(minDiscount);
   }
 
+  function showSkeleton() {
+    if (!gridEl) return;
+    if (gridEl.querySelector('.skeleton-card')) return;
+    if (noResultsEl) noResultsEl.style.display = 'none';
+    gridEl.style.display = '';
+    if (typeof renderSkeletonGrid === 'function') {
+      gridEl.replaceChildren(renderSkeletonGrid(6));
+    }
+  }
+
   const debouncedApplyFilters = debounce(applyFilters, 300);
 
   function applyFilters() {
+    showSkeleton();
     updateSliderDisplays();
 
     const minScore = Number.parseInt(scoreSlider.value, 10);
@@ -272,27 +283,32 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
+  const triggerFilterWithSkeleton = () => {
+    showSkeleton();
+    debouncedApplyFilters();
+  };
+
   // --- Events ---
-  initKeywordSearch(keywordInput, keywordClearBtn, debouncedApplyFilters, applyFilters);
+  initKeywordSearch(keywordInput, keywordClearBtn, triggerFilterWithSkeleton, applyFilters);
 
   scoreSlider.addEventListener('input', () => {
     updateSliderDisplays();
-    debouncedApplyFilters();
+    triggerFilterWithSkeleton();
   });
   setupSliderTouchPrevention(scoreSlider);
   minPriceSlider.addEventListener('input', () => {
     updateSliderDisplays();
-    debouncedApplyFilters();
+    triggerFilterWithSkeleton();
   });
   setupSliderTouchPrevention(minPriceSlider);
   priceSlider.addEventListener('input', () => {
     updateSliderDisplays();
-    debouncedApplyFilters();
+    triggerFilterWithSkeleton();
   });
   setupSliderTouchPrevention(priceSlider);
   discountSlider.addEventListener('input', () => {
     updateSliderDisplays();
-    debouncedApplyFilters();
+    triggerFilterWithSkeleton();
   });
   setupSliderTouchPrevention(discountSlider);
   if (dealTypeSelect) dealTypeSelect.addEventListener('change', applyFilters);

@@ -96,4 +96,10 @@ describe('Search UI XSS Protection', () => {
     expect(searchJsContent).toContain('updateFilterBadge');
     expect(searchJsContent).toContain('aria-expanded');
   });
+
+  test('static/js/search.js should contain skeleton loading implementation', () => {
+    expect(searchJsContent).toContain('showSkeletonLoading');
+    expect(searchJsContent).toContain('search-skeleton-container');
+    expect(searchJsContent).toContain('skeleton-card');
+  });
 });
