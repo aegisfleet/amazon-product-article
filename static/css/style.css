@@ -7275,16 +7275,116 @@ legend.font-size-label {
   color: #ffffff;
 }
 
-/* Article Content Font Size Modifiers */
+/* Article Content Font Size Modifiers & Global Scaling */
+.article-content {
+  --article-font-scale: 1;
+}
+
+.article-content.font-size-sm,
 .article-content .content.font-size-sm {
+  --article-font-scale: 0.875;
   font-size: 14px;
 }
 
+.article-content.font-size-md,
 .article-content .content.font-size-md {
+  --article-font-scale: 1;
   font-size: 16px;
 }
 
+.article-content.font-size-lg,
 .article-content .content.font-size-lg {
+  --article-font-scale: 1.125;
   font-size: 18px;
+}
+
+/* Scaled Typography across Article Components */
+.article-content .hero-title {
+  font-size: calc(2.25rem * var(--article-font-scale, 1));
+}
+
+.article-content .article-meta {
+  font-size: calc(0.875rem * var(--article-font-scale, 1));
+}
+
+.article-content .product-hero-card {
+  font-size: calc(1rem * var(--article-font-scale, 1));
+}
+
+.article-content .hero-description {
+  font-size: calc(1.05rem * var(--article-font-scale, 1));
+}
+
+.article-content .hero-score-number {
+  font-size: calc(2.5rem * var(--article-font-scale, 1));
+}
+
+.article-content .hero-score-unit,
+.article-content .hero-score-text {
+  font-size: calc(1rem * var(--article-font-scale, 1));
+}
+
+.article-content .hero-score-item {
+  font-size: calc(0.85rem * var(--article-font-scale, 1));
+}
+
+.article-content .hero-price {
+  font-size: calc(1.5rem * var(--article-font-scale, 1));
+}
+
+.article-content .hero-points {
+  font-size: calc(0.9rem * var(--article-font-scale, 1));
+}
+
+.article-content .hero-eval-title {
+  font-size: calc(1rem * var(--article-font-scale, 1));
+}
+
+.article-content .hero-eval-block li {
+  font-size: calc(0.9rem * var(--article-font-scale, 1));
+}
+
+.article-content .hero-actions button,
+.article-content .hero-actions a {
+  font-size: calc(0.9rem * var(--article-font-scale, 1));
+}
+
+.article-content .table-of-contents {
+  font-size: calc(0.95rem * var(--article-font-scale, 1));
+}
+
+.article-content .content h2 {
+  font-size: calc(2.125rem * var(--article-font-scale, 1));
+}
+
+.article-content .content h3 {
+  font-size: calc(1.5rem * var(--article-font-scale, 1));
+}
+
+.article-content .content h4 {
+  font-size: calc(1.25rem * var(--article-font-scale, 1));
+}
+
+.article-content .content p,
+.article-content .content li,
+.article-content .content blockquote,
+.article-content .content table {
+  font-size: calc(1.125rem * var(--article-font-scale, 1));
+}
+
+.article-content .related-section-title {
+  font-size: calc(1.25rem * var(--article-font-scale, 1));
+}
+
+.article-content .pickup-card-title {
+  font-size: calc(0.9rem * var(--article-font-scale, 1));
+}
+
+.article-content .keepa-section-title {
+  font-size: calc(1.25rem * var(--article-font-scale, 1));
+}
+
+.article-content .keepa-note {
+  font-size: calc(0.8rem * var(--article-font-scale, 1));
 }
 
