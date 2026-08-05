@@ -845,6 +845,7 @@ a.hero-tag-brand:hover {
   font-weight: 600;
   margin-top: var(--spacing-xl);
   margin-bottom: var(--spacing-sm);
+  scroll-margin-top: 5rem;
 }
 
 .content p {
@@ -2805,8 +2806,92 @@ button.category-pill {
 }
 
 /* =====================================================
-   TABLE OF CONTENTS
+   TABLE OF CONTENTS & ARTICLE LAYOUT
    ===================================================== */
+/* =====================================================
+   TABLE OF CONTENTS & ARTICLE SIDEBAR
+   ===================================================== */
+.article-sidebar {
+  display: none;
+}
+
+@media (min-width: 1280px) {
+  .article-sidebar {
+    display: block;
+  }
+
+  .toc-sidebar-container {
+    position: fixed;
+    top: 100px;
+    right: max(20px, calc((100vw - 1200px) / 2 - 270px));
+    width: 250px;
+    max-height: calc(100vh - 140px);
+    overflow-y: auto;
+    z-index: 90;
+    background: var(--color-bg-card);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-md) var(--spacing-lg);
+    box-shadow: var(--shadow-md, 0 4px 16px rgba(0, 0, 0, 0.08));
+  }
+}
+
+.toc-sidebar-title {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--color-text-main);
+  margin-top: 0;
+  margin-bottom: var(--spacing-sm);
+  padding-bottom: var(--spacing-xs);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.toc-sidebar-body nav > ul,
+.toc-sidebar-body #TableOfContents > ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.toc-sidebar-body nav ul,
+.toc-sidebar-body #TableOfContents ul {
+  list-style: none;
+  padding-left: 1rem;
+  margin: var(--spacing-xs) 0;
+}
+
+.toc-sidebar-body nav li,
+.toc-sidebar-body #TableOfContents li {
+  margin-bottom: var(--spacing-xs);
+}
+
+.toc-sidebar-body a {
+  display: block;
+  padding: 6px 10px;
+  color: var(--color-text-muted);
+  text-decoration: none;
+  border-radius: var(--radius-md);
+  font-size: 0.9rem;
+  line-height: 1.4;
+  transition: var(--transition-base);
+  border-left: 3px solid transparent;
+}
+
+.toc-sidebar-body a:hover {
+  background: var(--bg-tag);
+  color: var(--color-primary);
+}
+
+/* Active Heading Highlight */
+.table-of-contents a.is-active,
+.toc-sidebar-body a.is-active,
+.toc-modal-body a.is-active {
+  color: var(--color-primary) !important;
+  font-weight: 700 !important;
+  background: var(--bg-tag) !important;
+  border-left: 3px solid var(--color-primary) !important;
+}
+
 .table-of-contents {
   background: var(--color-bg-card);
   border: 1px solid var(--color-border);
@@ -2870,6 +2955,7 @@ button.category-pill {
   border-radius: var(--radius-md);
   transition: var(--transition-base);
   font-size: 0.95rem;
+  border-left: 3px solid transparent;
 }
 
 .table-of-contents nav>ul>li>a:hover,
@@ -2901,6 +2987,167 @@ button.category-pill {
     font-size: 0.875rem;
     padding: var(--spacing-xs) var(--spacing-sm);
   }
+}
+
+/* =====================================================
+   FLOATING TOC BUTTON & MOBILE DRAWER MODAL
+   ===================================================== */
+.toc-fab {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  position: fixed;
+  bottom: 24px;
+  right: 20px;
+  z-index: 99;
+  padding: 10px 18px;
+  border-radius: 9999px;
+  background: var(--color-primary);
+  color: #ffffff;
+  font-size: 0.95rem;
+  font-weight: 700;
+  border: none;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), bottom 0.3s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.2s ease;
+}
+
+.toc-fab:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+}
+
+.toc-fab:active {
+  transform: translateY(0);
+}
+
+.toc-fab.has-sticky-cta {
+  bottom: 84px;
+}
+
+@media (min-width: 1280px) {
+  .toc-fab {
+    display: none !important;
+  }
+}
+
+.toc-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.toc-modal.is-open {
+  pointer-events: auto;
+  opacity: 1;
+}
+
+.toc-modal-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(2px);
+}
+
+.toc-modal-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  max-height: 75vh;
+  background: var(--color-bg-card);
+  border-radius: 20px 20px 0 0;
+  padding: 20px 24px;
+  transform: translateY(100%);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 -8px 32px rgba(0, 0, 0, 0.18);
+}
+
+.toc-modal.is-open .toc-modal-content {
+  transform: translateY(0);
+}
+
+.toc-modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--color-border);
+  margin-bottom: 12px;
+}
+
+.toc-modal-title {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--color-text-main);
+  margin: 0;
+}
+
+.toc-modal-close {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  line-height: 1;
+  color: var(--color-text-muted);
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: var(--radius-md);
+  transition: var(--transition-base);
+}
+
+.toc-modal-close:hover {
+  color: var(--color-text-main);
+  background: var(--bg-tag);
+}
+
+.toc-modal-body {
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  padding-right: 4px;
+}
+
+.toc-modal-body nav > ul,
+.toc-modal-body #TableOfContents > ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.toc-modal-body nav ul,
+.toc-modal-body #TableOfContents ul {
+  list-style: none;
+  padding-left: 1rem;
+  margin: var(--spacing-xs) 0;
+}
+
+.toc-modal-body nav li,
+.toc-modal-body #TableOfContents li {
+  margin-bottom: var(--spacing-xs);
+}
+
+.toc-modal-body a {
+  display: block;
+  padding: 8px 12px;
+  color: var(--color-text-main);
+  text-decoration: none;
+  border-radius: var(--radius-md);
+  font-size: 0.95rem;
+  transition: var(--transition-base);
+  border-left: 3px solid transparent;
+}
+
+.toc-modal-body a:hover {
+  background: var(--bg-tag);
+  color: var(--color-primary);
+}
+
+body.toc-modal-open {
+  overflow: hidden;
 }
 
 /* =====================================================
