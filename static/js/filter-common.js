@@ -272,7 +272,15 @@ function renderCardSubRow(p) {
   compareBtn.dataset.score = String(p.score || 0);
   compareBtn.dataset.savings = String(p.savingsPercentage || 0);
   compareBtn.dataset.category = p.category || '';
-  compareBtn.dataset.specs = p.specsJson || (typeof p.specs === 'string' ? p.specs : (p.specs ? JSON.stringify(p.specs) : ''));
+  let specsValue = '';
+  if (p.specsJson) {
+    specsValue = p.specsJson;
+  } else if (typeof p.specs === 'string') {
+    specsValue = p.specs;
+  } else if (p.specs) {
+    specsValue = JSON.stringify(p.specs);
+  }
+  compareBtn.dataset.specs = specsValue;
   compareBtn.setAttribute('aria-pressed', 'false');
 
   const isCompared = globalThis.Compare && typeof globalThis.Compare.isCompared === 'function' && globalThis.Compare.isCompared(p.asin);
