@@ -297,20 +297,7 @@
                     </div>
                 </div>
                 <div class="card-footer">
-                    <span class="article-meta">{{- with .Params.last_investigated -}}{{ time . | dateFormat
-                        "2006年01月02日"
-                        }}{{- else -}}{{ .Date.Format "2006年01月02日" }}{{- end -}}</span>
-                    <div class="card-footer-actions">
-                        {{- if .Params.affiliate_url -}}
-                        <a href="{{ .Params.affiliate_url }}" class="btn-amazon-small" target="_blank"
-                            rel="noopener noreferrer" data-track-product="1" data-asin="{{ .Params.asin }}"
-                            data-category="{{ $trackingCategory }}"
-                            data-price-bucket="{{ partial `utils-price-bucket.html` .Params.price }}"
-                            data-price="{{ .Params.price }}" data-score="{{ .Params.score | default 0 }}"><span
-                                aria-hidden="true">🛒</span> Amazonで見る</a>
-                        {{- else -}}
-                        <a href="{{ .RelPermalink }}" class="read-more">レビューを読む →</a>
-                        {{- end -}}
+                    <div class="card-footer-row card-footer-row-sub">
                         <button type="button" class="btn-compare-card" data-compare-btn="1"
                             data-asin="{{ .Params.asin }}" data-title="{{ .Title }}" data-url="{{ .RelPermalink }}"
                             data-affiliate-url="{{ .Params.affiliate_url }}"
@@ -330,10 +317,26 @@
                             data-price="{{ .Params.price }}" data-score="{{ .Params.score | default 0 }}"
                             data-category="{{ $trackingCategory }}" aria-pressed="false" aria-label="お気に入りに追加">
                             <span class="fav-icon" aria-hidden="true">🤍</span>
+                            <span class="fav-label">保存</span>
                         </button>
-
+                    </div>
+                    <div class="card-footer-row card-footer-row-main">
+                        <span class="article-meta">{{- with .Params.last_investigated -}}{{ time . | dateFormat
+                            "2006年01月02日"
+                            }}{{- else -}}{{ .Date.Format "2006年01月02日" }}{{- end -}}</span>
+                        {{- if .Params.affiliate_url -}}
+                        <a href="{{ .Params.affiliate_url }}" class="btn-amazon-small" target="_blank"
+                            rel="noopener noreferrer" data-track-product="1" data-asin="{{ .Params.asin }}"
+                            data-category="{{ $trackingCategory }}"
+                            data-price-bucket="{{ partial `utils-price-bucket.html` .Params.price }}"
+                            data-price="{{ .Params.price }}" data-score="{{ .Params.score | default 0 }}"><span
+                                aria-hidden="true">🛒</span> Amazonで見る</a>
+                        {{- else -}}
+                        <a href="{{ .RelPermalink }}" class="read-more">レビューを読む →</a>
+                        {{- end -}}
                     </div>
                 </div>
+
             </div>
         </article>
         {{- end -}}
