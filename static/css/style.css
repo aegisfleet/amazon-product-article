@@ -790,11 +790,11 @@ a.hero-tag-brand:hover {
 
 .card-footer {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  flex-direction: column;
+  gap: 0.5rem;
   margin-top: auto;
-  padding-top: var(--spacing-md);
-  border-top: 1px solid var(--color-border);
+  padding-top: 0.625rem;
+  border-top: 1px solid var(--color-border, #f3f4f6);
 }
 
 .read-more {
@@ -1588,6 +1588,7 @@ a.competitor-preview:hover {
 }
 
 @media (min-width: 641px) {
+
   .competitor-links a.btn-amazon-small,
   .competitor-links a.btn-internal-small,
   .competitor-links p a.btn-amazon-small,
@@ -5157,13 +5158,17 @@ button.category-pill {
 }
 
 .btn-favorite-card.is-favorited {
-  border-color: #e11d48;
-  background: #fef2f2;
+  border-color: #be123c;
+  background-color: #ffe4e6;
+  color: #9f1239;
+  font-weight: 700;
 }
 
 [data-theme="dark"] .btn-favorite-card.is-favorited {
-  border-color: #fda4af;
-  background: rgba(225, 29, 72, 0.15);
+  border-color: #f43f5e;
+  background-color: #881337;
+  color: #ffffff;
+  font-weight: 700;
 }
 
 /* -------------------------------------------------- */
@@ -5177,8 +5182,8 @@ button.category-pill {
   margin-top: var(--spacing-md);
 }
 
-.hero-actions > .btn-amazon-hero,
-.hero-actions > .btn-favorite-hero {
+.hero-actions>.btn-amazon-hero,
+.hero-actions>.btn-favorite-hero {
   width: 100%;
   margin-top: 0;
 }
@@ -5188,8 +5193,8 @@ button.category-pill {
     flex-direction: row;
   }
 
-  .hero-actions > .btn-amazon-hero,
-  .hero-actions > .btn-favorite-hero {
+  .hero-actions>.btn-amazon-hero,
+  .hero-actions>.btn-favorite-hero {
     flex: 1;
     min-width: 0;
   }
@@ -5900,15 +5905,7 @@ body.menu-open .nav-menu-floating-toggle {
    Compare Feature Styles (比較機能 / トレイ & モーダル)
    ========================================================================== */
 
-/* 1. Product Card Footer & Buttons (商品カード 2行構成フッター & ボタンデザイン統一) */
-.card-footer {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  margin-top: auto;
-  padding-top: 0.625rem;
-  border-top: 1px solid var(--color-border, #f3f4f6);
-}
+
 
 .card-footer-row {
   display: flex;
@@ -5974,8 +5971,6 @@ body.menu-open .nav-menu-floating-toggle {
   box-sizing: border-box;
 }
 
-
-
 .btn-compare-card:hover,
 .btn-favorite-card:hover {
   background-color: var(--color-bg-hover, #e5e7eb);
@@ -5988,13 +5983,6 @@ body.menu-open .nav-menu-floating-toggle {
   background-color: rgba(37, 99, 235, 0.1);
   color: var(--color-primary, #2563eb);
   border-color: var(--color-primary, #2563eb);
-  font-weight: 700;
-}
-
-.btn-favorite-card.is-favorited {
-  background-color: rgba(225, 29, 72, 0.1);
-  color: #e11d48;
-  border-color: #e11d48;
   font-weight: 700;
 }
 
@@ -6019,18 +6007,22 @@ body.menu-open .nav-menu-floating-toggle {
   box-sizing: border-box;
 }
 
-  min-height: 48px;
-  box-sizing: border-box;
-}
-
 .compare-bounce {
   animation: compareBounce 0.5s ease;
 }
 
 @keyframes compareBounce {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.15); }
-  100% { transform: scale(1); }
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.15);
+  }
+
+  100% {
+    transform: scale(1);
+  }
 }
 
 /* 2. Compare Toast Notification */
@@ -6304,7 +6296,7 @@ body.menu-open .nav-menu-floating-toggle {
 }
 
 .compare-modal-close-btn:hover {
-  background: rgba(0, 0, 0, 0.05);
+  background-color: #f1f5f9;
   color: #0f172a;
 }
 
@@ -6382,7 +6374,7 @@ body.menu-open .nav-menu-floating-toggle {
 
 .compare-col-remove:hover {
   background: #fef2f2;
-  color: #dc2626;
+  color: #b91c1c;
   border-color: #fca5a5;
 }
 
@@ -6567,18 +6559,17 @@ body.menu-open .nav-menu-floating-toggle {
 
 [data-theme="dark"] .btn-compare-card.is-compared,
 [data-theme="dark"] .btn-compare-hero.is-compared {
-  background-color: rgba(96, 165, 250, 0.2);
-  color: #60a5fa;
-  border-color: #60a5fa;
+  background-color: #1e3a8a;
+  color: #93c5fd;
+  border-color: #3b82f6;
 }
 
 [data-theme="dark"] .btn-favorite-card.is-favorited,
 [data-theme="dark"] .btn-favorite-hero.is-favorited {
-  background-color: rgba(244, 63, 94, 0.2);
-  color: #fb7185;
-  border-color: #fb7185;
+  background-color: #881337;
+  color: #ffffff;
+  border-color: #f43f5e;
 }
-
 
 [data-theme="dark"] .compare-tray {
   background: var(--color-bg-card, #1f2937);
@@ -6613,10 +6604,19 @@ body.menu-open .nav-menu-floating-toggle {
   color: #f8fafc;
 }
 
+[data-theme="dark"] .compare-modal-close-btn {
+  color: #cbd5e1;
+}
+
+[data-theme="dark"] .compare-modal-close-btn:hover {
+  background-color: #334155;
+  color: #ffffff;
+}
+
 [data-theme="dark"] .compare-col-header,
 [data-theme="dark"] .compare-row-label {
   background: #0f172a;
-  color: #94a3b8;
+  color: #e2e8f0;
   border-color: #334155;
 }
 
@@ -6625,7 +6625,14 @@ body.menu-open .nav-menu-floating-toggle {
   border-bottom-color: #334155;
 }
 
+[data-theme="dark"] .compare-col-remove:hover {
+  background: #450a0a;
+  color: #fca5a5;
+  border-color: #991b1b;
+}
+
 [data-theme="dark"] .compare-cell {
+
   background: #1e293b;
 }
 
@@ -6643,7 +6650,7 @@ body.menu-open .nav-menu-floating-toggle {
 
 [data-theme="dark"] .compare-badge-winner {
   background: linear-gradient(135deg, #ca8a04, #eab308);
-  color: #fefce8;
+  color: #451a03;
 }
 
 @media (max-width: 640px) {
@@ -6665,5 +6672,3 @@ body.menu-open .nav-menu-floating-toggle {
     justify-content: center;
   }
 }
-
-
