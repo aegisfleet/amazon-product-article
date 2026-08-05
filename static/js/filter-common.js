@@ -505,3 +505,58 @@ function setupSliderTouchPrevention(slider) {
     }
   }, true);
 }
+
+// --- Render Skeleton Card ---
+function renderSkeletonCard() {
+  const article = document.createElement('article');
+  article.className = 'card skeleton-card';
+
+  const img = document.createElement('div');
+  img.className = 'skeleton-element skeleton-image';
+  article.appendChild(img);
+
+  const body = document.createElement('div');
+  body.className = 'skeleton-content';
+
+  const header = document.createElement('div');
+  header.className = 'skeleton-header';
+  const badge = document.createElement('div');
+  badge.className = 'skeleton-element skeleton-badge';
+  header.appendChild(badge);
+  body.appendChild(header);
+
+  const title1 = document.createElement('div');
+  title1.className = 'skeleton-element skeleton-title';
+  body.appendChild(title1);
+
+  const title2 = document.createElement('div');
+  title2.className = 'skeleton-element skeleton-title-short';
+  body.appendChild(title2);
+
+  const text = document.createElement('div');
+  text.className = 'skeleton-element skeleton-text';
+  body.appendChild(text);
+
+  const meta = document.createElement('div');
+  meta.className = 'skeleton-meta';
+  const price = document.createElement('div');
+  price.className = 'skeleton-element skeleton-price';
+  meta.appendChild(price);
+  body.appendChild(meta);
+
+  const btn = document.createElement('div');
+  btn.className = 'skeleton-element skeleton-button';
+  body.appendChild(btn);
+
+  article.appendChild(body);
+  return article;
+}
+
+function renderSkeletonGrid(count = 6) {
+  const fragment = document.createDocumentFragment();
+  for (let i = 0; i < count; i++) {
+    fragment.appendChild(renderSkeletonCard());
+  }
+  return fragment;
+}
+

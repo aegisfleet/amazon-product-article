@@ -145,6 +145,16 @@ document.addEventListener('DOMContentLoaded', () => {
     priceValueEl.textContent = maxPrice >= 50000 ? '上限なし' : formatPrice(maxPrice) + '以下';
   }
 
+  function showSkeleton() {
+    if (!gridEl) return;
+    if (gridEl.querySelector('.skeleton-card')) return;
+    if (noResultsEl) noResultsEl.style.display = 'none';
+    gridEl.style.display = '';
+    if (typeof renderSkeletonGrid === 'function') {
+      gridEl.replaceChildren(renderSkeletonGrid(6));
+    }
+  }
+
   const debouncedApplyFilters = debounce(applyFilters, 300);
 
   /**
@@ -185,6 +195,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function applyFilters() {
+    showSkeleton();
     updateSliderDisplays();
 
     const minScore = Number.parseInt(scoreSlider.value, 10);
@@ -239,22 +250,27 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
+  const triggerFilterWithSkeleton = () => {
+    showSkeleton();
+    debouncedApplyFilters();
+  };
+
   // --- Events ---
-  initKeywordSearch(keywordInput, keywordClearBtn, debouncedApplyFilters, applyFilters);
+  initKeywordSearch(keywordInput, keywordClearBtn, triggerFilterWithSkeleton, applyFilters);
 
   scoreSlider.addEventListener('input', () => {
     updateSliderDisplays();
-    debouncedApplyFilters();
+    triggerFilterWithSkeleton();
   });
   setupSliderTouchPrevention(scoreSlider);
   minPriceSlider.addEventListener('input', () => {
     updateSliderDisplays();
-    debouncedApplyFilters();
+    triggerFilterWithSkeleton();
   });
   setupSliderTouchPrevention(minPriceSlider);
   priceSlider.addEventListener('input', () => {
     updateSliderDisplays();
-    debouncedApplyFilters();
+    triggerFilterWithSkeleton();
   });
   setupSliderTouchPrevention(priceSlider);
   if (categorySelect) categorySelect.addEventListener('change', applyFilters);

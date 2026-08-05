@@ -6672,3 +6672,111 @@ body.menu-open .nav-menu-floating-toggle {
     justify-content: center;
   }
 }
+
+/* --- Skeleton Card Loading UI --- */
+@keyframes skeleton-shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.skeleton-card {
+  background: var(--color-bg-card, #ffffff);
+  border: 1px solid var(--color-border, #e2e8f0);
+  border-radius: var(--radius-xl, 1rem);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  pointer-events: none;
+  user-select: none;
+  width: 100%;
+}
+
+.skeleton-element {
+  background: linear-gradient(
+    90deg,
+    var(--color-bg-secondary, #f1f5f9) 25%,
+    var(--color-bg-tertiary, #e2e8f0) 37%,
+    var(--color-bg-secondary, #f1f5f9) 63%
+  );
+  background-size: 400% 100%;
+  animation: skeleton-shimmer 1.4s ease infinite;
+  border-radius: 4px;
+}
+
+.skeleton-image {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 0;
+}
+
+.skeleton-content {
+  padding: var(--spacing-md, 1rem);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm, 0.75rem);
+  flex: 1;
+}
+
+.skeleton-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.25rem;
+}
+
+.skeleton-badge {
+  width: 60px;
+  height: 22px;
+  border-radius: 9999px;
+}
+
+.skeleton-title {
+  height: 1.2rem;
+  width: 92%;
+}
+
+.skeleton-title-short {
+  height: 1.2rem;
+  width: 65%;
+}
+
+.skeleton-text {
+  height: 0.9rem;
+  width: 80%;
+  margin-top: 0.25rem;
+}
+
+.skeleton-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-top: auto;
+  padding-top: var(--spacing-xs, 0.5rem);
+}
+
+.skeleton-price {
+  height: 1.5rem;
+  width: 45%;
+}
+
+.skeleton-button {
+  height: 2.5rem;
+  width: 100%;
+  border-radius: var(--radius-md, 0.5rem);
+  margin-top: var(--spacing-xs, 0.5rem);
+}
+
+[data-theme="dark"] .skeleton-element {
+  background: linear-gradient(
+    90deg,
+    #1e293b 25%,
+    #334155 37%,
+    #1e293b 63%
+  );
+  background-size: 400% 100%;
+}

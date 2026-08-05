@@ -392,6 +392,45 @@ document.addEventListener('DOMContentLoaded', function () {
             })
             .catch(err => console.error('Error loading search index:', err));
 
+        function showSkeletonLoading() {
+            if (!searchResults) return;
+            if (searchResults.querySelector('.search-skeleton-container')) return;
+
+            searchResults.textContent = '';
+            const skeletonContainer = document.createElement('div');
+            skeletonContainer.className = 'search-skeleton-container card-grid';
+            if (typeof renderSkeletonGrid === 'function') {
+                skeletonContainer.appendChild(renderSkeletonGrid(4));
+            } else {
+                for (let i = 0; i < 4; i++) {
+                    const card = document.createElement('article');
+                    card.className = 'card skeleton-card';
+                    const img = document.createElement('div');
+                    img.className = 'skeleton-element skeleton-image';
+                    card.appendChild(img);
+                    const body = document.createElement('div');
+                    body.className = 'skeleton-content';
+                    const h = document.createElement('div');
+                    h.className = 'skeleton-header';
+                    const b = document.createElement('div');
+                    b.className = 'skeleton-element skeleton-badge';
+                    h.appendChild(b);
+                    body.appendChild(h);
+                    const t1 = document.createElement('div');
+                    t1.className = 'skeleton-element skeleton-title';
+                    body.appendChild(t1);
+                    const t2 = document.createElement('div');
+                    t2.className = 'skeleton-element skeleton-title-short';
+                    body.appendChild(t2);
+                    card.appendChild(body);
+                    skeletonContainer.appendChild(card);
+                }
+            }
+            searchResults.appendChild(skeletonContainer);
+            searchResults.classList.add('active');
+            updateSearchResultsHeight();
+        }
+
         handleSearch = debounce((query) => {
             const trimmedQuery = query.trim();
             if (trimmedQuery.length === 0) {
@@ -407,19 +446,7 @@ document.addEventListener('DOMContentLoaded', function () {
             }
 
             // 検索中表示
-            searchResults.textContent = '';
-            const loadingDiv = document.createElement('div');
-            loadingDiv.className = 'search-loading';
-            const spinner = document.createElement('div');
-            spinner.className = 'spinner';
-            loadingDiv.appendChild(spinner);
-            const loadingText = document.createElement('span');
-            loadingText.className = 'loading-text';
-            loadingText.textContent = '検索中...';
-            loadingDiv.appendChild(loadingText);
-            searchResults.appendChild(loadingDiv);
-            searchResults.classList.add('active');
-            updateSearchResultsHeight();
+            showSkeletonLoading();
 
             // 検索と表示
             const results = searchWithRerank(query);
@@ -445,6 +472,7 @@ document.addEventListener('DOMContentLoaded', function () {
             const query = e.target.value.replaceAll('　', ' ');
             if (isValidQuery(query)) {
                 if (searchInputWrapper) searchInputWrapper.classList.add('is-loading');
+                showSkeletonLoading();
             } else {
                 if (searchInputWrapper) searchInputWrapper.classList.remove('is-loading');
             }
