@@ -30,18 +30,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // 2. Font Size Switcher
   const fontBtns = document.querySelectorAll('.font-size-btn');
+  const articleContainer = document.querySelector('.article-content');
   const articleContent = document.querySelector('.article-content .content');
   const STORAGE_KEY = 'article-font-size';
   const VALID_SIZES = new Set(['sm', 'md', 'lg']);
 
-  if (fontBtns.length > 0 && articleContent) {
+  const targets = [articleContainer, articleContent].filter(Boolean);
+
+  if (fontBtns.length > 0 && targets.length > 0) {
     const applyFontSize = (size) => {
       const targetSize = VALID_SIZES.has(size) ? size : 'md';
 
-      for (const s of VALID_SIZES) {
-        articleContent.classList.remove(`font-size-${s}`);
+      for (const target of targets) {
+        for (const s of VALID_SIZES) {
+          target.classList.remove(`font-size-${s}`);
+        }
+        target.classList.add(`font-size-${targetSize}`);
       }
-      articleContent.classList.add(`font-size-${targetSize}`);
 
       for (const btn of fontBtns) {
         const btnSize = btn.dataset.size;

@@ -21,12 +21,12 @@ describe('Article Reading Features (article-reading.js)', () => {
       clear: () => storageMap.clear(),
     };
 
-    (global as any).localStorage = mockLocalStorage;
-    (global as any).window = {
+    global.localStorage = mockLocalStorage;
+    global.window = {
       innerHeight: 1000,
       scrollY: 100,
       addEventListener: jest.fn(),
-      requestAnimationFrame: (cb: Function) => cb(),
+      requestAnimationFrame: (cb: () => void) => cb(),
     };
   });
 
@@ -34,5 +34,6 @@ describe('Article Reading Features (article-reading.js)', () => {
     expect(jsCode).toContain('scroll-progress-bar');
     expect(jsCode).toContain('font-size-btn');
     expect(jsCode).toContain('article-font-size');
+    expect(jsCode).toContain('article-content');
   });
 });
