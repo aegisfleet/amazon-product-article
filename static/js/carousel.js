@@ -21,6 +21,9 @@ document.addEventListener('DOMContentLoaded', () => {
     // Create modal element once
     const modal = document.createElement('div');
     modal.className = 'image-modal';
+    modal.setAttribute('role', 'dialog');
+    modal.setAttribute('aria-modal', 'true');
+    modal.setAttribute('aria-label', '商品画像拡大モーダル');
     modal.innerHTML = `
         <svg class="image-modal-svg-filters" aria-hidden="true" style="position: absolute; width: 0; height: 0; overflow: hidden;">
             <defs>
@@ -130,18 +133,32 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    function openModal(images, index) {
+    let lastActiveElement = null;
+
+    function getFocusableElements() {
+        return Array.from(modal.querySelectorAll('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'))
+            .filter(el => !el.hasAttribute('disabled') && el.getAttribute('aria-hidden') !== 'true' && window.getComputedStyle(el).display !== 'none');
+    }
+
+    function openModal(images, index, triggerElement = null) {
+        lastActiveElement = triggerElement || document.activeElement;
         currentImages = images;
         currentIndex = index;
         updateModalImage();
         modal.classList.add('active');
         document.body.style.overflow = 'hidden';
+        setTimeout(() => {
+            modalClose.focus();
+        }, 50);
     }
 
     function closeModal() {
         modal.classList.remove('active');
         document.body.style.overflow = '';
         resetZoom(false);
+        if (lastActiveElement && typeof lastActiveElement.focus === 'function') {
+            lastActiveElement.focus();
+        }
     }
 
     function showPrev() {
@@ -229,11 +246,28 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Keyboard Navigation & Escape
+    // Keyboard Navigation, Focus Trap & Escape
     document.addEventListener('keydown', (e) => {
         if (!modal.classList.contains('active')) return;
-        if (e.key === 'Escape') closeModal();
-        else if (e.key === 'ArrowLeft' && scale === 1) showPrev();
+        if (e.key === 'Escape') {
+            closeModal();
+        } else if (e.key === 'Tab') {
+            const focusables = getFocusableElements();
+            if (focusables.length === 0) return;
+            const first = focusables[0];
+            const last = focusables[focusables.length - 1];
+            if (e.shiftKey) {
+                if (document.activeElement === first || !modal.contains(document.activeElement)) {
+                    e.preventDefault();
+                    last.focus();
+                }
+            } else {
+                if (document.activeElement === last || !modal.contains(document.activeElement)) {
+                    e.preventDefault();
+                    first.focus();
+                }
+            }
+        } else if (e.key === 'ArrowLeft' && scale === 1) showPrev();
         else if (e.key === 'ArrowRight' && scale === 1) showNext();
         else if (e.key === '+' || e.key === '=') zoomTo(scale + 0.5);
         else if (e.key === '-') zoomTo(scale - 0.5);
@@ -328,9 +362,15 @@ document.addEventListener('DOMContentLoaded', () => {
             if (dotsContainer) dotsContainer.style.display = 'none';
         }
 
-        // Image click for modal
+        // Image click and keyboard enter/space for modal
         images.forEach((img, i) => {
-            img.addEventListener('click', () => openModal(Array.from(images), i));
+            img.addEventListener('click', () => openModal(Array.from(images), i, img));
+            img.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    openModal(Array.from(images), i, img);
+                }
+            });
         });
 
         if (images.length <= 1) return;

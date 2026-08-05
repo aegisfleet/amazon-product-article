@@ -1071,6 +1071,36 @@ a.hero-tag-brand:hover {
   scroll-snap-align: center;
   scroll-snap-stop: always;
   padding: var(--spacing-sm) var(--spacing-sm) var(--spacing-xl) var(--spacing-sm);
+  cursor: zoom-in;
+  transition: transform 0.2s ease;
+}
+
+.carousel-image:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: -2px;
+  border-radius: var(--radius-md);
+}
+
+.carousel-zoom-hint {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(6px);
+  color: #ffffff;
+  font-size: 0.75rem;
+  font-weight: 500;
+  padding: 4px 10px;
+  border-radius: 12px;
+  pointer-events: none;
+  opacity: 0.85;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  z-index: 5;
+}
+
+.product-image-carousel:hover .carousel-zoom-hint {
+  opacity: 1;
+  transform: scale(1.05);
 }
 
 @media (min-width: 1024px) {
@@ -1317,6 +1347,13 @@ a.hero-tag-brand:hover {
 .image-modal-zoom-btn:hover {
   background: rgba(255, 255, 255, 0.25);
   transform: scale(1.1);
+}
+
+.image-modal-close:focus-visible,
+.image-modal-nav:focus-visible,
+.image-modal-zoom-btn:focus-visible {
+  outline: 2px solid #ffffff;
+  outline-offset: 2px;
 }
 
 @media (max-width: 768px) {
