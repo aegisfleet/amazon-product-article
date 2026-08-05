@@ -502,6 +502,18 @@
                         {{- else -}}
                         <a href="{{ .RelPermalink }}" class="read-more">レビューを読む →</a>
                         {{- end -}}
+                        <button type="button" class="btn-compare-card" data-compare-btn="1"
+                            data-asin="{{ .Params.asin }}" data-title="{{ .Title }}" data-url="{{ .RelPermalink }}"
+                            data-affiliate-url="{{ .Params.affiliate_url }}"
+                            data-image="{{ if .Params.images }}{{ index .Params.images 0 }}{{ end }}"
+                            data-price="{{ .Params.price }}" data-score="{{ .Params.score | default 0 }}"
+                            data-savings="{{ .Params.savings_percentage | default 0 }}"
+                            data-category="{{ $trackingCategory }}"
+                            data-specs='{{ partial "product-specs-json.html" .Params.specs }}'
+                            aria-pressed="false" aria-label="{{ .Title }}を比較に追加">
+                            <span class="compare-icon" aria-hidden="true">⚖️</span>
+                            <span class="compare-label">比較</span>
+                        </button>
                         <button type="button" class="btn-favorite-card" data-favorite-btn="1"
                             data-asin="{{ .Params.asin }}" data-title="{{ .Title }}" data-url="{{ .RelPermalink }}"
                             data-affiliate-url="{{ .Params.affiliate_url }}"
@@ -510,6 +522,7 @@
                             data-category="{{ $trackingCategory }}" aria-pressed="false" aria-label="お気に入りに追加">
                             <span class="fav-icon" aria-hidden="true">🤍</span>
                         </button>
+
                     </div>
                 </div>
             </div>
