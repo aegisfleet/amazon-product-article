@@ -3058,9 +3058,7 @@ button.category-pill {
   transform: translateY(0);
 }
 
-.toc-fab.has-sticky-cta {
-  bottom: 84px;
-}
+/* .has-sticky-cta の bottom 値は toc.js が sticky-cta-bar の offsetHeight を取得してインラインスタイルで動的に設定する */
 
 @media (min-width: 1280px) {
   .toc-fab {
