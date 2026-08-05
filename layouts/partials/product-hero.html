@@ -167,6 +167,19 @@
         {{- $priceBucket := partial "utils-price-bucket.html" $product.price -}}
 
         <div class="hero-actions">
+            <button type="button" class="btn-compare-hero" data-compare-btn="1" data-asin="{{ $product.asin }}"
+                data-title="{{ .Title }}" data-url="{{ .RelPermalink }}"
+                data-affiliate-url="{{ $product.affiliate_url }}"
+                data-image="{{ if $product.images }}{{ index $product.images 0 }}{{ end }}"
+                data-price="{{ $product.price }}" data-score="{{ $product.score | default 0 }}"
+                data-savings="{{ $product.savings_percentage | default 0 }}"
+                data-category="{{ $trackingCategory }}"
+                data-specs='{{ partial "product-specs-json.html" $product.specs }}'
+                aria-pressed="false" aria-label="{{ .Title }}を比較に追加">
+                <span class="compare-icon" aria-hidden="true">⚖️</span>
+                <span class="compare-label">比較に追加</span>
+            </button>
+
             <button type="button" class="btn-favorite-hero" data-favorite-btn="1" data-asin="{{ $product.asin }}"
                 data-title="{{ .Title }}" data-url="{{ .RelPermalink }}"
                 data-affiliate-url="{{ $product.affiliate_url }}"
@@ -176,6 +189,7 @@
                 <span class="fav-icon" aria-hidden="true">🤍</span>
                 <span class="fav-label">お気に入りに追加</span>
             </button>
+
 
             {{- if $product.affiliate_url -}}
             <a href="{{ $product.affiliate_url }}" class="btn-amazon-hero" target="_blank" rel="noopener noreferrer"

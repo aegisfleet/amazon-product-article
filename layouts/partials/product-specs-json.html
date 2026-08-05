@@ -1,0 +1,53 @@
+{{- $specs := . -}}
+{{- $dict := dict -}}
+{{- with $specs -}}
+  {{- with .os }}{{- if ne . "不明" }}{{ $dict = merge $dict (dict "OS" .) }}{{ end }}{{ end -}}
+  {{- $cpu := .processor | default .cpu -}}
+  {{- with $cpu }}{{- if ne . "不明" }}{{ $dict = merge $dict (dict "プロセッサ" .) }}{{ end }}{{ end -}}
+  {{- $ram := .memory | default .ram -}}
+  {{- with $ram }}{{- if ne . "不明" }}{{ $dict = merge $dict (dict "メモリ" .) }}{{ end }}{{ end -}}
+  {{- with .storage }}{{- if ne . "不明" }}{{ $dict = merge $dict (dict "ストレージ" .) }}{{ end }}{{ end -}}
+  {{- with .display_size }}{{- if ne . "不明" }}{{ $dict = merge $dict (dict "画面" .) }}{{ end }}{{ end -}}
+  {{- with .battery_capacity }}{{- if ne . "不明" }}{{ $dict = merge $dict (dict "バッテリー" .) }}{{ end }}{{ end -}}
+  {{- with .weight -}}
+    {{- if and (ne . "不明") (not (findRE `^0+(\.0+)?\s*[a-zA-Z]*$` .)) -}}
+      {{ $dict = merge $dict (dict "重量" .) }}
+    {{- end -}}
+  {{- end -}}
+  {{- $volume := .quantity | default .content -}}
+  {{- with $volume -}}
+    {{- if and (ne . "不明") (not (findRE `^0+(\.0+)?\s*[a-zA-Z]*$` .)) -}}
+      {{ $dict = merge $dict (dict "内容量" .) }}
+    {{- end -}}
+  {{- end -}}
+  {{- with .count -}}
+    {{- if and (ne . "不明") (not (findRE `^0+(\.0+)?\s*[a-zA-Z]*$` .)) -}}
+      {{ $dict = merge $dict (dict "個数" .) }}
+    {{- end -}}
+  {{- end -}}
+  {{- with .capacity -}}
+    {{- if and (ne . "不明") (not (findRE `^0+(\.0+)?\s*[a-zA-Z]*$` .)) -}}
+      {{ $dict = merge $dict (dict "容量" .) }}
+    {{- end -}}
+  {{- end -}}
+  {{- with .material -}}
+    {{- if and (ne . "不明") (not (reflect.IsMap .)) -}}
+      {{ $dict = merge $dict (dict "素材" .) }}
+    {{- end -}}
+  {{- end -}}
+  {{- $sizeParts := slice -}}
+  {{- with .height }}{{- if and (ne . "不明") (not (findRE `^0+(\.0+)?\s*[a-zA-Z]*$` .)) }}{{- $sizeParts = $sizeParts | append . -}}{{- end -}}{{- end -}}
+  {{- with .width }}{{- if and (ne . "不明") (not (findRE `^0+(\.0+)?\s*[a-zA-Z]*$` .)) }}{{- $sizeParts = $sizeParts | append . -}}{{- end -}}{{- end -}}
+  {{- with .depth }}{{- if and (ne . "不明") (not (findRE `^0+(\.0+)?\s*[a-zA-Z]*$` .)) }}{{- $sizeParts = $sizeParts | append . -}}{{- end -}}{{- end -}}
+  {{- if gt (len $sizeParts) 0 -}}
+    {{ $dict = merge $dict (dict "サイズ" (delimit $sizeParts " × ")) }}
+  {{- end -}}
+  {{- with .other_specs -}}
+    {{- if reflect.IsSlice . -}}
+      {{ $dict = merge $dict (dict "その他" (delimit . " / ")) }}
+    {{- else if ne . "不明" -}}
+      {{ $dict = merge $dict (dict "その他" .) }}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+{{- jsonify $dict -}}
