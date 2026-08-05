@@ -174,6 +174,7 @@
     "dealAccessType" (.Params.deal_access_type | default "")
     "specsHtml" (cond (not (not .Params.specs)) (partial "product-spec-tags.html" (dict "specs" .Params.specs "tagClass"
     "card-spec-tag")) "")
+    "specsJson" (cond (not (not .Params.specs)) (partial "product-specs-json.html" .Params.specs) "")
     ) -}}
     {{- end -}}
     {{- end -}}

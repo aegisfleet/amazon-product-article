@@ -251,33 +251,53 @@ function formatInvestigatedDate(lastInvestigated) {
   return lastInvestigated;
 }
 
-function renderCardActions(p) {
-  const actions = document.createElement('div');
-  actions.className = 'card-footer-actions';
+// --- Card Sub Row (Compare & Favorite Buttons) ---
+function renderCardSubRow(p) {
+  const row = document.createElement('div');
+  row.className = 'card-footer-row card-footer-row-sub';
 
-  const actionBtn = document.createElement('a');
-  if (p.affiliateUrl) {
-    actionBtn.href = safeUrl(p.affiliateUrl);
-    actionBtn.className = 'btn-amazon-small';
-    actionBtn.target = '_blank';
-    actionBtn.rel = 'noopener noreferrer';
-    actionBtn.innerHTML = '<span aria-hidden="true">🛒</span> Amazonで見る';
-    if (p.title) {
-      actionBtn.setAttribute('aria-label', `${p.title}をAmazonで見る`);
-    }
-    actionBtn.dataset.trackProduct = '1';
-    actionBtn.dataset.asin = p.asin || '';
-    actionBtn.dataset.category = p.category || '';
-    actionBtn.dataset.priceBucket = getPriceBucket(p.priceRaw);
-    actionBtn.dataset.price = p.price || '';
-    actionBtn.dataset.score = String(p.score || 0);
+  const titlePrefix = p.title ? `${p.title}を` : '';
+
+  // 1. Compare Button
+  const compareBtn = document.createElement('button');
+  compareBtn.type = 'button';
+  compareBtn.className = 'btn-compare-card';
+  compareBtn.dataset.compareBtn = '1';
+  compareBtn.dataset.asin = p.asin || '';
+  compareBtn.dataset.title = p.title || '';
+  compareBtn.dataset.url = p.url || '';
+  compareBtn.dataset.affiliateUrl = p.affiliateUrl || '';
+  compareBtn.dataset.image = p.image || '';
+  compareBtn.dataset.price = p.price || '';
+  compareBtn.dataset.score = String(p.score || 0);
+  compareBtn.dataset.savings = String(p.savingsPercentage || 0);
+  compareBtn.dataset.category = p.category || '';
+  compareBtn.dataset.specs = p.specsJson || (typeof p.specs === 'string' ? p.specs : (p.specs ? JSON.stringify(p.specs) : ''));
+  compareBtn.setAttribute('aria-pressed', 'false');
+
+  const isCompared = globalThis.Compare && typeof globalThis.Compare.isCompared === 'function' && globalThis.Compare.isCompared(p.asin);
+  if (isCompared) {
+    compareBtn.classList.add('is-compared');
+    compareBtn.setAttribute('aria-pressed', 'true');
+    compareBtn.setAttribute('aria-label', `${titlePrefix}比較から削除`);
   } else {
-    actionBtn.href = safeUrl(p.url);
-    actionBtn.className = 'read-more';
-    actionBtn.textContent = 'レビューを読む →';
+    compareBtn.setAttribute('aria-label', `${titlePrefix}比較に追加`);
   }
-  actions.appendChild(actionBtn);
 
+  const compareIcon = document.createElement('span');
+  compareIcon.className = 'compare-icon';
+  compareIcon.setAttribute('aria-hidden', 'true');
+  compareIcon.textContent = isCompared ? '✅' : '⚖️';
+
+  const compareLabel = document.createElement('span');
+  compareLabel.className = 'compare-label';
+  compareLabel.textContent = isCompared ? '比較中' : '比較';
+
+  compareBtn.appendChild(compareIcon);
+  compareBtn.appendChild(compareLabel);
+  row.appendChild(compareBtn);
+
+  // 2. Favorite Button
   const favBtn = document.createElement('button');
   favBtn.type = 'button';
   favBtn.className = 'btn-favorite-card';
@@ -292,25 +312,67 @@ function renderCardActions(p) {
   favBtn.dataset.category = p.category || '';
   favBtn.setAttribute('aria-pressed', 'false');
 
-  const titlePrefix = p.title ? `${p.title}を` : '';
-  favBtn.setAttribute('aria-label', `${titlePrefix}お気に入りに追加`);
-
-  const favIcon = document.createElement('span');
-  favIcon.className = 'fav-icon';
-  favIcon.setAttribute('aria-hidden', 'true');
   const isFav = globalThis.Favorites && typeof globalThis.Favorites.isFavorite === 'function' && globalThis.Favorites.isFavorite(p.asin);
   if (isFav) {
     favBtn.classList.add('is-favorited');
     favBtn.setAttribute('aria-pressed', 'true');
     favBtn.setAttribute('aria-label', `${titlePrefix}お気に入りから削除`);
-    favIcon.textContent = '❤️';
   } else {
-    favIcon.textContent = '🤍';
+    favBtn.setAttribute('aria-label', `${titlePrefix}お気に入りに追加`);
   }
-  favBtn.appendChild(favIcon);
-  actions.appendChild(favBtn);
 
-  return actions;
+  const favIcon = document.createElement('span');
+  favIcon.className = 'fav-icon';
+  favIcon.setAttribute('aria-hidden', 'true');
+  favIcon.textContent = isFav ? '❤️' : '🤍';
+
+  const favLabel = document.createElement('span');
+  favLabel.className = 'fav-label';
+  favLabel.textContent = isFav ? '保存済み' : '保存';
+
+  favBtn.appendChild(favIcon);
+  favBtn.appendChild(favLabel);
+  row.appendChild(favBtn);
+
+  return row;
+}
+
+// --- Card Main Row (Meta date & Amazon/Read More Button) ---
+function renderCardMainRow(p) {
+  const row = document.createElement('div');
+  row.className = 'card-footer-row card-footer-row-main';
+
+  const dateSpan = document.createElement('span');
+  dateSpan.className = 'article-meta';
+  dateSpan.textContent = formatInvestigatedDate(p.lastInvestigated);
+  row.appendChild(dateSpan);
+
+  if (p.affiliateUrl) {
+    const actionBtn = document.createElement('a');
+    actionBtn.href = safeUrl(p.affiliateUrl);
+    actionBtn.className = 'btn-amazon-small';
+    actionBtn.target = '_blank';
+    actionBtn.rel = 'noopener noreferrer';
+    actionBtn.innerHTML = '<span aria-hidden="true">🛒</span> Amazonで見る';
+    if (p.title) {
+      actionBtn.setAttribute('aria-label', `${p.title}をAmazonで見る`);
+    }
+    actionBtn.dataset.trackProduct = '1';
+    actionBtn.dataset.asin = p.asin || '';
+    actionBtn.dataset.category = p.category || '';
+    actionBtn.dataset.priceBucket = getPriceBucket(p.priceRaw);
+    actionBtn.dataset.price = p.price || '';
+    actionBtn.dataset.score = String(p.score || 0);
+    row.appendChild(actionBtn);
+  } else {
+    const readMoreLink = document.createElement('a');
+    readMoreLink.href = safeUrl(p.url);
+    readMoreLink.className = 'read-more';
+    readMoreLink.textContent = 'レビューを読む →';
+    row.appendChild(readMoreLink);
+  }
+
+  return row;
 }
 
 // --- Card Footer ---
@@ -318,13 +380,11 @@ function renderCardFooter(p) {
   const footer = document.createElement('div');
   footer.className = 'card-footer';
 
-  const dateSpan = document.createElement('span');
-  dateSpan.className = 'article-meta';
-  dateSpan.textContent = formatInvestigatedDate(p.lastInvestigated);
-  footer.appendChild(dateSpan);
+  const subRow = renderCardSubRow(p);
+  footer.appendChild(subRow);
 
-  const actions = renderCardActions(p);
-  footer.appendChild(actions);
+  const mainRow = renderCardMainRow(p);
+  footer.appendChild(mainRow);
 
   return footer;
 }
