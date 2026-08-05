@@ -5437,28 +5437,35 @@ body.toc-modal-open {
 /* -------------------------------------------------- */
 .hero-actions {
   display: flex;
-  flex-direction: column;
-  gap: var(--spacing-sm);
+  align-items: center;
+  gap: var(--spacing-sm, 0.5rem);
   width: 100%;
-  margin-top: var(--spacing-md);
+  margin-top: var(--spacing-md, 1rem);
 }
 
-.hero-actions>.btn-amazon-hero,
-.hero-actions>.btn-favorite-hero {
-  width: 100%;
+.hero-actions-sub {
+  flex: 1;
+  display: flex;
+  gap: var(--spacing-xs, 0.5rem);
+  min-width: 0;
+}
+
+.hero-actions-sub .btn-compare-hero,
+.hero-actions-sub .btn-favorite-hero {
+  flex: 1;
+  width: 50%;
+  min-width: 0;
   margin-top: 0;
 }
 
-@media (min-width: 768px) {
-  .hero-actions {
-    flex-direction: row;
-  }
+.hero-actions-main {
+  flex: 1;
+  min-width: 0;
+}
 
-  .hero-actions>.btn-amazon-hero,
-  .hero-actions>.btn-favorite-hero {
-    flex: 1;
-    min-width: 0;
-  }
+.hero-actions-main .btn-amazon-hero {
+  width: 100%;
+  margin-top: 0;
 }
 
 .btn-favorite-hero {
