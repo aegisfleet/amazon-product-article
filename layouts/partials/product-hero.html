@@ -8,12 +8,14 @@
             <div class="carousel-track">
                 {{- if $product.images -}}
                 <img src="{{ index $product.images 0 }}" alt="{{- $product.title -}}" class="carousel-image"
-                    fetchpriority="high" decoding="async">
+                    fetchpriority="high" decoding="async" tabindex="0" role="button" aria-label="{{- $product.title -}}（クリックで拡大表示）">
                 {{- range after 1 $product.images -}}
-                <img src="{{ . }}" alt="{{ $product.title }}" class="carousel-image" loading="lazy" decoding="async">
+                <img src="{{ . }}" alt="{{ $product.title }}" class="carousel-image" loading="lazy" decoding="async"
+                    tabindex="0" role="button" aria-label="{{- $product.title -}}（クリックで拡大表示）">
                 {{- end -}}
                 {{- end -}}
             </div>
+            <span class="carousel-zoom-hint" aria-hidden="true">🔍 拡大</span>
             {{- if and $product.images (gt (len $product.images) 1) -}}
             <button class="carousel-button prev" aria-label="前へ">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
