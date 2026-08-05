@@ -32,11 +32,11 @@ document.addEventListener('DOMContentLoaded', () => {
   const fontBtns = document.querySelectorAll('.font-size-btn');
   const articleContent = document.querySelector('.article-content .content');
   const STORAGE_KEY = 'article-font-size';
-  const VALID_SIZES = ['sm', 'md', 'lg'];
+  const VALID_SIZES = new Set(['sm', 'md', 'lg']);
 
   if (fontBtns.length > 0 && articleContent) {
     const applyFontSize = (size) => {
-      const targetSize = VALID_SIZES.includes(size) ? size : 'md';
+      const targetSize = VALID_SIZES.has(size) ? size : 'md';
 
       for (const s of VALID_SIZES) {
         articleContent.classList.remove(`font-size-${s}`);
@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', () => {
       articleContent.classList.add(`font-size-${targetSize}`);
 
       for (const btn of fontBtns) {
-        const btnSize = btn.getAttribute('data-size');
+        const btnSize = btn.dataset.size;
         if (btnSize === targetSize) {
           btn.classList.add('is-active');
           btn.setAttribute('aria-pressed', 'true');
@@ -57,7 +57,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Load saved font size preference
     const savedSize = localStorage.getItem(STORAGE_KEY);
-    if (savedSize && VALID_SIZES.includes(savedSize)) {
+    if (savedSize && VALID_SIZES.has(savedSize)) {
       applyFontSize(savedSize);
     } else {
       applyFontSize('md');
@@ -66,8 +66,8 @@ document.addEventListener('DOMContentLoaded', () => {
     // Add click event listeners
     for (const btn of fontBtns) {
       btn.addEventListener('click', () => {
-        const size = btn.getAttribute('data-size');
-        if (size && VALID_SIZES.includes(size)) {
+        const size = btn.dataset.size;
+        if (size && VALID_SIZES.has(size)) {
           applyFontSize(size);
           try {
             localStorage.setItem(STORAGE_KEY, size);
