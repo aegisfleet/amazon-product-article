@@ -6542,11 +6542,27 @@ body.menu-open .nav-menu-floating-toggle {
   border-color: var(--color-border, #4b5563);
 }
 
+[data-theme="dark"] .btn-compare-card,
+[data-theme="dark"] .btn-compare-hero,
+[data-theme="dark"] .btn-favorite-card,
+[data-theme="dark"] .btn-favorite-hero {
+  background-color: var(--color-bg-secondary, #374151);
+  color: var(--color-text-main, #f3f4f6);
+  border-color: var(--color-border, #4b5563);
+}
+
 [data-theme="dark"] .btn-compare-card:hover,
 [data-theme="dark"] .btn-compare-hero:hover {
   background-color: var(--color-bg-hover, #4b5563);
   color: #60a5fa;
   border-color: #60a5fa;
+}
+
+[data-theme="dark"] .btn-favorite-card:hover,
+[data-theme="dark"] .btn-favorite-hero:hover {
+  background-color: var(--color-bg-hover, #4b5563);
+  color: #fb7185;
+  border-color: #fb7185;
 }
 
 [data-theme="dark"] .btn-compare-card.is-compared,
@@ -6555,6 +6571,14 @@ body.menu-open .nav-menu-floating-toggle {
   color: #60a5fa;
   border-color: #60a5fa;
 }
+
+[data-theme="dark"] .btn-favorite-card.is-favorited,
+[data-theme="dark"] .btn-favorite-hero.is-favorited {
+  background-color: rgba(244, 63, 94, 0.2);
+  color: #fb7185;
+  border-color: #fb7185;
+}
+
 
 [data-theme="dark"] .compare-tray {
   background: var(--color-bg-card, #1f2937);
