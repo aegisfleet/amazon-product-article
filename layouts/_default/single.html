@@ -289,6 +289,19 @@
 
     </article>
 
+    {{- if .TableOfContents -}}
+    <aside class="article-sidebar" aria-label="記事の目次（サイドバー）">
+        <div class="toc-sidebar-container">
+            <h3 class="toc-sidebar-title">📑 目次</h3>
+            <div class="toc-sidebar-body" id="toc-sidebar-body">
+                <!-- TOC contents cloned by JS -->
+            </div>
+        </div>
+    </aside>
+    {{- end -}}
+
+    {{- partial "toc-floating.html" . -}}
+
     {{- /* 同価格帯の商品（±20%範囲、別カテゴリ優先） */ -}}
     {{- if gt $currentPrice 0 -}}
     {{- $minPrice := int (mul $currentPrice 0.8) -}}
