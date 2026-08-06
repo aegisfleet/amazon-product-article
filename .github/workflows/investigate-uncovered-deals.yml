@@ -1,26 +1,62 @@
-name: Daily Maintenance
-
+name: Uncovered Deals Investigation
 
 on:
   schedule:
-    # Run daily at 05:00 JST (20:00 UTC)
-    - cron: '0 20 * * *'
+    # 毎日 11:00 JST (02:00 UTC) に実行
+    - cron: '0 2 * * *'
   workflow_dispatch:
 
 jobs:
-  product-update:
-    name: Update Oldest Product
+  find-uncovered-products:
+    name: Find Uncovered Deal Products
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    outputs:
+      asins: ${{ steps.find.outputs.asins }}
+      products-found: ${{ steps.find.outputs.products-found }}
+
+    steps:
+    - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      with:
+        persist-credentials: false
+
+    - name: Install pnpm
+      uses: pnpm/action-setup@0ebf47130e4866e96fce0953f49152a61190b271 # v6.0.9
+
+    - name: Use Node.js
+      uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+      with:
+        node-version: '22'
+        cache: 'pnpm'
+
+    - name: Install dependencies
+      run: pnpm install --frozen-lockfile --ignore-scripts
+
+    - name: Build project
+      run: pnpm run build
+
+    - name: Find uncovered deal candidates
+      id: find
+      env:
+        MAX_INVESTIGATION_PRODUCTS: '10'
+      run: pnpm run investigate:uncovered-deals
+
+  product-search:
+    name: Fetch Latest Product Data
+    needs: find-uncovered-products
+    if: needs.find-uncovered-products.outputs.products-found == 'true'
     runs-on: ubuntu-latest
     permissions:
       contents: read
     outputs:
       products-found: ${{ steps.search.outputs.products-found }}
-    
+
     steps:
     - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
       with:
         persist-credentials: false
-    
+
     - name: Install pnpm
       uses: pnpm/action-setup@0ebf47130e4866e96fce0953f49152a61190b271 # v6.0.9
 
@@ -29,53 +65,45 @@ jobs:
       with:
         node-version: '22'
         cache: 'pnpm'
-    
+
     - name: Install dependencies
       run: pnpm install --frozen-lockfile --ignore-scripts
-      
+
     - name: Build project
       run: pnpm run build
 
-    - name: Find oldest product
-      id: find-oldest
-      run: |
-        OLD_ASIN=$(pnpm exec ts-node src/scripts/maintenance-find-oldest.ts --count 10)
-        echo "Found oldest ASIN: $OLD_ASIN"
-        echo "asin=$OLD_ASIN" >> $GITHUB_OUTPUT
-
     - name: Run product search
       id: search
-      if: steps.find-oldest.outputs.asin != ''
       env:
         AMAZON_CREATORS_APPLICATION_ID: ${{ secrets.AMAZON_CREATORS_APPLICATION_ID }}
         AMAZON_CREATORS_CREDENTIAL_ID: ${{ secrets.AMAZON_CREATORS_CREDENTIAL_ID }}
         AMAZON_CREATORS_CREDENTIAL_SECRET: ${{ secrets.AMAZON_CREATORS_CREDENTIAL_SECRET }}
         AMAZON_PARTNER_TAG: ${{ secrets.AMAZON_PARTNER_TAG }}
-        INPUT_ASINS: ${{ steps.find-oldest.outputs.asin }}
+        INPUT_ASINS: ${{ needs.find-uncovered-products.outputs.asins }}
       run: pnpm run search:products
-    
+
     - name: Upload product data
       if: steps.search.outputs.products-found == 'true'
       uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
       with:
-        name: product-data
+        name: uncovered-deals-product-data
         path: data/products/
         retention-days: 7
 
   jules-investigation:
     name: Jules Investigation
-    needs: product-update
-    if: needs.product-update.outputs.products-found == 'true'
+    needs: product-search
+    if: needs.product-search.outputs.products-found == 'true'
     runs-on: ubuntu-latest
     permissions:
       contents: write
       pull-requests: write
-    
+
     steps:
     - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
       with:
         persist-credentials: false
-    
+
     - name: Install pnpm
       uses: pnpm/action-setup@0ebf47130e4866e96fce0953f49152a61190b271 # v6.0.9
 
@@ -84,30 +112,30 @@ jobs:
       with:
         node-version: '22'
         cache: 'pnpm'
-    
+
     - name: Install dependencies
       run: pnpm install --frozen-lockfile --ignore-scripts
-    
+
     - name: Build project
       run: pnpm run build
-    
+
     - name: Download product data
       uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c # v8.0.1
       with:
-        name: product-data
+        name: uncovered-deals-product-data
         path: data/products/
-    
+
     - name: Start Jules investigation sessions
       env:
         JULES_API_KEY: ${{ secrets.JULES_API_KEY }}
         JULES_SOURCE: sources/github/${{ github.repository }}
         JULES_STARTING_BRANCH: ${{ github.ref_name }}
         MAX_INVESTIGATION_PRODUCTS: '10'
-      run: pnpm run investigate
-    
+      run: pnpm run investigate:uncovered-deals -- --investigate
+
     - name: Upload session data
       uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
       with:
-        name: session-data
+        name: uncovered-deals-session-data
         path: data/sessions/
         retention-days: 30
