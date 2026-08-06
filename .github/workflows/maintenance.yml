@@ -39,7 +39,7 @@ jobs:
     - name: Find oldest product
       id: find-oldest
       run: |
-        OLD_ASIN=$(pnpm exec ts-node src/scripts/maintenance-find-oldest.ts --count 15)
+        OLD_ASIN=$(pnpm exec ts-node src/scripts/maintenance-find-oldest.ts --count 10)
         echo "Found oldest ASIN: $OLD_ASIN"
         echo "asin=$OLD_ASIN" >> $GITHUB_OUTPUT
 
@@ -102,7 +102,7 @@ jobs:
         JULES_API_KEY: ${{ secrets.JULES_API_KEY }}
         JULES_SOURCE: sources/github/${{ github.repository }}
         JULES_STARTING_BRANCH: ${{ github.ref_name }}
-        MAX_INVESTIGATION_PRODUCTS: '15'
+        MAX_INVESTIGATION_PRODUCTS: '10'
       run: pnpm run investigate
     
     - name: Upload session data

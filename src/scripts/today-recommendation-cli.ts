@@ -17,12 +17,14 @@ interface CLIOptions {
   apiKey: string;
   source: string;
   startingBranch: string;
+  maxProducts: number;
 }
 
 function getOptions(): CLIOptions {
   const apiKey = process.env.JULES_API_KEY;
   const source = process.env.JULES_SOURCE;
   const startingBranch = process.env.JULES_STARTING_BRANCH || 'main';
+  const maxProducts = Number.parseInt(process.env.MAX_RECOMMENDATION_PRODUCTS || '10', 10);
 
   if (!apiKey) {
     throw new Error('Missing required environment variable: JULES_API_KEY');
@@ -36,6 +38,7 @@ function getOptions(): CLIOptions {
     apiKey,
     source,
     startingBranch,
+    maxProducts,
   };
 }
 
@@ -46,6 +49,7 @@ async function main(): Promise<void> {
     const options = getOptions();
     logger.info(`Source: ${options.source}`);
     logger.info(`Starting Branch: ${options.startingBranch}`);
+    logger.info(`Max recommendation products: ${options.maxProducts}`);
 
     // キャッシュからセール・値引き候補商品を事前抽出
     logger.info('Extracting sale candidates from cache...');
@@ -67,7 +71,7 @@ async function main(): Promise<void> {
 
     // 調査セッションを開始
     logger.info("Requesting Jules to find today's recommended products...");
-    const sessionInfo = await investigator.startRecommendationInvestigation(sourceContext);
+    const sessionInfo = await investigator.startRecommendationInvestigation(sourceContext, options.maxProducts);
 
     logger.info(`Recommendation investigation session started: ${sessionInfo.sessionId}`);
     logger.info(`Session Name: ${sessionInfo.sessionName}`);

@@ -333,17 +333,18 @@ export class JulesInvestigator {
   }
 
   /**
-   * 本日の注目商品10選調査を開始
+   * 本日の注目商品調査を開始
    * Jules がトレンドを探索し、data/recommendations/today.json を作成・コミットする
    */
   async startRecommendationInvestigation(
     sourceContext: SourceContext,
+    maxProducts = 10,
   ): Promise<{ sessionId: string; sessionName: string }> {
-    const prompt = formatRecommendationPrompt();
+    const prompt = formatRecommendationPrompt(maxProducts);
     const request: JulesSessionRequest = {
       prompt,
       sourceContext,
-      title: "Today's Recommended Products Investigation",
+      title: `Today's Recommended Products Investigation (${maxProducts}件)`,
       automationMode: 'AUTO_CREATE_PR',
       requirePlanApproval: false, // 自動承認
     };
