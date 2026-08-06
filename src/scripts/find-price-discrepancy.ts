@@ -28,6 +28,7 @@ export interface PriceDiscrepancyCandidate {
   };
   savingsPercentage: number;
   dealBadge: string;
+  lastInvestigatedTime: number;
   cacheTimestamp: number;
   detailPageUrl: string;
 }
@@ -50,10 +51,10 @@ interface CacheStore {
 }
 
 /**
- * data/investigations/ 配下に存在する調査済み ASIN の Set を取得する
+ * data/investigations/ 配下に存在する調査済み ASIN とその最終更新タイムスタンプのマップを取得する
  */
-async function getInvestigatedAsins(investigationsDir: string): Promise<Set<string>> {
-  const result = new Set<string>();
+async function getInvestigatedAsinMap(investigationsDir: string): Promise<Map<string, number>> {
+  const result = new Map<string, number>();
 
   if (!fs.existsSync(investigationsDir)) {
     logger.warn(`Investigations directory not found: ${investigationsDir}`);
@@ -65,7 +66,13 @@ async function getInvestigatedAsins(investigationsDir: string): Promise<Set<stri
     if (file.endsWith('.json')) {
       const asin = path.basename(file, '.json').toUpperCase();
       if (/^[A-Z0-9]{10}$/.test(asin)) {
-        result.add(asin);
+        const filePath = path.join(investigationsDir, file);
+        try {
+          const stat = await fs.promises.stat(filePath);
+          result.set(asin, stat.mtimeMs);
+        } catch {
+          result.set(asin, 0);
+        }
       }
     }
   }
@@ -101,9 +108,9 @@ export async function findPriceDiscrepancy(
   const rawCache = await fs.promises.readFile(cachePath, 'utf-8');
   const cache = JSON.parse(rawCache) as CacheStore;
 
-  logger.info('Loading investigated ASINs...');
-  const investigatedAsins = await getInvestigatedAsins(investigations);
-  logger.info(`Found ${investigatedAsins.size} investigated products`);
+  logger.info('Loading investigated ASIN map...');
+  const investigatedAsinMap = await getInvestigatedAsinMap(investigations);
+  logger.info(`Found ${investigatedAsinMap.size} investigated products`);
 
   const candidates: PriceDiscrepancyCandidate[] = [];
 
@@ -111,14 +118,18 @@ export async function findPriceDiscrepancy(
     if (entry.status !== 'valid' || !entry.data) continue;
     if (!entry.data.price || entry.data.price.amount <= 0) continue;
 
+    const asinUpper = asin.toUpperCase();
+
     // 調査済みの商品のみ対象
-    if (!investigatedAsins.has(asin.toUpperCase())) continue;
+    if (!investigatedAsinMap.has(asinUpper)) continue;
 
     const savingsPercentage = entry.data.savingsPercentage || 0;
     const dealBadge = entry.data.dealBadge?.trim() || '';
 
     // 割引率が閾値以上、またはセールバッジが付与されている商品を「価格乖離（値下げ・セール）」とみなす
     if (savingsPercentage < threshold && !dealBadge) continue;
+
+    const lastInvestigatedTime = investigatedAsinMap.get(asinUpper) || 0;
 
     candidates.push({
       asin,
@@ -127,16 +138,22 @@ export async function findPriceDiscrepancy(
       price: entry.data.price,
       savingsPercentage,
       dealBadge,
+      lastInvestigatedTime,
       cacheTimestamp: entry.timestamp,
       detailPageUrl: entry.data.detailPageUrl || `https://www.amazon.co.jp/dp/${asin}`,
     });
   }
 
-  // 割引率の高い順 > セールバッジあり > 新しい順
+  // ソート順:
+  // 1. 最終調査日時（lastInvestigatedTime）が古い順（過去に調査されてから時間が経過しているセール品を優先）
+  // 2. セールバッジあり優先
+  // 3. 割引率が高い順
   candidates.sort((a, b) => {
-    if (a.savingsPercentage !== b.savingsPercentage) return b.savingsPercentage - a.savingsPercentage;
+    if (a.lastInvestigatedTime !== b.lastInvestigatedTime) {
+      return a.lastInvestigatedTime - b.lastInvestigatedTime;
+    }
     if (Boolean(a.dealBadge) !== Boolean(b.dealBadge)) return a.dealBadge ? -1 : 1;
-    return b.cacheTimestamp - a.cacheTimestamp;
+    return b.savingsPercentage - a.savingsPercentage;
   });
 
   const topCandidates = candidates.slice(0, maxResults);
