@@ -1,12 +1,12 @@
 #!/usr/bin/env ts-node
 /**
  * Find Price Discrepancy Script (案5)
- * data/cache/paapi-product-cache.json の最新価格と、
- * content/articles/ の Front Matter 記載価格を突き合わせ、
- * 乖離率が閾値以上の商品を抽出する。
+ * 調査済み商品（data/investigations/{ASIN}.json）の中から、
+ * data/cache/paapi-product-cache.json でセールバッジが付与されている、
+ * または割引率（savingsPercentage）が閾値（デフォルト15%）以上の「価格乖離（値下げ・セール化）商品」を抽出する。
  *
  * 環境変数:
- *   PRICE_DISCREPANCY_THRESHOLD - 乖離率の閾値（%、デフォルト 15）
+ *   PRICE_DISCREPANCY_THRESHOLD - 乖離（割引率）の閾値（%、デフォルト 15）
  *   PRICE_DISCREPANCY_MAX_RESULTS - 最大抽出件数（デフォルト 20）
  */
 
@@ -21,11 +21,13 @@ export interface PriceDiscrepancyCandidate {
   asin: string;
   title: string;
   category: string;
-  articlePrice: number;
-  cachePrice: number;
-  discrepancyRate: number;
-  direction: 'cheaper' | 'more_expensive';
-  lastInvestigated: string | null;
+  price: {
+    amount: number;
+    currency: string;
+    formatted: string;
+  };
+  savingsPercentage: number;
+  dealBadge: string;
   cacheTimestamp: number;
   detailPageUrl: string;
 }
@@ -48,62 +50,23 @@ interface CacheStore {
 }
 
 /**
- * Front Matter の price フィールド（例: "¥12,000" や "12000"）を数値に変換する
+ * data/investigations/ 配下に存在する調査済み ASIN の Set を取得する
  */
-function parseFrontMatterPrice(priceStr: string | undefined | null): number {
-  if (!priceStr) return 0;
-  // 数字のみを抽出してカンマを除去
-  const digits = priceStr.replace(/[^0-9]/g, '');
-  if (!digits) return 0;
-  return Number.parseInt(digits, 10);
-}
+async function getInvestigatedAsins(investigationsDir: string): Promise<Set<string>> {
+  const result = new Set<string>();
 
-/**
- * content/articles/ 配下の Markdown ファイルから Front Matter を簡易パースして
- * ASIN → { price, lastInvestigated } のマップを生成する
- */
-async function loadArticleData(
-  articlesDir: string,
-): Promise<Map<string, { price: number; lastInvestigated: string | null }>> {
-  const result = new Map<string, { price: number; lastInvestigated: string | null }>();
-
-  if (!fs.existsSync(articlesDir)) {
-    logger.warn(`Articles directory not found: ${articlesDir}`);
+  if (!fs.existsSync(investigationsDir)) {
+    logger.warn(`Investigations directory not found: ${investigationsDir}`);
     return result;
   }
 
-  const files = await fs.promises.readdir(articlesDir);
-  const mdFiles = files.filter((f) => f.endsWith('.md'));
-
-  const PRICE_PATTERN = /^price:\s*["']?([^"'\n]+)["']?/m;
-  const LAST_INVESTIGATED_PATTERN = /^last_investigated:\s*["']?([^"'\n]+)["']?/m;
-  const ASIN_PATTERN = /^asin:\s*["']?([A-Z0-9]{10})["']?/im;
-
-  for (const file of mdFiles) {
-    const filePath = path.join(articlesDir, file);
-    try {
-      const content = await fs.promises.readFile(filePath, 'utf-8');
-
-      // Front Matter 部分のみ抽出（--- から --- まで）
-      const fmMatch = content.match(/^---\n([\s\S]*?)\n---/);
-      if (!fmMatch || !fmMatch[1]) continue;
-      const fm = fmMatch[1];
-
-      const asinMatch = fm.match(ASIN_PATTERN);
-      const priceMatch = fm.match(PRICE_PATTERN);
-      const lastInvestigatedMatch = fm.match(LAST_INVESTIGATED_PATTERN);
-
-      if (!asinMatch || !asinMatch[1]) continue;
-      const asin = asinMatch[1].trim();
-
-      const price = parseFrontMatterPrice(priceMatch?.[1]);
-      const lastInvestigated = lastInvestigatedMatch?.[1]?.trim() || null;
-
-      if (price > 0) {
-        result.set(asin, { price, lastInvestigated });
+  const files = await fs.promises.readdir(investigationsDir);
+  for (const file of files) {
+    if (file.endsWith('.json')) {
+      const asin = path.basename(file, '.json').toUpperCase();
+      if (/^[A-Z0-9]{10}$/.test(asin)) {
+        result.add(asin);
       }
-    } catch (err) {
-      logger.error(`Failed to parse front matter for ${file}:`, err);
     }
   }
 
@@ -112,13 +75,13 @@ async function loadArticleData(
 
 export async function findPriceDiscrepancy(
   cacheFilePath?: string,
-  articlesDir?: string,
+  investigationsDir?: string,
   outputFilePath?: string,
   threshold = 15,
   maxResults = 20,
 ): Promise<PriceDiscrepancyCandidatesFile> {
   const cachePath = cacheFilePath || path.join(process.cwd(), 'data/cache/paapi-product-cache.json');
-  const articles = articlesDir || path.join(process.cwd(), 'content/articles');
+  const investigations = investigationsDir || path.join(process.cwd(), 'data/investigations');
   const outputPath = outputFilePath || path.join(process.cwd(), 'tmp/price_discrepancy_candidates.json');
 
   if (!fs.existsSync(cachePath)) {
@@ -138,41 +101,44 @@ export async function findPriceDiscrepancy(
   const rawCache = await fs.promises.readFile(cachePath, 'utf-8');
   const cache = JSON.parse(rawCache) as CacheStore;
 
-  logger.info('Loading article front matter data...');
-  const articleData = await loadArticleData(articles);
-  logger.info(`Found ${articleData.size} articles with price data`);
+  logger.info('Loading investigated ASINs...');
+  const investigatedAsins = await getInvestigatedAsins(investigations);
+  logger.info(`Found ${investigatedAsins.size} investigated products`);
 
   const candidates: PriceDiscrepancyCandidate[] = [];
 
   for (const [asin, entry] of Object.entries(cache)) {
     if (entry.status !== 'valid' || !entry.data) continue;
-    const cachePrice = entry.data.price?.amount;
-    if (!cachePrice || cachePrice <= 0) continue;
+    if (!entry.data.price || entry.data.price.amount <= 0) continue;
 
-    const articleInfo = articleData.get(asin);
-    if (!articleInfo || articleInfo.price <= 0) continue;
+    // 調査済みの商品のみ対象
+    if (!investigatedAsins.has(asin.toUpperCase())) continue;
 
-    const articlePrice = articleInfo.price;
-    const discrepancyRate = (Math.abs(cachePrice - articlePrice) / articlePrice) * 100;
+    const savingsPercentage = entry.data.savingsPercentage || 0;
+    const dealBadge = entry.data.dealBadge?.trim() || '';
 
-    if (discrepancyRate < threshold) continue;
+    // 割引率が閾値以上、またはセールバッジが付与されている商品を「価格乖離（値下げ・セール）」とみなす
+    if (savingsPercentage < threshold && !dealBadge) continue;
 
     candidates.push({
       asin,
       title: entry.data.title,
       category: entry.data.category || 'その他',
-      articlePrice,
-      cachePrice,
-      discrepancyRate: Math.round(discrepancyRate * 10) / 10,
-      direction: cachePrice < articlePrice ? 'cheaper' : 'more_expensive',
-      lastInvestigated: articleInfo.lastInvestigated,
+      price: entry.data.price,
+      savingsPercentage,
+      dealBadge,
       cacheTimestamp: entry.timestamp,
       detailPageUrl: entry.data.detailPageUrl || `https://www.amazon.co.jp/dp/${asin}`,
     });
   }
 
-  // 乖離率の高い順にソート
-  candidates.sort((a, b) => b.discrepancyRate - a.discrepancyRate);
+  // 割引率の高い順 > セールバッジあり > 新しい順
+  candidates.sort((a, b) => {
+    if (a.savingsPercentage !== b.savingsPercentage) return b.savingsPercentage - a.savingsPercentage;
+    if (Boolean(a.dealBadge) !== Boolean(b.dealBadge)) return a.dealBadge ? -1 : 1;
+    return b.cacheTimestamp - a.cacheTimestamp;
+  });
+
   const topCandidates = candidates.slice(0, maxResults);
 
   const result: PriceDiscrepancyCandidatesFile = {
@@ -184,7 +150,9 @@ export async function findPriceDiscrepancy(
 
   await fs.promises.mkdir(path.dirname(outputPath), { recursive: true });
   await fs.promises.writeFile(outputPath, JSON.stringify(result, null, 2), 'utf-8');
-  logger.info(`Found ${candidates.length} total, extracted top ${topCandidates.length} (threshold: ${threshold}%)`);
+  logger.info(
+    `Found ${candidates.length} total price discrepancy candidates, extracted top ${topCandidates.length} (threshold: ${threshold}%)`,
+  );
 
   return result;
 }
