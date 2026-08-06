@@ -83,6 +83,69 @@ async function getExistingArticleAsins(articlesDir: string): Promise<Set<string>
   return result;
 }
 
+/**
+ * キャッシュから条件を満たす未調査セール商品を抽出する
+ */
+function filterUncoveredCandidateEntries(
+  cache: CacheStore,
+  existingAsins: Set<string>,
+  minSavings: number,
+): UncoveredDealCandidate[] {
+  const candidates: UncoveredDealCandidate[] = [];
+
+  for (const [asin, entry] of Object.entries(cache)) {
+    if (entry.status !== 'valid' || !entry.data) continue;
+    if (!entry.data.price || entry.data.price.amount <= 0) continue;
+
+    const dealBadge = entry.data.dealBadge?.trim();
+    if (!dealBadge) continue;
+
+    const savingsPercentage = entry.data.savingsPercentage || 0;
+    if (savingsPercentage < minSavings) continue;
+
+    if (existingAsins.has(asin.toUpperCase())) continue;
+
+    candidates.push({
+      asin,
+      title: entry.data.title,
+      category: entry.data.category || 'その他',
+      price: entry.data.price,
+      savingsPercentage,
+      dealBadge,
+      isLimitedTimeSale: isLimitedTimeSaleBadge(dealBadge),
+      loyaltyPoints: entry.data.loyaltyPoints || 0,
+      brand: entry.data.brand || '',
+      timestamp: entry.timestamp,
+      detailPageUrl: entry.data.detailPageUrl || `https://www.amazon.co.jp/dp/${asin}`,
+    });
+  }
+
+  return candidates;
+}
+
+/**
+ * カテゴリごとの上限件数および全体の最大件数でフィルタリングする
+ */
+function filterCandidatesByCategory(
+  candidates: UncoveredDealCandidate[],
+  maxTotal: number,
+  maxPerCategory: number,
+): UncoveredDealCandidate[] {
+  const categoryCounts: Record<string, number> = {};
+  const filtered: UncoveredDealCandidate[] = [];
+
+  for (const candidate of candidates) {
+    const cat = candidate.category;
+    const count = categoryCounts[cat] || 0;
+    if (count < maxPerCategory && filtered.length < maxTotal) {
+      filtered.push(candidate);
+      categoryCounts[cat] = count + 1;
+    }
+  }
+
+  return filtered;
+}
+
 export async function findUncoveredDeals(
   cacheFilePath?: string,
   articlesDir?: string,
@@ -115,37 +178,8 @@ export async function findUncoveredDeals(
   const existingAsins = await getExistingArticleAsins(articles);
   logger.info(`Found ${existingAsins.size} existing articles`);
 
-  // セール商品を抽出（dealBadgeあり）
-  const candidates: UncoveredDealCandidate[] = [];
-
-  for (const [asin, entry] of Object.entries(cache)) {
-    if (entry.status !== 'valid' || !entry.data) continue;
-    if (!entry.data.price || entry.data.price.amount <= 0) continue;
-
-    const dealBadge = entry.data.dealBadge?.trim();
-    if (!dealBadge) continue; // セールバッジなしは除外
-
-    // 二重価格排除: dealBadgeが存在する = Amazonが公式にセールと認定した商品のみ対象
-    const savingsPercentage = entry.data.savingsPercentage || 0;
-    if (savingsPercentage < minSavings) continue;
-
-    // すでに記事がある場合はスキップ
-    if (existingAsins.has(asin.toUpperCase())) continue;
-
-    candidates.push({
-      asin,
-      title: entry.data.title,
-      category: entry.data.category || 'その他',
-      price: entry.data.price,
-      savingsPercentage,
-      dealBadge,
-      isLimitedTimeSale: isLimitedTimeSaleBadge(dealBadge),
-      loyaltyPoints: entry.data.loyaltyPoints || 0,
-      brand: entry.data.brand || '',
-      timestamp: entry.timestamp,
-      detailPageUrl: entry.data.detailPageUrl || `https://www.amazon.co.jp/dp/${asin}`,
-    });
-  }
+  // セール商品を抽出
+  const candidates = filterUncoveredCandidateEntries(cache, existingAsins, minSavings);
 
   // ソート: 限定セール > dealBadgeあり > 割引率高順 > 新しい順
   candidates.sort((a, b) => {
@@ -155,17 +189,7 @@ export async function findUncoveredDeals(
   });
 
   // カテゴリごとの件数制限
-  const categoryCounts: Record<string, number> = {};
-  const filtered: UncoveredDealCandidate[] = [];
-
-  for (const candidate of candidates) {
-    const cat = candidate.category;
-    const count = categoryCounts[cat] || 0;
-    if (count < maxPerCategory && filtered.length < maxTotal) {
-      filtered.push(candidate);
-      categoryCounts[cat] = count + 1;
-    }
-  }
+  const filtered = filterCandidatesByCategory(candidates, maxTotal, maxPerCategory);
 
   const result: UncoveredDealsCandidatesFile = {
     extractedAt: new Date().toISOString(),
