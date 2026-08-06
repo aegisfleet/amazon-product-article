@@ -59,21 +59,20 @@ function isLimitedTimeSaleBadge(badge?: string): boolean {
 }
 
 /**
- * content/articles/ 配下に存在するASINのセットを返す
+ * data/investigations/ または content/articles/ 配下に存在するASINのセットを返す
  */
-async function getExistingArticleAsins(articlesDir: string): Promise<Set<string>> {
+async function getExistingArticleAsins(investigationsDir: string): Promise<Set<string>> {
   const result = new Set<string>();
 
-  if (!fs.existsSync(articlesDir)) {
-    logger.warn(`Articles directory not found: ${articlesDir}`);
+  if (!fs.existsSync(investigationsDir)) {
+    logger.warn(`Directory not found: ${investigationsDir}`);
     return result;
   }
 
-  const files = await fs.promises.readdir(articlesDir);
+  const files = await fs.promises.readdir(investigationsDir);
   for (const file of files) {
-    if (file.endsWith('.md')) {
-      // ファイル名（拡張子なし）がASINとなる
-      const asin = path.basename(file, '.md').toUpperCase();
+    if (file.endsWith('.json') || file.endsWith('.md')) {
+      const asin = path.basename(file, path.extname(file)).toUpperCase();
       if (/^[A-Z0-9]{10}$/.test(asin)) {
         result.add(asin);
       }
@@ -148,14 +147,14 @@ function filterCandidatesByCategory(
 
 export async function findUncoveredDeals(
   cacheFilePath?: string,
-  articlesDir?: string,
+  investigationsDir?: string,
   outputFilePath?: string,
   maxTotal = 20,
   maxPerCategory = 3,
   minSavings = 0,
 ): Promise<UncoveredDealsCandidatesFile> {
   const cachePath = cacheFilePath || path.join(process.cwd(), 'data/cache/paapi-product-cache.json');
-  const articles = articlesDir || path.join(process.cwd(), 'content/articles');
+  const investigations = investigationsDir || path.join(process.cwd(), 'data/investigations');
   const outputPath = outputFilePath || path.join(process.cwd(), 'tmp/uncovered_deals.json');
 
   if (!fs.existsSync(cachePath)) {
@@ -174,9 +173,9 @@ export async function findUncoveredDeals(
   const rawCache = await fs.promises.readFile(cachePath, 'utf-8');
   const cache = JSON.parse(rawCache) as CacheStore;
 
-  logger.info('Loading existing article ASINs...');
-  const existingAsins = await getExistingArticleAsins(articles);
-  logger.info(`Found ${existingAsins.size} existing articles`);
+  logger.info('Loading existing article/investigation ASINs...');
+  const existingAsins = await getExistingArticleAsins(investigations);
+  logger.info(`Found ${existingAsins.size} existing investigations/articles`);
 
   // セール商品を抽出
   const candidates = filterUncoveredCandidateEntries(cache, existingAsins, minSavings);
