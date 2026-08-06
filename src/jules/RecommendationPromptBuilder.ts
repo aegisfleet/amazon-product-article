@@ -3,14 +3,15 @@ import path from 'node:path';
 import type { SaleCandidatesFile } from '../scripts/extract-sale-candidates';
 
 /**
- * RecommendationPromptBuilder - 本日の注目商品10選を調査するためのプロンプトを構築
+ * RecommendationPromptBuilder - 本日の注目商品を調査するためのプロンプトを構築
  */
 
 export class RecommendationPromptBuilder {
   private readonly today: string;
   private readonly candidatesPath: string;
+  private readonly maxProducts: number;
 
-  constructor(candidatesPath?: string) {
+  constructor(candidatesPath?: string, maxProducts = 10) {
     // JSTで現在の日付を取得 (YYYY-MM-DD)
     this.today = new Date()
       .toLocaleDateString('ja-JP', {
@@ -22,6 +23,7 @@ export class RecommendationPromptBuilder {
       .replaceAll('/', '-');
 
     this.candidatesPath = candidatesPath || path.join(process.cwd(), 'tmp/sale_candidates.json');
+    this.maxProducts = maxProducts;
   }
 
   private loadSaleCandidatesPromptSection(): string {
@@ -64,11 +66,12 @@ ${candidateLines.join('\n')}
 
   public build(): string {
     const saleCandidatesSection = this.loadSaleCandidatesPromptSection();
+    const n = this.maxProducts;
 
-    return `【ミッション：本日（${this.today}）の「今買うべき」多様なおすすめ10選と、そのエビデンスの調査】
+    return `【ミッション：本日（${this.today}）の「今買うべき」多様なおすすめ${n}選と、そのエビデンスの調査】
 あなたはお買い得で価値の高い商品を見つける優秀なAIエージェントとして、Amazon商品の調査・選定を行う。
-本日は、特定のジャンルに偏らず、幅広いカテゴリから10個の商品を厳選せよ。
-既存の \`data/recommendations/today.json\` の内容は考慮不要。毎日新しい情報を上書きするため、過去のデータと大きく乖離しても問題ない。本日の最新トレンドとセール情報に基づいた、最高の10選を提案せよ。
+本日は、特定のジャンルに偏らず、幅広いカテゴリから${n}個の商品を厳選せよ。
+既存の \`data/recommendations/today.json\` の内容は考慮不要。毎日新しい情報を上書きするため、過去のデータと大きく乖離しても問題ない。本日の最新トレンドとセール情報に基づいた、最高の${n}選を提案せよ。
 最重要ルールは、**「なぜ今日おすすめするのか（Why Buy Now）」の根拠となる『情報元（エビデンス）』を必ず明記せよ**。客観的な事実に基づかない推奨は無価値である。
 ${saleCandidatesSection}
 ---
@@ -87,9 +90,9 @@ ${saleCandidatesSection}
    - その際、「どのサイト（URL）で話題になっていたか」「どの公式ページでセールが告知されているか」という**情報元（ソース）のリンクや名称を必ず記録する**。
 2. **多角的な商品検索（カテゴリの分散）**:
    - 意図的にジャンルを分散させ（例：PC周辺機器、食品、日用品、家電、エンタメなど）、それぞれ異なるキーワードで \`uv run python scripts/creators_search_items.py\` を実行せよ。1つのテーマに偏らないように注意する。
-3. **10商品の厳選と詳細調査**:
-   - 検索結果および事前抽出候補から、明確なフック（大幅値引き、新発売、トレンド合致など）がある商品を、カテゴリが被らないように10点ピックアップせよ。
-   - **自律的なリトライ**: 10個の商品が見つかるまで、キーワードや検索インデックスを変えて繰り返し検索を実行せよ。
+3. **${n}商品の厳選と詳細調査**:
+   - 検索結果および事前抽出候補から、明確なフック（大幅値引き、新発売、トレンド合致など）がある商品を、カテゴリが被らないように${n}点ピックアップせよ。
+   - **自律的なリトライ**: ${n}個の商品が見つかるまで、キーワードや検索インデックスを変えて繰り返し検索を実行せよ。
    - **二重価格（参考価格吊り上げ）の徹底排除 (最重要)**:
      - Amazonでの割引率の高さ（「40% OFF」「50% OFF」等の表示）を鵜呑みにしないこと。参考価格を不当に高く設定して常時割引に見せかける二重価格商品（特にノーブランドの家電・日用品等）が非常に多い。
      - 商品がお得かどうかの判定は、**必ず「他競合ECサイト（楽天市場、Yahoo!ショッピング、ヨドバシ.comなど）の価格と比較して実際に安いか」**（例: \`google_search\` ツールで \`site:rakuten.co.jp <型番・商品名>\` のように検索）で厳格に検証せよ。他サイトの実勢価格と同等または高いものは選定対象から直ちに除外せよ。
@@ -107,7 +110,7 @@ ${saleCandidatesSection}
 - 調査結果を \`data/recommendations/today.json\` に保存せよ。
 - **重要**: 今回の調査において、\`data/recommendations/today.json\` 以外のファイル（収集した一時データスクリプトや \`tmp/\` 以下のファイルなど）は**絶対にコミット（Git Commit）しない**。リポジトリに変更を含めるのは \`today.json\` のみとする。
 - **検証の強制とエラーハンドリング (最重要)**: 成果物を生成した後、必ず \`uv run python scripts/validate_artifact.py data/recommendations/today.json\` を実行し、構造の正当性やリンク切れ（404エラーなど）がないか確認せよ。もし1件でもエラーが検出された場合は、絶対にそのままコミットやPR作成を完了してはならない。エラーが出た商品を除外し、自律的に新しい実在する商品を検索・調査（\`creators_search_items.py\` や \`creators_get_item.py\` を使用）して、リストを再構築し、再度検証スクリプトを実行せよ。すべての検証（エラー件数0）をパスするまで、この「調査・修正・検証」の自律ループを繰り返すこと。
-- **ハルシネーションの厳禁**: ハルシネーション（存在しない商品、架空のセール、実在しないニュースやURLの創作）は厳禁である。必ず実在するエビデンスへのリンクを記載し、APIから取得した実在するASINのみを使用すること。どうしても実在するおすすめ商品が10個に満たない場合は、架空の商品をでっち上げて10個にするのではなく、実在する商品のみで構成したリスト（例: 8個や9個など）で最終出力を作成せよ。ただし、キーワードや検索インデックスを工夫して10個の実在する商品を揃えるための努力を限界まで行うこと。
+- **ハルシネーションの厳禁**: ハルシネーション（存在しない商品、架空のセール、実在しないニュースやURLの創作）は厳禁である。必ず実在するエビデンスへのリンクを記載し、APIから取得した実在するASINのみを使用すること。どうしても実在するおすすめ商品が${n}個に満たない場合は、架空の商品をでっち上げて${n}個にするのではなく、実在する商品のみで構成したリスト（例: ${n - 2}個や${n - 1}個など）で最終出力を作成せよ。ただし、キーワードや検索インデックスを工夫して${n}個の実在する商品を揃えるための努力を限界まで行うこと。
 
 ---
 
@@ -116,13 +119,13 @@ ${saleCandidatesSection}
 \`\`\`json
 {
   "date": "${this.today}",
-  "headline": "本日の厳選ピックアップ：確かな理由がある注目商品10選",
+  "headline": "本日の厳選ピックアップ：確かな理由がある注目商品${n}選",
   "recommendations": [
     {
       "asin": "ASIN",
       "title": "検索タグやSEOキーワードを除いた簡潔な商品名",
       "price": "価格",
-      "category": "カテゴリ（10個すべて異なるようにする）",
+      "category": "カテゴリ（${n}個すべて異なるようにする）",
       "reason": "この商品自体の魅力や優れている点（2〜3文）",
       "whyBuyNow": "なぜ『今日』買うべきなのか（例：本日限定で過去最安値、昨日TVで紹介され品薄必至、など）",
       "rankReason": "選定基準におけるこの商品の掲載・順位理由（例: 他ECサイトより大幅に安い、高スコア、実用性重視、トレンド合致など。20文字以内で簡潔に）",
@@ -143,6 +146,6 @@ ${saleCandidatesSection}
 }
 \`\`\`
 
-それでは、幅広いカテゴリを対象に情報収集を開始し、明確なエビデンスを持った魅力的な10個の商品を見つけ出す。`;
+それでは、幅広いカテゴリを対象に情報収集を開始し、明確なエビデンスを持った魅力的な${n}個の商品を見つけ出す。`;
   }
 }
