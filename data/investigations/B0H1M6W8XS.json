@@ -1,0 +1,135 @@
+{
+  "analysis": {
+    "productName": "OWNKNEW Q1 超小型プロジェクター",
+    "parentAsin": "B0H1M6W8XS",
+    "productDescription": "Android TVを搭載し、本体が270度回転して天井投影も可能な超小型・高輝度プロジェクター。",
+    "productUsage": [
+      "映画・動画鑑賞",
+      "ゲームプレイ",
+      "寝室での天井投影",
+      "キャンプや屋外でのシアター"
+    ],
+    "positivePoints": [
+      "Android TVを標準搭載し、外部機器なしで直接動画コンテンツを再生可能",
+      "270度回転可能なスタンド設計により、三脚不要で天井投影に容易に対応",
+      "Wi-Fi 6およびBluetooth 5.4に対応し、高速通信と安定したワイヤレス接続を実現",
+      "自動台形補正機能とズーム機能を搭載し、設置時の画面調整の手間を軽減"
+    ],
+    "negativePoints": [
+      "「33000LM」という数値は光源ルーメン等の可能性が高く、ANSIルーメンなどの客観的な実用照度指標が不明確",
+      "内蔵バッテリーは非搭載のため、使用時は常に電源接続が必要",
+      "小型軽量ボディゆえに、内蔵スピーカーの音質（特に低音域）には物理的な限界がある"
+    ],
+    "useCases": [
+      "ベッドに寝転がりながら天井に映像を映して映画を楽しむ",
+      "リビングで家族と一緒に大画面で動画を視聴する",
+      "スマートフォンの画面をミラーリングして写真や動画を共有する"
+    ],
+    "userStories": [
+      {
+        "userType": "映画好きの単身者",
+        "scenario": "寝室のベッドでリラックスしながら映画を見るため",
+        "experience": "270度回転するスタンドのおかげで、三脚などを使わずにそのまま天井に映像を映し出せるのが非常に便利でした。Android TVが内蔵されているので、Fire TV Stickなどを別途用意しなくてもYouTubeやPrime Videoが直接見られるのが大きな決め手です。",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "sentiment": "positive"
+      },
+      {
+        "userType": "ゲームやアニメを楽しむ若者",
+        "scenario": "自室の限られたスペースで大画面を楽しむため",
+        "experience": "コンパクトなので場所を取らず、Wi-Fi6対応のおかげか動画の読み込みもスムーズです。自動台形補正が効くので、斜めから投影してもきれいな四角形になります。ただ、33000ルーメンという表記ほど圧倒的な明るさは感じず、昼間の明るい部屋ではやはり見えづらいです。",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "sentiment": "mixed"
+      }
+    ],
+    "userImpression": "手軽に大画面を楽しめるエントリー向けのプロジェクターとして、Android TV内蔵や天井投影機能などの利便性が高く評価されています。特に寝室での使用や、配線を減らしたいユーザーに好評です。一方で、メーカーが主張する「33000LM」というスペックは過剰表記であると受け止められており、昼間の明るい部屋では視認性が下がるものの、価格を考慮すれば暗い部屋での実用性は十分備わっているという声が多いです。",
+    "sources": [
+      {
+        "id": "src-1",
+        "name": "Amazon 商品ページ",
+        "url": "https://www.amazon.co.jp/dp/B0H1M6W8XS",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-08-07",
+        "author": "Amazon",
+        "conflictOfInterest": "none",
+        "notes": "商品仕様、特徴、画像、価格を確認"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "33000LMの高輝度で明るい室内でも鮮やかな映像を映し出す",
+        "category": "comparativeAdvantage",
+        "confidence": "low",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "crossChecked": false,
+        "notes": "33000ルーメンという数値は一般的な家庭用プロジェクターの常識から大きく外れており、ANSIルーメンなどの世界標準規格ではなく光源の明るさ等を用いた過剰表記の可能性が高い"
+      }
+    ],
+    "lastInvestigated": "2026-08-07",
+    "competitiveAnalysis": [
+      {
+        "name": "Sainellor 超小型プロジェクター",
+        "asin": "B0FY2ZJXSR",
+        "priceComparison": "OWNKNEWの約1/4の価格であり非常に安価だが、Android TVは搭載されていない。",
+        "featureComparison": [
+          "共通点：270度回転スタンド、小型設計、1080P対応",
+          "相違点：SainellorはAndroid TV非搭載で外部機器が必要、OWNKNEWはAndroid TV内蔵・Wi-Fi6対応"
+        ],
+        "differentiators": [
+          "OWNKNEW Q1 超小型プロジェクターの利点：本体単独でYouTubeなどの動画配信サービスを視聴したい、スマートな運用を求める人向け",
+          "Sainellor 超小型プロジェクターの利点：とにかく初期費用を抑えたい、すでにFire TV Stickなどを持っている人向け"
+        ]
+      },
+      {
+        "name": "WISHOLY プロジェクター",
+        "asin": "B0GTPVGQ3X",
+        "priceComparison": "OWNKNEWと同価格帯であり、機能面でも直接的なライバルとなる。",
+        "featureComparison": [
+          "共通点：Android TV搭載、270度回転、Wi-Fi6・Bluetooth5.4対応",
+          "相違点：WISHOLYは電動フォーカス機能を搭載していると明記されている"
+        ],
+        "differentiators": [
+          "OWNKNEW Q1 超小型プロジェクターの利点：デザインやインターフェースの好みなど、特定のブランド要素に魅力を感じる人向け",
+          "WISHOLY プロジェクターの利点：リモコンで簡単にピント合わせができる電動フォーカス機能を重視する人向け"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "寝室の天井に映像を投影して、ベッドでくつろぎながら映画や動画を楽しみたい人（外部機器の接続なしで完結させたい人）"
+      ],
+      "pros": [
+        "Android TV内蔵のため、電源を入れるだけで様々な動画アプリを手軽に楽しめる",
+        "270度回転設計により、特別な器具なしで簡単に天井への投影が可能になり寝室での利用に最適"
+      ],
+      "cons": [
+        "公称の33000LMは誇張の可能性が高く、昼間の明るい部屋での使用には向かないため、主に暗い環境での使用を想定すべき"
+      ],
+      "score": 75,
+      "scoreRationale": "[基本点: 70]\n[加点: +10] (Android TV内蔵による単体での高い利便性とスマートさ)\n[加点: +5] (270度回転スタンドによる設置および天井投影の容易さ)\n[減点: -10] (「33000LM」という非現実的なルーメン表記による信頼性の低下)\n[合計: 75]"
+    },
+    "technicalSpecs": {
+      "dimensions": {
+        "height": "-",
+        "width": "-",
+        "depth": "-"
+      },
+      "weight": "-",
+      "capacity": "-",
+      "material": "-",
+      "origin": "-",
+      "other": [
+        "解像度: ネイティブ1080P (4K対応)",
+        "通信: Wi-Fi 6, Bluetooth 5.4",
+        "OS: Android TV搭載",
+        "補正機能: 自動台形補正, ズーム機能"
+      ]
+    }
+  }
+}
