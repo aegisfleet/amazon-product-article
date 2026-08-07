@@ -400,9 +400,9 @@ document.addEventListener('DOMContentLoaded', function () {
             const skeletonContainer = document.createElement('div');
             skeletonContainer.className = 'search-skeleton-container card-grid';
             if (typeof renderSkeletonGrid === 'function') {
-                skeletonContainer.appendChild(renderSkeletonGrid(4));
+                skeletonContainer.appendChild(renderSkeletonGrid(6));
             } else {
-                for (let i = 0; i < 4; i++) {
+                for (let i = 0; i < 6; i++) {
                     const card = document.createElement('article');
                     card.className = 'card skeleton-card';
                     const img = document.createElement('div');
