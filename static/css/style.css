@@ -2927,11 +2927,15 @@ button.category-pill {
 /* Active Heading Highlight */
 .table-of-contents a.is-active,
 .toc-sidebar-body a.is-active,
-.toc-modal-body a.is-active {
+.toc-modal-body a.is-active,
+.table-of-contents #TableOfContents a.is-active,
+.toc-sidebar-body #TableOfContents a.is-active,
+.toc-modal-body #TableOfContents a.is-active {
   color: var(--color-primary) !important;
   font-weight: 700 !important;
   background: var(--bg-tag) !important;
   border-left: 3px solid var(--color-primary) !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
 }
 
 .table-of-contents {
