@@ -18,6 +18,7 @@ import type {
 import type { InvestigationResult, TechnicalSpecs } from '../types/JulesTypes';
 import type { Product, ProductDetail } from '../types/Product';
 import { Logger } from '../utils/Logger';
+import { normalizeTechnicalSpecs } from '../utils/specNormalizer';
 import {
   DEFAULT_ARTICLE_TEMPLATE,
   DEFAULT_IMAGE_URL,
@@ -220,9 +221,13 @@ export class ArticleGenerator {
       metadata.images = images;
     }
 
-    // 詳細スペック情報（technicalSpecs）があれば追加
-    if (investigation.analysis.technicalSpecs) {
-      metadata.technicalSpecs = investigation.analysis.technicalSpecs;
+    // 詳細スペック情報（technicalSpecs）があれば追加・正規化
+    const normalizedSpecs = investigation.analysis.technicalSpecs
+      ? normalizeTechnicalSpecs(investigation.analysis.technicalSpecs)
+      : undefined;
+
+    if (normalizedSpecs) {
+      metadata.technicalSpecs = normalizedSpecs;
     }
 
     // Hero Front Matter Data
@@ -235,7 +240,7 @@ export class ArticleGenerator {
       },
       target_users: investigation.analysis.recommendation.targetUsers,
       warnings: investigation.analysis.recommendation.cons || [],
-      specs: investigation.analysis.technicalSpecs || {},
+      specs: normalizedSpecs || {},
       brand: metadata.brand,
       model: metadata.model,
       releaseDate: metadata.releaseDate,
@@ -1070,20 +1075,21 @@ ${recommendationMessage}
    */
   private addTechnicalSpecs(lines: string[], specs: TechnicalSpecs): void {
     lines.push('specs:');
+    const normalized = normalizeTechnicalSpecs(specs);
     const addedKeys = new Set<string>();
 
-    this.addBasicSpecs(lines, addedKeys, specs);
-    this.addDisplaySpecs(lines, addedKeys, specs);
-    this.addBatterySpecs(lines, addedKeys, specs);
-    this.addCameraSpecs(lines, addedKeys, specs);
-    this.addDimensionSpecs(lines, addedKeys, specs);
-    this.addAudioSpecs(lines, addedKeys, specs);
-    this.addElectronicsSpecs(lines, addedKeys, specs);
-    this.addConnectivitySpecs(lines, addedKeys, specs);
-    this.addShoeSpecs(lines, addedKeys, specs);
-    this.addLoadCapacitySpecs(lines, addedKeys, specs);
-    this.addAttachmentSpecs(lines, addedKeys, specs);
-    this.addOtherSpecs(lines, addedKeys, specs);
+    this.addBasicSpecs(lines, addedKeys, normalized);
+    this.addDisplaySpecs(lines, addedKeys, normalized);
+    this.addBatterySpecs(lines, addedKeys, normalized);
+    this.addCameraSpecs(lines, addedKeys, normalized);
+    this.addDimensionSpecs(lines, addedKeys, normalized);
+    this.addAudioSpecs(lines, addedKeys, normalized);
+    this.addElectronicsSpecs(lines, addedKeys, normalized);
+    this.addConnectivitySpecs(lines, addedKeys, normalized);
+    this.addShoeSpecs(lines, addedKeys, normalized);
+    this.addLoadCapacitySpecs(lines, addedKeys, normalized);
+    this.addAttachmentSpecs(lines, addedKeys, normalized);
+    this.addOtherSpecs(lines, addedKeys, normalized);
   }
 
   /**

@@ -42,12 +42,51 @@
   {{- if gt (len $sizeParts) 0 -}}
     {{ $dict = merge $dict (dict "サイズ" (delimit $sizeParts " × ")) }}
   {{- end -}}
+  {{- $otherCleaned := slice -}}
   {{- with .other_specs -}}
+    {{- $rawList := slice -}}
     {{- if reflect.IsSlice . -}}
-      {{ $dict = merge $dict (dict "その他" (delimit . " / ")) }}
+      {{- $rawList = . -}}
     {{- else if ne . "不明" -}}
-      {{ $dict = merge $dict (dict "その他" .) }}
+      {{- $rawList = split . " / " -}}
     {{- end -}}
+    {{- range $rawList -}}
+      {{- $item := trim . " " -}}
+      {{- if findRE `^(?i)(SoC|CPU|プロセッサ|プロセッサー|チップセット)\s*[:：]` $item -}}
+        {{- if not (index $dict "プロセッサ") -}}
+          {{- $dict = merge $dict (dict "プロセッサ" (trim (replaceRE `^(?i)(SoC|CPU|プロセッサ|プロセッサー|チップセット)\s*[:：]\s*` "" $item) " ")) -}}
+        {{- end -}}
+      {{- else if findRE `^(?i)(OS|オペレーティングシステム)\s*[:：]` $item -}}
+        {{- if not (index $dict "OS") -}}
+          {{- $dict = merge $dict (dict "OS" (trim (replaceRE `^(?i)(OS|オペレーティングシステム)\s*[:：]\s*` "" $item) " ")) -}}
+        {{- end -}}
+      {{- else if findRE `^(?i)(RAM|メモリ)\s*[:：]` $item -}}
+        {{- if not (index $dict "メモリ") -}}
+          {{- $dict = merge $dict (dict "メモリ" (trim (replaceRE `^(?i)(RAM|メモリ)\s*[:：]\s*` "" $item) " ")) -}}
+        {{- end -}}
+      {{- else if findRE `^(?i)(ROM|ストレージ)\s*[:：]` $item -}}
+        {{- if not (index $dict "ストレージ") -}}
+          {{- $dict = merge $dict (dict "ストレージ" (trim (replaceRE `^(?i)(ROM|ストレージ)\s*[:：]\s*` "" $item) " ")) -}}
+        {{- end -}}
+      {{- else if findRE `^(?i)(ディスプレイ|画面|液晶|モニター)\s*[:：]` $item -}}
+        {{- if not (index $dict "画面") -}}
+          {{- $dict = merge $dict (dict "画面" (trim (replaceRE `^(?i)(ディスプレイ|画面|液晶|モニター)\s*[:：]\s*` "" $item) " ")) -}}
+        {{- end -}}
+      {{- else if findRE `^(?i)(バッテリー|電池)\s*[:：]` $item -}}
+        {{- if not (index $dict "バッテリー") -}}
+          {{- $dict = merge $dict (dict "バッテリー" (trim (replaceRE `^(?i)(バッテリー|電池)\s*[:：]\s*` "" $item) " ")) -}}
+        {{- end -}}
+      {{- else if findRE `^(?i)(重量|重さ)\s*[:：]` $item -}}
+        {{- if not (index $dict "重量") -}}
+          {{- $dict = merge $dict (dict "重量" (trim (replaceRE `^(?i)(重量|重さ)\s*[:：]\s*` "" $item) " ")) -}}
+        {{- end -}}
+      {{- else if gt (len $item) 0 -}}
+        {{- $otherCleaned = $otherCleaned | append $item -}}
+      {{- end -}}
+    {{- end -}}
+  {{- end -}}
+  {{- if gt (len $otherCleaned) 0 -}}
+    {{- $dict = merge $dict (dict "その他" (delimit $otherCleaned " / ")) -}}
   {{- end -}}
 {{- end -}}
 {{- jsonify $dict -}}

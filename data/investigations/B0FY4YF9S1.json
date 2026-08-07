@@ -173,22 +173,32 @@
       "scoreRationale": "[基本点: 70]\n[加点: +10] (Snapdragon 8s Gen 4による圧倒的な処理性能)\n[加点: +5] (3.2K 144Hzの高精細・高リフレッシュレートディスプレイ)\n[加点: +5] (9200mAh大容量バッテリーと45W急速充電)\n[加点: +5] (厚さ5.75mm、重量485gの薄型軽量デザイン)\n[合計: 95]"
     },
     "technicalSpecs": {
+      "os": "Xiaomi HyperOS 3 (AI機能・Google Gemini搭載)",
+      "cpu": "Snapdragon 8s Gen 4",
+      "ram": "8GB",
+      "storage": "128GB",
+      "display": {
+        "size": "28.4cm (11.2インチ)",
+        "resolution": "3.2K (アスペクト比 3:2)",
+        "type": "800nits, リフレッシュレート144Hz"
+      },
+      "battery": {
+        "capacity": "9200mAh",
+        "charging": "45W急速充電対応"
+      },
       "dimensions": {
-        "height": "1734.2mm",
-        "width": "61.8mm",
-        "depth": "2512.2mm"
+        "height": "不明",
+        "width": "不明",
+        "depth": "5.75mm"
       },
       "weight": "485g",
-      "capacity": "8GB RAM / 128GB ROM",
       "material": "フルメタルユニボディ",
-      "origin": "不明",
+      "color": "グレー",
       "other": [
-        "SoC: Snapdragon 8s Gen 4",
-        "ディスプレイ: 28.4cm 3.2K (アスペクト比 3:2), リフレッシュレート144Hz, 輝度800nits",
-        "バッテリー: 9200mAh, 45W急速充電対応",
-        "オーディオ: クワッドスピーカー, Dolby Vision対応",
-        "OS: Xiaomi HyperOS 3 (AI機能・Google Gemini搭載)",
-        "カラー: グレー"
+        "Dolby Atmosクワッドスピーカー, Dolby Vision対応",
+        "Xiaomi HyperAI",
+        "Xiaomi HyperConnect",
+        "NFCタッチ共有"
       ]
     }
   }
