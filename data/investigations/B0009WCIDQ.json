@@ -31,8 +31,10 @@
       {
         "userType": "料理愛好家",
         "scenario": "毎日の食事の準備で大量の野菜の下ごしらえをする際",
-        "experience": "これまで使っていたピーラーとは別次元の切れ味で、軽い力でスルスルと皮がむけます。特に斜め刃とディンプル加工のおかげで、皮が刃にくっつかず作業が非常にスムーズになりました。オールステンレスで洗いやすく衛生的で、食洗機に入れられるのも大きな決め手でした。価格は少し張りますが、一生モノの道具として大満足です。",
-        "supportingSourceIds": ["src-1"],
+        "experience": "プラスチック製のピーラーがすぐに割れてしまうのが不満で、長く使える一生モノの道具を探してこちらを選びました。これまで使っていたピーラーとは別次元の切れ味で、軽い力でスルスルと皮がむけます。特に斜め刃とディンプル加工のおかげで、皮が刃にくっつかず作業が非常にスムーズになりました。オールステンレスで継ぎ目がなく洗いやすいのも大きな決め手でした。",
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -40,14 +42,14 @@
     "sources": [
       {
         "id": "src-1",
-        "name": "Amazon カスタマーレビュー",
+        "name": "Amazon カスタマーレビュー群",
         "url": "https://www.amazon.co.jp/dp/B0009WCIDQ",
         "tier": "high",
         "evidenceType": "primary",
-        "publishedAt": "2026-07-05",
+        "publishedAt": "2026-08-07",
         "author": "Amazonユーザー",
         "conflictOfInterest": "none",
-        "notes": "切れ味の良さ、オールステンレスの衛生面、食洗機対応に関する高評価を確認。鋭利さゆえの怪我への注意喚起の口コミも散見。"
+        "notes": "多数のレビューから「切れ味の良さ」「オールステンレスの衛生面」「食洗機対応」に関する高評価、および「鋭利さゆえの怪我への注意喚起」を確認。特定の日付に依存しない全体的な傾向を抽出。"
       }
     ],
     "claims": [
@@ -55,12 +57,14 @@
         "claim": "驚くほど軽くて薄い切れ味を実現",
         "category": "durability",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": true,
         "notes": "多くのユーザーレビューで切れ味の良さが実証されている。"
       }
     ],
-    "lastInvestigated": "2026-07-05",
+    "lastInvestigated": "2026-08-07",
     "competitiveAnalysis": [
       {
         "name": "京セラ セラミックピーラー",
