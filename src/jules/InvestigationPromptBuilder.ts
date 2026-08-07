@@ -262,16 +262,23 @@ ${specs}
       "scoreRationale": "[基本点: 70]\\n[加点: +XX] (理由)\\n[減点: -XX] (理由)\\n[合計: XX]"
     },
     "technicalSpecs": {
-      "// 注意": "調査で判明した仕様情報をここに網羅的に記載する（サイズはメートル法のみ、インチ不要）",
-      "// 例示1(家電)": "dimensions: W/H/D (mm/cm), weight: XXg, power: XXW, battery: XXh",
-      "// 例示2(化粧品)": "capacity: XXml/XXg, ingredients: [主成分], skinType: [適応]",
-      "// 例示3(食品)": "content: XXg, calories: XXkcal, shelfLife: XX日, allergens: [成分]",
+      "// 注意": "調査で判明した仕様情報をここに網羅的に記載する。SoCやOS、ディスプレイ、バッテリー等はotherにまとめず個別キーに抽出すること（サイズはメートル法のみ、インチ不要）",
+      "// 例示1(ガジェット/デジタル)": "os: 'Android 15', cpu: 'Snapdragon 8s Gen 4', ram: '8GB', storage: '128GB', display: { size: '11.2インチ', resolution: '3.2K' }, battery: { capacity: '9200mAh', charging: '45W急速充電' }",
+      "// 例示2(家電)": "dimensions: W/H/D (mm/cm), weight: XXg, power: XXW, battery: XXh",
+      "// 例示3(化粧品)": "capacity: XXml/XXg, ingredients: [主成分], skinType: [適応]",
+      "// 例示4(食品)": "content: XXg, calories: XXkcal, shelfLife: XX日, allergens: [成分]",
+      "os": "OS名",
+      "cpu": "プロセッサ/SoC",
+      "ram": "メモリ容量",
+      "storage": "ストレージ容量",
+      "display": { "size": "画面サイズ", "resolution": "解像度" },
+      "battery": { "capacity": "容量", "charging": "充電規格" },
       "dimensions": { "height": "XXmm", "width": "XXmm", "depth": "XXmm" },
       "weight": "XXg",
       "capacity": "XX",
       "material": "材質",
       "origin": "原産国",
-      "other": ["他、重要なスペックを網羅"]
+      "other": ["他、個別キーに当てはまらない重要な補足スペックを網羅"]
     }
   }
 }
