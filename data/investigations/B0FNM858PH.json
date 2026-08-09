@@ -42,7 +42,7 @@
         "sentiment": "positive"
       }
     ],
-    "userImpression": "（推測）「コスパ最強の神機」として、カメラ性能とゲーム性能を重視するユーザーから圧倒的な支持を得ると予想される。特にライカ望遠の評価が高い。",
+    "userImpression": "「10万円以下で買える最強コスパのハイエンド機」として、特にDimensity 9400+の処理性能とライカ監修の5倍望遠カメラが高く評価されると予想される。一方で、6.83インチの大画面・重量級ボディはコンパクトさを求めるユーザーには大きすぎると感じる可能性があるものの、それを補って余りある圧倒的なコストパフォーマンスにより、ゲームやカメラを重視する層から熱狂的な支持を集めるだろう。",
     "sources": [
       {
         "name": "Amazon商品ページ",
@@ -50,66 +50,141 @@
         "credibility": "高"
       }
     ],
-    "lastInvestigated": "2026-03-07",
+    "lastInvestigated": "2026-08-10",
     "competitiveAnalysis": [
       {
         "name": "Apple iPhone 16",
-        "asin": "B0DLN4VCXM",
+        "asin": "B0DJXRX46W",
         "priceComparison": "約12〜13万円（整備済み品・新品など）。Xiaomi 15T Proの方が2〜3万円安い。",
-        "featureComparison": ["iOSのエコシステム", "リセールバリューが高い", "望遠カメラなし"],
-        "differentiators": ["Xiaomiは望遠カメラと144Hz大画面で優位", "iPhoneは動画性能とブランド力で優位"]
+        "featureComparison": [
+          "共通点：価格が10万円を超えるハイエンド帯のスマートフォンである点",
+          "相違点：XiaomiはAndroidで5倍望遠搭載・144Hz対応に対し、iPhone 16はiOSで望遠レンズ非搭載・動画性能重視"
+        ],
+        "differentiators": [
+          "Xiaomi 15T Proの利点：光学5倍望遠と144Hzの滑らかな大画面を、iPhoneより数万円安い価格で手に入れたいなら迷わずこちら。",
+          "Apple iPhone 16の利点：iOSのエコシステム、高い動画撮影性能、ブランド価値やリセールバリューを重視するならiPhoneが適している。"
+        ]
       },
       {
         "name": "Samsung Galaxy S24",
-        "asin": "B0FBGPTPYN",
+        "asin": "B0F1S1NYM4",
         "priceComparison": "整備済み品ならXiaomiに近い価格だが、新品定価はXiaomiより高い。",
-        "featureComparison": ["AI機能(Galaxy AI)", "コンパクトなサイズ感", "3倍望遠"],
-        "differentiators": ["Xiaomiは5倍望遠と画面サイズ・SoC性能で優位", "GalaxyはコンパクトさとAIの完成度で優位"]
+        "featureComparison": [
+          "共通点：最新世代のフラッグシップSoCを搭載したAndroidハイエンド機である点",
+          "相違点：Xiaomiは6.83インチ大画面と5倍望遠に対し、Galaxy S24はコンパクトなボディと3倍望遠"
+        ],
+        "differentiators": [
+          "Xiaomi 15T Proの利点：より強力な5倍望遠カメラと圧倒的な処理性能（Dimensity 9400+）を大画面で楽しみたいなら迷わずこちら。",
+          "Samsung Galaxy S24の利点：ポケットに収まるコンパクトなサイズ感と、完成度の高いGalaxy AI機能を重視するならこちらが適している。"
+        ]
       },
       {
         "name": "Google Pixel 9 Pro",
-        "asin": "B0DKCP1DG2",
+        "asin": "B0DG5N94ZB",
         "priceComparison": "整備済み品で同等かやや高いが、新品は約16万円〜。Xiaomi 15T Proの方が圧倒的に安い。",
-        "featureComparison": ["Google AIの最先端機能", "5倍望遠あり", "7年アップデート保証"],
-        "differentiators": ["機能は近いが、Xiaomiは新品価格が圧倒的に安い", "Pixelはソフトサポート期間と独自AI機能で優位"]
+        "featureComparison": [
+          "共通点：5倍望遠レンズを搭載し、AI機能に注力したハイエンド機である点",
+          "相違点：Xiaomiは圧倒的な低価格とSoC性能、Pixelは高度なGoogle連携AIと7年保証の長期サポート"
+        ],
+        "differentiators": [
+          "Xiaomi 15T Proの利点：同等のハイエンド性能と5倍望遠を持ちながら、新品価格が圧倒的に安いコスパを求めるなら迷わずこちら。",
+          "Google Pixel 9 Proの利点：Googleの最新AI機能といち早いOSアップデート、7年間の長期サポート保証を重視するならこちらが適している。"
+        ]
       },
       {
-        "name": "ASUS Zenfone 12 Ultra",
-        "asin": "B0F78FV8PY",
-        "priceComparison": "ハイエンドモデルとしては同等の価格帯で競合する可能性がある。",
-        "featureComparison": ["ジンバルカメラ", "大型ディスプレイ", "イヤホンジャック"],
-        "differentiators": ["Xiaomiはライカ監修カメラとDimensity 9400+のコスパで優位", "ASUSは動画撮影時の強力な手ぶれ補正で優位"]
+        "name": "AQUOS R9 pro",
+        "asin": "B0FXG2PJTQ",
+        "priceComparison": "定価約19万円と、Xiaomi 15T Proの約2倍の価格。",
+        "featureComparison": [
+          "共通点：ライカ監修の高品質なカメラと最高峰のSoCを搭載している点",
+          "相違点：Xiaomiは約10万円という圧倒的コスパ、AQUOSは約19万円でより大型のカメラセンサーと独自サポートを提供"
+        ],
+        "differentiators": [
+          "Xiaomi 15T Proの利点：最新鋭のSoCとライカ監修カメラを搭載しながら、AQUOSの半額近い圧倒的なコストパフォーマンスを重視するなら迷わずこちら。",
+          "AQUOS R9 proの利点：独自の大型センサーとバリオ・ズミクロンレンズによる本格的なカメラ体験と、シャープ独自の機能を求めるならこちらが適している。"
+        ]
+      },
+      {
+        "name": "Sony Xperia 1 VI",
+        "asin": "B0D46F8ZLZ",
+        "priceComparison": "定価約19万円と、Xiaomi 15T Proよりもかなり高価。",
+        "featureComparison": [
+          "共通点：最新SoCを搭載し、カメラ性能にこだわったハイエンドスマートフォンである点",
+          "相違点：Xiaomiは圧倒的なコスパと5倍望遠、Xperiaは高価だがイヤホンジャックや光学ズームレンズといった独自機能を搭載"
+        ],
+        "differentiators": [
+          "Xiaomi 15T Proの利点：Xperiaの半額近い価格で、最高峰のDimensity 9400+とライカ監修の望遠カメラを楽しみたいなら迷わずこちら。",
+          "Sony Xperia 1 VIの利点：3.5mmオーディオジャック、microSD対応、光学ズームレンズといったXperiaならではの独自機能を重視するならこちらが適している。"
+        ]
+      },
+      {
+        "name": "Xiaomi 14T Pro",
+        "asin": "B0DKMXFSJP",
+        "priceComparison": "前モデルとして新品価格は約10〜11万円程度と本機（15T Pro）と同等かやや高いが、値下がり傾向にある。",
+        "featureComparison": [
+          "共通点：XiaomiのハイエンドTシリーズで、ライカ監修カメラと高速充電を備える点",
+          "相違点：15T Proは最新のDimensity 9400+と5倍望遠搭載、14T Proは一世代前の9300+搭載で値下がり傾向"
+        ],
+        "differentiators": [
+          "Xiaomi 15T Proの利点：最新世代の超高性能SoC（Dimensity 9400+）と進化した5倍望遠カメラで、妥協のない最新スペックを求めるなら迷わずこちら。",
+          "Xiaomi 14T Proの利点：型落ちによる価格下落が大きく、1世代前のSoCでも十分に満足できるならコスト重視でこちらを選ぶのが適している。"
+        ]
       }
     ],
     "recommendation": {
       "targetUsers": [
-        "最高のコスパでハイエンド性能を手に入れたい人",
-        "スマホで本格的な望遠撮影を楽しみたい人",
-        "重い3Dゲームを快適にプレイしたい人"
+        "Xperia 1 VIやAQUOS R9 proのような19万円台のハイエンド機には手が出ないが、同等以上の処理性能（Dimensity 9400+）を10万円以下で求めている人",
+        "iPhoneやGalaxyの標準モデルでは物足りず、5倍光学望遠とライカ監修の色味で本格的なポートレートや遠景撮影を楽しみたい人",
+        "144Hz・3200nitsの大画面ディスプレイと3D冷却システムを活かし、原神などの高負荷な3Dゲームを長時間快適にプレイしたい人"
       ],
       "pros": [
-        "10万円切りで最新のDimensity 9400+とライカ5倍望遠搭載は破格",
-        "おサイフケータイ、防水防塵など日本向け機能が完備されている",
-        "1.5K 144Hz、3200nitsの高品質な有機ELディスプレイ"
+        "約10万円という価格でありながら、他社の15万円超えフラッグシップ機に匹敵するDimensity 9400+とライカ5倍望遠を搭載しており、圧倒的な費用対効果を得られる",
+        "FeliCa（おサイフケータイ）とIP68防水防塵に対応しているため、日本の日常生活における決済や水回りでの使用においてストレスなくメイン機として運用できる",
+        "最大3200nitsの超高輝度かつ144Hz駆動の6.83インチ1.5K有機ELディスプレイにより、屋外の直射日光下でも視認性が高く、滑らかな動画視聴やゲーム体験が可能"
       ],
       "cons": [
-        "ブランド志向（iPhone等）の人には不向き",
-        "6.83インチの大型端末が苦手な人には大きすぎる可能性がある"
+        "6.83インチの大画面かつ重量があるため、Galaxy S24などのコンパクトなスマートフォンを好む人や片手操作を重視する人は購入前にサイズ感を確認すること",
+        "iOSのエコシステムに依存している人や、長期間のソフトウェアアップデート保証（Pixelの7年など）を最優先する人には不向きな面がある"
       ],
       "score": 98,
-      "scoreRationale": "[基本点: 70]\n[性能・機能: +10] (最新SoC Dimensity 9400+とライカ5倍望遠はフラッグシップ級)\n[コストパフォーマンス: +15] (このハイエンド性能で10万円切りは他社を圧倒する)\n[品質・デザイン: +3] (IP68対応、3200nitsの超高輝度144Hzディスプレイ)\n[合計: 98]"
+      "scoreRationale": "[基本点: 70]\n[加点: +10] (最新SoC Dimensity 9400+とライカ5倍望遠はフラッグシップ級の性能)\n[加点: +15] (このハイエンド性能で10万円切りは他社を圧倒するコスパ)\n[加点: +3] (IP68対応、3200nitsの超高輝度144Hzディスプレイなど優れた品質)\n[合計: 98]"
     },
     "technicalSpecs": {
       "os": "Android",
       "cpu": "MediaTek Dimensity 9400+",
       "ram": "12GB",
       "storage": "256GB",
-      "display": { "size": "6.83インチ", "resolution": "1.5K", "type": "OLED 144Hz" },
-      "battery": { "capacity": null, "charging": null },
-      "camera": { "main": "ライカSummilux", "telephoto": "5倍望遠" },
-      "dimensions": null,
-      "connectivity": ["5G", "Wi-Fi", "Bluetooth", "FeliCa"],
-      "other": ["IP68防水防塵", "3D冷却システム", "Xiaomi HyperAI", "Google Gemini"]
+      "display": {
+        "size": "6.83インチ",
+        "resolution": "1.5K",
+        "type": "OLED 144Hz"
+      },
+      "battery": {
+        "capacity": null,
+        "charging": null
+      },
+      "camera": {
+        "main": "ライカSummilux",
+        "telephoto": "5倍望遠"
+      },
+      "dimensions": {
+        "height": "約162.2mm",
+        "width": "約75.7mm",
+        "depth": "約8.5mm"
+      },
+      "connectivity": [
+        "5G",
+        "Wi-Fi",
+        "Bluetooth",
+        "FeliCa"
+      ],
+      "other": [
+        "IP68防水防塵",
+        "3D冷却システム",
+        "Xiaomi HyperAI",
+        "Google Gemini"
+      ],
+      "weight": "約206g"
     }
   }
 }
