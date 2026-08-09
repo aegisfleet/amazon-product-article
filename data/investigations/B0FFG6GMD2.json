@@ -2,146 +2,181 @@
   "analysis": {
     "productName": "Y!mobile moto g66y 5G",
     "parentAsin": "B0FFG6GMD2",
-    "productDescription": "Y!mobile専売のコストパフォーマンス特化型5Gスマートフォン。上位モデルmoto g66j 5Gをベースに、IP68/IP69の強力な防水防塵性能、おサイフケータイ、5200mAhの大容量バッテリーを搭載しつつ、新規契約一括10円という圧倒的な価格を実現したエントリーモデルです。",
+    "productDescription": "Y!mobile向けの回線契約必須スマートフォン。5000万画素のメインカメラや5200mAhの大容量バッテリーを搭載し、高い防水防塵性能（IPX8/IPX9/IP6X）も備えたエントリー～ミドルクラス端末。",
     "productUsage": [
-      "日常の連絡手段（LINE、メール、通話）",
-      "キャッシュレス決済（FeliCa/おサイフケータイ活用）",
-      "YouTubeなどの動画視聴（6.7インチ大画面）",
-      "長時間の外出や旅行（5200mAhバッテリー）"
+      "日々の電話やLINEなどの連絡",
+      "ウェブ閲覧や動画視聴",
+      "FeliCa/おサイフケータイを利用したキャッシュレス決済"
     ],
     "positivePoints": [
-      "新規契約一括10円という圧倒的なコストパフォーマンス",
-      "IP68/IP69の最高クラスの防水・防塵・耐高温水性能",
-      "5200mAhの大容量バッテリーによる長時間駆動",
-      "FeliCa（おサイフケータイ）対応で日常使いに便利",
-      "6.7インチFHD+の大画面ディスプレイで見やすい"
+      "回線契約を前提とした非常に手頃な一括購入価格",
+      "IPX8・IPX9/IP6Xの強力な防塵・防水・耐高温水性能",
+      "5200mAhの大容量バッテリーによる長時間の駆動",
+      "FeliCa（おサイフケータイ）対応",
+      "リフレッシュレート120Hzに対応した約17cmの大型ディスプレイ"
     ],
     "negativePoints": [
-      "購入にはY!mobileの回線契約が必須",
-      "最新の3Dゲームなどを快適に遊ぶにはスペック不足の可能性",
-      "RAM容量が4GB（推測）と控えめで、マルチタスクには不向き"
+      "購入にはY!mobileの回線契約（新規申込）が必須",
+      "RAMが4GBと少なめで、重い3Dゲームや高度なマルチタスクには不向き",
+      "SIMフリーモデル（moto g66j 5G）に比べてメモリ容量が制限されている"
     ],
     "useCases": [
       "子供の初めてのスマートフォン（キッズスマホ）として",
-      "シニア層のフィーチャーフォン（ガラケー）からの乗り換え",
-      "屋外作業や水回りでも安心して使えるサブ機として"
+      "シニア層のガラホやフィーチャーフォンからの乗り換え",
+      "日常的な連絡や動画視聴をメインとしたサブ機として"
     ],
-    "userStories": [
-      {
-        "userType": "学生（初めてのスマホ）",
-        "scenario": "高校入学に合わせて親に契約してもらった",
-        "experience": "（推測）親に安く買ってもらった。ゲームは少しカクつくけど、YouTubeを見たりLINEしたりする分には問題ない。バッテリーが長持ちするので充電を忘れがちでも安心。",
-        "sentiment": "positive"
-      },
-      {
-        "userType": "40代 主婦",
-        "scenario": "買い物や家事の合間に使うサブ端末として",
-        "experience": "（推測）メインのスマホの充電を温存したくて、家での動画視聴やレシピ検索用に10円で購入。キッチンで濡れた手で触っても安心だし、汚れたら洗えるのが凄い。",
-        "sentiment": "mixed"
-      },
-      {
-        "userType": "60代 男性",
-        "scenario": "ガラケーからの乗り換え",
-        "experience": "（推測）画面が大きくて文字を大きく設定すると読みやすい。おサイフケータイでコンビニの支払いが楽になった。充電が数日持つので、ガラケー感覚で使えて助かる。",
-        "sentiment": "positive"
-      }
-    ],
-    "userImpression": "（推測）ユーザーからは「10円で買えるスマホとしては破格の性能」「バッテリー持ちが良い」「お風呂でも使えるのが便利」と高い評価を得ると考えられる。一方で、ヘビーユーザーからは「アプリの起動が少し遅い」という指摘もあると予想されるが、価格を考えれば十分に満足できるという意見が大半を占めるだろう。",
+    "userStories": [],
+    "userImpression": "ユーザーレビューなどの実データが不足しているため、具体的な使用感についての総評は現時点で不明。ただしスペックからは、価格の安さと防水防塵、大容量バッテリーといった堅実な作りに評価が集まる一方、RAM容量の少なさに起因する動作の重さに不満が出る可能性があると推測される。",
     "sources": [
       {
-        "name": "Amazon Product Page (moto g66y 5G)",
+        "id": "src-ymobile",
+        "name": "Y!mobile moto g66y 5G 公式製品ページ",
+        "url": "https://www.ymobile.jp/lineup/smartphone/motog66y/",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2025-07-10",
+        "author": "Y!mobile",
+        "conflictOfInterest": "none",
+        "notes": "スペック表からCPU、RAM、バッテリー容量、防水性能などを確認。"
+      },
+      {
+        "id": "src-amazon",
+        "name": "Amazon Product Page",
         "url": "https://www.amazon.co.jp/dp/B0FFG6GMD2",
-        "credibility": "High"
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2025-07-10",
+        "author": "Amazon",
+        "conflictOfInterest": "none",
+        "notes": "商品の基本情報、回線契約必須であることなどを確認。"
       }
     ],
-    "lastInvestigated": "2026-03-07",
+    "claims": [
+      {
+        "claim": "MIL-STD-810H準拠の耐衝撃性能",
+        "category": "durability",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-ymobile"
+        ],
+        "crossChecked": false,
+        "notes": "Y!mobileの公式ページで記載を確認。過酷な環境での使用を想定した耐久テストをクリアしている。"
+      },
+      {
+        "claim": "約75分でのフル充電",
+        "category": "comparativeAdvantage",
+        "confidence": "medium",
+        "supportingSourceIds": [
+          "src-ymobile"
+        ],
+        "crossChecked": false,
+        "notes": "USB Type-C PD-PPS対応ACアダプタ使用時の目安。5200mAhの大容量であることを考えると非常に高速。"
+      }
+    ],
+    "lastInvestigated": "2026-08-10",
     "competitiveAnalysis": [
       {
-        "name": "Motorola moto g05",
-        "asin": "B0DYJHD1DM",
-        "priceComparison": "￥17,091。回線契約不要のSIMフリーモデルだが、g66yの10円には価格面で劣る。",
-        "featureComparison": [
-          "画面解像度: HD+ (g05) vs FHD+ (g66y)",
-          "防水性能: IP52 (g05) vs IP68 (g66y)",
-          "RAM: 8GB (g05) vs 4GB推測 (g66y)"
-        ],
-        "differentiators": [
-          "g66yは防水性能と画面解像度で勝る",
-          "g05はRAM容量が多く、契約不要で購入可能"
-        ]
-      },
-      {
         "name": "Motorola moto g66j 5G",
-        "asin": "B0FDKVB871",
-        "priceComparison": "￥28,909。g66yのベースモデルであり、SIMフリー版として販売されている。",
+        "asin": "B0FDKTVPD5",
+        "priceComparison": "moto g66j 5GはSIMフリー版として3万円台前半で販売。回線契約が必要なg66yのほうが初期費用は圧倒的に安い。",
         "featureComparison": [
-          "RAM容量: 8GB (g66j) vs 4GB推測 (g66y)",
-          "その他基本スペックは同等"
+          "共通点：Dimensity 7060プロセッサ、約17cmディスプレイ、5200mAhバッテリー、防水防塵性能など基本仕様はほぼ同じ。",
+          "相違点：g66j 5GはRAMが8GBだが、本製品（g66y）は4GBに制限されている。また、g66jは回線契約不要のSIMフリーモデル。"
         ],
         "differentiators": [
-          "g66jは回線契約不要でRAM容量が多い",
-          "g66yは新規一括10円という圧倒的な安さが魅力"
+          "Y!mobile moto g66y 5Gの利点：Y!mobile回線の契約を前提とするなら、端末代を大幅に抑えられる点。",
+          "Motorola moto g66j 5Gの利点：回線の縛りなく購入でき、RAM容量が大きいため長く快適に使える点。"
         ]
       },
       {
-        "name": "SHARP AQUOS wish5",
-        "asin": "B0FVLFPPHR",
-        "priceComparison": "￥21,600。エントリークラスのライバル機。g66yの方が圧倒的に安い。",
+        "name": "Motorola moto g06",
+        "asin": "B0GNPNBZR5",
+        "priceComparison": "moto g06は1万円台後半で販売されるエントリーモデル。g66yの回線契約込みの価格設定と比較すると競合する価格帯。",
         "featureComparison": [
-          "ディスプレイ: 約6.6インチ (wish5) vs 6.7インチ (g66y)",
-          "バッテリー: 5000mAh (wish5) vs 5200mAh (g66y)"
+          "共通点：モトローラ製のエントリー向けスマートフォンで、大容量バッテリーを搭載している点。",
+          "相違点：g66yは5G対応、防水防塵性能、解像度（FHD+）において優位。g06は4G端末。"
         ],
         "differentiators": [
-          "AQUOSは国内メーカーの安心感とコンパクトさ",
-          "g66yは画面サイズとバッテリー容量で勝る"
+          "Y!mobile moto g66y 5Gの利点：5G通信や高い防水性能、高解像度ディスプレイを求める場合。",
+          "Motorola moto g06の利点：回線契約に縛られず、手軽に安価な端末だけを購入したい場合。"
+        ]
+      },
+      {
+        "name": "AQUOS wish4",
+        "asin": "B0F9JTG4S4",
+        "priceComparison": "AQUOS wish4はSIMフリー版で2万円台前半。回線契約を考慮すればg66yのほうが初期費用を安く抑えられる。",
+        "featureComparison": [
+          "共通点：エントリー～ミドルクラスの5Gスマートフォンで、防水・防塵とおサイフケータイに対応している点。",
+          "相違点：AQUOS wish4はMIL規格準拠の頑丈さやシャープ独自のUIを持つ。g66yは画面サイズ（約17cm）とバッテリー容量（5200mAh）で上回る。"
+        ],
+        "differentiators": [
+          "Y!mobile moto g66y 5Gの利点：より大きな画面での動画視聴や、大容量バッテリーによる長時間の駆動を重視する人。",
+          "AQUOS wish4の利点：国産メーカーの安心感や、コンパクトで手に馴染むサイズ感を求める人。"
+        ]
+      },
+      {
+        "name": "AQUOS wish5",
+        "asin": "B0GGJ5GX9J",
+        "priceComparison": "AQUOS wish5はwish4の後継として販売されており、価格帯は2万円台後半～3万円前後。g66yの方が初期費用は安い。",
+        "featureComparison": [
+          "共通点：防水防塵、おサイフケータイ対応のエントリークラス5Gスマートフォン。",
+          "相違点：AQUOS wish5は国内向けに最適化された機能が特徴。g66yはより大きなディスプレイと大容量バッテリーを備える。"
+        ],
+        "differentiators": [
+          "Y!mobile moto g66y 5Gの利点：画面サイズとバッテリー容量で優れ、コンテンツ消費に向いている。",
+          "AQUOS wish5の利点：国内メーカー製品ならではの使いやすさや、長期的なアップデートサポートを重視する人。"
         ]
       }
     ],
     "recommendation": {
       "targetUsers": [
-        "とにかく安くスマホを手に入れたい人",
-        "子供やシニアの連絡用端末を探している人",
-        "お風呂やアウトドアで使えるタフなサブ機が欲しい人"
+        "Y!mobileへの乗り換え・新規契約を検討中で、とにかく端末代を安く抑えたい人",
+        "屋外での作業や水回りなど、過酷な環境でスマートフォンを使う機会が多い人",
+        "大画面で動画を楽しみたいが、高価なハイエンドモデルは不要な人"
       ],
       "pros": [
-        "新規一括10円という圧倒的安さ",
-        "IP68/IP69の完全防水・防塵",
-        "5200mAhの大容量バッテリー"
+        "Y!mobile契約を条件に、非常に安価に端末を入手できる",
+        "IPX8/IPX9/IP6Xの高い防水防塵性能により、キッチンやアウトドアでも安心して使える",
+        "5200mAhバッテリーで充電を気にせず1日中しっかり使える"
       ],
       "cons": [
-        "Y!mobile回線契約が必須",
-        "3Dゲームには向かない処理性能"
+        "Y!mobileの回線契約が必須なため、端末のみを自由に購入したい人には向かない",
+        "RAMが4GBのため、複数のアプリを同時に動かしたり、重いゲームを遊んだりする用途には不向き"
       ],
-      "score": 90,
-      "scoreRationale": "[基本点: 70]\n[加点: +15] (新規一括10円という圧倒的なコストパフォーマンス)\n[加点: +5] (価格帯を超えたIP68/IP69防水とFeliCa搭載)\n[加点: +5] (5200mAhバッテリーによる高い実用性とユーザー満足度)\n[減点: -5] (契約必須の制約と、エントリークラスの処理性能)\n[合計: 90]"
+      "score": 85,
+      "scoreRationale": "[基本点: 70]\n[加点: +15] (回線契約前提とはいえ、非常に手頃な一括購入価格による高いコストパフォーマンス)\n[加点: +5] (IPX8/IPX9の高い防水・耐高温水性能とMIL規格準拠の耐久性)\n[加点: +5] (5200mAhの大容量バッテリーによる実用性の高さ)\n[減点: -10] (購入にY!mobile回線の新規契約が必須という強力な制約)\n[合計: 85]"
     },
     "technicalSpecs": {
-      "os": "Android",
-      "cpu": null,
-      "ram": null,
-      "storage": null,
+      "os": "Android 15",
+      "cpu": "MediaTek Dimensity 7060 (オクタコア 2.6GHz+2.0GHz)",
+      "ram": "4GB",
+      "storage": "128GB",
       "display": {
-        "size": "6.7インチ",
-        "resolution": "FHD+",
-        "type": null
+        "size": "約17cm",
+        "resolution": "2,400×1,080（FHD＋）"
       },
       "battery": {
         "capacity": "5200mAh",
-        "charging": null
+        "charging": "約75分（USB Type-C PD-PPS対応 ACアダプタ）"
       },
-      "camera": {
-        "main": null,
-        "ultrawide": null
+      "dimensions": {
+        "height": "166mm",
+        "width": "77mm",
+        "depth": "8.5mm"
       },
-      "dimensions": null,
-      "connectivity": [
-        "5G",
-        "Wi-Fi",
-        "Bluetooth",
-        "FeliCa/NFC"
-      ],
+      "weight": "約200g",
+      "capacity": "なし",
+      "material": "不明",
+      "origin": "不明",
       "other": [
-        "IP68/IP69 防水防塵"
+        "IPX8/IPX9/IP6X 防水・防塵",
+        "MIL-STD-810H準拠",
+        "5G対応",
+        "Wi-Fi (a/b/g/n/ac)",
+        "Bluetooth 5.3",
+        "FeliCa/おサイフケータイ搭載",
+        "生体認証 (指紋・顔)",
+        "対応外部メモリ: microSDXC (最大2TB)"
       ]
     }
   }
