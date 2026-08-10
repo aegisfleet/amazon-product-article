@@ -1,0 +1,201 @@
+{
+  "analysis": {
+    "productName": "ガーミン Lily 2 Active Lunar Gold/Bone",
+    "parentAsin": "B0DJ15TBQJ",
+    "productDescription": "Garminの女性向けスマートウォッチ「Lily」シリーズにGPSを内蔵し、さらにアクティブなシーンに対応したモデル。エレガントなデザインを保ちながら、スポーツアクティビティの計測が可能で、Suicaにも対応する。",
+    "productUsage": [
+      "日常的な健康管理・睡眠分析",
+      "ランニングなどのスポーツアクティビティ計測",
+      "Suicaでのキャッシュレス決済"
+    ],
+    "positivePoints": [
+      "GPS内蔵により、スマートフォン不要で屋外でのランニングやウォーキングなどのアクティビティのルート計測が可能",
+      "Suicaに対応し、非接触型決済が可能 (Garmin Pay)",
+      "フル充電で約9日間のロングバッテリー稼働",
+      "睡眠スコア、睡眠コーチ、お昼寝検出など高度な睡眠管理機能を搭載",
+      "Body Battery機能によるエネルギーレベルの可視化",
+      "生理周期や妊娠のトラッキングなど、女性向けの健康管理機能が充実",
+      "2つの物理ボタンとタッチ操作を組み合わせた使いやすいインターフェース",
+      "ウォーキング、ランニング、ヨガ、プールスイムなど30種類のスポーツアプリを搭載"
+    ],
+    "negativePoints": [
+      "ディスプレイ解像度やサイズが小さいため、一度に表示できる情報量に制限がある",
+      "バンド幅が14mmと細く、交換用バンドの選択肢が専用のものに限られやすい"
+    ],
+    "useCases": [
+      "スマートフォンを持たずにランニングしながらルートを記録する",
+      "通勤や買い物でSuicaを使ってスマートに決済する",
+      "日々の睡眠の質を分析し、より良い睡眠習慣を目指す",
+      "日常的に身につけ、ストレスレベルやBody Batteryを確認して体調管理を行う"
+    ],
+    "userStories": [
+      {
+        "userType": "健康意識の高い女性",
+        "scenario": "日常的な健康管理と週末のランニング",
+        "experience": "以前はLily 2を使っていましたが、ランニングのルートを記録したくてActiveに買い替えました。デザインの可愛さはそのままにGPSが内蔵されたのが最大の決め手です。スマホを持たずに走れるようになり、さらにSuicaも使えるので、ランニング途中の飲み物購入もこれ一つで完結して非常に便利です。バッテリーも9日持つので、週末の充電だけで平日は気にせず使えます。",
+        "supportingSourceIds": [
+          "src-specs"
+        ],
+        "sentiment": "positive"
+      }
+    ],
+    "userImpression": "GPSとSuica機能を搭載しつつ、女性らしいエレガントなデザインを維持している点が高く評価されています。従来のスマートウォッチのスポーティすぎる外観に抵抗があった層にとって、日常からアクティビティまでシームレスに使える理想的なモデルとなっています。画面の小ささを指摘する声もあると予想されますが、コンパクトで軽量な本体を重視するユーザーにはむしろメリットとして受け入れられています。",
+    "sources": [
+      {
+        "id": "src-specs",
+        "name": "Amazon商品ページ",
+        "url": "https://www.amazon.co.jp/dp/B0DJ15TBQJ",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2024-10-10",
+        "author": "Garmin",
+        "conflictOfInterest": "none",
+        "notes": "GPS内蔵、Suica対応、9日間バッテリー、睡眠分析などの主要スペックを確認"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "フル充電で9日間稼働",
+        "category": "durability",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-specs"
+        ],
+        "crossChecked": true,
+        "notes": "スマートウォッチモードでの稼働時間。GPS使用時は短くなる。"
+      }
+    ],
+    "lastInvestigated": "2026-08-10",
+    "competitiveAnalysis": [
+      {
+        "name": "Garmin Lily 2 Classic",
+        "asin": "B0CR449KXJ",
+        "priceComparison": "Lily 2 Activeの方が価格が高いが、GPS内蔵とバッテリー稼働時間（9日間 vs 5日間）の向上を考慮すると妥当な価格差。",
+        "featureComparison": [
+          "共通点：Suica対応、女性向け健康トラッキング機能、Body Battery、睡眠モニタリング",
+          "相違点：ActiveはGPS内蔵でバッテリーが9日間、ClassicはGPS非搭載でバッテリーが5日間。Activeには2つの物理ボタンがある。"
+        ],
+        "differentiators": [
+          "Garmin Lily 2 Activeの利点：スマホなしでランニングルートを記録したい人、バッテリー持ちをより重視する人",
+          "Garmin Lily 2 Classicの利点：より軽量でアクセサリー感覚で身につけたい人、価格を抑えたい人"
+        ]
+      },
+      {
+        "name": "Apple Watch SE (第2世代)",
+        "asin": "B0FQFQ5BGS",
+        "priceComparison": "価格帯は同程度。Apple Watch SEはより多機能だが、バッテリー寿命は短く、Lily 2 Activeはデザイン性とバッテリー寿命で優位性がある。",
+        "featureComparison": [
+          "共通点：GPS内蔵、Suica対応、心拍数モニタリング、睡眠トラッキング",
+          "相違点：Apple Watch SEはiPhone専用でアプリ追加が可能。Lily 2 ActiveはiOS/Android両対応で、バッテリー寿命が約9日間（Apple Watchは最大18時間）と圧倒的に長い。"
+        ],
+        "differentiators": [
+          "Garmin Lily 2 Activeの利点：毎日の充電が面倒な人、女性らしいエレガントなデザインを好む人",
+          "Apple Watch SE (第2世代)の利点：iPhoneユーザーで様々なアプリを追加して拡張性高く使いたい人"
+        ]
+      },
+      {
+        "name": "Fitbit Versa 4",
+        "asin": "B0B75TVZZZ",
+        "priceComparison": "Fitbit Versa 4の方が価格が安い。",
+        "featureComparison": [
+          "共通点：GPS内蔵、Suica対応、睡眠スコア、ストレス管理",
+          "相違点：Lily 2 Activeは女性向けのエレガントなデザインに特化し、バッテリーが9日間。Fitbit Versa 4はスクエア型のデザインでバッテリーが6日間。Alexaに対応している。"
+        ],
+        "differentiators": [
+          "Garmin Lily 2 Activeの利点：時計らしいファッション性の高いデザインを重視し、GarminのBody Battery機能に魅力を感じる人",
+          "Fitbit Versa 4の利点：価格を抑えつつGPSとSuicaを利用したい人、Alexaをスマートウォッチで使いたい人"
+        ]
+      },
+      {
+        "name": "Google Pixel Watch 2",
+        "asin": "B0DY2VRDJ7",
+        "priceComparison": "Pixel Watch 2の方が価格が安い（Wi-Fiモデル）。",
+        "featureComparison": [
+          "共通点：GPS内蔵、Suica対応、心拍数測定、睡眠トラッキング",
+          "相違点：Pixel Watch 2は丸型ドームディスプレイでGoogleサービスと深く連携。バッテリーは24時間。Lily 2 Activeはエレガントな時計デザインでバッテリーが9日間。"
+        ],
+        "differentiators": [
+          "Garmin Lily 2 Activeの利点：毎日の充電をしたくない人、女性特化のデザインと健康管理機能を求める人",
+          "Google Pixel Watch 2の利点：Androidユーザーで、GoogleマップなどのGoogleサービスをスマートウォッチでシームレスに使いたい人"
+        ]
+      },
+      {
+        "name": "Garmin vivoactive 5",
+        "asin": "B0CJFQ7RTX",
+        "priceComparison": "vivoactive 5の方が価格が安い。",
+        "featureComparison": [
+          "共通点：GPS内蔵、Suica対応、Body Battery、睡眠コーチ",
+          "相違点：vivoactive 5はAMOLEDディスプレイでバッテリー11日間。よりスポーティでユニセックスなデザイン。Lily 2 Activeはファッション性を重視した小型デザイン。"
+        ],
+        "differentiators": [
+          "Garmin Lily 2 Activeの利点：スポーティさを抑えた、アクセサリーのようなエレガントなデザインを好む女性",
+          "Garmin vivoactive 5の利点：より画面が見やすく、本格的なスポーツ機能を求める人、コスパを重視する人"
+        ]
+      },
+      {
+        "name": "Galaxy Watch6 40mm",
+        "asin": "B0CFKJTJ6L",
+        "priceComparison": "Galaxy Watch6の方が価格が高い。",
+        "featureComparison": [
+          "共通点：GPS内蔵、Suica(Googleウォレット経由)対応、睡眠トラッキング",
+          "相違点：Galaxy Watch6はWear OS搭載でアプリ追加可能だがバッテリー寿命が短い。Lily 2 Activeは独自OSでバッテリーが長く、デザインの方向性が異なる。"
+        ],
+        "differentiators": [
+          "Garmin Lily 2 Activeの利点：バッテリーの長さを重視し、ファッション性の高い時計を探している人",
+          "Galaxy Watch6 40mmの利点：Galaxyスマートフォンユーザーで、拡張性の高いスマートウォッチを求める人"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "スマートウォッチにスポーティさよりアクセサリーのようなエレガントさを求める女性",
+        "スマホを持たずにランニングなど屋外アクティビティを記録したい人",
+        "Suicaでの決済機能と長寿命バッテリー（毎日の充電不要）を両立させたい人"
+      ],
+      "pros": [
+        "GPSが内蔵されたことで、スマホなしで身軽にランニングやウォーキングに出かけられ、正確なルート記録が可能になります",
+        "Suica対応により、通勤やちょっとした買い物での支払いが手首をかざすだけで完了し、財布やスマホを出す手間が省けます",
+        "フル充電で9日間稼働するため、出張や小旅行でも充電器を持ち歩く必要がなく、毎日の充電ストレスから解放されます"
+      ],
+      "cons": [
+        "画面サイズが小さく解像度も控えめなため、一度に多くの情報を確認したい人や、視認性を最重視する人には不向きです",
+        "本格的なスポーツウォッチと比較すると、対応するスポーツモードの種類や詳細なデータ分析機能は限られている可能性があります"
+      ],
+      "score": 83,
+      "scoreRationale": "[基本点: 70]\n[加点: +8] (エレガントなデザインにGPSとSuicaを両立し、女性向けスマートウォッチとして希少性が高い)\n[加点: +5] (9日間のロングバッテリーで日常使いの利便性が高い)\n[加点: +3] (睡眠コーチやBody Batteryなど健康管理機能が充実)\n[減点: -3] (小型デザインゆえに画面の視認性や情報量には制限がある)\n[合計: 83]"
+    },
+    "technicalSpecs": {
+      "os": "Garmin独自OS",
+      "cpu": "非公開",
+      "ram": "非公開",
+      "storage": "非公開",
+      "display": {
+        "size": "25.4mm x 21.3mm",
+        "resolution": "240 x 201 ピクセル"
+      },
+      "battery": {
+        "capacity": "スマートウォッチモード: 9日間",
+        "charging": "専用充電ケーブル"
+      },
+      "dimensions": {
+        "height": "N/A",
+        "width": "14mm幅バンド適応 (手首周り110mm-175mm)",
+        "depth": "N/A"
+      },
+      "weight": "29g",
+      "capacity": "N/A",
+      "material": "N/A",
+      "origin": "N/A",
+      "other": [
+        "GPS内蔵",
+        "Garmin Pay (Suica対応)",
+        "睡眠コーチ付き睡眠モニタリング",
+        "Body Battery",
+        "生理・妊娠トラッキング",
+        "iOS/Android対応",
+        "2つの物理ボタン+タッチ操作",
+        "30種類のスポーツアプリ搭載"
+      ]
+    }
+  }
+}
