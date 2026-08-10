@@ -1,0 +1,160 @@
+{
+  "analysis": {
+    "productName": "INNOCN 49インチ ゲーミングモニター ウルトラワイド 49C1R",
+    "parentAsin": "B0D4ZCB5G4",
+    "productDescription": "アスペクト比32:9の49インチ、5120×1440（DQHD/5K）解像度と120Hzリフレッシュレートに対応するウルトラワイド曲面ゲーミングモニター。Type-C(65W給電)やLAN(RJ45)ポートを搭載する。",
+    "productUsage": ["ゲーミング", "動画編集", "マルチタスクオフィスワーク"],
+    "positivePoints": [
+      "5120x1440(DQHD)の超高解像度による広大な作業領域",
+      "120Hzのリフレッシュレートによる滑らかなゲームプレイ対応",
+      "Type-C(65W給電対応)およびLAN(RJ45)ポート搭載により、ノートPCとの接続性が高い",
+      "多機能・調整可能なスタンドを採用(高さ調整、回転、チルト対応)",
+      "95% DCI-P3の広色域と色校正(Delta<2)対応による正確な色表現"
+    ],
+    "negativePoints": [
+      "重量が約15kgと非常に重く、設置やアーム使用時の制約が大きい",
+      "65WのType-C給電は一部のハイエンドゲーミングノートやクリエイター向けノートPCのフル稼働には不足する可能性がある"
+    ],
+    "useCases": [
+      "複数ウィンドウを並べたプログラミングやExcel等のオフィス作業",
+      "タイムラインを横長に表示する動画編集作業",
+      "没入感の高いレースゲームやフライトシミュレーターのプレイ"
+    ],
+    "userStories": [],
+    "userImpression": "ユーザーレビューなどの実データが取得できなかったため、製品スペックからの推測となるが、32:9のDQHD解像度による圧倒的な作業領域と、120Hz駆動によるゲーミング性能を両立した意欲的な製品である。Type-C接続やLANポート搭載によりドッキングステーションとしての役割も果たせるが、15kgという本体重量が設置時の大きなハードルとなるため注意が必要である。",
+    "sources": [
+      {
+        "id": "src-amazon-api",
+        "name": "Amazon API (creators_get_item.py)",
+        "url": "https://www.amazon.co.jp/dp/B0CG9L4S3P",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-08-10",
+        "author": "INNOCN",
+        "conflictOfInterest": "possible",
+        "notes": "製品スペック、特徴、価格情報を確認"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "INNOCN開発部の精密的な色校正 (デルタ<2) に合格",
+        "category": "quality",
+        "confidence": "medium",
+        "supportingSourceIds": ["src-amazon-api"],
+        "crossChecked": false,
+        "notes": "メーカーの主張であり、第三者機関によるレビュー検証は未確認"
+      }
+    ],
+    "lastInvestigated": "2026-08-10",
+    "competitiveAnalysis": [
+      {
+        "name": "JAPANNEXT JN-IPS49F-M-H5",
+        "asin": "B0H2CK3JJ9",
+        "priceComparison": "本製品の方が大幅に高価である。JAPANNEXTはフルHDクラス(3840x1080)などスペックを抑え価格を優先している可能性がある一方、本製品は5120x1440の解像度やUSB-C・RJ45といった機能面での優位性があるため価格差が妥当である。",
+        "featureComparison": [
+          "共通点：49インチのウルトラワイドモニターである点",
+          "相違点：解像度(INNOCNは5120x1440)、インターフェース(USB-C/RJ45の有無)やリフレッシュレート"
+        ],
+        "differentiators": [
+          "INNOCN 49C1Rの利点：ノートPCをケーブル1本で接続し、有線LANや給電も済ませたいビジネス用途や、5120x1440の高解像度が必要なユーザーなら迷わずこちら",
+          "JAPANNEXT JN-IPS49F-M-H5の利点：解像度やリフレッシュレートにこだわらず、とにかく安価に49インチのウルトラワイド画面を導入したいユーザー"
+        ]
+      },
+      {
+        "name": "Amzfast AMZG49C7U",
+        "asin": "B0F9NQK11D",
+        "priceComparison": "Amzfastの方がやや高価である。スペック上は同等の解像度・リフレッシュレートを持つ競合機。",
+        "featureComparison": [
+          "共通点：49インチ、5120x1440の解像度、120Hzのリフレッシュレート",
+          "相違点：USB-C/RJ45などの付加機能の有無や保証期間(Amzfastは5年保証を謳う)"
+        ],
+        "differentiators": [
+          "INNOCN 49C1Rの利点：USB Type-C(65W)やRJ45有線LANといったドッキングステーション的機能を求めるユーザーならこちら",
+          "Amzfast AMZG49C7Uの利点：長期の保証(5年保証)を重視するユーザー"
+        ]
+      },
+      {
+        "name": "Suevery 49インチ ウルトラワイド (5120x1440/120Hz)",
+        "asin": "B0GWGZ41C2",
+        "priceComparison": "Sueveryの方が安価である。同じ解像度・リフレッシュレートのスペックながら価格を抑えたい場合の有力な選択肢。",
+        "featureComparison": [
+          "共通点：49インチ、5120x1440の解像度、120Hzのリフレッシュレート",
+          "相違点：Type-CやRJ45などのインターフェース周りの利便性"
+        ],
+        "differentiators": [
+          "INNOCN 49C1Rの利点：ビジネス・クリエイティブ用途でノートPCと連携させるためのType-Cポートや有線LANポートが必要なユーザーなら迷わずこちら",
+          "Sueveryの利点：インターフェースの豊富さよりも、同じ解像度・リフレッシュレートの基本スペックを低コストで手に入れたいユーザー"
+        ]
+      },
+      {
+        "name": "CRUA 49インチ ウルトラワイド (5120x1440/120Hz)",
+        "asin": "B0H3QCLD8Q",
+        "priceComparison": "本製品と同等の価格帯(やや安価)である。スペック的にも非常に近い競合機。",
+        "featureComparison": [
+          "共通点：49インチ、5120x1440の解像度、120Hz、1500R湾曲",
+          "相違点：Type-C/RJ45ポートの有無(INNOCNの優位点)"
+        ],
+        "differentiators": [
+          "INNOCN 49C1Rの利点：同価格帯において、Type-C(65W)と有線LANポートを備えノートPCのドッキング機能として使える点でこちら",
+          "CRUAの利点：メーカーの好みや在庫状況・セールなどにより安価に購入できる場合"
+        ]
+      },
+      {
+        "name": "OYCS 49インチ 曲面ゲーミングモニター (5K 165Hz)",
+        "asin": "B0H69N73ZD",
+        "priceComparison": "OYCSの方が安価でありながら165Hzと高いリフレッシュレートを持つ。",
+        "featureComparison": [
+          "共通点：49インチ、5120x1440の解像度",
+          "相違点：リフレッシュレート(OYCSは165Hz)、USB-C・有線LAN機能の有無"
+        ],
+        "differentiators": [
+          "INNOCN 49C1Rの利点：USB Type-C給電やRJ45ポートを活用したデスク周りの配線簡略化やドック機能を重視するユーザー",
+          "OYCSの利点：USB Type-C等の機能より、ゲーミング用途で少しでも高いリフレッシュレート(165Hz)を安価に求めるユーザー"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "クリエイティブ用途やオフィスワークで広大なデスクトップ領域が必要であり、かつノートPCをType-Cケーブル1本で接続して有線LANも確保したいユーザー（競合よりも接続性・ドック機能で優位）"
+      ],
+      "pros": [
+        "Type-C(65W)とRJ45ポートにより、ノートPC接続時のドッキングステーション代わりになり、配線がスッキリする",
+        "デュアルQHD(5120x1440)の広大な作業領域により、マルチウィンドウ作業が快適になる"
+      ],
+      "cons": [
+        "15kgという非常に重い重量のため、設置時やモニターアーム選定時に十分な耐荷重の確保が必要になる"
+      ],
+      "score": 77,
+      "scoreRationale": "[基本点: 70]\n[加点: +5] (5120x1440の高解像度と120Hz駆動の両立による基本性能の高さ)\n[加点: +5] (Type-C 65W給電とRJ45 LANポート搭載による高い利便性)\n[減点: -3] (15kgという重量による設置やアーム選びの難しさ)\n[合計: 77]"
+    },
+    "technicalSpecs": {
+      "dimensions": {
+        "height": "56.99cm",
+        "width": "119.99cm",
+        "depth": "28.99cm"
+      },
+      "weight": "15000g",
+      "display": {
+        "size": "49インチ",
+        "resolution": "5120x1440",
+        "refreshRate": "120Hz",
+        "curvature": "1800R"
+      },
+      "interfaces": [
+        "HDMI 2.1",
+        "DisplayPort 1.4",
+        "USB Type-C (65W給電)",
+        "USB A/B",
+        "RJ45 (LAN)"
+      ],
+      "color": "ブラック",
+      "other": [
+        "HDR400対応",
+        "95% DCI-P3 広色域",
+        "Delta<2 色校正",
+        "スピーカー内蔵",
+        "高さ調整機構(最大95mm)、左右回転(15度)、前傾5度・後方15度"
+      ]
+    }
+  }
+}
