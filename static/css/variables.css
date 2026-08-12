@@ -1,6 +1,40 @@
 /* Global Variables */
 :root {
     color-scheme: light;
+    /* Material Design 3 Tonal System & Surface Elevation */
+    --md-sys-color-primary: #4F46E5;
+    --md-sys-color-on-primary: #FFFFFF;
+    --md-sys-color-primary-container: #EEF2FF;
+    --md-sys-color-on-primary-container: #3730A3;
+
+    --md-sys-color-secondary: #0EA5E9;
+    --md-sys-color-on-secondary: #FFFFFF;
+    --md-sys-color-secondary-container: #E0F2FE;
+    --md-sys-color-on-secondary-container: #0369A1;
+
+    --md-sys-color-tertiary: #D97706;
+    --md-sys-color-on-tertiary: #FFFFFF;
+    --md-sys-color-tertiary-container: #FEF3C7;
+    --md-sys-color-on-tertiary-container: #78350F;
+
+    --md-sys-color-error: #DC2626;
+    --md-sys-color-on-error: #FFFFFF;
+    --md-sys-color-error-container: #FEE2E2;
+    --md-sys-color-on-error-container: #991B1B;
+
+    --md-sys-color-surface-0: #F8FAFC;
+    --md-sys-color-surface-1: #FFFFFF;
+    --md-sys-color-surface-2: #F1F5F9;
+    --md-sys-color-surface-3: #E2E8F0;
+    --md-sys-color-surface-4: #CBD5E1;
+    --md-sys-color-surface-5: #94A3B8;
+
+    --md-sys-color-surface-variant: #F3F4F6;
+    --md-sys-color-on-surface: #0F172A;
+    --md-sys-color-on-surface-variant: #475569;
+    --md-sys-color-outline: #CBD5E1;
+    --md-sys-color-outline-variant: #E2E8F0;
+
     /* Brand Colors */
     --color-primary: #4F46E5;
     --color-primary-rgb: 79, 70, 229;
@@ -13,16 +47,16 @@
     /* Emerald 500 */
 
     /* Neutral Colors */
-    --color-bg-body: #F9FAFB;
+    --color-bg-body: var(--md-sys-color-surface-0);
     /* Gray 50 */
-    --color-bg-card: #FFFFFF;
-    --color-text-main: #111827;
+    --color-bg-card: var(--md-sys-color-surface-1);
+    --color-text-main: var(--md-sys-color-on-surface);
     /* Gray 900 */
-    --color-text-secondary: #4B5563;
+    --color-text-secondary: var(--md-sys-color-on-surface-variant);
     /* Gray 600 */
     --color-text-muted: #6B7280;
     /* Gray 500 */
-    --color-border: #D1D5DB;
+    --color-border: var(--md-sys-color-outline-variant);
     /* Gray 200 */
 
     /* Component Variables */
@@ -132,17 +166,51 @@
 @media (prefers-color-scheme: dark) {
     :root:not([data-theme="light"]) {
         color-scheme: dark;
-        --color-bg-body: #111827;
+        /* M3 Dark Mode Tonal System & Surface Elevation */
+        --md-sys-color-primary: #818CF8;
+        --md-sys-color-on-primary: #1E1B4B;
+        --md-sys-color-primary-container: #3730A3;
+        --md-sys-color-on-primary-container: #E0E7FF;
+
+        --md-sys-color-secondary: #38BDF8;
+        --md-sys-color-on-secondary: #0C4A6E;
+        --md-sys-color-secondary-container: #0369A1;
+        --md-sys-color-on-secondary-container: #BAE6FD;
+
+        --md-sys-color-tertiary: #FBBF24;
+        --md-sys-color-on-tertiary: #451A03;
+        --md-sys-color-tertiary-container: #78350F;
+        --md-sys-color-on-tertiary-container: #FEF3C7;
+
+        --md-sys-color-error: #F87171;
+        --md-sys-color-on-error: #450A0A;
+        --md-sys-color-error-container: #991B1B;
+        --md-sys-color-on-error-container: #FEE2E2;
+
+        --md-sys-color-surface-0: #0F172A;
+        --md-sys-color-surface-1: #1E293B;
+        --md-sys-color-surface-2: #334155;
+        --md-sys-color-surface-3: #475569;
+        --md-sys-color-surface-4: #64748B;
+        --md-sys-color-surface-5: #94A3B8;
+
+        --md-sys-color-surface-variant: #1F2937;
+        --md-sys-color-on-surface: #F8FAFC;
+        --md-sys-color-on-surface-variant: #94A3B8;
+        --md-sys-color-outline: #475569;
+        --md-sys-color-outline-variant: #334155;
+
+        --color-bg-body: var(--md-sys-color-surface-0);
         /* Gray 900 */
-        --color-bg-card: #1F2937;
+        --color-bg-card: var(--md-sys-color-surface-1);
         /* Gray 800 */
-        --color-text-main: #F9FAFB;
+        --color-text-main: var(--md-sys-color-on-surface);
         /* Gray 50 */
-        --color-text-secondary: #9CA3AF;
+        --color-text-secondary: var(--md-sys-color-on-surface-variant);
         /* Gray 400 */
         --color-text-muted: #D1D5DB;
         /* Gray 300 */
-        --color-border: #64748B;
+        --color-border: var(--md-sys-color-outline-variant);
         /* Slate 500 */
 
         --color-primary: #818CF8;
@@ -221,17 +289,51 @@
 /* Dark Mode (Manual Override) */
 [data-theme="dark"] {
     color-scheme: dark;
-    --color-bg-body: #111827;
+    /* M3 Dark Mode Tonal System & Surface Elevation */
+    --md-sys-color-primary: #818CF8;
+    --md-sys-color-on-primary: #1E1B4B;
+    --md-sys-color-primary-container: #3730A3;
+    --md-sys-color-on-primary-container: #E0E7FF;
+
+    --md-sys-color-secondary: #38BDF8;
+    --md-sys-color-on-secondary: #0C4A6E;
+    --md-sys-color-secondary-container: #0369A1;
+    --md-sys-color-on-secondary-container: #BAE6FD;
+
+    --md-sys-color-tertiary: #FBBF24;
+    --md-sys-color-on-tertiary: #451A03;
+    --md-sys-color-tertiary-container: #78350F;
+    --md-sys-color-on-tertiary-container: #FEF3C7;
+
+    --md-sys-color-error: #F87171;
+    --md-sys-color-on-error: #450A0A;
+    --md-sys-color-error-container: #991B1B;
+    --md-sys-color-on-error-container: #FEE2E2;
+
+    --md-sys-color-surface-0: #0F172A;
+    --md-sys-color-surface-1: #1E293B;
+    --md-sys-color-surface-2: #334155;
+    --md-sys-color-surface-3: #475569;
+    --md-sys-color-surface-4: #64748B;
+    --md-sys-color-surface-5: #94A3B8;
+
+    --md-sys-color-surface-variant: #1F2937;
+    --md-sys-color-on-surface: #F8FAFC;
+    --md-sys-color-on-surface-variant: #94A3B8;
+    --md-sys-color-outline: #475569;
+    --md-sys-color-outline-variant: #334155;
+
+    --color-bg-body: var(--md-sys-color-surface-0);
     /* Gray 900 */
-    --color-bg-card: #1F2937;
+    --color-bg-card: var(--md-sys-color-surface-1);
     /* Gray 800 */
-    --color-text-main: #F9FAFB;
+    --color-text-main: var(--md-sys-color-on-surface);
     /* Gray 50 */
-    --color-text-secondary: #9CA3AF;
+    --color-text-secondary: var(--md-sys-color-on-surface-variant);
     /* Gray 400 */
     --color-text-muted: #D1D5DB;
     /* Gray 300 */
-    --color-border: #64748B;
+    --color-border: var(--md-sys-color-outline-variant);
     /* Slate 500 */
 
     --color-primary: #818CF8;

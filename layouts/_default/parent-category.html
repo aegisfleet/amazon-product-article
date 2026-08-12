@@ -446,7 +446,7 @@
                                 <span aria-hidden="true">💰</span> {{ partial "utils-price-format.html" .Params.price }}
                             </span>
                             {{- if .Params.loyalty_points -}}
-                            <span class="card-points">
+                            <span class="card-points m3-badge m3-badge-points">
                                 <span aria-hidden="true">🎁</span> {{ .Params.loyalty_points }}pt
                             </span>
                             {{- end -}}
@@ -461,7 +461,7 @@
                         {{- $scoreClass = "score-good" -}}
                         {{- end -}}
                         <div class="meta-score-block">
-                            <span class="card-score {{ $scoreClass }}">
+                            <span class="card-score m3-badge m3-badge-score {{ $scoreClass }}">
                                 <span aria-hidden="true">🏆</span> {{ .Params.score }}点
                             </span>
                         </div>
@@ -469,10 +469,10 @@
                     </div>
                     <div class="meta-details-row">
                         {{- if .Params.is_amazon_direct -}}
-                        <span class="badge-amazon-direct">Amazon直販</span>
+                        <span class="badge-amazon-direct m3-badge m3-badge-primary">Amazon直販</span>
                         {{- end -}}
                         {{- if .Params.is_amazon_haul -}}
-                        <span class="badge-amazon-haul">Amazon Haul</span>
+                        <span class="badge-amazon-haul m3-badge m3-badge-secondary">Amazon Haul</span>
                         {{- end -}}
                         {{- with .Params.deal_badge -}}
                         {{- $dealClass := "deal-standard" -}}
@@ -480,16 +480,16 @@
                         "PRIME_EARLY_ACCESS") -}}
                         {{- $dealClass = "deal-prime" -}}
                         {{- end -}}
-                        <span class="badge-deal {{ $dealClass }}">{{ . }}</span>
+                        <span class="badge-deal m3-badge m3-badge-deal {{ $dealClass }}">{{ . }}</span>
                         {{- end -}}
                         {{- if .Params.savings_percentage -}}
-                        <span class="badge-savings">{{ .Params.savings_percentage }}% OFF</span>
+                        <span class="badge-savings m3-badge m3-badge-sale">{{ .Params.savings_percentage }}% OFF</span>
                         {{- end -}}
                         {{- if ge $pointsRate 10.0 -}}
-                        <span class="badge-points-rate">ポイント還元率 {{- printf "%.0f" $pointsRate -}}%</span>
+                        <span class="badge-points-rate m3-badge m3-badge-points">ポイント還元率 {{- printf "%.0f" $pointsRate -}}%</span>
                         {{- end -}}
                         {{- with .Params.availability -}}
-                        <span class="badge-availability">{{ . }}</span>
+                        <span class="badge-availability m3-badge m3-badge-tertiary">{{ . }}</span>
                         {{- end -}}
                     </div>
                 </div>

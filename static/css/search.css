@@ -1,12 +1,14 @@
 .search-header {
-    margin-top: var(--spacing-1g);
+    margin-top: 3rem;
+    margin-bottom: 1.25rem;
 }
 
 .search-container {
     position: relative;
     max-width: 1000px;
-    margin: 1rem auto 2rem auto;
-    padding: 0 1rem;
+    margin: 0 auto 2.5rem auto;
+    padding: 1.5rem;
+    border-radius: var(--radius-xl, 16px);
     scroll-margin-top: 5rem;
     /* スクロール位置の余裕を確保 */
 }
@@ -19,20 +21,22 @@
 
 .search-input {
     width: 100%;
-    padding: 1rem 3rem 1rem 3rem;
-    font-size: 1.1rem;
-    border: 1px solid var(--color-border);
+    box-sizing: border-box;
+    padding: 0.875rem 3rem 0.875rem 3rem;
+    font-size: 1.05rem;
+    border: 1.5px solid var(--md-sys-color-outline, var(--color-border));
     border-radius: 9999px;
-    background: var(--color-bg-card);
-    color: var(--color-text-primary);
-    box-shadow: var(--shadow-md);
-    transition: all 0.2s ease;
+    background: var(--md-sys-color-surface-1, var(--color-bg-card));
+    color: var(--md-sys-color-on-surface, var(--color-text-primary));
+    box-shadow: none;
+    transition: border-color 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 .search-input:focus {
     outline: none;
-    border-color: var(--color-primary);
-    box-shadow: var(--shadow-lg), 0 0 0 3px rgba(37, 99, 235, 0.1);
+    border-color: var(--md-sys-color-primary, var(--color-primary));
+    border-width: 2px;
+    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.15);
 }
 
 .search-icon {
@@ -936,3 +940,29 @@
     visibility: hidden;
     pointer-events: none;
 }
+
+/* ===================================================
+   検索コンテナ内部要素の余白・スペーシング調整
+   =================================================== */
+.search-input-wrapper {
+    margin-bottom: 1rem;
+}
+
+.search-filter-toggle-wrapper {
+    margin-bottom: 0.75rem;
+}
+
+.search-filters-wrapper {
+    margin-bottom: 0;
+}
+
+.search-filters {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.875rem 1.25rem;
+    background: var(--md-sys-color-surface-1, var(--color-bg-card));
+    border: 1px solid var(--md-sys-color-outline-variant, var(--color-border));
+    border-radius: var(--radius-lg, 12px);
+}
