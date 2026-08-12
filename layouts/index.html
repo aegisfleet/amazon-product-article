@@ -283,7 +283,7 @@
     <!-- Brand Filter Chips (Material Design 3) -->
     <nav class="brand-filter-chips" aria-label="ブランド一覧">
         {{- range $topBrands -}}
-        <a href="{{ `brand/` | relURL }}{{ .slug }}/" class="md3-chip">
+        <a href="{{ `brand/` | relURL }}{{ .slug }}/" class="md3-chip brand-card">
             <span class="md3-chip-icon" aria-hidden="true">{{ .icon }}</span>
             <span class="md3-chip-text">{{ .name }}</span>
             <span class="md3-chip-count">{{ .count }}件</span>
