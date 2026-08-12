@@ -279,7 +279,7 @@
     </div>
 
     <!-- Brand Filter Chips (Material Design 3) -->
-    <div class="brand-filter-chips" role="group" aria-label="ブランド一覧">
+    <nav class="brand-filter-chips" aria-label="ブランド一覧">
         {{- range $topBrands -}}
         <a href="{{ `brand/` | relURL }}{{ .slug }}/" class="md3-chip">
             <svg class="md3-chip-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -290,7 +290,7 @@
             <span class="md3-chip-count">{{ .count }}件</span>
         </a>
         {{- end -}}
-    </div>
+    </nav>
 
     <div class="brand-more-container"
         style="text-align: center; margin-top: var(--spacing-lg); margin-bottom: var(--spacing-xl);">
