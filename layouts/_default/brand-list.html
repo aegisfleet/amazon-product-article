@@ -278,15 +278,17 @@
             </div>
             <div class="card-content">
                 <div class="card-header">
-                    {{- $categories := .GetTerms "categories" -}}
-                    {{- if $categories -}}
-                    {{- $firstCat := index $categories 0 -}}
-                    <button type="button" class="card-tag bargain-card-category" data-category="{{- $firstCat.LinkTitle -}}">{{- $firstCat.LinkTitle -}}</button>
-                    {{- with .Params.subcategory -}}<span class="card-tag-sub">{{ . }}</span>{{- end -}}
-                    {{- else if .Params.category -}}
-                    <button type="button" class="card-tag bargain-card-category" data-category="{{ .Params.category }}">{{ .Params.category }}</button>
-                    {{- with .Params.subcategory -}}<span class="card-tag-sub">{{ . }}</span>{{- end -}}
-                    {{- end -}}
+                    <div class="card-tags-row">
+                        {{- $categories := .GetTerms "categories" -}}
+                        {{- if $categories -}}
+                        {{- $firstCat := index $categories 0 -}}
+                        <button type="button" class="card-tag bargain-card-category" data-category="{{- $firstCat.LinkTitle -}}">{{- $firstCat.LinkTitle -}}</button>
+                        {{- with .Params.subcategory -}}<span class="card-tag-sub">{{ . }}</span>{{- end -}}
+                        {{- else if .Params.category -}}
+                        <button type="button" class="card-tag bargain-card-category" data-category="{{ .Params.category }}">{{ .Params.category }}</button>
+                        {{- with .Params.subcategory -}}<span class="card-tag-sub">{{ . }}</span>{{- end -}}
+                        {{- end -}}
+                    </div>
                     <h3 class="card-title">
                         <a href="{{ .RelPermalink }}">{{ .Title }}</a>
                     </h3>
@@ -301,16 +303,18 @@
                 {{- end -}}
                 <div class="card-meta-ext">
                     <div class="meta-main-row">
-                        {{- if .Params.price -}}
-                        <span class="card-price">
-                            💰 {{ partial "utils-price-format.html" .Params.price }}
-                        </span>
-                        {{- if .Params.loyalty_points -}}
-                        <span class="card-points">
-                            🎁 {{ .Params.loyalty_points }}pt
-                        </span>
-                        {{- end -}}
-                        {{- end -}}
+                        <div class="meta-price-block">
+                            {{- if .Params.price -}}
+                            <span class="card-price">
+                                <span aria-hidden="true">💰</span> {{ partial "utils-price-format.html" .Params.price }}
+                            </span>
+                            {{- if .Params.loyalty_points -}}
+                            <span class="card-points">
+                                <span aria-hidden="true">🎁</span> {{ .Params.loyalty_points }}pt
+                            </span>
+                            {{- end -}}
+                            {{- end -}}
+                        </div>
                         {{- if .Params.score -}}
                         {{- $score := .Params.score | int -}}
                         {{- $scoreClass := "score-fair" -}}
@@ -319,9 +323,11 @@
                         {{- else if ge $score 60 -}}
                         {{- $scoreClass = "score-good" -}}
                         {{- end -}}
-                        <span class="card-score {{ $scoreClass }}">
-                            🏆 {{ .Params.score }}点
-                        </span>
+                        <div class="meta-score-block">
+                            <span class="card-score {{ $scoreClass }}">
+                                <span aria-hidden="true">🏆</span> {{ .Params.score }}点
+                            </span>
+                        </div>
                         {{- end -}}
                     </div>
                     <div class="meta-details-row">
@@ -375,7 +381,7 @@
                         </button>
                     </div>
                     <div class="card-footer-row card-footer-row-main">
-                        <span class="article-meta">{{- with .Params.last_investigated -}}{{ time . | dateFormat
+                        <span class="article-meta"><span aria-hidden="true">📅</span> {{- with .Params.last_investigated -}}{{ time . | dateFormat
                             "2006年01月02日"
                             }}{{- else -}}{{ .Date.Format "2006年01月02日" }}{{- end -}}</span>
                         {{- if .Params.affiliate_url -}}

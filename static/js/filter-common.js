@@ -352,7 +352,13 @@ function renderCardMainRow(p) {
 
   const dateSpan = document.createElement('span');
   dateSpan.className = 'article-meta';
-  dateSpan.textContent = formatInvestigatedDate(p.lastInvestigated);
+
+  const dateIcon = document.createElement('span');
+  dateIcon.setAttribute('aria-hidden', 'true');
+  dateIcon.textContent = '📅';
+
+  dateSpan.appendChild(dateIcon);
+  dateSpan.appendChild(document.createTextNode(` ${formatInvestigatedDate(p.lastInvestigated)}`));
   row.appendChild(dateSpan);
 
   if (p.affiliateUrl) {

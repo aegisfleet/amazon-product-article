@@ -508,15 +508,30 @@ a.hero-tag-brand:hover {
   flex: 1;
 }
 
+.card-tags-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.35rem;
+  margin-bottom: var(--spacing-xs, 0.25rem);
+}
+
 .card-meta-ext {
   display: flex;
   flex-direction: column;
   gap: var(--spacing-sm);
-  margin-top: var(--spacing-md);
-  padding: var(--spacing-sm);
-  background: var(--color-bg-body);
+  margin-top: auto;
+  padding: 0.75rem 0.875rem;
+  background: rgba(var(--color-primary-rgb, 14, 165, 233), 0.04);
   border-radius: var(--radius-lg);
   border: 1px solid var(--color-border);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.6);
+}
+
+[data-theme="dark"] .card-meta-ext {
+  background: rgba(255, 255, 255, 0.03);
+  border-color: rgba(255, 255, 255, 0.1);
+  box-shadow: none;
 }
 
 .meta-main-row {
@@ -524,6 +539,20 @@ a.hero-tag-brand:hover {
   justify-content: space-between;
   align-items: center;
   width: 100%;
+  gap: 0.5rem;
+}
+
+.meta-price-block {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+}
+
+.meta-score-block {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
 }
 
 .meta-details-row {
@@ -784,17 +813,35 @@ a.hero-tag-brand:hover {
 }
 
 .card-price {
-  font-weight: bold;
+  font-size: 1.2rem;
+  font-weight: 800;
   color: var(--color-text-main);
+  line-height: 1.25;
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.25rem;
+}
+
+.card-points {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--color-text-muted);
 }
 
 .card-footer {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
-  margin-top: auto;
+  margin-top: 0.75rem;
   padding-top: 0.625rem;
   border-top: 1px solid var(--color-border, #f3f4f6);
+}
+
+.card-footer-row {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  width: 100%;
 }
 
 .read-more {
@@ -6371,14 +6418,20 @@ body.menu-open .nav-menu-floating-toggle {
   width: 100%;
 }
 
-/* 1行目: 比較・保存ボタン (幅50%ずつ) */
+/* 1行目: 比較・保存ボタン (左右幅50%ずつ) */
 .card-footer-row-sub {
+  display: flex;
   gap: 0.5rem;
+  align-items: center;
+  width: 100%;
 }
 
 .card-footer-row-sub .btn-compare-card,
-.card-footer-row-sub .btn-favorite-card {
+.card-footer-row-sub .btn-favorite-card,
+.btn-compare-card,
+.btn-favorite-card {
   flex: 1;
+  width: 50%;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -6399,27 +6452,47 @@ body.menu-open .nav-menu-floating-toggle {
   box-sizing: border-box;
 }
 
-/* 2行目: 日付・Amazonボタン */
+/* 2行目: 日付・Amazonボタン (左右幅50%ずつ) */
 .card-footer-row-main {
+  display: flex;
   gap: 0.5rem;
+  align-items: center;
+  width: 100%;
 }
 
 .card-footer-row-main .article-meta {
+  flex: 1;
+  width: 50%;
+  height: 36px;
+  min-height: 36px;
+  padding: 0 0.5rem;
   font-size: 0.78125rem;
+  font-weight: 600;
+  background-color: var(--color-bg-secondary, #f3f4f6);
   color: var(--color-text-muted, #6b7280);
+  border: 1px solid var(--color-border, #d1d5db);
+  border-radius: var(--radius-md, 8px);
   white-space: nowrap;
-  flex-shrink: 0;
+  display: inline-flex !important;
+  justify-content: center !important;
+  align-items: center;
+  gap: 0.35rem;
+  margin-top: 0 !important;
+  box-sizing: border-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .card-footer-row-main .btn-amazon-small,
 .card-footer-row-main .read-more {
   flex: 1;
+  width: 50%;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   height: 36px;
   min-height: 36px;
-  padding: 0 0.75rem;
+  padding: 0 0.5rem;
   font-size: 0.84375rem;
   font-weight: 700;
   border-radius: var(--radius-md, 8px);
@@ -6995,7 +7068,8 @@ body.menu-open .nav-menu-floating-toggle {
 [data-theme="dark"] .btn-compare-card,
 [data-theme="dark"] .btn-compare-hero,
 [data-theme="dark"] .btn-favorite-card,
-[data-theme="dark"] .btn-favorite-hero {
+[data-theme="dark"] .btn-favorite-hero,
+[data-theme="dark"] .card-footer-row-main .article-meta {
   background-color: var(--color-bg-secondary, #374151);
   color: var(--color-text-main, #f3f4f6);
   border-color: var(--color-border, #4b5563);
