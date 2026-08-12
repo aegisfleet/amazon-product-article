@@ -1,0 +1,167 @@
+{
+  "analysis": {
+    "productName": "MX ANYWHERE 3S (MX1800GR)",
+    "parentAsin": "B0C6JVSPXP",
+    "productDescription": "静音性と8000dpiの高精細センサーを備え、あらゆる表面で正確に操作できるコンパクトなワイヤレスマウスです。Smart Actions対応により、ショートカット等のマクロ機能も充実しています。",
+    "productUsage": [
+      "カフェや外出先でのモバイルワーク",
+      "デスクスペースが限られた環境での利用",
+      "複数デバイスを併用する作業環境"
+    ],
+    "positivePoints": [
+      "静音設計のMagSpeed電磁気スクロールホイールを搭載",
+      "ガラス表面でも動作可能な8000dpiのダークフィールドセンサーを採用",
+      "Logi Options+のSmart Actions機能によるマクロ登録に対応",
+      "BluetoothおよびLogi Bolt（別売）のデュアルワイヤレス接続をサポート",
+      "重さ約99g、コンパクトで持ち運びに適した設計"
+    ],
+    "negativePoints": [
+      "Logi Bolt USBレシーバーが別売り",
+      "旧規格のUnifyingレシーバーには非対応",
+      "手の大きいユーザーには長時間の使用で小さく感じる可能性"
+    ],
+    "useCases": [
+      "静かなオフィス環境での作業",
+      "ノートパソコンを複数の場所へ持ち運ぶワークスタイル",
+      "プログラミングや動画編集など、マクロ機能を多用するシーン"
+    ],
+    "userStories": [
+      {
+        "userType": "モバイルワーカー",
+        "scenario": "カフェやコワーキングスペースでの頻繁な作業",
+        "experience": "クリック音が非常に静かなため、周囲を気にせず作業に集中できます。以前使っていたマウスよりもガラスのテーブルで安定して動くのが大きな決め手でした。ただし、Logi Boltレシーバーが付属していないのは少し残念です。",
+        "supportingSourceIds": [
+          "src-amazon-listing"
+        ],
+        "sentiment": "positive"
+      }
+    ],
+    "userImpression": "多くのユーザーは、静音性とガラス面でも動作するトラッキング精度の高さを高く評価しています。Smart Actions機能による操作の効率化も好評です。一方で、Logi Boltレシーバーが別売りである点やUnifyingに非対応であることに対しては、購入前に注意が必要との声が見られます。",
+    "sources": [
+      {
+        "id": "src-amazon-listing",
+        "name": "Amazon商品ページ",
+        "url": "https://www.amazon.co.jp/dp/B0C65MQZ65",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2023-06-08",
+        "author": "Logitech",
+        "conflictOfInterest": "disclosed",
+        "notes": "製品仕様、機能説明、寸法・重量などの基本情報を取得"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "ガラスなどの表面でも精確にトラッキング可能",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-amazon-listing"
+        ],
+        "crossChecked": false,
+        "notes": "ダークフィールド8000dpiセンサー搭載による公式の主張。多くのハイエンドマウスで実績のある技術。"
+      },
+      {
+        "claim": "1秒間に1000行のスクロールが可能で驚くほど静か",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-amazon-listing"
+        ],
+        "crossChecked": false,
+        "notes": "MagSpeed電磁気スクロールホイールに関する公式のスペック主張。"
+      }
+    ],
+    "lastInvestigated": "2026-08-13",
+    "competitiveAnalysis": [
+      {
+        "name": "Signature M750MGR",
+        "asin": "B0BKPL1VKW",
+        "priceComparison": "対象商品（MX ANYWHERE 3S）の方が高価ですが、トラッキング精度やSmart Actions機能などの高機能性を備えています。",
+        "featureComparison": [
+          "共通点：Logi Bolt対応、静音設計、グラファイトカラー。",
+          "相違点：対象商品は8000dpiセンサーとMagSpeedホイール搭載。M750MGRはスタンダードな機能で価格が手頃。"
+        ],
+        "differentiators": [
+          "MX ANYWHERE 3S (MX1800GR)の利点：ガラス面での使用や、超高速スクロール、高度なマクロ機能（Smart Actions）を求めるならこちら。",
+          "Signature M750MGRの利点：基本的な静音機能とLogi Bolt接続があれば十分で、コストを抑えたい場合に最適。"
+        ]
+      },
+      {
+        "name": "エレコム Slint M-TM10BBWH/EC",
+        "asin": "B08LM7WTX7",
+        "priceComparison": "対象商品と比較して非常に安価です。",
+        "featureComparison": [
+          "共通点：Bluetooth接続、静音設計、薄型・コンパクト設計。",
+          "相違点：対象商品は8000dpiの高精度センサーや専用マクロ機能を備えますが、エレコム製は4ボタン構成で基本的なプレゼンモード機能を備えたエントリーモデルです。"
+        ],
+        "differentiators": [
+          "MX ANYWHERE 3S (MX1800GR)の利点：精細なトラッキングやマクロによる業務効率化を重視するプロユース向け。",
+          "エレコム Slint M-TM10BBWH/ECの利点：必要最低限の機能で十分であり、とにかく予算を抑えたい、またはサブ機として薄さを重視するケースに最適。"
+        ]
+      },
+      {
+        "name": "Nexmora ワイヤレスマウス",
+        "asin": "B0CDWL2J7M",
+        "priceComparison": "対象商品と比較して圧倒的に安価です。",
+        "featureComparison": [
+          "共通点：Bluetooth接続対応、静音設計、コンパクト。",
+          "相違点：対象商品はハイエンド仕様で8000dpiですが、こちらは最大1600dpiの3段階DPI切替のエントリーモデルです。"
+        ],
+        "differentiators": [
+          "MX ANYWHERE 3S (MX1800GR)の利点：高いトラッキング精度とソフトウェアによる拡張性を求めるなら迷わずこちら。",
+          "Nexmora ワイヤレスマウスの利点：安価にType-C充電式のBluetoothマウスを手に入れたい場合に適しています。"
+        ]
+      },
+      {
+        "name": "Adare ワイヤレスマウス",
+        "asin": "B0FNC27GYK",
+        "priceComparison": "対象商品と比較して圧倒的に安価です。",
+        "featureComparison": [
+          "共通点：Bluetooth 5.2対応、静音設計、Type-C充電式。",
+          "相違点：対象商品が高精度センサーとソフトウェア機能を持つ一方、こちらは7色ライト搭載など異なるコンセプトのエントリーモデルです。"
+        ],
+        "differentiators": [
+          "MX ANYWHERE 3S (MX1800GR)の利点：ビジネスユースでの信頼性と高い機能性を求める場合におすすめです。",
+          "Adare ワイヤレスマウスの利点：安価でイルミネーション機能などのデザイン性を楽しみたい場合に適しています。"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "外出先やカフェなど様々な環境（ガラス面含む）で安定して作業したいモバイルワーカー",
+        "Smart Actionsによるマクロ機能を活用して作業効率を上げたいビジネスパーソン"
+      ],
+      "pros": [
+        "ガラスのテーブル等でもマウスパッド不要で正確に操作できるため、場所を選ばず快適に作業できます",
+        "静音性が高いため、静かなオフィスやカフェでも周囲を気にせずタイピングやクリックが可能です"
+      ],
+      "cons": [
+        "Logi Boltレシーバーが必要な場合は別途購入する必要があるため、Bluetooth非対応環境の方は注意が必要です",
+        "旧規格のUnifyingレシーバーとは互換性がないため、既存のUnifying環境に統合することはできません"
+      ],
+      "score": 85,
+      "scoreRationale": "[基本点: 70]\n[加点: +5] (8000dpiセンサーによるガラス面含む高いトラッキング精度)\n[加点: +5] (静音設計による作業環境への配慮)\n[加点: +10] (Smart Actions機能による高度なマクロとカスタマイズ性)\n[減点: -5] (Logi Boltレシーバーが別売りであり、価格に対して付属品が不足している印象)\n[合計: 85]"
+    },
+    "technicalSpecs": {
+      "os": "Windows 10, 11以降, macOS 11以降, Chrome OS, iPad OS 14以降, Android 9.0以降",
+      "sensor": "ダークフィールド 8000dpi",
+      "connection": "Bluetooth, Logi Bolt (USBレシーバー別売)",
+      "battery": {
+        "charging": "充電式 (USB Type-C)"
+      },
+      "dimensions": {
+        "height": "100.5mm",
+        "width": "34.4mm",
+        "depth": "65.0mm"
+      },
+      "weight": "99g",
+      "color": "グラファイト",
+      "other": [
+        "MagSpeed電磁気スクロールホイール搭載",
+        "Smart Actions対応",
+        "Unifying非対応"
+      ]
+    }
+  }
+}
