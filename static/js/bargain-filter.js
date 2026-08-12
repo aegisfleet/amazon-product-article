@@ -55,6 +55,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const categoryResetBtn = document.getElementById('bargain-category-reset-btn');
   const keywordInput = document.getElementById('bargain-keyword-input');
   const keywordClearBtn = document.getElementById('bargain-keyword-clear-btn');
+  const activeChipsContainer = document.getElementById('bargain-active-chips');
 
   if (!scoreSlider || !priceSlider || !gridEl) return;
 
@@ -223,8 +224,85 @@ document.addEventListener('DOMContentLoaded', () => {
     // Step 4: Sort
     sortProducts(filtered, currentSort);
 
-    // Step 5: Update UI
+    // Step 5: Update Active Chips
+    updateActiveChips();
+
+    // Step 6: Update UI
     updateFilterUI(filtered, keywords);
+  }
+
+  function updateActiveChips() {
+    if (!activeChipsContainer || typeof renderActiveFilterChips !== 'function') return;
+
+    const chips = [];
+    const minScore = Number.parseInt(scoreSlider.value, 10);
+    const minPrice = valueToPrice(Number.parseInt(minPriceSlider.value, 10));
+    const maxPrice = valueToPrice(Number.parseInt(priceSlider.value, 10));
+    const category = categorySelect ? categorySelect.value : '';
+    const rawQ = keywordInput ? keywordInput.value.trim() : '';
+
+    if (minScore > 0 && minScore !== 80) {
+      chips.push({
+        id: 'score',
+        icon: '🏆',
+        label: `スコア ${minScore}点以上`,
+        onRemove: () => {
+          scoreSlider.value = '80';
+          applyFilters();
+        }
+      });
+    }
+
+    if (minPrice > 100) {
+      chips.push({
+        id: 'minPrice',
+        icon: '💰',
+        label: `${formatPrice(minPrice)}〜`,
+        onRemove: () => {
+          minPriceSlider.value = '20';
+          applyFilters();
+        }
+      });
+    }
+
+    if (maxPrice < 50000) {
+      chips.push({
+        id: 'maxPrice',
+        icon: '💰',
+        label: `〜${formatPrice(maxPrice)}`,
+        onRemove: () => {
+          priceSlider.value = '1000';
+          applyFilters();
+        }
+      });
+    }
+
+    if (category) {
+      chips.push({
+        id: 'category',
+        icon: '📂',
+        label: `カテゴリ: ${category}`,
+        onRemove: () => {
+          categorySelect.value = '';
+          applyFilters();
+        }
+      });
+    }
+
+    if (rawQ) {
+      chips.push({
+        id: 'keyword',
+        icon: '🔍',
+        label: `「${rawQ}」`,
+        onRemove: () => {
+          keywordInput.value = '';
+          if (keywordClearBtn) keywordClearBtn.style.display = 'none';
+          applyFilters();
+        }
+      });
+    }
+
+    renderActiveFilterChips(activeChipsContainer, chips, resetFilters);
   }
 
   // --- Reset ---

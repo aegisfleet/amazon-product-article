@@ -241,16 +241,99 @@ document.addEventListener('DOMContentLoaded', function () {
         return count;
     }
 
+    function updateSearchActiveChips() {
+        const activeChipsContainer = document.getElementById('search-active-chips');
+        if (!activeChipsContainer || typeof renderActiveFilterChips !== 'function') return;
+
+        const scoreMinEl = document.getElementById('filter-score-min');
+        const scoreMaxEl = document.getElementById('filter-score-max');
+        const priceMinEl = document.getElementById('filter-price-min');
+        const priceMaxEl = document.getElementById('filter-price-max');
+
+        const scoreMin = scoreMinEl ? scoreMinEl.value.trim() : '';
+        const scoreMax = scoreMaxEl ? scoreMaxEl.value.trim() : '';
+        const priceMin = priceMinEl ? priceMinEl.value.trim() : '';
+        const priceMax = priceMaxEl ? priceMaxEl.value.trim() : '';
+
+        const triggerSearch = () => {
+            updateFilterBadge();
+            const searchInput = document.getElementById('search-input');
+            if (searchInput) {
+                const event = new Event('input', { bubbles: true });
+                searchInput.dispatchEvent(event);
+            }
+        };
+
+        const chips = [];
+
+        if (scoreMin && scoreMin !== '70') {
+            chips.push({
+                id: 'scoreMin',
+                icon: '🏆',
+                label: `スコア ${scoreMin}点以上`,
+                onRemove: () => {
+                    if (scoreMinEl) scoreMinEl.value = '70';
+                    triggerSearch();
+                }
+            });
+        }
+
+        if (scoreMax) {
+            chips.push({
+                id: 'scoreMax',
+                icon: '🏆',
+                label: `スコア ${scoreMax}点以下`,
+                onRemove: () => {
+                    if (scoreMaxEl) scoreMaxEl.value = '';
+                    triggerSearch();
+                }
+            });
+        }
+
+        if (priceMin) {
+            chips.push({
+                id: 'priceMin',
+                icon: '💰',
+                label: `¥${Number(priceMin).toLocaleString()}〜`,
+                onRemove: () => {
+                    if (priceMinEl) priceMinEl.value = '';
+                    triggerSearch();
+                }
+            });
+        }
+
+        if (priceMax) {
+            chips.push({
+                id: 'priceMax',
+                icon: '💰',
+                label: `〜¥${Number(priceMax).toLocaleString()}`,
+                onRemove: () => {
+                    if (priceMaxEl) priceMaxEl.value = '';
+                    triggerSearch();
+                }
+            });
+        }
+
+        const resetAll = () => {
+            const filterResetBtn = document.getElementById('filter-reset-btn');
+            if (filterResetBtn) filterResetBtn.click();
+        };
+
+        renderActiveFilterChips(activeChipsContainer, chips, resetAll);
+    }
+
     function updateFilterBadge() {
         const badge = document.getElementById('filter-count-badge');
-        if (!badge) return;
-        const count = getActiveFilterCount();
-        badge.textContent = String(count);
-        if (count > 0) {
-            badge.style.display = 'inline-flex';
-        } else {
-            badge.style.display = 'none';
+        if (badge) {
+            const count = getActiveFilterCount();
+            badge.textContent = String(count);
+            if (count > 0) {
+                badge.style.display = 'inline-flex';
+            } else {
+                badge.style.display = 'none';
+            }
         }
+        updateSearchActiveChips();
     }
 
     const filterToggleBtn = document.getElementById('search-filter-toggle-btn');
