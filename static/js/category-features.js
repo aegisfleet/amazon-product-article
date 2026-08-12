@@ -200,8 +200,119 @@ function initCategoryFeatures() {
 
         const visibleCount = allCards.filter(card => card.style.display !== 'none').length;
         updateUIElements(visibleCount, allCards.length, filters.keywords);
+        updateActiveChips();
 
         updateUrl(filters);
+    }
+
+    function updateActiveChips() {
+        const activeChipsContainer = document.getElementById('category-active-chips');
+        if (!activeChipsContainer || typeof renderActiveFilterChips !== 'function') return;
+
+        const filters = getFilterValues();
+        const chips = [];
+
+        if (filters.minScore > 0) {
+            chips.push({
+                id: 'score',
+                icon: '🏆',
+                label: `スコア ${filters.minScore}点以上`,
+                onRemove: () => {
+                    if (scoreSlider) scoreSlider.value = '0';
+                    filterCards();
+                }
+            });
+        }
+
+        if (filters.minPrice > 100) {
+            chips.push({
+                id: 'minPrice',
+                icon: '💰',
+                label: `${formatPrice(filters.minPrice)}〜`,
+                onRemove: () => {
+                    if (minPriceSlider) minPriceSlider.value = '20';
+                    filterCards();
+                }
+            });
+        }
+
+        if (filters.maxPrice < 50000) {
+            chips.push({
+                id: 'maxPrice',
+                icon: '💰',
+                label: `〜${formatPrice(filters.maxPrice)}`,
+                onRemove: () => {
+                    if (priceSlider) priceSlider.value = '1000';
+                    filterCards();
+                }
+            });
+        }
+
+        if (filters.showOnlyDeals) {
+            chips.push({
+                id: 'deal',
+                icon: '🏷️',
+                label: 'タイムセール対象のみ',
+                onRemove: () => {
+                    if (dealFilter) dealFilter.checked = false;
+                    filterCards();
+                }
+            });
+        }
+
+        if (filters.category) {
+            chips.push({
+                id: 'category',
+                icon: '📂',
+                label: `カテゴリ: ${filters.category}`,
+                onRemove: () => {
+                    if (categorySelect) categorySelect.value = '';
+                    filterCards();
+                }
+            });
+        }
+
+        if (keywordSearch && keywordSearch.value.trim()) {
+            const rawQ = keywordSearch.value.trim();
+            chips.push({
+                id: 'keyword',
+                icon: '🔍',
+                label: `「${rawQ}」`,
+                onRemove: () => {
+                    keywordSearch.value = '';
+                    if (keywordClearBtn) keywordClearBtn.style.display = 'none';
+                    filterCards();
+                }
+            });
+        }
+
+        if (filters.requiredSpecs.length > 0) {
+            const specLabels = {
+                '5g': '5G対応',
+                'amoled': '有機EL',
+                'gps': 'GPS内蔵',
+                'felica': 'FeliCa/おサイフケータイ',
+                'waterproof': '防水対応'
+            };
+            filters.requiredSpecs.forEach(spec => {
+                chips.push({
+                    id: `spec-${spec}`,
+                    icon: '⚙️',
+                    label: specLabels[spec] || spec,
+                    onRemove: () => {
+                        const specInput = document.querySelector(`input[name="spec"][value="${spec}"]`);
+                        if (specInput) specInput.checked = false;
+                        filterCards();
+                    }
+                });
+            });
+        }
+
+        const resetAll = () => {
+            if (filterReset) filterReset.click();
+        };
+
+        renderActiveFilterChips(activeChipsContainer, chips, resetAll);
     }
 
     const debouncedFilterCards = debounce(filterCards, 300);
