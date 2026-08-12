@@ -107,19 +107,28 @@ GitHub Actions CIはLintやBiomeのエラーがあると失敗するため、い
 - `/src/scripts/`: メインアプリケーション of TypeScript CLIエントリポイント。
 - `/data/`: 商品データや調査結果。一時ファイルはコミットしないこと。
 
-### 4.2 UI/UX 実装（コンポーネントの同期）
+### 4.2 UI/UX 実装（コンポーネントの同期と注意点）
 
-商品の魅力を伝えるUIコンポーネントは、以下の箇所で整合性を保つように実装すること。
+商品の魅力を伝えるUIコンポーネントおよびカード要素は、以下の全箇所でDOM構造・クラス名・バッジデザイン（M3カラーバッジ `.m3-badge` 等）の整合性を必ず保つように実装すること。
 
 | 場所 | 実装ファイル | 役割 |
 |---|---|---|
 | **商品詳細 (ヒーローカード)** | `layouts/partials/product-hero.html` | 記事冒頭のメインカード |
+| **汎用・検索カード** | `layouts/partials/product-card.html` | 記事一覧・検索・共通カード部品 |
 | **子カテゴリ一覧** | `layouts/_default/list.html` | 詳細・子カテゴリページのリスト項目 |
 | **親カテゴリ一覧** | `layouts/_default/parent-category.html` | 親カテゴリページのリスト項目 |
-| **検索/ウィジェット** | `layouts/partials/product-card.html` | その他の汎用カード部品 |
+| **ブランド一覧** | `layouts/_default/brand-list.html` | ブランド別ページのリスト項目 |
+| **おすすめ一覧** | `layouts/recommendations/list.html` | 注目おすすめ商品のリスト項目 |
+| **動的フィルタカード** | `static/js/filter-common.js` | `/bargain/` や `/deals/` ページ等でJS動的生成されるカード |
+| **お気に入りカード** | `layouts/favorites/list.html` | お気に入り保存済み商品のJS生成カード |
+| **ホーム動的読み込み** | `static/js/home-load-more.js` | ホーム画面「もっと見る」で追加ロードされるカード |
 
-> [!NOTE]
-> すべて Hugo テンプレート側で HTML を生成する。`ArticleGenerator.ts` は Front Matter へのデータ出力のみを担当する。
+> [!IMPORTANT]
+> **商品カード修正時の注意点**:
+> 1. **Hugo テンプレートと JS 動的描画の同時更新**:
+>    商品カードのマークアップやクラス名（例: `.card-score`, `.card-points`, `.meta-price-block`, `.meta-score-block`, M3バッジクラス `.m3-badge` 等）を修正する際は、Hugo テンプレート（`layouts/` 配下）だけでなく、クライアントサイド JS（特に `static/js/filter-common.js` の `renderCardMeta` 関数など）の動的HTML生成処理も必ず同時に同期・更新すること。
+> 2. **DOM構造の維持**:
+>    価格・ポイントブロック（`.meta-price-block`）とスコアブロック（`.meta-score-block`）の二重ネスト構造を統一し、横並びや中央揃え（`align-items: center`）のCSSスタイルがどのページでも一貫して適用されるようにすること。
 
 ### 4.3 CSS・スタイル実装の注意点（モバイル表示でのはみ出し防止）
 

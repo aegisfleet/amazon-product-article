@@ -147,7 +147,7 @@ function createPickupCardMeta(score, scoreClass, price) {
     container.className = 'pickup-card-meta';
 
     const scoreSpan = document.createElement('span');
-    scoreSpan.className = 'pickup-card-score ' + scoreClass;
+    scoreSpan.className = 'pickup-card-score m3-badge m3-badge-score ' + scoreClass;
     scoreSpan.textContent = '🏆 ' + score + '点';
     container.appendChild(scoreSpan);
 

@@ -160,26 +160,37 @@ function renderCardMeta(p) {
   const mainRow = document.createElement('div');
   mainRow.className = 'meta-main-row';
 
+  const priceBlock = document.createElement('div');
+  priceBlock.className = 'meta-price-block';
+
   if (p.price) {
     const price = document.createElement('span');
     price.className = 'card-price';
     price.innerHTML = `<span aria-hidden="true">💰</span> ${p.price}`;
-    mainRow.appendChild(price);
+    priceBlock.appendChild(price);
   }
 
   if (p.loyaltyPoints) {
     const points = document.createElement('span');
-    points.className = 'card-points';
+    points.className = 'card-points m3-badge m3-badge-points';
     points.innerHTML = `<span aria-hidden="true">🎁</span> ${p.loyaltyPoints}pt`;
-    mainRow.appendChild(points);
+    priceBlock.appendChild(points);
+  }
+
+  if (priceBlock.children.length > 0) {
+    mainRow.appendChild(priceBlock);
   }
 
   if (p.score) {
+    const scoreBlock = document.createElement('div');
+    scoreBlock.className = 'meta-score-block';
     const score = document.createElement('span');
-    score.className = `card-score ${scoreClass(p.score)}`;
+    score.className = `card-score m3-badge m3-badge-score ${scoreClass(p.score)}`;
     score.innerHTML = `<span aria-hidden="true">🏆</span> ${p.score}点`;
-    mainRow.appendChild(score);
+    scoreBlock.appendChild(score);
+    mainRow.appendChild(scoreBlock);
   }
+
   metaExt.appendChild(mainRow);
 
   const detailsRow = document.createElement('div');
@@ -187,14 +198,14 @@ function renderCardMeta(p) {
 
   if (p.isAmazonDirect) {
     const direct = document.createElement('span');
-    direct.className = 'badge-amazon-direct';
+    direct.className = 'badge-amazon-direct m3-badge m3-badge-primary';
     direct.textContent = 'Amazon直販';
     detailsRow.appendChild(direct);
   }
 
   if (p.isAmazonHaul) {
     const haul = document.createElement('span');
-    haul.className = 'badge-amazon-haul';
+    haul.className = 'badge-amazon-haul m3-badge m3-badge-secondary';
     haul.textContent = 'Amazon Haul';
     detailsRow.appendChild(haul);
   }
@@ -202,28 +213,28 @@ function renderCardMeta(p) {
   if (p.dealBadge) {
     const deal = document.createElement('span');
     const isPrime = p.dealAccessType === 'PRIME_EXCLUSIVE' || p.dealAccessType === 'PRIME_EARLY_ACCESS';
-    deal.className = `badge-deal ${isPrime ? 'deal-prime' : 'deal-standard'}`;
+    deal.className = `badge-deal m3-badge m3-badge-deal ${isPrime ? 'deal-prime' : 'deal-standard'}`;
     deal.textContent = p.dealBadge;
     detailsRow.appendChild(deal);
   }
 
   if (p.savingsPercentage) {
     const savings = document.createElement('span');
-    savings.className = 'badge-savings';
+    savings.className = 'badge-savings m3-badge m3-badge-sale';
     savings.textContent = `${p.savingsPercentage}% OFF`;
     detailsRow.appendChild(savings);
   }
 
   if (p.pointsRate && p.pointsRate >= 10.0) {
     const pointsRateBadge = document.createElement('span');
-    pointsRateBadge.className = 'badge-points-rate';
+    pointsRateBadge.className = 'badge-points-rate m3-badge m3-badge-points';
     pointsRateBadge.textContent = `ポイント還元率${Math.round(p.pointsRate)}%`;
     detailsRow.appendChild(pointsRateBadge);
   }
 
   if (p.availability) {
     const avail = document.createElement('span');
-    avail.className = 'badge-availability';
+    avail.className = 'badge-availability m3-badge m3-badge-tertiary';
     avail.textContent = p.availability;
     detailsRow.appendChild(avail);
   }

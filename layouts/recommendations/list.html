@@ -390,7 +390,7 @@
                         {{- if ge $score 80 -}}{{- $scoreClass = "score-excellent" -}}
                         {{- else if ge $score 60 -}}{{- $scoreClass = "score-good" -}}
                         {{- end -}}
-                        <span class="card-score {{ $scoreClass }}" style="font-size:0.78rem; padding:2px 6px;">🏆 {{-
+                        <span class="card-score m3-badge m3-badge-score {{ $scoreClass }}" style="font-size:0.78rem; padding:2px 6px;">🏆 {{-
                             $score -}}点</span>
                         {{- else -}}
                         <span style="color: var(--color-text-muted); font-size:0.82rem;">—</span>
@@ -505,7 +505,7 @@
                         {{- else if ge $score 60 -}}
                         {{- $scoreClass = "score-good" -}}
                         {{- end -}}
-                        <span class="card-score {{ $scoreClass }}" style="font-size: 0.85rem; padding: 2px 8px;">
+                        <span class="card-score m3-badge m3-badge-score {{ $scoreClass }}" style="font-size: 0.85rem; padding: 2px 8px;">
                             🏆 {{- $score -}}点
                         </span>
                         {{- end -}}
