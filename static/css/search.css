@@ -13,6 +13,7 @@
     /* スクロール位置の余裕を確保 */
 }
 
+
 .search-input-wrapper {
     position: relative;
     display: flex;
@@ -949,7 +950,7 @@
 }
 
 .search-filter-toggle-wrapper {
-    margin-bottom: 0.75rem;
+    margin-bottom: 0;
 }
 
 .search-filters-wrapper {
