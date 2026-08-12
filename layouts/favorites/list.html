@@ -181,11 +181,14 @@
                 ? `<img src="${escapeHTML(item.image)}" alt="${escapeHTML(item.title)}" loading="lazy" decoding="async">`
                 : `<div class="card-image-noimage" aria-hidden="true">画像なし</div>`;
 
-            const scoreHTML = item.score
-                ? `<span class="card-score ${scoreClass(item.score)}"><span aria-hidden="true">🏆</span> ${item.score}点</span>`
-                : '';
             const priceHTML = item.price
                 ? `<span class="card-price"><span aria-hidden="true">💰</span> ${escapeHTML(item.price)}</span>`
+                : '';
+            const priceBlockHTML = priceHTML
+                ? `<div class="meta-price-block">${priceHTML}</div>`
+                : '';
+            const scoreHTML = item.score
+                ? `<div class="meta-score-block"><span class="card-score m3-badge m3-badge-score ${scoreClass(item.score)}"><span aria-hidden="true">🏆</span> ${item.score}点</span></div>`
                 : '';
             const categoryHTML = item.category
                 ? `<span class="card-tag">${escapeHTML(item.category)}</span>`
@@ -205,7 +208,7 @@
                 </div>
                 <div class="card-meta-ext">
                     <div class="meta-main-row">
-                        ${priceHTML}
+                        ${priceBlockHTML}
                         ${scoreHTML}
                     </div>
                 </div>
