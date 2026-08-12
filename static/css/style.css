@@ -2998,8 +2998,8 @@ button.category-pill {
   border-bottom: 1px solid var(--color-border);
 }
 
-.toc-sidebar-body nav > ul,
-.toc-sidebar-body #TableOfContents > ul {
+.toc-sidebar-body nav>ul,
+.toc-sidebar-body #TableOfContents>ul {
   list-style: none;
   padding: 0;
   margin: 0;
@@ -3279,8 +3279,8 @@ button.category-pill {
   padding-right: 4px;
 }
 
-.toc-modal-body nav > ul,
-.toc-modal-body #TableOfContents > ul {
+.toc-modal-body nav>ul,
+.toc-modal-body #TableOfContents>ul {
   list-style: none;
   padding: 0;
   margin: 0;
@@ -5546,9 +5546,11 @@ body.toc-modal-open {
   0% {
     transform: scale(1);
   }
+
   50% {
     transform: scale(1.4);
   }
+
   100% {
     transform: scale(1);
   }
@@ -6408,15 +6410,6 @@ body.menu-open .nav-menu-floating-toggle {
 /* ==========================================================================
    Compare Feature Styles (比較機能 / トレイ & モーダル)
    ========================================================================== */
-
-
-
-.card-footer-row {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
-}
 
 /* 1行目: 比較・保存ボタン (左右幅50%ずつ) */
 .card-footer-row-sub {
@@ -7304,6 +7297,7 @@ body.menu-open .nav-menu-floating-toggle {
   0% {
     background-position: -200% 0;
   }
+
   100% {
     background-position: 200% 0;
   }
@@ -7323,12 +7317,10 @@ body.menu-open .nav-menu-floating-toggle {
 }
 
 .skeleton-element {
-  background: linear-gradient(
-    90deg,
-    var(--color-bg-secondary, #f1f5f9) 25%,
-    var(--color-bg-tertiary, #e2e8f0) 37%,
-    var(--color-bg-secondary, #f1f5f9) 63%
-  );
+  background: linear-gradient(90deg,
+      var(--color-bg-secondary, #f1f5f9) 25%,
+      var(--color-bg-tertiary, #e2e8f0) 37%,
+      var(--color-bg-secondary, #f1f5f9) 63%);
   background-size: 400% 100%;
   animation: skeleton-shimmer 1.4s ease infinite;
   border-radius: 4px;
@@ -7398,12 +7390,10 @@ body.menu-open .nav-menu-floating-toggle {
 }
 
 [data-theme="dark"] .skeleton-element {
-  background: linear-gradient(
-    90deg,
-    #1e293b 25%,
-    #334155 37%,
-    #1e293b 63%
-  );
+  background: linear-gradient(90deg,
+      #1e293b 25%,
+      #334155 37%,
+      #1e293b 63%);
   background-size: 400% 100%;
 }
 
@@ -7429,6 +7419,7 @@ body.menu-open .nav-menu-floating-toggle {
   background-color: var(--color-primary, #2563eb);
   transition: width 0.1s linear;
 }
+
 /* Font Size Switcher */
 fieldset.font-size-switcher {
   display: inline-flex;
@@ -7615,4 +7606,3 @@ legend.font-size-label {
 .article-content .keepa-note {
   font-size: calc(0.8rem * var(--article-font-scale, 1));
 }
-
