@@ -272,7 +272,7 @@ function initCategoryFeatures() {
             });
         }
 
-        if (keywordSearch && keywordSearch.value.trim()) {
+        if (keywordSearch?.value.trim()) {
             const rawQ = keywordSearch.value.trim();
             chips.push({
                 id: 'keyword',
