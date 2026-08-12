@@ -61,6 +61,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const categoryResetBtn = document.getElementById('deals-category-reset-btn');
   const keywordInput = document.getElementById('deals-keyword-input');
   const keywordClearBtn = document.getElementById('deals-keyword-clear-btn');
+  const activeChipsContainer = document.getElementById('deals-active-chips');
 
   const scoreValueEl = document.getElementById('deals-score-value');
   const minPriceValueEl = document.getElementById('deals-min-price-value');
@@ -231,6 +232,9 @@ document.addEventListener('DOMContentLoaded', () => {
     // Step 4: Sort
     sortFilteredProducts(filtered, currentSort);
 
+    // Step 5: Update Active Chips
+    updateActiveChips();
+
     // Update Keyword count badge
     updateKeywordBadge(filtered.length, keywords);
 
@@ -256,6 +260,111 @@ document.addEventListener('DOMContentLoaded', () => {
       gridEl.classList.remove('bargain-grid-fade');
       updateUrlParams();
     }, 200);
+  }
+
+  function updateActiveChips() {
+    if (!activeChipsContainer || typeof renderActiveFilterChips !== 'function') return;
+
+    const chips = [];
+    const minScore = Number.parseInt(scoreSlider.value, 10);
+    const minPrice = valueToPrice(Number.parseInt(minPriceSlider.value, 10));
+    const maxPrice = valueToPrice(Number.parseInt(priceSlider.value, 10));
+    const minDiscount = Number.parseInt(discountSlider.value, 10);
+    const dealType = dealTypeSelect ? dealTypeSelect.value : '';
+    const category = categorySelect ? categorySelect.value : '';
+    const rawQ = keywordInput ? keywordInput.value.trim() : '';
+
+    if (minScore > 0 && minScore !== 80) {
+      chips.push({
+        id: 'score',
+        icon: '🏆',
+        label: `スコア ${minScore}点以上`,
+        onRemove: () => {
+          scoreSlider.value = '80';
+          applyFilters();
+        }
+      });
+    }
+
+    if (minPrice > 100) {
+      chips.push({
+        id: 'minPrice',
+        icon: '💰',
+        label: `${formatPrice(minPrice)}〜`,
+        onRemove: () => {
+          minPriceSlider.value = '20';
+          applyFilters();
+        }
+      });
+    }
+
+    if (maxPrice < 50000) {
+      chips.push({
+        id: 'maxPrice',
+        icon: '💰',
+        label: `〜${formatPrice(maxPrice)}`,
+        onRemove: () => {
+          priceSlider.value = '1000';
+          applyFilters();
+        }
+      });
+    }
+
+    if (minDiscount > 0) {
+      chips.push({
+        id: 'discount',
+        icon: '📉',
+        label: `${minDiscount}%OFF以上`,
+        onRemove: () => {
+          discountSlider.value = '0';
+          applyFilters();
+        }
+      });
+    }
+
+    if (dealType) {
+      const dealTypeLabels = {
+        prime: 'プライム会員限定',
+        limited: '限定タイムセール',
+        standard: 'タイムセール'
+      };
+      chips.push({
+        id: 'dealType',
+        icon: '🏷️',
+        label: dealTypeLabels[dealType] || dealType,
+        onRemove: () => {
+          dealTypeSelect.value = '';
+          applyFilters();
+        }
+      });
+    }
+
+    if (category) {
+      chips.push({
+        id: 'category',
+        icon: '📂',
+        label: `カテゴリ: ${category}`,
+        onRemove: () => {
+          categorySelect.value = '';
+          applyFilters();
+        }
+      });
+    }
+
+    if (rawQ) {
+      chips.push({
+        id: 'keyword',
+        icon: '🔍',
+        label: `「${rawQ}」`,
+        onRemove: () => {
+          keywordInput.value = '';
+          if (keywordClearBtn) keywordClearBtn.style.display = 'none';
+          applyFilters();
+        }
+      });
+    }
+
+    renderActiveFilterChips(activeChipsContainer, chips, resetFilters);
   }
 
   // --- Reset ---
