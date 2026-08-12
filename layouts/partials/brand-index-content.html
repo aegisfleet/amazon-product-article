@@ -65,13 +65,16 @@
         </div>
     </div>
 
-    <!-- Brand Grid -->
-    <div id="brand-grid" class="brand-grid">
+    <!-- Brand Grid (Material Design 3 Filter Chips) -->
+    <div id="brand-grid" class="brand-filter-chips">
         {{- range sort $brandList "sort_key" "asc" -}}
-        <a href="{{ `brand/` | relURL }}{{ .slug }}/" class="brand-card" data-brand-name="{{ .name | lower }}" data-brand-slug="{{ .slug | lower }}">
-            <span class="brand-grid-icon">{{ .icon }}</span>
-            <span class="brand-name">{{ .name }}</span>
-            <span class="brand-count">{{ .count }}件</span>
+        <a href="{{ `brand/` | relURL }}{{ .slug }}/" class="md3-chip brand-card" data-brand-name="{{ .name | lower }}" data-brand-slug="{{ .slug | lower }}">
+            <svg class="md3-chip-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path>
+                <line x1="7" y1="7" x2="7.01" y2="7"></line>
+            </svg>
+            <span class="md3-chip-text">{{ .name }}</span>
+            <span class="md3-chip-count">{{ .count }}件</span>
         </a>
         {{- end -}}
     </div>
