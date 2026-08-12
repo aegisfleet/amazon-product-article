@@ -2478,16 +2478,78 @@ button.category-pill {
    BRAND SECTION
    ===================================================== */
 
-/* Brand Dropdown (Mobile) */
+/* Brand Dropdown (Deprecated / Fallback) */
 .brand-dropdown-container {
   display: none;
-  flex-direction: column;
-  gap: var(--spacing-xs);
-  margin-bottom: var(--spacing-lg);
-  padding: var(--spacing-md);
-  background: var(--color-bg-card);
+}
+
+/* Material Design 3 Filter Chips for Brands */
+.brand-filter-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 0.625rem;
+  margin-bottom: var(--spacing-xl);
+}
+
+.md3-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  padding: 0.4rem 0.75rem;
+  border-radius: 9999px;
+  background-color: var(--color-bg-card);
   border: 1px solid var(--color-border);
-  border-radius: var(--radius-lg);
+  color: var(--color-text-main);
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+}
+
+.md3-chip:hover {
+  background-color: var(--color-bg-secondary);
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-sm);
+}
+
+.md3-chip:active {
+  transform: translateY(0);
+}
+
+.md3-chip-icon {
+  width: 1rem;
+  height: 1rem;
+  flex-shrink: 0;
+  color: var(--color-primary);
+  opacity: 0.85;
+}
+
+.md3-chip-text {
+  white-space: nowrap;
+}
+
+.md3-chip-count {
+  font-size: 0.75rem;
+  font-weight: 500;
+  padding: 0.125rem 0.45rem;
+  border-radius: 9999px;
+  background-color: var(--color-bg-secondary);
+  color: var(--color-text-secondary);
+  margin-left: 0.125rem;
+  transition: all 0.2s ease;
+}
+
+.md3-chip:hover .md3-chip-count {
+  background-color: rgba(37, 99, 235, 0.12);
+  color: var(--color-primary);
+}
+
+[data-theme="dark"] .md3-chip:hover .md3-chip-count {
+  background-color: rgba(96, 165, 250, 0.2);
+  color: var(--color-primary-light, #93c5fd);
 }
 
 /* Brand Filter Component */
