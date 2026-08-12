@@ -2520,11 +2520,12 @@ button.category-pill {
 }
 
 .md3-chip-icon {
-  width: 1rem;
-  height: 1rem;
+  font-size: 1rem;
+  line-height: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   flex-shrink: 0;
-  color: var(--color-primary);
-  opacity: 0.85;
 }
 
 .md3-chip-text {
