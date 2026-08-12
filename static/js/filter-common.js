@@ -645,3 +645,73 @@ function renderSkeletonGrid(count = 6) {
   return fragment;
 }
 
+/**
+ * Material Design 3 アクティブフィルターチップ群を動的描画する共通関数
+ * @param {HTMLElement} containerEl - チップを表示するコンテナ要素
+ * @param {Array<{id: string, label: string, icon: string, onRemove: Function}>} chips - 適用中のフィルターチップ情報
+ * @param {Function} [onClearAll] - すべての条件を解除するコールバック関数
+ */
+function renderActiveFilterChips(containerEl, chips, onClearAll) {
+  if (!containerEl) return;
+
+  if (!chips || chips.length === 0) {
+    containerEl.innerHTML = '';
+    containerEl.style.display = 'none';
+    return;
+  }
+
+  containerEl.innerHTML = '';
+  containerEl.style.display = 'flex';
+
+  const labelEl = document.createElement('span');
+  labelEl.className = 'm3-active-chips-label';
+  labelEl.innerHTML = '<span aria-hidden="true">🏷️</span> 適用中:';
+  containerEl.appendChild(labelEl);
+
+  chips.forEach((chip) => {
+    const chipEl = document.createElement('span');
+    chipEl.className = 'm3-active-chip';
+
+    if (chip.icon) {
+      const iconEl = document.createElement('span');
+      iconEl.className = 'm3-active-chip-icon';
+      iconEl.setAttribute('aria-hidden', 'true');
+      iconEl.textContent = chip.icon;
+      chipEl.appendChild(iconEl);
+    }
+
+    const textEl = document.createElement('span');
+    textEl.textContent = chip.label;
+    chipEl.appendChild(textEl);
+
+    const closeBtn = document.createElement('button');
+    closeBtn.type = 'button';
+    closeBtn.className = 'm3-active-chip-close';
+    closeBtn.title = `${chip.label}の条件を解除`;
+    closeBtn.setAttribute('aria-label', `${chip.label}の条件を解除`);
+    closeBtn.textContent = '✕';
+
+    closeBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      if (typeof chip.onRemove === 'function') {
+        chip.onRemove();
+      }
+    });
+
+    chipEl.appendChild(closeBtn);
+    containerEl.appendChild(chipEl);
+  });
+
+  if (chips.length >= 2 && typeof onClearAll === 'function') {
+    const clearAllBtn = document.createElement('button');
+    clearAllBtn.type = 'button';
+    clearAllBtn.className = 'm3-active-chips-clear-all';
+    clearAllBtn.innerHTML = 'すべて解除 ✕';
+    clearAllBtn.title = 'すべてのフィルタ条件を解除';
+    clearAllBtn.setAttribute('aria-label', 'すべてのフィルタ条件を解除');
+    clearAllBtn.addEventListener('click', () => {
+      onClearAll();
+    });
+    containerEl.appendChild(clearAllBtn);
+  }
+}
