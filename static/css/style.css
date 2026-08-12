@@ -6454,26 +6454,21 @@ body.menu-open .nav-menu-floating-toggle {
 }
 
 .card-footer-row-main .article-meta {
-  flex: 1;
-  width: 50%;
-  height: 36px;
-  min-height: 36px;
-  padding: 0 0.5rem;
   font-size: 0.78125rem;
-  font-weight: 600;
-  background-color: var(--color-bg-secondary, #f3f4f6);
+  font-weight: 500;
   color: var(--color-text-muted, #6b7280);
-  border: 1px solid var(--color-border, #d1d5db);
-  border-radius: var(--radius-md, 8px);
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
   white-space: nowrap;
   display: inline-flex !important;
-  justify-content: center !important;
+  justify-content: flex-start !important;
   align-items: center;
   gap: 0.35rem;
   margin-top: 0 !important;
-  box-sizing: border-box;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  height: 36px;
+  min-height: 36px;
+  cursor: default;
 }
 
 .card-footer-row-main .btn-amazon-small,
@@ -7061,8 +7056,7 @@ body.menu-open .nav-menu-floating-toggle {
 [data-theme="dark"] .btn-compare-card,
 [data-theme="dark"] .btn-compare-hero,
 [data-theme="dark"] .btn-favorite-card,
-[data-theme="dark"] .btn-favorite-hero,
-[data-theme="dark"] .card-footer-row-main .article-meta {
+[data-theme="dark"] .btn-favorite-hero {
   background-color: var(--color-bg-secondary, #374151);
   color: var(--color-text-main, #f3f4f6);
   border-color: var(--color-border, #4b5563);
