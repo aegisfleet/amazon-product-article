@@ -139,6 +139,18 @@ GitHub Actions CIはLintやBiomeのエラーがあると失敗するため、い
   - セレクトボックスを定義するCSS（例: `.bargain-select`）には、必ず `width: 100%` および `max-width: 100%` を明示すること。
   - 親のflexコンテナ下で他の要素と横並びにする場合は、合わせて `min-width: 0`（または `flex: 1`）を付与して親の幅に縮小追従できるようにすること。
 
+### 4.4 検索・フィルター機能改修時の注意点
+
+検索・フィルターコントロールや表示UIを改修・拡張する際は、サイト全体で一貫した操作性とデザインを提供するため、以下の注意事項を必ず遵守すること。
+
+- **全フィルター対象画面での整合性と同時同期**:
+  本システムには「トップページ (`/`)」「あともう一品 (`/bargain/`)」「セール対象 (`/deals/`)」「親カテゴリ (`layouts/_default/parent-category.html`)」「子カテゴリ (`layouts/_default/list.html`)」「ブランド一覧 (`layouts/_default/brand-list.html`)」など複数箇所に検索・フィルターUIが存在する。
+  パネル構造やM3デザイン、アクティブフィルターチップ（`renderActiveFilterChips`）の連動ロジックを変更する際は、全該当ページのHugoテンプレートおよび対応するクライアントJS（`filter-common.js`, `bargain-filter.js`, `deals-filter.js`, `category-features.js`, `search.js` 等）を漏れなく同時に更新・同期すること。
+- **M3 アクティブフィルターチップの配置と解除連携**:
+  フィルターパネルには適用中条件を動的表示するコンテナ（`<div id="...-active-chips" class="m3-active-chips-container">`）を必ず配置し、ユーザーがワンタップ（✕ボタン）で個別および一括クリアできるよう `renderActiveFilterChips` に適切な `onRemove` / `resetAll` ハンドラを登録すること。
+- **入力要素のレスポンシブ・はみ出し防止**:
+  セレクトボックスやテキスト入力領域、範囲指定スライダーは、どの画面幅でも見切れや画面外へのはみ出しが発生しないよう、`width: 100%`, `max-width: 100%`, `min-width: 0` のスタイル指定を統一維持すること。
+
 ---
 
 ## 5. データ管理とキャッシュ操作
