@@ -69,14 +69,14 @@ M3 タイプスケールに準拠し、CSS変数として共通管理します�
 
 | タイプスタイル | CSS変数名 | font-size (Desktop / Mobile) | line-height | font-weight | letter-spacing | 用途・適用コンポーネント |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| **Display Large** | `--md-sys-typescale-display-large` | 3.5rem (57px) / 2.5rem (40px) | 1.15 | 700 | -0.25px | ヒーローメインキャッチ |
-| **Headline Medium** | `--md-sys-typescale-headline-medium` | 1.75rem (28px) / 1.5rem (24px) | 1.25 | 600 | 0px | セクションタイトル（「本日の注目商品」等） |
-| **Title Large** | `--md-sys-typescale-title-large` | 1.375rem (22px) / 1.25rem (20px) | 1.28 | 600 | 0px | 商品カードタイトル |
-| **Title Medium** | `--md-sys-typescale-title-medium` | 1.0rem (16px) / 1.0rem (16px) | 1.35 | 600 | 0.15px | フィルターパネル見出し、サブセクション名 |
-| **Body Large** | `--md-sys-typescale-body-large` | 1.0rem (16px) / 0.9375rem (15px) | 1.5 | 400 | 0.5px | 本文、商品説明文、注意事項 |
-| **Body Medium** | `--md-sys-typescale-body-medium` | 0.875rem (14px) / 0.875rem (14px) | 1.43 | 400 | 0.25px | 商品スペック（重量・サイズ・素材等） |
-| **Label Large** | `--md-sys-typescale-label-large` | 0.875rem (14px) / 0.875rem (14px) | 1.43 | 500 | 0.1px | CTAボタンテキスト、検索フォーム入力値 |
-| **Label Small** | `--md-sys-typescale-label-small` | 0.6875rem (11px) / 0.6875rem (11px) | 1.45 | 500 | 0.5px | 評価スコア・価格バッジ、フッター権利表記 |
+| **Display Large** | `--md-sys-typescale-display-large` | 3.5rem (56px) / 2.5rem (40px) | 1.15 | 700 | -0.25px | ヒーローメインキャッチ |
+| **Headline Medium** | `--md-sys-typescale-headline-medium` | 1.875rem (30px) / 1.625rem (26px) | 1.25 | 600 | 0px | セクションタイトル（「本日の注目商品」等） |
+| **Title Large** | `--md-sys-typescale-title-large` | 1.5rem (24px) / 1.375rem (22px) | 1.3 | 600 | 0px | 商品カードタイトル |
+| **Title Medium** | `--md-sys-typescale-title-medium` | 1.125rem (18px) / 1.0625rem (17px) | 1.35 | 600 | 0.15px | フィルターパネル見出し、サブセクション名 |
+| **Body Large** | `--md-sys-typescale-body-large` | 1.0625rem (17px) / 1.0rem (16px) | 1.6 | 400 | 0.5px | 本文、商品説明文、注意事項 |
+| **Body Medium** | `--md-sys-typescale-body-medium` | 0.9375rem (15px) / 0.9375rem (15px) | 1.5 | 400 | 0.25px | 商品スペック（重量・サイズ・素材等） |
+| **Label Large** | `--md-sys-typescale-label-large` | 0.9375rem (15px) / 0.9375rem (15px) | 1.45 | 600 | 0.1px | CTAボタンテキスト、検索フォーム入力値 |
+| **Label Small** | `--md-sys-typescale-label-small` | 0.75rem (12px) / 0.75rem (12px) | 1.45 | 500 | 0.5px | 評価スコア・価格バッジ、フッター権利表記 |
 
 ※ レスポンシブ切り替え条件: モバイル表示は `@media (max-width: 768px)` 適用時。
 
