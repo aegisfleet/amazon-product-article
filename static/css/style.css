@@ -3630,8 +3630,11 @@ body.toc-modal-open {
 .pickup-card-meta {
   margin-top: auto;
   display: flex;
-  flex-direction: column;
-  gap: 2px;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4px;
+  flex-wrap: wrap;
 }
 
 /* Force dynamic score colors to override defaults and dark mode specifics */
