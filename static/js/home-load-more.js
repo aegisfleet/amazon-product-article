@@ -146,17 +146,17 @@ function createPickupCardMeta(score, scoreClass, price) {
     const container = document.createElement('div');
     container.className = 'pickup-card-meta';
 
-    const scoreSpan = document.createElement('span');
-    scoreSpan.className = 'pickup-card-score m3-badge m3-badge-score ' + scoreClass;
-    scoreSpan.innerHTML = '<span class="material-symbols-outlined icon-score" aria-hidden="true">trophy</span> ' + score + '点';
-    container.appendChild(scoreSpan);
-
     if (price) {
         const priceSpan = document.createElement('span');
         priceSpan.className = 'pickup-card-price';
         priceSpan.textContent = price;
         container.appendChild(priceSpan);
     }
+
+    const scoreSpan = document.createElement('span');
+    scoreSpan.className = 'pickup-card-score m3-badge m3-badge-score ' + scoreClass;
+    scoreSpan.innerHTML = '<span class="material-symbols-outlined icon-score" aria-hidden="true">trophy</span> ' + score + '点';
+    container.appendChild(scoreSpan);
 
     return container;
 }
