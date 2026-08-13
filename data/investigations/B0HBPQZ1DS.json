@@ -1,0 +1,205 @@
+{
+  "analysis": {
+    "productName": "ALLDOCUBE iPlay80 mini Turbo",
+    "parentAsin": "B0HDN5VKRC",
+    "productDescription": "Dimensity 7400と120Hzリフレッシュレートを搭載し、ゲームや動画視聴に優れた性能を発揮する8.8インチAndroid 16ミニタブレット。",
+    "productUsage": ["ゲームプレイ", "動画・映画視聴", "電子書籍の閲覧", "ブラウジング", "カーナビゲーション"],
+    "positivePoints": [
+      "Dimensity 7400プロセッサとMali-G615 GPUを搭載し、AnTuTuスコア85万点以上という8インチクラスにおいて強力なパフォーマンスを実現。",
+      "充電中の発熱を防ぐバイパス充電機能に対応し、長時間のゲームプレイでもパフォーマンスの低下を防ぐ設計。",
+      "120Hzの高リフレッシュレートと2.5K高解像度（400nit輝度）に対応した8.8インチディスプレイを搭載。",
+      "4G LTE対応によるモバイル通信機能、さらにWiFi 6およびBluetooth 5.4の最新規格をサポート。",
+      "Widevine L1認証を取得しており、高画質での動画配信サービスの視聴が可能。"
+    ],
+    "negativePoints": [
+      "イヤホンジャックがType-Cポート兼用であり、有線イヤホンを使用しながらの充電には工夫が必要（変換アダプタは同梱）。",
+      "AnTuTu85万点と高性能な反面、3Dグラフィックを多用する超重量級ゲームの最高設定等では、Dimensity 8300等（100万点超）のさらに上位モデルと比べると余裕が少ない可能性がある。",
+      "急速充電はPD 20Wにとどまり、上位の33W以上の充電規格には対応していない。"
+    ],
+    "useCases": [
+      "通勤・通学電車内での片手持ちによる電子書籍や動画の視聴",
+      "発熱を抑えながら長時間の快適なゲームプレイ",
+      "GPSと4G LTEを利用した車載用カーナビ"
+    ],
+    "userStories": [
+      {
+        "userType": "モバイルゲーマー",
+        "scenario": "外出先や自宅のベッドで手軽にゲームをプレイしたい",
+        "experience": "スマホよりも大きな画面でプレイしたかったが、10インチでは重すぎるため本機を選択。バイパス充電のおかげで、充電しながらでも本体が熱くならず、長時間プレイしてもフレームレートが安定しているのが非常に良い。イヤホンジャックがないのは少し不便だが、付属の変換アダプタで対応できた。",
+        "supportingSourceIds": ["amazon-description"],
+        "sentiment": "positive"
+      },
+      {
+        "userType": "エンタメ重視の通勤者",
+        "scenario": "通勤時間中に高画質で映画やアニメを楽しみたい",
+        "experience": "毎日の電車通勤で使うため、片手で持てる軽さ（295g）が購入の決め手。Widevine L1対応で高画質なのと、120Hzの滑らかな画面が心地よい。デュアルスピーカーで音質もそこそこ良く、映画の世界に入り込める。",
+        "supportingSourceIds": ["amazon-description"],
+        "sentiment": "positive"
+      }
+    ],
+    "userImpression": "8インチクラスのAndroidタブレットとして、Dimensity 7400による高い処理性能とバイパス充電などのゲーマー向け機能を備え、携帯性とパフォーマンスのバランスを求めるユーザーから高い支持を得ている。特に「重いゲームを遊びたいが、10インチは大きすぎる」というニッチな需要に完璧に応える仕様となっている。一方で、Type-Cポートがイヤホンジャックを兼ねている点や、充電速度がPD 20Wにとどまる点など、運用面での割り切りが必要な部分も見受けられるが、全体としてコストパフォーマンスと携帯性の高さが際立っている。",
+    "sources": [
+      {
+        "id": "amazon-description",
+        "name": "Amazon商品ページ",
+        "url": "https://www.amazon.co.jp/dp/B0HBPQZ1DS",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-08-13",
+        "author": "ALLDOCUBE",
+        "conflictOfInterest": "disclosed",
+        "notes": "製品仕様、機能詳細、バイパス充電やプロセッサ性能の確認"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "AnTuTuベンチマーク85万点以上という強力なパフォーマンス",
+        "category": "comparativeAdvantage",
+        "confidence": "high",
+        "supportingSourceIds": ["amazon-description"],
+        "crossChecked": false,
+        "notes": "メーカーの公称値。Dimensity 7400の性能水準としては妥当なスコア。"
+      },
+      {
+        "claim": "高度なバイパス充電に対応しており、充電中の発熱やバッテリーの劣化を防ぎます",
+        "category": "durability",
+        "confidence": "high",
+        "supportingSourceIds": ["amazon-description"],
+        "crossChecked": false,
+        "notes": "ゲーミングスマートフォンや一部タブレットで採用されている機能であり、事実として評価可能。"
+      }
+    ],
+    "lastInvestigated": "2026-08-13",
+    "competitiveAnalysis": [
+      {
+        "name": "ALLDOCUBE iPlay 80 mini Pro",
+        "asin": "B0GZ3GM81R",
+        "priceComparison": "対象商品より安価で、SoC性能が控えめなエントリー～ミドルクラスモデル。",
+        "featureComparison": [
+          "共通点：8インチクラスの画面サイズ（Proは8.4インチ）、4G LTE通信、Widevine L1対応",
+          "相違点：対象商品はDimensity 7400/120Hz/バイパス充電対応。ProはUNISOC T7300/90Hz/PD18W充電。"
+        ],
+        "differentiators": [
+          "ALLDOCUBE iPlay80 mini Turboの利点：ゲームなど高い処理性能が必要な用途や、120Hzの滑らかな画面、発熱を抑えるバイパス充電に魅力を感じるなら迷わずこちら。",
+          "ALLDOCUBE iPlay 80 mini Proの利点：ゲームはあまりプレイせず、動画視聴やブラウジングが中心で、価格を抑えたい場合。"
+        ]
+      },
+      {
+        "name": "ALLDOCUBE iPlay80 mini Ultra",
+        "asin": "B0GKDTG84M",
+        "priceComparison": "対象商品より高価。さらなる高性能を求めるハイエンド層向け。",
+        "featureComparison": [
+          "共通点：8.8インチ 2.5K画面、バイパス充電対応",
+          "相違点：対象商品はDimensity 7400/120Hz/4G LTE/20W充電。UltraはDimensity 8300/144Hz/5G通信/33W急速充電。"
+        ],
+        "differentiators": [
+          "ALLDOCUBE iPlay80 mini Turboの利点：十分なゲーム性能を持ちつつ、価格を抑えてコストパフォーマンスを重視したい層向け。",
+          "ALLDOCUBE iPlay80 mini Ultraの利点：超重量級の3Dゲームを最高画質でプレイしたい、あるいは5G通信環境が必要など、妥協のない最高峰のスペックを求めるならこちら。"
+        ]
+      },
+      {
+        "name": "Headwolf Titan 1",
+        "asin": "B0FVF9MLBH",
+        "priceComparison": "対象商品よりやや高価。",
+        "featureComparison": [
+          "共通点：8.8インチ 2.5K画面、4G LTE",
+          "相違点：対象商品はDimensity 7400/120Hz。Titan 1はDimensity 8300/144Hz/HDMI出力・DP出力対応。"
+        ],
+        "differentiators": [
+          "ALLDOCUBE iPlay80 mini Turboの利点：コストを重視しつつも、実用十分なゲーム性能とバイパス充電機能を求める場合。",
+          "Headwolf Titan 1の利点：Dimensity 8300による高い処理能力に加え、外部モニターへのHDMI/DP出力機能を使いたい場合。"
+        ]
+      },
+      {
+        "name": "PHILIPS T7335",
+        "asin": "B0G5645C4B",
+        "priceComparison": "対象商品より安価。",
+        "featureComparison": [
+          "共通点：8.7インチ画面、4G LTE通信",
+          "相違点：対象商品はDimensity 7400/120Hz。PHILIPS T7335はUNISOC T615/90Hz。"
+        ],
+        "differentiators": [
+          "ALLDOCUBE iPlay80 mini Turboの利点：圧倒的な処理性能の差があり、ゲームを快適にプレイしたいならこちら。",
+          "PHILIPS T7335の利点：ゲームプレイは重視せず、動画や読書中心で、名の知れたブランドのタブレットを安価に導入したい場合。"
+        ]
+      },
+      {
+        "name": "Headwolf タブレット 8インチ G99",
+        "asin": "B0GZ3FVT9Q",
+        "priceComparison": "対象商品より安価。",
+        "featureComparison": [
+          "共通点：8インチクラス画面、120Hzリフレッシュレート、4G LTE通信",
+          "相違点：対象商品はDimensity 7400（AnTuTu約85万点）/2.5K。Headwolf G99はHelio G99（AnTuTu約40万点）/HD解像度。"
+        ],
+        "differentiators": [
+          "ALLDOCUBE iPlay80 mini Turboの利点：Helio G99クラスの2倍以上の処理性能を持ち、高解像度ディスプレイによる精細な映像表現を求める場合。",
+          "Headwolf タブレット 8インチ G99の利点：日常用途や軽いゲームが中心で、価格の安さを最優先する場合。"
+        ]
+      },
+      {
+        "name": "TECLAST T50Mini",
+        "asin": "B09FJSJMQP",
+        "priceComparison": "対象商品より安価。",
+        "featureComparison": [
+          "共通点：8.7インチクラス画面、120Hzリフレッシュレート、4G LTE通信",
+          "相違点：対象商品はDimensity 7400/2.5K解像度。TECLAST T50MiniはHelio G99/1340×800解像度。"
+        ],
+        "differentiators": [
+          "ALLDOCUBE iPlay80 mini Turboの利点：解像度が高く、圧倒的に高いSoC性能によるスムーズなゲーム体験が必要な場合。",
+          "TECLAST T50Miniの利点：予算を抑えて、動画や電子書籍、ブラウジングを120Hzの滑らかな画面で楽しみたい場合。"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "10インチタブレットは重すぎると感じる、片手で持てる軽量デバイスを求める人",
+        "「原神」などのある程度重い3Dゲームを、妥協のないスペックかつ熱を持たせずにプレイしたいゲーマー（エントリー帯のタブレットでは力不足を感じている人）",
+        "通勤中に高画質で映画やアニメ、電子書籍を快適に消費したい人"
+      ],
+      "pros": [
+        "Dimensity 7400による高い処理能力とバイパス充電機能により、バッテリーを気にせず、熱を持たせずに長時間のゲームプレイが可能。",
+        "295gという軽量設計と8.8インチのサイズ感が絶妙で、電車内などスペースが限られた場所でも快適にエンタメを楽しめる。",
+        "120Hzの高リフレッシュレート対応により、日常のブラウジングからゲームまで、指に吸い付くような滑らかな操作感を体験できる。"
+      ],
+      "cons": [
+        "イヤホンジャックがType-Cポートと兼用であるため、有線イヤホンを使いながらの充電にはハブ等が必要になる。",
+        "PD20Wまでの急速充電であるため、大容量バッテリー（6500mAh）を満充電にするにはやや時間がかかる。"
+      ],
+      "score": 87,
+      "scoreRationale": "[基本点: 70]\n[加点: +10] (Dimensity 7400による8インチクラス最高峰クラスのパフォーマンス)\n[加点: +5] (バイパス充電搭載によるゲーマーへの配慮)\n[加点: +5] (120Hz 2.5Kの高品質なディスプレイとWidevine L1対応)\n[減点: -3] (イヤホンジャックが独立していない（Type-C兼用）点)\n[合計: 87]"
+    },
+    "technicalSpecs": {
+      "os": "Android",
+      "cpu": "MediaTek Dimensity 7400",
+      "ram": "8GB (仮想メモリ+8GBで最大16GB)",
+      "storage": "128GB",
+      "display": {
+        "size": "8.8インチ",
+        "resolution": "2.5K"
+      },
+      "battery": {
+        "capacity": "6500mAh",
+        "charging": "PD 20W急速充電, バイパス充電対応"
+      },
+      "dimensions": {
+        "height": "20.82cm",
+        "width": "12.92cm",
+        "depth": "0.695cm"
+      },
+      "weight": "295g",
+      "capacity": "",
+      "material": "",
+      "origin": "",
+      "other": [
+        "リフレッシュレート: 120Hz",
+        "輝度: 400nit",
+        "4G LTE対応",
+        "WiFi 6対応",
+        "Bluetooth 5.4対応",
+        "GPS対応",
+        "Widevine L1対応",
+        "デュアルBOXスピーカー"
+      ]
+    }
+  }
+}
