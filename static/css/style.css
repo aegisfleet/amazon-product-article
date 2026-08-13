@@ -9,9 +9,10 @@
 
 body {
   font-family: var(--font-sans);
+  font-size: var(--md-sys-typescale-body-large-size);
+  line-height: var(--md-sys-typescale-body-large-line-height);
   background-color: var(--color-bg-body);
   color: var(--color-text-main);
-  line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   overflow-wrap: break-word;
 }

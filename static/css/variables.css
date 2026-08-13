@@ -142,63 +142,63 @@
     --spacing-xl: var(--md-sys-spacing-8);  /* 32px */
     --spacing-2xl: var(--md-sys-spacing-12);/* 48px */
 
-    /* Material Design 3 Typography Scale Tokens */
+    /* Material Design 3 Typography Scale Tokens (Enhanced Scanning Readability) */
     --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
     --font-jp: 'Noto Sans JP', sans-serif;
 
     /* Display */
-    --md-sys-typescale-display-large-size: 3.5625rem;     /* 57px */
-    --md-sys-typescale-display-large-line-height: 4rem;    /* 64px */
+    --md-sys-typescale-display-large-size: 3.75rem;       /* 60px */
+    --md-sys-typescale-display-large-line-height: 4.25rem; /* 68px */
     --md-sys-typescale-display-large-weight: 400;
-    --md-sys-typescale-display-medium-size: 2.8125rem;   /* 45px */
-    --md-sys-typescale-display-medium-line-height: 3.25rem;/* 52px */
+    --md-sys-typescale-display-medium-size: 3rem;         /* 48px */
+    --md-sys-typescale-display-medium-line-height: 3.5rem; /* 56px */
     --md-sys-typescale-display-medium-weight: 400;
-    --md-sys-typescale-display-small-size: 2.25rem;       /* 36px */
-    --md-sys-typescale-display-small-line-height: 2.75rem; /* 44px */
+    --md-sys-typescale-display-small-size: 2.375rem;      /* 38px */
+    --md-sys-typescale-display-small-line-height: 2.875rem;/* 46px */
     --md-sys-typescale-display-small-weight: 400;
 
     /* Headline */
-    --md-sys-typescale-headline-large-size: 2rem;         /* 32px */
-    --md-sys-typescale-headline-large-line-height: 2.5rem;/* 40px */
+    --md-sys-typescale-headline-large-size: 2.125rem;     /* 34px */
+    --md-sys-typescale-headline-large-line-height: 2.625rem;/* 42px */
     --md-sys-typescale-headline-large-weight: 700;
-    --md-sys-typescale-headline-medium-size: 1.75rem;     /* 28px */
-    --md-sys-typescale-headline-medium-line-height: 2.25rem;/* 36px */
+    --md-sys-typescale-headline-medium-size: 1.875rem;    /* 30px */
+    --md-sys-typescale-headline-medium-line-height: 2.375rem;/* 38px */
     --md-sys-typescale-headline-medium-weight: 600;
-    --md-sys-typescale-headline-small-size: 1.5rem;       /* 24px */
-    --md-sys-typescale-headline-small-line-height: 2rem;  /* 32px */
+    --md-sys-typescale-headline-small-size: 1.625rem;     /* 26px */
+    --md-sys-typescale-headline-small-line-height: 2.125rem;/* 34px */
     --md-sys-typescale-headline-small-weight: 600;
 
     /* Title */
-    --md-sys-typescale-title-large-size: 1.375rem;       /* 22px */
-    --md-sys-typescale-title-large-line-height: 1.75rem; /* 28px */
+    --md-sys-typescale-title-large-size: 1.5rem;          /* 24px */
+    --md-sys-typescale-title-large-line-height: 1.875rem; /* 30px */
     --md-sys-typescale-title-large-weight: 600;
-    --md-sys-typescale-title-medium-size: 1rem;          /* 16px */
-    --md-sys-typescale-title-medium-line-height: 1.5rem; /* 24px */
+    --md-sys-typescale-title-medium-size: 1.125rem;       /* 18px */
+    --md-sys-typescale-title-medium-line-height: 1.625rem;/* 26px */
     --md-sys-typescale-title-medium-weight: 600;
-    --md-sys-typescale-title-small-size: 0.875rem;       /* 14px */
-    --md-sys-typescale-title-small-line-height: 1.25rem; /* 20px */
+    --md-sys-typescale-title-small-size: 0.9375rem;       /* 15px */
+    --md-sys-typescale-title-small-line-height: 1.375rem;/* 22px */
     --md-sys-typescale-title-small-weight: 600;
 
     /* Body */
-    --md-sys-typescale-body-large-size: 1rem;            /* 16px */
-    --md-sys-typescale-body-large-line-height: 1.5rem;   /* 24px */
+    --md-sys-typescale-body-large-size: 1.0625rem;       /* 17px */
+    --md-sys-typescale-body-large-line-height: 1.625rem;  /* 26px */
     --md-sys-typescale-body-large-weight: 400;
-    --md-sys-typescale-body-medium-size: 0.875rem;       /* 14px */
-    --md-sys-typescale-body-medium-line-height: 1.25rem; /* 20px */
+    --md-sys-typescale-body-medium-size: 0.9375rem;      /* 15px */
+    --md-sys-typescale-body-medium-line-height: 1.375rem;/* 22px */
     --md-sys-typescale-body-medium-weight: 400;
-    --md-sys-typescale-body-small-size: 0.75rem;         /* 12px */
-    --md-sys-typescale-body-small-line-height: 1rem;     /* 16px */
+    --md-sys-typescale-body-small-size: 0.8125rem;        /* 13px */
+    --md-sys-typescale-body-small-line-height: 1.125rem;  /* 18px */
     --md-sys-typescale-body-small-weight: 400;
 
     /* Label */
-    --md-sys-typescale-label-large-size: 0.875rem;       /* 14px */
-    --md-sys-typescale-label-large-line-height: 1.25rem; /* 20px */
+    --md-sys-typescale-label-large-size: 0.9375rem;       /* 15px */
+    --md-sys-typescale-label-large-line-height: 1.375rem;/* 22px */
     --md-sys-typescale-label-large-weight: 600;
-    --md-sys-typescale-label-medium-size: 0.75rem;       /* 12px */
-    --md-sys-typescale-label-medium-line-height: 1rem;   /* 16px */
+    --md-sys-typescale-label-medium-size: 0.8125rem;      /* 13px */
+    --md-sys-typescale-label-medium-line-height: 1.125rem;/* 18px */
     --md-sys-typescale-label-medium-weight: 600;
-    --md-sys-typescale-label-small-size: 0.6875rem;      /* 11px */
-    --md-sys-typescale-label-small-line-height: 1rem;    /* 16px */
+    --md-sys-typescale-label-small-size: 0.75rem;         /* 12px */
+    --md-sys-typescale-label-small-line-height: 1rem;     /* 16px */
     --md-sys-typescale-label-small-weight: 600;
 
     /* Shadows */
