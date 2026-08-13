@@ -2095,5 +2095,14 @@
       "type": "brand",
       "value": "Bloomtwin"
     }
+  },
+  "Shell": {
+    "slug": "shell",
+    "icon": "🐚",
+    "description": "Shell（シェル）の商品一覧",
+    "matcher": {
+      "type": "brand",
+      "value": "\\\\bShell\\\\b|シェル"
+    }
   }
 }
