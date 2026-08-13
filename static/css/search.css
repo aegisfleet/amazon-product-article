@@ -757,6 +757,9 @@
     justify-content: center;
     width: 1.1rem;
     height: 1.1rem;
+    min-height: 0;
+    min-width: 0;
+    aspect-ratio: 1;
     padding: 0;
     border: none;
     border-radius: 50%;
@@ -778,6 +781,7 @@
 /* 「すべてクリア」ボタン */
 .clear-all-filters-btn {
     padding: 0.2rem 0.65rem;
+    min-height: 0;
     border: 1px solid var(--color-border);
     border-radius: 9999px;
     background: transparent;
