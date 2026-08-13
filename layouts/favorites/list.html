@@ -182,13 +182,13 @@
                 : `<div class="card-image-noimage" aria-hidden="true">画像なし</div>`;
 
             const priceHTML = item.price
-                ? `<span class="card-price"><span aria-hidden="true">💰</span> ${escapeHTML(item.price)}</span>`
+                ? `<span class="card-price"><span class="material-symbols-outlined icon-price" aria-hidden="true">payments</span> ${escapeHTML(item.price)}</span>`
                 : '';
             const priceBlockHTML = priceHTML
                 ? `<div class="meta-price-block">${priceHTML}</div>`
                 : '';
             const scoreHTML = item.score
-                ? `<div class="meta-score-block"><span class="card-score m3-badge m3-badge-score ${scoreClass(item.score)}"><span aria-hidden="true">🏆</span> ${item.score}点</span></div>`
+                ? `<div class="meta-score-block"><span class="card-score m3-badge m3-badge-score ${scoreClass(item.score)}"><span class="material-symbols-outlined icon-score" aria-hidden="true">trophy</span> ${item.score}点</span></div>`
                 : '';
             const categoryHTML = item.category
                 ? `<span class="card-tag">${escapeHTML(item.category)}</span>`
@@ -216,10 +216,10 @@
                     <span class="article-meta">登録日: ${formatDate(item.savedAt)}</span>
                     <div style="display:flex; gap: var(--spacing-sm); align-items: center;">
                         ${item.affiliateUrl
-                    ? `<a href="${escapeHTML(item.affiliateUrl)}" class="btn-amazon-small" target="_blank" rel="noopener noreferrer" style="font-size: 0.8rem; padding: 0.3rem 0.75rem;" aria-label="${escapeHTML(item.title)}をAmazonで見る"><span aria-hidden="true">🛒</span> Amazonで見る</a>`
-                    : `<a href="${escapeHTML(item.url)}" class="btn-amazon-small" style="font-size: 0.8rem; padding: 0.3rem 0.75rem;" aria-label="${escapeHTML(item.title)}の詳細を見る"><span aria-hidden="true">📖</span> 詳細を見る</a>`
+                    ? `<a href="${escapeHTML(item.affiliateUrl)}" class="btn-amazon-small" target="_blank" rel="noopener noreferrer" style="font-size: 0.8rem; padding: 0.3rem 0.75rem;" aria-label="${escapeHTML(item.title)}をAmazonで見る"><span class="material-symbols-outlined icon-cart" aria-hidden="true">shopping_cart</span> Amazonで見る</a>`
+                    : `<a href="${escapeHTML(item.url)}" class="btn-amazon-small" style="font-size: 0.8rem; padding: 0.3rem 0.75rem;" aria-label="${escapeHTML(item.title)}の詳細を見る"><span class="material-symbols-outlined" aria-hidden="true">auto_stories</span> 詳細を見る</a>`
                 }
-                        <button type="button" class="fav-remove-btn" data-remove-asin="${escapeHTML(item.asin)}" aria-label="${escapeHTML(item.title)}をお気に入りから削除" title="お気に入りから削除"><span aria-hidden="true">❌</span></button>
+                        <button type="button" class="fav-remove-btn" data-remove-asin="${escapeHTML(item.asin)}" aria-label="${escapeHTML(item.title)}をお気に入りから削除" title="お気に入りから削除"><span class="material-symbols-outlined" aria-hidden="true">delete</span></button>
                     </div>
                 </div>
             </div>

@@ -83,7 +83,7 @@
             <div class="hero-price-main">
                 <span class="hero-price">{{ partial "utils-price-format.html" $product.price }}</span>
                 {{- if $product.loyalty_points -}}
-                <span class="hero-points m3-badge m3-badge-points">🎁 {{- $product.loyalty_points -}}pt還元</span>
+                <span class="hero-points m3-badge m3-badge-points"><span class="material-symbols-outlined icon-points" aria-hidden="true">card_giftcard</span> {{- $product.loyalty_points -}}pt還元</span>
                 {{- end -}}
             </div>
             <div class="hero-price-info">
@@ -122,7 +122,7 @@
     <div class="hero-evaluation-section">
         {{- if $hero.target_users -}}
         <div class="hero-eval-block hero-eval-pros">
-            <span class="hero-eval-title">👍 こんな方におすすめ</span>
+            <span class="hero-eval-title"><span class="material-symbols-outlined" aria-hidden="true">thumb_up</span> こんな方におすすめ</span>
             <ul>
                 {{- range $hero.target_users -}}
                 <li>{{ . }}</li>
@@ -133,7 +133,7 @@
 
         {{- if $hero.warnings -}}
         <div class="hero-eval-block hero-eval-cons">
-            <span class="hero-eval-title">⚠️ 購入時の注意点</span>
+            <span class="hero-eval-title"><span class="material-symbols-outlined" aria-hidden="true">warning</span> 購入時の注意点</span>
             <ul>
                 {{- range $hero.warnings -}}
                 <li>{{ . }}</li>
@@ -179,7 +179,7 @@
                     data-category="{{ $trackingCategory }}"
                     data-specs='{{ partial "product-specs-json.html" $product.specs }}'
                     aria-pressed="false" aria-label="{{ .Title }}を比較に追加">
-                    <span class="compare-icon" aria-hidden="true">⚖️</span>
+                    <span class="material-symbols-outlined compare-icon" aria-hidden="true">balance</span>
                     <span class="compare-label">比較</span>
                 </button>
 
@@ -189,7 +189,7 @@
                     data-image="{{ if $product.images }}{{ index $product.images 0 }}{{ end }}"
                     data-price="{{ $product.price }}" data-score="{{ $product.score | default 0 }}"
                     data-category="{{ $trackingCategory }}" aria-pressed="false" aria-label="{{ .Title }}をお気に入りに追加">
-                    <span class="fav-icon" aria-hidden="true">🤍</span>
+                    <span class="material-symbols-outlined fav-icon" aria-hidden="true">favorite_border</span>
                     <span class="fav-label">保存</span>
                 </button>
             </div>
@@ -201,7 +201,7 @@
                     data-price-bucket="{{ $priceBucket }}" data-price="{{ $product.price }}"
                     data-score="{{ $product.score | default 0 }}" data-position="0"
                     aria-label="{{ .Title }}をAmazonで見る">
-                    <span aria-hidden="true">🛒</span>
+                    <span class="material-symbols-outlined icon-cart" aria-hidden="true">shopping_cart</span>
                     <span>Amazonで見る</span></a>
                 {{- end -}}
             </div>

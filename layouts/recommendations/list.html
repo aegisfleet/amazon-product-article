@@ -315,7 +315,7 @@
 
     <!-- Page Header (Unified Hero Style) -->
     <div class="bargain-hero recommendations-hero">
-        <div class="bargain-hero-icon">🎯</div>
+        <div class="bargain-hero-icon"><span class="material-symbols-outlined" style="font-size:2.5rem;" aria-hidden="true">ads_click</span></div>
         <h1 class="bargain-hero-title">{{ .Title }}</h1>
         <p class="bargain-hero-subtitle">調査日: {{- $todayData.date -}}</p>
         <p class="bargain-hero-desc">
@@ -330,14 +330,14 @@
         style="background: var(--color-bg-secondary); border: 1px solid var(--color-border); border-radius: var(--radius-md); padding: var(--md-sys-spacing-4); margin-bottom: var(--md-sys-spacing-8); font-size: var(--md-sys-typescale-body-medium-size); line-height: var(--md-sys-typescale-body-medium-line-height);">
         <h3
             style="margin-top: 0; margin-bottom: var(--md-sys-spacing-1); color: var(--color-text-main); font-size: var(--md-sys-typescale-title-medium-size); line-height: var(--md-sys-typescale-title-medium-line-height); display: flex; align-items: center; gap: var(--md-sys-spacing-2);">
-            <span>ℹ️</span> 本日の10選 選定ポリシーと評価について
+            <span class="material-symbols-outlined" aria-hidden="true">info</span> 本日の10選 選定ポリシーと評価について
         </h3>
         <p style="margin-bottom: var(--spacing-sm); color: var(--color-text-secondary);">
             「本日の注目商品10選」は、日々のAmazonセール情報やトレンド、実用性、割引率、およびカテゴリの多様性を考慮し、AIが総合的に判断して<strong>おすすめ順</strong>にランキング化しています。
         </p>
         <div style="display: flex; gap: var(--spacing-md); flex-wrap: wrap; margin-top: var(--spacing-sm);">
             <div style="flex: 1; min-width: 250px;">
-                <strong>📊 選定基準（重視度）：</strong>
+                <strong><span class="material-symbols-outlined" aria-hidden="true" style="font-size:1.1rem; vertical-align:sub;">bar_chart</span> 選定基準（重視度）：</strong>
                 <ul
                     style="margin: var(--spacing-xs) 0 0; padding-left: 1.2rem; color: var(--color-text-secondary); list-style-type: disc;">
                     <li style="margin-bottom: 0.25rem;"><strong>割引率・お得度:</strong> ★★★★★ (非常に対象になりやすい)</li>
@@ -347,11 +347,11 @@
                 </ul>
             </div>
             <div style="flex: 1; min-width: 250px;">
-                <strong>⚠️ スコアと順位の違い：</strong>
+                <strong><span class="material-symbols-outlined" aria-hidden="true" style="font-size:1.1rem; vertical-align:sub;">warning</span> スコアと順位の違い：</strong>
                 <ul
                     style="margin: var(--spacing-xs) 0 0; padding-left: 1.2rem; color: var(--color-text-secondary); list-style-type: disc;">
                     <li style="margin-bottom: 0.25rem;"><strong>おすすめ順位 (1〜10位):</strong> 「今この瞬間に買うメリット」の大きさを示します。</li>
-                    <li style="margin-bottom: 0.25rem;"><strong>商品評価スコア (🏆点数):</strong>
+                    <li style="margin-bottom: 0.25rem;"><strong>商品評価スコア:</strong>
                         サイト内の詳細レビューに基づいた、商品の恒久的な品質・満足度評価です。</li>
                 </ul>
             </div>
@@ -361,7 +361,7 @@
     <!-- 比較サマリーテーブル（デフォルト表示） -->
     <button class="rec-summary-toggle open" id="rec-summary-toggle" aria-expanded="true"
         aria-controls="rec-summary-panel">
-        <span>📋</span>
+        <span class="material-symbols-outlined" aria-hidden="true">toc</span>
         <span>比較サマリーを表示する</span>
         <em class="toggle-icon">▼</em>
     </button>
@@ -390,7 +390,7 @@
                         {{- if ge $score 80 -}}{{- $scoreClass = "score-excellent" -}}
                         {{- else if ge $score 60 -}}{{- $scoreClass = "score-good" -}}
                         {{- end -}}
-                        <span class="card-score m3-badge m3-badge-score {{ $scoreClass }}" style="font-size:0.78rem; padding:2px 6px;">🏆 {{-
+                        <span class="card-score m3-badge m3-badge-score {{ $scoreClass }}" style="font-size:0.78rem; padding:2px 6px;"><span class="material-symbols-outlined icon-score" aria-hidden="true">trophy</span> {{-
                             $score -}}点</span>
                         {{- else -}}
                         <span style="color: var(--color-text-muted); font-size:0.82rem;">—</span>
@@ -412,11 +412,11 @@
                         <div class="rec-summary-actions">
                             {{- if $articlePage -}}
                             <a href="{{ $articlePage.RelPermalink }}"
-                                class="rec-summary-btn rec-summary-btn-internal">✍️ レビュー</a>
+                                class="rec-summary-btn rec-summary-btn-internal"><span class="material-symbols-outlined" aria-hidden="true" style="font-size:0.9rem;">edit_note</span> レビュー</a>
                             {{- end -}}
                             <a href='{{ printf "https://www.amazon.co.jp/dp/%s?tag=aegis-22" $rec.asin }}'
                                 class="rec-summary-btn rec-summary-btn-amazon" target="_blank"
-                                rel="noopener noreferrer">🛒 Amazon</a>
+                                rel="noopener noreferrer"><span class="material-symbols-outlined" aria-hidden="true" style="font-size:0.9rem;">shopping_cart</span> Amazon</a>
                         </div>
                     </td>
                 </tr>
@@ -495,7 +495,7 @@
                         {{- if $rec.rankReason -}}
                         <span class="card-tag"
                             style="margin-bottom: 0; background-color: var(--color-bg-secondary); color: var(--color-text-main); border: 1px solid var(--color-border);">
-                            🎯 {{- $rec.rankReason -}}
+                            <span class="material-symbols-outlined" aria-hidden="true" style="font-size:0.9rem;">ads_click</span> {{- $rec.rankReason -}}
                         </span>
                         {{- end -}}
                         {{- if $score -}}
@@ -506,7 +506,7 @@
                         {{- $scoreClass = "score-good" -}}
                         {{- end -}}
                         <span class="card-score m3-badge m3-badge-score {{ $scoreClass }}" style="font-size: 0.85rem; padding: 2px 8px;">
-                            🏆 {{- $score -}}点
+                            <span class="material-symbols-outlined icon-score" aria-hidden="true">trophy</span> {{- $score -}}点
                         </span>
                         {{- end -}}
                     </div>
@@ -542,7 +542,7 @@
                     {{- if and $rec.scoreDisclaimer (ne $rec.scoreDisclaimer "") -}}
                     <div
                         style="margin: var(--spacing-sm) 0 var(--spacing-xs); padding: var(--spacing-sm) var(--spacing-md); background: #fef2f2; border: 1px solid #fca5a5; border-radius: var(--radius-md); display: flex; align-items: center; gap: 0.5rem; color: #b91c1c; font-size: 0.9rem; font-weight: bold;">
-                        <span style="font-size: 1.1rem;">⚠️</span>
+                        <span class="material-symbols-outlined" aria-hidden="true">warning</span>
                         <span>注意: {{- $rec.scoreDisclaimer -}}</span>
                     </div>
                     {{- end -}}
@@ -612,12 +612,12 @@
                     <div class="rec-card-actions">
                         {{- if $articlePage -}}
                         <a href="{{ $articlePage.RelPermalink }}" class="btn-internal-small">
-                            ✍️ サイト内レビュー
+                            <span class="material-symbols-outlined" aria-hidden="true" style="font-size:1.1rem; margin-right:4px;">edit_note</span> サイト内レビュー
                         </a>
                         {{- end -}}
                         <a href='{{ printf "https://www.amazon.co.jp/dp/%s?tag=aegis-22" $rec.asin }}'
                             class="btn-amazon-small" target="_blank" rel="noopener noreferrer">
-                            🛒 Amazonで見る
+                            <span class="material-symbols-outlined icon-cart" aria-hidden="true">shopping_cart</span> Amazonで見る
                             <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24"
                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                                 stroke-linejoin="round"
