@@ -1199,7 +1199,12 @@ document.addEventListener('DOMContentLoaded', function () {
                 }
                 const scoreSpan = document.createElement('span');
                 scoreSpan.className = `result-score m3-badge m3-badge-score ${scoreClass}`;
-                scoreSpan.innerHTML = `<span class="material-symbols-outlined icon-score" aria-hidden="true">trophy</span> ${scoreText}点`;
+                const iconSpan = document.createElement('span');
+                iconSpan.className = 'material-symbols-outlined icon-score';
+                iconSpan.setAttribute('aria-hidden', 'true');
+                iconSpan.textContent = 'trophy';
+                scoreSpan.appendChild(iconSpan);
+                scoreSpan.appendChild(document.createTextNode(` ${scoreText}点`));
                 metricsDiv.appendChild(scoreSpan);
             }
             headerDiv.appendChild(metricsDiv);
