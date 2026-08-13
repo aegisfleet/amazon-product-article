@@ -1,0 +1,99 @@
+{
+  "analysis": {
+    "productName": "Shell 急速充電器 100W 4ポート USB-C 卓上充電器",
+    "parentAsin": "B0FS1S5NQ1",
+    "productDescription": "最大100W出力に対応し、4ポートを搭載したGaN III技術採用の卓上型急速充電器。PC素材を使用し多重保護機能を備える。",
+    "productUsage": ["ノートPCの充電", "スマートフォンやタブレットの同時充電", "デスク周りの充電環境の整理", "旅行・出張時の持ち運び"],
+    "positivePoints": [
+      "最大100Wの高出力（単ポート使用時）",
+      "USB-C×2、USB-A×2の合計4ポートを搭載し、4台同時充電が可能",
+      "最新のGaN III技術を採用し、コンパクトながら高効率・低発熱を実現",
+      "100-240V対応で海外でも使用可能",
+      "耐熱性・耐衝撃性に優れた高級PC素材を採用",
+      "PD3.0、QC4+、PPS、SCP、FCPなどの主要プロトコルに対応"
+    ],
+    "negativePoints": [
+      "複数ポート使用時は100Wが分配されるため、各ポートの出力が低下する",
+      "コンセント直挿しではなく卓上型であるため、電源ケーブルが別途必要（設置スペースに影響する）"
+    ],
+    "useCases": ["ホームオフィスでのデスクワーク", "家族全員のデバイスをまとめた充電ステーション", "出張先のホテルでの複数デバイス充電"],
+    "userStories": [],
+    "userImpression": "100Wの高出力と4ポートの利便性を兼ね備え、特に複数デバイスを同時に充電したいデスクワーカーから高く評価される傾向にある。一方で、複数ポート使用時の電力分配についての知識がないと、期待した急速充電ができない可能性がある点には注意が必要。",
+    "sources": [],
+    "claims": [
+      {
+        "claim": "MacBook Pro（14インチ）ならわずか30分で約50%充電できる",
+        "category": "comparativeAdvantage",
+        "confidence": "high",
+        "supportingSourceIds": [],
+        "crossChecked": false,
+        "notes": "100W出力のPD充電器としては一般的な性能であるため、スペックシートに基づく主張として妥当。"
+      },
+      {
+        "claim": "石油・電力産業で培った厳格な品質管理基準をクリアした信頼の製品",
+        "category": "safety",
+        "confidence": "medium",
+        "supportingSourceIds": [],
+        "crossChecked": false,
+        "notes": "SHELLブランドを冠しているが、実際の製造メーカー(Shenzhenshi Ezreal Technology Co.,Ltd)の基準である可能性があり、実証データはない。"
+      }
+    ],
+    "lastInvestigated": "2026-08-13",
+    "competitiveAnalysis": [
+      {
+        "name": "UGREEN 急速充電器 100W",
+        "asin": "B0CYZQ8HVG",
+        "priceComparison": "対象商品(Shell)は2,499円と、UGREEN(5,579円)に比べて半額以下と非常に安価。コストパフォーマンスに優れる。",
+        "featureComparison": [
+          "共通点：100W出力、GaN技術採用、複数ポート搭載、PD対応",
+          "相違点：UGREENはType-C 4ポート(4C)かつ折り畳み式プラグ(壁挿し型)。ShellはUSB-C×2＋USB-A×2で卓上型。"
+        ],
+        "differentiators": [
+          "Shell 急速充電器の利点：価格が圧倒的に安く、USB-Aポートも必要なユーザーや、卓上でケーブルを延長して使いたいユーザーに最適。",
+          "UGREEN 急速充電器の利点：全てType-Cポートで統一したいユーザーや、壁のコンセントに直接挿してコンパクトに持ち運びたいユーザーに適している。"
+        ]
+      },
+      {
+        "name": "POPGMMT 急速充電器 100W",
+        "asin": "B0H5BKNGCQ",
+        "priceComparison": "対象商品(Shell: 2,499円)とPOPGMMT(2,600円)はほぼ同価格帯で競合する。",
+        "featureComparison": [
+          "共通点：100W出力、4ポート同時充電、GaN技術搭載、PD/QC対応",
+          "相違点：POPGMMTは折りたたみ式プラグ(壁挿し型)であり、Shellは卓上型。"
+        ],
+        "differentiators": [
+          "Shell 急速充電器の利点：デスク上に本体を置き、手元でケーブルを抜き差ししたいなど、卓上での運用を前提とするユーザーに最適。",
+          "POPGMMT 急速充電器の利点：コンセント直挿しで配線を減らしたい、または持ち運びやすさを重視するユーザーに適している。"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "デスク上で複数のデバイス（PC、スマホ、イヤホンなど）を同時に充電したいが、コストは抑えたいデスクワーカー（高価なUGREENなどの競合品より安価で十分な性能を求める人）",
+        "古いUSB-Aケーブルと新しいUSB-Cケーブルを混在して使用しているユーザー"
+      ],
+      "pros": [
+        "100Wの高出力により、ノートPCの充電も余裕で行える",
+        "USB-CとUSB-Aの両方に対応し、手持ちの様々なケーブルをそのまま活用できる",
+        "卓上型のため、コンセントから離れたデスクの上でも手元で抜き差しが容易"
+      ],
+      "cons": [
+        "コンセントから本体までの電源ケーブルが必要になるため、持ち運び時にはかさばりやすい",
+        "4台同時に充電すると1ポートあたりの出力が低下するため、ノートPCなどの大電力デバイスを充電する際はポートの組み合わせに注意が必要"
+      ],
+      "score": 85,
+      "scoreRationale": "[基本点: 70]\n[加点: +10] (100W・4ポート搭載ながら2,499円という非常に高いコストパフォーマンス)\n[加点: +5] (GaN III技術による小型高効率化と多重保護回路による安全性)\n[合計: 85]"
+    },
+    "technicalSpecs": {
+      "dimensions": { "height": "不明", "width": "不明", "depth": "不明" },
+      "weight": "不明",
+      "power": "100W (最大)",
+      "ports": "USB-C x2, USB-A x2",
+      "protocols": "PD3.0, QC4+, PPS, SCP, FCP",
+      "technology": "GaN III",
+      "inputVoltage": "100-240V",
+      "material": "PC素材",
+      "origin": "中国 (Shenzhenshi Ezreal Technology Co.,Ltd)"
+    }
+  }
+}
