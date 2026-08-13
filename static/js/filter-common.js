@@ -166,14 +166,14 @@ function renderCardMeta(p) {
   if (p.price) {
     const price = document.createElement('span');
     price.className = 'card-price';
-    price.innerHTML = `<span aria-hidden="true">💰</span> ${p.price}`;
+    price.innerHTML = `<span class="material-symbols-outlined icon-price" aria-hidden="true">payments</span> ${p.price}`;
     priceBlock.appendChild(price);
   }
 
   if (p.loyaltyPoints) {
     const points = document.createElement('span');
     points.className = 'card-points m3-badge m3-badge-points';
-    points.innerHTML = `<span aria-hidden="true">🎁</span> ${p.loyaltyPoints}pt`;
+    points.innerHTML = `<span class="material-symbols-outlined icon-points" aria-hidden="true">card_giftcard</span> ${p.loyaltyPoints}pt`;
     priceBlock.appendChild(points);
   }
 
@@ -186,7 +186,7 @@ function renderCardMeta(p) {
     scoreBlock.className = 'meta-score-block';
     const score = document.createElement('span');
     score.className = `card-score m3-badge m3-badge-score ${scoreClass(p.score)}`;
-    score.innerHTML = `<span aria-hidden="true">🏆</span> ${p.score}点`;
+    score.innerHTML = `<span class="material-symbols-outlined icon-score" aria-hidden="true">trophy</span> ${p.score}点`;
     scoreBlock.appendChild(score);
     mainRow.appendChild(scoreBlock);
   }
@@ -304,9 +304,9 @@ function renderCardSubRow(p) {
   }
 
   const compareIcon = document.createElement('span');
-  compareIcon.className = 'compare-icon';
+  compareIcon.className = 'material-symbols-outlined compare-icon';
   compareIcon.setAttribute('aria-hidden', 'true');
-  compareIcon.textContent = isCompared ? '✅' : '⚖️';
+  compareIcon.textContent = isCompared ? 'check_circle' : 'balance';
 
   const compareLabel = document.createElement('span');
   compareLabel.className = 'compare-label';
@@ -341,9 +341,9 @@ function renderCardSubRow(p) {
   }
 
   const favIcon = document.createElement('span');
-  favIcon.className = 'fav-icon';
+  favIcon.className = 'material-symbols-outlined fav-icon';
   favIcon.setAttribute('aria-hidden', 'true');
-  favIcon.textContent = isFav ? '❤️' : '🤍';
+  favIcon.textContent = isFav ? 'favorite' : 'favorite_border';
 
   const favLabel = document.createElement('span');
   favLabel.className = 'fav-label';
@@ -365,8 +365,9 @@ function renderCardMainRow(p) {
   dateSpan.className = 'article-meta';
 
   const dateIcon = document.createElement('span');
+  dateIcon.className = 'material-symbols-outlined icon-date';
   dateIcon.setAttribute('aria-hidden', 'true');
-  dateIcon.textContent = '📅';
+  dateIcon.textContent = 'calendar_today';
 
   dateSpan.appendChild(dateIcon);
   dateSpan.appendChild(document.createTextNode(` ${formatInvestigatedDate(p.lastInvestigated)}`));
@@ -378,16 +379,21 @@ function renderCardMainRow(p) {
     actionBtn.className = 'btn-amazon-small';
     actionBtn.target = '_blank';
     actionBtn.rel = 'noopener noreferrer';
-    actionBtn.innerHTML = '<span aria-hidden="true">🛒</span> Amazonで見る';
-    if (p.title) {
-      actionBtn.setAttribute('aria-label', `${p.title}をAmazonで見る`);
-    }
     actionBtn.dataset.trackProduct = '1';
     actionBtn.dataset.asin = p.asin || '';
     actionBtn.dataset.category = p.category || '';
     actionBtn.dataset.priceBucket = getPriceBucket(p.priceRaw);
     actionBtn.dataset.price = p.price || '';
     actionBtn.dataset.score = String(p.score || 0);
+    actionBtn.setAttribute('aria-label', `${p.title || ''}をAmazonで見る`);
+
+    const cartIcon = document.createElement('span');
+    cartIcon.className = 'material-symbols-outlined icon-cart';
+    cartIcon.setAttribute('aria-hidden', 'true');
+    cartIcon.textContent = 'shopping_cart';
+
+    actionBtn.appendChild(cartIcon);
+    actionBtn.appendChild(document.createTextNode(' Amazonで見る'));
     row.appendChild(actionBtn);
   } else {
     const readMoreLink = document.createElement('a');
