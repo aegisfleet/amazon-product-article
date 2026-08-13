@@ -5223,6 +5223,9 @@ body.toc-modal-open {
   justify-content: center;
   width: 1.25rem;
   height: 1.25rem;
+  min-height: 0;
+  min-width: 0;
+  aspect-ratio: 1;
   border-radius: 50%;
   border: none;
   background: rgba(0, 0, 0, 0.12);
@@ -5264,6 +5267,7 @@ body.toc-modal-open {
   align-items: center;
   gap: 0.25rem;
   padding: 0.2rem 0.5rem;
+  min-height: 0;
   border: 1px solid var(--color-border);
   border-radius: 9999px;
   background: var(--color-bg-card, #ffffff);
