@@ -3969,7 +3969,7 @@ body.toc-modal-open {
   .hero-evaluation-section {
     margin-top: 0;
     padding-top: 0;
-    gap: 0.75rem;
+    gap: var(--md-sys-spacing-3);
   }
 
   .hero-eval-block {
@@ -3977,11 +3977,11 @@ body.toc-modal-open {
   }
 
   .hero-eval-title {
-    font-size: 0.875rem;
+    font-size: var(--md-sys-typescale-title-small-size);
   }
 
   .hero-eval-block li {
-    font-size: 0.85rem;
+    font-size: var(--md-sys-typescale-body-medium-size);
   }
 }
 
@@ -4008,9 +4008,9 @@ body.toc-modal-open {
 .hero-score-bar {
   display: flex;
   align-items: center;
-  padding: var(--spacing-sm) var(--spacing-md);
+  padding: var(--md-sys-spacing-2) var(--md-sys-spacing-4);
   border-radius: var(--radius-md);
-  margin: var(--spacing-xs) 0;
+  margin: var(--md-sys-spacing-1) 0;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   position: relative;
   overflow: hidden;
@@ -4056,7 +4056,7 @@ body.toc-modal-open {
 .hero-score-main {
   display: flex;
   align-items: baseline;
-  gap: 4px;
+  gap: var(--md-sys-spacing-1);
   flex-wrap: wrap;
   min-width: 0;
 }
@@ -4088,17 +4088,17 @@ body.toc-modal-open {
   display: flex;
   flex-direction: column;
   align-items: stretch;
-  gap: 4px;
+  gap: var(--md-sys-spacing-1);
   min-width: 0;
 }
 
 .hero-score-item {
   display: flex;
   align-items: center;
-  gap: 6px;
-  font-size: 0.85rem;
+  gap: var(--md-sys-spacing-2);
+  font-size: var(--md-sys-typescale-body-medium-size);
   font-weight: 600;
-  padding: 2px 8px;
+  padding: var(--md-sys-spacing-1) var(--md-sys-spacing-2);
   border-radius: var(--radius-sm);
   /* background handled by specific classes */
 }
@@ -7629,99 +7629,221 @@ legend.font-size-label {
   font-size: 18px;
 }
 
-/* Scaled Typography across Article Components */
+/* Scaled Typography across Article Components aligned with M3 Type Scale */
 .article-content .hero-title {
-  font-size: calc(2.25rem * var(--article-font-scale, 1));
+  font-size: calc(var(--md-sys-typescale-headline-large-size) * var(--article-font-scale, 1));
+  line-height: var(--md-sys-typescale-headline-large-line-height);
+  font-weight: var(--md-sys-typescale-headline-large-weight);
+  margin-bottom: var(--md-sys-spacing-2);
 }
 
 .article-content .article-meta {
-  font-size: calc(0.875rem * var(--article-font-scale, 1));
+  font-size: calc(var(--md-sys-typescale-body-medium-size) * var(--article-font-scale, 1));
+  line-height: var(--md-sys-typescale-body-medium-line-height);
+  margin-bottom: var(--md-sys-spacing-4);
 }
 
 .article-content .product-hero-card {
-  font-size: calc(1rem * var(--article-font-scale, 1));
+  font-size: calc(var(--md-sys-typescale-body-large-size) * var(--article-font-scale, 1));
+  line-height: var(--md-sys-typescale-body-large-line-height);
+  margin-bottom: var(--md-sys-spacing-6);
 }
 
 .article-content .hero-description {
-  font-size: calc(1.05rem * var(--article-font-scale, 1));
+  font-size: calc(var(--md-sys-typescale-body-large-size) * var(--article-font-scale, 1));
+  line-height: var(--md-sys-typescale-body-large-line-height);
 }
 
 .article-content .hero-score-number {
-  font-size: calc(2.5rem * var(--article-font-scale, 1));
+  font-size: calc(var(--md-sys-typescale-headline-large-size) * 1.25 * var(--article-font-scale, 1));
+  line-height: 1.2;
 }
 
 .article-content .hero-score-unit,
 .article-content .hero-score-text {
-  font-size: calc(1rem * var(--article-font-scale, 1));
+  font-size: calc(var(--md-sys-typescale-title-medium-size) * var(--article-font-scale, 1));
+  line-height: var(--md-sys-typescale-title-medium-line-height);
 }
 
 .article-content .hero-score-item {
-  font-size: calc(0.85rem * var(--article-font-scale, 1));
+  font-size: calc(var(--md-sys-typescale-body-medium-size) * var(--article-font-scale, 1));
+  line-height: var(--md-sys-typescale-body-medium-line-height);
 }
 
 .article-content .hero-price {
-  font-size: calc(1.5rem * var(--article-font-scale, 1));
+  font-size: calc(var(--md-sys-typescale-headline-medium-size) * var(--article-font-scale, 1));
+  line-height: var(--md-sys-typescale-headline-medium-line-height);
+  font-weight: 700;
 }
 
 .article-content .hero-points {
-  font-size: calc(0.9rem * var(--article-font-scale, 1));
+  font-size: calc(var(--md-sys-typescale-label-large-size) * var(--article-font-scale, 1));
+  line-height: var(--md-sys-typescale-label-large-line-height);
 }
 
 .article-content .hero-eval-title {
-  font-size: calc(1rem * var(--article-font-scale, 1));
+  font-size: calc(var(--md-sys-typescale-title-medium-size) * var(--article-font-scale, 1));
+  line-height: var(--md-sys-typescale-title-medium-line-height);
+  font-weight: var(--md-sys-typescale-title-medium-weight);
 }
 
 .article-content .hero-eval-block li {
-  font-size: calc(0.9rem * var(--article-font-scale, 1));
+  font-size: calc(var(--md-sys-typescale-body-medium-size) * var(--article-font-scale, 1));
+  line-height: var(--md-sys-typescale-body-medium-line-height);
 }
 
 .article-content .hero-actions button,
 .article-content .hero-actions a {
-  font-size: calc(0.9rem * var(--article-font-scale, 1));
+  font-size: calc(var(--md-sys-typescale-label-large-size) * var(--article-font-scale, 1));
+  line-height: var(--md-sys-typescale-label-large-line-height);
 }
 
 .article-content .table-of-contents {
-  font-size: calc(0.95rem * var(--article-font-scale, 1));
+  font-size: calc(var(--md-sys-typescale-body-medium-size) * var(--article-font-scale, 1));
+  line-height: var(--md-sys-typescale-body-medium-line-height);
+  margin-bottom: var(--md-sys-spacing-6);
 }
 
 .article-content .content h2 {
-  font-size: calc(2.125rem * var(--article-font-scale, 1));
+  font-size: calc(var(--md-sys-typescale-headline-small-size) * var(--article-font-scale, 1));
+  line-height: var(--md-sys-typescale-headline-small-line-height);
+  font-weight: var(--md-sys-typescale-headline-small-weight);
+  margin-top: var(--md-sys-spacing-8);
+  margin-bottom: var(--md-sys-spacing-4);
 }
 
 .article-content .content h3 {
-  font-size: calc(1.5rem * var(--article-font-scale, 1));
+  font-size: calc(var(--md-sys-typescale-title-large-size) * var(--article-font-scale, 1));
+  line-height: var(--md-sys-typescale-title-large-line-height);
+  font-weight: var(--md-sys-typescale-title-large-weight);
+  margin-top: var(--md-sys-spacing-6);
+  margin-bottom: var(--md-sys-spacing-3);
 }
 
 .article-content .content h4 {
-  font-size: calc(1.25rem * var(--article-font-scale, 1));
+  font-size: calc(var(--md-sys-typescale-title-medium-size) * var(--article-font-scale, 1));
+  line-height: var(--md-sys-typescale-title-medium-line-height);
+  font-weight: var(--md-sys-typescale-title-medium-weight);
+  margin-top: var(--md-sys-spacing-4);
+  margin-bottom: var(--md-sys-spacing-2);
 }
 
 .article-content .content p,
 .article-content .content li,
 .article-content .content blockquote,
 .article-content .content table {
-  font-size: calc(1.125rem * var(--article-font-scale, 1));
+  font-size: calc(var(--md-sys-typescale-body-large-size) * var(--article-font-scale, 1));
+  line-height: var(--md-sys-typescale-body-large-line-height);
+  margin-bottom: var(--md-sys-spacing-4);
 }
 
 .article-content .related-section-title {
-  font-size: calc(1.25rem * var(--article-font-scale, 1));
+  font-size: calc(var(--md-sys-typescale-title-large-size) * var(--article-font-scale, 1));
+  line-height: var(--md-sys-typescale-title-large-line-height);
+  margin-bottom: var(--md-sys-spacing-4);
 }
 
 .article-content .pickup-card-title {
-  font-size: calc(0.9rem * var(--article-font-scale, 1));
+  font-size: calc(var(--md-sys-typescale-body-medium-size) * var(--article-font-scale, 1));
+  line-height: var(--md-sys-typescale-body-medium-line-height);
 }
 
 .article-content .keepa-section-title {
-  font-size: calc(1.25rem * var(--article-font-scale, 1));
+  font-size: calc(var(--md-sys-typescale-title-large-size) * var(--article-font-scale, 1));
+  line-height: var(--md-sys-typescale-title-large-line-height);
+  margin-bottom: var(--md-sys-spacing-3);
 }
 
 .article-content .keepa-note {
-  font-size: calc(0.8rem * var(--article-font-scale, 1));
+  font-size: calc(var(--md-sys-typescale-body-small-size) * var(--article-font-scale, 1));
+  line-height: var(--md-sys-typescale-body-small-line-height);
+  margin-top: var(--md-sys-spacing-2);
 }
 
 /* ==========================================================================
    Material Design 3 (M3) System Components & Surface Elevation Styles
    ========================================================================== */
+
+/* M3 Typography Utility Classes */
+.m3-typescale-display-large {
+  font-size: var(--md-sys-typescale-display-large-size);
+  line-height: var(--md-sys-typescale-display-large-line-height);
+  font-weight: var(--md-sys-typescale-display-large-weight);
+}
+.m3-typescale-display-medium {
+  font-size: var(--md-sys-typescale-display-medium-size);
+  line-height: var(--md-sys-typescale-display-medium-line-height);
+  font-weight: var(--md-sys-typescale-display-medium-weight);
+}
+.m3-typescale-display-small {
+  font-size: var(--md-sys-typescale-display-small-size);
+  line-height: var(--md-sys-typescale-display-small-line-height);
+  font-weight: var(--md-sys-typescale-display-small-weight);
+}
+
+.m3-typescale-headline-large {
+  font-size: var(--md-sys-typescale-headline-large-size);
+  line-height: var(--md-sys-typescale-headline-large-line-height);
+  font-weight: var(--md-sys-typescale-headline-large-weight);
+}
+.m3-typescale-headline-medium {
+  font-size: var(--md-sys-typescale-headline-medium-size);
+  line-height: var(--md-sys-typescale-headline-medium-line-height);
+  font-weight: var(--md-sys-typescale-headline-medium-weight);
+}
+.m3-typescale-headline-small {
+  font-size: var(--md-sys-typescale-headline-small-size);
+  line-height: var(--md-sys-typescale-headline-small-line-height);
+  font-weight: var(--md-sys-typescale-headline-small-weight);
+}
+
+.m3-typescale-title-large {
+  font-size: var(--md-sys-typescale-title-large-size);
+  line-height: var(--md-sys-typescale-title-large-line-height);
+  font-weight: var(--md-sys-typescale-title-large-weight);
+}
+.m3-typescale-title-medium {
+  font-size: var(--md-sys-typescale-title-medium-size);
+  line-height: var(--md-sys-typescale-title-medium-line-height);
+  font-weight: var(--md-sys-typescale-title-medium-weight);
+}
+.m3-typescale-title-small {
+  font-size: var(--md-sys-typescale-title-small-size);
+  line-height: var(--md-sys-typescale-title-small-line-height);
+  font-weight: var(--md-sys-typescale-title-small-weight);
+}
+
+.m3-typescale-body-large {
+  font-size: var(--md-sys-typescale-body-large-size);
+  line-height: var(--md-sys-typescale-body-large-line-height);
+  font-weight: var(--md-sys-typescale-body-large-weight);
+}
+.m3-typescale-body-medium {
+  font-size: var(--md-sys-typescale-body-medium-size);
+  line-height: var(--md-sys-typescale-body-medium-line-height);
+  font-weight: var(--md-sys-typescale-body-medium-weight);
+}
+.m3-typescale-body-small {
+  font-size: var(--md-sys-typescale-body-small-size);
+  line-height: var(--md-sys-typescale-body-small-line-height);
+  font-weight: var(--md-sys-typescale-body-small-weight);
+}
+
+.m3-typescale-label-large {
+  font-size: var(--md-sys-typescale-label-large-size);
+  line-height: var(--md-sys-typescale-label-large-line-height);
+  font-weight: var(--md-sys-typescale-label-large-weight);
+}
+.m3-typescale-label-medium {
+  font-size: var(--md-sys-typescale-label-medium-size);
+  line-height: var(--md-sys-typescale-label-medium-line-height);
+  font-weight: var(--md-sys-typescale-label-medium-weight);
+}
+.m3-typescale-label-small {
+  font-size: var(--md-sys-typescale-label-small-size);
+  line-height: var(--md-sys-typescale-label-small-line-height);
+  font-weight: var(--md-sys-typescale-label-small-weight);
+}
 
 /* Surface Elevation Utility Classes */
 .m3-surface-0 { background-color: var(--md-sys-color-surface-0); color: var(--md-sys-color-on-surface); }
