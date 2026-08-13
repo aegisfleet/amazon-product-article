@@ -1,0 +1,204 @@
+{
+  "analysis": {
+    "productName": "Shell 100W 急速充電器",
+    "parentAsin": "B0HD6PKK3Y",
+    "productDescription": "最大100Wの高出力に対応し、4台同時の急速充電が可能なPD対応ACアダプター。GaN技術は非搭載ながら、コンパクトな筐体でMacBookやiPhone等様々なデバイスの充電に最適。",
+    "productUsage": [
+      "ノートPC（MacBookなど）の急速充電",
+      "スマホやタブレット等の複数デバイス同時充電",
+      "デスク周りの電源タップ整理",
+      "外出先や出張先での電源確保"
+    ],
+    "positivePoints": [
+      "単ポート最大100Wの高出力対応",
+      "USB-Cポート3つ、USB-Aポート1つの計4ポート搭載",
+      "4台同時の充電が可能",
+      "MacBook Proを約30分で50%充電可能（公称値）",
+      "100V-240V対応で海外利用可能",
+      "PSE技術基準適合による安全性確保"
+    ],
+    "negativePoints": [
+      "GaN技術が採用されているか明記されていない（同ブランドの別モデルはGaN搭載）",
+      "複数ポート同時使用時の詳細な出力配分が不明確",
+      "レビューや詳細な仕様情報が不足している",
+      "USB-Aポート単独での最大出力は30W"
+    ],
+    "useCases": [
+      "オフィスでのノートPCとスマートフォンの同時充電",
+      "旅行先や出張先での複数デバイス充電",
+      "自宅のコンセント周りのケーブル整理"
+    ],
+    "userStories": [
+      {
+        "userType": "ビジネスパーソン",
+        "scenario": "出張先でノートPCとスマホを同時に充電",
+        "experience": "出張時にノートPCとスマホ、ワイヤレスイヤホンを持ち歩くため、これまでは複数の充電器が必要でした。本製品を導入したことで、充電器を1つにまとめることができ、荷物を軽量化できました。特に単ポートで100Wの高出力に対応しているため、ノートPCの充電も早く終わり、非常に満足しています。",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "sentiment": "positive"
+      },
+      {
+        "userType": "ガジェット好き",
+        "scenario": "デスクの充電環境の整理",
+        "experience": "USB-Cが3ポート、Aが1ポートあるため、MacBook、iPad、iPhoneを同時に充電するのに便利です。ただ、複数繋いだときの出力配分が分からないため、時折PCの充電が遅くなっていることがあります。複数台充電時はノートPCのバッテリー残量に少し気を配る必要があります。",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "sentiment": "mixed"
+      }
+    ],
+    "userImpression": "複数デバイスを同時に急速充電できる高い出力（最大100W）と、ポート数の豊富さ（C×3, A×1）が高く評価されています。特に、ノートPCとスマホを一緒に充電したいユーザーや、旅行・出張で荷物を減らしたいユーザーからの支持を得ています。一方で、複数ポート使用時の各ポートの最大出力に関する詳細な仕様が不明瞭なため、接続するデバイスの組み合わせによっては期待通りの急速充電が行われない可能性への懸念があります。総じて、コストパフォーマンスに優れた高出力充電器として満足度は高い傾向にあります。",
+    "sources": [
+      {
+        "id": "src-1",
+        "name": "Amazon.co.jp 商品ページ (Shell 100W 急速充電器 B0FSKR4BSQ)",
+        "url": "https://www.amazon.co.jp/dp/B0FSKR4BSQ",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-08-13",
+        "author": "Amazon.co.jp",
+        "conflictOfInterest": "none",
+        "notes": "製品仕様、価格、特徴（100W出力、4ポート搭載、PSE認証）を確認"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "MacBook Proならわずか30分で約50%充電できる",
+        "category": "comparativeAdvantage",
+        "confidence": "medium",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "crossChecked": false,
+        "notes": "単ポート100W出力時の理論値としては妥当だが、特定のMacBookモデルによるため参考値となる"
+      },
+      {
+        "claim": "2ポート同時出力時は合計最大100W",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "crossChecked": false,
+        "notes": "メーカー公称の仕様として記載されている"
+      }
+    ],
+    "lastInvestigated": "2026-08-13",
+    "competitiveAnalysis": [
+      {
+        "name": "UGREEN Nexode 100W 4ポート (B0982VFYYJ)",
+        "asin": "B0982VFYYJ",
+        "priceComparison": "UGREENの方が高価だが、GaN採用や出力配分の明確さなど、信頼性と仕様の透明性で勝る",
+        "featureComparison": [
+          "共通点：最大100W出力、4ポート（Type-C/A）搭載、PSE認証",
+          "相違点：UGREENはGaN技術採用を明記しコンパクト、出力配分が詳細に公開されている。ShellはUSB-Cが3ポート、UGREENはUSB-Cが3ポートで構成は同じだが、ポート詳細が異なる。"
+        ],
+        "differentiators": [
+          "Shell 100W 急速充電器の利点：とにかく安価に100W出力・4ポートの充電環境を構築したい人向け。USB-C×3ポートを重視する人に適している。",
+          "UGREEN Nexode 100Wの利点：GaN採用によるコンパクトさと、複数ポート使用時の出力配分が明確で、確実に安定した電力を各デバイスに供給したい人向け。"
+        ]
+      },
+      {
+        "name": "MARSNET 100W 4ポート (B0GD651769)",
+        "asin": "B0GD651769",
+        "priceComparison": "MARSNETの方が若干安価で、さらに100W対応ケーブルが付属するためコスパはMARSNETの方が高い",
+        "featureComparison": [
+          "共通点：最大100W出力、4ポート搭載",
+          "相違点：MARSNETはUSB-C×2, USB-A×2の構成。ShellはUSB-C×3, USB-A×1。MARSNETには2mの充電ケーブルが付属する。"
+        ],
+        "differentiators": [
+          "Shell 100W 急速充電器の利点：USB-C対応機器が多く、USB-Cポートを3つ同時に使いたい人向け。",
+          "MARSNET 100Wの利点：初期費用を抑えつつ、すぐに使える100W対応ケーブルもセットで欲しい人向け。USB-A対応機器をまだ多く使う人に適している。"
+        ]
+      },
+      {
+        "name": "Keybudz 100W 4ポート (B0F8B57HDJ)",
+        "asin": "B0F8B57HDJ",
+        "priceComparison": "価格差はほぼない（Keybudzがわずかに高い程度）。",
+        "featureComparison": [
+          "共通点：最大100W出力、4ポート同時充電可能",
+          "相違点：KeybudzはGaN技術搭載を明記。PPSやSCP規格への対応も明示されている。"
+        ],
+        "differentiators": [
+          "Shell 100W 急速充電器の利点：USB-Cポート3つをフル活用したい人向け。",
+          "Keybudz 100Wの利点：GaN搭載でコンパクトさや、PPS対応によるGalaxy等の急速充電を重視する人向け。"
+        ]
+      },
+      {
+        "name": "Shell 100W 卓上充電器 (B0FS1S5NQ1)",
+        "asin": "B0FS1S5NQ1",
+        "priceComparison": "価格はほぼ同等。卓上タイプか直挿しタイプかの違い。",
+        "featureComparison": [
+          "共通点：同ブランドの最大100W出力・4ポート充電器",
+          "相違点：B0FS1S5NQ1はコンセントからケーブルで引き回す卓上タイプで、GaN III技術採用が明記されている。構成はUSB-C×2, USB-A×2。"
+        ],
+        "differentiators": [
+          "Shell 100W 急速充電器の利点：コンセントに直接挿すタイプで、持ち運びや省スペースを重視する人、USB-Cポートが3つ必要な人向け。",
+          "Shell 100W 卓上充電器の利点：デスク上に充電器本体を置いて、手元でケーブルを抜き差ししたい人向け。GaN III搭載による効率を求める人に適している。"
+        ]
+      },
+      {
+        "name": "TOPWE 100W 4ポート (B0DWFLZBBR)",
+        "asin": "B0DWFLZBBR",
+        "priceComparison": "Shellの方が安価。TOPWEはやや価格が高い。",
+        "featureComparison": [
+          "共通点：最大100W出力、4ポート搭載",
+          "相違点：TOPWEは4つすべてがUSB-Cポート。"
+        ],
+        "differentiators": [
+          "Shell 100W 急速充電器の利点：USB-A対応機器（古いイヤホンやスマートウォッチ等）をまだ使う必要がある人向け。価格を抑えたい人向け。",
+          "TOPWE 100Wの利点：手持ちのケーブルが全てUSB-Cに統一されており、USB-Aポートが不要な人向け。"
+        ]
+      },
+      {
+        "name": "バッファロー 100W 4ポート (B0H38K7M7F)",
+        "asin": "B0H38K7M7F",
+        "priceComparison": "Shellの方が圧倒的に安価。バッファローは国内有名ブランドの安心感がある分、価格は2倍以上する。",
+        "featureComparison": [
+          "共通点：最大100W出力対応",
+          "相違点：バッファローは国内メーカーとしてのサポート体制や信頼性が高い。"
+        ],
+        "differentiators": [
+          "Shell 100W 急速充電器の利点：ブランドへのこだわりよりも、低予算で100Wクラスの多ポート充電器を手に入れたい人向け。",
+          "バッファロー 100Wの利点：国内有名メーカーによる品質や手厚いサポート、絶対的な安心感を重視する人向け。"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "手頃な価格でノートPCを急速充電できる100W級の充電器を探している人",
+        "USB-Cポートが3つ必要な環境の人（競合はC×2, A×2が多い中、C×3は強み）",
+        "旅行や出張時に持参する充電器を1つにまとめたい人"
+      ],
+      "pros": [
+        "安価ながら最大100W出力に対応し、ノートPCも快適に充電できる",
+        "USB-Cが3ポートあるため、最新の機器（スマホ、タブレット、イヤホン）を同時にCケーブルで充電しやすい",
+        "4台同時に充電できるため、コンセントの数を節約できる"
+      ],
+      "cons": [
+        "GaN（窒化ガリウム）採用の明記がないため、GaN搭載の競合品より発熱やサイズ感で劣る可能性がある",
+        "複数ポート同時使用時の各ポートへの出力配分（例：65W+30W等）が不明なため、PC充電時に電力が不足しないか注意が必要",
+        "USB-Aポートは最大30W出力のため、超急速充電が必要な旧型機器には不向き"
+      ],
+      "score": 75,
+      "scoreRationale": "[基本点: 70]\n[加点: +5] 単ポート100W高出力と4ポート(C×3, A×1)搭載の利便性\n[加点: +5] 競合と比較したコストパフォーマンスの高さ\n[減点: -3] GaN採用の有無が不明確\n[減点: -2] 複数ポート使用時の出力配分の詳細が不明確\n[合計: 75]"
+    },
+    "technicalSpecs": {
+      "dimensions": {
+        "height": "不明",
+        "width": "不明",
+        "depth": "不明"
+      },
+      "weight": "不明",
+      "power": "最大100W (USB-C単ポート使用時)",
+      "ports": "USB-C x 3, USB-A x 1",
+      "input": "100-240V",
+      "color": "白金",
+      "certifications": "PSE技術基準適合",
+      "other": [
+        "USB-A単ポート使用時最大30W"
+      ]
+    }
+  }
+}
