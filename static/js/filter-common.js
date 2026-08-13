@@ -707,7 +707,7 @@ function renderActiveFilterChips(containerEl, chips, onClearAll) {
     closeBtn.className = 'm3-active-chip-close';
     closeBtn.title = `${chip.label}の条件を解除`;
     closeBtn.setAttribute('aria-label', `${chip.label}の条件を解除`);
-    closeBtn.innerHTML = '<span class="material-symbols-outlined" aria-hidden="true" style="font-size:0.875rem;">close</span>';
+    closeBtn.innerHTML = '<span class="material-symbols-outlined" aria-hidden="true">close</span>';
 
     closeBtn.addEventListener('click', (e) => {
       e.stopPropagation();
