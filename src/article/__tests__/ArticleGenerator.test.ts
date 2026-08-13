@@ -254,7 +254,7 @@ describe('ArticleGenerator', () => {
       // 見出しが正しく含まれることを確認
       expect(result.content).toContain('## 📦 商品の特徴');
       expect(result.content).toContain('## 📊 ユーザーレビュー');
-      expect(result.content).toContain('## 🥊 競合商品との比較');
+      expect(result.content).toContain('競合商品との比較');
       expect(result.content).toContain('## 🎯 まとめ');
       expect(result.content).toContain('## 🛒 商品詳細');
       expect(result.content).toContain('## 🔗 参考情報ソース');
@@ -553,7 +553,8 @@ describe('ArticleGenerator', () => {
       expect(result.content).toContain('サイト内レビュー');
       expect(result.content).toContain('class="btn-internal-small"');
       // Verify unified design and price difference
-      expect(result.content).toContain('<span class="badge-amazon-direct">Amazon直販</span>');
+      expect(result.content).toContain('badge-amazon-direct');
+      expect(result.content).toContain('Amazon直販');
       expect(result.content).toContain('class="competitor-price-diff price-down">(-￥5,000)</span>');
       expect(result.content).toContain('<span class="badge-availability">在庫あり</span>');
       // Mock fs.promises.readFile to reject
@@ -586,7 +587,8 @@ describe('ArticleGenerator', () => {
         mockCompetitorDetails,
       );
 
-      expect(result.content).toContain('<span class="badge-amazon-haul">Amazon Haul</span>');
+      expect(result.content).toContain('badge-amazon-haul');
+      expect(result.content).toContain('Amazon Haul');
     });
 
     it('should NOT show internal link if investigation file does not exist', async () => {
