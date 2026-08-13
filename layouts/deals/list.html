@@ -5,7 +5,7 @@
     <!-- Page Header -->
     <div class="bargain-hero deals-hero"
         style="background: linear-gradient(135deg, #e11d48 0%, #d97706 100%); color: #ffffff;">
-        <div class="bargain-hero-icon">🔥</div>
+        <div class="bargain-hero-icon"><span class="material-symbols-outlined" style="font-size: 2.5rem;" aria-hidden="true">local_offer</span></div>
         <h1 class="bargain-hero-title" style="color: #ffffff;">セール対象商品一覧</h1>
         <p class="bargain-hero-subtitle" style="color: rgba(255, 255, 255, 0.95);">お得なタイムセール & 限定セール開催中</p>
         <p class="bargain-hero-desc" style="color: rgba(255, 255, 255, 0.9); max-width: 700px; margin: 0 auto;">
@@ -20,7 +20,7 @@
         <div class="bargain-filter-row">
             <div class="bargain-filter-group">
                 <label for="deals-score-slider" class="bargain-filter-label">
-                    <span class="bargain-filter-icon">🏆</span>
+                    <span class="material-symbols-outlined bargain-filter-icon" aria-hidden="true">trophy</span>
                     最低スコア: <span id="deals-score-value" class="bargain-filter-value">80</span>点以上
                 </label>
                 <input type="range" id="deals-score-slider" class="bargain-slider" min="0" max="100" step="5"
@@ -33,7 +33,7 @@
             <div class="bargain-filter-group-price">
                 <div class="bargain-filter-group">
                     <label for="deals-min-price-slider" class="bargain-filter-label">
-                        <span class="bargain-filter-icon">💰</span>
+                        <span class="material-symbols-outlined bargain-filter-icon" aria-hidden="true">payments</span>
                         最低価格: <span id="deals-min-price-value" class="bargain-filter-value">¥100</span>
                     </label>
                     <input type="range" id="deals-min-price-slider" class="bargain-slider" min="0" max="1000" step="1"
@@ -67,7 +67,7 @@
         <div class="bargain-filter-row">
             <div class="bargain-filter-group">
                 <label for="deals-discount-slider" class="bargain-filter-label">
-                    <span class="bargain-filter-icon">📉</span>
+                    <span class="material-symbols-outlined bargain-filter-icon" aria-hidden="true">percent</span>
                     最低割引率: <span id="deals-discount-value" class="bargain-filter-value">0</span>%以上
                 </label>
                 <input type="range" id="deals-discount-slider" class="bargain-slider" min="0" max="50" step="5"
@@ -79,16 +79,16 @@
 
             <div class="bargain-filter-group">
                 <label for="deals-type-select" class="bargain-filter-label">
-                    <span class="bargain-filter-icon">🏷️</span>
+                    <span class="material-symbols-outlined bargain-filter-icon" aria-hidden="true">sell</span>
                     セールの種類
                 </label>
                 <div class="bargain-category-wrapper">
                     <select id="deals-type-select" class="bargain-select"
                         style="width: 100%; max-width: 100%; min-width: 0;">
                         <option value="">すべてのセール</option>
-                        <option value="prime">👑 プライム会員限定</option>
-                        <option value="limited">⚡ 限定タイムセール</option>
-                        <option value="standard">🔥 タイムセール</option>
+                        <option value="prime">プライム会員限定</option>
+                        <option value="limited">限定タイムセール</option>
+                        <option value="standard">タイムセール</option>
                     </select>
                 </div>
             </div>
@@ -98,7 +98,7 @@
         <div class="bargain-filter-row bargain-filter-row-bottom">
             <div class="bargain-filter-group">
                 <label for="deals-category-select" class="bargain-filter-label">
-                    <span class="bargain-filter-icon">📂</span>
+                    <span class="material-symbols-outlined bargain-filter-icon" aria-hidden="true">folder</span>
                     カテゴリ
                 </label>
                 <div class="bargain-category-wrapper">
@@ -113,7 +113,7 @@
 
             <div class="bargain-filter-group">
                 <span class="bargain-filter-label">
-                    <span class="bargain-filter-icon">🔄</span>
+                    <span class="material-symbols-outlined bargain-filter-icon" aria-hidden="true">swap_vert</span>
                     並び替え
                 </span>
                 <div class="bargain-sort-buttons" id="deals-sort-buttons">
@@ -132,7 +132,7 @@
             style="margin-top: var(--spacing-lg); padding-top: var(--spacing-lg); border-top: 1px solid var(--color-border); grid-template-columns: 1fr;">
             <div class="bargain-filter-group">
                 <label for="deals-keyword-input" class="bargain-filter-label">
-                    <span class="bargain-filter-icon">🔍</span>
+                    <span class="material-symbols-outlined bargain-filter-icon" aria-hidden="true">search</span>
                     キーワード検索
                 </label>
                 <div class="bargain-keyword-wrapper">

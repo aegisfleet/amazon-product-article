@@ -671,8 +671,19 @@ function renderActiveFilterChips(containerEl, chips, onClearAll) {
 
   const labelEl = document.createElement('span');
   labelEl.className = 'm3-active-chips-label';
-  labelEl.innerHTML = '<span aria-hidden="true">🏷️</span> 適用中:';
+  labelEl.innerHTML = '<span class="material-symbols-outlined icon-chip-label" aria-hidden="true" style="font-size:1.1rem; vertical-align:middle;">tune</span> 適用中:';
   containerEl.appendChild(labelEl);
+
+  const emojiToSymbol = {
+    '🏆': 'trophy',
+    '💰': 'payments',
+    '📉': 'percent',
+    '🏷️': 'sell',
+    '📂': 'folder',
+    '🔍': 'search',
+    '⚙️': 'tune',
+    '🏷': 'sell'
+  };
 
   chips.forEach((chip) => {
     const chipEl = document.createElement('span');
@@ -680,9 +691,10 @@ function renderActiveFilterChips(containerEl, chips, onClearAll) {
 
     if (chip.icon) {
       const iconEl = document.createElement('span');
-      iconEl.className = 'm3-active-chip-icon';
+      const symbolName = emojiToSymbol[chip.icon] || chip.icon;
+      iconEl.className = 'material-symbols-outlined m3-active-chip-icon';
       iconEl.setAttribute('aria-hidden', 'true');
-      iconEl.textContent = chip.icon;
+      iconEl.textContent = symbolName;
       chipEl.appendChild(iconEl);
     }
 
@@ -695,7 +707,7 @@ function renderActiveFilterChips(containerEl, chips, onClearAll) {
     closeBtn.className = 'm3-active-chip-close';
     closeBtn.title = `${chip.label}の条件を解除`;
     closeBtn.setAttribute('aria-label', `${chip.label}の条件を解除`);
-    closeBtn.textContent = '✕';
+    closeBtn.innerHTML = '<span class="material-symbols-outlined" aria-hidden="true" style="font-size:0.875rem;">close</span>';
 
     closeBtn.addEventListener('click', (e) => {
       e.stopPropagation();
@@ -712,7 +724,7 @@ function renderActiveFilterChips(containerEl, chips, onClearAll) {
     const clearAllBtn = document.createElement('button');
     clearAllBtn.type = 'button';
     clearAllBtn.className = 'm3-active-chips-clear-all';
-    clearAllBtn.innerHTML = 'すべて解除 ✕';
+    clearAllBtn.innerHTML = 'すべて解除 <span class="material-symbols-outlined" aria-hidden="true" style="font-size:0.875rem; vertical-align:middle;">close</span>';
     clearAllBtn.title = 'すべてのフィルタ条件を解除';
     clearAllBtn.setAttribute('aria-label', 'すべてのフィルタ条件を解除');
     clearAllBtn.addEventListener('click', () => {
