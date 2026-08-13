@@ -385,11 +385,21 @@
         html += '<tr><td class="compare-row-label">総合スコア</td>';
         items.forEach(function (item) {
             const isBest = maxScore > 0 && item.score === maxScore;
+            const scoreVal = parseInt(item.score, 10) || 0;
+            let scoreClass = 'score-fair';
+            if (scoreVal >= 80) {
+                scoreClass = 'score-excellent';
+            } else if (scoreVal >= 60) {
+                scoreClass = 'score-good';
+            }
+            const scoreHtml = item.score > 0
+                ? `<span class="card-score m3-badge m3-badge-score ${scoreClass}"><span class="material-symbols-outlined icon-score" aria-hidden="true">trophy</span> ${item.score}点</span>`
+                : '未評価';
             html += `
                 <td class="compare-cell ${isBest ? 'is-winner' : ''}">
                     <div class="compare-score-wrapper">
-                        <span class="compare-score-value">${item.score > 0 ? `${item.score}点` : '未評価'}</span>
-                        ${isBest ? '<span class="compare-badge-winner">🏆 最高スコア</span>' : ''}
+                        <span class="compare-score-value">${scoreHtml}</span>
+                        ${isBest ? '<span class="compare-badge-winner"><span class="material-symbols-outlined" aria-hidden="true" style="font-size:0.85rem; vertical-align:middle;">trophy</span> 最高スコア</span>' : ''}
                     </div>
                 </td>
             `;
@@ -405,7 +415,7 @@
                     <div class="compare-price-wrapper">
                         <span class="compare-price-value">${item.price ? escapeHtml(item.price) : '価格情報なし'}</span>
                         ${item.savingsPercentage > 0 ? `<span class="badge-savings">${item.savingsPercentage}% OFF</span>` : ''}
-                        ${isLowest ? '<span class="compare-badge-winner">💰 最安値</span>' : ''}
+                        ${isLowest ? '<span class="compare-badge-winner"><span class="material-symbols-outlined" aria-hidden="true" style="font-size:0.85rem; vertical-align:middle;">payments</span> 最安値</span>' : ''}
                     </div>
                 </td>
             `;
