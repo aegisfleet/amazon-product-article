@@ -2193,10 +2193,12 @@ a.competitor-preview:hover {
 
 .competitor-preview-main {
   display: flex;
-  flex-wrap: wrap;
+  justify-content: space-between;
   align-items: center;
-  gap: var(--spacing-md);
+  width: 100%;
+  gap: var(--spacing-sm);
   margin-bottom: var(--spacing-xs);
+  flex-wrap: wrap;
 }
 
 .competitor-preview-meta {
@@ -2206,21 +2208,24 @@ a.competitor-preview:hover {
   margin-bottom: var(--spacing-xs);
 }
 
-/* Score container forces a line break */
+/* Score container aligned to the right like standard cards */
 .competitor-score-container {
-  flex-basis: 100%;
-  width: 100%;
+  order: 2;
+  margin-left: auto;
   margin-bottom: 0;
+  flex-shrink: 0;
 }
 
 /* Ensure score badge inside container keeps its natural size */
 .competitor-preview-main .pickup-card-score {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
   width: auto;
   margin: 0;
 }
 
 .competitor-actual-price {
+  order: 1;
   font-weight: 700;
   color: var(--text-competitor-price);
   font-size: 1.15rem;
