@@ -130,17 +130,23 @@ function renderCardHeader(p) {
   const header = document.createElement('div');
   header.className = 'card-header';
 
-  if (p.category) {
-    const category = document.createElement('span');
-    category.className = 'card-tag bargain-card-category';
-    category.textContent = String(p.category || '');
-    header.appendChild(category);
-  }
-  if (p.subcategory) {
-    const subcat = document.createElement('span');
-    subcat.className = 'card-tag-sub';
-    subcat.textContent = String(p.subcategory);
-    header.appendChild(subcat);
+  if (p.category || p.subcategory) {
+    const tagsRow = document.createElement('div');
+    tagsRow.className = 'card-tags-row';
+
+    if (p.category) {
+      const category = document.createElement('span');
+      category.className = 'card-tag bargain-card-category';
+      category.textContent = String(p.category || '');
+      tagsRow.appendChild(category);
+    }
+    if (p.subcategory) {
+      const subcat = document.createElement('span');
+      subcat.className = 'card-tag-sub';
+      subcat.textContent = String(p.subcategory);
+      tagsRow.appendChild(subcat);
+    }
+    header.appendChild(tagsRow);
   }
 
   const title = document.createElement('h3');
