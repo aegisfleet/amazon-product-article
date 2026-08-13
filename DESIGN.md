@@ -120,6 +120,9 @@ Web実装の正式な基準単位を CSS `px` および `rem`（1rem = 16px）�
   2. **Body/Specs**: 主要スペック（`Body Medium`）の構造化表示
   3. **Badges**: 評価スコア（`[Icon: trophy] 84点`）、価格（`[Icon: payments] ￥9,900`）、ポイントをコンテナで配置
   4. **Actions**: カード下部に主要CTA (`[Icon: shopping_cart] Amazonで見る`) と補助アクション (`[Icon: favorite_border] お気に入り`) を配置
+- **ミニカード (Pickup Card / 高評価おすすめ)**:
+  - 省スペースで表示されるコンパクトなカードコンポーネント。
+  - アクセシビリティ標準（WCAG 2.1 AA）と M3 Label Small タイプスケール規定に準拠し、価格表記 (`.pickup-card-price`) の文字サイズは **`0.75rem` (12px / モバイル)** 〜 **`0.8rem` (12.8px / デスクトップ)** 以上を保持すること。
 
 ### 4.5 フッター (Footer)
 - M3 Surface Container Background と Divider（境界線）でコンテンツ本文との区切りを明確化。
