@@ -1,0 +1,192 @@
+{
+  "analysis": {
+    "productName": "GMKtec G10 (Ryzen 5 3500U)",
+    "parentAsin": "B0H2Q718QB",
+    "productDescription": "AMD Ryzen 5 3500Uを搭載した手のひらサイズのミニPC。16GBメモリと256GBのNVMe SSDを備え、最大16TBまでストレージ拡張が可能。4K3画面同時出力に対応する。",
+    "productUsage": [
+      "日常的なブラウジングや動画視聴",
+      "Officeアプリケーションを使ったビジネス業務",
+      "小型サーバーやホームNASとしての活用"
+    ],
+    "positivePoints": [
+      "Ryzen 5 3500U搭載により、同クラスのIntel N5030やN100/N97と比較して高い処理性能を持つ",
+      "16GB DDR4メモリを標準搭載し、複数のアプリケーションやタブを同時に開いてもスムーズに動作する",
+      "M.2スロットが2基あり、最大16TB（8TB×2）までストレージを拡張できる",
+      "HDMI 2.1、DisplayPort 1.4、USB Type-Cによる最大3画面同時の4K出力に対応する",
+      "2.5Gbpsの有線LANポートを備え、高速なネットワーク通信が可能"
+    ],
+    "negativePoints": [
+      "搭載されているRyzen 5 3500Uは数世代前のプロセッサであり、最新の重いゲームや高度な動画編集には不向き",
+      "Wi-Fi規格がWi-Fi 5であり、最新のWi-Fi 6/6Eには非対応"
+    ],
+    "useCases": [
+      "デスクのスペースを節約しつつ、快適なマルチモニター環境を構築したい場合",
+      "省電力かつコンパクトな端末で自宅用のファイルサーバーを構築したい場合"
+    ],
+    "userStories": [
+      {
+        "userType": "ビジネスワーカー",
+        "scenario": "在宅勤務でのサブ機兼マルチモニター環境構築",
+        "experience": "コンパクトな筐体ながらHDMIとDisplayPortを備えており、簡単に3画面環境を構築できた。16GBメモリのおかげで、ブラウザで多数のタブを開きながらOfficeソフトを使用しても動作がもたつかず、日々の業務が快適になった。しかしWi-Fi 5までの対応のため、大容量のファイル転送時は有線LAN接続に切り替えている。",
+        "supportingSourceIds": [
+          "amazon-features"
+        ],
+        "sentiment": "positive"
+      }
+    ],
+    "userImpression": "手のひらサイズのコンパクトさでありながら、16GBメモリやRyzen 5 3500Uの搭載により、一般的なオフィスワークやブラウジングで十分以上のパフォーマンスを発揮する点が評価されている。最新ゲームには不向きだが、大容量ストレージへの拡張性や充実したポート類（4K 3画面出力、2.5GbEなど）が、省スペースな作業用PCやホームサーバーを求めるユーザーに好評。Wi-Fi 5対応というスペックの古さはあるものの、価格に対する性能の高さで満足度は高い傾向にある。",
+    "sources": [
+      {
+        "id": "amazon-features",
+        "name": "Amazon商品ページ",
+        "url": "https://www.amazon.co.jp/dp/B0H2Q718QB",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-08-13",
+        "author": "GMKtec",
+        "conflictOfInterest": "disclosed",
+        "notes": "スペック情報、製品の特徴（Ryzen 5 3500U、16GBメモリ、3画面出力、ストレージ拡張性など）を確認"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "Intel N5030搭載モデル比でOffice作業が約180～220%高速、Ryzen 3 4300UやN100/N97と比べて約19％高速",
+        "category": "comparativeAdvantage",
+        "confidence": "medium",
+        "supportingSourceIds": [
+          "amazon-features"
+        ],
+        "crossChecked": false,
+        "notes": "メーカーの自社テスト基準に基づく主張。一般的なベンチマーク傾向とは概ね一致するが、実使用時の体感は環境に依存する"
+      }
+    ],
+    "lastInvestigated": "2026-08-13",
+    "competitiveAnalysis": [
+      {
+        "name": "wo-we P6 Lite ミニPC (Ryzen 5 3500U, 8GB/256GB)",
+        "asin": "B0GTPZT7ML",
+        "priceComparison": "GMKtec G10よりも安価な傾向にあるが、メモリ容量が8GBと少ない。",
+        "featureComparison": [
+          "共通点：Ryzen 5 3500Uを搭載し、Wi-Fi 5に対応している点。",
+          "相違点：GMKtec G10はメモリ16GB、M.2スロット2基、2.5GbE、3画面出力を備えるのに対し、wo-weはメモリ8GB、2.5インチSSD対応、デュアルHDMI出力、ギガビットLANである点。"
+        ],
+        "differentiators": [
+          "GMKtec G10の利点：複数のアプリを同時に使用する場合や、より高速な有線ネットワーク（2.5GbE）環境、大容量のストレージ拡張（最大16TB）を求めるならこちら。16GBメモリにより余裕のある動作が可能。",
+          "wo-we P6 Liteの利点：とにかく初期コストを抑えたい場合や、手持ちの2.5インチSSDを活用したい場合に適している。"
+        ]
+      },
+      {
+        "name": "ACEMAGIC ミニPC (Ryzen 3 4300U, 16GB/512GB)",
+        "asin": "B0H1M1Q99P",
+        "priceComparison": "同価格帯で展開されている。",
+        "featureComparison": [
+          "共通点：16GBメモリを搭載し、4K 3画面出力に対応している点。",
+          "相違点：GMKtec G10はRyzen 5 3500U、256GB SSD、M.2スロット2基（最大16TB拡張）、2.5GbE搭載。ACEMAGICはRyzen 3 4300U、512GB SSD（最大4TB拡張）、ギガビットLAN搭載。"
+        ],
+        "differentiators": [
+          "GMKtec G10の利点：より高いマルチスレッド性能（4コア8スレッド）や、ホームサーバー用途などで将来的に大容量ストレージ（最大16TB）を追加したいならこちら。",
+          "ACEMAGIC ミニPCの利点：初期状態で512GBのストレージ容量が必要な場合や、Ryzen 4000シリーズの新しいアーキテクチャを好む場合に適している。"
+        ]
+      },
+      {
+        "name": "ORIGIMAGIC ミニPC C4 (Ryzen 5 3500U, 8GB/256GB)",
+        "asin": "B0FG1NHLNT",
+        "priceComparison": "GMKtec G10よりも安価な設定。",
+        "featureComparison": [
+          "共通点：Ryzen 5 3500Uを搭載し、3画面出力に対応している点。",
+          "相違点：GMKtec G10は16GBメモリ、シングル2.5GbELANポート。ORIGIMAGIC C4は8GBメモリ、デュアルRJ45ポートを搭載。"
+        ],
+        "differentiators": [
+          "GMKtec G10の利点：購入状態のままでメモリ不足による動作のもたつきを避けたい場合や、2.5GbEの高速通信を求めるなら迷わずこちら。",
+          "ORIGIMAGIC ミニPC C4の利点：ソフトウェアルーターや特定ネットワーク構築など、デュアルLANポート（有線LANポート2基）を必要とする特殊な用途に適している。"
+        ]
+      },
+      {
+        "name": "GMKtec ミニPC G10 (Ryzen 5 3500U, 16GB/512GB版)",
+        "asin": "B0GZM6GVL3",
+        "priceComparison": "ストレージ容量が倍増しているため、GMKtec G10 (256GB版) よりも高価。",
+        "featureComparison": [
+          "共通点：筐体設計、プロセッサ(Ryzen 5 3500U)、メモリ容量(16GB)、ポート類（2.5GbE、3画面出力等）は同一。",
+          "相違点：標準搭載のSSD容量が256GBか512GBかの違い。"
+        ],
+        "differentiators": [
+          "GMKtec G10 (256GB版)の利点：クラウドストレージをメインで使用する人や、後から自分で好みの容量のSSDを増設する予定があり、初期費用を抑えたい人に適している。",
+          "GMKtec ミニPC G10 (16GB/512GB版)の利点：自身でパーツの増設・換装作業を行う手間をかけず、最初から余裕のあるストレージ容量で運用を開始したいならこちら。"
+        ]
+      },
+      {
+        "name": "ORIGIMAGIC ミニPC (Ryzen 5 3500U, 8GB/256GB)",
+        "asin": "B0H35QVBBY",
+        "priceComparison": "GMKtec G10よりもやや安価な設定。",
+        "featureComparison": [
+          "共通点：Ryzen 5 3500Uと256GB SSDを搭載。",
+          "相違点：GMKtec G10はメモリ16GB搭載。ORIGIMAGICはメモリ8GBでデュアルネットワークカード搭載。"
+        ],
+        "differentiators": [
+          "GMKtec G10の利点：日常的なオフィス作業やブラウジングで、メモリ不足によるストレスを感じたくない一般的なユーザーにはこちらがおすすめ。",
+          "ORIGIMAGIC ミニPCの利点：ルーター化など、デュアルネットワーク環境が必須の用途に使う場合に適している。"
+        ]
+      },
+      {
+        "name": "GMKtec ミニPC G10 (Ryzen 5 3500U, 16GB/1TB版)",
+        "asin": "B0GQGY13FB",
+        "priceComparison": "1TBの大容量SSDを搭載しているため、GMKtec G10 (256GB版) よりも高価。",
+        "featureComparison": [
+          "共通点：筐体、プロセッサ(Ryzen 5 3500U)、メモリ(16GB)、ポート類は同一。",
+          "相違点：標準搭載のSSD容量が1TBと大幅に大きい点。"
+        ],
+        "differentiators": [
+          "GMKtec G10 (256GB版)の利点：用途が限定的で大容量ストレージを必要としない場合や、とにかく導入コストを最小限に抑えたい人に適している。",
+          "GMKtec ミニPC G10 (16GB/1TB版)の利点：大量の動画ファイルや写真データを本体に保存したい、または多数のソフトウェアをインストールして使う予定ならこちら。"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "限られたデスクスペースに設置でき、Officeソフトや多数のブラウザタブを同時に開いても快適に動作する安価な作業用PCを求める人",
+        "将来的なデータ増加に備えて、自分でM.2 SSDを追加して大容量ストレージ環境（最大16TB）を構築したい人",
+        "マルチモニター環境（最大3画面）を簡単に構築したい在宅ワーカー"
+      ],
+      "pros": [
+        "16GBの標準メモリとRyzen 5 3500Uの組み合わせにより、複数の作業を並行しても動作が重くなりにくく、日々のストレスを軽減する",
+        "最大16TBまでストレージを拡張可能なM.2スロットを備えているため、後からデータが増えても本体を買い替えることなく対応できる",
+        "3種類の映像出力ポートを搭載しており、ケーブル1本で手軽にマルチモニター環境を作れ、作業効率が大幅に向上する"
+      ],
+      "cons": [
+        "搭載CPUが数世代前のモデルであり、最新の3Dゲームや高負荷な動画編集を目的とするユーザーは性能不足を感じるため購入を避けるべき",
+        "最新の高速Wi-Fi規格（Wi-Fi 6/6E）には非対応のため、完全なワイヤレス環境で超高速通信を求める場合は注意が必要"
+      ],
+      "score": 75,
+      "scoreRationale": "[基本点: 70]\n[加点: +5] (16GBメモリ標準搭載による余裕のあるマルチタスク性能と快適な動作)\n[加点: +5] (最大16TBまで拡張可能なM.2スロット2基を備える優れた拡張性)\n[減点: -3] (搭載プロセッサが数世代前であり最新用途にはスペック不足)\n[減点: -2] (最新規格非対応のWi-Fi 5まで対応)\n[合計: 75]"
+    },
+    "technicalSpecs": {
+      "os": "Windows 11 Pro",
+      "cpu": "AMD Ryzen 5 3500U (4コア/8スレッド, 4MBキャッシュ, 最大3.7GHz)",
+      "ram": "16GB DDR4 3200MHz (2x8GB デュアルチャネル, 最大64GB拡張可能)",
+      "storage": "256GB PCIe 3.0 M.2 NVMe SSD (M.2スロットx2, 最大16TB拡張可能)",
+      "display": {
+        "size": "なし",
+        "resolution": "最大4K@60Hz (HDMI/DP/Type-C経由で3画面同時出力対応)"
+      },
+      "battery": {
+        "capacity": "なし",
+        "charging": "なし"
+      },
+      "dimensions": {
+        "height": "不明",
+        "width": "不明",
+        "depth": "不明"
+      },
+      "weight": "0.283kg",
+      "capacity": "なし",
+      "material": "不明",
+      "origin": "不明",
+      "other": [
+        "グラフィックス: Radeon Vega 8 Graphics (1200MHz)",
+        "ネットワーク: 2.5Gbps 有線LAN (Realtek 8125BG), Wi-Fi 5, Bluetooth 5.0",
+        "インターフェース: USB 3.2 Gen1 x2, USB 2.0 x1, Type-C x2 (映像出力/給電/データ通信対応), HDMI 2.1 x1, DisplayPort 1.4 x1, 2.5G LAN x1",
+        "その他機能: VESAマウント対応"
+      ]
+    }
+  }
+}
