@@ -7,6 +7,43 @@
   padding: 0;
 }
 
+/* WCAG 2.1 AA Focus Ring Indicator (DESIGN.md Section 5.1) */
+:focus-visible {
+  outline: 3px solid var(--md-sys-color-primary);
+  outline-offset: 2px;
+}
+
+/* Reduced Motion Accessibility Support (DESIGN.md Section 5.8) */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Minimum Touch Target Area (DESIGN.md Section 3.2) */
+.m3-touch-target,
+button,
+input[type="button"],
+input[type="submit"],
+input[type="reset"],
+select,
+.btn,
+.btn-primary,
+.btn-secondary,
+.btn-compare-card,
+.btn-favorite-card,
+.btn-amazon-small,
+.chip,
+.filter-chip,
+.theme-toggle {
+  min-height: var(--md-sys-touch-target-min, 48px);
+}
+
 body {
   font-family: var(--font-sans);
   font-size: var(--md-sys-typescale-body-large-size);

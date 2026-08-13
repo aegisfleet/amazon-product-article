@@ -1,7 +1,7 @@
 /* Global Variables */
 :root {
     color-scheme: light;
-    /* Material Design 3 Tonal System & Surface Elevation */
+    /* Material Design 3 Tonal System & Surface Elevation (DESIGN.md Section 2.1 & 2.2) */
     --md-sys-color-primary: #4F46E5;
     --md-sys-color-on-primary: #FFFFFF;
     --md-sys-color-primary-container: #EEF2FF;
@@ -22,18 +22,31 @@
     --md-sys-color-error-container: #FEE2E2;
     --md-sys-color-on-error-container: #991B1B;
 
-    --md-sys-color-surface-0: #F8FAFC;
-    --md-sys-color-surface-1: #FFFFFF;
-    --md-sys-color-surface-2: #F1F5F9;
-    --md-sys-color-surface-3: #E2E8F0;
-    --md-sys-color-surface-4: #CBD5E1;
-    --md-sys-color-surface-5: #94A3B8;
+    --md-custom-color-warning: #D97706;
+    --md-custom-color-on-warning: #FFFFFF;
+    --md-custom-color-warning-container: #FEF3C7;
+    --md-custom-color-on-warning-container: #78350F;
 
+    /* Surface Container Roles (DESIGN.md Section 2.2) */
+    --md-sys-color-surface: #F8FAFC;
+    --md-sys-color-surface-container-lowest: #FFFFFF;
+    --md-sys-color-surface-container-low: #F8FAFC;
+    --md-sys-color-surface-container: #F1F5F9;
+    --md-sys-color-surface-container-high: #E2E8F0;
+    --md-sys-color-surface-container-highest: #CBD5E1;
     --md-sys-color-surface-variant: #F3F4F6;
     --md-sys-color-on-surface: #0F172A;
     --md-sys-color-on-surface-variant: #475569;
     --md-sys-color-outline: #CBD5E1;
     --md-sys-color-outline-variant: #E2E8F0;
+
+    /* Legacy Surface Elevation Mappings */
+    --md-sys-color-surface-0: var(--md-sys-color-surface);
+    --md-sys-color-surface-1: var(--md-sys-color-surface-container-lowest);
+    --md-sys-color-surface-2: var(--md-sys-color-surface-container-low);
+    --md-sys-color-surface-3: var(--md-sys-color-surface-container);
+    --md-sys-color-surface-4: var(--md-sys-color-surface-container-high);
+    --md-sys-color-surface-5: var(--md-sys-color-surface-container-highest);
 
     /* Brand Colors */
     --color-primary: #4F46E5;
@@ -47,9 +60,9 @@
     /* Emerald 500 */
 
     /* Neutral Colors */
-    --color-bg-body: var(--md-sys-color-surface-0);
+    --color-bg-body: var(--md-sys-color-surface);
     /* Gray 50 */
-    --color-bg-card: var(--md-sys-color-surface-1);
+    --color-bg-card: var(--md-sys-color-surface-container-lowest);
     --color-text-main: var(--md-sys-color-on-surface);
     /* Gray 900 */
     --color-text-secondary: var(--md-sys-color-on-surface-variant);
@@ -121,7 +134,7 @@
     --badge-deal-text: #e11d48;
     --badge-deal-border: #fb7185;
 
-    /* Material Design 3 8dp Grid Spacing Tokens */
+    /* Material Design 3 8dp Grid Spacing & Touch Target Tokens (DESIGN.md Section 3.2) */
     --md-sys-spacing-0: 0px;
     --md-sys-spacing-1: 0.25rem;  /* 4px */
     --md-sys-spacing-2: 0.5rem;   /* 8px */
@@ -134,6 +147,9 @@
     --md-sys-spacing-12: 3rem;    /* 48px */
     --md-sys-spacing-16: 4rem;    /* 64px */
 
+    /* Touch Target Min Size (DESIGN.md Section 3.2) */
+    --md-sys-touch-target-min: 48px;
+
     /* Legacy Spacing Mappings (8dp aligned) */
     --spacing-xs: var(--md-sys-spacing-1);  /* 4px */
     --spacing-sm: var(--md-sys-spacing-2);  /* 8px */
@@ -142,64 +158,82 @@
     --spacing-xl: var(--md-sys-spacing-8);  /* 32px */
     --spacing-2xl: var(--md-sys-spacing-12);/* 48px */
 
-    /* Material Design 3 Typography Scale Tokens (Enhanced Scanning Readability) */
-    --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-    --font-jp: 'Noto Sans JP', sans-serif;
+    /* Material Design 3 Typography Scale Tokens (DESIGN.md Section 3.1) */
+    --font-sans: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    --font-jp: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 
-    /* Display */
-    --md-sys-typescale-display-large-size: 3.75rem;       /* 60px */
-    --md-sys-typescale-display-large-line-height: 4.25rem; /* 68px */
-    --md-sys-typescale-display-large-weight: 400;
+    /* Display Large */
+    --md-sys-typescale-display-large-size: 3.5rem;       /* 56px desktop */
+    --md-sys-typescale-display-large-line-height: 1.15;
+    --md-sys-typescale-display-large-weight: 700;
+    --md-sys-typescale-display-large-tracking: -0.25px;
+
     --md-sys-typescale-display-medium-size: 3rem;         /* 48px */
-    --md-sys-typescale-display-medium-line-height: 3.5rem; /* 56px */
-    --md-sys-typescale-display-medium-weight: 400;
-    --md-sys-typescale-display-small-size: 2.375rem;      /* 38px */
-    --md-sys-typescale-display-small-line-height: 2.875rem;/* 46px */
-    --md-sys-typescale-display-small-weight: 400;
+    --md-sys-typescale-display-medium-line-height: 1.15;
+    --md-sys-typescale-display-medium-weight: 700;
 
-    /* Headline */
+    --md-sys-typescale-display-small-size: 2.375rem;      /* 38px */
+    --md-sys-typescale-display-small-line-height: 1.2;
+    --md-sys-typescale-display-small-weight: 600;
+
+    /* Headline Medium */
     --md-sys-typescale-headline-large-size: 2.125rem;     /* 34px */
-    --md-sys-typescale-headline-large-line-height: 2.625rem;/* 42px */
+    --md-sys-typescale-headline-large-line-height: 1.25;
     --md-sys-typescale-headline-large-weight: 700;
-    --md-sys-typescale-headline-medium-size: 1.875rem;    /* 30px */
-    --md-sys-typescale-headline-medium-line-height: 2.375rem;/* 38px */
+
+    --md-sys-typescale-headline-medium-size: 1.875rem;    /* 30px desktop */
+    --md-sys-typescale-headline-medium-line-height: 1.25;
     --md-sys-typescale-headline-medium-weight: 600;
-    --md-sys-typescale-headline-small-size: 1.625rem;     /* 26px */
-    --md-sys-typescale-headline-small-line-height: 2.125rem;/* 34px */
+    --md-sys-typescale-headline-medium-tracking: 0px;
+
+    --md-sys-typescale-headline-small-size: 1.5rem;      /* 24px */
+    --md-sys-typescale-headline-small-line-height: 1.25;
     --md-sys-typescale-headline-small-weight: 600;
 
     /* Title */
-    --md-sys-typescale-title-large-size: 1.5rem;          /* 24px */
-    --md-sys-typescale-title-large-line-height: 1.875rem; /* 30px */
+    --md-sys-typescale-title-large-size: 1.5rem;          /* 24px desktop */
+    --md-sys-typescale-title-large-line-height: 1.3;
     --md-sys-typescale-title-large-weight: 600;
-    --md-sys-typescale-title-medium-size: 1.125rem;       /* 18px */
-    --md-sys-typescale-title-medium-line-height: 1.625rem;/* 26px */
+    --md-sys-typescale-title-large-tracking: 0px;
+
+    --md-sys-typescale-title-medium-size: 1.125rem;       /* 18px desktop */
+    --md-sys-typescale-title-medium-line-height: 1.35;
     --md-sys-typescale-title-medium-weight: 600;
-    --md-sys-typescale-title-small-size: 0.9375rem;       /* 15px */
-    --md-sys-typescale-title-small-line-height: 1.375rem;/* 22px */
+    --md-sys-typescale-title-medium-tracking: 0.15px;
+
+    --md-sys-typescale-title-small-size: 1.0rem;          /* 16px */
+    --md-sys-typescale-title-small-line-height: 1.35;
     --md-sys-typescale-title-small-weight: 600;
 
     /* Body */
-    --md-sys-typescale-body-large-size: 1.0625rem;       /* 17px */
-    --md-sys-typescale-body-large-line-height: 1.625rem;  /* 26px */
+    --md-sys-typescale-body-large-size: 1.0625rem;       /* 17px desktop */
+    --md-sys-typescale-body-large-line-height: 1.6;
     --md-sys-typescale-body-large-weight: 400;
-    --md-sys-typescale-body-medium-size: 0.9375rem;      /* 15px */
-    --md-sys-typescale-body-medium-line-height: 1.375rem;/* 22px */
+    --md-sys-typescale-body-large-tracking: 0.5px;
+
+    --md-sys-typescale-body-medium-size: 0.9375rem;       /* 15px desktop */
+    --md-sys-typescale-body-medium-line-height: 1.5;
     --md-sys-typescale-body-medium-weight: 400;
-    --md-sys-typescale-body-small-size: 0.8125rem;        /* 13px */
-    --md-sys-typescale-body-small-line-height: 1.125rem;  /* 18px */
+    --md-sys-typescale-body-medium-tracking: 0.25px;
+
+    --md-sys-typescale-body-small-size: 0.875rem;         /* 14px */
+    --md-sys-typescale-body-small-line-height: 1.4;
     --md-sys-typescale-body-small-weight: 400;
 
     /* Label */
-    --md-sys-typescale-label-large-size: 0.9375rem;       /* 15px */
-    --md-sys-typescale-label-large-line-height: 1.375rem;/* 22px */
+    --md-sys-typescale-label-large-size: 0.9375rem;       /* 15px desktop */
+    --md-sys-typescale-label-large-line-height: 1.45;
     --md-sys-typescale-label-large-weight: 600;
+    --md-sys-typescale-label-large-tracking: 0.1px;
+
     --md-sys-typescale-label-medium-size: 0.8125rem;      /* 13px */
-    --md-sys-typescale-label-medium-line-height: 1.125rem;/* 18px */
-    --md-sys-typescale-label-medium-weight: 600;
-    --md-sys-typescale-label-small-size: 0.75rem;         /* 12px */
-    --md-sys-typescale-label-small-line-height: 1rem;     /* 16px */
-    --md-sys-typescale-label-small-weight: 600;
+    --md-sys-typescale-label-medium-line-height: 1.4;
+    --md-sys-typescale-label-medium-weight: 500;
+
+    --md-sys-typescale-label-small-size: 0.75rem;         /* 12px desktop */
+    --md-sys-typescale-label-small-line-height: 1.45;
+    --md-sys-typescale-label-small-weight: 500;
+    --md-sys-typescale-label-small-tracking: 0.5px;
 
     /* Shadows */
     --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
@@ -255,22 +289,35 @@
         --md-sys-color-error-container: #991B1B;
         --md-sys-color-on-error-container: #FEE2E2;
 
-        --md-sys-color-surface-0: #0F172A;
-        --md-sys-color-surface-1: #1E293B;
-        --md-sys-color-surface-2: #334155;
-        --md-sys-color-surface-3: #475569;
-        --md-sys-color-surface-4: #64748B;
-        --md-sys-color-surface-5: #94A3B8;
+        --md-custom-color-warning: #FBBF24;
+        --md-custom-color-on-warning: #451A03;
+        --md-custom-color-warning-container: #78350F;
+        --md-custom-color-on-warning-container: #FEF3C7;
 
+        /* Surface Container Roles (Dark Mode) */
+        --md-sys-color-surface: #0F172A;
+        --md-sys-color-surface-container-lowest: #090D16;
+        --md-sys-color-surface-container-low: #0F172A;
+        --md-sys-color-surface-container: #1E293B;
+        --md-sys-color-surface-container-high: #334155;
+        --md-sys-color-surface-container-highest: #475569;
         --md-sys-color-surface-variant: #1F2937;
         --md-sys-color-on-surface: #F8FAFC;
         --md-sys-color-on-surface-variant: #94A3B8;
         --md-sys-color-outline: #475569;
         --md-sys-color-outline-variant: #334155;
 
-        --color-bg-body: var(--md-sys-color-surface-0);
+        /* Legacy Surface Mappings */
+        --md-sys-color-surface-0: var(--md-sys-color-surface);
+        --md-sys-color-surface-1: var(--md-sys-color-surface-container-lowest);
+        --md-sys-color-surface-2: var(--md-sys-color-surface-container-low);
+        --md-sys-color-surface-3: var(--md-sys-color-surface-container);
+        --md-sys-color-surface-4: var(--md-sys-color-surface-container-high);
+        --md-sys-color-surface-5: var(--md-sys-color-surface-container-highest);
+
+        --color-bg-body: var(--md-sys-color-surface);
         /* Gray 900 */
-        --color-bg-card: var(--md-sys-color-surface-1);
+        --color-bg-card: var(--md-sys-color-surface-container-lowest);
         /* Gray 800 */
         --color-text-main: var(--md-sys-color-on-surface);
         /* Gray 50 */
@@ -378,22 +425,35 @@
     --md-sys-color-error-container: #991B1B;
     --md-sys-color-on-error-container: #FEE2E2;
 
-    --md-sys-color-surface-0: #0F172A;
-    --md-sys-color-surface-1: #1E293B;
-    --md-sys-color-surface-2: #334155;
-    --md-sys-color-surface-3: #475569;
-    --md-sys-color-surface-4: #64748B;
-    --md-sys-color-surface-5: #94A3B8;
+    --md-custom-color-warning: #FBBF24;
+    --md-custom-color-on-warning: #451A03;
+    --md-custom-color-warning-container: #78350F;
+    --md-custom-color-on-warning-container: #FEF3C7;
 
+    /* Surface Container Roles (Dark Mode) */
+    --md-sys-color-surface: #0F172A;
+    --md-sys-color-surface-container-lowest: #090D16;
+    --md-sys-color-surface-container-low: #0F172A;
+    --md-sys-color-surface-container: #1E293B;
+    --md-sys-color-surface-container-high: #334155;
+    --md-sys-color-surface-container-highest: #475569;
     --md-sys-color-surface-variant: #1F2937;
     --md-sys-color-on-surface: #F8FAFC;
     --md-sys-color-on-surface-variant: #94A3B8;
     --md-sys-color-outline: #475569;
     --md-sys-color-outline-variant: #334155;
 
-    --color-bg-body: var(--md-sys-color-surface-0);
+    /* Legacy Surface Mappings */
+    --md-sys-color-surface-0: var(--md-sys-color-surface);
+    --md-sys-color-surface-1: var(--md-sys-color-surface-container-lowest);
+    --md-sys-color-surface-2: var(--md-sys-color-surface-container-low);
+    --md-sys-color-surface-3: var(--md-sys-color-surface-container);
+    --md-sys-color-surface-4: var(--md-sys-color-surface-container-high);
+    --md-sys-color-surface-5: var(--md-sys-color-surface-container-highest);
+
+    --color-bg-body: var(--md-sys-color-surface);
     /* Gray 900 */
-    --color-bg-card: var(--md-sys-color-surface-1);
+    --color-bg-card: var(--md-sys-color-surface-container-lowest);
     /* Gray 800 */
     --color-text-main: var(--md-sys-color-on-surface);
     /* Gray 50 */
@@ -469,4 +529,18 @@
     --text-score-default: #fef3c7;
     --border-score-default: #d97706;
     --color-recommend-why-header: #fca5a5;
+}
+
+/* Mobile Responsive Typography Scale Override (DESIGN.md Section 3.1) */
+@media (max-width: 768px) {
+    :root {
+        --md-sys-typescale-display-large-size: 2.5rem;       /* 40px mobile */
+        --md-sys-typescale-headline-medium-size: 1.625rem;   /* 26px mobile */
+        --md-sys-typescale-title-large-size: 1.375rem;      /* 22px mobile */
+        --md-sys-typescale-title-medium-size: 1.0625rem;     /* 17px mobile */
+        --md-sys-typescale-body-large-size: 1.0rem;          /* 16px mobile */
+        --md-sys-typescale-body-medium-size: 0.9375rem;      /* 15px mobile */
+        --md-sys-typescale-label-large-size: 0.9375rem;      /* 15px mobile */
+        --md-sys-typescale-label-small-size: 0.75rem;         /* 12px mobile */
+    }
 }
