@@ -7957,4 +7957,71 @@ legend.font-size-label {
   background-color: var(--md-sys-color-surface-variant);
   border: 1px solid var(--md-sys-color-outline-variant);
   border-radius: var(--radius-xl, 16px);
+}
+
+/* ==========================================================================
+   Material Design 3 (M3) Structured Footer Component (Issue #9670)
+   ========================================================================== */
+.site-footer {
+  background-color: var(--md-sys-color-surface-2);
+  border-top: 1px solid var(--color-border);
+  color: var(--md-sys-color-on-surface-variant);
+  padding: var(--md-sys-spacing-8) 0 var(--md-sys-spacing-6);
+  margin-top: var(--md-sys-spacing-12);
+}
+
+.footer-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--md-sys-spacing-4);
+}
+
+.footer-nav {
+  display: flex;
+  justify-content: center;
+  gap: var(--md-sys-spacing-4);
+  flex-wrap: wrap;
+}
+
+.footer-nav-link {
+  color: var(--md-sys-color-on-surface-variant);
+  font-size: var(--md-sys-typescale-label-large-size);
+  line-height: var(--md-sys-typescale-label-large-line-height);
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.footer-nav-link:hover {
+  color: var(--color-primary);
+}
+
+.footer-divider {
+  width: 100%;
+  max-width: 480px;
+  border: 0;
+  border-top: 1px solid var(--md-sys-color-outline-variant);
+  margin: var(--md-sys-spacing-2) 0;
+  opacity: 0.7;
+}
+
+.footer-disclaimer {
+  max-width: 800px;
+  font-size: var(--md-sys-typescale-body-small-size);
+  line-height: var(--md-sys-typescale-body-small-line-height);
+  color: var(--color-text-muted);
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--md-sys-spacing-4);
+  flex-wrap: wrap;
+  font-size: var(--md-sys-typescale-label-medium-size);
+  line-height: var(--md-sys-typescale-label-medium-line-height);
+  color: var(--color-text-muted);
+  margin-top: var(--md-sys-spacing-2);
 }
