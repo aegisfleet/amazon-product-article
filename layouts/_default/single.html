@@ -128,7 +128,7 @@
         <div id="related-products-section" style="display: none;">
             {{- if gt (len $related) 0 -}}
             <section class="related-section">
-                <h3 class="related-section-title">📂 同じカテゴリの比較候補</h3>
+                <h3 class="related-section-title"><span class="material-symbols-outlined" aria-hidden="true" style="vertical-align: middle;">folder</span> 同じカテゴリの比較候補</h3>
                 <div class="related-grid">
                     {{- $relatedExcluded := where $related "Params.asin" "not in" $shownAsins -}}
                     {{- $rankedRelated := partial "product-composite-ranked-pages.html" (dict "pages" $relatedExcluded
@@ -167,7 +167,9 @@
                                 {{- else if ge $score 60 -}}
                                 {{- $scoreClass = "score-good" -}}
                                 {{- end -}}
-                                <span class="pickup-card-score m3-badge m3-badge-score {{ $scoreClass }}">🏆 {{ .Params.score }}点</span>
+                                <span class="pickup-card-score m3-badge m3-badge-score {{ $scoreClass }}">
+                                    <span class="material-symbols-outlined icon-score" aria-hidden="true">trophy</span> {{ .Params.score }}点
+                                </span>
                                 {{- end -}}
                                 {{- if .Params.price -}}<span class="pickup-card-price">{{ .Params.price }}</span>{{-
                                 end -}}
@@ -187,7 +189,7 @@
             <section class="related-section" style="margin-top: var(--md-sys-spacing-6);">
                 <div
                     style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--md-sys-spacing-2); flex-wrap: wrap; gap: var(--md-sys-spacing-2);">
-                    <h3 class="related-section-title" style="margin-bottom: 0;">🏢 同ブランドの候補 ({{ $currentBrand }})</h3>
+                    <h3 class="related-section-title" style="margin-bottom: 0;"><span class="material-symbols-outlined" aria-hidden="true" style="vertical-align: middle;">domain</span> 同ブランドの候補 ({{ $currentBrand }})</h3>
                     {{- if $brandSlug -}}
                     <a href="{{ printf `brand/%s/` $brandSlug | relURL }}" class="brand-more-link"
                         style="font-size: 0.85rem; font-weight: 600; text-decoration: none; color: var(--color-primary);">
@@ -233,7 +235,9 @@
                                 {{- else if ge $score 60 -}}
                                 {{- $scoreClass = "score-good" -}}
                                 {{- end -}}
-                                <span class="pickup-card-score m3-badge m3-badge-score {{ $scoreClass }}">🏆 {{ .Params.score }}点</span>
+                                <span class="pickup-card-score m3-badge m3-badge-score {{ $scoreClass }}">
+                                    <span class="material-symbols-outlined icon-score" aria-hidden="true">trophy</span> {{ .Params.score }}点
+                                </span>
                                 {{- end -}}
                                 {{- if .Params.price -}}<span class="pickup-card-price">{{ .Params.price }}</span>{{-
                                 end -}}
@@ -372,7 +376,9 @@
                         {{- else if ge $score 60 -}}
                         {{- $scoreClass = "score-good" -}}
                         {{- end -}}
-                        <span class="pickup-card-score m3-badge m3-badge-score {{ $scoreClass }}">🏆 {{ .Params.score }}点</span>
+                        <span class="pickup-card-score m3-badge m3-badge-score {{ $scoreClass }}">
+                            <span class="material-symbols-outlined icon-score" aria-hidden="true">trophy</span> {{ .Params.score }}点
+                        </span>
                         {{- end -}}
                         {{- if .Params.price -}}<span class="pickup-card-price">{{ .Params.price }}</span>{{- end -}}
                     </div>
@@ -401,7 +407,7 @@
     {{- if gt (len $sameScoreRange) 0 -}}
     <section class="related-section"
         style="margin-top: var(--md-sys-spacing-6); border-top: 1px solid var(--color-border); padding-top: var(--md-sys-spacing-6);">
-        <h3 class="related-section-title">⭐ サイト全体からの同スコア帯人気商品</h3>
+        <h3 class="related-section-title"><span class="material-symbols-outlined" aria-hidden="true" style="vertical-align: middle;">star</span> サイト全体からの同スコア帯人気商品</h3>
         <div class="related-grid">
             {{- $sameScoreRangeExcluded := where $sameScoreRange "Params.asin" "not in" $shownAsins -}}
             {{- $rankedSameScoreRange := partial "product-composite-ranked-pages.html" (dict "pages"
@@ -438,7 +444,9 @@
                         {{- else if ge $score 60 -}}
                         {{- $scoreClass = "score-good" -}}
                         {{- end -}}
-                        <span class="pickup-card-score m3-badge m3-badge-score {{ $scoreClass }}">🏆 {{ .Params.score }}点</span>
+                        <span class="pickup-card-score m3-badge m3-badge-score {{ $scoreClass }}">
+                            <span class="material-symbols-outlined icon-score" aria-hidden="true">trophy</span> {{ .Params.score }}点
+                        </span>
                         {{- end -}}
                         {{- if .Params.price -}}<span class="pickup-card-price">{{ .Params.price }}</span>{{- end -}}
                     </div>

@@ -81,10 +81,10 @@
     {{- end -}}
     <div class="pickup-section">
         <div class="pickup-header">
-            <h3 class="pickup-title"><span aria-hidden="true">🏆</span> 高評価おすすめ</h3>
+            <h3 class="pickup-title"><span class="material-symbols-outlined" aria-hidden="true" style="vertical-align: middle;">trophy</span> 高評価おすすめ</h3>
             <span class="pickup-subtitle">80点以上の厳選商品</span>
             <button type="button" class="shuffle-btn" data-reset-history="1">
-                <span aria-hidden="true">🧹</span> 閲覧履歴をリセット
+                <span class="material-symbols-outlined" aria-hidden="true" style="font-size: 0.9rem; vertical-align: middle;">cleaning_services</span> 閲覧履歴をリセット
             </button>
         </div>
         <div class="pickup-grid is-loading" id="pickup-grid">
@@ -118,7 +118,9 @@
                         {{- else if ge $score 60 -}}
                         {{- $scoreClass = "score-good" -}}
                         {{- end -}}
-                        <span class="pickup-card-score m3-badge m3-badge-score {{ $scoreClass }}"><span aria-hidden="true">🏆</span> {{ .Params.score }}点</span>
+                        <span class="pickup-card-score m3-badge m3-badge-score {{ $scoreClass }}">
+                            <span class="material-symbols-outlined icon-score" aria-hidden="true">trophy</span> {{ .Params.score }}点
+                        </span>
                         {{- if .Params.price -}}
                         <span class="pickup-card-price">{{ .Params.price }}</span>
                         {{- end -}}
@@ -171,7 +173,7 @@
             <div class="search-filters">
                 <div class="filter-group">
                     <span class="filter-label">
-                        <span class="filter-icon" aria-hidden="true">🏆</span> スコア
+                        <span class="material-symbols-outlined filter-icon" aria-hidden="true">trophy</span> スコア
                     </span>
                     <div class="filter-inputs">
                         <label for="filter-score-min" class="sr-only">スコア下限</label>
@@ -185,7 +187,7 @@
                 </div>
                 <div class="filter-group">
                     <span class="filter-label">
-                        <span class="filter-icon" aria-hidden="true">💰</span> 価格 (円)
+                        <span class="material-symbols-outlined filter-icon" aria-hidden="true">payments</span> 価格 (円)
                     </span>
                     <div class="filter-inputs">
                         <label for="filter-price-min" class="sr-only">価格下限 (円)</label>

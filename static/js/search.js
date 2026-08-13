@@ -269,7 +269,7 @@ document.addEventListener('DOMContentLoaded', function () {
         if (scoreMin && scoreMin !== '70') {
             chips.push({
                 id: 'scoreMin',
-                icon: '🏆',
+                icon: 'trophy',
                 label: `スコア ${scoreMin}点以上`,
                 onRemove: () => {
                     if (scoreMinEl) scoreMinEl.value = '70';
@@ -281,7 +281,7 @@ document.addEventListener('DOMContentLoaded', function () {
         if (scoreMax) {
             chips.push({
                 id: 'scoreMax',
-                icon: '🏆',
+                icon: 'trophy',
                 label: `スコア ${scoreMax}点以下`,
                 onRemove: () => {
                     if (scoreMaxEl) scoreMaxEl.value = '';
@@ -1198,8 +1198,8 @@ document.addEventListener('DOMContentLoaded', function () {
                     scoreClass = 'score-good';
                 }
                 const scoreSpan = document.createElement('span');
-                scoreSpan.className = `result-score ${scoreClass}`;
-                scoreSpan.textContent = `🏆 ${scoreText}点`;
+                scoreSpan.className = `result-score m3-badge m3-badge-score ${scoreClass}`;
+                scoreSpan.innerHTML = `<span class="material-symbols-outlined icon-score" aria-hidden="true">trophy</span> ${scoreText}点`;
                 metricsDiv.appendChild(scoreSpan);
             }
             headerDiv.appendChild(metricsDiv);

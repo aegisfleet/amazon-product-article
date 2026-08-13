@@ -764,7 +764,7 @@ ${reviewAnalysis ? this.generateSentimentAnalysis(reviewAnalysis) : ''}`;
           const hasInternalReview = !!competitorInvestigation;
           const competitorScore = competitorInvestigation?.analysis?.recommendation?.score;
           const internalLink = hasInternalReview
-            ? `<a href="../${normalizedAsin?.toLowerCase()}/" class="btn-internal-small">📄 サイト内レビュー</a>`
+            ? `<a href="../${normalizedAsin?.toLowerCase()}/" class="btn-internal-small"><span class="material-symbols-outlined" aria-hidden="true" style="font-size:0.85rem; vertical-align:middle;">description</span> サイト内レビュー</a>`
             : '';
 
           // 商品プレビュー（Creators API情報がある場合）
@@ -783,7 +783,7 @@ ${reviewAnalysis ? this.generateSentimentAnalysis(reviewAnalysis) : ''}`;
           // アフィリエイトリンクを生成
           const shouldShowLink = normalizedAsin && (!competitorDetails || competitorDetails.has(normalizedAsin));
           const competitorLink = shouldShowLink
-            ? `<a href="${this.escapeHtml(detail?.detailPageUrl || this.affiliateManager.generateAffiliateLink(normalizedAsin).url)}" class="btn-amazon-small" target="_blank" rel="noopener noreferrer">🛒 Amazonで見る <span class="external-icon" aria-hidden="true">↗</span></a>`
+            ? `<a href="${this.escapeHtml(detail?.detailPageUrl || this.affiliateManager.generateAffiliateLink(normalizedAsin).url)}" class="btn-amazon-small" target="_blank" rel="noopener noreferrer"><span class="material-symbols-outlined" aria-hidden="true" style="font-size:0.85rem; vertical-align:middle;">shopping_cart</span> Amazonで見る <span class="external-icon" aria-hidden="true">↗</span></a>`
             : '';
 
           const productName = investigation.analysis.productName || investigation.product.title;
@@ -801,7 +801,7 @@ ${reviewAnalysis ? this.generateSentimentAnalysis(reviewAnalysis) : ''}`;
 
           return `<div class="competitor-card">
 <h4>${this.escapeHtml(competitor.name)}</h4>
-<p class="competitor-price">💰 ${this.escapeHtml(priceComparison)}</p>
+<p class="competitor-price"><span class="material-symbols-outlined" aria-hidden="true" style="font-size:1rem; vertical-align:middle;">payments</span> ${this.escapeHtml(priceComparison)}</p>
 <div class="competitor-features">
 <strong>比較ポイント:</strong>
 <ul>
@@ -823,7 +823,7 @@ ${links}
       )
     ).join('\n\n');
 
-    const content = `## 🥊 競合商品との比較
+    const content = `## <span class="material-symbols-outlined" aria-hidden="true" style="vertical-align:middle;">compare</span> 競合商品との比較
 
 <div class="competitor-cards">
 
@@ -1750,16 +1750,22 @@ ${confidenceLine}`;
     const previewAttrs = hasInternalReview && asin ? ` href="../${asin.toLowerCase()}/"` : '';
 
     const pointsHtml = loyaltyPoints
-      ? `<span class="hero-points" style="font-size: 0.85rem; margin-left: var(--spacing-sm);">🎁 ${loyaltyPoints}pt還元</span>`
+      ? `<span class="hero-points m3-badge m3-badge-points" style="font-size: 0.85rem; margin-left: var(--spacing-sm);"><span class="material-symbols-outlined icon-points" aria-hidden="true">card_giftcard</span> ${loyaltyPoints}pt還元</span>`
       : '';
     const actualPriceHtml = priceText
       ? `<span class="competitor-actual-price">${this.escapeHtml(priceText)}${priceDiffHtml}${pointsHtml}</span>`
       : '';
-    const amazonDirectHtml = isAmazonDirect ? '<span class="badge-amazon-direct">Amazon直販</span>' : '';
-    const amazonHaulHtml = isAmazonHaul ? '<span class="badge-amazon-haul">Amazon Haul</span>' : '';
-    const dealBadgeHtml = dealBadge ? `<span class="badge-deal">${this.escapeHtml(dealBadge)}</span>` : '';
+    const amazonDirectHtml = isAmazonDirect
+      ? '<span class="badge-amazon-direct m3-badge m3-badge-primary">Amazon直販</span>'
+      : '';
+    const amazonHaulHtml = isAmazonHaul
+      ? '<span class="badge-amazon-haul m3-badge m3-badge-secondary">Amazon Haul</span>'
+      : '';
+    const dealBadgeHtml = dealBadge
+      ? `<span class="badge-deal m3-badge m3-badge-warning">${this.escapeHtml(dealBadge)}</span>`
+      : '';
     const savingsPercentageHtml = savingsPercentage
-      ? `<span class="badge-savings">${savingsPercentage}% OFF</span>`
+      ? `<span class="badge-savings m3-badge m3-badge-error">${savingsPercentage}% OFF</span>`
       : '';
     const availabilityHtml = availabilityText
       ? `<span class="badge-availability">${this.escapeHtml(availabilityText)}</span>`
@@ -1804,7 +1810,7 @@ ${confidenceLine}`;
     if (score >= 80) scoreClass = 'score-excellent';
     else if (score >= 60) scoreClass = 'score-good';
 
-    return `<div class="competitor-score-container"><span class="pickup-card-score ${scoreClass}">🏆 ${score}点</span></div>`;
+    return `<div class="competitor-score-container"><span class="pickup-card-score m3-badge m3-badge-score ${scoreClass}"><span class="material-symbols-outlined icon-score" aria-hidden="true">trophy</span> ${score}点</span></div>`;
   }
 
   /**
