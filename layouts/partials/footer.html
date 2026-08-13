@@ -1,25 +1,26 @@
-<footer class="site-footer" style="padding: var(--md-sys-spacing-6) 0;">
-    <div class="container">
-        <div class="footer-links"
-            style="display: flex; justify-content: center; gap: var(--md-sys-spacing-4); flex-wrap: wrap; margin-bottom: var(--md-sys-spacing-4); font-size: var(--md-sys-typescale-label-medium-size); line-height: var(--md-sys-typescale-label-medium-line-height);">
-            <a href="{{ `` | relURL }}" style="color: var(--color-text-muted); text-decoration: none;">🏠 ホーム</a>
-            <a href="{{ `recommendations/` | relURL }}"
-                style="color: var(--color-text-muted); text-decoration: none;">🎯 注目商品10選</a>
-            <a href="{{ `deals/` | relURL }}" style="color: var(--color-text-muted); text-decoration: none;">🔥
-                セール対象</a>
-            <a href="{{ `bargain/` | relURL }}" style="color: var(--color-text-muted); text-decoration: none;">🎁
-                あともう一品</a>
-            <a href="{{ `brand/` | relURL }}" style="color: var(--color-text-muted); text-decoration: none;">🏷️
-                ブランド一覧</a>
+<footer class="site-footer">
+    <div class="container footer-container">
+        <nav class="footer-nav" aria-label="フッターナビゲーション">
+            <a href="{{ `` | relURL }}" class="footer-nav-link">🏠 ホーム</a>
+            <a href="{{ `recommendations/` | relURL }}" class="footer-nav-link">🎯 注目商品10選</a>
+            <a href="{{ `deals/` | relURL }}" class="footer-nav-link">🔥 セール対象</a>
+            <a href="{{ `bargain/` | relURL }}" class="footer-nav-link">🎁 あともう一品</a>
+            <a href="{{ `brand/` | relURL }}" class="footer-nav-link">🏷️ ブランド一覧</a>
+        </nav>
+
+        <hr class="footer-divider" />
+
+        <div class="footer-disclaimer">
+            <p>
+                {{ .Site.Title
+                }}は、Amazon.co.jpを宣伝しリンクすることによってサイトが紹介料を獲得できる手段を提供することを目的に設定されたアフィリエイトプログラムである、Amazonアソシエイト・プログラムの参加者です。
+            </p>
         </div>
-        <p style="font-size: var(--md-sys-typescale-body-small-size); line-height: var(--md-sys-typescale-body-small-line-height); margin-bottom: var(--md-sys-spacing-4);">
-            {{ .Site.Title
-            }}は、Amazon.co.jpを宣伝しリンクすることによってサイトが紹介料を獲得できる手段を提供することを目的に設定されたアフィリエイトプログラムである、Amazonアソシエイト・プログラムの参加者です。
-        </p>
-        <p style="font-size: var(--md-sys-typescale-body-small-size); line-height: var(--md-sys-typescale-body-small-line-height);">&copy; {{ now.Year }} {{ .Site.Title }}. All rights reserved.</p>
-        <p style="font-size: var(--md-sys-typescale-label-small-size); line-height: var(--md-sys-typescale-label-small-line-height); margin-top: var(--md-sys-spacing-2);">
-            Last updated: {{ now.Format "2006-01-02" }}
-        </p>
+
+        <div class="footer-bottom">
+            <span class="footer-copyright">&copy; {{ now.Year }} {{ .Site.Title }}. All rights reserved.</span>
+            <span class="footer-updated">最終更新: {{ now.Format "2006年01月02日" }}</span>
+        </div>
     </div>
 </footer>
 <script src="{{ `js/personalization.js` | relURL }}"></script>
