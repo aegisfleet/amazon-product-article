@@ -1,0 +1,207 @@
+{
+  "analysis": {
+    "productName": "GMKtec M8 ミニPC Ryzen 5 PRO 6650H",
+    "parentAsin": "B0GYWTMWVH",
+    "productDescription": "AMD Ryzen 5 PRO 6650Hを搭載し、OCuLinkやUSB4、デュアル2.5GbE LANなどの豊富なインターフェースを備えた高性能・高拡張性ミニPC。",
+    "productUsage": [
+      "オフィスワーク・在宅勤務",
+      "eGPUを接続したゲーミング・クリエイティブ作業",
+      "小規模サーバー運用"
+    ],
+    "positivePoints": [
+      "AMD Ryzen 5 PRO 6650H（6コア12スレッド）と高速な16GB LPDDR5メモリによる快適なマルチタスク性能",
+      "OCuLinkとUSB4の両方を搭載し、外部GPU（eGPU）の接続による大幅なグラフィック性能強化が可能",
+      "M.2 2280スロットを2基備え、合計最大8TBまでのストレージ拡張に対応",
+      "デュアル2.5GbE LANを搭載し、リンクアグリゲーションや高度なネットワーク・サーバー運用が可能",
+      "静音28W、バランス35W、高性能40Wの3つのパフォーマンスモードを用途に応じて切り替え可能"
+    ],
+    "negativePoints": [
+      "6万円台の価格設定は、ブラウジングなどの軽作業のみを目的とする場合はオーバースペックとなり割高",
+      "USB4ケーブル1本での運用には、100W以上のPD給電対応モニターまたは電源アダプターが必要となる制約がある",
+      "メモリがLPDDR5であるため、SO-DIMMのようなユーザー自身によるメモリ増設・換装は不可"
+    ],
+    "useCases": [
+      "OCuLink経由でeGPUを接続し、最新の3Dゲームを高画質でプレイする",
+      "3台のモニターを接続して、複数ウィンドウを並べた効率的なオフィスワーク環境を構築する",
+      "デュアル2.5GbE LANを活かし、ホームサーバーやルーターとして活用する"
+    ],
+    "userStories": [
+      {
+        "userType": "ガジェット愛好家",
+        "scenario": "eGPUを利用したゲーミングPCの構築",
+        "experience": "OCuLink端子が搭載されているため、外部GPUボックスを接続することで、ミニPCでありながらデスクトップ級のゲーミング性能を発揮できました。普段は省スペースな作業用PCとして使い、ゲームをするときだけeGPUを繋ぐという運用が非常に快適です。",
+        "supportingSourceIds": ["src-1"],
+        "sentiment": "positive"
+      },
+      {
+        "userType": "ホームサーバー運用者",
+        "scenario": "自宅のネットワーク環境のアップグレード",
+        "experience": "デュアル2.5GbE LANポートを搭載しているミニPCは珍しく、この価格帯で手に入るのはありがたいです。リンクアグリゲーションを組んでNASのデータ転送を高速化したり、仮想環境を構築したりと、サーバー用途としても非常に優秀に機能しています。",
+        "supportingSourceIds": ["src-1"],
+        "sentiment": "positive"
+      },
+      {
+        "userType": "リモートワーカー",
+        "scenario": "USB4ケーブル1本でのスッキリとしたデスク環境構築",
+        "experience": "PD給電対応のモニターとUSB4ケーブル1本で繋ぐだけで、映像出力と本体への給電が同時に行えるため、デスク周りの配線がとてもスッキリしました。ただし、100W以上の出力が必要なのでモニター選びには注意が必要でした。",
+        "supportingSourceIds": ["src-1"],
+        "sentiment": "mixed"
+      }
+    ],
+    "userImpression": "Ryzen 5 PRO 6650Hの基本性能の高さに加え、OCuLink、USB4、デュアル2.5GbE LANといった「一般的なミニPCにはない尖ったインターフェース」が多くのガジェット・PC愛好家から高く評価されています。特にeGPUを接続してゲーミング性能を後付けできる点は、将来的な拡張性を求めるユーザーにとって大きな魅力となっています。一方で、これらの拡張ポートを活かす予定がない一般ユーザーにとっては、より安価なRyzen搭載機でも十分な場合があり、用途によって価値が大きく変わる、玄人向けの側面が強い製品と言えます。",
+    "sources": [
+      {
+        "id": "src-1",
+        "name": "Amazon商品ページ",
+        "url": "https://www.amazon.co.jp/dp/B0GYWTMWVH",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-08-13",
+        "author": "GMKtec",
+        "conflictOfInterest": "disclosed",
+        "notes": "商品スペック、OCuLink・USB4・デュアル2.5G LAN搭載、3つのTDPモード、PD給電100W以上の注意書きを確認"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "外部GPU（R-TX 4060など）を接続すれば、『L-O-L』では画質フル設定で最大232fpsを達成",
+        "category": "comparativeAdvantage",
+        "confidence": "high",
+        "supportingSourceIds": ["src-1"],
+        "crossChecked": false,
+        "notes": "OCuLink (PCIe 4.0 x4) は帯域幅が広いため、eGPUによる高フレームレート達成は技術的に妥当である。"
+      }
+    ],
+    "lastInvestigated": "2026-08-13",
+    "competitiveAnalysis": [
+      {
+        "name": "GMKtec ミニPC G10 (Ryzen 5 3500U)",
+        "asin": "B0H2Q718QB",
+        "priceComparison": "本商品（M8）の方が約1.8万円高いが、CPU世代が新しく、インターフェースも豊富である。",
+        "featureComparison": [
+          "共通点：GMKtec製のミニPCである点",
+          "相違点：G10は古いZen+アーキテクチャのRyzen 5 3500Uを搭載し、OCuLinkやUSB4などの先進的なポートを持たないのに対し、本商品はRyzen 5 PRO 6650Hと充実したインターフェースを備える"
+        ],
+        "differentiators": [
+          "GMKtec M8 ミニPCの利点：最新に近いCPU性能と、OCuLink、USB4、デュアルLANといった拡張性を重視するなら迷わずこちらを選ぶべきである",
+          "GMKtec ミニPC G10の利点：ブラウジングやOfficeソフトなどの軽作業が中心で、とにかく導入コストを安く抑えたい場合に向いている"
+        ]
+      },
+      {
+        "name": "B8APro (Ryzen 7 8745HS)",
+        "asin": "B0H8XQR9HJ",
+        "priceComparison": "本商品（M8）の方が約7,000円安い。",
+        "featureComparison": [
+          "共通点：高性能なRyzenプロセッサとDDR5メモリを搭載したミニPCである点",
+          "相違点：B8AProはより新しくコア数の多いRyzen 7 8745HSを搭載しているが、本商品（M8）のようなOCuLinkポートやデュアルLAN構成には特化していない"
+        ],
+        "differentiators": [
+          "GMKtec M8 ミニPCの利点：eGPUの接続（OCuLink）やデュアルLANによるサーバー構築など、特殊な拡張ポートを活用したい明確な目的がある場合に最適である",
+          "B8AProの利点：eGPUなどの外部拡張を行わず、単体でのCPU処理能力や内蔵GPU性能（Radeon 780Mなど）の高さをシンプルに求める場合に向いている"
+        ]
+      },
+      {
+        "name": "NiPoGi ミニpc (Ryzen 5 7430U)",
+        "asin": "B0FPG8CQQB",
+        "priceComparison": "価格はほぼ同等（本商品が約2,600円高い）。",
+        "featureComparison": [
+          "共通点：6コア12スレッドのRyzen 5プロセッサを搭載している点",
+          "相違点：NiPoGiはZen3アーキテクチャのRyzen 5 7430Uを搭載しているが、本商品はRDNA2グラフィックスを採用したRyzen 5 PRO 6650Hを搭載しており、OCuLinkポートの有無でも異なる"
+        ],
+        "differentiators": [
+          "GMKtec M8 ミニPCの利点：価格差がほとんどない中で、より高性能な内蔵グラフィックス（Radeon 660M）と、OCuLink等の圧倒的な拡張ポートを備えている点で優位性が高い",
+          "NiPoGi ミニpcの利点：特定のブランドのサポート体制や、デザインの好みが合う場合に選択肢となる"
+        ]
+      },
+      {
+        "name": "NiPoGi ミニPC (Ryzen Embedded R2544)",
+        "asin": "B0DRVRQBZV",
+        "priceComparison": "本商品（M8）の方が約2.4万円高い。",
+        "featureComparison": [
+          "共通点：コンパクトな筐体を採用したミニPCである点",
+          "相違点：競合機は組み込み向けの廉価APUと8GBメモリの構成であり、本商品はよりハイパフォーマンスなRyzen 5 PRO 6650Hと16GBメモリを搭載している"
+        ],
+        "differentiators": [
+          "GMKtec M8 ミニPCの利点：クリエイティブ作業や将来的なeGPUによるゲーミングなど、本格的なPC利用を想定している場合はこちらを選ぶべきである",
+          "NiPoGi ミニPCの利点：動画視聴や簡単な文書作成など、スペックを要求されない用途に限定して予算を3万円台に抑えたい場合に適している"
+        ]
+      },
+      {
+        "name": "Beelink SER3 (Ryzen 3 3200U)",
+        "asin": "B0CYT4SGMP",
+        "priceComparison": "本商品（M8）の方が約3万円高い。",
+        "featureComparison": [
+          "共通点：小型のデスクトップPCである点",
+          "相違点：SER3は旧世代の2コアCPUを搭載したエントリー機であるが、本商品は6コアCPUと最新の拡張ポートを搭載したミドルハイクラス機である"
+        ],
+        "differentiators": [
+          "GMKtec M8 ミニPCの利点：日常用途だけでなく、マルチタスクや高負荷な作業をストレスなくこなせる「メインPC」としての性能を求めるならこちらを選ぶべきである",
+          "Beelink SER3の利点：サブPCとしてや、Webブラウジングのみを行う用途で、とにかく最安クラスのミニPCを探している場合に向いている"
+        ]
+      },
+      {
+        "name": "NiPoGi ミニpc (Intel N5030)",
+        "asin": "B0H2VL6C7K",
+        "priceComparison": "本商品（M8）の方が約2.2万円高い。",
+        "featureComparison": [
+          "共通点：省スペース性に優れたミニPCである点",
+          "相違点：競合機はIntelの廉価CPU（Gemini Lake Refresh）を搭載しており処理能力が大幅に低いが、本商品は高性能なRyzen 5 PROを搭載している"
+        ],
+        "differentiators": [
+          "GMKtec M8 ミニPCの利点：快適な動作レスポンスと、OCuLink/USB4による高い拡張性など、数年先まで第一線で使える性能を求める場合に推奨される",
+          "NiPoGi ミニpcの利点：性能にはこだわらず、少しでも出費を抑えてWindows環境を手に入れたい場合に限定される"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "OCuLinkを利用してeGPUを構築し、将来的にゲーミングPC化したいガジェット愛好家（単なるミニPC以上の拡張性を求める人）",
+        "デュアル2.5GbE LANを活かして、自宅で小規模サーバーや高速なネットワーク環境を構築したいホームサーバー運用者",
+        "USB4を利用したケーブル1本での接続など、デスク周りの配線を極限までスッキリさせたいリモートワーカー"
+      ],
+      "pros": [
+        "OCuLink端子を搭載しているため、一般的なUSB4接続よりも帯域ロスが少なく、外付けGPUの性能をフルに引き出した本格的なゲーム環境を後付けできる",
+        "2基の2.5Gbps LANポートを備えており、リンクアグリゲーションなどでNASへの高速アクセス環境や、ルーター化などマニアックなネットワーク遊びに対応できる",
+        "100W PD給電対応のモニターと組み合わせることで、映像出力と本体への電源供給をUSB4ケーブル1本で完結でき、配線のゴチャつきから解放される"
+      ],
+      "cons": [
+        "OCuLinkやデュアルLANといった特殊なポートを活用する予定がない場合、同価格帯のよりCPU性能が高いモデルを選ぶ方が満足度が高くなる可能性がある",
+        "USB Type-Cケーブル1本での運用には「100W以上のPD出力」というややハードルの高いモニター条件があるため、購入前に手持ちのモニターの仕様確認が必須である",
+        "オンボードメモリ（LPDDR5）を採用しているため、購入後にメモリ容量が足りなくなっても後から増設できない点に注意が必要である"
+      ],
+      "score": 89,
+      "scoreRationale": "[基本点: 70]\n[加点: +10] (Ryzen 5 PRO 6650H、OCuLink搭載、USB4対応、デュアル2.5GbE LAN、3画面出力対応といった圧倒的な拡張性とインターフェースの豊富さ)\n[加点: +2] (用途に応じて静音・バランス・高性能の3モードを切り替えられる柔軟な電力管理とデュアルファン冷却システム)\n[加点: +5] (OCuLink端子搭載によるeGPU運用対応やビジネス向けのPROモデルAPU採用など、競合製品にはない明確な個性と独自の強み)\n[加点: +2] (ニッチな需要を満たすマニアライクな仕様が、特定層から高い支持を集めているため)\n[合計: 89]"
+    },
+    "technicalSpecs": {
+      "os": "Windows 11 Pro",
+      "cpu": "AMD Ryzen 5 PRO 6650H (6コア12スレッド、最大4.5GHz)",
+      "ram": "16GB LPDDR5 (6400MT/s、オンボード)",
+      "storage": "512GB NVMe M.2 2280 SSD (2スロット搭載、合計最大8TBまで拡張可能)",
+      "display": {
+        "size": "なし",
+        "resolution": "最大8K出力対応 (3画面同時出力対応)"
+      },
+      "battery": {
+        "capacity": "なし",
+        "charging": "なし"
+      },
+      "dimensions": {
+        "height": "不明",
+        "width": "不明",
+        "depth": "不明"
+      },
+      "weight": "不明",
+      "capacity": "なし",
+      "material": "不明",
+      "origin": "不明",
+      "other": [
+        "インターフェース: OCuLink (PCIe 4.0 x4) ×1、USB4 (40Gbps/PD給電/映像出力対応) ×1、USB 3.2 Gen2 (10Gbps) ×3、HDMI 2.0 ×1、DisplayPort 1.4 ×1、2.5GbE LAN ×2",
+        "ネットワーク: Wi-Fi 6E、Bluetooth対応",
+        "冷却システム: 上下デュアルファン冷却、銅製ヒートパイプ",
+        "電源モード: 静音28W / バランス35W / 高性能40W の3段階切り替え対応",
+        "その他機能: Wake-on-LAN、Auto Power On対応",
+        "USB4給電: PD 100W以上の電源入力が必要"
+      ]
+    }
+  }
+}
