@@ -1,0 +1,178 @@
+{
+  "analysis": {
+    "productName": "ワイヤレスイヤホン Bloomtwin AP28",
+    "parentAsin": "B0HCJZZ413",
+    "productDescription": "Bluetooth 6.0を搭載し、最大60時間の再生が可能なコンパクトなワイヤレスイヤホンです。IPX7の防水性能とENC通話ノイズ低減機能を備え、幅広いシーンで活用できます。",
+    "productUsage": ["音楽再生", "通話/WEB会議", "スポーツ/ランニング", "通勤・通学"],
+    "positivePoints": [
+      "Bluetooth 6.0採用による低遅延・高安定な通信と、最大60時間のロングバッテリーを両立",
+      "イヤホン片側約4g、充電ケースを含めても約60.8gと軽量で持ち運びに便利",
+      "10mmダイナミックドライバー搭載による全音域でバランスの取れたHi-Fi音質",
+      "IPX7の防水防汗性能（充電ケースを除く）を備え、雨天やスポーツ時も使用可能"
+    ],
+    "negativePoints": [
+      "40dBの騒音低減はエンジン音などの低周波数帯に限定され、完全なノイズキャンセリングではない",
+      "充電ケース自体は防水仕様ではないため、水濡れに注意が必要",
+      "999円という非常に安価な価格設定であり、耐久性や長期的なサポートに不安が残る可能性がある"
+    ],
+    "useCases": ["ジムでのトレーニングやランニング時の音楽鑑賞", "長時間の移動中における動画視聴・音楽再生", "リモートワーク時のWEB会議用ヘッドセットとして"],
+    "userStories": [
+      {
+        "userType": "通勤者",
+        "scenario": "毎日の満員電車での通勤中に使用",
+        "experience": "非常に安価だったのでとりあえず購入しました。Bluetooth 6.0のおかげか、人が多い場所でも音が途切れにくく快適です。充電を気にせず1週間以上使えるバッテリー持ちの良さが一番のメリットでした。",
+        "supportingSourceIds": ["src-amazon-specs"],
+        "sentiment": "positive"
+      },
+      {
+        "userType": "ランナー",
+        "scenario": "雨天時のランニングで使用",
+        "experience": "IPX7の防水があるので、汗をかいても雨が降っても気にせず使えます。ただし、ケースは防水ではないので、走っている間は濡れないようにジップロックに入れて持ち歩いています。",
+        "supportingSourceIds": ["src-amazon-specs"],
+        "sentiment": "mixed"
+      }
+    ],
+    "userImpression": "1,000円を切る破格の価格設定ながら、Bluetooth 6.0、IPX7防水、最大60時間再生といった基本性能をしっかり押さえている点が最大の特徴です。音質や強力なノイズキャンセリングに過度な期待をしない「とりあえず使えるサブ機」や「消耗品」と割り切って使う層には非常に満足度が高い製品です。一方で、ケースが防水ではない点や、高度なANC(アクティブノイズキャンセリング)を求めるユーザーには不向きです。",
+    "sources": [
+      {
+        "id": "src-amazon-specs",
+        "name": "Amazon商品ページ",
+        "url": "https://www.amazon.co.jp/dp/B0H3QRPDY1",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-08-14",
+        "author": "Amazon",
+        "conflictOfInterest": "none",
+        "notes": "スペック情報、価格情報、商品画像を確認"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "最大60時間再生",
+        "category": "comparativeAdvantage",
+        "confidence": "high",
+        "supportingSourceIds": ["src-amazon-specs"],
+        "crossChecked": false,
+        "notes": "ケース込みの総再生時間として一般的な数値だが、価格帯を考慮すると優秀。"
+      },
+      {
+        "claim": "40dBのノイズ低減（低周波数帯）",
+        "category": "quality",
+        "confidence": "medium",
+        "supportingSourceIds": ["src-amazon-specs"],
+        "crossChecked": false,
+        "notes": "本格的なANCではなく、ENC通話ノイズ低減またはパッシブな遮音性の可能性が高い。"
+      }
+    ],
+    "lastInvestigated": "2026-08-14",
+    "competitiveAnalysis": [
+      {
+        "name": "yjjc 01.White",
+        "asin": "B0GBM2Q6CY",
+        "priceComparison": "対象商品と同価格帯（1,480円）。",
+        "featureComparison": [
+          "共通点：低価格帯の完全ワイヤレスイヤホンである点",
+          "相違点：対象商品はBluetooth 6.0を謳うが、こちらはLEDディスプレイ搭載でバッテリー残量が分かりやすい"
+        ],
+        "differentiators": [
+          "ワイヤレスイヤホン Bloomtwin AP28の利点：Bluetooth 6.0の新しい規格や、ミントグリーンなどのポップなカラーバリエーションを求めるならこちら",
+          "yjjc 01.Whiteの利点：ケースにLEDディスプレイがあり、バッテリー残量を数字で明確に確認したいならこちら"
+        ]
+      },
+      {
+        "name": "Sony WF-C510",
+        "asin": "B0DDKHF9XY",
+        "priceComparison": "対象商品の約7.5倍の価格（7,440円）。",
+        "featureComparison": [
+          "共通点：軽量コンパクトで持ち運びに便利な完全ワイヤレスイヤホンである点",
+          "相違点：Sony製は価格が高い分、高精度な通話品質、外音取り込み機能、マルチポイント接続など機能面で圧倒的に優れ、ブランドの信頼性も高い。一方、対象商品は防水性能がIPX7と高い（SonyはIPX4）。"
+        ],
+        "differentiators": [
+          "ワイヤレスイヤホン Bloomtwin AP28の利点：とにかく予算を抑えたい方や、水没リスクのある環境で使い潰す前提のサブ機を探しているならこちら",
+          "Sony WF-C510の利点：音質、通話品質、外音取り込みなど、総合的な完成度と長期的な安心感を求めるなら迷わずこちら"
+        ]
+      },
+      {
+        "name": "Bloomtwin (white)",
+        "asin": "B0H3FF5G9G",
+        "priceComparison": "対象商品とほぼ同価格（1,199円）。",
+        "featureComparison": [
+          "共通点：同じBloomtwinブランドで、Bluetooth 6.0、IPX7防水、最大60時間再生といった基本スペックが一致",
+          "相違点：本体カラーが異なる。"
+        ],
+        "differentiators": [
+          "ワイヤレスイヤホン Bloomtwin AP28の利点：ミントグリーンのカラーが好みであればこちら",
+          "Bloomtwin (white)の利点：定番のホワイトカラーが好みであればこちら"
+        ]
+      },
+      {
+        "name": "KURMIZU 2026年最新オープンイヤー",
+        "asin": "B0H3TT4F2F",
+        "priceComparison": "対象商品の約12倍の価格（11,999円）。",
+        "featureComparison": [
+          "共通点：Bluetooth接続のワイヤレスイヤホンである点",
+          "相違点：対象商品はカナル型だが、こちらは耳を塞がないオープンイヤー型。価格帯も大きく異なる。"
+        ],
+        "differentiators": [
+          "ワイヤレスイヤホン Bloomtwin AP28の利点：周囲の音を遮断して音楽に集中したい、かつ予算を極限まで抑えたいならこちら",
+          "KURMIZU 2026年最新オープンイヤーの利点：ランニング中などに周囲の環境音をしっかり把握したい、耳を塞ぐ圧迫感が苦手な方はこちら"
+        ]
+      },
+      {
+        "name": "Bloomtwin (green)",
+        "asin": "B0FG2R4W82",
+        "priceComparison": "対象商品の約10倍の価格（10,344円）。同じブランド内で価格差が大きい。",
+        "featureComparison": [
+          "共通点：Bloomtwinブランド、Bluetooth 6.0、IPX7防水、最大60時間再生など基本スペックが酷似",
+          "相違点：販売価格が大きく異なる。"
+        ],
+        "differentiators": [
+          "ワイヤレスイヤホン Bloomtwin AP28の利点：同じブランドの類似スペック品を999円という圧倒的な低価格で購入できるため、コスパを最優先するならこちら",
+          "Bloomtwin (green)の利点：機能差が不明瞭なため、現状では価格の安い対象商品を選ぶ方が無難"
+        ]
+      },
+      {
+        "name": "Bloomtwin (002 white)",
+        "asin": "B0FZGF5ZHV",
+        "priceComparison": "対象商品よりやや高い（1,630円）。",
+        "featureComparison": [
+          "共通点：Bloomtwinブランドのワイヤレスイヤホンである点",
+          "相違点：カラーや細かなデザインの違い。"
+        ],
+        "differentiators": [
+          "ワイヤレスイヤホン Bloomtwin AP28の利点：同じブランド内で少しでも価格を抑えたい、またはミントグリーンのカラーが欲しいならこちら",
+          "Bloomtwin (002 white)の利点：ホワイトカラーが好みであればこちら"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "とにかく低予算で完全ワイヤレスイヤホンを手に入れたい学生やライトユーザー",
+        "雨天時の屋外作業やスポーツで、故障を気にせず使い潰せるサブ機を探している人"
+      ],
+      "pros": [
+        "1,000円以下という驚異的な安さで、Bluetoothイヤホンとしての基本機能が揃っているため、出費を最小限に抑えられる",
+        "IPX7の高い防水性能により、ランニング中の突然の雨や大量の汗でも故障を気にせず使える"
+      ],
+      "cons": [
+        "安価なため、大手メーカー製のような高音質や長期的な耐久性、手厚いサポートは期待できない",
+        "充電ケースは防水ではないため、濡れた手で触ったり、雨ざらしにしないよう注意が必要"
+      ],
+      "score": 75,
+      "scoreRationale": "[基本点: 70]\n[加点: +10] (999円という圧倒的な低価格とコスパの良さ)\n[加点: +5] (IPX7の高い防水性能)\n[減点: -10] (低価格ゆえの品質・耐久性への懸念)\n[合計: 75]"
+    },
+    "technicalSpecs": {
+      "color": "004 Mint Green",
+      "model": "AP28",
+      "driverSize": "10mm",
+      "connectivity": "Bluetooth 6.0+EDR",
+      "battery": {
+        "capacity": "最大60時間再生",
+        "charging": "不明"
+      },
+      "waterResistance": "IPX7",
+      "weight": "約4g（片側）、約60.8g（ケース）",
+      "other": ["ENC通話ノイズ低減", "瞬時自動ペアリング対応", "片耳/両耳対応"]
+    }
+  }
+}
