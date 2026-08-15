@@ -187,22 +187,29 @@
       "scoreRationale": "[基本点: 70]\n[加点: +5] (2K QHD・スターライトセンサーによる高い画質性能)\n[加点: +2] (IP66防水防塵による耐候性)\n[加点: +3] (マグネット台座による柔軟な設置性)\n[加点: +5] (不可視赤外線モードによるペット・ベビー監視への配慮)\n[加点: +5] (多彩なAI検知機能による高いコストパフォーマンス)\n[減点: -3] (常時電源必須による設置場所の制約)\n[減点: -2] (一部microSDカードとの非互換性リスク)\n[合計: 85]"
     },
     "technicalSpecs": {
-      "dimensions": {
-        "width": "57.4mm",
-        "height": "67.4mm",
-        "depth": "44.1mm"
+      "camera": {
+        "main": "400万画素 (2K QHD 2560×1440)",
+        "nightVision": "フルカラーナイトビジョン (スポットライト内蔵) & 赤外線LED"
       },
-      "resolution": "2K QHD 4MP (2560×1440px)",
-      "frameRate": "20fps",
-      "lens": "焦点距離: 3.17mm, 絞り: F1.65",
-      "fieldOfView": "120°(対角) / 103°(水平) / 55°(垂直)",
-      "nightVision": "850nm IR LED (最長9m) / 940nm IR LED (最長9m) / フルカラーナイトビジョン",
-      "audio": "内蔵マイク＆スピーカー, 双方向通話(ノイズキャンセリング搭載), 96dBサイレン",
-      "network": "Wi-Fi (IEEE 802.11b/g/n, 2.4GHz)",
-      "storage": "microSDカードスロット(最大512GB), Tapo Careクラウドストレージ対応",
-      "power": "5V DC 電源アダプター (Type-Cケーブル約3m)",
-      "operatingTemperature": "-20℃～45℃",
-      "weatherproof": "IP66防水防塵"
+      "dimensions": {
+        "height": "74.6mm",
+        "width": "67.4mm",
+        "depth": "67.4mm",
+        "weight": "150g"
+      },
+      "weight": "150g",
+      "material": "高耐久防水ABS樹脂",
+      "origin": "中国 (TP-Link)",
+      "connectivity": [
+        "Wi-Fi 2.4GHz"
+      ],
+      "other": [
+        "屋内・屋外両用: 防塵防水 IP66等級",
+        "マグネット式ベース (金属面に工具不要で設置可能)",
+        "AI人物・ペット・車両検知 & 泣き声検知",
+        "双方向音声通話",
+        "microSDカード対応 (最大512GB)"
+      ]
     }
   }
 }

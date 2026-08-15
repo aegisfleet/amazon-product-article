@@ -44,7 +44,9 @@
         "claim": "STARVIS 2をリアカメラに搭載し、夜間でも鮮明な録画が可能",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": false,
         "notes": "公式ページの製品特徴に明記されている"
       },
@@ -52,7 +54,9 @@
         "claim": "フルHDの12型フルラミネーションディスプレイを採用",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": false,
         "notes": "大画面12インチで高画質であることが公式ページに記載"
       }
@@ -144,17 +148,37 @@
       "scoreRationale": "[基本点: 70]\n[加点: +5] (12型大画面フルHD液晶とフルラミネーションディスプレイで視認性が高い)\n[加点: +8] (リアカメラにSTARVIS 2を搭載し、夜間録画性能が優れている)\n[加点: +5] (純正交換タイプで車内インテリアを損なわない高いデザイン性とフィット感)\n[減点: -5] (本体価格が高価で、さらに別売の車種別取付キットが必要となり導入コストがかさむ)\n[合計: 83]"
     },
     "technicalSpecs": {
-      "dimensions": {
-        "height": "94.5mm",
-        "width": "301.7mm",
-        "depth": "49.4mm"
+      "camera": {
+        "main": "200万画素 (前後フルHD 1920×1080 / 車内用リアカメラ)",
+        "sensor": "前後Sony STARVIS 高感度センサー"
       },
-      "screenSize": "12型",
-      "resolution": "フロント/リア: 200万画素 フルHD (1920×1080)",
-      "sensor": "リアカメラ: STARVIS 2搭載",
-      "recordingMode": "常時録画、衝撃録画、手動録画、駐車録画、静止画",
-      "features": "HDR、防眩機能、3段階デジタルズーム機能、LED信号機対応、地デジノイズ対策済み",
-      "accessories": "microSDHCカード(32GB)付属"
+      "display": {
+        "size": "12.0インチ",
+        "resolution": "1920×720 (高精細液晶デジタルミラー)",
+        "type": "フルHD防眩・低反射液晶",
+        "refreshRate": "60Hz"
+      },
+      "dimensions": {
+        "height": "75mm",
+        "width": "290mm",
+        "depth": "25mm (ミラー本体)",
+        "weight": "850g"
+      },
+      "weight": "850g",
+      "material": "アルパイン専用設計高品位フレーム",
+      "origin": "日本 (Alpine)",
+      "connectivity": [
+        "前後独立カメラ接続",
+        "GPSアンテナ",
+        "microSDカードスロット (32GB付属)"
+      ],
+      "other": [
+        "純正ミラー交換型スタイリッシュ装着 (振動に強い固定設計)",
+        "STARVIS夜間高感度撮影 & 前後HDR搭載",
+        "後方死角低減広角デジタルインナーミラー",
+        "駐車監視録画機能標準対応",
+        "地デジノイズ低減 & LED信号機対応"
+      ]
     }
   }
 }

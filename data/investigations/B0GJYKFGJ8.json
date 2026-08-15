@@ -172,22 +172,32 @@
       "scoreRationale": "[基本点: 70]\n[加点: +5] (2K QHDの高画質とフルカラーナイトビジョン対応で映像が鮮明)\n[加点: +5] (ソーラーパネルが付属し、配線不要で長期間稼働できる高い利便性)\n[加点: +5] (AI検知、双方向通話、Alexa連携など豊富なスマート機能を搭載)\n[減点: -5] (常時録画に非対応で、イベント録画のみの制限がある)\n[合計: 80]"
     },
     "technicalSpecs": {
-      "dimensions": {
-        "height": "40mm",
-        "width": "50mm",
-        "length": "80mm"
+      "camera": {
+        "main": "300万画素 (2K 2304×1296)",
+        "nightVision": "フルカラーナイトビジョン & 赤外線暗視"
       },
-      "weight": "450g",
-      "resolution": "2K QHD (1440p)",
-      "connectivity": "Wi-Fi 2.4GHz",
-      "powerSource": "ソーラー充電 / 内蔵リチウム電池",
-      "nightVision": "カラフルナイトビジョン (最大10m)",
-      "storage": "Micro SD (最大256GB・別売) / クラウドストレージ (有料)",
-      "features": [
-        "AI検出機能 (人間・車両・ペット識別)",
-        "PIR動体検知",
-        "双方向通話",
-        "Alexa対応"
+      "battery": {
+        "capacity": "5200mAh (充電式リチウム電池)",
+        "charging": "付属高効率ソーラーパネル連続給電",
+        "playbackTime": "ソーラー給電で365日完全コードレス稼働"
+      },
+      "dimensions": {
+        "height": "95mm",
+        "width": "65mm",
+        "depth": "80mm",
+        "weight": "280g"
+      },
+      "weight": "280g",
+      "material": "IP66防水ABS樹脂",
+      "origin": "中国",
+      "connectivity": [
+        "Wi-Fi 2.4GHz"
+      ],
+      "other": [
+        "防塵防水: IP66",
+        "AI動体検知 & PIR熱感センサー",
+        "双方向通話 & 発光威嚇アラーム",
+        "クラウド保存 & SDカード対応"
       ]
     }
   }

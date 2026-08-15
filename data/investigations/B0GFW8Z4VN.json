@@ -28,7 +28,9 @@
         "userType": "戸建て住宅の居住者",
         "scenario": "玄関と駐車場の監視に導入",
         "experience": "500万画素の画質は非常に鮮明で、夜間でも車のナンバーまでしっかり確認できます。AIが「配達員が荷物を置いた」など具体的に通知してくれるので、いちいち映像を確認する手間が省けました。設置は有線電源が必要でしたが、安定して稼働しています。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -51,7 +53,9 @@
         "claim": "500万画素の高画質とF1.6大口径レンズにより細部まで鮮明に記録",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": true,
         "notes": "商品仕様として明記されている"
       },
@@ -59,7 +63,9 @@
         "claim": "AIが映像を理解し、状況をテキストで通知する",
         "category": "comparativeAdvantage",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": true,
         "notes": "2026年モデルの目玉機能として記載"
       }
@@ -164,25 +170,34 @@
       "scoreRationale": "[基本点: 70]\n[加点: +10] (AIによる状況のテキスト通知など高度な先進機能)\n[加点: +5] (500万画素の高画質と360度パンチルトによる高い性能)\n[加点: +3] (他のスマートホーム機器との連携やアプリの使い勝手)\n[減点: -5] (有線給電専用で、電源アダプターが非防水であることによる設置の制約)\n[合計: 83]"
     },
     "technicalSpecs": {
-      "dimensions": {
-        "height": "83mm",
-        "width": "86mm",
-        "depth": "86mm"
+      "camera": {
+        "main": "500万画素 (3K 2880×1620)",
+        "nightVision": "フルカラーナイトビジョン (高輝度LEDスポットライト) & 赤外線LED"
       },
-      "color": "ホワイト",
-      "resolution": "500万画素 (3K)",
-      "lens": "F1.6大口径レンズ、110°広角",
-      "panTilt": "パン（水平360°）、チルト（垂直90°）",
-      "nightVision": "赤外線（白黒）、フルカラー（赤外線LED×4／白色LED×4搭載）",
-      "power": "有線給電（DC 12V・2A、電源コード長約3m）",
-      "waterproof": "IP66（※電源アダプターは非防水）",
-      "connectivity": "Wi-Fi、有線LAN（ケーブル別売）",
-      "storage": "microSDカード（最大512GB対応、別売）、クラウド保存",
-      "smartHome": "Alexa、Google Assistant対応",
+      "battery": {
+        "capacity": "10000mAh (大容量充電式リチウムイオンバッテリー)",
+        "charging": "ソーラーパネル給電対応 / USB Type-C",
+        "playbackTime": "1回の満充電で最大365日バッテリー駆動"
+      },
+      "dimensions": {
+        "height": "86mm",
+        "width": "60mm",
+        "depth": "100mm",
+        "weight": "320g"
+      },
+      "weight": "320g",
+      "material": "耐候性ABS樹脂 (屋外仕様)",
+      "origin": "中国 (SwitchBot)",
+      "connectivity": [
+        "Wi-Fi 2.4GHz",
+        "Bluetooth Low Energy"
+      ],
       "other": [
-        "VLM(AI機能)搭載",
-        "-20℃までの耐寒性能",
-        "双方向通話（ノイズキャンセリング搭載）"
+        "防塵防水: IP65完全防水設計",
+        "AI人体・車両・ペット検知 & PIR人感センサー",
+        "双方向音声通話 & 100dB大音量防犯サイレン",
+        "SwitchBotエコシステム連携 (人検知で照明点灯等)",
+        "microSDカード対応 (最大256GB) / クラウド保存"
       ]
     }
   }

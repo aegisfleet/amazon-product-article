@@ -162,25 +162,30 @@
       "scoreRationale": "[基本点: 70]\n[加点: +5] (耐久性の高いMLC方式の32GB大容量SDカードが標準付属しているため)\n[加点: +5] (SDカードの定期フォーマットが不要でメンテナンス性に優れるため)\n[加点: +5] (HDR搭載・200万画素で必要十分な録画性能を備え、コスパが良い国内メーカー品のため)\n[減点: -3] (取扱説明書がWEBダウンロードのみで、紙の冊子が付属しないため)\n[合計: 82]"
     },
     "technicalSpecs": {
-      "dimensions": {
-        "height": "54mm",
-        "width": "65mm",
-        "depth": "27mm"
+      "camera": {
+        "main": "200万画素 (フルHD 1920×1080 / 視野角 対角160°)",
+        "sensor": "STARVIS技術搭載 CMOSセンサー (夜間高感度撮影)"
       },
-      "weight": "83g",
-      "resolution": "200万画素 Full HD",
-      "display": "液晶モニター搭載",
-      "features": [
-        "HDR",
-        "夜間機能",
-        "GPS",
-        "Gセンサー",
-        "音声記録"
+      "dimensions": {
+        "height": "48mm",
+        "width": "60mm",
+        "depth": "28mm (ブラケット除く)",
+        "weight": "64g"
+      },
+      "weight": "64g",
+      "material": "高耐熱樹脂ボディ",
+      "origin": "日本 (Yupiteru 国内自社工場生産)",
+      "connectivity": [
+        "microSDカードスロット (16GB付属 / 最大32GB対応)",
+        "DC12V電源 (シガープラグコード付属)"
       ],
-      "recordingMedia": "microSDカード (MLC方式 32GB付属)",
-      "recordingTime": "約277分 (32GB使用時)",
-      "powerSupply": "12V車専用 (5V入力)",
-      "warranty": "1年"
+      "other": [
+        "STARVIS搭載で夜間やプライバシーガラス越しでも鮮明記録",
+        "HDR (ハイダイナミックレンジ) 搭載で白とび・黒つぶれ抑制",
+        "Gセンサー (衝撃検知) & GPS内蔵 (位置・速度・日時記録)",
+        "SDカードフォーマット不要機能 (特許出願中)",
+        "全国のLED信号機対応 & 地デジノイズ低減設計"
+      ]
     }
   }
 }

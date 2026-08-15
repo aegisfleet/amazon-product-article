@@ -162,21 +162,26 @@
       "scoreRationale": "[基本点: 70]\n[加点: +5] (500万画素の高解像度と全方位自動追尾機能による高い性能)\n[加点: +5] (5GHz対応と物理シャッター機能を備えながら低価格であるコスパの良さ)\n[加点: +5] (デュアルバンドWi-FiやBluetoothペアリングなど使い勝手の良さ)\n[合計: 85]"
     },
     "technicalSpecs": {
-      "dimensions": {
-        "height": "70mm",
-        "width": "70mm",
-        "depth": "110mm"
+      "camera": {
+        "main": "500万画素 (3K 2592×1944)",
+        "nightVision": "高感度赤外線暗視"
       },
-      "resolution": "500万画素 (2304x1296P)",
-      "connectivity": "Wi-Fi (2.4GHz / 5GHz), Bluetooth",
-      "powerSupply": "有線給電 (コンセント)",
-      "nightVision": "赤外線暗視 (最大15m)",
-      "storage": "microSDカード(最大256GB・別売), クラウド保存(6秒の映像を7日間無料保存)",
-      "color": "ブラック",
+      "dimensions": {
+        "height": "118mm",
+        "width": "78mm",
+        "depth": "78mm",
+        "weight": "210g"
+      },
+      "weight": "210g",
+      "material": "ABS樹脂",
+      "origin": "中国 (ieGeek)",
+      "connectivity": [
+        "Wi-Fi 2.4GHz / 5GHz対応"
+      ],
       "other": [
-        "上下左右AI自動追尾",
-        "双方向通話可能",
-        "プライバシー保護シャッター",
+        "ペット見守り専用機能 (動体自動追跡・鳴き声検知)",
+        "360°全方位モニタリング",
+        "双方向リアルタイム音声通話",
         "Alexa対応"
       ]
     }
