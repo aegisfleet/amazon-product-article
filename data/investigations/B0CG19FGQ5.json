@@ -159,23 +159,42 @@
       "scoreRationale": "[基本点: 70]\n[加点: +10] (1インチセンサー搭載と3軸ジンバルによる、クラス最高峰の画質と手ブレ補正性能)\n[加点: +8] (クリエイターコンボによる、マイクや拡張バッテリー等が含まれた高い実用性と完結したパッケージ構成)\n[加点: +7] (回転式タッチスクリーンやActiveTrack 6.0など、縦横動画制作を強力に支援する使い勝手の良さ)\n[減点: -2] (アクションカメラのような防水性・堅牢性がなく、使用環境に気を遣う点)\n[合計: 93]"
     },
     "technicalSpecs": {
+      "camera": {
+        "main": "940万画素 (4K UHD 3840×2160@120fps / 1080p@240fps)",
+        "sensor": "1型CMOSセンサー (超高感度・大口径F2.0 焦点距離20mm相当)"
+      },
+      "display": {
+        "size": "2.0インチ",
+        "resolution": "314×556 (326ppi / OLEDタッチ画面)",
+        "type": "OLED (有機EL / 回転式タッチスクリーン)",
+        "refreshRate": "60Hz"
+      },
+      "battery": {
+        "capacity": "1300mAh",
+        "charging": "USB-C急速充電 (16分で80%充電 / 32分満充電)",
+        "playbackTime": "最大166分連続録画 (1080p@24fps撮影時)"
+      },
       "dimensions": {
-        "height": "42.2mm",
-        "width": "139.7mm",
-        "depth": "33.5mm"
+        "height": "139.7mm",
+        "width": "42.2mm",
+        "depth": "33.5mm",
+        "weight": "179g"
       },
       "weight": "179g",
-      "sensor": "1型 CMOS",
-      "videoResolution": "最大 4K/120fps",
-      "stabilization": "3軸メカニカルスタビライズ機構",
-      "screen": "2インチ タッチスクリーン (回転式)",
-      "colorMode": "10-bit D-Log M",
-      "tracking": "ActiveTrack 6.0",
-      "comboAccessories": [
-        "DJI Mic 2 トランスミッター",
-        "バッテリーハンドル",
-        "Osmoミニ三脚",
-        "広角レンズ"
+      "material": "高剛性樹脂・3軸メカニカルジンバル機構",
+      "origin": "中国 (DJI)",
+      "connectivity": [
+        "Wi-Fi 5 (802.11ac)",
+        "Bluetooth 5.2",
+        "USB-C (USB 2.0)",
+        "microSDカードスロット (最大512GB対応)"
+      ],
+      "other": [
+        "3軸メカニカルジンバルスタビライザー (手ブレ完全補正)",
+        "ActiveTrack 6.0 (顔自動検出 / ダイナミックフレーミング)",
+        "10-bit D-Log M & 10-bit HLGカラーモード (10億色以上の階調表現)",
+        "3マイクアレイ指向性オーディオ (風ノイズ低減 & ステレオ録音)",
+        "クリエイターコンボ付属品: DJI Mic 2送信機、広角レンズ、バッテリーハンドル、ミニ三脚、キャリーバッグ"
       ]
     }
   }

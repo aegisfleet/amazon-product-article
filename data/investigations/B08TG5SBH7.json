@@ -183,35 +183,28 @@
       "scoreRationale": "[基本点: 70]\n[加点: +5] (性能・機能: Windows Hello対応による高い利便性)\n[加点: +2] (コストパフォーマンス: 国内メーカー製品として比較的手頃な価格)\n[減点: -10] (ユーザー満足度: 約2年程度で故障するという複数の報告による耐久性の懸念)\n[合計: 67]"
     },
     "technicalSpecs": {
-      "dimensions": {
-        "height": "26.5mm",
-        "width": "100.0mm",
-        "depth": "64.0mm"
+      "camera": {
+        "main": "200万画素 (フルHD 1920×1080@30fps)"
       },
-      "weight": "85.0g",
-      "resolution": "200万画素 (Full HD 1080p)",
-      "framerate": "30fps",
-      "features": [
-        "Windows Hello顔認証対応",
-        "マイク内蔵",
-        "一発接続"
+      "dimensions": {
+        "height": "39.0mm",
+        "width": "100.0mm",
+        "depth": "65.0mm",
+        "weight": "85g"
+      },
+      "weight": "85g",
+      "material": "ABS樹脂",
+      "origin": "中国 (ELECOM)",
+      "connectivity": [
+        "USB Type-A (USB 2.0 / ケーブル長 1.5m)"
       ],
-      "cableLength": "1.5m",
-      "color": "ブラック",
-      "warranty": "6ヶ月",
-      "microphone": "内蔵マイク",
-      "focusType": "固定フォーカス",
-      "fieldOfView": "対角80度",
-      "shortestShootingDistance": "30cm",
-      "interface": "USB 2.0 (Type-A)",
-      "supportedOS": [
-        "Windows 11",
-        "Windows 10"
-      ],
-      "microphoneDetails": {
-        "type": "エレクトレットコンデンサー方式（内蔵）",
-        "directivity": "無指向性"
-      }
+      "other": [
+        "Windows Hello 顔認証対応 (パスワード不要で瞬時ログイン)",
+        "生体認証用IR (赤外線) カメラ + フルHDカラーカメラのデュアル構造",
+        "高音質デジタルマイク内蔵",
+        "視野角: 対角80°",
+        "プライバシーシャッター搭載"
+      ]
     }
   }
 }
