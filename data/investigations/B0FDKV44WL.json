@@ -152,22 +152,48 @@
       "scoreRationale": "[基本点: 70]\n[加点: +10] (Dimensity 8350、12GB RAM、有機ELディスプレイなどの高い性能と実用性)\n[加点: +5] (IP68・IP69の最高レベルの防水防塵性能とFeliCa対応などの日本のニーズに合致した仕様)\n[加点: +5] (大容量5000mAhバッテリーを搭載しながら184g/8.24mmという軽量・薄型デザイン)\n[減点: -5] (イヤホンジャックやSDカードスロットが非搭載による拡張性の制限)\n[合計: 85]"
     },
     "technicalSpecs": {
+      "os": "Android 15",
+      "cpu": "MediaTek Dimensity 8350",
+      "ram": "12GB",
+      "storage": "256GB",
+      "display": {
+        "size": "6.7インチ",
+        "resolution": "2712×1220 (Super HD / 1.5K)",
+        "type": "pOLED (有機EL / 20:9)",
+        "refreshRate": "120Hz"
+      },
+      "battery": {
+        "capacity": "5000mAh",
+        "charging": "68W TurboPower急速充電 / 15Wワイヤレス充電対応"
+      },
+      "camera": {
+        "main": "50MP (Sony LYTIA LYT-700C OIS搭載 F1.8)",
+        "ultrawide": "50MP (超広角 / マクロ F2.0)",
+        "telephoto": "10MP (3倍光学望遠 OIS搭載)",
+        "front": "50MP (F2.0)"
+      },
       "dimensions": {
         "height": "160.69mm",
         "width": "73.04mm",
-        "depth": "8.24mm"
+        "depth": "8.24mm",
+        "weight": "184g"
       },
       "weight": "184g",
-      "display": "約6.7インチ pOLED, 2,712x1,220 (Super HD), 20:9, リフレッシュレート 120Hz",
-      "os": "Android 15",
-      "cpu": "MediaTek Dimensity 8350 (3.35GHz x 1 + 3.2GHz x 3 + 2.2GHz x 4)",
-      "memory_storage": "RAM 12GB / ROM 256GB",
-      "battery": "5,000mAh",
-      "connectivity": "Wi-Fi 802.11 a/b/g/n/ac/ax (Wi-Fi 6E), Bluetooth 5.4",
-      "sim": "nanoSIM/eSIM (DSDV)",
-      "water_dust_resistance": "IP68・IP69",
-      "features": "NFC/FeliCa 対応",
-      "interface": "USB Type-C (USB2.0)"
+      "material": "ガラス（前面・背面）/ アルミニウムフレーム",
+      "origin": "中国",
+      "connectivity": [
+        "5G",
+        "Wi-Fi 6E (802.11ax)",
+        "Bluetooth 5.4",
+        "FeliCa / おサイフケータイ",
+        "eSIM対応"
+      ],
+      "other": [
+        "防塵防水: IP68 / IP69",
+        "オーディオ: ステレオスピーカー (Dolby Atmos対応)",
+        "生体認証: ディスプレイ内指紋認証 / 顔認証",
+        "AI機能: moto ai対応"
+      ]
     }
   }
 }
