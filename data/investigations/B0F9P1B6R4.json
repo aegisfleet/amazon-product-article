@@ -179,22 +179,43 @@
       "scoreRationale": "[基本点: 70]\n[加点: +8] (約27.9cm2.5K高精細ディスプレイと90Hzリフレッシュレートによる快適な表示性能)\n[加点: +5] (9000mAhの大容量バッテリーによる長時間の駆動)\n[加点: +5] (Dolby Atmos対応のクアッドスピーカーによる高品質なオーディオ体験)\n[加点: +2] (2万円台で高解像度と十分な基本性能を備えておりコストパフォーマンスが良い)\n[合計: 90]"
     },
     "technicalSpecs": {
-      "size": "4GB/128GB",
-      "display": "約27.9cm 2.5Kディスプレイ (90Hz AdaptiveSyncリフレッシュレート)",
-      "processor": "Helio G100-Ultra",
-      "battery": "9000mAh",
-      "audio": "Dolby Atmos対応 クアッドスピーカー",
-      "expandableStorage": "最大2TBまでのmicroSDカード拡張対応",
-      "color": "ラベンダーパープル",
-      "other": [
-        "Xiaomi相互接続機能対応"
-      ],
-      "dimensions": {
-        "height": "258.4mm",
-        "width": "163.0mm",
-        "depth": "7.5mm"
+      "os": "Android 15 (Xiaomi HyperOS 2)",
+      "cpu": "MediaTek Helio G100-Ultra",
+      "ram": "4GB",
+      "storage": "128GB",
+      "display": {
+        "size": "11.0インチ",
+        "resolution": "2560×1600 (2.5K)",
+        "type": "IPS液晶 (TÜV低ブルーライト)",
+        "refreshRate": "90Hz"
       },
-      "weight": "490g"
+      "battery": {
+        "capacity": "8000mAh",
+        "charging": "18W急速充電対応"
+      },
+      "camera": {
+        "main": "8MP (F2.0)",
+        "front": "5MP (F2.2)"
+      },
+      "dimensions": {
+        "height": "255.5mm",
+        "width": "167.0mm",
+        "depth": "7.1mm",
+        "weight": "480g"
+      },
+      "weight": "480g",
+      "material": "アルミニウムユニボディ",
+      "origin": "中国",
+      "connectivity": [
+        "Wi-Fi 5 (802.11ac)",
+        "Bluetooth 5.3",
+        "USB-C"
+      ],
+      "other": [
+        "オーディオ: クアッドスピーカー (Dolby Atmos対応)",
+        "microSDXC対応 (最大1.5TB)",
+        "生体認証: 顔認証"
+      ]
     }
   }
 }

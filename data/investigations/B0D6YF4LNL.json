@@ -143,26 +143,47 @@
       "scoreRationale": "[基本点: 70]\n[加点: +5] (5000mAhの大容量バッテリーによる高い実用性)\n[加点: +5] (有機ELディスプレイによるエンタメ適性)\n[加点: +5] (eSIM対応による通信の柔軟性)\n[減点: -10] (同価格帯の競合と比較した際のカメラ性能や処理能力の凡庸さ)\n[合計: 75]"
     },
     "technicalSpecs": {
+      "os": "Android 14",
+      "cpu": "Qualcomm Snapdragon 6 Gen 1",
+      "ram": "6GB",
+      "storage": "128GB",
+      "display": {
+        "size": "6.1インチ",
+        "resolution": "2520×1080 (FHD+ 21:9)",
+        "type": "OLED (有機EL / Gorilla Glass Victus)",
+        "refreshRate": "60Hz"
+      },
+      "battery": {
+        "capacity": "5000mAh (最大2日間駆動)",
+        "charging": "急速充電 (USB PD対応)"
+      },
+      "camera": {
+        "main": "48MP (広角 26mm F1.8 OIS搭載 2倍望遠統合)",
+        "ultrawide": "8MP (超広角 16mm F2.2)",
+        "front": "8MP (F2.0)"
+      },
       "dimensions": {
-        "height": "155mm",
-        "width": "68mm",
-        "depth": "8.3mm"
+        "height": "155.0mm",
+        "width": "68.0mm",
+        "depth": "8.3mm",
+        "weight": "164g"
       },
       "weight": "164g",
-      "capacity": "RAM 6GB / ROM 128GB",
-      "material": "不明",
-      "origin": "不明",
+      "material": "樹脂フレーム / 樹脂背面 / Gorilla Glass Victus前面",
+      "origin": "タイ / 日本",
+      "connectivity": [
+        "5G",
+        "Wi-Fi 5 (802.11ac)",
+        "Bluetooth 5.2",
+        "FeliCa / おサイフケータイ",
+        "eSIM対応",
+        "nanoSIM"
+      ],
       "other": [
-        "バッテリー: 5000mAh",
-        "ディスプレイ: 約155mm 有機EL トリルミナスディスプレイ",
-        "解像度: FHD+ (2520×1080)",
-        "OS: Android 14",
-        "CPU: Snapdragon 6 Gen 1",
-        "メインカメラ: 広角約4800万画素 / 超広角約800万画素",
-        "フロントカメラ: 約800万画素",
-        "おサイフケータイ: 対応",
-        "防水・防塵: IPX5/IPX8・IP6X",
-        "SIM: SIMフリー (nanoSIM / eSIM)"
+        "防塵防水: IP65/IP68",
+        "オーディオ: フロントステレオスピーカー / 3.5mmイヤホンジャック (ハイレゾ対応)",
+        "生体認証: 側面指紋認証",
+        "microSDXC対応 (最大1.5TB)"
       ]
     }
   }

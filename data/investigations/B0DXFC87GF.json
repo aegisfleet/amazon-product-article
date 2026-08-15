@@ -154,21 +154,43 @@
       "scoreRationale": "[基本点: 70]\n[加点: +8] (3.2K解像度・144Hzの高品質なディスプレイと、作業効率を高める3:2のアスペクト比)\n[加点: +6] (Snapdragon 7+ Gen 3搭載による高い基本性能とサクサクな動作)\n[加点: +5] (薄型軽量なメタルボディによる優れたデザインと携帯性)\n[加点: +2] (45W急速充電対応と8850mAhの大容量バッテリーによる利便性)\n[減点: -2] (microSDカードスロット非搭載によるストレージ拡張性の欠如)\n[減点: -2] (GPS非搭載による用途の制限)\n[合計: 87]"
     },
     "technicalSpecs": {
+      "os": "Android 15 (Xiaomi HyperOS 2)",
+      "cpu": "Qualcomm Snapdragon 7+ Gen 3",
+      "ram": "8GB",
+      "storage": "128GB",
+      "display": {
+        "size": "11.2インチ",
+        "resolution": "3200×2136 (3.2K 3:2)",
+        "type": "IPS液晶 (800nit / HDR10+)",
+        "refreshRate": "144Hz"
+      },
+      "battery": {
+        "capacity": "8850mAh",
+        "charging": "45W急速充電対応"
+      },
+      "camera": {
+        "main": "13MP (F2.2)",
+        "front": "8MP (F2.28)"
+      },
       "dimensions": {
-        "height": "173.4mm",
-        "width": "251.2mm",
-        "depth": "6.18mm"
+        "height": "251.22mm",
+        "width": "173.42mm",
+        "depth": "6.18mm",
+        "weight": "500g"
       },
       "weight": "500g",
-      "display": "11.2インチ 3.2K (3200×2136), 144Hz, 最大800nits, 3:2アスペクト比",
-      "cpu": "Snapdragon 7+ Gen 3",
-      "memory": "8GB",
-      "storage": "128GB",
-      "battery": "8850mAh (45W急速充電)",
-      "camera": "リア5000万画素 / フロント3200万画素",
-      "os": "Xiaomi HyperOS 2",
-      "audio": "クワッドスピーカー, Dolby Atmos, Dolby Vision",
-      "color": "グレー"
+      "material": "アルミニウムユニボディ",
+      "origin": "中国",
+      "connectivity": [
+        "Wi-Fi 6E (802.11ax)",
+        "Bluetooth 5.4",
+        "USB-C 3.2 Gen 1"
+      ],
+      "other": [
+        "オーディオ: クアッドスピーカー (Dolby Atmos対応)",
+        "スタイラスペン対応 (Xiaomi Focus Pen別売)",
+        "生体認証: 側面指紋認証 / 顔認証"
+      ]
     }
   }
 }

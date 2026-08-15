@@ -181,26 +181,50 @@
       "scoreRationale": "[基本点: 70]\n[加点: +10] (約2億画素カメラや超急速充電3.0など、業界最高峰のハードウェアスペックと実用性)\n[加点: +10] (自然言語による画像編集など、Galaxy AIの先進的で革新的な機能)\n[加点: +5] (ワンタッチで周囲からの視線を防げる独自機能「プライバシーディスプレイ」の搭載)\n[減点: -10] (218,900円という非常に高価な価格設定によるコストパフォーマンスの低下)\n[合計: 85]"
     },
     "technicalSpecs": {
+      "os": "Android 16 (One UI 8 / Galaxy AI対応)",
+      "cpu": "Qualcomm Snapdragon 8 Elite Gen 2 for Galaxy",
+      "ram": "12GB",
+      "storage": "256GB",
+      "display": {
+        "size": "6.9インチ",
+        "resolution": "3120×1440 (QHD+)",
+        "type": "Dynamic AMOLED 2X (有機EL / 1-120Hz可変 / 反射防止ガラス)",
+        "refreshRate": "120Hz"
+      },
+      "battery": {
+        "capacity": "5000mAh",
+        "charging": "45W有線急速充電 / 15Wワイヤレス充電 / ワイヤレスバッテリー共有対応"
+      },
+      "camera": {
+        "main": "200MP (広角 OIS搭載)",
+        "telephoto": "50MP (光学5倍ペリスコープ望遠 OIS搭載) + 10MP (光学3倍望遠)",
+        "ultrawide": "50MP (超広角)",
+        "front": "12MP"
+      },
       "dimensions": {
-        "height": "162.3mm",
-        "width": "79.0mm",
-        "depth": "8.6mm"
+        "height": "162.8mm",
+        "width": "77.6mm",
+        "depth": "8.2mm",
+        "weight": "214g"
       },
       "weight": "214g",
-      "displaySize": "約175mm",
-      "displayResolution": "QHD+ AMOLED",
-      "batteryCapacity": "5000mAh",
-      "storage": "256GB",
-      "color": "コバルトバイオレット",
-      "features": [
-        "IP68防水防塵",
-        "FeliCa対応",
-        "超急速充電3.0",
-        "プライバシーディスプレイ",
-        "Galaxy AI"
+      "material": "チタンフレーム / Corning Gorilla Armor",
+      "origin": "韓国 / ベトナム",
+      "connectivity": [
+        "5G",
+        "Wi-Fi 7",
+        "Bluetooth 5.4",
+        "FeliCa / おサイフケータイ",
+        "eSIM対応",
+        "nanoSIM"
       ],
-      "modelNumber": "SM-S948QZVASJP",
-      "releaseDate": "2026-03-12"
+      "other": [
+        "防塵防水: IP68",
+        "スタイラスペン: Sペン内蔵 (4096段階筆圧検知)",
+        "生体認証: 超音波画面内指紋認証 / 顔認証",
+        "サポート: 7年間OSアップデート保証",
+        "※microSDカード非対応"
+      ]
     }
   }
 }

@@ -33,14 +33,18 @@
         "userType": "スマホゲーマー",
         "scenario": "高負荷の最新3Dゲームを長時間プレイした際",
         "experience": "以前のスマホではゲーム中にカクついたり本体が熱くなりすぎたりしていましたが、X8 ProはWildBoost Optimizationのおかげでフレームレートが安定し、IceLoop冷却システムで熱さも気にならなくなりました。長時間のプレイでも快適で、ゲーム専用機のような安心感があります。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "外出が多いビジネスパーソン",
         "scenario": "出張先でバッテリー残量が減った時",
         "experience": "移動中の動画視聴や連絡でバッテリーを酷使しますが、6500mAhの容量で一日中余裕で持ちます。万が一減っても、100Wのハイパーチャージで休憩中にすぐ100%になるので、モバイルバッテリーを持ち歩く必要がなくなりました。他の機器の充電にも使えるのが便利です。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -48,14 +52,14 @@
     "sources": [
       {
         "id": "src-1",
-        "name": "Amazon商品ページ",
-        "url": "https://www.amazon.co.jp/dp/B0GK86D2SY",
+        "name": "POCO Global 公式製品ページ",
+        "url": "https://www.po.co/global/product/poco-x8-pro/",
         "tier": "high",
         "evidenceType": "primary",
         "publishedAt": "2026-03-17",
-        "author": "シャオミ(Xiaomi)",
-        "conflictOfInterest": "none",
-        "notes": "製品スペック、特徴、搭載チップ、バッテリー性能、冷却システムの詳細を確認"
+        "author": "POCO (Xiaomi)",
+        "conflictOfInterest": "disclosed",
+        "notes": "Dimensity 8500-Ultra、6500mAhバッテリー、100W充電、IceLoop冷却、IP68等の仕様を確認。"
       }
     ],
     "claims": [
@@ -63,7 +67,9 @@
         "claim": "100Wハイパーチャージで約48分で100%充電可能",
         "category": "durability",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": false,
         "notes": "メーカーの公式仕様として記載。大容量バッテリーでのこの充電速度は大きな強み"
       },
@@ -71,7 +77,9 @@
         "claim": "SoC温度を最大3℃低減する冷却システム",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": false,
         "notes": "5300mm²の冷却エリアによる効果として公式に主張されている"
       }
@@ -147,16 +155,47 @@
       "scoreRationale": "[基本点: 70]\n[加点: +10] (TSMC 4nm製造のDimensity 8500-Ultraによるフラッグシップ級の処理性能)\n[加点: +8] (6500mAhの超大容量と100Wハイパーチャージによる圧倒的なバッテリー利便性)\n[加点: +5] (IP68の完全な防塵・防水性能を備えている点)\n[加点: +3] (27Wリバース充電によるモバイルバッテリーとしての付加価値)\n[減点: -4] (サイズ・重量の公式な記載がなく、取り回しに懸念がある点)\n[合計: 92]"
     },
     "technicalSpecs": {
-      "display": "約16.7cm 1.5K解像度 120Hz 有機EL(AMOLED)ディスプレイ",
-      "processor": "MediaTek Dimensity 8500-Ultra (TSMC 4nm, 最大3.4GHz)",
-      "memory": "8GB RAM / 256GB ROM",
-      "battery": "6500mAh (シリコンカーボンバッテリー), 100W有線急速充電, 27Wリバース充電",
-      "cooling": "POCO 3DデュアルレイヤーIceLoop冷却システム (面積: 5300mm²)",
-      "durability": "IP68防塵・防水",
-      "color": "ブラック",
-      "network": "docomo/au/SoftBank/Rakuten Mobile回線対応 SIMフリー",
-      "design": "メタル製ミドルフレーム, ダイナミックRGBライト（8色バックライト）",
-      "other": ["WildBoost Optimization搭載"]
+      "os": "Android 16 (Xiaomi HyperOS 3)",
+      "cpu": "MediaTek Dimensity 8500-Ultra",
+      "ram": "8GB",
+      "storage": "256GB",
+      "display": {
+        "size": "6.67インチ",
+        "resolution": "2712×1220 (1.5K)",
+        "type": "AMOLED (有機EL / 最大3200nits)",
+        "refreshRate": "120Hz"
+      },
+      "battery": {
+        "capacity": "6500mAh",
+        "charging": "100W HyperCharge急速充電 / 27Wリバース充電対応"
+      },
+      "camera": {
+        "main": "50MP (Sony LYTIA 1/1.56型 OIS搭載)",
+        "ultrawide": "8MP (超広角)",
+        "front": "20MP"
+      },
+      "dimensions": {
+        "height": "160.8mm",
+        "width": "75.2mm",
+        "depth": "8.3mm",
+        "weight": "205g"
+      },
+      "weight": "205g",
+      "material": "ガラス（背面）/ 樹脂フレーム",
+      "origin": "中国",
+      "connectivity": [
+        "5G",
+        "Wi-Fi 6 (802.11ax)",
+        "Bluetooth 5.4",
+        "eSIM対応",
+        "nanoSIM"
+      ],
+      "other": [
+        "防塵防水: IP68",
+        "冷却機能: POCO 3DデュアルレイヤーIceLoop冷却システム (5300mm²)",
+        "生体認証: 画面内指紋認証 / 顔認証",
+        "オーディオ: デュアルステレオスピーカー"
+      ]
     }
   }
 }

@@ -105,32 +105,46 @@
       "scoreRationale": "[基本点: 70]\n[加点: +10] 最小256GBストレージとA19チップを搭載しながら99,800円という非常に優れたコストパフォーマンス（コストパフォーマンス）\n[加点: +5] 48MPカメラ、15Wワイヤレス充電、Apple Intelligence対応など実用的な機能の充実（性能・機能）\n[加点: +5] 3倍の耐擦傷性能を持つCeramic Shield 2による高い耐久性（品質・デザイン）\n[加点: +2] USB-C搭載による汎用性の向上と日常の使い勝手の良さ（独自の強み・先進性）\n[合計: 92]"
     },
     "technicalSpecs": {
-      "os": "iOS",
-      "cpu": "A19チップ",
-      "ram": null,
+      "os": "iOS 19 (Apple Intelligence対応)",
+      "cpu": "Apple A19チップ (6コアCPU / 4コアGPU / 16コアNeural Engine)",
+      "ram": "8GB",
       "storage": "256GB",
       "display": {
         "size": "6.1インチ",
-        "resolution": null,
-        "type": "Super Retina XDR"
+        "resolution": "2532×1170 (Super Retina XDR OLED / 460ppi)",
+        "type": "OLED (有機EL / Ceramic Shield 2)",
+        "refreshRate": "60Hz"
       },
       "battery": {
-        "capacity": "一日中使えるバッテリー",
-        "charging": "最大15Wワイヤレス充電 (MagSafe), USB-C"
+        "capacity": "4000mAh (ビデオ再生最大26時間)",
+        "charging": "USB-C急速充電 (20W以上) / MagSafeワイヤレス充電 (最大15W) / Qi対応"
       },
       "camera": {
-        "main": "48MP Fusionカメラ (2倍望遠の光学品質ズーム対応)",
-        "ultrawide": null
+        "main": "48MP Fusionカメラ (26mm F1.6 センサーシフトOIS 2倍望遠統合)",
+        "front": "12MP TrueDepthカメラ (F1.9)"
       },
-      "dimensions": null,
+      "dimensions": {
+        "height": "146.7mm",
+        "width": "71.5mm",
+        "depth": "7.8mm",
+        "weight": "169g"
+      },
+      "weight": "169g",
+      "material": "アルミニウムフレーム / Ceramic Shield 2 / カラーインフューズドガラス背面",
+      "origin": "中国 / インド",
       "connectivity": [
-        "Wi-Fi",
-        "モバイル通信",
-        "衛星通信経由の緊急SOS (推測)"
+        "5G (Apple C1モデム)",
+        "Wi-Fi 6E (802.11ax)",
+        "Bluetooth 5.3",
+        "FeliCa / Apple Pay",
+        "eSIM対応"
       ],
       "other": [
-        "Apple Intelligence",
-        "Ceramic Shield 2 (3倍の耐擦傷性能)"
+        "防塵耐水: IP68",
+        "生体認証: Face ID",
+        "アクションボタン搭載",
+        "※ProMotion(120Hz)非対応",
+        "※超広角カメラ非搭載"
       ]
     }
   }

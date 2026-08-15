@@ -164,23 +164,43 @@
       "scoreRationale": "[基本点: 70]\n[加点: +10] (30.73cmの2.5K/120Hzディスプレイによる高品質な画面)\n[加点: +5] (12000mAhの大容量バッテリー搭載)\n[加点: +5] (便利な27Wリバース充電機能搭載)\n[加点: +5] (ミドルハイ級のSnapdragon 7s Gen 4搭載)\n[減点: -5] (メモリ6GB構成)\n[合計: 90]"
     },
     "technicalSpecs": {
-      "display": "30.73cm 2.5K (120Hz)",
-      "processor": "Snapdragon 7s Gen 4",
+      "os": "Android 15 (Xiaomi HyperOS 2)",
+      "cpu": "Qualcomm Snapdragon 7s Gen 3",
       "ram": "6GB",
-      "storage": "128GB (microSDカードで最大2TBまで拡張可能)",
-      "battery": "12000mAh (最大27Wリバース充電対応)",
-      "audio": "Dolby Atmos対応",
-      "os": "Xiaomi相互接続機能対応 (日本語版)",
-      "color": "ラベンダーパープル",
-      "dimensions": {
-        "height": "不明",
-        "width": "不明",
-        "depth": "不明"
+      "storage": "128GB",
+      "display": {
+        "size": "12.1インチ",
+        "resolution": "2560×1600 (2.5K 16:10)",
+        "type": "IPS液晶 (600nit / Dolby Vision)",
+        "refreshRate": "120Hz"
       },
-      "weight": "不明",
-      "capacity": "128GB",
-      "material": "不明",
-      "origin": "不明"
+      "battery": {
+        "capacity": "10000mAh",
+        "charging": "33W急速充電対応"
+      },
+      "camera": {
+        "main": "8MP (F2.0)",
+        "front": "8MP (F2.28)"
+      },
+      "dimensions": {
+        "height": "280.0mm",
+        "width": "181.85mm",
+        "depth": "7.52mm",
+        "weight": "571g"
+      },
+      "weight": "571g",
+      "material": "メタルユニボディ",
+      "origin": "中国",
+      "connectivity": [
+        "Wi-Fi 6 (802.11ax)",
+        "Bluetooth 5.2",
+        "USB-C"
+      ],
+      "other": [
+        "オーディオ: クアッドスピーカー (Dolby Atmos対応 / ハイレゾ対応)",
+        "スタイラスペン・キーボード対応 (別売)",
+        "生体認証: 顔認証"
+      ]
     }
   }
 }
