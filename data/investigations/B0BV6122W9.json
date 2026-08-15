@@ -28,14 +28,18 @@
         "userType": "コンパクトスマホ派",
         "scenario": "日常的な持ち歩きと操作",
         "experience": "片手で操作しやすいサイズ感と軽さが非常に気に入っています。ポケットに入れてもかさばらず、サクサク動くのでストレスなく使えています。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "カメラ重視ユーザー",
         "scenario": "風景や日常の撮影",
         "experience": "カメラの性能が良く、特に夜間でも綺麗に撮れるのが良いです。望遠レンズも付いているので、少し離れた被写体も高画質で残せます。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -58,7 +62,9 @@
         "claim": "5000万画素を含むトリプルカメラを搭載",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": true,
         "notes": "仕様に明記されていることを確認"
       },
@@ -66,7 +72,9 @@
         "claim": "8GBメモリと256GBストレージを搭載",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": true,
         "notes": "仕様に明記されていることを確認"
       }
@@ -172,22 +180,45 @@
       "scoreRationale": "[基本点: 70]\n[加点: +10] (整備済み品として3万円台という高いコストパフォーマンス)\n[加点: +5] (ハイエンドモデルの高い処理性能とカメラ画質)\n[加点: +5] (コンパクトで片手操作しやすいサイズ感)\n[減点: -5] (バッテリー持ちに関する懸念とSDカード非対応)\n[合計: 85]"
     },
     "technicalSpecs": {
+      "os": "Android 14 (One UI 6)",
+      "cpu": "Qualcomm Snapdragon 8 Gen 1",
+      "ram": "8GB",
+      "storage": "256GB",
+      "display": {
+        "size": "6.1インチ",
+        "resolution": "2340×1080 (FHD+)",
+        "type": "Dynamic AMOLED 2X (48-120Hz可変)",
+        "refreshRate": "120Hz"
+      },
+      "battery": {
+        "capacity": "3700mAh",
+        "charging": "25W有線急速充電 / 15Wワイヤレス充電 / ワイヤレスバッテリー共有対応"
+      },
+      "camera": {
+        "main": "50MP (広角 Dual Pixel OIS F1.8)",
+        "telephoto": "10MP (光学3倍望遠 OIS F2.4)",
+        "ultrawide": "12MP (超広角 120° F2.2)",
+        "front": "10MP (F2.2)"
+      },
       "dimensions": {
         "height": "146.0mm",
         "width": "70.6mm",
-        "depth": "7.6mm"
+        "depth": "7.6mm",
+        "weight": "168g"
       },
       "weight": "168g",
-      "display": "約6.1インチ Dynamic AMOLED(有機EL)",
-      "camera": "アウトカメラ: 50.0MP + 10.0MP + 12.0MP / インカメラ: 10.0MP",
-      "battery": "3700mAh",
-      "storage": "256GB",
-      "memory": "8GB",
-      "color": "ファントム ホワイト",
-      "model": "Galaxy S22 SC-51C",
+      "material": "Armor Aluminumフレーム / Gorilla Glass Victus+",
+      "origin": "韓国 / ベトナム",
+      "connectivity": [
+        "5G",
+        "Wi-Fi 6 (802.11ax)",
+        "Bluetooth 5.2",
+        "FeliCa / おサイフケータイ",
+        "nanoSIM / eSIM"
+      ],
       "other": [
-        "外部ストレージ(microSD)非対応",
-        "SIMフリー(整備済み品)"
+        "防塵防水: IP68",
+        "生体認証: 超音波画面内指紋認証 / 顔認証"
       ]
     }
   }

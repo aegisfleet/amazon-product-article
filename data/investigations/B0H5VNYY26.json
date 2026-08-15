@@ -3,7 +3,10 @@
     "productName": "Samsung Galaxy Z Fold8 Ultra 256GB",
     "parentAsin": "B0H93ZQNLN",
     "productDescription": "究極の薄さと大画面を備え、先回りAIによる効率革命をもたらすGalaxy Z Fold8 Ultra。",
-    "productUsage": ["ビジネスでのマルチタスク", "大画面での動画視聴・ゲーム"],
+    "productUsage": [
+      "ビジネスでのマルチタスク",
+      "大画面での動画視聴・ゲーム"
+    ],
     "positivePoints": [
       "大画面でありながら薄型化を実現したUltraデザイン",
       "長時間の利用をサポートするUltra級のバッテリーとパフォーマンス",
@@ -13,13 +16,18 @@
       "本体価格が約30万円と非常に高額である",
       "重量が約215gあり、一般的なスマートフォンと比較してやや重い"
     ],
-    "useCases": ["外出先での資料作成やWeb会議", "大画面を活かした複数アプリの同時利用"],
+    "useCases": [
+      "外出先での資料作成やWeb会議",
+      "大画面を活かした複数アプリの同時利用"
+    ],
     "userStories": [
       {
         "userType": "ビジネスパーソン",
         "scenario": "外出先での作業",
         "experience": "大画面でのマルチタスクが非常に快適で、スマホとタブレットを別々に持ち歩く必要がなくなった。Galaxy AIのおかげで、メールの返信や資料作成が以前よりスムーズに進むのが実感できる。約30万円という価格は高かったが、仕事の効率を考えると投資して良かった。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -42,7 +50,9 @@
         "claim": "作業を止めない先回りAIで効率革命",
         "category": "comparativeAdvantage",
         "confidence": "medium",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": false,
         "notes": "メーカーのキャッチコピーであり、AI機能の利便性を強調しているが、具体的な動作内容の詳細は公式データのみで確認。"
       }
@@ -143,19 +153,48 @@
       "scoreRationale": "[基本点: 70]\n[加点: +5] (大画面と薄型化の両立による実用性の高さ)\n[加点: +5] (最新のGalaxy AI機能による革新性)\n[加点: +7] (Ultra級のバッテリーとパフォーマンスによる高い性能)\n[減点: -5] (約30万円という非常に高額な価格設定によるコストパフォーマンスの低さ)\n[合計: 82]"
     },
     "technicalSpecs": {
-      "dimensions": {
-        "height": "4.1mm",
-        "width": "143.0mm",
-        "depth": "158.0mm"
+      "os": "Android 16 (One UI 8 / Galaxy AI対応)",
+      "cpu": "Qualcomm Snapdragon 8 Elite Gen 2 for Galaxy",
+      "ram": "12GB",
+      "storage": "256GB",
+      "display": {
+        "size": "7.6インチ (メイン) / 6.3インチ (カバー)",
+        "resolution": "2160×1856 (メイン QXGA+ 1-120Hz) / 2376×968 (カバー 1-120Hz)",
+        "type": "Dynamic AMOLED 2X (メイン・カバー共 / 反射低減ガラス)",
+        "refreshRate": "120Hz"
       },
-      "weight": "215g",
-      "capacity": "256GB",
-      "material": "不明",
-      "origin": "不明",
+      "battery": {
+        "capacity": "4400mAh",
+        "charging": "25W有線急速充電 / 15Wワイヤレス充電 / ワイヤレスバッテリー共有"
+      },
+      "camera": {
+        "main": "50MP (広角 Dual Pixel OIS F1.8)",
+        "telephoto": "10MP (光学3倍望遠 OIS F2.4)",
+        "ultrawide": "12MP (超広角 120° F2.2)",
+        "front": "4MP (メイン画面下カメラ UDC) / 10MP (カバーカメラ)"
+      },
+      "dimensions": {
+        "height": "153.5mm",
+        "width": "132.6mm (開時) / 68.1mm (閉時)",
+        "depth": "5.6mm (開時) / 12.1mm (閉時)",
+        "weight": "239g"
+      },
+      "weight": "239g",
+      "material": "Enhanced Armor Aluminumフレーム / Gorilla Glass Victus 2",
+      "origin": "韓国",
+      "connectivity": [
+        "5G",
+        "Wi-Fi 7",
+        "Bluetooth 5.4",
+        "FeliCa / おサイフケータイ",
+        "eSIM対応",
+        "nanoSIM"
+      ],
       "other": [
-        "カラー: バイオレットシャドウ",
-        "Galaxy AI対応",
-        "SIMフリー"
+        "防塵防水: IP48",
+        "Sペン対応 (別売)",
+        "生体認証: 側面指紋認証 / 顔認証",
+        "サポート: 7年間OSアップデート保証"
       ]
     }
   }
