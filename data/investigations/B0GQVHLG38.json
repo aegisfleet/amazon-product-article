@@ -162,29 +162,47 @@
       "scoreRationale": "[基本点: 70]\n[加点: +10] (最新のA19チップとApple Intelligenceを搭載し、長期的な実用性が高い)\n[加点: +10] (iPhoneの最新シリーズの中で10万円台前半という優れたコストパフォーマンス)\n[加点: +5] (Ceramic Shield 2による高い耐久性と最大15Wのワイヤレス充電の利便性)\n[減点: -2] (ProMotionディスプレイ非搭載による画面の滑らかさの制限)\n[合計: 93]"
     },
     "technicalSpecs": {
-      "display": "約15.5cm Super Retina XDRディスプレイ",
-      "processor": "A19チップ",
-      "capacity": "256GB",
-      "camera": "48MP Fusionカメラ (2倍望遠の光学品質ズーム対応)",
-      "frontCamera": "対応（次世代ポートレート機能など）",
-      "charging": "USB-C, 最大15Wワイヤレス充電 (MagSafe)",
-      "durability": "Ceramic Shield 2 (前面)",
-      "connectivity": "モバイル通信, Wi-Fi, 衛星経由の緊急SOS",
-      "features": [
-        "Apple Intelligence対応",
-        "衝突事故検出機能"
-      ],
-      "color": "ホワイト",
-      "other": [
-        "最新iOS搭載",
-        "一日中使えるバッテリー"
-      ],
-      "dimensions": {
-        "height": "不明",
-        "width": "不明",
-        "depth": "不明"
+      "os": "iOS 19 (Apple Intelligence対応)",
+      "cpu": "Apple A19チップ (6コアCPU / 4コアGPU / 16コアNeural Engine)",
+      "ram": "8GB",
+      "storage": "256GB",
+      "display": {
+        "size": "6.1インチ",
+        "resolution": "2532×1170 (Super Retina XDR OLED / 460ppi)",
+        "type": "OLED (有機EL / Ceramic Shield 2)",
+        "refreshRate": "60Hz"
       },
-      "weight": "不明"
+      "battery": {
+        "capacity": "4000mAh (ビデオ再生最大26時間)",
+        "charging": "USB-C急速充電 (20W以上) / MagSafeワイヤレス充電 (最大15W) / Qi対応"
+      },
+      "camera": {
+        "main": "48MP Fusionカメラ (26mm F1.6 センサーシフトOIS 2倍望遠統合)",
+        "front": "12MP TrueDepthカメラ (F1.9)"
+      },
+      "dimensions": {
+        "height": "146.7mm",
+        "width": "71.5mm",
+        "depth": "7.8mm",
+        "weight": "169g"
+      },
+      "weight": "169g",
+      "material": "アルミニウムフレーム / Ceramic Shield 2 / カラーインフューズドガラス背面",
+      "origin": "中国 / インド",
+      "connectivity": [
+        "5G (Apple C1モデム)",
+        "Wi-Fi 6E (802.11ax)",
+        "Bluetooth 5.3",
+        "FeliCa / Apple Pay",
+        "eSIM対応"
+      ],
+      "other": [
+        "防塵耐水: IP68",
+        "生体認証: Face ID",
+        "アクションボタン搭載",
+        "※ProMotion(120Hz)非対応",
+        "※超広角カメラ非搭載"
+      ]
     }
   }
 }
