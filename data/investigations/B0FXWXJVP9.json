@@ -157,23 +157,43 @@
       "scoreRationale": "[基本点: 70]\n[加点: +5] 11インチ大画面とDolby ATMOS 4スピーカーによる優れた映像・音楽体験\n[加点: +5] 「かこって検索」などのGalaxy AI機能に対応し実用性が高い\n[加点: +5] 大手ブランドの信頼性と充実した機能に対する良好なコストパフォーマンス\n[減点: -2] Wi-Fi専用であり利用環境が限定される\n[合計: 83]"
     },
     "technicalSpecs": {
-      "dimensions": {
-        "height": "169mm",
-        "width": "257mm",
-        "depth": "7mm"
+      "os": "Android 15 (One UI 7)",
+      "cpu": "MediaTek Dimensity 6100+",
+      "ram": "6GB",
+      "storage": "128GB",
+      "display": {
+        "size": "11.0インチ",
+        "resolution": "1920×1200 (WUXGA 16:10)",
+        "type": "TFT液晶",
+        "refreshRate": "90Hz"
       },
-      "weight": "477g",
-      "displaySize": "27.9cm",
-      "capacity": "128GB (microSD最大2TB拡張対応)",
-      "battery": "7,040mAh",
-      "color": "グレー",
-      "os": "Android",
-      "brand": "Galaxy",
-      "manufacturer": "Samsung",
-      "model": "SM-X230NZAAXJP",
+      "battery": {
+        "capacity": "7040mAh",
+        "charging": "15W急速充電対応"
+      },
+      "camera": {
+        "main": "8MP (オートフォーカス F2.0)",
+        "front": "5MP (F2.2)"
+      },
+      "dimensions": {
+        "height": "257.1mm",
+        "width": "168.7mm",
+        "depth": "6.9mm",
+        "weight": "480g"
+      },
+      "weight": "480g",
+      "material": "アルミニウムメタルボディ",
+      "origin": "ベトナム",
+      "connectivity": [
+        "Wi-Fi 5 (802.11ac)",
+        "Bluetooth 5.3",
+        "USB-C"
+      ],
       "other": [
-        "Galaxy AI対応",
-        "Dolby ATMOS対応4スピーカー"
+        "オーディオ: クアッドスピーカー (Dolby Atmos対応) / 3.5mmイヤホンジャック",
+        "マルチウィンドウ機能 (最大3分割)",
+        "Samsung Kids対応",
+        "microSDXC対応 (最大1TB)"
       ]
     }
   }

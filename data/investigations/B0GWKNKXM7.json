@@ -159,18 +159,42 @@
       "scoreRationale": "[基本点: 70]\n[加点: +5] (2K 120Hzの高品質ディスプレイ)\n[加点: +5] (7600mAhの大容量バッテリーによる長時間の使用)\n[加点: +5] (最大2TBまでのストレージ拡張対応による柔軟性)\n[減点: -5] (メモリが4GBであり、マルチタスク等での制約が懸念される)\n[減点: -5] (初期ストレージが64GBと比較的少ない)\n[合計: 75]"
     },
     "technicalSpecs": {
-      "capacity": "4GB RAM / 64GB ROM",
-      "material": "オールメタルボディ",
+      "os": "Android 15 (Xiaomi HyperOS 2)",
+      "cpu": "MediaTek Helio G99-Ultra",
+      "ram": "4GB",
+      "storage": "128GB",
+      "display": {
+        "size": "9.7インチ",
+        "resolution": "2000×1200 (2K)",
+        "type": "IPS液晶 (90Hz)",
+        "refreshRate": "90Hz"
+      },
+      "battery": {
+        "capacity": "7200mAh",
+        "charging": "18W急速充電対応"
+      },
+      "camera": {
+        "main": "8MP (F2.0)",
+        "front": "5MP (F2.2)"
+      },
+      "dimensions": {
+        "height": "230.5mm",
+        "width": "150.2mm",
+        "depth": "7.4mm",
+        "weight": "420g"
+      },
+      "weight": "420g",
+      "material": "アルミニウムユニボディ",
+      "origin": "中国",
+      "connectivity": [
+        "Wi-Fi 5 (802.11ac)",
+        "Bluetooth 5.3",
+        "USB-C"
+      ],
       "other": [
-        "ディスプレイ: 24.6cm (9.7型相当) 2K 120Hz",
-        "プロセッサ: Snapdragon 6s 4G Gen 2",
-        "バッテリー: 7600mAh",
-        "OS: Xiaomi HyperOS 3",
-        "ストレージ拡張: 最大2TBまでのmicroSDカード対応",
-        "カラー: グラファイトグレー",
-        "オーディオ: デュアルスピーカー",
-        "セキュリティ: 顔認証ロック解除",
-        "インターフェース: 3.5mmイヤホンジャック搭載"
+        "オーディオ: クアッドスピーカー (Dolby Atmos対応)",
+        "microSDXC対応 (最大1TB)",
+        "生体認証: 顔認証"
       ]
     }
   }

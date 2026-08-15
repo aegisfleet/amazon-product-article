@@ -171,20 +171,44 @@
       "scoreRationale": "[基本点: 70]\n[加点: +5] (4G LTE対応で外出先でも単体で通信可能な利便性)\n[加点: +5] (約27.9cm2.5Kディスプレイと90Hz対応による優れた視覚体験)\n[加点: +5] (9000mAhの大容量バッテリーによる長時間駆動)\n[減点: -2] (ハイエンドゲームには力不足なプロセッサ性能)\n[合計: 83]"
     },
     "technicalSpecs": {
-      "dimensions": {
-        "height": "167.36mm",
-        "width": "255.53mm",
-        "depth": "7.36mm"
+      "os": "Android 15 (Xiaomi HyperOS 2)",
+      "cpu": "MediaTek Helio G100-Ultra",
+      "ram": "4GB",
+      "storage": "128GB",
+      "display": {
+        "size": "11.0インチ",
+        "resolution": "2560×1600 (2.5K)",
+        "type": "IPS液晶",
+        "refreshRate": "90Hz"
       },
-      "weight": "478g",
-      "capacity": "128GB",
-      "display": "約27.9cm 2.5K (1920x1200)",
-      "processor": "Helio G100-Ultra",
-      "memory": "4GB",
-      "battery": "9000mAh",
-      "connectivity": "4G LTE, Wi-Fi, Bluetooth",
-      "camera": "前面: 8MP / 背面: 8MP",
-      "audio": "クアッドスピーカー, Dolby Atmos対応"
+      "battery": {
+        "capacity": "8000mAh",
+        "charging": "18W急速充電対応"
+      },
+      "camera": {
+        "main": "8MP",
+        "front": "5MP"
+      },
+      "dimensions": {
+        "height": "255.5mm",
+        "width": "167.0mm",
+        "depth": "7.1mm",
+        "weight": "485g"
+      },
+      "weight": "485g",
+      "material": "アルミニウムユニボディ",
+      "origin": "中国",
+      "connectivity": [
+        "4G LTE (セルラー通信)",
+        "Wi-Fi 5",
+        "Bluetooth 5.3",
+        "nanoSIM デュアルSIM"
+      ],
+      "other": [
+        "オーディオ: クアッドスピーカー (Dolby Atmos対応)",
+        "GPS搭載",
+        "生体認証: 顔認証"
+      ]
     }
   }
 }

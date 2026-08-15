@@ -127,20 +127,45 @@
       "scoreRationale": "[基本点: 70]\n[加点: +5] (5G通信に対応しており、外出先でも高速なデータ通信が可能な実用性の高さ)\n[加点: +5] (Geminiやかこって検索など最新のAI機能を搭載している先進性)\n[減点: -5] (競合の格安中華タブレットと比較して価格がやや高めであり、コスパ面での優位性が薄い)\n[合計: 75]"
     },
     "technicalSpecs": {
-      "dimensions": {
-        "height": "173.1mm",
-        "width": "257.1mm",
-        "depth": "6.9mm"
-      },
-      "weight": "482g",
-      "display": "約27.9cm",
+      "os": "Android 15 (One UI 7)",
+      "cpu": "MediaTek Dimensity 6100+",
+      "ram": "6GB",
       "storage": "128GB",
-      "battery": "7040mAh",
-      "os": "Android",
-      "color": "グレー",
-      "audio": "Dolby ATMOS対応 4スピーカー",
-      "connectivity": "5G, SIMフリー",
-      "features": "AI対応 (Gemini、かこって検索)"
+      "display": {
+        "size": "11.0インチ",
+        "resolution": "1920×1200 (WUXGA 16:10)",
+        "type": "TFT液晶",
+        "refreshRate": "90Hz"
+      },
+      "battery": {
+        "capacity": "7040mAh",
+        "charging": "15W急速充電対応"
+      },
+      "camera": {
+        "main": "8MP (オートフォーカス F2.0)",
+        "front": "5MP (F2.2)"
+      },
+      "dimensions": {
+        "height": "257.1mm",
+        "width": "168.7mm",
+        "depth": "6.9mm",
+        "weight": "490g"
+      },
+      "weight": "490g",
+      "material": "アルミニウムメタルボディ",
+      "origin": "ベトナム",
+      "connectivity": [
+        "5G / 4G LTE (セルラー通信)",
+        "Wi-Fi 5 (802.11ac)",
+        "Bluetooth 5.3",
+        "nanoSIM / eSIM"
+      ],
+      "other": [
+        "オーディオ: クアッドスピーカー (Dolby Atmos対応) / 3.5mmイヤホンジャック",
+        "マルチウィンドウ機能 (最大3分割)",
+        "Samsung Kids対応",
+        "microSDXC対応 (最大1TB)"
+      ]
     }
   }
 }
