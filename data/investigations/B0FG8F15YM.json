@@ -163,28 +163,42 @@
       "scoreRationale": "[基本点: 70]\n[加点: +5] 最新のHelio G100プロセッサによる優れた処理性能\n[加点: +3] 90Hzディスプレイによる滑らかな操作性\n[加点: +4] 4G LTE対応による高い利便性\n[加点: +3] GPS搭載による機動力\n[加点: +5] セルラーモデルとしての高いコストパフォーマンス\n[減点: -7] 5000mAhのやや少ないバッテリー容量\n[合計: 83]"
     },
     "technicalSpecs": {
-      "dimensions": {
-        "height": "149.99mm",
-        "width": "49.99mm",
-        "depth": "249.99mm"
+      "os": "Android 14",
+      "cpu": "クアッドコアプロセッサ (2.0GHz)",
+      "ram": "8GB (3GB実メモリ + 5GB仮想拡張)",
+      "storage": "64GB (microSD最大512GB対応)",
+      "display": {
+        "size": "8.0インチ",
+        "resolution": "1280×800 (HD IPS)",
+        "type": "IPS液晶",
+        "refreshRate": "60Hz"
       },
-      "weight": "360g",
-      "displaySize": "約22cm",
-      "displayResolution": "1340×800 (IPS, 90Hz)",
-      "processor": "MediaTek Helio G100 (MT8781)",
-      "ram": "18GB (物理6GB + 仮想12GB)",
-      "storage": "128GB (microSDで最大1TB拡張可能)",
-      "battery": "5000mAh",
-      "charging": "20W PD急速充電",
-      "os": "Android 15",
-      "connectivity": "4G LTE, 5G Wi-Fi, Bluetooth 5.2",
-      "camera": "背面1300万画素(AF), 前面500万画素",
-      "sensors": "6軸ジャイロ, GPS, 光センサー, 重力センサー",
+      "battery": {
+        "capacity": "4000mAh",
+        "charging": "USB Type-C",
+        "playbackTime": "約5時間"
+      },
+      "camera": {
+        "main": "5MP",
+        "front": "2MP"
+      },
+      "dimensions": {
+        "height": "208.0mm",
+        "width": "123.0mm",
+        "depth": "8.8mm",
+        "weight": "320g"
+      },
+      "weight": "320g",
+      "material": "軽量樹脂ボディ",
+      "origin": "中国",
+      "connectivity": [
+        "Wi-Fi 6",
+        "Bluetooth 5.0",
+        "USB Type-C"
+      ],
       "other": [
-        "Widevine L1認証",
-        "nanoSIMスロット×2 (SIMフリー)",
-        "ワイヤレス投影対応",
-        "GMS認証取得"
+        "超軽量320g 片手操作",
+        "Widevine L1対応"
       ]
     }
   }

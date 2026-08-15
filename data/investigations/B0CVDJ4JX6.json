@@ -185,23 +185,44 @@
       "scoreRationale": "[基本点: 70]\n[加点: +15] (価格に対する性能の良さ、Amazonサービスとの連携性の高さ)\n[加点: +5] (強化アルミノシリケートガラスによる高い耐久性)\n[減点: -10] (Fire OS特有のアプリ制限による汎用性の低さ)\n[合計: 80]"
     },
     "technicalSpecs": {
-      "dimensions": {
-        "height": "9.4mm",
-        "width": "137.4mm",
-        "depth": "201.9mm"
+      "os": "Fire OS 8",
+      "cpu": "6コアプロセッサ (2.0GHz)",
+      "ram": "3GB",
+      "storage": "64GB (microSD最大1TB対応)",
+      "display": {
+        "size": "8.0インチ",
+        "resolution": "1280×800 (HD / 189ppi)",
+        "type": "IPS液晶 (強化アルミノシリケートガラス)",
+        "refreshRate": "60Hz"
       },
-      "weight": "369g",
-      "capacity": "64GB",
-      "material": "強化アルミノシリケートガラス（スクリーン）、プラスチック（背面）",
-      "origin": "不明",
+      "battery": {
+        "capacity": "4850mAh",
+        "charging": "USB Type-C 2.0 (約5時間満充電)",
+        "playbackTime": "最大13時間"
+      },
+      "camera": {
+        "main": "2MP",
+        "front": "2MP"
+      },
+      "dimensions": {
+        "height": "201.9mm",
+        "width": "137.3mm",
+        "depth": "9.6mm",
+        "weight": "337g"
+      },
+      "weight": "337g",
+      "material": "高耐久樹脂ボディ",
+      "origin": "中国",
+      "connectivity": [
+        "Wi-Fi 5 (802.11ac 2.4/5GHz)",
+        "Bluetooth 5.2",
+        "USB-C 2.0",
+        "3.5mmステレオミニジャック"
+      ],
       "other": [
-        "ディスプレイ解像度: 1280 x 800 (189ppi)",
-        "CPU: 6コアプロセッサ",
-        "RAM: 4GB",
-        "バッテリー: 最大13時間稼働",
-        "充電端子: USB-C (2.0)",
-        "充電時間: 約5時間 (同梱の5W充電アダプタ使用時)",
-        "音声アシスタント: Alexa搭載"
+        "前世代比RAM増量 (3GB) で快適動作",
+        "落下テスト耐久性: iPad mini (第6世代) の2倍",
+        "Dolby Atmos対応ステレオスピーカー"
       ]
     }
   }

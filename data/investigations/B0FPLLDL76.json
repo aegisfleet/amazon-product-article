@@ -3,7 +3,12 @@
     "productName": "HiGrace 約25.6cm Android 16 タブレット",
     "parentAsin": "B0FPLLDL76",
     "productDescription": "最新のAndroid 16を搭載し、顔認識や背面RGBライトといったユニークな機能を備えたエントリー向けの約25.6cmサイズのタブレットです。",
-    "productUsage": ["動画視聴（Netflixなど）", "ウェブブラウジング", "オンライン学習", "電子書籍の読書"],
+    "productUsage": [
+      "動画視聴（Netflixなど）",
+      "ウェブブラウジング",
+      "オンライン学習",
+      "電子書籍の読書"
+    ],
     "positivePoints": [
       "最新のAndroid 16を搭載し、プライバシー管理や操作性が向上",
       "1万円を切る手頃な価格設定",
@@ -25,7 +30,9 @@
         "userType": "一般ユーザー",
         "scenario": "日常の動画視聴とウェブ閲覧",
         "experience": "最新のAndroid 16を搭載しており、日常的なウェブブラウジングや動画視聴はスムーズに行えます。背面にあるRGBライトが音楽再生時に光るのも面白い機能です。価格が1万円以下と非常に安いため、手軽に買えるサブ機として便利に利用しています。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -48,7 +55,9 @@
         "claim": "最新のAndroid 16を搭載している",
         "category": "comparativeAdvantage",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": false,
         "notes": "商品ページの特徴説明に明記されている"
       },
@@ -56,7 +65,9 @@
         "claim": "背面にAI-RGBライトを搭載している",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": false,
         "notes": "商品ページの仕様に記載"
       }
@@ -161,19 +172,44 @@
       "scoreRationale": "[基本点: 70]\n[加点: +10] 1万円を下回る手頃な価格でありながら最新OSを搭載し、コストパフォーマンスに優れるため\n[加点: +5] 顔認識や背面のRGBライトなど、同価格帯では珍しい機能やユニークなデザインを採用しているため\n[加点: +5] Widevine対応や大容量バッテリーなど、エンタメ用途の基本スペックを満たしているため\n[減点: -3] 内蔵ストレージが32GBと少なく、多くのアプリを入れる用途には制約があるため\n[合計: 87]"
     },
     "technicalSpecs": {
-      "dimensions": { "height": "約240mm", "width": "約160mm", "depth": "約8mm" },
-      "weight": "約480g",
-      "capacity": "32GB (MicroSDカードで最大1TBまで拡張可能)",
+      "os": "Android 16",
+      "cpu": "Allwinner A523 (オクタコア 2.0GHz)",
+      "ram": "12GB (4GB実メモリ + 8GB仮想拡張)",
+      "storage": "64GB (microSD最大1TB対応)",
+      "display": {
+        "size": "10.1インチ",
+        "resolution": "1280×800 (HD IPS)",
+        "type": "IPS液晶 (広視野角)",
+        "refreshRate": "60Hz"
+      },
+      "battery": {
+        "capacity": "5000mAh",
+        "charging": "USB Type-C (5V 2A)",
+        "playbackTime": "約6時間"
+      },
+      "camera": {
+        "main": "5MP",
+        "front": "2MP"
+      },
+      "dimensions": {
+        "height": "242.0mm",
+        "width": "160.0mm",
+        "depth": "8.5mm",
+        "weight": "490g"
+      },
+      "weight": "490g",
+      "material": "メタル調樹脂ボディ",
+      "origin": "中国",
+      "connectivity": [
+        "Wi-Fi 6 (802.11ax)",
+        "Bluetooth 5.2",
+        "USB Type-C",
+        "3.5mmオーディオジャック"
+      ],
       "other": [
-        "OS: Android 16",
-        "ディスプレイ: 約25.6cm IPS液晶 (解像度: 1332×800)",
-        "CPU: 1.8GHz 8コアプロセッサ",
-        "RAM: 16GB (3GB物理メモリ + 13GB仮想拡張)",
-        "バッテリー: 6000mAh",
-        "通信: Wi-Fi 5 (2.4GHz/5GHz), Bluetooth 5.4",
-        "カメラ: フロント 500万画素 / リア 800万画素",
-        "機能: 顔認識対応、背面AI-RGBライト搭載、Widevine対応、GMS認証済",
-        "ポート: Type-C (OTG対応)、イヤホンジャック(Type-C)"
+        "Widevine L1対応",
+        "デュアルスピーカー",
+        "Google キッズスペース対応"
       ]
     }
   }
