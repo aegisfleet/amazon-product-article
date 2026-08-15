@@ -164,23 +164,42 @@
       "scoreRationale": "[基本点: 70]\n[加点: +5] (6650mAhの大容量バッテリーと18W急速充電)\n[加点: +5] (90Hz対応とDolby Atmos対応による高いエンタメ性能)\n[加点: +5] (Xiaomiブランドの信頼性とビルドクオリティ)\n[減点: -5] (Helio G85と4GB RAMによる処理性能の限界)\n[合計: 80]"
     },
     "technicalSpecs": {
+      "os": "Android 14 (Xiaomi HyperOS)",
+      "cpu": "MediaTek Helio G99-Ultra",
+      "ram": "4GB",
+      "storage": "64GB",
+      "display": {
+        "size": "8.7インチ",
+        "resolution": "1340×800 (HD+)",
+        "type": "IPS液晶 (TÜV低ブルーライト)",
+        "refreshRate": "90Hz"
+      },
+      "battery": {
+        "capacity": "6650mAh",
+        "charging": "18W急速充電対応"
+      },
+      "camera": {
+        "main": "8MP (F2.0)",
+        "front": "5MP (F2.2)"
+      },
       "dimensions": {
         "height": "211.58mm",
         "width": "125.48mm",
-        "depth": "8.8mm"
+        "depth": "8.8mm",
+        "weight": "375g"
       },
-      "weight": "373g",
-      "display": "221mm LCD, 1340x800, 90Hz, 5:3アスペクト比, 最大輝度600nit, 低ブルーライト認証",
-      "processor": "MediaTek Helio G85 オクタコア",
-      "memory": "4GB RAM",
-      "storage": "64GB (最大2TBのmicroSDカード拡張対応)",
-      "battery": "6650mAh, 18W急速充電対応",
-      "audio": "デュアルスピーカー, Dolby Atmos対応, 3.5mmイヤホンジャック搭載",
-      "connectivity": "Wi-Fi 5, Bluetooth 5.3",
-      "camera": "リア8MP, フロント5MP",
-      "os": "Xiaomi HyperOS (Androidベース)",
+      "weight": "375g",
+      "material": "メタルユニボディ",
+      "origin": "中国",
+      "connectivity": [
+        "Wi-Fi 5 (802.11ac)",
+        "Bluetooth 5.3",
+        "USB-C"
+      ],
       "other": [
-        "Widevine L1対応"
+        "オーディオ: デュアルステレオスピーカー (Dolby Atmos対応) / 3.5mmイヤホンジャック",
+        "microSDXC対応 (最大2TB)",
+        "生体認証: 顔認証"
       ]
     }
   }

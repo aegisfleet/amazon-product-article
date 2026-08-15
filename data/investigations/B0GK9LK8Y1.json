@@ -3,10 +3,26 @@
     "productName": "Galaxy S26 Ultra 512GB",
     "parentAsin": "B0GK9LK8Y1",
     "productDescription": "Samsungの最新フラッグシップスマートフォン「Galaxy S26 Ultra」です。約17.5cmの大型ディスプレイ、QHD+の高解像度、5000mAhの大容量バッテリーを搭載し、最新のGalaxy AI機能に対応しています。",
-    "productUsage": ["スマートフォンのメイン機として", "写真や動画の高画質撮影", "AI機能を活用した翻訳や検索"],
-    "positivePoints": ["Galaxy AIによる先回りした機能の提供", "OSアップデート7年対応で長期間安心して使用可能", "約17.5cmの大画面かつQHD+の美しいディスプレイ", "IP68の最高クラスの防水防塵性能"],
-    "negativePoints": ["246,400円と非常に高価であるため、購入のハードルが高い", "約214gとやや重さがあるため、長時間の片手操作には不向きな場合がある"],
-    "useCases": ["旅行先での高画質な風景写真の撮影", "海外旅行や出張時のAI翻訳機能の活用", "長時間の動画視聴やゲームプレイ"],
+    "productUsage": [
+      "スマートフォンのメイン機として",
+      "写真や動画の高画質撮影",
+      "AI機能を活用した翻訳や検索"
+    ],
+    "positivePoints": [
+      "Galaxy AIによる先回りした機能の提供",
+      "OSアップデート7年対応で長期間安心して使用可能",
+      "約17.5cmの大画面かつQHD+の美しいディスプレイ",
+      "IP68の最高クラスの防水防塵性能"
+    ],
+    "negativePoints": [
+      "246,400円と非常に高価であるため、購入のハードルが高い",
+      "約214gとやや重さがあるため、長時間の片手操作には不向きな場合がある"
+    ],
+    "useCases": [
+      "旅行先での高画質な風景写真の撮影",
+      "海外旅行や出張時のAI翻訳機能の活用",
+      "長時間の動画視聴やゲームプレイ"
+    ],
     "userStories": [],
     "userImpression": "最新のAI機能と最高峰のスペックを備えており、長期間安心して使えるハイエンドスマートフォンとして期待されますが、価格の高さがネックとなります。",
     "sources": [
@@ -27,7 +43,9 @@
         "claim": "OSアップデート7年対応",
         "category": "durability",
         "confidence": "high",
-        "supportingSourceIds": ["src-amazon"],
+        "supportingSourceIds": [
+          "src-amazon"
+        ],
         "crossChecked": false,
         "notes": "Amazonの商品情報に記載あり"
       },
@@ -35,7 +53,9 @@
         "claim": "Galaxy AI対応の先回りするAIフォン",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-amazon"],
+        "supportingSourceIds": [
+          "src-amazon"
+        ],
         "crossChecked": false,
         "notes": "Amazonの商品情報に記載あり"
       }
@@ -109,20 +129,69 @@
       }
     ],
     "recommendation": {
-      "targetUsers": ["最高峰の性能を求めるユーザー", "スマートフォンを長く（7年程度）使い続けたいユーザー", "最新のAI機能をビジネスや日常で活用したいユーザー"],
-      "pros": ["Galaxy AIによる新しいスマートフォン体験", "7年間のOSアップデート対応で長く使える", "約17.5cmの大画面と大容量バッテリー", "最高クラスのIP68防水防塵性能"],
-      "cons": ["24万円超という非常に高額な価格設定", "約214gの重量があるため、重く感じる場合がある"],
+      "targetUsers": [
+        "最高峰の性能を求めるユーザー",
+        "スマートフォンを長く（7年程度）使い続けたいユーザー",
+        "最新のAI機能をビジネスや日常で活用したいユーザー"
+      ],
+      "pros": [
+        "Galaxy AIによる新しいスマートフォン体験",
+        "7年間のOSアップデート対応で長く使える",
+        "約17.5cmの大画面と大容量バッテリー",
+        "最高クラスのIP68防水防塵性能"
+      ],
+      "cons": [
+        "24万円超という非常に高額な価格設定",
+        "約214gの重量があるため、重く感じる場合がある"
+      ],
       "score": 75,
       "scoreRationale": "[基本点: 70]\n[加点: +10] (Galaxy AI搭載、最高峰の性能と7年間のOSアップデートによる優れた品質・デザイン)\n[減点: -5] (24万円超という非常に高額な価格設定のためコスパは減点)\n[合計: 75]"
     },
     "technicalSpecs": {
-      "display": "約17.5cm QHD+",
-      "weight": "約214g",
-      "battery": "5000mAh",
-      "waterproof": "IP68防水防塵",
-      "color": "ブラック",
+      "os": "Android 16 (One UI 8 / Galaxy AI対応)",
+      "cpu": "Qualcomm Snapdragon 8 Elite Gen 2 for Galaxy",
+      "ram": "12GB",
       "storage": "512GB",
-      "other": ["Galaxy AI対応", "SIMフリー", "FeliCa対応", "OSアップデート7年対応"]
+      "display": {
+        "size": "6.9インチ",
+        "resolution": "3120×1440 (QHD+)",
+        "type": "Dynamic AMOLED 2X (有機EL / 1-120Hz可変 / 反射防止ガラス)",
+        "refreshRate": "120Hz"
+      },
+      "battery": {
+        "capacity": "5000mAh",
+        "charging": "45W有線急速充電 / 15Wワイヤレス充電 / ワイヤレスバッテリー共有対応"
+      },
+      "camera": {
+        "main": "200MP (広角 OIS搭載)",
+        "telephoto": "50MP (光学5倍ペリスコープ望遠 OIS搭載) + 10MP (光学3倍望遠)",
+        "ultrawide": "50MP (超広角)",
+        "front": "12MP"
+      },
+      "dimensions": {
+        "height": "162.8mm",
+        "width": "77.6mm",
+        "depth": "8.2mm",
+        "weight": "214g"
+      },
+      "weight": "214g",
+      "material": "チタンフレーム / Corning Gorilla Armor",
+      "origin": "韓国 / ベトナム",
+      "connectivity": [
+        "5G",
+        "Wi-Fi 7",
+        "Bluetooth 5.4",
+        "FeliCa / おサイフケータイ",
+        "eSIM対応",
+        "nanoSIM"
+      ],
+      "other": [
+        "防塵防水: IP68",
+        "スタイラスペン: Sペン内蔵 (4096段階筆圧検知)",
+        "生体認証: 超音波画面内指紋認証 / 顔認証",
+        "サポート: 7年間OSアップデート保証",
+        "※microSDカード非対応"
+      ]
     }
   }
 }

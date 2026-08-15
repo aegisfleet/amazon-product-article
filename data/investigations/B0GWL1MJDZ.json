@@ -174,19 +174,43 @@
       "scoreRationale": "[基本点: 70]\n[加点: +5] (高解像度と高リフレッシュレートの高性能ディスプレイ搭載による実用性の高さ)\n[加点: +5] (2万円台の価格帯でありながらSnapdragon 6s 4G Gen 2を搭載し高いコストパフォーマンスを実現)\n[加点: +3] (厚さ7.4mm、重量406gの薄型軽量なアルミニウム合金製ユニボディによる高い質感)\n[加点: +2] (Xiaomi HyperOS 3搭載による直感的な操作性とデバイス間連携の強み)\n[合計: 85]"
     },
     "technicalSpecs": {
-      "dimensions": {
-        "width": "226.51mm",
-        "height": "147.97mm",
-        "depth": "7.4mm"
-      },
-      "weight": "406g",
-      "display": "24.6cm 2K 120Hzリフレッシュレート",
-      "battery": "7600mAh",
-      "processor": "Snapdragon 6s 4G Gen 2",
-      "memory": "4GB",
+      "os": "Android 15 (Xiaomi HyperOS 2)",
+      "cpu": "MediaTek Helio G99-Ultra",
+      "ram": "4GB",
       "storage": "64GB",
-      "os": "Xiaomi HyperOS 3",
-      "connectivity": "Wi-Fiモデル"
+      "display": {
+        "size": "9.7インチ",
+        "resolution": "2000×1200 (2K)",
+        "type": "IPS液晶 (90Hz)",
+        "refreshRate": "90Hz"
+      },
+      "battery": {
+        "capacity": "7200mAh",
+        "charging": "18W急速充電対応"
+      },
+      "camera": {
+        "main": "8MP (F2.0)",
+        "front": "5MP (F2.2)"
+      },
+      "dimensions": {
+        "height": "230.5mm",
+        "width": "150.2mm",
+        "depth": "7.4mm",
+        "weight": "420g"
+      },
+      "weight": "420g",
+      "material": "アルミニウムユニボディ",
+      "origin": "中国",
+      "connectivity": [
+        "Wi-Fi 5 (802.11ac)",
+        "Bluetooth 5.3",
+        "USB-C"
+      ],
+      "other": [
+        "オーディオ: クアッドスピーカー (Dolby Atmos対応)",
+        "microSDXC対応 (最大1TB)",
+        "生体認証: 顔認証"
+      ]
     }
   }
 }

@@ -169,23 +169,42 @@
       "scoreRationale": "[基本点: 70]\n[加点: +10] (Snapdragon 8s Gen 4搭載により、価格に対して非常に高いパフォーマンスを提供する)\n[加点: +5] (3.2K解像度、144Hz駆動の高品質なディスプレイを搭載)\n[加点: +5] (厚さ5.75mm、重量485gと軽量薄型で携帯性に優れる)\n[減点: -5] (ストレージが128GBであり、大容量データを扱うにはやや心もとない)\n[合計: 85]"
     },
     "technicalSpecs": {
-      "dimensions": {
-        "height": "2512.2mm",
-        "width": "1734.2mm",
-        "depth": "61.8mm"
-      },
-      "weight": "485g",
-      "display": "約28.4cm 3.2K 144Hz",
-      "processor": "Snapdragon 8s Gen 4",
+      "os": "Android 16 (Xiaomi HyperOS 3)",
+      "cpu": "Qualcomm Snapdragon 8s Gen 4",
       "ram": "8GB",
       "storage": "128GB",
-      "battery": "9200mAh (45W急速充電)",
-      "os": "Xiaomi HyperOS 3",
-      "color": "ブルー",
-      "thickness": "5.75mm",
-      "audio": "クワッドスピーカー, Dolby Vision対応",
+      "display": {
+        "size": "11.2インチ",
+        "resolution": "3200×2136 (3.2K)",
+        "type": "IPS液晶 (最大144Hz / 900nits)",
+        "refreshRate": "144Hz"
+      },
+      "battery": {
+        "capacity": "9200mAh",
+        "charging": "67W急速充電対応"
+      },
+      "camera": {
+        "main": "50MP (F1.8)",
+        "front": "16MP"
+      },
+      "dimensions": {
+        "height": "251.0mm",
+        "width": "173.0mm",
+        "depth": "5.9mm",
+        "weight": "490g"
+      },
+      "weight": "490g",
+      "material": "オールメタル一体成形",
+      "origin": "中国",
+      "connectivity": [
+        "Wi-Fi 7",
+        "Bluetooth 5.4",
+        "USB-C 3.2 Gen 1"
+      ],
       "other": [
-        "AI機能 Google Gemini搭載"
+        "オーディオ: クアッドスピーカー (Dolby Atmos / ハイレゾ対応)",
+        "生体認証: 側面指紋認証 / 顔認証",
+        "急速充電: 67W HyperCharge (約55分満充電)"
       ]
     }
   }

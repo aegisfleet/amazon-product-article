@@ -30,14 +30,18 @@
         "userType": "エンタメ重視のユーザー",
         "scenario": "動画配信サービスでの映画鑑賞",
         "experience": "2.5Kの美しい大画面とDolby Atmos対応のスピーカーのおかげで、映画館のような臨場感で動画を楽しめる。バッテリー持ちも9000mAhと十分で、充電を気にせず何本も映画を通しで見られるのが決め手だった。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "ファミリー層",
         "scenario": "子供の動画視聴用として",
         "experience": "価格が2万円台前半と手頃なため、子供専用のタブレットとして購入した。大画面で見やすく、軽量なので子供でも扱いやすい。また、容量がいっぱいになってもmicroSDで拡張できる点が長く使えそうだと感じた。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -60,7 +64,9 @@
         "claim": "2TBまでmicroSDカードで容量拡張が可能",
         "category": "comparativeAdvantage",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": false,
         "notes": "商品スペック表に記載。128GBの本体容量を補う重要な要素として評価できる。"
       }
@@ -126,15 +132,43 @@
       "scoreRationale": "[基本点: 70]\n[加点: +5] (2万円台前半という価格に対して、2.5Kディスプレイと9000mAhバッテリーを搭載した高いコストパフォーマンス)\n[加点: +5] (大手ブランドによる相互接続機能と信頼性)\n[加点: +3] (Dolby Atmos対応によるオーディオ品質の高さ)\n[減点: -3] (RAM 4GBによる将来的なマルチタスク時の制約懸念)\n[合計: 80]"
     },
     "technicalSpecs": {
-      "color": "グラファイトグレー",
-      "capacity": "128GB ROM",
-      "memory": "4GB RAM",
-      "display": "27.9cm 2.5K解像度",
-      "processor": "Helio G100-Ultra",
-      "battery": "9000mAh",
-      "audio": "Dolby Atmos対応",
-      "connectivity": "Wi-Fi",
-      "expansion": "microSDカード対応 (最大2TB)"
+      "os": "Android 15 (Xiaomi HyperOS 2)",
+      "cpu": "MediaTek Helio G100-Ultra",
+      "ram": "4GB",
+      "storage": "128GB",
+      "display": {
+        "size": "11.0インチ",
+        "resolution": "2560×1600 (2.5K)",
+        "type": "IPS液晶 (TÜV低ブルーライト)",
+        "refreshRate": "90Hz"
+      },
+      "battery": {
+        "capacity": "8000mAh",
+        "charging": "18W急速充電対応"
+      },
+      "camera": {
+        "main": "8MP (F2.0)",
+        "front": "5MP (F2.2)"
+      },
+      "dimensions": {
+        "height": "255.5mm",
+        "width": "167.0mm",
+        "depth": "7.1mm",
+        "weight": "480g"
+      },
+      "weight": "480g",
+      "material": "アルミニウムユニボディ",
+      "origin": "中国",
+      "connectivity": [
+        "Wi-Fi 5 (802.11ac)",
+        "Bluetooth 5.3",
+        "USB-C"
+      ],
+      "other": [
+        "オーディオ: クアッドスピーカー (Dolby Atmos対応)",
+        "microSDXC対応 (最大1.5TB)",
+        "生体認証: 顔認証"
+      ]
     }
   }
 }
