@@ -147,21 +147,46 @@
       "scoreRationale": "[基本点: 70]\n[加点: +5] (A15 Bionicチップ搭載による高い処理性能)\n[加点: +10] (整備済み品として約5.8万円という高いコストパフォーマンス)\n[加点: +5] (一定の品質基準を満たしたAppleの純正再生品として安心して利用できる信頼性)\n[減点: -2] (Lightning端子を採用している旧世代の仕様)\n[減点: -3] (画面リフレッシュレートが60HzでありProモデルに劣る点)\n[合計: 85]"
     },
     "technicalSpecs": {
+      "os": "iOS 17",
+      "cpu": "Apple A15 Bionicチップ (6コアCPU / 5コアGPU / 16コアNeural Engine)",
+      "ram": "6GB",
+      "storage": "128GB",
+      "display": {
+        "size": "6.1インチ",
+        "resolution": "2532×1170 (Super Retina XDR OLED / 460ppi)",
+        "type": "OLED (有機EL / Ceramic Shield前面)",
+        "refreshRate": "60Hz"
+      },
+      "battery": {
+        "capacity": "3279mAh (ビデオ再生最大20時間)",
+        "charging": "20W有線急速充電 / MagSafeワイヤレス充電 (最大15W) / Qi対応"
+      },
+      "camera": {
+        "main": "12MP (広角 26mm F1.5 センサーシフトOIS)",
+        "ultrawide": "12MP (超広角 13mm F2.4 120°)",
+        "front": "12MP TrueDepthカメラ (オートフォーカス対応 F1.9)"
+      },
       "dimensions": {
         "height": "146.7mm",
         "width": "71.5mm",
-        "depth": "7.80mm"
+        "depth": "7.8mm",
+        "weight": "172g"
       },
       "weight": "172g",
-      "capacity": "128GB",
-      "material": "Ceramic Shieldの前面、ガラスの背面とアルミニウムのデザイン",
-      "origin": "中国（一般的なApple製品）",
+      "material": "アルミニウムフレーム / Ceramic Shield前面 / ガラス背面",
+      "origin": "中国",
+      "connectivity": [
+        "5G",
+        "Wi-Fi 6 (802.11ax)",
+        "Bluetooth 5.3",
+        "FeliCa / Apple Pay",
+        "eSIM対応",
+        "nanoSIM"
+      ],
       "other": [
-        "ディスプレイ: 約15.5cm（6.1型） Super Retina XDRディスプレイ (2532 x 1170ピクセル, 460ppi)",
-        "チップ: A15 Bionicチップ",
-        "カメラ: デュアル12MPカメラシステム（メイン、超広角）",
-        "防沫性能、耐水性能、防塵性能: IP68等級（最大水深6メートルで最大30分間）",
-        "コネクタ: Lightning"
+        "防塵耐水: IP68 (水深6mで最大30分)",
+        "生体認証: Face ID",
+        "衝突事故検出機能 / アクションモード動画撮影"
       ]
     }
   }

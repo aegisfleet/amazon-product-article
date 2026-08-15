@@ -192,24 +192,46 @@
       "scoreRationale": "[基本点: 70]\n[加点: +10] (大画面と携帯性を両立させた革新的な折りたたみデザインと高い実用性)\n[加点: +8] (12GB RAMと高性能SoCによる快適なマルチタスク性能)\n[加点: +5] (整備済み品としてハイエンドモデルが10万円以下で買える優れたコストパフォーマンス)\n[減点: -5] (重量と厚み、インカメラの画質など一部のハードウェア的な妥協点)\n[減点: -5] (大画面利用時のバッテリー持ちの懸念)\n[合計: 83]"
     },
     "technicalSpecs": {
+      "os": "Android 13 (One UI 5)",
+      "cpu": "Qualcomm Snapdragon 888 5G",
+      "ram": "12GB",
+      "storage": "256GB",
+      "display": {
+        "size": "7.6インチ (メイン) / 6.2インチ (カバー)",
+        "resolution": "2208×1768 (メイン QXGA+) / 2268×832 (カバー HD+)",
+        "type": "Dynamic AMOLED 2X (メイン・カバー共 120Hz)",
+        "refreshRate": "120Hz"
+      },
+      "battery": {
+        "capacity": "4400mAh",
+        "charging": "25W有線急速充電 / 11Wワイヤレス充電 / ワイヤレスバッテリー共有対応"
+      },
+      "camera": {
+        "main": "12MP (広角 Dual Pixel OIS F1.8)",
+        "telephoto": "12MP (光学2倍望遠 OIS F2.4)",
+        "ultrawide": "12MP (超広角 123° F2.2)",
+        "front": "4MP (メイン画面下カメラ UDC F1.8) / 10MP (カバーカメラ F2.2)"
+      },
       "dimensions": {
         "height": "158.2mm",
-        "width": "67.1mm (閉じた状態) / 128.1mm (開いた状態)",
-        "depth": "14.4mm - 16.0mm (閉じた状態) / 6.4mm (開いた状態)"
+        "width": "128.1mm (開時) / 67.1mm (閉時)",
+        "depth": "6.4mm (開時) / 14.4-16.0mm (閉時)",
+        "weight": "271g"
       },
       "weight": "271g",
-      "capacity": "256GB",
-      "material": "ガラス、アルミニウム",
-      "origin": "韓国 (製造メーカー国)",
+      "material": "Armor Aluminumフレーム / Gorilla Glass Victus",
+      "origin": "韓国",
+      "connectivity": [
+        "5G",
+        "Wi-Fi 6 (802.11ax)",
+        "Bluetooth 5.2",
+        "FeliCa / おサイフケータイ",
+        "nanoSIM"
+      ],
       "other": [
-        "メモリ(RAM): 12GB",
-        "バッテリー容量: 4400mAh",
-        "メインディスプレイ: 約193mm 有機EL (Dynamic AMOLED 2X)",
-        "カバーディスプレイ: 約157mm 有機EL",
-        "アウトカメラ: 1200万画素 (広角) + 1200万画素 (超広角) + 1200万画素 (望遠)",
-        "防塵・防水性能: IPX8",
-        "おサイフケータイ対応",
-        "ネットワーク: 5G対応"
+        "防水性能: IPX8",
+        "Sペン対応 (S Pen Fold Edition / S Pen Pro別売)",
+        "生体認証: 側面指紋認証 / 顔認証"
       ]
     }
   }

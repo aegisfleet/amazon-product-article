@@ -166,25 +166,44 @@
       "scoreRationale": "[基本点: 70] (固定)\n[加点: +10] (4Gセルラー対応と大容量バッテリーによる外出時の実用性の高さ)\n[加点: +5] (2.5Kの高精細ディスプレイ搭載による良好なエンタメ体験)\n[減点: -10] (RAM4GBというスペック上の制約、および3個セットによる初期導入費用のハードル)\n[合計: 75]"
     },
     "technicalSpecs": {
-      "dimensions": {
-        "height": "255mm",
-        "width": "167mm",
-        "depth": "7mm"
+      "os": "Android 15 (Xiaomi HyperOS 2)",
+      "cpu": "MediaTek Helio G100-Ultra",
+      "ram": "4GB",
+      "storage": "128GB",
+      "display": {
+        "size": "11.0インチ",
+        "resolution": "2560×1600 (2.5K)",
+        "type": "IPS液晶",
+        "refreshRate": "90Hz"
       },
-      "weight": "480g",
-      "capacity": "128GB",
-      "material": "アルミニウム合金",
+      "battery": {
+        "capacity": "8000mAh",
+        "charging": "18W急速充電対応"
+      },
+      "camera": {
+        "main": "8MP",
+        "front": "5MP"
+      },
+      "dimensions": {
+        "height": "255.5mm",
+        "width": "167.0mm",
+        "depth": "7.1mm",
+        "weight": "485g"
+      },
+      "weight": "485g",
+      "material": "アルミニウムユニボディ",
       "origin": "中国",
+      "connectivity": [
+        "4G LTE (セルラー通信)",
+        "Wi-Fi 5",
+        "Bluetooth 5.3",
+        "nanoSIM デュアルSIM"
+      ],
       "other": [
-        "ディスプレイ: 約28cm 2.5K (2560x1600)",
-        "リフレッシュレート: 90Hz AdaptiveSync",
-        "バッテリー: 9000mAh",
-        "プロセッサ: Helio G100-Ultra",
-        "RAM: 4GB",
-        "ストレージ: 128GB (最大2TB microSD拡張対応)",
-        "通信機能: 4G (セルラー対応)",
-        "オーディオ: Dolby Atmos対応クアッドスピーカー",
-        "セット内容: 3個セット"
+        "オーディオ: クアッドスピーカー (Dolby Atmos対応)",
+        "GPS搭載",
+        "生体認証: 顔認証",
+        "※3個セット販売"
       ]
     }
   }

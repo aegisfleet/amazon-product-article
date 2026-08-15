@@ -169,20 +169,43 @@
       "scoreRationale": "[基本点: 70]\n[加点: +5] 薄さ6.9mm、重量440gという高い携帯性\n[加点: +5] 2Kディスプレイとクアッドスピーカー搭載によるエンタメ性能\n[加点: +5] OPPOブランドの信頼性とGoogleキッズスペース搭載による安心感\n[減点: -2] 処理能力を求める用途には不向き\n[合計: 83]"
     },
     "technicalSpecs": {
+      "os": "Android 13 (ColorOS 13 for Pad)",
+      "cpu": "Qualcomm Snapdragon 680",
+      "ram": "4GB",
+      "storage": "128GB",
+      "display": {
+        "size": "10.3インチ",
+        "resolution": "2000×1200 (2K IPS)",
+        "type": "IPS液晶 (10億色表示 / TÜV低ブルーライト)",
+        "refreshRate": "60Hz"
+      },
+      "battery": {
+        "capacity": "7100mAh (動画再生最大12時間)",
+        "charging": "18W急速充電 (USB PD対応)"
+      },
+      "camera": {
+        "main": "8MP (F2.0)",
+        "front": "5MP (F2.2)"
+      },
       "dimensions": {
-        "height": "154.8mm",
-        "width": "245.1mm",
-        "depth": "6.9mm"
+        "height": "245.08mm",
+        "width": "154.84mm",
+        "depth": "6.94mm",
+        "weight": "440g"
       },
       "weight": "440g",
-      "capacity": "128GB",
-      "material": "アルミニウム合金",
+      "material": "アルミニウムボディ (砂丘テクスチャデザイン)",
       "origin": "中国",
+      "connectivity": [
+        "Wi-Fi 5 (802.11ac)",
+        "Bluetooth 5.1",
+        "USB-C"
+      ],
       "other": [
-        "ディスプレイ: 約26.1cm 2K",
-        "CPU: Qualcomm Snapdragon 680",
-        "バッテリー: 7,100mAh",
-        "オーディオ: Dolby Atmos対応クアッドスピーカー"
+        "オーディオ: クアッドステレオスピーカー (Dolby Atmos対応)",
+        "薄型軽量: 厚さ6.94mm / 重量440g",
+        "生体認証: 顔認証",
+        "microSDXC対応 (最大512GB)"
       ]
     }
   }

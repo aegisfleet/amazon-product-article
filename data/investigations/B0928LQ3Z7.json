@@ -204,21 +204,47 @@
       "scoreRationale": "[基本点: 70]\n[加点: +10] (片手操作が快適な希少なコンパクトサイズ)\n[減点: -5] (バッテリー駆動時間の短さ)\n[合計: 75]"
     },
     "technicalSpecs": {
+      "os": "iOS 17",
+      "cpu": "Apple A14 Bionicチップ (6コアCPU / 4コアGPU / 16コアNeural Engine)",
+      "ram": "4GB",
+      "storage": "128GB",
+      "display": {
+        "size": "5.4インチ",
+        "resolution": "2340×1080 (Super Retina XDR OLED / 476ppi)",
+        "type": "OLED (有機EL / Ceramic Shield前面)",
+        "refreshRate": "60Hz"
+      },
+      "battery": {
+        "capacity": "2227mAh (ビデオ再生最大15時間)",
+        "charging": "20W有線急速充電 (30分最大50%) / MagSafeワイヤレス充電 (最大12W) / Qi対応"
+      },
+      "camera": {
+        "main": "12MP (広角 26mm F1.6 OIS搭載)",
+        "ultrawide": "12MP (超広角 13mm F2.4 120°)",
+        "front": "12MP TrueDepthカメラ (F2.2)"
+      },
       "dimensions": {
         "height": "131.5mm",
         "width": "64.2mm",
-        "depth": "7.4mm"
+        "depth": "7.4mm",
+        "weight": "133g"
       },
       "weight": "133g",
-      "color": "ブルー",
-      "capacity": "128GB",
-      "display": "Super Retina XDRディスプレイ/対角約13.7cm（137mm）オールスクリーンOLEDディスプレイ",
-      "camera": "Pro 12MPカメラシステム：超広角、広角カメラ",
-      "faceId": "TrueDepthカメラによる顔認識の有効化",
-      "chip": "A14 Bionicチップ/Neural Engine",
-      "waterResistance": "防沫・耐水・防塵性能：IEC規格60529にもとづくIP68等級（最大水深6メートルで最大30分間）",
-      "brand": "Apple(アップル)",
-      "manufacturer": "Apple Computer"
+      "material": "アルミニウムフレーム / Ceramic Shield前面 / ガラス背面",
+      "origin": "中国",
+      "connectivity": [
+        "5G",
+        "Wi-Fi 6 (802.11ax)",
+        "Bluetooth 5.0",
+        "FeliCa / Apple Pay",
+        "eSIM対応",
+        "nanoSIM"
+      ],
+      "other": [
+        "防塵耐水: IP68 (水深6mで最大30分)",
+        "生体認証: Face ID",
+        "超軽量コンパクトモデル (133g)"
+      ]
     }
   }
 }

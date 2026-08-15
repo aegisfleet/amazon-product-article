@@ -170,24 +170,42 @@
       "scoreRationale": "[基本点: 70]\n[加点: +5] (11インチFHD+とクアッドスピーカーによる高い動画視聴体験)\n[加点: +5] (8000mAh大容量バッテリーによる実用性の高さ)\n[加点: +4] (大手メーカー製としてのビルドクオリティとデザイン性の高さ)\n[減点: -5] (RAM4GBによるマルチタスク・重いゲームへの耐性の低さ)\n[合計: 79]"
     },
     "technicalSpecs": {
+      "os": "Android 14 (Xiaomi HyperOS)",
+      "cpu": "Qualcomm Snapdragon 680",
+      "ram": "4GB",
+      "storage": "128GB",
+      "display": {
+        "size": "11.0インチ",
+        "resolution": "1920×1200 (FHD+ 16:10)",
+        "type": "IPS液晶 (TÜV Rheinland低ブルーライト認証)",
+        "refreshRate": "90Hz"
+      },
+      "battery": {
+        "capacity": "8000mAh",
+        "charging": "10W充電対応 (USB-C)"
+      },
+      "camera": {
+        "main": "8MP (F2.0)",
+        "front": "5MP (F2.2)"
+      },
       "dimensions": {
-        "height": "7.36mm",
+        "height": "255.53mm",
         "width": "167.08mm",
-        "depth": "255.53mm"
+        "depth": "7.36mm",
+        "weight": "478g"
       },
       "weight": "478g",
-      "capacity": "128GB",
-      "material": "アルミニウム合金（メタルユニボディ）",
+      "material": "アルミニウム合金ユニボディ",
       "origin": "中国",
+      "connectivity": [
+        "Wi-Fi 5 (802.11ac)",
+        "Bluetooth 5.0",
+        "USB-C"
+      ],
       "other": [
-        "ディスプレイ: 約27.9cm FHD+ (1920x1200)",
-        "リフレッシュレート: 最大90Hz",
-        "プロセッサ: Snapdragon 680 (6nm)",
-        "メモリ: 4GB RAM",
-        "バッテリー: 8000mAh",
-        "カメラ: メイン800万画素 / フロント500万画素",
-        "オーディオ: Dolby Atmos対応クアッドスピーカー",
-        "拡張ストレージ: microSDカード対応(最大1TB)"
+        "オーディオ: クアッドステレオスピーカー (Dolby Atmos / ハイレゾ対応) / 3.5mmイヤホンジャック",
+        "生体認証: 顔認証",
+        "microSDXC対応 (最大1TB)"
       ]
     }
   }

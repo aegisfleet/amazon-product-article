@@ -181,21 +181,44 @@
       "scoreRationale": "[基本点: 70]\n[加点: +10] (最新のA15 Bionicチップを搭載し、高い処理性能を持つ)\n[加点: +5] (5G通信に対応し、長期的な利用が見込める)\n[加点: +5] (コンパクトでTouch IDを備えた数少ないモデルとして需要が高い)\n[減点: -5] (シングルカメラであり、撮影のバリエーションに制限がある)\n[合計: 85]"
     },
     "technicalSpecs": {
+      "os": "iOS 17",
+      "cpu": "Apple A15 Bionicチップ (6コアCPU / 4コアGPU / 16コアNeural Engine)",
+      "ram": "4GB",
+      "storage": "64GB",
+      "display": {
+        "size": "4.7インチ",
+        "resolution": "1334×750 (Retina HD / 326ppi)",
+        "type": "IPS液晶 (True Tone対応)",
+        "refreshRate": "60Hz"
+      },
+      "battery": {
+        "capacity": "2018mAh (ビデオ再生最大15時間)",
+        "charging": "20W有線急速充電 (30分最大50%) / Qiワイヤレス充電 (最大7.5W)"
+      },
+      "camera": {
+        "main": "12MP (広角 28mm F1.8 OIS搭載 / スマートHDR 4)",
+        "front": "7MP FaceTime HDカメラ (F2.2)"
+      },
       "dimensions": {
         "height": "138.4mm",
         "width": "67.3mm",
-        "depth": "7.3mm"
+        "depth": "7.3mm",
+        "weight": "144g"
       },
       "weight": "144g",
-      "capacity": "64GB",
-      "material": "アルミニウム（フレーム）、ガラス（背面および前面）",
+      "material": "アルミニウムフレーム / 耐久ガラス前面・背面",
       "origin": "中国",
+      "connectivity": [
+        "5G",
+        "Wi-Fi 6 (802.11ax)",
+        "Bluetooth 5.0",
+        "FeliCa / Apple Pay",
+        "eSIM対応",
+        "nanoSIM"
+      ],
       "other": [
-        "ディスプレイ: ワイドスクリーンLCD Multi-Touchディスプレイ (対角約119.38mm)",
-        "チップ: A15 Bionicチップ",
-        "防沫・耐水・防塵性能: IP67等級（最大水深1メートルで最大30分間）",
-        "カメラ: 12MP（広角）",
-        "生体認証: Touch ID"
+        "防塵耐水: IP67 (水深1mで最大30分)",
+        "生体認証: Touch ID (ホームボタン指紋認証)"
       ]
     }
   }
