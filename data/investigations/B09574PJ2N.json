@@ -121,32 +121,45 @@
       "scoreRationale": "[基本点: 70]\n[加点: +3] (2万円以下の安価な価格で128GBの容量とCellular機能を持つ圧倒的なコストパフォーマンス)\n[加点: +2] (Apple Pencil第1世代に対応しており、学習・メモ用途には実用的な点)\n[減点: -4] (iPadOS 18のサポート対象外となっており、長期利用の観点で寿命が近い点)\n[減点: -3] (A10チップの処理能力が現代水準では見劣りし、Smart Connector非搭載などの拡張性の低さ)\n[合計: 68]"
     },
     "technicalSpecs": {
+      "os": "iPadOS 17",
+      "cpu": "Apple A10 Fusion (4コア 2.34GHz)",
+      "ram": "2GB",
+      "storage": "128GB",
+      "display": {
+        "size": "9.7インチ",
+        "resolution": "2048×1536 (Retinaディスプレイ / 264ppi)",
+        "type": "IPS液晶 (耐指紋性撥油コーティング)",
+        "refreshRate": "60Hz"
+      },
+      "battery": {
+        "capacity": "32.4Wh",
+        "charging": "Lightning充電",
+        "playbackTime": "最大10時間 (Wi-Fi) / 最大9時間 (セルラー)"
+      },
+      "camera": {
+        "main": "8MP (広角 1080p HD)",
+        "front": "1.2MP FaceTime HD"
+      },
       "dimensions": {
-        "height": "240mm",
+        "height": "240.0mm",
         "width": "169.5mm",
-        "depth": "7.5mm"
+        "depth": "7.5mm",
+        "weight": "478g"
       },
       "weight": "478g",
-      "capacity": "128GB",
-      "display": "約24.6cm（対角）Retinaディスプレイ (2,048 x 1,536ピクセル)",
-      "processor": "A10 Fusionチップ (64ビットアーキテクチャ)",
+      "material": "アルミニウムユニボディ (シルバー)",
+      "origin": "中国",
       "connectivity": [
-        "Wi-Fi (802.11a/b/g/n/ac)",
+        "4G LTE (nano-SIM / Apple SIM)",
+        "Wi-Fi 5 (802.11ac)",
         "Bluetooth 4.2",
-        "UMTS/HSPA/HSPA+/DC-HSDPA",
-        "LTE",
-        "nano-SIMトレイ"
+        "Lightningコネクタ",
+        "3.5mmオーディオジャック"
       ],
-      "camera": [
-        "バックカメラ: 8メガピクセル, ƒ/2.4絞り値",
-        "フロントカメラ: FaceTime HDカメラ 1.2メガピクセル, ƒ/2.2絞り値"
-      ],
-      "battery": "32.4Whリチャージャブルリチウムポリマーバッテリー内蔵 (最大10時間)",
       "other": [
-        "Touch ID（指紋認証センサー内蔵ホームボタン）",
-        "Apple Pencil（第1世代）対応",
-        "Lightningコネクタ搭載",
-        "3.5mmヘッドフォンジャック搭載"
+        "Apple Pencil (第1世代) 初対応無印iPad",
+        "Touch ID (ホームボタン指紋認証)",
+        "4G LTEセルラー通信対応"
       ]
     },
     "competitiveAnalysis": [

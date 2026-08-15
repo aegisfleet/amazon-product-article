@@ -183,26 +183,44 @@
       "scoreRationale": "[基本点: 70] (固定)\n[加点: +8] (11インチ2K高解像度ディスプレイによる優れた映像体験)\n[加点: +5] (Wi-Fi 6対応と高性能プロセッサによる快適な動作・通信環境)\n[加点: +5] (専用キーボードやペンによる拡張性とPCライクな使い勝手)\n[減点: -5] (Google Play非対応によるアプリの制限、拡張性の低さ)\n[合計: 83]"
     },
     "technicalSpecs": {
+      "os": "Fire OS 8 (Android 11ベース)",
+      "cpu": "MediaTek MT8188J (8コア 2×2.2GHz + 6×2.0GHz)",
+      "ram": "4GB",
+      "storage": "64GB / 128GB (microSD最大1TB対応)",
+      "display": {
+        "size": "11.0インチ",
+        "resolution": "2000×1200 (2K 213ppi)",
+        "type": "IPS液晶 (強化アルミノシリケートガラス / 410nits)",
+        "refreshRate": "60Hz"
+      },
+      "battery": {
+        "capacity": "7500mAh",
+        "charging": "USB Type-C (9W充電器付属 / 15W急速充電対応)",
+        "playbackTime": "最大14時間"
+      },
+      "camera": {
+        "main": "8MP (オートフォーカス)",
+        "front": "8MP"
+      },
       "dimensions": {
         "height": "259.1mm",
-        "width": "163.8mm",
-        "depth": "7.6mm"
+        "width": "163.7mm",
+        "depth": "7.5mm",
+        "weight": "490g"
       },
-      "weight": "489.9g",
-      "capacity": "128GB",
-      "display": "28cm(約11インチ) 2K (213ppi)",
-      "processor": "8コアプロセッサ",
-      "memory": "4GB RAM",
-      "batteryLife": "最大14時間",
+      "weight": "490g",
+      "material": "アルミニウムメタルボディ",
+      "origin": "中国",
       "connectivity": [
-        "Wi-Fi 6対応",
-        "USB-C (2.0)"
+        "Wi-Fi 6 (802.11ax)",
+        "Bluetooth 5.3",
+        "USB Type-C 2.0"
       ],
-      "camera": "8メガピクセル",
-      "color": "グレー",
       "other": [
-        "Microsoft 365 Personal 3か月無料体験つき（条件あり）",
-        "別売りスタイラスペン、キーボード付きカバー対応"
+        "Made for Amazon スタイラスペン (USI 2.0) 対応",
+        "着脱式キーボード付きカバー対応",
+        "生体認証: 電源ボタン指紋認証センサー",
+        "Dolby Atmos対応デュアルステレオスピーカー"
       ]
     }
   }

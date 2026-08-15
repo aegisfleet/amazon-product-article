@@ -151,22 +151,44 @@
       "scoreRationale": "[基本点: 70]\n[加点: +10] (M4チップによる圧倒的なパフォーマンス)\n[加点: +10] (Ultra Retina XDRディスプレイの優れた画質)\n[加点: +5] (薄型・軽量で持ち運びしやすいデザイン)\n[減点: -5] (価格が非常に高い)\n[合計: 90]"
     },
     "technicalSpecs": {
+      "os": "iPadOS 18 (Apple Intelligence対応)",
+      "cpu": "Apple M4チップ (9コアCPU / 10コアGPU / 16コアNeural Engine)",
+      "ram": "8GB",
+      "storage": "256GB",
+      "display": {
+        "size": "13インチ",
+        "resolution": "2752×2064 (Ultra Retina XDR / 264ppi)",
+        "type": "Tandem OLED (タンデム有機EL / ピーク1600nits HDR)",
+        "refreshRate": "ProMotion 120Hz"
+      },
+      "battery": {
+        "capacity": "38.99Wh",
+        "charging": "Thunderbolt / USB 4急速充電 (最大35W)",
+        "playbackTime": "最大10時間"
+      },
+      "camera": {
+        "main": "12MP (広角 F1.8 / LiDARスキャナ / アダプティブTrue Toneフラッシュ)",
+        "front": "12MP 横向きセンターフレーム超広角カメラ (Face ID対応)"
+      },
       "dimensions": {
-        "height": "5.1mm",
-        "width": "281.6mm",
-        "depth": "215.5mm"
+        "height": "281.6mm",
+        "width": "215.5mm",
+        "depth": "5.1mm",
+        "weight": "579g"
       },
       "weight": "579g",
-      "capacity": "256GB",
-      "material": "アルミニウム",
-      "origin": "情報なし",
+      "material": "超極薄100%リサイクルアルミニウムボディ (最薄5.1mm)",
+      "origin": "中国 / ベトナム",
+      "connectivity": [
+        "Wi-Fi 6E (802.11ax)",
+        "Bluetooth 5.3",
+        "Thunderbolt 3 / USB 4 (40Gbps)"
+      ],
       "other": [
-        "ディスプレイ: 約33cm Ultra Retina XDR",
-        "チップ: Apple M4チップ",
-        "カメラ: 横向きの12MPフロントカメラ、12MPバックカメラ",
-        "通信: Wi-Fi 6E + 5G(eSIM)",
-        "生体認証: Face ID",
-        "コネクタ: USB-C"
+        "Apple Pencil Pro 対応",
+        "Magic Keyboard 対応",
+        "生体認証: Face ID顔認証",
+        "4スピーカー空間オーディオシステム"
       ]
     }
   }

@@ -161,28 +161,43 @@
       "scoreRationale": "[基本点: 70]\n[加点: +5] (7000mAhの大容量バッテリー搭載で日常使いの利便性が高い)\n[加点: +2] (Widevine L1対応で主要動画サービスのHD再生が可能)\n[減点: -10] (同等スペックの競合製品が1万円前後であるのに対し、約1.5万円とコストパフォーマンスが悪い)\n[合計: 67]"
     },
     "technicalSpecs": {
-      "display": "解像度: 1280×800 Incell TDDI IPSディスプレイ",
-      "weight": "約450g",
-      "battery": "7000mAh (PD18W急速充電対応)",
-      "cpu": "UNISOC-T7280 8コアCPU",
-      "memory": "RAM: 20GB相当 (物理4GB + 仮想16GB)",
-      "storage": "ROM: 64GB (最大2TBのmicroSD拡張対応)",
       "os": "Android 16",
-      "camera": "8MP / 5MP",
-      "ports": "USB Type-C, 3.5mmイヤホン端子",
-      "features": [
-        "GPS搭載",
-        "Widevine L1対応",
-        "顔認識ロック",
-        "デュアルスピーカー",
-        "OTG対応",
-        "GMS認証取得"
-      ],
+      "cpu": "オクタコアプロセッサ (2.0GHz)",
+      "ram": "14GB (6GB実メモリ + 8GB仮想拡張)",
+      "storage": "128GB (microSD最大1TB対応)",
+      "display": {
+        "size": "10.1インチ",
+        "resolution": "1280×800 (HD IPS)",
+        "type": "IPS液晶",
+        "refreshRate": "60Hz"
+      },
+      "battery": {
+        "capacity": "6000mAh",
+        "charging": "USB Type-C",
+        "playbackTime": "約7時間"
+      },
+      "camera": {
+        "main": "8MP",
+        "front": "5MP"
+      },
       "dimensions": {
-        "height": "240mm",
-        "width": "160mm",
-        "depth": "8mm"
-      }
+        "height": "243.0mm",
+        "width": "161.0mm",
+        "depth": "8.6mm",
+        "weight": "490g"
+      },
+      "weight": "490g",
+      "material": "メタルバックパネル",
+      "origin": "中国",
+      "connectivity": [
+        "Wi-Fi 6 (802.11ax)",
+        "Bluetooth 5.2",
+        "USB Type-C"
+      ],
+      "other": [
+        "Widevine L1対応",
+        "デュアルステレオスピーカー"
+      ]
     }
   }
 }

@@ -3,7 +3,13 @@
     "productName": "Amazon Fire HD 10 インチ タブレット (第13世代) 32GB ブラック",
     "parentAsin": "B0C2XN8HKD",
     "productDescription": "1080pフルHDの10.1インチディスプレイを搭載し、動画視聴や読書に最適な高コストパフォーマンスのエンターテイメント向けタブレット。",
-    "productUsage": ["動画視聴", "電子書籍の読書", "ウェブ検索", "簡単なゲーム", "Alexaを利用したスマートホーム操作"],
+    "productUsage": [
+      "動画視聴",
+      "電子書籍の読書",
+      "ウェブ検索",
+      "簡単なゲーム",
+      "Alexaを利用したスマートホーム操作"
+    ],
     "positivePoints": [
       "1080pフルHDの美しい大画面で映像コンテンツを楽しめる",
       "落下テストでiPadの約4倍の耐久性が証明された頑丈なボディ",
@@ -14,20 +20,29 @@
       "負荷のかかる作業やブラウザ操作で動作が重く感じることがある",
       "Google Playに非対応であり、一部のAndroidアプリ（LINEなど）が利用できない"
     ],
-    "useCases": ["リビングでの映画やアニメ鑑賞", "寝室での電子書籍（Kindle）の読書", "子供用タブレットとしての利用", "Alexaを活用したスマートディスプレイ代わり"],
+    "useCases": [
+      "リビングでの映画やアニメ鑑賞",
+      "寝室での電子書籍（Kindle）の読書",
+      "子供用タブレットとしての利用",
+      "Alexaを活用したスマートディスプレイ代わり"
+    ],
     "userStories": [
       {
         "userType": "一般ユーザー",
         "scenario": "日常的な動画視聴とネット閲覧",
         "experience": "実際にしばらく使用してみて、日常使いには十分な性能だと感じました。動画視聴やネット閲覧はスムーズで、画面も見やすく快適に使えています。画面サイズがちょうど良く、長時間の使用でも目が疲れにくい印象です。",
-        "supportingSourceIds": ["amazon-reviews"],
+        "supportingSourceIds": [
+          "amazon-reviews"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "エンタメ重視のユーザー",
         "scenario": "動画と読書中心の利用",
         "experience": "動画視聴や漫画を読む用途としては画面が綺麗で使いやすいです。ただし、ブラウザで複数のタブを開いたり、重いアプリを使おうとすると少し動作の重さが気になりました。",
-        "supportingSourceIds": ["amazon-reviews"],
+        "supportingSourceIds": [
+          "amazon-reviews"
+        ],
         "sentiment": "mixed"
       }
     ],
@@ -61,7 +76,9 @@
         "claim": "落下テストでの耐久性は Apple iPad 10.9 (第10世代)の約4倍である",
         "category": "durability",
         "confidence": "high",
-        "supportingSourceIds": ["amazon-official"],
+        "supportingSourceIds": [
+          "amazon-official"
+        ],
         "crossChecked": false,
         "notes": "メーカー公式ページで明記されている。"
       },
@@ -69,7 +86,9 @@
         "claim": "最大13時間の連続使用が可能な長時間バッテリーを搭載",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["amazon-official"],
+        "supportingSourceIds": [
+          "amazon-official"
+        ],
         "crossChecked": false,
         "notes": "メーカー公称値。"
       },
@@ -77,7 +96,9 @@
         "claim": "コストパフォーマンスが高く日常使いには十分な性能である",
         "category": "comparativeAdvantage",
         "confidence": "high",
-        "supportingSourceIds": ["amazon-reviews"],
+        "supportingSourceIds": [
+          "amazon-reviews"
+        ],
         "crossChecked": true,
         "notes": "複数のレビューでコストパフォーマンスの高さが評価されている。"
       }
@@ -182,23 +203,44 @@
       "scoreRationale": "[基本点: 70]\n[加点: +15] (価格対性能のバランスが非常に良く、エンタメ用途でのコストパフォーマンスが高い)\n[加点: +5] (iPadの4倍とされる高い耐久性と安心の品質)\n[減点: -5] (Google Play非対応により、一般的なAndroidアプリが使えない制約がある)\n[合計: 85]"
     },
     "technicalSpecs": {
-      "dimensions": {
-        "height": "8.6mm",
-        "width": "165.1mm",
-        "depth": "246.1mm"
+      "os": "Fire OS 8",
+      "cpu": "オクタコアプロセッサ (2×2.05GHz + 6×2.0GHz)",
+      "ram": "3GB",
+      "storage": "32GB (microSD最大1TB対応)",
+      "display": {
+        "size": "10.1インチ",
+        "resolution": "1920×1200 (1080p フルHD / 224ppi)",
+        "type": "IPS液晶 (強化ガラス)",
+        "refreshRate": "60Hz"
       },
-      "weight": "435g",
-      "capacity": "32GB",
-      "display": "10.1インチ 1080p フルHD",
-      "processor": "8コアプロセッサ",
-      "memory": "3GB RAM",
-      "batteryLife": "最大13時間",
-      "camera": "5MP",
-      "material": "プラスチック（耐久性強化）",
-      "origin": "不明",
+      "battery": {
+        "capacity": "6500mAh",
+        "charging": "USB Type-C (9W充電器付属 / 約4時間満充電)",
+        "playbackTime": "最大13時間"
+      },
+      "camera": {
+        "main": "5MP",
+        "front": "5MP (1080p HDビデオ通話)"
+      },
+      "dimensions": {
+        "height": "246.0mm",
+        "width": "164.8mm",
+        "depth": "8.6mm",
+        "weight": "434g"
+      },
+      "weight": "434g",
+      "material": "再生プラスチック樹脂ボディ",
+      "origin": "中国",
+      "connectivity": [
+        "Wi-Fi 5 (802.11ac 2.4/5GHz)",
+        "Bluetooth 5.3",
+        "USB-C 2.0",
+        "3.5mmオーディオジャック"
+      ],
       "other": [
-        "Alexa対応",
-        "パームリジェクション対応（Made for Amazon スタイラスペン使用時）"
+        "Made for Amazon スタイラスペン (USI 2.0 4096段階筆圧) 対応",
+        "前世代比25%パフォーマンス向上",
+        "Dolby Atmos対応デュアルステレオスピーカー"
       ]
     }
   }

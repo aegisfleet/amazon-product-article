@@ -222,22 +222,46 @@
       "scoreRationale": "[基本点: 70]\n[加点: +10] (同価格帯で圧倒的な12.1インチ2.5Kの高画質ディスプレイによる動画視聴体験)\n[加点: +5] (2万円台という非常に高いコストパフォーマンス)\n[加点: +5] (PCモードなどの独自機能による実用性の高さ)\n[減点: -10] (フロントカメラが固定焦点でビデオ通話に不向き)\n[減点: -5] (大容量バッテリーながら高輝度設定時の実稼働時間が短い)\n[合計: 75]"
     },
     "technicalSpecs": {
-      "dimensions": {
-        "height": "7.40mm",
-        "width": "180.00mm",
-        "length": "278.00mm"
+      "os": "Android 14",
+      "cpu": "MediaTek Helio G99 (オクタコア 2.2GHz 6nmプロセス)",
+      "ram": "20GB (8GB実メモリ + 12GB仮想拡張)",
+      "storage": "256GB (UFS 2.2 / microSD最大512GB対応)",
+      "display": {
+        "size": "12.0インチ",
+        "resolution": "2000×1200 (2K IPS In-Cell)",
+        "type": "IPS液晶 (90Hzリフレッシュレート)",
+        "refreshRate": "90Hz"
       },
-      "weight": "587g",
-      "display": "12.1インチ IPS (2560x1600 WQXGA) 90Hz リフレッシュレート",
-      "processor": "MediaTek Helio G99",
-      "memory": "8GB (+仮想12GB拡張)",
-      "storage": "128GB UFS (最大1TBのmicroSD拡張対応)",
-      "battery": "10000mAh (33W PD急速充電対応)",
-      "camera": "前面: 800万画素 (AF非対応) / 背面: 1600万画素",
-      "network": "Wi-Fi 5 (802.11ac) / Bluetooth 5.2 / 4G LTE対応 (デュアルSIM)",
-      "os": "ALLDOCUBE OS 3.0 (Android 14ベース)",
-      "sensors": "光センサー、ホールセンサー、ジャイロスコープ搭載",
-      "audio": "クアッドスピーカー搭載"
+      "battery": {
+        "capacity": "7000mAh",
+        "charging": "33W急速充電 (USB-PD対応)",
+        "playbackTime": "約8時間"
+      },
+      "camera": {
+        "main": "16MP (オートフォーカス)",
+        "front": "8MP"
+      },
+      "dimensions": {
+        "height": "278.0mm",
+        "width": "173.0mm",
+        "depth": "7.8mm",
+        "weight": "570g"
+      },
+      "weight": "570g",
+      "material": "メタルユニボディ",
+      "origin": "中国",
+      "connectivity": [
+        "4G LTE (デュアルSIM)",
+        "Wi-Fi 5 (802.11ac 2.4/5GHz)",
+        "Bluetooth 5.2",
+        "GPS",
+        "USB Type-C"
+      ],
+      "other": [
+        "Widevine L1対応",
+        "クアッドBOXスピーカー",
+        "4G LTE SIMフリー通信対応"
+      ]
     }
   }
 }

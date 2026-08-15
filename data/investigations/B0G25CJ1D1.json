@@ -159,23 +159,42 @@
       "scoreRationale": "[基本点: 70]\n[加点: +5] (最新のAndroid 15搭載による機能性)\n[加点: +5] (十分なメモリ容量と価格設定によるコスパの良さ)\n[加点: +5] (Widevine L1対応など動画視聴に適した機能)\n[減点: -10] (新興ブランドによる信頼性・サポートへの不安)\n[合計: 75]"
     },
     "technicalSpecs": {
+      "os": "Android 15",
+      "cpu": "Allwinner A523 (オクタコア 2.0GHz)",
+      "ram": "12GB (4GB実メモリ + 8GB仮想拡張)",
+      "storage": "64GB (microSD最大1TB対応)",
+      "display": {
+        "size": "10.1インチ",
+        "resolution": "1280×800 (HD IPS)",
+        "type": "IPS液晶 (In-Cellフルラミネーション)",
+        "refreshRate": "60Hz"
+      },
+      "battery": {
+        "capacity": "5000mAh",
+        "charging": "USB Type-C",
+        "playbackTime": "約6時間"
+      },
+      "camera": {
+        "main": "8MP",
+        "front": "5MP"
+      },
       "dimensions": {
-        "height": "240mm",
-        "width": "160mm",
-        "depth": "7.5mm"
+        "height": "242.0mm",
+        "width": "160.0mm",
+        "depth": "8.5mm",
+        "weight": "480g"
       },
       "weight": "480g",
-      "capacity": "128GB ROM / 24GB RAM (12GB+拡張12GB)",
-      "material": "オールメタルラウンドデザイン",
+      "material": "メタルバックカバー",
       "origin": "中国",
+      "connectivity": [
+        "Wi-Fi 6 (802.11ax)",
+        "Bluetooth 5.2",
+        "USB Type-C"
+      ],
       "other": [
-        "OS: Android 15",
-        "CPU: Unisoc T606 オクタコア",
-        "ディスプレイ: 約25.6cm 1280x800 TDDI-IPS",
-        "バッテリー: 6000mAh",
-        "カメラ: 背面13MP / 前面5MP",
-        "通信: Wi-Fi 6, Bluetooth対応",
-        "その他: Widevine L1対応, Type-C (OTG対応)"
+        "Widevine L1対応",
+        "デュアルBOXスピーカー"
       ]
     }
   }

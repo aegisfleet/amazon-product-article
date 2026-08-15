@@ -188,23 +188,47 @@
       "scoreRationale": "[基本点: 70]\n[加点: +8] (インテル N100プロセッサーによる同価格帯での優れた処理性能)\n[加点: +7] (アスペクト比16:10の12.2インチWUXGA液晶の視認性と2-in-1の利便性)\n[加点: +3] (2033年6月までの長期にわたる自動更新ポリシー)\n[減点: -2] (USB Type-Cポートが片側にしかない拡張性の制約)\n[減点: -3] (USIペン非対応およびメモリ4GBによる用途の制限)\n[合計: 83]"
     },
     "technicalSpecs": {
-      "// 注意": "調査で判明した仕様情報をここに網羅的に記載する",
+      "os": "ChromeOS",
+      "cpu": "Intel Processor N100 (4コア / 4スレッド 最大3.4GHz)",
+      "ram": "4GB (LPDDR5-4800)",
+      "storage": "64GB (eMMC 5.1 / microSDカード対応)",
+      "display": {
+        "size": "12.2インチ",
+        "resolution": "1920×1200 (WUXGA 16:10 / 10点マルチタッチ)",
+        "type": "IPS液晶 (光沢・300nits / TÜV低ブルーライト)",
+        "refreshRate": "60Hz"
+      },
+      "battery": {
+        "capacity": "47Wh (3セルリチウムポリマー)",
+        "charging": "USB Type-C (45W PD急速充電)",
+        "playbackTime": "最大12時間"
+      },
+      "camera": {
+        "front": "720p HD Webカメラ (プライバシーシャッター付き)"
+      },
       "dimensions": {
         "height": "18.4mm",
-        "width": "284mm",
-        "depth": "210mm"
+        "width": "284.0mm",
+        "depth": "210.0mm",
+        "weight": "1.25kg"
       },
       "weight": "1.25kg",
-      "cpu": "インテル プロセッサー N100 (4コア)",
-      "memory": "4GB LPDDR5",
-      "storage": "64GB eMMC",
-      "display": "12.2型 WUXGA IPS液晶 (1920x1200ドット、16:10、マルチタッチ対応、光沢あり)",
-      "interfaces": "Type-C USB3.2 Gen2 x1, Type-A USB3.2 Gen1 x2, HDMI x1, マイクロホン/ヘッドホン・コンボ・ジャック x1",
-      "connectivity": "Wi-Fi 6対応, Bluetooth v5.1",
-      "batteryLife": "約12.0時間",
-      "color": "アビスブルー",
-      "os": "Chrome OS",
-      "autoUpdateExpiration": "2033年6月"
+      "material": "アビスブルー樹脂・高剛性ヒンジ",
+      "origin": "中国 (Lenovo)",
+      "connectivity": [
+        "Wi-Fi 6 (802.11ax)",
+        "Bluetooth 5.1",
+        "USB 3.2 Gen2 Type-C (PD/DP対応) ×1",
+        "USB 3.2 Gen1 Type-A ×2",
+        "HDMI 1.4b",
+        "microSDカードリーダー",
+        "3.5mmイヤホンジャック"
+      ],
+      "other": [
+        "360度回転ヒンジ (ノートPC/テント/スタンド/タブレット 4モード)",
+        "Intel N100 高効率プロセッサ搭載",
+        "エルゴノミックキーボード (日本語配列)"
+      ]
     }
   }
 }

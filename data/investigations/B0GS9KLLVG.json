@@ -191,22 +191,42 @@
       "scoreRationale": "[基本点: 70]\n[加点: +5] (Android 16と8コアCPUによるサクサクとした快適な動作)\n[加点: +5] (7130mAhの大容量バッテリーと18W急速充電による実用性の高さ)\n[加点: +5] (最大30GBのRAMと128GBのROMという余裕のあるスペック)\n[合計: 85]"
     },
     "technicalSpecs": {
-      "dimensions": {
-        "height": "240mm",
-        "width": "160mm",
-        "depth": "8mm"
+      "os": "Android 16",
+      "cpu": "Allwinner A523 (オクタコア 2.0GHz)",
+      "ram": "12GB (4GB実メモリ + 8GB仮想拡張)",
+      "storage": "64GB (microSD最大1TB対応)",
+      "display": {
+        "size": "10.1インチ",
+        "resolution": "1280×800 (HD IPS)",
+        "type": "IPS液晶",
+        "refreshRate": "60Hz"
       },
-      "weight": "500g",
-      "capacity": "128GB",
-      "material": "プラスチック/金属",
+      "battery": {
+        "capacity": "5000mAh",
+        "charging": "USB Type-C",
+        "playbackTime": "約6時間"
+      },
+      "camera": {
+        "main": "5MP",
+        "front": "2MP"
+      },
+      "dimensions": {
+        "height": "242.0mm",
+        "width": "160.0mm",
+        "depth": "8.5mm",
+        "weight": "490g"
+      },
+      "weight": "490g",
+      "material": "樹脂ボディ",
       "origin": "中国",
+      "connectivity": [
+        "Wi-Fi 6 (802.11ax)",
+        "Bluetooth 5.2",
+        "USB Type-C"
+      ],
       "other": [
-        "OS: Android 16",
-        "ディスプレイ: 約25.6cm IPS (1280x800)",
-        "RAM: 最大30GB (物理6GB + 仮想24GB)",
-        "バッテリー: 7130mAh (18W PD急速充電対応)",
-        "通信: Wi-Fi 6, Bluetooth 5.4",
-        "機能: Widevine L1対応, PCモード, 顔認識, 無線投影, GMS認証"
+        "Widevine L1対応",
+        "ステレオデュアルスピーカー"
       ]
     }
   }

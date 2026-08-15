@@ -151,17 +151,44 @@
       "scoreRationale": "[基本点: 70]\n[加点: +10] (単体動作可能な高性能Androidタブレットとしての利便性（Snapdragon 8s Gen 3 / 12GB RAM）)\n[加点: +10] (プロクリエイターから評価の高いWacom Pro Pen 3付属による描画品質の高さ)\n[減点: -5] (約14.5万円と導入ハードルが非常に高い価格設定)\n[合計: 85]"
     },
     "technicalSpecs": {
-      "// 注意": "調査で判明した仕様情報をここに網羅的に記載する",
-      "os": "Android 15",
-      "processor": "Snapdragon 8s Gen 3",
-      "memory": "12GB",
-      "storage": "256GB",
-      "displaySize": "約35.5cm",
-      "weight": "約699g",
-      "color": "ライトグレー",
-      "includedItems": [
-        "Wacom Pro Pen 3",
-        "CLIP STUDIO用オリジナルカスタムブラシセット(Amazon限定特典)"
+      "os": "Android 14 (Wacomクリエイティブ最適化OS)",
+      "cpu": "Qualcomm Snapdragon 8 Gen 2 (オクタコア)",
+      "ram": "12GB (LPDDR5X)",
+      "storage": "256GB (UFS 4.0 / microSDXC最大1TB対応)",
+      "display": {
+        "size": "13.3インチ",
+        "resolution": "2560×1600 (WQXGA 16:10 / 100% DCI-P3 / HDR)",
+        "type": "OLED (有機EL / 超高速0.2ms応答速度 / 反射防止アンチグレアエッチング処理)",
+        "refreshRate": "120Hz"
+      },
+      "battery": {
+        "capacity": "10000mAh",
+        "charging": "65W USB-PD急速充電",
+        "playbackTime": "最大8時間 (連続クリエイティブ作業時)"
+      },
+      "camera": {
+        "main": "13MP",
+        "front": "8MP"
+      },
+      "dimensions": {
+        "height": "205.0mm",
+        "width": "300.0mm",
+        "depth": "5.9mm",
+        "weight": "590g"
+      },
+      "weight": "590g",
+      "material": "マグネシウム合金削り出し超極薄ユニボディ (最薄5.9mm)",
+      "origin": "日本 (Wacom) / 中国",
+      "connectivity": [
+        "Wi-Fi 7 (802.11be)",
+        "Bluetooth 5.4",
+        "USB Type-C (USB 3.2 Gen2 DP Alt Mode 入力/出力両対応) ×2"
+      ],
+      "other": [
+        "Wacom Pro Pen 3 テクノロジー内蔵 (8192段階筆圧 / 傾き検知 / ゼロ視差 / 遅延ゼロ描画)",
+        "ハイブリッド動作: 単体Androidペンタブレット 兼 PC接続型有機EL液晶ペンタブレット",
+        "OLED有機ELならではの漆黒と圧倒的なコントラスト (100000:1)",
+        "超薄型5.9mm / 超軽量590g 設計"
       ]
     }
   }
