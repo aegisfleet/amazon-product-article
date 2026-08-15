@@ -96,22 +96,46 @@
       "scoreRationale": "[基本点: 70]\n[加点: +5] (Snapdragon 8s Gen 4による高い処理性能)\n[加点: +5] (1.5K 120Hz有機ELディスプレイ搭載)\n[加点: +5] (6500mAhの大容量バッテリー搭載)\n[加点: +5] (90W急速充電対応)\n[減点: -5] (大容量バッテリー搭載に伴う本体重量増の懸念)\n[合計: 85]"
     },
     "technicalSpecs": {
-      "dimensions": {
-        "height": "未公開",
-        "width": "未公開",
-        "depth": "未公開"
+      "os": "Android 15 (Xiaomi HyperOS 2)",
+      "cpu": "Qualcomm Snapdragon 8s Gen 3",
+      "ram": "12GB",
+      "storage": "512GB",
+      "display": {
+        "size": "6.67インチ",
+        "resolution": "2712×1220 (1.5K Flow AMOLED)",
+        "type": "AMOLED (有機EL / 2400nitsピーク)",
+        "refreshRate": "120Hz"
       },
-      "weight": "未公開",
-      "capacity": "12GB RAM / 512GB ROM",
-      "material": "未公開",
-      "origin": "未公開",
+      "battery": {
+        "capacity": "5000mAh",
+        "charging": "90W HyperCharge急速充電 (約35分満充電)"
+      },
+      "camera": {
+        "main": "50MP (Sony IMX882 OIS搭載 F1.59)",
+        "ultrawide": "8MP (超広角)",
+        "front": "20MP"
+      },
+      "dimensions": {
+        "height": "160.5mm",
+        "width": "74.4mm",
+        "depth": "7.8mm",
+        "weight": "179g"
+      },
+      "weight": "179g",
+      "material": "ガラス（背面）/ 樹脂フレーム",
+      "origin": "中国",
+      "connectivity": [
+        "5G",
+        "Wi-Fi 6 (802.11ax)",
+        "Bluetooth 5.4",
+        "nanoSIM デュアルSIM",
+        "IRブラスター"
+      ],
       "other": [
-        "SoC: Snapdragon 8s Gen 4 (TSMC 4nm, 最大3.21GHz)",
-        "バッテリー: 6500mAh",
-        "充電: 90W有線急速充電, 22.5Wリバース充電",
-        "ディスプレイ: 画面サイズ約17.3cm 1.5K(2772×1280) 120Hz 有機EL",
-        "メインカメラ: 5000万画素 (ソニー IMX882, OIS対応)",
-        "カラー: シルバー"
+        "防塵防水: IP64",
+        "生体認証: 画面内指紋認証 / 顔認証",
+        "冷却機能: LiquidCool 4.0 (5000mm² IceLoop)",
+        "オーディオ: デュアルステレオスピーカー (Dolby Atmos)"
       ]
     }
   }
