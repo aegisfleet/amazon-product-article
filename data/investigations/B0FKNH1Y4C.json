@@ -126,23 +126,42 @@
       "scoreRationale": "[基本点: 70]\n[加点: +10] (第11世代Core i5とOffice 2021搭載で4万円弱という極めて高いコストパフォーマンス)\n[加点: +5] (重量約0.9kgというモバイル用途に最適な軽量性)\n[減点: -3] (メモリが8GBであり、将来的な用途拡大時の拡張性にやや不安がある点)\n[合計: 82]"
     },
     "technicalSpecs": {
+      "os": "Windows 11 Pro 64bit",
+      "cpu": "Intel Core i5-1135G7 (4コア / 8スレッド 最大4.2GHz)",
+      "ram": "8GB (LPDDR4X)",
+      "storage": "256GB (PCIe NVMe SSD)",
+      "display": {
+        "size": "13.3インチ",
+        "resolution": "1920×1080 (FHD)",
+        "type": "SHARP製 IGZO液晶 (高輝度・ノングレア)",
+        "refreshRate": "60Hz"
+      },
+      "battery": {
+        "capacity": "53Wh",
+        "playbackTime": "最大24時間"
+      },
       "dimensions": {
         "height": "17.9mm",
-        "width": "308.8mm",
-        "depth": "211.6mm"
+        "width": "306.0mm",
+        "depth": "210.0mm",
+        "weight": "888g"
       },
-      "weight": "900g",
-      "capacity": "メモリ: 8GB, ストレージ: SSD 256GB",
-      "material": "マグネシウム合金等",
-      "origin": "不明",
+      "weight": "888g",
+      "material": "マグネシウム合金ボディ",
+      "origin": "日本 (Dynabook)",
+      "connectivity": [
+        "Wi-Fi 6 (802.11ax)",
+        "Bluetooth 5.1",
+        "ギガビット有線LAN",
+        "Thunderbolt 4 (USB4 Type-C) ×2",
+        "USB 3.1 Type-A ×2",
+        "HDMI",
+        "microSDカードスロット"
+      ],
       "other": [
-        "OS: Windows 11 Pro",
-        "CPU: インテル Core i5-1135G7 (最大4.2GHz)",
-        "ディスプレイ: 33.78cm FHD (1920x1080)",
-        "搭載ソフト: Microsoft Office 2021",
-        "ネットワーク: Wi-Fi 6, Bluetooth",
-        "インターフェース: HDMI, USB Type-C, LANポート, SDカードスロット",
-        "付属品: 有線静音マウス"
+        "超軽量888g",
+        "MIL規格 (MIL-STD-810G) 10項目耐久テスト準拠",
+        "顔認証対応Webカメラ"
       ]
     }
   }

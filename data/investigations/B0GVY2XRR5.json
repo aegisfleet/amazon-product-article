@@ -168,23 +168,45 @@
       "scoreRationale": "[基本点: 70]\n[加点: +10] 圧倒的な処理性能(Snapdragon 8 Gen 3搭載)\n[加点: +4] 22.35cmの高解像度・取り回しの良いサイズ感\n[加点: +4] ポート配置の工夫による使い勝手の良さ\n[加点: +5] 大手メーカー製のハイエンドタブレットという希少性\n[減点: -1] イヤホンジャックの非搭載\n[減点: -2] microSDスロットの非搭載\n[合計: 90]"
     },
     "technicalSpecs": {
+      "os": "Android 14 (ZUI 16)",
+      "cpu": "Qualcomm Snapdragon 8 Gen 3",
+      "ram": "12GB (LPDDR5X)",
+      "storage": "256GB (UFS 4.0)",
+      "display": {
+        "size": "8.8インチ",
+        "resolution": "2560×1600 (2.5K 16:10)",
+        "type": "IPS液晶 (500nits / DCI-P3 98% / Dolby Vision)",
+        "refreshRate": "165Hz"
+      },
+      "battery": {
+        "capacity": "6550mAh",
+        "charging": "68W Super Rapid Charge急速充電 (バイパス充電対応)"
+      },
+      "camera": {
+        "main": "13MP + 2MP (マクロ)",
+        "front": "8MP"
+      },
       "dimensions": {
         "height": "208.5mm",
         "width": "129.5mm",
-        "depth": "7.6mm"
+        "depth": "7.6mm",
+        "weight": "350g"
       },
       "weight": "350g",
-      "display": "22.35cmワイドパネル (2560x1600ドット)、マルチタッチ対応(10点)",
-      "cpu": "Qualcomm Snapdragon 8 Gen 3プロセッサー (8コア)",
-      "memory": "12GB LPDDR5X",
-      "storage": "256GB",
-      "os": "Android 14",
-      "camera": "イン: 800万画素 / アウト: 1300万画素 + 200万画素",
-      "interfaces": [
-        "下部: USB 3.2 Type-Cポート (DP-Out対応)",
-        "側面: USB 2.0 Type-Cポート"
+      "material": "オールメタルアルミニウムユニボディ",
+      "origin": "中国",
+      "connectivity": [
+        "Wi-Fi 6E / Wi-Fi 7",
+        "Bluetooth 5.4",
+        "デュアルUSB-C (USB 3.2 Gen2 DP出力対応 & USB 2.0 横持ち充電用)",
+        "microSDXCスロット (最大1TB)"
       ],
-      "color": "グレイシャーホワイト"
+      "other": [
+        "Legion ColdFront ベイパーチャンバー冷却システム",
+        "デュアルX軸リニアリニアバイブレーションモーター",
+        "デュアルJBLステレオスピーカー (Dolby Atmos)",
+        "165Hzハイリフレッシュレート & 350g軽量ボディ"
+      ]
     }
   }
 }

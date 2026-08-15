@@ -144,22 +144,36 @@
       "scoreRationale": "[基本点: 70]\n[加点: +5] Kindle初のカラー表示対応という独自の強み・先進性\n[加点: +5] 32GB大容量ストレージによる実用性の高さ\n[加点: +5] 防水機能対応による幅広い使用シーン\n[減点: -5] 他社競合製品と比較してやや高価な価格設定\n[合計: 80]"
     },
     "technicalSpecs": {
-      "dimensions": {
-        "height": "7.87mm",
-        "width": "127.5mm",
-        "depth": "176.78mm"
+      "os": "Kindle OS",
+      "storage": "32GB",
+      "display": {
+        "size": "7.0インチ",
+        "resolution": "300ppi (白黒) / 150ppi (カラー)",
+        "type": "Colorsoft カラーE Ink電子ペーパー (光反射防止)",
+        "refreshRate": "E-Ink"
       },
-      "weight": "217.7g",
-      "capacity": "32GB",
-      "material": "プラスチック等",
-      "origin": "不明",
+      "battery": {
+        "capacity": "内蔵充電池",
+        "charging": "USB-C (最大9W) / Qiワイヤレス充電対応",
+        "playbackTime": "最大8週間 (1日30分使用時)"
+      },
+      "dimensions": {
+        "height": "176.7mm",
+        "width": "127.6mm",
+        "depth": "7.8mm",
+        "weight": "219g"
+      },
+      "weight": "219g",
+      "material": "再生プラスチック樹脂",
+      "origin": "中国",
+      "connectivity": [
+        "Wi-Fi 2.4GHz / 5.0GHz"
+      ],
       "other": [
-        "ディスプレイ: 17.78cmカラー電子ペーパー（白黒300ppi、カラー150ppi）",
-        "防水性能: IPX8",
-        "バッテリー駆動時間: 最大8週間",
-        "充電端子: USB-C",
-        "ワイヤレス充電: 対応（充電器別売）",
-        "色調調節ライト搭載"
+        "防水性能: IPX8 (水深2mで最大60分耐水)",
+        "自動明るさ調整機能 & 色調調節ライト (ホワイト〜アンバー)",
+        "ワイヤレス充電対応",
+        "カラー表示 (書籍・コミック・ハイライト)"
       ]
     }
   }

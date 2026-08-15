@@ -107,23 +107,43 @@
       "scoreRationale": "[基本点: 70]\n[加点: +5] (大容量1TB SSD搭載による保存領域の余裕)\n[加点: +5] (約1.1kgの軽量・堅牢なボディで携帯性に優れる)\n[減点: -15] (同等のCPU搭載機で256GBモデルが2万円台前半なのに対し、5万円台はコストパフォーマンスが悪い)\n[減点: -5] (メモリ8GBで増設不可のため、将来的な重作業への対応に懸念)\n[合計: 60]"
     },
     "technicalSpecs": {
-      "dimensions": {
-        "height": "不明",
-        "width": "不明",
-        "depth": "不明"
+      "os": "Windows 11 Pro 64bit",
+      "cpu": "Intel Core i5-8350U (4コア / 8スレッド 最大3.6GHz)",
+      "ram": "8GB (LPDDR3)",
+      "storage": "256GB (SSD)",
+      "display": {
+        "size": "12.1インチ",
+        "resolution": "1920×1200 (WUXGA 16:10)",
+        "type": "TFTアンチグレア液晶",
+        "refreshRate": "60Hz"
       },
-      "weight": "1100g",
-      "capacity": "1TB (SSD)",
-      "material": "不明",
-      "origin": "不明",
+      "battery": {
+        "capacity": "42Wh (バッテリーパックS)",
+        "playbackTime": "最大14時間"
+      },
+      "dimensions": {
+        "height": "24.5mm",
+        "width": "283.5mm",
+        "depth": "203.8mm",
+        "weight": "919g"
+      },
+      "weight": "919g",
+      "material": "マグネシウム合金ボディ",
+      "origin": "日本 (神戸工場)",
+      "connectivity": [
+        "Wi-Fi 5 (802.11ac)",
+        "Bluetooth 4.2",
+        "ギガビット有線LAN",
+        "Thunderbolt 3 (USB-C)",
+        "USB 3.0 Type-A ×3",
+        "HDMI",
+        "VGA (RGB)",
+        "SDカードスロット"
+      ],
       "other": [
-        "ディスプレイ: 約30cm WUXGA (1920×1200)",
-        "CPU: Intel Core i5-8250U",
-        "メモリ: 8GB",
-        "OS: Windows 11 Pro",
-        "付属ソフト: Microsoft Office 2019",
-        "インターフェース: USB Type-C, HDMI, Wi-Fi, Bluetooth",
-        "WEBカメラ内蔵"
+        "超軽量919g",
+        "76cm落下試験・100kgf加圧振動試験クリア",
+        "顔認証カメラ対応"
       ]
     }
   }

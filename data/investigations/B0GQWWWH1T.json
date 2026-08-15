@@ -159,23 +159,44 @@
       "scoreRationale": "[基本点: 70]\n[加点: +10] (M4チップによる圧倒的な処理パフォーマンス)\n[加点: +5] (Apple Intelligenceへの対応による将来性)\n[加点: +5] (Wi-Fi 7対応による高速通信環境の提供)\n[加点: +5] (Apple Pencil Proへの対応による高度な入力体験)\n[減点: -5] (上位モデルと比較した場合の生体認証がTouch IDのみであること)\n[減点: -5] (ProMotion（120Hz）非対応による表示の滑らかさの不足)\n[合計: 85]"
     },
     "technicalSpecs": {
-      "display": "27.9cm (11インチ) Liquid Retinaディスプレイ",
-      "chip": "Apple M4チップ",
-      "capacity": "256GB",
-      "camera": "12MPフロントカメラ（センターフレーム対応）、12MP広角バックカメラ",
-      "connectivity": "Wi-Fi 7 (Apple N1搭載)",
-      "authentication": "Touch ID",
-      "color": "スペースグレイ",
+      "os": "iPadOS 18 (Apple Intelligence対応)",
+      "cpu": "Apple M4チップ (9コアCPU / 10コアGPU / 16コアNeural Engine)",
+      "ram": "8GB",
+      "storage": "256GB",
+      "display": {
+        "size": "11インチ",
+        "resolution": "2360×1640 (Liquid Retina / 264ppi)",
+        "type": "IPS液晶 (P3広色域 / True Tone / 500nits)",
+        "refreshRate": "60Hz"
+      },
+      "battery": {
+        "capacity": "28.93Wh",
+        "charging": "USB-C急速充電",
+        "playbackTime": "最大10時間"
+      },
+      "camera": {
+        "main": "12MP (広角 4K動画撮影)",
+        "front": "12MP 横向きセンターフレーム超広角カメラ"
+      },
       "dimensions": {
         "height": "247.6mm",
         "width": "178.5mm",
-        "depth": "6.1mm"
+        "depth": "6.1mm",
+        "weight": "462g"
       },
       "weight": "462g",
+      "material": "100%リサイクルアルミニウムボディ",
+      "origin": "中国 / ベトナム",
+      "connectivity": [
+        "Wi-Fi 6E (802.11ax)",
+        "Bluetooth 5.3",
+        "USB-C (USB 3 10Gbps)"
+      ],
       "other": [
-        "Apple Pencil Pro、Apple Pencil（USB-C）、Magic Keyboard対応",
-        "Apple Intelligence対応",
-        "一日中使えるバッテリー"
+        "Apple Pencil Pro / Apple Pencil (USB-C) 対応",
+        "Magic Keyboard対応",
+        "生体認証: トップボタンTouch ID",
+        "横向きステレオスピーカー"
       ]
     }
   }

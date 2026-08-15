@@ -159,23 +159,43 @@
       "scoreRationale": "[基本点: 70]\n[加点: +5] (Kompanio 838と8GBメモリによるChromeOS端末として十分な処理性能)\n[加点: +4] (キーボード込みで約1kgという優れた携帯性)\n[加点: +4] (1920x1200の高解像度IPSディスプレイを搭載し視認性が高い)\n[加点: +2] (タブレットとしてもPCとしても使える2-in-1の利便性)\n[減点: -2] (2-in-1特有の膝上でのタイピングのしにくさ)\n[合計: 83]"
     },
     "technicalSpecs": {
-      "dimensions": {
-        "width": "255.37mm",
-        "height": "166.92mm",
-        "depth": "7.6mm"
+      "os": "ChromeOS",
+      "cpu": "MediaTek Kompanio 838 (オクタコア NPU内蔵)",
+      "ram": "8GB (LPDDR4X)",
+      "storage": "128GB (eMMC 5.1)",
+      "display": {
+        "size": "10.95インチ",
+        "resolution": "1920×1200 (WUXGA 16:10)",
+        "type": "IPS液晶 (マルチタッチ / 400nits)",
+        "refreshRate": "60Hz"
       },
-      "weight": "1000g",
-      "capacity": "128GB",
-      "material": "プラスチック・金属等の複合素材",
+      "battery": {
+        "capacity": "29Wh",
+        "charging": "45W USB-C急速充電",
+        "playbackTime": "最大12時間"
+      },
+      "camera": {
+        "main": "8MP (オートフォーカス)",
+        "front": "5MP"
+      },
+      "dimensions": {
+        "height": "166.3mm",
+        "width": "255.4mm",
+        "depth": "7.6mm",
+        "weight": "510g"
+      },
+      "weight": "510g",
+      "material": "アルミニウム合金 + PC-ABS",
       "origin": "中国",
+      "connectivity": [
+        "Wi-Fi 6 (802.11ax)",
+        "Bluetooth 5.3",
+        "USB 3.2 Gen1 Type-C (DP出力/PD充電) ×2"
+      ],
       "other": [
-        "OS: Chrome OS",
-        "CPU: MediaTek Kompanio 838",
-        "Memory: 8GB",
-        "Display: 27.8cm IPS (1920x1200)",
-        "Interfaces: USB Type-C x2",
-        "Wireless: Wi-Fi 6, Bluetooth 5.3",
-        "Battery life: 約12時間"
+        "USI 2.0 スタイラスペン対応 (Lenovo USI Pen付属)",
+        "着脱式フォリオキーボード & スタンドカバー付属",
+        "生体認証: 指紋認証センサー"
       ]
     }
   }

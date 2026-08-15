@@ -163,32 +163,44 @@
       "scoreRationale": "[基本点: 70]\n[加点: +10] (Snapdragon 8 Gen 3搭載による現行最高峰の処理性能)\n[加点: +5] (2つのUSB Type-Cポートによるゲーマー向けの優れたインターフェース設計)\n[加点: +10] (8.8インチ、高解像度という絶妙なサイズと美しい画面の品質)\n[減点: -5] (イヤホンジャックとmicroSDカードスロットの廃止による拡張性の低下)\n[合計: 90]"
     },
     "technicalSpecs": {
-      "os": "Android 14",
+      "os": "Android 14 (ZUI 16)",
       "cpu": "Qualcomm Snapdragon 8 Gen 3",
-      "ram": "12GB LPDDR5X",
-      "storage": "256GB",
+      "ram": "12GB (LPDDR5X)",
+      "storage": "256GB (UFS 4.0)",
       "display": {
         "size": "8.8インチ",
-        "resolution": "2560x1600",
-        "type": "IPS液晶 (最大165Hz)"
+        "resolution": "2560×1600 (2.5K 16:10)",
+        "type": "IPS液晶 (500nits / DCI-P3 98% / Dolby Vision)",
+        "refreshRate": "165Hz"
       },
       "battery": {
         "capacity": "6550mAh",
-        "charging": "最大68W急速充電 / バイパス充電対応"
+        "charging": "68W Super Rapid Charge急速充電 (バイパス充電対応)"
+      },
+      "camera": {
+        "main": "13MP + 2MP (マクロ)",
+        "front": "8MP"
       },
       "dimensions": {
         "height": "208.5mm",
         "width": "129.5mm",
-        "depth": "7.6mm"
+        "depth": "7.6mm",
+        "weight": "350g"
       },
-      "weight": "約350g",
-      "capacity": "なし",
-      "material": "不明",
+      "weight": "350g",
+      "material": "オールメタルアルミニウムユニボディ",
       "origin": "中国",
+      "connectivity": [
+        "Wi-Fi 6E / Wi-Fi 7",
+        "Bluetooth 5.4",
+        "デュアルUSB-C (USB 3.2 Gen2 DP出力対応 & USB 2.0 横持ち充電用)",
+        "microSDXCスロット (最大1TB)"
+      ],
       "other": [
-        "インターフェース: 下部USB 3.2 Type-C (DP-Out対応)、側面USB 2.0 Type-C",
-        "カメラ: イン800万画素 / アウト1300万画素+200万画素",
-        "通信: Wi-Fi 6E, Bluetooth 5.3"
+        "Legion ColdFront ベイパーチャンバー冷却システム",
+        "デュアルX軸リニアリニアバイブレーションモーター",
+        "デュアルJBLステレオスピーカー (Dolby Atmos)",
+        "165Hzハイリフレッシュレート & 350g軽量ボディ"
       ]
     }
   }

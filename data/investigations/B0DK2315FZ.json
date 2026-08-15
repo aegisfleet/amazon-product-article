@@ -163,23 +163,36 @@
       "scoreRationale": "[基本点: 70]\n[加点: +10] (2万円以下という低価格ながら実用的な第7世代Core i5とSSDを搭載しておりコストパフォーマンスが非常に高い)\n[加点: +5] (専門業者による整備と180日間の動作保証が付帯しており安心感がある)\n[加点: +3] (DVDマルチドライブや豊富なポート類を標準搭載し実用性に優れる)\n[減点: -3] (重量が約2.4kgと重くモバイル用途には適さない)\n[合計: 85]"
     },
     "technicalSpecs": {
-      "dimensions": {
-        "height": "24.9mm",
-        "width": "374mm",
-        "depth": "250mm"
+      "os": "Windows 11 Pro 64bit",
+      "cpu": "Intel Core i5-7200U (2コア / 4スレッド 最大3.1GHz)",
+      "ram": "8GB (DDR4)",
+      "storage": "256GB (SSD)",
+      "display": {
+        "size": "15.6インチ",
+        "resolution": "1366×768 (HD)",
+        "type": "LEDバックライト付TFT液晶 (ノングレア)",
+        "refreshRate": "60Hz"
       },
-      "weight": "2.4kg",
-      "capacity": "メモリ: 8GB / SSD: 256GB",
-      "material": "プラスチック（標準的なノートPC筐体）",
-      "origin": "不明（整備は国内）",
+      "dimensions": {
+        "height": "32.5mm",
+        "width": "374.0mm",
+        "depth": "250.0mm",
+        "weight": "2.1kg"
+      },
+      "weight": "2.1kg",
+      "material": "高剛性樹脂",
+      "origin": "日本 (富士通)",
+      "connectivity": [
+        "Wi-Fi 5 (802.11ac)",
+        "Bluetooth 4.1",
+        "有線LAN",
+        "USB 3.0 ×4",
+        "HDMI",
+        "VGA"
+      ],
       "other": [
-        "CPU: インテル Core i5-7200U (2.5GHz)",
-        "ディスプレイ: 15.6型",
-        "光学ドライブ: DVDマルチドライブ",
-        "OS: Windows 11",
-        "Office: Microsoft Office 2019搭載",
-        "通信機能: Wi-Fi対応、有線LAN搭載",
-        "インターフェース: HDMI、USBポート搭載"
+        "テンキー付きアイソレーションキーボード",
+        "DVDドライブ搭載"
       ]
     }
   }

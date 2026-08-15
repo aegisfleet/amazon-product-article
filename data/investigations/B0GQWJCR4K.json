@@ -170,23 +170,45 @@
       "scoreRationale": "[基本点: 70]\n[加点: +10] (M4チップによる極めて高いパフォーマンスと実用性)\n[加点: +5] (Wi-Fi 7対応など最新規格への対応による将来性の高さ)\n[合計: 85]"
     },
     "technicalSpecs": {
-      "weight": "462g",
-      "capacity": "128GB",
-      "material": "アルミニウム",
-      "other": [
-        "カラー: スペースグレイ",
-        "チップ: Apple M4チップ",
-        "ディスプレイ: 27.9cm Liquid Retinaディスプレイ (P3広色域、True Tone対応)",
-        "通信機能: Wi-Fi 7対応 (Apple N1)",
-        "カメラ: 12MPフロントカメラ(センターフレーム対応)、12MP広角バックカメラ",
-        "セキュリティ: Touch ID搭載",
-        "対応アクセサリ: Apple Pencil Pro、Apple Pencil (USB-C)、Magic Keyboard"
-      ],
+      "os": "iPadOS 18 (Apple Intelligence対応)",
+      "cpu": "Apple M4チップ (9コアCPU / 10コアGPU / 16コアNeural Engine)",
+      "ram": "8GB",
+      "storage": "256GB",
+      "display": {
+        "size": "11インチ",
+        "resolution": "2360×1640 (Liquid Retina / 264ppi)",
+        "type": "IPS液晶 (P3広色域 / True Tone / 500nits)",
+        "refreshRate": "60Hz"
+      },
+      "battery": {
+        "capacity": "28.93Wh",
+        "charging": "USB-C急速充電",
+        "playbackTime": "最大10時間"
+      },
+      "camera": {
+        "main": "12MP (広角 4K動画撮影)",
+        "front": "12MP 横向きセンターフレーム超広角カメラ"
+      },
       "dimensions": {
         "height": "247.6mm",
         "width": "178.5mm",
-        "depth": "6.1mm"
-      }
+        "depth": "6.1mm",
+        "weight": "462g"
+      },
+      "weight": "462g",
+      "material": "100%リサイクルアルミニウムボディ",
+      "origin": "中国 / ベトナム",
+      "connectivity": [
+        "Wi-Fi 6E (802.11ax)",
+        "Bluetooth 5.3",
+        "USB-C (USB 3 10Gbps)"
+      ],
+      "other": [
+        "Apple Pencil Pro / Apple Pencil (USB-C) 対応",
+        "Magic Keyboard対応",
+        "生体認証: トップボタンTouch ID",
+        "横向きステレオスピーカー"
+      ]
     }
   }
 }

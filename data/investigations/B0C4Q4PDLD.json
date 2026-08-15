@@ -148,25 +148,36 @@
       "scoreRationale": "[基本点: 70]\n[加点: +5] (16GBの大容量メモリによるマルチタスクの快適性)\n[加点: +5] (テンキー内蔵で事務作業に向いている実用性)\n[減点: -5] (第4世代とCPUが古く、基本処理性能に限界がある)\n[合計: 75]"
     },
     "technicalSpecs": {
-      "dimensions": {
-        "height": "不明",
-        "width": "不明",
-        "depth": "不明"
+      "os": "Windows 11 Pro 64bit",
+      "cpu": "Intel Core i7-4600M (2コア / 4スレッド 最大3.6GHz)",
+      "ram": "16GB (DDR3L)",
+      "storage": "256GB (SSD)",
+      "display": {
+        "size": "15.6インチ",
+        "resolution": "1366×768 (HD)",
+        "type": "LEDバックライト付TFT液晶 (ノングレア)",
+        "refreshRate": "60Hz"
       },
-      "weight": "不明",
-      "capacity": "画面サイズ 396mm",
-      "material": "不明",
-      "origin": "不明",
+      "dimensions": {
+        "height": "34.7mm",
+        "width": "374.0mm",
+        "depth": "250.0mm",
+        "weight": "2.3kg"
+      },
+      "weight": "2.3kg",
+      "material": "高剛性樹脂",
+      "origin": "日本 (富士通)",
+      "connectivity": [
+        "Wi-Fi (外付けまたは内蔵)",
+        "ギガビット有線LAN",
+        "USB 3.0 ×2",
+        "USB 2.0 ×2",
+        "HDMI",
+        "VGA"
+      ],
       "other": [
-        "画面サイズ: 396mm (15.6型に相当)",
-        "メモリ: 16GB",
-        "ストレージ: 256GB SSD",
-        "OS: Windows 11",
-        "Office: Microsoft Office 2019",
-        "キーボード: テンキー内蔵",
-        "光学ドライブ: DVDドライブ",
-        "ネットワーク: 無線LAN (Wi-Fi), 有線LAN",
-        "外部出力: HDMI"
+        "テンキー付きフルサイズキーボード",
+        "DVDドライブ搭載"
       ]
     }
   }

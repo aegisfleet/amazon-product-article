@@ -221,25 +221,47 @@
       "scoreRationale": "[基本点: 70]\n[加点: +5] (ビルドクオリティの高さと軽量なデザイン)\n[加点: +5] (1080p対応の高品質なWebカメラを搭載)\n[減点: -10] (日常利用でももたつくことがあるパフォーマンス不足)\n[減点: -10] (前世代より大幅に悪化した短いバッテリー駆動時間)\n[減点: -5] (別売りキーボードが必要で、スペックに対するコストパフォーマンスが悪い)\n[合計: 55]"
     },
     "technicalSpecs": {
+      "os": "Windows 11 Pro 64bit",
+      "cpu": "Intel Pentium Gold 6500Y (2コア / 4スレッド 最大3.4GHz)",
+      "ram": "8GB (LPDDR3)",
+      "storage": "128GB (SSD)",
+      "display": {
+        "size": "10.5インチ",
+        "resolution": "1920×1280 (PixelSense 3:2 / 220ppi)",
+        "type": "IPS液晶 (Corning Gorilla Glass 3 / 10点マルチタッチ)",
+        "refreshRate": "60Hz"
+      },
+      "battery": {
+        "capacity": "28Wh",
+        "charging": "Surface Connect / USB-C充電",
+        "playbackTime": "最大11時間"
+      },
+      "camera": {
+        "main": "8MP (オートフォーカス 1080p FHD)",
+        "front": "5MP (Windows Hello顔認証 1080p FHD)"
+      },
       "dimensions": {
-        "height": "175mm",
-        "width": "245mm",
-        "depth": "8.3mm"
+        "height": "175.0mm",
+        "width": "245.0mm",
+        "depth": "8.3mm",
+        "weight": "544g"
       },
       "weight": "544g",
-      "capacity": "64GB eMMC",
-      "material": "マグネシウム合金",
-      "origin": "不明",
+      "material": "マグネシウム合金ボディ",
+      "origin": "中国",
+      "connectivity": [
+        "Wi-Fi 6 (802.11ax)",
+        "Bluetooth 5.0",
+        "USB-C ×1",
+        "Surface Connectポート",
+        "microSDXCカードリーダー",
+        "3.5mmイヤホンジャック"
+      ],
       "other": [
-        "CPU: Intel Pentium Gold 6500Y",
-        "RAM: 4GB",
-        "ディスプレイ: 約26.7cm PixelSense ディスプレイ (1920x1280)",
-        "バッテリー: 最長約11時間 (メーカー公称値)",
-        "OS: Windows 11 Home (Sモード)",
-        "無線LAN: Wi-Fi 6",
-        "Bluetooth: 5.0",
-        "インターフェース: USB-C×1, 3.5mmヘッドフォンジャック, Surface Connectポート, MicroSDXCカードリーダー",
-        "カメラ: 5.0MP フロントカメラ (1080p HDビデオ対応, Windows Hello対応), 8.0MP オートフォーカス付きリアカメラ (1080p HDビデオ対応)"
+        "Surface Pen対応 (4096段階筆圧検知)",
+        "キックスタンド無段階調整 (最大165°)",
+        "Windows Hello顔認証サインイン",
+        "2Wステレオスピーカー (Dolby Audio)"
       ]
     }
   }

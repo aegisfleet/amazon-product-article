@@ -137,21 +137,45 @@
       "scoreRationale": "[基本点: 70]\n[加点: +3] (10.95インチの大きな画面による視認性の高さ)\n[加点: +2] (充電制御機能によるバッテリー寿命の延長)\n[減点: -5] (処理性能のもっさり感)\n[減点: -5] (サポート対応に関する懸念)\n[合計: 65]"
     },
     "technicalSpecs": {
+      "os": "Android 13 (Android 15までアップデート保証)",
+      "cpu": "MediaTek Helio G88",
+      "ram": "4GB (LPDDR4X)",
+      "storage": "128GB (eMMC 5.1)",
+      "display": {
+        "size": "10.95インチ",
+        "resolution": "1920×1200 (WUXGA 16:10)",
+        "type": "IPS液晶 (90Hz / TÜV低ブルーライト)",
+        "refreshRate": "90Hz"
+      },
+      "battery": {
+        "capacity": "7040mAh",
+        "charging": "15W急速充電 (USB-C)",
+        "playbackTime": "最大10時間"
+      },
+      "camera": {
+        "main": "8MP",
+        "front": "8MP"
+      },
       "dimensions": {
-        "height": "255.3mm",
-        "width": "166.3mm",
-        "depth": "7.2mm"
+        "height": "166.3mm",
+        "width": "255.3mm",
+        "depth": "7.15mm",
+        "weight": "465g"
       },
       "weight": "465g",
-      "capacity": "128GB",
-      "material": "情報なし",
-      "origin": "情報なし",
+      "material": "メタルデュアルトーンデザイン",
+      "origin": "中国",
+      "connectivity": [
+        "Wi-Fi 5 (802.11ac)",
+        "Bluetooth 5.1",
+        "USB 2.0 Type-C",
+        "3.5mmオーディオジャック"
+      ],
       "other": [
-        "OS: Android 13",
-        "CPU: MediaTek Helio G88",
-        "メモリ: 4GB",
-        "ディスプレイ: 10.95型 (1920x1200)",
-        "バッテリー: 7040mAh"
+        "Lenovo Tab Pen付属 (4096段階筆圧検知)",
+        "クアッドスピーカー (Dolby Atmos対応)",
+        "IP52防滴防塵",
+        "4画面マルチタスク対応"
       ]
     }
   }

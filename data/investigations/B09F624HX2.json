@@ -163,24 +163,40 @@
       "scoreRationale": "[基本点: 70]\n[加点: +5] (Windows 11 Pro & Office 2024が標準搭載されており、実用性が高い)\n[加点: +5] (FHD IPS液晶と豊富なインターフェースを備え、使い勝手が良い)\n[加点: +5] (初期設定不要で初心者でもすぐに利用開始できるユーザーフレンドリーな設計)\n[減点: -2] (ストレージが128GBと少なく、大容量データの保存には工夫が必要)\n[合計: 83]"
     },
     "technicalSpecs": {
-      "dimensions": {
-        "height": "15mm",
-        "width": "217mm",
-        "depth": "327mm"
+      "os": "Windows 11 Pro 64bit",
+      "cpu": "Intel Celeron J4105 (4コア / 4スレッド 最大2.5GHz)",
+      "ram": "6GB (LPDDR4)",
+      "storage": "128GB (SSD M.2)",
+      "display": {
+        "size": "14.0インチ",
+        "resolution": "1920×1080 (FHD)",
+        "type": "IPS液晶 (狭額縁ノングレア)",
+        "refreshRate": "60Hz"
       },
-      "weight": "1930g",
-      "capacity": "128GB SSD",
-      "material": "プラスチック（つや消し加工）",
+      "battery": {
+        "capacity": "38Wh (5000mAh)",
+        "playbackTime": "約4〜6時間"
+      },
+      "dimensions": {
+        "height": "18.0mm",
+        "width": "320.0mm",
+        "depth": "210.0mm",
+        "weight": "1.3kg"
+      },
+      "weight": "1.3kg",
+      "material": "シルバー樹脂筐体",
       "origin": "中国",
+      "connectivity": [
+        "Wi-Fi 5 (2.4G/5G)",
+        "Bluetooth 4.2",
+        "USB 3.0 ×2",
+        "Mini HDMI",
+        "microSDスロット"
+      ],
       "other": [
-        "OS: Windows 11 Pro 64bit",
-        "ソフトウェア: Microsoft Office 2024",
-        "CPU: Intel Celeron J4105 (1.5GHz〜最大2.7GHz / 4コア)",
-        "メモリ: 8GB DDR4",
-        "ディスプレイ: 35.56cm (14型) フルHD (1920x1080) IPS液晶",
-        "通信: 2.4G/5G デュアルバンドWi-Fi, Bluetooth 4.2",
-        "インターフェース: USB 3.0 x 2, HDMI, 3.5mmイヤホンジャック, TFカードスロット",
-        "付属品: 日本語キーボードフィルム"
+        "薄型軽量1.3kg",
+        "日本語キーボードカバー付属",
+        "Office互換ソフト付属"
       ]
     }
   }

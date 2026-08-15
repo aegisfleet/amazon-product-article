@@ -169,22 +169,41 @@
       "scoreRationale": "[基本点: 70]\n[加点: +5] (第12世代Core i9と24GBメモリの搭載)\n[減点: -15] (同等以上のスペックを持つ大手メーカー製品よりはるかに高価でコスパが非常に悪い)\n[減点: -10] (サクラチェッカーで要注意メーカーとされており、サポートや信頼性に懸念がある)\n[合計: 50]"
     },
     "technicalSpecs": {
-      "dimensions": {
-        "height": "18.99mm",
-        "width": "227.99mm",
-        "depth": "357.99mm"
+      "os": "Windows 11 Pro 64bit",
+      "cpu": "Intel Core i7-1060NG7 (4コア / 8スレッド 最大3.8GHz)",
+      "ram": "16GB (LPDDR4)",
+      "storage": "512GB (SSD M.2)",
+      "display": {
+        "size": "17.3インチ",
+        "resolution": "1920×1080 (FHD 16:9)",
+        "type": "IPS広視野角液晶 (狭額縁大画面)",
+        "refreshRate": "60Hz"
       },
-      "weight": "1699g",
-      "capacity": "1TB SSD, 24GB RAM",
-      "material": "不明",
+      "battery": {
+        "capacity": "38Wh (5000mAh/7.6V)",
+        "playbackTime": "約6時間"
+      },
+      "dimensions": {
+        "height": "19.8mm",
+        "width": "392.0mm",
+        "depth": "258.0mm",
+        "weight": "1.98kg"
+      },
+      "weight": "1.98kg",
+      "material": "アルミニウム合金メタル天板",
       "origin": "中国",
+      "connectivity": [
+        "Wi-Fi 5 (2.4G/5G)",
+        "Bluetooth 4.2",
+        "USB Type-C (フル機能) ×1",
+        "USB 3.0 ×2",
+        "Mini HDMI",
+        "Micro SDスロット"
+      ],
       "other": [
-        "CPU: Intel Core i9-12900H",
-        "ディスプレイ: 15.6型 フルHD IPS非光沢",
-        "バッテリー: 51.3Wh",
-        "OS: Windows 11 Pro",
-        "通信: Wi-Fi 6, Bluetooth 5.4",
-        "インターフェース: USB-A 3.2 Gen1 x3, HDMI, Type-C(フル機能), TFカードスロット, 3.5mmオーディオジャック"
+        "17.3型超大画面",
+        "テンキー付きフルサイズキーボード",
+        "ステレオデュアルスピーカー"
       ]
     }
   }

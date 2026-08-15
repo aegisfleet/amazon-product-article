@@ -163,21 +163,32 @@
       "scoreRationale": "[基本点: 70]\n[加点: +5] (Ryzen 7 7730Uによる優れた処理性能)\n[加点: +5] (最大64GBメモリ/4TB SSDまでの高い拡張性)\n[加点: +5] (5万円台の価格設定による高いコストパフォーマンス)\n[減点: -2] (内部アクセスのための分解手順とネジ品質の懸念)\n[合計: 83]"
     },
     "technicalSpecs": {
+      "os": "Windows 11 Pro 64bit",
+      "cpu": "AMD Ryzen 7 7730U (8コア / 16スレッド 最大4.5GHz)",
+      "ram": "16GB (DDR4-3200)",
+      "storage": "512GB (M.2 NVMe SSD)",
       "dimensions": {
-        "width": "128mm",
-        "height": "41.3mm",
-        "depth": "128mm"
+        "height": "40.0mm",
+        "width": "128.0mm",
+        "depth": "128.0mm",
+        "weight": "400g"
       },
-      "weight": "560g",
-      "capacity": "16GB RAM, 512GB SSD",
-      "material": "アルミニウム(冷却モジュール一部)",
-      "origin": "不明",
+      "weight": "400g",
+      "material": "ABS樹脂・メタル放熱プレート",
+      "origin": "中国",
+      "connectivity": [
+        "Wi-Fi 6",
+        "Bluetooth 5.2",
+        "ギガビット有線LAN (RJ45)",
+        "Type-C (フル機能)",
+        "HDMI 2.0 ×2",
+        "USB 3.0 ×2",
+        "USB 2.0 ×2"
+      ],
       "other": [
-        "CPU: AMD Ryzen 7 7730U (8コア16スレッド、最大4.5GHz)",
-        "OS: Windows 11 Pro",
-        "通信: Wi-Fi 6, Bluetooth 5.2, 10/100/1000Mbps RJ45イーサネット",
-        "インターフェース: USB 3.2 Gen 2x2 (Type-C, 10Gbps, DP1.4, PD出力), USB 3.2 Gen 1 x 4, DP 1.4b x 1, HDMI 2.0 x 1, 3.5mmオーディオジャック",
-        "付属品: VESAマウント対応"
+        "3画面同時出力対応 (4K@60Hz)",
+        "静音高効率冷却ファン搭載",
+        "VESAマウント対応"
       ]
     }
   }
