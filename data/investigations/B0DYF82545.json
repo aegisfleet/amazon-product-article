@@ -184,22 +184,37 @@
       "scoreRationale": "[基本点: 70]\n[加点: +8] (5,000円台という非常に高いコストパフォーマンス)\n[加点: +7] (最大21日間のロングバッテリーによる利便性)\n[加点: +5] (1.72インチAMOLEDと1500nits高輝度による優れた視認性)\n[減点: -5] (GPS非搭載のため、単体でのルート記録ができない制約)\n[合計: 85]"
     },
     "technicalSpecs": {
-      "dimensions": {
-        "height": "0mm",
-        "width": "0mm",
-        "depth": "0mm"
+      "os": "Xiaomi HyperOS 2",
+      "display": {
+        "size": "1.62インチ",
+        "resolution": "192×490 (326ppi)",
+        "type": "AMOLED (有機EL / 最大1200nits / AOD対応)",
+        "refreshRate": "60Hz"
       },
-      "weight": "27g",
-      "display": "1.72インチ AMOLED",
-      "brightness": "最大1500nits",
-      "batteryLife": "最大21日間",
-      "sensors": "9軸モーションセンサー、心拍数センサー、血中酸素センサー",
-      "waterResistance": "水泳対応（具体的なATM表記等は要確認）",
-      "compatibility": "iPhone & Android (HyperOS 2.0対応)",
+      "battery": {
+        "capacity": "233mAh",
+        "charging": "マグネット式急速充電 (約1時間満充電)",
+        "playbackTime": "最大21日間 (通常使用時) / AOD時最大9日間"
+      },
+      "dimensions": {
+        "height": "46.5mm",
+        "width": "21.6mm",
+        "depth": "10.95mm",
+        "weight": "15.8g (本体のみ)"
+      },
+      "weight": "15.8g",
+      "material": "サンドブラスト加工アルミニウム合金フレーム / TPUストラップ",
+      "origin": "中国",
+      "connectivity": [
+        "Bluetooth 5.4 BLE"
+      ],
       "other": [
-        "Bluetooth対応",
+        "防水性能: 5ATM (50m防水)",
+        "周囲光センサーによる自動輝度調整",
+        "高精度心拍数・血中酸素・睡眠モニタリング",
         "150種類以上のスポーツモード",
-        "LINE着信・メッセージ通知対応"
+        "※GPS非搭載",
+        "※Suica非対応"
       ]
     }
   }

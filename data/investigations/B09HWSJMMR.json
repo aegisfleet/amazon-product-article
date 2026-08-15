@@ -27,14 +27,18 @@
         "userType": "猫の飼い主",
         "scenario": "仕事で帰りが遅くなる日の給餌",
         "experience": "仕事が忙しくて帰りが遅くなる日でも、スマホアプリ「SmartLife」を使って外出先からすぐに給餌できるのが本当に助かっています。急な残業の際にも、ペットにお腹を空かせて待たせる心配がなくなりました。カメラ機能はないものの、きちんとご飯が出たことが通知されるので、それだけで安心感が全く違います。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "犬の飼い主",
         "scenario": "多頭飼いでの日常的な利用",
         "experience": "我が家は多頭飼いなので、4.3リットルという大容量のフードタンクのおかげで数日に1回の補充で済むようになり、日々の手間が格段に減りました。ただ、1回に出る給餌量が10g単位とざっくりしているため、小型犬向けに5g単位で細かくカロリーコントロールをしたい場合には少し不便さを感じる場面もあります。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "mixed"
       }
     ],
@@ -57,7 +61,9 @@
         "claim": "外出先からスマホアプリで給餌のスケジューリングや即時給餌が可能。",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": false,
         "notes": "公式の商品仕様および特徴として明記されているが、他ソースでの検証なし。"
       },
@@ -65,7 +71,9 @@
         "claim": "ACアダプタと乾電池の2WAY給電で、停電時もスケジュール通りの給餌が可能。",
         "category": "safety",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": false,
         "notes": "電源仕様に記載あり。停電時の実証レビューなどは未確認。"
       }
@@ -170,23 +178,30 @@
       "scoreRationale": "[基本点: 70]\n[加点: +10] (スマホアプリ連携機能があり遠隔操作可能な利便性を評価)\n[加点: +5] (4.3Lの大容量と2WAY給電対応の実用性)\n[加点: +5] (スマホ連携モデルとしては約3,980円と非常に安価でコスパが高い)\n[減点: -5] (給餌単位が10gごとで細かな調整がしにくい点)\n[減点: -3] (Wi-Fi設定につまずく可能性がある点)\n[合計: 82]"
     },
     "technicalSpecs": {
-      "dimensions": {
-        "height": "380mm",
-        "width": "245mm",
-        "depth": "300mm"
+      "camera": {
+        "main": "200万画素 (FHD 1920×1080 広角カメラ)",
+        "nightVision": "赤外線暗視LED搭載"
       },
-      "weight": "2100g",
-      "capacity": "4.3L",
-      "material": "プラスチック（フードタンク・トレイ）",
-      "origin": "不明",
-      "power": "ACアダプター（5V 2A）または単1形アルカリ乾電池3本",
-      "supportedFood": "ドライフード（直径5～15mm程度）",
-      "feedingAmount": "約10g～100g/回（10g単位）",
-      "feedingTimes": "1～4回/日",
-      "app": "SmartLife",
-      "smartSpeaker": "Amazon Echo、Google Home対応",
+      "dimensions": {
+        "height": "350mm",
+        "width": "245mm",
+        "depth": "250mm",
+        "weight": "2.1kg"
+      },
+      "weight": "2.1kg",
+      "material": "食品グレードABS樹脂 / ステンレス製フードボウル",
+      "origin": "中国",
+      "connectivity": [
+        "Wi-Fi 2.4GHz",
+        "専用スマホアプリ『Smart Life』連動"
+      ],
       "other": [
-        "給餌お知らせ音再生回数設定機能"
+        "給餌タンク容量: 4.3L (ドライフード専用)",
+        "給餌設定: 1日最大10回 / 1回1〜12ポーション設定可能",
+        "見守り機能: リアルタイム映像確認・動体検知通知・録画機能",
+        "双方向音声通話 & 10秒音声録音給餌コール",
+        "2WAY電源: ACアダプター + 単1形アルカリ乾電池3本 (停電時バックアップ)",
+        "ボウル・トレイ丸洗い可能"
       ]
     }
   }

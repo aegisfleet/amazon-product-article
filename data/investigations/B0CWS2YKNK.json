@@ -179,24 +179,33 @@
       "scoreRationale": "[基本点: 70]\n[加点: +5] (180Hzの高リフレッシュレートと1msの応答速度による高いゲーム性能)\n[加点: +5] (1500Rの湾曲とUWQHD解像度による高い没入感と広い作業領域)\n[加点: +5] (約4万円というウルトラワイドゲーミングモニターとしての優れたコストパフォーマンス)\n[合計: 85]"
     },
     "technicalSpecs": {
-      "dimensions": {
-        "height": "460mm",
-        "width": "991mm",
-        "depth": "188mm"
+      "display": {
+        "size": "34インチ",
+        "resolution": "3440×1440 (UWQHD 21:9)",
+        "type": "VA湾曲パネル (1500R曲率 / HDR400 / 350nits)",
+        "refreshRate": "180Hz"
       },
-      "weight": "6.9kg",
-      "displaySize": "34型",
-      "resolution": "UWQHD (3440 x 1440)",
-      "refreshRate": "180Hz",
-      "responseRate": "1ms",
-      "curvature": "1500R",
-      "panelType": "VA 非光沢",
-      "colorGamut": "sRGB100%",
-      "syncTechnology": "FreeSync Premium",
+      "dimensions": {
+        "height": "510.7mm",
+        "width": "811.3mm",
+        "depth": "210.0mm",
+        "weight": "7.5kg (スタンド含む)"
+      },
+      "weight": "7.5kg",
+      "material": "強化樹脂・スチールスタンド",
+      "origin": "中国",
+      "connectivity": [
+        "DisplayPort 1.4 ×2 (最大180Hz)",
+        "HDMI 2.0 ×2 (最大100Hz)",
+        "3.5mmオーディオ出力端子 ×1"
+      ],
       "other": [
-        "RGB周囲光",
-        "低ブルーライトモード (TÜV認証)",
-        "DC調光機能"
+        "応答速度: 1ms (MPRT)",
+        "色域: DCI-P3 95% / sRGB 100% (ΔE<2色精度)",
+        "AMD FreeSync Premium対応",
+        "TÜV低ブルーライト認証・DC調光フリッカーフリー",
+        "VESAマウント対応 (75×75mm)",
+        "RGBアンビエントライト背面搭載"
       ]
     }
   }

@@ -221,21 +221,30 @@
       "scoreRationale": "[基本点: 70]\n[加点: +15] (圧倒的なコストパフォーマンスと価格に対する音質の良さ)\n[加点: +5] (1000円台でありながら専用アプリでの設定やGoogle Fast Pairに対応する利便性)\n[減点: -5] (対応コーデックがSBCのみであり、ANCなどの高度な機能は非搭載)\n[合計: 85]"
     },
     "technicalSpecs": {
-      "dimensions": {
-        "height": "31mm",
-        "width": "100mm",
-        "depth": "100mm"
+      "battery": {
+        "capacity": "イヤホン 57mAh / 充電ケース 600mAh",
+        "charging": "USB Type-C (10分充電で最大3時間再生)",
+        "playbackTime": "イヤホン単体最大7.5時間 / ケース込み最大36時間"
       },
-      "weight": "45g",
-      "capacity": "イヤホン単体最大7.5時間、ケース込最大36時間",
-      "material": "プラスチック等",
+      "dimensions": {
+        "height": "29.5mm",
+        "width": "21.4mm",
+        "depth": "23.5mm",
+        "weight": "3.6g (イヤホン片耳) / 38g (ケース込み)"
+      },
+      "weight": "3.6g",
+      "material": "ABS樹脂",
       "origin": "中国",
+      "connectivity": [
+        "Bluetooth 5.4",
+        "対応コーデック: SBC, AAC",
+        "Google Fast Pair対応"
+      ],
       "other": [
-        "ドライバー: 10mmダイナミックドライバー",
-        "Bluetoothバージョン: 5.4",
-        "対応コーデック: SBC",
-        "防水性能: IPX4（イヤホンのみ）",
-        "充電端子: USB Type-C"
+        "ドライバー: 10mmダイナミックドライバー (重低音チューニング)",
+        "通話ノイズ低減: AIデュアルマイク通話ノイズリダクション",
+        "防滴性能: IPX4 (イヤホン本体)",
+        "Xiaomi Earbudsアプリ対応 (5種類のイコライザーEQプリセット)"
       ]
     }
   }

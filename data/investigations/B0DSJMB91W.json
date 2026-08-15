@@ -173,16 +173,38 @@
       "scoreRationale": "[基本点: 70]\n[加点: +5] (独自の強み・先進性：ベゼルが交換可能な独自のカスタマイズ性とジェスチャー制御)\n[加点: +5] (性能・機能：最大1500nitsの明るい有機ELと高精度GNSS、150種以上のスポーツモード)\n[加点: +5] (品質・デザイン：回転式クラウンや合金フレームなど高級感のあるビルドクオリティ)\n[合計: 85]"
     },
     "technicalSpecs": {
-      "// 注意": "調査で判明した仕様情報をここに網羅的に記載する（サイズはメートル法のみ）",
-      "weight": "約44.5g",
-      "display": "約36.3mm 有機ELディスプレイ",
-      "brightness": "最大1500nits",
-      "batteryLife": "通常モードで最大15日間",
-      "fastCharging": "5分間の充電で2日間の使用が可能",
-      "sportsModes": "150種類以上",
-      "features": "GNSS搭載、Bluetooth通話対応、交換可能なベゼル、回転式クラウン、ジェスチャー制御、心拍モニタリング、血中酸素、ストレス値測定",
-      "color": "シルバー",
-      "releaseDate": "2025-03-13"
+      "os": "Xiaomi HyperOS",
+      "display": {
+        "size": "1.43インチ",
+        "resolution": "466×466 (326ppi / ピーク2200nits)",
+        "type": "AMOLED (有機EL / AOD対応)",
+        "refreshRate": "60Hz"
+      },
+      "battery": {
+        "capacity": "486mAh",
+        "charging": "マグネット式急速充電",
+        "playbackTime": "最大15日間 (通常使用時) / AOD時最大5日間"
+      },
+      "dimensions": {
+        "height": "47.3mm",
+        "width": "47.3mm",
+        "depth": "12.0mm",
+        "weight": "44.5g (ストラップ除く)"
+      },
+      "weight": "44.5g",
+      "material": "ステンレススチールベゼル / アルミニウム合金フレーム",
+      "origin": "中国",
+      "connectivity": [
+        "Bluetooth 5.3 (Bluetooth通話対応)",
+        "L1+L5 デュアルバンドGNSS (GPS等)"
+      ],
+      "other": [
+        "ベゼル交換機構: スタイルに合わせてベゼルを物理交換可能",
+        "防水性能: 5ATM (50m防水)",
+        "高精度12ch心拍センサー",
+        "ジェスチャーコントロール機能 (指パッチン操作等)",
+        "※Suica非対応"
+      ]
     }
   }
 }

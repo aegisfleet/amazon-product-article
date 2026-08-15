@@ -62,8 +62,9 @@ APIデータで不足している詳細スペック（SoC型番、RAM/ROM規格�
 > かつての調査データでよく見られた「`other` 配列に `"CPU: ..."` や `"ディスプレイ: ..."` などの文字列をまとめて入れる」形式は非推奨です。
 > 比較モーダル（`compare.js`）や記事のスペック表で正しく横並び比較できるように、必ず各専用キー（`os`, `cpu`, `ram`, `storage`, `display`, `battery`, `camera`, `dimensions`, `connectivity`）へ構造化して記述してください。
 
-### 3.1 スマートフォン・タブレット・PC向け構造化スキーマ例
+### 3.1 カテゴリ別構造化スキーマ例
 
+#### A. スマートフォン・タブレット・PC / 端末
 ```json
 "technicalSpecs": {
   "os": "Android 15 (ColorOS 15)",
@@ -92,7 +93,7 @@ APIデータで不足している詳細スペック（SoC型番、RAM/ROM規格�
     "weight": "192g"
   },
   "weight": "192g",
-  "material": "ガラス / 樹脂（カラーによる加工）",
+  "material": "ガラス / 樹脂",
   "origin": "中国",
   "connectivity": [
     "5G",
@@ -104,9 +105,144 @@ APIデータで不足している詳細スペック（SoC型番、RAM/ROM規格�
   "other": [
     "防塵防水: IP68 / IP69",
     "生体認証: ディスプレイ指紋認証 / 顔認証",
-    "AI機能: AI消しゴム / AIポートレート機能",
-    "マクロカメラ: 2MP",
     "microSDXC対応 (最大2TB)"
+  ]
+}
+```
+
+#### B. スマートウォッチ・ウェアラブルバンド
+```json
+"technicalSpecs": {
+  "os": "Wear OS 5 (または独自OS)",
+  "cpu": "Qualcomm Snapdragon W5+ Gen 1",
+  "ram": "2GB",
+  "storage": "32GB",
+  "display": {
+    "size": "1.43インチ",
+    "resolution": "466×466 (326ppi)",
+    "type": "AMOLED (有機EL / 常時表示対応)",
+    "refreshRate": "60Hz"
+  },
+  "battery": {
+    "capacity": "495mAh",
+    "charging": "マグネット式急速充電 (約45分満充電)",
+    "playbackTime": "最大65時間 (通常使用時)"
+  },
+  "dimensions": {
+    "height": "47.6mm",
+    "width": "45.9mm",
+    "depth": "11.8mm",
+    "weight": "36.8g (ストラップ除く)"
+  },
+  "weight": "36.8g",
+  "material": "アルミニウム合金ケース / フッ素ゴムストラップ",
+  "connectivity": [
+    "Bluetooth 5.3",
+    "Wi-Fi 2.4GHz/5GHz",
+    "NFC (Suica / Google Pay対応)",
+    "GPS (L1+L5 デュアルバンド)"
+  ],
+  "other": [
+    "防水性能: 5ATM (50m防水) / IP68",
+    "搭載センサー: 心拍数, SpO2 (血中酸素), 皮膚温度, 加速度, 気圧, コンパス",
+    "生体認証 / ロック機能対応",
+    "対応端末: Android 8.0以上 / iOS非対応"
+  ]
+}
+```
+
+#### C. イヤホン・ヘッドホン / オーディオ機器
+```json
+"technicalSpecs": {
+  "battery": {
+    "capacity": "イヤホン 55mAh / ケース 500mAh",
+    "charging": "USB-C急速充電 (10分充電で最大2時間再生) / Qiワイヤレス充電",
+    "playbackTime": "単体最大9時間 / ケース込み最大38時間 (ANCオフ時)"
+  },
+  "dimensions": {
+    "height": "30.0mm",
+    "width": "21.0mm",
+    "depth": "23.0mm",
+    "weight": "5.1g (イヤホン片耳) / 45g (ケース込み)"
+  },
+  "weight": "5.1g",
+  "material": "ポリカーボネート樹脂",
+  "connectivity": [
+    "Bluetooth 5.4",
+    "対応コーデック: SBC, AAC, LDAC, LC3",
+    "マルチポイント接続対応 (最大2台)"
+  ],
+  "other": [
+    "アクティブノイズキャンセリング (ANC): 最大-48dB",
+    "外音取り込みモード (3段階調整)",
+    "ドライバー: 11mmチタンコートダイナミックドライバー",
+    "防塵防水: IP54 (イヤホン本体)",
+    "通話用マイク: 3マイク+AIノイズ低減"
+  ]
+}
+```
+
+#### D. ディスプレイ・PCモニター
+```json
+"technicalSpecs": {
+  "display": {
+    "size": "34インチ",
+    "resolution": "3440×1440 (UWQHD 21:9)",
+    "type": "VA曲面パネル (1500R / HDR400)",
+    "refreshRate": "180Hz"
+  },
+  "dimensions": {
+    "height": "510mm",
+    "width": "810mm",
+    "depth": "240mm",
+    "weight": "7.5kg (スタンド含む)"
+  },
+  "weight": "7.5kg",
+  "connectivity": [
+    "HDMI 2.0 ×2",
+    "DisplayPort 1.4 ×2",
+    "3.5mmオーディオ出力 ×1"
+  ],
+  "other": [
+    "応答速度: 1ms (MPRT)",
+    "色域: sRGB 99% / DCI-P3 95%",
+    "輝度: 350nits",
+    "同期技術: AMD FreeSync Premium対応",
+    "VESAマウント対応 (75×75mm)",
+    "スタンド機能: 高さ調節・チルト調整対応"
+  ]
+}
+```
+
+#### E. スマートカメラ・見守りカメラ・家電機器
+```json
+"technicalSpecs": {
+  "camera": {
+    "main": "300万画素 (2K 2304×1296)",
+    "nightVision": "赤外線暗視LED (最大10m) / フルカラーナイトビジョン"
+  },
+  "battery": {
+    "capacity": "5200mAh (内蔵充電池)",
+    "charging": "USB Type-C / ソーラーパネル給電対応 (別売)"
+  },
+  "dimensions": {
+    "height": "115mm",
+    "width": "78mm",
+    "depth": "78mm",
+    "weight": "245g"
+  },
+  "weight": "245g",
+  "material": "ABS樹脂",
+  "connectivity": [
+    "Wi-Fi 2.4GHz (IEEE 802.11b/g/n)",
+    "Bluetooth 5.0 (ペアリング用)"
+  ],
+  "other": [
+    "視野角: 360° 水平パン / 107° 垂直チルト",
+    "AI検知機能: 人体検知 / 泣き声検知 / モーション追跡",
+    "通話機能: 双方向音声通話対応 (ノイズリダクションマイク内蔵)",
+    "ストレージ: microSDカード対応 (最大256GB) / クラウド保存",
+    "スマートホーム連携: Google Home / Amazon Alexa"
   ]
 }
 ```
@@ -116,22 +252,23 @@ APIデータで不足している詳細スペック（SoC型番、RAM/ROM規格�
 1. **単位はメートル法を厳守**:
    - 長さ・厚み: `mm` または `cm`（※ヤード・ポンド法 `inch`, `ft`, `lbs`, `oz` 等は禁止）
    - 重量: `g` または `kg`
-   - **例外（ディスプレイ）**: 画面サイズのみ `"6.7インチ"` や `"6.1インチ"` などのインチ表記が許可される。
+   - **例外（ディスプレイ）**: 画面サイズのみ `"6.7インチ"` や `"34インチ"` などのインチ表記が許可される。
    - **カメラセンサーサイズ**: `"1/1.31インチ"` ではなく、日本規格の **`"1/1.31型"`** または **`"1/1.56型"`** と表記すること（バリデータのインチ検出エラーを防止）。
 2. **ネストオブジェクトのキー命名**:
    - `display`: `size`, `resolution`, `type`, `refreshRate`
    - `battery`: `capacity`, `charging`, `playbackTime`
-   - `camera`: `main`, `ultrawide`, `telephoto`, `front`
+   - `camera`: `main`, `ultrawide`, `telephoto`, `front`, `nightVision`
    - `dimensions`: `height`, `width`, `depth`, `weight`
 3. **比較機能・タグ連動キーワード**:
-   - 親・子カテゴリ一覧のスペック絞り込みフィルター（`parent-category.html`, `list.html`）や比較モーダル（`compare.js`）は、`connectivity` や `other`、`display` 内の特定キーワード（`5g`, `gps`, `felica`, `nfc`, `suica`, `おサイフ`, `amoled`, `oled`, `有機el`, `防水`, `ip68`, `軽量` など）を自動検出してチップや比較項目を生成する。主要な機能キーワードは漏れなく記載すること。
+   - 親・子カテゴリ一覧のスペック絞り込みフィルターや比較モーダルは、`connectivity` や `other`、`display` 内の特定キーワード（`5g`, `gps`, `felica`, `nfc`, `suica`, `おサイフ`, `amoled`, `oled`, `有機el`, `防水`, `ip68`, `anc`, `ハイレゾ`, `軽量` など）を自動検出してチップや比較項目を生成する。主要な機能キーワードは漏れなく記載すること。
 4. **制約・注意点の `other` 記載**:
-   - シニア向けスマホの専用物理ボタンや、「※おサイフケータイ非対応」「※microSDカード非対応」などの購入判断に関わる重要な仕様・制約は、`other` 配列内に明記すること。
-5. **折りたたみ（フォルダブル）スマホの記述ルール**:
+   - 「※iOS非対応」「※5G非対応」「※おサイフケータイ非対応」「※microSDカード非対応」などの購入判断に関わる重要な仕様・制約は、`other` 配列内に明記すること。
+5. **折りたたみ（フォルダブル）端末の記述ルール**:
    - `display`: メイン画面とカバー画面が存在する場合、`size: "6.7インチ (メイン) / 3.4インチ (カバー)"`、`resolution: "2640×1080 (メイン) / 720×748 (カバー)"` のように両方の仕様を明記すること。
    - `dimensions`: 開閉時のサイズが異なる場合、`height: "165.1mm (開時) / 85.1mm (閉時)"`、`depth: "6.9mm (開時) / 15.1mm (閉時)"` と表記すること。
-6. **充電性能の明記**:
-   - `battery.charging`: 単に「急速充電」とせず、最大ワット数やワイヤレス充電対応（例: `"68W TurboPower急速充電 / 15Wワイヤレス充電対応"`）を具体的に記載すること。
+6. **充電性能・再生時間の明記**:
+   - `battery.charging`: 単に「急速充電」とせず、最大ワット数やワイヤレス充電対応（例: `"45W急速充電 / 15Wワイヤレス充電対応"`）を具体的に記載すること。
+   - `battery.playbackTime`: イヤホンやスマートウォッチでは連続稼働時間（例: `"単体最大9時間 / ケース込み最大38時間"`）を明記すること。
 
 ---
 
