@@ -132,32 +132,47 @@
       "scoreRationale": "[基本点: 70]\n[加点: +10] (大画面アウトディスプレイとハイエンド性能を評価)\n[加点: +5] (FeliCa対応など日本向けの機能が充実)\n[加点: +5] (大容量バッテリーやIP48防水防塵性能の実用性)\n[減点: -5] (価格が12万円を超えており高価である点)\n[合計: 85]"
     },
     "technicalSpecs": {
-      "dimensions": {
-        "height": "171.30mm",
-        "width": "73.99mm",
-        "depth": "7.25mm"
+      "os": "Android 15",
+      "cpu": "MediaTek Dimensity 7400X",
+      "ram": "12GB",
+      "storage": "512GB",
+      "display": {
+        "size": "6.9インチ (メイン) / 3.6インチ (カバー)",
+        "resolution": "2640×1080 (FHD+ メイン) / 1056×1066 (カバー)",
+        "type": "pOLED (有機EL メイン・カバー共)",
+        "refreshRate": "120Hz (メイン) / 90Hz (カバー)"
       },
-      "foldedDimensions": {
-        "height": "88.08mm",
+      "battery": {
+        "capacity": "4500mAh",
+        "charging": "30W TurboPower急速充電 / 15Wワイヤレス充電対応"
+      },
+      "camera": {
+        "main": "50MP (広角 OIS搭載 F1.7)",
+        "ultrawide": "13MP (超広角 / マクロ F2.2)",
+        "front": "32MP (F2.4)"
+      },
+      "dimensions": {
+        "height": "171.30mm (開時) / 88.08mm (閉時)",
         "width": "73.99mm",
-        "depth": "15.85mm"
+        "depth": "7.25mm (開時) / 15.85mm (閉時)",
+        "weight": "188g"
       },
       "weight": "188g",
-      "capacity": "512GB",
-      "material": "pOLED (ディスプレイ)",
-      "origin": "N/A",
+      "material": "ヴィーガンレザー（背面）/ アルミニウムフレーム",
+      "origin": "中国",
+      "connectivity": [
+        "5G",
+        "Wi-Fi 6E (802.11ax)",
+        "Bluetooth 5.4",
+        "FeliCa / おサイフケータイ",
+        "eSIM対応",
+        "nanoSIM"
+      ],
       "other": [
-        "OS: Android 15",
-        "プロセッサ: MediaTek Dimensity 7400X (2.75GHz x 4 + 2.05 GHz x 4)",
-        "メモリ: 12GB",
-        "メインディスプレイ: 約17.5cm 2,640x1,080 (FHD+), 120Hz",
-        "アウトディスプレイ: 約9.1cm 1,056x1,066, 90Hz",
-        "バッテリー: 4500mAh",
-        "Wi-Fi: 802.11 a/b/g/n/ac/ax (Wi-Fi 6E対応)",
-        "Bluetooth: 5.4",
-        "SIM: nanoSIM / eSIM (DSDV対応)",
         "防水防塵: IP48",
-        "その他: おサイフケータイ(FeliCa)対応、NFC対応"
+        "折りたたみ機能: 大型3.6型アウトディスプレイ / フレックスビュースタンド撮影",
+        "オーディオ: ステレオスピーカー (Dolby Atmos対応)",
+        "生体認証: 側面指紋認証 / 顔認証"
       ]
     }
   }

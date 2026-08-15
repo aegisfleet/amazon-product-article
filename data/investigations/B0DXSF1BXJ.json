@@ -140,24 +140,46 @@
       "scoreRationale": "[基本点: 70]\n[加点: +3] (A18チップによる高い処理性能)\n[加点: +2] (最大26時間の優れたバッテリー駆動時間)\n[加点: +2] (最新のApple Intelligence対応モデルとして比較的手頃な価格設定)\n[加点: +2] (頑丈なCeramic Shieldと質感の高いマット仕上げのガラス背面)\n[加点: +3] (ユーザーレビューで高く評価されている動作の快適さとバッテリーの持ち)\n[加点: +3] (Apple初の自社設計5Gモデムによる安定した通信品質)\n[減点: -2] (MagSafe非対応)\n[減点: -2] (Dynamic Island非対応)\n[減点: -1] (超広角カメラの省略による機能制限)\n[合計: 80]"
     },
     "technicalSpecs": {
+      "os": "iOS 18 (Apple Intelligence対応)",
+      "cpu": "Apple A18チップ (6コアCPU / 4コアGPU / 16コアNeural Engine)",
+      "ram": "8GB",
+      "storage": "128GB",
+      "display": {
+        "size": "6.1インチ",
+        "resolution": "2532×1170 (460ppi)",
+        "type": "Super Retina XDR OLED (有機EL / Ceramic Shield)",
+        "refreshRate": "60Hz"
+      },
+      "battery": {
+        "capacity": "3961mAh (ビデオ再生最大26時間)",
+        "charging": "USB-C急速充電 (20W以上で30分最大50%) / Qiワイヤレス充電対応"
+      },
+      "camera": {
+        "main": "48MP Fusionカメラ (26mm F1.6 センサーシフト光学式手ブレ補正 2倍望遠統合)",
+        "front": "12MP TrueDepthカメラ (F1.9)"
+      },
       "dimensions": {
         "height": "146.7mm",
         "width": "71.5mm",
-        "depth": "7.8mm"
+        "depth": "7.8mm",
+        "weight": "167g"
       },
       "weight": "167g",
-      "capacity": "128GB",
-      "material": "アルミニウム、前面：Ceramic Shield、背面：カラーインフューズドガラス（マット仕上げ）",
-      "origin": "中国",
+      "material": "アルミニウムフレーム / Ceramic Shield前面 / カラーインフューズドガラス背面（マット仕上げ）",
+      "origin": "中国 / インド",
+      "connectivity": [
+        "5G (Apple C1モデム)",
+        "Wi-Fi 6E (802.11ax)",
+        "Bluetooth 5.3",
+        "FeliCa / Apple Pay",
+        "eSIM対応 (デュアルeSIM)"
+      ],
       "other": [
-        "ディスプレイ: 15.49cm Super Retina XDRディスプレイ (OLED), 2532 x 1170ピクセル解像度",
-        "チップ: A18チップ (4コアGPU)",
-        "カメラ: 48MP Fusionカメラ",
-        "防沫・耐水・防塵性能: IP68等級（最大水深6メートルで最大30分間）",
-        "コネクタ: USB-C",
+        "防塵耐水: IP68 (最大水深6mで最大30分)",
         "生体認証: Face ID",
-        "通信: 5G対応 (Apple C1モデム搭載)",
-        "その他: Apple Intelligence対応, アクションボタン搭載"
+        "アクションボタン搭載",
+        "※MagSafe充電非対応 (Qi充電対応)",
+        "※超広角カメラ非搭載"
       ]
     }
   }
