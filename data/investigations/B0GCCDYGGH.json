@@ -170,19 +170,46 @@
       "scoreRationale": "[基本点: 70]\n[加点: +10] 大容量バッテリーとMIL規格準拠の耐久性の高さ、初心者向けの使いやすさ\n[加点: +5] 約60%再生プラスチック＋低VOC塗装によるサステナブルな素材とデザイン\n[減点: -5] エントリー向けのため、ヘビーユーザーには不向き\n[合計: 80]"
     },
     "technicalSpecs": {
+      "os": "Android 15",
+      "cpu": "MediaTek Dimensity 6300",
+      "ram": "4GB",
+      "storage": "64GB",
+      "display": {
+        "size": "6.6インチ",
+        "resolution": "1612×720 (HD+)",
+        "type": "液晶",
+        "refreshRate": "120Hz駆動対応"
+      },
+      "battery": {
+        "capacity": "5000mAh",
+        "charging": "USB PD急速充電 (インテリジェントチャージ対応)"
+      },
+      "camera": {
+        "main": "50.1MP (広角 F1.8)",
+        "front": "8MP (F2.0)"
+      },
       "dimensions": {
         "height": "167mm",
         "width": "76mm",
-        "depth": "8.8mm"
+        "depth": "8.8mm",
+        "weight": "190g"
       },
       "weight": "190g",
-      "display": "約16.8cm (120Hz駆動対応)",
-      "battery": "5000mAh",
-      "camera": "約5,010万画素 (アウトカメラ)",
-      "durability": "IPX5/8/9防水、IP6X防塵、MIL規格準拠",
       "material": "約60%再生プラスチック＋低VOC塗装",
-      "color": "ホワイト",
-      "sim": "SIMフリー (nanoSIM/eSIM デュアルSIM)"
+      "origin": "中国",
+      "connectivity": [
+        "5G",
+        "Wi-Fi 5 (802.11ac)",
+        "Bluetooth 5.3",
+        "FeliCa / おサイフケータイ",
+        "eSIM対応"
+      ],
+      "other": [
+        "防塵防水: IPX5/8/9防水・IP6X防塵",
+        "耐久性: MIL-STD-810H準拠 耐衝撃18項目",
+        "生体認証: 側面指紋認証 / 顔認証(マスク対応)",
+        "microSDXC対応 (最大1TB)"
+      ]
     }
   }
 }
