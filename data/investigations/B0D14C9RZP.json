@@ -171,22 +171,31 @@
       "scoreRationale": "[基本点: 70]\n[加点: +5] (Ryzen 9 7940HSとRadeon 780Mによる高い処理性能)\n[加点: +3] (最大4画面のマルチディスプレイ対応力)\n[加点: +6] (デュアルPCIe4.0 M.2スロットなど、ミニPCながら内部拡張性に優れる)\n[加点: +5] (静音性の高さと発熱のコントロールが優秀)\n[減点: -2] (ACアダプタが本体サイズに対してやや大きく取り回しに影響する)\n[合計: 87]"
     },
     "technicalSpecs": {
+      "os": "Windows 11 Pro 64bit",
+      "cpu": "AMD Ryzen 9 7940HS (8コア / 16スレッド 最大5.2GHz)",
+      "ram": "32GB (DDR5-5600)",
+      "storage": "1TB (PCIe 4.0 NVMe SSD)",
       "dimensions": {
-        "width": "130mm",
-        "depth": "126mm",
-        "height": "52mm"
+        "height": "48.0mm",
+        "width": "130.0mm",
+        "depth": "126.0mm",
+        "weight": "670g"
       },
-      "weight": "667g",
-      "capacity": "DDR5 32GB / PCIe 4.0 SSD 1TB",
-      "material": "メタル（外装）",
+      "weight": "670g",
+      "material": "フルメタル筐体",
       "origin": "中国",
+      "connectivity": [
+        "Wi-Fi 6E (Killer Wi-Fi)",
+        "Bluetooth 5.3",
+        "2.5G有線LAN (RJ45)",
+        "USB4 (40Gbps / PD給電 / 8K映像出力) ×2",
+        "HDMI 2.1 ×2",
+        "USB 3.2 Gen2 Type-A ×4"
+      ],
       "other": [
-        "CPU: AMD Ryzen 9 7940HS (8コア/16スレッド、最大5.2GHz)",
-        "GPU: AMD Radeon 780M",
-        "OS: Windows 11 Pro",
-        "ワイヤレス: Wi-Fi 6E, Bluetooth 5.3",
-        "有線LAN: 2.5Gbps LAN",
-        "映像出力: HDMI (4K@120Hz) ×2, USB4 (8K@60Hz) ×2"
+        "冷却システム: Cold Wave 2.0 (液体金属冷却 & アクティブSSD/メモリファン)",
+        "最大4画面同時出力 (8K@60Hz / 4K@144Hz)",
+        "VESAマウント対応"
       ]
     }
   }

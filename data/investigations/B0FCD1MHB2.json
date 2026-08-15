@@ -107,22 +107,40 @@
       "scoreRationale": "[基本点: 70]\n[加点: +5] (MIL-STD準拠の耐久性による堅牢なボディ)\n[加点: +5] (15.1時間のロングバッテリー)\n[加点: +3] (メーカーの充実したサポート体制)\n[加点: +2] (Dell Trusted Workspace等の優れたセキュリティ機能)\n[減点: -10] (同等スペックの競合他社製品と比較して価格設定がやや高め)\n[合計: 75]"
     },
     "technicalSpecs": {
-      "dimensions": {
-        "height": "19mm",
-        "width": "314mm",
-        "depth": "225mm"
+      "os": "Windows 11 Pro 64bit",
+      "cpu": "AMD Ryzen 5 7530U (6コア / 12スレッド 最大4.5GHz)",
+      "ram": "16GB (DDR4-3200)",
+      "storage": "512GB (M.2 PCIe NVMe SSD)",
+      "display": {
+        "size": "14.0インチ",
+        "resolution": "1920×1200 (FHD+ 16:10)",
+        "type": "IPS非光沢液晶 (250nits / ComfortView低ブルーライト)",
+        "refreshRate": "60Hz"
       },
-      "weight": "1.35kg",
-      "capacity": "512GB (SSD)",
-      "material": "プラチナシルバーのメタリック仕上げ または マグネタイトのレーザーテクスチャー仕上げ（ポストコンシューマー再生プラスチックを最大50%使用）",
-      "origin": "不明",
+      "battery": {
+        "capacity": "54Wh",
+        "charging": "65W USB-C急速充電 (ExpressCharge)"
+      },
+      "dimensions": {
+        "height": "18.3mm",
+        "width": "314.0mm",
+        "depth": "227.0mm",
+        "weight": "1.53kg"
+      },
+      "weight": "1.53kg",
+      "material": "アルミニウム天板 / 高剛性樹脂",
+      "origin": "中国",
+      "connectivity": [
+        "Wi-Fi 6 (802.11ax)",
+        "Bluetooth 5.3",
+        "USB 3.2 Gen2 Type-C (DP/PD対応) ×1",
+        "USB 3.2 Gen1 Type-A ×2",
+        "HDMI 1.4",
+        "SDカードスロット"
+      ],
       "other": [
-        "プロセッサ: AMD Ryzen 5",
-        "メモリ: 16GB",
-        "ディスプレイ: FHD+ (1920x1200)",
-        "OS: Windows 11 Pro",
-        "バッテリー駆動時間: 15.1時間",
-        "Wi-Fi: Wi-Fi 6E対応"
+        "指紋認証リーダー内蔵電源ボタン",
+        "FHDプライバシーシャッター付きWebカメラ"
       ]
     }
   }

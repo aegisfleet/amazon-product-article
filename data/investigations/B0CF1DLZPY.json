@@ -3,30 +3,58 @@
     "productName": "Meta Quest 3（512GB）",
     "parentAsin": "B0CF1DLZPY",
     "productDescription": "Metaの第3世代となるスタンドアロン型VR/MRヘッドセット。従来機からグラフィック性能が約2倍になり、カラーパススルーによる高度なMR（複合現実）体験を実現。",
-    "productUsage": ["VRゲームのプレイ", "MR（複合現実）アプリの体験", "動画鑑賞（プライムビデオやYouTubeなど）", "メタバースでのアバター交流", "PC VRとしての利用（有線・無線接続）"],
-    "positivePoints": ["パンケーキレンズ採用による薄型化と高解像度化（片目2064×2208）で、非常に鮮明な映像", "2つのRGBカメラと深度センサーによるフルカラーパススルーで、違和感の少ないMR体験が可能", "Snapdragon XR2 Gen 2搭載による処理性能とグラフィックの向上", "無段階のIPD（瞳孔間距離）調整と、眼鏡ユーザーにも優しいレンズ奥行き調整機能", "低音から高音までクリアに響く向上した内蔵スピーカー"],
-    "negativePoints": ["従来モデル（Quest 2やQuest 3S）と比較して価格が高い", "パンケーキレンズの構造上、一部ユーザーから輝度がやや低く感じられるという指摘がある", "高負荷の処理によりバッテリー消費が早い場合がある（連続使用時間は平均2.2時間）"],
-    "useCases": ["リビングで仮想の敵と戦うMRゲームのプレイ", "映画館のような大画面での動画視聴", "PCと接続して高負荷なSteam VRゲームのプレイ", "リモートでのバーチャル会議や仮想空間での作業"],
+    "productUsage": [
+      "VRゲームのプレイ",
+      "MR（複合現実）アプリの体験",
+      "動画鑑賞（プライムビデオやYouTubeなど）",
+      "メタバースでのアバター交流",
+      "PC VRとしての利用（有線・無線接続）"
+    ],
+    "positivePoints": [
+      "パンケーキレンズ採用による薄型化と高解像度化（片目2064×2208）で、非常に鮮明な映像",
+      "2つのRGBカメラと深度センサーによるフルカラーパススルーで、違和感の少ないMR体験が可能",
+      "Snapdragon XR2 Gen 2搭載による処理性能とグラフィックの向上",
+      "無段階のIPD（瞳孔間距離）調整と、眼鏡ユーザーにも優しいレンズ奥行き調整機能",
+      "低音から高音までクリアに響く向上した内蔵スピーカー"
+    ],
+    "negativePoints": [
+      "従来モデル（Quest 2やQuest 3S）と比較して価格が高い",
+      "パンケーキレンズの構造上、一部ユーザーから輝度がやや低く感じられるという指摘がある",
+      "高負荷の処理によりバッテリー消費が早い場合がある（連続使用時間は平均2.2時間）"
+    ],
+    "useCases": [
+      "リビングで仮想の敵と戦うMRゲームのプレイ",
+      "映画館のような大画面での動画視聴",
+      "PCと接続して高負荷なSteam VRゲームのプレイ",
+      "リモートでのバーチャル会議や仮想空間での作業"
+    ],
     "userStories": [
       {
         "userType": "ゲーマー",
         "scenario": "VR・MRゲームのプレイ",
         "experience": "Quest 2からの乗り換えだが、パンケーキレンズの恩恵で映像のシャープさが格段に違う。また、フルカラーパススルーにより周囲の様子がはっきり見えるため、MRゲームをプレイしていても現実の家具にぶつかる不安がなく、快適に遊べる。",
-        "supportingSourceIds": ["src-1", "src-2"],
+        "supportingSourceIds": [
+          "src-1",
+          "src-2"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "映像コンテンツ愛好家",
         "scenario": "映画や動画の視聴",
         "experience": "解像度が上がり、映像がかなり鮮明になった。また、内蔵スピーカーの音質が良くなっており、空間オーディオによって映画館のような没入感が得られるのが素晴らしい。ただ、バッテリーの減りが早いため、長時間の視聴にはモバイルバッテリーを併用している。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "眼鏡をかけているユーザー",
         "scenario": "日常的なVR利用",
         "experience": "接顔クッションの部分でレンズの奥行きを調整できるようになったおかげで、大きめの眼鏡をかけたままでもスッと被れるようになった。重心が顔に近くなったため、首への負担も軽く感じる。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -82,7 +110,11 @@
         "claim": "グラフィック処理性能がQuest 2と比較して2倍に向上している",
         "category": "performance",
         "confidence": "high",
-        "supportingSourceIds": ["src-1", "src-2", "src-3"],
+        "supportingSourceIds": [
+          "src-1",
+          "src-2",
+          "src-3"
+        ],
         "crossChecked": true,
         "notes": "Snapdragon XR2 Gen 2の搭載により実現。"
       },
@@ -90,7 +122,11 @@
         "claim": "フルカラーパススルー機能により、仮想オブジェクトと現実空間を違和感なく融合させたMR体験が可能",
         "category": "feature",
         "confidence": "high",
-        "supportingSourceIds": ["src-1", "src-2", "src-3"],
+        "supportingSourceIds": [
+          "src-1",
+          "src-2",
+          "src-3"
+        ],
         "crossChecked": true,
         "notes": "2つのRGBカメラと深度センサーを搭載。"
       },
@@ -98,7 +134,10 @@
         "claim": "パンケーキレンズの採用により、従来より薄型化し、解像感も大幅に向上している",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-1", "src-2"],
+        "supportingSourceIds": [
+          "src-1",
+          "src-2"
+        ],
         "crossChecked": true,
         "notes": "フレネルレンズ特有のゴッドレイ（光の筋）が低減され、シャープな映像を実現。"
       }
@@ -205,25 +244,42 @@
       "scoreRationale": "[基本点: 70]\n[加点: +5] (パンケーキレンズ採用による圧倒的な画質向上)\n[加点: +5] (重心バランス改善による装着感の良さ)\n[加点: +10] (フルカラーパススルーによる実用的なMR機能の追加)\n[加点: +3] (最新チップ搭載による高い処理性能)\n[加点: +2] (旧世代アプリの完全な後方互換性)\n[減点: -5] (価格が大幅に上昇しており導入ハードルが高くなった点)\n[減点: -5] (バッテリー持ちが平均約2.2時間とやや物足りない点)\n[合計: 85]"
     },
     "technicalSpecs": {
+      "os": "Meta Horizon OS",
+      "cpu": "Qualcomm Snapdragon XR2 Gen 2",
+      "ram": "8GB",
+      "storage": "512GB",
+      "display": {
+        "size": "デュアル4K+ Infinite Display",
+        "resolution": "片目 2064×2208 (視野角 水平110° / 垂直96°)",
+        "type": "LCD + パンケーキレンズ (Pancake Lens)",
+        "refreshRate": "90Hz / 120Hz"
+      },
+      "battery": {
+        "capacity": "4879mAh (18.88Wh)",
+        "charging": "18W USB-C急速充電",
+        "playbackTime": "最大2.2〜2.9時間"
+      },
+      "camera": {
+        "main": "デュアルRGBカラーパススルーカメラ (フルカラーMR 18PPD) + 深度プロジェクター"
+      },
       "dimensions": {
-        "height": "98mm",
-        "width": "160mm",
-        "depth": "184mm"
+        "height": "160mm",
+        "width": "98mm",
+        "depth": "184mm",
+        "weight": "515g"
       },
       "weight": "515g",
-      "capacity": "512GB",
-      "material": "プラスチック等",
-      "origin": "不明",
+      "material": "高耐久ポリカーボネート / 布製調整ストラップ",
+      "origin": "中国",
+      "connectivity": [
+        "Wi-Fi 6E (802.11ax)",
+        "Bluetooth 5.2",
+        "USB-C"
+      ],
       "other": [
-        "SoC: Qualcomm Snapdragon XR2 Gen 2",
-        "メモリ: 8GB (LPDDR5)",
-        "ディスプレイ解像度: 片目2064x2208 (1218ppi)",
-        "リフレッシュレート: 72Hz, 80Hz, 90Hz, 120Hz",
-        "視野角: 水平110度 / 垂直96度",
-        "IPD (瞳孔間距離) 調整範囲: 58mm ～ 71mm",
-        "連続使用時間: 平均2.2時間",
-        "接続端子: USB Type-C、3.5mmヘッドフォンジャック",
-        "ワイヤレス通信: Wi-Fi 6E, Bluetooth 5.2"
+        "高解像度フルカラー複合現実 (MR / パススルー)",
+        "Touch Plusコントローラー付属 (TruTouch触覚フィードバック / ハンドトラッキング)",
+        "3D空間オーディオ内蔵スピーカー (音量範囲40%向上)"
       ]
     }
   }

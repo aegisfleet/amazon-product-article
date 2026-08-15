@@ -159,23 +159,45 @@
       "scoreRationale": "[基本点: 70]\n[加点: +5] (洗練されたデザインによる品質の高さ)\n[加点: +3] (Nothing OSによる独自のユーザー体験)\n[加点: +4] (最新のSnapdragon 7s Gen 3プロセッサー搭載による性能の向上)\n[加点: +3] (トリプルカメラ搭載によるコストパフォーマンスの高さ)\n[加点: +5] (最大2日間の連続使用が可能な大容量バッテリーの搭載)\n[減点: -5] (おサイフケータイ(FeliCa)や防水・防塵性能に関する記載が不足している懸念)\n[合計: 85]"
     },
     "technicalSpecs": {
+      "os": "Android 15 (Nothing OS 3.0)",
+      "cpu": "MediaTek Dimensity 7200 Pro",
+      "ram": "8GB",
+      "storage": "128GB",
+      "display": {
+        "size": "6.7インチ",
+        "resolution": "2412×1084 (FHD+)",
+        "type": "AMOLED (有機EL / 1300nitsピーク)",
+        "refreshRate": "120Hz (30-120Hz可変)"
+      },
+      "battery": {
+        "capacity": "5000mAh",
+        "charging": "45W急速充電 (約59分満充電)"
+      },
+      "camera": {
+        "main": "50MP (広角 OIS搭載 F1.88)",
+        "ultrawide": "50MP (超広角 114° F2.2)",
+        "front": "32MP (F2.2)"
+      },
       "dimensions": {
-        "height": "162.2mm",
-        "width": "76.5mm",
-        "depth": "8.7mm"
+        "height": "161.74mm",
+        "width": "76.32mm",
+        "depth": "8.55mm",
+        "weight": "190g"
       },
       "weight": "190g",
-      "capacity": "128GB",
-      "material": "ガラス（背面曲面ガラス）",
-      "origin": "中国",
+      "material": "透明ポリカーボネート背面 / 樹脂フレーム",
+      "origin": "中国 / インド",
+      "connectivity": [
+        "5G",
+        "Wi-Fi 6",
+        "Bluetooth 5.3",
+        "FeliCa / おサイフケータイ",
+        "nanoSIM デュアルSIM"
+      ],
       "other": [
-        "RAM: 8GB",
-        "CPU: Qualcomm Snapdragon 7s Gen 3",
-        "ディスプレイ: 170mm フレキシブル AMOLED",
-        "カメラ: TrueLensエンジン3.0搭載トリプルカメラ",
-        "OS: Nothing OS (Android 15ベース想定)",
-        "カラー: ブラック",
-        "モデル番号: A10400154"
+        "Glyphインターフェース (背面LED発光機能)",
+        "防塵防滴: IP54",
+        "生体認証: 画面内指紋認証 / 顔認証"
       ]
     }
   }

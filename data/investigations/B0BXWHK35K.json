@@ -125,16 +125,35 @@
       "scoreRationale": "[基本点: 70] (固定)\n[加点: +2] (SSD搭載による起動速度の確保)\n[加点: +5] (Office2019付属で1万円台前半の低価格)\n[減点: -2] (DVDドライブ非搭載で筐体がやや重め)\n[合計: 75]"
     },
     "technicalSpecs": {
-      "weight": "2.39kg",
-      "capacity": "メモリ: 4GB, ストレージ: SSD 128GB",
+      "os": "Windows 11 Pro 64bit",
+      "cpu": "Intel Celeron 1000M / B830",
+      "ram": "8GB (DDR3)",
+      "storage": "256GB (SSD)",
+      "display": {
+        "size": "15.6インチ",
+        "resolution": "1366×768 (HD)",
+        "type": "LEDバックライト付TFT液晶 (ノングレア)",
+        "refreshRate": "60Hz"
+      },
+      "dimensions": {
+        "height": "35.0mm",
+        "width": "374.0mm",
+        "depth": "250.0mm",
+        "weight": "2.3kg"
+      },
+      "weight": "2.3kg",
+      "material": "高剛性樹脂",
+      "origin": "日本 (富士通)",
+      "connectivity": [
+        "Wi-Fi (USB子機付属)",
+        "有線LAN",
+        "USB 2.0 ×4",
+        "VGA"
+      ],
       "other": [
-        "CPU: Celeron 1.8GHz",
-        "OS: Windows 11 Pro",
-        "ソフトウェア: Office 2019 (Word, Excel, Powerpoint, Outlook, OneNote)",
-        "インターフェース: WIFI, HDMI, Bluetooth, USB",
-        "ディスプレイ: 39.6cm LED液晶",
-        "カラー: ブラック（キーボードは黒、白2種類あり）",
-        "DVDドライブ: 非搭載"
+        "テンキー付きキーボード",
+        "DVDドライブ搭載",
+        "Office互換ソフト付属"
       ]
     }
   }
