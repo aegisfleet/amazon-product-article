@@ -882,9 +882,13 @@
 .search-input-wrapper::after {
     content: "";
     position: absolute;
+    top: calc(50% - 0.625rem);
     right: 1.25rem;
     width: 1.25rem;
     height: 1.25rem;
+    min-height: 0;
+    min-width: 0;
+    aspect-ratio: 1;
     border: 2px solid var(--color-border);
     border-top-color: var(--color-primary);
     border-radius: 50%;
@@ -911,28 +915,41 @@
    =================================================== */
 .search-clear-btn {
     position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
     right: 1.15rem;
-    display: flex;
+    display: inline-flex;
     align-items: center;
     justify-content: center;
     width: 1.5rem;
     height: 1.5rem;
+    min-height: 0;
+    min-width: 0;
+    aspect-ratio: 1;
     padding: 0;
     border: none;
     border-radius: 50%;
-    background: var(--color-bg-tertiary, #e2e8f0);
-    color: var(--color-text-secondary, #64748b);
+    background: var(--md-sys-color-surface-container-high, var(--color-border, #e2e8f0));
+    color: var(--md-sys-color-on-surface-variant, var(--color-text-secondary, #64748b));
     cursor: pointer;
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
-    transition: all 0.15s ease;
+    transition: background-color 0.15s ease, color 0.15s ease, opacity 0.15s ease;
     z-index: 3;
+    box-sizing: border-box;
+}
+
+.search-clear-btn svg {
+    width: 1rem;
+    height: 1rem;
+    flex-shrink: 0;
+    display: block;
 }
 
 .search-clear-btn:hover {
-    background: var(--color-border, #cbd5e1);
-    color: var(--color-text-primary, #0f172a);
+    background: var(--md-sys-color-outline-variant, var(--color-border, #cbd5e1));
+    color: var(--md-sys-color-on-surface, var(--color-text-main, #0f172a));
 }
 
 .search-input-wrapper.has-value .search-clear-btn {
