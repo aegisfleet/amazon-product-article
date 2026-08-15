@@ -14,22 +14,26 @@ INVESTIGATIONS_DIR = os.path.join(os.path.dirname(__file__), '../data/investigat
 
 def detect_category(name):
     name_lower = name.lower()
-    if re.search(r'(?:スマートウォッチ|watch|バンド|band|fit\d|トラッカー)', name_lower):
+    if re.search(r'(?:ケース|カバー|フィルム|ガラス|スタンド|ホルダー|リング|マウント|三脚|自撮り|クリップ|ベルト|吸盤|充電器|ケーブル|アダプタ|フィルター)', name_lower):
+        return 'accessory'
+    elif re.search(r'(?:スマートウォッチ|watch|バンド|band|fit\d|トラッカー)', name_lower):
         return 'watch'
     elif re.search(r'(?:イヤホン|ヘッドホン|earbuds|headphones|buds)', name_lower):
         return 'audio'
     elif re.search(r'(?:モニター|ディスプレイ|monitor|g34wqi|a24i)', name_lower):
         return 'monitor'
-    elif re.search(r'(?:カメラ|見守り|ベビーモニター|camera)', name_lower):
+    elif re.search(r'(?:プロジェクター|projector)', name_lower):
+        return 'projector'
+    elif re.search(r'(?:カメラ|見守り|ベビーモニター|camera|ドラレコ)', name_lower):
         return 'camera'
-    elif re.search(r'(?:スマートフォン|スマホ|iphone|galaxy|xperia|pixel|poco|redmi|arrows|libero)', name_lower) and not re.search(r'(?:ケース|カバー|フィルム|ガラス|スタンド|バンド|ベルト|フィルター)', name_lower):
+    elif re.search(r'(?:スマートフォン|スマホ|iphone|galaxy|xperia|pixel|poco|redmi|arrows|libero)', name_lower):
         return 'phone_tablet'
-    elif re.search(r'(?:タブレット|ipad|pad|arrows tab)', name_lower) and not re.search(r'(?:ケース|カバー|フィルム|ガラス|スタンド)', name_lower):
+    elif re.search(r'(?:タブレット|ipad|pad|arrows tab|surface|ideapad)', name_lower):
         return 'phone_tablet'
-    elif re.search(r'(?:体重計|体組成計|空気清浄機|ドライバー|ペットフィーダー|給餌器|家電)', name_lower):
+    elif re.search(r'(?:パソコン|ノートpc|ミニpc|chromebook|lifebook|dynabook|lavie|versapro)', name_lower):
+        return 'pc'
+    elif re.search(r'(?:掃除機|ルンバ|冷風機|冷風扇|扇風機|空気清浄機|給水器|給餌器|体重計|体組成計|ドライバー|家電|血圧計|センサー)', name_lower):
         return 'appliance'
-    elif re.search(r'(?:ケース|カバー|フィルム|ガラス|スタンド|バンド|ベルト|フィルター)', name_lower):
-        return 'accessory'
     else:
         return 'general'
 

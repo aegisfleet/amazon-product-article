@@ -170,21 +170,44 @@
       "scoreRationale": "[基本点: 70]\n[加点: +10] M5チップとUltra Retina XDRディスプレイによる圧倒的な性能と機能美\n[加点: +5] プロ用途でも快適な操作性と高品質なデザイン\n[加点: +5] Apple Intelligenceを含む独自の先進的なソフトウェア体験\n[減点: -5] 20万円を超える非常に高価な価格設定によるコストパフォーマンスの低さ\n[合計: 85]"
     },
     "technicalSpecs": {
+      "os": "iPadOS 18 (Apple Intelligence対応)",
+      "cpu": "Apple M5チップ (次世代ニューラルエンジン搭載)",
+      "ram": "12GB",
+      "storage": "256GB",
+      "display": {
+        "size": "13インチ",
+        "resolution": "2752×2064 (Ultra Retina XDR / 264ppi)",
+        "type": "Tandem OLED (タンデム有機EL / ピーク1600nits HDR)",
+        "refreshRate": "ProMotion 120Hz"
+      },
+      "battery": {
+        "capacity": "38.99Wh",
+        "charging": "Thunderbolt / USB 4急速充電 (最大35W)",
+        "playbackTime": "最大10時間"
+      },
+      "camera": {
+        "main": "12MP (広角 F1.8 / LiDARスキャナ / アダプティブTrue Toneフラッシュ)",
+        "front": "12MP 横向きセンターフレーム超広角カメラ (Face ID対応)"
+      },
       "dimensions": {
-        "height": "281mm",
-        "width": "215mm",
-        "depth": "5.1mm"
+        "height": "281.6mm",
+        "width": "215.5mm",
+        "depth": "5.1mm",
+        "weight": "579g"
       },
       "weight": "579g",
-      "capacity": "256GB",
-      "material": "アルミニウム（筐体）",
-      "origin": "中国",
+      "material": "超極薄100%リサイクルアルミニウムボディ (史上最薄5.1mm)",
+      "origin": "中国 / ベトナム",
+      "connectivity": [
+        "Wi-Fi 7 (802.11be)",
+        "Bluetooth 5.4",
+        "Thunderbolt 3 / USB 4 (40Gbps)"
+      ],
       "other": [
-        "ディスプレイ: 330.2mm (13型) Ultra Retina XDRディスプレイ (OLED)",
-        "チップ: Apple M5チップ",
-        "カメラ: 12MP広角カメラ、LiDARスキャナ",
-        "通信: Wi-Fi 7",
-        "認証: Face ID"
+        "Apple Pencil Pro 対応",
+        "Magic Keyboard 対応",
+        "生体認証: Face ID顔認証",
+        "4スピーカー空間オーディオシステム"
       ]
     }
   }

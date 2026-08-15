@@ -172,23 +172,43 @@
       "scoreRationale": "[基本点: 70] (固定)\n[加点: +5] (抜群の携帯性による使いやすさ)\n[加点: +5] (A17 Proの十分な処理性能とApple Intelligence対応)\n[減点: -5] (他社Androidタブレットや大画面の無印iPadと比較した際の価格の高さによるコストパフォーマンスの懸念)\n[合計: 75]"
     },
     "technicalSpecs": {
+      "os": "iPadOS 18 (Apple Intelligence対応)",
+      "cpu": "Apple A17 Pro (6コアCPU / 5コアGPU / 16コアNeural Engine)",
+      "ram": "8GB",
+      "storage": "128GB",
+      "display": {
+        "size": "8.3インチ",
+        "resolution": "2266×1488 (Liquid Retina / 326ppi)",
+        "type": "IPS液晶 (P3広色域 / True Tone / 500nits)",
+        "refreshRate": "60Hz"
+      },
+      "battery": {
+        "capacity": "19.3Wh",
+        "charging": "USB-C急速充電 (最大20W)",
+        "playbackTime": "最大10時間"
+      },
+      "camera": {
+        "main": "12MP (広角 4K動画撮影 / スマートHDR 4)",
+        "front": "12MP 横向きセンターフレーム超広角カメラ"
+      },
       "dimensions": {
-        "height": "6.3mm",
-        "width": "195.4mm",
-        "depth": "134.8mm"
+        "height": "195.4mm",
+        "width": "134.8mm",
+        "depth": "6.3mm",
+        "weight": "293g"
       },
       "weight": "293g",
-      "capacity": "128GB",
-      "material": "アルミニウム",
-      "origin": "中国",
+      "material": "100%リサイクルアルミニウムボディ",
+      "origin": "中国 / ベトナム",
+      "connectivity": [
+        "Wi-Fi 6E (802.11ax)",
+        "Bluetooth 5.3",
+        "USB-C (USB 3 10Gbps)"
+      ],
       "other": [
-        "Liquid Retinaディスプレイ",
-        "約21cm",
-        "A17 Proチップ",
-        "12MP広角バックカメラ",
-        "12MP超広角フロントカメラ",
-        "USB-Cコネクタ",
-        "Wi-Fi 6E"
+        "Apple Pencil Pro / Apple Pencil (USB-C) 対応",
+        "生体認証: トップボタンTouch ID",
+        "ステレオスピーカー (横向き)"
       ]
     }
   }

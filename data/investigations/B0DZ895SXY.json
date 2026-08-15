@@ -161,20 +161,44 @@
       "scoreRationale": "[基本点: 70]\n[加点: +10] (A16チップ搭載と11インチ画面による優れた性能・機能)\n[加点: +10] (128GB容量と最新スペックを備えながら5万円台という圧倒的なコストパフォーマンス)\n[合計: 90]"
     },
     "technicalSpecs": {
+      "os": "iPadOS 18",
+      "cpu": "Apple A16 Bionic (6コアCPU / 5コアGPU / 16コアNeural Engine)",
+      "ram": "6GB",
+      "storage": "128GB",
+      "display": {
+        "size": "10.9インチ",
+        "resolution": "2360×1640 (Liquid Retina / 264ppi)",
+        "type": "IPS液晶 (True Tone / 500nits)",
+        "refreshRate": "60Hz"
+      },
+      "battery": {
+        "capacity": "28.6Wh",
+        "charging": "USB-C (20W急速充電)",
+        "playbackTime": "最大10時間"
+      },
+      "camera": {
+        "main": "12MP (広角 4K動画撮影)",
+        "front": "12MP 横向き超広角カメラ"
+      },
       "dimensions": {
         "height": "248.6mm",
         "width": "179.5mm",
-        "depth": "7.0mm"
+        "depth": "7.0mm",
+        "weight": "477g"
       },
       "weight": "477g",
-      "capacity": "128GB",
-      "chip": "A16 Bionic",
-      "display": "約27.9cm (11インチ) Liquid Retinaディスプレイ",
-      "camera": "12MP フロント/12MP バックカメラ",
-      "connectivity": "Wi-Fi 6, USB-C",
-      "authentication": "Touch ID",
-      "material": "アルミニウム",
-      "origin": "中国"
+      "material": "100%リサイクルアルミニウムボディ (ブルー)",
+      "origin": "中国 / ベトナム",
+      "connectivity": [
+        "Wi-Fi 6 (802.11ax)",
+        "Bluetooth 5.3",
+        "USB-C 2.0"
+      ],
+      "other": [
+        "Magic Keyboard Folio対応",
+        "Apple Pencil (USB-C) 対応",
+        "生体認証: トップボタンTouch ID"
+      ]
     }
   }
 }

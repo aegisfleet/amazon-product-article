@@ -163,30 +163,44 @@
       "scoreRationale": "[基本点: 70]\n[加点: +5] (キーボード着脱式で2-in-1として使える汎用性の高さ)\n[加点: +5] (本体約600gという持ち運びやすい軽量設計)\n[加点: +5] (1万円台という導入しやすい低価格)\n[減点: -10] (Celeron N4000/4GBメモリによる処理性能の限界)\n[減点: -5] (64GBという限られたストレージ容量)\n[合計: 70]"
     },
     "technicalSpecs": {
+      "os": "Windows 11 Pro 64bit",
+      "cpu": "Intel Celeron N4000 (2コア / 2スレッド 最大2.6GHz)",
+      "ram": "4GB (LPDDR4)",
+      "storage": "64GB (eMMC)",
+      "display": {
+        "size": "10.1インチ",
+        "resolution": "1920×1200 (WUXGA IPS 10点マルチタッチ)",
+        "type": "IPS液晶 (グレア)",
+        "refreshRate": "60Hz"
+      },
+      "battery": {
+        "capacity": "39Wh",
+        "charging": "USB Type-C (45W PD急速充電)",
+        "playbackTime": "約13時間 (新品時)"
+      },
+      "camera": {
+        "main": "5MP",
+        "front": "2MP"
+      },
       "dimensions": {
-        "height": "178mm",
-        "width": "249mm",
-        "depth": "9.5mm"
+        "height": "178.0mm",
+        "width": "249.0mm",
+        "depth": "9.5mm (本体) / 18.0mm (キーボードドック接続時)",
+        "weight": "600g (本体) / 1.13kg (キーボードドック含む)"
       },
-      "weight": "1135g",
-      "display": "10.1型 HD IPS液晶 (1280x800) 10点マルチタッチ対応 非光沢",
-      "cpu": "Intel Celeron N4000",
-      "memory": "4GB LPDDR4-2133 (オンボード)",
-      "storage": "64GB eMMC 5.1",
-      "os": "Windows 11 Pro",
-      "camera": "前面200万画素 / 背面500万画素",
-      "interfaces": "USB-C 3.2 Gen 1 x1, USB 2.0 x2 (キーボード側), ヘッドホン/マイクコンボジャック, microSDカードリーダー",
-      "battery": "39Wh リチウムポリマーバッテリー",
-      "keyboardDimensions": {
-        "height": "186mm",
-        "width": "249mm",
-        "depth": "8.5mm"
-      },
+      "weight": "600g",
+      "material": "高剛性樹脂 / メタル調天板",
+      "origin": "中国",
+      "connectivity": [
+        "Wi-Fi 5 (802.11ac)",
+        "Bluetooth 4.2",
+        "USB 3.1 Type-C (PD/DP対応) ×1",
+        "USB 2.0 ×2 (キーボードドック側)",
+        "microSDカードリーダー"
+      ],
       "other": [
-        "タブレット単体重量: 約610g (LTEモデル) / 約600g (WiFiモデル)",
-        "キーボード単体重量: 約535g",
-        "Wi-Fi (802.11ac 1x1) / Bluetooth 4.2対応",
-        "ステレオスピーカー (1W x2) Dolby Audio Premium対応"
+        "2-in-1着脱式キーボードドック付属",
+        "静音ファンレス設計"
       ]
     }
   }

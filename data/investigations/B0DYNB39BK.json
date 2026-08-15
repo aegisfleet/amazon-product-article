@@ -164,22 +164,42 @@
       "scoreRationale": "[基本点: 70]\n[加点: +5] (最新のAndroid 16搭載と90Hzディスプレイによる快適な操作性)\n[加点: +5] (Widevine L1対応による高画質動画視聴への適性)\n[減点: -5] (物理メモリが4GBであり、24GBという表記が誤解を招きやすい点)\n[合計: 75]"
     },
     "technicalSpecs": {
-      "weight": "355g",
-      "capacity": "128GB",
-      "material": "オールメタル",
-      "origin": "不明",
-      "os": "Android 16",
-      "display": "約22.1cm IPSインセルTDDI (解像度: 1340x800), 90Hzリフレッシュレート",
-      "processor": "Unisoc T7250 8コア (A75x2 + A55x6)",
-      "memory": "24GB (4GB 物理メモリ + 20GB 仮想メモリ)",
-      "battery": "6000mAh",
-      "camera": "リア1300万画素 / フロント500万画素",
-      "connectivity": "Wi-Fi 2.4GHz/5GHz, Bluetooth 5.2, GPS/Beidou/Galileo/GLONASS",
+      "os": "Android 15",
+      "cpu": "Allwinner A523 (オクタコア 1.8GHz)",
+      "ram": "12GB (4GB実メモリ + 8GB仮想拡張)",
+      "storage": "64GB (microSD最大1TB対応)",
+      "display": {
+        "size": "8.0インチ",
+        "resolution": "1280×800 (HD IPS)",
+        "type": "IPS液晶",
+        "refreshRate": "60Hz"
+      },
+      "battery": {
+        "capacity": "4000mAh",
+        "charging": "USB Type-C",
+        "playbackTime": "約5時間"
+      },
+      "camera": {
+        "main": "5MP",
+        "front": "2MP"
+      },
+      "dimensions": {
+        "height": "208.0mm",
+        "width": "123.0mm",
+        "depth": "8.8mm",
+        "weight": "320g"
+      },
+      "weight": "320g",
+      "material": "軽量樹脂ボディ",
+      "origin": "中国",
+      "connectivity": [
+        "Wi-Fi 6 (802.11ax)",
+        "Bluetooth 5.2",
+        "USB Type-C"
+      ],
       "other": [
         "Widevine L1対応",
-        "顔認証対応",
-        "USB Type-C",
-        "3.5mmヘッドフォンジャック",
+        "Google キッズスペース & ペアレンタルコントロール対応",
         "デュアルスピーカー"
       ]
     }

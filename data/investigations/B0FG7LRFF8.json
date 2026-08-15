@@ -29,21 +29,27 @@
         "userType": "一般ユーザー",
         "scenario": "自宅での動画視聴",
         "experience": "Fireタブレットからの買い替え。樹脂製から金属製になり高級感があり、90Hzのリフレッシュレートのおかげで動作もサクサクしていてストレスがない。価格も2万円台と安く、コスパが良いと感じている。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "家族ユーザー",
         "scenario": "子供との動画視聴や学習",
         "experience": "薄くて軽く、約25cmサイズが手になじむ。リビングやキッチンでも使いやすい。子供と使っても安心感があり、動画の字幕も読みやすい。ただ、屋外の日陰では画面が見づらく角度調整が必要なこともあった。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "一般ユーザー",
         "scenario": "日常の軽い作業や動画視聴",
         "experience": "画質も綺麗でバッテリーの持ちも良いが、一部のアプリ（Amazonショッピングアプリ等）に非対応だったり、タッチ操作が過敏に感じる時があり、少しストレスに感じることがある。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "mixed"
       }
     ],
@@ -66,7 +72,9 @@
         "claim": "1280x800の解像度だがWidevine L1認証により対応サービスで高画質再生が可能",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": true,
         "notes": "製品仕様として明記されており、動画視聴に関するレビューでも画質の良さが言及されている"
       },
@@ -74,7 +82,9 @@
         "claim": "約470gの軽量設計で持ち運びに適している",
         "category": "durability",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": true,
         "notes": "仕様に明記（重量 1.036ポンド ≒ 470g）され、レビューでも軽さが評価されている"
       }
@@ -167,20 +177,44 @@
       "scoreRationale": "[基本点: 70]\n[加点: +5] (90Hz高リフレッシュレートと最新Android 16搭載による快適な操作性)\n[加点: +5] (重量約470gの軽量設計と金属ボディの質感)\n[加点: +10] (2万円前後の価格に対し必要十分なスペックを備える高いコストパフォーマンス)\n[減点: -5] (約25cmサイズに対して1280x800の解像度はやや低めであること)\n[合計: 85]"
     },
     "technicalSpecs": {
-      "dimensions": { "height": "245mm", "width": "163mm", "depth": "8mm" },
-      "weight": "470g",
-      "display": "約25.6cm IPS液晶 (1280x800), 90Hzリフレッシュレート",
       "os": "Android 16",
-      "processor": "Unisoc T615 オクタコア (2x1.8GHz Cortex-A75 + 6x1.6GHz Cortex-A55)",
-      "memory": "12GB RAM (4GB物理 + 8GB仮想拡張)",
-      "storage": "128GB ROM (最大1TBのMicroSDカード拡張対応)",
-      "battery": "6000mAh, PD18W急速充電対応 (充電器別売)",
-      "camera": "フロント 500万画素 / リア 800万画素",
-      "connectivity": "Wi-Fi (2.4GHz/5GHz), Bluetooth 5.0, GPS搭載",
+      "cpu": "Allwinner A523 (オクタコア 2.0GHz)",
+      "ram": "12GB (4GB実メモリ + 8GB仮想拡張)",
+      "storage": "64GB (microSD最大1TB対応)",
+      "display": {
+        "size": "10.1インチ",
+        "resolution": "1280×800 (HD IPS)",
+        "type": "IPS液晶 (In-Cellフルラミネーション)",
+        "refreshRate": "60Hz"
+      },
+      "battery": {
+        "capacity": "5000mAh",
+        "charging": "USB Type-C (5V 2A)",
+        "playbackTime": "約6〜8時間"
+      },
+      "camera": {
+        "main": "5MP",
+        "front": "2MP"
+      },
+      "dimensions": {
+        "height": "242.0mm",
+        "width": "160.0mm",
+        "depth": "8.5mm",
+        "weight": "480g"
+      },
+      "weight": "480g",
+      "material": "メタルバックカバー",
+      "origin": "中国 (PHILIPSライセンス)",
+      "connectivity": [
+        "Wi-Fi 6 (802.11ax 2.4/5GHz)",
+        "Bluetooth 5.2",
+        "USB Type-C",
+        "3.5mmオーディオジャック"
+      ],
       "other": [
-        "Widevine L1対応",
-        "顔認証対応",
-        "Type-Cポート搭載"
+        "Widevine L1対応 (Netflix / Prime Video高画質再生)",
+        "デュアルBOXスピーカー",
+        "画面分割マルチタスク対応"
       ]
     }
   }
