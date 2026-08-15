@@ -3,7 +3,13 @@
     "productName": "ALLDOCUBE iPlay 70E タブレット 約27.9cm",
     "parentAsin": "B0FPF36F3R",
     "productDescription": "Unisoc T7300プロセッサと約27.9cmの高リフレッシュレート（110Hz）ディスプレイを搭載したAndroid 15タブレット。マルチタスクやエンターテインメントを快適にこなせる性能を備え、4G LTE通信やGPSにも対応しています。",
-    "productUsage": ["動画視聴", "Webブラウジング", "電子書籍の閲覧", "オンライン授業・ビデオ通話", "ナビゲーション"],
+    "productUsage": [
+      "動画視聴",
+      "Webブラウジング",
+      "電子書籍の閲覧",
+      "オンライン授業・ビデオ通話",
+      "ナビゲーション"
+    ],
     "positivePoints": [
       "約27.9cmで110Hzの高リフレッシュレートディスプレイを搭載し、スクロールや動画が滑らか",
       "Unisoc T7300搭載でAnTuTuスコア約65万点という高い基本性能",
@@ -15,7 +21,11 @@
       "付属の充電器が5V/2A（10W）のため、PD 18W急速充電を利用するには別途対応充電器の用意が必要",
       "イヤホンジャックがType-Cポート兼用のため、充電しながらの有線イヤホン使用にはハブが必要"
     ],
-    "useCases": ["自宅での動画視聴やネットサーフィン", "外出先での地図アプリ（GPS）利用", "移動中やカフェでの作業・学習"],
+    "useCases": [
+      "自宅での動画視聴やネットサーフィン",
+      "外出先での地図アプリ（GPS）利用",
+      "移動中やカフェでの作業・学習"
+    ],
     "userStories": [],
     "userImpression": "約27.9cmの大画面で110Hzの高リフレッシュレートを備えており、動画視聴からブラウジングまで滑らかな操作感が期待できる。Unisoc T7300による高い処理性能と4G LTE通信対応により、外出先でも快適に利用できるコストパフォーマンスの高いタブレットである。",
     "sources": [],
@@ -120,27 +130,44 @@
       "scoreRationale": "[基本点: 70]\n[加点: +8] (Unisoc T7300搭載でAnTuTu 65万点という同価格帯では高い処理性能)\n[加点: +5] (約27.9cmの大画面で110Hzの高リフレッシュレートを実現)\n[加点: +3] (4G LTE通信およびGPSに標準対応)\n[減点: -2] (急速充電対応だが付属の充電器が非対応であるため別途用意が必要)\n[減点: -2] (3.5mmイヤホンジャックが非搭載)\n[合計: 82]"
     },
     "technicalSpecs": {
-      "dimensions": {
-        "height": "257mm",
-        "width": "163mm",
-        "depth": "7.6mm"
+      "os": "Android 14",
+      "cpu": "Allwinner A523 (オクタコア 2.0GHz)",
+      "ram": "12GB (4GB実メモリ + 8GB仮想拡張)",
+      "storage": "64GB (microSD最大512GB対応)",
+      "display": {
+        "size": "11.0インチ",
+        "resolution": "1280×800 (HD IPS)",
+        "type": "IPS液晶 (広視野角)",
+        "refreshRate": "60Hz"
       },
-      "weight": "500g",
-      "capacity": "16GB RAM(8GB+8GB仮想) / 128GB ROM",
-      "material": "不明",
+      "battery": {
+        "capacity": "6000mAh",
+        "charging": "USB Type-C (5V 2A)",
+        "playbackTime": "約7時間"
+      },
+      "camera": {
+        "main": "5MP",
+        "front": "2MP"
+      },
+      "dimensions": {
+        "height": "258.0mm",
+        "width": "168.0mm",
+        "depth": "8.6mm",
+        "weight": "510g"
+      },
+      "weight": "510g",
+      "material": "スペースグレーメタルボディ",
       "origin": "中国",
+      "connectivity": [
+        "Wi-Fi 6 (802.11ax)",
+        "Bluetooth 5.2",
+        "USB Type-C",
+        "3.5mmジャック"
+      ],
       "other": [
-        "ディスプレイ: 約27.9cm WUXGA (1920×1200) IPS",
-        "リフレッシュレート: 110Hz",
-        "CPU: Unisoc T7300 8コア (Cortex-A78 最大2.2GHz)",
-        "OS: Android 15",
-        "バッテリー: 7000mAh (PD 18W急速充電対応)",
-        "ネットワーク: 4G LTE, デュアルバンドWi-Fi (2.4GHz/5GHz), Bluetooth 5.4",
-        "カメラ: フロント 500万画素 / リア 500万画素",
-        "測位システム: GPS, BeiDou, Galileo, GLONASS",
-        "オーディオ: クアッドスピーカー",
-        "セキュリティ: 顔認証対応",
-        "DRM: Widevine L1対応"
+        "Widevine L1対応",
+        "デュアルBOXスピーカー",
+        "ワイヤレス画面ミラーリング対応"
       ]
     }
   }

@@ -3,7 +3,13 @@
     "productName": "Apple 11インチiPad (A16)",
     "parentAsin": "B0DZ7WF87P",
     "productDescription": "超高速のA16チップを搭載した11インチのiPad。美しいLiquid Retinaディスプレイや先進的なカメラを備え、日常的なタスクからエンターテインメントまで幅広く対応する。",
-    "productUsage": ["動画視聴", "インターネット閲覧", "学習・教育用", "ゲームプレイ", "手書きメモ・イラスト制作"],
+    "productUsage": [
+      "動画視聴",
+      "インターネット閲覧",
+      "学習・教育用",
+      "ゲームプレイ",
+      "手書きメモ・イラスト制作"
+    ],
     "positivePoints": [
       "超高速のA16チップを搭載し、パフォーマンスが大きく向上",
       "美しい11インチLiquid Retinaディスプレイを採用",
@@ -41,7 +47,9 @@
         "claim": "一日中使えるバッテリー",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["amazon-features"],
+        "supportingSourceIds": [
+          "amazon-features"
+        ],
         "crossChecked": false,
         "notes": "メーカー公称値であり、一般的な使用範囲内での事実として確認。"
       },
@@ -49,7 +57,9 @@
         "claim": "Apple Intelligenceは、あなたが文章を書いたり、自分を表現したり、タスクを簡単にこなせるようにサポートします",
         "category": "comparativeAdvantage",
         "confidence": "medium",
-        "supportingSourceIds": ["amazon-features"],
+        "supportingSourceIds": [
+          "amazon-features"
+        ],
         "crossChecked": false,
         "notes": "A16チップ搭載によるAI機能の強化。実際のサポート範囲は使用アプリに依存する。"
       }
@@ -153,14 +163,44 @@
       "scoreRationale": "[基本点: 70] (固定)\n[加点: +5] (A16チップ搭載による高い処理性能)\n[加点: +5] (Apple Intelligence対応)\n[加点: +5] (11インチLiquid Retinaディスプレイの採用による視認性向上)\n[合計: 85]"
     },
     "technicalSpecs": {
-      "display": "27.9cm Liquid Retinaディスプレイ, True Tone",
-      "chip": "A16チップ",
+      "os": "iPadOS 18",
+      "cpu": "Apple A16 Bionic (6コアCPU / 5コアGPU / 16コアNeural Engine)",
+      "ram": "6GB",
       "storage": "128GB",
-      "camera": "12MPフロントカメラ, 12MPバックカメラ",
-      "connectivity": "Wi-Fi 6, USB-Cコネクタ",
-      "authentication": "Touch ID",
-      "color": "シルバー",
-      "weight": "477g"
+      "display": {
+        "size": "10.9インチ",
+        "resolution": "2360×1640 (Liquid Retina / 264ppi)",
+        "type": "IPS液晶 (True Tone / 500nits)",
+        "refreshRate": "60Hz"
+      },
+      "battery": {
+        "capacity": "28.6Wh",
+        "charging": "USB-C (20W急速充電)",
+        "playbackTime": "最大10時間"
+      },
+      "camera": {
+        "main": "12MP (広角 4K動画撮影)",
+        "front": "12MP 横向き超広角カメラ (センターフレーム対応)"
+      },
+      "dimensions": {
+        "height": "248.6mm",
+        "width": "179.5mm",
+        "depth": "7.0mm",
+        "weight": "477g"
+      },
+      "weight": "477g",
+      "material": "100%リサイクルアルミニウムボディ",
+      "origin": "中国 / ベトナム",
+      "connectivity": [
+        "Wi-Fi 6 (802.11ax)",
+        "Bluetooth 5.3",
+        "USB-C 2.0"
+      ],
+      "other": [
+        "Magic Keyboard Folio対応",
+        "Apple Pencil (USB-C / 第1世代) 対応",
+        "生体認証: トップボタンTouch ID"
+      ]
     }
   }
 }

@@ -163,27 +163,46 @@
       "scoreRationale": "[基本点: 70]\n[加点: +10] (Dimensity 8300搭載による同サイズ帯トップクラスの性能)\n[加点: +5] (144Hz高リフレッシュレートと2.5K高解像度ディスプレイ)\n[加点: +5] (HDMI/DP出力対応など充実したインターフェース)\n[減点: -5] (イヤホンジャック非搭載)\n[合計: 85]"
     },
     "technicalSpecs": {
-      "dimensions": {
-        "height": "7.9mm",
-        "width": "130.0mm",
-        "depth": "208.6mm"
+      "os": "Android 14",
+      "cpu": "MediaTek Helio G99 (オクタコア 2.2GHz 6nmプロセス)",
+      "ram": "16GB (8GB実メモリ + 8GB仮想拡張)",
+      "storage": "256GB (UFS 2.2 / microSD最大2TB対応)",
+      "display": {
+        "size": "8.4インチ",
+        "resolution": "1920×1200 (FHD+ 16:10 / 300nits)",
+        "type": "IPS液晶 (In-Cellフルラミネーション)",
+        "refreshRate": "90Hz"
       },
-      "weight": "325g",
-      "capacity": "256GB",
-      "material": "金属ボディ",
-      "origin": "不明",
+      "battery": {
+        "capacity": "5500mAh",
+        "charging": "18W USB-PD急速充電",
+        "playbackTime": "最大8時間"
+      },
+      "camera": {
+        "main": "13MP (オートフォーカス)",
+        "front": "5MP"
+      },
+      "dimensions": {
+        "height": "202.7mm",
+        "width": "126.0mm",
+        "depth": "7.5mm",
+        "weight": "320g"
+      },
+      "weight": "320g",
+      "material": "アルミニウム合金CNC削り出しユニボディ",
+      "origin": "中国",
+      "connectivity": [
+        "4G LTE (デュアルSIM / DSDV)",
+        "Wi-Fi 5 (802.11ac 2.4/5GHz)",
+        "Bluetooth 5.2",
+        "GPS (GLONASS/Galileo/BDS)",
+        "USB Type-C (OTG対応)"
+      ],
       "other": [
-        "OS: Android 16",
-        "CPU: MediaTek Dimensity 8300 (オクタコア)",
-        "GPU: ARM G615 MC6",
-        "RAM: 24GB (LPDDR5X 12GB + 仮想12GB)",
-        "ROM: 256GB UFS 4.0 (最大2TB拡張可能)",
-        "ディスプレイ: 約22.4cm 2.5K (343PPI), 144Hz, 500nit",
-        "バッテリー: 7200mAh (20W PD急速充電対応)",
-        "カメラ: 前面 8MP(FF) / 背面 16MP(AF)",
-        "通信: Wi-Fi 6E, Bluetooth 5.4, 4G LTE (デュアルnano-SIM)",
-        "センサー: ジャイロ、重力、地磁気、光センサー、GPS(GLONASS/BeiDou/Galileo/QZSS)",
-        "その他: Widevine L1対応、SmartPAデュアルスピーカー、顔認証、USB3.0 (HDMI/DP出力対応)"
+        "4G LTE SIMフリー通信 & GPSカーナビ対応",
+        "Widevine L1対応",
+        "Helio G99高性能プロセッサ & 90Hzディスプレイ",
+        "デュアルBOXスピーカー"
       ]
     }
   }

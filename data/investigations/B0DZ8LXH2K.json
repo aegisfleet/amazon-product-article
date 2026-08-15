@@ -177,22 +177,44 @@
       "scoreRationale": "[基本点: 70]\n[加点: +5] (M3チップ搭載による非常に高い基本性能を備えているため)\n[加点: +5] (上位のProモデルより安価でありながら、多くのユーザーにとって十分すぎる性能を提供する優れたコストパフォーマンス)\n[加点: +4] (約460gという薄型軽量設計で、日常的な持ち運びにおいて高い実用性とデザイン性を誇るため)\n[加点: +5] (Apple Pencil Pro対応やステージマネージャなどの機能をサポートし、幅広いユースケースに応える高い汎用性)\n[加点: +3] (Apple Intelligence機能などの将来のアップデートに対応できるため)\n[加点: +2] (Wi-Fi 6E対応による高速かつ安定した通信が可能なため)\n[加点: +1] (P3広色域ディスプレイによる鮮やかな画面表示が可能なため)\n[減点: -5] (リフレッシュレートが60Hzにとどまり、画面の滑らかさにおいて上位モデルとの明確な差があるため)\n[合計: 90]"
     },
     "technicalSpecs": {
+      "os": "iPadOS 18 (Apple Intelligence対応)",
+      "cpu": "Apple M3チップ (8コアCPU / 10コアGPU / 16コアNeural Engine)",
+      "ram": "8GB",
+      "storage": "128GB",
+      "display": {
+        "size": "11インチ",
+        "resolution": "2360×1640 (Liquid Retina / 264ppi)",
+        "type": "IPS液晶 (P3広色域 / True Tone / 500nits)",
+        "refreshRate": "60Hz"
+      },
+      "battery": {
+        "capacity": "28.93Wh",
+        "charging": "USB-C急速充電",
+        "playbackTime": "最大10時間"
+      },
+      "camera": {
+        "main": "12MP (広角 4K動画撮影)",
+        "front": "12MP 横向きセンターフレーム超広角カメラ"
+      },
       "dimensions": {
         "height": "247.6mm",
         "width": "178.5mm",
-        "depth": "6.1mm"
+        "depth": "6.1mm",
+        "weight": "462g"
       },
-      "weight": "460g",
-      "display": "27.9cm Liquid Retinaディスプレイ",
-      "resolution": "2360 x 1640ピクセル",
-      "chip": "Apple M3チップ (8コアCPU、10コアGPU、16コアNeural Engine)",
-      "capacity": "128GB",
-      "camera": "12MP広角カメラ（バック）、12MP超広角フロントカメラ",
-      "connectivity": "Wi-Fi 6E (802.11ax)、Bluetooth 5.3",
-      "connector": "USB-C",
-      "authentication": "Touch ID (トップボタンに内蔵)",
-      "battery": "28.93Whリチャージャブルリチウムポリマーバッテリー内蔵",
-      "color": "スペースグレイ"
+      "weight": "462g",
+      "material": "100%リサイクルアルミニウムボディ",
+      "origin": "中国 / ベトナム",
+      "connectivity": [
+        "Wi-Fi 6E (802.11ax)",
+        "Bluetooth 5.3",
+        "USB-C (USB 3 10Gbps)"
+      ],
+      "other": [
+        "Apple Pencil Pro / Apple Pencil (USB-C) 対応",
+        "Magic Keyboard対応",
+        "生体認証: トップボタンTouch ID"
+      ]
     }
   }
 }

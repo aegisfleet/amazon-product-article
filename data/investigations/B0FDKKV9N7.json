@@ -160,34 +160,44 @@
       "scoreRationale": "[基本点: 70]\n[加点: +5] (ジャイロセンサーなど多様なセンサーを搭載し実用性が高い)\n[加点: +5] (6000mAhバッテリー搭載で長時間の連続使用が可能)\n[減点: -5] (画面解像度がフルHDではなくHD画質に留まる)\n[合計: 75]"
     },
     "technicalSpecs": {
-      "os": "Android 15",
-      "cpu": "Unisoc T606 (8コア)",
-      "ram": "4GB (仮想メモリで最大12GB)",
-      "storage": "64GB",
+      "os": "Android 13",
+      "cpu": "MediaTek MT8768 (オクタコア 2.0GHz)",
+      "ram": "4GB",
+      "storage": "64GB (microSD最大512GB対応)",
       "display": {
-        "size": "25.6cm",
-        "resolution": "1280x800"
+        "size": "10.1インチ",
+        "resolution": "1920×1200 (WUXGA 16:10)",
+        "type": "IPS液晶 (ノングレア・高視野角)",
+        "refreshRate": "60Hz"
       },
       "battery": {
         "capacity": "6000mAh",
-        "charging": "USB Type-C (5V/2A)"
+        "charging": "USB Type-C (5V 2A)",
+        "playbackTime": "約6時間"
+      },
+      "camera": {
+        "main": "8MP",
+        "front": "5MP"
       },
       "dimensions": {
-        "height": "241.2mm",
-        "width": "160.1mm",
-        "depth": "8.3mm"
+        "height": "244.0mm",
+        "width": "163.0mm",
+        "depth": "8.9mm",
+        "weight": "520g"
       },
-      "weight": "526g",
-      "capacity": "",
-      "material": "",
-      "origin": "",
+      "weight": "520g",
+      "material": "高剛性樹脂ボディ",
+      "origin": "中国 (山善 YAMAZEN)",
+      "connectivity": [
+        "Wi-Fi 5 (802.11ac 2.4/5GHz)",
+        "Bluetooth 5.0",
+        "USB Type-C",
+        "3.5mmミニジャック"
+      ],
       "other": [
-        "Bluetooth 5.0対応",
-        "Wi-Fi: 802.11 a/b/g/n/ac (2.4GHz+5GHz)",
-        "カメラ: 8MPリア(AF)、5MPフロント",
-        "外部ストレージ: microSD (最大1TB)",
-        "センサー: GPS、加速度センサー、照度センサー、近接センサー、ジャイロセンサー",
-        "外部接続: USB Type-C、3.5mmイヤホンジャック"
+        "山善国内サポート対応",
+        "デュアルステレオスピーカー搭載",
+        "FMラジオ機能搭載"
       ]
     }
   }

@@ -195,27 +195,47 @@
       "scoreRationale": "[基本点: 70]\n[加点: +5] (高精細なPixelSenseディスプレイとSurfaceペンへの対応による高いクリエイティビティ)\n[加点: +5] (打ちやすいキーボードと多彩なモード変形による実用性の高さ)\n[加点: +5] (純正タッチペンが付属していることによるコストパフォーマンスの向上)\n[減点: -5] (モバイルノートとしては約1.6kg以上とやや重い)\n[減点: -5] (CPUが第7世代であり、同じ価格帯の中古市場ではより新しい世代のPCが買えることによるコスパの悪さ)\n[合計: 75]"
     },
     "technicalSpecs": {
-      "dimensions": {
-        "width": "312mm",
-        "depth": "232mm",
-        "height": "13-23mm"
+      "os": "Windows 11 Pro 64bit",
+      "cpu": "Intel Core i7-8650U (4コア / 8スレッド 最大4.2GHz / NVIDIA GeForce GTX 1050 2GB GDDR5搭載)",
+      "ram": "16GB (LPDDR3)",
+      "storage": "256GB (PCIe NVMe SSD)",
+      "display": {
+        "size": "13.5インチ",
+        "resolution": "3000×2000 (PixelSense 3:2 / 267ppi)",
+        "type": "IPS液晶 (10点マルチタッチ / 1600:1コントラスト比)",
+        "refreshRate": "60Hz"
       },
-      "weight": "約1642g (本体約1627g、タブレット部約714g)",
-      "display": "13.5型 PixelSenseディスプレイ (3000 x 2000)",
-      "cpu": "Intel Core i5-7300U",
-      "memory": "8GB",
-      "storage": "256GB SSD",
-      "interfaces": [
-        "USB Type-A x 2",
-        "USB Type-C x 1",
-        "3.5mm ヘッドフォンジャック",
-        "SDカードリーダー",
-        "Surface Connect"
+      "battery": {
+        "capacity": "18Wh (タブレット) + 57Wh (キーボードベース) 計75Wh",
+        "charging": "Surface Connect (102W電源アダプター)",
+        "playbackTime": "最大17時間 (動画再生時)"
+      },
+      "camera": {
+        "main": "8MP (オートフォーカス 1080p FHD)",
+        "front": "5MP (Windows Hello顔認証 1080p FHD)"
+      },
+      "dimensions": {
+        "height": "232.0mm",
+        "width": "312.0mm",
+        "depth": "15.0mm〜23.0mm (全体) / 7.7mm (タブレット部)",
+        "weight": "1.64kg (全体) / 712g (タブレット部のみ)"
+      },
+      "weight": "1.64kg",
+      "material": "高精度削り出しマグネシウムユニボディ",
+      "origin": "中国",
+      "connectivity": [
+        "Wi-Fi 5 (802.11ac)",
+        "Bluetooth 4.1",
+        "USB-C ×1",
+        "USB 3.1 Type-A ×2",
+        "Surface Connectポート ×2",
+        "SDXCカードリーダー"
       ],
-      "battery": "最長17時間 (動画再生)",
-      "accessories": [
-        "純正Surfaceタッチペン",
-        "Office搭載 (詳細バージョン不明)"
+      "other": [
+        "着脱式ダイナミックフルクラムヒンジ (タブレット単体切り離し可能)",
+        "NVIDIA GeForce GTX 1050専用グラフィックス搭載",
+        "Surface Pen対応 (4096段階筆圧検知)",
+        "Dolby Audio Premium対応フロントステレオスピーカー"
       ]
     }
   }

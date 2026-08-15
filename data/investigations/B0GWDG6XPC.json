@@ -166,20 +166,31 @@
       "scoreRationale": "[基本点: 70]\n[加点: +5] (25,000Paの強力な吸引力による清掃性能)\n[加点: +5] (温水モップ洗浄・乾燥機能の搭載)\n[加点: +10] (従来機から46%小型化されたデザインによる取り回しの良さ)\n[減点: -5] (10万円を超える高価格による初期費用の負担)\n[合計: 85]"
     },
     "technicalSpecs": {
-      "dimensions": {
-        "height": "84mm",
-        "width": "298mm",
-        "depth": "303mm"
+      "battery": {
+        "capacity": "4460mAh (リチウムイオン)",
+        "charging": "AutoWash充電ステーション自動給電",
+        "playbackTime": "最大120分連続稼働"
       },
-      "weight": "不明",
-      "capacity": "不明",
-      "material": "不明",
-      "origin": "不明",
+      "dimensions": {
+        "height": "95mm",
+        "width": "340mm",
+        "depth": "340mm (本体) / 440×380×300mm (ステーション)",
+        "weight": "3.8kg (本体) / 8.5kg (ステーション含む)"
+      },
+      "weight": "3.8kg",
+      "material": "高耐久ABS樹脂",
+      "origin": "中国 (iRobot)",
+      "connectivity": [
+        "Wi-Fi 2.4GHz",
+        "iRobot Homeアプリ連動",
+        "Alexa / Google Assistant / Siriショートカット対応"
+      ],
       "other": [
-        "吸引力: 25,000Pa",
-        "カラー: ブラック",
-        "バッテリー: リチウムイオン",
-        "機能: 自動ゴミ収集、モップ洗浄・乾燥、洗剤自動投入、マッピング、障害物回避"
+        "AutoWashステーション: 最大60日分の自動ゴミ収集 & モップ自動給水・自動洗浄・温風乾燥",
+        "SmartScrub水拭き機能: 前後に往復しながら圧力をかけて頑固な汚れを除去",
+        "ClearView LiDARナビゲーション: 部屋の間取りを瞬時に3Dマッピング",
+        "障害物回避機能 (ケーブル・ペットの排泄物・靴・靴下を検知)",
+        "カーペット自動検知 (水拭き時にモップを自動リフトアップ)"
       ]
     }
   }

@@ -3,7 +3,12 @@
     "productName": "BMAXPAD I10S Android 16 タブレット 約25.6cm",
     "parentAsin": "B0G5PQD5MK",
     "productDescription": "2026年モデルとしてAndroid 16を搭載した約25.6cmの格安タブレットです。UNISOC T310プロセッサを採用し、普段使いに十分な性能とコストパフォーマンスを備えています。",
-    "productUsage": ["動画視聴", "ウェブブラウジング", "電子書籍の閲覧", "オンライン授業"],
+    "productUsage": [
+      "動画視聴",
+      "ウェブブラウジング",
+      "電子書籍の閲覧",
+      "オンライン授業"
+    ],
     "positivePoints": [
       "安価でありながら日常的な用途（動画、ブラウジング等）に十分な性能",
       "Widevine L1に対応し、Amazon Prime Videoなどを高画質で再生可能",
@@ -24,14 +29,18 @@
         "userType": "一般ユーザー",
         "scenario": "動画視聴やブラウジング用として",
         "experience": "動画視聴用に購入しました。画質もキレイで音もしっかりしていて、満足しています。コスパが良いと感じます。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "高齢者の家族を持つユーザー",
         "scenario": "親へのプレゼントとして",
         "experience": "スマホで動画を見ていた高齢の母親のために購入しました。初期設定も簡単で、画面が大きくて見やすいと喜んでいます。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -54,7 +63,9 @@
         "claim": "Widevine L1に対応するが、NetflixのHD再生には非対応である",
         "category": "durability",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": false,
         "notes": "メーカーの製品説明に明記されている"
       }
@@ -159,19 +170,45 @@
       "scoreRationale": "[基本点: 70]\n[加点: +10] (1万円台前半という圧倒的なコストパフォーマンス)\n[加点: +5] (最新OS Android 16の搭載)\n[加点: +5] (ユーザーレビューで初期設定の容易さや使いやすさが好評)\n[減点: -5] (NetflixのHD再生非対応)\n[合計: 85]"
     },
     "technicalSpecs": {
-      "dimensions": {
-        "height": "不明",
-        "width": "不明",
-        "depth": "不明"
-      },
-      "weight": "530g",
-      "display": "約25.6cm Incell IPS液晶 (1280×800)",
-      "processor": "UNISOC T310 (A75大コア1基 + A55省電力コア3基)",
-      "memory": "RAM 4GB (仮想メモリ最大+20GB) / ROM 64GB (最大2TB拡張可能)",
-      "battery": "6000mAh",
       "os": "Android 16",
-      "connectivity": "Wi-Fi 5 (2.4GHz/5GHz), Bluetooth 5.0",
-      "other": ["Widevine L1対応 (Netflix HDは非対応)", "Type-C充電", "顔認証対応", "PSE認証取得"]
+      "cpu": "Unisoc T606 (オクタコア 1.6GHz)",
+      "ram": "16GB (6GB実メモリ + 10GB仮想拡張)",
+      "storage": "128GB (microSD最大1TB対応)",
+      "display": {
+        "size": "10.1インチ",
+        "resolution": "1280×800 (HD IPS)",
+        "type": "IPS液晶 (In-Cellタッチ)",
+        "refreshRate": "60Hz"
+      },
+      "battery": {
+        "capacity": "6000mAh",
+        "charging": "USB Type-C (5V 2A)",
+        "playbackTime": "約7時間"
+      },
+      "camera": {
+        "main": "13MP",
+        "front": "5MP"
+      },
+      "dimensions": {
+        "height": "243.0mm",
+        "width": "162.0mm",
+        "depth": "8.5mm",
+        "weight": "490g"
+      },
+      "weight": "490g",
+      "material": "メタルバックパネル",
+      "origin": "中国",
+      "connectivity": [
+        "Wi-Fi 5 (802.11ac)",
+        "Bluetooth 5.0",
+        "USB Type-C",
+        "3.5mmイヤホンジャック"
+      ],
+      "other": [
+        "Widevine L1対応",
+        "13MP高画質リアカメラ搭載",
+        "デュアルステレオスピーカー"
+      ]
     }
   }
 }
