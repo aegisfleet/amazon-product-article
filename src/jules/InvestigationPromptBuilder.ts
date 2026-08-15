@@ -276,15 +276,16 @@ ${specs}
       "scoreRationale": "[基本点: 70]\\n[加点: +XX] (理由)\\n[減点: -XX] (理由)\\n[合計: XX]"
     },
     "technicalSpecs": {
-      "// 注意": "調査で判明した仕様情報をここに網羅的に記載する。SoCやOS、メモリ、ディスプレイ、バッテリー、カメラ等はotherにまとめず必ず個別キーへ完全構造化すること",
+      "// 注意": "調査で判明した仕様情報をここに網羅的に記載する。SoCやOS、メモリ、ディスプレイ、バッテリー、カメラ、通信等はotherにまとめず必ず個別キーへ完全構造化すること",
       "// 例示1(スマホ/タブレット/PC)": "os, cpu, ram, storage, display: { size, resolution, type, refreshRate }, battery: { capacity, charging }, camera: { main, ultrawide, telephoto, front }, dimensions: { height, width, depth, weight }, connectivity: ['5G', 'Wi-Fi 6', 'FeliCa', 'eSIM']",
-      "// 例示2(家電/日用品)": "dimensions: { height, width, depth, weight }, power: 'XXW', capacity: 'XXL/XXml', material: 'XX', origin: 'XX'",
-      "// 例示3(化粧品/美容)": "capacity: 'XXml/XXg', ingredients: ['主成分'], skinType: ['適応']",
-      "// 例示4(食品)": "content: 'XXg', calories: 'XXkcal', shelfLife: 'XX日', allergens: ['成分']",
-      "os": "Android 15 / iOS 18 / Windows 11 等",
-      "cpu": "Snapdragon 8s Gen 3 / MediaTek Dimensity / Apple A18 等",
-      "ram": "8GB / 12GB / 16GB 等",
-      "storage": "128GB / 256GB / 512GB 等",
+      "// 例示2(スマートウォッチ)": "display: { size, resolution, type }, battery: { capacity, charging, playbackTime }, connectivity: ['Bluetooth 5.3', 'GPS', 'NFC/Suica'], dimensions, weight, other: ['5ATM防水', '心拍数/SpO2センサー']",
+      "// 例示3(イヤホン/オーディオ)": "battery: { playbackTime: '単体9時間/ケース38時間', charging }, connectivity: ['Bluetooth 5.4', 'SBC/AAC/LDAC'], weight, other: ['ANC最大48dB', 'IP54防水', '11mmドライバー']",
+      "// 例示4(モニター/ディスプレイ)": "display: { size: '34インチ', resolution: '3440×1440', type: 'VA曲面', refreshRate: '180Hz' }, connectivity: ['HDMI 2.0', 'DisplayPort 1.4'], dimensions, weight, other: ['1ms応答速度', 'FreeSync', 'VESA対応']",
+      "// 例示5(スマートカメラ/家電)": "camera: { main: '300万画素 (2K)', nightVision }, battery: { capacity }, connectivity: ['Wi-Fi 2.4GHz'], dimensions, weight, other: ['360°首振り', '双方向通話', 'microSD対応']",
+      "os": "Android 15 / iOS 18 / Windows 11 / Wear OS 等",
+      "cpu": "Snapdragon / Dimensity / Apple A18 / Intel 等",
+      "ram": "8GB / 12GB 等",
+      "storage": "128GB / 256GB 等",
       "display": {
         "size": "6.7インチ (※折りたたみは '6.7インチ (メイン) / 3.4インチ (カバー)')",
         "resolution": "2400×1080 (FHD+) / 2772×1280 (1.5K)",
@@ -293,7 +294,8 @@ ${specs}
       },
       "battery": {
         "capacity": "5000mAh",
-        "charging": "67W急速充電 / 15Wワイヤレス充電対応"
+        "charging": "67W急速充電 / 15Wワイヤレス充電対応",
+        "playbackTime": "最大38時間 (※イヤホン・時計等)"
       },
       "camera": {
         "main": "50MP (広角 OIS搭載 1/1.56型)",

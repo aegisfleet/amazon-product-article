@@ -159,23 +159,37 @@
       "scoreRationale": "[基本点: 70]\n[加点: +10] (大画面有機ELとGPS内蔵で高い機能性を持ちながら8,000円台という優れたコストパフォーマンス)\n[加点: +5] (最大21日間の長時間バッテリーにより日常的な充電のストレスが少ない)\n[合計: 85]"
     },
     "technicalSpecs": {
-      "dimensions": {
-        "height": "140mm",
-        "width": "199.9mm",
-        "depth": "199.9mm"
+      "os": "Xiaomi HyperOS",
+      "display": {
+        "size": "1.74インチ",
+        "resolution": "336×480 (336ppi)",
+        "type": "AMOLED (有機EL / 最大1200nits / AOD対応)",
+        "refreshRate": "60Hz"
       },
-      "weight": "40g",
-      "capacity": "1個",
-      "material": "メタルフレーム（クイックリリースストラップ対応）",
-      "origin": "不明",
+      "battery": {
+        "capacity": "350mAh",
+        "charging": "マグネット式急速充電",
+        "playbackTime": "最大21日間 (通常使用時) / AOD時最大10日間"
+      },
+      "dimensions": {
+        "height": "43.27mm",
+        "width": "32.49mm",
+        "depth": "10.8mm",
+        "weight": "24.5g (ストラップ除く)"
+      },
+      "weight": "24.5g",
+      "material": "アルミニウム合金メタルフレーム / TPUストラップ",
+      "origin": "中国",
+      "connectivity": [
+        "Bluetooth 5.4",
+        "独立GNSS (GPS/GLONASS/Galileo/BDS/QZSS 5衛星測位)"
+      ],
       "other": [
-        "ディスプレイ: 4.4cm 有機EL (AMOLED)",
-        "バッテリー持続時間: 最大21日間",
-        "充電時間: 最短75分でフル充電",
-        "測位機能: 5衛星GNSS内蔵（GPS対応）",
-        "防水性能: 5ATM（50m防水）",
-        "スポーツモード: 150種類以上",
-        "健康管理: 24時間心拍数・血中酸素・睡眠・ストレスモニタリング、月経周期記録"
+        "防水性能: 5ATM (50m防水)",
+        "独立高精度GPS搭載",
+        "周囲光センサーによる自動輝度調整",
+        "150種類以上のワークアウトモード",
+        "※Suica非対応"
       ]
     }
   }

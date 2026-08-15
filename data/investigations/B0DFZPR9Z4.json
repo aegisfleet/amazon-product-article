@@ -170,22 +170,38 @@
       "scoreRationale": "[基本点: 70] (固定)\n[加点: +10] (3,000円台という圧倒的な安さによるコストパフォーマンスの高さ)\n[加点: +5] (2インチの大型ディスプレイで見やすい利便性)\n[加点: +5] (最大18日間の長持ちするバッテリー)\n[加点: +5] (Bluetooth通話機能の搭載)\n[減点: -5] (GPSが非搭載である点)\n[合計: 90]"
     },
     "technicalSpecs": {
-      "dimensions": {
-        "height": "49.4mm",
-        "width": "40.4mm",
-        "depth": "11.4mm"
+      "os": "Xiaomi HyperOS",
+      "display": {
+        "size": "2.0インチ",
+        "resolution": "320×385 (250ppi)",
+        "type": "LCD液晶",
+        "refreshRate": "60Hz"
       },
-      "weight": "81g",
-      "display": "2インチLCD(液晶)ディスプレイ",
-      "batteryLife": "最大18日間(標準使用モード)",
-      "batteryCapacity": "470mAh",
-      "waterResistance": "5ATM",
-      "connectivity": "Bluetooth通話対応",
-      "features": [
-        "デュアルマイクノイズキャンセリング",
-        "140種類以上のワークアウトモード",
-        "24時間心拍数モニタリング",
-        "Alexa対応"
+      "battery": {
+        "capacity": "470mAh",
+        "charging": "マグネット式充電",
+        "playbackTime": "最大18日間 (標準使用時) / 最大12日間 (ヘビーユース時)"
+      },
+      "dimensions": {
+        "height": "49.1mm",
+        "width": "40.4mm",
+        "depth": "11.4mm",
+        "weight": "42.2g (ストラップ含む)"
+      },
+      "weight": "42.2g",
+      "material": "マット仕上げ亜鉛合金フレーム / TPUストラップ",
+      "origin": "中国",
+      "connectivity": [
+        "Bluetooth 5.3 (Bluetooth通話対応)",
+        "3マイクENCノイズキャンセリング"
+      ],
+      "other": [
+        "防水性能: 5ATM (50m防水)",
+        "健康モニタリング: 心拍数・血中酸素レベル(SpO2)・睡眠・ストレス",
+        "140種類以上のスポーツモード",
+        "Alexa音声アシスタント対応",
+        "※GPS非搭載",
+        "※Suica/おサイフ非対応"
       ]
     }
   }
