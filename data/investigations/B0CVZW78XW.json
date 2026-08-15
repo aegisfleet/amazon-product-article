@@ -133,25 +133,28 @@
       "scoreRationale": "[基本点: 70]\n[加点: +5] (4K対応の高画質とSony Starvisセンサーによる優れた低照度性能)\n[加点: +5] (高級感のあるアルミ筐体のビルドクオリティと「ショーモード」の実用性)\n[加点: +3] (Logi Options+による高度な画質カスタマイズが可能)\n[減点: -3] (前モデルで対応していたWindows Hello顔認証が非対応になった点)\n[減点: -2] (約3万円という高価格設定)\n[合計: 78]"
     },
     "technicalSpecs": {
-      "dimensions": {
-        "width": "98mm",
-        "height": "44mm",
-        "depth": "36mm",
-        "weight": "137g (本体のみ)"
+      "camera": {
+        "main": "850万画素 (4K UHD 3840×2160@30fps / 1080p@60fps)",
+        "sensor": "Sony STARVIS 4Kセンサー (大型1/1.8型 2.0μmピクセル)"
       },
-      "resolution": "4K Ultra HD (30fps) / 1080p (60fps)",
-      "fov": "90° / 78° / 65° (切り替え可能)",
-      "zoom": "4倍デジタルズーム",
-      "focus": "オートフォーカス",
-      "mic": "デュアルビームフォーミングマイク (ノイズリダクション付)",
-      "connection": "USB-C 3.0",
-      "sensor": "Sony Starvis 8.5MP",
-      "os": "Windows 10 以降、macOS 10.15、ChromeOS、Linux",
+      "dimensions": {
+        "height": "44.0mm",
+        "width": "98.0mm",
+        "depth": "36.0mm (カメラ本体) / 61.6mm (マウント含む)",
+        "weight": "176g (マウントクリップ含む)"
+      },
+      "weight": "176g",
+      "material": "低炭素アルミニウム筐体",
+      "origin": "中国 (Logicool)",
+      "connectivity": [
+        "USB Type-C (USB 3.0 / 取り外し可能 1.5mケーブル付属)"
+      ],
       "other": [
-        "物理プライバシーシャッター",
-        "Show Mode対応",
-        "Windows Hello非対応",
-        "三脚穴(1/4インチ)あり"
+        "Show Mode (手元共有機能: カメラを下に傾けるだけでデスク上の書類やスケッチを自動反転共有)",
+        "AI顔ベース自動露出 & デュアルビームフォーミングノイズリダクションマイク",
+        "視野角 (FOV) 3段階調整: 65° / 78° / 90°",
+        "物理プライバシーシャッター (ダイヤル回転式)",
+        "Logi Options+ & G HUB カスタマイズ対応"
       ]
     }
   }

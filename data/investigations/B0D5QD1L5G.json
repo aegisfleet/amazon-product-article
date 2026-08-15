@@ -133,21 +133,28 @@
       "scoreRationale": "[基本点: 70]\n[加点: +3] (500万画素の高画質)\n[加点: +2] (全方位追尾機能の性能)\n[加点: +5] (4,000円台という高いコストパフォーマンス)\n[加点: +5] (2.4GHz/5GHzのWi-Fi両対応による使い勝手の良さ)\n[合計: 85]"
     },
     "technicalSpecs": {
-      "dimensions": {
-        "height": "70mm",
-        "width": "70mm",
-        "depth": "110mm"
+      "camera": {
+        "main": "500万画素 (3K 2592×1944)",
+        "nightVision": "自動切替赤外線暗視LED (最大12m)"
       },
-      "weight": "不明",
-      "capacity": "1",
-      "material": "不明",
-      "origin": "不明",
+      "dimensions": {
+        "height": "115mm",
+        "width": "75mm",
+        "depth": "75mm",
+        "weight": "200g"
+      },
+      "weight": "200g",
+      "material": "ABS樹脂",
+      "origin": "中国 (ieGeek)",
+      "connectivity": [
+        "Wi-Fi 2.4GHz / 5GHz デュアルバンド対応"
+      ],
       "other": [
-        "画素数: 500万画素 (2304x1296P)",
-        "通信: 2.4GHz/5GHz Wi-Fi両対応, Bluetooth対応",
-        "暗視機能: 最大15m (赤外線)",
-        "記録媒体: MicroSDカード (8GB-256GB別売), クラウド",
-        "機能: 自動追尾, 音声/移動/人形検知, 双方向通話, Alexa対応, プライバシーモード"
+        "500万画素超高精細画質",
+        "355°水平パン / 120°垂直チルト",
+        "AI自動追跡 & 人体検知 & 泣き声検知",
+        "双方向通話 & ワンタッチ通話ボタン",
+        "microSDカード最大128GB対応 / クラウド保存"
       ]
     }
   }
