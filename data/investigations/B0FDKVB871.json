@@ -138,26 +138,47 @@
       "scoreRationale": "[基本点: 70]\n[加点: +5] (5,200mAhの大容量バッテリーによる長時間の使用可能時間)\n[加点: +5] (IP68・IP69の最高クラスの防水防塵性能)\n[加点: +3] (おサイフケータイ対応やイヤホンジャック搭載など日本市場向けの実用性の高さ)\n[加点: +2] (2万円台後半という価格設定に対する総合的なコストパフォーマンスの良さ)\n[減点: -2] (本体重量が約200gと、長時間の片手操作ではやや負担になる重さ)\n[合計: 83]"
     },
     "technicalSpecs": {
-      "dimensions": {
-        "height": "165.75mm",
-        "width": "76.26mm",
-        "depth": "8.50mm"
+      "os": "Android 15",
+      "cpu": "MediaTek Dimensity 7060",
+      "ram": "8GB",
+      "storage": "128GB",
+      "display": {
+        "size": "6.7インチ",
+        "resolution": "2400×1080 (FHD+)",
+        "type": "IPS液晶 (20:9)",
+        "refreshRate": "120Hz"
       },
-      "weight": "200g",
-      "capacity": "128GB",
-      "material": "不明",
-      "origin": "不明",
+      "battery": {
+        "capacity": "5200mAh",
+        "charging": "30W TurboPower急速充電対応"
+      },
+      "camera": {
+        "main": "50MP (広角 Quad Pixel OIS搭載)",
+        "ultrawide": "8MP (超広角 / マクロ)",
+        "front": "16MP"
+      },
+      "dimensions": {
+        "height": "166.15mm",
+        "width": "76.4mm",
+        "depth": "8.45mm",
+        "weight": "199g"
+      },
+      "weight": "199g",
+      "material": "ヴィーガンレザー（背面）/ プラスチック",
+      "origin": "中国",
+      "connectivity": [
+        "5G",
+        "Wi-Fi 5 (802.11ac)",
+        "Bluetooth 5.3",
+        "FeliCa / おサイフケータイ",
+        "eSIM対応"
+      ],
       "other": [
-        "OS: Android 15",
-        "CPU: MediaTek Dimensity 7060 (2.6GHz x 2 + 2.0GHz x 6)",
-        "RAM: 8GB",
-        "ディスプレイ: 約17.018cm 2,400x1,080 (FHD+)、LCD、20:9、リフレッシュレート 120Hz",
-        "バッテリー: 5,200mAh",
-        "通信: Wi-Fi 802.11 a/b/g/n/ac (2.4GHz / 5GHz)、Bluetooth 5.3",
-        "SIM: nanoSIM / eSIM (スロット数1)",
-        "インタフェース: USB Type-C (USB 2.0)、イヤホンマイクジャック3.5mm",
-        "防水・防塵: IP68・IP69",
-        "その他機能: NFC/FeliCa対応、FMラジオ搭載"
+        "防塵防水: IP68 / IP69",
+        "オーディオ: ステレオスピーカー (Dolby Atmos対応) / 3.5mmヘッドホンジャック",
+        "生体認証: 側面指紋認証 / 顔認証",
+        "FMラジオ搭載",
+        "microSD対応 (最大1TB)"
       ]
     }
   }

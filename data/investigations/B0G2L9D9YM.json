@@ -167,24 +167,47 @@
       "scoreRationale": "[基本点: 70]\n[加点: +5] (5800mAhの大容量バッテリーによるスタミナ)\n[加点: +5] (約170mm 120Hz 有機ELディスプレイの綺麗さ)\n[加点: +5] (4万円台という手頃な価格設定によるコストパフォーマンス)\n[合計: 85]"
     },
     "technicalSpecs": {
+      "os": "Android 15 (ColorOS 15)",
+      "cpu": "Qualcomm Snapdragon 6 Gen 1",
+      "ram": "8GB",
+      "storage": "128GB",
+      "display": {
+        "size": "6.7インチ",
+        "resolution": "2400×1080 (FHD+)",
+        "type": "AMOLED (有機EL)",
+        "refreshRate": "120Hz"
+      },
+      "battery": {
+        "capacity": "5800mAh",
+        "charging": "45W SUPERVOOC急速充電対応"
+      },
+      "camera": {
+        "main": "50MP (広角 OIS搭載)",
+        "ultrawide": "8MP (超広角)",
+        "front": "32MP"
+      },
       "dimensions": {
         "height": "162mm",
         "width": "75mm",
-        "depth": "7.8mm"
+        "depth": "7.8mm",
+        "weight": "192g"
       },
       "weight": "192g",
-      "capacity": "128GB ROM / 8GB RAM",
-      "material": "ガラス/プラスチック等（一般的なスマートフォン素材）",
+      "material": "ガラス / 樹脂（カラーによる加工）",
       "origin": "中国",
+      "connectivity": [
+        "5G",
+        "Wi-Fi 6 (802.11ax)",
+        "Bluetooth 5.4",
+        "FeliCa / おサイフケータイ",
+        "eSIM対応"
+      ],
       "other": [
-        "ディスプレイ: 約170mm 有機EL(AMOLED) FHD+ (2400×1080) リフレッシュレート最大120Hz",
-        "CPU: Qualcomm Snapdragon 6 Gen 1",
-        "バッテリー容量: 5800mAh",
-        "アウトカメラ: 約5000万画素(広角) + 約800万画素(超広角) + 約200万画素(マクロ)",
-        "インカメラ: 約3200万画素",
-        "生体認証: ディスプレイ指紋認証/顔認証",
-        "おサイフケータイ対応",
-        "SIM: nanoSIM+eSIM対応"
+        "防塵防水: IP68 / IP69",
+        "生体認証: ディスプレイ指紋認証 / 顔認証",
+        "AI機能: AI消しゴム / AIポートレート機能",
+        "マクロカメラ: 2MP",
+        "microSDXC対応 (最大2TB)"
       ]
     }
   }
