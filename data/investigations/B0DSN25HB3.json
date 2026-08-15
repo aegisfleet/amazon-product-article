@@ -158,28 +158,46 @@
       "scoreRationale": "[基本点: 70]\n[加点: +5] (Dimensity 8400-Ultra搭載による高い処理性能)\n[加点: +2] (6000mAh大容量バッテリー)\n[加点: +1] (90W急速充電による利便性)\n[加点: +3] (IP68防塵・防水対応で利便性向上)\n[加点: +2] (1.5K 120Hzの高精細有機ELディスプレイ)\n[合計: 83]"
     },
     "technicalSpecs": {
-      "dimensions": {
-        "height": "未公表",
-        "width": "未公表",
-        "depth": "未公表"
-      },
-      "weight": "未公表",
-      "capacity": "8GB RAM + 256GB ROM",
-      "material": "未公表",
-      "origin": "未公表",
-      "os": "Android",
+      "os": "Android 15 (Xiaomi HyperOS 2)",
       "cpu": "MediaTek Dimensity 8400-Ultra",
       "ram": "8GB",
       "storage": "256GB",
+      "display": {
+        "size": "6.67インチ",
+        "resolution": "2712×1220 (1.5K)",
+        "type": "AMOLED (CrystalRes有機EL / 最大輝度3200nits)",
+        "refreshRate": "120Hz"
+      },
+      "battery": {
+        "capacity": "6000mAh",
+        "charging": "90W HyperCharge急速充電対応"
+      },
+      "camera": {
+        "main": "50MP (Sony IMX882 1/1.95型 F1.5 OIS搭載)",
+        "ultrawide": "8MP (超広角)",
+        "front": "20MP"
+      },
+      "dimensions": {
+        "height": "160.8mm",
+        "width": "75.2mm",
+        "depth": "8.3mm",
+        "weight": "204g"
+      },
+      "weight": "204g",
+      "material": "ヴィーガンレザー（背面）またはガラス / 樹脂フレーム",
+      "origin": "中国",
+      "connectivity": [
+        "5G",
+        "Wi-Fi 6 (802.11ax)",
+        "Bluetooth 5.4",
+        "eSIM対応",
+        "nanoSIM"
+      ],
       "other": [
-        "バッテリー: 6000mAh",
-        "充電: 90Wハイパーチャージ",
-        "ディスプレイ: 16.9cm 1.5K(2712×1220) 有機EL(CrystalRes)",
-        "リフレッシュレート: 最大120Hz",
         "防塵防水: IP68",
-        "メインカメラ: 5000万画素 (SONY IMX882, f/1.5)",
-        "対応回線: docomo/au/SoftBank/Rakuten Mobile",
-        "カラー: イエロー"
+        "冷却機能: LiquidCool Technology 4.0",
+        "生体認証: 画面内指紋認証 / 顔認証",
+        "オーディオ: デュアルスピーカー"
       ]
     }
   }

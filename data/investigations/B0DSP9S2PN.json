@@ -168,24 +168,46 @@
       "scoreRationale": "[基本点: 70]\n[加点: +5] (Dimensity 8400-Ultraによる高い処理性能)\n[加点: +3] (90W急速充電による実用性の高さ)\n[加点: +2] (1.5K有機ELによる画面の美しさ)\n[加点: +5] (IP68防塵防水による高い耐久性)\n[合計: 85]"
     },
     "technicalSpecs": {
-      "dimensions": {
-        "height": "163mm",
-        "width": "75.4mm",
-        "depth": "8.5mm"
+      "os": "Android 15 (Xiaomi HyperOS 2)",
+      "cpu": "MediaTek Dimensity 8400-Ultra",
+      "ram": "12GB",
+      "storage": "512GB",
+      "display": {
+        "size": "6.67インチ",
+        "resolution": "2712×1220 (1.5K)",
+        "type": "AMOLED (CrystalRes有機EL / 最大輝度3200nits)",
+        "refreshRate": "120Hz"
       },
-      "weight": "210g",
-      "capacity": "512GB",
-      "material": "ガラス/プラスチック",
+      "battery": {
+        "capacity": "6000mAh",
+        "charging": "90W HyperCharge急速充電対応"
+      },
+      "camera": {
+        "main": "50MP (Sony IMX882 1/1.95型 F1.5 OIS搭載)",
+        "ultrawide": "8MP (超広角)",
+        "front": "20MP"
+      },
+      "dimensions": {
+        "height": "160.8mm",
+        "width": "75.2mm",
+        "depth": "8.3mm",
+        "weight": "204g"
+      },
+      "weight": "204g",
+      "material": "ヴィーガンレザー（背面）またはガラス / 樹脂フレーム",
       "origin": "中国",
+      "connectivity": [
+        "5G",
+        "Wi-Fi 6 (802.11ax)",
+        "Bluetooth 5.4",
+        "eSIM対応",
+        "nanoSIM"
+      ],
       "other": [
-        "メモリ: 12GB",
-        "プロセッサ: MediaTek Dimensity 8400-Ultra",
-        "ディスプレイ: 約16.9cm 1.5K (2712×1220) 120Hz 有機EL",
-        "バッテリー: 6000mAh",
-        "充電: 90W急速充電",
-        "カメラ: メイン5000万画素 (ソニーIMX882, F1.5)",
-        "防水・防塵: IP68",
-        "カラー: イエロー"
+        "防塵防水: IP68",
+        "冷却機能: LiquidCool Technology 4.0",
+        "生体認証: 画面内指紋認証 / 顔認証",
+        "オーディオ: デュアルスピーカー"
       ]
     }
   }
