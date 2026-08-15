@@ -13,6 +13,13 @@ import requests
 from concurrent.futures import ThreadPoolExecutor
 from typing import List, Dict, Set, Any, Optional
 
+# Windows環境でのUnicodeEncodeError防止
+if sys.stdout:
+    try:
+        sys.stdout.reconfigure(encoding='utf-8')
+    except Exception:
+        pass
+
 def extract_urls_from_json(data) -> Set[str]:
     """JSONデータから再帰的にURLを抽出する"""
     urls = set()
