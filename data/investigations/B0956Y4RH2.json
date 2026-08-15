@@ -159,22 +159,45 @@
       "scoreRationale": "[基本点: 70] (固定)\n[加点: +5] (基本用途に十分な画面サイズ)\n[加点: +5] (整備済み品によるコストパフォーマンスの高さ)\n[減点: -5] (ストレージ容量が32GBと少ない)\n[合計: 75]"
     },
     "technicalSpecs": {
+      "os": "iPadOS 17 (iPadOS 18対応)",
+      "cpu": "Apple A10 Fusion (4コア 2.34GHz / 6コアPowerVR GPU)",
+      "ram": "3GB",
+      "storage": "32GB",
+      "display": {
+        "size": "10.2インチ",
+        "resolution": "2160×1620 (Retinaディスプレイ / 264ppi)",
+        "type": "IPS液晶 (500nits)",
+        "refreshRate": "60Hz"
+      },
+      "battery": {
+        "capacity": "32.4Wh",
+        "charging": "Lightning充電 (12W/20W対応)",
+        "playbackTime": "最大10時間"
+      },
+      "camera": {
+        "main": "8MP (広角 1080p HD)",
+        "front": "1.2MP FaceTime HD"
+      },
       "dimensions": {
         "height": "250.6mm",
         "width": "174.1mm",
-        "depth": "7.5mm"
+        "depth": "7.5mm",
+        "weight": "483g"
       },
       "weight": "483g",
-      "capacity": "32GB",
-      "material": "アルミニウム",
-      "origin": "不明",
+      "material": "アルミニウムユニボディ",
+      "origin": "中国",
+      "connectivity": [
+        "Wi-Fi 5 (802.11ac)",
+        "Bluetooth 4.2",
+        "Lightningポート",
+        "Smart Connector",
+        "3.5mmイヤホンジャック"
+      ],
       "other": [
-        "ディスプレイ: 260mm",
-        "チップ: A10 Fusion",
-        "カラー: シルバー",
-        "通信: Wi-Fiモデル",
-        "対応アクセサリ: Apple Pencil (第1世代)、Smart Keyboard",
-        "コネクタ: Lightning"
+        "Apple Pencil (第1世代) 対応",
+        "Smart Keyboard対応",
+        "Touch ID (ホームボタン指紋認証)"
       ]
     }
   }

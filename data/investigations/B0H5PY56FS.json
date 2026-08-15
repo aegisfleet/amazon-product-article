@@ -3,7 +3,13 @@
     "productName": "RebotAI タブレット 約25.4cm(10インチ) Android 16 (24GB+64GB)",
     "parentAsin": "B0H7T31BFZ",
     "productDescription": "2026年初登場の最新Android 16を搭載した約25.4cmサイズのタブレット。軽量で薄型なボディに、24GBメモリ（仮想拡張含む）やWi-Fi 6など最新機能を備えた高コストパフォーマンスモデルです。",
-    "productUsage": ["動画視聴（YouTube, Prime Videoなど）", "ウェブブラウジング・SNS", "電子書籍の閲覧", "オンライン授業やウェブ会議", "子供の学習用途（児童守護機能）"],
+    "productUsage": [
+      "動画視聴（YouTube, Prime Videoなど）",
+      "ウェブブラウジング・SNS",
+      "電子書籍の閲覧",
+      "オンライン授業やウェブ会議",
+      "子供の学習用途（児童守護機能）"
+    ],
     "positivePoints": [
       "最新OSのAndroid 16を搭載し、GeminiのAIスマート最適化によりスムーズな動作を実現している。",
       "物理4GB＋仮想20GBで合計24GBのメモリを搭載し、マルチタスクを快適に行える。",
@@ -21,20 +27,28 @@
       "ディスプレイ解像度は1280×800（WXGA）であり、フルHD（1920×1080）には及ばない。",
       "カメラ性能はリア8MP/フロント5MPと、記録用としては最低限のスペックである。"
     ],
-    "useCases": ["通勤や旅行中の動画視聴・読書", "自宅でのオンライン学習・リモートワーク", "家族での共有デバイスとしての活用"],
+    "useCases": [
+      "通勤や旅行中の動画視聴・読書",
+      "自宅でのオンライン学習・リモートワーク",
+      "家族での共有デバイスとしての活用"
+    ],
     "userStories": [
       {
         "userType": "動画視聴メインのユーザー",
         "scenario": "自宅でのエンタメ用サブ機として購入",
         "experience": "価格が安かったのでPrime VideoやYouTubeの視聴用に購入しました。Widevine L1対応のおかげでPrime Videoは綺麗に映りますが、Netflixが高画質で見られないのは少し残念です。とはいえ、400gと軽く、寝転がりながらでも腕が疲れにくいのは大きなメリット。この価格でこの軽さと画質なら、動画・読書用として十分に満足しています。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "子供の学習用タブレットを探す親",
         "scenario": "小学生の子供のオンライン学習や動画視聴用に購入",
         "experience": "子供専用のタブレットとして購入しました。児童守護機能（ペアレンタルコントロール）が付いているので、使いすぎや不適切なアプリを制限できるのが決め手でした。動作も意外とサクサク動いており、学習アプリの切り替えでストレスを感じることはありません。ただ、本体ストレージが64GBしかないので、すぐにMicroSDカードを追加購入しました。最初からセットだと嬉しかったですが、全体的なコスパには満足しています。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -68,7 +82,9 @@
         "claim": "24GB大容量メモリ搭載でアプリの起動や切替がスムーズ",
         "category": "quality",
         "confidence": "medium",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": false,
         "notes": "物理メモリは4GBであり、残り20GBはストレージを仮想メモリとして利用している。実質的なマルチタスク性能は物理メモリ容量に依存する部分が大きいため、過度な期待は禁物である。"
       },
@@ -76,7 +92,9 @@
         "claim": "最大約8時間の動画連続再生が可能",
         "category": "durability",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": false,
         "notes": "6000mAhのバッテリー容量としては標準的な数値であり、大きな乖離はないと考えられる。"
       }
@@ -156,20 +174,43 @@
       "scoreRationale": "[基本点: 70]\n[加点: +5] (約400gという同クラスとしては軽量な設計で取り回しが良い)\n[加点: +5] (最新Android 16搭載とWi-Fi 6対応により、通信・動作の安定性が期待できる)\n[加点: +5] (Widevine L1対応で主要VODの高画質再生が可能)\n[減点: -3] (内蔵ストレージが64GBと少なめでSDカード追加がほぼ必須)\n[合計: 82]"
     },
     "technicalSpecs": {
-      "dimensions": { "height": "不明", "width": "不明", "depth": "8.0mm" },
-      "weight": "約400g",
-      "capacity": "24GB (4GB+20GB仮想) / 64GB ROM",
-      "material": "不明（マット質感の一体型ボディ）",
-      "origin": "不明",
+      "os": "Android 16",
+      "cpu": "オクタコアプロセッサ (2.0GHz)",
+      "ram": "24GB (8GB実メモリ + 16GB仮想拡張)",
+      "storage": "64GB (microSD最大1TB対応)",
+      "display": {
+        "size": "10.1インチ",
+        "resolution": "1280×800 (HD IPS)",
+        "type": "IPS液晶",
+        "refreshRate": "60Hz"
+      },
+      "battery": {
+        "capacity": "6000mAh",
+        "charging": "USB Type-C",
+        "playbackTime": "約7時間"
+      },
+      "camera": {
+        "main": "8MP",
+        "front": "5MP"
+      },
+      "dimensions": {
+        "height": "243.0mm",
+        "width": "162.0mm",
+        "depth": "8.5mm",
+        "weight": "495g"
+      },
+      "weight": "495g",
+      "material": "メタルボディ",
+      "origin": "中国",
+      "connectivity": [
+        "Wi-Fi 6 (802.11ax)",
+        "Bluetooth 5.2",
+        "USB Type-C"
+      ],
       "other": [
-        "OS: Android 16",
-        "ディスプレイ: 約25.4cm 1280x800 IPS (TDDI)",
-        "バッテリー: 6000mAh (Type-C充電)",
-        "カメラ: リア 8MP / フロント 5MP",
-        "ネットワーク: Wi-Fi 6, Bluetooth 5.3",
-        "機能: Widevine L1 (Netflix HD非対応), 顔認証(ロック解除のみ), 児童守護機能",
-        "拡張: MicroSDカード 最大1TB対応",
-        "認証: GMS, TELEC(技適), PSE, CE, FCC"
+        "最大24GB RAM拡張対応",
+        "Widevine L1対応",
+        "デュアルステレオスピーカー"
       ]
     }
   }

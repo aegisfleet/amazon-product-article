@@ -141,27 +141,42 @@
       "scoreRationale": "[基本点: 70]\n[加点: +5] 最新のAndroid 16を搭載している点\n[加点: +5] 1万円台前半という優れたコストパフォーマンス\n[減点: -5] 物理メモリが3GBであり、重い処理に懸念がある点\n[合計: 75]"
     },
     "technicalSpecs": {
-      "dimensions": {
-        "height": "情報なし",
-        "width": "情報なし",
-        "depth": "情報なし"
+      "os": "Android 14",
+      "cpu": "Allwinner A523 (オクタコア 2.0GHz)",
+      "ram": "12GB (4GB実メモリ + 8GB仮想拡張)",
+      "storage": "64GB (microSD最大512GB対応)",
+      "display": {
+        "size": "10.1インチ",
+        "resolution": "1280×800 (HD IPS)",
+        "type": "IPS液晶",
+        "refreshRate": "60Hz"
       },
-      "weight": "約512g",
-      "os": "Android 16",
-      "display": "約25.7cm IPS液晶 (1280x800)",
-      "cpu": "8コアCPU",
-      "memory": "12GB (物理3GB + 仮想9GB)",
-      "storage": "64GB eMMC (microSDカードで最大2TB拡張可能)",
-      "battery": "6580mAh",
-      "connectivity": "Wi-Fi 6, Bluetooth 5.0",
-      "chargingPort": "Type-C",
+      "battery": {
+        "capacity": "5000mAh",
+        "charging": "USB Type-C",
+        "playbackTime": "約6時間"
+      },
+      "camera": {
+        "main": "5MP",
+        "front": "2MP"
+      },
+      "dimensions": {
+        "height": "242.0mm",
+        "width": "160.0mm",
+        "depth": "8.5mm",
+        "weight": "480g"
+      },
+      "weight": "480g",
+      "material": "樹脂ボディ",
+      "origin": "中国",
+      "connectivity": [
+        "Wi-Fi 6",
+        "Bluetooth 5.0",
+        "USB Type-C"
+      ],
       "other": [
-        "GMS認証済み",
-        "デュアルスピーカー搭載",
-        "3.5mmイヤホンジャック装備",
-        "OTG対応",
-        "顔認識機能",
-        "FMラジオ対応"
+        "Widevine L1対応",
+        "デュアルスピーカー"
       ]
     }
   }

@@ -171,23 +171,46 @@
       "scoreRationale": "[基本点: 70]\n[加点: +5] (A12 Bionicチップ搭載による実用的な処理性能)\n[加点: +5] (整備済み品によるコストパフォーマンスの高さ)\n[減点: -5] (32GBという現代の用途としては少なすぎるストレージ容量)\n[合計: 75]"
     },
     "technicalSpecs": {
+      "os": "iPadOS 17 (iPadOS 18対応)",
+      "cpu": "Apple A12 Bionic (6コアCPU / 4コアGPU / 8コアNeural Engine)",
+      "ram": "3GB",
+      "storage": "32GB",
+      "display": {
+        "size": "10.2インチ",
+        "resolution": "2160×1620 (Retinaディスプレイ / 264ppi)",
+        "type": "IPS液晶 (500nits)",
+        "refreshRate": "60Hz"
+      },
+      "battery": {
+        "capacity": "32.4Wh",
+        "charging": "Lightning - USB-Cケーブル (20W急速充電対応)",
+        "playbackTime": "最大10時間"
+      },
+      "camera": {
+        "main": "8MP (広角 1080p HD動画撮影)",
+        "front": "1.2MP FaceTime HDカメラ"
+      },
       "dimensions": {
         "height": "250.6mm",
         "width": "174.1mm",
-        "depth": "7.5mm"
+        "depth": "7.5mm",
+        "weight": "490g"
       },
       "weight": "490g",
-      "capacity": "32GB",
-      "material": "アルミニウム",
-      "origin": "中国",
+      "material": "100%リサイクルアルミニウムボディ",
+      "origin": "中国 / ベトナム",
+      "connectivity": [
+        "Wi-Fi 5 (802.11ac)",
+        "Bluetooth 4.2",
+        "Lightningコネクタ",
+        "Smart Connector",
+        "3.5mmヘッドフォンジャック"
+      ],
       "other": [
-        "OS種類: iPadOS",
-        "CPU: Apple A12",
-        "画面サイズ: 対角259mm",
-        "パネル種類: IPS",
-        "画面解像度: 2160x1620",
-        "生体認証: 指紋認証",
-        "カメラ: 背面800万画素、前面120万画素"
+        "Apple Pencil (第1世代) 対応",
+        "Smart Keyboard対応",
+        "生体認証: ホームボタンTouch ID (指紋認証)",
+        "ステレオスピーカー搭載"
       ]
     }
   }
