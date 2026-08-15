@@ -159,19 +159,48 @@
       "scoreRationale": "[基本点: 70]\n[加点: +5] (5000mAhの大容量バッテリーと約168gの軽量性を両立した取り回しの良さ)\n[加点: +5] (RAM 8GBや120Hz駆動ディスプレイへの進化による快適性の向上)\n[減点: -5] (スペックに対して価格が約7.1万円と競合と比較してやや割高)\n[合計: 75]"
     },
     "technicalSpecs": {
+      "os": "Android 15",
+      "cpu": "Qualcomm Snapdragon 6 Gen 3",
+      "ram": "8GB",
+      "storage": "128GB",
+      "display": {
+        "size": "6.1インチ",
+        "resolution": "2340×1080 (FHD+ / 19.5:9)",
+        "type": "OLED (有機EL / トリルミナスディスプレイ for mobile)",
+        "refreshRate": "120Hz (1-120Hz可変駆動)"
+      },
+      "battery": {
+        "capacity": "5000mAh",
+        "charging": "USB PD急速充電 (3年長寿命バッテリー)"
+      },
+      "camera": {
+        "main": "50MP (広角 Exmor T for mobile OIS搭載)",
+        "ultrawide": "8MP (超広角)",
+        "telephoto": "8MP (望遠)",
+        "front": "8MP"
+      },
       "dimensions": {
         "height": "153mm",
         "width": "72mm",
-        "depth": "8.3mm"
+        "depth": "8.3mm",
+        "weight": "168g"
       },
       "weight": "168g",
-      "display": "約6.1インチ 有機EL トリルミナスディスプレイ for mobile (2340x1080) FHD+ 1-120Hz駆動",
-      "processor": "Snapdragon 6 Gen 3 Mobile Platform",
-      "ram": "8GB",
-      "storage": "128GB",
-      "battery": "5000mAh",
-      "color": "チャコールブラック",
-      "network": "SIMフリー"
+      "material": "ガラス（前面・背面）/ プラスチックフレーム",
+      "origin": "タイ",
+      "connectivity": [
+        "5G",
+        "Wi-Fi 6E",
+        "Bluetooth 5.4",
+        "FeliCa / おサイフケータイ",
+        "eSIM対応"
+      ],
+      "other": [
+        "防塵防水: IP65 / IP68",
+        "オーディオ: フロントステレオスピーカー / 3.5mmオーディオジャック",
+        "生体認証: 側面指紋認証",
+        "microSDXC対応 (最大1.5TB)"
+      ]
     }
   }
 }

@@ -150,41 +150,48 @@
       "scoreRationale": "[基本点: 70]\n[加点: +10] (最新SoC Dimensity 9400+とライカ5倍望遠はフラッグシップ級の性能)\n[加点: +15] (このハイエンド性能で10万円切りは他社を圧倒するコスパ)\n[加点: +3] (IP68対応、3200nitsの超高輝度144Hzディスプレイなど優れた品質)\n[合計: 98]"
     },
     "technicalSpecs": {
-      "os": "Android",
+      "os": "Android 15 (Xiaomi HyperOS 2)",
       "cpu": "MediaTek Dimensity 9400+",
       "ram": "12GB",
       "storage": "256GB",
       "display": {
         "size": "6.83インチ",
-        "resolution": "1.5K",
-        "type": "OLED 144Hz"
+        "resolution": "2772×1280 (1.5K)",
+        "type": "AMOLED (有機EL / 3200nits)",
+        "refreshRate": "144Hz"
       },
       "battery": {
-        "capacity": null,
-        "charging": null
+        "capacity": "5500mAh",
+        "charging": "120W Xiaomi HyperCharge急速充電 / 50Wワイヤレス充電対応"
       },
       "camera": {
-        "main": "ライカSummilux",
-        "telephoto": "5倍望遠"
+        "main": "50MP (ライカSummilux 1/1.31型 Light Fusion 900 OIS搭載)",
+        "telephoto": "50MP (ライカ 5倍ペリスコープ望遠 OIS搭載)",
+        "ultrawide": "12MP (ライカ 超広角)",
+        "front": "32MP"
       },
       "dimensions": {
-        "height": "約162.2mm",
-        "width": "約75.7mm",
-        "depth": "約8.5mm"
+        "height": "162.2mm",
+        "width": "75.7mm",
+        "depth": "8.5mm",
+        "weight": "206g"
       },
+      "weight": "206g",
+      "material": "ガラス（背面）/ アルミニウムフレーム",
+      "origin": "中国",
       "connectivity": [
         "5G",
-        "Wi-Fi",
-        "Bluetooth",
-        "FeliCa"
+        "Wi-Fi 7",
+        "Bluetooth 5.4",
+        "FeliCa / おサイフケータイ",
+        "eSIM対応"
       ],
       "other": [
-        "IP68防水防塵",
-        "3D冷却システム",
-        "Xiaomi HyperAI",
-        "Google Gemini"
-      ],
-      "weight": "約206g"
+        "防塵防水: IP68",
+        "冷却機能: 3D LiquidCool冷却システム",
+        "AI機能: Xiaomi HyperAI / Google Gemini",
+        "生体認証: ディスプレイ指紋認証 / 顔認証"
+      ]
     }
   }
 }
