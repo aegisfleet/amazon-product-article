@@ -75,9 +75,6 @@ function getOptions(): CLIOptions {
 }
 
 /**
- * ファイル名からASINを抽出し、JSON構造を変換してInvestigationDataを構築
- */
-/**
  * 単一の調査結果ファイルをロードし、検証および変換を実行する
  */
 async function loadAndValidateInvestigation(filePath: string): Promise<InvestigationData | null> {
@@ -248,6 +245,26 @@ export async function loadInvestigationResults(targetFiles?: string[]): Promise<
   }
 
   return results;
+}
+
+/**
+ * 既存の記事ファイル（content/articles/${asin}.md）から初回公開日（date）を取得する
+ */
+async function getExistingArticlePublishDate(asin: string): Promise<Date | null> {
+  try {
+    const articlePath = path.join(process.cwd(), 'content', 'articles', `${asin}.md`);
+    const content = await fs.readFile(articlePath, 'utf-8');
+    const match = /^date:\s*["']?(\d{4}-\d{2}-\d{2})["']?/m.exec(content);
+    if (match?.[1]) {
+      const parsedDate = new Date(match[1]);
+      if (!Number.isNaN(parsedDate.getTime())) {
+        return parsedDate;
+      }
+    }
+  } catch {
+    // 記事が存在しない、または読み込み失敗時は無視
+  }
+  return null;
 }
 
 async function ensureOutputDirectories(): Promise<void> {
@@ -546,6 +563,12 @@ async function processArticles(
               for (const [asin, detail] of cachedCompetitors.entries()) {
                 competitorDetails.set(asin, detail);
               }
+            }
+
+            // 既存記事が存在する場合はその初回公開日（date）を維持して保護する
+            const existingPublishDate = await getExistingArticlePublishDate(data.product.asin);
+            if (existingPublishDate) {
+              data.investigation.generatedAt = existingPublishDate;
             }
 
             logger.debug(`Generating article for: ${data.product.title}`);
