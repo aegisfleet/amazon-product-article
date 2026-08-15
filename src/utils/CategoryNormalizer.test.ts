@@ -197,6 +197,8 @@ describe('CategoryNormalizer', () => {
         '野外フェス用品',
         'Data Warehouse Queries with Dynamic Selection',
         'ExcludeASIN',
+        'お客様都合の返品不可',
+        'お客様都合の返品不可_電動歯ブラシ、口腔洗浄器',
       ];
       invalidNames.forEach((name) => {
         expect(CategoryNormalizer.isValidCategoryName(name)).toBe(false);
@@ -453,6 +455,34 @@ describe('CategoryNormalizer', () => {
       const result = CategoryNormalizer.selectBestCategory(nodes);
       expect(result.main).toBe('電動頭皮ブラシ');
       expect(result.score).toBe(20);
+    });
+
+    it('should prefer electric toothbrush over mismatched phone or return policy nodes (B0DHX93H1Y)', () => {
+      const nodes: BrowseNode[] = [
+        { displayName: 'スマホ本体', contextFreeName: 'スマホ本体', id: '7474288051' },
+        { displayName: '回転式', contextFreeName: '回転式電動歯ブラシ', id: '10509662051' },
+        { displayName: 'お客様都合の返品不可', contextFreeName: 'お客様都合の返品不可', id: '23674311051' },
+        {
+          displayName: 'お客様都合の返品不可_電動歯ブラシ、口腔洗浄器',
+          contextFreeName: 'お客様都合の返品不可_電動歯ブラシ、口腔洗浄器',
+          id: '23711669051',
+        },
+      ];
+      const title =
+        'ブラウン 電動歯ブラシ オーラルB 【電動初心者の決定版】iO3S iOG3.1C6.0 WT_H 静かでなめらかな磨き心地 防水 歯科医推奨No.1ブランド【Amazon.co.jp 限定】';
+
+      const result = CategoryNormalizer.selectBestCategory(nodes, title);
+      expect(result.main).toBe('回転式電動歯ブラシ');
+      expect(result.sub).not.toBe('スマホ本体');
+      expect(result.score).toBeGreaterThanOrEqual(10);
+      expect(result.browseNodeId).toBe('10509662051');
+    });
+
+    it('should invalidate smartphone categories if title does not contain smartphone keywords', () => {
+      expect(CategoryNormalizer.isValidCategoryName('スマホ本体', 'Google Pixel 8a 128GB')).toBe(true);
+      expect(CategoryNormalizer.isValidCategoryName('スマホ本体', 'iPhone 15 128GB')).toBe(true);
+      expect(CategoryNormalizer.isValidCategoryName('スマホ本体', 'ブラウン 電動歯ブラシ オーラルB')).toBe(false);
+      expect(CategoryNormalizer.isValidCategoryName('スマートフォン本体', 'Anker モバイルバッテリー')).toBe(false);
     });
   });
 });

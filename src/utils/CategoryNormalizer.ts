@@ -49,6 +49,12 @@ export class CategoryNormalizer {
     'マウス',
     'キーボード',
     '替えブラシ',
+    '電動歯ブラシ',
+    '歯ブラシ',
+    '口腔洗浄器',
+    'シェーバー',
+    'オーラルケア',
+    '理美容',
     'マッサージ機',
     '健康家電',
     'ロボット',
@@ -351,6 +357,43 @@ export class CategoryNormalizer {
       }
     }
 
+    // スマホ本体・スマートフォン本体カテゴリの誤爆防止（タイトルにスマホ関連キーワードがない場合は無効）
+    if (
+      (name === 'スマホ本体' ||
+        name === 'スマートフォン本体' ||
+        name === '携帯電話・スマートフォン本体' ||
+        name === '携帯電話本体') &&
+      title
+    ) {
+      const lowerTitle = title.toLowerCase();
+      const phoneKeywords = [
+        'スマホ',
+        'スマートフォン',
+        'スマートホン',
+        'iphone',
+        'galaxy',
+        'pixel',
+        'xperia',
+        'aquos',
+        'motorola',
+        'oppo',
+        'redmi',
+        'poco',
+        'nothing',
+        '携帯電話',
+        'simフリー',
+        'sim free',
+        'arrows',
+        'zenfone',
+        'honor',
+        'huawei',
+        'xiaomi',
+      ];
+      if (!phoneKeywords.some((k) => lowerTitle.includes(k))) {
+        return false;
+      }
+    }
+
     // 1. Whitelist (Highest Priority)
     const whitelist = [
       '磁気・チタン・ゲルマニウムアクセサリー',
@@ -473,6 +516,8 @@ export class CategoryNormalizer {
       /data\s*warehouse/i,
       /dynamic\s*selection/i,
       /ExcludeASIN/i,
+      /返品不可/i,
+      /お客様都合/i,
     ];
 
     if (invalidPatterns.some((pattern) => pattern.test(name))) {
@@ -660,84 +705,76 @@ export class CategoryNormalizer {
       .replaceAll(/[【】|()（）_※]/g, '')
       .trim();
 
-    if (finalName.includes('ハンドル・ジョイスティック') || finalName === 'ハンドルコントローラー') {
-      if (
-        title &&
-        (title.includes('コントローラー') ||
-          title.includes('ゲームパッド') ||
-          title.includes('DualSense') ||
-          title.includes('OCTA') ||
-          title.includes('コマンダー') ||
-          title.includes('パッド')) &&
-        !title.includes('ステアリング') &&
-        !title.includes('レーシングホイール') &&
-        !title.includes('ハンコン') &&
-        !title.includes('フライトスティック')
-      ) {
-        finalName = 'コントローラー・周辺機器';
-      } else {
-        finalName = 'ハンドルコントローラー';
-      }
-    }
-
-    // テレビ本体のカテゴリをパネル方式で分類
-    const lowerName = finalName.toLowerCase();
-    if (
-      (lowerName.endsWith('テレビ') || lowerName.startsWith('テレビ') || lowerName.includes('tv')) &&
-      !lowerName.includes('hdd') &&
-      !lowerName.includes('リモコン') &&
-      !lowerName.includes('チューナー') &&
-      !lowerName.includes('壁掛け') &&
-      !lowerName.includes('台') &&
-      !lowerName.includes('スタンド') &&
-      !lowerName.includes('パーツ') &&
-      !lowerName.includes('部品') &&
-      !lowerName.includes('カバー') &&
-      !lowerName.includes('アンテナ') &&
-      !lowerName.includes('ゲーム')
-    ) {
-      if (title) {
-        const lowerTitle = title.toLowerCase();
-        if (lowerTitle.includes('有機el') || lowerTitle.includes('oled')) {
-          finalName = '有機ELテレビ';
-        } else {
-          finalName = '液晶テレビ';
-        }
-      } else {
-        finalName = '液晶テレビ';
-      }
-    }
+    finalName = CategoryNormalizer.resolveControllerCategory(finalName, title);
+    finalName = CategoryNormalizer.resolveTvCategory(finalName, title);
 
     if (finalName === 'イヤ・ヘッド') {
       finalName = 'イヤホン・ヘッドホン';
     }
 
-    if ((finalName === '家電＆カメラ' || finalName === 'カテゴリー別') && title) {
-      const lowerTitle = title.toLowerCase();
-      if (
-        lowerTitle.includes('イヤホン') ||
-        lowerTitle.includes('ヘッドホン') ||
-        lowerTitle.includes('ヘッドセット') ||
-        lowerTitle.includes('イヤーバッド') ||
-        lowerTitle.includes('earbuds') ||
-        lowerTitle.includes('headphones')
-      ) {
-        finalName = 'イヤホン・ヘッドホン';
-      } else if (lowerTitle.includes('テレビ') || lowerTitle.includes('tv')) {
-        if (lowerTitle.includes('有機el') || lowerTitle.includes('oled')) {
-          finalName = '有機ELテレビ';
-        } else {
-          finalName = '液晶テレビ';
-        }
-      } else if (
-        lowerTitle.includes('充電器') ||
-        lowerTitle.includes('急速充電器') ||
-        lowerTitle.includes('usb充電器')
-      ) {
-        finalName = 'アダプタ・充電器・ケーブル';
-      }
-    }
+    return CategoryNormalizer.resolveGenericCategory(finalName, title);
+  }
 
-    return finalName;
+  private static resolveControllerCategory(name: string, title?: string): string {
+    if (!name.includes('ハンドル・ジョイスティック') && name !== 'ハンドルコントローラー') {
+      return name;
+    }
+    if (!title) {
+      return 'ハンドルコントローラー';
+    }
+    const isGamepad = ['コントローラー', 'ゲームパッド', 'DualSense', 'OCTA', 'コマンダー', 'パッド'].some((k) =>
+      title.includes(k),
+    );
+    const isWheel = ['ステアリング', 'レーシングホイール', 'ハンコン', 'フライトスティック'].some((k) =>
+      title.includes(k),
+    );
+    return isGamepad && !isWheel ? 'コントローラー・周辺機器' : 'ハンドルコントローラー';
+  }
+
+  private static resolveTvCategory(name: string, title?: string): string {
+    const lowerName = name.toLowerCase();
+    const isTv = lowerName.endsWith('テレビ') || lowerName.startsWith('テレビ') || lowerName.includes('tv');
+    if (!isTv) {
+      return name;
+    }
+    const excludedKeywords = [
+      'hdd',
+      'リモコン',
+      'チューナー',
+      '壁掛け',
+      '台',
+      'スタンド',
+      'パーツ',
+      '部品',
+      'カバー',
+      'アンテナ',
+      'ゲーム',
+    ];
+    if (excludedKeywords.some((k) => lowerName.includes(k))) {
+      return name;
+    }
+    if (title && (title.toLowerCase().includes('有機el') || title.toLowerCase().includes('oled'))) {
+      return '有機ELテレビ';
+    }
+    return '液晶テレビ';
+  }
+
+  private static resolveGenericCategory(name: string, title?: string): string {
+    if ((name !== '家電＆カメラ' && name !== 'カテゴリー別') || !title) {
+      return name;
+    }
+    const lowerTitle = title.toLowerCase();
+    const headphoneKeywords = ['イヤホン', 'ヘッドホン', 'ヘッドセット', 'イヤーバッド', 'earbuds', 'headphones'];
+    if (headphoneKeywords.some((k) => lowerTitle.includes(k))) {
+      return 'イヤホン・ヘッドホン';
+    }
+    if (lowerTitle.includes('テレビ') || lowerTitle.includes('tv')) {
+      return lowerTitle.includes('有機el') || lowerTitle.includes('oled') ? '有機ELテレビ' : '液晶テレビ';
+    }
+    const chargerKeywords = ['充電器', '急速充電器', 'usb充電器'];
+    if (chargerKeywords.some((k) => lowerTitle.includes(k))) {
+      return 'アダプタ・充電器・ケーブル';
+    }
+    return name;
   }
 }
