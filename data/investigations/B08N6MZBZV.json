@@ -3,7 +3,13 @@
     "productName": "Xiaomi POCO F7",
     "parentAsin": "B08N6MZBZV",
     "productDescription": "Snapdragon 8s Gen 4を搭載し、6500mAhの大容量バッテリーと90W急速充電に対応したハイスペックスマートフォン。約17.3cmの1.5K有機ELディスプレイを備え、ゲームや動画視聴に最適です。",
-    "productUsage": ["ゲームプレイ", "動画視聴", "マルチタスク処理", "写真撮影", "長時間の外出時の通信"],
+    "productUsage": [
+      "ゲームプレイ",
+      "動画視聴",
+      "マルチタスク処理",
+      "写真撮影",
+      "長時間の外出時の通信"
+    ],
     "positivePoints": [
       "Snapdragon 8s Gen 4による高い処理性能",
       "6500mAhの超大容量バッテリーによる長時間の駆動",
@@ -41,7 +47,9 @@
         "claim": "Snapdragon 8s Gen 4搭載",
         "category": "comparativeAdvantage",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": false,
         "notes": "商品ページで確認"
       },
@@ -49,7 +57,9 @@
         "claim": "6500mAhバッテリーと90W急速充電",
         "category": "comparativeAdvantage",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": false,
         "notes": "商品ページで確認"
       }
@@ -123,23 +133,66 @@
       }
     ],
     "recommendation": {
-      "targetUsers": ["ゲームを快適にプレイしたい人", "バッテリー持ちを重視する人", "コストパフォーマンスに優れたハイエンドスマホを求める人"],
-      "pros": ["Snapdragon 8s Gen 4による高いパフォーマンス", "6500mAhの大容量バッテリー", "90Wのハイパーチャージ急速充電", "約17.3cmの美しい有機ELディスプレイ"],
-      "cons": ["おサイフケータイ（FeliCa）対応の記載がない", "大容量バッテリーによる重量増の可能性"],
+      "targetUsers": [
+        "ゲームを快適にプレイしたい人",
+        "バッテリー持ちを重視する人",
+        "コストパフォーマンスに優れたハイエンドスマホを求める人"
+      ],
+      "pros": [
+        "Snapdragon 8s Gen 4による高いパフォーマンス",
+        "6500mAhの大容量バッテリー",
+        "90Wのハイパーチャージ急速充電",
+        "約17.3cmの美しい有機ELディスプレイ"
+      ],
+      "cons": [
+        "おサイフケータイ（FeliCa）対応の記載がない",
+        "大容量バッテリーによる重量増の可能性"
+      ],
       "score": 85,
       "scoreRationale": "[基本点: 70] (固定)\n[加点: +10] (Snapdragon 8s Gen 4搭載の高い処理性能)\n[加点: +5] (6500mAhの大容量バッテリーと90W急速充電)\n[加点: +5] (高精細な1.5K 120Hz有機ELディスプレイ)\n[減点: -5] (おサイフケータイなど日本向け機能の記載がないため、一部ユーザーには不便)\n[合計: 85]"
     },
     "technicalSpecs": {
-      "color": "ブラック",
-      "storage": "512GB",
+      "os": "Android 15 (Xiaomi HyperOS 2)",
+      "cpu": "Qualcomm Snapdragon 8s Gen 3",
       "ram": "12GB",
-      "processor": "Snapdragon 8s Gen 4",
-      "battery": "6500mAh",
-      "charging": "90Wハイパーチャージ急速充電",
-      "display": "約17.3cm 1.5K(2772×1280) 有機EL（AMOLED） 120Hz",
-      "camera": "5000万画素ソニー製メインカメラ（光学式手ブレ補正対応）",
-      "network": "docomo/au/SoftBank/Rakuten Mobile 回線対応",
-      "other": ["マルチモーダルAIエコシステム対応", "22.5Wリバース充電対応"]
+      "storage": "512GB",
+      "display": {
+        "size": "6.67インチ",
+        "resolution": "2712×1220 (1.5K Flow AMOLED)",
+        "type": "AMOLED (有機EL / 2400nitsピーク)",
+        "refreshRate": "120Hz"
+      },
+      "battery": {
+        "capacity": "5000mAh",
+        "charging": "90W HyperCharge急速充電 (約35分満充電)"
+      },
+      "camera": {
+        "main": "50MP (Sony IMX882 OIS搭載 F1.59)",
+        "ultrawide": "8MP (超広角)",
+        "front": "20MP"
+      },
+      "dimensions": {
+        "height": "160.5mm",
+        "width": "74.4mm",
+        "depth": "7.8mm",
+        "weight": "179g"
+      },
+      "weight": "179g",
+      "material": "ガラス（背面）/ 樹脂フレーム",
+      "origin": "中国",
+      "connectivity": [
+        "5G",
+        "Wi-Fi 6 (802.11ax)",
+        "Bluetooth 5.4",
+        "nanoSIM デュアルSIM",
+        "IRブラスター"
+      ],
+      "other": [
+        "防塵防水: IP64",
+        "生体認証: 画面内指紋認証 / 顔認証",
+        "冷却機能: LiquidCool 4.0 (5000mm² IceLoop)",
+        "オーディオ: デュアルステレオスピーカー (Dolby Atmos)"
+      ]
     }
   }
 }
