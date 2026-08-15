@@ -207,24 +207,46 @@
       "scoreRationale": "[基本点: 70]\n[加点: +5] (MediaTek Dimensity 7050搭載で日常使いが快適)\n[加点: +5] (最大67Wの圧倒的な急速充電性能)\n[加点: +5] (5,000mAh大容量バッテリーで電池持ちが良好)\n[加点: +3] (約17cmの10億色有機ELディスプレイ)\n[減点: -3] (カメラの発色が寒色寄りでズームやポートレートが弱い)\n[減点: -2] (動画撮影時の手ブレが目立つ)\n[合計: 83]"
     },
     "technicalSpecs": {
+      "os": "Android 14 (ColorOS 14)",
+      "cpu": "MediaTek Dimensity 7050",
+      "ram": "8GB",
+      "storage": "128GB",
+      "display": {
+        "size": "6.7インチ",
+        "resolution": "2412×1080 (FHD+)",
+        "type": "AMOLED (有機EL)",
+        "refreshRate": "120Hz"
+      },
+      "battery": {
+        "capacity": "5000mAh",
+        "charging": "67W SUPERVOOC急速充電対応"
+      },
+      "camera": {
+        "main": "64MP (広角 F1.7)",
+        "ultrawide": "8MP (超広角 F2.2)",
+        "front": "32MP (F2.4)"
+      },
       "dimensions": {
         "height": "162mm",
         "width": "75mm",
-        "depth": "7.6mm"
+        "depth": "7.6mm",
+        "weight": "177g"
       },
       "weight": "177g",
-      "capacity": "128GB",
       "material": "背面：ガラスまたは樹脂（カラーによる加工）",
       "origin": "中国",
+      "connectivity": [
+        "5G",
+        "Wi-Fi 6 (802.11ax)",
+        "Bluetooth 5.3",
+        "FeliCa / おサイフケータイ",
+        "eSIM対応"
+      ],
       "other": [
-        "ディスプレイ: 約17cm 有機EL (2,412×1,080 / FHD+), リフレッシュレート最大120Hz",
-        "バッテリー: 5,000mAh (最大67W急速充電対応)",
-        "CPU: MediaTek Dimensity 7050 (オクタコア 2.6GHz×2 + 2.0GHz×6)",
-        "RAM: 8GB (最大16GB相当まで拡張可能)",
-        "アウトカメラ: [広角]約6,400万画素 (F1.7) / [超広角]約800万画素 (F2.2, 画角112°) / [マクロ]約200万画素 (F2.4)",
-        "インカメラ: 約3,200万画素 (F2.4)",
-        "防水・防塵: IP65",
-        "生体認証: ディスプレイ指紋認証・顔認証"
+        "防塵防水: IP65",
+        "生体認証: ディスプレイ指紋認証 / 顔認証",
+        "マクロカメラ: 2MP (F2.4)",
+        "microSDXC対応 (最大2TB)"
       ]
     }
   }

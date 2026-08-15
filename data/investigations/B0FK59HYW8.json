@@ -110,22 +110,47 @@
       "scoreRationale": "[基本点: 70]\n[加点: +10] 5000mAhと約159gの軽量ボディの両立という高い実用性\n[減点: -5] 整備済み品特有のバッテリー状態などの個体差リスク\n[合計: 75]"
     },
     "technicalSpecs": {
+      "os": "Android 13 (Android 14対応)",
+      "cpu": "Qualcomm Snapdragon 695 5G",
+      "ram": "6GB",
+      "storage": "128GB",
+      "display": {
+        "size": "6.1インチ",
+        "resolution": "2520×1080 (FHD+ / 21:9)",
+        "type": "OLED (有機EL / トリルミナスディスプレイ for mobile)",
+        "refreshRate": "60Hz"
+      },
+      "battery": {
+        "capacity": "5000mAh",
+        "charging": "USB PD急速充電対応"
+      },
+      "camera": {
+        "main": "48MP (広角 26mm F1.8 OIS搭載)",
+        "ultrawide": "8MP (超広角 16mm F2.2)",
+        "telephoto": "8MP (望遠 54mm F2.2)",
+        "front": "8MP (F2.0)"
+      },
       "dimensions": {
         "height": "155mm",
         "width": "68mm",
-        "depth": "8.3mm"
+        "depth": "8.3mm",
+        "weight": "159g"
       },
       "weight": "159g",
-      "capacity": "128GB",
       "material": "プラスチック（背面）/ ガラス（前面）",
-      "origin": "不明",
+      "origin": "タイ",
+      "connectivity": [
+        "5G",
+        "Wi-Fi 5 (802.11ac)",
+        "Bluetooth 5.1",
+        "FeliCa / おサイフケータイ",
+        "eSIM対応"
+      ],
       "other": [
-        "バッテリー容量: 5000mAh",
-        "CPU: Snapdragon 695 5G Mobile Platform",
-        "メインカメラ: 16mm(超広角) / 26mm(広角) / 54mm(望遠)",
-        "フロントカメラ: 有効画素数約800万画素(F値2.0)",
-        "OS: Android 13 (発売時)",
-        "RAM: 6GB"
+        "防塵防水: IP65 / IP68",
+        "オーディオ: 3.5mmオーディオジャック搭載 / フロントステレオスピーカー",
+        "生体認証: 側面指紋認証",
+        "microSDXC対応 (最大1TB)"
       ]
     }
   }
