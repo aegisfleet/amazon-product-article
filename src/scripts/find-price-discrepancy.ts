@@ -51,7 +51,8 @@ interface CacheStore {
 }
 
 /**
- * data/investigations/ 配下に存在する調査済み ASIN とその最終更新タイムスタンプのマップを取得する
+ * data/investigations/ 配下に存在する調査済み ASIN とその最終調査タイムスタンプのマップを取得する
+ * JSONファイル内の analysis.lastInvestigated を優先し、存在しない場合は mtime を使用する
  */
 async function getInvestigatedAsinMap(investigationsDir: string): Promise<Map<string, number>> {
   const result = new Map<string, number>();
@@ -62,19 +63,35 @@ async function getInvestigatedAsinMap(investigationsDir: string): Promise<Map<st
   }
 
   const files = await fs.promises.readdir(investigationsDir);
-  for (const file of files) {
-    if (file.endsWith('.json')) {
-      const asin = path.basename(file, '.json').toUpperCase();
-      if (/^[A-Z0-9]{10}$/.test(asin)) {
+  const jsonFiles = files.filter((file) => file.endsWith('.json') && file !== 'latest-summary.json');
+  const chunkSize = 50;
+
+  for (let i = 0; i < jsonFiles.length; i += chunkSize) {
+    const chunk = jsonFiles.slice(i, i + chunkSize);
+    await Promise.all(
+      chunk.map(async (file) => {
+        const asin = path.basename(file, '.json').toUpperCase();
+        if (!/^[A-Z0-9]{10}$/.test(asin)) return;
+
         const filePath = path.join(investigationsDir, file);
         try {
+          const content = await fs.promises.readFile(filePath, 'utf-8');
+          // 高速化のため正規表現で lastInvestigated を抽出
+          const match = /"lastInvestigated"\s*:\s*"([^"]+)"/.exec(content);
+          if (match?.[1]) {
+            const parsedTime = new Date(match[1]).getTime();
+            if (!Number.isNaN(parsedTime)) {
+              result.set(asin, parsedTime);
+              return;
+            }
+          }
           const stat = await fs.promises.stat(filePath);
           result.set(asin, stat.mtimeMs);
         } catch {
           result.set(asin, 0);
         }
-      }
-    }
+      }),
+    );
   }
 
   return result;
@@ -86,6 +103,7 @@ export async function findPriceDiscrepancy(
   outputFilePath?: string,
   threshold = 15,
   maxResults = 20,
+  cooldownDays = 30,
 ): Promise<PriceDiscrepancyCandidatesFile> {
   const cachePath = cacheFilePath || path.join(process.cwd(), 'data/cache/paapi-product-cache.json');
   const investigations = investigationsDir || path.join(process.cwd(), 'data/investigations');
@@ -113,6 +131,8 @@ export async function findPriceDiscrepancy(
   logger.info(`Found ${investigatedAsinMap.size} investigated products`);
 
   const candidates: PriceDiscrepancyCandidate[] = [];
+  const now = Date.now();
+  const cooldownMs = cooldownDays * 24 * 60 * 60 * 1000;
 
   for (const [asin, entry] of Object.entries(cache)) {
     if (entry.status !== 'valid' || !entry.data) continue;
@@ -123,13 +143,18 @@ export async function findPriceDiscrepancy(
     // 調査済みの商品のみ対象
     if (!investigatedAsinMap.has(asinUpper)) continue;
 
+    const lastInvestigatedTime = investigatedAsinMap.get(asinUpper) || 0;
+
+    // クールダウン期間判定: 直近（cooldownDays以内）に調査済みの商品は再調査対象から除外
+    if (cooldownDays > 0 && lastInvestigatedTime > 0 && now - lastInvestigatedTime < cooldownMs) {
+      continue;
+    }
+
     const savingsPercentage = entry.data.savingsPercentage || 0;
     const dealBadge = entry.data.dealBadge?.trim() || '';
 
     // 割引率が閾値以上、またはセールバッジが付与されている商品を「価格乖離（値下げ・セール）」とみなす
     if (savingsPercentage < threshold && !dealBadge) continue;
-
-    const lastInvestigatedTime = investigatedAsinMap.get(asinUpper) || 0;
 
     candidates.push({
       asin,
@@ -168,7 +193,7 @@ export async function findPriceDiscrepancy(
   await fs.promises.mkdir(path.dirname(outputPath), { recursive: true });
   await fs.promises.writeFile(outputPath, JSON.stringify(result, null, 2), 'utf-8');
   logger.info(
-    `Found ${candidates.length} total price discrepancy candidates, extracted top ${topCandidates.length} (threshold: ${threshold}%)`,
+    `Found ${candidates.length} total price discrepancy candidates, extracted top ${topCandidates.length} (threshold: ${threshold}%, cooldown: ${cooldownDays}d)`,
   );
 
   return result;
@@ -178,11 +203,12 @@ export async function findPriceDiscrepancy(
 if (require.main === module) {
   const threshold = Number.parseInt(process.env.PRICE_DISCREPANCY_THRESHOLD || '15', 10);
   const maxResults = Number.parseInt(process.env.PRICE_DISCREPANCY_MAX_RESULTS || '20', 10);
+  const cooldownDays = Number.parseInt(process.env.PRICE_DISCREPANCY_COOLDOWN_DAYS || '30', 10);
 
-  findPriceDiscrepancy(undefined, undefined, undefined, threshold, maxResults)
+  findPriceDiscrepancy(undefined, undefined, undefined, threshold, maxResults, cooldownDays)
     .then((result) => {
       console.log(
-        `Successfully found ${result.totalCandidates} price discrepancy candidates (threshold: ${result.threshold}%)`,
+        `Successfully found ${result.totalCandidates} price discrepancy candidates (threshold: ${result.threshold}%, cooldown: ${cooldownDays}d)`,
       );
       process.exit(0);
     })
