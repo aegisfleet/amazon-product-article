@@ -2743,18 +2743,25 @@ button.category-pill {
 
 .brand-search-clear-btn {
   position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
   right: 0.75rem;
   background: var(--color-bg-body);
   border: 1px solid var(--color-border);
   border-radius: 50%;
   width: 1.5rem;
   height: 1.5rem;
+  min-height: 0;
+  min-width: 0;
+  aspect-ratio: 1;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 0.75rem;
   color: var(--color-text-muted);
   cursor: pointer;
+  padding: 0;
+  box-sizing: border-box;
   transition: all 0.2s ease;
 }
 
@@ -5174,6 +5181,8 @@ body.toc-modal-open {
 
 .bargain-keyword-clear-btn {
   position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
   right: 0.5rem;
   background: transparent;
   border: none;
@@ -5181,8 +5190,11 @@ body.toc-modal-open {
   cursor: pointer;
   color: var(--color-text-muted);
   display: none;
+  min-height: 0;
+  min-width: 0;
   padding: 4px;
   line-height: 1;
+  box-sizing: border-box;
   transition: var(--transition-base);
 }
 
