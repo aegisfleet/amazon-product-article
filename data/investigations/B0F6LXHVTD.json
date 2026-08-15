@@ -135,24 +135,36 @@
       "scoreRationale": "[基本点: 70]\n[加点: +10] (第8世代Core i5、16GBメモリ、512GB SSDを搭載しコストパフォーマンスが高い)\n[加点: +5] (WebカメラやDVD-ROM、豊富なポート類を備え実用性が高い)\n[減点: -5] (15.6型で重量2.2kgとやや重く、持ち運びには適さない)\n[合計: 80]"
     },
     "technicalSpecs": {
-      "dimensions": {
-        "height": "不明",
-        "width": "不明",
-        "depth": "不明"
+      "os": "Windows 11 Pro 64bit",
+      "cpu": "Intel Core i5-8250U (4コア / 8スレッド 最大3.4GHz)",
+      "ram": "8GB (DDR4)",
+      "storage": "256GB (SSD)",
+      "display": {
+        "size": "15.6インチ",
+        "resolution": "1366×768 (HD)",
+        "type": "ノングレア液晶",
+        "refreshRate": "60Hz"
       },
-      "weight": "2200g",
-      "capacity": "16GB (メモリ) / 512GB (SSD)",
-      "material": "不明",
-      "origin": "不明",
+      "dimensions": {
+        "height": "24.9mm",
+        "width": "377.0mm",
+        "depth": "255.0mm",
+        "weight": "2.2kg"
+      },
+      "weight": "2.2kg",
+      "material": "樹脂筐体",
+      "origin": "日本 (NEC VersaPro)",
+      "connectivity": [
+        "Wi-Fi 5 (802.11ac)",
+        "Bluetooth 4.2",
+        "有線LAN",
+        "USB 3.0 ×3",
+        "USB Type-C ×1",
+        "HDMI"
+      ],
       "other": [
-        "CPU: Intel Core i5-8265U (最大3.9GHz)",
-        "ディスプレイ: 15.6型",
-        "OS: Windows 11 Pro 64bit",
-        "Office: MS Office 2019",
-        "インターフェース: 内蔵無線LAN, Bluetooth, HDMI, Type-C",
-        "光学ドライブ: DVD-ROM",
-        "カメラ: Webカメラ搭載",
-        "キーボード: テンキー非搭載"
+        "テンキー付きキーボード",
+        "DVDマルチドライブ搭載"
       ]
     }
   }

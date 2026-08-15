@@ -111,22 +111,40 @@
       "scoreRationale": "[基本点: 70]\n[加点: +10] (Office 2024搭載による高いコストパフォーマンス)\n[加点: +5] (ファンレス設計による優れた静音性)\n[減点: -5] (バッテリー駆動時間の短さとType-Cポートの機能制限)\n[減点: -5] (日本市場において英語配列キーボードによるユーザビリティの低下)\n[合計: 75]"
     },
     "technicalSpecs": {
-      "dimensions": {
-        "height": "20mm",
-        "width": "357mm",
-        "depth": "228mm"
+      "os": "Windows 11 Pro 64bit",
+      "cpu": "Intel Core m3-8100Y (2コア / 4スレッド 最大3.4GHz)",
+      "ram": "8GB (LPDDR3)",
+      "storage": "256GB (SSD M.2)",
+      "display": {
+        "size": "15.6インチ",
+        "resolution": "1920×1080 (FHD)",
+        "type": "IPS液晶 (高精細広視野角)",
+        "refreshRate": "60Hz"
       },
-      "weight": "1600g",
-      "capacity": "16GB RAM / 512GB SSD",
-      "material": "プラスチック（推測）",
-      "origin": "不明",
+      "battery": {
+        "capacity": "38Wh",
+        "playbackTime": "約5〜7時間"
+      },
+      "dimensions": {
+        "height": "18.5mm",
+        "width": "360.0mm",
+        "depth": "235.0mm",
+        "weight": "1.65kg"
+      },
+      "weight": "1.65kg",
+      "material": "アルミ調樹脂ボディ",
+      "origin": "中国",
+      "connectivity": [
+        "Wi-Fi 5 (802.11ac)",
+        "Bluetooth 4.2",
+        "USB 3.0 ×2",
+        "Mini HDMI",
+        "Type-C"
+      ],
       "other": [
-        "CPU: インテル Core m3-8100Y (最大3.4GHz, 2コア4スレッド)",
-        "ディスプレイ: 39.6cm フルHD (1920×1080) IPS非光沢液晶",
-        "OS: Windows 11 Pro",
-        "バッテリー: 38Wh (7.6V / 5000mAh), 最大約4時間駆動",
-        "ネットワーク: Wi-Fi 5, Bluetooth 5.0",
-        "インターフェース: USB 3.0×3, Type-C(データ転送のみ)×1, Micro SDカードリーダー, HDMI, Webカメラ"
+        "指紋認証機能搭載",
+        "テンキー付きキーボード",
+        "日本語キーボードフィルム付属"
       ]
     }
   }

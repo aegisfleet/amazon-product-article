@@ -183,26 +183,41 @@
       "scoreRationale": "[基本点: 70] (固定)\n[加点: +3] (Ryzen 5と16GBメモリによる快適な基本性能)\n[加点: +1] (最新Office 2024の標準搭載)\n[加点: +1] (IPS液晶の採用)\n[減点: -5] (競合他社の海外メーカー製PCと比較すると同スペック帯での価格設定が高め)\n[合計: 70]"
     },
     "technicalSpecs": {
+      "os": "Windows 11 Home 64bit",
+      "cpu": "AMD Ryzen 5 7535U (6コア / 12スレッド 最大4.55GHz)",
+      "ram": "16GB (DDR5 Dual Channel)",
+      "storage": "512GB (PCIe NVMe SSD)",
+      "display": {
+        "size": "15.6インチ",
+        "resolution": "1920×1080 (FHD)",
+        "type": "スーパーシャインビューLED IPS液晶 (広視野角)",
+        "refreshRate": "60Hz"
+      },
+      "battery": {
+        "capacity": "45Wh",
+        "playbackTime": "約8.5時間"
+      },
       "dimensions": {
         "height": "22.7mm",
         "width": "362.4mm",
-        "depth": "253.8mm"
+        "depth": "253.8mm",
+        "weight": "2.1kg"
       },
-      "weight": "2100g",
-      "capacity": "SSD 512GB",
-      "material": "プラスチック等",
-      "origin": "日本",
+      "weight": "2.1kg",
+      "material": "パールホワイト仕上げ樹脂",
+      "origin": "日本 (NEC)",
+      "connectivity": [
+        "Wi-Fi 6E (802.11ax)",
+        "Bluetooth 5.3",
+        "ギガビット有線LAN",
+        "USB 3.2 Gen2 Type-C ×1",
+        "USB 3.2 Gen1 Type-A ×2",
+        "HDMI出力端子"
+      ],
       "other": [
-        "OS: Windows 11 Home",
-        "CPU: AMD Ryzen 5 7535U (2.9GHz / 最大4.55GHz)",
-        "メモリ: 16GB (DDR5)",
-        "ディスプレイ: 15.6型ワイド スーパーシャインビューLED IPS液晶 (1920x1080 Full HD)",
-        "光学ドライブ: なし",
-        "Webカメラ: 内蔵",
-        "ワイヤレス通信: Wi-Fi 6E (802.11ax), Bluetooth",
-        "インターフェース: USB Type-C (USB3.2 Gen 2) x1, USB Type-A (USB 3.2 Gen 1) x2, HDMI出力 x1, LAN(RJ45) x1, ヘッドフォンマイクジャック x1",
-        "バッテリー駆動時間: 約13.8時間 (JEITA測定法 3.0基準はおそらくより短い)",
-        "付属ソフト: Microsoft Office Home & Business 2024"
+        "オーディオ: ヤマハ製 AudioEngine機能搭載ステレオスピーカー",
+        "DVDスーパーマルチドライブ搭載",
+        "静音リフトアップヒンジキーボード"
       ]
     }
   }
