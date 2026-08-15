@@ -24,11 +24,14 @@
         <div class="product-image-carousel" id="carousel-{{ $product.asin }}">
             <div class="carousel-track">
                 {{- if $product.images -}}
-                <img src="{{ index $product.images 0 }}" alt="{{- $product.title -}}" class="carousel-image"
-                    fetchpriority="high" decoding="async" tabindex="0" role="button" aria-label="{{- $product.title -}}（クリックで拡大表示）">
+                <button type="button" class="carousel-slide" aria-label="{{- $product.title -}}（クリックで拡大表示）">
+                    <img src="{{ index $product.images 0 }}" alt="{{- $product.title -}}" class="carousel-image"
+                        fetchpriority="high" decoding="async">
+                </button>
                 {{- range after 1 $product.images -}}
-                <img src="{{ . }}" alt="{{ $product.title }}" class="carousel-image" loading="lazy" decoding="async"
-                    tabindex="0" role="button" aria-label="{{- $product.title -}}（クリックで拡大表示）">
+                <button type="button" class="carousel-slide" aria-label="{{- $product.title -}}（クリックで拡大表示）">
+                    <img src="{{ . }}" alt="{{ $product.title }}" class="carousel-image" loading="lazy" decoding="async">
+                </button>
                 {{- end -}}
                 {{- end -}}
             </div>
