@@ -5892,23 +5892,18 @@ body.toc-modal-open {
 }
 
 /* -------------------------------------------------- */
-/* ヒーローアクションコンテナ & レスポンシブ配置 (スマホ縦並び/PC横並び) */
+/* ヒーローアクションコンテナ & レスポンシブ配置 */
 /* -------------------------------------------------- */
 .hero-actions {
   display: flex;
   align-items: center;
   gap: var(--spacing-sm, 0.5rem);
   width: 100%;
-  margin-top: var(--spacing-md, 1rem);
+  margin-top: var(--spacing-xs, 0.5rem);
 }
 
-.hero-actions-sub {
-  flex: 1;
-  display: flex;
-  gap: var(--spacing-xs, 0.5rem);
-  min-width: 0;
-}
-
+.hero-actions .btn-compare-hero,
+.hero-actions .btn-favorite-hero,
 .hero-actions-sub .btn-compare-hero,
 .hero-actions-sub .btn-favorite-hero {
   flex: 1;
@@ -5918,7 +5913,7 @@ body.toc-modal-open {
 }
 
 .hero-actions-main {
-  flex: 1;
+  width: 100%;
   min-width: 0;
 }
 
