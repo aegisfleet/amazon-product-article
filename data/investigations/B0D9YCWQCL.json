@@ -196,22 +196,48 @@
       "scoreRationale": "[基本点: 70]\n[加点: +10] (折りたたみスマホの敷居を下げる圧倒的なコストパフォーマンスと価格設定)\n[加点: +5] (FeliCa対応やサブディスプレイの使い勝手など、日常使いに十分な機能性)\n[減点: -10] (IPX2と防水性能が極めて低く、モノラルスピーカーなど一部機能の割り切りが見られる)\n[合計: 75]"
     },
     "technicalSpecs": {
+      "os": "Android 13 (Android 14アップデート対応)",
+      "cpu": "Qualcomm Snapdragon 7 Gen 1",
+      "ram": "6GB",
+      "storage": "128GB",
+      "display": {
+        "size": "6.9インチ (メイン) / 1.43インチ (カバー)",
+        "resolution": "2790×1188 (メイン) / 466×466 (カバー)",
+        "type": "有機EL (メイン・円形サブ共)",
+        "refreshRate": "120Hz (メイン)"
+      },
+      "battery": {
+        "capacity": "4310mAh",
+        "charging": "33W急速充電 (Quick Charge 4+ / USB PD3.0対応)"
+      },
+      "camera": {
+        "main": "50MP (広角 F1.8) + 2MP (深度 F2.4)",
+        "front": "16MP (F2.0)"
+      },
       "dimensions": {
-        "height": "170mm",
-        "width": "76mm",
-        "depth": "7.3mm"
+        "height": "170.0mm (開時) / 88.0mm (閉時)",
+        "width": "76.0mm",
+        "depth": "7.3mm (開時) / 15.5mm (閉時)",
+        "weight": "214g"
       },
       "weight": "214g",
-      "display": "メイン: 約17.5cm 有機EL (2790×1188) / サブ: 約3.6cm 円形 有機EL (466×466)",
-      "cpu": "Qualcomm Snapdragon 7 Gen 1 (2.4GHz+2.36GHz+1.8GHz オクタコア)",
-      "memory": "RAM: 6GB / ROM: 128GB",
-      "battery": "4310mAh",
-      "camera": "メインカメラ: 約5000万画素 + 深度カメラ 約200万画素 / インカメラ: 約1600万画素",
-      "connectivity": "Wi-Fi (IEEE802.11a/b/g/n/ac/ax), Bluetooth 5.2, Type-C",
-      "features": "おサイフケータイ(FeliCa), 指紋認証, 顔認証",
-      "durability": "IPX2 (防滴) / IP4X (防塵)",
-      "os": "Android 13",
-      "sim": "nanoSIM / eSIM (DSDV対応)"
+      "material": "ガラス背面 / 樹脂フレーム",
+      "origin": "中国 (ZTE)",
+      "connectivity": [
+        "5G",
+        "Wi-Fi 6 (802.11ax)",
+        "Bluetooth 5.2",
+        "FeliCa / おサイフケータイ",
+        "eSIM対応",
+        "nanoSIM"
+      ],
+      "other": [
+        "防滴防塵: IPX2 / IP4X",
+        "生体認証: 側面指紋認証 / 顔認証",
+        "折りたたみ機能: 円形サブディスプレイ / スタンド自立撮影",
+        "※ワイヤレス充電非対応",
+        "※防水性能はIPX2（防滴レベル）"
+      ]
     }
   }
 }
