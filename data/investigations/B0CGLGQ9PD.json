@@ -119,23 +119,27 @@
       "scoreRationale": "[基本点: 70]\n[加点: +5] (1080p解像度、優秀な自動光補正、アプリ対応)\n[減点: -2] (競合他社の同スペック品より実売価格がやや高め)\n[加点: +5] (信頼性の高いLogicoolブランド、ビルドクオリティ、再生プラスチック)\n[合計: 78]"
     },
     "technicalSpecs": {
+      "camera": {
+        "main": "200万画素 (フルHD 1080p@30fps / 720p@30fps)"
+      },
       "dimensions": {
-        "height": "31.91mm",
-        "width": "72.91mm",
-        "depth": "66.64mm",
+        "height": "31.9mm",
+        "width": "72.9mm",
+        "depth": "66.6mm (マウントクリップ含む)",
         "weight": "75g"
       },
-      "power": null,
-      "capacity": null,
-      "resolution": "Full HD 1080p / 30fps",
-      "focus": "固定フォーカス",
-      "fov": "58°",
-      "mic": "内蔵モノラルマイク",
-      "connection": "USB-A",
+      "weight": "75g",
+      "material": "再生プラスチック樹脂",
+      "origin": "中国 (Logicool)",
+      "connectivity": [
+        "USB Type-A (USB 2.0 / ケーブル長 1.5m)"
+      ],
       "other": [
-        "プライバシーシャッター搭載",
-        "RightLight 2 自動光補正",
-        "ケーブル長 1.5m"
+        "RightLight 2 自動光量補正 (暗い部屋でも明るくクリアに映す)",
+        "内蔵無指向性ノイズリダクションマイク",
+        "スライド式物理プライバシーシャッター",
+        "視野角: 58°",
+        "ユニバーサル取り付けクリップ"
       ]
     }
   }

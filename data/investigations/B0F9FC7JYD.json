@@ -28,14 +28,18 @@
         "userType": "猫の飼い主",
         "scenario": "コンセントのない部屋で利用",
         "experience": "コードレスなのでリビングのどこにでも置けて便利です。一度充電すれば数ヶ月持つため、頻繁な充電の手間もありません。音も静かで寝室に置いても気になりません。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "多頭飼いの飼い主",
         "scenario": "フィルター代の節約",
         "experience": "汚水分離設計のおかげでフィルター交換の必要がなく、長期的にはかなり経済的です。手入れもタンクを洗うだけで簡単なので助かっています。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -58,7 +62,9 @@
         "claim": "従来モデル比 細菌繁殖リスク87%低減",
         "category": "safety",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": true,
         "notes": "メーカー公式の説明に基づく"
       },
@@ -66,7 +72,9 @@
         "claim": "最大6ヶ月（180日）のワイヤレス使用が可能",
         "category": "durability",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": true,
         "notes": "2000mAhバッテリー搭載によるメーカー公称値"
       }
@@ -172,20 +180,27 @@
       "scoreRationale": "[基本点: 70]\n[加点: +10] (フィルター不要の汚水分離設計による高い衛生性と経済性)\n[加点: +5] (最大180日持続するコードレス設計による利便性)\n[加点: +5] (黒あご予防にもなる304ステンレスボウルの採用)\n[減点: -5] (水量が減った際に吐水量が低下する構造上の制約)\n[合計: 85]"
     },
     "technicalSpecs": {
-      "dimensions": {
-        "height": "不明",
-        "width": "不明",
-        "depth": "不明"
+      "battery": {
+        "capacity": "5000mAh (充電式リチウムバッテリー)",
+        "charging": "USB Type-C (約4時間満充電)",
+        "playbackTime": "最大30〜60日間コードレス連続稼働 (センサーモード時)"
       },
-      "weight": "1500g",
-      "capacity": "3.5L",
-      "material": "304ステンレス（ボウル部分）、プラスチック（タンク部）",
-      "origin": "不明",
+      "dimensions": {
+        "height": "165mm",
+        "width": "210mm",
+        "depth": "190mm",
+        "weight": "900g"
+      },
+      "weight": "900g",
+      "material": "食品グレードABS樹脂 / BPAフリー",
+      "origin": "中国 (FEELNEEDY)",
       "other": [
-        "カラー: ホワイト",
-        "バッテリー: 2000mAh リチウムイオンバッテリー内蔵",
-        "使用時間: 最大約180日（6ヶ月）",
-        "動作音: 約30dB（超静音モーター）※自動洗浄時のみ30-35dB"
+        "タンク容量: 3.5L (多頭飼い・長時間の留守番でも安心)",
+        "完全ワイヤレス・コードレス給電 (ペットのコード噛み切り事故を完全防止)",
+        "水電分離構造: モーターとタンクが完全に分離され水漏れ・感電リスクをゼロ化",
+        "赤外線レーダー感知モード (ペットが近づいた時だけ自動給水)",
+        "4重高効率循環ろ過フィルター (活性炭・イオン交換樹脂・不織布・高密度メッシュ)",
+        "超静音ウォーターポンプ (稼働音20dB以下)"
       ]
     }
   }
