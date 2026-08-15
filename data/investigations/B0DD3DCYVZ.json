@@ -199,22 +199,47 @@
       "scoreRationale": "[基本点: 70]\n[加点: +8] 持ち運びやすさとデザイン性の高さ（ユーザー満足度・携帯性）\n[加点: +7] 折りたたみ機構を活かした独自のカメラ撮影体験とAI機能（独自の強み・性能）\n[加点: +3] ハイエンドSoC（Snapdragon 8 Gen 3）搭載による高い処理性能\n[減点: -3] 開閉の手間やバッテリー容量への懸念（使い勝手）\n[減点: -2] 高価格帯であること（コスパ）\n[合計: 83]"
     },
     "technicalSpecs": {
+      "os": "Android 14 (One UI 6.1.1 / Galaxy AI対応)",
+      "cpu": "Qualcomm Snapdragon 8 Gen 3 for Galaxy",
+      "ram": "12GB",
+      "storage": "256GB",
+      "display": {
+        "size": "6.7インチ (メイン) / 3.4インチ (カバー)",
+        "resolution": "2640×1080 (FHD+ メイン) / 720×748 (カバー)",
+        "type": "Dynamic AMOLED 2X (メイン / 1-120Hz可変) / Super AMOLED (カバー / 60Hz)",
+        "refreshRate": "120Hz (メイン) / 60Hz (カバー)"
+      },
+      "battery": {
+        "capacity": "4000mAh",
+        "charging": "25W有線急速充電 / 15Wワイヤレス充電 / ワイヤレスバッテリー共有対応"
+      },
+      "camera": {
+        "main": "50MP (広角 Dual Pixel AF OIS F1.8)",
+        "ultrawide": "12MP (超広角 123° F2.2)",
+        "front": "10MP (F2.2)"
+      },
       "dimensions": {
-        "height": "165.1mm",
+        "height": "165.1mm (開時) / 85.1mm (閉時)",
         "width": "71.9mm",
-        "depth": "6.9mm"
+        "depth": "6.9mm (開時) / 14.9mm (閉時)",
+        "weight": "187g"
       },
       "weight": "187g",
-      "capacity": "256GB / 512GB",
-      "material": "ガラス、アルミニウム",
-      "origin": "韓国（Samsung）",
+      "material": "Armor Aluminumフレーム / Gorilla Glass Victus 2",
+      "origin": "韓国 (Samsung)",
+      "connectivity": [
+        "5G",
+        "Wi-Fi 6E (802.11ax)",
+        "Bluetooth 5.3",
+        "FeliCa / おサイフケータイ",
+        "eSIM対応",
+        "nanoSIM"
+      ],
       "other": [
-        "SoC: Snapdragon 8 Gen 3",
-        "メモリ: 8GB / 12GB",
-        "バッテリー: 4000mAh",
-        "メインディスプレイ: 170mm Dynamic AMOLED 2X",
-        "カバーディスプレイ: 86mm Super AMOLED",
-        "防水防塵: IP48"
+        "防塵防水: IP48",
+        "冷却機能: ベイパーチャンバー初搭載",
+        "生体認証: 側面指紋認証 / 顔認証",
+        "サポート: 7年間OS・セキュリティアップデート保証"
       ]
     }
   }

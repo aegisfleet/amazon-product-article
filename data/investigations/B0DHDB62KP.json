@@ -95,22 +95,47 @@
       "scoreRationale": "[基本点: 70]\n[加点: +5] (大画面による優れたコストパフォーマンス)\n[加点: +5] (大容量バッテリーによる優れたコストパフォーマンス)\n[加点: +5] (主要4キャリア回線にフル対応している利便性)\n[減点: -5] (急速充電が18Wと昨今の基準ではやや控えめ)\n[減点: -5] (大型化に伴う携帯性の低下)\n[合計: 75]"
     },
     "technicalSpecs": {
+      "os": "Android 14 (Xiaomi HyperOS)",
+      "cpu": "MediaTek Helio G81-Ultra",
+      "ram": "4GB (最大8GB仮想拡張)",
+      "storage": "128GB",
+      "display": {
+        "size": "6.88インチ",
+        "resolution": "1640×720 (HD+)",
+        "type": "IPS液晶 (TÜV Rheinland低ブルーライト認証)",
+        "refreshRate": "120Hz"
+      },
+      "battery": {
+        "capacity": "5160mAh",
+        "charging": "18W急速充電対応"
+      },
+      "camera": {
+        "main": "50MP (広角 F1.8) + 補助レンズ",
+        "front": "13MP (F2.0)"
+      },
       "dimensions": {
         "height": "171.88mm",
         "width": "77.8mm",
-        "depth": "8.22mm"
+        "depth": "8.22mm",
+        "weight": "211g"
       },
       "weight": "211g",
-      "capacity": "128GB ROM / 4GB RAM",
-      "material": "プラスチック・ガラス等",
+      "material": "ガラス背面 / 樹脂フレーム",
       "origin": "中国",
+      "connectivity": [
+        "4G LTE",
+        "Wi-Fi 5 (802.11ac)",
+        "Bluetooth 5.4",
+        "nanoSIM x2 (トリプルスロット)"
+      ],
       "other": [
-        "ディスプレイ: 約17.5cm (最大120Hz)",
-        "バッテリー: 5160mAh",
-        "充電: 18W急速充電",
-        "CPU: MediaTek Helio G81-Ultra",
-        "カメラ: 5000万画素AIデュアルカメラ",
-        "対応回線: docomo/au/SoftBank/Rakuten Mobile"
+        "3.5mmイヤホンジャック搭載",
+        "生体認証: 側面指紋認証 / 顔認証",
+        "microSDXC対応 (最大1TB)",
+        "※5G非対応",
+        "※おサイフケータイ(FeliCa)非対応",
+        "※防水非対応",
+        "※ジャイロセンサー非搭載"
       ]
     }
   }
