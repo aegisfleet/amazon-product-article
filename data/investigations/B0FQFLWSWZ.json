@@ -124,21 +124,46 @@
       "scoreRationale": "[基本点: 70]\n[加点: +10] (5.6mmの極薄・軽量デザインという他にない革新的な価値)\n[加点: +8] (上位機種と同じA19 Proチップ搭載による妥協のない処理性能)\n[加点: +5] (120Hz ProMotionやチタニウムフレームなどPro相当の品質)\n[減点: -3] (極薄化によるバッテリー容量・排熱に対する懸念、専用望遠レンズ非搭載によるカメラの制約)\n[合計: 90]"
     },
     "technicalSpecs": {
+      "os": "iOS 19 (Apple Intelligence対応)",
+      "cpu": "Apple A19 Proチップ (6コアCPU / 6コアGPU / 16コアNeural Engine)",
+      "ram": "12GB",
+      "storage": "256GB",
+      "display": {
+        "size": "6.5インチ",
+        "resolution": "2736×1260 (Super Retina XDR OLED)",
+        "type": "OLED (有機EL / Ceramic Shield 2)",
+        "refreshRate": "120Hz ProMotion (1-120Hz)"
+      },
+      "battery": {
+        "capacity": "3100mAh (超薄型セル)",
+        "charging": "USB-C急速充電 / MagSafeワイヤレス充電 (最大25W) / Qi2対応"
+      },
+      "camera": {
+        "main": "48MP Fusionカメラシステム (広角 OIS)",
+        "front": "18MP センターフレームフロントカメラ"
+      },
       "dimensions": {
         "height": "156.2mm",
         "width": "74.7mm",
-        "depth": "5.6mm"
+        "depth": "5.6mm",
+        "weight": "145g"
       },
-      "weight": "非公開（スペックからの推測で非常に軽量）",
-      "capacity": "256GB",
-      "material": "チタニウムフレーム、Ceramic Shield 2（前面）",
-      "display": "6.5インチ, 最大120Hz ProMotion",
-      "chip": "A19 Proチップ",
-      "camera": "48MP Fusionカメラシステム, 18MPセンターフレームフロントカメラ",
-      "connectivity": "Wi-Fi 7, 5G, Bluetooth 6, eSIM",
+      "weight": "145g",
+      "material": "グレード5チタニウムフレーム / Ceramic Shield 2",
+      "origin": "中国 / インド",
+      "connectivity": [
+        "5G",
+        "Wi-Fi 7 (802.11be)",
+        "Bluetooth 6.0",
+        "FeliCa / Apple Pay",
+        "デュアルeSIM (物理SIMトレイレス)"
+      ],
       "other": [
-        "Apple Intelligence対応",
-        "MagSafe対応"
+        "防塵耐水: IP68",
+        "超薄型設計: 厚さ5.6mm",
+        "生体認証: Face ID",
+        "アクションボタン搭載 / カメラコントロール搭載",
+        "※超広角・望遠カメラ非搭載 (単眼Fusionカメラ)"
       ]
     }
   }

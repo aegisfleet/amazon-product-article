@@ -164,22 +164,48 @@
       "scoreRationale": "[基本点: 70] (固定)\n[加点: +15] (最新ハイエンドモデルの性能と折りたたみによる利便性)\n[加点: +5] (整備済み品によるコストパフォーマンスの向上)\n[減点: -5] (重量とSペン別売りの使い勝手)\n[減点: -5] (キャリア版特有のバンド縛りの懸念)\n[合計: 80]"
     },
     "technicalSpecs": {
+      "os": "Android 13 (Android 14/15アップデート対応 / One UI)",
+      "cpu": "Qualcomm Snapdragon 8 Gen 2 for Galaxy",
+      "ram": "12GB",
+      "storage": "256GB",
+      "display": {
+        "size": "7.6インチ (メイン) / 6.2インチ (カバー)",
+        "resolution": "2176×1812 (QXGA+ メイン) / 2316×904 (HD+ カバー)",
+        "type": "Dynamic AMOLED 2X (有機EL メイン・カバー共)",
+        "refreshRate": "120Hz (1-120Hz可変メイン / 48-120Hzカバー)"
+      },
+      "battery": {
+        "capacity": "4400mAh",
+        "charging": "25W急速充電 / 15Wワイヤレス充電 / ワイヤレスバッテリー共有対応"
+      },
+      "camera": {
+        "main": "50MP (広角 Dual Pixel AF OIS F1.8)",
+        "ultrawide": "12MP (超広角 123° F2.2)",
+        "telephoto": "10MP (光学3倍望遠 OIS F2.4)",
+        "front": "4MP (画面下インカメラ F1.8) / 10MP (カバーカメラ F2.2)"
+      },
       "dimensions": {
-        "height": "155.1mm",
-        "width": "130.1mm (開いた状態) / 67.1mm (閉じた状態)",
-        "depth": "6.1mm (開いた状態) / 13.4mm (閉じた状態)"
+        "height": "154.9mm",
+        "width": "129.9mm (開時) / 67.1mm (閉時)",
+        "depth": "6.1mm (開時) / 13.4mm (閉時)",
+        "weight": "253g"
       },
       "weight": "253g",
-      "capacity": "ROM: 256GB / RAM: 12GB",
-      "material": "ガラス、アルミニウム",
+      "material": "Armor Aluminumフレーム / Gorilla Glass Victus 2",
       "origin": "韓国 (Samsung)",
+      "connectivity": [
+        "5G",
+        "Wi-Fi 6E (802.11ax)",
+        "Bluetooth 5.3",
+        "FeliCa / おサイフケータイ",
+        "eSIM対応",
+        "nanoSIM"
+      ],
       "other": [
-        "OS種類: Android 13 (発売時)",
-        "画面サイズ: 約193mm",
-        "バッテリー容量: 4400mAh",
-        "モデル: docomo版(SC-55D)",
-        "カラー: ファントムブラック",
-        "CPU: Snapdragon 8 Gen 2 for Galaxy"
+        "防水性能: IPX8",
+        "Sペン対応 (S Pen Fold Edition別売)",
+        "フレックスモード対応 (自立・分割操作)",
+        "生体認証: 側面指紋認証 / 顔認証"
       ]
     }
   }
