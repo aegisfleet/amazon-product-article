@@ -130,16 +130,48 @@
       "scoreRationale": "[基本点: 70]\n[加点: +10] (最新のSnapdragon 8 Elite搭載による圧倒的な性能)\n[加点: +5] (6210mAhバッテリーと100W急速充電の優れた実用性)\n[加点: +5] (Bose監修のデュアルスピーカーによる高品質なサウンド)\n[合計: 90]"
     },
     "technicalSpecs": {
-      "battery": "6210mAh",
-      "charging": "100W ハイパーチャージ",
-      "display": "約16.7cm 120Hz Hyper RGB 有機EL（AMOLED）ディスプレイ, 最大輝度3500nits",
-      "processor": "Snapdragon 8 Elite (3nm)",
-      "camera": "5000万画素メインカメラ (Light Fusion 800イメージセンサー)",
-      "memory": "12GB RAM, 256GB ROM",
-      "audio": "左右対称ステレオスピーカー (Sound by Bose)",
-      "network": "docomo/au/SoftBank/Rakuten Mobile 回線対応",
-      "color": "ブラック",
-      "modelNumber": "MZB0M4KJP"
+      "os": "Android 15 (Xiaomi HyperOS 2)",
+      "cpu": "Qualcomm Snapdragon 8 Elite",
+      "ram": "12GB",
+      "storage": "256GB",
+      "display": {
+        "size": "6.67インチ",
+        "resolution": "3200×1440 (2K WQHD+)",
+        "type": "Hyper RGB AMOLED (有機EL / 最大輝度3500nits)",
+        "refreshRate": "120Hz"
+      },
+      "battery": {
+        "capacity": "6210mAh",
+        "charging": "100W HyperCharge急速充電 / 50Wワイヤレス充電対応"
+      },
+      "camera": {
+        "main": "50MP (Light Fusion 800 1/1.55型 OIS搭載)",
+        "telephoto": "50MP (2.5倍光学望遠)",
+        "ultrawide": "8MP (超広角)",
+        "front": "20MP"
+      },
+      "dimensions": {
+        "height": "160.5mm",
+        "width": "74.9mm",
+        "depth": "8.4mm",
+        "weight": "208g"
+      },
+      "weight": "208g",
+      "material": "ガラス（前面・背面）/ メタルフレーム",
+      "origin": "中国",
+      "connectivity": [
+        "5G",
+        "Wi-Fi 7",
+        "Bluetooth 5.4",
+        "eSIM対応",
+        "nanoSIM"
+      ],
+      "other": [
+        "防塵防水: IP68",
+        "オーディオ: 左右対称ステレオスピーカー (Sound by Bose)",
+        "冷却機能: LiquidCool Technology 4.0",
+        "生体認証: 超音波画面内指紋認証 / 顔認証"
+      ]
     }
   }
 }

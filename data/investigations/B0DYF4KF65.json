@@ -127,25 +127,46 @@
       "scoreRationale": "[基本点: 70]\n[加点: +5] (Dimensity 7025-Ultraや120Hz有機ELなど充実したミドルレンジスペック)\n[加点: +5] (OIS搭載のソニー製5000万画素カメラによる高い撮影性能)\n[加点: +5] (45W急速充電の実用性の高さと256GB大容量ストレージ)\n[減点: -3] (IP64防滴レベルの防水性能による使用シーンの制限)\n[合計: 82]"
     },
     "technicalSpecs": {
+      "os": "Android 14 (Xiaomi HyperOS)",
+      "cpu": "MediaTek Dimensity 7025-Ultra",
+      "ram": "8GB",
+      "storage": "256GB",
+      "display": {
+        "size": "6.67インチ",
+        "resolution": "2400×1080 (FHD+)",
+        "type": "AMOLED (有機EL / Corning Gorilla Glass 5)",
+        "refreshRate": "120Hz"
+      },
+      "battery": {
+        "capacity": "5110mAh",
+        "charging": "45Wターボチャージ急速充電対応"
+      },
+      "camera": {
+        "main": "50MP (Sony製センサー OIS+EIS F1.8)",
+        "front": "16MP (F2.4)"
+      },
       "dimensions": {
         "height": "162.4mm",
         "width": "75.7mm",
-        "depth": "7.99mm"
+        "depth": "7.99mm",
+        "weight": "190g"
       },
       "weight": "190g",
-      "display": "約16.9cm 有機EL(AMOLED), FHD+ (2400 x 1080), 120Hzリフレッシュレート",
-      "processor": "MediaTek Dimensity 7025-Ultra (6nm 5Gプロセッサ)",
-      "memory": "8GB RAM + 256GB ROM",
-      "battery": "5110mAh, 45Wターボチャージ対応",
-      "mainCamera": "5000万画素 ソニー製センサー, OIS(光学式手ブレ補正)+EIS, インセンサーズーム対応",
-      "glass": "Corning Gorilla Glass 5",
-      "authentication": "画面内指紋認証",
-      "color": "グリーン",
+      "material": "ガラス（前面）/ 樹脂フレーム・背面",
+      "origin": "中国",
+      "connectivity": [
+        "5G",
+        "Wi-Fi 5 (802.11ac)",
+        "Bluetooth 5.3",
+        "NFC対応",
+        "nanoSIM デュアルSIM"
+      ],
       "other": [
-        "IP64防滴防塵",
-        "NFC対応 (FeliCa非対応)",
-        "顔認証",
-        "イヤホンジャックあり"
+        "防塵防滴: IP64",
+        "オーディオ: デュアルスピーカー / 3.5mmイヤホンジャック",
+        "生体認証: 画面内指紋認証 / 顔認証",
+        "microSDXC対応 (最大1TB)",
+        "※おサイフケータイ(FeliCa)非対応"
       ]
     }
   }
