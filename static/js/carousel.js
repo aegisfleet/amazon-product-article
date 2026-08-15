@@ -381,7 +381,9 @@ document.addEventListener('DOMContentLoaded', () => {
         const prevBtn = carousel.querySelector('.carousel-button.prev');
         const nextBtn = carousel.querySelector('.carousel-button.next');
         const dotsContainer = carousel.querySelector('.carousel-dots');
+        const slides = track.querySelectorAll('.carousel-slide');
         const images = track.querySelectorAll('.carousel-image');
+        const clickables = slides.length > 0 ? slides : images;
 
         // Hide controls if only one image
         if (images.length <= 1) {
@@ -390,15 +392,21 @@ document.addEventListener('DOMContentLoaded', () => {
             if (dotsContainer) dotsContainer.style.display = 'none';
         }
 
-        // Image click and keyboard enter/space for modal
-        images.forEach((img, i) => {
-            img.addEventListener('click', () => openModal(Array.from(images), i, img));
-            img.addEventListener('keydown', (e) => {
-                if (e.key === 'Enter' || e.key === ' ') {
-                    e.preventDefault();
-                    openModal(Array.from(images), i, img);
-                }
+        // Image/Slide click and keyboard enter/space for modal
+        clickables.forEach((el, i) => {
+            const triggerEl = el;
+            el.addEventListener('click', (e) => {
+                e.preventDefault();
+                openModal(Array.from(images), i, triggerEl);
             });
+            if (el.tagName !== 'BUTTON') {
+                el.addEventListener('keydown', (e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        openModal(Array.from(images), i, triggerEl);
+                    }
+                });
+            }
         });
 
         if (images.length <= 1) return;

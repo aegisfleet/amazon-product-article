@@ -1181,6 +1181,34 @@ a.hero-tag-brand:hover {
   display: none;
 }
 
+.carousel-slide {
+  flex: 0 0 100%;
+  width: 100%;
+  min-width: 100%;
+  height: 300px;
+  scroll-snap-align: center;
+  scroll-snap-stop: always;
+  padding: 0;
+  margin: 0;
+  border: none;
+  background: transparent;
+  cursor: zoom-in;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font: inherit;
+  color: inherit;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.carousel-slide:focus-visible,
+.carousel-image:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: -2px;
+  border-radius: var(--radius-md);
+}
+
 .carousel-image {
   flex: 0 0 100%;
   width: 100%;
@@ -1194,10 +1222,11 @@ a.hero-tag-brand:hover {
   transition: transform 0.2s ease;
 }
 
-.carousel-image:focus-visible {
-  outline: 2px solid var(--color-primary);
-  outline-offset: -2px;
-  border-radius: var(--radius-md);
+.carousel-slide .carousel-image {
+  flex: 1 1 auto;
+  min-width: 0;
+  height: 100%;
+  pointer-events: none;
 }
 
 .carousel-zoom-hint {
