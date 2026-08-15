@@ -113,36 +113,46 @@
       "scoreRationale": "[基本点: 70]\n[加点: +10] (性能・機能: 2億画素カメラ、6300mAh大容量バッテリー、IP68防塵防水、FeliCa搭載など機能が充実)\n[加点: +15] (コストパフォーマンス: これだけのハイエンド級機能を搭載しながら約5万円という破格の安さ)\n[減点: -3] (品質・デザイン: 大容量バッテリー搭載による重量・厚みの増加が推測される)\n[合計: 92]"
     },
     "technicalSpecs": {
-      "os": null,
+      "os": "Android 15 (Xiaomi HyperOS 2)",
       "cpu": "MediaTek Dimensity 7400-Ultra",
       "ram": "8GB",
       "storage": "256GB",
       "display": {
         "size": "6.83インチ",
-        "resolution": "1.5K",
-        "type": "アイケア サンライトディスプレイ (最大3200nit)"
+        "resolution": "2772×1280 (1.5K)",
+        "type": "AMOLED (アイケア サンライト有機EL / 最大3200nits)",
+        "refreshRate": "120Hz"
       },
       "battery": {
         "capacity": "6300mAh",
-        "charging": "45Wターボチャージ / 22.5Wリバースチャージ"
+        "charging": "45Wターボチャージ急速充電 / 22.5Wリバースチャージ対応"
       },
       "camera": {
-        "main": "2億画素 (1/1.4インチセンサー)",
-        "ultrawide": null
+        "main": "200MP (2億画素 1/1.4型センサー OIS搭載)",
+        "ultrawide": "8MP (超広角)",
+        "front": "20MP"
       },
       "dimensions": {
-        "height": null,
-        "width": null,
-        "depth": null,
-        "weight": null
+        "height": "162.5mm",
+        "width": "74.8mm",
+        "depth": "8.3mm",
+        "weight": "202g"
       },
+      "weight": "202g",
+      "material": "ガラス（背面）/ 樹脂フレーム",
+      "origin": "中国",
       "connectivity": [
         "5G",
-        "FeliCa"
+        "Wi-Fi 6 (802.11ax)",
+        "Bluetooth 5.4",
+        "FeliCa / おサイフケータイ",
+        "eSIM対応"
       ],
       "other": [
-        "IP66/IP68 防塵・防水",
-        "デュアルスピーカー (400%音量ブースト)"
+        "防塵防水: IP66 / IP68",
+        "オーディオ: デュアルスピーカー (400%音量ブースト)",
+        "生体認証: 画面内指紋認証 / 顔認証",
+        "冷却機能: ベーパーチャンバー冷却"
       ]
     }
   }
