@@ -125,17 +125,48 @@
       "scoreRationale": "[基本点: 70]\n[加点: +10] (大画面とマルチタスクの利便性が高い)\n[加点: +5] (整備済み品として新品より価格が抑えられている)\n[減点: -5] (重量と折りたたみ機構の耐久性への懸念)\n[合計: 80]"
     },
     "technicalSpecs": {
+      "os": "Android 14 (One UI 6.1 / Galaxy AI対応)",
+      "cpu": "Qualcomm Snapdragon 8+ Gen 1",
+      "ram": "12GB",
+      "storage": "256GB",
+      "display": {
+        "size": "7.6インチ (メイン) / 6.2インチ (カバー)",
+        "resolution": "2176×1812 (メイン QXGA+ 1-120Hz可変) / 2316×904 (カバー 48-120Hz可変)",
+        "type": "Dynamic AMOLED 2X (メイン・カバー共)",
+        "refreshRate": "120Hz"
+      },
+      "battery": {
+        "capacity": "4400mAh",
+        "charging": "25W有線急速充電 (30分最大50%) / 15Wワイヤレス充電 / ワイヤレスバッテリー共有"
+      },
+      "camera": {
+        "main": "50MP (広角 Dual Pixel OIS F1.8)",
+        "telephoto": "10MP (光学3倍望遠 OIS F2.4 30倍スペースズーム)",
+        "ultrawide": "12MP (超広角 123° F2.2)",
+        "front": "4MP (メイン画面下カメラ UDC F1.8) / 10MP (カバーカメラ F2.2)"
+      },
       "dimensions": {
         "height": "155.1mm",
-        "width": "14.2mm",
-        "depth": "67.1mm"
+        "width": "130.1mm (開時) / 67.1mm (閉時)",
+        "depth": "6.3mm (開時) / 14.2-15.8mm (閉時)",
+        "weight": "263g"
       },
       "weight": "263g",
-      "display": "メイン: 約193mm, カバー: 約157mm",
-      "memory": "12GB",
-      "storage": "256GB",
-      "battery": "4400mAh",
-      "camera": "アウト: 50.0 MP + 12.0 MP + 10.0 MP"
+      "material": "Armor Aluminumフレーム / Gorilla Glass Victus+",
+      "origin": "韓国",
+      "connectivity": [
+        "5G",
+        "Wi-Fi 6E (802.11ax)",
+        "Bluetooth 5.2",
+        "FeliCa / おサイフケータイ",
+        "nanoSIM / eSIM"
+      ],
+      "other": [
+        "防水性能: IPX8",
+        "Sペン対応 (S Pen Fold Edition別売)",
+        "タスクバー機能 / フレックスモード",
+        "生体認証: 側面指紋認証 / 顔認証"
+      ]
     }
   }
 }

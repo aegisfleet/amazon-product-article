@@ -222,25 +222,46 @@
       "scoreRationale": "[基本点: 70]\n[加点: +10] (2万円台という安価ながら、Snapdragon 4 Gen 2搭載とフルHD+大画面、FeliCa対応というコストパフォーマンスの高さ)\n[加点: +5] (エントリーモデルながらガラス背面を採用した高いビルドクオリティとデザイン性)\n[減点: -10] (RAM 4GBによるタスクキル頻発やレスポンスの遅さなど、ユーザー体験を損ねる不満点が多い)\n[合計: 75]"
     },
     "technicalSpecs": {
-      "dimensions": {
-        "height": "約169mm",
-        "width": "約76mm",
-        "depth": "約8.2mm"
+      "os": "Android 14 (Xiaomi HyperOS)",
+      "cpu": "Qualcomm Snapdragon 4 Gen 2",
+      "ram": "4GB (最大8GB仮想拡張)",
+      "storage": "128GB",
+      "display": {
+        "size": "6.8インチ",
+        "resolution": "2460×1080 (FHD+)",
+        "type": "IPS液晶 (AdaptiveSync 30/48/60/90Hz)",
+        "refreshRate": "90Hz"
       },
-      "weight": "約200g",
-      "display": "約6.8インチ フルHD+ (2,460×1,080)、最大90Hzリフレッシュレート対応",
-      "cpu": "Qualcomm Snapdragon 4 Gen 2 (4nm プロセステクノロジー)",
-      "memory": "RAM: 4GB / ROM: 128GB (最大1TBのmicroSD拡張対応)",
-      "battery": "5,000mAh (最大18W急速充電対応)",
-      "camera": "リア: 約5,000万画素 (メイン) + 約200万画素 (深度センサー) / フロント: 約500万画素",
-      "os": "MIUI 14 (Android 13ベース)",
-      "network": "5G対応、デュアルSIM (nanoSIM + eSIM)",
-      "connectivity": "Wi-Fi (802.11a/b/g/n/ac), Bluetooth 5.0, NFC, FeliCa(おサイフケータイ)",
-      "security": "側面指紋認証、AI顔認証",
-      "durability": "IP53 (防塵・飛沫防水)",
+      "battery": {
+        "capacity": "5000mAh",
+        "charging": "18W急速充電対応"
+      },
+      "camera": {
+        "main": "50MP (広角 F1.8) + 2MP (深度)",
+        "front": "5MP (F2.2)"
+      },
+      "dimensions": {
+        "height": "168.6mm",
+        "width": "76.3mm",
+        "depth": "8.2mm",
+        "weight": "200g"
+      },
+      "weight": "200g",
+      "material": "ガラス背面 / 樹脂フレーム",
+      "origin": "中国",
+      "connectivity": [
+        "5G",
+        "Wi-Fi 5 (802.11ac)",
+        "Bluetooth 5.0",
+        "FeliCa / おサイフケータイ",
+        "eSIM対応",
+        "nanoSIM"
+      ],
       "other": [
+        "防滴防塵: IP53",
         "3.5mmイヤホンジャック搭載",
-        "USB Type-C"
+        "生体認証: 側面指紋認証 / 顔認証",
+        "microSDXC対応 (最大1TB)"
       ]
     }
   }

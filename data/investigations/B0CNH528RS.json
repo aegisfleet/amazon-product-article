@@ -156,25 +156,45 @@
       "scoreRationale": "[基本点: 70]\n[加点: +8] (FeliCa対応と折りたたみによる圧倒的な携帯性の両立を評価)\n[加点: +5] (フレックスビュースタイルによる三脚不要の利便性と使い勝手の良いピュアAndroid)\n[減点: -5] (折りたたみ特有の耐久性への懸念とIP52の控えめな防水性能)\n[減点: -3] (価格に対してハイエンド並の処理性能は期待できず、高負荷ゲームには不向き)\n[合計: 75]"
     },
     "technicalSpecs": {
-      "dimensions": {
-        "height": "約170.8mm (折りたたみ時: 約88.2mm)",
-        "width": "約74.0mm",
-        "depth": "約7.4mm (折りたたみ時: 約15.8mm)"
+      "os": "Android 14",
+      "cpu": "Qualcomm Snapdragon 7 Gen 1",
+      "ram": "8GB",
+      "storage": "256GB",
+      "display": {
+        "size": "6.9インチ (メイン) / 1.5インチ (カバー)",
+        "resolution": "2640×1080 (FHD+ 22:9) / 194×368 (カバー)",
+        "type": "pOLED (有機EL メイン・カバー共)",
+        "refreshRate": "144Hz (メイン) / 60Hz (カバー)"
       },
-      "weight": "約188.6g",
-      "display": "メイン: 約6.9インチ FHD+ (2640x1080) pOLED (最大144Hz) / アウト: 約1.5インチ OLED (194x368)",
-      "processor": "Qualcomm Snapdragon 7 Gen 1",
-      "memory": "RAM: 8GB / ROM: 256GB",
-      "battery": "4200mAh",
-      "charging": "30W TurboPowerチャージ対応、5W ワイヤレス充電(Qi対応)",
-      "camera": "アウト: 約6400万画素(メイン, OIS) + 約1300万画素(超広角/マクロ) / イン: 約3200万画素",
-      "connectivity": "Wi-Fi 6E (802.11 a/b/g/n/ac/ax)、Bluetooth 5.3",
-      "sim": "nanoSIM / eSIM (DSDV対応)",
-      "sensors": "指紋認証、顔認証",
-      "waterResistance": "IP52 (防塵・防滴)",
+      "battery": {
+        "capacity": "4200mAh",
+        "charging": "30W TurboPower急速充電 / 5Wワイヤレス充電対応"
+      },
+      "camera": {
+        "main": "64MP (広角 OIS F1.7) + 13MP (超広角/マクロ 120° F2.2)",
+        "front": "32MP (F2.4)"
+      },
+      "dimensions": {
+        "height": "170.82mm (開時) / 88.24mm (閉時)",
+        "width": "73.95mm",
+        "depth": "7.35mm (開時) / 15.8mm (閉時)",
+        "weight": "188.6g"
+      },
+      "weight": "188.6g",
+      "material": "ヴィーガンレザー背面 / アルミニウムフレーム",
+      "origin": "中国",
+      "connectivity": [
+        "5G",
+        "Wi-Fi 6E (802.11ax)",
+        "Bluetooth 5.3",
+        "FeliCa / おサイフケータイ",
+        "eSIM対応",
+        "nanoSIM"
+      ],
       "other": [
-        "おサイフケータイ(FeliCa)対応",
-        "ステレオスピーカー (Dolby Atmos対応)"
+        "防塵防滴: IP52",
+        "生体認証: 側面指紋認証 / 顔認証",
+        "オーディオ: ステレオスピーカー (Dolby Atmos対応)"
       ]
     }
   }

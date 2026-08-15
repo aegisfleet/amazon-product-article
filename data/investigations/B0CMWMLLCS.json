@@ -25,21 +25,27 @@
         "userType": "iPhone 13からの買い替えユーザー",
         "scenario": "日常的な使用や持ち歩き",
         "experience": "パステル調のブルーカラーが気に入っています。背面はサラサラのつや消しガラスで指紋が気になりません。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "スマホユーザー",
         "scenario": "機種変更",
         "experience": "定番のiPhoneという感じで、動作レスポンスが非常に高速です。コンパクトな部類に入り持ち運びしやすいです。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "家族ユーザー",
         "scenario": "キャリアからの乗り換え",
         "experience": "価格はやっぱり高いと感じますが、画面が綺麗で動作も快適なので買って後悔はありません。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -62,7 +68,9 @@
         "claim": "動作レスポンスが非常に高速",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": true,
         "notes": "ユーザーレビューで複数言及あり"
       }
@@ -166,17 +174,47 @@
       "scoreRationale": "[基本点: 70]\n[加点: +10] (A16 Bionicと高速なレスポンスなどの高い基本性能)\n[加点: +10] (USB-C対応とDynamic Islandの実用性の高さ)\n[減点: -5] (整備済み品としてもやや高い価格設定)\n[合計: 85]"
     },
     "technicalSpecs": {
-      "dimensions": { "height": "147.6mm", "width": "71.6mm", "depth": "7.8mm" },
+      "os": "iOS 18",
+      "cpu": "Apple A16 Bionicチップ (6コアCPU / 5コアGPU / 16コアNeural Engine)",
+      "ram": "6GB",
+      "storage": "128GB",
+      "display": {
+        "size": "6.1インチ",
+        "resolution": "2556×1179 (Super Retina XDR OLED / Dynamic Island)",
+        "type": "OLED (有機EL / Ceramic Shield前面 / ピーク輝度2000nits)",
+        "refreshRate": "60Hz"
+      },
+      "battery": {
+        "capacity": "3349mAh (ビデオ再生最大20時間)",
+        "charging": "USB-C急速充電 (20W以上で30分最大50%) / MagSafeワイヤレス充電 (最大15W) / Qi2対応"
+      },
+      "camera": {
+        "main": "48MP (広角 26mm F1.6 センサーシフトOIS 2倍望遠統合)",
+        "ultrawide": "12MP (超広角 13mm F2.4)",
+        "front": "12MP TrueDepthカメラ (F1.9)"
+      },
+      "dimensions": {
+        "height": "147.6mm",
+        "width": "71.6mm",
+        "depth": "7.8mm",
+        "weight": "171g"
+      },
       "weight": "171g",
-      "capacity": "128GB",
-      "material": "前面：Ceramic Shield / 背面：カラーインフューズドガラス / フレーム：アルミニウム",
-      "origin": "未記載",
+      "material": "アルミニウムフレーム / Ceramic Shield前面 / カラーインフューズドガラス背面",
+      "origin": "中国 / インド",
+      "connectivity": [
+        "5G",
+        "Wi-Fi 6 (802.11ax)",
+        "Bluetooth 5.3",
+        "FeliCa / Apple Pay",
+        "eSIM対応",
+        "nanoSIM"
+      ],
       "other": [
-        "ディスプレイ：約15.5cm Super Retina XDR",
-        "チップ：A16 Bionic",
-        "コネクタ：USB-C",
-        "防沫性能、耐水性能、防塵性能：IP68等級",
-        "カラー：ブルー"
+        "防塵耐水: IP68 (水深6mで最大30分)",
+        "生体認証: Face ID",
+        "Dynamic Island搭載",
+        "USB-C端子採用"
       ]
     }
   }
