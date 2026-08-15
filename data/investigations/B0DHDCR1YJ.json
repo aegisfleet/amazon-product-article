@@ -208,28 +208,47 @@
       "scoreRationale": "[基本点: 70]\n[加点: +10] (1万円台という低価格で大画面・120Hz・大容量バッテリーを実現しているコスパの高さ)\n[加点: +5] (50MPのカメラ画質がこの価格帯としては優秀)\n[減点: -5] (ジャイロセンサー非搭載、おサイフケータイ・防水防塵非対応という割り切り)\n[減点: -5] (SoCがエントリークラスであり重い処理には向かない)\n[合計: 75]"
     },
     "technicalSpecs": {
+      "os": "Android 14 (Xiaomi HyperOS)",
+      "cpu": "MediaTek Helio G81-Ultra",
+      "ram": "8GB",
+      "storage": "256GB",
+      "display": {
+        "size": "6.88インチ",
+        "resolution": "1640×720 (HD+)",
+        "type": "IPS液晶 (TÜV Rheinland低ブルーライト認証)",
+        "refreshRate": "120Hz"
+      },
+      "battery": {
+        "capacity": "5160mAh",
+        "charging": "18W急速充電対応"
+      },
+      "camera": {
+        "main": "50MP (広角 F1.8) + 補助レンズ",
+        "front": "13MP (F2.0)"
+      },
       "dimensions": {
         "height": "171.88mm",
         "width": "77.8mm",
-        "depth": "8.22mm"
+        "depth": "8.22mm",
+        "weight": "211g"
       },
       "weight": "211g",
-      "display": "約17.48cm液晶ディスプレイ, 解像度 1640×720 (HD+), 最大120Hzリフレッシュレート",
-      "cpu": "MediaTek Helio G81-Ultra オクタコア",
-      "ram": "8GB (仮想RAM拡張対応)",
-      "storage": "256GB (microSDXC最大1TB対応)",
-      "battery": "5160mAh, 18W急速充電対応",
-      "camera": "背面: 5000万画素(F1.8) + 補助レンズ, 前面: 1300万画素(F2.0)",
-      "network": "4G LTE / 3G / 2G (5G非対応)",
-      "sim": "nanoSIM x2 (トリプルスロット対応)",
-      "other": [
-        "イヤホンジャック搭載",
-        "側面指紋認証",
-        "顔認証",
-        "Wi-Fi 5",
+      "material": "ガラス背面 / 樹脂フレーム",
+      "origin": "中国",
+      "connectivity": [
+        "4G LTE",
+        "Wi-Fi 5 (802.11ac)",
         "Bluetooth 5.4",
-        "NFC非対応",
-        "ジャイロセンサー非対応"
+        "nanoSIM x2 (トリプルスロット)"
+      ],
+      "other": [
+        "3.5mmイヤホンジャック搭載",
+        "生体認証: 側面指紋認証 / 顔認証",
+        "microSDXC対応 (最大1TB)",
+        "※5G非対応",
+        "※おサイフケータイ(FeliCa)非対応",
+        "※防水非対応",
+        "※ジャイロセンサー非搭載"
       ]
     }
   }
