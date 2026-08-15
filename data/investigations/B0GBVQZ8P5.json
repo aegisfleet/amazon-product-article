@@ -173,23 +173,47 @@
       "scoreRationale": "[基本点: 70]\n[加点: +5] (6000mAhの大容量バッテリーと6.88インチの大画面を搭載し実用性が高い)\n[加点: +5] (15,898円という低価格ながらAndroid 15を搭載しコスパが良い)\n[合計: 80]"
     },
     "technicalSpecs": {
-      "dimensions": {
-        "height": "約9.4mm",
-        "width": "約76.6mm",
-        "depth": "約165.8mm"
-      },
-      "weight": "約220g",
-      "display": "6.88インチ HD+ (720x1640), 120Hzリフレッシュレート",
-      "cpu": "Unisoc T7250 8コアプロセッサ",
-      "memory": "16GB (物理4GB + 仮想12GB)",
-      "storage": "128GB ROM (最大1TBのmicroSDカード拡張対応)",
-      "battery": "6000mAh, 10W急速充電, OTG逆充電対応",
-      "camera": "リア: 1300万画素, フロント: 800万画素",
       "os": "Android 15",
-      "connectivity": "2.4GHz/5GHz Wi-Fi, Bluetooth 5.0, GPS",
-      "sim": "デュアルNano SIM または Nano SIM + TFカード",
-      "sensors": "顔認証, 側面指紋認証",
-      "interfaces": "USB Type-C, 3.5mmイヤホンジャック"
+      "cpu": "Unisoc T7250",
+      "ram": "4GB (最大16GB仮想拡張)",
+      "storage": "128GB",
+      "display": {
+        "size": "6.88インチ",
+        "resolution": "1640×720 (HD+)",
+        "type": "IPS液晶",
+        "refreshRate": "120Hz"
+      },
+      "battery": {
+        "capacity": "6000mAh",
+        "charging": "10W充電 / OTGリバース給電対応"
+      },
+      "camera": {
+        "main": "13MP (広角)",
+        "front": "8MP"
+      },
+      "dimensions": {
+        "height": "165.8mm",
+        "width": "76.6mm",
+        "depth": "9.4mm",
+        "weight": "220g"
+      },
+      "weight": "220g",
+      "material": "樹脂フレーム / 樹脂背面",
+      "origin": "中国",
+      "connectivity": [
+        "4G LTE",
+        "Wi-Fi 5 (802.11ac)",
+        "Bluetooth 5.0",
+        "nanoSIM x2 (または nanoSIM+microSD)"
+      ],
+      "other": [
+        "3.5mmイヤホンジャック搭載",
+        "生体認証: 側面指紋認証 / 顔認証",
+        "microSDカード対応 (最大1TB)",
+        "※5G非対応",
+        "※おサイフケータイ(FeliCa)非対応",
+        "※防水非対応"
+      ]
     }
   }
 }

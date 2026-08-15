@@ -192,21 +192,46 @@
       "scoreRationale": "[基本点: 70]\n[加点: +10] (カメラコントロールやマクロ撮影など、スタンダードモデルとして大幅な機能向上)\n[加点: +10] (A18チップによる高い処理性能とバッテリー持ちの向上)\n[減点: -5] (リフレッシュレート60HzやUSB 2.0相当の転送速度など、Proモデルとの差別化による一部スペックの据え置き)\n[合計: 85]"
     },
     "technicalSpecs": {
+      "os": "iOS 18 (Apple Intelligence対応)",
+      "cpu": "Apple A18チップ (6コアCPU / 5コアGPU / 16コアNeural Engine)",
+      "ram": "8GB",
+      "storage": "128GB",
+      "display": {
+        "size": "6.1インチ",
+        "resolution": "2556×1179 (Super Retina XDR OLED / 460ppi)",
+        "type": "OLED (有機EL / Ceramic Shield前面 / Dynamic Island)",
+        "refreshRate": "60Hz"
+      },
+      "battery": {
+        "capacity": "3561mAh (ビデオ再生最大22時間)",
+        "charging": "USB-C急速充電 (20W以上で30分最大50%) / MagSafeワイヤレス充電 (最大25W) / Qi2対応"
+      },
+      "camera": {
+        "main": "48MP Fusionカメラ (26mm F1.6 センサーシフトOIS 2倍望遠統合)",
+        "ultrawide": "12MP (超広角 13mm F2.2 マクロ撮影対応)",
+        "front": "12MP TrueDepthカメラ (F1.9)"
+      },
       "dimensions": {
         "height": "147.6mm",
         "width": "71.6mm",
-        "depth": "7.8mm"
+        "depth": "7.8mm",
+        "weight": "170g"
       },
       "weight": "170g",
-      "capacity": "128GB",
-      "material": "アルミニウムデザイン、Ceramic Shield（前面）、カラーインフューズドガラス（背面）",
-      "origin": "情報なし（通常は中国、インド等）",
+      "material": "アルミニウムフレーム / Ceramic Shield前面 / カラーインフューズドガラス背面",
+      "origin": "中国 / インド",
+      "connectivity": [
+        "5G",
+        "Wi-Fi 7 (802.11be)",
+        "Bluetooth 5.3",
+        "FeliCa / Apple Pay",
+        "eSIM対応 (デュアルeSIM)"
+      ],
       "other": [
-        "ディスプレイ: 15.5cm Super Retina XDRディスプレイ (2556 x 1179ピクセル解像度)",
-        "チップ: A18チップ (6コアCPU、5コアGPU、16コアNeural Engine)",
-        "カメラ: 48MP Fusionカメラ(メイン)、12MP超広角カメラ（マクロ対応）",
-        "防沫・耐水・防塵性能: IP68等級",
-        "コネクタ: USB-C (USB 2対応)"
+        "防塵耐水: IP68 (水深6mで最大30分)",
+        "カメラコントロールボタン搭載",
+        "アクションボタン搭載",
+        "生体認証: Face ID"
       ]
     }
   }

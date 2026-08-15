@@ -149,21 +149,47 @@
       "scoreRationale": "[基本点: 75]\n[加点: +10] (上位モデルと同等のTensor G3を搭載し基本性能が非常に高い)\n[加点: +5] (AIを活用した独自機能「消しゴムマジック」等が実用的)\n[減点: -10] (時期や在庫によっては上位機種のPixel 8整備済み品より価格が高く割高感がある場合がある)\n[合計: 80]"
     },
     "technicalSpecs": {
+      "os": "Android 14 (7年間OS・セキュリティアップデート保証)",
+      "cpu": "Google Tensor G3 (Titan M2セキュリティチップ)",
+      "ram": "8GB",
+      "storage": "128GB",
+      "display": {
+        "size": "6.1インチ",
+        "resolution": "2400×1080 (FHD+ Actua OLED)",
+        "type": "OLED (有機EL / Corning Gorilla Glass 3)",
+        "refreshRate": "120Hz (60-120Hz Smooth Display)"
+      },
+      "battery": {
+        "capacity": "4492mAh (最大31時間バッテリー駆動)",
+        "charging": "18W有線急速充電 / Qiワイヤレス充電対応"
+      },
+      "camera": {
+        "main": "64MP (広角 Quad PD F1.89 OIS+EIS)",
+        "ultrawide": "13MP (超広角 120° F2.2)",
+        "front": "13MP (96.5°超広角 F2.2)"
+      },
       "dimensions": {
-        "height": "152mm",
-        "width": "72mm",
-        "depth": "8.9mm"
+        "height": "152.1mm",
+        "width": "72.7mm",
+        "depth": "8.9mm",
+        "weight": "188g"
       },
       "weight": "188g",
-      "display": "15.5cm Actuaディスプレイ (OLED, 1080x2400, 最大120Hz)",
-      "processor": "Google Tensor G3 / Titan M2",
-      "memory": "8GB RAM",
-      "storage": "128GB",
-      "rearCamera": "64MP 広角 + 13MP ウルトラワイド",
-      "frontCamera": "13MP",
-      "battery": "標準4492mAh",
-      "charging": "急速充電、ワイヤレス充電(Qi認証済み)対応",
-      "waterResistance": "IP67準拠の防塵・防水性能"
+      "material": "アルミニウムフレーム / マット複合素材背面",
+      "origin": "ベトナム / 中国",
+      "connectivity": [
+        "5G",
+        "Wi-Fi 6E (802.11ax)",
+        "Bluetooth 5.3",
+        "FeliCa / おサイフケータイ",
+        "eSIM対応",
+        "nanoSIM"
+      ],
+      "other": [
+        "防塵防水: IP67",
+        "Google AI機能 (消しゴムマジック、ベストテイク、音声消しゴムマジック等)",
+        "生体認証: ディスプレイ内指紋認証 / 顔認証"
+      ]
     }
   }
 }
