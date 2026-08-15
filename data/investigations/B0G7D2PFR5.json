@@ -180,28 +180,27 @@
       "scoreRationale": "[基本点: 70]\n[加点: +8] 800万画素（4K）の超高画質と、暗所でのカラー撮影機能が高い実用性を提供するため\n[加点: +5] 2.4GHz/5GHzのWi-Fi両対応による通信の安定性と、簡単な初期設定\n[加点: +2] 自動追尾やAI動体検知など、防犯・見守りに必要な機能が網羅されている点\n[減点: -2] 競合製品と比較して価格がやや高めである点\n[合計: 83]"
     },
     "technicalSpecs": {
-      "dimensions": {
-        "height": "170mm",
-        "width": "90mm",
-        "depth": "90mm"
+      "camera": {
+        "main": "300万画素 (2K 2304×1296)",
+        "nightVision": "暗視LED自動切替"
       },
-      "resolution": "800万画素 (4K 3840x2160)",
-      "connectivity": "Wi-Fi (2.4GHz / 5GHz), Bluetooth",
-      "features": [
-        "パン・チルト (水平355°, 垂直90°)",
-        "自動追跡機能",
-        "AI動体検知・音検知",
-        "全彩夜視 (カラーナイトビジョン)",
-        "双方向音声",
-        "アラーム警報"
+      "dimensions": {
+        "height": "115mm",
+        "width": "78mm",
+        "depth": "78mm",
+        "weight": "190g"
+      },
+      "weight": "190g",
+      "material": "ABS樹脂",
+      "origin": "中国",
+      "connectivity": [
+        "Wi-Fi 2.4GHz"
       ],
-      "storage": "microSDカード対応, クラウド保存対応 (有料)",
-      "color": "ホワイト",
       "other": [
-        "Alexa対応",
-        "家族共有機能",
-        "技適認証済み",
-        "H.265データ圧縮・暗号化技術搭載"
+        "355°パン / 90°チルト",
+        "AI動体・鳴き声検知",
+        "双方向音声会話",
+        "クラウド / SDカード保存"
       ]
     }
   }

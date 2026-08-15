@@ -3,7 +3,12 @@
     "productName": "BOIFUN ペットカメラ 4K見守りカメラ",
     "parentAsin": "B0C42T9FQF",
     "productDescription": "4K800万画素の高精細な映像を提供する、BOIFUN製の屋内用ペット・見守りカメラです。2.4GHzおよび5GHzのWi-Fiに対応し、360度の首振り機能やAI自動追尾機能を備えています。",
-    "productUsage": ["ペット（犬・猫）の留守番時の見守り", "赤ちゃんの見守り（ベビーモニター）", "高齢者の見守り・介護", "空き巣などの防犯対策"],
+    "productUsage": [
+      "ペット（犬・猫）の留守番時の見守り",
+      "赤ちゃんの見守り（ベビーモニター）",
+      "高齢者の見守り・介護",
+      "空き巣などの防犯対策"
+    ],
     "positivePoints": [
       "4K（800万画素：3840*2160）の高解像度レンズを搭載",
       "水平360度、垂直115度のPTZ（パン・チルト）機能",
@@ -19,13 +24,19 @@
       "同等の4K画質・AI追尾機能を備える競合品（約6,000円〜9,000円）と比較して価格が10,998円とやや高め",
       "専用アプリ「mipc」を使用する必要があり、他のスマートホーム機器との連携には制限がある場合がある"
     ],
-    "useCases": ["外出先からスマートフォンのアプリを通じて留守番中のペットの様子を高画質で確認する", "別室で寝ている赤ちゃんの様子や鳴き声を検知して確認する", "不審者の侵入を検知し、自動追尾と警告音で防犯対策を行う"],
+    "useCases": [
+      "外出先からスマートフォンのアプリを通じて留守番中のペットの様子を高画質で確認する",
+      "別室で寝ている赤ちゃんの様子や鳴き声を検知して確認する",
+      "不審者の侵入を検知し、自動追尾と警告音で防犯対策を行う"
+    ],
     "userStories": [
       {
         "userType": "ペットの飼い主",
         "scenario": "日中仕事で家を空ける際、留守番中の犬の様子が心配",
         "experience": "4Kの高画質と8倍ズームのおかげで、部屋の隅で寝ている犬の表情や毛並みまでくっきりと確認できます。5GHzのWi-Fiに対応しているので外出先からの映像もスムーズです。価格は少し高めでしたが、以前使っていたフルHDのカメラとは比べ物にならない画質の良さが決め手になりました。",
-        "supportingSourceIds": ["src-amazon-boifun"],
+        "supportingSourceIds": [
+          "src-amazon-boifun"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -48,7 +59,9 @@
         "claim": "800万画素の4K高画質（3840*2160）により、高精細な映像を提供できる",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-amazon-boifun"],
+        "supportingSourceIds": [
+          "src-amazon-boifun"
+        ],
         "crossChecked": true,
         "notes": "メーカーのスペック表記。競合製品でも同等のセンサーが採用されており事実に基づく"
       },
@@ -56,7 +69,9 @@
         "claim": "暗視距離は約12mに達し、真っ暗でも不審者の顔や服装を確認できる",
         "category": "safety",
         "confidence": "medium",
-        "supportingSourceIds": ["src-amazon-boifun"],
+        "supportingSourceIds": [
+          "src-amazon-boifun"
+        ],
         "crossChecked": false,
         "notes": "赤外線LEDのスペックとしては一般的だが、「顔や服装を確認できる」かは設置環境に依存する"
       }
@@ -157,19 +172,29 @@
       "scoreRationale": "[基本点: 70]\n[加点: +10] 4K（800万画素）の高精細レンズと8倍デジタルズームによる優れた画質性能\n[加点: +5] 5GHz帯Wi-Fiへの対応による通信安定性の確保\n[減点: -10] 同等スペックの競合製品と比較して価格設定が割高である（コスパでのビハインド）\n[合計: 75]"
     },
     "technicalSpecs": {
-      "dimensions": {
-        "height": "111.9mm",
-        "width": "69.0mm",
-        "depth": "69.0mm"
+      "camera": {
+        "main": "800万画素 (4K UHD 3840×2160)",
+        "nightVision": "超高感度カラーナイトビジョン & 赤外線LED"
       },
-      "resolution": "800万画素 (3840*2160)",
-      "connectivity": "Wi-Fi (2.4GHz / 5GHz両対応)",
-      "ptz": "水平360度 / 垂直115度",
-      "zoom": "8倍デジタルズーム",
-      "nightVision": "850nm赤外線LED (暗視距離約12m)",
-      "features": ["AI動体検知", "自動追尾", "人体認識", "異常音検知", "双方向通話"],
-      "app": "mipc",
-      "color": "ホワイト"
+      "dimensions": {
+        "height": "120mm",
+        "width": "80mm",
+        "depth": "80mm",
+        "weight": "230g"
+      },
+      "weight": "230g",
+      "material": "高品位ABS樹脂",
+      "origin": "中国 (BOIFUN)",
+      "connectivity": [
+        "Wi-Fi 2.4GHz / 5GHz デュアルバンド"
+      ],
+      "other": [
+        "4K 8MP超高画質ペットカメラ",
+        "360°全自動モーショントラッキング",
+        "AIペット・人間・鳴き声検知",
+        "ワンタッチ双方向通話 & ワンタッチプライバシーモード",
+        "microSDカード最大256GB対応"
+      ]
     }
   }
 }

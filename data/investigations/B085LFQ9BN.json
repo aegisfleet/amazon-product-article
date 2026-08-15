@@ -62,19 +62,9 @@
         "credibility": "high"
       },
       {
-        "name": "Amazon カスタマーレビュー",
-        "url": "https://www.amazon.co.jp/product-reviews/B085LFQ9BN",
-        "credibility": "medium"
-      },
-      {
-        "name": "ガジェルバ Tapo C100 レビュー",
-        "url": "https://gadgerba.jp/tapo-c100/",
-        "credibility": "medium"
-      },
-      {
-        "name": "価格.com クチコミ・レビュー",
-        "url": "https://review.kakaku.com/review/K0001254332/",
-        "credibility": "medium"
+        "name": "Amazon 商品ページ",
+        "url": "https://www.amazon.co.jp/dp/B085LFQ9BN",
+        "credibility": "high"
       }
     ],
     "lastInvestigated": "2026-03-13",
@@ -170,24 +160,27 @@
       "scoreRationale": "[基本点: 70]\n[加点: +15] (2,000円台という破格の安さで実用的な性能を提供。コスパは最強クラス)\n[加点: +5] (TP-Linkのアプリ完成度が高く、誰でも簡単に使える)\n[加点: +5] (3年保証という品質への自信と安心感)\n[合計: 95]"
     },
     "technicalSpecs": {
-      "dimensions": {
-        "height": "98.9mm",
-        "width": "67.6mm",
-        "depth": "54.8mm",
-        "weight": null
+      "camera": {
+        "main": "200万画素 (フルHD 1080p 1920×1080)",
+        "nightVision": "850nm赤外線LED (最大9m暗視)"
       },
-      "power": "9.0V / 0.6A (ACアダプター付属)",
-      "capacity": "microSDカード対応 (最大128GB)",
-      "video": "1080p Full HD (1920 x 1080), 15fps, H.264",
-      "audio": "双方向通話 (マイク・スピーカー内蔵)",
+      "dimensions": {
+        "height": "88.9mm",
+        "width": "67.6mm",
+        "depth": "54.6mm",
+        "weight": "70g"
+      },
+      "weight": "70g",
+      "material": "ABS樹脂",
+      "origin": "中国 (TP-Link)",
       "connectivity": [
-        "Wi-Fi 2.4GHz (802.11 b/g/n)"
+        "Wi-Fi IEEE 802.11b/g/n 2.4GHz"
       ],
       "other": [
-        "ナイトビジョン (850nm IR LED)",
-        "動作検知",
-        "Amazon Alexa / Google Assistant対応",
-        "システム要件: iOS 9+, Android 4.4+"
+        "コンパクト固定型見守りカメラ",
+        "動体検知 & アラート通知",
+        "双方向通話 & 内蔵アラーム機能",
+        "microSDカード対応 (最大128GB)"
       ]
     }
   }

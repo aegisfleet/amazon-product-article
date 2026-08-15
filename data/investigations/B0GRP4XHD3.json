@@ -152,22 +152,36 @@
       "scoreRationale": "[基本点: 70]\n[加点: +5] (STARVIS 2搭載による高い暗視性能)\n[加点: +5] (フロント4K・リア2Kの高画質録画)\n[加点: +5] (5G WiFiによる高速転送の利便性)\n[減点: -2] (駐車監視ケーブルが別売りである点)\n[合計: 83]"
     },
     "technicalSpecs": {
-      "dimensions": {
-        "height": "40mm",
-        "width": "65mm",
-        "depth": "60mm"
+      "camera": {
+        "main": "フロント 4K UHD (3840×2160) / リア 1080p FHD",
+        "sensor": "STARVIS夜間高感度センサー"
       },
-      "weight": "100g",
-      "resolution": "フロント 4K (2160P, 800万画素) / リア 2K (1440P, 400万画素)",
-      "sensor": "SONY STARVIS 2",
-      "display": "3インチ液晶",
-      "storage": "32GB microSDカード付属",
-      "connectivity": "5G WiFi",
-      "other": [
+      "display": {
+        "size": "3.16インチ",
+        "resolution": "820×320 (IPS液晶)",
+        "type": "IPSカラー液晶",
+        "refreshRate": "60Hz"
+      },
+      "dimensions": {
+        "height": "45mm",
+        "width": "90mm",
+        "depth": "30mm",
+        "weight": "85g"
+      },
+      "weight": "85g",
+      "material": "耐熱ABS樹脂",
+      "origin": "中国",
+      "connectivity": [
+        "Wi-Fi機能 (スマホアプリ連動)",
         "GPS内蔵",
-        "全国LED信号対応",
-        "ノイズ対策済",
-        "高温保護設計"
+        "Type-C電源",
+        "microSDスロット (64GB付属)"
+      ],
+      "other": [
+        "フロント4K + リア1080P 同時録画",
+        "WDR明暗差自動補正",
+        "24時間駐車監視対応",
+        "Gセンサー衝撃検知 & ループ録画"
       ]
     }
   }

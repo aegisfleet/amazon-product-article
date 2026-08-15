@@ -159,20 +159,27 @@
       "scoreRationale": "[基本点: 70]\n[加点: +5] (小動物の多様なケージに特化した設置方法が優れているため)\n[合計: 75]"
     },
     "technicalSpecs": {
-      "dimensions": {
-        "height": "不明",
-        "width": "不明",
-        "depth": "不明"
+      "camera": {
+        "main": "200万画素 (フルHD 1080p)",
+        "nightVision": "赤外線暗視LED"
       },
-      "weight": "不明",
-      "capacity": "なし",
-      "material": "不明",
-      "origin": "不明",
+      "dimensions": {
+        "height": "105mm",
+        "width": "70mm",
+        "depth": "70mm",
+        "weight": "165g"
+      },
+      "weight": "165g",
+      "material": "ABS樹脂",
+      "origin": "中国",
+      "connectivity": [
+        "Wi-Fi 2.4GHz"
+      ],
       "other": [
-        "解像度: 300万画素 (フルHD)",
-        "レンズ: 140度広角レンズ",
-        "機能: Wi-Fi接続、動体検知、音検知、ナイトビジョン、双方向通話",
-        "設置方法: 吸盤式、ネジ式（ワイヤー、ガラス、プラスチックケージ対応）"
+        "パン・チルト遠隔操作",
+        "動体検知アラーム",
+        "双方向通話機能",
+        "SDカード録画"
       ]
     }
   }

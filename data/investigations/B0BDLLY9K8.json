@@ -65,7 +65,10 @@
         "claim": "SDカードフォーマット不要",
         "category": "durability",
         "confidence": "high",
-        "supportingSourceIds": ["src-amazon", "src-yupiteru-official"],
+        "supportingSourceIds": [
+          "src-amazon",
+          "src-yupiteru-official"
+        ],
         "crossChecked": true,
         "notes": "Amazon商品ページ、公式サイト双方で特長として記載"
       },
@@ -73,7 +76,10 @@
         "claim": "電源直結コード付属",
         "category": "comparativeAdvantage",
         "confidence": "high",
-        "supportingSourceIds": ["src-amazon", "src-yupiteru-official"],
+        "supportingSourceIds": [
+          "src-amazon",
+          "src-yupiteru-official"
+        ],
         "crossChecked": true,
         "notes": "多くのエントリーモデルはシガープラグコードだが、本機は電源直結コードが標準付属"
       }
@@ -152,16 +158,36 @@
       "scoreRationale": "[基本点: 70]\n[加点: +5] (定期フォーマット不要・高耐久SD同梱など、メンテナンスフリーで実用性が高い)\n[加点: +5] (同価格帯で電源直結コードが標準付属しており、コスパが良い)\n[減点: -5] (主流のフルHD画質ではなくHD画質である点)\n[合計: 75]"
     },
     "technicalSpecs": {
-      "dimensions": {
-        "height": "49mm(フロント) / 25mm(リア直径)",
-        "width": "64mm(フロント) / 58mm(リア)",
-        "depth": "29mm(フロント)"
+      "camera": {
+        "main": "フロント 200万画素 / リア 200万画素 (前後フルHD 1080p)",
+        "sensor": "前後STARVIS高感度CMOSセンサー"
       },
-      "weight": "約65g(フロント) / 約21g(リア) / パッケージ総重量 約460g",
-      "resolution": "HD (100万画素)",
-      "recordingMedium": "microSDカード (16GB付属、8～128GB対応 Class10以上)",
-      "powerSupply": "DC12V (電源直結コード付属)",
-      "features": ["Gセンサー", "GPS", "HDR", "SDフォーマット不要機能"]
+      "display": {
+        "size": "2.0インチ",
+        "resolution": "フルカラーTFT液晶",
+        "type": "TFT液晶",
+        "refreshRate": "60Hz"
+      },
+      "dimensions": {
+        "height": "48mm",
+        "width": "64mm",
+        "depth": "33mm (フロント) / 54×25mm (リア)",
+        "weight": "69g (フロント) / 26g (リア)"
+      },
+      "weight": "69g",
+      "material": "高耐熱樹脂",
+      "origin": "日本 (Yupiteru)",
+      "connectivity": [
+        "GPS内蔵",
+        "microSDカードスロット (16GB付属 / 最大32GB)"
+      ],
+      "other": [
+        "前後2カメラSTARVIS搭載で夜間も鮮明記録 (SUPER NIGHT)",
+        "HDR (ハイダイナミックレンジ) 前後搭載で逆光・白とび補正",
+        "SDカードフォーマット不要機能",
+        "Gセンサー (衝撃録画) & 常時録画 & 手動録画",
+        "全国LED信号機対応 & 地デジノイズ低減"
+      ]
     }
   }
 }
