@@ -187,24 +187,45 @@
       "scoreRationale": "[基本点: 70]\n[加点: +10] (ProMotion 120Hz駆動の標準モデルへの搭載による体験向上)\n[加点: +5] (A19チップによる圧倒的な処理性能とAI機能への最適化)\n[加点: +3] (3000ニトの高輝度ディスプレイ)\n[加点: +2] (優れた耐擦傷性能)\n[加点: +5] (最大33時間の長時間バッテリーによる実用性の高さ)\n[減点: -2] (物理SIM非対応による初期設定のハードル)\n[減点: -3] (高額な端末価格)\n[合計: 90]"
     },
     "technicalSpecs": {
+      "os": "iOS 19 (Apple Intelligence対応)",
+      "cpu": "Apple A19チップ (6コアCPU / 5コアGPU / 16コアNeural Engine)",
+      "ram": "8GB",
+      "storage": "256GB",
+      "display": {
+        "size": "6.3インチ",
+        "resolution": "2622×1206 (Super Retina XDR OLED)",
+        "type": "OLED (有機EL / Ceramic Shield 2 / ピーク輝度3000nits)",
+        "refreshRate": "120Hz ProMotion (1-120Hz)"
+      },
+      "battery": {
+        "capacity": "3600mAh (ビデオ再生最大33時間)",
+        "charging": "USB-C急速充電 / MagSafeワイヤレス充電 (最大25W) / Qi2対応"
+      },
+      "camera": {
+        "main": "48MP Fusionカメラ (26mm F1.6 センサーシフトOIS 2倍望遠統合)",
+        "ultrawide": "48MP (超広角 13mm F2.2)",
+        "front": "18MP センターフレームフロントカメラ"
+      },
       "dimensions": {
         "height": "149.6mm",
         "width": "71.5mm",
-        "depth": "7.95mm"
+        "depth": "7.95mm",
+        "weight": "177g"
       },
-      "weight": "170g",
-      "capacity": "256GB",
-      "material": "アルミニウム（筐体）、Ceramic Shield 2（前面）",
-      "origin": "中国・インド（製造ロットにより異なる場合あり）",
+      "weight": "177g",
+      "material": "アルミニウムフレーム / Ceramic Shield 2 / カラーインフューズドガラス背面",
+      "origin": "中国 / インド",
+      "connectivity": [
+        "5G",
+        "Wi-Fi 7",
+        "Bluetooth 6.0",
+        "FeliCa / Apple Pay",
+        "eSIM対応"
+      ],
       "other": [
-        "ディスプレイ: 16.0cm Super Retina XDRディスプレイ (ProMotion対応, ピーク輝度3000ニト)",
-        "チップ: A19チップ (5コアGPU, 強化されたNeural Engine)",
-        "背面カメラ: 48MP Dual Fusion (メイン/超広角), 4倍光学ズームレンジ",
-        "前面カメラ: 18MP センターフレームフロントカメラ",
-        "バッテリー: 最大33時間（ビデオ再生）, 20分で最大50%充電",
-        "通信: Wi-Fi 7, 5G, Bluetooth 6",
-        "SIM: eSIM専用",
-        "認証: Face ID"
+        "防塵耐水: IP68",
+        "生体認証: Face ID",
+        "アクションボタン搭載 / カメラコントロール搭載"
       ]
     }
   }

@@ -135,21 +135,46 @@
       "scoreRationale": "[基本点: 70]\n[加点: +10] (最新のA19チップとApple Intelligenceによる高い性能・利便性)\n[加点: +5] (10万円を切る高いコストパフォーマンス)\n[減点: -6] (リフレッシュレートがProMotionに非対応など、一部上位モデルと比べた機能制限)\n[合計: 79]"
     },
     "technicalSpecs": {
+      "os": "iOS 19 (Apple Intelligence対応)",
+      "cpu": "Apple A19チップ (6コアCPU / 4コアGPU / 16コアNeural Engine)",
+      "ram": "8GB",
+      "storage": "256GB",
+      "display": {
+        "size": "6.1インチ",
+        "resolution": "2532×1170 (Super Retina XDR OLED / 460ppi)",
+        "type": "OLED (有機EL / Ceramic Shield 2)",
+        "refreshRate": "60Hz"
+      },
+      "battery": {
+        "capacity": "4000mAh (ビデオ再生最大26時間)",
+        "charging": "USB-C急速充電 (20W以上) / MagSafeワイヤレス充電 (最大15W) / Qi対応"
+      },
+      "camera": {
+        "main": "48MP Fusionカメラ (26mm F1.6 センサーシフトOIS 2倍望遠統合)",
+        "front": "12MP TrueDepthカメラ (F1.9)"
+      },
       "dimensions": {
         "height": "146.7mm",
         "width": "71.5mm",
-        "depth": "7.80mm"
+        "depth": "7.80mm",
+        "weight": "169g"
       },
       "weight": "169g",
-      "capacity": "256GB",
-      "material": "アルミニウム（Ceramic Shield 2採用）",
-      "origin": "中国（想定）",
+      "material": "アルミニウムフレーム / Ceramic Shield 2 / カラーインフューズドガラス背面",
+      "origin": "中国 / インド",
+      "connectivity": [
+        "5G (Apple C1モデム)",
+        "Wi-Fi 6E (802.11ax)",
+        "Bluetooth 5.3",
+        "FeliCa / Apple Pay",
+        "eSIM対応"
+      ],
       "other": [
-        "ディスプレイ: 約15.5cm Super Retina XDRディスプレイ",
-        "チップ: A19チップ",
-        "カメラ: 48MP Fusionカメラ",
-        "充電端子: USB-C",
-        "ワイヤレス充電: MagSafe (最大15W)"
+        "防塵耐水: IP68",
+        "生体認証: Face ID",
+        "アクションボタン搭載",
+        "※ProMotion(120Hz)非対応",
+        "※超広角カメラ非搭載"
       ]
     }
   }
