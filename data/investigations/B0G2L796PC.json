@@ -140,15 +140,48 @@
       "scoreRationale": "[基本点: 70]\n[加点: +5] (5800mAhの大容量バッテリーとAI機能搭載などの実用性の高さ)\n[合計: 75]"
     },
     "technicalSpecs": {
-      "dimensions": { "height": "162.2mm", "width": "75.0mm", "depth": "7.8mm" },
+      "os": "Android 15 (ColorOS 15)",
+      "cpu": "Qualcomm Snapdragon 6 Gen 1",
+      "ram": "8GB",
+      "storage": "128GB",
+      "display": {
+        "size": "6.7インチ",
+        "resolution": "2400×1080 (FHD+)",
+        "type": "AMOLED (有機EL)",
+        "refreshRate": "120Hz"
+      },
+      "battery": {
+        "capacity": "5800mAh",
+        "charging": "45W SUPERVOOC急速充電対応"
+      },
+      "camera": {
+        "main": "50MP (広角 OIS搭載)",
+        "ultrawide": "8MP (超広角)",
+        "front": "32MP"
+      },
+      "dimensions": {
+        "height": "162.2mm",
+        "width": "75.0mm",
+        "depth": "7.8mm",
+        "weight": "192g"
+      },
       "weight": "192g",
-      "display": "約6.7インチ 有機EL フルHD+ (2400×1080) 120Hz",
-      "battery": "5800mAh",
-      "cpu": "Qualcomm Snapdragon 6 Gen 1 (オクタコア 2.2GHz×4 + 1.8GHz×4)",
-      "memory": "RAM 8GB (最大16GB拡張) / ROM 128GB (1TB microSD対応)",
-      "camera": "アウトカメラ: 5000万画素",
-      "network": "5G, docomo/au/SoftBank/Rakuten Mobile回線対応",
-      "features": ["おサイフケータイ", "指紋認証", "顔認証", "急速充電対応", "OPPO AI"]
+      "material": "ガラス / 樹脂（カラーによる加工）",
+      "origin": "中国",
+      "connectivity": [
+        "5G",
+        "Wi-Fi 6 (802.11ax)",
+        "Bluetooth 5.4",
+        "FeliCa / おサイフケータイ",
+        "eSIM対応"
+      ],
+      "other": [
+        "防塵防水: IP68 / IP69",
+        "生体認証: ディスプレイ指紋認証 / 顔認証",
+        "AI機能: OPPO AI (AI消しゴム / AIポートレート)",
+        "マクロカメラ: 2MP",
+        "microSDXC対応 (最大2TB)"
+      ]
     }
   }
 }

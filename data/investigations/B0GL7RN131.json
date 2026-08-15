@@ -129,22 +129,48 @@
       "scoreRationale": "[基本点: 70]\n[加点: +10] (初心者やシニア層に特化した非常に使いやすい専用ボタンとUI設計)\n[加点: +5] (ハンドソープで洗えるなど衛生面にも配慮された高い耐久性)\n[減点: -10] (おサイフケータイ非対応であり、現代のキャッシュレス決済需要に応えきれていない)\n[合計: 75]"
     },
     "technicalSpecs": {
-      "dimensions": { "height": "158mm", "width": "71mm", "depth": "9.4mm" },
-      "weight": "174g",
-      "displaySize": "約14.5cm",
-      "displayResolution": "HD+ (1520x720ドット)",
-      "batteryCapacity": "4000mAh",
       "os": "Android 12",
-      "cpu": "Snapdragon 695 5G (オクタコア) 2.2GHz + 1.8GHz",
+      "cpu": "Qualcomm Snapdragon 695 5G",
       "ram": "4GB",
-      "rom": "64GB",
-      "cameraMain": "デュアルカメラ (約1200万画素 + 約190万画素)",
-      "cameraSub": "約800万画素",
-      "connectivity": "Wi-Fi (IEEE 802.11 a/b/g/n/ac), Bluetooth 5.1",
-      "durability": "防水 (IPX5/IPX8), 防塵 (IP6X), 耐衝撃 (MIL-STD-810H-516 SHOCK)",
-      "terminals": "USB Type-C",
-      "sim": "nanoSIM / eSIM",
-      "other": ["生体認証(指紋、顔)", "世界対応ケータイ対応", "おサイフケータイ非対応", "ワイヤレス充電非対応"]
+      "storage": "64GB",
+      "display": {
+        "size": "5.7インチ",
+        "resolution": "1520×720 (HD+)",
+        "type": "TFT液晶",
+        "refreshRate": "60Hz"
+      },
+      "battery": {
+        "capacity": "4000mAh",
+        "charging": "USB PD急速充電 (インテリジェントチャージ)"
+      },
+      "camera": {
+        "main": "12MP (広角 F2.0) + 1.9MP (深度)",
+        "front": "8MP (F2.0)"
+      },
+      "dimensions": {
+        "height": "158mm",
+        "width": "71mm",
+        "depth": "9.4mm",
+        "weight": "174g"
+      },
+      "weight": "174g",
+      "material": "プラスチック（背面・フレーム）",
+      "origin": "中国",
+      "connectivity": [
+        "5G",
+        "Wi-Fi 5 (802.11ac)",
+        "Bluetooth 5.1",
+        "eSIM対応"
+      ],
+      "other": [
+        "防塵防水: IPX5/IPX8防水・IP6X防塵",
+        "耐久性: MIL-STD-810H耐衝撃",
+        "専用ボタン: 電話・メール・ホーム専用物理ボタン",
+        "サポート機能: 押すだけサポート機能",
+        "生体認証: 側面指紋認証 / 顔認証",
+        "microSDXC対応 (最大1TB)",
+        "※おサイフケータイ(FeliCa)非対応"
+      ]
     }
   }
 }
