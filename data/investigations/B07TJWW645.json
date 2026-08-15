@@ -118,27 +118,27 @@
       "scoreRationale": "[基本点: 70]\n[減点: -5] (安全性・信頼性: Wi-Fi 2.4GHz限定の制約と、中華系サーバー利用への潜在的な懸念)\n[加点: +10] (コストパフォーマンス: 300万画素で3000円台前半という非常に優れたコストパフォーマンス)\n[加点: +6] (性能・効果: 360度首振り、暗視、双方向音声、Alexa対応と機能充実)\n[加点: +2] (品質・デザイン: シンプルで威圧感のないデザイン)\n[加点: +2] (ユーザー満足度: 長期間の販売実績と一定のユーザー満足度)\n[合計: 85]"
     },
     "technicalSpecs": {
-      "dimensions": {
-        "width": "72mm",
-        "depth": "72mm",
-        "height": "101mm"
+      "camera": {
+        "main": "300万画素 (2K 2304×1296)",
+        "nightVision": "不可視赤外線LED (最大8m暗視)"
       },
-      "resolution": "3MP (2304x1296)",
-      "viewingAngle": "105°",
-      "panTilt": "水平320° / 垂直80°",
-      "audio": "双方向音声",
-      "nightVision": "赤外線LED (940nm, 最大5m)",
-      "storage": "MicroSDカード (最大128GB), クラウド (有料)",
+      "dimensions": {
+        "height": "110mm",
+        "width": "80mm",
+        "depth": "80mm",
+        "weight": "210g"
+      },
+      "weight": "210g",
+      "material": "ABS樹脂",
+      "origin": "中国 (Wansview)",
       "connectivity": [
-        "Wi-Fi (2.4GHzのみ)",
-        "RTSP対応"
+        "Wi-Fi 2.4GHz"
       ],
-      "power": "USB給電",
-      "app": "Wansview Cloud App",
       "other": [
-        "Alexa対応",
-        "動体検知",
-        "4倍デジタルズーム"
+        "350°水平パン / 90°垂直チルト (全方位見守り)",
+        "動体検知 & リアルタイム通知",
+        "双方向音声通話",
+        "Alexa対応 & microSDカード対応 (最大128GB)"
       ]
     }
   }

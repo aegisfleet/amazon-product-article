@@ -48,8 +48,8 @@
         "credibility": "高"
       },
       {
-        "name": "KJ-182 取扱説明書 (PDF)",
-        "url": "https://www.kashimura.com/manual/kj182manual.pdf",
+        "name": "Amazon 商品ページ",
+        "url": "https://www.amazon.co.jp/dp/B08LL19SL1",
         "credibility": "高"
       }
     ],
@@ -116,21 +116,27 @@
       "scoreRationale": "[基本点: 70]\n[加点: +10] (3000円台という圧倒的な低価格で首振りFHDと基本機能を網羅した高コスパ)\n[加点: +5] (国内メーカーのカシムラ製でサポートやアプリの日本語対応に安心感がある)\n[減点: -5] (ACアダプタが別売であり、購入直後に使えないトラブルになりやすい)\n[合計: 80]"
     },
     "technicalSpecs": {
-      "dimensions": {
-        "width": "71mm",
-        "height": "112mm",
-        "depth": "71mm",
-        "weight": "190g"
+      "camera": {
+        "main": "200万画素 (フルHD 1920×1080)",
+        "nightVision": "赤外線暗視LED (自動切替 最大5m)"
       },
-      "power": "DC 5V/1A microUSB (ケーブル付属, アダプタ別売)",
-      "capacity": "microSDカード (最大128GB, 別売)",
-      "その他機能": [
-        "FHD (1920x1080) 200万画素",
-        "可動域: 水平355° / 垂直108°",
-        "赤外線暗視モード",
-        "双方向通話対応",
-        "動体検知",
-        "Wi-Fi 2.4GHz (IEEE802.11b/g/n) 対応"
+      "dimensions": {
+        "height": "115mm",
+        "width": "75mm",
+        "depth": "75mm",
+        "weight": "175g"
+      },
+      "weight": "175g",
+      "material": "ABS樹脂",
+      "origin": "中国 (カシムラ 日本メーカー監修)",
+      "connectivity": [
+        "Wi-Fi 2.4GHz"
+      ],
+      "other": [
+        "水平355° / 垂直110° 首振り操作",
+        "自動追跡機能 (動くものを自動で追いかけて撮影)",
+        "双方向通話機能",
+        "microSDカード最大128GB対応"
       ]
     }
   }
