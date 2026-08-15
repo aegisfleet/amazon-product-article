@@ -174,23 +174,45 @@
       "scoreRationale": "[基本点: 70]\n[加点: +10] (ProMotion対応やA19チップなど、スタンダードモデルとして非常に高い性能・使い勝手)\n[加点: +5] (512GBの大容量ストレージによる実用性の高さ)\n[加点: +5] (前モデルより飛躍的に向上したバッテリー駆動時間と耐久性)\n[減点: -5] (スタンダードモデルの512GB版としては約18万円とやや高額で、Proの256GBモデルと価格帯が競合する点)\n[合計: 85]"
     },
     "technicalSpecs": {
-      "display": "6.3インチ",
-      "storage": "512 GB",
-      "color": "ブラック",
-      "chip": "A19チップ (5コアGPU、強化されたNeuralEngine)",
-      "network": "Wi-Fi 7, 5G, Bluetooth 6, eSIM",
-      "camera": "48MP Dual Fusionカメラシステム, 18MP センターフレームフロントカメラ",
+      "os": "iOS 19 (Apple Intelligence対応)",
+      "cpu": "Apple A19チップ (6コアCPU / 5コアGPU / 16コアNeural Engine)",
+      "ram": "8GB",
+      "storage": "512GB",
+      "display": {
+        "size": "6.3インチ",
+        "resolution": "2622×1206 (Super Retina XDR OLED)",
+        "type": "OLED (有機EL / Ceramic Shield 2 / ピーク輝度3000nits)",
+        "refreshRate": "120Hz ProMotion (1-120Hz)"
+      },
+      "battery": {
+        "capacity": "3600mAh (ビデオ再生最大33時間)",
+        "charging": "USB-C急速充電 / MagSafeワイヤレス充電 (最大25W) / Qi2対応"
+      },
+      "camera": {
+        "main": "48MP Fusionカメラ (26mm F1.6 センサーシフトOIS 2倍望遠統合)",
+        "ultrawide": "48MP (超広角 13mm F2.2)",
+        "front": "18MP センターフレームフロントカメラ"
+      },
       "dimensions": {
         "height": "149.6mm",
         "width": "71.5mm",
-        "depth": "7.95mm"
+        "depth": "7.95mm",
+        "weight": "177g"
       },
+      "weight": "177g",
+      "material": "アルミニウムフレーム / Ceramic Shield 2 / カラーインフューズドガラス背面",
+      "origin": "中国 / インド",
+      "connectivity": [
+        "5G",
+        "Wi-Fi 7",
+        "Bluetooth 6.0",
+        "FeliCa / Apple Pay",
+        "eSIM対応"
+      ],
       "other": [
-        "ProMotion (最大120Hz)",
-        "ピーク輝度3,000ニト",
-        "Ceramic Shield 2採用",
-        "最大33時間のビデオ再生",
-        "Apple Intelligence対応"
+        "防塵耐水: IP68",
+        "生体認証: Face ID",
+        "アクションボタン搭載 / カメラコントロール搭載"
       ]
     }
   }
