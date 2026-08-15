@@ -86,25 +86,45 @@
       "scoreRationale": "[基本点: 70]\n[加点: +3] エントリークラスとしては余裕のある8GB RAMを搭載\n[加点: +2] 背面にヴィーガンレザーを採用し高い質感を実現\n[加点: +2] 標準的な5,000mAhを上回る5,200mAhの大容量バッテリー\n[合計: 77]"
     },
     "technicalSpecs": {
+      "os": "Android 15",
+      "cpu": "MediaTek Helio G81 Extreme",
+      "ram": "8GB",
+      "storage": "128GB",
+      "display": {
+        "size": "6.7インチ",
+        "resolution": "1612×720 (HD+)",
+        "type": "IPS液晶 (Corning Gorilla Glass 3)",
+        "refreshRate": "90Hz"
+      },
+      "battery": {
+        "capacity": "5200mAh",
+        "charging": "18W急速充電対応"
+      },
+      "camera": {
+        "main": "50MP (Quad Pixel F1.8)",
+        "front": "8MP (F2.0)"
+      },
       "dimensions": {
         "height": "165.67mm",
         "width": "75.98mm",
-        "depth": "8.17mm"
+        "depth": "8.17mm",
+        "weight": "188.8g"
       },
       "weight": "188.8g",
-      "capacity": "128GB",
-      "material": "ヴィーガンレザー（背面）、ゴリラガラス（ディスプレイ）",
-      "origin": "不明",
+      "material": "ヴィーガンレザー（背面）/ プラスチックフレーム",
+      "origin": "中国",
+      "connectivity": [
+        "4G LTE",
+        "Wi-Fi 5 (802.11ac)",
+        "Bluetooth 5.4",
+        "NFC対応"
+      ],
       "other": [
-        "OS: Android 15",
-        "プロセッサ: MediaTek Helio G81 Extreme",
-        "RAM: 8GB",
-        "ディスプレイ: 約170mm HD+ (1,612x720) LCD、90Hz",
-        "バッテリー: 5,200mAh",
-        "防水防塵: IP52",
-        "SIM: nanoSIM（eSIM非対応、スロット数2 DSDV）",
-        "通信: Wi-Fi 802.11 a/b/g/n/ac, Bluetooth 5.4, NFC対応",
-        "インターフェース: USB Type-C、3.5mmイヤホンジャック"
+        "防塵防滴: IP52",
+        "オーディオ: ステレオスピーカー (Dolby Atmos対応) / 3.5mmイヤホンジャック",
+        "生体認証: 側面指紋認証 / 顔認証",
+        "microSDXC対応 (最大1TB)",
+        "※eSIMおよびFeliCa/おサイフケータイ非対応"
       ]
     }
   }

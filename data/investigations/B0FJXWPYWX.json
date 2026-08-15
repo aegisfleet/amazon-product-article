@@ -157,24 +157,46 @@
       "scoreRationale": "[基本点: 70]\n[加点: +5] (MIL規格23項目準拠、丸洗い・除菌対応という非常に高い耐久性と実用性)\n[加点: +5] (メモリ12GB、ストレージ512GBという余裕のあるハイスペック)\n[加点: +5] (自律神経測定機能や長期アップデートサポートなど独自の強みと安心感)\n[合計: 85]"
     },
     "technicalSpecs": {
+      "os": "Android 15 (最大3回OSアップデート対応)",
+      "cpu": "Qualcomm Snapdragon 8s Gen 3",
+      "ram": "12GB",
+      "storage": "512GB",
+      "display": {
+        "size": "6.4インチ",
+        "resolution": "2400×1080 (FHD+)",
+        "type": "OLED (有機EL / 1-144Hz駆動)",
+        "refreshRate": "144Hz"
+      },
+      "battery": {
+        "capacity": "5000mAh",
+        "charging": "USB PD急速充電 (ワイヤレス充電対応)"
+      },
+      "camera": {
+        "main": "50.3MP (Sony LYTIA LYT-700C 1/1.56型 OIS搭載)",
+        "ultrawide": "49.9MP (超広角 / マクロ)",
+        "front": "49.9MP"
+      },
       "dimensions": {
         "height": "163mm",
         "width": "76mm",
-        "depth": "8mm"
+        "depth": "8.0mm",
+        "weight": "199g"
       },
       "weight": "199g",
-      "capacity": "512GB",
-      "material": "リサイクル素材（一部使用）",
-      "origin": "未確認",
+      "material": "リサイクル素材一部使用 / ガラス",
+      "origin": "中国",
+      "connectivity": [
+        "5G",
+        "Wi-Fi 7",
+        "Bluetooth 5.4",
+        "FeliCa / おサイフケータイ",
+        "eSIM対応"
+      ],
       "other": [
-        "ディスプレイ: 約16.3cm (最大144Hz)",
-        "メモリ: 12GB",
-        "ストレージ: 512GB",
-        "防水・防塵: IPX6/8/9防水、IP6X防塵",
-        "耐久性: MIL規格23項目準拠",
-        "メインカメラ: 約5030万画素 (LYTIA・LYT-700C搭載、光学手ブレ補正)",
-        "インカメラ/超広角カメラ: 約4990万画素",
-        "その他機能: 自律神経測定機能"
+        "防塵防水: IPX6/IPX8/IPX9防水・IP6X防塵",
+        "耐久性: MIL-STD-810H 23項目準拠 (コンクリート落下耐性・ハンドソープ丸洗い・アルコール除菌対応)",
+        "ヘルスケア: 自律神経測定機能",
+        "生体認証: 側面指紋認証 / 顔認証(マスク対応)"
       ]
     }
   }
