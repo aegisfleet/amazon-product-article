@@ -151,22 +151,44 @@
       "scoreRationale": "[基本点: 70]\n[加点: +5] (33.8cmの大画面による視認性の高さ)\n[加点: +5] (防塵・防滴性能と堅牢性)\n[加点: +5] (キーボード・タッチペン付属で安価なコストパフォーマンス)\n[減点: -5] (メモリが4GBでマルチタスク時の性能に不安があるため)\n[合計: 80]"
     },
     "technicalSpecs": {
-      "dimensions": {
-        "height": "200.9mm",
-        "width": "315mm",
-        "depth": "9.7mm"
+      "os": "Windows 11 Pro 64bit",
+      "cpu": "Intel Core i5-8265U (4コア / 8スレッド 最大3.9GHz)",
+      "ram": "8GB",
+      "storage": "128GB",
+      "display": {
+        "size": "13.3インチ",
+        "resolution": "1920×1080 (FHD)",
+        "type": "IPS液晶 (ノングレア・アンチグレア処理)",
+        "refreshRate": "60Hz"
       },
-      "weight": "810g",
-      "capacity": "128GB SSD",
-      "material": "不明",
-      "origin": "不明",
+      "battery": {
+        "capacity": "46Wh (駆動時間約10時間)",
+        "charging": "専用ACアダプター / USB PD充電対応"
+      },
+      "camera": {
+        "main": "5MP",
+        "front": "2MP"
+      },
+      "dimensions": {
+        "height": "208.8mm",
+        "width": "315.8mm",
+        "depth": "10.7mm",
+        "weight": "780g"
+      },
+      "weight": "780g",
+      "material": "高剛性樹脂・マグネシウム合金",
+      "origin": "日本 (島根富士通)",
+      "connectivity": [
+        "Wi-Fi 5 (802.11ac)",
+        "Bluetooth 5.0",
+        "USB 3.1 Gen1 Type-A",
+        "USB Type-C",
+        "microSDカードスロット"
+      ],
       "other": [
-        "OS: Windows 11",
-        "CPU: Intel Core i5-8365U",
-        "メモリ: 4GB",
-        "ディスプレイ: 33.8cm フルHD(1920×1080) 非光沢",
-        "インターフェース: USB Type-C, Wi-Fi, Bluetooth, HDMI",
-        "その他: 10点マルチタッチ、防塵防滴(IP5X/IPX5)、純正キーボード・タッチペン付属"
+        "防塵防水: IPX5/IPX7/IPX8 (防水)・IP5X (防塵)",
+        "スタイラスペン: 電磁誘導方式デジタイザペン付属 (本体収納)",
+        "生体認証: 指紋認証センサー"
       ]
     }
   }

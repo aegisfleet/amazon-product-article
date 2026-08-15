@@ -163,22 +163,42 @@
       "scoreRationale": "[基本点: 70] (固定)\n[加点: +5] (約30.7cmの2.5K画面による高いエンタメ性能)\n[加点: +5] (12000mAhバッテリーによる長い駆動時間)\n[加点: +5] (Xiaomiエコシステムとの連携機能)\n[減点: -5] (大画面ゆえの重量・携帯性の低さ)\n[合計: 80]"
     },
     "technicalSpecs": {
+      "os": "Android 15 (Xiaomi HyperOS 2)",
+      "cpu": "Qualcomm Snapdragon 7s Gen 3",
+      "ram": "6GB",
+      "storage": "128GB",
+      "display": {
+        "size": "12.1インチ",
+        "resolution": "2560×1600 (2.5K 16:10)",
+        "type": "IPS液晶 (600nit / Dolby Vision)",
+        "refreshRate": "120Hz"
+      },
+      "battery": {
+        "capacity": "10000mAh",
+        "charging": "33W急速充電対応"
+      },
+      "camera": {
+        "main": "8MP (F2.0)",
+        "front": "8MP (F2.28)"
+      },
       "dimensions": {
-        "height": "280mm",
+        "height": "280.0mm",
         "width": "181.85mm",
-        "depth": "7.52mm"
+        "depth": "7.52mm",
+        "weight": "571g"
       },
       "weight": "571g",
-      "capacity": "6GB+128GB",
-      "display": "約30.7cm 2.5K (2560x1600), 120Hz",
-      "processor": "Snapdragon 7s Gen 4",
-      "battery": "12000mAh, リバース充電対応",
-      "os": "Android",
-      "audio": "Dolby Atmos対応",
+      "material": "メタルユニボディ",
+      "origin": "中国",
+      "connectivity": [
+        "Wi-Fi 6 (802.11ax)",
+        "Bluetooth 5.2",
+        "USB-C"
+      ],
       "other": [
-        "Xiaomi相互接続機能対応",
-        "2TBまでmicroSD拡張可能",
-        "Wi-Fiモデル"
+        "オーディオ: クアッドスピーカー (Dolby Atmos対応 / ハイレゾ対応)",
+        "スタイラスペン・キーボード対応 (別売)",
+        "生体認証: 顔認証"
       ]
     }
   }

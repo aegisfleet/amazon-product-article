@@ -3,16 +3,33 @@
     "productName": "Apple iPhone SE (第2世代) 64GB 整備済み品 ホワイト",
     "parentAsin": "B08R841VB1",
     "productDescription": "Apple A13 Bionicチップを搭載し、Touch ID対応のホームボタンを備えた約119mmのスマートフォン。厳しい品質基準をクリアした整備済み品として提供されています。",
-    "productUsage": ["スマートフォンの利用", "サブ機としての運用", "子供用のスマートフォン"],
-    "positivePoints": ["A13 Bionicによる快適な動作", "Touch ID (指紋認証) が利用可能", "Apple公式ではないものの、価格が抑えられた整備済み品としての高いコストパフォーマンス"],
-    "negativePoints": ["バッテリー容量や外装の微細な傷など、個体差がある可能性がある", "5G通信に非対応"],
-    "useCases": ["初めてのスマートフォンとして", "仕事用のサブ端末として", "ホームボタン付きのiPhoneを好むユーザーの乗り換え先として"],
+    "productUsage": [
+      "スマートフォンの利用",
+      "サブ機としての運用",
+      "子供用のスマートフォン"
+    ],
+    "positivePoints": [
+      "A13 Bionicによる快適な動作",
+      "Touch ID (指紋認証) が利用可能",
+      "Apple公式ではないものの、価格が抑えられた整備済み品としての高いコストパフォーマンス"
+    ],
+    "negativePoints": [
+      "バッテリー容量や外装の微細な傷など、個体差がある可能性がある",
+      "5G通信に非対応"
+    ],
+    "useCases": [
+      "初めてのスマートフォンとして",
+      "仕事用のサブ端末として",
+      "ホームボタン付きのiPhoneを好むユーザーの乗り換え先として"
+    ],
     "userStories": [
       {
         "userType": "一般ユーザー",
         "scenario": "サブ機としての利用",
         "experience": "価格が安く、サブ機として購入しました。A13チップを搭載しているため日常的なブラウジングや動画視聴には全く問題なく、Touch IDもマスク着用時に便利です。ただし、整備済み品のためバッテリーの最大容量は新品ほどではありませんでした。",
-        "supportingSourceIds": ["amazon-page"],
+        "supportingSourceIds": [
+          "amazon-page"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -35,7 +52,9 @@
         "claim": "A13 Bionicチップを搭載し、日常用途に十分な性能を持つ",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["amazon-page"],
+        "supportingSourceIds": [
+          "amazon-page"
+        ],
         "crossChecked": true,
         "notes": "iPhone SE（第2世代）の基本スペックとして広く知られている。"
       }
@@ -122,19 +141,63 @@
       }
     ],
     "recommendation": {
-      "targetUsers": ["サブ機を探している方", "初めてスマホを持つ子供や学生", "ホームボタンでの指紋認証を好む方"],
-      "pros": ["コストパフォーマンスに優れる", "Touch IDが使いやすい", "日常利用に十分な性能"],
-      "cons": ["バッテリー残量に個体差がある", "5G通信非対応"],
+      "targetUsers": [
+        "サブ機を探している方",
+        "初めてスマホを持つ子供や学生",
+        "ホームボタンでの指紋認証を好む方"
+      ],
+      "pros": [
+        "コストパフォーマンスに優れる",
+        "Touch IDが使いやすい",
+        "日常利用に十分な性能"
+      ],
+      "cons": [
+        "バッテリー残量に個体差がある",
+        "5G通信非対応"
+      ],
       "score": 85,
       "scoreRationale": "[基本点: 70]\n[加点: +10] (A13 Bionic搭載で価格に対して十分な性能を備えている)\n[加点: +10] (1万5千円台という安さでiPhoneを入手できる高いコストパフォーマンス)\n[減点: -5] (整備済み品特有のバッテリー劣化や微小な傷など個体差のリスクがある)\n[合計: 85]"
     },
     "technicalSpecs": {
-      "dimensions": { "height": "138.0mm", "width": "73.0mm", "depth": "6.7mm" },
+      "os": "iOS 17",
+      "cpu": "Apple A13 Bionicチップ (6コアCPU / 4コアGPU / 8コアNeural Engine)",
+      "ram": "3GB",
+      "storage": "64GB",
+      "display": {
+        "size": "4.7インチ",
+        "resolution": "1334×750 (Retina HD / 326ppi)",
+        "type": "IPS液晶 (True Tone対応)",
+        "refreshRate": "60Hz"
+      },
+      "battery": {
+        "capacity": "1821mAh (ビデオ再生最大13時間)",
+        "charging": "18W有線急速充電 (30分最大50%) / Qiワイヤレス充電 (最大7.5W)"
+      },
+      "camera": {
+        "main": "12MP (広角 28mm F1.8 OIS搭載 / ポートレートモード)",
+        "front": "7MP FaceTime HDカメラ (F2.2)"
+      },
+      "dimensions": {
+        "height": "138.4mm",
+        "width": "67.3mm",
+        "depth": "7.3mm",
+        "weight": "148g"
+      },
       "weight": "148g",
-      "capacity": "64GB",
-      "material": "ガラス、アルミニウム",
-      "origin": "中国（多くの場合）",
-      "other": ["ディスプレイ: 対角線長 約119mm Retina HD", "チップ: A13 Bionicチップ", "カメラ: 12MP広角カメラ", "Touch ID搭載", "防沫・耐水・防塵: IP67等級"]
+      "material": "アルミニウムフレーム / ガラス前面・背面",
+      "origin": "中国",
+      "connectivity": [
+        "4G LTE",
+        "Wi-Fi 6 (802.11ax)",
+        "Bluetooth 5.0",
+        "FeliCa / Apple Pay",
+        "eSIM対応",
+        "nanoSIM"
+      ],
+      "other": [
+        "防塵耐水: IP67 (水深1mで最大30分)",
+        "生体認証: Touch ID (ホームボタン指紋認証)"
+      ]
     }
   }
 }

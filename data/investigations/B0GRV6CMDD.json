@@ -184,22 +184,44 @@
       "scoreRationale": "[基本点: 70]\n[加点: +5] (2万円以下でフルHD液晶、256GB SSD、キーボード付属という圧倒的な安さ)\n[減点: -5] (Windows 11環境においてメモリ4GBは実用面で大きなボトルネックとなるため)\n[減点: -8] (商品タイトルと詳細説明での「ペン付属」の矛盾、およびメーカー公式情報に反する「防塵防滴」の記載など、販売情報に重大な不備・誤認を招く要素があるため)\n[合計: 62]"
     },
     "technicalSpecs": {
-      "dimensions": {
-        "height": "212.5mm",
-        "width": "315mm",
-        "depth": "9.7mm"
-      },
-      "weight": "約795g (タブレット本体のみ)",
-      "cpu": "Intel Core i5-7200U",
+      "os": "Windows 11 Pro 64bit",
+      "cpu": "Intel Core i5-7300U (2コア / 4スレッド 最大3.5GHz)",
       "ram": "4GB",
-      "storage": "256GB SSD",
-      "display": "対角約33.8cmワイド フルHD (1920×1080) アンチグレア",
-      "ports": "USB Type-C×1, USB 3.0×1, USB 2.0×1, microHDMI, microSDカードリーダー",
+      "storage": "128GB",
+      "display": {
+        "size": "13.3インチ",
+        "resolution": "1920×1080 (FHD)",
+        "type": "IPS液晶 (アンチグレア)",
+        "refreshRate": "60Hz"
+      },
+      "battery": {
+        "capacity": "46Wh (駆動時間約10時間)",
+        "charging": "専用ACアダプター充電"
+      },
+      "camera": {
+        "main": "5MP",
+        "front": "2MP"
+      },
+      "dimensions": {
+        "height": "208.8mm",
+        "width": "315.8mm",
+        "depth": "10.5mm",
+        "weight": "790g"
+      },
+      "weight": "790g",
+      "material": "高剛性樹脂・マグネシウム合金",
+      "origin": "日本 (島根富士通)",
+      "connectivity": [
+        "Wi-Fi 5 (802.11ac)",
+        "Bluetooth 4.1",
+        "USB 3.0 Type-A",
+        "USB 3.1 Type-C",
+        "microSDカードスロット"
+      ],
       "other": [
-        "純正キーボード付属",
-        "Wi-Fi",
-        "Bluetooth",
-        "Webカメラ内蔵"
+        "防塵防水: IPX5/IPX7/IPX8 (防水)・IP5X (防塵)",
+        "スタイラスペン: 電磁誘導方式デジタイザペン付属 (本体収納)",
+        "生体認証: 指紋認証センサー"
       ]
     }
   }

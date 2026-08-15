@@ -162,21 +162,46 @@
       "scoreRationale": "[基本点: 70]\n[加点: +5] 1万円未満という圧倒的なコストパフォーマンス\n[加点: +5] Windows 11 Pro搭載の利便性\n[加点: +5] IPX5/8・IP6Xの防水防塵性能により、現場や屋外など幅広いシーンで使えるタフさ\n[減点: -10] CPUがAtomであり、メモリも4GBのため、現代のPCとしては処理性能が低い\n[合計: 75]"
     },
     "technicalSpecs": {
-      "dimensions": {
-        "height": "不明",
-        "width": "不明",
-        "depth": "不明"
+      "os": "Windows 11 Pro 64bit",
+      "cpu": "Intel Atom x5-Z8550 (4コア / 4スレッド 最大2.4GHz)",
+      "ram": "4GB",
+      "storage": "64GB",
+      "display": {
+        "size": "10.1インチ",
+        "resolution": "1920×1200 (WUXGA)",
+        "type": "IPS液晶 (グレア)",
+        "refreshRate": "60Hz"
       },
-      "weight": "約600g",
-      "capacity": "128GB (SSD), 4GB (メモリ)",
-      "material": "不明",
-      "origin": "不明",
-      "display": "10.1型 IPS Alpha液晶 WUXGA(1920×1200)",
-      "os": "Windows 11 Pro",
-      "cpu": "Atom(TM) x7-Z8シリーズ",
-      "durability": "防水(IPX5/8)、防塵(IP6X)、耐衝撃設計",
-      "connectivity": "Wi-Fi, Bluetooth, USBポート, Type-C",
-      "accessories": "キーボード・タッチペン非搭載"
+      "battery": {
+        "capacity": "34Wh (駆動時間約10時間)",
+        "charging": "専用ACアダプター / USB-C充電"
+      },
+      "camera": {
+        "main": "8MP",
+        "front": "2MP"
+      },
+      "dimensions": {
+        "height": "175.0mm",
+        "width": "264.0mm",
+        "depth": "11.8mm",
+        "weight": "580g"
+      },
+      "weight": "580g",
+      "material": "強化樹脂・防滴構造",
+      "origin": "日本 (島根富士通)",
+      "connectivity": [
+        "Wi-Fi 5 (802.11ac)",
+        "Bluetooth 4.1",
+        "USB 3.0 Type-A",
+        "USB 3.0 Type-C",
+        "microSDカードスロット"
+      ],
+      "other": [
+        "防塵防水: IPX5/IPX7/IPX8 (防水)・IP5X (防塵)",
+        "耐衝撃・文教モデル設計",
+        "デジタイザペン付属 (本体収納)",
+        "生体認証: 指紋認証センサー"
+      ]
     }
   }
 }
