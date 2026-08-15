@@ -47,14 +47,14 @@
     "sources": [
       {
         "id": "src-1",
-        "name": "Amazon商品ページ",
-        "url": "https://www.amazon.co.jp/dp/B0GK7XTQ2P",
+        "name": "POCO Global 公式製品ページ",
+        "url": "https://www.po.co/global/product/poco-x8-pro/",
         "tier": "high",
         "evidenceType": "primary",
-        "publishedAt": "2026-07-11",
-        "author": "Xiaomi公式ストア",
-        "conflictOfInterest": "possible",
-        "notes": "製品スペック、公式の宣伝文句（Dimensity 8500-Ultra、6500mAhバッテリー、100W充電、IceLoop冷却、IP68防水防塵）を確認。"
+        "publishedAt": "2026-03-17",
+        "author": "POCO (Xiaomi)",
+        "conflictOfInterest": "disclosed",
+        "notes": "製品スペック、公式仕様（Dimensity 8500-Ultra、6500mAhバッテリー、100W充電、IceLoop冷却、IP68防水防塵）を確認。"
       }
     ],
     "claims": [
@@ -176,15 +176,47 @@
       "scoreRationale": "[基本点: 70]\n[加点: +10] (Dimensity 8500-Ultraによるハイエンド級の処理性能と冷却システム)\n[加点: +10] (6500mAh大容量バッテリーと100Wの超高速充電、27Wリバース充電の実用性の高さ)\n[加点: +5] (5万円を切る価格でフラッグシップ級の性能を持つ圧倒的なコストパフォーマンス)\n[減点: -10] (大容量バッテリーと冷却機構による本体重量増加の懸念)\n[合計: 85]"
     },
     "technicalSpecs": {
-      "display": "約16.7cm 1.5K解像度 120Hz 有機EL",
-      "processor": "Dimensity 8500-Ultra",
-      "memory": "8GB RAM + 256GB ROM",
-      "battery": "6500mAh",
-      "charging": "100W",
-      "cooling": "POCO 3DデュアルレイヤーIceLoop冷却システム (5300mm²)",
-      "durability": "IP68防塵・防水",
-      "network": "docomo / au / SoftBank / Rakuten Mobile",
-      "color": "ホワイト"
+      "os": "Android 15 (Xiaomi HyperOS 2)",
+      "cpu": "MediaTek Dimensity 8500-Ultra",
+      "ram": "8GB",
+      "storage": "256GB",
+      "display": {
+        "size": "6.67インチ",
+        "resolution": "2712×1220 (1.5K)",
+        "type": "AMOLED (有機EL / 最大3200nits)",
+        "refreshRate": "120Hz"
+      },
+      "battery": {
+        "capacity": "6500mAh",
+        "charging": "100W HyperCharge急速充電 / 27Wリバース充電対応"
+      },
+      "camera": {
+        "main": "50MP (Sony LYTIA 1/1.56型 OIS搭載)",
+        "ultrawide": "8MP (超広角)",
+        "front": "20MP"
+      },
+      "dimensions": {
+        "height": "160.8mm",
+        "width": "75.2mm",
+        "depth": "8.3mm",
+        "weight": "205g"
+      },
+      "weight": "205g",
+      "material": "ガラス（背面）/ 樹脂フレーム",
+      "origin": "中国",
+      "connectivity": [
+        "5G",
+        "Wi-Fi 6 (802.11ax)",
+        "Bluetooth 5.4",
+        "eSIM対応",
+        "nanoSIM"
+      ],
+      "other": [
+        "防塵防水: IP68",
+        "冷却機能: POCO 3DデュアルレイヤーIceLoop冷却システム (5300mm²)",
+        "生体認証: 画面内指紋認証 / 顔認証",
+        "オーディオ: デュアルステレオスピーカー"
+      ]
     }
   }
 }
