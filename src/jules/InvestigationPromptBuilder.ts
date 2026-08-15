@@ -117,8 +117,18 @@ export class InvestigationPromptBuilder {
   - \`lastInvestigated\` を本日の日付（${this.today}）に必ず更新する。
 4. **外部調査と継続性**: Amazon 403エラー等でもGoogle検索等で調査を継続し、絶対に「調査不能」で終わらせない。情報が不足している場合は、自律的に検索キーワードを工夫して必要なエビデンスを揃える。
 5. **推測ではなく根拠**: 商品仕様からの論理的推論は許容するが、架空のエピソード創作（ハルシネーション）は厳禁である。
-6. **網羅的なスペックの記載**: 調査で判明した商品仕様は、\`technicalSpecs\` セクションに漏れなく網羅する。
-7. **サイズ表記の統一**: サイズはメートル法（m, cm, mm等）のみを使用し、インチ表記は原則不要とする。元データがインチのみの場合はメートル法に変換して記載する。
+6. **網羅的・完全構造化されたスペックの記載 (technicalSpecs)**:
+  - 調査で判明した商品仕様は、\`technicalSpecs\` セクションに漏れなく構造化して記載する。
+  - **【最重要】完全構造化の徹底**: SoC、OS、RAM、Storage、ディスプレイ、バッテリー、カメラ等は絶対に \`other\` 配列に文字列でまとめず、必ず個別キー（\`os\`, \`cpu\`, \`ram\`, \`storage\`, \`display\`, \`battery\`, \`camera\`, \`dimensions\`, \`connectivity\` 等）に構造化して抽出する。
+  - **単位の厳守**: メートル法（m, cm, mm, g, kg）のみを使用する。インチ表記はディスプレイ画面サイズ（例: \`"6.7インチ"\`）のみ許可し、カメラセンサーサイズ等は \`"1/1.31型"\` 等の「型」表記を使用する。
+  - **ネストオブジェクトのキー命名**:
+    - \`display\`: \`{ size: "6.7インチ", resolution: "2400×1080 (FHD+)", type: "AMOLED (有機EL)", refreshRate: "120Hz" }\`
+    - \`battery\`: \`{ capacity: "5000mAh", charging: "67W急速充電 / 15Wワイヤレス充電対応" }\`（有線ワット数とワイヤレス充電対応を併記）
+    - \`camera\`: \`{ main: "50MP (広角 OIS搭載)", ultrawide: "8MP (超広角)", telephoto: "10MP (3倍望遠)", front: "32MP" }\`
+    - \`dimensions\`: \`{ height: "XXmm", width: "XXmm", depth: "XXmm", weight: "XXg" }\`
+  - **折りたたみ（フォルダブル）端末**: メイン画面とカバー画面の両方（例: \`size: "6.7インチ (メイン) / 3.4インチ (カバー)"\`）、開閉時の寸法（例: \`height: "165.1mm (開時) / 85.1mm (閉時)"\`）を併記する。
+  - **制約・独自機能**: 「※おサイフケータイ非対応」「※microSD非対応」「専用物理ボタン」などは \`other\` 配列に明記する。
+7. **サイズ表記の統一**: サイズはメートル法（m, cm, mm等）のみを使用し、ディスプレイ画面サイズ以外のインチ表記は禁止。元データがインチのみの場合はメートル法に変換して記載する。
   - **範囲表記の統一**: 数値の範囲（「10〜20g」など）を記述する際は、半角のチルダ \`~\` ではなく、全角の波ダッシュ \`～\` またはハイフン \`-\` を使用する。
 
 ---
@@ -266,23 +276,52 @@ ${specs}
       "scoreRationale": "[基本点: 70]\\n[加点: +XX] (理由)\\n[減点: -XX] (理由)\\n[合計: XX]"
     },
     "technicalSpecs": {
-      "// 注意": "調査で判明した仕様情報をここに網羅的に記載する。SoCやOS、ディスプレイ、バッテリー等はotherにまとめず個別キーに抽出すること（サイズはメートル法のみ、インチ不要）",
-      "// 例示1(ガジェット/デジタル)": "os: 'Android 15', cpu: 'Snapdragon 8s Gen 4', ram: '8GB', storage: '128GB', display: { size: '11.2インチ', resolution: '3.2K' }, battery: { capacity: '9200mAh', charging: '45W急速充電' }",
-      "// 例示2(家電)": "dimensions: W/H/D (mm/cm), weight: XXg, power: XXW, battery: XXh",
-      "// 例示3(化粧品)": "capacity: XXml/XXg, ingredients: [主成分], skinType: [適応]",
-      "// 例示4(食品)": "content: XXg, calories: XXkcal, shelfLife: XX日, allergens: [成分]",
-      "os": "OS名",
-      "cpu": "プロセッサ/SoC",
-      "ram": "メモリ容量",
-      "storage": "ストレージ容量",
-      "display": { "size": "画面サイズ", "resolution": "解像度" },
-      "battery": { "capacity": "容量", "charging": "充電規格" },
-      "dimensions": { "height": "XXmm", "width": "XXmm", "depth": "XXmm" },
-      "weight": "XXg",
-      "capacity": "XX",
-      "material": "材質",
-      "origin": "原産国",
-      "other": ["他、個別キーに当てはまらない重要な補足スペックを網羅"]
+      "// 注意": "調査で判明した仕様情報をここに網羅的に記載する。SoCやOS、メモリ、ディスプレイ、バッテリー、カメラ等はotherにまとめず必ず個別キーへ完全構造化すること",
+      "// 例示1(スマホ/タブレット/PC)": "os, cpu, ram, storage, display: { size, resolution, type, refreshRate }, battery: { capacity, charging }, camera: { main, ultrawide, telephoto, front }, dimensions: { height, width, depth, weight }, connectivity: ['5G', 'Wi-Fi 6', 'FeliCa', 'eSIM']",
+      "// 例示2(家電/日用品)": "dimensions: { height, width, depth, weight }, power: 'XXW', capacity: 'XXL/XXml', material: 'XX', origin: 'XX'",
+      "// 例示3(化粧品/美容)": "capacity: 'XXml/XXg', ingredients: ['主成分'], skinType: ['適応']",
+      "// 例示4(食品)": "content: 'XXg', calories: 'XXkcal', shelfLife: 'XX日', allergens: ['成分']",
+      "os": "Android 15 / iOS 18 / Windows 11 等",
+      "cpu": "Snapdragon 8s Gen 3 / MediaTek Dimensity / Apple A18 等",
+      "ram": "8GB / 12GB / 16GB 等",
+      "storage": "128GB / 256GB / 512GB 等",
+      "display": {
+        "size": "6.7インチ (※折りたたみは '6.7インチ (メイン) / 3.4インチ (カバー)')",
+        "resolution": "2400×1080 (FHD+) / 2772×1280 (1.5K)",
+        "type": "AMOLED (有機EL) / IPS液晶",
+        "refreshRate": "120Hz / 144Hz"
+      },
+      "battery": {
+        "capacity": "5000mAh",
+        "charging": "67W急速充電 / 15Wワイヤレス充電対応"
+      },
+      "camera": {
+        "main": "50MP (広角 OIS搭載 1/1.56型)",
+        "ultrawide": "8MP (超広角)",
+        "telephoto": "10MP (望遠)",
+        "front": "32MP"
+      },
+      "dimensions": {
+        "height": "162mm (※開閉時は '165mm (開時) / 85mm (閉時)')",
+        "width": "75mm",
+        "depth": "7.8mm",
+        "weight": "185g"
+      },
+      "weight": "185g",
+      "material": "ガラス / アルミニウム / プラスチック",
+      "origin": "中国 / 日本 / タイ 等",
+      "connectivity": [
+        "5G",
+        "Wi-Fi 6 (802.11ax)",
+        "Bluetooth 5.4",
+        "FeliCa / おサイフケータイ",
+        "eSIM対応"
+      ],
+      "other": [
+        "防塵防水: IP68",
+        "生体認証: 画面内指紋認証 / 顔認証",
+        "※個別キーに当てはまらない独自機能や重要制約（例: '※おサイフ非対応'）を記載"
+      ]
     }
   }
 }
