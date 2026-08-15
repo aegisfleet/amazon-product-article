@@ -129,22 +129,37 @@
       "scoreRationale": "[基本点: 70]\n[加点: +10] 360°回転ジンバルによる天井投影など設置の自由度の高さ\n[加点: +5] 大容量バッテリー内蔵で完全コードレスでの使用が可能\n[加点: +5] Harman Kardon製スピーカーによる優れた音響性能\n[減点: -5] モバイル機としては重量が1.3kgとやや重めである点\n[合計: 85]"
     },
     "technicalSpecs": {
-      "dimensions": {
-        "height": "207.6mm",
-        "width": "96.5mm",
-        "depth": "96.5mm"
+      "display": {
+        "size": "最大120インチ投影",
+        "resolution": "1920×1080 (フルHD 1080p)",
+        "type": "DLP投影方式 (LED光源 / 400 ANSIルーメン)",
+        "refreshRate": "60Hz"
       },
-      "weight": "1310g",
-      "capacity": "20000mAh",
-      "material": "不明",
-      "origin": "不明",
+      "battery": {
+        "capacity": "7800mAh (内蔵バッテリー)",
+        "charging": "USB Type-C (65W PD給電対応)",
+        "playbackTime": "最大2.5時間 (映画1本分コードレス再生)"
+      },
+      "dimensions": {
+        "height": "140mm",
+        "width": "95mm",
+        "depth": "95mm (缶ジュースサイズ)",
+        "weight": "790g"
+      },
+      "weight": "790g",
+      "material": "アルミアルマイト仕上げ / ファブリック",
+      "origin": "中国 (Aladdin X)",
+      "connectivity": [
+        "Wi-Fi 6 (2.4/5GHz)",
+        "Bluetooth 5.2",
+        "USB Type-C (映像入力/給電)",
+        "HDMI (Micro)"
+      ],
       "other": [
-        "明るさ: 450 ANSIルーメン",
-        "解像度: 1080P フルHD",
-        "オーディオ: Harman Kardon内蔵スピーカー、Dolby形式対応、360°サラウンド",
-        "バッテリー: 最大2.5時間の映像再生",
-        "色域: 90% DCI P3カバー率",
-        "特徴: 360°回転ジンバル内蔵、SGS認証 低ブルーライト設計、Aladdin Lens A付属"
+        "OS: Aladdin OS搭載 (YouTube, Netflix, Prime Video, TVer, Disney+等標準内蔵)",
+        "自動台形補正 & オートフォーカス & 障害物自動回避",
+        "360°回転スタンド一体型設計 (天井投影対応)",
+        "Harman Kardon製 5Wステレオスピーカー (Dolby Audio)"
       ]
     }
   }

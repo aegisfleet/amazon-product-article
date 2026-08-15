@@ -161,19 +161,43 @@
       "scoreRationale": "[基本点: 70] (固定)\n[加点: +8] (A16チップ搭載による高い処理性能と約27.9cm画面の利便性)\n[加点: +5] (74,800円とApple製品としては比較的抑えられた価格設定)\n[加点: +5] (Apple製品ならではの高いビルドクオリティと信頼性)\n[加点: +5] (Apple Intelligence対応やiPadOSのエコシステム)\n[合計: 93] (最終的なスコア)"
     },
     "technicalSpecs": {
-      "display": "約27.9cm Liquid Retinaディスプレイ, True Tone対応",
-      "processor": "A16チップ",
-      "capacity": "256GB",
-      "color": "シルバー",
-      "weight": "約477g",
-      "connectivity": "Wi-Fi 6",
-      "camera": "12MPフロントカメラ, 12MPバックカメラ",
-      "authentication": "Touch ID",
-      "model": "MD4G4J/A",
-      "releaseDate": "2025-03-12",
+      "os": "iPadOS 18",
+      "cpu": "Apple A16 Bionic (6コアCPU / 5コアGPU / 16コアNeural Engine)",
+      "ram": "6GB",
+      "storage": "256GB",
+      "display": {
+        "size": "10.9インチ",
+        "resolution": "2360×1640 (Liquid Retina / 264ppi)",
+        "type": "IPS液晶 (True Tone / 500nits)",
+        "refreshRate": "60Hz"
+      },
+      "battery": {
+        "capacity": "28.6Wh",
+        "charging": "USB-C (20W急速充電)",
+        "playbackTime": "最大10時間"
+      },
+      "camera": {
+        "main": "12MP (広角 4K動画撮影)",
+        "front": "12MP 横向き超広角カメラ"
+      },
+      "dimensions": {
+        "height": "248.6mm",
+        "width": "179.5mm",
+        "depth": "7.0mm",
+        "weight": "477g"
+      },
+      "weight": "477g",
+      "material": "100%リサイクルアルミニウムボディ (シルバー)",
+      "origin": "中国 / ベトナム",
+      "connectivity": [
+        "Wi-Fi 6 (802.11ax)",
+        "Bluetooth 5.3",
+        "USB-C 2.0"
+      ],
       "other": [
-        "Apple Intelligence対応",
-        "USB-Cコネクタ"
+        "Magic Keyboard Folio対応",
+        "Apple Pencil (USB-C) 対応",
+        "生体認証: トップボタンTouch ID"
       ]
     }
   }

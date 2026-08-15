@@ -164,26 +164,44 @@
       "scoreRationale": "[基本点: 70]\n[加点: +5] (最新OSであるAndroid 16を搭載している点)\n[加点: +5] (Widevine L1対応により高画質で動画視聴が可能な点)\n[加点: +5] (22.1cmサイズで360gと軽量・コンパクトでありながら4G LTEに対応し機動性が高い点)\n[減点: -2] (物理メモリは4GBであり、スペック表記(20GB)に対する誤認リスクと重い処理への弱さ)\n[合計: 83]"
     },
     "technicalSpecs": {
-      "dimensions": {
-        "height": "約210mm",
-        "width": "約125mm",
-        "depth": "8.4mm"
-      },
-      "weight": "360g",
-      "display": "22.1cm HD+ IPS液晶 (1340×800), 90Hzリフレッシュレート, 350nit",
-      "cpu": "UNISOC T615 オクタコア (2×Cortex-A75 1.8GHz + 6×Cortex-A55)",
-      "ram": "4GB (仮想拡張により最大20GB)",
-      "rom": "128GB (MicroSDで最大1TB拡張可能)",
-      "battery": "5000mAh (Type-C, PD18W急速充電対応)",
-      "connectivity": "4G LTE (SIMフリー), デュアルバンドWi-Fi (2.4GHz/5GHz), Bluetooth 5.2, GPS(北斗/QZSS/GLONASS対応)",
-      "camera": "リア: 800万画素, フロント: 500万画素",
       "os": "Android 16",
-      "material": "メタルボディ",
+      "cpu": "Unisoc T606 (オクタコア 1.6GHz)",
+      "ram": "12GB (4GB実メモリ + 8GB仮想拡張)",
+      "storage": "128GB (microSD最大1TB対応)",
+      "display": {
+        "size": "8.7インチ",
+        "resolution": "1340×800 (HD+ IPS)",
+        "type": "IPS液晶 (狭額縁スリムベゼル)",
+        "refreshRate": "60Hz"
+      },
+      "battery": {
+        "capacity": "5100mAh",
+        "charging": "USB Type-C",
+        "playbackTime": "約7時間"
+      },
+      "camera": {
+        "main": "8MP",
+        "front": "5MP"
+      },
+      "dimensions": {
+        "height": "212.0mm",
+        "width": "125.0mm",
+        "depth": "8.0mm",
+        "weight": "340g"
+      },
+      "weight": "340g",
+      "material": "アルミニウム合金バックパネル",
+      "origin": "中国 (PHILIPSライセンス)",
+      "connectivity": [
+        "Wi-Fi 5 (802.11ac 2.4/5GHz)",
+        "Bluetooth 5.0",
+        "USB Type-C",
+        "3.5mmイヤホンジャック"
+      ],
       "other": [
-        "Widevine L1認証",
-        "ワイヤレス投影機能",
-        "顔認証",
-        "ステレオスピーカー"
+        "Widevine L1対応",
+        "片手操作可能な8.7型コンパクト設計 (340g)",
+        "ステレオスピーカー搭載"
       ]
     }
   }

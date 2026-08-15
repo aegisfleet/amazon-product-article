@@ -158,22 +158,33 @@
       "scoreRationale": "[基本点: 70]\n[加点: +10] (30%以上の小型化と1TBストレージへの増量による性能・機能面の向上)\n[加点: +10] (ディスクドライブがセットになっており、デジタル・エディションの弱点であるディスク非対応を解消できる実用性)\n[減点: -5] (システム言語が日本語専用に制限されている制約)\n[合計: 85]"
     },
     "technicalSpecs": {
+      "os": "PlayStation 5 システムソフトウェア",
+      "cpu": "AMD Ryzen Zen 2 (8コア / 16スレッド 最大3.5GHz)",
+      "ram": "16GB (GDDR6 448GB/s帯域幅)",
+      "storage": "1TB (カスタム超高速PCIe 4.0 NVMe SSD 5.5GB/s 生データ転送)",
       "dimensions": {
-        "height": "80mm",
-        "width": "358mm",
-        "depth": "216mm"
+        "height": "358mm",
+        "width": "96mm",
+        "depth": "216mm (ディスクドライブ装着時)",
+        "weight": "3.2kg (ディスクドライブ含む)"
       },
-      "weight": "2600g",
-      "capacity": "1TB SSD",
+      "weight": "3.2kg",
+      "material": "高剛性樹脂・交換可能カバーパネル",
+      "origin": "中国 / 日本 (Sony Interactive Entertainment)",
+      "connectivity": [
+        "Wi-Fi 6 (802.11ax)",
+        "Bluetooth 5.1",
+        "ギガビット有線LAN (10BASE-T/100BASE-TX/1000BASE-T)",
+        "HDMI 2.1 (4K@120Hz / 8K出力 / VRR対応)",
+        "USB Type-C (Hi-Speed 10Gbps) ×2 (前面)",
+        "USB Type-A (SuperSpeed 10Gbps) ×2 (背面)"
+      ],
       "other": [
-        "CPU: x86-64-AMD Ryzen Zen 2 (8コア/16スレッド, 最大3.5GHz)",
-        "GPU: AMD Radeon RDNA 2-based (最大2.23GHz, 10.3 TFLOPS)",
-        "メモリ: GDDR6 16GB (448GB/s)",
-        "ディスクドライブ(CFI-ZDD1J): Ultra HD Blu-ray対応",
-        "端子(前面): USB Type-C (SuperSpeed 10Gbps), USB Type-C (Hi-Speed)",
-        "端子(背面): USB Type-A (SuperSpeed 10Gbps) x2",
-        "映像出力: 4K 120Hz TV, 8K TV, VRR対応 (HDMI 2.1)",
-        "オーディオ: Tempest 3Dオーディオ技術"
+        "新モデル (CFI-2200B01): 30%以上小型化・24%軽量化されたスリム筐体",
+        "Ultra HD Blu-ray 着脱式ディスクドライブ (CFI-ZDD1J) セット付属",
+        "Tempest 3D オーディオ技術対応",
+        "DualSense ワイヤレステクノロジー (ハプティックフィードバック / アダプティブトリガー)",
+        "レイトレーシングアクセラレーション搭載 GPU (最大2.23GHz 10.3 TFLOPS)"
       ]
     }
   }
