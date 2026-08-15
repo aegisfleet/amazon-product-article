@@ -133,22 +133,29 @@
       "scoreRationale": "[基本点: 70]\n[加点: +10] (3000円台という安価ながら300万画素/2Kの高解像度を実現する抜群のコスパ)\n[加点: +5] (ローカル処理による遅延の少ないAI人物検知機能)\n[合計: 85]"
     },
     "technicalSpecs": {
+      "camera": {
+        "main": "300万画素 (2K 2304×1296)",
+        "nightVision": "940nm不可視赤外線LED暗視 (最大10m)"
+      },
       "dimensions": {
         "height": "115mm",
-        "width": "76mm",
-        "depth": "78mm"
+        "width": "78mm",
+        "depth": "78mm",
+        "weight": "250g"
       },
-      "weight": "300g",
-      "resolution": "300万画素 (2K, 2304×1296)",
-      "lens": "大口径4Pレンズ",
-      "panTilt": "水平360度、垂直107度",
-      "storage": "MicroSDカード (8GB～256GB)",
-      "connectivity": "Wi-Fi (ネットワーク)",
+      "weight": "250g",
+      "material": "ABS樹脂",
+      "origin": "中国",
+      "connectivity": [
+        "Wi-Fi IEEE 802.11b/g/n 2.4GHz"
+      ],
       "other": [
-        "双方向音声通話 (5m集音・ノイズリダクションマイク搭載)",
-        "AI人体検知 (ローカル処理)",
-        "Alexa対応",
-        "夜間撮影 (フルHD対応)"
+        "視野角: 360° 水平パン / 107° 垂直チルト",
+        "Xiaomi独自セキュリティチップ (MJA1) 搭載で通信完全暗号化",
+        "物理レンズ遮蔽モード (プライバシー保護)",
+        "AI人体検知・モーション追跡",
+        "双方向リアルタイム音声通話",
+        "ストレージ: microSDカード (8GB〜256GB) / クラウド保存"
       ]
     }
   }

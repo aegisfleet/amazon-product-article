@@ -156,17 +156,29 @@
       "scoreRationale": "[基本点: 70]\n[加点: +5] (スマホ連動でデータ管理が簡単)\n[加点: +5] (「乗るピタ機能」による測定の手軽さ)\n[加点: +5] (国内メーカーとしての信頼性と品質)\n[減点: -2] (タブレット端末非対応の制約)\n[合計: 83]"
     },
     "technicalSpecs": {
-      "dimensions": {
-        "height": "27mm",
-        "width": "217mm",
-        "length": "316mm"
+      "battery": {
+        "capacity": "単4形アルカリ乾電池 ×4本",
+        "playbackTime": "約1年間 (1日5回使用時)"
       },
-      "weight": "1500g",
-      "power": "DC6V 単4乾電池×4本",
-      "accessories": "本体、お試し用電池(単4乾電池×4本)",
-      "color": "ホワイト",
+      "dimensions": {
+        "height": "25mm",
+        "width": "316mm",
+        "depth": "217mm",
+        "weight": "1.5kg (乾電池含む)"
+      },
+      "weight": "1.5kg",
+      "material": "強化ガラス / ABS樹脂 / ステンレス電極",
+      "origin": "中国",
+      "connectivity": [
+        "Bluetooth Low Energy (Bluetooth 4.0)",
+        "専用アプリ『ヘルスプラネット』連動"
+      ],
       "other": [
-        "対応機器: スマートフォン (iPad、iPod touch、Androidタブレット非対応)"
+        "測定項目 (計8項目): 体重、体脂肪率、BMI、筋肉量、内臓脂肪レベル、基礎代謝量、体内年齢、推定骨量",
+        "登録人数: 5人 + ゲストモード (乗るピタ機能搭載で自動認識)",
+        "最小表示: 100g (0〜100kg) / 200g (100〜150kg)",
+        "最大計量: 150kg",
+        "A4サイズ超コンパクト・薄型25mm設計"
       ]
     }
   }

@@ -3,7 +3,11 @@
     "productName": "Xiaomi Redmi Watch 6",
     "parentAsin": "B0GVP5MCRN",
     "productDescription": "約5.26cmの大型有機ELディスプレイとアルミ合金フレームを採用し、最大24日間の長時間駆動や高精度GNSS測位に対応した高性能スマートウォッチ。",
-    "productUsage": ["健康状態の24時間モニタリング", "150種類以上のスポーツトラッキング", "スマートフォンと連携した通知や通話の確認"],
+    "productUsage": [
+      "健康状態の24時間モニタリング",
+      "150種類以上のスポーツトラッキング",
+      "スマートフォンと連携した通知や通話の確認"
+    ],
     "positivePoints": [
       "最大2000nitの高輝度により、直射日光下でも画面が視認しやすい",
       "550mAhの大容量バッテリー搭載で最大24日間充電なしで駆動可能",
@@ -24,14 +28,18 @@
         "userType": "アクティブなランナー",
         "scenario": "屋外でのランニングトレーニング時",
         "experience": "内蔵された高精度のGNSS測位とデュアルL1アンテナにより、スマートフォンを持たなくても正確なルートとペースが記録できました。最大2000nitの明るい画面のおかげで、日差しの強い日中でも心拍数やタイムを瞬時に確認でき、非常に快適です。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "出張が多いビジネスマン",
         "scenario": "数日間の国内出張中",
         "experience": "最大24日間持つ大容量バッテリーのおかげで、出張に専用の充電ケーブルを持参する必要がなくなり、荷物を減らすことができました。アルミフレームの質感が良く、スーツに合わせても違和感がありません。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -54,7 +62,9 @@
         "claim": "最大24日間の長時間駆動が可能",
         "category": "durability",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": false,
         "notes": "550mAhの大容量バッテリーを搭載している旨を公式情報で確認"
       },
@@ -62,7 +72,9 @@
         "claim": "直射日光下でも見やすい2000nitのピーク輝度",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": false,
         "notes": "公式のスペック情報で最大2000nitの明るさを確認"
       }
@@ -167,21 +179,37 @@
       "scoreRationale": "[基本点: 70]\n[加点: +8] (約5.26cmの有機EL、2000nit高輝度、内蔵GNSSなど高いスペックと機能性)\n[加点: +5] (高耐久アルミ合金フレームや2mmベゼルなど優れたビルドクオリティ)\n[加点: +5] (1万円台でGPS内蔵やアルミフレームを備えており、優れたコストパフォーマンス)\n[加点: +4] (Xiaomiブランドとしての信頼性とアプリの安定性)\n[加点: +3] (大画面でありながら最大24日間の非常に優れたバッテリー持続時間)\n[合計: 95]"
     },
     "technicalSpecs": {
-      "displaySize": "約5.26cm",
-      "weight": "約89g",
-      "batteryCapacity": "550mAh",
-      "batteryLife": "最大24日間",
-      "waterResistance": "5ATM",
-      "brightness": "最大2000nit",
-      "positioning": "GNSSチップ内蔵、デュアルL1アンテナ",
-      "material": "アルミ合金フレーム",
-      "connectivity": "Bluetooth通話対応",
-      "compatibleOS": "Android, iOS",
+      "os": "Xiaomi HyperOS 2",
+      "display": {
+        "size": "2.07インチ",
+        "resolution": "432×514 (324ppi)",
+        "type": "AMOLED (有機EL / 最大1500nits / AOD対応)",
+        "refreshRate": "60Hz"
+      },
+      "battery": {
+        "capacity": "550mAh",
+        "charging": "マグネット式急速充電",
+        "playbackTime": "最大24日間 (通常使用時) / AOD時最大12日間"
+      },
+      "dimensions": {
+        "height": "49.5mm",
+        "width": "41.5mm",
+        "depth": "10.9mm",
+        "weight": "32g (ストラップ除く)"
+      },
+      "weight": "32g",
+      "material": "アルミニウム合金フレーム / ステンレススチールリューズ",
+      "origin": "中国",
+      "connectivity": [
+        "Bluetooth 5.4 (Bluetooth通話対応)",
+        "独立GNSS (GPS/GLONASS/Galileo/BDS/QZSS 5衛星測位)"
+      ],
       "other": [
-        "150種類以上のスポーツモード",
-        "24時間健康モニタリング",
-        "女性健康管理機能",
-        "呼吸エクササイズ"
+        "防水性能: 5ATM (50m防水)",
+        "2.07型超狭額縁大型AMOLED",
+        "独立GPS測位対応",
+        "健康モニタリング: 心拍数・SpO2・睡眠・ストレス",
+        "※Suica非対応"
       ]
     }
   }

@@ -3,7 +3,11 @@
     "productName": "Google Pixel Watch Cellularモデル (第1世代・整備済み品)",
     "parentAsin": "B0DY46V3S2",
     "productDescription": "Google初のスマートウォッチ「Pixel Watch」第1世代のCellularモデル。Googleサービスとの連携やFitbitのフィットネス機能を搭載し、整備済み品として手頃な価格で提供されています。",
-    "productUsage": ["日常的なスマートウォッチとしての利用", "フィットネストラッキング", "Google Payによるキャッシュレス決済"],
+    "productUsage": [
+      "日常的なスマートウォッチとしての利用",
+      "フィットネストラッキング",
+      "Google Payによるキャッシュレス決済"
+    ],
     "positivePoints": [
       "Cellularモデルでありながら整備済み品のため非常に安価に購入可能",
       "GoogleマップやGoogle PayなどのGoogleエコシステムとシームレスに連携",
@@ -15,13 +19,18 @@
       "第1世代のため、最新モデルと比較するとバッテリー持ちに懸念がある場合がある",
       "バンドが付属していないため、別途用意する必要がある"
     ],
-    "useCases": ["スマートフォンを持たずに外出してのランニングや決済", "健康管理や睡眠のトラッキング"],
+    "useCases": [
+      "スマートフォンを持たずに外出してのランニングや決済",
+      "健康管理や睡眠のトラッキング"
+    ],
     "userStories": [
       {
         "userType": "初代Pixel Watchの買い替えユーザー",
         "scenario": "以前使っていた同モデルが故障し、後継機は高額であるため整備済み品を購入した状況",
         "experience": "届いた商品はとても綺麗で動作も全く問題なく使用できています。ナンバーシェアやウォレットの登録に手間取りましたが、システムアップデート後に無事解決しました。",
-        "supportingSourceIds": ["src-amazon-review"],
+        "supportingSourceIds": [
+          "src-amazon-review"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -44,7 +53,9 @@
         "claim": "商品状態が非常に綺麗である",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-amazon-review"],
+        "supportingSourceIds": [
+          "src-amazon-review"
+        ],
         "crossChecked": false,
         "notes": "複数のレビュー（『キレイ！！』や『商品はとてもきれいなもの』）で言及されている"
       }
@@ -111,21 +122,43 @@
       "scoreRationale": "[基本点: 70]\n[加点: +15] (Cellularモデルとして非常に安価で高いコストパフォーマンス)\n[加点: +5] (整備済み品でありながら状態が良いという高評価)\n[減点: -5] (バンド別売り、かつ数世代前のモデルでバッテリー性能に懸念あり)\n[合計: 85]"
     },
     "technicalSpecs": {
-      "dimensions": {
-        "height": "12.3mm",
-        "width": "41.0mm",
-        "depth": "41.0mm"
+      "os": "Wear OS 3.5 by Google (Wear OS 4アップデート対応)",
+      "cpu": "Exynos 9110 SoC (Cortex-M33コプロセッサ)",
+      "ram": "2GB",
+      "storage": "32GB",
+      "display": {
+        "size": "1.2インチ",
+        "resolution": "450×450 (320ppi)",
+        "type": "AMOLED (有機EL / 3D Corning Gorilla Glass 5 / 最大1000nits)",
+        "refreshRate": "60Hz"
       },
-      "weight": "29g",
-      "capacity": "不明",
-      "material": "Polished Silver",
-      "origin": "不明",
+      "battery": {
+        "capacity": "294mAh",
+        "charging": "マグネット充電ケーブル (約80分で100%)",
+        "playbackTime": "最大24時間"
+      },
+      "dimensions": {
+        "height": "41.0mm",
+        "width": "41.0mm",
+        "depth": "12.3mm",
+        "weight": "36g (バンド除く)"
+      },
+      "weight": "36g",
+      "material": "80%リサイクルプレミアムステンレススチールケース",
+      "origin": "中国 / ベトナム",
+      "connectivity": [
+        "4G LTE (4Gセルラー通信 eSIM対応)",
+        "UMTS",
+        "Bluetooth 5.0",
+        "Wi-Fi 802.11b/g/n 2.4GHz",
+        "NFC (FeliCa / Suica / iD / QUICPay対応)",
+        "GPS"
+      ],
       "other": [
-        "モデル: GBZ4S",
-        "カラー: Polished Silver ケース",
-        "ネットワーク: Cellularモデル",
-        "対応OS: Android 8.0以降 (iOS非対応)",
-        "付属品: バンド無し"
+        "防水性能: 5ATM (50m防水)",
+        "4G LTE単体通信対応 (スマホなしで通話・通知・ストリーミング)",
+        "Fitbit健康管理 / 心電図機能 / 睡眠スコア",
+        "※iOS非対応 (Android 8.0以上専用)"
       ]
     }
   }

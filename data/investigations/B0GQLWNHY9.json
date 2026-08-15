@@ -44,7 +44,9 @@
         "claim": "最大42dBのハイブリッドアクティブノイズキャンセリング",
         "category": "comparativeAdvantage",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": false,
         "notes": "メーカーの公称値であり、環境適応型ANCを搭載している旨を確認"
       },
@@ -52,7 +54,9 @@
         "claim": "最大72時間のバッテリー再生と10分で5時間再生の急速充電",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": false,
         "notes": "バッテリー駆動時間についての公称値"
       }
@@ -142,23 +146,31 @@
       "scoreRationale": "[基本点: 70]\n[加点: +10] (1万円未満で最大42dBのANC搭載という優れたコストパフォーマンス)\n[加点: +5] (最大72時間のロングバッテリーとマルチポイント対応の実用性)\n[減点: -0] (特筆すべき欠点は見当たらない)\n[合計: 85]"
     },
     "technicalSpecs": {
-      "dimensions": {
-        "height": "23.4mm",
-        "width": "21.0mm",
-        "depth": "31.0mm"
-      },
-      "weight": "263g",
       "battery": {
-        "capacity": "不明",
-        "charging": "USB Type-C急速充電 (10分充電で約5時間再生)"
+        "capacity": "800mAh",
+        "charging": "USB Type-C急速充電 (5分充電で最大5時間再生)",
+        "playbackTime": "最大80時間連続再生"
       },
+      "dimensions": {
+        "height": "190mm",
+        "width": "165mm",
+        "depth": "80mm",
+        "weight": "210g"
+      },
+      "weight": "210g",
+      "material": "プロテインレザークッション / 軽量ポリカーボネートフレーム",
+      "origin": "中国",
+      "connectivity": [
+        "Bluetooth 5.4",
+        "有線接続: 3.5mmオーディオケーブル対応",
+        "対応コーデック: SBC, AAC",
+        "マルチポイント接続対応"
+      ],
       "other": [
-        "Bluetoothバージョン: 5.4",
-        "ドライバー: 40mmチタンコーティングドライバー",
-        "ノイズキャンセリング: 最大42dB ハイブリッドアクティブノイズキャンセリング",
-        "対応機能: マルチポイント接続、Google Fast Pair、音声共有機能",
-        "マイク: 3つのマイク搭載 (AI通話ノイズ低減)",
-        "有線接続: 3.5mmジャック対応(ロスレス再生対応)"
+        "ドライバー: 40mm大型PETダイナミックドライバー (ハイレゾ音源対応)",
+        "超軽量設計: 210g",
+        "折りたたみ収納対応",
+        "低遅延ゲームモード (60ms)"
       ]
     }
   }

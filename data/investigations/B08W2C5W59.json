@@ -108,23 +108,26 @@
     },
     "technicalSpecs": {
       "dimensions": {
-        "height": "23mm (ライト本体直径)",
-        "width": "448mm (ライト本体長さ)",
-        "depth": "23mm"
+        "height": "23mm",
+        "width": "448mm",
+        "depth": "23mm (ライトバー)",
+        "weight": "600g (全体)"
       },
-      "weight": "620g",
-      "power": "USB Type-C",
-      "colorRenderingIndex": "Ra95",
-      "colorTemperature": "無段階調光対応",
-      "other": [
-        "2.4GHzワイヤレスリモコン付属",
-        "厚さ1～32mmのフラットおよび曲面スクリーンに対応"
+      "weight": "600g",
+      "material": "アルミニウム合金メタルボディ / 亜鉛合金マグネット台座",
+      "origin": "中国",
+      "connectivity": [
+        "2.4GHzワイヤレス接続 (リモコン)",
+        "USB Type-C給電 (5V 1A)"
       ],
-      "remoteDimensions": {
-        "height": "34mm",
-        "width": "66.5mm",
-        "depth": "66.5mm"
-      }
+      "other": [
+        "非対称光度光学設計: 画面への光の反射・映り込みを完全防止",
+        "色温度調整: 2700K〜6500K (無段階調整)",
+        "演色性: 高演色 Ra95",
+        "2.4GHzワイヤレス回転リモコン付属 (プッシュ&ダイヤル操作)",
+        "マグネット式角度調整機構 (25°回転可能)",
+        "厚さ1〜32mmの曲面・平面モニターに対応"
+      ]
     }
   }
 }

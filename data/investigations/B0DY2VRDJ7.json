@@ -171,20 +171,41 @@
       "scoreRationale": "[基本点: 70]\n[加点: +15] (新品と比較して圧倒的に安価であり、コストパフォーマンスが非常に高いため)\n[加点: +5] (Fitbitの高精度なヘルスケア機能とGoogleサービス連携の利便性)\n[減点: -5] (バンドが付属しておらず、別途購入の手間と追加コストがかかるため)\n[合計: 85]"
     },
     "technicalSpecs": {
+      "os": "Wear OS 4.0 by Google",
+      "cpu": "Qualcomm 5100 (Cortex-M33コプロセッサ)",
+      "ram": "2GB",
+      "storage": "32GB",
+      "display": {
+        "size": "1.2インチ",
+        "resolution": "450×450 (320ppi)",
+        "type": "AMOLED (有機EL / 3D Corning Gorilla Glass 5 / 最大1000nits)",
+        "refreshRate": "60Hz"
+      },
+      "battery": {
+        "capacity": "306mAh",
+        "charging": "4ピンマグネット式急速充電 (30分で50% / 75分で100%)",
+        "playbackTime": "最大24時間 (常時表示AODオン時)"
+      },
       "dimensions": {
-        "height": "12.3mm",
+        "height": "41.0mm",
         "width": "41.0mm",
-        "depth": "41.0mm"
+        "depth": "12.3mm",
+        "weight": "31g (バンド除く)"
       },
       "weight": "31g",
-      "capacity": "N/A",
-      "material": "100% リサイクル アルミニウム",
-      "origin": "N/A",
+      "material": "100%リサイクルアルミニウムケース / フルオロエラストマーバンド",
+      "origin": "中国 / ベトナム",
+      "connectivity": [
+        "Bluetooth 5.0",
+        "Wi-Fi 802.11b/g/n 2.4GHz",
+        "NFC (FeliCa / Suica / iD / QUICPay対応)",
+        "GPS (GLONASS/Galileo/BDS/QZSS)"
+      ],
       "other": [
-        "カラー: Polished Silver アルミケース",
-        "通信: Wi-Fiモデル",
-        "バンド: 付属なし",
-        "保証: Amazon整備済み品"
+        "防水性能: 5ATM (50m防水) / IP68",
+        "Fitbit高精度マルチパス心拍センサー / 皮膚温センサー / cEDA(ストレス検知)",
+        "Googleアシスタント / Googleマップ / Gmail / カレンダー連携",
+        "※iOS非対応 (Android 9.0以上専用)"
       ]
     }
   }

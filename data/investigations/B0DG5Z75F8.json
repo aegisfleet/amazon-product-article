@@ -228,23 +228,37 @@
       "scoreRationale": "[基本点: 70]\n[加点: +10] (6,000円台でGPS内蔵・有機EL大画面という圧倒的なコストパフォーマンス)\n[加点: +5] (最大18日間の長寿命バッテリーと基本機能の網羅性)\n[減点: -5] (Alexa機能の動作不安定および一部の時刻ズレ不具合報告)\n[減点: -5] (LINE着信通知の仕様問題および明るさ自動調節機能の欠如)\n[合計: 75]"
     },
     "technicalSpecs": {
-      "dimensions": {
-        "height": "48.1mm",
-        "width": "39.2mm",
-        "depth": "10.6mm"
+      "os": "Xiaomi HyperOS",
+      "display": {
+        "size": "1.96インチ",
+        "resolution": "410×502 (332ppi)",
+        "type": "AMOLED (有機EL / 常時表示AOD対応)",
+        "refreshRate": "60Hz"
       },
-      "weight": "29.2g（ストラップ含まず） / 43g（ストラップ含む）",
-      "display": "1.96インチ 有機ELディスプレイ (解像度: 410×502, 332PPI)",
-      "battery": "470mAh (通常使用: 最大18日間, AOD: 最大7日間)",
-      "sensors": "心拍数センサー、血中酸素レベルセンサー、GNSS（GPS/Galileo/Glonass/BeiDou/QZSS）",
-      "waterResistance": "5ATM",
-      "connectivity": "Bluetooth (通話対応)",
-      "osCompatibility": "Android 8.0以降またはiOS 12.0以降",
-      "material": "NCVMミドルフレーム（プラスチック製）、TPU（ストラップ）",
+      "battery": {
+        "capacity": "470mAh",
+        "charging": "マグネット式充電",
+        "playbackTime": "最大18日間 (通常使用時)"
+      },
+      "dimensions": {
+        "height": "48.2mm",
+        "width": "39.3mm",
+        "depth": "10.6mm",
+        "weight": "29.2g (ストラップ除く)"
+      },
+      "weight": "29.2g",
+      "material": "NCVM高光沢フレーム / TPUストラップ",
+      "origin": "中国",
+      "connectivity": [
+        "Bluetooth 5.3 (Bluetooth通話対応)",
+        "内蔵GNSS (GPS/GLONASS/Galileo/BDS/QZSS 5衛星測位)"
+      ],
       "other": [
+        "防水性能: 5ATM (50m防水)",
+        "独立GPS測位対応 (スマホなしでランニング計測)",
+        "健康モニタリング: 24時間心拍・血中酸素・睡眠・ストレス",
         "150種類以上のスポーツモード",
-        "常時画面表示（AOD）対応",
-        "Alexa対応（※動作不安定の報告あり）"
+        "※Suica/おサイフ非対応"
       ]
     }
   }

@@ -170,20 +170,33 @@
       "scoreRationale": "[基本点: 70]\n[加点: +10] (1万円を切る価格で144Hz・ΔE<1という圧倒的なコストパフォーマンス)\n[加点: +5] (300nitsの高輝度とIPSパネルによる実用性の高さ)\n[加点: +3] (ビジネスからクリエイティブ、カジュアルゲーミングまでこなせる汎用性の高さ)\n[合計: 88]"
     },
     "technicalSpecs": {
-      "dimensions": {
-        "height": "433.7mm",
-        "width": "539.2mm",
-        "depth": "170.0mm"
+      "display": {
+        "size": "23.8インチ",
+        "resolution": "1920×1080 (FHD 16:9)",
+        "type": "IPS液晶 (ノングレア・178°広視野角 / 250nits)",
+        "refreshRate": "100Hz"
       },
-      "screenSize": "23.8インチ (60.45cm)",
-      "panelType": "IPS",
-      "resolution": "1920x1080 (FHD)",
-      "refreshRate": "144Hz",
-      "brightness": "300nits",
-      "colorGamut": "sRGB 99%",
-      "colorAccuracy": "ΔE<1",
-      "colorDepth": "1670万色",
-      "features": "TÜV低ブルーライト認証, VESAマウント対応"
+      "dimensions": {
+        "height": "419.7mm",
+        "width": "539.9mm",
+        "depth": "170.0mm",
+        "weight": "2.98kg (スタンド含む)"
+      },
+      "weight": "2.98kg",
+      "material": "極薄7.5mmスリムボディ・スチールスタンド",
+      "origin": "中国",
+      "connectivity": [
+        "HDMI 2.0 ×1",
+        "DisplayPort 1.4 ×1",
+        "DC電源入力端子 ×1"
+      ],
+      "other": [
+        "応答速度: 6ms (GTG)",
+        "色域: sRGB 99% (ΔE<2出荷前キャリブレーション)",
+        "TÜV Rheinland低ブルーライト認証",
+        "3辺マイクロエッジベゼルレス設計",
+        "VESAマウント対応 (75×75mm)"
+      ]
     }
   }
 }

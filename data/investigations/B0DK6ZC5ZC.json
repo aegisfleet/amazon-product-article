@@ -173,17 +173,38 @@
       "scoreRationale": "[基本点: 70]\n[加点: +10] (競合と比較しても約3000円という圧倒的なコストパフォーマンスの高さ)\n[加点: +5] (最大18日間の長時間バッテリーによる充電手間の少なさ)\n[加点: +3] (9.99mmというスリムなデザインによる装着感の良さ)\n[減点: -5] (TFT液晶採用による屋外での視認性への懸念)\n[合計: 83]"
     },
     "technicalSpecs": {
-      "dimensions": {
-        "height": "140mm",
-        "width": "200mm",
-        "length": "200mm"
+      "os": "独自OS (Mi Fitness連動)",
+      "display": {
+        "size": "1.47インチ",
+        "resolution": "172×320 (247ppi)",
+        "type": "TFT液晶 (最大450nits)",
+        "refreshRate": "60Hz"
       },
-      "weight": "29.7g",
-      "display": "1.47インチ TFTディスプレイ",
-      "batteryLife": "最大18日間",
-      "waterResistance": "5ATM (水深50m相当)",
-      "sportsModes": "50種類",
-      "thickness": "9.99mm"
+      "battery": {
+        "capacity": "300mAh",
+        "charging": "マグネット式充電",
+        "playbackTime": "最大18日間 (通常使用時) / 最大9日間 (ヘビーユース時)"
+      },
+      "dimensions": {
+        "height": "45.9mm",
+        "width": "26.9mm",
+        "depth": "9.99mm",
+        "weight": "16.5g (本体のみ) / 29.7g (ストラップ含む)"
+      },
+      "weight": "16.5g",
+      "material": "樹脂ケース / TPUストラップ",
+      "origin": "中国",
+      "connectivity": [
+        "Bluetooth 5.3 BLE"
+      ],
+      "other": [
+        "超薄型軽量設計: 厚さ9.99mm / 重量16.5g",
+        "防水性能: 5ATM (50m防水)",
+        "健康モニタリング: 終日心拍・血中酸素・睡眠・女性の健康管理",
+        "50種類以上のスポーツモード",
+        "※GPS非搭載",
+        "※Suica非対応"
+      ]
     }
   }
 }
