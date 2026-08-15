@@ -65,11 +65,11 @@ Material Design 3 のトナルカラーシステム（Tonal Color System）に�
 
 ### 3.1 M3 タイプスケール定義表
 
-M3 タイプスケールに準拠し、CSS変数として共通管理します。フォントファミリーは標準で `system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif` を使用します。
+M3 タイプスケールに準拠し、CSS変数として共通管理します。フォントファミリーは標準で `'Inter', 'Noto Sans JP', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif` を使用し、Webフォント（Google Fonts）とOSシステムフォントのフォールバックを組み合わせて高品位なタイポグラフィを提供します。
 
 | タイプスタイル | CSS変数名 | font-size (Desktop / Mobile) | line-height | font-weight | letter-spacing | 用途・適用コンポーネント |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| **Display Large** | `--md-sys-typescale-display-large` | 3.5rem (56px) / 2.5rem (40px) | 1.15 | 700 | -0.25px | ヒーローメインキャッチ |
+| **Display Large** | `--md-sys-typescale-display-large` | 3.5rem (56px) / 2.5rem (40px) | 1.15〜1.35 | 900 (JP) / 700 | -0.03em (-0.25px) | ヒーローメインキャッチ（日本語見出しには力強さを担保する900/Blackを適用） |
 | **Headline Medium** | `--md-sys-typescale-headline-medium` | 1.875rem (30px) / 1.625rem (26px) | 1.25 | 600 | 0px | セクションタイトル（「本日の注目商品」等） |
 | **Title Large** | `--md-sys-typescale-title-large` | 1.5rem (24px) / 1.375rem (22px) | 1.3 | 600 | 0px | 商品カードタイトル |
 | **Title Medium** | `--md-sys-typescale-title-medium` | 1.125rem (18px) / 1.0625rem (17px) | 1.35 | 600 | 0.15px | フィルターパネル見出し、サブセクション名 |
