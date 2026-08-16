@@ -325,6 +325,16 @@
                     : `<a href="${escapeHTML(item.url)}" class="btn-amazon-small" aria-label="${escapeHTML(item.title)}の詳細を見る"><span class="material-symbols-outlined" aria-hidden="true">auto_stories</span> 詳細を見る</a>`
                 }
                     </div>
+                    <div class="card-footer-row card-footer-row-shops" style="margin-top: 6px;">
+                        <a href="https://af.moshimo.com/af/c/click?a_id=5756223&p_id=54&pc_id=54&pl_id=27059&url=${encodeURIComponent('https://search.rakuten.co.jp/search/mall/' + encodeURIComponent(item.title || '') + '/')}" class="btn-shop btn-shop-rakuten btn-shop--card" target="_blank" rel="noopener noreferrer" aria-label="${escapeHTML(item.title)}を楽天市場で見る">
+                            <span class="btn-shop-icon-wrapper"><span class="btn-shop-badge-icon">R</span></span>
+                            <span class="btn-shop-label">楽天市場</span>
+                        </a>
+                        <a href="https://af.moshimo.com/af/c/click?a_id=5756224&p_id=1225&pc_id=1925&pl_id=27061&url=${encodeURIComponent('https://shopping.yahoo.co.jp/search?first=1&p=' + encodeURIComponent(item.title || ''))}" class="btn-shop btn-shop-yahoo btn-shop--card" target="_blank" rel="noopener noreferrer" aria-label="${escapeHTML(item.title)}をYahoo!ショッピングで見る">
+                            <span class="btn-shop-icon-wrapper"><span class="btn-shop-badge-icon">Y!</span></span>
+                            <span class="btn-shop-label">Yahoo!</span>
+                        </a>
+                    </div>
                 </div>
             </div>
         </article>`;
