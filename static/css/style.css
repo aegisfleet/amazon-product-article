@@ -8470,4 +8470,52 @@ legend.font-size-label {
     font-size: 1rem;
     min-height: 48px;
   }
+}
+
+/* カードフッター 2行目モールボタン (楽天市場・Yahoo!) */
+.card-footer-row-shops {
+  display: flex;
+  align-items: stretch;
+  gap: 6px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.btn-shop--card {
+  flex: 1;
+  min-width: 0;
+  min-height: 40px;
+  padding: 0.45rem 0.5rem;
+  font-size: 0.82rem;
+  font-weight: 700;
+  border-radius: var(--radius-md, 8px);
+  justify-content: center;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  text-decoration: none;
+  box-sizing: border-box;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.btn-shop--card .btn-shop-badge-icon {
+  width: 16px;
+  height: 16px;
+  font-size: 0.65rem;
+}
+
+@media (max-width: 480px) {
+  .btn-shop--card {
+    padding: 0.4rem 0.25rem;
+    font-size: 0.78rem;
+    min-height: 38px;
+    gap: 3px;
+  }
+
+  .btn-shop--card .btn-shop-badge-icon {
+    width: 14px;
+    height: 14px;
+    font-size: 0.6rem;
+  }
 }
