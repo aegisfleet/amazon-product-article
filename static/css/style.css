@@ -1740,7 +1740,7 @@ a.competitor-preview:hover {
   transform: translateY(-2px);
 }
 
-/* 競合商品比較カードのCTAボタン群 (モバイルは1列縦積み48pxタップ領域) */
+/* 競合商品比較カードのCTAボタン群 (1行目: サイト内レビュー、2行目: 3モールボタングループ) */
 .competitor-links {
   display: flex;
   flex-direction: column;
@@ -1749,48 +1749,92 @@ a.competitor-preview:hover {
   width: 100%;
 }
 
-@media (min-width: 641px) {
-  .competitor-links {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 12px;
-  }
-}
-
-.competitor-links a.btn-amazon-small,
-.competitor-links a.btn-internal-small,
-.competitor-links p a.btn-amazon-small,
-.competitor-links p a.btn-internal-small {
+.competitor-links .btn-internal-small,
+.competitor-links .btn-internal--full {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  gap: var(--spacing-xs);
   width: 100%;
-  min-height: 48px;
-  padding: 0.625rem 1rem;
-  font-size: 0.9375rem;
+  min-height: 44px;
+  padding: 0.6rem 1rem;
+  font-size: 0.92rem;
   font-weight: 700;
-  margin-top: 0;
-  white-space: nowrap;
+  border-radius: var(--radius-md, 8px);
+  text-decoration: none;
+  background: var(--md-sys-color-secondary-container, #e8def8);
+  color: var(--md-sys-color-on-secondary-container, #1d192b);
+  border: 1px solid var(--md-sys-color-outline-variant, #cac4d0);
   box-sizing: border-box;
+  transition: all 0.2s ease;
+}
+
+.competitor-links .btn-internal-small:hover,
+.competitor-links .btn-internal--full:hover {
+  background: var(--md-sys-color-secondary, #625b71);
+  color: var(--md-sys-color-on-secondary, #ffffff);
+  transform: translateY(-1px);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
+}
+
+[data-theme="dark"] .competitor-links .btn-internal-small,
+[data-theme="dark"] .competitor-links .btn-internal--full {
+  background: var(--md-sys-color-secondary-container, #4a4458);
+  color: var(--md-sys-color-on-secondary-container, #e8def8);
+  border-color: var(--md-sys-color-outline, #938f99);
+}
+
+[data-theme="dark"] .competitor-links .btn-internal-small:hover,
+[data-theme="dark"] .competitor-links .btn-internal--full:hover {
+  background: var(--md-sys-color-secondary, #ccc2dc);
+  color: var(--md-sys-color-on-secondary, #332d41);
+}
+
+.product-shop-buttons--competitor {
+  display: flex;
+  align-items: stretch;
+  gap: 6px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.btn-shop--competitor {
+  flex: 1;
+  min-width: 0;
+  min-height: 44px;
+  padding: 0.5rem 0.25rem;
+  font-size: 0.85rem;
+  gap: 4px;
   border-radius: var(--radius-md, 8px);
 }
 
-@media (min-width: 641px) {
-
-  .competitor-links a.btn-amazon-small,
-  .competitor-links a.btn-internal-small,
-  .competitor-links p a.btn-amazon-small,
-  .competitor-links p a.btn-internal-small {
-    min-height: 44px;
-    padding: 0.5rem 0.875rem;
-    font-size: 0.875rem;
-  }
+.btn-shop--competitor .btn-shop-svg,
+.btn-shop--competitor .btn-shop-badge-icon {
+  width: 16px;
+  height: 16px;
 }
 
-.competitor-links p {
-  margin: 0;
-  width: 100%;
-  display: flex;
+.btn-shop--competitor .btn-shop-badge-icon {
+  font-size: 0.7rem;
+}
+
+@media (max-width: 480px) {
+  .btn-shop--competitor {
+    padding: 0.45rem 0.15rem;
+    font-size: 0.78rem;
+    min-height: 42px;
+    gap: 3px;
+  }
+
+  .btn-shop--competitor .btn-shop-svg,
+  .btn-shop--competitor .btn-shop-badge-icon {
+    width: 14px;
+    height: 14px;
+  }
+
+  .btn-shop--competitor .btn-shop-badge-icon {
+    font-size: 0.6rem;
+  }
 }
 
 /* Feature Grid */
