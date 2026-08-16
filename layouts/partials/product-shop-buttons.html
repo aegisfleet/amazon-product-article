@@ -53,23 +53,23 @@
 
 {{- /* もしもアフィリエイト設定 */ -}}
 {{- $moshimo := site.Params.affiliate.moshimo -}}
-{{- $rakutenAId := $moshimo.rakuten_a_id | default "5371728" -}}
+{{- $rakutenAId := $moshimo.rakuten_a_id | default "5756223" -}}
 {{- $rakutenPId := $moshimo.rakuten_p_id | default "54" -}}
 {{- $rakutenPcId := $moshimo.rakuten_pc_id | default "54" -}}
-{{- $rakutenOpId := $moshimo.rakuten_op_id | default "27059" -}}
+{{- $rakutenPlId := $moshimo.rakuten_pl_id | default "27059" -}}
 
-{{- $yahooAId := $moshimo.yahoo_a_id | default "5371733" -}}
+{{- $yahooAId := $moshimo.yahoo_a_id | default "5756224" -}}
 {{- $yahooPId := $moshimo.yahoo_p_id | default "1225" -}}
 {{- $yahooPcId := $moshimo.yahoo_pc_id | default "1925" -}}
-{{- $yahooOpId := $moshimo.yahoo_op_id | default "27061" -}}
+{{- $yahooPlId := $moshimo.yahoo_pl_id | default "27061" -}}
 
 {{- /* 楽天市場 URL (もしも経由) */ -}}
-{{- $rakutenTargetUrl := printf "https://search.rakuten.co.jp/search/mall/%s/" (urlquery $searchQuery) -}}
-{{- $rakutenUrl := printf "https://af.moshimo.com/af/c/click?a_id=%s&p_id=%s&pc_id=%s&op_id=%s&url=%s" $rakutenAId $rakutenPId $rakutenPcId $rakutenOpId (urlquery $rakutenTargetUrl) -}}
+{{- $rakutenTargetUrl := printf "https://search.rakuten.co.jp/search/mall/%s/" $searchQuery -}}
+{{- $rakutenUrl := printf "https://af.moshimo.com/af/c/click?a_id=%s&p_id=%s&pc_id=%s&pl_id=%s&url=%s" $rakutenAId $rakutenPId $rakutenPcId $rakutenPlId (urlquery $rakutenTargetUrl) -}}
 
 {{- /* Yahoo!ショッピング URL (もしも経由) */ -}}
-{{- $yahooTargetUrl := printf "https://shopping.yahoo.co.jp/search?first=1&p=%s" (urlquery $searchQuery) -}}
-{{- $yahooUrl := printf "https://af.moshimo.com/af/c/click?a_id=%s&p_id=%s&pc_id=%s&op_id=%s&url=%s" $yahooAId $yahooPId $yahooPcId $yahooOpId (urlquery $yahooTargetUrl) -}}
+{{- $yahooTargetUrl := printf "https://shopping.yahoo.co.jp/search?first=1&p=%s" $searchQuery -}}
+{{- $yahooUrl := printf "https://af.moshimo.com/af/c/click?a_id=%s&p_id=%s&pc_id=%s&pl_id=%s&url=%s" $yahooAId $yahooPId $yahooPcId $yahooPlId (urlquery $yahooTargetUrl) -}}
 
 <div class="product-shop-buttons product-shop-buttons--{{ $variant }}" data-asin="{{ $asin }}">
   <a href="{{ $amazonUrl }}" class="btn-shop btn-shop-amazon btn-shop--{{ $variant }}" target="_blank" rel="noopener noreferrer"
