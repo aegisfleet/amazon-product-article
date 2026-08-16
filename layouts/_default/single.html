@@ -327,7 +327,7 @@
                     if (asin) shopButtonsDiv.dataset.asin = asin;
 
                     shopButtonsDiv.innerHTML =
-                        '<a href="' + amazonHref + '" class="btn-shop btn-shop-amazon btn-shop--competitor" target="_blank" rel="noopener noreferrer" aria-label="' + title + 'をAmazonで見る">' +
+                        '<a class="btn-shop btn-shop-amazon btn-shop--competitor" target="_blank" rel="noopener noreferrer">' +
                             '<span class="btn-shop-icon-wrapper">' +
                                 '<svg class="btn-shop-svg btn-shop-svg-amazon" viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true">' +
                                     '<path d="M15.93 17.09c-2.73 2.01-6.73 3.09-10.12 3.09-4.76 0-9.04-1.78-12.28-4.76-.25-.23-.03-.54.27-.37 3.49 2.03 7.74 3.25 12.01 3.25 3.01 0 6.35-.74 9.42-2.28.47-.24.87.32.7.07zm1.34-1.37c-.35-.45-2.31-.21-3.19-.11-.27.03-.31-.19-.07-.36 1.57-1.1 4.14-.78 4.45-.39.31.4-.08 2.99-1.57 4.2-.23.19-.45.09-.35-.15.34-.84.97-2.74.73-3.19zm-3.05-6.6c0-1.42-.19-2.5-.96-3.41-.65-.77-1.63-1.14-2.82-1.14-2.02 0-3.56 1.25-4.22 3.05-.13.36.08.57.4.57h1.05c.29 0 .5-.19.61-.46.33-.82 1.05-1.37 2.06-1.37.9 0 1.5.42 1.76 1.15.15.42.18.98.18 1.48v.53c-.92.1-2.2.22-3.34.61-2.04.7-3.23 2.04-3.23 3.84 0 2.19 1.63 3.53 3.69 3.53 1.52 0 2.76-.66 3.41-1.83h.07v1.44c0 .32.22.52.54.52h1.61c.32 0 .54-.2.54-.52V9.12zm-2.27 4.79c0 .48-.09.92-.32 1.34-.41.77-1.19 1.21-2.05 1.21-.99 0-1.65-.63-1.65-1.67 0-1.37 1.06-2.05 2.65-2.23.63-.07 1.1-.11 1.37-.15v1.5z"/>' +
@@ -335,18 +335,34 @@
                             '</span>' +
                             '<span class="btn-shop-label">Amazon</span>' +
                         '</a>' +
-                        '<a href="' + rakutenUrl + '" class="btn-shop btn-shop-rakuten btn-shop--competitor" target="_blank" rel="noopener noreferrer" aria-label="' + title + 'を楽天市場で見る">' +
+                        '<a class="btn-shop btn-shop-rakuten btn-shop--competitor" target="_blank" rel="noopener noreferrer">' +
                             '<span class="btn-shop-icon-wrapper">' +
                                 '<span class="btn-shop-badge-icon">R</span>' +
                             '</span>' +
                             '<span class="btn-shop-label">楽天市場</span>' +
                         '</a>' +
-                        '<a href="' + yahooUrl + '" class="btn-shop btn-shop-yahoo btn-shop--competitor" target="_blank" rel="noopener noreferrer" aria-label="' + title + 'をYahoo!ショッピングで見る">' +
+                        '<a class="btn-shop btn-shop-yahoo btn-shop--competitor" target="_blank" rel="noopener noreferrer">' +
                             '<span class="btn-shop-icon-wrapper">' +
                                 '<span class="btn-shop-badge-icon">Y!</span>' +
                             '</span>' +
                             '<span class="btn-shop-label">Yahoo!</span>' +
                         '</a>';
+
+                    var amazonBtn = shopButtonsDiv.querySelector('.btn-shop-amazon');
+                    if (amazonBtn) {
+                        amazonBtn.setAttribute('href', amazonHref);
+                        if (title) amazonBtn.setAttribute('aria-label', title + 'をAmazonで見る');
+                    }
+                    var rakutenBtn = shopButtonsDiv.querySelector('.btn-shop-rakuten');
+                    if (rakutenBtn) {
+                        rakutenBtn.setAttribute('href', rakutenUrl);
+                        if (title) rakutenBtn.setAttribute('aria-label', title + 'を楽天市場で見る');
+                    }
+                    var yahooBtn = shopButtonsDiv.querySelector('.btn-shop-yahoo');
+                    if (yahooBtn) {
+                        yahooBtn.setAttribute('href', yahooUrl);
+                        if (title) yahooBtn.setAttribute('aria-label', title + 'をYahoo!ショッピングで見る');
+                    }
 
                     linksContainer.innerHTML = '';
                     if (internalLink) {
