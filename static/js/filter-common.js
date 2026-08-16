@@ -412,6 +412,84 @@ function renderCardMainRow(p) {
   return row;
 }
 
+// --- Card Shops Row (Rakuten & Yahoo! 2-column) ---
+function renderCardShopRow(p) {
+  const row = document.createElement('div');
+  row.className = 'card-footer-row card-footer-row-shops';
+
+  const moshimoRakutenAId = '5756223';
+  const moshimoYahooAId = '5756224';
+
+  const query = p.ean || (p.brand && p.model ? `${p.brand} ${p.model}` : (p.model || p.title || ''));
+  const encodedQuery = encodeURIComponent(query);
+
+  const rakutenTarget = `https://search.rakuten.co.jp/search/mall/${encodedQuery}/`;
+  const rakutenUrl = `https://af.moshimo.com/af/c/click?a_id=${moshimoRakutenAId}&p_id=54&pc_id=54&pl_id=27059&url=${encodeURIComponent(rakutenTarget)}`;
+
+  const yahooTarget = `https://shopping.yahoo.co.jp/search?first=1&p=${encodedQuery}`;
+  const yahooUrl = `https://af.moshimo.com/af/c/click?a_id=${moshimoYahooAId}&p_id=1225&pc_id=1925&pl_id=27061&url=${encodeURIComponent(yahooTarget)}`;
+
+  const rakutenBtn = document.createElement('a');
+  rakutenBtn.href = safeUrl(rakutenUrl);
+  rakutenBtn.className = 'btn-shop btn-shop-rakuten btn-shop--card';
+  rakutenBtn.target = '_blank';
+  rakutenBtn.rel = 'noopener noreferrer';
+  rakutenBtn.dataset.trackProduct = '1';
+  rakutenBtn.dataset.asin = p.asin || '';
+  rakutenBtn.dataset.mall = 'rakuten';
+  rakutenBtn.dataset.category = p.category || '';
+  rakutenBtn.dataset.priceBucket = getPriceBucket(p.priceRaw);
+  rakutenBtn.dataset.price = p.price || '';
+  rakutenBtn.dataset.score = String(p.score || 0);
+  rakutenBtn.setAttribute('aria-label', `${p.title || ''}を楽天市場で見る`);
+
+  const rIconWrapper = document.createElement('span');
+  rIconWrapper.className = 'btn-shop-icon-wrapper';
+  const rBadge = document.createElement('span');
+  rBadge.className = 'btn-shop-badge-icon';
+  rBadge.textContent = 'R';
+  rIconWrapper.appendChild(rBadge);
+
+  const rLabel = document.createElement('span');
+  rLabel.className = 'btn-shop-label';
+  rLabel.textContent = '楽天市場';
+
+  rakutenBtn.appendChild(rIconWrapper);
+  rakutenBtn.appendChild(rLabel);
+  row.appendChild(rakutenBtn);
+
+  const yahooBtn = document.createElement('a');
+  yahooBtn.href = safeUrl(yahooUrl);
+  yahooBtn.className = 'btn-shop btn-shop-yahoo btn-shop--card';
+  yahooBtn.target = '_blank';
+  yahooBtn.rel = 'noopener noreferrer';
+  yahooBtn.dataset.trackProduct = '1';
+  yahooBtn.dataset.asin = p.asin || '';
+  yahooBtn.dataset.mall = 'yahoo';
+  yahooBtn.dataset.category = p.category || '';
+  yahooBtn.dataset.priceBucket = getPriceBucket(p.priceRaw);
+  yahooBtn.dataset.price = p.price || '';
+  yahooBtn.dataset.score = String(p.score || 0);
+  yahooBtn.setAttribute('aria-label', `${p.title || ''}をYahoo!ショッピングで見る`);
+
+  const yIconWrapper = document.createElement('span');
+  yIconWrapper.className = 'btn-shop-icon-wrapper';
+  const yBadge = document.createElement('span');
+  yBadge.className = 'btn-shop-badge-icon';
+  yBadge.textContent = 'Y!';
+  yIconWrapper.appendChild(yBadge);
+
+  const yLabel = document.createElement('span');
+  yLabel.className = 'btn-shop-label';
+  yLabel.textContent = 'Yahoo!';
+
+  yahooBtn.appendChild(yIconWrapper);
+  yahooBtn.appendChild(yLabel);
+  row.appendChild(yahooBtn);
+
+  return row;
+}
+
 // --- Card Footer ---
 function renderCardFooter(p) {
   const footer = document.createElement('div');
@@ -422,6 +500,9 @@ function renderCardFooter(p) {
 
   const mainRow = renderCardMainRow(p);
   footer.appendChild(mainRow);
+
+  const shopRow = renderCardShopRow(p);
+  footer.appendChild(shopRow);
 
   return footer;
 }
