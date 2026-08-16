@@ -137,17 +137,9 @@
             </div>
         </div>
 
-        {{- if $product.affiliate_url -}}
         <div class="hero-actions-main">
-            <a href="{{ $product.affiliate_url }}" class="btn-amazon-hero" target="_blank" rel="noopener noreferrer"
-                data-track-product="1" data-asin="{{ $product.asin }}" data-category="{{ $trackingCategory }}"
-                data-price-bucket="{{ $priceBucket }}" data-price="{{ $product.price }}"
-                data-score="{{ $product.score | default 0 }}" data-position="0"
-                aria-label="{{ .Title }}をAmazonで見る">
-                <span class="material-symbols-outlined icon-cart" aria-hidden="true">shopping_cart</span>
-                <span>Amazonで見る</span></a>
+            {{- partial "product-shop-buttons.html" (dict "context" . "variant" "hero") -}}
         </div>
-        {{- end -}}
     </div>
 
     {{- if or $hero.target_users $hero.warnings -}}
