@@ -8197,3 +8197,233 @@ legend.font-size-label {
   color: var(--color-text-muted);
   margin-top: var(--md-sys-spacing-2);
 }
+
+/* ==========================================================================
+   3大モール（Amazon / 楽天市場 / Yahoo!ショッピング）マルチショップボタングループ
+   ========================================================================== */
+.product-shop-buttons {
+  display: flex;
+  align-items: stretch;
+  gap: var(--spacing-sm, 8px);
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.product-shop-buttons--hero {
+  margin-top: 0;
+}
+
+.product-shop-buttons--large {
+  margin: var(--spacing-md, 12px) 0;
+  gap: var(--spacing-md, 12px);
+}
+
+.btn-shop {
+  flex: 1;
+  min-width: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 0.6rem 0.5rem;
+  border-radius: var(--radius-lg, 12px);
+  font-size: 0.92rem;
+  font-weight: 700;
+  text-decoration: none;
+  text-align: center;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  min-height: 46px;
+  box-sizing: border-box;
+  position: relative;
+  overflow: hidden;
+  line-height: 1.2;
+}
+
+.btn-shop-icon-wrapper {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.btn-shop-svg {
+  width: 18px;
+  height: 18px;
+}
+
+.btn-shop-badge-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-weight: 900;
+  font-size: 0.75rem;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  line-height: 1;
+}
+
+.btn-shop-label {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Amazon ボタン */
+.btn-shop-amazon {
+  background: linear-gradient(to bottom, #f7dfa5, #f0c14b);
+  color: #111;
+  border: 1px solid #a88734;
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.4) inset, 0 1px 2px rgba(0, 0, 0, 0.08);
+}
+
+.btn-shop-amazon::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.4) 50%, rgba(255, 255, 255, 0) 100%);
+  transform: skewX(-25deg);
+  animation: shine 6s infinite;
+}
+
+.btn-shop-amazon:hover {
+  background: linear-gradient(to bottom, #f5d78e, #eeb933);
+  color: #111;
+  transform: translateY(-2px);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.4) inset, 0 3px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* 楽天市場 ボタン */
+.btn-shop-rakuten {
+  background: linear-gradient(180deg, #df2a36 0%, #bf0000 100%);
+  color: #fff;
+  border: 1px solid #a10000;
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.25) inset, 0 1px 2px rgba(191, 0, 0, 0.2);
+}
+
+.btn-shop-rakuten .btn-shop-badge-icon {
+  background: #fff;
+  color: #bf0000;
+}
+
+.btn-shop-rakuten:hover {
+  background: linear-gradient(180deg, #ea3a46 0%, #d60000 100%);
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.3) inset, 0 3px 8px rgba(191, 0, 0, 0.3);
+}
+
+/* Yahoo!ショッピング ボタン */
+.btn-shop-yahoo {
+  background: linear-gradient(180deg, #ff2a4b 0%, #e60026 100%);
+  color: #fff;
+  border: 1px solid #c4001f;
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.25) inset, 0 1px 2px rgba(230, 0, 38, 0.2);
+}
+
+.btn-shop-yahoo .btn-shop-badge-icon {
+  background: #fff;
+  color: #e60026;
+}
+
+.btn-shop-yahoo:hover {
+  background: linear-gradient(180deg, #ff3d5c 0%, #f50029 100%);
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.3) inset, 0 3px 8px rgba(230, 0, 38, 0.3);
+}
+
+.btn-shop:active {
+  transform: translateY(0);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1) inset;
+}
+
+/* Large バリアント（まとめセクション用） */
+.product-shop-buttons--large .btn-shop {
+  padding: 0.85rem 1rem;
+  font-size: 1.05rem;
+  min-height: 52px;
+  border-radius: var(--radius-xl, 14px);
+}
+
+.product-shop-buttons--large .btn-shop-svg {
+  width: 22px;
+  height: 22px;
+}
+
+.product-shop-buttons--large .btn-shop-badge-icon {
+  width: 22px;
+  height: 22px;
+  font-size: 0.85rem;
+}
+
+/* ダークテーマ対応 */
+[data-theme="dark"] .btn-shop-amazon {
+  background: linear-gradient(to bottom, #ffad33, #ff9900);
+  border-color: #c47900;
+  color: #232f3e;
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.2) inset;
+}
+
+[data-theme="dark"] .btn-shop-amazon:hover {
+  background: linear-gradient(to bottom, #ffb84d, #ffa31a);
+  color: #232f3e;
+}
+
+[data-theme="dark"] .btn-shop-rakuten {
+  background: linear-gradient(180deg, #d3202c 0%, #a80000 100%);
+  border-color: #8a0000;
+}
+
+[data-theme="dark"] .btn-shop-rakuten:hover {
+  background: linear-gradient(180deg, #e52835 0%, #bf0000 100%);
+}
+
+[data-theme="dark"] .btn-shop-yahoo {
+  background: linear-gradient(180deg, #eb1c3e 0%, #c4001f 100%);
+  border-color: #a30019;
+}
+
+[data-theme="dark"] .btn-shop-yahoo:hover {
+  background: linear-gradient(180deg, #f7294b 0%, #db0023 100%);
+}
+
+/* モバイル表示最適化（幅480px以下） */
+@media (max-width: 480px) {
+  .product-shop-buttons {
+    gap: 6px;
+  }
+
+  .btn-shop {
+    padding: 0.55rem 0.25rem;
+    font-size: 0.82rem;
+    min-height: 44px;
+    gap: 4px;
+  }
+
+  .btn-shop-svg,
+  .btn-shop-badge-icon {
+    width: 15px;
+    height: 15px;
+  }
+
+  .btn-shop-badge-icon {
+    font-size: 0.65rem;
+  }
+
+  .product-shop-buttons--large {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .product-shop-buttons--large .btn-shop {
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+    min-height: 48px;
+  }
+}
