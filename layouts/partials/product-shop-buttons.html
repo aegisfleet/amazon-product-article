@@ -64,11 +64,11 @@
 {{- $yahooPlId := $moshimo.yahoo_pl_id | default "27061" -}}
 
 {{- /* 楽天市場 URL (もしも経由) */ -}}
-{{- $rakutenTargetUrl := printf "https://search.rakuten.co.jp/search/mall/%s/" $searchQuery -}}
+{{- $rakutenTargetUrl := printf "https://search.rakuten.co.jp/search/mall/%s/" (urlquery $searchQuery) -}}
 {{- $rakutenUrl := printf "https://af.moshimo.com/af/c/click?a_id=%s&p_id=%s&pc_id=%s&pl_id=%s&url=%s" $rakutenAId $rakutenPId $rakutenPcId $rakutenPlId (urlquery $rakutenTargetUrl) -}}
 
 {{- /* Yahoo!ショッピング URL (もしも経由) */ -}}
-{{- $yahooTargetUrl := printf "https://shopping.yahoo.co.jp/search?first=1&p=%s" $searchQuery -}}
+{{- $yahooTargetUrl := printf "https://shopping.yahoo.co.jp/search?first=1&p=%s" (urlquery $searchQuery) -}}
 {{- $yahooUrl := printf "https://af.moshimo.com/af/c/click?a_id=%s&p_id=%s&pc_id=%s&pl_id=%s&url=%s" $yahooAId $yahooPId $yahooPcId $yahooPlId (urlquery $yahooTargetUrl) -}}
 
 <div class="product-shop-buttons product-shop-buttons--{{ $variant }}" data-asin="{{ $asin }}">

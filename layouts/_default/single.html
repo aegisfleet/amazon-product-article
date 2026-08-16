@@ -315,10 +315,11 @@
                     var asin = asinMatch ? asinMatch[1] : '';
 
                     var searchQuery = (title ? title.replace(/\([A-Z0-9]{10}\)/gi, '').trim() : '') || title;
-                    var rakutenTarget = 'https://search.rakuten.co.jp/search/mall/' + searchQuery + '/';
+                    var encodedQuery = encodeURIComponent(searchQuery);
+                    var rakutenTarget = 'https://search.rakuten.co.jp/search/mall/' + encodedQuery + '/';
                     var rakutenUrl = 'https://af.moshimo.com/af/c/click?a_id=' + moshimoRakutenAId + '&p_id=' + moshimoRakutenPId + '&pc_id=' + moshimoRakutenPcId + '&pl_id=' + moshimoRakutenPlId + '&url=' + encodeURIComponent(rakutenTarget);
 
-                    var yahooTarget = 'https://shopping.yahoo.co.jp/search?first=1&p=' + searchQuery;
+                    var yahooTarget = 'https://shopping.yahoo.co.jp/search?first=1&p=' + encodedQuery;
                     var yahooUrl = 'https://af.moshimo.com/af/c/click?a_id=' + moshimoYahooAId + '&p_id=' + moshimoYahooPId + '&pc_id=' + moshimoYahooPcId + '&pl_id=' + moshimoYahooPlId + '&url=' + encodeURIComponent(yahooTarget);
 
                     var shopButtonsDiv = document.createElement('div');
