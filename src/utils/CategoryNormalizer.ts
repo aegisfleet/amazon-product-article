@@ -707,12 +707,38 @@ export class CategoryNormalizer {
 
     finalName = CategoryNormalizer.resolveControllerCategory(finalName, title);
     finalName = CategoryNormalizer.resolveTvCategory(finalName, title);
+    finalName = CategoryNormalizer.resolveBikeAccessoryCategory(finalName, title);
 
     if (finalName === 'イヤ・ヘッド') {
       finalName = 'イヤホン・ヘッドホン';
     }
 
     return CategoryNormalizer.resolveGenericCategory(finalName, title);
+  }
+
+  private static resolveBikeAccessoryCategory(name: string, title?: string): string {
+    if (name !== 'バイクアクセサリ' || !title) {
+      return name;
+    }
+    const lowerTitle = title.toLowerCase();
+    if (lowerTitle.includes('ドリンクホルダー')) {
+      return 'バイク用ドリンクホルダー';
+    }
+    const mountKeywords = [
+      'スマホホルダー',
+      'スマートフォンホルダー',
+      'スマホマウント',
+      'スマートフォンマウント',
+      'マウント',
+      'ホルダー',
+      'ステー',
+      'バークランプ',
+      'クランプマウント',
+    ];
+    if (mountKeywords.some((k) => lowerTitle.includes(k))) {
+      return 'バイク用マウントステー・ホルダー';
+    }
+    return name;
   }
 
   private static resolveControllerCategory(name: string, title?: string): string {

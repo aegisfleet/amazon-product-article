@@ -387,6 +387,14 @@ describe('CategoryNormalizer', () => {
       const resEmpty = CategoryNormalizer.normalize(node, '全然関係ない商品');
       expect(resEmpty.main).toBe('その他／全般');
     });
+
+    it('should sanitize "バイクアクセサリ" to "バイク用マウントステー・ホルダー" when title contains mount/holder keywords', () => {
+      const node: BrowseNode = { displayName: 'バイクアクセサリ', id: '2045223051' };
+      const title =
+        'エスピーコネクト（SP CONNECT）バークランプマウント Pro SPC+｜バイク用スマホホルダー｜スマホマウント｜高強度CNCアルミ製｜ハンドルバークランプ取付｜53232';
+      const res = CategoryNormalizer.normalize(node, title);
+      expect(res.main).toBe('バイク用マウントステー・ホルダー');
+    });
   });
 
   describe('Book categorization', () => {
@@ -483,6 +491,38 @@ describe('CategoryNormalizer', () => {
       expect(CategoryNormalizer.isValidCategoryName('スマホ本体', 'iPhone 15 128GB')).toBe(true);
       expect(CategoryNormalizer.isValidCategoryName('スマホ本体', 'ブラウン 電動歯ブラシ オーラルB')).toBe(false);
       expect(CategoryNormalizer.isValidCategoryName('スマートフォン本体', 'Anker モバイルバッテリー')).toBe(false);
+    });
+
+    it('should select "バイク用マウントステー・ホルダー" for motorcycle phone mount (B07Y28FJKM)', () => {
+      const nodes: BrowseNode[] = [
+        {
+          contextFreeName: 'スマートフォン関連製品',
+          displayName: 'スマートフォン関連製品',
+          id: '8419041051',
+          ancestor: {
+            contextFreeName: 'Special Features Stores',
+            displayName: 'Special Features Stores',
+            id: '2678488051',
+          },
+        },
+        {
+          contextFreeName: 'バイク用時計・コンパス・温度計',
+          displayName: 'バイク用時計・コンパス・温度計',
+          id: '5303003051',
+          salesRank: 34,
+          ancestor: {
+            contextFreeName: 'バイクアクセサリ',
+            displayName: 'バイクアクセサリ',
+            id: '2045223051',
+          },
+        },
+      ];
+      const title =
+        'エスピーコネクト（SP CONNECT）バークランプマウント Pro SPC+｜バイク用スマホホルダー｜スマホマウント｜高強度CNCアルミ製｜ハンドルバークランプ取付｜53232';
+
+      const result = CategoryNormalizer.selectBestCategory(nodes, title);
+      expect(result.main).toBe('バイク用マウントステー・ホルダー');
+      expect(result.browseNodeId).toBe('5303003051');
     });
   });
 });
