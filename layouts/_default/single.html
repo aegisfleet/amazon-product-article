@@ -324,7 +324,7 @@
 
                     var shopButtonsDiv = document.createElement('div');
                     shopButtonsDiv.className = 'product-shop-buttons product-shop-buttons--competitor';
-                    if (asin) shopButtonsDiv.setAttribute('data-asin', asin);
+                    if (asin) shopButtonsDiv.dataset.asin = asin;
 
                     shopButtonsDiv.innerHTML =
                         '<a href="' + amazonHref + '" class="btn-shop btn-shop-amazon btn-shop--competitor" target="_blank" rel="noopener noreferrer" aria-label="' + title + 'をAmazonで見る">' +
