@@ -65,7 +65,7 @@ Material Design 3 のトナルカラーシステム（Tonal Color System）に�
 
 ### 3.1 M3 タイプスケール定義表
 
-M3 タイプスケールに準拠し、CSS変数として共通管理します。フォントファミリーは標準で各OSネイティブの高品質フォントスタック（macOS/iOS: `-apple-system, BlinkMacSystemFont, "Hiragino Sans"`、Windows: `"Segoe UI", "Yu Gothic UI", Meiryo`、Android: `Roboto, sans-serif`）を使用し、外部Webフォント読み込みによるチラつき（FOUT）や初回・リロード時の差異を完全に排除した高品位・超高速なタイポグラフィを提供します。
+M3 タイプスケールに準拠し、CSS変数として共通管理します。フォントファミリーは標準で英和統合の高品質フォントスタック（macOS/iOS: `"Hiragino Sans", "Hiragino Kaku Gothic ProN"`、Windows: `"BIZ UDPGothic", "Yu Gothic UI", "Yu Gothic", Meiryo`、Android: `system-ui, sans-serif`）を使用し、タイトルや見出し等での日本語・英数字混在時にも統一されたプロポーションと太さで美しく描画されるタイポグラフィを提供します。
 
 | タイプスタイル | CSS変数名 | font-size (Desktop / Mobile) | line-height | font-weight | letter-spacing | 用途・適用コンポーネント |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
