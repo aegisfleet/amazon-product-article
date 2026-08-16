@@ -264,6 +264,10 @@
             {{ .Content }}
         </div>
 
+        <div id="final-shop-buttons-container" style="display: none;">
+            {{- partial "product-shop-buttons.html" (dict "context" . "variant" "large") -}}
+        </div>
+
         <script>
             (() => {
                 var toc = document.getElementById('toc');
@@ -272,6 +276,15 @@
                 var rakutenSection = document.getElementById('rakuten-affiliate-section');
                 var heroCard = document.querySelector('.product-hero-card');
                 var firstH2 = document.querySelector('.content h2');
+
+                // Upgrade final recommendation action to multi-shop buttons
+                var finalButtons = document.getElementById('final-shop-buttons-container');
+                if (finalButtons) {
+                    var finalAction = document.querySelector('.content .final-recommendation-action');
+                    if (finalAction) {
+                        finalAction.innerHTML = finalButtons.innerHTML;
+                    }
+                }
 
                 // Move TOC to before first H2
                 if (toc) {
