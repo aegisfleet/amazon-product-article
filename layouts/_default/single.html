@@ -298,22 +298,26 @@
                 var moshimoYahooPcId = '{{ site.Params.affiliate.moshimo.yahoo_pc_id | default "1925" }}';
                 var moshimoYahooPlId = '{{ site.Params.affiliate.moshimo.yahoo_pl_id | default "27061" }}';
 
-                competitorCards.forEach(function(card) {
-                    var linksContainer = card.querySelector('.competitor-links');
-                    if (!linksContainer) return;
+                // Helper to update shop button link and accessibility label
+                function setupShopBtn(parent, selector, href, ariaLabel) {
+                    var btn = parent.querySelector(selector);
+                    if (!btn) return;
+                    btn.setAttribute('href', href);
+                    if (ariaLabel) {
+                        btn.setAttribute('aria-label', ariaLabel);
+                    }
+                }
 
-                    var amazonLink = linksContainer.querySelector('a.btn-amazon-small');
-                    if (!amazonLink) return;
+                // Helper to extract ASIN from URL or Title
+                function extractCardAsin(amazonHref, title) {
+                    var urlMatch = amazonHref ? amazonHref.match(/\/dp\/([A-Z0-9]{10})/i) : null;
+                    if (urlMatch) return urlMatch[1];
+                    var titleMatch = title ? title.match(/\(([A-Z0-9]{10})\)/i) : null;
+                    return titleMatch ? titleMatch[1] : '';
+                }
 
-                    var amazonHref = amazonLink.getAttribute('href');
-                    var internalLink = linksContainer.querySelector('a.btn-internal-small');
-
-                    var h4 = card.querySelector('h4');
-                    var title = h4 ? h4.textContent.trim() : '';
-
-                    var asinMatch = (amazonHref && amazonHref.match(/\/dp\/([A-Z0-9]{10})/i)) || (title && title.match(/\(([A-Z0-9]{10})\)/i));
-                    var asin = asinMatch ? asinMatch[1] : '';
-
+                // Helper to build shop buttons HTML element for competitor card
+                function buildCompetitorShopButtons(title, amazonHref, asin) {
                     var searchQuery = (title ? title.replace(/\([A-Z0-9]{10}\)/gi, '').trim() : '') || title;
                     var encodedQuery = encodeURIComponent(searchQuery);
                     var rakutenTarget = 'https://search.rakuten.co.jp/search/mall/' + encodedQuery + '/';
@@ -348,21 +352,28 @@
                             '<span class="btn-shop-label">Yahoo!</span>' +
                         '</a>';
 
-                    var amazonBtn = shopButtonsDiv.querySelector('.btn-shop-amazon');
-                    if (amazonBtn) {
-                        amazonBtn.setAttribute('href', amazonHref);
-                        if (title) amazonBtn.setAttribute('aria-label', title + 'をAmazonで見る');
-                    }
-                    var rakutenBtn = shopButtonsDiv.querySelector('.btn-shop-rakuten');
-                    if (rakutenBtn) {
-                        rakutenBtn.setAttribute('href', rakutenUrl);
-                        if (title) rakutenBtn.setAttribute('aria-label', title + 'を楽天市場で見る');
-                    }
-                    var yahooBtn = shopButtonsDiv.querySelector('.btn-shop-yahoo');
-                    if (yahooBtn) {
-                        yahooBtn.setAttribute('href', yahooUrl);
-                        if (title) yahooBtn.setAttribute('aria-label', title + 'をYahoo!ショッピングで見る');
-                    }
+                    setupShopBtn(shopButtonsDiv, '.btn-shop-amazon', amazonHref, title ? title + 'をAmazonで見る' : '');
+                    setupShopBtn(shopButtonsDiv, '.btn-shop-rakuten', rakutenUrl, title ? title + 'を楽天市場で見る' : '');
+                    setupShopBtn(shopButtonsDiv, '.btn-shop-yahoo', yahooUrl, title ? title + 'をYahoo!ショッピングで見る' : '');
+
+                    return shopButtonsDiv;
+                }
+
+                function upgradeCompetitorCard(card) {
+                    var linksContainer = card.querySelector('.competitor-links');
+                    if (!linksContainer) return;
+
+                    var amazonLink = linksContainer.querySelector('a.btn-amazon-small');
+                    if (!amazonLink) return;
+
+                    var amazonHref = amazonLink.getAttribute('href') || '';
+                    var internalLink = linksContainer.querySelector('a.btn-internal-small');
+
+                    var h4 = card.querySelector('h4');
+                    var title = h4 ? h4.textContent.trim() : '';
+
+                    var asin = extractCardAsin(amazonHref, title);
+                    var shopButtonsDiv = buildCompetitorShopButtons(title, amazonHref, asin);
 
                     linksContainer.innerHTML = '';
                     if (internalLink) {
@@ -370,7 +381,9 @@
                         linksContainer.appendChild(internalLink);
                     }
                     linksContainer.appendChild(shopButtonsDiv);
-                });
+                }
+
+                competitorCards.forEach(upgradeCompetitorCard);
 
                 // Move TOC to before first H2
                 if (toc) {
