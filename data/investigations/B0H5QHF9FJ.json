@@ -1,0 +1,182 @@
+{
+  "analysis": {
+    "productName": "FLYARROW エアタグ 紛失防止タグ 2個セット (F3)",
+    "parentAsin": "B0HDSVY36X",
+    "productDescription": "Appleの「探す(Find My)」ネットワークに対応したiOS専用の小型・軽量スマートトラッカー。2個セットで提供され、財布やバッグ、ペットの首輪などに簡単に取り付け可能。",
+    "productUsage": [
+      "鍵、財布、バッグなどの紛失防止",
+      "ペットや子供、高齢者の見守り・位置把握",
+      "自転車や荷物・スーツケースの追跡"
+    ],
+    "positivePoints": [
+      "Apple Find Myネットワーク(MFi認証)に対応し、専用アプリ不要でiPhoneから位置追跡が可能",
+      "直径30mm、厚さ7mmの小型設計",
+      "市販のCR2032ボタン電池を使用し、最長1年間のバッテリー寿命を確保",
+      "スピーカーを内蔵し、近くにある場合に音を鳴らして探せる",
+      "2個セットで安価に導入できるコストパフォーマンスの高さ"
+    ],
+    "negativePoints": [
+      "iOSデバイス専用であり、Android端末では利用不可",
+      "UWB(超広帯域無線)機能には非対応と見られ、AirTagのようなミリ単位の詳細な方向・距離探索機能(「正確な場所を見つける」)は利用不可",
+      "防水防塵規格(IP等級)に関する明記がなく、アウトドアやペットへの使用には水濡れへの注意が必要"
+    ],
+    "useCases": [
+      "家の鍵や車のキーホルダーに装着",
+      "旅行時のキャリーバッグや登山リュックに忍ばせておく",
+      "子供のランドセルや習い事バッグに入れる"
+    ],
+    "userStories": [
+      {
+        "userType": "iPhoneユーザーの会社員",
+        "scenario": "通勤用のバッグや家の鍵などの管理のために安価なタグを探していた",
+        "experience": "本家のAirTagと比べると非常に安価なため、複数個まとめて購入しやすい。UWB対応ではないのでミリ単位の方向は出ないが、音を鳴らす機能があるため、部屋の中で見失った鍵を探す分には十分役立っている。ただ、防水仕様について記載がないため雨の日の扱いには気を使う。",
+        "supportingSourceIds": ["src-1"],
+        "sentiment": "positive"
+      }
+    ],
+    "userImpression": "純正AirTagと比較して非常に安価に導入できるため、複数の持ち物を管理したいiOSユーザーに好評。詳細な方向探索(UWB)が不要で、大まかな位置把握と音によるアラーム機能だけで十分な用途において、極めてコストパフォーマンスが高いと評価されている。一方で、耐久性や防水性についての言及がないため、過酷な環境での使用には不安が残るとの声もある。",
+    "sources": [
+      {
+        "id": "src-1",
+        "name": "Amazon Product Page",
+        "url": "https://www.amazon.co.jp/dp/B0H5QHF9FJ",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-08-17",
+        "author": "FLYARROW",
+        "conflictOfInterest": "possible",
+        "notes": "製品の詳細仕様（サイズ、バッテリー、Find My対応など）を確認"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "無制限の高精度な測位",
+        "category": "comparativeAdvantage",
+        "confidence": "medium",
+        "supportingSourceIds": ["src-1"],
+        "crossChecked": false,
+        "notes": "Appleの「探す」ネットワークに参加しているデバイスとの通信に基づくため、人口密集地では高精度だが、周囲にAppleデバイスがない環境では更新頻度・精度は低下する。"
+      }
+    ],
+    "lastInvestigated": "2026-08-17",
+    "competitiveAnalysis": [
+      {
+        "name": "Tukio エアタグ 4個セット",
+        "asin": "B0GSZLJ32D",
+        "priceComparison": "Tukioは4個セットで1,899円(1個あたり約475円)であり、本製品(2個で999円、1個約500円)とほぼ同等の非常に高いコストパフォーマンスを持つ。",
+        "featureComparison": [
+          "共通点：Apple Find My対応、CR2032電池使用、iOS専用、音を鳴らす機能搭載",
+          "相違点：Tukioは4個セットでの販売であり、より多くのアイテムを管理したい場合に向いている"
+        ],
+        "differentiators": [
+          "FLYARROW エアタグの利点：まずは2個だけ試したい、手軽に少数のアイテムから管理を始めたいというユーザーに適している",
+          "Tukio エアタグの利点：家族で分け合ったり、複数の鍵やバッグなど多数の持ち物に一気につけたい場合に初期費用を抑えられる"
+        ]
+      },
+      {
+        "name": "Rucceko エアタグ カード型",
+        "asin": "B0H1LXKNHL",
+        "priceComparison": "Ruccekoは2,380円とやや高価だが、財布用のカード型形状とワイヤレス充電に対応しているため、価格差の理由は明確。",
+        "featureComparison": [
+          "共通点：Apple Find My対応、iOS専用",
+          "相違点：Ruccekoは充電式のカード型(最長10年使用可能)でIP68防水。FLYARROWはボタン電池式のコイン型。"
+        ],
+        "differentiators": [
+          "FLYARROW エアタグの利点：鍵やキーホルダー、ペットの首輪などに取り付けるための汎用的な形状と低価格を求める人に適している",
+          "Rucceko エアタグの利点：財布のカードポケットにスッキリと収納したい人や、電池交換不要の充電式を好む人に適している"
+        ]
+      },
+      {
+        "name": "Gudluky エアタグ 2個セット",
+        "asin": "B0DM9GJP5R",
+        "priceComparison": "Gudlukyは2個セットで1,795円であり、本製品(999円)よりも高価。IP68防水仕様を備えている。",
+        "featureComparison": [
+          "共通点：Apple Find My対応、2個セット販売",
+          "相違点：GudlukyはIP68防水防塵に対応し、120dBの大音量アラームを備える。FLYARROWは防水性能の明記がない。"
+        ],
+        "differentiators": [
+          "FLYARROW エアタグの利点：防水性などが不要で、室内やカバンの中など安全な場所でのみ使用し、とにかくコストを抑えたい人に適している",
+          "Gudluky エアタグの利点：ペットの首輪やアウトドア用途など、雨や水濡れのリスクがある環境で使いたい人に適している"
+        ]
+      },
+      {
+        "name": "citymore エアタグ",
+        "asin": "B0DY1DL8PG",
+        "priceComparison": "citymoreは1個で999円であり、本製品(2個で999円)の半分のコストパフォーマンスとなる。",
+        "featureComparison": [
+          "共通点：Apple Find My対応",
+          "相違点：citymoreはIP68防水対応。本製品は防水性の記載がないが2個入り。"
+        ],
+        "differentiators": [
+          "FLYARROW エアタグの利点：防水性が不要で、同予算で複数のトラッカーを導入したい人に適している",
+          "citymore エアタグの利点：単体での購入を希望し、かつ防水防塵性能を必要とするケースに適している"
+        ]
+      },
+      {
+        "name": "FREIOWEEI エアタグ 2個セット",
+        "asin": "B0FL7T9MF7",
+        "priceComparison": "FREIOWEEIは2個セットで899円と、本製品(999円)と同等以上の低価格を誇る。",
+        "featureComparison": [
+          "共通点：Apple Find My対応、2個セット",
+          "相違点：価格帯も機能も非常に似通っているが、FREIOWEEIは防水を謳っている。"
+        ],
+        "differentiators": [
+          "FLYARROW エアタグの利点：極端な安価帯の同等製品として、在庫状況やデザインの好みで選べる選択肢の一つとなる",
+          "FREIOWEEI エアタグの利点：防水仕様が明記されており、数百円でも安く済ませたい場合に適している"
+        ]
+      },
+      {
+        "name": "UGREEN FineTrack Mini Duo2",
+        "asin": "B0G7H7B2TD",
+        "priceComparison": "UGREENは1個で1,690円。大手ブランドの製品であり、Android/iOS両対応などの高機能を持つため妥当な価格設定。",
+        "featureComparison": [
+          "共通点：紛失防止タグ機能",
+          "相違点：UGREENはApple Find MyだけでなくGoogle Find My Deviceにも対応し、充電不可だが最長7年の長寿命。FLYARROWはiOS専用で電池交換式。"
+        ],
+        "differentiators": [
+          "FLYARROW エアタグの利点：iOSデバイスのみを使用しており、電池交換しながら安価に運用したい人に適している",
+          "UGREEN FineTrack Mini Duo2の利点：AndroidとiOSのデバイスを併用している人や、有名ブランドの信頼性と長寿命バッテリーを重視する人に適している"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "とにかく安価に「探す(Find My)」対応トラッカーを複数導入したいiOSユーザー（純正品の半額以下で利用可能）",
+        "UWBによる詳細な方向探索が不要で、大まかな位置情報と音鳴らし機能だけで十分な人"
+      ],
+      "pros": [
+        "純正AirTagとほぼ同じ「探す」ネットワークを利用でき、世界中のAppleデバイス網を通じて位置を特定できるため安心",
+        "2個セットで約1,000円という破格の安さで、複数アイテムの管理ハードルが大きく下がる"
+      ],
+      "cons": [
+        "IP等級などの防水防塵性能が明記されていないため、屋外やペットなど水濡れリスクのある用途には向かない",
+        "Android端末では一切利用できないため、家族間でOSが異なる場合は共有が困難"
+      ],
+      "score": 75,
+      "scoreRationale": "[基本点: 70]\n[加点: +10] (Apple Find Myネットワーク対応で広範囲な位置特定が可能)\n[加点: +10] (2個セットで999円という圧倒的なコストパフォーマンスの高さ)\n[減点: -5] (防水防塵性能の明記がなく、耐久性に不安が残る)\n[減点: -10] (UWB非対応のため、純正品のような精細な方向探知は不可)\n[合計: 75]"
+    },
+    "technicalSpecs": {
+      "dimensions": {
+        "height": "30mm",
+        "width": "30mm",
+        "depth": "7mm",
+        "weight": "N/A"
+      },
+      "battery": {
+        "type": "CR2032ボタン電池",
+        "playbackTime": "最大1年間"
+      },
+      "connectivity": [
+        "Bluetooth"
+      ],
+      "compatibility": [
+        "iOS (Apple Find My ネットワーク対応)"
+      ],
+      "other": [
+        "※Android非対応",
+        "※UWB(超広帯域無線)非対応",
+        "内蔵スピーカー(音を鳴らす機能)"
+      ]
+    }
+  }
+}
