@@ -1,0 +1,159 @@
+{
+  "analysis": {
+    "productName": "白鳥とコウモリ（上）",
+    "parentAsin": "434443370X",
+    "productDescription": "東野圭吾による長編ミステリー小説の文庫版（上巻）。2017年に発見された弁護士の刺殺体を巡り、30年以上前の未解決事件が絡み合う、加害者家族と被害者家族の苦悩を描いた作品です。",
+    "productUsage": ["ミステリー小説の読書", "通勤・通学時間の読書", "東野圭吾作品のコレクション"],
+    "positivePoints": [
+      "東野圭吾作品ならではの緻密な心理描写と人間ドラマ",
+      "加害者家族と被害者家族という対立する立場からの物語展開",
+      "単行本時から評価が高い作品の文庫化で手に取りやすい価格帯"
+    ],
+    "negativePoints": [
+      "上下巻の分冊であるため、上巻だけでは物語が完結しない",
+      "殺人事件を扱う性質上、重く複雑な人間模様が描かれている"
+    ],
+    "useCases": ["休日に一気読みする", "ミステリーの真相を推察しながら読む", "映画化・ドラマ化を見据えて原作をチェックする"],
+    "userStories": [
+      {
+        "userType": "東野圭吾ファン",
+        "scenario": "休日に一気読み",
+        "experience": "自供内容に様々な違和感や矛盾点が出てきて、それを一つ一つ追求していき解明されていく時のワクワク感が素晴らしい。加害者家族と被害者家族の思いが実にリアルで、休日に一気読みできるのはまさに至福だった。",
+        "supportingSourceIds": ["note-daiji2"],
+        "sentiment": "positive"
+      },
+      {
+        "userType": "ミステリー読者",
+        "scenario": "真相を探りながら読む",
+        "experience": "当事者のいないところで物語が進み、最終的にすべての前提がひっくり返ってしまう展開に驚かされた。すべての人物の心情に寄り添えてしまう筆致に脱帽した。",
+        "supportingSourceIds": ["note-wakakusa"],
+        "sentiment": "positive"
+      }
+    ],
+    "userImpression": "複雑な人間模様や、加害者・被害者それぞれの遺族が抱える苦悩が緻密に描かれており、東野圭吾作品らしい読後感の良さと読み応えが高く評価されています。上下巻という長編ながら、次々と明らかになる事実と覆される前提により、ページをめくる手が止まらないという感想が多く見られます。",
+    "sources": [
+      {
+        "id": "note-daiji2",
+        "name": "読書感想『白鳥とコウモリ』東野圭吾",
+        "url": "https://note.com/daiji2/n/nb694e3d22e85",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2024-05-18",
+        "author": "真咲ともか",
+        "conflictOfInterest": "none",
+        "notes": "上下巻を一気読みした読者の感想。心理描写のリアルさや謎解きのワクワク感を高く評価。"
+      },
+      {
+        "id": "note-wakakusa",
+        "name": "読書感想『白鳥とコウモリ』東野圭吾",
+        "url": "https://note.com/wakakusasyotenn/n/n7e63ee6881db",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2024-04-05",
+        "author": "ヤギの本屋さん・テンガイ",
+        "conflictOfInterest": "none",
+        "notes": "感情移入のしやすさ、前提が覆る展開の巧みさについて言及。"
+      },
+      {
+        "id": "gentosha-official",
+        "name": "『白鳥とコウモリ（上）』東野圭吾 - 幻冬舎",
+        "url": "https://www.gentosha.co.jp/book/detail/9784344433700/",
+        "tier": "medium",
+        "evidenceType": "primary",
+        "publishedAt": "2024-04-03",
+        "author": "幻冬舎",
+        "conflictOfInterest": "none",
+        "notes": "公式のあらすじ、発売日、価格情報の確認。"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "被害者の娘と加害者の息子が互いの父の言動に違和感を抱き真相を探る物語",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": ["gentosha-official", "note-daiji2", "note-wakakusa"],
+        "crossChecked": true,
+        "notes": "公式あらすじと読者レビューの双方が一致している中心的なテーマ。"
+      }
+    ],
+    "lastInvestigated": "2026-08-17",
+    "competitiveAnalysis": [
+      {
+        "name": "白鳥とコウモリ（下）",
+        "asin": "4344433718",
+        "priceComparison": "対象商品と同価格。物語の完結編。",
+        "featureComparison": [
+          "共通点：同じ長編ミステリーの構成部分であること",
+          "相違点：上巻は謎の提示と展開の始まり、下巻は真相の解明と結末を描く点"
+        ],
+        "differentiators": [
+          "白鳥とコウモリ（上）の利点：物語の導入であり、まず本作の世界観や謎を味わいたい読者向け",
+          "白鳥とコウモリ（下）の利点：上巻を読み終え、事件の真相と結末を知りたい読者向け（上巻を読んでから購入すべき）"
+        ]
+      },
+      {
+        "name": "白鳥とコウモリ（上)(下)巻セット",
+        "asin": "B0D93TJFG8",
+        "priceComparison": "上下巻セットのため価格は2倍となる。",
+        "featureComparison": [
+          "共通点：収録されている物語の内容は完全に同一であること",
+          "相違点：単巻購入かセット購入かの違い"
+        ],
+        "differentiators": [
+          "白鳥とコウモリ（上）の利点：試しに読んでみたい、まずは前半だけを購入したい読者に適している",
+          "白鳥とコウモリ（上)(下)巻セットの利点：東野圭吾作品であり一気読みすることが予想されるため、続きを待たずにすぐ読みたい読者に最適"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": ["重厚な人間ドラマとミステリーを両立した作品を読みたい人", "加害者家族・被害者家族の視点に関心がある人", "東野圭吾作品の長編をじっくり楽しみたい人"],
+      "pros": [
+        "事件関係者の複雑な心情が丁寧に描かれており、どの登場人物にも感情移入しながら物語の世界に没入できる",
+        "自供内容の矛盾点から徐々に真相が明らかになる展開が秀逸で、ミステリーとしてのカタルシスを存分に味わえる"
+      ],
+      "cons": [
+        "物語は上巻だけでは完結しないため、結末を知るには下巻（4344433718）の購入も必要になる"
+      ],
+      "score": 85,
+      "scoreRationale": "[基本点: 70]\n[加点: +10] (東野圭吾作品らしい緻密な心理描写と人間ドラマが高評価)\n[加点: +5] (謎が徐々に解明されていく展開の巧みさと没入感)\n[合計: 85]"
+    },
+    "technicalSpecs": {
+      "os": "非該当",
+      "cpu": "非該当",
+      "ram": "非該当",
+      "storage": "非該当",
+      "display": {
+        "size": "非該当",
+        "resolution": "非該当",
+        "type": "非該当",
+        "refreshRate": "非該当"
+      },
+      "battery": {
+        "capacity": "非該当",
+        "charging": "非該当"
+      },
+      "camera": {
+        "main": "非該当",
+        "ultrawide": "非該当",
+        "telephoto": "非該当",
+        "front": "非該当"
+      },
+      "dimensions": {
+        "height": "151.0mm",
+        "width": "101.0mm",
+        "depth": "15.0mm",
+        "weight": "1.0g"
+      },
+      "weight": "1.0g",
+      "material": "紙",
+      "origin": "日本",
+      "connectivity": [],
+      "other": [
+        "ページ数: 336ページ",
+        "発行形態: 文庫",
+        "出版社: 幻冬舎",
+        "著者: 東野圭吾"
+      ]
+    }
+  }
+}
