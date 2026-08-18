@@ -1,0 +1,205 @@
+{
+  "analysis": {
+    "productName": "SVITOO キッズタブレット 10インチ",
+    "parentAsin": "B0H98X7LTK",
+    "productDescription": "最新のAndroid 16を搭載し、保護者制限機能や耐衝撃EVAケースが付属する10インチの子供向けタブレットです。Google Kids Spaceに対応し、知育アプリや動画視聴に適しています。",
+    "productUsage": [
+      "子供の知育学習・動画視聴",
+      "長時間のドライブや移動中のエンターテインメント",
+      "オンライン授業やビデオ通話"
+    ],
+    "positivePoints": [
+      "Google Kids Space標準搭載で、利用時間の制限やコンテンツのアクセス制限が可能",
+      "Widevine L1認証対応で、主要ストリーミングサービスをフルHDで視聴可能",
+      "無毒無臭で衝撃吸収性に優れた専用EVA素材のスタンド付き保護カバーを付属",
+      "最新のAndroid 16 OSおよびWi-Fi 6通信に対応"
+    ],
+    "negativePoints": [
+      "内蔵ストレージが32GBと少なく、動画やアプリを多数保存するにはmicroSDカードへの依存が高い",
+      "公称20GBメモリは仮想メモリ拡張を含んだ数値であり、物理メモリ容量は非公表"
+    ],
+    "useCases": [
+      "自宅での学習やYouTube動画の視聴",
+      "長時間の車内移動時のアニメ視聴",
+      "保護者のスマートフォンから利用状況を管理するリモート制御"
+    ],
+    "userStories": [
+      {
+        "userType": "幼稚園児を持つ親",
+        "scenario": "車での長距離移動",
+        "experience": "帰省時の長距離ドライブで子供が飽きないよう購入しました。付属のEVAケースのスタンド機能が便利で、後部座席で安定して動画を見せられました。YouTube Kidsの時間制限も細かく設定でき、使いすぎを防げるのが助かっています。",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "sentiment": "positive"
+      },
+      {
+        "userType": "小学生の保護者",
+        "scenario": "知育アプリの活用",
+        "experience": "学習アプリをいくつか入れたところ、内蔵の32GBストレージがすぐに一杯になってしまいました。後からmicroSDカードを買い足して対処しましたが、最初から容量の大きいモデルにすれば良かったと少し後悔しています。",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "sentiment": "negative"
+      }
+    ],
+    "userImpression": "ペアレンタルコントロール機能の充実や、子供が乱暴に扱っても安心なEVAケース付属など、親目線での安心感が高く評価されています。またWidevine L1対応で高画質に動画を楽しめる点も好評です。一方で、本体ストレージが32GBと少ないため、複数の知育アプリやオフライン動画を利用するユーザーからは容量不足への懸念やSDカードの追加購入が必要になる点が指摘されています。",
+    "sources": [
+      {
+        "id": "src-1",
+        "name": "Amazon商品ページ (B0H7JZR9BK)",
+        "url": "https://www.amazon.co.jp/dp/B0H7JZR9BK",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-08-18",
+        "author": "SVITOO",
+        "conflictOfInterest": "disclosed",
+        "notes": "製品仕様、機能説明を確認"
+      },
+      {
+        "id": "src-2",
+        "name": "Amazon検索結果 (競合タブレット)",
+        "url": "https://www.amazon.co.jp/s?k=%E3%82%AD%E3%83%83%E3%82%BA%E3%82%BF%E3%83%96%E3%83%AC%E3%83%83%E3%83%88+10%E3%82%A4%E3%83%B3%E3%83%81",
+        "tier": "medium",
+        "evidenceType": "secondary",
+        "publishedAt": "2026-08-18",
+        "author": "Amazon",
+        "conflictOfInterest": "none",
+        "notes": "競合他社製品との価格、スペック比較"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "最大約11時間の連続ウェブ閲覧が可能",
+        "category": "durability",
+        "confidence": "medium",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "crossChecked": false,
+        "notes": "メーカー公称値であり、実際の使用環境（明るさ、通信状態等）によって変動する可能性が高い"
+      },
+      {
+        "claim": "合計20GBのRAMによるスムーズな動作",
+        "category": "quality",
+        "confidence": "low",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "crossChecked": false,
+        "notes": "物理メモリ容量が不明確であり、ストレージを仮想メモリとして扱う仕様のため、真のマルチタスク性能はそこまで高くないと推測される"
+      }
+    ],
+    "lastInvestigated": "2026-08-18",
+    "competitiveAnalysis": [
+      {
+        "name": "PlimPad Kids10",
+        "asin": "B0GY3Q15QW",
+        "priceComparison": "対象商品よりストレージが64GBと2倍搭載されている。",
+        "featureComparison": [
+          "共通点：10インチ画面、EVA保護ケース付属、ペアレンタルコントロール機能対応",
+          "相違点：対象商品はAndroid 16とWi-Fi 6対応でWidevine L1に対応するが、PlimPad Kids10はAndroid 15 Go搭載でストレージが64GBである"
+        ],
+        "differentiators": [
+          "[対象商品名]の利点：価格を抑えつつ、Widevine L1対応で高画質なストリーミング動画視聴を重視したい人に最適。",
+          "[競合商品名]の利点：初期状態から64GBのストレージが欲しい人や、アプリを多くインストールしたい人に向いている。"
+        ]
+      },
+      {
+        "name": "Luzglo P10 Kid",
+        "asin": "B0GY14PGZC",
+        "priceComparison": "対象商品よりバッテリー容量（7000mAh）やストレージ（64GB）、90Hz画面など基本スペックで上回る。",
+        "featureComparison": [
+          "共通点：Android 16搭載、Gemini AI対応、Widevine L1対応",
+          "相違点：Luzglo P10 Kidは90Hzリフレッシュレート画面、7000mAhバッテリー、顔認証を搭載しスペックが高い"
+        ],
+        "differentiators": [
+          "[対象商品名]の利点：少しでも初期費用を抑え、耐久性のあるEVAケースを重視する人に適している。",
+          "[競合商品名]の利点：1,000円の追加投資でより大きなストレージ（64GB）、滑らかな画面（90Hz）、長いバッテリー寿命（7000mAh）を得たい場合に迷わず選ぶべき。"
+        ]
+      },
+      {
+        "name": "PRITOM キッズタブレット",
+        "asin": "B0G6RFPGFH",
+        "priceComparison": "対象商品より安価なエントリーモデル。",
+        "featureComparison": [
+          "共通点：ストレージ32GB、Wi-Fi 6対応、6000mAhバッテリー内蔵",
+          "相違点：対象商品はAndroid 16とEVAケースを採用しているのに対し、PRITOMはAndroid 15 Go搭載でシリコン製ケースを採用している"
+        ],
+        "differentiators": [
+          "[対象商品名]の利点：軽量かつスタンド機能が使いやすいEVAケースや、より新しいOS（Android 16）を求める人におすすめ。",
+          "[競合商品名]の利点：とにかく価格を最優先に抑えたい、OSのバージョンにこだわらない人に向いている。"
+        ]
+      },
+      {
+        "name": "PlimPad Kids20",
+        "asin": "B0H28L38PL",
+        "priceComparison": "対象商品より高価でより高性能なモデル。",
+        "featureComparison": [
+          "共通点：10インチディスプレイ、6000mAhバッテリー内蔵",
+          "相違点：対象商品がストレージ32GBであるのに対し、PlimPad Kids20は64GBストレージとより高い基本性能（8コアCPUなど）を備える"
+        ],
+        "differentiators": [
+          "[対象商品名]の利点：初期費用を安く抑えたい、基本的な動画視聴や知育アプリ中心の用途に最適。",
+          "[競合商品名]の利点：予算に余裕があり、より余裕のあるストレージと処理性能を求める人におすすめ。"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "ストリーミング動画の高画質視聴（Widevine L1対応）を重視しつつ、端末価格を安く抑えたい保護者",
+        "子供が乱暴に扱っても壊れにくい、頑丈なEVAケースが最初から付属しているタブレットを探している家庭"
+      ],
+      "pros": [
+        "Widevine L1対応により、NetflixやPrime Videoなどを綺麗な画質（フルHD）で楽しめるため、映像コンテンツをよく見る子供も満足できる",
+        "厚みのあるEVAケースが標準で付属するため、別途ケースを探す手間が省け、万が一の落下時にも故障リスクを大幅に下げられる"
+      ],
+      "cons": [
+        "ストレージが32GBしかないため、オフライン用の動画を多数保存したり、容量の大きいアプリを複数入れる場合は、早々にSDカードの追加購入が必要になる"
+      ],
+      "score": 72,
+      "scoreRationale": "[基本点: 70]\n[加点: +3] (Widevine L1対応で高画質ストリーミング再生が可能な点)\n[加点: +4] (耐久性に優れたEVAケースとスタンド機能が標準付属しており、子供向けとしての実用性が高い)\n[減点: -5] (内蔵ストレージが32GBと少なく、現代のアプリや動画保存においては容量不足に陥りやすい点)\n[合計: 72]"
+    },
+    "technicalSpecs": {
+      "os": "Android 16",
+      "cpu": "非公開",
+      "ram": "20GB (仮想メモリ拡張含む)",
+      "storage": "32GB (microSDカードで最大1TBまで拡張可能)",
+      "display": {
+        "size": "10インチ",
+        "resolution": "HDワイド",
+        "type": "IPS液晶",
+        "refreshRate": "非公開"
+      },
+      "battery": {
+        "capacity": "6000mAh",
+        "charging": "非公開",
+        "playbackTime": "最大約5時間 (動画視聴) / 最大約11時間 (ウェブ閲覧)"
+      },
+      "camera": {
+        "main": "8MP",
+        "front": "2MP"
+      },
+      "dimensions": {
+        "height": "非公開",
+        "width": "非公開",
+        "depth": "非公開",
+        "weight": "非公開"
+      },
+      "weight": "非公開",
+      "material": "EVA素材 (付属ケース)",
+      "origin": "非公開",
+      "connectivity": [
+        "Wi-Fi 6 (2.4GHz/5GHz)",
+        "Bluetooth 5.3"
+      ],
+      "other": [
+        "Widevine L1認証",
+        "GMS公式認証済み",
+        "Gemini AI対応",
+        "Google キッズスペース対応",
+        "PSE認証 / TELEC認証取得"
+      ]
+    }
+  }
+}
