@@ -23,10 +23,10 @@
  *   pnpm ts-node scripts/prune-dead-products.ts --prune
  */
 
-import { execSync } from 'node:child_process';
 import fs from 'node:fs';
 import https from 'node:https';
 import path from 'node:path';
+import { enhanceCategories } from '../src/scripts/enhance-categories';
 
 interface CheckResult {
   asin: string;
@@ -54,6 +54,7 @@ const ROOT_DIR = path.resolve(__dirname, '..');
 const ARTICLES_DIR = path.join(ROOT_DIR, 'content/articles');
 const INVESTIGATIONS_DIR = path.join(ROOT_DIR, 'data/investigations');
 const CACHE_PATH = path.join(ROOT_DIR, 'data/cache/paapi-product-cache.json');
+const TITLE_REGEX = /<title>([^<]*)<\/title>/i;
 
 // コマンドライン引数のパース
 function parseArgs(): CliOptions {
@@ -175,7 +176,7 @@ function checkAmazonUrl(
         });
 
         res.on('end', () => {
-          const titleMatch = body.match(/<title>([^<]*)<\/title>/i);
+          const titleMatch = TITLE_REGEX.exec(body);
           const title = titleMatch?.[1]?.trim();
 
           // 404判定基準:
@@ -342,12 +343,12 @@ function executePruning(deadItems: CheckResult[], dryRun: boolean, cache: Record
 
 // サイトインデックス再構築
 function rebuildSiteIndex(): void {
-  console.log('\n=== サイトインデックス再構築 (prebuild:hugo) ===');
+  console.log('\n=== サイトインデックス再構築 (enhanceCategories) ===');
   try {
-    execSync('pnpm run prebuild:hugo', { cwd: ROOT_DIR, stdio: 'inherit' });
-    console.log('prebuild:hugo 完了');
+    enhanceCategories();
+    console.log('サイトインデックス再構築完了');
   } catch (err) {
-    console.error('prebuild:hugo の実行に失敗しました:', err);
+    console.error('サイトインデックス再構築に失敗しました:', err);
   }
 }
 
