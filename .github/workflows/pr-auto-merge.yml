@@ -36,19 +36,15 @@ jobs:
     - name: Analyze changed files
       id: analyze_changes
       env:
+        GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        PR_NUMBER: ${{ github.event.pull_request.number }}
         AMAZON_PARTNER_TAG: ${{ secrets.AMAZON_PARTNER_TAG }}
-        BASE_REF: ${{ github.base_ref }}
       run: |
-        # ベースブランチをフェッチ。履歴が足りない場合は unshallow する
-        git fetch origin $BASE_REF --depth=1 || git fetch origin $BASE_REF
-        
-        if ! git merge-base origin/$BASE_REF HEAD > /dev/null 2>&1; then
-          echo "Common ancestor not found, fetching more history..."
-          git fetch --unshallow || git fetch --prune
-        fi
+        # GitHub APIからPRの変更ファイル一覧を取得（Git履歴の全フェッチを回避）
+        ALL_CHANGED_FILES=$(gh pr diff "$PR_NUMBER" --name-only)
         
         # Check for investigation changes
-        INVESTIGATION_FILES=$(git diff --name-only origin/$BASE_REF HEAD -- 'data/investigations/*.json' | tr '\n' ' ')
+        INVESTIGATION_FILES=$(echo "$ALL_CHANGED_FILES" | grep -E '^data/investigations/.+\.json$' | tr '\n' ' ' || true)
         if [ -n "$INVESTIGATION_FILES" ]; then
           echo "Found changed investigation files: $INVESTIGATION_FILES"
           pnpm exec ts-node src/scripts/article-generation-cli.ts --skip-paapi $INVESTIGATION_FILES
@@ -57,7 +53,7 @@ jobs:
         fi
 
         # Check for today.json changes
-        if git diff --name-only origin/$BASE_REF HEAD | grep -q 'data/recommendations/today.json'; then
+        if echo "$ALL_CHANGED_FILES" | grep -q '^data/recommendations/today\.json$'; then
           echo "today_changed=true" >> $GITHUB_OUTPUT
           echo "today.json has changed."
         else
