@@ -68,28 +68,40 @@ function parseArgs(): CliOptions {
     skipPrebuild: false,
   };
 
-  for (let i = 0; i < args.length; i++) {
-    const arg = args[i];
-    if (arg === '--prune' || arg === '--delete') {
-      options.mode = 'prune';
-    } else if (arg === '--audit') {
-      options.mode = 'audit';
-    } else if (arg === '--dry-run') {
-      options.dryRun = true;
-    } else if (arg === '--scope' && i + 1 < args.length) {
-      const scopeVal = args[++i];
-      if (scopeVal === 'all' || scopeVal === 'perm-invalid') {
-        options.scope = scopeVal;
+  let i = 0;
+  while (i < args.length) {
+    const arg = args[i++];
+    switch (arg) {
+      case '--prune':
+      case '--delete':
+        options.mode = 'prune';
+        break;
+      case '--audit':
+        options.mode = 'audit';
+        break;
+      case '--dry-run':
+        options.dryRun = true;
+        break;
+      case '--scope': {
+        const val = args[i++];
+        if (val === 'all' || val === 'perm-invalid') {
+          options.scope = val;
+        }
+        break;
       }
-    } else if (arg === '--asin' && i + 1 < args.length) {
-      options.scope = 'single';
-      options.singleAsin = args[++i];
-    } else if (arg === '--concurrency' && i + 1 < args.length) {
-      options.concurrency = Number.parseInt(args[++i] || '3', 10) || 3;
-    } else if (arg === '--delay' && i + 1 < args.length) {
-      options.delayMs = Number.parseInt(args[++i] || '300', 10) || 300;
-    } else if (arg === '--skip-prebuild') {
-      options.skipPrebuild = true;
+      case '--asin':
+        options.scope = 'single';
+        options.singleAsin = args[i++];
+        break;
+      case '--concurrency':
+        options.concurrency = Number.parseInt(args[i++] || '3', 10) || 3;
+        break;
+      case '--delay':
+        options.delayMs = Number.parseInt(args[i++] || '300', 10) || 300;
+        break;
+      case '--skip-prebuild':
+        options.skipPrebuild = true;
+        break;
     }
   }
 
@@ -164,14 +176,14 @@ function checkAmazonUrl(
 
         res.on('end', () => {
           const titleMatch = body.match(/<title>([^<]*)<\/title>/i);
-          const title = titleMatch && titleMatch[1] ? titleMatch[1].trim() : undefined;
+          const title = titleMatch?.[1]?.trim();
 
           // 404判定基準:
           // 1. ステータスコードが404
           // 2. タイトルまたは本文に「ページが見つかりません」「ご指定のページが見つかりませんでした」
           const is404 =
             res.statusCode === 404 ||
-            (title ? title.includes('ページが見つかりません') : false) ||
+            Boolean(title?.includes('ページが見つかりません')) ||
             body.includes('ご指定のページが見つかりませんでした') ||
             body.includes('お探しのページが見つかりませんでした');
 
@@ -254,6 +266,53 @@ async function checkAsinsInBatches(
   return results;
 }
 
+// ファイル削除ヘルパー
+function deleteFileIfExists(filePath: string, dryRun: boolean): boolean {
+  if (!fs.existsSync(filePath)) return false;
+  if (!dryRun) {
+    fs.unlinkSync(filePath);
+  }
+  return true;
+}
+
+// キャッシュファイル保存ヘルパー
+function saveCache(cache: Record<string, any>): void {
+  const sortedKeys = Object.keys(cache).sort((a, b) => a.localeCompare(b));
+  const lines = sortedKeys.map((key) => `  "${key}": ${JSON.stringify(cache[key])}`);
+  const jsonContent = `{\n${lines.join(',\n')}\n}`;
+  fs.writeFileSync(CACHE_PATH, jsonContent, 'utf8');
+}
+
+// 1商品分の棚卸し処理
+function pruneSingleItem(
+  item: CheckResult,
+  dryRun: boolean,
+  cache: Record<string, any>,
+): { articleDeleted: boolean; investDeleted: boolean; cacheDeleted: boolean } {
+  const articlePath = path.join(ARTICLES_DIR, `${item.asin}.md`);
+  const investPath = path.join(INVESTIGATIONS_DIR, `${item.asin}.json`);
+
+  const articleDeleted = deleteFileIfExists(articlePath, dryRun);
+  if (articleDeleted) {
+    console.log(`[Deleted Article] ${item.asin}.md (${item.title || 'No title'})`);
+  }
+
+  const investDeleted = deleteFileIfExists(investPath, dryRun);
+  if (investDeleted) {
+    console.log(`[Deleted Investigation] ${item.asin}.json`);
+  }
+
+  let cacheDeleted = false;
+  if (cache[item.asin]) {
+    if (!dryRun) {
+      delete cache[item.asin];
+    }
+    cacheDeleted = true;
+  }
+
+  return { articleDeleted, investDeleted, cacheDeleted };
+}
+
 // 削除実行
 function executePruning(deadItems: CheckResult[], dryRun: boolean, cache: Record<string, any>): void {
   console.log(`\n=== ${dryRun ? '[DRY RUN] ' : ''}棚卸し（削除）実行 ===`);
@@ -263,42 +322,15 @@ function executePruning(deadItems: CheckResult[], dryRun: boolean, cache: Record
   let deletedCacheEntries = 0;
 
   for (const item of deadItems) {
-    const articlePath = path.join(ARTICLES_DIR, `${item.asin}.md`);
-    const investPath = path.join(INVESTIGATIONS_DIR, `${item.asin}.json`);
-
-    // 1. 記事ファイルの削除
-    if (fs.existsSync(articlePath)) {
-      if (!dryRun) {
-        fs.unlinkSync(articlePath);
-      }
-      deletedArticles++;
-      console.log(`[Deleted Article] ${item.asin}.md (${item.title || 'No title'})`);
-    }
-
-    // 2. 調査データの削除
-    if (fs.existsSync(investPath)) {
-      if (!dryRun) {
-        fs.unlinkSync(investPath);
-      }
-      deletedInvestigations++;
-      console.log(`[Deleted Investigation] ${item.asin}.json`);
-    }
-
-    // 3. キャッシュの削除
-    if (cache[item.asin]) {
-      if (!dryRun) {
-        delete cache[item.asin];
-      }
-      deletedCacheEntries++;
-    }
+    const result = pruneSingleItem(item, dryRun, cache);
+    if (result.articleDeleted) deletedArticles++;
+    if (result.investDeleted) deletedInvestigations++;
+    if (result.cacheDeleted) deletedCacheEntries++;
   }
 
   // キャッシュファイルの保存
   if (!dryRun && deletedCacheEntries > 0) {
-    const sortedKeys = Object.keys(cache).sort((a, b) => a.localeCompare(b));
-    const lines = sortedKeys.map((key) => `  "${key}": ${JSON.stringify(cache[key])}`);
-    const jsonContent = `{\n${lines.join(',\n')}\n}`;
-    fs.writeFileSync(CACHE_PATH, jsonContent, 'utf8');
+    saveCache(cache);
     console.log(`[Updated Cache] Removed ${deletedCacheEntries} dead entries from paapi-product-cache.json`);
   }
 
@@ -308,24 +340,19 @@ function executePruning(deadItems: CheckResult[], dryRun: boolean, cache: Record
   console.log(`キャッシュエントリ: ${deletedCacheEntries} 件`);
 }
 
-async function main() {
-  const options = parseArgs();
-  console.log('=== Amazon デッド商品 調査・棚卸しツール ===');
-  console.log(`Mode: ${options.mode.toUpperCase()}${options.dryRun ? ' (DRY RUN)' : ''}`);
-  console.log(`Scope: ${options.scope}`);
-
-  const cache = loadCache();
-  const targetAsins = collectTargetAsins(options, cache);
-
-  console.log(`対象件数: ${targetAsins.length} 件`);
-  if (targetAsins.length === 0) {
-    console.log('対象となる商品が見つかりませんでした。');
-    return;
+// サイトインデックス再構築
+function rebuildSiteIndex(): void {
+  console.log('\n=== サイトインデックス再構築 (prebuild:hugo) ===');
+  try {
+    execSync('pnpm run prebuild:hugo', { cwd: ROOT_DIR, stdio: 'inherit' });
+    console.log('prebuild:hugo 完了');
+  } catch (err) {
+    console.error('prebuild:hugo の実行に失敗しました:', err);
   }
+}
 
-  console.log('\nAmazon ページ疎通確認中...');
-  const results = await checkAsinsInBatches(targetAsins, options.concurrency, options.delayMs, cache);
-
+// 調査結果レポート表示
+function printAuditResults(results: CheckResult[]): { deadItems: CheckResult[] } {
   const deadItems = results.filter((r) => r.isDead);
   const aliveItems = results.filter((r) => !r.isDead && r.statusCode === 200);
   const errorItems = results.filter((r) => !r.isDead && r.statusCode !== 200);
@@ -345,25 +372,44 @@ async function main() {
     }
   }
 
-  // Prune モードの場合
+  return { deadItems };
+}
+
+// Pruneモードの処理
+function handlePruning(deadItems: CheckResult[], options: CliOptions, cache: Record<string, any>): void {
+  if (deadItems.length === 0) {
+    console.log('\n削除対象のデッド商品はありませんでした。');
+    return;
+  }
+
+  executePruning(deadItems, options.dryRun, cache);
+
+  if (!options.dryRun && !options.skipPrebuild) {
+    rebuildSiteIndex();
+  }
+}
+
+async function main() {
+  const options = parseArgs();
+  console.log('=== Amazon デッド商品 調査・棚卸しツール ===');
+  console.log(`Mode: ${options.mode.toUpperCase()}${options.dryRun ? ' (DRY RUN)' : ''}`);
+  console.log(`Scope: ${options.scope}`);
+
+  const cache = loadCache();
+  const targetAsins = collectTargetAsins(options, cache);
+
+  console.log(`対象件数: ${targetAsins.length} 件`);
+  if (targetAsins.length === 0) {
+    console.log('対象となる商品が見つかりませんでした。');
+    return;
+  }
+
+  console.log('\nAmazon ページ疎通確認中...');
+  const results = await checkAsinsInBatches(targetAsins, options.concurrency, options.delayMs, cache);
+  const { deadItems } = printAuditResults(results);
+
   if (options.mode === 'prune') {
-    if (deadItems.length === 0) {
-      console.log('\n削除対象のデッド商品はありませんでした。');
-      return;
-    }
-
-    executePruning(deadItems, options.dryRun, cache);
-
-    // prebuild:hugo の実行（サイトインデックス更新）
-    if (!options.dryRun && !options.skipPrebuild) {
-      console.log('\n=== サイトインデックス再構築 (prebuild:hugo) ===');
-      try {
-        execSync('pnpm run prebuild:hugo', { cwd: ROOT_DIR, stdio: 'inherit' });
-        console.log('prebuild:hugo 完了');
-      } catch (err) {
-        console.error('prebuild:hugo の実行に失敗しました:', err);
-      }
-    }
+    handlePruning(deadItems, options, cache);
   } else {
     console.log('\n※ 実際に削除を実行する場合は `--prune` オプションを付与して実行してください。');
     console.log('  例: pnpm ts-node scripts/prune-dead-products.ts --prune');
