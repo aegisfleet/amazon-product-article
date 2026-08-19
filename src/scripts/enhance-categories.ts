@@ -110,7 +110,7 @@ function syncBrandData(): void {
   console.log(`Successfully synced ${Object.keys(brandData).length} brand(s).`);
 }
 
-function main(): void {
+export function enhanceCategories(): void {
   try {
     console.log('Starting category enhancement...');
     const manager = new CategoryManager(categoryGroupsPath);
@@ -134,8 +134,10 @@ function main(): void {
     syncBrandData();
   } catch (e) {
     console.error('Error during category enhancement:', e);
-    process.exit(1);
+    throw e;
   }
 }
 
-main();
+if (require.main === module) {
+  enhanceCategories();
+}
