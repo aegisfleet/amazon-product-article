@@ -1,0 +1,137 @@
+{
+  "analysis": {
+    "productName": "YIEEC コードレス掃除機 TD02",
+    "parentAsin": "B0H8SR65W6",
+    "productDescription": "45000paの超強力吸引と最大50分の連続稼働を謳うコードレス掃除機です。",
+    "productUsage": [
+      "フローリングやカーペットの掃除",
+      "車内の清掃",
+      "ソファーなどの家具の清掃"
+    ],
+    "positivePoints": [
+      "45000paの強力な吸引力を実現",
+      "最大50分の連続稼働時間",
+      "左右360度、上下90度回転するヘッドによる操作性の高さ",
+      "5999円という低価格"
+    ],
+    "negativePoints": [
+      "ブランドの知名度が低く、長期間の信頼性・耐久性が未知数",
+      "45000paという公称値が同価格帯の相場と比べて非現実的であり実効性能に疑問がある"
+    ],
+    "useCases": [
+      "日常的なリビングの掃除",
+      "車内の細かいゴミの吸引",
+      "階段などの持ち運びが必要な場所の掃除"
+    ],
+    "userStories": [],
+    "userImpression": "価格の割に吸引力があり、使い勝手が良いという印象を持つ反面、公称スペックの信憑性や長期的な耐久性に不安を覚える声も想定されます。",
+    "sources": [
+      {
+        "id": "src-1",
+        "name": "Amazon商品ページ",
+        "url": "https://www.amazon.co.jp/dp/B0GZV78MBM",
+        "tier": "medium",
+        "evidenceType": "primary",
+        "publishedAt": "2026-08-19",
+        "author": "YIEEC",
+        "conflictOfInterest": "possible",
+        "notes": "製品仕様と特徴の確認"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "45000pa超強力吸引",
+        "category": "comparativeAdvantage",
+        "confidence": "low",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "crossChecked": false,
+        "notes": "メーカー公称値だが、同価格帯（5999円）としては異例に高い数値であり実測値か疑わしい"
+      }
+    ],
+    "lastInvestigated": "2026-08-19",
+    "competitiveAnalysis": [
+      {
+        "name": "アイリスオーヤマ SCD-161P-W",
+        "asin": "B07GWY3HYD",
+        "priceComparison": "本製品(5999円)の約2倍。大手メーカーの安心感と充電スタンドなどの付属品が充実しているが、価格差が大きい。",
+        "featureComparison": [
+          "共通点：軽量コンパクトで2in1仕様",
+          "相違点：アイリスオーヤマは国内メーカーの信頼性と充電スタンド付き、本製品は公称スペック上の吸引力が高い"
+        ],
+        "differentiators": [
+          "YIEEC TD02の利点：とにかく初期費用を抑えたい、使い捨てる感覚でも安いサブ機が欲しい人",
+          "アイリスオーヤマ SCD-161P-Wの利点：保証やサポート体制を重視し、長く安心して使えるメイン機を求める人"
+        ]
+      },
+      {
+        "name": "Leacco コード式掃除機 S10",
+        "asin": "B0CB8LC824",
+        "priceComparison": "本製品よりもさらに安価。ただしコードレスではなくコード式。",
+        "featureComparison": [
+          "共通点：低価格帯で高い吸引力(45000Pa)を謳う点",
+          "相違点：本製品はコードレスで機動力重視、Leaccoはコード式でバッテリー切れの心配がない"
+        ],
+        "differentiators": [
+          "YIEEC TD02の利点：階段や車内など、電源コードが届かない場所を気軽に掃除したい人",
+          "Leacco S10の利点：バッテリーの寿命や稼働時間を気にせず、一部屋をじっくり掃除したい人"
+        ]
+      },
+      {
+        "name": "Dyson V8 Slim Fluffy Extra",
+        "asin": "B0DZ2NNJVC",
+        "priceComparison": "本製品の約7倍の価格。比較対象としては高価格帯だが、業界標準としての基準となる。",
+        "featureComparison": [
+          "共通点：コードレススティッククリーナー",
+          "相違点：ダイソンは圧倒的なブランド力と実績ある吸引力・耐久性、本製品は極端な低価格"
+        ],
+        "differentiators": [
+          "YIEEC TD02の利点：ダイソンのような高額投資は避け、数千円で済む手軽な掃除機が欲しい人",
+          "Dyson V8 Slim Fluffy Extraの利点：確実な吸引力と耐久性を求め、長期間メイン機として運用したい人"
+        ]
+      },
+      {
+        "name": "HOIBAI コードレス掃除機",
+        "asin": "B0GCJSW5ZB",
+        "priceComparison": "同価格帯の直接競合。",
+        "featureComparison": [
+          "共通点：5000円台の低価格、無名ブランドによる高スペック表記",
+          "相違点：本製品は45000Paを謳うのに対し、HOIBAIは28000Pa。デザインやアタッチメントに違いがある"
+        ],
+        "differentiators": [
+          "YIEEC TD02の利点：少しでも高い公称スペックを試し、最大稼働時間を重視する人",
+          "HOIBAI コードレス掃除機の利点：0.6kgという超軽量性や、パープルなどの個性的なカラーを好む人"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "コストを極力抑えつつ、ある程度の吸引力を求める単身者や、サブ機を探している家庭"
+      ],
+      "pros": [
+        "5999円で手に入る手軽さで、サブ機としても導入しやすい価格設定"
+      ],
+      "cons": [
+        "長期間の耐久性に不安があるため、メイン機として数年使う前提の人には不向き"
+      ],
+      "score": 60,
+      "scoreRationale": "[基本点: 70]\n[加点: +5] (5999円という圧倒的な低価格)\n[減点: -15] (45000paという公称値が価格に対して非現実的であり過大広告の疑いが強い)\n[合計: 60]"
+    },
+    "technicalSpecs": {
+      "suction": "45000pa (公称値)",
+      "battery": {
+        "playbackTime": "最大50分"
+      },
+      "color": "ブルー",
+      "model": "TD02",
+      "weight": "軽量 (具体的な数値の記載なし)",
+      "other": [
+        "2段階吸引力調整",
+        "HEPAフィルター搭載",
+        "多重濾過",
+        "ブラシレスモーター搭載"
+      ]
+    }
+  }
+}
