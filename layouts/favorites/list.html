@@ -4,12 +4,15 @@
 
     <div class="article-header">
         <h1><span class="material-symbols-outlined icon-fav-header" aria-hidden="true">favorite</span> お気に入りリスト</h1>
-        <p class="article-meta">お気に入り登録した商品を一覧で確認できる。データはこのブラウザにのみ保存されている。</p>
+        <p class="article-meta">お気に入り登録した商品を一覧で確認できる。登録時からの価格変動も自動でチェックされる。</p>
     </div>
 
     {{- /* 操作バー */ -}}
     <div class="fav-page-toolbar" id="fav-toolbar" style="display:none;">
-        <span id="fav-count-label" class="fav-count-label"></span>
+        <div class="fav-toolbar-left">
+            <span id="fav-count-label" class="fav-count-label"></span>
+            <span id="fav-discount-badge" class="fav-discount-summary-badge" style="display:none;"></span>
+        </div>
         <div class="fav-toolbar-actions">
             <div style="display: flex; align-items: center; gap: var(--spacing-sm);">
                 <label for="fav-sort"
@@ -18,9 +21,11 @@
                     style="padding: 0.4rem 2rem 0.4rem 0.75rem; border: 1px solid var(--color-border); border-radius: 8px; background-color: var(--color-bg-card); color: var(--color-text-primary); font-size: 0.875rem; cursor: pointer; font-family: inherit;">
                     <option value="saved-desc">登録が新しい順</option>
                     <option value="saved-asc">登録が古い順</option>
+                    <option value="discount-desc">値下げ額が大きい順</option>
+                    <option value="discount-rate-desc">値下げ率が高い順</option>
                     <option value="score-desc">評価の高い順</option>
-                    <option value="price-asc">価格の安い順</option>
-                    <option value="price-desc">価格の高い順</option>
+                    <option value="price-asc">現在の価格が安い順</option>
+                    <option value="price-desc">現在の価格が高い順</option>
                 </select>
             </div>
             <button type="button" class="fav-clear-btn" data-favorites-clear="1">
@@ -67,10 +72,35 @@
         border-radius: 12px;
     }
 
+    .fav-toolbar-left {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: var(--spacing-sm);
+    }
+
     .fav-count-label {
         font-size: 0.9rem;
         color: var(--color-text-secondary);
         font-weight: 600;
+    }
+
+    .fav-discount-summary-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.25rem;
+        background-color: #dcfce7;
+        color: #15803d;
+        border: 1px solid #86efac;
+        font-size: 0.8125rem;
+        font-weight: 700;
+        padding: 0.25rem 0.625rem;
+        border-radius: 9999px;
+    }
+
+    .fav-discount-summary-badge .material-symbols-outlined {
+        font-size: 1rem;
+        line-height: 1;
     }
 
     .fav-toolbar-actions {
@@ -143,6 +173,75 @@
         text-decoration: none;
     }
 
+    /* 価格・差額ブロック */
+    .fav-card .meta-main-row {
+        align-items: flex-start;
+    }
+
+    .fav-card .meta-price-block {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.15rem;
+        flex: 1;
+        min-width: 0;
+    }
+
+    .fav-card .meta-score-block {
+        margin-top: 0.125rem;
+    }
+
+    .meta-price-main {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 0.375rem;
+        width: 100%;
+        justify-content: flex-start;
+    }
+
+    .m3-badge-price-diff {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.15rem;
+        padding: 0.125rem 0.4rem;
+        border-radius: var(--radius-sm, 6px);
+        font-size: 0.75rem;
+        font-weight: 700;
+        line-height: 1.2;
+    }
+
+    .m3-badge-price-diff .icon-diff {
+        font-size: 0.875rem;
+        line-height: 1;
+    }
+
+    .m3-badge-price-down {
+        background-color: #dcfce7;
+        color: #15803d;
+        border: 1px solid #bbf7d0;
+    }
+
+    .m3-badge-price-up {
+        background-color: var(--md-sys-color-surface-container-low, #f1f5f9);
+        color: var(--color-text-secondary, #64748b);
+        border: 1px solid var(--color-border, #e2e8f0);
+    }
+
+    .card-saved-price {
+        font-size: 0.75rem;
+        color: var(--color-text-secondary, #64748b);
+        line-height: 1.2;
+        margin: 0;
+        padding: 0;
+        text-align: left;
+    }
+
+    .card-saved-price-del {
+        text-decoration: line-through;
+        opacity: 0.85;
+    }
+
     /* お気に入りカードフッター */
     .fav-card-footer {
         display: flex;
@@ -193,6 +292,24 @@
     }
 
     /* ダークモード対応 */
+    [data-theme="dark"] .m3-badge-price-down {
+        background-color: rgba(22, 101, 52, 0.35);
+        color: #86efac;
+        border-color: rgba(74, 222, 128, 0.4);
+    }
+
+    [data-theme="dark"] .m3-badge-price-up {
+        background-color: #1e293b;
+        color: #94a3b8;
+        border-color: #334155;
+    }
+
+    [data-theme="dark"] .fav-discount-summary-badge {
+        background-color: rgba(22, 101, 52, 0.35);
+        color: #86efac;
+        border-color: rgba(74, 222, 128, 0.4);
+    }
+
     [data-theme="dark"] .btn-fav-remove {
         background-color: var(--md-sys-color-surface-container-low, #1e293b);
         color: var(--md-sys-color-on-surface-variant, #94a3b8);
@@ -222,6 +339,10 @@
 <script>
     (function () {
         const STORAGE_KEY = 'apa-favorites-v1';
+        const INDEX_URL = '{{ "index.json" | relURL }}';
+
+        let latestIndexMap = null;
+        let isIndexLoading = false;
 
         function loadFavorites() {
             try {
@@ -242,14 +363,112 @@
             return m ? Number(m[0]) : 0;
         }
 
+        function fetchLatestIndex() {
+            if (latestIndexMap || isIndexLoading) return Promise.resolve(latestIndexMap);
+            isIndexLoading = true;
+            return fetch(INDEX_URL)
+                .then(function (res) {
+                    if (!res.ok) throw new Error('Network error');
+                    return res.json();
+                })
+                .then(function (data) {
+                    const map = new Map();
+                    if (Array.isArray(data)) {
+                        data.forEach(function (p) {
+                            if (p && p.asin) {
+                                map.set(p.asin, p);
+                            }
+                        });
+                    }
+                    latestIndexMap = map;
+                    isIndexLoading = false;
+                    return map;
+                })
+                .catch(function () {
+                    isIndexLoading = false;
+                    return null;
+                });
+        }
+
+        function getItemViewData(item) {
+            const savedPriceRaw = item.savedPriceRaw || parsePrice(item.savedPrice || item.price);
+            const savedPriceStr = item.savedPrice || item.price || '';
+            const product = latestIndexMap ? latestIndexMap.get(item.asin) : null;
+
+            let currentPriceRaw = savedPriceRaw;
+            let currentPriceStr = savedPriceStr;
+            let hasLatest = false;
+            let score = Number(item.score) || 0;
+            let title = item.title || '';
+            let url = item.url || '';
+            let image = item.image || '';
+
+            if (product) {
+                hasLatest = true;
+                currentPriceRaw = (product.price_value !== undefined && product.price_value > 0)
+                    ? product.price_value
+                    : parsePrice(product.price);
+                currentPriceStr = product.price || (currentPriceRaw > 0 ? '¥' + currentPriceRaw.toLocaleString() : '');
+                if (product.score) score = Number(product.score) || 0;
+                if (product.title) title = product.title;
+                if (product.permalink) url = product.permalink;
+                if (product.image) image = product.image;
+            }
+
+            const diff = (hasLatest && savedPriceRaw > 0 && currentPriceRaw > 0)
+                ? (currentPriceRaw - savedPriceRaw)
+                : 0;
+            const diffRate = (diff < 0 && savedPriceRaw > 0)
+                ? Math.round((Math.abs(diff) / savedPriceRaw) * 100)
+                : 0;
+
+            return {
+                rawItem: item,
+                asin: item.asin,
+                title: title,
+                url: url,
+                affiliateUrl: item.affiliateUrl,
+                image: image,
+                category: item.category,
+                savedAt: item.savedAt,
+                savedPriceStr: savedPriceStr,
+                savedPriceRaw: savedPriceRaw,
+                currentPriceStr: currentPriceStr,
+                currentPriceRaw: currentPriceRaw,
+                score: score,
+                hasLatest: hasLatest,
+                diff: diff,
+                diffRate: diffRate,
+                isDiscounted: diff < 0,
+                isPriceUp: diff > 0
+            };
+        }
+
         function sortList(list, mode) {
             const copy = list.slice();
             switch (mode) {
-                case 'saved-asc': return copy.sort(function (a, b) { return (a.savedAt || 0) - (b.savedAt || 0); });
-                case 'score-desc': return copy.sort(function (a, b) { return (b.score || 0) - (a.score || 0); });
-                case 'price-asc': return copy.sort(function (a, b) { return parsePrice(a.price) - parsePrice(b.price); });
-                case 'price-desc': return copy.sort(function (a, b) { return parsePrice(b.price) - parsePrice(a.price); });
-                default: return copy.sort(function (a, b) { return (b.savedAt || 0) - (a.savedAt || 0); }); // saved-desc
+                case 'saved-asc':
+                    return copy.sort(function (a, b) { return (a.savedAt || 0) - (b.savedAt || 0); });
+                case 'discount-desc':
+                    return copy.sort(function (a, b) {
+                        const diffA = a.diff < 0 ? Math.abs(a.diff) : -1;
+                        const diffB = b.diff < 0 ? Math.abs(b.diff) : -1;
+                        if (diffB !== diffA) return diffB - diffA;
+                        return (b.savedAt || 0) - (a.savedAt || 0);
+                    });
+                case 'discount-rate-desc':
+                    return copy.sort(function (a, b) {
+                        if ((b.diffRate || 0) !== (a.diffRate || 0)) return (b.diffRate || 0) - (a.diffRate || 0);
+                        return (b.savedAt || 0) - (a.savedAt || 0);
+                    });
+                case 'score-desc':
+                    return copy.sort(function (a, b) { return (b.score || 0) - (a.score || 0); });
+                case 'price-asc':
+                    return copy.sort(function (a, b) { return a.currentPriceRaw - b.currentPriceRaw; });
+                case 'price-desc':
+                    return copy.sort(function (a, b) { return b.currentPriceRaw - a.currentPriceRaw; });
+                default:
+                    return copy.sort(function (a, b) { return (b.savedAt || 0) - (a.savedAt || 0); }); // saved-desc
             }
         }
 
@@ -259,17 +478,46 @@
             return 'score-fair';
         }
 
+        function renderPriceBlock(item) {
+            if (!item.currentPriceStr && !item.savedPriceStr) return '';
+
+            const priceText = item.currentPriceStr || item.savedPriceStr;
+            const priceMainHTML = `<span class="card-price"><span class="material-symbols-outlined icon-price" aria-hidden="true">payments</span> ${escapeHTML(priceText)}</span>`;
+
+            let badgeHTML = '';
+            let subHTML = '';
+
+            if (item.hasLatest && item.savedPriceRaw > 0 && item.currentPriceRaw > 0) {
+                if (item.diff < 0) {
+                    const diffAbs = Math.abs(item.diff);
+                    badgeHTML = `<span class="m3-badge m3-badge-price-diff m3-badge-price-down" title="登録時より ¥${diffAbs.toLocaleString()} 値下げ"><span class="material-symbols-outlined icon-diff" aria-hidden="true">trending_down</span> -¥${diffAbs.toLocaleString()}${item.diffRate > 0 ? ` (${item.diffRate}% OFF)` : ''}</span>`;
+                    subHTML = `<div class="card-saved-price">登録時: <span class="card-saved-price-del">${escapeHTML(item.savedPriceStr)}</span></div>`;
+                } else if (item.diff > 0) {
+                    badgeHTML = `<span class="m3-badge m3-badge-price-diff m3-badge-price-up" title="登録時より ¥${item.diff.toLocaleString()} 値上げ"><span class="material-symbols-outlined icon-diff" aria-hidden="true">trending_up</span> +¥${item.diff.toLocaleString()}</span>`;
+                    subHTML = `<div class="card-saved-price">登録時: ${escapeHTML(item.savedPriceStr)}</div>`;
+                }
+                // 同額（diff === 0）時は subHTML を空にして無駄な余白を完全に排除
+            } else if (item.savedPriceStr) {
+                subHTML = `<div class="card-saved-price">(登録時価格)</div>`;
+            }
+
+            return `
+                <div class="meta-price-block">
+                    <div class="meta-price-main">
+                        ${priceMainHTML}
+                        ${badgeHTML}
+                    </div>
+                    ${subHTML}
+                </div>
+            `;
+        }
+
         function renderCard(item) {
             const img = item.image
                 ? `<img src="${escapeHTML(item.image)}" alt="${escapeHTML(item.title)}" loading="lazy" decoding="async">`
                 : `<div class="card-image-noimage" aria-hidden="true">画像なし</div>`;
 
-            const priceHTML = item.price
-                ? `<span class="card-price"><span class="material-symbols-outlined icon-price" aria-hidden="true">payments</span> ${escapeHTML(item.price)}</span>`
-                : '';
-            const priceBlockHTML = priceHTML
-                ? `<div class="meta-price-block">${priceHTML}</div>`
-                : '';
+            const priceBlockHTML = renderPriceBlock(item);
             const scoreHTML = item.score
                 ? `<div class="meta-score-block"><span class="card-score m3-badge m3-badge-score ${scoreClass(item.score)}"><span class="material-symbols-outlined icon-score" aria-hidden="true">trophy</span> ${item.score}点</span></div>`
                 : '';
@@ -341,21 +589,36 @@
             const empty = document.getElementById('fav-empty');
             const toolbar = document.getElementById('fav-toolbar');
             const countLabel = document.getElementById('fav-count-label');
+            const discountBadge = document.getElementById('fav-discount-badge');
             const sortSel = document.getElementById('fav-sort');
             if (!grid || !empty) return;
 
-            const list = sortList(loadFavorites(), sortSel ? sortSel.value : 'saved-desc');
-
-            if (list.length === 0) {
+            const rawFavorites = loadFavorites();
+            if (rawFavorites.length === 0) {
                 grid.innerHTML = '';
                 empty.style.display = 'block';
                 if (toolbar) toolbar.style.display = 'none';
-            } else {
-                empty.style.display = 'none';
-                if (toolbar) toolbar.style.display = 'flex';
-                if (countLabel) countLabel.textContent = `${list.length}件のお気に入り`;
-                grid.innerHTML = list.map(renderCard).join('');
+                return;
             }
+
+            empty.style.display = 'none';
+            if (toolbar) toolbar.style.display = 'flex';
+
+            const viewItems = rawFavorites.map(getItemViewData);
+            const discountCount = viewItems.filter(function (i) { return i.isDiscounted; }).length;
+
+            if (countLabel) countLabel.textContent = `${viewItems.length}件のお気に入り`;
+            if (discountBadge) {
+                if (discountCount > 0) {
+                    discountBadge.innerHTML = `<span class="material-symbols-outlined" aria-hidden="true">trending_down</span> ${discountCount}件 値下げ中！`;
+                    discountBadge.style.display = 'inline-flex';
+                } else {
+                    discountBadge.style.display = 'none';
+                }
+            }
+
+            const sortedList = sortList(viewItems, sortSel ? sortSel.value : 'saved-desc');
+            grid.innerHTML = sortedList.map(renderCard).join('');
         }
 
         // 個別削除ボタン
@@ -379,7 +642,13 @@
         // クリア後に再レンダリング
         globalThis.FavoritesPage = { render: render };
 
+        // 1. 即時レンダリング（ローカルストレージデータ）
         render();
+
+        // 2. index.json を非同期取得して最新価格・差額を反映
+        fetchLatestIndex().then(function () {
+            render();
+        });
     })();
 </script>
 {{- end -}}
