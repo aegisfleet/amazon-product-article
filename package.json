@@ -27,6 +27,8 @@
     "merge:pr": "ts-node src/scripts/pr-merge-cli.ts",
     "organize:categories": "ts-node src/scripts/organize-categories-cli.ts",
     "sort:categories": "ts-node src/scripts/sort-categories.ts",
+    "audit:dead": "ts-node scripts/prune-dead-products.ts --audit",
+    "prune:dead": "ts-node scripts/prune-dead-products.ts --prune",
     "biome:check": "biome check .",
     "biome:fix": "biome check --write ."
   },
