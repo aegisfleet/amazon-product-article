@@ -390,57 +390,51 @@
                 });
         }
 
+        function extractLatestPrice(product, fallbackRaw, fallbackStr) {
+            if (!product) {
+                return { priceRaw: fallbackRaw, priceStr: fallbackStr, hasLatest: false };
+            }
+            const priceRaw = (product.price_value > 0) ? product.price_value : parsePrice(product.price);
+            const priceStr = product.price || (priceRaw > 0 ? '¥' + priceRaw.toLocaleString() : fallbackStr);
+            return { priceRaw: priceRaw, priceStr: priceStr, hasLatest: true };
+        }
+
+        function calculateDiff(savedPrice, currentPrice, hasLatest) {
+            if (!hasLatest || savedPrice <= 0 || currentPrice <= 0) {
+                return { diff: 0, diffRate: 0 };
+            }
+            const diff = currentPrice - savedPrice;
+            const diffRate = (diff < 0) ? Math.round((Math.abs(diff) / savedPrice) * 100) : 0;
+            return { diff: diff, diffRate: diffRate };
+        }
+
         function getItemViewData(item) {
-            const savedPriceRaw = item.savedPriceRaw || parsePrice(item.savedPrice || item.price);
             const savedPriceStr = item.savedPrice || item.price || '';
+            const savedPriceRaw = item.savedPriceRaw || parsePrice(savedPriceStr);
             const product = latestIndexMap ? latestIndexMap.get(item.asin) : null;
 
-            let currentPriceRaw = savedPriceRaw;
-            let currentPriceStr = savedPriceStr;
-            let hasLatest = false;
-            let score = Number(item.score) || 0;
-            let title = item.title || '';
-            let url = item.url || '';
-            let image = item.image || '';
-
-            if (product) {
-                hasLatest = true;
-                currentPriceRaw = (product.price_value !== undefined && product.price_value > 0)
-                    ? product.price_value
-                    : parsePrice(product.price);
-                currentPriceStr = product.price || (currentPriceRaw > 0 ? '¥' + currentPriceRaw.toLocaleString() : '');
-                if (product.score) score = Number(product.score) || 0;
-                if (product.title) title = product.title;
-                if (product.permalink) url = product.permalink;
-                if (product.image) image = product.image;
-            }
-
-            const diff = (hasLatest && savedPriceRaw > 0 && currentPriceRaw > 0)
-                ? (currentPriceRaw - savedPriceRaw)
-                : 0;
-            const diffRate = (diff < 0 && savedPriceRaw > 0)
-                ? Math.round((Math.abs(diff) / savedPriceRaw) * 100)
-                : 0;
+            const latestPrice = extractLatestPrice(product, savedPriceRaw, savedPriceStr);
+            const diffInfo = calculateDiff(savedPriceRaw, latestPrice.priceRaw, latestPrice.hasLatest);
 
             return {
                 rawItem: item,
                 asin: item.asin,
-                title: title,
-                url: url,
+                title: (product && product.title) || item.title || '',
+                url: (product && product.permalink) || item.url || '',
                 affiliateUrl: item.affiliateUrl,
-                image: image,
+                image: (product && product.image) || item.image || '',
                 category: item.category,
                 savedAt: item.savedAt,
                 savedPriceStr: savedPriceStr,
                 savedPriceRaw: savedPriceRaw,
-                currentPriceStr: currentPriceStr,
-                currentPriceRaw: currentPriceRaw,
-                score: score,
-                hasLatest: hasLatest,
-                diff: diff,
-                diffRate: diffRate,
-                isDiscounted: diff < 0,
-                isPriceUp: diff > 0
+                currentPriceStr: latestPrice.priceStr,
+                currentPriceRaw: latestPrice.priceRaw,
+                score: (product && product.score) ? Number(product.score) : (Number(item.score) || 0),
+                hasLatest: latestPrice.hasLatest,
+                diff: diffInfo.diff,
+                diffRate: diffInfo.diffRate,
+                isDiscounted: diffInfo.diff < 0,
+                isPriceUp: diffInfo.diff > 0
             };
         }
 
@@ -490,7 +484,8 @@
             if (item.hasLatest && item.savedPriceRaw > 0 && item.currentPriceRaw > 0) {
                 if (item.diff < 0) {
                     const diffAbs = Math.abs(item.diff);
-                    badgeHTML = `<span class="m3-badge m3-badge-price-diff m3-badge-price-down" title="登録時より ¥${diffAbs.toLocaleString()} 値下げ"><span class="material-symbols-outlined icon-diff" aria-hidden="true">trending_down</span> -¥${diffAbs.toLocaleString()}${item.diffRate > 0 ? ` (${item.diffRate}% OFF)` : ''}</span>`;
+                    const rateText = item.diffRate > 0 ? ` (${item.diffRate}% OFF)` : '';
+                    badgeHTML = `<span class="m3-badge m3-badge-price-diff m3-badge-price-down" title="登録時より ¥${diffAbs.toLocaleString()} 値下げ"><span class="material-symbols-outlined icon-diff" aria-hidden="true">trending_down</span> -¥${diffAbs.toLocaleString()}${rateText}</span>`;
                     subHTML = `<div class="card-saved-price">登録時: <span class="card-saved-price-del">${escapeHTML(item.savedPriceStr)}</span></div>`;
                 } else if (item.diff > 0) {
                     badgeHTML = `<span class="m3-badge m3-badge-price-diff m3-badge-price-up" title="登録時より ¥${item.diff.toLocaleString()} 値上げ"><span class="material-symbols-outlined icon-diff" aria-hidden="true">trending_up</span> +¥${item.diff.toLocaleString()}</span>`;
