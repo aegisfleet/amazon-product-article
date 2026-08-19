@@ -57,18 +57,27 @@
         }
     }
 
+    function parsePriceRaw(str) {
+        if (!str) return 0;
+        const m = String(str).replace(/,/g, '').match(/\d+/);
+        return m ? Number(m[0]) : 0;
+    }
+
     function addFavorite(data) {
         const asin = (data.asin || '').trim();
         if (!asin) return false;
         const list = loadFavorites();
         if (list.some(function (item) { return item.asin === asin; })) return false; // 重複防止
+        const priceStr = (data.price || '').trim();
         const newItem = {
             asin: asin,
             title: (data.title || '').trim(),
             url: (data.url || '').trim(),
             affiliateUrl: (data.affiliateUrl || '').trim(),
             image: (data.image || '').trim(),
-            price: (data.price || '').trim(),
+            price: priceStr,
+            savedPrice: priceStr,
+            savedPriceRaw: parsePriceRaw(priceStr),
             score: Number(data.score) || 0,
             category: (data.category || '').trim(),
             savedAt: Date.now()
