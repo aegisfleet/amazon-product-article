@@ -272,19 +272,19 @@ describe('Error Handling Property Tests', () => {
       // Simplified timeout test to avoid Jest timeout issues
       const client = new CreatorsAPIClient();
 
-      // Reduce maxRetries for testing to avoid long wait times
-      // (client as any).rateLimitConfig.maxRetries = 2;
+      // Reduce retries and sleep for fast testing
+      (client as any).rateLimitConfig = { maxRetries: 1, requestsPerSecond: 1000 };
+      (client as any).sleep = () => Promise.resolve();
 
       // Mock the HTTP client to simulate timeout
       const originalHttpClient = (client as any).httpClient;
       (client as any).httpClient = {
-        post: () =>
-          new Promise((_, reject) => {
-            setTimeout(() => reject(new Error('Request timeout')), 100);
-          }),
+        post: () => Promise.reject(new Error('Request timeout')),
       };
 
       client.authenticate('test-app-id', 'test-credential-id', 'test-credential-secret', 'test-tag');
+      (client as any).accessToken = 'mock-access-token';
+      (client as any).tokenExpiresAt = Date.now() + 3600000;
 
       const startTime = Date.now();
 

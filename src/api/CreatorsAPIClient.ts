@@ -660,7 +660,7 @@ export class CreatorsAPIClient {
       isAmazonHaul: listing?.merchantInfo?.name === 'Haul Global' || listing?.merchantInfo?.id === 'A1EJGP084HULR',
       brand: item.itemInfo?.byLineInfo?.brand?.displayValue || item.itemInfo?.manufactureInfo?.brand?.displayValue,
       loyaltyPoints: listing?.loyaltyPoints?.points ?? undefined,
-      dealBadge: (() => {
+      dealBadge: ((): string | undefined => {
         let badge = listing?.dealDetails?.badge;
         const accessType = listing?.dealDetails?.accessType;
         if (accessType === 'PRIME_EXCLUSIVE' || accessType === 'PRIME_EARLY_ACCESS') {
