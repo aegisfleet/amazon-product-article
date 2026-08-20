@@ -17,9 +17,7 @@ const SPEC_MATCHERS: SpecMatcher[] = [
   {
     pattern: /^(?:OS|オペレーティングシステム)\s*[:：]\s*(.+)$/i,
     apply: (val, normalized): void => {
-      if (!normalized.os) {
-        normalized.os = val;
-      }
+      normalized.os ??= val;
     },
   },
   {
@@ -33,41 +31,31 @@ const SPEC_MATCHERS: SpecMatcher[] = [
   {
     pattern: /^(?:ROM|ストレージ)\s*[:：]\s*(.+)$/i,
     apply: (val, normalized): void => {
-      if (!normalized.storage) {
-        normalized.storage = val;
-      }
+      normalized.storage ??= val;
     },
   },
   {
     pattern: /^(?:ディスプレイ|画面|液晶|モニター)\s*[:：]\s*(.+)$/i,
     apply: (val, normalized): void => {
-      if (!normalized.display) {
-        normalized.display = parseDisplaySpec(val);
-      }
+      normalized.display ??= parseDisplaySpec(val);
     },
   },
   {
     pattern: /^(?:バッテリー|電池)\s*[:：]\s*(.+)$/i,
     apply: (val, normalized): void => {
-      if (!normalized.battery) {
-        normalized.battery = parseBatterySpec(val);
-      }
+      normalized.battery ??= parseBatterySpec(val);
     },
   },
   {
     pattern: /^(?:カラー|色)\s*[:：]\s*(.+)$/i,
     apply: (val, normalized): void => {
-      if (!normalized.color) {
-        normalized.color = val;
-      }
+      normalized.color ??= val;
     },
   },
   {
     pattern: /^(?:重量|重さ)\s*[:：]\s*(.+)$/i,
     apply: (val, normalized): void => {
-      if (!normalized.weight) {
-        normalized.weight = val;
-      }
+      normalized.weight ??= val;
     },
   },
 ];

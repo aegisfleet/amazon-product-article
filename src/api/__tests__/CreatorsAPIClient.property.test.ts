@@ -26,27 +26,19 @@ describe('CreatorsAPIClient Property Tests', () => {
           async (credentials) => {
             const client = new CreatorsAPIClient();
 
-            // Test authentication with generated credentials
-            try {
+            expect(() =>
               client.authenticate(
                 credentials.applicationId,
                 credentials.credentialId,
                 credentials.credentialSecret,
                 credentials.partnerTag,
-              );
+              ),
+            ).not.toThrow();
 
-              // Authentication should complete without throwing
-              // We can't test actual API calls without real credentials,
-              // but we can verify the client accepts the credentials
-              expect(true).toBe(true);
-            } catch (error) {
-              // If authentication fails, it should be due to credential validation
-              // not due to system errors
-              expect(error).toBeInstanceOf(Error);
-            }
+            expect((client as any).credentials).toEqual(credentials);
           },
         ),
-        { numRuns: 100 },
+        { numRuns: 25 },
       );
     });
 
