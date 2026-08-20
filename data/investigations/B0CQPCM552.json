@@ -1,0 +1,201 @@
+{
+  "analysis": {
+    "productName": "INIU USB Type C ケーブル【3本 0.5m+2m+2m】",
+    "parentAsin": "B0G23MS4JQ",
+    "productDescription": "3種類の異なる長さ(0.5m+2m+2m)がセットになった、最大3.1A急速充電対応のUSB Type-A to Type-Cケーブル。高耐久ナイロン編みと超伝導性銅線を採用し、45000回以上の曲げテストをクリアした長寿命設計。",
+    "productUsage": [
+      "スマートフォン、タブレット等のUSB Type-C対応機器の充電",
+      "PCとデバイス間のデータ転送(最大480Mbps)",
+      "モバイルバッテリーからの給電"
+    ],
+    "positivePoints": [
+      "異なる長さ（0.5m1本、2m2本）の3本セットで、用途に応じた使い分けが可能",
+      "最大3.1Aの急速充電に対応",
+      "最大480Mbpsの高速データ転送に対応",
+      "45000回以上の曲げテストと50Nの引っ張り強度テストに合格した高い耐久性",
+      "独自のFLYWEAVE編み込みカバーと柔軟なテーパージョイント、250dの防弾ファイバーコアを採用",
+      "3年間の品質保証サービスが付帯"
+    ],
+    "negativePoints": [
+      "iPhone 16などの最新型スマートフォンの超急速充電規格(PDなど)には非対応(USB Type-A to Type-Cのため)",
+      "モニターや映像出力には非対応",
+      "端子がType-C to Type-Cではないため、最近のType-C専用充電器では使用できない"
+    ],
+    "useCases": [
+      "モバイルバッテリーと一緒に持ち歩くための短いケーブル（0.5m）の使用",
+      "ベッドやソファで寝転がりながら充電するための長いケーブル（2m）の使用",
+      "オフィスと自宅でそれぞれ2mのケーブルを配置しての利用"
+    ],
+    "userStories": [
+      {
+        "userType": "複数デバイス持ちのユーザー",
+        "scenario": "自宅、オフィス、外出先でそれぞれ異なる長さのケーブルを必要とする場面",
+        "experience": "0.5mはモバイルバッテリーと一緒に持ち歩くのにちょうどよく、2mの2本はそれぞれ自宅のベッド周りとオフィスのデスク用に設置できた。用途別に別々の長さのケーブルを買い揃える手間が省け、ナイロン編みで絡まりにくいのも便利だった。",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "sentiment": "positive"
+      },
+      {
+        "userType": "最新スマートフォンユーザー",
+        "scenario": "大容量バッテリー搭載の最新スマホをより早く充電したい場面",
+        "experience": "ケーブル自体は丈夫でデータ転送も問題なく行えたが、USB Type-A接続であるためPD対応の超急速充電はできず、充電速度はそこそこだった。超急速充電を求める場合はType-C to Type-Cケーブルを選ぶべきだと感じた。",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "sentiment": "mixed"
+      }
+    ],
+    "userImpression": "複数の長さがセットになっており「適材適所で使い分けられる」と利便性の高さが評価されている。また、ナイロン編みで耐久性が高く断線しにくい点や3年保証への安心感も強い。一方で、コネクタがUSB Type-A to Type-Cであるため、近年の主流であるPDなどの超急速充電には対応しておらず、最新デバイスの性能を最大限に活かしたいユーザーからは充電速度に対する妥協が必要との声もある。",
+    "sources": [
+      {
+        "id": "src-1",
+        "name": "Amazon商品ページ",
+        "url": "https://www.amazon.co.jp/dp/B0CQPCM552",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-08-20",
+        "author": "INIU",
+        "conflictOfInterest": "none",
+        "notes": "商品の仕様、特徴、価格、長さの組み合わせを確認。"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "45000回以上の曲げテスト、50Nの引っ張り強度テストに合格し、スマホよりも長持ちする耐久性",
+        "category": "durability",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "crossChecked": false,
+        "notes": "メーカーの商品説明より。具体的なテスト数値が記載されている。"
+      },
+      {
+        "claim": "3,800万人以上のグローバルユーザーと一緒に安心・安全な充電体験を楽しめます",
+        "category": "quality",
+        "confidence": "medium",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "crossChecked": false,
+        "notes": "メーカーのブランド実績に関する主張。"
+      }
+    ],
+    "lastInvestigated": "2026-08-20",
+    "competitiveAnalysis": [
+      {
+        "name": "Senetem USB A to Type C ケーブル",
+        "asin": "B0DFYPKFNR",
+        "priceComparison": "Senetemの方が200円安い（999円）。長さ構成が異なるため単純比較は難しいが、Senetemは2mが3本という構成である。",
+        "featureComparison": [
+          "共通点：USB A to Type C、3A急速充電対応、480Mbpsデータ転送対応、ナイロン/コットン編みによる高耐久",
+          "相違点：INIUは「0.5m+2m+2m」の異長セット、Senetemは「2m×3本」の同長セット。INIUは曲げ耐性45000回、Senetemは20000回。"
+        ],
+        "differentiators": [
+          "INIUの利点：モバイルバッテリー用など、短いケーブル（0.5m）と長いケーブル（2m）を使い分けたい人におすすめ。",
+          "Senetemの利点：ベッドやソファ、広い部屋などで、とにかく長いケーブル（2m）が複数本必要な人におすすめ。"
+        ]
+      },
+      {
+        "name": "ALiHAN USB Type C ケーブル",
+        "asin": "B0F322TQ8Q",
+        "priceComparison": "ALiHANの方が400円安い（799円）。ALiHANは1mが3本の構成である。",
+        "featureComparison": [
+          "共通点：USB A to Type C、データ転送対応、断線防止設計",
+          "相違点：INIUは最大3.1A対応で0.5m+2m+2mのセット、ALiHANは最大2.4A対応で1mが3本のセット。INIUはナイロン編み、ALiHANはTPE素材。"
+        ],
+        "differentiators": [
+          "INIUの利点：より高いアンペア数(3.1A)での充電や、より強靭なナイロン編みの耐久性を求める人、長さの使い分けをしたい人におすすめ。",
+          "ALiHANの利点：標準的な長さ（1m）が複数本あれば十分で、価格を少しでも抑えたい人におすすめ。"
+        ]
+      },
+      {
+        "name": "etguuds USB Type C ケーブル",
+        "asin": "B08YW59LWJ",
+        "priceComparison": "etguudsの方が200円安い（999円）。etguudsは1mが4本の構成である。",
+        "featureComparison": [
+          "共通点：USB A to Type C、QC3.0(3A)対応、480Mbpsデータ転送、ナイロン編み",
+          "相違点：INIUは0.5m+2m+2mの3本セット、etguudsは1mが4本セット。"
+        ],
+        "differentiators": [
+          "INIUの利点：長さのバリエーション（特に2mの長さ）が必要な人におすすめ。",
+          "etguudsの利点：本数を重視し、1mのケーブルが4本欲しい人におすすめ。"
+        ]
+      },
+      {
+        "name": "RAVIAD USB Type C ケーブル",
+        "asin": "B0DL1ZRKDW",
+        "priceComparison": "RAVIADの方が300円安い（899円）。RAVIADは1mが3本の構成である。",
+        "featureComparison": [
+          "共通点：USB A to Type C、3A急速充電対応、ナイロン編み",
+          "相違点：INIUは0.5m+2m+2mのセット、RAVIADは1m×3本のセット。"
+        ],
+        "differentiators": [
+          "INIUの利点：用途に応じて短いケーブルと長いケーブルを使い分けたい人におすすめ。",
+          "RAVIADの利点：最もオーソドックスな1mのケーブルを複数本揃えたい人におすすめ。"
+        ]
+      },
+      {
+        "name": "ichanger USB Type C ケーブル",
+        "asin": "B08CT8N821",
+        "priceComparison": "ichangerの方が450円安い（749円）。ichangerは2mが3本の構成である。",
+        "featureComparison": [
+          "共通点：USB A to Type C、3A急速充電対応、ナイロン編み",
+          "相違点：INIUは0.5m+2m+2mのセット、ichangerは2m×3本のセット。"
+        ],
+        "differentiators": [
+          "INIUの利点：持ち歩き用に0.5mの短いケーブルもセットで欲しい人におすすめ。",
+          "ichangerの利点：長いケーブル(2m)のみが複数本欲しく、安さを重視する人におすすめ。"
+        ]
+      },
+      {
+        "name": "SUNGUY USB C ケーブル",
+        "asin": "B07G8ZTMYB",
+        "priceComparison": "SUNGUYの方が200円安い（999円）。SUNGUYは0.5mが3本の構成である。",
+        "featureComparison": [
+          "共通点：USB A to Type C、最大18W(QC3.0)対応、ナイロン編み",
+          "相違点：INIUは0.5m+2m+2mのセット、SUNGUYは0.5m×3本のセット。"
+        ],
+        "differentiators": [
+          "INIUの利点：自宅やオフィス用として長いケーブル(2m)も同時に必要な人におすすめ。",
+          "SUNGUYの利点：モバイルバッテリー用や車載用など、短いケーブル(0.5m)だけが複数本必要な人におすすめ。"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "モバイルバッテリー用(0.5m)と自宅・オフィス用(2m)など、異なる長さのケーブルをまとめて揃えたい人",
+        "PD非対応でも問題なく、従来のUSB Type-A対応の充電器をそのまま活用したい人",
+        "断線しにくい高耐久なナイロン編みケーブルを求める人"
+      ],
+      "pros": [
+        "0.5mと2mの長さの組み合わせにより、外出先でも自宅でも最適な長さで快適に充電できる",
+        "45000回の曲げテストをクリアした高耐久素材により、頻繁に持ち運んだり曲げたりしても断線しにくく長く使える",
+        "最大3.1A出力により、対応デバイスと充電器の組み合わせでストレスのない充電速度が得られる"
+      ],
+      "cons": [
+        "USB Type-A端子であるため、最新のType-C専用充電器を持っている人やPD超急速充電をフル活用したい人には不向き",
+        "映像出力非対応のため、モニターへの出力用ケーブルを探している人は別の製品を選ぶ必要がある"
+      ],
+      "score": 75,
+      "scoreRationale": "[基本点: 70]\n[加点: +5] (異なる長さのセットで用途に応じた使い分けができる利便性)\n[加点: +3] (45000回の曲げテストに合格する高い耐久性)\n[減点: -3] (USB-A to Cのため最新のPD超急速充電には非対応である点)\n[合計: 75]"
+    },
+    "technicalSpecs": {
+      "dimensions": {},
+      "material": "ナイロン編み（FLYWEAVE編み込みカバー、柔軟なテーパージョイント、250d防弾ファイバーコア）",
+      "connectivity": [
+        "USB Type-A to USB Type-C",
+        "最大3.1A急速充電対応 (QC3.0等対応)",
+        "最大480Mbpsデータ転送 (USB 2.0)"
+      ],
+      "other": [
+        "長さ: 0.5m × 1本、2m × 2本",
+        "※超急速充電（PD等）非対応",
+        "※モニター/映像出力非対応",
+        "耐久性: 45000回以上の曲げテスト、50Nの引っ張り強度テスト合格",
+        "保証: 3年間品質保証"
+      ]
+    }
+  }
+}
