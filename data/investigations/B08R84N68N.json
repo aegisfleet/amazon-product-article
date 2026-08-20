@@ -1,0 +1,170 @@
+{
+  "analysis": {
+    "productName": "エレコム USB Type-C ハブ 5-in-1 (DST-C16SV/EC)",
+    "parentAsin": "B08R84N68N",
+    "productDescription": "USB Type-CからHDMI出力、USB 3.0×2ポート、SD/microSDスロットを拡張できる5-in-1ドッキングステーションです。",
+    "productUsage": [
+      "MacBookやiPad Proなどポートが少ない端末の拡張",
+      "外部モニターへの4K映像出力",
+      "デジカメなどで撮影したSD/microSDカードのデータ読み込み"
+    ],
+    "positivePoints": [
+      "USB 3.1 Gen1対応で最大5Gbpsの高速データ転送が可能",
+      "HDMIポート搭載で4K映像出力に対応（DisplayPort Alt mode対応機器のみ）",
+      "SDカードとmicroSDカードスロットを両搭載",
+      "重量約50gと軽量で持ち運びに便利"
+    ],
+    "negativePoints": [
+      "PD（Power Delivery）充電ポートは非搭載で、ハブ経由のPC充電は不可",
+      "有線LANポートは非搭載"
+    ],
+    "useCases": [
+      "外出先でのプレゼン時のプロジェクター接続",
+      "カフェなどでの作業時にマウスやUSBメモリを接続",
+      "カメラで撮影した写真や動画をPCへ取り込む作業"
+    ],
+    "userStories": [
+      {
+        "userType": "MacBookユーザー",
+        "scenario": "外出先での作業やプレゼン",
+        "experience": "MacBook Airのポート不足を補うために購入。軽くてコンパクトなので持ち運びが苦になりません。SDカードスロットがあるため、カメラで撮影したデータをその場で取り込んで編集でき、HDMIで外部モニターにも出力できるので重宝しています。ただし、パススルー充電には対応していないため、長時間の作業時はPC本体のバッテリー残量に気をつける必要があります。",
+        "supportingSourceIds": ["src-1"],
+        "sentiment": "positive"
+      }
+    ],
+    "userImpression": "必要な拡張ポートをコンパクトにまとめた製品として、持ち運びを重視するユーザーから高く評価されています。特にSDカードスロットを備えている点は、写真や動画を扱う層に好評です。一方で、PD充電機能がないため、充電しながら長時間の据え置き利用を想定しているユーザーには不向きであり、用途を選ぶ製品と言えます。",
+    "sources": [
+      {
+        "id": "src-1",
+        "name": "Amazon商品ページ",
+        "url": "https://www.amazon.co.jp/dp/B08R84N68N",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-08-20",
+        "author": "Amazon",
+        "conflictOfInterest": "possible",
+        "notes": "製品仕様、価格、レビュー評価を確認"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "USB2.0の約10倍の超高速データ転送",
+        "category": "comparativeAdvantage",
+        "confidence": "high",
+        "supportingSourceIds": ["src-1"],
+        "crossChecked": true,
+        "notes": "USB 3.1 Gen1 (5Gbps)の理論値に基づく事実"
+      }
+    ],
+    "lastInvestigated": "2026-08-20",
+    "competitiveAnalysis": [
+      {
+        "name": "エレコム 5-in-1 (LANポート搭載モデル) DST-C17SV/EC",
+        "asin": "B08R85FN35",
+        "priceComparison": "価格帯は同等レベルだが、用途が異なる",
+        "featureComparison": [
+          "共通点：エレコム製の5-in-1ハブで、HDMI出力とUSB 3.0ポートを搭載",
+          "相違点：本商品はSD/microSDスロットを搭載しているのに対し、DST-C17SVはLANポートを搭載しカードリーダーを持たない"
+        ],
+        "differentiators": [
+          "エレコム DST-C16SV/ECの利点：カメラなどでSDカードを日常的に使用し、出先でのデータ取り込みが多い人にはこちらが最適",
+          "エレコム DST-C17SV/ECの利点：SDカードよりも、ホテルやオフィスでの有線LAN接続の安定性を重視する人に適している"
+        ]
+      },
+      {
+        "name": "Anker PowerExpand+ 5-in-1",
+        "asin": "B07X7VQ9HN",
+        "priceComparison": "競合の方が高価",
+        "featureComparison": [
+          "共通点：5-in-1のType-CハブでHDMIとUSB-Aポートを搭載",
+          "相違点：本商品がSD/microSDカードリーダーを搭載するのに対し、競合は有線LANポートとUSB-A×3を搭載する"
+        ],
+        "differentiators": [
+          "エレコム DST-C16SV/ECの利点：SDカードの読み込みが必要で、低予算で揃えたい人に最適",
+          "Anker PowerExpand+ 5-in-1の利点：有線LAN接続が必要で、より多くのUSB-A機器を同時に接続したい人に適している"
+        ]
+      },
+      {
+        "name": "Anker 5-in-1 プレミアム USB-Cハブ",
+        "asin": "B07NRYRNC5",
+        "priceComparison": "競合の方が高価",
+        "featureComparison": [
+          "共通点：SD/microSDカードスロットとHDMI、USB-Aを搭載する5-in-1ハブ",
+          "相違点：競合はより高級感のあるデザインで価格も高い"
+        ],
+        "differentiators": [
+          "エレコム DST-C16SV/ECの利点：同等の基本機能を持ちながら、よりコストパフォーマンスに優れている点",
+          "Anker 5-in-1 プレミアム USB-Cハブの利点：Ankerブランドの信頼性やデザイン性を重視する人に適している"
+        ]
+      },
+      {
+        "name": "UGREEN Revodok 105 5-in-1",
+        "asin": "B0BR3M8XHK",
+        "priceComparison": "競合の方が安価",
+        "featureComparison": [
+          "共通点：持ち運びに便利な5-in-1のコンパクトハブ",
+          "相違点：競合は100W PD充電に対応するがSDスロットがなく、本商品はSDスロットがあるがPD充電非対応"
+        ],
+        "differentiators": [
+          "エレコム DST-C16SV/ECの利点：SDカード/microSDカードスロットが必須な人に最適",
+          "UGREEN Revodok 105の利点：カードリーダーは不要だが、ハブ経由でのPC本体へのPD充電を重視し、安価に済ませたい人に適している"
+        ]
+      },
+      {
+        "name": "Anker PowerExpand 6-in-1",
+        "asin": "B08C74W2QK",
+        "priceComparison": "競合の方が高価",
+        "featureComparison": [
+          "共通点：HDMI出力とUSB-Aポートを搭載",
+          "相違点：競合は6-in-1でPD充電と有線LANを備えるが、本商品はSDカードスロットを備える"
+        ],
+        "differentiators": [
+          "エレコム DST-C16SV/ECの利点：SDカードスロットが必要で、持ち運びに特化した軽量さを求める人に最適",
+          "Anker PowerExpand 6-in-1の利点：PDパススルー充電や有線LANなど、据え置き利用で必要な機能が揃っているため、デスク用メインハブとして使う人に適している"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "カメラで撮影した写真などをPCに取り込む頻度が高く、SDカードリーダーが必要な人",
+        "パススルー充電は不要で、外出先での一時的なポート拡張（プレゼン用HDMIやUSBメモリ接続など）を目的とする人",
+        "信頼できる国内メーカー（エレコム）の製品を安価に手に入れたい人"
+      ],
+      "pros": [
+        "約50gと非常に軽量でスリムなため、PCケースのポケットにもすんなり収まり持ち運びの負担にならない",
+        "SDカードとmicroSDカードを変換アダプタなしで直接読み込めるため、カメラユーザーのデータ管理がスムーズになる",
+        "ドライバのインストール不要で挿すだけで即使えるため、外出先の急なプレゼンなどでも焦らず対応できる"
+      ],
+      "cons": [
+        "PD充電機能がないため、ポートが1つしかないPCでバッテリー残量が少ない状態で長時間作業する際には電源切れのリスクがある",
+        "有線LANポートがないため、Wi-Fi環境が不安定なホテルなどで安定したネットワーク接続を確保したい人には不向き"
+      ],
+      "score": 75,
+      "scoreRationale": "[基本点: 70]\n[加点: +5] (必要十分な機能を備えつつ、国内メーカー製として価格が手頃でコスパが高い)\n[加点: +5] (重量約50gと軽量・コンパクトで携帯性に優れている)\n[減点: -5] (PD充電非対応のため、利用シーンや接続機器に制約がある)\n[合計: 75]"
+    },
+    "technicalSpecs": {
+      "dimensions": {
+        "height": "16mm",
+        "width": "22.5mm",
+        "depth": "110mm",
+        "weight": "50g"
+      },
+      "weight": "50g",
+      "material": "アルミニウム合金 (推定外装)",
+      "origin": "中国",
+      "connectivity": [
+        "USB 3.1 Gen1 (USB 3.0) Type-A × 2",
+        "HDMI (最大4K対応 / DisplayPort Alt mode対応機器専用)",
+        "SDカードスロット × 1",
+        "microSDカードスロット × 1",
+        "ホスト接続: USB Type-C (オス)"
+      ],
+      "other": [
+        "※PD (Power Delivery) パススルー充電非対応",
+        "※有線LANポート非搭載",
+        "カラー: シルバー",
+        "保証期間: 1年"
+      ]
+    }
+  }
+}
