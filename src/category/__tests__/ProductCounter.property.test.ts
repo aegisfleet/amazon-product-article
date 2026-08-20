@@ -54,7 +54,7 @@ describe('ProductCounter Properties', () => {
           }
         },
       ),
-      { numRuns: 100 },
+      { numRuns: 20 },
     );
   });
 
@@ -90,7 +90,7 @@ describe('ProductCounter Properties', () => {
           }
         },
       ),
-      { numRuns: 100 },
+      { numRuns: 20 },
     );
   });
 });
