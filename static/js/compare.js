@@ -386,11 +386,13 @@
         items.forEach(function (item) {
             const isBest = maxScore > 0 && item.score === maxScore;
             const scoreVal = parseInt(item.score, 10) || 0;
-            let scoreClass = 'score-fair';
+            let scoreClass = 'score-caution';
             if (scoreVal >= 80) {
                 scoreClass = 'score-excellent';
-            } else if (scoreVal >= 60) {
+            } else if (scoreVal >= 70) {
                 scoreClass = 'score-good';
+            } else if (scoreVal >= 50) {
+                scoreClass = 'score-fair';
             }
             const scoreHtml = item.score > 0
                 ? `<span class="card-score m3-badge m3-badge-score ${scoreClass}"><span class="material-symbols-outlined icon-score" aria-hidden="true">trophy</span> ${item.score}点</span>`

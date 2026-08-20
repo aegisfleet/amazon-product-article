@@ -457,11 +457,13 @@
                         </div>
                         {{- if .Params.score -}}
                         {{- $score := .Params.score | int -}}
-                        {{- $scoreClass := "score-fair" -}}
+                        {{- $scoreClass := "score-caution" -}}
                         {{- if ge $score 80 -}}
                         {{- $scoreClass = "score-excellent" -}}
-                        {{- else if ge $score 60 -}}
+                        {{- else if ge $score 70 -}}
                         {{- $scoreClass = "score-good" -}}
+                        {{- else if ge $score 50 -}}
+                        {{- $scoreClass = "score-fair" -}}
                         {{- end -}}
                         <div class="meta-score-block">
                             <span class="card-score m3-badge m3-badge-score {{ $scoreClass }}">

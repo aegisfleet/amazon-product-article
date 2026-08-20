@@ -61,18 +61,26 @@
         </p>
 
         {{- $score := $product.score | int -}}
-        {{- $scoreClass := "score-fair" -}}
-        {{- $scoreEmoji := "😐" -}}
-        {{- $scoreText := "普通" -}}
+        {{- $scoreClass := "score-caution" -}}
+        {{- $scoreEmoji := "⚠️" -}}
+        {{- $scoreText := "注意" -}}
 
-        {{- if ge $score 80 -}}
+        {{- if ge $score 90 -}}
         {{- $scoreClass = "score-excellent" -}}
-        {{- $scoreEmoji = "😍" -}}
+        {{- $scoreEmoji = "🏆" -}}
         {{- $scoreText = "最高" -}}
-        {{- else if ge $score 60 -}}
+        {{- else if ge $score 80 -}}
+        {{- $scoreClass = "score-excellent" -}}
+        {{- $scoreEmoji = "🌟" -}}
+        {{- $scoreText = "優秀" -}}
+        {{- else if ge $score 70 -}}
         {{- $scoreClass = "score-good" -}}
-        {{- $scoreEmoji = "😊" -}}
-        {{- $scoreText = "良い" -}}
+        {{- $scoreEmoji = "👍" -}}
+        {{- $scoreText = "良好" -}}
+        {{- else if ge $score 50 -}}
+        {{- $scoreClass = "score-fair" -}}
+        {{- $scoreEmoji = "😐" -}}
+        {{- $scoreText = "普通" -}}
         {{- end -}}
 
         <div class="hero-score-bar {{ $scoreClass }}">

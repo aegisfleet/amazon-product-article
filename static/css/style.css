@@ -813,6 +813,17 @@ a.hero-tag-brand:hover {
   border: 1px solid var(--border-score-fair);
 }
 
+.card-score.score-caution {
+  background: var(--gradient-score-caution);
+  color: white;
+  box-shadow: 0 1px 2px var(--shadow-score-caution);
+}
+
+[data-theme="dark"] .card-score.score-caution {
+  background: var(--gradient-score-caution);
+  border: 1px solid var(--border-score-caution);
+}
+
 /* Pickup Card specific overrides if needed (currently sharing same class) */
 .pickup-card-score {
   /* inherit from card-score conceptually, but currently duplicate styles were used. 
@@ -3750,6 +3761,16 @@ body.toc-modal-open {
   border: 1px solid var(--border-score-fair) !important;
 }
 
+.pickup-card-score.score-caution {
+  background: var(--gradient-score-caution) !important;
+  color: white !important;
+}
+
+[data-theme="dark"] .pickup-card-score.score-caution {
+  background: var(--gradient-score-caution) !important;
+  border: 1px solid var(--border-score-caution) !important;
+}
+
 .pickup-card-price {
   font-size: 0.75rem;
   font-weight: 600;
@@ -3944,6 +3965,16 @@ body.toc-modal-open {
   background: linear-gradient(135deg, #1f2937, #111827);
   /* Gray 800 to 900 */
   border: 1px solid #4b5563;
+}
+
+.quick-eval-score.score-caution {
+  background: var(--gradient-score-caution);
+  color: white;
+}
+
+[data-theme="dark"] .quick-eval-score.score-caution {
+  background: var(--gradient-score-caution);
+  border: 1px solid var(--border-score-caution);
 }
 
 .score-emoji {
@@ -4205,6 +4236,17 @@ body.toc-modal-open {
   color: white;
   border: 1px solid var(--border-score-fair);
   /* Add border for visibility in dark mode */
+}
+
+.hero-score-bar.score-caution {
+  background: var(--gradient-score-caution);
+  color: white;
+}
+
+[data-theme="dark"] .hero-score-bar.score-caution {
+  background: var(--gradient-score-caution);
+  color: white;
+  border: 1px solid var(--border-score-caution);
 }
 
 .hero-score-main {
