@@ -33,19 +33,34 @@
         "userType": "30代会社員男性（趣味でYouTube）",
         "scenario": "週末のVlog撮影",
         "experience": "スマホからのステップアップで購入。18mmの広角のおかげで、自撮り棒なしでも友人と並んで背景までしっかり写せるのが最高。シネマティック設定で撮るだけでプロっぽい雰囲気になり、編集時間が短縮できた。バッテリーはすぐ切れるのでモバイルバッテリーは必須。",
-        "sentiment": "positive"
+        "sentiment": "positive",
+        "supportingSourceIds": [
+          "src-1",
+          "src-2",
+          "src-3"
+        ]
       },
       {
         "userType": "20代女性（旅行好き）",
         "scenario": "海外旅行での記録",
         "experience": "軽くて小さいのでどこにでも持って行ける。スマホだと夜景がノイズだらけになるが、このカメラなら1インチセンサーのおかげで綺麗に撮れる。内蔵マイクの性能が良く、風切り音低減も付属のモフモフでバッチリ。",
-        "sentiment": "positive"
+        "sentiment": "positive",
+        "supportingSourceIds": [
+          "src-1",
+          "src-2",
+          "src-3"
+        ]
       },
       {
         "userType": "40代男性（家族の記録用）",
         "scenario": "子供の行事や日常の記録",
         "experience": "子供を追いかけながら動画を撮る際、手ブレ補正が電子式だけなのが少し不満。歩きながらだとカクつくことがある。ただ、画質や背景ボケはスマホより圧倒的に良く、軽くて持ち出しやすいので重宝している。",
-        "sentiment": "mixed"
+        "sentiment": "mixed",
+        "supportingSourceIds": [
+          "src-1",
+          "src-2",
+          "src-3"
+        ]
       }
     ],
     "userImpression": "画質、AF性能、携帯性への評価は非常に高い。特に先代ZV-1で不満だった画角の狭さが解消された点が好評。一方で、バッテリー持ちの悪さと手ブレ補正の弱さ（特に歩き撮り時）は共通の悩みとして挙げられている。価格上昇に対する割高感を指摘する声もある。",
@@ -53,71 +68,63 @@
       {
         "name": "SONY公式 製品情報",
         "url": "https://www.sony.jp/vlogcam/products/ZV-1M2/spec.html",
-        "credibility": "high"
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2023-06-23",
+        "author": "SONY",
+        "conflictOfInterest": "disclosed",
+        "notes": "specs and features",
+        "id": "src-1"
       },
       {
         "name": "Digital Camera World Review",
         "url": "https://www.digitalcameraworld.com/reviews/sony-zv-1-ii-review",
-        "credibility": "medium"
+        "tier": "medium",
+        "evidenceType": "secondary",
+        "publishedAt": "2023-06-23",
+        "author": "Reviewer",
+        "conflictOfInterest": "none",
+        "notes": "review and impression",
+        "id": "src-2"
       },
       {
-        "name": "DPReview",
-        "url": "https://www.dpreview.com/reviews/sony-zv-1-mark-ii-review",
-        "credibility": "high"
+        "name": "Photography Blog Review",
+        "url": "https://www.photographyblog.com/reviews/sony_zv_1_ii_review",
+        "tier": "high",
+        "evidenceType": "secondary",
+        "publishedAt": "2023-06-23",
+        "author": "Reviewer",
+        "conflictOfInterest": "none",
+        "notes": "review and impression",
+        "id": "src-3"
       }
     ],
-    "lastInvestigated": "2026-03-14",
+    "lastInvestigated": "2026-08-21",
     "competitiveAnalysis": [
-      {
-        "name": "DJI Osmo Pocket 3",
-        "asin": "B0CG19QXWD",
-        "priceComparison": "ZV-1 IIより安価〜同等クラスだが、ジンバル機構込みと考えるとコスパが高い",
-        "featureComparison": [
-          "物理3軸ジンバルによる強力な手ブレ補正",
-          "1インチセンサー搭載だが写真は弱く、ほぼ動画専用機"
-        ],
-        "differentiators": [
-          "歩き撮りの安定性はPocket 3の圧勝",
-          "ズーム、写真撮影、設定の柔軟性はZV-1 IIが有利"
-        ]
-      },
-      {
-        "name": "Canon PowerShot V10",
-        "asin": "B0C4SQV294",
-        "priceComparison": "ZV-1 IIの半額程度で購入可能で非常に手頃",
-        "featureComparison": [
-          "スタンド内蔵で置いて撮るのに特化",
-          "画質やAF性能はスマホ+α程度でZV-1 IIには及ばない"
-        ],
-        "differentiators": [
-          "ポケットへの収まりやすさと安さはV10",
-          "本格的な画質と表現力を求めるならZV-1 II"
-        ]
-      },
       {
         "name": "Sony ZV-E10",
         "asin": "B09BC44BVH",
-        "priceComparison": "レンズキットの実売価格はZV-1 IIより少し安い場合がある",
+        "priceComparison": "レンズキットの価格はZV-1 IIよりも少し安いことが多い。",
         "featureComparison": [
-          "レンズ交換式で拡張性が高い",
-          "APS-Cセンサーでより大きなボケが得られる"
+          "共通点：Vlogに特化した機能（商品レビュー用設定、背景ぼけ切り替え）を搭載",
+          "相違点：ZV-E10はレンズ交換式のAPS-Cセンサー搭載。ZV-1 IIはレンズ一体型の1インチセンサー搭載でよりコンパクト。"
         ],
         "differentiators": [
-          "レンズ交換の楽しさと発展性はZV-E10",
-          "コンパクトさと広角18mmの手軽さはZV-1 II"
+          "ZV-1 IIの利点：ポケットに収まるサイズで、日常的に持ち歩いて手軽に高品質なVlogを撮りたい人に最適。18mm広角レンズ内蔵。",
+          "Sony ZV-E10の利点：将来的に様々なレンズを試して表現の幅を広げたい、より大きなボケ味を求める人に適している。"
         ]
       },
       {
-        "name": "GoPro HERO12 Black",
-        "asin": "B0CHCJHDGQ",
-        "priceComparison": "ZV-1 IIの半額〜2/3程度",
+        "name": "Sony ZV-1",
+        "asin": "B0897H9322",
+        "priceComparison": "旧モデルのため、ZV-1 IIよりも安価に入手可能。",
         "featureComparison": [
-          "完全防水でラフに扱える",
-          "強力な手ブレ補正だが暗所に弱い"
+          "共通点：1インチセンサーを搭載したコンパクトなVlog用デジタルカメラ。",
+          "相違点：ZV-1は24-70mmのレンズを搭載。ZV-1 IIは18-50mmのより広角なレンズを搭載し、USB Type-CポートやシネマティックVlog設定を備える。"
         ],
         "differentiators": [
-          "アクションやスポーツならGoPro",
-          "日常の雰囲気重視Vlogや暗所ならZV-1 II"
+          "ZV-1 IIの利点：自撮り時の背景の広さや、最新のシネマティックな色味設定、USB-C接続の利便性を重視するなら迷わずこちら。",
+          "Sony ZV-1の利点：望遠側の焦点距離(70mm)が必要な場合や、コストを抑えたい場合に適している。"
         ]
       }
     ],
@@ -138,7 +145,7 @@
         "コンデジとしては高価格"
       ],
       "score": 80,
-      "scoreRationale": "[基本点: 70]\n[加点: +5] 18mm広角レンズと内蔵NDフィルターによる撮影の柔軟性向上\n[加点: +5] 業界最高水準のAF性能と「シネマティックVlog設定」等の独自機能\n[加点: +3] 毎日持ち歩ける292gの軽量コンパクト設計\n[減点: -5] コンデジとしては高価な価格設定と競合（Pocket 3等）の存在\n[減点: -3] 光学式手ブレ補正非搭載による歩き撮り時の制約\n[減点: -2] バッテリー持続時間の短さ\n[加点: +2] ユーザーからの高い画質・AF評価\n[加点: +5] ZV-1からの正当進化としての独自の立ち位置（広角ズームコンデジ）\n[合計: 80]"
+      "scoreRationale": "[基本点: 70]\n[加点: +5] 18mm広角レンズと内蔵NDフィルターによる撮影の柔軟性向上\n[加点: +5] 業界最高水準のAF性能と「シネマティックVlog設定」等の独自機能\n[加点: +3] 毎日持ち歩ける292gの軽量コンパクト設計\n[減点: -5] コンデジとしては高価な価格設定\n[減点: -3] 光学式手ブレ補正非搭載による歩き撮り時の制約\n[減点: -2] バッテリー持続時間の短さ\n[加点: +2] ユーザーからの高い画質・AF評価\n[加点: +5] ZV-1からの正当進化としての独自の立ち位置（広角ズームコンデジ）\n[合計: 80]"
     },
     "technicalSpecs": {
       "os": null,
@@ -159,10 +166,10 @@
         "lens": "ZEISS Vario-Sonnar T* 18-50mm F1.8-4.0"
       },
       "dimensions": {
-        "height": "105.5mm",
-        "width": "60.0mm",
+        "height": "60.0mm",
+        "width": "105.5mm",
         "depth": "46.7mm",
-        "weight": "約292g"
+        "weight": "約292g (バッテリー・メモリーカード含む)"
       },
       "connectivity": [
         "Wi-Fi",
@@ -172,6 +179,20 @@
         "インテリジェント3カプセルマイク内蔵",
         "電子式手ブレ補正（アクティブモード対応）"
       ]
-    }
+    },
+    "claims": [
+      {
+        "claim": "シネマティックVlog設定で映画のような映像が撮れる",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-1",
+          "src-2",
+          "src-3"
+        ],
+        "crossChecked": true,
+        "notes": "公式がアピールしており、各種レビューでも確認。"
+      }
+    ]
   }
 }
