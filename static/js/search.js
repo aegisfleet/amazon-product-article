@@ -1190,12 +1190,14 @@ document.addEventListener('DOMContentLoaded', function () {
             }
 
             if (item.score) {
-                let scoreClass = 'score-fair';
+                let scoreClass = 'score-caution';
                 const score = Number.parseInt(item.score, 10) || 0;
                 if (score >= 80) {
                     scoreClass = 'score-excellent';
-                } else if (score >= 60) {
+                } else if (score >= 70) {
                     scoreClass = 'score-good';
+                } else if (score >= 50) {
+                    scoreClass = 'score-fair';
                 }
                 const scoreSpan = document.createElement('span');
                 scoreSpan.className = `result-score m3-badge m3-badge-score ${scoreClass}`;

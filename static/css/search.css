@@ -238,6 +238,16 @@
     border: 1px solid var(--border-score-fair);
 }
 
+.result-score.score-caution {
+    background: var(--gradient-score-caution);
+    color: white;
+    box-shadow: 0 1px 2px var(--shadow-score-caution);
+}
+
+[data-theme="dark"] .result-score.score-caution {
+    border: 1px solid var(--border-score-caution);
+}
+
 /* Summary */
 .result-summary {
     font-size: 0.85rem;

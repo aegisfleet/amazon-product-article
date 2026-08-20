@@ -1101,5 +1101,43 @@ describe('ArticleGenerator', () => {
         expect((generator as any).escapeHtml('')).toBe('');
       });
     });
+
+    describe('getScoreDescription', () => {
+      it.each([
+        { score: 95, expected: '最高' },
+        { score: 90, expected: '最高' },
+        { score: 89, expected: '優秀' },
+        { score: 80, expected: '優秀' },
+        { score: 79, expected: '良好' },
+        { score: 70, expected: '良好' },
+        { score: 69, expected: '普通' },
+        { score: 50, expected: '普通' },
+        { score: 49, expected: '注意' },
+        { score: 30, expected: '注意' },
+        { score: 0, expected: '注意' },
+      ])('should return "$expected" for score $score', ({ score, expected }) => {
+        expect((generator as any).getScoreDescription(score)).toBe(expected);
+      });
+    });
+
+    describe('renderCompetitorScore', () => {
+      it('should return empty string if score is undefined', () => {
+        expect((generator as any).renderCompetitorScore(undefined)).toBe('');
+      });
+
+      it.each([
+        { score: 92, expectedClass: 'score-excellent' },
+        { score: 85, expectedClass: 'score-excellent' },
+        { score: 75, expectedClass: 'score-good' },
+        { score: 65, expectedClass: 'score-fair' },
+        { score: 50, expectedClass: 'score-fair' },
+        { score: 45, expectedClass: 'score-caution' },
+        { score: 30, expectedClass: 'score-caution' },
+      ])('should use class "$expectedClass" for score $score', ({ score, expectedClass }) => {
+        const result = (generator as any).renderCompetitorScore(score);
+        expect(result).toContain(expectedClass);
+        expect(result).toContain(`${score}点`);
+      });
+    });
   });
 });

@@ -1613,12 +1613,11 @@ ${confidenceLine}`;
   }
 
   private getScoreDescription(score: number): string {
-    if (score >= 90) return '非常に優秀';
+    if (score >= 90) return '最高';
     if (score >= 80) return '優秀';
     if (score >= 70) return '良好';
-    if (score >= 60) return '普通';
-    if (score >= 50) return 'やや不足';
-    return '要検討';
+    if (score >= 50) return '普通';
+    return '注意';
   }
 
   /**
@@ -1806,9 +1805,10 @@ ${confidenceLine}`;
   private renderCompetitorScore(score?: number): string {
     if (score === undefined) return '';
 
-    let scoreClass = 'score-fair';
+    let scoreClass = 'score-caution';
     if (score >= 80) scoreClass = 'score-excellent';
-    else if (score >= 60) scoreClass = 'score-good';
+    else if (score >= 70) scoreClass = 'score-good';
+    else if (score >= 50) scoreClass = 'score-fair';
 
     return `<div class="competitor-score-container"><span class="pickup-card-score m3-badge m3-badge-score ${scoreClass}"><span class="material-symbols-outlined icon-score" aria-hidden="true">trophy</span> ${score}点</span></div>`;
   }
