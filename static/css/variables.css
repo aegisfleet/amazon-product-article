@@ -256,6 +256,9 @@
     --shadow-score-good: rgba(146, 64, 14, 0.2);
     --gradient-score-fair: linear-gradient(135deg, #4b5563, #374151);
     --shadow-score-fair: rgba(55, 65, 81, 0.2);
+    --gradient-score-caution: linear-gradient(135deg, #b91c1c, #991b1b);
+    --shadow-score-caution: rgba(185, 28, 28, 0.25);
+    --border-score-caution: #ef4444;
     --bg-score-default: #fef9c3;
     --text-score-default: #92400e;
 
@@ -365,6 +368,8 @@
         --border-score-good: #fbbf24;
         --gradient-score-fair: linear-gradient(135deg, #374151, #4b5563);
         --border-score-fair: #9ca3af;
+        --gradient-score-caution: linear-gradient(135deg, #7f1d1d, #991b1b);
+        --border-score-caution: #f87171;
 
         /* Badge & Tag Colors (Dark Mode Override) */
         --badge-amazon-bg: rgba(255, 153, 0, 0.15);
@@ -497,6 +502,8 @@
     --border-score-good: #fbbf24;
     --gradient-score-fair: linear-gradient(135deg, #374151, #4b5563);
     --border-score-fair: #9ca3af;
+    --gradient-score-caution: linear-gradient(135deg, #7f1d1d, #991b1b);
+    --border-score-caution: #f87171;
 
     /* Badge & Tag Colors (Dark Mode) */
     --badge-amazon-bg: rgba(255, 153, 0, 0.15);

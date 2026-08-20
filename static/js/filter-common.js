@@ -67,8 +67,9 @@ function formatPrice(raw) {
 // --- Score class ---
 function scoreClass(score) {
   if (score >= 80) return 'score-excellent';
-  if (score >= 60) return 'score-good';
-  return 'score-fair';
+  if (score >= 70) return 'score-good';
+  if (score >= 50) return 'score-fair';
+  return 'score-caution';
 }
 
 function safeUrl(url) {

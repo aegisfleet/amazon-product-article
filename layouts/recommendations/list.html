@@ -402,9 +402,10 @@
                     <td class="rec-summary-rank">{{ add $index 1 }}</td>
                     <td class="rec-summary-score">
                         {{- if $score -}}
-                        {{- $scoreClass := "score-fair" -}}
+                        {{- $scoreClass := "score-caution" -}}
                         {{- if ge $score 80 -}}{{- $scoreClass = "score-excellent" -}}
-                        {{- else if ge $score 60 -}}{{- $scoreClass = "score-good" -}}
+                        {{- else if ge $score 70 -}}{{- $scoreClass = "score-good" -}}
+                        {{- else if ge $score 50 -}}{{- $scoreClass = "score-fair" -}}
                         {{- end -}}
                         <span class="card-score m3-badge m3-badge-score {{ $scoreClass }}" style="font-size:0.78rem; padding:2px 6px;"><span class="material-symbols-outlined icon-score" aria-hidden="true">trophy</span> {{-
                             $score -}}点</span>
@@ -515,11 +516,13 @@
                         </span>
                         {{- end -}}
                         {{- if $score -}}
-                        {{- $scoreClass := "score-fair" -}}
+                        {{- $scoreClass := "score-caution" -}}
                         {{- if ge $score 80 -}}
                         {{- $scoreClass = "score-excellent" -}}
-                        {{- else if ge $score 60 -}}
+                        {{- else if ge $score 70 -}}
                         {{- $scoreClass = "score-good" -}}
+                        {{- else if ge $score 50 -}}
+                        {{- $scoreClass = "score-fair" -}}
                         {{- end -}}
                         <span class="card-score m3-badge m3-badge-score {{ $scoreClass }}" style="font-size: 0.85rem; padding: 2px 8px;">
                             <span class="material-symbols-outlined icon-score" aria-hidden="true">trophy</span> {{- $score -}}点
