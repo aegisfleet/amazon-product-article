@@ -8,7 +8,7 @@ interface SpecMatcher {
 const SPEC_MATCHERS: SpecMatcher[] = [
   {
     pattern: /^(?:SoC|CPU|プロセッサ|プロセッサー|チップセット)\s*[:：]\s*(.+)$/i,
-    apply: (val, normalized) => {
+    apply: (val, normalized): void => {
       if (!normalized.cpu && !normalized.processor) {
         normalized.cpu = val;
       }
@@ -16,7 +16,7 @@ const SPEC_MATCHERS: SpecMatcher[] = [
   },
   {
     pattern: /^(?:OS|オペレーティングシステム)\s*[:：]\s*(.+)$/i,
-    apply: (val, normalized) => {
+    apply: (val, normalized): void => {
       if (!normalized.os) {
         normalized.os = val;
       }
@@ -24,7 +24,7 @@ const SPEC_MATCHERS: SpecMatcher[] = [
   },
   {
     pattern: /^(?:RAM|メモリ)\s*[:：]\s*(.+)$/i,
-    apply: (val, normalized) => {
+    apply: (val, normalized): void => {
       if (!normalized.ram && !normalized.memory) {
         normalized.ram = val;
       }
@@ -32,7 +32,7 @@ const SPEC_MATCHERS: SpecMatcher[] = [
   },
   {
     pattern: /^(?:ROM|ストレージ)\s*[:：]\s*(.+)$/i,
-    apply: (val, normalized) => {
+    apply: (val, normalized): void => {
       if (!normalized.storage) {
         normalized.storage = val;
       }
@@ -40,7 +40,7 @@ const SPEC_MATCHERS: SpecMatcher[] = [
   },
   {
     pattern: /^(?:ディスプレイ|画面|液晶|モニター)\s*[:：]\s*(.+)$/i,
-    apply: (val, normalized) => {
+    apply: (val, normalized): void => {
       if (!normalized.display) {
         normalized.display = parseDisplaySpec(val);
       }
@@ -48,7 +48,7 @@ const SPEC_MATCHERS: SpecMatcher[] = [
   },
   {
     pattern: /^(?:バッテリー|電池)\s*[:：]\s*(.+)$/i,
-    apply: (val, normalized) => {
+    apply: (val, normalized): void => {
       if (!normalized.battery) {
         normalized.battery = parseBatterySpec(val);
       }
@@ -56,7 +56,7 @@ const SPEC_MATCHERS: SpecMatcher[] = [
   },
   {
     pattern: /^(?:カラー|色)\s*[:：]\s*(.+)$/i,
-    apply: (val, normalized) => {
+    apply: (val, normalized): void => {
       if (!normalized.color) {
         normalized.color = val;
       }
@@ -64,7 +64,7 @@ const SPEC_MATCHERS: SpecMatcher[] = [
   },
   {
     pattern: /^(?:重量|重さ)\s*[:：]\s*(.+)$/i,
-    apply: (val, normalized) => {
+    apply: (val, normalized): void => {
       if (!normalized.weight) {
         normalized.weight = val;
       }
