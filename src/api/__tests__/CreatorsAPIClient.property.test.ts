@@ -105,8 +105,9 @@ describe('CreatorsAPIClient Property Tests', () => {
         post: () => Promise.reject(new Error('Simulated API Error')),
       };
 
-      // Reduce maxRetries for testing to avoid long wait times
-      // (client as any).rateLimitConfig.maxRetries = 2;
+      // Reduce retries and sleep for fast testing
+      (client as any).rateLimitConfig = { maxRetries: 1, requestsPerSecond: 1000 };
+      (client as any).sleep = () => Promise.resolve();
 
       const credentials = {
         applicationId: 'test-app-id',
@@ -121,6 +122,8 @@ describe('CreatorsAPIClient Property Tests', () => {
         credentials.credentialSecret,
         credentials.partnerTag,
       );
+      (client as any).accessToken = 'mock-access-token';
+      (client as any).tokenExpiresAt = Date.now() + 3600000;
 
       // Try to make a request that will fail (no real API access)
       try {

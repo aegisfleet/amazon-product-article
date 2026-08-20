@@ -88,10 +88,11 @@ export class CreatorsAPICache {
    * Normalize an entry, providing defaults for missing status (migration)
    */
   private normalizeCacheEntry(entry: Partial<CacheEntry> & Record<string, unknown>): CacheEntry {
+    const data = entry.data ?? null;
     // Trim description and features to reduce file size
-    if (entry.data) {
-      delete (entry.data as any).description;
-      (entry.data as any).features = [];
+    if (data && typeof data === 'object') {
+      delete data.description;
+      data.features = [];
     }
 
     if (entry.status) {
@@ -100,7 +101,7 @@ export class CreatorsAPICache {
 
     // Migration logic for old format (without status)
     return {
-      data: (entry.data as ProductDetail | null) || null,
+      data,
       timestamp: typeof entry.timestamp === 'number' ? entry.timestamp : Date.now(),
       status: 'valid',
     };
@@ -285,8 +286,8 @@ export class CreatorsAPICache {
     }
 
     // Trim description and features to reduce file size
-    delete (sanitizedData as any).description;
-    (sanitizedData as any).features = [];
+    delete sanitizedData.description;
+    sanitizedData.features = [];
 
     this.cache[asin] = {
       data: sanitizedData,
