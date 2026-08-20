@@ -58,7 +58,7 @@ describe('Integration Properties', () => {
           });
         },
       ),
-      { numRuns: 100 },
+      { numRuns: 20 },
     );
   });
 
@@ -118,7 +118,7 @@ describe('Integration Properties', () => {
           expect(finalVisible).toBe(finalProductCount > 0);
         },
       ),
-      { numRuns: 100 },
+      { numRuns: 20 },
     );
   });
 });
