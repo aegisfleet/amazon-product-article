@@ -1,160 +1,220 @@
 {
   "analysis": {
-    "productName": "Pioneer DMH-SZ500 ディスプレイオーディオ",
-    "parentAsin": "B0D46HM42T",
-    "productDescription": "ワイヤレスでのApple CarPlayおよびAndroid Auto接続に対応した、6.8インチ画面搭載の2DINカーオーディオです。",
+    "productName": "Pioneer ディスプレイオーディオ DMH-SZ500 6.8インチ",
+    "parentAsin": "B0H5Q127BR",
+    "productDescription": "ワイヤレスでのApple CarPlay、Android Auto接続に対応した6.8インチディスプレイオーディオ。スマートフォン連携機能と高音質設計を備える。",
     "productUsage": [
-      "iPhoneやAndroidスマートフォンとワイヤレス接続し、カーナビアプリを画面に表示してルート案内を利用する",
-      "BluetoothやUSB接続で、スマートフォンの音楽を高音質で車内で再生する",
-      "ハンズフリー通話や音声アシスタント機能を利用して、運転中の安全な操作を行う",
-      "Weblink Castを使用してスマートフォンの画面を直接ディスプレイにミラーリング表示する",
-      "バックカメラ（別売）と接続し、駐車時の後方確認モニターとして活用する"
+      "スマートフォン連携カーナビとしての利用",
+      "車内での音楽・動画再生"
     ],
     "positivePoints": [
-      "乗り降りのたびにケーブルを繋ぐ手間がないワイヤレスCarPlay/Android Auto対応",
-      "パイオニアブランドならではの高音質と直感的でスムーズな操作性",
-      "Weblink Castによるスマホ画面のミラーリング機能搭載",
-      "純正ステアリングリモコンやバックカメラと連動可能な拡張性"
+      "ワイヤレス接続での「Apple CarPlay」「Android Auto」に対応",
+      "「WebLink Cast」によりスマートフォンの画面をディスプレイにミラーリングして直接操作可能",
+      "専用ショートカットキーやカスタム設定キーを備えた新インターフェース",
+      "フラットで先進的なデザインの静電式ハードキーを採用"
     ],
     "negativePoints": [
-      "CDやDVDなどの物理メディア再生ドライブが非搭載",
-      "HDMI入力端子がないため、一部の外部映像機器の接続には非対応",
-      "車載機単体での通信・ナビゲーション機能はなく、スマホ接続が前提となる"
+      "画面サイズが6.8インチと、近年主流になりつつある8〜9インチ以上の大画面モデルと比較すると小さめ",
+      "一部のレビューでAndroid Autoの車速連動（車速パルス）未対応問題が指摘されている"
     ],
     "useCases": [
-      "毎日の通勤時に、スマホをポケットに入れたまま自動接続して音楽や最新の渋滞情報をチェックする",
-      "週末のドライブで、助手席の同乗者がスマホを使って好みの音楽や動画を再生・操作する"
+      "車内でスマートフォンを活用してナビや音楽を手軽に楽しみたい時",
+      "既存のカーオーディオや古いナビからの置き換え"
     ],
     "userStories": [
       {
-        "userType": "30代会社員",
-        "scenario": "毎日の車通勤",
-        "experience": "以前は有線接続のモデルを使っていましたが、車に乗るたびにケーブルを挿すのが手間でDMH-SZ500に買い替えました。エンジンをかけるだけでiPhoneがワイヤレスでCarPlayに繋がるのは本当に快適です。音質もカロッツェリアらしく満足しています。（推測）",
+        "userType": "ナビ買い替えユーザー",
+        "scenario": "以前使っていたナビが故障したため、スマートフォンを主軸にしたシステムへ移行",
+        "experience": "スマホとリンクしてBGMとナビを利用。ワイヤレスCarPlay対応なので乗り降りの度にケーブルを繋ぐ手間がなく便利。有線接続を使えばYouTubeを見ることもできる。",
+        "supportingSourceIds": [
+          "src-minkara-1"
+        ],
         "sentiment": "positive"
       },
       {
-        "userType": "40代ファミリー層",
-        "scenario": "家族での長距離ドライブ",
-        "experience": "DVDが見られない点には注意が必要でしたが、代わりにWeblink Castを使ってスマホの映像を映せるので子供たちも飽きずに過ごせています。ただ、HDMI入力があればもっと便利だったかなと思います。（推測）",
+        "userType": "古いオーディオからの置き換えユーザー",
+        "scenario": "純正1DINオーディオで楽曲タイトルが表示できないため交換",
+        "experience": "普通に音楽を鳴らす分には問題ないが、それ以上の感動はないという印象。メーカー品としての安心感はある。",
+        "supportingSourceIds": [
+          "src-minkara-2"
+        ],
         "sentiment": "mixed"
       },
       {
-        "userType": "20代若年層",
-        "scenario": "初めてのマイカー購入",
-        "experience": "スマホのナビアプリを使う前提だったので、高価なカーナビは不要と考えこちらを選択。3万円台でワイヤレス接続までできる大手メーカー品はコスパが良いです。レスポンスもサクサクで使いやすいです。（推測）",
-        "sentiment": "positive"
+        "userType": "Android Auto利用者",
+        "scenario": "Android Autoをメインに使用する目的で購入",
+        "experience": "Android Autoの車速連動（車速パルス）が未対応である仕様により、トンネル内などGPSが届かない場所でのナビ精度に懸念を抱いた。",
+        "supportingSourceIds": [
+          "src-minkara-3"
+        ],
+        "sentiment": "negative"
       }
     ],
-    "userImpression": "ワイヤレスでのCarPlay/Android Auto接続の手軽さと、パイオニア製ならではの信頼性・操作性が高く評価されています。CD/DVDドライブやHDMI入力といったレガシー機能・映像入力を省くことで価格を抑えており、スマートフォンをメインの音源やナビゲーションとして活用する現代のユーザーにとって、非常にコストパフォーマンスの高い選択肢として受け入れられています。",
+    "userImpression": "ワイヤレスでのCarPlay/Android Auto接続に対応している点が高く評価されており、ケーブル接続の手間が省けることに満足しているユーザーが多い。一方で、Android Autoの車速連動未対応や、ベーシックなオーディオ性能に関して「普通」という評価もあり、手軽にスマホ連携を始めたいユーザーには適しているが、高度なナビ精度や極上の音質を求める層には不満が残る可能性がある。",
     "sources": [
       {
-        "name": "Amazon カスタマーレビュー",
+        "id": "src-amazon",
+        "name": "Amazon商品ページ",
         "url": "https://www.amazon.co.jp/dp/B0D46HM42T",
-        "credibility": "高"
+        "tier": "medium",
+        "evidenceType": "primary",
+        "publishedAt": "2024-05-29",
+        "author": "Pioneer",
+        "conflictOfInterest": "possible",
+        "notes": "製品の基本仕様、価格、機能説明を確認"
       },
       {
-        "name": "みんカラ クチコミ情報（推測ベース）",
-        "url": null,
-        "credibility": "中"
+        "id": "src-pioneer",
+        "name": "Pioneer公式商品ページ",
+        "url": "https://jpn.pioneer/ja/carrozzeria/car_av/displayaudio/dmh-sz500/",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2024-05-29",
+        "author": "Pioneer",
+        "conflictOfInterest": "possible",
+        "notes": "詳細スペック、ワイヤレスCarPlay/Android Auto対応、WebLink Cast機能、仕様一覧を確認"
+      },
+      {
+        "id": "src-minkara-1",
+        "name": "みんカラ パーツレビュー (userid/3249000)",
+        "url": "https://minkara.carview.co.jp/search/?q=DMH-SZ500",
+        "tier": "medium",
+        "evidenceType": "secondary",
+        "publishedAt": "2024-06-01",
+        "author": "みんカラ ユーザー",
+        "conflictOfInterest": "none",
+        "notes": "ナビ故障による置き換え。スマホとリンクしてBGMとナビを使用。有線でYouTubeが視聴可能との記述"
+      },
+      {
+        "id": "src-minkara-2",
+        "name": "みんカラ パーツレビュー (2ページ目)",
+        "url": "https://minkara.carview.co.jp/search/?q=DMH-SZ500&p=2",
+        "tier": "medium",
+        "evidenceType": "secondary",
+        "publishedAt": "2024-06-01",
+        "author": "みんカラ ユーザー",
+        "conflictOfInterest": "none",
+        "notes": "1DINオーディオからの置き換え。普通に鳴るがそれ以上ではないとの感想。"
+      },
+      {
+        "id": "src-minkara-3",
+        "name": "みんカラ ブログ",
+        "url": "https://minkara.carview.co.jp/search/?q=DMH-SZ500&p=2",
+        "tier": "medium",
+        "evidenceType": "secondary",
+        "publishedAt": "2024-06-01",
+        "author": "みんカラ ユーザー",
+        "conflictOfInterest": "none",
+        "notes": "Android Auto車速未対応問題についての言及"
       }
     ],
-    "lastInvestigated": "2026-03-15",
+    "claims": [
+      {
+        "claim": "ワイヤレスで手軽に「Apple CarPlay」「Android Auto」が使用可能",
+        "category": "comparativeAdvantage",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-pioneer",
+          "src-minkara-1"
+        ],
+        "crossChecked": true,
+        "notes": "公式サイトで主要機能として謳われており、実際のユーザーレビューでもワイヤレス接続の利便性が評価されている"
+      },
+      {
+        "claim": "映し出したスマホ画面を直接操作できる「WebLink Cast」対応",
+        "category": "quality",
+        "confidence": "medium",
+        "supportingSourceIds": [
+          "src-pioneer"
+        ],
+        "crossChecked": false,
+        "notes": "公式サイトで機能として説明されているが、iOSでのAssistive Touch設定が必要など操作感に関する注意書きがある"
+      }
+    ],
+    "lastInvestigated": "2026-08-21",
     "competitiveAnalysis": [
       {
-        "name": "Pioneer DMH-SZ700",
-        "asin": "B088LM47VT",
-        "priceComparison": "DMH-SZ500が約3.8万円なのに対し、SZ700は約4.3万円とやや高価です。",
+        "name": "Pioneer DMH-SF700 (9インチ 1DIN)",
+        "asin": "B088LJN6R2",
+        "priceComparison": "上位モデルであり、DMH-SZ500よりも価格が約2倍以上高い。",
         "featureComparison": [
-          "SZ700はAmazon Alexa搭載およびHDMI入力を備えるハイエンド寄りの構成です。",
-          "SZ500はHDMI入力がない代わりに、ワイヤレスでのCarPlay/Android Auto接続に強みがあります。"
+          "共通点：Apple CarPlay、Android Auto対応、Bluetooth/USB対応",
+          "相違点：DMH-SF700は9インチ大画面のフローティング構造。Amazon Alexa搭載。ハイレゾ音源対応。DMH-SZ500は6.8インチ2DIN埋め込み型でワイヤレスCarPlay対応が強み。"
         ],
         "differentiators": [
-          "ワイヤレスCarPlay/Android Autoの利便性を重視するならSZ500、HDMI機器接続や高機能なDSPを求めるならSZ700という住み分けがされています。"
+          "DMH-SZ500の利点：2DINスペースにすっきり収まるデザインと、価格を抑えながらワイヤレスCarPlay/Android Autoに対応している点。",
+          "Pioneer DMH-SF700 (9インチ 1DIN)の利点：9インチの大画面と、フローティング構造により1DINスペースでも大画面化が可能な点。高音質再生能力。"
         ]
       },
       {
-        "name": "KENWOOD DDX5020SR",
-        "asin": "B0F9WWG8XK",
-        "priceComparison": "DDX5020SRは約3.0万円と、DMH-SZ500より安価な設定です。",
+        "name": "Pioneer FH-9400DVS (7インチ)",
+        "asin": "B07CJ18KZ3",
+        "priceComparison": "DMH-SZ500より安価な旧型/別系統モデル。",
         "featureComparison": [
-          "DDX5020SRはDVD/CD再生ドライブを備えていますが、CarPlay/Android Autoは有線接続のみです。",
-          "SZ500は物理ドライブを廃止し、ワイヤレススマホ接続に特化しています。"
+          "共通点：Apple CarPlay、Android Auto対応",
+          "相違点：FH-9400DVSはCD/DVD再生に対応し、CarPlay等は有線接続。DMH-SZ500はCD/DVDメカレスでワイヤレス接続に対応。"
         ],
         "differentiators": [
-          "物理メディア（CD/DVD）の再生が必要かどうかと、ワイヤレス接続の手軽さが主な差別化ポイントです。"
+          "DMH-SZ500の利点：CD/DVDが不要で、スマホとのワイヤレス接続の手軽さを求める場合に最適。",
+          "Pioneer FH-9400DVS (7インチ)の利点：手持ちのCDやDVDメディアを車内で再生したい場合に必須となる選択肢。"
         ]
       },
       {
-        "name": "ALPINE DAF11Z",
-        "asin": "B09VC32X4W",
-        "priceComparison": "DAF11Zは約7.8万円と、DMH-SZ500の2倍以上の価格帯です。",
+        "name": "ケンウッド DDX5020SR (7インチ)",
+        "asin": "B0D9VBHBJX",
+        "priceComparison": "DMH-SZ500よりやや安価。",
         "featureComparison": [
-          "DAF11Zは11インチの超大型フローティングディスプレイを搭載し、圧倒的な画面サイズを誇ります。",
-          "どちらもワイヤレスCarPlay/Android Autoには対応していますが、SZ500は2DINに収まる6.8インチの標準サイズです。"
+          "共通点：Apple CarPlay、Android Auto対応",
+          "相違点：DDX5020SRはDVD/CD再生対応モデル。CarPlay等は有線接続。"
         ],
         "differentiators": [
-          "画面の大きさとフローティング構造によるインパネの迫力が最大の違いであり、予算と取り付けスペースに応じた選択になります。"
-        ]
-      },
-      {
-        "name": "Kuayvan ポータブル ディスプレイオーディオ 7インチ",
-        "asin": "B0D9JF54CX",
-        "priceComparison": "約6,600円と、据え置き型のDMH-SZ500とは全く異なる低価格帯です。",
-        "featureComparison": [
-          "Kuayvan製品はダッシュボード上に設置するポータブルタイプで、取り付け工事が不要です。",
-          "SZ500は車体の2DINスペースに埋め込む本格的なインダッシュタイプであり、音質や車との親和性で大きく勝ります。"
-        ],
-        "differentiators": [
-          "オーディオとしての本格的な音質・操作性・車内との一体感を求めるか、安価で手軽な後付けモニターを求めるかで分かれます。"
+          "DMH-SZ500の利点：ワイヤレスでのスマートフォン連携機能の利便性。",
+          "ケンウッド DDX5020SR (7インチ)の利点：CD/DVD再生機能が必要で、ケンウッドの操作系を好む場合。"
         ]
       }
     ],
     "recommendation": {
       "targetUsers": [
-        "車に乗るたびにスマホをケーブル接続するのが面倒な人",
-        "音楽もナビも全てスマートフォンで完結している人",
-        "CDやDVDなどの物理ディスクを車に持ち込まない人",
-        "有名メーカーの信頼性と手頃な価格を両立させたい人"
+        "CD/DVDを使わず、スマートフォン内の音楽やナビアプリを中心に車内で活用したい人",
+        "ケーブルを繋ぐ手間を省き、乗り降りの際に自動でワイヤレスCarPlay/Android Autoに接続させたい人",
+        "高価な大画面モデルよりも、純正風にすっきりと2DINスペースに収まるデザインを好む人"
       ],
       "pros": [
-        "ワイヤレス接続対応による圧倒的な利便性",
-        "3万円台で購入できる高いコストパフォーマンス",
-        "パイオニア製ならではの安定した動作と高音質",
-        "すっきりとインパネに収まる2DINジャストサイズ"
+        "ワイヤレス接続に対応しているため、車に乗り込んでエンジンをかけるだけで自動的にCarPlayやAndroid Autoが立ち上がり、すぐにナビや音楽再生を開始できる",
+        "WebLink Cast機能を使えば、スマホ画面をそのままミラーリングしてYouTubeなどの動画も手軽に同乗者と楽しめる"
       ],
       "cons": [
-        "CDやDVDの再生ができない",
-        "HDMI入力がないためFire TV Stick等の直接接続は非対応",
-        "単体でのナビ機能はないためスマホの通信量やバッテリー（充電しない場合）を消費する"
+        "Android Autoを使用する場合、車速パルスが未対応であるとの報告があるため、トンネル内などGPS信号が途絶える環境でのナビ案内に不安がある人は注意が必要",
+        "画面サイズが6.8インチと標準的なため、近年主流の大画面（9インチ等）に慣れている場合は視認性に物足りなさを感じる可能性がある"
       ],
-      "score": 86,
-      "scoreRationale": "[基本点: 70]\n[加点: +8] (ワイヤレスでのApple CarPlay/Android Auto接続に対応し、乗り降りのたびにケーブルを繋ぐ手間が省けるため)\n[加点: +5] (直感的なインターフェースと、パイオニアならではの高いオーディオ品質・操作性を備えているため)\n[加点: +5] (約3.8万円という価格でワイヤレス接続対応の有名ブランド機が手に入るコストパフォーマンスの高さ)\n[減点: -2] (HDMI入力やCD/DVDドライブなどの物理メディア再生機能が省かれているため、用途を選ぶ点)\n[合計: 86]"
+      "score": 75,
+      "scoreRationale": "[基本点: 70]\n[加点: +10] (ワイヤレスCarPlay/Android Auto対応による圧倒的な利便性)\n[加点: +5] (WebLink Cast対応など拡張性の高さ)\n[減点: -10] (Android Autoの車速連動問題などナビ精度に関する懸念点)\n[合計: 75]"
     },
     "technicalSpecs": {
-      "dimensions": null,
-      "power": null,
-      "capacity": null,
-      "os": null,
-      "cpu": null,
-      "ram": null,
-      "storage": null,
       "display": {
-        "size": "6.8インチ",
-        "resolution": null,
-        "type": null
+        "size": "6.8インチ (ワイド)",
+        "resolution": "800×480 (WVGA)",
+        "type": "TFT アクティブマトリクス方式"
       },
-      "battery": null,
-      "camera": null,
+      "dimensions": {
+        "width": "178mm",
+        "height": "100mm",
+        "depth": "125mm",
+        "weight": "0.9kg"
+      },
+      "weight": "0.9kg",
       "connectivity": [
-        "Bluetooth",
-        "USB",
-        "Wi-Fi (ワイヤレスCarPlay/Android Auto連携用)"
+        "Bluetooth 5.3",
+        "Wi-Fi (IEEE 802.11 a/n/ac 5GHz)",
+        "Apple CarPlay (ワイヤレス / 有線)",
+        "Android Auto (ワイヤレス / 有線)"
       ],
       "other": [
-        "Apple CarPlay対応 (ワイヤレス接続可)",
-        "Android Auto対応 (ワイヤレス接続可)",
-        "Weblink Cast対応",
-        "2DINサイズ"
+        "最大出力: 50W × 4ch",
+        "プリアウト最大出力: 4.0V",
+        "GPSアンテナ付属",
+        "CD/DVDメカレス",
+        "取付寸法: 178(W)×100(H)×125(D)mm"
       ]
     }
   }
