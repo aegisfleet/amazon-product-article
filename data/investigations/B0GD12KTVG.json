@@ -1,0 +1,181 @@
+{
+  "analysis": {
+    "productName": "FALIYORS ホームプロジェクター (B0GD12KTVG)",
+    "parentAsin": "B0HDC912CX",
+    "productDescription": "Android TV 14を搭載し、33,000ルーメンの高輝度を謳う家庭用小型プロジェクター。270°回転スタンドにより天井投影も容易に行えます。",
+    "productUsage": [
+      "家庭での映画・スポーツ鑑賞",
+      "寝室での天井投影",
+      "ゲームやプレゼンテーション"
+    ],
+    "positivePoints": [
+      "33,000ルーメンの高輝度と15,000:1のコントラスト比による投影",
+      "Android TV 14を内蔵し、Wi-Fi接続で各種動画サービスにアクセス可能",
+      "270°回転スタンドを装備し、三脚不要で天井投影が可能",
+      "自動台形補正機能を搭載し、斜めからの投影でも調整可能",
+      "Wi-Fi 6およびBluetooth 5.4に対応"
+    ],
+    "negativePoints": [
+      "一部のBluetooth機器と非対応の可能性がある",
+      "類似スペックの競合製品と比較して価格設定が非常に高い（36,000円）",
+      "ANSIルーメン表記ではなく、明るさの客観的指標に欠ける"
+    ],
+    "useCases": [
+      "リビングの壁面に大画面で映画を投影する",
+      "ベッドに寝転がりながら天井に映像を映して楽しむ",
+      "Wi-Fi 6を活用してオンラインゲームをプレイする"
+    ],
+    "userStories": [
+      {
+        "userType": "ファミリー層",
+        "scenario": "休日のリビングでの映画鑑賞",
+        "experience": "Android TV 14が内蔵されているため、別途デバイスを用意しなくてもYouTubeやPrime Videoを見られるのが便利です。自動台形補正機能により設置場所を選ばない点も気に入っています。",
+        "supportingSourceIds": [
+          "amazon-specs"
+        ],
+        "sentiment": "positive"
+      }
+    ],
+    "userImpression": "Android TVの内蔵や270°回転スタンドなど、使い勝手を向上させる機能が搭載されており、手軽に大画面を楽しみたいユーザーに向けた仕様です。しかし、価格が36,000円と競合製品に比べて非常に割高であり、実際の画質や耐久性が価格に見合うかについて懸念が残ります。",
+    "sources": [
+      {
+        "id": "amazon-specs",
+        "name": "Amazon商品ページ仕様",
+        "url": "https://www.amazon.co.jp/dp/B0GD12KTVG",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-08-21",
+        "author": "FALIYORS",
+        "conflictOfInterest": "possible",
+        "notes": "製品の基本仕様、機能、価格情報を取得"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "80,000〜100,000時間の超長寿命を実現",
+        "category": "durability",
+        "confidence": "low",
+        "supportingSourceIds": [
+          "amazon-specs"
+        ],
+        "crossChecked": false,
+        "notes": "メーカーの主張。実際の利用環境での検証データはないため確実性は低い。"
+      },
+      {
+        "claim": "33,000ルーメンの高輝度",
+        "category": "quality",
+        "confidence": "low",
+        "supportingSourceIds": [
+          "amazon-specs"
+        ],
+        "crossChecked": false,
+        "notes": "無名ブランドのプロジェクターにおいてルーメン数が誇張されるケースが多いため、ANSIルーメンなどの客観的指標がない本製品の数値は参考程度とする。"
+      }
+    ],
+    "lastInvestigated": "2026-08-21",
+    "competitiveAnalysis": [
+      {
+        "name": "Alprojec プロジェクター 小型 270°回転",
+        "asin": "B0G7G1XGS2",
+        "priceComparison": "Alprojecは約5,699円であり、対象商品（36,000円）よりも大幅に安い。対象商品の価格設定は相場から大きく乖離している可能性がある。",
+        "featureComparison": [
+          "共通点：270°回転スタンド、1080P対応、Bluetooth 5.4対応",
+          "相違点：対象商品はAndroid TV 14を内蔵し、Wi-Fi 6に対応。Alprojecは有線接続専用でありOSは非搭載。"
+        ],
+        "differentiators": [
+          "FALIYORS (対象商品)の利点：本体のみで動画配信サービスを楽しみたい、ケーブルレスで運用したい場合。ただし価格差ほどの価値があるかは慎重に判断する必要がある。",
+          "Alprojecの利点：PCやスマートフォンを有線で接続して手軽に大画面を楽しみたい、とにかく予算を抑えたい場合。"
+        ]
+      },
+      {
+        "name": "Ifanr プロジェクター家庭用",
+        "asin": "B0G4DSTGYQ",
+        "priceComparison": "Ifanrは約16,888円。対象商品は36,000円であり、約2倍の価格差がある。",
+        "featureComparison": [
+          "共通点：Android系アプリ搭載、Wi-Fi 6対応、Bluetooth 5.4対応、自動台形補正",
+          "相違点：対象商品は『33000LM』と謳うが、Ifanrは『600ANSI』とより客観的な指標を提示している。"
+        ],
+        "differentiators": [
+          "FALIYORS (対象商品)の利点：より新しいAndroid TV 14を搭載している点。",
+          "Ifanrの利点：同等のスマート機能を備えつつ、価格が半額以下であり、ANSIルーメン表記で明るさの信頼性が高い点。"
+        ]
+      },
+      {
+        "name": "sainyer 270°回転プロジェクター",
+        "asin": "B0FX2KQP4D",
+        "priceComparison": "sainyerは約5,697円。対象商品の36,000円は非常に高額に感じる。",
+        "featureComparison": [
+          "共通点：270°回転スタンド、小型設計",
+          "相違点：対象商品はAndroid TV 14搭載だが、sainyerは有線/無線接続を前提としている。"
+        ],
+        "differentiators": [
+          "FALIYORS (対象商品)の利点：単体での動画視聴機能が完結している点。",
+          "sainyerの利点：圧倒的な低価格。Fire TV Stickなどを別途購入しても対象商品よりはるかに安く済む点。"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "Android TV内蔵で、別途デバイスを繋がずに動画を楽しみたいが、価格が高くても構わない人",
+        "天井への投影を頻繁に行うため、スタンド一体型の利便性を重視する人"
+      ],
+      "pros": [
+        "Android TV 14の内蔵により、本体とWi-Fi環境だけで主要な動画配信サービスを快適に視聴できる",
+        "270°回転可能なスタンドと自動台形補正により、寝室の天井など好きな場所に簡単に映像を映し出せる"
+      ],
+      "cons": [
+        "類似の機能・形状を持つ競合製品（約1万〜2万円台）と比較して、36,000円という価格設定は非常に割高である",
+        "ルーメン数の表記（33,000LM）は業界標準のANSIルーメンとは異なる可能性が高く、実際の明るさは価格に見合わない懸念がある"
+      ],
+      "score": 50,
+      "scoreRationale": "[基本点: 70]\n[加点: +10] (Android TV 14内蔵と270°回転スタンドによる設置・使用の利便性の高さ)\n[減点: -20] (同等機能を持つ他社製品と比較して不当に高額であり、「見せ金」や価格設定の不透明さが強く疑われるため)\n[減点: -10] (明るさの指標にANSIルーメンを使用しておらず、性能表示の信頼性が低いため)\n[合計: 50]"
+    },
+    "technicalSpecs": {
+      "os": "Android TV 14",
+      "cpu": "不明",
+      "ram": "不明",
+      "storage": "不明",
+      "display": {
+        "size": "40〜350インチ",
+        "resolution": "1920×1080 (1080P) / 4K対応",
+        "type": "不明",
+        "refreshRate": "不明"
+      },
+      "battery": {
+        "capacity": "非搭載",
+        "charging": "AC給電"
+      },
+      "camera": {
+        "main": "非搭載",
+        "ultrawide": "非搭載",
+        "telephoto": "非搭載",
+        "front": "非搭載"
+      },
+      "dimensions": {
+        "height": "不明",
+        "width": "不明",
+        "depth": "不明",
+        "weight": "不明"
+      },
+      "weight": "不明",
+      "material": "不明",
+      "origin": "不明",
+      "connectivity": [
+        "Wi-Fi 6",
+        "Bluetooth 5.4",
+        "HDMI",
+        "USB",
+        "3.5mmオーディオ"
+      ],
+      "other": [
+        "光源寿命: 80,000〜100,000時間",
+        "コントラスト比: 15000:1",
+        "NTSC色域: 95%以上",
+        "自動台形補正 (45度以内)",
+        "HiFiスピーカー内蔵",
+        "270°回転スタンド一体型",
+        "投影距離: 0.5〜3m"
+      ]
+    }
+  }
+}
