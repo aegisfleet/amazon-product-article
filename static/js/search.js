@@ -392,8 +392,15 @@ document.addEventListener('DOMContentLoaded', function () {
         const containerRect = searchContainer.getBoundingClientRect();
         const containerBottom = containerRect.bottom;
 
-        // 検索コンテナの底から Viewport の底までの空き高さを算出 (20px = 下部マージン)
-        const availableHeight = viewportHeight - containerBottom - 20;
+        // 比較トレイが表示されている場合はトレイの高さ分マージンを加算
+        let bottomMargin = 20;
+        const compareTray = document.getElementById('compare-tray');
+        if (compareTray && compareTray.classList.contains('is-active')) {
+            bottomMargin += (compareTray.offsetHeight || 60);
+        }
+
+        // 検索コンテナの底から Viewport の底までの空き高さを算出
+        const availableHeight = viewportHeight - containerBottom - bottomMargin;
 
         // 最小200pxを確保
         const maxHeight = Math.max(200, availableHeight);
@@ -409,6 +416,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // ウィンドウリサイズ・スクロール時も更新
     globalThis.addEventListener('resize', updateSearchResultsHeight);
     globalThis.addEventListener('scroll', updateSearchResultsHeight, { passive: true });
+    globalThis.addEventListener('apa-compare-tray-change', updateSearchResultsHeight);
 
     // Load Fuse.js if not already loaded
     if (globalThis.Fuse) {
@@ -1142,11 +1150,31 @@ document.addEventListener('DOMContentLoaded', function () {
             }
             const scoreText = String(item.score || '');
 
-            const resultLink = document.createElement('a');
-            resultLink.href = permalink;
-            resultLink.className = 'search-result-item';
+            const resultItem = document.createElement('article');
+            resultItem.className = 'search-result-item';
+            if (item.asin) {
+                resultItem.dataset.asin = item.asin;
+            }
 
-            // Thumbnail
+            // カード全体をクリックしたときのページ遷移処理（ボタン・リンクのクリック時は除外）
+            resultItem.addEventListener('click', (e) => {
+                if (e.target.closest('button') || e.target.closest('a')) return;
+                if (permalink) {
+                    globalThis.location.href = permalink;
+                }
+            });
+
+            // Main Row (Thumbnail + Content)
+            const mainRow = document.createElement('div');
+            mainRow.className = 'result-main-row';
+
+            // Thumbnail Link
+            const thumbLink = document.createElement('a');
+            thumbLink.href = permalink;
+            thumbLink.className = 'result-thumbnail-link';
+            thumbLink.tabIndex = -1;
+            thumbLink.setAttribute('aria-hidden', 'true');
+
             if (imageSrc) {
                 const thumbDiv = document.createElement('div');
                 thumbDiv.className = 'result-thumbnail';
@@ -1155,28 +1183,34 @@ document.addEventListener('DOMContentLoaded', function () {
                 img.alt = titleText;
                 img.loading = 'lazy';
                 thumbDiv.appendChild(img);
-                resultLink.appendChild(thumbDiv);
+                thumbLink.appendChild(thumbDiv);
             } else {
                 const thumbDiv = document.createElement('div');
                 thumbDiv.className = 'result-thumbnail no-image';
                 const span = document.createElement('span');
                 span.textContent = 'No Image';
                 thumbDiv.appendChild(span);
-                resultLink.appendChild(thumbDiv);
+                thumbLink.appendChild(thumbDiv);
             }
+            mainRow.appendChild(thumbLink);
 
             // Content
             const contentDiv = document.createElement('div');
             contentDiv.className = 'result-content';
 
-            // Header
+            // Header (Title + Metrics)
             const headerDiv = document.createElement('div');
             headerDiv.className = 'result-header';
+
+            const titleLink = document.createElement('a');
+            titleLink.href = permalink;
+            titleLink.className = 'result-title-link';
 
             const titleSpan = document.createElement('span');
             titleSpan.className = 'result-title';
             titleSpan.textContent = titleText;
-            headerDiv.appendChild(titleSpan);
+            titleLink.appendChild(titleSpan);
+            headerDiv.appendChild(titleLink);
 
             // Metrics
             const metricsDiv = document.createElement('div');
@@ -1213,28 +1247,96 @@ document.addEventListener('DOMContentLoaded', function () {
             contentDiv.appendChild(headerDiv);
 
             // Summary
-            const summarySpan = document.createElement('span');
-            summarySpan.className = 'result-summary';
-            summarySpan.textContent = summaryText;
-            contentDiv.appendChild(summarySpan);
+            if (summaryText) {
+                const summaryLink = document.createElement('a');
+                summaryLink.href = permalink;
+                summaryLink.className = 'result-summary-link';
+                summaryLink.tabIndex = -1;
+                summaryLink.setAttribute('aria-hidden', 'true');
+
+                const summarySpan = document.createElement('span');
+                summarySpan.className = 'result-summary';
+                summarySpan.textContent = summaryText;
+                summaryLink.appendChild(summarySpan);
+                contentDiv.appendChild(summaryLink);
+            }
+
+            // Footer Row (Categories + Compare Button)
+            const footerDiv = document.createElement('div');
+            footerDiv.className = 'result-footer';
 
             // Categories
             const categories = item.categories || [];
+            const categoriesDiv = document.createElement('div');
+            categoriesDiv.className = 'result-categories';
             if (categories.length > 0) {
-                const categoriesDiv = document.createElement('div');
-                categoriesDiv.className = 'result-categories';
                 categories.forEach(cat => {
                     const catTag = document.createElement('span');
                     catTag.className = 'category-tag';
                     catTag.textContent = cat;
                     categoriesDiv.appendChild(catTag);
                 });
-                contentDiv.appendChild(categoriesDiv);
+            }
+            footerDiv.appendChild(categoriesDiv);
+
+            // Actions (Compare Button)
+            if (item.asin) {
+                const actionsDiv = document.createElement('div');
+                actionsDiv.className = 'result-actions';
+
+                const compareBtn = document.createElement('button');
+                compareBtn.type = 'button';
+                compareBtn.className = 'btn-compare-card search-compare-btn';
+                compareBtn.dataset.compareBtn = '1';
+                compareBtn.dataset.asin = item.asin || '';
+                compareBtn.dataset.title = titleText || '';
+                compareBtn.dataset.url = permalink || '';
+                compareBtn.dataset.affiliateUrl = item.affiliate_url || '';
+                compareBtn.dataset.image = imageSrc || '';
+                compareBtn.dataset.price = priceText || '';
+                compareBtn.dataset.score = String(item.score || 0);
+                compareBtn.dataset.savings = String(item.savings_percentage || 0);
+                compareBtn.dataset.category = (categories && categories[0]) ? categories[0] : '';
+                
+                let specsValue = '';
+                if (item.specs_json) {
+                    specsValue = typeof item.specs_json === 'string' ? item.specs_json : JSON.stringify(item.specs_json);
+                }
+                compareBtn.dataset.specs = specsValue;
+
+                const isCompared = Boolean(globalThis.Compare && typeof globalThis.Compare.isCompared === 'function' && globalThis.Compare.isCompared(item.asin));
+                compareBtn.setAttribute('aria-pressed', isCompared ? 'true' : 'false');
+                const titlePrefix = titleText ? `${titleText}を` : '';
+                compareBtn.setAttribute('aria-label', isCompared ? `${titlePrefix}比較から削除` : `${titlePrefix}比較に追加`);
+
+                if (isCompared) {
+                    compareBtn.classList.add('is-compared');
+                }
+
+                const compareIcon = document.createElement('span');
+                compareIcon.className = 'material-symbols-outlined compare-icon';
+                compareIcon.setAttribute('aria-hidden', 'true');
+                compareIcon.textContent = isCompared ? 'check_circle' : 'balance';
+
+                const compareLabel = document.createElement('span');
+                compareLabel.className = 'compare-label';
+                compareLabel.textContent = isCompared ? '比較中' : '比較';
+
+                compareBtn.appendChild(compareIcon);
+                compareBtn.appendChild(compareLabel);
+                actionsDiv.appendChild(compareBtn);
+                footerDiv.appendChild(actionsDiv);
             }
 
-            resultLink.appendChild(contentDiv);
-            searchResults.appendChild(resultLink);
+            contentDiv.appendChild(footerDiv);
+            mainRow.appendChild(contentDiv);
+            resultItem.appendChild(mainRow);
+            searchResults.appendChild(resultItem);
         });
+
+        if (globalThis.Compare && typeof globalThis.Compare.sync === 'function') {
+            globalThis.Compare.sync();
+        }
 
         searchResults.classList.add('active');
         updateSearchResultsHeight();

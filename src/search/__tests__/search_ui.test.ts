@@ -102,4 +102,11 @@ describe('Search UI XSS Protection', () => {
     expect(searchJsContent).toContain('search-skeleton-container');
     expect(searchJsContent).toContain('skeleton-card');
   });
+
+  test('static/js/search.js should contain compare button implementation in search results', () => {
+    expect(searchJsContent).toContain('search-compare-btn');
+    expect(searchJsContent).toContain('dataset.compareBtn');
+    expect(searchJsContent).toContain('btn-compare-card');
+    expect(searchJsContent).toContain('globalThis.Compare');
+  });
 });
