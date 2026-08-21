@@ -6994,7 +6994,7 @@ body.menu-open .nav-menu-floating-toggle {
   font-size: 0.875rem;
   font-weight: 600;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
-  z-index: 10000;
+  z-index: 10200;
   opacity: 0;
   pointer-events: none;
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
@@ -7012,7 +7012,7 @@ body.menu-open .nav-menu-floating-toggle {
   bottom: 0;
   left: 0;
   right: 0;
-  z-index: 9980;
+  z-index: 10050;
   background: var(--color-bg-card, #ffffff);
   border-top: 2px solid var(--color-primary, #2563eb);
   box-shadow: 0 -6px 24px rgba(0, 0, 0, 0.15);
@@ -7192,7 +7192,7 @@ body.menu-open .nav-menu-floating-toggle {
   height: 100vh;
   background-color: rgba(15, 23, 42, 0.65);
   backdrop-filter: blur(4px);
-  z-index: 10000;
+  z-index: 10100;
   display: flex;
   align-items: center;
   justify-content: center;

@@ -29,6 +29,7 @@
       {{- $priceValue = $priceBase -}}
     {{- end -}}
   {{- end -}}
+  {{- $specsJson := partial "product-specs-json.html" .Params.specs -}}
   {{- $dict := dict
       "title" $product_name
       "permalink" .RelPermalink
@@ -42,6 +43,9 @@
       "last_investigated" .Params.last_investigated
       "specs" $spec_text
       "asin" .Params.asin
+      "affiliate_url" .Params.affiliate_url
+      "savings_percentage" .Params.savings_percentage
+      "specs_json" $specsJson
     -}}
   {{- $.Scratch.Add "index" $dict -}}
 {{- end -}}

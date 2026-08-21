@@ -231,6 +231,12 @@
         } else {
             tray.classList.remove('is-active');
         }
+
+        try {
+            globalThis.dispatchEvent(new CustomEvent('apa-compare-tray-change', { detail: { count: list.length } }));
+        } catch {
+            // ignore
+        }
     }
 
     function syncAllButtons() {
