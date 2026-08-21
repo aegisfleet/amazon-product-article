@@ -29,6 +29,7 @@
     "sort:categories": "ts-node src/scripts/sort-categories.ts",
     "audit:dead": "ts-node scripts/prune-dead-products.ts --audit",
     "prune:dead": "ts-node scripts/prune-dead-products.ts --prune",
+    "audit:score-discrepancy": "ts-node scripts/find-score-discrepancy.ts",
     "biome:check": "biome check .",
     "biome:fix": "biome check --write ."
   },
