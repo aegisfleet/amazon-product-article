@@ -128,6 +128,26 @@ Web実装の正式な基準単位を CSS `px` および `rem`（1rem = 16px）�
 - M3 Surface Container Background と Divider（境界線）でコンテンツ本文との区切りを明確化。
 - Amazonアソシエイト免責事項、著作権表記、最終更新日をグループ分けして整列配置。
 
+### 4.6 アクションボタン体系 (Button Matrix & Styling)
+サイト内のアクションボタンは目的と視覚的優先度に応じて以下の4系統に統一してスタイリングします。
+
+1. **Tonal Button（内部主要導線・サイト内レビュー）**:
+   - **用途**: 競合比較カードやおすすめリストからの自サイト内詳細記事への導線（`.btn-internal-small` 等）。外部モールボタンと競合させずに調和した主要リンク。
+   - **通常時**: 背景 `var(--md-sys-color-primary-container)` / 文字 `var(--md-sys-color-on-primary-container)` / 枠線 `1px solid var(--md-sys-color-outline-variant)`
+   - **ホバー時**: 背景 `var(--md-sys-color-primary)` / 文字 `var(--md-sys-color-on-primary)` / 枠線 `1px solid var(--md-sys-color-primary)`
+   - **ダークテーマ**: 通常時背景 `#3730A3` / 文字 `#E0E7FF` / 枠線 `#475569`、ホバー時背景 `#818CF8` / 文字 `#1E1B4B`
+2. **Primary Filled Button（最重要CTA）**:
+   - **用途**: フォーム送信、最優先決定アクション。
+   - **通常時**: 背景 `var(--md-sys-color-primary)` / 文字 `var(--md-sys-color-on-primary)`
+   - **ホバー時**: 背景 `var(--color-primary-dark)` / 文字 `var(--md-sys-color-on-primary)`
+3. **Outlined / Surface Button（補助操作・ユーティリティ）**:
+   - **用途**: お気に入り追加（`.btn-favorite-card`）、商品比較追加（`.btn-compare-card`）、一覧内レビュー補助リンク。
+   - **通常時**: 背景 `transparent` / 文字 `var(--color-text-main)` / 枠線 `1px solid var(--md-sys-color-outline)`
+   - **ホバー時**: 背景 `var(--md-sys-color-surface-container-highest)` または状態別ハイライト
+4. **ECモール専用ボタン**:
+   - **用途**: Amazon、楽天市場、Yahoo!ショッピングへの外部リンク。
+   - **スタイリング**: ユーザー認知向上のため、各モールの固有ブランドカラー（Amazon橙、楽天赤、Yahoo青）を専用保持。
+
 ---
 
 ## 5. レスポンシブ & アクセシビリティ受け入れ条件 (WCAG 2.1 AA Compliance)
