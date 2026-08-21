@@ -277,32 +277,35 @@
         font-weight: 700;
         border-radius: var(--radius-md, 8px);
         text-decoration: none;
-        background: var(--md-sys-color-secondary-container, #e8def8);
-        color: var(--md-sys-color-on-secondary-container, #1d192b);
-        border: 1px solid var(--md-sys-color-outline-variant, #cac4d0);
+        background: var(--md-sys-color-primary-container, #EEF2FF);
+        color: var(--md-sys-color-on-primary-container, #3730A3);
+        border: 1px solid var(--md-sys-color-outline-variant, #E2E8F0);
         box-sizing: border-box;
         transition: all 0.2s ease;
     }
 
     .rec-card-actions .btn-internal-small:hover,
     .rec-card-actions .btn-internal--full:hover {
-        background: var(--md-sys-color-secondary, #625b71);
-        color: var(--md-sys-color-on-secondary, #ffffff);
+        background: var(--md-sys-color-primary, #4F46E5);
+        color: var(--md-sys-color-on-primary, #FFFFFF);
+        border-color: var(--md-sys-color-primary, #4F46E5);
         transform: translateY(-1px);
-        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
+        box-shadow: 0 2px 6px rgba(79, 70, 229, 0.2);
     }
 
     [data-theme="dark"] .rec-card-actions .btn-internal-small,
     [data-theme="dark"] .rec-card-actions .btn-internal--full {
-        background: var(--md-sys-color-secondary-container, #4a4458);
-        color: var(--md-sys-color-on-secondary-container, #e8def8);
-        border-color: var(--md-sys-color-outline, #938f99);
+        background: var(--md-sys-color-primary-container, #3730A3);
+        color: var(--md-sys-color-on-primary-container, #E0E7FF);
+        border-color: var(--md-sys-color-outline, #475569);
     }
 
     [data-theme="dark"] .rec-card-actions .btn-internal-small:hover,
     [data-theme="dark"] .rec-card-actions .btn-internal--full:hover {
-        background: var(--md-sys-color-secondary, #ccc2dc);
-        color: var(--md-sys-color-on-secondary, #332d41);
+        background: var(--md-sys-color-primary, #818CF8);
+        color: var(--md-sys-color-on-primary, #1E1B4B);
+        border-color: var(--md-sys-color-primary, #818CF8);
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
     }
 
     /* 非表示カード */
