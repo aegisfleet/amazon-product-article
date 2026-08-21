@@ -1081,13 +1081,13 @@ a.hero-tag-brand:hover {
 }
 
 .btn-primary {
-  background-color: var(--color-primary);
-  color: white;
+  background-color: var(--md-sys-color-primary, var(--color-primary));
+  color: var(--md-sys-color-on-primary, #ffffff);
 }
 
 .btn-primary:hover {
   background-color: var(--color-primary-dark);
-  color: white;
+  color: var(--md-sys-color-on-primary, #ffffff);
   transform: translateY(-2px);
   box-shadow: var(--shadow-md);
 }
@@ -7354,8 +7354,9 @@ body.menu-open .nav-menu-floating-toggle {
   padding: 0.5rem;
   font-size: 0.8125rem;
   font-weight: 700;
-  color: var(--color-primary, #2563eb);
-  border: 1px solid var(--color-primary, #2563eb);
+  background: var(--md-sys-color-primary-container, #EEF2FF);
+  color: var(--md-sys-color-on-primary-container, #3730A3);
+  border: 1px solid var(--md-sys-color-outline-variant, #E2E8F0);
   border-radius: var(--radius-md, 8px);
   text-decoration: none;
   transition: all 0.2s ease;
@@ -7363,7 +7364,10 @@ body.menu-open .nav-menu-floating-toggle {
 }
 
 .compare-btn-review:hover {
-  background: rgba(37, 99, 235, 0.08);
+  background: var(--md-sys-color-primary, #4F46E5);
+  color: var(--md-sys-color-on-primary, #FFFFFF);
+  border-color: var(--md-sys-color-primary, #4F46E5);
+  transform: translateY(-1px);
 }
 
 .compare-btn-amazon {
@@ -7381,10 +7385,14 @@ body.menu-open .nav-menu-floating-toggle {
   text-decoration: none;
   transition: all 0.2s ease;
   box-sizing: border-box;
+  box-shadow: 0 1px 0 rgba(255, 255, 255, .4) inset;
 }
 
 .compare-btn-amazon:hover {
   background: linear-gradient(to bottom, #f5d78e, #eeb933);
+  color: #111111;
+  transform: translateY(-1px);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, .4) inset, 0 2px 4px rgba(0, 0, 0, .12);
 }
 
 .compare-text-muted {
@@ -7523,6 +7531,30 @@ body.menu-open .nav-menu-floating-toggle {
 [data-theme="dark"] .compare-badge-winner {
   background: linear-gradient(135deg, #ca8a04, #eab308);
   color: #451a03;
+}
+
+[data-theme="dark"] .compare-btn-review {
+  background: var(--md-sys-color-primary-container, #3730A3);
+  color: var(--md-sys-color-on-primary-container, #E0E7FF);
+  border-color: var(--md-sys-color-outline, #475569);
+}
+
+[data-theme="dark"] .compare-btn-review:hover {
+  background: var(--md-sys-color-primary, #818CF8);
+  color: var(--md-sys-color-on-primary, #1E1B4B);
+  border-color: var(--md-sys-color-primary, #818CF8);
+}
+
+[data-theme="dark"] .compare-btn-amazon {
+  background: linear-gradient(to bottom, #ffad33, #ff9900);
+  border-color: #c47900;
+  color: #232f3e;
+  box-shadow: 0 1px 0 rgba(255, 255, 255, .2) inset;
+}
+
+[data-theme="dark"] .compare-btn-amazon:hover {
+  background: linear-gradient(to bottom, #ffb84d, #ffa31a);
+  color: #232f3e;
 }
 
 @media (max-width: 640px) {
