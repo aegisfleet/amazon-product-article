@@ -7085,13 +7085,35 @@ body.menu-open .nav-menu-floating-toggle {
 .compare-tray-item {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  position: relative;
   background: var(--color-bg-secondary, #f3f4f6);
   border: 1px solid var(--color-border, #e5e7eb);
   border-radius: var(--radius-md, 8px);
   padding: 0.25rem 0.5rem 0.25rem 0.25rem;
   max-width: 180px;
   flex-shrink: 0;
+  transition: background 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.compare-tray-item:hover {
+  background: var(--color-bg-surface, #ffffff);
+  border-color: var(--color-primary, #2563eb);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.06);
+}
+
+.compare-tray-item-link {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  min-width: 0;
+  flex: 1;
+  text-decoration: none;
+  color: inherit;
+}
+
+.compare-tray-item-link:hover .compare-tray-item-title {
+  color: var(--color-primary, #2563eb);
+  text-decoration: underline;
 }
 
 .compare-tray-thumb {
@@ -7123,20 +7145,23 @@ body.menu-open .nav-menu-floating-toggle {
 
 .compare-tray-item-remove {
   position: absolute;
-  top: 0;
-  right: 0;
+  top: 0.25rem;
+  left: 24px;
   width: 16px;
   height: 16px;
   background: rgba(0, 0, 0, 0.65);
   color: #ffffff;
   border: none;
   border-radius: 0 0 0 4px;
+  border-top-right-radius: 6px;
   font-size: 0.65rem;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
   line-height: 1;
+  z-index: 2;
+  transition: background 0.15s ease;
 }
 
 .compare-tray-item-remove:hover {
@@ -7150,6 +7175,7 @@ body.menu-open .nav-menu-floating-toggle {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  transition: color 0.15s ease;
 }
 
 .compare-tray-actions {
