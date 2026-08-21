@@ -61,7 +61,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (!scoreSlider || !priceSlider || !gridEl) return;
 
-  let currentSort = 'score-asc'; // Default to lowest score first (Worst)
+  let currentSort = 'date'; // Default to newest first
 
   // --- URL Params ---
   function readUrlParams() {
@@ -95,7 +95,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (minPrice !== 100) params.set('minPrice', String(minPrice));
     if (maxPrice < 50000) params.set('maxPrice', String(maxPrice));
     if (category) params.set('category', category);
-    if (currentSort !== 'score-asc') params.set('sort', currentSort);
+    if (currentSort !== 'date') params.set('sort', currentSort);
     const q = keywordInput ? keywordInput.value.trim() : '';
     if (q) params.set('q', q);
 
@@ -316,7 +316,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (keywordClearBtn) keywordClearBtn.style.display = 'none';
     const badgeEl = document.getElementById('low-scores-keyword-count-badge');
     if (badgeEl) badgeEl.style.display = 'none';
-    currentSort = 'score-asc';
+    currentSort = 'date';
     updateSortButtons();
     applyFilters();
   }
