@@ -1,0 +1,135 @@
+{
+  "analysis": {
+    "productName": "UGREEN FineTrack (CM919)",
+    "parentAsin": "B0HDC525XR",
+    "productDescription": "Appleの「探す」ネットワークに対応したUSB-C充電式の超小型スマートトラッカー。電池交換不要で最大1年間使用できる。",
+    "productUsage": [
+      "鍵やバッグ、財布などの紛失防止",
+      "置き忘れ防止",
+      "荷物や所有物の追跡・位置確認"
+    ],
+    "positivePoints": [
+      "USB-Cによる充電式（電池交換が不要、1回の充電で最大1年間使用可能）",
+      "Apple公式「探す」ネットワークに完全対応（iOSのみ）",
+      "最大80dBの強力なブザー音による位置特定",
+      "置き忘れ時に即時通知する機能",
+      "最大5台のAppleデバイスで位置情報を共有可能"
+    ],
+    "negativePoints": [
+      "iOS専用（Android非対応）",
+      "超広帯域（UWB）非対応のため「正確な場所を見つける（数センチ単位の距離・方向表示）」機能は使えない",
+      "キーリング等が付属していない可能性があるため、取り付けるには別途工夫やケースが必要な場合がある"
+    ],
+    "useCases": [
+      "鍵の束に取り付けて、朝の忙しい時間に探す手間を省く",
+      "旅行中のスーツケースやバッグに入れて、紛失や盗難を防止する",
+      "家族と位置情報を共有し、子供や高齢者の荷物管理・見守りに活用する"
+    ],
+    "userStories": [],
+    "userImpression": "AirTagに近い機能（「探す」ネットワーク対応）を持ちながら、電池交換の煩わしさがないUSB-C充電式であることが最大の魅力として評価されている。UWBによる詳細な方向指示機能こそないものの、音を鳴らして探す分には十分な音量（80dB）があり、安価で実用的。Androidユーザーが使えない点には注意が必要。",
+    "sources": [
+      {
+        "id": "src-1",
+        "name": "Amazon商品ページ",
+        "url": "https://www.amazon.co.jp/dp/B0FBWR6YL6",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-08-22",
+        "author": "UGREEN",
+        "conflictOfInterest": "possible",
+        "notes": "商品仕様・特徴に「USB-C充電で1回フル充電すれば最大1年間使える」との記載あり"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "1回フル充電すれば最大1年間使える",
+        "category": "durability",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "crossChecked": false,
+        "notes": "メーカーの公式仕様。Bluetooth LEの省電力性から一般的なスマートタグの電池寿命（約1年）と同等であり、妥当な主張。"
+      }
+    ],
+    "lastInvestigated": "2026-08-22",
+    "competitiveAnalysis": [
+      {
+        "name": "Apple AirTag",
+        "asin": "B0GJTW9CL8",
+        "priceComparison": "本商品より数千円高いが、UWB搭載による精密な位置特定が可能。Apple純正の安心感と豊富なアクセサリーがある。",
+        "featureComparison": [
+          "共通点：Appleの「探す」ネットワーク対応、音を鳴らして探す機能",
+          "相違点：AirTagはUWB(超広帯域)による「正確な場所を見つける」機能に対応し、電池はCR2032交換式。本商品はUWB非対応だがUSB-C充電式。"
+        ],
+        "differentiators": [
+          "UGREEN FineTrackの利点：電池交換の手間やコストをかけたくない人、安価に「探す」対応タグを導入したい人に最適。",
+          "Apple AirTagの利点：家の中で数センチ単位の正確な方向と距離を知りたい人、豊富な専用アクセサリー（キーホルダー等）から選びたい人向け。"
+        ]
+      },
+      {
+        "name": "Anker Eufy Security SmartTrack Link",
+        "asin": "B0B6ZQJXW8",
+        "priceComparison": "実売価格は同等かやや高い程度。サードパーティ製の定番として強力な競合。",
+        "featureComparison": [
+          "共通点：Apple「探す」対応（iOSのみ）、キーホルダー用の穴がある",
+          "相違点：EufyはCR2032電池交換式で、タグからスマホを鳴らす機能がある。本商品はUSB-C充電式で、タグからスマホを鳴らす機能は非搭載。"
+        ],
+        "differentiators": [
+          "UGREEN FineTrackの利点：ボタン電池を買って交換する手間が面倒で、手持ちのUSB-Cケーブルでサクッと充電したい人向け。",
+          "Anker Eufy Security SmartTrack Linkの利点：タグのボタンを押してスマホを鳴らしたい人や、Ankerブランドの信頼性を重視する人向け。"
+        ]
+      },
+      {
+        "name": "Pandaunic エアタグ (2個セット)",
+        "asin": "B0FCMVS326",
+        "priceComparison": "2個セットで本商品1個とほぼ同価格（1個あたり約半額）と圧倒的に安い。",
+        "featureComparison": [
+          "共通点：Apple「探す」対応（iOSのみ）",
+          "相違点：Pandaunicは無名ブランドでCR2032電池交換式。本商品は実績のあるUGREEN製でUSB-C充電式。"
+        ],
+        "differentiators": [
+          "UGREEN FineTrackの利点：ある程度信頼できる周辺機器ブランド（UGREEN）の製品を選びたい人、充電式が良い人向け。",
+          "Pandaunic エアタグの利点：ブランドを問わず、とにかく初期投資を抑えて複数個のタグを揃えたい人向け。"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "iPhoneユーザーで、AirTagの電池交換（CR2032）を面倒に感じている人",
+        "安価に「探す」ネットワーク対応のスマートタグを導入したい人"
+      ],
+      "pros": [
+        "ボタン電池を買いに行く手間なく、手持ちのスマホやPCと同じUSB-Cケーブルで充電できる",
+        "Apple「探す」アプリ上でシームレスに管理でき、専用アプリを増やす必要がない"
+      ],
+      "cons": [
+        "UWB（超広帯域）には非対応のため、AirTagのように「あと〇〇メートル右」といった精密な方向指示はできない",
+        "Androidスマートフォンでは使用できない"
+      ],
+      "score": 76,
+      "scoreRationale": "[基本点: 70]\n[加点: +8] (USB-C充電式で電池交換不要の実用性の高さ)\n[加点: +5] (Apple「探す」ネットワーク対応で安価なコストパフォーマンス)\n[減点: -7] (UWB非対応およびAndroid非対応による機能制限)\n[合計: 76]"
+    },
+    "technicalSpecs": {
+      "dimensions": {
+        "height": "9mm",
+        "length": "36mm",
+        "width": "36mm",
+        "weight": "10g前後 (※推定)"
+      },
+      "battery": {
+        "charging": "USB-C",
+        "playbackTime": "最大1年間 (1回のフル充電)"
+      },
+      "connectivity": [
+        "Bluetooth LE",
+        "Apple「探す」ネットワーク"
+      ],
+      "other": [
+        "音量: 最大80dB",
+        "対応OS: iOS専用 (Android非対応)",
+        "最大5台のデバイスでの情報共有に対応"
+      ]
+    }
+  }
+}
