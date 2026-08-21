@@ -175,18 +175,46 @@ function groupAndFindDiscrepancies(
       const isLikelySameProduct =
         firstWord.length > 2 && names.every((n) => n.startsWith(firstWord));
 
+      const sortedGroupItems = [...groupItems].sort((a, b) => b.score - a.score);
+
       discrepancies.push({
         parentAsin,
         maxDiff,
         minScore,
         maxScore,
         isLikelySameProduct,
-        items: groupItems.sort((a, b) => b.score - a.score),
+        items: sortedGroupItems,
       });
     }
   }
 
-  return discrepancies.sort((a, b) => b.maxDiff - a.maxDiff);
+  discrepancies.sort((a, b) => b.maxDiff - a.maxDiff);
+  return discrepancies;
+}
+
+function formatItemLine(item: InvestigationItem): string {
+  const pricePart = item.priceFormatted ? ` | ${item.priceFormatted}` : '';
+  let dealPart = '';
+  if (item.savingsPercentage) {
+    const badge = item.dealBadge ? ` ${item.dealBadge}` : '';
+    dealPart = ` (${item.savingsPercentage}% OFF${badge})`;
+  }
+  return `    - [${item.score}点] ASIN: ${item.asin}${pricePart}${dealPart} | ${item.productName}`;
+}
+
+function printGroup(index: number, group: DiscrepancyGroup, verbose: boolean): void {
+  const productTag = group.isLikelySameProduct ? '【同一モデル/シリーズの可能性高】' : '【別モデル/別セットの可能性】';
+  console.log(`[${index + 1}] 親ASIN: ${group.parentAsin} (最大スコア差: ${group.maxDiff}点) ${productTag}`);
+  console.log(`    スコア範囲: ${group.minScore}点 ～ ${group.maxScore}点 / バリエーション数: ${group.items.length}`);
+
+  for (const item of group.items) {
+    console.log(formatItemLine(item));
+    if (verbose && item.scoreRationale) {
+      const lines = item.scoreRationale.split('\n').map((l) => `        ${l}`).join('\n');
+      console.log(`      【採点根拠】:\n${lines}`);
+    }
+  }
+  console.log('');
 }
 
 function main(): void {
@@ -211,20 +239,7 @@ function main(): void {
   console.log(`⚠️  検出されたスコア乖離グループ数: ${discrepancies.length} 件\n`);
 
   for (const [index, group] of discrepancies.entries()) {
-    const productTag = group.isLikelySameProduct ? '【同一モデル/シリーズの可能性高】' : '【別モデル/別セットの可能性】';
-    console.log(`[${index + 1}] 親ASIN: ${group.parentAsin} (最大スコア差: ${group.maxDiff}点) ${productTag}`);
-    console.log(`    スコア範囲: ${group.minScore}点 ～ ${group.maxScore}点 / バリエーション数: ${group.items.length}`);
-
-    for (const item of group.items) {
-      const pricePart = item.priceFormatted ? ` | ${item.priceFormatted}` : '';
-      const dealPart = item.savingsPercentage ? ` (${item.savingsPercentage}% OFF${item.dealBadge ? ` ${item.dealBadge}` : ''})` : '';
-      console.log(`    - [${item.score}点] ASIN: ${item.asin}${pricePart}${dealPart} | ${item.productName}`);
-      if (options.verbose && item.scoreRationale) {
-        const lines = item.scoreRationale.split('\n').map((l) => `        ${l}`).join('\n');
-        console.log(`      【採点根拠】:\n${lines}`);
-      }
-    }
-    console.log('');
+    printGroup(index, group, options.verbose);
   }
 
   console.log('----------------------------------------------------------------');
