@@ -16,8 +16,11 @@ interface InvestigationItem {
   parentAsin: string;
   productName: string;
   score: number;
-  scoreRationale?: string;
-  cons?: string[];
+  scoreRationale: string | undefined;
+  cons: string[] | undefined;
+  priceFormatted: string | undefined;
+  savingsPercentage: number | undefined;
+  dealBadge: string | undefined;
   filePath: string;
 }
 
@@ -26,6 +29,7 @@ interface DiscrepancyGroup {
   maxDiff: number;
   minScore: number;
   maxScore: number;
+  isLikelySameProduct: boolean;
   items: InvestigationItem[];
 }
 
@@ -66,12 +70,35 @@ function parseArgs(): CliOptions {
   return { threshold, parentAsin, asin, verbose, json };
 }
 
+function loadCacheMap(): Map<string, { price: string | undefined; savings: number | undefined; dealBadge: string | undefined }> {
+  const cachePath = path.join(process.cwd(), 'data', 'cache', 'paapi-product-cache.json');
+  const map = new Map<string, { price: string | undefined; savings: number | undefined; dealBadge: string | undefined }>();
+  if (!fs.existsSync(cachePath)) return map;
+
+  try {
+    const raw = fs.readFileSync(cachePath, 'utf8');
+    const data = JSON.parse(raw);
+    for (const [asin, item] of Object.entries(data)) {
+      const p = (item as any)?.data;
+      if (p) {
+        map.set(asin, {
+          price: p.price?.formatted,
+          savings: p.savingsPercentage,
+          dealBadge: p.dealBadge,
+        });
+      }
+    }
+  } catch {}
+  return map;
+}
+
 function loadInvestigations(targetParent?: string, targetAsin?: string): InvestigationItem[] {
   const dir = path.join(process.cwd(), 'data', 'investigations');
   if (!fs.existsSync(dir)) {
     return [];
   }
 
+  const cacheMap = loadCacheMap();
   const files = fs.readdirSync(dir).filter((f) => f.endsWith('.json'));
   const results: InvestigationItem[] = [];
 
@@ -96,6 +123,8 @@ function loadInvestigations(targetParent?: string, targetAsin?: string): Investi
         continue;
       }
 
+      const cacheInfo = cacheMap.get(asin);
+
       results.push({
         asin,
         parentAsin,
@@ -103,6 +132,9 @@ function loadInvestigations(targetParent?: string, targetAsin?: string): Investi
         score,
         scoreRationale: analysis.recommendation?.scoreRationale,
         cons: analysis.recommendation?.cons,
+        priceFormatted: cacheInfo?.price,
+        savingsPercentage: cacheInfo?.savings,
+        dealBadge: cacheInfo?.dealBadge,
         filePath,
       });
     } catch {
@@ -137,11 +169,18 @@ function groupAndFindDiscrepancies(
     const maxDiff = maxScore - minScore;
 
     if (maxDiff >= threshold) {
+      // 商品名の共通部分をチェック（同一製品判定の参考）
+      const names = groupItems.map((i) => i.productName.toLowerCase());
+      const firstWord = names[0]?.split(' ')[0] || '';
+      const isLikelySameProduct =
+        firstWord.length > 2 && names.every((n) => n.startsWith(firstWord));
+
       discrepancies.push({
         parentAsin,
         maxDiff,
         minScore,
         maxScore,
+        isLikelySameProduct,
         items: groupItems.sort((a, b) => b.score - a.score),
       });
     }
@@ -172,11 +211,14 @@ function main(): void {
   console.log(`⚠️  検出されたスコア乖離グループ数: ${discrepancies.length} 件\n`);
 
   for (const [index, group] of discrepancies.entries()) {
-    console.log(`[${index + 1}] 親ASIN: ${group.parentAsin} (最大スコア差: ${group.maxDiff}点)`);
+    const productTag = group.isLikelySameProduct ? '【同一モデル/シリーズの可能性高】' : '【別モデル/別セットの可能性】';
+    console.log(`[${index + 1}] 親ASIN: ${group.parentAsin} (最大スコア差: ${group.maxDiff}点) ${productTag}`);
     console.log(`    スコア範囲: ${group.minScore}点 ～ ${group.maxScore}点 / バリエーション数: ${group.items.length}`);
 
     for (const item of group.items) {
-      console.log(`    - [${item.score}点] ASIN: ${item.asin} | ${item.productName}`);
+      const pricePart = item.priceFormatted ? ` | ${item.priceFormatted}` : '';
+      const dealPart = item.savingsPercentage ? ` (${item.savingsPercentage}% OFF${item.dealBadge ? ` ${item.dealBadge}` : ''})` : '';
+      console.log(`    - [${item.score}点] ASIN: ${item.asin}${pricePart}${dealPart} | ${item.productName}`);
       if (options.verbose && item.scoreRationale) {
         const lines = item.scoreRationale.split('\n').map((l) => `        ${l}`).join('\n');
         console.log(`      【採点根拠】:\n${lines}`);
