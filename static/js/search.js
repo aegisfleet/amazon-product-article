@@ -28,6 +28,13 @@ function sanitizeCategoryUrl(rawUrl) {
     }
 }
 
+function getScoreBadgeClass(score) {
+    if (score >= 80) return 'score-excellent';
+    if (score >= 70) return 'score-good';
+    if (score >= 50) return 'score-fair';
+    return 'score-caution';
+}
+
 function parseBudgetFromQuery(query) {
     const normalizedQuery = query.replaceAll(/\s+/g, '');
     const rangeMatch = normalizedQuery.match(/(\d+(?:\.\d+)?)([万千])?円?[~〜-](\d+(?:\.\d+)?)([万千])?円?/);
@@ -395,7 +402,7 @@ document.addEventListener('DOMContentLoaded', function () {
         // 比較トレイが表示されている場合はトレイの高さ分マージンを加算
         let bottomMargin = 20;
         const compareTray = document.getElementById('compare-tray');
-        if (compareTray && compareTray.classList.contains('is-active')) {
+        if (compareTray?.classList.contains('is-active')) {
             bottomMargin += (compareTray.offsetHeight || 60);
         }
 
@@ -1066,6 +1073,238 @@ document.addEventListener('DOMContentLoaded', function () {
         lastSearchState = getSearchState();
     }
 
+    function renderCategorySuggestions(categoryCounts, container) {
+        const topCategories = Object.entries(categoryCounts)
+            .sort((a, b) => b[1] - a[1])
+            .slice(0, 6);
+
+        if (topCategories.length === 0) return;
+
+        const suggestionArea = document.createElement('div');
+        suggestionArea.className = 'search-suggestion-area';
+
+        const label = document.createElement('span');
+        label.className = 'suggestion-label';
+        label.textContent = '🔍 カテゴリから探す:';
+        suggestionArea.appendChild(label);
+
+        const suggestionList = document.createElement('div');
+        suggestionList.className = 'suggestion-list';
+
+        const urlDataScript = document.getElementById('category-url-data');
+        const urlMap = urlDataScript ? JSON.parse(urlDataScript.textContent) : {};
+
+        topCategories.forEach(([cat, count]) => {
+            const safeUrl = sanitizeCategoryUrl(urlMap[cat]);
+            if (safeUrl) {
+                const btn = document.createElement('a');
+                btn.href = safeUrl;
+                btn.className = 'suggestion-tag';
+                const catSpan = document.createElement('span');
+                catSpan.textContent = cat;
+                const countSmall = document.createElement('small');
+                countSmall.textContent = count;
+                btn.appendChild(catSpan);
+                btn.appendChild(countSmall);
+                suggestionList.appendChild(btn);
+            }
+        });
+
+        if (suggestionList.children.length > 0) {
+            suggestionArea.appendChild(suggestionList);
+            container.appendChild(suggestionArea);
+        }
+    }
+
+    function createThumbnailElement(imageSrc, titleText, permalink) {
+        const thumbLink = document.createElement('a');
+        thumbLink.href = permalink;
+        thumbLink.className = 'result-thumbnail-link';
+        thumbLink.tabIndex = -1;
+        thumbLink.setAttribute('aria-hidden', 'true');
+
+        const thumbDiv = document.createElement('div');
+        if (imageSrc) {
+            thumbDiv.className = 'result-thumbnail';
+            const img = document.createElement('img');
+            img.src = imageSrc;
+            img.alt = titleText;
+            img.loading = 'lazy';
+            thumbDiv.appendChild(img);
+        } else {
+            thumbDiv.className = 'result-thumbnail no-image';
+            const span = document.createElement('span');
+            span.textContent = 'No Image';
+            thumbDiv.appendChild(span);
+        }
+
+        thumbLink.appendChild(thumbDiv);
+        return thumbLink;
+    }
+
+    function createHeaderElement(titleText, permalink, priceText, scoreText, scoreNum) {
+        const headerDiv = document.createElement('div');
+        headerDiv.className = 'result-header';
+
+        const titleLink = document.createElement('a');
+        titleLink.href = permalink;
+        titleLink.className = 'result-title-link';
+
+        const titleSpan = document.createElement('span');
+        titleSpan.className = 'result-title';
+        titleSpan.textContent = titleText;
+        titleLink.appendChild(titleSpan);
+        headerDiv.appendChild(titleLink);
+
+        const metricsDiv = document.createElement('div');
+        metricsDiv.className = 'result-metrics';
+
+        if (priceText) {
+            const priceSpan = document.createElement('span');
+            priceSpan.className = 'result-price';
+            priceSpan.textContent = `💰 ${priceText}`;
+            metricsDiv.appendChild(priceSpan);
+        }
+
+        if (scoreText) {
+            const scoreClass = getScoreBadgeClass(scoreNum);
+            const scoreSpan = document.createElement('span');
+            scoreSpan.className = `result-score m3-badge m3-badge-score ${scoreClass}`;
+            const iconSpan = document.createElement('span');
+            iconSpan.className = 'material-symbols-outlined icon-score';
+            iconSpan.setAttribute('aria-hidden', 'true');
+            iconSpan.textContent = 'trophy';
+            scoreSpan.appendChild(iconSpan);
+            scoreSpan.appendChild(document.createTextNode(` ${scoreText}点`));
+            metricsDiv.appendChild(scoreSpan);
+        }
+
+        headerDiv.appendChild(metricsDiv);
+        return headerDiv;
+    }
+
+    function createCompareButton(item, titleText, permalink, imageSrc, priceText, categories) {
+        const actionsDiv = document.createElement('div');
+        actionsDiv.className = 'result-actions';
+
+        const compareBtn = document.createElement('button');
+        compareBtn.type = 'button';
+        compareBtn.className = 'btn-compare-card search-compare-btn';
+        compareBtn.dataset.compareBtn = '1';
+        compareBtn.dataset.asin = item.asin || '';
+        compareBtn.dataset.title = titleText || '';
+        compareBtn.dataset.url = permalink || '';
+        compareBtn.dataset.affiliateUrl = item.affiliate_url || '';
+        compareBtn.dataset.image = imageSrc || '';
+        compareBtn.dataset.price = priceText || '';
+        compareBtn.dataset.score = String(item.score || 0);
+        compareBtn.dataset.savings = String(item.savings_percentage || 0);
+        compareBtn.dataset.category = categories?.[0] || '';
+
+        let specsValue = '';
+        if (item.specs_json) {
+            specsValue = typeof item.specs_json === 'string' ? item.specs_json : JSON.stringify(item.specs_json);
+        }
+        compareBtn.dataset.specs = specsValue;
+
+        const isCompared = Boolean(globalThis.Compare?.isCompared?.(item.asin));
+        compareBtn.setAttribute('aria-pressed', isCompared ? 'true' : 'false');
+        const titlePrefix = titleText ? `${titleText}を` : '';
+        compareBtn.setAttribute('aria-label', isCompared ? `${titlePrefix}比較から削除` : `${titlePrefix}比較に追加`);
+
+        if (isCompared) {
+            compareBtn.classList.add('is-compared');
+        }
+
+        const compareIcon = document.createElement('span');
+        compareIcon.className = 'material-symbols-outlined compare-icon';
+        compareIcon.setAttribute('aria-hidden', 'true');
+        compareIcon.textContent = isCompared ? 'check_circle' : 'balance';
+
+        const compareLabel = document.createElement('span');
+        compareLabel.className = 'compare-label';
+        compareLabel.textContent = isCompared ? '比較中' : '比較';
+
+        compareBtn.appendChild(compareIcon);
+        compareBtn.appendChild(compareLabel);
+        actionsDiv.appendChild(compareBtn);
+        return actionsDiv;
+    }
+
+    function renderSearchResultItem(item) {
+        const titleText = item.title;
+        const summaryText = item.summary || '';
+        const imageSrc = item.image;
+        const priceText = item.price;
+        const categories = item.categories || [];
+
+        let permalink = item.permalink || '';
+        if (permalink && !permalink.startsWith('http') && !permalink.startsWith('/')) {
+            permalink = '/';
+        }
+        const scoreText = String(item.score || '');
+        const scoreNum = Number.parseInt(item.score, 10) || 0;
+
+        const resultItem = document.createElement('article');
+        resultItem.className = 'search-result-item';
+        if (item.asin) {
+            resultItem.dataset.asin = item.asin;
+        }
+
+        resultItem.addEventListener('click', (e) => {
+            if (e.target.closest('button') || e.target.closest('a')) return;
+            if (permalink) {
+                globalThis.location.href = permalink;
+            }
+        });
+
+        const mainRow = document.createElement('div');
+        mainRow.className = 'result-main-row';
+
+        mainRow.appendChild(createThumbnailElement(imageSrc, titleText, permalink));
+
+        const contentDiv = document.createElement('div');
+        contentDiv.className = 'result-content';
+
+        contentDiv.appendChild(createHeaderElement(titleText, permalink, priceText, scoreText, scoreNum));
+
+        if (summaryText) {
+            const summaryLink = document.createElement('a');
+            summaryLink.href = permalink;
+            summaryLink.className = 'result-summary-link';
+            summaryLink.tabIndex = -1;
+            summaryLink.setAttribute('aria-hidden', 'true');
+
+            const summarySpan = document.createElement('span');
+            summarySpan.className = 'result-summary';
+            summarySpan.textContent = summaryText;
+            summaryLink.appendChild(summarySpan);
+            contentDiv.appendChild(summaryLink);
+        }
+
+        const footerDiv = document.createElement('div');
+        footerDiv.className = 'result-footer';
+
+        const categoriesDiv = document.createElement('div');
+        categoriesDiv.className = 'result-categories';
+        categories.forEach(cat => {
+            const catTag = document.createElement('span');
+            catTag.className = 'category-tag';
+            catTag.textContent = cat;
+            categoriesDiv.appendChild(catTag);
+        });
+        footerDiv.appendChild(categoriesDiv);
+
+        if (item.asin) {
+            footerDiv.appendChild(createCompareButton(item, titleText, permalink, imageSrc, priceText, categories));
+        }
+
+        contentDiv.appendChild(footerDiv);
+        mainRow.appendChild(contentDiv);
+        resultItem.appendChild(mainRow);
+        return resultItem;
+    }
+
     function displayResults(results) {
         searchResults.textContent = '';
 
@@ -1074,7 +1313,6 @@ document.addEventListener('DOMContentLoaded', function () {
             return;
         }
 
-        // Deduplicate results by permalink just in case
         const seen = new Set();
         const uniqueResults = [];
         const categoryCounts = {};
@@ -1084,7 +1322,6 @@ document.addEventListener('DOMContentLoaded', function () {
                 seen.add(result.item.permalink);
                 uniqueResults.push(result);
 
-                // Collect categories for suggestions
                 const categories = result.item.categories || [];
                 categories.forEach(cat => {
                     categoryCounts[cat] = (categoryCounts[cat] || 0) + 1;
@@ -1092,249 +1329,14 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         }
 
-        // 件数バナーとフィルタチップを描画する
         renderResultHeader(uniqueResults.length, searchResults);
-
-        // Render category suggestions at the top
-        const topCategories = Object.entries(categoryCounts)
-            .sort((a, b) => b[1] - a[1])
-            .slice(0, 6);
-
-        if (topCategories.length > 0) {
-            const suggestionArea = document.createElement('div');
-            suggestionArea.className = 'search-suggestion-area';
-
-            const label = document.createElement('span');
-            label.className = 'suggestion-label';
-            label.textContent = '🔍 カテゴリから探す:';
-            suggestionArea.appendChild(label);
-
-            const suggestionList = document.createElement('div');
-            suggestionList.className = 'suggestion-list';
-
-            const urlDataScript = document.getElementById('category-url-data');
-            const urlMap = urlDataScript ? JSON.parse(urlDataScript.textContent) : {};
-
-            topCategories.forEach(([cat, count]) => {
-                const safeUrl = sanitizeCategoryUrl(urlMap[cat]);
-                if (safeUrl) {
-                    const btn = document.createElement('a');
-                    btn.href = safeUrl;
-                    btn.className = 'suggestion-tag';
-                    const catSpan = document.createElement('span');
-                    catSpan.textContent = cat;
-                    const countSmall = document.createElement('small');
-                    countSmall.textContent = count;
-                    btn.appendChild(catSpan);
-                    btn.appendChild(countSmall);
-                    suggestionList.appendChild(btn);
-                }
-            });
-
-            if (suggestionList.children.length > 0) {
-                suggestionArea.appendChild(suggestionList);
-                searchResults.appendChild(suggestionArea);
-            }
-        }
+        renderCategorySuggestions(categoryCounts, searchResults);
 
         uniqueResults.slice(0, 20).forEach(result => {
-            const item = result.item;
-            const titleText = item.title;
-            const summaryText = item.summary || '';
-            const imageSrc = item.image;
-            const priceText = item.price;
-
-            let permalink = item.permalink || '';
-            if (permalink && !permalink.startsWith('http') && !permalink.startsWith('/')) {
-                permalink = '/';
-            }
-            const scoreText = String(item.score || '');
-
-            const resultItem = document.createElement('article');
-            resultItem.className = 'search-result-item';
-            if (item.asin) {
-                resultItem.dataset.asin = item.asin;
-            }
-
-            // カード全体をクリックしたときのページ遷移処理（ボタン・リンクのクリック時は除外）
-            resultItem.addEventListener('click', (e) => {
-                if (e.target.closest('button') || e.target.closest('a')) return;
-                if (permalink) {
-                    globalThis.location.href = permalink;
-                }
-            });
-
-            // Main Row (Thumbnail + Content)
-            const mainRow = document.createElement('div');
-            mainRow.className = 'result-main-row';
-
-            // Thumbnail Link
-            const thumbLink = document.createElement('a');
-            thumbLink.href = permalink;
-            thumbLink.className = 'result-thumbnail-link';
-            thumbLink.tabIndex = -1;
-            thumbLink.setAttribute('aria-hidden', 'true');
-
-            if (imageSrc) {
-                const thumbDiv = document.createElement('div');
-                thumbDiv.className = 'result-thumbnail';
-                const img = document.createElement('img');
-                img.src = imageSrc;
-                img.alt = titleText;
-                img.loading = 'lazy';
-                thumbDiv.appendChild(img);
-                thumbLink.appendChild(thumbDiv);
-            } else {
-                const thumbDiv = document.createElement('div');
-                thumbDiv.className = 'result-thumbnail no-image';
-                const span = document.createElement('span');
-                span.textContent = 'No Image';
-                thumbDiv.appendChild(span);
-                thumbLink.appendChild(thumbDiv);
-            }
-            mainRow.appendChild(thumbLink);
-
-            // Content
-            const contentDiv = document.createElement('div');
-            contentDiv.className = 'result-content';
-
-            // Header (Title + Metrics)
-            const headerDiv = document.createElement('div');
-            headerDiv.className = 'result-header';
-
-            const titleLink = document.createElement('a');
-            titleLink.href = permalink;
-            titleLink.className = 'result-title-link';
-
-            const titleSpan = document.createElement('span');
-            titleSpan.className = 'result-title';
-            titleSpan.textContent = titleText;
-            titleLink.appendChild(titleSpan);
-            headerDiv.appendChild(titleLink);
-
-            // Metrics
-            const metricsDiv = document.createElement('div');
-            metricsDiv.className = 'result-metrics';
-            
-            if (item.price) {
-                const priceSpan = document.createElement('span');
-                priceSpan.className = 'result-price';
-                priceSpan.textContent = `💰 ${priceText}`;
-                metricsDiv.appendChild(priceSpan);
-            }
-
-            if (item.score) {
-                let scoreClass = 'score-caution';
-                const score = Number.parseInt(item.score, 10) || 0;
-                if (score >= 80) {
-                    scoreClass = 'score-excellent';
-                } else if (score >= 70) {
-                    scoreClass = 'score-good';
-                } else if (score >= 50) {
-                    scoreClass = 'score-fair';
-                }
-                const scoreSpan = document.createElement('span');
-                scoreSpan.className = `result-score m3-badge m3-badge-score ${scoreClass}`;
-                const iconSpan = document.createElement('span');
-                iconSpan.className = 'material-symbols-outlined icon-score';
-                iconSpan.setAttribute('aria-hidden', 'true');
-                iconSpan.textContent = 'trophy';
-                scoreSpan.appendChild(iconSpan);
-                scoreSpan.appendChild(document.createTextNode(` ${scoreText}点`));
-                metricsDiv.appendChild(scoreSpan);
-            }
-            headerDiv.appendChild(metricsDiv);
-            contentDiv.appendChild(headerDiv);
-
-            // Summary
-            if (summaryText) {
-                const summaryLink = document.createElement('a');
-                summaryLink.href = permalink;
-                summaryLink.className = 'result-summary-link';
-                summaryLink.tabIndex = -1;
-                summaryLink.setAttribute('aria-hidden', 'true');
-
-                const summarySpan = document.createElement('span');
-                summarySpan.className = 'result-summary';
-                summarySpan.textContent = summaryText;
-                summaryLink.appendChild(summarySpan);
-                contentDiv.appendChild(summaryLink);
-            }
-
-            // Footer Row (Categories + Compare Button)
-            const footerDiv = document.createElement('div');
-            footerDiv.className = 'result-footer';
-
-            // Categories
-            const categories = item.categories || [];
-            const categoriesDiv = document.createElement('div');
-            categoriesDiv.className = 'result-categories';
-            if (categories.length > 0) {
-                categories.forEach(cat => {
-                    const catTag = document.createElement('span');
-                    catTag.className = 'category-tag';
-                    catTag.textContent = cat;
-                    categoriesDiv.appendChild(catTag);
-                });
-            }
-            footerDiv.appendChild(categoriesDiv);
-
-            // Actions (Compare Button)
-            if (item.asin) {
-                const actionsDiv = document.createElement('div');
-                actionsDiv.className = 'result-actions';
-
-                const compareBtn = document.createElement('button');
-                compareBtn.type = 'button';
-                compareBtn.className = 'btn-compare-card search-compare-btn';
-                compareBtn.dataset.compareBtn = '1';
-                compareBtn.dataset.asin = item.asin || '';
-                compareBtn.dataset.title = titleText || '';
-                compareBtn.dataset.url = permalink || '';
-                compareBtn.dataset.affiliateUrl = item.affiliate_url || '';
-                compareBtn.dataset.image = imageSrc || '';
-                compareBtn.dataset.price = priceText || '';
-                compareBtn.dataset.score = String(item.score || 0);
-                compareBtn.dataset.savings = String(item.savings_percentage || 0);
-                compareBtn.dataset.category = (categories && categories[0]) ? categories[0] : '';
-                
-                let specsValue = '';
-                if (item.specs_json) {
-                    specsValue = typeof item.specs_json === 'string' ? item.specs_json : JSON.stringify(item.specs_json);
-                }
-                compareBtn.dataset.specs = specsValue;
-
-                const isCompared = Boolean(globalThis.Compare && typeof globalThis.Compare.isCompared === 'function' && globalThis.Compare.isCompared(item.asin));
-                compareBtn.setAttribute('aria-pressed', isCompared ? 'true' : 'false');
-                const titlePrefix = titleText ? `${titleText}を` : '';
-                compareBtn.setAttribute('aria-label', isCompared ? `${titlePrefix}比較から削除` : `${titlePrefix}比較に追加`);
-
-                if (isCompared) {
-                    compareBtn.classList.add('is-compared');
-                }
-
-                const compareIcon = document.createElement('span');
-                compareIcon.className = 'material-symbols-outlined compare-icon';
-                compareIcon.setAttribute('aria-hidden', 'true');
-                compareIcon.textContent = isCompared ? 'check_circle' : 'balance';
-
-                const compareLabel = document.createElement('span');
-                compareLabel.className = 'compare-label';
-                compareLabel.textContent = isCompared ? '比較中' : '比較';
-
-                compareBtn.appendChild(compareIcon);
-                compareBtn.appendChild(compareLabel);
-                actionsDiv.appendChild(compareBtn);
-                footerDiv.appendChild(actionsDiv);
-            }
-
-            contentDiv.appendChild(footerDiv);
-            mainRow.appendChild(contentDiv);
-            resultItem.appendChild(mainRow);
-            searchResults.appendChild(resultItem);
+            searchResults.appendChild(renderSearchResultItem(result.item));
         });
 
-        if (globalThis.Compare && typeof globalThis.Compare.sync === 'function') {
+        if (typeof globalThis.Compare?.sync === 'function') {
             globalThis.Compare.sync();
         }
 
