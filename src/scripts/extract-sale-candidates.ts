@@ -60,60 +60,58 @@ function ensureDirectory(filePath: string): void {
   }
 }
 
+function calculateDealBadgeScore(candidate: SaleCandidate): number {
+  if (candidate.isLimitedTimeSale) return 50;
+  if (candidate.dealBadge) return 30;
+  return 0;
+}
+
+function calculateDiscountScore(discount = 0): number {
+  if (discount >= 10 && discount <= 50) {
+    return discount * 0.8; // 最大40点
+  }
+  if (discount > 50 && discount < 70) {
+    return Math.max(0, (70 - discount) * 1.5); // 50%超は徐々に減点
+  }
+  if (discount > 0 && discount < 10) {
+    return discount * 0.5;
+  }
+  return 0;
+}
+
+function calculateRatingScore(rating?: SaleCandidate['rating']): number {
+  if (!rating) return 0;
+  let score = 0;
+  const { average, count } = rating;
+
+  if (average >= 4.3) score += 25;
+  else if (average >= 4.0) score += 20;
+  else if (average >= 3.5) score += 10;
+
+  if (count >= 500) score += 25;
+  else if (count >= 100) score += 18;
+  else if (count >= 20) score += 12;
+  else if (count >= 5) score += 6;
+
+  return score;
+}
+
+function calculateBrandScore(title: string, brandMatchers: RegExp[]): number {
+  if (brandMatchers.length === 0) return 0;
+  const isKnownBrand = brandMatchers.some((regex) => regex.test(title));
+  return isKnownBrand ? 20 : 0;
+}
+
 /**
  * 候補商品の魅力度・信頼性スコアを計算
  */
 export function calculateCandidateScore(candidate: SaleCandidate, brandMatchers: RegExp[] = []): number {
-  let score = 0;
-
-  // 1. 限定セールバッジ（緊急性・注目度）
-  if (candidate.isLimitedTimeSale) {
-    score += 50;
-  } else if (candidate.dealBadge) {
-    score += 30;
-  }
-
-  // 2. 適正割引率の評価（10%〜50%を高く評価、70%以上は事前除外されている前提）
-  const discount = candidate.savingsPercentage || 0;
-  if (discount >= 10 && discount <= 50) {
-    score += discount * 0.8; // 最大40点
-  } else if (discount > 50 && discount < 70) {
-    score += Math.max(0, (70 - discount) * 1.5); // 50%超は徐々に減点
-  } else if (discount > 0 && discount < 10) {
-    score += discount * 0.5;
-  }
-
-  // 3. レビュー評価とレビュー件数
-  if (candidate.rating) {
-    const { average, count } = candidate.rating;
-    if (average >= 4.3) {
-      score += 25;
-    } else if (average >= 4.0) {
-      score += 20;
-    } else if (average >= 3.5) {
-      score += 10;
-    }
-
-    if (count >= 500) {
-      score += 25;
-    } else if (count >= 100) {
-      score += 18;
-    } else if (count >= 20) {
-      score += 12;
-    } else if (count >= 5) {
-      score += 6;
-    }
-  }
-
-  // 4. 有名ブランドとのマッチング
-  if (brandMatchers.length > 0) {
-    const isKnownBrand = brandMatchers.some((regex) => regex.test(candidate.title));
-    if (isKnownBrand) {
-      score += 20;
-    }
-  }
-
-  return score;
+  return (
+    calculateDealBadgeScore(candidate) +
+    calculateDiscountScore(candidate.savingsPercentage) +
+    calculateRatingScore(candidate.rating) +
+    calculateBrandScore(candidate.title, brandMatchers)
+  );
 }
 
 function loadBrandMatchers(): RegExp[] {
