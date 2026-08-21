@@ -1,0 +1,207 @@
+{
+  "analysis": {
+    "productName": "Anker Eufy RoboVac G30 Hybrid",
+    "parentAsin": "B0GSYD59ZV",
+    "productDescription": "吸引と水拭きの両方に対応した、薄型でスマートなロボット掃除機。",
+    "productUsage": [
+      "フローリングやカーペットの掃除",
+      "硬い床の水拭き"
+    ],
+    "positivePoints": [
+      "吸引（最大2000Pa）と水拭きの2-in-1ハイブリッド設計",
+      "ジャイロセンサーと加速度センサーによるスマート・ダイナミック・ナビゲーション2.0を搭載",
+      "厚さ約7.2cmの薄型設計で家具の下も掃除しやすい",
+      "Eufy Cleanアプリによるスケジュール設定や掃除経路の確認が可能",
+      "BoostIQテクノロジーによりカーペット上で自動的に吸引力を引き上げ"
+    ],
+    "negativePoints": [
+      "マッピング機能はあるが、アプリからの進入禁止エリア指定は不可（別売りの境界線テープが必要）",
+      "レーザーナビゲーション（LiDAR）搭載の上位機種と比較すると、複雑な間取りでの効率はやや劣る",
+      "自動ゴミ収集機能はない"
+    ],
+    "useCases": [
+      "外出中にリビング全体を掃除・水拭きさせる",
+      "ベッドやソファの下など手の届きにくい場所の掃除"
+    ],
+    "userStories": [
+      {
+        "userType": "共働き世帯",
+        "scenario": "毎日の床掃除の自動化",
+        "experience": "仕事に出かけている間に吸引と水拭きを同時に済ませてくれるので、帰宅時に床がピカピカで快適。厚さが約7.2cmと薄いため、ソファの下までしっかり入り込んで掃除してくれるのが決め手だった。",
+        "supportingSourceIds": [
+          "src-anker"
+        ],
+        "sentiment": "positive"
+      },
+      {
+        "userType": "ペットを飼っている家庭",
+        "scenario": "カーペットとフローリングの混在環境",
+        "experience": "BoostIQのおかげで、カーペットに乗ると自動で吸引力が上がりペットの毛をしっかり吸い取ってくれる。ただし進入禁止エリアをアプリで設定できないため、ペットの水飲み場などは別売りのテープを貼る手間があった。",
+        "supportingSourceIds": [
+          "src-anker"
+        ],
+        "sentiment": "mixed"
+      }
+    ],
+    "userImpression": "吸引と水拭きが手軽にできる薄型エントリー～ミドルクラス機として非常に優秀。特に約7.2cmという薄さとアプリでの掃除履歴確認機能が好評。進入禁止エリアの指定がアプリ上でできない点や自動ゴミ収集がない点は上位機種に劣るが、価格を考えれば機能と手間のバランスが良く、初めてのロボット掃除機やサブ機として満足度が高い。",
+    "sources": [
+      {
+        "id": "src-anker",
+        "name": "Anker Japan 公式サイト",
+        "url": "https://www.ankerjapan.com/products/t2253",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2021-06-05",
+        "author": "Anker",
+        "conflictOfInterest": "disclosed",
+        "notes": "製品仕様（サイズ、重量、機能、付属品など）を確認"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "厚さ約7cmの薄型設計ながら、パワフルな吸引力で部屋の隅々までしっかりと掃除",
+        "category": "comparativeAdvantage",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-anker"
+        ],
+        "crossChecked": false,
+        "notes": "公称値の高さ約7.2cmは、ロボット掃除機全体の中でも薄い部類に入る（一般的には9cm～10cm程度が多い）"
+      },
+      {
+        "claim": "より正確な経路で部屋の隅々まで掃除できる（スマート・ダイナミック・ナビゲーション 2.0）",
+        "category": "quality",
+        "confidence": "medium",
+        "supportingSourceIds": [
+          "src-anker"
+        ],
+        "crossChecked": false,
+        "notes": "ランダム走行の機種（15C等）よりは効率的だが、LiDAR搭載機（L70等）ほどの精度はない点に注意"
+      }
+    ],
+    "lastInvestigated": "2026-08-21",
+    "competitiveAnalysis": [
+      {
+        "name": "Eufy RoboVac 15C",
+        "asin": "B07RWCP1N4",
+        "priceComparison": "対象商品より安価",
+        "featureComparison": [
+          "共通点：Anker製のロボット掃除機で、Wi-Fi対応・アプリ操作が可能。薄型設計。",
+          "相違点：15Cはランダム走行ナビゲーションで水拭き非対応。G30 Hybridは規則正しい走行（ジャイロ・加速度・Pathトラッキング）で水拭きにも対応し、吸引力も1300Pa(15C)から2000Paへ向上している。"
+        ],
+        "differentiators": [
+          "Anker Eufy RoboVac G30 Hybridの利点：掃除残しを減らしたい人、水拭きも同時に行いたい人なら迷わずこちら",
+          "Eufy RoboVac 15Cの利点：とにかく初期費用を抑えて、最低限のゴミ吸い取りだけを自動化したい人向け"
+        ]
+      },
+      {
+        "name": "ルンバ コンボ j7+",
+        "asin": "B0BN52W3B6",
+        "priceComparison": "対象商品より大幅に高価",
+        "featureComparison": [
+          "共通点：吸引と水拭きに対応したロボット掃除機。",
+          "相違点：ルンバはカメラによる高度な障害物回避、アプリでの進入禁止エリア指定、モップの自動リフトアップ、自動ゴミ収集機能を備えるが価格が高い。G30 Hybridはこれらの高度な機能を持たないが、非常に安価で薄型。"
+        ],
+        "differentiators": [
+          "Anker Eufy RoboVac G30 Hybridの利点：カメラや自動ゴミ収集などの高機能は不要で、安価に吸引＋水拭きの環境を構築したい人向け",
+          "ルンバ コンボ j7+の利点：床に物を置きがちな家庭や、ゴミ捨ての手間を極限まで減らしたい、カーペットを絶対に濡らしたくない家庭向け"
+        ]
+      },
+      {
+        "name": "SwitchBot ロボット掃除機 K10+",
+        "asin": "B0C68TS1R9",
+        "priceComparison": "対象商品より高価",
+        "featureComparison": [
+          "共通点：アプリ対応のロボット掃除機。",
+          "相違点：K10+は直径約24.8cmと超小型で、自動ゴミ収集ベースが付属。ナビゲーションもLiDAR搭載で高性能。G30 Hybridは直径約32.5cmの標準サイズで自動ゴミ収集はないが、価格が安い。"
+        ],
+        "differentiators": [
+          "Anker Eufy RoboVac G30 Hybridの利点：自動ゴミ収集ベースの設置スペースを取りたくない人、より広い面積の水拭きを行いたい人向け",
+          "SwitchBot ロボット掃除機 K10+の利点：家具の隙間など狭い場所を徹底的に掃除したい人、ゴミ捨ての手間を省きたい人向け"
+        ]
+      },
+      {
+        "name": "Roborock S7 MaxV Ultra",
+        "asin": "B0B8Y4L3G1",
+        "priceComparison": "対象商品より大幅に高価",
+        "featureComparison": [
+          "共通点：吸引と水拭きに対応。",
+          "相違点：Roborockはモップの自動洗浄・給水・乾燥まで全自動で行うハイエンド機。G30 Hybridはモップの洗浄や給水は手動で行う必要があるエントリー機。"
+        ],
+        "differentiators": [
+          "Anker Eufy RoboVac G30 Hybridの利点：全自動ドックの巨大な設置スペースが確保できない人、水拭きは週に数回程度で自分でモップを洗う手間が許容できる人向け",
+          "Roborock S7 MaxV Ultraの利点：予算をかけてでも水拭きのメンテナンス（モップ洗浄）の手間を完全にゼロにしたい人向け"
+        ]
+      },
+      {
+        "name": "ECOVACS DEEBOT N8+",
+        "asin": "B092M1R612",
+        "priceComparison": "対象商品よりやや高価",
+        "featureComparison": [
+          "共通点：吸引と水拭きに対応。",
+          "相違点：N8+はマッピング（LiDAR）が高性能で自動ゴミ収集スタンド付き。G30 Hybridはジャイロナビゲーションでゴミ収集スタンドなし。"
+        ],
+        "differentiators": [
+          "Anker Eufy RoboVac G30 Hybridの利点：ゴミ収集スタンドのランニングコスト（紙パック代）をかけたくない人、本体の薄さ（家具下の入りやすさ）を重視する人向け",
+          "ECOVACS DEEBOT N8+の利点：アプリから簡単に進入禁止エリアを設定したい人、ゴミ捨ての手間を減らしたい人向け"
+        ]
+      },
+      {
+        "name": "Anker Eufy RoboVac L35 Hybrid+",
+        "asin": "B0B1M2LQK6",
+        "priceComparison": "対象商品より高価",
+        "featureComparison": [
+          "共通点：Anker製で吸引と水拭きに対応。",
+          "相違点：L35 Hybrid+はLiDARナビゲーションと自動ゴミ収集ステーションを搭載。G30 Hybridはそれらを持たないが薄型（7.2cm vs L35の約10cm）。"
+        ],
+        "differentiators": [
+          "Anker Eufy RoboVac G30 Hybridの利点：背の低い家具（脚が8～9cm程度）の下も掃除させたい人なら迷わずこちら",
+          "Anker Eufy RoboVac L35 Hybrid+の利点：複雑な間取りの家で効率よく掃除させたい、自動ゴミ収集機能が欲しい人向け"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "初めてロボット掃除機を購入するが、水拭き機能も試してみたい家庭",
+        "LiDAR搭載機が入らないような、脚の短い（高さ8cm程度）家具の下も掃除したい人",
+        "自動ゴミ収集ステーションを置くスペースがない、または紙パックのランニングコストをかけたくない人"
+      ],
+      "pros": [
+        "高さ約7.2cmの薄型ボディにより、一般的なロボット掃除機では入れないソファやベッドの下も確実に綺麗にできる",
+        "水拭きモップをセットするだけで、フローリングのザラつきや皮脂汚れも一度にスッキリ拭き取れる",
+        "BoostIQにより、カーペットの上のペットの毛やホコリも自動でパワフルに吸引してくれる"
+      ],
+      "cons": [
+        "アプリから進入禁止エリアの指定ができないため、ペットの餌場やケーブルがごちゃついている場所がある家庭は別売りのテープを貼る必要がある",
+        "マッピングの精度はLiDAR搭載機に劣るため、部屋数が非常に多い複雑な間取りの家には不向き"
+      ],
+      "score": 63,
+      "scoreRationale": "[基本点: 70]\n[加点: +5] (2000Paの吸引力と水拭き両対応による基本性能の高さ)\n[加点: +5] (約7.2cmの薄型設計による家具下へのアクセスの良さ)\n[加点: +3] (スマート・ダイナミック・ナビゲーション2.0による効率的な掃除経路)\n[減点: -15] (50%の異常な割引率表示による二重価格の懸念と価格不信)\n[減点: -5] (アプリでの進入禁止エリア指定不可など、ナビゲーション・機能面での制約)\n[合計: 63]"
+    },
+    "technicalSpecs": {
+      "dimensions": {
+        "height": "72mm",
+        "width": "325mm",
+        "depth": "325mm",
+        "weight": "2.9kg"
+      },
+      "weight": "2.9kg",
+      "battery": {
+        "capacity": "非公開",
+        "charging": "約300～360分",
+        "playbackTime": "最大100分"
+      },
+      "connectivity": [
+        "Wi-Fi"
+      ],
+      "other": [
+        "吸引力: 2000Pa",
+        "消費電力: 40W",
+        "本体浄水タンク容量: 130ml",
+        "音声アシスタント対応",
+        "ナビゲーション: スマート・ダイナミック・ナビゲーション 2.0 (ジャイロセンサー + 加速度センサー + Pathトラッキングセンサー)",
+        "BoostIQテクノロジー搭載"
+      ]
+    }
+  }
+}
