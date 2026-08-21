@@ -1,0 +1,189 @@
+{{- define "main" -}}
+<div class="container" style="padding-top: var(--md-sys-spacing-8);">
+    {{- partial "breadcrumb.html" . -}}
+
+    <!-- Page Header -->
+    <div class="bargain-hero low-scores-hero">
+        <div class="bargain-hero-icon"><span class="material-symbols-outlined" style="font-size: 2.5rem;" aria-hidden="true">trending_down</span></div>
+        <h1 class="bargain-hero-title">低スコア迷品館</h1>
+        <p class="bargain-hero-subtitle">スコア50点以下の訳あり・迷品コレクション</p>
+        <p class="bargain-hero-desc">
+            スコア <strong>50点以下</strong> の低評価商品を厳選。
+            最高スコアや価格帯、カテゴリで絞り込んで、意外な発見やネタ商品を探してみましょう。
+        </p>
+    </div>
+
+    <!-- Filter Panel -->
+    <div class="bargain-filter-panel theme-gray" id="low-scores-filter-panel">
+        <div class="bargain-filter-row">
+            <div class="bargain-filter-group">
+                <label for="low-scores-score-slider" class="bargain-filter-label">
+                    <span class="material-symbols-outlined bargain-filter-icon" aria-hidden="true">sentiment_dissatisfied</span>
+                    最高スコア: <span id="low-scores-score-value" class="bargain-filter-value">50</span>点以下
+                </label>
+                <input type="range" id="low-scores-score-slider" class="bargain-slider" min="1" max="50" step="1"
+                    value="50">
+                <div class="bargain-slider-labels">
+                    <span>1</span><span>25</span><span>50</span>
+                </div>
+            </div>
+
+            <div class="bargain-filter-group-price">
+                <div class="bargain-filter-group">
+                    <label for="low-scores-min-price-slider" class="bargain-filter-label">
+                        <span class="material-symbols-outlined bargain-filter-icon" aria-hidden="true">payments</span>
+                        最低価格: <span id="low-scores-min-price-value" class="bargain-filter-value">¥100</span>
+                    </label>
+                    <input type="range" id="low-scores-min-price-slider" class="bargain-slider" min="0" max="1000" step="1"
+                        value="20">
+                    <div class="bargain-slider-labels"
+                        style="position: relative; height: 1.25rem; margin-top: var(--md-sys-spacing-1); font-size: var(--md-sys-typescale-label-small-size);">
+                        <span style="position: absolute; left: 0%; transform: none;">¥0</span>
+                        <span style="position: absolute; left: 40%; transform: translateX(-50%);">¥2k</span>
+                        <span style="position: absolute; left: 70%; transform: translateX(-50%);">¥10k</span>
+                        <span style="position: absolute; left: 100%; transform: translateX(-100%);">¥50k</span>
+                    </div>
+                </div>
+                <div class="bargain-filter-group">
+                    <label for="low-scores-price-slider" class="bargain-filter-label">
+                        上限価格: <span id="low-scores-price-value" class="bargain-filter-value">上限なし</span>
+                    </label>
+                    <input type="range" id="low-scores-price-slider" class="bargain-slider" min="0" max="1000" step="1"
+                        value="1000">
+                    <div class="bargain-slider-labels"
+                        style="position: relative; height: 1.25rem; margin-top: 4px; font-size: 0.7rem;">
+                        <span style="position: absolute; left: 0%; transform: none;">¥0</span>
+                        <span style="position: absolute; left: 40%; transform: translateX(-50%);">¥2k</span>
+                        <span style="position: absolute; left: 70%; transform: translateX(-50%);">¥10k</span>
+                        <span style="position: absolute; left: 100%; transform: translateX(-100%);">¥50k</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="bargain-filter-row bargain-filter-row-bottom">
+            <div class="bargain-filter-group">
+                <label for="low-scores-category-select" class="bargain-filter-label">
+                    <span class="material-symbols-outlined bargain-filter-icon" aria-hidden="true">folder</span>
+                    カテゴリ
+                </label>
+                <div class="bargain-category-wrapper">
+                    <select id="low-scores-category-select" class="bargain-select">
+                        <option value="">すべてのカテゴリ</option>
+                    </select>
+                    <button type="button" id="low-scores-category-reset-btn" class="bargain-category-reset-btn"
+                        title="カテゴリ選択を解除" aria-label="カテゴリ選択を解除" disabled>✕</button>
+                </div>
+            </div>
+
+            <div class="bargain-filter-group">
+                <span class="bargain-filter-label">
+                    <span class="material-symbols-outlined bargain-filter-icon" aria-hidden="true">swap_vert</span>
+                    並び替え
+                </span>
+                <div class="bargain-sort-buttons" id="low-scores-sort-buttons">
+                    <button type="button" class="bargain-sort-btn active" data-sort="score-asc">スコアの低い順</button>
+                    <button type="button" class="bargain-sort-btn" data-sort="score-desc">スコアの高い順</button>
+                    <button type="button" class="bargain-sort-btn" data-sort="date">新着順</button>
+                    <button type="button" class="bargain-sort-btn" data-sort="discount">割引率順</button>
+                    <button type="button" class="bargain-sort-btn" data-sort="points-rate">ポイント還元率順</button>
+                    <button type="button" class="bargain-sort-btn" data-sort="price-asc">価格の安い順</button>
+                    <button type="button" class="bargain-sort-btn" data-sort="price-desc">価格の高い順</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Row 3: Keyword Search -->
+        <div class="bargain-filter-row"
+            style="margin-top: var(--spacing-lg); padding-top: var(--spacing-lg); border-top: 1px solid var(--color-border); grid-template-columns: 1fr;">
+            <div class="bargain-filter-group">
+                <label for="low-scores-keyword-input" class="bargain-filter-label">
+                    <span class="material-symbols-outlined bargain-filter-icon" aria-hidden="true">search</span>
+                    キーワード検索
+                </label>
+                <div class="bargain-keyword-wrapper">
+                    <input type="text" id="low-scores-keyword-input" class="bargain-input"
+                        placeholder="商品名、ブランド、カテゴリ、商品説明などから検索...">
+                    <span id="low-scores-keyword-count-badge" class="bargain-keyword-count-badge"
+                        style="display: none;"></span>
+                    <button type="button" id="low-scores-keyword-clear-btn" class="bargain-keyword-clear-btn"
+                        title="キーワードをクリア" aria-label="キーワードをクリア">✕</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Active Filter Chips (Material Design 3) -->
+        <div id="low-scores-active-chips" class="m3-active-chips-container" style="display: none;"></div>
+    </div>
+
+    <!-- Results Stats -->
+    <div class="bargain-stats" id="low-scores-stats">
+        <span class="material-symbols-outlined bargain-stats-icon" aria-hidden="true" style="vertical-align: middle;">bar_chart</span>
+        <span id="low-scores-result-count">0</span>件の商品が見つかりました
+    </div>
+
+    <!-- Product Grid -->
+    <div class="bargain-grid" id="low-scores-grid"></div>
+
+    <!-- No Results Message -->
+    <div class="bargain-no-results" id="low-scores-no-results" style="display: none;">
+        <div class="bargain-no-results-icon">🔍</div>
+        <p class="bargain-no-results-text">条件に一致する商品が見つかりませんでした。</p>
+        <p class="bargain-no-results-hint">フィルタ条件を変更してお試しください。</p>
+        <button type="button" class="bargain-reset-btn" id="low-scores-reset-btn">フィルタをリセット</button>
+    </div>
+
+    <!-- Product Data (Hugo build-time) -->
+    {{- $articles := where .Site.RegularPages "Section" "articles" -}}
+    {{- $lowScoresData := slice -}}
+    {{- range $articles -}}
+    {{- $score := .Params.score | default 0 -}}
+    {{- if and (ge $score 1) (le $score 50) -}}
+    {{- $priceRaw := 0 -}}
+    {{- if .Params.price -}}
+    {{- $priceRaw = index (findRE "[0-9]+" (replace .Params.price "," "")) 0 | default 0 -}}
+    {{- end -}}
+    {{- $pointsRate := 0 -}}
+    {{- if and .Params.price .Params.loyalty_points -}}
+    {{- if gt (int $priceRaw) 0 -}}
+    {{- $pointsRate = mul (div (float .Params.loyalty_points) (float $priceRaw)) 100 -}}
+    {{- end -}}
+    {{- end -}}
+    {{- $category := "" -}}
+    {{- if .Params.categories -}}{{- $category = index .Params.categories 0 -}}{{- else if .Params.category -}}{{-
+    $category = .Params.category -}}{{- end -}}
+    {{- $lastInvestigated := "" -}}
+    {{- with .Params.last_investigated -}}{{- $lastInvestigated = . -}}{{- end -}}
+    {{- $lowScoresData = $lowScoresData | append (dict
+    "title" .Title
+    "url" .RelPermalink
+    "score" $score
+    "price" (.Params.price | default "")
+    "priceRaw" $priceRaw
+    "asin" (.Params.asin | default "")
+    "category" $category
+    "subcategory" (.Params.subcategory | default "")
+    "brand" (.Params.brand | default "")
+    "description" (.Description | default (.Summary | truncate 100))
+    "image" (cond (and .Params.images (gt (len .Params.images) 0)) (index .Params.images 0) "")
+    "affiliateUrl" (.Params.affiliate_url | default "")
+    "lastInvestigated" $lastInvestigated
+    "isAmazonDirect" (.Params.is_amazon_direct | default false)
+    "isAmazonHaul" (.Params.is_amazon_haul | default false)
+    "loyaltyPoints" (.Params.loyalty_points | default 0)
+    "pointsRate" $pointsRate
+    "savingsPercentage" (.Params.savings_percentage | default 0)
+    "availability" (.Params.availability | default "")
+    "dealBadge" (.Params.deal_badge | default "")
+    "dealAccessType" (.Params.deal_access_type | default "")
+    "specsHtml" (cond (not (not .Params.specs)) (partial "product-spec-tags.html" (dict "specs" .Params.specs "tagClass"
+    "card-spec-tag")) "")
+    "specsJson" (cond (not (not .Params.specs)) (partial "product-specs-json.html" .Params.specs) "")
+    ) -}}
+    {{- end -}}
+    {{- end -}}
+    <script id="low-scores-data" type="application/json">{{- $lowScoresData | jsonify | safeJS -}}</script>
+</div>
+<script src="{{ `js/filter-common.js` | relURL }}" defer></script>
+<script src="{{ `js/low-scores-filter.js` | relURL }}" defer></script>
+{{- end -}}
