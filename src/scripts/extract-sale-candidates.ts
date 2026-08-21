@@ -60,6 +60,85 @@ function ensureDirectory(filePath: string): void {
   }
 }
 
+/**
+ * 候補商品の魅力度・信頼性スコアを計算
+ */
+export function calculateCandidateScore(candidate: SaleCandidate, brandMatchers: RegExp[] = []): number {
+  let score = 0;
+
+  // 1. 限定セールバッジ（緊急性・注目度）
+  if (candidate.isLimitedTimeSale) {
+    score += 50;
+  } else if (candidate.dealBadge) {
+    score += 30;
+  }
+
+  // 2. 適正割引率の評価（10%〜50%を高く評価、70%以上は事前除外されている前提）
+  const discount = candidate.savingsPercentage || 0;
+  if (discount >= 10 && discount <= 50) {
+    score += discount * 0.8; // 最大40点
+  } else if (discount > 50 && discount < 70) {
+    score += Math.max(0, (70 - discount) * 1.5); // 50%超は徐々に減点
+  } else if (discount > 0 && discount < 10) {
+    score += discount * 0.5;
+  }
+
+  // 3. レビュー評価とレビュー件数
+  if (candidate.rating) {
+    const { average, count } = candidate.rating;
+    if (average >= 4.3) {
+      score += 25;
+    } else if (average >= 4.0) {
+      score += 20;
+    } else if (average >= 3.5) {
+      score += 10;
+    }
+
+    if (count >= 500) {
+      score += 25;
+    } else if (count >= 100) {
+      score += 18;
+    } else if (count >= 20) {
+      score += 12;
+    } else if (count >= 5) {
+      score += 6;
+    }
+  }
+
+  // 4. 有名ブランドとのマッチング
+  if (brandMatchers.length > 0) {
+    const isKnownBrand = brandMatchers.some((regex) => regex.test(candidate.title));
+    if (isKnownBrand) {
+      score += 20;
+    }
+  }
+
+  return score;
+}
+
+function loadBrandMatchers(): RegExp[] {
+  try {
+    const brandPath = path.join(process.cwd(), 'data/brandgroups.json');
+    if (!fs.existsSync(brandPath)) return [];
+    const content = fs.readFileSync(brandPath, 'utf-8');
+    const brands = JSON.parse(content) as Record<string, { matcher?: { value?: string } }>;
+    const matchers: RegExp[] = [];
+
+    for (const group of Object.values(brands)) {
+      if (group.matcher?.value) {
+        try {
+          matchers.push(new RegExp(group.matcher.value, 'i'));
+        } catch {
+          // ignore invalid regex
+        }
+      }
+    }
+    return matchers;
+  } catch {
+    return [];
+  }
+}
+
 function parseCandidateFromEntry(asin: string, entry: CacheEntry): SaleCandidate | null {
   if (entry.status !== 'valid' || !entry.data) return null;
 
@@ -71,6 +150,23 @@ function parseCandidateFromEntry(asin: string, entry: CacheEntry): SaleCandidate
   // 二重価格（参考価格吊り上げによる常時割引表示）を排除するため、
   // Amazon公式のセールバッジ (dealBadge) が明示されている商品のみを抽出対象とする。
   if (!dealBadge) return null;
+
+  const discount = product.savingsPercentage;
+
+  // 70%以上の異常な割引率は二重価格・ノーブランド粗悪品の可能性が極めて高いため厳格に除外
+  if (discount !== undefined && (discount >= 70 || discount < 0)) {
+    return null;
+  }
+
+  // レビュー評価が存在する場合、平均3.5未満の低評価商品は除外
+  if (product.rating && product.rating.average > 0 && product.rating.average < 3.5) {
+    return null;
+  }
+
+  // レビュー0件かつ高割引率（50%超）のノーブランド疑い商品は除外
+  if ((!product.rating || product.rating.count === 0) && discount !== undefined && discount > 50) {
+    return null;
+  }
 
   return {
     asin,
@@ -85,19 +181,18 @@ function parseCandidateFromEntry(asin: string, entry: CacheEntry): SaleCandidate
   };
 }
 
-function sortCandidates(candidates: SaleCandidate[]): void {
+function sortCandidates(candidates: SaleCandidate[], brandMatchers: RegExp[] = []): void {
+  const scoreMap = new Map<string, number>();
+  for (const c of candidates) {
+    scoreMap.set(c.asin, calculateCandidateScore(c, brandMatchers));
+  }
+
   candidates.sort((a, b) => {
-    const aLimited = a.isLimitedTimeSale ? 1 : 0;
-    const bLimited = b.isLimitedTimeSale ? 1 : 0;
-    if (aLimited !== bLimited) return bLimited - aLimited;
-
-    const aBadge = a.dealBadge ? 1 : 0;
-    const bBadge = b.dealBadge ? 1 : 0;
-    if (aBadge !== bBadge) return bBadge - aBadge;
-
-    const aDiscount = a.savingsPercentage || 0;
-    const bDiscount = b.savingsPercentage || 0;
-    if (aDiscount !== bDiscount) return bDiscount - aDiscount;
+    const scoreA = scoreMap.get(a.asin) || 0;
+    const scoreB = scoreMap.get(b.asin) || 0;
+    if (scoreA !== scoreB) {
+      return scoreB - scoreA; // スコア降順
+    }
 
     return b.timestamp - a.timestamp;
   });
@@ -124,7 +219,7 @@ function filterByCategory(candidates: SaleCandidate[], maxTotal: number, maxPerC
 export async function extractSaleCandidates(
   cacheFilePath?: string,
   outputFilePath?: string,
-  maxTotal: number = 30,
+  maxTotal: number = 40,
   maxPerCategory: number = 3,
 ): Promise<SaleCandidatesFile> {
   const logger = Logger.getInstance();
@@ -156,7 +251,8 @@ export async function extractSaleCandidates(
       }
     }
 
-    sortCandidates(candidates);
+    const brandMatchers = loadBrandMatchers();
+    sortCandidates(candidates, brandMatchers);
     const filteredCandidates = filterByCategory(candidates, maxTotal, maxPerCategory);
 
     const result: SaleCandidatesFile = {

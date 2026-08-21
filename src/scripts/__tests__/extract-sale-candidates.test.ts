@@ -174,4 +174,54 @@ describe('extractSaleCandidates', () => {
     expect(result.candidates[1]?.asin).toBe('ASIN_NORMAL_DEAL');
     expect(result.candidates[1]?.isLimitedTimeSale).toBe(false);
   });
+
+  it('should exclude items with abnormal discount rate (>= 70%) or poor rating', async () => {
+    const dummyCacheData = {
+      ASIN_HIGH_DISCOUNT: {
+        status: 'valid',
+        timestamp: Date.now(),
+        data: {
+          asin: 'ASIN_HIGH_DISCOUNT',
+          title: '90%OFFの怪しいノーブランド品',
+          category: '家電',
+          price: { amount: 1999, currency: 'JPY', formatted: '￥1,999' },
+          dealBadge: 'プライム会員限定セール',
+          savingsPercentage: 90,
+        },
+      },
+      ASIN_LOW_RATING: {
+        status: 'valid',
+        timestamp: Date.now(),
+        data: {
+          asin: 'ASIN_LOW_RATING',
+          title: '評価の低いセール品',
+          category: '家電',
+          price: { amount: 2000, currency: 'JPY', formatted: '￥2,000' },
+          dealBadge: 'タイムセール',
+          savingsPercentage: 30,
+          rating: { average: 2.8, count: 50 },
+        },
+      },
+      ASIN_VALID: {
+        status: 'valid',
+        timestamp: Date.now(),
+        data: {
+          asin: 'ASIN_VALID',
+          title: '高品質な適正セール品',
+          category: '家電',
+          price: { amount: 3500, currency: 'JPY', formatted: '￥3,500' },
+          dealBadge: 'タイムセール',
+          savingsPercentage: 25,
+          rating: { average: 4.5, count: 120 },
+        },
+      },
+    };
+
+    fs.writeFileSync(dummyCachePath, JSON.stringify(dummyCacheData, null, 2), 'utf-8');
+
+    const result = await extractSaleCandidates(dummyCachePath, outputPath, 10, 3);
+
+    expect(result.totalCandidates).toBe(1);
+    expect(result.candidates[0]?.asin).toBe('ASIN_VALID');
+  });
 });
