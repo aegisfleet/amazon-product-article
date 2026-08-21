@@ -20,10 +20,11 @@ export class InvestigationPromptBuilder {
   public build(): string {
     const brandInfo = this.getBrandInfo();
     const parentAsinInfo = this.getParentAsinInfo();
+    const dealInfo = this.getDealInfo();
     const rubric = this.getScoringRubric();
     const specs = this.getProductSpecs();
 
-    return this.generatePrompt(brandInfo, parentAsinInfo, rubric, specs);
+    return this.generatePrompt(brandInfo, parentAsinInfo, dealInfo, rubric, specs);
   }
 
   private getBrandInfo(): string {
@@ -32,6 +33,17 @@ export class InvestigationPromptBuilder {
 
   private getParentAsinInfo(): string {
     return this.product.parentAsin ? `- 親ASIN: ${this.product.parentAsin}` : '';
+  }
+
+  private getDealInfo(): string {
+    const parts: string[] = [];
+    if (this.product.savingsPercentage) {
+      parts.push(`割引率: ${this.product.savingsPercentage}%`);
+    }
+    if (this.product.dealBadge) {
+      parts.push(`セールバッジ: ${this.product.dealBadge}`);
+    }
+    return parts.length > 0 ? `- セール・割引情報: ${parts.join(' / ')}` : '';
   }
 
   private getProductSpecs(): string {
@@ -55,10 +67,17 @@ export class InvestigationPromptBuilder {
 
    **価格の正確な認識と二重価格（見せ金・異常割引率）の厳格な排除（最重要）**:
    - 価格の誤認（ハルシネーション）の厳禁: 商品情報の「価格」と、評価理由（scoreRationale）に記述する価格帯・コスパの主張が完全に一致していることを必ず確認する。例えば実際の価格が1万円以上であるにもかかわらず「2000円台でコスパが良い」と加点するような矛盾は絶対にあってはならない。
-   - 二重価格（見せ金・異常割引率）の判定と減点:
-     1. **異常な割引率表示（70%〜90%オフ等）**: 過去参考価格からの極端な割引表示が常態化している商品は、実売実績のない高額な定価を偽装したアンカリング（二重価格表示・有利誤認）の疑いが極めて強い。販売者の信頼性欠如および価格乱高下リスクとして、**コストパフォーマンスおよび信頼性の観点から大幅減点（-15〜-20点）**する。
-     2. **ダミーバリエーション（見せ金）**: 同一製品の別カラー等と比較して、機能差がないのに価格が不当に（数倍など）高く設定されている商品は、他バリエーションを安く見せるための見せ金として**大幅減点（-15〜-20点）**する。
-   - **カタログスペックの鵜呑み加点の禁止**: ノーブランド品や実態が不透明なブランドが謳うカタログスペック（「120段階風量」「瞬間冷却」等）を無批判に鵜呑みにして細分化加点を重ねてはならない。ブランドの信頼性や第三者検証がない場合は慎重に評価すること。
+   - **二重価格（見せ金・異常割引率）の確実な見破り方（Amazon内データで完結する判定手順）**:
+     Amazon専売のマイナー商品やノーブランド品であっても、以下の手順・シグナルで手元のデータとAmazon内検索のみで100%確実に二重価格を判定し、**コストパフォーマンス・信頼性で大幅減点（-15〜-20点）**する。
+     1. **【商品情報の割引率シグナル（手元データで即時判定）】**:
+        商品情報の「セール・割引情報」に **割引率 50%〜90%**（例: 78%OFF）が表示されている場合。家電・日用品で実売実績のある定価から常時70%以上値引きされることは通常あり得ず、このシグナルだけで二重価格（定価偽装）と即時判定可能である。
+     2. **【Amazon内競合相場との比較（\`creators_search_items.py\`）】**:
+        \`creators_search_items.py\` で同カテゴリの競合商品（6〜8点）を取得し、Amazon内の実売相場と比較する。競合が1,500〜3,000円で売られている中、本商品の元値（参考価格）が1万円以上など相場の数倍に設定されている場合は**確実に二重価格**である。
+     3. **【ダミーバリエーション（見せ金）の比較】**:
+        同一製品の別カラー・サイズ間で、機能差がないのに1つだけ価格が数倍高く設定されている場合（他の色を安く見せるための見せ金）。
+     4. **【Amazon専売・ノーブランド品の扱い】**:
+        他ECモールや公式サイトに流通実績のないAmazon専売品・謎ブランド品は、出品者の自己申告スペック（「120段階風量」「瞬間冷却」等）を鵜呑みにした加点を禁止し、信頼性・価格妥当性を厳格に評価する。
+   - **カタログスペックの鵜呑み加点の禁止**: ノーブランド品や実態が不透明なブランドが謳うカタログスペックを無批判に鵜呑みにして細分化加点を重ねてはならない。ブランドの信頼性や第三者検証がない場合は慎重に評価すること。
 
    **パターンA：一般商品 (性能・コスパ重視)**
    - 性能・機能 (-10 ～ +10点): スペック、実用性、使い勝手
@@ -80,7 +99,27 @@ export class InvestigationPromptBuilder {
    - **カテゴリ配点上限の厳守**: 各カテゴリ（性能・機能は最大+10点、コスパは最大+15点等）に定められた配点範囲・上限を厳守すること。細分化した加点項目を多数積み上げてカテゴリ上限を超えて加点してはならない。`;
   }
 
-  private generatePrompt(brandInfo: string, parentAsinInfo: string, rubric: string, specs: string): string {
+  private generatePrompt(
+    brandInfo: string,
+    parentAsinInfo: string,
+    dealInfo: string,
+    rubric: string,
+    specs: string,
+  ): string {
+    const productInfoLines = [
+      `- ASIN: ${this.product.asin}`,
+      `- 商品名: ${this.product.title}`,
+      brandInfo,
+      parentAsinInfo,
+      dealInfo,
+      `- カテゴリ: ${this.product.category}`,
+      `- 価格: ${this.product.price.formatted}`,
+      '- 仕様・詳細:',
+      specs,
+    ]
+      .filter((line) => line && line.trim().length > 0)
+      .join('\n');
+
     return `【基本ルール】
 - 全ての出力は日本語で記述する
 - 情報の正確性を最優先し、常に最新の情報を調査する
@@ -192,14 +231,7 @@ export class InvestigationPromptBuilder {
 ---
 
 商品情報：
-- ASIN: ${this.product.asin}
-- 商品名: ${this.product.title}
-${brandInfo}
-${parentAsinInfo}
-- カテゴリ: ${this.product.category}
-- 価格: ${this.product.price.formatted}
-- 仕様・詳細:
-${specs}
+${productInfoLines}
 
 ---
 
