@@ -198,12 +198,15 @@
                 const thumb = document.createElement('div');
                 thumb.className = 'compare-tray-item';
                 const imgSrc = item.image || '';
+                const itemUrl = item.url ? escapeHtml(item.url) : '';
                 thumb.innerHTML = `
-                    <div class="compare-tray-thumb">
-                        ${imgSrc ? `<img src="${escapeHtml(imgSrc)}" alt="${escapeHtml(item.title)}">` : '<div class="compare-noimg">画像なし</div>'}
-                        <button type="button" class="compare-tray-item-remove" data-asin="${escapeHtml(item.asin)}" aria-label="${escapeHtml(item.title)}を比較から削除">✕</button>
-                    </div>
-                    <span class="compare-tray-item-title" title="${escapeHtml(item.title)}">${escapeHtml(item.title)}</span>
+                    <a ${itemUrl ? `href="${itemUrl}"` : ''} class="compare-tray-item-link" title="${escapeHtml(item.title)}">
+                        <div class="compare-tray-thumb">
+                            ${imgSrc ? `<img src="${escapeHtml(imgSrc)}" alt="${escapeHtml(item.title)}">` : '<div class="compare-noimg">画像なし</div>'}
+                        </div>
+                        <span class="compare-tray-item-title">${escapeHtml(item.title)}</span>
+                    </a>
+                    <button type="button" class="compare-tray-item-remove" data-asin="${escapeHtml(item.asin)}" aria-label="${escapeHtml(item.title)}を比較から削除" title="削除">✕</button>
                 `;
                 itemsContainer.appendChild(thumb);
             });
