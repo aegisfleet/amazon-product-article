@@ -356,6 +356,7 @@ export interface InvestigationResult {
     userImpression: string; // New: Overall impression summary
     sources: SourceReference[]; // New: Information sources
     lastInvestigated?: string; // New: ISO Date string of last investigation
+    investigatedPrice?: string; // 調査当時の価格 (e.g. "¥3,980")
     productDescription?: string; // New: Brief product description (1-2 sentences)
     productUsage?: string[]; // New: Main usage/purpose (3-5 items)
     recommendation: {

@@ -182,6 +182,7 @@ export class ArticleGenerator {
       asin: product.asin,
       priceRange,
       price,
+      investigatedPrice: investigation.analysis.investigatedPrice,
       score,
       ...(product.rating.average > 0 && product.rating.average <= 5 ? { rating: product.rating.average } : {}),
       ...(product.rating.count > 0 ? { ratingCount: product.rating.count } : {}),
@@ -1389,6 +1390,8 @@ ${recommendationMessage}
   private addProductIdentifiers(lines: string[], metadata: ArticleMetadata): void {
     lines.push(`asin: "${metadata.asin}"`, `price_range: "${metadata.priceRange}"`);
     if (metadata.price) lines.push(`price: "${this.escapeForFrontMatter(metadata.price)}"`);
+    if (metadata.investigatedPrice)
+      lines.push(`investigated_price: "${this.escapeForFrontMatter(metadata.investigatedPrice)}"`);
   }
 
   private addMetricsMetadata(lines: string[], metadata: ArticleMetadata): void {
