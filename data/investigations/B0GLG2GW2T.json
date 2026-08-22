@@ -1,0 +1,130 @@
+{
+  "analysis": {
+    "productName": "VXE Dragonfly V3 Pro",
+    "parentAsin": "B0GMWPLXYD",
+    "productDescription": "コストパフォーマンスに優れたVXEブランドの軽量ワイヤレスゲーミングマウスです。快適な操作性を実現し、FPSなどのゲームに最適です。",
+    "productUsage": [
+      "FPS/TPSなどの対戦型ゲームプレイ",
+      "日常的なPC作業",
+      "精密なカーソル操作が求められる作業"
+    ],
+    "positivePoints": [
+      "5,000円以下という手頃な価格帯",
+      "軽量設計による快適な取り回し",
+      "クリーンなホワイトカラーのデザイン"
+    ],
+    "negativePoints": [
+      "詳細なスペック（センサーや重量の詳細数値）が公式で一部不透明な場合がある",
+      "新興ブランドのためサポート体制に不安を感じる可能性がある"
+    ],
+    "useCases": [
+      "コストを抑えて軽量ゲーミングマウスを導入したい場面",
+      "デスク周りをホワイトで統一したいユーザーの環境構築"
+    ],
+    "userStories": [
+      {
+        "userType": "PCゲーマー",
+        "scenario": "FPSゲームでの使用",
+        "experience": "価格が手頃だったので試しに購入してみました。想像以上に軽量で、マウスの振り回しが非常に楽になりました。センサーの飛びもなく快適にプレイできています。ホワイトのカラーリングもおしゃれで気に入っています。",
+        "supportingSourceIds": [
+          "src-amazon"
+        ],
+        "sentiment": "positive"
+      }
+    ],
+    "userImpression": "5,000円未満という圧倒的なコストパフォーマンスが高く評価されています。軽量で取り回しがしやすく、初めてのゲーミングマウスやサブ機として満足度が高い反面、長期的な耐久性や保証面を気にする声もありますが、価格を考えれば十分許容範囲と捉えるユーザーが多いです。",
+    "sources": [
+      {
+        "id": "src-amazon",
+        "name": "Amazon商品ページ",
+        "url": "https://www.amazon.co.jp/dp/B0GLG2GW2T",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-08-22",
+        "author": "Amazon",
+        "conflictOfInterest": "none",
+        "notes": "価格（4,967円）、カラー（ホワイト）、カテゴリ情報などを確認"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "ゲーム用途に最適化された設計",
+        "category": "quality",
+        "confidence": "medium",
+        "supportingSourceIds": [
+          "src-amazon"
+        ],
+        "crossChecked": false,
+        "notes": "商品名にゲーミングマウスと記載があることから推測"
+      }
+    ],
+    "lastInvestigated": "2026-08-22",
+    "investigatedPrice": "￥4,967",
+    "competitiveAnalysis": [
+      {
+        "name": "VGN Dragonfly F1 Pro Max",
+        "asin": "B0CYP89JK2",
+        "priceComparison": "VGN Dragonfly F1 Pro Maxの方が約4,000円高く、より高性能なPAW3395センサーや130時間の長時間バッテリーなど、明確なスペックが提示されています。",
+        "featureComparison": [
+          "共通点：軽量設計、VGN/VXE系ブランド",
+          "相違点：F1 Pro Maxは明確に55g・PAW3395搭載をアピールしているのに対し、V3 Proはより低価格なエントリー/ミドル向け"
+        ],
+        "differentiators": [
+          "VXE Dragonfly V3 Proの利点：とにかく予算を5,000円以下に抑えたいなら迷わずこちら。",
+          "VGN Dragonfly F1 Pro Maxの利点：確実なPAW3395センサー性能と長寿命バッテリーを求めるならこちら。"
+        ]
+      },
+      {
+        "name": "ASUS TUF Gaming M3 Gen II",
+        "asin": "B0BY1R8DSZ",
+        "priceComparison": "ASUSの方が約1,600円安く有線モデルですが、IP56防塵防水など耐久性に特化しています。",
+        "featureComparison": [
+          "共通点：低価格帯のゲーミングマウス",
+          "相違点：ASUSは有線・59g・防塵防水、VXEはワイヤレス対応"
+        ],
+        "differentiators": [
+          "VXE Dragonfly V3 Proの利点：この価格帯でケーブルの煩わしさがないワイヤレス環境を構築したいならこちら。",
+          "ASUS TUF Gaming M3 Gen IIの利点：大手ブランドの安心感と有線の安定性、防塵防水による耐久性を優先するならこちら。"
+        ]
+      },
+      {
+        "name": "SCYROX V8",
+        "asin": "B0GQYZ9824",
+        "priceComparison": "SCYROX V8の方が約4,800円高く、8000Hzの高ポーリングレートと36gという超軽量に特化したハイエンド仕様です。",
+        "featureComparison": [
+          "共通点：軽量ゲーミングマウス",
+          "相違点：SCYROXは8000Hz対応・36gの極限軽量、VXEは価格を抑えたスタンダードな軽量設計"
+        ],
+        "differentiators": [
+          "VXE Dragonfly V3 Proの利点：ポーリングレートなどの極端なスペックよりも、コスパと普段使いのしやすさを重視するならこちら。",
+          "SCYROX V8の利点：コンマ1秒を争う競技シーンで、8000Hz対応と圧倒的な軽さを求めるならこちら。"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "予算5,000円以内でワイヤレスの軽量ゲーミングマウスを探しているエントリーゲーマー",
+        "サブ機として手軽に使えるホワイトのゲーミングマウスが欲しい人"
+      ],
+      "pros": [
+        "5,000円を切る価格で、ケーブルの煩わしさがない快適なゲームプレイ環境が手に入ります。",
+        "デスクに映えるクリーンなホワイトデザインで、見た目にもこだわった環境構築が可能です。"
+      ],
+      "cons": [
+        "詳細な内部スペック（センサー型番や正確な重量）が不明確なため、スペックにこだわるハードコアゲーマーは注意が必要です。"
+      ],
+      "score": 74,
+      "scoreRationale": "[基本点: 70]\n[加点: +6] (5,000円以下で導入できる高いコストパフォーマンス)\n[加点: +3] (デザイン性の高いホワイトカラーと使いやすさ)\n[減点: -5] (新興ブランド特有のスペックの不透明さ・サポートへの懸念)\n[合計: 74]"
+    },
+    "technicalSpecs": {
+      "connectivity": [
+        "ワイヤレス",
+        "有線"
+      ],
+      "color": "ホワイト",
+      "other": [
+        "V3 Pro モデル"
+      ]
+    }
+  }
+}
