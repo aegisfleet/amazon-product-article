@@ -536,6 +536,15 @@
             `;
         }
 
+        function renderCategoryTag(category) {
+            if (!category) return '';
+            const categoryUrl = getCategoryUrl(category);
+            if (categoryUrl) {
+                return `<a href="${escapeHTML(categoryUrl)}" class="card-tag">${escapeHTML(category)}</a>`;
+            }
+            return `<span class="card-tag">${escapeHTML(category)}</span>`;
+        }
+
         function renderCard(item) {
             const img = item.image
                 ? `<img src="${escapeHTML(item.image)}" alt="${escapeHTML(item.title)}" loading="lazy" decoding="async">`
@@ -545,12 +554,7 @@
             const scoreHTML = item.score
                 ? `<div class="meta-score-block"><span class="card-score m3-badge m3-badge-score ${scoreClass(item.score)}"><span class="material-symbols-outlined icon-score" aria-hidden="true">trophy</span> ${item.score}点</span></div>`
                 : '';
-            const categoryUrl = getCategoryUrl(item.category);
-            const categoryHTML = item.category
-                ? (categoryUrl
-                    ? `<a href="${escapeHTML(categoryUrl)}" class="card-tag">${escapeHTML(item.category)}</a>`
-                    : `<span class="card-tag">${escapeHTML(item.category)}</span>`)
-                : '';
+            const categoryHTML = renderCategoryTag(item.category);
 
             return `
         <article class="card fav-card" data-asin="${escapeHTML(item.asin)}">
