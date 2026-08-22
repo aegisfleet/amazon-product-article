@@ -48,6 +48,14 @@
             <span class="material-symbols-outlined" aria-hidden="true">search</span> 商品を探す
         </a>
     </div>
+
+    {{- $urlMap := dict -}}
+    {{- range $name, $items := .Site.Taxonomies.categories -}}
+        {{- with $.Site.GetPage (printf "/categories/%s" $name) -}}
+            {{- $urlMap = merge $urlMap (dict .LinkTitle .RelPermalink) -}}
+        {{- end -}}
+    {{- end -}}
+    <script id="category-url-data" type="application/json">{{- $urlMap | jsonify | safeJS -}}</script>
 </div>
 
 <style>
@@ -343,6 +351,23 @@
 
         let latestIndexMap = null;
         let isIndexLoading = false;
+        let categoryUrlMap = null;
+
+        function getCategoryUrl(categoryName) {
+            if (!categoryName) return '';
+            if (!categoryUrlMap) {
+                const script = document.getElementById('category-url-data');
+                try {
+                    categoryUrlMap = script ? JSON.parse(script.textContent) : {};
+                } catch {
+                    categoryUrlMap = {};
+                }
+            }
+            if (categoryUrlMap && categoryUrlMap[categoryName]) {
+                return categoryUrlMap[categoryName];
+            }
+            return '{{ "categories/" | relURL }}' + encodeURIComponent(categoryName) + '/';
+        }
 
         function loadFavorites() {
             try {
@@ -415,6 +440,9 @@
 
             const latestPrice = extractLatestPrice(product, savedPriceRaw, savedPriceStr);
             const diffInfo = calculateDiff(savedPriceRaw, latestPrice.priceRaw, latestPrice.hasLatest);
+            const categoryName = (product && Array.isArray(product.categories) && product.categories.length > 0)
+                ? product.categories[0]
+                : (item.category || '');
 
             return {
                 rawItem: item,
@@ -423,7 +451,7 @@
                 url: (product && product.permalink) || item.url || '',
                 affiliateUrl: item.affiliateUrl,
                 image: (product && product.image) || item.image || '',
-                category: item.category,
+                category: categoryName,
                 savedAt: item.savedAt,
                 savedPriceStr: savedPriceStr,
                 savedPriceRaw: savedPriceRaw,
@@ -517,8 +545,11 @@
             const scoreHTML = item.score
                 ? `<div class="meta-score-block"><span class="card-score m3-badge m3-badge-score ${scoreClass(item.score)}"><span class="material-symbols-outlined icon-score" aria-hidden="true">trophy</span> ${item.score}点</span></div>`
                 : '';
+            const categoryUrl = getCategoryUrl(item.category);
             const categoryHTML = item.category
-                ? `<span class="card-tag">${escapeHTML(item.category)}</span>`
+                ? (categoryUrl
+                    ? `<a href="${escapeHTML(categoryUrl)}" class="card-tag">${escapeHTML(item.category)}</a>`
+                    : `<span class="card-tag">${escapeHTML(item.category)}</span>`)
                 : '';
 
             return `
@@ -528,7 +559,7 @@
             </div>
             <div class="card-content">
                 <div class="card-header">
-                    ${categoryHTML}
+                    ${item.category ? `<div class="card-tags-row">${categoryHTML}</div>` : ''}
                     <h3 class="card-title">
                         <a href="${escapeHTML(item.url)}">${escapeHTML(item.title)}</a>
                     </h3>
