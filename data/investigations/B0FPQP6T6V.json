@@ -1,0 +1,177 @@
+{
+  "analysis": {
+    "productName": "HEIBAS G7 片耳Bluetoothヘッドセット",
+    "parentAsin": "B0FPQP6T6V",
+    "productDescription": "充電ケース併用で最大108時間再生を謳う片耳タイプのワイヤレスヘッドセット。",
+    "productUsage": [
+      "ハンズフリー通話",
+      "Web会議",
+      "運転中の通話"
+    ],
+    "positivePoints": [
+      "充電ケース併用による長時間再生対応",
+      "物理ボタンによる確実な操作が可能",
+      "マイクミュートボタン（ワンタッチ静音）を搭載"
+    ],
+    "negativePoints": [
+      "実用化されていない架空の規格「Bluetooth 6.0」を謳う虚偽スペック表記",
+      "ノーブランド品特有の不自然な長時間再生（108時間）など信頼性に欠ける仕様表記",
+      "二重価格（見せ金）による大幅な割引表示が疑われる"
+    ],
+    "useCases": [
+      "長時間のオンライン会議やWebミーティング",
+      "外出先での頻繁な電話応対",
+      "運転中などのハンズフリー通話が必要な場面"
+    ],
+    "userStories": [
+      {
+        "userType": "ビジネスパーソン",
+        "scenario": "外出先でのWeb会議や電話応対",
+        "experience": "安価で充電ケース付きのヘッドセットを探して購入。ミュートボタンがあるのは便利だが、「Bluetooth 6.0」という存在しない規格がパッケージや商品名に書かれており、メーカーの信頼性には大きな疑問が残る。音質や接続自体は価格なりだが、スペック詐欺の疑いが強くリピートはしない。",
+        "supportingSourceIds": [
+          "amazon-product-page"
+        ],
+        "sentiment": "negative"
+      }
+    ],
+    "userImpression": "価格は手頃でミュートボタンなどの機能面は充実しているように見えるが、実用化されていない「Bluetooth 6.0」を堂々と謳っている点で製品仕様の信頼性が大きく損なわれている。虚偽スペックを懸念し、安くても購入を避けるべきという評価が支配的である。",
+    "sources": [
+      {
+        "id": "amazon-product-page",
+        "name": "Amazon商品ページ",
+        "url": "https://www.amazon.co.jp/dp/B0FPQP6T6V",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-08-22",
+        "author": "Amazon",
+        "conflictOfInterest": "none",
+        "notes": "商品名および説明欄に「Bluetooth 6.0」という架空の規格が明記されていることを確認。価格1,998円、タイムセール（32%割引）の表示あり。"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "2026至高のBluetooth 6.0チープ搭載",
+        "category": "comparativeAdvantage",
+        "confidence": "low",
+        "supportingSourceIds": [
+          "amazon-product-page"
+        ],
+        "crossChecked": false,
+        "notes": "Bluetooth 6.0は実用化・普及していない架空の規格であり、完全な虚偽（スペック詐欺）である。"
+      }
+    ],
+    "lastInvestigated": "2026-08-22",
+    "competitiveAnalysis": [
+      {
+        "name": "エレコム LBT-HS21MPBK2",
+        "asin": "B0F8TLG9Y8",
+        "priceComparison": "対象商品とほぼ同等の2,100円前後だが、国内メーカー製であり信頼性が圧倒的に高い。",
+        "featureComparison": [
+          "共通点：片耳タイプ、マイクミュート機能搭載",
+          "相違点：対象商品が架空規格を謳うのに対し、エレコム製は正確なスペックを公開しており国内サポートが受けられる点"
+        ],
+        "differentiators": [
+          "HEIBAS G7 片耳Bluetoothヘッドセットの利点：充電ケースが付属する点。",
+          "エレコム LBT-HS21MPBK2の利点：虚偽スペックのない確かな品質と国内メーカーのサポートを求めるなら迷わずこちらを選ぶべき。"
+        ]
+      },
+      {
+        "name": "エレコム LBT-HSC41BK-EC",
+        "asin": "B0GGH3J3LW",
+        "priceComparison": "対象商品より高価（約4,200円）だが、充電ケース付きでENCノイズキャンセリングや正確な仕様を保証している。",
+        "featureComparison": [
+          "共通点：片耳タイプ、充電ケース付属、マルチポイント対応",
+          "相違点：対象商品は虚偽のBluetooth 6.0を謳うが、こちらは正規の規格に準拠し、国内メーカーの品質管理がされている"
+        ],
+        "differentiators": [
+          "HEIBAS G7 片耳Bluetoothヘッドセットの利点：とにかく初期費用を安く抑えたい場合。",
+          "エレコム LBT-HSC41BK-ECの利点：充電ケース付きの片耳ヘッドセットで、信頼できる国内メーカー製を求めるならこちら。"
+        ]
+      },
+      {
+        "name": "JVCケンウッド KH-M700-B",
+        "asin": "B08YYML9N6",
+        "priceComparison": "対象商品の数倍の価格だが、オーディオメーカーならではの高品位な通話品質がある。",
+        "featureComparison": [
+          "共通点：片耳タイプのBluetoothヘッドセット、マルチポイント対応",
+          "相違点：JVCケンウッドは音質やマイク性能に優れ、仕様に嘘がない。対象商品は価格重視のノーブランド品でスペックに虚偽がある。"
+        ],
+        "differentiators": [
+          "HEIBAS G7 片耳Bluetoothヘッドセットの利点：価格の安さ。",
+          "JVCケンウッド KH-M700-Bの利点：ビジネス用途での通話品質や、信頼できる有名ブランドの製品を重視するならこちら。"
+        ]
+      },
+      {
+        "name": "Boytond YYK-520",
+        "asin": "B0BPLVLQPG",
+        "priceComparison": "対象商品と同価格帯（約1,800円）の廉価帯ノーブランド品。",
+        "featureComparison": [
+          "共通点：低価格帯のノーブランド片耳ヘッドセット",
+          "相違点：BoytondはBluetooth 5.3を表記しており現実的な規格だが、対象商品はBluetooth 6.0という架空の規格を謳っている点"
+        ],
+        "differentiators": [
+          "HEIBAS G7 片耳Bluetoothヘッドセットの利点：あえて本商品を選ぶべき積極的な理由は見当たらない。",
+          "Boytond YYK-520の利点：同じ低価格帯でも、存在しない規格を謳っていない分まだ仕様に現実味がある。"
+        ]
+      },
+      {
+        "name": "Bluetooth ヘッドセット B0BTPPGVPQ (ノーブランド)",
+        "asin": "B0BTPPGVPQ",
+        "priceComparison": "対象商品よりさらに安い（約1,000円）超廉価品。",
+        "featureComparison": [
+          "共通点：超低価格帯の片耳Bluetoothヘッドセット",
+          "相違点：対象商品は充電ケースが付属するが、こちらは本体のみの充電。"
+        ],
+        "differentiators": [
+          "HEIBAS G7 片耳Bluetoothヘッドセットの利点：充電ケースが付属する点。",
+          "Bluetooth ヘッドセット B0BTPPGVPQ (ノーブランド)の利点：充電ケース不要で、とにかく1,000円前後の最安値で片耳ヘッドセットを手に入れたい場合。"
+        ]
+      },
+      {
+        "name": "エレコム HS-HP29UBK",
+        "asin": "B08L5HQJL7",
+        "priceComparison": "対象商品と近い価格帯（約2,400円）だが、こちらはUSB有線接続。",
+        "featureComparison": [
+          "共通点：片耳タイプのヘッドセット",
+          "相違点：対象商品はワイヤレスだが虚偽スペック。こちらは有線接続で遅延やバッテリー切れの心配がなく、国内メーカー製。"
+        ],
+        "differentiators": [
+          "HEIBAS G7 片耳Bluetoothヘッドセットの利点：ワイヤレス環境が必要な場合。",
+          "エレコム HS-HP29UBKの利点：PCでのWeb会議専用で、充電不要かつ安定した有線接続と確実な信頼性を求めるならこちら。"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "スペックの虚偽表記を理解した上で、自己責任で安価な使い捨て用途として割り切って購入できる人"
+      ],
+      "pros": [
+        "ケース併用で充電頻度を減らせるため、長時間の外出時でもバッテリー切れのリスクを軽減できる",
+        "ワンタッチでマイクミュートが可能なため、オンライン会議中に咳き込む際などにすぐ対応できる"
+      ],
+      "cons": [
+        "実用化されていない「Bluetooth 6.0」という架空の規格を謳っており、製品の仕様や品質に関する信頼性が著しく低いため購入には強い注意が必要",
+        "ノーブランド品のため、万が一の故障時のサポートや品質保証は期待できない"
+      ],
+      "score": 55,
+      "scoreRationale": "[基本点: 70]\n[減点: -15] (実用化されていない「Bluetooth 6.0」を謳う重大な虚偽スペック表記と性能信頼性の欠如)\n[合計: 55]"
+    },
+    "technicalSpecs": {
+      "battery": {
+        "capacity": "500mAh (充電ケース)",
+        "playbackTime": "単体最大23時間 / ケース併用最大108時間 (メーカー公称値)"
+      },
+      "connectivity": [
+        "Bluetooth 6.0 (※架空の規格であり虚偽スペック)",
+        "マルチポイント接続対応"
+      ],
+      "weight": "約12g",
+      "other": [
+        "ANC (アクティブノイズキャンセリング) 搭載 (メーカー公称値)",
+        "ENC通話ノイズキャンセリング搭載",
+        "ワンタッチマイクミュート(静音)ボタン搭載",
+        "物理操作ボタン"
+      ]
+    }
+  }
+}
