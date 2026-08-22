@@ -177,7 +177,7 @@ export class InvestigationPromptBuilder {
   - \`uv run python scripts/validate_artifact.py data/investigations/${this.product.asin}.json\` を実行する。
   - **修正義務**: 警告やエラー（リンク切れ、非メートル法単位の混入、必須項目の不足等）が出た場合は、必ずその場で内容を修正し、再度チェックをパスさせる。
   - 特に競合製品との価格比較やスペックの正確性を再確認する。
-  - \`lastInvestigated\` を本日の日付（${this.today}）に必ず更新する。
+  - \`lastInvestigated\` を本日の日付（${this.today}）に更新し、\`investigatedPrice\` に調査時点の価格（${this.product.price.formatted}）を設定する。
 7. **外部調査と継続性**: Amazon 403エラー等でもGoogle検索等で調査を継続し、絶対に「調査不能」で終わらせない。情報が不足している場合は、自律的に検索キーワードを工夫して必要なエビデンスを揃える。
 8. **推測ではなく根拠**: 商品仕様からの論理的推論は許容するが、架空のエピソード創作（ハルシネーション）は厳禁である。
 9. **網羅的・完全構造化されたスペックの記載 (technicalSpecs)**:
@@ -309,6 +309,7 @@ ${productInfoLines}
       }
     ],
     "lastInvestigated": "${this.today}",
+    "investigatedPrice": "${this.product.price.formatted}",
     "competitiveAnalysis": [
       {
         "name": "競合名",

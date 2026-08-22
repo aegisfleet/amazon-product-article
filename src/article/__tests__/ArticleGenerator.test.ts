@@ -710,6 +710,32 @@ describe('ArticleGenerator', () => {
       expect(metadata.seoKeywords).toContain('レビュー');
     });
 
+    it('should include investigatedPrice in metadata when present', () => {
+      const investigationWithPrice: InvestigationResult = {
+        ...mockInvestigation,
+        analysis: {
+          ...mockInvestigation.analysis,
+          investigatedPrice: '¥55,000',
+        },
+      };
+
+      const metadata = generator.generateSEOMetadata(mockProduct, investigationWithPrice);
+      expect(metadata.investigatedPrice).toBe('¥55,000');
+    });
+
+    it('should output investigated_price to frontmatter when present', async () => {
+      const investigationWithPrice: InvestigationResult = {
+        ...mockInvestigation,
+        analysis: {
+          ...mockInvestigation.analysis,
+          investigatedPrice: '¥55,000',
+        },
+      };
+
+      const result = await generator.generateArticle(mockProduct, investigationWithPrice);
+      expect(result.content).toContain('investigated_price: "¥55,000"');
+    });
+
     it('should set review author to fixed editorial name when verified source exists', () => {
       const metadata = generator.generateSEOMetadata(mockProduct, mockInvestigation);
 

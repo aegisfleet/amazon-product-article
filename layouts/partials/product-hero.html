@@ -14,7 +14,29 @@
 
 {{- $priceRaw := 0 -}}
 {{- if $product.price -}}
-{{- $priceRaw = index (findRE "[0-9]+" (replace $product.price "," "")) 0 | default 0 -}}
+{{- $priceRaw = index (findRE "[0-9]+" (replace $product.price "," "")) 0 | default 0 | int -}}
+{{- end -}}
+
+{{- $investigatedPriceRaw := 0 -}}
+{{- if $product.investigated_price -}}
+{{- $investigatedPriceRaw = index (findRE "[0-9]+" (replace $product.investigated_price "," "")) 0 | default 0 | int -}}
+{{- end -}}
+
+{{- $diff := 0 -}}
+{{- $diffRate := 0 -}}
+{{- $diffAbs := 0 -}}
+{{- $isDiscounted := false -}}
+{{- $isPriceUp := false -}}
+{{- if and (gt $priceRaw 0) (gt $investigatedPriceRaw 0) (ne $priceRaw $investigatedPriceRaw) -}}
+  {{- $diff = sub $priceRaw $investigatedPriceRaw -}}
+  {{- if lt $diff 0 -}}
+    {{- $isDiscounted = true -}}
+    {{- $diffAbs = sub 0 $diff -}}
+    {{- $diffRate = math.Round (mul (div (float $diffAbs) (float $investigatedPriceRaw)) 100) -}}
+  {{- else -}}
+    {{- $isPriceUp = true -}}
+    {{- $diffAbs = $diff -}}
+  {{- end -}}
 {{- end -}}
 
 {{- $priceBucket := partial "utils-price-bucket.html" $product.price -}}
@@ -108,10 +130,31 @@
         </div>
 
         <div class="hero-price-bar">
-            <div class="hero-price-main">
-                <span class="hero-price">{{ partial "utils-price-format.html" $product.price }}</span>
-                {{- if $product.loyalty_points -}}
-                <span class="hero-points m3-badge m3-badge-points"><span class="material-symbols-outlined icon-points" aria-hidden="true">card_giftcard</span> {{- $product.loyalty_points -}}pt還元</span>
+            <div class="hero-price-group">
+                <div class="hero-price-main">
+                    <span class="hero-price">{{ partial "utils-price-format.html" $product.price }}</span>
+                    {{- if $isDiscounted -}}
+                    <span class="m3-badge m3-badge-price-diff m3-badge-price-down" title="調査時より ¥{{ lang.FormatNumber 0 $diffAbs }} 値下げ">
+                        <span class="material-symbols-outlined icon-diff" aria-hidden="true">trending_down</span> -¥{{ lang.FormatNumber 0 $diffAbs }}{{ if gt $diffRate 0 }} ({{ printf "%.0f" $diffRate }}% OFF){{ end }}
+                    </span>
+                    {{- else if $isPriceUp -}}
+                    <span class="m3-badge m3-badge-price-diff m3-badge-price-up" title="調査時より ¥{{ lang.FormatNumber 0 $diffAbs }} 値上げ">
+                        <span class="material-symbols-outlined icon-diff" aria-hidden="true">trending_up</span> +¥{{ lang.FormatNumber 0 $diffAbs }}
+                    </span>
+                    {{- end -}}
+                    {{- if $product.loyalty_points -}}
+                    <span class="hero-points m3-badge m3-badge-points"><span class="material-symbols-outlined icon-points" aria-hidden="true">card_giftcard</span> {{- $product.loyalty_points -}}pt還元</span>
+                    {{- end -}}
+                </div>
+                {{- if or $isDiscounted $isPriceUp -}}
+                <div class="hero-investigated-price-row">
+                    <span class="hero-investigated-price-label">調査時:</span>
+                    {{- if $isDiscounted -}}
+                    <span class="hero-investigated-price-del">{{ partial "utils-price-format.html" $product.investigated_price }}</span>
+                    {{- else -}}
+                    <span class="hero-investigated-price-val">{{ partial "utils-price-format.html" $product.investigated_price }}</span>
+                    {{- end -}}
+                </div>
                 {{- end -}}
             </div>
             <div class="hero-price-info">
