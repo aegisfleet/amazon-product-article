@@ -225,6 +225,21 @@ document.addEventListener('DOMContentLoaded', function () {
     }
     searchInput.dataset.searchInitialized = 'true';
 
+    // ヒーローカードの「検索から探す」ボタンが押された際に検索ボックスにフォーカス
+    document.addEventListener('click', function (event) {
+        const target = event.target;
+        if (!(target instanceof Element)) return;
+        const trigger = target.closest('[data-hero-entry="search"], a[href="#search-section"]');
+        if (trigger) {
+            event.preventDefault();
+            const wasFocused = document.activeElement === searchInput;
+            searchInput.focus();
+            if (wasFocused) {
+                searchInput.dispatchEvent(new Event('focus'));
+            }
+        }
+    });
+
     // 絞り込みフィルターの条件数バッジ更新と折りたたみUIの制御
     function getActiveFilterCount() {
         let count = 0;
@@ -796,17 +811,21 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         });
 
-        // 外側クリック時: 検索結果を閉じる（.search-container 内のフィルターやボタン操作では閉じない）
+        // 外側クリック時: 検索結果を閉じる（.search-container 内のフィルターやボタン操作、ヒーロー検索導線では閉じない）
         document.addEventListener('click', (e) => {
             if (isSearchInputMouseDown) {
                 isSearchInputMouseDown = false;
                 return;
             }
-            const searchContainer = document.querySelector('.search-container');
-            if (searchContainer?.contains(e.target)) {
+            const target = e.target instanceof Element ? e.target : null;
+            if (target?.closest('[data-hero-entry="search"], a[href="#search-section"]')) {
                 return;
             }
-            if (!searchInput.contains(e.target) && !searchResults.contains(e.target)) {
+            const searchContainer = document.querySelector('.search-container');
+            if (searchContainer?.contains(target)) {
+                return;
+            }
+            if (!searchInput.contains(target) && !searchResults.contains(target)) {
                 searchResults.classList.remove('active');
             }
         });
