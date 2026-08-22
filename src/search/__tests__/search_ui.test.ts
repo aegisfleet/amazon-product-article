@@ -109,4 +109,10 @@ describe('Search UI XSS Protection', () => {
     expect(searchJsContent).toContain('btn-compare-card');
     expect(searchJsContent).toContain('globalThis.Compare');
   });
+
+  test('static/js/search.js should focus search-input and prevent default jump when hero search button is clicked', () => {
+    expect(searchJsContent).toContain('[data-hero-entry="search"]');
+    expect(searchJsContent).toContain('event.preventDefault()');
+    expect(searchJsContent).toContain('searchInput.focus()');
+  });
 });
