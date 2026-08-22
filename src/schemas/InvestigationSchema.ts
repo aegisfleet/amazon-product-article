@@ -47,6 +47,7 @@ export const InvestigationFileSchema = z.looseObject({
       score: z.number(),
     }),
     lastInvestigated: z.string().trim().optional(),
+    investigatedPrice: z.string().trim().optional(),
     productName: z.string().trim().optional(),
     parentAsin: z.string().trim().optional(),
     productDescription: z.string().trim().optional(),

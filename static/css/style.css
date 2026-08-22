@@ -4372,9 +4372,17 @@ body.toc-modal-open {
   border: 1px solid var(--color-border);
 }
 
+.hero-price-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
 .hero-price-main {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
+  gap: var(--spacing-sm);
   line-height: 1;
 }
 
@@ -4382,9 +4390,31 @@ body.toc-modal-open {
   font-size: 1.75rem;
   font-weight: 800;
   color: white;
-  margin-right: var(--spacing-md);
+  margin-right: var(--spacing-xs);
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
   line-height: 1;
+}
+
+.hero-investigated-price-row {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.8125rem;
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.2;
+}
+
+.hero-investigated-price-label {
+  opacity: 0.9;
+}
+
+.hero-investigated-price-del {
+  text-decoration: line-through;
+  opacity: 0.85;
+}
+
+.hero-investigated-price-val {
+  font-weight: 600;
 }
 
 .hero-price-info {
@@ -8375,6 +8405,46 @@ legend.font-size-label {
   background-color: var(--badge-points-bg, rgba(126, 34, 206, 0.12));
   color: var(--badge-points-text, #7e22ce);
   border-color: var(--badge-points-border, rgba(126, 34, 206, 0.3));
+}
+
+.m3-badge-price-diff {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.15rem;
+  padding: 0.15rem 0.45rem;
+  border-radius: var(--radius-sm, 6px);
+  font-size: 0.75rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.m3-badge-price-diff .icon-diff {
+  font-size: 0.875rem;
+  line-height: 1;
+}
+
+.m3-badge-price-down {
+  background-color: #dcfce7;
+  color: #15803d;
+  border: 1px solid #86efac;
+}
+
+.m3-badge-price-up {
+  background-color: var(--md-sys-color-surface-container-low, #f1f5f9);
+  color: var(--color-text-secondary, #475569);
+  border: 1px solid var(--color-border, #cbd5e1);
+}
+
+[data-theme="dark"] .m3-badge-price-down {
+  background-color: rgba(22, 101, 52, 0.4);
+  color: #86efac;
+  border-color: rgba(74, 222, 128, 0.4);
+}
+
+[data-theme="dark"] .m3-badge-price-up {
+  background-color: #1e293b;
+  color: #cbd5e1;
+  border-color: #475569;
 }
 
 /* Card Elevation & Surface Integration */

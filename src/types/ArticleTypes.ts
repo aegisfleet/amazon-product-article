@@ -15,6 +15,7 @@ export interface ArticleMetadata {
   asin: string;
   priceRange: string;
   price?: string | undefined;
+  investigatedPrice?: string | undefined;
   score?: number | undefined;
   rating?: number | undefined;
   ratingCount?: number | undefined;
