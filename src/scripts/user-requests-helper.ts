@@ -71,7 +71,7 @@ export async function extractAsinFromUrl(inputUrl: string): Promise<string | nul
   ];
 
   for (const pattern of patterns) {
-    const match = targetUrl.match(pattern);
+    const match = pattern.exec(targetUrl);
     if (match?.[1]) {
       const candidate = match[1].toUpperCase();
       // 10桁英数字かつ先頭がBまたは英数字
