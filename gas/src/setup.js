@@ -26,7 +26,7 @@ function setupProductRequestSystem() {
 
   // 3. 商品URL入力項目を追加（バリデーション設定）
   const urlValidation = FormApp.createTextValidation()
-    .requireTextMatchesRegex('https?://.*amazon\\.co\\.jp/.*|https?://amzn\\.asia/.*|https?://amzn\\.to/.*')
+    .requireTextMatchesPattern('https?://.*amazon\\.co\\.jp/.*|https?://amzn\\.asia/.*|https?://amzn\\.to/.*')
     .setHelpText('有効なAmazon.co.jpの商品URL（または短縮URL）を入力してください。')
     .build();
 
