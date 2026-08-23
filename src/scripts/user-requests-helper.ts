@@ -105,9 +105,11 @@ export async function fetchUserRequestsFromGas(
   token: string,
   limit = 10,
 ): Promise<UserRequestItem[]> {
-  const response = await axios.get<{ success: boolean; requests?: UserRequestItem[]; error?: string }>(gasApiUrl, {
-    params: { token, limit },
-    timeout: 15000,
+  const url = gasApiUrl.trim();
+  const response = await axios.get<{ success: boolean; requests?: UserRequestItem[]; error?: string }>(url, {
+    params: { token: token.trim(), limit },
+    timeout: 20000,
+    maxRedirects: 10,
   });
 
   if (!response.data?.success) {
@@ -127,12 +129,14 @@ export async function updateUserRequestsInGas(
 ): Promise<number> {
   if (updates.length === 0) return 0;
 
+  const url = gasApiUrl.trim();
   const response = await axios.post<{ success: boolean; updatedCount?: number; error?: string }>(
-    gasApiUrl,
-    { token, updates },
+    url,
+    { token: token.trim(), updates },
     {
       headers: { 'Content-Type': 'application/json' },
-      timeout: 15000,
+      timeout: 20000,
+      maxRedirects: 10,
     },
   );
 
