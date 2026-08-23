@@ -26,7 +26,7 @@ function createJsonResponse(data, statusCode) {
 }
 
 /**
- * スプレッドシートから未処理のリクエスト行を抽出する（Cognitive Complexity低減）
+ * スプレッドシートから未完了のリクエスト行を抽出する（Cognitive Complexity低減）
  */
 function extractUnprocessedRequests(sheet, limit) {
   const lastRow = sheet.getLastRow();
@@ -35,18 +35,19 @@ function extractUnprocessedRequests(sheet, limit) {
   // A列〜F列（タイムスタンプ, URL, ステータス, ASIN, 処理日時, 備考）を取得
   const data = sheet.getRange(2, 1, lastRow - 1, 6).getValues();
   const unprocessed = [];
+  const completedStatuses = ['完了', '無効なURL', '調査済（重複）', '重複リクエスト'];
 
   for (let i = 0; i < data.length; i++) {
     const rowNum = i + 2;
-    const [timestamp, url, status, asin, , note] = data[i];
+    const [timestamp, url, status, asin, processedAt, note] = data[i];
 
     const urlStr = String(url || '').trim();
     const statusStr = String(status || '').trim();
 
     if (!urlStr) continue;
 
-    const isUnprocessed = !statusStr || statusStr === '未処理';
-    if (!isUnprocessed) continue;
+    // 既に完了・終了済みのステータスはスキップ
+    if (completedStatuses.includes(statusStr)) continue;
 
     unprocessed.push({
       row: rowNum,
@@ -54,6 +55,7 @@ function extractUnprocessedRequests(sheet, limit) {
       url: urlStr,
       status: statusStr || '未処理',
       asin: asin ? String(asin) : undefined,
+      processedAt: processedAt ? String(processedAt) : undefined,
       note: note ? String(note) : undefined,
     });
 

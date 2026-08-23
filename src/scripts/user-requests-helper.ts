@@ -11,6 +11,7 @@ export interface UserRequestItem {
   url: string;
   status: string;
   asin?: string;
+  processedAt?: string;
   note?: string;
 }
 

@@ -17,7 +17,11 @@ describe('user-requests-helper', () => {
     it.each([
       ['standard /dp/ URL', 'https://www.amazon.co.jp/dp/B08N5WRWNW', 'B08N5WRWNW'],
       ['/gp/product/ URL with query params', 'https://www.amazon.co.jp/gp/product/B09XYZ1234?th=1&psc=1', 'B09XYZ1234'],
-      ['title-included URL', 'https://www.amazon.co.jp/Apple-iPhone-13-128GB-Midnight/dp/B09G9FPG2B/ref=sr_1_1', 'B09G9FPG2B'],
+      [
+        'title-included URL',
+        'https://www.amazon.co.jp/Apple-iPhone-13-128GB-Midnight/dp/B09G9FPG2B/ref=sr_1_1',
+        'B09G9FPG2B',
+      ],
       ['query param ?asin=', 'https://www.amazon.co.jp/item?asin=B07PGL2ZSL', 'B07PGL2ZSL'],
     ])('should extract ASIN from %s', async (_desc, url, expectedAsin) => {
       const asin = await extractAsinFromUrl(url);
