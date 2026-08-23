@@ -28,6 +28,24 @@ describe('user-requests-helper', () => {
       expect(asin).toBe(expectedAsin);
     });
 
+    it('should resolve short URL (link.amazon) and extract ASIN', async () => {
+      mockedAxios.get.mockResolvedValueOnce({
+        status: 200,
+        request: {
+          res: {
+            responseUrl: 'https://www.amazon.co.jp/dp/B09G9FPG2B',
+          },
+        },
+      } as any);
+
+      const asin = await extractAsinFromUrl('https://link.amazon/B0eEc3A5l');
+      expect(asin).toBe('B09G9FPG2B');
+      expect(mockedAxios.get).toHaveBeenCalledWith(
+        'https://link.amazon/B0eEc3A5l',
+        expect.objectContaining({ maxRedirects: 5 }),
+      );
+    });
+
     it.each([
       ['non-Amazon URL', 'https://google.com/test'],
       ['empty string', ''],
