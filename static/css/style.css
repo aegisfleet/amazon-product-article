@@ -4994,6 +4994,63 @@ body.toc-modal-open {
   color: #fff;
 }
 
+/* --- Product Request Link Button --- */
+.request-link {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  background: linear-gradient(135deg, #4f46e5, #6366f1);
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border: 1px solid #4338ca;
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-decoration: none;
+  box-shadow: 0 2px 8px rgba(79, 70, 229, 0.25);
+  transition: all 0.2s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.request-link:hover {
+  background: linear-gradient(135deg, #4338ca, #4f46e5);
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(79, 70, 229, 0.35);
+}
+
+.request-link:visited,
+.request-link:active {
+  color: #fff;
+}
+
+.request-link:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+.request-link-icon {
+  font-size: 1.1rem;
+  line-height: 1;
+}
+
+[data-theme="dark"] .request-link {
+  background: linear-gradient(135deg, #4338ca, #3730a3);
+  border-color: #6366f1;
+  box-shadow: 0 2px 8px rgba(99, 102, 241, 0.2);
+}
+
+[data-theme="dark"] .request-link:hover {
+  background: linear-gradient(135deg, #3730a3, #312e81);
+  color: #fff;
+}
+
+[data-theme="dark"] .request-link:visited,
+[data-theme="dark"] .request-link:active {
+  color: #fff;
+}
+
 /* --- Bargain Hero --- */
 .bargain-hero {
   text-align: center;
