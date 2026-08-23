@@ -22,6 +22,9 @@
     "investigate:recommendations": "ts-node src/scripts/today-recommendation-cli.ts",
     "investigate:price-discrepancy": "ts-node src/scripts/investigate-price-discrepancy-cli.ts",
     "investigate:uncovered-deals": "ts-node src/scripts/investigate-uncovered-deals-cli.ts",
+    "investigate:user-requests": "ts-node src/scripts/investigate-user-requests-cli.ts",
+    "gas:push": "clasp push",
+    "gas:deploy": "clasp deploy",
     "extract:sale-candidates": "ts-node src/scripts/extract-sale-candidates.ts",
     "generate:articles": "ts-node src/scripts/article-generation-cli.ts",
     "merge:pr": "ts-node src/scripts/pr-merge-cli.ts",
@@ -45,6 +48,7 @@
   "devDependencies": {
     "@biomejs/biome": "^2.5.8",
     "@eslint/js": "^10.0.1",
+    "@types/google-apps-script": "^2.0.12",
     "@types/jest": "^30.0.0",
     "@types/js-yaml": "^4.0.9",
     "@types/node": "^26.2.0",
@@ -62,11 +66,11 @@
     "typescript-eslint": "8.67.0"
   },
   "dependencies": {
+    "@11ty/gray-matter": "^3.0.0",
     "@octokit/rest": "^22.0.1",
     "axios": "^1.19.0",
     "dotenv": "^17.4.2",
     "fuse.js": "^7.5.0",
-    "@11ty/gray-matter": "^3.0.0",
     "jest-util": "^30.4.1",
     "js-yaml": "5.2.3",
     "zod": "^4.4.3"
