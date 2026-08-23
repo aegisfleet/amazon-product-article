@@ -7,6 +7,17 @@
  * 3. スクリプトプロパティ「API_TOKEN」に任意の認証トークン（UUID等）を設定する。
  */
 
+const FORM_DESCRIPTION = 
+  '当サイトで調査・記事化してほしいAmazon商品のURLを入力してください。\n' +
+  'システムが自動で定期調査を行い、レビュー・スペック比較記事を作成・公開します。\n\n' +
+  '【調査スケジュール・仕様】\n' +
+  '・調査実施: 毎日2回（13:00 / 21:00 JST）\n' +
+  '・調査件数: 1回あたり先着最大5件ずつ順次調査\n' +
+  '・対象外: 既にサイト上に記事が存在する商品や、無効なURLは自動的にスキップされます。\n\n' +
+  '【プライバシー・個人情報について】\n' +
+  '・完全匿名でご利用いただけます。\n' +
+  '・ご入力いただいた商品URLのみが送信され、Googleアカウント情報やメールアドレス等の個人情報は一切収集・記録されません。';
+
 function setupProductRequestSystem() {
   // 1. 回答保存用スプレッドシートを作成
   const spreadsheet = SpreadsheetApp.create('Amazon商品調査リクエスト管理シート');
@@ -16,10 +27,7 @@ function setupProductRequestSystem() {
 
   // 2. Googleフォームを作成
   const form = FormApp.create('Amazon商品調査リクエスト');
-  form.setDescription(
-    '当サイトで調査してほしいAmazon商品のURLを入力してください。\n' +
-    'システムが自動で定期調査を行い、レビュー・スペック比較記事を作成します。'
-  );
+  form.setDescription(FORM_DESCRIPTION);
   form.setAllowResponseEdits(false);
   form.setLimitOneResponsePerUser(false);
   form.setProgressBar(false);
@@ -69,4 +77,18 @@ function setupProductRequestSystem() {
   Logger.log(`スプレッドシートURL: ${spreadsheet.getUrl()}`);
   Logger.log(`スプレッドシートID: ${spreadsheetId}`);
   Logger.log(`API認証トークン: ${scriptProperties.getProperty('API_TOKEN')}`);
+}
+
+/**
+ * 既存のGoogleフォームの説明文を即座に更新する関数
+ * （既にフォームを作成済みの場合、これだけ実行すればフォームURLを変えずに説明文が更新されます）
+ */
+function updateFormDescription() {
+  const formId = PropertiesService.getScriptProperties().getProperty('FORM_ID');
+  if (!formId) {
+    throw new Error('FORM_ID が設定されていません。先に setupProductRequestSystem を実行してください。');
+  }
+  const form = FormApp.openById(formId);
+  form.setDescription(FORM_DESCRIPTION);
+  Logger.log('フォームの説明文を更新しました: ' + form.getPublishedUrl());
 }
