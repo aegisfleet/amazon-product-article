@@ -57,6 +57,14 @@
                     <span class="nav-drawer-label">ブランド一覧</span>
                 </a>
             </li>
+            {{- with .Site.Params.productRequestFormUrl -}}
+            <li>
+                <a href="{{ . }}" target="_blank" rel="noopener noreferrer" class="nav-drawer-item" aria-label="商品調査リクエスト（新しいタブで開く）">
+                    <span class="nav-drawer-icon" aria-hidden="true">📝</span>
+                    <span class="nav-drawer-label">商品調査リクエスト</span>
+                </a>
+            </li>
+            {{- end -}}
             <li>
                 <a href="{{ `low-scores/` | relURL }}" class="nav-drawer-item">
                     <span class="nav-drawer-icon" aria-hidden="true">📉</span>
