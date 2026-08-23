@@ -1,0 +1,155 @@
+{
+  "analysis": {
+    "productName": "LeLepai Switch用 TV出力対応 Type-C to HDMI 変換ケーブル",
+    "parentAsin": "B0H3FCZMYH",
+    "productDescription": "Nintendo Switchの純正ドックの代わりとして、直接テレビやモニターに映像を出力できるType-C to HDMI変換ケーブル。PD100W充電や他デバイスでの4K出力にも対応する。",
+    "productUsage": [
+      "旅行や出張先でのSwitchのテレビ出力",
+      "ノートPCやスマートフォンの外部モニター接続",
+      "Steam Deckなど他携帯ゲーム機の映像出力"
+    ],
+    "positivePoints": [
+      "ドック本体が不要になるため、外出時の荷物を大幅に削減できる",
+      "最大100WのUSB PD急速充電に対応している",
+      "PCやスマートフォン接続時は最大4K/60Hzの映像出力が可能"
+    ],
+    "negativePoints": [
+      "未発売の次世代機「Switch 2」対応や架空のバージョン名を謳うなど、商品説明に明らかな虚偽が含まれる",
+      "テレビ出力機能の利用には、別途45W以上のACアダプター（純正充電器など）が必須となる",
+      "Nintendo Switch Liteには非対応である"
+    ],
+    "useCases": [
+      "旅行先のホテルのテレビで、かさばる機材を持たずにSwitchを大画面プレイする",
+      "Steam DeckやROG Allyをモニターに接続してデスクトップPCのように使う"
+    ],
+    "userStories": [
+      {
+        "userType": "帰省・旅行でSwitchを持ち運ぶユーザー",
+        "scenario": "外出先のテレビで複数人でゲームをプレイする",
+        "experience": "かさばる純正ドックを持ち運ぶ必要がなく、このケーブルとACアダプターだけでテレビ出力が完結するため、荷物が大幅に減って非常に快適だった。ホテルや実家でのプレイに最適。",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "sentiment": "positive"
+      },
+      {
+        "userType": "品質や安全性を重視するゲーマー",
+        "scenario": "商品ページで仕様を確認する",
+        "experience": "安価で手軽にテレビ出力ができる点は評価できるが、商品名に未発売のハードや架空のバージョン番号が含まれており、メーカーの販売姿勢に強い不信感を覚えた。万が一故障した際のサポートには期待できないと感じる。",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "sentiment": "negative"
+      }
+    ],
+    "userImpression": "純正ドックの持ち運びという煩わしさを解消する実用的なアイテムとして、利便性やコストパフォーマンスの面では一定の評価ができる。しかし、未発売ハードへの対応を謳うなど検索キーワードを狙った悪質な販売手法をとっており、品質や安全性に対する懸念は拭えない。機能だけを割り切って使えるユーザー向け。",
+    "sources": [
+      {
+        "id": "src-1",
+        "name": "Amazon商品ページ",
+        "url": "https://www.amazon.co.jp/dp/B0GFHNW6HZ",
+        "tier": "low",
+        "evidenceType": "primary",
+        "publishedAt": "2026-08-23",
+        "author": "LeLepai (販売元)",
+        "conflictOfInterest": "possible",
+        "notes": "商品の基本仕様、4K出力対応、Switch2対応などの不当表示を確認"
+      },
+      {
+        "id": "src-2",
+        "name": "Amazon競合製品情報",
+        "url": "https://www.amazon.co.jp/s?k=Switch+%E3%83%89%E3%83%83%E3%82%AF+%E3%82%B1%E3%83%BC%E3%83%96%E3%83%AB",
+        "tier": "medium",
+        "evidenceType": "secondary",
+        "publishedAt": "2026-08-23",
+        "author": "Amazon検索結果",
+        "conflictOfInterest": "none",
+        "notes": "同様の機能を持つケーブル（Szuty B0FKBDBBP1など）が1000円以下で販売されている相場感や、悪質なSEO表記を行っている他社製品の存在を確認"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "「2026新登場 Switch 2「22.0.0」対応」",
+        "category": "comparativeAdvantage",
+        "confidence": "low",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "crossChecked": false,
+        "notes": "未発売の次世代ハードウェアおよび架空のファームウェアバージョンへの対応を謳っており、悪質な検索キーワード対策（虚偽表記）と断定できる。"
+      },
+      {
+        "claim": "4K@60HzおよびPD100W急速充電対応",
+        "category": "quality",
+        "confidence": "medium",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "crossChecked": true,
+        "notes": "Switch本体の仕様上、Switch接続時は1080p出力に制限される。PCやSteam Deck等との接続時においてのみ4K出力・100W給電が機能する。"
+      }
+    ],
+    "lastInvestigated": "2026-08-23",
+    "investigatedPrice": "￥1,423",
+    "competitiveAnalysis": [
+      {
+        "name": "Szuty Switchドック2m 変換ケーブル",
+        "asin": "B0FKBDBBP1",
+        "priceComparison": "本商品より約400円安価。同様のType-C to HDMI出力機能とPD充電機能を備えているが、悪質な虚偽表記は行っていないため、こちらの方が誠実でコストパフォーマンスに優れる。",
+        "featureComparison": [
+          "共通点：Switchのテレビ出力に対応した2mのケーブル型ドック。PD充電対応。",
+          "相違点：本商品は未発売ハードへの対応を謳う虚偽表記があるのに対し、Szuty製はSwitch/PC対応のみを謳い、価格も1,000円未満と安価。"
+        ],
+        "differentiators": [
+          "LeLepai Switch用 TV出力対応 Type-C to HDMI 変換ケーブルの利点：機能的な優位性はなく、悪質な表記があるため積極的な選択理由はない。",
+          "Szuty Switchドック2m 変換ケーブルの利点：同様の機能・スペックを備えつつ、より安価で購入できる。虚偽の製品名を冠していない分、最低限の信頼性が担保されている。"
+        ]
+      },
+      {
+        "name": "任天堂 Nintendo Switch 純正 HDMIケーブル",
+        "asin": "B06Y1YCBXQ",
+        "priceComparison": "本商品より約700円高価。こちらは単なるHDMIケーブルであり、テレビ出力には別途純正ドックが必要。",
+        "featureComparison": [
+          "共通点：テレビとの接続に使用するケーブルである点。",
+          "相違点：本商品がType-Cからの変換と充電機能を兼ね備えているのに対し、純正品は純粋なHDMI通信のみを担う。"
+        ],
+        "differentiators": [
+          "LeLepai Switch用 TV出力対応 Type-C to HDMI 変換ケーブルの利点：外出時にかさばる純正ドックを持ち運ぶ必要がなくなり、荷物を大幅に削減できる。",
+          "任天堂 Nintendo Switch 純正 HDMIケーブルの利点：任天堂の公式製品としての絶対的な信頼性と安全性があり、本体の故障や動作不良のリスクが最も低い。"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "メーカーの誇大表記を理解した上で、自己責任で安価な携帯用出力ケーブルを求める人"
+      ],
+      "pros": [
+        "かさばる純正ドックを持ち歩く必要がなくなり、外出先でのテレビ出力が圧倒的に手軽になる",
+        "100WのPD給電に対応しており、PC用の映像出力ケーブルとしても流用できる"
+      ],
+      "cons": [
+        "未発売ハード対応を謳うなど販売元としての信頼性が皆無であり、サポートは期待できない",
+        "テレビ出力には別途45W以上のACアダプターを用意する必要がある",
+        "Switch Liteでは一切使用できないため、購入前に手持ちのハードを確認する必要がある"
+      ],
+      "score": 63,
+      "scoreRationale": "[基本点: 70]\n[加点: +8] (ドック不要でTV出力可能な高い実用性と携帯性)\n[加点: +5] (100W PDや4K出力対応の多機能ケーブルとして手頃な価格)\n[減点: -20] (未発売ハード対応や架空バージョンを謳う極めて悪質な虚偽表記・信頼性欠如)\n[合計: 63]"
+    },
+    "technicalSpecs": {
+      "dimensions": {
+        "length": "2m"
+      },
+      "connectivity": [
+        "USB Type-C (デバイス接続用)",
+        "USB Type-C (給電用 / PD 100W対応)",
+        "HDMI (ディスプレイ接続用)"
+      ],
+      "other": [
+        "最大解像度: 4K@60Hz (※Switch接続時は1080p出力)",
+        "対応機種: Nintendo Switch (有機ELモデル含む) / ROG ALLY / Steam Deck / PC / スマートフォン",
+        "※Nintendo Switch Lite非対応",
+        "※テレビ出力機能の利用には45W以上のACアダプター接続が必須"
+      ]
+    }
+  }
+}
