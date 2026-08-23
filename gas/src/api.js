@@ -26,6 +26,72 @@ function createJsonResponse(data, statusCode) {
 }
 
 /**
+ * スプレッドシートから未処理のリクエスト行を抽出する（Cognitive Complexity低減）
+ */
+function extractUnprocessedRequests(sheet, limit) {
+  const lastRow = sheet.getLastRow();
+  if (lastRow <= 1) return [];
+
+  // A列〜F列（タイムスタンプ, URL, ステータス, ASIN, 処理日時, 備考）を取得
+  const data = sheet.getRange(2, 1, lastRow - 1, 6).getValues();
+  const unprocessed = [];
+
+  for (let i = 0; i < data.length; i++) {
+    const rowNum = i + 2;
+    const [timestamp, url, status, asin, , note] = data[i];
+
+    const urlStr = String(url || '').trim();
+    const statusStr = String(status || '').trim();
+
+    if (!urlStr) continue;
+
+    const isUnprocessed = !statusStr || statusStr === '未処理';
+    if (!isUnprocessed) continue;
+
+    unprocessed.push({
+      row: rowNum,
+      timestamp: timestamp ? String(timestamp) : '',
+      url: urlStr,
+      status: statusStr || '未処理',
+      asin: asin ? String(asin) : undefined,
+      note: note ? String(note) : undefined,
+    });
+
+    if (unprocessed.length >= limit) break;
+  }
+
+  return unprocessed;
+}
+
+/**
+ * 各行のステータス更新を適用する（Cognitive Complexity低減）
+ */
+function applyRowUpdates(sheet, updates, now) {
+  const maxRow = sheet.getLastRow();
+  let updatedCount = 0;
+
+  for (const update of updates) {
+    const row = update.row;
+    if (!row || row < 2 || row > maxRow) continue;
+
+    if (update.status) {
+      sheet.getRange(row, 3).setValue(update.status);
+    }
+    if (update.asin !== undefined) {
+      sheet.getRange(row, 4).setValue(update.asin);
+    }
+    sheet.getRange(row, 5).setValue(now);
+    if (update.note !== undefined) {
+      sheet.getRange(row, 6).setValue(update.note);
+    }
+
+    updatedCount++;
+  }
+
+  return updatedCount;
+}
+
+/**
  * GET: 未処理のユーザーリクエスト一覧を取得
  * パラメータ:
  *   token: 認証トークン
@@ -33,59 +99,27 @@ function createJsonResponse(data, statusCode) {
  */
 function doGet(e) {
   try {
-    const token = e && e.parameter ? e.parameter.token : null;
+    const token = e?.parameter?.token;
     if (!isValidToken(token)) {
       return createJsonResponse({ success: false, error: 'Unauthorized: Invalid or missing token' }, 401);
     }
 
-    const limit = Math.max(1, Math.min(50, parseInt((e.parameter && e.parameter.limit) || '10', 10)));
+    const limitParam = e?.parameter?.limit || '10';
+    const limit = Math.max(1, Math.min(50, Number.parseInt(limitParam, 10)));
     const spreadsheet = getSpreadsheet();
     const sheet = spreadsheet.getSheets()[0];
-    const lastRow = sheet.getLastRow();
 
-    if (lastRow <= 1) {
-      return createJsonResponse({ success: true, count: 0, requests: [] });
-    }
-
-    // A列〜F列（タイムスタンプ, URL, ステータス, ASIN, 処理日時, 備考）を取得
-    const data = sheet.getRange(2, 1, lastRow - 1, 6).getValues();
-    const unprocessed = [];
-
-    for (let i = 0; i < data.length; i++) {
-      const rowNum = i + 2;
-      const [timestamp, url, status, asin, _processedAt, note] = data[i];
-
-      const urlStr = String(url || '').trim();
-      const statusStr = String(status || '').trim();
-
-      if (!urlStr) continue;
-
-      // ステータスが空、または「未処理」のものを抽出
-      if (!statusStr || statusStr === '未処理') {
-        unprocessed.push({
-          row: rowNum,
-          timestamp: timestamp ? String(timestamp) : '',
-          url: urlStr,
-          status: statusStr || '未処理',
-          asin: asin ? String(asin) : undefined,
-          note: note ? String(note) : undefined,
-        });
-
-        if (unprocessed.length >= limit) {
-          break;
-        }
-      }
-    }
+    const requests = extractUnprocessedRequests(sheet, limit);
 
     return createJsonResponse({
       success: true,
-      count: unprocessed.length,
-      requests: unprocessed,
+      count: requests.length,
+      requests: requests,
     });
   } catch (error) {
     return createJsonResponse({
       success: false,
-      error: error && error.message ? error.message : String(error),
+      error: error?.message || String(error),
     }, 500);
   }
 }
@@ -102,7 +136,7 @@ function doGet(e) {
  */
 function doPost(e) {
   try {
-    if (!e || !e.postData || !e.postData.contents) {
+    if (!e?.postData?.contents) {
       return createJsonResponse({ success: false, error: 'Empty post body' }, 400);
     }
 
@@ -113,40 +147,19 @@ function doPost(e) {
       return createJsonResponse({ success: false, error: 'Invalid JSON payload' }, 400);
     }
 
-    if (!isValidToken(payload.token)) {
+    if (!isValidToken(payload?.token)) {
       return createJsonResponse({ success: false, error: 'Unauthorized: Invalid or missing token' }, 401);
     }
 
-    if (!Array.isArray(payload.updates) || payload.updates.length === 0) {
+    if (!Array.isArray(payload?.updates) || payload.updates.length === 0) {
       return createJsonResponse({ success: true, updatedCount: 0, message: 'No updates provided' });
     }
 
     const spreadsheet = getSpreadsheet();
     const sheet = spreadsheet.getSheets()[0];
     const now = Utilities.formatDate(new Date(), 'Asia/Tokyo', 'yyyy-MM-dd HH:mm:ss');
-    let updatedCount = 0;
 
-    for (const update of payload.updates) {
-      const row = update.row;
-      if (!row || row < 2 || row > sheet.getLastRow()) continue;
-
-      // C列: ステータス
-      if (update.status) {
-        sheet.getRange(row, 3).setValue(update.status);
-      }
-      // D列: ASIN
-      if (update.asin !== undefined) {
-        sheet.getRange(row, 4).setValue(update.asin);
-      }
-      // E列: 処理日時
-      sheet.getRange(row, 5).setValue(now);
-      // F列: 備考
-      if (update.note !== undefined) {
-        sheet.getRange(row, 6).setValue(update.note);
-      }
-
-      updatedCount++;
-    }
+    const updatedCount = applyRowUpdates(sheet, payload.updates, now);
 
     return createJsonResponse({
       success: true,
@@ -156,7 +169,7 @@ function doPost(e) {
   } catch (error) {
     return createJsonResponse({
       success: false,
-      error: error && error.message ? error.message : String(error),
+      error: error?.message || String(error),
     }, 500);
   }
 }
