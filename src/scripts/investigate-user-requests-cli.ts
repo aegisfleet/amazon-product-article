@@ -31,22 +31,37 @@ import {
 const logger = Logger.getInstance();
 const SESSION_FILE_PATH = path.join(process.cwd(), 'data', 'products', 'user-requests-session.json');
 
+const RETRY_THRESHOLD_HOURS = 24;
+
 /**
- * モード1: GASから未処理URLを取得し、ASINを抽出して出力
+ * 処理日時から指定時間以上経過しているか判定
+ */
+function isSessionTimedOut(processedAt?: string): boolean {
+  if (!processedAt) return true;
+  const processedDate = new Date(processedAt);
+  if (Number.isNaN(processedDate.getTime())) return true;
+  const elapsedHours = (Date.now() - processedDate.getTime()) / (1000 * 60 * 60);
+  return elapsedHours >= RETRY_THRESHOLD_HOURS;
+}
+
+/**
+ * モード1: GASから未処理・未完了URLを取得し、調査対象ASIN（最大maxProducts件）を抽出して出力
  */
 async function fetchAndProcessRequests(gasApiUrl: string, token: string, maxProducts: number): Promise<void> {
-  logger.info(`Fetching unprocessed user requests from GAS (Limit: ${maxProducts})...`);
+  logger.info(`Fetching unprocessed/pending user requests from GAS (Target capacity: ${maxProducts})...`);
 
-  const requests = await fetchUserRequestsFromGas(gasApiUrl, token, maxProducts * 2);
+  // 調査済みスキップが発生しても最大件数を満たせるよう、多めに取得（最大50件）
+  const fetchLimit = Math.max(50, maxProducts * 10);
+  const requests = await fetchUserRequestsFromGas(gasApiUrl, token, fetchLimit);
 
   if (requests.length === 0) {
-    logger.info('No unprocessed user requests found.');
+    logger.info('No unprocessed or pending user requests found.');
     await setGitHubOutput('asins', '');
     await setGitHubOutput('products-found', 'false');
     return;
   }
 
-  logger.info(`Fetched ${requests.length} unprocessed request(s). Processing URLs...`);
+  logger.info(`Fetched ${requests.length} request(s). Processing and filtering URLs...`);
 
   const immediateUpdates: UserRequestUpdate[] = [];
   const targetRequests: Array<{ row: number; url: string; asin: string; status: string; note?: string }> = [];
@@ -65,17 +80,29 @@ async function fetchAndProcessRequests(gasApiUrl: string, token: string, maxProd
       continue;
     }
 
-    // 既に調査済みかチェック
+    // 既に調査完了しているかチェック（記事・調査結果ファイルの存在確認）
     const alreadyInvestigated = await isProductAlreadyInvestigated(asin);
     if (alreadyInvestigated) {
-      logger.info(`Product already investigated: ${asin} (Row ${req.row})`);
+      logger.info(`Product already investigated: ${asin} (Row ${req.row}) -> Updating to "完了"`);
       immediateUpdates.push({
         row: req.row,
-        status: '調査済（重複）',
+        status: '完了',
         asin,
-        note: '既にサイト上に記事・調査結果が存在します。',
+        note: '記事・調査結果を公開しました。',
       });
       continue;
+    }
+
+    // 「セッション開始済」かつ未調査の場合、タイムアウト判定
+    if (req.status === 'セッション開始済') {
+      const timedOut = isSessionTimedOut(req.processedAt);
+      if (!timedOut) {
+        logger.info(
+          `Jules session still in progress for ${asin} (Row ${req.row}, Started at: ${req.processedAt || 'unknown'}) -> Waiting`,
+        );
+        continue;
+      }
+      logger.warn(`Jules session timed out for ${asin} (Row ${req.row}). Retrying investigation...`);
     }
 
     // 同一バッチ内で重複している場合
@@ -96,21 +123,23 @@ async function fetchAndProcessRequests(gasApiUrl: string, token: string, maxProd
       url: req.url,
       asin,
       status: '処理中',
-      note: 'GitHub Actionsにて調査開始',
+      note: req.status === 'セッション開始済' ? '前回の調査未完了のため再調査を開始' : 'GitHub Actionsにて調査開始',
     });
 
+    // 最大調査件数に達したら探索終了
     if (validAsins.length >= maxProducts) {
+      logger.info(`Reached target capacity of ${maxProducts} products.`);
       break;
     }
   }
 
-  // 無効・重複行のステータスを即時更新
+  // 完了・無効・重複行のステータスを即時更新
   if (immediateUpdates.length > 0) {
-    logger.info(`Updating ${immediateUpdates.length} invalid/duplicate request(s) in GAS...`);
+    logger.info(`Updating ${immediateUpdates.length} completed/invalid/duplicate request(s) in GAS...`);
     try {
       await updateUserRequestsInGas(gasApiUrl, token, immediateUpdates);
     } catch (err) {
-      logger.error('Failed to update invalid/duplicate requests in GAS:', err);
+      logger.error('Failed to update request statuses in GAS:', err);
     }
   }
 
