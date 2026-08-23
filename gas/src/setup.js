@@ -39,7 +39,9 @@ function setupProductRequestSystem() {
 
   // 3. 商品URL入力項目を追加（バリデーション設定）
   const urlValidation = FormApp.createTextValidation()
-    .requireTextMatchesPattern('https?://.*amazon\\.co\\.jp/.*|https?://amzn\\.asia/.*|https?://amzn\\.to/.*')
+    .requireTextMatchesPattern(
+      'https?://.*amazon\\.co\\.jp/.*|https?://amzn\\.asia/.*|https?://amzn\\.to/.*|https?://.*link\\.amazon/.*|https?://a\\.co/.*',
+    )
     .setHelpText('有効なAmazon.co.jpの商品URL（または短縮URL）を入力してください。')
     .build();
 
@@ -52,20 +54,17 @@ function setupProductRequestSystem() {
   // 4. フォームの回答先をスプレッドシートに紐付け
   form.setDestination(FormApp.DestinationType.SPREADSHEET, spreadsheetId);
 
-  // 5. スプレッドシート側に管理用プロパティを保存
+  // 5. スクリプトプロパティ設定
   const scriptProperties = PropertiesService.getScriptProperties();
   scriptProperties.setProperty('SPREADSHEET_ID', spreadsheetId);
   scriptProperties.setProperty('FORM_ID', form.getId());
 
   // デフォルトのAPIトークンを生成（未設定の場合）
   if (!scriptProperties.getProperty('API_TOKEN')) {
-    const randomToken = Utilities.getUuid();
-    scriptProperties.setProperty('API_TOKEN', randomToken);
-    Logger.log(`[初期設定] API_TOKEN を生成しました: ${randomToken}`);
+    scriptProperties.setProperty('API_TOKEN', Utilities.getUuid());
   }
 
-  // 6. スプレッドシートのヘッダー列を整える（フォーム連携完了を少し待機）
-  Utilities.sleep(2000);
+  // スプレッドシート側のヘッダー初期設定
   const updatedSpreadsheet = SpreadsheetApp.openById(spreadsheetId);
   const updatedSheet = updatedSpreadsheet.getActiveSheet();
 
@@ -85,7 +84,7 @@ function setupProductRequestSystem() {
 }
 
 /**
- * 既存のGoogleフォームの説明文および質問の補足文を即座に更新する関数
+ * 既存のGoogleフォームの説明文・補足文・URLバリデーションを即座に最新化する関数
  * （既にフォームを作成済みの場合、これだけ実行すればフォームURLを変えずに最新化されます）
  */
 function updateFormDescription() {
@@ -96,12 +95,20 @@ function updateFormDescription() {
   const form = FormApp.openById(formId);
   form.setDescription(FORM_DESCRIPTION);
 
-  // 質問項目の補足テキストも更新（自動リンク化を回避した文言へ）
+  // 質問項目の補足テキストおよびバリデーションを更新
   const items = form.getItems(FormApp.ItemType.TEXT);
   if (items.length > 0) {
     const textItem = items[0].asTextItem();
     textItem.setHelpText(HELP_TEXT);
+
+    const urlValidation = FormApp.createTextValidation()
+      .requireTextMatchesPattern(
+        'https?://.*amazon\\.co\\.jp/.*|https?://amzn\\.asia/.*|https?://amzn\\.to/.*|https?://.*link\\.amazon/.*|https?://a\\.co/.*',
+      )
+      .setHelpText('有効なAmazon.co.jpの商品URL（または短縮URL）を入力してください。')
+      .build();
+    textItem.setValidation(urlValidation);
   }
 
-  Logger.log('フォームの説明文および補足テキストを更新しました: ' + form.getPublishedUrl());
+  Logger.log('フォームの説明文およびバリデーションを更新しました: ' + form.getPublishedUrl());
 }
