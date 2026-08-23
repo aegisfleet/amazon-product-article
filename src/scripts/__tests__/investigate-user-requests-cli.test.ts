@@ -36,10 +36,11 @@ describe('user-requests-helper', () => {
             responseUrl: 'https://www.amazon.co.jp/dp/B09G9FPG2B',
           },
         },
-      } as any);
+      });
 
       const asin = await extractAsinFromUrl('https://link.amazon/B0eEc3A5l');
       expect(asin).toBe('B09G9FPG2B');
+      // eslint-disable-next-line @typescript-eslint/unbound-method
       expect(mockedAxios.get).toHaveBeenCalledWith(
         'https://link.amazon/B0eEc3A5l',
         expect.objectContaining({ maxRedirects: 5 }),
