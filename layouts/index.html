@@ -53,6 +53,12 @@
             <span class="deals-link-icon" aria-hidden="true">🔥</span>
             <span>セール対象商品</span>
         </a>
+        {{- with .Site.Params.productRequestFormUrl -}}
+        <a href="{{ . }}" target="_blank" rel="noopener noreferrer" class="request-link" id="request-link" aria-label="商品調査リクエストフォーム（新しいタブで開く）">
+            <span class="request-link-icon" aria-hidden="true">📝</span>
+            <span>調査リクエスト</span>
+        </a>
+        {{- end -}}
     </div>
 
     <!-- High Score Pickup Section (80点以上) -->
