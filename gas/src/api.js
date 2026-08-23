@@ -25,40 +25,46 @@ function createJsonResponse(data, statusCode) {
     .setMimeType(ContentService.MimeType.JSON);
 }
 
+const COMPLETED_STATUSES = new Set(['完了', '無効なURL', '調査済（重複）', '重複リクエスト']);
+
 /**
- * スプレッドシートから未完了のリクエスト行を抽出する（Cognitive Complexity低減）
+ * 1行のデータを検証・パースする（Cognitive Complexity低減）
+ */
+function parseRow(rowValues, rowNum) {
+  const [timestamp, url, status, asin, processedAt, note] = rowValues;
+  const urlStr = String(url || '').trim();
+  const statusStr = String(status || '').trim();
+
+  if (!urlStr || COMPLETED_STATUSES.has(statusStr)) {
+    return null;
+  }
+
+  return {
+    row: rowNum,
+    timestamp: timestamp ? String(timestamp) : '',
+    url: urlStr,
+    status: statusStr || '未処理',
+    asin: asin ? String(asin) : undefined,
+    processedAt: processedAt ? String(processedAt) : undefined,
+    note: note ? String(note) : undefined,
+  };
+}
+
+/**
+ * スプレッドシートから未完了のリクエスト行を抽出する
  */
 function extractUnprocessedRequests(sheet, limit) {
   const lastRow = sheet.getLastRow();
   if (lastRow <= 1) return [];
 
-  // A列〜F列（タイムスタンプ, URL, ステータス, ASIN, 処理日時, 備考）を取得
   const data = sheet.getRange(2, 1, lastRow - 1, 6).getValues();
   const unprocessed = [];
-  const completedStatuses = ['完了', '無効なURL', '調査済（重複）', '重複リクエスト'];
 
   for (let i = 0; i < data.length; i++) {
-    const rowNum = i + 2;
-    const [timestamp, url, status, asin, processedAt, note] = data[i];
+    const item = parseRow(data[i], i + 2);
+    if (!item) continue;
 
-    const urlStr = String(url || '').trim();
-    const statusStr = String(status || '').trim();
-
-    if (!urlStr) continue;
-
-    // 既に完了・終了済みのステータスはスキップ
-    if (completedStatuses.includes(statusStr)) continue;
-
-    unprocessed.push({
-      row: rowNum,
-      timestamp: timestamp ? String(timestamp) : '',
-      url: urlStr,
-      status: statusStr || '未処理',
-      asin: asin ? String(asin) : undefined,
-      processedAt: processedAt ? String(processedAt) : undefined,
-      note: note ? String(note) : undefined,
-    });
-
+    unprocessed.push(item);
     if (unprocessed.length >= limit) break;
   }
 
