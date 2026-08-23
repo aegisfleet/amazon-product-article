@@ -42,8 +42,14 @@ export async function extractAsinFromUrl(inputUrl: string): Promise<string | nul
 
   let targetUrl = inputUrl.trim();
 
-  // 短縮URLの場合はリダイレクト先を取得
-  if (targetUrl.includes('amzn.asia') || targetUrl.includes('amzn.to')) {
+  // 短縮URLの場合はリダイレクト先を取得 (amzn.asia, amzn.to, link.amazon, a.co)
+  const isShortUrl =
+    targetUrl.includes('amzn.asia') ||
+    targetUrl.includes('amzn.to') ||
+    targetUrl.includes('link.amazon') ||
+    targetUrl.includes('a.co');
+
+  if (isShortUrl) {
     try {
       const response = await axios.get(targetUrl, {
         maxRedirects: 5,
