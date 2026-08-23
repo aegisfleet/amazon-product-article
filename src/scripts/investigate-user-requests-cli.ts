@@ -23,6 +23,7 @@ import {
   extractAsinFromUrl,
   fetchUserRequestsFromGas,
   isProductAlreadyInvestigated,
+  type UserRequestItem,
   type UserRequestsSessionData,
   type UserRequestUpdate,
   updateUserRequestsInGas,
@@ -42,6 +43,66 @@ function isSessionTimedOut(processedAt?: string): boolean {
   if (Number.isNaN(processedDate.getTime())) return true;
   const elapsedHours = (Date.now() - processedDate.getTime()) / (1000 * 60 * 60);
   return elapsedHours >= RETRY_THRESHOLD_HOURS;
+}
+
+type EvaluationResult =
+  | { type: 'invalid'; update: UserRequestUpdate }
+  | { type: 'completed'; update: UserRequestUpdate }
+  | { type: 'in_progress_skip' }
+  | { type: 'duplicate'; update: UserRequestUpdate }
+  | { type: 'target'; asin: string; target: { row: number; url: string; asin: string; status: string; note: string } };
+
+/**
+ * 1件のユーザーリクエストを評価し、処理タイプを決定する（Cognitive Complexity低減）
+ */
+async function evaluateSingleRequest(req: UserRequestItem, validAsins: Set<string>): Promise<EvaluationResult> {
+  const asin = await extractAsinFromUrl(req.url);
+  if (!asin) {
+    logger.warn(`Invalid Amazon URL or ASIN not found: ${req.url} (Row ${req.row})`);
+    return {
+      type: 'invalid',
+      update: { row: req.row, status: '無効なURL', note: 'Amazon商品のASINを検出できませんでした。' },
+    };
+  }
+
+  const alreadyInvestigated = await isProductAlreadyInvestigated(asin);
+  if (alreadyInvestigated) {
+    logger.info(`Product already investigated: ${asin} (Row ${req.row}) -> Updating to "完了"`);
+    return {
+      type: 'completed',
+      update: { row: req.row, status: '完了', asin, note: '記事・調査結果を公開しました。' },
+    };
+  }
+
+  if (req.status === 'セッション開始済' && !isSessionTimedOut(req.processedAt)) {
+    logger.info(`Jules session still in progress for ${asin} (Row ${req.row}) -> Waiting`);
+    return { type: 'in_progress_skip' };
+  }
+
+  if (validAsins.has(asin)) {
+    logger.info(`Duplicate ASIN in current batch: ${asin} (Row ${req.row})`);
+    return {
+      type: 'duplicate',
+      update: {
+        row: req.row,
+        status: '重複リクエスト',
+        asin,
+        note: '同一バッチ内の先行リクエストで調査対象になっています。',
+      },
+    };
+  }
+
+  return {
+    type: 'target',
+    asin,
+    target: {
+      row: req.row,
+      url: req.url,
+      asin,
+      status: '処理中',
+      note: req.status === 'セッション開始済' ? '前回の調査未完了のため再調査を開始' : 'GitHub Actionsにて調査開始',
+    },
+  };
 }
 
 /**
@@ -65,71 +126,20 @@ async function fetchAndProcessRequests(gasApiUrl: string, token: string, maxProd
 
   const immediateUpdates: UserRequestUpdate[] = [];
   const targetRequests: Array<{ row: number; url: string; asin: string; status: string; note?: string }> = [];
-  const validAsins: string[] = [];
+  const validAsins = new Set<string>();
 
   for (const req of requests) {
-    const asin = await extractAsinFromUrl(req.url);
+    const result = await evaluateSingleRequest(req, validAsins);
 
-    if (!asin) {
-      logger.warn(`Invalid Amazon URL or ASIN not found: ${req.url} (Row ${req.row})`);
-      immediateUpdates.push({
-        row: req.row,
-        status: '無効なURL',
-        note: 'Amazon商品のASINを検出できませんでした。',
-      });
-      continue;
-    }
-
-    // 既に調査完了しているかチェック（記事・調査結果ファイルの存在確認）
-    const alreadyInvestigated = await isProductAlreadyInvestigated(asin);
-    if (alreadyInvestigated) {
-      logger.info(`Product already investigated: ${asin} (Row ${req.row}) -> Updating to "完了"`);
-      immediateUpdates.push({
-        row: req.row,
-        status: '完了',
-        asin,
-        note: '記事・調査結果を公開しました。',
-      });
-      continue;
-    }
-
-    // 「セッション開始済」かつ未調査の場合、タイムアウト判定
-    if (req.status === 'セッション開始済') {
-      const timedOut = isSessionTimedOut(req.processedAt);
-      if (!timedOut) {
-        logger.info(
-          `Jules session still in progress for ${asin} (Row ${req.row}, Started at: ${req.processedAt || 'unknown'}) -> Waiting`,
-        );
-        continue;
+    if (result.type === 'target') {
+      validAsins.add(result.asin);
+      targetRequests.push(result.target);
+      if (validAsins.size >= maxProducts) {
+        logger.info(`Reached target capacity of ${maxProducts} products.`);
+        break;
       }
-      logger.warn(`Jules session timed out for ${asin} (Row ${req.row}). Retrying investigation...`);
-    }
-
-    // 同一バッチ内で重複している場合
-    if (validAsins.includes(asin)) {
-      logger.info(`Duplicate ASIN in current batch: ${asin} (Row ${req.row})`);
-      immediateUpdates.push({
-        row: req.row,
-        status: '重複リクエスト',
-        asin,
-        note: '同一バッチ内の先行リクエストで調査対象になっています。',
-      });
-      continue;
-    }
-
-    validAsins.push(asin);
-    targetRequests.push({
-      row: req.row,
-      url: req.url,
-      asin,
-      status: '処理中',
-      note: req.status === 'セッション開始済' ? '前回の調査未完了のため再調査を開始' : 'GitHub Actionsにて調査開始',
-    });
-
-    // 最大調査件数に達したら探索終了
-    if (validAsins.length >= maxProducts) {
-      logger.info(`Reached target capacity of ${maxProducts} products.`);
-      break;
+    } else if (result.type !== 'in_progress_skip') {
+      immediateUpdates.push(result.update);
     }
   }
 
@@ -159,8 +169,8 @@ async function fetchAndProcessRequests(gasApiUrl: string, token: string, maxProd
   await fs.mkdir(path.dirname(SESSION_FILE_PATH), { recursive: true });
   await fs.writeFile(SESSION_FILE_PATH, JSON.stringify(sessionData, null, 2), 'utf-8');
 
-  const asinListStr = validAsins.join(',');
-  logger.info(`Identified ${validAsins.length} new ASIN(s) for investigation: ${asinListStr}`);
+  const asinListStr = Array.from(validAsins).join(',');
+  logger.info(`Identified ${validAsins.size} new ASIN(s) for investigation: ${asinListStr}`);
 
   // GAS側のステータスを「処理中」に一括更新
   const inProgressUpdates: UserRequestUpdate[] = targetRequests.map((r) => ({
