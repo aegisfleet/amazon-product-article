@@ -10,6 +10,9 @@
 const FORM_DESCRIPTION = 
   '当サイトで調査・記事化してほしいAmazon商品のURLを入力してください。\n' +
   'システムが自動で定期調査を行い、レビュー・スペック比較記事を作成・公開します。\n\n' +
+  '【URLの入力について】\n' +
+  '・ブラウザのアドレスバーからコピーしたURLをそのまま貼り付けてください。\n' +
+  '・日本語の商品名や長いパラメーターが含まれるURL、公式アプリの共有短縮URLのどちらでも自動判別されます。\n\n' +
   '【調査スケジュール・仕様】\n' +
   '・調査実施: 毎日2回（13:00 / 21:00 JST）\n' +
   '・調査件数: 1回あたり先着最大5件ずつ順次調査\n' +
@@ -17,6 +20,8 @@ const FORM_DESCRIPTION =
   '【プライバシー・個人情報について】\n' +
   '・完全匿名でご利用いただけます。\n' +
   '・ご入力いただいた商品URLのみが送信され、Googleアカウント情報やメールアドレス等の個人情報は一切収集・記録されません。';
+
+const HELP_TEXT = 'ブラウザのアドレスバーからコピーした長いURL（または公式アプリの共有短縮URL）をそのまま貼り付けてください。';
 
 function setupProductRequestSystem() {
   // 1. 回答保存用スプレッドシートを作成
@@ -40,7 +45,7 @@ function setupProductRequestSystem() {
 
   form.addTextItem()
     .setTitle('Amazon商品のURL')
-    .setHelpText('例: https://www.amazon.co.jp/dp/B0XXXXXXXX または https://amzn.asia/d/xxxxxx')
+    .setHelpText(HELP_TEXT)
     .setRequired(true)
     .setValidation(urlValidation);
 
@@ -80,8 +85,8 @@ function setupProductRequestSystem() {
 }
 
 /**
- * 既存のGoogleフォームの説明文を即座に更新する関数
- * （既にフォームを作成済みの場合、これだけ実行すればフォームURLを変えずに説明文が更新されます）
+ * 既存のGoogleフォームの説明文および質問の補足文を即座に更新する関数
+ * （既にフォームを作成済みの場合、これだけ実行すればフォームURLを変えずに最新化されます）
  */
 function updateFormDescription() {
   const formId = PropertiesService.getScriptProperties().getProperty('FORM_ID');
@@ -90,5 +95,13 @@ function updateFormDescription() {
   }
   const form = FormApp.openById(formId);
   form.setDescription(FORM_DESCRIPTION);
-  Logger.log('フォームの説明文を更新しました: ' + form.getPublishedUrl());
+
+  // 質問項目の補足テキストも更新（自動リンク化を回避した文言へ）
+  const items = form.getItems(FormApp.ItemType.TEXT);
+  if (items.length > 0) {
+    const textItem = items[0].asTextItem();
+    textItem.setHelpText(HELP_TEXT);
+  }
+
+  Logger.log('フォームの説明文および補足テキストを更新しました: ' + form.getPublishedUrl());
 }
