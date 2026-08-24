@@ -1582,8 +1582,8 @@ document.addEventListener('DOMContentLoaded', function () {
             {
                 icon: '🔗',
                 title: 'URL / ASIN検索',
-                desc: 'Amazon商品URLや短縮URL（amzn.to等）、ASINを貼り付けると直接検索できます。',
-                example: 'https://amzn.to/...'
+                desc: 'Amazon商品URLや短縮URL（amzn.asia / amzn.to等）、ASINを貼り付けると直接検索できます。',
+                example: 'https://amzn.asia/d/...'
             },
             {
                 icon: '⚙️',
