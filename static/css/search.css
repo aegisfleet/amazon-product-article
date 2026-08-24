@@ -78,6 +78,11 @@
     animation: slideDown 0.2s ease-out;
 }
 
+#search-results.is-searching {
+    opacity: 0.7;
+    transition: opacity 0.15s ease;
+}
+
 #search-results.fade-out {
     animation: fadeOut 0.2s ease-out forwards;
 }
