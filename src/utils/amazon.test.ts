@@ -43,6 +43,23 @@ describe('amazon utility', () => {
       expect(extractAsinFromUrl('https://www.amazon.co.jp/exec/obidos/ASIN/B0BGJHQCFQ')).toBe('B0BGJHQCFQ');
     });
 
+    it('should extract ASIN from gp/aw/d mobile URLs', () => {
+      expect(extractAsinFromUrl('https://www.amazon.co.jp/gp/aw/d/B0BGJHQCFQ')).toBe('B0BGJHQCFQ');
+    });
+
+    it('should extract ASIN from /d/ URLs', () => {
+      expect(extractAsinFromUrl('https://www.amazon.co.jp/d/B0BGJHQCFQ')).toBe('B0BGJHQCFQ');
+    });
+
+    it('should extract ASIN from product-reviews URLs', () => {
+      expect(extractAsinFromUrl('https://www.amazon.co.jp/product-reviews/B0BGJHQCFQ')).toBe('B0BGJHQCFQ');
+    });
+
+    it('should extract ASIN from query parameters (asin or pd_rd_i)', () => {
+      expect(extractAsinFromUrl('https://www.amazon.co.jp/s?k=test&asin=B0BGJHQCFQ')).toBe('B0BGJHQCFQ');
+      expect(extractAsinFromUrl('https://www.amazon.co.jp/dp/other/ref=xyz?pd_rd_i=B0BGJHQCFQ')).toBe('B0BGJHQCFQ');
+    });
+
     it('should extract case-insensitively and return in upper case', () => {
       expect(extractAsinFromUrl('https://www.amazon.co.jp/dp/b0bgjhqcfq')).toBe('B0BGJHQCFQ');
     });
@@ -117,6 +134,17 @@ describe('amazon utility', () => {
 
       const result = await parseInputAsin('https://amzn.asia/d/02UXOkBM');
       expect(result).toBe('B0BGJHQCFQ');
+      expect(mockedAxios.head).toHaveBeenCalledTimes(1);
+    });
+
+    it('should resolve link.amazon URL and extract ASIN', async () => {
+      mockedAxios.head.mockResolvedValueOnce({
+        status: 301,
+        headers: { location: 'https://www.amazon.co.jp/dp/B00TASIIHU?th=1' },
+      } as any);
+
+      const result = await parseInputAsin('https://link.amazon/B009oJ3DU');
+      expect(result).toBe('B00TASIIHU');
       expect(mockedAxios.head).toHaveBeenCalledTimes(1);
     });
 

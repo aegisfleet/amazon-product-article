@@ -115,4 +115,11 @@ describe('Search UI XSS Protection', () => {
     expect(searchJsContent).toContain('event.preventDefault()');
     expect(searchJsContent).toContain('searchInput.focus()');
   });
+
+  test('static/js/search.js should support extracting ASIN from URLs and short URLs', () => {
+    expect(searchJsContent).toContain('extractAsinFromUrl');
+    expect(searchJsContent).toContain('isShortAmazonUrl');
+    expect(searchJsContent).toContain('resolveShortUrl');
+    expect(searchJsContent).toContain('processPossibleUrlInput');
+  });
 });
