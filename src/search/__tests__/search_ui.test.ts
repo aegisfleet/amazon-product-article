@@ -122,4 +122,11 @@ describe('Search UI XSS Protection', () => {
     expect(searchJsContent).toContain('resolveShortUrl');
     expect(searchJsContent).toContain('processPossibleUrlInput');
   });
+
+  test('static/js/search.js should render product investigation request box when no results found', () => {
+    expect(searchJsContent).toContain('empty-request-box');
+    expect(searchJsContent).toContain('empty-request-btn');
+    expect(searchJsContent).toContain('dataset.requestFormUrl');
+    expect(searchJsContent).toContain('request-link');
+  });
 });
