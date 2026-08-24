@@ -1,3 +1,89 @@
+const ASIN_REGEX = /^[A-Z0-9]{10}$/i;
+const AMAZON_URL_PATH_REGEX =
+    /(?:dp|gp\/product|gp\/aw\/d|exec\/obidos\/ASIN|o\/ASIN|product-reviews|d)\/([A-Z0-9]{10})(?:[/?#&]|$)/i;
+const AMAZON_QUERY_REGEX = /[?&](?:asin|pd_rd_i)=([A-Z0-9]{10})(?:[&#]|$)/i;
+const SHORT_AMAZON_URL_REGEX =
+    /^https?:\/\/(?:amzn\.(?:to|asia|eu|in|com)|a\.co|link\.amazon)\/[^\s]+/i;
+
+function isAsin(val) {
+    if (typeof val !== 'string') return false;
+    return ASIN_REGEX.test(val.trim());
+}
+
+function extractAsinFromUrl(url) {
+    if (typeof url !== 'string') return null;
+    const trimmed = url.trim();
+    const pathMatch = AMAZON_URL_PATH_REGEX.exec(trimmed);
+    if (pathMatch?.[1]) {
+        return pathMatch[1].toUpperCase();
+    }
+    const queryMatch = AMAZON_QUERY_REGEX.exec(trimmed);
+    if (queryMatch?.[1]) {
+        return queryMatch[1].toUpperCase();
+    }
+    return null;
+}
+
+function isShortAmazonUrl(url) {
+    if (typeof url !== 'string') return false;
+    const trimmed = url.trim();
+    if (SHORT_AMAZON_URL_REGEX.test(trimmed)) return true;
+
+    try {
+        const parsed = new URL(trimmed);
+        const host = parsed.hostname.toLowerCase();
+        if (
+            host.includes('amazon') ||
+            host.includes('amzn') ||
+            host === 'a.co' ||
+            host.endsWith('.amazon')
+        ) {
+            return true;
+        }
+    } catch {
+        // Not a valid URL
+    }
+    return false;
+}
+
+async function resolveShortUrl(shortUrl) {
+    const trimmed = shortUrl.trim();
+    const resolvers = [
+        async (u) => {
+            const res = await fetch(`https://unshorten.me/json/${encodeURIComponent(u)}`, {
+                signal: AbortSignal.timeout(4000)
+            });
+            if (!res.ok) throw new Error(`HTTP ${res.status}`);
+            const data = await res.json();
+            if (data?.success && data?.resolved_url) {
+                return data.resolved_url;
+            }
+            throw new Error('Unshorten.me resolution failed');
+        },
+        async (u) => {
+            const res = await fetch(`https://api.allorigins.win/get?url=${encodeURIComponent(u)}`, {
+                signal: AbortSignal.timeout(4000)
+            });
+            if (!res.ok) throw new Error(`HTTP ${res.status}`);
+            const data = await res.json();
+            if (data?.status?.url) {
+                return data.status.url;
+            }
+            throw new Error('AllOrigins resolution failed');
+        }
+    ];
+
+    for (const resolver of resolvers) {
+        try {
+            const resolved = await resolver(trimmed);
+            if (resolved) return resolved;
+        } catch (e) {
+            console.warn('Short URL resolver attempt failed:', e);
+        }
+    }
+    return null;
+}
+
 function isValidQuery(query) {
     if (typeof query !== 'string') return false;
     const trimmed = query.trim();
@@ -575,6 +661,62 @@ document.addEventListener('DOMContentLoaded', function () {
             return rerankResults(fuse.search(query), query);
         }
 
+        let currentResolvingUrl = null;
+
+        // URLが入力・ペーストされた場合にASINを抽出して検索を実行する
+        function processPossibleUrlInput(rawText) {
+            const trimmed = (rawText || '').trim();
+            if (!trimmed) return false;
+
+            // 1. 通常のAmazon URLまたはURL形式から直接ASIN抽出
+            const directAsin = extractAsinFromUrl(trimmed);
+            if (directAsin) {
+                currentResolvingUrl = null;
+                searchInput.value = directAsin;
+                updateClearButtonState();
+                if (searchInputWrapper) searchInputWrapper.classList.add('is-loading');
+                showSkeletonLoading();
+                handleSearch(directAsin);
+                return true;
+            }
+
+            // 2. 短縮URL（amzn.to, amzn.asia, a.co 等）の場合
+            if (isShortAmazonUrl(trimmed)) {
+                currentResolvingUrl = trimmed;
+                if (searchInputWrapper) searchInputWrapper.classList.add('is-loading');
+                showSkeletonLoading();
+
+                resolveShortUrl(trimmed).then(resolvedUrl => {
+                    // 解決中に別の入力が行われた場合は破棄
+                    if (currentResolvingUrl !== trimmed) return;
+                    currentResolvingUrl = null;
+
+                    if (resolvedUrl) {
+                        const asin = extractAsinFromUrl(resolvedUrl);
+                        if (asin) {
+                            searchInput.value = asin;
+                            updateClearButtonState();
+                            handleSearch(asin);
+                            return;
+                        }
+                    }
+
+                    // ASINが見つからなかった場合
+                    if (searchInputWrapper) searchInputWrapper.classList.remove('is-loading');
+                    handleSearch(trimmed);
+                }).catch(() => {
+                    if (currentResolvingUrl !== trimmed) return;
+                    currentResolvingUrl = null;
+                    if (searchInputWrapper) searchInputWrapper.classList.remove('is-loading');
+                    handleSearch(trimmed);
+                });
+
+                return true;
+            }
+
+            return false;
+        }
+
         // Event Listeners
         searchInput.addEventListener('input', (e) => {
             updateClearButtonState();
@@ -582,7 +724,12 @@ document.addEventListener('DOMContentLoaded', function () {
             const isPaste = e.inputType === 'insertFromPaste' || e.inputType === 'insertFromYank';
             if (e.isComposing && !isPaste) return;
 
-            const query = e.target.value.replaceAll('　', ' ');
+            const rawVal = e.target.value;
+            if (processPossibleUrlInput(rawVal)) {
+                return;
+            }
+
+            const query = rawVal.replaceAll('　', ' ');
             if (isValidQuery(query)) {
                 if (searchInputWrapper) searchInputWrapper.classList.add('is-loading');
                 showSkeletonLoading();
@@ -592,13 +739,26 @@ document.addEventListener('DOMContentLoaded', function () {
             handleSearch(query);
         });
 
-        // コピペ（ペースト）時にも即時に検索を実行
-        searchInput.addEventListener('paste', () => {
+        // コピペ（ペースト）時にも即時にURL判定・検索を実行
+        searchInput.addEventListener('paste', (e) => {
             updateClearButtonState();
             if (!fuse) return;
+
+            // クリップボードデータから即時判定
+            const pastedText = e.clipboardData?.getData('text') || '';
+            if (pastedText && processPossibleUrlInput(pastedText)) {
+                e.preventDefault();
+                return;
+            }
+
             setTimeout(() => {
                 updateClearButtonState();
-                const query = searchInput.value.replaceAll('　', ' ');
+                const rawVal = searchInput.value;
+                if (processPossibleUrlInput(rawVal)) {
+                    return;
+                }
+
+                const query = rawVal.replaceAll('　', ' ');
                 if (isValidQuery(query)) {
                     if (searchInputWrapper) searchInputWrapper.classList.add('is-loading');
                 } else {
@@ -612,7 +772,12 @@ document.addEventListener('DOMContentLoaded', function () {
         searchInput.addEventListener('compositionend', (e) => {
             updateClearButtonState();
             if (!fuse) return;
-            const query = e.target.value.replaceAll('　', ' ');
+            const rawVal = e.target.value;
+            if (processPossibleUrlInput(rawVal)) {
+                return;
+            }
+
+            const query = rawVal.replaceAll('　', ' ');
             if (isValidQuery(query)) {
                 if (searchInputWrapper) searchInputWrapper.classList.add('is-loading');
                 handleSearch(query);
@@ -1414,6 +1579,12 @@ document.addEventListener('DOMContentLoaded', function () {
         list.className = 'search-tips-list';
 
         const tips = [
+            {
+                icon: '🔗',
+                title: 'URL / ASIN検索',
+                desc: 'Amazon商品URLや短縮URL（amzn.to等）、ASINを貼り付けると直接検索できます。',
+                example: 'https://amzn.to/...'
+            },
             {
                 icon: '⚙️',
                 title: 'スペック検索',
