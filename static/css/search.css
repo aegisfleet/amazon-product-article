@@ -1183,8 +1183,6 @@
    =================================================== */
 .floating-search-fab {
     position: fixed;
-    bottom: 1.5rem;
-    left: 1.5rem;
     bottom: calc(1.5rem + env(safe-area-inset-bottom, 0px));
     left: calc(1.5rem + env(safe-area-inset-left, 0px));
     z-index: 950;
@@ -1251,8 +1249,6 @@ body.menu-open .floating-search-fab {
 
 @media (max-width: 640px) {
     .floating-search-fab {
-        bottom: 1rem;
-        left: 1rem;
         bottom: calc(1rem + env(safe-area-inset-bottom, 0px));
         left: calc(1rem + env(safe-area-inset-left, 0px));
         padding: 0.65rem 1rem;
