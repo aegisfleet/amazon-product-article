@@ -8,7 +8,9 @@ import axios from 'axios';
 const ASIN_PATTERN = /^[A-Z0-9]{10}$/i;
 
 // Amazon URLからASINを抽出するパターン
-const AMAZON_URL_PATTERN = /(?:dp|gp\/product|exec\/obidos\/ASIN)\/([A-Z0-9]{10})(?:\/|\?|$)/i;
+const AMAZON_URL_PATH_PATTERN =
+  /(?:dp|gp\/product|gp\/aw\/d|exec\/obidos\/ASIN|o\/ASIN|product-reviews|d)\/([A-Z0-9]{10})(?:[/?#&]|$)/i;
+const AMAZON_QUERY_PATTERN = /[?&](?:asin|pd_rd_i)=([A-Z0-9]{10})(?:[&#]|$)/i;
 
 /**
  * 文字列がASINの形式であるか判定する
@@ -21,8 +23,17 @@ export function isAsin(val: string): boolean {
  * Amazon URLからASINを抽出する。見つからない場合はnullを返す。
  */
 export function extractAsinFromUrl(url: string): string | null {
-  const match = AMAZON_URL_PATTERN.exec(url);
-  return match?.[1]?.toUpperCase() ?? null;
+  const pathMatch = AMAZON_URL_PATH_PATTERN.exec(url);
+  if (pathMatch?.[1]) {
+    return pathMatch[1].toUpperCase();
+  }
+
+  const queryMatch = AMAZON_QUERY_PATTERN.exec(url);
+  if (queryMatch?.[1]) {
+    return queryMatch[1].toUpperCase();
+  }
+
+  return null;
 }
 
 /**
