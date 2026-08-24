@@ -155,9 +155,9 @@
                 <circle cx="11" cy="11" r="8"></circle>
                 <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
             </svg>
-            <label for="search-input" class="sr-only">キーワード・Amazon URL・ASINで検索</label>
-            <input type="text" id="search-input" class="search-input" placeholder="キーワード・Amazon URL・ASINで探す" autocomplete="off"
-                aria-label="キーワード・Amazon URL・ASINで検索" data-search-index-url="{{ `index.json` | relURL }}"
+            <label for="search-input" class="sr-only">キーワード・Amazon URLで検索</label>
+            <input type="text" id="search-input" class="search-input" placeholder="キーワード・Amazon URLで探す" autocomplete="off"
+                aria-label="キーワード・Amazon URLで検索" data-search-index-url="{{ `index.json` | relURL }}"
                 data-search-worker-url="{{ `js/search-worker.js` | relURL }}"
                 {{ with .Site.Params.productRequestFormUrl }}data-request-form-url="{{ . }}"{{ end }}>
             <button type="button" class="search-clear-btn" id="search-clear-btn" aria-label="検索キーワードをクリア" tabindex="-1">

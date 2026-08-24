@@ -1735,8 +1735,8 @@ document.addEventListener('DOMContentLoaded', function () {
         const tips = [
             {
                 icon: '🔗',
-                title: 'URL / ASIN検索',
-                desc: 'Amazon商品URLや短縮URL（amzn.asia / amzn.to等）、ASINを貼り付けると直接検索できます。',
+                title: 'Amazon URL検索',
+                desc: 'Amazonの商品URLや共有リンク（amzn.asia / amzn.to等）を貼り付けると直接検索できます。',
                 example: 'https://amzn.asia/d/...'
             },
             {
