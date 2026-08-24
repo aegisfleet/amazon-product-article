@@ -152,6 +152,13 @@ describe('Search UI XSS Protection', () => {
     expect(searchJsContent).toContain('unfilteredScoreCount');
   });
 
+  test('static/js/search.js should contain floating search FAB observer and focus logic', () => {
+    expect(searchJsContent).toContain('floating-search-fab');
+    expect(searchJsContent).toContain('is-visible');
+    expect(searchJsContent).toContain('scrollIntoView');
+    expect(searchJsContent).toContain('searchInput.focus()');
+  });
+
   test('static/js/search.js should execute DOMContentLoaded without runtime errors', () => {
     let domContentLoadedCallback: ((e?: any) => void) | null = null;
     mockDocument.addEventListener = jest.fn((event: string, callback: (e?: any) => void) => {

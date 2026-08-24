@@ -347,6 +347,47 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
+    // 画面左下のフローティング検索ボタン（FAB）の制御
+    const floatingSearchFab = document.getElementById('floating-search-fab');
+    if (floatingSearchFab) {
+        const searchSection = document.getElementById('search-section') || searchInput;
+
+        if (typeof IntersectionObserver !== 'undefined' && searchSection) {
+            const fabObserver = new IntersectionObserver(
+                (entries) => {
+                    for (const entry of entries) {
+                        // 検索セクションが画面上部にスクロールアウトした際にFABを表示
+                        if (!entry.isIntersecting && entry.boundingClientRect.top < 0) {
+                            floatingSearchFab.classList.add('is-visible');
+                        } else {
+                            floatingSearchFab.classList.remove('is-visible');
+                        }
+                    }
+                },
+                { threshold: 0 }
+            );
+            fabObserver.observe(searchSection);
+        } else {
+            // IntersectionObserver非対応時は常時表示
+            floatingSearchFab.classList.add('is-visible');
+        }
+
+        floatingSearchFab.addEventListener('click', function (event) {
+            event.preventDefault();
+            const searchTarget = document.getElementById('search-section') || searchInput;
+            searchTarget.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+            // スムーズスクロールに追従してフォーカス
+            setTimeout(() => {
+                const wasFocused = document.activeElement === searchInput;
+                searchInput.focus();
+                if (wasFocused) {
+                    searchInput.dispatchEvent(new Event('focus'));
+                }
+            }, 300);
+        });
+    }
+
     // 絞り込みフィルターの条件数バッジ更新と折りたたみUIの制御
     function getActiveFilterCount() {
         let count = 0;
