@@ -152,11 +152,11 @@ function debounce(func, wait) {
 }
 
 function rerankResults(results, query) {
-    if (!Array.isArray(results) || results.length === 0) return [];
+    if (!Array.isArray(results) || results.length === 0) return { results: [], unfilteredScoreCount: 0 };
 
     // Fuse.jsのスコアが0.85より悪い（一致度が極めて低い）ものは除外
     const validResults = results.filter(r => !Number.isFinite(r.score) || r.score <= 0.85);
-    if (validResults.length === 0) return [];
+    if (validResults.length === 0) return { results: [], unfilteredScoreCount: 0 };
 
     const queryLength = query.trim().length;
     const queryTerms = query.trim().split(/\s+/).filter(Boolean).length;
@@ -1233,19 +1233,7 @@ document.addEventListener('DOMContentLoaded', function () {
         container.appendChild(header);
     }
 
-    function renderEmptyState(unfilteredScoreCount = 0) {
-        const query = searchInput ? searchInput.value.replaceAll('　', ' ').trim() : '';
-        const emptyState = document.createElement('div');
-        emptyState.className = 'search-empty-state';
-
-        // 空結果時もヘッダー（0件 + フィルタチップ）を表示する
-        renderResultHeader(0, emptyState);
-
-        const scoreMinEl = document.getElementById('filter-score-min');
-        const isScoreFiltered = scoreMinEl && Number.parseFloat(scoreMinEl.value) > 0;
-        const isAsinOrUrl = isAsin(query) || Boolean(extractAsinFromUrl(query)) || isShortAmazonUrl(query);
-        const hasScoreRelaxationCandidates = !isAsinOrUrl && isScoreFiltered && unfilteredScoreCount > 0;
-
+    function createEmptyStateIcon() {
         const svgNamespace = "http://www.w3.org/2000/svg";
         const svg = document.createElementNS(svgNamespace, 'svg');
         svg.setAttribute('class', 'empty-icon');
@@ -1274,7 +1262,113 @@ document.addEventListener('DOMContentLoaded', function () {
             Object.entries(coords).forEach(([key, value]) => line.setAttribute(key, value));
             svg.appendChild(line);
         });
-        emptyState.appendChild(svg);
+        return svg;
+    }
+
+    function createScoreRelaxBox(unfilteredScoreCount, onRelax) {
+        const relaxBox = document.createElement('div');
+        relaxBox.className = 'empty-score-relax-box';
+
+        const relaxHeader = document.createElement('div');
+        relaxHeader.className = 'empty-score-relax-header';
+
+        const relaxIcon = document.createElement('span');
+        relaxIcon.className = 'empty-score-relax-icon';
+        relaxIcon.setAttribute('aria-hidden', 'true');
+        relaxIcon.textContent = '💡';
+        relaxHeader.appendChild(relaxIcon);
+
+        const relaxTitle = document.createElement('span');
+        relaxTitle.className = 'empty-score-relax-title';
+        relaxTitle.textContent = `全スコア対象なら ${unfilteredScoreCount}件 の商品が見つかりました`;
+        relaxHeader.appendChild(relaxTitle);
+        relaxBox.appendChild(relaxHeader);
+
+        const relaxBtn = document.createElement('button');
+        relaxBtn.type = 'button';
+        relaxBtn.className = 'empty-score-relax-btn';
+        relaxBtn.setAttribute('aria-label', `全スコアの商品（${unfilteredScoreCount}件）を表示する`);
+
+        const btnText = document.createElement('span');
+        btnText.textContent = `全スコアの商品（${unfilteredScoreCount}件）を表示する`;
+        relaxBtn.appendChild(btnText);
+
+        const arrowIcon = document.createElement('span');
+        arrowIcon.className = 'empty-score-relax-arrow';
+        arrowIcon.setAttribute('aria-hidden', 'true');
+        arrowIcon.textContent = ' →';
+        relaxBtn.appendChild(arrowIcon);
+
+        relaxBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            onRelax();
+        });
+
+        relaxBox.appendChild(relaxBtn);
+        return relaxBox;
+    }
+
+    function createProductRequestBox(isAsinOrUrl, requestFormUrl) {
+        const requestBox = document.createElement('div');
+        requestBox.className = `empty-request-box${isAsinOrUrl ? ' is-asin-query' : ''}`;
+
+        const requestHeader = document.createElement('div');
+        requestHeader.className = 'empty-request-header';
+
+        const requestIcon = document.createElement('span');
+        requestIcon.className = 'empty-request-icon';
+        requestIcon.setAttribute('aria-hidden', 'true');
+        requestIcon.textContent = isAsinOrUrl ? '🔍' : '📝';
+        requestHeader.appendChild(requestIcon);
+
+        const requestTitle = document.createElement('span');
+        requestTitle.className = 'empty-request-title';
+        requestTitle.textContent = isAsinOrUrl ? 'この商品はまだ調査されていません' : 'お探しの商品が見つかりませんか？';
+        requestHeader.appendChild(requestTitle);
+        requestBox.appendChild(requestHeader);
+
+        const requestDesc = document.createElement('p');
+        requestDesc.className = 'empty-request-desc';
+        requestDesc.textContent = isAsinOrUrl
+            ? '商品調査リクエストを送信していただければ、AIが徹底調査して比較記事を作成します！'
+            : '調査リクエストフォームからAmazonのURLや商品名を送信していただければ、AIが徹底調査して比較記事を作成します！';
+        requestBox.appendChild(requestDesc);
+
+        const requestLink = document.createElement('a');
+        requestLink.href = requestFormUrl;
+        requestLink.target = '_blank';
+        requestLink.rel = 'noopener noreferrer';
+        requestLink.className = 'empty-request-btn';
+        requestLink.setAttribute('aria-label', '商品調査リクエストフォームを開く（新しいタブで開きます）');
+
+        const btnText = document.createElement('span');
+        btnText.textContent = isAsinOrUrl ? 'この商品の調査をリクエストする' : '商品調査をリクエストする';
+        requestLink.appendChild(btnText);
+
+        const externalIcon = document.createElement('span');
+        externalIcon.className = 'empty-request-external-icon';
+        externalIcon.setAttribute('aria-hidden', 'true');
+        externalIcon.textContent = ' ↗';
+        requestLink.appendChild(externalIcon);
+
+        requestBox.appendChild(requestLink);
+        return requestBox;
+    }
+
+    function renderEmptyState(unfilteredScoreCount = 0) {
+        const query = searchInput ? searchInput.value.replaceAll('　', ' ').trim() : '';
+        const emptyState = document.createElement('div');
+        emptyState.className = 'search-empty-state';
+
+        // 空結果時もヘッダー（0件 + フィルタチップ）を表示する
+        renderResultHeader(0, emptyState);
+
+        const scoreMinEl = document.getElementById('filter-score-min');
+        const isScoreFiltered = scoreMinEl && Number.parseFloat(scoreMinEl.value) > 0;
+        const isAsinOrUrl = isAsin(query) || Boolean(extractAsinFromUrl(query)) || isShortAmazonUrl(query);
+        const hasScoreRelaxationCandidates = !isAsinOrUrl && isScoreFiltered && unfilteredScoreCount > 0;
+
+        emptyState.appendChild(createEmptyStateIcon());
 
         const title = document.createElement('span');
         title.className = 'empty-title';
@@ -1290,49 +1384,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
         // スコア緩和提案ボックス（全スコアなら該当商品がある場合）
         if (hasScoreRelaxationCandidates) {
-            const relaxBox = document.createElement('div');
-            relaxBox.className = 'empty-score-relax-box';
-
-            const relaxHeader = document.createElement('div');
-            relaxHeader.className = 'empty-score-relax-header';
-
-            const relaxIcon = document.createElement('span');
-            relaxIcon.className = 'empty-score-relax-icon';
-            relaxIcon.setAttribute('aria-hidden', 'true');
-            relaxIcon.textContent = '💡';
-            relaxHeader.appendChild(relaxIcon);
-
-            const relaxTitle = document.createElement('span');
-            relaxTitle.className = 'empty-score-relax-title';
-            relaxTitle.textContent = `全スコア対象なら ${unfilteredScoreCount}件 の商品が見つかりました`;
-            relaxHeader.appendChild(relaxTitle);
-            relaxBox.appendChild(relaxHeader);
-
-            const relaxBtn = document.createElement('button');
-            relaxBtn.type = 'button';
-            relaxBtn.className = 'empty-score-relax-btn';
-            relaxBtn.setAttribute('aria-label', `全スコアの商品（${unfilteredScoreCount}件）を表示する`);
-
-            const btnText = document.createElement('span');
-            btnText.textContent = `全スコアの商品（${unfilteredScoreCount}件）を表示する`;
-            relaxBtn.appendChild(btnText);
-
-            const arrowIcon = document.createElement('span');
-            arrowIcon.className = 'empty-score-relax-arrow';
-            arrowIcon.setAttribute('aria-hidden', 'true');
-            arrowIcon.textContent = ' →';
-            relaxBtn.appendChild(arrowIcon);
-
-            relaxBtn.addEventListener('click', (e) => {
-                e.stopPropagation();
+            const relaxBox = createScoreRelaxBox(unfilteredScoreCount, () => {
                 if (scoreMinEl) scoreMinEl.value = '0';
                 updateFilterBadge();
                 updateSearchActiveChips();
                 const q = searchInput.value.replaceAll('　', ' ');
                 if (isValidQuery(q)) handleSearch(q);
             });
-
-            relaxBox.appendChild(relaxBtn);
             emptyState.appendChild(relaxBox);
         }
 
@@ -1343,50 +1401,7 @@ document.addEventListener('DOMContentLoaded', function () {
             document.querySelector('.request-link')?.getAttribute('href');
 
         if (requestFormUrl) {
-            const requestBox = document.createElement('div');
-            requestBox.className = `empty-request-box${isAsinOrUrl ? ' is-asin-query' : ''}`;
-
-            const requestHeader = document.createElement('div');
-            requestHeader.className = 'empty-request-header';
-
-            const requestIcon = document.createElement('span');
-            requestIcon.className = 'empty-request-icon';
-            requestIcon.setAttribute('aria-hidden', 'true');
-            requestIcon.textContent = isAsinOrUrl ? '🔍' : '📝';
-            requestHeader.appendChild(requestIcon);
-
-            const requestTitle = document.createElement('span');
-            requestTitle.className = 'empty-request-title';
-            requestTitle.textContent = isAsinOrUrl ? 'この商品はまだ調査されていません' : 'お探しの商品が見つかりませんか？';
-            requestHeader.appendChild(requestTitle);
-            requestBox.appendChild(requestHeader);
-
-            const requestDesc = document.createElement('p');
-            requestDesc.className = 'empty-request-desc';
-            requestDesc.textContent = isAsinOrUrl
-                ? '商品調査リクエストを送信していただければ、AIが徹底調査して比較記事を作成します！'
-                : '調査リクエストフォームからAmazonのURLや商品名を送信していただければ、AIが徹底調査して比較記事を作成します！';
-            requestBox.appendChild(requestDesc);
-
-            const requestLink = document.createElement('a');
-            requestLink.href = requestFormUrl;
-            requestLink.target = '_blank';
-            requestLink.rel = 'noopener noreferrer';
-            requestLink.className = 'empty-request-btn';
-            requestLink.setAttribute('aria-label', '商品調査リクエストフォームを開く（新しいタブで開きます）');
-
-            const btnText = document.createElement('span');
-            btnText.textContent = isAsinOrUrl ? 'この商品の調査をリクエストする' : '商品調査をリクエストする';
-            requestLink.appendChild(btnText);
-
-            const externalIcon = document.createElement('span');
-            externalIcon.className = 'empty-request-external-icon';
-            externalIcon.setAttribute('aria-hidden', 'true');
-            externalIcon.textContent = ' ↗';
-            requestLink.appendChild(externalIcon);
-
-            requestBox.appendChild(requestLink);
-            emptyState.appendChild(requestBox);
+            emptyState.appendChild(createProductRequestBox(isAsinOrUrl, requestFormUrl));
         }
 
         searchResults.appendChild(emptyState);
