@@ -98,6 +98,10 @@ describe('CategoryNormalizer', () => {
         'Beautyover2000B',
         '本日の特選品　非常用品・家具や家電の転倒防止用品',
         '本日のセール商品',
+        'ワイモバイルラインナップ',
+        'ワイモバイル申込ガイド',
+        'XiaomiAll',
+        'moto g66y 5G',
         '特選タイムセール',
         'CMLHome9999',
         'CMLSports9999',
@@ -489,8 +493,75 @@ describe('CategoryNormalizer', () => {
     it('should invalidate smartphone categories if title does not contain smartphone keywords', () => {
       expect(CategoryNormalizer.isValidCategoryName('スマホ本体', 'Google Pixel 8a 128GB')).toBe(true);
       expect(CategoryNormalizer.isValidCategoryName('スマホ本体', 'iPhone 15 128GB')).toBe(true);
+      expect(
+        CategoryNormalizer.isValidCategoryName(
+          'スマートフォン本体',
+          '【本体一括購入】Y!mobile moto g66y 5G【新規申込・シンプルS専用】 購入後申込必須 ※開通後発送',
+        ),
+      ).toBe(true);
       expect(CategoryNormalizer.isValidCategoryName('スマホ本体', 'ブラウン 電動歯ブラシ オーラルB')).toBe(false);
       expect(CategoryNormalizer.isValidCategoryName('スマートフォン本体', 'Anker モバイルバッテリー')).toBe(false);
+    });
+
+    it('should select "スマートフォン本体" for Y!mobile moto smartphone (B0FFG6GMD2)', () => {
+      const nodes: BrowseNode[] = [
+        {
+          contextFreeName: 'スマートフォン本体',
+          displayName: 'スマートフォン本体',
+          id: '2497181051',
+          salesRank: 660,
+          ancestor: {
+            contextFreeName: '携帯電話・スマートフォン本体',
+            displayName: '携帯電話・スマートフォン本体',
+            id: '128188011',
+            ancestor: {
+              contextFreeName: '携帯電話・スマートフォン',
+              displayName: '携帯電話・スマートフォン',
+              id: '128187011',
+            },
+          },
+        },
+        {
+          contextFreeName: 'おうちで機種変更',
+          displayName: 'おうちで機種変更',
+          id: '8106713051',
+        },
+        {
+          contextFreeName: 'Windows 10 Mobile 搭載 スマートフォン 特集',
+          displayName: 'Windows 10 Mobile 搭載 スマートフォン 特集',
+          id: '4145429051',
+        },
+        {
+          contextFreeName: 'スマホ本体',
+          displayName: 'スマホ本体',
+          id: '7474288051',
+        },
+        {
+          contextFreeName: 'moto g66y 5G',
+          displayName: 'moto g66y 5G',
+          id: '210339057051',
+          ancestor: {
+            contextFreeName: 'ワイモバイルラインナップ',
+            displayName: 'ワイモバイルラインナップ',
+            id: '8151631051',
+            ancestor: {
+              contextFreeName: 'ワイモバイル申込ガイド',
+              displayName: 'ワイモバイル申込ガイド',
+              id: '7058347051',
+            },
+          },
+        },
+        {
+          contextFreeName: 'スマートフォン関連製品',
+          displayName: 'スマートフォン関連製品',
+          id: '8419041051',
+        },
+      ];
+      const title = '【本体一括購入】Y!mobile moto g66y 5G【新規申込・シンプルS専用】 購入後申込必須 ※開通後発送';
+
+      const result = CategoryNormalizer.selectBestCategory(nodes, title);
+      expect(result.main).toBe('スマートフォン本体');
+      expect(result.browseNodeId).toBe('2497181051');
     });
 
     it('should select "バイク用マウントステー・ホルダー" for motorcycle phone mount (B07Y28FJKM)', () => {
