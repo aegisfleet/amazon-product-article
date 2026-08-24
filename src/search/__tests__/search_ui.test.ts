@@ -1,5 +1,6 @@
 import * as fs from 'node:fs';
 import * as path from 'node:path';
+import * as vm from 'node:vm';
 
 // Mock DOM elements and methods
 const createMockElement = (tagName: string) => {
@@ -9,6 +10,7 @@ const createMockElement = (tagName: string) => {
     tagName: tagName.toUpperCase(),
     className: '',
     textContent: '',
+    value: '',
     href: '',
     dataset: {},
     style: {},
@@ -23,7 +25,11 @@ const createMockElement = (tagName: string) => {
       add: jest.fn(),
       remove: jest.fn(),
       contains: jest.fn(() => false),
+      toggle: jest.fn(() => false),
     },
+    addEventListener: jest.fn(),
+    focus: jest.fn(),
+    dispatchEvent: jest.fn(),
     // For searchResults
     get innerHTML() {
       throw new Error('innerHTML usage detected! Use textContent or appendChild instead.');
@@ -52,6 +58,8 @@ describe('Search UI XSS Protection', () => {
     searchInput = createMockElement('input');
 
     mockDocument = {
+      head: createMockElement('head'),
+      body: createMockElement('body'),
       getElementById: jest.fn((id) => {
         if (id === 'search-results') return searchResults;
         if (id === 'search-input') return searchInput;
@@ -66,6 +74,9 @@ describe('Search UI XSS Protection', () => {
     (globalThis as any).document = mockDocument;
     (globalThis as any).globalThis = globalThis;
     (globalThis as any).window = globalThis;
+    (globalThis as any).addEventListener = jest.fn();
+    (globalThis as any).removeEventListener = jest.fn();
+    (globalThis as any).scrollTo = jest.fn();
   });
 
   test('static/js/search.js should not contain innerHTML', () => {
@@ -128,5 +139,32 @@ describe('Search UI XSS Protection', () => {
     expect(searchJsContent).toContain('empty-request-btn');
     expect(searchJsContent).toContain('dataset.requestFormUrl');
     expect(searchJsContent).toContain('request-link');
+  });
+
+  test('static/js/search.js should execute DOMContentLoaded without runtime errors', () => {
+    let domContentLoadedCallback: ((e?: any) => void) | null = null;
+    mockDocument.addEventListener = jest.fn((event: string, callback: (e?: any) => void) => {
+      if (event === 'DOMContentLoaded') {
+        domContentLoadedCallback = callback;
+      }
+    });
+
+    const sandbox = {
+      document: mockDocument,
+      globalThis: globalThis,
+      window: globalThis,
+      console: console,
+    };
+
+    expect(() => {
+      vm.runInNewContext(searchJsContent, sandbox);
+    }).not.toThrow();
+
+    expect(typeof domContentLoadedCallback).toBe('function');
+    expect(() => {
+      if (domContentLoadedCallback) {
+        domContentLoadedCallback();
+      }
+    }).not.toThrow();
   });
 });

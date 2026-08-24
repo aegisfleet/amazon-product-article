@@ -350,13 +350,13 @@ document.addEventListener('DOMContentLoaded', function () {
         if (scoreMinEl && scoreMinEl.value !== '' && scoreMinEl.value !== '70') {
             count++;
         }
-        if (scoreMaxEl && scoreMaxEl.value.trim() !== '') {
+        if (scoreMaxEl && scoreMaxEl.value?.trim?.() !== '') {
             count++;
         }
-        if (priceMinEl && priceMinEl.value.trim() !== '') {
+        if (priceMinEl && priceMinEl.value?.trim?.() !== '') {
             count++;
         }
-        if (priceMaxEl && priceMaxEl.value.trim() !== '') {
+        if (priceMaxEl && priceMaxEl.value?.trim?.() !== '') {
             count++;
         }
         return count;
@@ -1226,6 +1226,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     function renderEmptyState() {
+        const query = searchInput ? searchInput.value.replaceAll('　', ' ').trim() : '';
         const emptyState = document.createElement('div');
         emptyState.className = 'search-empty-state';
 
@@ -1272,75 +1273,17 @@ document.addEventListener('DOMContentLoaded', function () {
         desc.textContent = '条件を変えて再度お試しください。';
         emptyState.appendChild(desc);
 
-        // 次アクションのヒント
-        const hints = [];
-        const scoreMinEl = document.getElementById('filter-score-min');
-        const scoreMaxEl = document.getElementById('filter-score-max');
-        const priceMinEl = document.getElementById('filter-price-min');
-        const priceMaxEl = document.getElementById('filter-price-max');
-        const query = searchInput.value.replaceAll('　', ' ').trim();
-
-        if (query.length >= 2 && query.includes(' ')) {
-            hints.push({ text: 'キーワードを短くしてみる', type: 'keyword' });
-        }
-        if (scoreMinEl && Number.parseFloat(scoreMinEl.value) > 0) {
-            hints.push({ text: 'スコア下限を下げる', type: 'score-min', resetValue: '0' });
-        }
-        if (scoreMaxEl && scoreMaxEl.value !== '') {
-            hints.push({ text: 'スコア上限を解除する', type: 'score-max' });
-        }
-        if (priceMinEl && priceMinEl.value !== '') {
-            hints.push({ text: '価格下限を解除する', type: 'price-min' });
-        }
-        if (priceMaxEl && priceMaxEl.value !== '') {
-            hints.push({ text: '価格上限を解除する', type: 'price-max' });
-        }
-
-        if (hints.length > 0) {
-            const hintArea = document.createElement('div');
-            hintArea.className = 'empty-hints';
-            const hintLabel = document.createElement('span');
-            hintLabel.className = 'empty-hints-label';
-            hintLabel.textContent = '試してみてください:';
-            hintArea.appendChild(hintLabel);
-
-            hints.forEach(hint => {
-                const btn = document.createElement('button');
-                btn.type = 'button';
-                btn.className = 'empty-hint-btn';
-                btn.textContent = `→ ${hint.text}`;
-                btn.addEventListener('click', (e) => {
-                    e.stopPropagation();
-                    if (hint.resetValue === undefined) {
-                        clearFilter(hint.type);
-                    } else {
-                        const idMap = {
-                            'score-min': 'filter-score-min',
-                            'score-max': 'filter-score-max',
-                            'price-min': 'filter-price-min',
-                            'price-max': 'filter-price-max'
-                        };
-                        const el = document.getElementById(idMap[hint.type] || 'filter-price-max');
-                        if (el) el.value = hint.resetValue;
-                        const q = searchInput.value.replaceAll('　', ' ');
-                        if (isValidQuery(q)) handleSearch(q);
-                    }
-                });
-                hintArea.appendChild(btn);
-            });
-
-            emptyState.appendChild(hintArea);
-        }
-
-        // 商品調査リクエスト案内
+        // 商品調査リクエスト案内（未調査商品への導線を最優先で表示）
         const requestFormUrl =
             searchInput.dataset.requestFormUrl ||
             document.getElementById('request-link')?.getAttribute('href') ||
             document.querySelector('.request-link')?.getAttribute('href');
 
         if (requestFormUrl) {
+            const isAsinOrUrl = isAsin(query) || Boolean(extractAsinFromUrl(query)) || isShortAmazonUrl(query);
+
             const requestBox = document.createElement('div');
-            requestBox.className = 'empty-request-box';
+            requestBox.className = `empty-request-box${isAsinOrUrl ? ' is-asin-query' : ''}`;
 
             const requestHeader = document.createElement('div');
             requestHeader.className = 'empty-request-header';
@@ -1348,19 +1291,20 @@ document.addEventListener('DOMContentLoaded', function () {
             const requestIcon = document.createElement('span');
             requestIcon.className = 'empty-request-icon';
             requestIcon.setAttribute('aria-hidden', 'true');
-            requestIcon.textContent = '📝';
+            requestIcon.textContent = isAsinOrUrl ? '🔍' : '📝';
             requestHeader.appendChild(requestIcon);
 
             const requestTitle = document.createElement('span');
             requestTitle.className = 'empty-request-title';
-            requestTitle.textContent = 'お探しの商品が見つかりませんか？';
+            requestTitle.textContent = isAsinOrUrl ? 'この商品はまだ調査されていません' : 'お探しの商品が見つかりませんか？';
             requestHeader.appendChild(requestTitle);
             requestBox.appendChild(requestHeader);
 
             const requestDesc = document.createElement('p');
             requestDesc.className = 'empty-request-desc';
-            requestDesc.textContent =
-                '調査リクエストフォームからAmazonのURLや商品名を送信していただければ、AIが徹底調査して比較記事を作成します！';
+            requestDesc.textContent = isAsinOrUrl
+                ? '商品調査リクエストを送信していただければ、AIが徹底調査して比較記事を作成します！'
+                : '調査リクエストフォームからAmazonのURLや商品名を送信していただければ、AIが徹底調査して比較記事を作成します！';
             requestBox.appendChild(requestDesc);
 
             const requestLink = document.createElement('a');
@@ -1371,7 +1315,7 @@ document.addEventListener('DOMContentLoaded', function () {
             requestLink.setAttribute('aria-label', '商品調査リクエストフォームを開く（新しいタブで開きます）');
 
             const btnText = document.createElement('span');
-            btnText.textContent = '商品調査をリクエストする';
+            btnText.textContent = isAsinOrUrl ? 'この商品の調査をリクエストする' : '商品調査をリクエストする';
             requestLink.appendChild(btnText);
 
             const externalIcon = document.createElement('span');
@@ -1389,6 +1333,7 @@ document.addEventListener('DOMContentLoaded', function () {
         updateSearchResultsHeight();
         lastSearchState = getSearchState();
     }
+
 
     function renderCategorySuggestions(categoryCounts, container) {
         const topCategories = Object.entries(categoryCounts)
