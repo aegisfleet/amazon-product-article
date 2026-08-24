@@ -50,12 +50,17 @@ function parseBudgetFromQuery(query) {
     return null;
 }
 
+function isAsin(str) {
+    if (!str) return false;
+    return /^[A-Z0-9]{10}$/i.test(str.trim());
+}
+
 function rerankResults(results, query, filters = {}) {
-    if (!Array.isArray(results) || results.length === 0) return [];
+    if (!Array.isArray(results) || results.length === 0) return { results: [], unfilteredScoreCount: 0 };
 
     // Fuse.jsのスコアが0.85より悪い（一致度が極めて低い）ものは除外
     const validResults = results.filter(r => !Number.isFinite(r.score) || r.score <= 0.85);
-    if (validResults.length === 0) return [];
+    if (validResults.length === 0) return { results: [], unfilteredScoreCount: 0 };
 
     const queryLength = query.trim().length;
     const queryTerms = query.trim().split(/\s+/).filter(Boolean).length;
@@ -133,12 +138,15 @@ function rerankResults(results, query, filters = {}) {
         freshness: 0.05 + (0.05 * intentStrength)
     };
 
-    const scoreMin = Number.parseFloat(filters.scoreMin) || 0;
-    const scoreMax = filters.scoreMax !== '' && filters.scoreMax != null ? Number.parseFloat(filters.scoreMax) : Number.MAX_SAFE_INTEGER;
+    const isAsinQuery = isAsin(query);
+    const scoreMin = isAsinQuery ? 0 : (Number.parseFloat(filters.scoreMin) || 0);
+    const scoreMax = !isAsinQuery && filters.scoreMax !== '' && filters.scoreMax != null ? Number.parseFloat(filters.scoreMax) : Number.MAX_SAFE_INTEGER;
     const priceMin = Number.parseFloat(filters.priceMin) || 0;
     const priceMax = filters.priceMax !== '' && filters.priceMax != null ? Number.parseFloat(filters.priceMax) : Number.MAX_SAFE_INTEGER;
 
-    return validResults
+    let unfilteredScoreCount = 0;
+
+    const rerankedList = validResults
         .map(result => {
             const item = result.item || {};
             const textScore = getNormalizedFuseScore(result.score);
@@ -164,14 +172,25 @@ function rerankResults(results, query, filters = {}) {
             const score = Number.parseFloat(item.score) || 0;
             const price = Number.parseFloat(item.price_value) || 0;
 
-            if (score < scoreMin) return false;
-            if (Number.isFinite(scoreMax) && score > scoreMax) return false;
+            // 価格フィルター判定
             if (price < priceMin) return false;
             if (Number.isFinite(priceMax) && price > priceMax) return false;
+
+            // 価格条件を満たす全スコア候補数をカウント
+            unfilteredScoreCount++;
+
+            // スコアフィルター判定（ASIN検索時はバイパス）
+            if (score < scoreMin) return false;
+            if (Number.isFinite(scoreMax) && score > scoreMax) return false;
 
             return true;
         })
         .sort((a, b) => b.rerankScore - a.rerankScore);
+
+    return {
+        results: rerankedList,
+        unfilteredScoreCount
+    };
 }
 
 self.onmessage = async function (e) {
@@ -198,14 +217,14 @@ self.onmessage = async function (e) {
     } else if (type === 'SEARCH') {
         const { query, filters, searchId } = data;
         if (!fuse) {
-            self.postMessage({ type: 'SEARCH_RESULTS', results: [], query, searchId, notReady: true });
+            self.postMessage({ type: 'SEARCH_RESULTS', results: [], unfilteredScoreCount: 0, query, searchId, notReady: true });
             return;
         }
 
         try {
             const fuseResults = fuse.search(query);
-            const results = rerankResults(fuseResults, query, filters);
-            self.postMessage({ type: 'SEARCH_RESULTS', results, query, searchId });
+            const { results, unfilteredScoreCount } = rerankResults(fuseResults, query, filters);
+            self.postMessage({ type: 'SEARCH_RESULTS', results, unfilteredScoreCount, query, searchId });
         } catch (err) {
             self.postMessage({ type: 'ERROR', error: String(err), searchId });
         }
