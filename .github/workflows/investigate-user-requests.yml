@@ -41,7 +41,7 @@ jobs:
       env:
         GAS_API_URL: ${{ secrets.GAS_API_URL }}
         GAS_API_TOKEN: ${{ secrets.GAS_API_TOKEN }}
-        MAX_INVESTIGATION_PRODUCTS: '5'
+        MAX_INVESTIGATION_PRODUCTS: '10'
       run: pnpm run investigate:user-requests -- --fetch-requests
 
     - name: Upload user requests session data
