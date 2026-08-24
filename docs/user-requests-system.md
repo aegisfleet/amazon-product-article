@@ -15,7 +15,7 @@
 - **重複調査・無駄なAPI呼び出しの防止**:
   既にサイト上に記事（`data/investigations/<ASIN>.json`）が存在する商品や同一バッチ内での重複リクエストは自動検知してスキップし、スプレッドシート側を「完了」「重複リクエスト」に即時更新する。
 - **調査枠の最大確保（キャパシティ保証）**:
-  調査済みスキップが発生しても、未調査の新規対象商品が最大5件集まるまで探索を継続する。
+  調査済みスキップが発生しても、未調査の新規対象商品が最大10件集まるまで探索を継続する。
 - **障害耐性と自動リトライ**:
   Julesセッションの失敗等により記事が生成されなかった場合、24時間のタイムアウト判定を経て自動的に再調査対象としてリカバリする。
 - **多様なURL形式の柔軟なサポート**:
@@ -46,7 +46,7 @@ sequenceDiagram
     GAS->>GSS: 未完了行（未処理 / 処理中 / セッション開始済）を取得
     GAS-->>CLI: リクエスト一覧を返却
 
-    loop 未調査商品が最大5件集まるまで
+    loop 未調査商品が最大10件集まるまで
         CLI->>CLI: 短縮URL解決 & ASIN抽出
         alt 既にサイト上に記事が存在する
             CLI->>GAS: POST /exec (ステータスを「完了」に昇格更新)
@@ -156,9 +156,10 @@ stateDiagram-v2
 ### 6.1 初期セットアップ手順（新規環境構築時）
 
 1. **GASプロジェクトの作成とプッシュ**:
+   `gas` ディレクトリで直接 `clasp push` を実行する：
    ```bash
    cd gas
-   pnpm run gas:push
+   clasp push
    ```
 2. **初期化スクリプトの実行**:
    - Google Apps Scriptエディタで `setup.js` を開き、`setupProductRequestSystem()` を実行する。
@@ -168,7 +169,8 @@ stateDiagram-v2
      - `API認証トークン (API_TOKEN)`
 3. **Web API のデプロイ**:
    ```bash
-   pnpm run gas:deploy
+   cd gas
+   clasp deploy
    ```
    - 出力されたデプロイURL（`https://script.google.com/macros/s/.../exec`）を控える。
 4. **GitHub Secrets の設定**:
@@ -185,9 +187,10 @@ stateDiagram-v2
 Googleフォームの説明文やURLバリデーションルール（新しい短縮URLドメインの追加など）を更新する場合、フォームURLやスプレッドシート連携を維持したまま即時反映できる。
 
 1. `gas/src/setup.js` の `FORM_DESCRIPTION` や `urlValidation` パターンを編集する。
-2. GASにプッシュする：
+2. `gas` ディレクトリで直接GASにプッシュする：
    ```bash
-   pnpm run gas:push
+   cd gas
+   clasp push
    ```
 3. GASエディタから **`updateFormDescription()`** を実行する（フォームの説明文と補足テキスト、バリデーションが即座に最新化される）。
 

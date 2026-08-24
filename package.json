@@ -23,8 +23,6 @@
     "investigate:price-discrepancy": "ts-node src/scripts/investigate-price-discrepancy-cli.ts",
     "investigate:uncovered-deals": "ts-node src/scripts/investigate-uncovered-deals-cli.ts",
     "investigate:user-requests": "ts-node src/scripts/investigate-user-requests-cli.ts",
-    "gas:push": "clasp push",
-    "gas:deploy": "clasp deploy",
     "extract:sale-candidates": "ts-node src/scripts/extract-sale-candidates.ts",
     "generate:articles": "ts-node src/scripts/article-generation-cli.ts",
     "merge:pr": "ts-node src/scripts/pr-merge-cli.ts",
