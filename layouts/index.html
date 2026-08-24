@@ -157,7 +157,8 @@
             </svg>
             <label for="search-input" class="sr-only">キーワード・Amazon URL・ASINで検索</label>
             <input type="text" id="search-input" class="search-input" placeholder="キーワード・Amazon URL・ASINで探す" autocomplete="off"
-                aria-label="キーワード・Amazon URL・ASINで検索" data-search-index-url="{{ `index.json` | relURL }}">
+                aria-label="キーワード・Amazon URL・ASINで検索" data-search-index-url="{{ `index.json` | relURL }}"
+                {{ with .Site.Params.productRequestFormUrl }}data-request-form-url="{{ . }}"{{ end }}>
             <button type="button" class="search-clear-btn" id="search-clear-btn" aria-label="検索キーワードをクリア" tabindex="-1">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                     <line x1="18" y1="6" x2="6" y2="18"></line>
