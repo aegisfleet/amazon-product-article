@@ -154,11 +154,15 @@ function debounce(func, wait) {
 function rerankResults(results, query) {
     if (!Array.isArray(results) || results.length === 0) return [];
 
+    // Fuse.jsのスコアが0.85より悪い（一致度が極めて低い）ものは除外
+    const validResults = results.filter(r => !Number.isFinite(r.score) || r.score <= 0.85);
+    if (validResults.length === 0) return [];
+
     const queryLength = query.trim().length;
     const queryTerms = query.trim().split(/\s+/).filter(Boolean).length;
     const intentStrength = Math.min(1, Math.max(0, ((queryLength - 2) / 10) + ((queryTerms - 1) * 0.08)));
 
-    const fuseScores = results.map(result => Number.isFinite(result.score) ? result.score : 1);
+    const fuseScores = validResults.map(result => Number.isFinite(result.score) ? result.score : 1);
     const minFuseScore = Math.min(...fuseScores);
     const maxFuseScore = Math.max(...fuseScores);
     const fuseScoreRange = maxFuseScore - minFuseScore;
@@ -231,7 +235,7 @@ function rerankResults(results, query) {
         freshness: 0.05 + (0.05 * intentStrength)
     };
 
-    return results
+    return validResults
         .map(result => {
             const item = result.item || {};
             const textScore = getNormalizedFuseScore(result.score);
@@ -289,7 +293,11 @@ function isStateEqual(state1, state2) {
 document.addEventListener('DOMContentLoaded', function () {
     const searchInput = document.getElementById('search-input');
     const searchResults = document.getElementById('search-results');
-    let fuse;
+    let fuse = null;
+    let searchWorker = null;
+    let isWorkerFailed = false;
+    let searchIdSequence = 0;
+    let latestSearchId = 0;
     let lastSearchState = null;
     let handleSearch;
 
@@ -526,21 +534,9 @@ document.addEventListener('DOMContentLoaded', function () {
     globalThis.addEventListener('scroll', updateSearchResultsHeight, { passive: true });
     globalThis.addEventListener('apa-compare-tray-change', updateSearchResultsHeight);
 
-    // Load Fuse.js if not already loaded
-    if (globalThis.Fuse) {
-        initializeSearch();
-    } else {
-        const script = document.createElement('script');
-        script.src = 'https://cdn.jsdelivr.net/npm/fuse.js@6.6.2';
-        script.integrity = 'sha256-xXM5w/oWsdadmmtGdJqBOe+NT8m7/kgUT/iXqn1CIuw=';
-        script.crossOrigin = 'anonymous';
-        script.onload = initializeSearch;
-        document.head.appendChild(script);
-    }
+    initializeSearch();
 
     function initializeSearch() {
-        if (fuse) return; // Already initialized
-
         const searchInputWrapper = document.querySelector('.search-input-wrapper');
         const searchClearBtn = document.getElementById('search-clear-btn');
 
@@ -562,34 +558,94 @@ document.addEventListener('DOMContentLoaded', function () {
                 searchInput.value = '';
                 updateClearButtonState();
                 if (searchInputWrapper) searchInputWrapper.classList.remove('is-loading');
+                if (searchResults) searchResults.classList.remove('is-searching');
                 handleSearch('');
                 searchInput.focus();
             });
         }
 
-        // Fetch index.json dynamically from data attribute
-        const searchIndexUrl = searchInput.dataset.searchIndexUrl || '/index.json';
-        fetch(searchIndexUrl)
-            .then(response => response.json())
-            .then(data => {
-                const searchIndex = data;
-                fuse = new Fuse(searchIndex, {
-                    keys: [
-                        { name: "asin", weight: 1 },
-                        { name: "title", weight: 0.7 },
-                        { name: "contents", weight: 0.2 },
-                        { name: "categories", weight: 1 }, // 0.1から1へ大幅強化
-                        { name: "specs", weight: 0.3 }
-                    ],
+        function getFilterParams() {
+            return {
+                scoreMin: document.getElementById('filter-score-min')?.value || '',
+                scoreMax: document.getElementById('filter-score-max')?.value || '',
+                priceMin: document.getElementById('filter-price-min')?.value || '',
+                priceMax: document.getElementById('filter-price-max')?.value || ''
+            };
+        }
 
-                    threshold: 0.2, // 0.4から0.2へ厳格化。日本語の短いワードでの誤一致を抑制。
-                    distance: 100,
-                    includeScore: true,
-                    ignoreLocation: true, // Search in entire text
-                    useExtendedSearch: true
-                });
-            })
-            .catch(err => console.error('Error loading search index:', err));
+        // Fetch index.json / worker dynamically from data attribute
+        const searchIndexUrl = searchInput.dataset.searchIndexUrl || '/index.json';
+        const searchWorkerUrl = searchInput.dataset.searchWorkerUrl || '/js/search-worker.js';
+
+        function fallbackToMainThreadFuse() {
+            if (isWorkerFailed) return;
+            isWorkerFailed = true;
+            searchWorker = null;
+
+            const initFuse = () => {
+                fetch(searchIndexUrl)
+                    .then(response => response.json())
+                    .then(data => {
+                        const searchIndex = data;
+                        fuse = new Fuse(searchIndex, {
+                            keys: [
+                                { name: "asin", weight: 1 },
+                                { name: "title", weight: 0.7 },
+                                { name: "contents", weight: 0.2 },
+                                { name: "categories", weight: 1 },
+                                { name: "specs", weight: 0.3 }
+                            ],
+                            threshold: 0.2,
+                            distance: 100,
+                            includeScore: true,
+                            ignoreLocation: true,
+                            useExtendedSearch: true
+                        });
+                    })
+                    .catch(err => console.error('Error loading search index fallback:', err));
+            };
+
+            if (globalThis.Fuse) {
+                initFuse();
+            } else {
+                const script = document.createElement('script');
+                script.src = 'https://cdn.jsdelivr.net/npm/fuse.js@6.6.2';
+                script.integrity = 'sha256-xXM5w/oWsdadmmtGdJqBOe+NT8m7/kgUT/iXqn1CIuw=';
+                script.crossOrigin = 'anonymous';
+                script.onload = initFuse;
+                document.head.appendChild(script);
+            }
+        }
+
+        // Web Worker の初期化
+        if (typeof Worker !== 'undefined') {
+            try {
+                searchWorker = new Worker(searchWorkerUrl);
+                searchWorker.onmessage = (e) => {
+                    const data = e.data || {};
+                    if (data.type === 'SEARCH_RESULTS') {
+                        if (data.searchId === latestSearchId) {
+                            displayResults(data.results);
+                            if (searchInputWrapper) searchInputWrapper.classList.remove('is-loading');
+                            if (searchResults) searchResults.classList.remove('is-searching');
+                        }
+                    } else if (data.type === 'ERROR') {
+                        console.warn('Search worker error, falling back to main thread:', data.error);
+                        fallbackToMainThreadFuse();
+                    }
+                };
+                searchWorker.onerror = (err) => {
+                    console.warn('Search worker error event, falling back to main thread:', err);
+                    fallbackToMainThreadFuse();
+                };
+                searchWorker.postMessage({ type: 'INIT', searchIndexUrl });
+            } catch (e) {
+                console.warn('Could not initialize Search Worker:', e);
+                fallbackToMainThreadFuse();
+            }
+        } else {
+            fallbackToMainThreadFuse();
+        }
 
         function showSkeletonLoading() {
             if (!searchResults) return;
@@ -635,29 +691,50 @@ document.addEventListener('DOMContentLoaded', function () {
             if (trimmedQuery.length === 0) {
                 displaySearchTips();
                 if (searchInputWrapper) searchInputWrapper.classList.remove('is-loading');
+                if (searchResults) searchResults.classList.remove('is-searching');
                 return;
             }
 
             if (!isValidQuery(query)) {
-                // 有効なクエリでない（平仮名1文字など）ときはアクションを起こさない（ヒントまたは前回の結果を維持）
+                // 有効なクエリでない（平仮名1文字など）ときはアクションを起こさない
                 if (searchInputWrapper) searchInputWrapper.classList.remove('is-loading');
+                if (searchResults) searchResults.classList.remove('is-searching');
                 return;
             }
 
-            // 検索中表示
-            showSkeletonLoading();
+            const searchId = ++searchIdSequence;
+            latestSearchId = searchId;
 
-            // 検索と表示
-            const results = searchWithRerank(query);
-            displayResults(results);
-
-            if (searchInputWrapper) {
-                searchInputWrapper.classList.remove('is-loading');
+            // 既存の結果が既にある場合はDOM破棄せず半透明化、初回/Tips時はスケルトン表示
+            const hasItems = searchResults && (searchResults.querySelector('.search-result-item') || searchResults.querySelector('.search-empty-state'));
+            if (!hasItems) {
+                showSkeletonLoading();
+            } else {
+                searchResults.classList.add('is-searching');
+                searchResults.classList.add('active');
             }
-        }, 300);
 
+            if (searchWorker && !isWorkerFailed) {
+                searchWorker.postMessage({
+                    type: 'SEARCH',
+                    query,
+                    filters: getFilterParams(),
+                    searchId
+                });
+            } else if (fuse) {
+                const results = searchWithRerank(query);
+                displayResults(results);
+                if (searchInputWrapper) {
+                    searchInputWrapper.classList.remove('is-loading');
+                }
+                if (searchResults) {
+                    searchResults.classList.remove('is-searching');
+                }
+            }
+        }, 150);
 
         function searchWithRerank(query) {
+            if (!fuse) return [];
             return rerankResults(fuse.search(query), query);
         }
 
@@ -675,7 +752,6 @@ document.addEventListener('DOMContentLoaded', function () {
                 searchInput.value = directAsin;
                 updateClearButtonState();
                 if (searchInputWrapper) searchInputWrapper.classList.add('is-loading');
-                showSkeletonLoading();
                 handleSearch(directAsin);
                 return true;
             }
@@ -684,7 +760,6 @@ document.addEventListener('DOMContentLoaded', function () {
             if (isShortAmazonUrl(trimmed)) {
                 currentResolvingUrl = trimmed;
                 if (searchInputWrapper) searchInputWrapper.classList.add('is-loading');
-                showSkeletonLoading();
 
                 resolveShortUrl(trimmed).then(resolvedUrl => {
                     // 解決中に別の入力が行われた場合は破棄
@@ -720,7 +795,7 @@ document.addEventListener('DOMContentLoaded', function () {
         // Event Listeners
         searchInput.addEventListener('input', (e) => {
             updateClearButtonState();
-            if (!fuse) return;
+            if (!searchWorker && !fuse) return;
             const isPaste = e.inputType === 'insertFromPaste' || e.inputType === 'insertFromYank';
             if (e.isComposing && !isPaste) return;
 
@@ -732,7 +807,6 @@ document.addEventListener('DOMContentLoaded', function () {
             const query = rawVal.replaceAll('　', ' ');
             if (isValidQuery(query)) {
                 if (searchInputWrapper) searchInputWrapper.classList.add('is-loading');
-                showSkeletonLoading();
             } else {
                 if (searchInputWrapper) searchInputWrapper.classList.remove('is-loading');
             }
@@ -742,7 +816,7 @@ document.addEventListener('DOMContentLoaded', function () {
         // コピペ（ペースト）時にも即時にURL判定・検索を実行
         searchInput.addEventListener('paste', (e) => {
             updateClearButtonState();
-            if (!fuse) return;
+            if (!searchWorker && !fuse) return;
 
             // クリップボードデータから即時判定
             const pastedText = e.clipboardData?.getData('text') || '';
@@ -771,7 +845,7 @@ document.addEventListener('DOMContentLoaded', function () {
         // IME入力確定時にも検索を実行
         searchInput.addEventListener('compositionend', (e) => {
             updateClearButtonState();
-            if (!fuse) return;
+            if (!searchWorker && !fuse) return;
             const rawVal = e.target.value;
             if (processPossibleUrlInput(rawVal)) {
                 return;
@@ -942,8 +1016,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 const query = currentState.query;
                 if (!isValidQuery(query)) {
                     displaySearchTips();
-                } else if (fuse) {
-                    displayResults(searchWithRerank(query));
+                } else if (typeof handleSearch === 'function') {
+                    handleSearch(query);
                 }
             }
 
@@ -970,8 +1044,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 const query = currentState.query;
                 if (!isValidQuery(query)) {
                     displaySearchTips();
-                } else if (fuse) {
-                    displayResults(searchWithRerank(query));
+                } else if (typeof handleSearch === 'function') {
+                    handleSearch(query);
                 }
             }
         });
