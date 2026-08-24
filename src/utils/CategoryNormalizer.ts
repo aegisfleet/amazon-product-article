@@ -90,6 +90,9 @@ export class CategoryNormalizer {
     'アウトドア',
     'ハンドル',
     'ハンドルコントローラー',
+    'スマートフォン',
+    'スマホ',
+    '携帯電話',
   ];
 
   private static readonly HIGH_PRIORITY_KEYWORDS = [
@@ -388,6 +391,14 @@ export class CategoryNormalizer {
         'honor',
         'huawei',
         'xiaomi',
+        'moto',
+        'y!mobile',
+        'ワイモバイル',
+        'android',
+        'アンドロイド',
+        'uq mobile',
+        'uqモバイル',
+        '格安スマホ',
       ];
       if (!phoneKeywords.some((k) => lowerTitle.includes(k))) {
         return false;
@@ -518,6 +529,11 @@ export class CategoryNormalizer {
       /ExcludeASIN/i,
       /返品不可/i,
       /お客様都合/i,
+      /ラインナップ/i,
+      /申込(?:ガイド)?/i,
+      /\b[A-Za-z0-9]+All$/i,
+      /^moto\s+/i,
+      /おうちで機種変更/i,
     ];
 
     if (invalidPatterns.some((pattern) => pattern.test(name))) {
