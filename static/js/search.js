@@ -235,7 +235,15 @@ function rerankResults(results, query) {
         freshness: 0.05 + (0.05 * intentStrength)
     };
 
-    return validResults
+    const isAsinQuery = isAsin(query);
+    const scoreMin = isAsinQuery ? 0 : (Number.parseFloat(document.getElementById('filter-score-min')?.value) || 0);
+    const scoreMax = !isAsinQuery && document.getElementById('filter-score-max')?.value !== '' ? (Number.parseFloat(document.getElementById('filter-score-max')?.value) || 100) : Number.MAX_SAFE_INTEGER;
+    const priceMin = Number.parseFloat(document.getElementById('filter-price-min')?.value) || 0;
+    const priceMax = document.getElementById('filter-price-max')?.value !== '' ? (Number.parseFloat(document.getElementById('filter-price-max')?.value) || Number.MAX_SAFE_INTEGER) : Number.MAX_SAFE_INTEGER;
+
+    let unfilteredScoreCount = 0;
+
+    const rerankedList = validResults
         .map(result => {
             const item = result.item || {};
             const textScore = getNormalizedFuseScore(result.score);
@@ -262,27 +270,27 @@ function rerankResults(results, query) {
             const score = Number.parseFloat(item.score) || 0;
             const price = Number.parseFloat(item.price_value) || 0;
 
-            const scoreMin = Number.parseFloat(document.getElementById('filter-score-min')?.value) || 0;
-            const scoreMax = Number.parseFloat(document.getElementById('filter-score-max')?.value) || 100;
-            const priceMin = Number.parseFloat(document.getElementById('filter-price-min')?.value) || 0;
-            const priceMax = Number.parseFloat(document.getElementById('filter-price-max')?.value) || Number.MAX_SAFE_INTEGER;
+            if (price < priceMin) return false;
+            if (Number.isFinite(priceMax) && price > priceMax) return false;
+
+            // 価格条件を満たす全スコア候補数をカウント
+            unfilteredScoreCount++;
 
             if (score < scoreMin) return false;
-            // Only apply max filters if they have a numeric value (placeholder is different)
-            const scoreMaxInput = document.getElementById('filter-score-max');
-            if (scoreMaxInput && scoreMaxInput.value !== '' && score > scoreMax) return false;
-            
-            const priceMaxInput = document.getElementById('filter-price-max');
-            if (price < priceMin) return false;
-            if (priceMaxInput && priceMaxInput.value !== '' && price > priceMax) return false;
+            if (Number.isFinite(scoreMax) && score > scoreMax) return false;
 
             return true;
         })
         .sort((a, b) => b.rerankScore - a.rerankScore);
+
+    return {
+        results: rerankedList,
+        unfilteredScoreCount
+    };
 }
 
 function searchWithRerank(fuseInstance, query) {
-    if (!fuseInstance) return [];
+    if (!fuseInstance) return { results: [], unfilteredScoreCount: 0 };
     return rerankResults(fuseInstance.search(query), query);
 }
 
@@ -630,7 +638,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     const data = e.data || {};
                     if (data.type === 'SEARCH_RESULTS') {
                         if (data.searchId === latestSearchId) {
-                            displayResults(data.results);
+                            displayResults(data.results, data.unfilteredScoreCount || 0);
                             if (searchInputWrapper) searchInputWrapper.classList.remove('is-loading');
                             if (searchResults) searchResults.classList.remove('is-searching');
                         }
@@ -710,8 +718,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
         function executeFallbackSearch(query) {
             if (!fuse) return;
-            const results = searchWithRerank(fuse, query);
-            displayResults(results);
+            const { results, unfilteredScoreCount } = searchWithRerank(fuse, query);
+            displayResults(results, unfilteredScoreCount);
             stopSearchLoading();
         }
 
@@ -1225,13 +1233,18 @@ document.addEventListener('DOMContentLoaded', function () {
         container.appendChild(header);
     }
 
-    function renderEmptyState() {
+    function renderEmptyState(unfilteredScoreCount = 0) {
         const query = searchInput ? searchInput.value.replaceAll('　', ' ').trim() : '';
         const emptyState = document.createElement('div');
         emptyState.className = 'search-empty-state';
 
         // 空結果時もヘッダー（0件 + フィルタチップ）を表示する
         renderResultHeader(0, emptyState);
+
+        const scoreMinEl = document.getElementById('filter-score-min');
+        const isScoreFiltered = scoreMinEl && Number.parseFloat(scoreMinEl.value) > 0;
+        const isAsinOrUrl = isAsin(query) || Boolean(extractAsinFromUrl(query)) || isShortAmazonUrl(query);
+        const hasScoreRelaxationCandidates = !isAsinOrUrl && isScoreFiltered && unfilteredScoreCount > 0;
 
         const svgNamespace = "http://www.w3.org/2000/svg";
         const svg = document.createElementNS(svgNamespace, 'svg');
@@ -1265,23 +1278,71 @@ document.addEventListener('DOMContentLoaded', function () {
 
         const title = document.createElement('span');
         title.className = 'empty-title';
-        title.textContent = '見つかりませんでした';
+        title.textContent = hasScoreRelaxationCandidates ? 'スコア条件に合う商品は見つかりませんでした' : '見つかりませんでした';
         emptyState.appendChild(title);
 
         const desc = document.createElement('span');
         desc.className = 'empty-desc';
-        desc.textContent = '条件を変えて再度お試しください。';
+        desc.textContent = hasScoreRelaxationCandidates
+            ? `全スコア（70点未満を含む）対象では ${unfilteredScoreCount}件 の商品があります。`
+            : '条件を変えて再度お試しください。';
         emptyState.appendChild(desc);
 
-        // 商品調査リクエスト案内（未調査商品への導線を最優先で表示）
+        // スコア緩和提案ボックス（全スコアなら該当商品がある場合）
+        if (hasScoreRelaxationCandidates) {
+            const relaxBox = document.createElement('div');
+            relaxBox.className = 'empty-score-relax-box';
+
+            const relaxHeader = document.createElement('div');
+            relaxHeader.className = 'empty-score-relax-header';
+
+            const relaxIcon = document.createElement('span');
+            relaxIcon.className = 'empty-score-relax-icon';
+            relaxIcon.setAttribute('aria-hidden', 'true');
+            relaxIcon.textContent = '💡';
+            relaxHeader.appendChild(relaxIcon);
+
+            const relaxTitle = document.createElement('span');
+            relaxTitle.className = 'empty-score-relax-title';
+            relaxTitle.textContent = `全スコア対象なら ${unfilteredScoreCount}件 の商品が見つかりました`;
+            relaxHeader.appendChild(relaxTitle);
+            relaxBox.appendChild(relaxHeader);
+
+            const relaxBtn = document.createElement('button');
+            relaxBtn.type = 'button';
+            relaxBtn.className = 'empty-score-relax-btn';
+            relaxBtn.setAttribute('aria-label', `全スコアの商品（${unfilteredScoreCount}件）を表示する`);
+
+            const btnText = document.createElement('span');
+            btnText.textContent = `全スコアの商品（${unfilteredScoreCount}件）を表示する`;
+            relaxBtn.appendChild(btnText);
+
+            const arrowIcon = document.createElement('span');
+            arrowIcon.className = 'empty-score-relax-arrow';
+            arrowIcon.setAttribute('aria-hidden', 'true');
+            arrowIcon.textContent = ' →';
+            relaxBtn.appendChild(arrowIcon);
+
+            relaxBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                if (scoreMinEl) scoreMinEl.value = '0';
+                updateFilterBadge();
+                updateSearchActiveChips();
+                const q = searchInput.value.replaceAll('　', ' ');
+                if (isValidQuery(q)) handleSearch(q);
+            });
+
+            relaxBox.appendChild(relaxBtn);
+            emptyState.appendChild(relaxBox);
+        }
+
+        // 商品調査リクエスト案内（未調査商品への導線）
         const requestFormUrl =
             searchInput.dataset.requestFormUrl ||
             document.getElementById('request-link')?.getAttribute('href') ||
             document.querySelector('.request-link')?.getAttribute('href');
 
         if (requestFormUrl) {
-            const isAsinOrUrl = isAsin(query) || Boolean(extractAsinFromUrl(query)) || isShortAmazonUrl(query);
-
             const requestBox = document.createElement('div');
             requestBox.className = `empty-request-box${isAsinOrUrl ? ' is-asin-query' : ''}`;
 
@@ -1567,11 +1628,11 @@ document.addEventListener('DOMContentLoaded', function () {
         return resultItem;
     }
 
-    function displayResults(results) {
+    function displayResults(results, unfilteredScoreCount = 0) {
         searchResults.textContent = '';
 
         if (results.length === 0) {
-            renderEmptyState();
+            renderEmptyState(unfilteredScoreCount);
             return;
         }
 

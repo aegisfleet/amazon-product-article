@@ -141,6 +141,17 @@ describe('Search UI XSS Protection', () => {
     expect(searchJsContent).toContain('request-link');
   });
 
+  test('static/js/search.js and search-worker.js should support score bypass for ASIN and score relaxation suggestion for keywords', () => {
+    const workerPath = path.join(__dirname, '../../../static/js/search-worker.js');
+    const workerContent = fs.readFileSync(workerPath, 'utf8');
+
+    expect(workerContent).toContain('isAsinQuery');
+    expect(workerContent).toContain('unfilteredScoreCount');
+    expect(searchJsContent).toContain('empty-score-relax-box');
+    expect(searchJsContent).toContain('empty-score-relax-btn');
+    expect(searchJsContent).toContain('unfilteredScoreCount');
+  });
+
   test('static/js/search.js should execute DOMContentLoaded without runtime errors', () => {
     let domContentLoadedCallback: ((e?: any) => void) | null = null;
     mockDocument.addEventListener = jest.fn((event: string, callback: (e?: any) => void) => {
