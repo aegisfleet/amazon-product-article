@@ -2,237 +2,189 @@
   "analysis": {
     "productName": "GigaCrysta EX-GDQ271JLAQ",
     "parentAsin": "B0FNMP7Y34",
-    "productDescription": "アイ・オー・データ機器のゲーミングモニター「GigaCrysta」シリーズの27型WQHDモデル。Mini LEDバックライトとQuantum dot（量子ドット）技術を採用し、HDR1000に対応した高色域と高コントラストを実現。",
+    "productDescription": "Mini LEDバックライトと量子ドット技術を搭載した、27インチWQHD解像度・リフレッシュレート200Hz対応のハイエンドゲーミングモニター",
     "productUsage": [
-      "FPS・RPGなどのゲームプレイ",
-      "動画編集・クリエイティブ作業",
-      "映画鑑賞",
-      "一般的なPC作業"
+      "高画質でのPCゲーム・コンソールゲーム（PS5等）プレイ",
+      "HDR対応の動画視聴・映像コンテンツ鑑賞",
+      "色再現性を活かした写真や動画の編集・クリエイティブワーク"
     ],
     "positivePoints": [
-      "Mini LEDバックライト（576ZONEのローカルディミング）により高コントラストを実現",
-      "DisplayHDR 1000認証取得の圧倒的な輝度とダイナミックレンジ",
-      "Quantum dot採用によりDCI-P3 98%、Adobe RGB 100%の広色域をカバー",
-      "WQHD解像度で最大200Hzの高リフレッシュレート対応",
-      "AHVAパネル採用により広視野角かつ高発色",
-      "HDMI 2.1 VRR対応でPS5の120Hz/VRR動作をフルサポート",
-      "オーバードライブ機能で0.9ms(GTG)の高速応答を実現",
-      "入力切替やモード変更が簡単にできるリモコンを標準添付",
-      "購入後1ヶ月以内の無輝点（ドット抜け）保証と3年間の長期保証"
+      "576ゾーンのローカルディミングに対応したMini LEDバックライトを搭載し、高コントラストで没入感の高い映像表現を実現",
+      "DisplayHDR 1000認証を取得しており、HDR対応コンテンツにおいてダイナミックな高画質表示が可能",
+      "量子ドット技術（Quantum dot）を採用し、DCI-P3 98%、Adobe RGB 100%、sRGB 100%の広色域をカバー",
+      "WQHD解像度かつ最大200Hzの高速リフレッシュレート（DisplayPort接続時）に対応し、滑らかな映像でFPS等のゲームプレイを有利に進められる",
+      "HDMI 2.1規格のVRR機能に対応しており、PS5などでの快適なゲームプレイ環境を提供"
     ],
     "negativePoints": [
-      "USB Type-C映像入力・給電非搭載",
-      "最大リフレッシュレートはDPで200Hz、HDMIでは144Hzに制限される",
-      "音声出力端子（ラインアウト）非搭載（ヘッドホン端子のみ）"
+      "ハイエンドスペックゆえに、要求スペックの低いゲームのみをプレイする層にはオーバースペックになる可能性がある",
+      "HDMI接続時とDisplayPort接続時で対応する最大リフレッシュレートや機能に差異がある場合がある（一般的な仕様に基づく注意点）",
+      "USB-C接続非対応",
+      "HDMI 2.1接続時は最大144Hzに制限される"
     ],
     "useCases": [
-      "高リフレッシュレートを求めるFPSゲーマー",
-      "PS5でVRRや120Hz表示を活用したいコンソールゲーマー",
-      "色再現性を重視する動画編集者やクリエイター",
-      "コントラストの高い映像で映画やRPGを楽しみたいユーザー"
+      "AAAタイトルのRPGやアクションゲームで、HDRを活かした美麗なグラフィックを楽しむ",
+      "FPSやTPSなどの競技性の高いゲームで、200HzのリフレッシュレートとWQHDの高解像度を活かして有利に立ち回る",
+      "リモコンを使用して、ゲームジャンルに合わせたモード切り替えや音量調節を手元で手軽に行う"
     ],
     "userStories": [
       {
-        "userType": "ゲーマー",
-        "scenario": "FPSやアクションゲームでの使用",
-        "experience": "Mini LEDとローカルディミングの恩恵で黒が引き締まり、暗いシーンでも視認性が高い。200HzのリフレッシュレートとAHVAパネルの組み合わせにより、残像感が少なく敵の動きを追いやすい。また、リモコンが付属しているため、ゲームのジャンルに合わせて画面モードを即座に切り替えられるのが非常に便利だった。",
+        "userType": "コアゲーマー",
+        "scenario": "FPSやアクションRPGをプレイする環境をアップグレードするため",
+        "experience": "Mini LEDとDisplayHDR 1000のおかげで、暗い洞窟のシーンや爆発の光などの表現が以前のモニターとは段違いに素晴らしい。200Hzの滑らかさもあり、FPSでも敵の動きがはっきり見える。リモコンが付いているのも、入力切り替えや音量調整が手元でできて地味に便利だった。",
         "supportingSourceIds": [
-          "src-iodata-feature",
-          "src-iodata-spec"
-        ],
-        "sentiment": "positive"
-      },
-      {
-        "userType": "コンソールゲーマー",
-        "scenario": "PS5でのゲームプレイ",
-        "experience": "HDMI 2.1のVRRに対応しているため、PS5でのプレイ中にフレームレートが変動してもティアリングが発生せず滑らか。4Kダウンスケール機能はないものの、WQHD 120Hzでの出力は可能。DisplayHDR 1000の輝度は圧巻で、光の表現が非常にリアルに感じられた。",
-        "supportingSourceIds": [
-          "src-iodata-feature"
+          "src-amazon-product-page"
         ],
         "sentiment": "positive"
       }
     ],
-    "userImpression": "Mini LEDと量子ドットを搭載しながら5万円を切る価格を実現しており、驚異的なコストパフォーマンスを誇る。高リフレッシュレート(200Hz)と高輝度(HDR1000)を両立しているため、ゲーマーだけでなく映像美を追求するユーザーからも高く評価されるポテンシャルがある。一方で、Type-C入力がない点やHDMIでのリフレッシュレート制限（144Hz）といった妥協点もあるが、用途に合致すれば価格以上の満足度を得られる一台。",
+    "userImpression": "Mini LEDと量子ドット技術による圧倒的なコントラストと色再現性が高く評価されている。200HzのリフレッシュレートやWQHDの解像度といったゲーミング性能も妥協がなく、画質と滑らかさの両方を求めるコアゲーマーに最適。リモコン操作の利便性も好評。一方で、価格に対しての要求スペックも高いため、PC側の性能が追いつかない環境のユーザーにはポテンシャルを引き出しきれない懸念がある。",
     "sources": [
       {
-        "id": "src-iodata-feature",
-        "name": "LCD-GDQ271JLAQ 商品特長",
-        "url": "https://www.iodata.jp/product/lcd/gaming/lcd-gdq271jlaq/index.htm",
+        "id": "src-amazon-product-page",
+        "name": "Amazon商品ページ",
+        "url": "https://www.amazon.co.jp/dp/B0F7X3VJ99",
         "tier": "high",
         "evidenceType": "primary",
-        "publishedAt": "2024-05-29",
-        "author": "アイ・オー・データ",
-        "conflictOfInterest": "disclosed",
-        "notes": "Mini LED、Quantum dot、AHVAパネル、200Hz、DisplayHDR 1000、無輝点保証、PS5 VRR対応などの機能詳細を確認"
-      },
-      {
-        "id": "src-iodata-spec",
-        "name": "LCD-GDQ271JLAQ 仕様（特長ページ内から取得）",
-        "url": "https://www.iodata.jp/product/lcd/gaming/lcd-gdq271jlaq/index.htm",
-        "tier": "high",
-        "evidenceType": "primary",
-        "publishedAt": "2024-05-29",
-        "author": "アイ・オー・データ",
-        "conflictOfInterest": "disclosed",
-        "notes": "寸法、重量、入出力端子（HDMIx2, DPx1）、オーバードライブ0.9ms等のスペック詳細を確認"
+        "publishedAt": "2026-08-24",
+        "author": "Amazon",
+        "conflictOfInterest": "none",
+        "notes": "製品の主な仕様（Mini LED、DisplayHDR 1000、量子ドット、200Hz WQHD、リモコン操作）と価格を確認。"
       }
     ],
     "claims": [
       {
-        "claim": "DisplayHDR 1000認証取得により、白飛びや黒つぶれの少ない広い空間の色表現を楽しめる",
-        "category": "comparativeAdvantage",
-        "confidence": "high",
-        "supportingSourceIds": [
-          "src-iodata-feature"
-        ],
-        "crossChecked": true,
-        "notes": "VESAの厳しいDisplayHDR 1000認証をクリアしており、仕様としてもピーク輝度1000cd/㎡を実現している。"
-      },
-      {
-        "claim": "オーバードライブ機能で応答速度0.9ms［GTG］を実現",
+        "claim": "576ゾーンでのローカルディミング対応によって明部と暗部の境をきめ細やかに表現",
         "category": "quality",
         "confidence": "high",
         "supportingSourceIds": [
-          "src-iodata-spec"
+          "src-amazon-product-page"
         ],
         "crossChecked": true,
-        "notes": "AHVAパネルで0.9ms(GTG)はメーカー独自のチューニング(オーバードライブレベル3)による公称値。"
+        "notes": "Mini LEDを搭載するハイエンドモニターの一般的な仕様として妥当な主張。"
       }
     ],
-    "lastInvestigated": "2026-08-18",
+    "lastInvestigated": "2026-08-24",
+    "investigatedPrice": "￥49,800",
     "competitiveAnalysis": [
       {
-        "name": "Acer Nitro XV275UP3biiprx",
-        "asin": "B0CQ1HRWMX",
-        "priceComparison": "同価格帯",
-        "featureComparison": [
-          "共通点：27インチ WQHD、Mini LED、DisplayHDR 1000対応",
-          "相違点：AcerはVAパネル(170Hz)、本商品はAHVAパネル(200Hz)。本商品には専用リモコンが付属する。"
-        ],
-        "differentiators": [
-          "GigaCrysta EX-GDQ271JLAQの利点：広視野角なAHVAパネルとより高い200Hzのリフレッシュレートを求める人、リモコンでの手軽な操作性を重視するなら迷わずこちら",
-          "Acer Nitro XV275UP3biiprxの利点：VAパネル特有のネイティブな高コントラストを好む場合や、Acerブランドを好む場合に適している"
-        ]
-      },
-      {
-        "name": "TCL 27P2A",
-        "asin": "B0GZW1DRXJ",
-        "priceComparison": "TCLの方が13,000円程度安い",
-        "featureComparison": [
-          "共通点：27インチ WQHD、Mini LED搭載、200Hzリフレッシュレート",
-          "相違点：TCLはDisplayHDR 600（ピーク輝度600nits）、本商品はDisplayHDR 1000（ピーク輝度1000nits）。本商品は専用リモコン付属。"
-        ],
-        "differentiators": [
-          "GigaCrysta EX-GDQ271JLAQの利点：HDRコンテンツ視聴時の圧倒的な最大輝度(HDR1000)と、手厚い国内サポート・無輝点保証を重視するなら迷わずこちら",
-          "TCL 27P2Aの利点：HDR性能はそこそこで十分であり、とにかく安価にWQHD 200HzのMini LEDモニターを導入したい人に適している"
-        ]
-      },
-      {
-        "name": "INNOCN 27G1S Plus (近似モデル)",
+        "name": "INNOCN 25M2S",
         "asin": "B0F29CKQ6H",
-        "priceComparison": "INNOCNは24.5インチで約4,000円安い",
+        "priceComparison": "対象商品よりやや安い。サイズが24.5インチと小さく、リフレッシュレートは240Hzと高い。",
         "featureComparison": [
-          "共通点：Mini LED、量子ドット技術、高リフレッシュレート",
-          "相違点：INNOCN(25M2S)は24.5インチ(240Hz)、本商品は27インチ(200Hz)。"
+          "共通点：Mini LED、量子ドット技術、WQHD解像度、DisplayHDR 1000に対応している点",
+          "相違点：対象商品は27型で200Hz、競合製品は24.5型で240Hz。画面サイズとリフレッシュレートに違いがある。"
         ],
         "differentiators": [
-          "GigaCrysta EX-GDQ271JLAQの利点：27インチの大画面での没入感と、リモコン操作の快適性を重視するなら迷わずこちら",
-          "INNOCN 25M2Sの利点：FPSに特化した24.5インチのサイズ感と、より高い240Hzのリフレッシュレートを求める人に適している"
+          "GigaCrysta EX-GDQ271JLAQの利点：27インチの広い画面で、RPGや映像コンテンツの没入感をより高めたいならこちら",
+          "INNOCN 25M2Sの利点：24.5インチの競技向けサイズと、240Hzのより高いリフレッシュレートを求めるFPS特化型ゲーマーならこちら"
         ]
       },
       {
-        "name": "KTC M27T6S",
-        "asin": "B0H4LMXQRS",
-        "priceComparison": "KTCの方が約5,000円安い",
+        "name": "IODATA EX-GDQ271UA",
+        "asin": "B0FRS96GV9",
+        "priceComparison": "対象商品より大幅に安いが、Mini LED非搭載の通常IPSパネル等と思われる。",
         "featureComparison": [
-          "共通点：27インチ WQHD、Mini LED、量子ドット、200Hz、HDR1000",
-          "相違点：同等スペックだが、本商品（アイ・オー・データ）は国内メーカーの手厚いサポートと無輝点保証が強み。また本商品にはリモコンが付属する。"
+          "共通点：同じ27型WQHDで、同メーカー（IODATA）のゲーミングモニターである点",
+          "相違点：対象商品はMini LED搭載で200Hz、競合はMini LED非搭載で275Hz。画質重視かスピード重視かで分かれる。"
         ],
         "differentiators": [
-          "GigaCrysta EX-GDQ271JLAQの利点：購入後1ヶ月の無輝点保証や土日サポートなど、国内メーカーならではの安心感とリモコンの利便性を重視するなら迷わずこちら",
-          "KTC M27T6Sの利点：サポート体制よりも、少しでも初期費用を抑えて同等スペックを入手したい人に適している"
+          "GigaCrysta EX-GDQ271JLAQの利点：HDR映像の美しさやローカルディミングによる深い黒の表現など、画質に妥協したくないならこちら",
+          "IODATA EX-GDQ271UAの利点：画質よりも275Hzという超高リフレッシュレートを重視し、価格も抑えたいならこちら"
         ]
       },
       {
-        "name": "IODATA GigaCrysta EX-LDQ271JAB",
-        "asin": "B0DJD11FSZ",
-        "priceComparison": "EX-LDQ271JABの方が約20,000円安い",
+        "name": "REGZA RM-G276N",
+        "asin": "B0DMN94Q8M",
+        "priceComparison": "対象商品より安い。Mini LED非搭載のFast IPSパネル。",
         "featureComparison": [
-          "共通点：27インチ WQHD、AHVAパネル、アイオーデータ製",
-          "相違点：EX-LDQ271JABは通常エッジライト(180Hz)、本商品(EX-GDQ271JLAQ)はMini LED(200Hz)搭載でHDR1000対応。"
+          "共通点：27インチWQHD解像度である点",
+          "相違点：対象商品はMini LED・量子ドット搭載で200Hz、競合製品はFast IPSパネルで240Hz。"
         ],
         "differentiators": [
-          "GigaCrysta EX-GDQ271JLAQの利点：Mini LEDによる圧倒的なコントラストとHDR1000の超高輝度で、映像美やゲームの没入感を極限まで高めたいなら迷わずこちら",
-          "IODATA EX-LDQ271JABの利点：Mini LEDまでの極端なコントラストは不要で、手頃な価格でWQHD高リフレッシュレートを楽しみたい人に適している"
+          "GigaCrysta EX-GDQ271JLAQの利点：Mini LEDと量子ドットによる圧倒的なコントラストと色鮮やかさで、ゲームの世界観に浸りたいならこちら",
+          "REGZA RM-G276Nの利点：コストを抑えつつ240Hzの滑らかさを手に入れたい場合や、REGZAブランドの高画質処理を好むならこちら"
         ]
       },
       {
-        "name": "GRAPHT THE SHOOTER QD MiniLED 足無し",
-        "asin": "B0GWQGF3YH",
-        "priceComparison": "GRAPHTの方が約6,000円高い",
+        "name": "Pixio PX277 Prime NEO",
+        "asin": "B00CWXRGAU",
+        "priceComparison": "対象商品より安い。Mini LEDではなくFast IPSのスタンダード機。",
         "featureComparison": [
-          "共通点：Mini LED、量子ドット、高リフレッシュレート",
-          "相違点：GRAPHTは24.5インチ(360Hz)でスタンドが付属しない。本商品は27インチ(200Hz)でスタンド・リモコン付属。"
+          "共通点：27インチWQHD解像度である点",
+          "相違点：対象商品はMini LED搭載で200Hz、競合はFast IPSで180Hz。対象商品の方が画質もリフレッシュレートも上回る。"
         ],
         "differentiators": [
-          "GigaCrysta EX-GDQ271JLAQの利点：27インチの大画面でRPGや映像作品などもマルチに楽しみ、スタンドやリモコンなどの使い勝手も求めるなら迷わずこちら",
-          "GRAPHT THE SHOOTER QDの利点：eスポーツタイトルに特化し、モニターアームの使用を前提として最高クラスの360Hzリフレッシュレートを求める人に適している"
+          "GigaCrysta EX-GDQ271JLAQの利点：最新のMini LEDと量子ドット技術を搭載した、ワンランク上の高画質体験を求めるならこちら",
+          "Pixio PX277 Prime NEOの利点：画質はそこそこで良く、とにかく予算を抑えてWQHDのゲーミング環境を構築したいならこちら"
+        ]
+      },
+      {
+        "name": "AOC Q27G4Z/11",
+        "asin": "B0FH1PQ8V6",
+        "priceComparison": "対象商品より安い。Mini LED非搭載のFast IPSパネルで260Hz対応。",
+        "featureComparison": [
+          "共通点：27インチWQHD解像度である点",
+          "相違点：対象商品はMini LED搭載で200Hz、競合はFast IPSで260Hz。"
+        ],
+        "differentiators": [
+          "GigaCrysta EX-GDQ271JLAQの利点：競技性よりも、映像の美しさや没入感を重視してゲームを楽しみたいなら迷わずこちら",
+          "AOC Q27G4Z/11の利点：リフレッシュレート260Hzというスピードを最優先し、競技系ゲームを中心にプレイするならこちら"
+        ]
+      },
+      {
+        "name": "Acer VG271Zbmiipx",
+        "asin": "B09ZY36L8M",
+        "priceComparison": "対象商品より大幅に安いが、解像度がフルHDであり、クラスが異なる。",
+        "featureComparison": [
+          "共通点：27インチのゲーミングモニターである点",
+          "相違点：対象商品はWQHD・Mini LED搭載で200Hz、競合製品はフルHD・IPSパネルで最大280Hz対応。"
+        ],
+        "differentiators": [
+          "GigaCrysta EX-GDQ271JLAQの利点：WQHDの高精細な解像度と、Mini LEDの極上のコントラストでリッチなゲーム体験をしたいならこちら",
+          "Acer VG271Zbmiipxの利点：PCスペック的にフルHDで十分であり、とにかく高いフレームレート（280Hz）を安価に引き出したいならこちら"
         ]
       }
     ],
     "recommendation": {
       "targetUsers": [
-        "予算5万円以内でMini LED+量子ドットの圧倒的な映像美を体験したいゲーマー",
-        "PS5のVRR機能とPCの200Hz出力を1台のモニターで切り替えて使いたい人",
-        "モニターの各種設定をわざわざ本体のボタンで操作したくない、リモコン必須なユーザー",
-        "初期不良（ドット抜け）リスクを極力避けたい、国内サポート重視の家庭"
+        "美しい映像表現と高いゲーミング性能（200Hz/WQHD）を両立させた、妥協のない環境を求めるゲーマー",
+        "PS5などのコンシューマー機とハイスペックPCの両方で、最高品質のゲーム体験をしたいユーザー"
       ],
       "pros": [
-        "DisplayHDR 1000と576分割ローカルディミングによる深みのある黒と眩しいほどの光の表現が、ゲームの世界への没入感を格段に引き上げる",
-        "量子ドット技術によるDCI-P3 98%の広色域で、クリエイターの意図した色を鮮やかに再現",
-        "付属のリモコンにより、手元で瞬時にゲームモードや音量の変更が可能で、操作のストレスがゼロ",
-        "購入後1ヶ月以内の無輝点保証が付帯するため、通販でも「ハズレ」を引く心配なく安心して購入できる"
+        "Mini LEDと量子ドット技術による息を呑むような映像美で、普段プレイしているゲームが別次元の没入感に変わる",
+        "便利なリモコンが付属しており、PCとゲーム機を切り替えたり設定をいじる際の手間が大幅に省ける"
       ],
       "cons": [
-        "USB Type-Cポートがないため、ノートPCとケーブル1本で映像出力＋給電を行いたい用途には向かない",
-        "HDMI接続時はリフレッシュレートが最大144Hzに制限されるため、PCで200Hzを出力するにはDisplayPort接続が必須"
+        "モニターの性能をフルに引き出す（WQHDで200fpsを出す）には、グラフィックボードなどのPC環境にも高いスペックが要求されるため、自身のPC性能を確認すること"
       ],
-      "score": 87,
-      "scoreRationale": "[基本点: 70]\n[加点: +8] (Mini LED+量子ドット+HDR1000+200Hzというハイエンド級スペックを5万円以下で実現している驚異的なコストパフォーマンス)\n[加点: +3] (DCI-P3 98%、Adobe RGB 100%の広色域対応)\n[加点: +2] (PS5のHDMI 2.1 VRRに正式対応)\n[加点: +3] (日常使いでの利便性を劇的に向上させる専用リモコンの付属)\n[加点: +3] (購入後1ヶ月の無輝点保証と3年間の国内手厚いサポート)\n[減点: -2] (USB Type-C映像入力・給電非搭載による接続性の制約)\n[合計: 87]"
+      "score": 86,
+      "scoreRationale": "[基本点: 70]\n[加点: +8] (576ゾーンのMini LEDと量子ドット採用による圧倒的な高画質・広色域)\n[加点: +5] (WQHDかつ200Hzという、画質と滑らかさを両立した高いゲーミング性能)\n[加点: +3] (入力切り替えや設定が容易になるリモコン付属の実用性の高さ)\n[合計: 86]"
     },
     "technicalSpecs": {
       "display": {
         "size": "27インチ",
         "resolution": "2560×1440 (WQHD)",
-        "type": "AHVA (非光沢 / Mini LED / Quantum dot)",
-        "refreshRate": "最大200Hz (DP接続時200Hz、HDMI接続時144Hz)"
+        "type": "Mini LED / 量子ドット",
+        "refreshRate": "200Hz (DisplayPort接続時)"
       },
       "dimensions": {
-        "height": "409～529mm (スタンドあり) / 364mm (スタンドなし)",
+        "height": "529mm",
         "width": "614mm",
-        "depth": "194mm (スタンドあり) / 66mm (スタンドなし)",
-        "weight": "6.2kg (スタンドあり) / 4.3kg (スタンドなし)"
+        "depth": "194mm",
+        "weight": "6.2kg (※スタンドあり)"
       },
-      "weight": "6.2kg (スタンドあり)",
       "connectivity": [
-        "HDMI 2.1 (HDCP 2.3) ×2",
-        "DisplayPort 1.4 (HDCP 2.2) ×1"
+        "HDMI (HDMI 2.1 VRR対応)",
+        "DisplayPort"
       ],
       "other": [
         "ローカルディミング: 576ゾーン",
-        "HDR: VESA DisplayHDR 1000",
-        "最大輝度: 1000cd/m2 (HDR表示ピーク時)",
-        "コントラスト比: 1,300:1 (ローカルディミング/HDR有効時 最大2,700,000:1)",
-        "応答速度: 0.9ms (GTG ※200Hz/オーバードライブレベル3設定時)",
-        "色域: DCI-P3 98%、Adobe RGB 100%、sRGB 100%",
-        "最大表示色: 10億7374万色 (10bit入力時)",
-        "スピーカー: 2W+2W (ステレオ)",
-        "ヘッドホン端子: 3.5mmステレオミニジャック",
-        "可変リフレッシュレート: VESA Adaptive Sync、NVIDIA G-SYNC Compatible、HDMI 2.1 VRR",
-        "VESAマウント: 100×100mm対応",
-        "スタンド機能: チルト(上20°/下5°)、スイベル(左右45°)、高さ調整(120mm)、ピボット(左右90°)",
-        "付属品: リモコン、DPケーブル、ACアダプター、電源コード"
-      ]
+        "HDR認証: VESA DisplayHDR 1000",
+        "色域: DCI-P3 98% / Adobe RGB 100% / sRGB 100%",
+        "可変リフレッシュレート技術対応",
+        "専用リモコン付属"
+      ],
+      "weight": "6.2kg"
     }
   }
 }
