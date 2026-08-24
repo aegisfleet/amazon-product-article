@@ -1251,6 +1251,58 @@ document.addEventListener('DOMContentLoaded', function () {
             emptyState.appendChild(hintArea);
         }
 
+        // 商品調査リクエスト案内
+        const requestFormUrl =
+            searchInput.dataset.requestFormUrl ||
+            document.getElementById('request-link')?.getAttribute('href') ||
+            document.querySelector('.request-link')?.getAttribute('href');
+
+        if (requestFormUrl) {
+            const requestBox = document.createElement('div');
+            requestBox.className = 'empty-request-box';
+
+            const requestHeader = document.createElement('div');
+            requestHeader.className = 'empty-request-header';
+
+            const requestIcon = document.createElement('span');
+            requestIcon.className = 'empty-request-icon';
+            requestIcon.setAttribute('aria-hidden', 'true');
+            requestIcon.textContent = '📝';
+            requestHeader.appendChild(requestIcon);
+
+            const requestTitle = document.createElement('span');
+            requestTitle.className = 'empty-request-title';
+            requestTitle.textContent = 'お探しの商品が見つかりませんか？';
+            requestHeader.appendChild(requestTitle);
+            requestBox.appendChild(requestHeader);
+
+            const requestDesc = document.createElement('p');
+            requestDesc.className = 'empty-request-desc';
+            requestDesc.textContent =
+                '調査リクエストフォームからAmazonのURLや商品名を送信していただければ、AIが徹底調査して比較記事を作成します！';
+            requestBox.appendChild(requestDesc);
+
+            const requestLink = document.createElement('a');
+            requestLink.href = requestFormUrl;
+            requestLink.target = '_blank';
+            requestLink.rel = 'noopener noreferrer';
+            requestLink.className = 'empty-request-btn';
+            requestLink.setAttribute('aria-label', '商品調査リクエストフォームを開く（新しいタブで開きます）');
+
+            const btnText = document.createElement('span');
+            btnText.textContent = '商品調査をリクエストする';
+            requestLink.appendChild(btnText);
+
+            const externalIcon = document.createElement('span');
+            externalIcon.className = 'empty-request-external-icon';
+            externalIcon.setAttribute('aria-hidden', 'true');
+            externalIcon.textContent = ' ↗';
+            requestLink.appendChild(externalIcon);
+
+            requestBox.appendChild(requestLink);
+            emptyState.appendChild(requestBox);
+        }
+
         searchResults.appendChild(emptyState);
         searchResults.classList.add('active');
         updateSearchResultsHeight();

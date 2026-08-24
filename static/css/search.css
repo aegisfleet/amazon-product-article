@@ -1039,3 +1039,83 @@
     visibility: hidden;
     pointer-events: none;
 }
+
+/* ===================================================
+   0件時の商品調査リクエスト案内
+   =================================================== */
+.empty-request-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 1rem;
+    padding: 1rem 1.25rem;
+    background: linear-gradient(135deg, rgba(var(--color-primary-rgb, 14, 165, 233), 0.07) 0%, rgba(var(--color-primary-rgb, 14, 165, 233), 0.02) 100%);
+    border: 1px solid color-mix(in srgb, var(--color-primary) 30%, var(--color-border));
+    border-radius: 12px;
+    width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.empty-request-header {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.empty-request-icon {
+    font-size: 1.1rem;
+}
+
+.empty-request-title {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--color-text-main);
+}
+
+.empty-request-desc {
+    font-size: 0.85rem;
+    color: var(--color-text-secondary);
+    line-height: 1.5;
+    margin: 0;
+    max-width: 32rem;
+}
+
+.empty-request-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.35rem;
+    margin-top: 0.35rem;
+    padding: 0.55rem 1.25rem;
+    background: var(--color-primary);
+    color: #ffffff;
+    font-size: 0.875rem;
+    font-weight: 600;
+    border-radius: 9999px;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+}
+
+.empty-request-btn:hover {
+    background: var(--color-primary-dark, var(--color-primary));
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.12);
+    color: #ffffff;
+}
+
+.empty-request-external-icon {
+    font-size: 0.9rem;
+    transition: transform 0.15s ease;
+}
+
+.empty-request-btn:hover .empty-request-external-icon {
+    transform: translate(2px, -2px);
+}
+
+[data-theme="dark"] .empty-request-box {
+    background: linear-gradient(135deg, rgba(var(--color-primary-rgb, 56, 189, 248), 0.12) 0%, rgba(255, 255, 255, 0.02) 100%);
+    border-color: color-mix(in srgb, var(--color-primary) 35%, rgba(255, 255, 255, 0.1));
+}
