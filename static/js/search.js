@@ -281,6 +281,11 @@ function rerankResults(results, query) {
         .sort((a, b) => b.rerankScore - a.rerankScore);
 }
 
+function searchWithRerank(fuseInstance, query) {
+    if (!fuseInstance) return [];
+    return rerankResults(fuseInstance.search(query), query);
+}
+
 function isStateEqual(state1, state2) {
     if (!state1 || !state2) return false;
     return state1.query === state2.query &&
@@ -686,33 +691,47 @@ document.addEventListener('DOMContentLoaded', function () {
             updateSearchResultsHeight();
         }
 
+        function stopSearchLoading() {
+            if (searchInputWrapper) searchInputWrapper.classList.remove('is-loading');
+            if (searchResults) searchResults.classList.remove('is-searching');
+        }
+
+        function prepareSearchLoadingUI() {
+            const hasItems = Boolean(
+                searchResults?.querySelector('.search-result-item') ||
+                searchResults?.querySelector('.search-empty-state')
+            );
+            if (!hasItems) {
+                showSkeletonLoading();
+            } else if (searchResults) {
+                searchResults.classList.add('is-searching', 'active');
+            }
+        }
+
+        function executeFallbackSearch(query) {
+            if (!fuse) return;
+            const results = searchWithRerank(fuse, query);
+            displayResults(results);
+            stopSearchLoading();
+        }
+
         handleSearch = debounce((query) => {
             const trimmedQuery = query.trim();
             if (trimmedQuery.length === 0) {
                 displaySearchTips();
-                if (searchInputWrapper) searchInputWrapper.classList.remove('is-loading');
-                if (searchResults) searchResults.classList.remove('is-searching');
+                stopSearchLoading();
                 return;
             }
 
             if (!isValidQuery(query)) {
-                // 有効なクエリでない（平仮名1文字など）ときはアクションを起こさない
-                if (searchInputWrapper) searchInputWrapper.classList.remove('is-loading');
-                if (searchResults) searchResults.classList.remove('is-searching');
+                stopSearchLoading();
                 return;
             }
 
             const searchId = ++searchIdSequence;
             latestSearchId = searchId;
 
-            // 既存の結果が既にある場合はDOM破棄せず半透明化、初回/Tips時はスケルトン表示
-            const hasItems = searchResults && (searchResults.querySelector('.search-result-item') || searchResults.querySelector('.search-empty-state'));
-            if (!hasItems) {
-                showSkeletonLoading();
-            } else {
-                searchResults.classList.add('is-searching');
-                searchResults.classList.add('active');
-            }
+            prepareSearchLoadingUI();
 
             if (searchWorker && !isWorkerFailed) {
                 searchWorker.postMessage({
@@ -721,22 +740,10 @@ document.addEventListener('DOMContentLoaded', function () {
                     filters: getFilterParams(),
                     searchId
                 });
-            } else if (fuse) {
-                const results = searchWithRerank(query);
-                displayResults(results);
-                if (searchInputWrapper) {
-                    searchInputWrapper.classList.remove('is-loading');
-                }
-                if (searchResults) {
-                    searchResults.classList.remove('is-searching');
-                }
+            } else {
+                executeFallbackSearch(query);
             }
         }, 150);
-
-        function searchWithRerank(query) {
-            if (!fuse) return [];
-            return rerankResults(fuse.search(query), query);
-        }
 
         let currentResolvingUrl = null;
 
