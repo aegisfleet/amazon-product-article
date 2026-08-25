@@ -1785,13 +1785,73 @@ a.competitor-preview:hover {
   transform: translateY(-2px);
 }
 
-/* 競合商品比較カードのCTAボタン群 (1行目: サイト内レビュー、2行目: 3モールボタングループ) */
+/* 競合商品比較カードのCTAボタン群 (1行目: 比較 + サイト内レビュー、2行目: 3モールボタングループ) */
 .competitor-links {
   display: flex;
   flex-direction: column;
   gap: 8px;
   margin-top: var(--spacing-md);
   width: 100%;
+}
+
+.competitor-action-row,
+.rec-action-row {
+  display: flex;
+  align-items: stretch;
+  gap: 8px;
+  width: 100%;
+}
+
+.competitor-action-row .btn-internal-small,
+.rec-action-row .btn-internal-small {
+  flex: 1;
+  min-width: 0;
+}
+
+.competitor-links .btn-compare-card,
+.rec-card-actions .btn-compare-card,
+.competitor-action-row .btn-compare-card,
+.rec-action-row .btn-compare-card {
+  flex: 1;
+  min-width: 0;
+  width: 100%;
+  min-height: 44px;
+  padding: 0.6rem 1rem;
+  font-size: 0.92rem;
+  font-weight: 700;
+  border-radius: var(--radius-md, 8px);
+  background-color: var(--color-bg-secondary, #f3f4f6);
+  color: var(--color-text-main, #374151);
+  border: 1px solid var(--color-border, #d1d5db);
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-xs, 0.5rem);
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.2s ease;
+  user-select: none;
+}
+
+.competitor-links .btn-compare-card:hover,
+.rec-card-actions .btn-compare-card:hover,
+.competitor-action-row .btn-compare-card:hover,
+.rec-action-row .btn-compare-card:hover {
+  background-color: var(--color-bg-hover, #e5e7eb);
+  color: var(--color-primary, #2563eb);
+  border-color: var(--color-primary, #2563eb);
+  transform: translateY(-1px);
+}
+
+.competitor-links .btn-compare-card.is-compared,
+.rec-card-actions .btn-compare-card.is-compared,
+.competitor-action-row .btn-compare-card.is-compared,
+.rec-action-row .btn-compare-card.is-compared {
+  background-color: rgba(37, 99, 235, 0.1);
+  color: var(--color-primary, #2563eb);
+  border-color: var(--color-primary, #2563eb);
+  font-weight: 700;
 }
 
 .competitor-links .btn-internal-small,
@@ -1821,6 +1881,33 @@ a.competitor-preview:hover {
   border-color: var(--md-sys-color-primary, #4F46E5);
   transform: translateY(-1px);
   box-shadow: 0 2px 6px rgba(79, 70, 229, 0.2);
+}
+
+[data-theme="dark"] .competitor-links .btn-compare-card,
+[data-theme="dark"] .rec-card-actions .btn-compare-card,
+[data-theme="dark"] .competitor-action-row .btn-compare-card,
+[data-theme="dark"] .rec-action-row .btn-compare-card {
+  background-color: var(--color-bg-secondary, #1e293b);
+  color: var(--color-text-main, #f1f5f9);
+  border-color: var(--color-border, #334155);
+}
+
+[data-theme="dark"] .competitor-links .btn-compare-card:hover,
+[data-theme="dark"] .rec-card-actions .btn-compare-card:hover,
+[data-theme="dark"] .competitor-action-row .btn-compare-card:hover,
+[data-theme="dark"] .rec-action-row .btn-compare-card:hover {
+  background-color: var(--color-bg-hover, #334155);
+  color: var(--color-primary, #60a5fa);
+  border-color: var(--color-primary, #60a5fa);
+}
+
+[data-theme="dark"] .competitor-links .btn-compare-card.is-compared,
+[data-theme="dark"] .rec-card-actions .btn-compare-card.is-compared,
+[data-theme="dark"] .competitor-action-row .btn-compare-card.is-compared,
+[data-theme="dark"] .rec-action-row .btn-compare-card.is-compared {
+  background-color: rgba(96, 165, 250, 0.15);
+  color: var(--color-primary, #60a5fa);
+  border-color: var(--color-primary, #60a5fa);
 }
 
 [data-theme="dark"] .competitor-links .btn-internal-small,

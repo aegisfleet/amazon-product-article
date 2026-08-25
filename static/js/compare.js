@@ -256,7 +256,11 @@
             const labelEl = btn.querySelector('.compare-label');
             const iconEl = btn.querySelector('.compare-icon');
             if (iconEl) {
-                iconEl.textContent = active ? '✅' : '⚖️';
+                if (iconEl.classList.contains('material-symbols-outlined')) {
+                    iconEl.textContent = active ? 'check_circle' : 'balance';
+                } else {
+                    iconEl.textContent = active ? '✅' : '⚖️';
+                }
             }
             if (labelEl) {
                 labelEl.textContent = active ? '比較中' : '比較';

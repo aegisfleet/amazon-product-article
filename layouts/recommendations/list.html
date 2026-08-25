@@ -254,7 +254,7 @@
         border-color: #ff9900;
     }
 
-    /* ---- Recommendations Card Actions (1行目: サイト内レビュー、2行目: 3モールボタングループ) ---- */
+    /* ---- Recommendations Card Actions (1行目: 比較 + サイト内レビュー、2行目: 3モールボタングループ) ---- */
     .rec-card-actions {
         width: 100%;
         margin-top: auto;
@@ -262,6 +262,58 @@
         display: flex;
         flex-direction: column;
         gap: 8px;
+    }
+
+    .rec-action-row {
+        display: flex;
+        align-items: stretch;
+        gap: 8px;
+        width: 100%;
+    }
+
+    .rec-action-row .btn-internal-small {
+        flex: 1;
+        min-width: 0;
+    }
+
+    .rec-card-actions .btn-compare-card,
+    .rec-action-row .btn-compare-card {
+        flex: 1;
+        min-width: 0;
+        width: 100%;
+        min-height: 44px;
+        padding: 0.6rem 1rem;
+        font-size: 0.92rem;
+        font-weight: 700;
+        border-radius: var(--radius-md, 8px);
+        background-color: var(--color-bg-secondary, #f3f4f6);
+        color: var(--color-text-main, #374151);
+        border: 1px solid var(--color-border, #d1d5db);
+        box-sizing: border-box;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: var(--spacing-xs, 0.5rem);
+        cursor: pointer;
+        white-space: nowrap;
+        transition: all 0.2s ease;
+        user-select: none;
+    }
+
+    .rec-card-actions .btn-compare-card:hover,
+    .rec-action-row .btn-compare-card:hover {
+        background-color: var(--color-bg-hover, #e5e7eb);
+        color: var(--color-primary, #2563eb);
+        border-color: var(--color-primary, #2563eb);
+        transform: translateY(-1px);
+    }
+
+    .rec-card-actions .btn-compare-card.is-compared,
+    .rec-action-row .btn-compare-card.is-compared {
+        background-color: rgba(37, 99, 235, 0.1);
+        color: var(--color-primary, #2563eb);
+        border-color: var(--color-primary, #2563eb);
+        font-weight: 700;
     }
 
     .rec-card-actions .btn-internal-small,
@@ -291,6 +343,27 @@
         border-color: var(--md-sys-color-primary, #4F46E5);
         transform: translateY(-1px);
         box-shadow: 0 2px 6px rgba(79, 70, 229, 0.2);
+    }
+
+    [data-theme="dark"] .rec-card-actions .btn-compare-card,
+    [data-theme="dark"] .rec-action-row .btn-compare-card {
+        background-color: var(--color-bg-secondary, #1e293b);
+        color: var(--color-text-main, #f1f5f9);
+        border-color: var(--color-border, #334155);
+    }
+
+    [data-theme="dark"] .rec-card-actions .btn-compare-card:hover,
+    [data-theme="dark"] .rec-action-row .btn-compare-card:hover {
+        background-color: var(--color-bg-hover, #334155);
+        color: var(--color-primary, #60a5fa);
+        border-color: var(--color-primary, #60a5fa);
+    }
+
+    [data-theme="dark"] .rec-card-actions .btn-compare-card.is-compared,
+    [data-theme="dark"] .rec-action-row .btn-compare-card.is-compared {
+        background-color: rgba(96, 165, 250, 0.15);
+        color: var(--color-primary, #60a5fa);
+        border-color: var(--color-primary, #60a5fa);
     }
 
     [data-theme="dark"] .rec-card-actions .btn-internal-small,
@@ -473,6 +546,13 @@
         {{- $articlePage := site.GetPage (printf "/articles/%s" (lower $rec.asin)) -}}
         {{- $score := 0 -}}
         {{- if $articlePage -}}{{- $score = $articlePage.Params.score | default 0 -}}{{- end -}}
+        {{- $imageUrl := $rec.imageUrl -}}
+        {{- if and (not $imageUrl) $productCache -}}
+        {{- $cachedItem := index $productCache $rec.asin -}}
+        {{- if $cachedItem -}}
+        {{- $imageUrl = $cachedItem.data.images.primary -}}
+        {{- end -}}
+        {{- end -}}
         <div class="competitor-card" data-rank="{{ add $index 1 }}" data-category="{{ $rec.category }}"
             data-price="{{ $rec.price }}" data-score="{{ $score }}"
             style="display: flex; flex-direction: column; gap: var(--spacing-md); border-left: 4px solid var(--color-primary); position: relative; padding: var(--spacing-md) 32px; margin-top: 12px;">
@@ -487,14 +567,6 @@
 
                 <!-- Product Image -->
                 <div style="flex-shrink: 0; width: 100%; max-width: 200px; text-align: center; margin: 0 auto;">
-                    {{- $imageUrl := $rec.imageUrl -}}
-                    {{- if and (not $imageUrl) $productCache -}}
-                    {{- $cachedItem := index $productCache $rec.asin -}}
-                    {{- if $cachedItem -}}
-                    {{- $imageUrl = $cachedItem.data.images.primary -}}
-                    {{- end -}}
-                    {{- end -}}
-
                     {{- if $imageUrl -}}
                     <img src="{{ $imageUrl }}" alt="{{ $rec.title }}"
                         style="width: 100%; max-height: 200px; object-fit: contain; background-color: #ffffff; padding: 0.5rem; border-radius: var(--radius-md);">
@@ -633,9 +705,23 @@
 
                     <div class="rec-card-actions">
                         {{- if $articlePage -}}
-                        <a href="{{ $articlePage.RelPermalink }}" class="btn-internal-small btn-internal--full">
-                            <span class="material-symbols-outlined" aria-hidden="true" style="font-size:1.1rem; margin-right:4px;">edit_note</span> サイト内レビュー
-                        </a>
+                        <div class="rec-action-row">
+                            <button type="button" class="btn-compare-card" data-compare-btn="1" data-asin="{{ $rec.asin }}"
+                                data-title="{{ $rec.title }}" data-url="{{ $articlePage.RelPermalink }}"
+                                data-affiliate-url='{{ printf "https://www.amazon.co.jp/dp/%s?tag=aegis-22" $rec.asin }}'
+                                data-image="{{ $imageUrl }}"
+                                data-price="{{ $rec.price }}" data-score="{{ $score }}"
+                                data-savings="0"
+                                data-category="{{ $rec.category }}"
+                                data-specs='{{ if $articlePage.Params.specs }}{{ partial "product-specs-json.html" $articlePage.Params.specs }}{{ end }}'
+                                aria-pressed="false" aria-label="{{ $rec.title }}を比較に追加">
+                                <span class="material-symbols-outlined compare-icon" aria-hidden="true">balance</span>
+                                <span class="compare-label">比較</span>
+                            </button>
+                            <a href="{{ $articlePage.RelPermalink }}" class="btn-internal-small">
+                                <span class="material-symbols-outlined" aria-hidden="true" style="font-size:1.1rem; margin-right:4px;">edit_note</span> サイト内レビュー
+                            </a>
+                        </div>
                         {{- end -}}
                         {{- partial "product-shop-buttons.html" (dict
                             "context" $articlePage
