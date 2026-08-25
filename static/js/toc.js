@@ -1,11 +1,4 @@
-document.addEventListener('DOMContentLoaded', () => {
-  const originalToc = document.getElementById('toc');
-  if (!originalToc) return;
-
-  const originalTocContent = originalToc.querySelector('#TableOfContents') || originalToc.querySelector('nav');
-  if (!originalTocContent) return;
-
-  // Clone TOC content for Sidebar and Mobile Modal
+function cloneTocContent(originalTocContent) {
   const sidebarContainer = document.getElementById('toc-sidebar-body');
   const modalContainer = document.getElementById('toc-modal-body');
 
@@ -20,8 +13,9 @@ document.addEventListener('DOMContentLoaded', () => {
     modalTocClone.id = 'TableOfContents-modal';
     modalContainer.appendChild(modalTocClone);
   }
+}
 
-  // Mobile Modal Elements & Controls
+function setupTocModal() {
   const tocFab = document.getElementById('toc-fab');
   const tocModal = document.getElementById('toc-modal');
   const tocModalOverlay = document.getElementById('toc-modal-overlay');
@@ -88,8 +82,10 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // Handle TOC smooth scrolling & close modal on click
-  const allTocLinks = document.querySelectorAll('.table-of-contents a, .toc-sidebar-body a, .toc-modal-body a');
+  return { closeTocModal };
+}
+
+function setupSmoothScroll(allTocLinks, closeTocModal) {
   for (const link of allTocLinks) {
     link.addEventListener('click', (e) => {
       const href = link.getAttribute('href');
@@ -108,15 +104,57 @@ document.addEventListener('DOMContentLoaded', () => {
             behavior: 'smooth'
           });
 
-          if (tocModal?.classList.contains('is-open')) {
+          if (closeTocModal) {
             closeTocModal();
           }
         }
       }
     });
   }
+}
 
-  // TOC に実際に存在するアンカーIDのみを抽出して ScrollSpy ターゲットにする
+function scrollActiveLinkIntoView(link) {
+  if (!link) return;
+  const container = link.closest('.toc-sidebar-body, .toc-modal-body');
+  if (!container) return;
+
+  const containerRect = container.getBoundingClientRect();
+  const linkRect = link.getBoundingClientRect();
+
+  if (linkRect.top < containerRect.top || linkRect.bottom > containerRect.bottom) {
+    link.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+  }
+}
+
+function getActiveHeadingId(activeHeadings) {
+  const headerOffset = 130;
+  const scrollY = window.pageYOffset || window.scrollY || document.documentElement.scrollTop || 0;
+  const viewportHeight = window.innerHeight || document.documentElement.clientHeight || 0;
+  const scrollHeight = document.documentElement.scrollHeight || document.body.scrollHeight || 0;
+
+  if (scrollY + viewportHeight >= scrollHeight - 50 && activeHeadings.length > 0) {
+    return activeHeadings[activeHeadings.length - 1].id;
+  }
+
+  for (let i = activeHeadings.length - 1; i >= 0; i--) {
+    const heading = activeHeadings[i];
+    const rect = heading.getBoundingClientRect();
+    if (rect.top <= headerOffset) {
+      return heading.id;
+    }
+  }
+
+  if (activeHeadings.length > 0) {
+    const firstRect = activeHeadings[0].getBoundingClientRect();
+    if (firstRect.top <= viewportHeight * 0.6) {
+      return activeHeadings[0].id;
+    }
+  }
+
+  return '';
+}
+
+function setupScrollSpy(allTocLinks) {
   const tocTargetIds = new Set();
   for (const link of allTocLinks) {
     const href = link.getAttribute('href');
@@ -131,99 +169,69 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  // Active Link (ScrollSpy) Functionality
   const allHeadings = Array.from(document.querySelectorAll('.content h2[id], .content h3[id], .content h4[id]'));
   const headings = allHeadings.filter((h) => tocTargetIds.has(h.id));
   const activeHeadings = headings.length > 0 ? headings : allHeadings;
 
-  if (activeHeadings.length > 0) {
-    let ticking = false;
+  if (activeHeadings.length === 0) return;
 
-    function scrollActiveLinkIntoView(link) {
-      if (!link) return;
-      const container = link.closest('.toc-sidebar-body, .toc-modal-body');
-      if (!container) return;
+  let ticking = false;
 
-      const containerRect = container.getBoundingClientRect();
-      const linkRect = link.getBoundingClientRect();
+  function updateActiveHeading() {
+    const currentActiveId = getActiveHeadingId(activeHeadings);
 
-      if (linkRect.top < containerRect.top || linkRect.bottom > containerRect.bottom) {
-        link.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+    for (const l of allTocLinks) {
+      const href = l.getAttribute('href') || '';
+      let isActive = false;
+
+      if (href.startsWith('#')) {
+        const rawId = href.substring(1);
+        const decodedId = decodeURIComponent(rawId);
+        if (currentActiveId && (rawId === currentActiveId || decodedId === currentActiveId)) {
+          isActive = true;
+        }
       }
-    }
 
-    function updateActiveHeading() {
-      const headerOffset = 130;
-      const scrollY = window.pageYOffset || window.scrollY || document.documentElement.scrollTop || 0;
-      const viewportHeight = window.innerHeight || document.documentElement.clientHeight || 0;
-      const scrollHeight = document.documentElement.scrollHeight || document.body.scrollHeight || 0;
-
-      let currentActiveId = '';
-
-      const isAtBottom = scrollY + viewportHeight >= scrollHeight - 50;
-
-      if (isAtBottom && activeHeadings.length > 0) {
-        currentActiveId = activeHeadings[activeHeadings.length - 1].id;
+      if (isActive) {
+        if (!l.classList.contains('is-active')) {
+          l.classList.add('is-active');
+          l.setAttribute('aria-current', 'true');
+          scrollActiveLinkIntoView(l);
+        }
       } else {
-        for (let i = activeHeadings.length - 1; i >= 0; i--) {
-          const heading = activeHeadings[i];
-          const rect = heading.getBoundingClientRect();
-          if (rect.top <= headerOffset) {
-            currentActiveId = heading.id;
-            break;
-          }
-        }
+        l.classList.remove('is-active');
+        l.removeAttribute('aria-current');
       }
-
-      if (!currentActiveId && activeHeadings.length > 0) {
-        const firstRect = activeHeadings[0].getBoundingClientRect();
-        if (firstRect.top <= viewportHeight * 0.6) {
-          currentActiveId = activeHeadings[0].id;
-        }
-      }
-
-      for (const l of allTocLinks) {
-        const href = l.getAttribute('href') || '';
-        let isActive = false;
-
-        if (href.startsWith('#')) {
-          const rawId = href.substring(1);
-          const decodedId = decodeURIComponent(rawId);
-          if (currentActiveId && (rawId === currentActiveId || decodedId === currentActiveId)) {
-            isActive = true;
-          }
-        }
-
-        if (isActive) {
-          if (!l.classList.contains('is-active')) {
-            l.classList.add('is-active');
-            l.setAttribute('aria-current', 'true');
-            scrollActiveLinkIntoView(l);
-          }
-        } else {
-          l.classList.remove('is-active');
-          l.removeAttribute('aria-current');
-        }
-      }
-
-      ticking = false;
     }
 
-    window.addEventListener('scroll', () => {
-      if (!ticking) {
-        window.requestAnimationFrame(updateActiveHeading);
-        ticking = true;
-      }
-    }, { passive: true });
-
-    window.addEventListener('resize', () => {
-      if (!ticking) {
-        window.requestAnimationFrame(updateActiveHeading);
-        ticking = true;
-      }
-    }, { passive: true });
-
-    // Initial check
-    updateActiveHeading();
+    ticking = false;
   }
+
+  function onScrollOrResize() {
+    if (!ticking) {
+      window.requestAnimationFrame(updateActiveHeading);
+      ticking = true;
+    }
+  }
+
+  window.addEventListener('scroll', onScrollOrResize, { passive: true });
+  window.addEventListener('resize', onScrollOrResize, { passive: true });
+
+  updateActiveHeading();
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  const originalToc = document.getElementById('toc');
+  if (!originalToc) return;
+
+  const originalTocContent = originalToc.querySelector('#TableOfContents') || originalToc.querySelector('nav');
+  if (!originalTocContent) return;
+
+  cloneTocContent(originalTocContent);
+  const { closeTocModal } = setupTocModal();
+
+  const allTocLinks = document.querySelectorAll('.table-of-contents a, .toc-sidebar-body a, .toc-modal-body a');
+  setupSmoothScroll(allTocLinks, closeTocModal);
+  setupScrollSpy(allTocLinks);
 });
+
