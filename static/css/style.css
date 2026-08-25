@@ -64,6 +64,12 @@ select,
   min-height: var(--md-sys-touch-target-min, 48px);
 }
 
+html,
+body {
+  max-width: 100%;
+  overflow-x: clip;
+}
+
 body {
   font-family: var(--font-sans);
   font-size: var(--md-sys-typescale-body-large-size);
@@ -127,14 +133,22 @@ a:hover {
   gap: var(--spacing-md);
 }
 
+.site-header .container {
+  min-width: 0;
+}
+
 .brand {
   font-weight: 800;
-  font-size: clamp(1.05rem, 3.5vw, 1.25rem);
+  font-size: clamp(0.95rem, 3.8vw, 1.25rem);
   color: var(--color-text-main);
   display: flex;
   align-items: center;
   gap: var(--spacing-sm);
   margin-right: auto;
+  min-width: 0;
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
   white-space: nowrap;
 }
 
@@ -2456,6 +2470,8 @@ a.competitor-preview:hover {
 
 .category-dropdown-select {
   width: 100%;
+  max-width: 100%;
+  min-width: 0;
   padding: var(--spacing-sm) var(--spacing-md);
   font-size: 1rem;
   font-family: var(--font-sans);
@@ -5916,6 +5932,7 @@ body.toc-modal-open {
   display: flex;
   align-items: center;
   gap: var(--spacing-sm);
+  flex-shrink: 0;
 }
 
 /* ヘッダーのナビゲーションリンクボタン */
@@ -6489,6 +6506,10 @@ body.toc-modal-open {
   align-items: center;
   gap: 0.5rem;
   padding: 0.75rem 2.5rem;
+  max-width: 100%;
+  box-sizing: border-box;
+  text-align: center;
+  justify-content: center;
   background-color: transparent;
   border: 2px solid var(--color-primary);
   border-radius: var(--radius-lg);
@@ -6497,6 +6518,14 @@ body.toc-modal-open {
   text-decoration: none;
   color: var(--color-text-main);
   transition: all 0.3s ease;
+}
+
+@media (max-width: 640px) {
+  .btn-all-brands {
+    padding: 0.75rem 1rem;
+    font-size: 0.875rem;
+    width: 100%;
+  }
 }
 
 .btn-all-brands:hover {
