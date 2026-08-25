@@ -246,23 +246,19 @@ a:hover {
 
 .hero-cta-group {
   display: flex;
-  flex-direction: column;
-  gap: var(--spacing-sm);
+  flex-wrap: wrap;
+  gap: var(--spacing-sm) var(--spacing-md);
   margin-top: var(--spacing-md);
   align-items: center;
   justify-content: center;
 }
 
-.hero-cta-primary {
-  display: flex;
-  justify-content: center;
-}
-
 .hero-cta-secondary {
-  display: flex;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: var(--spacing-md);
+  white-space: nowrap;
 }
 
 @media (min-width: 768px) {
@@ -283,13 +279,6 @@ a:hover {
   }
 
   .hero-cta-group {
-    flex-direction: row;
-    align-items: center;
-    justify-content: flex-start;
-    gap: var(--spacing-md);
-  }
-
-  .hero-cta-primary {
     justify-content: flex-start;
   }
 
@@ -355,6 +344,7 @@ a:hover {
   color: #fff;
   text-decoration: none;
   font-weight: 700;
+  white-space: nowrap;
   box-shadow: var(--shadow-md);
 }
 
@@ -369,6 +359,7 @@ a:hover {
   text-underline-offset: 0.2em;
   font-size: 0.9rem;
   font-weight: 600;
+  white-space: nowrap;
 }
 
 #search-section,
