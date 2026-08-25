@@ -370,6 +370,64 @@
                     return shopButtonsDiv;
                 }
 
+                function extractCompetitorSpecs(card) {
+                    var tagElems = card.querySelectorAll('.competitor-preview-tags .hero-tag');
+                    var specs = {};
+                    tagElems.forEach(function (tag) {
+                        var text = tag.textContent.trim();
+                        var colonIdx = text.indexOf(':');
+                        if (colonIdx > -1) {
+                            var key = text.substring(0, colonIdx).trim();
+                            var val = text.substring(colonIdx + 1).trim();
+                            if (key && val) {
+                                specs[key] = val;
+                            }
+                        } else if (text) {
+                            specs[text] = '○';
+                        }
+                    });
+                    return JSON.stringify(specs);
+                }
+
+                function buildCompetitorCompareButton(title, amazonHref, asin, internalHref, score, price, image, category, specsJson) {
+                    var btn = document.createElement('button');
+                    btn.type = 'button';
+                    btn.className = 'btn-compare-card';
+                    btn.dataset.compareBtn = '1';
+                    btn.dataset.asin = asin || '';
+                    btn.dataset.title = title || '';
+                    btn.dataset.url = internalHref || '';
+                    btn.dataset.affiliateUrl = amazonHref || '';
+                    btn.dataset.image = image || '';
+                    btn.dataset.price = price || '';
+                    btn.dataset.score = String(score || 0);
+                    btn.dataset.category = category || '';
+                    btn.dataset.specs = specsJson || '{}';
+                    btn.setAttribute('aria-pressed', 'false');
+                    var titlePrefix = title ? title + 'を' : '';
+                    btn.setAttribute('aria-label', titlePrefix + '比較に追加');
+
+                    var isCompared = globalThis.Compare && typeof globalThis.Compare.isCompared === 'function' && globalThis.Compare.isCompared(asin);
+                    if (isCompared) {
+                        btn.classList.add('is-compared');
+                        btn.setAttribute('aria-pressed', 'true');
+                        btn.setAttribute('aria-label', titlePrefix + '比較から削除');
+                    }
+
+                    var iconSpan = document.createElement('span');
+                    iconSpan.className = 'material-symbols-outlined compare-icon';
+                    iconSpan.setAttribute('aria-hidden', 'true');
+                    iconSpan.textContent = isCompared ? 'check_circle' : 'balance';
+
+                    var labelSpan = document.createElement('span');
+                    labelSpan.className = 'compare-label';
+                    labelSpan.textContent = isCompared ? '比較中' : '比較';
+
+                    btn.appendChild(iconSpan);
+                    btn.appendChild(labelSpan);
+                    return btn;
+                }
+
                 function upgradeCompetitorCard(card) {
                     var linksContainer = card.querySelector('.competitor-links');
                     if (!linksContainer) return;
@@ -379,17 +437,51 @@
 
                     var amazonHref = amazonLink.getAttribute('href') || '';
                     var internalLink = linksContainer.querySelector('a.btn-internal-small');
+                    var internalHref = internalLink ? (internalLink.getAttribute('href') || '') : '';
 
                     var h4 = card.querySelector('h4');
                     var title = h4 ? h4.textContent.trim() : '';
 
                     var asin = extractCardAsin(amazonHref, title);
+
+                    // 価格抽出: .competitor-actual-price を優先し、差額等のバッジを除去
+                    var priceElem = card.querySelector('.competitor-actual-price') || card.querySelector('.competitor-price');
+                    var price = '';
+                    if (priceElem) {
+                        var clone = priceElem.cloneNode(true);
+                        var subSpans = clone.querySelectorAll('.competitor-price-diff, .hero-points, .m3-badge');
+                        subSpans.forEach(function (s) { s.remove(); });
+                        var priceMatch = clone.textContent.match(/[￥¥]?\s*[\d,]+/);
+                        price = priceMatch ? priceMatch[0].trim() : clone.textContent.trim();
+                    }
+
+                    var imgElem = card.querySelector('.competitor-preview-img, img');
+                    var image = imgElem ? imgElem.getAttribute('src') : '';
+
+                    // スコア抽出: .competitor-score-container, .pickup-card-score などから数値取得
+                    var scoreElem = card.querySelector('.competitor-score-container, .pickup-card-score, .competitor-preview-score');
+                    var score = 0;
+                    if (scoreElem) {
+                        var scoreMatch = scoreElem.textContent.match(/(\d+)\s*点?/);
+                        score = scoreMatch ? parseInt(scoreMatch[1], 10) : 0;
+                    }
+
+                    var specsJson = extractCompetitorSpecs(card);
                     var shopButtonsDiv = buildCompetitorShopButtons(title, amazonHref, asin);
 
                     linksContainer.innerHTML = '';
                     if (internalLink) {
-                        internalLink.className = 'btn-internal-small btn-internal--full';
-                        linksContainer.appendChild(internalLink);
+                        var actionRow = document.createElement('div');
+                        actionRow.className = 'competitor-action-row';
+
+                        if (asin) {
+                            var compareBtn = buildCompetitorCompareButton(title, amazonHref, asin, internalHref, score, price, image, '{{ $currentCategory }}', specsJson);
+                            actionRow.appendChild(compareBtn);
+                        }
+
+                        internalLink.className = 'btn-internal-small';
+                        actionRow.appendChild(internalLink);
+                        linksContainer.appendChild(actionRow);
                     }
                     linksContainer.appendChild(shopButtonsDiv);
                 }
