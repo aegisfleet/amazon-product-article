@@ -1736,11 +1736,12 @@ a.hero-tag-brand:hover {
   border: 1px solid var(--md-sys-color-outline-variant, #E2E8F0);
   text-decoration: none;
   font-weight: 700;
+  white-space: nowrap;
   transition: all 0.2s ease;
   box-shadow: 0 1px 3px rgba(79, 70, 229, 0.15);
-  padding: 0.625rem 1rem;
+  padding: 0.625rem 0.5rem;
   border-radius: var(--radius-md, 8px);
-  font-size: 0.9375rem;
+  font-size: 0.875rem;
   min-height: 48px;
   box-sizing: border-box;
 }
@@ -1806,6 +1807,7 @@ a.competitor-preview:hover {
 .rec-action-row .btn-internal-small {
   flex: 1;
   min-width: 0;
+  white-space: nowrap;
 }
 
 .competitor-links .btn-compare-card,
@@ -1816,8 +1818,8 @@ a.competitor-preview:hover {
   min-width: 0;
   width: 100%;
   min-height: 44px;
-  padding: 0.6rem 1rem;
-  font-size: 0.92rem;
+  padding: 0.6rem 0.5rem;
+  font-size: 0.88rem;
   font-weight: 700;
   border-radius: var(--radius-md, 8px);
   background-color: var(--color-bg-secondary, #f3f4f6);
@@ -1827,7 +1829,7 @@ a.competitor-preview:hover {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: var(--spacing-xs, 0.5rem);
+  gap: 4px;
   cursor: pointer;
   white-space: nowrap;
   transition: all 0.2s ease;
@@ -1859,11 +1861,11 @@ a.competitor-preview:hover {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: var(--spacing-xs);
+  gap: 4px;
   width: 100%;
   min-height: 44px;
-  padding: 0.6rem 1rem;
-  font-size: 0.92rem;
+  padding: 0.6rem 0.5rem;
+  font-size: 0.88rem;
   font-weight: 700;
   border-radius: var(--radius-md, 8px);
   text-decoration: none;
@@ -1871,6 +1873,7 @@ a.competitor-preview:hover {
   color: var(--md-sys-color-on-primary-container, #3730A3);
   border: 1px solid var(--md-sys-color-outline-variant, #E2E8F0);
   box-sizing: border-box;
+  white-space: nowrap;
   transition: all 0.2s ease;
 }
 
