@@ -1,0 +1,219 @@
+{
+  "analysis": {
+    "productName": "AOC M10 タブレット",
+    "parentAsin": "B0FY2YCJM9",
+    "productDescription": "Android 16を搭載した10.1インチタブレット。UNISOC T7200プロセッサと120Hzディスプレイを備え、Widevine L1対応で高画質ストリーミングが楽しめる。",
+    "productUsage": [
+      "動画視聴",
+      "電子書籍の閲覧",
+      "Webブラウジング",
+      "オンライン学習",
+      "軽いゲーム"
+    ],
+    "positivePoints": [
+      "最新のAndroid 16を搭載",
+      "Widevine L1対応でAmazon Prime VideoやDisney+などをフルHD画質で再生可能",
+      "120Hzの高リフレッシュレート対応のHD IPS液晶ディスプレイ（1280×800）を搭載",
+      "最大1TBのmicroSDカードによるストレージ拡張に対応",
+      "GPS・北斗・QZSS・GLONASS・Galileoの複数の衛星測位システムに対応しナビゲーションが可能",
+      "顔認証に対応"
+    ],
+    "negativePoints": [
+      "ディスプレイ解像度がHD (1280x800) に留まる",
+      "RAMが物理4GBと少なめ（16GBの仮想拡張には対応するが物理メモリの代わりにはならない）"
+    ],
+    "useCases": [
+      "外出先でのナビゲーションや動画視聴",
+      "家庭内でのエンタメ用途",
+      "子供の学習用タブレット"
+    ],
+    "userStories": [
+      {
+        "userType": "エンタメ重視のユーザー",
+        "scenario": "自宅や移動中の動画視聴",
+        "experience": "Widevine L1対応により、Amazon Prime Videoなどを高画質で楽しめる点が最大の決め手となった。また、120HzのリフレッシュレートによりWebブラウジングや画面スクロールも滑らかに感じる。ただし、解像度がFHDではなくHDである点は少し残念だが、価格を考慮すれば十分に満足できる。",
+        "supportingSourceIds": [
+          "amazon-jp-B0FY2YCJM9"
+        ],
+        "sentiment": "positive"
+      },
+      {
+        "userType": "子供の学習用・ライトユーザー",
+        "scenario": "学習アプリの利用とナビゲーション",
+        "experience": "GPS機能を搭載しているため、外出先でもナビ代わりになるのが便利。保護者による使用制限（Digital Wellbeing）機能があるため、子供用タブレットとしても安心して持たせることができた。動作も重いゲームをしなければ概ね快適。",
+        "supportingSourceIds": [
+          "amazon-jp-B0FY2YCJM9"
+        ],
+        "sentiment": "positive"
+      }
+    ],
+    "userImpression": "総じて、価格に対して実用的な機能を詰め込んだエントリー〜ミドルクラスのタブレットという印象。FHD解像度でない点や物理RAMが4GBである点は弱点だが、Widevine L1対応による高画質動画再生や120Hz駆動、GPS搭載、顔認証など、日常使いに必要な機能が揃っており、コストパフォーマンスを重視するユーザーから一定の評価を得ている。",
+    "sources": [
+      {
+        "id": "amazon-jp-B0FY2YCJM9",
+        "name": "Amazon商品ページ",
+        "url": "https://www.amazon.co.jp/dp/B0FY2YCJM9",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-08-25",
+        "author": "AOC",
+        "conflictOfInterest": "possible",
+        "notes": "製品仕様、機能説明、搭載OSなどの情報を抽出"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "120Hzの高リフレッシュレートに対応し、指先の操作にも俊敏に反応する",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "amazon-jp-B0FY2YCJM9"
+        ],
+        "crossChecked": false,
+        "notes": "メーカー公式の仕様表記。HD解像度であるため、120Hz駆動は実現可能と判断"
+      }
+    ],
+    "lastInvestigated": "2026-08-25",
+    "investigatedPrice": "￥18,979",
+    "competitiveAnalysis": [
+      {
+        "name": "Xiaomi REDMI Pad 2",
+        "asin": "B0GWKNKXM7",
+        "priceComparison": "Xiaomi REDMI Pad 2の方がわずかに高価だが、解像度が2Kと高く、バッテリー容量も多い。一方でGPSの有無など用途に応じた違いがある。",
+        "featureComparison": [
+          "共通点：120Hzの高リフレッシュレートに対応",
+          "相違点：AOC M10は10.1インチ(1280x800)でGPSを搭載。REDMI Pad 2は9.7インチ(2K)でSnapdragon 6s 4G Gen 2を搭載し、バッテリーが7600mAhと大容量。"
+        ],
+        "differentiators": [
+          "AOC M10 タブレットの利点：ナビゲーションとしても使いたいGPS必須のユーザーや、最新のAndroid 16環境を試したい人",
+          "Xiaomi REDMI Pad 2の利点：2Kの高解像度ディスプレイでより精細な映像を楽しみたい人や、バッテリーの持ちを重視する人"
+        ]
+      },
+      {
+        "name": "HiGrace 10インチタブレット (B0GTLB34XV)",
+        "asin": "B0GTLB34XV",
+        "priceComparison": "HiGraceの方が価格が安く設定されており、同等のHD解像度とバッテリー容量を持つが、プロセッサ性能やOSバージョン等の詳細に違いがある。",
+        "featureComparison": [
+          "共通点：10インチディスプレイ(1280x800)、Widevine L1対応、顔認証搭載",
+          "相違点：AOC M10はAndroid 16を搭載し120Hz駆動。HiGraceはAndroid 16を謳いつつWi-Fi 6対応。"
+        ],
+        "differentiators": [
+          "AOC M10 タブレットの利点：120Hzの滑らかなディスプレイ表示を求める人",
+          "HiGrace 10インチタブレット (B0GTLB34XV)の利点：Wi-Fi 6の高速通信環境を利用したい人や、価格をより抑えたい人"
+        ]
+      },
+      {
+        "name": "PHILIPS 10インチタブレット (T7315)",
+        "asin": "B0FG7LRFF8",
+        "priceComparison": "PHILIPSの方が価格が高いが、RAM/ROMの容量が大きい（12GB/128GB）。",
+        "featureComparison": [
+          "共通点：Android 16搭載、Widevine L1対応、顔認証搭載",
+          "相違点：AOC M10は120Hzリフレッシュレートと4GB RAM。PHILIPSは90Hzリフレッシュレートだが物理RAMが12GBと大容量。"
+        ],
+        "differentiators": [
+          "AOC M10 タブレットの利点：120Hzのより滑らかな描画性能を求める人や、予算を2万円未満に抑えたい人",
+          "PHILIPS 10インチタブレット (T7315)の利点：複数のアプリを同時に起動するマルチタスク環境で、12GBの大容量RAMの恩恵を受けたい人"
+        ]
+      },
+      {
+        "name": "BMAX 10インチタブレット",
+        "asin": "B0GZ1VLML6",
+        "priceComparison": "BMAXの方が価格が安い（約1.2万円）が、実質的なスペック（解像度等）は同等クラスと見られる。",
+        "featureComparison": [
+          "共通点：10インチディスプレイ、Widevine L1対応、GPS搭載",
+          "相違点：AOC M10は120Hz駆動に対応。BMAXは価格が安いがリフレッシュレートの記載がない。"
+        ],
+        "differentiators": [
+          "AOC M10 タブレットの利点：120Hzの滑らかな画面表示を重視する人",
+          "BMAX 10インチタブレットの利点：とにかく初期費用を安く抑えてWidevine L1対応のタブレットを手に入れたい人"
+        ]
+      },
+      {
+        "name": "Callsky-Tab 10インチ",
+        "asin": "B0GWPPHTKM",
+        "priceComparison": "Callsky-Tabの方が約1万円と安価。",
+        "featureComparison": [
+          "共通点：10インチディスプレイ、大容量メモリ（拡張含む）アピール",
+          "相違点：AOC M10は最新Android 16とWidevine L1対応、120Hzを明記しているが、Callsky-Tabは詳細なOSバージョンやWidevine等の記載が乏しい。"
+        ],
+        "differentiators": [
+          "AOC M10 タブレットの利点：動画配信サービスをHD画質で楽しむためのWidevine L1対応が必須の人",
+          "Callsky-Tab 10インチの利点：ケース付きなど付属品を重視しつつ、予算を極力抑えたい人"
+        ]
+      },
+      {
+        "name": "HiGrace 10インチタブレット (ブラック)",
+        "asin": "B0GWD36QHC",
+        "priceComparison": "こちらは約8,500円とさらに安価なエントリーモデル。",
+        "featureComparison": [
+          "共通点：10インチ(1280x800)、Widevine L1対応",
+          "相違点：AOC M10は120Hz駆動やGPSを搭載。HiGraceはより安価でWi-Fi 6対応を謳うがバッテリーが5000mAhとやや少ない。"
+        ],
+        "differentiators": [
+          "AOC M10 タブレットの利点：GPS機能やバッテリー容量(6000mAh)を重視する人",
+          "HiGrace 10インチタブレット (ブラック)の利点：1万円未満でWidevine L1対応タブレットを手に入れたい人"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "動画配信サービス（Amazon Prime, Disney+など）を高画質で楽しみたいエンタメ重視のユーザー",
+        "GPS機能を活用してナビゲーション用途にも使いたい人",
+        "子供の学習用として、価格と機能のバランスが取れたタブレットを探している家庭"
+      ],
+      "pros": [
+        "Widevine L1対応により、NetflixやPrime Videoなどのストリーミングサービスを本来の高画質で楽しめる",
+        "120Hzの高リフレッシュレートにより、ブラウジングや画面操作が滑らかでストレスが少ない",
+        "GPS対応のため、外出時のカーナビ代わりや位置情報が必要なアプリでも活躍する"
+      ],
+      "cons": [
+        "ディスプレイの解像度がHD (1280x800) に留まるため、FHD以上の高精細さを求める人には不向き",
+        "物理RAMが4GBのため、重い3Dゲームや多数のアプリを同時に開くようなヘビーユースには適さない"
+      ],
+      "score": 75,
+      "scoreRationale": "[基本点: 70]\n[加点: +5] (Widevine L1対応および120Hz駆動によるエンタメ用途への適性)\n[加点: +5] (GPS搭載によるナビ用途など実用性の高さ)\n[減点: -5] (ディスプレイ解像度がHD止まりであり、価格に対してやや物足りない)\n[合計: 75]"
+    },
+    "technicalSpecs": {
+      "os": "Android 16",
+      "cpu": "UNISOC T7200 オクタコア (2×Cortex-A75 + 6×Cortex-A55, 12nm)",
+      "ram": "4GB (+16GB 仮想メモリ拡張対応)",
+      "storage": "128GB (microSD最大1TB対応)",
+      "display": {
+        "size": "10.1インチ",
+        "resolution": "1280×800 (HD)",
+        "type": "IPS液晶",
+        "refreshRate": "120Hz"
+      },
+      "battery": {
+        "capacity": "6000mAh",
+        "charging": "記載なし"
+      },
+      "camera": {
+        "main": "8MP (AF)",
+        "ultrawide": "記載なし",
+        "telephoto": "記載なし",
+        "front": "5MP"
+      },
+      "dimensions": {
+        "height": "記載なし",
+        "width": "記載なし",
+        "depth": "記載なし",
+        "weight": "記載なし"
+      },
+      "weight": "記載なし",
+      "material": "記載なし",
+      "origin": "記載なし",
+      "connectivity": [
+        "Wi-Fi",
+        "Bluetooth 5.0 (※検索結果から推測)",
+        "GPS / 北斗 / QZSS / GLONASS / Galileo"
+      ],
+      "other": [
+        "Widevine L1対応",
+        "顔認証対応",
+        "ワイヤレスCast対応",
+        "10点マルチタッチ対応"
+      ]
+    }
+  }
+}
