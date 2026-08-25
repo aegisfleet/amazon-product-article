@@ -3543,7 +3543,8 @@ button.category-pill {
   z-index: 1000;
   pointer-events: none;
   opacity: 0;
-  transition: opacity 0.3s ease;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
   border: none;
   padding: 0;
   background: transparent;
@@ -3555,14 +3556,10 @@ button.category-pill {
   margin: 0;
 }
 
-.toc-modal:not([open]) {
-  display: none;
-}
-
 .toc-modal.is-open {
   pointer-events: auto;
   opacity: 1;
-  display: block;
+  visibility: visible;
 }
 
 .toc-modal-overlay {
