@@ -13,7 +13,7 @@ describe('Competitor card upgrade parsing logic', () => {
 
   function parseScore(text: string): number {
     const match = text.match(/(\d+)\s*点?/);
-    return match?.[1] ? parseInt(match[1], 10) : 0;
+    return match?.[1] ? Number.parseInt(match[1], 10) : 0;
   }
 
   function parseSpecsFromTags(tagTexts: string[]): Record<string, string> {
