@@ -21,10 +21,17 @@ function setupTocModal() {
   const tocModalOverlay = document.getElementById('toc-modal-overlay');
   const tocModalClose = document.getElementById('toc-modal-close');
 
+  let closeTimeout;
+
   function openTocModal() {
     if (!tocModal) return;
+    if (closeTimeout) clearTimeout(closeTimeout);
 
+    if (typeof tocModal.showModal === 'function' && !tocModal.open) {
+      tocModal.showModal();
+    }
     tocModal.classList.add('is-open');
+
     if (tocFab) tocFab.setAttribute('aria-expanded', 'true');
     document.body.classList.add('toc-modal-open');
   }
@@ -34,6 +41,19 @@ function setupTocModal() {
     tocModal.classList.remove('is-open');
     if (tocFab) tocFab.setAttribute('aria-expanded', 'false');
     document.body.classList.remove('toc-modal-open');
+
+    closeTimeout = setTimeout(() => {
+      if (typeof tocModal.close === 'function' && tocModal.open) {
+        tocModal.close();
+      }
+    }, 300);
+  }
+
+  if (tocModal) {
+    tocModal.addEventListener('cancel', (e) => {
+      e.preventDefault();
+      closeTocModal();
+    });
   }
 
   if (tocFab) {
