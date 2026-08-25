@@ -389,25 +389,25 @@
                     return JSON.stringify(specs);
                 }
 
-                function buildCompetitorCompareButton(title, amazonHref, asin, internalHref, score, price, image, category, specsJson) {
+                function buildCompetitorCompareButton(item) {
                     var btn = document.createElement('button');
                     btn.type = 'button';
                     btn.className = 'btn-compare-card';
                     btn.dataset.compareBtn = '1';
-                    btn.dataset.asin = asin || '';
-                    btn.dataset.title = title || '';
-                    btn.dataset.url = internalHref || '';
-                    btn.dataset.affiliateUrl = amazonHref || '';
-                    btn.dataset.image = image || '';
-                    btn.dataset.price = price || '';
-                    btn.dataset.score = String(score || 0);
-                    btn.dataset.category = category || '';
-                    btn.dataset.specs = specsJson || '{}';
+                    btn.dataset.asin = item.asin || '';
+                    btn.dataset.title = item.title || '';
+                    btn.dataset.url = item.internalHref || '';
+                    btn.dataset.affiliateUrl = item.amazonHref || '';
+                    btn.dataset.image = item.image || '';
+                    btn.dataset.price = item.price || '';
+                    btn.dataset.score = String(item.score || 0);
+                    btn.dataset.category = item.category || '';
+                    btn.dataset.specs = item.specsJson || '{}';
                     btn.setAttribute('aria-pressed', 'false');
-                    var titlePrefix = title ? title + 'を' : '';
+                    var titlePrefix = item.title ? item.title + 'を' : '';
                     btn.setAttribute('aria-label', titlePrefix + '比較に追加');
 
-                    var isCompared = globalThis.Compare && typeof globalThis.Compare.isCompared === 'function' && globalThis.Compare.isCompared(asin);
+                    var isCompared = globalThis.Compare && typeof globalThis.Compare.isCompared === 'function' && globalThis.Compare.isCompared(item.asin);
                     if (isCompared) {
                         btn.classList.add('is-compared');
                         btn.setAttribute('aria-pressed', 'true');
@@ -463,7 +463,7 @@
                     var score = 0;
                     if (scoreElem) {
                         var scoreMatch = scoreElem.textContent.match(/(\d+)\s*点?/);
-                        score = scoreMatch ? parseInt(scoreMatch[1], 10) : 0;
+                        score = scoreMatch ? Number.parseInt(scoreMatch[1], 10) : 0;
                     }
 
                     var specsJson = extractCompetitorSpecs(card);
@@ -475,7 +475,17 @@
                         actionRow.className = 'competitor-action-row';
 
                         if (asin) {
-                            var compareBtn = buildCompetitorCompareButton(title, amazonHref, asin, internalHref, score, price, image, '{{ $currentCategory }}', specsJson);
+                            var compareBtn = buildCompetitorCompareButton({
+                                title: title,
+                                amazonHref: amazonHref,
+                                asin: asin,
+                                internalHref: internalHref,
+                                score: score,
+                                price: price,
+                                image: image,
+                                category: '{{ $currentCategory }}',
+                                specsJson: specsJson
+                            });
                             actionRow.appendChild(compareBtn);
                         }
 
