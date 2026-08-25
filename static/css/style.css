@@ -450,10 +450,10 @@ a:hover {
 }
 
 .card-image img {
+  width: 100%;
+  height: 100%;
   max-width: 100%;
   max-height: 100%;
-  width: auto;
-  height: auto;
   object-fit: contain;
   object-position: center;
   padding: var(--spacing-sm);
@@ -898,10 +898,10 @@ a.hero-tag-brand:hover {
 }
 
 .pickup-card-image img {
+  width: 100%;
+  height: 100%;
   max-width: 100%;
   max-height: 100%;
-  width: auto;
-  height: auto;
   object-fit: contain;
   padding: var(--spacing-sm);
   flex-shrink: 1;
@@ -5969,10 +5969,10 @@ body.menu-open .scroll-to-top {
 }
 
 .bargain-card-image img {
+  width: 100%;
+  height: 100%;
   max-width: 100%;
   max-height: 100%;
-  width: auto;
-  height: auto;
   object-fit: contain;
   padding: var(--spacing-sm);
 }
