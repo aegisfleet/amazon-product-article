@@ -226,29 +226,4 @@ document.addEventListener('DOMContentLoaded', () => {
     // Initial check
     updateActiveHeading();
   }
-
-  // Sticky CTA Bar position Sync for TOC FAB
-  // 固定値ではなく実際のバー高さをCSS変数で渡し、Androidのジェスチャーナビ等に対応する
-  const stickyBar = document.getElementById('sticky-cta-bar');
-  if (stickyBar && tocFab && 'MutationObserver' in window) {
-    const GAP = 12; // FABとバーの間のマージン(px)
-
-    function syncTocFabBottom() {
-      if (stickyBar.classList.contains('is-active')) {
-        const barHeight = stickyBar.offsetHeight;
-        tocFab.style.setProperty('bottom', `${barHeight + GAP}px`);
-      } else {
-        tocFab.style.removeProperty('bottom');
-      }
-    }
-
-    const observer = new MutationObserver(syncTocFabBottom);
-    observer.observe(stickyBar, { attributes: true, attributeFilter: ['class'] });
-
-    // バーのリサイズ（セーフエリア変動など）にも追従する
-    if ('ResizeObserver' in window) {
-      const resizeObserver = new ResizeObserver(syncTocFabBottom);
-      resizeObserver.observe(stickyBar);
-    }
-  }
 });
