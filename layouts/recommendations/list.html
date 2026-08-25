@@ -86,35 +86,6 @@
         font-weight: 600;
     }
 
-    .rec-sort-select {
-        padding: 0.35rem 0.75rem;
-        border-radius: var(--radius-md);
-        border: 1.5px solid var(--color-border);
-        background: var(--color-bg-body);
-        color: var(--color-text-main);
-        font-size: 0.9rem;
-        cursor: pointer;
-        outline: none;
-        transition: border-color 0.15s ease;
-        color-scheme: light dark;
-    }
-
-    .rec-sort-select:focus {
-        border-color: var(--color-primary);
-    }
-
-    @media (prefers-color-scheme: dark) {
-        :root:not([data-theme="light"]) .rec-sort-select {
-            background: var(--color-bg-body);
-            color: var(--color-text-main);
-        }
-    }
-
-    [data-theme="dark"] .rec-sort-select {
-        background: var(--color-bg-body);
-        color: var(--color-text-main);
-    }
-
     /* ---- 比較サマリーテーブル ---- */
     .rec-summary-toggle {
         display: flex;
@@ -518,7 +489,7 @@
         </table>
     </section>
 
-    <!-- フィルタ & ソートUI -->
+    <!-- フィルタUI -->
     <div class="rec-controls theme-orange" id="rec-controls">
         <div class="rec-filter-group">
             <span class="rec-filter-label">カテゴリ</span>
@@ -528,15 +499,6 @@
                 <button class="rec-chip" data-category="{{ .category }}">{{- .category -}}</button>
                 {{- end -}}
             </div>
-        </div>
-        <div class="rec-filter-group" style="flex: 0 0 auto; min-width: 0;">
-            <label class="rec-filter-label" for="rec-sort-select">並び替え</label>
-            <select class="rec-sort-select" id="rec-sort-select">
-                <option value="rank">おすすめ順</option>
-                <option value="price-asc">価格が安い順</option>
-                <option value="price-desc">価格が高い順</option>
-                <option value="score-desc">スコアが高い順</option>
-            </select>
         </div>
     </div>
 
@@ -553,8 +515,7 @@
         {{- $imageUrl = $cachedItem.data.images.primary -}}
         {{- end -}}
         {{- end -}}
-        <div class="competitor-card" data-rank="{{ add $index 1 }}" data-category="{{ $rec.category }}"
-            data-price="{{ $rec.price }}" data-score="{{ $score }}"
+        <div class="competitor-card" data-category="{{ $rec.category }}"
             style="display: flex; flex-direction: column; gap: var(--spacing-md); border-left: 4px solid var(--color-primary); position: relative; padding: var(--spacing-md) 32px; margin-top: 12px;">
             <!-- Rank Badge -->
             <div class="rank-badge"
@@ -760,13 +721,12 @@
             });
         }
 
-        /* ---- フィルタ & ソート ---- */
+        /* ---- フィルタ ---- */
         var chipsContainer = document.getElementById("rec-category-chips");
-        var sortSelect = document.getElementById("rec-sort-select");
         var cardList = document.getElementById("rec-card-list");
         var noResults = document.getElementById("rec-no-results");
 
-        if (!chipsContainer || !sortSelect || !cardList) return;
+        if (!chipsContainer || !cardList) return;
 
         // カテゴリチップの重複除去
         var chips = Array.from(chipsContainer.querySelectorAll(".rec-chip[data-category]"));
@@ -789,45 +749,22 @@
 
         function applyFilter() {
             var cards = getCards();
-            var sortVal = sortSelect.value;
+            var visibleCount = 0;
 
             // フィルタ
             cards.forEach(function (card) {
                 var cat = card.dataset.category || "";
                 if (activeCategory === "all" || cat === activeCategory) {
                     card.classList.remove("hidden");
+                    visibleCount++;
                 } else {
                     card.classList.add("hidden");
                 }
             });
 
-            // ソート（表示カードのみ）
-            var visibleCards = cards.filter(function (c) { return !c.classList.contains("hidden"); });
-            visibleCards.sort(function (a, b) {
-                if (sortVal === "price-asc") {
-                    return Number(a.dataset.price) - Number(b.dataset.price);
-                } else if (sortVal === "price-desc") {
-                    return Number(b.dataset.price) - Number(a.dataset.price);
-                } else if (sortVal === "score-desc") {
-                    var sa = Number(a.dataset.score) || 0;
-                    var sb = Number(b.dataset.score) || 0;
-                    if (sb !== sa) return sb - sa;
-                    return Number(a.dataset.rank) - Number(b.dataset.rank);
-                } else {
-                    // おすすめ順（元の順位）
-                    return Number(a.dataset.rank) - Number(b.dataset.rank);
-                }
-            });
-
-            // DOMに反映（非表示カードは末尾に）
-            var hiddenCards = cards.filter(function (c) { return c.classList.contains("hidden"); });
-            visibleCards.concat(hiddenCards).forEach(function (card) {
-                cardList.appendChild(card);
-            });
-
             // 結果ゼロ表示
             if (noResults) {
-                noResults.classList.toggle("visible", visibleCards.length === 0);
+                noResults.classList.toggle("visible", visibleCount === 0);
             }
         }
 
@@ -841,9 +778,6 @@
             });
             applyFilter();
         });
-
-        // ソート変更
-        sortSelect.addEventListener("change", applyFilter);
 
         // 初期適用（チップ重複除去後）
         applyFilter();
