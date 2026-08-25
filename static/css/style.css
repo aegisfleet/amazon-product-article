@@ -2158,19 +2158,29 @@ a.competitor-preview:hover {
   color: var(--color-primary);
 }
 
-/* Product Count Badge */
+/* Product Count Badge & Quick Nav */
 .product-count-container {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: var(--spacing-md);
-  flex-wrap: wrap;
+  gap: var(--spacing-sm);
   margin-bottom: var(--spacing-lg);
+  width: 100%;
+}
+
+@media (min-width: 640px) {
+  .product-count-container {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: var(--spacing-md);
+  }
 }
 
 .product-count-badge {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: var(--spacing-sm);
   background-color: var(--color-bg-card);
   border: 1px solid var(--color-border);
@@ -2204,23 +2214,58 @@ a.competitor-preview:hover {
   margin: 0 0.1rem;
 }
 
+/* Quick Nav Button Group (2x2 on mobile, flex on desktop) */
+.quick-nav-group {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.5rem;
+  width: 100%;
+  max-width: 440px;
+  box-sizing: border-box;
+}
+
+@media (min-width: 640px) {
+  .quick-nav-group {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    width: auto;
+    max-width: none;
+    gap: var(--spacing-sm);
+  }
+}
+
 /* Today's Recommendation Link */
 .today-recommendation-link {
   display: flex;
   align-items: center;
-  gap: var(--spacing-sm);
+  justify-content: center;
+  gap: 0.25rem;
   background: linear-gradient(135deg, #c2410c, #9a3412);
   color: #fff;
-  padding: 0.5rem 1rem;
+  padding: 0.5rem 0.25rem;
   border: 1px solid #9a3412;
   border-radius: var(--radius-md);
   font-weight: 600;
-  font-size: 0.95rem;
+  font-size: 0.8125rem;
   text-decoration: none;
+  white-space: nowrap;
   box-shadow: 0 2px 8px rgba(194, 65, 12, 0.25);
   transition: all 0.2s ease;
   position: relative;
   overflow: hidden;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+@media (min-width: 640px) {
+  .today-recommendation-link {
+    font-size: 0.95rem;
+    padding: 0.5rem 1rem;
+    gap: var(--spacing-sm);
+    width: auto;
+  }
 }
 
 .today-recommendation-link:visited,
@@ -2259,8 +2304,14 @@ a.competitor-preview:hover {
 }
 
 .today-recommendation-icon {
-  font-size: 1.1rem;
+  font-size: 1rem;
   line-height: 1;
+}
+
+@media (min-width: 640px) {
+  .today-recommendation-icon {
+    font-size: 1.1rem;
+  }
 }
 
 /* Competitor Preview (Creators API Product Info) */
@@ -4926,19 +4977,32 @@ body.menu-open .scroll-to-top {
 .bargain-link {
   display: flex;
   align-items: center;
-  gap: var(--spacing-sm);
+  justify-content: center;
+  gap: 0.25rem;
   background: linear-gradient(135deg, #047857, #03543f);
   color: #fff;
-  padding: 0.5rem 1rem;
+  padding: 0.5rem 0.25rem;
   border: 1px solid #03543f;
   border-radius: var(--radius-md);
   font-weight: 600;
-  font-size: 0.95rem;
+  font-size: 0.8125rem;
   text-decoration: none;
+  white-space: nowrap;
   box-shadow: 0 2px 8px rgba(5, 150, 105, 0.25);
   transition: all 0.2s ease;
   position: relative;
   overflow: hidden;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+@media (min-width: 640px) {
+  .bargain-link {
+    font-size: 0.95rem;
+    padding: 0.5rem 1rem;
+    gap: var(--spacing-sm);
+    width: auto;
+  }
 }
 
 .bargain-link:hover {
@@ -4975,27 +5039,46 @@ body.menu-open .scroll-to-top {
 }
 
 .bargain-link-icon {
-  font-size: 1.1rem;
+  font-size: 1rem;
   line-height: 1;
+}
+
+@media (min-width: 640px) {
+  .bargain-link-icon {
+    font-size: 1.1rem;
+  }
 }
 
 /* --- Home Page: Deals Link Button --- */
 .deals-link {
   display: flex;
   align-items: center;
-  gap: var(--spacing-sm);
+  justify-content: center;
+  gap: 0.25rem;
   background: linear-gradient(135deg, #dc2626, #c2410c);
   color: #fff;
-  padding: 0.5rem 1rem;
+  padding: 0.5rem 0.25rem;
   border: 1px solid #b91c1c;
   border-radius: var(--radius-md);
   font-weight: 600;
-  font-size: 0.95rem;
+  font-size: 0.8125rem;
   text-decoration: none;
+  white-space: nowrap;
   box-shadow: 0 2px 8px rgba(220, 38, 38, 0.25);
   transition: all 0.2s ease;
   position: relative;
   overflow: hidden;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+@media (min-width: 640px) {
+  .deals-link {
+    font-size: 0.95rem;
+    padding: 0.5rem 1rem;
+    gap: var(--spacing-sm);
+    width: auto;
+  }
 }
 
 .deals-link:hover {
@@ -5031,23 +5114,47 @@ body.menu-open .scroll-to-top {
   color: #fff;
 }
 
+.deals-link-icon {
+  font-size: 1rem;
+  line-height: 1;
+}
+
+@media (min-width: 640px) {
+  .deals-link-icon {
+    font-size: 1.1rem;
+  }
+}
+
 /* --- Product Request Link Button --- */
 .request-link {
   display: flex;
   align-items: center;
-  gap: var(--spacing-sm);
+  justify-content: center;
+  gap: 0.25rem;
   background: linear-gradient(135deg, #4f46e5, #6366f1);
   color: #fff;
-  padding: 0.5rem 1rem;
+  padding: 0.5rem 0.25rem;
   border: 1px solid #4338ca;
   border-radius: var(--radius-md);
   font-weight: 600;
-  font-size: 0.95rem;
+  font-size: 0.8125rem;
   text-decoration: none;
+  white-space: nowrap;
   box-shadow: 0 2px 8px rgba(79, 70, 229, 0.25);
   transition: all 0.2s ease;
   position: relative;
   overflow: hidden;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+@media (min-width: 640px) {
+  .request-link {
+    font-size: 0.95rem;
+    padding: 0.5rem 1rem;
+    gap: var(--spacing-sm);
+    width: auto;
+  }
 }
 
 .request-link:hover {
@@ -5068,8 +5175,14 @@ body.menu-open .scroll-to-top {
 }
 
 .request-link-icon {
-  font-size: 1.1rem;
+  font-size: 1rem;
   line-height: 1;
+}
+
+@media (min-width: 640px) {
+  .request-link-icon {
+    font-size: 1.1rem;
+  }
 }
 
 [data-theme="dark"] .request-link {
