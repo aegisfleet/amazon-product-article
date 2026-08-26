@@ -152,16 +152,15 @@
                     <div class="compare-tray-header">
                         <span class="compare-tray-title">
                             <span class="compare-tray-icon">⚖️</span>
-                            <span>商品比較</span>
+                            <span class="compare-tray-label">商品比較</span>
                             <span id="compare-tray-count" class="compare-tray-count">0/3</span>
                         </span>
                         <button type="button" id="compare-tray-clear" class="compare-tray-clear-btn" title="比較をすべてクリア" aria-label="比較をすべてクリア">クリア</button>
                     </div>
                     <div id="compare-tray-items" class="compare-tray-items"></div>
                     <div class="compare-tray-actions">
-                        <button type="button" id="compare-tray-open" class="compare-tray-open-btn">
-                            <span>比較表を見る</span>
-                            <span class="compare-tray-arrow">→</span>
+                        <button type="button" id="compare-tray-open" class="compare-tray-open-btn" aria-label="選択した商品を比較する">
+                            <span>比較する</span>
                         </button>
                     </div>
                 </div>
@@ -380,8 +379,13 @@
         items.forEach(function (item) {
             html += `
                 <th class="compare-col-product">
-                    <button type="button" class="compare-col-remove" data-asin="${escapeHtml(item.asin)}" title="この商品を比較から外す" aria-label="${escapeHtml(item.title)}を比較から外す">✕ 削除</button>
                     <div class="compare-product-card-top">
+                        <div class="compare-col-remove-wrapper">
+                            <button type="button" class="compare-col-remove" data-asin="${escapeHtml(item.asin)}" title="この商品を比較から外す" aria-label="${escapeHtml(item.title)}を比較から外す">
+                                <span class="compare-col-remove-icon" aria-hidden="true">✕</span>
+                                <span class="compare-col-remove-text">削除</span>
+                            </button>
+                        </div>
                         <div class="compare-product-img">
                             ${item.image ? `<img src="${escapeHtml(item.image)}" alt="${escapeHtml(item.title)}">` : '<div class="compare-noimg">画像なし</div>'}
                         </div>
