@@ -234,10 +234,42 @@
             tray.classList.remove('is-active');
         }
 
+        syncFloatingButtons();
+
         try {
             globalThis.dispatchEvent(new CustomEvent('apa-compare-tray-change', { detail: { count: list.length } }));
         } catch {
             // ignore
+        }
+    }
+
+    function syncFloatingButtons() {
+        const scrollToTopBtn = document.getElementById('scroll-to-top');
+        const tocFab = document.getElementById('toc-fab');
+        const floatingSearchFab = document.getElementById('floating-search-fab');
+        const stickyBar = document.getElementById('sticky-cta-bar');
+        const compareTray = document.getElementById('compare-tray');
+        const GAP = 12;
+
+        let maxBarHeight = 0;
+        if (stickyBar && stickyBar.classList.contains('is-active')) {
+            maxBarHeight = Math.max(maxBarHeight, stickyBar.offsetHeight);
+        }
+        if (compareTray && compareTray.classList.contains('is-active')) {
+            maxBarHeight = Math.max(maxBarHeight, compareTray.offsetHeight);
+        }
+
+        const floatingButtons = [scrollToTopBtn, tocFab, floatingSearchFab].filter(Boolean);
+
+        if (maxBarHeight > 0) {
+            const bottomOffset = `${maxBarHeight + GAP}px`;
+            floatingButtons.forEach(function (btn) {
+                btn.style.setProperty('bottom', bottomOffset);
+            });
+        } else {
+            floatingButtons.forEach(function (btn) {
+                btn.style.removeProperty('bottom');
+            });
         }
     }
 
@@ -548,6 +580,7 @@
     function init() {
         bindCompareButtons();
         updateUI();
+        window.addEventListener('resize', syncFloatingButtons, { passive: true });
     }
 
     if (document.readyState === 'loading') {

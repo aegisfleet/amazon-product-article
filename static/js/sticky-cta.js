@@ -7,14 +7,24 @@ document.addEventListener('DOMContentLoaded', () => {
   const GAP = 12; // バーとフローティングボタンの間のマージン(px)
 
   function syncFloatingButtons() {
-    if (stickyBar.classList.contains('is-active')) {
-      const barHeight = stickyBar.offsetHeight;
-      const bottomOffset = `${barHeight + GAP}px`;
-      if (scrollToTopBtn) scrollToTopBtn.style.setProperty('bottom', bottomOffset);
-      if (tocFab) tocFab.style.setProperty('bottom', bottomOffset);
+    const compareTray = document.getElementById('compare-tray');
+    const floatingSearchFab = document.getElementById('floating-search-fab');
+    let maxBarHeight = 0;
+
+    if (stickyBar && stickyBar.classList.contains('is-active')) {
+      maxBarHeight = Math.max(maxBarHeight, stickyBar.offsetHeight);
+    }
+    if (compareTray && compareTray.classList.contains('is-active')) {
+      maxBarHeight = Math.max(maxBarHeight, compareTray.offsetHeight);
+    }
+
+    const floatingButtons = [scrollToTopBtn, tocFab, floatingSearchFab].filter(Boolean);
+
+    if (maxBarHeight > 0) {
+      const bottomOffset = `${maxBarHeight + GAP}px`;
+      floatingButtons.forEach((btn) => btn.style.setProperty('bottom', bottomOffset));
     } else {
-      if (scrollToTopBtn) scrollToTopBtn.style.removeProperty('bottom');
-      if (tocFab) tocFab.style.removeProperty('bottom');
+      floatingButtons.forEach((btn) => btn.style.removeProperty('bottom'));
     }
   }
 
@@ -59,5 +69,6 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   window.addEventListener('resize', syncFloatingButtons, { passive: true });
+  window.addEventListener('apa-compare-tray-change', syncFloatingButtons);
 });
 
