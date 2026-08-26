@@ -11,10 +11,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const floatingSearchFab = document.getElementById('floating-search-fab');
     let maxBarHeight = 0;
 
-    if (stickyBar && stickyBar.classList.contains('is-active')) {
+    if (stickyBar?.classList.contains('is-active')) {
       maxBarHeight = Math.max(maxBarHeight, stickyBar.offsetHeight);
     }
-    if (compareTray && compareTray.classList.contains('is-active')) {
+    if (compareTray?.classList.contains('is-active')) {
       maxBarHeight = Math.max(maxBarHeight, compareTray.offsetHeight);
     }
 
