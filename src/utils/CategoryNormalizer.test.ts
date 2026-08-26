@@ -203,6 +203,8 @@ describe('CategoryNormalizer', () => {
         'ExcludeASIN',
         'お客様都合の返品不可',
         'お客様都合の返品不可_電動歯ブラシ、口腔洗浄器',
+        'メモリーカードストア：スマホで使う microSDカード',
+        'Micro SDカード選び方ガイド',
       ];
       invalidNames.forEach((name) => {
         expect(CategoryNormalizer.isValidCategoryName(name)).toBe(false);
@@ -594,6 +596,59 @@ describe('CategoryNormalizer', () => {
       const result = CategoryNormalizer.selectBestCategory(nodes, title);
       expect(result.main).toBe('バイク用マウントステー・ホルダー');
       expect(result.browseNodeId).toBe('5303003051');
+    });
+
+    it('should select "microSDカード" for KIOXIA microSD card (B08PTPTMH5)', () => {
+      const nodes: BrowseNode[] = [
+        {
+          contextFreeName: 'SDカード',
+          displayName: 'SDカード',
+          id: '8054241051',
+        },
+        {
+          contextFreeName: 'microSDカード',
+          displayName: 'microSDカード',
+          id: '171386011',
+        },
+        {
+          contextFreeName: 'メモリーカード',
+          displayName: 'メモリーカード',
+          id: '26157601051',
+        },
+        {
+          contextFreeName: 'メモリーカードストア：スマホで使う microSDカード',
+          displayName: 'メモリーカードストア：スマホで使う microSDカード',
+          id: '4714074051',
+        },
+        {
+          contextFreeName: 'パソコン ストア',
+          displayName: 'パソコン ストア',
+          id: '8182084051',
+        },
+        {
+          contextFreeName: 'microSDカード',
+          displayName: 'microSDカード',
+          id: '203888214051',
+        },
+        {
+          contextFreeName: 'Micro SDカード選び方ガイド',
+          displayName: 'Micro SDカード選び方ガイド',
+          id: '23320333051',
+        },
+        {
+          contextFreeName: 'eero_Testpage',
+          displayName: 'eero_Testpage',
+          id: '213837823051',
+        },
+      ];
+      const title =
+        'KIOXIA(キオクシア) 旧東芝メモリ microSD 128GB UHS-I Class10 (最大読出速度100MB/s) Nintendo Switch動作確認済 国内サポート正規品 メーカー保証5年 KLMEA128G';
+
+      const result = CategoryNormalizer.selectBestCategory(nodes, title);
+      expect(result.main).toBe('microSDカード');
+      expect(result.sub).not.toContain('ストア');
+      expect(result.sub).not.toContain('ガイド');
+      expect(result.browseNodeId).toBe('171386011');
     });
   });
 });

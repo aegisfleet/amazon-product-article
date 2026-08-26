@@ -93,9 +93,13 @@ export class CategoryNormalizer {
     'スマートフォン',
     'スマホ',
     '携帯電話',
+    'SDカード',
+    'メモリーカード',
   ];
 
   private static readonly HIGH_PRIORITY_KEYWORDS = [
+    'microSDカード',
+    'microSD',
     'ヘアドライヤー',
     'ドライヤー',
     'カールドライヤー',
@@ -469,7 +473,7 @@ export class CategoryNormalizer {
       /[^[\]]{1,200} \[\d+\]/,
       /arborist merchandising root/i,
       // Generic "Store" pages
-      /(?:ストア|store)(?:\s*[(（].*[)）])?$/i,
+      /(?:ストア|store)/i,
       /ブラックフライデー/i,
       /文房具・オフィス用品ヤスいいね対象/,
       /日本ヒルズ・コルゲート/i,
@@ -530,7 +534,7 @@ export class CategoryNormalizer {
       /返品不可/i,
       /お客様都合/i,
       /ラインナップ/i,
-      /申込(?:ガイド)?/i,
+      /ガイド|guide/i,
       /\b[A-Za-z0-9]+All$/i,
       /^moto\s+/i,
       /おうちで機種変更/i,
