@@ -491,7 +491,16 @@
     "description": "PLUS（プラス）の商品一覧",
     "matcher": {
       "type": "brand",
-      "value": "\\bPLUS\\b|プラス"
+      "value": "^(PLUS|プラス)(\\s*\\((PLUS|プラス)\\))?$"
+    }
+  },
+  "plus eau": {
+    "slug": "plus-eau",
+    "icon": "🧴",
+    "description": "plus eau（プリュスオー）の商品一覧",
+    "matcher": {
+      "type": "brand",
+      "value": "plus eau|プリュスオー"
     }
   },
   "KAI": {
@@ -2134,7 +2143,7 @@
   },
   "平安伸銅工業": {
     "slug": "平安伸銅工業",
-    "icon": "🏷️",
+    "icon": "🪜",
     "description": "平安伸銅工業の商品一覧",
     "matcher": {
       "type": "brand",
@@ -2143,11 +2152,20 @@
   },
   "INIU": {
     "slug": "iniu",
-    "icon": "🏷️",
+    "icon": "🔋",
     "description": "INIUの商品一覧",
     "matcher": {
       "type": "brand",
       "value": "INIU"
+    }
+  },
+  "NIPLUX": {
+    "slug": "niplux",
+    "icon": "💆",
+    "description": "NIPLUXの商品一覧",
+    "matcher": {
+      "type": "brand",
+      "value": "NIPLUX"
     }
   }
 }
