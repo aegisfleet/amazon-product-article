@@ -10,6 +10,10 @@ Amazon上で出品終了や商品削除等によりページ（`https://www.amaz
 
 - **デッド商品の原因**:
   出品取り下げ、ASIN廃止、規約違反、カタログ統合等により、Amazonアクセス時に `HTTP 404`（「ページが見つかりません」）が返される状態。
+- **404デッド商品と在庫切れ商品の違い**:
+  - **404デッド商品（削除対象）**: Amazonの商品ページ自体が消滅しており、アクセス不能な状態。
+  - **一時的な在庫切れ（要経過観察）**: Amazonページは存在する（HTTP 200）が、「現在在庫切れです」「価格情報なし」となっている状態。これらは入荷再開の可能性があるため、即時削除ではなく定期監視する。
+  - **デジタル商品（Audible/Kindle等）**: 価格「￥0」で「すぐにダウンロード可能」となっている正規の無料体験・デジタルコンテンツ。
 - **削除対象の関連ファイル**:
   1. `content/articles/<ASIN>.md`（記事ページ）
   2. `data/investigations/<ASIN>.json`（調査データ）
@@ -38,7 +42,7 @@ pnpm ts-node scripts/prune-dead-products.ts --asin <ASIN>
 ```
 
 ### 2.3 全記事スキャン（大規模棚卸し）
-サイト内の全記事（5,700+件）を対象にスキャンを実施します。
+サイト内の全記事（5,800+件）を対象にスキャンを実施します。
 
 ```bash
 pnpm ts-node scripts/prune-dead-products.ts --scope all --audit
@@ -64,6 +68,11 @@ pnpm run prune:dead
 pnpm ts-node scripts/prune-dead-products.ts --prune
 ```
 
+### 3.3 特定ASINを個別に削除する場合
+```bash
+pnpm ts-node scripts/prune-dead-products.ts --asin <ASIN> --prune
+```
+
 ---
 
 ## 4. 検証手順 (Verification)
@@ -80,3 +89,4 @@ pnpm run build
 # 3. ユニットテスト
 pnpm test
 ```
+
