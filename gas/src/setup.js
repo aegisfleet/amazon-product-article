@@ -93,9 +93,9 @@ function setupProductRequestSystem() {
   * フォーム送信時トリガーを設定・最新化する関数
   */
 function setupFormSubmitTrigger() {
-  const formId = PropertiesService.getScriptProperties().getProperty('FORM_ID');
-  if (!formId) {
-    throw new Error('FORM_ID が設定されていません。先に setupProductRequestSystem を実行してください。');
+  const spreadsheet = getSpreadsheet();
+  if (!spreadsheet) {
+    throw new Error('スプレッドシートが見つかりません。先に setupProductRequestSystem を実行してください。');
   }
 
   // 既存のonFormSubmitトリガーの重複を削除
@@ -106,13 +106,13 @@ function setupFormSubmitTrigger() {
     }
   }
 
-  const form = FormApp.openById(formId);
+  // スプレッドシート側のフォーム送信時トリガーを作成（行書き込み完了直後に発火）
   ScriptApp.newTrigger('onFormSubmit')
-    .forForm(form)
+    .forSpreadsheet(spreadsheet)
     .onFormSubmit()
     .create();
 
-  Logger.log('フォーム送信時トリガーを設定しました。');
+  Logger.log('スプレッドシートのフォーム送信時トリガーを設定しました。');
 }
 
 /**
