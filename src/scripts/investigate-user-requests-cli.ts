@@ -11,7 +11,7 @@
  * 環境変数:
  *   GAS_API_URL                - デプロイされたGAS Web APIのURL
  *   GAS_API_TOKEN              - GAS API 認証トークン
- *   MAX_INVESTIGATION_PRODUCTS - 1回の実行で取得する最大件数（デフォルト: 10）
+ *   MAX_INVESTIGATION_PRODUCTS - 1回の実行で取得する最大件数（デフォルト: 1）
  */
 
 import 'dotenv/config';
@@ -229,7 +229,7 @@ async function main(): Promise<void> {
 
   const gasApiUrl = process.env.GAS_API_URL;
   const gasToken = process.env.GAS_API_TOKEN;
-  const maxProducts = Number.parseInt(process.env.MAX_INVESTIGATION_PRODUCTS || '10', 10);
+  const maxProducts = Number.parseInt(process.env.MAX_INVESTIGATION_PRODUCTS || '1', 10);
 
   if (!gasApiUrl || !gasToken) {
     logger.error('Missing required environment variables: GAS_API_URL and/or GAS_API_TOKEN');
