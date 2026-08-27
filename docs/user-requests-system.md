@@ -18,6 +18,8 @@
   調査済みスキップが発生しても、未調査の新規対象商品が1件集まるまで探索を継続する。
 - **障害耐性と自動リトライ**:
   Julesセッションの失敗等により記事が生成されなかった場合、24時間のタイムアウト判定を経て自動的に再調査対象としてリカバリする。
+- **透明性の高いフィードバック（動的待ち件数・目安表示）**:
+  フォーム送信完了画面（確認メッセージ）に、現在の調査待ち件数および調査開始までの目安時間をリアルタイムに動的表示する。
 - **多様なURL形式の柔軟なサポート**:
   ブラウザの長いURL（日本語パスやトラッキングパラメータ付き）から、公式アプリの短縮URL（`amzn.asia`, `amzn.to`, `link.amazon`, `a.co`）までをシームレスに自動判別・解決する。
 
@@ -31,7 +33,7 @@ sequenceDiagram
     actor User as ユーザー（読者）
     participant Form as Googleフォーム
     participant GSS as Googleスプレッドシート
-    participant GAS as GAS Web API
+    participant GAS as GAS (トリガー & Web API)
     participant GHA as GitHub Actions (cron)
     participant CLI as 調査CLI (TypeScript)
     participant API as Creators API
@@ -39,6 +41,8 @@ sequenceDiagram
 
     User->>Form: 商品URLを入力・送信（完全匿名）
     Form->>GSS: 回答を自動記録（A列: タイムスタンプ, B列: URL）
+    Form->>GAS: onFormSubmit トリガー発火
+    GAS->>Form: 待機件数を集計し、完了画面メッセージを最新化
     
     Note over GHA: 1時間に1回程度 定期起動
     GHA->>CLI: pnpm run investigate:user-requests -- --fetch-requests
