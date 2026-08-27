@@ -134,19 +134,22 @@ function doGet(e) {
 
 /**
  * 待ち件数に応じたGoogleフォーム確認メッセージを生成
+ * （※フォームにセットするメッセージは「次に送信するユーザー自身」を含むため pendingCount + 1 件となる）
  */
 function generateConfirmationMessage(pendingCount) {
+  const totalCount = Math.max(1, pendingCount + 1);
   let queueText = '';
-  if (pendingCount <= 1) {
+
+  if (totalCount === 1) {
     queueText =
       '【現在の調査状況・目安】\n' +
-      '・現在の調査待ち: 0 件（現在待機列はありません）\n' +
-      '・調査開始の目安: 次回実行時（1時間以内）に調査が開始される見込みです。\n';
+      '・現在の調査待ち: 1 件（今回受付分）\n' +
+      '・調査開始の目安: 次回実行時（約1時間以内）に調査が開始される見込みです。\n';
   } else {
     queueText =
       '【現在の調査状況・目安】\n' +
-      `・現在の調査待ち: 約 ${pendingCount - 1} 件\n` +
-      `・調査開始の目安: 約 ${pendingCount - 1} 時間以内（1時間に1件ずつ順次調査中）\n`;
+      `・現在の調査待ち: 約 ${totalCount} 件（今回受付分を含む）\n` +
+      `・調査開始の目安: およそ ${totalCount} 時間以内（1時間に1件ずつ順次調査中）\n`;
   }
 
   return (
