@@ -75,12 +75,44 @@ function setupProductRequestSystem() {
   updatedSheet.getRange(1, 1, 1, 6).setBackground('#f3f4f6').setFontWeight('bold');
   updatedSheet.setFrozenRows(1);
 
+  // 6. フォーム送信時トリガーの自動設定
+  setupFormSubmitTrigger();
+
+  // 7. 初期確認メッセージの設定
+  updateConfirmationMessage();
+
   Logger.log('=== 初期セットアップが完了しました ===');
   Logger.log(`公開用フォームURL: ${form.getPublishedUrl()}`);
   Logger.log(`編集用フォームURL: ${form.getEditUrl()}`);
   Logger.log(`スプレッドシートURL: ${spreadsheet.getUrl()}`);
   Logger.log(`スプレッドシートID: ${spreadsheetId}`);
   Logger.log(`API認証トークン: ${scriptProperties.getProperty('API_TOKEN')}`);
+}
+
+/**
+  * フォーム送信時トリガーを設定・最新化する関数
+  */
+function setupFormSubmitTrigger() {
+  const formId = PropertiesService.getScriptProperties().getProperty('FORM_ID');
+  if (!formId) {
+    throw new Error('FORM_ID が設定されていません。先に setupProductRequestSystem を実行してください。');
+  }
+
+  // 既存のonFormSubmitトリガーの重複を削除
+  const triggers = ScriptApp.getProjectTriggers();
+  for (const trigger of triggers) {
+    if (trigger.getHandlerFunction() === 'onFormSubmit') {
+      ScriptApp.deleteTrigger(trigger);
+    }
+  }
+
+  const form = FormApp.openById(formId);
+  ScriptApp.newTrigger('onFormSubmit')
+    .forForm(form)
+    .onFormSubmit()
+    .create();
+
+  Logger.log('フォーム送信時トリガーを設定しました。');
 }
 
 /**
@@ -110,5 +142,9 @@ function updateFormDescription() {
     textItem.setValidation(urlValidation);
   }
 
-  Logger.log('フォームの説明文およびバリデーションを更新しました: ' + form.getPublishedUrl());
+  // フォーム送信時トリガーの登録と確認メッセージの更新
+  setupFormSubmitTrigger();
+  updateConfirmationMessage();
+
+  Logger.log('フォームの説明文、バリデーション、送信トリガーおよび確認メッセージを更新しました: ' + form.getPublishedUrl());
 }

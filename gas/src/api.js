@@ -133,6 +133,70 @@ function doGet(e) {
 }
 
 /**
+ * 待ち件数に応じたGoogleフォーム確認メッセージを生成
+ */
+function generateConfirmationMessage(pendingCount) {
+  let queueText = '';
+  if (pendingCount <= 1) {
+    queueText =
+      '【現在の調査状況・目安】\n' +
+      '・現在の調査待ち: 0 件（現在待機列はありません）\n' +
+      '・調査開始の目安: 次回実行時（1時間以内）に調査が開始される見込みです。\n';
+  } else {
+    queueText =
+      '【現在の調査状況・目安】\n' +
+      `・現在の調査待ち: 約 ${pendingCount - 1} 件\n` +
+      `・調査開始の目安: 約 ${pendingCount - 1} 時間以内（1時間に1件ずつ順次調査中）\n`;
+  }
+
+  return (
+    '送信が完了しました。リクエストありがとうございます！\n\n' +
+    queueText + '\n' +
+    '※既に記事が存在する場合や無効なURLの場合はスキップされるため、より早く開始される場合があります。\n' +
+    '※調査結果は当サイトにて自動公開されます。'
+  );
+}
+
+/**
+ * スプレッドシートの未完了件数を集計し、フォーム送信完了画面のメッセージを最新化する
+ */
+function updateConfirmationMessage() {
+  try {
+    const formId = PropertiesService.getScriptProperties().getProperty('FORM_ID');
+    if (!formId) return;
+
+    const form = FormApp.openById(formId);
+    const spreadsheet = getSpreadsheet();
+    const sheet = spreadsheet.getSheets()[0];
+    const lastRow = sheet.getLastRow();
+
+    let pendingCount = 0;
+    if (lastRow > 1) {
+      const data = sheet.getRange(2, 2, lastRow - 1, 2).getValues(); // B列(URL), C列(ステータス)
+      for (let i = 0; i < data.length; i++) {
+        const url = String(data[i][0] || '').trim();
+        const status = String(data[i][1] || '').trim();
+        if (url && !COMPLETED_STATUSES.has(status)) {
+          pendingCount++;
+        }
+      }
+    }
+
+    const message = generateConfirmationMessage(pendingCount);
+    form.setConfirmationMessage(message);
+  } catch (error) {
+    Logger.log('Failed to update confirmation message: ' + error);
+  }
+}
+
+/**
+ * フォーム送信時トリガー用ハンドラ
+ */
+function onFormSubmit(e) {
+  updateConfirmationMessage();
+}
+
+/**
  * POST: 処理完了・ステータス更新
  * ペイロード:
  * {
@@ -168,6 +232,9 @@ function doPost(e) {
     const now = Utilities.formatDate(new Date(), 'Asia/Tokyo', 'yyyy-MM-dd HH:mm:ss');
 
     const updatedCount = applyRowUpdates(sheet, payload.updates, now);
+
+    // ステータス更新後にフォームの確認メッセージ（待ち件数）も自動最新化
+    updateConfirmationMessage();
 
     return createJsonResponse({
       success: true,
