@@ -2,8 +2,8 @@ name: User Requests Investigation
 
 on:
   schedule:
-    # 毎日 13:00 JST (04:00 UTC) と 21:00 JST (12:00 UTC) に定期実行
-    - cron: '0 4,12 * * *'
+    # 毎時0分 (1時間に1回) に定期実行
+    - cron: '0 * * * *'
   workflow_dispatch:
 
 jobs:
@@ -41,7 +41,7 @@ jobs:
       env:
         GAS_API_URL: ${{ secrets.GAS_API_URL }}
         GAS_API_TOKEN: ${{ secrets.GAS_API_TOKEN }}
-        MAX_INVESTIGATION_PRODUCTS: '10'
+        MAX_INVESTIGATION_PRODUCTS: '1'
       run: pnpm run investigate:user-requests -- --fetch-requests
 
     - name: Upload user requests session data
@@ -146,7 +146,7 @@ jobs:
         JULES_API_KEY: ${{ secrets.JULES_API_KEY }}
         JULES_SOURCE: sources/github/${{ github.repository }}
         JULES_STARTING_BRANCH: ${{ github.ref_name }}
-        MAX_INVESTIGATION_PRODUCTS: '5'
+        MAX_INVESTIGATION_PRODUCTS: '1'
       run: pnpm run investigate
 
     - name: Update status in GAS
