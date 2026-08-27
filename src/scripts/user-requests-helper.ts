@@ -1,6 +1,7 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import axios from 'axios';
+import { parseInputAsin } from '../utils/amazon';
 import { Logger } from '../utils/Logger';
 
 const logger = Logger.getInstance();
@@ -34,61 +35,18 @@ export interface UserRequestsSessionData {
 }
 
 /**
- * AmazonのURLからASINを抽出する
- * 通常URL、短縮URL（amzn.asia, amzn.to）に対応
+ * AmazonのURLまたはASINからASINを抽出・解決する
+ * 通常URL、各種短縮URL（amzn.asia, amzn.to, link.amazon, a.co 等）に対応
  */
 export async function extractAsinFromUrl(inputUrl: string): Promise<string | null> {
-  if (!inputUrl) return null;
+  if (!inputUrl || typeof inputUrl !== 'string') return null;
 
-  let targetUrl = inputUrl.trim();
-
-  // 短縮URLの場合はリダイレクト先を取得 (amzn.asia, amzn.to, link.amazon, a.co)
-  const isShortUrl =
-    targetUrl.includes('amzn.asia') ||
-    targetUrl.includes('amzn.to') ||
-    targetUrl.includes('link.amazon') ||
-    targetUrl.includes('a.co');
-
-  if (isShortUrl) {
-    try {
-      const response = await axios.get(targetUrl, {
-        maxRedirects: 5,
-        validateStatus: (status) => status < 400 || status === 404,
-      });
-      const req = response.request as { res?: { responseUrl?: string } } | undefined;
-      if (req?.res?.responseUrl) {
-        targetUrl = req.res.responseUrl;
-      }
-    } catch (error) {
-      logger.warn(`Failed to resolve short URL ${inputUrl}:`, error);
-    }
+  try {
+    return await parseInputAsin(inputUrl);
+  } catch (error) {
+    logger.warn(`Failed to resolve Amazon URL: ${inputUrl}`, error);
+    return null;
   }
-
-  // ASIN抽出正規表現
-  // パターン例:
-  // - /dp/B0XXXXXXXX
-  // - /gp/product/B0XXXXXXXX
-  // - /ASIN/B0XXXXXXXX
-  // - /d/B0XXXXXXXX
-  // - ?asin=B0XXXXXXXX
-  const patterns = [
-    /(?:\/dp\/|\/gp\/product\/|\/ASIN\/|\/d\/)([A-Z0-9]{10})/i,
-    /[?&]asin=([A-Z0-9]{10})/i,
-    /(?:^|\/)([A-Z0-9]{10})(?:[/?#]|$)/i,
-  ];
-
-  for (const pattern of patterns) {
-    const match = pattern.exec(targetUrl);
-    if (match?.[1]) {
-      const candidate = match[1].toUpperCase();
-      // 10桁英数字かつ先頭がBまたは英数字
-      if (/^[A-Z0-9]{10}$/.test(candidate)) {
-        return candidate;
-      }
-    }
-  }
-
-  return null;
 }
 
 /**
