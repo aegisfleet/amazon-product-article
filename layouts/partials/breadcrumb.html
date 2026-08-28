@@ -26,11 +26,14 @@
         {{- /* 親カテゴリを検索 */ -}}
         {{- $parentName := "" -}}
         {{- $parentSlug := "" -}}
+        {{- $canonicalCategory := $category -}}
+        {{- $lowerCategory := lower $category -}}
         {{- range $parent, $data := hugo.Data.categorygroups -}}
         {{- range $data.categories -}}
-        {{- if eq . $category -}}
+        {{- if eq (lower .) $lowerCategory -}}
         {{- $parentName = $parent -}}
         {{- $parentSlug = $data.slug -}}
+        {{- $canonicalCategory = . -}}
         {{- end -}}
         {{- end -}}
         {{- end -}}
@@ -46,7 +49,7 @@
         {{- /* 子カテゴリ表示 */ -}}
         <li class="breadcrumb-item">
             <span class="breadcrumb-separator">›</span>
-            <a href="{{ printf `categories/%s/` ($category | urlize) | relURL }}">{{- $category -}}</a>
+            <a href="{{ printf `categories/%s/` ($canonicalCategory | urlize) | relURL }}">{{- $canonicalCategory -}}</a>
         </li>
         {{- end -}}
         {{- end -}}
@@ -60,15 +63,18 @@
         {{- else if eq .Kind "term" -}}
         {{- /* カテゴリ一覧ページ（子カテゴリページ）の場合 */ -}}
         {{- $categoryName := .Title -}}
+        {{- $lowerCategoryName := lower $categoryName -}}
 
         {{- /* 親カテゴリを検索 */ -}}
         {{- $parentName := "" -}}
         {{- $parentSlug := "" -}}
+        {{- $canonicalCategoryName := $categoryName -}}
         {{- range $parent, $data := hugo.Data.categorygroups -}}
         {{- range $data.categories -}}
-        {{- if eq . $categoryName -}}
+        {{- if eq (lower .) $lowerCategoryName -}}
         {{- $parentName = $parent -}}
         {{- $parentSlug = $data.slug -}}
+        {{- $canonicalCategoryName = . -}}
         {{- end -}}
         {{- end -}}
         {{- end -}}
