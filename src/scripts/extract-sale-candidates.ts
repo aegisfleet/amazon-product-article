@@ -7,7 +7,6 @@
 
 import fs from 'node:fs';
 import path from 'node:path';
-import matter from '@11ty/gray-matter';
 import type { ProductDetail } from '../types/Product';
 import { Logger } from '../utils/Logger';
 
@@ -89,20 +88,20 @@ export function loadArticleScoreMap(articlesDir?: string): Map<string, ArticleMe
 
         // Front Matter のみ（--- で囲まれた部分）を高速パース
         const match = content.match(/^---\r?\n([\s\S]*?)\r?\n---/);
-        if (!match || !match[1]) continue;
+        if (!match?.[1]) continue;
 
         const fm = match[1];
         const scoreMatch = fm.match(/score:\s*(\d+)/);
-        if (!scoreMatch || !scoreMatch[1]) continue;
+        if (!scoreMatch?.[1]) continue;
 
         const score = Number.parseInt(scoreMatch[1], 10);
         if (Number.isNaN(score)) continue;
 
         const brandMatch = fm.match(/brand:\s*["']?([^"'\r\n]+)["']?/);
-        const brand = brandMatch && brandMatch[1] ? brandMatch[1].trim() : undefined;
+        const brand = brandMatch?.[1] ? brandMatch[1].trim() : undefined;
 
         const catMatch = fm.match(/categories:\s*\[\s*["']([^"']+)["']/);
-        const category = catMatch && catMatch[1] ? catMatch[1].trim() : undefined;
+        const category = catMatch?.[1] ? catMatch[1].trim() : undefined;
 
         map.set(asin, {
           score,
@@ -207,6 +206,45 @@ export function loadBrandMatchers(brandPath?: string): RegExp[] {
   }
 }
 
+function isRatingAcceptable(rating?: ProductDetail['rating']): boolean {
+  if (!rating || rating.average <= 0) return true;
+  return rating.average >= 3.8;
+}
+
+function isDiscountAcceptable(discount?: number, rating?: ProductDetail['rating']): boolean {
+  if (discount === undefined) return true;
+  if (discount >= 70 || discount < 0) return false;
+  if (discount > 50 && (!rating || rating.count < 30)) return false;
+  return true;
+}
+
+function isUninvestigatedCandidateAcceptable(dealBadge?: string, rating?: ProductDetail['rating']): boolean {
+  if (!dealBadge) return false;
+  return Boolean(rating && rating.average >= 4.0 && rating.count >= 100);
+}
+
+function isCandidateEligible(
+  product: ProductDetail,
+  article: ArticleMetadata | undefined,
+  dealBadge: string | undefined,
+): boolean {
+  if (article) {
+    if (article.score < 75) return false;
+  } else if (!isUninvestigatedCandidateAcceptable(dealBadge, product.rating)) {
+    return false;
+  }
+
+  if (!isDiscountAcceptable(product.savingsPercentage, product.rating)) {
+    return false;
+  }
+
+  if (!isRatingAcceptable(product.rating)) {
+    return false;
+  }
+
+  return true;
+}
+
 function parseCandidateFromEntry(
   asin: string,
   entry: CacheEntry,
@@ -218,40 +256,9 @@ function parseCandidateFromEntry(
   if (!product.price || product.price.amount <= 0) return null;
 
   const article = articleScoreMap.get(asin);
-
-  // 【最重要方針】：記事が存在する場合はスコア75点以上のみを許可（低スコア品は徹底除外）
-  // 記事が存在しない場合でも、公式dealBadgeと高評価・高レビューが揃っているもののみ許可（記事存在時はスコア75未満即除外）
-  if (article && article.score < 75) {
-    return null;
-  }
-
   const dealBadge = product.dealBadge && product.dealBadge.trim() !== '' ? product.dealBadge.trim() : undefined;
-  const discount = product.savingsPercentage;
 
-  // 記事がない未調査商品でdealBadgeもない通常商品は除外
-  if (!article && !dealBadge) {
-    return null;
-  }
-
-  // 記事がない未調査商品の場合、レビュー評価4.0以上かつレビュー100件以上でなければ除外（粗悪ノーブランド排除）
-  if (!article) {
-    if (!product.rating || product.rating.average < 4.0 || product.rating.count < 100) {
-      return null;
-    }
-  }
-
-  // 70%以上の異常な割引率は二重価格・ノーブランド粗悪品の可能性が極めて高いため厳格に除外
-  if (discount !== undefined && (discount >= 70 || discount < 0)) {
-    return null;
-  }
-
-  // レビュー評価が存在する場合、平均3.8未満の低評価商品は除外
-  if (product.rating && product.rating.average > 0 && product.rating.average < 3.8) {
-    return null;
-  }
-
-  // レビュー件数が少なく高割引率（50%超）のノーブランド疑い商品は除外
-  if ((!product.rating || product.rating.count < 30) && discount !== undefined && discount > 50) {
+  if (!isCandidateEligible(product, article, dealBadge)) {
     return null;
   }
 
