@@ -69,6 +69,36 @@ function ensureDirectory(filePath: string): void {
   }
 }
 
+const FRONT_MATTER_REGEX = /^---\r?\n([\s\S]*?)\r?\n---/;
+const SCORE_REGEX = /score:\s*(\d+)/;
+const BRAND_REGEX = /brand:\s*["']?([^"'\r\n]+)["']?/;
+const CATEGORIES_REGEX = /categories:\s*\[\s*["']([^"']+)["']/;
+
+function parseArticleMetadata(content: string): ArticleMetadata | undefined {
+  // Front Matter のみ（--- で囲まれた部分）を高速パース
+  const match = FRONT_MATTER_REGEX.exec(content);
+  if (!match?.[1]) return undefined;
+
+  const fm = match[1];
+  const scoreMatch = SCORE_REGEX.exec(fm);
+  if (!scoreMatch?.[1]) return undefined;
+
+  const score = Number.parseInt(scoreMatch[1], 10);
+  if (Number.isNaN(score)) return undefined;
+
+  const brandMatch = BRAND_REGEX.exec(fm);
+  const brand = brandMatch?.[1] ? brandMatch[1].trim() : undefined;
+
+  const catMatch = CATEGORIES_REGEX.exec(fm);
+  const category = catMatch?.[1] ? catMatch[1].trim() : undefined;
+
+  return {
+    score,
+    brand,
+    category,
+  };
+}
+
 export function loadArticleScoreMap(articlesDir?: string): Map<string, ArticleMetadata> {
   const map = new Map<string, ArticleMetadata>();
   const targetDir = articlesDir || path.join(process.cwd(), 'content/articles');
@@ -85,29 +115,10 @@ export function loadArticleScoreMap(articlesDir?: string): Map<string, ArticleMe
       try {
         const filePath = path.join(targetDir, file);
         const content = fs.readFileSync(filePath, 'utf-8');
-
-        // Front Matter のみ（--- で囲まれた部分）を高速パース
-        const match = content.match(/^---\r?\n([\s\S]*?)\r?\n---/);
-        if (!match?.[1]) continue;
-
-        const fm = match[1];
-        const scoreMatch = fm.match(/score:\s*(\d+)/);
-        if (!scoreMatch?.[1]) continue;
-
-        const score = Number.parseInt(scoreMatch[1], 10);
-        if (Number.isNaN(score)) continue;
-
-        const brandMatch = fm.match(/brand:\s*["']?([^"'\r\n]+)["']?/);
-        const brand = brandMatch?.[1] ? brandMatch[1].trim() : undefined;
-
-        const catMatch = fm.match(/categories:\s*\[\s*["']([^"']+)["']/);
-        const category = catMatch?.[1] ? catMatch[1].trim() : undefined;
-
-        map.set(asin, {
-          score,
-          brand,
-          category,
-        });
+        const metadata = parseArticleMetadata(content);
+        if (metadata) {
+          map.set(asin, metadata);
+        }
       } catch {
         // ignore parse error
       }
