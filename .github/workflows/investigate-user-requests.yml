@@ -2,8 +2,8 @@ name: User Requests Investigation
 
 on:
   schedule:
-    # 1時間に1回 定期実行
-    - cron: '0 * * * *'
+    # 毎時17分（1時間に1回）に定期実行（毎時0分の混雑・キュー遅延を回避）
+    - cron: '17 * * * *'
   workflow_dispatch:
 
 jobs:
