@@ -206,51 +206,55 @@ function rerankResults(results, query, filters = {}) {
     };
 }
 
+async function handleInit(searchIndexUrl) {
+    try {
+        if (typeof Fuse === 'undefined') {
+            importScripts('https://cdn.jsdelivr.net/npm/fuse.js@6.6.2');
+        }
+        const res = await fetch(searchIndexUrl || '/index.json');
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        searchIndex = await res.json();
+
+        for (const item of searchIndex) {
+            item._norm_title = normalizeSearchText(item.title);
+            item._norm_contents = normalizeSearchText(item.contents);
+            item._norm_categories = Array.isArray(item.categories)
+                ? item.categories.map(c => normalizeSearchText(c))
+                : [];
+            item._norm_specs = normalizeSearchText(item.specs);
+        }
+
+        // Fuse.createIndex による事前インデックス化
+        const fuseIndex = Fuse.createIndex(FUSE_OPTIONS.keys, searchIndex);
+        fuse = new Fuse(searchIndex, FUSE_OPTIONS, fuseIndex);
+
+        self.postMessage({ type: 'READY' });
+    } catch (err) {
+        self.postMessage({ type: 'ERROR', error: String(err) });
+    }
+}
+
+function handleSearch(query, filters, searchId) {
+    if (!fuse) {
+        self.postMessage({ type: 'SEARCH_RESULTS', results: [], unfilteredScoreCount: 0, query, searchId, notReady: true });
+        return;
+    }
+
+    try {
+        const normalizedQuery = normalizeSearchText(query);
+        const fuseResults = fuse.search(normalizedQuery);
+        const { results, unfilteredScoreCount } = rerankResults(fuseResults, query, filters);
+        self.postMessage({ type: 'SEARCH_RESULTS', results, unfilteredScoreCount, query, searchId });
+    } catch (err) {
+        self.postMessage({ type: 'ERROR', error: String(err), searchId });
+    }
+}
+
 self.onmessage = async function (e) {
     const data = e.data || {};
-    const type = data.type;
-
-    if (type === 'INIT') {
-        try {
-            if (typeof Fuse === 'undefined') {
-                importScripts('https://cdn.jsdelivr.net/npm/fuse.js@6.6.2');
-            }
-            const res = await fetch(data.searchIndexUrl || '/index.json');
-            if (!res.ok) throw new Error(`HTTP ${res.status}`);
-            searchIndex = await res.json();
-
-            for (let i = 0; i < searchIndex.length; i++) {
-                const item = searchIndex[i];
-                item._norm_title = normalizeSearchText(item.title);
-                item._norm_contents = normalizeSearchText(item.contents);
-                item._norm_categories = Array.isArray(item.categories)
-                    ? item.categories.map(c => normalizeSearchText(c))
-                    : [];
-                item._norm_specs = normalizeSearchText(item.specs);
-            }
-
-            // Fuse.createIndex による事前インデックス化
-            const fuseIndex = Fuse.createIndex(FUSE_OPTIONS.keys, searchIndex);
-            fuse = new Fuse(searchIndex, FUSE_OPTIONS, fuseIndex);
-
-            self.postMessage({ type: 'READY' });
-        } catch (err) {
-            self.postMessage({ type: 'ERROR', error: String(err) });
-        }
-    } else if (type === 'SEARCH') {
-        const { query, filters, searchId } = data;
-        if (!fuse) {
-            self.postMessage({ type: 'SEARCH_RESULTS', results: [], unfilteredScoreCount: 0, query, searchId, notReady: true });
-            return;
-        }
-
-        try {
-            const normalizedQuery = normalizeSearchText(query);
-            const fuseResults = fuse.search(normalizedQuery);
-            const { results, unfilteredScoreCount } = rerankResults(fuseResults, query, filters);
-            self.postMessage({ type: 'SEARCH_RESULTS', results, unfilteredScoreCount, query, searchId });
-        } catch (err) {
-            self.postMessage({ type: 'ERROR', error: String(err), searchId });
-        }
+    if (data.type === 'INIT') {
+        await handleInit(data.searchIndexUrl);
+    } else if (data.type === 'SEARCH') {
+        handleSearch(data.query, data.filters, data.searchId);
     }
 };
