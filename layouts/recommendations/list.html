@@ -28,64 +28,6 @@
         }
     }
 
-    /* ---- フィルタ・ソートUI ---- */
-    .rec-controls {
-        margin-bottom: var(--spacing-lg);
-        display: flex;
-        flex-wrap: wrap;
-        gap: var(--spacing-md);
-        align-items: flex-start;
-    }
-
-    .rec-filter-group {
-        display: flex;
-        flex-direction: column;
-        gap: var(--spacing-xs);
-        flex: 1;
-        min-width: 0;
-    }
-
-    .rec-filter-label {
-        font-size: 0.8rem;
-        font-weight: 600;
-        color: var(--color-text-muted);
-        text-transform: uppercase;
-        letter-spacing: 0.05em;
-    }
-
-    .rec-chip-row {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 0.4rem;
-    }
-
-    .rec-chip {
-        display: inline-flex;
-        align-items: center;
-        padding: 0.3rem 0.75rem;
-        border-radius: 999px;
-        border: 1.5px solid var(--color-border);
-        background: var(--color-bg-secondary);
-        color: var(--color-text-secondary);
-        font-size: 0.85rem;
-        cursor: pointer;
-        transition: all 0.15s ease;
-        white-space: nowrap;
-        user-select: none;
-    }
-
-    .rec-chip:hover {
-        border-color: var(--color-primary);
-        color: var(--color-primary);
-    }
-
-    .rec-chip.active {
-        background: var(--color-primary);
-        border-color: var(--color-primary);
-        color: #fff;
-        font-weight: 600;
-    }
-
     /* ---- 比較サマリーテーブル ---- */
     .rec-summary-toggle {
         display: flex;
@@ -354,23 +296,6 @@
         box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
     }
 
-    /* 非表示カード */
-    .competitor-card.hidden {
-        display: none !important;
-    }
-
-    /* 結果ゼロ表示 */
-    .rec-no-results {
-        display: none;
-        text-align: center;
-        padding: var(--spacing-xl);
-        color: var(--color-text-muted);
-        font-size: 1rem;
-    }
-
-    .rec-no-results.visible {
-        display: block;
-    }
 </style>
 <div class="container recommendations-container">
     {{- partial "breadcrumb.html" . -}}
@@ -490,19 +415,6 @@
             </tbody>
         </table>
     </section>
-
-    <!-- フィルタUI -->
-    <div class="rec-controls theme-orange" id="rec-controls">
-        <div class="rec-filter-group">
-            <span class="rec-filter-label">カテゴリ</span>
-            <div class="rec-chip-row" id="rec-category-chips">
-                <button class="rec-chip active" data-category="all" id="chip-all">すべて</button>
-                {{- range $todayData.recommendations -}}
-                <button class="rec-chip" data-category="{{ .category }}">{{- .category -}}</button>
-                {{- end -}}
-            </div>
-        </div>
-    </div>
 
     <!-- Recommendations List -->
     <div class="competitor-cards" id="rec-card-list">
@@ -701,11 +613,6 @@
         </div>
         {{- end -}}
     </div>
-
-    <!-- 結果ゼロ -->
-    <p class="rec-no-results" id="rec-no-results" role="alert">
-        該当する商品が見つかりませんでした。
-    </p>
 </div>
 
 <script>
@@ -722,67 +629,6 @@
                 toggleBtn.setAttribute("aria-expanded", isOpen ? "true" : "false");
             });
         }
-
-        /* ---- フィルタ ---- */
-        var chipsContainer = document.getElementById("rec-category-chips");
-        var cardList = document.getElementById("rec-card-list");
-        var noResults = document.getElementById("rec-no-results");
-
-        if (!chipsContainer || !cardList) return;
-
-        // カテゴリチップの重複除去
-        var chips = Array.from(chipsContainer.querySelectorAll(".rec-chip[data-category]"));
-        var seen = new Set();
-        chips.forEach(function (chip) {
-            var cat = chip.dataset.category;
-            if (cat === "all") { seen.add("all"); return; }
-            if (seen.has(cat)) {
-                chip.remove();
-            } else {
-                seen.add(cat);
-            }
-        });
-
-        var activeCategory = "all";
-
-        function getCards() {
-            return Array.from(cardList.querySelectorAll(".competitor-card"));
-        }
-
-        function applyFilter() {
-            var cards = getCards();
-            var visibleCount = 0;
-
-            // フィルタ
-            cards.forEach(function (card) {
-                var cat = card.dataset.category || "";
-                if (activeCategory === "all" || cat === activeCategory) {
-                    card.classList.remove("hidden");
-                    visibleCount++;
-                } else {
-                    card.classList.add("hidden");
-                }
-            });
-
-            // 結果ゼロ表示
-            if (noResults) {
-                noResults.classList.toggle("visible", visibleCount === 0);
-            }
-        }
-
-        // カテゴリチップのクリック
-        chipsContainer.addEventListener("click", function (e) {
-            var chip = e.target.closest(".rec-chip");
-            if (!chip) return;
-            activeCategory = chip.dataset.category || "all";
-            Array.from(chipsContainer.querySelectorAll(".rec-chip")).forEach(function (c) {
-                c.classList.toggle("active", c === chip);
-            });
-            applyFilter();
-        });
-
-        // 初期適用（チップ重複除去後）
-        applyFilter();
     })();
 </script>
 {{- end -}}
