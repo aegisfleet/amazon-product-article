@@ -21,7 +21,7 @@ if sys.stdout:
         pass
 
 def extract_urls_from_json(data) -> Set[str]:
-    """JSONデータから再帰的にURLを抽出する"""
+    """JSONデータから再帰的にURLおよびASIN(Amazon URL化)を抽出する"""
     urls = set()
     
     if isinstance(data, dict):
@@ -29,6 +29,13 @@ def extract_urls_from_json(data) -> Set[str]:
             # 'url' や 'imageUrl'、'source' 内の 'url' などを対象にする
             if (key == "url" or key == "imageUrl") and isinstance(value, str):
                 urls.add(value)
+                continue
+
+            # 'asin' や 'parentAsin' フィールドを Amazon URL としてチェック対象に追加
+            if (key == "asin" or key == "parentAsin") and isinstance(value, str):
+                asin_val = value.strip().upper()
+                if re.match(r'^[A-Z0-9]{10}$', asin_val):
+                    urls.add(f"https://www.amazon.co.jp/dp/{asin_val}")
                 continue
             
             if isinstance(value, (dict, list)):
@@ -115,6 +122,17 @@ def _validate_investigation_artifact(analysis: Dict[str, Any], data: Any, errors
 
     if analysis.get("userStories") and len(analysis.get("userStories")) == 0:
         errors.append("'userStories' が空です。")
+
+    comp_analysis = analysis.get("competitiveAnalysis", [])
+    if isinstance(comp_analysis, list):
+        for i, comp in enumerate(comp_analysis):
+            if not isinstance(comp, dict):
+                errors.append(f"competitiveAnalysis[{i}] が辞書形式ではありません。")
+                continue
+            if "asin" not in comp:
+                errors.append(f"competitiveAnalysis[{i}] (商品名: {comp.get('name', 'unknown')}) に 'asin' がありません。")
+            elif not re.match(r'^[A-Z0-9]{10}$', str(comp.get("asin", "")).strip().upper()):
+                errors.append(f"competitiveAnalysis[{i}] の ASIN '{comp.get('asin')}' は有効な10桁ASINではありません。")
     
     _validate_metrics(data, errors)
     _validate_recommendation(analysis, errors)
