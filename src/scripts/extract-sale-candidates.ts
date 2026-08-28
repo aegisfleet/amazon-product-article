@@ -1,11 +1,13 @@
 #!/usr/bin/env ts-node
 /**
  * Extract Sale Candidates Script
- * data/cache/paapi-product-cache.json からタイムセール中や高割引率の商品を抽出する
+ * data/cache/paapi-product-cache.json および content/articles/*.md から
+ * 調査済み高スコア（75点以上）のタイムセール中・注目商品を抽出する
  */
 
 import fs from 'node:fs';
 import path from 'node:path';
+import matter from '@11ty/gray-matter';
 import type { ProductDetail } from '../types/Product';
 import { Logger } from '../utils/Logger';
 
@@ -27,6 +29,8 @@ export interface SaleCandidate {
         count: number;
       }
     | undefined;
+  articleScore?: number | undefined;
+  brand?: string | undefined;
   timestamp: number;
 }
 
@@ -46,6 +50,12 @@ interface CacheStore {
   [asin: string]: CacheEntry;
 }
 
+export interface ArticleMetadata {
+  score: number;
+  brand?: string | undefined;
+  category?: string | undefined;
+}
+
 const LIMITED_SALE_KEYWORDS = ['限定', '24時間', '特選', '数量限定', '本日限定'];
 
 function isLimitedTimeSaleBadge(badge?: string): boolean {
@@ -60,18 +70,77 @@ function ensureDirectory(filePath: string): void {
   }
 }
 
+export function loadArticleScoreMap(articlesDir?: string): Map<string, ArticleMetadata> {
+  const map = new Map<string, ArticleMetadata>();
+  const targetDir = articlesDir || path.join(process.cwd(), 'content/articles');
+
+  if (!fs.existsSync(targetDir)) {
+    return map;
+  }
+
+  try {
+    const files = fs.readdirSync(targetDir);
+    for (const file of files) {
+      if (!file.endsWith('.md')) continue;
+      const asin = path.basename(file, '.md');
+      try {
+        const filePath = path.join(targetDir, file);
+        const content = fs.readFileSync(filePath, 'utf-8');
+
+        // Front Matter のみ（--- で囲まれた部分）を高速パース
+        const match = content.match(/^---\r?\n([\s\S]*?)\r?\n---/);
+        if (!match || !match[1]) continue;
+
+        const fm = match[1];
+        const scoreMatch = fm.match(/score:\s*(\d+)/);
+        if (!scoreMatch || !scoreMatch[1]) continue;
+
+        const score = Number.parseInt(scoreMatch[1], 10);
+        if (Number.isNaN(score)) continue;
+
+        const brandMatch = fm.match(/brand:\s*["']?([^"'\r\n]+)["']?/);
+        const brand = brandMatch && brandMatch[1] ? brandMatch[1].trim() : undefined;
+
+        const catMatch = fm.match(/categories:\s*\[\s*["']([^"']+)["']/);
+        const category = catMatch && catMatch[1] ? catMatch[1].trim() : undefined;
+
+        map.set(asin, {
+          score,
+          brand,
+          category,
+        });
+      } catch {
+        // ignore parse error
+      }
+    }
+  } catch {
+    // ignore directory read error
+  }
+
+  return map;
+}
+
 function calculateDealBadgeScore(candidate: SaleCandidate): number {
-  if (candidate.isLimitedTimeSale) return 50;
-  if (candidate.dealBadge) return 30;
+  if (candidate.isLimitedTimeSale) return 40;
+  if (candidate.dealBadge) return 25;
+  return 0;
+}
+
+function calculateArticleScoreBonus(articleScore?: number): number {
+  if (articleScore === undefined) return 0;
+  if (articleScore >= 90) return 40;
+  if (articleScore >= 85) return 30;
+  if (articleScore >= 80) return 20;
+  if (articleScore >= 75) return 10;
   return 0;
 }
 
 function calculateDiscountScore(discount = 0): number {
-  if (discount >= 10 && discount <= 50) {
-    return discount * 0.8; // 最大40点
+  if (discount >= 10 && discount <= 45) {
+    return discount * 0.8; // 最大36点
   }
-  if (discount > 50 && discount < 70) {
-    return Math.max(0, (70 - discount) * 1.5); // 50%超は徐々に減点
+  if (discount > 45 && discount < 70) {
+    return Math.max(0, (70 - discount) * 1.0); // 45%超は二重価格リスクのため徐々に減点
   }
   if (discount > 0 && discount < 10) {
     return discount * 0.5;
@@ -84,14 +153,14 @@ function calculateRatingScore(rating?: SaleCandidate['rating']): number {
   let score = 0;
   const { average, count } = rating;
 
-  if (average >= 4.3) score += 25;
-  else if (average >= 4.0) score += 20;
-  else if (average >= 3.5) score += 10;
+  if (average >= 4.3) score += 20;
+  else if (average >= 4.0) score += 15;
+  else if (average >= 3.8) score += 8;
 
-  if (count >= 500) score += 25;
-  else if (count >= 100) score += 18;
-  else if (count >= 20) score += 12;
-  else if (count >= 5) score += 6;
+  if (count >= 500) score += 20;
+  else if (count >= 100) score += 14;
+  else if (count >= 30) score += 8;
+  else if (count >= 10) score += 4;
 
   return score;
 }
@@ -99,7 +168,7 @@ function calculateRatingScore(rating?: SaleCandidate['rating']): number {
 function calculateBrandScore(title: string, brandMatchers: RegExp[]): number {
   if (brandMatchers.length === 0) return 0;
   const isKnownBrand = brandMatchers.some((regex) => regex.test(title));
-  return isKnownBrand ? 20 : 0;
+  return isKnownBrand ? 25 : 0;
 }
 
 /**
@@ -107,6 +176,7 @@ function calculateBrandScore(title: string, brandMatchers: RegExp[]): number {
  */
 export function calculateCandidateScore(candidate: SaleCandidate, brandMatchers: RegExp[] = []): number {
   return (
+    calculateArticleScoreBonus(candidate.articleScore) +
     calculateDealBadgeScore(candidate) +
     calculateDiscountScore(candidate.savingsPercentage) +
     calculateRatingScore(candidate.rating) +
@@ -114,11 +184,11 @@ export function calculateCandidateScore(candidate: SaleCandidate, brandMatchers:
   );
 }
 
-function loadBrandMatchers(): RegExp[] {
+export function loadBrandMatchers(brandPath?: string): RegExp[] {
   try {
-    const brandPath = path.join(process.cwd(), 'data/brandgroups.json');
-    if (!fs.existsSync(brandPath)) return [];
-    const content = fs.readFileSync(brandPath, 'utf-8');
+    const targetPath = brandPath || path.join(process.cwd(), 'data/brandgroups.json');
+    if (!fs.existsSync(targetPath)) return [];
+    const content = fs.readFileSync(targetPath, 'utf-8');
     const brands = JSON.parse(content) as Record<string, { matcher?: { value?: string } }>;
     const matchers: RegExp[] = [];
 
@@ -137,44 +207,65 @@ function loadBrandMatchers(): RegExp[] {
   }
 }
 
-function parseCandidateFromEntry(asin: string, entry: CacheEntry): SaleCandidate | null {
+function parseCandidateFromEntry(
+  asin: string,
+  entry: CacheEntry,
+  articleScoreMap: Map<string, ArticleMetadata>,
+): SaleCandidate | null {
   if (entry.status !== 'valid' || !entry.data) return null;
 
   const product = entry.data;
   if (!product.price || product.price.amount <= 0) return null;
 
+  const article = articleScoreMap.get(asin);
+
+  // 【最重要方針】：記事が存在する場合はスコア75点以上のみを許可（低スコア品は徹底除外）
+  // 記事が存在しない場合でも、公式dealBadgeと高評価・高レビューが揃っているもののみ許可（記事存在時はスコア75未満即除外）
+  if (article && article.score < 75) {
+    return null;
+  }
+
   const dealBadge = product.dealBadge && product.dealBadge.trim() !== '' ? product.dealBadge.trim() : undefined;
-
-  // 二重価格（参考価格吊り上げによる常時割引表示）を排除するため、
-  // Amazon公式のセールバッジ (dealBadge) が明示されている商品のみを抽出対象とする。
-  if (!dealBadge) return null;
-
   const discount = product.savingsPercentage;
+
+  // 記事がない未調査商品でdealBadgeもない通常商品は除外
+  if (!article && !dealBadge) {
+    return null;
+  }
+
+  // 記事がない未調査商品の場合、レビュー評価4.0以上かつレビュー100件以上でなければ除外（粗悪ノーブランド排除）
+  if (!article) {
+    if (!product.rating || product.rating.average < 4.0 || product.rating.count < 100) {
+      return null;
+    }
+  }
 
   // 70%以上の異常な割引率は二重価格・ノーブランド粗悪品の可能性が極めて高いため厳格に除外
   if (discount !== undefined && (discount >= 70 || discount < 0)) {
     return null;
   }
 
-  // レビュー評価が存在する場合、平均3.5未満の低評価商品は除外
-  if (product.rating && product.rating.average > 0 && product.rating.average < 3.5) {
+  // レビュー評価が存在する場合、平均3.8未満の低評価商品は除外
+  if (product.rating && product.rating.average > 0 && product.rating.average < 3.8) {
     return null;
   }
 
-  // レビュー0件かつ高割引率（50%超）のノーブランド疑い商品は除外
-  if ((!product.rating || product.rating.count === 0) && discount !== undefined && discount > 50) {
+  // レビュー件数が少なく高割引率（50%超）のノーブランド疑い商品は除外
+  if ((!product.rating || product.rating.count < 30) && discount !== undefined && discount > 50) {
     return null;
   }
 
   return {
     asin,
     title: product.title,
-    category: product.category || 'その他',
+    category: article?.category || product.category || 'その他',
     price: product.price,
     savingsPercentage: product.savingsPercentage,
     dealBadge: product.dealBadge,
     isLimitedTimeSale: isLimitedTimeSaleBadge(dealBadge),
     rating: product.rating,
+    articleScore: article?.score,
+    brand: article?.brand,
     timestamp: entry.timestamp,
   };
 }
@@ -217,8 +308,10 @@ function filterByCategory(candidates: SaleCandidate[], maxTotal: number, maxPerC
 export async function extractSaleCandidates(
   cacheFilePath?: string,
   outputFilePath?: string,
-  maxTotal: number = 40,
-  maxPerCategory: number = 3,
+  maxTotal: number = 30,
+  maxPerCategory: number = 2,
+  articlesDir?: string,
+  brandPath?: string,
 ): Promise<SaleCandidatesFile> {
   const logger = Logger.getInstance();
   const cachePath = cacheFilePath || path.join(process.cwd(), 'data/cache/paapi-product-cache.json');
@@ -240,16 +333,17 @@ export async function extractSaleCandidates(
     const rawData = await fs.promises.readFile(cachePath, 'utf-8');
     const cache = JSON.parse(rawData) as CacheStore;
 
+    const articleScoreMap = loadArticleScoreMap(articlesDir);
     const candidates: SaleCandidate[] = [];
 
     for (const [asin, entry] of Object.entries(cache)) {
-      const candidate = parseCandidateFromEntry(asin, entry);
+      const candidate = parseCandidateFromEntry(asin, entry, articleScoreMap);
       if (candidate) {
         candidates.push(candidate);
       }
     }
 
-    const brandMatchers = loadBrandMatchers();
+    const brandMatchers = loadBrandMatchers(brandPath);
     sortCandidates(candidates, brandMatchers);
     const filteredCandidates = filterByCategory(candidates, maxTotal, maxPerCategory);
 
@@ -261,7 +355,7 @@ export async function extractSaleCandidates(
 
     ensureDirectory(outputPath);
     await fs.promises.writeFile(outputPath, JSON.stringify(result, null, 2), 'utf-8');
-    logger.info(`Extracted ${filteredCandidates.length} sale candidates to ${outputPath}`);
+    logger.info(`Extracted ${filteredCandidates.length} high-quality sale candidates to ${outputPath}`);
 
     return result;
   } catch (error) {
