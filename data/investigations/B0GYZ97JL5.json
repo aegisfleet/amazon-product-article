@@ -1,0 +1,148 @@
+{
+  "analysis": {
+    "productName": "Der Process モバイルバッテリー 5000mAh",
+    "parentAsin": "B0H8J5JX7F",
+    "productDescription": "ケーブル不要で直挿しできる、Type-C対応の5000mAh小型モバイルバッテリー。",
+    "productUsage": [
+      "外出先でのスマートフォン充電",
+      "旅行・出張時の予備バッテリー",
+      "災害・緊急時の備え"
+    ],
+    "positivePoints": [
+      "約100gのカプセル型超小型・軽量設計",
+      "Type-C直挿し式でケーブルの持ち運びが不要",
+      "LEDデジタル残量表示機能を搭載",
+      "Type-C入出力対応で2台同時充電が可能",
+      "端子を保護する防塵キャップ付き"
+    ],
+    "negativePoints": [
+      "過去価格7,995円からの79%オフ（1,699円）という不自然な二重価格表示",
+      "メーカーの知名度が低く、長期的な信頼性が不透明",
+      "バッテリー容量が5000mAhのため、大容量を求める用途には不向き"
+    ],
+    "useCases": [
+      "通勤や通学中にスマートフォンのバッテリーが少なくなった時の充電",
+      "小さなバッグやポケットに入れての持ち運び",
+      "ワイヤレスイヤホンとスマートフォンなど、2つのデバイスを同時に充電したい時"
+    ],
+    "userStories": [
+      {
+        "userType": "日常的にスマホを使う人",
+        "scenario": "外出先でスマートフォンの充電が少なくなった時",
+        "experience": "ケーブルを持ち歩く必要がなく、スマートフォンに直接挿すだけで充電できるため非常に便利。ポケットに収まるサイズで、LEDで残量が数字でわかるのも使いやすい。",
+        "supportingSourceIds": [
+          "src-amazon"
+        ],
+        "sentiment": "positive"
+      }
+    ],
+    "userImpression": "ケーブルレスで直挿しできる利便性や、コンパクトで持ち運びやすい点が高く評価される傾向にある。一方で、79%オフという極端な割引率には注意が必要だが、実売価格1,699円であれば実用的なスペックを備えている。",
+    "sources": [
+      {
+        "id": "src-amazon",
+        "name": "Amazon商品ページ",
+        "url": "https://www.amazon.co.jp/dp/B0GYZ97JL5",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-08-28",
+        "author": "Amazon",
+        "conflictOfInterest": "possible",
+        "notes": "製品の仕様、価格、特徴を確認"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "全機種対応",
+        "category": "comparativeAdvantage",
+        "confidence": "medium",
+        "supportingSourceIds": [
+          "src-amazon"
+        ],
+        "crossChecked": false,
+        "notes": "Type-C端子搭載機器には対応するが、Lightning端子搭載のiPhone(14以前)などには直接挿せないため注意が必要"
+      }
+    ],
+    "lastInvestigated": "2026-08-28",
+    "investigatedPrice": "￥1,699",
+    "competitiveAnalysis": [
+      {
+        "name": "エレコム(ELECOM) EC-C28LBK",
+        "asin": "B0FHK6F5G1",
+        "priceComparison": "本製品よりも高いが、国内有名メーカーの信頼性がある。",
+        "featureComparison": [
+          "共通点：5000mAh、直挿しType-C、小型軽量",
+          "相違点：エレコム製は22.5W出力対応で国内メーカーの信頼性が高い。本製品はLEDデジタル残量表示がある。"
+        ],
+        "differentiators": [
+          "Der Process モバイルバッテリー 5000mAhの利点：価格を抑えつつ、デジタルでバッテリー残量を正確に把握したいならこちら。",
+          "エレコム(ELECOM) EC-C28LBKの利点：より高速な充電(22.5W)と、国内有名メーカーの安心感やサポートを重視するならこちら。"
+        ]
+      },
+      {
+        "name": "Anker Nano Power Bank",
+        "asin": "B0CCJFY2V4",
+        "priceComparison": "本製品よりも高いが、モバイルバッテリートップブランドの品質とサポートがある。",
+        "featureComparison": [
+          "共通点：5000mAh、直挿しType-C、コンパクト設計",
+          "相違点：Anker製は最大22.5W出力で、ブランドの信頼性が極めて高い。本製品は価格が安い。"
+        ],
+        "differentiators": [
+          "Der Process モバイルバッテリー 5000mAhの利点：とにかく初期費用を抑えて、直挿しの利便性を試してみたいならこちら。",
+          "Anker Nano Power Bankの利点：品質、耐久性、サポート体制を含めた総合的な安心感を最優先するならこちら。"
+        ]
+      },
+      {
+        "name": "オーム(OHM) SMP-PI50-K",
+        "asin": "B0FH1T2Z52",
+        "priceComparison": "本製品よりわずかに安い。",
+        "featureComparison": [
+          "共通点：5000mAh、直挿しタイプ",
+          "相違点：本製品にはLEDデジタル残量表示と防塵キャップがあるが、オーム電機製はシンプルな機能で安価。"
+        ],
+        "differentiators": [
+          "Der Process モバイルバッテリー 5000mAhの利点：バッテリー残量を1%単位で正確に確認したい、端子を保護したいならこちら。",
+          "オーム(OHM) SMP-PI50-Kの利点：少しでも安く、国内メーカー(オーム電機)の製品を選びたいならこちら。"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "ケーブルを持ち歩きたくない、荷物を最小限にしたい人",
+        "有名メーカー製ほどのサポートを求めず、手頃な価格で直挿しバッテリーが欲しい人"
+      ],
+      "pros": [
+        "直挿しなのでケーブル忘れの心配がなく、すぐに充電できる",
+        "約100gと軽く、ポケットに入れても邪魔にならない",
+        "LEDで残量が数字でわかるため、充電タイミングを逃さない"
+      ],
+      "cons": [
+        "79%オフという不自然な割引表示（見せ金）を行っているため、メーカーの姿勢に疑問符がつく",
+        "Type-C端子専用のため、Lightning端子のiPhoneなどでは使用できない"
+      ],
+      "score": 73,
+      "scoreRationale": "[基本点: 70]\n[加点: +5] (直挿し、LED残量表示、防塵キャップなど実用的な機能性)\n[加点: +5] (1,699円という実売価格に対するコストパフォーマンス)\n[減点: -7] (79%OFFという極端な二重価格表示による信頼性の低下)\n[合計: 73]"
+    },
+    "technicalSpecs": {
+      "battery": {
+        "capacity": "5000mAh",
+        "charging": "Type-C入出力対応"
+      },
+      "dimensions": {
+        "height": "78.6mm",
+        "width": "51.7mm",
+        "depth": "26.0mm",
+        "weight": "100g"
+      },
+      "weight": "100g",
+      "connectivity": [
+        "USB Type-C"
+      ],
+      "other": [
+        "LEDデジタル残量表示",
+        "2台同時充電可能",
+        "防塵キャップ付き",
+        "PSE認証済"
+      ]
+    }
+  }
+}
