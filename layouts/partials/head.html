@@ -129,9 +129,10 @@
 
 {{- if $category -}}
 {{- /* 親カテゴリを検索 */ -}}
+{{- $lowerCategory := lower $category -}}
 {{- range $parent, $data := hugo.Data.categorygroups -}}
 {{- range $data.categories -}}
-{{- if eq . $category -}}
+{{- if eq (lower .) $lowerCategory -}}
 {{- $parentName = $parent -}}
 {{- $parentSlug = $data.slug -}}
 {{- end -}}

@@ -37,17 +37,22 @@
     {{- /* Collect all articles from child categories in a single pass */ -}}
     {{- $articles := slice -}}
     {{- $allArticles := where $.Site.RegularPages "Section" "articles" -}}
+    {{- $childCategoriesLower := slice -}}
+    {{- range $childCategories -}}
+    {{- $childCategoriesLower = $childCategoriesLower | append (lower .) -}}
+    {{- end -}}
     {{- if eq $parentCategory "その他／全般" -}}
-    {{- $allCategorizedItems := slice -}}
+    {{- $allCategorizedItemsLower := slice -}}
     {{- range $groupName, $groupData := hugo.Data.categories.parents -}}
     {{- range $groupData.childrenWithCounts -}}
-    {{- $allCategorizedItems = $allCategorizedItems | append .name -}}
+    {{- $allCategorizedItemsLower = $allCategorizedItemsLower | append (lower .name) -}}
     {{- end -}}
     {{- end -}}
     {{- range $article := $allArticles -}}
     {{- $match := false -}}
     {{- range $cat := $article.Params.categories -}}
-    {{- if or (in $childCategories $cat) (not (in $allCategorizedItems $cat)) -}}
+    {{- $lowerCat := lower $cat -}}
+    {{- if or (in $childCategoriesLower $lowerCat) (not (in $allCategorizedItemsLower $lowerCat)) -}}
     {{- $match = true -}}
     {{- end -}}
     {{- end -}}
@@ -59,7 +64,7 @@
     {{- range $article := $allArticles -}}
     {{- $match := false -}}
     {{- range $cat := $article.Params.categories -}}
-    {{- if in $childCategories $cat -}}
+    {{- if in $childCategoriesLower (lower $cat) -}}
     {{- $match = true -}}
     {{- end -}}
     {{- end -}}
