@@ -191,6 +191,8 @@ export class ArticleGenerator {
       seoKeywords,
       is_amazon_direct: product.isAmazonDirect,
       is_amazon_haul: product.isAmazonHaul,
+      is_furusato: product.isFurusato,
+      municipality: product.municipality,
       affiliate_url: affiliateUrl,
       brand: product.brand,
       model: productDetail.model,
@@ -1398,6 +1400,8 @@ ${recommendationMessage}
     if (metadata.score) lines.push(`score: ${metadata.score}`);
     if (metadata.is_amazon_direct !== undefined) lines.push(`is_amazon_direct: ${metadata.is_amazon_direct}`);
     if (metadata.is_amazon_haul !== undefined) lines.push(`is_amazon_haul: ${metadata.is_amazon_haul}`);
+    if (metadata.is_furusato !== undefined) lines.push(`is_furusato: ${metadata.is_furusato}`);
+    if (metadata.municipality) lines.push(`municipality: "${this.escapeForFrontMatter(metadata.municipality)}"`);
     if (metadata.model) lines.push(`model: "${this.escapeForFrontMatter(metadata.model)}"`);
     if (metadata.releaseDate) lines.push(`release_date: "${this.escapeForFrontMatter(metadata.releaseDate)}"`);
     if (metadata.availability) lines.push(`availability: "${this.escapeForFrontMatter(metadata.availability)}"`);
@@ -1741,6 +1745,7 @@ ${confidenceLine}`;
     const availabilityText = detail.availability || '';
     const isAmazonDirect = detail.isAmazonDirect;
     const isAmazonHaul = detail.isAmazonHaul;
+    const isFurusato = detail.isFurusato;
     const loyaltyPoints = detail.loyaltyPoints;
     const dealBadge = detail.dealBadge;
     const savingsPercentage = detail.savingsPercentage;
@@ -1763,6 +1768,9 @@ ${confidenceLine}`;
     const amazonHaulHtml = isAmazonHaul
       ? '<span class="badge-amazon-haul m3-badge m3-badge-secondary">Amazon Haul</span>'
       : '';
+    const furusatoHtml = isFurusato
+      ? '<span class="badge-furusato m3-badge m3-badge-furusato">ふるさと納税</span>'
+      : '';
     const dealBadgeHtml = dealBadge
       ? `<span class="badge-deal m3-badge m3-badge-warning">${this.escapeHtml(dealBadge)}</span>`
       : '';
@@ -1777,7 +1785,7 @@ ${confidenceLine}`;
       ? `<div class="competitor-preview-tags">${this.renderSpecTags(specs, 'hero-tag')}</div>`
       : '';
 
-    return `<${previewTag}${previewAttrs} class="competitor-preview"><img src="${this.escapeHtml(imageUrl)}" alt="${this.escapeHtml(name)}" class="competitor-preview-img"><div class="competitor-preview-content"><div class="competitor-preview-main">${scoreHtml}${actualPriceHtml}</div><div class="competitor-preview-meta">${amazonDirectHtml}${amazonHaulHtml}${dealBadgeHtml}${savingsPercentageHtml}${availabilityHtml}</div>${specTagsHtml}</div></${previewTag}>`;
+    return `<${previewTag}${previewAttrs} class="competitor-preview"><img src="${this.escapeHtml(imageUrl)}" alt="${this.escapeHtml(name)}" class="competitor-preview-img"><div class="competitor-preview-content"><div class="competitor-preview-main">${scoreHtml}${actualPriceHtml}</div><div class="competitor-preview-meta">${amazonDirectHtml}${amazonHaulHtml}${furusatoHtml}${dealBadgeHtml}${savingsPercentageHtml}${availabilityHtml}</div>${specTagsHtml}</div></${previewTag}>`;
   }
 
   /**

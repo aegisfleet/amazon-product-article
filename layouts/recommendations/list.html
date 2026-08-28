@@ -465,6 +465,9 @@
                             <span class="material-symbols-outlined" aria-hidden="true" style="font-size:0.9rem;">ads_click</span> {{- $rec.rankReason -}}
                         </span>
                         {{- end -}}
+                        {{- if and $articlePage $articlePage.Params.is_furusato -}}
+                        <span class="badge-furusato m3-badge m3-badge-furusato" style="font-size: 0.85rem; padding: 2px 8px;">ふるさと納税</span>
+                        {{- end -}}
                         {{- if $score -}}
                         {{- $scoreClass := "score-caution" -}}
                         {{- if ge $score 80 -}}

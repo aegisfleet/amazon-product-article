@@ -27,6 +27,8 @@ export interface ArticleMetadata {
   affiliate_url?: string | undefined; // Affiliate link for the hero button
   is_amazon_direct?: boolean | undefined;
   is_amazon_haul?: boolean | undefined;
+  is_furusato?: boolean | undefined;
+  municipality?: string | undefined;
   brand?: string | undefined;
   model?: string | undefined;
   releaseDate?: string | undefined;
