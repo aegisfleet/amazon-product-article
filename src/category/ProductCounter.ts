@@ -51,11 +51,23 @@ export class ProductCounter {
   }
 
   public getProductCount(category: string): number {
-    return this.categoryProductMap.get(ProductCounter.normalizeCategory(category))?.size || 0;
+    return this.getProductIds(category).size;
   }
 
   public getProductIds(category: string): Set<string> {
-    return this.categoryProductMap.get(ProductCounter.normalizeCategory(category)) || new Set();
+    const normalized = ProductCounter.normalizeCategory(category);
+    const direct = this.categoryProductMap.get(normalized);
+    if (direct && direct.size > 0) {
+      return direct;
+    }
+    // Case-insensitive fallback
+    const lower = normalized.toLowerCase();
+    for (const [cat, ids] of this.categoryProductMap.entries()) {
+      if (cat.toLowerCase() === lower) {
+        return ids;
+      }
+    }
+    return new Set();
   }
 
   private static normalizeCategory(category: string): string {

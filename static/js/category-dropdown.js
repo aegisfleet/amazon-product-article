@@ -154,19 +154,24 @@
             const availableCategories = Object.keys(urls);
             const categorizedItems = new Set();
 
-            // First pass: categorize items into defined groups
+            // First pass: categorize items into defined groups (case-insensitive)
             for (const [group, categories] of Object.entries(categoryGroups)) {
                 let groupProductCount = 0;
-                const available = categories.filter(cat => {
-                    if (availableCategories.includes(cat)) {
-                        categorizedItems.add(cat);
-                        if (childCounts[cat] !== undefined) {
+                const available = [];
+                for (const cat of categories) {
+                    const lowerCat = cat.toLowerCase();
+                    const matched = availableCategories.find(a => a.toLowerCase() === lowerCat);
+                    if (matched) {
+                        categorizedItems.add(matched);
+                        if (childCounts[matched] !== undefined) {
+                            groupProductCount += childCounts[matched];
+                        } else if (childCounts[cat] !== undefined) {
                             groupProductCount += childCounts[cat];
                         }
-                        return true;
+                        // Use the matched availableCategory name to ensure correct URL resolution
+                        available.push(matched);
                     }
-                    return false;
-                }).filter(Boolean);
+                }
                 if (available.length > 0 || parentCategoryUrls[group]) {
                     filteredGroups[group] = available;
                     groupCounts[group] = groupProductCount;
@@ -181,10 +186,6 @@
                 }
                 filteredGroups['その他／全般'] = [...filteredGroups['その他／全般'], ...uncategorized];
 
-                // Use snapshot (childCounts) to get original child-category counts.
-                // This avoids using the group total that was written into categoryCounts[group]
-                // during the first pass (e.g. 'その他／全般' group total would otherwise
-                // self-reference and corrupt the sum).
                 let othersCount = 0;
                 uncategorized.forEach(cat => {
                     if (childCounts[cat] !== undefined) {

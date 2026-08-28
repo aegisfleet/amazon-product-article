@@ -259,9 +259,11 @@ document.addEventListener('DOMContentLoaded', async function () {
                     if (group.children) {
                         group.children.forEach(cat => {
                             categoryToGroup[cat] = group.name;
+                            categoryToGroup[cat.toLowerCase()] = group.name;
                         });
                     }
                     categoryToGroup[group.name] = group.name;
+                    categoryToGroup[group.name.toLowerCase()] = group.name;
                 });
             } else if (data) {
                 // Legacy format: Object where keys are group names
@@ -269,9 +271,11 @@ document.addEventListener('DOMContentLoaded', async function () {
                     if (groupData.categories && Array.isArray(groupData.categories)) {
                         groupData.categories.forEach(cat => {
                             categoryToGroup[cat] = groupName;
+                            categoryToGroup[cat.toLowerCase()] = groupName;
                         });
                     }
                     categoryToGroup[groupName] = groupName;
+                    categoryToGroup[groupName.toLowerCase()] = groupName;
                 });
             }
             console.log('[Personalization] Loaded category mapping:', Object.keys(categoryToGroup).length, 'entries');

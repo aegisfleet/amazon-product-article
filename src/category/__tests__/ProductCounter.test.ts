@@ -64,4 +64,19 @@ categories:
     expect(counter.getProductCount('CategoryB')).toBe(1);
     expect(counter.getProductCount(' ')).toBe(0); // empty after trim
   });
+
+  test('大文字・小文字が異なる場合でも同一カテゴリとしてカウントされる', () => {
+    const content = `---
+categories:
+  - "microSDカード"
+---`;
+    fs.writeFileSync(path.join(tempDir, 'microsd.md'), content);
+
+    const counter = new ProductCounter(tempDir);
+    counter.countProductsByCategory();
+
+    expect(counter.getProductCount('microSDカード')).toBe(1);
+    expect(counter.getProductCount('MicroSDカード')).toBe(1);
+    expect(counter.getProductCount('MICROSDカード')).toBe(1);
+  });
 });
