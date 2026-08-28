@@ -84,14 +84,28 @@ async function resolveShortUrl(shortUrl) {
     return null;
 }
 
+function normalizeSearchText(text) {
+    if (typeof text !== 'string') {
+        if (text == null) return '';
+        text = String(text);
+    }
+    return text
+        .normalize('NFKC')
+        .toLowerCase()
+        .replace(/[\u30a1-\u30f6]/g, (s) => String.fromCodePoint(s.codePointAt(0) - 0x60))
+        .replaceAll('　', ' ')
+        .trim();
+}
+
 function isValidQuery(query) {
     if (typeof query !== 'string') return false;
     const trimmed = query.trim();
     if (trimmed.length === 0) return false;
     if (trimmed.length >= 2) return true;
-    // 1文字の場合、ひらがな以外の文字種であれば有効とする
-    const isHiraganaSingle = /^[ぁ-ん]$/.test(trimmed);
-    return !isHiraganaSingle;
+    // 1文字の場合、ひらがな・カタカナ以外の文字種であれば有効とする
+    const normalized = normalizeSearchText(trimmed);
+    const isKanaSingle = /^[ぁ-ん]$/.test(normalized);
+    return !isKanaSingle;
 }
 
 function toYen(value, unit) {
@@ -214,10 +228,10 @@ function rerankResults(results, query) {
     };
 
     const getCategoryScore = (item, query) => {
-        const itemCategories = (item.categories || []).map(c => c.toLowerCase());
+        const itemCategories = item._norm_categories || (item.categories || []).map(c => normalizeSearchText(c));
         if (itemCategories.length === 0) return 0;
 
-        const queryTerms = query.toLowerCase().trim().split(/\s+/).filter(Boolean);
+        const queryTerms = normalizeSearchText(query).split(/\s+/).filter(Boolean);
         if (queryTerms.length === 0) return 0;
 
         // クエリ単語がカテゴリー名のいずれかと一致する度合いを算出
@@ -291,7 +305,8 @@ function rerankResults(results, query) {
 
 function searchWithRerank(fuseInstance, query) {
     if (!fuseInstance) return { results: [], unfilteredScoreCount: 0 };
-    return rerankResults(fuseInstance.search(query), query);
+    const normalizedQuery = normalizeSearchText(query);
+    return rerankResults(fuseInstance.search(normalizedQuery), query);
 }
 
 function isStateEqual(state1, state2) {
@@ -641,13 +656,22 @@ document.addEventListener('DOMContentLoaded', function () {
                     .then(response => response.json())
                     .then(data => {
                         const searchIndex = data;
+                        for (let i = 0; i < searchIndex.length; i++) {
+                            const item = searchIndex[i];
+                            item._norm_title = normalizeSearchText(item.title);
+                            item._norm_contents = normalizeSearchText(item.contents);
+                            item._norm_categories = Array.isArray(item.categories)
+                                ? item.categories.map(c => normalizeSearchText(c))
+                                : [];
+                            item._norm_specs = normalizeSearchText(item.specs);
+                        }
                         fuse = new Fuse(searchIndex, {
                             keys: [
                                 { name: "asin", weight: 1 },
-                                { name: "title", weight: 0.7 },
-                                { name: "contents", weight: 0.2 },
-                                { name: "categories", weight: 1 },
-                                { name: "specs", weight: 0.3 }
+                                { name: "_norm_title", weight: 0.7 },
+                                { name: "_norm_contents", weight: 0.2 },
+                                { name: "_norm_categories", weight: 1 },
+                                { name: "_norm_specs", weight: 0.3 }
                             ],
                             threshold: 0.2,
                             distance: 100,

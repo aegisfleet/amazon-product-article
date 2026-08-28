@@ -5,13 +5,26 @@
 let fuse = null;
 let searchIndex = null;
 
+function normalizeSearchText(text) {
+    if (typeof text !== 'string') {
+        if (text == null) return '';
+        text = String(text);
+    }
+    return text
+        .normalize('NFKC')
+        .toLowerCase()
+        .replace(/[\u30a1-\u30f6]/g, (s) => String.fromCodePoint(s.codePointAt(0) - 0x60))
+        .replaceAll('　', ' ')
+        .trim();
+}
+
 const FUSE_OPTIONS = {
     keys: [
         { name: "asin", weight: 1 },
-        { name: "title", weight: 0.7 },
-        { name: "contents", weight: 0.2 },
-        { name: "categories", weight: 1 },
-        { name: "specs", weight: 0.3 }
+        { name: "_norm_title", weight: 0.7 },
+        { name: "_norm_contents", weight: 0.2 },
+        { name: "_norm_categories", weight: 1 },
+        { name: "_norm_specs", weight: 0.3 }
     ],
     threshold: 0.2,
     distance: 100,
@@ -118,10 +131,10 @@ function rerankResults(results, query, filters = {}) {
     };
 
     const getCategoryScore = (item, q) => {
-        const itemCategories = (item.categories || []).map(c => c.toLowerCase());
+        const itemCategories = item._norm_categories || (item.categories || []).map(c => normalizeSearchText(c));
         if (itemCategories.length === 0) return 0;
 
-        const terms = q.toLowerCase().trim().split(/\s+/).filter(Boolean);
+        const terms = normalizeSearchText(q).split(/\s+/).filter(Boolean);
         if (terms.length === 0) return 0;
 
         const matches = terms.filter(term =>
@@ -206,6 +219,16 @@ self.onmessage = async function (e) {
             if (!res.ok) throw new Error(`HTTP ${res.status}`);
             searchIndex = await res.json();
 
+            for (let i = 0; i < searchIndex.length; i++) {
+                const item = searchIndex[i];
+                item._norm_title = normalizeSearchText(item.title);
+                item._norm_contents = normalizeSearchText(item.contents);
+                item._norm_categories = Array.isArray(item.categories)
+                    ? item.categories.map(c => normalizeSearchText(c))
+                    : [];
+                item._norm_specs = normalizeSearchText(item.specs);
+            }
+
             // Fuse.createIndex による事前インデックス化
             const fuseIndex = Fuse.createIndex(FUSE_OPTIONS.keys, searchIndex);
             fuse = new Fuse(searchIndex, FUSE_OPTIONS, fuseIndex);
@@ -222,7 +245,8 @@ self.onmessage = async function (e) {
         }
 
         try {
-            const fuseResults = fuse.search(query);
+            const normalizedQuery = normalizeSearchText(query);
+            const fuseResults = fuse.search(normalizedQuery);
             const { results, unfilteredScoreCount } = rerankResults(fuseResults, query, filters);
             self.postMessage({ type: 'SEARCH_RESULTS', results, unfilteredScoreCount, query, searchId });
         } catch (err) {
