@@ -217,6 +217,13 @@ function renderCardMeta(p) {
     detailsRow.appendChild(haul);
   }
 
+  if (p.isFurusato) {
+    const furusato = document.createElement('span');
+    furusato.className = 'badge-furusato m3-badge m3-badge-furusato';
+    furusato.textContent = 'ふるさと納税';
+    detailsRow.appendChild(furusato);
+  }
+
   if (p.dealBadge) {
     const deal = document.createElement('span');
     const isPrime = p.dealAccessType === 'PRIME_EXCLUSIVE' || p.dealAccessType === 'PRIME_EARLY_ACCESS';

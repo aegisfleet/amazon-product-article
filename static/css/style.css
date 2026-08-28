@@ -8842,6 +8842,22 @@ legend.font-size-label {
   border-color: var(--badge-points-border, rgba(126, 34, 206, 0.3));
 }
 
+.badge-furusato,
+.m3-badge-furusato,
+.m3-chip-furusato {
+  background-color: var(--badge-furusato-bg, #ecfdf5);
+  color: var(--badge-furusato-text, #065f46);
+  border-color: var(--badge-furusato-border, rgba(5, 150, 105, 0.3));
+}
+
+[data-theme="dark"] .badge-furusato,
+[data-theme="dark"] .m3-badge-furusato,
+[data-theme="dark"] .m3-chip-furusato {
+  background-color: rgba(6, 78, 59, 0.5);
+  color: #6ee7b7;
+  border-color: rgba(16, 185, 129, 0.3);
+}
+
 .m3-badge-price-diff {
   display: inline-flex;
   align-items: center;

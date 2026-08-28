@@ -87,12 +87,39 @@ if __name__ == '__main__':
                 "dimensions": {}
             }
 
-            # Extract price from offersV2
+            # Furusato Tax Check
+            browse_nodes = item.get('browseNodeInfo', {}).get('browseNodes', [])
+            is_furusato_node = any(
+                '返礼品' in (bn.get('displayName', '') + bn.get('contextFreeName', '')) or
+                'ふるさと納税' in (bn.get('displayName', '') + bn.get('contextFreeName', ''))
+                for bn in browse_nodes
+            )
+
+            merchant_name = ""
+            condition_note = ""
             if 'offersV2' in item and item['offersV2'].get('listings'):
                 listings = item['offersV2']['listings']
-                if listings and listings[0].get('price', {}).get('money'):
-                    money = listings[0]['price']['money']
-                    data["price"] = money.get('amount')
+                if listings:
+                    merchant_name = listings[0].get('merchantInfo', {}).get('name', '')
+                    condition_note = listings[0].get('condition', {}).get('conditionNote', '')
+                    if listings[0].get('price', {}).get('money'):
+                        money = listings[0]['price']['money']
+                        data["price"] = money.get('amount')
+
+            title = item_info.get('title', {}).get('displayValue', '')
+            is_furusato_merchant = (
+                any(suffix in merchant_name for suffix in ['市/', '区/', '町/', '村/']) or
+                'ふるさと納税' in merchant_name or
+                '自治体' in merchant_name or
+                '返礼品' in merchant_name
+            )
+            is_furusato_condition = any(w in condition_note for w in ['寄付', '返礼品', '地場産品', 'ふるさと納税'])
+            is_furusato_title = 'ふるさと納税' in title or '【ふるさと納税】' in title
+
+            if is_furusato_node or is_furusato_merchant or is_furusato_condition or is_furusato_title:
+                data["isFurusato"] = True
+                if merchant_name:
+                    data["municipality"] = merchant_name.split('/')[0].strip()
 
             # ManufactureInfo (Model number etc.)
             if 'manufactureInfo' in item_info:

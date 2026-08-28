@@ -458,6 +458,7 @@
                 currentPriceStr: latestPrice.priceStr,
                 currentPriceRaw: latestPrice.priceRaw,
                 score: (product && product.score) ? Number(product.score) : (Number(item.score) || 0),
+                isFurusato: Boolean((product && product.is_furusato) || item.isFurusato),
                 hasLatest: latestPrice.hasLatest,
                 diff: diffInfo.diff,
                 diffRate: diffInfo.diffRate,
@@ -573,6 +574,10 @@
                         ${priceBlockHTML}
                         ${scoreHTML}
                     </div>
+                    ${item.isFurusato ? `
+                    <div class="meta-details-row">
+                        <span class="badge-furusato m3-badge m3-badge-furusato">ふるさと納税</span>
+                    </div>` : ''}
                 </div>
                 <div class="card-footer fav-card-footer">
                     <div class="card-footer-row card-footer-row-sub">
