@@ -49,7 +49,7 @@ describe('RecommendationPromptBuilder', () => {
     const builder = new RecommendationPromptBuilder(dummyCandidatesPath);
     const prompt = builder.build();
 
-    expect(prompt).toContain('事前抽出されたタイムセール・値引き候補商品');
+    expect(prompt).toContain('事前抽出された高品質・高スコア候補商品リスト');
     expect(prompt).toContain('TESTASIN123');
     expect(prompt).toContain('テストセール商品');
     expect(prompt).toContain('[タイムセール]');
