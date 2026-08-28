@@ -656,8 +656,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     .then(response => response.json())
                     .then(data => {
                         const searchIndex = data;
-                        for (let i = 0; i < searchIndex.length; i++) {
-                            const item = searchIndex[i];
+                        for (const item of searchIndex) {
                             item._norm_title = normalizeSearchText(item.title);
                             item._norm_contents = normalizeSearchText(item.contents);
                             item._norm_categories = Array.isArray(item.categories)
