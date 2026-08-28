@@ -159,6 +159,37 @@ describe('Search UI XSS Protection', () => {
     expect(searchJsContent).toContain('searchInput.focus()');
   });
 
+  test('static/js/search.js and search-worker.js should support hiragana and katakana normalization', () => {
+    const workerPath = path.join(__dirname, '../../../static/js/search-worker.js');
+    const workerContent = fs.readFileSync(workerPath, 'utf8');
+
+    expect(searchJsContent).toContain('normalizeSearchText');
+    expect(workerContent).toContain('normalizeSearchText');
+
+    expect(searchJsContent).toContain('_norm_title');
+    expect(searchJsContent).toContain('_norm_categories');
+    expect(workerContent).toContain('_norm_title');
+    expect(workerContent).toContain('_norm_categories');
+
+    // Test normalization behavior directly via isolated vm sandbox
+    const sandbox: any = {};
+    vm.runInNewContext(
+      `
+      ${searchJsContent.match(/function normalizeSearchText\([\s\S]*?^\}/m)?.[0]}
+      this.normalizeSearchText = normalizeSearchText;
+      `,
+      sandbox,
+    );
+
+    const norm = sandbox.normalizeSearchText;
+    expect(norm('ドライヤー')).toBe('どらいやー');
+    expect(norm('どらいやー')).toBe('どらいやー');
+    expect(norm('ﾄﾞﾗｲﾔｰ')).toBe('どらいやー');
+    expect(norm('イヤホン・ヘッドホン')).toBe('いやほん・へっどほん');
+    expect(norm('SONY ワイヤレス')).toBe('sony わいやれす');
+    expect(norm('ＳＯＮＹ　１０００Ｘ')).toBe('sony 1000x');
+  });
+
   test('static/js/search.js should execute DOMContentLoaded without runtime errors', () => {
     let domContentLoadedCallback: ((e?: any) => void) | null = null;
     mockDocument.addEventListener = jest.fn((event: string, callback: (e?: any) => void) => {
