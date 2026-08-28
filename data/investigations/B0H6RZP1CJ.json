@@ -1,0 +1,158 @@
+{
+  "analysis": {
+    "productName": "LOVAME スマートウォッチ 通話機能付き 1.91インチ大画面",
+    "parentAsin": "B0HGKKHJXJ",
+    "productDescription": "1.91インチの大画面ディスプレイを搭載し、Bluetooth通話やメッセージ通知、120種類以上の運動モードに対応したスマートウォッチ。",
+    "productUsage": ["日常の健康管理（歩数、睡眠、カロリーなど）", "スマートフォンを取り出さずに電話やメッセージを確認", "運動時のデータ記録"],
+    "positivePoints": [
+      "1.91インチの大画面で視認性が高い",
+      "Bluetooth通話機能とAI音声アシスタントに対応",
+      "120種類以上の運動モードを搭載",
+      "女性の月経周期管理機能あり",
+      "200種類以上の文字盤から選択可能",
+      "260mAhバッテリーで通常3〜7日使用可能"
+    ],
+    "negativePoints": [
+      "無名ブランド（LOVAME）であり、信頼性や長期間のサポート体制に懸念がある",
+      "スマートウォッチ側から直接メッセージの返信はできない",
+      "77%という異常な割引率（4,380円実売）が設定されており、典型的な二重価格商品である"
+    ],
+    "useCases": ["運転中や手が塞がっている時の通話", "ランニングやヨガなどの運動データ記録", "日々の睡眠の質の確認"],
+    "userStories": [
+      {
+        "userType": "スマートウォッチ初心者",
+        "scenario": "初めてのスマートウォッチとして安価なモデルを探していた",
+        "experience": "画面が大きくて見やすく、LINEの通知もちゃんと届くので便利です。通話機能もついているので、スマホをカバンに入れたままでも電話に出られるのが良かったです。ただ、たまにBluetoothの接続が切れることがあります。値段を考えれば十分な性能だと思います。",
+        "supportingSourceIds": ["amazon-product-page"],
+        "sentiment": "positive"
+      }
+    ],
+    "userImpression": "安価で多機能なスマートウォッチを求めるユーザーからは、大画面で見やすく、通話や通知機能などの基本的な機能が揃っている点で評価されている。一方で、無名ブランドによる典型的な二重価格表示が見られ、長期間の耐久性やアプリの安定性については不透明である。とりあえずスマートウォッチを試してみたいという初心者向けの製品という印象が強い。",
+    "sources": [
+      {
+        "id": "amazon-product-page",
+        "name": "Amazon商品ページ",
+        "url": "https://www.amazon.co.jp/dp/B0H6RZP1CJ",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-08-28",
+        "author": "LOVAME",
+        "conflictOfInterest": "none",
+        "notes": "スペック、機能、価格（4380円）、割引率（77%）を確認。商品説明からメッセージ返信不可などの制約を確認。"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "260mAhバッテリー搭載で通常3-7日連続使用可能",
+        "category": "durability",
+        "confidence": "medium",
+        "supportingSourceIds": ["amazon-product-page"],
+        "crossChecked": false,
+        "notes": "一般的な同クラスのスマートウォッチと比較して妥当な数値だが、使用状況により変動する可能性が高い"
+      },
+      {
+        "claim": "IP68規格の防水・防塵性能",
+        "category": "durability",
+        "confidence": "medium",
+        "supportingSourceIds": ["amazon-product-page"],
+        "crossChecked": false,
+        "notes": "手洗いや洗顔などは問題ないとしているが、ダイビングやサウナは不可と明記されているため、生活防水レベルと認識するのが無難"
+      }
+    ],
+    "lastInvestigated": "2026-08-28",
+    "investigatedPrice": "￥4,380",
+    "competitiveAnalysis": [
+      {
+        "name": "TIFOZEN スマートウォッチ (B0DR8YR5SL)",
+        "asin": "B0DR8YR5SL",
+        "priceComparison": "本商品より安価（2,999円）",
+        "featureComparison": [
+          "共通点：1.91インチ大画面、Bluetooth通話、120+運動モード、IP68防水",
+          "相違点：TIFOZENは超高輝度懐中電灯機能を搭載"
+        ],
+        "differentiators": [
+          "LOVAME スマートウォッチの利点：ピンク系のカラーバリエーションを求める場合",
+          "TIFOZEN スマートウォッチの利点：より安価（2,999円）で、懐中電灯などの付加機能が欲しい場合"
+        ]
+      },
+      {
+        "name": "ElektraX スマートウォッチ (B0GQB4GVHT)",
+        "asin": "B0GQB4GVHT",
+        "priceComparison": "本商品よりやや安価（3,880円）",
+        "featureComparison": [
+          "共通点：1.91インチ大画面、Bluetooth通話、IP68防水",
+          "相違点：ElektraXはAIダイヤルや薄型デザインをアピール、2色ベルト付き"
+        ],
+        "differentiators": [
+          "LOVAME スマートウォッチの利点：生理周期管理機能など女性向けの機能を重視する場合",
+          "ElektraX スマートウォッチの利点：交換用ベルトが付属し、気分に合わせて付け替えたい場合"
+        ]
+      },
+      {
+        "name": "JUSUTEK スマートウォッチ (B0C9W8LPWT)",
+        "asin": "B0C9W8LPWT",
+        "priceComparison": "本商品よりやや高価（6,288円）",
+        "featureComparison": [
+          "共通点：1.91インチ大画面、Bluetooth通話機能",
+          "相違点：JUSUTEKは全金属ボディで高級感をアピールしている"
+        ],
+        "differentiators": [
+          "LOVAME スマートウォッチの利点：より手頃な価格（4,380円）で必要な機能が揃っている点を重視する場合",
+          "JUSUTEK スマートウォッチの利点：金属ボディによる外観の高級感や耐久性を求める場合"
+        ]
+      },
+      {
+        "name": "LOVAME スマートウォッチ 1.85インチ (B0F1LSC58F)",
+        "asin": "B0F1LSC58F",
+        "priceComparison": "同ブランドの別モデルで本商品より安価（2,599円）",
+        "featureComparison": [
+          "共通点：Bluetooth通話機能、IP68防水",
+          "相違点：本商品は1.91インチ画面、B0F1LSC58Fは1.85インチ画面"
+        ],
+        "differentiators": [
+          "LOVAME スマートウォッチ (1.91インチ) の利点：より大きな画面での操作性や視認性を重視する場合",
+          "LOVAME スマートウォッチ (1.85インチ) の利点：画面サイズにこだわらず、とにかく安くスマートウォッチを入手したい場合"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "とりあえず安価で多機能（通話、大画面）なスマートウォッチを試してみたい人",
+        "有名ブランドの数万円するスマートウォッチを買う前に、自分にスマートウォッチが必要か確かめたい人"
+      ],
+      "pros": [
+        "1.91インチの大画面で、LINEの通知や歩数などの情報が非常に見やすい",
+        "スマホを鞄に入れたままでも、手元で電話に出たり、AIアシスタントを呼び出したりできる"
+      ],
+      "cons": [
+        "77%オフという割引率が設定された二重価格表示であり、定価（約2万円）の価値はない",
+        "無名メーカーのため、専用アプリの使い勝手や個人情報の取り扱い、長期間の製品寿命には不安が残る"
+      ],
+      "score": 74,
+      "scoreRationale": "[基本点: 70]\n[加点: +9] (1.91インチ大画面やBluetooth通話など、4000円台の実売価格に対して多機能で実用性が高い)\n[減点: -5] (77%オフという割引率が設定されており、見せ金（二重価格）表示の懸念がある)\n[合計: 74]"
+    },
+    "technicalSpecs": {
+      "display": {
+        "size": "1.91インチ",
+        "type": "タッチスクリーン"
+      },
+      "battery": {
+        "capacity": "260mAh",
+        "playbackTime": "通常使用3〜7日 / 最大14日 (使用状況による)"
+      },
+      "connectivity": [
+        "Bluetooth",
+        "専用アプリ連携"
+      ],
+      "other": [
+        "Bluetooth通話機能内蔵",
+        "AI音声アシスタント対応",
+        "120種類以上の運動モード",
+        "IP68防水防塵 (※ダイビング・サウナ等不可)",
+        "女性の生理周期管理機能",
+        "スマホ探索機能",
+        "200種類以上の文字盤 (専用アプリ経由)"
+      ]
+    }
+  }
+}
