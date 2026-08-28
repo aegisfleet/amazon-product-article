@@ -195,6 +195,13 @@ export interface CreatorsAPIItem {
         id: string;
         name: string;
       };
+      condition?: {
+        conditionNote?: string;
+        subCondition?: {
+          value?: string;
+        };
+        value?: string;
+      };
 
       loyaltyPoints?: {
         points: number;

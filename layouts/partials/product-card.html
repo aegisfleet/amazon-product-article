@@ -102,6 +102,9 @@
                 {{- if .Params.is_amazon_haul -}}
                 <span class="badge-amazon-haul m3-badge m3-badge-secondary">Amazon Haul</span>
                 {{- end -}}
+                {{- if .Params.is_furusato -}}
+                <span class="badge-furusato m3-badge m3-badge-furusato">ふるさと納税</span>
+                {{- end -}}
                 {{- with .Params.deal_badge -}}
                 {{- $dealClass := "deal-standard" -}}
                 {{- if or (eq $.Params.deal_access_type "PRIME_EXCLUSIVE") (eq $.Params.deal_access_type

@@ -642,9 +642,41 @@ export class CreatorsAPIClient {
     const listing = item.offersV2?.listings?.[0];
     const { category, categoryInfo } = this.extractCategoryInfo(item);
 
+    // ふるさと納税判定
+    const merchantName = listing?.merchantInfo?.name || '';
+    const conditionNote = listing?.condition?.conditionNote || '';
+    const title = item.itemInfo?.title?.displayValue || '';
+    const browseNodes = item.browseNodeInfo?.browseNodes || [];
+
+    const isFurusatoBrowseNode = browseNodes.some((node) => {
+      const name = `${node.displayName || ''}${node.contextFreeName || ''}`;
+      return name.includes('返礼品') || name.includes('ふるさと納税');
+    });
+
+    const isMunicipalityMerchant =
+      /^[^/]+?[都道府県市区町村]/.test(merchantName) ||
+      merchantName.includes('ふるさと納税') ||
+      merchantName.includes('自治体') ||
+      merchantName.includes('返礼品');
+
+    const isFurusatoCondition =
+      conditionNote.includes('寄付') ||
+      conditionNote.includes('返礼品') ||
+      conditionNote.includes('地場産品') ||
+      conditionNote.includes('ふるさと納税');
+
+    const isFurusatoTitle = title.includes('ふるさと納税') || title.includes('【ふるさと納税】');
+
+    const isFurusato = isFurusatoBrowseNode || isMunicipalityMerchant || isFurusatoCondition || isFurusatoTitle;
+
+    let municipality: string | undefined;
+    if (isFurusato && merchantName) {
+      municipality = merchantName.split('/')[0]?.trim();
+    }
+
     const product: Product = {
       asin: item.asin,
-      title: item.itemInfo?.title?.displayValue || '',
+      title: title,
       category: category,
       categoryInfo: categoryInfo,
       detailPageUrl: item.detailPageURL,
@@ -658,6 +690,8 @@ export class CreatorsAPIClient {
       availability: listing?.availability?.message,
       isAmazonDirect: listing?.merchantInfo?.name === 'Amazon.co.jp',
       isAmazonHaul: listing?.merchantInfo?.name === 'Haul Global' || listing?.merchantInfo?.id === 'A1EJGP084HULR',
+      isFurusato: isFurusato ? true : undefined,
+      municipality: municipality,
       brand: item.itemInfo?.byLineInfo?.brand?.displayValue || item.itemInfo?.manufactureInfo?.brand?.displayValue,
       loyaltyPoints: listing?.loyaltyPoints?.points ?? undefined,
       dealBadge: ((): string | undefined => {

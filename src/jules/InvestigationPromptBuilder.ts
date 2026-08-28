@@ -21,10 +21,11 @@ export class InvestigationPromptBuilder {
     const brandInfo = this.getBrandInfo();
     const parentAsinInfo = this.getParentAsinInfo();
     const dealInfo = this.getDealInfo();
+    const furusatoInfo = this.getFurusatoInfo();
     const rubric = this.getScoringRubric();
     const specs = this.getProductSpecs();
 
-    return this.generatePrompt(brandInfo, parentAsinInfo, dealInfo, rubric, specs);
+    return this.generatePrompt(brandInfo, parentAsinInfo, dealInfo, furusatoInfo, rubric, specs);
   }
 
   private getBrandInfo(): string {
@@ -33,6 +34,12 @@ export class InvestigationPromptBuilder {
 
   private getParentAsinInfo(): string {
     return this.product.parentAsin ? `- 親ASIN: ${this.product.parentAsin}` : '';
+  }
+
+  private getFurusatoInfo(): string {
+    if (!this.product.isFurusato) return '';
+    const muni = this.product.municipality ? `【${this.product.municipality}】` : '';
+    return `- ふるさと納税情報: 本商品は${muni}へのふるさと納税（寄付金）返礼品です。`;
   }
 
   private getDealInfo(): string {
@@ -61,6 +68,12 @@ export class InvestigationPromptBuilder {
 2. **評価カテゴリの選定**:
    商品の特性（家電、食品、美容品、日用品等）に応じて、以下のいずれかのパターン、あるいはこれらを適切に組み合わせた基準で加減点を行う。
 
+   **ふるさと納税（寄付金・返礼品）の評価基準について（極めて重要）**:
+   対象商品が自治体のふるさと納税返礼品である場合（商品情報に「ふるさと納税情報」がある場合、または自治体出品・返礼品である場合）：
+   - **寄付金額の適正な認識**: ふるさと納税の寄付金額は、総務省の地場産品基準（返礼品調達費が寄付額の3割以下）に基づき設定されている。一般通販の市場相場（返礼品相当額）の約3〜3.5倍前後の価格設定は制度上極めて正常であり、**「異常な高価格」「二重価格」「転売」と誤認して不当に減点（-15〜-20点等）してはならない**。
+   - **返礼品としての正当評価**: 実質自己負担（2,000円控除枠）や返礼品としての還元率（約3割前後で適正か）、ブランド品・特産品が返礼品として手に入る利便性・価値を正当に加味して評価する（適正であれば75〜80点前後のスコアを基準とする）。
+   - **ターゲットと注意喚起**: \`recommendation.targetUsers\` には「ふるさと納税の寄付枠（税控除）を活用して特産品・ブランド品をお得に手に入れたい人」を含め、\`recommendation.cons\` には「通常の一般通販として購入する場合は割高になるため、税控除・ふるさと納税を利用しない一般購入者は通常版の購入を推奨する」旨を明確に注意喚起すること。
+
    **バリエーション商品（カラー・サイズ・容量違い）の評価基準の一貫性について（極めて重要）**:
    対象商品が同一製品のカラー・サイズ・容量違い（バリエーション）であったとしても、過去の評価データや他のバリエーションのスコアに引きずられて機械的にスコアを同期してはならない。個々の商品を独立して客観的に調査・評価すること。
    ただし、**評価の観点や基準にブレが生じないようにすること**。例えば、「成分」「味」「匂い」「ドライバーサイズ(音質)」「基本機能」などの商品そのものの本質的な特徴については、どのバリエーションであっても同じ基準で評価し、「大容量版だけ匂いを理由に減点する」「特定のカラーだけ音質を理由に加点する」といった一貫性のない評価を絶対に防ぐこと。機能的に全く同一のバリエーション間で、一方では加点し、もう一方では加点しないなどの矛盾した評価は厳禁である。バリエーション固有の評価（コスパや取り回し、デザイン性）と、商品の本質的な評価は明確に切り離して加減点を行うこと。
@@ -72,7 +85,7 @@ export class InvestigationPromptBuilder {
      1. **【商品情報の割引率シグナル（手元データで即時判定）】**:
         商品情報の「セール・割引情報」に **割引率 50%〜90%**（例: 78%OFF）が表示されている場合。家電・日用品で実売実績のある定価から常時70%以上値引きされることは通常あり得ず、このシグナルだけで二重価格（定価偽装）と即時判定可能である。
      2. **【Amazon内競合相場との比較（\`creators_search_items.py\`）】**:
-        \`creators_search_items.py\` で同カテゴリの競合商品（6〜8点）を取得し、Amazon内の実売相場と比較する。競合が1,500〜3,000円で売られている中、本商品の元値（参考価格）が1万円以上など相場の数倍に設定されている場合は**確実に二重価格**である。
+        \`creators_search_items.py\` で同カテゴリの競合商品（6〜8点）を取得し、Amazon内の実売相場と比較する。競合が1,500〜3,000円で売られている中、本商品の元値（参考価格）が1万円以上など相場の数倍に設定されている場合は**確実に二重価格**である。（※ふるさと納税返礼品を除く）
      3. **【ダミーバリエーション（見せ金）の比較】**:
         同一製品の別カラー・サイズ間で、機能差がないのに1つだけ価格が数倍高く設定されている場合（他の色を安く見せるための見せ金）。
      4. **【実在しない虚偽スペック・規格外表記の排除】**:
@@ -110,6 +123,7 @@ export class InvestigationPromptBuilder {
     brandInfo: string,
     parentAsinInfo: string,
     dealInfo: string,
+    furusatoInfo: string,
     rubric: string,
     specs: string,
   ): string {
@@ -119,6 +133,7 @@ export class InvestigationPromptBuilder {
       brandInfo,
       parentAsinInfo,
       dealInfo,
+      furusatoInfo,
       `- カテゴリ: ${this.product.category}`,
       `- 価格: ${this.product.price.formatted}`,
       '- 仕様・詳細:',

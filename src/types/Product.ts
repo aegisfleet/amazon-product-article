@@ -36,6 +36,8 @@ export interface Product {
 
   isAmazonDirect?: boolean | undefined;
   isAmazonHaul?: boolean | undefined;
+  isFurusato?: boolean | undefined;
+  municipality?: string | undefined;
   availability?: string | undefined;
   brand?: string | undefined;
   loyaltyPoints?: number | undefined;
