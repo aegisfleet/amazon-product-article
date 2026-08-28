@@ -97,6 +97,19 @@ function normalizeSearchText(text) {
         .trim();
 }
 
+function normalizeSearchItems(items) {
+    if (!Array.isArray(items)) return [];
+    for (const item of items) {
+        item._norm_title = normalizeSearchText(item.title);
+        item._norm_contents = normalizeSearchText(item.contents);
+        item._norm_categories = Array.isArray(item.categories)
+            ? item.categories.map(normalizeSearchText)
+            : [];
+        item._norm_specs = normalizeSearchText(item.specs);
+    }
+    return items;
+}
+
 function isValidQuery(query) {
     if (typeof query !== 'string') return false;
     const trimmed = query.trim();
@@ -651,35 +664,28 @@ document.addEventListener('DOMContentLoaded', function () {
             isWorkerFailed = true;
             searchWorker = null;
 
-            const initFuse = () => {
-                fetch(searchIndexUrl)
-                    .then(response => response.json())
-                    .then(data => {
-                        const searchIndex = data;
-                        for (const item of searchIndex) {
-                            item._norm_title = normalizeSearchText(item.title);
-                            item._norm_contents = normalizeSearchText(item.contents);
-                            item._norm_categories = Array.isArray(item.categories)
-                                ? item.categories.map(c => normalizeSearchText(c))
-                                : [];
-                            item._norm_specs = normalizeSearchText(item.specs);
-                        }
-                        fuse = new Fuse(searchIndex, {
-                            keys: [
-                                { name: "asin", weight: 1 },
-                                { name: "_norm_title", weight: 0.7 },
-                                { name: "_norm_contents", weight: 0.2 },
-                                { name: "_norm_categories", weight: 1 },
-                                { name: "_norm_specs", weight: 0.3 }
-                            ],
-                            threshold: 0.2,
-                            distance: 100,
-                            includeScore: true,
-                            ignoreLocation: true,
-                            useExtendedSearch: true
-                        });
-                    })
-                    .catch(err => console.error('Error loading search index fallback:', err));
+            const initFuse = async () => {
+                try {
+                    const response = await fetch(searchIndexUrl);
+                    const data = await response.json();
+                    const searchIndex = normalizeSearchItems(data);
+                    fuse = new Fuse(searchIndex, {
+                        keys: [
+                            { name: "asin", weight: 1 },
+                            { name: "_norm_title", weight: 0.7 },
+                            { name: "_norm_contents", weight: 0.2 },
+                            { name: "_norm_categories", weight: 1 },
+                            { name: "_norm_specs", weight: 0.3 }
+                        ],
+                        threshold: 0.2,
+                        distance: 100,
+                        includeScore: true,
+                        ignoreLocation: true,
+                        useExtendedSearch: true
+                    });
+                } catch (err) {
+                    console.error('Error loading search index fallback:', err);
+                }
             };
 
             if (globalThis.Fuse) {
