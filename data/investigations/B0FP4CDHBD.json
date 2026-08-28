@@ -1,0 +1,202 @@
+{
+  "analysis": {
+    "productName": "Anker Nebula Capsule 3",
+    "parentAsin": "B0H8RYNCK7",
+    "productDescription": "Google TV搭載、フルHD解像度の小型モバイルプロジェクター。",
+    "productUsage": [
+      "自宅での映画鑑賞",
+      "キャンプなどアウトドアでの映像再生",
+      "寝室の天井投影"
+    ],
+    "positivePoints": [
+      "500ml缶以下のコンパクトサイズ",
+      "フルHDの高解像度と200ANSIルーメンの明るさ",
+      "Google TVを搭載し、Netflix等に直接アクセス可能",
+      "約2.5時間(エコモード)のバッテリー内蔵",
+      "縦横自動台形補正・オートフォーカス搭載"
+    ],
+    "negativePoints": [
+      "バッテリー稼働時間は2.5時間（エコモード）のため、長編映画や連続再生には充電器が必要",
+      "日中や明るい部屋での使用には光量が不足しがち"
+    ],
+    "useCases": [
+      "寝室でリラックスしながらの天井投影",
+      "キャンプの夜にテントやタープに映画を投影"
+    ],
+    "userStories": [
+      {
+        "userType": "映画好きの会社員",
+        "scenario": "休日の夜、ベッドに寝転がりながら天井に映像を投影",
+        "experience": "コンパクトで置き場所に困らず、オートフォーカスや自動台形補正のおかげで設置がとても簡単でした。Google TV内蔵でNetflixがすぐに見られるのが最大の決め手です。暗い部屋なら画質も十分綺麗で満足しています。",
+        "supportingSourceIds": [
+          "src-amazon-page"
+        ],
+        "sentiment": "positive"
+      }
+    ],
+    "userImpression": "設置の手軽さとコンパクトさから『どこにでも持ち運べる手軽な大画面』として高く評価されている。自動調整機能のおかげで初心者でも扱いやすく、OS内蔵で完結する点に満足する声が多い一方で、明るい環境での使用には向かない点や長時間の連続使用には電源接続が必要な点を運用でカバーしているユーザーの姿が見受けられる。",
+    "sources": [
+      {
+        "id": "src-amazon-page",
+        "name": "Amazon 公式商品ページ",
+        "url": "https://www.amazon.co.jp/dp/B0FP4CDHBD",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-08-28",
+        "author": "Anker",
+        "conflictOfInterest": "none",
+        "notes": "製品の公式仕様、寸法、機能、価格情報を参照"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "ケーブルレスで映画一本分（約2.5時間）を楽しめる",
+        "category": "durability",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-amazon-page"
+        ],
+        "crossChecked": false,
+        "notes": "エコモード使用時の公称値"
+      },
+      {
+        "claim": "最大120インチの大画面投影が可能",
+        "category": "performance",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-amazon-page"
+        ],
+        "crossChecked": false,
+        "notes": "仕様に基づく投影サイズ"
+      }
+    ],
+    "lastInvestigated": "2026-08-28",
+    "investigatedPrice": "￥59,490",
+    "competitiveAnalysis": [
+      {
+        "name": "Anker Nebula Capsule 3 Laser",
+        "asin": "B0BCTP8VJH",
+        "priceComparison": "上位モデルのため価格は高いが、レーザー光源による明るさと高コントラストに価値がある",
+        "featureComparison": [
+          "共通点：コンパクトな缶サイズ、フルHD解像度、OS搭載、自動台形補正・オートフォーカス",
+          "相違点：Capsule 3はLED光源でGoogle TV搭載。Laserモデルはレーザー光源で300ANSIルーメン（より明るい）だがAndroid TV搭載で価格が高い"
+        ],
+        "differentiators": [
+          "Anker Nebula Capsule 3の利点：最新のGoogle TVによる操作性と、手頃な価格でフルHDのモバイルプロジェクターを求めるなら迷わずこちら",
+          "Anker Nebula Capsule 3 Laserの利点：価格よりも映像の明るさやレーザー光源ならではの鮮明な発色を優先したい人はこちら"
+        ]
+      },
+      {
+        "name": "BenQ GS50",
+        "asin": "B09GKBVTKD",
+        "priceComparison": "Capsule 3よりも安価な傾向だが、サイズや重量、OSの世代が異なる",
+        "featureComparison": [
+          "共通点：フルHD解像度、モバイル向けバッテリー内蔵、Android系OS搭載",
+          "相違点：GS50は500ANSIルーメンで明るく2.1chスピーカー搭載、防滴・耐落下などアウトドア特化。Capsule 3は圧倒的に小型軽量でGoogle TV搭載"
+        ],
+        "differentiators": [
+          "Anker Nebula Capsule 3の利点：持ち運びのしやすさや、室内での省スペースな設置（天井投影など）を重視するなら迷わずこちら",
+          "BenQ GS50の利点：屋外でのハードな使用（キャンプ等）を想定し、耐衝撃や高輝度・高音質を優先するならこちら"
+        ]
+      },
+      {
+        "name": "CINEMAGE Pro",
+        "asin": "B08MD2Z9CN",
+        "priceComparison": "Capsule 3と比較して半額以下の価格帯",
+        "featureComparison": [
+          "共通点：フルHD、小型モバイル設計、オートフォーカス・自動台形補正",
+          "相違点：CINEMAGE Proは低価格だがAndroid OS（非Google TV）でアプリの使い勝手に差があり、Capsule 3はGoogle TVによる優れたUIとAnkerの信頼性がある"
+        ],
+        "differentiators": [
+          "Anker Nebula Capsule 3の利点：OSの快適な操作性、リモコンでのNetflix一発起動、Ankerの手厚いサポートと製品の完成度を求めるならこちら",
+          "CINEMAGE Proの利点：とにかく予算を抑えてフルHDのモバイルプロジェクターを試してみたい場合はこちら"
+        ]
+      },
+      {
+        "name": "Wanbo T2 Ultra",
+        "asin": "B0GX94XV8G",
+        "priceComparison": "Capsule 3と比較して半額以下の価格帯",
+        "featureComparison": [
+          "共通点：フルHD、Google TV搭載、オートフォーカス・自動補正機能",
+          "相違点：T2 Ultraは500ANSIルーメンで明るく安価だがバッテリー非搭載の据え置きベース。Capsule 3はバッテリー内蔵の完全モバイル設計"
+        ],
+        "differentiators": [
+          "Anker Nebula Capsule 3の利点：電源のない場所（屋外や部屋の中央）への持ち運び、ケーブルレスな取り回しを重視するならこちら",
+          "Wanbo T2 Ultraの利点：常に電源に接続して使用する前提で、安価に明るい映像と最新OSを楽しみたいならこちら"
+        ]
+      },
+      {
+        "name": "TCL C1",
+        "asin": "B0FCFZR5S9",
+        "priceComparison": "Capsule 3の約半額の価格設定",
+        "featureComparison": [
+          "共通点：フルHD解像度、Google TV搭載、自動補正機能",
+          "相違点：TCL C1はジンバル内蔵で天井投影が容易だがバッテリー非搭載。Capsule 3はバッテリー内蔵でスタンド等なしでも手軽に運用可能"
+        ],
+        "differentiators": [
+          "Anker Nebula Capsule 3の利点：バッテリー駆動による真のモビリティと、500ml缶サイズという極限のコンパクトさを求めるならこちら",
+          "TCL C1の利点：バッテリーは不要で、ジンバルによる自由な角度調整（天井投影など）を安価に実現したいならこちら"
+        ]
+      },
+      {
+        "name": "Anker Nebula Mars 3 Air",
+        "asin": "B0CJDV9F4K",
+        "priceComparison": "Capsule 3よりやや高めの価格設定",
+        "featureComparison": [
+          "共通点：フルHD解像度、Google TV搭載、バッテリー内蔵モバイル設計",
+          "相違点：Mars 3 Airは400ANSIルーメンで明るく、取っ手付きのデザイン。Capsule 3は200ANSIルーメンだが、よりコンパクトな円筒形デザイン"
+        ],
+        "differentiators": [
+          "Anker Nebula Capsule 3の利点：カバンに入れやすいスリムな円筒形デザインや、省スペース性を最重視するなら迷わずこちら",
+          "Anker Nebula Mars 3 Airの利点：持ち運び可能な範囲内で、より高い明るさ（400ANSIルーメン）とデュアルスピーカーの高音質を求める人はこちら"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "最新のGoogle TVによる快適な操作と、バッテリー駆動の利便性を兼ね備えた、バランスの良いモバイルプロジェクターを求める人",
+        "据え置き型（TCL C1等）や高輝度特化型（BenQ GS50等）と比較して、手軽に部屋のどこにでも持ち運べる『極限のコンパクトさ』を最優先したい人"
+      ],
+      "pros": [
+        "500ml缶以下のサイズでどこにでも持ち運べ、自動台形補正やオートフォーカスにより、設置の手間なくすぐに映像を楽しめる",
+        "Google TVを搭載し、リモコンのボタン一つでNetflixなどお気に入りのコンテンツに直感的にアクセスできる"
+      ],
+      "cons": [
+        "200ANSIルーメンのため、日中や照明の点いた明るい部屋では映像が見えにくく、暗所での使用が前提となる",
+        "バッテリー駆動はエコモードでも約2.5時間のため、長時間の映画や連続視聴にはACアダプターやモバイルバッテリーの併用が必要"
+      ],
+      "score": 78,
+      "scoreRationale": "[基本点: 70]\n[加点: +5] (500ml缶以下の圧倒的なコンパクトさとフルHDの高解像度・設置性)\n[加点: +5] (Google TV搭載による優れた操作性とNetflix公式対応)\n[減点: -2] (200ANSIルーメンのため明るい環境での使用に制限がある)\n[合計: 78]"
+    },
+    "technicalSpecs": {
+      "display": {
+        "size": "最大120インチ (投影)",
+        "resolution": "1920×1080 (FHD)",
+        "brightness": "200 ANSIルーメン"
+      },
+      "os": "Google TV",
+      "battery": {
+        "playbackTime": "約2.5時間 (エコモード使用時)"
+      },
+      "dimensions": {
+        "height": "170mm",
+        "width": "83mm",
+        "depth": "83mm"
+      },
+      "color": "ブラック",
+      "other": [
+        "オートフォーカス搭載",
+        "縦横自動台形補正対応",
+        "HDR10対応",
+        "Netflix公式対応"
+      ],
+      "weight": "850g",
+      "connectivity": [
+        "Wi-Fi",
+        "Bluetooth 5.0",
+        "HDMI",
+        "USB-C"
+      ]
+    }
+  }
+}
