@@ -239,6 +239,10 @@ function isCandidateEligible(
   article: ArticleMetadata | undefined,
   dealBadge: string | undefined,
 ): boolean {
+  if (!dealBadge) {
+    return false;
+  }
+
   if (article) {
     if (article.score < 75) return false;
   } else if (!isUninvestigatedCandidateAcceptable(dealBadge, product.rating)) {
