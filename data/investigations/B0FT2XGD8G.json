@@ -57,7 +57,10 @@
         "claim": "重量約420gの軽量設計で持ち運びが容易",
         "category": "durability",
         "confidence": "high",
-        "supportingSourceIds": ["src-amazon-B0FT2XGD8G", "src-amazon-B0FT2S885H"],
+        "supportingSourceIds": [
+          "src-amazon-B0FT2XGD8G",
+          "src-amazon-B0FT2S885H"
+        ],
         "crossChecked": true,
         "notes": "複数のカラーバリエーションのAmazon商品仕様欄で一致していることを確認"
       },
@@ -65,7 +68,10 @@
         "claim": "300Wの低消費電力でポータブル電源でも稼働可能",
         "category": "durability",
         "confidence": "high",
-        "supportingSourceIds": ["src-amazon-B0FT2XGD8G", "src-amazon-B0FT2S885H"],
+        "supportingSourceIds": [
+          "src-amazon-B0FT2XGD8G",
+          "src-amazon-B0FT2S885H"
+        ],
         "crossChecked": true,
         "notes": "複数のカラーバリエーションの商品説明にて明確な記載が一致"
       }
@@ -164,7 +170,9 @@
       ],
       "cons": [
         "温度調節機能がない",
-        "容量が380mlと少ない"
+        "容量が380mlと少ない",
+        "容量が380mlと少なく、カップラーメン等を作る場合は1回につき1人分しかお湯を沸かせない",
+        "温度調整機能がないため、粉ミルクや日本茶など特定の温度に設定したい用途には不向き"
       ],
       "score": 75,
       "scoreRationale": "[基本点: 70]\n[加点: +5] (300W低消費電力や420gの軽量性といったポータブル特化の性能を評価)\n[加点: +5] (安価でコスパに優れている)\n[減点: -5] (競合製品が同価格帯で温度調節機能を備えているため相対的に機能面で劣る)\n[合計: 75]"

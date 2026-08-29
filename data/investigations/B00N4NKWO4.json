@@ -3,7 +3,11 @@
     "productName": "ヤマハ ピアニカ P-32EP",
     "parentAsin": "B00N4NKWO4",
     "productDescription": "幼稚園から小学校まで幅広く使用される、ヤマハ製の32鍵ハーモニカです。食品衛生法に準拠し、耐久性のあるハードケースが付属します。",
-    "productUsage": ["幼稚園・保育園での音楽教育", "小学校の音楽の授業", "自宅での練習や演奏"],
+    "productUsage": [
+      "幼稚園・保育園での音楽教育",
+      "小学校の音楽の授業",
+      "自宅での練習や演奏"
+    ],
     "positivePoints": [
       "食品衛生法に準拠しており、小さな子供でも安全に使用できる",
       "丸みを帯びた形状の吹き口で、リコーダーへの移行もスムーズ",
@@ -22,7 +26,9 @@
         "userType": "小学生の保護者",
         "scenario": "小学校の入学準備として",
         "experience": "学校で指定されることが多い定番製品なので安心して購入できました。ケースが頑丈で、子供が乱暴に扱っても壊れにくく助かっています。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -45,7 +51,9 @@
         "claim": "食品衛生法に準拠している",
         "category": "safety",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": false,
         "notes": "公式の商品説明に明記されている。"
       },
@@ -53,7 +61,9 @@
         "claim": "耐久性に優れたハードケースが付属",
         "category": "durability",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": false,
         "notes": "中空二重ブロー成型を採用したハードケースについて説明あり。"
       }
@@ -151,18 +161,28 @@
         "吹き口の形状がリコーダーへの移行をサポート"
       ],
       "cons": [
-        "セミハードケースやソフトケースを採用する製品と比べると、持ち運び時に少しかさばる場合がある"
+        "セミハードケースやソフトケースを採用する製品と比べると、持ち運び時に少しかさばる場合がある",
+        "格安製品に比べると初期費用がやや高め",
+        "ハードケースなので、荷物が多い日は少し重く感じる可能性がある"
       ],
       "score": 95,
       "scoreRationale": "[基本点: 70]\n[加点: +10] (食品衛生法準拠、ヤマハブランドによる高い安全性と信頼性)\n[加点: +5] (標準的な価格帯で、耐久性の高いハードケースが付属する高いコストパフォーマンス)\n[加点: +5] (同系色ケースや、リコーダーへの移行を考慮した丸みのある吹き口などの優れた品質・デザイン)\n[加点: +5] (学校指定されることが多い定番製品としての高いユーザー満足度)\n[合計: 95]"
     },
     "technicalSpecs": {
-      "dimensions": { "width": "425mm", "height": "49mm", "depth": "96mm" },
+      "dimensions": {
+        "width": "425mm",
+        "height": "49mm",
+        "depth": "96mm"
+      },
       "weight": "600g",
       "color": "ピンク",
       "keys": "32鍵",
       "range": "f～c'''",
-      "accessories": ["同系色のプラスチック製ハードケース", "演奏用パイプ", "吹き口"]
+      "accessories": [
+        "同系色のプラスチック製ハードケース",
+        "演奏用パイプ",
+        "吹き口"
+      ]
     }
   }
 }

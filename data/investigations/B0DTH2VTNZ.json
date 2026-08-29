@@ -29,21 +29,27 @@
         "userType": "一般ユーザー",
         "scenario": "普段の買い物や雨の日の外出",
         "experience": "大きさ、軽さ、丈夫さともに問題なく、普段のエコバッグとして重宝しています。ただ、畳んで収納袋に入れる際に入れにくく少し苦戦します。それ以外は申し分ありません。",
-        "supportingSourceIds": ["src-amazon-reviews"],
+        "supportingSourceIds": [
+          "src-amazon-reviews"
+        ],
         "sentiment": "mixed"
       },
       {
         "userType": "一般ユーザー",
         "scenario": "荷物が多い時のサブバッグとして",
         "experience": "とても軽く、口を紐で絞れるのが便利です。とりあえず荷物に入れておこうと思える軽さで、生地も丈夫なのでPCなどを入れても安心感があります。",
-        "supportingSourceIds": ["src-amazon-reviews"],
+        "supportingSourceIds": [
+          "src-amazon-reviews"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "ビジネスパーソン",
         "scenario": "ノートPCを持ち歩く時",
         "experience": "PCを持ち歩く時に大活躍しています。撥水加工があるので雨の日も安心ですし、柄が可愛いのでちょっとした買い物の時にも活用しています。",
-        "supportingSourceIds": ["src-amazon-reviews"],
+        "supportingSourceIds": [
+          "src-amazon-reviews"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -66,7 +72,9 @@
         "claim": "耐水圧10,000mmH2Oの防水・撥水機能",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-amazon-reviews"],
+        "supportingSourceIds": [
+          "src-amazon-reviews"
+        ],
         "crossChecked": true,
         "notes": "KiU公式およびAmazon商品情報で確認"
       },
@@ -74,7 +82,9 @@
         "claim": "容量23L、耐荷重10kg",
         "category": "durability",
         "confidence": "high",
-        "supportingSourceIds": ["src-amazon-reviews"],
+        "supportingSourceIds": [
+          "src-amazon-reviews"
+        ],
         "crossChecked": true,
         "notes": "Amazonの商品説明から確認"
       }
@@ -173,13 +183,18 @@
       ],
       "cons": [
         "収納ポケットが小さめで、綺麗に畳まないと収納しにくい",
-        "荷物が少ないと形が崩れやすい"
+        "荷物が少ないと形が崩れやすい",
+        "大型のバックパックには対応していない"
       ],
       "score": 83,
       "scoreRationale": "[基本点: 70]\n[加点: +8] 撥水・防水機能に加え、耐水圧10,000mmH2Oと機能性が高い\n[加点: +7] 2way仕様でエコバッグとしても日常的に使いやすい\n[加点: +5] 容量23L、耐荷重10kgと丈夫で実用性が高い\n[減点: -7] 収納袋に入れにくいというユーザーの声が複数ある\n[合計: 83]"
     },
     "technicalSpecs": {
-      "dimensions": { "height": "410mm", "width": "450mm", "depth": "150mm" },
+      "dimensions": {
+        "height": "410mm",
+        "width": "450mm",
+        "depth": "150mm"
+      },
       "weight": "100g",
       "capacity": "23L",
       "material": "ポリエステル100%（表：はっ水加工 / 裏：TPUラミネート加工）",

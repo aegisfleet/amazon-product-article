@@ -39,7 +39,9 @@
         "claim": "植物由来の糊を使用しており安全性が高い",
         "category": "safety",
         "confidence": "high",
-        "supportingSourceIds": ["src-amazon"],
+        "supportingSourceIds": [
+          "src-amazon"
+        ],
         "crossChecked": false,
         "notes": "商品説明に明記されている"
       },
@@ -47,7 +49,9 @@
         "claim": "高密度ダンボールで長持ちし、とぎカスが出にくい",
         "category": "durability",
         "confidence": "high",
-        "supportingSourceIds": ["src-amazon"],
+        "supportingSourceIds": [
+          "src-amazon"
+        ],
         "crossChecked": false,
         "notes": "商品説明に明記されている"
       }
@@ -145,7 +149,9 @@
         "高密度ダンボールでとぎカスが出にくく長持ち"
       ],
       "cons": [
-        "消耗品であるため、いずれ買い替えが必要になる"
+        "消耗品であるため、いずれ買い替えが必要になる",
+        "勢いよく乗ると本体がズレやすい",
+        "大きめ・太めの猫には手狭に感じる場合がある"
       ],
       "score": 86,
       "scoreRationale": "[基本点: 70]\n[加点: +6] (猫工学に基づくカール形状、高密度ダンボールなど優れた性能・機能)\n[加点: +3] (ベッド兼用で手頃な価格帯でありコスパが良い)\n[加点: +5] (植物由来の糊を使用し、ニュージーランド産パルプ配合など安全性・品質が高い)\n[加点: +2] (カスが出にくく掃除の手間が減るなどユーザー目線の配慮がある)\n[合計: 86]"

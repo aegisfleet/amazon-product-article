@@ -44,7 +44,9 @@
         "claim": "お風呂のような心地よさ約40℃が約20分持続する",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-amazon-B0FKB32TV1"],
+        "supportingSourceIds": [
+          "src-amazon-B0FKB32TV1"
+        ],
         "crossChecked": false,
         "notes": "メーカー公式の仕様記載。"
       },
@@ -52,7 +54,9 @@
         "claim": "従来品と比較して蒸気を溜め込む保温性が約1.5倍向上している",
         "category": "comparativeAdvantage",
         "confidence": "high",
-        "supportingSourceIds": ["src-amazon-B0FKB32TV1"],
+        "supportingSourceIds": [
+          "src-amazon-B0FKB32TV1"
+        ],
         "crossChecked": false,
         "notes": "メーカーによる従来品との比較データに基づく記載。"
       }
@@ -164,7 +168,9 @@
       ],
       "cons": [
         "使い捨てのためランニングコストがかかる",
-        "香りの好みが分かれる可能性がある"
+        "香りの好みが分かれる可能性がある",
+        "使い捨てタイプのため、毎日欠かさずケアしたい場合は電子レンジ加熱式の製品（あずきのチカラ等）や充電式デバイスと比べてランニングコストが高くつく点に留意すること",
+        "香りによるアロマ効果を期待する人は、同シリーズの香り付きバリエーション（ラベンダーやゆずなど）を検討すること"
       ],
       "score": 85,
       "scoreRationale": "[基本点: 70]\n[加点: +10] (約40℃の蒸気で手軽にリラックスできる利便性)\n[加点: +5] (従来品から向上した保温性と密着感)\n[加点: +5] (大容量でストックしやすい点)\n[減点: -5] (使い捨てによるコスト面)\n[合計: 85]"
