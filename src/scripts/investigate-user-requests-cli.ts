@@ -22,7 +22,7 @@ import { Logger } from '../utils/Logger';
 import {
   extractAsinFromUrl,
   fetchUserRequestsFromGas,
-  isProductAlreadyInvestigated,
+  findExistingInvestigation,
   type UserRequestItem,
   type UserRequestsSessionData,
   type UserRequestUpdate,
@@ -65,12 +65,18 @@ async function evaluateSingleRequest(req: UserRequestItem, validAsins: Set<strin
     };
   }
 
-  const alreadyInvestigated = await isProductAlreadyInvestigated(asin);
-  if (alreadyInvestigated) {
-    logger.info(`Product already investigated: ${asin} (Row ${req.row}) -> Updating to "完了"`);
+  const existing = await findExistingInvestigation(asin);
+  if (existing.exists) {
+    const isParentMatch = existing.matchType === 'parent';
+    const note = isParentMatch
+      ? `同一製品・バリエーションの記事（ASIN: ${existing.existingAsin}）が既に公開されています。`
+      : '記事・調査結果を公開しました。';
+    logger.info(
+      `Product already investigated: ${asin} (Matched ASIN: ${existing.existingAsin}, Type: ${existing.matchType}) (Row ${req.row}) -> Updating to "完了"`,
+    );
     return {
       type: 'completed',
-      update: { row: req.row, status: '完了', asin, note: '記事・調査結果を公開しました。' },
+      update: { row: req.row, status: '完了', asin, note },
     };
   }
 

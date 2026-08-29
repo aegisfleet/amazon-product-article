@@ -49,17 +49,109 @@ export async function extractAsinFromUrl(inputUrl: string): Promise<string | nul
   }
 }
 
+export interface ExistingInvestigationResult {
+  exists: boolean;
+  existingAsin?: string;
+  matchType?: 'exact' | 'parent';
+  parentAsin?: string;
+}
+
+// メモリキャッシュ用
+let cachedPaapiData: Record<string, { data?: { parentAsin?: string; title?: string } }> | null = null;
+let cachedParentToInvestigationMap: Map<string, string> | null = null;
+
 /**
- * 調査結果ファイルが既に存在するか確認
+ * PAAPIキャッシュおよび既存調査データから、親ASINと調査済みASINのマップをロード
  */
-export async function isProductAlreadyInvestigated(asin: string, workspaceRoot = process.cwd()): Promise<boolean> {
+async function getInvestigationIndex(workspaceRoot = process.cwd()): Promise<{
+  paapiCache: Record<string, { data?: { parentAsin?: string; title?: string } }>;
+  parentToInvestigationMap: Map<string, string>;
+}> {
+  if (cachedPaapiData && cachedParentToInvestigationMap) {
+    return {
+      paapiCache: cachedPaapiData,
+      parentToInvestigationMap: cachedParentToInvestigationMap,
+    };
+  }
+
+  const cachePath = path.join(workspaceRoot, 'data', 'cache', 'paapi-product-cache.json');
+  let paapiCache: Record<string, { data?: { parentAsin?: string; title?: string } }> = {};
+  try {
+    const raw = await fs.readFile(cachePath, 'utf-8');
+    paapiCache = JSON.parse(raw);
+  } catch {
+    // 開発環境などで本番キャッシュが存在しない場合は空オブジェクト
+  }
+
+  const parentToInvMap = new Map<string, string>();
+  const invDir = path.join(workspaceRoot, 'data', 'investigations');
+  try {
+    const files = await fs.readdir(invDir);
+    for (const file of files) {
+      if (!file.endsWith('.json')) continue;
+      const investigatedAsin = path.basename(file, '.json');
+      try {
+        const invRaw = await fs.readFile(path.join(invDir, file), 'utf-8');
+        const invJson = JSON.parse(invRaw);
+        const parentAsin = invJson.analysis?.parentAsin || paapiCache[investigatedAsin]?.data?.parentAsin;
+        if (parentAsin && !parentToInvMap.has(parentAsin)) {
+          parentToInvMap.set(parentAsin, investigatedAsin);
+        }
+      } catch {
+        // パース失敗したファイルはスキップ
+      }
+    }
+  } catch {
+    // ディレクトリが存在しない場合
+  }
+
+  cachedPaapiData = paapiCache;
+  cachedParentToInvestigationMap = parentToInvMap;
+  return { paapiCache, parentToInvestigationMap: parentToInvMap };
+}
+
+/**
+ * 調査結果ファイルが既に存在するか、または同一親ASINの調査が既に存在するか確認
+ */
+export async function findExistingInvestigation(
+  asin: string,
+  workspaceRoot = process.cwd(),
+): Promise<ExistingInvestigationResult> {
   const investigationPath = path.join(workspaceRoot, 'data', 'investigations', `${asin}.json`);
   try {
     await fs.access(investigationPath);
-    return true;
+    return { exists: true, existingAsin: asin, matchType: 'exact' };
   } catch {
-    return false;
+    // 直接の一致が存在しない場合、親ASINで検索
   }
+
+  try {
+    const { paapiCache, parentToInvestigationMap } = await getInvestigationIndex(workspaceRoot);
+    const parentAsin = paapiCache[asin]?.data?.parentAsin;
+    if (parentAsin && parentToInvestigationMap.has(parentAsin)) {
+      const existingAsin = parentToInvestigationMap.get(parentAsin);
+      if (existingAsin) {
+        return {
+          exists: true,
+          existingAsin,
+          matchType: 'parent',
+          parentAsin,
+        };
+      }
+    }
+  } catch (err) {
+    logger.warn(`Failed to check parent ASIN investigation for ${asin}:`, err);
+  }
+
+  return { exists: false };
+}
+
+/**
+ * 調査結果ファイルが既に存在するか確認（ASIN単体または同一親ASIN）
+ */
+export async function isProductAlreadyInvestigated(asin: string, workspaceRoot = process.cwd()): Promise<boolean> {
+  const result = await findExistingInvestigation(asin, workspaceRoot);
+  return result.exists;
 }
 
 /**
