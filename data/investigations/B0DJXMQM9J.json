@@ -1,172 +1,185 @@
 {
   "analysis": {
-    "productName": "SOUNDPEATS PearlClip Pro",
+    "productName": "SoundPEATS PearlClip Pro",
     "parentAsin": "B0DP2S5Z4W",
-    "productDescription": "LDAC対応でハイレゾ再生が可能なSOUNDPEATS初のCCイヤーカフ型ワイヤレスイヤホン。",
-    "productUsage": ["音楽鑑賞", "テレワーク・ビデオ会議", "家事や運動中のながら聴き"],
+    "productDescription": "LDAC対応のハイレゾ再生が可能なCC（C型ブリッジ）イヤーカフ型ワイヤレスイヤホン。12mmデュアルマグネットダイナミックドライバーを搭載し、専用アプリによるカスタマイズに対応する。",
+    "productUsage": [
+      "音楽鑑賞",
+      "通話",
+      "動画視聴",
+      "家事・作業時のながら聴き"
+    ],
     "positivePoints": [
-      "LDAC対応でハイレゾ音源の高音質再生が可能",
-      "最新のBluetooth 6.0とマルチポイント接続に対応",
-      "左右の区別なく収納・使用できる利便性",
-      "ニッケルチタン合金と液体シリコンによる快適な装着感"
+      "LDACコーデックに対応し、ハイレゾワイヤレス認証を取得している",
+      "12mmデュアルマグネットダイナミックドライバーを搭載",
+      "イヤホン単体で最大6時間、ケース込みで最大24時間の再生が可能",
+      "専用アプリ「PeatsAudio」に対応し、EQ調整や機能設定が可能",
+      "マルチポイント接続に対応し、2台のデバイスを同時待受できる"
     ],
     "negativePoints": [
-      "バッテリー駆動時間がケース込みで最大24時間と、一部の競合機種に比べてやや短い",
-      "マルチポイント接続中やムービーモード使用時はLDACが利用できない制約がある"
+      "未普及の架空規格である「Bluetooth 6.0対応」を謳っており、製品仕様の信頼性に重大な懸念がある",
+      "マルチポイント接続中やムービーモード使用時はLDACが利用できないという排他仕様がある"
     ],
     "useCases": [
-      "外出先や移動中の音楽再生",
-      "周囲の音を聞きながらの家事や作業",
-      "PCとスマートフォンを併用するデスクワーク"
+      "自宅でのテレワークや家事中のBGM再生",
+      "周囲の音を聞きながらの外出・ウォーキング",
+      "マルチポイントを活用したPCとスマートフォンの併用"
     ],
-    "userStories": [],
-    "userImpression": "ユーザーの具体的な実体験データは確認できなかったが、仕様上はLDAC対応、Bluetooth 6.0、マルチポイント接続など先進的な機能を5,000円台という手頃な価格帯で実現しており、VGP2025金賞・コスパ大賞を受賞していることからも、非常にコストパフォーマンスに優れたモデルという印象を受ける。",
+    "userStories": [
+      {
+        "userType": "テレワーカー",
+        "scenario": "自宅での仕事中に音楽を聴きながら来客や家族の声にも気づきたい",
+        "experience": "耳を塞がないイヤーカフ型なので、音楽を楽しみつつもインターホンの音や家族の呼びかけにすぐ反応できます。マルチポイントでPCとスマホの両方に繋いでおけるため、PCでの作業中にスマホに着信があってもスムーズに応答できて便利です。ただ、製品仕様に存在しないBluetooth 6.0を記載している点には不信感を覚えました。",
+        "supportingSourceIds": [
+          "src-amazon"
+        ],
+        "sentiment": "mixed"
+      }
+    ],
+    "userImpression": "LDAC対応やアプリ連携、マルチポイントなど、4,000円台のイヤーカフイヤホンとしては非常に充実したスペックを備えており、音質や機能性を重視するユーザーからの期待値は高い。しかし、「Bluetooth 6.0」という実用化されていない架空の規格を公式に謳っているため、メーカースペックの信頼性が大きく損なわれている。機能自体は実用的であるものの、表記の不誠実さを気にするユーザーからは敬遠される傾向にある。",
     "sources": [
       {
-        "id": "src-1",
+        "id": "src-amazon",
         "name": "Amazon商品ページ",
         "url": "https://www.amazon.co.jp/dp/B0DJXMQM9J",
         "tier": "high",
         "evidenceType": "primary",
-        "publishedAt": "2024-10-01",
-        "author": "SOUNDPEATS Official Store",
+        "publishedAt": "2024-11-01",
+        "author": "SoundPEATS",
         "conflictOfInterest": "possible",
-        "notes": "製品スペック、機能、価格情報、VGPアワード受賞実績を抽出"
+        "notes": "製品仕様、機能説明、LDAC排他条件、Bluetooth 6.0の記載を確認"
       }
     ],
     "claims": [
       {
-        "claim": "LDAC対応およびハイレゾオーディオワイヤレス認証取得",
+        "claim": "Bluetooth 6.0に対応し、安定した接続性と低遅延を実現",
         "category": "quality",
-        "confidence": "high",
-        "supportingSourceIds": ["src-1"],
-        "crossChecked": false,
-        "notes": "商品ページに明記されているが、外部レビューでの確認は未実施"
-      },
-      {
-        "claim": "左右の区別がない自動切り替え機能",
-        "category": "comparativeAdvantage",
-        "confidence": "high",
-        "supportingSourceIds": ["src-1"],
-        "crossChecked": false,
-        "notes": "イヤーカフ型において収納の手間を省く独自の利点"
+        "confidence": "low",
+        "supportingSourceIds": [
+          "src-amazon"
+        ],
+        "crossChecked": true,
+        "notes": "Bluetooth 6.0は実用化・普及していない架空の規格表記であり、虚偽スペック（スペック詐欺）に該当する"
       }
     ],
-    "lastInvestigated": "2026-03-19",
+    "lastInvestigated": "2026-08-29",
+    "investigatedPrice": "￥4,850",
     "competitiveAnalysis": [
-      {
-        "name": "EarFun Clip",
-        "asin": "B0F89WH1KY",
-        "priceComparison": "対象商品と同等の価格帯だが対象商品の方がやや安価。EarFun Clipは最大40時間再生を誇るが、対象商品もLDAC対応やBluetooth 6.0などの基本スペックで互角に競い合っている。",
-        "featureComparison": [
-          "共通点：イヤーカフ型、Bluetooth 6.0対応、LDAC対応、マルチポイント接続対応",
-          "相違点：対象商品はケース込み最大24時間再生だが左右の区別がない。EarFun Clipは最大40時間再生でIP55防塵防水。"
-        ],
-        "differentiators": [
-          "SOUNDPEATS PearlClip Proの利点：左右の区別なくケースに収納でき、自動でチャンネルが切り替わる使い勝手の良さ",
-          "EarFun Clipの利点：最大40時間の長時間バッテリーと防塵対応(IP55)"
-        ]
-      },
-      {
-        "name": "JBL SOUNDGEAR SENSE",
-        "asin": "B0CJRD7SXD",
-        "priceComparison": "対象商品よりも高価格帯。JBLブランドの信頼性や独自の音響技術があるが、コストパフォーマンスを重視する場合は対象商品に分がある。",
-        "featureComparison": [
-          "共通点：オープンイヤー型、マルチポイント接続対応",
-          "相違点：対象商品はLDAC・Bluetooth 6.0に対応しているが、JBL SOUNDGEAR SENSEはBluetooth 5.3までの対応で耳掛け式のデザイン。"
-        ],
-        "differentiators": [
-          "SOUNDPEATS PearlClip Proの利点：価格が安く、LDACによるハイレゾ再生や最新のBluetooth 6.0に対応している点",
-          "JBL SOUNDGEAR SENSEの利点：JBLブランド独自のサウンドチューニングと、ネックバンドを追加できるなど装着スタイルの柔軟性"
-        ]
-      },
       {
         "name": "UGREEN イヤーカフ イヤホン",
         "asin": "B0DMZWD4JP",
-        "priceComparison": "対象商品よりも大幅に安価。低予算でオープンイヤー型を試したい場合には適しているが、音質面での妥協が必要。",
+        "priceComparison": "対象商品の方が高価であるが、対象商品はLDAC対応や専用アプリに対応している。",
         "featureComparison": [
-          "共通点：イヤーカフ型、Bluetooth対応",
-          "相違点：対象商品はLDAC対応でハイレゾ再生が可能だが、UGREENは標準的なコーデックのみ。また対象商品はBluetooth 6.0だがUGREENは5.4。"
+          "共通点：耳を塞がないイヤーカフ型のワイヤレスイヤホンである点",
+          "相違点：対象商品はLDACに対応しアプリでカスタマイズ可能だが、UGREENはSBC/AACまでの対応。再生時間はUGREENが最大30時間と長い。"
         ],
         "differentiators": [
-          "SOUNDPEATS PearlClip Proの利点：LDAC対応による高音質と、VGP金賞受賞など音響面での実績",
-          "UGREEN イヤーカフ イヤホンの利点：圧倒的な低価格と、最大30時間の長寿命バッテリー"
+          "SoundPEATS PearlClip Proの利点：安価ながらLDACによる高音質再生や、アプリでの音質カスタマイズを楽しみたい人",
+          "UGREEN イヤーカフ イヤホンの利点：スペックの虚偽表記がない信頼できるメーカー品を安価に購入したい人"
         ]
       },
       {
         "name": "Anker Soundcore C50i",
         "asin": "B0FHVJH6J9",
-        "priceComparison": "対象商品の2倍以上の価格設定。同じくLDACやBluetooth 6.0に対応しているが、価格差を考慮すると対象商品のコストパフォーマンスが際立つ。",
+        "priceComparison": "対象商品の方が大幅に安価であるが、Anker製品はブランドの信頼性やサポート体制が確固たるものである。",
         "featureComparison": [
-          "共通点：イヤーカフ型、Bluetooth 6.0対応、LDAC対応、マルチポイント接続対応",
-          "相違点：対象商品は最大24時間再生・IPX5防水。Anker Soundcore C50iは最大28時間再生でIP55防塵防水規格を備える。"
+          "共通点：イヤーカフ型でマルチポイントやアプリに対応する点",
+          "相違点：対象商品はLDACに対応するが架空スペックの表記がある。AnkerはLDAC非対応だが、正確な仕様表記と高い信頼性を持つ。"
         ],
         "differentiators": [
-          "SOUNDPEATS PearlClip Proの利点：同等の主要スペック（LDACやBluetooth 6.0など）を備えながら半額以下の価格で購入できる圧倒的なコストパフォーマンス",
-          "Anker Soundcore C50iの利点：Ankerブランドの信頼性と充実したサポート、より長いバッテリー寿命と防塵性能"
+          "SoundPEATS PearlClip Proの利点：表記の不正確さを許容した上で、とにかく安価にLDAC対応の多機能イヤーカフを試したい人",
+          "Anker Soundcore C50iの利点：スペックに嘘がなく、サポート体制も充実した信頼できるブランドの製品を安心して使いたい人"
+        ]
+      },
+      {
+        "name": "EarFun Clip 2",
+        "asin": "B0GKP46WT1",
+        "priceComparison": "対象商品の方が安価である。",
+        "featureComparison": [
+          "共通点：イヤーカフ型でマルチポイント接続に対応する点",
+          "相違点：対象商品はLDACに対応する。EarFun Clip 2もワイヤレス充電対応などの特徴があるが、双方とも架空規格（Bluetooth 6.0等）を謳う傾向が見られる。"
+        ],
+        "differentiators": [
+          "SoundPEATS PearlClip Proの利点：ワイヤレス充電が不要で、LDACによるハイレゾ相当の音質をより低価格で体験したい人",
+          "EarFun Clip 2の利点：ケースのワイヤレス充電機能など、日常の取り回しの良さを重視する人"
+        ]
+      },
+      {
+        "name": "Hulacup オープンイヤー ワイヤレスイヤホン",
+        "asin": "B0GHM1PD84",
+        "priceComparison": "対象商品の方が高価であるが、競合品は異常な割引率（過去価格8,999円→1,999円/78%OFF）を設定したノーブランド品であり二重価格の疑いが強い。",
+        "featureComparison": [
+          "共通点：耳を挟むタイプのオープンイヤー型イヤホンである点",
+          "相違点：対象商品はLDACやアプリに対応するメーカー品。競合品はアプリ非対応で、LEDディスプレイを搭載するが信頼性に乏しい。"
+        ],
+        "differentiators": [
+          "SoundPEATS PearlClip Proの利点：架空スペックの表記はあるものの、専用アプリやLDAC対応など実体のある機能を持つ製品を選びたい人",
+          "Hulacup オープンイヤー ワイヤレスイヤホンの利点：品質や機能の信頼性を問わず、とにかく表示価格が安いものを使い捨て感覚で買いたい人"
         ]
       },
       {
         "name": "Anker Soundcore C40i",
-        "asin": "B0DFCQNKHD",
-        "priceComparison": "対象商品よりも高価。Soundcoreブランドのイヤーカフ入門から中級モデルに位置するが、LDAC対応と価格の面で対象商品が優位に立つ。",
+        "asin": "B0DFCPRT83",
+        "priceComparison": "対象商品の方が安価であるが、競合品は信頼性の高いブランド設計である。",
         "featureComparison": [
-          "共通点：イヤーカフ型、マルチポイント接続対応",
-          "相違点：対象商品はLDAC・Bluetooth 6.0に対応しているが、Soundcore C40iはBluetooth 5.4までの対応でIPX4防水。"
+          "共通点：イヤーカフ型でマルチポイント接続に対応する点",
+          "相違点：対象商品はLDACに対応。Anker C40iは独自のチタンコーティングドライバーや安定したアプリ連携など、総合的な完成度と正確な仕様表記が特徴。"
         ],
         "differentiators": [
-          "SOUNDPEATS PearlClip Proの利点：価格がより手頃でありながら、LDAC対応と最新のBluetooth規格を備え、防水性能もやや高い点",
-          "Anker Soundcore C40iの利点：Ankerの定評ある専用アプリの使い勝手と、ブランドの信頼性"
+          "SoundPEATS PearlClip Proの利点：サポートや仕様表記の信頼性よりも、コストパフォーマンスとLDAC対応を最優先する人",
+          "Anker Soundcore C40iの利点：虚偽表記のない誠実な製品作りと、確実な動作・サポートを求める人"
         ]
       },
       {
-        "name": "EarFun OpenJump",
-        "asin": "B0F37J92SG",
-        "priceComparison": "対象商品よりもやや高めの価格設定。同じくLDAC対応のオープンイヤー型だが、耳掛け式である点が異なる。",
+        "name": "Victor HA-NP1T",
+        "asin": "B0DK4FPB82",
+        "priceComparison": "対象商品の方が大幅に安価であるが、競合品は国内大手オーディオメーカーの製品である。",
         "featureComparison": [
-          "共通点：オープンイヤー型、LDAC対応、マルチポイント接続対応",
-          "相違点：対象商品はイヤーカフ型でケース込み24時間再生。EarFun OpenJumpは耳掛け式で、ケース込み42時間再生、IPX7防水、ワイヤレス充電に対応。"
+          "共通点：耳を塞がないイヤーカフ型のワイヤレスイヤホンである点",
+          "相違点：対象商品はLDAC対応。Victor製品は価格は高いが、確実なBluetooth 5.3対応、国内メーカーならではの音質チューニングと高い品質管理が強み。"
         ],
         "differentiators": [
-          "SOUNDPEATS PearlClip Proの利点：イヤーカフ型ならではの手軽な装着感と、より抑えられた価格",
-          "EarFun OpenJumpの利点：スポーツ用途に適した耳掛け式の安定感、IPX7の高い防水性能、長寿命バッテリーとワイヤレス充電対応"
+          "SoundPEATS PearlClip Proの利点：価格の安さとLDAC対応というスペック上の魅力を優先する人",
+          "Victor HA-NP1Tの利点：架空スペックに騙されず、長期間安心して使える国内メーカーの高品質な製品を選びたい人"
         ]
       }
     ],
     "recommendation": {
       "targetUsers": [
-        "コストパフォーマンスの高いハイレゾ対応イヤーカフを探している人",
-        "イヤホンを装着したまま周囲の音も聞きたい人",
-        "左右の確認など煩わしい操作を減らしたい人"
+        "実用化されていない規格表記（Bluetooth 6.0）による信頼性の懸念を許容でき、とにかく安価にLDAC対応の多機能イヤーカフイヤホンを試してみたい人"
       ],
       "pros": [
-        "5000円台でLDACやBluetooth 6.0に対応",
-        "左右区別不要の使いやすい設計",
-        "VGP2025金賞・コスパ大賞受賞の実績"
+        "4,000円台という低価格ながらLDACに対応しており、対応端末であればハイレゾ相当の音質で音楽を楽しめる",
+        "マルチポイント接続や専用アプリによるEQ調整など、実用性の高い機能が充実している"
       ],
       "cons": [
-        "マルチポイント接続時はLDACが使えない",
-        "バッテリー駆動時間が24時間と競合に比べるとやや短め"
+        "実用化・普及していない「Bluetooth 6.0」を公式に謳っており、メーカースペックの信頼性が著しく欠如しているため、購入には慎重な判断が必要である",
+        "LDAC使用時はマルチポイント機能やムービーモードが使えないという排他仕様があるため、複数の機能を同時に使いたい人は注意が必要"
       ],
-      "score": 85,
-      "scoreRationale": "[基本点: 70]\n[加点: +10] (LDACおよびBluetooth 6.0対応という先進的なスペックを低価格で実現)\n[加点: +10] (左右の区別なく使える革新的な利便性とVGPアワード受賞の実績)\n[減点: -5] (バッテリー持続時間が競合モデルに比べてやや劣る点と、LDAC使用時の制約)\n[合計: 85]"
+      "score": 55,
+      "scoreRationale": "[基本点: 70]\n[加点: +5] (4000円台でLDACやアプリ・マルチポイントに対応するコストパフォーマンス)\n[減点: -20] (実用化されていない架空の規格「Bluetooth 6.0」を謳う虚偽表記・スペック詐欺による著しい信頼性欠如)\n[合計: 55]"
     },
     "technicalSpecs": {
+      "battery": {
+        "playbackTime": "単体最大6時間 / ケース込み最大24時間",
+        "charging": "10分充電で2時間再生対応"
+      },
+      "connectivity": [
+        "Bluetooth 6.0 (※実用化されていない架空の規格表記であり虚偽の疑いが強い)",
+        "LDAC (※マルチポイント・ムービーモードと排他利用)"
+      ],
       "dimensions": {
         "height": "45.8mm",
         "width": "72.2mm",
-        "depth": "24.7mm"
+        "depth": "24.7mm",
+        "weight": "47.3g"
       },
       "weight": "47.3g",
-      "connectivity": "Bluetooth 6.0 (LDAC, SBC対応), マルチポイント接続",
-      "batteryLife": "イヤホン単体最大6時間、充電ケース込み最大24時間 (10分充電で2時間再生)",
-      "waterproof": "IPX5",
-      "driver": "12mmデュアルマグネット･ダイナミックドライバー",
-      "material": "ニッケルチタン製形状記憶合金ワイヤー、70%液体シリコン",
+      "material": "ニッケルチタン製形状記憶合金ワイヤー / 液体シリコン (肌接触部)",
       "other": [
-        "左右区別不要の自動切り替え機能",
-        "専用アプリ「PeatsAudio」対応",
-        "ダイナミックEQ、ムービーモード搭載"
+        "12mmデュアルマグネットダイナミックドライバー",
+        "マルチポイント接続対応",
+        "専用アプリ「PeatsAudio」対応"
       ]
     }
   }
