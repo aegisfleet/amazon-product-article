@@ -166,7 +166,7 @@ pnpm run prebuild:hugo
 修正・整理完了後は、以下のコマンドですべての整合性を確認します。
 
 ```bash
-# 1. アーティファクトの妥当性検証
+# 1. 修正対象ファイルのアーティファクト妥当性およびリンク検証（修正ファイルのみ指定）
 uv run python scripts/validate_artifact.py data/investigations/<修正したASIN>.json
 
 # 2. 構文・定義の検証
