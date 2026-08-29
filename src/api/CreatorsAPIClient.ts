@@ -646,32 +646,37 @@ export class CreatorsAPIClient {
     const merchantName = listing?.merchantInfo?.name || '';
     const conditionNote = listing?.condition?.conditionNote || '';
     const title = item.itemInfo?.title?.displayValue || '';
-    const browseNodes = item.browseNodeInfo?.browseNodes || [];
 
-    const isFurusatoBrowseNode = browseNodes.some((node) => {
-      const name = `${node.displayName || ''}${node.contextFreeName || ''}`;
-      return name.includes('返礼品') || name.includes('ふるさと納税');
-    });
+    const isAmazonDirect = merchantName === 'Amazon.co.jp';
 
     const isMunicipalityMerchant =
-      /^[^/]+?[都道府県市区町村]/.test(merchantName) ||
-      merchantName.includes('ふるさと納税') ||
-      merchantName.includes('自治体') ||
-      merchantName.includes('返礼品');
+      !isAmazonDirect &&
+      (/^(?:.+?[都道府県])?.+?[市区町村]\//.test(merchantName) ||
+        merchantName.includes('ふるさと納税') ||
+        merchantName.includes('自治体'));
 
     const isFurusatoCondition =
-      conditionNote.includes('寄付') ||
-      conditionNote.includes('返礼品') ||
-      conditionNote.includes('地場産品') ||
-      conditionNote.includes('ふるさと納税');
+      !isAmazonDirect &&
+      (conditionNote.includes('寄付') ||
+        conditionNote.includes('返礼品') ||
+        conditionNote.includes('地場産品') ||
+        conditionNote.includes('ふるさと納税'));
 
-    const isFurusatoTitle = title.includes('ふるさと納税') || title.includes('【ふるさと納税】');
+    const isFurusatoTitle =
+      title.includes('ふるさと納税') ||
+      title.includes('【ふるさと納税】') ||
+      title.includes('［ふるさと納税］') ||
+      title.includes('[ふるさと納税]');
 
-    const isFurusato = isFurusatoBrowseNode || isMunicipalityMerchant || isFurusatoCondition || isFurusatoTitle;
+    const isFurusato = isFurusatoTitle || isMunicipalityMerchant || isFurusatoCondition;
 
     let municipality: string | undefined;
-    if (isFurusato && merchantName) {
-      municipality = merchantName.split('/')[0]?.trim();
+    if (isFurusato && !isAmazonDirect && merchantName) {
+      if (merchantName.includes('/')) {
+        municipality = merchantName.split('/')[0]?.trim();
+      } else if (merchantName.includes('ふるさと納税') || merchantName.includes('自治体')) {
+        municipality = merchantName.trim();
+      }
     }
 
     const product: Product = {
