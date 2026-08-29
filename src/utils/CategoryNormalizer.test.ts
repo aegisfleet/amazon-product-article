@@ -176,6 +176,13 @@ describe('CategoryNormalizer', () => {
         'タケオキクチ、コムサイズム他 ビジネスファッション・小物',
         '【最大60％OFF】タケオキクチ、コムサイズム他 就活・ビジネスファッション',
         'ゲーミングチェア＆デスク',
+        'ELECOM エレコム - スマートフォン・携帯電話',
+        'エレコム USB充電・データ転送ケーブル',
+        'Panasonic スマホーム',
+        'ロジクール ウェブカメラ・ヘッドセット',
+        'パナソニック 衣類・ふとん乾燥機',
+        '日用品・生活必需品 - ホーム＆キッチン',
+        'Panasonic',
         'ProductAlertStampcard3500',
         'Multibuy Experiment',
         '3MAone人気アイテム',
@@ -649,6 +656,35 @@ describe('CategoryNormalizer', () => {
       expect(result.sub).not.toContain('ストア');
       expect(result.sub).not.toContain('ガイド');
       expect(result.browseNodeId).toBe('171386011');
+    });
+
+    it('should select "ノートパソコン用ドッキングステーション" for Logitec docking station (B0CQYKF6CM)', () => {
+      const nodes: BrowseNode[] = [
+        {
+          contextFreeName: 'ELECOM エレコム - スマートフォン・携帯電話',
+          displayName: 'ELECOM エレコム - スマートフォン・携帯電話',
+          id: '3557094051',
+          isRoot: false,
+        },
+        {
+          contextFreeName: '家電 ストア',
+          displayName: '家電 ストア',
+          id: '8185003051',
+          isRoot: false,
+        },
+        {
+          contextFreeName: 'ノートパソコン用ドッキングステーション',
+          displayName: 'ドッキングステーション',
+          id: '2151884051',
+          isRoot: false,
+        },
+      ];
+      const title =
+        'ロジテック USB Type-C ハブ ドッキングステーション 6-in-1 画面表示ON/OFFボタン付 USB PD 100W対応 USBA×2 4K60Hz HDMI×1 USB-C×1 SD＋microSDスロット LHB-PMP6U3S';
+
+      const result = CategoryNormalizer.selectBestCategory(nodes, title);
+      expect(result.main).toBe('ノートパソコン用ドッキングステーション');
+      expect(result.browseNodeId).toBe('2151884051');
     });
   });
 });

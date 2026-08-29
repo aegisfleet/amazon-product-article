@@ -95,6 +95,8 @@ export class CategoryNormalizer {
     '携帯電話',
     'SDカード',
     'メモリーカード',
+    'ドッキングステーション',
+    'USBハブ',
   ];
 
   private static readonly HIGH_PRIORITY_KEYWORDS = [
@@ -498,9 +500,11 @@ export class CategoryNormalizer {
       /l[\d\s_]+[a-z]+[\d\s_]+(?:cat|sub)/i,
       // Device and Store management pages
       /(?:kindle|fire|echo|alexa|amazon|ring).*(?:一覧|ページ|ストア|store|popup|体験|イベント)/i,
-      // Brand-specific promotion/coordinated pages
+      // Brand-specific promotion/coordinated pages and brand store categories
       /(?:sony|ソニー|panasonic|パナソニック|logicool|ロジクール|elecom|エレコム).*(?:特集|一覧|プロモーション|キャンペーン|限定|コーディネート)/i,
       /(?:iris|アイリス|brother|ブラザー|nestle|ネスレ|cleansui|クリンスイ|luminous|ルミナス).*(?:特集|一覧|プロモーション|キャンペーン|限定|コーディネート)/i,
+      /^(?:(?:sony|ソニー|panasonic|パナソニック|logicool|ロジクール|elecom|エレコム|sanwasupply|サンワサプライ|anker|アンカー|buffalo|バッファロー|iris|アイリスオーヤマ|アイリス|brother|ブラザー|nestle|ネスレ|cleansui|クリンスイ|luminous|ルミナス|yamazen|山善)[\s\u3000]*)+(?:[-－–—:・]|ストア|store|usb|ウェブカメラ|カメラ|イヤホン|ヘッドセット|ケーブル|マウス|スマートフォン|携帯電話|衣類|ふとん乾燥機|スマホーム|充電|テレビ|$)/i,
+      /日用品・生活必需品\s*[-－–—:]/i,
       /^panasonic-ha-/i,
       /^(?:philips|フィリップス)\s*(?:理美容|美容|ビューティ)/i,
       /^おうちでヘアケア/i,
