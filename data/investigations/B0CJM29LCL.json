@@ -41,7 +41,9 @@
         "claim": "R129適合で、前後だけでなくドア側の衝撃からも守れる設計",
         "category": "safety",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": false,
         "notes": "公式の商品仕様として明記されている"
       },
@@ -49,7 +51,9 @@
         "claim": "3歳半頃から12歳頃（身長100cm～150cm）まで長期間使用可能",
         "category": "durability",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": false,
         "notes": "背もたれが取り外し可能な仕様と合わせて記載"
       }
@@ -109,7 +113,9 @@
       ],
       "cons": [
         "ISOFIX固定には非対応",
-        "1歳や2歳などの低年齢では使用できない"
+        "1歳や2歳などの低年齢では使用できない",
+        "ISOFIX固定には対応していないため、シートベルトでの固定手順を正しく理解し、毎回確実に行う必要がある",
+        "より低年齢（1歳頃〜）からは使えないため、3歳半頃（身長100cm以上）になるまでは別のチャイルドシートが必要"
       ],
       "score": 83,
       "scoreRationale": "[基本点: 70]\n[加点: +5] (最新安全基準R129適合による安全性)\n[加点: +5] (1万円以下の価格設定と長期利用可能なコストパフォーマンスの高さ)\n[加点: +3] (洗えるシートやカップホルダーなど実用的な機能性)\n[合計: 83]"

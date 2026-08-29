@@ -3,7 +3,12 @@
     "productName": "彩茶 緑茶 ラベルレス 500ml 24本",
     "parentAsin": "B0CKH4TGHP",
     "productDescription": "鹿児島県産茶葉を100%使用した、ラベルレスの緑茶ペットボトル。自社冷蔵倉庫で徹底した温度管理を行い、必要な分だけ焙煎することで、豊かな香りとまろやかな旨みを引き出しています。",
-    "productUsage": ["毎日の水分補給", "食事中のお茶", "外出時の持ち運び", "家庭内でのストック用"],
+    "productUsage": [
+      "毎日の水分補給",
+      "食事中のお茶",
+      "外出時の持ち運び",
+      "家庭内でのストック用"
+    ],
     "positivePoints": [
       "ラベルレスで廃棄時の手間が省ける",
       "鹿児島県産茶葉100%使用で、香り高くまろやかな味わい",
@@ -40,7 +45,9 @@
         "claim": "鹿児島県産茶葉を100%使用している",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-amazon"],
+        "supportingSourceIds": [
+          "src-amazon"
+        ],
         "crossChecked": false,
         "notes": "商品ページの特徴説明より"
       },
@@ -48,7 +55,9 @@
         "claim": "ラベルレスで廃棄の手間が省ける",
         "category": "comparativeAdvantage",
         "confidence": "high",
-        "supportingSourceIds": ["src-amazon"],
+        "supportingSourceIds": [
+          "src-amazon"
+        ],
         "crossChecked": false,
         "notes": "商品仕様および画像より確認"
       }
@@ -147,7 +156,9 @@
       ],
       "cons": [
         "複数購入時の配送に制約がある",
-        "パッケージやボトルのデザインが選べない"
+        "パッケージやボトルのデザインが選べない",
+        "製造地によってボトルや段ボールのデザインが異なり選べない",
+        "ラベルあり製品のため、捨てる際の分別に手間がかかる（同商品のラベルレス版も存在するが本品はラベルあり）"
       ],
       "score": 85,
       "scoreRationale": "[基本点: 70]\n[加点: +10] (1本約59円という高いコストパフォーマンス)\n[加点: +5] (ラベルレスによる分別の手間の軽減)\n[加点: +5] (鹿児島県産茶葉100%使用とこだわりの製法)\n[減点: -5] (2点以上購入時の配送指定に関する制約)\n[合計: 85]"

@@ -26,7 +26,9 @@
         "userType": "一般ユーザー",
         "scenario": "毎日の就寝時に使用",
         "experience": "低めの設計（8.3cm）と首元にフィットする立体フォルムにより、仰向けでも横向きでも首が自然にサポートされ、無理のない姿勢で寝返りが打ちやすいと感じました。特にPCMカバーの温度調節機能が優秀で、汗をかきやすい季節でも蒸れにくく、年間を通してサラッとした触感で快適な睡眠環境を保つことができます。高級ホテル仕様を謳うだけあり、3層メモリーフォームのしっかりとした弾力と沈み込みすぎない絶妙な硬さが気に入っています。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -49,7 +51,9 @@
         "claim": "PCM相変化素材を使用した温度調節カバーにより蒸れにくい",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": false,
         "notes": "メーカーの商品説明に基づく"
       },
@@ -57,7 +61,9 @@
         "claim": "3層メモリーフォーム構造で様々な寝姿勢に対応",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": false,
         "notes": "メーカーの商品説明に基づく"
       }
@@ -157,13 +163,19 @@
       ],
       "cons": [
         "高さが低め(8.3cm)に固定されているため、高めが好きな人には不向き",
-        "U字型の携帯枕を探している人には用途が異なる"
+        "U字型の携帯枕を探している人には用途が異なる",
+        "競合製品と比較して価格が大幅に高い",
+        "収納袋などの携帯用アクセサリーが明記されていない"
       ],
-      "score": 83,
-      "scoreRationale": "[基本点: 70]\n[加点: +5] (3層メモリーフォームと立体構造による高いフィット感と機能性)\n[加点: +5] (PCM相変化素材による温度調節機能という独自の強み)\n[加点: +5] (Amazonでの高いユーザー評価: 455件で星4.7)\n[減点: -2] (高さ調節機能がなく、低めのサイズ一択である点)\n[合計: 83]"
+      "score": 62,
+      "scoreRationale": "[基本点: 70]\n[加点: +5] (PCM冷感カバーと3層メモリーフォームという独自の快適機能)\n[減点: -13] (競合の同等製品が2000〜3000円台の中、5000円台という大幅に高い価格設定によるコスパの悪さ)\n[合計: 62]"
     },
     "technicalSpecs": {
-      "dimensions": { "height": "83mm", "width": "N/A", "depth": "N/A" },
+      "dimensions": {
+        "height": "83mm",
+        "width": "N/A",
+        "depth": "N/A"
+      },
       "weight": "N/A",
       "capacity": "1個",
       "material": "中材：メモリーフォーム（低反発ウレタン）、カバー：PCM相変化素材",

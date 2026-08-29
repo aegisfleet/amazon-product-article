@@ -3,10 +3,25 @@
     "productName": "MonsGeek FUN60 Pro SP",
     "parentAsin": "B0DQWKSQGR",
     "productDescription": "0.01mmから調整可能なラピッドトリガーや磁気スイッチを搭載し、有線8K対応の超高コスパゲーミングキーボード。",
-    "productUsage": ["FPS・TPSなどの競技性が高いゲーム", "高速タイピング"],
-    "positivePoints": ["約6000円という驚異的なコストパフォーマンス", "ラピッドトリガー対応(0.01~2.00mm)", "有線8K(8000Hz)ポーリングレート対応", "ソフトウェアやWebドライバーで設定変更可能", "Snap Keys (SOCD)対応による高速なキー入力キャンセル"],
-    "negativePoints": ["英語配列のみ", "有線接続のみ"],
-    "useCases": ["FPSで敵よりも早く入力・反応したい場面", "より安価に磁気スイッチ・ラピトリを試したい場面"],
+    "productUsage": [
+      "FPS・TPSなどの競技性が高いゲーム",
+      "高速タイピング"
+    ],
+    "positivePoints": [
+      "約6000円という驚異的なコストパフォーマンス",
+      "ラピッドトリガー対応(0.01~2.00mm)",
+      "有線8K(8000Hz)ポーリングレート対応",
+      "ソフトウェアやWebドライバーで設定変更可能",
+      "Snap Keys (SOCD)対応による高速なキー入力キャンセル"
+    ],
+    "negativePoints": [
+      "英語配列のみ",
+      "有線接続のみ"
+    ],
+    "useCases": [
+      "FPSで敵よりも早く入力・反応したい場面",
+      "より安価に磁気スイッチ・ラピトリを試したい場面"
+    ],
     "userStories": [],
     "userImpression": "5980円という価格設定に対して、有線8K、0.01mmからのラピッドトリガー、磁気スイッチ、SOCD対応といった他社ハイエンド機並みの充実したスペックを誇り、非常に高い評価を得られるポテンシャルを秘めています。",
     "sources": [
@@ -27,7 +42,9 @@
         "claim": "0.01mmからのラピッドトリガー設定が可能で、FPSゲームにおいて素早い反応が期待できる",
         "category": "comparativeAdvantage",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": false,
         "notes": "Amazonの商品説明から確認。"
       },
@@ -35,7 +52,9 @@
         "claim": "Snap Keys (SOCD)に対応し、よりスムーズなキャラコンを可能にする",
         "category": "comparativeAdvantage",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": false,
         "notes": "Amazonの商品説明から確認。"
       }
@@ -136,7 +155,8 @@
       "cons": [
         "英語配列のため、日本語入力に慣れが必要",
         "キー数が少ない60%サイズのため、日常使いにはショートカットキーを覚える必要がある",
-        "有線接続のみ"
+        "有線接続のみ",
+        "60%レイアウトのため独立した矢印キーがない"
       ],
       "score": 93,
       "scoreRationale": "[基本点: 70]\n[加点: +10] (0.01mmラピッドトリガー、8Kポーリングレート、SOCDなど最高峰のスペック)\n[加点: +15] (他社競合が1万円〜2万円以上する中で5980円という圧倒的なコストパフォーマンス)\n[減点: -2] (英語配列・60%サイズのため一般用途での使い勝手にやや癖がある点)\n[合計: 93]"

@@ -29,7 +29,10 @@
         "userType": "エイジングケアに関心があるユーザー",
         "scenario": "日々のスキンケアにサロン級の機能を取り入れたい時",
         "experience": "3MHzの高出力RFやEMS機能が搭載されており、自宅にいながら本格的なリフトケアが可能です。CLEANモードを使えば洗顔では落としきれない汚れもすっきりと拭き取れ、その後のスキンケアの浸透が良くなるのを実感できます。ヘッド部分が水洗いできるのも衛生的で毎日のケアに取り入れやすいです。",
-        "supportingSourceIds": ["src-1", "src-2"],
+        "supportingSourceIds": [
+          "src-1",
+          "src-2"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -63,7 +66,9 @@
         "claim": "3MHzの高出力RFを搭載し、サロン級のケアが可能",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": false,
         "notes": "公式サイトにて3MHz RF搭載の記載を確認"
       },
@@ -71,7 +76,10 @@
         "claim": "電極ヘッド部分は完全防水（IPX6）で水洗い可能",
         "category": "durability",
         "confidence": "high",
-        "supportingSourceIds": ["src-1", "src-2"],
+        "supportingSourceIds": [
+          "src-1",
+          "src-2"
+        ],
         "crossChecked": true,
         "notes": "公式サイトおよびAmazon商品情報で防水仕様を確認"
       }
@@ -169,7 +177,9 @@
         "多くの美容アワードを受賞した高い実績"
       ],
       "cons": [
-        "使用できない部位（炎症部位等）への注意が必要"
+        "使用できない部位（炎症部位等）への注意が必要",
+        "定価は高価であり、公式価格は58,000円",
+        "丸洗いはできず、電極ヘッド部のみのIPX6防水"
       ],
       "score": 87,
       "scoreRationale": "[基本点: 70]\n[加点: +7] (多数の美容アワード受賞歴によるブランドの信頼性とユーザー評価の高さ)\n[加点: +7] (3MHzの高出力RFやイオン導出入・LEDなどサロン級の機能性)\n[加点: +5] (多彩な機能を搭載しつつ1万円台に抑えた優れたコストパフォーマンス)\n[減点: -2] (使用できない部位や炎症部分への注意が必要な点)\n[合計: 87]"
@@ -185,8 +195,17 @@
       "powerSupply": "5V/1A",
       "chargingTime": "約3時間",
       "waterproof": "IPX6 (電極ヘッド部分のみ)",
-      "modes": ["CLEAN", "LIFT", "HEAT"],
-      "accessories": ["本体", "充電用USBケーブル", "取扱説明書", "公式パンフレット"],
+      "modes": [
+        "CLEAN",
+        "LIFT",
+        "HEAT"
+      ],
+      "accessories": [
+        "本体",
+        "充電用USBケーブル",
+        "取扱説明書",
+        "公式パンフレット"
+      ],
       "other": [
         "3MHzの高出力RF搭載",
         "赤青2色のLED搭載"

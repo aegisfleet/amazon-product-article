@@ -26,21 +26,28 @@
         "userType": "一般ユーザー",
         "scenario": "日常のベースメイク仕上げに使用",
         "experience": "高級なパウダーも使ったことがあるが、これはお安いのに綺麗につく。パフもケースに収納できて使い勝手が良く、コスパが最高で気に入っている。",
-        "supportingSourceIds": ["amazon-review-1"],
+        "supportingSourceIds": [
+          "amazon-review-1"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "リピーター",
         "scenario": "日常のメイクアップに使用",
         "experience": "肌馴染みも良くきめ細かく、仕上がりが綺麗。コスパの良さで何度もリピ買いしており、色々使ってもやっぱりこれに戻る安心感がある。",
-        "supportingSourceIds": ["amazon-review-2", "amazon-review-3"],
+        "supportingSourceIds": [
+          "amazon-review-2",
+          "amazon-review-3"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "一般ユーザー",
         "scenario": "日常のメイクアップに使用",
         "experience": "サラサラでファンデほど重くなくて軽いのにカバー力もあり凄く良い。ただ、シワに入り込むことがあり、若い子向けかと感じた。",
-        "supportingSourceIds": ["amazon-review-4"],
+        "supportingSourceIds": [
+          "amazon-review-4"
+        ],
         "sentiment": "mixed"
       }
     ],
@@ -96,7 +103,10 @@
         "claim": "コストパフォーマンスに優れている",
         "category": "comparativeAdvantage",
         "confidence": "high",
-        "supportingSourceIds": ["amazon-review-1", "amazon-review-2"],
+        "supportingSourceIds": [
+          "amazon-review-1",
+          "amazon-review-2"
+        ],
         "crossChecked": true,
         "notes": "複数のユーザーが安いのに綺麗につく、コスパが良いと言及している。"
       },
@@ -104,7 +114,10 @@
         "claim": "軽い付け心地で仕上がりが綺麗",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["amazon-review-2", "amazon-review-4"],
+        "supportingSourceIds": [
+          "amazon-review-2",
+          "amazon-review-4"
+        ],
         "crossChecked": true,
         "notes": "ファンデほど重くなく、肌馴染みが良いと評価されている。"
       }
@@ -164,13 +177,19 @@
       ],
       "cons": [
         "シワに入り込むなど、年齢や肌質によっては乾燥を感じる場合がある",
-        "ケースの耐久性に懸念がある場合がある"
+        "ケースの耐久性に懸念がある場合がある",
+        "乾燥肌の方は保湿のベースメイクが必須",
+        "ケースは別途用意する必要がある"
       ],
       "score": 83,
       "scoreRationale": "[基本点: 70]\n[加点: +8] 価格に対して仕上がりが綺麗でコスパが非常に高い（ユーザー満足度・コスパ評価）\n[加点: +7] 軽い付け心地でありながらテカリを防ぐ実用性の高さ（性能評価）\n[減点: -2] 乾燥やシワに入り込む懸念がある（性能評価）\n[合計: 83]"
     },
     "technicalSpecs": {
-      "dimensions": { "width": "75mm", "height": "75mm", "depth": "17mm" },
+      "dimensions": {
+        "width": "75mm",
+        "height": "75mm",
+        "depth": "17mm"
+      },
       "weight": "18.1g",
       "capacity": "10g",
       "color": "MO マットオークル",

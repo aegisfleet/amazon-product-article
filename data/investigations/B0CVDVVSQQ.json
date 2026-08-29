@@ -32,14 +32,18 @@
         "userType": "未就学児の親",
         "scenario": "長距離の帰省ドライブ時",
         "experience": "帰省時の渋滞中、子供が飽きてぐずり始めるのが悩みの種でしたが、このタブレットを渡すとお気に入りの動画やゲームに夢中になってくれました。Amazon Kids+のコンテンツはどれも子供向けに選別されていて広告も出ないので、親としても安心して渡せます。キッズカバーのおかげで車内で落としてもヒヤッとせずに済むのが嬉しいです。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "小学生低学年の親",
         "scenario": "毎日の利用時間の管理",
         "experience": "普通のタブレットだと動画を際限なく見てしまうので購入しました。ペアレンタルコントロールで「1日1時間」と設定しておけば自動的に画面がロックされるので、「そろそろおしまい」と毎回叱らなくて済むようになりました。ただ、親が使っているGoogleのアプリが入れられないのは少し不便に感じることがあります。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "mixed"
       }
     ],
@@ -73,7 +77,9 @@
         "claim": "アクシデントによる水濡れ破損・画面故障でも2年間の限定保証期間内であれば無償でお取替え",
         "category": "durability",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": false,
         "notes": "Amazonのキッズモデル共通の強力な保証内容。ユーザーにとって購入の大きな決め手となる。"
       },
@@ -81,7 +87,9 @@
         "claim": "落下テストでの耐久性はApple iPad Mini (2021)の2倍",
         "category": "comparativeAdvantage",
         "confidence": "high",
-        "supportingSourceIds": ["src-2"],
+        "supportingSourceIds": [
+          "src-2"
+        ],
         "crossChecked": false,
         "notes": "ベースモデルの耐久性に関するAmazonの公式テスト結果に基づく主張。"
       }
@@ -180,7 +188,9 @@
       ],
       "cons": [
         "Google Playストアが使えないため、普段親が使っている特定のAndroidアプリやゲーム（YouTube公式アプリなど）を子供と共有したいと考えている人は注意が必要です",
-        "大人用プロフィールに切り替えれば通常のタブレットとして使えますが、その際も使えるアプリはAmazonアプリストアにあるものに限定されます"
+        "大人用プロフィールに切り替えれば通常のタブレットとして使えますが、その際も使えるアプリはAmazonアプリストアにあるものに限定されます",
+        "小学生以上になるとコンテンツや制限が物足りなくなる可能性がある",
+        "3GB RAMのため、将来的に動作が重く感じるかもしれない"
       ],
       "score": 85,
       "scoreRationale": "[基本点: 70]\n[加点: +10] (2年間の無償交換保証（アクシデント対応）による絶大な安心感)\n[加点: +10] (Amazon Kids+による豊富な優良コンテンツと強力なペアレンタルコントロール)\n[減点: -5] (Fire OS特有の制約によりGoogle Playアプリが利用できない汎用性の低さ)\n[合計: 85]"
