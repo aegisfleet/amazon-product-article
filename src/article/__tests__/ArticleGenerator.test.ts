@@ -368,11 +368,13 @@ describe('ArticleGenerator', () => {
     });
 
     it('should generate proper front matter', async () => {
+      mockProduct.parentAsin = 'B0PARENT123';
       const result = await generator.generateArticle(mockProduct, mockInvestigation);
 
       expect(result.content).toContain('---');
       expect(result.content).toContain('title: "テスト商品 スマートフォン"');
       expect(result.content).toContain('asin: "B08N5WRWNW"');
+      expect(result.content).toContain('parent_asin: "B0PARENT123"');
       expect(result.content).toContain('review:');
       expect(result.content).toContain('author: "編集部"');
       expect(result.content).toContain('date_published: "2025-01-01"');

@@ -18,9 +18,12 @@ function normalizeSearchText(text) {
         .trim();
 }
 
+let asinVariations = {};
+
 const FUSE_OPTIONS = {
     keys: [
         { name: "asin", weight: 1 },
+        { name: "parent_asin", weight: 1 },
         { name: "_norm_title", weight: 0.7 },
         { name: "_norm_contents", weight: 0.2 },
         { name: "_norm_categories", weight: 1 },
@@ -224,6 +227,15 @@ async function handleInit(searchIndexUrl) {
             item._norm_specs = normalizeSearchText(item.specs);
         }
 
+        try {
+            const varRes = await fetch('/data/asin-variations.json');
+            if (varRes.ok) {
+                asinVariations = await varRes.json();
+            }
+        } catch {
+            // バリエーションデータが存在しない場合は無視
+        }
+
         // Fuse.createIndex による事前インデックス化
         const fuseIndex = Fuse.createIndex(FUSE_OPTIONS.keys, searchIndex);
         fuse = new Fuse(searchIndex, FUSE_OPTIONS, fuseIndex);
@@ -241,8 +253,22 @@ function handleSearch(query, filters, searchId) {
     }
 
     try {
-        const normalizedQuery = normalizeSearchText(query);
-        const fuseResults = fuse.search(normalizedQuery);
+        const trimmed = query.trim().toUpperCase();
+        let targetQuery = query;
+
+        // クエリがASIN形式で、子ASINのバリエーションマップに存在する場合、親ASINで検索
+        if (isAsin(trimmed) && asinVariations[trimmed]) {
+            targetQuery = asinVariations[trimmed];
+        }
+
+        const normalizedQuery = normalizeSearchText(targetQuery);
+        let fuseResults = fuse.search(normalizedQuery);
+
+        // 親ASINでヒットしなかった場合、元のクエリでも試行
+        if (fuseResults.length === 0 && targetQuery !== query) {
+            fuseResults = fuse.search(normalizeSearchText(query));
+        }
+
         const { results, unfilteredScoreCount } = rerankResults(fuseResults, query, filters);
         self.postMessage({ type: 'SEARCH_RESULTS', results, unfilteredScoreCount, query, searchId });
     } catch (err) {

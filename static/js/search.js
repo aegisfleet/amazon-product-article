@@ -316,10 +316,40 @@ function rerankResults(results, query) {
     };
 }
 
+let asinVariationsCache = null;
+
+async function getAsinVariations() {
+    if (asinVariationsCache !== null) return asinVariationsCache;
+    try {
+        const res = await fetch('/data/asin-variations.json');
+        if (res.ok) {
+            asinVariationsCache = await res.json();
+            return asinVariationsCache;
+        }
+    } catch {
+        // バリエーションデータが存在しない場合は無視
+    }
+    asinVariationsCache = {};
+    return asinVariationsCache;
+}
+
 function searchWithRerank(fuseInstance, query) {
     if (!fuseInstance) return { results: [], unfilteredScoreCount: 0 };
-    const normalizedQuery = normalizeSearchText(query);
-    return rerankResults(fuseInstance.search(normalizedQuery), query);
+    const trimmed = query.trim().toUpperCase();
+    let targetQuery = query;
+
+    if (isAsin(trimmed) && asinVariationsCache && asinVariationsCache[trimmed]) {
+        targetQuery = asinVariationsCache[trimmed];
+    }
+
+    const normalizedQuery = normalizeSearchText(targetQuery);
+    let fuseResults = fuseInstance.search(normalizedQuery);
+
+    if (fuseResults.length === 0 && targetQuery !== query) {
+        fuseResults = fuseInstance.search(normalizeSearchText(query));
+    }
+
+    return rerankResults(fuseResults, query);
 }
 
 function isStateEqual(state1, state2) {
@@ -666,12 +696,14 @@ document.addEventListener('DOMContentLoaded', function () {
 
             const initFuse = async () => {
                 try {
+                    getAsinVariations();
                     const response = await fetch(searchIndexUrl);
                     const data = await response.json();
                     const searchIndex = normalizeSearchItems(data);
                     fuse = new Fuse(searchIndex, {
                         keys: [
                             { name: "asin", weight: 1 },
+                            { name: "parent_asin", weight: 1 },
                             { name: "_norm_title", weight: 0.7 },
                             { name: "_norm_contents", weight: 0.2 },
                             { name: "_norm_categories", weight: 1 },

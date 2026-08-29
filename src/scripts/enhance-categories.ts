@@ -110,6 +110,42 @@ function syncBrandData(): void {
   console.log(`Successfully synced ${Object.keys(brandData).length} brand(s).`);
 }
 
+/**
+ * PAAPIキャッシュから親ASIN・バリエーションASINの逆引きマップを生成
+ */
+function generateAsinVariationsMap(): void {
+  console.log('--- ASIN Variations Map Generation ---');
+  const cachePath = path.resolve(process.cwd(), 'data/cache/paapi-product-cache.json');
+  const outPath = path.resolve(process.cwd(), 'static/data/asin-variations.json');
+
+  if (!fs.existsSync(cachePath)) {
+    console.log('No PAAPI cache found, skipping variations map.');
+    return;
+  }
+
+  try {
+    const raw = fs.readFileSync(cachePath, 'utf-8');
+    const cache = JSON.parse(raw) as Record<string, { data?: { parentAsin?: string; asin?: string } }>;
+    const childToParent: Record<string, string> = {};
+
+    for (const [asin, item] of Object.entries(cache)) {
+      const parentAsin = item?.data?.parentAsin;
+      if (parentAsin && parentAsin !== asin) {
+        childToParent[asin] = parentAsin;
+      }
+    }
+
+    const staticDir = path.dirname(outPath);
+    if (!fs.existsSync(staticDir)) {
+      fs.mkdirSync(staticDir, { recursive: true });
+    }
+    fs.writeFileSync(outPath, JSON.stringify(childToParent), 'utf-8');
+    console.log(`Generated ASIN variations map (${Object.keys(childToParent).length} mapped items) to ${outPath}`);
+  } catch (err) {
+    console.warn('Failed to generate ASIN variations map:', err);
+  }
+}
+
 export function enhanceCategories(): void {
   try {
     console.log('Starting category enhancement...');
@@ -132,6 +168,8 @@ export function enhanceCategories(): void {
     updateBrandGroups();
     // ブランドデータの同期
     syncBrandData();
+    // ASINバリエーションマップの生成
+    generateAsinVariationsMap();
   } catch (e) {
     console.error('Error during category enhancement:', e);
     throw e;
