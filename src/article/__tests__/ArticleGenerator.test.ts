@@ -558,7 +558,7 @@ describe('ArticleGenerator', () => {
       expect(result.content).toContain('badge-amazon-direct');
       expect(result.content).toContain('Amazon直販');
       expect(result.content).toContain('class="competitor-price-diff price-down">(-￥5,000)</span>');
-      expect(result.content).toContain('<span class="badge-availability">在庫あり</span>');
+      expect(result.content).toContain('<span class="badge-availability m3-badge m3-badge-tertiary">在庫あり</span>');
       // Mock fs.promises.readFile to reject
       expect(result.content).toContain('<a href="../b08compet1/" class="competitor-preview">');
       expect(result.content).not.toContain('<div class="competitor-preview">');
