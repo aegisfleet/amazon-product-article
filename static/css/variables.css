@@ -117,10 +117,14 @@
     /* Pink 200 border */
     --badge-haul-shadow: transparent;
 
-    --badge-availability-bg: #ECFDF5;
-    --badge-availability-text: #059669;
-    --badge-availability-border: #10b981;
+    --badge-availability-bg: var(--md-sys-color-tertiary-container, #FEF3C7);
+    --badge-availability-text: var(--md-sys-color-on-tertiary-container, #78350F);
+    --badge-availability-border: rgba(217, 119, 6, 0.25);
     --badge-availability-shadow: transparent;
+
+    --badge-furusato-bg: #ecfdf5;
+    --badge-furusato-text: #065f46;
+    --badge-furusato-border: rgba(5, 150, 105, 0.3);
 
     --badge-savings-bg: #fef2f2;
     --badge-savings-text: #dc2626;
@@ -382,9 +386,13 @@
         --badge-haul-border: rgba(244, 114, 182, 0.5);
         --badge-haul-shadow: transparent;
 
-        --badge-availability-bg: rgba(16, 185, 129, 0.15);
-        --badge-availability-text: #6EE7B7;
-        --badge-availability-border: rgba(110, 231, 183, 0.5);
+        --badge-availability-bg: var(--md-sys-color-tertiary-container, #78350F);
+        --badge-availability-text: var(--md-sys-color-on-tertiary-container, #FEF3C7);
+        --badge-availability-border: rgba(251, 191, 36, 0.3);
+
+        --badge-furusato-bg: rgba(6, 78, 59, 0.5);
+        --badge-furusato-text: #6ee7b7;
+        --badge-furusato-border: rgba(16, 185, 129, 0.3);
 
         --badge-savings-bg: rgba(220, 38, 38, 0.18);
         --badge-savings-text: #FCA5A5;
@@ -516,9 +524,13 @@
     --badge-haul-border: rgba(244, 114, 182, 0.5);
     --badge-haul-shadow: transparent;
 
-    --badge-availability-bg: rgba(16, 185, 129, 0.15);
-    --badge-availability-text: #6EE7B7;
-    --badge-availability-border: rgba(110, 231, 183, 0.5);
+    --badge-availability-bg: var(--md-sys-color-tertiary-container, #78350F);
+    --badge-availability-text: var(--md-sys-color-on-tertiary-container, #FEF3C7);
+    --badge-availability-border: rgba(251, 191, 36, 0.3);
+
+    --badge-furusato-bg: rgba(6, 78, 59, 0.5);
+    --badge-furusato-text: #6ee7b7;
+    --badge-furusato-border: rgba(16, 185, 129, 0.3);
 
     --badge-savings-bg: rgba(220, 38, 38, 0.18);
     --badge-savings-text: #FCA5A5;

@@ -1783,7 +1783,7 @@ ${confidenceLine}`;
       ? `<span class="badge-savings m3-badge m3-badge-error">${savingsPercentage}% OFF</span>`
       : '';
     const availabilityHtml = availabilityText
-      ? `<span class="badge-availability">${this.escapeHtml(availabilityText)}</span>`
+      ? `<span class="badge-availability m3-badge m3-badge-tertiary">${this.escapeHtml(availabilityText)}</span>`
       : '';
 
     const specTagsHtml = specs
