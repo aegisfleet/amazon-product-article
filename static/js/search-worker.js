@@ -24,10 +24,11 @@ const FUSE_OPTIONS = {
     keys: [
         { name: "asin", weight: 1 },
         { name: "parent_asin", weight: 1 },
-        { name: "_norm_title", weight: 0.7 },
-        { name: "_norm_contents", weight: 0.2 },
-        { name: "_norm_categories", weight: 1 },
-        { name: "_norm_specs", weight: 0.3 }
+        { name: "_norm_title", weight: 0.8 },
+        { name: "_norm_summary", weight: 0.5 },
+        { name: "_norm_categories", weight: 0.8 },
+        { name: "_norm_specs", weight: 0.3 },
+        { name: "_norm_contents", weight: 0.1 }
     ],
     threshold: 0.2,
     distance: 100,
@@ -220,6 +221,7 @@ async function handleInit(searchIndexUrl) {
 
         for (const item of searchIndex) {
             item._norm_title = normalizeSearchText(item.title);
+            item._norm_summary = normalizeSearchText(item.summary);
             item._norm_contents = normalizeSearchText(item.contents);
             item._norm_categories = Array.isArray(item.categories)
                 ? item.categories.map(c => normalizeSearchText(c))
