@@ -100,6 +100,8 @@ describe('CategoryNormalizer', () => {
         '本日のセール商品',
         'ワイモバイルラインナップ',
         'ワイモバイル申込ガイド',
+        'Huawei 話題のスマートフォン・スマートウォッチ',
+        'Fitbit',
         'XiaomiAll',
         'moto g66y 5G',
         '特選タイムセール',

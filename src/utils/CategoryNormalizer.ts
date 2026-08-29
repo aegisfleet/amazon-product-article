@@ -505,7 +505,8 @@ export class CategoryNormalizer {
       // Brand-specific promotion/coordinated pages and brand store categories
       /(?:sony|ソニー|panasonic|パナソニック|logicool|ロジクール|elecom|エレコム).*(?:特集|一覧|プロモーション|キャンペーン|限定|コーディネート)/i,
       /(?:iris|アイリス|brother|ブラザー|nestle|ネスレ|cleansui|クリンスイ|luminous|ルミナス).*(?:特集|一覧|プロモーション|キャンペーン|限定|コーディネート)/i,
-      /^(?:(?:sony|ソニー|panasonic|パナソニック|logicool|ロジクール|elecom|エレコム|sanwasupply|サンワサプライ|anker|アンカー|buffalo|バッファロー|iris|アイリスオーヤマ|アイリス|brother|ブラザー|nestle|ネスレ|cleansui|クリンスイ|luminous|ルミナス|yamazen|山善)[\s\u3000]*)+(?:[-－–—:・]|ストア|store|usb|ウェブカメラ|カメラ|イヤホン|ヘッドセット|ケーブル|マウス|スマートフォン|携帯電話|衣類|ふとん乾燥機|スマホーム|充電|テレビ|$)/i,
+      /^(?:(?:sony|ソニー|panasonic|パナソニック|logicool|ロジクール|elecom|エレコム|sanwasupply|サンワサプライ|anker|アンカー|buffalo|バッファロー|iris|アイリスオーヤマ|アイリス|brother|ブラザー|nestle|ネスレ|cleansui|クリンスイ|luminous|ルミナス|yamazen|山善|huawei|ファーウェイ|fitbit|フィットビット)[\s\u3000]*)+(?:[-－–—:・]|ストア|store|usb|ウェブカメラ|カメラ|イヤホン|ヘッドセット|ケーブル|マウス|スマートフォン|スマートウォッチ|携帯電話|衣類|ふとん乾燥機|スマホーム|充電|テレビ|話題の|$)/i,
+      /話題の/,
       /日用品・生活必需品\s*[-－–—:]/i,
       /^panasonic-ha-/i,
       /^(?:philips|フィリップス)\s*(?:理美容|美容|ビューティ)/i,
