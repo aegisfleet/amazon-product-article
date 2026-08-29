@@ -45,6 +45,8 @@ export class CategoryNormalizer {
     'Ring',
     'Amazonデバイス',
     'コントローラー',
+    'ゲームパッド',
+    'PC用ゲームパッド',
     'ヘッドセット',
     'マウス',
     'キーボード',
@@ -542,6 +544,9 @@ export class CategoryNormalizer {
       /\b[A-Za-z0-9]+All$/i,
       /^moto\s+/i,
       /おうちで機種変更/i,
+      /cero/i,
+      /c-tax/i,
+      /^すべての/,
     ];
 
     if (invalidPatterns.some((pattern) => pattern.test(name))) {

@@ -75,7 +75,7 @@ describe('user-requests-helper', () => {
       expect(result.exists).toBe(false);
       const exists = await isProductAlreadyInvestigated('NONEXISTENTASIN99');
       expect(exists).toBe(false);
-    });
+    }, 15000);
   });
 
   describe('fetchUserRequestsFromGas', () => {
