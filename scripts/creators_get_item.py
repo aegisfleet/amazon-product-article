@@ -19,6 +19,7 @@ import argparse
 import os
 import json
 import sys
+import re
 
 # Ensure script can import from current directory
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
@@ -88,13 +89,6 @@ if __name__ == '__main__':
             }
 
             # Furusato Tax Check
-            browse_nodes = item.get('browseNodeInfo', {}).get('browseNodes', [])
-            is_furusato_node = any(
-                '返礼品' in (bn.get('displayName', '') + bn.get('contextFreeName', '')) or
-                'ふるさと納税' in (bn.get('displayName', '') + bn.get('contextFreeName', ''))
-                for bn in browse_nodes
-            )
-
             merchant_name = ""
             condition_note = ""
             if 'offersV2' in item and item['offersV2'].get('listings'):
@@ -107,19 +101,30 @@ if __name__ == '__main__':
                         data["price"] = money.get('amount')
 
             title = item_info.get('title', {}).get('displayValue', '')
-            is_furusato_merchant = (
-                any(suffix in merchant_name for suffix in ['市/', '区/', '町/', '村/']) or
-                'ふるさと納税' in merchant_name or
-                '自治体' in merchant_name or
-                '返礼品' in merchant_name
-            )
-            is_furusato_condition = any(w in condition_note for w in ['寄付', '返礼品', '地場産品', 'ふるさと納税'])
-            is_furusato_title = 'ふるさと納税' in title or '【ふるさと納税】' in title
+            is_amazon_direct = merchant_name == 'Amazon.co.jp'
 
-            if is_furusato_node or is_furusato_merchant or is_furusato_condition or is_furusato_title:
+            is_furusato_merchant = (
+                not is_amazon_direct and (
+                    bool(re.match(r'^(?:.+?[都道府県])?.+?[市区町村]/', merchant_name)) or
+                    'ふるさと納税' in merchant_name or
+                    '自治体' in merchant_name
+                )
+            )
+            is_furusato_condition = (
+                not is_amazon_direct and
+                any(w in condition_note for w in ['寄付', '返礼品', '地場産品', 'ふるさと納税'])
+            )
+            is_furusato_title = any(
+                w in title for w in ['ふるさと納税', '【ふるさと納税】', '［ふるさと納税］', '[ふるさと納税]']
+            )
+
+            if is_furusato_title or is_furusato_merchant or is_furusato_condition:
                 data["isFurusato"] = True
-                if merchant_name:
-                    data["municipality"] = merchant_name.split('/')[0].strip()
+                if not is_amazon_direct and merchant_name:
+                    if '/' in merchant_name:
+                        data["municipality"] = merchant_name.split('/')[0].strip()
+                    elif 'ふるさと納税' in merchant_name or '自治体' in merchant_name:
+                        data["municipality"] = merchant_name.strip()
 
             # ManufactureInfo (Model number etc.)
             if 'manufactureInfo' in item_info:
