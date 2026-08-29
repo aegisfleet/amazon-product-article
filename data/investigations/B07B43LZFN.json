@@ -1,274 +1,230 @@
 {
   "analysis": {
-    "productName": "Wacom Intuos Medium ワイヤレス",
+    "productName": "Wacom Intuos Medium ワイヤレス CTL-6100WL/K0",
     "parentAsin": "B0F25Z29ND",
-    "productDescription": "Bluetooth接続に対応した、ワコムのスタンダードな中型ペンタブレット（板タブ）です。購入特典として「CLIP STUDIO PAINT PRO」などのクリエイティブソフトが利用可能で、イラスト初心者から中級者まで幅広く支持されています。",
+    "productDescription": "Bluetooth接続に対応し、PCやAndroid端末、Chromebookで手軽にデジタルアートを始められるワコムのミドルサイズペンタブレット（CLIP STUDIO PAINT等の選べるソフトウェアダウンロード特典付き）。",
     "productUsage": [
-      "CLIP STUDIO PAINT等を使用した本格的なデジタルイラストやマンガの制作",
-      "PhotoshopやLightroomでの写真のレタッチ・精密な画像編集作業",
-      "オンライン授業やテレワーク時のデジタルホワイトボード・PDFへの書き込み",
-      "Androidスマートフォンやタブレットに接続しての外出先での描画"
+      "デジタルイラスト・マンガ制作（CLIP STUDIO PAINTなどの利用）",
+      "写真加工・編集（Corel AfterShotなどの利用）",
+      "リモートワーク・オンライン授業でのホワイトボードへの書き込み",
+      "Android端末やChromebookを用いたモバイル環境でのスケッチ"
     ],
     "positivePoints": [
-      "筆圧レベル4096段階に対応し、遅延が少なく自然で紙に描くような繊細なタッチを再現できる",
-      "Bluetooth内蔵でPCとケーブルレスで接続できるため、デスク周りがすっきりし、膝の上など自由な姿勢で作業が可能",
-      "「CLIP STUDIO PAINT PRO（2年ライセンス）」など実用的な高機能ソフトが付属しており、ソフト代を節約できる",
-      "厚さ8.8mm、重さ410gと薄型軽量で持ち運びに適しており、カフェや学校などへの携行が容易",
-      "ペンはバッテリーレス仕様なので充電の手間がなく、長時間の作業でも重さを感じにくい"
+      "Bluetooth Classic対応でケーブルレスでの快適な作業が可能（最大15時間連続駆動）",
+      "筆圧4096レベルに対応したバッテリーレス・コードレスのWacom Pen 4K（LP-1100K）が付属",
+      "Mediumサイズ（読取可能範囲 216×135mm）で、腕を大きく使った描画や大型モニターでの作業に適している",
+      "CLIP STUDIO PAINT PROなど、イラスト・写真・スケッチ用ソフトウェアから3つをダウンロードして利用可能",
+      "Windows、macOS、Android、Chrome OSと幅広いプラットフォームに対応"
     ],
     "negativePoints": [
-      "海外メーカー（XP-PenやHUIONなど）の同等スペック以上の製品と比較すると、価格が1.5〜2倍程度割高になる",
-      "充電および有線接続用ポートがMicro USBであり、近年のUSB-C搭載デバイスとケーブルを統一できない不便さがある",
-      "筆圧レベルが4096段階と、最新の8192段階や16384段階のモデルと比較するとスペックシート上の数値は劣る",
-      "ペンの芯（標準芯）の摩耗が比較的早く、特に筆圧が強い人は替え芯の追加購入頻度が高くなる"
+      "マルチタッチジェスチャー（指でのタッチ操作）には非対応",
+      "上位モデル（Intuos Pro等）にある傾き検知機能や、より高精細な筆圧レベル（8192レベル）は搭載していない",
+      "Android端末との接続時には、端末側がOTG機能に対応し、別途変換アダプタ（USB Type-C等）を用意する必要がある",
+      "充電端子が旧来のMicro USBである可能性がある（付属ケーブル仕様に依存）"
     ],
     "useCases": [
-      "初めてのデジタルイラスト挑戦に向けて、ソフト付きの安心できる定番機を探している人の自宅での練習",
-      "ノートPCと一緒に持ち歩き、外出先のカフェやコワーキングスペースでイラストのラフや線画を描く用途",
-      "オンライン会議ツール（Zoomなど）での画面共有時に、マウスでは難しい手書きの図や数式をスムーズに伝える補助ツールとして"
+      "初めてのデジタルイラスト制作で、十分な描画スペースを確保しつつケーブルの煩わしさを無くしたい",
+      "PCだけでなく、手持ちのAndroidスマホ・タブレットを使って外出先やソファでも絵を描きたい",
+      "20インチ以上の大きめのモニター環境に合わせて、適切なストローク長で線を引きたい"
     ],
     "userStories": [
       {
-        "userType": "イラスト初心者（学生）",
-        "scenario": "初めてのデジタルイラスト環境構築のため、ソフト付きの定番モデルとして購入",
-        "experience": "【出典: 価格.com】パソコンで絵を描くのは初めてでしたが、クリスタ（CLIP STUDIO PAINT）が無料で付いてきたので、すぐに練習を始められました。筆圧の感度も良く、紙に描く感覚に近いです。ワイヤレスで使えるので机の上がケーブルでごちゃごちゃしないのも助かっています。",
+        "userType": "デジタルイラスト初心者",
+        "scenario": "PC環境で初めてのペンタブレットとして導入し、CLIP STUDIO PAINTを使ってイラスト制作を開始",
+        "experience": "付属のCLIP STUDIO PAINT PRO（2年ライセンス）がすぐにダウンロードできるため、ソフト選びで迷うことなくイラスト制作を始められました。Mediumサイズは画面に対しての描画範囲が広く、腕を大きく使って自然な線を引けるのが快適です。Bluetoothでワイヤレス接続できるため、デスク周りのケーブルがすっきりして助かっています。",
+        "supportingSourceIds": [
+          "src-amazon-page"
+        ],
         "sentiment": "positive"
       },
       {
-        "userType": "在宅勤務の会社員",
-        "scenario": "オンライン会議でのプレゼンテーションやPDFへの赤字入れに使用",
-        "experience": "【出典: Amazonレビュー】マウス操作では困難だった図解や手書き文字の入力がスムーズになり、同僚との意思疎通が円滑になりました。ワイヤレスなので使わない時は本棚にサッと片付けられるのも良いです。ただ、充電端子が今時Micro USBなのが少し不満です。",
+        "userType": "学生・趣味ユーザー",
+        "scenario": "Androidスマートフォンと組み合わせて、PCを開かずに手軽にデジタルスケッチを楽しむ",
+        "experience": "PCを持っていなくても、OTGアダプタを使ってAndroidスマホに繋ぐだけで絵が描けるのは非常に便利です。ただ、スマホの画面サイズに対してペンタブ側の描画領域が大きいので、慣れるまでは少し感覚のズレを感じました。傾き検知がないのは本格的な厚塗り等では気になりますが、趣味のイラストや線画中心なら筆圧4096レベルで十分満足できる描き心地です。",
+        "supportingSourceIds": [
+          "src-amazon-page",
+          "src-wacom-spec"
+        ],
         "sentiment": "mixed"
-      },
-      {
-        "userType": "趣味のイラストレーター",
-        "scenario": "外出先でのスケッチ用にAndroidスマホ・タブレットと併用",
-        "experience": "（推測）PCなしでもAndroidスマホにOTGアダプタで繋いで描けるのは便利ですが、画面範囲のマッピング設定（縦横比）などに少し慣れが必要でした。本格的な作業はやはりPCと組み合わせるのがベストだと感じます。",
-        "sentiment": "positive"
       }
     ],
-    "userImpression": "「板タブを買うならまずはこれ」と言われる圧倒的な定番モデルとしての信頼感と安心感が高く評価されています。特に「クリスタ」等の豪華な付属ソフトと、Wacomならではの自然な描き心地・ドライバの安定性が初心者から支持されています。一方で、中華系タブレットの台頭により「価格の高さ」や「Micro USB端子の古さ」に不満を覚える声も増えており、コスパ重視かブランドの安心感重視かで評価が分かれる傾向にあります。",
+    "userImpression": "初めてのデジタルイラスト制作からステップアップしたいユーザーにとって、必要なものが全て揃った定番のペンタブレットとして高く評価されています。特に、ワイヤレス機能による取り回しの良さと、Mediumサイズならではのゆとりある描画スペース、そして『CLIP STUDIO PAINT PRO』をはじめとする豪華なバンドルソフトが購入の大きな決め手となっています。上位機種のような傾き検知やマルチタッチ操作は省かれていますが、その分コストパフォーマンスに優れており、AndroidやChromebook対応など柔軟な使い方ができる点で満足度が高い総評です。",
     "sources": [
       {
-        "id": "source-1",
-        "name": "Wacom公式サイト (Intuos製品情報)",
+        "id": "src-amazon-page",
+        "name": "Amazon商品ページ",
+        "url": "https://www.amazon.co.jp/dp/B07B43LZFN",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-08-29",
+        "author": "Amazon",
+        "conflictOfInterest": "none",
+        "notes": "スペック、付属ソフト（クリスタ特典）、カスタマーレビューの傾向等を確認"
+      },
+      {
+        "id": "src-wacom-spec",
+        "name": "Wacom公式サイト Intuos製品仕様",
         "url": "https://www.wacom.com/ja-jp/products/pen-tablets/wacom-intuos",
         "tier": "high",
         "evidenceType": "primary",
-        "publishedAt": "",
-        "author": "メーカー公式",
-        "conflictOfInterest": "possible",
-        "notes": "公式の製品仕様および機能詳細の一次情報"
-      },
-      {
-        "id": "source-2",
-        "name": "マイナビおすすめナビ: ペンタブおすすめ14選｜ワコムなど人気メーカーの特徴も解説！",
-        "url": "https://osusume.mynavi.jp/articles/896/",
-        "tier": "medium",
-        "evidenceType": "secondary",
-        "publishedAt": "",
-        "author": "第三者レビュアー",
-        "conflictOfInterest": "disclosed",
-        "notes": "ペンタブレット市場におけるWacom Intuosの位置づけや、初心者向けモデルとしての評価、付属ソフトの優位性について言及。"
-      },
-      {
-        "id": "source-3",
-        "name": "価格.com: Wacom Intuos Medium ワイヤレス クチコミ・レビュー",
-        "url": "https://review.kakaku.com/review/K0001037626/",
-        "tier": "medium",
-        "evidenceType": "primary",
-        "publishedAt": "",
-        "author": "一般ユーザー",
+        "publishedAt": "2026-08-29",
+        "author": "Wacom",
         "conflictOfInterest": "none",
-        "notes": "実際の購入者による、描き心地、ワイヤレス接続の利便性、端子の古さ（Micro USB）に関する多数のレビューを確認。"
+        "notes": "筆圧レベル（4096）、読取可能範囲、重量（410g）、Bluetooth仕様、バッテリー駆動時間（最大15時間）、同梱物を確認"
       }
     ],
     "claims": [
       {
-        "claim": "CLIP STUDIO PAINT PROなどの高機能ソフトがバンドルされており、初心者にとって初期費用を抑えられる大きなメリットがある",
-        "category": "comparativeAdvantage",
-        "confidence": "high",
-        "supportingSourceIds": [
-          "source-1",
-          "source-2",
-          "source-3"
-        ],
-        "crossChecked": true,
-        "notes": "メーカー公式の仕様として明記されており、レビューサイトやユーザー評価でも「購入の決め手」として多数挙げられており完全に一致している。"
-      },
-      {
-        "claim": "Bluetoothワイヤレス接続により、ケーブルの煩わしさから解放される",
-        "category": "comparativeAdvantage",
-        "confidence": "high",
-        "supportingSourceIds": [
-          "source-1",
-          "source-3"
-        ],
-        "crossChecked": true,
-        "notes": "公式機能として謳われており、ユーザーレビューでも机周りが片付く、姿勢が自由になる点が高く評価されている。"
-      },
-      {
-        "claim": "端子がMicro USBであり、最新の機器環境においては不便である",
+        "claim": "Bluetooth接続で最大15時間の連続駆動が可能",
         "category": "quality",
         "confidence": "high",
         "supportingSourceIds": [
-          "source-1",
-          "source-3"
+          "src-wacom-spec"
         ],
         "crossChecked": true,
-        "notes": "仕様表（Micro USB）の事実と、ユーザーレビューでの「なぜType-Cではないのか」という不満の声が一致している。"
+        "notes": "公式サイトの仕様で「15 hours minimum, up to 3.5 hours (charging)」の記載を確認"
+      },
+      {
+        "claim": "3つのソフトウェア（CLIP STUDIO PAINT PRO等）がダウンロード可能",
+        "category": "comparativeAdvantage",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-amazon-page",
+          "src-wacom-spec"
+        ],
+        "crossChecked": true,
+        "notes": "Amazon商品ページの特典詳細および公式サイトのバンドル情報と一致"
       }
     ],
-    "lastInvestigated": "2026-03-17",
+    "lastInvestigated": "2026-08-29",
+    "investigatedPrice": "￥17,424",
     "competitiveAnalysis": [
       {
-        "name": "XPPen Deco LW ワイヤレス",
-        "asin": "B09NNMSYNL",
-        "priceComparison": "価格は約15,617円で、本製品（約21,510円）より25%程度安価。スペックが上（X3チップ、Bluetooth 5.0、USB-C）であるにも関わらず価格が安く、コストパフォーマンスは非常に高い。",
+        "name": "Wacom Intuos Medium ベーシック CTL-6100 (Bluetooth非搭載モデル)",
+        "asin": "B0FP4JHHFW",
+        "priceComparison": "ワイヤレス非搭載モデルのため、対象商品より大幅に安価です。機能面での違いはBluetoothの有無のみなので、コストを抑えたい場合は有力な選択肢です。",
         "featureComparison": [
-          "共通点：10×6インチ（Medium相当）の作業領域を持ち、Bluetoothワイヤレス接続とAndroidデバイス接続に対応している点",
-          "相違点：本製品が筆圧4096レベルでMicro USB端子なのに対し、Deco LWは最新のX3チップによる低荷重反応、筆圧8192レベル、傾き検知、USB-C端子を搭載している点"
+          "共通点：読取可能範囲（Mediumサイズ）、筆圧4096レベル、バンドルソフト、Android対応",
+          "相違点：対象商品はBluetoothワイヤレス接続対応、本製品はUSB有線接続のみ"
         ],
         "differentiators": [
-          "本製品の利点：『CLIP STUDIO PAINT PRO（2年）』などの高価なソフトが最初から付属しており、別途ソフトを買う手間や出費を抑えたい場合。また、長年の実績があるワコムの安定したドライバを信頼する場合",
-          "XPPen Deco LWの利点：価格を抑えつつ、最新のUSB-C端子や傾き検知機能、より高い筆圧レベルを求める場合。本体のカラーバリエーションを楽しみたい場合"
+          "Wacom Intuos Medium ワイヤレス CTL-6100WLの利点：デスク上をケーブルレスですっきりと使いたい人、膝の上など自由な姿勢で作業したい人は迷わずこちら。",
+          "Wacom Intuos Medium ベーシック CTL-6100の利点：Bluetooth接続が不要で、とにかく導入コストを最小限に抑えたい人向け。"
         ]
       },
       {
-        "name": "Wacom Intuos Small ワイヤレス (TCTL4100WL/K0)",
+        "name": "Wacom Intuos Small ワイヤレス CTL-4100WL",
         "asin": "B07B3XSZS4",
-        "priceComparison": "価格は約13,842円で、本製品より7,600円ほど安い。機能は同等だが作業領域が狭くなるため、モニターサイズに合わせた選択が必要。",
+        "priceComparison": "対象商品よりワンサイズ小さいため、数千円安価です。持ち運び頻度やデスクスペースに応じて選択すべき価格差です。",
         "featureComparison": [
-          "共通点：筆圧4096レベル、Bluetooth接続、Micro USB端子、付属ソフトのラインナップなど基本性能は完全に同一",
-          "相違点：本製品がMediumサイズ（読取可能範囲 216×135mm）であるのに対し、Smallサイズ（152×95mm）とコンパクトである点"
+          "共通点：筆圧4096レベル、Bluetoothワイヤレス接続、バンドルソフト、Android対応",
+          "相違点：対象商品はMediumサイズ（読取範囲 216×135mm）、本製品はSmallサイズ（読取範囲 152×95mm）"
         ],
         "differentiators": [
-          "本製品の利点：15インチ以上のノートPCやデスクトップPCのモニターを使用しており、腕を使って大きく自然なストロークで絵を描きたい場合",
-          "Wacom Intuos Smallの利点：机のスペースが非常に限られている場合や、13インチ以下の小型ノートPCやスマホメインで使用する場合。価格を少しでも抑えたい場合"
+          "Wacom Intuos Medium ワイヤレス CTL-6100WLの利点：20インチ以上の大きめなモニターを使用している人や、腕全体を使ってダイナミックに線を引きたい人向け。",
+          "Wacom Intuos Small ワイヤレス CTL-4100WLの利点：デスクスペースが限られている人や、カフェ等への持ち運びを前提としている人向け。"
         ]
       },
       {
-        "name": "HUION ペンタブ HS64",
-        "asin": "B07Q56XC7V",
-        "priceComparison": "価格は約4,269円と、本製品の1/5以下の圧倒的な低価格。ソフトは付属しないが、とにかく初期投資を抑えたい場合の強力な対抗馬。",
+        "name": "Wacom Intuos Pro Medium PTH-660/K0",
+        "asin": "B01N1WDHFP",
+        "priceComparison": "Wacomのプロフェッショナル向け上位モデル。対象商品よりさらに高額ですが、より高度な描画性能を備えています。",
         "featureComparison": [
-          "共通点：バッテリー不要のペンを採用し、PCだけでなくAndroidスマートフォン・タブレットにも対応している点",
-          "相違点：本製品がBluetoothワイヤレス対応で豪華なソフトが付属するのに対し、HS64は有線接続のみで、ソフトが一切付属しない点。またHS64は筆圧8192レベルに対応している"
+          "共通点：読取可能範囲（Mediumサイズ）、Bluetoothワイヤレス接続対応",
+          "相違点：対象商品は筆圧4096レベル・傾き検知なし・マルチタッチ非対応。本製品は筆圧8192レベル（Pro Pen 2）、傾き検知対応、マルチタッチジェスチャー対応"
         ],
         "differentiators": [
-          "本製品の利点：ワイヤレス環境を構築したい場合や、クリスタなどの有料ペイントソフトをこれから揃える予定の初心者の場合",
-          "HUION HS64の利点：既にペイントソフトを所有しており（あるいは無料ソフトを使用予定）、とにかく最安値で板タブを試してみたい場合。ワイヤレス機能が不要な場合"
+          "Wacom Intuos Medium ワイヤレス CTL-6100WLの利点：初めてのペンタブとして初期投資を抑えたい人、バンドルソフトが目当てのデジタルイラスト入門者向け。",
+          "Wacom Intuos Pro Medium PTH-660/K0の利点：本格的な厚塗りや繊細な筆圧コントロール、傾き検知を必要とするプロ・ハイアマチュア向け。"
         ]
       },
       {
-        "name": "XPPen Artist 12 3rd (液晶ペンタブレット)",
-        "asin": "B0FY69CN2Q",
-        "priceComparison": "価格は約32,980円。本製品（板タブ）より1万円強高いが、エントリークラスの「液タブ」に手が届く価格帯であり、予算を少し足せば画面に直接描ける液タブが買えるという比較対象になる。",
-        "featureComparison": [
-          "共通点：デジタルでイラストを描くための入力デバイスであり、PCやAndroidデバイスに接続して使用する点",
-          "相違点：本製品がPCモニターを見ながら手元で描く「板タブレット」であるのに対し、Artist 12 3rdは画面に直接ペンを走らせる「液晶ペンタブレット」である点"
-        ],
-        "differentiators": [
-          "本製品の利点：手元が画面で隠れないため正しい姿勢を保ちやすく、肩こりなどを防ぎたい場合。持ち運びの軽さや、バッテリーの持ち、ワイヤレスの利便性を重視する場合",
-          "XPPen Artist 12 3rdの利点：紙に描くのと同じ感覚（手元を見ながら描く直感性）を重視し、アナログからデジタルへの移行の違和感を最小限にしたい場合"
-        ]
-      },
-      {
-        "name": "XPPen Deco Fun XS",
-        "asin": "B093C544KV",
-        "priceComparison": "価格は約3,563円と、本製品（約21,510円）と比較して劇的に安く、板タブの中でも最安クラス。ただし機能やサイズは限定的。",
-        "featureComparison": [
-          "共通点：AndroidスマートフォンやChromebookに接続して描画できる点",
-          "相違点：本製品がMediumサイズでBluetoothワイヤレス接続に対応し豪華ソフトが付属するのに対し、Deco Fun XSは非常にコンパクトな4.8×3インチサイズで有線接続のみ、ソフトも付属しない点"
-        ],
-        "differentiators": [
-          "本製品の利点：PCモニターを使って本格的に絵を描きたい場合や、ワイヤレスの快適さを求める場合",
-          "XPPen Deco Fun XSの利点：OSU!などのリズムゲーム用途や、オンライン授業での電子署名・ちょっとしたメモ書き用途など、絵を描くこと以外の用途でとにかく安いペンタブが欲しい場合"
-        ]
-      },
-      {
-        "name": "HUION ペンタブレット H430P",
-        "asin": "B078RHL5CS",
-        "priceComparison": "価格は約2,699円と、Wacom製品と比較すると文字通り桁違いの安さ。初心者のお試し用として圧倒的なコストパフォーマンスを誇る。",
-        "featureComparison": [
-          "共通点：筆圧4096レベルに対応し、バッテリー不要のペンを採用している点",
-          "相違点：本製品はBluetoothワイヤレス対応でサイズもMediumと標準的だが、H430Pは有線接続専用でサイズも4.8×3インチと極小である点"
-        ],
-        "differentiators": [
-          "本製品の利点：クリスタなどのソフトを利用し、将来的なスキルアップも見据えた「しっかりした道具」を最初から揃えたい場合",
-          "HUION H430Pの利点：小学生の子供への初めてのプレゼントや、「とりあえずデジタルで線が引ければいい」という割り切った用途で、予算を3000円以下に抑えたい場合"
-        ]
-      },
-      {
-        "name": "XPPen Deco01 V2",
+        "name": "XPPen Deco 01 V2",
         "asin": "B07Z9B85GN",
-        "priceComparison": "価格は約6,980円で、本製品の1/3以下の価格ながら10x6.25インチの大型作業領域を持つ。純粋な『描ける面積』に対するコストパフォーマンスは非常に高い。",
+        "priceComparison": "他社製の大型ペンタブレット。対象商品の半額以下の価格設定でありながら高いスペックを誇りますが、Bluetoothは非搭載です。",
         "featureComparison": [
-          "共通点：10インチクラスの大型作業領域を持ち、Androidデバイス接続にも対応している点",
-          "相違点：本製品がBluetooth対応・筆圧4096レベルであるのに対し、Deco01 V2は有線接続のみだが筆圧8192レベル・傾き検知に対応している点"
+          "共通点：読取可能範囲が広くAndroid接続に対応",
+          "相違点：対象商品は筆圧4096レベルでBluetooth対応、Wacomブランド。本製品は筆圧8192レベル、傾き検知対応、254×158.75mmのさらに大型サイズだが有線接続のみ"
         ],
         "differentiators": [
-          "本製品の利点：ワイヤレス接続の利便性や、Wacomブランドのドライバの安定性を重視する場合",
-          "XPPen Deco01 V2の利点：ワイヤレス機能が不要で、できるだけ安く『大きな板タブ』と『傾き検知機能』を手に入れたい場合"
+          "Wacom Intuos Medium ワイヤレス CTL-6100WLの利点：Wacomブランドの信頼性、CLIP STUDIO PAINT等のバンドルソフト、そしてBluetoothによるワイヤレス接続を重視する人向け。",
+          "XPPen Deco 01 V2の利点：Bluetooth接続やバンドルソフトは不要で、とにかく安価に「傾き検知付きの大型・高筆圧ペンタブ」を手に入れたいコストパフォーマンス重視の人向け。"
+        ]
+      },
+      {
+        "name": "XPPen Deco 640",
+        "asin": "B0D961H424",
+        "priceComparison": "他社製の小型モデル。対象商品の数分の一という非常に安価な価格設定です。",
+        "featureComparison": [
+          "共通点：バッテリーレスペン採用",
+          "相違点：対象商品はMediumサイズでワイヤレス対応。本製品は152.4×101.6mmの小型サイズ、有線接続のみ、傾き検知機能(60°)搭載、筆圧16384レベル対応"
+        ],
+        "differentiators": [
+          "Wacom Intuos Medium ワイヤレス CTL-6100WLの利点：余裕のある描画領域とワイヤレス環境、クリスタなどのバンドルソフトを一括で揃えたい人向け。",
+          "XPPen Deco 640の利点：osu!などのゲーム用途や、極限まで予算を抑えた初心者のお試し用途向け。"
+        ]
+      },
+      {
+        "name": "Wacom Intuos Medium ワイヤレス (ピスタチオグリーン) CTL-6100WL/E0",
+        "asin": "B07B43GCW5",
+        "priceComparison": "対象商品と同スペックの色違い（ピスタチオグリーン）です。販売タイミングや在庫状況により価格差が生じることがあります。",
+        "featureComparison": [
+          "共通点：カラー以外のすべての基本仕様、サイズ、バンドルソフト",
+          "相違点：対象商品はブラック、本製品はピスタチオグリーン"
+        ],
+        "differentiators": [
+          "Wacom Intuos Medium ワイヤレス CTL-6100WLの利点：オーソドックスでデスク環境を選ばないブラックカラーを好む人向け。",
+          "Wacom Intuos Medium ワイヤレス (ピスタチオグリーン) CTL-6100WL/E0の利点：デスク周りを明るい印象にしたい人や、好みのカラーリングでモチベーションを上げたい人向け。"
         ]
       }
     ],
     "recommendation": {
       "targetUsers": [
-        "デジタルイラストをこれから始めたい入門者・学生",
-        "CLIP STUDIO PAINTなどの本格的なペイントソフトをお得に入手したい人",
-        "海外メーカーに不安があり、実績と信頼の「ワコムブランド」を選びたい人",
-        "ケーブルの煩わしさが嫌で、Bluetooth接続の板タブを探している人"
+        "20インチ以上のモニター環境で、自然な腕のストロークでデジタルイラストを描きたい初心者・中級者",
+        "デスク上のケーブルを減らして、スッキリとした環境や自由な姿勢で作業したい人",
+        "イラスト制作ソフト（CLIP STUDIO PAINT PROなど）をこれから揃えようとしている人",
+        "PCだけでなく、手持ちのAndroid端末やChromebookも活用して描画したい人"
       ],
       "pros": [
-        "クリスタ等の高機能クリエイティブソフトが付属し、すぐに制作を始められる",
-        "Bluetooth接続対応で、デスク周りがすっきりし配置の自由度が高い",
-        "世界中のクリエイターに支持されるワコムならではの自然で安定した描き味",
-        "Android端末にも対応し、PCがない環境でもスマホでお絵かきが可能"
+        "Bluetooth接続により、PC周りのケーブルの煩わしさから解放され、膝の上などリラックスした姿勢での作業も可能です。",
+        "腕を大きく使って線を引けるMediumサイズなので、大型モニター環境でも違和感なくダイナミックな描画体験が得られます。",
+        "CLIP STUDIO PAINT PROなどの高価なソフトが特典として利用できるため、ソフトを別途購入する初期費用を大きく抑えられます。"
       ],
       "cons": [
-        "XP-PenやHUIONなどの中華系競合製品と比較すると、スペックに対する価格設定が割高",
-        "充電/接続ポートが旧来のMicro USBであり、最新機器とのケーブル共有に難がある",
-        "筆圧レベルが4096段階と、最新機種（8192や16384）に比べるとスペック上は見劣りする"
+        "傾き検知機能が非搭載のため、鉛筆を寝かせたようなアナログ画材のタッチを多用したい本格的な厚塗り用途には不向きです。",
+        "マルチタッチ（指でのズームや回転）には対応していないため、キャンバス操作はペン先のボタンやショートカットキーで行う必要があります。",
+        "Android端末での利用には別途OTG対応のUSB変換アダプタをユーザー自身で用意する必要があります。"
       ],
-      "score": 81,
-      "scoreRationale": "[基本点: 70]\n[加点: +8] (業界標準の安定した描き味と、初心者でも安心なドライバの信頼性)\n[加点: +7] (CLIP STUDIO PAINT等の豪華で実用的な特典ソフトウェアが付属し初期費用を抑えられる)\n[加点: +5] (Bluetoothワイヤレス接続とAndroid対応による高い利便性)\n[減点: -6] (競合する海外メーカー製品と比べると価格が大幅に割高でコスパに劣る)\n[減点: -3] (近年のデバイス環境にそぐわないMicro USB端子の採用)\n[合計: 81]"
+      "score": 83,
+      "scoreRationale": "[基本点: 70]\n[加点: +8] (Bluetoothワイヤレス接続と最大15時間バッテリーによる高い利便性と快適な作業環境)\n[加点: +5] (CLIP STUDIO PAINT PROなど3つのソフトウェアがダウンロードできる優れた特典価値)\n[加点: +3] (Wacomブランドの信頼性と、Mediumサイズのゆとりある描画領域による初心者の描きやすさ)\n[減点: -3] (上位機種や同価格帯の海外製競合品が搭載する「傾き検知機能」が非搭載である点)\n[合計: 83]"
     },
     "technicalSpecs": {
-      "dimensions": {
-        "width": "264mm",
-        "height": "200mm",
-        "depth": "8.8mm"
-      },
-      "activeArea": "216 x 135 mm (Mediumサイズ)",
-      "weight": "410g",
-      "pen": {
-        "type": "Wacom Pen 4K (バッテリーレス, 電磁誘導方式)",
-        "pressureLevels": "4096レベル",
-        "readingResolution": "2540 lpi",
-        "tiltRecognition": "非対応"
-      },
+      "os": "Windows 7以降 (Windows 10 Sを除く) / macOS 10.15以降 / Android 6.0以降 (OTG機能必須) / Chrome OS (最新バージョン)",
       "connectivity": [
         "Bluetooth Classic",
-        "USB (Micro USB-B)"
+        "USB Type-A (有線接続時)"
+      ],
+      "dimensions": {
+        "height": "200mm",
+        "width": "264mm",
+        "depth": "8.8mm",
+        "weight": "410g"
+      },
+      "weight": "410g",
+      "other": [
+        "読取可能範囲: 216×135mm (Mediumサイズ)",
+        "筆圧レベル: 4096レベル",
+        "読取分解能: 2540 lpi",
+        "読取速度: 133 pps",
+        "ペン: Wacom Pen 4K (LP-1100K) / バッテリーレス・コードレス",
+        "エクスプレスキー: 4つ (カスタマイズ可能)",
+        "※マルチタッチ機能: 非対応",
+        "※傾き検知機能: 非対応"
       ],
       "battery": {
-        "type": "リチウムイオン電池",
-        "operatingTime": "最大15時間",
-        "chargingTime": "約3.5時間"
-      },
-      "expressKeys": "4つ (カスタマイズ可能)",
-      "compatibility": [
-        "Windows 7以降",
-        "macOS 10.13以降",
-        "Android 6.0以降 (OTG機能対応端末)",
-        "Chrome OS 87以降"
-      ],
-      "bundledSoftware": [
-        "CLIP STUDIO PAINT PRO (2年ライセンス)",
-        "Corel Painter Essentials 8 (90日体験版)",
-        "Corel AfterShot Pro 3 (90日体験版)"
-      ]
+        "playbackTime": "最大15時間",
+        "charging": "約3.5時間"
+      }
     }
   }
 }
