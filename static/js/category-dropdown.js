@@ -236,8 +236,8 @@
                 viewAllOption.value = `__all__:${slug}`;
                 const parentCount = groupCounts[selectedGroup];
                 viewAllOption.textContent = parentCount !== undefined 
-                    ? `📁 ${selectedGroup}のすべてを見る (${parentCount})`
-                    : `📁 ${selectedGroup}のすべてを見る`;
+                    ? `📁 ${selectedGroup}のすべて (${parentCount})`
+                    : `📁 ${selectedGroup}のすべて`;
                 viewAllOption.style.fontWeight = 'bold';
                 subSelect.appendChild(viewAllOption);
             }
@@ -366,8 +366,8 @@
                 viewAllTag.className = 'category-tag-link category-view-all';
                 const parentCount = groupCounts[groupName];
                 viewAllTag.textContent = parentCount !== undefined
-                    ? `📁 ${groupName}のすべてを見る (${parentCount})`
-                    : `📁 ${groupName}のすべてを見る`;
+                    ? `📁 ${groupName}のすべて (${parentCount})`
+                    : `📁 ${groupName}のすべて`;
                 groupSection.appendChild(viewAllTag);
             }
 
