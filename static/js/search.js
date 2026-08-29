@@ -338,7 +338,7 @@ function searchWithRerank(fuseInstance, query) {
     const trimmed = query.trim().toUpperCase();
     let targetQuery = query;
 
-    if (isAsin(trimmed) && asinVariationsCache && asinVariationsCache[trimmed]) {
+    if (isAsin(trimmed) && asinVariationsCache?.[trimmed]) {
         targetQuery = asinVariationsCache[trimmed];
     }
 
