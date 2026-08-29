@@ -212,6 +212,9 @@ describe('CategoryNormalizer', () => {
         'お客様都合の返品不可_電動歯ブラシ、口腔洗浄器',
         'メモリーカードストア：スマホで使う microSDカード',
         'Micro SDカード選び方ガイド',
+        'CEROレーティングB',
+        '2014C-TAX Video Game',
+        'すべてのゲーム',
       ];
       invalidNames.forEach((name) => {
         expect(CategoryNormalizer.isValidCategoryName(name)).toBe(false);
@@ -685,6 +688,47 @@ describe('CategoryNormalizer', () => {
       const result = CategoryNormalizer.selectBestCategory(nodes, title);
       expect(result.main).toBe('ノートパソコン用ドッキングステーション');
       expect(result.browseNodeId).toBe('2151884051');
+    });
+
+    it('should select "PC用ゲームパッド" for Leadjoy game controller (B0GWJHDCBQ / B0H4QJ8N89)', () => {
+      const nodes: BrowseNode[] = [
+        {
+          contextFreeName: 'CEROレーティングB',
+          displayName: 'CEROレーティングB',
+          id: '4752358051',
+          isRoot: false,
+        },
+        {
+          contextFreeName: 'ビデオゲーム',
+          displayName: 'ビデオゲーム',
+          id: '8185309051',
+          isRoot: false,
+        },
+        {
+          contextFreeName: 'すべてのゲーム',
+          displayName: 'すべてのゲーム',
+          id: '5364230051',
+          isRoot: false,
+        },
+        {
+          contextFreeName: '2014C-TAX Video Game',
+          displayName: '2014C-TAX Video Game',
+          id: '3050863051',
+          isRoot: false,
+        },
+        {
+          contextFreeName: 'PC用ゲームパッド',
+          displayName: 'ゲームパッド',
+          id: '2151971051',
+          isRoot: false,
+        },
+      ];
+      const title =
+        'Leadjoy Saber Plus ゲームコントロー, 2.4G/Bluetooth/有線 対応 ポーリングレート 1000Hz TMR RGB ライト 10個マイクロスイッチボタン ホール 4個のカスタムボタン PS4/PC/Switch1&2/iOS/Android対応 ゲームパッド 黒';
+
+      const result = CategoryNormalizer.selectBestCategory(nodes, title);
+      expect(result.main).toBe('PC用ゲームパッド');
+      expect(result.browseNodeId).toBe('2151971051');
     });
   });
 });
