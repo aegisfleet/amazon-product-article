@@ -1,6 +1,6 @@
 {
   "analysis": {
-    "productName": "NECプラットフォームズ Aterm MP02LN モバイルルーター",
+    "productName": "NEC Aterm MP02LN",
     "parentAsin": "B079M6HNTH",
     "productDescription": "NECのAterm MP02LNは、業界最小クラスの小型軽量ボディを実現した、LTE対応のSIMフリーモバイルWi-Fiルーターです。持ち運びの負担がなく、外出先でのインターネット接続を手軽に構築できます。",
     "productUsage": [
@@ -104,12 +104,12 @@
         "notes": "公式スペックの10時間は、ユーザーの「夕方には充電が必要になる」という体験談と整合しており、長時間の外出時にはモバイルバッテリーの併用が推奨される。一部のレビューでは「使い方によってはもっと早く切れる」との指摘もある（対立意見）。"
       }
     ],
-    "lastInvestigated": "2026-03-17",
+    "lastInvestigated": "2026-08-30",
     "competitiveAnalysis": [
       {
         "name": "富士ソフト +F FS040W",
         "asin": "B08CDQQSMP",
-        "priceComparison": "価格は約12,680円とMP02LN（8,480円）より1.5倍ほど高いが、大容量バッテリーやバッテリーレス稼働（ホームルーター化）に対応しており、据え置きと兼用の場合はむしろコストパフォーマンスが高い。",
+        "priceComparison": "価格は約12,680円とMP02LN（7,979円）より1.5倍ほど高いが、大容量バッテリーやバッテリーレス稼働（ホームルーター化）に対応しており、据え置きと兼用の場合はむしろコストパフォーマンスが高い。",
         "featureComparison": [
           "共通点：SIMフリーのモバイルルーターであり、複数の格安SIM（MVNO）に対応している点",
           "相違点：MP02LNは軽量特化（約10時間稼働）なのに対し、FS040Wは大容量バッテリーで長時間の稼働が可能であり、専用クレードルによる拡張性が高い点"
@@ -211,17 +211,22 @@
         "depth": "12mm"
       },
       "weight": "71g",
-      "connectivity": {
-        "wireless": "IEEE802.11ac/n/a (5GHz帯), IEEE802.11n/g/b (2.4GHz帯)",
-        "mobile": "4G LTE (nanoSIM対応)"
-      },
       "battery": {
-        "continuousUsageTime": "約10時間",
-        "chargingTime": "約2.5時間"
+        "capacity": "非公開",
+        "charging": "約2.5時間",
+        "playbackTime": "約10時間 (連続通信時間)"
       },
-      "ports": "充電用USBポート (有線LAN非対応)",
-      "color": "メタリックシルバー",
-      "warranty": "メーカー保証1年"
-    }
+      "connectivity": [
+        "IEEE802.11ac/n/a (5GHz帯)",
+        "IEEE802.11n/g/b (2.4GHz帯)",
+        "4G LTE (nanoSIM対応)"
+      ],
+      "other": [
+        "ポート: 充電用USBポート (有線LAN非対応)",
+        "カラー: メタリックシルバー",
+        "保証: メーカー保証1年"
+      ]
+    },
+    "investigatedPrice": "￥7,979"
   }
 }
