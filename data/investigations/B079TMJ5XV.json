@@ -3,16 +3,32 @@
     "productName": "セザンヌ 超細芯アイブロウ 03 ナチュラルブラウン 0.02g",
     "parentAsin": "B07Q2L9X33",
     "productDescription": "眉尻の1本1本まで繊細に描ける、0.9mmの超細芯アイブロウペンシル。水・汗・皮脂に強いウォータープルーフ処方。",
-    "productUsage": ["眉尻の繊細なラインを描く", "眉毛の隙間を埋める"],
-    "positivePoints": ["0.9mmの極細芯で本物の毛のように描ける", "ウォータープルーフで落ちにくい", "繰り出し式で使いやすい", "550円と非常に手頃な価格"],
-    "negativePoints": ["芯が細いため、出しすぎると折れやすい", "内容量が0.02gと少なく、減りが早い"],
-    "useCases": ["毎日のメイクアップ", "スポーツ時や汗をかきやすい環境での使用"],
+    "productUsage": [
+      "眉尻の繊細なラインを描く",
+      "眉毛の隙間を埋める"
+    ],
+    "positivePoints": [
+      "0.9mmの極細芯で本物の毛のように描ける",
+      "ウォータープルーフで落ちにくい",
+      "繰り出し式で使いやすい",
+      "550円と非常に手頃な価格"
+    ],
+    "negativePoints": [
+      "芯が細いため、出しすぎると折れやすい",
+      "内容量が0.02gと少なく、減りが早い"
+    ],
+    "useCases": [
+      "毎日のメイクアップ",
+      "スポーツ時や汗をかきやすい環境での使用"
+    ],
     "userStories": [
       {
         "userType": "一般ユーザー",
         "scenario": "毎日のメイク",
         "experience": "0.9mmの極細芯が眉尻を綺麗に描くのに非常に便利です。ただ、芯を出しすぎると折れてしまうので注意が必要ですが、この価格ならリピートしやすいです。",
-        "supportingSourceIds": ["src-cezanne-official"],
+        "supportingSourceIds": [
+          "src-cezanne-official"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -46,7 +62,9 @@
         "claim": "0.9mmの超細芯で眉尻まで繊細に描ける",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-cezanne-official"],
+        "supportingSourceIds": [
+          "src-cezanne-official"
+        ],
         "crossChecked": true,
         "notes": "公式サイトにて確認"
       },
@@ -54,7 +72,9 @@
         "claim": "水・汗・皮脂に強いウォータープルーフ",
         "category": "durability",
         "confidence": "high",
-        "supportingSourceIds": ["src-cezanne-official"],
+        "supportingSourceIds": [
+          "src-cezanne-official"
+        ],
         "crossChecked": true,
         "notes": "公式サイトにて確認"
       }
@@ -141,9 +161,22 @@
       }
     ],
     "recommendation": {
-      "targetUsers": ["眉尻を繊細に描きたい人", "安価で高品質なアイブロウを探している人", "自眉のすき間を自然に埋めたい人"],
-      "pros": ["0.9mmの極細芯で1本1本描ける", "ウォータープルーフで落ちにくい", "非常に高いコストパフォーマンス"],
-      "cons": ["芯が折れやすい", "内容量が少なく減りが早い"],
+      "targetUsers": [
+        "眉尻を繊細に描きたい人",
+        "安価で高品質なアイブロウを探している人",
+        "自眉のすき間を自然に埋めたい人"
+      ],
+      "pros": [
+        "0.9mmの極細芯で1本1本描ける",
+        "ウォータープルーフで落ちにくい",
+        "非常に高いコストパフォーマンス"
+      ],
+      "cons": [
+        "芯が折れやすい",
+        "内容量が少なく減りが早い",
+        "芯が非常に細く折れやすいため、扱いに慣れが必要",
+        "内容量が0.02gと極端に少なく、すぐになくなるため頻繁な買い替えが必要"
+      ],
       "score": 90,
       "scoreRationale": "[基本点: 70]\n[加点: +8] (0.9mmの極細芯で1本1本リアルに描ける優れた性能)\n[加点: +10] (550円という低価格でありながら高品質なコスパ)\n[加点: +2] (ウォータープルーフ処方による品質・耐久性)\n[合計: 90]"
     },
@@ -157,7 +190,11 @@
       "capacity": "0.02g",
       "material": "ベヘン酸、水添ヒマシ油、リンゴ酸ジイソステアリル、トリベヘニンなど",
       "origin": "日本",
-      "other": ["ウォータープルーフ", "無香料", "繰り出し式"]
+      "other": [
+        "ウォータープルーフ",
+        "無香料",
+        "繰り出し式"
+      ]
     }
   }
 }

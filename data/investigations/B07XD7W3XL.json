@@ -45,7 +45,9 @@
         "claim": "ノンシリコン処方なのにきしまない",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": false,
         "notes": "公式情報としてスクワラン配合によりきしまない処方であることを確認"
       },
@@ -53,7 +55,9 @@
         "claim": "100%天然のエッセンシャルオイル配合",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": false,
         "notes": "公式情報より確認"
       }
@@ -154,7 +158,9 @@
       ],
       "cons": [
         "1kgと重いため、詰め替え作業に多少の負担がかかる",
-        "初めて使う場合、香りが合わないリスクがある"
+        "初めて使う場合、香りが合わないリスクがある",
+        "大容量パッケージのため、注ぐ際に重さがある",
+        "1kgの重さがあるため、詰め替え作業にやや手間がかかる"
       ],
       "score": 85,
       "scoreRationale": "[基本点: 70]\n[加点: +10] (大容量1kgによる圧倒的なコストパフォーマンスと買い物の手間軽減)\n[加点: +5] (ノンシリコン処方かつ100%天然エッセンシャルオイル配合という安全性と品質の良さ)\n[合計: 85]"
