@@ -566,6 +566,26 @@
             const data = extractDataFromButton(btn);
             if (!data.asin) return;
 
+            // まだ何も比較対象になっていない状態で、商品詳細ページの競合商品などの比較ボタンが押された場合
+            // 現在表示している商品（ヒーローカード等）を先に追加し、次にクリックした商品を2つ目に追加する
+            const list = loadCompare();
+            if (list.length === 0) {
+                const heroBtn = document.querySelector('.btn-compare-hero[data-compare-btn]');
+                if (heroBtn && heroBtn !== btn) {
+                    const heroData = extractDataFromButton(heroBtn);
+                    if (heroData.asin && heroData.asin !== data.asin) {
+                        addCompare(heroData);
+                        const added = addCompare(data);
+                        if (added) {
+                            btn.classList.add('compare-bounce');
+                            setTimeout(function () { btn.classList.remove('compare-bounce'); }, 600);
+                        }
+                        updateUI();
+                        return;
+                    }
+                }
+            }
+
             const added = toggleCompare(data);
             if (added) {
                 btn.classList.add('compare-bounce');
