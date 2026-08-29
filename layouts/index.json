@@ -43,6 +43,7 @@
       "last_investigated" .Params.last_investigated
       "specs" $spec_text
       "asin" .Params.asin
+      "parent_asin" (.Params.parent_asin | default "")
       "affiliate_url" .Params.affiliate_url
       "savings_percentage" .Params.savings_percentage
       "specs_json" $specsJson

@@ -90,15 +90,9 @@ async function getInvestigationIndex(workspaceRoot = process.cwd()): Promise<{
     for (const file of files) {
       if (!file.endsWith('.json')) continue;
       const investigatedAsin = path.basename(file, '.json');
-      try {
-        const invRaw = await fs.readFile(path.join(invDir, file), 'utf-8');
-        const invJson = JSON.parse(invRaw);
-        const parentAsin = invJson.analysis?.parentAsin || paapiCache[investigatedAsin]?.data?.parentAsin;
-        if (parentAsin && !parentToInvMap.has(parentAsin)) {
-          parentToInvMap.set(parentAsin, investigatedAsin);
-        }
-      } catch {
-        // パース失敗したファイルはスキップ
+      const cachedParent = paapiCache[investigatedAsin]?.data?.parentAsin;
+      if (cachedParent && !parentToInvMap.has(cachedParent)) {
+        parentToInvMap.set(cachedParent, investigatedAsin);
       }
     }
   } catch {

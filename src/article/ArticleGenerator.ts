@@ -180,6 +180,7 @@ export class ArticleGenerator {
       tags,
       publishDate: investigation.generatedAt || new Date(),
       asin: product.asin,
+      parent_asin: product.parentAsin || investigation.analysis.parentAsin || undefined,
       priceRange,
       price,
       investigatedPrice: investigation.analysis.investigatedPrice,
@@ -1390,7 +1391,11 @@ ${recommendationMessage}
   }
 
   private addProductIdentifiers(lines: string[], metadata: ArticleMetadata): void {
-    lines.push(`asin: "${metadata.asin}"`, `price_range: "${metadata.priceRange}"`);
+    lines.push(`asin: "${metadata.asin}"`);
+    if (metadata.parent_asin) {
+      lines.push(`parent_asin: "${this.escapeForFrontMatter(metadata.parent_asin)}"`);
+    }
+    lines.push(`price_range: "${metadata.priceRange}"`);
     if (metadata.price) lines.push(`price: "${this.escapeForFrontMatter(metadata.price)}"`);
     if (metadata.investigatedPrice)
       lines.push(`investigated_price: "${this.escapeForFrontMatter(metadata.investigatedPrice)}"`);

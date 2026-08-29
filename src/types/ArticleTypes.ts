@@ -13,6 +13,7 @@ export interface ArticleMetadata {
   tags: string[];
   publishDate: Date;
   asin: string;
+  parent_asin?: string | undefined;
   priceRange: string;
   price?: string | undefined;
   investigatedPrice?: string | undefined;
