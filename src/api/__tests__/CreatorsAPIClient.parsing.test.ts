@@ -157,4 +157,108 @@ describe('CreatorsAPIClient Parsing Tests', () => {
       expect(product3.dealBadge).toBe('限定タイムセール');
     });
   });
+
+  describe('furusato tax detection', () => {
+    it('should correctly identify furusato products with title flag', () => {
+      const mockItem: any = {
+        asin: 'B0TEST1234',
+        itemInfo: {
+          title: { displayValue: '【ふるさと納税】特選黒毛和牛 ステーキ 500g' },
+        },
+      };
+      const product = (client as any).parseProduct(mockItem as CreatorsAPIItem);
+      expect(product.isFurusato).toBe(true);
+    });
+
+    it('should correctly identify furusato products with municipality merchant', () => {
+      const mockItem: any = {
+        asin: 'B0TEST1234',
+        itemInfo: {
+          title: { displayValue: 'ドトールコーヒー ドリップパック モカブレンド 100杯分' },
+        },
+        offersV2: {
+          listings: [
+            {
+              merchantInfo: {
+                name: '千葉県船橋市/Funabashi,Chiba',
+              },
+            },
+          ],
+        },
+      };
+      const product = (client as any).parseProduct(mockItem as CreatorsAPIItem);
+      expect(product.isFurusato).toBe(true);
+      expect(product.municipality).toBe('千葉県船橋市');
+    });
+
+    it('should NOT treat Amazon direct products as furusato even if browseNode contains 返礼品', () => {
+      const mockItem: any = {
+        asin: 'B07KR131P9',
+        itemInfo: {
+          title: { displayValue: 'ドトールコーヒー ドリップパック モカブレンド 100杯分' },
+        },
+        browseNodeInfo: {
+          browseNodes: [
+            {
+              contextFreeName: '水・ソフトドリンクの高評価返礼品',
+              displayName: '水・ソフトドリンクの高評価返礼品',
+            },
+          ],
+        },
+        offersV2: {
+          listings: [
+            {
+              merchantInfo: {
+                name: 'Amazon.co.jp',
+              },
+            },
+          ],
+        },
+      };
+      const product = (client as any).parseProduct(mockItem as CreatorsAPIItem);
+      expect(product.isFurusato).toBeFalsy();
+      expect(product.municipality).toBeUndefined();
+    });
+
+    it('should NOT treat ordinary 3rd party sellers as municipality', () => {
+      const mockItem1: any = {
+        asin: 'B0TEST1111',
+        itemInfo: {
+          title: { displayValue: '一般文庫本' },
+        },
+        offersV2: {
+          listings: [
+            {
+              merchantInfo: {
+                name: 'ブックスター新町店☆',
+              },
+            },
+          ],
+        },
+      };
+      const product1 = (client as any).parseProduct(mockItem1 as CreatorsAPIItem);
+      expect(product1.isFurusato).toBeFalsy();
+      expect(product1.municipality).toBeUndefined();
+
+      const mockItem2: any = {
+        asin: 'B0TEST2222',
+        itemInfo: {
+          title: { displayValue: 'ペットフード' },
+        },
+        offersV2: {
+          listings: [
+            {
+              merchantInfo: {
+                name: 'アイランドストア 兵庫県公安委員会 第63181990001号',
+              },
+            },
+          ],
+        },
+      };
+      const product2 = (client as any).parseProduct(mockItem2 as CreatorsAPIItem);
+      expect(product2.isFurusato).toBeFalsy();
+      expect(product2.municipality).toBeUndefined();
+    });
+  });
 });
+
