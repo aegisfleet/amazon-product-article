@@ -125,4 +125,8 @@ data/categories.yml
 /*.sh
 /*.html
 /*.txt
+/*.json
+!/package.json
+!/tsconfig*.json
+!/biome.json
 patch.diff
