@@ -713,6 +713,12 @@ a.hero-tag-brand:hover {
   font-size: 0.9em;
 }
 
+.badge-furusato::before,
+.m3-badge-furusato::before {
+  content: "🌾";
+  font-size: 0.9em;
+}
+
 .badge-availability {
   background: var(--badge-availability-bg);
   color: var(--badge-availability-text);

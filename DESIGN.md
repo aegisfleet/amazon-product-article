@@ -30,7 +30,7 @@ Material Design 3 のトナルカラーシステム（Tonal Color System）に�
 | **Secondary** | `--md-sys-color-secondary` | 補助ボタン、大サイズ見出し（大文字限定） | `--md-sys-color-on-secondary` |
 | **Secondary Container** | `--md-sys-color-secondary-container` | フィルターチップ、件数バッジ | `--md-sys-color-on-secondary-container` |
 | **Tertiary** | `--md-sys-color-tertiary` | アクセント要素、サブ強調（大文字限定） | `--md-sys-color-on-tertiary` |
-| **Tertiary Container** | `--md-sys-color-tertiary-container` | セール対象タグ・プロモーションバッジ | `--md-sys-color-on-tertiary-container` |
+| **Tertiary Container** | `--md-sys-color-tertiary-container` | 在庫・発送状況バッジ、プロモーションバッジ | `--md-sys-color-on-tertiary-container` |
 | **Error** | `--md-sys-color-error` | エラーメッセージ、削除・危険アクション | `--md-sys-color-on-error` |
 | **Error Container** | `--md-sys-color-error-container` | エラー通知バナー | `--md-sys-color-on-error-container` |
 | **Warning (Custom)** | `--md-custom-color-warning` | AI注意書きバナー（カスタムセマンティック） | `--md-custom-color-on-warning` |
