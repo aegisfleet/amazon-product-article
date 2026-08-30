@@ -47,7 +47,6 @@ export class CreatorsAPIClient {
   private readonly OAUTH_TOKEN_URL = 'https://api.amazon.com/auth/o2/token';
   private readonly API_BASE_URL = 'https://creatorsapi.amazon';
   private readonly MARKETPLACE = 'www.amazon.co.jp';
-  private readonly CREDENTIAL_VERSION = '3.3';
 
   constructor() {
     // Rate limit configuration - can be adjusted via environment variables
