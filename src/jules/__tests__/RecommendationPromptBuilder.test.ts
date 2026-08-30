@@ -54,5 +54,7 @@ describe('RecommendationPromptBuilder', () => {
     expect(prompt).toContain('テストセール商品');
     expect(prompt).toContain('[タイムセール]');
     expect(prompt).toContain('(25% OFF)');
+    expect(prompt).toContain('Keepa直近90日価格推移: https://graph.keepa.com/pricehistory.png?asin=TESTASIN123');
+    expect(prompt).toContain('Keepa価格推移グラフによる「本当の値下げ」の実態判定');
   });
 });
