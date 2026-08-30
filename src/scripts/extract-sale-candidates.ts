@@ -19,17 +19,15 @@ export interface SaleCandidate {
     currency: string;
     formatted: string;
   };
-  savingsPercentage?: number | undefined;
-  dealBadge?: string | undefined;
-  isLimitedTimeSale?: boolean | undefined;
-  rating?:
-    | {
-        average: number;
-        count: number;
-      }
-    | undefined;
-  articleScore?: number | undefined;
-  brand?: string | undefined;
+  savingsPercentage?: number;
+  dealBadge?: string;
+  isLimitedTimeSale?: boolean;
+  rating?: {
+    average: number;
+    count: number;
+  };
+  articleScore?: number;
+  brand?: string;
   timestamp: number;
 }
 
@@ -51,8 +49,8 @@ interface CacheStore {
 
 export interface ArticleMetadata {
   score: number;
-  brand?: string | undefined;
-  category?: string | undefined;
+  brand?: string;
+  category?: string;
 }
 
 const LIMITED_SALE_KEYWORDS = ['限定', '24時間', '特選', '数量限定', '本日限定'];
@@ -87,16 +85,17 @@ function parseArticleMetadata(content: string): ArticleMetadata | undefined {
   if (Number.isNaN(score)) return undefined;
 
   const brandMatch = BRAND_REGEX.exec(fm);
-  const brand = brandMatch?.[1] ? brandMatch[1].trim() : undefined;
-
   const catMatch = CATEGORIES_REGEX.exec(fm);
-  const category = catMatch?.[1] ? catMatch[1].trim() : undefined;
 
-  return {
-    score,
-    brand,
-    category,
-  };
+  const result: ArticleMetadata = { score };
+  if (brandMatch?.[1]) {
+    result.brand = brandMatch[1].trim();
+  }
+  if (catMatch?.[1]) {
+    result.category = catMatch[1].trim();
+  }
+
+  return result;
 }
 
 export function loadArticleScoreMap(articlesDir?: string): Map<string, ArticleMetadata> {
@@ -287,19 +286,32 @@ function parseCandidateFromEntry(
     return null;
   }
 
-  return {
+  const candidate: SaleCandidate = {
     asin,
     title: product.title,
     category: article?.category || product.category || 'その他',
     price: product.price,
-    savingsPercentage: product.savingsPercentage,
-    dealBadge: product.dealBadge,
     isLimitedTimeSale: isLimitedTimeSaleBadge(dealBadge),
-    rating: product.rating,
-    articleScore: article?.score,
-    brand: article?.brand,
     timestamp: entry.timestamp,
   };
+
+  if (product.savingsPercentage !== undefined) {
+    candidate.savingsPercentage = product.savingsPercentage;
+  }
+  if (product.dealBadge !== undefined) {
+    candidate.dealBadge = product.dealBadge;
+  }
+  if (product.rating !== undefined) {
+    candidate.rating = product.rating;
+  }
+  if (article?.score !== undefined) {
+    candidate.articleScore = article.score;
+  }
+  if (article?.brand !== undefined) {
+    candidate.brand = article.brand;
+  }
+
+  return candidate;
 }
 
 function sortCandidates(candidates: SaleCandidate[], brandMatchers: RegExp[] = []): void {
