@@ -1,217 +1,234 @@
 {
   "analysis": {
-    "productName": "HUAWEI Speed Wi-Fi NEXT W06",
+    "productName": "Speed Wi-Fi NEXT W06",
     "parentAsin": "B0DHXVR4D6",
-    "productDescription": "HUAWEI製の高速通信対応モバイルWi-Fiルーター（au/UQ WiMAX回線対応）。最大1.2Gbpsの下り通信速度を誇り、スマホのような使い勝手のタッチパネルを搭載しています。",
+    "productDescription": "HUAWEI製のWiMAX 2+対応モバイルルーター。下り最大1.2Gbpsの高速通信に対応し、コンパクトで持ち運びしやすいデザインが特徴。本機は整備済み品のホワイト×シルバーモデルです。",
     "productUsage": [
-      "外出先でのPCやタブレットのインターネット接続",
-      "固定回線代わりの自宅用Wi-Fiルーター（クレードル使用時など）",
-      "スマート設定を活用したバッテリーの持続時間管理"
+      "外出先や移動中のPC・タブレットのインターネット接続",
+      "自宅での簡易的なWi-Fi環境構築"
     ],
     "positivePoints": [
-      "下り最大1.2Gbps（ハイスピードプラスエリアモード時）の高速通信に対応しており、高画質動画の視聴も快適",
-      "丸みを帯びた洗練されたデザインで、タッチパネルの操作性が高く、スマートフォン感覚で設定が可能",
-      "バッテリー容量が3000mAhに増量され、スマート設定でパフォーマンスとバッテリー消費のバランスを調整可能",
-      "USB Type-C充電に対応し、有線接続での高速データ通信が可能"
+      "下り最大1.2Gbps（一部エリア・有線接続時など条件あり）の高速通信に対応",
+      "幅約128mm、重量約125gのコンパクト設計で持ち運びに適している",
+      "Wi-Fiのお引越し機能により、過去のHUAWEI製ルーターからの設定移行が容易"
     ],
     "negativePoints": [
-      "内蔵バッテリーのため交換が不可であり、長期間使用（1年〜2年）するとバッテリーの劣化や膨張のリスクがある",
-      "Huawei HiLinkアプリが使えない場合があり、初期設定などをブラウザ経由で行う必要がある（一部の環境）",
-      "通信時の発熱が比較的大きく、高負荷時に本体が熱くなる傾向がある"
+      "前モデル(W05等)と異なり、クレードルを利用した有線LAN接続に非対応",
+      "地下鉄の走行中など、一部の環境では電波が途切れやすいとの指摘がある",
+      "整備済み品（中古）であるため、バッテリーの劣化具合が個体によって異なる可能性がある"
     ],
     "useCases": [
-      "カフェや出張先などでのリモートワーク用通信回線",
-      "一人暮らしの賃貸物件での固定回線代わりのメインルーター",
-      "LTEオプションを利用した、WiMAXエリア外の地方や地下での通信確保"
+      "カフェや出張先のホテルでノートPCをネットにつなぐ",
+      "引っ越し直後で固定回線がない期間のつなぎとして使用する"
     ],
     "userStories": [
       {
-        "userType": "30代会社員",
-        "scenario": "外出先での仕事用回線として中古（整備品）を購入",
-        "experience": "メルカリなどで安価な中古品や整備済み品として3000円〜6000円程度で購入しました。充電ポートがType-Cであることや、11ac対応で下り1.2Gbpsの性能は現在でも十分通用します。設定は専用アプリではなくブラウザ経由で行いましたが、一度繋がればスマホやPCを問題なく接続でき快適に使えています。",
+        "userType": "ビジネスマン・ノマドワーカー",
+        "scenario": "外出先で複数台の機器をインターネットに接続する",
+        "experience": "以前使用していたHUAWEI製のモバイルルーターからSSID等の設定を引き継げる機能があり、周辺機器の再設定が不要でとても便利だった。丸みを帯びたデザインで持ちやすく、鞄に入れてもかさばらない。",
+        "supportingSourceIds": ["kakaku-review-1422464"],
         "sentiment": "positive"
       },
       {
-        "userType": "長期ユーザー（3年以上使用）",
-        "scenario": "WiMAXのメイン回線として長期間利用",
-        "experience": "3年ほど酷使し、3日間で10GBの制限を何度も受けながらも全くトラブルなく安定して動作しました。ただし、最近は5G非対応の制限を感じたり、バッテリーが劣化してきている（膨張するケースもある）ため、新しいルーターへの買い替えを検討していますが、4G環境で十分な人にはまだ現役で使える優秀なルーターです。",
+        "userType": "通勤・通学者",
+        "scenario": "電車移動中に動画視聴やウェブブラウジングを行う",
+        "experience": "地上では概ね問題なく通信できるが、地下鉄の走行中などは電波を拾えなくなることが多く、キャリア回線（スマホのテザリング等）と比べると移動中の安定性に不満が残った。",
+        "supportingSourceIds": ["kakaku-review-1440332", "kakaku-review-1447000"],
         "sentiment": "mixed"
       },
       {
-        "userType": "格安SIM（mineo等）ユーザー",
-        "scenario": "au回線の格安SIMを入れて運用",
-        "experience": "（推測）WiMAXを解約した後、余ったW06にmineoなどのau回線対応SIMを入れて使用しています。APN設定をブラウザから行うだけで、不具合なくインターネットに接続できており、サブ機のモバイルルーターとして非常に重宝しています。",
-        "sentiment": "positive"
+        "userType": "PCユーザー",
+        "scenario": "自宅で時々PCに有線接続して安定した通信を行いたい",
+        "experience": "以前の機種（W05など）ではクレードルを使って有線LAN接続ができたが、この機種からは非対応になってしまったため、いざという時にPCと有線で繋げず少し不便に感じた。",
+        "supportingSourceIds": ["kakaku-review-1422464"],
+        "sentiment": "negative"
       }
     ],
-    "userImpression": "全体的に通信速度と安定性が高く評価されています。特に4G（WiMAX 2+ / LTE）環境での実用性は非常に高く、最新の5Gルーターが頻繁に回線切り替えを起こして不安定になる環境下では、あえてこのW06を使い続けるユーザーもいるほどです。一方で、バッテリーの交換ができない点や発熱などの耐久性に関する懸念も報告されています。整備済み品や中古でのコストパフォーマンスは非常に高い製品です。",
+    "userImpression": "コンパクトなサイズと旧機種からの設定引き継ぎ機能は『手軽に使い始められるモバイルルーター』として高く評価されています。一方で、クレードル（有線LAN）接続が廃止された点や、地下など特定の環境下での電波のつかみについては不満の声も見られます。旧機種からの乗り換えでクレードルを多用していたユーザーや、移動中の通信安定性を重視するユーザーは注意が必要ですが、手軽な持ち運び用ルーターとしては十分な機能を持っています。",
     "sources": [
       {
-        "id": "source-1",
-        "name": "価格.com: HUAWEI Speed Wi-Fi NEXT W06 レビュー",
-        "url": "https://review.kakaku.com/review/K0001124620/",
+        "id": "kakaku-spec",
+        "name": "価格.com - HUAWEI Speed Wi-Fi NEXT W06 [ホワイト×シルバー] スペック・仕様",
+        "url": "https://kakaku.com/item/K0001124621/spec/",
         "tier": "high",
         "evidenceType": "primary",
-        "publishedAt": "2024-11-16",
-        "author": "第三者レビュアー",
+        "publishedAt": "2019-01-25",
+        "author": "価格.com",
         "conflictOfInterest": "none",
-        "notes": "複数の実際のユーザーによる長期間の利用体験、通信速度、バッテリーに関する具体的な口コミが多数あり。"
+        "notes": "本体サイズ、重量、通信方式、無線LAN規格、同時接続台数などを確認"
       },
       {
-        "id": "source-2",
-        "name": "NO NET NO LIFE: W06 レビュー",
-        "url": "https://nonetnolife.com/wimax/speed-wifi-next-w06-review/",
+        "id": "kakaku-review-1422464",
+        "name": "価格.com ユーザーレビュー（TeTsu Nさん）",
+        "url": "https://review.kakaku.com/review/K0001124621/ReviewCD=1422464/",
         "tier": "medium",
-        "evidenceType": "primary",
-        "publishedAt": "2019-01-26",
-        "author": "個人ガジェットブロガー",
-        "conflictOfInterest": "possible",
-        "notes": "実機の詳細な設定手順、旧モデル（W05）との比較、バッテリー容量（3000mAh）やタッチパネルの操作感に関する詳細なレビュー。"
+        "evidenceType": "secondary",
+        "publishedAt": "2021-02-17",
+        "author": "TeTsu N",
+        "conflictOfInterest": "none",
+        "notes": "デザインの持ちやすさ、設定の引き継ぎやすさを評価。一方、クレードル非対応になったことをマイナス点として挙げている。"
+      },
+      {
+        "id": "kakaku-review-1440332",
+        "name": "価格.com ユーザーレビュー（tsuyoshi2020さん）",
+        "url": "https://review.kakaku.com/review/K0001124620/ReviewCD=1440332/",
+        "tier": "medium",
+        "evidenceType": "secondary",
+        "publishedAt": "2021-04-04",
+        "author": "tsuyoshi2020",
+        "conflictOfInterest": "none",
+        "notes": "地上での電波は概ね良好だが、地下鉄走行中などは電波を拾えないとの不満。"
+      },
+      {
+        "id": "kakaku-review-1447000",
+        "name": "価格.com ユーザーレビュー（帆楼0401さん）",
+        "url": "https://review.kakaku.com/review/K0001124620/ReviewCD=1447000/",
+        "tier": "medium",
+        "evidenceType": "secondary",
+        "publishedAt": "2021-06-03",
+        "author": "帆楼0401",
+        "conflictOfInterest": "none",
+        "notes": "受信感度が悪い、通信制限がかかると厳しいとの声。"
       }
     ],
     "claims": [
       {
-        "claim": "下り最大1.2Gbpsの高速通信と安定した4G接続が可能で、一部の5Gルーターより実用的な速度が出る環境がある",
+        "claim": "下り最大1.2Gbpsの高速通信",
         "category": "comparativeAdvantage",
-        "confidence": "high",
-        "supportingSourceIds": [
-          "source-1",
-          "source-2"
-        ],
-        "crossChecked": true,
-        "notes": "レビューサイトのユーザー報告と検証ブログの双方で、高速かつ安定した通信品質が確認されている。5Gの不安定なエリアでは4G固定のW06が優位になるという一致した見解あり。"
-      },
-      {
-        "claim": "長期間の使用によりバッテリーが劣化・膨張しやすく、内蔵型のため交換ができない",
-        "category": "durability",
-        "confidence": "high",
-        "supportingSourceIds": [
-          "source-1"
-        ],
+        "confidence": "medium",
+        "supportingSourceIds": ["kakaku-spec"],
         "crossChecked": false,
-        "notes": "価格.comの複数レビューでバッテリー膨張や劣化の報告がある。公式にはバッテリー内蔵で交換不可と明記されているため事実と判断可能。"
+        "notes": "理論値であり、USB接続時かつ一部エリア限定での速度であるため、実際のWi-Fi利用時にこの速度が出るわけではない点に注意が必要。"
       }
     ],
-    "lastInvestigated": "2026-03-17",
+    "lastInvestigated": "2026-08-31",
+    "investigatedPrice": "価格情報なし",
     "competitiveAnalysis": [
       {
-        "name": "【au版】Speed Wi-Fi NEXT W06 HWD37SKA ブラック×ブルー",
-        "asin": "B07STLVVH4",
-        "priceComparison": "本商品のau版（同一機種の色違い）。価格は約3,270円と整備済み品（5,980円）に比べて大幅に割安だが、中古品の状態（バッテリー劣化等）にバラツキがある可能性がある。",
+        "name": "富士ソフト +F FS040W",
+        "asin": "B08CDQQSMP",
+        "priceComparison": "FS040WはSIMフリーモデルで新品のため高価。W06整備済み品は安価に入手できるが、回線縛り(au/UQ)や中古である点に注意。",
         "featureComparison": [
-          "共通点：ハードウェアのスペック（下り最大1.2Gbps、3000mAhバッテリー、Type-C充電）は完全に同一。",
-          "相違点：販売コンディションの違い。本商品（B0DHXW169S）は『整備済み品（180日返品保証）』として品質が一定担保されているのに対し、B07STLVVH4は通常の中古品販売が中心。"
+          "共通点：持ち運び可能なモバイルルーター",
+          "相違点：FS040WはSIMフリーで別売りクレードル等でホームルーター化・車載対応など拡張性が高い。W06はWiMAX2+/au 4G LTEに特化しており、クレードル非対応。"
         ],
         "differentiators": [
-          "HUAWEI Speed Wi-Fi NEXT W06 (ホワイト×シルバー/整備済み品)の利点：整備済み品としての保証（180日）があり、初期不良やバッテリーの著しい劣化に対する安心感を重視するユーザーに適している。",
-          "【au版】Speed Wi-Fi NEXT W06 HWD37SKA ブラック×ブルーの利点：とにかく初期費用を安く抑えたい、またはブラック系のカラーを好む場合に適している。"
+          "Speed Wi-Fi NEXT W06の利点：WiMAX回線を安価な端末で利用したい、コンパクトさを重視する人向け",
+          "富士ソフト +F FS040Wの利点：様々なキャリアのSIMを自由に使いたい、自宅ではクレードルに挿してホームルーターとして使いたい人向け"
         ]
       },
       {
-        "name": "富士ソフト SIMフリー wi-fi ルーター +F FS030W",
-        "asin": "B01MQVDV3X",
-        "priceComparison": "価格は約10,086円とW06の整備済み品より約4,000円高いが、完全なSIMフリー機であり幅広いキャリアのバンドに対応しているため汎用性コストは高い。",
+        "name": "Aterm MR51FN",
+        "asin": "B0BQMX9RT6",
+        "priceComparison": "MR51FNは5G対応の最新モデルのため非常に高価。W06は4G世代の整備済み品であり価格重視向け。",
         "featureComparison": [
-          "共通点：持ち運び可能なモバイルWi-Fiルーターである点。",
-          "相違点：W06がau/WiMAX回線に特化（一部バンド制約あり）しているのに対し、FS030Wはdocomo/au/Softbankなど多様な回線で使える汎用性の高いSIMフリーモデルである点。またFS030Wはバッテリーパックの交換が可能。"
+          "共通点：国内メーカー系のモバイルルーター",
+          "相違点：MR51FNは5G対応、SIMフリー、Wi-Fi 6対応。W06は4G/WiMAX2+まで、Wi-Fi 5(ac)までの対応。"
         ],
         "differentiators": [
-          "HUAWEI Speed Wi-Fi NEXT W06 (ホワイト×シルバー/整備済み品)の利点：au系のSIM（mineoやUQ等）を利用予定で、より高速な通信（最大1.2Gbps）とスマートなデザインを安価に求める場合。",
-          "富士ソフト SIMフリー wi-fi ルーター +F FS030Wの利点：海外利用や複数キャリアのSIMを入れ替えて使いたい場合、またはバッテリー劣化時に自分でバッテリーパックを交換して長く使いたい場合。"
+          "Speed Wi-Fi NEXT W06の利点：とりあえず安くWiMAXを使えればよく、5G通信を必要としていない人向け",
+          "Aterm MR51FNの利点：5Gの超高速通信を利用したい、最新のWi-Fi規格で安定して通信したい人向け"
         ]
       },
       {
-        "name": "【WiMAX】Speed Wi-Fi NEXT WX06",
-        "asin": "B09N2KJRMS",
-        "priceComparison": "NEC製の同世代ライバル機。価格は約4,980円と同等かやや安い。機能面でのコスパは拮抗している。",
+        "name": "富士ソフト +F FS050W",
+        "asin": "B0BVBLN3XV",
+        "priceComparison": "FS050Wは5G対応モデルのため高価。",
         "featureComparison": [
-          "共通点：WiMAX 2+対応のモバイルルーターであり、コンパクトなサイズ感。",
-          "相違点：WX06はNEC製でバッテリー交換が可能である一方、最高通信速度はW06（1.2Gbps）より劣る。また、ユーザーレビューではW06の方が動作の安定性（再起動の少なさなど）で高く評価されている傾向がある。"
+          "共通点：持ち運びに特化したモバイルルーター",
+          "相違点：FS050Wは5G・eSIM対応でバッテリーレス運用も可能。W06は4G世代でバッテリー内蔵のみ。"
         ],
         "differentiators": [
-          "HUAWEI Speed Wi-Fi NEXT W06 (ホワイト×シルバー/整備済み品)の利点：少しでも速い通信速度を求める場合や、ルーターの安定動作（フリーズや予期せぬ再起動を避けたい）を重視する場合。",
-          "【WiMAX】Speed Wi-Fi NEXT WX06の利点：長期間使用を見据えて、バッテリーが劣化した際に自分で簡単に交換できることを最重視する場合。"
+          "Speed Wi-Fi NEXT W06の利点：初期費用を抑えてWi-Fi環境を用意したい人向け",
+          "富士ソフト +F FS050Wの利点：5G通信、eSIM、バッテリー劣化を気にしないバッテリーレス運用など最新機能・長寿命運用を求める人向け"
         ]
       },
       {
-        "name": "【整備済み品】HUAWEI Pocket WiFi LTE GL06P Ymobile",
-        "asin": "B0DHY55VW8",
-        "priceComparison": "価格は約3,980円とより安価だが、世代が古くLTE通信速度が大幅に劣るため、コストパフォーマンスはW06の方が圧倒的に高い。",
+        "name": "ZTE Cute Wi-Fi",
+        "asin": "B09JSFKKC9",
+        "priceComparison": "ZTE Cute Wi-Fiは安価なSIMフリールーター。価格帯はW06の整備済み品に近いか少し高い程度。",
         "featureComparison": [
-          "共通点：HUAWEI製のモバイルルーターで、整備済み品として販売されている点。",
-          "相違点：GL06PはY!mobile回線向けかつ旧世代（LTE）のため、W06のWiMAX 2+ / 高速LTE（1.2Gbps）に比べて通信速度や対応バンドの面で著しく劣る。"
+          "共通点：小型軽量で持ち運びやすいモバイルルーター",
+          "相違点：ZTE Cute Wi-FiはSIMフリーで多様な回線に対応。W06はWiMAX/au回線用。"
         ],
         "differentiators": [
-          "HUAWEI Speed Wi-Fi NEXT W06 (ホワイト×シルバー/整備済み品)の利点：現代のWebブラウジングや動画視聴に耐えうる高速通信性能が必要な、ほぼすべてのケース。",
-          "【整備済み品】HUAWEI Pocket WiFi LTE GL06P Ymobileの利点：Y!mobile系の特定の古いSIMを利用する場合や、速度は問わず数千円でも予算を削りたい場合。"
+          "Speed Wi-Fi NEXT W06の利点：au回線やUQ WiMAXのSIMを利用する前提の人向け",
+          "ZTE Cute Wi-Fiの利点：格安SIMなど、WiMAX以外の様々なSIMカードを使いたい人向け"
         ]
       },
       {
-        "name": "Speed Wi-Fi HOME 5G L11 ホワイト (UQ版 ZTR01SWU)",
-        "asin": "B099JXLJM4",
-        "priceComparison": "価格は約8,600円。据え置き型で5G対応である点を考慮すると、自宅専用ならコストパフォーマンスは非常に高い。",
+        "name": "カシムラ NKD-249",
+        "asin": "B0B9J5QP15",
+        "priceComparison": "カシムラNKD-249はUSB給電型の安価なSIMフリールーター。用途が異なるため価格差だけでなく使い方で選ぶ必要がある。",
         "featureComparison": [
-          "共通点：WiMAX回線を利用するルーターである点。",
-          "相違点：W06がバッテリー内蔵の持ち運び可能なモバイルルーターであるのに対し、L11はコンセント給電専用の据え置き型ホームルーターであり、5G通信に対応している。"
+          "共通点：4G通信対応",
+          "相違点：NKD-249はバッテリー非搭載のUSB給電特化（車載等）。W06はバッテリー搭載の一般的なモバイルルーター。"
         ],
         "differentiators": [
-          "HUAWEI Speed Wi-Fi NEXT W06 (ホワイト×シルバー/整備済み品)の利点：外出先や出張先など、屋外へ持ち運んでインターネットを利用したい場合。",
-          "Speed Wi-Fi HOME 5G L11 ホワイト (UQ版 ZTR01SWU)の利点：完全に自宅固定で利用し、より高速な5G通信と強力なWi-Fi電波（安定性）を求める場合。"
+          "Speed Wi-Fi NEXT W06の利点：バッテリー内蔵で、電源がない場所でも単体で通信したい人向け",
+          "カシムラ NKD-249の利点：車の中などUSB電源がある場所で常時給電しながら使いたい（バッテリー膨張の心配をしたくない）人向け"
         ]
       },
       {
-        "name": "GlocalMe UPP U20 4G対応 ポケットWiFi",
-        "asin": "B0B5KJFWDV",
-        "priceComparison": "価格は約12,990円。物理SIM不要のクラウドSIM技術に対応しており、海外旅行等での利便性を買えば妥当な価格だが、国内での単一回線利用としてはW06の倍以上の価格で割高。",
+        "name": "リチャージWiFi M4",
+        "asin": "B0DXVNKZ8T",
+        "priceComparison": "リチャージWiFiはギガ（通信量）込みの買い切りモデル。W06は端末のみ。",
         "featureComparison": [
-          "共通点：4G対応のポータブルWi-Fiルーターである点。",
-          "相違点：GlocalMe U20は物理SIM不要で世界中のネットワークに繋がるクラウドSIMに対応し、都度チャージで利用できる点が最大の特徴。W06は基本的に国内の物理SIM（au/WiMAX系）に依存する。"
+          "共通点：モバイル通信機器",
+          "相違点：リチャージWiFiは月額契約不要のプリペイド型クラウドSIM。W06は自身でSIM(au/UQ系)を用意する必要がある。"
         ],
         "differentiators": [
-          "HUAWEI Speed Wi-Fi NEXT W06 (ホワイト×シルバー/整備済み品)の利点：国内で特定の格安SIM（mineo等）やWiMAX契約を使って、安価かつ高速にデータ通信を行いたい日常用途。",
-          "GlocalMe UPP U20 4G対応 ポケットWiFiの利点：海外出張や旅行が多く、現地のSIMカードを購入・設定する手間を省き、クラウドSIMで手軽に世界中で通信したい場合。"
+          "Speed Wi-Fi NEXT W06の利点：既にau系やWiMAXのSIMを持っており、端末だけを安く交換・追加したい人向け",
+          "リチャージWiFi M4の利点：通信契約の手間を省き、必要な分だけチャージして使いたい人向け"
         ]
       }
     ],
     "recommendation": {
       "targetUsers": [
-        "安価にモバイルルーターの端末だけ（白ロム）を入手したいau/UQ回線系の格安SIMユーザー",
-        "5Gの不安定なエリアに住んでおり、実績のある4G（WiMAX 2+）で安定した通信を確保したい人",
-        "出張やカフェでの作業用に、デザインが良く持ち運びやすい高速ルーターを探しているビジネスマン"
+        "すでにau回線やUQ WiMAXのSIMカードを契約・所有しており、安価に交換用の端末（中古・整備済み品）を探している人",
+        "クレードルでの有線LAN接続を必要とせず、小型軽量で持ち運びやすさを重視する人"
       ],
       "pros": [
-        "整備済み品として一定の品質保証（180日）がありながら、5,980円という手頃な価格で購入可能",
-        "下り最大1.2Gbpsの高性能と、スマホのような直感的なタッチパネル操作",
-        "Type-Cケーブルでの充電と有線接続対応により、PCとの親和性が高い"
+        "約125gと軽量かつコンパクトなため、カバンやポケットに入れても邪魔にならず、ストレスなく持ち運べる",
+        "以前のHUAWEI製ルーターからの「Wi-Fiお引越し機能」があるため、スマホやPC側のWi-Fi再設定の手間が省ける"
       ],
       "cons": [
-        "バッテリーが内蔵型のため、長期間使用した際の劣化時に自分で交換することができない",
-        "発熱しやすい傾向があり、夏場の屋外など高温環境での長時間使用には注意が必要",
-        "基本的にはau/UQ回線に最適化されており、docomoやSoftbank回線での利用にはバンド対応の面で制限がある"
+        "クレードル接続機能が廃止されているため、自宅でPC等に有線LANで安定接続したい人には適さない",
+        "SIMフリーではなく、利用できる回線が限定される（主にau/WiMAX系）ため、格安SIMなどを自由に選びたい人は別のSIMフリー機種を推奨する",
+        "整備済み品（中古）であるため、バッテリーの消耗具合に個体差があるリスクを許容できない人は新品を検討すること"
       ],
-      "score": 82,
-      "scoreRationale": "[基本点: 70]\n[加点: +8] (下り最大1.2Gbpsの高速通信と安定した動作で実用性が高い)\n[加点: +5] (タッチパネルの操作性やType-C対応など、使い勝手に優れる)\n[加点: +4] (整備済み品として180日の保証がつき、約6,000円というコストパフォーマンスは良好)\n[減点: -5] (バッテリーが内蔵型で交換できず、経年劣化や膨張のリスクがある点)\n[合計: 82]"
+      "score": 73,
+      "scoreRationale": "[基本点: 70]\n[加点: +5] (約125gのコンパクト設計で持ち運びに優れ、設定引き継ぎ機能も便利)\n[減点: -2] (前モデルからクレードル対応が廃止され、拡張性が低下した)\n[合計: 73]"
     },
     "technicalSpecs": {
-      "dimensions": {
-        "height": "64mm",
-        "width": "128mm",
-        "depth": "11.9mm"
-      },
-      "weight": "125g",
-      "connectivity": {
-        "wireless": "IEEE802.11a/b/g/n/ac",
-        "maximumSpeed": "下り最大1.2Gbps",
-        "maxConnections": "16台",
-        "simType": "nano-SIM"
+      "display": {
+        "size": "2.4インチ",
+        "resolution": "320×240",
+        "type": "タッチパネル対応液晶"
       },
       "battery": {
         "capacity": "3000mAh",
-        "continuousUsage": "約540分（WiMAX 2+ スマート設定時）"
+        "charging": "USB Type-C",
+        "playbackTime": "連続通信時間: 約540分 (WiMAX 2+ スマート設定時) / 約500分 (WiMAX 2+ ハイパフォーマンス時)"
       },
-      "interface": "USB Type-C",
-      "display": "タッチパネル対応液晶",
-      "color": "ホワイト×シルバー"
+      "dimensions": {
+        "height": "64mm",
+        "width": "128mm",
+        "depth": "11.9mm",
+        "weight": "125g"
+      },
+      "weight": "125g",
+      "connectivity": [
+        "WiMAX 2+",
+        "4G LTE",
+        "Wi-Fi 5 (IEEE802.11a/b/g/n/ac) 2.4GHz/5GHz",
+        "USB 3.0 Type-C (有線テザリング対応)"
+      ],
+      "other": [
+        "対応SIM: nano-SIM",
+        "最大接続台数: 16台 (Wi-Fi) + 1台 (USB)",
+        "※クレードル非対応"
+      ]
     }
   }
 }
