@@ -1,7 +1,7 @@
 {
   "analysis": {
     "productName": "味の素 クノール たんぱく質がしっかり摂れるスープ コーンクリーム スティック 15本入",
-    "parentAsin": "B092QXFHV9",
+    "parentAsin": "B0H3NZ3SBL",
     "productDescription": "手軽においしく、毎日の食事で不足しがちな「たんぱく質」「ビタミンD」「カルシウム」を摂取できる粉末タイプのコーンクリームスープです。",
     "productUsage": [
       "お湯を注ぐだけで簡単に調理し、朝食や昼食のスープとして飲む",
@@ -84,7 +84,10 @@
         "claim": "1食あたり8gのたんぱく質、およびビタミンD、カルシウムが摂取できる",
         "category": "comparativeAdvantage",
         "confidence": "high",
-        "supportingSourceIds": ["source-1", "source-2"],
+        "supportingSourceIds": [
+          "source-1",
+          "source-2"
+        ],
         "crossChecked": true,
         "notes": "公式発表およびパッケージ記載情報で一致"
       },
@@ -92,7 +95,10 @@
         "claim": "プロテイン特有のクセがなく、通常のクノールコーンクリームと同様のおいしさである",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["source-1", "source-3"],
+        "supportingSourceIds": [
+          "source-1",
+          "source-3"
+        ],
         "crossChecked": true,
         "notes": "複数の独立したレビューサイトで「普通のスープと変わらない美味しさ」と評価されている"
       },
@@ -100,12 +106,14 @@
         "claim": "お湯で溶かす際にダマになりやすい",
         "category": "quality",
         "confidence": "medium",
-        "supportingSourceIds": ["source-1"],
+        "supportingSourceIds": [
+          "source-1"
+        ],
         "crossChecked": false,
         "notes": "Amazonレビュー等で散見されるが、お湯の温度や混ぜ方にも依存するため仮説として記載"
       }
     ],
-    "lastInvestigated": "2026-03-17",
+    "lastInvestigated": "2026-08-31",
     "competitiveAnalysis": [
       {
         "name": "味の素 クノール たんぱく質がしっかり摂れるスープ ポタージュ スティック 15本入",
@@ -206,19 +214,15 @@
       "scoreRationale": "[基本点: 70]\n[加点: +8] (「クノール」の安定した美味しさと、たんぱく質8g・カルシウム・ビタミンDが摂れる実用性の高さ)\n[加点: +10] (1杯約115円という、日常的に継続しやすい優れたコストパフォーマンス)\n[加点: +3] (計量不要で使い勝手の良いスティック包装)\n[減点: -5] (粉末がダマになりやすく、溶かす際に少し手間がかかる場合がある)\n[合計: 86]"
     },
     "technicalSpecs": {
-      "dimensions": {
-        "height": "179mm",
-        "width": "121mm",
-        "depth": "91mm"
-      },
-      "weight": "0.48kg",
-      "capacity": "15本入",
-      "flavor": "コーンクリーム",
+      "weight": "0.48kg (パッケージ総重量)",
+      "material": "粉末スープ",
+      "origin": "日本",
       "other": [
-        "たんぱく質入り",
-        "ビタミンD入り",
-        "カルシウム入り"
+        "内容量: 15本入 (スティックタイプ)",
+        "栄養素: たんぱく質、ビタミンD、カルシウム配合",
+        "フレーバー: コーンクリーム"
       ]
-    }
+    },
+    "investigatedPrice": "￥1,718"
   }
 }
