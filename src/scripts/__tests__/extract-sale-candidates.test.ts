@@ -1,4 +1,4 @@
-﻿import fs from 'node:fs';
+import fs from 'node:fs';
 import path from 'node:path';
 import { extractSaleCandidates } from '../extract-sale-candidates';
 
@@ -296,5 +296,69 @@ categories: ["家電"]
 
     expect(result.totalCandidates).toBe(1);
     expect(result.candidates[0]?.asin).toBe('ASIN_VALID');
+  });
+
+  it('should prioritize fresh and high-discount deal over older deal even if older deal has higher article score', async () => {
+    fs.writeFileSync(
+      path.join(dummyArticlesDir, 'ASIN_SUPER_HIGH_SCORE.md'),
+      `---
+title: "超高スコア商品"
+score: 100
+brand: "BrandA"
+categories: ["家電"]
+---
+レビュー本文`,
+      'utf-8',
+    );
+
+    fs.writeFileSync(
+      path.join(dummyArticlesDir, 'ASIN_FRESH_DEAL.md'),
+      `---
+title: "タイムリーな高割引商品"
+score: 80
+brand: "BrandB"
+categories: ["PC"]
+---
+レビュー本文`,
+      'utf-8',
+    );
+
+    const now = Date.now();
+    const dummyCacheData = {
+      ASIN_SUPER_HIGH_SCORE: {
+        status: 'valid',
+        timestamp: now - 1000 * 60 * 60 * 96, // 4日前（古い）
+        data: {
+          asin: 'ASIN_SUPER_HIGH_SCORE',
+          title: '古いタイムセール品',
+          category: '家電',
+          price: { amount: 10000, currency: 'JPY', formatted: '￥10,000' },
+          dealBadge: 'セール',
+          savingsPercentage: 5,
+          rating: { average: 4.2, count: 50 },
+        },
+      },
+      ASIN_FRESH_DEAL: {
+        status: 'valid',
+        timestamp: now - 1000 * 60 * 10, // 10分前（最新）
+        data: {
+          asin: 'ASIN_FRESH_DEAL',
+          title: '最新の特選タイムセール品',
+          category: 'PC',
+          price: { amount: 5000, currency: 'JPY', formatted: '￥5,000' },
+          dealBadge: '特選タイムセール',
+          savingsPercentage: 35,
+          rating: { average: 4.5, count: 300 },
+        },
+      },
+    };
+
+    fs.writeFileSync(dummyCachePath, JSON.stringify(dummyCacheData, null, 2), 'utf-8');
+
+    const result = await extractSaleCandidates(dummyCachePath, outputPath, 10, 3, dummyArticlesDir);
+
+    expect(result.totalCandidates).toBe(2);
+    expect(result.candidates[0]?.asin).toBe('ASIN_FRESH_DEAL');
+    expect(result.candidates[1]?.asin).toBe('ASIN_SUPER_HIGH_SCORE');
   });
 });

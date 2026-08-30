@@ -138,10 +138,19 @@ function calculateDealBadgeScore(candidate: SaleCandidate): number {
 
 function calculateArticleScoreBonus(articleScore?: number): number {
   if (articleScore === undefined) return 0;
-  if (articleScore >= 90) return 40;
-  if (articleScore >= 85) return 30;
-  if (articleScore >= 80) return 20;
-  if (articleScore >= 75) return 10;
+  if (articleScore >= 90) return 15;
+  if (articleScore >= 85) return 12;
+  if (articleScore >= 80) return 8;
+  if (articleScore >= 75) return 5;
+  return 0;
+}
+
+function calculateFreshnessScore(timestamp?: number): number {
+  if (!timestamp) return 0;
+  const now = Date.now();
+  const diffHours = (now - timestamp) / (1000 * 60 * 60);
+  if (diffHours <= 24) return 20;
+  if (diffHours <= 72) return 10;
   return 0;
 }
 
@@ -186,9 +195,10 @@ function calculateBrandScore(title: string, brandMatchers: RegExp[]): number {
  */
 export function calculateCandidateScore(candidate: SaleCandidate, brandMatchers: RegExp[] = []): number {
   return (
-    calculateArticleScoreBonus(candidate.articleScore) +
     calculateDealBadgeScore(candidate) +
     calculateDiscountScore(candidate.savingsPercentage) +
+    calculateFreshnessScore(candidate.timestamp) +
+    calculateArticleScoreBonus(candidate.articleScore) +
     calculateRatingScore(candidate.rating) +
     calculateBrandScore(candidate.title, brandMatchers)
   );
