@@ -9,6 +9,7 @@ import json
 import sys
 import re
 import argparse
+import collections
 import requests
 from concurrent.futures import ThreadPoolExecutor
 from typing import List, Dict, Set, Any, Optional
@@ -105,10 +106,51 @@ def _validate_recommendations_list(data: Any, errors: List[str]):
         "whyBuyNow", "source", "highlights", "url", 
         "rankReason", "scoreDisclaimer"
     ]
+    
+    rank_reasons: List[str] = []
+    why_buy_nows: List[str] = []
+    categories: Dict[str, int] = {}
+
     for i, rec in enumerate(recs):
         for rf in required_rec_fields:
             if rf not in rec:
                 errors.append(f"recommendations[{i}] (ASIN: {rec.get('asin', 'unknown')}) に必須フィールド '{rf}' が見つかりません。")
+        
+        asin = rec.get("asin", "")
+        if not re.match(r'^[A-Z0-9]{10}$', str(asin).strip().upper()):
+            errors.append(f"recommendations[{i}] の ASIN '{asin}' は有効な10桁ASINではありません。")
+
+        rank_reason = str(rec.get("rankReason", "")).strip()
+        why_buy_now = str(rec.get("whyBuyNow", "")).strip()
+        cat = str(rec.get("category", "")).strip()
+
+        if len(rank_reason) < 4:
+            errors.append(f"recommendations[{i}] (ASIN: {asin}) の 'rankReason' が短すぎるか空です。")
+        else:
+            rank_reasons.append(rank_reason)
+
+        if len(why_buy_now) < 10:
+            errors.append(f"recommendations[{i}] (ASIN: {asin}) の 'whyBuyNow' が短すぎるか空です。")
+        else:
+            why_buy_nows.append(why_buy_now)
+
+        if cat:
+            categories[cat] = categories.get(cat, 0) + 1
+
+    # コピペ・重複の検証 (同じ文言が3件以上重複している場合はエラー)
+    for reason, count in collections.Counter(rank_reasons).items():
+        if count >= 3:
+            errors.append(f"'rankReason' に重複が見られます ('{reason}' が {count}件)。商品ごとの固有の選定理由を設定してください。")
+            
+    for why, count in collections.Counter(why_buy_nows).items():
+        if count >= 3:
+            errors.append(f"'whyBuyNow' に重複・コピペが見られます ({count}件)。商品ごとの固有の購入理由を設定してください。")
+
+    # カテゴリ分散の検証 (同一カテゴリが3件以上ある場合は警告/エラー)
+    for cat, count in categories.items():
+        if count > 2:
+            errors.append(f"カテゴリ '{cat}' の商品が {count}件 含まれています。カテゴリ分散ルール（同一カテゴリは最大2件まで）を遵守してください。")
+
 
 def _validate_investigation_artifact(analysis: Dict[str, Any], data: Any, errors: List[str]):
     """通常のアーティファクト (調査結果) の形式チェック"""
