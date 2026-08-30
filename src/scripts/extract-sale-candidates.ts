@@ -55,6 +55,10 @@ export interface ArticleMetadata {
 
 const LIMITED_SALE_KEYWORDS = ['限定', '24時間', '特選', '数量限定', '本日限定'];
 
+export function getKeepaGraphUrl(asin: string, rangeDays = 90): string {
+  return `https://graph.keepa.com/pricehistory.png?asin=${asin}&domain=5&amazon=1&new=1&used=1&salesrank=1&bb=1&range=${rangeDays}&width=600&height=300`;
+}
+
 function isLimitedTimeSaleBadge(badge?: string): boolean {
   if (!badge) return false;
   return LIMITED_SALE_KEYWORDS.some((kw) => badge.includes(kw));
