@@ -1,7 +1,7 @@
 {
   "analysis": {
-    "productName": "Sennheiser MOMENTUM True Wireless 4",
-    "parentAsin": "B0FHHGPM1S",
+    "productName": "ゼンハイザー MOMENTUM True Wireless 4",
+    "parentAsin": "B0FXB25S7P",
     "productDescription": "ゼンハイザーのフラッグシップ完全ワイヤレスイヤホン。高音質と進化したアクティブノイズキャンセリングを備え、パーソナライズ機能や新コーデック（LC3/aptX Lossless）に対応したモデルです。",
     "productUsage": [
       "高音質での音楽・動画鑑賞",
@@ -118,7 +118,7 @@
         "notes": "Bluetooth 5.4の恩恵や、バッテリー寿命の長さは多くのユーザーやレビュアーが実感している"
       }
     ],
-    "lastInvestigated": "2026-03-17",
+    "lastInvestigated": "2026-08-31",
     "competitiveAnalysis": [
       {
         "name": "Sony WF-1000XM5",
@@ -232,31 +232,32 @@
       "scoreRationale": "[基本点: 70]\n[加点: +10] (性能・機能: TWS最高峰の解像度と自然なサウンド、aptX Lossless対応)\n[加点: +8] (独自の強み: Bluetooth 5.4/Auracast対応予定の将来性と前モデルからの接続安定性の大幅改善)\n[加点: +7] (品質・デザイン: エルゴノミクスデザインと高級感ある金属調の仕上げ)\n[減点: -3] (コストパフォーマンス: 約4万円と非常に高価で、他社ハイエンドよりやや割高)\n[合計: 92]"
     },
     "technicalSpecs": {
+      "battery": {
+        "playbackTime": "単体最大7.5時間 / ケース込み最大30時間",
+        "charging": "USB Type-C / Qiワイヤレス充電対応"
+      },
       "dimensions": {
         "height": "44.1mm",
         "width": "70.1mm",
-        "depth": "34.8mm"
+        "depth": "34.8mm",
+        "weight": "72.4g (ケース込) / 6.2g (イヤホン片側)"
       },
       "weight": "72.4g (ケース込), 6.2g (イヤホン片側)",
-      "driver": "7mm TrueResponse ダイナミックドライバー",
-      "connectivity": {
-        "bluetooth": "Bluetooth 5.4",
-        "codec": "SBC, AAC, aptX, aptX Adaptive, aptX Lossless, LC3(アップデート予定)",
-        "multipoint": "2台同時接続対応"
-      },
-      "battery": {
-        "earbuds": "最大7.5時間",
-        "caseTotal": "最大30時間再生",
-        "charging": "USB-C, Qiワイヤレス充電対応"
-      },
-      "noiseCancel": "ハイブリッドアダプティブANC (外音取り込み機能付き)",
+      "connectivity": [
+        "Bluetooth 5.4",
+        "SBC / AAC / aptX / aptX Adaptive / aptX Lossless / LC3(アップデート予定)",
+        "2台同時マルチポイント接続対応"
+      ],
       "other": [
         "防滴性能: IP54 (イヤホン本体のみ)",
         "パーソナライズ機能搭載",
         "Amazon.co.jp限定エージング音源セット",
         "Snapdragon Sound対応",
-        "Auracast対応予定"
+        "Auracast対応予定",
+        "7mm TrueResponse ダイナミックドライバー",
+        "ハイブリッドアダプティブANC (外音取り込み機能付き)"
       ]
-    }
+    },
+    "investigatedPrice": "￥43,127"
   }
 }
