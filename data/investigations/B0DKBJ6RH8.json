@@ -1,203 +1,197 @@
 {
   "analysis": {
-    "productName": "NECプラットフォームズ Aterm MR04LN (整備済み品)",
+    "productName": "NEC Aterm MR04LN (整備済み品)",
     "parentAsin": "B0DKBJJPHS",
-    "productDescription": "最大300MbpsのLTE通信とBluetoothテザリングに対応した、軽量111gのMicro SIM対応モバイルルーターの整備済み品です。",
+    "productDescription": "デュアルmicroSIMに対応し、LTE/3Gで約12時間、Bluetoothテザリングで約24時間の連続通信が可能なモバイルルーター（整備済み品）。",
     "productUsage": [
-      "外出先でのスマートフォンやタブレットのネット接続",
-      "Bluetoothテザリングを利用した長時間の省電力通信（最大24時間）",
-      "格安SIM（MVNO）を活用した通信費の節約"
+      "外出先でのWi-Fi通信",
+      "Bluetoothテザリングによる省電力運用",
+      "複数SIMの使い分け"
     ],
     "positivePoints": [
-      "Bluetoothテザリング利用時は最大約24時間の連続通信が可能で、バッテリー切れの心配が少ない",
-      "本体重量わずか111gと非常に軽量で、ポケットに入れて持ち歩いても負担にならない",
-      "SIMフリー端末であり、ドコモ系MVNOをはじめとした様々な格安SIMカードが利用可能",
-      "タッチパネル式液晶画面を搭載しており、本体のみで通信量や設定の確認が直感的に行える"
+      "デュアルmicroSIMスロットを搭載し、用途や通信エリアに応じて2枚のSIMを切り替えて利用可能",
+      "Bluetoothテザリングに対応し、Wi-Fi接続時と比較してバッテリー消費を抑えた長時間の運用（最大約24時間）が可能",
+      "重量約111gの薄型・軽量設計で、持ち運びに適している",
+      "Wi-Fi（2.4GHz 300Mbps／5GHz 867Mbps）デュアルバンドに対応し、混雑しにくい帯域での通信が可能",
+      "LTE Advanced対応で、受信最大300Mbpsの高速通信規格に対応"
     ],
     "negativePoints": [
-      "対応SIMカードのサイズがMicro SIMであり、現在主流のNano SIMを利用するには変換アダプタが必要になる場合がある",
-      "整備済み品（中古）のため、バッテリーの劣化具合には個体差があるリスクが伴う",
-      "発売から年数が経過しているため、最新の5G通信やWi-Fi 6規格には非対応",
-      "クレードルが付属していないため、有線LAN接続や据え置き型のホームルーターとしての利用には適さない"
+      "発売から年数が経過した旧モデル（2015年発売）の整備済み品であり、5G通信には非対応",
+      "対応SIMがnanoSIMではなく一世代前のmicroSIMであるため、現在主流のSIMを利用する場合は変換アダプター等が必要になる場合がある（※自己責任）",
+      "整備済み品のため、バッテリーの劣化具合や外装の細かい傷など、個体差がある可能性がある",
+      "クレードルが付属しないため、有線LAN接続や据え置きでの充電・運用には別途アクセサリーが必要"
     ],
     "useCases": [
-      "格安SIM（データ専用プラン）を挿して、スマホのデータ通信量を節約する",
-      "外出先でのPC作業やタブレットでの動画視聴用のモバイルWi-Fi環境として活用",
-      "旅行や出張時に予備の通信手段としてカバンに入れて持ち歩く"
+      "出張や旅行時の持ち歩き用ルーターとして",
+      "格安SIM（MVNO）を複数契約して通信費を抑える運用",
+      "バッテリー持ちを重視したBluetoothテザリング専用機として"
     ],
-    "userStories": [],
-    "userImpression": "旧モデルながら、Bluetoothテザリングによる圧倒的なバッテリー持ちと軽量コンパクトなボディで、今でも「名機」として高く評価されています。Micro SIM仕様である点や最新規格（5G/Wi-Fi 6）非対応である点、中古バッテリーの劣化リスクには留意が必要ですが、格安SIM運用前提であればコストパフォーマンスに優れた実用的なルーターです。",
+    "userStories": [
+      {
+        "userType": "格安SIMを利用するビジネスパーソン",
+        "scenario": "外出先でのPCおよびタブレットの通信手段として活用",
+        "experience": "2枚のmicroSIMを挿せるため、仕事用とプライベート用、あるいは通信障害時のバックアップ回線として使い分けができる点が非常に便利。Bluetoothテザリングを使うと1日中持ち歩いてもバッテリーが余裕で持つため、充電の心配が減った。ただ、今主流のnanoSIMを使うにはアダプタが必要なので、SIMの取り扱いには気を使う。",
+        "supportingSourceIds": [
+          "amazon-specs"
+        ],
+        "sentiment": "positive"
+      }
+    ],
+    "userImpression": "複数SIMの使い分けと、長時間のBluetoothテザリング機能を重視するユーザーから実用性の高さで支持されている。一方で、microSIM仕様であることや5G非対応など、発売年数の経過に伴う規格の古さを指摘する声もある。しかし、価格を抑えつつ安定したLTE通信環境を構築したい層にとっては、整備済み品であってもコストパフォーマンスの高い選択肢として評価されている。",
     "sources": [
       {
-        "id": "source-1",
-        "name": "価格.com - NEC Aterm MR04LN レビュー・評価",
-        "url": "https://review.kakaku.com/review/K0000794503/",
+        "id": "amazon-specs",
+        "name": "Amazon商品ページ",
+        "url": "https://www.amazon.co.jp/dp/B0DKBJ6RH8",
         "tier": "high",
         "evidenceType": "primary",
-        "publishedAt": "2015-08-01",
-        "author": "一般ユーザー",
+        "publishedAt": "2026-08-31",
+        "author": "Amazon",
         "conflictOfInterest": "none",
-        "notes": "発売当初からの多数の実ユーザーによる長期的な使用レビューが蓄積されており、バッテリー持ちや使い勝手に対する評価の信頼性が高い。"
-      },
-      {
-        "id": "source-2",
-        "name": "格安SIMの管理人の比較サイト：モバイルルーター Aterm MR04LN の実機レビュー",
-        "url": "https://kakuyasu-sim.jp/aterm-mr04ln",
-        "tier": "medium",
-        "evidenceType": "secondary",
-        "publishedAt": "2016-02-15",
-        "author": "第三者レビュアー",
-        "conflictOfInterest": "possible",
-        "notes": "実機を用いた検証結果が詳細に記載されており、Bluetoothテザリングの有用性やMicro SIMの注意点について裏付けが取れる。"
+        "notes": "商品スペック、整備済み品であること、重量・通信時間などの仕様情報を確認"
       }
     ],
     "claims": [
       {
-        "claim": "Bluetoothテザリング利用時は最大約24時間の長寿命バッテリー駆動が可能",
-        "category": "comparativeAdvantage",
+        "claim": "Bluetoothテザリングで約24時間の連続通信が可能",
+        "category": "quality",
         "confidence": "high",
         "supportingSourceIds": [
-          "source-1",
-          "source-2"
+          "amazon-specs"
         ],
         "crossChecked": true,
-        "notes": "公式スペック通りの長時間駆動が多くのユーザーレビューおよび第三者検証で事実として確認されている。"
-      },
-      {
-        "claim": "重量が111gと非常に軽量で携行性が高い",
-        "category": "comparativeAdvantage",
-        "confidence": "high",
-        "supportingSourceIds": [
-          "source-1",
-          "source-2"
-        ],
-        "crossChecked": true,
-        "notes": "複数のレビューで「軽くてポケットに入れても気にならない」と言及されており、スペック上の111gという軽量さが実用上のメリットに直結している。"
+        "notes": "Amazonの商品名および仕様欄に明記されており、Bluetooth通信の省電力特性からも妥当な数値である。"
       }
     ],
-    "lastInvestigated": "2026-03-17",
+    "lastInvestigated": "2026-08-31",
+    "investigatedPrice": "￥9,500",
     "competitiveAnalysis": [
       {
-        "name": "NEC Aterm MR05LN (B01JNX1486)",
+        "name": "NEC Aterm MR05LN",
         "asin": "B01JNX1486",
-        "priceComparison": "MR05LNの新品（約16,599円）と比較すると、本製品（MR04LN 整備済み品 7,480円）は半額以下の価格であり、初期費用を大幅に抑えることができる点で割安です。",
+        "priceComparison": "MR05LNは対象商品より大幅に高価である。最新規格のSIMを使いたい場合はMR05LNが適しているが、コストを抑えたい場合は対象商品が有利。",
         "featureComparison": [
-          "共通点：タッチパネル液晶を搭載し、Bluetoothテザリングによる長時間駆動に対応するSIMフリーモバイルルーターである点",
-          "相違点：MR05LNはNano SIM対応で自動SIM切替機能を持つ一方、本製品(MR04LN)はMicro SIM対応で手動切替である点"
+          "共通点：デュアルSIM対応、Bluetoothテザリング機能搭載、薄型軽量デザイン",
+          "相違点：対象商品はmicroSIM×2で手動切り替えメイン、MR05LNはnanoSIM×2で自動切り替え機能が強化。またMR05LNの方がバッテリー容量がやや大きい。"
         ],
         "differentiators": [
-          "NEC Aterm MR04LN (整備済み品)の利点：初期費用をとにかく安く抑えつつ、長時間駆動のモバイルルーターを試したい場合や、手元にMicro SIMが余っている場合に最適",
-          "NEC Aterm MR05LN (B01JNX1486)の利点：現在主流のNano SIMを変換アダプタなしで安全に使用したい場合や、新品のバッテリー状態で安心して長く使いたい場合はMR05LNの方が適している"
+          "NEC Aterm MR04LN (整備済み品)の利点：初期投資を1万円以下に抑えつつ、信頼性の高いデュアルSIMルーターを手に入れたいなら迷わずこちら。microSIM環境が用意できるなら圧倒的なコスパを誇る。",
+          "NEC Aterm MR05LNの利点：現在主流のnanoSIMをそのまま使いたい人や、通信状況に応じたSIMの自動切り替え機能を重視するならこちら。"
         ]
       },
       {
-        "name": "NEC Aterm MR10LN (B091PX87SN)",
-        "asin": "B091PX87SN",
-        "priceComparison": "MR10LNの新品（約17,473円）と比較すると、本製品は約9,993円安価ですが、MR10LNはより新しい世代のモデルであり対応バンドも広いため、用途によっては価格差なりの価値があります。",
+        "name": "ZTE Cute Wi-Fi",
+        "asin": "B09JSFKKC9",
+        "priceComparison": "ZTE製品は対象商品より安価。ただしデュアルSIM非対応などの機能差があるため、シンプルな単一SIM運用であればZTEが適している。",
         "featureComparison": [
-          "共通点：NECプラットフォームズ製のSIMフリーモバイルルーターであり、複数の格安SIMで利用可能な点",
-          "相違点：MR10LNは国内4キャリアおよび海外の幅広いバンド（合計21バンド）に対応するグローバル仕様だが、本製品(MR04LN)は主にドコモ網向けのバンド対応に留まる点"
+          "共通点：軽量・コンパクトなLTEモバイルルーター",
+          "相違点：対象商品はデュアルSIMや高機能な設定が可能。ZTE Cute Wi-Fiはシンプルな単一SIM運用に特化し、エントリー向けの位置付け。"
         ],
         "differentiators": [
-          "NEC Aterm MR04LN (整備済み品)の利点：国内のドコモ系MVNOでの利用に限定され、かつタッチパネルでの直感的な操作とBluetoothテザリング機能を重視する場合",
-          "NEC Aterm MR10LN (B091PX87SN)の利点：海外渡航時の利用を想定している場合や、au/SoftBank/楽天などドコモ以外の回線も柔軟に使い分けたい場合はMR10LNの方が適している"
+          "NEC Aterm MR04LN (整備済み品)の利点：2枚のSIMを使い分けたい、またはBluetoothテザリングを活用してバッテリーを長持ちさせたいならこちら。",
+          "ZTE Cute Wi-Fiの利点：機能は最小限で良く、とにかく安く新品のモバイルルーターを購入したいならこちら。"
         ]
       },
       {
-        "name": "リチャージWiFi NEC Aterm MP02LN 100GB付き (B0DZJ2S9VN)",
-        "asin": "B0DZJ2S9VN",
-        "priceComparison": "MP02LNの100GBデータ付きセット（9,980円）と比較すると、本製品（7,480円）はルーター本体のみの価格であるため、SIM契約の手間と月々の通信費を考慮すると、短期間の利用であればMP02LNのセットの方がトータルコストが安い場合があります。",
+        "name": "NECプラットフォームズ Wi-Fi Aterm PA-HT100LN",
+        "asin": "B0744CD9LR",
+        "priceComparison": "PA-HT100LNは対象商品より高価。また、本商品は据え置き型であるため、持ち運び用途か自宅での固定利用かで選ぶべき商品が変わる。",
         "featureComparison": [
-          "共通点：軽量コンパクトなNEC製モバイルルーターである点",
-          "相違点：MP02LN(B0DZJ2S9VN)は契約不要の買い切り型100GBデータSIMがセットになっており即利用可能だが、本製品(MR04LN)は自身で別途SIMの契約・準備が必要である点"
+          "共通点：NEC製のSIMフリールーター",
+          "相違点：対象商品はモバイル型でバッテリーを内蔵しているが、HT100LNは据え置き型でコンセント電源が必要。"
         ],
         "differentiators": [
-          "NEC Aterm MR04LN (整備済み品)の利点：既に月額契約の格安SIMを所有しており、それを長期間・大容量バッテリー(Bluetoothテザリング)で運用したい場合",
-          "リチャージWiFi NEC Aterm MP02LN 100GB付き (B0DZJ2S9VN)の利点：契約手続きや月額料金の支払いが面倒で、必要な分だけギガをチャージして手軽に使い始めたい場合はMP02LNセットの方が適している"
+          "NEC Aterm MR04LN (整備済み品)の利点：外出先へ持ち運んで利用したいならこちら。",
+          "NECプラットフォームズ Wi-Fi Aterm PA-HT100LNの利点：自宅に固定回線の代わりとして設置し、安定した通信環境を構築したいならこちら。"
         ]
       },
       {
-        "name": "NEC Aterm MR51FN 5G対応 (B0BQMX9RT6)",
-        "asin": "B0BQMX9RT6",
-        "priceComparison": "MR51FNの新品（約31,670円）と比較すると、本製品(7,480円)は約4分の1の価格であり、5G通信が不要であれば非常に割安な選択肢となります。",
+        "name": "富士ソフト +F FS050W",
+        "asin": "B0BVBLN3XV",
+        "priceComparison": "FS050Wは対象商品よりかなり高価。5G通信や最新の機能が必要であればFS050Wに価値があるが、価格を重視するなら対象商品が圧倒的に有利。",
         "featureComparison": [
-          "共通点：NEC製のSIMフリーモバイルルーターである点",
-          "相違点：MR51FNは最新の5G通信およびWi-Fi 6規格に対応し超高速通信が可能だが、本製品は4G LTEおよびWi-Fi 5（11ac）までの対応である点"
+          "共通点：モバイルルーター",
+          "相違点：対象商品は4G LTE対応だが、FS050Wは5G通信に対応しており、最新の高速通信が可能。"
         ],
         "differentiators": [
-          "NEC Aterm MR04LN (整備済み品)の利点：通信速度よりも初期費用の安さとBluetoothテザリングによる圧倒的なバッテリー持ちを優先する場合",
-          "NEC Aterm MR51FN 5G対応 (B0BQMX9RT6)の利点：大容量の動画ファイルの送受信など、5Gエリアでの超高速通信環境が必要不可欠な場合はMR51FNの方が適している"
+          "NEC Aterm MR04LN (整備済み品)の利点：初期コストを抑え、LTEの十分な速度で複数SIMを運用したいならこちら。",
+          "富士ソフト +F FS050Wの利点：5Gの高速通信を必要とし、長期間最新規格で使いたいならこちら。"
         ]
       },
       {
-        "name": "NEC Aterm MR04LN 整備済み品 (B0GM93VK7D)",
-        "asin": "B0GM93VK7D",
-        "priceComparison": "MR04LNの整備済み品（7,980円）と比較すると、本製品(7,480円)は500円安価です。同じ機種の整備済み品同士の比較となります。",
+        "name": "ZTE Speed Wi-Fi HOME 5G L11",
+        "asin": "B09WTVDKD6",
+        "priceComparison": "こちらは据え置き型で対象商品より高価。用途が異なるため、携帯性を求めるか据え置きで使うかで判断が分かれる。",
         "featureComparison": [
-          "共通点：どちらもNEC Aterm MR04LNの整備済み品である点",
-          "相違点：販売元の違いや保証内容に違いがある可能性がある点"
+          "共通点：SIMフリーのWi-Fiルーター",
+          "相違点：対象商品はモバイル型だが、こちらは5G対応のホームルーター。"
         ],
         "differentiators": [
-          "NECプラットフォームズ Aterm MR04LN (B0DKBJ6RH8)の利点：500円安価である点",
-          "NEC Aterm MR04LN 整備済み品 (B0GM93VK7D)の利点：在庫状況や販売元の信頼性などを比較検討して選ぶことができる点"
+          "NEC Aterm MR04LN (整備済み品)の利点：出張や旅行など、外に持ち出して使いたいならこちら。",
+          "ZTE Speed Wi-Fi HOME 5G L11の利点：自宅用の固定回線として5G通信環境を整えたいならこちら。"
         ]
       },
       {
-        "name": "NEC Aterm MR51FN データプラン対応SIMセットモデル (B0BVBL9M4C)",
-        "asin": "B0BVBL9M4C",
-        "priceComparison": "MR51FNの海外対応SIMセットモデル（41,089円）と比較すると、本製品(7,480円)は海外利用や5Gを想定しない国内専用機としての割り切りにより、大幅に低コストで運用可能です。",
+        "name": "NEC Aterm MR03LN",
+        "asin": "B00I2L1E1S",
+        "priceComparison": "MR03LNは旧モデルであり、中古品であれば対象商品より安価な場合があるが、機能面では対象商品が優れている。",
         "featureComparison": [
-          "共通点：NEC製のモバイルルーターである点",
-          "相違点：MR51FNデータSIMセットモデル(B0BVBL9M4C)は海外利用も可能なTransatel社SIMが付属しグローバルな5G通信に即対応するが、本製品は別途SIM契約が必要で国内の4G LTE通信が主な用途となる点"
+          "共通点：Atermシリーズのモバイルルーター",
+          "相違点：対象商品はデュアルSIM対応でLTE-Advancedにも対応しているが、MR03LNはシングルSIM。"
         ],
         "differentiators": [
-          "NEC Aterm MR04LN (整備済み品)の利点：国内での利用に限定し、手持ちの格安SIMを利用してランニングコストを最小限に抑えたい場合",
-          "NEC Aterm MR51FN データプラン対応SIMセットモデル (B0BVBL9M4C)の利点：頻繁に海外渡航があり、現地でもそのまま国内と同じように高速な5G/4G通信を利用したい場合はSIMセットモデルのMR51FNの方が適している"
+          "NEC Aterm MR04LN (整備済み品)の利点：デュアルSIM運用や、より高速な通信規格を利用したいならこちら。",
+          "NEC Aterm MR03LNの利点：シングルSIMで十分であり、とにかく中古で一番安いものを探しているならこちら。"
         ]
       }
     ],
     "recommendation": {
       "targetUsers": [
-        "初期費用を抑えてモバイルルーターを手に入れたい人",
-        "Bluetoothテザリングを活用して、ルーターのバッテリーを丸一日持たせたい人",
-        "ドコモ系MVNOのSIM（Micro SIM、または変換アダプタ利用）を運用予定の人"
+        "格安SIMの複数契約を活用し、通信費を抑えつつバックアップ回線を持ちたい人（新品の高価なデュアルSIMルーターより安価に環境を構築したい人）",
+        "1日中持ち歩くため、Bluetoothテザリングによるバッテリー持ちを重視する人"
       ],
       "pros": [
-        "整備済み品ならではの7,000円台という安価な本体価格",
-        "Bluetoothテザリング時の圧倒的な省電力性能（約24時間）",
-        "重量111gの軽量ボディと直感的なタッチパネル操作"
+        "デュアルmicroSIMスロットにより、仕事とプライベート、または異なる通信エリアのSIMを1台でシームレスに使い分けできる",
+        "Bluetoothテザリングを使えば最大24時間稼働するため、日中充電できなくても安心して使い続けられる",
+        "1万円を切る手頃な価格で、信頼性の高いNEC製ルーターの機能を手に入れられる"
       ],
       "cons": [
-        "SIMサイズがMicro SIMであり、Nano SIM利用時は変換アダプタが必要（故障リスクあり）",
-        "整備済み品（中古）のため、バッテリーの劣化による駆動時間の減少リスクがある",
-        "対応バンドが古く、最新の5Gや他キャリア(au/Softbank網)のプラチナバンドには非対応"
+        "対応SIMがmicroSIMのため、最近のnanoSIMを利用する際は変換アダプタが必要（接触不良等のリスクは自己責任となる点に注意が必要）",
+        "5Gには非対応であるため、最新の超高速通信を求めるユーザーには不向き",
+        "整備済み品のため、外観の小傷やバッテリーの多少の消耗がある可能性を許容できる人のみ購入すること"
       ],
       "score": 75,
-      "scoreRationale": "[基本点: 70]\n[加点: +10] Bluetoothテザリングによる約24時間の長寿命と、111gの超軽量コンパクト設計というモバイルルーターとしての完成度の高さ\n[加点: +5] 整備済み品として7,480円という手頃な価格設定\n[減点: -5] 現在の主流であるNano SIMではなくMicro SIM仕様であり、変換アダプタ利用によるスロット破損の懸念がある\n[減点: -5] 中古品であるため、長寿命がウリでありながらバッテリーの劣化具合が未知数であるリスク\n[合計: 75]"
+      "scoreRationale": "[基本点: 70]\n[加点: +5] (デュアルSIMとBluetoothテザリングによる高い実用性)\n[加点: +5] (1万円以下の良好なコストパフォーマンス)\n[減点: -3] (旧モデルにつきmicroSIM仕様であり、nanoSIM主流の現状では利便性に劣る点)\n[減点: -2] (整備済み品の個体差リスク)\n[合計: 75]"
     },
     "technicalSpecs": {
+      "display": {
+        "size": "2.4インチ",
+        "resolution": "320×240",
+        "type": "タッチパネル対応カラー液晶"
+      },
+      "battery": {
+        "capacity": "2300mAh",
+        "charging": "microUSB (クレードルなし時は本体直挿し)",
+        "playbackTime": "LTE/3G: 約12時間 / Bluetoothテザリング: 約24時間"
+      },
       "dimensions": {
         "height": "111mm",
         "width": "63mm",
-        "depth": "11mm"
+        "depth": "11mm",
+        "weight": "111g"
       },
       "weight": "111g",
-      "display": {
-        "type": "カラー液晶タッチパネル",
-        "size": "約61mm"
-      },
-      "connectivity": {
-        "cellular": "LTE (受信最大300Mbps) / 3G",
-        "wifi": "IEEE802.11ac/n/a/g/b",
-        "bluetooth": "Bluetooth 4.0 (Class2)"
-      },
-      "battery": {
-        "continuousCommunication": "Wi-Fi:約12時間 / Bluetooth:約24時間"
-      },
-      "sim": "Micro SIM",
+      "connectivity": [
+        "4G LTE / 3G",
+        "Wi-Fi 5 (802.11ac/a/b/g/n) 2.4GHz/5GHzデュアルバンド",
+        "Bluetooth 4.0 (テザリング対応)",
+        "デュアルmicroSIMスロット"
+      ],
       "other": [
-        "SIMロックフリー",
-        "デュアルSIM対応"
+        "LTE Advanced対応 (受信最大300Mbps)",
+        "※5G非対応",
+        "※整備済み品 (クレードル非付属)",
+        "SIMロックフリー"
       ]
     }
   }
