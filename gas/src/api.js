@@ -179,9 +179,9 @@ function updateConfirmationMessage() {
     let pendingCount = 0;
     if (lastRow > 1) {
       const data = sheet.getRange(2, 2, lastRow - 1, 2).getValues(); // B列(URL), C列(ステータス)
-      for (let i = 0; i < data.length; i++) {
-        const url = String(data[i][0] || '').trim();
-        const status = String(data[i][1] || '').trim();
+      for (const [rawUrl, rawStatus] of data) {
+        const url = String(rawUrl || '').trim();
+        const status = String(rawStatus || '').trim();
         if (url && !COMPLETED_STATUSES.has(status)) {
           pendingCount++;
         }
