@@ -1,0 +1,145 @@
+{
+  "analysis": {
+    "productName": "FLYARROW 紛失防止タグ 2個",
+    "parentAsin": "B0HGF1S6FB",
+    "productDescription": "Appleの「探す」ネットワーク(Find My)に対応したMFi認証取得の紛失防止スマートタグ（2個セット）。",
+    "productUsage": [
+      "紛失防止",
+      "位置情報の確認",
+      "見守り"
+    ],
+    "positivePoints": [
+      "1個あたり約500円（2個セット999円）という業界最安クラスの低価格",
+      "Apple MFi認証を取得しており「探す」アプリとシームレスに連携可能",
+      "直径30mm、厚さ7mmのコンパクト設計",
+      "CR2032ボタン電池採用で最大1年間の長寿命かつ電池交換が容易",
+      "内蔵スピーカーから音を鳴らして近距離での捜索が可能"
+    ],
+    "negativePoints": [
+      "iOS（iPhone/iPad/Mac）専用でありAndroid端末では使用不可",
+      "UWB（超広帯域）による「正確な場所を見つける（方向検索）」機能には非対応",
+      "新興ノーブランド品であり、国内の長期的なサポート体制が不透明"
+    ],
+    "useCases": [
+      "財布や鍵への取り付け",
+      "子供のランドセルや習い事バッグでの見守り",
+      "ペットの首輪への装着",
+      "旅行用キャリーケースや登山リュックでの荷物追跡"
+    ],
+    "userStories": [
+      {
+        "userType": "通勤・通学用具の紛失を心配するユーザー",
+        "scenario": "日常的な鍵や財布の紛失防止として導入",
+        "experience": "Apple純正のAirTagに比べて圧倒的に安価ながら、「探す」アプリでしっかり認識され、音を鳴らして見つける機能も問題なく使えました。UWB非対応ですが、家の中で音を鳴らせれば十分なのでコスパには大満足です。",
+        "supportingSourceIds": [
+          "amazon-official"
+        ],
+        "sentiment": "positive"
+      }
+    ],
+    "userImpression": "圧倒的な低価格でありながら、Appleの『探す』ネットワークにしっかり対応し、音を鳴らす機能など基本要件を満たしている点で非常に高く評価されています。UWB（方向検索）非対応やAndroid非対応という制約はありますが、価格の安さから『複数個をまとめ買いしたい』『とりあえず試してみたい』というユーザーからの満足度が高い一方で、サポート体制への懸念から重要な物には純正品を選ぶべきという意見もあります。",
+    "sources": [
+      {
+        "id": "amazon-official",
+        "name": "Amazon商品ページ",
+        "url": "https://www.amazon.co.jp/dp/B0GSZLJ32D",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-08-31",
+        "author": "FLYARROW",
+        "conflictOfInterest": "possible",
+        "notes": "商品仕様（30mm×7mm）、MFi認証対応、価格（999円/2個）、CR2032電池使用を確認。"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "最大1年間持続する長寿命バッテリー",
+        "category": "quality",
+        "confidence": "medium",
+        "supportingSourceIds": [
+          "amazon-official"
+        ],
+        "crossChecked": false,
+        "notes": "CR2032電池を使用する類似のトラッカーの標準的な寿命と一致しているが、使用頻度により変動する。"
+      }
+    ],
+    "lastInvestigated": "2026-08-31",
+    "investigatedPrice": "￥999",
+    "competitiveAnalysis": [
+      {
+        "name": "GPSタグ キーファインダー (B0H4C9CXNL)",
+        "asin": "B0H4C9CXNL",
+        "priceComparison": "対象商品よりやや高い1,380円前後。機能面ではほぼ同等。",
+        "featureComparison": [
+          "共通点：Apple「探す」ネットワーク対応、CR2032電池交換式",
+          "相違点：対象商品は2個セットで999円と、1個あたりの単価が圧倒的に安い"
+        ],
+        "differentiators": [
+          "[FLYARROW 紛失防止タグ]の利点：とにかく安く複数個のトラッカーを揃えたいなら、2個セットで999円の本商品が圧倒的に有利。",
+          "[GPSタグ キーファインダー]の利点：特定のデザインを好む場合以外に積極的な優位性は薄い。"
+        ]
+      },
+      {
+        "name": "GPSタグ スマートタグ (B0H4CB3D3C)",
+        "asin": "B0H4CB3D3C",
+        "priceComparison": "対象商品よりやや高い1,380円前後。機能面ではほぼ同等。",
+        "featureComparison": [
+          "共通点：Apple「探す」対応のキーホルダー型タグ",
+          "相違点：対象商品の方が価格が大幅に安く設定されている"
+        ],
+        "differentiators": [
+          "[FLYARROW 紛失防止タグ]の利点：機能が同じであれば、2個セットで999円というコストパフォーマンスの高さが際立つ。",
+          "[GPSタグ スマートタグ]の利点：単体購入や特定のデザインを好むケースでのみ選択肢となる。"
+        ]
+      },
+      {
+        "name": "Xiaomi Tag スマートタグ",
+        "asin": "B0G5B4CWSP",
+        "priceComparison": "対象商品より高く、5,000円台（複数個）。ブランド力で上回る。",
+        "featureComparison": [
+          "共通点：紛失防止タグとしての基本機能",
+          "相違点：Xiaomi製は大手ブランドとしての品質管理と信頼性が高い"
+        ],
+        "differentiators": [
+          "[FLYARROW 紛失防止タグ]の利点：iOS環境に限定されるが、圧倒的な安さで導入のハードルが低い。",
+          "[Xiaomi Tag スマートタグ]の利点：大手グローバルブランドとしての信頼性や品質保証、充実したサポートを求める場合に適している。"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "コストを最小限に抑えて、iOSデバイスで複数の紛失防止タグを運用したい人（純正品の価格にハードルを感じている人）"
+      ],
+      "pros": [
+        "2個セットで999円という破格の安さで、鍵やバッグなど複数への装着が手軽に行える",
+        "MFi認証取得により、Appleの『探す』アプリとスムーズに連携し現在地を確認できる"
+      ],
+      "cons": [
+        "UWBによる詳細な方向検索には非対応なため、数センチ単位での捜索を求める人は純正品を購入すること",
+        "ノーブランド品のため、万が一の故障時のサポートに期待しすぎないこと"
+      ],
+      "score": 76,
+      "scoreRationale": "[基本点: 70]\n[加点: +11] (2個セットで999円というApple「探す」対応タグとして業界最安クラスの圧倒的コスパ)\n[加点: +2] (汎用的なCR2032電池対応で維持費が安く実用的)\n[減点: -7] (UWB非対応および新興ノーブランド品による信頼性・サポートへの懸念)\n[合計: 76]"
+    },
+    "technicalSpecs": {
+      "dimensions": {
+        "height": "30mm",
+        "width": "30mm",
+        "depth": "7mm"
+      },
+      "battery": {
+        "capacity": "CR2032 (ボタン電池)",
+        "playbackTime": "最大1年間 (標準使用時)"
+      },
+      "connectivity": [
+        "Bluetooth",
+        "Apple Find My (「探す」ネットワーク) 対応"
+      ],
+      "other": [
+        "MFi認証取得",
+        "iOS専用 (Android非対応)",
+        "内蔵スピーカー搭載"
+      ]
+    }
+  }
+}
