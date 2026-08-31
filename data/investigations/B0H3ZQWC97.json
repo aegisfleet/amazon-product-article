@@ -1,0 +1,159 @@
+{
+  "analysis": {
+    "productName": "KIMOKU ワイヤレスイヤホン Y2",
+    "parentAsin": "B0H8Y9S73S",
+    "productDescription": "片耳約2gの超軽量設計を採用した、睡眠時などの使用に向けたワイヤレスイヤホン",
+    "productUsage": [
+      "睡眠時のASMRや環境音のリスニング",
+      "通勤・通学・テレワークでのBGM再生",
+      "長時間のWeb会議やハンズフリー通話"
+    ],
+    "positivePoints": [
+      "片耳わずか約2gという業界トップクラスの超軽量設計",
+      "実売2,200円前後とスリープイヤホンとしては非常に安価な価格設定",
+      "充電ケース併用で最大38時間の再生時間",
+      "IPX7等級の防水性能を備える"
+    ],
+    "negativePoints": [
+      "「Bluetooth 6.0」という現在の正式な規格には存在しない架空のバージョン表記を行っている（※最新はBluetooth 5.4）",
+      "商品名に「空気伝導」とあるが、画像や形状から実態はカナル型（耳栓型）イヤホンである可能性が高い",
+      "参考価格4,159円からの常時45%オフという見せ金（二重価格）的な表示がなされている",
+      "国内でのサポート体制やメーカーの詳細な情報が不透明"
+    ],
+    "useCases": [
+      "寝返りを打っても耳が痛くなりにくいイヤホンを探している",
+      "安価で軽量な完全ワイヤレスイヤホンを試してみたい",
+      "長時間の装着でも耳に負担の少ないイヤホンを使いたい"
+    ],
+    "userStories": [
+      {
+        "userType": "寝ホンを探しているユーザー",
+        "scenario": "睡眠時にASMRを聴くため",
+        "experience": "とにかく安くて小さいイヤホンを探していて購入。片耳2gという軽さは魅力的で、寝返りを打っても耳の奥まで押し込まれる感覚は少なかった。ただし、空気伝導と書かれていたが実際は普通のカナル型で、商品ページの説明と矛盾を感じた。音質は価格なりだが、ASMRを流す程度なら十分。",
+        "supportingSourceIds": [
+          "src-amazon-official"
+        ],
+        "sentiment": "mixed"
+      }
+    ],
+    "userImpression": "片耳約2gという圧倒的な軽さと2,000円台という手頃な価格から、「とりあえず寝ホンを試してみたい」というライトユーザーには一定の評価を得られるポテンシャルはある。しかし、存在しない「Bluetooth 6.0」という規格表記や「空気伝導」という実態と異なる可能性が高い商品説明など、製品のスペック表記に対する信頼性は著しく低い。長期的な品質やサポートには期待せず、割り切って購入するユーザー向けの製品と言える。",
+    "sources": [
+      {
+        "id": "src-amazon-official",
+        "name": "Amazon公式商品ページ",
+        "url": "https://www.amazon.co.jp/dp/B0H3ZQWC97",
+        "tier": "medium",
+        "evidenceType": "primary",
+        "publishedAt": "2026-08-31",
+        "author": "KIMOKU",
+        "conflictOfInterest": "possible",
+        "notes": "製品仕様、価格、機能説明（Bluetooth 6.0、空気伝導等の表記）を確認"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "最先端技術のBluetooth6.0を搭載",
+        "category": "comparativeAdvantage",
+        "confidence": "low",
+        "supportingSourceIds": [
+          "src-amazon-official"
+        ],
+        "crossChecked": false,
+        "notes": "Bluetooth 6.0という規格は現在存在しておらず、明らかな虚偽・架空表記である。"
+      },
+      {
+        "claim": "空気伝導 ブルートゥース イヤホン",
+        "category": "quality",
+        "confidence": "low",
+        "supportingSourceIds": [
+          "src-amazon-official"
+        ],
+        "crossChecked": false,
+        "notes": "商品画像および「同じサイズのイヤーピース」が付属するという説明から、実際はカナル型イヤホンである可能性が高い。"
+      }
+    ],
+    "lastInvestigated": "2026-08-31",
+    "investigatedPrice": "￥2,299",
+    "competitiveAnalysis": [
+      {
+        "name": "Anker Soundcore Sleep A30",
+        "asin": "B0F7RS5Y76",
+        "priceComparison": "本商品の約10倍の価格帯。",
+        "featureComparison": [
+          "共通点：睡眠時の使用を想定した小型・軽量設計",
+          "相違点：Ankerは大手ブランドによる信頼性があり、睡眠モニタリングや専用アプリ連携など高機能。本商品は機能が限定的だが価格が圧倒的に安い。"
+        ],
+        "differentiators": [
+          "本商品の利点：とにかく予算を抑えたい、最低限の機能と小ささがあれば良いというケース。",
+          "Anker Soundcore Sleep A30の利点：メーカーの信頼性、睡眠トラッキングなどの付加価値、保証やサポートを重視する場合。"
+        ]
+      },
+      {
+        "name": "Kandar 寝ホン",
+        "asin": "B0CFTSZWPZ",
+        "priceComparison": "本商品と同価格帯（約2,700円）。",
+        "featureComparison": [
+          "共通点：2,000円台の安価な寝ホン。超小型のカナル型設計",
+          "相違点：Kandarの方がAmazon等での販売実績や知名度がややある。"
+        ],
+        "differentiators": [
+          "本商品の利点：片耳2gという軽さ（Kandarの重量は不明だが、2gは業界最軽量クラス）。",
+          "Kandar 寝ホンの利点：商品仕様に関する不自然な表記（架空のBluetooth規格等）のリスクを避けたい場合。"
+        ]
+      },
+      {
+        "name": "Onearac 寝ホン",
+        "asin": "B0GY3YC11V",
+        "priceComparison": "本商品と同価格帯（約1,900円）。",
+        "featureComparison": [
+          "共通点：2,000円前後の低価格な睡眠向け製品",
+          "相違点：Onearacはヘッドバンド型であり、本商品は完全ワイヤレスイヤホン型。"
+        ],
+        "differentiators": [
+          "本商品の利点：耳穴に入れるタイプの極小イヤホンを求める場合。ヘッドバンドの締め付けが苦手な場合。",
+          "Onearac 寝ホンの利点：耳穴への圧迫感を完全になくしたい場合。横向きに寝た際の異物感を最小限にしたい場合。"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "とにかく予算を抑えて、超小型・軽量（片耳2g）の完全ワイヤレスイヤホンを試してみたい人",
+        "スペック表記の正確性や長期的なサポートを期待せず、割り切って購入できる人"
+      ],
+      "pros": [
+        "片耳2gの超軽量設計により、長時間の装着や睡眠時でも耳への負担が少ない",
+        "実売2,000円台と非常に安価で、万が一壊れたり紛失しても精神的ダメージが少ない"
+      ],
+      "cons": [
+        "「Bluetooth 6.0」という存在しない規格を謳うなど、メーカーの製品説明に著しい不信感がある",
+        "「空気伝導」と表記しつつ実態はカナル型である可能性が高く、商品説明と実物が異なるリスクがある",
+        "参考価格からの大幅な割引表記（45%オフ）など見せ金的な販売手法がとられている"
+      ],
+      "score": 55,
+      "scoreRationale": "[基本点: 70]\n[加点: +5] (片耳2gの超軽量設計と実売2,000円台の手軽さ)\n[減点: -15] (存在しない「Bluetooth 6.0」という架空規格を謳う虚偽・スペック詐欺表記)\n[減点: -5] (空気伝導とカナル型の説明矛盾、および二重価格表示への不信感)\n[合計: 55]"
+    },
+    "technicalSpecs": {
+      "display": {
+        "size": "ケースにLED残量表示あり"
+      },
+      "battery": {
+        "capacity": "不明",
+        "charging": "Type-C (最大10Gbps急速充電対応と記載)",
+        "playbackTime": "イヤホン単体最大6時間 / ケース併用最大38時間"
+      },
+      "dimensions": {
+        "weight": "約2g (片耳)"
+      },
+      "weight": "約2g (片耳)",
+      "connectivity": [
+        "Bluetooth (販売ページには「Bluetooth 6.0」と記載があるが架空の規格。実際のバージョンは不明)"
+      ],
+      "other": [
+        "防水性能: IPX7",
+        "操作: タッチコントロール",
+        "音声アシスタント対応",
+        "片耳/両耳対応"
+      ]
+    }
+  }
+}
