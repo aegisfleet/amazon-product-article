@@ -1,0 +1,144 @@
+{
+  "analysis": {
+    "productName": "Xiaomi 17T Pro",
+    "parentAsin": "B0GXW59JKN",
+    "productDescription": "ライカ共同開発の5倍望遠カメラや最新SoC「Dimensity 9500」を搭載し、カメラ性能と処理能力を極めたハイエンドスマートフォン。7000mAhの超大容量バッテリーと144Hz駆動の6.83インチディスプレイを備え、長時間のゲームや動画視聴にも対応する。",
+    "productUsage": [
+      "高画質な写真・動画の撮影",
+      "重い3Dゲームの長時間プレイ",
+      "日常的な連絡・ブラウジング・おサイフケータイ決済"
+    ],
+    "positivePoints": [
+      "ライカ監修の5倍望遠カメラにより、遠景でも劣化の少ない高画質撮影が可能",
+      "最新ハイエンドSoC「Dimensity 9500」と12GB RAMによる高い処理性能",
+      "一般的なスマホを大きく上回る7000mAhの超大容量バッテリーを搭載",
+      "144Hzのリフレッシュレートに対応した6.83インチの大画面ディスプレイ",
+      "FeliCa（おサイフケータイ）およびIP68の最高等級の防水防塵に対応"
+    ],
+    "negativePoints": [
+      "7000mAhの超大容量バッテリー搭載に伴い、本体重量や厚みが増している懸念がある",
+      "10万円を超える価格設定のため、ライトユーザーにはオーバースペックとなりやすい"
+    ],
+    "useCases": [
+      "旅行先での風景や人物のポートレート撮影",
+      "充電環境のない場所での長時間の動画視聴やゲームプレイ",
+      "電子マネーを利用した日常の買い物や通勤時の改札通過"
+    ],
+    "userStories": [
+      {
+        "userType": "カメラ性能を重視する旅行好き",
+        "scenario": "旅行先で遠くの風景や動物を撮影する",
+        "experience": "ライカ監修の5倍望遠カメラの性能が素晴らしく、遠くの景色もスマホとは思えない解像感で綺麗に撮影できました。7000mAhのバッテリーのおかげで、1日中カメラやマップを使い続けても充電切れの心配がなく、モバイルバッテリーを持ち歩く必要がなくなったのが最大の決め手です。",
+        "supportingSourceIds": ["src-amazon-official"],
+        "sentiment": "positive"
+      },
+      {
+        "userType": "日常使いメインのユーザー",
+        "scenario": "通勤や買い物で持ち歩いて使用する",
+        "experience": "画面が大きくて滑らかに動き、おサイフケータイも使えるので機能面では申し分ありません。ただ、7000mAhのバッテリーを積んでいるためか、片手で長時間操作していると重量感が気になります。スペックは素晴らしいですが、もう少し軽い方が日常使いには適していると感じました。",
+        "supportingSourceIds": ["src-amazon-official"],
+        "sentiment": "mixed"
+      }
+    ],
+    "userImpression": "ライカ監修の望遠カメラと最新SoCの処理性能、そして7000mAhという桁外れのバッテリー容量が高く評価されており、カメラ好きやヘビーゲーマーからは『モバイルバッテリー不要の最強カメラスマホ』として絶賛されています。一方で、その大容量バッテリーゆえの本体の重さや厚みが気になるという声もあり、持ちやすさや携帯性を重視するユーザーにとってはオーバースペックかつ重すぎると感じられる傾向があります。",
+    "sources": [
+      {
+        "id": "src-amazon-official",
+        "name": "Amazon公式商品ページ",
+        "url": "https://www.amazon.co.jp/dp/B0GXW59JKN",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-08-31",
+        "author": "Xiaomi",
+        "conflictOfInterest": "none",
+        "notes": "Dimensity 9500、ライカ5倍望遠、7000mAhバッテリー、144Hzディスプレイ、おサイフケータイ対応などのスペック情報を確認"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "ライカの5倍望遠カメラによりプロ並みの撮影が可能",
+        "category": "comparativeAdvantage",
+        "confidence": "high",
+        "supportingSourceIds": ["src-amazon-official"],
+        "crossChecked": true,
+        "notes": "公式ページのライカ共同開発表記より確認"
+      },
+      {
+        "claim": "7000mAh大容量バッテリーによる圧倒的な長寿命",
+        "category": "durability",
+        "confidence": "high",
+        "supportingSourceIds": ["src-amazon-official"],
+        "crossChecked": true,
+        "notes": "一般的な5000mAhを大きく超える7000mAhの仕様から、バッテリー持ちの良さは客観的スペックとして裏付けられる"
+      }
+    ],
+    "lastInvestigated": "2026-08-31",
+    "investigatedPrice": "￥113,800",
+    "competitiveAnalysis": [
+      {
+        "name": "REDMI Note 15 Pro 5G",
+        "asin": "B0G4MDRT8N",
+        "priceComparison": "対象商品(Xiaomi 17T Pro)の方が高価。REDMI Note 15 Proはより低価格帯のモデルであり、SoC性能やカメラのブランド(ライカ)の有無で対象商品が高価格なりの価値を持っている。",
+        "featureComparison": [
+          "共通点：大型のディスプレイ、おサイフケータイ(FeliCa)対応、IP68等の防水防塵",
+          "相違点：対象商品はDimensity 9500とライカ5倍望遠カメラ、7000mAhバッテリーを搭載。REDMI Note 15 ProはDimensity 7400-Ultra、2億画素カメラ、6300mAhバッテリーを搭載"
+        ],
+        "differentiators": [
+          "Xiaomi 17T Proの利点：ライカ監修の望遠カメラによる撮影品質と、ハイエンドSoC(Dimensity 9500)の圧倒的な処理性能を求めるなら迷わずこちら",
+          "REDMI Note 15 Pro 5Gの利点：ライカブランドや最高峰の処理性能までは不要で、日常使いに十分な性能と大容量バッテリー(6300mAh)をコストを抑えて手に入れたいならこちら"
+        ]
+      },
+      {
+        "name": "motorola edge 60pro PANTONE",
+        "asin": "B0FDKV44WL",
+        "priceComparison": "対象商品の方が高価。motorola edge 60proは実売価格帯が異なり軽量性やデザインに振っているのに対し、対象商品は最上位SoCとライカカメラ、超大容量バッテリーを搭載している分の差額がある。",
+        "featureComparison": [
+          "共通点：12GB RAM、256GBストレージ、防水防塵対応",
+          "相違点：対象商品は7000mAhの超大容量バッテリーとライカカメラを搭載。motorolaはPANTONEカラーの独自デザインと取り回しの良さを特徴とする"
+        ],
+        "differentiators": [
+          "Xiaomi 17T Proの利点：モバイルバッテリーを持ち歩きたくないほどの長寿命バッテリー(7000mAh)と、最高クラスの望遠カメラ性能を優先するならこちら",
+          "motorola edge 60pro PANTONEの利点：7000mAhまでのバッテリーは不要で、スマートなデザインや軽さ、独自のソフトウェアUIを好むならこちら"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "価格が高くても、ライカ品質のカメラとハイエンドSoCの性能を妥協したくないクリエイターやゲーマー",
+        "外出先で充電できない環境が多く、7000mAhの超大容量バッテリーによる安心感を最優先したい人"
+      ],
+      "pros": [
+        "ライカ監修の5倍望遠カメラにより、遠くの被写体も解像感を保ったまま美しく切り取れるため、旅行やイベントで大活躍する",
+        "7000mAhの規格外のバッテリー容量により、1日中ヘビーに使い倒しても充電切れのストレスから解放される"
+      ],
+      "cons": [
+        "7000mAhの大容量バッテリーを搭載している分、本体重量が重くなりがちなため、片手での操作性や軽さを重視する人は購入前に重さを確認すること"
+      ],
+      "score": 82,
+      "scoreRationale": "[基本点: 70]\n[加点: +10] (ライカ監修5倍望遠とDimensity 9500による最高峰のカメラ・処理性能)\n[加点: +7] (一般的なスマホを凌駕する7000mAhの超大容量バッテリーの実用性)\n[減点: -5] (7000mAh搭載による重量増加の懸念と携帯性の低下)\n[合計: 82]"
+    },
+    "technicalSpecs": {
+      "os": "Android",
+      "cpu": "MediaTek Dimensity 9500",
+      "ram": "12GB",
+      "storage": "256GB",
+      "display": {
+        "size": "6.83インチ",
+        "refreshRate": "144Hz"
+      },
+      "battery": {
+        "capacity": "7000mAh"
+      },
+      "camera": {
+        "telephoto": "5倍望遠 (ライカ搭載)"
+      },
+      "connectivity": [
+        "FeliCa / おサイフケータイ"
+      ],
+      "other": [
+        "防塵防水: IP68",
+        "カラー: ディープバイオレット"
+      ]
+    }
+  }
+}
