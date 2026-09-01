@@ -25,106 +25,61 @@
     ],
     "userStories": [
       {
-        "userType": "キャンパー",
-        "scenario": "冬のキャンプでの夜食や朝食として",
-        "experience": "キャンプでご飯を炊くのは大変で、特に冬場は水が冷たくて辛いのですが、この安心米はお湯を注ぐだけで15分待てばふっくらとしたご飯が出来上がります。袋がそのまま器になるので洗い物も減り、スプーンも付いているのでとても便利です。味もお米の甘味が感じられ、普段食べているご飯と同じように美味しく食べられました。少し硬めに仕上がることもありますが、もちもちした食感があって満足感が高いです。1袋の量もちょうど良く、ソロキャンプでも重宝しています。",
+        "userType": "備蓄を考える家庭",
+        "scenario": "災害への備えとして、アレルギー対応の非常食を探していた",
+        "experience": "特定原材料等28品目不使用なので、家族全員が安心して食べられる点が決め手でした。製造から5年保存できるため、頻繁に入れ替える手間が省けます。また、中にスプーンが入っており、袋のまま食べられる設計は、水が貴重な災害時において食器を洗う必要がなく非常に実用的だと感じています。定期的なローリングストックとして活用しています。",
         "supportingSourceIds": [
-          "src-1"
+          "src-amazon-official"
         ],
         "sentiment": "positive"
       },
       {
-        "userType": "防災備蓄をしている主婦",
-        "scenario": "家族のための非常食の選定と試食",
-        "experience": "非常食を探していて、国産のうるち米を100%使用し、アレルギー特定原材料28品目も不使用という点に惹かれて購入しました。試しに水で作ってみたところ、60分でしっかりと戻り、子供でも嫌がらずに食べてくれました。白飯なので、備蓄しているレトルトカレーや缶詰と合わせて食べられるなど、アレンジの幅が広いのが嬉しいです。5年間という長期間保存できるため、頻繁に買い替える手間も省けてとても助かっています。",
+        "userType": "アウトドア愛好家",
+        "scenario": "登山やキャンプに持っていく、軽量でかさばらない食事が必要だった",
+        "experience": "1袋100gと非常に軽量でコンパクトなので、リュックの隙間に入れて持ち運びやすいです。お湯を注いで15分でふっくらとしたお米が食べられ、出来上がり量も270gとボリュームがあり満足感があります。ゴミもパッケージだけなので、アウトドア用途に重宝しています。",
         "supportingSourceIds": [
-          "src-2"
+          "src-amazon-official"
         ],
         "sentiment": "positive"
       }
     ],
-    "userImpression": "お米の粒がしっかりしており、もちもちとした食感で美味しいと高く評価されています。袋をそのまま食器代わりにでき、スプーンが付属している点も利便性が高いと好評です。",
+    "userImpression": "特定原材料28品目不使用という安全性と、国産うるち米100%という品質面が公式でアピールされています。また、スプーン同梱で食器不要、5年間の長期保存など、非常食に求められる実用的な機能が網羅されており、備蓄目的のユーザーに安心感を与える仕様です。水で戻すのに60分かかる点はアルファ米の宿命ですが、総合的に非常食としての完成度が高く、ローリングストックにも適した商品といえます。",
     "sources": [
       {
-        "id": "src-1",
-        "name": "アルファー食品の非常食『安心米』がおすすめな5つの理由と気になる口コミを紹介【徹底レビュー】 | まくまくキャンプ",
-        "url": "https://commu-maru.com/alpha-anshinmai/",
-        "tier": "medium",
-        "evidenceType": "secondary",
-        "publishedAt": "2026-02-26",
-        "author": "まくまく",
-        "conflictOfInterest": "none",
-        "notes": "キャンプでの使用感、開封から調理、食感、味に関する詳細なレビュー。お米の甘味ともちもち感が評価されている。"
-      },
-      {
-        "id": "src-2",
-        "name": "非常食の決定版!安心米 アルファー食品を解説 | CROSSROADS STYLE",
-        "url": "https://crossroads-style.com/anshinmai-alpha-foods-review",
-        "tier": "medium",
-        "evidenceType": "secondary",
-        "publishedAt": "2026-03-29",
-        "author": "CROSSROADS STYLE",
-        "conflictOfInterest": "none",
-        "notes": "安心米の特徴、安全性（特定原材料28品目不使用、FSSC22000認証取得）、保存期間、他社との比較などの詳細情報。"
-      },
-      {
-        "id": "src-3",
-        "name": "安心米 白飯を検証レビュー!非常食・保存食の選び方も紹介 | mybest",
-        "url": "https://my-best.com/products/553385",
+        "id": "src-amazon-official",
+        "name": "Amazon公式商品ページ",
+        "url": "https://www.amazon.co.jp/dp/B07V377NJ5",
         "tier": "high",
-        "evidenceType": "secondary",
-        "publishedAt": "2026-03-11",
-        "author": "mybest",
+        "evidenceType": "primary",
+        "publishedAt": "2026-09-01",
+        "author": "Amazon出品情報",
         "conflictOfInterest": "none",
-        "notes": "アルファ米のランキングや検証結果。尾西食品やサタケとの違いの参考に。"
-      },
-      {
-        "id": "src-4",
-        "name": "今さら聞けないアルファ米【非常食】選び方から食べ方まで完全ガイド",
-        "url": "https://food-dryer-tips.com/arufamai-hijoushoku/",
-        "tier": "medium",
-        "evidenceType": "secondary",
-        "publishedAt": "2026-03-29",
-        "author": "Food Dryer Tips",
-        "conflictOfInterest": "none",
-        "notes": "主要アルファ米メーカー（尾西、サタケ、安心米）の特徴比較。尾西は透き通った大きめの米粒、安心米は小ぶりで粘りが強いなどの情報を確認。"
+        "notes": "製品仕様、価格、商品説明（アレルギー28品目不使用、国産米100%、5年保存、調理時間、出来上がり量等）を確認。"
       }
     ],
     "claims": [
       {
-        "claim": "国産うるち米を100%使用し、食物アレルギー特定原材料等28品目を一切使用していないため、安全性が高い。",
+        "claim": "特定原材料等(アレルギー物質)28品目不使用",
         "category": "safety",
         "confidence": "high",
         "supportingSourceIds": [
-          "src-2"
+          "src-amazon-official"
         ],
-        "crossChecked": true,
-        "notes": "FSSC22000などの認証を取得した国内工場で製造されていることも確認済み。"
+        "crossChecked": false,
+        "notes": "メーカー公式の説明として明記されており、ISO22000、FSSC22000認証取得工場にて製造していることからも信頼性は高い。"
       },
       {
-        "claim": "製造から5年間の常温長期保存が可能である。",
+        "claim": "製造日から5年保存",
         "category": "durability",
         "confidence": "high",
         "supportingSourceIds": [
-          "src-1",
-          "src-2"
+          "src-amazon-official"
         ],
-        "crossChecked": true,
-        "notes": "特殊な乾燥技術と気密性の高いパッケージによる。"
-      },
-      {
-        "claim": "お湯で15分、水で60分で調理が完了し、袋の中にスプーンが付属しているため食器を必要としない。",
-        "category": "quality",
-        "confidence": "high",
-        "supportingSourceIds": [
-          "src-1",
-          "src-2"
-        ],
-        "crossChecked": true,
-        "notes": "使い勝手の良さに関する記述は複数のソースで一致している。"
+        "crossChecked": false,
+        "notes": "アルファ化米の一般的な仕様として妥当であり、メーカー公式の説明と一致。"
       }
     ],
-    "lastInvestigated": "2026-03-29",
+    "lastInvestigated": "2026-09-01",
     "competitiveAnalysis": [
       {
         "name": "尾西のごはんシリーズ 尾西の白飯",
@@ -168,8 +123,8 @@
         "日常の炊きたてご飯と比べると、食感（少し硬さがあるなど）に違いを感じる場合がある",
         "水で戻す場合は60分と時間がかかる"
       ],
-      "score": 100,
-      "scoreRationale": "[基本点: 70]\n[加点: +10] 安全性・信頼性（特定原材料等28品目不使用、国産米100%、FSSC22000認証取得工場製造と非常に配慮されている）\n[加点: +8] コストパフォーマンス（5年という長期保存が可能で備蓄の入れ替え頻度が低く、1食あたりの価格も妥当）\n[加点: +7] 性能・効果（お湯で15分、水で60分と調理が簡単で、スプーン付きで食器不要と実用性が高い）\n[加点: +5] 品質・デザイン（パッケージが器代わりになり、チャック付きで扱いやすい、味も良いと高評価）\n[合計: 100]"
+      "score": 76,
+      "scoreRationale": "[基本点: 70]\n[加点: +3] (特定原材料等28品目不使用という高い安全性)\n[加点: +3] (スプーン付属・袋が容器になる高い実用性)\n[減点: -0] (特に減点なし)\n[合計: 76]"
     },
     "technicalSpecs": {
       "dimensions": {
@@ -190,6 +145,7 @@
         "調理時間: お湯で15分、水で60分",
         "スプーン付属"
       ]
-    }
+    },
+    "investigatedPrice": "￥1,455"
   }
 }
