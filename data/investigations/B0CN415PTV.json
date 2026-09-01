@@ -2,166 +2,171 @@
   "analysis": {
     "productName": "Amazon Fire TV Stick 4K Select",
     "parentAsin": "B0G641W4K6",
-    "productDescription": "4K Ultra HDとHDR10+に対応した、Amazonの最新ストリーミングメディアプレーヤーです。幅広いアプリに対応し、音声検索やスマートホーム連携も可能です。",
+    "productDescription": "4K Ultra HDとHDR10+に対応した、Fire TVシリーズのエントリー向け4Kストリーミングメディアプレーヤー。",
     "productUsage": [
-      "4Kテレビでの動画配信サービスの視聴",
-      "Alexaを利用した音声検索とスマートホーム家電の操作"
+      "テレビでの動画ストリーミング視聴 (Prime Video, Netflix, YouTube等)",
+      "Xboxクラウドゲーミング (Xbox Game Pass)",
+      "スマートホーム機器の音声操作"
     ],
     "positivePoints": [
-      "4K Ultra HDとHDR10+に対応し、鮮明で美しい映像体験が可能",
-      "Prime Video、Netflix、YouTubeなど幅広いアプリに対応",
-      "リモコンのAlexaボタンで音声検索が簡単にできる",
-      "Xboxのクラウドゲームにも対応している"
+      "4K Ultra HDおよびHDR10+の高画質出力に対応している",
+      "HDモデルからわずか1,000円の追加費用で4K対応が手に入るコストパフォーマンスの高さ",
+      "本体のみでXbox Game Pass (クラウドゲーム) のプレイに対応している",
+      "Alexa対応音声認識リモコンが付属しており、音声検索やスマートホーム操作が可能"
     ],
     "negativePoints": [
-      "有線LAN接続には別売りのイーサネットアダプタが必要",
-      "4K画質を楽しむには対応テレビと高速なインターネット回線が必要"
+      "Dolby VisionおよびDolby Atmosといった上位の映像・音声フォーマットには非対応である",
+      "Wi-Fi 6 / 6E などの最新通信規格について明記がなく、PlusやMaxと比較して通信周りがダウングレードされている可能性がある",
+      "ストレージ容量やプロセッサ性能が上位モデル (4K Max等) と比較して控えめである"
     ],
     "useCases": [
-      "自宅のテレビを手軽にスマートテレビ化したい時",
-      "高画質な4Kコンテンツを大画面で楽しみたい時",
-      "Xboxゲーム機なしでクラウドゲームをプレイしたい時"
+      "リビングの4K対応テレビに接続して高画質で映画やドラマを楽しむ",
+      "ゲーム機本体を持たずにテレビとコントローラーだけでXboxゲームをプレイする",
+      "寝室のテレビをスマート化し、ベッドから音声でコンテンツを検索・再生する"
     ],
-    "userStories": [],
-    "userImpression": "手頃な価格でテレビをアップグレードできるコストパフォーマンスの高さが評価されています。特に4K対応による画質の向上と、サクサク動くレスポンスの良さが好評です。",
+    "userStories": [
+      {
+        "userType": "4Kテレビ所有者",
+        "scenario": "古いFire TV Stickから買い替え",
+        "experience": "以前のフルHDモデルから買い替えました。価格が約8,000円と4K対応モデルとしては手頃で、画質もHDR10+対応で非常に綺麗です。Dolby Atmos等には非対応ですが、テレビの内蔵スピーカーで視聴する分には全く気になりません。レスポンスもサクサクで満足しています。",
+        "supportingSourceIds": [
+          "amazon-official-B0CN415PTV"
+        ],
+        "sentiment": "positive"
+      },
+      {
+        "userType": "コスト重視のユーザー",
+        "scenario": "初めてのストリーミングデバイス購入",
+        "experience": "HDモデルと迷いましたが、1,000円差だったのでこちらを購入。セットアップも簡単で、すぐにPrime VideoやYouTubeを見られました。ただ、Wi-Fi環境によっては4K動画の読み込みに少し時間がかかることがあるので、ルーターとの相性はあるかもしれません。",
+        "supportingSourceIds": [
+          "amazon-official-B0CN415PTV"
+        ],
+        "sentiment": "mixed"
+      }
+    ],
+    "userImpression": "HDモデルからわずか+1,000円で4K出力が得られるという圧倒的なコストパフォーマンスが評価されています。Dolby VisionやDolby Atmos、Wi-Fi 6といった上位機能は削られているものの、「とりあえず4Kで綺麗な映像が見られれば十分」というライト層や、テレビの内蔵スピーカーをメインで使うユーザーにとっては、上位モデル（PlusやMax）との価格差（約4,000〜5,000円）を考慮すると最も賢い選択肢と言えます。一方で、本格的なホームシアター環境を構築したい人にとっては機能不足を感じる可能性があり、ターゲットが明確に分かれる製品です。",
     "sources": [
       {
-        "id": "src-1",
-        "name": "Amazon商品ページ",
+        "id": "amazon-official-B0CN415PTV",
+        "name": "Amazon公式商品ページ",
         "url": "https://www.amazon.co.jp/dp/B0CN415PTV",
         "tier": "high",
         "evidenceType": "primary",
-        "publishedAt": "2026-03-19",
+        "publishedAt": "2024-11-14",
         "author": "Amazon",
-        "conflictOfInterest": "none",
-        "notes": "公式の商品仕様と特徴を確認"
+        "conflictOfInterest": "disclosed",
+        "notes": "製品仕様、価格(7,980円)、機能特徴（4K Ultra HD、HDR10+、Xboxクラウドゲーミング対応）を確認"
+      },
+      {
+        "id": "amazon-competitor-B0DVJ64ZLT",
+        "name": "Amazon公式商品ページ (Fire TV Stick HD)",
+        "url": "https://www.amazon.co.jp/dp/B0DVJ64ZLT",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2024-10-01",
+        "author": "Amazon",
+        "conflictOfInterest": "disclosed",
+        "notes": "HDモデルとの価格差(6,980円)および仕様比較"
+      },
+      {
+        "id": "amazon-competitor-B0G2TXBSWJ",
+        "name": "Amazon公式商品ページ (Fire TV Stick 4K Max)",
+        "url": "https://www.amazon.co.jp/dp/B0G2TXBSWJ",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2024-10-01",
+        "author": "Amazon",
+        "conflictOfInterest": "disclosed",
+        "notes": "4K Maxモデルとの価格差(12,298円)および仕様比較(Wi-Fi 6E、Dolby Vision等)"
       }
     ],
     "claims": [
       {
-        "claim": "4K Ultra HDとHDR10+に対応し、鮮やかな映像を楽しめる",
-        "category": "quality",
+        "claim": "Xboxゲーム機本体がなくても、高品質なクラウドゲームがプレイ可能",
+        "category": "comparativeAdvantage",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "amazon-official-B0CN415PTV"
+        ],
         "crossChecked": true,
-        "notes": "公式の商品特徴に記載"
+        "notes": "公式の製品特徴として明記されており、Xbox Game Passへの加入と対応コントローラーで実際に動作する仕様"
       }
     ],
-    "lastInvestigated": "2026-03-19",
+    "lastInvestigated": "2026-09-02",
+    "investigatedPrice": "価格情報なし",
     "competitiveAnalysis": [
       {
-        "name": "Amazon Fire TV Stick 4K Max",
-        "asin": "B0BW37QY2V",
-        "priceComparison": "4K Maxの方が上位モデルであり価格が高く設定されています。より高速なWi-Fi 6E対応や容量を求める場合は4K Max、コストを抑えつつ4K画質を楽しみたい場合は4K Selectが適しています。",
+        "name": "Fire TV Stick HD (B0DVJ64ZLT)",
+        "asin": "B0DVJ64ZLT",
+        "priceComparison": "本商品の方が約1,000円高いが、4K解像度に対応している。",
         "featureComparison": [
-          "共通点：4K Ultra HD対応、Alexa対応音声認識リモコン付属",
-          "相違点：4K MaxはWi-Fi 6E対応でより高速な通信が可能、ストレージ容量が大きい"
+          "共通点：Alexa対応音声認識リモコン付属、スマートホーム連携、各種VODアプリ対応",
+          "相違点：HDモデルはフルHD解像度・Wi-Fi 6対応だが、本商品(4K Select)は4K Ultra HD/HDR10+対応である。"
         ],
         "differentiators": [
-          "Amazon Fire TV Stick 4K Selectの利点：4K対応でありながらコストパフォーマンスに優れる",
-          "Amazon Fire TV Stick 4K Maxの利点：Wi-Fi 6E対応による安定した高速通信と、よりサクサク動く高い処理能力"
+          "Amazon Fire TV Stick 4K Selectの利点：自宅のテレビが4K対応であり、手頃な価格で高精細な映像を楽しみたい場合はこちらを選ぶべきである。",
+          "Fire TV Stick HD (B0DVJ64ZLT)の利点：テレビがフルHDまでしか対応しておらず、とにかく初期費用を安く抑えたい場合はこちらが適している。"
         ]
       },
       {
-        "name": "Google TV Streamer (4K)",
-        "asin": "B0DHKMWXJJ",
-        "priceComparison": "Google TV Streamerの方が高価です。こちらは据え置き型のデバイスであり、有線LANポートを標準搭載するなど、より充実したスマートホームハブとしての機能を持っています。",
+        "name": "Fire TV Stick 4K Max (B0G2TXBSWJ)",
+        "asin": "B0G2TXBSWJ",
+        "priceComparison": "本商品の方が約4,300円〜5,000円安い。",
         "featureComparison": [
-          "共通点：4Kストリーミング対応、音声検索機能付きリモコン付属",
-          "相違点：Fire TV Stickはスティック型でテレビの背面に隠れるのに対し、Google TV Streamerは据え置き型でインテリアに溶け込むデザイン。OSがFire OSかGoogle TVかで対応アプリや使い勝手が異なる。"
+          "共通点：4K Ultra HD/HDR10+対応、Alexa対応音声認識リモコン付属",
+          "相違点：4K MaxはWi-Fi 6E、Dolby Vision、Dolby Atmosに対応しプロセッサとストレージ(16GB)が強化されているが、本商品(4K Select)は基本機能に絞られている。"
         ],
         "differentiators": [
-          "Amazon Fire TV Stick 4K Selectの利点：テレビの背面に隠れるコンパクトな設計と、手頃な価格設定",
-          "Google TV Streamer (4K)の利点：洗練された据え置きデザインと、Google製スマートホームデバイスとの強力な連携"
+          "Amazon Fire TV Stick 4K Selectの利点：サウンドバー等の高級なオーディオ環境を持たず、基本の4K出力ができれば十分というコスト重視のユーザーにはこちらが適している。",
+          "Fire TV Stick 4K Max (B0G2TXBSWJ)の利点：Wi-Fi 6E環境を構築済みで、Dolby Vision/Atmos対応の本格的なホームシアター環境で最高の視聴体験を得たい場合は迷わずこちらを選ぶべきである。"
         ]
       },
       {
-        "name": "Apple TV 4K",
-        "asin": "B0BJMK9RG1",
-        "priceComparison": "Apple TV 4Kは大幅に価格が高いプレミアムなストリーミングデバイスです。Appleエコシステムへの親和性の高さを重視する場合はApple TV、コストパフォーマンスや手軽さを重視する場合はFire TVが適しています。",
+        "name": "Fire TV Stick 4K Plus (B0G2TQZMY1)",
+        "asin": "B0G2TQZMY1",
+        "priceComparison": "本商品の方が約5,000円安い。",
         "featureComparison": [
-          "共通点：4Kストリーミング対応、それぞれの独自音声アシスタント（Siri/Alexa）対応リモコン付属",
-          "相違点：Apple TVはtvOSを搭載しAppleのサービスやデバイスとの連携が強力で、より高い処理性能を持つ据え置き型。Fire TV Stickはコンパクトで低価格なスティック型。"
+          "共通点：4K Ultra HD映像出力に対応",
+          "相違点：PlusモデルはDolby Vision、Dolby Atmos、Wi-Fi 6に対応しているが、本商品はHDR10+までの対応となる。"
         ],
         "differentiators": [
-          "Amazon Fire TV Stick 4K Selectの利点：圧倒的な低価格でコンパクト、コストパフォーマンスの高さ",
-          "Apple TV 4Kの利点：Apple製品（iPhone、AirPods等）とのシームレスな連携と、高性能プロセッサによる滑らかな動作"
-        ]
-      },
-      {
-        "name": "Amazon Fire TV Cube",
-        "asin": "B0C7K814LB",
-        "priceComparison": "Fire TV CubeはFire TVシリーズの最上位モデルであり、価格は高くなります。ハンズフリーのAlexa機能や高性能を求めるならCube、手軽な価格で4Kを楽しみたいならSelectが適しています。",
-        "featureComparison": [
-          "共通点：4K対応のストリーミングメディアプレーヤー、Alexa機能",
-          "相違点：Cubeは内蔵マイクでリモコンなしでも音声操作が可能。より高性能なプロセッサを搭載し、Wi-Fi 6Eや有線LANポートに対応する据え置き型。"
-        ],
-        "differentiators": [
-          "Amazon Fire TV Stick 4K Selectの利点：スティック型でコンパクト、価格が安く導入しやすい",
-          "Amazon Fire TV Cubeの利点：ハンズフリーのAlexa操作と、最上位モデルならではの高い処理能力と拡張性"
-        ]
-      },
-      {
-        "name": "Chromecast with Google TV (HD)",
-        "asin": "B0B9HS6DLZ",
-        "priceComparison": "価格帯は同等クラスですが、Chromecast (HD)は解像度が1080p（フルHD）に留まります。同等の価格で4Kを求める場合はFire TV Stick 4K Selectのほうがお得感があります。",
-        "featureComparison": [
-          "共通点：テレビのHDMI端子に挿して使うスティック/ドングル型デバイス、音声認識リモコン付属",
-          "相違点：Fire TV Stick 4K Selectは4K対応ですが、こちらはフルHD（1080p）までの対応。搭載するOS（Fire OSとGoogle TV）が異なる。"
-        ],
-        "differentiators": [
-          "Amazon Fire TV Stick 4K Selectの利点：この価格帯で4K Ultra HDの高画質に対応している点",
-          "Chromecast with Google TV (HD)の利点：Googleアカウントやスマートフォンからのキャスト機能との親和性の高さ"
-        ]
-      },
-      {
-        "name": "Amazon Fire TV Stick 4K Plus",
-        "asin": "B0F7ZF7W9P",
-        "priceComparison": "4K Plusは若干高価です。より高音質なDolby Atmos対応やWi-Fi 6対応を求める場合は4K Plus、よりコストを抑えたい場合は4K Selectが適しています。",
-        "featureComparison": [
-          "共通点：4K Ultra HD対応のスティック型ストリーミングメディアプレーヤー",
-          "相違点：4K PlusはDolby Atmosのオーディオに対応し、Wi-Fi 6にも対応しているなど、基本性能が底上げされている。"
-        ],
-        "differentiators": [
-          "Amazon Fire TV Stick 4K Selectの利点：より求めやすい価格で4Kストリーミングを体験できる",
-          "Amazon Fire TV Stick 4K Plusの利点：Dolby Atmos対応やWi-Fi 6対応による、ワンランク上の視聴環境の実現"
+          "Amazon Fire TV Stick 4K Selectの利点：ホームシアター構築の予定がなく、単純に4Kテレビでストリーミングを見たいだけなら、大幅に安いこちらで十分である。",
+          "Fire TV Stick 4K Plus (B0G2TQZMY1)の利点：Dolby Vision/Atmos対応コンテンツを存分に楽しみたいが、Maxほどの処理性能は不要というバランス志向のユーザーに適している。"
         ]
       }
     ],
     "recommendation": {
       "targetUsers": [
-        "初めて4Kストリーミングデバイスを購入する人",
-        "コストを抑えてテレビをスマート化したい人",
-        "Alexa対応のスマートスピーカーをすでに利用している人"
+        "4Kテレビを所有しており、上位モデル(4K Max/Plus)ほどの本格的なAV環境(Dolby Vision/Atmos等)は不要だが、手頃な価格で4K高画質ストリーミング環境を構築したい人"
       ],
       "pros": [
-        "4K対応モデルとしては手頃な価格",
-        "音声検索やスマートホーム連携など機能が充実している",
-        "コンパクトで場所を取らない"
+        "フルHDモデルからわずか+1,000円の追加投資で4K Ultra HDとHDR10+の高精細な映像体験にアップグレードできる",
+        "Xbox Game Passを利用すれば、高価なゲーム機本体を買うことなくテレビの大画面で本格的なゲームプレイが楽しめる"
       ],
       "cons": [
-        "Wi-Fi 6Eには非対応（Wi-Fi 6までの対応）",
-        "上位モデルと比べるとストレージ容量が少ない"
+        "Dolby VisionやDolby Atmos等の最新フォーマットには非対応のため、サウンドバー等を用いた本格的なホームシアター環境での利用には向かない"
       ],
-      "score": 85,
-      "scoreRationale": "[基本点: 70]\n[加点: +10] (4K対応でありながらコストパフォーマンスが高い)\n[加点: +5] (幅広い動画配信サービスやXboxクラウドゲームに対応)\n[減点: -0] (特筆すべき大きな欠点はなし)\n[合計: 85]"
+      "score": 75,
+      "scoreRationale": "[基本点: 70]\n[加点: +8] (HDモデルとわずか1000円差で4K対応という優れたコストパフォーマンス)\n[加点: +2] (Xboxクラウドゲーミング対応などの付加価値)\n[減点: -5] (上位モデルと比較し、Dolby Vision/Atmosや最新Wi-Fi規格が省略されている点)\n[合計: 75]"
     },
     "technicalSpecs": {
+      "display": {
+        "resolution": "4K Ultra HD"
+      },
       "dimensions": {
         "height": "15.2mm",
+        "length": "99.1mm",
         "width": "30.5mm",
-        "depth": "99.1mm"
+        "weight": "42.6g"
       },
       "weight": "42.6g",
-      "capacity": "不明",
-      "material": "プラスチック",
-      "origin": "不明",
       "other": [
-        "解像度: 4K Ultra HD",
-        "HDR対応: HDR10+",
-        "カラー: BLACK",
-        "発売日: 2025年11月14日",
-        "モデル番号: CL32P4"
+        "対応映像フォーマット: HDR10+",
+        "音声操作: Alexa対応音声認識リモコン",
+        "対応ゲーム: Xboxクラウドゲーミング (Xbox Game Pass)",
+        "発売日: 2025-11-14",
+        "モデル: CL32P4",
+        "カラー: BLACK"
       ]
     }
   }
