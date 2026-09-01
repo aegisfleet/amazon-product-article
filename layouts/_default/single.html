@@ -309,6 +309,9 @@
                 var moshimoYahooPcId = '{{ site.Params.affiliate.moshimo.yahoo_pc_id | default "1925" }}';
                 var moshimoYahooPlId = '{{ site.Params.affiliate.moshimo.yahoo_pl_id | default "27061" }}';
 
+                var productRequestFormUrl = '{{ site.Params.productRequestFormUrl }}';
+                var productRequestEntryId = '{{ site.Params.productRequestEntryId | default "entry.662198856" }}';
+
                 // Helper to update shop button link and accessibility label
                 function setupShopBtn(parent, selector, href, ariaLabel) {
                     var btn = parent.querySelector(selector);
@@ -492,6 +495,41 @@
                         internalLink.className = 'btn-internal-small';
                         actionRow.appendChild(internalLink);
                         linksContainer.appendChild(actionRow);
+                    } else if (asin && productRequestFormUrl) {
+                        var reqActionRow = document.createElement('div');
+                        reqActionRow.className = 'competitor-action-row';
+
+                        var targetAmazonUrl = 'https://www.amazon.co.jp/dp/' + asin;
+                        var reqUrl = productRequestFormUrl + '?usp=pp_url&' + encodeURIComponent(productRequestEntryId) + '=' + encodeURIComponent(targetAmazonUrl);
+
+                        var reqBtn = document.createElement('a');
+                        reqBtn.href = reqUrl;
+                        reqBtn.target = '_blank';
+                        reqBtn.rel = 'noopener noreferrer';
+                        reqBtn.className = 'btn-internal-small btn-request-small';
+                        reqBtn.setAttribute('aria-label', (title ? title + 'の' : '') + '調査リクエストを送信（Googleフォームを新しいタブで開く）');
+
+                        var reqIcon = document.createElement('span');
+                        reqIcon.className = 'material-symbols-outlined';
+                        reqIcon.setAttribute('aria-hidden', 'true');
+                        reqIcon.style.fontSize = '0.95rem';
+                        reqIcon.style.verticalAlign = 'middle';
+                        reqIcon.textContent = 'rate_review';
+
+                        var reqLabel = document.createElement('span');
+                        reqLabel.textContent = ' 調査リクエスト';
+
+                        var extIcon = document.createElement('span');
+                        extIcon.className = 'external-icon';
+                        extIcon.setAttribute('aria-hidden', 'true');
+                        extIcon.textContent = ' ↗';
+
+                        reqBtn.appendChild(reqIcon);
+                        reqBtn.appendChild(reqLabel);
+                        reqBtn.appendChild(extIcon);
+
+                        reqActionRow.appendChild(reqBtn);
+                        linksContainer.appendChild(reqActionRow);
                     }
                     linksContainer.appendChild(shopButtonsDiv);
                 }

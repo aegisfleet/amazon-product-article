@@ -1892,6 +1892,20 @@ a.competitor-preview:hover {
   box-shadow: 0 2px 6px rgba(79, 70, 229, 0.2);
 }
 
+.competitor-links .btn-request-small {
+  background: #FFF7ED;
+  color: #C2410C;
+  border-color: #FFEDD5;
+}
+
+.competitor-links .btn-request-small:hover {
+  background: #EA580C;
+  color: #FFFFFF;
+  border-color: #EA580C;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 6px rgba(234, 88, 12, 0.25);
+}
+
 [data-theme="dark"] .competitor-links .btn-compare-card,
 [data-theme="dark"] .rec-card-actions .btn-compare-card,
 [data-theme="dark"] .competitor-action-row .btn-compare-card,
@@ -1932,6 +1946,19 @@ a.competitor-preview:hover {
   color: var(--md-sys-color-on-primary, #1E1B4B);
   border-color: var(--md-sys-color-primary, #818CF8);
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+[data-theme="dark"] .competitor-links .btn-request-small {
+  background: rgba(234, 88, 12, 0.15);
+  color: #FDBA74;
+  border-color: rgba(234, 88, 12, 0.35);
+}
+
+[data-theme="dark"] .competitor-links .btn-request-small:hover {
+  background: #EA580C;
+  color: #FFFFFF;
+  border-color: #EA580C;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
 }
 
 .product-shop-buttons--competitor {
