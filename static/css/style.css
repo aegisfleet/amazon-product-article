@@ -1899,11 +1899,11 @@ a.competitor-preview:hover {
 }
 
 .competitor-links .btn-request-small:hover {
-  background: #EA580C;
+  background: #C2410C;
   color: #FFFFFF;
-  border-color: #EA580C;
+  border-color: #C2410C;
   transform: translateY(-1px);
-  box-shadow: 0 2px 6px rgba(234, 88, 12, 0.25);
+  box-shadow: 0 2px 6px rgba(194, 65, 12, 0.25);
 }
 
 [data-theme="dark"] .competitor-links .btn-compare-card,
@@ -1949,15 +1949,15 @@ a.competitor-preview:hover {
 }
 
 [data-theme="dark"] .competitor-links .btn-request-small {
-  background: rgba(234, 88, 12, 0.15);
-  color: #FDBA74;
-  border-color: rgba(234, 88, 12, 0.35);
+  background: #431407;
+  color: #FFEDD5;
+  border-color: #7C2D12;
 }
 
 [data-theme="dark"] .competitor-links .btn-request-small:hover {
-  background: #EA580C;
+  background: #C2410C;
   color: #FFFFFF;
-  border-color: #EA580C;
+  border-color: #C2410C;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
 }
 
