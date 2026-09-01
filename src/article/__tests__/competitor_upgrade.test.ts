@@ -56,4 +56,18 @@ describe('Competitor card upgrade parsing logic', () => {
     expect(specs['素材']).toBe('ポリプロピレン / スチロール樹脂');
     expect(specs['サイズ']).toBe('850mm × 650mm × 410mm');
   });
+
+  test('builds pre-filled request url correctly for uninvestigated competitor', () => {
+    const productRequestFormUrl =
+      'https://docs.google.com/forms/d/e/1FAIpQLSc09aO5nj3y247QRkO2TQZ_ASH1J5mljIB--2ym1CkwRGUVqw/viewform';
+    const productRequestEntryId = 'entry.662198856';
+    const asin = 'B0DSBLFMSV';
+
+    const targetAmazonUrl = `https://www.amazon.co.jp/dp/${asin}`;
+    const reqUrl = `${productRequestFormUrl}?usp=pp_url&${encodeURIComponent(productRequestEntryId)}=${encodeURIComponent(targetAmazonUrl)}`;
+
+    expect(reqUrl).toBe(
+      'https://docs.google.com/forms/d/e/1FAIpQLSc09aO5nj3y247QRkO2TQZ_ASH1J5mljIB--2ym1CkwRGUVqw/viewform?usp=pp_url&entry.662198856=https%3A%2F%2Fwww.amazon.co.jp%2Fdp%2FB0DSBLFMSV',
+    );
+  });
 });
