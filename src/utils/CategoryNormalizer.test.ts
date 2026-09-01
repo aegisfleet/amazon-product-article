@@ -105,6 +105,8 @@ describe('CategoryNormalizer', () => {
         'XiaomiAll',
         'moto g66y 5G',
         '特選タイムセール',
+        'メンズ 春夏アウトドアシューズどがお買得',
+        'コーヒー・ティー用品や食器などがお買得',
         'CMLHome9999',
         'CMLSports9999',
         'ソニー2025SpringCamera',
