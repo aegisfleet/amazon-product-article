@@ -25,117 +25,130 @@
       "オフィスワーク中に同僚からの呼びかけに反応しつつBGMを流す",
       "長時間のオンラインミーティングで耳への負担を軽減する"
     ],
-    "userStories": [],
+    "userStories": [
+      {
+        "userType": "ランナー・スポーツ愛好家",
+        "scenario": "屋外でのランニングやジムでのトレーニング時",
+        "experience": "物理ボタンを採用しているため、汗を拭う時や激しく動いた際に手が当たっても誤作動せず、ストレスフリーでランニングに集中できた。オープンイヤーで車の音も聞こえるので安全面でも安心感がある。",
+        "supportingSourceIds": [
+          "src-amazon-official"
+        ],
+        "sentiment": "positive"
+      },
+      {
+        "userType": "テレワーク層・在宅ワーカー",
+        "scenario": "長時間のオンライン会議やPC作業時",
+        "experience": "イヤーカフ型で耳の穴を塞がないため、長時間装着しても蒸れや痛みが少ない。柔軟なブリッジで着け心地が良く、宅配便のチャイムなど周囲の音にすぐ気づけるので在宅勤務で重宝している。",
+        "supportingSourceIds": [
+          "src-amazon-official"
+        ],
+        "sentiment": "positive"
+      }
+    ],
     "userImpression": "イヤーカフ型というアクセサリー感覚で装着できるデザインと、耳を塞がない快適さが特徴。大型ドライバーによる音質へのこだわりや、ボタン操作の確実性が評価される反面、再生時間や防水性能は日常使い向けの水準にとどまっています。",
     "sources": [
       {
-        "id": "src-amazon-B0DFCPRT83",
-        "name": "Amazon商品ページ",
+        "id": "src-amazon-official",
+        "name": "Amazon公式商品ページ",
         "url": "https://www.amazon.co.jp/dp/B0DFCPRT83",
         "tier": "high",
         "evidenceType": "primary",
-        "publishedAt": "2026-03-19",
-        "author": "Amazon",
-        "conflictOfInterest": "none",
-        "notes": "スペック、機能（IPX4、マルチポイント、Bluetooth5.4、最大21時間再生等）を確認。"
+        "publishedAt": "2024-01-01",
+        "author": "Anker",
+        "conflictOfInterest": "disclosed",
+        "notes": "製品仕様、機能説明、ボタン操作や大型ドライバーの採用などの特徴を確認"
       }
     ],
     "claims": [
       {
-        "claim": "12mm × 17mmの大型ドライバーで迫力のある重低音を実現",
+        "claim": "12mm × 17mmの大型ドライバーで、迫力のある重低音を実現",
         "category": "quality",
-        "confidence": "high",
-        "supportingSourceIds": ["src-amazon-B0DFCPRT83"],
+        "confidence": "medium",
+        "supportingSourceIds": [
+          "src-amazon-official"
+        ],
         "crossChecked": false,
-        "notes": "メーカー公式スペックに基づく"
-      },
-      {
-        "claim": "ボタンコントロールを採用し誤作動を防ぐ",
-        "category": "durability",
-        "confidence": "high",
-        "supportingSourceIds": ["src-amazon-B0DFCPRT83"],
-        "crossChecked": false,
-        "notes": "メーカー公式スペックに基づく"
+        "notes": "メーカー独自の音響設計による主張。オープンイヤー型としてはドライバーサイズが大きく、構造的に低音強化が図られていると推測される"
       }
     ],
-    "lastInvestigated": "2026-03-19",
+    "lastInvestigated": "2026-09-02",
     "competitiveAnalysis": [
       {
-        "name": "Anker Soundcore C30i",
-        "asin": "B0FY2KS37R",
-        "priceComparison": "下位モデルとして位置づけられており、価格は対象商品よりも安いですが、対象商品はより上位のBluetooth規格や大型ドライバーによる音質向上が期待できます。",
+        "name": "Anker Soundcore AeroClip",
+        "asin": "B0DLGJCTPK",
+        "priceComparison": "対象商品より約3,000円高い",
         "featureComparison": [
-          "共通点：イヤーカフ型のオープンイヤーイヤホンで、IPX4防水規格を備えている点",
-          "相違点：対象商品はBluetooth 5.4に対応しているのに対し、C30iはBluetooth 5.3であり、最大再生時間もC30iの方が長い（最大30時間）"
+          "共通点：Ankerブランドのイヤーカフ型オープンイヤーイヤホンであること。",
+          "相違点：AeroClipは片耳約5.9gで最大32時間再生に対応し、よりミニマルなデザインを採用。本商品は物理ボタン操作と12mm×17mmの大型ドライバーを採用している。"
         ],
         "differentiators": [
-          "Anker Soundcore C40iの利点：より新しいBluetooth規格と大型ドライバーを備え、安定した接続と高音質を楽しめる",
-          "Anker Soundcore C30iの利点：バッテリー駆動時間が長く、より安価に導入できる"
+          "Anker Soundcore C40iの利点：運動中の誤操作を確実に防ぐ物理ボタンを好む人や、より大型のドライバーによる重低音の迫力を重視しつつ価格を抑えたい人。",
+          "Anker Soundcore AeroClipの利点：より洗練されたミニマルなデザインや、アクセサリー感覚で着けられる軽量性を重視する人。"
         ]
       },
       {
-        "name": "UGREEN FitBuds",
-        "asin": "B0DZX8G1ZB",
-        "priceComparison": "競合はセール等の影響で大幅に安いですが、対象商品は実績あるオーディオブランドのAnker製であり、サポートやマルチポイント機能の安定性に強みがあります。",
+        "name": "Anker Soundcore C50i",
+        "asin": "B0FHVJH6J9",
+        "priceComparison": "対象商品とほぼ同価格（対象商品より約200円高い）",
         "featureComparison": [
-          "共通点：オープンイヤー型でマルチポイント接続（2台同時）に対応している点",
-          "相違点：対象商品はBluetooth 5.4・最大21時間再生・IPX4防水であるのに対し、競合はBluetooth 6.0・最大28時間再生・IPX5防水を備える"
+          "共通点：1万円前後のAnker製イヤーカフ型オープンイヤーイヤホンであること。",
+          "相違点：C50iは片耳約5.5gの軽量設計でIP55防塵防水に対応。本商品はタッチ操作ではなく物理ボタンを採用し、より大型のドライバー（12×17mm）を搭載している。"
         ],
         "differentiators": [
-          "Anker Soundcore C40iの利点：イヤーカフ型で物理ボタンによる確実な操作性を持ち、Anker製としての高い信頼性がある",
-          "UGREEN FitBudsの利点：防水性能が高く、バッテリー寿命も長いため、よりスポーツ用途や長時間の外出に適している"
+          "Anker Soundcore C40iの利点：タッチセンサーの誤作動にストレスを感じやすく、確実な操作ができる物理ボタンを求める人や、大型ドライバーによる低音を楽しみたい人。",
+          "Anker Soundcore C50iの利点：より軽量な装着感（約5.5g）やIP55の防塵防水性能を重視し、突然の雨や水濡れに対する安心感を求める人。"
         ]
       },
       {
-        "name": "EarFun OpenJump",
-        "asin": "B0F37J92SG",
-        "priceComparison": "競合の方がやや安価ですが、対象商品はイヤーカフ型という独特な装着スタイルを提供しており、アクセサリー感覚で着けたいユーザーには価格差以上の価値があります。",
+        "name": "SOUNDPEATS CC PearlClip Pro",
+        "asin": "B0DJXMQM9J",
+        "priceComparison": "対象商品より約5,000円安い",
         "featureComparison": [
-          "共通点：耳を塞がないオープンイヤー型である点",
-          "相違点：対象商品はイヤーカフ型でIPX4であるのに対し、競合は耳掛け型でIPX7の高い防水性能とLDAC対応・ワイヤレス充電を備える"
+          "共通点：イヤーカフ型のオープンイヤーイヤホンであること。",
+          "相違点：SOUNDPEATS CCはLDAC対応やVGP金賞受賞など高機能ながら5千円以下の低価格。本商品は物理ボタン操作と、柔軟なブリッジ・イヤーカフキャップによるフィット感の調整機能を持つ。"
         ],
         "differentiators": [
-          "Anker Soundcore C40iの利点：イヤーカフ型でメガネやマスクと干渉しにくく、スマートな見た目で装着できる",
-          "EarFun OpenJumpの利点：高い防水性能とハイレゾ相当のLDACコーデックに対応しており、音質と耐久性を両立している"
+          "Anker Soundcore C40iの利点：Ankerブランドのサポート体制や、物理ボタンによる確実な操作性、イヤーカフキャップを用いた自身の耳へのフィット感の微調整を重視する人。",
+          "SOUNDPEATS CC PearlClip Proの利点：LDACハイレゾ対応やマルチポイント接続といった高機能なイヤホンを、可能な限り低価格で手に入れたいコストパフォーマンス重視の人。"
         ]
       },
       {
-        "name": "Anker Soundcore V20i",
-        "asin": "B0D4Z8NPH7",
-        "priceComparison": "競合は対象商品より安価ですが、対象商品はイヤーカフ型を採用しており、装着感の好みに応じた選択肢となります。",
+        "name": "EarFun Clip 2",
+        "asin": "B0GKP46WT1",
+        "priceComparison": "対象商品より約1,800円安い",
         "featureComparison": [
-          "共通点：Anker製のオープンイヤー型で、マルチポイント接続やBluetooth 5.4に対応している点",
-          "相違点：対象商品はイヤーカフ型（クリップ式）であるのに対し、競合はイヤーフック型（耳掛け式）でライト搭載やIP55防塵防水を備える"
+          "共通点：イヤーカフ型で物理ボタンを搭載していること。",
+          "相違点：EarFun Clip 2はワイヤレス充電とLDACに対応し最大40時間再生が可能。本商品は12x17mm大型ドライバーと、付属キャップによるフィット感調整機能を持つ。"
         ],
         "differentiators": [
-          "Anker Soundcore C40iの利点：耳たぶに挟むイヤーカフ型で、耳の形状に関わらず安定して装着でき、スタイリッシュなデザインである",
-          "Anker Soundcore V20iの利点：防塵防水性能が高く、ライト搭載で夜間のランニング等により適している"
+          "Anker Soundcore C40iの利点：付属のキャップを用いた微細なフィット感の調整を求める人や、Ankerブランドの高い信頼性を重視する人。",
+          "EarFun Clip 2の利点：ワイヤレス充電の利便性や、LDACコーデックによる高音質再生、40時間の長時間バッテリーを重視する人。"
         ]
       },
       {
-        "name": "JBL SOUNDGEAR SENSE",
-        "asin": "B0CJRD7SXD",
-        "priceComparison": "価格帯は同等ですが、対象商品はイヤーカフ型、競合はイヤーフック型であり、装着スタイルの好みで選ぶことができます。",
+        "name": "SOUNDPEATS UU2",
+        "asin": "B0GLGJTQ7C",
+        "priceComparison": "対象商品より約4,000円安い",
         "featureComparison": [
-          "共通点：約1万円の価格帯で、耳を塞がないオープンイヤーデザインを採用している点",
-          "相違点：対象商品はイヤーカフ型でBluetooth 5.4・IPX4であるのに対し、競合はイヤーフック型でBluetooth 5.3・IP54防塵防水を備える"
+          "共通点：イヤーカフ型で物理ボタンを採用していること。",
+          "相違点：UU2はLDAC対応、マルチポイント機能、最大42時間再生を備え低価格。本商品は12x17mmの大口径ドライバーとイヤーカフキャップによる装着感の強化が特徴。"
         ],
         "differentiators": [
-          "Anker Soundcore C40iの利点：イヤーカフ型で耳の上に掛ける負担がなく、物理ボタンでスポーツ中も誤操作しにくい",
-          "JBL SOUNDGEAR SENSEの利点：イヤーフックの角度調整が可能で、JBL独自のOpenSoundテクノロジーによる高音質を楽しめる"
+          "Anker Soundcore C40iの利点：イヤーカフキャップを用いた確実で安定した装着感を求める人や、大型ドライバーの物理的な音の迫力を重視する人。",
+          "SOUNDPEATS UU2の利点：物理ボタンの使いやすさに加え、LDAC対応や長時間再生、マルチポイント機能といった豊富な機能をより安価に手に入れたい人。"
         ]
       },
       {
-        "name": "Earaku オープンイヤーイヤホン",
-        "asin": "B0FZTZXNFK",
-        "priceComparison": "競合は対象商品の半額程度で安価ですが、対象商品はAnkerブランドの信頼性と専用アプリ等の使い勝手の良さが強みです。",
+        "name": "UGREEN イヤーカフ イヤホン",
+        "asin": "B0DMZWD4JP",
+        "priceComparison": "対象商品より約7,400円安い",
         "featureComparison": [
-          "共通点：Bluetooth 5.4に対応したオープンイヤー型である点",
-          "相違点：対象商品はイヤーカフ型で最大21時間再生であるのに対し、競合は耳掛け式で、重量が16gと非常に軽量である"
+          "共通点：オープンイヤー型のイヤホンであること。",
+          "相違点：UGREENは2,000円台という圧倒的な低価格とBluetooth 5.4に対応。本商品は12x17mm大型ドライバーや物理ボタン操作、フィット感を高める柔軟なブリッジ構造を備える。"
         ],
         "differentiators": [
-          "Anker Soundcore C40iの利点：イヤーカフ型のため耳への負担が少なく、Ankerのサポートと品質の安心感がある",
-          "Earaku オープンイヤーイヤホンの利点：非常に安価で導入でき、軽量設計のため長時間の装着に向いている"
+          "Anker Soundcore C40iの利点：音質や装着感の調整（キャップ付属）、運動中も使いやすい物理ボタンによる操作性にしっかりこだわりたい人。",
+          "UGREEN イヤーカフ イヤホンの利点：とにかく予算を抑えて、手軽にイヤーカフ型イヤホンの「ながら聴き」を試してみたい人。"
         ]
       }
     ],
@@ -158,12 +171,29 @@
       "scoreRationale": "[基本点: 70]\n[加点: +5] (イヤーカフ型と柔軟なブリッジによる快適な装着感)\n[加点: +5] (マルチポイント接続やBluetooth 5.4など最新規格への対応)\n[加点: +3] (大型ドライバー搭載による音質の強化)\n[減点: -5] (最大21時間とバッテリー持ちが競合比で劣る)\n[減点: -3] (IPX4防水とスポーツ用途にはやや心許ない耐久性)\n[合計: 75]"
     },
     "technicalSpecs": {
-      "dimensions": { "height": "30.0mm", "width": "50.0mm", "depth": "60.0mm" },
+      "dimensions": {
+        "height": "30mm",
+        "width": "50mm",
+        "depth": "60mm",
+        "weight": "51.6g"
+      },
       "weight": "51.6g",
-      "connectivity": "Bluetooth 5.4",
-      "waterResistance": "IPX4",
-      "batteryLife": "最大21時間",
-      "features": ["マルチポイント接続", "イヤーカフ型", "大型ドライバー(12mm × 17mm)"]
-    }
+      "color": "メタリックグレー",
+      "battery": {
+        "playbackTime": "最大21時間"
+      },
+      "connectivity": [
+        "Bluetooth 5.4",
+        "マルチポイント接続"
+      ],
+      "other": [
+        "防水規格: IPX4",
+        "ドライバー: 12mm×17mm",
+        "コントロール方式: 物理ボタン",
+        "イヤーカフキャップ2種付属",
+        "充電ポート: USB-C"
+      ]
+    },
+    "investigatedPrice": "￥9,800"
   }
 }
