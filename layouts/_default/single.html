@@ -431,6 +431,55 @@
                     return btn;
                 }
 
+                function extractCompetitorPrice(card) {
+                    var priceElem = card.querySelector('.competitor-actual-price') || card.querySelector('.competitor-price');
+                    if (!priceElem) return '';
+                    var clone = priceElem.cloneNode(true);
+                    var subSpans = clone.querySelectorAll('.competitor-price-diff, .hero-points, .m3-badge');
+                    subSpans.forEach(function (s) { s.remove(); });
+                    var priceMatch = clone.textContent.match(/[￥¥]?\s*[\d,]+/);
+                    return priceMatch ? priceMatch[0].trim() : clone.textContent.trim();
+                }
+
+                function extractCompetitorScore(card) {
+                    var scoreElem = card.querySelector('.competitor-score-container, .pickup-card-score, .competitor-preview-score');
+                    if (!scoreElem) return 0;
+                    var scoreMatch = scoreElem.textContent.match(/(\d+)\s*点?/);
+                    return scoreMatch ? Number.parseInt(scoreMatch[1], 10) : 0;
+                }
+
+                function buildCompetitorRequestButton(title, asin) {
+                    var targetAmazonUrl = 'https://www.amazon.co.jp/dp/' + asin;
+                    var reqUrl = productRequestFormUrl + '?usp=pp_url&' + encodeURIComponent(productRequestEntryId) + '=' + encodeURIComponent(targetAmazonUrl);
+
+                    var reqBtn = document.createElement('a');
+                    reqBtn.href = reqUrl;
+                    reqBtn.target = '_blank';
+                    reqBtn.rel = 'noopener noreferrer';
+                    reqBtn.className = 'btn-internal-small btn-request-small';
+                    reqBtn.setAttribute('aria-label', (title ? title + 'の' : '') + '調査リクエストを送信（Googleフォームを新しいタブで開く）');
+
+                    var reqIcon = document.createElement('span');
+                    reqIcon.className = 'material-symbols-outlined';
+                    reqIcon.setAttribute('aria-hidden', 'true');
+                    reqIcon.style.fontSize = '0.95rem';
+                    reqIcon.style.verticalAlign = 'middle';
+                    reqIcon.textContent = 'rate_review';
+
+                    var reqLabel = document.createElement('span');
+                    reqLabel.textContent = ' 調査リクエスト';
+
+                    var extIcon = document.createElement('span');
+                    extIcon.className = 'external-icon';
+                    extIcon.setAttribute('aria-hidden', 'true');
+                    extIcon.textContent = ' ↗';
+
+                    reqBtn.appendChild(reqIcon);
+                    reqBtn.appendChild(reqLabel);
+                    reqBtn.appendChild(extIcon);
+                    return reqBtn;
+                }
+
                 function upgradeCompetitorCard(card) {
                     var linksContainer = card.querySelector('.competitor-links');
                     if (!linksContainer) return;
@@ -444,31 +493,12 @@
 
                     var h4 = card.querySelector('h4');
                     var title = h4 ? h4.textContent.trim() : '';
-
                     var asin = extractCardAsin(amazonHref, title);
 
-                    // 価格抽出: .competitor-actual-price を優先し、差額等のバッジを除去
-                    var priceElem = card.querySelector('.competitor-actual-price') || card.querySelector('.competitor-price');
-                    var price = '';
-                    if (priceElem) {
-                        var clone = priceElem.cloneNode(true);
-                        var subSpans = clone.querySelectorAll('.competitor-price-diff, .hero-points, .m3-badge');
-                        subSpans.forEach(function (s) { s.remove(); });
-                        var priceMatch = clone.textContent.match(/[￥¥]?\s*[\d,]+/);
-                        price = priceMatch ? priceMatch[0].trim() : clone.textContent.trim();
-                    }
-
+                    var price = extractCompetitorPrice(card);
                     var imgElem = card.querySelector('.competitor-preview-img, img');
                     var image = imgElem ? imgElem.getAttribute('src') : '';
-
-                    // スコア抽出: .competitor-score-container, .pickup-card-score などから数値取得
-                    var scoreElem = card.querySelector('.competitor-score-container, .pickup-card-score, .competitor-preview-score');
-                    var score = 0;
-                    if (scoreElem) {
-                        var scoreMatch = scoreElem.textContent.match(/(\d+)\s*点?/);
-                        score = scoreMatch ? Number.parseInt(scoreMatch[1], 10) : 0;
-                    }
-
+                    var score = extractCompetitorScore(card);
                     var specsJson = extractCompetitorSpecs(card);
                     var shopButtonsDiv = buildCompetitorShopButtons(title, amazonHref, asin);
 
@@ -498,37 +528,7 @@
                     } else if (asin && productRequestFormUrl) {
                         var reqActionRow = document.createElement('div');
                         reqActionRow.className = 'competitor-action-row';
-
-                        var targetAmazonUrl = 'https://www.amazon.co.jp/dp/' + asin;
-                        var reqUrl = productRequestFormUrl + '?usp=pp_url&' + encodeURIComponent(productRequestEntryId) + '=' + encodeURIComponent(targetAmazonUrl);
-
-                        var reqBtn = document.createElement('a');
-                        reqBtn.href = reqUrl;
-                        reqBtn.target = '_blank';
-                        reqBtn.rel = 'noopener noreferrer';
-                        reqBtn.className = 'btn-internal-small btn-request-small';
-                        reqBtn.setAttribute('aria-label', (title ? title + 'の' : '') + '調査リクエストを送信（Googleフォームを新しいタブで開く）');
-
-                        var reqIcon = document.createElement('span');
-                        reqIcon.className = 'material-symbols-outlined';
-                        reqIcon.setAttribute('aria-hidden', 'true');
-                        reqIcon.style.fontSize = '0.95rem';
-                        reqIcon.style.verticalAlign = 'middle';
-                        reqIcon.textContent = 'rate_review';
-
-                        var reqLabel = document.createElement('span');
-                        reqLabel.textContent = ' 調査リクエスト';
-
-                        var extIcon = document.createElement('span');
-                        extIcon.className = 'external-icon';
-                        extIcon.setAttribute('aria-hidden', 'true');
-                        extIcon.textContent = ' ↗';
-
-                        reqBtn.appendChild(reqIcon);
-                        reqBtn.appendChild(reqLabel);
-                        reqBtn.appendChild(extIcon);
-
-                        reqActionRow.appendChild(reqBtn);
+                        reqActionRow.appendChild(buildCompetitorRequestButton(title, asin));
                         linksContainer.appendChild(reqActionRow);
                     }
                     linksContainer.appendChild(shopButtonsDiv);
