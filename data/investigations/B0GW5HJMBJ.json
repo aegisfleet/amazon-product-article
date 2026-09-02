@@ -1,0 +1,172 @@
+{
+  "analysis": {
+    "productName": "Ebest 紛失防止スマートタグ 2個セット",
+    "parentAsin": "B0HGBY1HKL",
+    "productDescription": "Bluetooth接続でスマートフォンから位置確認ができる小型軽量なスマートトラッカー。2個セットで1,000円を切る低価格を実現し、手軽に持ち物の紛失防止ができる製品です。",
+    "productUsage": [
+      "鍵、財布、バッグなど貴重品の紛失防止",
+      "スーツケースや旅行カバンの管理",
+      "子供や高齢者の見守り",
+      "ペットの迷子防止"
+    ],
+    "positivePoints": [
+      "2個セットで998円というスマートトラッカーとしては非常に安価な価格設定",
+      "電池交換可能な省電力設計",
+      "小型・超軽量設計で持ち運びに便利"
+    ],
+    "negativePoints": [
+      "Appleの「探す」ネットワーク(MFi認証)対応の記載がなく、専用アプリを用いたBluetooth範囲内での追跡に限定される可能性が高い",
+      "国内のサポート体制やブランド（Ebest）の信頼性が不透明である",
+      "参考価格1,499円からの割引（33%OFF）が設定されているが、元の価格設定の妥当性に懸念がある"
+    ],
+    "useCases": [
+      "よく鍵や財布を家の中で見失う人が、音を鳴らして探す用途",
+      "通勤・通学用バッグに入れておく日常的な忘れ物防止",
+      "旅行時のスーツケース等への取り付け"
+    ],
+    "userStories": [
+      {
+        "userType": "忘れ物が多い人",
+        "scenario": "外出前に家の中で鍵や財布が見当たらない時",
+        "experience": "スマートトラッカーを取り付けておくことで、専用アプリから音を鳴らしてすぐに見つけることができる。2個セットで安価なため、鍵と財布の両方に気軽に導入できた。",
+        "supportingSourceIds": ["src-amazon-page"],
+        "sentiment": "positive"
+      },
+      {
+        "userType": "コスト重視のユーザー",
+        "scenario": "スマートトラッカーを初めて導入する際",
+        "experience": "AirTagなどの有名ブランド品は高価だが、本商品は2個セットで1,000円以下と非常に安いため、お試しとして購入しやすい。",
+        "supportingSourceIds": ["src-amazon-page"],
+        "sentiment": "positive"
+      }
+    ],
+    "userImpression": "価格の安さが最大の魅力であり、とりあえずスマートトラッカーを試してみたい人や、家の中での探し物用として割り切って使う分には十分な製品です。一方で、Appleの「探す」ネットワークのような広域追跡機能の記載がないため、外出先で紛失した際の発見率には限界があると推測されます。",
+    "sources": [
+      {
+        "id": "src-amazon-page",
+        "name": "Amazon.co.jp 商品ページ",
+        "url": "https://www.amazon.co.jp/dp/B0GW5HJMBJ",
+        "tier": "medium",
+        "evidenceType": "primary",
+        "publishedAt": "2026-09-02",
+        "author": "Amazon.co.jp (出品者: Ebest)",
+        "conflictOfInterest": "possible",
+        "notes": "商品の特徴、仕様、価格（998円）、販売情報等を確認。Apple「探す」ネットワーク対応の言及なし、専用アプリを使用する記載あり。"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "Bluetoothトラッカーとして日常の忘れ物防止や探し物対策に役立つ",
+        "category": "quality",
+        "confidence": "medium",
+        "supportingSourceIds": ["src-amazon-page"],
+        "crossChecked": false,
+        "notes": "Bluetoothの有効範囲内（一般的に約10m〜30m）であれば専用アプリから音を鳴らして探すことが可能であると推測される。"
+      }
+    ],
+    "lastInvestigated": "2026-09-02",
+    "investigatedPrice": "￥998",
+    "competitiveAnalysis": [
+      {
+        "name": "Pandaunic スマートトラッカー (B0FCMVS326)",
+        "asin": "B0FCMVS326",
+        "priceComparison": "Ebest製品は998円（2個セット）で非常に安価ですが、Pandaunic製品は1,454円（2個セット）でAppleの「探す」ネットワークに対応しています。",
+        "featureComparison": [
+          "共通点：2個セットである点、小型軽量で持ち物に付けやすい点。",
+          "相違点：PandaunicはMFi認証品でありApple「探す」アプリに対応し広範囲での追跡が可能。Ebestは専用アプリでのBluetooth接続（近距離）となる可能性が高い。"
+        ],
+        "differentiators": [
+          "Ebest 紛失防止スマートタグの利点：とにかく初期費用を抑えて、家の中など近距離での探し物（音を鳴らす等）に特化して使いたい人向け。",
+          "Pandaunic スマートトラッカーの利点：外出先で落とした際など、遠距離でも世界中のAppleデバイスのネットワークを使って見つけたいiPhoneユーザー向け。"
+        ]
+      },
+      {
+        "name": "Xiaomi Tag スマートタグ (B0G5B5DM5P)",
+        "asin": "B0G5B5DM5P",
+        "priceComparison": "Xiaomi製品は1個で1,941円であり、Ebest製品よりも高価ですが、大手ブランドの信頼性があります。",
+        "featureComparison": [
+          "共通点：電池交換式で小型である点。",
+          "相違点：XiaomiはAppleとGoogleのネットワークに対応しIP67防水を搭載。Ebestは専用アプリを使用し、防水機能や広域ネットワークの記載がない。"
+        ],
+        "differentiators": [
+          "Ebest 紛失スマートタグの利点：価格が圧倒的に安いため、複数の持ち物に低コストで付けたい場合。",
+          "Xiaomi Tag スマートタグの利点：防水性や大手メーカーのサポート体制、Apple/Googleの広域ネットワーク対応による高い追跡性能を重視する人向け。"
+        ]
+      },
+      {
+        "name": "Anker Eufy SmartTrack Card E30 (B0DWMPNCLC)",
+        "asin": "B0DWMPNCLC",
+        "priceComparison": "Anker Eufyは2,990円と高価ですが、カード型で財布に適しています。",
+        "featureComparison": [
+          "共通点：紛失防止を目的としたトラッカーである点。",
+          "相違点：Eufyは財布に入れやすいカード型でApple「探す」に対応。Ebestはキーホルダー等に取り付けるタグ型。"
+        ],
+        "differentiators": [
+          "Ebest 紛失スマートタグの利点：鍵やバッグなど、タグとしてぶら下げて使用したい場合や、コストを重視する場合。",
+          "Anker Eufy SmartTrack Card E30の利点：財布の中でかさばらないカード型を求める人、Ankerブランドの信頼性やApple「探す」対応を求める人向け。"
+        ]
+      },
+      {
+        "name": "Bingoods スマートトラッカー (B0HDYGXJKF)",
+        "asin": "B0HDYGXJKF",
+        "priceComparison": "Bingoodsは2,290円で高価ですが、MFi認証取得のカード型でワイヤレス充電に対応しています。",
+        "featureComparison": [
+          "共通点：紛失防止タグである点。",
+          "相違点：Bingoodsはカード型でワイヤレス充電可能、Apple「探す」対応、IP68防水。Ebestはタグ型で電池交換式。"
+        ],
+        "differentiators": [
+          "Ebest 紛失スマートタグの利点：安価にタグ型のトラッカーを複数導入したい場合。",
+          "Bingoods スマートトラッカーの利点：充電式で繰り返し使え、財布に入れやすい薄型設計と防水性を求めるiPhoneユーザー向け。"
+        ]
+      },
+      {
+        "name": "Benlera スマートトラッカー (B0G2LWPM1Z)",
+        "asin": "B0G2LWPM1Z",
+        "priceComparison": "Benleraは1,692円でEbestより高価ですが、Apple「探す」ネットワークに対応しています。",
+        "featureComparison": [
+          "共通点：小型のタグ型トラッカーで電池交換が可能な点。",
+          "相違点：BenleraはMFi認証取得済みでApple「探す」に対応している。Ebestは非対応の可能性が高い。"
+        ],
+        "differentiators": [
+          "Ebest 紛失スマートタグの利点：とにかく価格を安く抑えたい場合。",
+          "Benlera スマートトラッカーの利点：少しの価格追加で、Apple「探す」ネットワークによる広域追跡機能を確実に手に入れたいiPhoneユーザー向け。"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "家の中で鍵や財布をよく見失い、音を鳴らして探すための安価なデバイスを探している人（広域追跡の必要性が低い人）",
+        "スマートトラッカーがどのようなものか、まずは1,000円以下の低予算で試してみたい人"
+      ],
+      "pros": [
+        "2個セットで998円という破格の安さで、複数持ち物に導入しやすい",
+        "専用アプリから音を鳴らすことで、室内などの近距離での探し物を素早く見つけられる"
+      ],
+      "cons": [
+        "Appleの「探す」などの広域ネットワークに対応していない可能性が高く、外出先で落とした場合の発見率はMFi認証品に劣る",
+        "専用アプリの品質やバックグラウンドでの動作安定性が不明確である"
+      ],
+      "score": 67,
+      "scoreRationale": "[基本点: 70]\n[加点: +5] (2個セットで998円という非常に手頃な価格設定で導入しやすい)\n[減点: -8] (Appleの「探す」等広域ネットワークへの対応記載がなく専用アプリ使用とされ、紛失防止タグとしての追跡能力が競合より制限される)\n[合計: 67]"
+    },
+    "technicalSpecs": {
+      "model": "WT01",
+      "color": "ブラック",
+      "weight": "不明",
+      "dimensions": {
+        "height": "8.0mm",
+        "width": "36.0mm",
+        "depth": "36.0mm"
+      },
+      "battery": {
+        "type": "ボタン電池 (交換可能)"
+      },
+      "connectivity": [
+        "Bluetooth"
+      ],
+      "other": [
+        "専用アプリでの連携"
+      ]
+    }
+  }
+}
