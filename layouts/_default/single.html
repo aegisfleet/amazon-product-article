@@ -503,6 +503,7 @@
                     var shopButtonsDiv = buildCompetitorShopButtons(title, amazonHref, asin);
 
                     linksContainer.innerHTML = '';
+                    linksContainer.appendChild(shopButtonsDiv);
                     if (internalLink) {
                         var actionRow = document.createElement('div');
                         actionRow.className = 'competitor-action-row';
@@ -531,7 +532,6 @@
                         reqActionRow.appendChild(buildCompetitorRequestButton(title, asin));
                         linksContainer.appendChild(reqActionRow);
                     }
-                    linksContainer.appendChild(shopButtonsDiv);
                 }
 
                 competitorCards.forEach(upgradeCompetitorCard);
