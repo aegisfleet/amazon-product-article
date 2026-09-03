@@ -167,7 +167,7 @@
         border-color: #ff9900;
     }
 
-    /* ---- Recommendations Card Actions (1行目: 比較 + サイト内レビュー、2行目: 3モールボタングループ) ---- */
+    /* ---- Recommendations Card Actions (1行目: 3モールボタングループ、2行目: 比較 + サイト内レビュー) ---- */
     .rec-card-actions {
         width: 100%;
         margin-top: auto;
@@ -582,6 +582,15 @@
                     {{- end -}}
 
                     <div class="rec-card-actions">
+                        {{- partial "product-shop-buttons.html" (dict
+                            "context" $articlePage
+                            "variant" "competitor"
+                            "asin" $rec.asin
+                            "title" $rec.title
+                            "price" $rec.price
+                            "score" $score
+                            "category" $rec.category
+                        ) -}}
                         {{- if $articlePage -}}
                         <div class="rec-action-row">
                             <button type="button" class="btn-compare-card" data-compare-btn="1" data-asin="{{ $rec.asin }}"
@@ -601,15 +610,6 @@
                             </a>
                         </div>
                         {{- end -}}
-                        {{- partial "product-shop-buttons.html" (dict
-                            "context" $articlePage
-                            "variant" "competitor"
-                            "asin" $rec.asin
-                            "title" $rec.title
-                            "price" $rec.price
-                            "score" $score
-                            "category" $rec.category
-                        ) -}}
                     </div>
                 </div>
             </div>
