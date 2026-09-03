@@ -1758,8 +1758,14 @@ ${confidenceLine}`;
     const priceDiffHtml = this.renderPriceDiff(basePriceAmount, competitorPriceAmount);
     const scoreHtml = this.renderCompetitorScore(score);
 
-    const previewTag = hasInternalReview ? 'a' : 'div';
-    const previewAttrs = hasInternalReview && asin ? ` href="../${asin.toLowerCase()}/"` : '';
+    const amazonUrl = detail.detailPageUrl || (asin ? this.affiliateManager.generateAffiliateLink(asin).url : '');
+    const isInternal = hasInternalReview && asin;
+    const previewTag = isInternal || amazonUrl ? 'a' : 'div';
+    const previewAttrs = isInternal
+      ? ` href="../${asin.toLowerCase()}/"`
+      : amazonUrl
+        ? ` href="${this.escapeHtml(amazonUrl)}" target="_blank" rel="noopener noreferrer"`
+        : '';
 
     const pointsHtml = loyaltyPoints
       ? `<span class="hero-points m3-badge m3-badge-points" style="font-size: 0.85rem; margin-left: var(--spacing-sm);"><span class="material-symbols-outlined icon-points" aria-hidden="true">card_giftcard</span> ${loyaltyPoints}pt還元</span>`

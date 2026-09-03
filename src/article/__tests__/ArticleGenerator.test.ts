@@ -615,6 +615,33 @@ describe('ArticleGenerator', () => {
 
       expect(result.content).not.toContain('href="../B08COMPET1/"');
       expect(result.content).not.toContain('サイト内レビュー');
+      expect(result.content).toContain('class="competitor-preview"');
+      expect(result.content).toContain('target="_blank"');
+      expect(result.content).toContain('rel="noopener noreferrer"');
+    });
+
+    it('should link competitor preview to Amazon when investigation file does not exist', async () => {
+      (fs.promises.readFile as jest.Mock).mockRejectedValue(new Error('File not found'));
+      const mockDetail: ProductDetail = {
+        ...mockProduct,
+        asin: 'B08COMPET1',
+        detailPageUrl: 'https://www.amazon.co.jp/dp/B08COMPET1?tag=custom-tag',
+      } as any;
+      const mockCompetitorDetails = new Map<string, ProductDetail>();
+      mockCompetitorDetails.set('B08COMPET1', mockDetail);
+
+      const result = await generator.generateArticle(
+        mockProduct,
+        mockInvestigation,
+        undefined,
+        undefined,
+        undefined,
+        mockCompetitorDetails,
+      );
+
+      expect(result.content).toContain(
+        '<a href="https://www.amazon.co.jp/dp/B08COMPET1?tag=custom-tag" target="_blank" rel="noopener noreferrer" class="competitor-preview">',
+      );
     });
 
     it('should not generate duplicate keys in front matter', async () => {
