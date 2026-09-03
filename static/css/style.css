@@ -3546,7 +3546,7 @@ button.category-pill {
   left: calc(1.5rem + env(safe-area-inset-left, 0px));
   right: auto;
   z-index: 99;
-  padding: 10px 18px;
+  padding: 9px 16px;
   border-radius: 9999px;
   background: var(--color-primary);
   color: #ffffff;
@@ -3555,7 +3555,20 @@ button.category-pill {
   border: none;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
   cursor: pointer;
-  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), bottom 0.3s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.2s ease;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateY(16px) scale(0.92);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), bottom 0.3s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.25s ease, visibility 0.25s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.toc-fab.visible {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateY(0) scale(1);
 }
 
 .toc-fab:hover {
@@ -3567,6 +3580,24 @@ button.category-pill {
   transform: translateY(0);
 }
 
+/* 下スクロール中は読書を妨げないよう半透明化 */
+.toc-fab.is-scrolling-down {
+  opacity: 0.25;
+}
+
+.toc-fab.is-scrolling-down:hover,
+.toc-fab.is-scrolling-down:active,
+.toc-fab.is-scrolling-down:focus-visible {
+  opacity: 1;
+}
+
+/* ドロワーメニュー展開時はボタンを退避非表示 */
+body.menu-open .toc-fab {
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(16px) scale(0.92);
+}
+
 /* .has-sticky-cta の bottom 値は sticky-cta.js / toc.js が sticky-cta-bar の offsetHeight を取得してインラインスタイルで動的に設定する */
 
 @media (max-width: 768px) {
@@ -3574,6 +3605,17 @@ button.category-pill {
     bottom: calc(1rem + env(safe-area-inset-bottom, 0px));
     left: calc(1rem + env(safe-area-inset-left, 0px));
     right: auto;
+    padding: 7px 13px;
+    font-size: 0.85rem;
+    gap: 4px;
+    background: rgba(37, 99, 235, 0.92);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.2);
+  }
+
+  [data-theme="dark"] .toc-fab {
+    background: rgba(59, 130, 246, 0.9);
   }
 }
 
