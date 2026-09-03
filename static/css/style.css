@@ -14,8 +14,8 @@
 }
 
 /* Material Symbols Standard Utility (DESIGN.md Section 1.2 & 4.4) */
+/* Note: font-family is loaded directly via Google Fonts CSS to avoid FOUT and linter generic family warnings */
 .material-symbols-outlined {
-  font-family: 'Material Symbols Outlined';
   font-weight: normal;
   font-style: normal;
   font-size: 1.2rem;
