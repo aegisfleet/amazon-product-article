@@ -1251,14 +1251,28 @@ body.menu-open .floating-search-fab {
     transform: translateY(16px) scale(0.92);
 }
 
+/* 下スクロール中の半透明化連動 */
+body.is-scrolling-down .floating-search-fab {
+    opacity: 0.25;
+}
+
+body.is-scrolling-down .floating-search-fab:hover,
+body.is-scrolling-down .floating-search-fab:active,
+body.is-scrolling-down .floating-search-fab:focus-visible {
+    opacity: 1;
+}
+
 @media (max-width: 768px) {
     .floating-search-fab {
         bottom: calc(1rem + env(safe-area-inset-bottom, 0px));
         left: calc(1rem + env(safe-area-inset-left, 0px));
-        padding: 10px 18px;
+        padding: 7px 13px;
+        font-size: 0.85rem;
+        gap: 4px;
+        box-shadow: 0 3px 12px rgba(0, 0, 0, 0.2);
     }
 
     .floating-search-fab .floating-search-icon {
-        font-size: 1.2rem;
+        font-size: 1.1rem;
     }
 }
