@@ -4997,8 +4997,9 @@ body.menu-open .scroll-to-top {
   }
 }
 
-/* 下スクロール中のフローティング要素一括半透明化（目次FAB・トップへ・固定メニュー） */
+/* 下スクロール中のフローティング要素一括半透明化（目次FAB・検索FAB・トップへ・固定メニュー） */
 body.is-scrolling-down .toc-fab,
+body.is-scrolling-down .floating-search-fab,
 body.is-scrolling-down .scroll-to-top,
 body.is-scrolling-down .nav-menu-floating-toggle {
   opacity: 0.25;
@@ -5007,6 +5008,9 @@ body.is-scrolling-down .nav-menu-floating-toggle {
 body.is-scrolling-down .toc-fab:hover,
 body.is-scrolling-down .toc-fab:active,
 body.is-scrolling-down .toc-fab:focus-visible,
+body.is-scrolling-down .floating-search-fab:hover,
+body.is-scrolling-down .floating-search-fab:active,
+body.is-scrolling-down .floating-search-fab:focus-visible,
 body.is-scrolling-down .scroll-to-top:hover,
 body.is-scrolling-down .scroll-to-top:active,
 body.is-scrolling-down .scroll-to-top:focus-visible,
