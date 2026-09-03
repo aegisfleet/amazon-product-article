@@ -3580,7 +3580,7 @@ button.category-pill {
   transform: translateY(0);
 }
 
-/* 下スクロール中は読書を妨げないよう半透明化 */
+/* 下スクロール中は読書を妨げないよう半透明化（個別クラス対応用フォールバック） */
 .toc-fab.is-scrolling-down {
   opacity: 0.25;
 }
@@ -3608,14 +3608,7 @@ body.menu-open .toc-fab {
     padding: 7px 13px;
     font-size: 0.85rem;
     gap: 4px;
-    background: rgba(37, 99, 235, 0.92);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
     box-shadow: 0 3px 12px rgba(0, 0, 0, 0.2);
-  }
-
-  [data-theme="dark"] .toc-fab {
-    background: rgba(59, 130, 246, 0.9);
   }
 }
 
@@ -5002,6 +4995,25 @@ body.menu-open .scroll-to-top {
   .scroll-to-top .material-symbols-outlined {
     font-size: 22px;
   }
+}
+
+/* 下スクロール中のフローティング要素一括半透明化（目次FAB・トップへ・固定メニュー） */
+body.is-scrolling-down .toc-fab,
+body.is-scrolling-down .scroll-to-top,
+body.is-scrolling-down .nav-menu-floating-toggle {
+  opacity: 0.25;
+}
+
+body.is-scrolling-down .toc-fab:hover,
+body.is-scrolling-down .toc-fab:active,
+body.is-scrolling-down .toc-fab:focus-visible,
+body.is-scrolling-down .scroll-to-top:hover,
+body.is-scrolling-down .scroll-to-top:active,
+body.is-scrolling-down .scroll-to-top:focus-visible,
+body.is-scrolling-down .nav-menu-floating-toggle:hover,
+body.is-scrolling-down .nav-menu-floating-toggle:active,
+body.is-scrolling-down .nav-menu-floating-toggle:focus-visible {
+  opacity: 1;
 }
 
 /* =====================================================

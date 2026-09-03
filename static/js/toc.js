@@ -77,8 +77,6 @@ function setupTocModal() {
   function setupTocFabScroll() {
     if (!tocFab) return;
 
-    let lastScrollY = window.pageYOffset || window.scrollY || 0;
-    let scrollTimeout = null;
     let ticking = false;
 
     function updateFab() {
@@ -89,27 +87,7 @@ function setupTocModal() {
         tocFab.classList.add('visible');
       } else {
         tocFab.classList.remove('visible');
-        tocFab.classList.remove('is-scrolling-down');
       }
-
-      // 下スクロール時は半透明化、上スクロール時は復帰
-      const isModalOpen = tocModal?.classList.contains('is-open');
-      if (!isModalOpen && currentScrollY > 350) {
-        if (currentScrollY > lastScrollY + 6) {
-          tocFab.classList.add('is-scrolling-down');
-        } else if (currentScrollY < lastScrollY - 6) {
-          tocFab.classList.remove('is-scrolling-down');
-        }
-      } else {
-        tocFab.classList.remove('is-scrolling-down');
-      }
-
-      lastScrollY = currentScrollY;
-
-      if (scrollTimeout) clearTimeout(scrollTimeout);
-      scrollTimeout = setTimeout(() => {
-        tocFab.classList.remove('is-scrolling-down');
-      }, 500);
 
       ticking = false;
     }
