@@ -15,7 +15,7 @@
 
 /* Material Symbols Standard Utility (DESIGN.md Section 1.2 & 4.4) */
 .material-symbols-outlined {
-  font-family: 'Material Symbols Outlined', sans-serif;
+  font-family: 'Material Symbols Outlined';
   font-weight: normal;
   font-style: normal;
   font-size: 1.2rem;
@@ -25,11 +25,21 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  width: 1em;
+  height: 1em;
+  overflow: hidden;
   white-space: nowrap;
   word-wrap: normal;
   direction: ltr;
+  flex-shrink: 0;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  font-feature-settings: 'liga';
+  -webkit-font-feature-settings: 'liga';
+  font-variant-ligatures: normal;
   vertical-align: middle;
+  user-select: none;
 }
 
 /* Reduced Motion Accessibility Support (DESIGN.md Section 5.8) */
