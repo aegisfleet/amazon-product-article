@@ -5653,12 +5653,9 @@ body.menu-open .scroll-to-top {
   outline-offset: 1px;
 }
 
-.bargain-category-reset-btn:disabled {
-  opacity: 0.3;
-  cursor: not-allowed;
-  border-color: var(--color-border);
-  color: var(--color-text-muted);
-  background: var(--color-bg-card);
+.bargain-category-reset-btn:disabled,
+.bargain-category-reset-btn[hidden] {
+  display: none !important;
 }
 
 [data-theme="dark"] .bargain-category-reset-btn:hover:not(:disabled) {
