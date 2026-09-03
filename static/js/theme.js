@@ -21,17 +21,53 @@ document.addEventListener('DOMContentLoaded', () => {
         localStorage.setItem('theme', targetTheme);
     });
 
-    // Scroll to Top functionality
+    // Floating controls & Scroll to Top functionality
     const scrollToTopBtn = document.getElementById('scroll-to-top');
-    if (scrollToTopBtn) {
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 300) {
+    let lastScrollY = window.pageYOffset || window.scrollY || 0;
+    let scrollStopTimeout = null;
+    let isScrollingTicking = false;
+
+    function handleGlobalScroll() {
+        const currentScrollY = window.pageYOffset || window.scrollY || 0;
+
+        // Scroll to top visibility
+        if (scrollToTopBtn) {
+            if (currentScrollY > 300) {
                 scrollToTopBtn.classList.add('visible');
             } else {
                 scrollToTopBtn.classList.remove('visible');
             }
-        });
+        }
 
+        // Downward scroll dimming for floating controls
+        if (currentScrollY > 350) {
+            if (currentScrollY > lastScrollY + 6) {
+                document.body.classList.add('is-scrolling-down');
+            } else if (currentScrollY < lastScrollY - 6) {
+                document.body.classList.remove('is-scrolling-down');
+            }
+        } else {
+            document.body.classList.remove('is-scrolling-down');
+        }
+
+        lastScrollY = currentScrollY;
+
+        if (scrollStopTimeout) clearTimeout(scrollStopTimeout);
+        scrollStopTimeout = setTimeout(() => {
+            document.body.classList.remove('is-scrolling-down');
+        }, 500);
+
+        isScrollingTicking = false;
+    }
+
+    window.addEventListener('scroll', () => {
+        if (!isScrollingTicking) {
+            window.requestAnimationFrame(handleGlobalScroll);
+            isScrollingTicking = true;
+        }
+    }, { passive: true });
+
+    if (scrollToTopBtn) {
         scrollToTopBtn.addEventListener('click', () => {
             window.scrollTo({
                 top: 0,
