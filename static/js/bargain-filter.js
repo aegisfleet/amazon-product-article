@@ -187,7 +187,9 @@ document.addEventListener('DOMContentLoaded', () => {
       statsEl.textContent = String(filtered.length);
 
       if (categoryResetBtn && categorySelect) {
-        categoryResetBtn.disabled = (categorySelect.value === '');
+        const hasCategory = categorySelect.value !== '';
+        categoryResetBtn.disabled = !hasCategory;
+        categoryResetBtn.hidden = !hasCategory;
       }
 
       gridEl.classList.remove('bargain-grid-fade');
@@ -195,9 +197,18 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 200);
   }
 
+  function updateCategoryResetBtn() {
+    if (categoryResetBtn && categorySelect) {
+      const hasCategory = categorySelect.value !== '';
+      categoryResetBtn.disabled = !hasCategory;
+      categoryResetBtn.hidden = !hasCategory;
+    }
+  }
+
   function applyFilters() {
     showSkeleton();
     updateSliderDisplays();
+    updateCategoryResetBtn();
 
     const minScore = Number.parseInt(scoreSlider.value, 10);
     const minPrice = valueToPrice(Number.parseInt(minPriceSlider.value, 10));

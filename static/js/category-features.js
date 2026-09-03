@@ -173,7 +173,9 @@ function initCategoryFeatures() {
         }
 
         if (categoryResetBtn && categorySelect) {
-            categoryResetBtn.disabled = (categorySelect.value === '');
+            const hasCategory = categorySelect.value !== '';
+            categoryResetBtn.disabled = !hasCategory;
+            categoryResetBtn.hidden = !hasCategory;
         }
 
         const categoryPillElements = document.querySelectorAll('.category-pill');
