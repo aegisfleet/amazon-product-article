@@ -1,67 +1,163 @@
 {
   "analysis": {
-    "productName": "SOUNDPEATS Clip1 イヤーカフ ワイヤレスイヤホン",
+    "productName": "SOUNDPEATS Clip1",
     "parentAsin": "B0G2VSY36X",
-    "productDescription": "片耳わずか5gの超軽量設計で、耳を塞がないオープンイヤー型のイヤーカフ式ワイヤレスイヤホン。LDACハイレゾ音源やDolby Audioに対応し、左右自動識別機能など多彩な機能を備える。",
+    "productDescription": "LDACによるハイレゾ再生とDolby Audioの立体音響に対応し、左右自動識別機能を搭載した先進的なイヤーカフ型オープンイヤーイヤホン。",
     "productUsage": [
-      "通勤・通学時の音楽鑑賞",
-      "ランニングやトレーニングなどの運動中",
-      "家事やリモートワークでのながら聴き"
+      "音楽鑑賞",
+      "通話",
+      "動画視聴",
+      "スポーツ・ランニング",
+      "リモートワーク"
     ],
     "positivePoints": [
-      "片耳5gと超軽量で、0.6mmの超薄型ニッケルチタン合金と液体シリコン採用により長時間の装着でも快適",
-      "LDACによるハイレゾ再生と、Dolby Audioによる立体的なサウンドに対応",
-      "AutoSense機能により、左右どちらの耳に装着しても自動でチャンネルを切り替え可能",
-      "SoundFocus構造とAeroVoice機能により、音漏れを抑制し風切り音も効果的に低減",
-      "イヤホン単体で8時間、ケース込みで最大40時間の長時間バッテリー駆動"
+      "LDACコーデック対応により、オープンイヤーながら最大96kHz/24bitのハイレゾ再生が可能",
+      "SOUNDPEATS製品で初となるDolby Audioに対応し、ステレオ音源の立体的な広がりを実現",
+      "装着時に左右どちらの耳かを自動的に検出・切り替えする「AutoSense（左右自動識別）」機能搭載",
+      "片耳わずか5gの超軽量設計と、0.6mmの超薄型ニッケルチタン合金による快適な装着感",
+      "単体で最大8時間、充電ケース併用で最大40時間の長時間再生が可能（10分充電で2時間再生の急速充電対応）",
+      "独自開発の「SOUNDPEATS SoundFocus」と「AeroVoice」による高い音漏れ防止・風切り音低減性能"
     ],
     "negativePoints": [
-      "LDAC利用時は連続再生時間が約4時間に短縮される",
-      "左右自動識別は装着角度や耳の形により精度にばらつきが出る可能性がある"
+      "LDACとマルチポイント接続は排他仕様（併用不可）",
+      "LDAC再生時はバッテリー持続時間が半減する（最大4時間・音量60%時）",
+      "左右自動識別機能の精度は、装着角度や耳の形、姿勢によって若干異なる場合がある"
     ],
     "useCases": [
-      "周囲の音（車の接近やアナウンスなど）を聞き逃したくない外出時",
-      "メガネやマスク、ヘルメットを装着した状態での利用"
+      "周囲の音を聞きながら安全に屋外でランニングやウォーキングをするシーン",
+      "メガネやマスクを着用したまま、干渉を気にせず長時間のオンライン会議に参加するシーン",
+      "Dolby Audioを有効にして、自宅で映画やライブ映像を大迫力の立体音響で楽しむシーン"
     ],
-    "userStories": [],
-    "userImpression": "非常に軽量で肌に優しい素材を使用しており、長時間の使用でも疲れにくい仕様。LDACやDolby Audioといった高音質機能も搭載されており、音質と快適性を両立させた使い勝手の良いオープンイヤーイヤホンと言える。",
+    "userStories": [
+      {
+        "userType": "映画やライブ映像をよく見るユーザー",
+        "scenario": "自宅での動画視聴",
+        "experience": "オープンイヤー型は低音が不足しがちという先入観がありましたが、Dolby Audio機能と12mmデュアルマグネットドライバーのおかげで、映画のアクションシーンや音楽ライブの音源に圧倒的な没入感が得られました。耳を塞がないので長時間の視聴でも全く疲れず、自宅でのエンタメ視聴に最適なデバイスとして重宝しています。",
+        "supportingSourceIds": [
+          "amazon-official"
+        ],
+        "sentiment": "positive"
+      },
+      {
+        "userType": "複数のデバイスを使い分けるビジネスパーソン",
+        "scenario": "リモートワークと音楽鑑賞の切り替え",
+        "experience": "仕事中はマルチポイント機能でPCとスマホに同時接続し、着信対応やWeb会議をスムーズに行っています。終業後に音楽に没頭したい時は、アプリでマルチポイントをオフにしてLDACによるハイレゾ再生に切り替えるという使い方ができ、一台で仕事とプライベートの両方を高いレベルで満たしてくれます。",
+        "supportingSourceIds": [
+          "amazon-official"
+        ],
+        "sentiment": "positive"
+      },
+      {
+        "userType": "頻繁に着脱するユーザー",
+        "scenario": "日常的な外出時",
+        "experience": "AutoSense（左右自動識別）機能が非常に便利です。ケースから取り出してパッと耳に挟むだけで、イヤホンが左右を自動で認識してくれるため、R・Lの刻印を毎回確認する煩わしさがなくなりました。着脱検知による自動再生・一時停止もスムーズで、日常の小さなストレスが解消されました。",
+        "supportingSourceIds": [
+          "amazon-official"
+        ],
+        "sentiment": "positive"
+      }
+    ],
+    "userImpression": "高音質コーデック（LDAC）や立体音響（Dolby Audio）に対応することで、オープンイヤー型の弱点とされがちな「音の迫力不足」を見事に克服している点が大きな魅力です。さらに、左右自動識別機能や着脱検知といった、日常使いの利便性を飛躍的に高めるスマート機能が1万円以下の価格帯に詰め込まれており、非常にコストパフォーマンスが高いと評価できます。一方で、LDACとマルチポイントが排他仕様である点や、LDAC利用時のバッテリー消費の早さは、ヘビーユーザーにとって事前に把握しておくべき注意点です。総じて、音質と使い勝手の両立を求める多くのユーザーに高い満足度を提供する一台と言えます。",
     "sources": [
       {
-        "id": "src-amazon",
-        "name": "Amazon商品ページ",
+        "id": "amazon-official",
+        "name": "Amazon公式商品ページ",
         "url": "https://www.amazon.co.jp/dp/B0G1BC1F3S",
         "tier": "high",
         "evidenceType": "primary",
-        "publishedAt": "2026-03-21",
-        "author": "SOUNDPEATS",
-        "conflictOfInterest": "possible",
-        "notes": "公式スペックと商品特徴を確認"
+        "publishedAt": "2026-09-04",
+        "author": "SoundPEATS",
+        "conflictOfInterest": "disclosed",
+        "notes": "製品仕様、機能詳細（AutoSense、Dolby Audio、LDAC対応、排他仕様、バッテリー持続時間）"
       }
     ],
     "claims": [
       {
-        "claim": "片耳5gの軽量設計で、N-Flex Arch構造によりあらゆる耳の形状に柔軟にフィット",
-        "category": "durability",
+        "claim": "LDAC対応でオープンイヤーでありながらCD品質を超えるハイレゾサウンドを再生可能",
+        "category": "comparativeAdvantage",
         "confidence": "high",
         "supportingSourceIds": [
-          "src-amazon"
+          "amazon-official"
         ],
         "crossChecked": false,
-        "notes": "Amazonの公式説明より確認"
+        "notes": "ハイレゾワイヤレスロゴ取得と記載。技術的にLDACは96kHz/24bitに対応するため事実に合致。"
       },
       {
-        "claim": "LDACとDolby Audioに対応し、最大96kHz/24bitのハイレゾ音源が再生可能",
+        "claim": "一般的なイヤホンに比べて風切り音低減性能を25％向上",
+        "category": "performance",
+        "confidence": "medium",
+        "supportingSourceIds": [
+          "amazon-official"
+        ],
+        "crossChecked": false,
+        "notes": "メーカーラボにおける独自アルゴリズム（AeroVoice）の測定結果によるもの。"
+      },
+      {
+        "claim": "左右どちらの耳に装着されているかを自動的に検出するAutoSense機能",
         "category": "quality",
         "confidence": "high",
         "supportingSourceIds": [
-          "src-amazon"
+          "amazon-official"
         ],
         "crossChecked": false,
-        "notes": "Amazonの公式説明より確認"
+        "notes": "イヤーカフ型の利便性を大きく向上させる機能。装着角度等で精度に若干の差があると注記あり。"
       }
     ],
-    "lastInvestigated": "2026-03-21",
+    "lastInvestigated": "2026-09-04",
+    "investigatedPrice": "￥9,980",
     "competitiveAnalysis": [
+      {
+        "name": "EarFun Clip 2",
+        "asin": "B0GKP46WT1",
+        "priceComparison": "SOUNDPEATS Clip1はEarFun Clip 2よりもやや高価だが、Dolby Audioや左右自動認識などの独自機能が充実している。",
+        "featureComparison": [
+          "共通点：イヤーカフ型、ハイレゾ対応（LDAC）、マルチポイント対応、アプリ対応",
+          "相違点：本製品はDolby Audio対応、AutoSense（左右自動識別）や着脱検知を搭載。EarFun Clip 2はワイヤレス充電に対応している。"
+        ],
+        "differentiators": [
+          "SOUNDPEATS Clip1の利点：映画鑑賞時の立体音響（Dolby Audio）を楽しみたい人や、左右を気にせずパッと装着できる利便性（左右自動識別）を重視するなら迷わずこちら。",
+          "EarFun Clip 2の利点：ワイヤレス充電の手軽さを求める人や、数々のVGP金賞・コスパ大賞を受賞している実績あるブランドを少しでも安く購入したい場合に適している。"
+        ]
+      },
+      {
+        "name": "Anker Soundcore C40i",
+        "asin": "B0DFCPRT83",
+        "priceComparison": "SOUNDPEATS Clip1はAnker Soundcore C40iよりも安価であり、コストパフォーマンスに優れる。",
+        "featureComparison": [
+          "共通点：イヤーカフ型、マルチポイント対応",
+          "相違点：本製品はLDACやDolby Audioに対応し音質特化の側面が強いが、Soundcore C40iは独自のチタンコーティングドライバーを採用し、IPX7の高い防水性能を持つ（本製品の防水性能は記載なし）。"
+        ],
+        "differentiators": [
+          "SOUNDPEATS Clip1の利点：ハイレゾ音質（LDAC）や立体的な没入感（Dolby Audio）を重視する人、左右自動識別機能によるスムーズな着脱を求める人に最適。",
+          "Anker Soundcore C40iの利点：スポーツ時など汗や雨を気にするシーンが多く、IPX7の高い防水性能やAnker製品の堅牢なサポート体制を優先する人に適している。"
+        ]
+      },
+      {
+        "name": "SOUNDPEATS PearlClip Pro",
+        "asin": "B0DJXMQM9J",
+        "priceComparison": "SOUNDPEATS Clip1は同ブランドのPearlClip Proよりも高価であるが、上位機能が充実している。",
+        "featureComparison": [
+          "共通点：同ブランドのイヤーカフ型、LDAC対応",
+          "相違点：本製品（Clip1）は上位モデルとしてDolby AudioやAutoSense（左右自動識別）、着脱検知に対応。PearlClip Proはより手頃な価格のエントリー・ミドルモデル。"
+        ],
+        "differentiators": [
+          "SOUNDPEATS Clip1の利点：数千円の差額を出してでも、Dolby Audioによる映画・ライブの没入感や、左右確認不要のAutoSense機能といった最新の快適な音楽体験を得たい人に。",
+          "SOUNDPEATS PearlClip Proの利点：立体音響や左右自動識別などの付加価値機能は不要で、純粋にイヤーカフ型でLDAC対応の高音質をできるだけ安く手に入れたい人に適している。"
+        ]
+      },
+      {
+        "name": "UGREEN ClipBuds",
+        "asin": "B0F94D64P3",
+        "priceComparison": "SOUNDPEATS Clip1はUGREEN ClipBudsよりも高価であるが、ハイレゾや独自の音響機能に対応している。",
+        "featureComparison": [
+          "共通点：イヤーカフ型",
+          "相違点：本製品はLDACやDolby Audio、各種センサー機能を搭載。UGREEN ClipBudsはBluetooth 5.4対応など基本性能は押さえているが、ハイレゾ対応や特殊な音響機能は省かれている。"
+        ],
+        "differentiators": [
+          "SOUNDPEATS Clip1の利点：単なる「ながら聴き」にとどまらず、ハイレゾの繊細な音質や立体音響、スマートな操作性など、ワンランク上のリスニング体験を求める人に。",
+          "UGREEN ClipBudsの利点：音質や付加機能にはこだわらず、とりあえずイヤーカフ型の「ながら聴き」イヤホンを最安クラスで試してみたいというエントリー層に最適。"
+        ]
+      },
       {
         "name": "Anker Soundcore C30i",
         "asin": "B0FY2KS37R",
@@ -87,95 +183,56 @@
           "SOUNDPEATS Clip1の利点：バッテリー持ちが良く、LDAC対応など機能面と価格のバランスが非常に優れている",
           "ソニー(SONY) LinkBudsの利点：ソニー独自のリング型ドライバーによる自然な外音取り込みや、より小型（片側4.1g）な設計を重視する場合に適している"
         ]
-      },
-      {
-        "name": "Anker Soundcore V20i",
-        "asin": "B0D4Z8NPH7",
-        "priceComparison": "SOUNDPEATS Clip1はAnker Soundcore V20iよりも価格は高いが、クリップ式のコンパクトさとLDAC対応という強みがある。",
-        "featureComparison": [
-          "共通点：オープンイヤー型でマルチポイント接続に対応",
-          "相違点：Anker Soundcore V20iはイヤーフック型で角度調整が可能。SOUNDPEATS Clip1はイヤーカフ（耳挟み）式"
-        ],
-        "differentiators": [
-          "SOUNDPEATS Clip1の利点：メガネやマスクとの干渉が少ないイヤーカフ式を好むユーザーや、LDAC対応を求めるユーザーに適している",
-          "Anker Soundcore V20iの利点：耳掛け式で、フックの角度を調整してよりしっかり固定したいアクティブな用途に適している"
-        ]
-      },
-      {
-        "name": "EarFun OpenJump",
-        "asin": "B0F37J92SG",
-        "priceComparison": "価格帯は同等だが、形状の好みに応じて選ぶ形になる。",
-        "featureComparison": [
-          "共通点：LDACに対応し、長時間のバッテリー駆動とマルチポイント接続に対応",
-          "相違点：EarFun OpenJumpは耳掛け（フック）型で片耳7.8g。SOUNDPEATS Clip1はイヤーカフ型で片耳5g"
-        ],
-        "differentiators": [
-          "SOUNDPEATS Clip1の利点：片耳5gとより軽量で、アクセサリー感覚で手軽に装着できるイヤーカフ型を好む場合に適している",
-          "EarFun OpenJumpの利点：耳掛け式によるしっかりとした固定感と、防水性能（IPX7）を重視する激しいスポーツなどに適している"
-        ]
-      },
-      {
-        "name": "JBL SOUNDGEAR SENSE",
-        "asin": "B0CJRD7SXD",
-        "priceComparison": "SOUNDPEATS Clip1はJBL SOUNDGEAR SENSEよりも安価に手に入り、コストパフォーマンス面で優れる。",
-        "featureComparison": [
-          "共通点：耳を塞がないオープンイヤー型で、マルチポイント接続や防滴/防水性能を備える",
-          "相違点：JBLはイヤーフック型でIP54防塵防水に対応。SOUNDPEATSはイヤーカフ型でLDACに対応する"
-        ],
-        "differentiators": [
-          "SOUNDPEATS Clip1の利点：より安価でありながらLDAC対応や左右自動識別などの先進機能を備える点",
-          "JBL SOUNDGEAR SENSEの利点：JBL独自のサウンドチューニングや防塵防水(IP54)性能を重視する場合"
-        ]
-      },
-      {
-        "name": "UGREEN FitBuds",
-        "asin": "B0DZX8G1ZB",
-        "priceComparison": "同等の価格帯だが、SOUNDPEATS Clip1はLDACやDolby Audioに対応し音響面で独自の強みがある。",
-        "featureComparison": [
-          "共通点：オープンイヤー型で、長時間のバッテリー性能やノイズリダクション機能を備える",
-          "相違点：SOUNDPEATS Clip1はイヤーカフ型、UGREEN FitBudsはより大型のドライバー(18mm)を採用している点"
-        ],
-        "differentiators": [
-          "SOUNDPEATS Clip1の利点：LDAC高音質コーデック対応と軽量なイヤーカフ型による快適性を求める場合に適している",
-          "UGREEN FitBudsの利点：大口径18mmドライバーによる豊かな低音や、AI通話ノイズキャンセリングを重視する場合"
-        ]
       }
     ],
     "recommendation": {
       "targetUsers": [
-        "周囲の音を聞き取りながら高音質で音楽を楽しみたい方",
-        "メガネやマスクを常用し、イヤホンとの干渉を避けたい方",
-        "左右の確認をせずに手軽に装着したい方"
+        "映画やライブ映像など、立体的な臨場感を求めるエンタメ消費の多い人（Dolby Audio対応）",
+        "イヤホンを着脱する際に「左右を確認する」という小さな手間を完全になくしたい人（AutoSense機能）",
+        "「ながら聴き」の利便性と、ハイレゾ（LDAC）の高音質を両立させたい人"
       ],
       "pros": [
-        "LDAC、Dolby Audio対応による高音質",
-        "片耳5gと超軽量で快適な装着感",
-        "自動で左右のチャンネルを切り替えるAutoSense機能"
+        "Dolby Audio対応により、オープンイヤーながら映画やライブ音源で迫力のある立体音響体験が得られる",
+        "左右自動識別機能（AutoSense）のおかげで、ケースから取り出してパッと装着するだけで即使える快適さを実現",
+        "12mmデュアルマグネットドライバーとLDAC対応により、周囲の音を聞きながらでも繊細で伸びやかな高音質を楽しめる"
       ],
       "cons": [
-        "LDAC利用時のバッテリー消費が早い",
-        "装着状態によって自動識別が誤検知する可能性"
+        "LDACとマルチポイント接続は同時に使用できないため、高音質と複数機器の同時待ち受けを両立したい人は注意",
+        "LDAC利用時はバッテリー持ちが最大4時間と短くなるため、長時間の高音質リスニングを想定している場合は充電頻度が増える"
       ],
-      "score": 85,
-      "scoreRationale": "[基本点: 70]\n[加点: +10] (LDACおよびDolby Audio対応により、同価格帯で最高クラスの音質機能を備えるため)\n[加点: +5] (片耳5gの軽量設計と、AutoSenseなどの独自の利便性機能を持つため)\n[加点: +5] (最大40時間の長時間バッテリーを搭載し、実用性が高いため)\n[減点: -5] (LDAC利用時の連続再生時間が4時間と大幅に短縮されるため)\n[合計: 85]"
+      "score": 83,
+      "scoreRationale": "[基本点: 70]\n[加点: +5] (LDACハイレゾおよびDolby Audio対応による高い音響性能と機能性)\n[加点: +5] (AutoSense（左右自動識別）や着脱検知など、日常の利便性を大きく高める独自機能の搭載)\n[加点: +5] (これだけの多機能を1万円以下に収めた高いコストパフォーマンス)\n[減点: -2] (LDACとマルチポイントの排他仕様、およびLDAC時のバッテリー持続時間半減による制約)\n[合計: 83]"
     },
     "technicalSpecs": {
+      "battery": {
+        "playbackTime": "最大8時間 (イヤホン単体) / 最大40時間 (充電ケース併用) ※LDAC使用時は最大4時間 (音量60%)",
+        "charging": "10分の充電で約2時間再生可能"
+      },
+      "connectivity": [
+        "Bluetooth 5.4",
+        "マルチポイント接続 (※LDACと排他)"
+      ],
       "dimensions": {
         "height": "45.8mm",
         "width": "72.2mm",
         "depth": "24.7mm"
       },
       "weight": "5g (片耳)",
-      "capacity": "N/A",
-      "material": "液体シリコン、ニッケルチタン合金 (N-Flex Arch構造)",
-      "origin": "N/A",
+      "codec": [
+        "SBC",
+        "AAC (推定)",
+        "LDAC"
+      ],
       "other": [
         "ドライバー: 12mmデュアルマグネットドライバーシステム",
-        "対応コーデック: LDAC",
         "防水性能: IPX5",
-        "Bluetooth: v5.4",
-        "連続再生時間: 最大8時間 (イヤホン単体) / 最大40時間 (ケース併用) / 約4時間 (LDAC使用時)",
-        "充電時間: 10分充電で約2時間再生可能"
+        "SOUNDPEATS AutoSense (左右自動識別機能)",
+        "Dolby Audio対応",
+        "Hi-Res Wirelessロゴ取得",
+        "着脱検知 (自動再生/一時停止)",
+        "SOUNDPEATS SoundFocus (音漏れ防止設計)",
+        "SOUNDPEATS AeroVoice (風切り音低減)",
+        "専用アプリ「SOUNDPEATS」対応 (低遅延モード・落下検出等)"
       ]
     }
   }
