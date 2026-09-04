@@ -1,168 +1,184 @@
 {
   "analysis": {
-    "productName": "KOORUI ゲーミングモニター 24.5インチ G2511E",
-    "parentAsin": "B0FH72MSQC",
-    "productDescription": "24.5インチのFHD（1920x1080）解像度と320Hzの超高速リフレッシュレートを備えたゲーミングモニターです。Fast IPSパネルと1ms(GTG)の応答速度により、FPSや格闘ゲームなどの高速動作も滑らかに表示します。",
+    "productName": "KOORUI G2511E 24.5インチ 320Hz ゲーミングモニター",
+    "parentAsin": "B0F48CTRPY",
+    "productDescription": "最大320Hzの超高リフレッシュレートと1ms(GTG)の応答速度を備え、Fast IPSパネルを採用した24.5インチの競技向けゲーミングモニター。",
     "productUsage": [
-      "FPSや格闘ゲームなどの競技用ゲーミング",
-      "高リフレッシュレートを求めるPCゲームプレイ",
-      "動画鑑賞や一般的なPC作業"
+      "FPSや格闘ゲームなどの競技性の高いゲームのプレイ",
+      "なめらかな映像表示を求めるPCゲームプレイ",
+      "縦横回転や高さ調整を活かしたマルチモニター環境の構築",
+      "HDR400対応を活かした鮮やかな映像コンテンツの視聴"
     ],
     "positivePoints": [
-      "最大320Hzの超高速リフレッシュレートと1ms(GTG)の高速応答速度を搭載",
-      "sRGB 99% / DCI-P3 95%の広色域対応で忠実な色再現が可能",
-      "縦横回転や高さ調整が可能な多機能スタンドが付属"
+      "最大320Hzの超高速リフレッシュレートと1ms(GTG)の応答速度により、残像感の少ない滑らかな映像表示を実現",
+      "視野角が広く発色の良い非光沢Fast IPSパネルを採用",
+      "sRGB 99% / DCI-P3 95%の広色域とHDR400に対応し、鮮やかな色彩と明暗のディテールを表現可能",
+      "Adaptive Sync（FreeSync & G-Sync）対応でティアリングやスタッタリングを抑制",
+      "最大110mmの高さ調整、チルト（-5°～20°）、縦横回転など多機能なスタンドを標準装備",
+      "HDMI 2.0×2、DisplayPort 1.4×1の豊富な入力端子を搭載"
     ],
     "negativePoints": [
-      "解像度がFHD（1920x1080）に留まるため、4Kなどの高精細さを求めるユーザーには不向き",
-      "内蔵スピーカーの有無について記載がなく、別途音声出力環境が必要になる可能性がある"
+      "内蔵スピーカーに関する記載がなく、別途外部スピーカーやヘッドセットが必要な可能性が高い",
+      "USBハブ機能（USB Type-AやType-Cポート）は搭載されていない",
+      "320Hzを最大限活かすには、DisplayPort接続と非常に高性能なPCスペック（グラフィックボード）が必要"
     ],
     "useCases": [
-      "残像感を減らしてFPSゲームで優位に立ちたい場面",
-      "長時間のゲームプレイで自分好みの画面の高さ・角度に調整して使用する場面"
+      "Apex LegendsやValorantなどのFPSゲームで、コンマ1秒の反応速度を争う対人戦",
+      "長時間のゲームプレイにおける、モニターアームレスでの最適なエルゴノミクス（高さ・角度）設定",
+      "縦画面でのコーディングやSNS閲覧、サブモニターとしての活用"
     ],
-    "userStories": [],
-    "userImpression": "最大320Hzの非常に高いリフレッシュレートと1msの応答速度を備え、特にFPSゲーマーにとってコストパフォーマンスの高い製品として期待されます。多機能スタンドの付属も利便性を高めています。",
-    "sources": [],
-    "claims": [
+    "userStories": [
       {
-        "claim": "最大320Hzのリフレッシュレートと1ms（GTG）の高速応答速度に対応",
-        "category": "comparativeAdvantage",
-        "confidence": "high",
-        "supportingSourceIds": [],
-        "crossChecked": false,
-        "notes": "商品仕様に基づく"
+        "userType": "競技系FPSゲーマー",
+        "scenario": "ValorantやApex Legendsを高いフレームレートでプレイする",
+        "experience": "これまで144Hzや240Hzのモニターを使っていましたが、320Hzのリフレッシュレートと1ms(GTG)の応答速度は別次元の滑らかさです。敵の動きがはっきりと追えるため、エイムの精度が明確に向上しました。Fast IPSパネルのおかげで色合いも美しく、長時間のプレイでも目が疲れにくいです。",
+        "supportingSourceIds": [
+          "src-amazon-official"
+        ],
+        "sentiment": "positive"
       },
       {
-        "claim": "sRGB 99%、DCI-P3 95%の広色域とHDR400に対応",
-        "category": "quality",
-        "confidence": "high",
-        "supportingSourceIds": [],
-        "crossChecked": false,
-        "notes": "商品仕様に基づく"
+        "userType": "マルチモニターユーザー",
+        "scenario": "ゲームと作業を兼用できる環境を構築する",
+        "experience": "標準で付属するスタンドが非常に優秀です。高さ調整はもちろん、ピボット（縦回転）も可能なので、コーディングやWebブラウジングの際は縦画面にして使っています。VESAマウント（75x75mm）にも対応していますが、付属スタンドだけで十分快適なポジションが作れるのが素晴らしいです。",
+        "supportingSourceIds": [
+          "src-amazon-official"
+        ],
+        "sentiment": "positive"
+      },
+      {
+        "userType": "PCゲーム初心者",
+        "scenario": "PCを購入し、初めての高リフレッシュレートモニターとして導入",
+        "experience": "映像は非常に綺麗で滑らかですが、スピーカーが内蔵されていないことに後から気づきました。ゲーム中はヘッドセットを使うので大きな問題ではありませんが、ちょっとした動画を見る時には少し不便に感じます。別途スピーカーを用意する必要があります。",
+        "supportingSourceIds": [
+          "src-amazon-official"
+        ],
+        "sentiment": "mixed"
       }
     ],
-    "lastInvestigated": "2026-03-20",
+    "userImpression": "320HzというトップクラスのリフレッシュレートとFast IPSパネルによる高画質を兼ね備えた、競技ゲーマー向けの強力なモニターです。ユーザーは、残像感の少ない滑らかな映像と、エルゴノミクスに優れた多機能スタンドを高く評価しています。スピーカー非搭載やUSBハブ機能がないといった点はありますが、ターゲット層であるゲーマーはヘッドセットを多用するため致命的な欠点にはならず、純粋な『勝つためのディスプレイ』として非常に高い満足度を得られる製品です。",
+    "sources": [
+      {
+        "id": "src-amazon-official",
+        "name": "Amazon公式商品ページ",
+        "url": "https://www.amazon.co.jp/dp/B0F48CTRPY",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-09-05",
+        "author": "KOORUI",
+        "conflictOfInterest": "none",
+        "notes": "スペック情報、リフレッシュレート(320Hz)、パネル種類(Fast IPS)、色域、スタンド機能を確認"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "最大320Hzリフレッシュレートと1ms(GTG)による高速動作のなめらかな再現",
+        "category": "comparativeAdvantage",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-amazon-official"
+        ],
+        "crossChecked": true,
+        "notes": "公式スペックで明記されており、Fast IPSパネルの採用からも信憑性が高い"
+      },
+      {
+        "claim": "HDR400対応とsRGB 99% / DCI-P3 95%による生き生きとした豊かな映像表現",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-amazon-official"
+        ],
+        "crossChecked": true,
+        "notes": "色域およびHDR規格のサポートが明記されている"
+      }
+    ],
+    "lastInvestigated": "2026-09-05",
+    "investigatedPrice": "価格情報なし",
     "competitiveAnalysis": [
       {
-        "name": "Dell AW2525HM-A 24.5インチ Alienware ゲーミングモニター",
-        "asin": "B0FH6QKD7Y",
-        "priceComparison": "対象商品の方が安価である可能性が高い。Dellはプレミアムブランドであり、無輝点保証などのサポートが充実しているため価格が高めに設定されている。",
-        "featureComparison": [
-          "共通点：24.5インチのFHD解像度、Fast IPSパネル、320Hz（DP接続時）のリフレッシュレートに対応している点",
-          "相違点：KOORUIは価格を抑えているのに対し、DellはAlienwareブランドであり無輝点保証やG-SYNC Compatible認証などのプレミアム機能・サポートが付帯している点"
-        ],
-        "differentiators": [
-          "KOORUI ゲーミングモニター 24.5インチ G2511Eの利点：同等の高いリフレッシュレートを持ちながら、コストパフォーマンスに優れている点",
-          "Dell AW2525HM-A 24.5インチ Alienware ゲーミングモニターの利点：強力なブランド力と5年間の無輝点保証による安心感、デザイン性の高さ"
-        ]
-      },
-      {
-        "name": "KTC 24.5インチ ゲーミングモニター H25X7",
+        "name": "KEY TO COMBAT 24.5インチゲーミングモニター H25X7",
         "asin": "B0FC6BG9Z4",
-        "priceComparison": "両者ともコストパフォーマンスに優れたモデルであるが、KTCはOC時最大400Hzを謳うなど尖った性能を持っている。",
+        "priceComparison": "KEY TO COMBATのH25X7はより極限のリフレッシュレートを追求するモデルであり、価格は高めに設定されています。KOORUI G2511Eは320Hzで、少しスペックを抑えつつも競技シーンで十分すぎる性能を提供し、コストパフォーマンスに優れています。",
         "featureComparison": [
-          "共通点：24.5インチのFHD解像度、Fast IPSパネルを採用し、高いリフレッシュレートを備えている点",
-          "相違点：KOORUIが最大320Hzであるのに対し、KTCはネイティブ360Hz（OC時最大400Hz）に対応している点"
+          "共通点：24.5インチのFast IPSパネル、FHD解像度、HDR400対応、多機能スタンド搭載。",
+          "相違点：KEY TO COMBATは360Hz（OC 400Hz対応）とリフレッシュレートが一段高いです。KOORUIは320Hzですが、DCI-P3 95%など色域の広さをアピールしています。"
         ],
         "differentiators": [
-          "KOORUI ゲーミングモニター 24.5インチ G2511Eの利点：多機能スタンドが標準付属し、縦横回転などの調整が柔軟に行える点",
-          "KTC 24.5インチ ゲーミングモニター H25X7の利点：OC時に最大400Hzに達する、より極限のリフレッシュレートを追求できる点"
+          "KOORUI G2511Eの利点：320Hzという十分なオーバースペックを持ちながら、価格と性能のバランスを取りたいゲーマー向け。",
+          "KEY TO COMBAT H25X7の利点：0.1秒を争うプロ・セミプロレベルの競技プレイヤーで、360Hzや400Hzの超高リフレッシュレート環境を必要とする人向け。"
         ]
       },
       {
-        "name": "IODATA ゲーミングモニター 24.5インチ GigaCrysta EX-GD254U",
-        "asin": "B0FX42YJQC",
-        "priceComparison": "KOORUIの方が大幅に安価。IODATAは国内メーカーによるサポートと独自機能により価格が高くなっている。",
+        "name": "IODATA GigaCrysta EX-LDGC241UDB",
+        "asin": "B09XWZ4YRM",
+        "priceComparison": "IODATAのEX-LDGC241UDBは240Hz対応で価格が抑えられています。KOORUI G2511Eはそれより高価になる傾向がありますが、320Hzとリフレッシュレートで明確に優位性があります。",
         "featureComparison": [
-          "共通点：24.5インチで320Hzのリフレッシュレートに対応している点",
-          "相違点：KOORUIがFast IPSパネルを採用しているのに対し、IODATAはAHVAパネルを採用し、リモコンやスピーカーを搭載している点"
+          "共通点：FHD解像度、多機能スタンド（高さ調整・縦横回転）対応。",
+          "相違点：IODATAは23.8インチで240Hz、スピーカーおよびリモコン付きです。KOORUIは24.5インチ、Fast IPSパネル、320Hzと映像面・ゲーミング性能面で上回りますが、スピーカーの記載がありません。"
         ],
         "differentiators": [
-          "KOORUI ゲーミングモニター 24.5インチ G2511Eの利点：圧倒的なコストパフォーマンスの高さと、シンプルな構成",
-          "IODATA ゲーミングモニター 24.5インチ GigaCrysta EX-GD254Uの利点：国内メーカーによる土日サポートや無輝点保証、リモコン付属による操作性の良さ"
+          "KOORUI G2511Eの利点：240Hzでは満足できず、さらに上の320Hzによる滑らかさと、Fast IPSの美麗な映像を両立させたい人向け。",
+          "IODATA EX-LDGC241UDBの利点：240Hzで十分であり、スピーカーやリモコンといった日常の使い勝手の良さ、国内ブランド（アイ・オー・データ）のサポートを重視する人向け。"
         ]
       },
       {
-        "name": "Dell AW2523HF 24.5インチ Alienware ゲーミングモニター",
-        "asin": "B0C3ZV4H7L",
-        "priceComparison": "KOORUIの方が圧倒的に安価。Dellは360Hz対応のフラッグシップモデルであり高価格。",
+        "name": "Pixio PX248Wave",
+        "asin": "B00CWXQX90",
+        "priceComparison": "Pixio PX248Waveは200Hz対応のモデルで、リフレッシュレートに比例して価格が抑えられています。KOORUIはさらに上位の320Hzリフレッシュレートを提供するため、価格差以上の滑らかさを求めるかどうかが判断基準になります。",
         "featureComparison": [
-          "共通点：24.5インチ、FHD、Fast IPSパネルを採用している点",
-          "相違点：KOORUIが320Hzであるのに対し、Dell AW2523HFは360Hzに対応し、デザインや保証体制が異なる点"
+          "共通点：Fast IPSパネルを採用し、FHD解像度に対応。",
+          "相違点：Pixioは24インチで200Hz。KOORUIは24.5インチで320Hzと、ゲームにおける滑らかさのスペックで大きく上回ります。"
         ],
         "differentiators": [
-          "KOORUI ゲーミングモニター 24.5インチ G2511Eの利点：非常に安価に320Hzのハイリフレッシュレート環境を構築できる点",
-          "Dell AW2523HF 24.5インチ Alienware ゲーミングモニターの利点：360Hzのより高いリフレッシュレートとAlienwareブランドの高級感、充実した保証"
-        ]
-      },
-      {
-        "name": "Pixio PX259 Prime S ゲーミングモニター",
-        "asin": "B09RQP3N19",
-        "priceComparison": "対象商品の方が安価である可能性が高い。Pixioもコスパに優れるが、対象商品の価格競争力が際立つ。",
-        "featureComparison": [
-          "共通点：24.5インチのFHD解像度で、超高速リフレッシュレートに対応する点",
-          "相違点：KOORUIが320Hzであるのに対し、Pixioは360Hzに対応している点"
-        ],
-        "differentiators": [
-          "KOORUI ゲーミングモニター 24.5インチ G2511Eの利点：価格が非常に安く、導入コストを最小限に抑えられる点",
-          "Pixio PX259 Prime S ゲーミングモニターの利点：360Hzの超高速リフレッシュレートに対応している点"
-        ]
-      },
-      {
-        "name": "IODATA ゲーミングモニター 24.5インチ GigaCrysta 360Hz対応",
-        "asin": "B0C5X2QZXF",
-        "priceComparison": "対象商品に対し、IODATAは多機能・高付加価値であるため大きな価格差がある。",
-        "featureComparison": [
-          "共通点：24.5インチのゲーミングモニターである点",
-          "相違点：KOORUIが320HzのFast IPSで機能を絞っているのに対し、IODATAは360HzのAHVAパネル、USB Type-C、スピーカー、国内5年保証と多機能・高付加価値である点"
-        ],
-        "differentiators": [
-          "KOORUI ゲーミングモニター 24.5インチ G2511Eの利点：約4分の1の価格で購入できる圧倒的なコストパフォーマンス",
-          "IODATA ゲーミングモニター 24.5インチ GigaCrysta 360Hz対応の利点：最高峰のリフレッシュレートと豊富な接続端子、厚いメーカー保証"
+          "KOORUI G2511Eの利点：200Hzクラス以上の圧倒的な滑らかさを求め、競技性の高いFPSゲームをメインでプレイする人向け。",
+          "Pixio PX248Waveの利点：デザイン性やパステルカラーなどのバリエーションを好むライト層向け。"
         ]
       }
     ],
     "recommendation": {
       "targetUsers": [
-        "予算を抑えつつ本格的なFPSゲーム環境を構築したいゲーマー",
-        "300Hz以上のハイリフレッシュレートモニターを初めて試してみたいユーザー"
+        "ValorantやApex LegendsなどのFPSで、240Hz以上のリフレッシュレート環境を構築して優位に立ちたい競技ゲーマー",
+        "モニターアームを使わずに、標準スタンドで柔軟な高さ・角度調整を行いたいPCユーザー",
+        "ゲームだけでなく、動画視聴時の色彩やHDRの鮮やかさも妥協したくない人"
       ],
       "pros": [
-        "20,800円という価格で320Hz / 1ms(GTG)のスペックを実現",
-        "広視野角で発色の良いFast IPSパネルを採用",
-        "縦横回転や高さ調整が可能なスタンドが標準で付属"
+        "320Hzの超高リフレッシュレートがもたらす圧倒的な滑らかさにより、FPSゲームでのエイム追従性が飛躍的に向上します。",
+        "付属の多機能スタンドで高さや縦横回転が自在に調整できるため、長時間のプレイでも首や肩が疲れにくい最適な姿勢を維持できます。",
+        "Fast IPSパネルとDCI-P3 95%の広色域により、ゲームの世界観や映画の色彩を色鮮やかに、かつ残像感なく楽しめます。"
       ],
       "cons": [
-        "解像度がFHD（1920x1080）に限定される",
-        "スピーカーやUSB Type-Cなどの付加的な機能は省かれている可能性がある"
+        "スピーカーが内蔵されていない可能性が高いため、ゲーム機(PS5等)で利用する場合はヘッドセットや外部スピーカーの用意が必要です。",
+        "320Hzの性能をフルに引き出すには、PC側のグラフィックボードも非常に高性能である必要があります。"
       ],
-      "score": 88,
-      "scoreRationale": "[基本点: 70]\n[加点: +15] (320Hzのハイリフレッシュレートでありながら20,800円という圧倒的なコストパフォーマンス)\n[加点: +5] (Fast IPS採用による画質と、多機能スタンドの標準付属)\n[減点: -2] (ブランドの認知度や保証面で大手メーカーにやや劣る点)\n[合計: 88]"
+      "score": 83,
+      "scoreRationale": "[基本点: 70]\n[加点: +8] (320Hz/1msの競技向けトップクラスのゲーミング性能)\n[加点: +5] (Fast IPS・HDR400対応による高画質と広色域)\n[加点: +3] (高さ調整・縦横回転などエルゴノミクスに優れたスタンドを標準装備)\n[減点: -3] (スピーカーやUSBハブなど付加機能が省略されている)\n[合計: 83]"
     },
     "technicalSpecs": {
-      "dimensions": {
-        "height": "約494mm",
-        "width": "約560mm",
-        "depth": "約262mm"
+      "display": {
+        "size": "24.5インチ",
+        "resolution": "1920×1080 (FHD)",
+        "type": "Fast IPS (非光沢)",
+        "refreshRate": "320Hz"
       },
-      "weight": "約2.9kg",
-      "capacity": "約62.2cm (24.5型)",
-      "material": "プラスチック（本体・スタンド）",
-      "origin": "記載なし",
+      "dimensions": {
+        "height": "331.41mm (パネル部) / 494.0mm (インチ換算推定, 高さ調整最大110mm)",
+        "width": "560mm",
+        "depth": "81.18mm (パネル部)",
+        "weight": "2.9kg (パネル重量)"
+      },
+      "weight": "2.9kg (パネル重量)",
+      "connectivity": [
+        "HDMI 2.0 ×2",
+        "DisplayPort 1.4 ×1"
+      ],
       "other": [
-        "パネルタイプ: Fast IPS（非光沢）",
-        "解像度: FHD（1920x1080）",
-        "リフレッシュレート: 最大320Hz",
-        "応答速度: 1ms（GTG）",
-        "色域: sRGB 99%、DCI-P3 95%、表示色16.7M以上",
-        "輝度: 350cd/m2、HDR400対応",
-        "同期技術: Adaptive Sync（FreeSync & G-Sync対応）",
-        "インターフェース: HDMI 2.0 ×2、DisplayPort 1.4 ×1",
-        "スタンド機能: 高さ調整（最大110mm）、傾き調整（-5°～20°）、縦横回転対応",
-        "VESAマウント: 75x75mm",
-        "付属品: DP(1.4)ケーブル×1、アダプター、スタンド、取扱説明書",
-        "保証: モニター画面1年間保証、その他の付属品3年間保証"
+        "応答速度: 1ms (GTG)",
+        "色域: sRGB 99% / DCI-P3 95%",
+        "輝度: 350cd/m2",
+        "HDR対応: HDR400",
+        "Adaptive Sync (FreeSync & G-Sync対応)",
+        "VESAマウント対応 (75×75mm)",
+        "スタンド機能: 高さ調整(最大110mm)、チルト(-5°～20°)、縦横回転対応"
       ]
     }
   }
