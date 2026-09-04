@@ -58,6 +58,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const keywordInput = document.getElementById('low-scores-keyword-input');
   const keywordClearBtn = document.getElementById('low-scores-keyword-clear-btn');
   const activeChipsContainer = document.getElementById('low-scores-active-chips');
+  const noResultsActionsEl = document.getElementById('low-scores-no-results-actions');
 
   if (!scoreSlider || !priceSlider || !gridEl) return;
 
@@ -315,6 +316,9 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     renderActiveFilterChips(activeChipsContainer, chips, resetFilters);
+    if (typeof renderNoResultsQuickActions === 'function') {
+      renderNoResultsQuickActions(noResultsActionsEl, chips);
+    }
   }
 
   // --- Reset ---

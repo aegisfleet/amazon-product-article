@@ -830,6 +830,76 @@ function renderActiveFilterChips(containerEl, chips, onClearAll) {
 }
 
 /**
+ * 絞り込み結果0件（Empty State）用の個別クイック復帰アクションを描画する共通関数
+ * @param {HTMLElement} containerEl - クイックアクション用コンテナ要素
+ * @param {Array<{id: string, label: string, icon: string, onRemove: Function}>} chips - 適用中のフィルターチップ情報
+ */
+function renderNoResultsQuickActions(containerEl, chips) {
+  if (!containerEl) return;
+
+  if (!chips || chips.length === 0) {
+    containerEl.innerHTML = '';
+    containerEl.style.display = 'none';
+    return;
+  }
+
+  containerEl.innerHTML = '';
+  containerEl.style.display = 'flex';
+
+  const labelEl = document.createElement('span');
+  labelEl.className = 'no-results-quick-label';
+  labelEl.textContent = '条件を個別に解除:';
+  containerEl.appendChild(labelEl);
+
+  const btnsContainer = document.createElement('div');
+  btnsContainer.className = 'no-results-quick-btns';
+
+  const emojiToSymbol = {
+    '🏆': 'trophy',
+    '💰': 'payments',
+    '📉': 'percent',
+    '🏷️': 'sell',
+    '📂': 'folder',
+    '🔍': 'search',
+    '⚙️': 'tune',
+    '🏷': 'sell',
+    '⚠️': 'warning'
+  };
+
+  chips.forEach((chip) => {
+    const btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'no-results-quick-btn';
+    btn.title = `${chip.label}の条件を解除`;
+    btn.setAttribute('aria-label', `${chip.label}の条件を解除`);
+
+    if (chip.icon) {
+      const iconEl = document.createElement('span');
+      const symbolName = emojiToSymbol[chip.icon] || chip.icon;
+      iconEl.className = 'material-symbols-outlined no-results-quick-icon';
+      iconEl.setAttribute('aria-hidden', 'true');
+      iconEl.textContent = symbolName;
+      btn.appendChild(iconEl);
+    }
+
+    const textEl = document.createElement('span');
+    textEl.textContent = `${chip.label} を解除`;
+    btn.appendChild(textEl);
+
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      if (typeof chip.onRemove === 'function') {
+        chip.onRemove();
+      }
+    });
+
+    btnsContainer.appendChild(btn);
+  });
+
+  containerEl.appendChild(btnsContainer);
+}
+
+/**
  * 画面幅に応じて検索入力欄のプレースホルダーをレスポンシブに切り替える
  */
 function setupResponsivePlaceholders() {

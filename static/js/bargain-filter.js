@@ -56,6 +56,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const keywordInput = document.getElementById('bargain-keyword-input');
   const keywordClearBtn = document.getElementById('bargain-keyword-clear-btn');
   const activeChipsContainer = document.getElementById('bargain-active-chips');
+  const noResultsActionsEl = document.getElementById('bargain-no-results-actions');
 
   if (!scoreSlider || !priceSlider || !gridEl) return;
 
@@ -314,6 +315,9 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     renderActiveFilterChips(activeChipsContainer, chips, resetFilters);
+    if (typeof renderNoResultsQuickActions === 'function') {
+      renderNoResultsQuickActions(noResultsActionsEl, chips);
+    }
   }
 
   // --- Reset ---
