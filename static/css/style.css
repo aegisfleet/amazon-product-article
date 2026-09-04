@@ -5792,6 +5792,13 @@ body.is-scrolling-down .nav-menu-floating-toggle:focus-visible {
   outline-offset: 1px;
 }
 
+.bargain-input::placeholder {
+  color: var(--color-text-muted);
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
 .bargain-keyword-clear-btn {
   position: absolute;
   top: 50%;
