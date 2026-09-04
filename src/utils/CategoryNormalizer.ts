@@ -99,6 +99,15 @@ export class CategoryNormalizer {
     'メモリーカード',
     'ドッキングステーション',
     'USBハブ',
+    'ウェアラブルカメラ',
+    'アクションカム',
+    'アクションカメラ',
+    'デジタルカメラ',
+    'ビデオカメラ',
+    '一眼レフ',
+    'ミラーレス',
+    'カメラ',
+    'Vlogカメラ',
   ];
 
   private static readonly HIGH_PRIORITY_KEYWORDS = [
@@ -409,6 +418,37 @@ export class CategoryNormalizer {
         '格安スマホ',
       ];
       if (!phoneKeywords.some((k) => lowerTitle.includes(k))) {
+        return false;
+      }
+    }
+
+    // シューズ・履物カテゴリの誤爆防止（タイトルに靴・履物関連キーワードがない場合は無効）
+    const isFootwearCategory =
+      /シューズ|スニーカー|サンダル|ブーツ|スリッポン|運動靴|パンプス|ローファー|ミュール|長靴|足袋|上履き/.test(name);
+    if (isFootwearCategory && title) {
+      const lowerTitle = title.toLowerCase();
+      const footwearKeywords = [
+        'シューズ',
+        '靴',
+        'スニーカー',
+        'サンダル',
+        'ブーツ',
+        'スリッポン',
+        '運動靴',
+        'パンプス',
+        'ローファー',
+        'ミュール',
+        '長靴',
+        '足袋',
+        '上履き',
+        'インソール',
+        'シュー',
+        'shoe',
+        'sneaker',
+        'boot',
+        'sandal',
+      ];
+      if (!footwearKeywords.some((k) => lowerTitle.includes(k))) {
         return false;
       }
     }
