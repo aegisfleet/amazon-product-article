@@ -6675,7 +6675,7 @@ body:has(.sticky-cta) .favorite-toast {
 .favorite-toast-close {
   background: transparent;
   border: none;
-  color: rgba(255, 255, 255, 0.6);
+  color: #e5e7eb;
   font-size: 0.85rem;
   font-weight: 700;
   cursor: pointer;
@@ -6690,7 +6690,7 @@ body:has(.sticky-cta) .favorite-toast {
 
 .favorite-toast-close:hover {
   color: #ffffff;
-  background-color: rgba(255, 255, 255, 0.15);
+  background-color: rgba(255, 255, 255, 0.2);
 }
 
 [data-theme="dark"] .favorite-toast {
