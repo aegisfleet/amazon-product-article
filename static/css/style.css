@@ -3420,7 +3420,7 @@ button.category-pill {
   display: none;
 }
 
-@media (min-width: 1280px) {
+@media (min-width: 1780px) {
   .article-sidebar {
     display: block;
   }
@@ -3676,7 +3676,7 @@ body.menu-open .toc-fab {
   }
 }
 
-@media (min-width: 1280px) {
+@media (min-width: 1780px) {
   .toc-fab {
     display: none !important;
   }
