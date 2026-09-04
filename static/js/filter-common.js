@@ -839,7 +839,13 @@ function setupResponsivePlaceholders() {
 
   const mql = typeof window !== 'undefined' && window.matchMedia ? window.matchMedia('(max-width: 640px)') : null;
   function updatePlaceholders(e) {
-    const isMobile = e && typeof e.matches === 'boolean' ? e.matches : (mql ? mql.matches : false);
+    let isMobile = false;
+    if (e && typeof e.matches === 'boolean') {
+      isMobile = e.matches;
+    } else if (mql) {
+      isMobile = Boolean(mql.matches);
+    }
+
     inputs.forEach((input) => {
       const fullText = input.dataset.placeholderFull || input.getAttribute('placeholder') || '';
       const mobileText = input.dataset.placeholderMobile || '';
@@ -847,12 +853,8 @@ function setupResponsivePlaceholders() {
     });
   }
 
-  if (mql) {
-    if (typeof mql.addEventListener === 'function') {
-      mql.addEventListener('change', updatePlaceholders);
-    } else if (typeof mql.addListener === 'function') {
-      mql.addListener(updatePlaceholders);
-    }
+  if (mql && typeof mql.addEventListener === 'function') {
+    mql.addEventListener('change', updatePlaceholders);
   }
 
   updatePlaceholders();
