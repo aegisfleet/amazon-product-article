@@ -5,6 +5,17 @@
             Amazon商品徹底比較.com
         </a>
 
+        <nav class="site-header-nav" aria-label="グローバルナビゲーション">
+            <ul class="header-nav-list">
+                <li><a href="{{ `` | relURL }}" class="header-nav-link">ホーム</a></li>
+                <li><a href="{{ `recommendations/` | relURL }}" class="header-nav-link">注目商品</a></li>
+                <li><a href="{{ `bargain/` | relURL }}" class="header-nav-link">あともう一品</a></li>
+                <li><a href="{{ `deals/` | relURL }}" class="header-nav-link">セール対象</a></li>
+                <li><a href="{{ `brand/` | relURL }}" class="header-nav-link">ブランド一覧</a></li>
+                <li><a href="{{ `low-scores/` | relURL }}" class="header-nav-link">低スコア迷品館</a></li>
+            </ul>
+        </nav>
+
         <div class="header-actions">
             <a href="{{ `favorites/` | relURL }}" class="favorites-nav-btn" id="favorites-nav-btn"
                 aria-label="お気に入りリスト">
@@ -17,6 +28,37 @@
         </div>
     </div>
 </header>
+<script>
+    (function () {
+        function highlightActiveHeaderNav() {
+            var currentPath = window.location.pathname;
+            var links = document.querySelectorAll('.header-nav-link');
+            links.forEach(function (link) {
+                var href = link.getAttribute('href');
+                if (!href) return;
+                var isHome = href === '/' || href === '' || href.endsWith('/index.html');
+                var isMatch = false;
+                if (isHome) {
+                    isMatch = currentPath === '/' || currentPath === '' || currentPath.endsWith('/index.html');
+                } else {
+                    isMatch = currentPath === href || (href !== '/' && currentPath.indexOf(href) === 0);
+                }
+                if (isMatch) {
+                    link.classList.add('active');
+                    link.setAttribute('aria-current', 'page');
+                } else {
+                    link.classList.remove('active');
+                    link.removeAttribute('aria-current');
+                }
+            });
+        }
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', highlightActiveHeaderNav);
+        } else {
+            highlightActiveHeaderNav();
+        }
+    })();
+</script>
 
 <div id="nav-drawer-overlay" class="nav-drawer-overlay" aria-hidden="true"></div>
 
