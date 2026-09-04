@@ -44,9 +44,6 @@ describe('Responsive Search Placeholder', () => {
         addEventListener: jest.fn((event, handler) => {
           if (event === 'change') mediaQueryListener = handler;
         }),
-        addListener: jest.fn((handler) => {
-          mediaQueryListener = handler;
-        }),
       })),
     };
 
