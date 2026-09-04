@@ -62,6 +62,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const keywordInput = document.getElementById('deals-keyword-input');
   const keywordClearBtn = document.getElementById('deals-keyword-clear-btn');
   const activeChipsContainer = document.getElementById('deals-active-chips');
+  const noResultsActionsEl = document.getElementById('deals-no-results-actions');
 
   const scoreValueEl = document.getElementById('deals-score-value');
   const minPriceValueEl = document.getElementById('deals-min-price-value');
@@ -376,6 +377,9 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     renderActiveFilterChips(activeChipsContainer, chips, resetFilters);
+    if (typeof renderNoResultsQuickActions === 'function') {
+      renderNoResultsQuickActions(noResultsActionsEl, chips);
+    }
   }
 
   // --- Reset ---
