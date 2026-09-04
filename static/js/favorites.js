@@ -136,17 +136,47 @@
             document.body.appendChild(toast);
         }
 
-        const favNavBtn = document.getElementById('favorites-nav-btn');
-        const favUrl = favNavBtn ? favNavBtn.getAttribute('href') : '/favorites/';
+        // 既存の中身をクリア
+        toast.textContent = '';
 
+        // アイコン
+        const iconSpan = document.createElement('span');
+        iconSpan.className = 'favorite-toast-icon';
+        iconSpan.setAttribute('aria-hidden', 'true');
+        iconSpan.textContent = actionType === 'add' ? '❤️' : '🤍';
+        toast.appendChild(iconSpan);
+
+        // メッセージ
+        const msgSpan = document.createElement('span');
+        msgSpan.className = 'favorite-toast-msg';
+        msgSpan.textContent = message;
+        toast.appendChild(msgSpan);
+
+        // 「お気に入りを見る」リンク（追加時）
         if (actionType === 'add') {
-            toast.innerHTML = `
-                <span class="favorite-toast-msg">${escapeHtml(message)}</span>
-                <a href="${escapeHtml(favUrl)}" class="favorite-toast-link">お気に入りを見る →</a>
-            `;
-        } else {
-            toast.innerHTML = `<span class="favorite-toast-msg">${escapeHtml(message)}</span>`;
+            const favNavBtn = document.getElementById('favorites-nav-btn');
+            const favUrl = favNavBtn ? favNavBtn.getAttribute('href') : '/favorites/';
+            const link = document.createElement('a');
+            link.href = favUrl;
+            link.className = 'favorite-toast-link';
+            link.textContent = 'リストを見る →';
+            toast.appendChild(link);
         }
+
+        // 閉じるボタン
+        const closeBtn = document.createElement('button');
+        closeBtn.type = 'button';
+        closeBtn.className = 'favorite-toast-close';
+        closeBtn.setAttribute('aria-label', '通知を閉じる');
+        closeBtn.textContent = '✕';
+        closeBtn.addEventListener('click', function () {
+            toast.classList.remove('is-visible');
+            if (toastTimer) {
+                clearTimeout(toastTimer);
+                toastTimer = null;
+            }
+        });
+        toast.appendChild(closeBtn);
 
         toast.classList.add('is-visible');
 
@@ -155,7 +185,7 @@
         }
         toastTimer = setTimeout(function () {
             toast.classList.remove('is-visible');
-        }, 3000);
+        }, 3500);
     }
 
     /** ヘッダーおよびドロワーのバッジ件数を更新する */
