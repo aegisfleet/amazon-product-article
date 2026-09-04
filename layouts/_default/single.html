@@ -30,29 +30,6 @@
     </div>
     {{- partial "breadcrumb.html" . -}}
 
-    <div class="product-count-container">
-        <div class="quick-nav-group">
-            <a href="{{ `recommendations/` | relURL }}" class="today-recommendation-link">
-                <span class="today-recommendation-icon">🎯</span>
-                <span class="today-recommendation-text">本日の注目商品</span>
-            </a>
-            <a href="{{ `bargain/` | relURL }}" class="bargain-link" id="bargain-link">
-                <span class="bargain-link-icon">🎁</span>
-                <span>あともう一品</span>
-            </a>
-            <a href="{{ `deals/` | relURL }}" class="deals-link" id="deals-link">
-                <span class="deals-link-icon">🔥</span>
-                <span>セール対象商品</span>
-            </a>
-            {{- with .Site.Params.productRequestFormUrl -}}
-            <a href="{{ . }}" target="_blank" rel="noopener noreferrer" class="request-link" id="request-link" aria-label="商品調査リクエストフォーム（新しいタブで開く）">
-                <span class="request-link-icon">📝</span>
-                <span>調査リクエスト</span>
-            </a>
-            {{- end -}}
-        </div>
-    </div>
-
     <article class="article-content">
         <header class="article-header">
             {{- if and .Params.categories (gt (len .Params.categories) 0) -}}
