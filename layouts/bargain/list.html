@@ -128,8 +128,12 @@
     <div class="bargain-no-results" id="bargain-no-results" style="display: none;">
         <div class="bargain-no-results-icon">🔍</div>
         <p class="bargain-no-results-text">条件に一致する商品が見つかりませんでした。</p>
-        <p class="bargain-no-results-hint">フィルタ条件を変更してお試しください。</p>
-        <button type="button" class="bargain-reset-btn" id="bargain-reset-btn">フィルタをリセット</button>
+        <p class="bargain-no-results-hint">フィルタ条件を変更するか、以下のボタンから条件のリセットをお試しください。</p>
+        <button type="button" class="bargain-reset-btn" id="bargain-reset-btn">
+            <span class="material-symbols-outlined" aria-hidden="true" style="font-size: 1.1rem; vertical-align: middle;">restart_alt</span>
+            すべての条件をリセット
+        </button>
+        <div class="no-results-quick-actions" id="bargain-no-results-actions" style="display: none;"></div>
     </div>
 
     <!-- Product Data (Hugo build-time) -->
