@@ -175,7 +175,7 @@ a:hover {
   .site-header-nav {
     display: flex;
     align-items: center;
-    margin-left: var(--spacing-lg);
+    margin-left: var(--spacing-sm);
     margin-right: auto;
     min-width: 0;
   }
@@ -188,7 +188,7 @@ a:hover {
   .header-nav-list {
     display: flex;
     align-items: center;
-    gap: 0.25rem;
+    gap: 2px;
     list-style: none;
     margin: 0;
     padding: 0;
@@ -197,8 +197,8 @@ a:hover {
   .header-nav-link {
     display: inline-flex;
     align-items: center;
-    padding: 0.45rem 0.75rem;
-    font-size: 0.9rem;
+    padding: 0.35rem 0.45rem;
+    font-size: 0.84rem;
     font-weight: 600;
     color: var(--color-text-muted);
     border-radius: var(--radius-md);
@@ -222,11 +222,31 @@ a:hover {
     content: '';
     position: absolute;
     bottom: -2px;
-    left: 0.75rem;
-    right: 0.75rem;
+    left: 0.45rem;
+    right: 0.45rem;
     height: 2.5px;
     background: var(--color-primary);
     border-radius: 2px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .site-header-nav {
+    margin-left: var(--spacing-lg);
+  }
+
+  .header-nav-list {
+    gap: 0.25rem;
+  }
+
+  .header-nav-link {
+    padding: 0.45rem 0.75rem;
+    font-size: 0.9rem;
+  }
+
+  .header-nav-link.active::after {
+    left: 0.75rem;
+    right: 0.75rem;
   }
 }
 
