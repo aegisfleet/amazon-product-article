@@ -27,6 +27,17 @@ describe('CategoryNormalizer', () => {
       expect(CategoryNormalizer.isValidCategoryName(null)).toBe(false);
     });
 
+    it('should invalidate footwear categories if title does not contain footwear keywords', () => {
+      const cameraTitle = 'DJI Osmo Nano スタンダードコンボ (128GB) 4K ウェアラブルVlogカメラ 1/1.3インチセンサー';
+      expect(CategoryNormalizer.isValidCategoryName('ガールズアウトドアスポーツシューズ', cameraTitle)).toBe(false);
+      expect(CategoryNormalizer.isValidCategoryName('メンズランニングシューズ', cameraTitle)).toBe(false);
+      expect(CategoryNormalizer.isValidCategoryName('ガールズスニーカー', cameraTitle)).toBe(false);
+
+      const shoeTitle = 'アディダス ランニングシューズ スニーカー 運動靴 26.5cm';
+      expect(CategoryNormalizer.isValidCategoryName('ガールズアウトドアスポーツシューズ', shoeTitle)).toBe(true);
+      expect(CategoryNormalizer.isValidCategoryName('メンズランニングシューズ', shoeTitle)).toBe(true);
+    });
+
     it('should return false for names matching invalid patterns', () => {
       const invalidNames = [
         '3P grocery',
@@ -733,6 +744,40 @@ describe('CategoryNormalizer', () => {
       const result = CategoryNormalizer.selectBestCategory(nodes, title);
       expect(result.main).toBe('PC用ゲームパッド');
       expect(result.browseNodeId).toBe('2151971051');
+    });
+
+    it('should select "ウェアラブルカメラ・アクションカム" for DJI Osmo Nano action camera (B0DYD56G2Y)', () => {
+      const nodes: BrowseNode[] = [
+        {
+          contextFreeName: 'ウェアラブルカメラ・アクションカム',
+          displayName: 'ウェアラブルカメラ・アクションカム',
+          id: '2680377051',
+          isRoot: false,
+        },
+        {
+          contextFreeName: 'アクションカメラ・動画撮影向けカメラ',
+          displayName: 'アクションカメラ・動画撮影向けカメラ',
+          id: '8518908051',
+          isRoot: false,
+        },
+        {
+          contextFreeName: 'カメラ ストア',
+          displayName: 'カメラ ストア',
+          id: '8184990051',
+          isRoot: false,
+        },
+        {
+          contextFreeName: 'ガールズアウトドアスポーツシューズ',
+          displayName: 'ガールズアウトドアスポーツシューズ',
+          id: '5372354051',
+          isRoot: false,
+        },
+      ];
+      const title = 'DJI Osmo Nano スタンダードコンボ (128GB) 4K ウェアラブルVlogカメラ 1/1.3インチセンサー';
+
+      const result = CategoryNormalizer.selectBestCategory(nodes, title);
+      expect(result.main).toBe('ウェアラブルカメラ・アクションカム');
+      expect(result.browseNodeId).toBe('2680377051');
     });
   });
 });
