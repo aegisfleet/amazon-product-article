@@ -828,3 +828,40 @@ function renderActiveFilterChips(containerEl, chips, onClearAll) {
     containerEl.appendChild(clearAllBtn);
   }
 }
+
+/**
+ * 画面幅に応じて検索入力欄のプレースホルダーをレスポンシブに切り替える
+ */
+function setupResponsivePlaceholders() {
+  if (typeof document === 'undefined') return;
+  const inputs = document.querySelectorAll('input[data-placeholder-mobile]');
+  if (!inputs || inputs.length === 0) return;
+
+  const mql = typeof window !== 'undefined' && window.matchMedia ? window.matchMedia('(max-width: 640px)') : null;
+  function updatePlaceholders(e) {
+    const isMobile = e && typeof e.matches === 'boolean' ? e.matches : (mql ? mql.matches : false);
+    inputs.forEach((input) => {
+      const fullText = input.dataset.placeholderFull || input.getAttribute('placeholder') || '';
+      const mobileText = input.dataset.placeholderMobile || '';
+      input.placeholder = isMobile ? mobileText : fullText;
+    });
+  }
+
+  if (mql) {
+    if (typeof mql.addEventListener === 'function') {
+      mql.addEventListener('change', updatePlaceholders);
+    } else if (typeof mql.addListener === 'function') {
+      mql.addListener(updatePlaceholders);
+    }
+  }
+
+  updatePlaceholders();
+}
+
+if (typeof document !== 'undefined') {
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', setupResponsivePlaceholders);
+  } else {
+    setupResponsivePlaceholders();
+  }
+}
