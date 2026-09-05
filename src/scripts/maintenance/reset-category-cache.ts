@@ -19,6 +19,9 @@ try {
 
     const targetLower = targetCategory.toLowerCase();
 
+    const categoryRegex = /categories:\s*\[([^\]]+)\]/;
+    const asinRegex = /asin:\s*"([^"]+)"/;
+
     // 1. Scan Articles (Old approach preserved for article-specific metadata if needed)
     const files = fs.readdirSync(articlesDir);
     for (const file of files) {
@@ -27,9 +30,9 @@ try {
         const content = fs.readFileSync(filePath, 'utf8');
 
         // Check if the article has the target category
-        const categoryMatch = content.match(/categories:\s*\[([^\]]+)\]/);
+        const categoryMatch = categoryRegex.exec(content);
         if (categoryMatch?.[1]?.toLowerCase().includes(targetLower)) {
-          const asinMatch = content.match(/asin:\s*"([^"]+)"/);
+          const asinMatch = asinRegex.exec(content);
           if (asinMatch?.[1]) {
             const asin = asinMatch[1];
             if (cache[asin]?.timestamp !== 0) {
