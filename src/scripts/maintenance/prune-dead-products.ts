@@ -26,7 +26,7 @@
 import fs from 'node:fs';
 import https from 'node:https';
 import path from 'node:path';
-import { enhanceCategories } from '../src/scripts/enhance-categories';
+import { enhanceCategories } from '../enhance-categories';
 
 export interface CheckResult {
   asin: string;
@@ -64,7 +64,7 @@ export interface CliOptions {
   checkOrphans: boolean;
 }
 
-export const ROOT_DIR = path.resolve(__dirname, '..');
+export const ROOT_DIR = path.resolve(__dirname, '../../..');
 export const ARTICLES_DIR = path.join(ROOT_DIR, 'content/articles');
 export const INVESTIGATIONS_DIR = path.join(ROOT_DIR, 'data/investigations');
 export const CACHE_PATH = path.join(ROOT_DIR, 'data/cache/paapi-product-cache.json');
@@ -175,7 +175,12 @@ function checkAmazonUrl(
 ): Promise<{ statusCode: number; isDead: boolean; title: string | undefined; error: string | undefined }> {
   return new Promise((resolve) => {
     let isResolved = false;
-    const safeResolve = (val: { statusCode: number; isDead: boolean; title: string | undefined; error: string | undefined }) => {
+    const safeResolve = (val: {
+      statusCode: number;
+      isDead: boolean;
+      title: string | undefined;
+      error: string | undefined;
+    }) => {
       if (!isResolved) {
         isResolved = true;
         resolve(val);
@@ -189,8 +194,7 @@ function checkAmazonUrl(
         headers: {
           'User-Agent':
             'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36',
-          Accept:
-            'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8',
+          Accept: 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8',
           'Accept-Language': 'ja-JP,ja;q=0.9,en-US;q=0.8,en;q=0.7',
         },
         timeout: 10000,
@@ -265,8 +269,8 @@ async function checkAsinsInBatches(
 
       const originalTitle = cache[asin]?.data?.title;
       const displayTitle = check.isDead
-        ? (originalTitle || check.title || undefined)
-        : (check.title || originalTitle || undefined);
+        ? originalTitle || check.title || undefined
+        : check.title || originalTitle || undefined;
 
       return {
         asin,
@@ -342,11 +346,7 @@ function pruneSingleItem(
 }
 
 // 単一調査ファイルからの競合参照抽出ヘルパー
-function extractFileReferences(
-  filePath: string,
-  file: string,
-  deadAsinSet: Set<string>,
-): CompetitorReference | null {
+function extractFileReferences(filePath: string, file: string, deadAsinSet: Set<string>): CompetitorReference | null {
   try {
     const content = fs.readFileSync(filePath, 'utf8');
     const hasTarget = Array.from(deadAsinSet).some((asin) => content.includes(asin));
@@ -411,9 +411,7 @@ export function cleanCompetitorReferences(
 
       const deadAsinSet = new Set(ref.referencedDeadAsins.map((r) => r.asin));
       const beforeCount = competitors.length;
-      data.analysis.competitiveAnalysis = competitors.filter(
-        (comp: any) => !comp?.asin || !deadAsinSet.has(comp.asin),
-      );
+      data.analysis.competitiveAnalysis = competitors.filter((comp: any) => !comp?.asin || !deadAsinSet.has(comp.asin));
       const removed = beforeCount - data.analysis.competitiveAnalysis.length;
 
       if (removed > 0) {
@@ -441,11 +439,21 @@ export function findOrphanedFiles(
   investigationsDir: string = INVESTIGATIONS_DIR,
 ): OrphanFilesResult {
   const articles = fs.existsSync(articlesDir)
-    ? new Set(fs.readdirSync(articlesDir).filter((f) => f.endsWith('.md')).map((f) => f.replace('.md', '')))
+    ? new Set(
+        fs
+          .readdirSync(articlesDir)
+          .filter((f) => f.endsWith('.md'))
+          .map((f) => f.replace('.md', '')),
+      )
     : new Set<string>();
 
   const investigations = fs.existsSync(investigationsDir)
-    ? new Set(fs.readdirSync(investigationsDir).filter((f) => f.endsWith('.json')).map((f) => f.replace('.json', '')))
+    ? new Set(
+        fs
+          .readdirSync(investigationsDir)
+          .filter((f) => f.endsWith('.json'))
+          .map((f) => f.replace('.json', '')),
+      )
     : new Set<string>();
 
   const articlesWithoutInvest: string[] = [];
@@ -603,9 +611,7 @@ export function printAuditResults(
   }
 
   const references = options.checkReferences ? printReferencesAudit(deadItems) : [];
-  const orphans = options.checkOrphans
-    ? printOrphansAudit()
-    : { articlesWithoutInvest: [], investsWithoutArticle: [] };
+  const orphans = options.checkOrphans ? printOrphansAudit() : { articlesWithoutInvest: [], investsWithoutArticle: [] };
 
   return { deadItems, references, orphans };
 }
@@ -647,7 +653,8 @@ async function main() {
     handlePruning(deadItems, options, cache);
   } else {
     console.log('\n※ 実際に削除を実行する場合は `--prune` オプションを付与して実行してください。');
-    console.log('  例: pnpm ts-node scripts/prune-dead-products.ts --prune');
+    console.log('  例: pnpm run prune:dead');
+    console.log('  または: pnpm tsx src/scripts/maintenance/prune-dead-products.ts --prune');
   }
 }
 

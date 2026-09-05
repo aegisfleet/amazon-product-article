@@ -1,6 +1,6 @@
 import fs from 'node:fs';
 import path from 'node:path';
-import { CategoryNormalizer } from '../src/utils/CategoryNormalizer';
+import { CategoryNormalizer } from '../../utils/CategoryNormalizer';
 
 const debugOutputPath = path.resolve('tmp', 'debug_output.json');
 try {

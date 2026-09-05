@@ -86,14 +86,16 @@ pnpm test src/utils/CategoryNormalizer.test.ts
 指定したキーワード（大文字小文字を区別せず、部分一致）を含むカテゴリ名を持つすべての商品のキャッシュをリセットします。
 
 ```bash
-npx ts-node scripts/reset-category-cache.ts "キーワード"
+pnpm run reset:category-cache -- "キーワード"
+# または: pnpm tsx src/scripts/maintenance/reset-category-cache.ts "キーワード"
 ```
 
 ### 3.2 ASINによる個別リセット
 特定のASINのキャッシュのみをリセットします。
 
 ```bash
-npx ts-node scripts/reset-cache-timestamp.ts <ASIN>
+pnpm run reset:cache-timestamp -- <ASIN>
+# または: pnpm tsx src/scripts/maintenance/reset-cache-timestamp.ts <ASIN>
 ```
 
 ## 4. 反映の確認 (Finalization)

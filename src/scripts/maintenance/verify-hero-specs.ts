@@ -1,11 +1,11 @@
 import * as fs from 'node:fs';
 import * as path from 'node:path';
-import { ArticleGenerator } from '../src/article/ArticleGenerator';
-import type { InvestigationResult } from '../src/types/JulesTypes';
-import type { Product } from '../src/types/Product';
+import { ArticleGenerator } from '../../article/ArticleGenerator';
+import type { InvestigationResult } from '../../types/JulesTypes';
+import type { Product } from '../../types/Product';
 
 const main = async () => {
-  const jsonPath = path.join(__dirname, '../data/investigations/B0D6YF4LNL.json');
+  const jsonPath = path.join(__dirname, '../../../data/investigations/B0D6YF4LNL.json');
   if (!fs.existsSync(jsonPath)) {
     console.error(`File not found: ${jsonPath}`);
     return;

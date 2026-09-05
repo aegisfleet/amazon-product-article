@@ -195,11 +195,13 @@ Creators API のレスポンスには、キャンペーン用や社内管理用�
 
 - **キーワード指定による一括リセット**:
   ```bash
-  npx ts-node scripts/reset-category-cache.ts "リセット対象のカテゴリ名"
+  pnpm run reset:category-cache -- "リセット対象のカテゴリ名"
+  # または: npx tsx src/scripts/maintenance/reset-category-cache.ts "リセット対象のカテゴリ名"
   ```
 - **ASIN指定による個別リセット**:
   ```bash
-  npx ts-node scripts/reset-cache-timestamp.ts <ASIN>
+  pnpm run reset:cache-timestamp -- <ASIN>
+  # または: npx tsx src/scripts/maintenance/reset-cache-timestamp.ts <ASIN>
   ```
 - **記事の再生成と反映確認**:
   ```bash
@@ -217,4 +219,4 @@ Creators API のレスポンスには、キャンペーン用や社内管理用�
 | `pnpm run sort:categories` | `data/categorygroups.json` の子カテゴリをUnicode順にソートする |
 | `pnpm run prebuild:hugo` | カテゴリ階層を拡張し、`categories.yml` や親カテゴリMarkdownを同期する |
 | `pnpm run biome:check` | `data/categorygroups.json` を含む定義JSONの構文妥当性を検証する |
-| `npx ts-node scripts/reset-category-cache.ts "<ワード>"` | 指定したカテゴリ名を含む商品のキャッシュタイムスタンプをリセットする |
+| `pnpm run reset:category-cache -- "<ワード>"` | 指定したカテゴリ名を含む商品のキャッシュタイムスタンプをリセットする |

@@ -1,6 +1,8 @@
 # スクリプト利用リファレンス
 
-`scripts/` ディレクトリには、Amazon Creators API との通信、調査結果（JSON）の品質検証、キャッシュ保守、デッド商品（取扱終了品）の棚卸しなどを行うための Python および TypeScript スクリプトが含まれている。
+本リポジトリでは、言語と実行環境の明確な責務分離を行っている：
+- `scripts/`: Amazon Creators API との直接通信、調査成果物（JSON）の品質検証を行う **Python スクリプト（uv 管理）**
+- `src/scripts/maintenance/`: キャッシュ保守、取扱終了品（デッド商品）の棚卸し、スコア監査などを行う **TypeScript スクリプト（pnpm / tsx 管理）**
 
 ---
 
@@ -29,7 +31,7 @@ AMAZON_PARTNER_TAG=your_partner_tag
 
 ---
 
-## 2. Python スクリプト（uv 実行）
+## 2. Python スクリプト（scripts/ 配下、uv 実行）
 
 ### 2.1 `validate_artifact.py`（成果物・リンク自動検証）
 
@@ -82,7 +84,7 @@ uv run python scripts/debug_dump.py <ASIN>
 
 ---
 
-## 3. TypeScript スクリプト（pnpm / ts-node 実行）
+## 3. TypeScript 保守スクリプト（src/scripts/maintenance/ 配下、pnpm 実行）
 
 ### 3.1 `prune-dead-products.ts`（デッド商品の監査・削除）
 
@@ -91,11 +93,11 @@ Amazon上で販売終了となった商品、またはCreators APIで取得不�
 ```bash
 # 取扱終了商品の監査（一覧表示のみ）
 pnpm run audit:dead
-# または: npx ts-node scripts/prune-dead-products.ts --audit
+# または: npx tsx src/scripts/maintenance/prune-dead-products.ts --audit
 
 # 取扱終了商品の削除（記事・調査JSON・キャッシュの棚卸し）
 pnpm run prune:dead
-# または: npx ts-node scripts/prune-dead-products.ts --prune
+# または: npx tsx src/scripts/maintenance/prune-dead-products.ts --prune
 ```
 
 ### 3.2 `find-score-discrepancy.ts`（スコア乖離の検出）
@@ -104,7 +106,7 @@ pnpm run prune:dead
 
 ```bash
 pnpm run audit:score-discrepancy
-# または: npx ts-node scripts/find-score-discrepancy.ts
+# または: npx tsx src/scripts/maintenance/find-score-discrepancy.ts
 ```
 
 ### 3.3 `reset-category-cache.ts`（カテゴリキャッシュリセット）
@@ -112,8 +114,8 @@ pnpm run audit:score-discrepancy
 カテゴリ正規化ルールの修正後などに、指定キーワードを含むカテゴリに属する全商品のキャッシュタイムスタンプをリセットする。
 
 ```bash
-npx ts-node scripts/reset-category-cache.ts "リセット対象のカテゴリ名"
-# 例: npx ts-node scripts/reset-category-cache.ts "イヤホン"
+pnpm run reset:category-cache -- "リセット対象のカテゴリ名"
+# または: npx tsx src/scripts/maintenance/reset-category-cache.ts "イヤホン"
 ```
 
 ### 3.4 `reset-cache-timestamp.ts`（ASIN個別キャッシュリセット）
@@ -121,7 +123,8 @@ npx ts-node scripts/reset-category-cache.ts "リセット対象のカテゴリ�
 特定商品のみキャッシュの有効期限を強制的に切らし、次回記事生成時に再取得させる。
 
 ```bash
-npx ts-node scripts/reset-cache-timestamp.ts <ASIN>
+pnpm run reset:cache-timestamp -- <ASIN>
+# または: npx tsx src/scripts/maintenance/reset-cache-timestamp.ts <ASIN>
 ```
 
 ### 3.5 `sort-cache-by-status.ts`（キャッシュソート）
@@ -129,5 +132,5 @@ npx ts-node scripts/reset-cache-timestamp.ts <ASIN>
 キャッシュファイル `data/cache/paapi-product-cache.json` のキーを、ステータス順（`valid` > `invalid` > `permanent_invalid`）に並べ替えて保存する。
 
 ```bash
-npx ts-node scripts/sort-cache-by-status.ts
+npx tsx src/scripts/maintenance/sort-cache-by-status.ts
 ```
