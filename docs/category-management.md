@@ -131,16 +131,29 @@ Amazon Creators API は、商品に対して複数のカテゴリ階層（Browse
    └ 深さもスコアも同等の場合、Amazon上での売上順位が高いノードを優先。
 ```
 
-### 4.2 ジャンクカテゴリの除外フィルタ設計
+### 4.2 モジュール構成と責務
 
-Creators API のレスポンスには、キャンペーン用や社内管理用の不要なノードが混入することがある。これらは正規化エンジンで除外される。
+カテゴリ正規化エンジンは、保守性と拡張性を高めるため以下の責務別モジュールに分離されている：
 
-- **`blacklist`（完全一致除外）**:
+| モジュール | ファイル | 役割 |
+|---|---|---|
+| **統括ファサード** | `src/utils/CategoryNormalizer.ts` | 階層ツリー探索、ノード比較、スコア算出、最適カテゴリ選定の統括 |
+| **定数・パターン定義** | `src/utils/category/CategoryConstants.ts` | 優先キーワード、除外正規表現、ブラックリスト（Set）、ホワイトリスト |
+| **妥当性検証・ガード** | `src/utils/category/CategoryValidator.ts` | カテゴリ名検証、タイトル整合性ガード（スマホ、靴、猫トイレ等） |
+| **サニタイズ・詳細化** | `src/utils/category/CategorySanitizer.ts` | 特殊記号除去、テレビ・コントローラー・バイク等の詳細化ルール |
+
+### 4.3 ジャンクカテゴリの除外フィルタ設計
+
+Creators API のレスポンスには、キャンペーン用や社内管理用の不要なノードが混入することがある。これらは `CategoryConstants.ts` および `CategoryValidator.ts` で除外される。
+
+- **`BLACKLIST_CATEGORIES_SET`（完全一致除外・O(1)照合）**:
   - `パントリー`, `定期おトク便`, `タイムセール` 等のサービス名・企画名。
-- **`invalidPatterns`（正規表現による除外）**:
+- **`INVALID_PATTERNS`（正規表現による除外）**:
   - キャンペーン・動的文字列: `/hpcafc\d*under/i`, `/^hpc/i`
   - ブランド名混入ノード: 特定ブランドの特設ストア用ノード
   - 記号・無効文字: スラッシュ連続や記号混入
+- **タイトル整合性ガード（`CategoryValidator.ts`）**:
+  - タイトル内に該当商品ジャンル（スマホ、シューズ、ペット用品など）のキーワードが存在しない場合の誤爆防止フィルタ。
 
 ---
 
@@ -182,7 +195,12 @@ Creators API のレスポンスには、キャンペーン用や社内管理用�
    ```
 
 2. **ロジックの修正**:
-   `src/utils/CategoryNormalizer.ts` の `blacklist` または `invalidPatterns` を更新する。
+   目的に応じて以下のファイルを更新する：
+   - **完全一致での除外**: `src/utils/category/CategoryConstants.ts` の `BLACKLIST_CATEGORIES_SET` に追加。
+   - **正規表現・パターンでの除外**: `src/utils/category/CategoryConstants.ts` の `INVALID_PATTERNS` に追加。
+   - **特定ドメインの優先**: `src/utils/category/CategoryConstants.ts` の `PREFERRED_KEYWORDS` または `HIGH_PRIORITY_KEYWORDS` に追加。
+   - **タイトル連動の誤爆防止ガード**: `src/utils/category/CategoryValidator.ts` のガード条件を更新。
+   - **カテゴリ名の詳細化・置換**: `src/utils/category/CategorySanitizer.ts` の解決ルールを更新。
 
 3. **テスト実行**:
    ```bash
