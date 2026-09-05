@@ -72,6 +72,21 @@ Amazon Creators API と Google Jules を活用した商品調査・レビュー�
 └── jest.config.js                # Jestテスト設定
 ```
 
+## 詳細ドキュメント
+
+システムの詳細な仕様・規約については、[docs/README.md](docs/README.md) および以下の個別仕様書を参照のこと。
+
+| ドキュメント | 内容 |
+|---|---|
+| **[自動記事更新・生成システム](docs/article-automation-system.md)** | 調査からAIレビュー、PR自動マージ、記事生成、Pagesデプロイまでのパイプライン解説 |
+| **[カテゴリ管理・整理システム](docs/category-management.md)** | 親カテゴリ命名規約（14文字以内）、Jules自動分類、正規化エンジン（CategoryNormalizer）仕様 |
+| **[ブランド管理システム](docs/brand-management.md)** | ブランド定義マッチャー、単語境界（`\b`）誤判定防止規約、自動抽出とページ生成仕様 |
+| **[キャッシュ & データアーキテクチャ](docs/cache-and-data-architecture.md)** | 本番（56MB）と開発用ダミーキャッシュの2層設計、TTL、ステータス遷移、リセット運用 |
+| **[フロントエンド & UIアーキテクチャ](docs/frontend-architecture.md)** | HugoテンプレートとVanilla JSカード描画の同期規約、M3バッジ、検索・比較機能の仕様 |
+| **[読者リクエスト処理システム](docs/user-requests-system.md)** | Google Forms / GAS / Issue連携による読者調査リクエストの受付と自動投入フロー |
+| **[サイトデザイン設計ガイドライン](DESIGN.md)** | Material Design 3 (M3) トークン、タイポグラフィ、サーフェス階層、コントラスト規定 |
+| **[スクリプト利用リファレンス](scripts/README.md)** | 調査・保守・バリデーション用 Python / TypeScript スクリプトのコマンド仕様 |
+
 ## 主要ファイルと責務
 
 | ファイル / ディレクトリ | 説明 |
