@@ -220,6 +220,9 @@ pnpm run prune:dead
 pnpm run audit:score-discrepancy
 ```
 
+> [!TIP]
+> カテゴリの階層構造、親カテゴリ命名規約（14文字以内）、Julesによる自動整理、正規化ロジックの修正手順については、[docs/category-management.md](docs/category-management.md) を参照のこと。
+
 ### Python 調査スクリプト（uv実行）
 
 ```bash
