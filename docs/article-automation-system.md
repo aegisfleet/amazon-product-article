@@ -141,6 +141,11 @@ PRが `main` ブランチにマージされると、公開用パイプライン�
 - Creators API の秘密鍵（`AMAZON_CREATORS_CREDENTIAL_SECRET`）や Jules APIキーは、GitHub Secrets および環境変数でのみ管理される。
 - コンソールログやコミットメッセージ、生成記事本文への秘密情報の露出は徹底して排除されている。
 
+### 4.5 複数PR同時マージ時のキャッシュ競合自動解決
+- Julesなどから短時間で複数のPRが連続マージされた場合、並行・後続するデプロイワークフローにおいて `data/cache/paapi-product-cache.json` のGit競合が発生する可能性がある。
+- システムは `.github/workflows/scripts/git-commit-push.sh` のリトライループ内で競合を検知し、`src/scripts/maintenance/merge-product-cache.ts` を用いてASIN単位でタイムスタンプを比較・最新エントリをマージする。
+- これにより、人の介入なしにコンフリクトを完全自動解消し、キャッシュデータの消失やビルド失敗を防止する。
+
 ---
 
 ## 5. 関連ファイル一覧
@@ -151,6 +156,8 @@ PRが `main` ブランチにマージされると、公開用パイプライン�
 | `.github/workflows/pr-auto-merge.yml` | Jules PRの自動検証・シミュレーション・自動マージ |
 | `.github/workflows/product-research.yml` | 定期的な商品探索とJules調査依頼 |
 | `.github/workflows/maintenance.yml` | 最古記事の定期リフレッシュワークフロー |
+| `.github/workflows/scripts/git-commit-push.sh` | ビルド成果物・キャッシュの安全なプッシュ・リトライ・競合解消シェル |
+| `src/scripts/maintenance/merge-product-cache.ts` | Git競合時にキャッシュJSONをタイムスタンプベースで自動統合するマージスクリプト |
 | `src/scripts/article-generation-cli.ts` | 調査JSONからMarkdown記事を生成するCLI本体 |
 | `src/article/ArticleGenerator.ts` | 記事のマークダウン構造・Front matterを組み立てるロジック |
 | `src/api/CreatorsAPIClient.ts` | Creators API v1 とのセキュアな通信クライアント |
