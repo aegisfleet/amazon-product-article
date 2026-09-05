@@ -106,7 +106,7 @@ for i in 1 2 3; do
         git show :3:data/cache/paapi-product-cache.json > data/cache/paapi-product-cache.theirs.json 2>/dev/null || true
         
         echo "Running merge script..."
-        if pnpm exec ts-node scripts/merge-product-cache.ts data/cache/paapi-product-cache.ours.json data/cache/paapi-product-cache.theirs.json data/cache/paapi-product-cache.json; then
+        if pnpm exec ts-node src/scripts/maintenance/merge-product-cache.ts data/cache/paapi-product-cache.ours.json data/cache/paapi-product-cache.theirs.json data/cache/paapi-product-cache.json; then
           echo "Auto-merge succeeded. Staging resolved file..."
           rm -f data/cache/paapi-product-cache.ours.json data/cache/paapi-product-cache.theirs.json
           git add data/cache/paapi-product-cache.json

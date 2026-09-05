@@ -221,4 +221,105 @@ describe('findPriceDiscrepancy', () => {
     // 3番目は同じ40日前の中でセールバッジなし・割引率高の B000000003
     expect(result.candidates[2]?.asin).toBe('B000000003');
   });
+
+  it('調査時価格（investigatedPrice）と現在価格に大幅な乖離がある場合は、Amazon割引率が低くても抽出される', async () => {
+    const now = Date.now();
+    const fortyDaysAgo = new Date(now - 40 * 24 * 60 * 60 * 1000).toISOString().split('T')[0];
+
+    // B06WRS9737 パターン: 調査時は ￥11,500、現在は ￥3,593 (約69%の乖離)
+    await fs.promises.writeFile(
+      path.join(investigationsDir, 'B06WRS9737.json'),
+      JSON.stringify({
+        analysis: {
+          lastInvestigated: fortyDaysAgo,
+          investigatedPrice: '￥11,500',
+          recommendation: { score: 78 },
+        },
+      }),
+    );
+
+    const cacheData = {
+      B06WRS9737: {
+        status: 'valid',
+        timestamp: now,
+        data: {
+          asin: 'B06WRS9737',
+          title: 'ドトールコーヒー アロマブレンド 100杯分',
+          price: { amount: 3593, currency: 'JPY', formatted: '￥3,593' },
+          savingsPercentage: 10, // Amazon上の割引率は10%（閾値15%未満）
+          category: 'ドリップバッグ',
+        },
+      },
+    };
+
+    await fs.promises.writeFile(cacheFile, JSON.stringify(cacheData));
+
+    // threshold=15, investigatedPriceThreshold=30
+    const result = await findPriceDiscrepancy(cacheFile, investigationsDir, outputFile, 15, 10, 30, 30);
+
+    expect(result.totalCandidates).toBe(1);
+    expect(result.candidates[0]?.asin).toBe('B06WRS9737');
+    expect(result.candidates[0]?.investigatedPrice).toBe(11500);
+    expect(result.candidates[0]?.investigatedPriceDiffRate).toBe(69);
+  });
+
+  it('調査時価格からの極端な乖離がある商品は最優先でソートされる', async () => {
+    const now = Date.now();
+    const fortyDaysAgo = new Date(now - 40 * 24 * 60 * 60 * 1000).toISOString().split('T')[0];
+    const sixtyDaysAgo = new Date(now - 60 * 24 * 60 * 60 * 1000).toISOString().split('T')[0];
+
+    // ASIN_NORMAL: 60日前の古い調査、通常のセール（20% OFF）
+    await fs.promises.writeFile(
+      path.join(investigationsDir, 'B000NORMAL.json'),
+      JSON.stringify({
+        analysis: {
+          lastInvestigated: sixtyDaysAgo,
+          investigatedPrice: '￥10,000',
+        },
+      }),
+    );
+
+    // ASIN_EXTREME: 40日前の調査だが、調査時 ￥10,000 -> 現在 ￥3,000 (70%乖離)
+    await fs.promises.writeFile(
+      path.join(investigationsDir, 'B000EXTREM.json'),
+      JSON.stringify({
+        analysis: {
+          lastInvestigated: fortyDaysAgo,
+          investigatedPrice: '￥10,000',
+        },
+      }),
+    );
+
+    const cacheData = {
+      B000NORMAL: {
+        status: 'valid',
+        timestamp: now,
+        data: {
+          asin: 'B000NORMAL',
+          title: 'Normal Sale Item',
+          price: { amount: 8000, currency: 'JPY', formatted: '￥8,000' },
+          savingsPercentage: 20,
+        },
+      },
+      B000EXTREM: {
+        status: 'valid',
+        timestamp: now,
+        data: {
+          asin: 'B000EXTREM',
+          title: 'Extreme Discrepancy Item',
+          price: { amount: 3000, currency: 'JPY', formatted: '￥3,000' },
+          savingsPercentage: 10,
+        },
+      },
+    };
+
+    await fs.promises.writeFile(cacheFile, JSON.stringify(cacheData));
+
+    const result = await findPriceDiscrepancy(cacheFile, investigationsDir, outputFile, 15, 10, 30, 30);
+
+    expect(result.totalCandidates).toBe(2);
+    // 乖離率70%の ASIN_EXTREM が、より調査日が古い ASIN_NORMAL よりも優先される
+    expect(result.candidates[0]?.asin).toBe('B000EXTREM');
+    expect(result.candidates[1]?.asin).toBe('B000NORMAL');
+  });
 });

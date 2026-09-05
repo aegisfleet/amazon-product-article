@@ -81,7 +81,9 @@ function mergeCaches() {
   const outputPath = process.argv[4];
 
   if (!oursPath || !theirsPath || !outputPath) {
-    console.error('❌ Usage: pnpm exec ts-node scripts/merge-product-cache.ts <ours.json> <theirs.json> <output.json>');
+    console.error(
+      '❌ Usage: pnpm exec ts-node src/scripts/maintenance/merge-product-cache.ts <ours.json> <theirs.json> <output.json>',
+    );
     process.exit(1);
   }
 
