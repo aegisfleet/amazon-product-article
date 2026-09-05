@@ -137,6 +137,12 @@ def _validate_recommendations_list(data: Any, errors: List[str]):
         if cat:
             categories[cat] = categories.get(cat, 0) + 1
 
+        # クーポン表記の禁止チェック（API・データから検証不能なハルシネーションの防止）
+        source_name = str(rec.get("source", {}).get("name", "") if isinstance(rec.get("source"), dict) else "")
+        for field_name, field_val in [("rankReason", rank_reason), ("whyBuyNow", why_buy_now), ("source.name", source_name)]:
+            if "クーポン" in field_val:
+                errors.append(f"recommendations[{i}] (ASIN: {asin}) の '{field_name}' に禁止ワード 'クーポン' が含まれています。APIやデータからクーポンの有無は検証不能なため、「◯%OFF」「割引対象」「プライム会員限定セール」等の価格割引表記に修正してください。")
+
     # コピペ・重複の検証 (同じ文言が3件以上重複している場合はエラー)
     for reason, count in collections.Counter(rank_reasons).items():
         if count >= 3:
