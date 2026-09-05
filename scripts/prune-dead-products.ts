@@ -28,7 +28,7 @@ import https from 'node:https';
 import path from 'node:path';
 import { enhanceCategories } from '../src/scripts/enhance-categories';
 
-interface CheckResult {
+export interface CheckResult {
   asin: string;
   isDead: boolean;
   statusCode: number;
@@ -40,7 +40,18 @@ interface CheckResult {
   error: string | undefined;
 }
 
-interface CliOptions {
+export interface CompetitorReference {
+  investigationPath: string;
+  sourceAsin: string;
+  referencedDeadAsins: { asin: string; name: string }[];
+}
+
+export interface OrphanFilesResult {
+  articlesWithoutInvest: string[];
+  investsWithoutArticle: string[];
+}
+
+export interface CliOptions {
   mode: 'audit' | 'prune';
   scope: 'perm-invalid' | 'all' | 'single';
   singleAsin: string | undefined;
@@ -48,17 +59,20 @@ interface CliOptions {
   concurrency: number;
   delayMs: number;
   skipPrebuild: boolean;
+  checkReferences: boolean;
+  cleanReferences: boolean;
+  checkOrphans: boolean;
 }
 
-const ROOT_DIR = path.resolve(__dirname, '..');
-const ARTICLES_DIR = path.join(ROOT_DIR, 'content/articles');
-const INVESTIGATIONS_DIR = path.join(ROOT_DIR, 'data/investigations');
-const CACHE_PATH = path.join(ROOT_DIR, 'data/cache/paapi-product-cache.json');
+export const ROOT_DIR = path.resolve(__dirname, '..');
+export const ARTICLES_DIR = path.join(ROOT_DIR, 'content/articles');
+export const INVESTIGATIONS_DIR = path.join(ROOT_DIR, 'data/investigations');
+export const CACHE_PATH = path.join(ROOT_DIR, 'data/cache/paapi-product-cache.json');
 const TITLE_REGEX = /<title>([^<]*)<\/title>/i;
 
 // コマンドライン引数のパース
-function parseArgs(): CliOptions {
-  const args = process.argv.slice(2);
+export function parseArgs(customArgs?: string[]): CliOptions {
+  const args = customArgs || process.argv.slice(2);
   const options: CliOptions = {
     mode: 'audit',
     scope: 'perm-invalid',
@@ -67,6 +81,9 @@ function parseArgs(): CliOptions {
     concurrency: 3,
     delayMs: 300,
     skipPrebuild: false,
+    checkReferences: true,
+    cleanReferences: true,
+    checkOrphans: true,
   };
 
   let i = 0;
@@ -102,6 +119,16 @@ function parseArgs(): CliOptions {
         break;
       case '--skip-prebuild':
         options.skipPrebuild = true;
+        break;
+      case '--skip-references':
+        options.checkReferences = false;
+        options.cleanReferences = false;
+        break;
+      case '--no-clean-references':
+        options.cleanReferences = false;
+        break;
+      case '--skip-orphans':
+        options.checkOrphans = false;
         break;
     }
   }
@@ -314,8 +341,160 @@ function pruneSingleItem(
   return { articleDeleted, investDeleted, cacheDeleted };
 }
 
+// 単一調査ファイルからの競合参照抽出ヘルパー
+function extractFileReferences(
+  filePath: string,
+  file: string,
+  deadAsinSet: Set<string>,
+): CompetitorReference | null {
+  try {
+    const content = fs.readFileSync(filePath, 'utf8');
+    const hasTarget = Array.from(deadAsinSet).some((asin) => content.includes(asin));
+    if (!hasTarget) return null;
+
+    const data = JSON.parse(content);
+    const competitors = data.analysis?.competitiveAnalysis;
+    if (!Array.isArray(competitors)) return null;
+
+    const matched = competitors
+      .filter((comp: any) => comp?.asin && deadAsinSet.has(comp.asin))
+      .map((comp: any) => ({ asin: comp.asin, name: comp.name || '名称不明' }));
+
+    if (matched.length === 0) return null;
+
+    return {
+      investigationPath: filePath,
+      sourceAsin: file.replace('.json', ''),
+      referencedDeadAsins: matched,
+    };
+  } catch {
+    return null;
+  }
+}
+
+// 競合データ内の参照検出
+export function findCompetitorReferences(
+  deadAsins: string[],
+  investigationsDir: string = INVESTIGATIONS_DIR,
+): CompetitorReference[] {
+  if (deadAsins.length === 0 || !fs.existsSync(investigationsDir)) return [];
+
+  const deadAsinSet = new Set(deadAsins);
+  const files = fs.readdirSync(investigationsDir).filter((f) => f.endsWith('.json'));
+  const references: CompetitorReference[] = [];
+
+  for (const file of files) {
+    const filePath = path.join(investigationsDir, file);
+    const ref = extractFileReferences(filePath, file, deadAsinSet);
+    if (ref) {
+      references.push(ref);
+    }
+  }
+
+  return references;
+}
+
+// 競合データ内の参照クリーンアップ
+export function cleanCompetitorReferences(
+  references: CompetitorReference[],
+  dryRun: boolean,
+): { modifiedFilesCount: number; removedEntriesCount: number } {
+  let modifiedFilesCount = 0;
+  let removedEntriesCount = 0;
+
+  for (const ref of references) {
+    try {
+      const content = fs.readFileSync(ref.investigationPath, 'utf8');
+      const data = JSON.parse(content);
+      const competitors = data.analysis?.competitiveAnalysis;
+      if (!Array.isArray(competitors)) continue;
+
+      const deadAsinSet = new Set(ref.referencedDeadAsins.map((r) => r.asin));
+      const beforeCount = competitors.length;
+      data.analysis.competitiveAnalysis = competitors.filter(
+        (comp: any) => !comp?.asin || !deadAsinSet.has(comp.asin),
+      );
+      const removed = beforeCount - data.analysis.competitiveAnalysis.length;
+
+      if (removed > 0) {
+        if (!dryRun) {
+          fs.writeFileSync(ref.investigationPath, `${JSON.stringify(data, null, 2)}\n`, 'utf8');
+        }
+        modifiedFilesCount++;
+        removedEntriesCount += removed;
+        const details = ref.referencedDeadAsins.map((r) => `${r.asin}(${r.name})`).join(', ');
+        console.log(
+          `  ${dryRun ? '[DRY RUN] ' : ''}[Cleaned Competitor Ref] ${ref.sourceAsin}.json から競合参照を削除: ${details}`,
+        );
+      }
+    } catch (err) {
+      console.error(`  [Error] 競合参照の更新に失敗しました: ${ref.investigationPath}`, err);
+    }
+  }
+
+  return { modifiedFilesCount, removedEntriesCount };
+}
+
+// 孤立ファイル（記事のみ／調査データのみ）の検出
+export function findOrphanedFiles(
+  articlesDir: string = ARTICLES_DIR,
+  investigationsDir: string = INVESTIGATIONS_DIR,
+): OrphanFilesResult {
+  const articles = fs.existsSync(articlesDir)
+    ? new Set(fs.readdirSync(articlesDir).filter((f) => f.endsWith('.md')).map((f) => f.replace('.md', '')))
+    : new Set<string>();
+
+  const investigations = fs.existsSync(investigationsDir)
+    ? new Set(fs.readdirSync(investigationsDir).filter((f) => f.endsWith('.json')).map((f) => f.replace('.json', '')))
+    : new Set<string>();
+
+  const articlesWithoutInvest: string[] = [];
+  for (const asin of articles) {
+    if (!investigations.has(asin)) {
+      articlesWithoutInvest.push(asin);
+    }
+  }
+
+  const investsWithoutArticle: string[] = [];
+  for (const asin of investigations) {
+    if (!articles.has(asin)) {
+      investsWithoutArticle.push(asin);
+    }
+  }
+
+  return { articlesWithoutInvest, investsWithoutArticle };
+}
+
+// 参照整合性クリーンアップの実行ヘルパー
+function performCompetitorCleanup(
+  deadItems: CheckResult[],
+  dryRun: boolean,
+): { cleanedFiles: number; cleanedEntries: number } {
+  if (deadItems.length === 0) {
+    return { cleanedFiles: 0, cleanedEntries: 0 };
+  }
+  console.log('\n--- 参照整合性のクリーンアップ ---');
+  const deadAsins = deadItems.map((d) => d.asin);
+  const references = findCompetitorReferences(deadAsins);
+  if (references.length === 0) {
+    console.log('他商品の競合データ内への参照は見つかりませんでした。');
+    return { cleanedFiles: 0, cleanedEntries: 0 };
+  }
+  console.log(`他商品の競合データ内で検出された参照: ${references.length} 件`);
+  const cleanResult = cleanCompetitorReferences(references, dryRun);
+  return {
+    cleanedFiles: cleanResult.modifiedFilesCount,
+    cleanedEntries: cleanResult.removedEntriesCount,
+  };
+}
+
 // 削除実行
-function executePruning(deadItems: CheckResult[], dryRun: boolean, cache: Record<string, any>): void {
+export function executePruning(
+  deadItems: CheckResult[],
+  dryRun: boolean,
+  cache: Record<string, any>,
+  cleanReferences: boolean = true,
+): void {
   console.log(`\n=== ${dryRun ? '[DRY RUN] ' : ''}棚卸し（削除）実行 ===`);
 
   let deletedArticles = 0;
@@ -329,16 +508,22 @@ function executePruning(deadItems: CheckResult[], dryRun: boolean, cache: Record
     if (result.cacheDeleted) deletedCacheEntries++;
   }
 
-  // キャッシュファイルの保存
   if (!dryRun && deletedCacheEntries > 0) {
     saveCache(cache);
     console.log(`[Updated Cache] Removed ${deletedCacheEntries} dead entries from paapi-product-cache.json`);
   }
 
+  const { cleanedFiles, cleanedEntries } = cleanReferences
+    ? performCompetitorCleanup(deadItems, dryRun)
+    : { cleanedFiles: 0, cleanedEntries: 0 };
+
   console.log('\n--- 削除サマリー ---');
   console.log(`記事ファイル (.md): ${deletedArticles} 件`);
   console.log(`調査データ (.json): ${deletedInvestigations} 件`);
   console.log(`キャッシュエントリ: ${deletedCacheEntries} 件`);
+  if (cleanReferences) {
+    console.log(`競合参照をクリーンアップした調査データ: ${cleanedFiles} 件 (${cleanedEntries} エントリ)`);
+  }
 }
 
 // サイトインデックス再構築
@@ -352,8 +537,52 @@ function rebuildSiteIndex(): void {
   }
 }
 
+// 孤立ファイル一覧の表示ヘルパー
+function printOrphanFileList(title: string, list: string[], ext: string): void {
+  if (list.length === 0) return;
+  console.log(`${title}: ${list.length} 件`);
+  for (const asin of list.slice(0, 5)) {
+    console.log(`  - ${asin}${ext}`);
+  }
+  if (list.length > 5) {
+    console.log(`    ... 他 ${list.length - 5} 件`);
+  }
+}
+
+// 参照整合性レポート表示ヘルパー
+function printReferencesAudit(deadItems: CheckResult[]): CompetitorReference[] {
+  if (deadItems.length === 0) return [];
+  console.log('\n--- 参照整合性チェック（他商品の競合リスト） ---');
+  const references = findCompetitorReferences(deadItems.map((d) => d.asin));
+  if (references.length === 0) {
+    console.log('✅ 他商品の競合データからの参照はありません');
+    return [];
+  }
+  console.log(`⚠️ デッド商品を参照している他商品の調査データ: ${references.length} 件`);
+  for (const ref of references) {
+    const details = ref.referencedDeadAsins.map((r) => `${r.asin}(${r.name})`).join(', ');
+    console.log(`  - [${ref.sourceAsin}.json] が参照中: ${details}`);
+  }
+  return references;
+}
+
+// 孤立ファイルレポート表示ヘルパー
+function printOrphansAudit(): OrphanFilesResult {
+  const orphans = findOrphanedFiles();
+  const hasOrphans = orphans.articlesWithoutInvest.length > 0 || orphans.investsWithoutArticle.length > 0;
+  if (!hasOrphans) return orphans;
+
+  console.log('\n--- 孤立ファイルチェック ---');
+  printOrphanFileList('⚠️ 調査データのない記事 (.mdのみ)', orphans.articlesWithoutInvest, '.md');
+  printOrphanFileList('⚠️ 記事のない調査データ (.jsonのみ)', orphans.investsWithoutArticle, '.json');
+  return orphans;
+}
+
 // 調査結果レポート表示
-function printAuditResults(results: CheckResult[]): { deadItems: CheckResult[] } {
+export function printAuditResults(
+  results: CheckResult[],
+  options: CliOptions,
+): { deadItems: CheckResult[]; references: CompetitorReference[]; orphans: OrphanFilesResult } {
   const deadItems = results.filter((r) => r.isDead);
   const aliveItems = results.filter((r) => !r.isDead && r.statusCode === 200);
   const errorItems = results.filter((r) => !r.isDead && r.statusCode !== 200);
@@ -373,7 +602,12 @@ function printAuditResults(results: CheckResult[]): { deadItems: CheckResult[] }
     }
   }
 
-  return { deadItems };
+  const references = options.checkReferences ? printReferencesAudit(deadItems) : [];
+  const orphans = options.checkOrphans
+    ? printOrphansAudit()
+    : { articlesWithoutInvest: [], investsWithoutArticle: [] };
+
+  return { deadItems, references, orphans };
 }
 
 // Pruneモードの処理
@@ -383,7 +617,7 @@ function handlePruning(deadItems: CheckResult[], options: CliOptions, cache: Rec
     return;
   }
 
-  executePruning(deadItems, options.dryRun, cache);
+  executePruning(deadItems, options.dryRun, cache, options.cleanReferences);
 
   if (!options.dryRun && !options.skipPrebuild) {
     rebuildSiteIndex();
@@ -407,7 +641,7 @@ async function main() {
 
   console.log('\nAmazon ページ疎通確認中...');
   const results = await checkAsinsInBatches(targetAsins, options.concurrency, options.delayMs, cache);
-  const { deadItems } = printAuditResults(results);
+  const { deadItems } = printAuditResults(results, options);
 
   if (options.mode === 'prune') {
     handlePruning(deadItems, options, cache);
@@ -417,7 +651,9 @@ async function main() {
   }
 }
 
-main().catch((err) => {
-  console.error('Fatal error:', err);
-  process.exit(1);
-});
+if (require.main === module) {
+  main().catch((err) => {
+    console.error('Fatal error:', err);
+    process.exit(1);
+  });
+}
