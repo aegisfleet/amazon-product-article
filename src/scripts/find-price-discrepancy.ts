@@ -31,11 +31,14 @@ export interface PriceDiscrepancyCandidate {
   lastInvestigatedTime: number;
   cacheTimestamp: number;
   detailPageUrl: string;
+  investigatedPrice?: number;
+  investigatedPriceDiffRate?: number;
 }
 
 export interface PriceDiscrepancyCandidatesFile {
   extractedAt: string;
   threshold: number;
+  investigatedPriceThreshold?: number;
   totalCandidates: number;
   candidates: PriceDiscrepancyCandidate[];
 }
@@ -50,12 +53,51 @@ interface CacheStore {
   [asin: string]: CacheEntry;
 }
 
+interface InvestigatedMeta {
+  lastInvestigatedTime: number;
+  investigatedPriceRaw?: number;
+}
+
 /**
- * data/investigations/ 配下に存在する調査済み ASIN とその最終調査タイムスタンプのマップを取得する
- * JSONファイル内の analysis.lastInvestigated を優先し、存在しない場合は mtime を使用する
+ * 調査結果ファイルの内容から最終調査日時と調査時価格を抽出する
  */
-async function getInvestigatedAsinMap(investigationsDir: string): Promise<Map<string, number>> {
-  const result = new Map<string, number>();
+function parseInvestigationMeta(content: string, statMtimeMs: number): InvestigatedMeta {
+  let lastInvestigatedTime = 0;
+  const matchDate = /"lastInvestigated"\s*:\s*"([^"]+)"/.exec(content);
+  if (matchDate?.[1]) {
+    const parsedTime = new Date(matchDate[1]).getTime();
+    if (!Number.isNaN(parsedTime)) {
+      lastInvestigatedTime = parsedTime;
+    }
+  }
+  if (!lastInvestigatedTime) {
+    lastInvestigatedTime = statMtimeMs;
+  }
+
+  let investigatedPriceRaw: number | undefined;
+  const matchPrice = /"investigatedPrice"\s*:\s*"([^"]+)"/.exec(content);
+  if (matchPrice?.[1]) {
+    const digits = matchPrice[1].replace(/,/g, '').match(/\d+/);
+    if (digits?.[0]) {
+      const parsed = Number.parseInt(digits[0], 10);
+      if (parsed > 0) {
+        investigatedPriceRaw = parsed;
+      }
+    }
+  }
+
+  const meta: InvestigatedMeta = { lastInvestigatedTime };
+  if (investigatedPriceRaw !== undefined) {
+    meta.investigatedPriceRaw = investigatedPriceRaw;
+  }
+  return meta;
+}
+
+/**
+ * data/investigations/ 配下に存在する調査済み ASIN とそのメタデータマップを取得する
+ */
+async function getInvestigatedAsinMap(investigationsDir: string): Promise<Map<string, InvestigatedMeta>> {
+  const result = new Map<string, InvestigatedMeta>();
 
   if (!fs.existsSync(investigationsDir)) {
     logger.warn(`Investigations directory not found: ${investigationsDir}`);
@@ -76,25 +118,42 @@ async function getInvestigatedAsinMap(investigationsDir: string): Promise<Map<st
         const filePath = path.join(investigationsDir, file);
         try {
           const content = await fs.promises.readFile(filePath, 'utf-8');
-          // 高速化のため正規表現で lastInvestigated を抽出
-          const match = /"lastInvestigated"\s*:\s*"([^"]+)"/.exec(content);
-          if (match?.[1]) {
-            const parsedTime = new Date(match[1]).getTime();
-            if (!Number.isNaN(parsedTime)) {
-              result.set(asin, parsedTime);
-              return;
-            }
-          }
           const stat = await fs.promises.stat(filePath);
-          result.set(asin, stat.mtimeMs);
+          result.set(asin, parseInvestigationMeta(content, stat.mtimeMs));
         } catch {
-          result.set(asin, 0);
+          result.set(asin, { lastInvestigatedTime: 0 });
         }
       }),
     );
   }
 
   return result;
+}
+
+/**
+ * 候補商品の優先順位を決定する比較関数
+ */
+function compareCandidates(a: PriceDiscrepancyCandidate, b: PriceDiscrepancyCandidate): number {
+  const aDiff = a.investigatedPriceDiffRate || 0;
+  const bDiff = b.investigatedPriceDiffRate || 0;
+
+  // 1. 調査時価格との大幅乖離があるものは最優先（乖離率が高い順）
+  if (aDiff !== bDiff) {
+    return bDiff - aDiff;
+  }
+
+  // 2. 最終調査日時が古い順（過去に調査されてから時間が経過しているセール品を優先）
+  if (a.lastInvestigatedTime !== b.lastInvestigatedTime) {
+    return a.lastInvestigatedTime - b.lastInvestigatedTime;
+  }
+
+  // 3. セールバッジあり優先
+  if (Boolean(a.dealBadge) !== Boolean(b.dealBadge)) {
+    return a.dealBadge ? -1 : 1;
+  }
+
+  // 4. 割引率が高い順
+  return b.savingsPercentage - a.savingsPercentage;
 }
 
 export async function findPriceDiscrepancy(
@@ -104,6 +163,7 @@ export async function findPriceDiscrepancy(
   threshold = 15,
   maxResults = 20,
   cooldownDays = 30,
+  investigatedPriceThreshold = 30,
 ): Promise<PriceDiscrepancyCandidatesFile> {
   const cachePath = cacheFilePath || path.join(process.cwd(), 'data/cache/paapi-product-cache.json');
   const investigations = investigationsDir || path.join(process.cwd(), 'data/investigations');
@@ -114,6 +174,7 @@ export async function findPriceDiscrepancy(
     const empty: PriceDiscrepancyCandidatesFile = {
       extractedAt: new Date().toISOString(),
       threshold,
+      investigatedPriceThreshold,
       totalCandidates: 0,
       candidates: [],
     };
@@ -141,9 +202,10 @@ export async function findPriceDiscrepancy(
     const asinUpper = asin.toUpperCase();
 
     // 調査済みの商品のみ対象
-    if (!investigatedAsinMap.has(asinUpper)) continue;
+    const meta = investigatedAsinMap.get(asinUpper);
+    if (!meta) continue;
 
-    const lastInvestigatedTime = investigatedAsinMap.get(asinUpper) || 0;
+    const lastInvestigatedTime = meta.lastInvestigatedTime || 0;
 
     // クールダウン期間判定: 直近（cooldownDays以内）に調査済みの商品は再調査対象から除外
     if (cooldownDays > 0 && lastInvestigatedTime > 0 && now - lastInvestigatedTime < cooldownMs) {
@@ -153,10 +215,20 @@ export async function findPriceDiscrepancy(
     const savingsPercentage = entry.data.savingsPercentage || 0;
     const dealBadge = entry.data.dealBadge?.trim() || '';
 
-    // 割引率が閾値以上、またはセールバッジが付与されている商品を「価格乖離（値下げ・セール）」とみなす
-    if (savingsPercentage < threshold && !dealBadge) continue;
+    // 調査時価格との乖離率を算出
+    let investigatedPriceDiffRate = 0;
+    if (meta.investigatedPriceRaw && meta.investigatedPriceRaw > 0) {
+      const diffAbs = Math.abs(entry.data.price.amount - meta.investigatedPriceRaw);
+      investigatedPriceDiffRate = Math.round((diffAbs / meta.investigatedPriceRaw) * 100);
+    }
 
-    candidates.push({
+    const isAmazonSale = savingsPercentage >= threshold || Boolean(dealBadge);
+    const isInvestigatedPriceDiscrepancy = investigatedPriceDiffRate >= investigatedPriceThreshold;
+
+    // Amazonセール、または調査時価格との大幅乖離がある場合に抽出
+    if (!isAmazonSale && !isInvestigatedPriceDiscrepancy) continue;
+
+    const candidate: PriceDiscrepancyCandidate = {
       asin,
       title: entry.data.title,
       category: entry.data.category || 'その他',
@@ -166,26 +238,24 @@ export async function findPriceDiscrepancy(
       lastInvestigatedTime,
       cacheTimestamp: entry.timestamp,
       detailPageUrl: entry.data.detailPageUrl || `https://www.amazon.co.jp/dp/${asin}`,
-    });
+    };
+
+    if (meta.investigatedPriceRaw) {
+      candidate.investigatedPrice = meta.investigatedPriceRaw;
+      candidate.investigatedPriceDiffRate = investigatedPriceDiffRate;
+    }
+
+    candidates.push(candidate);
   }
 
-  // ソート順:
-  // 1. 最終調査日時（lastInvestigatedTime）が古い順（過去に調査されてから時間が経過しているセール品を優先）
-  // 2. セールバッジあり優先
-  // 3. 割引率が高い順
-  candidates.sort((a, b) => {
-    if (a.lastInvestigatedTime !== b.lastInvestigatedTime) {
-      return a.lastInvestigatedTime - b.lastInvestigatedTime;
-    }
-    if (Boolean(a.dealBadge) !== Boolean(b.dealBadge)) return a.dealBadge ? -1 : 1;
-    return b.savingsPercentage - a.savingsPercentage;
-  });
+  candidates.sort(compareCandidates);
 
   const topCandidates = candidates.slice(0, maxResults);
 
   const result: PriceDiscrepancyCandidatesFile = {
     extractedAt: new Date().toISOString(),
     threshold,
+    investigatedPriceThreshold,
     totalCandidates: topCandidates.length,
     candidates: topCandidates,
   };
@@ -193,7 +263,7 @@ export async function findPriceDiscrepancy(
   await fs.promises.mkdir(path.dirname(outputPath), { recursive: true });
   await fs.promises.writeFile(outputPath, JSON.stringify(result, null, 2), 'utf-8');
   logger.info(
-    `Found ${candidates.length} total price discrepancy candidates, extracted top ${topCandidates.length} (threshold: ${threshold}%, cooldown: ${cooldownDays}d)`,
+    `Found ${candidates.length} total price discrepancy candidates, extracted top ${topCandidates.length} (threshold: ${threshold}%, investigatedThreshold: ${investigatedPriceThreshold}%, cooldown: ${cooldownDays}d)`,
   );
 
   return result;
@@ -204,11 +274,12 @@ if (require.main === module) {
   const threshold = Number.parseInt(process.env.PRICE_DISCREPANCY_THRESHOLD || '15', 10);
   const maxResults = Number.parseInt(process.env.PRICE_DISCREPANCY_MAX_RESULTS || '20', 10);
   const cooldownDays = Number.parseInt(process.env.PRICE_DISCREPANCY_COOLDOWN_DAYS || '30', 10);
+  const investigatedThreshold = Number.parseInt(process.env.INVESTIGATED_PRICE_DISCREPANCY_THRESHOLD || '30', 10);
 
-  findPriceDiscrepancy(undefined, undefined, undefined, threshold, maxResults, cooldownDays)
+  findPriceDiscrepancy(undefined, undefined, undefined, threshold, maxResults, cooldownDays, investigatedThreshold)
     .then((result) => {
       console.log(
-        `Successfully found ${result.totalCandidates} price discrepancy candidates (threshold: ${result.threshold}%, cooldown: ${cooldownDays}d)`,
+        `Successfully found ${result.totalCandidates} price discrepancy candidates (threshold: ${result.threshold}%, investigatedThreshold: ${result.investigatedPriceThreshold}%, cooldown: ${cooldownDays}d)`,
       );
       process.exit(0);
     })
