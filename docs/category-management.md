@@ -148,6 +148,9 @@ Creators API のレスポンスには、キャンペーン用や社内管理用�
 
 特定の商品が意図しないカテゴリ（「その他」やジャンクカテゴリ）に分類されている場合の調査・修正手順である。
 
+> [!NOTE]
+> AIエージェントおよび開発者向けの実践的なステップバイステップ手順は、[.agent/workflows/category-management.md](../.agent/workflows/category-management.md) にもまとめられている。
+
 ### 5.1 原因調査ステップ
 
 1. **キャッシュ内の該当カテゴリ確認**:
