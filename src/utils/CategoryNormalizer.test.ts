@@ -38,6 +38,17 @@ describe('CategoryNormalizer', () => {
       expect(CategoryNormalizer.isValidCategoryName('メンズランニングシューズ', shoeTitle)).toBe(true);
     });
 
+    it('should invalidate cat toilet categories if title does not contain cat or pet keywords', () => {
+      const cleanerTitle = 'Shark StainForce コードレス ステイン・臭気・尿除去剤 ツール2個 キャディ HX102';
+      expect(CategoryNormalizer.isValidCategoryName('猫用品 トイレ用品', cleanerTitle)).toBe(false);
+      expect(CategoryNormalizer.isValidCategoryName('猫用トイレ用品', cleanerTitle)).toBe(false);
+      expect(CategoryNormalizer.isValidCategoryName('猫用トイレシート', cleanerTitle)).toBe(false);
+
+      const catTitle = 'ニャンとも清潔トイレ 脱臭・抗菌チップ 猫砂 猫用トイレ本体';
+      expect(CategoryNormalizer.isValidCategoryName('猫用品 トイレ用品', catTitle)).toBe(true);
+      expect(CategoryNormalizer.isValidCategoryName('猫用トイレ用品', catTitle)).toBe(true);
+    });
+
     it('should return false for names matching invalid patterns', () => {
       const invalidNames = [
         '3P grocery',
@@ -778,6 +789,34 @@ describe('CategoryNormalizer', () => {
       const result = CategoryNormalizer.selectBestCategory(nodes, title);
       expect(result.main).toBe('ウェアラブルカメラ・アクションカム');
       expect(result.browseNodeId).toBe('2680377051');
+    });
+
+    it('should select "業務用カーペットスチーム洗浄機" for Shark StainForce cleaner (B0GWJYH29G)', () => {
+      const nodes: BrowseNode[] = [
+        {
+          contextFreeName: 'ホームストア',
+          displayName: 'ホームストア',
+          id: '8176955051',
+          isRoot: false,
+        },
+        {
+          contextFreeName: '猫用品 トイレ用品',
+          displayName: '猫用品 トイレ用品',
+          id: '6959787051',
+          isRoot: false,
+        },
+        {
+          contextFreeName: '業務用カーペットスチーム洗浄機',
+          displayName: '業務用カーペットスチーム洗浄機',
+          id: '3450823051',
+          isRoot: false,
+        },
+      ];
+      const title = 'Shark StainForce コードレス ステイン・臭気・尿除去剤 ツール2個 キャディ HX102';
+
+      const result = CategoryNormalizer.selectBestCategory(nodes, title);
+      expect(result.main).toBe('業務用カーペットスチーム洗浄機');
+      expect(result.browseNodeId).toBe('3450823051');
     });
   });
 });
