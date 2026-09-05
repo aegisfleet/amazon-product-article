@@ -260,4 +260,42 @@ describe('CreatorsAPIClient Parsing Tests', () => {
       expect(product2.municipality).toBeUndefined();
     });
   });
+
+  describe('isAmazonHaul parsing', () => {
+    it('should set isAmazonHaul to true when merchant name is Haul Global', () => {
+      const mockItem: any = {
+        asin: 'B0HAUL1111',
+        offersV2: {
+          listings: [
+            {
+              merchantInfo: {
+                name: 'Haul Global',
+                id: 'SOME_HAUL_ID',
+              },
+            },
+          ],
+        },
+      };
+      const product = (client as any).parseProduct(mockItem as CreatorsAPIItem);
+      expect(product.isAmazonHaul).toBe(true);
+    });
+
+    it('should NOT set isAmazonHaul to true for Amazon US (A1EJGP084HULR)', () => {
+      const mockItem: any = {
+        asin: 'B0GWJYH29G',
+        offersV2: {
+          listings: [
+            {
+              merchantInfo: {
+                name: 'Amazon US',
+                id: 'A1EJGP084HULR',
+              },
+            },
+          ],
+        },
+      };
+      const product = (client as any).parseProduct(mockItem as CreatorsAPIItem);
+      expect(product.isAmazonHaul).toBe(false);
+    });
+  });
 });
