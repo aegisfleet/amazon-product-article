@@ -22,7 +22,7 @@ uv run python scripts/find_incomplete_specs.py
 > 数万件のJSONファイルを走査する場合、PowerShell（`ConvertFrom-Json`）は処理時間が長くなる傾向があります。`uv run python scripts/find_incomplete_specs.py` を利用することで、1秒未満で安全に対象商品をリストアップできます。
 
 ### 1.2 全体のスペック状況分析
-全体的なフィールド出現頻度や型の一貫性を確認したい場合は、`scripts/analyze-technical-specs.ts` を実行する。
+全体的なフィールド出現頻度や型の一貫性を確認したい場合は、`src/scripts/maintenance/analyze-technical-specs.ts` を実行する。
 
 ```bash
 npx tsx src/scripts/maintenance/analyze-technical-specs.ts
