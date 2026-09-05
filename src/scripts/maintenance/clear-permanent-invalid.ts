@@ -33,4 +33,3 @@ try {
 } catch (error) {
   console.error('Error processing cache file:', error);
 }
-
