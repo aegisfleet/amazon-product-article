@@ -22,9 +22,11 @@
 本システムにおいて、商品カード（Product Card）は**Hugoテンプレート側**と**クライアントサイドJS側**の2箇所で生成される。
 デザインやDOM構造を変更する際は、必ず両方を同時に更新しなければならない。
 
-### 2.1 商品カードの実装箇所一覧
+### 2.1 商品カードの実装箇所と `<template>` 共通化アーキテクチャ
 
-| 種別 | 実装ファイル | 生成タイミング |
+従来はHugoテンプレートとクライアント側JSでDOM構築コードが二重実装されていたが、現在は `layouts/partials/product-card-template.html`（`<template id="product-card-template">`）を正本（Single Source of Truth）とし、クライアント側JS（`filter-common.js`）はテンプレートのクローンに対してデータを注入するアーキテクチャへ統合されている。
+
+| 種別 | 実装ファイル | 生成タイミング / レンダリング方式 |
 |---|---|---|
 | **商品詳細 (ヒーローカード)** | `layouts/partials/product-hero.html` | Hugo ビルド時 |
 | **汎用商品カード** | `layouts/partials/product-card.html` | Hugo ビルド時 |
@@ -32,7 +34,8 @@
 | **親カテゴリ一覧** | `layouts/_default/parent-category.html` | Hugo ビルド時 |
 | **ブランド一覧** | `layouts/_default/brand-list.html` | Hugo ビルド時 |
 | **おすすめ一覧** | `layouts/recommendations/list.html` | Hugo ビルド時 |
-| **動的フィルタカード** | `static/js/filter-common.js` (`renderCardMeta`) | クライアント側（`/deals/`, `/bargain/`等） |
+| **動的カードテンプレート正本** | `layouts/partials/product-card-template.html` | 全ページ配信（`footer.html` 経由） |
+| **動的フィルタカード** | `static/js/filter-common.js` (`renderCardFromTemplate`) | クライアント側（`/deals/`, `/bargain/`等） |
 | **お気に入りカード** | `layouts/favorites/list.html` (`favorites.js`) | クライアント側（ローカルストレージ参照） |
 | **ホーム動的追加カード** | `static/js/home-load-more.js` | クライアント側（「もっと見る」押下時） |
 
