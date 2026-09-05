@@ -108,6 +108,11 @@ export class CategoryNormalizer {
     'ミラーレス',
     'カメラ',
     'Vlogカメラ',
+    '掃除機',
+    'クリーナー',
+    'スチームクリーナー',
+    'スチーム洗浄機',
+    '洗浄機',
   ];
 
   private static readonly HIGH_PRIORITY_KEYWORDS = [
@@ -223,7 +228,12 @@ export class CategoryNormalizer {
     }
 
     const hasPreferredKeyword = names.some((name) =>
-      CategoryNormalizer.PREFERRED_KEYWORDS.some((keyword) => name.toLowerCase().includes(keyword.toLowerCase())),
+      CategoryNormalizer.PREFERRED_KEYWORDS.some((keyword) => {
+        if (keyword === 'ペット' && name.includes('カーペット')) {
+          return name.replaceAll('カーペット', '').toLowerCase().includes(keyword.toLowerCase());
+        }
+        return name.toLowerCase().includes(keyword.toLowerCase());
+      }),
     );
 
     return hasPreferredKeyword ? 10 : 0;
@@ -449,6 +459,16 @@ export class CategoryNormalizer {
         'sandal',
       ];
       if (!footwearKeywords.some((k) => lowerTitle.includes(k))) {
+        return false;
+      }
+    }
+
+    // 猫用トイレ・猫用品トイレカテゴリの誤爆防止（タイトルに猫・ペット関連キーワードがない場合は無効）
+    const isCatToiletCategory = /猫用品\s*トイレ用品|猫用トイレ/.test(name);
+    if (isCatToiletCategory && title) {
+      const lowerTitle = title.toLowerCase();
+      const catKeywords = ['猫', 'ねこ', 'ネコ', 'キャット', 'cat', 'kitten', 'ペット', 'pet'];
+      if (!catKeywords.some((k) => lowerTitle.includes(k))) {
         return false;
       }
     }
