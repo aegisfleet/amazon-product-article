@@ -1,228 +1,236 @@
 {
   "analysis": {
-    "productName": "SHARP シンプルスマホ7",
+    "productName": "SHARP シンプルスマホ7 A404SH",
     "parentAsin": "B0GL83D77W",
-    "productDescription": "大きなボタンと見やすい画面で、初めてのスマートフォンに最適なシニア向けモデル。",
+    "productDescription": "見やすいホーム画面と大きな専用ボタンで初心者やシニア層に最適な5G対応スマートフォン",
     "productUsage": [
-      "初めてのスマートフォンとして",
-      "シニア層の日常的な連絡手段（電話・メール・LINEなど）"
+      "シニア層の日常的な連絡（電話・メール）",
+      "初めてのスマートフォンの利用",
+      "QRコード決済やマイナンバーカードを利用した行政手続き"
     ],
     "positivePoints": [
-      "専用ボタン搭載で電話やメールが簡単に操作できる",
-      "大きく分かりやすいアイコンと文字で迷わず操作可能",
-      "キャッシュレス決済がスムーズに行えるFeliCa対応",
-      "IPX5/8防水、IP6X防塵、MIL規格準拠の耐衝撃性能を備え、安心して使用できる"
+      "電話・メール・音声検索の専用物理ボタンを搭載",
+      "IPX5/IPX8の防水、IP6Xの防塵、MIL-810H準拠の耐衝撃性能",
+      "泡タイプのハンドソープでまる洗い可能",
+      "おサイフケータイ、顔認証・指紋認証対応",
+      "4000mAhの長持ちバッテリー",
+      "詐欺や迷惑電話対策機能（迷惑ストップボタン、通話録音）"
     ],
     "negativePoints": [
-      "ハイエンドモデルと比較して処理性能は控えめ",
-      "重いゲームなどの用途には向かない"
+      "ディスプレイ解像度がHD+（1520×720）に留まる",
+      "エントリークラス向けのSoC（Snapdragon 695）搭載",
+      "整備済み品のため、バッテリー劣化や外装の小傷がある可能性",
+      " SoftBankの独自アプリや仕様が残っている可能性"
     ],
     "useCases": [
-      "シニア層が初めてスマートフォンを使い始める時",
-      "キャッシュレス決済を利用したい時"
+      "ガラケーからの乗り換えで、初めてスマートフォンを持つシニア層の連絡手段",
+      "水回りや屋外作業時など、汚れても洗えるタフなスマホを求める利用シーン"
     ],
-    "userStories": [],
-    "userImpression": "初めてスマートフォンを持つユーザーにとって、分かりやすい操作性と専用ボタンが安心感を与える。耐久性も高く、日常使いにおいて安心して利用できる一台。",
+    "userStories": [
+      {
+        "userType": "シニアの親にスマホをプレゼントした家族",
+        "scenario": "ガラケーのサービス終了に伴い、使いやすいスマホを探していた",
+        "experience": "大きな専用ボタンで電話やメールがすぐに起動できるため、操作に迷わず連絡が取れるようになったと喜んでくれた。画面も大きく見やすいのが良い。",
+        "supportingSourceIds": ["src-1", "src-3"],
+        "sentiment": "positive"
+      },
+      {
+        "userType": "初めてスマホを持つシニア",
+        "scenario": "スマホでのQRコード決済やマイナンバーカード機能を利用したかった",
+        "experience": "指紋認証を長押しするだけで決済アプリが起動する「簡単お支払い」機能がとても便利。おサイフケータイもついていて、キャッシュレス生活がスムーズに始められた。",
+        "supportingSourceIds": ["src-1", "src-3"],
+        "sentiment": "positive"
+      }
+    ],
+    "userImpression": "大きな専用ボタンと分かりやすいホーム画面により、スマホ初心者やシニア層から「迷わず使える」と非常に高い評価を得ている。一方で、スペック的にはエントリークラスであるため、重いゲームなどを期待するユーザーには向かないが、主なターゲット層である「電話やメール、軽作業中心」のユーザーにとっては十分な性能と使い勝手を提供している。",
     "sources": [
       {
         "id": "src-1",
-        "name": "シンプルスマホ7 | スマートフォン・携帯電話 | ソフトバンク",
+        "name": "Amazon 商品ページ",
+        "url": "https://www.amazon.co.jp/dp/B0GL8F9DVQ",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2024-07-05",
+        "author": "Amazon",
+        "conflictOfInterest": "none",
+        "notes": "商品仕様、特徴、整備済み品としての販売状況"
+      },
+      {
+        "id": "src-2",
+        "name": "SoftBank 公式サイト シンプルスマホ7 製品情報",
         "url": "https://www.softbank.jp/mobile/products/smartphone/simple-sumaho7/",
         "tier": "high",
         "evidenceType": "primary",
         "publishedAt": "2024-07-05",
-        "author": "ソフトバンク",
-        "conflictOfInterest": "possible",
-        "notes": "スペック情報、特徴、耐久性などを参照"
+        "author": "SoftBank",
+        "conflictOfInterest": "disclosed",
+        "notes": "詳細スペック（CPU, バッテリー, カメラ, 防水防塵, 泡ハンドソープ洗浄対応等）"
       },
       {
-        "id": "src-2",
-        "name": "Amazon商品ページ",
-        "url": "https://www.amazon.co.jp/dp/B0GL8F9DVQ",
+        "id": "src-3",
+        "name": "Amazon 検索結果",
+        "url": "https://www.amazon.co.jp/",
         "tier": "medium",
-        "evidenceType": "primary",
-        "publishedAt": "2024-07-05",
-        "author": "Go Japan 株式会社",
-        "conflictOfInterest": "possible",
-        "notes": "販売価格、整備済み品としての状態、付属品（eSIM）を参照"
+        "evidenceType": "secondary",
+        "publishedAt": "2026-09-06",
+        "author": "Amazon",
+        "conflictOfInterest": "none",
+        "notes": "競合商品の販売価格・相場情報"
       }
     ],
     "claims": [
       {
-        "claim": "IPX5/IPX8防水、IP6X防塵、MIL-STD-810H耐衝撃性能を備える",
+        "claim": "泡タイプのハンドソープでまる洗い可能",
         "category": "durability",
         "confidence": "high",
-        "supportingSourceIds": [
-          "src-1"
-        ],
-        "crossChecked": false,
-        "notes": "公式スペックで確認"
-      },
-      {
-        "claim": "専用ボタン（電話、メール）が搭載されており、操作が簡単",
-        "category": "quality",
-        "confidence": "high",
-        "supportingSourceIds": [
-          "src-1",
-          "src-2"
-        ],
+        "supportingSourceIds": ["src-2"],
         "crossChecked": true,
-        "notes": "Amazonの商品説明と公式の特徴で確認"
+        "notes": "SoftBank公式サイトのスペック表にて確認。"
       }
     ],
-    "lastInvestigated": "2026-03-20",
+    "lastInvestigated": "2026-09-06",
+    "investigatedPrice": "価格情報なし",
     "competitiveAnalysis": [
       {
-        "name": "Blackview Wave9",
-        "asin": "B0GLP6GCLW",
-        "priceComparison": "Blackview Wave9の方が安価であるが、シンプルスマホ7はシニア向けに特化した使いやすさがある。",
+        "name": "SHARP シンプルスマホ6 A201SH (整備済み品)",
+        "asin": "B0BWY99Z3J",
+        "priceComparison": "前モデルであり、本製品（シンプルスマホ7）より安価に入手可能",
         "featureComparison": [
-          "共通点：防水防塵性能を持つ点",
-          "相違点：シンプルスマホ7はシニア向けの専用ボタンやUIを持つが、Blackview Wave9は大画面・大容量バッテリー・大容量メモリを搭載している。"
+          "共通点：シニア向け、専用ボタン搭載、防水防塵",
+          "相違点：シンプルスマホ7の方がバッテリー容量が増加、OSが新しい、マイナンバーカード機能強化"
         ],
         "differentiators": [
-          "SHARP シンプルスマホ7の利点：初めてのスマホでも迷わず使える専用ボタンや、分かりやすいUI。",
-          "Blackview Wave9の利点：大画面で動画などを楽しみたい、あるいは安価に大容量ストレージ・メモリのスマホが欲しいケース。"
+          "SHARP シンプルスマホ7 A404SHの利点：より新しいOSと長持ちバッテリー、マイナンバーカード連携を重視するならこちら",
+          "SHARP シンプルスマホ6 A201SH (整備済み品)の利点：機能は十分で、初期費用を極力抑えたいならこちら"
         ]
       },
       {
-        "name": "SHARP シンプルスマホ6",
-        "asin": "B0GL7RN131",
-        "priceComparison": "シンプルスマホ6の方が前モデルのため安価。",
+        "name": "Samsung Galaxy A25",
+        "asin": "B0GNQGFYLF",
+        "priceComparison": "一般的なエントリー・ミドルレンジスマホとして同価格帯の競合",
         "featureComparison": [
-          "共通点：シニア向けの使いやすいUI、専用ボタン搭載",
-          "相違点：シンプルスマホ7は最新OSへの対応状況や、カメラ性能などで向上している可能性がある（具体的なスペック差は要確認だが、後継機としての基本性能の向上が見込まれる）。"
+          "共通点：5G対応、防水防塵、おサイフケータイ対応",
+          "相違点：Galaxy A25は有機ELディスプレイ(FHD+)搭載で画面がより高精細。シンプルスマホ7は物理ボタンやシニア向けUIを搭載"
         ],
         "differentiators": [
-          "SHARP シンプルスマホ7の利点：より新しいモデルであり、長く安心して使える点。",
-          "SHARP シンプルスマホ6の利点：より安価にシニア向けスマホを購入したいケース。"
+          "SHARP シンプルスマホ7 A404SHの利点：スマホ初心者が迷わず使える専用ボタンやUIを求めるならこちら",
+          "Samsung Galaxy A25の利点：より高精細な画面で動画視聴などを楽しみたい、一般的なスマホ操作に慣れているならこちら"
         ]
       },
       {
-        "name": "AQUOS sense10",
-        "asin": "B0G4BXQBQF",
-        "priceComparison": "AQUOS sense10の方が高価であるが、全体的なスペックが高い。",
+        "name": "Motorola moto g06",
+        "asin": "B0GNQFXT6F",
+        "priceComparison": "より安価なエントリークラスのスマートフォン",
         "featureComparison": [
-          "共通点：SHARP製のスマートフォンである点",
-          "相違点：AQUOS sense10は一般向けのミドルレンジモデルであり、カメラ性能や処理性能が高い。シンプルスマホ7はシニア向けに特化している。"
+          "共通点：エントリークラスのスペック",
+          "相違点：moto g06はより安価だが、シンプルスマホ7のようなシニア向けに特化した物理ボタンや専用UIは備えていない"
         ],
         "differentiators": [
-          "SHARP シンプルスマホ7の利点：スマホ操作に不慣れなシニアにとって圧倒的に使いやすいUIと専用ボタン。",
-          "AQUOS sense10の利点：スマホの操作に慣れており、より綺麗な写真や快適な動作を求めるケース。"
+          "SHARP シンプルスマホ7 A404SHの利点：シニア層が初めて使う際の安心感、分かりやすさを最優先するならこちら",
+          "Motorola moto g06の利点：とにかく安く新品のスマートフォンを手に入れたいならこちら"
         ]
       },
       {
-        "name": "AQUOS wish5",
-        "asin": "B0FVLFPPHR",
-        "priceComparison": "AQUOS wish5の方がやや高価だが、価格差は小さい。",
-        "featureComparison": [
-          "共通点：SHARP製のエントリー向けモデル、防水防塵・耐衝撃性能",
-          "相違点：AQUOS wish5は若年層から幅広い層をターゲットにしており、シンプルスマホ7はシニア層に特化している。"
-        ],
-        "differentiators": [
-          "SHARP シンプルスマホ7の利点：シニア向けの専用ボタンや分かりやすさに特化している点。",
-          "AQUOS wish5の利点：幅広い層に使いやすいシンプルなデザインと、大容量バッテリーによる長時間の電池持ち。"
-        ]
-      },
-      {
-        "name": "FCNT らくらくスマートフォン F-52B",
+        "name": "FCNT らくらくスマートフォン F-52B (整備済み品)",
         "asin": "B0F3J85B7D",
-        "priceComparison": "らくらくスマートフォン F-52Bの方が高価。",
+        "priceComparison": "ドコモ向けの競合機種。同等かやや高めの価格帯",
         "featureComparison": [
-          "共通点：シニア向けの使いやすいUI、専用ボタンを搭載している点",
-          "相違点：メーカーが異なり、UIの作り込みやデザインに違いがある。"
+          "共通点：シニア向けUI、物理ボタン搭載、洗えるスマホ",
+          "相違点：らくらくスマートフォンはドコモ特化UI、シンプルスマホ7はSoftBank特化UIベース"
         ],
         "differentiators": [
-          "SHARP シンプルスマホ7の利点：整備済み品として価格が安く手に入りやすい点。",
-          "FCNT らくらくスマートフォン F-52Bの利点：ドコモユーザーなどで、らくらくスマートフォンのUIに慣れ親しんでいるケース。"
+          "SHARP シンプルスマホ7 A404SHの利点：SoftBank回線やシンプルスマホの操作感に慣れているならこちら",
+          "FCNT らくらくスマートフォン F-52B (整備済み品)の利点：ドコモ回線での利用や、らくらくホン特有の操作感に慣れているならこちら"
         ]
       },
       {
-        "name": "Motorola motog05",
-        "asin": "B0DYJHD1DM",
-        "priceComparison": "Motorola motog05 の方がやや高価。",
+        "name": "Apple iPhone SE（第2世代） 64GB (整備済み品)",
+        "asin": "B09V7NLRZ2",
+        "priceComparison": "同価格帯で入手可能な人気の整備済みスマートフォン",
         "featureComparison": [
-          "共通点：エントリー〜ミドルレンジのスマートフォン",
-          "相違点：motog05 は大画面（約17cm）と大容量バッテリーを備える一般向けモデル。シンプルスマホ7はシニア向け機能に特化。"
+          "共通点：指紋認証、おサイフケータイ対応、整備済み品",
+          "相違点：iPhone SEはiOS搭載で基本性能が高い。シンプルスマホ7はAndroidベースでシニア向けUIと物理ボタン搭載"
         ],
         "differentiators": [
-          "SHARP シンプルスマホ7の利点：シニア層が迷わず使える専用ボタンやインターフェース。",
-          "Motorola motog05の利点：大画面で動画視聴やブラウジングをより楽しみたいケース。"
+          "SHARP シンプルスマホ7 A404SHの利点：スマホ初心者や、分かりやすい操作性・物理ボタンを必要とするならこちら",
+          "Apple iPhone SE（第2世代） 64GB (整備済み品)の利点：家族がiPhoneを使っていて操作を教えやすい環境がある、高い基本性能を求めるならこちら"
         ]
       },
       {
-        "name": "Motorola motorola g66j",
-        "asin": "B0FDKVB871",
-        "priceComparison": "Motorola motorola g66j の方が高価。",
+        "name": "OPPO A5x",
+        "asin": "B0FMRZ3QQD",
+        "priceComparison": "同価格帯のエントリークラススマートフォン",
         "featureComparison": [
-          "共通点：防水防塵性能を持つスマートフォン",
-          "相違点：motorola g66j は120Hzの高リフレッシュレートディスプレイや大容量メモリを搭載する一般向けモデル。"
+          "共通点：防水防塵、大容量バッテリー",
+          "相違点：OPPO A5xはより一般的なAndroid UIで大画面。シンプルスマホ7はシニア向け特化"
         ],
         "differentiators": [
-          "SHARP シンプルスマホ7の利点：初心者やシニア向けの使いやすさを最優先した設計。",
-          "Motorola motorola g66jの利点：より滑らかな画面表示や高い処理性能を求めるケース。"
+          "SHARP シンプルスマホ7 A404SHの利点：シニア向けの使いやすさ、専用ボタンによる直感的な操作を求めるならこちら",
+          "OPPO A5xの利点：大画面での動画視聴など、一般的なスマートフォンの用途で使いたいならこちら"
         ]
       }
     ],
     "recommendation": {
       "targetUsers": [
-        "初めてスマートフォンを持つシニア層",
-        "複雑な操作が苦手で、電話やメール、簡単なネット検索をメインに使う人"
+        "ガラケーから初めてスマートフォンに乗り換えるシニア層",
+        "電話やメールの操作で迷いたくない、分かりやすい操作を求める人",
+        "汚れても洗える、防水防塵で丈夫なスマートフォンが必要な人"
       ],
       "pros": [
-        "専用ボタンで電話やメールが簡単",
-        "防水防塵・耐衝撃で安心",
-        "キャッシュレス決済対応"
+        "電話やメール専用の物理ボタンにより、着信時も慌てず確実に操作ができる",
+        "泡タイプのハンドソープで洗えるため、清潔に保ちたいシーンでも安心して使える",
+        "指紋認証からの簡単お支払い起動で、初心者でもスムーズにキャッシュレス決済が始められる"
       ],
       "cons": [
-        "重い処理（3Dゲームなど）には不向き",
-        "整備済み品であるため、状態に個体差がある可能性がある"
+        "HD+解像度やエントリーSoCのため、高画質な動画視聴やゲーム用途には不向きである点",
+        "整備済み品であるため、外装の小傷やバッテリーの劣化度合いには個体差があること"
       ],
-      "score": 90,
-      "scoreRationale": "[基本点: 70]\n[加点: +5] (シニア層にとって実用性が高い専用ボタン、分かりやすいUIの搭載)\n[加点: +5] (FeliCa対応や防水防塵・耐衝撃など日常的な使い勝手と安心感が良い)\n[加点: +5] (整備済み品として手頃な価格で購入可能)\n[加点: +5] (1GB日本専用eSIM付きなどの独自のメリット)\n[合計: 90]"
+      "score": 75,
+      "scoreRationale": "[基本点: 70]\n[加点: +5] (シニア層に特化した分かりやすい専用物理ボタンとUIの実用性)\n[加点: +5] (泡ハンドソープで洗える利便性と高い堅牢性)\n[減点: -5] (整備済み品としてのバッテリー等の状態不確実性)\n[合計: 75]"
     },
     "technicalSpecs": {
-      "os": "Android 14 (最大3回OSアップデート対応)",
-      "cpu": "Qualcomm Snapdragon 695 5G",
+      "os": "Android 14",
+      "cpu": "Snapdragon 695 (オクタコア 2.20GHz＋1.8GHz)",
       "ram": "4GB",
-      "storage": "64GB",
+      "storage": "64GB (microSDXC 最大1TB対応)",
       "display": {
-        "size": "5.7インチ",
+        "size": "約5.7インチ",
         "resolution": "1520×720 (HD+)",
         "type": "TFT液晶",
-        "refreshRate": "60Hz"
+        "refreshRate": "不明"
       },
       "battery": {
         "capacity": "4000mAh",
-        "charging": "USB PD急速充電 (インテリジェントチャージ)"
+        "charging": "約135分 (USB Type-C PD-PPS対応 ACアダプタ)"
       },
       "camera": {
-        "main": "50.3MP (広角 F1.8)",
-        "front": "8MP (F2.0)"
+        "main": "約5030万画素 (フルHD動画撮影対応)",
+        "ultrawide": "なし",
+        "telephoto": "なし",
+        "front": "約800万画素"
       },
       "dimensions": {
-        "height": "158mm",
-        "width": "71mm",
-        "depth": "9.4mm",
-        "weight": "174g"
+        "height": "約158mm",
+        "width": "約71mm",
+        "depth": "約9.4mm",
+        "weight": "約174g"
       },
-      "weight": "174g",
-      "material": "プラスチック（背面・フレーム）",
-      "origin": "中国",
+      "weight": "約174g",
+      "material": "プラスチック等 (泡ハンドソープ洗浄対応)",
+      "origin": "不明",
       "connectivity": [
-        "5G",
-        "Wi-Fi 5 (802.11ac)",
-        "Bluetooth 5.1",
-        "FeliCa / おサイフケータイ",
-        "eSIM対応"
+        "5G (下り最大1.5Gbps / 上り最大113Mbps)",
+        "4G LTE / AXGP",
+        "Wi-Fi (IEEE 802.11 a/b/g/n/ac) 5GHz/2.4GHz",
+        "Bluetooth 5.1 (コーデック: AAC/SBC)",
+        "nanoSIM / eSIM",
+        "おサイフケータイ (FeliCa) / NFC"
       ],
       "other": [
-        "防塵防水: IPX5/IPX8防水・IP6X防塵",
-        "耐久性: MIL-STD-810H耐衝撃",
-        "専用ボタン: 電話・メール・ホーム専用物理ボタン",
-        "通話機能: 迷惑電話対策 / 通話録音機能",
-        "生体認証: 側面指紋認証 / 顔認証(マスク対応)",
-        "microSDXC対応 (最大1TB)"
+        "防水防塵: IPX5/IPX8 防水, IP6X 防塵",
+        "耐衝撃: MIL-810H準拠",
+        "生体認証: 指紋認証, 顔認証",
+        "専用機能: 迷惑ストップボタン, 簡単お支払い, 元気だよメール, 押すだけサポート"
       ]
     }
   }
