@@ -47,10 +47,13 @@ it('should return false for junk category', () => {
 ```
 
 ### 2.2 ロジックの更新
-`src/utils/CategoryNormalizer.ts` を修正します。
+目的に応じて以下のモジュールを修正します。
 
-- **`blacklist` / `invalidPatterns`**: 不適切なカテゴリ（ジャンクカテゴリ）を除外する場合。特定のサービス名（「パントリー」など）やブランド名（「コクヨ」など）が含まれるカテゴリを弾くのに有効です。
-- **`preferredKeywords`**: 特定のドメイン（おもちゃ、ベビー、家電など）を優先したい場合。キーワードは、そのノードの**全親階層**を対象にマッチングされます。
+- **`BLACKLIST_CATEGORIES_SET` / `INVALID_PATTERNS`** (`src/utils/category/CategoryConstants.ts`): 不適切なカテゴリ（ジャンクカテゴリ）を除外する場合。特定のサービス名（「パントリー」など）やブランド名（「コクヨ」など）が含まれるカテゴリを弾くのに有効です。
+- **`PREFERRED_KEYWORDS` / `HIGH_PRIORITY_KEYWORDS`** (`src/utils/category/CategoryConstants.ts`): 特定のドメイン（おもちゃ、ベビー、家電など）を優先したい場合。キーワードは、そのノードの**全親階層**を対象にマッチングされます。
+- **タイトル整合性ガード** (`src/utils/category/CategoryValidator.ts`): スマホ、シューズ、ペット用品のように、商品タイトルに該当キーワードが存在しない場合の誤爆を防ぐルールを追加・更新する場合。
+- **カテゴリ名のサニタイズ・詳細化** (`src/utils/category/CategorySanitizer.ts`): テレビ（有機EL/液晶）やコントローラー、バイクマウントなど、タイトル情報に応じて具体的なカテゴリ名へ解決するルールを追加・更新する場合。
+- **階層探索・選定ロジック** (`src/utils/CategoryNormalizer.ts`): BrowseNodeツリーの走査や優先順位ソートのコアアルゴリズムを修正する場合。
 
 > [!IMPORTANT]
 > **優先順位のポリシー (Architecture)**
