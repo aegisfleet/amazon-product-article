@@ -4,8 +4,8 @@ import path from 'node:path';
 const targetCategory = process.argv[2];
 
 if (!targetCategory) {
-  console.error('Usage: npx ts-node scripts/reset-category-cache.ts <CategoryName>');
-  console.error('Example: npx ts-node scripts/reset-category-cache.ts "ホーム・日用品"');
+  console.error('Usage: pnpm ts-node src/scripts/maintenance/reset-category-cache.ts <CategoryName>');
+  console.error('Example: pnpm ts-node src/scripts/maintenance/reset-category-cache.ts "ホーム・日用品"');
   process.exit(1);
 }
 
@@ -76,4 +76,3 @@ try {
 } catch (error) {
   console.error('Error processing cache file:', error);
 }
-

@@ -7,20 +7,20 @@
  *
  * 使用例:
  *   # 1. 高速監査（permanent_invalid かつ記事が存在するものをチェック）
- *   pnpm ts-node scripts/prune-dead-products.ts
- *   pnpm ts-node scripts/prune-dead-products.ts --audit
+ *   pnpm ts-node src/scripts/maintenance/prune-dead-products.ts
+ *   pnpm ts-node src/scripts/maintenance/prune-dead-products.ts --audit
  *
  *   # 2. 単一ASINの確認
- *   pnpm ts-node scripts/prune-dead-products.ts --asin B0H3HQ1ZG7
+ *   pnpm ts-node src/scripts/maintenance/prune-dead-products.ts --asin B0H3HQ1ZG7
  *
  *   # 3. 全記事を監査（全5,700+件）
- *   pnpm ts-node scripts/prune-dead-products.ts --scope all --audit
+ *   pnpm ts-node src/scripts/maintenance/prune-dead-products.ts --scope all --audit
  *
  *   # 4. ドライラン（削除対象の確認）
- *   pnpm ts-node scripts/prune-dead-products.ts --prune --dry-run
+ *   pnpm ts-node src/scripts/maintenance/prune-dead-products.ts --prune --dry-run
  *
  *   # 5. 棚卸し（削除）実行
- *   pnpm ts-node scripts/prune-dead-products.ts --prune
+ *   pnpm ts-node src/scripts/maintenance/prune-dead-products.ts --prune
  */
 
 import fs from 'node:fs';

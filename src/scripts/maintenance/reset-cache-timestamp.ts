@@ -6,7 +6,7 @@ const cachePath = path.resolve(__dirname, '../../../data/cache/paapi-product-cac
 const asin = process.argv[2] || 'B009ODJPMI';
 
 if (!process.argv[2]) {
-  console.log('Usage: npx ts-node scripts/reset-cache-timestamp.ts <ASIN>');
+  console.log('Usage: pnpm ts-node src/scripts/maintenance/reset-cache-timestamp.ts <ASIN>');
   console.log('Using default ASIN: B009ODJPMI');
 }
 
@@ -31,4 +31,3 @@ try {
 } catch (error) {
   console.error('Error processing cache file:', error);
 }
-
