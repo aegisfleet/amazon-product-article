@@ -2,10 +2,10 @@
  * バリエーション商品（同一親ASIN）間のスコア乖離監査スクリプト
  *
  * 使用例:
- *   pnpm ts-node scripts/find-score-discrepancy.ts
- *   pnpm ts-node scripts/find-score-discrepancy.ts --threshold 15
- *   pnpm ts-node scripts/find-score-discrepancy.ts --parent B0H7RFY9BX
- *   pnpm ts-node scripts/find-score-discrepancy.ts --verbose
+ *   pnpm ts-node src/scripts/maintenance/find-score-discrepancy.ts
+ *   pnpm ts-node src/scripts/maintenance/find-score-discrepancy.ts --threshold 15
+ *   pnpm ts-node src/scripts/maintenance/find-score-discrepancy.ts --parent B0H7RFY9BX
+ *   pnpm ts-node src/scripts/maintenance/find-score-discrepancy.ts --verbose
  */
 
 import fs from 'node:fs';
@@ -251,7 +251,7 @@ function main(): void {
 
   console.log('----------------------------------------------------------------');
   console.log('💡 詳細確認・是正手順:');
-  console.log('  1. 詳細表示: pnpm ts-node scripts/find-score-discrepancy.ts --parent <親ASIN> -v');
+  console.log('  1. 詳細表示: pnpm ts-node src/scripts/maintenance/find-score-discrepancy.ts --parent <親ASIN> -v');
   console.log('  2. 実態検証: 同一製品のバリエーション（色違い等）か、別製品（別モデル/セット）かを確認');
   console.log('  3. 是正対応: 同一製品の場合は妥当な採点基準に合わせて修正、または過大/過小データを削除');
   console.log('----------------------------------------------------------------');
