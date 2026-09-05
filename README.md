@@ -272,6 +272,9 @@ uv run python scripts/creators_search_items.py "<検索キーワード>"
 5. **品質維持と定期保守** (`maintenance.yml`, `investigate-price-discrepancy.yml` 等):
    - デッド商品の棚卸しや価格・スコア乖離の検出を定期実行。
 
+> [!TIP]
+> 自動更新パイプラインの詳細仕様やアーキテクチャについては、[docs/article-automation-system.md](docs/article-automation-system.md) を参照のこと。
+
 ## 技術スタック
 
 - **言語**: TypeScript, Python
