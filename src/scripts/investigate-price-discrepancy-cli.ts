@@ -31,8 +31,15 @@ const logger = Logger.getInstance();
 /**
  * モード1: 価格乖離のASINリストを抽出して GITHUB_OUTPUT に書き出す
  */
-async function findAndOutputAsins(maxProducts: number, threshold: number, cooldownDays: number): Promise<void> {
-  logger.info(`Extracting price discrepancy candidates (threshold: ${threshold}%, cooldown: ${cooldownDays}d)...`);
+async function findAndOutputAsins(
+  maxProducts: number,
+  threshold: number,
+  cooldownDays: number,
+  investigatedPriceThreshold: number,
+): Promise<void> {
+  logger.info(
+    `Extracting price discrepancy candidates (threshold: ${threshold}%, investigatedThreshold: ${investigatedPriceThreshold}%, cooldown: ${cooldownDays}d)...`,
+  );
 
   const discrepancyFile = await findPriceDiscrepancy(
     undefined,
@@ -41,6 +48,7 @@ async function findAndOutputAsins(maxProducts: number, threshold: number, cooldo
     threshold,
     maxProducts * 2, // バッファとして多めに取得
     cooldownDays,
+    investigatedPriceThreshold,
   );
 
   if (discrepancyFile.totalCandidates === 0) {
@@ -130,11 +138,12 @@ async function main(): Promise<void> {
   const maxProducts = Number.parseInt(process.env.MAX_INVESTIGATION_PRODUCTS || '10', 10);
   const threshold = Number.parseInt(process.env.PRICE_DISCREPANCY_THRESHOLD || '15', 10);
   const cooldownDays = Number.parseInt(process.env.PRICE_DISCREPANCY_COOLDOWN_DAYS || '30', 10);
+  const investigatedPriceThreshold = Number.parseInt(process.env.INVESTIGATED_PRICE_DISCREPANCY_THRESHOLD || '30', 10);
   const mode = process.argv.includes('--investigate') ? 'investigate' : 'find-asins';
 
   try {
     if (mode === 'find-asins') {
-      await findAndOutputAsins(maxProducts, threshold, cooldownDays);
+      await findAndOutputAsins(maxProducts, threshold, cooldownDays, investigatedPriceThreshold);
     } else {
       const apiKey = process.env.JULES_API_KEY;
       const source = process.env.JULES_SOURCE;
