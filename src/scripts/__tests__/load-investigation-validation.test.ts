@@ -185,4 +185,31 @@ describe('loadInvestigationResults Validation', () => {
     const recommendation = analysis.recommendation as Record<string, unknown>;
     expect(recommendation.scoreRationale).toBe('[基本点: 70]\n[加点: +15] 高品質');
   });
+
+  it('should preserve investigatedPrice in analysis when present', async () => {
+    (fs.readdir as jest.Mock).mockResolvedValue(['investigated_price.json']);
+    const dataWithPrice = {
+      analysis: {
+        positivePoints: ['p1'],
+        negativePoints: ['n1'],
+        useCases: ['u1'],
+        userStories: [],
+        userImpression: 'Good',
+        sources: [],
+        competitiveAnalysis: [],
+        recommendation: {
+          targetUsers: ['t1'],
+          pros: ['p1'],
+          cons: ['c1'],
+          score: 10,
+        },
+        investigatedPrice: '￥11,500',
+      },
+    };
+    (fs.readFile as jest.Mock).mockResolvedValue(JSON.stringify(dataWithPrice));
+
+    const results = await loadInvestigationResults();
+    expect(results).toHaveLength(1);
+    expect(results[0]?.investigation.analysis.investigatedPrice).toBe('￥11,500');
+  });
 });

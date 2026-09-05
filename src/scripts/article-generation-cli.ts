@@ -19,7 +19,7 @@ import { CreatorsAPICache } from '../api/CreatorsAPICache';
 import { CreatorsAPIClient } from '../api/CreatorsAPIClient';
 import { ArticleGenerator } from '../article/ArticleGenerator';
 import { GitHubPublisher } from '../github/GitHubPublisher';
-import { InvestigationFileSchema } from '../schemas/InvestigationSchema';
+import { type InvestigationFileContent, InvestigationFileSchema } from '../schemas/InvestigationSchema';
 import type { GeneratedArticle } from '../types/ArticleTypes';
 import type { CompetitiveProduct, InvestigationResult, SourceReference } from '../types/JulesTypes';
 import type { Product, ProductDetail } from '../types/Product';
@@ -75,6 +75,79 @@ function getOptions(): CLIOptions {
 }
 
 /**
+ * 調査結果の作成日時を解決する
+ */
+async function resolveGeneratedAt(filePath: string, lastInvestigated?: string): Promise<Date> {
+  if (lastInvestigated) {
+    const parsedDate = new Date(lastInvestigated);
+    if (!Number.isNaN(parsedDate.getTime())) {
+      return parsedDate;
+    }
+  }
+  const stats = await fs.stat(filePath);
+  return stats.mtime;
+}
+
+/**
+ * 検証済みJSONのanalysisデータをInvestigationResult['analysis']形式に変換する
+ */
+function buildAnalysis(rawAnalysis: InvestigationFileContent['analysis']): InvestigationResult['analysis'] {
+  const analysis: InvestigationResult['analysis'] = {
+    positivePoints: rawAnalysis.positivePoints,
+    negativePoints: rawAnalysis.negativePoints,
+    useCases: rawAnalysis.useCases,
+    userImpression: rawAnalysis.userImpression,
+    recommendation: {
+      ...rawAnalysis.recommendation,
+      targetUsers: rawAnalysis.recommendation.targetUsers,
+      pros: rawAnalysis.recommendation.pros,
+      cons: rawAnalysis.recommendation.cons,
+      score: rawAnalysis.recommendation.score,
+    },
+    competitiveAnalysis: rawAnalysis.competitiveAnalysis.map((c) => {
+      const comp: CompetitiveProduct = {
+        name: c.name,
+        priceComparison: c.priceComparison,
+        featureComparison: c.featureComparison,
+        differentiators: c.differentiators,
+      };
+      if (c.asin) comp.asin = c.asin;
+      return comp;
+    }),
+    sources: rawAnalysis.sources.map((s) => {
+      const ref: SourceReference = {
+        name: s.name,
+      };
+      if (s.url) ref.url = s.url;
+      if (s.tier && s.tier !== 'primary') ref.tier = s.tier;
+      if (s.evidenceType) ref.evidenceType = s.evidenceType;
+      if (s.publishedAt) ref.publishedAt = s.publishedAt;
+      if (s.author) ref.author = s.author;
+      if (s.conflictOfInterest) ref.conflictOfInterest = s.conflictOfInterest;
+      if (s.notes) ref.notes = s.notes;
+      return ref;
+    }),
+    userStories: (rawAnalysis.userStories || []).map((s) => ({
+      userType: s.userType,
+      scenario: s.scenario,
+      experience: s.experience,
+      sentiment: s.sentiment,
+    })),
+  };
+
+  // その他の optional フィールドを安全に設定（exactOptionalPropertyTypes対策）
+  if (rawAnalysis.productName) analysis.productName = rawAnalysis.productName;
+  if (rawAnalysis.parentAsin) analysis.parentAsin = rawAnalysis.parentAsin;
+  if (rawAnalysis.lastInvestigated) analysis.lastInvestigated = rawAnalysis.lastInvestigated;
+  if (rawAnalysis.investigatedPrice) analysis.investigatedPrice = rawAnalysis.investigatedPrice;
+  if (rawAnalysis.productDescription) analysis.productDescription = rawAnalysis.productDescription;
+  if (rawAnalysis.productUsage) analysis.productUsage = rawAnalysis.productUsage;
+  if (rawAnalysis.technicalSpecs) analysis.technicalSpecs = rawAnalysis.technicalSpecs;
+
+  return analysis;
+}
+
+/**
  * 単一の調査結果ファイルをロードし、検証および変換を実行する
  */
 async function loadAndValidateInvestigation(filePath: string): Promise<InvestigationData | null> {
@@ -110,92 +183,15 @@ async function loadAndValidateInvestigation(filePath: string): Promise<Investiga
       rating: { average: 0, count: 0 },
     };
 
-    // lastInvestigatedがあればそれを優先、なければファイルの更新日時（fs.stat）を取得
-    let generatedAt: Date | null = null;
-    if (parsed.analysis.lastInvestigated) {
-      const parsedDate = new Date(parsed.analysis.lastInvestigated);
-      // Check if the date is valid
-      if (!Number.isNaN(parsedDate.getTime())) {
-        generatedAt = parsedDate;
-      }
-    }
-
-    if (!generatedAt) {
-      // ファイルの更新日時を取得（作成日時の代用）
-      const stats = await fs.stat(filePath);
-      generatedAt = stats.mtime;
-    }
-
-    // exactOptionalPropertyTypes に適合するようにマッピング
-    const analysis: InvestigationResult['analysis'] = {
-      positivePoints: parsed.analysis.positivePoints,
-      negativePoints: parsed.analysis.negativePoints,
-      useCases: parsed.analysis.useCases,
-      userImpression: parsed.analysis.userImpression,
-      recommendation: {
-        ...parsed.analysis.recommendation,
-        targetUsers: parsed.analysis.recommendation.targetUsers,
-        pros: parsed.analysis.recommendation.pros,
-        cons: parsed.analysis.recommendation.cons,
-        score: parsed.analysis.recommendation.score,
-      },
-      competitiveAnalysis: parsed.analysis.competitiveAnalysis.map((c) => {
-        const comp: CompetitiveProduct = {
-          name: c.name,
-          priceComparison: c.priceComparison,
-          featureComparison: c.featureComparison,
-          differentiators: c.differentiators,
-        };
-        if (c.asin) comp.asin = c.asin;
-        return comp;
-      }),
-      sources: parsed.analysis.sources.map((s) => {
-        const ref: SourceReference = {
-          name: s.name,
-        };
-        if (s.url) ref.url = s.url;
-        if (s.tier && s.tier !== 'primary') ref.tier = s.tier;
-        if (s.evidenceType) ref.evidenceType = s.evidenceType;
-        if (s.publishedAt) ref.publishedAt = s.publishedAt;
-        if (s.author) ref.author = s.author;
-        if (s.conflictOfInterest) ref.conflictOfInterest = s.conflictOfInterest;
-        if (s.notes) ref.notes = s.notes;
-        return ref;
-      }),
-      userStories: (parsed.analysis.userStories || []).map((s) => ({
-        userType: s.userType,
-        scenario: s.scenario,
-        experience: s.experience,
-        sentiment: s.sentiment,
-      })),
-    };
-
-    // その他の optional フィールドを安全に設定（exactOptionalPropertyTypes対策）
-    if (parsed.analysis.productName) {
-      analysis.productName = parsed.analysis.productName;
-    }
-    if (parsed.analysis.parentAsin) {
-      analysis.parentAsin = parsed.analysis.parentAsin;
-    }
-    if (parsed.analysis.lastInvestigated) {
-      analysis.lastInvestigated = parsed.analysis.lastInvestigated;
-    }
-    if (parsed.analysis.productDescription) {
-      analysis.productDescription = parsed.analysis.productDescription;
-    }
-    if (parsed.analysis.productUsage) {
-      analysis.productUsage = parsed.analysis.productUsage;
-    }
-    if (parsed.analysis.technicalSpecs) {
-      analysis.technicalSpecs = parsed.analysis.technicalSpecs;
-    }
+    const generatedAt = await resolveGeneratedAt(filePath, parsed.analysis.lastInvestigated);
+    const analysis = buildAnalysis(parsed.analysis);
 
     // InvestigationResultを構築
     const investigation: InvestigationResult = {
       sessionId: `file-${asin}`,
       product,
       analysis,
-      generatedAt: generatedAt,
+      generatedAt,
     };
 
     return {
