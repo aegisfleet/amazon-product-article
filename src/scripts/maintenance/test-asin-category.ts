@@ -11,16 +11,19 @@ try {
     process.exit(1);
   }
 
+  const title = item.itemInfo?.title?.displayValue;
+  console.log(`Product Title: ${title || 'N/A'}`);
+
   const nodes = item.browseNodeInfo?.browseNodes || [];
   console.log(`Browse Nodes Found: ${nodes.length}`);
   nodes.forEach((node: any, i: number) => {
-    const norm = CategoryNormalizer.normalize(node);
+    const norm = CategoryNormalizer.normalize(node, title);
     console.log(
       `${i}: ${node.displayName} (ID: ${node.id}) -> Main: ${norm.main}, Sub: ${norm.sub}, score: ${norm.score}, nameCount: ${norm.nameCount}, rank: ${node.salesRank ?? 'N/A'}`,
     );
   });
 
-  const result = CategoryNormalizer.selectBestCategory(nodes);
+  const result = CategoryNormalizer.selectBestCategory(nodes, title);
   console.log('\nFinal Selection:');
   console.log(JSON.stringify(result, null, 2));
 } catch (error) {
