@@ -70,9 +70,15 @@ function parseArgs(): CliOptions {
   return { threshold, parentAsin, asin, verbose, json };
 }
 
-function loadCacheMap(): Map<string, { price: string | undefined; savings: number | undefined; dealBadge: string | undefined }> {
+function loadCacheMap(): Map<
+  string,
+  { price: string | undefined; savings: number | undefined; dealBadge: string | undefined }
+> {
   const cachePath = path.join(process.cwd(), 'data', 'cache', 'paapi-product-cache.json');
-  const map = new Map<string, { price: string | undefined; savings: number | undefined; dealBadge: string | undefined }>();
+  const map = new Map<
+    string,
+    { price: string | undefined; savings: number | undefined; dealBadge: string | undefined }
+  >();
   if (!fs.existsSync(cachePath)) return map;
 
   try {
@@ -88,7 +94,9 @@ function loadCacheMap(): Map<string, { price: string | undefined; savings: numbe
         });
       }
     }
-  } catch {}
+  } catch (_err) {
+    // キャッシュファイルが存在しないか解析不能な場合は空マップを返す
+  }
   return map;
 }
 
@@ -145,10 +153,7 @@ function loadInvestigations(targetParent?: string, targetAsin?: string): Investi
   return results;
 }
 
-function groupAndFindDiscrepancies(
-  items: InvestigationItem[],
-  threshold: number,
-): DiscrepancyGroup[] {
+function groupAndFindDiscrepancies(items: InvestigationItem[], threshold: number): DiscrepancyGroup[] {
   const parentMap = new Map<string, InvestigationItem[]>();
 
   for (const item of items) {
@@ -172,8 +177,7 @@ function groupAndFindDiscrepancies(
       // 商品名の共通部分をチェック（同一製品判定の参考）
       const names = groupItems.map((i) => i.productName.toLowerCase());
       const firstWord = names[0]?.split(' ')[0] || '';
-      const isLikelySameProduct =
-        firstWord.length > 2 && names.every((n) => n.startsWith(firstWord));
+      const isLikelySameProduct = firstWord.length > 2 && names.every((n) => n.startsWith(firstWord));
 
       const sortedGroupItems = [...groupItems].sort((a, b) => b.score - a.score);
 
@@ -210,7 +214,10 @@ function printGroup(index: number, group: DiscrepancyGroup, verbose: boolean): v
   for (const item of group.items) {
     console.log(formatItemLine(item));
     if (verbose && item.scoreRationale) {
-      const lines = item.scoreRationale.split('\n').map((l) => `        ${l}`).join('\n');
+      const lines = item.scoreRationale
+        .split('\n')
+        .map((l) => `        ${l}`)
+        .join('\n');
       console.log(`      【採点根拠】:\n${lines}`);
     }
   }

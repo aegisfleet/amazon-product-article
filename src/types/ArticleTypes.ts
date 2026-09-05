@@ -29,6 +29,7 @@ export interface ArticleMetadata {
   is_amazon_direct?: boolean | undefined;
   is_amazon_haul?: boolean | undefined;
   is_furusato?: boolean | undefined;
+  is_prime?: boolean | undefined;
   municipality?: string | undefined;
   brand?: string | undefined;
   model?: string | undefined;

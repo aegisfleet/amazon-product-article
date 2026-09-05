@@ -34,7 +34,7 @@ description: 同一商品・バリエーション間でのスコア乖離の調�
 pnpm run audit:score-discrepancy
 
 # 乖離の大きいもの（例: 20点以上）を優先検出
-pnpm ts-node scripts/find-score-discrepancy.ts --threshold 20
+pnpm tsx src/scripts/maintenance/find-score-discrepancy.ts --threshold 20
 ```
 
 ### 2.2 特定の親ASIN・ASINの詳細確認（採点根拠の表示）
@@ -42,10 +42,10 @@ pnpm ts-node scripts/find-score-discrepancy.ts --threshold 20
 
 ```bash
 # 親ASINを指定して詳細表示 (-v / --verbose)
-pnpm ts-node scripts/find-score-discrepancy.ts --parent <親ASIN> -v
+pnpm tsx src/scripts/maintenance/find-score-discrepancy.ts --parent <親ASIN> -v
 
 # 特定ASINの属するグループを確認
-pnpm ts-node scripts/find-score-discrepancy.ts --asin <ASIN> -v
+pnpm tsx src/scripts/maintenance/find-score-discrepancy.ts --asin <ASIN> -v
 ```
 
 ### 2.3 親ASIN不一致および単体過大評価の確認
@@ -179,5 +179,5 @@ pnpm run build
 pnpm test
 
 # 5. スコア乖離の解消確認
-pnpm ts-node scripts/find-score-discrepancy.ts --parent <親ASIN> -v
+pnpm tsx src/scripts/maintenance/find-score-discrepancy.ts --parent <親ASIN> -v
 ```

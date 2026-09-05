@@ -98,7 +98,8 @@ GitHub Actions の `deploy-articles.yml` では、記事生成中に最新化さ
 
 ```bash
 # 指定キーワード（大文字小文字区別なし、部分一致）を含む全商品のタイムスタンプを0にリセット
-npx ts-node scripts/reset-category-cache.ts "イヤホン"
+pnpm run reset:category-cache -- "イヤホン"
+# または: npx tsx src/scripts/maintenance/reset-category-cache.ts "イヤホン"
 ```
 
 ### 5.2 ASIN単位での個別リセット
@@ -106,7 +107,8 @@ npx ts-node scripts/reset-category-cache.ts "イヤホン"
 特定商品のキャッシュのみをリセットする場合：
 
 ```bash
-npx ts-node scripts/reset-cache-timestamp.ts B003AZZS4A
+pnpm run reset:cache-timestamp -- B003AZZS4A
+# または: npx tsx src/scripts/maintenance/reset-cache-timestamp.ts B003AZZS4A
 ```
 
 ### 5.3 キャッシュステータス順ソート
@@ -114,5 +116,5 @@ npx ts-node scripts/reset-cache-timestamp.ts B003AZZS4A
 キャッシュ内のエントリをステータス順（`valid` > `invalid` > `permanent_invalid`）に並べ替えて保守性を向上させる場合：
 
 ```bash
-npx ts-node scripts/sort-cache-by-status.ts
+npx tsx src/scripts/maintenance/sort-cache-by-status.ts
 ```

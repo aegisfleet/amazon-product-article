@@ -25,7 +25,7 @@ uv run python scripts/find_incomplete_specs.py
 全体的なフィールド出現頻度や型の一貫性を確認したい場合は、`scripts/analyze-technical-specs.ts` を実行する。
 
 ```bash
-npx ts-node scripts/analyze-technical-specs.ts
+npx tsx src/scripts/maintenance/analyze-technical-specs.ts
 ```
 
 ---

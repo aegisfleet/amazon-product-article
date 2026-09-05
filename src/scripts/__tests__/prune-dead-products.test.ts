@@ -6,7 +6,7 @@ import {
   findCompetitorReferences,
   findOrphanedFiles,
   parseArgs,
-} from '../../../scripts/prune-dead-products';
+} from '../maintenance/prune-dead-products';
 
 describe('prune-dead-products 参照整合性チェック', () => {
   let tempDir: string;

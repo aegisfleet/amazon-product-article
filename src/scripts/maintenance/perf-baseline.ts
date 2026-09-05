@@ -1,12 +1,11 @@
-
-import { ProductSearcher } from '../src/search/ProductSearcher';
-import { CreatorsAPIClient } from '../src/api/CreatorsAPIClient';
+import type { CreatorsAPIClient } from '../../api/CreatorsAPIClient';
+import { ProductSearcher } from '../../search/ProductSearcher';
 
 // Mock CreatorsAPIClient
 const mockClient = {
   getProductDetails: async (asin: string) => {
     // Simulate API call delay
-    await new Promise(resolve => setTimeout(resolve, 100));
+    await new Promise((resolve) => setTimeout(resolve, 100));
     return {
       asin,
       title: `Product ${asin}`,
@@ -20,7 +19,7 @@ const mockClient = {
 
   getMultipleProductDetails: async (asins: string[]) => {
     // Simulate API call delay
-    await new Promise(resolve => setTimeout(resolve, 150));
+    await new Promise((resolve) => setTimeout(resolve, 150));
     const results = new Map();
     for (const asin of asins) {
       results.set(asin, {
@@ -34,7 +33,7 @@ const mockClient = {
       });
     }
     return { results, permanentFailures: new Set() };
-  }
+  },
 } as unknown as CreatorsAPIClient;
 
 async function benchmark() {
@@ -51,8 +50,6 @@ async function benchmark() {
   console.log(`Average time per ASIN: ${(end - start) / asins.length}ms`);
 }
 
-try {
-  await benchmark();
-} catch (err) {
+benchmark().catch((err) => {
   console.error(err);
-}
+});

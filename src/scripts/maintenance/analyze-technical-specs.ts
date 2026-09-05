@@ -18,7 +18,7 @@ interface NestedFieldAnalysis {
   childFields: Map<string, SpecAnalysis>;
 }
 
-const investigationsDir = path.join(__dirname, '../data/investigations');
+const investigationsDir = path.join(__dirname, '../../../data/investigations');
 
 // 集計結果
 const fieldStats: Map<string, SpecAnalysis> = new Map();
