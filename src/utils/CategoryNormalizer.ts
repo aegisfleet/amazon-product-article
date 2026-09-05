@@ -1,4 +1,7 @@
 import type { CreatorsAPIBrowseNode } from '../types/CreatorsAPITypes';
+import { HIGH_PRIORITY_KEYWORDS, PREFERRED_KEYWORDS } from './category/CategoryConstants';
+import { CategorySanitizer } from './category/CategorySanitizer';
+import { CategoryValidator } from './category/CategoryValidator';
 
 export type BrowseNode = CreatorsAPIBrowseNode;
 
@@ -9,141 +12,13 @@ export interface NormalizedCategory {
   score: number;
 }
 
+/**
+ * CategoryNormalizer
+ * Creators APIのBrowseNode階層を走査し、最適なカテゴリ分類を選定するファサードクラス
+ */
 export class CategoryNormalizer {
-  private static readonly PREFERRED_KEYWORDS = [
-    'マスク',
-    '使い捨てマスク',
-    'ボードゲーム',
-    'アナログゲーム',
-    'カードゲーム',
-    'おもちゃ',
-    'ホビー',
-    'フィギュア',
-    'プラモデル',
-    '画材',
-    '文房具',
-    '文具',
-    '絵具',
-    'オフィス用品',
-    '収納',
-    'チャイルドシート',
-    'ジュニアシート',
-    'ベビーカー',
-    '抱っこ紐',
-    'おむつ',
-    '紙おむつ',
-    'ベビーおむつ',
-    'ゲーミングチェア',
-    'デスクチェア',
-    'パソコンチェア',
-    'オフィスチェア',
-    'ワークチェア',
-    'Kindle',
-    'Fire',
-    'Echo',
-    'Alexa',
-    'Ring',
-    'Amazonデバイス',
-    'コントローラー',
-    'ゲームパッド',
-    'PC用ゲームパッド',
-    'ヘッドセット',
-    'マウス',
-    'キーボード',
-    '替えブラシ',
-    '電動歯ブラシ',
-    '歯ブラシ',
-    '口腔洗浄器',
-    'シェーバー',
-    'オーラルケア',
-    '理美容',
-    'マッサージ機',
-    '健康家電',
-    'ロボット',
-    'ガンダム',
-    '美顔器',
-    '美容家電',
-    'ブロック',
-    'レゴ',
-    'Lego',
-    'ベビー',
-    'マタニティ',
-    'ビジネス',
-    'ペット',
-    '猫',
-    '犬',
-    'キャット',
-    'ドッグ',
-    'キャットフード',
-    'ドッグフード',
-    'ヘアケア',
-    'マイク',
-    'ビジネス・経済',
-    'マネープラン',
-    '節約・家計管理',
-    '投資',
-    '自己啓発',
-    '実用書',
-    'コミック・ラノベ',
-    '暮らし・健康・子育て',
-    'コンタクトレンズ',
-    'カラコン',
-    'キャンプ',
-    'アウトドア',
-    'ハンドル',
-    'ハンドルコントローラー',
-    'スマートフォン',
-    'スマホ',
-    '携帯電話',
-    'SDカード',
-    'メモリーカード',
-    'ドッキングステーション',
-    'USBハブ',
-    'ウェアラブルカメラ',
-    'アクションカム',
-    'アクションカメラ',
-    'デジタルカメラ',
-    'ビデオカメラ',
-    '一眼レフ',
-    'ミラーレス',
-    'カメラ',
-    'Vlogカメラ',
-    '掃除機',
-    'クリーナー',
-    'スチームクリーナー',
-    'スチーム洗浄機',
-    '洗浄機',
-  ];
-
-  private static readonly HIGH_PRIORITY_KEYWORDS = [
-    'microSDカード',
-    'microSD',
-    'ヘアドライヤー',
-    'ドライヤー',
-    'カールドライヤー',
-    '電動頭皮ブラシ',
-    '頭皮マッサージ',
-    'ヘッドスパ',
-    '頭皮マッサージブラシ',
-    'ヘアアイロン',
-    'ヘアストレートアイロン',
-    'ヘアストレートナー',
-    'ヘアマルチスタイラー',
-    'ヘアブラシ',
-    'ヘアオイル',
-    'ヘアワックス',
-    'ヘアカラー',
-    'シャンプー',
-    'トリートメント',
-    'リンス',
-    '育毛',
-    'トニック',
-    'スカルプ',
-  ];
-
   /**
-   * Normalize a BrowseNode into a category
-   * Policy: Use the Amazon category as is, but filter out inappropriate ones.
+   * 単一の BrowseNode をカテゴリに正規化する
    */
   public static normalize(node?: BrowseNode, title?: string): NormalizedCategory {
     if (!node) {
@@ -164,7 +39,21 @@ export class CategoryNormalizer {
   }
 
   /**
-   * Collect all valid display names up the tree
+   * カテゴリ名の妥当性を検証する（CategoryValidatorへの委譲）
+   */
+  public static isValidCategoryName(originalName: string, title?: string): boolean {
+    return CategoryValidator.isValidCategoryName(originalName, title);
+  }
+
+  /**
+   * カテゴリ名をサニタイズ・詳細化する（CategorySanitizerへの委譲）
+   */
+  public static sanitizeCategoryName(name: string, title?: string): string {
+    return CategorySanitizer.sanitize(name, title);
+  }
+
+  /**
+   * BrowseNode階層ツリーを親方向に走査し、有効なカテゴリ名一覧を収集する
    */
   private static collectValidHierarchyNames(node: BrowseNode, title?: string): string[] {
     const validNames: string[] = [];
@@ -175,13 +64,9 @@ export class CategoryNormalizer {
       const dn = currentNode.displayName || currentNode.DisplayName;
 
       const validCFN =
-        cfn && CategoryNormalizer.isValidCategoryName(cfn, title)
-          ? CategoryNormalizer.sanitizeCategoryName(cfn, title)
-          : null;
+        cfn && CategoryValidator.isValidCategoryName(cfn, title) ? CategorySanitizer.sanitize(cfn, title) : null;
       const validDN =
-        dn && CategoryNormalizer.isValidCategoryName(dn, title)
-          ? CategoryNormalizer.sanitizeCategoryName(dn, title)
-          : null;
+        dn && CategoryValidator.isValidCategoryName(dn, title) ? CategorySanitizer.sanitize(dn, title) : null;
 
       const bestName = CategoryNormalizer.pickBestName(validCFN, validDN);
       if (bestName) {
@@ -195,7 +80,7 @@ export class CategoryNormalizer {
   }
 
   /**
-   * Pick the best name between contextFreeName and displayName
+   * contextFreeName と displayName の間でより適切な名前を選択する
    */
   private static pickBestName(cfn: string | null, dn: string | null): string | null {
     if (cfn && dn) {
@@ -217,18 +102,18 @@ export class CategoryNormalizer {
   }
 
   /**
-   * Calculate score based on preferred keywords
+   * 優先キーワードに基づくスコアを算出する
    */
   private static calculateScore(names: string[]): number {
     const hasHighPriorityKeyword = names.some((name) =>
-      CategoryNormalizer.HIGH_PRIORITY_KEYWORDS.some((keyword) => name.toLowerCase().includes(keyword.toLowerCase())),
+      HIGH_PRIORITY_KEYWORDS.some((keyword) => name.toLowerCase().includes(keyword.toLowerCase())),
     );
     if (hasHighPriorityKeyword) {
       return 20;
     }
 
     const hasPreferredKeyword = names.some((name) =>
-      CategoryNormalizer.PREFERRED_KEYWORDS.some((keyword) => {
+      PREFERRED_KEYWORDS.some((keyword) => {
         if (keyword === 'ペット' && name.includes('カーペット')) {
           return name.replaceAll('カーペット', '').toLowerCase().includes(keyword.toLowerCase());
         }
@@ -240,12 +125,12 @@ export class CategoryNormalizer {
   }
 
   /**
-   * Get fallback category when no valid names found
+   * 有効なノード名が見つからなかった場合のフォールバックカテゴリを取得する
    */
   private static getFallbackCategory(node: BrowseNode): NormalizedCategory {
     const fallbackName = node.displayName || node.DisplayName || 'Unknown';
-    const subName = CategoryNormalizer.isValidCategoryName(fallbackName)
-      ? CategoryNormalizer.sanitizeCategoryName(fallbackName)
+    const subName = CategoryValidator.isValidCategoryName(fallbackName)
+      ? CategorySanitizer.sanitize(fallbackName)
       : '一般';
 
     return {
@@ -257,8 +142,8 @@ export class CategoryNormalizer {
   }
 
   /**
-   * Select the best category from a list of BrowseNodes
-   * Prioritizes specific categories (depth) and preferred keywords
+   * 複数の BrowseNode の中から最適なカテゴリを選択する
+   * 優先基準: Specificity (深さ) > スコア (優先ドメイン) > 売れ筋ランキング
    */
   public static selectBestCategory(
     nodes: BrowseNode[],
@@ -268,27 +153,26 @@ export class CategoryNormalizer {
       return { main: 'その他／全般', sub: 'Unknown', nameCount: 0, score: -1 };
     }
 
-    // 1. Normalize and Sort nodes
+    // 1. ノードの正規化とソート
     const sortedNodes = [...nodes].sort((a: BrowseNode, b: BrowseNode) => {
       const normA = CategoryNormalizer.normalize(a, title);
       const normB = CategoryNormalizer.normalize(b, title);
 
-      // Priority Policy: Depth (Specificity) > Score (Domain preference) > SalesRank
-      // 1. Depth (Specificity): Prefer most specific leaf categories
+      // 1. Depth (Specificity): 最も具体的な末端カテゴリを優先
       if (normB.nameCount !== normA.nameCount) {
         return normB.nameCount - normA.nameCount;
       }
-      // 2. Score (Domain preference)
+      // 2. Score (Domain preference): 優先キーワード一致スコア
       if (normB.score !== normA.score) {
         return normB.score - normA.score;
       }
-      // 3. Sales Rank
+      // 3. Sales Rank: 売れ筋ランキング
       const rankA = a.salesRank ?? a.SalesRank ?? Number.MAX_SAFE_INTEGER;
       const rankB = b.salesRank ?? b.SalesRank ?? Number.MAX_SAFE_INTEGER;
       return rankA - rankB;
     });
 
-    // 2. Pick the first valid category
+    // 2. 「その他／全般」以外の最初の有効カテゴリを選択
     for (const node of sortedNodes) {
       const normalized = CategoryNormalizer.normalize(node, title);
 
@@ -298,7 +182,7 @@ export class CategoryNormalizer {
       }
     }
 
-    // 3. Fallback to best available node even if it's "Other"
+    // 3. フォールバック: 有効カテゴリがない場合は最上位ノードを使用
     const bestNode = sortedNodes[0];
     if (bestNode) {
       return CategoryNormalizer.attachBrowseNodeId(CategoryNormalizer.normalize(bestNode, title), bestNode);
@@ -308,7 +192,7 @@ export class CategoryNormalizer {
   }
 
   /**
-   * Resolve sub-category when empty or too generic
+   * サブカテゴリが空または「一般」の場合、別ノードからサブカテゴリを補完する
    */
   private static resolveSubCategory(normalized: NormalizedCategory, sortedNodes: BrowseNode[], title?: string): void {
     if (normalized.sub && normalized.sub !== '一般') {
@@ -324,7 +208,7 @@ export class CategoryNormalizer {
   }
 
   /**
-   * Attach browseNodeId to normalized category result
+   * 抽出結果に browseNodeId を付与する
    */
   private static attachBrowseNodeId(
     normalized: NormalizedCategory,
@@ -336,566 +220,5 @@ export class CategoryNormalizer {
       result.browseNodeId = nodeId;
     }
     return result;
-  }
-
-  /**
-   * Get a normalized name for comparison
-   */
-  private static getComparisonName(name: string): string {
-    return name
-      .toLowerCase()
-      .replaceAll(/[＿_]/g, ' ') // アンダースコアをスペースに
-      .replaceAll(/\s+/g, ' ') // 連続スペースを1つに
-      .trim();
-  }
-
-  /**
-   * Check if a category name is valid
-   */
-  public static isValidCategoryName(originalName: string, title?: string): boolean {
-    if (!originalName) return false;
-
-    const name = CategoryNormalizer.getComparisonName(originalName);
-
-    if (
-      name === 'ドラッグストア' ||
-      name === '肩こり・腰痛・筋肉痛緩和' ||
-      name === '保温・保冷カップ・マグ' ||
-      name === 'アダプタ・充電器・ケーブル'
-    ) {
-      return true;
-    }
-
-    // 特定の広範なカテゴリをタイトルから推測して救済
-    if ((name === '家電＆カメラ' || name === 'カテゴリー別') && title) {
-      const lowerTitle = title.toLowerCase();
-      if (
-        lowerTitle.includes('イヤホン') ||
-        lowerTitle.includes('ヘッドホン') ||
-        lowerTitle.includes('ヘッドセット') ||
-        lowerTitle.includes('イヤーバッド') ||
-        lowerTitle.includes('earbuds') ||
-        lowerTitle.includes('headphones')
-      ) {
-        return true;
-      }
-      if (lowerTitle.includes('テレビ') || lowerTitle.includes('tv')) {
-        return true;
-      }
-      if (lowerTitle.includes('充電器') || lowerTitle.includes('急速充電器') || lowerTitle.includes('usb充電器')) {
-        return true;
-      }
-    }
-
-    // スマホ本体・スマートフォン本体カテゴリの誤爆防止（タイトルにスマホ関連キーワードがない場合は無効）
-    if (
-      (name === 'スマホ本体' ||
-        name === 'スマートフォン本体' ||
-        name === '携帯電話・スマートフォン本体' ||
-        name === '携帯電話本体') &&
-      title
-    ) {
-      const lowerTitle = title.toLowerCase();
-      const phoneKeywords = [
-        'スマホ',
-        'スマートフォン',
-        'スマートホン',
-        'iphone',
-        'galaxy',
-        'pixel',
-        'xperia',
-        'aquos',
-        'motorola',
-        'oppo',
-        'redmi',
-        'poco',
-        'nothing',
-        '携帯電話',
-        'simフリー',
-        'sim free',
-        'arrows',
-        'zenfone',
-        'honor',
-        'huawei',
-        'xiaomi',
-        'moto',
-        'y!mobile',
-        'ワイモバイル',
-        'android',
-        'アンドロイド',
-        'uq mobile',
-        'uqモバイル',
-        '格安スマホ',
-      ];
-      if (!phoneKeywords.some((k) => lowerTitle.includes(k))) {
-        return false;
-      }
-    }
-
-    // シューズ・履物カテゴリの誤爆防止（タイトルに靴・履物関連キーワードがない場合は無効）
-    const isFootwearCategory =
-      /シューズ|スニーカー|サンダル|ブーツ|スリッポン|運動靴|パンプス|ローファー|ミュール|長靴|足袋|上履き/.test(name);
-    if (isFootwearCategory && title) {
-      const lowerTitle = title.toLowerCase();
-      const footwearKeywords = [
-        'シューズ',
-        '靴',
-        'スニーカー',
-        'サンダル',
-        'ブーツ',
-        'スリッポン',
-        '運動靴',
-        'パンプス',
-        'ローファー',
-        'ミュール',
-        '長靴',
-        '足袋',
-        '上履き',
-        'インソール',
-        'シュー',
-        'shoe',
-        'sneaker',
-        'boot',
-        'sandal',
-      ];
-      if (!footwearKeywords.some((k) => lowerTitle.includes(k))) {
-        return false;
-      }
-    }
-
-    // 猫用トイレ・猫用品トイレカテゴリの誤爆防止（タイトルに猫・ペット関連キーワードがない場合は無効）
-    const isCatToiletCategory = /猫用品\s*トイレ用品|猫用トイレ/.test(name);
-    if (isCatToiletCategory && title) {
-      const lowerTitle = title.toLowerCase();
-      const catKeywords = ['猫', 'ねこ', 'ネコ', 'キャット', 'cat', 'kitten', 'ペット', 'pet'];
-      if (!catKeywords.some((k) => lowerTitle.includes(k))) {
-        return false;
-      }
-    }
-
-    // 1. Whitelist (Highest Priority)
-    const whitelist = [
-      '磁気・チタン・ゲルマニウムアクセサリー',
-      '周辺機器・アクセサリ',
-      'キーボード・マウス・入力機器',
-      '体重・体脂肪・体組成計',
-      'ベビーカー',
-      '草刈機・刈払機パーツ・アクセサリ',
-      '育毛・養毛用トニック・エッセンス',
-      'ヘアケアギフトセット',
-      'ヘアケア・カラー・スタイリング',
-      '寝袋・シュラフ用ピロー(枕)',
-      '寝袋・ベッド・マット',
-    ];
-    if (whitelist.some((item) => name.includes(CategoryNormalizer.getComparisonName(item)))) {
-      return true;
-    }
-
-    // 2. Structural & General Invalid Patterns (Regex)
-    const invalidPatterns = [
-      /sale|off|coupon|ranking|best|week|fair|event|campaign|bauhutte|free shipping|test|multibuy|experiment/i,
-      /セール|オフ(?!ィス)|クーポン|ランキング|おすすめ|ウィーク|フェア|イベント|キャンペーン/,
-      /企画|向け|ほか$|など$|他(?:$|[\s、])|新商品|すべて$|特設ページ|発売日お届け|父の日/,
-      /替えブラシ[_＿\s]*[sｓ]/i,
-      /割引|お買い得|お買得|買得|利用シーン|あわせ買い|合わせ買い|全商品$|関連製品$|新製品$|ヤスいいね|対象商品|人気商品|レビュー評価/,
-      /まとめ買い|まとめでお得|中止|hqp|紐付|新生活|入園入学/,
-      /定期おトク便/,
-      /ポイントアップ/,
-      /^・.*・$/,
-      /non\s*manga/i,
-      /^kos_/i,
-      /winter favorites/i,
-      /高評価ブランド/,
-      /今旬/,
-      /サンプリング除外/,
-      /おもちゃ.*column/i,
-      /node\d+/i,
-      /特集/,
-      /新着/,
-      /新規発売/,
-      /予約/,
-      /限定/,
-      /recommendation/i,
-      /eligible/i,
-      /widget/i,
-      /smartphones/i,
-      /l\d+.*cat$/i,
-      /^all /i,
-      /^prime /i,
-      /[【】|()（）※]/,
-      /^家電$/,
-      /^アクセサリ$/,
-      /^アクセサリー$/,
-      /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}/i,
-      // Block numeric-only names (e.g. "6", "100")
-      /^[0-9\uff10-\uff19]+$/,
-      /デジタルの日/,
-      /non\s*series/i,
-      /高評価/,
-      /注目/,
-      // Block "Name [ID]" pattern (e.g. "家電 [124048011]")
-      /[^[\]]{1,200} \[\d+\]/,
-      /arborist merchandising root/i,
-      // Generic "Store" pages
-      /(?:ストア|store)/i,
-      /ブラックフライデー/i,
-      /文房具・オフィス用品ヤスいいね対象/,
-      /日本ヒルズ・コルゲート/i,
-      /umall/i,
-      /祝い|(?<!グルメ|水産加工品|魚介類|スイーツ|お菓子|調味料|スープ|ドリンク)ギフト/i,
-      /brandname変更/i,
-      /deal/i,
-      /^hpc/i,
-      /^3p\b/i,
-      /\w*afc[\s\d]*under/i,
-      /\w+[\s\d]*under\d+/i,
-      /^\d{2}\s*ビジネス/,
-      /^\d{2}\s*リビング/,
-      /spring must haves/i,
-      /(?:kindle|無料|[0-9０-９]+万円|円|テスト|test|マッサージャーほか健康家電|[>＞]|表示されている方限定|widget)/i,
-      /(?:amazon\s*global|amazonglobal|babel|コクヨ|beauty|パントリー|本日の|特選品|cml|customers' most-loved|ソニー|9999$|ポイント還元本|書籍タイトル|free\s*shipping)/i,
-      // Age ranges and price ranges
-      /\d+[歳才]+～/,
-      /\d+(?:,\d+)?-\d+(?:,\d+)?円/,
-      /ゲージ/,
-      // Machine-generated IDs (e.g. L202StorageItems02Sub, L2_02_StorageItems_02Sub)
-      /l[\d\s_]+[a-z]+[\d\s_]+(?:cat|sub)/i,
-      // Device and Store management pages
-      /(?:kindle|fire|echo|alexa|amazon|ring).*(?:一覧|ページ|ストア|store|popup|体験|イベント)/i,
-      // Brand-specific promotion/coordinated pages and brand store categories
-      /(?:sony|ソニー|panasonic|パナソニック|logicool|ロジクール|elecom|エレコム).*(?:特集|一覧|プロモーション|キャンペーン|限定|コーディネート)/i,
-      /(?:iris|アイリス|brother|ブラザー|nestle|ネスレ|cleansui|クリンスイ|luminous|ルミナス).*(?:特集|一覧|プロモーション|キャンペーン|限定|コーディネート)/i,
-      /^(?:(?:sony|ソニー|panasonic|パナソニック|logicool|ロジクール|elecom|エレコム|sanwasupply|サンワサプライ|anker|アンカー|buffalo|バッファロー|iris|アイリスオーヤマ|アイリス|brother|ブラザー|nestle|ネスレ|cleansui|クリンスイ|luminous|ルミナス|yamazen|山善|huawei|ファーウェイ|fitbit|フィットビット)[\s\u3000]*)+(?:[-－–—:・]|ストア|store|usb|ウェブカメラ|カメラ|イヤホン|ヘッドセット|ケーブル|マウス|スマートフォン|スマートウォッチ|携帯電話|衣類|ふとん乾燥機|スマホーム|充電|テレビ|話題の|$)/i,
-      /話題の/,
-      /日用品・生活必需品\s*[-－–—:]/i,
-      /^panasonic-ha-/i,
-      /^(?:philips|フィリップス)\s*(?:理美容|美容|ビューティ)/i,
-      /^おうちでヘアケア/i,
-      /毎日使う水/i,
-      /primeday|black\s*friday|ブラックフライデー|新生活|入園入学|父の日|母の日/i,
-      /^燃料$/,
-      /なるほど家電/i,
-      /iswhitegloverequired/i,
-      /秀和システム.*コレクション/i,
-      /プロも納得/i,
-      /スチールラックのすごい収納/i,
-      /収納ラック.*セット/i,
-      /理美容以外の本体/i,
-      /ドラッグストア\s*HOTW/i,
-      /第[123一二三]類医薬品/i,
-      /濫用の恐れ/i,
-      /その他の.*(?:書籍|本|関連)$/,
-      /banner|installments|membership/i,
-      /productalert|stampcard/i,
-      /3m[\s_-]*aone/i,
-      /cospop/i,
-      /など.*お得/,
-      /のサポートアイテム$/,
-      /^おうちで/i,
-      /野外フェス/i,
-      /鈴鹿\d*耐/i,
-      /で役立つ/i,
-      /data\s*warehouse/i,
-      /dynamic\s*selection/i,
-      /ExcludeASIN/i,
-      /返品不可/i,
-      /お客様都合/i,
-      /ラインナップ/i,
-      /ガイド|guide/i,
-      /\b[A-Za-z0-9]+All$/i,
-      /^moto\s+/i,
-      /おうちで機種変更/i,
-      /cero/i,
-      /c-tax/i,
-      /^(?:すべて|全て)の/,
-      /(?:すべて|全て)\d*$/,
-      /大集合/,
-      /一覧$/,
-      /^pd[-_\s]/i,
-      /^new to amazon$/i,
-    ];
-
-    if (invalidPatterns.some((pattern) => pattern.test(name))) {
-      return false;
-    }
-
-    // 3. Dot Count Check
-    const dotCount = (name.match(/・/g) || []).length;
-    if (dotCount >= 2) {
-      return false;
-    }
-
-    // 4. Blacklist (Full Match after normalization)
-    const blacklist = [
-      '家電＆カメラ',
-      '家電・カメラ',
-      'electronics',
-      'arborist merchandising root',
-      'pony k',
-      'babel 6-2',
-      'calendar test',
-      'test',
-      'テスト',
-      '面だし用asin',
-      'hair care',
-      'pbhome&kitchen9999',
-      'panasonic-ha-hotairstylers',
-      'umall',
-      'sns acquisition test hpc asins',
-      'シャープの家電がお買い得',
-      'ジュニアシート 3歳頃から',
-      'チャイルドシート 1歳頃から',
-      'チャイルドシート 新生児から',
-      'カテゴリー別',
-      '卒園式・入学式の撮影テクニック',
-      'yobi',
-      'p&g',
-      '定期おトク便',
-      '介護用品・生理用品',
-      '花王',
-      'panasonic beauty',
-      'twinbird',
-      'panasonic ヘアケア',
-      'パナソニック ヘアケア',
-      'パナソニック ヘアードライヤー',
-      'おうちでヘアケア',
-      'アウトドア用品',
-      'スポーツ＆アウトドア',
-      'sports & outdoors',
-      'ホーム・日用品',
-      '日用品・生活必需品：おもちゃ',
-      'featured categories',
-      'omron（オムロン）',
-      '電池利用商品',
-      'io data',
-      'logicool',
-      'casio',
-      'lenovo',
-      'drugstore - amazonglobal',
-      'pb_home&kitchen',
-      '新生活ギフト',
-      'ya-man',
-      'others',
-      'pb_beauty',
-      'パントリー',
-      '対象asin',
-      '面出し用asin',
-      'internal',
-      'サンワサプライ',
-      'pb_pc',
-      'ベビー＆マタニティ',
-      'ホーム＆キッチン',
-      '食品',
-      '酒のみ',
-      '食品・飲料・お酒',
-      '服＆ファッション小物',
-      'beauty store',
-      'ビューティー',
-      'ビューティーストア',
-      'diapers',
-      'シャープ',
-      'special features stores',
-      'self service',
-      'amazon global',
-      'amazon basics',
-      'amazon basic',
-      'amazon store',
-      'その他',
-      'kindle本',
-      'ジャンル別',
-      'custom stores',
-      'custom stores navigation',
-      '無料本',
-      'キャンペーン',
-      'まとめ買い',
-      '期間限定ポイント',
-      'h&s',
-      'panasonic-ha-',
-      'amazonベーシック',
-      'kindle popup',
-      'kindle書籍 5冊購入で15%ポイント還元',
-      'kindle電子書籍リーダー',
-      '文房具図鑑',
-      '受験対策文房具',
-      'コクヨの文房具・事務用品',
-      '美容・健康家電',
-      '理美容・健康家電',
-      '理美容家電',
-      'kindle書籍',
-      'kindle unlimited',
-      'おせちhqp紐付用',
-      'amazonglobal',
-      'クリスマスギフト･コフレ',
-      '日用品・生活必需品 - ビューティー',
-      '日用品・生活必需品 - ペット用品',
-      'スッキリ片づける・収納する',
-      'カー＆バイク用品',
-      '車＆バイク',
-      'kindleオーナー ライブラリー',
-      'kindle本 (電子書籍) まとめ買いキャンペーン',
-      'kindle本 ポイントアップチャンスキャンペーン',
-      'kindle本はじめての購入に使える70%offクーポン',
-      'kindle events',
-      'ポイントフェア',
-      'まとめ買い(期間限定ポイント)',
-      '冬の読書応援',
-      '秋',
-      '冬',
-      '春',
-      '夏',
-      'amazon',
-      'baby',
-      'ベビー',
-      'gt managed stores',
-      'スポーツ・アウトドア',
-      'sports - amazonglobal free shipping',
-      'babel',
-      'nonmanga_',
-      'new release non manga',
-      'ブランド別インテリアコーディネート',
-      'piano・keyboard｜headphones',
-      'ピアノ・キーボード｜ヘッドホン',
-      'プライム感謝祭ポイントアップ商品',
-      'home&kitchen用品ポイントアップ+1% 1',
-      'ホーム&キッチン用品ポイントアップ+1% 1',
-      '文具・事務用品（その他）',
-      '日本ヒルズ・コルゲート199t',
-      '新学期文具',
-      '替えブラシs',
-      '家電 本体',
-      '家電 新商品',
-      '理美容家電 新商品',
-      '理美容家電新商品特集',
-      'スキンケア他美容家電新商品',
-      '白系家電特集',
-      '母の日特集',
-      'j-pop・日本の音楽',
-      'パントリー事務用品テープ・結束具',
-      'ベビー・幼児用おもちゃ',
-      'ベビー家具・収納',
-      'ネスレ日本',
-      '本',
-      '書籍',
-      '和書',
-      'Kindle本',
-      '収納・生活雑貨',
-      'タケオキクチ、コムサイズム他 ビジネスファッション・小物',
-      'ゲーミングチェア＆デスク',
-      '特選健康家電 オムロン、タニタ、ルルド、スライブ',
-    ];
-
-    if (blacklist.includes(name)) {
-      return false;
-    }
-
-    return true;
-  }
-
-  private static sanitizeCategoryName(name: string, title?: string): string {
-    // Remove internal prefixes like PJ_
-    const sanitized = name.replace(/^PJ_/i, '');
-    // Normalize spaces (including NBSP \u00a0) and remove special characters
-    let finalName = sanitized
-      .replaceAll(/[\u00a0\s]+/g, ' ')
-      .replaceAll(/[【】|()（）_※]/g, '')
-      .trim();
-
-    finalName = CategoryNormalizer.resolveControllerCategory(finalName, title);
-    finalName = CategoryNormalizer.resolveTvCategory(finalName, title);
-    finalName = CategoryNormalizer.resolveBikeAccessoryCategory(finalName, title);
-
-    if (finalName === 'イヤ・ヘッド') {
-      finalName = 'イヤホン・ヘッドホン';
-    }
-
-    return CategoryNormalizer.resolveGenericCategory(finalName, title);
-  }
-
-  private static resolveBikeAccessoryCategory(name: string, title?: string): string {
-    if (name !== 'バイクアクセサリ' || !title) {
-      return name;
-    }
-    const lowerTitle = title.toLowerCase();
-    if (lowerTitle.includes('ドリンクホルダー')) {
-      return 'バイク用ドリンクホルダー';
-    }
-    const mountKeywords = [
-      'スマホホルダー',
-      'スマートフォンホルダー',
-      'スマホマウント',
-      'スマートフォンマウント',
-      'マウント',
-      'ホルダー',
-      'ステー',
-      'バークランプ',
-      'クランプマウント',
-    ];
-    if (mountKeywords.some((k) => lowerTitle.includes(k))) {
-      return 'バイク用マウントステー・ホルダー';
-    }
-    return name;
-  }
-
-  private static resolveControllerCategory(name: string, title?: string): string {
-    if (!name.includes('ハンドル・ジョイスティック') && name !== 'ハンドルコントローラー') {
-      return name;
-    }
-    if (!title) {
-      return 'ハンドルコントローラー';
-    }
-    const isGamepad = ['コントローラー', 'ゲームパッド', 'DualSense', 'OCTA', 'コマンダー', 'パッド'].some((k) =>
-      title.includes(k),
-    );
-    const isWheel = ['ステアリング', 'レーシングホイール', 'ハンコン', 'フライトスティック'].some((k) =>
-      title.includes(k),
-    );
-    return isGamepad && !isWheel ? 'コントローラー・周辺機器' : 'ハンドルコントローラー';
-  }
-
-  private static resolveTvCategory(name: string, title?: string): string {
-    const lowerName = name.toLowerCase();
-    const isTv = lowerName.endsWith('テレビ') || lowerName.startsWith('テレビ') || lowerName.includes('tv');
-    if (!isTv) {
-      return name;
-    }
-    const excludedKeywords = [
-      'hdd',
-      'リモコン',
-      'チューナー',
-      '壁掛け',
-      '台',
-      'スタンド',
-      'パーツ',
-      '部品',
-      'カバー',
-      'アンテナ',
-      'ゲーム',
-    ];
-    if (excludedKeywords.some((k) => lowerName.includes(k))) {
-      return name;
-    }
-    if (title && (title.toLowerCase().includes('有機el') || title.toLowerCase().includes('oled'))) {
-      return '有機ELテレビ';
-    }
-    return '液晶テレビ';
-  }
-
-  private static resolveGenericCategory(name: string, title?: string): string {
-    if ((name !== '家電＆カメラ' && name !== 'カテゴリー別') || !title) {
-      return name;
-    }
-    const lowerTitle = title.toLowerCase();
-    const headphoneKeywords = ['イヤホン', 'ヘッドホン', 'ヘッドセット', 'イヤーバッド', 'earbuds', 'headphones'];
-    if (headphoneKeywords.some((k) => lowerTitle.includes(k))) {
-      return 'イヤホン・ヘッドホン';
-    }
-    if (lowerTitle.includes('テレビ') || lowerTitle.includes('tv')) {
-      return lowerTitle.includes('有機el') || lowerTitle.includes('oled') ? '有機ELテレビ' : '液晶テレビ';
-    }
-    const chargerKeywords = ['充電器', '急速充電器', 'usb充電器'];
-    if (chargerKeywords.some((k) => lowerTitle.includes(k))) {
-      return 'アダプタ・充電器・ケーブル';
-    }
-    return name;
   }
 }
