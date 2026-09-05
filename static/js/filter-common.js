@@ -276,17 +276,9 @@ function formatInvestigatedDate(lastInvestigated) {
   return lastInvestigated;
 }
 
-// --- Card Sub Row (Compare & Favorite Buttons) ---
-function renderCardSubRow(p) {
-  const row = document.createElement('div');
-  row.className = 'card-footer-row card-footer-row-sub';
-
+// --- Card Helper Functions for Compare / Favorite / Shop URLs ---
+function setupCompareButton(compareBtn, p) {
   const titlePrefix = p.title ? `${p.title}を` : '';
-
-  // 1. Compare Button
-  const compareBtn = document.createElement('button');
-  compareBtn.type = 'button';
-  compareBtn.className = 'btn-compare-card';
   compareBtn.dataset.compareBtn = '1';
   compareBtn.dataset.asin = p.asin || '';
   compareBtn.dataset.title = p.title || '';
@@ -306,7 +298,6 @@ function renderCardSubRow(p) {
     specsValue = JSON.stringify(p.specs);
   }
   compareBtn.dataset.specs = specsValue;
-  compareBtn.setAttribute('aria-pressed', 'false');
 
   const isCompared = globalThis.Compare && typeof globalThis.Compare.isCompared === 'function' && globalThis.Compare.isCompared(p.asin);
   if (isCompared) {
@@ -314,26 +305,23 @@ function renderCardSubRow(p) {
     compareBtn.setAttribute('aria-pressed', 'true');
     compareBtn.setAttribute('aria-label', `${titlePrefix}比較から削除`);
   } else {
+    compareBtn.classList.remove('is-compared');
+    compareBtn.setAttribute('aria-pressed', 'false');
     compareBtn.setAttribute('aria-label', `${titlePrefix}比較に追加`);
   }
 
-  const compareIcon = document.createElement('span');
-  compareIcon.className = 'material-symbols-outlined compare-icon';
-  compareIcon.setAttribute('aria-hidden', 'true');
-  compareIcon.textContent = isCompared ? 'check_circle' : 'balance';
+  const compareIcon = compareBtn.querySelector('.compare-icon');
+  if (compareIcon) {
+    compareIcon.textContent = isCompared ? 'check_circle' : 'balance';
+  }
+  const compareLabel = compareBtn.querySelector('.compare-label');
+  if (compareLabel) {
+    compareLabel.textContent = isCompared ? '比較中' : '比較';
+  }
+}
 
-  const compareLabel = document.createElement('span');
-  compareLabel.className = 'compare-label';
-  compareLabel.textContent = isCompared ? '比較中' : '比較';
-
-  compareBtn.appendChild(compareIcon);
-  compareBtn.appendChild(compareLabel);
-  row.appendChild(compareBtn);
-
-  // 2. Favorite Button
-  const favBtn = document.createElement('button');
-  favBtn.type = 'button';
-  favBtn.className = 'btn-favorite-card';
+function setupFavoriteButton(favBtn, p) {
+  const titlePrefix = p.title ? `${p.title}を` : '';
   favBtn.dataset.favoriteBtn = '1';
   favBtn.dataset.asin = p.asin || '';
   favBtn.dataset.title = p.title || '';
@@ -343,7 +331,6 @@ function renderCardSubRow(p) {
   favBtn.dataset.price = p.price || '';
   favBtn.dataset.score = String(p.score || 0);
   favBtn.dataset.category = p.category || '';
-  favBtn.setAttribute('aria-pressed', 'false');
 
   const isFav = globalThis.Favorites && typeof globalThis.Favorites.isFavorite === 'function' && globalThis.Favorites.isFavorite(p.asin);
   if (isFav) {
@@ -351,26 +338,72 @@ function renderCardSubRow(p) {
     favBtn.setAttribute('aria-pressed', 'true');
     favBtn.setAttribute('aria-label', `${titlePrefix}お気に入りから削除`);
   } else {
+    favBtn.classList.remove('is-favorited');
+    favBtn.setAttribute('aria-pressed', 'false');
     favBtn.setAttribute('aria-label', `${titlePrefix}お気に入りに追加`);
   }
 
+  const favIcon = favBtn.querySelector('.fav-icon');
+  if (favIcon) {
+    favIcon.textContent = isFav ? 'favorite' : 'favorite_border';
+  }
+  const favLabel = favBtn.querySelector('.fav-label');
+  if (favLabel) {
+    favLabel.textContent = isFav ? '保存済み' : '保存';
+  }
+}
+
+function getShopUrls(p) {
+  const moshimoRakutenAId = '5756223';
+  const moshimoYahooAId = '5756224';
+
+  const query = p.ean || (p.brand && p.model ? `${p.brand} ${p.model}` : (p.model || p.title || ''));
+  const encodedQuery = encodeURIComponent(query);
+
+  const rakutenTarget = `https://search.rakuten.co.jp/search/mall/${encodedQuery}/`;
+  const rakutenUrl = `https://af.moshimo.com/af/c/click?a_id=${moshimoRakutenAId}&p_id=54&pc_id=54&pl_id=27059&url=${encodeURIComponent(rakutenTarget)}`;
+
+  const yahooTarget = `https://shopping.yahoo.co.jp/search?first=1&p=${encodedQuery}`;
+  const yahooUrl = `https://af.moshimo.com/af/c/click?a_id=${moshimoYahooAId}&p_id=1225&pc_id=1925&pl_id=27061&url=${encodeURIComponent(yahooTarget)}`;
+
+  return { rakutenUrl, yahooUrl };
+}
+
+// --- Card Sub Row (Compare & Favorite Buttons) [Fallback] ---
+function renderCardSubRow(p) {
+  const row = document.createElement('div');
+  row.className = 'card-footer-row card-footer-row-sub';
+
+  const compareBtn = document.createElement('button');
+  compareBtn.type = 'button';
+  compareBtn.className = 'btn-compare-card';
+  const compareIcon = document.createElement('span');
+  compareIcon.className = 'material-symbols-outlined compare-icon';
+  compareIcon.setAttribute('aria-hidden', 'true');
+  const compareLabel = document.createElement('span');
+  compareLabel.className = 'compare-label';
+  compareBtn.appendChild(compareIcon);
+  compareBtn.appendChild(compareLabel);
+  setupCompareButton(compareBtn, p);
+  row.appendChild(compareBtn);
+
+  const favBtn = document.createElement('button');
+  favBtn.type = 'button';
+  favBtn.className = 'btn-favorite-card';
   const favIcon = document.createElement('span');
   favIcon.className = 'material-symbols-outlined fav-icon';
   favIcon.setAttribute('aria-hidden', 'true');
-  favIcon.textContent = isFav ? 'favorite' : 'favorite_border';
-
   const favLabel = document.createElement('span');
   favLabel.className = 'fav-label';
-  favLabel.textContent = isFav ? '保存済み' : '保存';
-
   favBtn.appendChild(favIcon);
   favBtn.appendChild(favLabel);
+  setupFavoriteButton(favBtn, p);
   row.appendChild(favBtn);
 
   return row;
 }
 
-// --- Card Main Row (Meta date & Amazon/Read More Button) ---
+// --- Card Main Row (Meta date & Amazon/Read More Button) [Fallback] ---
 function renderCardMainRow(p) {
   const row = document.createElement('div');
   row.className = 'card-footer-row card-footer-row-main';
@@ -420,22 +453,11 @@ function renderCardMainRow(p) {
   return row;
 }
 
-// --- Card Shops Row (Rakuten & Yahoo! 2-column) ---
+// --- Card Shops Row (Rakuten & Yahoo! 2-column) [Fallback] ---
 function renderCardShopRow(p) {
   const row = document.createElement('div');
   row.className = 'card-footer-row card-footer-row-shops';
-
-  const moshimoRakutenAId = '5756223';
-  const moshimoYahooAId = '5756224';
-
-  const query = p.ean || (p.brand && p.model ? `${p.brand} ${p.model}` : (p.model || p.title || ''));
-  const encodedQuery = encodeURIComponent(query);
-
-  const rakutenTarget = `https://search.rakuten.co.jp/search/mall/${encodedQuery}/`;
-  const rakutenUrl = `https://af.moshimo.com/af/c/click?a_id=${moshimoRakutenAId}&p_id=54&pc_id=54&pl_id=27059&url=${encodeURIComponent(rakutenTarget)}`;
-
-  const yahooTarget = `https://shopping.yahoo.co.jp/search?first=1&p=${encodedQuery}`;
-  const yahooUrl = `https://af.moshimo.com/af/c/click?a_id=${moshimoYahooAId}&p_id=1225&pc_id=1925&pl_id=27061&url=${encodeURIComponent(yahooTarget)}`;
+  const { rakutenUrl, yahooUrl } = getShopUrls(p);
 
   const rakutenBtn = document.createElement('a');
   rakutenBtn.href = safeUrl(rakutenUrl);
@@ -498,7 +520,7 @@ function renderCardShopRow(p) {
   return row;
 }
 
-// --- Card Footer ---
+// --- Card Footer [Fallback] ---
 function renderCardFooter(p) {
   const footer = document.createElement('div');
   footer.className = 'card-footer';
@@ -515,8 +537,237 @@ function renderCardFooter(p) {
   return footer;
 }
 
-// --- Render Card (Wrapper) ---
+// --- Render Card Template Binding Helpers (Decomposed for low cognitive complexity) ---
+function bindCardDataset(article, p) {
+  if (p.priceRaw !== undefined) article.dataset.price = String(p.priceRaw);
+  if (p.score !== undefined) article.dataset.score = String(p.score || 0);
+  if (p.lastInvestigated) {
+    const d = new Date(p.lastInvestigated);
+    article.dataset.date = String(Number.isNaN(d.getTime()) ? 0 : Math.floor(d.getTime() / 1000));
+  }
+  if (p.pointsRate !== undefined) article.dataset.pointsRate = String(p.pointsRate);
+}
+
+function bindCardImage(article, p) {
+  const imageLink = article.querySelector('[data-slot="image-link"]');
+  if (imageLink) {
+    imageLink.href = safeUrl(p.url);
+  }
+  const img = article.querySelector('[data-slot="image"]');
+  const noImage = article.querySelector('[data-slot="no-image"]');
+  if (p.image && img) {
+    img.src = safeImageUrl(p.image);
+    img.alt = String(p.title || '');
+    if (noImage) noImage.style.display = 'none';
+  } else {
+    if (img) img.remove();
+    if (noImage) noImage.style.display = '';
+  }
+}
+
+function bindCardHeader(article, p) {
+  const tagCat = article.querySelector('[data-slot="tag-category"]');
+  if (tagCat) {
+    if (p.category) {
+      tagCat.textContent = String(p.category);
+      tagCat.classList.add('bargain-card-category');
+    } else {
+      tagCat.remove();
+    }
+  }
+  const tagSub = article.querySelector('[data-slot="tag-sub"]');
+  if (tagSub) {
+    if (p.subcategory) {
+      tagSub.textContent = String(p.subcategory);
+      tagSub.style.display = '';
+    } else {
+      tagSub.remove();
+    }
+  }
+  const titleLink = article.querySelector('[data-slot="title-link"]');
+  if (titleLink) {
+    titleLink.href = safeUrl(p.url);
+    titleLink.textContent = String(p.title || '');
+    titleLink.setAttribute('aria-label', `${p.title || ''}の詳細を見る`);
+  }
+}
+
+function bindCardBody(article, p) {
+  const excerpt = article.querySelector('[data-slot="excerpt"]');
+  if (excerpt) {
+    if (p.description) {
+      excerpt.textContent = String(p.description);
+      excerpt.style.display = '';
+    } else {
+      excerpt.remove();
+    }
+  }
+  const specs = article.querySelector('[data-slot="specs"]');
+  if (specs) {
+    if (p.specsHtml) {
+      specs.innerHTML = p.specsHtml;
+      specs.style.display = '';
+    } else {
+      specs.remove();
+    }
+  }
+}
+
+function bindCardPrices(article, p) {
+  const priceText = article.querySelector('[data-slot="price-text"]');
+  const priceSlot = article.querySelector('[data-slot="price"]');
+  if (priceText && p.price) {
+    priceText.textContent = p.price;
+  } else if (priceSlot) {
+    priceSlot.remove();
+  }
+
+  const pointsSlot = article.querySelector('[data-slot="points"]');
+  const pointsText = article.querySelector('[data-slot="points-text"]');
+  if (pointsSlot && pointsText && p.loyaltyPoints) {
+    pointsText.textContent = `${p.loyaltyPoints}pt`;
+    pointsSlot.style.display = '';
+  } else if (pointsSlot) {
+    pointsSlot.remove();
+  }
+}
+
+function bindCardScore(article, p) {
+  const scoreBlock = article.querySelector('[data-slot="score-block"]');
+  const scoreBadge = article.querySelector('[data-slot="score"]');
+  const scoreText = article.querySelector('[data-slot="score-text"]');
+  if (scoreBlock && scoreBadge && scoreText && p.score) {
+    scoreText.textContent = `${p.score}点`;
+    scoreBadge.className = `card-score m3-badge m3-badge-score ${scoreClass(p.score)}`;
+    scoreBlock.style.display = '';
+  } else if (scoreBlock) {
+    scoreBlock.remove();
+  }
+}
+
+function toggleBadge(article, slot, isVisible, text = null, className = null) {
+  const el = article.querySelector(`[data-slot="${slot}"]`);
+  if (!el) return;
+  if (isVisible) {
+    if (text !== null) el.textContent = text;
+    if (className !== null) el.className = className;
+    el.style.display = '';
+  } else {
+    el.remove();
+  }
+}
+
+function bindCardDetailsRow(article, p) {
+  toggleBadge(article, 'badge-direct', Boolean(p.isAmazonDirect));
+  toggleBadge(article, 'badge-haul', Boolean(p.isAmazonHaul));
+  toggleBadge(article, 'badge-furusato', Boolean(p.isFurusato));
+
+  const isPrime = p.dealAccessType === 'PRIME_EXCLUSIVE' || p.dealAccessType === 'PRIME_EARLY_ACCESS';
+  const dealClass = `badge-deal m3-badge m3-badge-deal ${isPrime ? 'deal-prime' : 'deal-standard'}`;
+  toggleBadge(article, 'badge-deal', Boolean(p.dealBadge), p.dealBadge, dealClass);
+
+  const savingsText = p.savingsPercentage ? `${p.savingsPercentage}% OFF` : null;
+  toggleBadge(article, 'badge-savings', Boolean(p.savingsPercentage), savingsText);
+
+  const isHighPoints = Boolean(p.pointsRate && p.pointsRate >= 10.0);
+  const pointsText = isHighPoints ? `ポイント還元率${Math.round(p.pointsRate)}%` : null;
+  toggleBadge(article, 'badge-points-rate', isHighPoints, pointsText);
+
+  toggleBadge(article, 'badge-availability', Boolean(p.availability), p.availability);
+}
+
+function bindCardActionLink(article, p) {
+  const btnAmazon = article.querySelector('[data-slot="btn-amazon"]');
+  const linkReadMore = article.querySelector('[data-slot="link-readmore"]');
+  if (p.affiliateUrl) {
+    if (btnAmazon) {
+      btnAmazon.href = safeUrl(p.affiliateUrl);
+      btnAmazon.dataset.trackProduct = '1';
+      btnAmazon.dataset.asin = p.asin || '';
+      btnAmazon.dataset.category = p.category || '';
+      btnAmazon.dataset.priceBucket = getPriceBucket(p.priceRaw);
+      btnAmazon.dataset.price = p.price || '';
+      btnAmazon.dataset.score = String(p.score || 0);
+      btnAmazon.setAttribute('aria-label', `${p.title || ''}をAmazonで見る`);
+      btnAmazon.style.display = '';
+    }
+    if (linkReadMore) linkReadMore.remove();
+  } else {
+    if (btnAmazon) btnAmazon.remove();
+    if (linkReadMore) {
+      linkReadMore.href = safeUrl(p.url);
+      linkReadMore.style.display = '';
+    }
+  }
+}
+
+function bindCardShopButtons(article, p) {
+  const { rakutenUrl, yahooUrl } = getShopUrls(p);
+  const btnRakuten = article.querySelector('[data-slot="btn-rakuten"]');
+  if (btnRakuten) {
+    btnRakuten.href = safeUrl(rakutenUrl);
+    btnRakuten.dataset.trackProduct = '1';
+    btnRakuten.dataset.asin = p.asin || '';
+    btnRakuten.dataset.mall = 'rakuten';
+    btnRakuten.dataset.category = p.category || '';
+    btnRakuten.dataset.priceBucket = getPriceBucket(p.priceRaw);
+    btnRakuten.dataset.price = p.price || '';
+    btnRakuten.dataset.score = String(p.score || 0);
+    btnRakuten.setAttribute('aria-label', `${p.title || ''}を楽天市場で見る`);
+  }
+  const btnYahoo = article.querySelector('[data-slot="btn-yahoo"]');
+  if (btnYahoo) {
+    btnYahoo.href = safeUrl(yahooUrl);
+    btnYahoo.dataset.trackProduct = '1';
+    btnYahoo.dataset.asin = p.asin || '';
+    btnYahoo.dataset.mall = 'yahoo';
+    btnYahoo.dataset.category = p.category || '';
+    btnYahoo.dataset.priceBucket = getPriceBucket(p.priceRaw);
+    btnYahoo.dataset.price = p.price || '';
+    btnYahoo.dataset.score = String(p.score || 0);
+    btnYahoo.setAttribute('aria-label', `${p.title || ''}をYahoo!ショッピングで見る`);
+  }
+}
+
+function bindCardFooter(article, p) {
+  const compareBtn = article.querySelector('[data-slot="btn-compare"]');
+  if (compareBtn) setupCompareButton(compareBtn, p);
+
+  const favBtn = article.querySelector('[data-slot="btn-favorite"]');
+  if (favBtn) setupFavoriteButton(favBtn, p);
+
+  const dateText = article.querySelector('[data-slot="date-text"]');
+  if (dateText) dateText.textContent = formatInvestigatedDate(p.lastInvestigated);
+
+  bindCardActionLink(article, p);
+  bindCardShopButtons(article, p);
+}
+
+// --- Render Card via Template (Unified Architecture) ---
+function renderCardFromTemplate(p, template) {
+  const fragment = template.content.cloneNode(true);
+  const article = fragment.querySelector('.card') || fragment.firstElementChild;
+
+  bindCardDataset(article, p);
+  bindCardImage(article, p);
+  bindCardHeader(article, p);
+  bindCardBody(article, p);
+  bindCardPrices(article, p);
+  bindCardScore(article, p);
+  bindCardDetailsRow(article, p);
+  bindCardFooter(article, p);
+
+  return article;
+}
+
+// --- Render Card (Wrapper with Template Priority) ---
 function renderCard(p) {
+  const template = document.getElementById('product-card-template');
+  if (template && 'content' in template) {
+    return renderCardFromTemplate(p, template);
+  }
+
+  // Fallback: imperative DOM construction
   const article = document.createElement('article');
   article.className = 'card';
 

@@ -134,14 +134,16 @@ GitHub Actions CIはLintやBiomeのエラーがあると失敗するため、い
 | **親カテゴリ一覧** | `layouts/_default/parent-category.html` | 親カテゴリページのリスト項目 |
 | **ブランド一覧** | `layouts/_default/brand-list.html` | ブランド別ページのリスト項目 |
 | **おすすめ一覧** | `layouts/recommendations/list.html` | 注目おすすめ商品のリスト項目 |
-| **動的フィルタカード** | `static/js/filter-common.js` | `/bargain/` や `/deals/` ページ等でJS動的生成されるカード |
+| **動的カードテンプレート** | `layouts/partials/product-card-template.html` | 動的生成用カードテンプレート正本（全ページ配信） |
+| **動的フィルタカード** | `static/js/filter-common.js` | `/bargain/` や `/deals/` ページ等でテンプレートから動的生成されるカード |
 | **お気に入りカード** | `layouts/favorites/list.html` | お気に入り保存済み商品のJS生成カード |
 | **ホーム動的読み込み** | `static/js/home-load-more.js` | ホーム画面「もっと見る」で追加ロードされるカード |
 
 > [!IMPORTANT]
 > **商品カード修正時の注意点**:
-> 1. **Hugo テンプレートと JS 動的描画の同時更新**:
->    商品カードのマークアップやクラス名（例: `.card-score`, `.card-points`, `.meta-price-block`, `.meta-score-block`, M3バッジクラス `.m3-badge` 等）を修正する際は、Hugo テンプレート（`layouts/` 配下）だけでなく、クライアントサイド JS（特に `static/js/filter-common.js` の `renderCardMeta` 関数など）の動的HTML生成処理も必ず同時に同期・更新すること。
+> 1. **`<template>` 共通化アーキテクチャの維持**:
+>    動的生成される商品カードは `layouts/partials/product-card-template.html`（`<template id="product-card-template">`）を正本（Single Source of Truth）とし、`static/js/filter-common.js` の `renderCardFromTemplate` 関数によってデータが注入される。
+>    カードのマークアップやクラス名（例: `.card-score`, `.card-points`, `.meta-price-block`, `.meta-score-block`, M3バッジクラス `.m3-badge` 等）を修正する際は、Hugo静的テンプレート（`layouts/partials/product-card.html` 等）および `product-card-template.html` のスロット属性（`data-slot="..."`）を同期して更新すること。
 > 2. **DOM構造の維持**:
 >    価格・ポイントブロック（`.meta-price-block`）とスコアブロック（`.meta-score-block`）の二重ネスト構造を統一し、横並びや中央揃え（`align-items: center`）のCSSスタイルがどのページでも一貫して適用されるようにすること。
 

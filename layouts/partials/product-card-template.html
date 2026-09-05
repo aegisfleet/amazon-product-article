@@ -1,0 +1,80 @@
+<template id="product-card-template">
+    <article class="card">
+        <div class="card-image">
+            <a href="#" class="card-image-link" data-slot="image-link" tabindex="-1" aria-hidden="true">
+                <img data-slot="image" src="" alt="" loading="lazy" decoding="async">
+                <div data-slot="no-image" class="card-image-noimage" style="display:none;">画像なし</div>
+            </a>
+        </div>
+        <div class="card-content">
+            <div class="card-header">
+                <div class="card-tags-row" data-slot="tags-row">
+                    <span class="card-tag" data-slot="tag-category"></span>
+                    <span class="card-tag-sub" data-slot="tag-sub" style="display:none;"></span>
+                </div>
+                <h3 class="card-title">
+                    <a href="#" data-slot="title-link" aria-label="商品詳細">商品名</a>
+                </h3>
+            </div>
+            <p class="card-excerpt" data-slot="excerpt" style="display:none;"></p>
+            <div class="card-specs" data-slot="specs" style="display:none;"></div>
+            <div class="card-meta-ext">
+                <div class="meta-main-row">
+                    <div class="meta-price-block" data-slot="price-block">
+                        <span class="card-price" data-slot="price">
+                            <span class="material-symbols-outlined icon-price" aria-hidden="true">payments</span> <span data-slot="price-text"></span>
+                        </span>
+                        <span class="card-points m3-badge m3-badge-points" data-slot="points" style="display:none;">
+                            <span class="material-symbols-outlined icon-points" aria-hidden="true">card_giftcard</span> <span data-slot="points-text"></span>
+                        </span>
+                    </div>
+                    <div class="meta-score-block" data-slot="score-block" style="display:none;">
+                        <span class="card-score m3-badge m3-badge-score" data-slot="score">
+                            <span class="material-symbols-outlined icon-score" aria-hidden="true">trophy</span> <span data-slot="score-text"></span>
+                        </span>
+                    </div>
+                </div>
+                <div class="meta-details-row" data-slot="details-row">
+                    <span class="badge-amazon-direct m3-badge m3-badge-primary" data-slot="badge-direct" style="display:none;">Amazon直販</span>
+                    <span class="badge-amazon-haul m3-badge m3-badge-secondary" data-slot="badge-haul" style="display:none;">Amazon Haul</span>
+                    <span class="badge-furusato m3-badge m3-badge-furusato" data-slot="badge-furusato" style="display:none;">ふるさと納税</span>
+                    <span class="badge-deal m3-badge m3-badge-deal" data-slot="badge-deal" style="display:none;"></span>
+                    <span class="badge-savings m3-badge m3-badge-sale" data-slot="badge-savings" style="display:none;"></span>
+                    <span class="badge-points-rate m3-badge m3-badge-points" data-slot="badge-points-rate" style="display:none;"></span>
+                    <span class="badge-availability m3-badge m3-badge-tertiary" data-slot="badge-availability" style="display:none;"></span>
+                </div>
+            </div>
+            <div class="card-footer">
+                <div class="card-footer-row card-footer-row-sub">
+                    <button type="button" class="btn-compare-card" data-compare-btn="1" data-slot="btn-compare" aria-pressed="false">
+                        <span class="material-symbols-outlined compare-icon" aria-hidden="true">balance</span>
+                        <span class="compare-label">比較</span>
+                    </button>
+                    <button type="button" class="btn-favorite-card" data-favorite-btn="1" data-slot="btn-favorite" aria-pressed="false">
+                        <span class="material-symbols-outlined fav-icon" aria-hidden="true">favorite_border</span>
+                        <span class="fav-label">保存</span>
+                    </button>
+                </div>
+                <div class="card-footer-row card-footer-row-main">
+                    <span class="article-meta" data-slot="meta-date">
+                        <span class="material-symbols-outlined icon-date" aria-hidden="true">calendar_today</span> <span data-slot="date-text"></span>
+                    </span>
+                    <a href="#" class="btn-amazon-small" target="_blank" rel="noopener noreferrer" data-slot="btn-amazon" style="display:none;">
+                        <span class="material-symbols-outlined icon-cart" aria-hidden="true">shopping_cart</span> Amazonで見る
+                    </a>
+                    <a href="#" class="read-more" data-slot="link-readmore" style="display:none;">レビューを読む →</a>
+                </div>
+                <div class="card-footer-row card-footer-row-shops" data-slot="shops-row">
+                    <a href="#" class="btn-shop btn-shop-rakuten btn-shop--card" target="_blank" rel="noopener noreferrer" data-slot="btn-rakuten">
+                        <span class="btn-shop-icon-wrapper"><span class="btn-shop-badge-icon">R</span></span>
+                        <span class="btn-shop-label">楽天市場</span>
+                    </a>
+                    <a href="#" class="btn-shop btn-shop-yahoo btn-shop--card" target="_blank" rel="noopener noreferrer" data-slot="btn-yahoo">
+                        <span class="btn-shop-icon-wrapper"><span class="btn-shop-badge-icon">Y!</span></span>
+                        <span class="btn-shop-label">Yahoo!</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </article>
+</template>
