@@ -57,4 +57,13 @@ describe('RecommendationPromptBuilder', () => {
     expect(prompt).toContain('Keepa直近90日価格推移: https://graph.keepa.com/pricehistory.png?asin=TESTASIN123');
     expect(prompt).toContain('Keepa価格推移グラフによる「本当の値下げ」の実態判定');
   });
+
+  it('should include explicit prohibitions against coupon claims and require price discount wording', () => {
+    const builder = new RecommendationPromptBuilder();
+    const prompt = builder.build();
+
+    expect(prompt).toContain('「クーポン適用」「クーポン対象」等のクーポン表現の完全禁止');
+    expect(prompt).toContain('※「クーポン」という表現は使用厳禁');
+    expect(prompt).toContain('「クーポン」表記は禁止');
+  });
 });
