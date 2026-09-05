@@ -2,7 +2,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 
 // Adjust cache path
-const cachePath = path.resolve(__dirname, '../data/cache/paapi-product-cache.json');
+const cachePath = path.resolve(__dirname, '../../../data/cache/paapi-product-cache.json');
 const asin = process.argv[2] || 'B009ODJPMI';
 
 if (!process.argv[2]) {
@@ -29,5 +29,6 @@ try {
     console.error(`Cache file not found at: ${cachePath}`);
   }
 } catch (error) {
-  console.error(`Error processing cache file: ${error}`);
+  console.error('Error processing cache file:', error);
 }
+

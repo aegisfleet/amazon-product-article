@@ -29,7 +29,7 @@ jobs:
       run: pnpm install --frozen-lockfile --ignore-scripts
     
     - name: Sort cache by status
-      run: pnpm exec ts-node scripts/sort-cache-by-status.ts
+      run: pnpm exec ts-node src/scripts/maintenance/sort-cache-by-status.ts
       
     - name: Commit sorted cache
       run: |

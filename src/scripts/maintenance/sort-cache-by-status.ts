@@ -1,8 +1,8 @@
-import * as fs from 'node:fs';
-import * as path from 'node:path';
+import fs from 'node:fs';
+import path from 'node:path';
 
 // Cache file path
-const CACHE_FILE_PATH = path.join(__dirname, '../data/cache/paapi-product-cache.json');
+const CACHE_FILE_PATH = path.join(__dirname, '../../../data/cache/paapi-product-cache.json');
 
 // Define status order
 const STATUS_ORDER = ['valid', 'invalid', 'permanent_invalid'];

@@ -1,7 +1,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 
-const cachePath = path.resolve(__dirname, '../data/cache/paapi-product-cache.json');
+const cachePath = path.resolve(__dirname, '../../../data/cache/paapi-product-cache.json');
 
 try {
   if (fs.existsSync(cachePath)) {
@@ -31,5 +31,6 @@ try {
     console.error(`Cache file not found at: ${cachePath}`);
   }
 } catch (error) {
-  console.error(`Error processing cache file: ${error}`);
+  console.error('Error processing cache file:', error);
 }
+

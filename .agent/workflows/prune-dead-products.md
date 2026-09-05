@@ -35,21 +35,21 @@ Creators APIで `permanent_invalid`（取得不可）となった記事（数十
 ```bash
 pnpm run audit:dead
 # または
-pnpm ts-node scripts/prune-dead-products.ts --audit
+pnpm tsx src/scripts/maintenance/prune-dead-products.ts --audit
 ```
 
 ### 2.2 単一ASINの確認
 特定のASINがデッド商品かどうか、および他商品から参照されているかを確認します。
 
 ```bash
-pnpm ts-node scripts/prune-dead-products.ts --asin <ASIN>
+pnpm tsx src/scripts/maintenance/prune-dead-products.ts --asin <ASIN>
 ```
 
 ### 2.3 全記事スキャン（大規模棚卸し）
 サイト内の全記事（5,800+件）を対象にスキャンを実施します。
 
 ```bash
-pnpm ts-node scripts/prune-dead-products.ts --scope all --audit
+pnpm tsx src/scripts/maintenance/prune-dead-products.ts --scope all --audit
 ```
 
 ---
@@ -60,7 +60,9 @@ pnpm ts-node scripts/prune-dead-products.ts --scope all --audit
 実際に削除やファイル改変を行わずに、削除対象のファイル一覧、他商品の競合リストからの参照状況、孤立ファイルのサマリーを確認します。
 
 ```bash
-pnpm ts-node scripts/prune-dead-products.ts --prune --dry-run
+pnpm run prune:dead -- --dry-run
+# または
+pnpm tsx src/scripts/maintenance/prune-dead-products.ts --prune --dry-run
 ```
 
 ### 3.2 削除および参照クリーンアップの実行
@@ -69,7 +71,7 @@ pnpm ts-node scripts/prune-dead-products.ts --prune --dry-run
 ```bash
 pnpm run prune:dead
 # または
-pnpm ts-node scripts/prune-dead-products.ts --prune
+pnpm tsx src/scripts/maintenance/prune-dead-products.ts --prune
 ```
 
 ### 3.3 オプションによる制御

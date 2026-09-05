@@ -118,8 +118,10 @@ GitHub Actions CIはLintやBiomeのエラーがあると失敗するため、い
 
 ### 4.1 リポジトリ構造
 
-- `/scripts/`: Creators APIとの直接的なやりとりやデータ収集用のPythonスクリプト。
-- `/src/scripts/`: メインアプリケーション of TypeScript CLIエントリポイント。
+- `/scripts/`: Creators APIとの直接的なやりとりやデータ収集・検証用のPythonスクリプト（`uv` 実行）。
+- `/src/scripts/`: メインアプリケーション、自動化パイプライン、および保守・運用メンテナンス用 TypeScript CLIツール群（`pnpm` / `ts-node` 実行）。
+  - `src/scripts/`: 本番パイプライン（記事生成、調査CLI、PRマージ等）
+  - `src/scripts/maintenance/`: 保守・棚卸し・キャッシュ操作・監査ツール群
 - `/data/`: 商品データや調査結果。一時ファイルはコミットしないこと。
 
 ### 4.2 UI/UX 実装（コンポーネントの同期と注意点）
@@ -198,8 +200,8 @@ GitHub Actions CIはLintやBiomeのエラーがあると失敗するため、い
 
 | スクリプト | 用途 | 使用例 |
 |---|---|---|
-| `scripts/reset-cache-timestamp.ts` | ASIN単位のリセット | `scripts/... B003AZZS4A` |
-| `scripts/reset-category-cache.ts` | カテゴリ単位のリセット | `scripts/... "カテゴリー名"` |
+| `src/scripts/maintenance/reset-cache-timestamp.ts` | ASIN単位のリセット | `pnpm ts-node src/scripts/maintenance/reset-cache-timestamp.ts B003AZZS4A` |
+| `src/scripts/maintenance/reset-category-cache.ts` | カテゴリ単位のリセット | `pnpm ts-node src/scripts/maintenance/reset-category-cache.ts "カテゴリー名"` |
 
 > [!NOTE]
 > 使用例の詳細はスクリプトのヘルプ、またはソースコードを参照すること。

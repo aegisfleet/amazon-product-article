@@ -109,9 +109,7 @@ function mergeCaches() {
 
     // Sort keys to maintain consistent output order and format each entry on a single line
     const sortedKeys = Object.keys(merged).sort((a, b) => a.localeCompare(b));
-    const lines = sortedKeys.map(
-      (key) => `  "${key}": ${JSON.stringify(merged[key])}`,
-    );
+    const lines = sortedKeys.map((key) => `  "${key}": ${JSON.stringify(merged[key])}`);
     const jsonContent = `{\n${lines.join(',\n')}\n}`;
 
     fs.writeFileSync(outputPath, jsonContent, 'utf-8');

@@ -12,14 +12,11 @@ Amazon Creators API と Google Jules を活用した商品調査・レビュー�
 
 ```text
 ./
-├── scripts/                      # 調査・保守ユーティリティスクリプト（TypeScript/Python）
+├── scripts/                      # Creators API通信・バリデーションスクリプト（Python / uv専用）
 │   ├── creators_api_client.py   # Creators APIクライアント（Python）
 │   ├── creators_get_item.py     # ASIN商品詳細取得
 │   ├── creators_search_items.py # キーワード検索・競合調査
-│   ├── validate_artifact.py     # 生成JSONのスキーマ・リンク・単位バリデータ
-│   ├── prune-dead-products.ts   # 取扱終了商品の監査・削除スクリプト
-│   ├── find-score-discrepancy.ts# バリエーション間スコア乖離の検出
-│   └── reset-category-cache.ts  # カテゴリキャッシュリセット
+│   └── validate_artifact.py     # 生成JSONのスキーマ・リンク・単位バリデータ
 ├── src/                          # TypeScriptソースコード
 │   ├── affiliate/               # アフィリエイトリンク生成
 │   ├── analysis/                # 価格推移・スコア分析
@@ -34,6 +31,7 @@ Amazon Creators API と Google Jules を活用した商品調査・レビュー�
 │   ├── navigation/              # サイトナビゲーションデータ生成
 │   ├── schemas/                 # Zodバリデーションスキーマ
 │   ├── scripts/                 # CLIエントリポイント（各種自動化コマンド）
+│   │   └── maintenance/         # 保守・監査・運用TypeScriptスクリプト
 │   ├── search/                  # 検索インデックス生成・処理
 │   ├── types/                   # TypeScript型定義
 │   └── utils/                   # ユーティリティ（ロガー、レートリミッター等）
@@ -97,7 +95,7 @@ Amazon Creators API と Google Jules を活用した商品調査・レビュー�
 | `data/categorygroups.json` | 親カテゴリと子カテゴリのマッピング定義。14文字以内の親カテゴリ名規約に準拠 |
 | `data/brandgroups.json` | ブランド名マッチャー（正規表現）定義。単語境界（`\b`）によるブランド誤認防止を適用 |
 | `scripts/validate_artifact.py` | 調査成果物JSONの整合性検証（非メートル法表記の排除、URLリンク有効性チェック、スキーマ検証） |
-| `scripts/prune-dead-products.ts` | Amazon上で取扱終了となったデッド商品の検出およびコンテンツ棚卸し |
+| `src/scripts/maintenance/prune-dead-products.ts` | Amazon上で取扱終了となったデッド商品の検出およびコンテンツ棚卸し |
 | `static/js/filter-common.js` | 一覧画面における動的フィルター、ソート、M3バッジカード描画の共通ロジック |
 
 ## コマンドリファレンス
