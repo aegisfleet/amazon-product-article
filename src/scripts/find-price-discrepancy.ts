@@ -77,7 +77,7 @@ function parseInvestigationMeta(content: string, statMtimeMs: number): Investiga
   let investigatedPriceRaw: number | undefined;
   const matchPrice = /"investigatedPrice"\s*:\s*"([^"]+)"/.exec(content);
   if (matchPrice?.[1]) {
-    const digits = matchPrice[1].replace(/,/g, '').match(/\d+/);
+    const digits = /\d+/.exec(matchPrice[1].replaceAll(',', ''));
     if (digits?.[0]) {
       const parsed = Number.parseInt(digits[0], 10);
       if (parsed > 0) {
@@ -156,6 +156,73 @@ function compareCandidates(a: PriceDiscrepancyCandidate, b: PriceDiscrepancyCand
   return b.savingsPercentage - a.savingsPercentage;
 }
 
+interface DiscrepancyCriteria {
+  threshold: number;
+  investigatedPriceThreshold: number;
+  cooldownDays: number;
+  now: number;
+}
+
+/**
+ * キャッシュエントリが価格乖離候補の条件を満たすか評価し、候補オブジェクトを生成する
+ */
+function evaluateCandidate(
+  asin: string,
+  entry: CacheEntry,
+  meta: InvestigatedMeta | undefined,
+  criteria: DiscrepancyCriteria,
+): PriceDiscrepancyCandidate | null {
+  if (entry.status !== 'valid' || !entry.data?.price || entry.data.price.amount <= 0) {
+    return null;
+  }
+  if (!meta) {
+    return null;
+  }
+
+  const lastInvestigatedTime = meta.lastInvestigatedTime || 0;
+  const cooldownMs = criteria.cooldownDays * 24 * 60 * 60 * 1000;
+  if (criteria.cooldownDays > 0 && lastInvestigatedTime > 0 && criteria.now - lastInvestigatedTime < cooldownMs) {
+    return null;
+  }
+
+  const savingsPercentage = entry.data.savingsPercentage || 0;
+  const dealBadge = entry.data.dealBadge?.trim() || '';
+
+  // 調査時価格との乖離率を算出
+  let investigatedPriceDiffRate = 0;
+  if (meta.investigatedPriceRaw && meta.investigatedPriceRaw > 0) {
+    const diffAbs = Math.abs(entry.data.price.amount - meta.investigatedPriceRaw);
+    investigatedPriceDiffRate = Math.round((diffAbs / meta.investigatedPriceRaw) * 100);
+  }
+
+  const isAmazonSale = savingsPercentage >= criteria.threshold || Boolean(dealBadge);
+  const isInvestigatedPriceDiscrepancy = investigatedPriceDiffRate >= criteria.investigatedPriceThreshold;
+
+  // Amazonセール、または調査時価格との大幅乖離がある場合に抽出
+  if (!isAmazonSale && !isInvestigatedPriceDiscrepancy) {
+    return null;
+  }
+
+  const candidate: PriceDiscrepancyCandidate = {
+    asin,
+    title: entry.data.title,
+    category: entry.data.category || 'その他',
+    price: entry.data.price,
+    savingsPercentage,
+    dealBadge,
+    lastInvestigatedTime,
+    cacheTimestamp: entry.timestamp,
+    detailPageUrl: entry.data.detailPageUrl || `https://www.amazon.co.jp/dp/${asin}`,
+  };
+
+  if (meta.investigatedPriceRaw) {
+    candidate.investigatedPrice = meta.investigatedPriceRaw;
+    candidate.investigatedPriceDiffRate = investigatedPriceDiffRate;
+  }
+
+  return candidate;
+}
+
 export async function findPriceDiscrepancy(
   cacheFilePath?: string,
   investigationsDir?: string,
@@ -192,60 +259,19 @@ export async function findPriceDiscrepancy(
   logger.info(`Found ${investigatedAsinMap.size} investigated products`);
 
   const candidates: PriceDiscrepancyCandidate[] = [];
-  const now = Date.now();
-  const cooldownMs = cooldownDays * 24 * 60 * 60 * 1000;
+  const criteria: DiscrepancyCriteria = {
+    threshold,
+    investigatedPriceThreshold,
+    cooldownDays,
+    now: Date.now(),
+  };
 
   for (const [asin, entry] of Object.entries(cache)) {
-    if (entry.status !== 'valid' || !entry.data) continue;
-    if (!entry.data.price || entry.data.price.amount <= 0) continue;
-
-    const asinUpper = asin.toUpperCase();
-
-    // 調査済みの商品のみ対象
-    const meta = investigatedAsinMap.get(asinUpper);
-    if (!meta) continue;
-
-    const lastInvestigatedTime = meta.lastInvestigatedTime || 0;
-
-    // クールダウン期間判定: 直近（cooldownDays以内）に調査済みの商品は再調査対象から除外
-    if (cooldownDays > 0 && lastInvestigatedTime > 0 && now - lastInvestigatedTime < cooldownMs) {
-      continue;
+    const meta = investigatedAsinMap.get(asin.toUpperCase());
+    const candidate = evaluateCandidate(asin, entry, meta, criteria);
+    if (candidate) {
+      candidates.push(candidate);
     }
-
-    const savingsPercentage = entry.data.savingsPercentage || 0;
-    const dealBadge = entry.data.dealBadge?.trim() || '';
-
-    // 調査時価格との乖離率を算出
-    let investigatedPriceDiffRate = 0;
-    if (meta.investigatedPriceRaw && meta.investigatedPriceRaw > 0) {
-      const diffAbs = Math.abs(entry.data.price.amount - meta.investigatedPriceRaw);
-      investigatedPriceDiffRate = Math.round((diffAbs / meta.investigatedPriceRaw) * 100);
-    }
-
-    const isAmazonSale = savingsPercentage >= threshold || Boolean(dealBadge);
-    const isInvestigatedPriceDiscrepancy = investigatedPriceDiffRate >= investigatedPriceThreshold;
-
-    // Amazonセール、または調査時価格との大幅乖離がある場合に抽出
-    if (!isAmazonSale && !isInvestigatedPriceDiscrepancy) continue;
-
-    const candidate: PriceDiscrepancyCandidate = {
-      asin,
-      title: entry.data.title,
-      category: entry.data.category || 'その他',
-      price: entry.data.price,
-      savingsPercentage,
-      dealBadge,
-      lastInvestigatedTime,
-      cacheTimestamp: entry.timestamp,
-      detailPageUrl: entry.data.detailPageUrl || `https://www.amazon.co.jp/dp/${asin}`,
-    };
-
-    if (meta.investigatedPriceRaw) {
-      candidate.investigatedPrice = meta.investigatedPriceRaw;
-      candidate.investigatedPriceDiffRate = investigatedPriceDiffRate;
-    }
-
-    candidates.push(candidate);
   }
 
   candidates.sort(compareCandidates);
