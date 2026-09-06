@@ -73,7 +73,7 @@
         "notes": "Amazonの商品説明に基づく仕様情報"
       }
     ],
-    "lastInvestigated": "2026-03-20",
+    "lastInvestigated": "2026-09-07",
     "competitiveAnalysis": [
       {
         "name": "Blackview WAVE 7C",
@@ -176,27 +176,39 @@
       "scoreRationale": "[基本点: 70]\n[加点: +10] (価格に対する充実した基本性能とIP54防塵防水などの実用的な機能で高いコスパ)\n[減点: -5] (画面解像度がHD+にとどまり、急速充電も10Wとやや弱いため)\n[合計: 75]"
     },
     "technicalSpecs": {
+      "os": "Android 15",
+      "cpu": "Unisoc T603",
+      "ram": "最大12GB (4GB + 8GB仮想拡張)",
+      "storage": "64GB (最大2TB MicroSD拡張対応)",
+      "display": {
+        "size": "6.56インチ",
+        "resolution": "1612×720 (HD+)"
+      },
+      "battery": {
+        "capacity": "5000mAh",
+        "charging": "10W"
+      },
+      "camera": {
+        "main": "13MP",
+        "front": "8MP"
+      },
       "dimensions": {
         "height": "164mm",
         "width": "75.8mm",
         "depth": "8.8mm"
       },
       "weight": "190g",
-      "display": "約16.6cm HD+ (720×1612)",
-      "os": "Android 15",
-      "cpu": "Unisoc T603",
-      "ram": "最大12GB (4GB + 8GB仮想拡張)",
-      "rom": "64GB (最大2TB MicroSD拡張対応)",
-      "battery": "5000mAh",
-      "charging": "10W 急速充電対応",
-      "camera": "リア13MP + フロント8MP",
-      "durability": "IP54防塵防水",
-      "connectivity": "デュアルSIM (Nano SIM + Nano SIM), 4G LTE対応",
+      "connectivity": [
+        "4G LTE",
+        "デュアルSIM (Nano SIM + Nano SIM)"
+      ],
       "other": [
         "顔認証対応",
         "GPS/GLONASS/Galileo/BeiDou対応",
-        "3.5mmイヤホンジャック搭載"
+        "3.5mmイヤホンジャック搭載",
+        "IP54防塵防水"
       ]
-    }
+    },
+    "investigatedPrice": "価格情報なし"
   }
 }
