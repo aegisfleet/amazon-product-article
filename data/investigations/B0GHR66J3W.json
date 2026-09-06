@@ -1,0 +1,213 @@
+{
+  "analysis": {
+    "productName": "Logicool Alto Keys K98M",
+    "parentAsin": "B0GLP2H95K",
+    "productDescription": "ロジクールが提供する、独自の「UniCushionガスケット」と「Marble Switch」を搭載した98キーレイアウトのワイヤレスメカニカルキーボード。",
+    "productUsage": [
+      "オフィスワーク・在宅勤務でのタイピング作業",
+      "プログラミングやライティングなど長時間の入力作業",
+      "デスクスペースを有効活用したい環境での使用"
+    ],
+    "positivePoints": [
+      "ロジクール独自の「UniCushion ガスケット」により、タイピング時の衝撃を吸収し、底打ちの硬さや鋭い打鍵音を軽減した心地よい「コトコト」音を実現",
+      "ホットスワップに対応した滑らかな「Marble Switch」を採用",
+      "テンキーを備えながらもフルサイズよりコンパクトな98キー（日本語102キー配列）設計で、マウスの操作スペースを確保",
+      "暗所でも視認性を確保する輝度調節可能な白色バックライトを搭載",
+      "Easy-Switch対応で最大3台のデバイスをボタン1つで切り替え可能",
+      "BluetoothおよびLogi Bolt USBレシーバーの2種類のワイヤレス接続に対応し、バックライトオフで最大1年間の連続使用が可能"
+    ],
+    "negativePoints": [
+      "重量が比較的重く持ち運びには適していない可能性がある",
+      "RGBバックライトではなく単色（白色）バックライトのみの搭載である",
+      "ゲーミング向けの超低遅延技術（LIGHTSPEED等）には非対応"
+    ],
+    "useCases": [
+      "在宅ワークで、PCやタブレットなど複数のデバイスを切り替えて作業する",
+      "静かなオフィス環境で、打鍵音を気にせず快適にタイピングする",
+      "限られたデスクスペースでテンキーを使った数値入力とマウス操作を両立する"
+    ],
+    "userStories": [
+      {
+        "userType": "在宅ワーカー",
+        "scenario": "限られたスペースの自宅デスクでの作業",
+        "experience": "テンキー付きにもかかわらずコンパクトに収まるため、マウスの可動域が広がりました。ガスケットマウントのおかげで打鍵感が非常に柔らかく、長時間のタイピングでも指が疲れにくいのが決め手です。静かなコトコトという音も心地よく、作業への没入感が高まりました。",
+        "supportingSourceIds": [
+          "src-amazon"
+        ],
+        "sentiment": "positive"
+      },
+      {
+        "userType": "複数デバイスを使用するクリエイター",
+        "scenario": "MacBookとWindowsデスクトップの併用",
+        "experience": "Easy-Switch機能でデバイス間をシームレスに切り替えられるのが非常に便利です。バックライト付きで夜間の作業もしやすく、Logi Options+のSmart Actionsでマクロを組むことで反復作業が大幅に短縮されました。ただ、RGBでなく白色LEDなので派手さはありません。",
+        "supportingSourceIds": [
+          "src-amazon"
+        ],
+        "sentiment": "positive"
+      }
+    ],
+    "userImpression": "独自のガスケット構造とMarble Switchによる「柔らかい打鍵感」と「静かで心地よい打鍵音」が高く評価されています。テンキーを搭載しつつ省スペース化を実現した98キーレイアウトは、数字入力を頻繁に行うユーザーにとって大きなメリットとなっています。一方で、ゲーム用途や派手なライティングを求める層には不向きですが、仕事や日常使いにおいて、デバイス切り替えの容易さや長寿命バッテリーなどの実用性を重視するユーザーから非常に満足度が高い総評です。",
+    "sources": [
+      {
+        "id": "src-amazon",
+        "name": "Amazon公式商品ページ",
+        "url": "https://www.amazon.co.jp/dp/B0GHR66J3W",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-09-06",
+        "author": "Logicool",
+        "conflictOfInterest": "none",
+        "notes": "製品の基本仕様、機能（ガスケット構造、Marble Switch、Smart Actions等）を確認"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "バックライトをオフにした場合、1年間の連続使用が可能",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-amazon"
+        ],
+        "crossChecked": false,
+        "notes": "メーカー公称値であり、一般的なロジクールの省電力技術（Logi Bolt等）を考慮すれば現実的"
+      },
+      {
+        "claim": "「UniCushion ガスケット」により底打ちの硬さと鋭い打鍵音を大幅に軽減",
+        "category": "comparativeAdvantage",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-amazon"
+        ],
+        "crossChecked": false,
+        "notes": "独自のガスケットマウントによる物理的な構造上の強み"
+      }
+    ],
+    "lastInvestigated": "2026-09-06",
+    "investigatedPrice": "￥16,900",
+    "competitiveAnalysis": [
+      {
+        "name": "Logicool MX MECHANICAL (KX850FT)",
+        "asin": "B0B1Q636K7",
+        "priceComparison": "MX MECHANICALの方が実売価格はやや安い場合があるが、K98Mはガスケットマウントを採用しており打鍵感のベクトルが異なる。薄型を好むならMX MECHANICAL、しっかりとしたストロークと柔らかい打鍵感を好むならK98M。",
+        "featureComparison": [
+          "共通点：Logi Bolt / Bluetooth対応、Easy-Switch搭載、白色バックライト、Logi Options+対応",
+          "相違点：MX MECHANICALはロープロファイル（薄型）でカチッとした打鍵感であるのに対し、K98Mは通常プロファイルでガスケットマウントによる柔らかいコトコトとした打鍵感。"
+        ],
+        "differentiators": [
+          "Logicool Alto Keys K98Mの利点：深いキーストロークとガスケットマウントによる指への負担軽減、ホットスワップ対応によるカスタマイズ性を重視するなら迷わずこちら",
+          "Logicool MX MECHANICAL (KX850FT)の利点：手首を浮かさずにタイピングできる薄型設計のスタイリッシュさを好むユーザーに最適"
+        ]
+      },
+      {
+        "name": "Logicool SIGNATURE K855",
+        "asin": "B0B2ZT2HRJ",
+        "priceComparison": "K855は1万円以下で購入可能で価格面での優位性が高いが、K98Mはテンキーの搭載、ガスケットマウント、ホットスワップ対応、バックライトなど価格差に見合う上位機能を有している。",
+        "featureComparison": [
+          "共通点：通常プロファイルのメカニカルスイッチ、Logi Bolt / Bluetooth対応",
+          "相違点：K855はテンキーレスでバックライトなし、ガスケット構造ではない。K98Mはテンキー付きの98キーレイアウトでガスケット構造、バックライト付き。"
+        ],
+        "differentiators": [
+          "Logicool Alto Keys K98Mの利点：テンキーが必要で、より上質な打鍵音と柔らかな打ち心地、バックライトを求めるならこちら",
+          "Logicool SIGNATURE K855の利点：テンキーが不要で、できるだけ安価にロジクール製のメカニカルキーボードを導入したい場合に最適"
+        ]
+      },
+      {
+        "name": "Redragon K686 PRO SE",
+        "asin": "B0CTTMVL11",
+        "priceComparison": "Redragonの方が1万円未満と大幅に安価だが、K98Mはロジクール製デバイス群とのシームレスな連携（Logi Options+）や信頼性の高いサポート体制で価格以上の価値がある。",
+        "featureComparison": [
+          "共通点：98キー（テンキー搭載のコンパクトレイアウト）、ガスケットマウント、ホットスワップ対応、ワイヤレス接続",
+          "相違点：Redragonはゲーミング向けのRGBバックライトとアニメ調デザインだが、K98Mはオフィスに馴染む落ち着いたデザインと白色バックライト、Easy-Switchによる複数デバイスのシームレスな切り替えを特徴とする。"
+        ],
+        "differentiators": [
+          "Logicool Alto Keys K98Mの利点：オフィスワークで複数のPC/タブレットを頻繁に切り替えて使い、落ち着いたデザインと安定した専用ソフトウェア（Logi Options+）を求めるなら迷わずこちら",
+          "Redragon K686 PRO SEの利点：とにかく予算を抑えてガスケットマウントの98キーボードを体験したい、または派手なRGBライティングを楽しみたい場合に最適"
+        ]
+      },
+      {
+        "name": "Logicool G G913 TKL",
+        "asin": "B088BS3YY4",
+        "priceComparison": "G913 TKLの実売価格はK98Mより安くなっているケースがあるが、ゲーミング特化の薄型モデルと、タイピング特化の通常プロファイルで用途が明確に分かれる。",
+        "featureComparison": [
+          "共通点：ワイヤレス接続、メカニカルスイッチ",
+          "相違点：G913 TKLはゲーミング向けのLIGHTSPEED技術と薄型スイッチ、テンキーレスを採用。K98Mはタイピングの快適性を重視したガスケットマウントとテンキー付きの98キーレイアウトを採用。"
+        ],
+        "differentiators": [
+          "Logicool Alto Keys K98Mの利点：ゲームよりも長時間の文章作成やコーディング、事務作業での快適な打鍵感を最優先するならこちら",
+          "Logicool G G913 TKLの利点：FPSなどのゲーム用途で超低遅延を求め、テンキーが不要なゲーマーに最適"
+        ]
+      },
+      {
+        "name": "Logicool G G515 LIGHTSPEED TKL",
+        "asin": "B0D7ZMF9CM",
+        "priceComparison": "価格帯は比較的近いが、G515は最新のゲーミング機能に特化しており、K98Mは打鍵感とオフィスでの使い勝手に特化している。",
+        "featureComparison": [
+          "共通点：ワイヤレスメカニカル",
+          "相違点：G515は薄型スイッチのテンキーレスでLIGHTSPEED接続。K98Mは通常プロファイルのガスケットマウント、テンキー付き、Logi Bolt接続。"
+        ],
+        "differentiators": [
+          "Logicool Alto Keys K98Mの利点：テンキーによる数字入力の効率化と、ガスケットによるコトコトとした上質なタイピング体験を重視するならこちら",
+          "Logicool G G515 LIGHTSPEED TKLの利点：薄型かつ反応速度を重視し、最新のゲーミング環境を整えたいユーザーに最適"
+        ]
+      },
+      {
+        "name": "Logicool G G715",
+        "asin": "B0BF9SJHMJ",
+        "priceComparison": "G715の方が価格は若干高い場合が多い。どちらもデザイン性に優れるが、テンキーの有無や打鍵感へのアプローチが異なる。",
+        "featureComparison": [
+          "共通点：ホワイト系のカラーリングでデザイン性が高い、ワイヤレスメカニカル",
+          "相違点：G715はテンキーレスで、雲の形をしたパームレストが付属し、LIGHTSPEED対応。K98Mはテンキー付きの98キーで、ガスケットマウント採用。"
+        ],
+        "differentiators": [
+          "Logicool Alto Keys K98Mの利点：テンキーが必要で、ガスケットマウントによる打鍵時の柔らかな感触を求めるならこちら",
+          "Logicool G G715の利点：デスクの可愛らしい世界観（オーロラコレクション）を重視し、パームレストでの手首の快適性やゲーム用途も兼ねるユーザーに最適"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "限られたデスクスペースでもテンキーを使って効率的に数字入力を行いたいオフィスワーカー",
+        "長時間のタイピングで指の疲れを軽減したいプログラマーやライター",
+        "複数デバイス（Windows、Mac、iPadなど）を一つのキーボードでシームレスに行き来したいユーザー",
+        "ガスケットマウント特有の柔らかくコトコトとした静かな打鍵音を好む人"
+      ],
+      "pros": [
+        "テンキーを備えながらもコンパクトな設計により、書類やマウスを置くスペースを広く確保でき、作業効率が向上します",
+        "ガスケット構造による柔らかい打ち心地で、一日中タイピングしても指や手首への負担が少なく、作業に集中できます",
+        "Easy-SwitchやSmart Actionsを活用することで、複数PC間の移動や反復作業が自動化され、日々の業務ストレスが大きく軽減されます"
+      ],
+      "cons": [
+        "ゲーミング向けの超低遅延接続（LIGHTSPEED）には非対応のため、コンマ数秒を争う競技性の高いゲーム用途には推奨しません",
+        "RGBライティング機能はないため、派手なデスク環境を構築したいゲーマーはゲーミングモデル（Gシリーズ）を検討してください",
+        "ある程度の重量・厚みがあるため、頻繁にカバンに入れて持ち運ぶモバイル用途には不向きです"
+      ],
+      "score": 83,
+      "scoreRationale": "[基本点: 70]\n[加点: +5] (独自のガスケットマウントとMarble Switchによる上質な打鍵感)\n[加点: +5] (98キーによるテンキーと省スペース性の両立)\n[加点: +5] (Logi Options+やEasy-Switchによる圧倒的な作業効率の向上)\n[減点: -2] (単色バックライトや重量による用途の制約)\n[合計: 83]"
+    },
+    "technicalSpecs": {
+      "dimensions": {
+        "height": "39.0mm",
+        "width": "147.0mm",
+        "depth": "401.0mm",
+        "weight": "※詳細重量不明"
+      },
+      "connectivity": [
+        "Bluetooth",
+        "Logi Bolt USBレシーバー"
+      ],
+      "battery": {
+        "capacity": "※容量不明",
+        "charging": "USB-C 充電対応",
+        "playbackTime": "最大1年間 (フル充電かつバックライトオフ時)"
+      },
+      "other": [
+        "配列: 日本語配列 (102キー)",
+        "スイッチ: Marble Switch (ホットスワップ対応)",
+        "マウント方式: UniCushion ガスケットマウント",
+        "バックライト: 白色LED (輝度調節可能)",
+        "ソフトウェア機能: Logi Options+, Smart Actions対応",
+        "切り替え機能: Easy-Switch (最大3台)"
+      ]
+    }
+  }
+}
