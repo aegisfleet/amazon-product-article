@@ -1,0 +1,201 @@
+{
+  "analysis": {
+    "productName": "EarFun Free 2S",
+    "parentAsin": "B0BV5XFTR6",
+    "productDescription": "7mm複合膜ダイナミックドライバーを搭載し、専用アプリやワイヤレス充電に対応したIPX7防水の完全ワイヤレスイヤホン。",
+    "productUsage": [
+      "音楽・動画鑑賞",
+      "ハンズフリー通話",
+      "スマートフォンゲームプレイ"
+    ],
+    "positivePoints": [
+      "専用アプリ「EarFun Audio」によるイコライザー調整やタッチ操作のカスタマイズに対応している",
+      "ケースがワイヤレス充電に対応しており、利便性が高い",
+      "IPX7の非常に高い防水・防汗仕様（SweatShieldテクノロジー）を備えている",
+      "60msの低遅延モードを搭載し、動画視聴やゲームプレイの遅延を抑えられる"
+    ],
+    "negativePoints": [
+      "アクティブノイズキャンセリング(ANC)機能非搭載である",
+      "マルチポイント接続機能には対応していない"
+    ],
+    "useCases": [
+      "通勤・通学中や家事中のBGM再生",
+      "ランニングやトレーニング時の使用",
+      "スマートフォンでの動画視聴やカジュアルゲーム"
+    ],
+    "userStories": [
+      {
+        "userType": "通勤・通学ユーザー",
+        "scenario": "電車や徒歩での移動中",
+        "experience": "専用アプリで低音を少し強めにイコライザーをカスタマイズして音楽を楽しんでいます。突然の雨や運動時の汗でも安心なIPX7防水なのが気に入っていますが、ANCがないので電車内では環境音が少し気になります。",
+        "supportingSourceIds": [
+          "src-amazon-page"
+        ],
+        "sentiment": "mixed"
+      },
+      {
+        "userType": "スマホゲームユーザー",
+        "scenario": "自宅でのゲームプレイや動画視聴",
+        "experience": "低遅延モードをオンにすると音ズレがかなり軽減され、ゲームが快適になりました。ワイヤレス充電にも対応しているので、帰宅後にパッドに置くだけで充電でき非常に便利です。",
+        "supportingSourceIds": [
+          "src-amazon-page"
+        ],
+        "sentiment": "positive"
+      }
+    ],
+    "userImpression": "専用アプリ対応やワイヤレス充電、IPX7防水など、日常使いに便利な機能が充実しており、4,000円を下回る価格帯としては非常にコストパフォーマンスが高いと評価できます。一方でANCが非搭載であるため、静寂な環境を求めるユーザーには物足りなさがあり、周囲の騒音レベルに影響されやすい点がネックとして挙げられます。",
+    "sources": [
+      {
+        "id": "src-amazon-page",
+        "name": "Amazon.co.jp 製品ページ",
+        "url": "https://www.amazon.co.jp/dp/B0BF4XGC1K",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-09-06",
+        "author": "EarFun",
+        "conflictOfInterest": "disclosed",
+        "notes": "製品仕様、機能詳細、価格情報の確認"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "4マイク搭載で風や交通騒音などの通話ノイズを80%低減する",
+        "category": "quality",
+        "confidence": "medium",
+        "supportingSourceIds": [
+          "src-amazon-page"
+        ],
+        "crossChecked": false,
+        "notes": "メーカー公称値であり、実際の環境や風の強さなどによって通話品質は変動する可能性がある。"
+      }
+    ],
+    "lastInvestigated": "2026-09-06",
+    "investigatedPrice": "￥3,980",
+    "competitiveAnalysis": [
+      {
+        "name": "Anker Soundcore P40i",
+        "asin": "B0CP4RQZ3L",
+        "priceComparison": "対象商品より約2,000円高いが、ANC搭載やマルチポイント対応など機能面で優位性がある。",
+        "featureComparison": [
+          "共通点：専用アプリ対応、ワイヤレス充電対応",
+          "相違点：P40iはノイズキャンセリングやマルチポイント接続を搭載しているが価格が高い。Free 2SはANC非搭載だが低価格で防水性能が高い。"
+        ],
+        "differentiators": [
+          "EarFun Free 2Sの利点：できるだけ予算を抑えつつ、IPX7の高い防水性能やワイヤレス充電を求めるならこちら",
+          "Anker Soundcore P40iの利点：数千円の追加投資でノイズキャンセリングやマルチポイントなど最新の必須機能をすべて揃えたいなら迷わずこちら"
+        ]
+      },
+      {
+        "name": "SOUNDPEATS C30",
+        "asin": "B0FWC7ZSTK",
+        "priceComparison": "対象商品より少し安い価格でANCを搭載しているため、コスパの観点では強力なライバルとなる。",
+        "featureComparison": [
+          "共通点：4,000円未満のエントリークラスの完全ワイヤレスイヤホン",
+          "相違点：C30はANCを搭載している。Free 2Sはワイヤレス充電に対応し、防水性能が高い。"
+        ],
+        "differentiators": [
+          "EarFun Free 2Sの利点：ワイヤレス充電の利便性や、スポーツにも耐えるIPX7防水を優先するならこちら",
+          "SOUNDPEATS C30の利点：低予算でもどうしてもノイズキャンセリング機能が欲しい場合はこちら"
+        ]
+      },
+      {
+        "name": "EarFun Air 2",
+        "asin": "B0CQXKHYMD",
+        "priceComparison": "対象商品より約700円高いが、ハイレゾ(LDAC)やマルチポイントに対応している。",
+        "featureComparison": [
+          "共通点：EarFun製、ワイヤレス充電対応、ANC非搭載",
+          "相違点：Air 2はLDAC対応によるハイレゾ再生やマルチポイント接続に対応。Free 2SはIPX7防水。"
+        ],
+        "differentiators": [
+          "EarFun Free 2Sの利点：少しでも価格を抑えたい、あるいはIPX7の強力な防水性能が必要な場合はこちら",
+          "EarFun Air 2の利点：数百円の差額でハイレゾ再生(LDAC)やマルチポイント接続といった上位機能を求めるならこちら"
+        ]
+      },
+      {
+        "name": "EarFun Free Pro 3",
+        "asin": "B0CCD9L5NB",
+        "priceComparison": "対象商品より約3,000円高いが、上位モデルとして充実した機能を備える。",
+        "featureComparison": [
+          "共通点：EarFun製のコンパクトなイヤホン、ワイヤレス充電対応",
+          "相違点：Free Pro 3は強力なANC、マルチポイント、Snapdragon Soundに対応する。"
+        ],
+        "differentiators": [
+          "EarFun Free 2Sの利点：機能はシンプルで良いので、4,000円以下の低予算で手に入れたいならこちら",
+          "EarFun Free Pro 3の利点：予算に余裕があり、強力なノイキャンや高音質技術を搭載した本格的なメイン機が欲しいならこちら"
+        ]
+      },
+      {
+        "name": "TOZO NC9",
+        "asin": "B0DK53QZ8J",
+        "priceComparison": "対象商品より約600円高いが、ハイブリッドANCを搭載している。",
+        "featureComparison": [
+          "共通点：専用アプリによるカスタマイズ対応",
+          "相違点：NC9はハイブリッドANCによる最大45dBのノイズ低減機能を備える。"
+        ],
+        "differentiators": [
+          "EarFun Free 2Sの利点：EarFunブランドの信頼性やワイヤレス充電の手軽さを選ぶならこちら",
+          "TOZO NC9の利点：同価格帯でしっかりしたノイズキャンセリング性能を重視するならこちら"
+        ]
+      },
+      {
+        "name": "EarFun Air Pro 4",
+        "asin": "B0D4Z8KJXY",
+        "priceComparison": "対象商品より約4,000円高く、価格帯が異なる上位モデル。",
+        "featureComparison": [
+          "共通点：EarFunブランド、ワイヤレス充電対応、アプリ対応",
+          "相違点：Air Pro 4は最新のBluetooth 5.4、LDAC/aptX Lossless、強力な適応型ANCを備えるフラッグシップモデル。"
+        ],
+        "differentiators": [
+          "EarFun Free 2Sの利点：ANCは不要で、とりあえず使えるコスパの良いサブ機や入門機を探しているならこちら",
+          "EarFun Air Pro 4の利点：音質からノイキャンまで一切妥協せず、数万円クラスに匹敵する性能をアンダー1万円で手に入れたいなら迷わずこちら"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "ANC機能は不要だが、アプリでのカスタマイズやワイヤレス充電など便利な機能を競合同価格帯の製品より充実させたい人",
+        "スポーツや雨天時にも気にせず使える高い防水性能（IPX7）を重視する人"
+      ],
+      "pros": [
+        "専用アプリで好みの音質や操作に調整できるため、自分だけの快適なリスニング環境を作れる",
+        "ワイヤレス充電対応により、ケーブルを抜き差しする煩わしさから解放される",
+        "IPX7の高い防水性能で、運動中の汗や急な雨でも故障を気にせず安心して使用できる"
+      ],
+      "cons": [
+        "ANC非搭載のため、地下鉄や騒音の多い環境で静かに音楽を聴きたい人には不向き",
+        "マルチポイント接続がないため、スマホやPCなど複数端末を頻繁に切り替えて使う人には不便"
+      ],
+      "score": 73,
+      "scoreRationale": "[基本点: 70]\n[加点: +5] (4,000円以下の価格帯ながらワイヤレス充電や専用アプリカスタマイズに対応するコストパフォーマンス)\n[加点: +2] (IPX7の完全防水仕様によるスポーツ等の実用性の高さ)\n[減点: -4] (同価格帯でANC搭載モデルが存在する中、ANCおよびマルチポイント接続が非搭載である点)\n[合計: 73]"
+    },
+    "technicalSpecs": {
+      "display": {
+        "size": "",
+        "resolution": "",
+        "type": "",
+        "refreshRate": ""
+      },
+      "battery": {
+        "capacity": "400mAh (充電ケース)",
+        "charging": "USB Type-C 急速充電 / ワイヤレス充電対応",
+        "playbackTime": "最大30時間 (ケース併用時) / 10分充電で2時間再生"
+      },
+      "dimensions": {
+        "height": "19.9mm",
+        "width": "19.9mm",
+        "depth": "60mm",
+        "weight": ""
+      },
+      "connectivity": [
+        "Bluetooth 5.2"
+      ],
+      "other": [
+        "ドライバー: 7mm複合膜ダイナミックドライバー",
+        "マイク: 4マイク内蔵 (通話ノイズ低減)",
+        "防水規格: IPX7 (SweatShieldテクノロジー)",
+        "低遅延モード搭載 (最短60ms)",
+        "EarFun Audioアプリ対応"
+      ]
+    }
+  }
+}
