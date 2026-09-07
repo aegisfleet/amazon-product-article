@@ -1,0 +1,159 @@
+{
+  "analysis": {
+    "productName": "Tecaki A30 小型プロジェクター",
+    "parentAsin": "B0HB48JDMK",
+    "productDescription": "Android TV 14.0を搭載し、270°回転スタンドを備えた小型・軽量のホームプロジェクター。",
+    "productUsage": [
+      "ホームシアター",
+      "動画ストリーミング（Netflix, YouTubeなど）",
+      "天井への投影"
+    ],
+    "positivePoints": [
+      "本体重量455gと非常に軽量で、コンパクトに設置可能",
+      "Android TV 14.0を搭載し、本体単独で動画ストリーミングが視聴可能",
+      "270°回転スタンドを内蔵し、天井投影などが容易に行える",
+      "1.15:1の短焦点レンズを採用し、短い距離でも大画面投影が可能"
+    ],
+    "negativePoints": [
+      "25000ルーメンという明るさ表記は、小型プロジェクターの物理的限界を考慮するとANSIルーメン等とは異なる独自基準の可能性が高い",
+      "外部メディアでの詳細な画質レビューや第三者評価が存在しない"
+    ],
+    "useCases": [
+      "リビングや寝室での映画鑑賞",
+      "天井への投影による寝ながらの動画視聴",
+      "省スペースでの大画面表示"
+    ],
+    "userStories": [
+      {
+        "userType": "寝室での映画鑑賞を好むユーザー",
+        "scenario": "ベッドに寝転がりながら天井に映像を映して動画を楽しみたい場面",
+        "experience": "270度回転するスタンドのおかげで、三脚などを用意せずにそのまま天井へ投影できました。Android TV内蔵なのでスマホやPCを繋ぐ手間もなく、寝る前のリラックスタイムに重宝しています。",
+        "supportingSourceIds": ["src-amazon"],
+        "sentiment": "positive"
+      }
+    ],
+    "userImpression": "小型・軽量で回転スタンドを内蔵しているため、設置の自由度が高く、特に天井投影を手軽に楽しみたいユーザーにとって便利な製品。Android TV内蔵により単体で完結する点も評価できるが、輝度のスペック表記については過度な期待を持たず、暗い部屋での使用を前提とするのが無難である。",
+    "sources": [
+      {
+        "id": "src-amazon",
+        "name": "Amazon商品ページ",
+        "url": "https://www.amazon.co.jp/dp/B0FGCLDGHF",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-09-07",
+        "author": "Tecaki",
+        "conflictOfInterest": "possible",
+        "notes": "製品スペック、機能、販売価格を確認"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "驚異の25000ルーメンという高輝度を実現",
+        "category": "quality",
+        "confidence": "low",
+        "supportingSourceIds": ["src-amazon"],
+        "crossChecked": false,
+        "notes": "小型・軽量なプロジェクターで実質的な25000ルーメン（ANSIルーメン相当）を達成することは物理的に考えにくく、光源輝度等の独自基準の可能性が高い。"
+      }
+    ],
+    "lastInvestigated": "2026-09-07",
+    "investigatedPrice": "￥7,216",
+    "competitiveAnalysis": [
+      {
+        "name": "Philoent 小型プロジェクター",
+        "asin": "B0F5GQLNWP",
+        "priceComparison": "対象商品とほぼ同価格帯。",
+        "featureComparison": [
+          "共通点：Android TV 14.0搭載、小型軽量設計、回転スタンド搭載",
+          "相違点：対象商品は重量455g・短焦点レンズ採用、競合は重量388g"
+        ],
+        "differentiators": [
+          "Tecaki A30の利点：短焦点レンズ（1.15:1）により、狭い部屋でもより大きな画面を投影したい場合に適している",
+          "Philoentの利点：少しでも軽い本体（388g）を求める場合に適している"
+        ]
+      },
+      {
+        "name": "Nextorage NX1",
+        "asin": "B0B5XBJKSY",
+        "priceComparison": "対象商品より約5,500円高い。",
+        "featureComparison": [
+          "共通点：小型軽量でベッドルーム等での使用を想定",
+          "相違点：対象商品はAndroid TVを内蔵し単体で動作可能。競合は国内メーカー製で、ANSIルーメン表記（105ANSIルーメン）とフレキシブルアームが特徴"
+        ],
+        "differentiators": [
+          "Tecaki A30の利点：価格が安く、Android TV内蔵のため追加機器なしで動画配信サービスを楽しめる",
+          "Nextorage NX1の利点：国内メーカーの信頼性と、正確な明るさ表記（ANSIルーメン）を重視する人に適している"
+        ]
+      },
+      {
+        "name": "CeLunar D2 プロジェクター",
+        "asin": "B0GXTMLPYB",
+        "priceComparison": "対象商品より約2,800円高い。",
+        "featureComparison": [
+          "共通点：Android TV搭載、小型設計",
+          "相違点：競合は0.5mの超短焦点と1400ANSI高輝度を謳っている"
+        ],
+        "differentiators": [
+          "Tecaki A30の利点：価格を抑えつつ、十分な短焦点（1.15:1）と使い勝手の良い回転スタンドを求める人に適している",
+          "CeLunar D2の利点：より壁に近い距離からの投影（超短焦点）を求める場合に適している"
+        ]
+      },
+      {
+        "name": "ONOAYO AY2Pro",
+        "asin": "B0DBL12322",
+        "priceComparison": "対象商品の2倍以上の価格（約17,000円）。",
+        "featureComparison": [
+          "共通点：1080P解像度、小型設計",
+          "相違点：対象商品はAndroid TV内蔵。競合は電動フォーカス機能を搭載し、3年保証がついている"
+        ],
+        "differentiators": [
+          "Tecaki A30の利点：大幅に価格が安く、かつ本体単独で動画アプリを利用できる手軽さがある",
+          "ONOAYO AY2Proの利点：電動フォーカスによる調整のしやすさと、長期保証による安心感を求める人に適している"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "寝室での天井投影など、手軽に寝ながら動画視聴環境を作りたい人",
+        "予算1万円以下でAndroid TV内蔵のプロジェクターを探している人",
+        "部屋が狭く、短い距離でできるだけ大きな画面を映したい人"
+      ],
+      "pros": [
+        "270°回転スタンドが本体に組み込まれているため、三脚などの追加費用なしで手軽に天井投影が楽しめる",
+        "Android TV 14.0内蔵により、スマホやPCを繋がなくてもWi-Fi環境さえあればNetflixやYouTubeを視聴できる",
+        "短焦点レンズ採用により、狭い部屋でも壁のスペースを有効活用して大画面を映し出せる"
+      ],
+      "cons": [
+        "「25000ルーメン」という表記は一般的なANSIルーメン等の基準と異なる可能性が高いため、明るい部屋での使用には適さず、暗所での使用を前提とする必要がある"
+      ],
+      "score": 73,
+      "scoreRationale": "[基本点: 70]\n[加点: +5] (7,000円台という安価な価格設定ながらAndroid TVを内蔵し、単体でストリーミング再生が可能な高いコストパフォーマンス)\n[加点: +3] (270度回転スタンドと短焦点レンズにより、設置の自由度が高く天井投影も容易な実用性)\n[減点: -5] (新興ノーブランド品としてのサポート体制の不透明さと、物理的限界に対して過大な「25000ルーメン」という輝度表記による信頼性の懸念)\n[合計: 73]"
+    },
+    "technicalSpecs": {
+      "os": "Android TV 14.0",
+      "resolution": "1920×1080 (1080P) / 4K入力対応",
+      "brightness": "25000ルーメン (※メーカー独自基準)",
+      "dimensions": {
+        "height": "180mm",
+        "width": "104mm",
+        "depth": "104mm",
+        "weight": "455g"
+      },
+      "connectivity": [
+        "Wi-Fi 6",
+        "Bluetooth 5.4",
+        "HDMI",
+        "USB",
+        "3.5mmオーディオジャック"
+      ],
+      "other": [
+        "270°回転スタンド内蔵",
+        "1.15:1 短焦点レンズ",
+        "自動台形補正搭載",
+        "手動フォーカス",
+        "動作音: 30dB以下",
+        "HiFiスピーカー内蔵"
+      ]
+    }
+  }
+}
