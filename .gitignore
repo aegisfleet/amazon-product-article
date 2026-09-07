@@ -121,6 +121,10 @@ plan_update.md
 data/categories.yml
 
 # Personal research scripts/files in root
+/*.js
+/*.mjs
+/*.cjs
+!/jest.config.js
 /*.py
 /*.sh
 /*.html
