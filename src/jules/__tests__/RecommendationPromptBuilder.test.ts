@@ -66,4 +66,13 @@ describe('RecommendationPromptBuilder', () => {
     expect(prompt).toContain('※「クーポン」という表現は使用厳禁');
     expect(prompt).toContain('「クーポン」表記は禁止');
   });
+
+  it('should require verified article existence and prohibit fake sale claims for regular products', () => {
+    const builder = new RecommendationPromptBuilder();
+    const prompt = builder.build();
+
+    expect(prompt).toContain('検証済み記事の存在が必須 (最重要)');
+    expect(prompt).toContain('セールバッジのない通常商品へのセール表現の完全禁止 (最重要)');
+    expect(prompt).toContain('セールバッジがない商品に「◯% OFF セール」と名付けるのは禁止');
+  });
 });
