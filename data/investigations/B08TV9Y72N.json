@@ -53,7 +53,7 @@
         "url": "https://www.i-lohas.jp/",
         "tier": "high",
         "evidenceType": "primary",
-        "publishedAt": "2026-03-23",
+        "publishedAt": "2026-09-08",
         "author": "コカ・コーラ",
         "conflictOfInterest": "disclosed",
         "notes": "製品情報、成分、環境への取り組み"
@@ -64,7 +64,7 @@
         "url": "https://www.amazon.co.jp/dp/B08TV9Y72N",
         "tier": "medium",
         "evidenceType": "secondary",
-        "publishedAt": "2026-03-23",
+        "publishedAt": "2026-09-08",
         "author": "Amazon カスタマー",
         "conflictOfInterest": "none",
         "notes": "ユーザーレビューによる使用感"
@@ -83,7 +83,7 @@
         "notes": "公式サイトとユーザーレビューで一致"
       }
     ],
-    "lastInvestigated": "2026-03-23",
+    "lastInvestigated": "2026-09-08",
     "competitiveAnalysis": [
       {
         "name": "い・ろ・は・す ラベルレス 2L ×8本",
@@ -136,6 +136,45 @@
           "い・ろ・は・す 2L PET ×8本の利点：クラッシュボトルでゴミを小さくできる。ラベルあり。",
           "伊藤園 磨かれて、澄みきった日本の水の利点：ラベルレスで分別の手間がない。"
         ]
+      },
+      {
+        "name": "ケイ・エフ・ジー 純天然のアルカリイオン水 金城の華 2L×8本",
+        "asin": "B00115SZZ0",
+        "priceComparison": "対象商品より大幅に価格が高い。アルカリイオン水としての付加価値があるかどうかが判断基準となる。",
+        "featureComparison": [
+          "共通点：2L×8本のミネラルウォーター。",
+          "相違点：非加熱の純天然アルカリイオン水。価格帯が全く異なる。"
+        ],
+        "differentiators": [
+          "い・ろ・は・す 2L PET ×8本の利点：圧倒的に安価で、日常的な水分補給や料理など気兼ねなく使える。ボトルが潰しやすい。",
+          "ケイ・エフ・ジー 金城の華の利点：アルカリイオン水を好む人や、非加熱にこだわる人向け。"
+        ]
+      },
+      {
+        "name": "by Amazon 天然水ラベルレス 2L×9本",
+        "asin": "B08GZR18S3",
+        "priceComparison": "対象商品よりやや高いが9本入り。1本あたりの価格は対象商品と同等レベル。",
+        "featureComparison": [
+          "共通点：日本の天然水。",
+          "相違点：by Amazonは9本入りでラベルレス。製造元がアイリスオーヤマ等。"
+        ],
+        "differentiators": [
+          "い・ろ・は・す 2L PET ×8本の利点：ボトルの潰しやすさ（クラッシュボトル）に優れ、ゴミの体積を減らせる。8本入りで少し軽い。",
+          "by Amazon 天然水の利点：ラベルレスで分別の手間がなく、9本まとめて購入できる。"
+        ]
+      },
+      {
+        "name": "サントリー 天然水 ミネラルウォーター 2L ×9本 南アルプス",
+        "asin": "B07F1CCSJZ",
+        "priceComparison": "対象商品より価格が高い。9本入り。",
+        "featureComparison": [
+          "共通点：日本の天然水（軟水）。",
+          "相違点：9本入り。ブランドがサントリー。"
+        ],
+        "differentiators": [
+          "い・ろ・は・す 2L PET ×8本の利点：ボトルを簡単に小さく潰せるため、ゴミ捨ての負担が少ない。",
+          "サントリー 天然水の利点：長年親しまれている南アルプスの天然水ブランドを指定買いしたい場合。"
+        ]
       }
     ],
     "recommendation": {
@@ -163,7 +202,7 @@
         "width": "200mm",
         "depth": "401mm"
       },
-      "weight": "約16000g",
+      "weight": "16kg",
       "ingredients": "水（鉱水）",
       "origin": "日本",
       "hardness": "軟水 (27.0-71.1mg/L)",
@@ -172,6 +211,7 @@
         "Amazon限定ブランド(CCL)"
       ],
       "manufacturer": "コカ・コーラ"
-    }
+    },
+    "investigatedPrice": "￥945"
   }
 }
