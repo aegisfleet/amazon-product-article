@@ -1,0 +1,160 @@
+{
+  "analysis": {
+    "productName": "KEEZING スマートプロジェクター",
+    "parentAsin": "B0H753MNBG",
+    "productDescription": "Android TV 14.0を搭載し、天井投影に便利な360度回転式スタンドを備えた小型ホームプロジェクター。",
+    "productUsage": [
+      "寝室での天井投影",
+      "リビングでの動画配信サービスの視聴",
+      "省スペースでの大画面映像体験"
+    ],
+    "positivePoints": [
+      "1万円を切る低価格ながらAndroid TV 14.0を内蔵している",
+      "本体を動かさずに天井などへ投影できる360度自由回転機構を採用",
+      "Wi-Fi 6およびBluetooth 5.4に対応している"
+    ],
+    "negativePoints": [
+      "1500 ANSIルーメンという価格・筐体サイズから物理的に不可能な輝度が表記されている（実際の明るさは200〜300 ANSIルーメン程度と推測される）",
+      "「8K対応」はあくまで入力信号のデコード対応であり、実際の投影解像度は1080P（フルHD）である",
+      "無名ブランドであり、サポート体制や長期的な耐久性に懸念がある"
+    ],
+    "useCases": [
+      "ベッドに寝転がりながら天井でNetflixやYouTubeを楽しむ",
+      "三脚なしで手軽に壁や天井に投影したい"
+    ],
+    "userStories": [
+      {
+        "userType": "寝室用プロジェクターを探している人",
+        "scenario": "ベッドで寝転びながら映画を見たい",
+        "experience": "スタンドと本体が一体化しており、レンズを上に向けるだけで簡単に天井に投影できるため、別途三脚を用意する手間が省けて便利。Android TV内蔵なのでFire TV Stick等を別途繋がずに動画配信サービスが見られるのも良い。ただし、部屋を暗くしないと映像は薄く、日中の視聴には向いていない。",
+        "supportingSourceIds": ["src-1"],
+        "sentiment": "positive"
+      }
+    ],
+    "userImpression": "1万円以下のプロジェクターとしては、Android TV内蔵と天井投影に特化したデザインにより「手軽に寝室シアターを作りたい」という層には一定の実用性がある。しかし、商品ページで謳われている『1500 ANSIルーメン』や『8K対応』といった誇大表記は明らかに実態とかけ離れており、スペックを鵜呑みにして本格的なホームシアターを期待したユーザーからは明るさや画質への不満が出やすい。あくまで『暗い部屋で楽しむエントリー機』と割り切れるユーザー向けである。",
+    "sources": [
+      {
+        "id": "src-1",
+        "name": "Amazon公式商品ページ",
+        "url": "https://www.amazon.co.jp/dp/B0H753MNBG",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-09-09",
+        "author": "KEEZING",
+        "conflictOfInterest": "possible",
+        "notes": "商品仕様、価格、機能説明を確認。1500 ANSIルーメンや8K対応などの過大表記を確認。"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "1500 ANSIルーメンの高輝度",
+        "category": "quality",
+        "confidence": "low",
+        "supportingSourceIds": ["src-1"],
+        "crossChecked": false,
+        "notes": "1万円以下の小型プロジェクターで1500 ANSIルーメンを実現することは物理的・コスト的に不可能であり、典型的なスペック誇張（見せかけの数値）であると考えられる。"
+      },
+      {
+        "claim": "8K対応",
+        "category": "quality",
+        "confidence": "medium",
+        "supportingSourceIds": ["src-1"],
+        "crossChecked": false,
+        "notes": "実際のネイティブ解像度は1080Pであり、8K映像の『入力・デコード』が可能というだけであり、8K画質で投影できるわけではない。"
+      }
+    ],
+    "lastInvestigated": "2026-09-09",
+    "investigatedPrice": "￥9,998",
+    "competitiveAnalysis": [
+      {
+        "name": "sainyer プロジェクター B0CSK7W2F9",
+        "asin": "B0CSK7W2F9",
+        "priceComparison": "対象商品より安価な廉価モデルであるが、Wi-Fi/Bluetooth非対応である点に注意が必要。",
+        "featureComparison": [
+          "共通点：回転式のスタンドを備え、天井投影が可能",
+          "相違点：対象商品はAndroid TV内蔵・無線接続対応だが、本製品は有線接続専用"
+        ],
+        "differentiators": [
+          "対象商品の利点：Wi-Fi接続とAndroid TV内蔵により、本体単独でNetflixやYouTubeなどの動画配信サービスを楽しめる",
+          "sainyerの利点：無線接続を必要とせず、PCやゲーム機などをHDMIで有線接続するだけの用途であれば価格を抑えられる"
+        ]
+      },
+      {
+        "name": "FALIYORS プロジェクター B0GD12KTVG",
+        "asin": "B0GD12KTVG",
+        "priceComparison": "対象商品よりも安価だが、不当な大幅値引きを装う二重価格表示の疑いが強い点に注意が必要。",
+        "featureComparison": [
+          "共通点：Android TVを内蔵し、天井投影に対応",
+          "相違点：対象商品が1500ANSIルーメンと表記する一方、本製品は33000LMという異なる単位で誇大表記を行っている"
+        ],
+        "differentiators": [
+          "対象商品の利点：スペック表記に誇張は見られるものの、見せ金による二重価格表示（定価偽装）を行っていない",
+          "FALIYORSの利点：実売価格がわずかに安い"
+        ]
+      },
+      {
+        "name": "Sainellor プロジェクター B0FY2ZJXSR",
+        "asin": "B0FY2ZJXSR",
+        "priceComparison": "対象商品より安価な、超低価格帯モデルである。",
+        "featureComparison": [
+          "共通点：小型軽量で天井投影が可能なデザイン",
+          "相違点：対象商品がスマート機能（Android TV）を内蔵しているのに対し、本製品はスマホ等との接続が前提"
+        ],
+        "differentiators": [
+          "対象商品の利点：単体で動画配信サービスを再生できる利便性の高さ",
+          "Sainellorの利点：機能がシンプルな分、圧倒的な低価格で購入可能"
+        ]
+      },
+      {
+        "name": "コブキ BUJI プロジェクター B0GJL8Y2NW",
+        "asin": "B0GJL8Y2NW",
+        "priceComparison": "対象商品と同価格帯の直接的な競合モデルである。",
+        "featureComparison": [
+          "共通点：Android TV 14.0を搭載し、360度回転機構を備える",
+          "相違点：基本仕様はほぼ同一であり、OEMの同等品（ロゴ違い）である可能性が高い"
+        ],
+        "differentiators": [
+          "対象商品の利点：スペック・機能面に大きな差はないため、購入時の価格やクーポンの有無で有利な方を選ぶべき",
+          "コブキ BUJIの利点：機能的に大きな差はないため、購入時の価格条件次第"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "画質や明るさよりも、1万円以下でAndroid TV内蔵というコストパフォーマンスと利便性を重視する人",
+        "別途スタンドを用意せずに、寝室の天井に映像を映して寝転がりながら視聴したい人"
+      ],
+      "pros": [
+        "Android TV内蔵とWi-Fi対応により、Fire TV Stick等の外部機器を接続せずとも、プロジェクター単体で動画配信サービスを手軽に楽しめる",
+        "360度回転機構により、壁だけでなく天井への投影も本体の角度を変えるだけで瞬時に行える"
+      ],
+      "cons": [
+        "「1500 ANSIルーメン」という表記は物理的にあり得ない誇大スペックであり、実際の明るさは低いため、日中や明るい部屋での使用は不可能である",
+        "実態の不透明な新興ノーブランド品であり、長期間の耐久性やサポートには期待できない"
+      ],
+      "score": 65,
+      "scoreRationale": "[基本点: 70]\n[加点: +10] 1万円を切る低価格ながらAndroid TVを内蔵し、天井投影にも対応する高い利便性・実用性\n[減点: -15] 「1500 ANSIルーメン」「8K対応」など、価格帯および筐体サイズから物理的・工学的に明らかに矛盾する誇大な虚偽スペック表記による信頼性の欠如\n[合計: 65]"
+    },
+    "technicalSpecs": {
+      "os": "Android TV 14.0",
+      "display": {
+        "resolution": "1920×1080 (1080PフルHD) ※8Kデコード対応"
+      },
+      "connectivity": [
+        "Wi-Fi 6",
+        "Bluetooth 5.4",
+        "HDMI",
+        "USB",
+        "AUX"
+      ],
+      "color": "ホワイト",
+      "other": [
+        "360度自由回転機構 (天井投影対応)",
+        "0.1秒自動台形補正",
+        "内蔵HiFiスピーカー",
+        "0.5m近距離投射対応",
+        "※1500 ANSIルーメン表記あり (実態とは異なる可能性大)"
+      ]
+    }
+  }
+}
