@@ -24,8 +24,15 @@ export class InvestigationPromptBuilder {
     const furusatoInfo = this.getFurusatoInfo();
     const rubric = this.getScoringRubric();
     const specs = this.getProductSpecs();
+    const featuresInfo = this.getFeaturesInfo();
 
-    return this.generatePrompt(brandInfo, parentAsinInfo, dealInfo, furusatoInfo, rubric, specs);
+    return this.generatePrompt(brandInfo, parentAsinInfo, dealInfo, furusatoInfo, rubric, specs, featuresInfo);
+  }
+
+  private getFeaturesInfo(): string {
+    if (!this.product.features || this.product.features.length === 0) return '';
+    const featuresList = this.product.features.map((f) => `  - ${f}`).join('\n');
+    return `- 商品特徴 (箇条書き):\n${featuresList}`;
   }
 
   private getBrandInfo(): string {
@@ -133,6 +140,7 @@ export class InvestigationPromptBuilder {
     furusatoInfo: string,
     rubric: string,
     specs: string,
+    featuresInfo: string,
   ): string {
     const productInfoLines = [
       `- ASIN: ${this.product.asin}`,
@@ -143,6 +151,7 @@ export class InvestigationPromptBuilder {
       furusatoInfo,
       `- カテゴリ: ${this.product.category}`,
       `- 価格: ${this.product.price.formatted}`,
+      featuresInfo,
       '- 仕様・詳細:',
       specs,
     ]
@@ -195,14 +204,18 @@ export class InvestigationPromptBuilder {
   - \`creators_get_item.py\` の出力に含まれるモデル名・型番と、プロンプト冒頭の「商品名」が一致しているか照合する。
   - 一致しない場合（例: \`HCM-AS01WH\` の調査中に \`HCM-BLE01\` のデータが返された等）は、そのデータを採用せず、\`google_search\` 等で正確な情報を再取得する。
   - 外部ソース（公式サイト、カタログ等）を参照する際も、ページのモデル名・型番が調査対象と完全一致することを必ず確認する。型番の1文字の違い（例: \`AS01\` vs \`BL01\`）でも別機種である可能性が高く、Bluetooth対応の有無など機能・仕様が大きく異なる場合がある。この確認を怠ることで発生した誤情報は、説明文・スペック・競合比較など全フィールドに波及するため極めて危険である。
-6. **成果物の作成と徹底検証**: JSONファイル作成後、直ちに以下の検証を行う。
+6. **【仕様値と商品特徴（features）・寸法の数値乖離・物理的整合性の検証義務（最重要）】**:
+  - Amazon仕様項目（\`specifications.size\` や \`capacity\` 等）と、商品特徴（\`features\`）や商品タイトル、物理的寸法（\`dimensions\`）との間に数値や容量の乖離・矛盾がある場合（例: 仕様には「700ml」とあるが特徴文には「約285ml」とある、または直径9cmのボトルに700mlとある等）、**仕様項目を無批判に真実と信じてはならない**。
+  - セラーによる誤登録や見せかけの大容量誇大表記を疑い、特徴説明文、物理的体積・寸法、同型競合製品の容量を必ずクロスチェックして実態の数値を特定すること。
+  - 矛盾が確認された場合は、誇大な仕様値ではなく実態側の数値を正として評価し、かつセラーによる誤記・誇大表記への注意喚起として信頼性の観点から適切に減点を行うこと。決して架空の大容量製品として加点・評価してはならない。
+7. **成果物の作成と徹底検証**: JSONファイル作成後、直ちに以下の検証を行う。
   - \`uv run python scripts/validate_artifact.py data/investigations/${this.product.asin}.json\` を実行する。
   - **修正義務**: 警告やエラー（リンク切れ、非メートル法単位の混入、必須項目の不足等）が出た場合は、必ずその場で内容を修正し、再度チェックをパスさせる。
   - 特に競合製品との価格比較やスペックの正確性を再確認する。
   - \`lastInvestigated\` を本日の日付（${this.today}）に更新し、\`investigatedPrice\` に調査時点の価格（${this.product.price.formatted}）を設定する。
-7. **外部調査と継続性**: Amazon 403エラー等でもGoogle検索等で調査を継続し、絶対に「調査不能」で終わらせない。情報が不足している場合は、自律的に検索キーワードを工夫して必要なエビデンスを揃える。
-8. **推測ではなく根拠**: 商品仕様からの論理的推論は許容するが、架空のエピソード創作（ハルシネーション）は厳禁である。
-9. **網羅的・完全構造化されたスペックの記載 (technicalSpecs)**:
+8. **外部調査と継続性**: Amazon 403エラー等でもGoogle検索等で調査を継続し、絶対に「調査不能」で終わらせない。情報が不足している場合は、自律的に検索キーワードを工夫して必要なエビデンスを揃える。
+9. **推測ではなく根拠**: 商品仕様からの論理的推論は許容するが、架空のエピソード創作（ハルシネーション）は厳禁である。
+10. **網羅的・完全構造化されたスペックの記載 (technicalSpecs)**:
   - 調査で判明した商品仕様は、\`technicalSpecs\` セクションに漏れなく構造化して記載する。
   - **【最重要】完全構造化の徹底**: SoC、OS、RAM、Storage、ディスプレイ、バッテリー、カメラ等は絶対に \`other\` 配列に文字列でまとめず、必ず個別キー（\`os\`, \`cpu\`, \`ram\`, \`storage\`, \`display\`, \`battery\`, \`camera\`, \`dimensions\`, \`connectivity\` 等）に構造化して抽出する。
   - **配列形式の厳守**: \`connectivity\` や \`other\`、\`codec\` などの複数項目は、オブジェクト（\`{ ... }\`）にせず**文字列の配列（例: \`["Bluetooth 5.3", "LDAC対応", "3台マルチポイント"]\`）**として出力すること（記事生成時の表示崩れ防止のため）。
