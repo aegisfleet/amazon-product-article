@@ -298,4 +298,31 @@ describe('CreatorsAPIClient Parsing Tests', () => {
       expect(product.isAmazonHaul).toBe(false);
     });
   });
+
+  describe('features parsing in parseProduct', () => {
+    it('should parse features when itemInfo.features exists', () => {
+      const mockItem: any = {
+        asin: 'B0TESTASIN1',
+        itemInfo: {
+          title: { displayValue: 'Test Product' },
+          features: {
+            displayValues: ['Feature 1: 大容量', 'Feature 2: 軽量コンパクト'],
+          },
+        },
+      };
+      const product = (client as any).parseProduct(mockItem as CreatorsAPIItem);
+      expect(product.features).toEqual(['Feature 1: 大容量', 'Feature 2: 軽量コンパクト']);
+    });
+
+    it('should default features to empty array when features is missing', () => {
+      const mockItem: any = {
+        asin: 'B0TESTASIN1',
+        itemInfo: {
+          title: { displayValue: 'Test Product' },
+        },
+      };
+      const product = (client as any).parseProduct(mockItem as CreatorsAPIItem);
+      expect(product.features).toEqual([]);
+    });
+  });
 });

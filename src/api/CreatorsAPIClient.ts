@@ -716,6 +716,7 @@ export class CreatorsAPIClient {
       })(),
       dealAccessType: listing?.dealDetails?.accessType,
       savingsPercentage: listing?.price?.savings?.percentage ?? undefined,
+      features: item.itemInfo?.features?.displayValues || [],
     };
 
     if (item.parentASIN) product.parentAsin = item.parentASIN;
