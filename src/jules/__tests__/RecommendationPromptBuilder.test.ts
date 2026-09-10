@@ -75,4 +75,16 @@ describe('RecommendationPromptBuilder', () => {
     expect(prompt).toContain('セールバッジのない通常商品へのセール表現の完全禁止 (最重要)');
     expect(prompt).toContain('セールバッジがない商品に「◯% OFF セール」と名付けるのは禁止');
   });
+
+  it('should enforce autonomous finalization and prohibit before-finalize confirmation requests', () => {
+    const builder = new RecommendationPromptBuilder();
+    const prompt = builder.build();
+
+    expect(prompt).toContain('変更確定前（Before finalize）の事前確認・アドバイス要求の完全禁止 (最重要)');
+    expect(prompt).toContain('Before I finalize these changes, do you have any additional advice');
+    expect(prompt).toContain('完全自動・非同期バッチ実行環境（重要）');
+    expect(prompt).toContain('セルフ検証完了後の自律的 Finalize（PR作成）義務');
+    expect(prompt).toContain('人間に事前の確認やアドバイスを一切求めることなく、直ちに');
+    expect(prompt).toContain('自律的に直接コミット・Pull Request作成まで完了（finalize）している');
+  });
 });
