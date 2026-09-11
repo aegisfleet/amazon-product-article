@@ -42,6 +42,9 @@ jobs:
     - name: Install dependencies
       run: pnpm install --frozen-lockfile --ignore-scripts
 
+    - name: Setup Hugo binary
+      run: pnpm rebuild hugo-extended
+
     - name: Build project
       run: pnpm run build
 
@@ -52,12 +55,6 @@ jobs:
         AMAZON_CREATORS_CREDENTIAL_ID: ${{ secrets.AMAZON_CREATORS_CREDENTIAL_ID }}
         AMAZON_CREATORS_CREDENTIAL_SECRET: ${{ secrets.AMAZON_CREATORS_CREDENTIAL_SECRET }}
       run: pnpm run generate:articles
-
-    - name: Setup Hugo
-      uses: peaceiris/actions-hugo@2752ce1d29631191ea3f27c23495fa06139a5b78 # v3.2.1
-      with:
-        hugo-version: 'latest'
-        extended: true
 
     - name: Prepare static data
       run: pnpm run prebuild:hugo
@@ -73,7 +70,7 @@ jobs:
         fi
 
     - name: Build site with Hugo
-      run: hugo --minify
+      run: pnpm run build:hugo
 
     - name: Setup Pages
       uses: actions/configure-pages@45bfe0192ca1faeb007ade9deae92b16b8254a0d # v6.0.0
