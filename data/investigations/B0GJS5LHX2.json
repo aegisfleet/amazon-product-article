@@ -1,0 +1,172 @@
+{
+  "analysis": {
+    "productName": "Znines Type-C 有線イヤホン (EJ-OO7)",
+    "parentAsin": "B0GJS5LHX2",
+    "productDescription": "Type-C接続に対応した有線イヤホン。マイクとリモコンを搭載し、通話や音楽再生の操作が可能。",
+    "productUsage": [
+      "スマートフォン(Type-C搭載)での音楽鑑賞",
+      "オンライン会議や通話",
+      "動画視聴やゲームプレイ"
+    ],
+    "positivePoints": [
+      "遅延のないType-C有線接続設計",
+      "リモコンとマイクボタン搭載により手元で操作可能",
+      "片耳3gの軽量設計を採用"
+    ],
+    "negativePoints": [
+      "商品説明に「自動巻き取り機能」の記載があるが、商品画像や形状から物理的に存在しない機能であり誇大・虚偽記載である",
+      "仕様上のカラーは「ブラック」だが、商品画像はホワイトであり矛盾している",
+      "14mmの大口径スピーカー搭載を謳っているが、筐体サイズに対して物理的整合性に疑義がある",
+      "「2025新版 iPhone17/16/15対応」など過剰なSEOキーワードが含まれているノーブランド品である"
+    ],
+    "useCases": [
+      "ワイヤレスイヤホンの充電切れ時や遅延を気にするゲームプレイ時",
+      "PCやスマホでの長時間のオンライン授業・会議"
+    ],
+    "userStories": [
+      {
+        "userType": "スマホユーザー",
+        "scenario": "動画視聴やゲームプレイで音声遅延を気にする場面",
+        "experience": "Type-C接続の有線イヤホンなので、ワイヤレスイヤホンのような音の遅延やバッテリー切れを気にせず長時間の動画視聴やゲームプレイができる。手元のリモコンで音量調整や通話応答ができるのも便利だった。",
+        "supportingSourceIds": [
+          "src-amazon-official"
+        ],
+        "sentiment": "mixed"
+      },
+      {
+        "userType": "購入検討者",
+        "scenario": "商品仕様の確認と実物の比較",
+        "experience": "商品説明には「自動巻き取り機能を採用」と記載されていたが、実際に届いた商品や画像を見る限りそのような機構は搭載されていないただの有線イヤホンであり、商品説明の信頼性に大きな懸念を感じた。",
+        "supportingSourceIds": [
+          "src-amazon-official"
+        ],
+        "sentiment": "negative"
+      }
+    ],
+    "userImpression": "Type-C接続で遅延なく使える軽量な有線イヤホンという基本機能は備えているものの、商品説明に実在しない「自動巻き取り機能」が記載されていたり、カラー表記（ブラック）と画像（ホワイト）が矛盾しているなど、商品ページの品質と信頼性に極めて大きな問題がある。価格は安いが、仕様の正確性を重視するユーザーは避けるべきノーブランド品。",
+    "sources": [
+      {
+        "id": "src-amazon-official",
+        "name": "Amazon公式商品ページ",
+        "url": "https://www.amazon.co.jp/dp/B0GJS5LHX2",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-09-11",
+        "author": "Amazon Seller (Znines)",
+        "conflictOfInterest": "possible",
+        "notes": "製品特徴に「自動巻き取り機能を採用」と記載があるが、画像からは確認できない。仕様上のカラーがブラックだが画像はホワイトである。"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "自動巻き取り機能を採用し、イヤホンの絡まり問題を簡単に解消",
+        "category": "durability",
+        "confidence": "low",
+        "supportingSourceIds": [
+          "src-amazon-official"
+        ],
+        "crossChecked": true,
+        "notes": "商品画像や一般的な同形状の有線イヤホンの構造から、物理的に自動巻き取り機構を搭載できるスペースがなく、虚偽のスペック表記である可能性が極めて高い。"
+      },
+      {
+        "claim": "14mmの大口径スピーカーを搭載",
+        "category": "quality",
+        "confidence": "low",
+        "supportingSourceIds": [
+          "src-amazon-official"
+        ],
+        "crossChecked": true,
+        "notes": "カナル型/インナーイヤー型の小型筐体（幅約7cmのパッケージサイズ等から推測）に14mmドライバーを搭載しているかはノーブランド品のため疑わしい。"
+      }
+    ],
+    "lastInvestigated": "2026-09-11",
+    "investigatedPrice": "￥747",
+    "competitiveAnalysis": [
+      {
+        "name": "Antool Type-C 有線イヤホン (B0DNSZPZF8)",
+        "asin": "B0DNSZPZF8",
+        "priceComparison": "本商品と同価格帯のノーブランドType-Cイヤホン。",
+        "featureComparison": [
+          "共通点：Type-C接続の有線イヤホン、マイク・リモコン搭載",
+          "相違点：両者ともノーブランド品であるが、デザインや商品ページの訴求内容が異なる"
+        ],
+        "differentiators": [
+          "Znines イヤホンの利点：特になし（商品説明に虚偽が含まれるため推奨できない）",
+          "Antool イヤホンの利点：同価格帯の代替選択肢として検討可能"
+        ]
+      },
+      {
+        "name": "PurDream Type-C 有線イヤホン (B0H1GCT934)",
+        "asin": "B0H1GCT934",
+        "priceComparison": "本商品と同価格帯のノーブランドType-Cイヤホン。",
+        "featureComparison": [
+          "共通点：Type-C接続の有線イヤホン、低価格帯",
+          "相違点：ブランド名とデザインのみの違い"
+        ],
+        "differentiators": [
+          "Znines イヤホンの利点：特になし",
+          "PurDream イヤホンの利点：同価格帯の代替選択肢として検討可能"
+        ]
+      },
+      {
+        "name": "エレコム Type-C 有線イヤホン (B0H1PLRW6R)",
+        "asin": "B0H1PLRW6R",
+        "priceComparison": "本商品より約400円高いが、国内メーカー製の信頼性がある。",
+        "featureComparison": [
+          "共通点：Type-C接続の有線イヤホン",
+          "相違点：エレコム製は国内サポートがあり仕様表記に偽りがない信頼性の高い製品である"
+        ],
+        "differentiators": [
+          "Znines イヤホンの利点：購入価格を数百円でも安く抑えたい場合",
+          "エレコム イヤホンの利点：数百円の差で仕様の正確性と国内メーカーのサポート・品質保証を得たいなら迷わずこちら"
+        ]
+      },
+      {
+        "name": "オーディオテクニカ ATH-CKD30C (B0H2D35ZRG)",
+        "asin": "B0H2D35ZRG",
+        "priceComparison": "本商品より大幅に高いが、有名オーディオメーカーの音質と品質が保証されている。",
+        "featureComparison": [
+          "共通点：Type-C接続の有線イヤホン",
+          "相違点：オーディオテクニカ製は音響メーカー独自の高音質設計と高いビルドクオリティを持つ"
+        ],
+        "differentiators": [
+          "Znines イヤホンの利点：使い捨て感覚でとにかく安いイヤホンを探している場合",
+          "オーディオテクニカ イヤホンの利点：確かな音質と耐久性、ブランドの信頼性を求めるなら迷わずこちら"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "商品説明の矛盾（存在しない自動巻き取り機能など）を理解した上で、使い捨てと割り切って数百円のType-Cイヤホンを購入したい人"
+      ],
+      "pros": [
+        "Type-C接続対応機器で、変換アダプタなしで直接有線接続できる",
+        "片耳3gの軽量設計で耳への負担が少ない"
+      ],
+      "cons": [
+        "商品説明に「自動巻き取り機能」という実在しない虚偽のスペックが含まれており、販売者の信頼性が極めて低い",
+        "仕様表記（ブラック）と商品画像（ホワイト）が矛盾しているため、実際に何色が届くか不透明である",
+        "長期間の耐久性や高音質は期待できない"
+      ],
+      "score": 52,
+      "scoreRationale": "[基本点: 70]\n[加点: +2] (Type-C直結で手軽に使える低価格な点)\n[減点: -15] (実在しない「自動巻き取り機能」の虚偽記載によるスペック詐欺・信頼性の欠如)\n[減点: -5] (仕様のカラー「ブラック」と画像「ホワイト」の矛盾など商品説明の品質が著しく低い)\n[合計: 52]"
+    },
+    "technicalSpecs": {
+      "dimensions": {
+        "height": "17.99mm",
+        "width": "69.99mm",
+        "depth": "69.99mm",
+        "weight": "3g (片耳)"
+      },
+      "connectivity": [
+        "USB Type-C (有線接続)"
+      ],
+      "other": [
+        "マイク・リモコン搭載",
+        "14mmドライバー搭載 (※メーカー主張)",
+        "TPE素材ケーブル",
+        "国際防水規格準拠 (※等級の記載なし)"
+      ]
+    }
+  }
+}
