@@ -35,10 +35,10 @@
         "url": "https://www.amazon.co.jp/dp/B0DPR8FGSS",
         "tier": "high",
         "evidenceType": "primary",
-        "publishedAt": "2026-03-22",
+        "publishedAt": "2026-09-12",
         "author": "Amazon",
         "conflictOfInterest": "none",
-        "notes": "Official product specifications and details retrieved from Amazon Creators API."
+        "notes": "商品の仕様、付属品（Sペンなし）、整備済み品の注意事項を確認"
       }
     ],
     "claims": [
@@ -63,8 +63,22 @@
         "notes": "Indicated in the product title and features."
       }
     ],
-    "lastInvestigated": "2026-03-22",
+    "lastInvestigated": "2026-09-12",
+    "investigatedPrice": "価格情報なし",
     "competitiveAnalysis": [
+      {
+        "name": "Galaxy Z Fold4 (整備済み品)",
+        "asin": "B0CFQL9373",
+        "priceComparison": "旧モデルのため本機（Fold5）よりも安価に流通している傾向がある。",
+        "featureComparison": [
+          "共通点：折りたたみ可能な大画面デザイン、Sペン対応",
+          "相違点：Fold5は新設計のヒンジを採用し隙間なく折りたためるのに対し、Fold4は隙間がある"
+        ],
+        "differentiators": [
+          "Galaxy Z Fold5 (整備済み品)の利点：より新しいプロセッサを搭載し、ヒンジの改良によってスリムに折りたためるため、携帯性とパフォーマンスを重視するならこちら",
+          "Galaxy Z Fold4 (整備済み品)の利点：機能的にはFold5と似ているため、価格を最重視しつつ折りたたみスマホを体験したいケースに適している"
+        ]
+      },
       {
         "name": "Galaxy Z Fold5 (アイシーブルー整備済み品)",
         "asin": "B0DPR83LT2",
@@ -161,7 +175,7 @@
         "他社回線利用時は対応バンドに注意が必要"
       ],
       "score": 80,
-      "scoreRationale": "[基本点: 70] (固定)\n[加点: +15] (最新ハイエンドモデルの性能と折りたたみによる利便性)\n[加点: +5] (整備済み品によるコストパフォーマンスの向上)\n[減点: -5] (重量とSペン別売りの使い勝手)\n[減点: -5] (キャリア版特有のバンド縛りの懸念)\n[合計: 80]"
+      "scoreRationale": "[基本点: 70]\n[加点: +15] (最新ハイエンドモデルの性能と折りたたみによる利便性)\n[加点: +5] (整備済み品によるコストパフォーマンスの向上)\n[減点: -5] (重量とSペン別売りの使い勝手)\n[減点: -5] (キャリア版特有のバンド縛りの懸念)\n[合計: 80]"
     },
     "technicalSpecs": {
       "os": "Android 13 (Android 14/15アップデート対応 / One UI)",
@@ -185,7 +199,7 @@
         "front": "4MP (画面下インカメラ F1.8) / 10MP (カバーカメラ F2.2)"
       },
       "dimensions": {
-        "height": "154.9mm",
+        "height": "154.9mm (開時・閉時)",
         "width": "129.9mm (開時) / 67.1mm (閉時)",
         "depth": "6.1mm (開時) / 13.4mm (閉時)",
         "weight": "253g"
