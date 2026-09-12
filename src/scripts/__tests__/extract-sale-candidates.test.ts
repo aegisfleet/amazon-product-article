@@ -361,4 +361,57 @@ categories: ["PC"]
     expect(result.candidates[0]?.asin).toBe('ASIN_FRESH_DEAL');
     expect(result.candidates[1]?.asin).toBe('ASIN_SUPER_HIGH_SCORE');
   });
+
+  it('should fall back to investigations directory when articles directory is empty or missing', async () => {
+    const dummyInvestigationsDir = path.join(tmpDir, 'investigations');
+    fs.mkdirSync(dummyInvestigationsDir, { recursive: true });
+
+    // investigation JSON を作成 (スコア88点)
+    fs.writeFileSync(
+      path.join(dummyInvestigationsDir, 'B0INVEST01.json'),
+      JSON.stringify({
+        analysis: {
+          productName: 'フォールバック検証商品',
+          category: 'PC周辺機器',
+          recommendation: {
+            score: 88,
+          },
+        },
+      }),
+      'utf-8',
+    );
+
+    const dummyCacheData = {
+      B0INVEST01: {
+        status: 'valid',
+        timestamp: Date.now(),
+        data: {
+          asin: 'B0INVEST01',
+          title: '調査済み高スコア商品',
+          category: 'PC周辺機器',
+          price: { amount: 3000, currency: 'JPY', formatted: '￥3,000' },
+          dealBadge: '特選タイムセール',
+          savingsPercentage: 20,
+          rating: { average: 4.5, count: 50 },
+        },
+      },
+    };
+
+    fs.writeFileSync(dummyCachePath, JSON.stringify(dummyCacheData, null, 2), 'utf-8');
+
+    // 空のarticlesDirを指定しても、investigationsDirからスコア88を取得して候補に残る
+    const result = await extractSaleCandidates(
+      dummyCachePath,
+      outputPath,
+      10,
+      3,
+      dummyArticlesDir,
+      undefined,
+      dummyInvestigationsDir,
+    );
+
+    expect(result.totalCandidates).toBe(1);
+    expect(result.candidates[0]?.asin).toBe('B0INVEST01');
+    expect(result.candidates[0]?.articleScore).toBe(88);
+  });
 });
