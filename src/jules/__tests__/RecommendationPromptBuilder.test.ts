@@ -87,4 +87,13 @@ describe('RecommendationPromptBuilder', () => {
     expect(prompt).toContain('人間に事前の確認やアドバイスを一切求めることなく、直ちに');
     expect(prompt).toContain('自律的に直接コミット・Pull Request作成まで完了（finalize）している');
   });
+
+  it('should include instructions for valid price and image URL null fallback', () => {
+    const builder = new RecommendationPromptBuilder();
+    const prompt = builder.build();
+
+    expect(prompt).toContain('同一の画像URLを複数商品にコピペすることは厳禁');
+    expect(prompt).toContain('必ず null とせよ');
+    expect(prompt).toContain('price: 0');
+  });
 });
