@@ -160,6 +160,8 @@ export interface GasRequestOptions {
 
 /**
  * リトライ可能なGAS APIエラーか判定
+ * ※GAS Web Appは内部処理タイムアウト（約30秒）時にGoogleプロキシが 404 を返す仕様があるため、
+ * 5xx / 429 に加えて 404 も一時的タイムアウトとしてリトライ対象とする
  */
 function isRetryableGasError(error: unknown): boolean {
   if (axios.isAxiosError(error)) {
@@ -167,9 +169,9 @@ function isRetryableGasError(error: unknown): boolean {
     if (error.code === 'ECONNABORTED' || error.code === 'ETIMEDOUT' || !error.response) {
       return true;
     }
-    // 5xxサーバーエラーまたは429レート制限
+    // 5xxサーバーエラー、429レート制限、およびGASプロキシタイムアウトによる404
     const status = error.response.status;
-    if (status >= 500 || status === 429) {
+    if (status >= 500 || status === 429 || status === 404) {
       return true;
     }
     return false;
