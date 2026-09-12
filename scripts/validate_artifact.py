@@ -109,6 +109,7 @@ def _validate_recommendations_list(data: Any, errors: List[str]):
     
     rank_reasons: List[str] = []
     why_buy_nows: List[str] = []
+    image_urls: List[str] = []
     categories: Dict[str, int] = {}
 
     for i, rec in enumerate(recs):
@@ -119,6 +120,14 @@ def _validate_recommendations_list(data: Any, errors: List[str]):
         asin = rec.get("asin", "")
         if not re.match(r'^[A-Z0-9]{10}$', str(asin).strip().upper()):
             errors.append(f"recommendations[{i}] の ASIN '{asin}' は有効な10桁ASINではありません。")
+
+        price = rec.get("price")
+        if price is None or not isinstance(price, (int, float)) or price <= 0:
+            errors.append(f"recommendations[{i}] (ASIN: {asin}) の 'price' ({price}) が不正です。0より大きい実売価格（数値型）を設定してください。")
+
+        image_url = rec.get("imageUrl")
+        if image_url and isinstance(image_url, str) and image_url.strip():
+            image_urls.append(image_url.strip())
 
         rank_reason = str(rec.get("rankReason", "")).strip()
         why_buy_now = str(rec.get("whyBuyNow", "")).strip()
@@ -142,6 +151,11 @@ def _validate_recommendations_list(data: Any, errors: List[str]):
         for field_name, field_val in [("rankReason", rank_reason), ("whyBuyNow", why_buy_now), ("source.name", source_name)]:
             if "クーポン" in field_val:
                 errors.append(f"recommendations[{i}] (ASIN: {asin}) の '{field_name}' に禁止ワード 'クーポン' が含まれています。APIやデータからクーポンの有無は検証不能なため、「◯%OFF」「割引対象」「プライム会員限定セール」等の価格割引表記に修正してください。")
+
+    # 画像URL重複の検証 (同一imageUrlのコピペ禁止)
+    for img_url, count in collections.Counter(image_urls).items():
+        if count >= 2:
+            errors.append(f"'imageUrl' に重複が見られます ('{img_url}' が {count}件)。複数の商品に同一の画像URLを設定することは禁止されています。取得できない場合は null を設定してください。")
 
     # コピペ・重複の検証 (同じ文言が3件以上重複している場合はエラー)
     for reason, count in collections.Counter(rank_reasons).items():

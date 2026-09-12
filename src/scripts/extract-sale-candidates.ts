@@ -104,33 +104,64 @@ function parseArticleMetadata(content: string): ArticleMetadata | undefined {
 
 export function loadArticleScoreMap(articlesDir?: string): Map<string, ArticleMetadata> {
   const map = new Map<string, ArticleMetadata>();
-  const targetDir = articlesDir || path.join(process.cwd(), 'content/articles');
+  const targetArticlesDir = articlesDir || path.join(process.cwd(), 'content/articles');
 
-  if (!fs.existsSync(targetDir)) {
-    return map;
+  // articlesDir から読み込む（content/articles/*.md）
+  if (fs.existsSync(targetArticlesDir)) {
+    try {
+      const files = fs.readdirSync(targetArticlesDir);
+      for (const file of files) {
+        if (!file.endsWith('.md')) continue;
+        const asin = path.basename(file, '.md').toUpperCase();
+        try {
+          const filePath = path.join(targetArticlesDir, file);
+          const content = fs.readFileSync(filePath, 'utf-8');
+          const metadata = parseArticleMetadata(content);
+          if (metadata) {
+            map.set(asin, metadata);
+          }
+        } catch {
+          // ignore parse error
+        }
+      }
+    } catch {
+      // ignore directory read error
+    }
   }
 
-  try {
-    const files = fs.readdirSync(targetDir);
-    for (const file of files) {
-      if (!file.endsWith('.md')) continue;
-      const asin = path.basename(file, '.md');
+  return map;
+}
+
+export function loadInvestigationMetadata(asin: string, investigationsDir?: string): ArticleMetadata | undefined {
+  const targetDir = investigationsDir || path.join(process.cwd(), 'data/investigations');
+  if (!fs.existsSync(targetDir)) return undefined;
+
+  // 大文字・小文字の両方をチェック
+  const candidates = [
+    path.join(targetDir, `${asin.toUpperCase()}.json`),
+    path.join(targetDir, `${asin.toLowerCase()}.json`),
+  ];
+
+  for (const filePath of candidates) {
+    if (fs.existsSync(filePath)) {
       try {
-        const filePath = path.join(targetDir, file);
-        const content = fs.readFileSync(filePath, 'utf-8');
-        const metadata = parseArticleMetadata(content);
-        if (metadata) {
-          map.set(asin, metadata);
+        const raw = fs.readFileSync(filePath, 'utf-8');
+        const data = JSON.parse(raw);
+        const score = data?.analysis?.recommendation?.score;
+        if (typeof score === 'number' && !Number.isNaN(score)) {
+          const metadata: ArticleMetadata = { score };
+          if (data?.analysis?.category) {
+            metadata.category = data.analysis.category;
+          }
+          return metadata;
         }
       } catch {
         // ignore parse error
       }
     }
-  } catch {
-    // ignore directory read error
   }
 
-  return map;
+  return undefined;
 }
 
 function calculateDealBadgeScore(candidate: SaleCandidate): number {
@@ -277,13 +308,17 @@ function parseCandidateFromEntry(
   asin: string,
   entry: CacheEntry,
   articleScoreMap: Map<string, ArticleMetadata>,
+  investigationsDir?: string,
 ): SaleCandidate | null {
   if (entry.status !== 'valid' || !entry.data) return null;
 
   const product = entry.data;
   if (!product.price || product.price.amount <= 0) return null;
 
-  const article = articleScoreMap.get(asin);
+  let article = articleScoreMap.get(asin.toUpperCase()) || articleScoreMap.get(asin);
+  if (!article) {
+    article = loadInvestigationMetadata(asin, investigationsDir);
+  }
   const dealBadge = product.dealBadge && product.dealBadge.trim() !== '' ? product.dealBadge.trim() : undefined;
 
   if (!isCandidateEligible(product, article, dealBadge)) {
@@ -360,6 +395,7 @@ export async function extractSaleCandidates(
   maxPerCategory: number = 2,
   articlesDir?: string,
   brandPath?: string,
+  investigationsDir?: string,
 ): Promise<SaleCandidatesFile> {
   const logger = Logger.getInstance();
   const cachePath = cacheFilePath || path.join(process.cwd(), 'data/cache/paapi-product-cache.json');
@@ -385,7 +421,7 @@ export async function extractSaleCandidates(
     const candidates: SaleCandidate[] = [];
 
     for (const [asin, entry] of Object.entries(cache)) {
-      const candidate = parseCandidateFromEntry(asin, entry, articleScoreMap);
+      const candidate = parseCandidateFromEntry(asin, entry, articleScoreMap, investigationsDir);
       if (candidate) {
         candidates.push(candidate);
       }
