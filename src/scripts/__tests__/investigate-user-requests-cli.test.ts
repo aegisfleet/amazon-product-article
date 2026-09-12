@@ -113,6 +113,47 @@ describe('user-requests-helper', () => {
         fetchUserRequestsFromGas('https://script.google.com/macros/s/xxx/exec', 'bad-token', 5),
       ).rejects.toThrow('GAS API error: Unauthorized');
     });
+
+    it('should retry on timeout error and succeed on subsequent attempt', async () => {
+      const timeoutError = new Error('timeout of 45000ms exceeded');
+      (timeoutError as any).code = 'ECONNABORTED';
+      (timeoutError as any).isAxiosError = true;
+
+      mockedAxios.isAxiosError.mockReturnValue(true);
+      mockedAxios.get.mockRejectedValueOnce(timeoutError).mockResolvedValueOnce({
+        data: {
+          success: true,
+          count: 1,
+          requests: [{ row: 3, timestamp: '', url: 'https://www.amazon.co.jp/dp/B08N5WRWNW', status: '未処理' }],
+        },
+      });
+
+      const result = await fetchUserRequestsFromGas('https://script.google.com/macros/s/xxx/exec', 'secret-token', 5, {
+        maxRetries: 1,
+        retryDelayMs: 10,
+      });
+
+      expect(result).toHaveLength(1);
+      expect(mockedAxios.get.mock.calls).toHaveLength(2);
+    });
+
+    it('should fail after exceeding max retries on network errors', async () => {
+      const networkError = new Error('Network Error');
+      (networkError as any).code = 'ECONNRESET';
+      (networkError as any).isAxiosError = true;
+
+      mockedAxios.isAxiosError.mockReturnValue(true);
+      mockedAxios.get.mockRejectedValue(networkError);
+
+      await expect(
+        fetchUserRequestsFromGas('https://script.google.com/macros/s/xxx/exec', 'secret-token', 5, {
+          maxRetries: 2,
+          retryDelayMs: 10,
+        }),
+      ).rejects.toThrow('Network Error');
+
+      expect(mockedAxios.get.mock.calls).toHaveLength(3);
+    });
   });
 
   describe('updateUserRequestsInGas', () => {
@@ -130,6 +171,30 @@ describe('user-requests-helper', () => {
       ]);
 
       expect(count).toBe(2);
+    });
+
+    it('should retry on server error (503) and succeed', async () => {
+      const serverError = new Error('Service Unavailable');
+      (serverError as any).response = { status: 503 };
+      (serverError as any).isAxiosError = true;
+
+      mockedAxios.isAxiosError.mockReturnValue(true);
+      mockedAxios.post.mockRejectedValueOnce(serverError).mockResolvedValueOnce({
+        data: {
+          success: true,
+          updatedCount: 1,
+        },
+      });
+
+      const count = await updateUserRequestsInGas(
+        'https://script.google.com/macros/s/xxx/exec',
+        'secret-token',
+        [{ row: 2, status: '完了', asin: 'B08N5WRWNW' }],
+        { maxRetries: 1, retryDelayMs: 10 },
+      );
+
+      expect(count).toBe(1);
+      expect(mockedAxios.post.mock.calls).toHaveLength(2);
     });
 
     it('should return 0 immediately if updates array is empty', async () => {

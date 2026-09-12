@@ -148,6 +148,65 @@ export async function isProductAlreadyInvestigated(asin: string, workspaceRoot =
   return result.exists;
 }
 
+const DEFAULT_GAS_TIMEOUT_MS = 45000;
+const DEFAULT_GAS_MAX_RETRIES = 2;
+const DEFAULT_GAS_RETRY_DELAY_MS = 3000;
+
+export interface GasRequestOptions {
+  maxRetries?: number;
+  retryDelayMs?: number;
+  timeoutMs?: number;
+}
+
+/**
+ * リトライ可能なGAS APIエラーか判定
+ */
+function isRetryableGasError(error: unknown): boolean {
+  if (axios.isAxiosError(error)) {
+    // タイムアウトやネットワーク切断
+    if (error.code === 'ECONNABORTED' || error.code === 'ETIMEDOUT' || !error.response) {
+      return true;
+    }
+    // 5xxサーバーエラーまたは429レート制限
+    const status = error.response.status;
+    if (status >= 500 || status === 429) {
+      return true;
+    }
+    return false;
+  }
+  return false;
+}
+
+/**
+ * 指数バックオフによるリトライ実行ラッパー
+ */
+async function executeGasWithRetry<T>(
+  operationName: string,
+  operation: () => Promise<T>,
+  maxRetries = DEFAULT_GAS_MAX_RETRIES,
+  baseDelayMs = DEFAULT_GAS_RETRY_DELAY_MS,
+): Promise<T> {
+  let lastError: unknown;
+  for (let attempt = 1; attempt <= maxRetries + 1; attempt++) {
+    try {
+      return await operation();
+    } catch (error) {
+      lastError = error;
+      if (attempt <= maxRetries && isRetryableGasError(error)) {
+        const delayMs = baseDelayMs * 2 ** (attempt - 1);
+        const errMsg = error instanceof Error ? error.message : String(error);
+        logger.warn(
+          `[${operationName}] GAS API request failed (attempt ${attempt}/${maxRetries + 1}): ${errMsg}. Retrying in ${delayMs / 1000}s...`,
+        );
+        await new Promise((resolve) => setTimeout(resolve, delayMs));
+        continue;
+      }
+      throw error;
+    }
+  }
+  throw lastError;
+}
+
 /**
  * GAS Web API から未処理リクエスト一覧を取得
  */
@@ -155,19 +214,31 @@ export async function fetchUserRequestsFromGas(
   gasApiUrl: string,
   token: string,
   limit = 10,
+  options?: GasRequestOptions,
 ): Promise<UserRequestItem[]> {
+  const timeout = options?.timeoutMs ?? DEFAULT_GAS_TIMEOUT_MS;
+  const maxRetries = options?.maxRetries ?? DEFAULT_GAS_MAX_RETRIES;
+  const retryDelayMs = options?.retryDelayMs ?? DEFAULT_GAS_RETRY_DELAY_MS;
   const url = gasApiUrl.trim();
-  const response = await axios.get<{ success: boolean; requests?: UserRequestItem[]; error?: string }>(url, {
-    params: { token: token.trim(), limit },
-    timeout: 20000,
-    maxRedirects: 10,
-  });
 
-  if (!response.data?.success) {
-    throw new Error(`GAS API error: ${response.data?.error || 'Unknown error'}`);
-  }
+  return executeGasWithRetry(
+    'fetchUserRequestsFromGas',
+    async () => {
+      const response = await axios.get<{ success: boolean; requests?: UserRequestItem[]; error?: string }>(url, {
+        params: { token: token.trim(), limit },
+        timeout,
+        maxRedirects: 10,
+      });
 
-  return response.data.requests || [];
+      if (!response.data?.success) {
+        throw new Error(`GAS API error: ${response.data?.error || 'Unknown error'}`);
+      }
+
+      return response.data.requests || [];
+    },
+    maxRetries,
+    retryDelayMs,
+  );
 }
 
 /**
@@ -177,23 +248,35 @@ export async function updateUserRequestsInGas(
   gasApiUrl: string,
   token: string,
   updates: UserRequestUpdate[],
+  options?: GasRequestOptions,
 ): Promise<number> {
   if (updates.length === 0) return 0;
 
+  const timeout = options?.timeoutMs ?? DEFAULT_GAS_TIMEOUT_MS;
+  const maxRetries = options?.maxRetries ?? DEFAULT_GAS_MAX_RETRIES;
+  const retryDelayMs = options?.retryDelayMs ?? DEFAULT_GAS_RETRY_DELAY_MS;
   const url = gasApiUrl.trim();
-  const response = await axios.post<{ success: boolean; updatedCount?: number; error?: string }>(
-    url,
-    { token: token.trim(), updates },
-    {
-      headers: { 'Content-Type': 'application/json' },
-      timeout: 20000,
-      maxRedirects: 10,
+
+  return executeGasWithRetry(
+    'updateUserRequestsInGas',
+    async () => {
+      const response = await axios.post<{ success: boolean; updatedCount?: number; error?: string }>(
+        url,
+        { token: token.trim(), updates },
+        {
+          headers: { 'Content-Type': 'application/json' },
+          timeout,
+          maxRedirects: 10,
+        },
+      );
+
+      if (!response.data?.success) {
+        throw new Error(`GAS API update error: ${response.data?.error || 'Unknown error'}`);
+      }
+
+      return response.data.updatedCount || 0;
     },
+    maxRetries,
+    retryDelayMs,
   );
-
-  if (!response.data?.success) {
-    throw new Error(`GAS API update error: ${response.data?.error || 'Unknown error'}`);
-  }
-
-  return response.data.updatedCount || 0;
 }
