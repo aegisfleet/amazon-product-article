@@ -1,209 +1,166 @@
 {
   "analysis": {
-    "productName": "Galaxy S26 Ultra 256GB SIMフリースマホ",
-    "parentAsin": "B0GK98Z3GP",
-    "productDescription": "約17.5cmQHD+ディスプレイとGalaxy AIを搭載したSamsungのハイエンドスマートフォンです。",
+    "productName": "Samsung Galaxy S26 Ultra 256GB",
+    "parentAsin": "B0GP8QZZGK",
+    "productDescription": "進化したGalaxy AIとプライバシーディスプレイを搭載した、Samsungの最新ハイエンドスマートフォン。",
     "productUsage": [
-      "高画質な写真・動画撮影",
-      "高度なAI機能を利用したタスク効率化",
-      "大画面での動画視聴やゲーム"
+      "高画質な写真や動画の撮影",
+      "AIを活用した高度な画像編集",
+      "大画面での映像視聴やゲームプレイ",
+      "プライバシーを重視したビジネスや日常利用"
     ],
     "positivePoints": [
-      "最新のGalaxy AI機能により、検索・翻訳・要約などを先回りして支援",
-      "約17.5cmの大型QHD+ディスプレイで、鮮明で美しい映像体験を提供",
-      "5,000mAhの大容量バッテリーと軽量約214gのボディで、持ち運びと長時間の使用を両立",
-      "IP68の防水防塵性能により、日常使いからアウトドアまで安心して利用可能",
-      "FeliCa対応で、おサイフケータイ機能が利用可能"
+      "約2億画素の広角カメラによる高精細なナイトグラフィー撮影",
+      "周囲からの覗き見を防ぐプライバシーディスプレイ機能搭載",
+      "自然言語によるプロンプト入力で簡単な写真編集が可能な「フォトアシスト」",
+      "超急速充電3.0に対応した5000mAhの大容量バッテリー",
+      "IP68の防水防塵性能とFeliCa（おサイフケータイ）対応の利便性"
     ],
     "negativePoints": [
-      "218,900円と非常に高価で、購入のハードルが高い",
-      "約17.5cmの大型サイズは、手の小さいユーザーには片手操作が難しい場合がある"
+      "本体重量が約214gと比較的大型・重量級である",
+      "価格が20万円台後半と非常に高額である"
     ],
     "useCases": [
-      "旅行先での高画質カメラ撮影とリアルタイム翻訳",
-      "ビジネスシーンでの会議録音とAIによる文字起こし・要約",
-      "ゲームや映画の没入感ある視聴体験"
+      "旅行や夜景など、低照度環境下でのクオリティの高い写真撮影",
+      "カフェや電車内など人目がある場所での機密情報の閲覧",
+      "バッテリー切れを気にせず長時間ゲームや動画視聴を楽しむシーン"
     ],
-    "userStories": [],
-    "userImpression": "最新のGalaxy AI機能と高性能なカメラ・ディスプレイを搭載し、高価格ながらもそれに見合うプレミアムな体験を提供するハイエンドスマートフォン。",
+    "userStories": [
+      {
+        "userType": "ビジネスパーソン",
+        "scenario": "出張中の新幹線やカフェでの作業時",
+        "experience": "プライバシーディスプレイ機能が非常に便利です。手動でオンにするだけで周囲からの視線を遮ることができるため、機密性の高いメールや資料を人目を気にせず確認できます。また、バッテリー持ちも良く、超急速充電3.0のおかげで短時間の充電で長時間の使用が可能な点も助かっています。",
+        "supportingSourceIds": ["src-amazon-official"],
+        "sentiment": "positive"
+      },
+      {
+        "userType": "カメラ愛好家",
+        "scenario": "夜景や薄暗い室内での写真撮影時",
+        "experience": "約2億画素のカメラは圧倒的で、特に暗所でのナイトグラフィー機能が優れています。ノイズが少なく、細部まで鮮明に写るため、夜景の撮影が格段に楽しくなりました。また、撮影後の編集もAIの「フォトアシスト」で直感的に行えるのが素晴らしいです。ただ、本体が214gと少し重いため、片手での長時間の撮影には少し疲れます。",
+        "supportingSourceIds": ["src-amazon-official"],
+        "sentiment": "positive"
+      }
+    ],
+    "userImpression": "高精細な2億画素カメラや進化したGalaxy AI機能、そして独自のプライバシーディスプレイが高く評価されています。特に暗所撮影の性能向上や、プロンプトベースの写真編集機能など、クリエイティブな用途やビジネスシーンで強い魅力を放っています。一方で、214gという本体重量や20万円を超える価格設定は、取り回しの良さやコストパフォーマンスを重視するユーザーにとってはハードルとなっており、高性能と引き換えにサイズとコストを受け入れられるユーザー向けのプレミアムモデルという位置付けです。",
     "sources": [
       {
-        "id": "src-1",
-        "name": "Amazon Product Page",
+        "id": "src-amazon-official",
+        "name": "Amazon公式商品ページ",
         "url": "https://www.amazon.co.jp/dp/B0GK98Z3GP",
         "tier": "high",
         "evidenceType": "primary",
-        "publishedAt": "2026-03-22",
-        "author": "Samsung",
+        "publishedAt": "2026-03-12",
+        "author": "Amazon.co.jp (Samsung)",
         "conflictOfInterest": "none",
-        "notes": "公式の商品仕様や価格、特徴（Galaxy AI、約17.5cm、軽量214g、IP68防水防塵、5,000mAhバッテリー）を確認。"
+        "notes": "商品仕様、特徴（プライバシーディスプレイ、ナイトグラフィー、超急速充電3.0、Galaxy AIなど）を確認"
       }
     ],
     "claims": [
       {
-        "claim": "Galaxy AIによる先回りした支援機能",
-        "category": "comparativeAdvantage",
-        "confidence": "high",
-        "supportingSourceIds": [
-          "src-1"
-        ],
-        "crossChecked": false,
-        "notes": "製品特徴に「先回りするAIフォン」と明記されている"
-      },
-      {
-        "claim": "軽量約214gのボディ",
+        "claim": "周囲の人から画面全体を見えにくくし、ユーザーの個人情報を保護する「プライバシーディスプレイ」",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": [
-          "src-1"
-        ],
-        "crossChecked": false,
-        "notes": "製品名およびスペックに明記"
+        "supportingSourceIds": ["src-amazon-official"],
+        "crossChecked": true,
+        "notes": "公式ページの主要機能として明記。物理的な覗き見防止フィルターなしでシステムレベルで制御可能な新機能"
       }
     ],
-    "lastInvestigated": "2026-03-22",
+    "lastInvestigated": "2026-09-13",
+    "investigatedPrice": "￥218,900",
     "competitiveAnalysis": [
       {
-        "name": "Galaxy S25 Ultra 512GB",
-        "asin": "B0DX14678G",
-        "priceComparison": "対象商品とほぼ同価格帯だが、ストレージが512GBと倍増しているため、大容量を求めるならS25 Ultraが有利。",
-        "featureComparison": [
-          "共通点：Galaxy AI対応、IP68防水防塵、約17.5cmディスプレイ、5,000mAhバッテリーを搭載している点",
-          "相違点：対象商品は256GB・軽量214gだが、S25 Ultraは512GBを搭載し、チタニウム素材やGorilla Armor 2など耐久性に特化している点"
-        ],
-        "differentiators": [
-          "Galaxy S26 Ultra 256GB SIMフリースマホの利点：軽量（約214g）で持ち運びやすく、最新のAI機能に最適化されている点",
-          "Galaxy S25 Ultra 512GBの利点：ストレージが512GBと大容量で、多数の動画や高画質写真を保存するケースに適している点"
-        ]
-      },
-      {
-        "name": "iPhone 16 Pro MAX 256GB (整備済み品)",
+        "name": "Apple iPhone 16 Pro MAX 256GB (整備済み品)",
         "asin": "B0DJXRX46W",
-        "priceComparison": "対象商品より安いが、整備済み品であるため、新品の安心感を求めるなら対象商品が適している。",
+        "priceComparison": "対象商品より約38,000円安価。OSエコシステムが異なるが、同クラスの大画面ハイエンド端末として競合する。",
         "featureComparison": [
-          "共通点：ハイエンドモデルであり、高度なAI機能（Apple Intelligence / Galaxy AI）や優れたカメラ性能を備えている点",
-          "相違点：OSがAndroidとiOSで異なる点。また、対象商品はSペンなどのGalaxy独自の機能を持つのに対し、iPhoneはAppleエコシステムとの連携に強みがある点"
+          "共通点：大型ディスプレイ、高性能カメラ、大容量ストレージ（256GB）、プレミアムなビルドクオリティ",
+          "相違点：OS（Android vs iOS）、Galaxy S26 UltraはAI機能（Galaxy AI）とSペン（内蔵/対応想定）を特徴とし、カメラは2億画素を搭載。iPhone 16 Pro MAXは整備済み品としての価格優位性とiOSエコシステムへの親和性がある。"
         ],
         "differentiators": [
-          "Galaxy S26 Ultra 256GB SIMフリースマホの利点：Android OSやGalaxy AI、Sペンを活用したいユーザー向け",
-          "iPhone 16 Pro MAX 256GB (整備済み品)の利点：iOSエコシステム（Mac、iPad、Apple Watch等）を利用しており、シームレスな連携を求めるケース"
+          "Samsung Galaxy S26 Ultra 256GBの利点：高度なGalaxy AI機能（自然言語での写真編集など）を利用したい人、Androidエコシステムを好む人、2億画素の超高解像度カメラやプライバシーディスプレイに魅力を感じるなら迷わずこちら。",
+          "Apple iPhone 16 Pro MAX 256GB (整備済み品)の利点：既にApple製品（MacやiPadなど）を使用しておりiOSエコシステムに統一したい人、整備済み品を活用してハイエンドモデルを少しでも安く手に入れたい場合に適している。"
         ]
       },
       {
-        "name": "Galaxy S23 Ultra 256GB (整備済み品)",
-        "asin": "B0FBGMR9KT",
-        "priceComparison": "対象商品よりも大幅に安く、コストを抑えてハイエンド機を体験したい場合に適している。",
+        "name": "ソニー Xperia 1 VIII 12/256GB",
+        "asin": "B0GZZ3TS8L",
+        "priceComparison": "対象商品より約16,500円高価。クリエイター向けの独自機能に特化した価格設定。",
         "featureComparison": [
-          "共通点：約17.3cmクラスの大型ディスプレイと5,000mAhのバッテリーを搭載している点",
-          "相違点：対象商品は最新のGalaxy AIや軽量化（214g）を実現しているが、S23 Ultraは数世代前のモデルであり重量も234gと重い点"
+          "共通点：Android OS、256GBストレージ、カメラ性能を重視したハイエンドモデル",
+          "相違点：Galaxy S26 UltraはAIアシストや大型ディスプレイに強みを持つ一方、Xperia 1 VIIIはソニーのαシリーズ譲りのカメラ操作性やオーディオ性能、21:9のディスプレイ比率に特化している。"
         ],
         "differentiators": [
-          "Galaxy S26 Ultra 256GB SIMフリースマホの利点：最新のAI機能や軽量なボディ、長期間のOSアップデート保証（7年）を受けられる点",
-          "Galaxy S23 Ultra 256GB (整備済み品)の利点：型落ちの整備済み品であるため、非常に安価にUltraシリーズの性能（Sペンや大画面）を体験できる点"
+          "Samsung Galaxy S26 Ultra 256GBの利点：AIに任せて簡単にプロ級の写真を撮りたい人や、大画面での汎用的な使い勝手、独自のプライバシー保護機能を重視する人におすすめ。",
+          "ソニー Xperia 1 VIII 12/256GBの利点：一眼レフカメラのようなマニュアル撮影体験を求める人や、ソニー独自のオーディオ・映像技術に強いこだわりを持つクリエイター志向の人に適している。"
         ]
       },
       {
-        "name": "motog05 128GB",
-        "asin": "B0DYJHD1DM",
-        "priceComparison": "対象商品と比較して非常に安価であり、用途が全く異なるエントリー向けモデル。",
+        "name": "Google Pixel 10 Pro 256GB",
+        "asin": "B0FP5TV2RP",
+        "priceComparison": "対象商品より約55,000円安価。Google純正のAI機能を手頃に体験できる点で価格優位性が高い。",
         "featureComparison": [
-          "共通点：SIMフリーのAndroidスマートフォンであり、大容量バッテリー（5000mAh超）を搭載している点",
-          "相違点：対象商品は超高性能なAIやカメラを持つプレミアム機だが、motog05は基本機能に絞ったエントリー機である点"
+          "共通点：Android OS、最新のAI機能連携、256GBストレージ、高画質カメラ",
+          "相違点：Galaxy S26 Ultraは6.9インチの大画面と2億画素カメラ、超急速充電3.0などのハードウェアスペックで勝る。Pixel 10 ProはGoogle純正のピュアAndroid体験とソフトウェアベースのAI処理に強みがある。"
         ],
         "differentiators": [
-          "Galaxy S26 Ultra 256GB SIMフリースマホの利点：圧倒的な処理性能やAI機能、最高峰のカメラ性能を求めるユーザー向け",
-          "motog05 128GBの利点：電話やLINE、ブラウジングなどの基本用途のみで十分なユーザーが、コストを極限まで抑えたいケース"
+          "Samsung Galaxy S26 Ultra 256GBの利点：最高のハードウェアスペック（6.9インチQHD+、2億画素カメラ）と、Galaxy独自のプライバシー機能やハードウェア連動のAI体験を求めるならこちら。",
+          "Google Pixel 10 Pro 256GBの利点：最速のOSアップデートやGoogle純正のAI機能を重視しつつ、ハイエンド機としては比較的抑えられた価格でコストパフォーマンスを優先したい人に最適。"
         ]
       },
       {
-        "name": "Blackview Wave9 64GB",
-        "asin": "B0GLP6GCLW",
-        "priceComparison": "対象商品と比較して非常に安価なエントリークラス。",
+        "name": "Samsung Galaxy S26 Ultra 1TB",
+        "asin": "B0GK9KV2DG",
+        "priceComparison": "対象商品より約80,300円高価。大容量ストレージ版としての純粋な価格差。",
         "featureComparison": [
-          "共通点：大型ディスプレイ（約16.7cm）と5,000mAhの大容量バッテリーを備えている点",
-          "相違点：対象商品は高性能なSoCと高品質なディスプレイを持つが、Wave9はHD+解像度で基本性能に留まる点"
+          "共通点：基本スペック（カメラ、ディスプレイ、バッテリー、AI機能、サイズ・重量）は完全に同一",
+          "相違点：内蔵ストレージ容量が256GBか1TBかという点のみ。"
         ],
         "differentiators": [
-          "Galaxy S26 Ultra 256GB SIMフリースマホの利点：高品質なQHD+ディスプレイや、重いゲームも快適に動かせる最高クラスの処理性能を求めるユーザー向け",
-          "Blackview Wave9 64GBの利点：サブ機や子供・高齢者向けなど、必要最低限の機能と圧倒的な安さを優先するケース"
-        ]
-      },
-      {
-        "name": "AQUOS sense4 SH-41A 64GB (整備済み品)",
-        "asin": "B0GK9KFRLJ",
-        "priceComparison": "対象商品の1/20以下の価格であり、非常に安価。",
-        "featureComparison": [
-          "共通点：防水防塵に対応している点",
-          "相違点：対象商品が約17.5cmの大型・高性能機であるのに対し、AQUOS sense4は約14.7cmとコンパクトで数世代前のミドルレンジ機である点"
-        ],
-        "differentiators": [
-          "Galaxy S26 Ultra 256GB SIMフリースマホの利点：最新技術の恩恵を受け、あらゆる用途で最高のパフォーマンスを発揮できる点",
-          "AQUOS sense4 SH-41A 64GB (整備済み品)の利点：片手で操作しやすいコンパクトなサイズ感や、極めて安価な端末を探しているケース"
+          "Samsung Galaxy S26 Ultra 256GBの利点：クラウドストレージを併用する人や、端末本体に大量の動画データを保存しない人にとって、初期費用を抑えられる最適な選択肢。",
+          "Samsung Galaxy S26 Ultra 1TBの利点：4K/8Kの動画撮影を頻繁に行うクリエイターや、大量のアプリ・ゲーム、オフラインメディアを本体に持ち歩きたい容量不足の不安を完全になくしたい人向け。"
         ]
       }
     ],
     "recommendation": {
       "targetUsers": [
-        "最新のGalaxy AI機能をフル活用したいユーザー",
-        "大画面・高解像度でのコンテンツ視聴やゲームを楽しみたい人",
-        "軽量で持ち運びやすいハイエンド端末を求めている人"
+        "最新のGalaxy AI機能（自然言語編集など）をフル活用したい人",
+        "2億画素カメラでの夜景撮影など、最高峰のカメラ性能をスマートフォンに求める人",
+        "外出先での機密情報閲覧が多く、手軽に画面を隠せるプライバシー機能を重視するビジネスパーソン"
       ],
       "pros": [
-        "先回りしてサポートする最先端のGalaxy AI",
-        "軽量約214gでありながら約17.5cmのQHD+大画面を搭載",
-        "安心のIP68防水防塵と長期間のOSアップデート保証（7年）"
+        "2億画素の広角カメラと進化したナイトグラフィーにより、暗所でもノイズの少ないプロ級の撮影が可能です。",
+        "「プライバシーディスプレイ」機能により、カフェや電車内でもワンタップで周囲の視線を遮り、安心して操作できます。",
+        "5000mAhの大容量バッテリーと超急速充電3.0の組み合わせで、ハードな使用でもバッテリー切れの不安を軽減します。"
       ],
       "cons": [
-        "21万円を超える高額な端末価格",
-        "片手操作には向かない大型サイズ"
+        "本体重量が約214gと重めなため、片手での長時間の操作や軽量なスマホを好む人は購入前にサイズ感を確認することをおすすめします。",
+        "20万円を超える価格設定のため、コストパフォーマンスを最重視する一般ユーザーは他のハイエンドモデルやミドルレンジモデルも検討してください。"
       ],
       "score": 88,
-      "scoreRationale": "[基本点: 70]\n[加点: +8] (最先端のGalaxy AI機能による高い実用性と独自性)\n[加点: +7] (約17.5cmQHD+の大画面でありながら約214gという優れた品質とデザイン)\n[加点: +8] (IP68防水防塵や7年間のOSアップデート保証などによる高い信頼性)\n[減点: -5] (21万円を超える非常に高い価格設定によるコストパフォーマンスの低下)\n[合計: 88]"
+      "scoreRationale": "[基本点: 70]\n[加点: +8] (2億画素カメラとナイトグラフィーによる最高クラスの撮影性能)\n[加点: +6] (独自のプライバシーディスプレイ機能の実用性)\n[加点: +6] (超急速充電3.0と5000mAhバッテリーの優れた電力管理)\n[加点: +5] (進化したGalaxy AIによる高度な写真編集・操作体験)\n[減点: -4] (約214gという本体の重量による取り回しの悪さ)\n[減点: -3] (20万円台後半という非常に高額な価格設定による導入ハードルの高さ)\n[合計: 88]"
     },
     "technicalSpecs": {
-      "os": "Android 16 (One UI 8 / Galaxy AI対応)",
-      "cpu": "Qualcomm Snapdragon 8 Elite Gen 2 for Galaxy",
-      "ram": "12GB",
+      "os": "Android",
       "storage": "256GB",
       "display": {
         "size": "6.9インチ",
-        "resolution": "3120×1440 (QHD+)",
-        "type": "Dynamic AMOLED 2X (有機EL / 1-120Hz可変 / 反射防止ガラス)",
-        "refreshRate": "120Hz"
+        "resolution": "QHD+"
       },
       "battery": {
         "capacity": "5000mAh",
-        "charging": "45W有線急速充電 / 15Wワイヤレス充電 / ワイヤレスバッテリー共有対応"
+        "charging": "超急速充電3.0対応"
       },
       "camera": {
-        "main": "200MP (広角 OIS搭載)",
-        "telephoto": "50MP (光学5倍ペリスコープ望遠 OIS搭載) + 10MP (光学3倍望遠)",
-        "ultrawide": "50MP (超広角)",
-        "front": "12MP"
-      },
-      "dimensions": {
-        "height": "162.8mm",
-        "width": "77.6mm",
-        "depth": "8.2mm",
-        "weight": "214g"
+        "main": "約2億画素 (広角)"
       },
       "weight": "214g",
-      "material": "チタンフレーム / Corning Gorilla Armor",
-      "origin": "韓国 / ベトナム",
       "connectivity": [
-        "5G",
-        "Wi-Fi 7",
-        "Bluetooth 5.4",
-        "FeliCa / おサイフケータイ",
-        "eSIM対応",
-        "nanoSIM"
+        "FeliCa / おサイフケータイ"
       ],
       "other": [
         "防塵防水: IP68",
-        "スタイラスペン: Sペン内蔵 (4096段階筆圧検知)",
-        "生体認証: 超音波画面内指紋認証 / 顔認証",
-        "サポート: 7年間OSアップデート保証",
-        "※microSDカード非対応"
+        "Galaxy AI対応",
+        "プライバシーディスプレイ搭載"
       ]
     }
   }
