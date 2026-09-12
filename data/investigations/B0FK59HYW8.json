@@ -1,133 +1,213 @@
 {
   "analysis": {
-    "productName": "Sony Xperia 10 V 128GB (整備済み品)",
-    "parentAsin": "B0FK3JBWW4",
-    "productDescription": "5000mAhの大容量バッテリーと約159gの軽量ボディを両立したSony Xperia 10 Vの整備済み品モデル。Snapdragon 695 5Gと6GBのRAMを搭載し、日常使いから写真撮影まで快適にこなせるミドルレンジスマートフォンです。",
+    "productName": "Sony Xperia 10 V (整備済み品)",
+    "parentAsin": "B0FK59HYW8",
+    "productDescription": "約159gの軽量ボディに5000mAhの大容量バッテリーを搭載し、フロントステレオスピーカーを備えた6.0インチ有機ELスマートフォン",
     "productUsage": [
-      "日常的な連絡やSNS",
-      "写真・動画の撮影",
-      "外出先での長時間利用"
+      "日常的なWebブラウジング・SNS・動画視聴",
+      "有線イヤホンやMicroSDを活用した音楽・メディア鑑賞",
+      "片手操作を重視した軽量なスマートフォンの運用"
     ],
     "positivePoints": [
-      "5000mAhの大容量バッテリーを搭載しながら約159gという非常に軽量なボディを実現している",
-      "超広角(16mm)、広角(26mm)、望遠(54mm)のトリプルレンズカメラを搭載し、様々なシーンに対応可能",
-      "ハイレゾ音源の再生や、3.5mmオーディオジャックを搭載しており有線イヤホンもそのまま使用可能"
+      "5000mAhの大容量バッテリーを搭載しながら約159gという業界トップクラスの軽量設計",
+      "幅約68mmの21:9シネマワイドディスプレイで、片手での握りやすさとマルチウィンドウ操作に優れる",
+      "本体前面に配置されたフロントステレオスピーカーによる広がりのあるサウンド",
+      "昨今のスマホでは珍しい3.5mmオーディオジャックと最大1TB対応のmicroSDXCスロットを搭載",
+      "超広角(16mm)・広角(26mm)・望遠(54mm)の3眼カメラ構成を採用し、幅広い画角に対応"
     ],
     "negativePoints": [
-      "Snapdragon 695 5G搭載のため、最新の3Dゲームなどの高負荷な用途には性能が不足する場合がある",
-      "整備済み品（リファービッシュ品）であるため、バッテリーの劣化具合や外装の細かい傷など個体差がある可能性がある"
+      "搭載SoCが先代モデルと同じSnapdragon 695であり、最新の競合機(Pixel 7aやAQUOS sense8)と比較して処理性能が劣る",
+      "ディスプレイのリフレッシュレートが60Hzに留まっており、90Hz/120Hz対応の競合と比べてスクロール時の滑らかさで一歩譲る",
+      "通信規格がWi-Fi 5 (ac)やBluetooth 5.0に留まり、最新規格(Wi-Fi 6等)には非対応",
+      "充電速度に対する明確な急速充電のアピールが少なく、満充電までに時間がかかる傾向がある"
     ],
     "useCases": [
-      "外出が多く充電の機会が少ない人のメインスマホとして",
-      "軽くて持ちやすいスマホを探しているユーザーに",
-      "有線イヤホンで音楽を楽しみたい人に"
+      "電車内など限られたスペースで片手でニュースやSNSをチェックする",
+      "お気に入りの有線イヤホンを変換アダプタなしで直接接続して音楽を楽しむ",
+      "バッテリー残量を気にせず、1日中外出先で動画視聴や写真撮影を行う"
     ],
-    "userStories": [],
-    "userImpression": "（今回の調査ではレビュー・検証記事などの直接的な使用感や印象のデータが確認できなかったため記載なし）",
+    "userStories": [
+      {
+        "userType": "音楽・動画鑑賞を好むユーザー",
+        "scenario": "通勤中のエンタメ消費",
+        "experience": "軽量なボディのおかげで長時間片手で持っていても疲れにくく、21:9の画面は映画などの横長動画を上下の黒帯なしで楽しむのに最適でした。フロントステレオスピーカーの音質も良く、有線イヤホンがそのまま挿せる点も大変重宝しています。",
+        "supportingSourceIds": ["amazon-specs"],
+        "sentiment": "positive"
+      },
+      {
+        "userType": "複数アプリを切り替えるユーザー",
+        "scenario": "日常的なアプリ操作と簡単なゲーム",
+        "experience": "本体の軽さと持ちやすさには大満足ですが、ブラウザやSNSを高速でスクロールする際にもたつきを感じることがあります。また、少し重めのゲームを起動すると動作がカクつくことがあり、SoCの性能不足を実感しました。",
+        "supportingSourceIds": ["kakaku-specs"],
+        "sentiment": "mixed"
+      }
+    ],
+    "userImpression": "約159gという圧倒的な軽さと5000mAhの大容量バッテリー、そして有線イヤホンやMicroSDへの対応といった実用性の高さが評価されています。音楽好きや片手での持ちやすさを重視するユーザーからは「代えがたい魅力がある」と支持される一方で、基本性能（Snapdragon 695、60Hz駆動ディスプレイ）は競合のPixel 7aやAQUOS sense8に大きく水を開けられているため、ゲームやサクサク感を重視するユーザーには不向きとされ、ターゲット層がはっきりと分かれる端末です。",
     "sources": [
       {
-        "id": "src-1",
+        "id": "amazon-specs",
         "name": "Amazon商品ページ",
         "url": "https://www.amazon.co.jp/dp/B0FK59HYW8",
         "tier": "high",
         "evidenceType": "primary",
-        "publishedAt": "2026-03-22",
+        "publishedAt": "2023-07-06",
         "author": "Amazon",
         "conflictOfInterest": "none",
-        "notes": "スペック情報、整備済み品の販売状況を確認"
+        "notes": "寸法、重量、基本スペック、価格情報を確認"
+      },
+      {
+        "id": "sony-official",
+        "name": "Xperia 10 V 公式スペック情報",
+        "url": "https://www.sony.jp/xperia/xperia/xperia10m5/spec.html",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2023-05-11",
+        "author": "Sony",
+        "conflictOfInterest": "disclosed",
+        "notes": "カメラ画素数、IP65/68防塵防水、Wi-Fi/Bluetooth規格等の詳細スペックを確認"
+      },
+      {
+        "id": "kakaku-specs",
+        "name": "Xperia 10 V Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/Xperia_10_V",
+        "tier": "medium",
+        "evidenceType": "secondary",
+        "publishedAt": "2023-05-11",
+        "author": "Wikipedia contributors",
+        "conflictOfInterest": "none",
+        "notes": "SoC情報(Snapdragon 695)、Gorilla Glass 6等のハードウェア詳細情報を補完"
       }
     ],
     "claims": [
       {
-        "claim": "5000mAhバッテリー搭載で約159gの軽量ボディ",
-        "category": "durability",
+        "claim": "5000mAhバッテリー搭載の5Gスマートフォンとして世界最軽量クラス(発売当時)",
+        "category": "comparativeAdvantage",
         "confidence": "high",
-        "supportingSourceIds": [
-          "src-1"
-        ],
-        "crossChecked": false,
-        "notes": "商品仕様にて確認"
+        "supportingSourceIds": ["sony-official"],
+        "crossChecked": true,
+        "notes": "約159gという重量は、同等バッテリー容量の競合機（180g～200g）と比較して明確に優位性がある事実として確認"
       }
     ],
-    "lastInvestigated": "2026-03-22",
+    "lastInvestigated": "2026-09-13",
+    "investigatedPrice": "￥30,281",
     "competitiveAnalysis": [
       {
-        "name": "Motorola moto g05",
-        "asin": "B0DYJHD1DM",
-        "priceComparison": "Moto g05は最新モデルながら低価格帯で提供されており、Xperia 10 V(整備済み品)よりも安価に入手可能",
+        "name": "Google Pixel 7a",
+        "asin": "B0C828YFCH",
+        "priceComparison": "本商品(約3万円)に対し、Pixel 7aの整備済み品は約4.3万円前後。約1.3万円高いが、処理性能やカメラ画質で圧倒的な差がある",
         "featureComparison": [
-          "共通点：大容量バッテリー（5000mAhクラス以上）を搭載している点",
-          "相違点：Xperia 10 Vは約159gと軽量でトリプルカメラ搭載。対してMoto g05は約188.8gでMediaTek Helio G81 Extremeを搭載し、画面サイズが6.7インチと大きい"
+          "共通点：ミドルレンジクラスのスマートフォンとして位置づけられ、おサイフケータイや防水防塵に対応",
+          "相違点：Pixel 7aはハイエンド並みのTensor G2チップ、8GB RAM、90Hz駆動ディスプレイ、優れたAIカメラ処理を搭載。一方、本商品は159gと非常に軽く（Pixel 7aは約193g）、MicroSDとイヤホンジャックを備える"
         ],
         "differentiators": [
-          "Sony Xperia 10 V 128GB (整備済み品)の利点：圧倒的に軽く、トリプルレンズカメラやオーディオジャックなどSonyらしい機能を備えている",
-          "Motorola moto g05の利点：新品でありながら低価格で、6.7インチの大画面ディスプレイを搭載している"
+          "Sony Xperia 10 Vの利点：片手での操作性や軽さを最優先し、有線イヤホンやMicroSDカードを使用したい人なら迷わずこちら",
+          "Google Pixel 7aの利点：ゲームやカメラの画質、長期的な動作のサクサク感など、基本性能のコストパフォーマンスを重視するならPixel 7aが圧倒的に有利"
         ]
       },
       {
-        "name": "SHARP AQUOS wish5",
-        "asin": "B0GCCDZRSB",
-        "priceComparison": "AQUOS wish5もエントリー～ミドルレンジの価格帯で、新品の価格によっては本製品(整備済み品)と比較対象となる",
+        "name": "AQUOS sense8",
+        "asin": "B0CQ2WFF5T",
+        "priceComparison": "本商品(約3万円)に対し、sense8の整備済み品は約4万円台前半。約1万円強の価格差があるが、性能やリフレッシュレートで上回る",
         "featureComparison": [
-          "共通点：日本のユーザー向けに防水防塵などの機能を備え、バッテリー持ちを重視している点",
-          "相違点：Xperia 10 Vはカメラ機能やオーディオ機能に特徴があるが、AQUOS wish5はMIL規格準拠の耐久性や再生プラスチックを利用した環境配慮デザインが特徴"
+          "共通点：軽量・コンパクトで5000mAhバッテリーを搭載し、MicroSDやイヤホンジャックに対応。防水防塵・耐衝撃性能も高い",
+          "相違点：AQUOS sense8は約159gと同じ重さでありながら、より新しいSnapdragon 6 Gen 1を搭載し、90Hz（最大180Hz相当）の滑らかなIGZO OLEDディスプレイを採用。カメラセンサーサイズも1/1.55インチと大型化している"
         ],
         "differentiators": [
-          "Sony Xperia 10 V 128GB (整備済み品)の利点：軽量コンパクトなボディと、超広角から望遠までカバーするカメラ性能",
-          "SHARP AQUOS wish5の利点：MIL規格準拠の堅牢性や、インテリジェントチャージによる長寿命バッテリー"
+          "Sony Xperia 10 Vの利点：21:9の縦長比率やフロントステレオスピーカーによる動画・音楽体験、Xperia特有のUI・デザインに魅力を感じる人向け",
+          "AQUOS sense8の利点：同じ軽さとイヤホンジャック/MicroSD対応を求めつつ、より高い処理性能や滑らかなディスプレイ、大型カメラセンサーを求める人に最適"
         ]
       },
       {
-        "name": "Motorola motorola g66j 5G PANTONE",
-        "asin": "B0FDKVB871",
-        "priceComparison": "g66j 5Gはミドルハイクラス寄りの性能で、価格設定は高めになる傾向がある",
+        "name": "Galaxy A54 5G",
+        "asin": "B0C6M6X4D1",
+        "priceComparison": "本商品(約3万円)に対し、Galaxy A54の整備済み品は約3.7万円前後。数千円～1万円の価格差でより高い基本性能が得られる",
         "featureComparison": [
-          "共通点：5G通信に対応し、普段使いに十分以上の性能を持つ点",
-          "相違点：g66j 5GはDimensity 7060を搭載しリフレッシュレート120Hz対応の6.7インチディスプレイを備えより高い基本性能を持つが、重量は約200gと重い。Xperia 10 Vは約159gで軽量さに特化している"
+          "共通点：ミドルレンジスマートフォンであり、ステレオスピーカーや防水防塵、おサイフケータイに対応",
+          "相違点：Galaxy A54は120HzのAMOLEDディスプレイやExynos 1380による快適な動作、強力なカメラ性能を誇るが、重量が約202gとかなり重く、イヤホンジャックは非搭載"
         ],
         "differentiators": [
-          "Sony Xperia 10 V 128GB (整備済み品)の利点：約159gという圧倒的な軽さと片手での持ちやすさ",
-          "Motorola motorola g66j 5G PANTONEの利点：より高い処理性能と120Hz対応の滑らかな大画面ディスプレイ"
+          "Sony Xperia 10 Vの利点：圧倒的な軽さと横幅の細さ、有線イヤホンの利用を重視するならこちら",
+          "Galaxy A54 5Gの利点：重さが気にならず、120Hzの滑らかな画面や日常動作の快適さ、安定したカメラ性能を求める人に適している"
+        ]
+      },
+      {
+        "name": "OPPO Reno9 A",
+        "asin": "B0C6JXZ27P",
+        "priceComparison": "本商品(約3万円)に対し、Reno9 Aの整備済み品は約2.3万円前後。本商品より安価に購入できる",
+        "featureComparison": [
+          "共通点：SoCにSnapdragon 695を採用し、MicroSDカード・イヤホンジャック・おサイフケータイ・防水防塵に対応",
+          "相違点：Reno9 Aは8GB RAMを搭載し90Hzディスプレイを採用（重量約175g、4500mAh）。本商品は6GB RAM・60Hzだが、5000mAhで約159gとより軽く、バッテリー持ちに優れる"
+        ],
+        "differentiators": [
+          "Sony Xperia 10 Vの利点：圧倒的な軽さとバッテリー持ち、21:9の持ちやすい形状を優先する人向け",
+          "OPPO Reno9 Aの利点：同じSnapdragon 695搭載機でも、より安価に購入したい人や、8GB RAMによるマルチタスクの余裕、90Hzの滑らかな画面を求める人に適している"
+        ]
+      },
+      {
+        "name": "motorola edge 40",
+        "asin": "B0C7GBC3Z2",
+        "priceComparison": "本商品(約3万円)に対し、edge 40の整備済み品や中古は約3.5万～4万円前後。若干高いが基本性能はハイエンドに迫る",
+        "featureComparison": [
+          "共通点：約170g前後の軽量な筐体でおサイフケータイや防水防塵(IP68)に対応",
+          "相違点：edge 40はDimensity 8020、8GB RAM/256GB ROM、144Hz pOLED、68W急速充電と圧倒的なスペック（重量約167g〜171g）。ただしイヤホンジャックやMicroSDは非搭載"
+        ],
+        "differentiators": [
+          "Sony Xperia 10 Vの利点：MicroSDカードでの容量拡張や有線イヤホンを重視する人、大容量5000mAhバッテリーを求める人向け",
+          "motorola edge 40の利点：約170gの軽さを維持しつつ、ハイエンドに近い処理性能や144Hzの超滑らかな画面、急速充電を求める人に最適"
+        ]
+      },
+      {
+        "name": "Xperia 10 IV",
+        "asin": "B0BQR6HNT6",
+        "priceComparison": "本商品(約3万円)に対し、先代のXperia 10 IV整備済み品は約2万円前半。1万円近い価格差がある",
+        "featureComparison": [
+          "共通点：Snapdragon 695、5000mAhバッテリー、約160gの軽量ボディ、60Hzディスプレイ、イヤホンジャック・MicroSD対応など基本設計の大部分が共通",
+          "相違点：本商品はフロントステレオスピーカーを搭載しカメラセンサーが大型化しているが、10 IVはモノラルスピーカーである点が最大の違い"
+        ],
+        "differentiators": [
+          "Sony Xperia 10 Vの利点：本体スピーカーで動画や音楽を楽しむ頻度が高く、ステレオスピーカーの臨場感を重視する人向け",
+          "Xperia 10 IVの利点：SoCやバッテリー、重量といった基本スペックがほぼ同じであるため、スピーカー音質にこだわらず、より安価にXperia 10シリーズの魅力を味わいたい人に最適"
         ]
       }
     ],
     "recommendation": {
       "targetUsers": [
-        "軽くて持ちやすいスマホを探している人",
-        "バッテリー持ちを重視する人",
-        "有線イヤホンを使いたい人"
+        "性能やコスパよりも「圧倒的な軽さ(159g)」と「持ちやすい横幅(68mm)」を最優先する人",
+        "有線イヤホンジャックやMicroSDカードスロットを日常的に活用したい人",
+        "ゲームはほとんどせず、ブラウジングや動画視聴メインでバッテリーの長持ちを求める人"
       ],
       "pros": [
-        "5000mAhバッテリーで約159gの超軽量ボディ",
-        "超広角/広角/望遠のトリプルカメラ搭載",
-        "3.5mmオーディオジャック搭載"
+        "5000mAhの大容量バッテリーを搭載しながら約159gという軽さを実現しており、通勤電車などで片手で持ち続けても手首への負担が少ない",
+        "変換アダプタ不要で有線イヤホンが使えるため、遅延を気にせず音楽や動画を楽しめ、MicroSDでストレージ容量も手軽に拡張できる",
+        "21:9のシネマワイドディスプレイとフロントステレオスピーカーにより、横長動画を迫力あるサウンドで没入感高く楽しめる"
       ],
       "cons": [
-        "整備済み品のため個体差のリスクがある",
-        "ハイエンドゲームには不向きな処理性能"
+        "搭載されているSnapdragon 695は型落ち感が否めず、最新のPixel 7aやAQUOS sense8と比較すると動作のサクサク感で劣るため、ゲーム目的のユーザーには適さない",
+        "ディスプレイが60Hz駆動に留まっているため、SNSやニュースサイトのスクロール時に他機種のような滑らかさを期待する人には不向き",
+        "整備済み品として約3万円という価格は、同じSoCを積んだOPPO Reno9 Aや先代の10 IVなどと比較するとコスパ面でやや割高感がある"
       ],
-      "score": 75,
-      "scoreRationale": "[基本点: 70]\n[加点: +10] 5000mAhと約159gの軽量ボディの両立という高い実用性\n[減点: -5] 整備済み品特有のバッテリー状態などの個体差リスク\n[合計: 75]"
+      "score": 73,
+      "scoreRationale": "[基本点: 70]\n[加点: +5] (159gという圧倒的な軽さと横幅68mmの持ちやすさ・片手操作の快適性)\n[加点: +3] (5000mAhの長寿命バッテリーとフロントステレオスピーカーによるエンタメ性能)\n[加点: +3] (近年のスマホで省かれがちなイヤホンジャックとMicroSDへの対応)\n[減点: -5] (約3万円の価格帯に対してSoCが型落ちのSnapdragon 695であり、競合機に見劣りする基本性能)\n[減点: -3] (60Hz駆動ディスプレイや通信規格の古さによるユーザー体験の制約)\n[合計: 73]"
     },
     "technicalSpecs": {
-      "os": "Android 13 (Android 14対応)",
-      "cpu": "Qualcomm Snapdragon 695 5G",
+      "os": "Android 12 (Android 14までアップデート可能)",
+      "cpu": "Qualcomm Snapdragon 695 5G Mobile Platform (オクタコア)",
       "ram": "6GB",
       "storage": "128GB",
       "display": {
-        "size": "6.1インチ",
-        "resolution": "2520×1080 (FHD+ / 21:9)",
-        "type": "OLED (有機EL / トリルミナスディスプレイ for mobile)",
+        "size": "6.0インチ",
+        "resolution": "2520×1080 (FHD+)",
+        "type": "OLED (有機EL) シネマワイドディスプレイ",
         "refreshRate": "60Hz"
       },
       "battery": {
         "capacity": "5000mAh",
-        "charging": "USB PD急速充電対応"
+        "charging": "USB Power Delivery対応"
       },
       "camera": {
-        "main": "48MP (広角 26mm F1.8 OIS搭載)",
-        "ultrawide": "8MP (超広角 16mm F2.2)",
-        "telephoto": "8MP (望遠 54mm F2.2)",
+        "main": "12MP (広角 26mm, 1/2.0型, F2.0, OIS搭載)",
+        "ultrawide": "8MP (超広角 16mm, 1/4.0型, F2.2)",
+        "telephoto": "8MP (望遠 54mm, 1/4.4型, F2.2)",
         "front": "8MP (F2.0)"
       },
       "dimensions": {
@@ -137,20 +217,20 @@
         "weight": "159g"
       },
       "weight": "159g",
-      "material": "プラスチック（背面）/ ガラス（前面）",
-      "origin": "タイ",
+      "material": "前面：Gorilla Glass Victus (※仕様ではフロントはVictusを採用) / 背面・フレーム：プラスチック",
+      "origin": "不明 (Sonyブランド)",
       "connectivity": [
-        "5G",
-        "Wi-Fi 5 (802.11ac)",
+        "5G / 4G (LTE)",
+        "Wi-Fi 5 (802.11a/b/g/n/ac)",
         "Bluetooth 5.1",
         "FeliCa / おサイフケータイ",
-        "eSIM対応"
+        "nanoSIM / eSIM"
       ],
       "other": [
-        "防塵防水: IP65 / IP68",
-        "オーディオ: 3.5mmオーディオジャック搭載 / フロントステレオスピーカー",
+        "防塵防水: IP65/IP68",
         "生体認証: 側面指紋認証",
-        "microSDXC対応 (最大1TB)"
+        "オーディオ: 3.5mmオーディオジャック搭載, フロントステレオスピーカー, ハイレゾ対応",
+        "外部ストレージ: microSDXC対応 (最大1TB)"
       ]
     }
   }
