@@ -72,7 +72,7 @@ function extractUnprocessedRequests(sheet, limit) {
 }
 
 /**
- * 各行のステータス更新を適用する（Cognitive Complexity低減）
+ * 各行のステータス更新を適用する（Cognitive Complexity低減・一括書き込みによる高速化）
  */
 function applyRowUpdates(sheet, updates, now) {
   const maxRow = sheet.getLastRow();
@@ -82,17 +82,15 @@ function applyRowUpdates(sheet, updates, now) {
     const row = update.row;
     if (!row || row < 2 || row > maxRow) continue;
 
-    if (update.status) {
-      sheet.getRange(row, 3).setValue(update.status);
-    }
-    if (update.asin !== undefined) {
-      sheet.getRange(row, 4).setValue(update.asin);
-    }
-    sheet.getRange(row, 5).setValue(now);
-    if (update.note !== undefined) {
-      sheet.getRange(row, 6).setValue(update.note);
-    }
+    const range = sheet.getRange(row, 3, 1, 4); // C列(status)〜F列(note)
+    const current = range.getValues()[0];
 
+    const status = update.status || current[0];
+    const asin = update.asin !== undefined ? update.asin : current[1];
+    const processedAt = now;
+    const note = update.note !== undefined ? update.note : current[3];
+
+    range.setValues([[status, asin, processedAt, note]]);
     updatedCount++;
   }
 
@@ -239,8 +237,9 @@ function doPost(e) {
 
     const updatedCount = applyRowUpdates(sheet, payload.updates, now);
 
-    // ステータス更新後にフォームの確認メッセージ（待ち件数）も自動最新化
-    updateConfirmationMessage();
+    // ※フォーム確認メッセージ更新（FormApp.openById）は処理が重くWeb Appタイムアウト（404）の原因となるため、
+    // フォーム送信時の onFormSubmit トリガー側で集計・更新を行う設計とする。
+    // updateConfirmationMessage();
 
     return createJsonResponse({
       success: true,

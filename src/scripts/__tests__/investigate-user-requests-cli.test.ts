@@ -197,6 +197,30 @@ describe('user-requests-helper', () => {
       expect(mockedAxios.post.mock.calls).toHaveLength(2);
     });
 
+    it('should retry on GAS proxy timeout (404) and succeed', async () => {
+      const notFoundError = new Error('Request failed with status code 404');
+      (notFoundError as any).response = { status: 404 };
+      (notFoundError as any).isAxiosError = true;
+
+      mockedAxios.isAxiosError.mockReturnValue(true);
+      mockedAxios.post.mockRejectedValueOnce(notFoundError).mockResolvedValueOnce({
+        data: {
+          success: true,
+          updatedCount: 1,
+        },
+      });
+
+      const count = await updateUserRequestsInGas(
+        'https://script.google.com/macros/s/xxx/exec',
+        'secret-token',
+        [{ row: 2, status: '完了', asin: 'B08N5WRWNW' }],
+        { maxRetries: 1, retryDelayMs: 10 },
+      );
+
+      expect(count).toBe(1);
+      expect(mockedAxios.post.mock.calls).toHaveLength(2);
+    });
+
     it('should return 0 immediately if updates array is empty', async () => {
       const count = await updateUserRequestsInGas('https://script.google.com/macros/s/xxx/exec', 'secret-token', []);
       expect(count).toBe(0);
