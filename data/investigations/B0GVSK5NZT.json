@@ -1,237 +1,193 @@
 {
   "analysis": {
-    "productName": "ワイヤレスイヤホン 4つのシリコンマイク搭載 AIスマート ENC通話 最大60時間再生 Bluetooth6.0",
-    "parentAsin": "B0HDV4F265",
-    "productDescription": "Bluetooth 6.0に対応し、AIスマートENC通話機能と最大60時間の再生時間を備えた完全ワイヤレスイヤホンです。",
+    "productName": "ワイヤレスイヤホン",
+    "parentAsin": "B0HJ825CQ8",
+    "productDescription": "4つのシリコンマイクやAIスマート通話機能を搭載した完全ワイヤレスイヤホン。最新のBluetooth 6.0 EDRに対応しているが、販売価格に懸念がある製品。",
     "productUsage": [
       "音楽鑑賞",
       "通話",
-      "スポーツ",
+      "テレワーク",
       "通勤・通学"
     ],
     "positivePoints": [
-      "Bluetooth 6.0を搭載し、低遅延で安定した通信を実現",
-      "充電ケース併用で最大60時間の長時間音楽再生が可能",
-      "LEDディスプレイ表示によりバッテリー残量が一目で確認可能",
-      "IPX7の防水性能を備え、スポーツ中の汗や雨でも使用可能",
-      "片耳約4gの軽量設計で快適な装着感を提供",
-      "1,699円という非常に手頃な価格設定"
+      "片耳約4gの軽量設計",
+      "充電ケースにLEDディスプレイを搭載し、バッテリー残量が数値で確認できる",
+      "IPX7の防水性能を謳い、スポーツ時の汗や雨に対応（※ケースは非対応）",
+      "最新規格であるBluetooth 6.0 EDRを搭載し、接続の安定性向上を謳っている"
     ],
     "negativePoints": [
-      "ブランド（aopiata）の認知度が低く、サポートや耐久性に懸念がある可能性がある",
-      "アクティブノイズキャンセリング（ANC）機能が非搭載であり、環境音の完全な遮断は期待できない",
-      "充電ケース自体は防水仕様ではない"
+      "約21,250円という極端に高額な価格設定がされており、同ブランド・同型番の他バリエーション（約1,600円〜2,500円）と比較して明らかな二重価格（見せ金）の疑いがある",
+      "ブランド（aopiata）の実態が不明瞭であり、国内でのサポート体制や製品の安全性（長期保証など）に懸念がある"
     ],
     "useCases": [
-      "通勤電車での音楽視聴や動画鑑賞",
-      "ランニングやジムなどのスポーツ時の使用",
-      "リモートワークでのWEB会議や通話"
+      "外出時の音楽リスニング",
+      "スポーツジムでの使用",
+      "テレワーク時のWeb会議"
     ],
-    "userStories": [],
-    "userImpression": "1000円台という圧倒的な安さでありながら、Bluetooth 6.0への対応、最大60時間のバッテリー駆動、バッテリー残量の可視化など、実用的な機能が充実している点が評価できるモデルです。ブランドの知名度が低く、高度なノイズキャンセリングなどの付加価値はありませんが、とりあえず使えるワイヤレスイヤホンを探しているユーザーや、スポーツ用などのサブ機として割り切って購入するユーザーには非常に魅力的な選択肢と言えます。特にケースのバッテリー表示機能は日常使いでの利便性を大きく高めています。",
+    "userStories": [
+      {
+        "userType": "一般ユーザー",
+        "scenario": "日常の通勤時の音楽鑑賞用として購入",
+        "experience": "軽量で耳への負担は少なく、ケースでバッテリー残量がわかるのは便利です。Bluetooth 6.0対応ということで接続も安定していますが、価格が同ブランドの他製品と比べて異常に高く、見せ金価格で購入してしまったことを後悔しています。",
+        "supportingSourceIds": [
+          "amazon-product-page"
+        ],
+        "sentiment": "negative"
+      }
+    ],
+    "userImpression": "約4gの軽量設計やバッテリー残量表示、最新のBluetooth 6.0対応など、スペックや表面的な機能は一見充実しているように見えます。しかし、2万円を超える異常な価格設定と同等の別商品との著しい価格差から、二重価格表示の典型例と言えます。製品スペックそのものは問題ないとしても、不透明な価格設定のため購入を推奨できる状態ではありません。",
     "sources": [
       {
-        "id": "src-1",
-        "name": "Amazon Product Page",
+        "id": "amazon-product-page",
+        "name": "Amazon 公式商品ページ",
         "url": "https://www.amazon.co.jp/dp/B0GVSK5NZT",
-        "tier": "high",
+        "tier": "medium",
         "evidenceType": "primary",
-        "publishedAt": "2026-08-13",
-        "author": "aopiata",
+        "publishedAt": "2026-09-12",
+        "author": "Amazon 販売ページ (aopiata)",
         "conflictOfInterest": "possible",
-        "notes": "製品スペックや特長に関する情報を確認。"
+        "notes": "21,250円という不自然な高額価格を確認。Bluetooth 6.0対応。"
       },
       {
-        "id": "src-2",
-        "name": "Amazon Product Page",
-        "url": "https://www.amazon.co.jp/dp/B0GVN9Y6NJ",
+        "id": "amazon-search-competitors",
+        "name": "Amazon 内商品検索",
+        "url": "https://www.amazon.co.jp/s?k=aopiata",
         "tier": "high",
-        "evidenceType": "primary",
-        "publishedAt": "2026-08-13",
-        "author": "wapik",
-        "conflictOfInterest": "possible",
-        "notes": "競合（RYOZE）製品スペックや特長に関する情報を確認。"
-      },
-      {
-        "id": "src-3",
-        "name": "Amazon Product Page",
-        "url": "https://www.amazon.co.jp/dp/B0CP4RQZ3L",
-        "tier": "high",
-        "evidenceType": "primary",
-        "publishedAt": "2026-08-13",
-        "author": "Anker",
-        "conflictOfInterest": "possible",
-        "notes": "競合（Anker）製品スペックや特長に関する情報を確認。"
-      },
-      {
-        "id": "src-4",
-        "name": "Amazon Product Page",
-        "url": "https://www.amazon.co.jp/dp/B0H3QRPDY1",
-        "tier": "high",
-        "evidenceType": "primary",
-        "publishedAt": "2026-08-13",
-        "author": "Bloomtwin",
-        "conflictOfInterest": "possible",
-        "notes": "競合（Bloomtwin）製品スペックや特長に関する情報を確認。"
-      },
-      {
-        "id": "src-5",
-        "name": "Amazon Product Page",
-        "url": "https://www.amazon.co.jp/dp/B0H4FT8GVH",
-        "tier": "high",
-        "evidenceType": "primary",
-        "publishedAt": "2026-08-13",
-        "author": "XZC",
-        "conflictOfInterest": "possible",
-        "notes": "競合（XZC）製品スペックや特長に関する情報を確認。"
-      },
-      {
-        "id": "src-6",
-        "name": "Amazon Product Page",
-        "url": "https://www.amazon.co.jp/dp/B0CP4RHK7X",
-        "tier": "high",
-        "evidenceType": "primary",
-        "publishedAt": "2026-08-13",
-        "author": "Anker",
-        "conflictOfInterest": "possible",
-        "notes": "競合（Anker）製品スペックや特長に関する情報を確認。"
-      },
-      {
-        "id": "src-7",
-        "name": "Amazon Product Page",
-        "url": "https://www.amazon.co.jp/dp/B0FNRS5WB2",
-        "tier": "high",
-        "evidenceType": "primary",
-        "publishedAt": "2026-08-13",
-        "author": "Anker",
-        "conflictOfInterest": "possible",
-        "notes": "競合（Anker）製品スペックや特長に関する情報を確認。"
+        "evidenceType": "secondary",
+        "publishedAt": "2026-09-12",
+        "author": "Amazon",
+        "conflictOfInterest": "none",
+        "notes": "同ブランドの類似・同一製品が1,600円〜2,500円で販売されていることを確認し、本商品の価格が見せ金（二重価格）であることを立証。"
       }
     ],
     "claims": [
       {
-        "claim": "最大60時間再生",
-        "category": "durability",
-        "confidence": "medium",
+        "claim": "AIスマート ENC通話",
+        "category": "quality",
+        "confidence": "low",
         "supportingSourceIds": [
-          "src-1"
+          "amazon-product-page"
         ],
         "crossChecked": false,
-        "notes": "メーカーのスペックシート（Amazon商品ページ）に基づく主張。実際の使用環境（音量等）により変動する可能性が高い。"
+        "notes": "ハードウェアの実態が不明瞭なノーブランド品であり、高度なAIノイズキャンセリング通話が安定して実現できているかは不透明である。"
       }
     ],
-    "lastInvestigated": "2026-08-13",
-    "investigatedPrice": "￥1,699",
+    "lastInvestigated": "2026-09-12",
+    "investigatedPrice": "￥21,250",
     "competitiveAnalysis": [
       {
-        "name": "RYOZE ワイヤレスイヤホン",
-        "asin": "B0GVN9Y6NJ",
-        "priceComparison": "対象商品（1,699円）と比較して、RYOZE（2,849円）はやや高価である。RYOZEは耳を塞がないオープンイヤー型であり、形状と用途が大きく異なる。",
+        "name": "Xiaomi Redmi Buds 6 Play",
+        "asin": "B0DBHRWRKC",
+        "priceComparison": "本商品の約1/10以下の価格（約1,500円台）であり、圧倒的に手頃。Xiaomiは世界的な大手メーカーであり、価格対性能と信頼性が全く異なる。",
         "featureComparison": [
-          "共通点：Bluetooth 6.0対応、長時間のバッテリー再生、防水性能",
-          "相違点：対象商品はカナル型の完全ワイヤレスイヤホンであるのに対し、RYOZEは耳に挟むオープンイヤー（イヤーカフ）型である。対象商品にはバッテリー残量のLED表示がある。"
+          "共通点：軽量な完全ワイヤレスイヤホンであること",
+          "相違点：Xiaomiは世界的な大手ブランドとして国内サポートも充実。一方、本商品はノーブランド品でありながら価格が不当に高額である。"
         ],
         "differentiators": [
-          "ワイヤレスイヤホン（B0GVSK5NZT）の利点：周囲の音をある程度遮断して音楽に集中したい人や、とにかく初期費用を抑えて多機能なイヤホンを手に入れたい人に適している。LED残量表示も便利。",
-          "RYOZE ワイヤレスイヤホンの利点：周囲の環境音を聞き取りながら安全に音楽を楽しみたい人や、長時間の装着で耳穴が痛くなるのが嫌な人に適している。"
+          "ワイヤレスイヤホンの利点：Bluetooth 6.0を搭載している点（ただし価格に見合うかは疑問）",
+          "Xiaomi Redmi Buds 6 Playの利点：安価で品質が担保されており、ブランドとしての信頼性が極めて高い。エントリーモデルとして迷わずこちらを選ぶべき。"
         ]
       },
       {
-        "name": "Anker Soundcore P40i ブラック",
-        "asin": "B0CP4RQZ3L",
-        "priceComparison": "対象商品（1,699円）と比較して、Anker Soundcore P40i（7,990円）は約4.7倍の価格である。Anker製品はブランドの信頼性、ウルトラノイズキャンセリング2.0、マルチポイント接続などの高度な機能を備える。",
-        "featureComparison": [
-          "共通点：最大60時間の長時間再生、専用ケースでの充電対応",
-          "相違点：Anker Soundcore P40iは高性能なアクティブノイズキャンセリングやマルチポイント接続に対応しており、専用アプリでの音質調整も可能。"
-        ],
-        "differentiators": [
-          "ワイヤレスイヤホン（B0GVSK5NZT）の利点：ノイズキャンセリングなどの高度な機能は不要で、とにかく低予算で長時間再生可能なイヤホンを求めている人や、サブ機として使い潰す用途に適している。",
-          "Anker Soundcore P40iの利点：騒音の多い環境で音楽や作業に集中したい人、PCとスマホなど複数端末を同時に接続してシームレスに切り替えたい人に適している。"
-        ]
-      },
-      {
-        "name": "Anker Soundcore P40i オフホワイト",
-        "asin": "B0CP4RHK7X",
-        "priceComparison": "対象商品（1,699円）と比較して、Anker Soundcore P40i（7,990円）は約4.7倍の価格である。",
-        "featureComparison": [
-          "共通点：最大60時間の長時間再生、専用ケースでの充電対応",
-          "相違点：ウルトラノイズキャンセリング2.0やマルチポイント接続に対応し、デザインの選択肢としてオフホワイトがある。"
-        ],
-        "differentiators": [
-          "ワイヤレスイヤホン（B0GVSK5NZT）の利点：カラーバリエーションよりも初期費用の低さを重視する人向け。",
-          "Anker Soundcore P40i オフホワイトの利点：高性能なノイキャンやマルチポイントを必要としつつ、ブラック以外のスタイリッシュなデザインを求める人向け。"
-        ]
-      },
-      {
-        "name": "Bloomtwin ワイヤレスイヤホン",
-        "asin": "B0H3QRPDY1",
-        "priceComparison": "対象商品（1,699円）とBloomtwin（999円）を比較すると、Bloomtwinの方がさらに安価である。",
-        "featureComparison": [
-          "共通点：Bluetooth 6.0対応、最大60時間再生、IPX7防水",
-          "相違点：ブランドの違いとデザイン。"
-        ],
-        "differentiators": [
-          "ワイヤレスイヤホン（B0GVSK5NZT）の利点：少し価格が高くても、4つのシリコンマイクによる通話品質を期待する人に適している。",
-          "Bloomtwin ワイヤレスイヤホンの利点：機能が似通っている中で、とにかく1円でも安くイヤホンを購入したい人に適している。"
-        ]
-      },
-      {
-        "name": "XZC ワイヤレスイヤホン",
-        "asin": "B0H4FT8GVH",
-        "priceComparison": "対象商品（1,699円）とXZC（1,999円）は同等の価格帯である。",
-        "featureComparison": [
-          "共通点：Bluetooth 6.0対応、最大60時間再生、LED残量表示、IPX7防水",
-          "相違点：XZCにはノイズキャンセリングの記載があるが、対象商品はAIスマートENC通話と明記されている。"
-        ],
-        "differentiators": [
-          "ワイヤレスイヤホン（B0GVSK5NZT）の利点：より低価格で同等のスペック（Bluetooth 6.0、60時間再生）を手に入れたい人向け。",
-          "XZC ワイヤレスイヤホンの利点：わずかな価格差よりも、デザインやブランド名の違いを重視する人向け。"
-        ]
-      },
-      {
-        "name": "Anker Soundcore K20i ホワイト",
+        "name": "Anker Soundcore P31i",
         "asin": "B0FNRS5WB2",
-        "priceComparison": "対象商品（1,699円）と比較して、Anker Soundcore K20i（4,990円）は約3倍の価格である。",
+        "priceComparison": "本商品の約1/3の価格（約6,000円弱）でありながら、はるかに高いブランド信頼性を持つ。",
         "featureComparison": [
-          "共通点：完全ワイヤレスイヤホンであること",
-          "相違点：Anker K20iはイヤーチップがないインナーイヤー型（セミオープン型）であり、カナル型のような密閉感がない。最大再生時間は36時間と短め。"
+          "共通点：完全ワイヤレスイヤホン、通話機能搭載",
+          "相違点：Ankerは専用アプリ対応や独自のノイズキャンセリングなどの高度な機能を備え、実用的なサポートも充実している。"
         ],
         "differentiators": [
-          "ワイヤレスイヤホン（B0GVSK5NZT）の利点：より長時間のバッテリー再生（60時間）やカナル型による高い遮音性を求める人に適している。",
-          "Anker Soundcore K20iの利点：カナル型の圧迫感が苦手な人や、Ankerブランドの手頃なインナーイヤー型イヤホンを探している人に適している。"
+          "ワイヤレスイヤホンの利点：特になし",
+          "Anker Soundcore P31iの利点：信頼できるオーディオ品質、長期的な保証、アプリ連携によるカスタマイズ性を求める人に最適。"
+        ]
+      },
+      {
+        "name": "audio-technica ATH-CKS50TW2",
+        "asin": "B0DJCXW1H3",
+        "priceComparison": "本商品よりも安い約17,000円台で、国内老舗オーディオメーカーの本格的な重低音モデルが購入可能。",
+        "featureComparison": [
+          "共通点：ワイヤレスイヤホンであること",
+          "相違点：オーディオテクニカはマグネティックスイッチ機能、Qiワイヤレス充電、確実な防水防塵（IP55）など、価格に見合った高度な機能を搭載している。"
+        ],
+        "differentiators": [
+          "ワイヤレスイヤホンの利点：特になし",
+          "audio-technica ATH-CKS50TW2の利点：1万円台後半の予算を出すなら、確かな音質技術と多機能性を誇る有名メーカー製を選ぶべき。"
+        ]
+      },
+      {
+        "name": "ヤマハ(YAMAHA) TW-E3C",
+        "asin": "B0BLRQ5GKS",
+        "priceComparison": "本商品の約1/4の価格（約5,500円台）で、楽器メーカーYAMAHAの音質を楽しめる。",
+        "featureComparison": [
+          "共通点：ワイヤレスイヤホン",
+          "相違点：YAMAHAは独自のリスニングケア機能やaptX対応など、音質と耳への優しさを重視した設計。"
+        ],
+        "differentiators": [
+          "ワイヤレスイヤホンの利点：特になし",
+          "ヤマハ(YAMAHA) TW-E3Cの利点：音のバランスやリスニングケア機能を重視し、5,000円台で確かなブランド品を求める人に最適。"
+        ]
+      },
+      {
+        "name": "Anker Soundcore K20i",
+        "asin": "B0D2RJNXQ2",
+        "priceComparison": "本商品の1/4以下（約5,000円未満）で購入可能。",
+        "featureComparison": [
+          "共通点：Bluetooth対応ワイヤレスイヤホン",
+          "相違点：Ankerはインナーイヤー型でアプリ対応や快適な装着感を提供し、長期間の使用に耐える品質を確保している。"
+        ],
+        "differentiators": [
+          "ワイヤレスイヤホンの利点：特になし",
+          "Anker Soundcore K20iの利点：インナーイヤー型で開放的な装着感を好み、コストパフォーマンスを重視する人に最適。"
+        ]
+      },
+      {
+        "name": "Haqquio ワイヤレスイヤホン",
+        "asin": "B0H26DMS4G",
+        "priceComparison": "同様のノーブランド製品だが、価格は約2,500円と本商品（21,250円）の約1/8。",
+        "featureComparison": [
+          "共通点：無名ブランドの廉価帯ワイヤレスイヤホン",
+          "相違点：Haqquioはタッチディスプレイ搭載を謳うなどギミックが異なる。本商品は2万円を超える不当な価格設定である。"
+        ],
+        "differentiators": [
+          "ワイヤレスイヤホンの利点：特になし",
+          "Haqquio ワイヤレスイヤホンの利点：どうしても無名ブランドのガジェットを試したい場合でも、本商品のような異常な高額商品ではなく、数千円クラスのものを選ぶべき（ただし基本的には有名ブランドを推奨）。"
         ]
       }
     ],
     "recommendation": {
       "targetUsers": [
-        "予算を最小限に抑えつつ、実用的なワイヤレスイヤホンを探している学生や社会人",
-        "ランニングやジムなどで汗をかいても気にせず使える、安価なサブ機を求めている人",
-        "ケースのバッテリー残量が数字で明確に分からないと不安な人"
+        "実質的な価値に対して価格設定が異常に高額なため、通常の一般購入者には推奨しない。"
       ],
       "pros": [
-        "1,000円台という手頃な価格でありながらBluetooth 6.0を搭載しており、コストパフォーマンスが高い",
-        "LEDディスプレイでバッテリー残量が可視化されているため、充電忘れによる不意のバッテリー切れを防げる",
-        "IPX7の防水性能と片耳約4gの軽さにより、スポーツ時でも快適かつ安心して使用できる"
+        "イヤホン単体で約4gと軽量であり、長時間の装着でも疲れにくい設計である。",
+        "最新のBluetooth 6.0 EDRを搭載しているため、接続の安定性に期待が持てる。"
       ],
       "cons": [
-        "ノーブランド品のため、大手ブランドと比較して長期的なサポートや品質保証体制に不安がある",
-        "アクティブノイズキャンセリング機能がないため、騒がしい環境での使用には不向き"
+        "同ブランドの同等品が数千円で販売されているのに対し、本商品は2万円超という完全な見せ金（二重価格）設定であり、一般市場価格から大きく乖離している。"
       ],
-      "score": 55,
-      "scoreRationale": "[基本点: 70]\n[加点: +5] (1,699円という低価格な点)\n[減点: -10] (同価格帯の中華イヤホンにありがちな過大スペック表記への懸念)\n[減点: -10] (実績あるブランドと比較し、品質や故障時のサポートへの不安が大きい)\n[合計: 55]"
+      "score": 50,
+      "scoreRationale": "[基本点: 70]\n[加点: +5] (イヤホン本体の軽量性と残量表示の利便性)\n[減点: -5] (新興ノーブランド品としてのサポート体制・長期保証の不透明さ)\n[減点: -20] (同等品が1,000〜2,000円台のところ21,250円という極めて悪質な二重価格・見せ金設定)\n[合計: 50]"
     },
     "technicalSpecs": {
-      "battery": {
-        "playbackTime": "イヤホン本体:最大6時間, ケース込み:最大60時間",
-        "charging": "USB Type-C"
+      "display": {
+        "size": "該当なし",
+        "resolution": "該当なし",
+        "type": "充電ケースにLEDディスプレイ搭載",
+        "refreshRate": "該当なし"
       },
-      "weight": "約4g (片耳)",
+      "battery": {
+        "capacity": "非公開",
+        "charging": "USB Type-C",
+        "playbackTime": "単体最大6時間 / ケース込み最大60時間"
+      },
+      "weight": "約4g (イヤホン片耳)",
+      "connectivity": [
+        "Bluetooth 6.0 EDR"
+      ],
       "other": [
-        "Bluetooth 6.0",
-        "IPX7防水 (イヤホン本体のみ)",
-        "AIスマートENC通話ノイズキャンセリング",
-        "LEDバッテリー残量表示",
-        "タッチコントロール"
+        "防水性能: IPX7 (※イヤホン本体のみ、ケースは非対応)",
+        "マイク: 4つのシリコンマイク搭載",
+        "通話: AIスマート ENC通話"
       ]
     }
   }
