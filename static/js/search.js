@@ -333,22 +333,35 @@ async function getAsinVariations() {
     return asinVariationsCache;
 }
 
+let asinMapFallback = new Map();
+let parentAsinMapFallback = new Map();
+
 function searchWithRerank(fuseInstance, query) {
     if (!fuseInstance) return { results: [], unfilteredScoreCount: 0 };
     const trimmed = query.trim().toUpperCase();
-    let targetQuery = query;
 
-    if (isAsin(trimmed) && asinVariationsCache?.[trimmed]) {
-        targetQuery = asinVariationsCache[trimmed];
+    // クエリがASIN形式の場合、O(1) 直接引き
+    if (isAsin(trimmed)) {
+        const targetAsin = asinVariationsCache?.[trimmed] || trimmed;
+        const directItem = asinMapFallback.get(targetAsin) || asinMapFallback.get(trimmed);
+        if (directItem) {
+            return {
+                results: [{ item: directItem, score: 0, rerankScore: 1 }],
+                unfilteredScoreCount: 1
+            };
+        }
+        const parentItems = parentAsinMapFallback.get(targetAsin) || parentAsinMapFallback.get(trimmed);
+        if (parentItems && parentItems.length > 0) {
+            return {
+                results: parentItems.map(item => ({ item, score: 0, rerankScore: 1 })),
+                unfilteredScoreCount: parentItems.length
+            };
+        }
+        return { results: [], unfilteredScoreCount: 0 };
     }
 
-    const normalizedQuery = normalizeSearchText(targetQuery);
-    let fuseResults = fuseInstance.search(normalizedQuery);
-
-    if (fuseResults.length === 0 && targetQuery !== query) {
-        fuseResults = fuseInstance.search(normalizeSearchText(query));
-    }
-
+    const normalizedQuery = normalizeSearchText(query);
+    const fuseResults = fuseInstance.search(normalizedQuery);
     return rerankResults(fuseResults, query);
 }
 
@@ -699,6 +712,16 @@ document.addEventListener('DOMContentLoaded', function () {
                     getAsinVariations();
                     const response = await fetch(searchIndexUrl);
                     const data = await response.json();
+                    asinMapFallback.clear();
+                    parentAsinMapFallback.clear();
+                    for (const item of data) {
+                        if (item.asin) asinMapFallback.set(item.asin.toUpperCase(), item);
+                        if (item.parent_asin) {
+                            const p = item.parent_asin.toUpperCase();
+                            if (!parentAsinMapFallback.has(p)) parentAsinMapFallback.set(p, []);
+                            parentAsinMapFallback.get(p).push(item);
+                        }
+                    }
                     const searchIndex = normalizeSearchItems(data);
                     fuse = new Fuse(searchIndex, {
                         keys: [
@@ -825,7 +848,7 @@ document.addEventListener('DOMContentLoaded', function () {
             stopSearchLoading();
         }
 
-        handleSearch = debounce((query) => {
+        const executeSearchCore = (query) => {
             const trimmedQuery = query.trim();
             if (trimmedQuery.length === 0) {
                 displaySearchTips();
@@ -853,7 +876,19 @@ document.addEventListener('DOMContentLoaded', function () {
             } else {
                 executeFallbackSearch(query);
             }
-        }, 150);
+        };
+
+        const debouncedSearch = debounce(executeSearchCore, 150);
+
+        // ASIN形式の場合は150msのデバウンスを待たずに即時実行する
+        handleSearch = (query, immediate = false) => {
+            const trimmed = (query || '').trim();
+            if (immediate || isAsin(trimmed)) {
+                executeSearchCore(query);
+            } else {
+                debouncedSearch(query);
+            }
+        };
 
         let currentResolvingUrl = null;
 
