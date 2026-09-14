@@ -14,7 +14,7 @@ export const InvestigationFileSchema = z.looseObject({
           userType: z.string().trim(),
           scenario: z.string().trim(),
           experience: z.string().trim(),
-          sentiment: z.enum(['positive', 'negative', 'mixed']),
+          sentiment: z.enum(['positive', 'negative', 'mixed', 'neutral']),
         }),
       )
       .optional(),

@@ -318,7 +318,7 @@ ${productInfoLines}
         "scenario": "状況",
         "experience": "使い勝手、触り心地、設置のしやすさ、実際の利用シーンで感じたメリット・デメリットなどの「使用感」を具体的に含める（※重要：今回の調査で根拠が確認できない場合は、過去に存在したストーリーであっても必ず削除する）",
         "supportingSourceIds": ["source-id"],
-        "sentiment": "positive | negative | mixed"
+        "sentiment": "positive | negative | mixed | neutral"
       }
     ],
     "userImpression": "調査データ（レビューや検証記事）から得られた、全体的な使用感や印象のまとめ。【重要な執筆ルール】(1) positivePoints/negativePoints の単純な焼き直しにしないこと。(2) negativePointsが存在する場合、そのネガティブ要素に対してユーザーがどう反応しているか（許容できる/許容できない/工夫で解決した等）を必ず触れること。(3) 『どんな人が買って満足し、どんな人が後悔したか』という像が浮かぶ総評にする。",
