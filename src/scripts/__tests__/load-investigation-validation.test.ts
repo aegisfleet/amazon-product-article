@@ -212,4 +212,37 @@ describe('loadInvestigationResults Validation', () => {
     expect(results).toHaveLength(1);
     expect(results[0]?.investigation.analysis.investigatedPrice).toBe('￥11,500');
   });
+
+  it('should accept neutral sentiment in userStories', async () => {
+    (fs.readdir as jest.Mock).mockResolvedValue(['neutral_sentiment.json']);
+    const dataWithNeutral = {
+      analysis: {
+        positivePoints: ['p1'],
+        negativePoints: ['n1'],
+        useCases: ['u1'],
+        userStories: [
+          {
+            userType: 'type1',
+            scenario: 'scenario1',
+            experience: 'exp1',
+            sentiment: 'neutral',
+          },
+        ],
+        userImpression: 'Good',
+        sources: [],
+        competitiveAnalysis: [],
+        recommendation: {
+          targetUsers: ['t1'],
+          pros: ['p1'],
+          cons: ['c1'],
+          score: 10,
+        },
+      },
+    };
+    (fs.readFile as jest.Mock).mockResolvedValue(JSON.stringify(dataWithNeutral));
+
+    const results = await loadInvestigationResults();
+    expect(results).toHaveLength(1);
+    expect(results[0]?.investigation.analysis.userStories?.[0]?.sentiment).toBe('neutral');
+  });
 });
