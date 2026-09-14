@@ -38,7 +38,7 @@ hasCJKLanguage = true
 # Output configuration
 [outputs]
   home = ["HTML", "RSS", "Robots", "JSON"]
-  section = ["HTML"]
+  section = []
   page = ["HTML"]
 
 # Build settings
@@ -90,7 +90,6 @@ enableGitInfo = false
 
 [taxonomies]
   category = "categories"
-  tag = "tags"
 
 # Module mounts - exclude investigations directory to speed up build
 [module]
