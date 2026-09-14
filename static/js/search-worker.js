@@ -19,6 +19,8 @@ function normalizeSearchText(text) {
 }
 
 let asinVariations = {};
+let asinMap = new Map();
+let parentAsinMap = new Map();
 
 const FUSE_OPTIONS = {
     keys: [
@@ -218,6 +220,8 @@ async function handleInit(searchIndexUrl) {
         if (!res.ok) throw new Error(`HTTP ${res.status}`);
         searchIndex = await res.json();
 
+        asinMap.clear();
+        parentAsinMap.clear();
         for (const item of searchIndex) {
             item._norm_title = normalizeSearchText(item.title);
             item._norm_summary = normalizeSearchText(item.summary);
@@ -225,6 +229,17 @@ async function handleInit(searchIndexUrl) {
                 ? item.categories.map(c => normalizeSearchText(c))
                 : [];
             item._norm_specs = normalizeSearchText(item.specs);
+
+            if (item.asin) {
+                asinMap.set(item.asin.toUpperCase(), item);
+            }
+            if (item.parent_asin) {
+                const parentKey = item.parent_asin.toUpperCase();
+                if (!parentAsinMap.has(parentKey)) {
+                    parentAsinMap.set(parentKey, []);
+                }
+                parentAsinMap.get(parentKey).push(item);
+            }
         }
 
         try {
@@ -254,21 +269,50 @@ function handleSearch(query, filters, searchId) {
 
     try {
         const trimmed = query.trim().toUpperCase();
-        let targetQuery = query;
 
-        // クエリがASIN形式で、子ASINのバリエーションマップに存在する場合、親ASINで検索
-        if (isAsin(trimmed) && asinVariations[trimmed]) {
-            targetQuery = asinVariations[trimmed];
+        // クエリがASIN形式の場合、O(1) ハッシュマップ直接ルックアップで即時返却（Fuse.js全文走査をバイパス）
+        if (isAsin(trimmed)) {
+            const targetAsin = asinVariations[trimmed] || trimmed;
+            const directItem = asinMap.get(targetAsin) || asinMap.get(trimmed);
+
+            if (directItem) {
+                self.postMessage({
+                    type: 'SEARCH_RESULTS',
+                    results: [{ item: directItem, score: 0, rerankScore: 1 }],
+                    unfilteredScoreCount: 1,
+                    query,
+                    searchId
+                });
+                return;
+            }
+
+            // 親ASINマップでの照合
+            const parentItems = parentAsinMap.get(targetAsin) || parentAsinMap.get(trimmed);
+            if (parentItems && parentItems.length > 0) {
+                const results = parentItems.map(item => ({ item, score: 0, rerankScore: 1 }));
+                self.postMessage({
+                    type: 'SEARCH_RESULTS',
+                    results,
+                    unfilteredScoreCount: results.length,
+                    query,
+                    searchId
+                });
+                return;
+            }
+
+            // インデックスに存在しないASINの場合、Fuse全文検索をスキップして即時0件返却
+            self.postMessage({
+                type: 'SEARCH_RESULTS',
+                results: [],
+                unfilteredScoreCount: 0,
+                query,
+                searchId
+            });
+            return;
         }
 
-        const normalizedQuery = normalizeSearchText(targetQuery);
-        let fuseResults = fuse.search(normalizedQuery);
-
-        // 親ASINでヒットしなかった場合、元のクエリでも試行
-        if (fuseResults.length === 0 && targetQuery !== query) {
-            fuseResults = fuse.search(normalizeSearchText(query));
-        }
-
+        const normalizedQuery = normalizeSearchText(query);
+        const fuseResults = fuse.search(normalizedQuery);
         const { results, unfilteredScoreCount } = rerankResults(fuseResults, query, filters);
         self.postMessage({ type: 'SEARCH_RESULTS', results, unfilteredScoreCount, query, searchId });
     } catch (err) {
