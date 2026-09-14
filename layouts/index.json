@@ -36,7 +36,6 @@
       "categories" .Params.categories
       "summary" $summary
       "image" $image
-      "contents" .Plain
       "price" .Params.price
       "price_value" $priceValue
       "score" .Params.score
