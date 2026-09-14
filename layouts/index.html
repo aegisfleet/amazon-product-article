@@ -2,8 +2,11 @@
 <section class="hero">
     <div class="container hero-content">
         <div class="hero-image">
-            <img src="{{ `images/default-ogp.png` | relURL }}" alt="スマートな商品リサーチ" width="400" height="300"
-                fetchpriority="high">
+            <picture>
+                <source srcset="{{ `images/default-ogp.webp` | relURL }}" type="image/webp">
+                <img src="{{ `images/default-ogp.png` | relURL }}" alt="スマートな商品リサーチ" width="400" height="300"
+                    fetchpriority="high">
+            </picture>
         </div>
         <div class="hero-message">
             <h1>「どれが良い？」がすぐわかる。<br>Amazon商品の徹底比較レポート</h1>
@@ -70,7 +73,7 @@
     {{- if gt (len $highScoreArticles) 0 -}}
     {{- $rankedHighScoreArticles := partial "product-composite-ranked-pages.html" (dict "pages" $highScoreArticles) -}}
     {{- $pickupItems := first 6 $rankedHighScoreArticles -}}
-    {{- $pickupCandidates := first 1000 $rankedHighScoreArticles -}}
+    {{- $pickupCandidates := first 36 $rankedHighScoreArticles -}}
     {{- $pickupData := slice -}}
     {{- range $pickupCandidates -}}
     {{- $pickupCategory := "" -}}
@@ -321,7 +324,7 @@
 
     <div class="card-grid" id="product-grid">
         {{- $articles := where .Site.RegularPages "Section" "articles" -}}
-        {{- $sorted := first 90 (sort $articles ".Params.last_investigated" "desc") -}}
+        {{- $sorted := first 30 (sort $articles ".Params.last_investigated" "desc") -}}
         {{- range $index, $element := $sorted -}}
         <div class="card-wrapper{{ if ge $index 15 }} card-hidden{{ end }}">
             {{- partial "product-card.html" . -}}
