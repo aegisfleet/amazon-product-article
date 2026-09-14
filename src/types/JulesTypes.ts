@@ -156,7 +156,7 @@ export interface UserStory {
   userType: string; // e.g., "Commuter", "Runner", "Parent"
   scenario: string;
   experience: string;
-  sentiment: 'positive' | 'negative' | 'mixed';
+  sentiment: 'positive' | 'negative' | 'mixed' | 'neutral';
 }
 
 export interface SourceReference {
