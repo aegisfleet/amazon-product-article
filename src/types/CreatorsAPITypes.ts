@@ -18,6 +18,32 @@ export interface CreatorsAPIRequest {
   [key: string]: unknown;
 }
 
+export interface CreatorsAPIVariationAttribute {
+  name: string;
+  value: string;
+}
+
+export interface CreatorsAPIVariationItem {
+  asin: string;
+  detailPageURL?: string;
+  images?: CreatorsAPIItem['images'];
+  itemInfo?: CreatorsAPIItem['itemInfo'];
+  variationAttributes?: CreatorsAPIVariationAttribute[];
+}
+
+export interface CreatorsAPIVariationsResult {
+  items?: CreatorsAPIVariationItem[];
+  variationSummary?: {
+    pageCount?: number;
+    variationCount?: number;
+    variationDimensions?: Array<{
+      displayName?: string;
+      name?: string;
+      values?: string[];
+    }>;
+  };
+}
+
 export interface CreatorsAPIResponse {
   searchResult?: {
     items?: CreatorsAPIItem[];
@@ -26,6 +52,7 @@ export interface CreatorsAPIResponse {
   itemsResult?: {
     items?: CreatorsAPIItem[];
   };
+  variationsResult?: CreatorsAPIVariationsResult;
   errors?: CreatorsAPIError[];
 }
 

@@ -34,6 +34,7 @@
     "audit:score-discrepancy": "ts-node src/scripts/maintenance/find-score-discrepancy.ts",
     "reset:cache-timestamp": "ts-node src/scripts/maintenance/reset-cache-timestamp.ts",
     "reset:category-cache": "ts-node src/scripts/maintenance/reset-category-cache.ts",
+    "sync:variations": "ts-node src/scripts/maintenance/sync-variations.ts",
     "biome:check": "biome check .",
     "biome:fix": "biome check --write ."
   },
