@@ -60,46 +60,83 @@ document.addEventListener('DOMContentLoaded', function () {
         return indexDataPromise;
     }
 
-    // Map index.json item to renderCard format
-    function mapIndexItemToProduct(item) {
-        let specsHtml = '';
-        if (item.specs_json) {
-            try {
-                const specsObj = typeof item.specs_json === 'string' ? JSON.parse(item.specs_json) : item.specs_json;
-                if (specsObj && typeof specsObj === 'object') {
-                    specsHtml = Object.entries(specsObj)
-                        .map(function (entry) {
-                            return '<span class="card-spec-tag">' + entry[0] + ': ' + entry[1] + '</span>';
-                        })
-                        .join('');
-                }
-            } catch {
-                // ignore
-            }
-        }
-
-        return {
-            url: item.permalink,
-            title: item.title,
-            image: item.image,
-            category: Array.isArray(item.categories) && item.categories.length > 0 ? item.categories[0] : '',
-            description: item.summary || '',
-            price: item.price || '',
-            priceRaw: item.price_value || 0,
-            score: item.score || 0,
-            lastInvestigated: item.last_investigated || '',
-            asin: item.asin || '',
-            parentAsin: item.parent_asin || '',
-            affiliateUrl: item.affiliate_url || '',
-            savingsPercentage: item.savings_percentage || null,
-            specsHtml: specsHtml
-        };
-    }
-
     // Check initial state
     const initialHiddenCards = document.querySelectorAll('.card-wrapper.card-hidden');
     if (initialHiddenCards.length === 0) {
         fetchIndexData();
+    }
+
+    // Phase 1 helper: Reveal statically rendered hidden cards (16 to 30)
+    function revealHiddenCards() {
+        const hiddenCards = document.querySelectorAll('.card-wrapper.card-hidden');
+        if (hiddenCards.length === 0) return false;
+
+        for (let i = 0; i < itemsPerBatch && i < hiddenCards.length; i++) {
+            hiddenCards[i].classList.remove('card-hidden');
+        }
+
+        fetchIndexData();
+
+        const remainingHidden = document.querySelectorAll('.card-wrapper.card-hidden');
+        if (remainingHidden.length === 0) {
+            loadMoreButton.textContent = 'さらに読み込む';
+            ensureBackToTopLink();
+        }
+        return true;
+    }
+
+    // Phase 2 helper: Append dynamic product cards to grid
+    function appendDynamicCards(batch) {
+        if (!batch.length || typeof renderCard !== 'function') return;
+
+        const fragment = document.createDocumentFragment();
+        batch.forEach(function (item) {
+            renderedAsins.add(item.asin);
+            const productData = mapIndexItemToProduct(item);
+            const cardEl = renderCard(productData);
+
+            const wrapper = document.createElement('div');
+            wrapper.className = 'card-wrapper';
+            wrapper.appendChild(cardEl);
+            fragment.appendChild(wrapper);
+        });
+        productGrid.appendChild(fragment);
+    }
+
+    // Phase 2 helper: Update button state after dynamic load
+    function updateLoadMoreButtonState(hasMore) {
+        loadMoreButton.disabled = false;
+        if (hasMore) {
+            loadMoreButton.textContent = 'さらに読み込む';
+            ensureBackToTopLink();
+            return;
+        }
+
+        loadMoreButton.textContent = 'トップに戻る';
+        loadMoreButton.classList.add('is-back-to-top');
+        if (backToTopBtn) {
+            backToTopBtn.remove();
+            backToTopBtn = null;
+        }
+    }
+
+    // Phase 2 helper: Fetch and render next batch
+    async function loadNextDynamicBatch() {
+        if (!sortedRemainingArticles) {
+            const allArticles = await fetchIndexData();
+            sortedRemainingArticles = allArticles.filter(function (item) {
+                return item.asin && !renderedAsins.has(item.asin);
+            });
+            nextDynamicIndex = 0;
+        }
+
+        const batch = sortedRemainingArticles.slice(nextDynamicIndex, nextDynamicIndex + itemsPerBatch);
+        nextDynamicIndex += batch.length;
+
+        appendDynamicCards(batch);
+
+        const hasMore = nextDynamicIndex < sortedRemainingArticles.length;
+        updateLoadMoreButtonState(hasMore);
     }
 
     loadMoreButton.addEventListener('click', async function () {
@@ -112,20 +149,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
 
         // Phase 1: Reveal statically rendered hidden cards (16 to 30)
-        const hiddenCards = document.querySelectorAll('.card-wrapper.card-hidden');
-        if (hiddenCards.length > 0) {
-            for (let i = 0; i < itemsPerBatch && i < hiddenCards.length; i++) {
-                hiddenCards[i].classList.remove('card-hidden');
-            }
-
-            // Start prefetching dynamic data in background
-            fetchIndexData();
-
-            const remainingHidden = document.querySelectorAll('.card-wrapper.card-hidden');
-            if (remainingHidden.length === 0) {
-                loadMoreButton.textContent = 'さらに読み込む';
-                ensureBackToTopLink();
-            }
+        if (revealHiddenCards()) {
             return;
         }
 
@@ -136,47 +160,7 @@ document.addEventListener('DOMContentLoaded', function () {
         loadMoreButton.textContent = '読み込み中...';
 
         try {
-            if (!sortedRemainingArticles) {
-                const allArticles = await fetchIndexData();
-                sortedRemainingArticles = allArticles.filter(function (item) {
-                    return item.asin && !renderedAsins.has(item.asin);
-                });
-                nextDynamicIndex = 0;
-            }
-
-            const batch = sortedRemainingArticles.slice(nextDynamicIndex, nextDynamicIndex + itemsPerBatch);
-            nextDynamicIndex += batch.length;
-
-            if (batch.length > 0 && typeof renderCard === 'function') {
-                const fragment = document.createDocumentFragment();
-                batch.forEach(function (item) {
-                    renderedAsins.add(item.asin);
-                    const productData = mapIndexItemToProduct(item);
-                    const cardEl = renderCard(productData);
-
-                    const wrapper = document.createElement('div');
-                    wrapper.className = 'card-wrapper';
-                    wrapper.appendChild(cardEl);
-                    fragment.appendChild(wrapper);
-                });
-                productGrid.appendChild(fragment);
-            }
-
-            const hasMore = nextDynamicIndex < sortedRemainingArticles.length;
-            if (hasMore) {
-                loadMoreButton.textContent = 'さらに読み込む';
-                loadMoreButton.disabled = false;
-                ensureBackToTopLink();
-            } else {
-                // All available articles displayed
-                loadMoreButton.textContent = 'トップに戻る';
-                loadMoreButton.disabled = false;
-                loadMoreButton.classList.add('is-back-to-top');
-                if (backToTopBtn) {
-                    backToTopBtn.remove();
-                    backToTopBtn = null;
-                }
-            }
+            await loadNextDynamicBatch();
         } catch (err) {
             console.error('[home-load-more] Error loading dynamic articles:', err);
             loadMoreButton.textContent = originalText;
@@ -186,6 +170,42 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 });
+
+// Map index.json item to renderCard format
+function mapIndexItemToProduct(item) {
+    let specsHtml = '';
+    if (item.specs_json) {
+        try {
+            const specsObj = typeof item.specs_json === 'string' ? JSON.parse(item.specs_json) : item.specs_json;
+            if (specsObj && typeof specsObj === 'object') {
+                specsHtml = Object.entries(specsObj)
+                    .map(function (entry) {
+                        return '<span class="card-spec-tag">' + entry[0] + ': ' + entry[1] + '</span>';
+                    })
+                    .join('');
+            }
+        } catch {
+            // ignore
+        }
+    }
+
+    return {
+        url: item.permalink,
+        title: item.title,
+        image: item.image,
+        category: Array.isArray(item.categories) && item.categories.length > 0 ? item.categories[0] : '',
+        description: item.summary || '',
+        price: item.price || '',
+        priceRaw: item.price_value || 0,
+        score: item.score || 0,
+        lastInvestigated: item.last_investigated || '',
+        asin: item.asin || '',
+        parentAsin: item.parent_asin || '',
+        affiliateUrl: item.affiliate_url || '',
+        savingsPercentage: item.savings_percentage || null,
+        specsHtml: specsHtml
+    };
+}
 
 // Helper to sanitize URLs for use in href attributes
 function sanitizeUrl(url) {
