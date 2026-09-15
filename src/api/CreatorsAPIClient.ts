@@ -526,6 +526,20 @@ export class CreatorsAPIClient {
   }
 
   /**
+   * Resolve API endpoint URL path from request operation
+   */
+  private getEndpoint(operation?: string): string {
+    switch (operation) {
+      case 'getItems':
+        return '/catalog/v1/getItems';
+      case 'getVariations':
+        return '/catalog/v1/getVariations';
+      default:
+        return '/catalog/v1/searchItems';
+    }
+  }
+
+  /**
    * Make authenticated request to Creators API
    */
   private async makeRequest(request: CreatorsAPIRequest): Promise<CreatorsAPIResponse> {
@@ -536,12 +550,7 @@ export class CreatorsAPIClient {
 
           const token = await this.getAccessToken();
 
-          const endpoint =
-            request.operation === 'getItems'
-              ? '/catalog/v1/getItems'
-              : request.operation === 'getVariations'
-                ? '/catalog/v1/getVariations'
-                : '/catalog/v1/searchItems';
+          const endpoint = this.getEndpoint(request.operation);
           const url = `${this.API_BASE_URL}${endpoint}`;
 
           // Remove internal field 'operation' from payload
