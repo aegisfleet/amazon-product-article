@@ -2687,6 +2687,9 @@ a.competitor-preview:hover {
 .load-more-container {
   display: flex;
   justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--spacing-sm);
   margin: var(--spacing-2xl) 0;
 }
 
@@ -2711,6 +2714,20 @@ a.competitor-preview:hover {
 
 .btn-load-more:active {
   transform: translateY(0);
+}
+
+.btn-load-more.btn-back-to-top-sub {
+  border-color: var(--color-border);
+  color: var(--color-text-secondary);
+  font-weight: 600;
+  padding: 0.75rem 1.75rem;
+}
+
+.btn-load-more.btn-back-to-top-sub:hover {
+  background-color: var(--color-bg-secondary);
+  border-color: var(--color-text-secondary);
+  color: var(--color-text-main);
+  box-shadow: none;
 }
 
 /* =====================================================
