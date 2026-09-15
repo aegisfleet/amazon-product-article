@@ -135,6 +135,29 @@ function generateAsinVariationsMap(): void {
       }
     }
 
+    // 専用バリエーションキャッシュ (data/cache/variations-cache.json) からもマージ
+    const variationsCachePath = path.resolve(process.cwd(), 'data/cache/variations-cache.json');
+    if (fs.existsSync(variationsCachePath)) {
+      try {
+        const rawVar = fs.readFileSync(variationsCachePath, 'utf-8');
+        const varCache = JSON.parse(rawVar) as Record<string, string[]>;
+        let addedFromVarCache = 0;
+        for (const [parentAsin, children] of Object.entries(varCache)) {
+          if (Array.isArray(children)) {
+            for (const childAsin of children) {
+              if (childAsin && childAsin !== parentAsin) {
+                childToParent[childAsin] = parentAsin;
+                addedFromVarCache++;
+              }
+            }
+          }
+        }
+        console.log(`Merged ${addedFromVarCache} mappings from variations-cache.json`);
+      } catch (e) {
+        console.warn('Failed to parse variations-cache.json:', e);
+      }
+    }
+
     const staticDir = path.dirname(outPath);
     if (!fs.existsSync(staticDir)) {
       fs.mkdirSync(staticDir, { recursive: true });
