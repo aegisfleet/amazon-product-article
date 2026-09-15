@@ -38,7 +38,7 @@ hasCJKLanguage = true
 # Output configuration
 [outputs]
   home = ["HTML", "RSS", "Robots", "JSON"]
-  section = []
+  section = ["HTML"]
   page = ["HTML"]
 
 # Build settings
