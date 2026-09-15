@@ -356,6 +356,56 @@ export class CreatorsAPIClient {
     return { results: result, permanentFailures };
   }
 
+  /**
+   * 親ASINからバリエーション子ASINのリストを取得
+   */
+  async getVariations(parentAsin: string): Promise<string[]> {
+    this.validateAuthentication();
+
+    if (!parentAsin || !/^[A-Z0-9]{10}$/i.test(parentAsin.trim())) {
+      throw new Error(`Invalid parent ASIN: ${parentAsin}`);
+    }
+
+    const trimmedParent = parentAsin.trim().toUpperCase();
+    const childAsins = new Set<string>();
+
+    const resources = ['images.primary.small', 'itemInfo.title', 'variationSummary.variationDimension'];
+
+    let page = 1;
+    let totalPages = 1;
+
+    do {
+      const request: CreatorsAPIRequest = {
+        operation: 'getVariations',
+        partnerTag: this.credentials!.partnerTag,
+        marketplace: this.MARKETPLACE,
+        asin: trimmedParent,
+        variationPage: page,
+        resources,
+      };
+
+      const response = await this.makeRequest(request);
+      const items = response.variationsResult?.items || [];
+      for (const item of items) {
+        if (item.asin) {
+          childAsins.add(item.asin.toUpperCase());
+        }
+      }
+
+      const summary = response.variationsResult?.variationSummary;
+      if (summary?.pageCount && summary.pageCount > totalPages) {
+        totalPages = summary.pageCount;
+      }
+
+      page++;
+      if (page <= totalPages) {
+        await this.sleep(1100);
+      }
+    } while (page <= totalPages);
+
+    return Array.from(childAsins);
+  }
+
   private parseBatchResults(items: CreatorsAPIItem[], result: Map<string, ProductDetail>): void {
     for (const item of items) {
       try {
@@ -476,6 +526,20 @@ export class CreatorsAPIClient {
   }
 
   /**
+   * Resolve API endpoint URL path from request operation
+   */
+  private getEndpoint(operation?: string): string {
+    switch (operation) {
+      case 'getItems':
+        return '/catalog/v1/getItems';
+      case 'getVariations':
+        return '/catalog/v1/getVariations';
+      default:
+        return '/catalog/v1/searchItems';
+    }
+  }
+
+  /**
    * Make authenticated request to Creators API
    */
   private async makeRequest(request: CreatorsAPIRequest): Promise<CreatorsAPIResponse> {
@@ -486,7 +550,7 @@ export class CreatorsAPIClient {
 
           const token = await this.getAccessToken();
 
-          const endpoint = request.operation === 'getItems' ? '/catalog/v1/getItems' : '/catalog/v1/searchItems';
+          const endpoint = this.getEndpoint(request.operation);
           const url = `${this.API_BASE_URL}${endpoint}`;
 
           // Remove internal field 'operation' from payload

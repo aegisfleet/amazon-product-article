@@ -111,30 +111,69 @@ function syncBrandData(): void {
 }
 
 /**
- * PAAPIキャッシュから親ASIN・バリエーションASINの逆引きマップを生成
+ * PAAPIキャッシュからバリエーションマッピングを抽出
+ */
+function extractPaapiVariations(cachePath: string): Record<string, string> {
+  if (!fs.existsSync(cachePath)) return {};
+  try {
+    const raw = fs.readFileSync(cachePath, 'utf-8');
+    const cache = JSON.parse(raw) as Record<string, { data?: { parentAsin?: string; asin?: string } }>;
+    const result: Record<string, string> = {};
+    for (const [asin, item] of Object.entries(cache)) {
+      const parentAsin = item?.data?.parentAsin;
+      if (parentAsin && parentAsin !== asin) {
+        result[asin] = parentAsin;
+      }
+    }
+    return result;
+  } catch (err) {
+    console.warn('Failed to parse PAAPI cache for variations:', err);
+    return {};
+  }
+}
+
+/**
+ * 専用バリエーションキャッシュ (variations-cache.json) からマッピングをマージ
+ */
+function mergeVariationsCache(variationsCachePath: string, targetMap: Record<string, string>): void {
+  if (!fs.existsSync(variationsCachePath)) return;
+  try {
+    const rawVar = fs.readFileSync(variationsCachePath, 'utf-8');
+    const varCache = JSON.parse(rawVar) as Record<string, string[]>;
+    let added = 0;
+    for (const [parentAsin, children] of Object.entries(varCache)) {
+      if (!Array.isArray(children)) continue;
+      for (const childAsin of children) {
+        if (childAsin && childAsin !== parentAsin) {
+          targetMap[childAsin] = parentAsin;
+          added++;
+        }
+      }
+    }
+    console.log(`Merged ${added} mappings from variations-cache.json`);
+  } catch (e) {
+    console.warn('Failed to parse variations-cache.json:', e);
+  }
+}
+
+/**
+ * PAAPIキャッシュおよび専用キャッシュから親ASIN・バリエーションASINの逆引きマップを生成
  */
 function generateAsinVariationsMap(): void {
   console.log('--- ASIN Variations Map Generation ---');
   const cachePath = path.resolve(process.cwd(), 'data/cache/paapi-product-cache.json');
   const outPath = path.resolve(process.cwd(), 'static/data/asin-variations.json');
+  const variationsCachePath = path.resolve(process.cwd(), 'data/cache/variations-cache.json');
 
-  if (!fs.existsSync(cachePath)) {
-    console.log('No PAAPI cache found, skipping variations map.');
+  const childToParent = extractPaapiVariations(cachePath);
+  mergeVariationsCache(variationsCachePath, childToParent);
+
+  if (Object.keys(childToParent).length === 0) {
+    console.log('No variation mappings found, skipping variations map generation.');
     return;
   }
 
   try {
-    const raw = fs.readFileSync(cachePath, 'utf-8');
-    const cache = JSON.parse(raw) as Record<string, { data?: { parentAsin?: string; asin?: string } }>;
-    const childToParent: Record<string, string> = {};
-
-    for (const [asin, item] of Object.entries(cache)) {
-      const parentAsin = item?.data?.parentAsin;
-      if (parentAsin && parentAsin !== asin) {
-        childToParent[asin] = parentAsin;
-      }
-    }
-
     const staticDir = path.dirname(outPath);
     if (!fs.existsSync(staticDir)) {
       fs.mkdirSync(staticDir, { recursive: true });
@@ -142,7 +181,7 @@ function generateAsinVariationsMap(): void {
     fs.writeFileSync(outPath, JSON.stringify(childToParent), 'utf-8');
     console.log(`Generated ASIN variations map (${Object.keys(childToParent).length} mapped items) to ${outPath}`);
   } catch (err) {
-    console.warn('Failed to generate ASIN variations map:', err);
+    console.warn('Failed to save ASIN variations map:', err);
   }
 }
 
