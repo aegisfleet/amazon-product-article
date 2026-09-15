@@ -91,6 +91,71 @@ async function resolveParentAsin(client: CreatorsAPIClient, asin: string): Promi
   return asin;
 }
 
+function loadVariationsCache(cachePath: string): Record<string, string[]> {
+  if (!fs.existsSync(cachePath)) return {};
+  try {
+    return JSON.parse(fs.readFileSync(cachePath, 'utf-8'));
+  } catch (e) {
+    console.warn('Failed to load existing variations cache, creating fresh:', e);
+    return {};
+  }
+}
+
+function saveVariationsCache(cachePath: string, cache: Record<string, string[]>): void {
+  const cacheDir = path.dirname(cachePath);
+  if (!fs.existsSync(cacheDir)) {
+    fs.mkdirSync(cacheDir, { recursive: true });
+  }
+  const sortedKeys = Object.keys(cache).sort((a, b) => a.localeCompare(b));
+  const lines = sortedKeys.map((key) => `  "${key}": ${JSON.stringify(cache[key])}`);
+  const jsonContent = sortedKeys.length > 0 ? `{\n${lines.join(',\n')}\n}\n` : '{}\n';
+  fs.writeFileSync(cachePath, jsonContent, 'utf-8');
+}
+
+function formatErrorMessage(err: unknown): string {
+  if (err instanceof Error) {
+    return err.message;
+  }
+  if (typeof err === 'string') {
+    return err;
+  }
+  return JSON.stringify(err);
+}
+
+async function syncSingleAsin(
+  client: CreatorsAPIClient,
+  inputAsin: string,
+  verbose: boolean,
+): Promise<{ parentAsin: string; variations: string[] }> {
+  console.log(`\nProcessing ASIN: ${inputAsin}...`);
+  const parentAsin = await resolveParentAsin(client, inputAsin);
+  const logMsg =
+    parentAsin !== inputAsin
+      ? `Resolved parent ASIN: ${parentAsin} (from input child ASIN: ${inputAsin})`
+      : `Using target ASIN as parent: ${parentAsin}`;
+  console.log(logMsg);
+
+  try {
+    console.log(`Fetching variations for parent ${parentAsin} from Creators API...`);
+    const childAsins = await client.getVariations(parentAsin);
+    console.log(`Retrieved ${childAsins.length} variation(s) for ${parentAsin}`);
+
+    const filtered = Array.from(new Set(childAsins.filter((c) => c !== parentAsin))).sort((a, b) => a.localeCompare(b));
+    if (filtered.length > 0) {
+      if (verbose) {
+        console.log(`Variations: ${filtered.join(', ')}`);
+      }
+    } else {
+      console.log(`No variations returned for ${parentAsin}.`);
+    }
+    return { parentAsin, variations: filtered };
+  } catch (err: unknown) {
+    const msg = formatErrorMessage(err);
+    console.error(`Failed to fetch variations for ${parentAsin}:`, msg);
+    return { parentAsin, variations: [] };
+  }
+}
+
 async function main() {
   const options = parseArgs();
   if (options.asins.length === 0) {
@@ -108,63 +173,22 @@ async function main() {
   );
 
   const variationsCachePath = path.resolve(process.cwd(), 'data/cache/variations-cache.json');
-  let variationsCache: Record<string, string[]> = {};
-  if (fs.existsSync(variationsCachePath)) {
-    try {
-      variationsCache = JSON.parse(fs.readFileSync(variationsCachePath, 'utf-8'));
-    } catch (e) {
-      console.warn('Failed to load existing variations cache, creating fresh:', e);
-    }
-  }
-
+  const variationsCache = loadVariationsCache(variationsCachePath);
   let totalAdded = 0;
 
   for (const inputAsin of options.asins) {
-    console.log(`\nProcessing ASIN: ${inputAsin}...`);
-    const parentAsin = await resolveParentAsin(client, inputAsin);
-    if (parentAsin !== inputAsin) {
-      console.log(`Resolved parent ASIN: ${parentAsin} (from input child ASIN: ${inputAsin})`);
-    } else {
-      console.log(`Using target ASIN as parent: ${parentAsin}`);
-    }
-
-    try {
-      console.log(`Fetching variations for parent ${parentAsin} from Creators API...`);
-      const childAsins = await client.getVariations(parentAsin);
-      console.log(`Retrieved ${childAsins.length} variation(s) for ${parentAsin}`);
-
-      if (childAsins.length > 0) {
-        // 親ASIN自体は除外し、かつ重複排除
-        const filtered = Array.from(new Set(childAsins.filter((c) => c !== parentAsin))).sort();
-        variationsCache[parentAsin] = filtered;
-        totalAdded += filtered.length;
-
-        if (options.verbose) {
-          console.log(`Variations: ${filtered.join(', ')}`);
-        }
-      } else {
-        console.log(`No variations returned for ${parentAsin}.`);
-      }
-    } catch (err: unknown) {
-      const msg = err instanceof Error ? err.message : String(err);
-      console.error(`Failed to fetch variations for ${parentAsin}:`, msg);
+    const { parentAsin, variations } = await syncSingleAsin(client, inputAsin, options.verbose);
+    if (variations.length > 0) {
+      variationsCache[parentAsin] = variations;
+      totalAdded += variations.length;
     }
   }
 
-  // variations-cache.json を保存（paapi-product-cacheと同様、エントリごとに1行で改行を抑える）
-  const cacheDir = path.dirname(variationsCachePath);
-  if (!fs.existsSync(cacheDir)) {
-    fs.mkdirSync(cacheDir, { recursive: true });
-  }
-  const sortedKeys = Object.keys(variationsCache).sort((a, b) => a.localeCompare(b));
-  const lines = sortedKeys.map((key) => `  "${key}": ${JSON.stringify(variationsCache[key])}`);
-  const jsonContent = sortedKeys.length > 0 ? `{\n${lines.join(',\n')}\n}\n` : '{}\n';
-  fs.writeFileSync(variationsCachePath, jsonContent, 'utf-8');
+  saveVariationsCache(variationsCachePath, variationsCache);
   console.log(`\nUpdated variations cache: ${variationsCachePath}`);
   console.log(`Total parent groups cached: ${Object.keys(variationsCache).length}`);
   console.log(`Total child variations synchronized: ${totalAdded}`);
 
-  // static/data/asin-variations.json を再構築
   console.log('\nRegenerating static/data/asin-variations.json...');
   enhanceCategories();
   console.log('Done!');
