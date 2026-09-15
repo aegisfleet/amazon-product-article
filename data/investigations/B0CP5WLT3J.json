@@ -11,8 +11,7 @@
     "positivePoints": [
       "ワイドV字グルーブと2段階のアクアスラントによる高い排水性とウェット性能",
       "夏に特化した高密度サイプと凹型タイバーによるブロック剛性の向上とドライ路面での安定性",
-      "ウェザーコントロールコンパウンドと3Dグリップコントロールサイプによる雪道でのグリップ力確保",
-      "Tyre Reviewsなどの海外サイトでも高評価(9.2/10)を獲得する実力と信頼性"
+      "ウェザーコントロールコンパウンドと3Dグリップコントロールサイプによる雪道でのグリップ力確保"
     ],
     "negativePoints": [
       "スタッドレスタイヤではないため、過酷な積雪や凍結路面（アイスバーン）での走行には適していない",
@@ -27,18 +26,22 @@
         "userType": "非降雪地域のドライバー",
         "scenario": "突然の積雪があった日の通勤",
         "experience": "普段はドライ路面で使用していますが、突然雪が降った日でも安定して走行できました。スノーフレークマーク認証があるため、急な冷え込みでも安心感があり、タイヤ交換の手間も省けて助かっています。",
-        "supportingSourceIds": ["src-hankook-official"],
+        "supportingSourceIds": [
+          "src-hankook-official"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "コスト重視のドライバー",
         "scenario": "年間を通じたタイヤ運用",
         "experience": "ドライ路面とウェット路面でのグリップ力が高く、ハンドリングも安定しています。4本で約4万円という価格ながら、欧州のテストでも高い評価を受けているだけあり、コストパフォーマンスに優れていると感じます。",
-        "supportingSourceIds": ["src-tyre-reviews", "src-hankook-official"],
+        "supportingSourceIds": [
+          "src-hankook-official"
+        ],
         "sentiment": "positive"
       }
     ],
-    "userImpression": "価格を抑えつつも、ウェット・ドライ・スノーの各路面でバランスの取れた性能を発揮する高コスパなオールシーズンタイヤ。特に排水性と雪道でのグリップ力に定評があり、シーズンごとの履き替えが面倒なユーザーから高く支持されています。ただし、本格的な凍結路面にはスタッドレスを推奨する声もあります。",
+    "userImpression": "価格を抑えつつも、ウェット・ドライ・スノーの各路面でバランスの取れた性能を発揮する高コスパなオールシーズンタイヤ。特に排水性と雪道でのグリップ力に関する技術が搭載されており、シーズンごとの履き替えが面倒なユーザー向けの製品です。ただし、本格的な凍結路面にはスタッドレスを推奨する声もあります。",
     "sources": [
       {
         "id": "src-hankook-official",
@@ -50,17 +53,6 @@
         "author": "Hankook",
         "conflictOfInterest": "disclosed",
         "notes": "ワイドV字グルーブ、2段階のアクアスラント、高密度サイプ、3Dグリップコントロールサイプなどの技術仕様を確認。スノーフレークマーク認証やM+S対応であることも確認。"
-      },
-      {
-        "id": "src-tyre-reviews",
-        "name": "Tyre Reviews: Hankook Kinergy 4S2",
-        "url": "https://www.tyrereviews.com/Tyre/Hankook/Kinergy-4S2.htm",
-        "tier": "high",
-        "evidenceType": "secondary",
-        "publishedAt": "2024-01-01",
-        "author": "Tyre Reviews",
-        "conflictOfInterest": "none",
-        "notes": "ユーザー評価で9.2/10 (Excellent) を獲得しており、ドライ、ウェット、スノーの各条件において高いパフォーマンスが実証されている。"
       }
     ],
     "claims": [
@@ -68,20 +60,14 @@
         "claim": "ウェット・ドライ・スノーの全天候で高いグリップ力と安定性を発揮する",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-hankook-official", "src-tyre-reviews"],
-        "crossChecked": true,
-        "notes": "公式の技術解説と外部のレビューサイトの高評価が一致している。"
-      },
-      {
-        "claim": "コストパフォーマンスに優れる",
-        "category": "comparativeAdvantage",
-        "confidence": "high",
-        "supportingSourceIds": ["src-tyre-reviews"],
+        "supportingSourceIds": [
+          "src-hankook-official"
+        ],
         "crossChecked": false,
-        "notes": "プレミアムブランドと比較して安価でありながら、同等以上のスコアを獲得している。"
+        "notes": "公式の技術解説に基づく。"
       }
     ],
-    "lastInvestigated": "2026-03-23",
+    "lastInvestigated": "2026-09-16",
     "competitiveAnalysis": [
       {
         "name": "NANKANG AW-6 185/65R15 92H XL",
@@ -178,15 +164,26 @@
         "ホイールは付属しないため別途組み込みが必要"
       ],
       "score": 86,
-      "scoreRationale": "[基本点: 70]\n[加点: +8] (Tyre Reviews等で高評価を獲得し、ウェットやスノーでのグリップ力・安全性が実証されている)\n[加点: +7] (4本約4万円と、国産や欧州メジャーブランドと比較して高いコストパフォーマンスを誇る)\n[加点: +4] (V字グルーブや3Dサイプ、ウェザーコントロールコンパウンドなど、全天候に対応する技術がしっかり搭載されている)\n[減点: -3] (スタッドレスタイヤではないため、本格的な凍結路面での性能には限界がある)\n[合計: 86]"
+      "scoreRationale": "[基本点: 70]\n[加点: +8] (ウェットやスノーでのグリップ力・安全性を高める技術が採用されている)\n[加点: +7] (4本約4万円と、国産や欧州メジャーブランドと比較して高いコストパフォーマンスを誇る)\n[加点: +4] (V字グルーブや3Dサイプ、ウェザーコントロールコンパウンドなど、全天候に対応する技術がしっかり搭載されている)\n[減点: -3] (スタッドレスタイヤではないため、本格的な凍結路面での性能には限界がある)\n[合計: 86]"
     },
     "technicalSpecs": {
       "size": "185/65R15 88H",
       "color": "ブラック",
       "model": "H750-1856515",
       "type": "オールシーズンタイヤ",
-      "certifications": ["スノーフレークマーク（3PMSF）", "M+S"],
-      "features": ["ワイドV字グルーブ", "2段階のアクアスラント", "高密度サイプ", "凹型タイバー", "ピッチバリエーションテクノロジー", "ウェザーコントロールコンパウンド", "3Dグリップコントロールサイプ"],
+      "certifications": [
+        "スノーフレークマーク（3PMSF）",
+        "M+S"
+      ],
+      "features": [
+        "ワイドV字グルーブ",
+        "2段階のアクアスラント",
+        "高密度サイプ",
+        "凹型タイバー",
+        "ピッチバリエーションテクノロジー",
+        "ウェザーコントロールコンパウンド",
+        "3Dグリップコントロールサイプ"
+      ],
       "other": [
         "ホイールは付属せず、タイヤのみの販売"
       ]
