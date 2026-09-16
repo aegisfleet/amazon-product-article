@@ -5,26 +5,31 @@
 
 // --- Price Slider Mapping Helpers ---
 function valueToPrice(v) {
-  if (v <= 400) {
-    const t = v / 400;
+  if (v <= 250) {
+    const t = v / 250;
     return Math.round(t * 20) * 100;
-  } else if (v <= 700) {
-    const t = (v - 400) / 300;
+  } else if (v <= 500) {
+    const t = (v - 250) / 250;
     return 2000 + Math.round(t * 8) * 1000;
-  } else {
-    const t = (v - 700) / 300;
+  } else if (v <= 750) {
+    const t = (v - 500) / 250;
     return 10000 + Math.round(t * 8) * 5000;
+  } else {
+    const t = (v - 750) / 250;
+    return 50000 + Math.round(t * 15) * 10000;
   }
 }
 
 function priceToValue(price) {
   if (price <= 2000) {
-    return (price / 2000) * 400;
+    return (price / 2000) * 250;
   } else if (price <= 10000) {
-    return 400 + ((price - 2000) / (10000 - 2000)) * 300;
+    return 250 + ((price - 2000) / (10000 - 2000)) * 250;
+  } else if (price <= 50000) {
+    return 500 + ((price - 10000) / (50000 - 10000)) * 250;
   } else {
-    const clampedPrice = Math.min(50000, price);
-    return 700 + ((clampedPrice - 10000) / (50000 - 10000)) * 300;
+    const clampedPrice = Math.min(200000, price);
+    return 750 + ((clampedPrice - 50000) / (200000 - 50000)) * 250;
   }
 }
 

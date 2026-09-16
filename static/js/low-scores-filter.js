@@ -94,7 +94,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (maxScore !== 50) params.set('maxScore', String(maxScore));
     if (minPrice !== 100) params.set('minPrice', String(minPrice));
-    if (maxPrice < 50000) params.set('maxPrice', String(maxPrice));
+    if (maxPrice < 200000) params.set('maxPrice', String(maxPrice));
     if (category) params.set('category', category);
     if (currentSort !== 'date') params.set('sort', currentSort);
     const q = keywordInput ? keywordInput.value.trim() : '';
@@ -145,7 +145,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     scoreValueEl.textContent = String(maxScore);
     minPriceValueEl.textContent = formatPrice(minPrice);
-    priceValueEl.textContent = maxPrice >= 50000 ? '上限なし' : formatPrice(maxPrice) + '以下';
+    priceValueEl.textContent = maxPrice >= 200000 ? '上限なし' : formatPrice(maxPrice) + '以下';
   }
 
   function showSkeleton() {
@@ -223,7 +223,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const preFiltered = allProducts.filter(p => {
       if (p.score > maxScore) return false;
       if (p.priceRaw < minPrice) return false;
-      if (maxPrice < 50000 && p.priceRaw > maxPrice) return false;
+      if (maxPrice < 200000 && p.priceRaw > maxPrice) return false;
       return matchesKeywords(p, keywords);
     });
 
@@ -272,13 +272,13 @@ document.addEventListener('DOMContentLoaded', () => {
         icon: '💰',
         label: `${formatPrice(minPrice)}〜`,
         onRemove: () => {
-          minPriceSlider.value = '20';
+          minPriceSlider.value = '13';
           applyFilters();
         }
       });
     }
 
-    if (maxPrice < 50000) {
+    if (maxPrice < 200000) {
       chips.push({
         id: 'maxPrice',
         icon: '💰',
@@ -324,7 +324,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // --- Reset ---
   function resetFilters() {
     scoreSlider.value = '50';
-    minPriceSlider.value = '20';
+    minPriceSlider.value = '13';
     priceSlider.value = '1000';
     if (categorySelect) categorySelect.value = '';
     if (keywordInput) keywordInput.value = '';
