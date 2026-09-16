@@ -1497,6 +1497,9 @@ body.search-modal-open {
     max-width: 680px;
     margin: 0 auto 2.5rem auto;
     padding: 0 var(--spacing-md);
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
 }
 
 .home-search-trigger {
@@ -1541,7 +1544,7 @@ body.search-modal-open {
     color: var(--color-text-muted);
 }
 
-@media (min-width: 640px) {
+@media (min-width: 1024px) and (hover: hover) {
     .home-search-shortcut {
         display: inline-flex;
         align-items: center;
@@ -1554,6 +1557,13 @@ body.search-modal-open {
         border-radius: 4px;
         padding: 0.1rem 0.35rem;
         font-size: 0.75rem;
+    }
+}
+
+/* スマホ・タブレットではキーボード操作説明（フッター）を非表示にして結果領域を最大化 */
+@media (max-width: 1024px), (hover: none) and (pointer: coarse) {
+    .search-modal-footer {
+        display: none !important;
     }
 }
 
@@ -1573,6 +1583,6 @@ body.search-modal-open {
     }
 
     #search-modal #search-results {
-        max-height: calc(100dvh - 180px) !important;
+        max-height: calc(100dvh - 140px) !important;
     }
 }
