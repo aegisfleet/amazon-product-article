@@ -403,6 +403,13 @@ document.addEventListener('DOMContentLoaded', function () {
     }
     searchInput.dataset.searchInitialized = 'true';
 
+    // マウス移動時にキーボードナビゲーション状態を解除
+    searchResults.addEventListener('mousemove', function () {
+        if (searchResults.classList.contains('is-keyboard-nav')) {
+            searchResults.classList.remove('is-keyboard-nav');
+        }
+    });
+
     // 検索モーダルの制御
     const searchModal = document.getElementById('search-modal');
     const searchModalBackdrop = document.getElementById('search-modal-backdrop');
@@ -453,6 +460,7 @@ document.addEventListener('DOMContentLoaded', function () {
         if (typeof updateSelectedResult === 'function') {
             updateSelectedResult(-1, false);
         }
+        searchResults.classList.remove('is-keyboard-nav');
         searchModal.classList.remove('is-open');
         document.documentElement.classList.remove('search-modal-open');
         document.body.classList.remove('search-modal-open');
@@ -582,9 +590,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
         if (event.key === 'ArrowDown') {
             event.preventDefault();
+            searchResults.classList.add('is-keyboard-nav');
             updateSelectedResult(selectedResultIndex + 1, true);
         } else if (event.key === 'ArrowUp') {
             event.preventDefault();
+            searchResults.classList.add('is-keyboard-nav');
             updateSelectedResult(selectedResultIndex - 1, true);
         } else if (event.key === 'Enter') {
             if (selectedResultIndex >= 0 && items[selectedResultIndex]) {
@@ -1979,6 +1989,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
 
         resultItem.addEventListener('mouseenter', () => {
+            if (searchResults.classList.contains('is-keyboard-nav')) return;
             const items = Array.from(searchResults.querySelectorAll('.search-result-item'));
             const idx = items.indexOf(resultItem);
             if (idx !== -1) {
