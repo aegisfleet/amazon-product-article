@@ -364,6 +364,7 @@ a:hover {
 
 /* ドロワーメニュー内の拡張ボタンスタイル */
 .nav-drawer-divider {
+  border: none;
   height: 1px;
   background-color: var(--color-border);
   margin: 0.5rem 0;
