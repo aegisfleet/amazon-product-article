@@ -112,8 +112,20 @@
     cursor: pointer;
 }
 
-.search-result-item:hover {
+.search-result-item:hover,
+.search-result-item.is-selected {
     background: var(--color-bg-secondary);
+    border-left-color: var(--color-primary);
+}
+
+.search-result-item.is-selected {
+    outline: 2px solid var(--color-primary);
+    outline-offset: -2px;
+}
+
+[data-theme="dark"] .search-result-item:hover,
+[data-theme="dark"] .search-result-item.is-selected {
+    background: rgba(255, 255, 255, 0.05);
     border-left-color: var(--color-primary);
 }
 
@@ -171,7 +183,8 @@
     transition: transform 0.2s ease;
 }
 
-.search-result-item:hover .result-thumbnail img {
+.search-result-item:hover .result-thumbnail img,
+.search-result-item.is-selected .result-thumbnail img {
     transform: scale(1.05);
 }
 
