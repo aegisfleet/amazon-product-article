@@ -450,6 +450,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function closeSearchModal() {
         if (!searchModal) return;
+        if (typeof updateSelectedResult === 'function') {
+            updateSelectedResult(-1, false);
+        }
         searchModal.classList.remove('is-open');
         document.documentElement.classList.remove('search-modal-open');
         document.body.classList.remove('search-modal-open');
@@ -512,7 +515,44 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
-    // キーボードショートカット (Ctrl+K / Cmd+K)
+    // 検索結果のキーボードナビゲーション状態
+    let selectedResultIndex = -1;
+
+    function updateSelectedResult(newIndex, shouldScroll = true) {
+        const items = searchResults.querySelectorAll('.search-result-item');
+        if (items.length === 0) {
+            selectedResultIndex = -1;
+            return;
+        }
+
+        // 範囲の循環（-1: 選択なし・検索窓フォーカス, 0 〜 items.length - 1: アイテム選択）
+        if (newIndex < -1) {
+            newIndex = items.length - 1;
+        } else if (newIndex >= items.length) {
+            newIndex = -1;
+        }
+
+        selectedResultIndex = newIndex;
+
+        items.forEach((item, idx) => {
+            if (idx === selectedResultIndex) {
+                item.classList.add('is-selected');
+                item.setAttribute('aria-selected', 'true');
+                if (shouldScroll) {
+                    item.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+                }
+            } else {
+                item.classList.remove('is-selected');
+                item.removeAttribute('aria-selected');
+            }
+        });
+
+        if (selectedResultIndex === -1 && document.activeElement !== searchInput) {
+            searchInput.focus({ preventScroll: true });
+        }
+    }
+
+    // キーボードショートカット (Ctrl+K / Cmd+K / Esc / ↑↓ / Enter)
     document.addEventListener('keydown', function (event) {
         if ((event.ctrlKey || event.metaKey) && (event.key === 'k' || event.key === 'K')) {
             event.preventDefault();
@@ -521,9 +561,42 @@ document.addEventListener('DOMContentLoaded', function () {
             } else {
                 openSearchModal();
             }
-        } else if (event.key === 'Escape' && searchModal?.classList.contains('is-open')) {
+            return;
+        }
+        if (event.key === 'Escape' && searchModal?.classList.contains('is-open')) {
             event.preventDefault();
             closeSearchModal();
+            return;
+        }
+
+        // 検索モーダルが開いている、または検索結果が表示中の場合のナビゲーション
+        const isModalOpen = Boolean(searchModal?.classList.contains('is-open'));
+        const isResultsActive = searchResults.classList.contains('active');
+        if (!isModalOpen && !isResultsActive) return;
+
+        // 日本語IME変換中のEnterや矢印キー操作は無視
+        if (event.isComposing || event.keyCode === 229) return;
+
+        const items = searchResults.querySelectorAll('.search-result-item');
+        if (items.length === 0) return;
+
+        if (event.key === 'ArrowDown') {
+            event.preventDefault();
+            updateSelectedResult(selectedResultIndex + 1, true);
+        } else if (event.key === 'ArrowUp') {
+            event.preventDefault();
+            updateSelectedResult(selectedResultIndex - 1, true);
+        } else if (event.key === 'Enter') {
+            if (selectedResultIndex >= 0 && items[selectedResultIndex]) {
+                event.preventDefault();
+                const selectedItem = items[selectedResultIndex];
+                const link = selectedItem.querySelector('.result-title-link');
+                if (link) {
+                    link.click();
+                } else {
+                    selectedItem.click();
+                }
+            }
         }
     });
 
@@ -1905,6 +1978,14 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         });
 
+        resultItem.addEventListener('mouseenter', () => {
+            const items = Array.from(searchResults.querySelectorAll('.search-result-item'));
+            const idx = items.indexOf(resultItem);
+            if (idx !== -1) {
+                updateSelectedResult(idx, false);
+            }
+        });
+
         const mainRow = document.createElement('div');
         mainRow.className = 'result-main-row';
 
@@ -1953,6 +2034,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     function displayResults(results, unfilteredScoreCount = 0) {
+        selectedResultIndex = -1;
         searchResults.textContent = '';
 
         if (results.length === 0) {

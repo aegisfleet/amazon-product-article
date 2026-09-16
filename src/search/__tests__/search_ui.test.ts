@@ -166,6 +166,15 @@ describe('Search UI XSS Protection', () => {
     expect(searchJsContent).toContain('searchInput.focus()');
   });
 
+  test('static/js/search.js should support keyboard navigation for search results (ArrowDown, ArrowUp, Enter)', () => {
+    expect(searchJsContent).toContain('selectedResultIndex');
+    expect(searchJsContent).toContain('updateSelectedResult');
+    expect(searchJsContent).toContain("event.key === 'ArrowDown'");
+    expect(searchJsContent).toContain("event.key === 'ArrowUp'");
+    expect(searchJsContent).toContain("event.key === 'Enter'");
+    expect(searchJsContent).toContain('is-selected');
+  });
+
   test('static/js/search.js and search-worker.js should support hiragana and katakana normalization', () => {
     const workerPath = path.join(__dirname, '../../../static/js/search-worker.js');
     const workerContent = fs.readFileSync(workerPath, 'utf8');
