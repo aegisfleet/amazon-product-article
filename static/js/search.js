@@ -403,17 +403,199 @@ document.addEventListener('DOMContentLoaded', function () {
     }
     searchInput.dataset.searchInitialized = 'true';
 
-    // ヒーローカードの「検索から探す」ボタンが押された際に検索ボックスにフォーカス
+    // 検索モーダルの制御
+    const searchModal = document.getElementById('search-modal');
+    const searchModalBackdrop = document.getElementById('search-modal-backdrop');
+    const searchModalClose = document.getElementById('search-modal-close');
+    let lastActiveTrigger = null;
+    let savedScrollY = 0;
+
+    function openSearchModal(initialQuery = '', triggerElement = null) {
+        if (!searchModal) return;
+
+        savedScrollY = window.pageYOffset || window.scrollY || document.documentElement.scrollTop || 0;
+        lastActiveTrigger = triggerElement || document.activeElement;
+
+        document.documentElement.classList.add('search-modal-open');
+        document.body.classList.add('search-modal-open');
+
+        if (typeof searchModal.showModal === 'function') {
+            if (!searchModal.open) {
+                searchModal.showModal();
+            }
+        } else {
+            searchModal.setAttribute('open', '');
+        }
+        searchModal.classList.add('is-open');
+
+        if (typeof ensureSearchReady === 'function') {
+            ensureSearchReady();
+        }
+
+        if (initialQuery && typeof initialQuery === 'string') {
+            searchInput.value = initialQuery;
+        }
+
+        setTimeout(() => {
+            // preventScroll: true によりフォーカス時の自動スクロールを完全防止
+            searchInput.focus({ preventScroll: true });
+            if (searchInput.value) {
+                searchInput.select();
+                searchInput.dispatchEvent(new Event('input', { bubbles: true }));
+            } else if (!searchResults.classList.contains('active')) {
+                showSearchTips();
+            }
+        }, 30);
+    }
+
+    function closeSearchModal() {
+        if (!searchModal) return;
+        if (typeof updateSelectedResult === 'function') {
+            updateSelectedResult(-1, false);
+        }
+        searchModal.classList.remove('is-open');
+        document.documentElement.classList.remove('search-modal-open');
+        document.body.classList.remove('search-modal-open');
+
+        if (typeof searchModal.close === 'function') {
+            if (searchModal.open) {
+                searchModal.close();
+            }
+        } else {
+            searchModal.removeAttribute('open');
+        }
+
+        // スクロール位置を即座に復帰（位置に差分がある場合のみ）
+        const currentY = window.pageYOffset || window.scrollY || document.documentElement.scrollTop || 0;
+        if (Math.abs(currentY - savedScrollY) > 1) {
+            window.scrollTo({ top: savedScrollY, left: 0, behavior: 'instant' });
+        }
+
+        if (lastActiveTrigger && typeof lastActiveTrigger.focus === 'function') {
+            try {
+                lastActiveTrigger.focus({ preventScroll: true });
+            } catch {
+                // ignore
+            }
+        }
+    }
+
+    if (searchModal) {
+        searchModal.addEventListener('cancel', (e) => {
+            e.preventDefault();
+            closeSearchModal();
+        });
+    }
+
+    if (searchModalBackdrop) {
+        searchModalBackdrop.addEventListener('click', closeSearchModal);
+    }
+    if (searchModalClose) {
+        searchModalClose.addEventListener('click', closeSearchModal);
+    }
+
+    // 各種トリガーボタンの登録
     document.addEventListener('click', function (event) {
         const target = event.target;
         if (!(target instanceof Element)) return;
-        const trigger = target.closest('[data-hero-entry="search"], a[href="#search-section"]');
+
+        const trigger = target.closest('#search-modal-trigger, #drawer-search-btn, #home-search-trigger, [data-hero-entry="search"], a[href="#search-section"]');
         if (trigger) {
             event.preventDefault();
-            const wasFocused = document.activeElement === searchInput;
-            searchInput.focus();
-            if (wasFocused) {
-                searchInput.dispatchEvent(new Event('focus'));
+            // ドロワーが開いている場合は閉じる
+            const navDrawer = document.getElementById('site-nav-drawer');
+            const navOverlay = document.getElementById('nav-drawer-overlay');
+            if (navDrawer && navDrawer.classList.contains('is-open')) {
+                navDrawer.classList.remove('is-open');
+                navDrawer.setAttribute('aria-hidden', 'true');
+                if (navOverlay) navOverlay.classList.remove('is-open');
+                document.body.classList.remove('nav-drawer-open');
+            }
+            openSearchModal('', trigger);
+        }
+    });
+
+    // 検索結果のキーボードナビゲーション状態
+    let selectedResultIndex = -1;
+
+    function updateSelectedResult(newIndex, shouldScroll = true) {
+        const items = searchResults.querySelectorAll('.search-result-item');
+        if (items.length === 0) {
+            selectedResultIndex = -1;
+            return;
+        }
+
+        // 範囲の循環（-1: 選択なし・検索窓フォーカス, 0 〜 items.length - 1: アイテム選択）
+        if (newIndex < -1) {
+            newIndex = items.length - 1;
+        } else if (newIndex >= items.length) {
+            newIndex = -1;
+        }
+
+        selectedResultIndex = newIndex;
+
+        items.forEach((item, idx) => {
+            if (idx === selectedResultIndex) {
+                item.classList.add('is-selected');
+                item.setAttribute('aria-selected', 'true');
+                if (shouldScroll) {
+                    item.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+                }
+            } else {
+                item.classList.remove('is-selected');
+                item.removeAttribute('aria-selected');
+            }
+        });
+
+        if (selectedResultIndex === -1 && document.activeElement !== searchInput) {
+            searchInput.focus({ preventScroll: true });
+        }
+    }
+
+    // キーボードショートカット (Ctrl+K / Cmd+K / Esc / ↑↓ / Enter)
+    document.addEventListener('keydown', function (event) {
+        if ((event.ctrlKey || event.metaKey) && (event.key === 'k' || event.key === 'K')) {
+            event.preventDefault();
+            if (searchModal?.classList.contains('is-open')) {
+                closeSearchModal();
+            } else {
+                openSearchModal();
+            }
+            return;
+        }
+        if (event.key === 'Escape' && searchModal?.classList.contains('is-open')) {
+            event.preventDefault();
+            closeSearchModal();
+            return;
+        }
+
+        // 検索モーダルが開いている、または検索結果が表示中の場合のナビゲーション
+        const isModalOpen = Boolean(searchModal?.classList.contains('is-open'));
+        const isResultsActive = searchResults.classList.contains('active');
+        if (!isModalOpen && !isResultsActive) return;
+
+        // 日本語IME変換中のEnterや矢印キー操作は無視
+        if (event.isComposing || event.keyCode === 229) return;
+
+        const items = searchResults.querySelectorAll('.search-result-item');
+        if (items.length === 0) return;
+
+        if (event.key === 'ArrowDown') {
+            event.preventDefault();
+            updateSelectedResult(selectedResultIndex + 1, true);
+        } else if (event.key === 'ArrowUp') {
+            event.preventDefault();
+            updateSelectedResult(selectedResultIndex - 1, true);
+        } else if (event.key === 'Enter') {
+            if (selectedResultIndex >= 0 && items[selectedResultIndex]) {
+                event.preventDefault();
+                const selectedItem = items[selectedResultIndex];
+                const link = selectedItem.querySelector('.result-title-link');
+                if (link) {
+                    link.click();
+                } else {
+                    selectedItem.click();
+                }
             }
         }
     });
@@ -445,17 +627,15 @@ document.addEventListener('DOMContentLoaded', function () {
 
         floatingSearchFab.addEventListener('click', function (event) {
             event.preventDefault();
-            const searchTarget = document.getElementById('search-section') || searchInput;
-            searchTarget.scrollIntoView({ behavior: 'smooth', block: 'center' });
-
-            // スムーズスクロールに追従してフォーカス
-            setTimeout(() => {
-                const wasFocused = document.activeElement === searchInput;
-                searchInput.focus();
-                if (wasFocused) {
-                    searchInput.dispatchEvent(new Event('focus'));
-                }
-            }, 300);
+            if (searchModal) {
+                openSearchModal();
+            } else {
+                const searchTarget = document.getElementById('search-section') || searchInput;
+                searchTarget.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                setTimeout(() => {
+                    searchInput.focus();
+                }, 300);
+            }
         });
     }
 
@@ -623,6 +803,12 @@ document.addEventListener('DOMContentLoaded', function () {
     function updateSearchResultsHeight() {
         const searchContainer = document.querySelector('.search-container');
         if (!searchContainer || !searchResults) return;
+
+        // モーダル内の検索結果の場合は、モーダルコンテナの高さ制限とCSSフレックスに委ねる（突き破り防止）
+        if (searchModal && searchModal.contains(searchResults)) {
+            searchResults.style.maxHeight = '';
+            return;
+        }
 
         // Visual Viewport または window.innerHeight から現在のビューポート高さを取得
         const viewportHeight = globalThis.visualViewport
@@ -1044,7 +1230,7 @@ document.addEventListener('DOMContentLoaded', function () {
         function scrollSearchIntoView(callback) {
             const container = document.querySelector('.search-input-wrapper');
             const header = document.querySelector('.site-header');
-            if (!container) {
+            if (!container || container.closest('#search-modal')) {
                 isProgramScrolling = false;
                 if (callback) callback();
                 return;
@@ -1135,6 +1321,12 @@ document.addEventListener('DOMContentLoaded', function () {
         function triggerScroll() {
             if (calibrationInterval) return; // すでに実行中なら重複させない
 
+            const container = document.querySelector('.search-input-wrapper');
+            if (container && container.closest('#search-modal')) {
+                updateSearchResultsHeight();
+                return;
+            }
+
             scrollSearchIntoView(() => {
                 updateSearchResultsHeight();
             });
@@ -1148,6 +1340,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
         // 検索窓クリック時: 検索結果が非表示なら再表示
         searchInput.addEventListener('click', (e) => {
+            const isInModal = Boolean(searchInput.closest('#search-modal'));
+
             // フォーカス時の遅延実行をキャンセル
             if (focusScrollTimeout) {
                 clearTimeout(focusScrollTimeout);
@@ -1155,8 +1349,10 @@ document.addEventListener('DOMContentLoaded', function () {
             }
 
             if (searchResults.classList.contains('active')) {
-                // すでにアクティブでも位置がずれていれば補正
-                triggerScroll();
+                // すでにアクティブでも位置がずれていれば補正（モーダル外のみ）
+                if (!isInModal) {
+                    triggerScroll();
+                }
                 return;
             }
 
@@ -1173,19 +1369,24 @@ document.addEventListener('DOMContentLoaded', function () {
                 }
             }
 
-            triggerScroll();
+            if (!isInModal) {
+                triggerScroll();
+            }
         });
 
         // 検索窓フォーカス時: スクロール＋検索結果表示
         searchInput.addEventListener('focus', (e) => {
-            isProgramScrolling = true;
+            const isInModal = Boolean(searchInput.closest('#search-modal'));
+            if (!isInModal) {
+                isProgramScrolling = true;
 
-            // IME（仮想キーボード）の起動を待ってからスクロール
-            // clickイベントが後に続く場合はそちらでキャンセルされる
-            focusScrollTimeout = setTimeout(() => {
-                triggerScroll();
-                focusScrollTimeout = null;
-            }, 100);
+                // IME（仮想キーボード）の起動を待ってからスクロール
+                // clickイベントが後に続く場合はそちらでキャンセルされる
+                focusScrollTimeout = setTimeout(() => {
+                    triggerScroll();
+                    focusScrollTimeout = null;
+                }, 100);
+            }
 
             // 検索結果を表示
             const currentState = getSearchState();
@@ -1224,6 +1425,7 @@ document.addEventListener('DOMContentLoaded', function () {
         // 手動スクロール時: 500px以上または検索ボックスが画面外（上部）に完全に消えたら検索結果をフェードアウト
         globalThis.addEventListener('scroll', () => {
             if (isProgramScrolling) return;
+            if (searchModal && (searchModal.classList.contains('is-open') || searchModal.open)) return;
 
             if (!searchResults.classList.contains('active')) {
                 updateScrollPosition();
@@ -1659,9 +1861,6 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     function createCompareButton(item, titleText, permalink, imageSrc, priceText, categories) {
-        const actionsDiv = document.createElement('div');
-        actionsDiv.className = 'result-actions';
-
         const compareBtn = document.createElement('button');
         compareBtn.type = 'button';
         compareBtn.className = 'btn-compare-card search-compare-btn';
@@ -1702,7 +1901,53 @@ document.addEventListener('DOMContentLoaded', function () {
 
         compareBtn.appendChild(compareIcon);
         compareBtn.appendChild(compareLabel);
-        actionsDiv.appendChild(compareBtn);
+        return compareBtn;
+    }
+
+    function createFavoriteButton(item, titleText, permalink, imageSrc, priceText, categories) {
+        const favBtn = document.createElement('button');
+        favBtn.type = 'button';
+        favBtn.className = 'btn-favorite-card search-fav-btn';
+        favBtn.dataset.favoriteBtn = '1';
+        favBtn.dataset.asin = item.asin || '';
+        favBtn.dataset.title = titleText || '';
+        favBtn.dataset.url = permalink || '';
+        favBtn.dataset.affiliateUrl = item.affiliate_url || '';
+        favBtn.dataset.image = imageSrc || '';
+        favBtn.dataset.price = priceText || '';
+        favBtn.dataset.score = String(item.score || 0);
+        favBtn.dataset.category = categories?.[0] || '';
+
+        const isFav = Boolean(globalThis.Favorites?.isFavorite?.(item.asin));
+        favBtn.setAttribute('aria-pressed', isFav ? 'true' : 'false');
+        const titlePrefix = titleText ? `${titleText}を` : '';
+        favBtn.setAttribute('aria-label', isFav ? `${titlePrefix}お気に入りから削除` : `${titlePrefix}お気に入りに追加`);
+
+        if (isFav) {
+            favBtn.classList.add('is-favorited');
+        }
+
+        const favIcon = document.createElement('span');
+        favIcon.className = 'fav-icon';
+        favIcon.setAttribute('aria-hidden', 'true');
+        favIcon.textContent = isFav ? '❤️' : '🤍';
+
+        const favLabel = document.createElement('span');
+        favLabel.className = 'fav-label';
+        favLabel.textContent = isFav ? '保存済み' : '保存';
+
+        favBtn.appendChild(favIcon);
+        favBtn.appendChild(favLabel);
+        return favBtn;
+    }
+
+    function createActionButtons(item, titleText, permalink, imageSrc, priceText, categories) {
+        const actionsDiv = document.createElement('div');
+        actionsDiv.className = 'result-actions';
+
+        actionsDiv.appendChild(createCompareButton(item, titleText, permalink, imageSrc, priceText, categories));
+        actionsDiv.appendChild(createFavoriteButton(item, titleText, permalink, imageSrc, priceText, categories));
+
         return actionsDiv;
     }
 
@@ -1730,6 +1975,14 @@ document.addEventListener('DOMContentLoaded', function () {
             if (e.target.closest('button') || e.target.closest('a')) return;
             if (permalink) {
                 globalThis.location.href = permalink;
+            }
+        });
+
+        resultItem.addEventListener('mouseenter', () => {
+            const items = Array.from(searchResults.querySelectorAll('.search-result-item'));
+            const idx = items.indexOf(resultItem);
+            if (idx !== -1) {
+                updateSelectedResult(idx, false);
             }
         });
 
@@ -1771,7 +2024,7 @@ document.addEventListener('DOMContentLoaded', function () {
         footerDiv.appendChild(categoriesDiv);
 
         if (item.asin) {
-            footerDiv.appendChild(createCompareButton(item, titleText, permalink, imageSrc, priceText, categories));
+            footerDiv.appendChild(createActionButtons(item, titleText, permalink, imageSrc, priceText, categories));
         }
 
         contentDiv.appendChild(footerDiv);
@@ -1781,6 +2034,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     function displayResults(results, unfilteredScoreCount = 0) {
+        selectedResultIndex = -1;
         searchResults.textContent = '';
 
         if (results.length === 0) {

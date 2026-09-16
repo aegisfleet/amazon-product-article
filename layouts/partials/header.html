@@ -17,12 +17,15 @@
         </nav>
 
         <div class="header-actions">
+            <button type="button" id="search-modal-trigger" class="header-search-btn" aria-label="商品を検索する" title="商品を検索 (Ctrl+K)">
+                <span class="header-search-icon" aria-hidden="true">🔍</span>
+            </button>
             <a href="{{ `favorites/` | relURL }}" class="favorites-nav-btn" id="favorites-nav-btn"
                 aria-label="お気に入りリスト">
                 <span class="fav-nav-icon" aria-hidden="true">🤍</span>
                 <span class="favorites-badge" id="favorites-badge" style="display:none;" aria-live="polite"></span>
             </a>
-            <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Dark Mode">
+            <button id="theme-toggle" class="theme-toggle header-theme-toggle" aria-label="Toggle Dark Mode">
                 <span class="theme-toggle-icon"></span>
             </button>
         </div>
@@ -69,6 +72,12 @@
     </div>
     <nav class="nav-drawer-body" aria-label="メニューナビゲーション">
         <ul class="nav-drawer-list">
+            <li>
+                <button type="button" class="nav-drawer-item nav-drawer-search-btn" id="drawer-search-btn" aria-label="商品を検索する">
+                    <span class="nav-drawer-icon" aria-hidden="true">🔍</span>
+                    <span class="nav-drawer-label">商品・スペック検索</span>
+                </button>
+            </li>
             <li>
                 <a href="{{ `` | relURL }}" class="nav-drawer-item">
                     <span class="nav-drawer-icon" aria-hidden="true">🏠</span>
@@ -119,6 +128,13 @@
                     <span class="nav-drawer-label">お気に入り</span>
                     <span class="favorites-badge nav-drawer-badge" id="drawer-favorites-badge" style="display:none;" aria-live="polite"></span>
                 </a>
+            </li>
+            <li><hr class="nav-drawer-divider"></li>
+            <li>
+                <button type="button" class="nav-drawer-item nav-drawer-theme-btn theme-toggle" id="drawer-theme-toggle" aria-label="ダークモード切り替え">
+                    <span class="theme-toggle-icon nav-drawer-icon" aria-hidden="true"></span>
+                    <span class="nav-drawer-label">テーマ切り替え</span>
+                </button>
             </li>
         </ul>
     </nav>

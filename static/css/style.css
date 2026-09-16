@@ -149,7 +149,7 @@ a:hover {
 
 .brand {
   font-weight: 800;
-  font-size: clamp(0.95rem, 3.8vw, 1.25rem);
+  font-size: clamp(0.92rem, 3.6vw, 1.25rem);
   color: var(--color-text-main);
   display: flex;
   align-items: center;
@@ -162,8 +162,75 @@ a:hover {
   white-space: nowrap;
 }
 
+@media (max-width: 480px) {
+  .brand {
+    font-size: 0.95rem;
+    gap: 0.35rem;
+  }
+
+  .header-content {
+    gap: 0.5rem;
+  }
+}
+
 .brand-icon {
   color: var(--color-amazon-orange);
+  flex-shrink: 0;
+}
+
+/* --- Header Actions (Search, Favorites, Theme) --- */
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  flex-shrink: 0;
+}
+
+@media (min-width: 640px) {
+  .header-actions {
+    gap: 0.5rem;
+  }
+}
+
+.header-search-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.4rem;
+  border-radius: var(--radius-md);
+  color: var(--color-text-main);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  min-width: 44px;
+  transition: var(--transition-base);
+}
+
+.header-search-btn:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+  color: var(--color-primary);
+}
+
+[data-theme="dark"] .header-search-btn:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: var(--color-primary);
+}
+
+.header-search-icon {
+  font-size: 1.2rem;
+  line-height: 1;
+}
+
+/* モバイルではヘッダーのテーマ切替を非表示にし、ドロワー内へ退避（横幅確保） */
+.theme-toggle.header-theme-toggle {
+  display: none !important;
+}
+
+@media (min-width: 1024px) {
+  .theme-toggle.header-theme-toggle {
+    display: flex !important;
+  }
 }
 
 /* --- Global Header Navigation (Desktop) --- */
@@ -293,6 +360,60 @@ a:hover {
 
 [data-theme="dark"] .theme-toggle-icon::before {
   content: '🌞';
+}
+
+/* ドロワーメニュー内の拡張ボタンスタイル */
+.nav-drawer-divider {
+  border: none;
+  height: 1px;
+  background-color: var(--color-border);
+  margin: 0.5rem 0;
+  list-style: none;
+}
+
+.nav-drawer-theme-btn {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border-radius: var(--radius-lg);
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--color-text-main);
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  transition: var(--transition-base);
+  min-height: 48px;
+}
+
+.nav-drawer-theme-btn:hover {
+  background-color: var(--color-bg-secondary);
+}
+
+.nav-drawer-search-btn {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border-radius: var(--radius-lg);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-primary);
+  background: rgba(var(--color-primary-rgb), 0.08);
+  border: 1px solid rgba(var(--color-primary-rgb), 0.2);
+  cursor: pointer;
+  text-align: left;
+  transition: var(--transition-base);
+  min-height: 48px;
+  margin-bottom: 0.5rem;
+}
+
+.nav-drawer-search-btn:hover {
+  background-color: rgba(var(--color-primary-rgb), 0.15);
 }
 
 /* Hero Section */
@@ -6533,14 +6654,6 @@ body.is-scrolling-down .nav-menu-floating-toggle:focus-visible {
 /* ============================================================
    お気に入り機能スタイル
    ============================================================ */
-
-/* ヘッダーのアクション群ラッパー */
-.header-actions {
-  display: flex;
-  align-items: center;
-  gap: var(--spacing-sm);
-  flex-shrink: 0;
-}
 
 /* ヘッダーのナビゲーションリンクボタン */
 .header-nav-btn {

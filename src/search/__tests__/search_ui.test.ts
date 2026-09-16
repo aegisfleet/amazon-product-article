@@ -121,6 +121,13 @@ describe('Search UI XSS Protection', () => {
     expect(searchJsContent).toContain('globalThis.Compare');
   });
 
+  test('static/js/search.js should contain favorite button implementation in search results', () => {
+    expect(searchJsContent).toContain('search-fav-btn');
+    expect(searchJsContent).toContain('dataset.favoriteBtn');
+    expect(searchJsContent).toContain('btn-favorite-card');
+    expect(searchJsContent).toContain('globalThis.Favorites');
+  });
+
   test('static/js/search.js should focus search-input and prevent default jump when hero search button is clicked', () => {
     expect(searchJsContent).toContain('[data-hero-entry="search"]');
     expect(searchJsContent).toContain('event.preventDefault()');
@@ -157,6 +164,15 @@ describe('Search UI XSS Protection', () => {
     expect(searchJsContent).toContain('is-visible');
     expect(searchJsContent).toContain('scrollIntoView');
     expect(searchJsContent).toContain('searchInput.focus()');
+  });
+
+  test('static/js/search.js should support keyboard navigation for search results (ArrowDown, ArrowUp, Enter)', () => {
+    expect(searchJsContent).toContain('selectedResultIndex');
+    expect(searchJsContent).toContain('updateSelectedResult');
+    expect(searchJsContent).toContain("event.key === 'ArrowDown'");
+    expect(searchJsContent).toContain("event.key === 'ArrowUp'");
+    expect(searchJsContent).toContain("event.key === 'Enter'");
+    expect(searchJsContent).toContain('is-selected');
   });
 
   test('static/js/search.js and search-worker.js should support hiragana and katakana normalization', () => {
