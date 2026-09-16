@@ -114,20 +114,31 @@
     cursor: pointer;
 }
 
-.search-result-item:hover,
+.search-result-item:hover {
+    background: var(--color-bg-secondary);
+}
+
 .search-result-item.is-selected {
     background: var(--color-bg-secondary);
     border-left-color: var(--color-primary);
-}
-
-.search-result-item.is-selected {
     outline-color: var(--color-primary);
 }
 
-[data-theme="dark"] .search-result-item:hover,
+[data-theme="dark"] .search-result-item:hover {
+    background: rgba(255, 255, 255, 0.05);
+}
+
 [data-theme="dark"] .search-result-item.is-selected {
     background: rgba(255, 255, 255, 0.05);
     border-left-color: var(--color-primary);
+    outline-color: var(--color-primary);
+}
+
+/* キーボードナビゲーション中はマウス下の要素のホバースタイルを無効化し、フォーカス残りを完全に防止 */
+#search-results.is-keyboard-nav .search-result-item:hover:not(.is-selected) {
+    background: transparent;
+    border-left-color: transparent;
+    outline-color: transparent;
 }
 
 .result-main-row {
