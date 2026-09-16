@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const toggleBtn = document.getElementById('theme-toggle');
+    const toggleButtons = document.querySelectorAll('.theme-toggle');
 
-    toggleBtn.addEventListener('click', () => {
+    function toggleTheme() {
         const currentTheme = document.documentElement.dataset.theme;
         const systemDark = globalThis.matchMedia('(prefers-color-scheme: dark)').matches;
 
@@ -19,6 +19,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
         document.documentElement.dataset.theme = targetTheme;
         localStorage.setItem('theme', targetTheme);
+    }
+
+    toggleButtons.forEach((btn) => {
+        btn.addEventListener('click', toggleTheme);
     });
 
     // Floating controls & Scroll to Top functionality
