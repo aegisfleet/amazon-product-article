@@ -374,6 +374,22 @@ function isStateEqual(state1, state2) {
            state1.priceMax === state2.priceMax;
 }
 
+function isSearchHotkey(event) {
+    return (event.ctrlKey || event.metaKey) && event.key.toLowerCase() === 'k';
+}
+
+function handleResultSelection(items, index) {
+    const selectedItem = items[index];
+    if (!selectedItem) return;
+
+    const link = selectedItem.querySelector('.result-title-link');
+    if (link) {
+        link.click();
+    } else {
+        selectedItem.click();
+    }
+}
+
 document.addEventListener('DOMContentLoaded', function () {
     const searchInput = document.getElementById('search-input');
     const searchResults = document.getElementById('search-results');
@@ -513,7 +529,7 @@ document.addEventListener('DOMContentLoaded', function () {
             // ドロワーが開いている場合は閉じる
             const navDrawer = document.getElementById('site-nav-drawer');
             const navOverlay = document.getElementById('nav-drawer-overlay');
-            if (navDrawer && navDrawer.classList.contains('is-open')) {
+            if (navDrawer?.classList.contains('is-open')) {
                 navDrawer.classList.remove('is-open');
                 navDrawer.setAttribute('aria-hidden', 'true');
                 if (navOverlay) navOverlay.classList.remove('is-open');
@@ -560,24 +576,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
-    // キーボードショートカット (Ctrl+K / Cmd+K / Esc / ↑↓ / Enter)
-    document.addEventListener('keydown', function (event) {
-        if ((event.ctrlKey || event.metaKey) && (event.key === 'k' || event.key === 'K')) {
-            event.preventDefault();
-            if (searchModal?.classList.contains('is-open')) {
-                closeSearchModal();
-            } else {
-                openSearchModal();
-            }
-            return;
-        }
-        if (event.key === 'Escape' && searchModal?.classList.contains('is-open')) {
-            event.preventDefault();
-            closeSearchModal();
-            return;
-        }
-
-        // 検索モーダルが開いている、または検索結果が表示中の場合のナビゲーション
+    function handleResultKeyNavigation(event) {
         const isModalOpen = Boolean(searchModal?.classList.contains('is-open'));
         const isResultsActive = searchResults.classList.contains('active');
         if (!isModalOpen && !isResultsActive) return;
@@ -596,18 +595,31 @@ document.addEventListener('DOMContentLoaded', function () {
             event.preventDefault();
             searchResults.classList.add('is-keyboard-nav');
             updateSelectedResult(selectedResultIndex - 1, true);
-        } else if (event.key === 'Enter') {
-            if (selectedResultIndex >= 0 && items[selectedResultIndex]) {
-                event.preventDefault();
-                const selectedItem = items[selectedResultIndex];
-                const link = selectedItem.querySelector('.result-title-link');
-                if (link) {
-                    link.click();
-                } else {
-                    selectedItem.click();
-                }
-            }
+        } else if (event.key === 'Enter' && selectedResultIndex >= 0) {
+            event.preventDefault();
+            handleResultSelection(items, selectedResultIndex);
         }
+    }
+
+    // キーボードショートカット (Ctrl+K / Cmd+K / Esc / ↑↓ / Enter)
+    document.addEventListener('keydown', function (event) {
+        if (isSearchHotkey(event)) {
+            event.preventDefault();
+            if (searchModal?.classList.contains('is-open')) {
+                closeSearchModal();
+            } else {
+                openSearchModal();
+            }
+            return;
+        }
+
+        if (event.key === 'Escape' && searchModal?.classList.contains('is-open')) {
+            event.preventDefault();
+            closeSearchModal();
+            return;
+        }
+
+        handleResultKeyNavigation(event);
     });
 
     // 画面左下のフローティング検索ボタン（FAB）の制御
@@ -815,7 +827,7 @@ document.addEventListener('DOMContentLoaded', function () {
         if (!searchContainer || !searchResults) return;
 
         // モーダル内の検索結果の場合は、モーダルコンテナの高さ制限とCSSフレックスに委ねる（突き破り防止）
-        if (searchModal && searchModal.contains(searchResults)) {
+        if (searchModal?.contains(searchResults)) {
             searchResults.style.maxHeight = '';
             return;
         }
@@ -1332,7 +1344,7 @@ document.addEventListener('DOMContentLoaded', function () {
             if (calibrationInterval) return; // すでに実行中なら重複させない
 
             const container = document.querySelector('.search-input-wrapper');
-            if (container && container.closest('#search-modal')) {
+            if (container?.closest('#search-modal')) {
                 updateSearchResultsHeight();
                 return;
             }
