@@ -1788,9 +1788,6 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     function createCompareButton(item, titleText, permalink, imageSrc, priceText, categories) {
-        const actionsDiv = document.createElement('div');
-        actionsDiv.className = 'result-actions';
-
         const compareBtn = document.createElement('button');
         compareBtn.type = 'button';
         compareBtn.className = 'btn-compare-card search-compare-btn';
@@ -1831,7 +1828,53 @@ document.addEventListener('DOMContentLoaded', function () {
 
         compareBtn.appendChild(compareIcon);
         compareBtn.appendChild(compareLabel);
-        actionsDiv.appendChild(compareBtn);
+        return compareBtn;
+    }
+
+    function createFavoriteButton(item, titleText, permalink, imageSrc, priceText, categories) {
+        const favBtn = document.createElement('button');
+        favBtn.type = 'button';
+        favBtn.className = 'btn-favorite-card search-fav-btn';
+        favBtn.dataset.favoriteBtn = '1';
+        favBtn.dataset.asin = item.asin || '';
+        favBtn.dataset.title = titleText || '';
+        favBtn.dataset.url = permalink || '';
+        favBtn.dataset.affiliateUrl = item.affiliate_url || '';
+        favBtn.dataset.image = imageSrc || '';
+        favBtn.dataset.price = priceText || '';
+        favBtn.dataset.score = String(item.score || 0);
+        favBtn.dataset.category = categories?.[0] || '';
+
+        const isFav = Boolean(globalThis.Favorites?.isFavorite?.(item.asin));
+        favBtn.setAttribute('aria-pressed', isFav ? 'true' : 'false');
+        const titlePrefix = titleText ? `${titleText}を` : '';
+        favBtn.setAttribute('aria-label', isFav ? `${titlePrefix}お気に入りから削除` : `${titlePrefix}お気に入りに追加`);
+
+        if (isFav) {
+            favBtn.classList.add('is-favorited');
+        }
+
+        const favIcon = document.createElement('span');
+        favIcon.className = 'fav-icon';
+        favIcon.setAttribute('aria-hidden', 'true');
+        favIcon.textContent = isFav ? '❤️' : '🤍';
+
+        const favLabel = document.createElement('span');
+        favLabel.className = 'fav-label';
+        favLabel.textContent = isFav ? '保存済み' : '保存';
+
+        favBtn.appendChild(favIcon);
+        favBtn.appendChild(favLabel);
+        return favBtn;
+    }
+
+    function createActionButtons(item, titleText, permalink, imageSrc, priceText, categories) {
+        const actionsDiv = document.createElement('div');
+        actionsDiv.className = 'result-actions';
+
+        actionsDiv.appendChild(createCompareButton(item, titleText, permalink, imageSrc, priceText, categories));
+        actionsDiv.appendChild(createFavoriteButton(item, titleText, permalink, imageSrc, priceText, categories));
+
         return actionsDiv;
     }
 
@@ -1900,7 +1943,7 @@ document.addEventListener('DOMContentLoaded', function () {
         footerDiv.appendChild(categoriesDiv);
 
         if (item.asin) {
-            footerDiv.appendChild(createCompareButton(item, titleText, permalink, imageSrc, priceText, categories));
+            footerDiv.appendChild(createActionButtons(item, titleText, permalink, imageSrc, priceText, categories));
         }
 
         contentDiv.appendChild(footerDiv);
