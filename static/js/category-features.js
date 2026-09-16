@@ -17,7 +17,7 @@ function matchesCategory(card, selectedCategory) {
  */
 function matchesPrice(card, minPrice, maxPrice) {
     const price = Number.parseInt(card.dataset.price) || 0;
-    return price >= minPrice && (maxPrice >= 50000 || price <= maxPrice);
+    return price >= minPrice && (maxPrice >= 200000 || price <= maxPrice);
 }
 
 /**
@@ -116,12 +116,12 @@ function initCategoryFeatures() {
     function updateSliderDisplays() {
         const minScore = scoreSlider ? Number.parseInt(scoreSlider.value, 10) : 0;
         const minPrice = minPriceSlider ? valueToPrice(Number.parseInt(minPriceSlider.value, 10)) : 0;
-        const maxPrice = priceSlider ? valueToPrice(Number.parseInt(priceSlider.value, 10)) : 50000;
+        const maxPrice = priceSlider ? valueToPrice(Number.parseInt(priceSlider.value, 10)) : 200000;
 
         if (scoreValueEl) scoreValueEl.textContent = String(minScore);
         if (minPriceValueEl) minPriceValueEl.textContent = formatPrice(minPrice);
         if (priceValueEl) {
-            priceValueEl.textContent = maxPrice >= 50000 ? '上限なし' : formatPrice(maxPrice) + '以下';
+            priceValueEl.textContent = maxPrice >= 200000 ? '上限なし' : formatPrice(maxPrice) + '以下';
         }
     }
 
@@ -131,7 +131,7 @@ function initCategoryFeatures() {
     function getFilterValues() {
         const minScore = scoreSlider ? Number.parseInt(scoreSlider.value, 10) : 0;
         const minPrice = minPriceSlider ? valueToPrice(Number.parseInt(minPriceSlider.value, 10)) : 0;
-        const maxPrice = priceSlider ? valueToPrice(Number.parseInt(priceSlider.value, 10)) : 50000;
+        const maxPrice = priceSlider ? valueToPrice(Number.parseInt(priceSlider.value, 10)) : 200000;
         const category = categorySelect ? categorySelect.value : '';
         const showOnlyDeals = dealFilter ? dealFilter.checked : false;
 
@@ -232,13 +232,13 @@ function initCategoryFeatures() {
                 icon: '💰',
                 label: `${formatPrice(filters.minPrice)}〜`,
                 onRemove: () => {
-                    if (minPriceSlider) minPriceSlider.value = '20';
+                    if (minPriceSlider) minPriceSlider.value = '13';
                     filterCards();
                 }
             });
         }
 
-        if (filters.maxPrice < 50000) {
+        if (filters.maxPrice < 200000) {
             chips.push({
                 id: 'maxPrice',
                 icon: '💰',
@@ -390,7 +390,7 @@ function initCategoryFeatures() {
             params.set('minPrice', String(filters.minPrice));
         }
 
-        if (filters.maxPrice < 50000) {
+        if (filters.maxPrice < 200000) {
             params.set('maxPrice', String(filters.maxPrice));
         }
 
@@ -479,7 +479,7 @@ function initCategoryFeatures() {
      */
     function resetFilters() {
         if (scoreSlider) scoreSlider.value = '0';
-        if (minPriceSlider) minPriceSlider.value = '20';
+        if (minPriceSlider) minPriceSlider.value = '13';
         if (priceSlider) priceSlider.value = '1000';
         if (categorySelect) categorySelect.value = '';
         if (dealFilter) dealFilter.checked = false;

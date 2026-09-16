@@ -108,7 +108,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (minScore !== 80) params.set('minScore', String(minScore));
     if (minPrice !== 100) params.set('minPrice', String(minPrice));
-    if (maxPrice !== 50000) params.set('maxPrice', String(maxPrice));
+    if (maxPrice !== 200000) params.set('maxPrice', String(maxPrice));
     if (minDiscount !== 0) params.set('minDiscount', String(minDiscount));
     if (dealType) params.set('dealType', dealType);
     if (category) params.set('category', category);
@@ -180,7 +180,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     scoreValueEl.textContent = String(minScore);
     minPriceValueEl.textContent = formatPrice(minPrice);
-    priceValueEl.textContent = maxPrice >= 50000 ? '上限なし' : formatPrice(maxPrice) + '以下';
+    priceValueEl.textContent = maxPrice >= 200000 ? '上限なし' : formatPrice(maxPrice) + '以下';
     discountValueEl.textContent = String(minDiscount);
   }
 
@@ -223,7 +223,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let preFiltered = allProducts.filter(p => {
       if (p.score < minScore) return false;
       if (p.priceRaw < minPrice) return false;
-      if (maxPrice < 50000 && p.priceRaw > maxPrice) return false;
+      if (maxPrice < 200000 && p.priceRaw > maxPrice) return false;
       if (p.savingsPercentage < minDiscount) return false;
       if (!matchesDealType(p, dealType)) return false;
       if (!matchesKeywords(p, keywords)) return false;
@@ -304,13 +304,13 @@ document.addEventListener('DOMContentLoaded', () => {
         icon: '💰',
         label: `${formatPrice(minPrice)}〜`,
         onRemove: () => {
-          minPriceSlider.value = '20';
+          minPriceSlider.value = '13';
           applyFilters();
         }
       });
     }
 
-    if (maxPrice < 50000) {
+    if (maxPrice < 200000) {
       chips.push({
         id: 'maxPrice',
         icon: '💰',
@@ -385,7 +385,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // --- Reset ---
   function resetFilters() {
     scoreSlider.value = '80';
-    minPriceSlider.value = '20';
+    minPriceSlider.value = '13';
     priceSlider.value = '1000'; // max
     discountSlider.value = '0';
     if (dealTypeSelect) dealTypeSelect.value = '';
