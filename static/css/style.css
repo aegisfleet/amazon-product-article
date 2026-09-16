@@ -6654,14 +6654,6 @@ body.is-scrolling-down .nav-menu-floating-toggle:focus-visible {
    お気に入り機能スタイル
    ============================================================ */
 
-/* ヘッダーのアクション群ラッパー */
-.header-actions {
-  display: flex;
-  align-items: center;
-  gap: var(--spacing-sm);
-  flex-shrink: 0;
-}
-
 /* ヘッダーのナビゲーションリンクボタン */
 .header-nav-btn {
   display: inline-flex;
