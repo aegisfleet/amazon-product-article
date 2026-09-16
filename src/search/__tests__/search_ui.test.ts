@@ -121,6 +121,13 @@ describe('Search UI XSS Protection', () => {
     expect(searchJsContent).toContain('globalThis.Compare');
   });
 
+  test('static/js/search.js should contain favorite button implementation in search results', () => {
+    expect(searchJsContent).toContain('search-fav-btn');
+    expect(searchJsContent).toContain('dataset.favoriteBtn');
+    expect(searchJsContent).toContain('btn-favorite-card');
+    expect(searchJsContent).toContain('globalThis.Favorites');
+  });
+
   test('static/js/search.js should focus search-input and prevent default jump when hero search button is clicked', () => {
     expect(searchJsContent).toContain('[data-hero-entry="search"]');
     expect(searchJsContent).toContain('event.preventDefault()');
