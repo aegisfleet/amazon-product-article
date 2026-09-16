@@ -36,6 +36,7 @@
     {{- block "main" . -}}{{- end -}}
   </main>
 
+  {{- partialCached "search-modal.html" . -}}
   {{- partial "footer.html" . -}}
   <button type="button" id="scroll-to-top" class="scroll-to-top" aria-label="トップに戻る" title="トップに戻る">
     <span class="material-symbols-outlined" aria-hidden="true">arrow_upward</span>

@@ -403,18 +403,127 @@ document.addEventListener('DOMContentLoaded', function () {
     }
     searchInput.dataset.searchInitialized = 'true';
 
-    // ヒーローカードの「検索から探す」ボタンが押された際に検索ボックスにフォーカス
+    // 検索モーダルの制御
+    const searchModal = document.getElementById('search-modal');
+    const searchModalBackdrop = document.getElementById('search-modal-backdrop');
+    const searchModalClose = document.getElementById('search-modal-close');
+    let lastActiveTrigger = null;
+    let savedScrollY = 0;
+
+    function openSearchModal(initialQuery = '', triggerElement = null) {
+        if (!searchModal) return;
+
+        savedScrollY = window.pageYOffset || window.scrollY || document.documentElement.scrollTop || 0;
+        lastActiveTrigger = triggerElement || document.activeElement;
+
+        document.documentElement.classList.add('search-modal-open');
+        document.body.classList.add('search-modal-open');
+
+        if (typeof searchModal.showModal === 'function') {
+            if (!searchModal.open) {
+                searchModal.showModal();
+            }
+        } else {
+            searchModal.setAttribute('open', '');
+        }
+        searchModal.classList.add('is-open');
+
+        if (typeof ensureSearchReady === 'function') {
+            ensureSearchReady();
+        }
+
+        if (initialQuery && typeof initialQuery === 'string') {
+            searchInput.value = initialQuery;
+        }
+
+        setTimeout(() => {
+            // preventScroll: true によりフォーカス時の自動スクロールを完全防止
+            searchInput.focus({ preventScroll: true });
+            if (searchInput.value) {
+                searchInput.select();
+                searchInput.dispatchEvent(new Event('input', { bubbles: true }));
+            } else if (!searchResults.classList.contains('active')) {
+                showSearchTips();
+            }
+        }, 30);
+    }
+
+    function closeSearchModal() {
+        if (!searchModal) return;
+        searchModal.classList.remove('is-open');
+        document.documentElement.classList.remove('search-modal-open');
+        document.body.classList.remove('search-modal-open');
+
+        if (typeof searchModal.close === 'function') {
+            if (searchModal.open) {
+                searchModal.close();
+            }
+        } else {
+            searchModal.removeAttribute('open');
+        }
+
+        // スクロール位置を即座に復帰（位置に差分がある場合のみ）
+        const currentY = window.pageYOffset || window.scrollY || document.documentElement.scrollTop || 0;
+        if (Math.abs(currentY - savedScrollY) > 1) {
+            window.scrollTo({ top: savedScrollY, left: 0, behavior: 'instant' });
+        }
+
+        if (lastActiveTrigger && typeof lastActiveTrigger.focus === 'function') {
+            try {
+                lastActiveTrigger.focus({ preventScroll: true });
+            } catch {
+                // ignore
+            }
+        }
+    }
+
+    if (searchModal) {
+        searchModal.addEventListener('cancel', (e) => {
+            e.preventDefault();
+            closeSearchModal();
+        });
+    }
+
+    if (searchModalBackdrop) {
+        searchModalBackdrop.addEventListener('click', closeSearchModal);
+    }
+    if (searchModalClose) {
+        searchModalClose.addEventListener('click', closeSearchModal);
+    }
+
+    // 各種トリガーボタンの登録
     document.addEventListener('click', function (event) {
         const target = event.target;
         if (!(target instanceof Element)) return;
-        const trigger = target.closest('[data-hero-entry="search"], a[href="#search-section"]');
+
+        const trigger = target.closest('#search-modal-trigger, #drawer-search-btn, #home-search-trigger, [data-hero-entry="search"], a[href="#search-section"]');
         if (trigger) {
             event.preventDefault();
-            const wasFocused = document.activeElement === searchInput;
-            searchInput.focus();
-            if (wasFocused) {
-                searchInput.dispatchEvent(new Event('focus'));
+            // ドロワーが開いている場合は閉じる
+            const navDrawer = document.getElementById('site-nav-drawer');
+            const navOverlay = document.getElementById('nav-drawer-overlay');
+            if (navDrawer && navDrawer.classList.contains('is-open')) {
+                navDrawer.classList.remove('is-open');
+                navDrawer.setAttribute('aria-hidden', 'true');
+                if (navOverlay) navOverlay.classList.remove('is-open');
+                document.body.classList.remove('nav-drawer-open');
             }
+            openSearchModal('', trigger);
+        }
+    });
+
+    // キーボードショートカット (Ctrl+K / Cmd+K)
+    document.addEventListener('keydown', function (event) {
+        if ((event.ctrlKey || event.metaKey) && (event.key === 'k' || event.key === 'K')) {
+            event.preventDefault();
+            if (searchModal?.classList.contains('is-open')) {
+                closeSearchModal();
+            } else {
+                openSearchModal();
+            }
+        } else if (event.key === 'Escape' && searchModal?.classList.contains('is-open')) {
+            event.preventDefault();
+            closeSearchModal();
         }
     });
 
@@ -445,17 +554,15 @@ document.addEventListener('DOMContentLoaded', function () {
 
         floatingSearchFab.addEventListener('click', function (event) {
             event.preventDefault();
-            const searchTarget = document.getElementById('search-section') || searchInput;
-            searchTarget.scrollIntoView({ behavior: 'smooth', block: 'center' });
-
-            // スムーズスクロールに追従してフォーカス
-            setTimeout(() => {
-                const wasFocused = document.activeElement === searchInput;
-                searchInput.focus();
-                if (wasFocused) {
-                    searchInput.dispatchEvent(new Event('focus'));
-                }
-            }, 300);
+            if (searchModal) {
+                openSearchModal();
+            } else {
+                const searchTarget = document.getElementById('search-section') || searchInput;
+                searchTarget.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                setTimeout(() => {
+                    searchInput.focus();
+                }, 300);
+            }
         });
     }
 
@@ -623,6 +730,12 @@ document.addEventListener('DOMContentLoaded', function () {
     function updateSearchResultsHeight() {
         const searchContainer = document.querySelector('.search-container');
         if (!searchContainer || !searchResults) return;
+
+        // モーダル内の検索結果の場合は、モーダルコンテナの高さ制限とCSSフレックスに委ねる（突き破り防止）
+        if (searchModal && searchModal.contains(searchResults)) {
+            searchResults.style.maxHeight = '';
+            return;
+        }
 
         // Visual Viewport または window.innerHeight から現在のビューポート高さを取得
         const viewportHeight = globalThis.visualViewport
@@ -1044,7 +1157,7 @@ document.addEventListener('DOMContentLoaded', function () {
         function scrollSearchIntoView(callback) {
             const container = document.querySelector('.search-input-wrapper');
             const header = document.querySelector('.site-header');
-            if (!container) {
+            if (!container || container.closest('#search-modal')) {
                 isProgramScrolling = false;
                 if (callback) callback();
                 return;
@@ -1135,6 +1248,12 @@ document.addEventListener('DOMContentLoaded', function () {
         function triggerScroll() {
             if (calibrationInterval) return; // すでに実行中なら重複させない
 
+            const container = document.querySelector('.search-input-wrapper');
+            if (container && container.closest('#search-modal')) {
+                updateSearchResultsHeight();
+                return;
+            }
+
             scrollSearchIntoView(() => {
                 updateSearchResultsHeight();
             });
@@ -1148,6 +1267,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
         // 検索窓クリック時: 検索結果が非表示なら再表示
         searchInput.addEventListener('click', (e) => {
+            const isInModal = Boolean(searchInput.closest('#search-modal'));
+
             // フォーカス時の遅延実行をキャンセル
             if (focusScrollTimeout) {
                 clearTimeout(focusScrollTimeout);
@@ -1155,8 +1276,10 @@ document.addEventListener('DOMContentLoaded', function () {
             }
 
             if (searchResults.classList.contains('active')) {
-                // すでにアクティブでも位置がずれていれば補正
-                triggerScroll();
+                // すでにアクティブでも位置がずれていれば補正（モーダル外のみ）
+                if (!isInModal) {
+                    triggerScroll();
+                }
                 return;
             }
 
@@ -1173,19 +1296,24 @@ document.addEventListener('DOMContentLoaded', function () {
                 }
             }
 
-            triggerScroll();
+            if (!isInModal) {
+                triggerScroll();
+            }
         });
 
         // 検索窓フォーカス時: スクロール＋検索結果表示
         searchInput.addEventListener('focus', (e) => {
-            isProgramScrolling = true;
+            const isInModal = Boolean(searchInput.closest('#search-modal'));
+            if (!isInModal) {
+                isProgramScrolling = true;
 
-            // IME（仮想キーボード）の起動を待ってからスクロール
-            // clickイベントが後に続く場合はそちらでキャンセルされる
-            focusScrollTimeout = setTimeout(() => {
-                triggerScroll();
-                focusScrollTimeout = null;
-            }, 100);
+                // IME（仮想キーボード）の起動を待ってからスクロール
+                // clickイベントが後に続く場合はそちらでキャンセルされる
+                focusScrollTimeout = setTimeout(() => {
+                    triggerScroll();
+                    focusScrollTimeout = null;
+                }, 100);
+            }
 
             // 検索結果を表示
             const currentState = getSearchState();
@@ -1224,6 +1352,7 @@ document.addEventListener('DOMContentLoaded', function () {
         // 手動スクロール時: 500px以上または検索ボックスが画面外（上部）に完全に消えたら検索結果をフェードアウト
         globalThis.addEventListener('scroll', () => {
             if (isProgramScrolling) return;
+            if (searchModal && (searchModal.classList.contains('is-open') || searchModal.open)) return;
 
             if (!searchResults.classList.contains('active')) {
                 updateScrollPosition();

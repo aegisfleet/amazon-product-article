@@ -27,12 +27,11 @@
 <script src="{{ `js/personalization.js` | relURL }}"></script>
 <script src="{{ `js/favorites.js` | relURL }}"></script>
 <script src="{{ `js/compare.js` | relURL }}"></script>
+<script src="{{ `js/filter-common.js` | relURL }}"></script>
+<script src="{{ `js/search.js` | relURL }}"></script>
 
 {{- if .IsHome -}}
-<script src="{{ `js/filter-common.js` | relURL }}"></script>
 <script src="{{ `js/home-hero-entry-tracking.js` | relURL }}"></script>
-<script src="{{ `js/search.js` | relURL }}"></script>
 <script src="{{ `js/home-load-more.js` | relURL }}"></script>
 <script src="{{ print `js/category-dropdown.js?v=` now.Unix | relURL }}"></script>
-
 {{- end -}}
