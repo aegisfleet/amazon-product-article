@@ -310,6 +310,8 @@
 
     // ---- モーダル構築 ----
 
+    let previousActiveElement = null;
+
     function getOrCreateModal() {
         let backdrop = document.getElementById('compare-modal-backdrop');
         if (!backdrop) {
@@ -318,7 +320,8 @@
             backdrop.className = 'compare-modal-backdrop';
             backdrop.setAttribute('role', 'dialog');
             backdrop.setAttribute('aria-modal', 'true');
-            backdrop.setAttribute('aria-label', '商品比較表');
+            backdrop.setAttribute('aria-label', '商品スペック・価格横並び比較表');
+            backdrop.tabIndex = -1;
             backdrop.innerHTML = `
                 <div class="compare-modal-container">
                     <div class="compare-modal-header">
@@ -339,6 +342,12 @@
                 }
             });
 
+            backdrop.addEventListener('wheel', function (e) {
+                if (e.target === backdrop) {
+                    e.preventDefault();
+                }
+            }, { passive: false });
+
             document.addEventListener('keydown', function (e) {
                 if (e.key === 'Escape' && backdrop.classList.contains('is-visible')) {
                     closeModal();
@@ -354,17 +363,35 @@
             showToast('比較する商品が選択されていません');
             return;
         }
+        previousActiveElement = document.activeElement;
         const modal = getOrCreateModal();
         renderModalContent();
         modal.classList.add('is-visible');
+        document.documentElement.classList.add('compare-modal-open');
+        document.body.classList.add('compare-modal-open');
         document.body.style.overflow = 'hidden';
+
+        const closeBtn = document.getElementById('compare-modal-close');
+        if (closeBtn) {
+            closeBtn.focus();
+        }
     }
 
     function closeModal() {
         const modal = document.getElementById('compare-modal-backdrop');
         if (modal) {
             modal.classList.remove('is-visible');
+            document.documentElement.classList.remove('compare-modal-open');
+            document.body.classList.remove('compare-modal-open');
             document.body.style.overflow = '';
+            if (previousActiveElement && typeof previousActiveElement.focus === 'function') {
+                try {
+                    previousActiveElement.focus();
+                } catch {
+                    // ignore
+                }
+                previousActiveElement = null;
+            }
         }
     }
 
