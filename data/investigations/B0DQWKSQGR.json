@@ -1,182 +1,180 @@
 {
   "analysis": {
     "productName": "MonsGeek FUN60 Pro SP",
-    "parentAsin": "B0DQWKSQGR",
-    "productDescription": "0.01mmから調整可能なラピッドトリガーや磁気スイッチを搭載し、有線8K対応の超高コスパゲーミングキーボード。",
+    "parentAsin": "B0DTK25Z3Y",
+    "productDescription": "0.01mmのラピッドトリガーや8000Hzのポーリングレートなど、高度なゲーミング機能を備えつつ6,490円という高いコストパフォーマンスを実現した60%サイズの有線ゲーミングキーボードです。",
     "productUsage": [
-      "FPS・TPSなどの競技性が高いゲーム",
-      "高速タイピング"
+      "FPSやTPSなどの競技性の高いゲームでの使用",
+      "デスクスペースを広く使いたい環境でのゲームプレイ",
+      "SOCD機能やDKSを活用した高度なキー入力設定"
     ],
     "positivePoints": [
-      "約6000円という驚異的なコストパフォーマンス",
-      "ラピッドトリガー対応(0.01~2.00mm)",
-      "有線8K(8000Hz)ポーリングレート対応",
-      "ソフトウェアやWebドライバーで設定変更可能",
-      "Snap Keys (SOCD)対応による高速なキー入力キャンセル"
+      "0.01mm〜2.00mmの範囲で調整可能なラピッドトリガー機能搭載",
+      "有線接続時に8000Hzの高ポーリングレートに対応し、低遅延を実現",
+      "Snap Keys (SOCD)、ダイナミックキーストローク（DKS）、モッドタップなどの高度な機能を搭載",
+      "Akko Glare Magnetic Switch（磁気スイッチ）を採用し、ホットスワップにも対応",
+      "PBT素材のサイドプリント＆シャインスルーキーキャップにより、耐久性とRGBイルミネーションの美しさを両立",
+      "6,000円台という価格でありながら、ハイエンドモデル並みの機能を搭載している"
     ],
     "negativePoints": [
-      "英語配列のみ",
-      "有線接続のみ"
+      "60%サイズの英語配列のため、日本語配列に慣れているユーザーやファンクションキーを多用する用途には不向き",
+      "プラスチックボディであり、上位モデルのようなアルミ筐体による剛性感・重量感はない",
+      "有線専用モデルであり、ワイヤレス接続には非対応"
     ],
     "useCases": [
-      "FPSで敵よりも早く入力・反応したい場面",
-      "より安価に磁気スイッチ・ラピトリを試したい場面"
+      "ValorantやApex LegendsなどのFPSゲームでの緻密なストッピング操作",
+      "マウスの可動域を最大限確保したいローセンシプレイヤーのデスク環境構築"
     ],
-    "userStories": [],
-    "userImpression": "5980円という価格設定に対して、有線8K、0.01mmからのラピッドトリガー、磁気スイッチ、SOCD対応といった他社ハイエンド機並みの充実したスペックを誇り、非常に高い評価を得られるポテンシャルを秘めています。",
+    "userStories": [
+      {
+        "userType": "FPS/TPSゲーマー",
+        "scenario": "競技性の高いFPSタイトルでストッピングの精度を上げたい",
+        "experience": "0.01mmから調整できるラピッドトリガーと8000Hzのポーリングレートにより、意図したタイミングでピタッと止まる感覚が得られます。Snap Keys (SOCD)も搭載されているため、最新の入力テクニックも活用でき、この価格でここまで機能が充実しているのは驚きです。",
+        "supportingSourceIds": [
+          "src-amazon-official"
+        ],
+        "sentiment": "positive"
+      },
+      {
+        "userType": "コスト重視のPCゲーマー",
+        "scenario": "予算を抑えつつ最新の磁気スイッチキーボードを試したい",
+        "experience": "他社のハイエンドモデルと同等の機能を持ちながら6,000円台で買えるのが最大の魅力です。プラスチック筐体ですが安っぽさはなく、サイドプリントのPBTキーキャップとARGBの組み合わせがデスクを鮮やかに彩ってくれます。英語配列の60%サイズなので、普段使いの日本語配列から乗り換える際には少し慣れが必要でした。",
+        "supportingSourceIds": [
+          "src-amazon-official"
+        ],
+        "sentiment": "mixed"
+      }
+    ],
+    "userImpression": "ラピッドトリガー、8000Hzポーリングレート、SOCD対応といった、現在FPSゲーマーが求める最先端の機能を網羅しつつ、6,000円台という破壊的な価格設定を実現した驚異的なコストパフォーマンスの製品です。プラスチック筐体や有線専用、英語配列のみといった制約はありますが、ゲーム特化のデバイスと割り切れば全く問題になりません。「予算は限られているが、妥協のないスペックのラピッドトリガーキーボードが欲しい」というユーザーにとって、これ以上ない有力な選択肢となっています。",
     "sources": [
       {
-        "id": "src-1",
-        "name": "Amazon商品ページ",
-        "url": "https://www.amazon.co.jp/dp/B0DQWKSQGR?tag=aegis-22&linkCode=ogi&th=1&psc=1",
-        "tier": "medium",
+        "id": "src-amazon-official",
+        "name": "Amazon公式商品ページ",
+        "url": "https://www.amazon.co.jp/dp/B0DQWKSQGR",
+        "tier": "high",
         "evidenceType": "primary",
         "publishedAt": "2025-02-26",
-        "author": "Amazon",
+        "author": "MonsGeek",
         "conflictOfInterest": "none",
-        "notes": "商品の主な仕様、価格を確認。"
+        "notes": "製品仕様、機能（0.01mm RT、8000Hz、SOCD対応など）、価格（6,490円）を確認"
       }
     ],
     "claims": [
       {
-        "claim": "0.01mmからのラピッドトリガー設定が可能で、FPSゲームにおいて素早い反応が期待できる",
-        "category": "comparativeAdvantage",
+        "claim": "0.01mmから2.00mmまでのラピッドトリガー調整が可能",
+        "category": "performance",
         "confidence": "high",
         "supportingSourceIds": [
-          "src-1"
+          "src-amazon-official"
         ],
         "crossChecked": false,
-        "notes": "Amazonの商品説明から確認。"
+        "notes": "Amazon公式の製品仕様にて確認。競合の6000円台の磁気キーボードでも同様のスペックが実現されているため、現実的な仕様と判断。"
       },
       {
-        "claim": "Snap Keys (SOCD)に対応し、よりスムーズなキャラコンを可能にする",
-        "category": "comparativeAdvantage",
+        "claim": "有線接続時8000Hzのポーリングレートに対応",
+        "category": "performance",
         "confidence": "high",
         "supportingSourceIds": [
-          "src-1"
+          "src-amazon-official"
         ],
         "crossChecked": false,
-        "notes": "Amazonの商品説明から確認。"
+        "notes": "Amazon公式の製品仕様にて確認。昨今の高性能MCUを搭載したモデルであれば十分に実現可能なスペック。"
       }
     ],
-    "lastInvestigated": "2026-03-24",
+    "lastInvestigated": "2026-09-18",
+    "investigatedPrice": "￥6,490",
     "competitiveAnalysis": [
       {
-        "name": "ATTACK SHARK X68HE",
-        "asin": "B0DR2NR6G5",
-        "priceComparison": "対象商品は競合より約3,000円安く、ラピッドトリガーや8Kポーリングレートといった基本スペックは同等。コスパに優れる。",
+        "name": "DAREU EK60HE",
+        "asin": "B0FBWHYLL3",
+        "priceComparison": "対象商品とほぼ同価格帯（5,000円台後半）。どちらも60%サイズ、ラピッドトリガー対応、8000Hz、SOCD対応とスペックが非常に似通っている。",
         "featureComparison": [
-          "共通点：有線接続、8000Hzポーリングレート、ラピッドトリガー(0.01mm)、Webドライバー対応",
-          "相違点：対象商品は60%サイズ(テンキーレス)で英語配列、競合は65%サイズでアルミプレートや吸音フォームを採用"
+          "共通点：60%サイズ、英語配列、ラピッドトリガー(0.01mm調整可能)、8000Hzポーリングレート、SOCD対応、磁気スイッチ（ホットスワップ対応）",
+          "相違点：対象商品はサイドプリントのPBTキーキャップとAkko Glare Magnetic Switchを採用。DAREU EK60HEは独自のFIRE磁気軸を採用し、1年間メーカー保証を明記。"
         ],
         "differentiators": [
-          "MonsGeek FUN60 Pro SPの利点：圧倒的な低価格でラピッドトリガーやSOCD等の最先端機能を試せる点",
-          "ATTACK SHARK X68HEの利点：吸音材やアルミプレートを搭載し、打鍵感や静音性をより重視している点"
+          "対象商品の利点：サイドプリントのPBTキーキャップによる洗練されたルックスと、Akko製磁気スイッチの打鍵感を重視するならこちら。",
+          "DAREU EK60HEの利点：明確な1年間メーカー保証や、DAREU独自のD.H.A.アルゴリズムによる安定性を求めるならこちら。"
         ]
       },
       {
-        "name": "SteelSeries Apex Pro TKL (2023)",
-        "asin": "B0BJ1SSV1P",
-        "priceComparison": "対象商品は競合の約1/3以下の価格。コストパフォーマンスにおいて圧倒的に優位。",
+        "name": "ATTACK SHARK X82PROHE",
+        "asin": "B0F7X6L6VX",
+        "priceComparison": "対象商品と同価格帯（6,500円）。",
         "featureComparison": [
-          "共通点：ラピッドトリガー対応、磁気スイッチ採用",
-          "相違点：対象商品は英語配列のみで8Kポーリングレート対応。競合は日本語配列、アクチュエーションポイント最大4.0mm設定、有機ELディスプレイなどの付加機能がある"
+          "共通点：ラピッドトリガー(0.01mm精度)、8000Hzポーリングレート(有線時)。",
+          "相違点：対象商品は有線専用の60%サイズ。ATTACK SHARK X82PROHEはワイヤレス（2.4G/Bluetooth）にも対応したトライモード接続で、アルミ合金プレートや消音層（PORON）を内蔵。"
         ],
         "differentiators": [
-          "MonsGeek FUN60 Pro SPの利点：低価格でありながらポーリングレート8KやSOCD対応などスペックに隙がない点",
-          "SteelSeries Apex Pro TKL (2023)の利点：日本語配列や有機ELディスプレイによる操作性、ブランドの信頼性が高い点"
+          "対象商品の利点：有線専用かつ60%のコンパクトさを活かした、シンプルでストイックなFPS特化環境を構築したい場合。",
+          "ATTACK SHARK X82PROHEの利点：同価格帯でありながらワイヤレス接続やBluetooth接続も併用し、日常使いの利便性や打鍵音のHIFI感を重視する場合。"
         ]
       },
       {
-        "name": "Logicool G G515 RAPID TKL",
-        "asin": "B0FGCDSH1J",
-        "priceComparison": "対象商品は競合の約1/3の価格で提供されており、価格面で非常に魅力的。",
+        "name": "エレコム V custom VK600A",
+        "asin": "B0CHFF1J7W",
+        "priceComparison": "対象商品よりやや安い（5,000円台半ば）。",
         "featureComparison": [
-          "共通点：ラピッドトリガー対応、磁気式アナログスイッチ採用、SOCD対応",
-          "相違点：対象商品は標準的なプロファイル。競合はわずか22mmの薄型ロープロファイルキーを採用し日本語配列に対応"
+          "共通点：有線接続、磁気スイッチ搭載、ラピッドトリガー対応。",
+          "相違点：対象商品は60%英語配列、0.01mm精度のRT、8000Hz、SOCD等に対応。エレコム製品は65%日本語配列、最短0.1mm設定、日本メーカーのサポート体制がある。"
         ],
         "differentiators": [
-          "MonsGeek FUN60 Pro SPの利点：標準的なキーキャップでコストを極限まで抑えながら、8Kポーリングレートを実現している点",
-          "Logicool G G515 RAPID TKLの利点：ロープロファイルキーによる手首への負担軽減と、国内サポートの充実"
+          "対象商品の利点：SOCDや8000Hz、0.01mm精度など、より尖った最新のゲーミングスペックを求めるならこちら。",
+          "エレコム V custom VK600Aの利点：使い慣れた日本語配列（65%サイズ）と、国内有名メーカーの安心感や専用ソフト（EG Tool）の使い勝手を重視するならこちら。"
         ]
       },
       {
-        "name": "AIM1 瞬",
-        "asin": "B0DQPMWJ7M",
-        "priceComparison": "対象商品は競合より半額以下と、非常に安価。",
+        "name": "DAREU COOL60",
+        "asin": "B0FH6X4M3C",
+        "priceComparison": "対象商品と同価格帯（約7,000円）。",
         "featureComparison": [
-          "共通点：ラピッドトリガー0.01mm対応、8000Hzポーリングレート、英語配列",
-          "相違点：対象商品は60%サイズでSOCD等の機能あり。競合は75%サイズ"
+          "共通点：60%英語配列、ラピッドトリガー(0.01mm精度)、8000Hzポーリングレート、SOCD対応。",
+          "相違点：対象商品はブラックカラー。DAREU COOL60はホワイトベースのデザインで、磁気感応線キーキャップ（側面刻印）によるRGB効果をアピールしている。"
         ],
         "differentiators": [
-          "MonsGeek FUN60 Pro SPの利点：価格が大幅に安く、かつSnap Keys (SOCD)といった流行りの機能に対応している点",
-          "AIM1 瞬の利点：75%サイズでファンクションキー等の独立したキーを求める場合に適している点"
-        ]
-      },
-      {
-        "name": "SteelSeries Apex Pro Mini",
-        "asin": "B0B5X1PSVP",
-        "priceComparison": "対象商品は競合の約1/4近い価格。",
-        "featureComparison": [
-          "共通点：ラピッドトリガー、磁気スイッチ、コンパクトサイズ（60%）",
-          "相違点：対象商品は英語配列・有線8K対応。競合は日本語配列に対応し、専用ソフトGGによる設定が強力"
-        ],
-        "differentiators": [
-          "MonsGeek FUN60 Pro SPの利点：圧倒的な低価格でコンパクトなラピッドトリガー搭載機が手に入る点",
-          "SteelSeries Apex Pro Miniの利点：日本語配列であり、ゲームごとの最適設定を自動で適用できるなどソフトウェアの完成度が高い点"
-        ]
-      },
-      {
-        "name": "TURTLE BEACH Vulcan II TKL Pro",
-        "asin": "B0D7928XR4",
-        "priceComparison": "対象商品は競合の半額近い価格で提供されている。",
-        "featureComparison": [
-          "共通点：ラピッドトリガー搭載、SOCD(リアクタップ)対応、ホールエフェクトスイッチ",
-          "相違点：対象商品は英語配列・8K対応。競合は日本語配列でテンキーレスサイズ"
-        ],
-        "differentiators": [
-          "MonsGeek FUN60 Pro SPの利点：圧倒的なコストパフォーマンスと8Kポーリングレート対応",
-          "TURTLE BEACH Vulcan II TKL Proの利点：日本語配列で馴染みやすく、メーカー保証2年が付帯する点"
+          "対象商品の利点：ブラックカラーのデスク環境に合わせたい場合や、Akko製スイッチに魅力を感じる場合。",
+          "DAREU COOL60の利点：ホワイトベースのデスク環境を構築しており、より華やかなRGBライティングを楽しみたい場合。"
         ]
       }
     ],
     "recommendation": {
       "targetUsers": [
-        "とにかく安くラピッドトリガーや磁気スイッチを体験したいFPS・TPSプレイヤー",
-        "英語配列の60%サイズキーボードに抵抗がないゲーマー",
-        "SOCDや8Kポーリングレートなどの最新機能を試したい方"
+        "予算を抑えつつ、SOCD対応や8000Hzなど最新の競技FPS向け機能を網羅したキーボードを求めるFPSプレイヤー",
+        "マウスを大きく振るために、テンキーレスよりもさらに小さい60%サイズのキーボードを探している人"
       ],
       "pros": [
-        "約6,000円という破格のコストパフォーマンス",
-        "0.01mmから調整可能なラピッドトリガー対応",
-        "有線8000Hzポーリングレート対応",
-        "Snap Keys (SOCD)機能搭載で最新ゲームのキャラコンに最適"
+        "6,000円台という価格で、0.01mmのラピッドトリガーから8000Hzポーリングレート、SOCD機能まで、上位機種に匹敵するフルスペックを体験できる",
+        "PBTサイドプリントキーキャップを採用しており、安価ながらも耐久性が高く、RGBライティングが映えるスタイリッシュなデザイン"
       ],
       "cons": [
-        "英語配列のため、日本語入力に慣れが必要",
-        "キー数が少ない60%サイズのため、日常使いにはショートカットキーを覚える必要がある",
-        "有線接続のみ",
-        "60%レイアウトのため独立した矢印キーがない"
+        "60%サイズの英語配列であるため、日本語配列ユーザーは記号の入力やファンクションキー（F1〜F12）の入力操作に慣れが必要",
+        "有線専用であり、ワイヤレス接続によるデスク周りのケーブルレス化はできない"
       ],
-      "score": 93,
-      "scoreRationale": "[基本点: 70]\n[加点: +10] (0.01mmラピッドトリガー、8Kポーリングレート、SOCDなど最高峰のスペック)\n[加点: +15] (他社競合が1万円〜2万円以上する中で5980円という圧倒的なコストパフォーマンス)\n[減点: -2] (英語配列・60%サイズのため一般用途での使い勝手にやや癖がある点)\n[合計: 93]"
+      "score": 79,
+      "scoreRationale": "[基本点: 70]\n[加点: +10] (6,000円台でラピッドトリガー、8000Hz、SOCD対応という圧倒的なコストパフォーマンス)\n[加点: +2] (PBTサイドプリントキーキャップやAkko磁気スイッチ採用による高い実用性)\n[減点: -3] (新興メーカー/ノーブランド品における長期サポートや耐久性の不透明さ)\n[合計: 79]"
     },
     "technicalSpecs": {
-      "color": "ブラック",
-      "size": "60% Pro SP 有線",
-      "connection": "有線接続",
+      "layout": "60% 英語配列",
+      "switch": "Akko Glare Magnetic Switch (磁気スイッチ / ホットスワップ対応)",
       "pollingRate": "8000Hz (有線接続時)",
-      "switch": "Akko Glare Magnetic Switch (磁気スイッチ)",
-      "rapidTrigger": "0.01〜2.00mmまで調整可能",
-      "features": "Snap Keys (SOCD)対応、ダイナミックキーストローク（DKS）、モッドタップ、500HzリフレッシュレートARGB",
-      "keycap": "PBT サイドプリント シャインスルー キーキャップ",
-      "hotSwap": "対応",
-      "cpu": "Arm Cortex-M4",
+      "rapidTrigger": "0.01mm〜2.00mmで調整可能",
+      "processor": "Arm Cortex-M4 CPU",
       "dimensions": {
         "height": "28.5mm",
         "width": "295mm",
         "depth": "295mm"
-      }
+      },
+      "material": "プラスチックボディ / PBT サイドプリント シャインスルー キーキャップ",
+      "connectivity": [
+        "有線"
+      ],
+      "other": [
+        "Snap Keys (SOCD)機能搭載",
+        "ダイナミックキーストローク（DKS）対応",
+        "モッドタップ対応",
+        "500Hzリフレッシュレート対応ARGB",
+        "専用ソフトウェア/Webドライバー対応"
+      ]
     }
   }
 }
