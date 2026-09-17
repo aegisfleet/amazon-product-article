@@ -8107,6 +8107,12 @@ body.menu-open .nav-menu-floating-toggle {
 }
 
 /* 4. Compare Matrix Modal (比較表モーダル) */
+html.compare-modal-open,
+body.compare-modal-open {
+  overflow: hidden !important;
+  overscroll-behavior: none;
+}
+
 .compare-modal-backdrop {
   position: fixed;
   top: 0;
@@ -8129,6 +8135,7 @@ body.menu-open .nav-menu-floating-toggle {
   pointer-events: none;
   transition: opacity 0.3s ease;
   box-sizing: border-box;
+  overscroll-behavior: contain;
 }
 
 .compare-modal-backdrop.is-visible {
@@ -8189,11 +8196,14 @@ body.menu-open .nav-menu-floating-toggle {
   padding: 1.5rem;
   overflow-y: auto;
   flex: 1;
+  overscroll-behavior: contain;
 }
 
 .compare-table-wrapper {
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
+  overscroll-behavior-x: contain;
+  overscroll-behavior-y: auto;
 }
 
 .compare-table {
