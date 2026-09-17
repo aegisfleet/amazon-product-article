@@ -12,7 +12,9 @@
                 <li><a href="{{ `bargain/` | relURL }}" class="header-nav-link">あともう一品</a></li>
                 <li><a href="{{ `deals/` | relURL }}" class="header-nav-link">セール対象</a></li>
                 <li><a href="{{ `brand/` | relURL }}" class="header-nav-link">ブランド一覧</a></li>
-                <li><a href="{{ `low-scores/` | relURL }}" class="header-nav-link">低スコア迷品館</a></li>
+                {{- with .Site.Params.productRequestFormUrl -}}
+                <li><a href="{{ . }}" target="_blank" rel="noopener noreferrer" class="header-nav-link" aria-label="調査リクエスト（新しいタブで開く）">調査リクエスト</a></li>
+                {{- end -}}
             </ul>
         </nav>
 
@@ -38,7 +40,7 @@
             var links = document.querySelectorAll('.header-nav-link');
             links.forEach(function (link) {
                 var href = link.getAttribute('href');
-                if (!href) return;
+                if (!href || link.getAttribute('target') === '_blank' || href.indexOf('http') === 0) return;
                 var isHome = href === '/' || href === '' || href.endsWith('/index.html');
                 var isMatch = false;
                 if (isHome) {
