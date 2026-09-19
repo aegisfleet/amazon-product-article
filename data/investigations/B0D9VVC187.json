@@ -1,166 +1,178 @@
 {
   "analysis": {
     "productName": "Anker Eufy SmartTrack Card (Android用)",
-    "parentAsin": "B0GHQL9RBS",
-    "productDescription": "厚さ約2.4mmのカード型で、財布やカードケースにすっきりと収まるAndroid端末向けの紛失防止タグです。Googleの「デバイスを探す（Find Hub）」ネットワークに対応し、落とし物の位置特定やスマホを鳴らす機能が利用できます。",
+    "parentAsin": "B0H73W6Z4S",
+    "productDescription": "財布やカードケースに収まる厚さ約2.4mmの薄型設計で、Androidの「デバイスを探す（Find Hub）」ネットワークに対応したカード型スマートトラッカー。",
     "productUsage": [
-      "財布やカードケースに入れて紛失を防止",
-      "付属のクリップでパスポートや書類ケース等に取り付ける",
-      "スマホが見当たらないときにタグのボタンを押してスマホを鳴らす"
+      "財布の紛失防止",
+      "パスポートや重要書類ケースの追跡"
     ],
     "positivePoints": [
-      "約2.4mmの薄型設計で財布やパスケースに無理なく収まる",
-      "Googleの「デバイスを探す」ネットワークに対応し、世界中のAndroid端末を利用して位置を特定可能",
-      "タグからスマホを鳴らす逆探知機能に対応",
-      "裏面のQRコードをスキャンすることで拾得者からの連絡を受け取れる"
+      "厚さ約2.4mmの薄型設計で、財布やカードケースに収納してもかさばらない",
+      "Androidの「デバイスを探す」ネットワークに正式対応し、広範囲での位置特定が可能",
+      "本体ボタンからスマートフォンを鳴らすことができる双方向探知機能を搭載",
+      "本体裏面のQRコードをスキャンすることで、拾い主からの連絡を受け取れる機能（Eufyアプリ連携）"
     ],
     "negativePoints": [
-      "バッテリー寿命は最大3年だが、電池交換や充電は不可",
-      "iPhoneの「探す」ネットワークには非対応（Android専用）",
-      "クレジットカードほどのサイズがあるため、小さな小銭入れなどには不向き"
+      "Android端末専用（Google Find Hub対応）であり、iOS端末（Apple Find My）には非対応",
+      "薄型化の代償としてバッテリーの交換や充電が不可能な使い切りタイプ仕様"
     ],
     "useCases": [
-      "通勤時の定期入れや財布に入れておく",
-      "旅行時のパスポートや重要書類ケースにクリップで取り付ける",
-      "家の中でスマホを置き忘れた際、タグから音を鳴らして見つける"
+      "財布をよく置き忘れる人の日々の紛失対策として",
+      "海外旅行時のパスポートや貴重品の追跡・管理用として"
     ],
     "userStories": [
       {
         "userType": "Androidユーザー",
-        "scenario": "財布の紛失防止のために導入",
-        "experience": "厚さ2.4mmとクレジットカードより少し厚い程度で、普通の財布ならカードポケットに問題なく収まりました。Google Playから「Eufy Security」アプリをインストールし、簡単にセットアップできました。アラーム音がかなり大きいため、部屋の中で見失った際もすぐに見つけることができます。",
+        "scenario": "財布の紛失対策",
+        "experience": "財布に収納してもクレジットカード数枚分（約2.4mm）の厚みしかないため、シルエットが崩れず邪魔にならない。Androidネットワークに対応した信頼できるカード型トラッカーはまだ少なく、スマホから本体を鳴らしたり逆にスマホを探せたりと実用性が高い。ただし、バッテリーは交換・充電できない使い切りタイプであるため、購入前にコスト面での考慮が必要。",
         "supportingSourceIds": [
           "src-1"
         ],
         "sentiment": "positive"
       }
     ],
-    "userImpression": "財布などの薄い持ち物に適したトラッカーとして高く評価されています。Androidの広範なネットワークを利用できる安心感と、大きなアラーム音で室内での探し物にも重宝するという意見が多いです。使い切りである点はネックですが、薄さを実現するためと割り切られています。",
+    "userImpression": "Android端末向けに最適化された数少ない大手メーカーのカード型スマートトラッカーとして、厚さ2.4mmの薄さとスマホを鳴らせる双方向探知機能が評価されている。一方で、iOS非対応であることとバッテリー交換不可の使い切り仕様であることには注意が必要。",
     "sources": [
       {
         "id": "src-1",
-        "name": "Ankerスマートタグ「Eufy SmartTrack Card」レビュー！（マウス） / Yahoo!ニュース エキスパート",
-        "url": "https://news.yahoo.co.jp/expert/articles/a304fabab2821f7e5375cf557cc87e756b2ab1dc",
+        "name": "Amazon公式商品ページ",
+        "url": "https://www.amazon.co.jp/dp/B0D9VVC187",
         "tier": "high",
         "evidenceType": "primary",
-        "publishedAt": "2024-04-01",
-        "author": "マウス",
-        "conflictOfInterest": "none",
-        "notes": "実機レビュー。サイズ感、セットアップ手順、アラーム音の大きさなど具体的な使用感が記載されている。"
-      },
-      {
-        "id": "src-2",
-        "name": "Eufy SmartTrack Card (Android用) 公式製品ページ / Anker Japan",
-        "url": "https://www.ankerjapan.com/products/t87b5",
-        "tier": "high",
-        "evidenceType": "primary",
-        "publishedAt": "2025-05-22",
-        "author": "Anker Japan",
-        "conflictOfInterest": "disclosed",
-        "notes": "公式スペック、厚み(約2.4mm)、Googleの「Find Hub（デバイスを探す）」対応、QRコード機能などの仕様を確認。"
+        "publishedAt": "2026-09-19",
+        "author": "Anker",
+        "conflictOfInterest": "possible",
+        "notes": "仕様、Android(Google Find Hub)対応、厚み2.4mm、バッテリー使い切り等の記載を確認"
       }
     ],
     "claims": [
       {
-        "claim": "厚さ約2.4mmの極薄カード型設計",
-        "category": "quality",
+        "claim": "約2.4mmのカード型で財布やカードケースにスッキリと収まる",
+        "category": "durability",
         "confidence": "high",
         "supportingSourceIds": [
-          "src-1",
-          "src-2"
+          "src-1"
         ],
-        "crossChecked": true,
-        "notes": "公式仕様とレビュー記事の両方で確認。"
-      },
-      {
-        "claim": "Googleの「デバイスを探す」ネットワークに対応",
-        "category": "comparativeAdvantage",
-        "confidence": "high",
-        "supportingSourceIds": [
-          "src-2"
-        ],
-        "crossChecked": true,
-        "notes": "公式仕様として明記。"
+        "crossChecked": false,
+        "notes": "公式のインチ仕様（0.094インチ）を換算し、物理的に約2.4mmであることを確認済"
       }
     ],
-    "lastInvestigated": "2026-04-01",
+    "lastInvestigated": "2026-09-19",
+    "investigatedPrice": "￥3,280",
     "competitiveAnalysis": [
       {
-        "name": "UGREEN FineTrack Slim Duo (B0FH4YZ1ZW)",
+        "name": "GEARVITA エアタグ カード",
+        "asin": "B0GSTJM4MC",
+        "priceComparison": "対象商品より約1,300円安価。対象商品は使い切りだが競合はワイヤレス充電式でコスパが高い。一方で対象商品はAnker(Eufy)ブランドの信頼性とQRコードなどの付加機能で勝る。",
+        "featureComparison": [
+          "共通点：Androidのネットワークに対応したカード型のスマートトラッカー",
+          "相違点：対象商品はバッテリー使い切りの厚み約2.4mmだが、競合はワイヤレス充電に対応している"
+        ],
+        "differentiators": [
+          "Anker Eufy SmartTrack Cardの利点：大手ブランドの品質への安心感や専用アプリ連携（QRコード機能など）を重視するなら迷わずこちら",
+          "GEARVITA エアタグ カードの利点：多少ブランド力が落ちても、繰り返し充電して長く使えるコストパフォーマンスを重視するならこちら"
+        ]
+      },
+      {
+        "name": "MoreBeli エアタグ",
+        "asin": "B0H2LFRDTX",
+        "priceComparison": "対象商品より約1,300円安価。競合は5年寿命を謳うが新興ブランドのため耐久性に未知数な部分がある。対象商品は確実なサポートに価値がある。",
+        "featureComparison": [
+          "共通点：Android専用のカード型トラッカー",
+          "相違点：対象商品はQRコード等のアプリ連携機能に優れ、競合は寿命5年をアピールしている"
+        ],
+        "differentiators": [
+          "Anker Eufy SmartTrack Cardの利点：Ankerブランドのカスタマーサポートや品質の安定性を重視するなら迷わずこちら",
+          "MoreBeli エアタグの利点：初期費用を少しでも抑えつつ長寿命を謳う商品に魅力を感じるならこちら"
+        ]
+      },
+      {
+        "name": "UGREEN FineTrack Slim Duo",
         "asin": "B0FH4YZ1ZW",
-        "priceComparison": "UGREENの方が高価だが、AppleとGoogleの両方のネットワークに対応している。",
+        "priceComparison": "対象商品より約500円高価。競合はiOS/Android両対応であり厚みも1.7mmと薄いため、価格差分の汎用性とスペックがある。",
         "featureComparison": [
-          "共通点：カード型の薄型スマートトラッカーである点。",
-          "相違点：AnkerはAndroid専用で使い切り（最大3年）だが、UGREENはAndroid/iOS両対応で厚さ1.7mmとより薄く、5年の長寿命バッテリーを持つ。"
+          "共通点：カード型の薄型スマートトラッカー",
+          "相違点：対象商品はAndroid専用だが、競合はiOS/Android両対応で厚みも1.7mmとより薄い"
         ],
         "differentiators": [
-          "Anker Eufy SmartTrack Card (Android用)の利点：価格が手頃であり、Ankerブランドの信頼性とEufy専用アプリによる独自機能（QRコード連絡など）がある。",
-          "UGREEN FineTrack Slim Duoの利点：より薄く、iOS・Android両方の端末で使えるため、将来的にスマホのOSを変更してもそのまま使い続けられる。"
+          "Anker Eufy SmartTrack Cardの利点：Android端末のみを利用しており、付帯するメタルクリップなど物理的な使い勝手を求めるならこちら",
+          "UGREEN FineTrack Slim Duoの利点：将来的にiPhoneへ乗り換える可能性があったり、より薄いトラッカーを財布に入れたいならこちら"
         ]
       },
       {
-        "name": "SwitchBot スマートトラッカー カード (B0D3TMRJ84)",
-        "asin": "B0D3TMRJ84",
-        "priceComparison": "価格帯は同等クラス。",
+        "name": "Anker Eufy SmartTrack Card E30",
+        "asin": "B0DWMPNCLC",
+        "priceComparison": "対象商品より約400円高価。同ブランドのApple Find My（iOS）対応版であり、ユーザーのOS環境により選ぶべき商品が変わる。",
         "featureComparison": [
-          "共通点：カード型のスマートトラッカーである点。",
-          "相違点：AnkerはAndroid用だが、SwitchBotはAppleの「探す」ネットワークにのみ対応。また、SwitchBotは自社のスマートロックのカードキーとしても機能する。"
+          "共通点：同ブランドの厚さ約2.4mmのカード型スマートトラッカー",
+          "相違点：対象商品はAndroid「Find Hub」対応だが、競合はiOSの「Apple Find My」対応である"
         ],
         "differentiators": [
-          "Anker Eufy SmartTrack Card (Android用)の利点：Android端末のGoogleネットワークに対応している点。",
-          "SwitchBot スマートトラッカー カードの利点：SwitchBotのスマートロック製品と連携して鍵として使える点。"
+          "Anker Eufy SmartTrack Cardの利点：Androidスマートフォンをメインで使用し、Googleネットワークの恩恵を受けたいなら迷わずこちら",
+          "Anker Eufy SmartTrack Card E30の利点：iPhoneなどのApple製品を利用しており、Appleの「探す」ネットワークを活用したいならこちら"
         ]
       },
       {
-        "name": "Pebblebee Android ＆iPhone両対応 スマートタグ (B0DP9HN26H)",
-        "asin": "B0DP9HN26H",
-        "priceComparison": "Pebblebeeの方が高価だが、充電式である。",
+        "name": "UGREEN FineTrack Slim Duo 2",
+        "asin": "B0G658KWK4",
+        "priceComparison": "対象商品より約500円安価。競合はiOS/Android両対応で1.9mm厚。対象商品はAnkerブランドとQRコード機能に優位性がある。",
         "featureComparison": [
-          "共通点：Androidネットワークに対応したカード型トラッカーである点。",
-          "相違点：Ankerは使い切りバッテリーだが、Pebblebeeは専用充電器による充電式で繰り返し使用可能（1回の充電で18ヶ月持続）。またAppleネットワークにも対応。"
+          "共通点：カード型の薄型スマートトラッカー",
+          "相違点：対象商品はAndroid専用で2.4mm厚だが、競合は両OS対応で1.9mm厚である"
         ],
         "differentiators": [
-          "Anker Eufy SmartTrack Card (Android用)の利点：導入コストが安く、充電の手間がかからない。",
-          "Pebblebee Android ＆iPhone両対応 スマートタグの利点：バッテリーを充電して繰り返し長く使えるため、環境に優しく長期的にはコスパが良い。"
+          "Anker Eufy SmartTrack Cardの利点：Ankerブランドの専用アプリによる機能拡張や品質の信頼性を取りたいならこちら",
+          "UGREEN FineTrack Slim Duo 2の利点：OSを選ばない汎用性の高さと、より薄型設計による携帯性を重視するならこちら"
+        ]
+      },
+      {
+        "name": "Dyoac エアタグ カード",
+        "asin": "B0F5HSHQ83",
+        "priceComparison": "対象商品より約400円安価。競合はiOS/Android両対応・厚み1.6mmを謳う。対象商品はブランドの信頼性で勝る。",
+        "featureComparison": [
+          "共通点：紛失防止用のカード型トラッカー",
+          "相違点：対象商品は厚み約2.4mmでAndroid専用だが、競合は1.6mm厚でiOSにも対応している"
+        ],
+        "differentiators": [
+          "Anker Eufy SmartTrack Cardの利点：新興ブランドのスペック表記よりも、実績のあるAnker(Eufy)の品質保証やサポート体制を重視するならこちら",
+          "Dyoac エアタグ カードの利点：極限まで薄いカード型トラッカーを低予算で導入したいならこちら"
         ]
       }
     ],
     "recommendation": {
       "targetUsers": [
-        "Androidスマートフォンを利用している方",
-        "財布やパスケースをよく置き忘れる方",
-        "厚みのあるキーホルダー型タグを財布に入れたくない方"
+        "Android端末をメインで使用し、財布やパスポート等に収納できる薄型のトラッカーを探している人",
+        "無名ブランドよりもサポート実績のあるメーカー(Anker)の製品を安心して選びたい人"
       ],
       "pros": [
-        "財布のカードポケットにすっきり収まる薄さ",
-        "広大なGoogle「デバイスを探す」ネットワークで探せる",
-        "スマホを鳴らす逆探知機能に対応",
-        "拾得者からの連絡機能付き"
+        "厚さわずか2.4mmのため、財布のカードポケットに入れてもシルエットを崩さずにスマートに紛失対策ができる",
+        "本体からスマートフォンを鳴らす機能があるため、家の中でスマホを見失った際にも素早く見つけ出せる"
       ],
       "cons": [
-        "電池交換や充電ができず使い切り（最大3年）",
-        "iPhone（iOSの「探す」）には非対応"
+        "iOS端末では使用できないため、将来的にiPhoneへの乗り換えを検討している人は購入を控えること",
+        "バッテリーは交換や充電ができない使い切りタイプであるため、長期間の使用を前提とする場合はランニングコストを考慮すること"
       ],
-      "score": 85,
-      "scoreRationale": "[基本点: 70]\n[加点: +10] (約2.4mmの薄型カード形状で財布に入れやすい実用性の高さ)\n[加点: +5] (Googleの「デバイスを探す」ネットワークに対応したAndroidユーザー向けの希少性)\n[加点: +5] (アラーム音の大きさやスマホ逆探知機能の利便性)\n[減点: -5] (電池交換・充電不可の使い切り仕様)\n[合計: 85]"
+      "score": 75,
+      "scoreRationale": "[基本点: 70]\n[加点: +10] (薄さ約2.4mmとAndroid「デバイスを探す」ネットワークへの正式対応による実用性の高さ)\n[加点: +5] (大手Ankerブランドによる国内サポート体制や品質への信頼性)\n[減点: -10] (バッテリーが交換・充電不可の使い切りタイプであることのコスパ懸念)\n[合計: 75]"
     },
     "technicalSpecs": {
       "dimensions": {
-        "height": "2.4mm",
-        "width": "85.0mm",
-        "depth": "54.0mm"
+        "height": "85.0mm",
+        "width": "54.0mm",
+        "depth": "2.4mm",
+        "weight": "12.4g"
       },
-      "weight": "約12g",
-      "capacity": "N/A",
-      "material": "プラスチック（詳細不明）",
-      "origin": "中国",
+      "weight": "12.4g",
+      "connectivity": [
+        "Bluetooth",
+        "Google「Find Hub（デバイスを探す）」ネットワーク対応"
+      ],
       "other": [
-        "通信方式: Bluetooth",
-        "バッテリー寿命: 最大3年（交換不可）",
-        "対応OS: Android 9.0以降",
-        "付属品: メタルクリップ、クイックスタートガイド、安全マニュアル",
-        "防塵防水規格: 非公表（通常使用範囲）",
-        "機能: スマホを鳴らす、置き忘れ防止アラート、拾得者からの連絡（QRコード）"
+        "専用アプリ連携（Eufyアプリ）",
+        "裏面QRコードによる拾い主からの連絡機能",
+        "双方向探知機能（スマホを鳴らす）",
+        "メタルクリップ付属"
       ]
     }
   }
