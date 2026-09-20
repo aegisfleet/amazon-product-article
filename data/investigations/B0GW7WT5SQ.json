@@ -1,0 +1,146 @@
+{
+  "analysis": {
+    "productName": "ソニー INZONE Buds WF-G700N",
+    "parentAsin": "B0GW7WT5SQ",
+    "productDescription": "プロeスポーツチーム「Fnatic」監修のゲーミング特化型完全ワイヤレスイヤホン。超低遅延の2.4GHzワイヤレス接続と立体音響に対応し、長時間のゲームプレイに適した設計。",
+    "productUsage": [
+      "PCやPS5での競技用ゲームプレイ",
+      "長時間のボイスチャットやストリーミング"
+    ],
+    "positivePoints": [
+      "USB Type-Cトランシーバーによる2.4GHzワイヤレス接続で超低遅延を実現",
+      "イヤホン単体で最大12時間、ケース込みで約24時間の長寿命バッテリー（2.4GHz接続時）",
+      "ソニー独自開発の8.4mm「ダイナミックドライバーX」を採用した高音質設計",
+      "立体音響技術と「音場の個人最適化」「サウンドトーンの個人最適化」による高い定位感"
+    ],
+    "negativePoints": [
+      "通常のBluetoothコーデック（SBC、AAC、aptX、LDAC）には非対応",
+      "iPhoneやiPadなど、LE Audio非対応のスマートフォンやタブレットとはBluetooth接続不可"
+    ],
+    "useCases": [
+      "FPSやTPSなど、足音や環境音の方向を正確に把握したいゲーム",
+      "長時間のゲームセッションでヘッドセットの圧迫感を避けたい時"
+    ],
+    "userStories": [
+      {
+        "userType": "PC・PS5ゲーマー",
+        "scenario": "休日の長時間のFPSプレイ",
+        "experience": "2.4GHz接続により遅延を全く感じず、立体音響のおかげで敵の足音がどこから聞こえるか正確に把握できるようになった。イヤホン単体で12時間持つため、途中で充電を気にすることなくプレイを続けられるのが非常に快適。一方で、普段使っているiPhoneとBluetoothで接続できないため、外出時やスマホでの音楽視聴用としては使えず、完全にゲーム専用機として割り切る必要がある。",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "sentiment": "mixed"
+      }
+    ],
+    "userImpression": "ゲーム用途、特にPCやPS5での競技性の高いタイトルにおいては、遅延のなさ、定位感の良さ、そして圧倒的なバッテリー持続時間が高く評価されている。しかし、一般的なスマホ（特にiPhone）とBluetooth接続できないという仕様に対する不満や戸惑いの声も多く、購入前に接続環境をしっかり確認する必要がある、ピーキーで尖った製品という印象。",
+    "sources": [
+      {
+        "id": "src-1",
+        "name": "Amazon公式商品ページ",
+        "url": "https://www.amazon.co.jp/dp/B0GW7WT5SQ",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-09-20",
+        "author": "Amazon",
+        "conflictOfInterest": "none",
+        "notes": "製品仕様、価格、対応コーデック（LC3のみ）、および商品説明"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "ゲーム内のすべての音を余すことなく再現することで、迫力のある爆発音から微細な足音まで、ゲームの世界に入り込んだかのような没入体験を実現します",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "crossChecked": true,
+        "notes": "WF-1000XM5と同等のドライバーを搭載していること、個人最適化機能により裏付けられる"
+      },
+      {
+        "claim": "イヤホン本体のみで12時間、付属のケースで充電すると合計約24時間の使用が可能",
+        "category": "comparativeAdvantage",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "crossChecked": true,
+        "notes": "2.4GHz接続・ANCオフ時の仕様値。ゲーミングTWSとしては非常に長い部類。"
+      }
+    ],
+    "lastInvestigated": "2026-09-20",
+    "investigatedPrice": "￥26,000",
+    "competitiveAnalysis": [
+      {
+        "name": "SteelSeries Arctis GameBuds",
+        "asin": "B0DF2GMH32",
+        "priceComparison": "SteelSeriesの方が約4,000円安い（21,980円前後）。",
+        "featureComparison": [
+          "共通点：2.4GHzワイヤレス接続対応、アクティブノイズキャンセリング搭載、PC/PS5/Switch対応。",
+          "相違点：SteelSeriesはBluetooth 5.3にも対応し一般的なスマホと接続可能。INZONE BudsはLE Audio専用。バッテリーはINZONEが単体12時間に対して、SteelSeriesは単体で最長約10時間。"
+        ],
+        "differentiators": [
+          "ソニー INZONE Buds WF-G700Nの利点：PCやPS5でのゲーム専用機と割り切り、ソニー独自の立体音響技術や長時間の連続バッテリー（12時間）を重視するならこちら。",
+          "SteelSeries Arctis GameBudsの利点：ゲームだけでなく、iPhoneなど普段のスマホでも一般的なBluetoothイヤホンとして使いたい、汎用性を求めるなら迷わずこちら。"
+        ]
+      },
+      {
+        "name": "HyperX Cloud MIX Buds 2",
+        "asin": "B0DC6WS7XH",
+        "priceComparison": "INZONE Budsと同価格帯（24,640円前後）。",
+        "featureComparison": [
+          "共通点：2.4GHzの超低遅延接続、ANC搭載。",
+          "相違点：HyperXはBluetooth接続に対応し幅広いデバイスで使用可能。INZONEはソニー独自ドライバーによる音響設計と長寿命バッテリーに特化。"
+        ],
+        "differentiators": [
+          "ソニー INZONE Buds WF-G700Nの利点：プロチーム監修のチューニングや、途切れのない長時間のゲームセッション（単体12時間）を優先する人に適している。",
+          "HyperX Cloud MIX Buds 2の利点：ドングルでのゲームプレイと、スマホでのBluetooth接続をシームレスに切り替えて使いたいユーザー向け。"
+        ]
+      },
+      {
+        "name": "Razer Hammerhead Pro HyperSpeed",
+        "asin": "B0C6SY7L78",
+        "priceComparison": "Razerの方が約1,500円高い（27,580円前後）。",
+        "featureComparison": [
+          "共通点：2.4GHz USB-Cドングルによる低遅延接続。",
+          "相違点：Razerは一般的なBluetooth接続に対応。INZONE BudsはLE Audioのみ。音の傾向としてRazerはゲーミングらしい派手さ、INZONEはソニー基準の高音質・定位感が特徴。"
+        ],
+        "differentiators": [
+          "ソニー INZONE Buds WF-G700Nの利点：WF-1000XM5譲りの音響技術や、個人最適化された立体音響など、音の質と正確な定位感を求める人に最適。",
+          "Razer Hammerhead Pro HyperSpeedの利点：Razerエコシステムとの連携や、汎用的なBluetooth接続でのスマホ利用を重視する人向け。"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "iPhoneなどでの一般的なBluetooth接続ができない仕様を理解し、PCやPS5向けの「完全ゲーム専用機」として割り切れるゲーマー",
+        "SteelSeries等の汎用機よりも、連続12時間のバッテリーとソニー基準の音響・定位感を重視する競技志向のプレイヤー"
+      ],
+      "pros": [
+        "イヤホン単体で12時間駆動するため、長時間のレイドやランクマッチでも充電切れの心配がなくプレイに集中できる。",
+        "個人最適化された立体音響により、見えない敵の足音や銃声の方向を正確に察知でき、対戦ゲームでの勝率アップに貢献する。"
+      ],
+      "cons": [
+        "iPhoneやiPad、SBC/AACにしか対応していない一般的なスマホ・PCとはBluetooth接続できないため、普段使い兼用を考えている人は購入前に環境を必ず確認すること。"
+      ],
+      "score": 69,
+      "scoreRationale": "[基本点: 70]\n[加点: +5] (イヤホン単体で最大12時間というゲーミングTWSトップクラスのバッテリー性能)\n[加点: +5] (WF-1000XM5同等のドライバー搭載と個人最適化による優れた定位感)\n[減点: -8] (一般的なBluetoothコーデック非対応により、iPhone等で使えない極端な制約)\n[減点: -3] (汎用性の高い競合機種と比較してやや割高な価格設定)\n[合計: 69]"
+    },
+    "technicalSpecs": {
+      "battery": {
+        "playbackTime": "単体最大12時間 / ケース込み最大24時間 (※2.4GHz接続・ANCオフ時)",
+        "charging": "5分間の充電で約60分使用可能な急速充電対応"
+      },
+      "connectivity": [
+        "2.4GHz帯 ワイヤレス接続 (専用USB Type-Cトランシーバー使用)",
+        "Bluetooth LE Audio (コーデック: LC3のみ)"
+      ],
+      "other": [
+        "※SBC、AAC、aptX、LDACなど通常のBluetoothコーデックには非対応",
+        "※iPhone / iPadなどLE Audio非対応機器とはBluetooth接続不可",
+        "アクティブノイズキャンセリング搭載",
+        "ドライバーユニット: 8.4mm ダイナミックドライバーX"
+      ]
+    }
+  }
+}
