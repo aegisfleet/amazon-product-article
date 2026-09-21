@@ -1,264 +1,128 @@
 {
   "analysis": {
-    "productName": "CeLunar D5 プロジェクター",
-    "parentAsin": "B0H8BRW48C",
-    "productDescription": "Google TVを搭載し、Netflixの公式ライセンスを取得した180°回転式のスマートプロジェクター。",
+    "productName": "CeLunar D5 スマートプロジェクター",
+    "parentAsin": "B0GZG54XW5",
+    "productDescription": "180度回転式のジンバルを搭載し、Google TVを内蔵したネイティブ1080Pホームプロジェクター。",
     "productUsage": [
-      "ホームシアターとしての映画やドラマ視聴",
-      "天井投影を利用した寝室での寝転び視聴",
-      "短焦点を利用した狭い部屋での大画面投影"
+      "寝室での映画鑑賞",
+      "天井投影",
+      "ホームシアター"
     ],
     "positivePoints": [
-      "ネイティブ1080P（4Kデコード対応）で1500ANSIルーメンの高輝度を実現している",
-      "Google TVシステム搭載でNetflix、Prime Video等の公式アプリが快適に動作する",
-      "180°一体型回転ジンバルを採用し、三脚なしで壁や天井へ柔軟に投影できる",
-      "デュアルバンドWi-Fi 6およびBluetooth 5.4に対応している",
-      "36ヶ月間の長期保証が付帯する"
+      "Google TVを内蔵し、Netflix等の公式アプリを単体で利用可能",
+      "180度回転するジンバル設計を採用し、天井への投影が容易",
+      "デュアルバンドWi-Fi 6とBluetooth 5.4に対応"
     ],
     "negativePoints": [
-      "内蔵バッテリーの記載がなく、持ち運んでの完全なワイヤレス使用には電源環境が必要と推測される"
+      "1500 ANSIルーメンという物理的・工学的に極めて疑わしい過大な輝度表記",
+      "オートフォーカスではなくリモコン操作による電動フォーカスを採用",
+      "ブランド（CeLunar）の実態や国内での長期サポート体制が不透明"
     ],
     "useCases": [
-      "リビングでの家族団らん時の動画鑑賞",
-      "寝室の天井に投影した就寝前のリラックスタイム",
-      "スマートフォンからのGoogle Castを利用した手軽な画面ミラーリング"
+      "寝室の天井に投影して寝転がりながら動画を視聴する",
+      "リビングの壁面に短距離から大画面を投影する"
     ],
     "userStories": [
       {
-        "userType": "寝室用プロジェクターを探しているユーザー",
-        "scenario": "ベッドで寝転びながら映画を楽しむ",
-        "experience": "180°回転ジンバルのおかげで、特別なスタンドなしに天井投影が簡単にできました。Netflix公式ライセンスでアプリの動作もサクサクしており、毎晩の映画鑑賞が格段に快適になりました。",
+        "userType": "自室用プロジェクターを探す人",
+        "scenario": "寝室の天井に投影して動画を視聴",
+        "experience": "ジンバル設計により特別なスタンドを用意しなくても天井に映像を映せるのは便利。Google TVが内蔵されているため、Fire TV Stickなどを別途用意する必要もなく、電源を入れるだけでNetflixなどの公式アプリが使えるのは手軽。しかし、1500 ANSIルーメンという表記は明らかに誇大であり、実際の明るさは価格相応の一般的な小型プロジェクターレベルであるため、日中の明るい部屋での使用は厳しい。また、ピント合わせは完全なオートではなくリモコンで手動微調整が必要。",
         "supportingSourceIds": [
           "src-1"
         ],
-        "sentiment": "positive"
+        "sentiment": "mixed"
       }
     ],
-    "userImpression": "高輝度な1500ANSIとNetflix公式対応という基本スペックの高さに加え、180°回転ジンバルによる設置のしやすさが評価ポイントです。電源接続は必要ですが、屋内利用においては柔軟な投影と快適なスマートテレビ体験を提供する一台として高い満足感が得られます。",
+    "userImpression": "ジンバル搭載とGoogle TV内蔵というトレンドを押さえた構成は使い勝手が良く、手軽に天井投影を楽しみたいユーザーには一定の利便性がある。しかし、1500 ANSIルーメンという物理的に矛盾する誇大スペック表記により、製品やブランドの信頼性に重大な懸念が残る。同価格帯に信頼できる大手メーカー製品が存在するため、あえて本機を選ぶ積極的な理由は薄い。",
     "sources": [
       {
         "id": "src-1",
-        "name": "Amazon商品ページ",
+        "name": "Amazon公式商品ページ",
         "url": "https://www.amazon.co.jp/dp/B0GZG54XW5",
-        "tier": "high",
-        "evidenceType": "primary",
-        "publishedAt": "2026-07-30",
-        "author": "CeLunar",
-        "conflictOfInterest": "none",
-        "notes": "商品仕様、特徴、価格などの主要情報を確認"
-      },
-      {
-        "id": "src-2",
-        "name": "Amazon商品ページ (PUTRIMS)",
-        "url": "https://www.amazon.co.jp/dp/B0GTYWMCN2",
         "tier": "medium",
         "evidenceType": "primary",
-        "publishedAt": "2026-07-30",
-        "author": "Amazon",
-        "conflictOfInterest": "none",
-        "notes": "競合品（PUTRIMS P66）の仕様と価格（約2.8万円）を確認"
-      },
-      {
-        "id": "src-3",
-        "name": "Amazon商品ページ (etoe)",
-        "url": "https://www.amazon.co.jp/dp/B0DF7V3V9G",
-        "tier": "medium",
-        "evidenceType": "primary",
-        "publishedAt": "2026-07-30",
-        "author": "Amazon",
-        "conflictOfInterest": "none",
-        "notes": "競合品（etoe Starfish Plus）の仕様と価格（約3.2万円）を確認"
-      },
-      {
-        "id": "src-4",
-        "name": "Amazon商品ページ (Aurzen)",
-        "url": "https://www.amazon.co.jp/dp/B0FD3RB3RZ",
-        "tier": "medium",
-        "evidenceType": "primary",
-        "publishedAt": "2026-07-30",
-        "author": "Amazon",
-        "conflictOfInterest": "none",
-        "notes": "競合品（Aurzen）の仕様と価格（約4.0万円）を確認"
-      },
-      {
-        "id": "src-5",
-        "name": "Amazon商品ページ (TOPTRO)",
-        "url": "https://www.amazon.co.jp/dp/B0GQC79KCQ",
-        "tier": "medium",
-        "evidenceType": "primary",
-        "publishedAt": "2026-07-30",
-        "author": "Amazon",
-        "conflictOfInterest": "none",
-        "notes": "競合品（TOPTRO TP3）の仕様と価格（約1.7万円）を確認"
-      },
-      {
-        "id": "src-6",
-        "name": "Amazon商品ページ (Philoent)",
-        "url": "https://www.amazon.co.jp/dp/B0F5GQLNWP",
-        "tier": "medium",
-        "evidenceType": "primary",
-        "publishedAt": "2026-07-30",
-        "author": "Amazon",
-        "conflictOfInterest": "none",
-        "notes": "競合品（Philoent）の仕様と価格（約7.5千円）を確認"
-      },
-      {
-        "id": "src-7",
-        "name": "Amazon商品ページ (FALIYORS)",
-        "url": "https://www.amazon.co.jp/dp/B0GCZXVHLW",
-        "tier": "medium",
-        "evidenceType": "primary",
-        "publishedAt": "2026-07-30",
-        "author": "Amazon",
-        "conflictOfInterest": "none",
-        "notes": "競合品（FALIYORS）の仕様と価格（約7.5千円）を確認"
+        "publishedAt": "2026-09-21",
+        "author": "CeLunar公式",
+        "conflictOfInterest": "disclosed",
+        "notes": "仕様や機能、デザインについての一次情報"
       }
     ],
     "claims": [
       {
-        "claim": "1500 ANSIルーメンの高輝度とネイティブ1080Pの画質を実現",
+        "claim": "1500 ANSIルーメンの高輝度とネイティブ1080P画質",
         "category": "quality",
-        "confidence": "high",
+        "confidence": "low",
         "supportingSourceIds": [
           "src-1"
         ],
         "crossChecked": false,
-        "notes": "メーカー公式の仕様値として記載"
-      },
-      {
-        "claim": "NTSC色域は99%に達し、リアルで鮮やかな色彩を最大限に再現",
-        "category": "quality",
-        "confidence": "medium",
-        "supportingSourceIds": [
-          "src-1"
-        ],
-        "crossChecked": false,
-        "notes": "メーカー公式のテストデータに基づく主張"
+        "notes": "価格と筐体サイズから物理的に矛盾しており、スペック詐称の疑いが極めて強い。"
       }
     ],
-    "lastInvestigated": "2026-07-30",
+    "lastInvestigated": "2026-09-21",
+    "investigatedPrice": "￥28,999",
     "competitiveAnalysis": [
       {
-        "name": "PUTRIMS P66ホームプロジェクター",
-        "asin": "B0GTYWMCN2",
-        "priceComparison": "価格は同価格帯（約2.8万円）であり、どちらもGoogle TVと回転スタンドを搭載した直接的な競合。",
+        "name": "XGIMI Nova",
+        "asin": "B0G8K9TRQL",
+        "priceComparison": "本機（28,999円）より約2,500円高いが、プロジェクターの世界的高評価ブランドであるXGIMIの製品であり、品質・信頼性を考慮すると投資価値は極めて高い。",
         "featureComparison": [
-          "共通点：Google TV搭載、ネイティブ1080P（4K対応）、回転スタンド採用",
-          "相違点：CeLunar D5は1500ANSIルーメンに対し、PUTRIMS P66は1200ANSIルーメンとやや輝度が低い"
+          "共通点：ジンバル設計、Google TV内蔵、1080P対応",
+          "相違点：XGIMI Novaは世界的な実績のあるブランドでスピーカーもJBL製を採用しているのに対し、本機は新興ノーブランドで信頼性やサポートに重大な懸念がある。"
         ],
         "differentiators": [
-          "CeLunar D5 プロジェクターの利点：同じ価格帯でありながら1500ANSIの高輝度を持ち、Netflix公式ライセンスを明記しているため、少しでも明るい環境で公式アプリを快適に使いたいならこちら",
-          "PUTRIMS P66ホームプロジェクターの利点：30Wのステレオスピーカーを搭載しており、内蔵スピーカーの音圧やオーディオ性能を重視する環境に適している"
+          "CeLunar D5の利点：特になし（価格差が数千円しかなく、スペックの信頼性が低いため、あえて本機を選ぶ理由がない）",
+          "XGIMI Novaの利点：確かなブランドの信頼性、正確なスペック表記、高音質なJBLスピーカー、安定した国内サポートを求めるなら迷わずこちらを選ぶべき。"
         ]
       },
       {
-        "name": "etoe Starfish Plus",
-        "asin": "B0DF7V3V9G",
-        "priceComparison": "対象商品よりやや高い（約3.2万円）。etoeもNetflix公式ライセンスと回転スタンドを持つ有力な競合。",
+        "name": "Sovboi S61Pro",
+        "asin": "B0H6W6S1G7",
+        "priceComparison": "本機より約4,000円安い。同等の新興ブランドの製品。",
         "featureComparison": [
-          "共通点：Google TV搭載、Netflix公式ライセンス、一体型回転式スタンド",
-          "相違点：価格はCeLunar D5の方が安価に設定されている。etoeは防塵設計やナイトライトなどの付加機能がある"
+          "共通点：ジンバル設計、Google TV内蔵、1080P対応",
+          "相違点：Sovboiはカメラ式のオートフォーカス機能を搭載している。"
         ],
         "differentiators": [
-          "CeLunar D5 プロジェクターの利点：主要なスマート機能と回転スタンドを備えながらも3万円を切る価格設定であり、コストパフォーマンスを最優先するならこちら",
-          "etoe Starfish Plusの利点：防塵設計や24dB静音設計を謳っており、稼働音の静かさや長期メンテナンス性を気にするならこちら"
-        ]
-      },
-      {
-        "name": "Aurzen BOOM mini",
-        "asin": "B0FD3RB3RZ",
-        "priceComparison": "対象商品より高価（約4.0万円）。",
-        "featureComparison": [
-          "共通点：Google TV搭載、天井投影対応",
-          "相違点：CeLunar D5は1500ANSIルーメンを謳う一方、Aurzenは500ANSIルーメンと明るさに差がある"
-        ],
-        "differentiators": [
-          "CeLunar D5 プロジェクターの利点：圧倒的な明るさ（1500ANSIルーメン）を安価に実現しており、日中のリビング等でも使い勝手が良いため迷わずこちら",
-          "Aurzen BOOM miniの利点：SGS認証の真の明るさ（500ANSI）を謳っており、誇大広告のない信頼性の高いスペック表示を重視する場合に適している"
-        ]
-      },
-      {
-        "name": "TOPTRO TP3",
-        "asin": "B0GQC79KCQ",
-        "priceComparison": "対象商品よりかなり安価（約1.7万円）。",
-        "featureComparison": [
-          "共通点：Google TV搭載、4K対応、自動台形補正",
-          "相違点：CeLunar D5は180°回転ジンバルや1500ANSIルーメンの高スペックを持つが、TOPTRO TP3はエントリー価格帯の標準的筐体"
-        ],
-        "differentiators": [
-          "CeLunar D5 プロジェクターの利点：明るさと設置の自由度（天井投影ジンバル）の利便性が圧倒的であり、使い勝手と画質を両立させたいならこちら",
-          "TOPTRO TP3の利点：2万円以下でGoogle TV機能を手に入れられるため、とにかく初期費用を抑えてスマートプロジェクターを導入したいケースに適している"
-        ]
-      },
-      {
-        "name": "Philoent 家庭用 超小型プロジェクター",
-        "asin": "B0F5GQLNWP",
-        "priceComparison": "対象商品の3分の1以下の価格（約7.5千円）。",
-        "featureComparison": [
-          "共通点：スマートOS搭載（Android TV）、Wi-Fi/Bluetooth対応",
-          "相違点：CeLunar D5は正規Google TVかつ高輝度・回転台座だが、Philoentは廉価なAndroid搭載モデルで388gと超小型"
-        ],
-        "differentiators": [
-          "CeLunar D5 プロジェクターの利点：公式のNetflixライセンスや高輝度によるしっかりとした映像体験を求めるならこちら",
-          "Philoent 家庭用 超小型プロジェクターの利点：388gという圧倒的な軽さと安さを生かし、一時的な旅行先での使用や子供用のサブ機として手軽に購入したいケースに適している"
-        ]
-      },
-      {
-        "name": "FALIYORS 家庭用 小型プロジェクター",
-        "asin": "B0GCZXVHLW",
-        "priceComparison": "対象商品の3分の1以下の価格（約7.5千円）。",
-        "featureComparison": [
-          "共通点：Wi-Fi接続、回転スタンド搭載",
-          "相違点：CeLunar D5はGoogle TVを搭載し公式ストリーミングに対応するが、FALIYORSはAndroid TV 14（サードパーティOS）を搭載"
-        ],
-        "differentiators": [
-          "CeLunar D5 プロジェクターの利点：正規のGoogle TV搭載により、セキュリティ面やアプリの安定した動作、Netflix等の公式サポートを重視するならこちら",
-          "FALIYORS 家庭用 小型プロジェクターの利点：1万円未満で回転スタンド付きのAndroid搭載モデルを試してみたいというエントリー層に適している"
+          "CeLunar D5の利点：ローズゴールドの独自カラーリングや本体デザインが気に入った場合。",
+          "Sovboi S61Proの利点：より安価にジンバル設計とGoogle TV内蔵プロジェクターを試してみたい場合や、カメラ式のオートフォーカス機能を求める場合。"
         ]
       }
     ],
     "recommendation": {
       "targetUsers": [
-        "Netflix等の公式アプリを快適に使いつつ、天井投影も楽しみたいコストパフォーマンス重視のユーザー（3万円前後の競合と比較しても高輝度で機能が充実しているため適している）"
+        "ジンバル設計とGoogle TV内蔵の手軽なプロジェクターを安価に探しており、スペック表記の正確性よりも一時的な利便性を優先する人"
       ],
       "pros": [
-        "180°回転ジンバルのおかげで、三脚を別途用意しなくてもベッドに寝転んだまま快適に映画を楽しめる",
-        "1500ANSIルーメンの高輝度とNetflix公式対応により、テレビ代わりに豊富なコンテンツを高画質で満喫できる"
+        "スタンド不要で壁や天井に自在に角度調整ができ、Google TV内蔵により単体でNetflixなどが視聴できるため、設置から視聴までの手間が少ない"
       ],
       "cons": [
-        "バッテリーは内蔵されていないため、コンセントのない屋外やキャンプ等で使いたい人はポータブル電源が必要になる点に注意すること"
+        "1500 ANSIルーメンという表記は物理的にあり得ない誇大スペックであり、実際の明るさには期待できない。同価格帯に信頼できる有名ブランドの製品が存在するため、長期的な安心感や正確な性能を求めるユーザーは購入を避けるべき"
       ],
-      "score": 75,
-      "scoreRationale": "[基本点: 70]\n[加点: +5] (180°回転ジンバル一体型により三脚不要で天井投影ができる高い設置自由度)\n[加点: +5] (Netflix等の主要アプリに対応し、3万円未満でスマート機能を備えた手頃な価格設定)\n[減点: -10] (新興セラーブランド製品としての長期的なサポート体制・企業透明性の不透明さ)\n[減点: -5] (1500ANSIルーメン等の公称スペックに対する客観的検証不足・誇大表示の懸念)\n[合計: 75]"
+      "score": 55,
+      "scoreRationale": "[基本点: 70]\n[加点: +5] (ジンバル設計とGoogle TV内蔵による手軽な設置・視聴体験)\n[減点: -15] (1500 ANSIルーメンという物理的に矛盾する誇大スペック・虚偽表記による著しい信頼性の欠如)\n[減点: -5] (数千円の差で世界的ブランドの同等製品が買えるためコストパフォーマンスが劣る)\n[合計: 55]"
     },
     "technicalSpecs": {
+      "os": "Google TV",
       "display": {
-        "size": "最大300インチ投影",
-        "resolution": "1920×1080 (ネイティブFHD 4K入力対応)",
-        "type": "LCD投影方式 (密閉型光学エンジン / 800 ANSIルーメン公称)",
-        "refreshRate": "60Hz"
+        "resolution": "1920×1080 (ネイティブ1080P) / 4K入力対応",
+        "size": "30～300インチ (投影サイズ)"
       },
-      "dimensions": {
-        "height": "170mm",
-        "width": "140mm",
-        "depth": "140mm",
-        "weight": "1.5kg"
-      },
-      "weight": "1.5kg",
-      "material": "ABS樹脂・防塵ファブリック",
-      "origin": "中国",
+      "brightness": "1500 ANSIルーメン (※メーカー公称値。物理的筐体サイズや価格帯から誇大表記の疑いあり)",
+      "color": "ローズゴールド",
       "connectivity": [
-        "Wi-Fi 6 (2.4G/5G)",
-        "Bluetooth 5.3",
-        "HDMI ×1",
-        "USB ×2",
-        "3.5mmオーディオジャック"
+        "Wi-Fi 6 (2.4/5GHz)",
+        "Bluetooth 5.4",
+        "HDMI",
+        "USB"
       ],
       "other": [
-        "Android TV/Google TV対応 (各種動画配信アプリインストール可能)",
-        "完全密閉型防塵光学エンジン (黒点・ホコリ侵入防止・長寿命化)",
-        "自動台形補正 & オートフォーカス",
-        "Hi-Fi 10Wデュアルスピーカー内蔵"
+        "180度回転式ジンバル一体型",
+        "電動フォーカス (リモコン操作)",
+        "自動台形補正",
+        "Google Cast内蔵",
+        "Hi-Resスピーカー内蔵",
+        "Netflix公式ライセンス取得"
       ]
     }
   }
