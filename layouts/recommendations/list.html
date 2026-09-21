@@ -445,6 +445,10 @@
         padding-top: var(--spacing-sm);
         border-top: 1px dashed var(--color-border);
         margin-bottom: var(--spacing-sm);
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 6px;
     }
 
     .price-drop-current-price {
@@ -457,7 +461,6 @@
         font-size: 0.85rem;
         color: var(--color-text-muted);
         text-decoration: line-through;
-        margin-left: 6px;
     }
 
     .price-drop-actions {
@@ -606,8 +609,12 @@
                     {{- if and $drop.previousPrice (gt $drop.previousPrice $drop.currentPrice) -}}
                     <span class="price-drop-previous-price">{{ $drop.formattedPreviousPrice }}</span>
                     {{- end -}}
-                    {{- if $drop.dealBadge -}}
-                    <span class="m3-badge" style="font-size:0.75rem; margin-left:6px; background:#ff9900; color:#111; font-weight:700;">{{ $drop.dealBadge }}</span>
+                    {{- with $drop.dealBadge -}}
+                    {{- $dealClass := "deal-standard" -}}
+                    {{- if in . "プライム" -}}
+                    {{- $dealClass = "deal-prime" -}}
+                    {{- end -}}
+                    <span class="badge-deal m3-badge m3-badge-deal {{ $dealClass }}">{{ . }}</span>
                     {{- end -}}
                 </div>
 
