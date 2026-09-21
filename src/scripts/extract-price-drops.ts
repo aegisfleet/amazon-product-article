@@ -62,6 +62,7 @@ export interface ExtractPriceDropsOptions {
   maxResults?: number;
   recentDropHours?: number;
   now?: number;
+  minScore?: number;
 }
 
 interface ArticleMeta {
@@ -109,7 +110,7 @@ function formatJPY(amount: number): string {
 }
 
 const MAX_ALLOWED_DISCOUNT_RATE = 75;
-const MIN_REQUIRED_SCORE = 60;
+const DEFAULT_MIN_REQUIRED_SCORE = 70;
 const MIN_REQUIRED_DISCOUNT_RATE = 5;
 
 async function loadArticleMetaMap(articlesDir: string): Promise<Map<string, ArticleMeta>> {
@@ -149,6 +150,7 @@ function evaluateRecentDrop(
   artMeta: ArticleMeta | undefined,
   now: number,
   recentThresholdMs: number,
+  minScore: number = DEFAULT_MIN_REQUIRED_SCORE,
 ): PriceDropItem | null {
   if (entry.status !== 'valid' || !entry.data?.price) return null;
 
@@ -156,7 +158,7 @@ function evaluateRecentDrop(
   if (typeof currentPrice !== 'number' || currentPrice <= 0) return null;
 
   const score = artMeta?.score || 0;
-  if (score < MIN_REQUIRED_SCORE) return null;
+  if (score < minScore) return null;
 
   const previousPrice = entry.previousPrice;
   const priceChangedAt = entry.priceChangedAt;
@@ -205,6 +207,7 @@ export async function extractPriceDrops(options: ExtractPriceDropsOptions = {}):
   const outputPath = options.outputPath || path.join(process.cwd(), 'data/recommendations/price-drops.json');
   const maxResults = options.maxResults ?? 15;
   const recentDropHours = options.recentDropHours ?? 48;
+  const minScore = options.minScore ?? DEFAULT_MIN_REQUIRED_SCORE;
   const now = options.now ?? Date.now();
   const recentThresholdMs = recentDropHours * 60 * 60 * 1000;
 
@@ -212,7 +215,7 @@ export async function extractPriceDrops(options: ExtractPriceDropsOptions = {}):
 
   const candidates: PriceDropItem[] = [];
   for (const [asin, entry] of Object.entries(cacheStore)) {
-    const item = evaluateRecentDrop(asin, entry, articleMetaMap.get(asin), now, recentThresholdMs);
+    const item = evaluateRecentDrop(asin, entry, articleMetaMap.get(asin), now, recentThresholdMs, minScore);
     if (item) {
       candidates.push(item);
     }

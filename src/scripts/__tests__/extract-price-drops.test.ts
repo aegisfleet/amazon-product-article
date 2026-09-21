@@ -107,11 +107,11 @@ describe('extractPriceDrops', () => {
     expect(saved.totalDrops).toBe(1);
   });
 
-  it('異常な割引率（75%以上）や低スコア（60未満）の商品は除外されること', async () => {
+  it('異常な割引率（75%以上）や低スコア（70未満）の商品は除外されること', async () => {
     const now = Date.now();
 
     await fs.promises.writeFile(path.join(articlesDir, 'b00fake0001.md'), '---\nasin: "B00FAKE001"\nscore: 75\n---\n');
-    await fs.promises.writeFile(path.join(articlesDir, 'b00low00001.md'), '---\nasin: "B00LOW0001"\nscore: 45\n---\n');
+    await fs.promises.writeFile(path.join(articlesDir, 'b00low00001.md'), '---\nasin: "B00LOW0001"\nscore: 65\n---\n');
 
     const cacheData = {
       // 80% OFF (二重価格の疑い -> 除外)
@@ -126,7 +126,7 @@ describe('extractPriceDrops', () => {
           price: { amount: 2000, currency: 'JPY', formatted: '￥2,000' },
         },
       },
-      // スコア45 (基準未満 -> 除外)
+      // スコア65 (70点未満 -> 除外)
       B00LOW0001: {
         status: 'valid',
         timestamp: now,
