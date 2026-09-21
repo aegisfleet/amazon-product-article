@@ -386,8 +386,8 @@
         display: inline-flex;
         align-items: center;
         gap: 4px;
-        background: #fee2e2;
-        color: #dc2626;
+        background: var(--md-sys-color-error-container, #fee2e2);
+        color: var(--md-sys-color-on-error-container, #991b1b);
         font-weight: 700;
         font-size: 0.82rem;
         padding: 3px 8px;
@@ -395,8 +395,8 @@
     }
 
     [data-theme="dark"] .price-drop-rate-badge {
-        background: rgba(239, 68, 68, 0.2);
-        color: #f87171;
+        background: var(--md-sys-color-error-container, #991b1b);
+        color: var(--md-sys-color-on-error-container, #fee2e2);
     }
 
     .price-drop-image-wrap {
@@ -425,6 +425,7 @@
         overflow: hidden;
         display: -webkit-box;
         -webkit-line-clamp: 2;
+        line-clamp: 2;
         -webkit-box-orient: vertical;
         overflow-wrap: anywhere;
     }
