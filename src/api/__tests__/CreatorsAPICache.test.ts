@@ -257,4 +257,56 @@ describe('CreatorsAPICache', () => {
       mkdirSpy.mockRestore();
     }
   });
+
+  test('should record previousPrice and priceChangedAt when price changes', () => {
+    const product1: ProductDetail = {
+      ...mockProduct,
+      price: { amount: 2000, currency: 'JPY', formatted: '￥2,000' },
+    };
+    const product2: ProductDetail = {
+      ...mockProduct,
+      price: { amount: 1500, currency: 'JPY', formatted: '￥1,500' },
+    };
+
+    // First set: initial price 2000
+    cache.set('B_PRICE_TEST', product1);
+    const entry1 = (cache as any).cache.B_PRICE_TEST;
+    expect(entry1.previousPrice).toBeUndefined();
+    expect(entry1.priceChangedAt).toBeUndefined();
+
+    // Second set: price dropped to 1500
+    cache.set('B_PRICE_TEST', product2);
+    const entry2 = (cache as any).cache.B_PRICE_TEST;
+    expect(entry2.previousPrice).toBe(2000);
+    expect(entry2.priceChangedAt).toBeDefined();
+    expect(typeof entry2.priceChangedAt).toBe('number');
+    expect(entry2.data.price.amount).toBe(1500);
+
+    // Third set: price unchanged (still 1500)
+    cache.set('B_PRICE_TEST', product2);
+    const entry3 = (cache as any).cache.B_PRICE_TEST;
+    expect(entry3.previousPrice).toBe(2000); // Maintained previous price
+    expect(entry3.priceChangedAt).toBe(entry2.priceChangedAt); // Maintained change timestamp
+  });
+
+  test('should retain previousPrice and priceChangedAt when loading from disk', () => {
+    const rawData = JSON.stringify({
+      B_PERSIST: {
+        data: mockProduct,
+        timestamp: Date.now(),
+        status: 'valid',
+        previousPrice: 3000,
+        priceChangedAt: 1234567890,
+      },
+    });
+
+    (fs.existsSync as jest.Mock).mockReturnValue(true);
+    (fs.readFileSync as jest.Mock).mockReturnValue(rawData);
+
+    const newCache = new CreatorsAPICache(24, 1, mockCacheDir);
+    const entry = (newCache as any).cache.B_PERSIST;
+    expect(entry).toBeDefined();
+    expect(entry.previousPrice).toBe(3000);
+    expect(entry.priceChangedAt).toBe(1234567890);
+  });
 });

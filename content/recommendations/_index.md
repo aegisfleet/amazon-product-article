@@ -1,5 +1,5 @@
 ---
-title: "本日の注目商品10選"
+title: "本日の注目商品"
 type: "recommendations"
 layout: "list"
 ---

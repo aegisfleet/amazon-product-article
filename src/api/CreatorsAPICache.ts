@@ -7,6 +7,8 @@ interface CacheEntry {
   data: ProductDetail | null;
   timestamp: number;
   status: 'valid' | 'invalid' | 'permanent_invalid';
+  previousPrice?: number;
+  priceChangedAt?: number;
 }
 
 interface CacheStore {
@@ -95,8 +97,14 @@ export class CreatorsAPICache {
       data.features = [];
     }
 
+    const previousPrice = typeof entry.previousPrice === 'number' ? entry.previousPrice : undefined;
+    const priceChangedAt = typeof entry.priceChangedAt === 'number' ? entry.priceChangedAt : undefined;
+
     if (entry.status) {
-      return entry as CacheEntry;
+      const normalized: CacheEntry = entry as CacheEntry;
+      if (previousPrice !== undefined) normalized.previousPrice = previousPrice;
+      if (priceChangedAt !== undefined) normalized.priceChangedAt = priceChangedAt;
+      return normalized;
     }
 
     // Migration logic for old format (without status)
@@ -104,6 +112,8 @@ export class CreatorsAPICache {
       data,
       timestamp: typeof entry.timestamp === 'number' ? entry.timestamp : Date.now(),
       status: 'valid',
+      ...(previousPrice !== undefined && { previousPrice }),
+      ...(priceChangedAt !== undefined && { priceChangedAt }),
     };
   }
 
@@ -275,8 +285,19 @@ export class CreatorsAPICache {
   public set(asin: string, data: ProductDetail): void {
     const sanitizedData = this.sanitizeData(data);
 
-    // Check if new data has "価格情報なし" and existing cache has valid price
     const existingEntry = this.cache[asin];
+    let previousPrice = existingEntry?.previousPrice;
+    let priceChangedAt = existingEntry?.priceChangedAt;
+
+    const oldPrice = existingEntry?.data?.price?.amount;
+    const newPrice = sanitizedData?.price?.amount;
+
+    if (oldPrice && newPrice && oldPrice > 0 && newPrice > 0 && oldPrice !== newPrice) {
+      previousPrice = oldPrice;
+      priceChangedAt = Date.now();
+    }
+
+    // Check if new data has "価格情報なし" and existing cache has valid price
     if (this.isNoPriceData(sanitizedData) && existingEntry?.data && !this.isNoPriceData(existingEntry.data)) {
       // Preserve existing price information
       this.logger.info(
@@ -293,6 +314,8 @@ export class CreatorsAPICache {
       data: sanitizedData,
       timestamp: Date.now(),
       status: 'valid',
+      ...(previousPrice !== undefined && { previousPrice }),
+      ...(priceChangedAt !== undefined && { priceChangedAt }),
     };
   }
 
