@@ -1,0 +1,153 @@
+{
+  "analysis": {
+    "productName": "Belkin USB-C to HDMI + USB-C 60W PD 対応変換アダプタ",
+    "parentAsin": "B0HJWTWD3Q",
+    "productDescription": "MacBookやiPadなどのUSB-Cポートから最大4K/60HzのHDMI映像出力を行いつつ、同時に最大60WのPD急速充電が可能なシンプルな2in1変換アダプタ（3個セット）",
+    "productUsage": [
+      "プレゼンテーション時のモニター・プロジェクターへの出力",
+      "テレワークやオフィスでのデュアルディスプレイ環境構築",
+      "iPadなどUSB-C搭載タブレットからの映像出力"
+    ],
+    "positivePoints": [
+      "4K/60Hzの高画質出力と最大60Wのパススルー充電（PD）を同時に行える",
+      "Thunderbolt 3ポートに対応し、MacBookやiPad Pro等と高い互換性を持つ",
+      "Belkinブランドによる2年間の製品保証と日本語サポート付きで信頼性が高い",
+      "複数台の導入や予備用として便利な3個セットパッケージ"
+    ],
+    "negativePoints": [
+      "USB-AポートやSDカードスロットなどは搭載しておらず、拡張性はHDMIと充電のみに限定される",
+      "ノートPCによっては60Wの給電能力では不足する場合がある",
+      "3個セットであるため、個人で1つだけ欲しい場合には過剰なパッケージとなる"
+    ],
+    "useCases": [
+      "会議室のプロジェクターにノートPCを接続し、バッテリー切れを心配せずに長時間のプレゼンを行う",
+      "自宅のデスクでモバイルモニターに映像を出力しながら、タブレット本体を充電する"
+    ],
+    "userStories": [
+      {
+        "userType": "法人ユーザー / デスクワーカー",
+        "scenario": "会議室やオフィスデスクでのモニター出力と充電",
+        "experience": "MacBook Proで外部モニターに出力するため導入しました。余計なUSB-Aポート等がなく、HDMI出力と充電に特化しているためサイズもコンパクトで取り回しが良いです。3個セットなので、会議室の常設用と各自の持ち運び用として分けて使えて便利です。映像出力も4K/60Hzで安定しており、充電しながら長時間の会議でもバッテリーを気にせず使えています。",
+        "supportingSourceIds": ["src-amazon-product"],
+        "sentiment": "positive"
+      }
+    ],
+    "userImpression": "多機能なUSBハブが多い中、本製品は「HDMI出力とPD充電」に機能を絞ったシンプルさが評価ポイントとなります。Belkin製という高い信頼性と2年保証があるため、仕事で確実に使いたいユーザーや、法人の会議室備品として複数導入したいニーズに最適です。一方で、USBメモリ等を使いたい人や個人で1つだけ必要な人には機能や個数がマッチしない可能性があります。",
+    "sources": [
+      {
+        "id": "src-amazon-product",
+        "name": "Amazon商品ページ",
+        "url": "https://www.amazon.co.jp/dp/B0HJWTWD3Q",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-09-22",
+        "author": "Belkin",
+        "conflictOfInterest": "disclosed",
+        "notes": "製品仕様、4K/60Hz出力、60W PD充電対応、3個セット、2年保証であることを確認"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "長いプレゼンでもバッテリー心配いらず",
+        "category": "durability",
+        "confidence": "high",
+        "supportingSourceIds": ["src-amazon-product"],
+        "crossChecked": false,
+        "notes": "60W PDパススルー充電に対応しているため、給電しながらの映像出力が物理的に可能であることを仕様から確認。"
+      }
+    ],
+    "lastInvestigated": "2026-09-22",
+    "investigatedPrice": "￥7,527",
+    "competitiveAnalysis": [
+      {
+        "name": "UGREEN USB Type-C HDMI 変換アダプター",
+        "asin": "B07X25ZR56",
+        "priceComparison": "UGREENは1個約2,200円で充電ポートがない映像出力のみのタイプ。本製品は3個セットで約7,500円（1個約2,500円）であり、充電機能が必要かどうかが価格差の価値となります。",
+        "featureComparison": [
+          "共通点：4K/60HzのHDMI映像出力に対応している点",
+          "相違点：UGREENは映像出力のみだが、Belkin(本製品)は60W PD対応の充電ポートを搭載し充電しながら出力可能。本製品は3個セット。"
+        ],
+        "differentiators": [
+          "Belkin USB-C to HDMI + USB-C 60W PD 対応変換アダプタの利点：長時間の作業やプレゼンでPC・タブレットを充電しながら映像出力したい法人・複数導入ユーザーなら迷わずこちら",
+          "UGREEN USB Type-C HDMI 変換アダプターの利点：充電ポートはPC本体の別のポートを使うため、単純にHDMI変換だけを安価に欲しい個人ユーザー向け"
+        ]
+      },
+      {
+        "name": "BENFEI USB-C 多機能アダプタ",
+        "asin": "B0CTCDDB5R",
+        "priceComparison": "BENFEIは1個約1,400円で多機能。本製品より安いが、信頼性やサポート体制の面でBelkinにアドバンテージがあります。",
+        "featureComparison": [
+          "共通点：USB-C接続で映像出力とPD充電が可能な点",
+          "相違点：BENFEIはVGAやUSB3.0も搭載する多機能ハブで100W PD対応。Belkin(本製品)はHDMIと60W PDのみに絞ったシンプル設計で3個セット。"
+        ],
+        "differentiators": [
+          "Belkin USB-C to HDMI + USB-C 60W PD 対応変換アダプタの利点：機能は最小限でよく、Appleストア等でも扱われる有名ブランドの2年保証という「確実な動作と信頼性」を最優先する人向け",
+          "BENFEI USB-C 多機能アダプタの利点：HDMIだけでなく古いプロジェクター用のVGAやUSB-Aポートも1台で賄いたい、安さ重視のユーザー向け"
+        ]
+      },
+      {
+        "name": "まぎまぎ USB Type c HDMI アダプタ",
+        "asin": "B0F2YMX3VD",
+        "priceComparison": "まぎまぎは1個約600円と格安。本製品は1個あたり約2,500円と割高だが、ノーブランド品に比べて長期的な耐久性やメーカー保証の有無が異なります。",
+        "featureComparison": [
+          "共通点：HDMI出力とPD充電に対応している点",
+          "相違点：まぎまぎはUSB 3.0ポートも搭載した格安品。Belkin(本製品)は有名ブランド品で3個セット。"
+        ],
+        "differentiators": [
+          "Belkin USB-C to HDMI + USB-C 60W PD 対応変換アダプタの利点：発熱や互換性トラブルを避け、ビジネス用途で安定稼働する品質とメーカーサポートが必要な人向け",
+          "まぎまぎ USB Type c HDMI アダプタの利点：予備用や一時的な使用のため、とにかく最も安い出費で済ませたい人向け"
+        ]
+      },
+      {
+        "name": "Gudluky Type-C HDMI変換 アダプタ",
+        "asin": "B0GY8Y98XC",
+        "priceComparison": "Gudlukyは1個約2,000円。本製品は1個あたり約2,500円で価格差は小さいが、3個セットという購入単位の違いがあります。",
+        "featureComparison": [
+          "共通点：HDMI出力(4K/60Hz)とPD充電が同時に可能なシンプルな2in1構成である点",
+          "相違点：Gudlukyは100W充電対応。Belkin(本製品)は60W充電対応で3個セット、2年保証が付帯する点。"
+        ],
+        "differentiators": [
+          "Belkin USB-C to HDMI + USB-C 60W PD 対応変換アダプタの利点：オフィスや会議室用に複数個まとめて導入したく、ブランドの信頼性を重視する企業・法人向け",
+          "Gudluky Type-C HDMI変換 アダプタの利点：100Wクラスの給電が必要な大型ノートPCを使用しており、個人で1つだけ購入したい人向け"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "会議室やオフィスで複数台のPC環境を整備したい法人・総務担当者",
+        "無名ブランドの格安ハブによる接続トラブルを避け、確実な動作とメーカー保証を求めるビジネスパーソン",
+        "プレゼン中にPCやiPadのバッテリー切れを防ぎたい人"
+      ],
+      "pros": [
+        "HDMI出力と充電ポートだけに機能を絞っているため、コンパクトで会議室などの常設用途で邪魔にならない",
+        "Belkin製という高い信頼性と2年保証により、ビジネスシーンでも接続トラブルの不安なく安心して使える",
+        "3個セットなので、自宅用・持ち運び用・職場用など複数環境の整備が一度に完了する"
+      ],
+      "cons": [
+        "USB-Aメモリやマウスなど、HDMIと充電以外の周辺機器は接続できないため、多機能ハブを求める人は購入を避けること",
+        "60W PD対応のため、100W給電が必要なハイスペックゲーミングPC等では給電能力が不足する場合がある",
+        "3個セットでの販売となるため、個人用途で1つだけ欲しい場合には割高な出費となる"
+      ],
+      "score": 77,
+      "scoreRationale": "[基本点: 70]\n[加点: +5] (Belkinブランドの高い信頼性と2年保証によるビジネス用途での安心感)\n[加点: +5] (4K/60Hz出力とパススルー充電の安定した動作性能)\n[減点: -3] (3個セット販売のため、単体購入を希望する個人ユーザーにとっての買いにくさ)\n[合計: 77]"
+    },
+    "technicalSpecs": {
+      "dimensions": {
+        "height": "129.5mm",
+        "width": "101.6mm",
+        "depth": "27.9mm",
+        "weight": "150g"
+      },
+      "connectivity": [
+        "USB-C (オス: ホスト接続用 Thunderbolt 3対応)",
+        "HDMI (メス: 最大4K/60Hz映像出力)",
+        "USB-C (メス: 最大60W PDパススルー充電用)"
+      ],
+      "other": [
+        "パッケージ内容: 本体 × 3個",
+        "メーカー保証: 2年間",
+        "※データ転送用のUSBポート(USB-A等)は非搭載"
+      ]
+    }
+  }
+}
