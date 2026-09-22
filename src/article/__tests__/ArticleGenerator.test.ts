@@ -877,6 +877,25 @@ describe('ArticleGenerator', () => {
 
       expect(optimized).toContain('class="mobile-responsive-image"');
     });
+
+    it('should not break HTML blocks or attributes containing Japanese periods', () => {
+      const content = `
+<div class="competitor-cards">
+<div class="competitor-card">
+<h4>今宵も喫茶ドードーのキッチンで。</h4>
+<p class="competitor-price">価格についての説明文です。${'テスト'.repeat(50)}。</p>
+<a href="https://example.com" class="competitor-preview"><img src="https://example.com/img.jpg" alt="今宵も喫茶ドードーのキッチンで。" class="competitor-preview-img"><div class="competitor-preview-content">内容</div></a>
+</div>
+</div>
+`.trim();
+
+      const optimized = generator.createMobileOptimizedLayout(content);
+
+      expect(optimized).toContain('<h4>今宵も喫茶ドードーのキッチンで。</h4>');
+      expect(optimized).toContain('alt="今宵も喫茶ドードーのキッチンで。" class="competitor-preview-img"');
+      expect(optimized).not.toContain('alt="今宵も喫茶ドードーのキッチンで。\n');
+      expect(optimized).not.toContain('<h4>今宵も喫茶ドードーのキッチンで。\n');
+    });
   });
 
   describe('insertAffiliateLinks', () => {

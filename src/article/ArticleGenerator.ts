@@ -323,8 +323,41 @@ export class ArticleGenerator {
       return `__SOURCESPAN_${sourceSpans.length - 1}__`;
     });
 
-    // 長い段落を分割（blockquoteや保護されたspan以外のテキストにのみ適用）
-    mobileContent = mobileContent.replaceAll(/(.{200}[^。！？]{0,100}[。！？])/g, '$1\n\n');
+    // 長い段落を分割（ブロック単位で処理し、HTMLブロック・見出し・リスト等を除外）
+    const blocks = mobileContent.split(/\n{2,}/);
+    const processedBlocks = blocks.map((block) => {
+      const trimmed = block.trim();
+      // 見出し、リスト、引用、HTMLブロック、テーブルは分割しない
+      if (
+        trimmed.startsWith('#') ||
+        trimmed.startsWith('- ') ||
+        trimmed.startsWith('* ') ||
+        trimmed.startsWith('>') ||
+        trimmed.startsWith('<') ||
+        trimmed.startsWith('|') ||
+        /^\d+\.\s/.test(trimmed)
+      ) {
+        return block;
+      }
+
+      // インラインHTMLタグを保護してタグ内分断を防ぐ
+      const inlineTags: string[] = [];
+      let safeBlock = block.replaceAll(/<[^>]+>/g, (match) => {
+        inlineTags.push(match);
+        return `__INLINETAG_${inlineTags.length - 1}__`;
+      });
+
+      // 長い段落を分割
+      safeBlock = safeBlock.replaceAll(/(.{200}[^。！？]{0,100}[。！？])/g, '$1\n\n');
+
+      // インラインHTMLタグを復元
+      inlineTags.forEach((tag, i) => {
+        safeBlock = safeBlock.replaceAll(`__INLINETAG_${i}__`, tag);
+      });
+
+      return safeBlock;
+    });
+    mobileContent = processedBlocks.join('\n\n');
 
     // blockquoteを復元
     blockquotes.forEach((bq, i) => {
