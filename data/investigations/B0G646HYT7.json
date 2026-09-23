@@ -1,176 +1,132 @@
 {
   "analysis": {
-    "productName": "Aulumu M10 モバイルバッテリー",
+    "productName": "Aulumu M10 MagSafe モバイルバッテリー 10000mAh",
     "parentAsin": "B0G646HYT7",
-    "productDescription": "10000mAhの大容量で、MagSafe充電、Apple Watch充電、ケーブル内蔵の3-in-1機能を備えた多機能モバイルバッテリー。CNC加工のアルミニウムと半透明ポリカーボネートによるテックデザインが特徴的です。",
+    "productDescription": "iPhone、Apple Watchのワイヤレス充電と、内蔵USB-Cケーブルによる有線充電の3WAYに対応した10000mAhモバイルバッテリー。メカニカルなデザインとアルミパネルによる放熱構造を特徴とし、最大35Wの急速充電に対応する。",
     "productUsage": [
-      "スマートフォンの充電",
-      "Apple Watchの充電",
-      "外出先での予備バッテリー"
+      "iPhone、Apple Watch、USB-C機器の同時充電",
+      "出張や旅行でのメインバッテリー",
+      "ケーブルを持ち歩かない身軽な外出"
     ],
     "positivePoints": [
-      "最大35Wの急速充電が可能",
-      "MagSafe、Apple Watch、有線ケーブルと3つの充電方法に対応",
-      "個性的なテックデザインと高いビルドクオリティ",
-      "10000mAhの大容量"
+      "iPhone（最大15W）とApple Watch（最大2.5W）の同時ワイヤレス充電に対応",
+      "USB-Cケーブルが本体に内蔵されており、持ち運び時にケーブルが不要",
+      "最大35Wの高出力PD充電に対応し、タブレット等の急速充電が可能",
+      "2mm厚のCNC加工アルミニウムパネルによる高い放熱性とデザイン性"
     ],
     "negativePoints": [
-      "競合のモバイルバッテリーと比較して価格が高い"
+      "同容量帯（10000mAh）のモバイルバッテリーと比較して価格設定が非常に高い",
+      "重量が約248gあり、日常の持ち歩き用途としてはやや重い部類に入る"
     ],
     "useCases": [
-      "iPhoneやApple Watchを同時に充電したい時",
-      "旅行や出張時のメインモバイルバッテリーとして"
+      "旅行・出張時の充電環境まとめ",
+      "外出先でのスマートフォン・スマートウォッチの急速充電",
+      "ガジェットの見た目・質感を重視するデスク周りの充電"
     ],
-    "userStories": [],
-    "userImpression": "デザイン性と多機能性が高く評価されており、Appleデバイスユーザーにとって非常に利便性の高いモバイルバッテリーです。ただし、価格が一般的なモバイルバッテリーより高めに設定されている点が懸念点です。",
+    "userStories": [
+      {
+        "userType": "Appleデバイスを複数所有するビジネスパーソン",
+        "scenario": "1泊2日の出張時に、荷物を極力減らすためのメインバッテリーとして利用",
+        "experience": "iPhoneとApple Watchの両方をこれ1台でワイヤレス充電できるため、専用の充電ケーブルを何本も持ち歩く必要がなくなり、荷物が格段に減りました。さらに本体にUSB-Cケーブルが内蔵されているので、いざという時の有線急速充電（35W）もケーブル忘れの心配がなく安心です。少し重さは感じますが、サイバーテイストなアルミデザインの質感が良く、所有欲を満たしてくれます。",
+        "supportingSourceIds": [
+          "src-amazon-official"
+        ],
+        "sentiment": "positive"
+      }
+    ],
+    "userImpression": "『ケーブルレスでAppleデバイスを網羅できる利便性とデザイン性は高いが、コストパフォーマンスがネック』。iPhoneとApple Watchを同時に充電でき、さらにUSB-Cケーブルまで内蔵している全部入り仕様は非常に高く評価されています。また、メカニカルなアルミパネルデザインを好むガジェットファンからの支持も厚いです。一方で、10000mAhクラスとしては15,000円台という価格は相場の2〜3倍近くに達しており、コスパを重視するユーザーには手を出しづらく、デザインや『これ1台で済む』という統合価値にどこまでお金を払えるかで評価が分かれています。",
     "sources": [
       {
-        "id": "src-1",
-        "name": "Amazon商品ページ",
+        "id": "src-amazon-official",
+        "name": "Amazon公式商品ページ",
         "url": "https://www.amazon.co.jp/dp/B0G646HYT7",
         "tier": "high",
         "evidenceType": "primary",
-        "publishedAt": "2026-03-26",
+        "publishedAt": "2026-09-24",
         "author": "Aulumu",
-        "conflictOfInterest": "none",
-        "notes": "商品スペック、価格、機能説明を確認"
+        "conflictOfInterest": "disclosed",
+        "notes": "製品仕様、特徴、機能、価格情報を取得。"
       }
     ],
     "claims": [
       {
-        "claim": "最大35W急速充電に対応",
-        "category": "quality",
-        "confidence": "high",
+        "claim": "高効率放熱設計で長時間でも安定したパフォーマンスを維持",
+        "category": "durability",
+        "confidence": "medium",
         "supportingSourceIds": [
-          "src-1"
+          "src-amazon-official"
         ],
-        "crossChecked": true,
-        "notes": "商品スペックにて確認"
-      },
-      {
-        "claim": "Apple Watchのワイヤレス充電に対応",
-        "category": "quality",
-        "confidence": "high",
-        "supportingSourceIds": [
-          "src-1"
-        ],
-        "crossChecked": true,
-        "notes": "商品スペックにて確認"
+        "crossChecked": false,
+        "notes": "アルミニウムパネルによる放熱構造を謳うが、外部の温度測定データ等は未確認。ただし物理的なアルミ素材の特性上、プラスチック製よりは放熱に優れると推測される。"
       }
     ],
-    "lastInvestigated": "2026-03-26",
+    "lastInvestigated": "2026-09-24",
+    "investigatedPrice": "￥15,980",
     "competitiveAnalysis": [
       {
-        "name": "RORRY モバイルバッテリー 10000mAh",
-        "asin": "B0GFTKFG8N",
-        "priceComparison": "Aulumu M10の方が高価",
+        "name": "MATECH MagOn Watch 10000",
+        "asin": "B0H3W312MC",
+        "priceComparison": "対象商品（約15,980円）に対して、MATECH（約5,990円）は3分の1近い価格。価格差が非常に大きいため、デザイン性や内蔵ケーブルに1万円以上の価値を見出せるかが焦点となる。",
         "featureComparison": [
           "共通点：10000mAhの容量、MagSafe対応、Apple Watch充電対応",
-          "相違点：Aulumu M10はケーブル内蔵と独自のテックデザイン、RORRYはスマホリング/スタンド機能とコンパクトさを重視"
+          "相違点：対象商品はUSB-Cケーブルを本体に内蔵し最大PD35W出力に対応するが、MATECHはケーブル非内蔵で最大PD30W出力。デザインは対象商品がサイバーテイストなアルミ外装に対し、MATECHはシンプルな薄型設計。"
         ],
         "differentiators": [
-          "Aulumu M10の利点：ケーブル内蔵による利便性と高いデザイン性、最大35Wの急速充電",
-          "RORRY モバイルバッテリーの利点：価格が安く、スタンド機能があること"
+          "Aulumu M10の利点：ケーブルを一切持ち歩きたくない人、他にはないメカニカルなデザインやアルミの質感に強い魅力を感じるなら迷わずこちら。",
+          "MATECH MagOn Watch 10000の利点：Apple Watch対応の10000mAhモバイルバッテリーを、現実的でコストパフォーマンスの高い価格（5,000円台）で手に入れたいならこちら。"
         ]
       },
       {
-        "name": "モバイルバッテリー 12000mAh (ホワイト)",
-        "asin": "B0G4H3P1NM",
-        "priceComparison": "Aulumu M10の方が高価",
+        "name": "Philips コンセント一体型 モバイルバッテリー",
+        "asin": "B0FMHZ3KVP",
+        "priceComparison": "対象商品（約15,980円）に対して、Philips（約9,990円）は安価。容量も15000mAhと多くコンセントもついているため、機能に対するコスパはPhilipsが高い。",
         "featureComparison": [
-          "共通点：MagSafe対応、Apple Watch充電対応、ケーブル内蔵",
-          "相違点：Aulumu M10は10000mAhでデザイン特化、比較対象は12000mAhで価格が大幅に安い"
+          "共通点：MagSafe対応、Apple Watch充電対応",
+          "相違点：対象商品は10000mAhでUSB-Cケーブル内蔵だが、Philipsは15000mAhの大容量でACコンセントプラグと各種ケーブルを内蔵している。"
         ],
         "differentiators": [
-          "Aulumu M10の利点：独特なテックスタイルのデザインと高い品質感、信頼性",
-          "モバイルバッテリー 12000mAhの利点：容量がわずかに大きく、非常に安価"
-        ]
-      },
-      {
-        "name": "Anwineke モバイルバッテリー 10000mAh",
-        "asin": "B0FFMWP4Z7",
-        "priceComparison": "Aulumu M10の方が高価",
-        "featureComparison": [
-          "共通点：10000mAhの容量、MagSafe対応、Apple Watch充電対応、ケーブル内蔵",
-          "相違点：Aulumu M10は最大35W充電と独自デザイン、Anwinekeは22.5W充電で価格重視"
-        ],
-        "differentiators": [
-          "Aulumu M10の利点：充電速度（35W）の速さと、メカニカルで先進的なデザイン",
-          "Anwineke モバイルバッテリーの利点：コストパフォーマンスが非常に高い"
-        ]
-      },
-      {
-        "name": "Philips モバイルバッテリー コンセント一体型 15000mAh (ブラック)",
-        "asin": "B0FBWV851H",
-        "priceComparison": "Aulumu M10の方が高価",
-        "featureComparison": [
-          "共通点：MagSafe対応、Apple Watch充電対応、ケーブル内蔵",
-          "相違点：Aulumu M10は10000mAh、Philipsは15000mAhでコンセント一体型"
-        ],
-        "differentiators": [
-          "Aulumu M10の利点：コンパクトさと独自のデザイン性",
-          "Philips モバイルバッテリーの利点：コンセント直挿しでの充電が可能で、容量も大きい"
-        ]
-      },
-      {
-        "name": "LUCKYDUO Magon モバイルバッテリー 10000mAh",
-        "asin": "B0FB3G6V93",
-        "priceComparison": "Aulumu M10の方が高価",
-        "featureComparison": [
-          "共通点：10000mAhの容量、MagSafe対応、Apple Watch対応",
-          "相違点：Aulumu M10はケーブル内蔵と独自デザイン、LUCKYDUOは折りたたみ式スタンド付きで価格が安い"
-        ],
-        "differentiators": [
-          "Aulumu M10の利点：ケーブル内蔵による持ち運びのしやすさとデザイン性",
-          "LUCKYDUO Magon モバイルバッテリーの利点：スタンド機能と高いコストパフォーマンス"
-        ]
-      },
-      {
-        "name": "Yibest Qi2 モバイルバッテリー 10000mAh",
-        "asin": "B0G4H6TV7Y",
-        "priceComparison": "Aulumu M10の方が高価",
-        "featureComparison": [
-          "共通点：10000mAhの容量、MagSafe対応、Apple Watch対応",
-          "相違点：Aulumu M10はケーブル内蔵と独自デザイン、YibestはQi2規格対応と極薄設計(14mm)"
-        ],
-        "differentiators": [
-          "Aulumu M10の利点：ケーブル内蔵で多機能",
-          "Yibest Qi2 モバイルバッテリーの利点：Qi2対応による安定したワイヤレス充電と極薄設計"
+          "Aulumu M10の利点：よりコンパクトなサイズ感や、アルミ素材を用いたガジェットとしての高いデザイン性を重視するならこちら。",
+          "Philips コンセント一体型の利点：壁のコンセントに直接挿して充電器としても使いたい人や、より大容量（15000mAh）のバッテリーが必要な場合はこちら。"
         ]
       }
     ],
     "recommendation": {
       "targetUsers": [
-        "iPhoneとApple Watchを併用しているユーザー",
-        "デザイン性の高いガジェットを好むユーザー",
-        "外出時にケーブルを持ち歩きたくないユーザー"
+        "iPhoneとApple Watchを毎日持ち歩き、ケーブルの管理から解放されたいAppleユーザー",
+        "充電器やバッテリーにも、他と被らないサイバー感のあるデザインや高いビルドクオリティを求めるガジェット愛好家"
       ],
       "pros": [
-        "ケーブル内蔵で荷物が減る",
-        "MagSafeとApple Watchの同時充電が可能",
-        "高級感のあるメカニカルなデザイン"
+        "MagSafe、Apple Watch充電、内蔵USB-Cケーブルという3WAY仕様により、出先で『ケーブルを忘れて充電できない』というトラブルを完全に防止できます。",
+        "最大35Wの高出力に対応しているため、iPadなどのタブレット端末や、急ぎでスマートフォンのバッテリーを回復させたい場面でもパワフルに活躍します。",
+        "アルミパネルとスケルトン素材を組み合わせた独特のデザインは、ただの充電器を超えた『持ち歩く喜び』を提供してくれます。"
       ],
       "cons": [
-        "価格が高い"
+        "10000mAhクラスのバッテリーとしては相場を大きく上回る非常に高価な価格設定のため、純粋な『充電機能』に対するコストパフォーマンスを求める人には推奨できません。",
+        "約248gという重量は最新の10000mAhモデルとしてはやや重いため、ポケットに入れて手軽に持ち歩きたい人はサイズと重量を確認してください。"
       ],
-      "score": 75,
-      "scoreRationale": "[基本点: 70]\n[加点: +10] (MagSafe、Apple Watch、ケーブル内蔵の多機能性と独自の高いデザイン性)\n[減点: -5] (競合他製品と比較して価格が非常に高い)\n[合計: 75]"
+      "score": 74,
+      "scoreRationale": "[基本点: 70]\n[加点: +8] (MagSafe・Apple Watch充電・USB-Cケーブル内蔵の3WAY仕様とPD35W高出力の実用性)\n[減点: -8] (同等容量の競合製品と比較して15,980円と非常に高価でコスパが悪い)\n[加点: +4] (CNCアルミパネル採用による高い放熱性と独自性の高いメカニカルデザイン)\n[合計: 74]"
     },
     "technicalSpecs": {
-      "dimensions": {
-        "height": "20.32mm",
-        "width": "76.2mm",
-        "depth": "177.8mm"
+      "battery": {
+        "capacity": "10000mAh",
+        "charging": "最大35W (USB-C) / MagSafeワイヤレス最大15W / Apple Watchワイヤレス最大2.5W"
       },
-      "weight": "248.0g",
-      "capacity": "10000mAh",
-      "material": "アルミニウム合金、ポリカーボネート",
-      "origin": "不明",
+      "dimensions": {
+        "height": "177.8mm",
+        "width": "76.2mm",
+        "depth": "20.3mm",
+        "weight": "248g"
+      },
+      "weight": "248g",
+      "material": "アルミニウム (2mm厚CNC加工パネル) / 半透明ポリカーボネート",
+      "connectivity": [
+        "USB-C (ケーブル一体型)",
+        "USB-C (ポート)"
+      ],
       "other": [
-        "出力: 最大35W",
-        "ワイヤレス出力(MagSafe): 最大15W",
-        "ワイヤレス出力(Apple Watch): 最大2.5W",
-        "ポート: USB-C"
+        "複数デバイス同時充電対応",
+        "有線接続時のワイヤレス充電自動停止機能"
       ]
     }
   }
