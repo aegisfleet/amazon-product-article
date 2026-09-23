@@ -1,160 +1,183 @@
 {
   "analysis": {
-    "productName": "NEC 39.6cm ノートPC VKE18 整備済み品",
-    "parentAsin": "B0FXMJL93S",
-    "productDescription": "第7世代Celeron 3865Uと4GBメモリを搭載したNECの39.6cm整備済みノートパソコンです。Windows 11とMS Office H&B 2019がインストールされています。",
+    "productName": "NEC VersaPro VKE18 15.6型 (整備済み品)",
+    "parentAsin": "B0HJFCG6KT",
+    "productDescription": "日常の基本作業（文書作成、ネット閲覧等）に適したNECの15.6インチノートパソコン（整備済み品）。",
     "productUsage": [
-      "ネットサーフィン",
-      "動画視聴",
-      "Office文書の閲覧・簡単な編集"
+      "文書作成",
+      "ネット閲覧",
+      "メール確認",
+      "事務作業"
     ],
     "positivePoints": [
-      "MS Office 2019がプリインストールされており到着後すぐに文書作成等が可能",
-      "39.6cmの大画面で作業がしやすい",
-      "1万円台という非常に手頃な価格帯"
+      "15.6インチの大きめなHDノングレア液晶で文字が見やすく長時間の作業に適している",
+      "Windows 11およびOffice 2019が初期設定済みで到着後すぐに使用可能",
+      "テンキーなしのキーボード採用により、デスク上のスペースを広く確保できる"
     ],
     "negativePoints": [
-      "CPU性能がCeleron 3865Uと低く、重い作業には向かない",
-      "メモリが4GBのため、マルチタスクやブラウザの複数タブを開くと動作が遅くなる可能性がある",
-      "整備済み品であるため、バッテリーの劣化や外観にキズがある場合がある"
+      "CPUがCeleron 3865U、メモリが4GBと最小限のスペックであり、動画編集や複数アプリの同時起動には不向き",
+      "無線LAN（Wi-Fi）が内蔵ではなく外付けUSBレシーバーとなる場合があり、USBポートを1つ占有する"
     ],
     "useCases": [
-      "サブ機としての利用",
-      "子供用の最初のパソコン",
-      "家庭での簡単な調べ物やメール送受信"
+      "自宅での調べものや家計簿管理",
+      "サブPCや店舗・事務所での簡単なデータ入力端末"
     ],
-    "userStories": [],
-    "userImpression": "1万円台という低価格とOffice搭載というコストパフォーマンスが魅力ですが、Celeron CPUと4GBメモリのため、用途は軽作業（ネット閲覧や単一のOffice作業など）に限定されるという評価が一般的です。",
+    "userStories": [
+      {
+        "userType": "家庭用ライトユーザー",
+        "scenario": "自宅でのネット閲覧やOfficeでの簡単な文書作成",
+        "experience": "到着してすぐにWindows 11とOfficeが使えたのが最大の決め手でした。画面が15.6インチと大きくて文字が見やすい反面、メモリが4GBなのでブラウザのタブを複数開くと動作が少し重く感じます。重い処理には向かないものの、テンキーがない分マウスを置くスペースが広く取れるのは良かったです。",
+        "supportingSourceIds": [
+          "src-amazon-page"
+        ],
+        "sentiment": "mixed"
+      }
+    ],
+    "userImpression": "全体として、Web閲覧やOfficeソフトでの簡単な事務作業に用途を絞れば実用的な一台です。Office 2019が付属してすぐに使える手軽さが評価される一方で、4GBのメモリとCeleronプロセッサによる処理性能の限界や、無線LANが外付けになる可能性がある点は懸念材料として認識されています。用途と割り切りができるライトユーザー向けの機種です。",
     "sources": [
       {
-        "id": "src-note-pc-select",
-        "name": "【必見】INTEL Celeron 3865U搭載ノートPCの実力とコストパフォーマンスを考察 / それ、早く言ってよ！初心者向けノートパソコン選びの基礎知識",
-        "url": "https://note-pc-select.resanaplaza.com/2024/11/22/%E3%80%90%E5%BF%85%E8%A6%8B%E3%80%91intel-celeron-3865u%E6%90%AD%E8%BC%89%E3%83%8E%E3%83%BC%E3%83%88pc%E3%81%AE%E5%AE%9F%E5%8A%9B%E3%81%A8%E3%82%B3%E3%82%B9%E3%83%88%E3%83%91%E3%83%95%E3%82%A9/",
-        "tier": "medium",
-        "evidenceType": "secondary",
-        "publishedAt": "2024-11-22",
-        "author": "a-maeda",
-        "conflictOfInterest": "disclosed",
-        "notes": "Celeron 3865Uの性能は初代Core i5相当であり、メモリ4GBの製品は軽作業向けであるという検証記事。対象商品自体の記載はないため、性能の裏付けとして参照。"
+        "id": "src-amazon-page",
+        "name": "Amazon.co.jp 商品ページ",
+        "url": "https://www.amazon.co.jp/dp/B0FXMJL93S",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-09-24",
+        "author": "Amazon",
+        "conflictOfInterest": "possible",
+        "notes": "基本スペック、搭載ソフトウェア、商品の特徴説明を確認"
       }
     ],
     "claims": [
       {
-        "claim": "Celeron 3865Uの性能は初代Core i5相当であり、用途は軽作業に限られる",
-        "category": "performance",
+        "claim": "必要な機能をコストを抑えて揃えたい方に選びやすい整備済み品",
+        "category": "comparativeAdvantage",
         "confidence": "high",
-        "supportingSourceIds": ["src-note-pc-select"],
+        "supportingSourceIds": [
+          "src-amazon-page"
+        ],
         "crossChecked": false,
-        "notes": "PassMarkなどのベンチマークスコアに基づく"
+        "notes": "Office 2019搭載かつSSD搭載のノートPCとして、最低限の環境を構築できるのは事実であるが、スペックには制限がある"
       }
     ],
-    "lastInvestigated": "2026-03-26",
+    "lastInvestigated": "2026-09-24",
+    "investigatedPrice": "価格情報なし",
     "competitiveAnalysis": [
       {
-        "name": "大手メーカー お任せ 中古整備済 ノートPC 39.6cm (Celeron)",
-        "asin": "B0GKYJ5L5F",
-        "priceComparison": "対象商品より安いですが、大手メーカーのお任せであり機種がランダムに届くため、デザインや細かいスペックにこだわりがない場合にのみ適しています。キーボード配列などに不安がある場合は対象商品が安心です。",
+        "name": "NEC VersaPro Vシリーズ 第6世代Core i5搭載モデル (整備済み品)",
+        "asin": "B0CGRXKBXJ",
+        "priceComparison": "対象商品と同等の価格設定が想定される。同じ予算であれば、処理性能が大幅に高い競合機を選ぶ価値は高い。",
         "featureComparison": [
-          "共通点：39.6cm、Celeron CPU、メモリ4GB、SSD128GB、Office2019搭載",
-          "相違点：対象商品はNEC VKE18と機種が固定されているが、本競合は「大手メーカー お任せ」であり機種がランダムである"
+          "共通点：NEC VersaProの15.6インチ整備済みノートパソコン",
+          "相違点：競合機は第6世代Core i5と8GBメモリを搭載しており、処理性能で大きく上回る"
         ],
         "differentiators": [
-          "NEC 39.6cm ノートPC VKE18の利点：メーカーと機種（NEC VKE18）が明確で、デザインやキーボード配列を事前に確認できる",
-          "大手メーカー お任せ 中古整備済 ノートPCの利点：メーカーや機種にこだわらなければ、より安い価格で購入できる可能性がある"
+          "NEC VersaPro VKE18の利点：特になし（スペック面では競合に劣るため、極端に安い場合のみ選択肢となる）。",
+          "NEC VersaPro Vシリーズ 第6世代Core i5の利点：同じ価格帯であれば、メモリ8GBとCore i5を搭載し、マルチタスクやブラウジングをより快適に行いたいなら迷わずこちら。"
         ]
       },
       {
-        "name": "富士通 LIFEBOOK A574 整備済み品",
-        "asin": "B0GGHDL9YM",
-        "priceComparison": "対象商品より安いですが、CPUが第4世代Core i5と古いため、サポートや長期利用の面で不安が残ります。価格差を許容できるなら、より新しい世代の対象商品を選ぶ方が無難です。",
+        "name": "東芝TOSHIBA B35 (整備済み品)",
+        "asin": "B0BDXRKPQ8",
+        "priceComparison": "対象商品より安価に設定されている可能性が高いが、CPU性能やメモリ増量（8GB）を考慮すると、品質面での懸念は見当たらず非常にコストパフォーマンスが高い。",
         "featureComparison": [
-          "共通点：39.6cm、メモリ4GB、SSD128GB、Office2019搭載",
-          "相違点：対象商品は第7世代Celeronを搭載しているが、競合は第4世代Core i5を搭載している"
+          "共通点：15.6インチ液晶、Celeronプロセッサ、SSD128GB、Office搭載の整備済み品",
+          "相違点：東芝機はメモリが8GB搭載されているのに対し、本機は4GB。CPUの世代は本機（第7世代Celeron 3865U）がやや新しい。"
         ],
         "differentiators": [
-          "NEC 39.6cm ノートPC VKE18の利点：比較的新しい世代のCPU（第7世代）を搭載している",
-          "富士通 LIFEBOOK A574 整備済み品の利点：古い世代だが、Core i5を搭載しており、CPUの処理能力としては上回る可能性がある"
+          "NEC VersaPro VKE18の利点：テンキーレスキーボードでデスクを広く使いたい場合や、CPUの世代の若さを重視するならこちら。",
+          "東芝TOSHIBA B35の利点：価格を最小限に抑えつつ、ブラウザのタブを複数開くなどメモリの余裕を確保したいなら迷わずこちら。"
         ]
       },
       {
-        "name": "東芝 dynabook Satellite B554 整備済み品",
-        "asin": "B0GGQXKJQS",
-        "priceComparison": "対象商品より安いですが、第4世代Core i3と古いアーキテクチャであるため性能的に不安があります。ただしDVDドライブ内蔵という明確なメリットがあるため、光学ドライブ必須のユーザーには価値があります。",
+        "name": "Nidira NEC VersaPro Vシリーズ 12.5型 (整備済み品)",
+        "asin": "B0CCRD3N52",
+        "priceComparison": "対象商品よりやや高価な場合、画面サイズの違い（モバイル用途の12.5型）に価格差の価値を見出せるかがポイントとなる。",
         "featureComparison": [
-          "共通点：39.6cm、メモリ4GB、SSD128GB、Office2019搭載",
-          "相違点：対象商品は第7世代Celeron、競合は第4世代Core i3とDVDドライブを搭載している"
+          "共通点：NECのVersaProシリーズ、第7世代CPU、メモリ4GB、SSD128GB搭載",
+          "相違点：競合機は12.5型でコンパクト・軽量であり持ち運びに適しているのに対し、本機は15.6型で据え置き向け。"
         ],
         "differentiators": [
-          "NEC 39.6cm ノートPC VKE18の利点：比較的新しい世代のCPUを搭載している点",
-          "東芝 dynabook Satellite B554 整備済み品の利点：DVDドライブが内蔵されており、光学メディアを利用したい場合に便利"
+          "NEC VersaPro VKE18の利点：自宅やオフィスでの据え置き利用がメインで、大画面で文字や表を見やすく表示したいなら迷わずこちら。",
+          "Nidira NEC VersaPro 12.5型の利点：外出先や会議室への持ち運びを前提とし、モバイル性を重視するなら迷わずこちら。"
         ]
       },
       {
-        "name": "大手メーカー お任せ 中古整備済 ノートPC 39.6cm (Core第6世代以上)",
-        "asin": "B0GKX5YBYK",
-        "priceComparison": "対象商品より安く、さらにメモリ8GBと第6世代以上のCoreシリーズを搭載しているため、スペック上のコストパフォーマンスは圧倒的に優れています。ただし機種がランダムであるため、そこを許容できるかがカギとなります。",
+        "name": "NEC VersaPro VU-4 10.1型 2in1 (整備済み品)",
+        "asin": "B0HGKM113M",
+        "priceComparison": "対象商品より安価な場合、ストレージが64GBしかない制約があるため、用途によってはストレージ不足に陥る懸念がある。",
         "featureComparison": [
-          "共通点：39.6cm、SSD128GB、Office2019搭載",
-          "相違点：対象商品はCeleronとメモリ4GBだが、競合は第6世代以上のCoreシリーズとメモリ8GBを搭載している"
+          "共通点：NEC製の低価格な整備済みパソコン、Celeron・4GBメモリ搭載",
+          "相違点：競合機は10.1型のタブレットとしても使える2in1タイプでストレージが64GBしかないのに対し、本機は15.6型の標準的なクラムシェル型で128GB。"
         ],
         "differentiators": [
-          "NEC 39.6cm ノートPC VKE18の利点：メーカーと機種が指定されている安心感がある",
-          "大手メーカー お任せ 中古整備済 ノートPC (Core第6世代以上)の利点：メモリが8GBあり、Coreシリーズ搭載のため、マルチタスクやブラウザの複数タブを開いた際により快適に動作する"
+          "NEC VersaPro VKE18の利点：タブレット用途が不要で、タイピングや画面の大きさを重視した据え置き作業を行いたいなら迷わずこちら。",
+          "NEC VersaPro VU-4 10.1型の利点：タブレットとしても使用し、動画視聴や持ち運びの手軽さを最優先するなら迷わずこちら。"
         ]
       },
       {
-        "name": "Dynabook B55/B65 整備済み品 (Core i5 第6世代)",
-        "asin": "B0FZVGNCY4",
-        "priceComparison": "対象商品より高いですが、第6世代Core i5とメモリ8GBを搭載しており、実用的なパフォーマンスを求めるなら十分にその価格差以上の価値があります。",
+        "name": "NEC VersaPro VK90 11.6型 (整備済み品)",
+        "asin": "B0HK6XKWFG",
+        "priceComparison": "対象商品と同等の価格設定が想定される。持ち運びやすさを重視するなら価値があるが、据え置き利用なら画面サイズが小さくなるデメリットがある。",
         "featureComparison": [
-          "共通点：39.6cm、SSD128GB、Office2019搭載",
-          "相違点：対象商品はCeleron・メモリ4GBだが、競合は第6世代Core i5とメモリ8GB、DVDドライブを搭載している"
+          "共通点：NEC製の整備済みノートパソコン、メモリ4GB・SSD128GB搭載",
+          "相違点：競合機は11.6型でCore m3プロセッサを搭載しているのに対し、本機は15.6型のCeleron 3865U搭載。"
         ],
         "differentiators": [
-          "NEC 39.6cm ノートPC VKE18の利点：初期費用を抑えて購入できる点",
-          "Dynabook B55/B65 整備済み品の利点：メモリが8GBと余裕があり、Core i5搭載で実用的なパフォーマンスを発揮する"
+          "NEC VersaPro VKE18の利点：据え置き利用が前提で、長時間の作業で目の疲れを軽減するための大きな画面サイズを求めるなら迷わずこちら。",
+          "NEC VersaPro VK90 11.6型の利点：コンパクトなサイズ感でデスクのスペースを取らず、手軽に移動させながら使いたいなら迷わずこちら。"
         ]
       },
       {
-        "name": "東芝 ノートパソコン B65 整備済み品",
-        "asin": "B0CS2T1PFM",
-        "priceComparison": "対象商品より安いですが、CPUが第6世代Celeronと一世代古いため、性能面でわずかに劣ります。しかしテンキーや豊富なポート類があるため、実用性を重視するなら十分選択肢に入ります。",
+        "name": "富士通 FUJITSU A574 (整備済み品)",
+        "asin": "B0C4Q2LBV9",
+        "priceComparison": "対象商品より高価になるが、Core i7プロセッサ、大容量SSD（512GB）、8GBメモリを搭載しているため、長期的な利用や複数作業を見据えるなら十分な価値がある。",
         "featureComparison": [
-          "共通点：39.6cm、メモリ4GB、SSD128GB、Office2019搭載",
-          "相違点：対象商品はNEC製（第7世代Celeron）、競合は東芝製（第6世代Celeron 3855U）である"
+          "共通点：15.6型、Office 2019搭載の整備済みノートパソコン",
+          "相違点：競合機は第4世代ながらCore i7を搭載し、メモリ8GB、SSD512GB、テンキー付きとスペックが全体的に高い。"
         ],
         "differentiators": [
-          "NEC 39.6cm ノートPC VKE18の利点：一世代新しいCPU（第7世代）を搭載している点",
-          "東芝 ノートパソコン B65 整備済み品の利点：より安価であり、テンキーやSDスロットなどの充実したインターフェースを備えている"
+          "NEC VersaPro VKE18の利点：初期費用を極力抑えつつ、テンキーなしでデスクを広く使いたいなら迷わずこちら。",
+          "富士通 FUJITSU A574の利点：多少価格が上がっても、より多くのデータを保存できる大容量SSDと、マルチタスクに強いメモリ8GBを求めるなら迷わずこちら。"
         ]
       }
     ],
     "recommendation": {
       "targetUsers": [
-        "とにかく安くOffice搭載PCを手に入れたい人",
-        "ネットと動画視聴がメインのライトユーザー",
-        "メインPCとは別のサブ機を探している人"
+        "インターネット閲覧やメール、簡単な文書作成など、負荷の軽い作業に用途を限定して安価にOffice搭載機を手に入れたい家庭用・事務用ユーザー"
       ],
       "pros": [
-        "1万円台でOfficeが付属する高いコストパフォーマンス",
-        "39.6cmの見やすい画面"
+        "Windows 11とOffice 2019が初期設定済みのため、到着後すぐに家計簿やレポート作成、事務作業などの作業を開始できる",
+        "15.6型の大きな非光沢画面により、長時間の文字入力や資料チェックでも目が疲れにくく作業がしやすい"
       ],
       "cons": [
-        "CPUとメモリ性能が低く、快適に動作する用途が限られる",
-        "中古品のためバッテリーの消耗がある可能性が高い"
+        "メモリが4GBであり、複数アプリの同時立ち上げやタブを多く開くブラウジングでは動作がもたつくため、マルチタスクを多用するユーザーは購入前に注意すること",
+        "Wi-Fiが内蔵ではなく外付けUSBレシーバーとなる可能性があるため、USBポートの空きを気にするユーザーは注意すること"
       ],
-      "score": 60,
-      "scoreRationale": "[基本点: 70]\n[加点: +5] (1万円台でOffice 2019が搭載されており、コスパが高い)\n[減点: -15] (Celeron CPUかつメモリ4GBで、現代の用途としては性能不足になりがち)\n[合計: 60]"
+      "score": 67,
+      "scoreRationale": "[基本点: 70]\n[加点: +5] (15.6型大画面とOffice 2019初期設定済みによる実用性の高さ)\n[加点: +2] (テンキーレスによるデスクスペースの有効活用)\n[減点: -10] (メモリ4GBとCeleronプロセッサによる現代のPCとしての著しい処理性能の低さ)\n[合計: 67]"
     },
     "technicalSpecs": {
-      "weight": "2kg",
-      "displaySize": "39.6cm",
-      "cpu": "Intel Celeron 3865U (1.8GHz)",
-      "memory": "4GB",
+      "os": "Windows 11",
+      "cpu": "Intel Celeron 3865U",
+      "ram": "4GB",
       "storage": "128GB SSD",
-      "os": "Windows 11 Pro",
-      "interfaces": ["HDMI", "Wi-Fi"],
-      "accessories": ["MS Office H&B 2019", "64GB USBメモリー"]
+      "display": {
+        "size": "15.6インチ",
+        "resolution": "1366×768 (HD)",
+        "type": "ノングレア (非光沢)"
+      },
+      "weight": "2kg",
+      "connectivity": [
+        "Wi-Fi (外付けの場合あり)",
+        "有線LAN",
+        "HDMI",
+        "VGA",
+        "USB"
+      ],
+      "other": [
+        "Office 2019搭載 (初期設定済み)",
+        "テンキーなしキーボード"
+      ]
     }
   }
 }
