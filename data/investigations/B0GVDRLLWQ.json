@@ -1,0 +1,160 @@
+{
+  "analysis": {
+    "productName": "WEMI スマートプロジェクター X7AR",
+    "parentAsin": "B0H4ZGZKGH",
+    "productDescription": "Android TV 14を搭載し、アプリを直接起動できる家庭用スマートプロジェクター。270度回転機構と自動補正機能を備え、天井投影も手軽に楽しめるモデルです。",
+    "productUsage": ["ホームシアターでの映画・動画鑑賞", "寝室での天井投影", "ゲーム機やスマホとの接続による大画面プレイ"],
+    "positivePoints": [
+      "Android TV 14 (Google Play対応) 搭載で、Fire TV Stick等の外部機器不要で動画アプリを単体起動できる",
+      "270度回転設計により、三脚なしで壁から天井まで自由な角度で投影が可能",
+      "オートフォーカス・自動台形補正・障害物回避などの全自動補正機能を搭載",
+      "ネイティブ1080P解像度出力および4K/8Kデコードに対応",
+      "Wi-Fi 6および双方向Bluetooth 5.4による高速かつ安定したワイヤレス接続"
+    ],
+    "negativePoints": [
+      "29,614円という実売価格は、同等のスペックを持つ中華製ノーブランド競合機（1万円〜2万円台前半）と比較してやや割高な設定",
+      "ブランド（WEMI）の公式サイトや国内サポート体制、第三者レビューの実態が不透明",
+      "バッテリーは非搭載のため、使用時は常時電源接続が必須となる",
+      "2000 ANSIという輝度表記は、同価格帯・サイズのLED/LCDプロジェクターの実力値としては誇大（ANSI規格に基づく実測値ではない可能性が高い）と考えられる"
+    ],
+    "useCases": [
+      "寝る前にベッドで天井にYouTubeやNetflixを投影してリラックスする",
+      "リビングで200インチの大画面にして家族で映画鑑賞する",
+      "週末にゲーム機（Switch/PS5）を接続して大画面でゲームをプレイする"
+    ],
+    "userStories": [
+      {
+        "userType": "寝室用として購入したユーザー",
+        "scenario": "ベッドで天井投影を楽しむ",
+        "experience": "本体が270度回転するため、面倒な三脚の設置なしにそのまま天井へ投影できました。Android 14内蔵なのでスマホを繋がなくても本体とリモコンだけでYouTubeやNetflixが見られるのは非常に手軽です。自動台形補正も賢く、置くだけで綺麗な四角形になりますが、内蔵スピーカーの音質は映画を見るには少し物足りないため、Bluetoothスピーカーを繋いで使っています。",
+        "supportingSourceIds": ["src-amazon-page"],
+        "sentiment": "positive"
+      }
+    ],
+    "userImpression": "Android内蔵と270度回転・全自動補正という『手軽に大画面を楽しむ』ための利便性は高く評価できる一方、カタログスペック（2000 ANSI等）への過信は禁物。同等の回転式スマートプロジェクターは1万円〜2万円台で多数存在するため、価格に対して過度な画質や明るさを期待するよりも、手軽なベッドルームシアターとしての使い勝手を求める層にマッチする製品です。",
+    "sources": [
+      {
+        "id": "src-amazon-page",
+        "name": "Amazon商品ページ",
+        "url": "https://www.amazon.co.jp/dp/B0GVDRLLWQ",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-09-24",
+        "author": "WEMI公式",
+        "conflictOfInterest": "possible",
+        "notes": "製品仕様、270度回転・Android 14搭載などの機能を抽出"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "2000 ANSI・日光下可視",
+        "category": "comparativeAdvantage",
+        "confidence": "low",
+        "supportingSourceIds": ["src-amazon-page"],
+        "crossChecked": false,
+        "notes": "同価格帯・サイズの1LCDプロジェクターにおいて2000 ANSIルーメンを達成することは物理的に考えにくく、一般的な中華製プロジェクター特有の誇大表記（光源ルーメンなどと混同）である可能性が高い。日光下での鮮明な視認性は期待できない。"
+      },
+      {
+        "claim": "100000Hの長寿命",
+        "category": "durability",
+        "confidence": "low",
+        "supportingSourceIds": ["src-amazon-page"],
+        "crossChecked": false,
+        "notes": "一般的なLED光源寿命は3万時間程度であり、10万時間は理論値に過ぎず、排熱等の他パーツの寿命が先に来る可能性が高いため過信は禁物。"
+      }
+    ],
+    "lastInvestigated": "2026-09-24",
+    "investigatedPrice": "￥29,614",
+    "competitiveAnalysis": [
+      {
+        "name": "iSinbox 家庭用 小型プロジェクター",
+        "asin": "B0H8YN38YV",
+        "priceComparison": "本商品(約29,600円)より約5,600円安価。同じく1080P/360度回転対応・Android内蔵を謳っている。",
+        "featureComparison": [
+          "共通点：ネイティブ1080P、回転式スタンド内蔵（天井投影対応）、Android搭載",
+          "相違点：iSinboxは1200ANSI表記で価格が安い。本商品（WEMI）はAndroid 14と2000 ANSIを主張しているが、実質的な明るさの差は不透明。"
+        ],
+        "differentiators": [
+          "本商品の利点：より新しいバージョンのOS（Android 14）とWi-Fi 6、Bluetooth 5.4の最新通信規格を搭載しており、アプリの動作や通信の安定性を重視する場合に適している",
+          "iSinboxの利点：機能や形状がほぼ同じであるため、価格を少しでも抑えたい場合や、ブランドにこだわりがない場合のコスパに優れる"
+        ]
+      },
+      {
+        "name": "KEEZING 球体プロジェクター",
+        "asin": "B0H753MNBG",
+        "priceComparison": "本商品(約29,600円)と比較して約19,600円も安い（約9,998円）。",
+        "featureComparison": [
+          "共通点：ネイティブ1080P、回転式デザイン、Android 14搭載",
+          "相違点：KEEZINGは独特の球体デザインを採用し、価格が非常に安い。本商品はオーソドックスな箱型＋ジンバル形状。"
+        ],
+        "differentiators": [
+          "本商品の利点：スタンダードな形状と物理的な安定感、自動台形補正やオートフォーカスなどの全自動調整機能の充実を求めるならこちら",
+          "KEEZINGの利点：とにかく安く（1万円以下で）Android搭載の回転式プロジェクターを試してみたいという入門用として圧倒的に手軽"
+        ]
+      },
+      {
+        "name": "Sainellor 短焦点プロジェクター",
+        "asin": "B0HCVDH1L6",
+        "priceComparison": "本商品(約29,600円)と比較して約16,600円安い（約12,999円）。",
+        "featureComparison": [
+          "共通点：回転機構付き、Android内蔵",
+          "相違点：Sainellorは0.9:1の短焦点レンズを搭載し、狭い部屋でも大画面を実現できる。OSはAndroid TV 15を謳う。"
+        ],
+        "differentiators": [
+          "本商品の利点：短焦点特有の画面端の歪みが気になる場合や、一般的な投影距離が確保できる環境での使用に適している",
+          "Sainellorの利点：投影距離が取れない狭い部屋（ワンルーム等）で大画面を出したい場合は、短焦点レンズを搭載したこちら一択となる"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "三脚や外部スティックなどの追加機材なしで、手軽にベッドルームで天井投影を楽しみたい人",
+        "最新の通信規格（Wi-Fi 6 / BT 5.4）による安定したワイヤレス接続を重視する人"
+      ],
+      "pros": [
+        "Android 14を内蔵し、Wi-Fiに繋ぐだけでNetflixやYouTubeを単体再生できるため、Fire TV Stick等を買い足す手間や配線のごちゃつきがありません",
+        "270度回転スタンドと自動台形補正により、ベッドサイドにポンと置くだけで綺麗な四角形で天井に映像を映せます"
+      ],
+      "cons": [
+        "29,614円という価格は類似スペックの中華プロジェクター市場の中では強気な設定です。コスパ重視なら1万円台の競合品も視野に入れることをおすすめします",
+        "「2000 ANSI・日光下可視」という表記は誇大であり、昼間の明るいリビングでの使用には適していません。夜間や遮光カーテンのある部屋での使用を前提としてください"
+      ],
+      "score": 67,
+      "scoreRationale": "[基本点: 70]\n[加点: +5] (Android 14内蔵と270度回転による設置・使用の手軽さ)\n[加点: +2] (Wi-Fi 6 / BT5.4対応など通信規格の新しさ)\n[減点: -5] (同等機能の競合品(1〜2万円台)と比較して実売価格が割高であり、コスパがやや劣る)\n[減点: -5] (「2000 ANSI」「日光下可視」など物理的に矛盾する誇大スペック表記による信頼性の欠如)\n[合計: 67]"
+    },
+    "technicalSpecs": {
+      "os": "Android TV 14.0",
+      "cpu": "新型H726チップ",
+      "display": {
+        "size": "最大200インチ",
+        "resolution": "1920×1080 (ネイティブ1080P) / 4K・8Kデコード対応",
+        "type": "LCD (推定)",
+        "refreshRate": "不明"
+      },
+      "brightness": "2000 ANSI (※メーカー公称値、実態と乖離がある可能性大)",
+      "contrastRatio": "18000:1",
+      "colorGamut": "93%",
+      "lightSourceLife": "100,000時間",
+      "adjustments": "オートフォーカス、自動台形補正、障害物回避、スクリーン自動適合、設置向き検知",
+      "speaker": "HiFiステレオスピーカー内蔵 (Dolby Atmos対応)",
+      "dimensions": {
+        "height": "178mm",
+        "width": "226mm",
+        "depth": "145mm",
+        "weight": "1.8kg"
+      },
+      "connectivity": [
+        "Wi-Fi 6",
+        "Bluetooth 5.4",
+        "HDMI (CEC/ARC対応)",
+        "USB",
+        "3.5mm オーディオジャック"
+      ],
+      "other": [
+        "270度回転投影設計",
+        "エアマウス＆音声アシスタント付きスマートリモコン付属",
+        "AirPlay / Android Miracast対応"
+      ]
+    }
+  }
+}
