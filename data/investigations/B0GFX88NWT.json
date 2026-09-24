@@ -58,7 +58,7 @@
         "notes": "製品画像や特徴に記載"
       }
     ],
-    "lastInvestigated": "2026-03-26",
+    "lastInvestigated": "2026-09-25",
     "competitiveAnalysis": [
       {
         "name": "YOWHICK プロジェクター",
@@ -131,22 +131,31 @@
       "scoreRationale": "[基本点: 70] (固定)\n[加点: +10] (Android TV内蔵や270°回転スタンドなど、低価格ながら多機能である点)\n[加点: +2] (500gと軽量で取り回しが良い)\n[減点: -15] (過去価格89,999円からの92%オフ表示は二重価格の疑いが極めて強く、信頼性を大きく損なう)\n[合計: 67] (最終的なスコア)"
     },
     "technicalSpecs": {
+      "os": "Android TV 14.0",
       "dimensions": {
         "height": "119mm",
         "width": "134mm",
         "depth": "218mm"
       },
       "weight": "500g",
-      "resolution": "1080PフルHD（4K対応）",
+      "display": {
+        "resolution": "1080PフルHD（4K対応）"
+      },
       "brightness": "27000LM（商品ページ記載）",
-      "os": "Android TV 14.0",
-      "connectivity": "Wi-Fi 6, Bluetooth 5.4, HDMI, USB, 3.5mmオーディオ",
-      "features": [
+      "connectivity": [
+        "Wi-Fi 6",
+        "Bluetooth 5.4",
+        "HDMI",
+        "USB",
+        "3.5mmオーディオ"
+      ],
+      "other": [
         "自動台形補正",
         "270°回転スタンド",
         "HiFi外部スピーカー内蔵",
         "短距離投影（0.5m-4m）"
       ]
-    }
+    },
+    "investigatedPrice": "価格情報なし"
   }
 }
