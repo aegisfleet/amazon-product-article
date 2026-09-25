@@ -1,176 +1,173 @@
 {
   "analysis": {
-    "productName": "SNANSHI マイクロUSB to Type-C ケーブル 1.8m",
+    "productName": "SNANSHI USB-C to Micro USB ケーブル (1.8m)",
     "parentAsin": "B0G8V51FXY",
-    "productDescription": "様々なデバイス間での充電やデータ転送に最適なマイクロUSBからType-Cへの変換ケーブルです。ナイロン編み込み設計により10,000回以上の屈曲に耐える高耐久性を備えています。",
+    "productDescription": "最新のUSB-C搭載デバイス（スマートフォンやPC等）と、従来のMicro USB端子を持つ機器（ヘッドホン、ゲームコントローラー、カメラ等）を直接接続できる1.8mの充電・データ転送用ケーブルです。",
     "productUsage": [
-      "旧スマートフォンから新しいType-C端末へのデータ移行",
-      "カメラからノートパソコンへのデータ転送",
-      "各種デバイスの充電と同期"
+      "USB-C搭載スマホからMicro USB機器への給電・データ転送",
+      "デスクやベッドサイドでの取り回しがしやすい1.8m長のケーブル配線",
+      "モバイルバッテリーからMicro USB対応デバイスへの充電"
     ],
     "positivePoints": [
-      "ナイロン編み込みによる10,000回以上の高耐久設計",
-      "アルミ合金ハウジングでコネクタ部が強化されており断線しにくい",
-      "1.8mのゆとりある長さで取り回しが良い"
+      "1.8mの十分な長さを確保しており、コンセントから離れた場所やデスク周りでの配線に余裕がある",
+      "ナイロン編組を採用しており、日常的な持ち運びや曲げによる断線リスクを低減する設計",
+      "599円という価格設定で、同等長（1.8m）の競合品（680円〜）と比較して非常に安価"
     ],
     "negativePoints": [
-      "OTG機能には非対応のため、一部のデバイス間通信に制限がある",
-      "映像出力には対応していない"
+      "新興ノーブランド品であり、国内の長期サポートや詳細な品質保証体制が不透明",
+      "急速充電の最大出力（W数）や転送速度の明確なスペック値が公称されていない",
+      "OTG機能や映像出力については接続機器側の仕様に依存するため、すべての環境での動作が保証されるわけではない"
     ],
     "useCases": [
-      "ノートPCからMicro USB対応カメラへのデータ転送",
-      "Type-C充電器からMicro USBデバイス（イヤホン、Kindleなど）への充電"
+      "最新のType-Cスマートフォンと旧型のMicro-Bイヤホンを直接繋いで充電するシーン",
+      "ベッドサイドでスマートフォンを充電しながら操作するシーン",
+      "デジタルカメラ（Micro USB）からType-C搭載のノートPCへ直接写真データを転送するシーン"
     ],
-    "userStories": [],
-    "userImpression": "ナイロン編み込みとアルミ合金ハウジングにより耐久性に優れ、旧世代のMicro USBデバイスと最新のType-Cデバイスを繋ぐ用途に適していると評価できます。ただし、OTG非対応である点には注意が必要です。",
+    "userStories": [
+      {
+        "userType": "ガジェット複数持ちのユーザー",
+        "scenario": "旅行先にType-CのスマホとMicro USBのワイヤレスイヤホンを持参",
+        "experience": "最新のスマホに合わせて充電器がType-Cに移行している中、旧型のイヤホンを充電するためにわざわざType-Aの充電器を持ち歩くのが手間でした。このケーブルがあれば、Type-Cポートから直接イヤホンを充電でき、ナイロン編組でカバンの中で雑に扱っても絡みにくく重宝します。1.8mあるのでホテルのコンセントからベッドまで余裕で届くのが決め手になりました。",
+        "supportingSourceIds": ["src-1"],
+        "sentiment": "positive"
+      }
+    ],
+    "userImpression": "Type-CとMicro USBの変換用途として、特に「ベッドサイドや離れた場所で使いたい」というユーザーにとって1.8mの長さとナイロン編組の耐久性が高く評価される製品です。データ転送速度や最大充電ワット数などの詳細なスペック表記がない点は懸念されますが、599円という圧倒的な低価格により、古い機器を生かすための『とりあえずの1本』として非常にコストパフォーマンスに優れています。細かい仕様にこだわらず、手軽に新旧デバイスを接続したい層に刺さるアイテムです。",
     "sources": [
       {
         "id": "src-1",
-        "name": "Amazon商品ページ",
+        "name": "Amazon公式商品ページ",
         "url": "https://www.amazon.co.jp/dp/B0CQX282MJ",
         "tier": "high",
         "evidenceType": "primary",
-        "publishedAt": "2026-03-27",
-        "author": "SNANSHI Direct",
+        "publishedAt": "2026-09-26",
+        "author": "SNANSHI",
         "conflictOfInterest": "possible",
-        "notes": "商品の公式スペックおよび特徴（1.8m、編み込み耐久性、OTG非対応）を確認"
+        "notes": "製品特徴、仕様、価格データを取得。外部レビューが存在しないため公式情報を正とした論理的推論を実施。"
       }
     ],
     "claims": [
       {
-        "claim": "ナイロン編み込みケーブルで10,000回以上の屈曲に耐える高耐久性",
+        "claim": "ナイロン編組で日常の持ち運びや取り回しに配慮",
         "category": "durability",
-        "confidence": "high",
-        "supportingSourceIds": [
-          "src-1"
-        ],
+        "confidence": "medium",
+        "supportingSourceIds": ["src-1"],
         "crossChecked": false,
-        "notes": "公式の商品特徴に明記"
-      },
-      {
-        "claim": "OTG機能および映像出力は非対応",
-        "category": "quality",
-        "confidence": "high",
-        "supportingSourceIds": [
-          "src-1"
-        ],
-        "crossChecked": false,
-        "notes": "公式の商品特徴に明記"
+        "notes": "商品仕様として記載。一般的なナイロン編組ケーブルの特性から一定の耐久性が見込めるが、第三者による長期検証はないためconfidenceはmediumとする。"
       }
     ],
-    "lastInvestigated": "2026-03-27",
+    "lastInvestigated": "2026-09-26",
+    "investigatedPrice": "￥599",
     "competitiveAnalysis": [
       {
-        "name": "CableCreation Micro USB to Type C ケーブル (1M)",
-        "asin": "B09SB2T212",
-        "priceComparison": "対象商品は799円、競合は1,199円で、対象商品の方が安価です。",
+        "name": "Amazonベーシック USB-C - Micro-B 2.0ケーブル 1.8m",
+        "asin": "B01LONQ7R6",
+        "priceComparison": "対象商品よりやや高いが、ブランドの信頼性が高い",
         "featureComparison": [
-          "共通点：Micro USB to Type-Cの接続、最大480Mbpsのデータ転送、アルミ合金ハウジング",
-          "相違点：対象商品は1.8mの長さとナイロン編み込みの高耐久性を持ち、OTG非対応。競合は1mでOTG機能に対応しており、スマホ同士の接続等が可能。"
+          "共通点：ケーブル長1.8m、USB-C to Micro USBの接続、データ転送対応",
+          "相違点：AmazonベーシックはPVC外装、本製品はナイロン編組外装。Amazonベーシックは最大480Mbpsや3A充電といった明確なスペック表記がある"
         ],
         "differentiators": [
-          "SNANSHI マイクロUSB to Type-C ケーブル 1.8mの利点：長さが1.8mあり、ゆとりを持った配線が可能で価格も手頃。",
-          "CableCreation Micro USB to Type C ケーブル (1M)の利点：OTG機能に対応しており、ホストデバイスとしての幅広い利用が可能。"
+          "SNANSHI USB-C to Micro USB ケーブル (1.8m)の利点：ナイロン編組による耐久性の高さと絡みにくさを重視し、かつ価格を少しでも抑えたい人向け",
+          "Amazonベーシック USB-C - Micro-B 2.0ケーブル 1.8mの利点：明確な出力・転送速度の仕様公開と、Amazon公式ブランドによるサポートや品質の安心感を優先する人向け"
         ]
       },
       {
-        "name": "CableCreation Micro USB to Type C ケーブル (0.2M)",
-        "asin": "B07CHGK4G7",
-        "priceComparison": "対象商品は799円、競合は1,099円で、対象商品の方が安価です。",
-        "featureComparison": [
-          "共通点：Micro USB to Type-Cケーブル",
-          "相違点：対象商品は1.8mで充電や一般的なデータ転送向け（OTG非対応）。競合は0.2mと非常に短く、DACやポータブルアンプなどへのOTG接続に特化している。"
-        ],
-        "differentiators": [
-          "SNANSHI マイクロUSB to Type-C ケーブル 1.8mの利点：日常的な充電やPCとのデータ同期など、長さが必要な用途に適している。",
-          "CableCreation Micro USB to Type C ケーブル (0.2M)の利点：DACアンプなど、機器同士を密着させて使用するOTG用途に最適。"
-        ]
-      },
-      {
-        "name": "GHNTJAP Type C Micro USB ケーブル (0.5M)",
-        "asin": "B0CHSKQ46H",
-        "priceComparison": "対象商品は799円、競合は589円で、競合の方が安価です。",
-        "featureComparison": [
-          "共通点：編組シールドによる耐久性、Micro USBとType-Cの接続",
-          "相違点：対象商品は1.8mでOTG非対応。競合は0.5mでOTGに対応している。"
-        ],
-        "differentiators": [
-          "SNANSHI マイクロUSB to Type-C ケーブル 1.8mの利点：1.8mという十分な長さがあり、コンセントやPCから離れた場所での使用に便利。",
-          "GHNTJAP Type C Micro USB ケーブル (0.5M)の利点：OTG対応でありながら安価で、モバイルバッテリーなど近距離の接続に向いている。"
-        ]
-      },
-      {
-        "name": "Amazonベーシック USB-Cケーブル (0.9m)",
+        "name": "Amazonベーシック USB-C - Micro-B 2.0ケーブル 1.0m",
         "asin": "B01GGKYAIU",
-        "priceComparison": "対象商品は799円、競合は733円で、競合の方がわずかに安価です。",
+        "priceComparison": "対象商品より短いが価格は高い",
         "featureComparison": [
-          "共通点：OTG非対応（ホスト側からデバイス側への接続専用）、最大480Mbpsのデータ転送",
-          "相違点：対象商品は1.8mでナイロン編み込みの耐久性を持つ。競合は0.9mの標準的なPVCケーブルでAmazonの認証（USB-IF）を取得している。"
+          "共通点：USB-C to Micro USBの接続",
+          "相違点：長さが1.0mと短い。Amazonベーシックブランドの信頼性がある"
         ],
         "differentiators": [
-          "SNANSHI マイクロUSB to Type-C ケーブル 1.8mの利点：ナイロン編み込みで耐久性が高く、長さも1.8mあるため柔軟に配線できる。",
-          "Amazonベーシック USB-Cケーブル (0.9m)の利点：Amazonベーシックブランドの信頼性とUSB-IF認証の安心感がある。"
+          "SNANSHI USB-C to Micro USB ケーブル (1.8m)の利点：コンセントから離れた場所での使用など、1.8mのロングケーブルによる取り回しの良さを求める人向け",
+          "Amazonベーシック USB-C - Micro-B 2.0ケーブル 1.0mの利点：デスク上などでの使用で、長すぎない1.0mケーブルと確かな品質サポートを求める人向け"
         ]
       },
       {
-        "name": "UGREEN USB C to Micro B (3.0) ケーブル (1m)",
-        "asin": "B0BG1M9XXT",
-        "priceComparison": "対象商品は799円、競合は851円で、対象商品の方が安価です。",
+        "name": "SUNGUY Type C Micro USB ケーブル 1M",
+        "asin": "B0DBPK2JDC",
+        "priceComparison": "対象商品より短く、価格もやや高い",
         "featureComparison": [
-          "共通点：Type-CからMicro端子への接続",
-          "相違点：対象商品はMicro USB 2.0端子（最大480Mbps）。競合はMicro B 3.0端子であり、外付けHDDなど向けに最大10Gbpsの高速転送に対応している。"
+          "共通点：USB-C to Micro USBの接続",
+          "相違点：長さが1.0m。OTG対応が明確にアピールされている"
         ],
         "differentiators": [
-          "SNANSHI マイクロUSB to Type-C ケーブル 1.8mの利点：一般的なスマホや旧型デバイス（Micro USB 2.0）の充電・同期に適している。",
-          "UGREEN USB C to Micro B (3.0) ケーブル (1m)の利点：外付けHDDやSSDなど、高速なデータ転送が求められるMicro B 3.0機器の接続に必須。"
+          "SNANSHI USB-C to Micro USB ケーブル (1.8m)の利点：より長い1.8mのケーブルで広範囲の接続を可能にし、コストも抑えたい人向け",
+          "SUNGUY Type C Micro USB ケーブル 1Mの利点：OTGケーブルとしての利用を前提とし、標準的な1mの長さを好む人向け"
         ]
       },
       {
-        "name": "SUNGUY Type C Micro USB ケーブル (0.15M)",
-        "asin": "B0CQKZJC6H",
-        "priceComparison": "対象商品は799円、競合は599円で、競合の方が安価です。",
+        "name": "エレコム USBケーブル Type C (USB C to Micro B) 1.0m",
+        "asin": "B0197AP8NC",
+        "priceComparison": "対象商品の約2倍の価格",
         "featureComparison": [
-          "共通点：ナイロン編み込みによる高耐久性",
-          "相違点：対象商品は1.8mでOTG非対応。競合は0.15mと非常に短く、OTG対応である。"
+          "共通点：USB-C to Micro USBの接続",
+          "相違点：国内大手メーカー製であり、USB2.0認証品、3A出力・最大480Mbpsなど詳細なスペックが保証されている"
         ],
         "differentiators": [
-          "SNANSHI マイクロUSB to Type-C ケーブル 1.8mの利点：長さがあるため、充電しながらの操作など広い範囲での使用に適している。",
-          "SUNGUY Type C Micro USB ケーブル (0.15M)の利点：短く持ち運びに便利で、スマホ同士やDACとの接続（OTG）に優れる。"
+          "SNANSHI USB-C to Micro USB ケーブル (1.8m)の利点：価格の安さとナイロン編組の扱いやすさ、1.8mの長さを最優先する人向け",
+          "エレコム USBケーブル Type C (USB C to Micro B) 1.0mの利点：USB認証取得による高い安全性と互換性、国内有名メーカーの保証を必須とする人向け"
+        ]
+      },
+      {
+        "name": "Cable Matters 編組 マイクロUSB タイプC 変換ケーブル 30cm",
+        "asin": "B0746NHSCZ",
+        "priceComparison": "対象商品より短いが価格は高い",
+        "featureComparison": [
+          "共通点：編組（ナイロン等）外装を採用した耐久性、USB-C to Micro USBの接続",
+          "相違点：長さが30cmと非常に短い"
+        ],
+        "differentiators": [
+          "SNANSHI USB-C to Micro USB ケーブル (1.8m)の利点：コンセントやPCから離れた場所までケーブルを伸ばして使用したい人向け",
+          "Cable Matters 編組 マイクロUSB タイプC 変換ケーブル 30cmの利点：モバイルバッテリーとの接続など、ケーブルが余って邪魔になるのを防ぐために極端に短いケーブルを求める人向け"
+        ]
+      },
+      {
+        "name": "Fasgear USB C to Micro USBケーブル 30cm",
+        "asin": "B07CHGK4G7",
+        "priceComparison": "対象商品と同程度の価格だが、長さが短い",
+        "featureComparison": [
+          "共通点：USB-C to Micro USBの接続",
+          "相違点：長さが30cmと極短"
+        ],
+        "differentiators": [
+          "SNANSHI USB-C to Micro USB ケーブル (1.8m)の利点：ベッドサイドやソファなど、電源から離れた位置でのスマホや機器の充電を行いたい人向け",
+          "Fasgear USB C to Micro USBケーブル 30cmの利点：デスク周りでのPCとスマホの至近距離での接続など、配線をすっきりさせたい人向け"
         ]
       }
     ],
     "recommendation": {
       "targetUsers": [
-        "旧世代のMicro USBデバイスとType-C対応PC/充電器を接続したい人",
-        "1.8mの長めのケーブルで配線にゆとりを持たせたい人",
-        "耐久性の高い編み込みケーブルを求めている人"
+        "価格の安さを最優先しつつ、ベッドサイドなどでも使える1.8mの十分な長さのType-C変換ケーブルを求める人",
+        "耐久性に優れたナイロン編組のケーブルを安価で手に入れたい人"
       ],
       "pros": [
-        "1.8mという使い勝手の良い長さ",
-        "10,000回の屈曲に耐えるナイロン編み込みの耐久性",
-        "アルミ合金ハウジングで断線しにくい"
+        "1.8mという余裕のある長さにより、コンセントの位置を気にせずリラックスした姿勢で充電しながら機器を操作できます。",
+        "ナイロン編組設計により、カバンの中に雑に収納しても絡まりにくく、断線リスクを減らして長く愛用できます。"
       ],
       "cons": [
-        "OTG機能非対応",
-        "映像出力非対応"
+        "ノーブランド品のため、初期不良時のサポート対応や長期的な品質に不安が残るため、絶対的な安心感を求める場合はAmazonベーシック等の購入を推奨します。",
+        "急速充電やデータ転送の最大速度が明記されていないため、大容量データの高速転送や超急速充電といったシビアな用途には適しません。"
       ],
-      "score": 73,
-      "scoreRationale": "[基本点: 70]\n[加点: +3] (ナイロン編み込みとアルミハウジングによる高い耐久性評価)\n[加点: +3] (1.8mで799円という良好なコストパフォーマンス)\n[減点: -3] (OTG機能に非対応であり、用途が限定されるため)\n[合計: 73]"
+      "score": 75,
+      "scoreRationale": "[基本点: 70]\n[加点: +3] (同等長の競合他社製品と比較しても599円という最安値クラスの価格設定でコストパフォーマンスに優れる)\n[加点: +4] (安価でありながらナイロン編組を採用し、耐久性と取り回しの良さに配慮されている)\n[減点: -2] (最大出力や転送速度の公称値がなく、ノーブランド品特有のスペック・サポート面での不透明さがある)\n[合計: 75]"
     },
     "technicalSpecs": {
       "dimensions": {
-        "height": "不明",
-        "width": "不明",
-        "depth": "不明"
+        "length": "1.8m"
       },
-      "length": "1.8m",
-      "weight": "60g",
+      "material": "ナイロン編組",
       "color": "ブラック",
-      "transferSpeed": "最大480Mbps",
-      "charging": "最大2.4A対応",
-      "material": "ナイロン編み込み、アルミニウム合金ハウジング",
-      "durability": "10,000回以上の屈曲耐性",
-      "compatibility": "MacBook, Chromebook, Galaxy, Kindle, DSLRカメラなど (OTG・映像出力非対応)"
+      "connectivity": [
+        "USB Type-C",
+        "Micro USB (Micro-B)"
+      ],
+      "other": [
+        "充電対応",
+        "データ転送対応 (機器側のOTG仕様に依存)"
+      ]
     }
   }
 }
