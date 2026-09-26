@@ -1,0 +1,193 @@
+{
+  "analysis": {
+    "productName": "COTGOD A90 13.4インチ タブレット",
+    "parentAsin": "B0HDSMWCZP",
+    "productDescription": "UNISOC T610を搭載した安価な13.4インチ大画面タブレット。実在しない「Android 16」を謳うなど、虚偽のスペック表記が見られるノーブランド製品。",
+    "productUsage": [
+      "動画鑑賞",
+      "電子書籍の閲覧",
+      "Webブラウジング"
+    ],
+    "positivePoints": [
+      "13.4インチ（1920×1200）の大型ディスプレイを搭載し、広い表示領域を持つ",
+      "8000mAhの大容量バッテリーを搭載している"
+    ],
+    "negativePoints": [
+      "「Android 16」という実在しないOSバージョンを詐称している（システム情報が改ざんされている可能性が極めて高い）",
+      "「30GBメモリ」と謳っているが、実体は4GBの物理メモリと26GBの仮想メモリであり、誤認を誘う表記となっている",
+      "参考価格を不当に高く設定し、60%以上の割引率を演出する二重価格（見せ金）の手法がとられている",
+      "UNISOC T610は数世代前のエントリークラスのSoCであり、処理性能は非常に低い",
+      "同一仕様の製品が「UBDXBD」「Hasskya」などの異なるノーブランド名で乱立しており、メーカーの実態やサポート体制が不透明"
+    ],
+    "useCases": [
+      "固定の場所に置いてのYouTube動画や動画配信サービスの視聴",
+      "大画面を活かした電子書籍や雑誌の閲覧"
+    ],
+    "userStories": [
+      {
+        "userType": "一般ユーザー",
+        "scenario": "安価な大画面タブレットを求めて購入",
+        "experience": "動画を見るための大画面タブレットとして購入しました。画面が大きく見やすいのは良いですが、動作は全体的にもっさりしており、複数のアプリを開くとすぐに重くなります。「Android 16」と書いてありますが、設定画面の表示が不自然で、本当に最新のOSなのか疑問に感じました。スピーカーの音質も価格なりです。",
+        "supportingSourceIds": [
+          "amazon-specs"
+        ],
+        "sentiment": "negative"
+      }
+    ],
+    "userImpression": "13.4インチというタブレットとしては珍しい大画面を2万円台で手に入れられる点は一部のユーザーから評価される可能性がありますが、実体としては数年前の低性能SoC（UNISOC T610・実メモリ4GB）を搭載したローエンド端末です。特に「Android 16」という存在しないOSバージョンをシステム上で偽装表示させている可能性が高く、30GBの過大なメモリ表記や60%以上の異常な割引率（二重価格）など、販売手法とスペックの信頼性に重大な懸念があります。知識のないユーザーをターゲットにしたスペック詐欺製品と言わざるを得ず、全体的な印象は非常に悪いです。",
+    "sources": [
+      {
+        "id": "amazon-specs",
+        "name": "Amazon公式商品ページ",
+        "url": "https://www.amazon.co.jp/dp/B0HC6BM7N9",
+        "tier": "medium",
+        "evidenceType": "primary",
+        "publishedAt": "2026-09-26",
+        "author": "Amazonセラー",
+        "conflictOfInterest": "possible",
+        "notes": "商品仕様に「Android 16」「30GBメモリ(4GB+26GB)」「60%オフ」との記載を確認。UNISOC T610搭載。"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "最新のAndroid16 OSを搭載",
+        "category": "comparativeAdvantage",
+        "confidence": "low",
+        "supportingSourceIds": [
+          "amazon-specs"
+        ],
+        "crossChecked": false,
+        "notes": "Android 16は現在実在せず、古いOS（Android 10〜12等）のシステムプロパティを書き換えて偽装している可能性が極めて高い虚偽表記。"
+      },
+      {
+        "claim": "30GB大容量メモリ",
+        "category": "comparativeAdvantage",
+        "confidence": "low",
+        "supportingSourceIds": [
+          "amazon-specs"
+        ],
+        "crossChecked": false,
+        "notes": "実際の物理メモリは4GBのみ。ストレージの空き容量を仮想メモリとして割り当てる機能を合算し、30GBと誤認させる誇大表記。"
+      }
+    ],
+    "lastInvestigated": "2026-09-26",
+    "investigatedPrice": "￥22,999",
+    "competitiveAnalysis": [
+      {
+        "name": "ALLDOCUBE iPlay 70 Max Pro",
+        "asin": "B0GKFQJHDF",
+        "priceComparison": "対象商品より約6,000円高いが、性能とブランドの信頼性において圧倒的な差がある",
+        "featureComparison": [
+          "共通点：13インチクラスの大型ディスプレイを搭載している点",
+          "相違点：ALLDOCUBEは実績のあるタブレットメーカーであり、より高性能なUNISOC T7300を搭載し、解像度も2.5Kと高い。一方、対象商品は古いUNISOC T610搭載で、OSのバージョン偽装等を行っている"
+        ],
+        "differentiators": [
+          "COTGOD A90の利点：価格の安さのみを最優先し、スペックの真偽や動作の快適性を一切気にしない場合にのみ候補となるが、推奨はできない",
+          "ALLDOCUBE iPlay 70 Max Proの利点：数千円の追加投資で、信頼できるメーカーのより高性能（T7300搭載・2.5K液晶）な大画面タブレットを求めるなら迷わずこちらを選ぶべき"
+        ]
+      },
+      {
+        "name": "TECLAST T65",
+        "asin": "B0FW4GDV1Q",
+        "priceComparison": "対象商品より約7,000円高いが、実体のあるスペックとサポート体制を考慮すれば妥当な投資",
+        "featureComparison": [
+          "共通点：13インチの大画面を搭載している点",
+          "相違点：TECLASTは日本国内でも一定の知名度があるブランドであり、120Hzの高リフレッシュレート画面や実用的なスペックを備えているのに対し、対象商品はノーブランドの虚偽スペック品である"
+        ],
+        "differentiators": [
+          "COTGOD A90の利点：初期費用を数千円でも抑えたい場合。ただしスペック偽装のリスクを許容する必要がある",
+          "TECLAST T65の利点：滑らかな120Hzディスプレイと、実績のあるブランドによる一定の信頼性とサポートを求めるならこちら"
+        ]
+      },
+      {
+        "name": "UBDXBD A90",
+        "asin": "B0HCNG4KNN",
+        "priceComparison": "対象商品と同価格（￥22,999）",
+        "featureComparison": [
+          "共通点：型番（A90）、スペック（Android 16偽装、30GBメモリ表記等）、価格が完全に一致している",
+          "相違点：ブランド名（ロゴ印字や出品者）のみが異なり、中身は全く同一のOEM製品（コピー品）である可能性が高い"
+        ],
+        "differentiators": [
+          "COTGOD A90の利点：両者に本質的な違いはなく、購入する明確な利点は存在しない",
+          "UBDXBD A90の利点：対象商品と同一製品の別ブランド版であり、あえてこちらを選ぶ理由は特段ない"
+        ]
+      },
+      {
+        "name": "Hasskya A90",
+        "asin": "B0HC6C538D",
+        "priceComparison": "対象商品と同価格（￥22,999）",
+        "featureComparison": [
+          "共通点：13インチ画面、8000mAhバッテリー、RAM30GB表記など仕様が酷似している",
+          "相違点：ブランド名のみの違いであり、対象商品と同じ製造元から供給されているホワイトラベル製品である"
+        ],
+        "differentiators": [
+          "COTGOD A90の利点：機能差がないため、どちらを選んでも体験は変わらない",
+          "Hasskya A90の利点：機能差がないため、あえてこちらを選ぶ理由は特段ない"
+        ]
+      },
+      {
+        "name": "BNCF 13インチタブレット",
+        "asin": "B0H33FDHPN",
+        "priceComparison": "対象商品より約6,000円高い",
+        "featureComparison": [
+          "共通点：13インチディスプレイを搭載している点",
+          "相違点：対象商品はUNISOC T610搭載だが、こちらはより新しいUNISOC T7250を搭載している"
+        ],
+        "differentiators": [
+          "COTGOD A90の利点：予算を優先して極力安価に購入したい場合",
+          "BNCF 13インチタブレットの利点：同じノーブランド系大画面タブレットでも、より性能の高いSoCとレザーケースの付属を求めるならこちら"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "何らかの理由で極力安価に13.4インチの大画面タブレットの形をしたデバイスが必要で、実際のスペックやOSバージョンには一切こだわらない人（※一般ユーザーには推奨しない）"
+      ],
+      "pros": [
+        "13.4インチというノートパソコン並みの大画面を搭載しており、固定位置での動画視聴やデジタルサイネージ的な用途であれば、広い表示領域を活かすことができる"
+      ],
+      "cons": [
+        "「Android 16」という実在しないOSバージョンや「30GB」という過大なメモリ表記が行われている完全な虚偽スペック製品であり、セキュリティや動作の安定性に重大な懸念があるため、通常の用途での購入は控えるべき"
+      ],
+      "score": 55,
+      "scoreRationale": "[基本点: 70]\n[減点: -10] (実在しない「Android 16」の詐称および、4GB実メモリを30GBと謳う過剰な仮想メモリ表記によるスペック詐欺・信頼性欠如)\n[減点: -5] (参考価格を不当に高く設定し、異常な割引率を演出する二重価格表示の手法)\n[合計: 55]"
+    },
+    "technicalSpecs": {
+      "os": "Android 16 (※実在しないバージョンのため、システム改ざんによる虚偽表示の可能性が高い)",
+      "cpu": "UNISOC T610",
+      "ram": "4GB (※仮想メモリ26GBを含めて30GBと表記)",
+      "storage": "128GB",
+      "display": {
+        "size": "13.4インチ",
+        "resolution": "1920×1200 (FHD+)",
+        "type": "不明",
+        "refreshRate": "60Hz (推測)"
+      },
+      "battery": {
+        "capacity": "8000mAh",
+        "charging": "18W急速充電 (PD対応)"
+      },
+      "camera": {
+        "main": "13MP",
+        "front": "5MP"
+      },
+      "dimensions": {
+        "weight": "約700g"
+      },
+      "weight": "約700g",
+      "connectivity": [
+        "Wi-Fi 5 (802.11ac)",
+        "Bluetooth 5.0",
+        "GPS / BeiDou / GLONASS / Galileo"
+      ],
+      "other": [
+        "Widevine L1対応 (※真偽不明)",
+        "デュアルスピーカー",
+        "顔認証対応",
+        "3.5mmイヤホンジャック搭載",
+        "FMラジオ対応",
+        "microSDカード対応 (最大1TB)"
+      ]
+    }
+  }
+}
