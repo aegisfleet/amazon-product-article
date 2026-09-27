@@ -107,14 +107,16 @@ describe('extractPriceDrops', () => {
     expect(saved.totalDrops).toBe(1);
   });
 
-  it('異常な割引率（75%以上）や低スコア（70未満）の商品は除外されること', async () => {
+  it('異常な割引率（70%以上）や低スコア（80未満）の商品は除外されること', async () => {
     const now = Date.now();
 
-    await fs.promises.writeFile(path.join(articlesDir, 'b00fake0001.md'), '---\nasin: "B00FAKE001"\nscore: 75\n---\n');
-    await fs.promises.writeFile(path.join(articlesDir, 'b00low00001.md'), '---\nasin: "B00LOW0001"\nscore: 65\n---\n');
+    await fs.promises.writeFile(path.join(articlesDir, 'b00fake0001.md'), '---\nasin: "B00FAKE001"\nscore: 85\n---\n');
+    await fs.promises.writeFile(path.join(articlesDir, 'b00low00001.md'), '---\nasin: "B00LOW0001"\nscore: 79\n---\n');
+    await fs.promises.writeFile(path.join(articlesDir, 'b00valid001.md'), '---\nasin: "B00VALID01"\nscore: 80\n---\n');
 
     const cacheData = {
-      // 80% OFF (二重価格の疑い -> 除外)
+      // 1. 70% OFF (70%以上の割引 -> 二重価格の疑いとして除外)
+      // 10,000円 -> 3,000円 (70% OFF)
       B00FAKE001: {
         status: 'valid',
         timestamp: now,
@@ -123,10 +125,11 @@ describe('extractPriceDrops', () => {
         data: {
           asin: 'B00FAKE001',
           title: 'Fake Discount Item',
-          price: { amount: 2000, currency: 'JPY', formatted: '￥2,000' },
+          price: { amount: 3000, currency: 'JPY', formatted: '￥3,000' },
         },
       },
-      // スコア65 (70点未満 -> 除外)
+      // 2. スコア79 (80点未満 -> 除外)
+      // 3,000円 -> 2,000円 (33% OFF)
       B00LOW0001: {
         status: 'valid',
         timestamp: now,
@@ -136,6 +139,18 @@ describe('extractPriceDrops', () => {
           asin: 'B00LOW0001',
           title: 'Low Score Item',
           price: { amount: 2000, currency: 'JPY', formatted: '￥2,000' },
+        },
+      },
+      // 3. 有効アイテム: スコア80、割引率69% (10,000円 -> 3,100円) -> 抽出される
+      B00VALID01: {
+        status: 'valid',
+        timestamp: now,
+        previousPrice: 10000,
+        priceChangedAt: now - 3600 * 1000,
+        data: {
+          asin: 'B00VALID01',
+          title: 'Valid Drop Item',
+          price: { amount: 3100, currency: 'JPY', formatted: '￥3,100' },
         },
       },
     };
@@ -148,7 +163,10 @@ describe('extractPriceDrops', () => {
       outputPath: outputFile,
     });
 
-    expect(result.totalDrops).toBe(0);
+    expect(result.totalDrops).toBe(1);
+    expect(result.drops[0]?.asin).toBe('B00VALID01');
+    expect(result.drops[0]?.score).toBe(80);
+    expect(result.drops[0]?.priceDiffRate).toBe(69);
   });
 
   it('無効エントリや価格が0以下のアイテムは除外されること', async () => {
