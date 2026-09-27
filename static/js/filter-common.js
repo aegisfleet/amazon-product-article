@@ -250,15 +250,6 @@ function bindCardHeader(article, p) {
       tagCat.remove();
     }
   }
-  const tagSub = article.querySelector('[data-slot="tag-sub"]');
-  if (tagSub) {
-    if (p.subcategory) {
-      tagSub.textContent = String(p.subcategory);
-      tagSub.style.display = '';
-    } else {
-      tagSub.remove();
-    }
-  }
   const titleLink = article.querySelector('[data-slot="title-link"]');
   if (titleLink) {
     titleLink.href = safeUrl(p.url);
