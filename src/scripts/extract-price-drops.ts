@@ -109,8 +109,8 @@ function formatJPY(amount: number): string {
   return `￥${amount.toLocaleString('ja-JP')}`;
 }
 
-const MAX_ALLOWED_DISCOUNT_RATE = 75;
-const DEFAULT_MIN_REQUIRED_SCORE = 70;
+const MAX_ALLOWED_DISCOUNT_RATE = 70;
+const DEFAULT_MIN_REQUIRED_SCORE = 80;
 const MIN_REQUIRED_DISCOUNT_RATE = 5;
 
 async function loadArticleMetaMap(articlesDir: string): Promise<Map<string, ArticleMeta>> {
