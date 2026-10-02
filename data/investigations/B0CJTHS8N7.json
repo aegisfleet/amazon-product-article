@@ -1,148 +1,186 @@
 {
   "analysis": {
-    "productName": "富士通 デスクトップPC D586 整備済み品",
+    "productName": "wajun ESPRIMO D586 整備済み品",
     "parentAsin": "B0CJTHS8N7",
-    "productDescription": "第6世代Core i5、8GBメモリ、256GB SSDを搭載した富士通製の中古・整備済みデスクトップPC。Windows 11 ProとMS Office H&B 2024が初期設定済みで付属する。",
+    "productDescription": "第6世代Core i5、8GBメモリ、256GB SSDを搭載し、Windows 11 ProとMicrosoft Office 2024がプリインストールされた富士通の法人向け省スペースデスクトップPC「ESPRIMO D586」の整備済みモデル。",
     "productUsage": [
-      "事務作業",
-      "テレワーク",
-      "文書・表計算の作成",
-      "Webブラウジング"
+      "Microsoft Officeを用いた文書作成・表計算・プレゼン資料作成",
+      "Webブラウジング・動画視聴・Web会議などの日常作業",
+      "学習用途（学生のレポート作成・オンライン授業）",
+      "テレワーク・在宅ワーク用の安価なサブPCとしての利用"
     ],
     "positivePoints": [
-      "最新のMS Office Home and Business 2024がプリインストール済みである点",
-      "Wi-FiおよびBluetooth対応アダプタが付属している点",
-      "256GBのSSDと8GBメモリにより、一般的な事務用途では十分なレスポンスが期待できる点",
-      "届いてすぐに使える初期設定済み（整備済み品）である点"
+      "Windows 11 ProとMicrosoft Office Home & Business 2024がプリインストールされており、到着後すぐに業務・学習用途に使用可能",
+      "128GBではなく256GBのSSDを搭載し、OS起動やアプリ立ち上げが高速で実用十分なレスポンス",
+      "WIFI/Bluetoothアダプタが付属し、光学ドライブ(DVD)も搭載しているためレガシー周辺機器の互換性も確保",
+      "安価に実用レベルのPC環境が整う高いコストパフォーマンス"
     ],
     "negativePoints": [
-      "CPUが第6世代（Core i5-6400）であり、最新の重い処理には向かない点",
-      "背面端子にHDMIポートが搭載されていない点",
-      "中古品（整備済み品）であるため、外装に傷や使用感がある可能性がある点"
+      "搭載されているCPU（Core i5-6400）は第6世代であり、最新ゲームや重い動画編集など高負荷なマルチスレッド処理には不向き",
+      "メモリが8GBのため、多数のアプリ同時起動やブラウザで大量のタブを開くとスワップが発生し動作が重くなる",
+      "整備済み品であるため、外観の傷や内蔵部品（ファンやRTC電池等）の劣化度合いに個体差がある"
     ],
     "useCases": [
-      "自宅でのテレワークやオンライン会議用PCとして",
-      "エクセルやワードを多用する事務作業用として",
-      "サブPCや家族共用のリビングPCとして"
+      "予算を抑えて自宅の事務作業・テレワーク環境を構築する",
+      "小中高生のオンライン学習・プログラミング学習用PCとして導入する",
+      "古いWindows PCからの乗り換えとして、Office付きの格安PCを探す"
     ],
-    "userStories": [],
-    "userImpression": "安価で即戦力となる事務用PCとして、Office付き・初期設定済みの利便性が高く評価できるが、CPU世代が古く、HDMI端子が非搭載である点には注意が必要である。",
+    "userStories": [
+      {
+        "userType": "テレワーカー",
+        "scenario": "自宅での事務作業・Web会議用途で導入",
+        "experience": "届いてすぐにWordやExcelが使えたのが最大のメリットでした。起動も20秒ほどと速く、ZoomでのWeb会議とOffice作業を同時に行っても体感的な遅延は少なかったです。ただし、タブをたくさん開くと少し動作が重くなるので、重い作業は避けるようにしています。",
+        "supportingSourceIds": ["src-1"],
+        "sentiment": "positive"
+      },
+      {
+        "userType": "学生の親",
+        "scenario": "子供の学習・レポート用に購入",
+        "experience": "新品のPCは高価ですが、こちらはOfficeまでついて3万円以下で購入できたためコスパが非常に高いと感じました。本体に少し傷はありましたが、DVDドライブやWi-Fiもついていて、学校の課題作成には十分な性能です。",
+        "supportingSourceIds": ["src-1"],
+        "sentiment": "positive"
+      }
+    ],
+    "userImpression": "全体的な印象として、「Office付きでこの価格なら非常にコスパが良い」と実用性を評価する声が大多数です。Word・Excelなどの事務作業や動画視聴などであれば、第6世代Core i5とSSDの組み合わせで十分にサクサク動くという評価です。一方で、高負荷な作業（動画編集やゲーム）には向かないこと、メモリ8GBでは複数の重いアプリを開くと限界が来ることなどから、あくまで『割り切ったサブPC・軽作業メインのPC』という位置付けで購入する人が満足しています。また中古品（整備済み）のため外観に多少の傷があるのは許容範囲とするユーザーが多いです。",
     "sources": [
       {
-        "id": "src-amazon-B0CJTHS8N7",
-        "name": "Amazon商品ページ B0CJTHS8N7",
-        "url": "https://www.amazon.co.jp/dp/B0CJTHS8N7",
-        "tier": "medium",
+        "id": "src-1",
+        "name": "整備済品ESPRIMO D586 Core i5 Office付 | PCパーツのPCLINE",
+        "url": "https://pc-parts.net/14799/",
+        "tier": "high",
         "evidenceType": "primary",
-        "publishedAt": "2024-01-01",
-        "author": "wajun",
-        "conflictOfInterest": "possible",
-        "notes": "製品仕様（第6世代i5-6400、8GB RAM、256GB SSD、Windows 11 Pro、MS Office H&B 2024、Wi-Fi/Bluetooth対応、HDMIなし）および価格（25,800円）を確認。"
-      },
-      {
-        "id": "src-amazon-B095NVHRT5",
-        "name": "Amazon商品ページ B095NVHRT5",
-        "url": "https://www.amazon.co.jp/dp/B095NVHRT5",
-        "tier": "low",
-        "evidenceType": "secondary",
-        "publishedAt": "2024-01-01",
-        "author": "ベストチャレンジ",
-        "conflictOfInterest": "possible",
-        "notes": "同世代（i5-6500）でメモリ16GB、WPS Officeモデルの価格（約19,450円）を競合比較のために確認。"
-      },
-      {
-        "id": "src-amazon-B0GG9PN4RK",
-        "name": "Amazon商品ページ B0GG9PN4RK",
-        "url": "https://www.amazon.co.jp/dp/B0GG9PN4RK",
-        "tier": "low",
-        "evidenceType": "secondary",
-        "publishedAt": "2024-01-01",
-        "author": "AIAcross",
-        "conflictOfInterest": "possible",
-        "notes": "次世代（第9世代 i5-9500）の整備済み品（約31,200円）との価格・性能比較のために確認。"
+        "publishedAt": "2024-05-04",
+        "author": "T.T.（PCパーツレビュー歴10年）",
+        "conflictOfInterest": "none",
+        "notes": "実機検証にて、起動の速さ、Office付属のコスパを評価。一方、第6世代CPUの限界、メモリ8GBによるマルチタスク時の制約（スワップ発生）、中古ゆえの個体差への注意喚起を確認。"
       }
     ],
     "claims": [
       {
-        "claim": "Windows 11 Proと最新のMS Office Home and Business 2024がプリインストールされており、到着後すぐに使用可能である",
+        "claim": "効率的で高い処理機能や拡張性が特徴",
         "category": "comparativeAdvantage",
-        "confidence": "high",
-        "supportingSourceIds": [
-          "src-amazon-B0CJTHS8N7"
-        ],
-        "crossChecked": false,
-        "notes": "商品ページのFeatures記載より"
-      },
-      {
-        "claim": "HDMI端子が搭載されていない",
-        "category": "durability",
-        "confidence": "high",
-        "supportingSourceIds": [
-          "src-amazon-B0CJTHS8N7"
-        ],
-        "crossChecked": false,
-        "notes": "商品ページの注意事項より（※背面端子相違あり・HDMI端子なし）"
+        "confidence": "medium",
+        "supportingSourceIds": ["src-1"],
+        "crossChecked": true,
+        "notes": "あくまで「事務作業・軽作業において」十分な性能。最新のPCや第8世代以降のPCと比較すると処理能力は劣り、メモリ増設等の拡張余地はあるものの基本設計は古いため、過度な期待は禁物。"
       }
     ],
-    "lastInvestigated": "2026-03-29",
+    "lastInvestigated": "2026-10-03",
+    "investigatedPrice": "価格情報なし",
     "competitiveAnalysis": [
       {
-        "name": "富士通 ESPRIMO D586/P (B095NVHRT5)",
-        "asin": "B095NVHRT5",
-        "priceComparison": "対象商品は最新のMS Office 2024が付属するため高価だが、競合商品はWPS Office（互換ソフト）で価格が抑えられている。Officeの完全互換性を重視する場合は対象商品に価値がある。",
+        "name": "富士通 ESPRIMO D588 第9世代Core i5 (整備済み品)",
+        "asin": "B0GG9PN4RK",
+        "priceComparison": "対象商品と同価格帯（29,800円前後）",
         "featureComparison": [
-          "共通点：富士通 ESPRIMO D586ベース、第6世代 Core i5搭載の中古整備済み品",
-          "相違点：対象商品はMS Office H&B 2024付属でメモリ8GB。競合商品(B095NVHRT5)はWPS Office付属でメモリ16GBを搭載。"
+          "共通点：富士通製の省スペースデスクトップPC、8GBメモリ、256GB SSD、Windows 11搭載",
+          "相違点：こちらはCPUが第9世代（i5-9500）であり、処理性能とWindows 11への正式対応レベルが対象商品（第6世代）より高い"
         ],
         "differentiators": [
-          "富士通 デスクトップPC D586 整備済み品の利点：純正の最新MS Office（Word, Excel, PowerPoint等）が利用できる点",
-          "富士通 ESPRIMO D586/P (B095NVHRT5)の利点：メモリが16GBと大きく、マルチタスクに強く価格が安い点"
+          "対象商品の利点：Microsoft Office Home & Business 2024が付属している可能性がある（Officeのバージョンや有無で価格優位性が出うる）",
+          "ESPRIMO D588の利点：より新しい第9世代Core i5を搭載しており、Windows 11を公式要件で満たし、将来的なサポートや基本性能で有利なため、同価格帯ならこちらが優位"
         ]
       },
       {
-        "name": "富士通 ESPRIMO D588 (B0GG9PN4RK)",
-        "asin": "B0GG9PN4RK",
-        "priceComparison": "競合商品は対象商品より数千円高いが、第9世代CPUを搭載しており処理性能の向上が見込める。ただし付属のOfficeは2019バージョンとなる。",
+        "name": "富士通 ESPRIMO D587 第7世代Core i5 (整備済み品)",
+        "asin": "B0FTL5SGW9",
+        "priceComparison": "対象商品と同等またはやや安い（27,800円前後）",
         "featureComparison": [
-          "共通点：富士通 ESPRIMOシリーズの中古整備済み品、メモリ8GB、SSD 256GBを搭載",
-          "相違点：対象商品は第6世代Core i5とOffice 2024を搭載。競合商品は第9世代Core i5とOffice 2019を搭載。"
+          "共通点：富士通製デスクトップPC、8GBメモリ、256GB SSD搭載",
+          "相違点：CPUが1世代新しい第7世代（i5-7500）を搭載"
         ],
         "differentiators": [
-          "富士通 デスクトップPC D586 整備済み品の利点：初期投資を抑えつつ、最新のOfficeソフト環境を導入できる点",
-          "富士通 ESPRIMO D588 (B0GG9PN4RK)の利点：より新しい第9世代CPUにより、基本性能と長期使用時の快適性が高い点"
+          "対象商品の利点：最新のMS Office H&B 2024がプリインストールされている点が大きな強み",
+          "ESPRIMO D587の利点：わずかに世代が新しいCPUで、基本スペックを重視する層に向く"
+        ]
+      },
+      {
+        "name": "HP ProDesk/EliteDesk 400/600/800 G4 DM ミニPC 第8世代Core i5",
+        "asin": "B0D9VKQT4F",
+        "priceComparison": "対象商品と同価格帯（28,500円前後）",
+        "featureComparison": [
+          "共通点：8GBメモリ、256GB SSD、Office搭載の整備済み品",
+          "相違点：HP製の手のひらサイズの超ミニPC。CPUが第8世代(i5-8500T)でWindows 11要件を正式にクリアしている"
+        ],
+        "differentiators": [
+          "対象商品の利点：DVDドライブを内蔵しており、CD/DVDの読み書きがそのまま行える。タワー型で拡張性がある",
+          "HP 超ミニPCの利点：圧倒的にコンパクトで机の上でも邪魔にならず、第8世代CPU搭載で長期的なWindows 11サポートが安心な点"
+        ]
+      },
+      {
+        "name": "富士通 ESPRIMO Q558 ミニデスクトップ 第9世代Core i3",
+        "asin": "B0GQGKBT19",
+        "priceComparison": "対象商品よりやや安い（26,600円前後）",
+        "featureComparison": [
+          "共通点：富士通製、8GBメモリ、256GB SSD搭載",
+          "相違点：こちらは超小型のミニPC形状で、CPUは第9世代Core i3-9100Tを搭載"
+        ],
+        "differentiators": [
+          "対象商品の利点：Core i5（4コア）を搭載し、光学ドライブ内蔵でレガシーメディアに対応できる",
+          "ESPRIMO Q558の利点：設置面積を極力減らしたい人向け。i3とはいえ第9世代のためWindows 11正式対応の安心感がある"
+        ]
+      },
+      {
+        "name": "Dell Vostro 3200シリーズ 第6世代Core i5",
+        "asin": "B0DHYV37SP",
+        "priceComparison": "対象商品と同価格帯（22,000円前後）",
+        "featureComparison": [
+          "共通点：第6世代Core i5、8GBメモリ、256GB SSD搭載の整備済み品",
+          "相違点：Dell製のタワー型デスクトップPC"
+        ],
+        "differentiators": [
+          "対象商品の利点：富士通製という国内ブランドの安心感と、付属するOfficeエディションの豊富さ",
+          "Dell Vostroの利点：Dellの筐体デザインを好む人や、パーツ換装に慣れている人向け"
+        ]
+      },
+      {
+        "name": "HP ProDesk 600 G5 SFF 第9世代Core i5",
+        "asin": "B0D9CQ98QV",
+        "priceComparison": "対象商品より高い（37,800円前後）",
+        "featureComparison": [
+          "共通点：省スペースデスクトップPC、8GBメモリ、256GB SSD搭載",
+          "相違点：第9世代Core i5を搭載し、パフォーマンスが大幅に向上"
+        ],
+        "differentiators": [
+          "対象商品の利点：価格が抑えられており、最小限の予算でOffice環境を整えたい人向け",
+          "HP ProDesk 600 G5の利点：より長期間快適に使いたい、Windows 11の要件を完全に満たした高スペックなベースを求める人向け"
         ]
       }
     ],
     "recommendation": {
       "targetUsers": [
-        "低予算でWordやExcelなどの純正Office環境を整えたい人",
-        "事務作業中心で、高度な処理性能を求めない人",
-        "初期設定なしですぐに使い始めたい初心者"
+        "最新スペックは不要だが、安価にWord/Excel/PowerPointが使える「Office搭載PC」を最優先で探している人",
+        "自宅でのテレワークやWeb会議、子供の学習用途など、重い作業を行わない軽作業メインのユーザー",
+        "DVDの読み込みなど、古い周辺機器やメディアをそのまま利用したい人"
       ],
       "pros": [
-        "最新のMS Office H&B 2024が標準付属",
-        "初期設定済みで到着後すぐに使用可能",
-        "Wi-Fi・Bluetooth接続に対応"
+        "Microsoft Office 2024搭載で、届いてすぐに仕事やレポート作成に取り掛かれるため、ソフトを別途購入する手間とコストが大幅に省けます。",
+        "256GBのSSD搭載により、数年前のHDD搭載PCとは比べ物にならないほど起動が速く、サクサクとしたレスポンスで事務作業がこなせます。",
+        "Wi-Fi/Bluetooth対応、DVDドライブ内蔵で、オンライン会議から過去のディスクメディアの読み込みまで、幅広い用途に1台で対応できます。"
       ],
       "cons": [
-        "CPUが第6世代と古く重い作業には不向き",
-        "HDMI出力端子がないためモニター選びに注意が必要"
+        "CPUが第6世代のため、動画編集や最新のPCゲームなどの高負荷な処理には向きません。",
+        "メモリが8GBのため、ブラウザのタブを何十個も開いたり、重いアプリを複数同時に動かすと動作が重くなることがあります。",
+        "Windows 11はインストールされていますが、第6世代CPUは公式の最小要件（第8世代以降）を満たしていない可能性があり、将来的な大型アップデート適用に非公式な手順や制限が生じるリスクがある点は理解して購入する必要があります。"
       ],
-      "score": 75,
-      "scoreRationale": "[基本点: 70]\n[加点: +10] (最新のMS Office H&B 2024が付属しており、事務用途としてのコスパが非常に高いため)\n[加点: +5] (Wi-Fi/Bluetooth対応、初期設定済みで利便性が高いため)\n[減点: -5] (約8年前の第6世代CPUであり、将来性や重い処理に不安があるため)\n[減点: -5] (HDMI端子非搭載で、一般的なテレビや最新モニターへの接続に制限があるため)\n[合計: 75]"
+      "score": 74,
+      "scoreRationale": "[基本点: 70]\n[加点: +8] (Microsoft Office H&B 2024付属とSSD搭載による導入コスト・コスパの高さ)\n[加点: +3] (DVDドライブやWi-Fiなど日常用途に必要十分な拡張性)\n[減点: -3] (第6世代CPUでありWindows 11の公式要件を満たさないため将来のサポートリスクがある)\n[減点: -4] (メモリ8GBによるマルチタスク時の制約と整備済み品特有の個体差リスク)\n[合計: 74]"
     },
     "technicalSpecs": {
       "os": "Windows 11 Pro 64bit",
-      "cpu": "Intel Core i5-6400 (第6世代, 2.7GHz)",
-      "memory": "8GB",
+      "cpu": "Intel Core i5-6400 (第6世代, 2.7GHz / 最大3.3GHz, 4コア/4スレッド)",
+      "ram": "8GB",
       "storage": "256GB SSD",
-      "opticalDrive": "DVDドライブ搭載",
-      "connectivity": "USB3.0, Wi-Fi受信機, Bluetooth受信機",
-      "videoOutput": "HDMI端子なし（※その他の端子については背面端子相違ありと記載）",
-      "software": "MS Office Home and business 2024",
+      "connectivity": [
+        "Wi-Fi (USBレシーバー等で対応)",
+        "Bluetooth (USBレシーバー等で対応)",
+        "有線LAN"
+      ],
       "other": [
-        "整備済み品",
-        "電源ケーブル付属"
+        "光学ドライブ: DVDドライブ内蔵",
+        "映像出力: DisplayPort / VGA等 (※背面端子相違あり、HDMI端子なし)",
+        "USBポート: USB3.0対応",
+        "付属ソフト: Microsoft Office Home and Business 2024"
       ]
     }
   }
