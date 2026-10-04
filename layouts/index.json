@@ -30,10 +30,20 @@
     {{- end -}}
   {{- end -}}
   {{- $specsJson := partial "product-specs-json.html" .Params.specs -}}
+  {{- $categoryUrl := "" -}}
+  {{- $categories := .GetTerms "categories" -}}
+  {{- if $categories -}}
+    {{- $categoryUrl = (index $categories 0).RelPermalink -}}
+  {{- else if .Params.category -}}
+    {{- with .Site.GetPage (printf "/categories/%s" (.Params.category | urlize)) -}}
+      {{- $categoryUrl = .RelPermalink -}}
+    {{- end -}}
+  {{- end -}}
   {{- $dict := dict
       "title" $product_name
       "permalink" .RelPermalink
       "categories" .Params.categories
+      "category_url" $categoryUrl
       "summary" $summary
       "image" $image
       "price" .Params.price

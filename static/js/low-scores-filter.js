@@ -395,6 +395,7 @@ document.addEventListener('DOMContentLoaded', () => {
       if (catEl) {
         const catText = catEl.textContent.trim();
         if (catText && categorySelect) {
+          e.preventDefault();
           if (categorySelect.value === catText) {
             categorySelect.value = '';
           } else {

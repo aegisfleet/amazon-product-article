@@ -157,6 +157,15 @@
     {{- $category := "" -}}
     {{- if .Params.categories -}}{{- $category = index .Params.categories 0 -}}{{- else if .Params.category -}}{{-
     $category = .Params.category -}}{{- end -}}
+    {{- $categoryUrl := "" -}}
+    {{- $categoriesTerms := .GetTerms "categories" -}}
+    {{- if $categoriesTerms -}}
+      {{- $categoryUrl = (index $categoriesTerms 0).RelPermalink -}}
+    {{- else if .Params.category -}}
+      {{- with .Site.GetPage (printf "/categories/%s" (.Params.category | urlize)) -}}
+        {{- $categoryUrl = .RelPermalink -}}
+      {{- end -}}
+    {{- end -}}
     {{- $lastInvestigated := "" -}}
     {{- with .Params.last_investigated -}}{{- $lastInvestigated = . -}}{{- end -}}
     {{- $bargainData = $bargainData | append (dict
@@ -167,6 +176,7 @@
     "priceRaw" $priceRaw
     "asin" (.Params.asin | default "")
     "category" $category
+    "categoryUrl" $categoryUrl
     "subcategory" (.Params.subcategory | default "")
     "brand" (.Params.brand | default "")
     "description" (.Description | default (.Summary | truncate 100))

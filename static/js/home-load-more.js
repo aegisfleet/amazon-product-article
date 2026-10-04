@@ -194,6 +194,7 @@ function mapIndexItemToProduct(item) {
         title: item.title,
         image: item.image,
         category: Array.isArray(item.categories) && item.categories.length > 0 ? item.categories[0] : '',
+        categoryUrl: item.category_url || '',
         description: item.summary || '',
         price: item.price || '',
         priceRaw: item.price_value || 0,
