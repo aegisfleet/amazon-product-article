@@ -57,4 +57,12 @@ describe('InvestigationPromptBuilder', () => {
     expect(prompt).toContain('仕様値と商品特徴（features）・寸法の数値乖離・物理的整合性の検証義務');
     expect(prompt).toContain('仕様項目を無批判に真実と信じてはならない');
   });
+
+  it('should include prevention of speculative unsupported judgements in prompt', () => {
+    const builder = new InvestigationPromptBuilder(baseProduct);
+    const prompt = builder.build();
+
+    expect(prompt).toContain('仕様の未記載・推測による非対応・非搭載判定の禁止（推測ネガティブ判定の防止）');
+    expect(prompt).toContain('独自の推測で「非対応」と断定して減点・批判することは厳禁である');
+  });
 });
