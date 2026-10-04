@@ -8,7 +8,7 @@ overrides:
   crypto-js: ^4.2.0
   qs: ^6.15.2
   '@babel/core': ^7.29.6
-  js-yaml: 5.4.1
+  js-yaml: 5.4.2
   form-data: ^2.5.6
   browserslist: ^4.28.7
   adm-zip: ^0.6.1
@@ -36,8 +36,8 @@ importers:
         specifier: ^30.5.1
         version: 30.5.1
       js-yaml:
-        specifier: 5.4.1
-        version: 5.4.1
+        specifier: 5.4.2
+        version: 5.4.2
       zod:
         specifier: ^4.6.5
         version: 4.6.5
@@ -1736,8 +1736,8 @@ packages:
   js-tokens@4.0.0:
     resolution: {integrity: sha512-RdJUflcE3cUzKiMqQgsCu06FPu9UdIJO0beYbPhHN4k6apgJtifcoCtT9bcxOpYBtpD2kCM6Sbzg4CausW/PKQ==}
 
-  js-yaml@5.4.1:
-    resolution: {integrity: sha512-28R/k+NAjeuf7+CKlTxWZVExJGwVVLwY06DgEnOMz2gEpfNkDcD7QvyiVPT0xy0XXhU8vHsd4Ot42OOPdJG7dQ==}
+  js-yaml@5.4.2:
+    resolution: {integrity: sha512-m+aqu+LwO1O6sIopafj8HUVl5aawITwZQe/yHpMCKjaWBaA/d07B/QdMb3529REftiU+RMMHL3Vlsw3hON7vWg==}
     hasBin: true
 
   jsesc@3.1.0:
@@ -2322,7 +2322,7 @@ snapshots:
 
   '@11ty/gray-matter@3.0.0':
     dependencies:
-      js-yaml: 5.4.1
+      js-yaml: 5.4.2
       section-matter: 1.0.0
 
   '@babel/code-frame@7.29.0':
@@ -2657,7 +2657,7 @@ snapshots:
       camelcase: 5.3.1
       find-up: 4.1.0
       get-package-type: 0.1.0
-      js-yaml: 5.4.1
+      js-yaml: 5.4.2
       resolve-from: 5.0.0
 
   '@istanbuljs/schema@0.1.6': {}
@@ -4258,7 +4258,7 @@ snapshots:
 
   js-tokens@4.0.0: {}
 
-  js-yaml@5.4.1:
+  js-yaml@5.4.2:
     dependencies:
       argparse: 2.0.1
 
