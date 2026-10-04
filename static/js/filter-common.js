@@ -240,12 +240,42 @@ function bindCardImage(article, p) {
   }
 }
 
+let cachedCategoryUrls = null;
+function getCategoryUrlFromName(name) {
+  if (!name) return '';
+  if (!cachedCategoryUrls) {
+    const el = document.getElementById('category-url-data');
+    if (el) {
+      try {
+        cachedCategoryUrls = JSON.parse(el.textContent || '{}');
+      } catch {
+        cachedCategoryUrls = {};
+      }
+    } else {
+      cachedCategoryUrls = {};
+    }
+  }
+  if (cachedCategoryUrls && cachedCategoryUrls[name]) {
+    return cachedCategoryUrls[name];
+  }
+  return `/categories/${encodeURIComponent(name)}/`;
+}
+
 function bindCardHeader(article, p) {
   const tagCat = article.querySelector('[data-slot="tag-category"]');
   if (tagCat) {
     if (p.category) {
       tagCat.textContent = String(p.category);
       tagCat.classList.add('bargain-card-category');
+      const catUrl = p.categoryUrl || getCategoryUrlFromName(p.category);
+      if (catUrl && tagCat.tagName.toLowerCase() === 'a') {
+        tagCat.href = safeUrl(catUrl);
+      } else if (!catUrl && tagCat.tagName.toLowerCase() === 'a') {
+        const spanTag = document.createElement('span');
+        spanTag.className = tagCat.className;
+        spanTag.textContent = tagCat.textContent;
+        tagCat.replaceWith(spanTag);
+      }
     } else {
       tagCat.remove();
     }
