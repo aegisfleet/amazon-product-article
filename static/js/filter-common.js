@@ -255,10 +255,7 @@ function getCategoryUrlFromName(name) {
       cachedCategoryUrls = {};
     }
   }
-  if (cachedCategoryUrls && cachedCategoryUrls[name]) {
-    return cachedCategoryUrls[name];
-  }
-  return `/categories/${encodeURIComponent(name)}/`;
+  return cachedCategoryUrls?.[name] || `/categories/${encodeURIComponent(name)}/`;
 }
 
 function bindCardHeader(article, p) {
@@ -266,6 +263,7 @@ function bindCardHeader(article, p) {
   if (tagCat) {
     if (p.category) {
       tagCat.textContent = String(p.category);
+      tagCat.setAttribute('aria-label', `${p.category}カテゴリを見る`);
       tagCat.classList.add('bargain-card-category');
       const catUrl = p.categoryUrl || getCategoryUrlFromName(p.category);
       if (catUrl && tagCat.tagName.toLowerCase() === 'a') {
