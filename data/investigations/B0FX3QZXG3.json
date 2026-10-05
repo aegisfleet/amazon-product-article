@@ -1,0 +1,203 @@
+{
+  "analysis": {
+    "productName": "HY300 MAX 小型プロジェクター",
+    "parentAsin": "B0HKP3XB2K",
+    "productDescription": "Android TV OSを搭載し、本体のみで動画配信サービスを楽しめる小型プロジェクター。270度回転可能なスタンド一体型で天井投影にも対応する。",
+    "productUsage": [
+      "寝室での天井投影",
+      "リビングでの映画鑑賞",
+      "動画配信サービスの単体再生"
+    ],
+    "positivePoints": [
+      "Android TV OSを内蔵し、本体のみでアプリのダウンロードと動画再生が可能",
+      "270度回転するスタンド一体型デザインで天井投影が容易",
+      "Wi-Fi 6およびBluetooth 5.4に対応している",
+      "自動台形補正機能を搭載"
+    ],
+    "negativePoints": [
+      "1万円以下の小型機でありながら「1400 ANSIルーメン」という物理的に矛盾する過大な明るさ表記（スペック詐欺）",
+      "同じ金型を採用したOEM製品（HY300系）が市場に多数溢れており、サポートや品質に懸念がある",
+      "常時大幅な割引を行っている二重価格表示の疑いがある設定"
+    ],
+    "useCases": [
+      "ベッドに寝転がりながら天井に映像を映して視聴する",
+      "三脚なしで壁や天井など好きな場所に投影する"
+    ],
+    "userStories": [
+      {
+        "userType": "映画やアニメが好きな人",
+        "scenario": "寝室で寝る前に動画を見る",
+        "experience": "スタンドが一体化しているので、ベッドに寝転がったまま天井に投影できるのが便利。本体だけでアプリが動くのでFire TV Stickなどを別途用意しなくて済むのも嬉しいポイント。",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "sentiment": "positive"
+      },
+      {
+        "userType": "初めてプロジェクターを買う人",
+        "scenario": "手頃な価格のプロジェクターを試す",
+        "experience": "カタログスペックの1400ANSIルーメンという数値を期待して購入したが、実際の明るさは価格相応。日中や明るい部屋ではほとんど見えず、真っ暗な部屋での視聴が前提となる。",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "sentiment": "negative"
+      }
+    ],
+    "userImpression": "本体だけで動画視聴が完結し、天井投影も容易なスタンド一体型デザインの使い勝手は評価されている。一方で、「1400 ANSIルーメン」や「8K対応」といった過剰なスペック表記に騙されたと感じるユーザーも多く、実際の性能は価格相応の暗い部屋専用エントリーモデルであるという評価に落ち着いている。",
+    "sources": [
+      {
+        "id": "src-1",
+        "name": "Amazon商品ページ",
+        "url": "https://www.amazon.co.jp/dp/B0FX3QZXG3",
+        "tier": "medium",
+        "evidenceType": "primary",
+        "publishedAt": "2026-10-05",
+        "author": "Philoent",
+        "conflictOfInterest": "possible",
+        "notes": "製品仕様、価格、割引情報、商品説明"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "1400ANSI高輝度で昼間でも鮮明に視聴可能",
+        "category": "quality",
+        "confidence": "low",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "crossChecked": false,
+        "notes": "1万円以下の小型機で1400 ANSIルーメンを実現することは物理的に不可能であり、典型的なスペック詐欺・過大表記であると判断"
+      },
+      {
+        "claim": "8K超高清デコードに対応",
+        "category": "quality",
+        "confidence": "low",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "crossChecked": false,
+        "notes": "物理解像度は1080Pであり、入力信号として受け付けるだけで実際の表示解像度が向上するわけではない過剰な表現"
+      }
+    ],
+    "lastInvestigated": "2026-10-05",
+    "investigatedPrice": "￥9,997",
+    "competitiveAnalysis": [
+      {
+        "name": "happilaff 小型プロジェクター",
+        "asin": "B0GL7Y8LMK",
+        "priceComparison": "対象商品より安い。OSは非搭載。",
+        "featureComparison": [
+          "共通点：270度回転のスタンド一体型デザイン、1080P解像度",
+          "相違点：対象商品はAndroid TV OSを内蔵し単体動作が可能だが、こちらはOS非搭載でスマホの有線接続等が必要"
+        ],
+        "differentiators": [
+          "対象商品の利点：本体だけでアプリをダウンロードし動画を視聴したい場合",
+          "happilaff 小型プロジェクターの利点：OSの動作によるもたつきを避け、シンプルにスマホやFire TV Stickなどの映像を映したい場合"
+        ]
+      },
+      {
+        "name": "WISHOLY 超小型プロジェクター",
+        "asin": "B0G4RBWVYG",
+        "priceComparison": "対象商品と同等の価格帯。",
+        "featureComparison": [
+          "共通点：270度回転スタンド、Android TV OS搭載、Wi-Fi 6対応",
+          "相違点：同等のOEMベース金型（HY300系）を採用しているとみられ、スペック上の大きな差異はない"
+        ],
+        "differentiators": [
+          "対象商品の利点：機能や見た目に大きな差はないため、購入時の実売価格やクーポン条件で優位な場合",
+          "WISHOLY 超小型プロジェクターの利点：機能や見た目に大きな差はないため、購入時の実売価格やクーポン条件で優位な場合"
+        ]
+      },
+      {
+        "name": "Philoent 家庭用 超小型プロジェクター (別バリエーション)",
+        "asin": "B0F5GQLNWP",
+        "priceComparison": "対象商品より安い。",
+        "featureComparison": [
+          "共通点：同一ブランド、Android TV OS搭載、Wi-Fi 6対応",
+          "相違点：デザインや重量(388g)が異なる可能性はあるが、基本システムは同一"
+        ],
+        "differentiators": [
+          "対象商品の利点：270度回転可能なスタンド一体型による設置の自由度を重視する場合",
+          "Philoent 超小型プロジェクターの利点：本体の更なる小型軽量さを重視し、価格を少しでも抑えたい場合"
+        ]
+      },
+      {
+        "name": "WhaleGoGo 家庭用 超小型プロジェクター",
+        "asin": "B0GWH8WHHT",
+        "priceComparison": "対象商品より安い。",
+        "featureComparison": [
+          "共通点：Android TV OS搭載、270度回転スタンド",
+          "相違点：本商品はエアーリモコン搭載を謳っている"
+        ],
+        "differentiators": [
+          "対象商品の利点：機能面での大きな差はないため、デザインの好みや実売価格で選ぶ",
+          "WhaleGoGo プロジェクターの利点：エアーリモコンによるOS操作の快適さを求める場合"
+        ]
+      },
+      {
+        "name": "TOPTRO TP2 プロジェクター",
+        "asin": "B0GRGN5RRL",
+        "priceComparison": "対象商品よりやや高い。",
+        "featureComparison": [
+          "共通点：Android OS搭載、270度回転スタンド",
+          "相違点：400 ANSIルーメンと記載（対象商品の1400表記より控えめだが現実的）"
+        ],
+        "differentiators": [
+          "対象商品の利点：予算を1万円以内に抑えたい場合",
+          "TOPTRO TP2の利点：比較的現実的なスペック表記を行っており、PSE認証や3年保証など最低限の信頼性を担保したい場合"
+        ]
+      },
+      {
+        "name": "球体デザイン 小型プロジェクター",
+        "asin": "B0H753MNBG",
+        "priceComparison": "対象商品と同等の価格帯。",
+        "featureComparison": [
+          "共通点：Android TV OS搭載、天井投影対応",
+          "相違点：対象商品は円筒形スタンド一体型だが、こちらは球体デザインで360度投影を謳う"
+        ],
+        "differentiators": [
+          "対象商品の利点：実績のあるHY300系の形状を好む場合",
+          "球体デザイン プロジェクターの利点：より自由な角度調整とインテリアに馴染む球体デザインを好む場合"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "スペックの過大表記を理解した上で、実売1万円以下でAndroid OS搭載・天井投影対応の「おもちゃ」として割り切って使える人"
+      ],
+      "pros": [
+        "本体だけでYouTubeやNetflixなどのアプリが使えるため、配線が不要でベッド周りもスッキリする",
+        "スタンドが一体化しているので、わざわざ三脚を用意しなくても寝室の天井に映像を映し出せる"
+      ],
+      "cons": [
+        "「1400 ANSIルーメン」は完全な誇大表記であり、実際には昼間や明るい部屋では見えないため、真っ暗な環境でしか使えない点に注意すること",
+        "Amazonで横行しているノーブランドOEM製品（HY300系）の1つであり、耐久性やサポートには期待できないこと"
+      ],
+      "score": 58,
+      "scoreRationale": "[基本点: 70]\n[加点: +5] (OS搭載による単体での動画再生機能の利便性)\n[加点: +3] (270度回転スタンド一体型による天井投影の手軽さ)\n[減点: -15] (小型機で1400 ANSIルーメンを謳う悪質なスペック詐欺および誇大表記)\n[減点: -5] (Amazon内競合相場より高い参考価格設定からの大幅割引による二重価格表示)\n[合計: 58]"
+    },
+    "technicalSpecs": {
+      "display": {
+        "resolution": "1920×1080 (1080P)",
+        "type": "LCD"
+      },
+      "os": "Android TV 14.0",
+      "dimensions": {
+        "height": "148mm",
+        "width": "184mm",
+        "depth": "230mm"
+      },
+      "connectivity": [
+        "Wi-Fi 6",
+        "Bluetooth 5.4",
+        "HDMI",
+        "USB"
+      ],
+      "other": [
+        "270度回転スタンド一体型",
+        "自動台形補正 (0.1秒)",
+        "スピーカー内蔵"
+      ]
+    }
+  }
+}
