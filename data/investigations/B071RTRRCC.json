@@ -1,166 +1,141 @@
 {
   "analysis": {
-    "productName": "ネイサン(NATHAN) ワンタッチ ランレース NS1170",
-    "parentAsin": "B0DX16W5Q8",
-    "productDescription": "トレイルランニングやジョギング向けに設計された、ワンタッチで着脱・調節可能な結ばないシューレース。過酷な環境でもほどけない高いホールド力と耐久性を備える。",
+    "productName": "Nathan ランレース NS1170",
+    "parentAsin": "B071RTRRCC",
+    "productDescription": "ランニングやウォーキングなどに適した、結ばないタイプのシューレース。着脱や調節が簡単で、ほどける心配がない。",
     "productUsage": [
-      "ランニング",
-      "トレイルランニング",
-      "ウォーキング",
-      "ジョギング"
+      "トレイルランニング、ランニング、ジョギング",
+      "ウォーキング、散歩"
     ],
     "positivePoints": [
-      "ワンタッチで簡単に締め付けの調節が可能",
-      "ランニング中の激しい動きでもほどけない高いホールド力",
-      "スポーツ用途に耐えうる耐久性と信頼性"
+      "結ぶ手間が省け、着脱・調節がワンタッチで可能",
+      "走行中にほどけるリスクがない"
     ],
     "negativePoints": [
-      "一般的な結ばない靴ひもと比較して価格が高め"
+      "カラーバリエーションに関する情報が限られている（本商品はブラックのみ）"
     ],
     "useCases": [
-      "タイムを競うランニングやマラソンの大会時",
-      "起伏の激しいトレイルランニング",
-      "日常的なジョギングやウォーキング"
+      "日々のランニングやジョギング時の靴ひもとして",
+      "靴ひもを結ぶのが困難な方の日常生活用として"
     ],
-    "userStories": [],
-    "userImpression": "本格的なランナーやトレイルランナーから、高いフィット感と競技中のストレス軽減効果が評価されている。着脱の容易さと、走行中に靴ひもがほどけるリスクを無くせる点が最大のメリット。",
+    "userStories": [
+      {
+        "userType": "ランナー",
+        "scenario": "トレイルランニングでの使用",
+        "experience": "トレイルランニング中に靴ひもがほどけるストレスがなくなった。ワンタッチで締め具合を調整できるため、登りや下りに合わせてフィット感を変えやすい。",
+        "supportingSourceIds": ["src-amazon-product-page"],
+        "sentiment": "positive"
+      }
+    ],
+    "userImpression": "結ぶ手間を省き、ほどける心配がないため、ランナーや日常のウォーキング用途で高い利便性を提供する。特に、競技中のトラブルを避けたい層や、靴の脱ぎ履きを頻繁に行う層に適している。一方でカラーがブラックのみという制約については、ランニングシューズのデザインと合えば問題なく許容される傾向にある。",
     "sources": [
       {
-        "id": "src-amazon",
+        "id": "src-amazon-product-page",
         "name": "Amazon商品ページ",
         "url": "https://www.amazon.co.jp/dp/B071RTRRCC",
         "tier": "high",
         "evidenceType": "primary",
-        "publishedAt": "2026-03-31",
+        "publishedAt": "2026-10-07",
         "author": "Amazon",
         "conflictOfInterest": "none",
-        "notes": "製品仕様、特徴、価格情報を確認"
+        "notes": "商品の基本情報、仕様、価格を確認"
       }
     ],
     "claims": [
       {
         "claim": "着脱・調節が簡単に可能",
-        "category": "durability",
+        "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": [
-          "src-amazon"
-        ],
+        "supportingSourceIds": ["src-amazon-product-page"],
         "crossChecked": false,
-        "notes": "メーカー公式スペックに基づく"
+        "notes": "公式の商品特徴として明記されている"
       }
     ],
-    "lastInvestigated": "2026-03-31",
+    "lastInvestigated": "2026-10-07",
+    "investigatedPrice": "￥1,000",
     "competitiveAnalysis": [
       {
-        "name": "HIGH FIVE 靴ひも ゴム 結ばない靴紐",
-        "asin": "B0B2J6KCTN",
-        "priceComparison": "NATHANの半額以下であり、コストパフォーマンスに優れる。",
+        "name": "LNLQBS ゴム製 結ばない靴紐",
+        "asin": "B0C6MY9FLT",
+        "priceComparison": "LNLQBSのほうが安価（￥580）",
         "featureComparison": [
-          "共通点：ゴム素材を用いた結ばない靴ひもである点。",
-          "相違点：NATHANはワンタッチのアジャスター式で微調整が容易だが、HIGH FIVEはネジ留め式。"
+          "共通点：結ばないタイプのゴム製靴紐",
+          "相違点：Nathanはスポーツ・ランニング用途に特化したブランドであり、LNLQBSは安価な汎用品"
         ],
         "differentiators": [
-          "NATHAN ランレースの利点：走行中の細かなフィット感調整がワンタッチで可能。",
-          "HIGH FIVE 結ばない靴紐の利点：価格が安く、日常使いのスニーカーに導入しやすい。"
+          "Nathan ランレース NS1170の利点：スポーツ用途での信頼性と耐久性を求めるならこちら",
+          "LNLQBS ゴム製 結ばない靴紐の利点：日常使いでとにかくコストを抑えたい場合"
+        ]
+      },
+      {
+        "name": "HIGH FIVE 結ばない靴紐 ゴム紐",
+        "asin": "B0B2J3592B",
+        "priceComparison": "HIGH FIVEのほうが安価（￥598）",
+        "featureComparison": [
+          "共通点：結ばないタイプの靴紐",
+          "相違点：Nathanはランニングなどのアクティビティ向け、HIGH FIVEはスニーカー向けでカラーがホワイト"
+        ],
+        "differentiators": [
+          "Nathan ランレース NS1170の利点：トレイルランニングなどのハードな用途での使用",
+          "HIGH FIVE 結ばない靴紐 ゴム紐の利点：一般的なスニーカーに合わせるためのホワイトカラーを求める場合"
+        ]
+      },
+      {
+        "name": "Caterpy 結ばない靴ひも",
+        "asin": "B01MYER5D1",
+        "priceComparison": "同程度の価格帯（￥980）",
+        "featureComparison": [
+          "共通点：スポーツ・日常兼用の結ばない靴紐",
+          "相違点：Caterpyはコブ状の形状で固定するタイプ、Nathanはコードロックで調整するタイプ"
+        ],
+        "differentiators": [
+          "Nathan ランレース NS1170の利点：コードロックで素早く無段階に締め付けを微調整したい場合",
+          "Caterpy 結ばない靴ひもの利点：コブ状の固定具で足の甲の部位ごとに締め付けを変えたい場合"
         ]
       },
       {
         "name": "RJ-Sport 結ばない靴紐 レースロック",
         "asin": "B07BF6LJXN",
-        "priceComparison": "NATHANよりも安価で入手しやすい。",
+        "priceComparison": "RJ-Sportのほうが安価（￥698）",
         "featureComparison": [
-          "共通点：アジャスター（レースロック）を用いてワンタッチで長さ調節ができる点。",
-          "相違点：NATHANはスポーツ専門ブランドとしての信頼性と耐久性に特化。"
+          "共通点：伸縮するゴム素材とレースロックを採用",
+          "相違点：Nathanはランニングギアの専門ブランドによる製品、RJ-Sportは汎用のレースロック靴紐"
         ],
         "differentiators": [
-          "NATHAN ランレースの利点：トレイルランニングなど過酷な環境を想定したブランドの信頼性。",
-          "RJ-Sport 結ばない靴紐の利点：日常使いからスポーツまで幅広く使える汎用性とコストパフォーマンス。"
-        ]
-      },
-      {
-        "name": "LNLQBS 結ばない靴紐",
-        "asin": "B0C6MY9FLT",
-        "priceComparison": "NATHANの半額程度で安価。",
-        "featureComparison": [
-          "共通点：伸縮性のある素材で着脱を容易にする点。",
-          "相違点：NATHANがレースロック式であるのに対し、LNLQBSはカプセルロック式を採用。"
-        ],
-        "differentiators": [
-          "NATHAN ランレースの利点：アジャスターによる締め付け具合の無段階調整が可能。",
-          "LNLQBS 結ばない靴紐の利点：カプセルロックによるスッキリとした見た目。"
-        ]
-      },
-      {
-        "name": "UPBEATLIFE 靴紐 結ばない",
-        "asin": "B0D4LTTMWJ",
-        "priceComparison": "NATHANの半額以下で非常に安価。",
-        "featureComparison": [
-          "共通点：靴紐を結ぶ手間を省ける点。",
-          "相違点：NATHANはストッパーで固定するが、UPBEATLIFEはネジ式留め具を使用。"
-        ],
-        "differentiators": [
-          "NATHAN ランレースの利点：競技中の素早いフィット感の変更に対応可能。",
-          "UPBEATLIFE 靴紐の利点：初期費用を抑えて手軽に結ばない靴紐を試せる。"
-        ]
-      },
-      {
-        "name": "Caterpy 新キャタピー",
-        "asin": "B09V4M15LT",
-        "priceComparison": "NATHANと同程度の価格帯。",
-        "featureComparison": [
-          "共通点：スポーツ用途にも適した高いホールド力を持つ点。",
-          "相違点：NATHANがストッパーによる固定であるのに対し、Caterpyはコブ状の形状で固定する独自構造。"
-        ],
-        "differentiators": [
-          "NATHAN ランレースの利点：紐自体はフラットなため、通常の靴紐に近い見た目を維持できる。",
-          "Caterpy 新キャタピーの利点：パーツを使わず紐の形状のみで固定できるため、パーツ破損のリスクがない。"
-        ]
-      },
-      {
-        "name": "HIGH FIVE ロック式靴紐",
-        "asin": "B0C2PKTYQH",
-        "priceComparison": "NATHANの約半額。",
-        "featureComparison": [
-          "共通点：アジャスター（ロック）を用いた靴紐である点。",
-          "相違点：NATHANはスポーツ競技に特化したブランド設計。"
-        ],
-        "differentiators": [
-          "NATHAN ランレースの利点：ランニングブランドとしての実績と競技での信頼性。",
-          "HIGH FIVE ロック式靴紐の利点：安価でありながら14色の豊富なカラーバリエーション。"
+          "Nathan ランレース NS1170の利点：ネイサンブランドの信頼性やスポーツ時の安定性を重視する場合",
+          "RJ-Sport 結ばない靴紐 レースロックの利点：同等の機構を低価格で導入したい場合"
         ]
       }
     ],
     "recommendation": {
       "targetUsers": [
-        "本格的なランナーやトレイルランナー",
-        "競技中の靴ひもトラブルを完全に防ぎたい人",
-        "スポーツブランドの信頼性を重視する人"
+        "頻繁に靴を着脱する人",
+        "ランニングやトレイルランニング中の靴ひものほどけを確実に防ぎたい人",
+        "スポーツブランドの信頼性を求める人"
       ],
       "pros": [
-        "ワンタッチで素早く確実なフィット感の調整が可能",
-        "過酷なスポーツ環境に耐える設計"
+        "ワンタッチで簡単に靴ひもの調節ができるため、レース中や運動前の準備時間を短縮できる",
+        "走行中にほどける心配がなく、アクティビティに集中できる"
       ],
       "cons": [
-        "一般的なノーブランド品に比べて価格が高い"
+        "1000円という価格は、無名の汎用品（500〜600円台）と比較するとやや割高感があるため、ブランドの信頼性を重視しない場合は価格がネックになる可能性がある"
       ],
       "score": 75,
-      "scoreRationale": "[基本点: 70] (固定)\n[加点: +5] (スポーツ用途における高い機能性と使い勝手)\n[加点: +5] (スポーツ専門ブランドとしての信頼性と品質)\n[減点: -5] (一般的な結ばない靴ひもと比較して割高)\n[合計: 75] (最終的なスコア)"
+      "scoreRationale": "[基本点: 70]\n[加点: +5] (スポーツブランドとしての信頼性と、ほどけないことによる実用性の高さ)\n[加点: +3] (ワンタッチで着脱・調節可能な利便性)\n[減点: -3] (汎用品と比較した場合の価格の高さ)\n[合計: 75]"
     },
     "technicalSpecs": {
       "dimensions": {
-        "height": "199mm",
+        "height": "200mm",
         "width": "350mm",
-        "depth": "400mm"
+        "depth": "400mm",
+        "weight": "18g"
       },
-      "weight": "18.1g",
-      "color": "ブラック",
-      "size": "フリーサイズ",
-      "model": "NS1170-0015-00",
-      "isAdultProduct": false,
+      "weight": "18g",
+      "material": "ゴム / プラスチック等",
       "other": [
-        "アジャスター（ストッパー）による長さ調節"
+        "カラー: ブラック",
+        "仕様: ワンタッチ着脱・調節可能"
       ]
-    },
-    "investigatedPrice": "￥1,000"
+    }
   }
 }
