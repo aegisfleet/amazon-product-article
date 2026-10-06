@@ -3,7 +3,12 @@
     "productName": "ネイサン(NATHAN) ワンタッチ ランレース NS1170",
     "parentAsin": "B0DX16W5Q8",
     "productDescription": "トレイルランニングやジョギング向けに設計された、ワンタッチで着脱・調節可能な結ばないシューレース。過酷な環境でもほどけない高いホールド力と耐久性を備える。",
-    "productUsage": ["ランニング", "トレイルランニング", "ウォーキング", "ジョギング"],
+    "productUsage": [
+      "ランニング",
+      "トレイルランニング",
+      "ウォーキング",
+      "ジョギング"
+    ],
     "positivePoints": [
       "ワンタッチで簡単に締め付けの調節が可能",
       "ランニング中の激しい動きでもほどけない高いホールド力",
@@ -37,7 +42,9 @@
         "claim": "着脱・調節が簡単に可能",
         "category": "durability",
         "confidence": "high",
-        "supportingSourceIds": ["src-amazon"],
+        "supportingSourceIds": [
+          "src-amazon"
+        ],
         "crossChecked": false,
         "notes": "メーカー公式スペックに基づく"
       }
@@ -140,13 +147,20 @@
       "scoreRationale": "[基本点: 70] (固定)\n[加点: +5] (スポーツ用途における高い機能性と使い勝手)\n[加点: +5] (スポーツ専門ブランドとしての信頼性と品質)\n[減点: -5] (一般的な結ばない靴ひもと比較して割高)\n[合計: 75] (最終的なスコア)"
     },
     "technicalSpecs": {
-      "dimensions": { "height": "199mm", "width": "350mm", "depth": "400mm" },
+      "dimensions": {
+        "height": "199mm",
+        "width": "350mm",
+        "depth": "400mm"
+      },
       "weight": "18.1g",
       "color": "ブラック",
       "size": "フリーサイズ",
       "model": "NS1170-0015-00",
       "isAdultProduct": false,
-      "other": ["アジャスター（ストッパー）による長さ調節"]
-    }
+      "other": [
+        "アジャスター（ストッパー）による長さ調節"
+      ]
+    },
+    "investigatedPrice": "￥1,000"
   }
 }
