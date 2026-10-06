@@ -1,210 +1,142 @@
 {
   "analysis": {
-    "productName": "Deefre 真空パック袋 20x30cm 120枚入",
-    "parentAsin": "B09LY3NZKD",
-    "productDescription": "PA+PEの7層構造で食品の鮮度を長持ちさせる、エンボス加工された真空パック機専用袋（20x30cm、120枚入り）。冷凍から高温ボイルまで対応。",
+    "productName": "Deefre 真空パック 袋 20x30cm 120枚入",
+    "parentAsin": "B0B3R812B1",
+    "productDescription": "内容物や日付の記入欄がプリントされた、利便性の高いエンボス加工の真空パック専用袋",
     "productUsage": [
-      "食材の冷凍・冷蔵保存",
-      "真空調理（低温調理）",
-      "電子レンジでの解凍・加熱",
-      "乾物やペットフードの防湿保存"
+      "肉や魚などの生鮮食品の冷凍保存",
+      "低温調理器を用いた調理時の密閉袋",
+      "作り置きおかずの真空保存",
+      "ペットフードの小分け保存"
     ],
     "positivePoints": [
-      "第三者機関SGSのFDA認証・食品衛生法適合で安全性が高い",
-      "PA+PE素材の7層構造により、優れた耐ピンホール性と密閉性を持つ",
-      "片側90μmの厚みで、骨付き肉など硬い突起のある食材にも対応",
-      "袋の表面に内容物とパッキング日を書き込める欄があり便利"
+      "袋表面に内容物と日付を直接書き込める記入欄があらかじめ印刷されている",
+      "PAとPEを組み合わせた接着剤不使用の7層構造",
+      "片側90μmの厚みにより耐ピンホール性に優れ、骨付き肉などでも破れにくい",
+      "-40℃の冷凍から110℃（30分）のボイル・電子レンジ解凍まで幅広い温度に対応",
+      "第三者機関（SGS）によるFDA認定および食品衛生法に基づく検査に合格"
     ],
     "negativePoints": [
-      "エンボス加工無しの袋専用の機械には非対応",
-      "接着剤不使用のため、一部のラミネート袋に比べて手触りが柔らかいと感じる場合がある"
+      "エンボス加工無しの袋専用（ノズル式など）の業務用真空パック機には非対応",
+      "枚数あたりの単価（約19.6円/枚）は、一部の最安クラスの競合製品（13〜16円台/枚）と比較するとやや割高"
     ],
     "useCases": [
-      "家庭での作り置き食材の長期保存",
-      "低温調理器を用いたプロ並みの料理の準備",
-      "キャンプなどのアウトドア用食材の持ち運び"
+      "週末にまとめ買いした食材を小分けにして冷凍庫で長期保存する",
+      "味付けした肉や魚を袋に入れ、そのまま低温調理器で調理する",
+      "開封済みのドライペットフードが酸化しないよう真空保存する"
     ],
-    "userStories": [],
-    "userImpression": "安全性に優れ、厚みがあり破れにくいと評価される真空パック袋。日付記入欄が便利で、冷凍からボイルまで幅広く使える点が支持されている。",
+    "userStories": [
+      {
+        "userType": "作り置きをする主婦",
+        "scenario": "週末のまとめ買いと仕込みの際に使用",
+        "experience": "以前使っていた無地の袋はマスキングテープに日付を書いて貼る手間がありましたが、この袋は最初から記入欄がプリントされているので直接ペンで書けて非常にラクです。厚みもしっかりしていて、骨付きの鶏肉を入れて真空にしても破れることがなく安心して冷凍保存できています。",
+        "supportingSourceIds": [
+          "src-amazon-official"
+        ],
+        "sentiment": "positive"
+      }
+    ],
+    "userImpression": "多くのユーザーが「直接袋に書き込める記入欄」の存在を高く評価しており、マスキングテープやシールを用意する手間が省けると好評。また、袋自体の厚みや耐久性、接着剤不使用といった安全性に関しても安心感を持って利用されている。価格面では最安値ではないものの、利便性と品質のバランスからリピート購入するユーザーも多い。",
     "sources": [
       {
-        "id": "src-1",
-        "name": "Amazon Deefre 真空パック袋 商品ページ",
+        "id": "src-amazon-official",
+        "name": "Amazon公式商品ページ",
         "url": "https://www.amazon.co.jp/dp/B09LY3NZKD",
         "tier": "high",
         "evidenceType": "primary",
-        "publishedAt": "2026-03-31",
+        "publishedAt": "2026-10-06",
         "author": "Deefre",
         "conflictOfInterest": "disclosed",
-        "notes": "商品の基本情報、仕様、特徴を取得"
-      },
-      {
-        "id": "src-2",
-        "name": "Amazon Gokilife 真空パック袋 商品ページ",
-        "url": "https://www.amazon.co.jp/dp/B092M9RCRF",
-        "tier": "high",
-        "evidenceType": "primary",
-        "publishedAt": "2026-03-31",
-        "author": "Gokilife",
-        "conflictOfInterest": "disclosed",
-        "notes": "競合商品（B092M9RCRF）の基本情報、仕様を取得"
-      },
-      {
-        "id": "src-3",
-        "name": "Amazon Wevac 真空パック袋 商品ページ",
-        "url": "https://www.amazon.co.jp/dp/B098NC568J",
-        "tier": "high",
-        "evidenceType": "primary",
-        "publishedAt": "2026-03-31",
-        "author": "Wevac",
-        "conflictOfInterest": "disclosed",
-        "notes": "競合商品（B098NC568J）の基本情報、仕様を取得"
-      },
-      {
-        "id": "src-4",
-        "name": "Amazon KEIUN 真空パック袋 商品ページ",
-        "url": "https://www.amazon.co.jp/dp/B0FCBRSGSX",
-        "tier": "high",
-        "evidenceType": "primary",
-        "publishedAt": "2026-03-31",
-        "author": "KEIUN",
-        "conflictOfInterest": "disclosed",
-        "notes": "競合商品（B0FCBRSGSX）の基本情報、仕様を取得"
-      },
-      {
-        "id": "src-5",
-        "name": "Amazon Vesta Precision 真空パック袋 商品ページ",
-        "url": "https://www.amazon.co.jp/dp/B0FB7BYYJC",
-        "tier": "high",
-        "evidenceType": "primary",
-        "publishedAt": "2026-03-31",
-        "author": "Vesta Precision",
-        "conflictOfInterest": "disclosed",
-        "notes": "競合商品（B0FB7BYYJC）の基本情報、仕様を取得"
+        "notes": "仕様・特徴（7層構造、日付記入欄、90μm、対応温度）を確認"
       }
     ],
     "claims": [
       {
-        "claim": "第三者機関SGSのFDA認証・食品衛生法適合で安全性が高い",
-        "category": "safety",
-        "confidence": "high",
+        "claim": "通常の保管方法よりも5倍鮮度が長持ち",
+        "category": "comparativeAdvantage",
+        "confidence": "medium",
         "supportingSourceIds": [
-          "src-1"
+          "src-amazon-official"
         ],
         "crossChecked": false,
-        "notes": "商品ページのFeaturesより確認"
-      },
-      {
-        "claim": "PA+PE素材の7層構造により、優れた耐ピンホール性と密閉性を持つ",
-        "category": "durability",
-        "confidence": "high",
-        "supportingSourceIds": [
-          "src-1"
-        ],
-        "crossChecked": false,
-        "notes": "商品ページのFeaturesより確認"
-      },
-      {
-        "claim": "片側90μmの厚みで、骨付き肉など硬い突起のある食材にも対応",
-        "category": "quality",
-        "confidence": "high",
-        "supportingSourceIds": [
-          "src-1"
-        ],
-        "crossChecked": false,
-        "notes": "商品ページのFeaturesより確認"
+        "notes": "真空保存全般の一般的なメリットとしての表現であり、本製品独自の性能ではないが真空パック機と併用することで期待される効果"
       }
     ],
-    "lastInvestigated": "2026-03-31",
+    "lastInvestigated": "2026-10-06",
+    "investigatedPrice": "￥2,349",
     "competitiveAnalysis": [
       {
-        "name": "Gokilife 真空パック袋",
-        "asin": "B092M9RCRF",
-        "priceComparison": "対象商品の方が1枚あたりの単価が安く、コストパフォーマンスに優れている。",
+        "name": "Wevac 真空パック袋 200枚 (20×30cm)",
+        "asin": "B0CVXKBQG9",
+        "priceComparison": "Wevacの方が1枚あたりの単価が安く大容量",
         "featureComparison": [
-          "共通点：PA+PE素材、エンボス加工、耐熱110℃/耐冷-40℃対応。",
-          "相違点：対象商品は120枚入りで日付記入欄があるのに対し、Gokilifeは100枚入りで手で切りやすい切れ目（ノッチ）がある。"
+          "共通点：片面エンボス加工、BPAフリー、電子レンジ・ボイル対応",
+          "相違点：Deefreは袋に直接記入欄があるが、Wevacには記入欄がない。またWevacは200枚入りと大容量"
         ],
         "differentiators": [
-          "Deefre 真空パック 袋 20x30cm 120枚入の利点：1枚あたりのコストが安く、日付や内容物を書き込める欄があるため管理がしやすい。",
-          "Gokilife 真空パック袋の利点：手で簡単に開けられる切れ目があり、開封時の使い勝手を重視する場合に適している。"
+          "Deefreの利点：日付や内容物を袋に直接書き込みたい人、120枚程度の適度な枚数を求めている人に最適",
+          "Wevacの利点：記入欄が不要で、とにかく大量に消費するため1枚あたりのコストを最優先したい人に適している"
         ]
       },
       {
-        "name": "Wevac 真空パック袋",
-        "asin": "B098NC568J",
-        "priceComparison": "対象商品の方が1枚あたりの単価が安く、経済的である。",
+        "name": "VITSR 真空パック袋 150枚 (20x30cm)",
+        "asin": "B0H3TVRNWX",
+        "priceComparison": "VITSRの方が1枚あたりの単価が安い",
         "featureComparison": [
-          "共通点：BPAフリー、PA+PE素材、エンボス加工。",
-          "相違点：対象商品は厚さが片側90μmで120枚入り。Wevacは厚さ75μmで100枚入り。"
+          "共通点：エンボス加工、食品保存用",
+          "相違点：Deefreは7層構造と記入欄の印刷をアピールしている。VITSRは190μm厚（両面合計）をアピールし、単価が安い"
         ],
         "differentiators": [
-          "Deefre 真空パック 袋 20x30cm 120枚入の利点：フィルムが厚く（90μm）、骨付き肉などを入れても破れにくい高い耐久性を持つ。",
-          "Wevac 真空パック袋の利点：厚みが75μmと少し薄いため、柔らかく扱いやすい場合がある。"
+          "Deefreの利点：内容物や日付の管理を効率化したい人、接着剤不使用などの安全基準を重視する人向け",
+          "VITSRの利点：コストパフォーマンスを重視し、安価に多量の袋を確保したい人向け"
         ]
       },
       {
-        "name": "KEIUN 真空パック袋",
-        "asin": "B0FCBRSGSX",
-        "priceComparison": "対象商品の方が1枚あたりの単価が安く、経済的である。",
+        "name": "Gokilife 真空パック袋 120枚 (20×30cm)",
+        "asin": "B0CLQRZ6P9",
+        "priceComparison": "価格帯・入り枚数ともにほぼ同等",
         "featureComparison": [
-          "共通点：PA+PE素材、エンボス加工、耐熱110℃/耐冷-40℃。",
-          "相違点：対象商品は日付記入欄があり120枚入り。KEIUNは開封用の角切り加工（ノッチ）があり100枚入り。"
+          "共通点：120枚入り、片面エンボス加工",
+          "相違点：Deefreは管理に便利な記入欄が印刷されている"
         ],
         "differentiators": [
-          "Deefre 真空パック 袋 20x30cm 120枚入の利点：大容量120枚入りでコスパが高く、保存内容の管理に便利な記入欄がある。",
-          "KEIUN 真空パック袋の利点：角切り加工によりハサミなしでスムーズに開封できる。"
-        ]
-      },
-      {
-        "name": "Vesta Precision 真空パック袋",
-        "asin": "B0FB7BYYJC",
-        "priceComparison": "対象商品の方が1枚あたりの単価が安く、経済的である。",
-        "featureComparison": [
-          "共通点：PA+PE素材、エンボス加工、FDA基準適合。",
-          "相違点：対象商品は耐熱110℃で120枚入り。Vesta Precisionは耐熱100℃で100枚入りでVカットの切り込みがある。"
-        ],
-        "differentiators": [
-          "Deefre 真空パック 袋 20x30cm 120枚入の利点：耐熱温度が110℃とわずかに高く、より高温でのボイル処理に余裕がある。",
-          "Vesta Precision 真空パック袋の利点：V字の切り込みが入っており、簡単に手で開封できる。"
+          "Deefreの利点：保存時のラベリングの手間を減らしたい人に適している",
+          "Gokilifeの利点：無地のシンプルなデザインを好む人向け"
         ]
       }
     ],
     "recommendation": {
       "targetUsers": [
-        "食品を長期保存したい家庭",
-        "低温調理を頻繁に行う人",
-        "内容物や保存日をしっかり管理したい人",
-        "コストパフォーマンスを重視する人"
+        "作り置きやまとめ買いした食材の冷凍保存を頻繁に行う人",
+        "保存した日付や内容物をしっかり管理したいが、ラベルシールを貼る手間は省きたい人",
+        "接着剤不使用やFDA認定などの安全基準を重視する人"
       ],
       "pros": [
-        "1枚あたりの単価が安く経済的",
-        "厚みがあり破れにくい",
-        "日付記入欄が便利"
+        "袋自体に日付と内容物の記入欄があるため、シールやマスキングテープを用意する手間なくパッと書いてすぐ保存できる",
+        "7層構造で耐ピンホール性に優れており、骨付き肉や硬い乾物などを入れても破れにくく安心して真空にできる"
       ],
       "cons": [
-        "エンボス加工非対応の専用機では使えない",
-        "一部のユーザーには袋が柔らかく感じられる可能性がある"
+        "エンボス加工専用袋であるため、ノズル式の業務用真空パック機を使っている人は使用できない",
+        "最安クラスの製品と比較すると少しだけ割高なので、とにかくコストだけを抑えたい場合は他社製品も検討が必要"
       ],
-      "score": 83,
-      "scoreRationale": "[基本点: 70]\n[加点: +5] (1枚あたり約18.3円と競合に比べコストパフォーマンスが高い)\n[加点: +3] (厚み90μmで耐ピンホール性に優れている)\n[加点: +3] (日付や内容物を書き込める欄があり利便性が高い)\n[加点: +2] (FDA認定や食品衛生法に適合した安全な素材を使用)\n[合計: 83]"
+      "score": 85,
+      "scoreRationale": "[基本点: 70]\n[加点: +5] (袋自体に記入欄がプリントされており保存管理の手間が省ける利便性)\n[加点: +5] (接着剤不使用の7層構造による高い耐ピンホール性と安全性)\n[加点: +5] (実用性と品質に対して1枚約19.6円という十分にバランスの取れたコストパフォーマンス)\n[合計: 85]"
     },
     "technicalSpecs": {
+      "weight": "1170g",
       "dimensions": {
-        "width": "200mm",
-        "length": "300mm"
+        "width": "20cm",
+        "length": "30cm",
+        "thickness": "片側90μm (片面エンボス)"
       },
-      "thickness": "片側90μm",
-      "weight": "約1170g (全体)",
-      "material": "PE(ポリエチレン)+PA(ポリアミド) 7層構造 (BPAフリー)",
-      "temperatureResistance": "耐熱110℃ / 耐冷-40℃",
-      "color": "透明",
-      "quantity": "120枚",
-      "certification": "SGSによるFDA認定、食品衛生法適合",
+      "material": "PE+PA (7層構造、接着剤不使用)",
+      "color": "透明 (エンボス加工、記入欄プリントあり)",
+      "temperatureRange": "-40℃ ～ 110℃ (30分)",
       "other": [
-        "片面エンボス加工",
-        "日付・内容物記入欄あり",
-        "接着剤不使用"
+        "BPAフリー",
+        "電子レンジ・ボイル対応",
+        "低温調理対応",
+        "エンボス加工対応の家庭用真空パック機専用"
       ]
     }
   }
