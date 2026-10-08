@@ -170,3 +170,67 @@
 "@type" "BreadcrumbList"
 "itemListElement" $breadcrumbItems -}}
 <script type="application/ld+json">{{- $breadcrumbSchema | jsonify | safeJS -}}</script>
+
+<!-- Product Schema (Single Product Article) -->
+{{- if and .IsPage .Params.asin -}}
+  {{- $productName := .Params.product_name | default .Title -}}
+  {{- $productDesc := .Params.description | default (.Summary | plainify | truncate 200) -}}
+  {{- $priceText := .Params.price | default "" | string -}}
+  {{- $priceNumericText := replaceRE "[^0-9.]" "" $priceText -}}
+  {{- $priceValue := 0 -}}
+  {{- if gt (len $priceNumericText) 0 -}}
+    {{- $priceBase := float $priceNumericText -}}
+    {{- if in $priceText "万" -}}
+      {{- $priceValue = int (mul $priceBase 10000) -}}
+    {{- else if in $priceText "千" -}}
+      {{- $priceValue = int (mul $priceBase 1000) -}}
+    {{- else -}}
+      {{- $priceValue = int $priceBase -}}
+    {{- end -}}
+  {{- end -}}
+  {{- $images := slice -}}
+  {{- with .Params.images -}}
+    {{- range . -}}
+      {{- $images = $images | append (. | absURL) -}}
+    {{- end -}}
+  {{- end -}}
+  {{- $offerUrl := .Params.affiliate_url | default .Permalink -}}
+  {{- $offerDict := dict
+    "@type" "Offer"
+    "priceCurrency" "JPY"
+    "price" $priceValue
+    "availability" "https://schema.org/InStock"
+    "url" $offerUrl
+  -}}
+  {{- $score := .Params.score | default 0 -}}
+  {{- $ratingValue := 0.0 -}}
+  {{- if gt $score 0 -}}
+    {{- $ratingValue = div (float $score) 20.0 -}}
+  {{- end -}}
+  {{- $productDict := dict
+    "@context" "https://schema.org"
+    "@type" "Product"
+    "name" $productName
+    "description" $productDesc
+    "sku" .Params.asin
+    "mpn" .Params.asin
+    "offers" $offerDict
+  -}}
+  {{- if $images -}}
+    {{- $productDict = merge $productDict (dict "image" $images) -}}
+  {{- end -}}
+  {{- with .Params.brand -}}
+    {{- $productDict = merge $productDict (dict "brand" (dict "@type" "Brand" "name" .)) -}}
+  {{- end -}}
+  {{- if gt $ratingValue 0.0 -}}
+    {{- $ratingDict := dict
+      "@type" "AggregateRating"
+      "ratingValue" (printf "%.1f" $ratingValue)
+      "bestRating" "5"
+      "worstRating" "1"
+      "ratingCount" 1
+    -}}
+    {{- $productDict = merge $productDict (dict "aggregateRating" $ratingDict) -}}
+  {{- end -}}
+<script type="application/ld+json">{{- $productDict | jsonify | safeJS -}}</script>
+{{- end -}}
