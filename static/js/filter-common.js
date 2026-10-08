@@ -848,3 +848,152 @@ if (typeof document !== 'undefined') {
     setupResponsivePlaceholders();
   }
 }
+
+/**
+ * 分割グリッドレンダラーを作成する（初期表示の軽量化と無限スクロール・手動追加）
+ * @param {Object} options
+ * @param {HTMLElement} options.gridEl - カードを追加するコンテナ要素
+ * @param {HTMLElement} [options.loadMoreContainer] - 「さらに読み込む」ボタンを含むコンテナ要素
+ * @param {HTMLButtonElement} [options.loadMoreBtn] - 「さらに読み込む」ボタン要素
+ * @param {number} [options.batchSize=30] - 1回あたりにレンダリングするカード数
+ * @param {(item: any) => HTMLElement} [options.renderItem] - アイテム描画関数 (デフォルト: renderCard)
+ * @param {(state: { renderedCount: number, totalCount: number }) => void} [options.onRenderChange] - 描画状態更新コールバック
+ * @returns {{ setItems: (items: any[]) => void, loadMore: () => boolean, getRenderedCount: () => number, getTotalCount: () => number, destroy: () => void }}
+ */
+function createPaginatedGridRenderer(options) {
+  const {
+    gridEl,
+    loadMoreContainer,
+    loadMoreBtn,
+    batchSize = 30,
+    renderItem = (item) => (typeof renderCard === 'function' ? renderCard(item) : document.createElement('div')),
+    onRenderChange,
+  } = options || {};
+
+  if (!gridEl) {
+    throw new Error('createPaginatedGridRenderer requires gridEl');
+  }
+
+  let allItems = [];
+  let renderedCount = 0;
+  let observer = null;
+  let sentinelEl = null;
+
+  function updateButtonAndSentinel() {
+    const totalCount = allItems.length;
+    const hasMore = renderedCount < totalCount;
+
+    if (loadMoreContainer) {
+      loadMoreContainer.style.display = hasMore ? 'flex' : 'none';
+    }
+
+    if (loadMoreBtn) {
+      loadMoreBtn.disabled = !hasMore;
+      loadMoreBtn.textContent = hasMore
+        ? `さらに読み込む (${renderedCount} / ${totalCount}件)`
+        : 'すべて表示済み';
+    }
+
+    if (observer && sentinelEl) {
+      if (hasMore) {
+        observer.observe(sentinelEl);
+      } else {
+        observer.unobserve(sentinelEl);
+      }
+    }
+
+    if (typeof onRenderChange === 'function') {
+      onRenderChange({ renderedCount, totalCount });
+    }
+  }
+
+  function appendNextBatch() {
+    if (renderedCount >= allItems.length) return false;
+
+    const start = renderedCount;
+    const end = Math.min(start + batchSize, allItems.length);
+    const batch = allItems.slice(start, end);
+
+    const fragment = document.createDocumentFragment();
+    for (const item of batch) {
+      fragment.appendChild(renderItem(item));
+    }
+    gridEl.appendChild(fragment);
+    renderedCount = end;
+
+    updateButtonAndSentinel();
+    return true;
+  }
+
+  function setupIntersectionObserver() {
+    if (typeof IntersectionObserver === 'undefined' || typeof document === 'undefined') return;
+
+    sentinelEl = document.createElement('div');
+    sentinelEl.className = 'grid-sentinel';
+    sentinelEl.style.cssText = 'width: 100%; height: 1px; pointer-events: none; opacity: 0;';
+
+    if (loadMoreContainer?.parentNode) {
+      loadMoreContainer.parentNode.insertBefore(sentinelEl, loadMoreContainer);
+    } else if (gridEl.parentNode) {
+      gridEl.parentNode.insertBefore(sentinelEl, gridEl.nextSibling);
+    }
+
+    observer = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          if (entry.isIntersecting) {
+            appendNextBatch();
+          }
+        }
+      },
+      {
+        rootMargin: '400px 0px',
+        threshold: 0,
+      }
+    );
+  }
+
+  function setItems(items) {
+    allItems = Array.isArray(items) ? items : [];
+    renderedCount = 0;
+
+    gridEl.replaceChildren();
+
+    if (allItems.length > 0) {
+      appendNextBatch();
+    } else {
+      updateButtonAndSentinel();
+    }
+  }
+
+  function loadMore() {
+    return appendNextBatch();
+  }
+
+  function destroy() {
+    if (observer) {
+      observer.disconnect();
+      observer = null;
+    }
+    if (sentinelEl) {
+      sentinelEl.remove();
+      sentinelEl = null;
+    }
+  }
+
+  if (loadMoreBtn) {
+    loadMoreBtn.addEventListener('click', () => {
+      appendNextBatch();
+    });
+  }
+
+  setupIntersectionObserver();
+
+  return {
+    setItems,
+    loadMore,
+    getRenderedCount: () => renderedCount,
+    getTotalCount: () => allItems.length,
+    destroy,
+  };
+}
