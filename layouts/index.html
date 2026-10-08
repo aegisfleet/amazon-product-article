@@ -79,6 +79,7 @@
     {{- $pickupCategory := "" -}}
     {{- if .Params.categories -}}{{- $pickupCategory = index .Params.categories 0 -}}{{- else if .Params.category -}}{{-
     $pickupCategory = .Params.category -}}{{- end -}}
+    {{- $pickupGroup := partial "utils-parent-category.html" $pickupCategory -}}
     {{- $pickupPriceBucket := partial "utils-price-bucket.html" .Params.price -}}
     {{- $pickupData = $pickupData | append (dict
     "title" .Title
@@ -87,6 +88,7 @@
     "price" (.Params.price | default "")
     "asin" (.Params.asin | default "")
     "category" $pickupCategory
+    "group" $pickupGroup
     "priceBucket" $pickupPriceBucket
     "image" (cond (and .Params.images (gt (len .Params.images) 0)) (index .Params.images 0) "")
     "specs" .Params.specs
@@ -100,15 +102,16 @@
                 <span class="material-symbols-outlined" aria-hidden="true" style="font-size: 0.9rem; vertical-align: middle;">cleaning_services</span> 閲覧履歴をリセット
             </button>
         </div>
-        <div class="pickup-grid is-loading" id="pickup-grid">
+        <div class="pickup-grid" id="pickup-grid">
             {{- range $pickupItems -}}
             {{- $pickupCategory := "" -}}
             {{- if .Params.categories -}}{{- $pickupCategory = index .Params.categories 0 -}}{{- else if
             .Params.category -}}{{- $pickupCategory = .Params.category -}}{{- end -}}
+            {{- $pickupGroup := partial "utils-parent-category.html" $pickupCategory -}}
             {{- $pickupPriceBucket := partial "utils-price-bucket.html" .Params.price -}}
             <a href="{{ .RelPermalink }}" class="pickup-card" data-score="{{ .Params.score }}"
                 data-price="{{ .Params.price }}" data-track-product="1" data-asin="{{ .Params.asin }}"
-                data-category="{{ $pickupCategory }}" data-price-bucket="{{ $pickupPriceBucket }}">
+                data-category="{{ $pickupCategory }}" data-group="{{ $pickupGroup }}" data-price-bucket="{{ $pickupPriceBucket }}">
                 <div class="pickup-card-image">
                     {{- if .Params.images -}}
                     <img src="{{ index .Params.images 0 }}" alt="{{ .Title }}" loading="lazy" decoding="async">
@@ -145,6 +148,8 @@
             {{- end -}}
         </div>
         <script id="pickup-data" type="application/json">{{- $pickupData | jsonify | safeJS -}}</script>
+        <script src="{{ `js/personalization.js` | relURL }}"></script>
+        <script src="{{ `js/home-pickup.js` | relURL }}"></script>
     </div>
     {{- end -}}
 

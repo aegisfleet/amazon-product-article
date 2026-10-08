@@ -1,0 +1,13 @@
+{{- $category := . -}}
+{{- $parentName := "" -}}
+{{- if $category -}}
+  {{- $lowerCategory := lower $category -}}
+  {{- range $parent, $data := hugo.Data.categorygroups -}}
+    {{- range $data.categories -}}
+      {{- if eq (lower .) $lowerCategory -}}
+        {{- $parentName = $parent -}}
+      {{- end -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+{{ return $parentName }}

@@ -1,4 +1,7 @@
 (function () {
+    if (globalThis.__apaPersonalizationLoaded) return;
+    globalThis.__apaPersonalizationLoaded = true;
+
     const STORAGE_KEY = 'apa-user-actions-v1';
     const MAX_EVENTS = 120;
 
@@ -60,6 +63,7 @@
         const event = {
             asin,
             category: normalizeText(payload.category) || 'unknown',
+            group: normalizeText(payload.group) || '',
             priceBucket: normalizeText(payload.priceBucket) || 'unknown',
             ts: toPositiveNumber(payload.ts) || Date.now()
         };
@@ -67,6 +71,14 @@
         const events = loadEvents();
         events.push(event);
         saveEvents(events);
+    }
+
+    function resolveGroup(group, category, categoryToGroup) {
+        if (group) return group;
+        if (category && categoryToGroup?.[category]) {
+            return categoryToGroup[category];
+        }
+        return '';
     }
 
     function getPreferences(limit, categoryToGroup) {
@@ -78,24 +90,21 @@
         const priceBucketHistory = new Set();
         const recentAsins = new Set();
 
-        // Keep track of any category or price bucket seen in the recent history
         for (const event of events) {
             const asin = normalizeText(event.asin);
             const category = normalizeText(event.category);
+            const group = resolveGroup(normalizeText(event.group), category, categoryToGroup);
             const priceBucket = normalizeText(event.priceBucket);
+
             if (asin) recentAsins.add(asin);
-            if (category) {
-                categoryHistory.add(category);
-                if (categoryToGroup?.[category]) {
-                    groupHistory.add(categoryToGroup[category]);
-                }
-            }
+            if (category) categoryHistory.add(category);
+            if (group) groupHistory.add(group);
             if (priceBucket) priceBucketHistory.add(priceBucket);
         }
 
-        const lastEvent = events.at(-1) ?? null;
+        const lastEvent = events.at(-1);
         const recentCategory = lastEvent ? normalizeText(lastEvent.category) : '';
-        const recentGroup = (recentCategory && categoryToGroup) ? (categoryToGroup[recentCategory] || '') : '';
+        const recentGroup = lastEvent ? resolveGroup(normalizeText(lastEvent.group), recentCategory, categoryToGroup) : '';
 
         return {
             events,
@@ -166,7 +175,7 @@
         const asin = normalizeText(item.asin);
         const category = normalizeText(item.category) || 'unknown';
         const priceBucket = normalizeText(item.priceBucket) || derivePriceBucket(item.price);
-        const group = categoryToGroup?.[category] ?? '';
+        const group = normalizeText(item.group) || (categoryToGroup?.[category] ?? '');
         let score = 0;
 
         // TIER 1: Match with the VERY LAST viewed category
@@ -212,8 +221,9 @@
         const asin = normalizeText(link.dataset.asin);
         if (!asin) return null;
         const category = normalizeText(link.dataset.category) || 'unknown';
+        const group = normalizeText(link.dataset.group) || '';
         const priceBucket = normalizeText(link.dataset.priceBucket) || derivePriceBucket(link.dataset.price || '');
-        return { asin, category, priceBucket, ts: Date.now() };
+        return { asin, category, group, priceBucket, ts: Date.now() };
     }
 
     function bindTracking() {
@@ -254,9 +264,10 @@
         if (trackingInfo?.dataset.asin) {
             const asin = normalizeText(trackingInfo.dataset.asin);
             const category = normalizeText(trackingInfo.dataset.category) || 'unknown';
+            const group = normalizeText(trackingInfo.dataset.group) || '';
             const priceBucket = normalizeText(trackingInfo.dataset.priceBucket) || derivePriceBucket(trackingInfo.dataset.price || '');
             
-            saveEvent({ asin, category, priceBucket, ts: Date.now() });
+            saveEvent({ asin, category, group, priceBucket, ts: Date.now() });
         }
     }
 
