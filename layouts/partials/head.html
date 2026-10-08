@@ -14,8 +14,8 @@
 <meta name="robots" content="index, follow">
 
 {{- $metaDescription := .Description | default .Summary | default .Site.Params.description -}}
-<meta name="description" content="{{ $metaDescription }}">
 <link rel="canonical" href="{{ .Permalink }}">
+<link rel="alternate" type="text/markdown" href="{{ "llms.txt" | absURL }}" title="LLMs.txt">
 
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="{{- if .IsHome -}}website{{- else -}}article{{- end -}}">
