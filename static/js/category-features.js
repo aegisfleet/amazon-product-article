@@ -97,15 +97,18 @@ function initCategoryFeatures() {
 
     const productGrid = document.getElementById('product-grid');
     const productCount = document.getElementById('product-count');
+    const loadMoreContainer = document.getElementById('category-load-more-container');
+    const loadMoreBtn = document.getElementById('category-load-more-btn');
 
     if (!productGrid) return;
 
+    const BATCH_SIZE = 30;
+    let visibleLimit = BATCH_SIZE;
+    let currentMatchedCards = [];
+    let loadMoreObserver = null;
+
     // Get the default sort value from HTML state before applying URL params
-    let currentSort = 'score-desc';
-    if (sortButtons) {
-        const activeBtn = sortButtons.querySelector('.bargain-sort-btn.active');
-        if (activeBtn) currentSort = activeBtn.dataset.sort || 'score-desc';
-    }
+    let currentSort = sortButtons?.querySelector('.bargain-sort-btn.active')?.dataset.sort || 'score-desc';
 
     let allCards = Array.from(productGrid.querySelectorAll('.card'));
 
@@ -189,6 +192,61 @@ function initCategoryFeatures() {
     }
 
     /**
+     * Update progressive reveal visibility for matched cards
+     */
+    function updateProgressiveReveal() {
+        const total = currentMatchedCards.length;
+        const visibleCards = currentMatchedCards.slice(0, visibleLimit);
+        const hiddenCards = currentMatchedCards.slice(visibleLimit);
+
+        for (const card of visibleCards) {
+            card.style.display = '';
+        }
+
+        for (const card of hiddenCards) {
+            card.style.display = 'none';
+        }
+
+        if (loadMoreContainer && loadMoreBtn) {
+            if (visibleLimit < total) {
+                loadMoreContainer.style.display = 'flex';
+                loadMoreBtn.textContent = `さらに読み込む (${Math.min(visibleLimit, total)} / ${total}件)`;
+            } else {
+                loadMoreContainer.style.display = 'none';
+            }
+        }
+    }
+
+    /**
+     * Load next batch of cards
+     */
+    function loadMore() {
+        if (visibleLimit >= currentMatchedCards.length) return;
+        visibleLimit += BATCH_SIZE;
+        updateProgressiveReveal();
+    }
+
+    /**
+     * Setup intersection observer for infinite scroll
+     */
+    function setupIntersectionObserver() {
+        if (!loadMoreContainer || typeof IntersectionObserver === 'undefined') return;
+        if (loadMoreObserver) {
+            loadMoreObserver.disconnect();
+        }
+        loadMoreObserver = new IntersectionObserver((entries) => {
+            const entry = entries[0];
+            if (entry?.isIntersecting) {
+                loadMore();
+            }
+        }, {
+            rootMargin: '200px 0px',
+            threshold: 0.1
+        });
+        loadMoreObserver.observe(loadMoreContainer);
+    }
+
+    /**
      * Apply all filters to cards
      */
     function filterCards() {
@@ -196,12 +254,21 @@ function initCategoryFeatures() {
 
         const filters = getFilterValues();
 
-        allCards.forEach(card => {
-            card.style.display = isCardVisible(card, filters) ? '' : 'none';
-        });
+        const currentCardsInDom = Array.from(productGrid.querySelectorAll('.card'));
+        currentMatchedCards = [];
 
-        const visibleCount = allCards.filter(card => card.style.display !== 'none').length;
-        updateUIElements(visibleCount, allCards.length, filters.keywords);
+        for (const card of currentCardsInDom) {
+            if (isCardVisible(card, filters)) {
+                currentMatchedCards.push(card);
+            } else {
+                card.style.display = 'none';
+            }
+        }
+
+        visibleLimit = BATCH_SIZE;
+        updateProgressiveReveal();
+
+        updateUIElements(currentMatchedCards.length, allCards.length, filters.keywords);
         updateActiveChips();
 
         updateUrl(filters);
@@ -504,27 +571,15 @@ function initCategoryFeatures() {
     }
 
     // --- Slider Events ---
-    if (scoreSlider) {
-        scoreSlider.addEventListener('input', () => {
-            updateSliderDisplays();
-            debouncedFilterCards();
-        });
-        setupSliderTouchPrevention(scoreSlider);
-    }
-    if (minPriceSlider) {
-        minPriceSlider.addEventListener('input', () => {
-            updateSliderDisplays();
-            debouncedFilterCards();
-        });
-        setupSliderTouchPrevention(minPriceSlider);
-    }
-    if (priceSlider) {
-        priceSlider.addEventListener('input', () => {
-            updateSliderDisplays();
-            debouncedFilterCards();
-        });
-        setupSliderTouchPrevention(priceSlider);
-    }
+    const handleSliderInput = () => {
+        updateSliderDisplays();
+        debouncedFilterCards();
+    };
+    [scoreSlider, minPriceSlider, priceSlider].forEach(slider => {
+        if (!slider) return;
+        slider.addEventListener('input', handleSliderInput);
+        setupSliderTouchPrevention(slider);
+    });
 
     // --- Category Select Events ---
     if (categorySelect) {
@@ -532,7 +587,7 @@ function initCategoryFeatures() {
     }
     if (categoryResetBtn) {
         categoryResetBtn.addEventListener('click', () => {
-            if (categorySelect && categorySelect.value !== '') {
+            if (categorySelect?.value) {
                 categorySelect.value = '';
                 filterCards();
             }
@@ -540,21 +595,19 @@ function initCategoryFeatures() {
     }
 
     // --- Category Click Filters (Pill & Card Tag) ---
+    function toggleCategory(cat) {
+        if (!cat || !categorySelect) return;
+        categorySelect.value = categorySelect.value === cat ? '' : cat;
+        filterCards();
+    }
+
     const categoryPillsContainer = document.querySelector('.category-pills-container');
     if (categoryPillsContainer) {
         categoryPillsContainer.addEventListener('click', (e) => {
             const pill = e.target.closest('.category-pill');
             if (!pill) return;
             e.preventDefault();
-            const cat = pill.dataset.category || pill.textContent.trim();
-            if (cat && categorySelect) {
-                if (categorySelect.value === cat) {
-                    categorySelect.value = '';
-                } else {
-                    categorySelect.value = cat;
-                }
-                filterCards();
-            }
+            toggleCategory(pill.dataset.category || pill.textContent.trim());
         });
     }
 
@@ -563,15 +616,7 @@ function initCategoryFeatures() {
             const catEl = e.target.closest('.bargain-card-category, .card-tag');
             if (!catEl || catEl.classList.contains('card-tag-sub') || catEl.classList.contains('card-tag-brand') || catEl.tagName === 'A' || catEl.closest('a')) return;
             e.preventDefault();
-            const cat = catEl.dataset.category || catEl.textContent.trim();
-            if (cat && categorySelect) {
-                if (categorySelect.value === cat) {
-                    categorySelect.value = '';
-                } else {
-                    categorySelect.value = cat;
-                }
-                filterCards();
-            }
+            toggleCategory(catEl.dataset.category || catEl.textContent.trim());
         });
     }
 
@@ -588,10 +633,17 @@ function initCategoryFeatures() {
             currentSort = btn.dataset.sort;
             updateSortButtons();
             sortCards(currentSort);
-            updateUrl();
+            filterCards();
             if (globalThis.ApaAnalytics && typeof globalThis.ApaAnalytics.trackFilterUse === 'function') {
                 globalThis.ApaAnalytics.trackFilterUse('sort', currentSort);
             }
+        });
+    }
+
+    // --- Load More Button Event ---
+    if (loadMoreBtn) {
+        loadMoreBtn.addEventListener('click', () => {
+            loadMore();
         });
     }
 
@@ -606,8 +658,6 @@ function initCategoryFeatures() {
         });
     }
 
-
-
     if (filterReset) {
         filterReset.addEventListener('click', resetFilters);
     }
@@ -619,6 +669,7 @@ function initCategoryFeatures() {
         updateSortButtons();
         updateSliderDisplays();
         sortCards(currentSort);
+        setupIntersectionObserver();
         filterCards();
     });
 
@@ -627,6 +678,7 @@ function initCategoryFeatures() {
     updateSortButtons();
     updateSliderDisplays();
     sortCards(currentSort);
+    setupIntersectionObserver();
     filterCards();
 }
 
