@@ -123,6 +123,7 @@
 |---|---|---|
 | `llms.txt` | `static/llms.txt` | サイト概要、データ取得エンドポイント（`index.json`等）、URL規則、Amazon購入リンクの取り扱いを案内する標準仕様ガイド |
 | `llms-full.txt` | `static/llms-full.txt` | 大規模コンテキスト対応の完全版。全親カテゴリ一覧（23ジャンル）や主要セクションの詳細リストを掲載 |
+| `products-summary.json` | `static/products-summary.json` | ブラウジング系AI向けの超軽量商品インデックス（約1.8MB、gzip時約380KB）。全商品の基本属性・スコア・アフィリエイトURLを1リクエストで取得可能 |
 
 ### 5.2 自動発見（Auto-Discovery）の仕組み
 
@@ -130,7 +131,28 @@ AIエージェントがサイトを訪れた際、自律的に `llms.txt` を検
 1. **HTML `<head>` リンク**: `layouts/partials/head.html` にて `<link rel="alternate" type="text/markdown" href="/llms.txt" title="LLMs.txt">` を全ページに出力。
 2. **`robots.txt` 案内**: `layouts/home.robots.txt` にて `llms.txt` および `llms-full.txt` へのURLを明記。
 
-### 5.3 メンテナンス時の注意点
+### 5.3 軽量商品インデックス（products-summary.json）の仕様と生成
+
+従来の `index.json`（約9.3MB）は詳細スペック文字列や要約を含むため、ChatGPT PlusやClaude、Perplexityなどのブラウジングツールにおける1リクエスト取得制限（通常1〜2MB）を超過する場合があった。
+これを解決するため、ビルド前処理（`prebuild:hugo`）で以下のフィールドに絞り込んだ超軽量JSONを自動生成している：
+
+```typescript
+export interface ProductSummaryItem {
+  asin: string;          // ASIN（10桁）
+  title: string;         // 商品名・型番を含むタイトル
+  brand: string;         // ブランド・メーカー名
+  category: string;      // 主要カテゴリ
+  price: number;         // 価格（数値、単位: 円）
+  score: number;         // 独自採点スコア（0〜100）
+  url: string;           // 本サイトの商品詳細ページURL（絶対URL）
+  affiliate_url: string; // Amazon公式商品ページ（アフィリエイトリンク）
+}
+```
+
+- **生成スクリプト**: `src/scripts/generate-products-summary.ts`（`pnpm run generate:summary`）
+- **自動実行タイミング**: `pnpm run prebuild:hugo` に組み込まれ、デプロイ時にHugoビルド前に自動更新される。
+
+### 5.4 メンテナンス時の注意点
 
 - **カテゴリ・URL規則の変更時**: 親カテゴリのスラッグや主要URL構造を変更した場合は、`static/llms.txt` および `static/llms-full.txt` 内の記載も同期して更新すること。
-- **データエンドポイントの拡張時**: 軽量インデックス（`products-summary.json` 等）など新しいデータ配信ファイルを追加した際は、`llms.txt` の「データ取得・検索ガイド」セクションへ追記すること。
+- **データエンドポイントの拡張時**: 新しいデータ配信ファイルを追加した際は、`llms.txt` の「データ取得・検索ガイド」セクションへ追記すること。

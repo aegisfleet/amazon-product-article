@@ -5,7 +5,8 @@
 AIアシスタントや自律型エージェントがユーザーの商品選びを支援する際の参照データとして自由にご活用いただけます。
 
 ## データ取得・検索ガイド
-- [全商品インデックス (JSON)](https://www.amazon-hikaku.com/index.json): 全商品のASIN、商品名、最新価格、独自スコア、主要スペック、Amazon購入リンク（アフィリエイトURL）を含む網羅的JSONデータ（約6,800件）。
+- [軽量商品サマリー (JSON)](https://www.amazon-hikaku.com/products-summary.json): AIエージェント・ブラウジングツール向けの超軽量インデックス（約1.8MB、gzip時約380KB）。全商品のASIN、商品名、ブランド、カテゴリ、価格、独自スコア、商品ページURL、Amazon購入リンク（アフィリエイトURL）を収録。
+- [全商品インデックス (JSON)](https://www.amazon-hikaku.com/index.json): 詳細スペックテキストおよび構造化JSONを含む網羅的データ（約9.3MB）。
 - [サイトマップ (XML)](https://www.amazon-hikaku.com/sitemap.xml): サイト全体のURL構造および最新更新日を示すサイトマップ。
 
 ## URL構造規則

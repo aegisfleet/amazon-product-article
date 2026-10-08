@@ -5,7 +5,8 @@
   "main": "dist/index.js",
   "scripts": {
     "sanitize:frontmatter": "ts-node src/scripts/sanitize-frontmatter.ts",
-    "prebuild:hugo": "ts-node src/scripts/enhance-categories.ts && ts-node src/scripts/extract-price-drops.ts",
+    "generate:summary": "ts-node src/scripts/generate-products-summary.ts",
+    "prebuild:hugo": "ts-node src/scripts/enhance-categories.ts && ts-node src/scripts/extract-price-drops.ts && ts-node src/scripts/generate-products-summary.ts",
     "build": "tsc",
     "build:hugo": "hugo --minify",
     "dev": "ts-node src/index.ts",
