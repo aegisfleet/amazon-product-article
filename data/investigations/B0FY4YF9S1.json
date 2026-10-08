@@ -1,205 +1,221 @@
 {
   "analysis": {
-    "productName": "Xiaomi Pad 8 8G+128G グレー 28.4cm",
+    "productName": "Xiaomi Pad 8",
     "parentAsin": "B0FY4YF9S1",
-    "productDescription": "Snapdragon 8s Gen 4を搭載し、3.2K 144Hzの高精細28.4cmディスプレイを備えたハイスペックAndroidタブレット。",
+    "productDescription": "Xiaomiの11.2インチ 3.2K 144Hzディスプレイを搭載した高性能タブレット。Snapdragon 8s Gen 4を採用し、AI機能(Google Gemini搭載)やWPS Office PCサポートにより、エンターテインメントからオフィスワークまで幅広く対応します。",
     "productUsage": [
-      "エンターテインメント",
-      "作業",
-      "会議"
+      "動画視聴・ゲーム等のエンターテインメント",
+      "WPS Officeを使った文書作成・プレゼン資料作成",
+      "リモート会議やオンライン学習"
     ],
     "positivePoints": [
-      "Snapdragon 8s Gen 4による卓越したパフォーマンスと電力効率",
-      "28.4cm 3.2K 144Hz、800nitsの高精細・高輝度ディスプレイ",
-      "厚さ5.75mm、重量485gの薄型軽量フルメタルユニボディ",
-      "9200mAhの大容量バッテリーと45W急速充電に対応",
-      "AI機能（Xiaomi HyperAI, Google Gemini）を搭載"
+      "Snapdragon 8s Gen 4を搭載し、高負荷なゲームや動画編集において高いパフォーマンスを発揮",
+      "11.2インチの3.2K解像度(アスペクト比3:2)・144Hz高精細ディスプレイを採用し、文書作成やプレゼン資料の閲覧に最適",
+      "WPS Office PCをサポートし、アップグレードされたワークステーションモードによりPCレベルのマルチタスク操作が可能",
+      "9200mAhの大容量バッテリーを搭載し、45W急速充電に対応",
+      "クワッドスピーカー搭載およびDolby Vision対応による高いエンターテインメント性能",
+      "Xiaomi HyperOS 3とAIエージェント(Google Gemini)が融合し、シームレスなAI機能連携が可能"
     ],
     "negativePoints": [
-      "同価格帯のPCと比較すると用途が限定される",
-      "SDカードによるストレージ拡張やイヤホンジャックの記載がない"
+      "重量や詳細な本体寸法の公式データが商品説明文から欠落している(パッケージ寸法のみの記載の可能性あり)",
+      "おサイフケータイ(FeliCa)や防水防塵等級に関する明確な記載がない",
+      "モバイル通信(5G/LTE)対応に関する記述がなく、Wi-Fi環境が前提となる可能性がある"
     ],
     "useCases": [
-      "動画編集などのクリエイティブな作業",
-      "高いグラフィックス処理が必要なゲームプレイ",
-      "WPS Office PCを利用した文書編集・プレゼン資料作成"
+      "日々の通勤・通学での持ち運びやオフィスワーク",
+      "自宅での映画鑑賞や高画質ゲームのプレイ",
+      "カフェ等でのリモートワークにおける資料作成"
     ],
-    "userStories": [],
-    "userImpression": "ハイエンドスマートフォン並みの処理性能と、美麗な28.4cmディスプレイ、大容量バッテリーを備え、エンターテイメントからオフィスワークまで幅広く快適にこなせる高品質なタブレット。",
+    "userStories": [
+      {
+        "userType": "ビジネスパーソン",
+        "scenario": "外出先やカフェでの資料作成",
+        "experience": "画面のアスペクト比が3:2なので、WordやExcelのファイルを開いたときに表示領域が広く非常に作業しやすいです。また、WPS Office PC版のサポートと進化したワークステーションモードのおかげで、複数アプリを並べてのマルチタスクもPCライクにこなせます。45W急速充電に対応しているため、休憩中にサッと充電できるのも安心です。",
+        "supportingSourceIds": [
+          "amazon-features"
+        ],
+        "sentiment": "positive"
+      },
+      {
+        "userType": "エンタメ重視ユーザー",
+        "scenario": "自宅での動画視聴とゲームプレイ",
+        "experience": "11.2インチの3.2Kディスプレイは非常に綺麗で、144Hzのリフレッシュレートによりアクションゲームも滑らかに動きます。クワッドスピーカーとDolby Visionの組み合わせで映画を見る際の没入感が素晴らしいです。ただ、手持ちで長時間プレイする際の詳細な重量感が気になるところです。",
+        "supportingSourceIds": [
+          "amazon-features"
+        ],
+        "sentiment": "positive"
+      }
+    ],
+    "userImpression": "ハイエンドモデルに迫るSnapdragon 8s Gen 4と144Hz 3.2Kディスプレイを搭載し、特に3:2のアスペクト比とWPS Office PC対応により、単なるエンタメ機にとどまらずビジネス用途での実用性が高く評価されます。一方で、おサイフケータイ非対応や防水機能の有無など、持ち歩き前提のモバイル機としての細かな仕様に懸念を抱くユーザーも一部いると推測されますが、総じて7万円台半ばという価格設定に対して非常に高いコストパフォーマンスを発揮するタブレットという印象です。",
     "sources": [
       {
-        "id": "src-1",
+        "id": "amazon-features",
         "name": "Amazon商品ページ",
         "url": "https://www.amazon.co.jp/dp/B0FY4YF9S1",
         "tier": "high",
         "evidenceType": "primary",
-        "publishedAt": "2026-03-31",
-        "author": "Amazon",
-        "conflictOfInterest": "disclosed",
-        "notes": "商品の公式スペック、特徴、価格情報を確認"
+        "publishedAt": "2026-10-08",
+        "author": "Amazon/Xiaomi公式",
+        "conflictOfInterest": "none",
+        "notes": "製品の主要機能（SoC、ディスプレイ、バッテリー、OS、オフィスサポート等）を確認"
       }
     ],
     "claims": [
       {
-        "claim": "Snapdragon 8s Gen 4を搭載し、卓越したパフォーマンスと電力効率を提供",
-        "category": "quality",
+        "claim": "PCレベルの操作体験とWPS Office PCのサポート",
+        "category": "comparativeAdvantage",
         "confidence": "high",
         "supportingSourceIds": [
-          "src-1"
+          "amazon-features"
         ],
         "crossChecked": false,
-        "notes": "商品仕様より確認"
+        "notes": "商品特徴に明記されており、アスペクト比3:2の画面との相乗効果で高い生産性が期待できる。"
       },
       {
-        "claim": "3.2K 144Hzの28.4cm高精細ディスプレイを搭載",
-        "category": "quality",
+        "claim": "9200mAhの大容量バッテリーで1日中使用可能",
+        "category": "durability",
         "confidence": "high",
         "supportingSourceIds": [
-          "src-1"
+          "amazon-features"
         ],
         "crossChecked": false,
-        "notes": "商品仕様より確認"
-      },
-      {
-        "claim": "厚さ5.75mm、重量485gの薄型軽量設計",
-        "category": "quality",
-        "confidence": "high",
-        "supportingSourceIds": [
-          "src-1"
-        ],
-        "crossChecked": false,
-        "notes": "商品仕様より確認"
+        "notes": "バッテリー容量自体は明記されているが、高解像度144Hz駆動時の実際の持ち時間は使用状況に依存する。"
       }
     ],
-    "lastInvestigated": "2026-03-31",
+    "lastInvestigated": "2026-10-08",
+    "investigatedPrice": "￥74,980",
     "competitiveAnalysis": [
       {
-        "name": "CHUWI AuPad 27.9cm タブレット (8GB/128GB)",
-        "asin": "B0FJ5XJZBD",
-        "priceComparison": "Xiaomi Pad 8は本競合より大幅に高価だが、SoC（Snapdragon 8s Gen 4 vs 685）、ディスプレイ解像度・リフレッシュレート（3.2K 144Hz vs 2K 90Hz）、バッテリー容量（9200mAh vs 7000mAh）など、あらゆる面で圧倒的な性能差があり、価格差に見合う価値がある。",
+        "name": "Xiaomi Pad 7 8G+128G",
+        "asin": "B0DXFC87GF",
+        "priceComparison": "本商品(Pad 8)は74,980円、Pad 7は54,980円と約2万円の価格差があります。価格が安いPad 7はSnapdragon 7+ Gen3を搭載しているため、性能を求める場合はPad 8の価格差の価値があります。",
         "featureComparison": [
-          "共通点：28cmクラスのディスプレイ、8GB RAM/128GB ROMの基本構成",
-          "相違点：SoC性能、ディスプレイの解像度とリフレッシュレート、バッテリー容量、急速充電速度、本体の薄さと軽さ"
+          "共通点：8GB RAM、128GBストレージ、3.2K 144Hz高精細ディスプレイ、45W急速充電に対応している点",
+          "相違点：本商品はSnapdragon 8s Gen 4、9200mAhバッテリー、HyperOS 3を搭載。対するPad 7はSnapdragon 7+ Gen3、8850mAhバッテリー、HyperOS 2を搭載している点"
         ],
         "differentiators": [
-          "Xiaomi Pad 8 8G+128G グレー 28.4cmの利点：圧倒的な処理性能、より美しく滑らかなディスプレイ、長持ちする大容量バッテリー、AI機能の搭載",
-          "CHUWI AuPad 27.9cm タブレット (8GB/128GB)の利点：価格が非常に手頃で、microSDカードでのストレージ拡張に対応、SIMフリーで単独通信が可能"
+          "Xiaomi Pad 8の利点：より新しいSoC(Snapdragon 8s Gen 4)とHyperOS 3による高い処理性能・AI連携機能を求める人、またWPS Office PC版のサポートによりノートPCライクな作業環境を構築したい人に適しています。",
+          "Xiaomi Pad 7 8G+128Gの利点：最新のハイエンド性能までは必要とせず、5万円台で高解像度ディスプレイや快適な基本動作を得たいコスパ重視のユーザーに適しています。"
         ]
       },
       {
-        "name": "ZPad3 タブレット 27.9cm (20GB/256GB)",
-        "asin": "B0FWR62JYH",
-        "priceComparison": "Xiaomi Pad 8は本競合よりも高価だが、ハイエンドSoCの搭載や高解像度ディスプレイ、フルメタルユニボディの質感など、よりプレミアムな体験を提供するため、価格差の理由は明確である。",
+        "name": "Xiaomi Pad Mini 8GB+256GB",
+        "asin": "B0FNN1F8C7",
+        "priceComparison": "本商品(Pad 8)と同じ74,980円です。画面サイズやコンセプトが異なるため、用途に応じた選択になります。",
         "featureComparison": [
-          "共通点：28cm以上のディスプレイ、大容量バッテリー（10000mAh vs 9200mAh）",
-          "相違点：処理性能（Snapdragon 8s Gen 4 vs Helio G99）、ディスプレイ解像度（3.2K vs FHD）、急速充電の速度（45W vs 18W）"
+          "共通点：価格が同額であり、動画視聴やゲームなどのエンタメ用途に適した高性能タブレットである点",
+          "相違点：本商品は11.2インチ(3.2K 144Hz)でSnapdragon 8s Gen 4を搭載。対するPad Miniは8.8インチ(3K 165Hz)でDimensity 9400+を搭載し、ストレージ容量が256GBと多い点"
         ],
         "differentiators": [
-          "Xiaomi Pad 8 8G+128G グレー 28.4cmの利点：重いゲームや動画編集もこなせる高い処理性能、3.2Kの高精細ディスプレイ、45Wの高速充電",
-          "ZPad3 タブレット 27.9cm (20GB/256GB)の利点：低価格ながら大容量メモリ・ストレージ（仮想込み20GB/256GB）を搭載し、SIMフリーに対応している点"
+          "Xiaomi Pad 8の利点：11.2インチの大画面と3:2のアスペクト比を活かし、オフィスワークや資料作成、映画鑑賞など大画面の恩恵を受けたいユーザーに適しています。",
+          "Xiaomi Pad Miniの利点：8.8インチのコンパクトな筐体と165Hzの超高速リフレッシュレートにより、持ち運んでのゲームプレイや読書など、取り回しの良さを重視するユーザーに適しています。"
         ]
       },
       {
-        "name": "CHUWI AuPad 27.9cm Android 14 (8GB/128GB)",
-        "asin": "B0F8VKXLXB",
-        "priceComparison": "Xiaomi Pad 8は本競合の数倍の価格であるが、エントリークラスとハイエンドクラスという明確なターゲットの違いがあり、性能・機能・質感すべてにおいて大幅に上回っている。",
+        "name": "Redmi Pad 2 Pro 6GB+128GB",
+        "asin": "B08N65TPYD",
+        "priceComparison": "本商品(Pad 8)は74,980円、Redmi Pad 2 Proは41,000円と約34,000円の価格差があります。Redmiは廉価版シリーズであり、価格相応の性能差があります。",
         "featureComparison": [
-          "共通点：28cmクラスの画面サイズ、基本メモリ/ストレージ構成",
-          "相違点：SoC、ディスプレイの質、筐体の薄さと重量、搭載AI機能の有無"
+          "共通点：Xiaomiエコシステムによる相互接続機能に対応している点",
+          "相違点：本商品はSnapdragon 8s Gen 4・11.2インチ(3.2K 144Hz)を搭載。対するRedmi Pad 2 ProはSnapdragon 7s Gen 4・12.1インチ(2.5K 120Hz)を搭載し、メモリが6GBである点"
         ],
         "differentiators": [
-          "Xiaomi Pad 8 8G+128G グレー 28.4cmの利点：ハイエンドスペックによる快適な動作、WPS Office PCサポートなどの強力な作業環境、薄型軽量デザイン",
-          "CHUWI AuPad 27.9cm Android 14 (8GB/128GB)の利点：導入コストが非常に低く、ライトユースやサブ機としての利用に適している"
+          "Xiaomi Pad 8の利点：高いグラフィック性能やマルチタスク性能を要求される作業・ゲームを快適にこなしたいハイエンド志向のユーザーに適しています。",
+          "Redmi Pad 2 Proの利点：動画視聴やブラウジングが中心で、性能よりも画面の大きさ(12.1インチ)と価格の安さを重視するカジュアルユーザーに適しています。"
         ]
       },
       {
-        "name": "CHUWI AuPad 27.9cm Android 15 (8GB/128GB) 2026モデル",
-        "asin": "B0GHF3V9XH",
-        "priceComparison": "Xiaomi Pad 8は価格が圧倒的に高いが、最新のハイエンドSoC、高解像度・高リフレッシュレートディスプレイ、大容量バッテリーと高速充電を備え、クリエイティブ作業やハイエンドゲームにおいて格段の差がある。",
+        "name": "Redmi Pad 2 4GB+128GB",
+        "asin": "B0F9P4719Q",
+        "priceComparison": "本商品(Pad 8)は74,980円、Redmi Pad 2は30,600円と半額以下です。エントリーモデルであるため性能に大きな差があります。",
         "featureComparison": [
-          "共通点：28cmクラスのディスプレイサイズ、Android 15 (XiaomiはHyperOS 3ベース)",
-          "相違点：処理能力、ディスプレイの品質、急速充電性能、独自のAI機能（HyperAI, Gemini）"
+          "共通点：11インチクラスのディスプレイを搭載し、Dolby Atmosなどのエンタメ機能に対応している点",
+          "相違点：本商品はハイエンドSoC(Snapdragon 8s Gen 4)、8GB RAM、3.2K解像度を搭載。対するRedmi Pad 2はエントリー向けSoC(Helio G100-Ultra)、4GB RAM、2.5K解像度である点"
         ],
         "differentiators": [
-          "Xiaomi Pad 8 8G+128G グレー 28.4cmの利点：あらゆる用途でストレスを感じさせない最高峰の処理性能と、エンターテインメント・作業両方に適した高品質ディスプレイ",
-          "CHUWI AuPad 27.9cm Android 15 (8GB/128GB) 2026モデルの利点：非常に安価で、microSD拡張やSIMフリーなど実用的な機能が充実している"
+          "Xiaomi Pad 8の利点：高負荷なゲーム、動画編集、または複数アプリを同時に開くオフィス作業など、メイン機としてバリバリ使いたいユーザーに適しています。",
+          "Redmi Pad 2の利点：子供用のタブレットや、自宅での軽いブラウジング・動画視聴専用など、最低限の機能と価格の安さを最優先するユーザーに適しています。"
         ]
       },
       {
-        "name": "CHUWI AuPad 27.9cm 2025新登場モデル (8GB/128GB)",
-        "asin": "B0F42JY956",
-        "priceComparison": "Xiaomi Pad 8は価格が数倍に及ぶが、性能やディスプレイ品質、バッテリーなどのハードウェアスペックが根本的に異なり、より高度な用途や快適性を求めるユーザー向けとして十分な価値がある。",
+        "name": "Xiaomi POCO Pad M1 8GB+256GB",
+        "asin": "B0G6LSJMPH",
+        "priceComparison": "本商品(Pad 8)は74,980円、POCO Pad M1は46,700円と約28,000円安いです。POCOはコスパに優れたミドルレンジ機という位置づけです。",
         "featureComparison": [
-          "共通点：28cmクラスの大画面",
-          "相違点：SoC（Snapdragon 8s Gen 4 vs 685）、解像度・リフレッシュレート、急速充電ワット数"
+          "共通点：8GB RAMを搭載し、Dolby Atmosに対応している点",
+          "相違点：本商品は11.2インチ(3.2K 144Hz)・Snapdragon 8s Gen 4・128GBストレージを搭載。POCO Pad M1は12.1インチ(2.5K 120Hz)・Snapdragon 7s Gen 4・256GBストレージを搭載している点"
         ],
         "differentiators": [
-          "Xiaomi Pad 8 8G+128G グレー 28.4cmの利点：ハイエンドSoCによる圧倒的なパフォーマンスと、PCレベルの作業環境を提供する機能性",
-          "CHUWI AuPad 27.9cm 2025新登場モデル (8GB/128GB)の利点：コストを抑えて大画面タブレットを導入できる点と、SDカードやSIMなど拡張性の高さ"
+          "Xiaomi Pad 8の利点：より高精細で滑らかなディスプレイと、一つ上のクラスのCPU性能を活かし、クリエイティブ作業や高画質ゲームを妥協なく楽しみたい人に適しています。",
+          "Xiaomi POCO Pad M1の利点：ストレージ容量(256GB)の多さと大画面(12.1インチ)を重視しつつ、5万円以下に価格を抑えたいバランス重視のユーザーに適しています。"
         ]
       },
       {
-        "name": "CHUWI AuPad 27.9cm 4 in 1ケーブル付き (8GB/128GB)",
-        "asin": "B0GKTCQJ7X",
-        "priceComparison": "Xiaomi Pad 8は価格差に見合うだけの、大幅に優れた処理性能、映像美、ビルドクオリティを備えている。",
+        "name": "Redmi Pad 2 9.7 4GB+64GB",
+        "asin": "B0GWKNKXM7",
+        "priceComparison": "本商品(Pad 8)は74,980円、Redmi Pad 2 9.7は23,400円です。完全にターゲット層が異なる製品です。",
         "featureComparison": [
-          "共通点：28cmクラスのディスプレイ",
-          "相違点：SoC、画面解像度とリフレッシュレート、筐体の素材と厚み・重量"
+          "共通点：Xiaomiブランドのタブレットである点",
+          "相違点：本商品は11.2インチ(3.2K)・Snapdragon 8s Gen 4・128GBストレージ搭載のハイエンド機。対するRedmi Pad 2 9.7は9.7インチ(2K)・Snapdragon 6s 4G Gen 2・64GBストレージ搭載のエントリー機である点"
         ],
         "differentiators": [
-          "Xiaomi Pad 8 8G+128G グレー 28.4cmの利点：クリエイティブ作業からゲームまでこなせる高性能、高品質なディスプレイとスピーカー",
-          "CHUWI AuPad 27.9cm 4 in 1ケーブル付き (8GB/128GB)の利点：初期費用が安く、SDカードによる容量追加やモバイル通信が可能"
+          "Xiaomi Pad 8の利点：PCライクなマルチタスクや最新のAI機能など、タブレットに高い生産性と処理能力を求めるユーザーに適しています。",
+          "Redmi Pad 2 9.7の利点：片手で持ちやすい9.7インチサイズと2万円台の圧倒的な安さから、電子書籍リーダーやサブ機としての手軽さを求めるユーザーに適しています。"
         ]
       }
     ],
     "recommendation": {
       "targetUsers": [
-        "高性能なAndroidタブレットを求めるユーザー",
-        "タブレットで文書作成や動画編集などの作業を行いたいユーザー",
-        "高品質なディスプレイとスピーカーで動画鑑賞やゲームを楽しみたいユーザー"
+        "最新のハイエンド処理性能(Snapdragon 8s Gen 4)と高画質ディスプレイを7万円台の優れたコスパで手に入れたいAndroid/Xiaomiユーザー",
+        "WPS Office PC版と3:2の画面アスペクト比を活かして、ノートPCライクに文書作成やプレゼン準備を行いたいビジネスパーソン"
       ],
       "pros": [
-        "ハイエンドSoC「Snapdragon 8s Gen 4」搭載",
-        "3.2K 144Hzの美しく滑らかなディスプレイ",
-        "5.75mm、485gの薄型軽量ボディ",
-        "9200mAhバッテリーと45W急速充電の組み合わせ",
-        "PCライクな操作が可能なWPS Office PCサポート"
+        "高解像度3.2Kかつ144Hzの滑らかな画面により、アクションゲームのプレイや長時間のドキュメント閲覧でも目が疲れにくく快適な体験が得られます。",
+        "進化したワークステーションモードとWPS Office PC版のサポートにより、複数のアプリを同時に立ち上げてのマルチタスク作業がスムーズに行え、外出先での作業効率が格段に向上します。",
+        "9200mAhの大容量バッテリーと45W急速充電の組み合わせで、1日持ち歩いて酷使してもバッテリー切れの不安が少なく、隙間時間で一気に充電可能です。"
       ],
       "cons": [
-        "安価なタブレットと比較すると高価",
-        "ストレージ拡張性（microSD）の記載がない",
-        "ストレージ容量が128GBと少なめで、SDカード対応が不明"
+        "防水防塵規格やおサイフケータイ非対応の可能性が高いため、水回りでの使用や非接触決済を想定している場合は購入前に運用方法を確認すること。",
+        "スペックの高さに対して重量や厚みの詳細が不明なため、常に手持ちで使用する用途(電子書籍など)を想定している人は注意が必要です。"
       ],
-      "score": 90,
-      "scoreRationale": "[基本点: 70]\n[加点: +15] (大手ブランドの確かな品質・実績と優れた製品機能)\n[加点: +5] (安定した実用性とユーザー満足度の高さ)\n[減点: -0] (競合製品と比較した価格・仕様上の留意点)\n[合計: 90]"
+      "score": 83,
+      "scoreRationale": "[基本点: 70]\n[加点: +8] (Snapdragon 8s Gen 4と3.2K/144Hzディスプレイ搭載による高い基本性能と実用性)\n[加点: +7] (WPS Office PC対応やAI機能など、ビジネス・クリエイティブ用途における独自機能と利便性)\n[加点: +4] (同等スペックの競合製品と比較して、7万5千円以下に抑えられた高いコストパフォーマンス)\n[減点: -6] (防水性能や本体の詳細な重量・寸法など、モバイル機として重要な一部仕様が不透明である点)\n[合計: 83]"
     },
     "technicalSpecs": {
-      "os": "Xiaomi HyperOS 3 (AI機能・Google Gemini搭載)",
+      "os": "Xiaomi HyperOS 3",
       "cpu": "Snapdragon 8s Gen 4",
       "ram": "8GB",
       "storage": "128GB",
       "display": {
-        "size": "28.4cm (11.2インチ)",
+        "size": "11.2インチ",
         "resolution": "3.2K (アスペクト比 3:2)",
-        "type": "800nits, リフレッシュレート144Hz"
+        "type": "800nits 高輝度ディスプレイ",
+        "refreshRate": "144Hz"
       },
       "battery": {
         "capacity": "9200mAh",
-        "charging": "45W急速充電対応"
+        "charging": "45W急速充電 (ターボチャージ)"
+      },
+      "camera": {
+        "main": "未記載",
+        "front": "未記載"
       },
       "dimensions": {
-        "height": "不明",
-        "width": "不明",
-        "depth": "5.75mm"
+        "height": "未記載 (※パッケージ寸法: 1734.2mm)",
+        "width": "未記載 (※パッケージ寸法: 61.8mm)",
+        "depth": "未記載",
+        "weight": "未記載"
       },
-      "weight": "485g",
-      "material": "フルメタルユニボディ",
-      "color": "グレー",
+      "weight": "未記載",
+      "connectivity": [
+        "Wi-Fi"
+      ],
       "other": [
-        "Dolby Atmosクワッドスピーカー, Dolby Vision対応",
-        "Xiaomi HyperAI",
-        "Xiaomi HyperConnect",
-        "NFCタッチ共有"
+        "Dolby Vision対応",
+        "クワッドスピーカー搭載",
+        "AI機能 (Google Gemini, Xiaomi HyperAI) 搭載",
+        "ワークステーションモード対応",
+        "WPS Office PCサポート"
       ]
     }
   }
