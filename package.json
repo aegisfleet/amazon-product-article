@@ -6,7 +6,8 @@
   "scripts": {
     "sanitize:frontmatter": "ts-node src/scripts/sanitize-frontmatter.ts",
     "generate:summary": "ts-node src/scripts/generate-products-summary.ts",
-    "prebuild:hugo": "ts-node src/scripts/enhance-categories.ts && ts-node src/scripts/extract-price-drops.ts && ts-node src/scripts/generate-products-summary.ts",
+    "generate:pickup-pool": "ts-node src/scripts/generate-pickup-pool.ts",
+    "prebuild:hugo": "ts-node src/scripts/enhance-categories.ts && ts-node src/scripts/extract-price-drops.ts && ts-node src/scripts/generate-products-summary.ts && ts-node src/scripts/generate-pickup-pool.ts",
     "build": "tsc",
     "build:hugo": "hugo --minify",
     "dev": "ts-node src/index.ts",

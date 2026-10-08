@@ -105,6 +105,7 @@
         const lastEvent = events.at(-1);
         const recentCategory = lastEvent ? normalizeText(lastEvent.category) : '';
         const recentGroup = lastEvent ? resolveGroup(normalizeText(lastEvent.group), recentCategory, categoryToGroup) : '';
+        const recentPriceBucket = lastEvent ? normalizeText(lastEvent.priceBucket) : '';
 
         return {
             events,
@@ -113,7 +114,8 @@
             priceBucketHistory,
             recentAsins,
             recentCategory,
-            recentGroup
+            recentGroup,
+            recentPriceBucket
         };
     }
 
@@ -187,17 +189,23 @@
             score += 1500;
         }
         // TIER 2: Match with ANY category in recent history
-        else if (preferences.categoryHistory.has(category)) {
+        else if (preferences.categoryHistory?.has(category)) {
             score += 1000;
         }
         // TIER 2.5: Match with ANY GROUP in recent history
-        else if (group && preferences.groupHistory.has(group)) {
+        else if (group && preferences.groupHistory?.has(group)) {
             score += 800;
         }
 
-        // TIER 3: Match with any price bucket in history
-        if (preferences.priceBucketHistory.has(priceBucket)) {
-            score += 100;
+        // TIER 3: Match with price bucket ONLY IF the item is relevant (score > 0)
+        // カテゴリや親グループが一致している場合にのみ、価格帯ボーナスを適用する。
+        // （全く無関係なジャンルの商品が「価格が近いだけ」で上位推薦されるのを防ぐ）
+        if (score > 0) {
+            if (preferences.recentPriceBucket && priceBucket === preferences.recentPriceBucket) {
+                score += 150;
+            } else if (preferences.priceBucketHistory?.has(priceBucket)) {
+                score += 80;
+            }
         }
 
         // HEAVY PENALTY: Item already viewed recently
@@ -271,16 +279,25 @@
         }
     }
 
-    bindTracking();
-    bindReset();
-    autoTrack();
+    if (typeof document !== 'undefined') {
+        bindTracking();
+        bindReset();
+        autoTrack();
+    }
 
-    globalThis.ProductPersonalization = {
+    const api = {
         derivePriceBucket,
         getPreferences,
         rankItems,
+        scoreItem,
         saveEvent,
         clearHistory,
         storageKey: STORAGE_KEY
     };
+
+    globalThis.ProductPersonalization = api;
+
+    if (typeof module !== 'undefined' && module.exports) {
+        module.exports = api;
+    }
 })();
