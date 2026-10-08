@@ -63,6 +63,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const keywordClearBtn = document.getElementById('deals-keyword-clear-btn');
   const activeChipsContainer = document.getElementById('deals-active-chips');
   const noResultsActionsEl = document.getElementById('deals-no-results-actions');
+  const loadMoreContainer = document.getElementById('deals-load-more-container');
+  const loadMoreBtn = document.getElementById('deals-load-more-btn');
 
   const scoreValueEl = document.getElementById('deals-score-value');
   const minPriceValueEl = document.getElementById('deals-min-price-value');
@@ -70,6 +72,17 @@ document.addEventListener('DOMContentLoaded', () => {
   const discountValueEl = document.getElementById('deals-discount-value');
 
   if (!scoreSlider || !priceSlider || !gridEl) return;
+
+  // Initialize Paginated Grid Renderer (renders initial 30 items + incremental loading)
+  const paginatedRenderer = typeof createPaginatedGridRenderer === 'function'
+    ? createPaginatedGridRenderer({
+        gridEl,
+        loadMoreContainer,
+        loadMoreBtn,
+        batchSize: 30,
+        renderItem: (p) => renderCard(p),
+      })
+    : null;
 
   let currentSort = 'date'; // Default to newest/last investigated date
 
@@ -253,13 +266,22 @@ document.addEventListener('DOMContentLoaded', () => {
     setTimeout(() => {
       // Render
       if (filtered.length === 0) {
-        gridEl.innerHTML = '';
+        if (paginatedRenderer) {
+          paginatedRenderer.setItems([]);
+        } else {
+          gridEl.innerHTML = '';
+        }
         gridEl.style.display = 'none';
+        if (loadMoreContainer) loadMoreContainer.style.display = 'none';
         noResultsEl.style.display = 'flex';
       } else {
         noResultsEl.style.display = 'none';
         gridEl.style.display = '';
-        gridEl.replaceChildren(...filtered.map(p => renderCard(p)));
+        if (paginatedRenderer) {
+          paginatedRenderer.setItems(filtered);
+        } else {
+          gridEl.replaceChildren(...filtered.map(p => renderCard(p)));
+        }
       }
       statsEl.textContent = String(filtered.length);
 
