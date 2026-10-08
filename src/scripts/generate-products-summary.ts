@@ -95,21 +95,21 @@ export async function generateProductsSummary(options: GenerateSummaryOptions = 
   }
 
   const files = await fs.promises.readdir(articlesDir);
-  const items: ProductSummaryItem[] = [];
+  const targetFiles = files.filter((file) => file.endsWith('.md') && file !== '_index.md');
 
-  for (const file of files) {
-    if (!file.endsWith('.md') || file === '_index.md') continue;
-
-    try {
-      const content = await fs.promises.readFile(path.join(articlesDir, file), 'utf-8');
-      const item = parseProductSummary(content, baseUrl);
-      if (item) {
-        items.push(item);
+  // Promise.all による並行読み込み・パース処理（直列 await の解消と高速化）
+  const results = await Promise.all(
+    targetFiles.map(async (file) => {
+      try {
+        const content = await fs.promises.readFile(path.join(articlesDir, file), 'utf-8');
+        return parseProductSummary(content, baseUrl);
+      } catch {
+        return null;
       }
-    } catch {
-      // 読み込みエラーはスキップ
-    }
-  }
+    }),
+  );
+
+  const items: ProductSummaryItem[] = results.filter((item): item is ProductSummaryItem => item !== null);
 
   // 出力ディレクトリ作成
   const outputDir = path.dirname(outputPath);
