@@ -73,8 +73,10 @@
     {{- if gt (len $highScoreArticles) 0 -}}
     {{- $rankedHighScoreArticles := partial "product-composite-ranked-pages.html" (dict "pages" $highScoreArticles) -}}
     {{- $pickupItems := first 6 $rankedHighScoreArticles -}}
+    {{- $pickupData := index hugo.Data.recommendations "pickup-pool" | default hugo.Data.recommendations.pickup_pool -}}
+    {{- if not $pickupData -}}
     {{- $pickupCandidates := first 100 $rankedHighScoreArticles -}}
-    {{- $pickupData := slice -}}
+    {{- $pickupData = slice -}}
     {{- range $pickupCandidates -}}
     {{- $pickupCategory := "" -}}
     {{- if .Params.categories -}}{{- $pickupCategory = index .Params.categories 0 -}}{{- else if .Params.category -}}{{-
@@ -93,6 +95,7 @@
     "image" (cond (and .Params.images (gt (len .Params.images) 0)) (index .Params.images 0) "")
     "specs" .Params.specs
     ) -}}
+    {{- end -}}
     {{- end -}}
     <div class="pickup-section">
         <div class="pickup-header">
