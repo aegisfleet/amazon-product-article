@@ -13,6 +13,7 @@
 {{- else if .Params.category -}}
 {{- $currentCategory = .Params.category -}}
 {{- end -}}
+{{- $currentGroup := partial "utils-parent-category.html" $currentCategory -}}
 {{- $currentPriceBucket := partial "utils-price-bucket.html" .Params.price -}}
 {{- $allArticles := where (where .Site.RegularPages "Section" "articles") "Params.asin" "!=" $currentAsin -}}
 {{- $shownAsins := slice $currentAsin -}}
@@ -22,7 +23,7 @@
 </div>
 
 <div id="product-tracking-info" data-asin="{{ .Params.asin }}" data-category="{{ $currentCategory }}"
-    data-price-bucket="{{ $currentPriceBucket }}" data-price="{{ .Params.price }}" style="display: none;"></div>
+    data-group="{{ $currentGroup }}" data-price-bucket="{{ $currentPriceBucket }}" data-price="{{ .Params.price }}" style="display: none;"></div>
 
 <div class="container" style="padding-top: var(--spacing-sm); padding-bottom: calc(5rem + env(safe-area-inset-bottom, 0px));">
     <div class="ai-disclaimer">

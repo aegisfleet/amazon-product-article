@@ -107,6 +107,7 @@
 | `static/js/deals-filter.js` | セール対象商品（`/deals/`）の割引率・カテゴリ・価格絞り込み |
 | `static/js/bargain-filter.js` | 「あともう一品」（`/bargain/`）の価格帯別（〜1000円等）動的フィルタ |
 | `static/js/low-scores-filter.js` | 低スコア調査商品（`/low-scores/`）のフィルタリング |
+| `static/js/home-pickup.js` | トップページの高評価おすすめ商品の即時同期レンダリング・パーソナライズ・シャッフル |
 | `static/js/home-load-more.js` | トップページの新着記事を非同期にインクリメンタルロード |
 | `static/js/theme.js` | ライト／ダークテーマの切り替えと永続化（`localStorage`） |
 | `static/js/category-dropdown.js` | ヘッダーナビゲーションの親カテゴリ・子カテゴリ2階層メニュー |
