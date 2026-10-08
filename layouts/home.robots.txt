@@ -3,3 +3,8 @@ Disallow: /tags/
 Disallow: /page/
 
 Sitemap: {{ "sitemap.xml" | absURL }}
+
+# LLM Assistants / AI Agents Navigation
+# https://llmstxt.org/
+# llms.txt: {{ "llms.txt" | absURL }}
+# llms-full.txt: {{ "llms-full.txt" | absURL }}

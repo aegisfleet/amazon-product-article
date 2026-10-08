@@ -110,3 +110,27 @@
 | `static/js/home-load-more.js` | トップページの新着記事を非同期にインクリメンタルロード |
 | `static/js/theme.js` | ライト／ダークテーマの切り替えと永続化（`localStorage`） |
 | `static/js/category-dropdown.js` | ヘッダーナビゲーションの親カテゴリ・子カテゴリ2階層メニュー |
+
+---
+
+## 5. AI・LLMエージェント向け案内・データ連携（llms.txt）
+
+本サイトでは、人間によるWebブラウジングだけでなく、AI（LLM、Perplexity、ChatGPT、自律型AIエージェント等）がサイト構造を正確に理解し、商品データやアフィリエイトリンクを効率的に引用できるよう、標準仕様（llmstxt.org）に準拠した案内ファイルを整備している。
+
+### 5.1 構成ファイル
+
+| ファイル | 配置場所 | 役割 |
+|---|---|---|
+| `llms.txt` | `static/llms.txt` | サイト概要、データ取得エンドポイント（`index.json`等）、URL規則、Amazon購入リンクの取り扱いを案内する標準仕様ガイド |
+| `llms-full.txt` | `static/llms-full.txt` | 大規模コンテキスト対応の完全版。全親カテゴリ一覧（23ジャンル）や主要セクションの詳細リストを掲載 |
+
+### 5.2 自動発見（Auto-Discovery）の仕組み
+
+AIエージェントがサイトを訪れた際、自律的に `llms.txt` を検知できるよう以下の二重導線を設定している：
+1. **HTML `<head>` リンク**: `layouts/partials/head.html` にて `<link rel="alternate" type="text/markdown" href="/llms.txt" title="LLMs.txt">` を全ページに出力。
+2. **`robots.txt` 案内**: `layouts/home.robots.txt` にて `llms.txt` および `llms-full.txt` へのURLを明記。
+
+### 5.3 メンテナンス時の注意点
+
+- **カテゴリ・URL規則の変更時**: 親カテゴリのスラッグや主要URL構造を変更した場合は、`static/llms.txt` および `static/llms-full.txt` 内の記載も同期して更新すること。
+- **データエンドポイントの拡張時**: 軽量インデックス（`products-summary.json` 等）など新しいデータ配信ファイルを追加した際は、`llms.txt` の「データ取得・検索ガイド」セクションへ追記すること。
