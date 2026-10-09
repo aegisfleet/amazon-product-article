@@ -8,17 +8,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function syncFloatingButtons() {
     const compareTray = document.getElementById('compare-tray');
+    const badgeBtn = document.getElementById('compare-tray-badge');
     const floatingSearchFab = document.getElementById('floating-search-fab');
     let maxBarHeight = 0;
 
     if (stickyBar?.classList.contains('is-active')) {
       maxBarHeight = Math.max(maxBarHeight, stickyBar.offsetHeight);
     }
-    if (compareTray?.classList.contains('is-active')) {
+    if (compareTray?.classList.contains('is-active') && !compareTray.classList.contains('is-minimized')) {
       maxBarHeight = Math.max(maxBarHeight, compareTray.offsetHeight);
     }
 
-    const floatingButtons = [scrollToTopBtn, tocFab, floatingSearchFab].filter(Boolean);
+    const floatingButtons = [scrollToTopBtn, tocFab, floatingSearchFab, badgeBtn].filter(Boolean);
 
     if (maxBarHeight > 0) {
       const bottomOffset = `${maxBarHeight + GAP}px`;
@@ -44,9 +45,15 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!entry.isIntersecting && entry.boundingClientRect.top < 0) {
           stickyBar.classList.add('is-active');
           stickyBar.setAttribute('aria-hidden', 'false');
+          if (globalThis.Compare && typeof globalThis.Compare.autoMinimize === 'function') {
+            globalThis.Compare.autoMinimize(true);
+          }
         } else {
           stickyBar.classList.remove('is-active');
           stickyBar.setAttribute('aria-hidden', 'true');
+          if (globalThis.Compare && typeof globalThis.Compare.autoMinimize === 'function') {
+            globalThis.Compare.autoMinimize(false);
+          }
         }
         syncFloatingButtons();
       }

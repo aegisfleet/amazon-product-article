@@ -326,5 +326,69 @@ describe('CompareHelper', () => {
       expect(list[0].asin).toBe('OTHER_ASIN_999');
       expect(list[1].asin).toBe('COMP_ASIN_002');
     });
+
+    it('Compare.minimize() と Compare.restore() で最小化状態が正しく切り替わること', () => {
+      const initial = {
+        'apa-compare-v1': JSON.stringify([
+          {
+            asin: 'ITEM_001',
+            title: '商品1',
+            price: '￥1,000',
+            priceNum: 1000,
+            score: 80,
+            savingsPercentage: 0,
+            category: 'PC',
+            specs: {},
+            addedAt: 1,
+          },
+        ]),
+      };
+      const context = runScriptWithDOM(initial);
+      const compareApi = context.sandbox.Compare;
+
+      expect(compareApi.isMinimized()).toBe(false);
+
+      // 最小化を実行
+      compareApi.minimize();
+      expect(compareApi.isMinimized()).toBe(true);
+
+      // 復帰を実行
+      compareApi.restore();
+      expect(compareApi.isMinimized()).toBe(false);
+    });
+
+    it('モバイル表示時に autoMinimize が正しく動作すること', () => {
+      const initial = {
+        'apa-compare-v1': JSON.stringify([
+          {
+            asin: 'ITEM_001',
+            title: '商品1',
+            price: '￥1,000',
+            priceNum: 1000,
+            score: 80,
+            savingsPercentage: 0,
+            category: 'PC',
+            specs: {},
+            addedAt: 1,
+          },
+        ]),
+      };
+      const context = runScriptWithDOM(initial);
+      const compareApi = context.sandbox.Compare;
+
+      // デスクトップ幅（1024px）では autoMinimize(true) しても最小化されない
+      context.sandbox.innerWidth = 1024;
+      compareApi.autoMinimize(true);
+      expect(compareApi.isMinimized()).toBe(false);
+
+      // モバイル幅（375px）では autoMinimize(true) で最小化される
+      context.sandbox.innerWidth = 375;
+      compareApi.autoMinimize(true);
+      expect(compareApi.isMinimized()).toBe(true);
+
+      // autoMinimize(false) で自動復帰する
+      compareApi.autoMinimize(false);
+      expect(compareApi.isMinimized()).toBe(false);
+    });
   });
 });
