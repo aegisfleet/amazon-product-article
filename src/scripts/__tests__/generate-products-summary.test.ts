@@ -50,7 +50,7 @@ affiliate_url: "https://www.amazon.co.jp/dp/B09BFPNW2J?tag=test-22"
         category: 'マイク',
         price: 11800,
         score: 88,
-        url: 'https://www.amazon-hikaku.com/B09BFPNW2J/',
+        url: 'https://www.amazon-hikaku.com/b09bfpnw2j/',
         affiliate_url: 'https://www.amazon.co.jp/dp/B09BFPNW2J?tag=test-22',
       });
     });

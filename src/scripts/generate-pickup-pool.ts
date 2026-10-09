@@ -138,7 +138,7 @@ export function parsePickupItem(
 
   return {
     title,
-    url: `/articles/${asin}/`,
+    url: `/${asin.toLowerCase()}/`,
     score,
     price,
     asin,

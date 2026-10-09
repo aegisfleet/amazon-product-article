@@ -139,11 +139,28 @@
         return container;
     }
 
+    function normalizeProductUrl(url, asin) {
+        if (!url && asin) {
+            return '/' + String(asin).toLowerCase() + '/';
+        }
+        if (typeof url !== 'string') return null;
+        let normalized = url.trim();
+        if (normalized.startsWith('/articles/')) {
+            normalized = normalized.replace(/^\/articles\//, '/');
+        }
+        const match = /^\/([A-Za-z0-9]{10})\/?$/.exec(normalized);
+        if (match) {
+            return '/' + match[1].toLowerCase() + '/';
+        }
+        return normalized;
+    }
+
     function renderPickupItems(items, grid) {
         grid.textContent = '';
 
         items.forEach(function (item) {
-            const safeHref = sanitizeUrl(item.url);
+            const normalizedUrl = normalizeProductUrl(item.url, item.asin);
+            const safeHref = sanitizeUrl(normalizedUrl);
             if (!safeHref) return;
 
             const title = typeof item.title === 'string' ? item.title : '';

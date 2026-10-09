@@ -75,7 +75,7 @@ specs:
       expect(item?.group).toBe('PC／モニター／入力機器');
       expect(item?.priceBucket).toBe('7000-14999');
       expect(item?.image).toBe('https://example.com/img.jpg');
-      expect(item?.url).toBe('/articles/B00KEY0001/');
+      expect(item?.url).toBe('/b00key0001/');
     });
 
     it('80点未満の記事はnullを返すこと', () => {

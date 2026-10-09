@@ -1,0 +1,32 @@
+{{- define "main" -}}
+<script>
+  (function () {
+    try {
+      var path = globalThis.location.pathname;
+      var match = /^\/(?:articles\/)?([A-Za-z0-9]{10})\/?$/i.exec(path);
+      if (match) {
+        var asin = match[1].toLowerCase();
+        globalThis.location.replace('/' + asin + '/');
+      }
+    } catch (e) {
+      // ignore
+    }
+  })();
+</script>
+<div class="container" style="padding-top: var(--spacing-xl); padding-bottom: var(--spacing-xl); text-align: center;">
+    <div style="font-size: 4rem; font-weight: 700; color: var(--color-primary); line-height: 1;">404</div>
+    <h1 style="font-size: 1.5rem; margin-top: var(--spacing-sm); margin-bottom: var(--spacing-md);">ページが見つかりませんでした</h1>
+    <p style="color: var(--color-text-secondary); max-width: 500px; margin: 0 auto var(--spacing-lg);">
+        お探しのページは移動または削除された可能性があります。<br>
+        URLをご確認いただくか、トップページから商品をお探しください。
+    </p>
+    <div style="display: flex; gap: var(--spacing-sm); justify-content: center; flex-wrap: wrap;">
+        <a href="/" class="btn-primary" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.75rem 1.5rem; border-radius: var(--radius-full); text-decoration: none;">
+            <span class="material-symbols-outlined" aria-hidden="true">home</span> トップページへ戻る
+        </a>
+        <a href="/recommendations/" class="btn-secondary" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.75rem 1.5rem; border-radius: var(--radius-full); text-decoration: none; border: 1px solid var(--color-border);">
+            <span class="material-symbols-outlined" aria-hidden="true">trophy</span> 高評価おすすめを見る
+        </a>
+    </div>
+</div>
+{{- end -}}
