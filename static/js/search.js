@@ -930,7 +930,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
             const initFuse = async () => {
                 try {
-                    getAsinVariations();
+                    await getAsinVariations();
                     const response = await fetch(searchIndexUrl);
                     const data = await response.json();
                     asinMapFallback.clear();
@@ -965,13 +965,15 @@ document.addEventListener('DOMContentLoaded', function () {
             };
 
             if (globalThis.Fuse) {
-                initFuse();
+                void initFuse();
             } else {
                 const script = document.createElement('script');
                 script.src = 'https://cdn.jsdelivr.net/npm/fuse.js@6.6.2';
                 script.integrity = 'sha256-xXM5w/oWsdadmmtGdJqBOe+NT8m7/kgUT/iXqn1CIuw=';
                 script.crossOrigin = 'anonymous';
-                script.onload = initFuse;
+                script.onload = () => {
+                    void initFuse();
+                };
                 document.head.appendChild(script);
             }
         }
