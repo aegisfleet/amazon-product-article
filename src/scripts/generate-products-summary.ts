@@ -79,7 +79,7 @@ export function parseProductSummary(content: string, baseUrl: string): ProductSu
     category,
     price,
     score,
-    url: `${cleanBaseUrl}${asin}/`,
+    url: `${cleanBaseUrl}${asin.toLowerCase()}/`,
     affiliate_url: affiliateUrl,
   };
 }
