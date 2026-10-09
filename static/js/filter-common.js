@@ -240,7 +240,7 @@ function bindCardImage(article, p) {
   }
 }
 
-let cachedCategoryUrls = null;
+var cachedCategoryUrls = typeof cachedCategoryUrls !== 'undefined' ? cachedCategoryUrls : null;
 function getCategoryUrlFromName(name) {
   if (!name) return '';
   if (!cachedCategoryUrls) {
