@@ -459,6 +459,9 @@ document.addEventListener('DOMContentLoaded', function () {
             searchInput.value = initialQuery;
         }
 
+        updateFilterBadge();
+        updateSearchActiveChips();
+
         setTimeout(() => {
             // preventScroll: true によりフォーカス時の自動スクロールを完全防止
             searchInput.focus({ preventScroll: true });
@@ -669,7 +672,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const priceMinEl = document.getElementById('filter-price-min');
         const priceMaxEl = document.getElementById('filter-price-max');
 
-        if (scoreMinEl && scoreMinEl.value !== '' && scoreMinEl.value !== '70') {
+        if (scoreMinEl && scoreMinEl.value !== '' && Number.parseFloat(scoreMinEl.value) > 0) {
             count++;
         }
         if (scoreMaxEl && scoreMaxEl.value?.trim?.() !== '') {
@@ -709,13 +712,15 @@ document.addEventListener('DOMContentLoaded', function () {
 
         const chips = [];
 
-        if (scoreMin && scoreMin !== '70') {
+        if (scoreMin && Number.parseFloat(scoreMin) > 0) {
             chips.push({
                 id: 'scoreMin',
                 icon: 'trophy',
                 label: `スコア ${scoreMin}点以上`,
                 onRemove: () => {
-                    if (scoreMinEl) scoreMinEl.value = '70';
+                    if (scoreMinEl) scoreMinEl.value = '';
+                    updateFilterBadge();
+                    updateSearchActiveChips();
                     triggerSearch();
                 }
             });
@@ -728,6 +733,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 label: `スコア ${scoreMax}点以下`,
                 onRemove: () => {
                     if (scoreMaxEl) scoreMaxEl.value = '';
+                    updateFilterBadge();
+                    updateSearchActiveChips();
                     triggerSearch();
                 }
             });
@@ -740,6 +747,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 label: `¥${Number(priceMin).toLocaleString()}〜`,
                 onRemove: () => {
                     if (priceMinEl) priceMinEl.value = '';
+                    updateFilterBadge();
+                    updateSearchActiveChips();
                     triggerSearch();
                 }
             });
@@ -752,6 +761,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 label: `〜¥${Number(priceMax).toLocaleString()}`,
                 onRemove: () => {
                     if (priceMaxEl) priceMaxEl.value = '';
+                    updateFilterBadge();
+                    updateSearchActiveChips();
                     triggerSearch();
                 }
             });
@@ -805,6 +816,7 @@ document.addEventListener('DOMContentLoaded', function () {
             if (priceMaxEl) priceMaxEl.value = '';
 
             updateFilterBadge();
+            updateSearchActiveChips();
 
             const searchInputWrapper = document.querySelector('.search-input-wrapper');
             if (searchInputWrapper) searchInputWrapper.classList.remove('is-loading');
@@ -820,6 +832,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     updateFilterBadge();
+    updateSearchActiveChips();
 
     // 画面サイズ・デバイス問わず、検索結果の高さを動的に調整（画面下部へのはみ出し・見切れを防止）
     function updateSearchResultsHeight() {
@@ -1226,6 +1239,7 @@ document.addEventListener('DOMContentLoaded', function () {
             if (el) {
                 el.addEventListener('input', () => {
                     updateFilterBadge();
+                    updateSearchActiveChips();
                     const query = searchInput.value.replaceAll('　', ' ');
                     if (isValidQuery(query)) {
                         if (searchInputWrapper) searchInputWrapper.classList.add('is-loading');
@@ -1509,7 +1523,7 @@ document.addEventListener('DOMContentLoaded', function () {
         if (type === 'keyword') {
             searchInput.value = '';
         } else if (type === 'score-min' && scoreMinEl) {
-            scoreMinEl.value = '0';
+            scoreMinEl.value = '';
         } else if (type === 'score-max' && scoreMaxEl) {
             scoreMaxEl.value = '';
         } else if (type === 'price-min' && priceMinEl) {
@@ -1517,6 +1531,8 @@ document.addEventListener('DOMContentLoaded', function () {
         } else if (type === 'price-max' && priceMaxEl) {
             priceMaxEl.value = '';
         }
+        updateFilterBadge();
+        updateSearchActiveChips();
         const query = searchInput.value.replaceAll('　', ' ');
         if (isValidQuery(query)) {
             handleSearch(query);
@@ -1532,25 +1548,67 @@ document.addEventListener('DOMContentLoaded', function () {
         const scoreMaxEl = document.getElementById('filter-score-max');
         const priceMinEl = document.getElementById('filter-price-min');
         const priceMaxEl = document.getElementById('filter-price-max');
-        if (scoreMinEl) scoreMinEl.value = '0';
+        if (scoreMinEl) scoreMinEl.value = '70';
         if (scoreMaxEl) scoreMaxEl.value = '';
         if (priceMinEl) priceMinEl.value = '';
         if (priceMaxEl) priceMaxEl.value = '';
+        updateFilterBadge();
+        updateSearchActiveChips();
         displaySearchTips();
     }
 
     // 件数バナーとフィルタチップを描画する
-    function renderResultHeader(count, container) {
+    function renderResultHeader(count, container, unfilteredScoreCount = 0) {
         const activeFilters = getActiveFilters();
 
         const header = document.createElement('div');
         header.className = 'search-result-header';
 
+        const topRow = document.createElement('div');
+        topRow.className = 'search-result-top-row';
+
         // 件数バナー
         const countBadge = document.createElement('span');
         countBadge.className = 'search-result-count';
         countBadge.textContent = `検索結果: ${count}件`;
-        header.appendChild(countBadge);
+        topRow.appendChild(countBadge);
+
+        // スコア条件による除外候補の案内（スコア条件が有効で、除外候補がある場合）
+        const scoreMinEl = document.getElementById('filter-score-min');
+        const scoreMin = scoreMinEl && scoreMinEl.value !== '' ? Number.parseFloat(scoreMinEl.value) : 0;
+        const hiddenCount = Math.max(0, unfilteredScoreCount - count);
+
+        if (scoreMin > 0 && hiddenCount > 0) {
+            const noticeBox = document.createElement('div');
+            noticeBox.className = 'search-score-notice';
+
+            const noticeText = document.createElement('span');
+            noticeText.className = 'score-notice-text';
+            noticeText.textContent = `（${scoreMin}点未満の候補: ${hiddenCount}件）`;
+            noticeBox.appendChild(noticeText);
+
+            const showAllBtn = document.createElement('button');
+            showAllBtn.type = 'button';
+            showAllBtn.className = 'score-notice-btn';
+            showAllBtn.textContent = 'すべて表示';
+            showAllBtn.setAttribute('aria-label', `${scoreMin}点未満を含むすべての候補を表示`);
+            showAllBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                if (scoreMinEl) scoreMinEl.value = '';
+                updateFilterBadge();
+                updateSearchActiveChips();
+                const q = searchInput.value.replaceAll('　', ' ');
+                if (isValidQuery(q)) {
+                    const searchInputWrapper = document.querySelector('.search-input-wrapper');
+                    if (searchInputWrapper) searchInputWrapper.classList.add('is-loading');
+                    handleSearch(q);
+                }
+            });
+            noticeBox.appendChild(showAllBtn);
+            topRow.appendChild(noticeBox);
+        }
+
+        header.appendChild(topRow);
 
         // フィルタチップ + クリアボタン（アクティブフィルタがある場合）
         if (activeFilters.length > 0) {
@@ -2081,7 +2139,7 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         }
 
-        renderResultHeader(uniqueResults.length, searchResults);
+        renderResultHeader(uniqueResults.length, searchResults, unfilteredScoreCount);
         renderCategorySuggestions(categoryCounts, searchResults);
 
         uniqueResults.slice(0, 20).forEach(result => {

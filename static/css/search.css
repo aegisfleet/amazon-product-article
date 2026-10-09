@@ -711,6 +711,20 @@
     flex-basis: 100%;
 }
 
+#search-modal .m3-active-chips-container {
+    flex: 0 0 auto !important;
+    flex-basis: auto !important;
+    height: auto !important;
+    min-height: 0 !important;
+    margin-top: 0.5rem;
+    margin-bottom: 0.25rem;
+    padding-top: 0;
+    padding-bottom: 0;
+    padding-left: 0.25rem;
+    padding-right: 0.25rem;
+    border-top: none !important;
+}
+
 /* Chrome, Safari, Edge, Opera: Remove number input arrows if we want a cleaner look, 
    but for usability, keeping them might be better. Let's make them subtle. */
 .filter-inputs input[type=number]::-webkit-inner-spin-button,
@@ -846,11 +860,54 @@
 }
 
 /* 件数バナー */
+.search-result-top-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
 .search-result-count {
     font-size: 0.8rem;
     font-weight: 700;
     color: var(--color-text-secondary);
     letter-spacing: 0.02em;
+}
+
+/* スコア除外候補の案内と全表示ボタン */
+.search-score-notice {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    font-size: 0.75rem;
+    color: var(--color-text-secondary);
+}
+
+.score-notice-text {
+    font-size: 0.75rem;
+    color: var(--color-text-secondary);
+}
+
+.score-notice-btn {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.15rem 0.5rem;
+    min-height: 0;
+    border-radius: 4px;
+    background: color-mix(in srgb, var(--color-primary) 12%, transparent);
+    color: var(--color-primary);
+    border: 1px solid color-mix(in srgb, var(--color-primary) 35%, transparent);
+    font-size: 0.75rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.15s ease;
+    line-height: 1.4;
+}
+
+.score-notice-btn:hover {
+    background: var(--color-primary);
+    color: #ffffff;
 }
 
 /* アクティブフィルタチップ列 */
@@ -1448,6 +1505,14 @@ dialog.search-modal::backdrop {
     overflow-y: hidden;
     position: relative;
     box-sizing: border-box;
+}
+
+.modal-search-container .search-input-wrapper {
+    margin-bottom: 0.25rem;
+}
+
+.modal-search-container .search-filter-toggle-wrapper {
+    margin-top: 0.25rem;
 }
 
 #search-modal #search-results {
