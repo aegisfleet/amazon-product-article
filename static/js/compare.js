@@ -156,6 +156,7 @@
                             <span id="compare-tray-count" class="compare-tray-count">0/3</span>
                         </span>
                         <button type="button" id="compare-tray-clear" class="compare-tray-clear-btn" title="比較をすべてクリア" aria-label="比較をすべてクリア">クリア</button>
+                        <button type="button" id="compare-tray-minimize" class="compare-tray-minimize-btn" title="トレイを最小化" aria-label="商品比較トレイを最小化">▾</button>
                     </div>
                     <div id="compare-tray-items" class="compare-tray-items"></div>
                     <div class="compare-tray-actions">
@@ -164,6 +165,11 @@
                         </button>
                     </div>
                 </div>
+                <button type="button" id="compare-tray-badge" class="compare-tray-badge" aria-label="商品比較トレイを展開" title="商品比較を開く">
+                    <span class="compare-tray-badge-icon">⚖️</span>
+                    <span class="compare-tray-badge-text">比較</span>
+                    <span id="compare-tray-badge-count" class="compare-tray-badge-count">0</span>
+                </button>
             `;
             document.body.appendChild(tray);
 
@@ -176,19 +182,60 @@
             document.getElementById('compare-tray-open').addEventListener('click', function () {
                 openModal();
             });
+
+            document.getElementById('compare-tray-minimize').addEventListener('click', function () {
+                toggleMinimizeTray(true, false);
+            });
+
+            document.getElementById('compare-tray-badge').addEventListener('click', function () {
+                toggleMinimizeTray(false, false);
+            });
         }
         return tray;
+    }
+
+    function toggleMinimizeTray(minimized, isAuto) {
+        const tray = getOrCreateTray();
+        if (minimized) {
+            tray.classList.add('is-minimized');
+            if (isAuto) {
+                tray.classList.add('is-auto-minimized');
+            } else {
+                tray.classList.remove('is-auto-minimized');
+            }
+        } else {
+            tray.classList.remove('is-minimized', 'is-auto-minimized');
+        }
+        syncFloatingButtons();
+    }
+
+    function autoMinimize(active) {
+        const tray = document.getElementById('compare-tray');
+        if (!tray || !tray.classList.contains('is-active')) return;
+        if (active) {
+            if (globalThis.innerWidth <= 640 && !tray.classList.contains('is-minimized')) {
+                toggleMinimizeTray(true, true);
+            }
+        } else {
+            if (tray.classList.contains('is-auto-minimized')) {
+                toggleMinimizeTray(false, false);
+            }
+        }
     }
 
     function updateTray() {
         const list = loadCompare();
         const tray = getOrCreateTray();
         const countSpan = document.getElementById('compare-tray-count');
+        const badgeCountSpan = document.getElementById('compare-tray-badge-count');
         const itemsContainer = document.getElementById('compare-tray-items');
         const openBtn = document.getElementById('compare-tray-open');
 
         if (countSpan) {
             countSpan.textContent = `${list.length}/${MAX_COMPARE}`;
+        }
+        if (badgeCountSpan) {
+            badgeCountSpan.textContent = String(list.length);
         }
 
         if (itemsContainer) {
@@ -231,7 +278,7 @@
         if (list.length > 0) {
             tray.classList.add('is-active');
         } else {
-            tray.classList.remove('is-active');
+            tray.classList.remove('is-active', 'is-minimized', 'is-auto-minimized');
         }
 
         syncFloatingButtons();
@@ -249,17 +296,19 @@
         const floatingSearchFab = document.getElementById('floating-search-fab');
         const stickyBar = document.getElementById('sticky-cta-bar');
         const compareTray = document.getElementById('compare-tray');
+        const badgeBtn = document.getElementById('compare-tray-badge');
         const GAP = 12;
 
         let maxBarHeight = 0;
         if (stickyBar && stickyBar.classList.contains('is-active')) {
             maxBarHeight = Math.max(maxBarHeight, stickyBar.offsetHeight);
         }
-        if (compareTray && compareTray.classList.contains('is-active')) {
+        // 最小化状態のトレイは全幅バーではないため、底面押し上げの高さ計算から除外する
+        if (compareTray && compareTray.classList.contains('is-active') && !compareTray.classList.contains('is-minimized')) {
             maxBarHeight = Math.max(maxBarHeight, compareTray.offsetHeight);
         }
 
-        const floatingButtons = [scrollToTopBtn, tocFab, floatingSearchFab].filter(Boolean);
+        const floatingButtons = [scrollToTopBtn, tocFab, floatingSearchFab, badgeBtn].filter(Boolean);
 
         if (maxBarHeight > 0) {
             const bottomOffset = `${maxBarHeight + GAP}px`;
@@ -646,6 +695,13 @@
         isCompared: isCompared,
         sync: updateUI,
         openModal: openModal,
-        closeModal: closeModal
+        closeModal: closeModal,
+        minimize: function () { toggleMinimizeTray(true, false); },
+        restore: function () { toggleMinimizeTray(false, false); },
+        autoMinimize: autoMinimize,
+        isMinimized: function () {
+            const tray = document.getElementById('compare-tray');
+            return Boolean(tray && tray.classList.contains('is-minimized'));
+        }
     };
 })();
