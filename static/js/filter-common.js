@@ -240,22 +240,21 @@ function bindCardImage(article, p) {
   }
 }
 
-var cachedCategoryUrls = typeof cachedCategoryUrls !== 'undefined' ? cachedCategoryUrls : null;
 function getCategoryUrlFromName(name) {
   if (!name) return '';
-  if (!cachedCategoryUrls) {
+  if (!getCategoryUrlFromName.cachedCategoryUrls) {
     const el = document.getElementById('category-url-data');
     if (el) {
       try {
-        cachedCategoryUrls = JSON.parse(el.textContent || '{}');
+        getCategoryUrlFromName.cachedCategoryUrls = JSON.parse(el.textContent || '{}');
       } catch {
-        cachedCategoryUrls = {};
+        getCategoryUrlFromName.cachedCategoryUrls = {};
       }
     } else {
-      cachedCategoryUrls = {};
+      getCategoryUrlFromName.cachedCategoryUrls = {};
     }
   }
-  return cachedCategoryUrls?.[name] || `/categories/${encodeURIComponent(name)}/`;
+  return getCategoryUrlFromName.cachedCategoryUrls?.[name] || `/categories/${encodeURIComponent(name)}/`;
 }
 
 function bindCardHeader(article, p) {
