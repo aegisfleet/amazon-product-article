@@ -7950,24 +7950,28 @@ body.menu-open .nav-menu-floating-toggle {
 }
 
 .compare-tray-minimize-btn {
-  background: transparent;
-  border: 1px solid var(--color-border, #e5e7eb);
+  background-color: var(--color-bg-card, #ffffff);
+  border: 1px solid var(--color-border, #cbd5e1);
   color: var(--color-text-secondary, #4b5563);
-  font-size: 0.8125rem;
+  font-size: 0.9375rem;
   line-height: 1;
   cursor: pointer;
-  padding: 0.25rem 0.4375rem;
-  border-radius: var(--radius-sm, 4px);
+  padding: 0;
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-md, 8px);
   display: inline-flex;
   align-items: center;
   justify-content: center;
   transition: all 0.15s ease;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
 }
 
 .compare-tray-minimize-btn:hover {
-  color: var(--color-text-main, #111827);
-  background-color: var(--color-bg-subtle, #f3f4f6);
+  color: var(--color-primary, #2563eb);
+  background-color: var(--color-bg-subtle, #f1f5f9);
   border-color: var(--color-primary, #2563eb);
+  transform: translateY(-1px);
 }
 
 /* Floating minimized badge (Placed on the right side, adjacent to scroll-to-top, avoiding left-side toc-fab) */
@@ -8178,6 +8182,9 @@ body.menu-open .nav-menu-floating-toggle {
 }
 
 .compare-tray-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
   flex-shrink: 0;
 }
 
@@ -8618,14 +8625,16 @@ body.compare-modal-open {
 }
 
 [data-theme="dark"] .compare-tray-minimize-btn {
-  color: #9ca3af;
+  background-color: #374151;
+  color: #f3f4f6;
   border-color: #4b5563;
+  box-shadow: none;
 }
 
 [data-theme="dark"] .compare-tray-minimize-btn:hover {
-  color: #f9fafb;
-  background-color: #374151;
-  border-color: #3b82f6;
+  color: #ffffff;
+  background-color: #4b5563;
+  border-color: #60a5fa;
 }
 
 [data-theme="dark"] .compare-tray-badge {

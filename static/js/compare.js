@@ -156,13 +156,13 @@
                             <span id="compare-tray-count" class="compare-tray-count">0/3</span>
                         </span>
                         <button type="button" id="compare-tray-clear" class="compare-tray-clear-btn" title="比較をすべてクリア" aria-label="比較をすべてクリア">クリア</button>
-                        <button type="button" id="compare-tray-minimize" class="compare-tray-minimize-btn" title="トレイを最小化" aria-label="商品比較トレイを最小化">▾</button>
                     </div>
                     <div id="compare-tray-items" class="compare-tray-items"></div>
                     <div class="compare-tray-actions">
                         <button type="button" id="compare-tray-open" class="compare-tray-open-btn" aria-label="選択した商品を比較する">
                             <span>比較する</span>
                         </button>
+                        <button type="button" id="compare-tray-minimize" class="compare-tray-minimize-btn" title="トレイを最小化" aria-label="商品比較トレイを最小化">▾</button>
                     </div>
                 </div>
                 <button type="button" id="compare-tray-badge" class="compare-tray-badge" aria-label="商品比較トレイを展開" title="商品比較を開く">
