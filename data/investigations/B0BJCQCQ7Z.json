@@ -1,171 +1,147 @@
 {
   "analysis": {
-    "productName": "Anker Eufy Security SmartTrack Card",
+    "productName": "Eufy Security SmartTrack Card",
     "parentAsin": "B0H73W6Z4S",
-    "productDescription": "財布やカードケースに収まる約2.4mmの薄型カード型スマートトラッカー。Appleの「探す」ネットワークに対応し、紛失防止や置き忘れ時のアラート機能を搭載している。",
+    "productDescription": "財布やカードケースに収納しやすい、厚さ約2.4mmのカード型スマートトラッカー。Appleの「探す」ネットワークに対応し、スマホと双方向での置き忘れ防止や位置確認が可能。",
     "productUsage": [
-      "財布やカードケースに入れて紛失を防止する",
-      "パスポートや書類ケースにクリップで取り付けて管理する",
-      "スマホからカードを鳴らして置き場所を特定する",
-      "カードからスマホを鳴らして置き場所を特定する"
+      "財布や定期入れの紛失防止",
+      "パスポートや書類ケースへの取り付け",
+      "置き忘れたスマホの探索"
     ],
     "positivePoints": [
-      "約2.4mmの極薄設計で、財布のカードポケットに入れてもかさばりにくい",
-      "Appleの「探す」ネットワークに標準対応し、広範囲で位置特定が可能",
-      "双方向の呼び出し機能（スマホからカード、カードからスマホ）を搭載",
-      "置き忘れ防止機能を搭載し、手元から離れた際にアラートで通知可能",
-      "Ankerブランド（Eufy）としての信頼性とカスタマーサポートがある"
+      "Appleの「探す」ネットワーク（Find My）に公式対応",
+      "クレジットカードと同等のサイズ感（厚さ2.4mm）で財布にスッキリ収まる",
+      "本体ボタンを押してスマホを鳴らす「双方向探索」機能搭載",
+      "クリップが付属し、ポケットのない書類やパスポートにも取り付け可能",
+      "置き忘れ防止アラート機能を搭載"
     ],
     "negativePoints": [
-      "Android端末には非対応（「探す」機能はApple端末のみ）",
-      "バッテリー内蔵型（電池交換不可）のため、使い捨てとなる（寿命目安は約3年）",
-      "UWB（超広帯域無線）非対応のため、AirTagのようなセンチメートル単位の詳細な位置特定には対応していない"
+      "電池交換ができない使い切り仕様（最大3年持続）",
+      "Android端末ではApple「探す」ネットワークの全機能は利用不可（専用アプリでのBluetooth範囲内のみ）",
+      "厚さ2.4mmはクレジットカード2〜3枚分に相当し、極薄の競合製品（1.6〜1.9mm）よりはやや厚みがある"
     ],
     "useCases": [
-      "通勤・通学時に持ち歩く財布や定期入れの紛失防止",
-      "海外旅行時のパスポートや重要書類の管理",
-      "家の中で財布やスマホを頻繁に見失う際のスムーズな探し出し"
+      "長財布やカードケースに入れての日常的な紛失防止",
+      "海外旅行時のパスポートや貴重品ケースの管理",
+      "家の中でスマホを見失った際の呼び出し（カードからスマホを鳴らす）"
     ],
     "userStories": [
       {
-        "userType": "iPhoneユーザーの会社員",
-        "scenario": "財布をよく置き忘れてしまうため、かさばらないトラッカーを探していた",
-        "experience": "長財布のカードポケットにスッキリと収まり、全く違和感なく持ち歩ける。AirTagのように丸みがないので財布の型崩れを気にしなくて済むのが最大の決め手だった。ただ、電池交換ができないため数年ごとの買い替えが必要になる点は留意している。",
-        "supportingSourceIds": [],
+        "userType": "キャッシュレス派の会社員",
+        "scenario": "薄型のカードケースを使用しており、鍵用のAirTagは厚みがあって入らなかった",
+        "experience": "厚さ2.4mmなのでカードケースのポケットにも無理なく入り、シルエットを崩さずに持ち運べました。家の中で財布が見つからない時も、スマホから音を鳴らせるので非常に助かっています。また、逆にスマホが見当たらない時にカード側からスマホを鳴らせる双方向呼び出し機能が地味に便利です。",
+        "supportingSourceIds": [
+          "src-amazon-official"
+        ],
         "sentiment": "positive"
       },
       {
-        "userType": "旅行好きのiPhoneユーザー",
-        "scenario": "海外旅行でパスポートや貴重品を安全に管理したい",
-        "experience": "付属のメタルクリップを使ってパスポートケースに挟み込んで使用した。Appleの「探す」アプリで簡単に位置が確認できるため、手元から離れた時の安心感が違う。置き忘れアラートのおかげで、カフェでの置き忘れも未然に防ぐことができた。",
-        "supportingSourceIds": [],
-        "sentiment": "positive"
+        "userType": "頻繁に出張するビジネスパーソン",
+        "scenario": "パスポートや重要書類の紛失対策として導入",
+        "experience": "付属のメタルクリップを使ってパスポートケースに直接挟んで使用しています。Appleの「探す」ネットワークに対応しているため、万が一置き忘れてもiPhoneから位置を確認できる安心感があります。ただ、電池交換不可の使い切りなので、数年後の買い替えコストは考慮する必要があります。",
+        "supportingSourceIds": [
+          "src-amazon-official"
+        ],
+        "sentiment": "mixed"
       }
     ],
-    "userImpression": "薄型カードサイズによる「財布への収まりの良さ」が高く評価されており、AirTagの厚みに不満を持っていたiPhoneユーザーにとって最適な代替品となっている。Appleの「探す」ネットワークにフル対応している点も安心感に直結している。一方で、電池交換ができない使い捨て仕様であることやAndroid非対応である点はマイナス要素として挙げられるが、3年程度の寿命と割り切って利便性を優先するユーザーには総じて満足度が高い。",
+    "userImpression": "財布やパスポートの紛失防止策として、Apple純正AirTagの厚みがネックになっていたiOSユーザーから支持を集めている。特に「探す」ネットワークにフル対応している点と、スマホを呼び出せる双方向機能が高く評価されている。一方で、電池交換不可（約3年で使い切り）であることや、Android端末ではフル機能が使えない点には注意が必要。また、厚さ2.4mmは一般的なクレジットカード2枚強の厚みがあるため、極小の財布などではやや窮屈に感じるユーザーもおり、割り切りと用途の見極めが求められる製品である。",
     "sources": [
       {
-        "id": "src-1",
+        "id": "src-amazon-official",
         "name": "Amazon公式商品ページ",
         "url": "https://www.amazon.co.jp/dp/B0BJCQCQ7Z",
         "tier": "high",
         "evidenceType": "primary",
-        "publishedAt": "2026-09-11",
-        "author": "Anker (Eufy)",
-        "conflictOfInterest": "possible",
-        "notes": "製品仕様、寸法（2.4mm）、Apple「探す」対応、双方向呼び出し機能を確認"
+        "publishedAt": "2026-10-11",
+        "author": "Anker",
+        "conflictOfInterest": "disclosed",
+        "notes": "製品仕様、機能（Apple「探す」対応、双方向探索、置き忘れ防止アラート）、寸法（2.4mm）、付属クリップについて確認。"
       }
     ],
     "claims": [
       {
-        "claim": "なくしものが無くなる",
-        "category": "quality",
+        "claim": "厚さ約2.4mmのカード型で財布にスッキリ収まる",
+        "category": "comparativeAdvantage",
         "confidence": "high",
         "supportingSourceIds": [
-          "src-1"
+          "src-amazon-official"
         ],
         "crossChecked": true,
-        "notes": "Appleの「探す」ネットワークによる広範囲な追跡機能と置き忘れ防止アラートにより、紛失リスクを大幅に低減可能"
+        "notes": "公称スペックで厚さ約2.4mmと明記されており、物理的寸法として事実。ただしカード2〜3枚分相当の厚みがあることはユーザー側で考慮が必要。"
+      },
+      {
+        "claim": "Appleの「探す」ネットワークに対応",
+        "category": "comparativeAdvantage",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-amazon-official"
+        ],
+        "crossChecked": true,
+        "notes": "Appleのサードパーティ製品認証を受けており、iOS端末でネイティブにトラッキング可能なことは事実。"
       }
     ],
-    "lastInvestigated": "2026-09-11",
-    "investigatedPrice": "￥2,670",
+    "lastInvestigated": "2026-10-11",
+    "investigatedPrice": "￥3,700",
     "competitiveAnalysis": [
       {
-        "name": "UGREEN FineTrack Slim Smart Finder",
+        "name": "UGREEN FineTrack Slim",
         "asin": "B0D5415Q27",
-        "priceComparison": "対象商品とほぼ同価格帯（約2,690円）。厚みが1.7mmと対象商品（2.4mm）よりさらに薄く充電式であることが特徴。",
+        "priceComparison": "UGREENの方が約300円高いが、厚さが1.7mmとより薄く充電式。",
         "featureComparison": [
-          "共通点：カード型デザイン、Apple「探す」対応、iOS専用",
-          "相違点：UGREENは1.7mmとより薄く充電式（IP68防水）、Ankerは2.4mmで使い切りタイプ。UGREENは充電式のため繰り返し使用可能"
+          "共通点：Appleの「探す」ネットワークに対応（iOS専用）、カード型デザイン",
+          "相違点：Ankerは厚さ2.4mmで電池交換不可（約3年）、UGREENは厚さ1.7mmで充電式"
         ],
         "differentiators": [
-          "Anker Eufy Security SmartTrack Cardの利点：充電の手間をかけずに数年間放置して使いたい人、モバイルバッテリーなどで実績のあるAnkerブランドの信頼性やアプリの安定性を重視する人に適している。",
-          "UGREEN FineTrack Slim Smart Finderの利点：厚み1.7mmという極限の薄さを求める人や、使い捨てではなく繰り返し充電して長く使いたいエコ志向の人に最適。"
+          "Eufy Security SmartTrack Cardの利点：Ankerブランドの信頼性と、メタルクリップが付属しパスポート等にも挟みやすい点、専用アプリでの限定的なAndroid対応を重視するならこちら",
+          "UGREEN FineTrack Slimの利点：とにかく財布を薄く保ちたい（1.7mm）iOSユーザーや、使い捨てではなく充電して長く使いたい場合はこちら"
         ]
       },
       {
-        "name": "Dyoac エアタグ カード",
-        "asin": "B0F5HSHQ83",
-        "priceComparison": "対象商品と同価格帯（約2,847円）。薄さ1.6mmを謳い、最大10年の長寿命をアピールしている。",
+        "name": "UGREEN FineTrack Slim Duo 2",
+        "asin": "B0G658KWK4",
+        "priceComparison": "価格はほぼ同等（UGREENが約90円高い）。",
         "featureComparison": [
-          "共通点：カード型デザイン、Apple「探す」対応",
-          "相違点：Dyoacは1.6mmで最大10年使用可能を謳うが新興ブランド。Ankerは2.4mmでAnker（Eufy）ブランドによる安定したサポート体制がある。"
+          "共通点：カード型デザイン、スマホ呼び出し機能などトラッカーとしての基本機能",
+          "相違点：AnkerはiOS「探す」ネットワーク対応が強みだがAndroidは制限あり。UGREEN Duo 2は厚さ1.9mmとより薄く、iOS/Android両対応を謳っている。"
         ],
         "differentiators": [
-          "Anker Eufy Security SmartTrack Cardの利点：大手ブランドの確実な動作保証、日本語サポート、専用アプリ（Eufy Security）との連携による付加機能（スマホを鳴らす等）を安心して利用したいなら迷わずこちら。",
-          "Dyoac エアタグ カードの利点：とにかく薄さ（1.6mm）とバッテリーの持ち（カタログスペック上10年）に魅力を感じ、新興ブランドでも構わないという人に適している。"
+          "Eufy Security SmartTrack Cardの利点：Apple「探す」ネットワークの強固な追跡網（iOSユーザー中心）を活用したい場合や、クリップ運用をしたい場合はこちら",
+          "UGREEN FineTrack Slim Duo 2の利点：Androidメインのユーザーや、より薄い1.9mm厚を求める場合はこちら"
         ]
       },
       {
-        "name": "Anker Eufy SmartTrack Link",
-        "asin": "B0B6ZQJXW8",
-        "priceComparison": "対象商品より安価（約1,790円）。同ブランドのキーホルダー型モデル。",
+        "name": "Anker Eufy SmartTrack Card E30",
+        "asin": "B0DWMPNCLC",
+        "priceComparison": "E30（アップグレード版）の方が約1,000円高い。",
         "featureComparison": [
-          "共通点：Eufyブランド、Apple「探す」対応、スマホ呼び出し機能",
-          "相違点：Linkはキーホルダー型（正方形）で電池交換可能（CR2032）。Cardは財布向けの極薄カード型だが電池交換不可。"
+          "共通点：Anker Eufyブランドのカード型トラッカー、Apple「探す」ネットワーク対応",
+          "相違点：本製品は充電不可・電池交換不可の使い切り仕様。E30は充電式で繰り返し使用可能なアップグレード版。"
         ],
         "differentiators": [
-          "Anker Eufy Security SmartTrack Cardの利点：財布のカードポケットやパスポートケースなど、厚みを持たせたくない場所に収納したい場合は迷わずこちらを選ぶべき。",
-          "Anker Eufy SmartTrack Linkの利点：鍵やカバンに取り付けたい場合や、自分で電池交換をして半永久的に使い続けたい人はこちらを選ぶべき。"
-        ]
-      },
-      {
-        "name": "UGREEN FineTrack Slim 磁気ワイヤレス充電 カード型",
-        "asin": "B0FH51HVDT",
-        "priceComparison": "対象商品よりやや高価（約3,224円）。ワイヤレス充電に対応したモデル。",
-        "featureComparison": [
-          "共通点：カード型、Apple「探す」対応、iOS専用",
-          "相違点：UGREENはワイヤレス充電に対応し繰り返し使用可能。Ankerは充電・電池交換不可の使い捨てタイプ。"
-        ],
-        "differentiators": [
-          "Anker Eufy Security SmartTrack Cardの利点：充電の手間すら省いて、購入後数年間は完全にメンテナンスフリーで使いたい人に適している。",
-          "UGREEN FineTrack Slim 磁気ワイヤレス充電 カード型の利点：MagSafeなどのワイヤレス充電器を既に持っており、使い捨てではなく充電して繰り返し使いたい人に適している。"
-        ]
-      },
-      {
-        "name": "Anker Eufy SmartTrack Card E40",
-        "asin": "B0GQPB5ZJX",
-        "priceComparison": "対象商品より高価（約5,990円）。同ブランドの上位モデルと推測される。",
-        "featureComparison": [
-          "共通点：Eufyブランドのカード型トラッカー",
-          "相違点：価格差が大きく、充電式（または上位機能）の可能性があるが、本商品は2,670円と手頃で導入しやすい。"
-        ],
-        "differentiators": [
-          "Anker Eufy Security SmartTrack Cardの利点：2,000円台という手頃な価格で、Appleの「探す」対応のカード型トラッカーを導入したいコスパ重視のユーザーに最適。",
-          "Anker Eufy SmartTrack Card E40の利点：機能の詳細は要確認だが、Eufyブランドでより高度な機能（充電式やUWB対応など）を求める場合は上位モデルを選ぶ価値がある。"
-        ]
-      },
-      {
-        "name": "Anker Eufy SmartTrack Link (Android用)",
-        "asin": "B0GYPGD1CN",
-        "priceComparison": "対象商品より高価（2個セット約5,980円）。Android（Google「検索ハブ」）対応版。",
-        "featureComparison": [
-          "共通点：Eufyブランドのトラッカー",
-          "相違点：Link (Android用)はGoogleの「検索ハブ」に対応するAndroid端末向け。Card（本商品）はAppleの「探す」対応でiOS専用。"
-        ],
-        "differentiators": [
-          "Anker Eufy Security SmartTrack Cardの利点：iPhone・iPadなどのAppleデバイスをメインで使用しており、財布に入れやすい薄型を探している人に必須。",
-          "Anker Eufy SmartTrack Link (Android用)の利点：Androidスマートフォンを使用しており、OS標準の検索機能を利用したい場合はこちら一択となる。"
+          "Eufy Security SmartTrack Cardの利点：初期導入コストを抑えたい場合や、約3年の使い切りと割り切れるなら十分な機能を持つこちら",
+          "Anker Eufy SmartTrack Card E30の利点：使い捨てに抵抗があり、充電して数年以上にわたり長く使いたい場合はこちら"
         ]
       }
     ],
     "recommendation": {
       "targetUsers": [
-        "長財布やカードケースの型崩れを防ぎつつ、紛失対策を万全にしたいiPhoneユーザー（AirTagの厚みに不満がある人）",
-        "モバイルバッテリー等で定評のあるAnkerブランドの信頼性を重視し、安価なノーブランド品を避けたい人"
+        "財布やカードケースに入れても嵩張らないトラッカーを求めているiOSユーザー",
+        "Apple純正AirTagの厚みがネックで財布に入れられなかった人",
+        "パスポートや手帳など、ポケットのない小物にクリップで留めたい人"
       ],
       "pros": [
-        "約2.4mmの薄さで財布のカードポケットにスッキリ収まり、AirTagのようにポッコリと膨らまない",
-        "Appleの「探す」アプリで純正品と同じように直感的に探せるため、設定や操作に迷わない",
-        "スマホが見当たらない時、カードのボタンを押せばスマホを鳴らせるので、家の中での探し物のストレスが激減する"
+        "Apple純正の「探す」アプリにそのまま登録できるため、世界中のAppleデバイスのネットワークを使った広範囲な追跡ができ、万が一の紛失時も安心",
+        "カードからスマホを鳴らす双方向呼び出し機能により、家の中でスマホを見失った際の捜索ストレスが軽減される",
+        "付属のメタルクリップを活用すれば、ポケットがない書類ケースやパスポートにもしっかりと固定できる"
       ],
       "cons": [
-        "電池交換や充電ができない使い切り仕様（約3年）のため、半永久的に使いたいエコ志向の人には不向き",
-        "Android端末では位置特定ネットワークを利用できないため、Androidユーザーは購入を避けること"
+        "電池交換や充電ができない使い切り仕様（寿命約3年）であるため、長期的なランニングコストを気にする人は充電式の競合製品（UGREEN等）を要検討",
+        "Android端末では専用アプリを通じたBluetooth接続範囲内での利用に留まり、広域ネットワーク追跡ができないため、Androidメインのユーザーには非推奨",
+        "厚さ2.4mmはクレジットカード約3枚分の厚みがあるため、極限まで薄い財布を使っている人はより薄型の競合品（1.7mm厚など）を検討すること"
       ],
       "score": 75,
-      "scoreRationale": "[基本点: 70]\n[加点: +5] (2.4mmの極薄設計による財布への収納性の高さと実用性)\n[加点: +5] (Apple「探す」完全対応とスマホ呼び出し機能の実用性)\n[減点: -5] (電池交換・充電不可の使い切り仕様であること)\n[合計: 75]"
+      "scoreRationale": "[基本点: 70]\n[加点: +8] (Apple「探す」対応と双方向探索による実用性の高さとAnkerブランドの信頼性)\n[加点: +2] (クリップ付属による設置の柔軟性)\n[減点: -5] (電池交換・充電不可の使い切り仕様による長期コスパの低下)\n[合計: 75]"
     },
     "technicalSpecs": {
       "dimensions": {
@@ -174,17 +150,18 @@
         "depth": "2.4mm",
         "weight": "18g"
       },
+      "weight": "18g",
       "connectivity": [
         "Bluetooth"
       ],
       "battery": {
-        "capacity": "内蔵型",
-        "charging": "充電・電池交換不可 (寿命最大3年)"
+        "playbackTime": "最大約3年 (電池交換不可)"
       },
       "other": [
-        "Apple「探す」ネットワーク対応 (iOS端末専用)",
-        "置き忘れ防止機能",
-        "スマホ呼び出し機能 (双方向)"
+        "Apple「探す」ネットワーク対応",
+        "置き忘れ防止アラート搭載",
+        "スマホ呼び出し機能 (双方向探索)",
+        "付属: メタルクリップ"
       ]
     }
   }
