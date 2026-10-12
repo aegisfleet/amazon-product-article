@@ -312,10 +312,11 @@ export class JulesCategoryOrganizer {
    - 適した親カテゴリがない場合は「その他／全般」に追加する。
    - 新しい親カテゴリは作成しない。
 
-3. **カテゴリのソート**
-   - 以下のコマンドを実行して、\`data/categorygroups.json\` を正規の順序に自動ソートする。
+3. **カテゴリのソートとフォーマット検証**
+   - 以下のコマンドを実行して、\`data/categorygroups.json\` を正規の順序に自動ソートし、フォーマット（末尾改行等）を整える。
      \`\`\`bash
      npm run sort:categories
+     npm run biome:fix
      \`\`\`
 
 4. **セルフ検証と完了**
@@ -342,7 +343,7 @@ ${unregisteredList}
 ## 完了の条件
 
 - すべての未登録カテゴリが \`data/categorygroups.json\` に振り分けられている。
-- \`npm run sort:categories\` が実行され、JSONが正規の順序でソートされている。
+- \`npm run sort:categories\` および \`npm run biome:fix\` が実行され、JSONが正規の順序・フォーマットで保存されている。
 - 不要なファイルが作成されていない。
 - ユーザーへの確認待機をせず、自律的にPR作成まで完了している。
 `;
