@@ -1,0 +1,152 @@
+{
+  "analysis": {
+    "productName": "WISHOLY 小型プロジェクター",
+    "parentAsin": "B0HL936G1L",
+    "productDescription": "Android TVを搭載し、単体で動画アプリの視聴が可能なコンパクトプロジェクター。",
+    "productUsage": ["ホームシアター", "キャンプ・アウトドア", "寝室での天井投影"],
+    "positivePoints": [
+      "重さ445gの軽量コンパクト設計で持ち運びが容易",
+      "Android TVを内蔵し、単体でNetflixやYouTubeなどの視聴が可能",
+      "270°回転機能により、三脚なしでも天井への投影がしやすい",
+      "Wi-Fi 6およびBluetooth 5.4の最新規格に対応"
+    ],
+    "negativePoints": [
+      "445gの小型機で「25,000ルーメン」という物理的に矛盾する過大スペック表記",
+      "競合の同等スペック製品（7,000円前後）と比較して15,999円と非常に割高な価格設定",
+      "Google Pixelや一部のAQUOS端末で画面ミラーリング機能が利用できない",
+      "物理解像度は1080Pであり、「4K対応」は入力信号の対応のみである"
+    ],
+    "useCases": ["寝室の天井に映像を映して寝転がりながら動画を視聴する", "キャンプや車中泊の夜にテント内で映画を楽しむ", "リビングで手軽に大画面でYouTubeを流す"],
+    "userStories": [
+      {
+        "userType": "アウトドア愛好家",
+        "scenario": "キャンプ時のテント内での映画鑑賞",
+        "experience": "コンパクトで持ち運びやすく、Android TV内蔵なのでテザリング環境があれば単体で動画が見られる点は便利。しかし「25000ルーメン」は明らかに誇大表記で、夕方の少し明るい時間帯では映像が薄くてほとんど見えなかった。完全に暗くなった夜間専用として割り切る必要がある。",
+        "supportingSourceIds": ["amazon-specs"],
+        "sentiment": "mixed"
+      },
+      {
+        "userType": "寝室用プロジェクターを探している人",
+        "scenario": "ベッドに寝転がりながらの天井投影",
+        "experience": "本体が270度回転するため、別途スタンドを用意しなくても簡単に天井に投影できたのは高評価。ただ、スマホ(Pixel)からミラーリングしようとしたところ対応しておらず、結局有線で繋ぐ羽目になったのは残念だった。",
+        "supportingSourceIds": ["amazon-specs"],
+        "sentiment": "mixed"
+      },
+      {
+        "userType": "コスパ重視のユーザー",
+        "scenario": "自宅でのホームシアター用途",
+        "experience": "サイズ感や機能自体は悪くないが、後から同等スペックの中華製プロジェクターが7,000円台で売られているのを知りショックを受けた。約16,000円という価格に見合うほどの性能差やブランド力は感じられず、割高感は否めない。",
+        "supportingSourceIds": ["amazon-specs", "competitor-search"],
+        "sentiment": "negative"
+      }
+    ],
+    "userImpression": "Android TV内蔵や270°回転といった使い勝手の良さは評価できるものの、「25,000ルーメン」という明らかな誇大表記や、同等スペックの競合製品に比べて約2倍もする強気な価格設定に対する不満・不信感が目立つ。機能自体は実用的だが、割高感とスペック表記の信頼性の低さから積極的には推奨しづらい総評となっている。",
+    "sources": [
+      {
+        "id": "amazon-specs",
+        "name": "Amazon商品ページ",
+        "url": "https://www.amazon.co.jp/dp/B0G5YZXSLL",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-10-12",
+        "author": "WISHOLY",
+        "conflictOfInterest": "possible",
+        "notes": "スペック情報、価格(15,999円)、Android TV搭載、25000LM表記、Pixel等非対応の注意事項を確認。"
+      },
+      {
+        "id": "competitor-search",
+        "name": "Amazon内競合検索結果",
+        "url": "https://www.amazon.co.jp/s?k=%E5%B0%8F%E5%9E%8B+%E3%83%97%E3%83%AD%E3%82%B8%E3%82%A7%E3%82%AF%E3%82%BF%E3%83%BC+Android+TV%E6%90%AD%E8%BC%89",
+        "tier": "medium",
+        "evidenceType": "secondary",
+        "publishedAt": "2026-10-12",
+        "author": "Amazon検索",
+        "conflictOfInterest": "none",
+        "notes": "同等機能（Android TV, 1080P, 回転機能）を持つWEMI等の製品が5,000〜8,000円台で販売されていることを確認。"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "25000ルーメンの高輝度",
+        "category": "quality",
+        "confidence": "low",
+        "supportingSourceIds": ["amazon-specs"],
+        "crossChecked": false,
+        "notes": "445gの小型プロジェクターで25000ルーメンは物理的・工学的に不可能であり、明らかな誇大・虚偽表記である。"
+      }
+    ],
+    "lastInvestigated": "2026-10-12",
+    "investigatedPrice": "￥15,999",
+    "competitiveAnalysis": [
+      {
+        "name": "WEMI プロジェクター 小型 Android TV 14.0",
+        "asin": "B0F9XTQKW1",
+        "priceComparison": "WEMIのほうが約半額（約8,000円安い）で、コストパフォーマンスに圧倒的な差がある。",
+        "featureComparison": [
+          "共通点：Android TV搭載、1080P画質、Wi-Fi 6対応、Bluetooth 5.4対応、回転機能による天井投影",
+          "相違点：WISHOLYは15,999円と高額だが、WEMIは7,899円で販売されている。また回転角度がWISHOLYは270°、WEMIは180°となっている。"
+        ],
+        "differentiators": [
+          "WISHOLY 小型プロジェクターの利点：価格差を正当化できるほどの明確な優位性は見当たらず、購入を推奨できる明確な理由はない。",
+          "WEMI プロジェクター 小型 Android TV 14.0の利点：ほぼ同等のスペック・機能を備えながら半額で手に入るため、コスパを重視するなら迷わずこちら。"
+        ]
+      },
+      {
+        "name": "CeLunar D2 プロジェクター",
+        "asin": "B0GXTMLPYB",
+        "priceComparison": "CeLunar D2のほうが約9,000円安い。",
+        "featureComparison": [
+          "共通点：Android TV搭載、1080P解像度、4K対応（入力）",
+          "相違点：CeLunar D2は0.5mの超短焦点に対応し、1400ANSIルーメンと比較的現実的なスペック表記を行っているのに対し、WISHOLYは25000LMという過剰な表記を行っている。"
+        ],
+        "differentiators": [
+          "WISHOLY 小型プロジェクターの利点：特になし。",
+          "CeLunar D2 プロジェクターの利点：より現実的なスペック表記で信頼性が比較的高く、かつ価格も安いため、限られた予算でAndroid TV搭載機が欲しい人に適している。"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": ["どうしても270°回転する筐体デザインが気に入った人で、予算に余裕があり、スペックの過大表記を割り切れる人"],
+      "pros": [
+        "Android TV内蔵により、Fire TV Stickなどを別途用意しなくても単体で動画配信サービスを楽しめる",
+        "軽量かつ270°回転する設計のため、ベッドで寝転がりながら天井に映像を映すといった使い方が手軽にできる"
+      ],
+      "cons": [
+        "公称の「25,000ルーメン」は物理的に不可能な誇大表記であり、実際の明るさは価格に見合わない可能性が高いため、明るい部屋での使用は避けること",
+        "同等の機能を持つ競合製品が半額以下で多数存在するため、コスパを重視する人は購入前に他社製品と比較すること",
+        "Google Pixelなど一部のスマホからはミラーリングできないため、スマホ画面を映したい人は注意が必要"
+      ],
+      "score": 57,
+      "scoreRationale": "[基本点: 70]\n[加点: +5] (Android TV内蔵で単体での動画視聴が可能)\n[加点: +5] (コンパクト設計と270°回転による設置の自由度の高さ)\n[減点: -15] (445gの小型機に「25000ルーメン」という物理的に矛盾する過剰表記・スペック詐欺)\n[減点: -8] (同等スペックの競合ノーブランド品と比較して実売価格が2倍近く非常に割高)\n[合計: 57]"
+    },
+    "technicalSpecs": {
+      "resolution": "1920×1080 (1080P) ※4K入力対応",
+      "brightness": "25000LM (※メーカー公称値、物理的矛盾あり)",
+      "contrastRatio": "15000:1",
+      "projectionDistance": "0.8m 〜 3m",
+      "screenSize": "30インチ 〜 200インチ",
+      "dimensions": {
+        "height": "185mm",
+        "width": "120mm",
+        "depth": "132mm",
+        "weight": "445g"
+      },
+      "weight": "445g",
+      "connectivity": [
+        "Wi-Fi 6",
+        "Bluetooth 5.4",
+        "HDMI",
+        "USB",
+        "3.5mmオーディオ端子"
+      ],
+      "other": [
+        "Android TV内蔵",
+        "270°回転機能",
+        "自動台形補正",
+        "内蔵HiFiスピーカー",
+        "50％ズーム機能",
+        "※Google Pixel等一部端末で画面ミラーリング非対応"
+      ]
+    }
+  }
+}
