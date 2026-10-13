@@ -1,0 +1,189 @@
+{
+  "analysis": {
+    "productName": "UGREEN Air 65W",
+    "parentAsin": "B0HJZKWY1S",
+    "productDescription": "iPhone 18 Pro / Pro MaxのAVS対応を含むPD3.1規格に対応したコンパクトな65W急速充電器。100W対応USB-Cケーブルが付属する。",
+    "productUsage": [
+      "スマートフォン・タブレットの急速充電",
+      "ノートPCへの給電",
+      "出張・旅行時の持ち運び用"
+    ],
+    "positivePoints": [
+      "iPhone 18 Pro/Pro Maxの最速充電要件である可変電圧供給(AVS)と60W出力条件をクリアしている",
+      "高品質な100W対応USB-Cケーブルが最初から付属している",
+      "折りたたみプラグ採用で約33×31×40.4mmの小型設計",
+      "トリクル充電（いたわり充電）モード搭載で就寝中のバッテリー劣化を防ぐ機能がある",
+      "アクティブ温度制御と12重保護機能を備えている"
+    ],
+    "negativePoints": [
+      "出力ポートがUSB Type-C×1ポートのみであり、複数機器の同時充電には対応しない"
+    ],
+    "useCases": [
+      "MacBook AirやノートPCをカフェで充電する",
+      "iPhoneやGalaxyなどPD/PPS対応スマホを寝室で就寝中に充電する"
+    ],
+    "userStories": [
+      {
+        "userType": "iPhone 16 / 17 / 18 Proユーザー",
+        "scenario": "旅行先での充電",
+        "experience": "コンパクトで持ち運びしやすく、100Wのケーブルも付属しているため追加出費なしで最速充電の恩恵を受けられた。複数ポートがないのはネックだが、これ1つでMacBookからiPhoneまで十分早く充電できるため荷物が減って助かっている。",
+        "supportingSourceIds": [
+          "amazon-jp-product-page"
+        ],
+        "sentiment": "positive"
+      }
+    ],
+    "userImpression": "複数ポートを持たないものの、最新のPD3.1 AVS規格対応や100Wケーブルの付属、そして極めてコンパクトなサイズにより、単一デバイス（特にiPhone ProモデルやノートPC）の急速充電に特化した質の高い充電器として評価されている。複数機器を同時に充電したいユーザーには向かないが、ミニマリストや荷物を減らしたい出張・旅行者にとっては最適解の1つとなっている。",
+    "sources": [
+      {
+        "id": "amazon-jp-product-page",
+        "name": "Amazon商品ページ",
+        "url": "https://www.amazon.co.jp/dp/B0GD85PYK6",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-10-13",
+        "author": "UGREEN",
+        "conflictOfInterest": "disclosed",
+        "notes": "製品仕様、AVS対応、100Wケーブル付属、サイズ・重量等の公式情報を確認"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "iPhone 18 Pro / Pro Maxの可変電圧供給（AVS）対応で最速有線充電が可能",
+        "category": "comparativeAdvantage",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "amazon-jp-product-page"
+        ],
+        "crossChecked": true,
+        "notes": "公式の商品特徴において実測でAVS対応が確認されていると明記"
+      },
+      {
+        "claim": "一晩充電でもバッテリーに優しいトリクル充電機能を搭載",
+        "category": "safety",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "amazon-jp-product-page"
+        ],
+        "crossChecked": true,
+        "notes": "過充電を防ぐ微弱電流モードを搭載していると説明されている"
+      }
+    ],
+    "lastInvestigated": "2026-10-13",
+    "investigatedPrice": "￥3,209",
+    "competitiveAnalysis": [
+      {
+        "name": "エレコム 充電器 合計65W 3ポート (EC-AC10367BK)",
+        "asin": "B0F43M6SBB",
+        "priceComparison": "対象商品（￥3,209）より安価だが、こちらは3ポート（Type-C×2, Type-A×1）構成でありケーブルは付属しない。",
+        "featureComparison": [
+          "共通点：最大65Wの高出力に対応",
+          "相違点：対象商品は1ポートのみで100Wケーブル付属・AVS対応・超小型。競合品は3ポート搭載で複数台同時充電が可能だが、サイズが大きくケーブルは別売り。"
+        ],
+        "differentiators": [
+          "UGREEN Air 65Wの利点：ケーブルを別途用意する手間がなく、できるだけ小さくて軽い充電器を1つ持ち歩きたい人や最新のiPhoneのAVS充電を利用したい人におすすめ",
+          "エレコム EC-AC10367BKの利点：スマホとタブレット、イヤホンなど複数機器を同時に充電する用途がメインの人におすすめ"
+        ]
+      },
+      {
+        "name": "Anker Nano II 65W",
+        "asin": "B08X11GD52",
+        "priceComparison": "対象商品（￥3,209）とほぼ同等の価格帯（￥2,990程度）だが、ケーブルは付属しない。",
+        "featureComparison": [
+          "共通点：65W出力対応の1ポート超小型急速充電器",
+          "相違点：対象商品は100Wケーブルが付属しPD3.1 AVSなどの最新規格に対応している。競合品は著名な定番モデルだが設計がやや古く、ケーブルは別途必要。"
+        ],
+        "differentiators": [
+          "UGREEN Air 65Wの利点：ケーブル付属でコストパフォーマンスが高く、AVSなど最新規格を搭載しているため、最新のiPhoneユーザーや買い足しなしですぐ使いたい人におすすめ",
+          "Anker Nano II 65Wの利点：Ankerブランドの長期的な実績と信頼性を重視する人におすすめ"
+        ]
+      },
+      {
+        "name": "エレコム 65W ケーブル付属 (EC-AC12565BK)",
+        "asin": "B0GMGDB2Z4",
+        "priceComparison": "対象商品（￥3,209）より安価（￥2,490程度）。",
+        "featureComparison": [
+          "共通点：65W出力の1ポート構成でケーブルが付属する",
+          "相違点：対象商品はPD3.1 AVS対応で超小型設計。競合品は価格重視でサイズが少し大きい。"
+        ],
+        "differentiators": [
+          "UGREEN Air 65Wの利点：携帯性を極限まで高めたい人や、PD3.1 AVS対応などより高度な機能を求める人におすすめ",
+          "エレコム EC-AC12565BKの利点：国内メーカー製で、より安くケーブル付きの65W充電器を手に入れたい人におすすめ"
+        ]
+      },
+      {
+        "name": "UGREEN Nexode 65W 3ポート",
+        "asin": "B091BGMKYS",
+        "priceComparison": "対象商品と同じUGREEN製で価格帯が近いが、あちらは複数ポートモデル。",
+        "featureComparison": [
+          "共通点：最大65W出力対応でGaNを採用した高効率設計",
+          "相違点：対象商品は1ポートに絞り超小型化＋ケーブル付属・AVS対応。競合品は3ポート（Type-C×2, Type-A×1）搭載で同時充電に強いがサイズは大きい。"
+        ],
+        "differentiators": [
+          "UGREEN Air 65Wの利点：圧倒的なコンパクトさと軽量さ、最新iPhoneのAVS対応を求める単一機器充電メインの人におすすめ",
+          "UGREEN Nexode 65W 3ポートの利点：1つのコンセントでPC、スマホ、イヤホンなどをまとめて充電したい人におすすめ"
+        ]
+      },
+      {
+        "name": "Jacess 65w 3台同時",
+        "asin": "B0G3P87H5H",
+        "priceComparison": "対象商品より大幅に安い（￥1,788程度）。",
+        "featureComparison": [
+          "共通点：最大65W出力",
+          "相違点：対象商品はAVS対応や高度な保護機能を持ち高品質ケーブルが付属。競合品は安価な新興ブランド品で複数ポート対応。"
+        ],
+        "differentiators": [
+          "UGREEN Air 65Wの利点：充電器の安全性（アクティブ温度制御やPSE認証・12重保護）や確実な性能、品質の高いケーブルを求める人におすすめ",
+          "Jacess 65w 3台同時の利点：とにかく安く複数ポートの65W充電器を手に入れたい人におすすめ"
+        ]
+      },
+      {
+        "name": "UGREEN Air 65W 2C1A",
+        "asin": "B0GDCPBYHF",
+        "priceComparison": "対象商品とほぼ同等価格（￥2,996程度）。同シリーズの3ポート版。",
+        "featureComparison": [
+          "共通点：UGREEN Airシリーズの65W充電器でGaNInfinity採用",
+          "相違点：対象商品は1ポート超小型で100Wケーブル付属。競合品は3ポート搭載で複数台対応だがケーブルは別売り。"
+        ],
+        "differentiators": [
+          "UGREEN Air 65W (1ポート)の利点：ケーブルを別途買わずにすぐ使いたい、持ち運び時のサイズを最小にしたい人におすすめ",
+          "UGREEN Air 65W 2C1Aの利点：コンパクトさを保ちつつ複数ポートでの同時充電機能も確保したい人におすすめ"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "iPhone 16 / 17 / 18 Proシリーズの最速充電(AVS)を活用したい人",
+        "MacBook Airなどをカフェでサクッと充電するため、極力小さな充電器とケーブルのセットを持ち歩きたい出張者・ノマドワーカー",
+        "ケーブルを別途購入する手間や追加コストを省きたい人"
+      ],
+      "pros": [
+        "100W対応の高品質なType-Cケーブルが付属するため、届いたその日から追加投資なしでフルスペックの充電が可能",
+        "卵の2/3サイズという圧倒的なコンパクトさで、ポーチやカバンの隙間に収まり持ち運びのストレスがほぼゼロ",
+        "就寝中のトリクル充電でバッテリーへの負荷を軽減するため、スマホの電池健康度を長持ちさせたい人でも安心して使える"
+      ],
+      "cons": [
+        "1ポートのみの設計であるため、スマホとPCなど複数機器を同時に充電したい人は購入前に用途を確認すること"
+      ],
+      "score": 83,
+      "scoreRationale": "[基本点: 70]\n[加点: +8] 圧倒的なコンパクトさと軽量性、折りたたみプラグによる極めて優れた携帯性\n[加点: +5] 100W対応の高品質USB-Cケーブルが付属し、追加コストなしですぐ使える利便性\n[加点: +5] PD3.1 AVS対応、トリクル充電、アクティブ温度制御など最新スペックと保護機能の充実\n[減点: -5] 1ポート構成のため複数機器の同時充電ができない\n[合計: 83]"
+    },
+    "technicalSpecs": {
+      "dimensions": {
+        "height": "40.4mm",
+        "width": "33mm",
+        "depth": "31mm",
+        "weight": "73g"
+      },
+      "weight": "73g",
+      "other": [
+        "ポート: USB Type-C × 1",
+        "最大出力: 65W (PD3.1 / PD3.0 / PPS / AVS / UFCS 対応)",
+        "搭載技術: GaNInfinity / GaNII (窒化ガリウム)",
+        "認証等: PSE認証取得, TÜV SÜDコンパクト高出力 Sクラス認証取得",
+        "保護機能: 12重保護 (過電圧・過電流・過熱・短絡など), アクティブ温度制御回路内蔵",
+        "付属品: 100W対応 USB-Cケーブル"
+      ]
+    }
+  }
+}
