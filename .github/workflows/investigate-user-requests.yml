@@ -58,7 +58,7 @@ jobs:
 
     - name: Upload user requests session data
       if: steps.fetch.outputs.products-found == 'true'
-      uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+      uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
       with:
         name: user-requests-session
         path: data/products/user-requests-session.json
@@ -106,7 +106,7 @@ jobs:
 
     - name: Upload product data
       if: steps.search.outputs.products-found == 'true'
-      uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+      uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
       with:
         name: user-requests-product-data
         path: data/products/
@@ -168,7 +168,7 @@ jobs:
       run: pnpm run investigate:user-requests -- --update-status
 
     - name: Upload session data
-      uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+      uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
       with:
         name: user-requests-session-data
         path: data/sessions/
