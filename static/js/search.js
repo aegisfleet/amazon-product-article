@@ -10,9 +10,95 @@ function isAsin(val) {
     return ASIN_REGEX.test(val.trim());
 }
 
+const REDIRECT_PARAM_KEYS = [
+    'q',
+    'url',
+    'u',
+    'target',
+    'dest',
+    'destination',
+    'redirect',
+    'redirect_url',
+    'redir',
+    'r',
+    'link'
+];
+
+function isAmazonRedirectUrl(url) {
+    try {
+        const host = new URL(url).hostname.toLowerCase();
+        return host.includes('amazon') || host.includes('amzn') || host === 'a.co' || host.endsWith('.amazon');
+    } catch {
+        return false;
+    }
+}
+
+function parseRedirectCandidate(raw) {
+    if (!raw) return null;
+    let candidate = raw.trim();
+    if (/^https?%3A/i.test(candidate)) {
+        try {
+            candidate = decodeURIComponent(candidate);
+        } catch {
+            // ignore decode error
+        }
+    }
+    return candidate.startsWith('http://') || candidate.startsWith('https://') ? candidate : null;
+}
+
+function extractTargetRedirectUrl(params) {
+    const priorityCandidates = [];
+    for (const key of REDIRECT_PARAM_KEYS) {
+        const candidate = parseRedirectCandidate(params.get(key));
+        if (candidate) {
+            if (isAmazonRedirectUrl(candidate)) return candidate;
+            priorityCandidates.push(candidate);
+        }
+    }
+
+    const otherCandidates = [];
+    for (const [, val] of params.entries()) {
+        const candidate = parseRedirectCandidate(val);
+        if (candidate) {
+            if (isAmazonRedirectUrl(candidate)) return candidate;
+            otherCandidates.push(candidate);
+        }
+    }
+
+    return priorityCandidates[0] ?? otherCandidates[0] ?? null;
+}
+
+function unwrapSingleRedirectUrl(currentUrl) {
+    if (!currentUrl.startsWith('http://') && !currentUrl.startsWith('https://')) {
+        return null;
+    }
+
+    try {
+        const parsed = new URL(currentUrl);
+        const targetUrl = extractTargetRedirectUrl(parsed.searchParams);
+        return targetUrl && targetUrl !== currentUrl ? targetUrl.trim() : null;
+    } catch {
+        return null;
+    }
+}
+
+function unwrapRedirectUrl(url) {
+    if (typeof url !== 'string') return url;
+    let currentUrl = url.trim();
+    const maxUnwraps = 5;
+
+    for (let i = 0; i < maxUnwraps; i++) {
+        const nextUrl = unwrapSingleRedirectUrl(currentUrl);
+        if (!nextUrl) break;
+        currentUrl = nextUrl;
+    }
+
+    return currentUrl;
+}
+
 function extractAsinFromUrl(url) {
     if (typeof url !== 'string') return null;
-    const trimmed = url.trim();
+    const trimmed = unwrapRedirectUrl(url.trim());
     const pathMatch = AMAZON_URL_PATH_REGEX.exec(trimmed);
     if (pathMatch?.[1]) {
         return pathMatch[1].toUpperCase();
@@ -26,7 +112,7 @@ function extractAsinFromUrl(url) {
 
 function isShortAmazonUrl(url) {
     if (typeof url !== 'string') return false;
-    const trimmed = url.trim();
+    const trimmed = unwrapRedirectUrl(url.trim());
     if (SHORT_AMAZON_URL_REGEX.test(trimmed)) return true;
 
     try {
@@ -1120,8 +1206,10 @@ document.addEventListener('DOMContentLoaded', function () {
             const trimmed = (rawText || '').trim();
             if (!trimmed) return false;
 
+            const unwrapped = unwrapRedirectUrl(trimmed);
+
             // 1. 通常のAmazon URLまたはURL形式から直接ASIN抽出
-            const directAsin = extractAsinFromUrl(trimmed);
+            const directAsin = extractAsinFromUrl(unwrapped);
             if (directAsin) {
                 currentResolvingUrl = null;
                 searchInput.value = directAsin;
@@ -1131,14 +1219,14 @@ document.addEventListener('DOMContentLoaded', function () {
                 return true;
             }
 
-            // 2. 短縮URL（amzn.to, amzn.asia, a.co 等）の場合
-            if (isShortAmazonUrl(trimmed)) {
-                currentResolvingUrl = trimmed;
+            // 2. 短縮URL（amzn.to, amzn.asia, a.co, link.amazon 等）の場合
+            if (isShortAmazonUrl(unwrapped)) {
+                currentResolvingUrl = unwrapped;
                 if (searchInputWrapper) searchInputWrapper.classList.add('is-loading');
 
-                resolveShortUrl(trimmed).then(resolvedUrl => {
+                resolveShortUrl(unwrapped).then(resolvedUrl => {
                     // 解決中に別の入力が行われた場合は破棄
-                    if (currentResolvingUrl !== trimmed) return;
+                    if (currentResolvingUrl !== unwrapped) return;
                     currentResolvingUrl = null;
 
                     if (resolvedUrl) {
@@ -1153,12 +1241,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
                     // ASINが見つからなかった場合
                     if (searchInputWrapper) searchInputWrapper.classList.remove('is-loading');
-                    handleSearch(trimmed);
+                    handleSearch(unwrapped);
                 }).catch(() => {
-                    if (currentResolvingUrl !== trimmed) return;
+                    if (currentResolvingUrl !== unwrapped) return;
                     currentResolvingUrl = null;
                     if (searchInputWrapper) searchInputWrapper.classList.remove('is-loading');
-                    handleSearch(trimmed);
+                    handleSearch(unwrapped);
                 });
 
                 return true;
@@ -2210,7 +2298,7 @@ document.addEventListener('DOMContentLoaded', function () {
             {
                 icon: '🔗',
                 title: 'Amazon URL検索',
-                desc: 'Amazonの商品URLや共有リンク（amzn.asia / amzn.to等）を貼り付けると直接検索できます。',
+                desc: 'Amazonの商品URLや共有リンク（amzn.asia / amzn.to等）、YouTube概要欄などのリダイレクトURLを貼り付けると直接検索できます。',
                 example: 'https://amzn.asia/d/...'
             },
             {

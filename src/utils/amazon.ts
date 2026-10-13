@@ -19,16 +19,107 @@ export function isAsin(val: string): boolean {
   return ASIN_PATTERN.test(val.trim());
 }
 
+const REDIRECT_PARAM_KEYS = [
+  'q',
+  'url',
+  'u',
+  'target',
+  'dest',
+  'destination',
+  'redirect',
+  'redirect_url',
+  'redir',
+  'r',
+  'link',
+];
+
+function isAmazonUrl(url: string): boolean {
+  try {
+    const host = new URL(url).hostname.toLowerCase();
+    return host.includes('amazon') || host.includes('amzn') || host === 'a.co' || host.endsWith('.amazon');
+  } catch {
+    return false;
+  }
+}
+
+function parseUrlCandidate(raw: string | null): string | null {
+  if (!raw) return null;
+  let candidate = raw.trim();
+  if (/^https?%3A/i.test(candidate)) {
+    try {
+      candidate = decodeURIComponent(candidate);
+    } catch {
+      // ignore decode error
+    }
+  }
+  return candidate.startsWith('http://') || candidate.startsWith('https://') ? candidate : null;
+}
+
+function extractTargetUrl(params: URLSearchParams): string | null {
+  const priorityCandidates: string[] = [];
+  for (const key of REDIRECT_PARAM_KEYS) {
+    const candidate = parseUrlCandidate(params.get(key));
+    if (candidate) {
+      if (isAmazonUrl(candidate)) return candidate;
+      priorityCandidates.push(candidate);
+    }
+  }
+
+  const otherCandidates: string[] = [];
+  for (const [, val] of params.entries()) {
+    const candidate = parseUrlCandidate(val);
+    if (candidate) {
+      if (isAmazonUrl(candidate)) return candidate;
+      otherCandidates.push(candidate);
+    }
+  }
+
+  return priorityCandidates[0] ?? otherCandidates[0] ?? null;
+}
+
+function unwrapSingleUrl(currentUrl: string): string | null {
+  if (!currentUrl.startsWith('http://') && !currentUrl.startsWith('https://')) {
+    return null;
+  }
+
+  try {
+    const parsed = new URL(currentUrl);
+    const targetUrl = extractTargetUrl(parsed.searchParams);
+    return targetUrl && targetUrl !== currentUrl ? targetUrl.trim() : null;
+  } catch {
+    return null;
+  }
+}
+
+/**
+ * リダイレクトURL（YouTube / Google / 各種中継サービス等）から、
+ * クエリパラメータに含まれる実体URLを抽出・アンラップする。
+ */
+export function unwrapRedirectUrl(url: string): string {
+  if (typeof url !== 'string') return url;
+  let currentUrl = url.trim();
+  const maxUnwraps = 5;
+
+  for (let i = 0; i < maxUnwraps; i++) {
+    const nextUrl = unwrapSingleUrl(currentUrl);
+    if (!nextUrl) break;
+    currentUrl = nextUrl;
+  }
+
+  return currentUrl;
+}
+
 /**
  * Amazon URLからASINを抽出する。見つからない場合はnullを返す。
  */
 export function extractAsinFromUrl(url: string): string | null {
-  const pathMatch = AMAZON_URL_PATH_PATTERN.exec(url);
+  const unwrapped = unwrapRedirectUrl(url);
+  const pathMatch = AMAZON_URL_PATH_PATTERN.exec(unwrapped);
   if (pathMatch?.[1]) {
     return pathMatch[1].toUpperCase();
   }
 
-  const queryMatch = AMAZON_QUERY_PATTERN.exec(url);
+  const queryMatch = AMAZON_QUERY_PATTERN.exec(unwrapped);
   if (queryMatch?.[1]) {
     return queryMatch[1].toUpperCase();
   }
@@ -121,16 +212,18 @@ export async function parseInputAsin(input: string): Promise<string> {
     return trimmed.toUpperCase();
   }
 
-  if (trimmed.startsWith('http://') || trimmed.startsWith('https://')) {
+  const unwrapped = unwrapRedirectUrl(trimmed);
+
+  if (unwrapped.startsWith('http://') || unwrapped.startsWith('https://')) {
     // まずそのままURLからASIN抽出を試みる（通常URLの場合、リクエストを送る必要がないため高速）
-    const extracted = extractAsinFromUrl(trimmed);
+    const extracted = extractAsinFromUrl(unwrapped);
     if (extracted) {
       return extracted;
     }
 
     // 抽出できなかった場合は短縮URLとみなして解決を試みる
     try {
-      const resolvedUrl = await resolveUrl(trimmed);
+      const resolvedUrl = await resolveUrl(unwrapped);
       const extractedFromResolved = extractAsinFromUrl(resolvedUrl);
       if (extractedFromResolved) {
         return extractedFromResolved;

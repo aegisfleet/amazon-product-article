@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/unbound-method, @typescript-eslint/no-explicit-any, @typescript-eslint/no-unnecessary-type-assertion */
 import axios from 'axios';
-import { extractAsinFromUrl, isAsin, parseInputAsin, resolveUrl } from './amazon';
+import { extractAsinFromUrl, isAsin, parseInputAsin, resolveUrl, unwrapRedirectUrl } from './amazon';
 
 jest.mock('axios');
 const mockedAxios = axios as jest.Mocked<typeof axios>;
@@ -60,6 +60,14 @@ describe('amazon utility', () => {
       expect(extractAsinFromUrl('https://www.amazon.co.jp/dp/other/ref=xyz?pd_rd_i=B0BGJHQCFQ')).toBe('B0BGJHQCFQ');
     });
 
+    it('should extract ASIN from redirect URLs containing Amazon product URL', () => {
+      expect(
+        extractAsinFromUrl(
+          'https://www.youtube.com/redirect?event=video_description&redir_token=xyz&q=https%3A%2F%2Fwww.amazon.co.jp%2Fdp%2FB0BGJHQCFQ&v=epLOiHlLGLU',
+        ),
+      ).toBe('B0BGJHQCFQ');
+    });
+
     it('should extract case-insensitively and return in upper case', () => {
       expect(extractAsinFromUrl('https://www.amazon.co.jp/dp/b0bgjhqcfq')).toBe('B0BGJHQCFQ');
     });
@@ -67,6 +75,37 @@ describe('amazon utility', () => {
     it('should return null for invalid URLs', () => {
       expect(extractAsinFromUrl('https://www.amazon.co.jp/')).toBeNull();
       expect(extractAsinFromUrl('https://google.com')).toBeNull();
+    });
+  });
+
+  describe('unwrapRedirectUrl', () => {
+    it('should unwrap YouTube redirect URL with encoded link.amazon URL', () => {
+      const youtubeUrl =
+        'https://www.youtube.com/redirect?event=video_description&redir_token=QUZZTVljRTYzWWc1T0RPaFc2REM1ZUZQa3ExNXxBSTVJdTV1OFZ4LWR5NWxQdmNaY0NRRDZqTDAxYjRyZmJwTnAtNTlrNHpMRGY0bWl1UlZrZEZKd3M2eEdlWG1GZXNQakNvR21rNEhLLUduNnlqbFNVaEt3LXBxVGNFSGt4WndS&q=https%3A%2F%2Flink.amazon%2FB035ENxx1&v=epLOiHlLGLU';
+      expect(unwrapRedirectUrl(youtubeUrl)).toBe('https://link.amazon/B035ENxx1');
+    });
+
+    it('should unwrap Google redirect URL', () => {
+      const googleUrl = 'https://www.google.com/url?url=https%3A%2F%2Famzn.to%2F3S68KbB&rct=j&q=&esrc=s';
+      expect(unwrapRedirectUrl(googleUrl)).toBe('https://amzn.to/3S68KbB');
+    });
+
+    it('should unwrap doubly encoded URLs', () => {
+      const doubleEncoded = 'https://example.com/redirect?q=https%253A%252F%252Fwww.amazon.co.jp%252Fdp%252FB0BGJHQCFQ';
+      expect(unwrapRedirectUrl(doubleEncoded)).toBe('https://www.amazon.co.jp/dp/B0BGJHQCFQ');
+    });
+
+    it('should unwrap nested redirect URLs', () => {
+      const nestedUrl =
+        'https://tracker.example.com/r?dest=https%3A%2F%2Fwww.youtube.com%2Fredirect%3Fq%3Dhttps%253A%252F%252Famzn.to%252F3S68KbB';
+      expect(unwrapRedirectUrl(nestedUrl)).toBe('https://amzn.to/3S68KbB');
+    });
+
+    it('should return original string when not a redirect or non-URL', () => {
+      expect(unwrapRedirectUrl('https://www.amazon.co.jp/dp/B0BGJHQCFQ')).toBe(
+        'https://www.amazon.co.jp/dp/B0BGJHQCFQ',
+      );
+      expect(unwrapRedirectUrl('plain search text')).toBe('plain search text');
     });
   });
 
@@ -146,6 +185,29 @@ describe('amazon utility', () => {
       const result = await parseInputAsin('https://link.amazon/B009oJ3DU');
       expect(result).toBe('B00TASIIHU');
       expect(mockedAxios.head).toHaveBeenCalledTimes(1);
+    });
+
+    it('should resolve YouTube redirect URL containing short Amazon URL and extract ASIN', async () => {
+      mockedAxios.head.mockResolvedValueOnce({
+        status: 301,
+        headers: { location: 'https://www.amazon.co.jp/dp/B00TASIIHU?th=1' },
+      } as any);
+
+      const ytUrl =
+        'https://www.youtube.com/redirect?event=video_description&redir_token=xyz&q=https%3A%2F%2Flink.amazon%2FB009oJ3DU&v=epLOiHlLGLU';
+      const result = await parseInputAsin(ytUrl);
+      expect(result).toBe('B00TASIIHU');
+      // YouTubeにはリクエストを送らず、アンラップされたlink.amazonに対してのみリクエストを送る
+      expect(mockedAxios.head).toHaveBeenCalledTimes(1);
+      expect(mockedAxios.head).toHaveBeenCalledWith('https://link.amazon/B009oJ3DU', expect.anything());
+    });
+
+    it('should extract ASIN directly from YouTube redirect URL containing standard Amazon URL without HTTP request', async () => {
+      const ytUrl =
+        'https://www.youtube.com/redirect?event=video_description&redir_token=xyz&q=https%3A%2F%2Fwww.amazon.co.jp%2Fdp%2FB0BGJHQCFQ&v=epLOiHlLGLU';
+      const result = await parseInputAsin(ytUrl);
+      expect(result).toBe('B0BGJHQCFQ');
+      expect(mockedAxios.head).not.toHaveBeenCalled();
     });
 
     it('should throw error if input is not ASIN or Amazon URL', async () => {
