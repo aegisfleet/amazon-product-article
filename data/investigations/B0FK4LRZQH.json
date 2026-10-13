@@ -1,0 +1,222 @@
+{
+  "analysis": {
+    "productName": "Belkin Qi2 25W 3in1充電スタンド",
+    "parentAsin": "B0HCV7ZB1Q",
+    "productDescription": "iPhone 18シリーズなどのQi2対応デバイスやApple Watch、ワイヤレスイヤホンを同時に3台充電できる、最大25W出力対応のワイヤレス充電スタンドです。",
+    "productUsage": ["iPhoneの充電", "Apple Watchの充電", "ワイヤレスイヤホンの充電", "デスクやベッドサイドでの充電ステーション"],
+    "positivePoints": [
+      "Qi2規格に対応し、iPhoneを最大25Wで急速充電可能",
+      "Apple Watchの高速充電にも対応",
+      "iPhone、Apple Watch、ワイヤレスイヤホンの3台を同時に充電可能",
+      "ChillBoostアクティブ冷却テクノロジーを搭載し、充電時の発熱を抑制",
+      "スタンド部分はステンレス製で、高級感のあるデザイン",
+      "マウント部分の角度調整が可能"
+    ],
+    "negativePoints": [
+      "競合製品と比較して価格が高め",
+      "サイズと重量があるため、持ち運びには適していない"
+    ],
+    "useCases": ["自宅のデスクで作業しながら充電", "ベッドサイドに置いて就寝中に3台まとめて充電", "動画視聴やビデオ通話をしながらの充電"],
+    "userStories": [
+      {
+        "userType": "Appleデバイスユーザー",
+        "scenario": "自宅のデスクに設置",
+        "experience": "Apple Watch購入を機にiPhoneとまとめてワイヤレス充電したいと思い購入。iPhone、Apple Watch、WF-1000XM5の3台を同時充電でき、お風呂に入っている間に充電が完了するので実用面で問題ない。ただ、かさばるので出先に持って行くのは少々難あり。",
+        "supportingSourceIds": ["src-kakaku-review"],
+        "sentiment": "positive"
+      },
+      {
+        "userType": "iPhone 14 Proユーザー",
+        "scenario": "充電速度と温度の検証",
+        "experience": "Magsafe部分に冷却用ファンが付いており、風切り音も小さく静かだが風量は少ない。iPhone14proで純正Magsafeと比較したところ、充電時間の差は10分程、iPhone温度差は大体1.5℃くらい。前モデルを持っている人は買い替えの必要はうすい。",
+        "supportingSourceIds": ["src-kakaku-review"],
+        "sentiment": "mixed"
+      },
+      {
+        "userType": "ガジェットユーザー",
+        "scenario": "日常的な充電",
+        "experience": "Qi2 25W出ているかはわからないが、体感では前使っていた15Wのものより早い。コンパクトでApple Watchも使っているので便利。前は固定式だったので取り外しの際に台が動くのがストレスだったが慣れたら気にならなくなった。",
+        "supportingSourceIds": ["src-kakaku-review"],
+        "sentiment": "positive"
+      }
+    ],
+    "userImpression": "Qi2対応による充電速度の向上や、冷却ファンによる発熱抑制が高く評価されています。また、3台のデバイスを1箇所で充電できる利便性や、高級感のあるデザインも好評です。一方で、価格の高さや、携帯性の低さを指摘する声もあり、前モデルからの買い替えをためらうユーザーも見受けられます。日常的に複数のAppleデバイスを使用し、デスク周りをすっきりさせたいユーザーには満足度が高い製品です。",
+    "sources": [
+      {
+        "id": "src-belkin-official",
+        "name": "Belkin公式製品ページ",
+        "url": "https://www.belkin.com/jp/p/3-in-1-magnetic-charging-dock-with-qi2-25w/WIZ040dqCH.html",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-10-13",
+        "author": "Belkin",
+        "conflictOfInterest": "possible",
+        "notes": "製品仕様、特徴、付属品などの公式情報"
+      },
+      {
+        "id": "src-kakaku-review",
+        "name": "価格.com ユーザーレビュー",
+        "url": "https://review.kakaku.com/review/K0001707209/",
+        "tier": "medium",
+        "evidenceType": "secondary",
+        "publishedAt": "2026-10-13",
+        "author": "価格.comユーザー",
+        "conflictOfInterest": "none",
+        "notes": "実際の使用感、充電速度、冷却ファンの効果、携帯性についての評価"
+      },
+      {
+        "id": "src-amazon",
+        "name": "Amazon製品ページ",
+        "url": "https://www.amazon.co.jp/dp/B0FK4LRZQH",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-10-13",
+        "author": "Belkin",
+        "conflictOfInterest": "possible",
+        "notes": "価格、商品特徴、仕様情報"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "iPhone 16を50%まで約29分で充電可能",
+        "category": "comparativeAdvantage",
+        "confidence": "high",
+        "supportingSourceIds": ["src-amazon", "src-belkin-official"],
+        "crossChecked": true,
+        "notes": "公式情報として記載あり"
+      },
+      {
+        "claim": "次世代の冷却テクノロジー搭載",
+        "category": "safety",
+        "confidence": "medium",
+        "supportingSourceIds": ["src-amazon", "src-belkin-official", "src-kakaku-review"],
+        "crossChecked": true,
+        "notes": "ユーザーレビューでファンの静音性は確認されているが、冷却効果については「iPhone温度差は大体1.5℃くらい」との声もあり、劇的な効果を感じないユーザーもいる"
+      }
+    ],
+    "lastInvestigated": "2026-10-13",
+    "investigatedPrice": "￥14,680",
+    "competitiveAnalysis": [
+      {
+        "name": "Anker Prime Wireless Charging Station (3-in-1, MagGo, AirCool, Foldable)",
+        "asin": "B0GHQ48YFG",
+        "priceComparison": "対象商品と同等の価格帯。",
+        "featureComparison": [
+          "共通点：Qi2対応、最大15W出力、3in1充電、冷却ファン搭載",
+          "相違点：対象商品は最大25W出力に対応しているが、Anker製品は折りたたみ可能で携帯性に優れる。またAnkerは15W出力"
+        ],
+        "differentiators": [
+          "Belkin Qi2 25W 3in1充電スタンドの利点：より高速な25W充電を求めるならこちら。据え置きでのデザイン性や安定感を重視する人向け。",
+          "Anker Prime Wireless Charging Stationの利点：折りたたみ可能で出張や旅行など持ち運びも想定するならこちら。"
+        ]
+      },
+      {
+        "name": "CIO NovaWave 3Way+",
+        "asin": "B0FRMQD7RK",
+        "priceComparison": "対象商品より大幅に安い。",
+        "featureComparison": [
+          "共通点：Qi2対応、最大15W出力、複数デバイスの同時充電",
+          "相違点：対象商品は最大25W出力で3台同時充電が可能だが、CIO製品は最大15W出力で2台同時充電（iPhoneとApple Watch）。CIO製品はスマホリングとしても使用でき、非常にコンパクト。"
+        ],
+        "differentiators": [
+          "Belkin Qi2 25W 3in1充電スタンドの利点：3台同時充電が必要で、25Wの高速充電を求めるならこちら。据え置きでの使用が前提。",
+          "CIO NovaWave 3Way+の利点：圧倒的なコンパクトさとスマホリングとしての利便性。持ち運びを最優先し、2台同時充電で十分な人向け。"
+        ]
+      },
+      {
+        "name": "UGREEN MagFlow 3in1 25W ワイヤレス充電器",
+        "asin": "B0DZX533Y1",
+        "priceComparison": "対象商品より安い。",
+        "featureComparison": [
+          "共通点：最大25W出力対応、3in1充電",
+          "相違点：対象商品は冷却ファンを搭載しているが、UGREEN製品の冷却機能の詳細は不明。"
+        ],
+        "differentiators": [
+          "Belkin Qi2 25W 3in1充電スタンドの利点：冷却ファンによる安定した充電と、プレミアムな素材・デザインを求めるならこちら。",
+          "UGREEN MagFlow 3in1 25W ワイヤレス充電器の利点：25W出力を備えつつ、価格を抑えたい人向け。"
+        ]
+      },
+      {
+        "name": "Belkin Qi2 25W 2in1 ワイヤレス充電器",
+        "asin": "B0FK4L1S7C",
+        "priceComparison": "対象商品より安い。",
+        "featureComparison": [
+          "共通点：Qi2対応、最大25W出力",
+          "相違点：対象商品は3台同時充電（Apple Watch含む）だが、こちらは2台同時充電で折りたたみ式。"
+        ],
+        "differentiators": [
+          "Belkin Qi2 25W 3in1充電スタンドの利点：Apple Watchを含めた3台同時充電が必要な人向け。",
+          "Belkin Qi2 25W 2in1 ワイヤレス充電器の利点：Apple Watchの充電が不要で、折りたたんで持ち運びたい人向け。"
+        ]
+      },
+      {
+        "name": "ESR Qi2 MagSafe 充電器 3in1",
+        "asin": "B0CX4XCSR7",
+        "priceComparison": "対象商品より大幅に安い。",
+        "featureComparison": [
+          "共通点：Qi2対応、3in1充電",
+          "相違点：対象商品は最大25W出力で冷却ファンを搭載しているが、ESR製品は最大15W出力。またESR製品はApple Watch充電器が取り外し可能。"
+        ],
+        "differentiators": [
+          "Belkin Qi2 25W 3in1充電スタンドの利点：25Wの高速充電と冷却ファンによる安定した充電を求めるならこちら。",
+          "ESR Qi2 MagSafe 充電器 3in1の利点：価格を重視し、Apple Watch充電器を取り外して持ち運びたい人向け。"
+        ]
+      },
+      {
+        "name": "Lamicall 3in1 ワイヤレス 充電器 折り畳み",
+        "asin": "B0G58TLCPL",
+        "priceComparison": "対象商品より大幅に安い。",
+        "featureComparison": [
+          "共通点：最大15W出力対応、3in1充電",
+          "相違点：対象商品は最大25W出力で据え置き型だが、Lamicall製品は折りたたみ式で持ち運びに特化している。"
+        ],
+        "differentiators": [
+          "Belkin Qi2 25W 3in1充電スタンドの利点：充電速度と据え置きでのデザイン性を重視するならこちら。",
+          "Lamicall 3in1 ワイヤレス 充電器 折り畳みの利点：とにかくコンパクトに折りたたんで持ち運びたい人向け。"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "コンパクトな折りたたみ式充電器と比較しても、据え置きでの安定感とプレミアムなデザインを重視するAppleデバイスユーザー",
+        "従来の15W出力の充電器と比較しても、より速い充電速度（25W）と冷却ファンによる安全性を求める人",
+        "Apple Watchやワイヤレスイヤホンを含めて、3台同時にデスク上でスマートに充電したい人"
+      ],
+      "pros": [
+        "Qi2対応の最大25W出力により、忙しい朝でも短時間でiPhoneをしっかり充電できます。",
+        "ケーブル1本で3台のデバイスを同時に充電できるため、デスク周りがすっきり片付きます。",
+        "冷却ファン搭載により、充電中の発熱を抑え、バッテリーの劣化を防ぎながら安定した充電が可能です。"
+      ],
+      "cons": [
+        "サイズが大きく重量もあるため、頻繁に持ち運ぶ用途には適していません。出張や旅行が多い方は折りたたみ式のモデルを検討してください。",
+        "25Wの高速出力を引き出すには対応するスマートフォン（iPhone 16以降など）が必要なため、古い機種を使用している場合は性能をフルに活かせません。"
+      ],
+      "score": 83,
+      "scoreRationale": "[基本点: 70]\n[加点: +8] (Qi2規格対応かつ最大25Wの高速充電機能)\n[加点: +5] (ステンレスやシリコン素材を用いたプレミアムなデザインと質感)\n[加点: +5] (冷却ファン搭載による発熱抑制という独自の強み)\n[減点: -5] (持ち運びには不向きなサイズと重量)\n[合計: 83]"
+    },
+    "technicalSpecs": {
+      "dimensions": {
+        "height": "103mm",
+        "width": "86mm",
+        "depth": "117mm",
+        "weight": "不明"
+      },
+      "material": "ステンレススチール / シリコン",
+      "power": {
+        "output": "最大25W (Qi2/MagSafe), Apple Watch: 最大5W, ワイヤレスイヤホン: 最大5W",
+        "input": "最大30W (付属の45W USB-C電源アダプタ推奨)"
+      },
+      "connectivity": [
+        "Qi2.2認証",
+        "MagSafe互換"
+      ],
+      "other": [
+        "ChillBoostアクティブ冷却ファン搭載",
+        "マウント角度調整可能",
+        "45W USB-C電源アダプタ付属",
+        "1.5m USB-C to USB-Cケーブル付属",
+        "リサイクルプラスチック使用(ハウジングの最低85%)"
+      ]
+    }
+  }
+}
