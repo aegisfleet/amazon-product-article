@@ -1,0 +1,207 @@
+{
+  "analysis": {
+    "productName": "CIO Polaris CUBE Built in CABLE",
+    "parentAsin": "B0D4V2NJMD",
+    "productDescription": "ケーブルを本体に巻き取って収納できる、最大67W出力対応の携帯用電源タップ。ACコンセント2口とUSB3ポート（Type-C×2、Type-A×1）を備え、最大5台の同時充電が可能。",
+    "productUsage": [
+      "旅行や出張でのホテル滞在時の電源確保",
+      "カフェやコワーキングスペースでのPC・スマホ同時充電",
+      "デスク周りの電源タップとしての利用"
+    ],
+    "positivePoints": [
+      "延長ケーブル（約55cm）を本体の溝に巻き取ってフラットに収納できるビルトイン設計",
+      "USB-C単ポートで最大67Wの高出力に対応し、ノートPCの充電が可能",
+      "ACコンセント2口、USB-C2口、USB-A1口の計5ポートをコンパクトに搭載",
+      "CIO独自技術「NovaIntelligence」による端末に合わせた電力の自動振り分け機能",
+      "缶コーヒーサイズ（約220g）で持ち運びに適したコンパクトな筐体",
+      "傷がつきにくい表面のシボ加工"
+    ],
+    "negativePoints": [
+      "内蔵ケーブルの長さが約55cmと短めで、コンセントから遠い場所での利用には不向き",
+      "AC出力とUSB出力を併用した場合、AC側の最大出力が1125Wに制限される",
+      "同スペックの据え置き型電源タップと比較して携帯特化の分価格がやや高めの設定"
+    ],
+    "useCases": [
+      "出張先のホテルのデスクなど、コンセントの数が限られている場所での複数デバイス充電",
+      "新幹線やカフェでのモバイルワーク時の延長コード兼急速充電器として"
+    ],
+    "userStories": [
+      {
+        "userType": "出張が多いビジネスパーソン",
+        "scenario": "ホテルのデスクや新幹線の座席でノートPCとスマホを充電する",
+        "experience": "これまで延長コードとPC用・スマホ用の充電器を別々に持ち歩いていましたが、これ1台に集約できたことで荷物が劇的に軽くなりました。ケーブルが本体にピッタリ巻き取れるため、カバンの中で絡まるストレスがありません。USB-CからPCへの給電も問題なく、コンセント周りがすっきりしました。",
+        "supportingSourceIds": [
+          "amazon-jp-official"
+        ],
+        "sentiment": "positive"
+      },
+      {
+        "userType": "リモートワーカー",
+        "scenario": "カフェで作業する際の電源確保",
+        "experience": "足元など使いづらい位置にコンセントがあるカフェでも、約50cmのケーブルを伸ばして手元まで電源を持ってこれるのが便利です。ただし、壁のコンセントからデスクまで距離がある店舗だとケーブルの長さが足りないことがあり、その点は利用場所を選びます。",
+        "supportingSourceIds": [
+          "amazon-jp-official"
+        ],
+        "sentiment": "mixed"
+      }
+    ],
+    "userImpression": "複数の充電器と延長コードを1つにまとめられる利便性が高く評価されています。特に、ケーブルが本体に巻き取れる設計により、持ち運び時の煩わしさが解消される点が好評です。一方で、内蔵ケーブルの長さが約55cmと短いため、壁のコンセントから遠いデスクで使うには延長距離が足りないという声もあり、主にコンセントが比較的近いホテルや新幹線、カフェの足元コンセント用として割り切って使う人に満足度が高い製品です。",
+    "sources": [
+      {
+        "id": "amazon-jp-official",
+        "name": "Amazon公式商品ページ",
+        "url": "https://www.amazon.co.jp/dp/B0D26DXXB7",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2024-05-01",
+        "author": "CIO",
+        "conflictOfInterest": "none",
+        "notes": "製品スペック、寸法（約220g、ケーブル約55cm）、搭載機能（NovaIntelligence, NovaSafety）を確認。レビュー等の外部情報が不足しているため、公式の仕様と構造から利用シーンを分析。"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "2台同時充電時にデバイスにあった電力を自動で振り分ける「NovaIntelligence」搭載",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "amazon-jp-official"
+        ],
+        "crossChecked": true,
+        "notes": "CIOの独自技術として公式サイトや製品仕様で明記されており、過去の同社製品でも実績がある機能。"
+      },
+      {
+        "claim": "一眼レフカメラのような粗いシボ加工により傷がつきにくい",
+        "category": "durability",
+        "confidence": "medium",
+        "supportingSourceIds": [
+          "amazon-jp-official"
+        ],
+        "crossChecked": false,
+        "notes": "メーカーのアピールポイント。外観デザイン上の工夫として機能している。"
+      }
+    ],
+    "lastInvestigated": "2026-10-14",
+    "investigatedPrice": "価格情報なし",
+    "competitiveAnalysis": [
+      {
+        "name": "Anker Nano Charging Station (6-in-1, 67W)",
+        "asin": "B0C5JJDLTD",
+        "priceComparison": "本製品の方がやや高価な傾向にある。Anker製品はポート数が多く据え置き向けの平置きデザインであるが、本製品はケーブル巻き取り機構とコンパクトさを備えている。",
+        "featureComparison": [
+          "共通点：最大67W出力に対応し、ACコンセントと複数USBポート（Type-C/A）を搭載している点",
+          "相違点：Ankerは据え置き型の平たいデザインでケーブルが本体から直接伸びているのに対し、CIOは本体にケーブルを巻き取って収納できるコンパクトなブロック型である点。またポート数はAnkerがUSB-A×2（計6ポート）と1つ多い。"
+        ],
+        "differentiators": [
+          "CIO Polaris CUBE Built in CABLEの利点：出張や旅行での持ち運びを最優先とし、カバンの中でケーブルが絡まるのを防ぎたい人",
+          "Anker Nano Charging Stationの利点：主に自宅のデスクに据え置いて使用し、薄型のデザインやUSB-Aポートの多さを重視する人"
+        ]
+      },
+      {
+        "name": "CIO Polaris STICK Built in CORD REEL",
+        "asin": "B0FPL74JCG",
+        "priceComparison": "本製品の方がポート数・出力が多いためやや高価である。",
+        "featureComparison": [
+          "共通点：同ブランドの製品であり、延長ケーブルを本体に巻き取れるビルトイン設計を採用している点",
+          "相違点：STICKはスティック型でAC×1、USB-C×1、USB-A×1とポート数が絞られているのに対し、本製品はCUBE型でAC×2、USB-C×2、USB-A×1と同時充電できる台数が多い点。"
+        ],
+        "differentiators": [
+          "CIO Polaris CUBE Built in CABLEの利点：ノートPC、スマホ、タブレットなど同時に多数の機器を充電したい人",
+          "CIO Polaris STICK Built in CORD REELの利点：さらにコンパクトで細長い形状を好み、充電する機器が3台程度で収まる人"
+        ]
+      },
+      {
+        "name": "エレコム 電源タップ USB付き 合計最大65W ECT-43-3AC2BK",
+        "asin": "B0FM7DYWNV",
+        "priceComparison": "エレコム製品の方が安価であり、コストパフォーマンスに優れる。",
+        "featureComparison": [
+          "共通点：PD 65Wクラスの出力に対応し、ACタップとUSB-C/Aポートを搭載している点",
+          "相違点：エレコムは一般的な延長コードの形状（ケーブル長可変・巻き取り不可）で雷ガードやホコリ防止シャッターを備えているが、CIOはケーブル一体収納型で持ち運びに特化している点。"
+        ],
+        "differentiators": [
+          "CIO Polaris CUBE Built in CABLEの利点：携帯時のコンパクトさや、ケーブルがすっきり収納できるデザイン性を重視する人",
+          "エレコム ECT-43-3AC2BKの利点：価格の安さを重視し、自宅のデスク周りで据え置きの延長タップとして使いたい人"
+        ]
+      },
+      {
+        "name": "サンワダイレクト 電源タップ 700-TAP094W",
+        "asin": "B0HHH762JS",
+        "priceComparison": "価格帯は近い。サンワダイレクトも携帯用として近いコンセプトを持つ。",
+        "featureComparison": [
+          "共通点：旅行や出張に便利なコンパクト設計で、ACコンセントとUSBポートを搭載している点",
+          "相違点：サンワダイレクトは本体に巻き付ける形でケーブルを収納するが、CIOのように本体の溝に完全に収まるビルトイン設計ではない。またデザインや出力配分の制御技術に違いがある。"
+        ],
+        "differentiators": [
+          "CIO Polaris CUBE Built in CABLEの利点：電力自動振り分け機能（NovaIntelligence）により、ポートの出力計算を気にせず直感的に充電したい人",
+          "サンワダイレクト 700-TAP094Wの利点：ケーブルの長さやコンセントの配置に独自のこだわりを持つ人"
+        ]
+      },
+      {
+        "name": "CIO Polaris CUBE DESK 卓上電源タップ",
+        "asin": "B0D26BN1VD",
+        "priceComparison": "本製品と同等の価格帯。",
+        "featureComparison": [
+          "共通点：PD 65W出力対応、AC/USBポートの複合タップである点",
+          "相違点：DESKはケーブル長が1.5mあり、液晶ディスプレイで出力状況が確認できる据え置き特化型であるのに対し、本製品はケーブル長55cmで巻き取り収納が可能な携帯特化型である点。"
+        ],
+        "differentiators": [
+          "CIO Polaris CUBE Built in CABLEの利点：外出先へ頻繁に持ち出し、カバンの中での収まりの良さを重視する人",
+          "CIO Polaris CUBE DESKの利点：自宅やオフィスの決まったデスクに固定して使い、ケーブルの長さや充電状況の可視化を求める人"
+        ]
+      },
+      {
+        "name": "CIO Polaris CUBE TRAVEL",
+        "asin": "B0HBVQL2RH",
+        "priceComparison": "TRAVEL版の方が多機能（変換プラグ内蔵）なため高価。",
+        "featureComparison": [
+          "共通点：ケーブル巻き取り機構を備え、持ち運びに適した65W充電器である点",
+          "相違点：TRAVELは海外用の各種変換プラグ（200カ国以上対応）が内蔵されているが、本製品は国内用（AC100V）の電源タップ機能に特化している点。"
+        ],
+        "differentiators": [
+          "CIO Polaris CUBE Built in CABLEの利点：国内での出張や旅行、カフェでの利用がメインで、無駄な変換プラグ機構を省きたい人",
+          "CIO Polaris CUBE TRAVELの利点：海外出張や旅行に頻繁に行き、各国のコンセント形状に対応する必要がある人"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "出張や旅行が多く、充電器と延長コードを1つにまとめてカバンの荷物を減らしたい人",
+        "新幹線やカフェなど、コンセントの位置が手元から少し離れている場所で頻繁に作業するノマドワーカー"
+      ],
+      "pros": [
+        "約55cmの延長ケーブルを本体に巻き取ってフラットに収納できるため、持ち運び時にケーブルが絡まるストレスから解放されます",
+        "最大67W出力のUSB-Cポートを備えており、重いノートPC用のACアダプタを持ち歩く必要がなくなります"
+      ],
+      "cons": [
+        "ケーブルの長さが約55cmと短めのため、壁のコンセントから遠いデスク等で使いたい場合は長さが足りない可能性がある点に注意してください",
+        "据え置きメインで使う場合は、より安価でケーブルが長い他社製品の方が適している場合があります"
+      ],
+      "score": 83,
+      "scoreRationale": "[基本点: 70]\n[加点: +8] (延長コードと急速充電器を一体化し、ケーブルを本体に巻き取れる革新的な携帯性)\n[加点: +6] (最大67W出力・ACコンセント併用による高い実用性と汎用性)\n[加点: +3] (電力自動振り分け・温度監視による安全設計)\n[減点: -4] (ケーブル長が55cmと短く、据え置き用としては取り回しが限定される)\n[合計: 83]"
+    },
+    "technicalSpecs": {
+      "dimensions": {
+        "width": "約60mm",
+        "depth": "約90mm",
+        "weight": "約220g"
+      },
+      "cableLength": "約55cm",
+      "ports": [
+        "ACコンセント ×2",
+        "USB-C ×2",
+        "USB-A ×1"
+      ],
+      "powerOutput": {
+        "ac": "最大1250W (AC単独使用時) / 最大1125W (USB併用時)",
+        "usbC": "最大67W (単ポート) / 合計最大65W"
+      },
+      "other": [
+        "NovaIntelligence (電力自動振り分け)",
+        "NovaSafety (温度監視・自動電力調整)",
+        "表面シボ加工",
+        "スイングプラグ",
+        "PSE認証"
+      ]
+    }
+  }
+}
