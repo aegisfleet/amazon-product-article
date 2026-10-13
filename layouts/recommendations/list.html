@@ -479,8 +479,17 @@
 
     .price-drop-actions {
         display: flex;
+        flex-direction: column;
         gap: 6px;
         width: 100%;
+    }
+
+    .price-drop-sub-actions,
+    .price-drop-main-actions {
+        display: flex;
+        gap: 6px;
+        width: 100%;
+        align-items: center;
     }
 
     .price-drop-btn {
@@ -648,14 +657,39 @@
                 </div>
 
                 <div class="price-drop-actions">
-                    {{- if $articlePage -}}
-                    <a href="{{ $articlePage.RelPermalink }}" class="price-drop-btn price-drop-btn-review">
-                        <span class="material-symbols-outlined" aria-hidden="true" style="font-size:0.95rem;">edit_note</span> レビュー
-                    </a>
-                    {{- end -}}
-                    <a href='{{ printf "https://www.amazon.co.jp/dp/%s?tag=aegis-22" $drop.asin }}' class="price-drop-btn price-drop-btn-amazon" target="_blank" rel="noopener noreferrer">
-                        <span class="material-symbols-outlined" aria-hidden="true" style="font-size:0.95rem;">shopping_cart</span> Amazon
-                    </a>
+                    <div class="price-drop-sub-actions card-footer-row-sub">
+                        <button type="button" class="btn-compare-card" data-compare-btn="1" data-asin="{{ $drop.asin }}"
+                            data-title="{{ $drop.title }}" data-url="{{ if $articlePage }}{{ $articlePage.RelPermalink }}{{ end }}"
+                            data-affiliate-url='{{ if and $articlePage $articlePage.Params.affiliate_url }}{{ $articlePage.Params.affiliate_url }}{{ else }}{{ printf "https://www.amazon.co.jp/dp/%s?tag=aegis-22" $drop.asin }}{{ end }}'
+                            data-image="{{ $drop.imageUrl }}"
+                            data-price="{{ $drop.currentPrice }}" data-score="{{ $score | default 0 }}"
+                            data-savings="{{ $drop.savingsPercentage | default $drop.priceDiffRate | default 0 }}"
+                            data-category="{{ $drop.category }}"
+                            data-specs='{{ if and $articlePage $articlePage.Params.specs }}{{ partial "product-specs-json.html" $articlePage.Params.specs }}{{ end }}'
+                            aria-pressed="false" aria-label="{{ $drop.title }}を比較に追加">
+                            <span class="material-symbols-outlined compare-icon" aria-hidden="true">balance</span>
+                            <span class="compare-label">比較</span>
+                        </button>
+                        <button type="button" class="btn-favorite-card" data-favorite-btn="1" data-asin="{{ $drop.asin }}"
+                            data-title="{{ $drop.title }}" data-url="{{ if $articlePage }}{{ $articlePage.RelPermalink }}{{ end }}"
+                            data-affiliate-url='{{ if and $articlePage $articlePage.Params.affiliate_url }}{{ $articlePage.Params.affiliate_url }}{{ else }}{{ printf "https://www.amazon.co.jp/dp/%s?tag=aegis-22" $drop.asin }}{{ end }}'
+                            data-image="{{ $drop.imageUrl }}"
+                            data-price="{{ $drop.currentPrice }}" data-score="{{ $score | default 0 }}"
+                            data-category="{{ $drop.category }}" aria-pressed="false" aria-label="{{ $drop.title }}をお気に入りに追加">
+                            <span class="material-symbols-outlined fav-icon" aria-hidden="true">favorite_border</span>
+                            <span class="fav-label">保存</span>
+                        </button>
+                    </div>
+                    <div class="price-drop-main-actions">
+                        {{- if $articlePage -}}
+                        <a href="{{ $articlePage.RelPermalink }}" class="price-drop-btn price-drop-btn-review">
+                            <span class="material-symbols-outlined" aria-hidden="true" style="font-size:0.95rem;">edit_note</span> レビュー
+                        </a>
+                        {{- end -}}
+                        <a href='{{ if and $articlePage $articlePage.Params.affiliate_url }}{{ $articlePage.Params.affiliate_url }}{{ else }}{{ printf "https://www.amazon.co.jp/dp/%s?tag=aegis-22" $drop.asin }}{{ end }}' class="price-drop-btn price-drop-btn-amazon" target="_blank" rel="noopener noreferrer">
+                            <span class="material-symbols-outlined" aria-hidden="true" style="font-size:0.95rem;">shopping_cart</span> Amazon
+                        </a>
+                    </div>
                 </div>
             </article>
             {{- end -}}
