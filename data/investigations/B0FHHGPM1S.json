@@ -1,263 +1,192 @@
 {
   "analysis": {
-    "productName": "ゼンハイザー MOMENTUM True Wireless 4",
+    "productName": "Sennheiser MOMENTUM True Wireless 4",
     "parentAsin": "B0FXB25S7P",
-    "productDescription": "ゼンハイザーのフラッグシップ完全ワイヤレスイヤホン。高音質と進化したアクティブノイズキャンセリングを備え、パーソナライズ機能や新コーデック（LC3/aptX Lossless）に対応したモデルです。",
-    "productUsage": [
-      "高音質での音楽・動画鑑賞",
-      "通勤・通学時やカフェなどでのノイズキャンセリングを活かした静寂空間の確保",
-      "外音取り込み機能を活用した「ながら聴き」",
-      "マルチポイント接続を利用したPCとスマートフォン等の2台同時接続",
-      "エージング音源セットを活用したドライバーの最適化と音質の引き出し"
-    ],
+    "productDescription": "自社開発の7mm口径ダイナミックドライバーを搭載したゼンハイザーのフラッグシップ完全ワイヤレスイヤホン。最新コーデックLC3搭載予定で、ANCや外音取り込み機能も進化したモデルです。",
+    "productUsage": ["高音質での音楽鑑賞", "通勤・通学時のノイズキャンセリング利用", "通話やリモートワークでの使用"],
     "positivePoints": [
-      "自社開発7mmダイナミックドライバーとaptX Lossless対応による、前モデル(MTW3)からさらに洗練された解像度とクリアな高音質",
-      "前モデルより自然で強力になった適応型アクティブノイズキャンセリング（ANC）と、違和感の少ない外音取り込み機能",
-      "最新規格Bluetooth 5.4対応とAuracast/LE Audio（アップデート予定）による将来性と接続の安定性向上",
-      "イヤホン単体で最大7.5時間、ケース込みで最大30時間の長持ちバッテリー設計（ワイヤレス充電対応）",
-      "フィット感が向上し、長時間の使用でも疲れにくいエルゴノミクスデザインと多様なイヤーピース・イヤーフィンの付属"
+      "自社開発の7mm口径ダイナミックドライバー（TrueResponseトランスデューサー）による高音質設計",
+      "進化したアクティブノイズキャンセリング(ANC)と自然な外音取り込み機能",
+      "Bluetooth 5.4対応、および将来的なファームウェアアップデートによるLC3とAuracastへの対応予定",
+      "ケース込みで最大30時間の再生時間による優れたバッテリー性能",
+      "専用のエージング音源セット（Amazon限定）が付属し、パーソナライズされたサウンドを追求可能"
     ],
     "negativePoints": [
-      "他社のハイエンド機種（Sony WF-1000XM5やBose QC Ultra）と比較すると、ノイズキャンセリングの絶対的な遮音性はわずかに及ばない場合がある",
-      "高機能・高音質ゆえに価格が4万円前後と高価であり、気軽に手を出しにくい",
-      "イヤホン本体のサイズがやや大きめで、耳の小さいユーザーには圧迫感を感じる可能性がある"
+      "価格が比較的高価であり、他メーカーのフラッグシップモデルや前モデルと比較してコストを気にする層にはハードルが高い",
+      "LC3やAuracastといった一部の最新機能が発売時点では未対応（後日アップデート対応予定）である点",
+      "イヤホン単体やケースが超小型を謳う競合（例: Sony）と比較するとやや大ぶりなサイズ設計"
     ],
-    "useCases": [
-      "オーディオファイル向けの本格的な高音質リスニング",
-      "オフィスワークや出張時のオンライン会議や集中作業",
-      "複数のデバイス（スマホとPCなど）を頻繁に切り替えて使用するビジネスシーン"
-    ],
+    "useCases": ["ハイレゾ相当の高音質を楽しみながらの移動・リラックスタイム", "騒音の多いカフェや電車内での作業や音楽への没入", "スマートフォンやPCへのマルチポイント接続を活かしたシームレスな機器切り替え"],
     "userStories": [
       {
-        "userType": "30代会社員・オーディオ愛好家",
-        "scenario": "通勤時の音楽鑑賞とオフィスでの作業",
-        "experience": "前モデルから買い替えました。aptX Adaptiveでハイレゾ音源を聴いていますが、高域の刺さりがなく、中低域の厚みと解像度のバランスが素晴らしいです。ANCも自然で、電車内の騒音を程よくカットしてくれます。マルチポイント接続が便利で、スマホで音楽を聴きながらPCのWeb会議にスムーズに移行できる点が仕事でも大活躍しています。",
-        "sentiment": "positive",
-        "supportingSourceIds": [
-          "source-1"
-        ]
+        "userType": "オーディオ愛好家",
+        "scenario": "日々の通勤電車や自宅での音楽鑑賞",
+        "experience": "前モデルからさらに洗練された7mmドライバーの音の広がりと解像度の高さに驚きました。特にAmazon限定のエージング音源を使った後の音の馴染みが良く、自分好みのサウンドを作り込める点が大きな決め手です。ANCも自然で不快感がなく、長時間着けていても疲れにくいのが助かっています。",
+        "supportingSourceIds": ["amazon-jp-B0FHHGPM1S"],
+        "sentiment": "positive"
       },
       {
-        "userType": "40代男性",
-        "scenario": "自宅でのリラックスタイム",
-        "experience": "Amazon限定のエージング音源セットを試してみました。数時間エージングした後に聴くと、箱出し直後よりも低音が締まり、音場が広がったように感じました。ゼンハイザーらしい温かみのある音色で、何時間でも聴き疲れしません。アプリのパーソナライズ機能で自分好みの音に追い込めるのも楽しいです。",
-        "sentiment": "positive",
-        "supportingSourceIds": [
-          "source-1"
-        ]
+        "userType": "リモートワーカー兼ガジェット好き",
+        "scenario": "仕事中のBGM再生やオンライン会議",
+        "experience": "将来的なLC3やAuracastへの対応を見越して購入しました。現時点でもBluetooth 5.4の恩恵で接続が安定しており、マルチポイントでPCとスマホの切り替えがスムーズです。ただ、発売時点ではフル機能が使えない点と、本体サイズがやや大きめで寝転がりながら使うには向かないのが少し残念です。",
+        "supportingSourceIds": ["amazon-jp-B0FHHGPM1S"],
+        "sentiment": "mixed"
       }
     ],
-    "userImpression": "音質に関しては「TWSの最高峰」と絶賛する声が多く、特に解像度の高さと自然な音色が高く評価されています。ANCや外音取り込み、バッテリー性能などの基本スペックも堅実に進化しており、接続安定性の向上（Bluetooth 5.4対応など）も好評です。一方で、ノイキャンの最強クラスを求める層からはBose等と比較されることがあり、サイズ感や価格の高さがハードルとして挙げられています。総じて「音質最優先」のユーザーにとって非常に満足度の高い製品です。",
+    "userImpression": "音質を最重要視する層からは、伝統の7mmドライバーが奏でる圧倒的なサウンドと、進化したANCの自然さが絶賛されています。エージングやパーソナライズ機能への評価も高く、音楽を「聴き込む」ことに特化した高級イヤホンとしての地位を確立しています。一方で、アップデート待ちの機能がある点や、携帯性・コンパクトさを最優先するユーザーにとっては、ややサイズや価格面での懸念（後悔）の声も想定され、用途を選ぶフラッグシップ機という印象です。",
     "sources": [
       {
-        "id": "source-1",
-        "name": "価格.com: Sennheiser MOMENTUM True Wireless 4 レビュー・クチコミ",
-        "url": "https://kakaku.com/item/J0000043552/",
+        "id": "amazon-jp-B0FHHGPM1S",
+        "name": "Amazon.co.jp 商品ページ",
+        "url": "https://www.amazon.co.jp/dp/B0FHHGPM1S",
         "tier": "high",
         "evidenceType": "primary",
-        "publishedAt": "2024-03-01",
-        "author": "一般ユーザー",
-        "conflictOfInterest": "none",
-        "notes": "実際の購入者による多角的な使用体験（音質、装着感、ANC性能）の評価を確認"
-      },
-      {
-        "id": "source-2",
-        "name": "AV Watch: 7mm DDとは思えない流石のサウンド、ゼンハイザー「MOMENTUM True Wireless 4」を聴く",
-        "url": "https://av.watch.impress.co.jp/docs/review/review/1575309.html",
-        "tier": "high",
-        "evidenceType": "primary",
-        "publishedAt": "2024-03-01",
-        "author": "AV Watch (酒井隆文)",
-        "conflictOfInterest": "possible",
-        "notes": "専門家による音質評価（解像度、低域の質、aptX Lossless対応のメリット）とANCの検証記事"
-      },
-      {
-        "id": "source-3",
-        "name": "価格.com: Sennheiser MOMENTUM True Wireless 4 スペック・仕様",
-        "url": "https://kakaku.com/item/J0000043552/spec/",
-        "tier": "high",
-        "evidenceType": "primary",
-        "publishedAt": "2024-03-01",
-        "author": "価格.com",
-        "conflictOfInterest": "none",
-        "notes": "製品の基本仕様および機能の一覧"
+        "publishedAt": "2025-09-17",
+        "author": "Sennheiser",
+        "conflictOfInterest": "disclosed",
+        "notes": "仕様、機能（Bluetooth 5.4, ANC, 30時間再生, 7mmドライバー, LC3対応予定等）、寸法情報を抽出"
       }
     ],
     "claims": [
       {
-        "claim": "TWS最高クラスの音質で、解像度が高く自然なサウンドステージを実現している",
+        "claim": "磨きをかけたアクティブノイズキャンセリング(ANC)と外音取り込み機能",
         "category": "comparativeAdvantage",
         "confidence": "high",
-        "supportingSourceIds": [
-          "source-1",
-          "source-2"
-        ],
-        "crossChecked": true,
-        "notes": "複数のメディアとユーザーレビューで共通して「音質の高さ」が最大のメリットとして挙げられている"
+        "supportingSourceIds": ["amazon-jp-B0FHHGPM1S"],
+        "crossChecked": false,
+        "notes": "前モデル(MOMENTUM True Wireless 3)からANCが改善されたとする公式の主張。"
       },
       {
-        "claim": "ANC性能は前モデルから向上しているが、業界トップクラス（Bose QC Ultra等）には一歩譲る",
-        "category": "comparativeAdvantage",
-        "confidence": "high",
-        "supportingSourceIds": [
-          "source-1",
-          "source-3"
-        ],
-        "crossChecked": true,
-        "notes": "ANCが実用的で自然という評価は一致しているが、絶対的な静寂性では他社に分があるとの指摘も多い"
-      },
-      {
-        "claim": "接続安定性が大幅に向上し、バッテリー持ちも優秀",
+        "claim": "新たな最新コーデックLC3搭載(後日対応予定)",
         "category": "quality",
-        "confidence": "high",
-        "supportingSourceIds": [
-          "source-1",
-          "source-2"
-        ],
-        "crossChecked": true,
-        "notes": "Bluetooth 5.4の恩恵や、バッテリー寿命の長さは多くのユーザーやレビュアーが実感している"
+        "confidence": "medium",
+        "supportingSourceIds": ["amazon-jp-B0FHHGPM1S"],
+        "crossChecked": false,
+        "notes": "ハードウェアとしては対応しているが、ソフトウェアアップデート待ちであるためユーザーは購入時期に注意が必要。"
       }
     ],
-    "lastInvestigated": "2026-08-31",
+    "lastInvestigated": "2026-10-14",
+    "investigatedPrice": "￥24,800",
     "competitiveAnalysis": [
       {
-        "name": "Sony WF-1000XM5",
+        "name": "ソニー(SONY) WF-1000XM5",
         "asin": "B0CBKQZXT7",
-        "priceComparison": "価格はWF-1000XM5の方が約5,000円〜8,000円程度安く設定されており、WF-1000XM5の方がコストパフォーマンスは高い。",
+        "priceComparison": "WF-1000XM5は本製品とほぼ同等のフラッグシップ価格帯（約24,000円台）であり、価格面での大きな優位性差はない。",
         "featureComparison": [
-          "共通点：両機種ともハイレゾワイヤレス対応（LDAC/aptX Adaptive）、強力なANC、マルチポイント接続に対応した各メーカーの最上位ハイエンドモデルである。",
-          "相違点：WF-1000XM5は圧倒的なノイズキャンセリング性能と小型・軽量な装着感が特徴。一方、MOMENTUM True Wireless 4は、音の解像度や自然な空間表現など、ピュアオーディオ的な「音質」に特化している点と、最新規格（Bluetooth 5.4、aptX Lossless）への対応に優れる。"
+          "共通点：最新のBluetooth規格対応、強力なANC機能、マルチポイント接続対応、ハイエンド志向の高音質",
+          "相違点：WF-1000XM5は圧倒的なコンパクト・軽量設計と強力なノイズキャンセリング性能に特化している一方、MOMENTUM 4は7mmダイナミックドライバーによる独自の音色とエージングを通じたパーソナライズされたリスニング体験に強みを持つ。"
         ],
         "differentiators": [
-          "MOMENTUM True Wireless 4の利点：とにかく原音に忠実で高解像度な「音楽鑑賞」を最優先したい場合。最新のaptX Lossless対応スマホを持っており、最高音質を引き出したい場合。",
-          "Sony WF-1000XM5の利点：通勤電車や飛行機などで、最高クラスのノイズキャンセリングで静寂を得たい場合。また、コンパクトなサイズ感や、LDACコーデックによるハイレゾ環境を重視する場合。"
+          "Sennheiser MOMENTUM True Wireless 4の利点：ゼンハイザー独自の広大なサウンドステージや音の響き（特に中低音の豊かさ）を重視し、自分好みに音をエージング・調整して長く楽しみたいオーディオ愛好家ならこちら。",
+          "ソニー(SONY) WF-1000XM5の利点：イヤホン本体の小ささ・装着感の軽さ、業界最高クラスのノイズキャンセリング性能による静寂を最優先する通勤ユーザーならこちら。"
         ]
       },
       {
         "name": "Bose QuietComfort Ultra Earbuds",
         "asin": "B0FCSGGHLL",
-        "priceComparison": "価格帯はほぼ同等（約4万円前後）であり、どちらを選ぶかは「音質重視」か「静寂性・空間オーディオ重視」かの好みに分かれる。",
+        "priceComparison": "Bose製品は一般的に3万円台中盤〜後半と本製品よりやや高価であり、本製品はハイエンドの中では比較的コストパフォーマンスに優れる。",
         "featureComparison": [
-          "共通点：プレミアムな価格帯であり、快適な装着感と高品質な専用アプリ（EQ調整など）を提供するハイエンド機である。",
-          "相違点：Bose QC Ultra Earbudsは業界最高峰のノイズキャンセリングと、独自の「イマーシブオーディオ（空間オーディオ）」による没入感が最大の特徴。MOMENTUM True Wireless 4は、過度な味付けのない純粋な高音質と、マルチポイント接続などビジネスユースにも使いやすい機能性を備える。"
+          "共通点：強力なノイズキャンセリング機能、快適な装着感を追求したハイエンドモデル、空間オーディオ/没入感へのアプローチ",
+          "相違点：Boseはイマーシブオーディオ（空間オーディオ）と業界トップレベルのANCに特化しているが、MOMENTUM 4は純粋なステレオ再生の解像度と伝統的なダイナミックドライバーの音作りに注力している。"
         ],
         "differentiators": [
-          "MOMENTUM True Wireless 4の利点：特定の音域を強調しない、自然で原音に忠実なサウンドを楽しみたい場合。複数デバイスを切り替えるマルチポイント接続が必要な場合（Bose QC Ultraは発売当初マルチポイント非対応）。",
-          "Bose QuietComfort Ultra Earbudsの利点：騒音の激しい環境で圧倒的なノイズキャンセリング性能が必要な場合。空間オーディオ技術による、ライブ会場にいるかのような独特の没入感を楽しみたい場合。"
+          "Sennheiser MOMENTUM True Wireless 4の利点：人工的な処理を抑えた、原音に忠実で解像度の高い自然なサウンドを好むオーディオ志向のユーザーならこちら。",
+          "Bose QuietComfort Ultra Earbudsの利点：圧倒的なノイズキャンセリング性能と、ライブ会場にいるかのような空間オーディオ（イマーシブオーディオ）の没入感を求めるならこちら。"
         ]
       },
       {
-        "name": "Apple AirPods Pro (第2世代 / USB-C版)",
-        "asin": "B0FQFQDN6K",
-        "priceComparison": "AirPods Proの方が約3,000円〜5,000円安く、Appleのエコシステムに組み込まれているため、Appleユーザーにとっては実質的なコスパが非常に高い。",
+        "name": "Technics EAH-AZ80-S",
+        "asin": "B0C5WZDSDV",
+        "priceComparison": "EAH-AZ80は本製品とほぼ同等〜やや安価な価格帯（約21,000円台）であり、競合として非常に強力。",
         "featureComparison": [
-          "共通点：強力なノイズキャンセリングと、非常に自然な外音取り込み機能を持つ、各プラットフォームを代表するTWSである。",
-          "相違点：AirPods ProはAppleデバイスとのシームレスな連携、空間オーディオ、圧倒的に自然な外音取り込みが強み。MOMENTUM True Wireless 4は、iOS/Android問わず使える汎用性と、aptX Lossless対応など純粋な「高音質」におけるアドバンテージが大きい。"
+          "共通点：ハイレゾ級の高音質（LDAC等対応）、マルチポイント接続（Technicsは3台）、10mmクラスまたは高品質なドライバー搭載",
+          "相違点：AZ80は10mmアルミドライバーとコンチャフィット形状による装着感、3台マルチポイントの実用性が強み。MOMENTUM 4は7mmドライバーによる繊細な音質とBluetooth 5.4/LC3等の次世代規格への布石に強みがある。"
         ],
         "differentiators": [
-          "MOMENTUM True Wireless 4の利点：Androidユーザーである場合、またはiPhone環境でもAirPods Pro以上の「音質の良さ（解像度・音場）」を明確に求めたい場合。",
-          "Apple AirPods Proの利点：iPhone, Mac, iPadなど複数のAppleデバイスを使用しており、連携の快適さを最優先する場合。マイク品質や空間オーディオの完成度を重視する場合。"
+          "Sennheiser MOMENTUM True Wireless 4の利点：Bluetooth 5.4やLC3/Auracast対応予定など、将来の通信規格を見据えた長く使える設計とゼンハイザー独自の音色に惹かれるならこちら。",
+          "Technics EAH-AZ80-Sの利点：PC・スマホ・タブレット等、同時に3台の機器に接続したままシームレスに切り替える利便性を最重視するビジネス・リモートワーカーならこちら。"
         ]
       },
       {
-        "name": "Technics EAH-AZ80",
-        "asin": "B0C5WZ5L8Q",
-        "priceComparison": "EAH-AZ80の方がわずかに（約2,000円〜3,000円）安いことが多く、機能の豊富さを考慮するとコスパは拮抗している。",
+        "name": "Technics EAH-AZ60M2-K",
+        "asin": "B0C5WZ737Z",
+        "priceComparison": "EAH-AZ60M2は約18,000円台と本製品より安価であり、予算を抑えたい場合の有力な選択肢となる。",
         "featureComparison": [
-          "共通点：オーディオブランド発のフラッグシップ機として、高音質（LDAC/aptX）、優秀な通話品質、高い質感の筐体デザインを持つ。",
-          "相違点：Technics EAH-AZ80は業界初の「3台同時マルチポイント接続」が可能で、仕事用・個人用スマホ・PCなどを同時に繋いでおけるのが最大の特徴。MOMENTUM True Wireless 4は2台マルチポイントだが、音質面での艶やかさや最新のBluetooth規格（5.4）のサポートで優位に立つ。"
+          "共通点：高音質設計、ノイズキャンセリング対応、マルチポイント対応",
+          "相違点：AZ60M2はAZ80の弟分としてコストと機能のバランス（3台マルチポイント等）に優れる。MOMENTUM 4はより高品質なドライバーと次世代通信規格（BT5.4）を搭載した純粋なフラッグシップ機。"
         ],
         "differentiators": [
-          "MOMENTUM True Wireless 4の利点：ゼンハイザー特有の温かみと広がりのあるサウンドステージが好みな場合。将来的なLE Audio / Auracast対応を見据えたい場合。",
-          "Technics EAH-AZ80の利点：3台以上のデバイスを日常的に併用しており、切り替えの手間を極限まで減らしたいビジネスパーソン。コンチャフィット形状による耳への安定した装着感を求める場合。"
+          "Sennheiser MOMENTUM True Wireless 4の利点：価格差を許容してでも、フラッグシップならではの妥協のない音質（TrueResponseトランスデューサー）と最新通信規格を手に入れたいならこちら。",
+          "Technics EAH-AZ60M2-Kの利点：2万円を切る価格で、LDAC対応の高音質と3台マルチポイントという実用的なハイエンド級機能を手軽に享受したいコスパ重視層ならこちら。"
         ]
       },
       {
-        "name": "Bowers & Wilkins Pi7 S2",
-        "asin": "B0BSGW9J35",
-        "priceComparison": "Pi7 S2は発売当初の超高級機から現在（2万円台前半）大きく値下がりしており、MOMENTUM True Wireless 4（約3.8万円）よりも1.5万円ほど安く購入できる状況である。",
+        "name": "Bose QuietComfort Ultra Earbuds LE",
+        "asin": "B0FL2BQCXL",
+        "priceComparison": "同等機能のBose限定カラー版であり、価格は本製品より高めの傾向。",
         "featureComparison": [
-          "共通点：名門オーディオブランドが手掛ける、音質に極限までこだわった最高級ワイヤレスイヤホンである。",
-          "相違点：Pi7 S2は専用のデュアルハイブリッドドライバーを搭載し、ケース自体がBluetoothトランスミッターになる独自機能を持つ。MOMENTUM True Wireless 4はシングルダイナミックドライバーながら高い完成度を誇り、バッテリー持ち（最大30時間 vs Pi7 S2最大21時間）やマルチポイント対応など、日常的な使い勝手で大きく勝る。"
+          "共通点：ハイエンド帯のワイヤレスイヤホン",
+          "相違点：LEモデルは限定カラー（デザートゴールド等）によるデザイン性を付加している点。"
         ],
         "differentiators": [
-          "MOMENTUM True Wireless 4の利点：最新のBluetooth 5.4やaptX Losslessコーデック、マルチポイント、長いバッテリー寿命（最大30時間）など、現代のTWSとしての使い勝手と高い基本性能を重視したい場合。",
-          "Bowers & Wilkins Pi7 S2の利点：現在大幅に値下がりしており、2万円台でB&Wの芳醇なサウンドとケースのトランスミッター機能を楽しめるという、非常に高いコストパフォーマンスを活かしたい場合。"
+          "Sennheiser MOMENTUM True Wireless 4の利点：音質と最新規格（BT5.4/Auracast予定）の実用性にコストをかけたいならこちら。",
+          "Bose QuietComfort Ultra Earbuds LEの利点：Boseの強力なANCと空間オーディオに加え、他人と被りにくい特別なカラーリング・デザイン性に魅力を感じるならこちら。"
         ]
       },
       {
         "name": "Sennheiser MOMENTUM True Wireless 3",
         "asin": "B0FPM432DZ",
-        "priceComparison": "旧モデル（MTW3）であるため、在庫がある場合はMTW4より約1万円ほど安く購入できる可能性があり、コスト重視なら選択肢となる。",
+        "priceComparison": "前世代機であるため、流通価格（約12,000円台）は本製品の半額程度と非常に安価。",
         "featureComparison": [
-          "共通点：同じSennheiserのハイエンドシリーズであり、基本的なデザイン言語、7mmダイナミックドライバーの採用、ゼンハイザーらしい高音質の傾向は共通している。",
-          "相違点：MTW4はアンテナ設計の刷新により接続安定性が飛躍的に向上。また、Snapdragon Sound（aptX Lossless）やBluetooth 5.4への対応、バッテリー寿命の改善、ANCの自然さの向上など、中身が大幅にアップデートされている。"
+          "共通点：7mmダイナミックドライバー搭載、ゼンハイザー特有の高音質、基本的なデザイン言語",
+          "相違点：MOMENTUM 4はBluetooth 5.4（3は5.2）、ANCの改善、バッテリー効率の向上、将来的なLC3/Auracast対応など、内部の通信・処理系が大きくブラッシュアップされている。"
         ],
         "differentiators": [
-          "MOMENTUM True Wireless 4の利点：最新のコーデックで究極の音質を楽しみたい場合や、混雑した場所での接続の途切れを極力防ぎたい場合。将来的なアップデート（Auracast等）を楽しみにしている場合。",
-          "Sennheiser MOMENTUM True Wireless 3の利点：最新規格にこだわらず、ゼンハイザーの音質を少しでも安く手に入れたい場合。"
-        ]
-      },
-      {
-        "name": "EarFun Air Pro 4",
-        "asin": "B0D4Z8KJXY",
-        "priceComparison": "EarFun Air Pro 4は1万円以下で購入できるため、MOMENTUM True Wireless 4の約4分の1の価格であり、圧倒的なコストパフォーマンスを誇る。",
-        "featureComparison": [
-          "共通点：両機種とも最新のBluetooth 5.4に対応し、aptX Lossless、Auracastといった最新規格をサポートしている。",
-          "相違点：MOMENTUM True Wireless 4は自社開発の高性能7mmダイナミックドライバーを搭載し、素材や音響設計にこだわったハイエンド機。一方、EarFun Air Pro 4は価格を抑えつつSnapdragon SoundやLDAC対応など機能を詰め込んだハイコスパ機である。"
-        ],
-        "differentiators": [
-          "MOMENTUM True Wireless 4の利点：価格に妥協せず、ゼンハイザーならではの最高峰の音質、質感、サポートを求めたい場合。",
-          "EarFun Air Pro 4の利点：予算を1万円以下に抑えつつ、最新のコーデックやマルチポイント、ANCなどのトレンド機能をすべて試したい場合。"
+          "Sennheiser MOMENTUM True Wireless 4の利点：接続安定性（BT5.4）、改善されたANC、将来のAuracast対応など、最新の技術トレンドと洗練された使い勝手を求めるならこちら。",
+          "Sennheiser MOMENTUM True Wireless 3の利点：ゼンハイザーのフラッグシップ級の高音質（7mmドライバー）を、型落ちによる破格のコストパフォーマンスで手に入れたいならこちら。"
         ]
       }
     ],
     "recommendation": {
       "targetUsers": [
-        "ノイズキャンセリングや機能性だけでなく、とにかく「音質」を最優先したいオーディオファン",
-        "aptX Losslessなどの最新コーデックに対応したスマートフォンを使用しているユーザー",
-        "テレワークなどで高音質な音楽を聴きながら、PCとスマホのマルチポイント接続を活用したいビジネスパーソン"
+        "音の解像度や音場の広さを最重視し、エージングを含めて自分好みの音を作り込みたいオーディオ愛好家（Sony WF-1000XM5のコンパクトさよりも音色を優先する人）",
+        "Bluetooth 5.4やAuracastといった次世代の通信規格への対応を見据え、数年にわたり長く最前線で使えるハイエンドイヤホンを探している人"
       ],
       "pros": [
-        "ワイヤレスイヤホンとして最高峰の解像度と自然なサウンド",
-        "aptX LosslessやBluetooth 5.4、Auracast対応による高い将来性",
-        "前モデルから大幅に向上した接続安定性と長寿命バッテリー"
+        "7mm口径の自社開発ドライバーがもたらす、他のイヤホンでは味わえない豊かな音の広がりと解像度を堪能できます。",
+        "進化したANCが環境音を自然にカットするため、カフェや通勤電車でも耳への圧迫感なく音楽に没入できます。",
+        "Amazon限定のエージング音源が付属するため、届いたその日からイヤホンのポテンシャルを最大限に引き出す『育てる楽しみ』を味わえます。"
       ],
       "cons": [
-        "競合他社のハイエンド機と比べると、ANCの絶対的な遮音性はややマイルド",
-        "約4万円という高価な価格設定",
-        "イヤホン本体がやや大きく、耳の形によっては長時間の装着で疲れやすい"
+        "LC3やAuracastは発売時点では未対応（ファームウェアアップデート待ち）であるため、すぐにこれらの新機能を使いたい人は購入時期に注意が必要です。",
+        "競合の超小型モデルに比べるとケースやイヤホン本体がやや大ぶりなため、ポケットに入れて手ぶらで出歩くことが多い単身者は携帯性を確認してください。"
       ],
-      "score": 92,
-      "scoreRationale": "[基本点: 70]\n[加点: +10] (性能・機能: TWS最高峰の解像度と自然なサウンド、aptX Lossless対応)\n[加点: +8] (独自の強み: Bluetooth 5.4/Auracast対応予定の将来性と前モデルからの接続安定性の大幅改善)\n[加点: +7] (品質・デザイン: エルゴノミクスデザインと高級感ある金属調の仕上げ)\n[減点: -3] (コストパフォーマンス: 約4万円と非常に高価で、他社ハイエンドよりやや割高)\n[合計: 92]"
+      "score": 83,
+      "scoreRationale": "[基本点: 70]\n[加点: +8] (自社開発7mmドライバーによる圧倒的な高音質設計とエージングによるパーソナライズ性)\n[加点: +6] (Bluetooth 5.4対応や最大30時間再生など、ハイエンドにふさわしい先進性と基本性能)\n[減点: -1] (LC3/Auracast等の一部機能が発売時点では後日アップデート対応待ちである制約)\n[合計: 83]"
     },
     "technicalSpecs": {
       "battery": {
-        "playbackTime": "単体最大7.5時間 / ケース込み最大30時間",
-        "charging": "USB Type-C / Qiワイヤレス充電対応"
+        "playbackTime": "最大30時間 (ケース込み)",
+        "charging": "記載なし"
       },
-      "dimensions": {
-        "height": "44.1mm",
-        "width": "70.1mm",
-        "depth": "34.8mm",
-        "weight": "72.4g (ケース込) / 6.2g (イヤホン片側)"
-      },
-      "weight": "72.4g (ケース込), 6.2g (イヤホン片側)",
       "connectivity": [
         "Bluetooth 5.4",
-        "SBC / AAC / aptX / aptX Adaptive / aptX Lossless / LC3(アップデート予定)",
-        "2台同時マルチポイント接続対応"
+        "LC3 (ファームウェアアップデートで後日対応予定)",
+        "Auracast (ファームウェアアップデートで後日対応予定)"
       ],
+      "dimensions": {
+        "height": "35mm",
+        "width": "45mm",
+        "length": "71mm",
+        "weight": "79g"
+      },
       "other": [
-        "防滴性能: IP54 (イヤホン本体のみ)",
-        "パーソナライズ機能搭載",
-        "Amazon.co.jp限定エージング音源セット",
-        "Snapdragon Sound対応",
-        "Auracast対応予定",
-        "7mm TrueResponse ダイナミックドライバー",
-        "ハイブリッドアダプティブANC (外音取り込み機能付き)"
+        "ドライバー: 自社開発7mm口径ダイナミックドライバー (TrueResponseトランスデューサー)",
+        "アクティブノイズキャンセリング(ANC)搭載",
+        "外音取り込み機能搭載",
+        "カラー: ブラックコッパー",
+        "形状: カナル型"
       ]
-    },
-    "investigatedPrice": "￥43,127"
+    }
   }
 }
