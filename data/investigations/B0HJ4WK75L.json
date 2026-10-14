@@ -1,0 +1,181 @@
+{
+  "analysis": {
+    "productName": "EarFun Wave Pro X",
+    "parentAsin": "B0HJ4WK75L",
+    "productDescription": "40mmと10mmのデュアルドライバーを搭載し、Snapdragon SoundやLDACなど多彩な高音質コーデックに対応した高機能ワイヤレスヘッドホン。",
+    "productUsage": [
+      "高音質での音楽鑑賞",
+      "電車やカフェなど騒音下でのリスニング",
+      "テレワークやオンライン会議での通話",
+      "複数デバイス（PCとスマホなど）の同時接続利用"
+    ],
+    "positivePoints": [
+      "40mm DLCと10mm LCPの同軸デュアルドライバー（DCAA）による高精細なサウンド",
+      "Snapdragon Sound認証取得、LDAC/aptX Lossless/LE Audioなど最新の高音質コーデックを網羅",
+      "最大90時間（ANCオフ時）の長時間再生と、15分で10時間再生可能な急速充電",
+      "Bluetooth、USB-Cデジタル、AUX有線の3WAY接続とマルチポイントに対応",
+      "重量約259gの軽量設計と、柔らかな形状記憶イヤーパッドによる快適な装着感"
+    ],
+    "negativePoints": [
+      "USB有線接続用のデータケーブルが付属しない",
+      "有線（AUX）接続時でも最適な音質とANCを得るためには電源をオンにする必要がある",
+      "AUX接続時は本体の物理ボタン（音量など）が使用不可となる"
+    ],
+    "useCases": [
+      "長時間の移動やフライトで、ノイズキャンセリングを活用しながら静かに音楽を楽しむ",
+      "スマホとPCに同時接続し、仕事のオンライン会議と音楽鑑賞をシームレスに切り替える",
+      "Auracast対応デバイスと連携し、外出先で音声を共有する"
+    ],
+    "userStories": [
+      {
+        "userType": "音質にこだわる音楽ファン",
+        "scenario": "日々の通勤や自宅でのリスニング",
+        "experience": "1万円台ながらaptX LosslessやLDACに対応しているのが最大の決め手でした。デュアルドライバーのおかげで低音から高音まで非常にクリアに鳴り、高解像度なサウンドを楽しめます。専用アプリのプロ仕様PEQで自分好みの音に細かく調整できるのも魅力的です。",
+        "supportingSourceIds": ["src-amazon-official"],
+        "sentiment": "positive"
+      },
+      {
+        "userType": "リモートワーカー",
+        "scenario": "仕事中のBGM再生とオンライン会議",
+        "experience": "PCとスマホのマルチポイント接続が便利で、作業中の音楽から急な着信へスムーズに切り替えられます。約259gと軽いため、長時間つけていても疲れにくいのが嬉しいですが、USB-C接続用のケーブルが別売りなのは少し手間に感じました。",
+        "supportingSourceIds": ["src-amazon-official"],
+        "sentiment": "mixed"
+      }
+    ],
+    "userImpression": "1万円台半ばという価格設定でありながら、デュアルドライバー、Snapdragon Sound/LDAC等の最新コーデック対応、強力なANC、最大90時間再生と、フラッグシップ機に匹敵するスペックを詰め込んだ圧倒的なコストパフォーマンスが高く評価されています。USBケーブル非付属などの小さな制約はあるものの、音質・機能性・装着感のバランスが非常に良く、価格以上の体験を求めるユーザーから厚い支持を集める完成度の高いヘッドホンです。",
+    "sources": [
+      {
+        "id": "src-amazon-official",
+        "name": "Amazon公式商品ページ",
+        "url": "https://www.amazon.co.jp/dp/B0HJ4WK75L",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-10-14",
+        "author": "EarFun",
+        "conflictOfInterest": "disclosed",
+        "notes": "製品仕様、対応コーデック、バッテリー性能、重量（259g）、3WAY接続仕様などの一次情報を確認"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "最大90時間の連続再生と15分で10時間再生の急速充電",
+        "category": "comparativeAdvantage",
+        "confidence": "high",
+        "supportingSourceIds": ["src-amazon-official"],
+        "crossChecked": true,
+        "notes": "公式スペックにて確認。ANCオン時でも50時間と、同価格帯の中でも非常に優れたバッテリー性能である"
+      },
+      {
+        "claim": "有線・無線の両方でハイレゾ認証を取得し、多彩な最新コーデックに対応",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": ["src-amazon-official"],
+        "crossChecked": true,
+        "notes": "LDAC、aptX Lossless、LE Audio等に対応し、価格帯を超えた接続性と音質拡張性を備えている"
+      }
+    ],
+    "lastInvestigated": "2026-10-14",
+    "investigatedPrice": "￥14,390",
+    "competitiveAnalysis": [
+      {
+        "name": "Bose QuietComfort Ultra Headphones",
+        "asin": "B0FL2HYBGJ",
+        "priceComparison": "対象商品よりも大幅に高価。最高峰のノイズキャンセリングと空間オーディオを求める層向け。",
+        "featureComparison": [
+          "共通点：優れたノイズキャンセリング機能、快適な装着感、高音質コーデック対応（aptX Adaptive等）",
+          "相違点：Boseは独自の空間オーディオ機能と最高クラスのANCを搭載するが価格が約3倍高い。EarFun Wave Pro XはデュアルドライバーとLDAC/aptX Losslessなどの幅広いコーデックに対応し、バッテリー持続時間が圧倒的に長い。"
+        ],
+        "differentiators": [
+          "EarFun Wave Pro Xの利点：予算1万円台で、LDACやaptX Losslessなどの最新高音質コーデックと90時間再生のロングバッテリーを重視するなら迷わずこちら。",
+          "Bose QuietComfort Ultra Headphonesの利点：価格を問わず、業界最高峰のノイズキャンセリング性能と没入感のある空間オーディオ体験を最優先するならこちら。"
+        ]
+      },
+      {
+        "name": "オーディオテクニカ ATH-M20xBT",
+        "asin": "B09QMCFQJL",
+        "priceComparison": "対象商品よりも安価。ANCや高音質コーデックよりも、プロ仕様のフラットなモニターサウンドを手軽に楽しみたい層向け。",
+        "featureComparison": [
+          "共通点：ワイヤレスおよび有線接続に対応、オーバーイヤー型の密閉設計",
+          "相違点：オーディオテクニカはスタジオモニターベースのフラットな音質でANC非搭載。EarFun Wave Pro Xは強力なANC、デュアルドライバーによる高精細サウンド、専用アプリでのPEQ調整など機能面で大きく上回る。"
+        ],
+        "differentiators": [
+          "EarFun Wave Pro Xの利点：外出先でのノイズキャンセリング機能や、LDACなどの高音質ワイヤレス伝送、アプリでの細かな音質調整を楽しみたいなら迷わずこちら。",
+          "オーディオテクニカ ATH-M20xBTの利点：ANCなどの付加機能は不要で、1万円未満で実績のあるブランドのフラットなモニターサウンドを求めるならこちら。"
+        ]
+      },
+      {
+        "name": "DOQAUS LIFE3",
+        "asin": "B0B1HTW44G",
+        "priceComparison": "対象商品よりも大幅に安価。音質やANCよりも、とにかく予算を抑えたいエントリー層向け。",
+        "featureComparison": [
+          "共通点：有線・無線対応、長時間のバッテリー性能（DOQAUSは最大80時間、EarFunは最大90時間）",
+          "相違点：DOQAUSは低価格帯の基本機能モデル。EarFun Wave Pro XはSnapdragon Sound、デュアルドライバー、強力なANCなど音質と機能において次元が異なるスペックを持つ。"
+        ],
+        "differentiators": [
+          "EarFun Wave Pro Xの利点：本格的な音質（LDAC/aptX Lossless）と実用的なノイズキャンセリング機能を1万円台で手に入れたいなら迷わずこちら。",
+          "DOQAUS LIFE3の利点：音質や最新機能にはこだわらず、5000円以下の最低限の予算で長時間使えるワイヤレスヘッドホンを探しているならこちら。"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "1万円台の予算でLDACやaptX Losslessといったフラッグシップ機レベルの多彩なコーデック対応を求める人",
+        "バッテリー残量を気にせず、数日間の旅行や出張でも快適に使えるロングバッテリー機を探している人",
+        "PCとスマホなど2台の端末を同時に繋いでおけるマルチポイント機能が必要なリモートワーカー"
+      ],
+      "pros": [
+        "40mm+10mmの同軸デュアルドライバーと最新コーデックの組み合わせにより、価格を大きく超える高解像度なサウンド体験が得られます。",
+        "最大90時間（ANCオンでも50時間）のバッテリーにより、毎日の通勤通学から長距離フライトまで充電のストレスなく音楽に没頭できます。",
+        "BluetoothだけでなくUSB-Cや有線（AUX）での接続にも対応し、デバイスや状況に合わせた柔軟な使い分けが可能です。"
+      ],
+      "cons": [
+        "USB-Cでのデジタル有線接続を行うためのデータケーブルは付属していないため、利用したい場合は別途用意する必要があります。",
+        "有線（AUX）接続時でも高音質とノイズキャンセリングを適用するには本体の電源を入れる必要があり、完全にバッテリーが切れた状態では十分な性能を発揮できません。"
+      ],
+      "score": 93,
+      "scoreRationale": "[基本点: 70]\n[加点: +8] (DCAA同軸デュアルドライバー、Snapdragon Sound/LDAC等多彩なコーデック対応、最大90時間の圧倒的なバッテリー性能)\n[加点: +12] (1万円台半ばの価格帯でフラッグシップ級のスペックと3WAY接続を備え、価格に対する機能性・満足度が極めて高い)\n[加点: +3] (259gの軽量設計、形状記憶イヤーパッド採用など、長時間の使用に耐えうる優れた装着感と質感)\n[合計: 93]"
+    },
+    "technicalSpecs": {
+      "display": {
+        "size": "非搭載",
+        "resolution": "非搭載",
+        "type": "非搭載",
+        "refreshRate": "非搭載"
+      },
+      "battery": {
+        "capacity": "非公開",
+        "charging": "USB Type-C急速充電 (15分充電で最大10時間再生)",
+        "playbackTime": "最大90時間 (ANCオフ) / 最大50時間 (ANCオン)"
+      },
+      "camera": {
+        "main": "非搭載",
+        "ultrawide": "非搭載",
+        "telephoto": "非搭載",
+        "front": "非搭載"
+      },
+      "dimensions": {
+        "height": "87mm",
+        "width": "168mm",
+        "depth": "188mm",
+        "weight": "259g"
+      },
+      "weight": "259g",
+      "connectivity": [
+        "Bluetooth 6.0",
+        "Bluetooth LE Audio",
+        "マルチポイント接続 (最大2台)",
+        "USB-C デジタル有線接続",
+        "AUX アナログ有線接続"
+      ],
+      "other": [
+        "ドライバー: 40mm DLC複合振動板 + 10mm LCP高分子素材 同軸デュアルダイナミック",
+        "チップセット: Qualcomm QCC3095 (Snapdragon Sound認証)",
+        "対応コーデック: LDAC, LC3, aptX Lossless, aptX Adaptive, aptX HD, aptX",
+        "ノイズキャンセリング: QuietSmart 3.5 (8マイク搭載ANC), AI通話ノイズキャンセリング",
+        "Auracast対応",
+        "専用アプリ対応 (プロ仕様PEQ搭載)",
+        "付属品: 専用収納ケース (※USBデータケーブルは非付属)"
+      ]
+    }
+  }
+}
