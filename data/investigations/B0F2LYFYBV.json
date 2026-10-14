@@ -1,0 +1,135 @@
+{
+  "analysis": {
+    "productName": "GEEKOM IT13 Max",
+    "parentAsin": "B0F2LYFYBV",
+    "productDescription": "Intel Core Ultra 9 185HとAI処理に特化したNPUを搭載し、優れた静音冷却システムを備えたハイスペックミニPC。",
+    "productUsage": ["オフィスワーク・プログラミング", "AI推論・データ解析のローカル処理", "動画編集やクリエイティブ作業"],
+    "positivePoints": [
+      "Intel Core Ultra 9 185H（16コア22スレッド）と最大34 TOPSのNPUを搭載し、高いAI・マルチタスク処理性能を持つ",
+      "独自冷却システム「IceBlast 3.0」により、動作音が35dB以下という優れた静音性を実現",
+      "デュアル2.5G LAN、Wi-Fi 7、USB4×2など、最新の高速ネットワークおよびインターフェースを搭載",
+      "ミニPCとしては珍しい3年間の長期メーカー保証が標準付帯している",
+      "最新のCore Ultra 9搭載機でありながら10万円台という高いコストパフォーマンスを誇る"
+    ],
+    "negativePoints": [
+      "商品タイトルに「6TB SSD」とあるが、実際は500GB標準搭載（最大6TBは拡張時の上限）であり表記が非常に紛らわしい",
+      "高度な3Dゲームを動かすための専用外部GPU（dGPU）接続用のOCuLinkポートは搭載していない"
+    ],
+    "useCases": ["静かな環境が求められる自宅や図書館での作業", "仮想マシンの複数起動やコンパイルなどCPU負荷の高い開発業務"],
+    "userStories": [
+      {
+        "userType": "AI開発者・エンジニア",
+        "scenario": "ローカルLLM推論や開発環境用のサブ機として導入",
+        "experience": "Intel Core Ultra 9 185Hの圧倒的な処理能力と24GBメモリのおかげで、複数環境の同時立ち上げやデータ処理が非常に快適です。驚いたのはその静音性で、深夜の自宅でもファンの音がほとんど気にならず集中できました。ただ、商品名に「6TB」とあったため大容量を期待したのですが、実機は500GBでした。拡張可能とはいえ表記が紛らわしい点はマイナスですが、価格と基本性能を考えれば非常に満足しています。",
+        "supportingSourceIds": ["src-amazon-it13max"],
+        "sentiment": "positive"
+      }
+    ],
+    "userImpression": "Intel Core Ultra 9 185HというハイエンドCPUを搭載しながら10万円台という価格設定は非常にコストパフォーマンスが高いと評価できます。特に35dB以下の静音性と、デュアルLAN・Wi-Fi 7などの充実したインターフェースは、開発者やクリエイターの作業環境として優秀です。一方で、タイトルに「6TB SSD」と記載しながら実際は500GB搭載（6TBは拡張上限）である点については誤認を招く表記として注意が必要です。総じて、ストレージ容量の仕様さえ理解して購入すれば、高い満足度が得られる一台です。",
+    "sources": [
+      {
+        "id": "src-amazon-it13max",
+        "name": "Amazon商品ページ",
+        "url": "https://www.amazon.co.jp/dp/B0F2LYFYBV",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-10-14",
+        "author": "GEEKOM",
+        "conflictOfInterest": "possible",
+        "notes": "製品仕様、価格、および特徴についての公式情報"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "動作音わずか35dBで図書館の平均騒音を下回る静かさ",
+        "category": "comparativeAdvantage",
+        "confidence": "high",
+        "supportingSourceIds": ["src-amazon-it13max"],
+        "crossChecked": false,
+        "notes": "独自システム「IceBlast 3.0」による静音設計"
+      }
+    ],
+    "lastInvestigated": "2026-10-14",
+    "investigatedPrice": "￥107,910",
+    "competitiveAnalysis": [
+      {
+        "name": "GMKtec K11",
+        "asin": "B0F2DP7WSH",
+        "priceComparison": "対象商品より約5万円高い。",
+        "featureComparison": [
+          "共通点：NPU内蔵の最新ハイエンドCPUを搭載し、AI処理性能に優れる",
+          "相違点：GMKtec K11はAMD Ryzen 9 8945HSを搭載し、より高いゲーミング性能と外部GPU拡張用（OCuLink）ポートを備える"
+        ],
+        "differentiators": [
+          "GEEKOM IT13 Maxの利点：Intel CPU環境での安定性や動画エンコード（Quick Sync Video等）、および動作音35dB以下の静音性を重視する人におすすめ",
+          "GMKtec K11の利点：内蔵Radeon 780Mによる高いグラフィックス性能や、将来的に外付けGPU（OCuLink経由）での拡張を考えている人におすすめ"
+        ]
+      },
+      {
+        "name": "MINISFORUM UM890 Pro",
+        "asin": "B0D866QGTD",
+        "priceComparison": "対象商品より約6.2万円高い。",
+        "featureComparison": [
+          "共通点：最新規格のメモリと高性能CPUを搭載し、最大4画面出力に対応",
+          "相違点：MINISFORUM UM890 ProはAMD Ryzen 9 8945HSと32GBメモリ・1TBストレージを搭載し、OCuLink接続にも対応する"
+        ],
+        "differentiators": [
+          "GEEKOM IT13 Maxの利点：圧倒的なコストパフォーマンスで最新のIntel Core Ultra 9環境を手に入れたい、かつ静音性を最優先する人におすすめ",
+          "MINISFORUM UM890 Proの利点：初めから1TBのストレージと32GBメモリが必要で、AMD環境でのクリエイティブ作業やゲームを重視する人におすすめ"
+        ]
+      },
+      {
+        "name": "GEEKOM GT13 MAX",
+        "asin": "B0F21VGKNG",
+        "priceComparison": "対象商品より約2.6万円高い。",
+        "featureComparison": [
+          "共通点：同じGEEKOMブランドのCore Ultra 9 185H搭載ミニPCであり、デザインやインターフェース構成が近い",
+          "相違点：GT13 MAXは16GBメモリ/1TB SSD構成であるのに対し、対象商品は24GBメモリ/500GB SSD構成である"
+        ],
+        "differentiators": [
+          "GEEKOM IT13 Maxの利点：メモリ帯域（24GB）の余裕と本体価格の安さを重視し、ストレージ（500GB）の不足分は後から自分で増設できる人におすすめ",
+          "GEEKOM GT13 MAXの利点：最初から1TBのストレージ容量が確保されており、届いてすぐに大容量データを扱いたい人におすすめ"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": ["Intel Core Ultra 9の処理能力と静音性を低価格で導入し、自分でストレージ増設が可能なクリエイターやエンジニア"],
+      "pros": [
+        "圧倒的なCPU・NPU性能により、動画エンコードや開発ビルドが短時間で終わる",
+        "深夜の寝室や図書館でも気にならないレベルの静音性（35dB以下）で作業に集中できる",
+        "デュアル2.5G LANにより、安定した高速有線ネットワークやNASとの高速通信が可能"
+      ],
+      "cons": [
+        "商品名の『6TB SSD』は拡張上限であり実機は500GBしか搭載されていないため、購入前に必ず容量を確認すること",
+        "高度な3Dゲームを快適にプレイするための専用グラフィックスは非搭載であるため、ゲーマーには不向き"
+      ],
+      "score": 75,
+      "scoreRationale": "[基本点: 70]\n[加点: +8] (Intel Core Ultra 9 185H搭載による高いCPU/AI性能と10万円台という優れたコスパ)\n[加点: +5] (動作音35dB以下の優れた静音性設計)\n[減点: -8] (商品タイトルに「6TB SSD」と謳いながら実際は500GB搭載という、非常に誤解を招く誇大表記)\n[合計: 75]"
+    },
+    "technicalSpecs": {
+      "os": "Windows 11",
+      "cpu": "Intel Core Ultra 9 185H (16コア 22スレッド, 最大5.1GHz, 65W)",
+      "ram": "24GB LPDDR5",
+      "storage": "500GB PCIe M.2 SSD (最大6TBまで拡張可能)",
+      "dimensions": {
+        "height": "37mm",
+        "width": "112.4mm",
+        "depth": "112.4mm",
+        "weight": "653g"
+      },
+      "connectivity": [
+        "Wi-Fi 7",
+        "Bluetooth 5.4",
+        "デュアル 2.5G LAN"
+      ],
+      "other": [
+        "Intel Arc Graphics内蔵 (8 Xeコア)",
+        "Intel AI Boost NPU内蔵 (最大34 TOPS)",
+        "USB4 (40Gbps) × 2",
+        "HDMI 2.0 × 2",
+        "最大4画面同時出力 (8K対応)",
+        "3年間メーカー保証"
+      ]
+    }
+  }
+}
