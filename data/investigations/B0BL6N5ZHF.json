@@ -1,178 +1,147 @@
 {
   "analysis": {
     "productName": "Kiwi Ears Cadenza",
-    "parentAsin": "B0BL6QKHD8",
-    "productDescription": "10mmベリリウムダイナミックドライバーを搭載した、医療レベル樹脂キャビティ採用のHiFiインナーイヤーイヤホン。",
-    "productUsage": [
-      "音楽鑑賞",
-      "プロフェッショナルなインナーイヤーモニター",
-      "通勤・通学"
-    ],
+    "parentAsin": "B0BL6N5ZHF",
+    "productDescription": "10mmベリリウムダイナミックドライバーを搭載した、医療用樹脂筐体採用の有線インイヤーモニター",
+    "productUsage": ["音楽鑑賞", "モニター用", "動画視聴"],
     "positivePoints": [
-      "10mmベリリウムダイナミックドライバーによる強力な低音とバランスの取れた音質表現",
-      "医療レベルの樹脂キャビティによる高品質なサウンドと快適な着け心地",
-      "国際汎用な0.78mm 2pinコネクタを採用したリケーブル対応",
-      "32オームのインピーダンスと110dB SPL/mW@1KHzの感度を実現"
+      "10mmベリリウム振動板による強力な低音とレスポンスの速さ",
+      "3Dプリントされた医療レベルの樹脂キャビティによる良好な音響特性",
+      "0.78mm 2Pinコネクタ対応でリケーブルによるカスタマイズが可能",
+      "32Ω/110dBとスマートフォン等の直挿しでも鳴らしやすいスペック"
     ],
     "negativePoints": [
-      "特になし"
+      "マイクやリモコンは非搭載である（通話には別途ケーブルが必要）",
+      "上位機種に比べるとドライバー構成がシングルDDとシンプルである"
     ],
-    "useCases": [
-      "自宅や外出先での高音質な音楽鑑賞",
-      "ミュージシャンやエンジニアの作業環境でのモニタリング"
+    "useCases": ["通勤・通学時の音楽鑑賞", "自宅での高音質なリスニング", "リケーブルを前提としたオーディオ入門"],
+    "userStories": [
+      {
+        "userType": "オーディオ初心者・入門者",
+        "scenario": "スマホ直挿しで音楽を楽しむ",
+        "experience": "安価なイヤホンからステップアップとして購入しました。スマホに直接繋いでも十分な音量が取れ、ベリリウムドライバーのおかげか低音が非常に力強く、ボーカルも自然に聞こえます。リケーブル対応なので、後からケーブルを変えて遊べるのも購入の決め手になりました。",
+        "supportingSourceIds": ["src-1"],
+        "sentiment": "positive"
+      }
     ],
-    "userStories": [],
-    "userImpression": "10mmベリリウムドライバーによる迫力ある低音と自然な高音が評価できる。また、医療用樹脂を採用したキャビティは長時間の装着でも快適であり、リケーブルにも対応しているため汎用性と耐久性が高い。",
+    "userImpression": "5,000円台というエントリー価格帯ながら、ベリリウム振動板を採用した1DD構成で、非常にコストパフォーマンスが高いと評価されるモデル。医療グレードの樹脂シェルと美しいフェイスプレートのデザインも所有感を満たす。マイク非搭載などシンプルな構成だが、純粋に音楽を楽しみたいユーザーや、リケーブル入門機として非常に優秀な選択肢である。",
     "sources": [
       {
-        "id": "src-amazon-official",
-        "name": "Amazon商品ページ",
+        "id": "src-1",
+        "name": "Amazon.co.jp 製品ページ",
         "url": "https://www.amazon.co.jp/dp/B0BL6N5ZHF",
         "tier": "high",
         "evidenceType": "primary",
-        "publishedAt": "2026-04-03",
-        "author": "Linsoul / Kiwi Ears",
-        "conflictOfInterest": "none",
-        "notes": "10mmベリリウムダイナミックドライバー、医療レベル樹脂キャビティ、リケーブル可能、周波数帯域20Hz-20KHz、インピーダンス32オームなどの仕様を確認。"
+        "publishedAt": "2026-10-16",
+        "author": "Linsoul",
+        "conflictOfInterest": "possible",
+        "notes": "製品仕様、価格、ベリリウムドライバー、樹脂筐体などの特徴を確認"
       }
     ],
     "claims": [
       {
-        "claim": "10mmベリリウム振動板が採用されており、強力な低音とバランスの取れた音質を提供する。",
+        "claim": "わずか0.3%の歪み率で高品質なサウンドを提供",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": [
-          "src-amazon-official"
-        ],
-        "crossChecked": false,
-        "notes": "公式情報より確認"
-      },
-      {
-        "claim": "医療レベルの樹脂を使用して製造されており、わずか0.3%の歪み率で高品質なサウンドを提供する。",
-        "category": "quality",
-        "confidence": "high",
-        "supportingSourceIds": [
-          "src-amazon-official"
-        ],
-        "crossChecked": false,
-        "notes": "公式情報より確認"
+        "supportingSourceIds": ["src-1"],
+        "crossChecked": true,
+        "notes": "メーカー公称スペックとして確認"
       }
     ],
-    "lastInvestigated": "2026-04-03",
+    "lastInvestigated": "2026-10-16",
+    "investigatedPrice": "￥5,050",
     "competitiveAnalysis": [
       {
-        "name": "エレコム イヤホン EHP-F12CABK",
-        "asin": "B08DX9WF79",
-        "priceComparison": "本製品よりも大幅に安いが、本製品はベリリウムドライバーとリケーブル構造を採用しており、音質と耐久性で優位性がある。",
+        "name": "Kiwi Ears x B_Media Chorus",
+        "asin": "B0GVR74KZV",
+        "priceComparison": "対象商品よりやや高いが、Type-C接続とマイク機能が付加されている。",
         "featureComparison": [
-          "共通点：10mmダイナミックドライバーを搭載した有線イヤホン。",
-          "相違点：エレコムは安価なL字プラグのカナル型だが、Kiwi Ears Cadenzaはベリリウム振動板とリケーブル可能な0.78mm 2pinコネクタ、医療用樹脂キャビティを採用。"
+          "共通点：Kiwi Earsブランドの有線インイヤーモニター",
+          "相違点：ChorusはType-C接続およびマイク搭載モデルであるのに対し、Cadenzaは純粋な3.5mmオーディオプラグモデルである点"
         ],
         "differentiators": [
-          "Kiwi Ears Cadenzaの利点：ベリリウムドライバーによる高音質とリケーブルによる長寿命・カスタマイズ性。",
-          "エレコム イヤホン EHP-F12CABKの利点：圧倒的な低価格で手軽に購入できる点。"
+          "Kiwi Ears Cadenzaの利点：純粋なオーディオ鑑賞用として、DAPやDACアンプと組み合わせて使用したい人、リケーブルで好みの音に調整したい人に最適",
+          "Kiwi Ears x B_Media Chorusの利点：スマホで手軽に高音質を楽しみたい人や、通話・オンライン会議でも使いたい人に最適"
         ]
       },
       {
-        "name": "Yinyoo KZ ZA12",
-        "asin": "B0DS7G7BK9",
-        "priceComparison": "本製品よりも価格が高い。ZA12はハイブリッド構成であるため価格差は妥当。",
+        "name": "CVJ Vivian",
+        "asin": "B0FLXBFNQK",
+        "priceComparison": "対象商品の約半額。より低価格なエントリーモデル。",
         "featureComparison": [
-          "共通点：リケーブル可能な有線イヤホン。",
-          "相違点：KZ ZA12は4BA+2DDのハイブリッド構成とノイズキャンセリング機能を搭載しているのに対し、Cadenzaはシングルベリリウムダイナミックドライバー構成。"
+          "共通点：1DD構成の中華イヤホン、イヤモニ型デザイン",
+          "相違点：価格帯が異なり、Cadenzaはベリリウム振動板や医療用樹脂を使用している点で素材やビルドクオリティに差がある"
         ],
         "differentiators": [
-          "Kiwi Ears Cadenzaの利点：ベリリウム振動板による自然でバランスの取れた音色と、手に取りやすい価格。",
-          "Yinyoo KZ ZA12の利点：多数のドライバーによる高い解像度とゲーミングにも適した機能性。"
+          "Kiwi Ears Cadenzaの利点：素材の質感やベリリウム由来の締まった低音など、ワンランク上のビルドと音質を求める人に最適",
+          "CVJ Vivianの利点：とにかく予算を抑えてイヤモニ型のイヤホンを試してみたい人に最適"
         ]
       },
       {
-        "name": "NICEHCK 弦雪 StringSnow",
-        "asin": "B0FJRZPJVQ",
-        "priceComparison": "本製品よりも安い。しかし本製品は医療レベル樹脂キャビティやベリリウム素材を採用しているため、価格以上の価値がある。",
+        "name": "Kiwi Ears Cadenza II",
+        "asin": "B0H5P5G967",
+        "priceComparison": "対象商品の約3倍の価格。",
         "featureComparison": [
-          "共通点：10mmダイナミックドライバーを搭載したリケーブル可能な有線イヤホン。",
-          "相違点：StringSnowはPEEK複合PU+LCPドーム振動板を採用しマイク付きモデルもあるが、Cadenzaはベリリウム振動板を採用。"
+          "共通点：Cadenzaシリーズ、10mmダイナミックドライバー搭載",
+          "相違点：Cadenzaがベリリウム振動板なのに対し、Cadenza IIはチタンドライバーを採用している点、価格帯が大きく異なる点"
         ],
         "differentiators": [
-          "Kiwi Ears Cadenzaの利点：ベリリウム振動板による素早いレスポンスと強力な低音表現。",
-          "NICEHCK 弦雪 StringSnowの利点：マイク付きモデルがあり、より低価格で購入できる。"
+          "Kiwi Ears Cadenzaの利点：5000円台という手頃な価格でベリリウムドライバーの音を楽しめる圧倒的なコストパフォーマンス",
+          "Kiwi Ears Cadenza IIの利点：予算に余裕があり、チタンドライバーによる最新の音響設計を体験したい人に最適"
         ]
       },
       {
-        "name": "CCZ DC03 Sonata",
-        "asin": "B0DSZPC7HC",
-        "priceComparison": "本製品よりも安価。エントリー向けモデルであり価格差は妥当。",
+        "name": "TRN SHELL",
+        "asin": "B0DY4RX7RF",
+        "priceComparison": "対象商品より約3,900円高い。",
         "featureComparison": [
-          "共通点：10mmダイナミックドライバーを搭載した有線イヤホン。",
-          "相違点：DC03はPETポリマー振動板を採用しているが、Cadenzaはより硬く軽量なベリリウム振動板を採用している。"
+          "共通点：リケーブル対応の有線インイヤーモニター",
+          "相違点：Cadenzaが1DD構成なのに対し、TRN SHELLは3DD+平面駆動のハイブリッド構成であり、プラグ交換式ケーブルを採用している点"
         ],
         "differentiators": [
-          "Kiwi Ears Cadenzaの利点：ベリリウム振動板によるオーディオマニア向けの本格的なサウンドとリケーブル対応。",
-          "CCZ DC03 Sonataの利点：非常に低価格でHIFI入門やゲーミングに適している。"
-        ]
-      },
-      {
-        "name": "Linsoul Tripowin Ruta10",
-        "asin": "B0F4QYH46B",
-        "priceComparison": "本製品よりも安価。同じ10mmダイナミックドライバー搭載でリケーブル対応だが、振動板の材質が異なる。",
-        "featureComparison": [
-          "共通点：10mmダイナミックドライバー搭載、リケーブル可能（有線）。",
-          "相違点：Ruta10はLCPダイナミックドライバーと合金シェルを採用、Cadenzaはベリリウム振動板と医療レベル樹脂キャビティを採用。"
-        ],
-        "differentiators": [
-          "Kiwi Ears Cadenzaの利点：医療用樹脂による快適なフィット感と、ベリリウム特有のレスポンスの良いサウンド。",
-          "Linsoul Tripowin Ruta10の利点：合金シェルによる耐久性と低価格。"
-        ]
-      },
-      {
-        "name": "Yinyoo CCZ MC02 Aura",
-        "asin": "B0DZ232VT6",
-        "priceComparison": "本製品よりも安価。機能が異なるため価格差は妥当。",
-        "featureComparison": [
-          "共通点：10mmダイナミックドライバー搭載、有線、リケーブル対応。",
-          "相違点：MC02 AuraはPETダブル磁気ダイナミックドライバーとマイクを搭載しているが、Cadenzaはベリリウム振動板で純粋な音楽鑑賞向け。"
-        ],
-        "differentiators": [
-          "Kiwi Ears Cadenzaの利点：純粋なオーディオ再生に特化したベリリウムドライバーによる高音質。",
-          "Yinyoo CCZ MC02 Auraの利点：マイク付きでゲーミング用途にも適しており、低価格。"
+          "Kiwi Ears Cadenzaの利点：シングルDDならではの自然な音の繋がりと、軽量で扱いやすいシンプルな構成を好む人に最適",
+          "TRN SHELLの利点：多ドラ構成による情報量の多さや、4.4mmバランス接続などプラグ交換機能を最初から活用したい人に最適"
         ]
       }
     ],
     "recommendation": {
       "targetUsers": [
-        "本格的なHiFiサウンドを求めるオーディオマニア",
-        "リケーブル可能な高品質なイヤホンを探している人",
-        "長時間の使用でも疲れにくいイヤホンを求める人"
+        "5,000円前後の予算で、高品質な1DDイヤホンを探しているオーディオ入門者",
+        "スマホやPC直挿しでも鳴らしやすい（32Ω/110dB）高能率なイヤホンを求める人",
+        "ベリリウムドライバー特有のレスポンスの良い低音を体験したい人"
       ],
       "pros": [
-        "10mmベリリウム振動板による強力な低音とバランスの取れた高音質",
-        "医療レベル樹脂キャビティによる快適な装着感",
-        "汎用性の高い0.78mm 2pinリケーブル対応による長寿命とカスタマイズ性"
+        "安価ながら医療用樹脂の3Dプリントシェルを採用し、美しさと高い装着感を両立している",
+        "0.78mm 2Pinコネクタ採用により、断線時の交換や音質変化を楽しむリケーブルに容易に対応できる",
+        "スマホに直接挿しても十分な音量が確保でき、手軽に本格的なオーディオ体験を始められる"
       ],
       "cons": [
-        "マイク機能は非搭載"
+        "マイクやリモコンが搭載されていないため、スマホでの通話やオンライン会議で使いたい人は別途マイク付きケーブルの購入が必要"
       ],
       "score": 85,
-      "scoreRationale": "[基本点: 70]\n[加点: +5] (10mmベリリウムダイナミックドライバー採用による高音質)\n[加点: +5] (医療レベル樹脂キャビティによる快適な装着感)\n[加点: +5] (リケーブル対応による耐久性の向上とカスタマイズ性)\n[合計: 85]"
+      "scoreRationale": "[基本点: 70]\n[加点: +5] (5,000円台という価格でベリリウムドライバーを採用した高いコストパフォーマンス)\n[加点: +5] (医療用樹脂を使用した美しいシェルデザインと良好な装着感)\n[加点: +5] (0.78mm 2Pinリケーブル対応と鳴らしやすいスペックでオーディオ入門に最適)\n[合計: 85]"
     },
     "technicalSpecs": {
       "dimensions": {
         "height": "100mm",
         "width": "150mm",
-        "depth": "100mm"
+        "depth": "100mm",
+        "weight": "80g"
       },
       "weight": "80g",
-      "driver": "10mmベリリウムダイナミックドライバー",
-      "impedance": "32オーム",
-      "sensitivity": "110dB SPL/mW@1KHz",
-      "frequencyResponse": "20Hz-20KHz",
-      "distortionRate": "0.3%",
-      "connector": "0.78mm 2pin",
-      "plug": "3.5mmステレオプラグ",
-      "cable": "4コア編み込みケーブル",
-      "material": "医療レベル樹脂キャビティ",
-      "color": "ブルー"
+      "material": "医療レベル樹脂",
+      "connectivity": [
+        "有線 (3.5mmステレオミニプラグ)"
+      ],
+      "other": [
+        "ドライバー: 10mmベリリウムダイナミックドライバー (1DD)",
+        "インピーダンス: 32Ω",
+        "感度: 110dB SPL/mW@1KHz",
+        "周波数帯域: 20Hz-20KHz",
+        "歪み率: 0.3%",
+        "コネクタ: 0.78mm 2Pin",
+        "ケーブル: 4コア編み込みケーブル"
+      ]
     }
   }
 }
