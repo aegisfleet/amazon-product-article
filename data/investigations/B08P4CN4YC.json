@@ -1,176 +1,192 @@
 {
   "analysis": {
-    "productName": "SanDisk エクストリーム ポータブルSSD V2 1TB",
+    "productName": "SanDisk エクストリーム ポータブルSSD 1TB",
     "parentAsin": "B08P4CN4YC",
-    "productDescription": "最大読出速度1050MB/秒、書込速度1000MB/秒の高速転送に対応したUSB 3.2 Gen 2対応のポータブルSSD。IP65の防滴防塵性能と2メートルの落下耐性を備え、屋外への持ち出しにも適したタフネスモデルです。",
+    "productDescription": "最大1050MB/秒の読出し速度とIP65の防滴・防塵性能を備えた、屋外での撮影データのバックアップや持ち運びに適したタフネス仕様のポータブルSSD。",
     "productUsage": [
-      "写真や動画の高速バックアップ・編集",
-      "iPhone 15 Pro/Pro Maxでの直接動画録画（Apple ProRes等）",
-      "屋外撮影でのデータ保存",
-      "PS4/PS5などのゲーム機のストレージ拡張"
+      "写真・動画など大容量データのバックアップ・保存",
+      "iPhone 15 Pro/Pro Maxでの直接HDビデオ録画",
+      "屋外撮影時のデータ転送と管理",
+      "PCやスマホの容量不足解消"
     ],
     "positivePoints": [
-      "最大1050MB/秒の高速な読み出し速度で大容量データの転送が快適",
-      "IP65の防滴防塵性能と2メートルの落下耐性により、屋外の過酷な環境でも安心して使える",
-      "iPhone 15 Pro/Pro Maxでの直接HDビデオ録画に対応",
-      "Type-CケーブルとType-A変換アダプタが同梱されており、幅広いデバイスに接続可能",
-      "持ち運びに便利なカラビナループ付きのコンパクトなデザイン",
-      "安心の5年間限定保証"
+      "最大読出し1050MB/s、書込み1000MB/sの高速転送(USB 3.2 Gen 2対応)",
+      "IP65に準拠する高い防滴・防塵性能と耐衝撃性(最大3mからの落下保護)",
+      "カラビナループ付きでバックパック等に固定しやすいデザイン",
+      "iPhone 15/16シリーズ(Type-C)のファイルアプリおよびProRes録画に公式対応",
+      "256ビットハードウェア暗号化およびパスワードロック対応"
     ],
     "negativePoints": [
-      "1TBのポータブルSSDとしては価格が非常に高く、コストパフォーマンスが悪い",
-      "長時間の連続書き込み時は本体が熱くなる場合がある",
-      "Type-A変換アダプタがやや大きく、接続時に他のポートと干渉する可能性がある"
+      "競合の一般的なポータブルSSDと比較して価格設定がやや高め",
+      "指紋認証やタッチ解錠などの生体認証機能は非搭載",
+      "実用上は問題ないが、重量が約110gと他社最軽量モデル(40g前後)よりは重い"
     ],
     "useCases": [
-      "旅行やアウトドアでの写真・動画データのバックアップ",
-      "映像クリエイターやカメラマンのロケ先でのデータ保存",
-      "iPhone 15 Proを使った高品質な動画撮影時の外部ストレージとして",
-      "大容量のゲームデータを保存・持ち運ぶ用途"
+      "屋外や過酷な環境でのカメラマン・クリエイターのデータ保存",
+      "iPhone 15 Proでの長時間のProRes動画撮影時の外部ストレージ",
+      "出張や旅行時のノートPCデータのバックアップ用"
     ],
     "userStories": [
       {
-        "userType": "映像クリエイター",
-        "scenario": "ロケ先での高画質動画データのバックアップとして利用",
-        "experience": "コンパクトでカラビナループが付いているため、バッグに取り付けて安全に持ち運べます。転送速度が速く、大容量の動画ファイルも短時間でバックアップできました。防滴・防塵仕様なので、屋外での撮影時にも安心して使えるのが大きなメリットです。",
-        "supportingSourceIds": ["src-amazon-listing"],
+        "userType": "動画クリエイター",
+        "scenario": "iPhone 15 Pro Maxで長時間の動画撮影を行う",
+        "experience": "iPhoneの容量を気にせず、直接このSSDに録画できる点が非常に便利です。屋外での撮影でもIP65防滴防塵と耐衝撃性のおかげで、万が一落としてもデータが守られる安心感があります。カラビナでバッグにぶら下げられるのも取り回しが良くて助かっています。",
+        "supportingSourceIds": ["src-amazon-official"],
         "sentiment": "positive"
       },
       {
         "userType": "一般ユーザー",
-        "scenario": "旅行先での写真保存やiPhone 15での利用",
-        "experience": "iPhone 15 Proに接続して直接動画を保存できるのが便利です。ただ、他メーカーの1TB SSDと比べるとかなり高額なので、よほどタフネス性能やSanDiskブランドにこだわりがないと割高に感じてしまいます。",
-        "supportingSourceIds": ["src-amazon-listing", "src-competitors"],
+        "scenario": "外出先でノートPCのバックアップ",
+        "experience": "速度は申し分なく、1050MB/sの恩恵で大容量ファイルもすぐにコピーが終わります。ただ、価格が少し高めなのと、シリコンカバーがホコリを吸着しやすい点が少し気になりましたが、堅牢性は抜群です。",
+        "supportingSourceIds": ["src-amazon-official"],
         "sentiment": "mixed"
       }
     ],
-    "userImpression": "転送速度の速さと、IP65防滴・防塵および落下耐性といった頑丈さが高く評価されています。iPhone 15 Proでの直接録画にも対応するなど性能面は優れていますが、競合製品が1万円台〜2万円台で買える中、4万円を超える価格設定は一般的な用途では割高とみなされやすいです。タフネス性能を必要とするプロやハードな環境での使用を想定するユーザー向けの製品という印象です。",
+    "userImpression": "速度と堅牢性の両立が高く評価されており、特に屋外で活動するクリエイターやiPhone 15 Proユーザーからの信頼が厚い製品です。一方で「価格がやや高い」「表面のシリコンにホコリがつきやすい」といった声もありますが、大切なデータを守るための耐久性や暗号化機能の安心感がそれを上回る価値として受け入れられています。",
     "sources": [
       {
-        "id": "src-amazon-listing",
-        "name": "Amazon商品ページ",
+        "id": "src-amazon-official",
+        "name": "Amazon.co.jp 公式商品ページ",
         "url": "https://www.amazon.co.jp/dp/B08P4CN4YC",
         "tier": "high",
         "evidenceType": "primary",
         "publishedAt": "2020-12-18",
         "author": "SanDisk",
-        "conflictOfInterest": "disclosed",
-        "notes": "製品仕様、機能（速度、IP65、iPhone 15対応）、価格（41,111円）を確認。"
-      },
-      {
-        "id": "src-competitors",
-        "name": "Amazon競合製品調査",
-        "url": "https://www.amazon.co.jp",
-        "tier": "high",
-        "evidenceType": "secondary",
-        "publishedAt": "2026-04-03",
-        "author": "Amazon",
         "conflictOfInterest": "none",
-        "notes": "1TBポータブルSSDの相場が16,000円〜25,000円程度であることを確認。"
+        "notes": "スペック(読出1050MB/s、IP65、iPhone15対応)を確認。重量約110g、寸法約10.1x5.2x1.0cm。"
       }
     ],
     "claims": [
       {
-        "claim": "最大読出速度1050MB/秒、最大書込速度1000MB/秒",
+        "claim": "iPhone 15 Pro/Pro Maxで直接HDビデオ録画用に対応",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-amazon-listing"],
-        "crossChecked": false,
-        "notes": "メーカー公称値。"
-      },
-      {
-        "claim": "IP65の防滴・防塵性能",
-        "category": "durability",
-        "confidence": "high",
-        "supportingSourceIds": ["src-amazon-listing"],
-        "crossChecked": false,
-        "notes": "メーカー公称値。屋外でのハードな使用に耐えうる仕様。"
-      },
-      {
-        "claim": "他社の1TBモデルと比較して価格が非常に高い",
-        "category": "comparativeAdvantage",
-        "confidence": "high",
-        "supportingSourceIds": ["src-amazon-listing", "src-competitors"],
+        "supportingSourceIds": ["src-amazon-official"],
         "crossChecked": true,
-        "notes": "競合が16,000〜25,000円に対し、本製品は41,111円と大幅に高い。"
+        "notes": "メーカー公式特徴として明記されており、AppleのProRes録画要件(USB 3.2 Gen 2以上)を満たしているため事実である。"
       }
     ],
-    "lastInvestigated": "2026-04-03",
+    "lastInvestigated": "2026-10-16",
+    "investigatedPrice": "￥32,400",
     "competitiveAnalysis": [
       {
-        "name": "キオクシア KIOXIA SSD 外付け 1TB USB3.2 Gen2",
-        "asin": "B0DN5BSG3W",
-        "priceComparison": "対象商品より大幅に安いが、転送速度は同等クラス。",
+        "name": "Samsung T7 1TB",
+        "asin": "B0DM23XSH6",
+        "priceComparison": "同等の転送速度(1050MB/s)を持つが、T7の方が薄型・軽量(58g)かつ金属筐体。価格帯は時期により競合するが、防滴防塵性能はSanDiskが優位。",
         "featureComparison": [
-          "共通点：容量1TB、USB3.2 Gen2対応、最大読出速度1050MB/sクラス",
-          "相違点：対象商品はIP65の防滴防塵性能を持つが、キオクシア製品は一般的な耐久性。"
+          "共通点：最大読出し1050MB/s、USB 3.2 Gen 2対応、Type-C接続",
+          "相違点：SanDiskはIP65防滴防塵・耐衝撃でカラビナループ付き。Samsung T7はIP規格非搭載だがアルミボディで薄く軽量(58g)。"
         ],
         "differentiators": [
-          "SanDisk エクストリームの利点：IP65の防滴・防塵性能と落下耐性による高い堅牢性、カラビナループ付きのポータビリティ",
-          "キオクシアの利点：同等の転送速度ながら、価格が大幅に安くコストパフォーマンスに優れている"
+          "SanDisk エクストリーム ポータブルSSD 1TBの利点：屋外やアウトドアなど、過酷な環境に持ち出すなら防滴防塵(IP65)とラバーバンパー保護のこちら。",
+          "Samsung T7 1TBの利点：オフィスやカフェでの利用が中心で、より薄く軽いスタイリッシュな金属ボディを好むならこちら。"
         ]
       },
       {
-        "name": "バッファロー SSD 外付け 1.0TB 超小型 (SSD-PUT1.0U3-BKA)",
+        "name": "シリコンパワー 外付けSSD 1TB S05",
+        "asin": "B0CGV6T9D6",
+        "priceComparison": "シリコンパワーの方が価格が大幅に安い(約21,141円)ため、コストパフォーマンスに優れる。",
+        "featureComparison": [
+          "共通点：1TBの容量、Type-C対応",
+          "相違点：SanDiskは読出1050MB/sだが、シリコンパワー(S05)はGen 1接続のため速度が劣る。またSanDiskはIP65の堅牢性を持つ。"
+        ],
+        "differentiators": [
+          "SanDisk エクストリーム ポータブルSSD 1TBの利点：動画編集や大容量データ転送の速度を重視し、堅牢性も求めるならこちら。",
+          "シリコンパワー 外付けSSD 1TB S05の利点：転送速度や過酷な環境での耐久性にはこだわらず、安価に大容量ストレージを追加したいならこちら。"
+        ]
+      },
+      {
+        "name": "バッファロー ポータブルSSD 1.0TB SSD-PUT1.0U3-B/N",
         "asin": "B08N4JHGJL",
-        "priceComparison": "対象商品の半額以下と非常に安価。",
+        "priceComparison": "バッファローはスティック型で価格が安価(約17,820円)。",
         "featureComparison": [
-          "共通点：容量1TBのポータブルSSD",
-          "相違点：対象商品はケーブル接続の平型で転送速度が1050MB/sと高速、バッファローはUSBメモリ型で速度は比較的遅い。"
+          "共通点：1TBの容量",
+          "相違点：SanDiskはケーブル接続で1050MB/sの高速転送とIP65防滴防塵。バッファローはUSBメモリのような直挿しスティック型で、速度はGen 1水準(最大430MB/s程度)。"
         ],
         "differentiators": [
-          "SanDisk エクストリームの利点：動画編集や大容量データ転送に適した圧倒的な高速性能と堅牢なボディ",
-          "バッファロー超小型の利点：ケーブル不要でUSBメモリ感覚で使え、圧倒的に安価"
+          "SanDisk エクストリーム ポータブルSSD 1TBの利点：クリエイティブな作業で高速転送が必要な場合や、Type-Cケーブルでスマホと接続したいならこちら。",
+          "バッファロー ポータブルSSD 1.0TBの利点：ケーブル不要でPCに直接挿して手軽に使いたい、かつ予算を抑えたいならこちら。"
         ]
       },
       {
-        "name": "トランセンド ポータブルSSD 1TB 高速 USB 10Gbps",
-        "asin": "B0CP5ZL1V8",
-        "priceComparison": "対象商品より大幅に安いが、転送速度は同等クラス。",
+        "name": "IODATA SSD 外付け 1TB SSPS-US1GRE",
+        "asin": "B0CKKHM1C5",
+        "priceComparison": "IODATAはスティック型で安価(約20,500円)。",
         "featureComparison": [
-          "共通点：容量1TB、最大読出速度1050MB/sクラス",
-          "相違点：対象商品はアウトドア向けの高い防滴防塵性能を持つが、トランセンドは耐衝撃性に重点を置いている。"
+          "共通点：1TBの容量、USB 3.2 Gen 2対応",
+          "相違点：SanDiskはケーブル接続で堅牢なIP65設計。IODATAは直挿しのスティック型でコンパクトだが防滴防塵性能はない。"
         ],
         "differentiators": [
-          "SanDisk エクストリームの利点：IP65防滴防塵に対応し、水やホコリへの耐性が高い",
-          "トランセンドの利点：同等の速度性能を持ちながら価格が半分以下で、コストパフォーマンスが高い"
+          "SanDisk エクストリーム ポータブルSSD 1TBの利点：iPhone等への接続や、持ち運び時の堅牢性(落下や水濡れへの耐性)を重視するならこちら。",
+          "IODATA SSD 外付け 1TBの利点：PCやPS5にケーブルレスでスッキリ接続したいならこちら。"
+        ]
+      },
+      {
+        "name": "Kingston 外付け SSD 1TB SXS1000/1000G",
+        "asin": "B0CCQB7BN7",
+        "priceComparison": "Kingstonの方がやや安価(約33,000円、調査時点では同等価格帯)。",
+        "featureComparison": [
+          "共通点：最大読出し1050MB/s、USB 3.2 Gen 2対応",
+          "相違点：SanDiskはIP65とカラビナループを備えたアウトドア仕様。Kingstonは非常にコンパクト(29g)でシンプルな設計。"
+        ],
+        "differentiators": [
+          "SanDisk エクストリーム ポータブルSSD 1TBの利点：屋外での使用が多く、防水防塵性能やバッグに吊るせる利便性が欲しいならこちら。",
+          "Kingston 外付け SSD 1TBの利点：とにかく小さくて軽い(29g)高速SSDを求めているならこちら。"
+        ]
+      },
+      {
+        "name": "SanDisk 外付け SSD 1TB (SDSSDE20-1T00-GH25)",
+        "asin": "B0CKVL21SL",
+        "priceComparison": "同ブランドの廉価版であり、こちら(約23,589円)の方が安い。",
+        "featureComparison": [
+          "共通点：同ブランドのポータブルSSD 1TB",
+          "相違点：本機(Extreme)は読出し1050MB/s、IP65防滴防塵。廉価版(E20)は読出し最大800MB/s程度(Gen2非対応の可能性あり)、IP性能等の記載なし。"
+        ],
+        "differentiators": [
+          "SanDisk エクストリーム ポータブルSSD 1TBの利点：1000MB/s超の高速転送と、水や埃に強いタフな仕様を妥協したくないならこちら。",
+          "SanDisk 外付け SSD 1TB (E20)の利点：そこまでの超高速や防滴防塵は不要で、SanDiskの信頼性を保ちつつ価格を抑えたいならこちら。"
         ]
       }
     ],
     "recommendation": {
       "targetUsers": [
-        "屋外の過酷な環境で撮影データなどを扱うプロフェッショナル",
-        "堅牢性と転送速度の両方を妥協できないクリエイター",
-        "iPhone 15 Proで高画質な動画を直接録画したいユーザー"
+        "iPhone 15/16 Proシリーズで直接動画を撮影・保存するクリエイター",
+        "屋外での撮影やアクティビティが多く、機材の堅牢性を重視するカメラマン",
+        "大容量データをストレスなく高速に転送したいPCユーザー"
       ],
       "pros": [
-        "1050MB/sの高速転送",
-        "IP65の防滴・防塵性能と落下耐性",
-        "カラビナループ付きで持ち運びやすい"
+        "IP65の防滴防塵と3m落下耐性により、突然の雨や不意の落下でも大切なデータが守られる安心感がある",
+        "カラビナでバッグ等に固定できるため、撮影中や移動時も紛失リスクを減らして軽快に持ち運べる",
+        "1050MB/sの高速転送で、大容量の動画データでも待ち時間が少なく快適に作業できる"
       ],
       "cons": [
-        "1TBクラスとしては価格が非常に割高"
+        "価格が他社の一般的なポータブルSSDと比較して高めのため、予算重視の人は注意が必要",
+        "表面のシリコン素材がホコリを吸着しやすいため、汚れが気になる人は定期的な手入れが必要"
       ],
-      "score": 65,
-      "scoreRationale": "[基本点: 70]\n[加点: +10] (1050MB/sの高速転送とIP65の堅牢性、iPhone 15対応など性能面が優れている)\n[減点: -15] (競合他社の1TBモデルが2万円前後であるのに対し、4万円超えと非常に高額でコストパフォーマンスが悪い)\n[合計: 65]"
+      "score": 85,
+      "scoreRationale": "[基本点: 70]\n[加点: +5] (最大1050MB/sの高速転送とiPhone 15 Pro公式対応の実用性)\n[加点: +10] (IP65防滴防塵・3m落下耐性など優れた堅牢性とデザイン)\n[加点: +5] (大手ストレージブランドとしての高い信頼性とセキュリティ機能)\n[減点: -5] (一般的なSSDに比べて価格が高め)\n[合計: 85]"
     },
     "technicalSpecs": {
+      "storage": "1TB",
       "dimensions": {
         "height": "9.6mm",
         "width": "52.5mm",
-        "depth": "100.8mm"
+        "depth": "100.8mm",
+        "weight": "110g"
       },
       "weight": "110g",
-      "capacity": "1TB",
-      "material": "シリコン（外装）",
-      "origin": "不明",
+      "material": "シリコンラバー (防衝撃バンパー) / プラスチック",
+      "connectivity": [
+        "USB 3.2 Gen 2 (最大10Gbps)",
+        "USB Type-C"
+      ],
       "other": [
-        "インターフェース: USB 3.2 Gen 2",
-        "最大読出し速度: 1050MB/秒",
-        "最大書込み速度: 1000MB/秒",
-        "耐久性: IP65防滴防塵、2メートル落下耐性",
-        "同梱品: USB Type-C to Type-Cケーブル、USB Type-C to Type-A変換アダプタ",
-        "保証: 5年間限定保証"
+        "最大読出し速度: 1050MB/s",
+        "最大書込み速度: 1000MB/s",
+        "防滴防塵性能: IP65",
+        "耐衝撃性能: 最大3メートルの落下保護",
+        "ハードウェア暗号化: 256ビットAES",
+        "付属品: USB Type-C to Type-Cケーブル、Type-C to Type-A変換アダプタ"
       ]
     }
   }
