@@ -1,0 +1,186 @@
+{
+  "analysis": {
+    "productName": "Sennheiser MOMENTUM True Wireless 4",
+    "parentAsin": "B0FXB25S7P",
+    "productDescription": "ゼンハイザーのフラッグシップ完全ワイヤレスイヤホン。Bluetooth 5.4、aptX Lossless、LE Audio(Auracast)など最新規格にフル対応し、高音質と高機能を実現。",
+    "productUsage": ["音楽鑑賞", "通勤・通学時のノイズキャンセリング", "通話やオンライン会議", "マルチポイントを活用した複数デバイスの同時待受"],
+    "positivePoints": [
+      "Bluetooth 5.4、aptX Lossless、LE Audio(Auracast)など最新のオーディオ規格と高音質コーデックにフル対応",
+      "前モデルからさらに強化された適応型アクティブノイズキャンセリング(ANC)と、より自然な外音取り込み機能",
+      "ケース込みで最大30時間の長時間バッテリー駆動",
+      "マルチポイント接続に対応し、PCやスマホなど複数デバイス間でのシームレスな切り替えが可能"
+    ],
+    "negativePoints": [
+      "価格が26,000円台（参考価格はさらに高額）と、完全ワイヤレスイヤホンとしては高価格帯であること",
+      "ゼンハイザーのフラッグシップ機として本体サイズやケースが比較的大きめであること"
+    ],
+    "useCases": ["ハイレゾ音源を高音質で楽しむ", "騒音の多い環境での集中作業", "外出時の長時間のリスニング"],
+    "userStories": [
+      {
+        "userType": "オーディオ愛好家",
+        "scenario": "通勤中の音楽鑑賞",
+        "experience": "aptX Lossless対応のおかげで、ワイヤレスとは思えない解像度の高い音質を楽しめる。ANCも自然で強力になり、電車の走行音をしっかり抑えつつ、音質への影響が少ないのが素晴らしい。",
+        "supportingSourceIds": ["amazon-jp-B0CTHVX6DK"],
+        "sentiment": "positive"
+      },
+      {
+        "userType": "ビジネスパーソン",
+        "scenario": "在宅ワークでのオンライン会議",
+        "experience": "マルチポイント機能が非常に便利。PCで会議に参加しつつ、スマホの着信にもすぐに出られる。マイク音質もクリアで、相手に声がしっかり届いている。",
+        "supportingSourceIds": ["amazon-jp-B0CTHVX6DK"],
+        "sentiment": "positive"
+      }
+    ],
+    "userImpression": "前モデルの音質を正当進化させつつ、Bluetooth 5.4やLE Audioといった最新規格を盛り込んだ完成度の高いフラッグシップモデル。価格の高さがネックになるものの、それに見合う最高峰の音質と機能性を提供しており、音質に妥協したくないユーザーから高い評価を得ている。",
+    "sources": [
+      {
+        "id": "amazon-jp-B0CTHVX6DK",
+        "name": "Amazon商品ページ",
+        "url": "https://www.amazon.co.jp/dp/B0CTHVX6DK",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2024-03-01",
+        "author": "Sennheiser",
+        "conflictOfInterest": "possible",
+        "notes": "商品の基本仕様、機能（Bluetooth 5.4、ANC、30時間バッテリー、マルチポイント等）、価格を確認"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "aptX Lossless対応によるワイヤレス最高峰の音質",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": ["amazon-jp-B0CTHVX6DK"],
+        "crossChecked": false,
+        "notes": "商品の特長として強調されているが、実際に対応する送信側デバイスが必要。"
+      },
+      {
+        "claim": "最適化された適応型アクティブノイズキャンセリング",
+        "category": "comparativeAdvantage",
+        "confidence": "high",
+        "supportingSourceIds": ["amazon-jp-B0CTHVX6DK"],
+        "crossChecked": false,
+        "notes": "前モデルからANCアルゴリズムが改善されているとの主張。"
+      }
+    ],
+    "lastInvestigated": "2026-10-16",
+    "investigatedPrice": "￥26,220",
+    "competitiveAnalysis": [
+      {
+        "name": "MOMENTUM True Wireless 4 (ホワイトシルバー)",
+        "asin": "B0CTHY1JNJ",
+        "priceComparison": "同一製品のカラーバリエーション。価格に変動がある場合がある。",
+        "featureComparison": [
+          "共通点：基本スペック、音質、ノイズキャンセリング、バッテリーなどの機能は全て同一",
+          "相違点：本体および充電ケースのカラー（ホワイトシルバーかブラックグラファイトか）"
+        ],
+        "differentiators": [
+          "MOMENTUM True Wireless 4 (ブラックグラファイト)の利点：シックで落ち着いたデザインを好む人向け。汚れが目立ちにくい",
+          "MOMENTUM True Wireless 4 (ホワイトシルバー)の利点：明るく洗練されたデザインを好む人向け"
+        ]
+      },
+      {
+        "name": "MOMENTUM True Wireless 3",
+        "asin": "B0FPM432DZ",
+        "priceComparison": "旧モデルのため、価格が安くなっていることが多い（約15,700円）。コストを抑えたい場合は有力な選択肢。",
+        "featureComparison": [
+          "共通点：ゼンハイザーのフラッグシップとしての高音質、aptX Adaptive対応、ANC機能",
+          "相違点：MOMENTUM 4はBluetooth 5.4、LE Audio、Auracastに対応。ANCと外音取り込みも進化している"
+        ],
+        "differentiators": [
+          "MOMENTUM True Wireless 4の利点：最新の通信規格（Bluetooth 5.4/LE Audio）と進化したANC、より高い接続安定性を求める人に最適",
+          "MOMENTUM True Wireless 3の利点：一世代前でも十分な高音質であり、予算を1万円台に抑えてゼンハイザーの音を楽しみたい人に最適"
+        ]
+      },
+      {
+        "name": "ACCENTUM True Wireless",
+        "asin": "B0D17CVCYX",
+        "priceComparison": "約13,300円と、MOMENTUMシリーズより大幅に安いミドルクラスモデル。",
+        "featureComparison": [
+          "共通点：ゼンハイザーの高音質、ノイズキャンセリング、マルチポイント対応",
+          "相違点：MOMENTUM 4は上位のドライバーと高音質コーデック（aptX Lossless）を搭載。ACCENTUMはコンパクトでカジュアルな位置付け"
+        ],
+        "differentiators": [
+          "MOMENTUM True Wireless 4の利点：一切の妥協のない最高峰の音質とANC性能を求める人に最適",
+          "ACCENTUM True Wirelessの利点：ゼンハイザーの音を手軽な価格とコンパクトなサイズで楽しみたい人に最適"
+        ]
+      },
+      {
+        "name": "MOMENTUM True Wireless 5 (エージング音源セット)",
+        "asin": "B0H6W3X1YP",
+        "priceComparison": "次世代機（または上位バリエーション）であり、45,400円と非常に高額。",
+        "featureComparison": [
+          "共通点：ゼンハイザーのフラッグシップとしての高音質、ANC",
+          "相違点：MOMENTUM 5は最大40時間再生、骨伝導ボイスセンサー、バッテリー交換機構を搭載"
+        ],
+        "differentiators": [
+          "MOMENTUM True Wireless 4の利点：フラッグシップとしての十分な性能を持ちながら、次世代機よりは価格が抑えられている",
+          "MOMENTUM True Wireless 5の利点：骨伝導センサーやバッテリー交換機構など、最新かつ最高の機能・長寿命を求める人に最適"
+        ]
+      },
+      {
+        "name": "EarFun Air Pro 4+",
+        "asin": "B0FWCQ7PPS",
+        "priceComparison": "約10,000円で、圧倒的に安いコストパフォーマンスモデル。",
+        "featureComparison": [
+          "共通点：ANC、Bluetooth 6.0(最新規格)対応",
+          "相違点：MOMENTUM 4は音響機器メーカーとしての圧倒的な音質の作り込み。EarFunはスペックの高さに対する価格の安さ"
+        ],
+        "differentiators": [
+          "MOMENTUM True Wireless 4の利点：音楽鑑賞を主目的とし、音質にこだわるオーディオファイルに最適",
+          "EarFun Air Pro 4+の利点：とにかく安く最新規格とANCを体験したい、コスパ重視の人に最適"
+        ]
+      },
+      {
+        "name": "SPORT True Wireless",
+        "asin": "B09WDK7GGJ",
+        "priceComparison": "約9,310円と安価。",
+        "featureComparison": [
+          "共通点：ゼンハイザーの高音質ドライバー",
+          "相違点：SPORTはANC非搭載だが、IP54防塵防滴や耳へのフィット感を重視したスポーツ向け。MOMENTUM 4は日常使いのフラッグシップ"
+        ],
+        "differentiators": [
+          "MOMENTUM True Wireless 4の利点：強力なANCと最高音質で音楽に没入したい人に最適",
+          "SPORT True Wirelessの利点：ランニングやジムなど、激しい運動中に使用する人に最適"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": ["音質に一切の妥協をしたくないオーディオ愛好家", "最新の通信規格（Bluetooth 5.4, LE Audio）を長く使いたい人", "複数のデバイス（PCとスマホなど）をシームレスに切り替えて使いたいビジネスパーソン"],
+      "pros": [
+        "aptX Lossless対応により、ワイヤレスの限界を超えた高解像度サウンドを体験できる",
+        "進化した適応型ANCにより、音楽の音質を損なうことなく周囲の騒音を効果的にカットできる",
+        "Auracast対応など将来を見据えた最新規格を網羅しており、長く第一線で活躍できる"
+      ],
+      "cons": [
+        "価格が2万円台後半と高価なため、予算重視のユーザーは旧モデル(MTW3)や下位モデル(ACCENTUM)を検討すべき",
+        "最新の高音質コーデック(aptX Lossless等)をフルに活かすには対応するスマホが必要なため、iPhoneユーザーは恩恵を一部受けられない"
+      ],
+      "score": 85,
+      "scoreRationale": "[基本点: 70]\n[加点: +8] (Bluetooth 5.4、LE Audio、aptX Losslessなど最新規格へのフル対応と圧倒的な音質)\n[加点: +5] (進化した適応型ANCと自然な外音取り込み機能)\n[加点: +4] (マルチポイント対応による高い利便性)\n[減点: -2] (フラッグシップゆえの高価格)\n[合計: 85]"
+    },
+    "technicalSpecs": {
+      "dimensions": {
+        "height": "34.8mm",
+        "width": "44.6mm",
+        "length": "70.1mm",
+        "weight": "72.4g"
+      },
+      "battery": {
+        "playbackTime": "最大30時間 (ケース込み)",
+        "charging": "USB Type-C / ワイヤレス充電 (Qi)"
+      },
+      "connectivity": [
+        "Bluetooth 5.4",
+        "マルチポイント対応",
+        "LE Audio / Auracast 対応",
+        "SBC / AAC / aptX / aptX Adaptive / aptX Lossless"
+      ],
+      "other": [
+        "適応型アクティブノイズキャンセリング (ANC)",
+        "外音取り込み (トランスペアレンシー) モード",
+        "タッチコントロール対応"
+      ]
+    }
+  }
+}
