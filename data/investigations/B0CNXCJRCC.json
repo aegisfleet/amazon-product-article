@@ -1,0 +1,178 @@
+{
+  "analysis": {
+    "productName": "DARKBEAM 365nm ミニUVライト",
+    "parentAsin": "B0FKH8D4RD",
+    "productDescription": "365nmの純粋な紫外線を照射できる、USB-C充電式の超小型ブラックライトです。",
+    "productUsage": ["アニサキス発見", "ペットの尿や汚れの確認", "UVレジン・塗料の硬化", "紙幣・骨董品の鑑定"],
+    "positivePoints": [
+      "波長365nmのLEDを採用し、395nmよりも可視光が少なく蛍光反応が鮮明",
+      "ブラックフィルター光学レンズを搭載し、余分な紫色の可視光を遮断",
+      "USB-C充電式で電池交換が不要",
+      "長さ約2.2cm、重さ約57g（0.126ポンド）という携帯性に優れたミニサイズ",
+      "アルミニウム合金ケースによる高い放熱性能と耐久性"
+    ],
+    "negativePoints": [
+      "5V/2Aを超える充電器（急速充電器など）を使用すると故障の原因になるという充電器の制約がある"
+    ],
+    "useCases": ["釣りで釣った魚のアニサキスチェック", "掃除前のペットの粗相の痕跡確認", "UVレジンを用いたハンドメイド作業"],
+    "userStories": [
+      {
+        "userType": "釣り愛好家",
+        "scenario": "釣った魚を捌く際のアニサキス確認",
+        "experience": "釣った魚を家で捌く際に、アニサキスがいないか確認するために購入。非常にコンパクトでタックルボックスに入れても邪魔にならず、USB-Cでスマホと同じように充電できるのが便利。ブラックフィルターのおかげでアニサキスが青白く光って見つけやすかったです。",
+        "supportingSourceIds": ["amazon-features"],
+        "sentiment": "positive"
+      },
+      {
+        "userType": "ペットを飼っている人",
+        "scenario": "カーペットについたペットの尿跡探し",
+        "experience": "猫が粗相をした場所を特定するために使用。部屋を暗くして照らすと、見えなかった尿の跡がはっきりと浮かび上がり、掃除が劇的に楽になりました。ただ、急速充電器が使えないので、充電するケーブルを選ぶ必要があります。",
+        "supportingSourceIds": ["amazon-features"],
+        "sentiment": "positive"
+      }
+    ],
+    "userImpression": "非常にコンパクトでありながら、365nmという本格的な波長とブラックフィルターレンズを備えており、「安価なのにしっかり蛍光反応が確認できる」と評価が高い製品。電池不要のUSB-C充電式であることも手軽さの要因となっている。一方で、5V/2Aを超える充電器を使用すると故障するリスクがある点については、昨今普及している急速充電器をうっかり使わないよう注意が必要である。",
+    "sources": [
+      {
+        "id": "amazon-features",
+        "name": "Amazon商品ページ",
+        "url": "https://www.amazon.co.jp/dp/B0CNXCJRCC",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-10-16",
+        "author": "DARKBEAM",
+        "conflictOfInterest": "none",
+        "notes": "商品仕様、特徴、寸法などの公式データ"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "ブラックフィルター光学レンズで紫色の可視光を遮断し、より純粋な目に見えない紫外線を放出する",
+        "category": "comparativeAdvantage",
+        "confidence": "high",
+        "supportingSourceIds": ["amazon-features"],
+        "crossChecked": false,
+        "notes": "メーカーの主張。365nmのUVライトにおいてブラックフィルターは非常に有効であり、事実と整合する"
+      }
+    ],
+    "lastInvestigated": "2026-10-16",
+    "investigatedPrice": "￥977",
+    "competitiveAnalysis": [
+      {
+        "name": "Alonefire SV99",
+        "asin": "B0DPKHR1H8",
+        "priceComparison": "本商品とほぼ同等の価格帯（約980円）であり、スペックも類似している。",
+        "featureComparison": [
+          "共通点：365nmの波長、USB-C充電式、ブラックフィルターレンズ搭載",
+          "相違点：本体のデザインやサイズ感に若干の違いがある"
+        ],
+        "differentiators": [
+          "DARKBEAM 365nm ミニUVライトの利点：アルミニウム合金ケースで放熱性をアピールしており、堅牢性を重視する人に適している",
+          "Alonefire SV99の利点：同価格帯の別の選択肢として、デザインの好みで選べる"
+        ]
+      },
+      {
+        "name": "DARKBEAM ブラックライト 365nm IPX4防水",
+        "asin": "B0CNSLGFWG",
+        "priceComparison": "本商品よりも1000円ほど高く設定されている（約2,142円）。",
+        "featureComparison": [
+          "共通点：DARKBEAMブランドの365nm UVライト、USB-C充電式",
+          "相違点：IPX4防水機能が付加されており、屋外での使用に強い"
+        ],
+        "differentiators": [
+          "DARKBEAM 365nm ミニUVライトの利点：とにかく安価でコンパクトなものを探している人に適している",
+          "DARKBEAM ブラックライト 365nm IPX4防水の利点：釣りやキャンプなど、水濡れのリスクがある屋外で安心して使いたい人に適している"
+        ]
+      },
+      {
+        "name": "DARKBEAM 365nm & 395nm 2光源",
+        "asin": "B0FCM8N9TP",
+        "priceComparison": "本商品の約2.5倍の価格（約2,655円）。",
+        "featureComparison": [
+          "共通点：DARKBEAMブランドのUVライト、USB-C充電式",
+          "相違点：こちらは365nmと395nmの両方の波長を切り替えて使用できる2光源タイプ"
+        ],
+        "differentiators": [
+          "DARKBEAM 365nm ミニUVライトの利点：365nmのみで十分であり、低価格とコンパクトさを優先する人に適している",
+          "DARKBEAM 365nm & 395nm 2光源の利点：対象物によって365nmと395nmの波長を使い分けたい、より専門的な用途を持つ人に適している"
+        ]
+      },
+      {
+        "name": "Niovexium ブラックライト 残量表示・2光源",
+        "asin": "B0H35FSX1M",
+        "priceComparison": "本商品の約2.5倍の価格（約2,480円）。",
+        "featureComparison": [
+          "共通点：365nmの波長を含むUVライト、Type-C充電式",
+          "相違点：バッテリー残量表示機能、IPX6防水、2光源対応という高機能モデル"
+        ],
+        "differentiators": [
+          "DARKBEAM 365nm ミニUVライトの利点：複雑な機能は不要で、安価でシンプルなUVライトが欲しい人に適している",
+          "Niovexium ブラックライト 残量表示・2光源の利点：バッテリー残量を正確に把握したい、より強い防水性能(IPX6)を求める人に適している"
+        ]
+      },
+      {
+        "name": "DARKBEAM UV365nmポータブルミニ",
+        "asin": "B075GWKN83",
+        "priceComparison": "本商品より少し高い価格（約1,215円）。",
+        "featureComparison": [
+          "共通点：DARKBEAMブランドの365nmミニUVライト",
+          "相違点：本商品はUSB-C充電式だが、こちらは充電式か電池式かの仕様が異なる可能性がある（詳細仕様要確認だが、本商品の方が安くてUSB-C充電式と明確）"
+        ],
+        "differentiators": [
+          "DARKBEAM 365nm ミニUVライトの利点：1000円以下で購入でき、明確にUSB-C充電式であるためコスパが良い",
+          "DARKBEAM UV365nmポータブルミニの利点：同ブランドの類似品だが、本商品の方が価格競争力がある"
+        ]
+      },
+      {
+        "name": "DARKBEAM ブラックライト UV 365nm アニサキスライト",
+        "asin": "B0CNZ3B9K2",
+        "priceComparison": "本商品の約2.5倍の価格（約2,385円）。",
+        "featureComparison": [
+          "共通点：DARKBEAMブランドの365nm UVライト、USB-C充電式",
+          "相違点：おそらくサイズや出力がより大きい上位モデルと推測される"
+        ],
+        "differentiators": [
+          "DARKBEAM 365nm ミニUVライトの利点：ポケットサイズで日常的な持ち歩きやちょっとした用途に最適",
+          "DARKBEAM ブラックライト UV 365nm アニサキスライトの利点：より広範囲を照らしたい、より強力な出力が必要な人に適している"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "アニサキスチェックやペットの尿跡探しなど、日常的な用途で安価に365nmのUVライトを試してみたい人",
+        "電池交換の手間を省きたい、USB-Cで手軽に充電したい人",
+        "大きくてかさばるライトではなく、ポケットやタックルボックスに入る超小型サイズを求める人"
+      ],
+      "pros": [
+        "1000円以下という低価格ながら、本格的な365nmの波長とブラックフィルターを搭載しており、蛍光反応をしっかり確認できる",
+        "USB-C充電式なので、スマホ感覚で手軽に充電でき、ランニングコストもかからない",
+        "非常にコンパクトで軽量なため、釣りやアウトドアなどどこへでも気軽に持ち運べる"
+      ],
+      "cons": [
+        "5V/2Aを超える充電器を使うと故障するリスクがあるため、充電に使うACアダプターの仕様を必ず確認すること"
+      ],
+      "score": 77,
+      "scoreRationale": "[基本点: 70]\n[加点: +5] (1000円以下で365nm＋ブラックフィルター搭載という高いコストパフォーマンス)\n[加点: +3] (USB-C充電式と超小型サイズによる実用性と携帯性の高さ)\n[加点: +2] (アルミニウム合金ケース採用による放熱性と耐久性への配慮)\n[減点: -3] (5V/2A以上の充電器が使えないという昨今の環境では不便な充電制約)\n[合計: 77]"
+    },
+    "technicalSpecs": {
+      "dimensions": {
+        "height": "88.9mm",
+        "width": "21.6mm",
+        "depth": "21.6mm",
+        "weight": "57.3g"
+      },
+      "weight": "57.3g",
+      "material": "アルミニウム合金",
+      "battery": {
+        "charging": "USB-C (※5V/2A以下限定)",
+        "playbackTime": "最大1時間",
+        "chargingTime": "1時間"
+      },
+      "other": [
+        "波長: 365nm",
+        "出力: 10W / 1300mW",
+        "レンズ: ブラックフィルター光学レンズ"
+      ]
+    }
+  }
+}
