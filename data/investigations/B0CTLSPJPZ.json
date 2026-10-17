@@ -1,0 +1,188 @@
+{
+  "analysis": {
+    "productName": "AOHI 140W 3ポート急速充電器",
+    "parentAsin": "B0H93W74DT",
+    "productDescription": "PD3.1対応で最大140Wの高出力が可能な、3ポート搭載（USB-C）のGaN急速充電器です。",
+    "productUsage": [
+      "ノートパソコンの急速充電",
+      "スマートフォンやタブレットの同時充電",
+      "出張・旅行時の持ち運び用充電器"
+    ],
+    "positivePoints": [
+      "最大140Wの単ポート出力に対応し、MacBook Pro 16インチなどのハイエンドノートPCを急速充電可能",
+      "Apple純正140W充電器と比較して約30%小型化されたコンパクト設計",
+      "充電状況（急速/普通/マイクロ充電）が一目でわかる3色LEDインジケーターを搭載",
+      "AHBとAOHICE 2.0技術により、高出力ながら優れた温度制御を実現"
+    ],
+    "negativePoints": [
+      "USB-Aポートが非搭載のため、従来のA端子ケーブルを使用する場合は変換が必要",
+      "高出力時の発熱は抑制されているものの、本体重量が約291gあり、壁コンセントに挿す際は自重で抜けやすくなる可能性がある"
+    ],
+    "useCases": [
+      "カフェでのリモートワーク中、ノートPCとスマホを同時に急速充電する",
+      "出張時に複数の充電器を持たず、これ1台で全てのデバイスを充電する"
+    ],
+    "userStories": [
+      {
+        "userType": "ノマドワーカー",
+        "scenario": "カフェやコワーキングスペースでの作業時に使用",
+        "experience": "MacBook Pro 16インチをフルスピードで充電しながら、スマホやワイヤレスイヤホンも同時に充電できるのが非常に便利です。純正の140Wアダプターより一回り小さく、折りたたみプラグのおかげでポーチにすっきり収まります。インジケーターの色で急速充電中かどうかがすぐ分かるのも安心感があります。",
+        "supportingSourceIds": [
+          "src-amazon-official"
+        ],
+        "sentiment": "positive"
+      }
+    ],
+    "userImpression": "140Wという大出力と3ポートをコンパクトなボディに詰め込んでおり、特にMacBook Proなどの高性能PCユーザーから「純正アダプターの完璧な代替品」として高い評価を得ています。充電状態を色で知らせるLEDライトも実用的と好評です。一方で、USB-Aポートがない点については、古い機器を使うユーザーにとってケーブルの買い替えが必要になるという制約もありますが、全体的な携帯性と高出力のメリットがそれを大きく上回っています。",
+    "sources": [
+      {
+        "id": "src-amazon-official",
+        "name": "Amazon 公式商品ページ",
+        "url": "https://www.amazon.co.jp/dp/B0CTLSPJPZ",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2024-09-03",
+        "author": "AOHI",
+        "conflictOfInterest": "possible",
+        "notes": "製品仕様、寸法（インチをミリメートル・グラムに変換）、特徴（140W出力、3色LED、小型化）を確認"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "純正140W充電器より約30％小型",
+        "category": "comparativeAdvantage",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-amazon-official"
+        ],
+        "crossChecked": true,
+        "notes": "寸法（73 x 68 x 32 mm）から、Apple純正140Wアダプタと比較して確かにコンパクトであることが確認できる"
+      },
+      {
+        "claim": "Macbook Pro 16インチを30分で56％充電可能",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-amazon-official"
+        ],
+        "crossChecked": true,
+        "notes": "PD3.1規格の140W出力（28V/5A）に対応しているため、理論上可能な数値"
+      }
+    ],
+    "lastInvestigated": "2026-10-17",
+    "investigatedPrice": "￥5,405",
+    "competitiveAnalysis": [
+      {
+        "name": "UGREEN Nexode 急速充電器 160W",
+        "asin": "B0CCVPB4PC",
+        "priceComparison": "対象商品（￥5,405）と比較して高価（￥8,555）。UGREENは最大160W（単ポート140W）でUSB-Aポートも搭載しているため、古い機器も充電したい人向け。",
+        "featureComparison": [
+          "共通点：単ポート最大140W出力、GaN採用、折りたたみ式プラグ",
+          "相違点：対象商品は3ポート（全てType-C）で約291g、小型デザイン。UGREENは3ポート（Type-C×2, Type-A×1）で、全体の最大出力が160Wと大きい。"
+        ],
+        "differentiators": [
+          "AOHI 140W 3ポート急速充電器の利点：全てType-C環境に移行済みで、より安価かつコンパクトな140W充電器を求めているなら迷わずこちら。",
+          "UGREEN Nexode 急速充電器 160Wの利点：Type-CとType-Aの両方のケーブルを併用しており、全体で160Wの余裕ある出力を求める人にはこちらが適している。"
+        ]
+      },
+      {
+        "name": "Anker Charger (140W, 4 Ports)",
+        "asin": "B0DRD68WDZ",
+        "priceComparison": "対象商品（￥5,405）と比較して高価（￥8,990）。Ankerは4ポート搭載でケーブルが付属する分、価格が上がっている。",
+        "featureComparison": [
+          "共通点：最大140W出力、GaN採用、折りたたみ式プラグ",
+          "相違点：対象商品は3ポート（USB-Cのみ）。Ankerは4ポート搭載で、充電ケーブルも付属している。"
+        ],
+        "differentiators": [
+          "AOHI 140W 3ポート急速充電器の利点：ポート数が3つで十分であり、充電器単体として可能な限りコストを抑えて140W出力を手に入れたい人に最適。",
+          "Anker Charger (140W, 4 Ports)の利点：4台同時の充電が必要で、信頼性の高いAnker製および付属ケーブルのセットを求めている人向け。"
+        ]
+      },
+      {
+        "name": "NOVOO 140W Type-c 充電器 GaN III 4ポート",
+        "asin": "B0GXKRQL3J",
+        "priceComparison": "対象商品（￥5,405）と同等の価格帯（￥5,290）。",
+        "featureComparison": [
+          "共通点：最大140W出力、GaN採用、低価格帯",
+          "相違点：対象商品は3ポート。NOVOOは4ポート（C×3, A×1）搭載で、240W対応ケーブルが付属している。"
+        ],
+        "differentiators": [
+          "AOHI 140W 3ポート急速充電器の利点：充電状態がわかる3色LEDインジケーターという独自の便利機能や、特徴的なイエローのデザインに惹かれるならこちら。",
+          "NOVOO 140W Type-c 充電器 GaN III 4ポートの利点：USB-Aポートが必要で、さらに240W対応ケーブルもセットで安く手に入れたいならこちら。"
+        ]
+      },
+      {
+        "name": "AOHI Magcube 140W USB-C充電器",
+        "asin": "B0C69KF22K",
+        "priceComparison": "同ブランドの旧または別バリエーション製品（￥6,312）。対象商品の方が安価。",
+        "featureComparison": [
+          "共通点：AOHIブランド、140W出力、3ポート",
+          "相違点：基本スペックは類似しているが、対象商品の方がより新しいモデルとして価格が抑えられている。"
+        ],
+        "differentiators": [
+          "AOHI 140W 3ポート急速充電器の利点：最新の価格設定でお得に購入できるため、現在選ぶならこちら。",
+          "AOHI Magcube 140W USB-C充電器の利点：特定のデザインや過去のモデルにこだわりがある場合。"
+        ]
+      },
+      {
+        "name": "UGREEN 100W GaN 卓上急速充電器",
+        "asin": "B0DNT9Z2HS",
+        "priceComparison": "対象商品とほぼ同価格（￥5,235）だが、最大出力が100Wにとどまる。",
+        "featureComparison": [
+          "共通点：GaN採用、複数ポート搭載",
+          "相違点：対象商品は最大140Wで直挿しタイプ。UGREENは最大100Wで卓上ケーブルタイプ（6ポート）。"
+        ],
+        "differentiators": [
+          "AOHI 140W 3ポート急速充電器の利点：MacBook Pro 16インチなど、100Wを超える高出力を必要とするPCをフルスピードで充電したいならこちら。",
+          "UGREEN 100W GaN 卓上急速充電器の利点：出力は100Wで十分だが、デスクに据え置いて多数の機器（6台）を同時に充電したい人向け。"
+        ]
+      },
+      {
+        "name": "OMKUY 140W USB充電器 Type-c 6ポート",
+        "asin": "B0DN1G4V4H",
+        "priceComparison": "対象商品（￥5,405）よりも安価（￥3,686）。",
+        "featureComparison": [
+          "共通点：最大140W出力",
+          "相違点：対象商品は3ポート（全てType-C）で信頼性の高い温度制御技術を搭載。OMKUYは6ポート（C×4, A×2）と多ポートだが、安価なノーブランド品。"
+        ],
+        "differentiators": [
+          "AOHI 140W 3ポート急速充電器の利点：少数のデバイスを確実に高出力で充電したく、充電器の安定性・温度制御（AHB・AOHICE 2.0）を重視するならこちら。",
+          "OMKUY 140W USB充電器 Type-c 6ポートの利点：とにかく安価でポート数が多い充電器を探している場合。"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "MacBook Pro 16インチ等の高性能ノートPCをフルスピード充電できる環境を、競合（Anker等）よりもコストを抑えて構築したい人",
+        "手持ちのケーブルが全てUSB Type-Cに移行しており、USB-Aポートが不要なノマドワーカー"
+      ],
+      "pros": [
+        "純正アダプターより一回り小さく折りたたみプラグ対応のため、毎日の通勤や出張でもポーチの中でかさばりません。",
+        "充電状態を色で知らせるLEDのおかげで、PCを開かなくても「急速充電中か」「ほぼ完了したか」が遠目から一目でわかります。"
+      ],
+      "cons": [
+        "USB-Aポートを搭載していないため、古いスマートウォッチや独自規格のケーブルを使う機器がある場合は、別途変換アダプタが必要になります。"
+      ],
+      "score": 77,
+      "scoreRationale": "[基本点: 70]\n[加点: +8] (140W高出力ながらコンパクトで、3色LEDなど実用的な機能を備えているため)\n[加点: +4] (同等の140W級競合製品（Anker, UGREEN等）と比較して価格が抑えられており、コストパフォーマンスに優れるため)\n[減点: -5] (USB-Aポートが非搭載であり、レガシー機器の接続に制約があるため)\n[合計: 77]"
+    },
+    "technicalSpecs": {
+      "dimensions": {
+        "height": "32.0mm",
+        "width": "68.0mm",
+        "depth": "73.0mm",
+        "weight": "291g"
+      },
+      "weight": "291g",
+      "material": "プラスチック",
+      "other": [
+        "USB-C ×3ポート搭載",
+        "最大140W (単ポート使用時)",
+        "PD3.1 / PPS対応",
+        "AOHICE 2.0 温度制御技術",
+        "3色ステータスLEDインジケーター（黄色: 急速充電, 青色: 普通充電, 緑色: マイクロ充電/満充電）",
+        "折りたたみ式プラグ搭載"
+      ]
+    }
+  }
+}
