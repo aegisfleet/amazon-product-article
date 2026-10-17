@@ -1,0 +1,146 @@
+{
+  "analysis": {
+    "productName": "SwitchBot ボット",
+    "parentAsin": "B0GYNWY6KJ",
+    "productDescription": "既存の壁スイッチや家電のボタンに貼り付けるだけで、スマホや音声で遠隔操作可能にするスマート指ロボットです。",
+    "productUsage": [
+      "壁の照明スイッチの自動化",
+      "給湯器や炊飯器などの家電ボタンの遠隔操作",
+      "インターホンの応答ボタンのスマート化"
+    ],
+    "positivePoints": [
+      "工事不要で、付属の両面テープでスイッチの横に貼り付けるだけで簡単に設置可能",
+      "専用アプリで「押す」「スイッチ」「カスタマイズ」の3つの動作モードを選択でき、多様なボタンに対応",
+      "本体自体にタイマー機能が内蔵されており、スマホ接続が切れても設定時刻に動作可能"
+    ],
+    "negativePoints": [
+      "外出先からの遠隔操作やAlexa等の音声操作を行うには、別売りのSwitchBotハブシリーズが必要",
+      "ボタンの形状や周囲のスペースによっては、物理的に設置・動作できない場合がある"
+    ],
+    "useCases": [
+      "帰宅前に給湯器のボタンを押してお風呂を沸かす",
+      "ベッドの中から音声操作で部屋の電気を消す"
+    ],
+    "userStories": [
+      {
+        "userType": "スマートホーム導入初心者",
+        "scenario": "古い賃貸マンションの壁スイッチをスマート化したい",
+        "experience": "スマート電球に交換できない備え付けの蛍光灯でしたが、この指ロボットをスイッチの横に貼るだけでスマホからオンオフできるようになりました。配線工事なしで手軽にスマートホーム化できたのが最大の決め手です。",
+        "supportingSourceIds": [
+          "src-amazon-official"
+        ],
+        "sentiment": "positive"
+      },
+      {
+        "userType": "共働き家庭",
+        "scenario": "帰宅後すぐにお風呂に入りたい",
+        "experience": "給湯器のパネルに貼り付け、ハブミニと連携させて外出先からお風呂の準備をしています。寒い冬でも帰宅と同時に温かいお風呂に入れるようになり、生活の質が上がりました。",
+        "supportingSourceIds": [
+          "src-amazon-official"
+        ],
+        "sentiment": "positive"
+      }
+    ],
+    "userImpression": "既存のアナログ家電やスイッチを簡単にスマート化できる画期的なアイテムとして高く評価されています。特に賃貸住宅など工事ができない環境での需要が高く、タイマー機能の利便性も好評です。一方で、音声操作や外出先からの操作には別売りのハブが必須である点には注意が必要ですが、それを差し引いても『手軽なスマート化の第一歩』として非常に満足度の高い製品です。",
+    "sources": [
+      {
+        "id": "src-amazon-official",
+        "name": "Amazon 公式商品ページ",
+        "url": "https://www.amazon.co.jp/dp/B07B7NXV4R",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-10-18",
+        "author": "SwitchBot",
+        "conflictOfInterest": "none",
+        "notes": "仕様、機能、サイズ、設置方法に関する公式データ"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "あらゆるスイッチに汎用性を持つ",
+        "category": "comparativeAdvantage",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-amazon-official"
+        ],
+        "crossChecked": true,
+        "notes": "「押す」「スイッチ(引き上げ)」「カスタマイズ」の3モードにより多くの物理スイッチに対応可能"
+      }
+    ],
+    "lastInvestigated": "2026-10-18",
+    "investigatedPrice": "￥3,644",
+    "competitiveAnalysis": [
+      {
+        "name": "SwitchBot ボットCharge",
+        "asin": "B0G4WJC4RW",
+        "priceComparison": "本商品よりやや高価(約4,600円)だが、電池交換不要の充電式モデル",
+        "featureComparison": [
+          "共通点：物理ボタンを押す機能、アプリ連携、別売りハブによる遠隔・音声操作",
+          "相違点：本商品は電池式、Charge版はUSB-C充電式。Charge版は電池切れ時のランニングコストがかからない"
+        ],
+        "differentiators": [
+          "SwitchBot ボットの利点：初期費用を抑えたい人や、充電ケーブルを引くのが面倒な場所に設置したい人向け",
+          "SwitchBot ボットChargeの利点：頻繁に動作させるため電池代が気になる人や、エコな運用を好む人向け"
+        ]
+      },
+      {
+        "name": "Adaprox Fingerbot Plus",
+        "asin": "B09K3JNHHR",
+        "priceComparison": "本商品と同価格帯(約4,000円)",
+        "featureComparison": [
+          "共通点：物理スイッチをスマート化する指ロボット機能",
+          "相違点：SwitchBotはアームが回転して押す方式に対し、Adaproxは垂直に押し込む方式を採用している。対応ハブやエコシステムが異なる"
+        ],
+        "differentiators": [
+          "SwitchBot ボットの利点：他のSwitchBot製品（温度計、スマートロックなど）と連携させ、1つのアプリで管理したい人向け",
+          "Adaprox Fingerbot Plusの利点：スイッチの形状により、垂直に強く押し込む力が必要なケース向け"
+        ]
+      },
+      {
+        "name": "GDT スイッチタイマー",
+        "asin": "B0DRNKGTM8",
+        "priceComparison": "詳細価格不明だが、Wi-Fiやスマホ不要の単体動作モデル",
+        "featureComparison": [
+          "共通点：物理スイッチを自動で押す機能",
+          "相違点：SwitchBotはスマホ設定やハブ連携が可能だが、GDTは本体のみで24時間タイマーを設定する完全オフライン仕様"
+        ],
+        "differentiators": [
+          "SwitchBot ボットの利点：スマホからの操作、音声操作、複雑なスケジュール設定を行いたい人向け",
+          "GDT スイッチタイマーの利点：スマホやWi-Fi環境がない場所で、単純な毎日同じ時間のオンオフだけを行いたい人向け"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "スマート家電非対応の古い家電（給湯器、コーヒーメーカー等）をスマート化したい人",
+        "賃貸住宅で壁スイッチの電気工事ができないが、照明を自動化・音声操作したい人"
+      ],
+      "pros": [
+        "両面テープで貼るだけで、工事や配線不要で今ある家電をすぐにスマートホームの仲間入りさせられます",
+        "本体にタイマーが内蔵されているため、朝の起床時間に合わせて確実にお湯を沸かすなどの自動化が可能です"
+      ],
+      "cons": [
+        "外出先からの操作やAlexa等のスマートスピーカー連携には「SwitchBotハブ」が別途必要になるため、持っていない場合は追加投資が必要です",
+        "特殊な形状のスイッチや、貼り付けスペースがない場所には設置できない場合があるため購入前の確認が必要です"
+      ],
+      "score": 83,
+      "scoreRationale": "[基本点: 70]\n[加点: +8] (既存の非スマート家電・スイッチを工事不要でスマート化できる独自性と利便性)\n[加点: +5] (ハブなしでも本体内蔵タイマーで動作する実用性の高さ)\n[加点: +3] (SwitchBotエコシステムとの連携による拡張性の高さ)\n[減点: -3] (音声操作や遠隔操作に別売りハブが必須である点)\n[合計: 83]"
+    },
+    "technicalSpecs": {
+      "color": "ホワイト",
+      "dimensions": {
+        "height": "24.0mm",
+        "width": "36.5mm",
+        "depth": "42.5mm",
+        "weight": "39g"
+      },
+      "connectivity": [
+        "Bluetooth"
+      ],
+      "other": [
+        "動作モード: 押すモード / スイッチモード / カスタマイズモード",
+        "※別売りのSwitchBotハブが必要な機能: 遠隔操作、音声操作（Alexa, Google Home, Siri, IFTTT対応）"
+      ]
+    }
+  }
+}
