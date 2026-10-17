@@ -1,0 +1,177 @@
+{
+  "analysis": {
+    "productName": "FURYCUBE F75",
+    "parentAsin": "B0GWHSMFJT",
+    "productDescription": "CNC削り出しの重厚なアルミニウム筐体を採用した、75%レイアウトのメカニカルキーボード。",
+    "productUsage": [
+      "プログラミングやタイピング作業",
+      "PCゲームプレイ",
+      "複数デバイス間の切り替え入力"
+    ],
+    "positivePoints": [
+      "重量感のあるCNC削り出しのアルミ筐体",
+      "大容量8000mAhバッテリーによる長時間のワイヤレス駆動",
+      "有線・2.4GHz・Bluetoothの3WAY接続対応",
+      "ガスケットマウントによるしなやかな打鍵感",
+      "ホットスワップとVIAに対応",
+      "日本国内向けのJLA準拠JIS配列"
+    ],
+    "negativePoints": [
+      "本体重量が約1.6kg(3.5ポンド)あり、持ち運びには不向き",
+      "他のプラスチック筐体の同レイアウトモデルと比較して高価格帯"
+    ],
+    "useCases": [
+      "自宅のデスクトップPCでのメインキーボードとして",
+      "ノートPCやタブレットなどを併用する作業デスクでの入力デバイスとして"
+    ],
+    "userStories": [
+      {
+        "userType": "デスクワーカー",
+        "scenario": "複数デバイスを使い分ける自宅デスクでの作業",
+        "experience": "重量があるためタイピング時の安定感が抜群。アルミの質感が高く、デスクに置いたときの満足度が高い。3WAY接続でPCとタブレットを簡単に切り替えられるのが便利。持ち運びには向かないが、据え置き用としては申し分ない。",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "sentiment": "positive"
+      }
+    ],
+    "userImpression": "重厚なアルミ筐体とガスケットマウントによる打鍵感の良さが高く評価されている。8000mAhの大容量バッテリーや3WAY接続など機能面も充実しているが、約1.6kgの重量があるため完全に据え置き用途として割り切る必要がある。価格は高めだが、質感と機能性を求めるユーザーに支持されている。",
+    "sources": [
+      {
+        "id": "src-1",
+        "name": "Amazon商品ページ",
+        "url": "https://www.amazon.co.jp/dp/B0GWHM8NV6",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2024-03-01",
+        "author": "KIBU",
+        "conflictOfInterest": "none",
+        "notes": "商品仕様、特徴、機能、JIS配列などの公式情報"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "ガスケットマウント構造により柔らかくしなやかな打鍵感を実現",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "crossChecked": true,
+        "notes": "最近の高級キーボードのトレンドであるガスケットマウントを採用"
+      }
+    ],
+    "lastInvestigated": "2026-10-17",
+    "investigatedPrice": "￥24,800",
+    "competitiveAnalysis": [
+      {
+        "name": "WOBKEY Rainy75",
+        "asin": "B0GVDPMQW8",
+        "priceComparison": "対象商品よりやや安い。Rainy75もアルミ筐体を採用しており、強力なライバルとなる。",
+        "featureComparison": [
+          "共通点：75%レイアウト、アルミ筐体、3WAY接続対応、ガスケットマウント",
+          "相違点：バッテリー容量（FURYCUBEは8000mAhと大容量）、JIS配列の最適化度合い"
+        ],
+        "differentiators": [
+          "FURYCUBE F75の利点：バッテリー切れを極力減らしたい人や、JLA準拠の使いやすいJIS配列を求めるならこちら。",
+          "WOBKEY Rainy75の利点：コスパを重視しつつ、人気と実績のあるアルミキーボードを試したいケース。"
+        ]
+      },
+      {
+        "name": "Keychron K2 Max",
+        "asin": "B0DVPR9WQC",
+        "priceComparison": "対象商品とほぼ同価格帯。",
+        "featureComparison": [
+          "共通点：75%レイアウト、ワイヤレス接続対応、JIS配列モデルあり",
+          "相違点：筐体の材質（Keychronはアルミフレーム/プラ筐体等が多いのに対しFURYCUBEはフルCNC削り出しアルミ）、FURYCUBEはよりバッテリー容量が大きい"
+        ],
+        "differentiators": [
+          "FURYCUBE F75の利点：フルアルミの重厚感と安定したタイピングを重視するならこちら。",
+          "Keychron K2 Maxの利点：Mac/Winの切り替えのしやすさや、定番ブランドの安心感を求めるケース。"
+        ]
+      },
+      {
+        "name": "KIBU GEAR P75",
+        "asin": "B0GZVDB9BP",
+        "priceComparison": "対象商品の約半額。エントリー向けの価格設定。",
+        "featureComparison": [
+          "共通点：同ブランド（KIBU）、75%レイアウト、3WAY接続、JIS配列対応",
+          "相違点：筐体素材と質感（P75は価格を抑えたモデルであり、FURYCUBEのCNCアルミの重厚感とは異なる）"
+        ],
+        "differentiators": [
+          "FURYCUBE F75の利点：予算に余裕があり、最高クラスの打鍵感とアルミの高級感を求めるならこちら。",
+          "KIBU GEAR P75の利点：手頃な価格で多機能な75%ワイヤレスキーボードが欲しいケース。"
+        ]
+      },
+      {
+        "name": "NuPhy Node75",
+        "asin": "B0HKV7RS3B",
+        "priceComparison": "対象商品よりやや安い。",
+        "featureComparison": [
+          "共通点：75%レイアウト、3WAYワイヤレス接続、ホットスワップ対応",
+          "相違点：デザインとバッテリー容量、筐体素材の違い"
+        ],
+        "differentiators": [
+          "FURYCUBE F75の利点：質実剛健なフルアルミボディと8000mAhの圧倒的バッテリーを重視するなら迷わずこちら。",
+          "NuPhy Node75の利点：NuPhy特有のポップなデザインや、ロープロファイルに近いスマートな取り回しを好むケース。"
+        ]
+      },
+      {
+        "name": "FURYCUBE F75 (ブラック)",
+        "asin": "B0GWHXF575",
+        "priceComparison": "色違いバリエーション。価格は割引状況等で変動。",
+        "featureComparison": [
+          "共通点：基本機能・スペックは全て同じ",
+          "相違点：本体カラー（ブラックかブルーかの違い）"
+        ],
+        "differentiators": [
+          "FURYCUBE F75の利点：デスク環境に合わせてブルーのアクセントが欲しい場合はこちら。",
+          "FURYCUBE F75 (ブラック)の利点：どんなデスクにも合わせやすいシックな黒を求めるケース。"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "据え置きで最高クラスの打鍵感と重厚感を求める人（軽量・持ち運びモデルでは満足できない人）",
+        "頻繁な充電を避けたい、バッテリー持ちを重視するワイヤレス派",
+        "日本語入力に最適化されたJLA準拠の配列を求める人"
+      ],
+      "pros": [
+        "約1.6kgのフルCNCアルミ筐体により、タイピング時のズレや共振が全くない究極の安定感が得られる",
+        "8000mAhの超大容量バッテリー搭載で、こまめな充電ストレスから解放される"
+      ],
+      "cons": [
+        "非常に重いため、外出先への持ち運びやデスク上での頻繁な移動を考えている人は購入前に用途を再検討すること"
+      ],
+      "score": 78,
+      "scoreRationale": "[基本点: 70]\n[加点: +3] (CNCアルミニウム削り出しによる堅牢性と高級感)\n[加点: +3] (8000mAhの大容量バッテリーによる長時間のワイヤレス稼働)\n[加点: +2] (有線・2.4GHz・Bluetoothの3WAY接続とマルチペアリング対応)\n[加点: +2] (ホットスワップおよびVIA対応による高いカスタマイズ性)\n[減点: -2] (約1.6kgの重量により持ち運び用途が制限される点)\n[合計: 78]"
+    },
+    "technicalSpecs": {
+      "dimensions": {
+        "height": "33mm",
+        "width": "137mm",
+        "depth": "320mm",
+        "weight": "1.6kg"
+      },
+      "weight": "1.6kg",
+      "battery": {
+        "capacity": "8000mAh"
+      },
+      "material": "アルミニウム (CNC削り出し)",
+      "connectivity": [
+        "有線 (USB Type-C)",
+        "2.4GHzワイヤレス",
+        "Bluetooth"
+      ],
+      "other": [
+        "75%レイアウト",
+        "JIS配列 (JLA準拠 4.25uスペースバー)",
+        "ガスケットマウント構造",
+        "ホットスワップ対応",
+        "VIA対応",
+        "ARGBバックライト搭載",
+        "HMX「Grape」スイッチ搭載"
+      ]
+    }
+  }
+}
