@@ -1,0 +1,139 @@
+{
+  "analysis": {
+    "productName": "SOFTRIDE EXO フレックス EASE IN",
+    "parentAsin": "B0FPRGWJ3R",
+    "productDescription": "プーマのランニングシューズ。ハンズフリーで着脱可能な「EASE IN」仕様と、高いクッション性を提供する「SOFTRIDE」ミッドソールを搭載しています。",
+    "productUsage": ["ランニング", "ウォーキング", "普段使い"],
+    "positivePoints": [
+      "手を使わずに簡単に脱ぎ履きができるスリッポン（EASE IN）構造",
+      "SOFTRIDEミッドソールによる高いクッション性と柔らかな履き心地",
+      "5,000円を切る手頃な価格設定"
+    ],
+    "negativePoints": [
+      "甲高や幅広の足にはフィットしにくい場合がある（レギュラー幅仕様）",
+      "シューレース（靴紐）による細かなフィット感の調整ができない"
+    ],
+    "useCases": [
+      "近所への軽いウォーキングやジョギング",
+      "荷物で両手が塞がっている時のお出かけ",
+      "脱ぎ履きの頻度が多い日常生活"
+    ],
+    "userStories": [
+      {
+        "userType": "日常的にウォーキングをする人",
+        "scenario": "近所を散歩する際や軽い運動をする時",
+        "experience": "靴紐を結ぶ手間が省け、足を入れるだけですぐに出かけられるのが非常に便利です。クッション性も高く、長時間歩いても疲れにくいです。",
+        "supportingSourceIds": ["src-amazon-page"],
+        "sentiment": "positive"
+      }
+    ],
+    "userImpression": "着脱の手軽さとクッション性の高さを両立しており、日常使いや軽い運動用に重宝される一足。一方で、紐での調節ができないため、足の形によってはホールド感に不安を感じるユーザーもいると想定されます。手軽さとコスパを重視する方からの評価が高い傾向にあります。",
+    "sources": [
+      {
+        "id": "src-amazon-page",
+        "name": "Amazon商品ページ",
+        "url": "https://www.amazon.co.jp/dp/B0FB8XVQBK",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2024-10-18",
+        "author": "Amazon",
+        "conflictOfInterest": "none",
+        "notes": "商品仕様、価格、基本機能（EASE IN仕様など）を確認。"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "手を使わずに足入れが可能（EASE IN）",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": ["src-amazon-page"],
+        "crossChecked": false,
+        "notes": "商品特徴の「クロージャー:スリッポン」と商品名から機能を確認"
+      }
+    ],
+    "lastInvestigated": "2026-10-18",
+    "investigatedPrice": "￥4,693",
+    "competitiveAnalysis": [
+      {
+        "name": "SOFTRIDE エンゾ 5 EASE IN",
+        "asin": "B0F636DCY7",
+        "priceComparison": "対象商品よりも約700円高い",
+        "featureComparison": [
+          "共通点：SOFTRIDEミッドソール搭載、EASE IN（ハンズフリー着脱）仕様",
+          "相違点：本商品はスリッポン型だが、エンゾ5はシューレース（靴紐）とサポートケージを備え、より高いホールド感を持つ"
+        ],
+        "differentiators": [
+          "SOFTRIDE EXO フレックス EASE INの利点：より安価で、靴紐がないため見た目がすっきりしており、純粋なスリッポンの手軽さを求める人に最適",
+          "SOFTRIDE エンゾ 5 EASE INの利点：ハンズフリー着脱の利便性を保ちつつ、シューレースとケージによるしっかりとしたホールド感を求める人向け"
+        ]
+      },
+      {
+        "name": "SOFTRIDE コスミック EASE IN",
+        "asin": "B0FY2R6PN2",
+        "priceComparison": "対象商品と同程度の価格帯",
+        "featureComparison": [
+          "共通点：SOFTRIDEミッドソール搭載、スリッポン（EASE IN）仕様",
+          "相違点：アッパーのデザインや使用素材（合成繊維＋人工皮革）のバランスが異なる"
+        ],
+        "differentiators": [
+          "SOFTRIDE EXO フレックス EASE INの利点：フレックス（柔軟性）を重視したソール設計で、より自然な足の動きをサポートする",
+          "SOFTRIDE コスミック EASE INの利点：アッパーのデザイン性に違いがあり、人工皮革を組み合わせた質感を好む人向け"
+        ]
+      },
+      {
+        "name": "SOFTRIDE フレックス レース EASE IN ワイド ALT",
+        "asin": "B0D5HPKPJR",
+        "priceComparison": "対象商品よりもやや高い（約300円差）",
+        "featureComparison": [
+          "共通点：SOFTRIDEミッドソール搭載、スリッポン仕様",
+          "相違点：本商品はレギュラー幅だが、比較商品は「ワイド」仕様となっている"
+        ],
+        "differentiators": [
+          "SOFTRIDE EXO フレックス EASE INの利点：標準的な足幅で、すっきりとしたシルエットを好む人に適している",
+          "SOFTRIDE フレックス レース EASE IN ワイド ALTの利点：足幅が広い（甲高幅広）人でもゆったりと履けるワイド設計を求める人に最適"
+        ]
+      },
+      {
+        "name": "SOFTRIDE クルーズ EASE IN",
+        "asin": "B0FBRBRVNL",
+        "priceComparison": "対象商品と同価格",
+        "featureComparison": [
+          "共通点：SOFTRIDEミッドソール搭載、スリッポン仕様",
+          "相違点：アッパーのデザインパターンやソール形状の細部が異なる"
+        ],
+        "differentiators": [
+          "SOFTRIDE EXO フレックス EASE INの利点：屈曲性（フレックス）に優れたソール形状で歩きやすさを重視する人向け",
+          "SOFTRIDE クルーズ EASE INの利点：異なるデザインバリエーションとして、好みの見た目で選びたい人向け"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "靴紐を結ぶ手間を省き、ハンズフリーで脱ぎ履きできる手軽なシューズを求める人",
+        "手頃な価格（5,000円以下）で、クッション性の高い有名ブランドの日常用スニーカーを探している人"
+      ],
+      "pros": [
+        "両手が塞がっている時でも足を入れるだけでスムーズに履けるため、日常のちょっとした外出が快適になります",
+        "SOFTRIDEの柔らかなクッションが足への負担を軽減し、長時間歩いても疲れにくいです"
+      ],
+      "cons": [
+        "靴紐によるフィット感の調整ができないスリッポンタイプのため、甲高や足幅が特徴的な方は試着やレビューの確認を推奨します",
+        "レギュラー幅設計のため、幅広の足の方は「ワイド」仕様の別モデル（B0D5HPKPJR等）も検討してください"
+      ],
+      "score": 75,
+      "scoreRationale": "[基本点: 70]\n[加点: +5] (5,000円を切る価格でハンズフリー着脱と高いクッション性を実現しているコスパの良さ)\n[減点: 0] (特に目立った欠点なし)\n[合計: 75]"
+    },
+    "technicalSpecs": {
+      "weight": "不明",
+      "material": "不明",
+      "dimensions": {},
+      "other": [
+        "クロージャー: スリッポン",
+        "つま先のタイプ: ラウンドトゥ",
+        "ヒールタイプ: フラットヒール",
+        "幅: レギュラー丈",
+        "EASE IN機能 (ハンズフリー着脱)"
+      ]
+    }
+  }
+}
