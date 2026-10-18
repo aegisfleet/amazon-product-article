@@ -1,9 +1,14 @@
 {
   "analysis": {
     "productName": "ZDFER マイクロナノバブル シャワーヘッド 7段階水流 手元止水",
-    "parentAsin": "B0HHR5N7XZ",
+    "parentAsin": "B0HMR22812",
     "productDescription": "最大約25億個のマイクロナノバブルと7段階の水流モードを搭載した、手元止水機能付きのシャワーヘッドです。",
-    "productUsage": ["毎日の入浴時の全身洗浄", "洗顔や頭皮の毛穴ケア", "ミスト水流での保湿・肌ケア", "浴室の掃除（高水圧モード）"],
+    "productUsage": [
+      "毎日の入浴時の全身洗浄",
+      "洗顔や頭皮の毛穴ケア",
+      "ミスト水流での保湿・肌ケア",
+      "浴室の掃除（高水圧モード）"
+    ],
     "positivePoints": [
       "最大約25億個の微細気泡（マイクロナノバブル）による毛穴洗浄・保湿機能",
       "用途に合わせて使い分けられる7種類の多彩な水流モード",
@@ -16,20 +21,29 @@
       "参考価格から79%という異常な割引率が設定されており、二重価格表示（定価偽装）の疑いがある",
       "手元止水ボタンは完全止水ではなく「一時止水」用であり、使用後に元栓を閉めないと水漏れや故障の原因となる"
     ],
-    "useCases": ["低水圧の賃貸マンションでシャワーの勢いを改善したい時", "洗顔時に肌への負担を減らすためミスト水流を使いたい時", "ペットのシャンプーや浴室掃除に高水圧モードを使いたい時", "シャンプー中など、目を閉じたまま一時的にお湯を止めたい時"],
+    "useCases": [
+      "低水圧の賃貸マンションでシャワーの勢いを改善したい時",
+      "洗顔時に肌への負担を減らすためミスト水流を使いたい時",
+      "ペットのシャンプーや浴室掃除に高水圧モードを使いたい時",
+      "シャンプー中など、目を閉じたまま一時的にお湯を止めたい時"
+    ],
     "userStories": [
       {
         "userType": "節水・水圧改善を求める世帯",
         "scenario": "賃貸アパートの元々の水圧が弱く、水道代も気になっていたため購入",
         "experience": "ヘッドを交換するだけでシャワーの勢いが見違えるほど強くなりました。特にミストモードは肌当たりが柔らかく、洗顔時に直接顔に当てても痛くありません。4種類のアダプターが付属していたので、古いシャワーホースにも工具なしで簡単に取り付けられました。手元の止水ボタンはシャンプー中にサッと止められて便利ですが、完全に止まるわけではないので最後は必ず蛇口を閉めるようにしています。",
-        "supportingSourceIds": ["src-amazon-listing"],
+        "supportingSourceIds": [
+          "src-amazon-listing"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "コスパ重視で購入したユーザー",
         "scenario": "多機能なシャワーヘッドを安価に試したくて購入",
         "experience": "7種類の水流が切り替えられてこの価格なら実用性は十分です。ただ、商品ページにある『79%OFF』という割引率は明らかに元値が高く設定されており、数万円の高級シャワーヘッド（例：ミラブルやReFa等）と同じような品質・耐久性を期待すると肩透かしを食らうかもしれません。機能自体には嘘はなく、3000円台のシャワーヘッドとしては満足できる性能です。",
-        "supportingSourceIds": ["src-amazon-listing"],
+        "supportingSourceIds": [
+          "src-amazon-listing"
+        ],
         "sentiment": "mixed"
       }
     ],
@@ -52,7 +66,9 @@
         "claim": "従来のシャワーヘッドに比べ最大90%の節水効果を実現",
         "category": "comparativeAdvantage",
         "confidence": "low",
-        "supportingSourceIds": ["src-amazon-listing"],
+        "supportingSourceIds": [
+          "src-amazon-listing"
+        ],
         "crossChecked": false,
         "notes": "メーカーの自称であり、水圧や使用するモードによって節水率は大きく変動するため、常時90%節水されるわけではないことに注意が必要。"
       },
@@ -60,13 +76,15 @@
         "claim": "最大約25億個の微細気泡（マイクロナノバブル）が発生",
         "category": "quality",
         "confidence": "medium",
-        "supportingSourceIds": ["src-amazon-listing"],
+        "supportingSourceIds": [
+          "src-amazon-listing"
+        ],
         "crossChecked": false,
         "notes": "気泡の発生自体は構造上可能と思われるが、第三者機関による計測データや証明書が提示されておらず、数値の正確性は不明。"
       }
     ],
-    "lastInvestigated": "2026-09-18",
-    "investigatedPrice": "￥3,188",
+    "lastInvestigated": "2026-10-18",
+    "investigatedPrice": "価格情報なし",
     "competitiveAnalysis": [
       {
         "name": "OFFO 節水シャワーヘッド",
@@ -130,10 +148,10 @@
     "technicalSpecs": {
       "dimensions": {
         "height": "127mm",
-        "length": "270mm",
+        "depth": "270mm",
         "width": "50mm"
       },
-      "color": "シルバー",
+      "color": "グリーン",
       "material": "プラスチック (推測)",
       "other": [
         "水流モード: 7段階切り替え",
