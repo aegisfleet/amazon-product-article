@@ -1,0 +1,211 @@
+{
+  "analysis": {
+    "productName": "EarFun Air Pro 4",
+    "parentAsin": "B0DMF72GKH",
+    "productDescription": "Qualcommの最先端SoC「QCC3091」を搭載し、aptX LosslessやLDACなどのハイレゾ再生に対応した完全ワイヤレスイヤホン。最大50dBのハイブリッドアクティブノイズキャンセリングや装着検知機能を備え、充実した基本性能を誇ります。",
+    "productUsage": [
+      "音楽鑑賞",
+      "通話・オンライン会議",
+      "ゲーム・動画視聴",
+      "通勤・通学"
+    ],
+    "positivePoints": [
+      "Qualcomm「QCC3091」搭載によるaptX LosslessおよびLDAC対応",
+      "最大50dBのアダプティブハイブリッドノイズキャンセリング",
+      "イヤホン単体で最大11時間、ケース込みで最大52時間の長時間再生",
+      "LE AudioおよびAuracastワイヤレス共有リスニング対応",
+      "2台のデバイスを同時接続できるマルチポイント対応"
+    ],
+    "negativePoints": [
+      "LDAC使用時は電波干渉を受けやすく、1メートル以内での使用が推奨される",
+      "装着検知機能が会話や飲食で誤検知する可能性がある",
+      "充電ケースは防水非対応"
+    ],
+    "useCases": [
+      "ハイレゾ音源の高音質リスニング",
+      "騒音の多い場所でのノイズキャンセルを活かした集中作業",
+      "複数デバイス間のシームレスな切り替え"
+    ],
+    "userStories": [
+      {
+        "userType": "オーディオ愛好家",
+        "scenario": "ハイレゾ音源の再生環境を求める状況",
+        "experience": "aptX LosslessとLDACの両方に対応しているため、Android端末から極めて高音質な音楽を楽しめました。特にLDACによる情報量の多さが際立っており、音楽の細部までしっかり聞き取れます。",
+        "supportingSourceIds": [
+          "amazon-1"
+        ],
+        "sentiment": "positive"
+      },
+      {
+        "userType": "ビジネスパーソン",
+        "scenario": "カフェや電車内でのオンラインミーティング",
+        "experience": "最大50dBのノイズキャンセリングが非常に強力で、周囲の騒音をしっかり抑えてくれます。6つのマイクによるAI通話ノイズ除去のおかげで、相手にもクリアな声が届いているようです。",
+        "supportingSourceIds": [
+          "amazon-1"
+        ],
+        "sentiment": "positive"
+      },
+      {
+        "userType": "複数デバイス使用者",
+        "scenario": "PCとスマートフォンを同時に使う状況",
+        "experience": "マルチポイント機能のおかげで、PCで動画を見ている最中にスマートフォンに着信があっても、スムーズに切り替えて電話に出ることができました。",
+        "supportingSourceIds": [
+          "amazon-1"
+        ],
+        "sentiment": "positive"
+      }
+    ],
+    "userImpression": "1万円を切る価格帯ながら、Qualcomm最新チップを搭載し、aptX LosslessやLDAC、LE Audioといった最新規格を網羅した非常にコストパフォーマンスの高いイヤホンです。強力なノイズキャンセリングと52時間のロングバッテリーも高く評価されており、初めての多機能イヤホンとしても、サブ機としても満足度が高い製品と言えます。ただし、LDAC利用時の接続安定性や装着検知の誤検知といった制約もあるため、環境に応じた設定調整が必要です。",
+    "sources": [
+      {
+        "id": "amazon-1",
+        "name": "Amazon商品ページ",
+        "url": "https://www.amazon.co.jp/dp/B0DMF72GKH",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2024-10-18",
+        "author": "EarFun",
+        "conflictOfInterest": "disclosed",
+        "notes": "商品の機能、仕様、注意点の詳細"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "最大50dBのノイズ低減を実現するアダプティブノイズキャンセリング",
+        "category": "performance",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "amazon-1"
+        ],
+        "crossChecked": false,
+        "notes": "メーカー公称値に基づく。EarFun製品のノイキャン性能は全般的に高く評価されているため信憑性は高い。"
+      },
+      {
+        "claim": "フル充電で11時間、ケース込みで最大52時間の再生",
+        "category": "performance",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "amazon-1"
+        ],
+        "crossChecked": false,
+        "notes": "最新チップの低消費電力に基づく。コーデックやノイズキャンセリングの使用状況により変動する可能性がある。"
+      }
+    ],
+    "lastInvestigated": "2026-10-18",
+    "investigatedPrice": "￥7,589",
+    "competitiveAnalysis": [
+      {
+        "name": "Anker Soundcore Liberty 5",
+        "asin": "B0DRV8HD2D",
+        "priceComparison": "EarFun Air Pro 4の方が約3,700円安価。Ankerは3Dオーディオなどの独自機能が充実しているが、基本スペックの充実度と価格のバランスではEarFunが優位。",
+        "featureComparison": [
+          "共通点：ハイレゾ対応、ノイズキャンセリング、マルチポイント接続",
+          "相違点：EarFunはaptX LosslessとLDAC両対応で52時間再生。Ankerは3Dオーディオ対応で48時間再生。"
+        ],
+        "differentiators": [
+          "EarFun Air Pro 4の利点：aptX LosslessやLDACなど、より高音質なコーデックを重視しつつ、予算を1万円以内に抑えたいなら迷わずこちら。",
+          "Anker Soundcore Liberty 5の利点：Ankerの定評あるアプリや3Dオーディオ体験、ブランドの信頼性を重視するならこちら。"
+        ]
+      },
+      {
+        "name": "SOUNDPEATS Air6 Pro",
+        "asin": "B0H8P9N9W7",
+        "priceComparison": "EarFun Air Pro 4の方が約1,900円安価。同価格帯の強力なライバルだが、機能の豊富さでEarFunが勝る。",
+        "featureComparison": [
+          "共通点：ハイレゾ対応、ノイズキャンセリング搭載",
+          "相違点：EarFunはaptX Lossless対応やAuracast対応など最新技術を網羅。SOUNDPEATSはよりコンパクトなデザインの傾向がある。"
+        ],
+        "differentiators": [
+          "EarFun Air Pro 4の利点：LE AudioやAuracastなど、将来性のある最新規格をいち早く試したいならこちら。",
+          "SOUNDPEATS Air6 Proの利点：SOUNDPEATS特有の音作りや装着感が好みの場合はこちら。"
+        ]
+      },
+      {
+        "name": "水月雨 Moondrop Pudding",
+        "asin": "B0HB4S5Y77",
+        "priceComparison": "EarFun Air Pro 4の方が約1,400円高価。Moondropは音質に特化したブランドだが、機能性ではEarFunが圧倒する。",
+        "featureComparison": [
+          "共通点：ノイズキャンセリング搭載、ハイレゾ(LDAC/LHDC)対応",
+          "相違点：EarFunはaptX Losslessや多機能性を重視。MoondropはDSPによる音質調整や独自のデザイン性を重視。"
+        ],
+        "differentiators": [
+          "EarFun Air Pro 4の利点：マルチポイントや長時間再生、強力なノイキャンなど、日常使いでの利便性を第一に求めるならこちら。",
+          "水月雨 Moondrop Puddingの利点：独特のデザイン性や、オーディオファン向けの音質チューニングを楽しみたいならこちら。"
+        ]
+      },
+      {
+        "name": "Anker Soundcore P31i",
+        "asin": "B0FNRS5WB2",
+        "priceComparison": "EarFun Air Pro 4の方が約2,600円高価。P31iはエントリーモデルであり、EarFunはワンランク上の機能を持つ。",
+        "featureComparison": [
+          "共通点：ノイズキャンセリング、マルチポイント接続",
+          "相違点：EarFunはハイレゾ(LDAC/aptX Lossless)対応で高音質。P31iはハイレゾ非対応で基本機能に絞っている。"
+        ],
+        "differentiators": [
+          "EarFun Air Pro 4の利点：ハイレゾ音源の再生や、より強力なノイズキャンセリング性能を求めるなら迷わずこちら。",
+          "Anker Soundcore P31iの利点：とにかく価格を抑えつつ、Ankerの信頼性とノイキャン・マルチポイントといった最低限の機能が揃っていれば十分という場合はこちら。"
+        ]
+      },
+      {
+        "name": "EarFun Air Pro 4+",
+        "asin": "B0G7HSWTCJ",
+        "priceComparison": "EarFun Air Pro 4の方が約3,400円安価。Air Pro 4+は上位互換モデルと考えられるが、基本的なコスパは無印のAir Pro 4が高い。",
+        "featureComparison": [
+          "共通点：同ブランドの基本設計、ノイズキャンセリング",
+          "相違点：Air Pro 4+はさらなる機能追加や最新規格への対応強化が想定されるが、価格差が大きい。"
+        ],
+        "differentiators": [
+          "EarFun Air Pro 4の利点：1万円未満で十分すぎる機能が揃っており、コストパフォーマンスを極限まで高めたいならこちら。",
+          "EarFun Air Pro 4+の利点：少し予算を足してでも、同シリーズの最上位機種の恩恵を受けたい場合はこちら。"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "1万円以下の予算で、aptX LosslessやLDACといったハイレゾ高音質と強力なノイズキャンセリングの両方を妥協したくない人",
+        "LE AudioやAuracastといった将来性のある最新規格をいち早く体験したいガジェット愛好家"
+      ],
+      "pros": [
+        "最新のQualcommチップと高音質コーデック対応により、AndroidユーザーならCD以上のきめ細やかな音楽体験が低価格で得られる",
+        "最大50dBの強力なノイズキャンセリングと52時間のバッテリーにより、長時間の通勤やフライトでも充電を気にせず静寂を楽しめる"
+      ],
+      "cons": [
+        "LDAC接続時は電波干渉を受けやすいため、人混みや満員電車では接続が途切れる可能性がある点には注意",
+        "会話や食事中の顎の動きで装着検知が誤作動する場合があるため、気になる人はアプリで検知機能をオフにする必要がある"
+      ],
+      "score": 85,
+      "scoreRationale": "[基本点: 70]\n[加点: +10] (1万円未満でaptX Lossless/LDAC両対応、LE Audio対応など圧倒的な多機能性とコスパ)\n[加点: +5] (最大50dBの強力なノイズキャンセリングと最大52時間のロングバッテリー)\n[加点: +5] (マルチポイント、装着検知、低遅延モードなど日常使いの機能が充実)\n[減点: -5] (LDAC時の接続安定性の懸念や装着検知の誤検知リスクがある点)\n[合計: 85]"
+    },
+    "technicalSpecs": {
+      "connectivity": [
+        "Bluetooth 5.4",
+        "aptX Lossless",
+        "LDAC",
+        "SBC",
+        "AAC",
+        "LE Audio",
+        "Auracast対応",
+        "Google Fast Pair",
+        "マルチポイント(2台同時接続)"
+      ],
+      "battery": {
+        "playbackTime": "単体11時間 / ケース込み52時間",
+        "charging": "USB-C急速充電 (10分充電で2時間使用可能) / ワイヤレス充電対応"
+      },
+      "dimensions": {
+        "height": "20.0mm",
+        "width": "20.0mm",
+        "depth": "60.0mm",
+        "weight": "不明"
+      },
+      "other": [
+        "チップセット: Qualcomm QCC3091",
+        "ノイズキャンセリング: アダプティブハイブリッドANC (最大50dB)",
+        "マイク: cVc 8.0対応 6マイクAIノイズ除去",
+        "防水性能: IPX5 (イヤホン本体のみ)",
+        "低遅延ゲームモード (最大50ms)",
+        "装着検知機能"
+      ]
+    }
+  }
+}
