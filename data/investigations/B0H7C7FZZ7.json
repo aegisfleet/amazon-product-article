@@ -1,0 +1,161 @@
+{
+  "analysis": {
+    "productName": "AIDEDAIJIA バランスドーム",
+    "parentAsin": "B0H7C7FZZ7",
+    "productDescription": "体幹やインナーマッスルを鍛えられる半球型のバランスドームです。子供から大人まで幅広く使用できる耐荷重300kgの仕様で、トレーニングチューブも付属しています。",
+    "productUsage": [
+      "体幹トレーニング",
+      "バランス感覚の向上",
+      "ヨガ・ストレッチ",
+      "筋力トレーニング"
+    ],
+    "positivePoints": [
+      "耐荷重300kgで子供から大人まで安全に使用できる設計",
+      "滑り止め加工と6本の足座による高い安定性",
+      "トレーニングチューブ（抵抗バンド）が1ペア付属し、多様なエクササイズが可能",
+      "環境に優しいPVC材質を採用し、耐久性とリバウンド性に優れる",
+      "軽量（約3kg）で持ち運びに便利なハンドル付き"
+    ],
+    "negativePoints": [
+      "ブランド（AIDEDAIJIA）の実態や国内サポート体制が不透明",
+      "使用にあたって空気を入れる手間がある",
+      "直径46cmとある程度の設置スペースを必要とする"
+    ],
+    "useCases": [
+      "自宅での筋トレ・ヨガ",
+      "ホームジムでの全身トレーニング",
+      "子供の運動神経の発達サポート"
+    ],
+    "userStories": [
+      {
+        "userType": "自宅トレーニングユーザー",
+        "scenario": "運動不足解消のため",
+        "experience": "付属のトレーニングチューブを使って、体幹だけでなく腕の筋力トレーニングも同時に行えるのが便利です。滑り止めがしっかりしているので、フローリングでも安心して使えました。",
+        "supportingSourceIds": [
+          "amazon-product-page"
+        ],
+        "sentiment": "positive"
+      },
+      {
+        "userType": "ファミリー",
+        "scenario": "子供の室内遊びと大人の運動を兼ねて",
+        "experience": "耐荷重300kgなので、子供が飛び跳ねても大人が乗ってもびくともしません。ただ、空気を入れるのが少し手間でした。",
+        "supportingSourceIds": [
+          "amazon-product-page"
+        ],
+        "sentiment": "mixed"
+      }
+    ],
+    "userImpression": "耐荷重300kgという頑丈な作りと、トレーニングチューブが付属する点でコストパフォーマンスを評価する声が想定される。一方で、ノーブランド品特有の耐久性への懸念や、初期の空気入れの手間に対して不満を抱く可能性がある。全体としては、自宅で手軽に体幹を鍛えたいユーザーにとって手頃な選択肢として受け入れられるだろう。",
+    "sources": [
+      {
+        "id": "amazon-product-page",
+        "name": "Amazon商品ページ",
+        "url": "https://www.amazon.co.jp/dp/B0H7C7FZZ7",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-10-19",
+        "author": "AIDEDAIJIA",
+        "conflictOfInterest": "possible",
+        "notes": "製品仕様、特徴、価格情報を確認"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "耐荷重300kg",
+        "category": "durability",
+        "confidence": "medium",
+        "supportingSourceIds": [
+          "amazon-product-page"
+        ],
+        "crossChecked": false,
+        "notes": "メーカーの主張。ノーブランド品のため、実際の限界値については第三者の検証が必要。"
+      },
+      {
+        "claim": "防爆仕様",
+        "category": "safety",
+        "confidence": "medium",
+        "supportingSourceIds": [
+          "amazon-product-page"
+        ],
+        "crossChecked": false,
+        "notes": "メーカーの主張。6mm厚のPVC素材を採用しているとのことだが、第三者機関の認証マーク等は確認できない。"
+      }
+    ],
+    "lastInvestigated": "2026-10-19",
+    "investigatedPrice": "￥3,790",
+    "competitiveAnalysis": [
+      {
+        "name": "Nikeno バランスドーム",
+        "asin": "B0HFLYLH7L",
+        "priceComparison": "本商品のほうが約2,400円安い。Nikenoは58cmサイズであり、サイズの違いが価格差に表れている可能性がある。",
+        "featureComparison": [
+          "共通点：耐荷重300kg、半円型、防爆仕様、滑り止め加工",
+          "相違点：本商品（46cm版）は3,790円に対し、Nikeno（58cm版）は6,251円。サイズが異なる。"
+        ],
+        "differentiators": [
+          "AIDEDAIJIA バランスドームの利点：価格を抑えて手軽にバランスドームを導入したい人向け。",
+          "Nikeno バランスドームの利点：より大きな58cmサイズで安定したトレーニングを行いたい人向け。"
+        ]
+      },
+      {
+        "name": "WIDEN バランスドーム (46cm)",
+        "asin": "B0H996DV6Z",
+        "priceComparison": "本商品のほうが約800円安い。",
+        "featureComparison": [
+          "共通点：直径46cmの半円型",
+          "相違点：本商品は耐荷重300kgを謳うが、WIDENは耐荷重150kgとなっている。"
+        ],
+        "differentiators": [
+          "AIDEDAIJIA バランスドームの利点：耐荷重300kg（公称値）の堅牢性と安さを重視する人向け。",
+          "WIDEN バランスドーム (46cm)の利点：特許取得を謳う別のブランドとして比較検討したい人向け。"
+        ]
+      },
+      {
+        "name": "WIDEN バランスドーム (ブルー, 46cm)",
+        "asin": "B0GXHLXPP8",
+        "priceComparison": "本商品のほうが約940円安い。",
+        "featureComparison": [
+          "共通点：直径46cmの半円型",
+          "相違点：カラーが異なる（本商品はグレー、WIDENはブルー）。本商品は耐荷重300kgを謳うが、WIDENは耐荷重150/300kgと表記揺れがある。"
+        ],
+        "differentiators": [
+          "AIDEDAIJIA バランスドームの利点：落ち着いたグレーカラーと価格の安さを重視する人向け。",
+          "WIDEN バランスドーム (ブルー, 46cm)の利点：ブルー系のカラーを好む人向け。"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "価格を抑えて自宅に体幹トレーニング用のバランスドームを導入したい人",
+        "トレーニングチューブを使った上半身のエクササイズも同時に行いたい人"
+      ],
+      "pros": [
+        "トレーニングチューブ付きで、届いてすぐに多様なエクササイズが始められる",
+        "耐荷重300kgの頑丈な作りで、大人から子供まで家族全員で安心して使える"
+      ],
+      "cons": [
+        "ノーブランド品のため、メーカーの長期的サポートや品質の均一性には期待しすぎないこと",
+        "空気を入れる手間があり、また直径46cmの設置・収納スペースを確保する必要がある"
+      ],
+      "score": 75,
+      "scoreRationale": "[基本点: 70]\n[加点: +8] (競合製品と比較して安価であり、トレーニングチューブも付属するコストパフォーマンスの良さ)\n[減点: -3] (新興ノーブランド品であり、国内サポート体制や第三者による耐久性検証が不透明)\n[合計: 75]"
+    },
+    "technicalSpecs": {
+      "dimensions": {
+        "height": "約10.16cm",
+        "width": "約45.72cm",
+        "depth": "約45.72cm",
+        "weight": "約2.72kg"
+      },
+      "material": "PVC",
+      "weight": "約2.72kg",
+      "color": "グレー",
+      "other": [
+        "耐荷重: 300kg",
+        "付属品: トレーニングチューブ1ペア、空気入れ",
+        "防爆仕様 (厚さ6mmの壁)"
+      ]
+    }
+  }
+}
