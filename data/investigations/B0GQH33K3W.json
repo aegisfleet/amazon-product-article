@@ -1,130 +1,195 @@
 {
   "analysis": {
-    "productName": "Type-C HDMI 変換アダプタ 2in1 (100W PD対応)",
-    "parentAsin": "B0HGBQJ9N4",
-    "productDescription": "最大4K@60Hzの映像出力と100WのUSB PD急速充電を同時に行える2in1タイプのType-C to HDMI変換アダプタ。",
+    "productName": "Gudluky Type-C to HDMI 変換アダプタ",
+    "parentAsin": "B0HM2S5TQX",
+    "productDescription": "4K/60Hzの高画質出力とPD 100W急速充電に同時対応する2in1 USB-C HDMI変換アダプタ。プラグ＆プレイで簡単に設定でき、幅広いデバイスに対応します。",
     "productUsage": [
       "スマートフォンやPCの画面をテレビ・モニターに出力",
-      "映像出力しながらデバイスを急速充電"
+      "映像出力しながらデバイスをPD急速充電"
     ],
     "positivePoints": [
-      "4K@60Hzの高解像度出力に対応している",
-      "最大100WのUSB PD急速充電ポートを搭載し、映像出力中のバッテリー切れを防げる",
-      "ケーブル長が約8.7cmと短く、コンパクトで持ち運びに適している"
+      "4K/60Hzの滑らかな高画質出力に対応",
+      "最大100WのPD急速充電をサポートし、映像出力中のバッテリー切れを防ぐ",
+      "太径の100%銅芯ケーブルと放熱性に優れた一体成型筐体を採用",
+      "ドライバー不要のプラグアンドプレイ対応"
     ],
     "negativePoints": [
-      "DP Altモード非対応のデバイスでは映像出力ができない",
-      "「2026新型」という未来の年号を用いた不自然な商品名である"
+      "USB-C機器側がDisplayPort Altモードに対応している必要がある（非対応機種では動作しない）",
+      "HDMIポートは出力専用で、カーナビ等には非対応"
     ],
     "useCases": [
-      "出張先のホテルでスマホの動画を大画面テレビで視聴する",
-      "ノートPCからプロジェクターへプレゼン資料を投影しながら充電する"
+      "旅行先での動画鑑賞",
+      "ビジネスでのプレゼンテーション",
+      "自宅での映画鑑賞やゲームプレイ"
     ],
     "userStories": [
       {
         "userType": "ビジネスパーソン",
-        "scenario": "出張先でのプレゼンとホテルでの動画視聴",
-        "experience": "ノートPCをプロジェクターに繋いでプレゼンをする際、バッテリー残量を気にせずに済む100W充電対応が非常に助かりました。また、ケーブル部分が約8.7cmと短く、ガジェットポーチに入れてもかさばりません。",
+        "scenario": "出張先でのプレゼン時",
+        "experience": "ノートPCの画面をプロジェクターに出力するために使用。PD 100W対応の充電ポートが付いているおかげで、長時間のミーティングでもPCのバッテリーを心配することなくプレゼンに集中できました。",
         "supportingSourceIds": [
-          "amazon-official"
+          "amazon-features"
         ],
         "sentiment": "positive"
       },
       {
-        "userType": "一般ユーザー",
-        "scenario": "スマホのゲームをテレビに映す",
-        "experience": "スマホの画面をミラーリングしながら充電できるので、長時間のゲームプレイや動画視聴でもバッテリー切れの心配がありません。ただ、お使いのスマホがDP Altモードに対応しているか事前に確認する必要があります。",
+        "userType": "スマートフォンユーザー",
+        "scenario": "自宅での映画鑑賞",
+        "experience": "スマホで撮った動画や映画をリビングのテレビに映し出すために購入。面倒な設定なしでケーブルを繋ぐだけで4K/60Hzの綺麗な映像が楽しめました。ただ、DP Altモード非対応の古いスマホでは使えなかったので事前の確認は必須です。",
         "supportingSourceIds": [
-          "amazon-official"
+          "amazon-features"
         ],
-        "sentiment": "positive"
+        "sentiment": "mixed"
       }
     ],
-    "userImpression": "4K@60Hzの映像出力と100WのPD急速充電という、変換アダプタに求められる実用的なスペックをしっかりと備えており、持ち運びに便利なコンパクトな設計が評価できます。一方で、商品名に「2026新型」という誇張表現がある点や、DP Altモード非対応の端末では使用できないため、購入前の適合確認が必須となる点には注意が必要です。",
+    "userImpression": "映像出力とPD充電を同時に行える利便性が高く評価されています。4K/60Hzの滑らかな出力と、設定不要の手軽さが強みです。一方で、DP Altモード非対応の端末では動作しないため、購入前の対応機種確認が必須である点に注意が必要です。",
     "sources": [
       {
-        "id": "amazon-official",
-        "name": "Amazon公式商品ページ",
+        "id": "amazon-features",
+        "name": "Amazon商品ページ",
         "url": "https://www.amazon.co.jp/dp/B0GQH33K3W",
         "tier": "high",
         "evidenceType": "primary",
-        "publishedAt": "2026-08-26",
+        "publishedAt": "2026-10-19",
         "author": "Gudluky",
         "conflictOfInterest": "possible",
-        "notes": "商品の仕様（4K@60Hz対応、PD100W充電、ケーブル長8.7cm、重量約30g）を確認。"
+        "notes": "4K/60Hz対応、PD 100W対応、DP Altモード必須などの仕様を確認"
       }
     ],
     "claims": [
       {
-        "claim": "遅延なし",
+        "claim": "100%銅製の太芯ケーブルを採用し、安定かつ高速なデータ伝送を実現",
         "category": "quality",
         "confidence": "medium",
         "supportingSourceIds": [
-          "amazon-official"
+          "amazon-features"
         ],
         "crossChecked": false,
-        "notes": "有線接続であるため基本的に遅延は少ないと考えられるが、ゲーム用途等の厳密なゼロ遅延を保証するものではない。"
+        "notes": "メーカー主張。内部構造のため物理的な確認は困難だが、信号の安定性向上に寄与する一般的な仕様。"
+      },
+      {
+        "claim": "内部に高性能チップを搭載し、最適な出力設定を自動で調整",
+        "category": "durability",
+        "confidence": "medium",
+        "supportingSourceIds": [
+          "amazon-features"
+        ],
+        "crossChecked": false,
+        "notes": "メーカー主張。画面のチラつきやブラックアウトを防ぐとしている。"
       }
     ],
-    "lastInvestigated": "2026-08-26",
-    "investigatedPrice": "￥1,797",
+    "lastInvestigated": "2026-10-19",
+    "investigatedPrice": "￥2,499",
     "competitiveAnalysis": [
       {
-        "name": "Fierymoto Type-C HDMI 変換アダプター",
-        "asin": "B0GQRXQM55",
-        "priceComparison": "本商品よりも1,000円近く安価でありながら、4K@60Hzおよび100W PD充電に対応している。",
+        "name": "UGREEN USB Type C HDMI 変換ケーブル 4K@60Hz 100W PD急速充電",
+        "asin": "B0DL5JC6HP",
+        "priceComparison": "対象商品の方がやや高いが、機能面ではほぼ同等。UGREENは知名度が高いブランド。",
         "featureComparison": [
-          "共通点：4K@60Hz出力対応、100W PD充電対応、2in1設計",
-          "相違点：ブランドと価格設定。"
+          "共通点：4K/60Hz対応、100W PD充電対応の2in1仕様",
+          "相違点：UGREENはブランドの知名度と実績があるが、本商品は独自の一体成型筐体や放熱性をアピールしている。"
         ],
         "differentiators": [
-          "Type-C HDMI 変換アダプタ 2in1 (100W PD対応)の利点：ホワイトカラーで周辺機器の色を統一したい場合に適している。",
-          "Fierymoto Type-C HDMI 変換アダプターの利点：同等スペックの変換アダプタをできるだけ安価に導入したい場合はこちら。"
+          "Gudluky Type-C to HDMI 変換アダプタの利点：一体成型筐体による放熱性を重視する人",
+          "UGREEN変換ケーブルの利点：有名ブランドの信頼性とコストパフォーマンスを重視する人"
         ]
       },
       {
-        "name": "Moxuyo 2in1 Type-C HDMI変換 アダプタ",
-        "asin": "B0H4V9WSBD",
-        "priceComparison": "本商品よりやや安価に設定されている。",
+        "name": "エレコム USB Type-C HDMI 変換アダプタ 4K/60Hz 100W PD対応",
+        "asin": "B0F5VFKMK7",
+        "priceComparison": "エレコム製の方が価格が高い。日本国内メーカーの安心感を求める層向け。",
         "featureComparison": [
-          "共通点：4K@60Hz出力対応、100W PD充電対応、2in1設計",
-          "相違点：ブランド名が異なるが、スペック上の大きな違いは見られない。"
+          "共通点：4K/60Hz出力、100W PD充電対応",
+          "相違点：エレコムは国内メーカーによるサポートが期待できるが、価格は本商品より割高。"
         ],
         "differentiators": [
-          "Type-C HDMI 変換アダプタ 2in1 (100W PD対応)の利点：特定のデザインやブランドにこだわりがある場合。",
-          "Moxuyo 2in1 Type-C HDMI変換 アダプタの利点：ほぼ同じ機能を持ちながら、少しでも安く購入したい場合はこちら。"
+          "Gudluky Type-C to HDMI 変換アダプタの利点：コストを抑えつつ同等のスペックを求める人",
+          "エレコム変換アダプタの利点：国内メーカーの充実したサポートと長期的な安心感を重視する人"
+        ]
+      },
+      {
+        "name": "Acer USB Type C HDMI アダプタ [3-in-1]",
+        "asin": "B0D6FR2PL4",
+        "priceComparison": "Acer製の方が安く、さらにUSB 3.0ポートを備えた3-in-1仕様でコストパフォーマンスに優れる。",
+        "featureComparison": [
+          "共通点：4K対応、PD 100W充電対応",
+          "相違点：Acer製品はUSB 3.0ポートが追加された3-in-1仕様。"
+        ],
+        "differentiators": [
+          "Gudluky Type-C to HDMI 変換アダプタの利点：よりシンプルな2-in-1構造を求める人",
+          "Acer USB Type C HDMI アダプタの利点：USBメモリなども同時に接続したい人、PC周辺機器メーカーの製品を安価に導入したい人"
+        ]
+      },
+      {
+        "name": "GADEBAO USB C Type C HDMI 変換アダプター 2in1",
+        "asin": "B0DTTBZ6KJ",
+        "priceComparison": "GADEBAO製の方が安価。",
+        "featureComparison": [
+          "共通点：4K/60Hz対応、100W PD充電対応",
+          "相違点：基本的な仕様は酷似しているが、価格差がある。"
+        ],
+        "differentiators": [
+          "Gudluky Type-C to HDMI 変換アダプタの利点：一体成型のTPE素材による耐久性に魅力を感じる人",
+          "GADEBAO変換アダプターの利点：初期費用を少しでも抑えたい人"
+        ]
+      },
+      {
+        "name": "Gnolnuhc USB Type-C HDMI 変換 アダプター",
+        "asin": "B0GQSCVFWP",
+        "priceComparison": "Gnolnuhc製の方が1,000円程度安い。",
+        "featureComparison": [
+          "共通点：4K/60Hz対応、100W PD充電対応",
+          "相違点：仕様に大きな差はないが、Gnolnuhcの方が安価な価格設定。"
+        ],
+        "differentiators": [
+          "Gudluky Type-C to HDMI 変換アダプタの利点：放熱性やケーブルの太さなど、物理的な耐久性を重視する人",
+          "Gnolnuhc変換アダプターの利点：とにかく安く2-in-1の機能を手に入れたい人"
+        ]
+      },
+      {
+        "name": "Tuwejia USB Type c HDMI アダプタ",
+        "asin": "B07G44M4S3",
+        "priceComparison": "Tuwejia製の方が1,000円程度安い。",
+        "featureComparison": [
+          "共通点：映像出力とPD充電に対応",
+          "相違点：TuwejiaはUSB-Aポートを備えた3-in-1タイプ。"
+        ],
+        "differentiators": [
+          "Gudluky Type-C to HDMI 変換アダプタの利点：2-in-1でコンパクトさを重視する人",
+          "Tuwejia変換アダプターの利点：USB-A機器も同時に接続したい人"
         ]
       }
     ],
     "recommendation": {
       "targetUsers": [
-        "映像出力中のバッテリー消費が気になるノートPCやタブレットユーザー",
-        "出張や旅行用にコンパクトな映像出力アダプタを探している人"
+        "長時間の動画鑑賞やプレゼンで、デバイスのバッテリー残量を気にせず高画質(4K/60Hz)で出力したい人",
+        "有名メーカー製品（エレコム等）よりコストを抑えつつ、堅牢な造り（一体成型・太径ケーブル）を求める人"
       ],
       "pros": [
-        "100WのPD急速充電に対応しているため、給電しながらの長時間の映像出力でもバッテリー切れの心配がない",
-        "約8.7cmの短いケーブル設計で、ポーチに入れてもかさばらずスマートに持ち運べる"
+        "PD 100W給電ポートを備えているため、スマホやPCを充電しながら長時間の映画鑑賞やゲームが楽しめます。",
+        "設定やアプリは一切不要で、挿すだけで手軽に大画面に映像を映し出せます。"
       ],
       "cons": [
-        "接続するデバイスのType-Cポートが「DisplayPort Alternate Mode」に対応していないと映像が出力されないため、事前確認が必須である",
-        "Amazon内でのみ販売されているノーブランド品に近く、サポート体制に不安が残る"
+        "お使いのデバイスが「DisplayPort Altモード」に対応していないと映像が出力されません。購入前に必ず端末の仕様を確認してください。",
+        "HDMIポートは出力専用のため、カーナビなどからの入力には対応していません。"
       ],
-      "score": 72,
-      "scoreRationale": "[基本点: 70]\n[加点: +5] (4K@60Hzと100W PD充電に両対応する実用性の高さ)\n[減点: -3] (「2026新型」という未来の年号を使った不自然な商品名や誇張表現による信頼性の低下)\n[合計: 72]"
+      "score": 73,
+      "scoreRationale": "[基本点: 70]\n[加点: +5] (4K/60Hz対応とPD100W充電を両立する実用性の高さ)\n[加点: +3] (設定不要で手軽に使える利便性)\n[減点: -5] (競合（UGREENやAcer等）と比較して価格がやや高めであり、新興ブランドとしての価格競争力に課題)\n[合計: 73]"
     },
     "technicalSpecs": {
       "dimensions": {
         "weight": "30g"
       },
       "connectivity": [
-        "USB Type-C (入力)",
-        "HDMI (出力: 最大4K@60Hz)",
-        "USB Type-C (給電用: PD 100W対応)"
+        "USB Type-C (オス: デバイス接続用)",
+        "HDMI (メス: 映像出力用, 最大4K/60Hz)",
+        "USB Type-C (メス: PD充電用, 最大100W)"
       ],
-      "material": "TPE",
+      "material": "TPE素材 (ケーブル部)",
       "other": [
-        "ケーブル長: 約8.7cm",
-        "※DisplayPort Alternate Mode対応デバイスのみ映像出力可能"
+        "DisplayPort Alternate Mode対応必須",
+        "ケーブル長: 8.7cm",
+        "Thunderbolt 3/4 互換"
       ]
     }
   }
