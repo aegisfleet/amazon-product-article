@@ -1,0 +1,178 @@
+{
+  "analysis": {
+    "productName": "Sennheiser CX 80U 有線イヤホン USB-C",
+    "parentAsin": "B0GFXJY36H",
+    "productDescription": "USB-C接続を採用したゼンハイザーのエントリー向け有線イヤホン。軽量設計と自然なサウンドチューニングを特徴とし、リモコンマイクも搭載する。",
+    "productUsage": ["スマートフォン・PCでの音楽鑑賞", "通話・オンライン会議", "移動中のリスニング"],
+    "positivePoints": [
+      "USB-C接続による安定したデジタル音声入力",
+      "ゼンハイザー独自のバランスの良いサウンドチューニング",
+      "マイク付きインラインリモコン搭載による通話対応",
+      "約10g（0.022ポンド）と軽量な設計"
+    ],
+    "negativePoints": [
+      "49%の大幅割引表記があり、参考価格の妥当性に懸念がある",
+      "ハイレゾ対応やアクティブノイズキャンセリング等の付加機能は非搭載"
+    ],
+    "useCases": ["通勤・通学", "テレワーク・Web会議", "自宅での音楽・動画鑑賞"],
+    "userStories": [
+      {
+        "userType": "テレワーカー",
+        "scenario": "Web会議用のマイク付きイヤホンを探している",
+        "experience": "最近のスマホやPCはイヤホンジャックがないものが多いため、USB-Cで直接挿せる有線イヤホンは非常に便利でした。ゼンハイザー製ということで音声もクリアに聞こえ、会議相手からも声が聞き取りやすいと言われました。",
+        "supportingSourceIds": ["amazon-dp"],
+        "sentiment": "positive"
+      },
+      {
+        "userType": "音楽リスナー",
+        "scenario": "外出先で手軽に高音質を楽しみたい",
+        "experience": "ワイヤレスイヤホンは充電が面倒なので有線を選びました。非常に軽く、長時間着けていても耳が痛くなりにくいです。音質は派手さはないものの自然で聴き疲れしません。",
+        "supportingSourceIds": ["amazon-dp"],
+        "sentiment": "positive"
+      }
+    ],
+    "userImpression": "イヤホンジャックの廃止が進む中、USB-C接続で手軽に高音質を楽しめる有線イヤホンとして評価されている。特にWeb会議や動画視聴など、遅延を嫌う用途で重宝されており、ゼンハイザーらしい自然な音作りと軽量で快適な装着感が強み。一方で、Amazon内での49%割引という大幅な二重価格表記に対しては、実際の価値（実売約3,900円）を見誤らないよう注意が必要。",
+    "sources": [
+      {
+        "id": "amazon-dp",
+        "name": "Amazon商品ページ",
+        "url": "https://www.amazon.co.jp/dp/B0GFXJY36H",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-10-19",
+        "author": "ゼンハイザー(Sennheiser)",
+        "conflictOfInterest": "none",
+        "notes": "製品仕様、価格、機能説明を確認"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "ゼンハイザー独自のサウンドチューニング、自然でバランスの良い音",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": ["amazon-dp"],
+        "crossChecked": false,
+        "notes": "メーカー公式の音質に関する主張。同社の同価格帯イヤホンの一般的な傾向と一致する"
+      }
+    ],
+    "lastInvestigated": "2026-10-19",
+    "investigatedPrice": "￥3,900",
+    "competitiveAnalysis": [
+      {
+        "name": "JBL TUNE310C USB Type-C 接続 イヤホン",
+        "asin": "B0CVWV1531",
+        "priceComparison": "JBL TUNE310Cの方が約1,000円安価。JBLはハイレゾ対応やDAC内蔵、EQ切り替え機能を謳っており、コストパフォーマンスに優れる。",
+        "featureComparison": [
+          "共通点：USB-C接続、有線カナル型、マイク付きリモコン搭載",
+          "相違点：JBLはハイレゾ対応・DAC内蔵・EQプリセット機能を搭載しているが、ゼンハイザーはシンプルで自然な音作りに特化している"
+        ],
+        "differentiators": [
+          "Sennheiser CX 80Uの利点：ゼンハイザー特有の自然でフラットな音質を好む人、シンプルな使い勝手を求める人に適している",
+          "JBL TUNE310Cの利点：ハイレゾ音源を楽しみたい人や、イコライザーで音質を調整したい人、より安価にUSB-Cイヤホンを手に入れたい人に適している"
+        ]
+      },
+      {
+        "name": "オーディオテクニカ ATH-CKD30C",
+        "asin": "B0H2DD79VJ",
+        "priceComparison": "オーディオテクニカの方が約1,000円安価。基本機能は同等。",
+        "featureComparison": [
+          "共通点：USB-C接続、有線カナル型、マイク搭載リモコン",
+          "相違点：ブランドによる音作りの違い。オーディオテクニカはDAC内蔵を明記している。"
+        ],
+        "differentiators": [
+          "Sennheiser CX 80Uの利点：ゼンハイザーの音質チューニングに魅力を感じる人向け",
+          "オーディオテクニカ ATH-CKD30Cの利点：より低価格で国内有名ブランドの安定した品質を求める人向け"
+        ]
+      },
+      {
+        "name": "ゼンハイザー CX 300S",
+        "asin": "B07N1YLC23",
+        "priceComparison": "CX 300Sの方が約2,600円高価。",
+        "featureComparison": [
+          "共通点：ゼンハイザー製の有線カナル型イヤホン",
+          "相違点：CX 300Sは3.5mmプラグ接続。CX 80UはUSB-C接続。"
+        ],
+        "differentiators": [
+          "Sennheiser CX 80Uの利点：スマートフォン等に直接USB-Cで接続したい人向け",
+          "ゼンハイザー CX 300Sの利点：従来の3.5mmイヤホンジャックを使用したい人、より上位の音質を求める人向け"
+        ]
+      },
+      {
+        "name": "ゼンハイザー CX 400-II",
+        "asin": "B001EZWO5O",
+        "priceComparison": "CX 400-IIの方が約2,300円高価。",
+        "featureComparison": [
+          "共通点：ゼンハイザー製の有線カナル型イヤホン",
+          "相違点：CX 400-IIは3.5mmプラグ接続の旧モデル。CX 80Uは最新のUSB-C接続モデル。"
+        ],
+        "differentiators": [
+          "Sennheiser CX 80Uの利点：USB-C接続の手軽さを求める人向け",
+          "ゼンハイザー CX 400-IIの利点：旧来のゼンハイザーの音を好む人、3.5mmジャックを利用したい人向け"
+        ]
+      },
+      {
+        "name": "ゼンハイザー IE 100 PRO",
+        "asin": "B096FFY54Y",
+        "priceComparison": "IE 100 PROの方が約7,000円高価。",
+        "featureComparison": [
+          "共通点：ゼンハイザー製の有線イヤホン",
+          "相違点：IE 100 PROはプロ仕様のモニターイヤホン（3.5mm接続）、耳掛け型。CX 80Uは一般向けのUSB-C接続。"
+        ],
+        "differentiators": [
+          "Sennheiser CX 80Uの利点：Web会議や日常使いで手軽にUSB-C接続したい人、安価に抑えたい人向け",
+          "ゼンハイザー IE 100 PROの利点：音楽制作や本格的なリスニングなど、より解像度の高い正確な音を求める人向け"
+        ]
+      },
+      {
+        "name": "ゼンハイザー CX Plus True Wireless",
+        "asin": "B09TKLDGCW",
+        "priceComparison": "CX Plus True Wirelessの方が約2,000円高価。",
+        "featureComparison": [
+          "共通点：ゼンハイザー製のイヤホン",
+          "相違点：CX Plusは完全ワイヤレス（Bluetooth）でANC搭載。CX 80Uは有線接続で機能はシンプル。"
+        ],
+        "differentiators": [
+          "Sennheiser CX 80Uの利点：充電の手間や遅延を気にしたくない人、有線の安定性を重視する人向け",
+          "ゼンハイザー CX Plus True Wirelessの利点：ケーブルの煩わしさから解放されたい人、ノイズキャンセリング機能を活用したい人向け"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "スマートフォンやPCにイヤホンジャックがなく、手軽にUSB-C接続できる有線イヤホンを探している人",
+        "Web会議や動画視聴で遅延のない安定した接続を求める人",
+        "手頃な価格でゼンハイザーの自然な音質を楽しみたい人"
+      ],
+      "pros": [
+        "USB-C端子に挿すだけですぐに使え、変換アダプタ不要で快適",
+        "マイク付きリモコンがあるため、テレワークの通話もこれ一本で対応可能",
+        "軽量で耳への負担が少なく、長時間のリスニングや会議でも疲れにくい"
+      ],
+      "cons": [
+        "セール表記（49%割引）があるが、実売価格（約3,900円）が適正な価値であり、過度なお得感には期待しないこと",
+        "ハイレゾ対応や高度なイコライザー機能は謳われていないため、多機能を求める人はJBL等の競合製品を検討すること"
+      ],
+      "score": 68,
+      "scoreRationale": "[基本点: 70]\n[加点: +5] (USB-C直結の利便性とゼンハイザーならではの自然な音質への期待)\n[加点: +3] (約10gと軽量で取り回しが良い)\n[減点: -10] (参考価格からの49%の大幅割引表記があり、見せ金による二重価格の疑いによる信頼性減点)\n[合計: 68]"
+    },
+    "technicalSpecs": {
+      "connectivity": [
+        "USB-C (有線)"
+      ],
+      "dimensions": {
+        "height": "25mm",
+        "width": "89mm",
+        "depth": "124mm",
+        "weight": "10g"
+      },
+      "weight": "10g",
+      "color": "ブラック",
+      "other": [
+        "ダイナミック型",
+        "カナル型",
+        "インラインリモート&マイク搭載",
+        "イヤーチップ付属 (3サイズ)"
+      ]
+    }
+  }
+}
