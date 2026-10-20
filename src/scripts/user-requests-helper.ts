@@ -188,12 +188,10 @@ async function executeGasWithRetry<T>(
   maxRetries = DEFAULT_GAS_MAX_RETRIES,
   baseDelayMs = DEFAULT_GAS_RETRY_DELAY_MS,
 ): Promise<T> {
-  let lastError: unknown;
-  for (let attempt = 1; attempt <= maxRetries + 1; attempt++) {
+  const attemptOperation = async (attempt: number): Promise<T> => {
     try {
       return await operation();
     } catch (error) {
-      lastError = error;
       if (attempt <= maxRetries && isRetryableGasError(error)) {
         const delayMs = baseDelayMs * 2 ** (attempt - 1);
         const errMsg = error instanceof Error ? error.message : String(error);
@@ -201,12 +199,13 @@ async function executeGasWithRetry<T>(
           `[${operationName}] GAS API request failed (attempt ${attempt}/${maxRetries + 1}): ${errMsg}. Retrying in ${delayMs / 1000}s...`,
         );
         await new Promise((resolve) => setTimeout(resolve, delayMs));
-        continue;
+        return attemptOperation(attempt + 1);
       }
       throw error;
     }
-  }
-  throw lastError;
+  };
+
+  return attemptOperation(1);
 }
 
 /**

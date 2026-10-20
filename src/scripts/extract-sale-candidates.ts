@@ -316,10 +316,10 @@ function parseCandidateFromEntry(
   const product = entry.data;
   if (!product.price || product.price.amount <= 0) return null;
 
-  let article = articleScoreMap.get(asin.toUpperCase()) || articleScoreMap.get(asin);
-  if (!article) {
-    article = loadInvestigationMetadata(asin, investigationsDir);
-  }
+  const article =
+    articleScoreMap.get(asin.toUpperCase()) ??
+    articleScoreMap.get(asin) ??
+    loadInvestigationMetadata(asin, investigationsDir);
   const dealBadge = product.dealBadge && product.dealBadge.trim() !== '' ? product.dealBadge.trim() : undefined;
 
   if (!isCandidateEligible(product, article, dealBadge)) {

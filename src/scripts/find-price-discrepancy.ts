@@ -109,8 +109,9 @@ async function getInvestigatedAsinMap(investigationsDir: string): Promise<Map<st
   const jsonFiles = files.filter((file) => file.endsWith('.json') && file !== 'latest-summary.json');
   const chunkSize = 50;
 
-  for (let i = 0; i < jsonFiles.length; i += chunkSize) {
-    const chunk = jsonFiles.slice(i, i + chunkSize);
+  const processBatch = async (startIndex: number): Promise<void> => {
+    if (startIndex >= jsonFiles.length) return;
+    const chunk = jsonFiles.slice(startIndex, startIndex + chunkSize);
     await Promise.all(
       chunk.map(async (file) => {
         const asin = path.basename(file, '.json').toUpperCase();
@@ -126,7 +127,10 @@ async function getInvestigatedAsinMap(investigationsDir: string): Promise<Map<st
         }
       }),
     );
-  }
+    return processBatch(startIndex + chunkSize);
+  };
+
+  await processBatch(0);
 
   return result;
 }

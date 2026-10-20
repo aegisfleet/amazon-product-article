@@ -119,18 +119,22 @@ async function loadArticleMetaMap(articlesDir: string): Promise<Map<string, Arti
   if (!fs.existsSync(articlesDir)) return articleMetaMap;
 
   const articleFiles = await fs.promises.readdir(articlesDir);
-  for (const file of articleFiles) {
-    if (!file.endsWith('.md') || file === '_index.md') continue;
-    try {
-      const content = await fs.promises.readFile(path.join(articlesDir, file), 'utf-8');
-      const { asin, meta } = parseArticleMeta(content);
-      if (asin && meta) {
-        articleMetaMap.set(asin, meta);
+  const targetFiles = articleFiles.filter((file) => file.endsWith('.md') && file !== '_index.md');
+
+  await Promise.all(
+    targetFiles.map(async (file) => {
+      try {
+        const content = await fs.promises.readFile(path.join(articlesDir, file), 'utf-8');
+        const { asin, meta } = parseArticleMeta(content);
+        if (asin && meta) {
+          articleMetaMap.set(asin, meta);
+        }
+      } catch {
+        // ignore read error
       }
-    } catch {
-      // ignore read error
-    }
-  }
+    }),
+  );
+
   return articleMetaMap;
 }
 
