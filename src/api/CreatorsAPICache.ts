@@ -165,48 +165,56 @@ export class CreatorsAPICache {
     return this.cache;
   }
 
+  private static loadEntriesFromFile(filePath: string, store: CacheStore): void {
+    try {
+      const raw = fs.readFileSync(filePath, 'utf-8');
+      const parsed = JSON.parse(raw) as Record<string, unknown>;
+      for (const [key, entry] of Object.entries(parsed)) {
+        if (entry && typeof entry === 'object') {
+          store[key] = CreatorsAPICache.normalizeCacheEntry(entry as Partial<CacheEntry>);
+        }
+      }
+    } catch {
+      // ignore error on individual corrupt shard to stay resilient
+    }
+  }
+
+  private static loadFromShards(shardsDir: string): CacheStore {
+    const store: CacheStore = {};
+    const files = fs.readdirSync(shardsDir).filter((f) => f.endsWith('.json'));
+    for (const file of files) {
+      CreatorsAPICache.loadEntriesFromFile(path.join(shardsDir, file), store);
+    }
+    return store;
+  }
+
   /**
    * Static helper: Load all cache entries from shards (or legacy fallback)
    */
   public static loadAll(cacheDir: string = 'data/cache'): CacheStore {
     const resolvedDir = path.isAbsolute(cacheDir) ? cacheDir : path.join(process.cwd(), cacheDir);
     const shardsDir = path.join(resolvedDir, 'paapi');
-    const legacyPath = path.join(resolvedDir, 'paapi-product-cache.json');
-    const store: CacheStore = {};
-
     if (fs.existsSync(shardsDir)) {
-      const files = fs.readdirSync(shardsDir).filter((f) => f.endsWith('.json'));
-      for (const file of files) {
-        try {
-          const raw = fs.readFileSync(path.join(shardsDir, file), 'utf-8');
-          const parsed = JSON.parse(raw) as Record<string, unknown>;
-          for (const [key, entry] of Object.entries(parsed)) {
-            if (entry && typeof entry === 'object') {
-              store[key] = CreatorsAPICache.normalizeCacheEntry(entry as Partial<CacheEntry>);
-            }
-          }
-        } catch {
-          // ignore error on individual corrupt shard to stay resilient
-        }
-      }
-      return store;
+      return CreatorsAPICache.loadFromShards(shardsDir);
     }
 
+    const legacyPath = path.join(resolvedDir, 'paapi-product-cache.json');
+    const store: CacheStore = {};
     if (fs.existsSync(legacyPath)) {
-      try {
-        const raw = fs.readFileSync(legacyPath, 'utf-8');
-        const parsed = JSON.parse(raw) as Record<string, unknown>;
-        for (const [key, entry] of Object.entries(parsed)) {
-          if (entry && typeof entry === 'object') {
-            store[key] = CreatorsAPICache.normalizeCacheEntry(entry as Partial<CacheEntry>);
-          }
-        }
-      } catch {
-        // ignore
-      }
+      CreatorsAPICache.loadEntriesFromFile(legacyPath, store);
     }
 
     return store;
+  }
+
+  private static async writeShardFile(shardPath: string, shardEntries: CacheStore): Promise<void> {
+    const tmpPath = `${shardPath}.tmp`;
+    const sortedKeys = Object.keys(shardEntries).sort((a, b) => a.localeCompare(b));
+    const lines = sortedKeys.map((key) => `  "${key}": ${JSON.stringify(shardEntries[key])}`);
+    const jsonContent = `{\n${lines.join(',\n')}\n}\n`;
+
+    await fs.promises.writeFile(tmpPath, jsonContent, 'utf-8');
+    await fs.promises.rename(tmpPath, shardPath);
   }
 
   /**
@@ -221,21 +229,16 @@ export class CreatorsAPICache {
     const shards: Record<string, CacheStore> = {};
     for (const [asin, entry] of Object.entries(store)) {
       const shardKey = CreatorsAPICache.getShardKey(asin);
-      if (!shards[shardKey]) shards[shardKey] = {};
+      shards[shardKey] ??= {};
       shards[shardKey][asin] = entry;
     }
 
-    for (const [shardKey, shardEntries] of Object.entries(shards)) {
-      const shardPath = path.join(shardsDir, `${shardKey}.json`);
-      const tmpPath = `${shardPath}.tmp`;
-
-      const sortedKeys = Object.keys(shardEntries).sort((a, b) => a.localeCompare(b));
-      const lines = sortedKeys.map((key) => `  "${key}": ${JSON.stringify(shardEntries[key])}`);
-      const jsonContent = `{\n${lines.join(',\n')}\n}\n`;
-
-      await fs.promises.writeFile(tmpPath, jsonContent, 'utf-8');
-      await fs.promises.rename(tmpPath, shardPath);
-    }
+    await Promise.all(
+      Object.entries(shards).map(([shardKey, shardEntries]) => {
+        const shardPath = path.join(shardsDir, `${shardKey}.json`);
+        return CreatorsAPICache.writeShardFile(shardPath, shardEntries);
+      }),
+    );
   }
 
   /**
@@ -249,25 +252,19 @@ export class CreatorsAPICache {
 
       await fs.promises.mkdir(this.shardsDir, { recursive: true });
 
-      for (const shardKey of this.dirtyShards) {
-        const shardPath = this.getShardPath(shardKey);
-        const tmpPath = `${shardPath}.tmp`;
-
-        // Gather all entries belonging to this shard
-        const shardEntries: CacheStore = {};
-        for (const [asin, entry] of Object.entries(this.cache)) {
-          if (CreatorsAPICache.getShardKey(asin) === shardKey) {
-            shardEntries[asin] = entry;
+      const dirtyKeys = Array.from(this.dirtyShards);
+      await Promise.all(
+        dirtyKeys.map((shardKey) => {
+          const shardPath = this.getShardPath(shardKey);
+          const shardEntries: CacheStore = {};
+          for (const [asin, entry] of Object.entries(this.cache)) {
+            if (CreatorsAPICache.getShardKey(asin) === shardKey) {
+              shardEntries[asin] = entry;
+            }
           }
-        }
-
-        const sortedKeys = Object.keys(shardEntries).sort((a, b) => a.localeCompare(b));
-        const lines = sortedKeys.map((key) => `  "${key}": ${JSON.stringify(shardEntries[key])}`);
-        const jsonContent = `{\n${lines.join(',\n')}\n}\n`;
-
-        await fs.promises.writeFile(tmpPath, jsonContent, 'utf-8');
-        await fs.promises.rename(tmpPath, shardPath);
-      }
+          return CreatorsAPICache.writeShardFile(shardPath, shardEntries);
+        }),
+      );
 
       this.logger.info(`Creators API Cache saved ${this.dirtyShards.size} dirty shards to disk`);
       this.dirtyShards.clear();
