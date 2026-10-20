@@ -1,6 +1,7 @@
 import * as fs from 'node:fs';
 import * as path from 'node:path';
 import * as yaml from 'js-yaml';
+import { CreatorsAPICache } from '../api/CreatorsAPICache';
 import { CategoryManager } from '../category/CategoryManager';
 import { ProductCounter } from '../category/ProductCounter';
 import { BrandCounter } from '../navigation/BrandCounter';
@@ -114,10 +115,17 @@ function syncBrandData(): void {
  * PAAPIキャッシュからバリエーションマッピングを抽出
  */
 function extractPaapiVariations(cachePath: string): Record<string, string> {
-  if (!fs.existsSync(cachePath)) return {};
   try {
-    const raw = fs.readFileSync(cachePath, 'utf-8');
-    const cache = JSON.parse(raw) as Record<string, { data?: { parentAsin?: string; asin?: string } }>;
+    let cache: Record<string, { data?: { parentAsin?: string; asin?: string } }> = {};
+    if (fs.existsSync(cachePath) && fs.statSync(cachePath).isFile()) {
+      const raw = fs.readFileSync(cachePath, 'utf-8');
+      cache = JSON.parse(raw);
+    } else {
+      const cacheDir =
+        fs.existsSync(cachePath) && fs.statSync(cachePath).isDirectory() ? cachePath : path.dirname(cachePath);
+      cache = CreatorsAPICache.loadAll(cacheDir) as any;
+    }
+
     const result: Record<string, string> = {};
     for (const [asin, item] of Object.entries(cache)) {
       const parentAsin = item?.data?.parentAsin;

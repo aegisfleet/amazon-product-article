@@ -73,61 +73,77 @@ for i in 1 2 3; do
     # Fetch latest remote changes
     git fetch origin "$CURRENT_BRANCH"
 
-    # Reset cache file in working directory to HEAD to avoid "Your local changes..." error on merge
-    # Since we already committed our changes, this is safe and will match the committed index.
-    git checkout HEAD -- data/cache/paapi-product-cache.json || true
+    # Reset cache files in working directory to HEAD to avoid "Your local changes..." error on merge
+    git checkout HEAD -- data/cache/paapi/*.json 2>/dev/null || true
+    git checkout HEAD -- data/cache/paapi-product-cache.json 2>/dev/null || true
 
     # Try to merge remote branch
     # Note: --no-edit to avoid prompting for commit message
     if git merge origin/"$CURRENT_BRANCH" -m "Merge remote-tracking branch 'origin/$CURRENT_BRANCH' [skip ci]" --no-edit; then
       echo "Merge successful, retrying push..."
     else
-      echo "Merge conflict or error detected. Checking if the conflict is only in the product cache file..."
+      echo "Merge conflict or error detected. Checking if conflicts are only in cache files..."
       
       # Clean index.lock if merge crash left it
       rm -f .git/index.lock
 
-      # Check if the conflict is only in the product cache file
-      if git status --porcelain | grep -q "UU data/cache/paapi-product-cache.json"; then
-        echo "Conflict detected in data/cache/paapi-product-cache.json. Attempting automatic merge..."
-        
-        # Check if there are other conflicted files
-        OTHER_CONFLICTS=$(git status --porcelain | grep "^UU " | grep -v "data/cache/paapi-product-cache.json" || true)
-        if [ -n "$OTHER_CONFLICTS" ]; then
-          echo "Merge failed due to multiple conflicting files:"
-          echo "$OTHER_CONFLICTS"
-          git merge --abort || true
-          rm -f .git/index.lock
-          exit 1
-        fi
-        
-        echo "No other conflicts found. Extracting ours and theirs versions..."
-        git show :2:data/cache/paapi-product-cache.json > data/cache/paapi-product-cache.ours.json 2>/dev/null || true
-        git show :3:data/cache/paapi-product-cache.json > data/cache/paapi-product-cache.theirs.json 2>/dev/null || true
-        
-        echo "Running merge script..."
-        if pnpm exec ts-node src/scripts/maintenance/merge-product-cache.ts data/cache/paapi-product-cache.ours.json data/cache/paapi-product-cache.theirs.json data/cache/paapi-product-cache.json; then
-          echo "Auto-merge succeeded. Staging resolved file..."
-          rm -f data/cache/paapi-product-cache.ours.json data/cache/paapi-product-cache.theirs.json
-          git add data/cache/paapi-product-cache.json
-          
-          echo "Completing merge..."
-          rm -f .git/index.lock
-          if GIT_EDITOR=true git commit --no-edit; then
-            echo "Merge completed successfully. Retrying push..."
-          else
-            echo "Merge completion failed, aborting..."
-            git merge --abort || true
-            rm -f .git/index.lock
-            exit 1
-          fi
+      # Check conflicted files
+      CONFLICTS=$(git status --porcelain | grep "^UU " | awk '{print $2}' || true)
+      NON_CACHE_CONFLICTS=$(echo "$CONFLICTS" | grep -v "^data/cache/" || true)
+
+      if [ -n "$NON_CACHE_CONFLICTS" ]; then
+        echo "Merge failed due to conflicts outside data/cache/:"
+        echo "$NON_CACHE_CONFLICTS"
+        git merge --abort || true
+        rm -f .git/index.lock
+        exit 1
+      fi
+
+      if [ -z "$CONFLICTS" ]; then
+        echo "No conflicts found, aborting..."
+        git merge --abort || true
+        rm -f .git/index.lock
+        exit 1
+      fi
+
+      echo "Conflicts detected only in cache files. Attempting automatic merge..."
+      MERGE_ALL_SUCCESS=true
+
+      for file in $CONFLICTS; do
+        echo "Auto-merging conflict in $file..."
+        OURS_FILE="${file}.ours.json"
+        THEIRS_FILE="${file}.theirs.json"
+        git show :2:"$file" > "$OURS_FILE" 2>/dev/null || true
+        git show :3:"$file" > "$THEIRS_FILE" 2>/dev/null || true
+
+        if pnpm exec ts-node src/scripts/maintenance/merge-product-cache.ts "$OURS_FILE" "$THEIRS_FILE" "$file"; then
+          rm -f "$OURS_FILE" "$THEIRS_FILE"
+          git add "$file"
         else
-          echo "Auto-merge script failed, aborting merge..."
-          rm -f data/cache/paapi-product-cache.ours.json data/cache/paapi-product-cache.theirs.json
+          echo "Failed to merge $file"
+          rm -f "$OURS_FILE" "$THEIRS_FILE"
+          MERGE_ALL_SUCCESS=false
+          break
+        fi
+      done
+
+      if [ "$MERGE_ALL_SUCCESS" = "true" ]; then
+        echo "Completing merge..."
+        rm -f .git/index.lock
+        if GIT_EDITOR=true git commit --no-edit; then
+          echo "Merge completed successfully. Retrying push..."
+        else
+          echo "Merge completion failed, aborting..."
           git merge --abort || true
           rm -f .git/index.lock
           exit 1
         fi
+      else
+        echo "Auto-merge failed, aborting merge..."
+        git merge --abort || true
+        rm -f .git/index.lock
+        exit 1
+      fi
       else
         echo "Merge failed due to other conflicts or issues, aborting..."
         git merge --abort || true

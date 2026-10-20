@@ -7,6 +7,7 @@
 
 import fs from 'node:fs';
 import path from 'node:path';
+import { CreatorsAPICache } from '../api/CreatorsAPICache';
 import type { ProductDetail } from '../types/Product';
 import { Logger } from '../utils/Logger';
 
@@ -398,11 +399,25 @@ export async function extractSaleCandidates(
   investigationsDir?: string,
 ): Promise<SaleCandidatesFile> {
   const logger = Logger.getInstance();
-  const cachePath = cacheFilePath || path.join(process.cwd(), 'data/cache/paapi-product-cache.json');
+  const cacheTarget = cacheFilePath || path.join(process.cwd(), 'data/cache');
   const outputPath = outputFilePath || path.join(process.cwd(), 'tmp/sale_candidates.json');
 
-  if (!fs.existsSync(cachePath)) {
-    logger.warn(`Cache file not found at: ${cachePath}. Returning empty candidates.`);
+  let cache: CacheStore = {};
+  if (fs.existsSync(cacheTarget) && fs.statSync(cacheTarget).isFile()) {
+    try {
+      const rawData = await fs.promises.readFile(cacheTarget, 'utf-8');
+      cache = JSON.parse(rawData) as CacheStore;
+    } catch {
+      cache = {};
+    }
+  } else {
+    const cacheDir =
+      fs.existsSync(cacheTarget) && fs.statSync(cacheTarget).isDirectory() ? cacheTarget : path.dirname(cacheTarget);
+    cache = CreatorsAPICache.loadAll(cacheDir);
+  }
+
+  if (Object.keys(cache).length === 0) {
+    logger.warn(`Cache file not found or empty at: ${cacheTarget}. Returning empty candidates.`);
     const emptyResult: SaleCandidatesFile = {
       extractedAt: new Date().toISOString(),
       totalCandidates: 0,
@@ -414,9 +429,6 @@ export async function extractSaleCandidates(
   }
 
   try {
-    const rawData = await fs.promises.readFile(cachePath, 'utf-8');
-    const cache = JSON.parse(rawData) as CacheStore;
-
     const articleScoreMap = loadArticleScoreMap(articlesDir);
     const candidates: SaleCandidate[] = [];
 

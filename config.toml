@@ -114,6 +114,3 @@ enableGitInfo = false
   [[module.mounts]]
     source = "data/recommendations"
     target = "data/recommendations"
-  [[module.mounts]]
-    source = "data/cache"
-    target = "data/cache"

@@ -10,6 +10,7 @@
 
 import fs from 'node:fs';
 import path from 'node:path';
+import { CreatorsAPICache } from '../../api/CreatorsAPICache';
 
 interface InvestigationItem {
   asin: string;
@@ -74,16 +75,13 @@ function loadCacheMap(): Map<
   string,
   { price: string | undefined; savings: number | undefined; dealBadge: string | undefined }
 > {
-  const cachePath = path.join(process.cwd(), 'data', 'cache', 'paapi-product-cache.json');
   const map = new Map<
     string,
     { price: string | undefined; savings: number | undefined; dealBadge: string | undefined }
   >();
-  if (!fs.existsSync(cachePath)) return map;
 
   try {
-    const raw = fs.readFileSync(cachePath, 'utf8');
-    const data = JSON.parse(raw);
+    const data = CreatorsAPICache.loadAll();
     for (const [asin, item] of Object.entries(data)) {
       const p = (item as any)?.data;
       if (p) {

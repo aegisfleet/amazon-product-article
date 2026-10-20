@@ -3,7 +3,7 @@ import path from 'node:path';
 import type { ProductDetail } from '../types/Product';
 import { Logger } from '../utils/Logger';
 
-interface CacheEntry {
+export interface CacheEntry {
   data: ProductDetail | null;
   timestamp: number;
   status: 'valid' | 'invalid' | 'permanent_invalid';
@@ -11,13 +11,17 @@ interface CacheEntry {
   priceChangedAt?: number;
 }
 
-interface CacheStore {
+export interface CacheStore {
   [asin: string]: CacheEntry;
 }
 
 export class CreatorsAPICache {
-  private readonly cachePath: string;
+  private readonly cacheDir: string;
+  private readonly shardsDir: string;
+  private readonly legacyCachePath: string;
   private cache: CacheStore = {};
+  private readonly loadedShards = new Set<string>();
+  private readonly dirtyShards = new Set<string>();
   private readonly ttl: number; // Time to live in milliseconds for valid entries
   private readonly invalidTtl: number; // Time to live in milliseconds for invalid entries
   private readonly permanentInvalidTtl: number; // Time to live in milliseconds for permanent invalid entries (1 week)
@@ -36,61 +40,34 @@ export class CreatorsAPICache {
     this.ttl = ttlHours * 60 * 60 * 1000;
     this.invalidTtl = invalidTtlMinutes * 60 * 1000; // 5分（一時的な失敗からの早期回復用）
     this.permanentInvalidTtl = permanentInvalidTtlDays * 24 * 60 * 60 * 1000; // 1週間
-    this.cachePath = path.join(process.cwd(), cacheDir, 'paapi-product-cache.json'); // Keep same filename for cache compatibility
-    this.load();
+    this.cacheDir = path.isAbsolute(cacheDir) ? cacheDir : path.join(process.cwd(), cacheDir);
+    this.shardsDir = path.join(this.cacheDir, 'paapi');
+    this.legacyCachePath = path.join(this.cacheDir, 'paapi-product-cache.json');
   }
 
   /**
-   * Load cache from disk
+   * Calculate 2-character shard key from ASIN (last 2 characters, uppercase)
    */
-  private load(): void {
-    try {
-      if (!fs.existsSync(this.cachePath)) {
-        this.initializeNewCache();
-        return;
-      }
-
-      const rawData = fs.readFileSync(this.cachePath, 'utf-8');
-      const parsed = JSON.parse(rawData) as Record<string, unknown>;
-      this.cache = this.migrateCacheEntries(parsed);
-
-      this.logger.info(`Creators API Cache loaded: ${Object.keys(this.cache).length} entries`);
-    } catch (error) {
-      this.logger.warn('Failed to load Creators API Cache:', error);
-      this.cache = {}; // Start fresh on error
+  public static getShardKey(asin: string): string {
+    const clean = asin.trim().toUpperCase();
+    if (clean.length < 2) {
+      return clean.padStart(2, '0');
     }
+    return clean.slice(-2);
   }
 
   /**
-   * Initialize a new cache if file doesn't exist
+   * Get file path for a shard key
    */
-  private initializeNewCache(): void {
-    this.ensureDirectory();
-    this.cache = {};
-    this.logger.info('Creators API Cache initialized (new)');
-  }
-
-  /**
-   * Migrate and parse raw cache object into CacheStore
-   */
-  private migrateCacheEntries(parsed: Record<string, unknown>): CacheStore {
-    const cache: CacheStore = {};
-    for (const key in parsed) {
-      if (!Object.hasOwn(parsed, key)) continue;
-
-      const entry = parsed[key] as Partial<CacheEntry> & Record<string, unknown>;
-      if (!entry || typeof entry !== 'object') continue;
-
-      cache[key] = this.normalizeCacheEntry(entry);
-    }
-    return cache;
+  public getShardPath(shardKey: string): string {
+    return path.join(this.shardsDir, `${shardKey}.json`);
   }
 
   /**
    * Normalize an entry, providing defaults for missing status (migration)
    */
-  private normalizeCacheEntry(entry: Partial<CacheEntry> & Record<string, unknown>): CacheEntry {
-    const data = entry.data ?? null;
+  public static normalizeCacheEntry(entry: Partial<CacheEntry> & Record<string, unknown>): CacheEntry {
+    const data = (entry.data as ProductDetail | null) ?? null;
     // Trim description and features to reduce file size
     if (data && typeof data === 'object') {
       delete data.description;
@@ -118,44 +95,185 @@ export class CreatorsAPICache {
   }
 
   /**
-   * Ensure cache directory exists
+   * Ensure a specific shard is loaded into memory
    */
-  private ensureDirectory(): void {
-    const dir = path.dirname(this.cachePath);
-    if (!fs.existsSync(dir)) {
-      fs.mkdirSync(dir, { recursive: true });
+  private ensureShardLoaded(shardKey: string): void {
+    if (this.loadedShards.has(shardKey)) {
+      return;
+    }
+
+    const shardPath = this.getShardPath(shardKey);
+    try {
+      if (fs.existsSync(shardPath)) {
+        const rawData = fs.readFileSync(shardPath, 'utf-8');
+        const parsed = JSON.parse(rawData) as Record<string, unknown>;
+        for (const [key, entry] of Object.entries(parsed)) {
+          if (entry && typeof entry === 'object') {
+            this.cache[key] = CreatorsAPICache.normalizeCacheEntry(entry as Partial<CacheEntry>);
+          }
+        }
+      } else if (fs.existsSync(this.legacyCachePath) && !fs.existsSync(this.shardsDir)) {
+        // Fallback to legacy single file if shards directory doesn't exist
+        this.loadLegacyCache();
+      }
+    } catch (error) {
+      this.logger.warn(`Failed to load cache shard ${shardKey}:`, error);
+    }
+
+    this.loadedShards.add(shardKey);
+  }
+
+  /**
+   * Load entire legacy cache file into memory (fallback)
+   */
+  private loadLegacyCache(): void {
+    try {
+      if (!fs.existsSync(this.legacyCachePath)) return;
+      const rawData = fs.readFileSync(this.legacyCachePath, 'utf-8');
+      const parsed = JSON.parse(rawData) as Record<string, unknown>;
+      for (const [key, entry] of Object.entries(parsed)) {
+        if (entry && typeof entry === 'object') {
+          this.cache[key] = CreatorsAPICache.normalizeCacheEntry(entry as Partial<CacheEntry>);
+        }
+      }
+      this.logger.info(`Loaded legacy cache: ${Object.keys(this.cache).length} entries`);
+    } catch (error) {
+      this.logger.warn('Failed to load legacy Creators API Cache:', error);
     }
   }
 
   /**
-   * Save cache to disk
+   * Load all shards from disk into memory
+   */
+  public loadAll(): void {
+    const store = CreatorsAPICache.loadAll(this.cacheDir);
+    this.cache = store;
+    // Mark all existing shards as loaded
+    if (fs.existsSync(this.shardsDir)) {
+      const files = fs.readdirSync(this.shardsDir).filter((f) => f.endsWith('.json'));
+      for (const file of files) {
+        this.loadedShards.add(path.basename(file, '.json'));
+      }
+    }
+  }
+
+  /**
+   * Get all entries currently loaded (loads all shards if not fully loaded)
+   */
+  public getAllEntries(): CacheStore {
+    this.loadAll();
+    return this.cache;
+  }
+
+  /**
+   * Static helper: Load all cache entries from shards (or legacy fallback)
+   */
+  public static loadAll(cacheDir: string = 'data/cache'): CacheStore {
+    const resolvedDir = path.isAbsolute(cacheDir) ? cacheDir : path.join(process.cwd(), cacheDir);
+    const shardsDir = path.join(resolvedDir, 'paapi');
+    const legacyPath = path.join(resolvedDir, 'paapi-product-cache.json');
+    const store: CacheStore = {};
+
+    if (fs.existsSync(shardsDir)) {
+      const files = fs.readdirSync(shardsDir).filter((f) => f.endsWith('.json'));
+      for (const file of files) {
+        try {
+          const raw = fs.readFileSync(path.join(shardsDir, file), 'utf-8');
+          const parsed = JSON.parse(raw) as Record<string, unknown>;
+          for (const [key, entry] of Object.entries(parsed)) {
+            if (entry && typeof entry === 'object') {
+              store[key] = CreatorsAPICache.normalizeCacheEntry(entry as Partial<CacheEntry>);
+            }
+          }
+        } catch {
+          // ignore error on individual corrupt shard to stay resilient
+        }
+      }
+      return store;
+    }
+
+    if (fs.existsSync(legacyPath)) {
+      try {
+        const raw = fs.readFileSync(legacyPath, 'utf-8');
+        const parsed = JSON.parse(raw) as Record<string, unknown>;
+        for (const [key, entry] of Object.entries(parsed)) {
+          if (entry && typeof entry === 'object') {
+            store[key] = CreatorsAPICache.normalizeCacheEntry(entry as Partial<CacheEntry>);
+          }
+        }
+      } catch {
+        // ignore
+      }
+    }
+
+    return store;
+  }
+
+  /**
+   * Static helper: Save entire CacheStore into shards
+   */
+  public static async saveAll(store: CacheStore, cacheDir: string = 'data/cache'): Promise<void> {
+    const resolvedDir = path.isAbsolute(cacheDir) ? cacheDir : path.join(process.cwd(), cacheDir);
+    const shardsDir = path.join(resolvedDir, 'paapi');
+    await fs.promises.mkdir(shardsDir, { recursive: true });
+
+    // Group by shard
+    const shards: Record<string, CacheStore> = {};
+    for (const [asin, entry] of Object.entries(store)) {
+      const shardKey = CreatorsAPICache.getShardKey(asin);
+      if (!shards[shardKey]) shards[shardKey] = {};
+      shards[shardKey][asin] = entry;
+    }
+
+    for (const [shardKey, shardEntries] of Object.entries(shards)) {
+      const shardPath = path.join(shardsDir, `${shardKey}.json`);
+      const tmpPath = `${shardPath}.tmp`;
+
+      const sortedKeys = Object.keys(shardEntries).sort((a, b) => a.localeCompare(b));
+      const lines = sortedKeys.map((key) => `  "${key}": ${JSON.stringify(shardEntries[key])}`);
+      const jsonContent = `{\n${lines.join(',\n')}\n}\n`;
+
+      await fs.promises.writeFile(tmpPath, jsonContent, 'utf-8');
+      await fs.promises.rename(tmpPath, shardPath);
+    }
+  }
+
+  /**
+   * Save dirty shards to disk atomically
    */
   public async save(): Promise<void> {
     try {
-      await this.ensureDirectoryAsync();
-      const tmpPath = `${this.cachePath}.tmp`;
+      if (this.dirtyShards.size === 0) {
+        return;
+      }
 
-      // Sort keys to maintain consistent output order and format each entry on a single line
-      const sortedKeys = Object.keys(this.cache).sort((a, b) => a.localeCompare(b));
-      const lines = sortedKeys.map((key) => `  "${key}": ${JSON.stringify(this.cache[key])}`);
-      const jsonContent = `{\n${lines.join(',\n')}\n}`;
+      await fs.promises.mkdir(this.shardsDir, { recursive: true });
 
-      // Use fs.promises.writeFile to write to a temporary file first
-      await fs.promises.writeFile(tmpPath, jsonContent, 'utf-8');
-      // Rename atomically to replace the actual cache file
-      await fs.promises.rename(tmpPath, this.cachePath);
-      this.logger.info('Creators API Cache saved to disk');
+      for (const shardKey of this.dirtyShards) {
+        const shardPath = this.getShardPath(shardKey);
+        const tmpPath = `${shardPath}.tmp`;
+
+        // Gather all entries belonging to this shard
+        const shardEntries: CacheStore = {};
+        for (const [asin, entry] of Object.entries(this.cache)) {
+          if (CreatorsAPICache.getShardKey(asin) === shardKey) {
+            shardEntries[asin] = entry;
+          }
+        }
+
+        const sortedKeys = Object.keys(shardEntries).sort((a, b) => a.localeCompare(b));
+        const lines = sortedKeys.map((key) => `  "${key}": ${JSON.stringify(shardEntries[key])}`);
+        const jsonContent = `{\n${lines.join(',\n')}\n}\n`;
+
+        await fs.promises.writeFile(tmpPath, jsonContent, 'utf-8');
+        await fs.promises.rename(tmpPath, shardPath);
+      }
+
+      this.logger.info(`Creators API Cache saved ${this.dirtyShards.size} dirty shards to disk`);
+      this.dirtyShards.clear();
     } catch (error) {
       this.logger.error('Failed to save Creators API Cache:', error);
     }
-  }
-
-  /**
-   * Ensure cache directory exists asynchronously
-   */
-  private async ensureDirectoryAsync(): Promise<void> {
-    const dir = path.dirname(this.cachePath);
-    await fs.promises.mkdir(dir, { recursive: true });
   }
 
   /**
@@ -164,8 +282,10 @@ export class CreatorsAPICache {
    * @param options.ignoreExpiration If true, returns valid data even if expired
    */
   public get(asin: string, options: { ignoreExpiration?: boolean; allowInvalid?: boolean } = {}): ProductDetail | null {
-    const entry = this.cache[asin];
+    const shardKey = CreatorsAPICache.getShardKey(asin);
+    this.ensureShardLoaded(shardKey);
 
+    const entry = this.cache[asin];
     if (!entry) {
       return null;
     }
@@ -195,6 +315,9 @@ export class CreatorsAPICache {
    * Check if ASIN is marked as invalid/not-found and is still within TTL
    */
   public isInvalid(asin: string): boolean {
+    const shardKey = CreatorsAPICache.getShardKey(asin);
+    this.ensureShardLoaded(shardKey);
+
     const entry = this.cache[asin];
     if (!entry) return false;
 
@@ -217,17 +340,16 @@ export class CreatorsAPICache {
 
   /**
    * Check if ASIN is marked as permanent_invalid and has expired
-   * distinct from generic isInvalid which returns true for ANY invalid/missing item
    */
   public isExpiredPermanentInvalid(asin: string): boolean {
+    const shardKey = CreatorsAPICache.getShardKey(asin);
+    this.ensureShardLoaded(shardKey);
+
     const entry = this.cache[asin];
-    // If no entry, it's not a permanent_invalid entry (it's just missing)
     if (!entry) return false;
 
-    // Must be permanent_invalid
     if (entry.status !== 'permanent_invalid') return false;
 
-    // Check if expired
     const effectiveTtl = this.permanentInvalidTtl;
     if (Date.now() - entry.timestamp > effectiveTtl) {
       return true;
@@ -283,6 +405,9 @@ export class CreatorsAPICache {
    * If new data has no price info but existing cache has valid price, preserve it
    */
   public set(asin: string, data: ProductDetail): void {
+    const shardKey = CreatorsAPICache.getShardKey(asin);
+    this.ensureShardLoaded(shardKey);
+
     const sanitizedData = this.sanitizeData(data);
 
     const existingEntry = this.cache[asin];
@@ -299,7 +424,6 @@ export class CreatorsAPICache {
 
     // Check if new data has "価格情報なし" and existing cache has valid price
     if (this.isNoPriceData(sanitizedData) && existingEntry?.data && !this.isNoPriceData(existingEntry.data)) {
-      // Preserve existing price information
       this.logger.info(
         `Preserving existing price for ASIN ${asin}: ${existingEntry.data.price.formatted} (new data has no price)`,
       );
@@ -317,6 +441,8 @@ export class CreatorsAPICache {
       ...(previousPrice !== undefined && { previousPrice }),
       ...(priceChangedAt !== undefined && { priceChangedAt }),
     };
+
+    this.dirtyShards.add(shardKey);
   }
 
   /**
@@ -328,32 +454,34 @@ export class CreatorsAPICache {
 
   /**
    * Mark item as invalid (e.g. not found in Creators API)
-   * If there's already a 'valid' entry, do not overwrite it to prevent data loss on transient errors
    */
   public markInvalid(asin: string): void {
+    const shardKey = CreatorsAPICache.getShardKey(asin);
+    this.ensureShardLoaded(shardKey);
+
     const existing = this.cache[asin];
-    // If there's already a 'valid' entry that is NOT expired, do not overwrite it
-    // to prevent performance degradation on transient errors.
-    // However, if it's expired, we MUST update the status to prevent infinite retries.
     if (existing?.status === 'valid' && Date.now() - existing.timestamp <= this.ttl) {
       this.logger.info(`Not marking ASIN ${asin} as invalid because a non-expired valid cache entry already exists.`);
       return;
     }
 
     this.cache[asin] = {
-      data: existing?.data || null, // Preserve data for fallback if available
+      data: existing?.data || null,
       timestamp: Date.now(),
       status: 'invalid',
     };
+
+    this.dirtyShards.add(shardKey);
   }
 
   /**
    * Mark item as permanently invalid (e.g. InvalidParameterValue - re-check only once a week)
    */
   public markPermanentInvalid(asin: string): void {
+    const shardKey = CreatorsAPICache.getShardKey(asin);
+    this.ensureShardLoaded(shardKey);
+
     const existing = this.cache[asin];
-    // Same logic as markInvalid: if not expired, don't overwrite.
-    // If expired, overwrite status but preserve data.
     if (existing?.status === 'valid' && Date.now() - existing.timestamp <= this.ttl) {
       this.logger.info(
         `Not marking ASIN ${asin} as permanent_invalid because a non-expired valid cache entry already exists.`,
@@ -362,15 +490,16 @@ export class CreatorsAPICache {
     }
 
     this.cache[asin] = {
-      data: existing?.data || null, // Preserve data for fallback if available
+      data: existing?.data || null,
       timestamp: Date.now(),
       status: 'permanent_invalid',
     };
+
+    this.dirtyShards.add(shardKey);
   }
 
   /**
    * Get multiple items from cache
-   * Returns a map of found valid items
    */
   public getMultiple(
     asins: string[],
@@ -390,17 +519,11 @@ export class CreatorsAPICache {
 
   /**
    * Helper to determine which asins are missing from cache or expired
-   * Also filters out ASINs known to be invalid so we don't re-fetch them
    */
   public getMissingAsins(asins: string[]): string[] {
     return asins.filter((asin) => {
-      // If we have valid data, it's not missing
       if (this.get(asin)) return false;
-
-      // If it's known invalid (and fresh), we don't want to fetch it, so it's not "missing" for the purpose of fetching
       if (this.isInvalid(asin)) return false;
-
-      // Otherwise (not in cache, expired, or invalid-but-expired), it is missing
       return true;
     });
   }

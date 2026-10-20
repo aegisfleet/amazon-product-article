@@ -64,10 +64,14 @@ export interface CliOptions {
   checkOrphans: boolean;
 }
 
+import { CreatorsAPICache } from '../../api/CreatorsAPICache';
+
 export const ROOT_DIR = path.resolve(__dirname, '../../..');
 export const ARTICLES_DIR = path.join(ROOT_DIR, 'content/articles');
 export const INVESTIGATIONS_DIR = path.join(ROOT_DIR, 'data/investigations');
-export const CACHE_PATH = path.join(ROOT_DIR, 'data/cache/paapi-product-cache.json');
+export const CACHE_DIR = path.join(ROOT_DIR, 'data/cache');
+export const SHARDS_DIR = path.join(CACHE_DIR, 'paapi');
+export const CACHE_PATH = path.join(CACHE_DIR, 'paapi-product-cache.json');
 const TITLE_REGEX = /<title>([^<]*)<\/title>/i;
 
 // コマンドライン引数のパース
@@ -138,9 +142,8 @@ export function parseArgs(customArgs?: string[]): CliOptions {
 
 // キャッシュデータの読み込み
 function loadCache(): Record<string, any> {
-  if (!fs.existsSync(CACHE_PATH)) return {};
   try {
-    return JSON.parse(fs.readFileSync(CACHE_PATH, 'utf8'));
+    return CreatorsAPICache.loadAll(CACHE_DIR);
   } catch {
     return {};
   }
@@ -309,10 +312,36 @@ function deleteFileIfExists(filePath: string, dryRun: boolean): boolean {
 
 // キャッシュファイル保存ヘルパー
 function saveCache(cache: Record<string, any>): void {
-  const sortedKeys = Object.keys(cache).sort((a, b) => a.localeCompare(b));
-  const lines = sortedKeys.map((key) => `  "${key}": ${JSON.stringify(cache[key])}`);
-  const jsonContent = `{\n${lines.join(',\n')}\n}`;
-  fs.writeFileSync(CACHE_PATH, jsonContent, 'utf8');
+  if (fs.existsSync(SHARDS_DIR)) {
+    const shards: Record<string, Record<string, any>> = {};
+    for (const [asin, entry] of Object.entries(cache)) {
+      const shardKey = CreatorsAPICache.getShardKey(asin);
+      if (!shards[shardKey]) shards[shardKey] = {};
+      shards[shardKey][asin] = entry;
+    }
+
+    const existingShardFiles = fs.readdirSync(SHARDS_DIR).filter((f) => f.endsWith('.json'));
+    for (const file of existingShardFiles) {
+      const shardKey = path.basename(file, '.json');
+      const shardPath = path.join(SHARDS_DIR, file);
+      const shardEntries = shards[shardKey] || {};
+      const sortedKeys = Object.keys(shardEntries).sort((a, b) => a.localeCompare(b));
+      if (sortedKeys.length === 0) {
+        fs.unlinkSync(shardPath);
+      } else {
+        const lines = sortedKeys.map((key) => `  "${key}": ${JSON.stringify(shardEntries[key])}`);
+        const jsonContent = `{\n${lines.join(',\n')}\n}\n`;
+        fs.writeFileSync(shardPath, jsonContent, 'utf8');
+      }
+    }
+  }
+
+  if (fs.existsSync(CACHE_PATH)) {
+    const sortedKeys = Object.keys(cache).sort((a, b) => a.localeCompare(b));
+    const lines = sortedKeys.map((key) => `  "${key}": ${JSON.stringify(cache[key])}`);
+    const jsonContent = `{\n${lines.join(',\n')}\n}\n`;
+    fs.writeFileSync(CACHE_PATH, jsonContent, 'utf8');
+  }
 }
 
 // 1商品分の棚卸し処理

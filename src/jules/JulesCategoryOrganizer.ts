@@ -192,11 +192,39 @@ export class JulesCategoryOrganizer {
       return this.productCacheCache;
     }
 
-    const cachePath = path.join(process.cwd(), 'data', 'cache', 'paapi-product-cache.json');
+    const categories = new Set<string>();
+    const cacheDir = path.join(process.cwd(), 'data', 'cache');
+    const shardsDir = path.join(cacheDir, 'paapi');
+    const legacyPath = path.join(cacheDir, 'paapi-product-cache.json');
+
+    try {
+      const files = await fs.readdir(shardsDir);
+      const jsonFiles = files.filter((f) => f.endsWith('.json'));
+      if (jsonFiles.length > 0) {
+        for (const file of jsonFiles) {
+          try {
+            const raw = await fs.readFile(path.join(shardsDir, file), 'utf-8');
+            const parsed = JSON.parse(raw);
+            for (const key in parsed) {
+              const category = parsed[key]?.data?.categoryInfo?.main;
+              if (category && category !== 'その他／全般' && category !== 'null') {
+                categories.add(category);
+              }
+            }
+          } catch {
+            // ignore corrupt shard
+          }
+        }
+        this.productCacheCache = categories;
+        return categories;
+      }
+    } catch {
+      // shardsDir does not exist or readdir failed, fallback to legacy
+    }
 
     let content: string;
     try {
-      content = await fs.readFile(cachePath, 'utf-8');
+      content = await fs.readFile(legacyPath, 'utf-8');
     } catch (error) {
       // Check for ENOENT (file not found)
       if (
@@ -213,7 +241,6 @@ export class JulesCategoryOrganizer {
     }
 
     const cache = JSON.parse(content) as ProductCache;
-    const categories = new Set<string>();
 
     // Use for...in loop instead of Object.values to avoid creating a large intermediate array
     for (const key in cache) {

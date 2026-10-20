@@ -541,7 +541,6 @@
 
     {{- $todayData := hugo.Data.recommendations.today | default hugo.Data.recommendations -}}
     {{- $priceDropsData := index hugo.Data.recommendations "price-drops" | default hugo.Data.recommendations.price_drops -}}
-    {{- $productCache := index hugo.Data.cache "paapi-product-cache" -}}
 
     <!-- Page Header (Unified Hero Style) -->
     <div class="bargain-hero recommendations-hero">
@@ -815,11 +814,8 @@
         {{- $score := 0 -}}
         {{- if $articlePage -}}{{- $score = $articlePage.Params.score | default 0 -}}{{- end -}}
         {{- $imageUrl := $rec.imageUrl -}}
-        {{- if and (not $imageUrl) $productCache -}}
-        {{- $cachedItem := index $productCache $rec.asin -}}
-        {{- if $cachedItem -}}
-        {{- $imageUrl = $cachedItem.data.images.primary -}}
-        {{- end -}}
+        {{- if and (not $imageUrl) $articlePage -}}
+        {{- $imageUrl = $articlePage.Params.image -}}
         {{- end -}}
         <div class="competitor-card" data-category="{{ $rec.category }}"
             style="display: flex; flex-direction: column; gap: var(--spacing-md); border-left: 4px solid var(--color-primary); position: relative; padding: var(--spacing-md) 32px; margin-top: 12px;">

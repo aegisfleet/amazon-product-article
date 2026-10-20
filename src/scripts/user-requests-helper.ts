@@ -1,6 +1,7 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import axios from 'axios';
+import { CreatorsAPICache } from '../api/CreatorsAPICache';
 import { parseInputAsin } from '../utils/amazon';
 import { Logger } from '../utils/Logger';
 
@@ -74,11 +75,10 @@ async function getInvestigationIndex(workspaceRoot = process.cwd()): Promise<{
     };
   }
 
-  const cachePath = path.join(workspaceRoot, 'data', 'cache', 'paapi-product-cache.json');
   let paapiCache: Record<string, { data?: { parentAsin?: string; title?: string } }> = {};
   try {
-    const raw = await fs.readFile(cachePath, 'utf-8');
-    paapiCache = JSON.parse(raw);
+    const cacheDir = path.join(workspaceRoot, 'data', 'cache');
+    paapiCache = CreatorsAPICache.loadAll(cacheDir) as any;
   } catch {
     // 開発環境などで本番キャッシュが存在しない場合は空オブジェクト
   }

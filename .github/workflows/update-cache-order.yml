@@ -34,4 +34,4 @@ jobs:
     - name: Commit sorted cache
       run: |
         chmod +x .github/workflows/scripts/git-commit-push.sh
-        ./.github/workflows/scripts/git-commit-push.sh "chore: Sort product cache by status [skip ci]" "data/cache/paapi-product-cache.json"
+        ./.github/workflows/scripts/git-commit-push.sh "chore: Sort product cache by status [skip ci]" "data/cache/paapi"

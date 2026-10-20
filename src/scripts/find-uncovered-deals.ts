@@ -12,6 +12,7 @@
 
 import fs from 'node:fs';
 import path from 'node:path';
+import { CreatorsAPICache } from '../api/CreatorsAPICache';
 import type { ProductDetail } from '../types/Product';
 import { Logger } from '../utils/Logger';
 
@@ -153,12 +154,24 @@ export async function findUncoveredDeals(
   maxPerCategory = 3,
   minSavings = 0,
 ): Promise<UncoveredDealsCandidatesFile> {
-  const cachePath = cacheFilePath || path.join(process.cwd(), 'data/cache/paapi-product-cache.json');
+  const cacheTarget = cacheFilePath || path.join(process.cwd(), 'data/cache');
   const investigations = investigationsDir || path.join(process.cwd(), 'data/investigations');
   const outputPath = outputFilePath || path.join(process.cwd(), 'tmp/uncovered_deals.json');
 
-  if (!fs.existsSync(cachePath)) {
-    logger.warn(`Cache file not found: ${cachePath}`);
+  let cache: CacheStore = {};
+  if (fs.existsSync(cacheTarget) && fs.statSync(cacheTarget).isFile()) {
+    logger.info(`Loading cache file: ${cacheTarget}`);
+    const rawCache = await fs.promises.readFile(cacheTarget, 'utf-8');
+    cache = JSON.parse(rawCache) as CacheStore;
+  } else {
+    logger.info('Loading cache from shards...');
+    const cacheDir =
+      fs.existsSync(cacheTarget) && fs.statSync(cacheTarget).isDirectory() ? cacheTarget : path.dirname(cacheTarget);
+    cache = CreatorsAPICache.loadAll(cacheDir);
+  }
+
+  if (Object.keys(cache).length === 0) {
+    logger.warn(`Cache empty or not found: ${cacheTarget}`);
     const empty: UncoveredDealsCandidatesFile = {
       extractedAt: new Date().toISOString(),
       totalCandidates: 0,
@@ -168,10 +181,6 @@ export async function findUncoveredDeals(
     await fs.promises.writeFile(outputPath, JSON.stringify(empty, null, 2), 'utf-8');
     return empty;
   }
-
-  logger.info('Loading cache file...');
-  const rawCache = await fs.promises.readFile(cachePath, 'utf-8');
-  const cache = JSON.parse(rawCache) as CacheStore;
 
   logger.info('Loading existing article/investigation ASINs...');
   const existingAsins = await getExistingArticleAsins(investigations);

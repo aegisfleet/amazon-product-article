@@ -133,18 +133,17 @@ PRが `main` ブランチにマージされると、公開用パイプライン�
 - Amazon Creators API 通信部（`src/api/CreatorsAPIClient.ts`）には、トークンバケットアルゴリズムによる流量制御が組み込まれている。
 - 一時的な 429（Too Many Requests）や 5xx エラーが発生した場合は、指数バックオフ（Exponential Backoff）による自動リトライを実行する。
 
-### 4.3 キャッシュの2層構造
-- **本番環境**: `data/cache/paapi-product-cache.json` に約56MB相当のAPIキャッシュを保持し、ビルド時間とAPI消費量を最小限に抑える。
-- **開発環境**: `hugo.dev.toml` により軽量ダミーキャッシュ（`data/cache/paapi-product-cache.dev.json`）をマウントし、ローカル開発時のメモリ消費と起動時間を短縮する。
+### 4.3 キャッシュのシャーディング分割
+- 商品情報キャッシュは ASIN 末尾2文字ごとに分割されたシャード（`data/cache/paapi/<shard>.json`、約1,200ファイル、1ファイル約40KB）として永続化される。
+- これにより、GitHub 100MB 制限を完全回避するとともに、Hugo ビルド時のマウントから除外して起動・ビルド時間を大幅に高速化している。
 
 ### 4.4 セキュリティ・機密情報の保護
 - Creators API の秘密鍵（`AMAZON_CREATORS_CREDENTIAL_SECRET`）や Jules APIキーは、GitHub Secrets および環境変数でのみ管理される。
 - コンソールログやコミットメッセージ、生成記事本文への秘密情報の露出は徹底して排除されている。
 
-### 4.5 複数PR同時マージ時のキャッシュ競合自動解決
-- Julesなどから短時間で複数のPRが連続マージされた場合、並行・後続するデプロイワークフローにおいて `data/cache/paapi-product-cache.json` のGit競合が発生する可能性がある。
-- システムは `.github/workflows/scripts/git-commit-push.sh` のリトライループ内で競合を検知し、`src/scripts/maintenance/merge-product-cache.ts` を用いてASIN単位でタイムスタンプを比較・最新エントリをマージする。
-- これにより、人の介入なしにコンフリクトを完全自動解消し、キャッシュデータの消失やビルド失敗を防止する。
+### 4.5 複数PR同時マージ時のキャッシュ競合耐性と自動解決
+- キャッシュが約1,200シャードに分散されているため、異なるASINを更新する複数PRやワークフローが同時実行されてもGit競合が発生する確率は 0.08% 以下に抑制される。
+- 万一同一シャードで競合が発生した場合でも、`.github/workflows/scripts/git-commit-push.sh` のリトライループ内で自動検知し、`src/scripts/maintenance/merge-product-cache.ts` を用いてASIN単位でタイムスタンプを比較・最新エントリを安全に自動マージする。
 
 ---
 

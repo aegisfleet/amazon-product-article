@@ -41,7 +41,3 @@ ignoreFiles = [
   [[module.mounts]]
     source = "data/recommendations"
     target = "data/recommendations"
-  # 本番用の巨大キャッシュ（56MB）の代わりにダミー軽量ファイルをマウント
-  [[module.mounts]]
-    source = "data/cache/paapi-product-cache.dev.json"
-    target = "data/cache/paapi-product-cache.json"

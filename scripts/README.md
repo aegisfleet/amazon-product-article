@@ -129,7 +129,7 @@ pnpm run reset:cache-timestamp -- <ASIN>
 
 ### 3.5 `sort-cache-by-status.ts`（キャッシュソート）
 
-キャッシュファイル `data/cache/paapi-product-cache.json` のキーを、ステータス順（`valid` > `invalid` > `permanent_invalid`）に並べ替えて保存する。
+キャッシュファイル群 `data/cache/paapi/*.json` の各シャード内のキーを、ステータス順（`valid` > `invalid` > `permanent_invalid`）に並べ替えて保存する。
 
 ```bash
 npx tsx src/scripts/maintenance/sort-cache-by-status.ts

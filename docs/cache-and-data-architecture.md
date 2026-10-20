@@ -13,8 +13,8 @@
 
 | ファイルパス | 容量目安 | 用途 |
 |---|---|---|
-| `data/cache/paapi-product-cache.json` | 約56MB | **本番用キャッシュ**。全商品のAPIレスポンスデータを保持。Git管理対象。 |
-| `data/cache/paapi-product-cache.dev.json` | 数バイト（空） | **開発用ダミーキャッシュ**。ローカルサーバー起動時のメモリ削減と高速化用。 |
+| `data/cache/paapi/<shard>.json` | 各約40〜50KB（計約56MB、約1,200ファイル） | **シャード分割キャッシュ**。ASIN末尾2文字ごとに均等分散。Git管理対象。 |
+| `data/cache/variations-cache.json` | 数KB | バリエーション親子関係キャッシュ。 |
 
 ---
 
@@ -53,26 +53,18 @@
 
 ---
 
-## 3. 本番とローカル開発の2層マウント設計
+## 3. シャーディングアーキテクチャとHugo最適化
 
-本番用のキャッシュ（約56MB）は数万行の巨大なJSONファイルであり、Hugoが開発サーバー起動時に読み込むとメモリ消費量が増大し、リロード速度が大幅に低下する。
+単一の巨大キャッシュファイル（約56MB）を廃止し、ASIN末尾2文字（`asin.slice(-2).toUpperCase()`）によるシャード分割（約1,200ファイル、1ファイルあたり約40〜50KB）を採用している。
 
-そのため、開発サーバー起動時（`pnpm run server:dev`）は `hugo.dev.toml` を通じてキャッシュを切り替えている：
+### 3.1 シャーディングのメリット
+- **GitHub 100MB制限の完全回避**: 1ファイルが最大でも100KB以下となり、GitHubのファイルサイズ上限に接近するリスクが解消された。
+- **マージコンフリクトの根絶**: 異なるASINを更新するワークフローやPRが別々のシャードファイルを触るため、Git競合の発生率が約 1/1200（0.08%以下）へと激減した。
+- **Git履歴・差分の最小化**: 1回の調査・記事更新で数KBのJSONのみがコミットされるため、GitクローンやI/O負荷が大幅に軽減された。
 
-```toml
-# hugo.dev.toml
-[module]
-  [[module.mounts]]
-    source = "data/cache/paapi-product-cache.dev.json"
-    target = "data/cache/paapi-product-cache.json"
-```
-
-- **開発サーバー（`server:dev`）**:
-  - 空の `paapi-product-cache.dev.json` が本番キャッシュの代わりにマウントされる。
-  - メモリ消費が大幅に抑制され、即時起動が可能となる。
-  - （一部画像が `No Image` にフォールバックされるが、レイアウトやCSSの検証には影響しない）
-- **本番ビルド（`deploy-articles.yml`）**:
-  - 本番用キャッシュ `paapi-product-cache.json` がそのまま読み込まれ、全商品画像・最新価格が正常に出力される。
+### 3.2 Hugoビルドからのマウント除外
+Hugoテンプレート（`layouts/`）側でのキャッシュ直接依存を廃止したため、`config.toml` の `[[module.mounts]]` から `data/cache` を完全に除外している。
+これにより、Hugoは起動時に巨大キャッシュを展開する必要がなくなり、本番・ローカル開発ともにビルド速度とメモリ消費が劇的に最適化されている。
 
 ---
 

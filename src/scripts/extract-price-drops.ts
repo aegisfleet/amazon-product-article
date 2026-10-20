@@ -8,6 +8,7 @@
 
 import fs from 'node:fs';
 import path from 'node:path';
+import { CreatorsAPICache } from '../api/CreatorsAPICache';
 import type { ProductDetail } from '../types/Product';
 import { Logger } from '../utils/Logger';
 
@@ -134,10 +135,14 @@ async function loadArticleMetaMap(articlesDir: string): Promise<Map<string, Arti
 }
 
 async function loadCacheStore(cachePath: string): Promise<CacheStore> {
-  if (!fs.existsSync(cachePath)) return {};
   try {
-    const raw = await fs.promises.readFile(cachePath, 'utf-8');
-    return JSON.parse(raw) as CacheStore;
+    if (fs.existsSync(cachePath) && fs.statSync(cachePath).isFile()) {
+      const raw = await fs.promises.readFile(cachePath, 'utf-8');
+      return JSON.parse(raw) as CacheStore;
+    }
+    const cacheDir =
+      fs.existsSync(cachePath) && fs.statSync(cachePath).isDirectory() ? cachePath : path.dirname(cachePath);
+    return CreatorsAPICache.loadAll(cacheDir);
   } catch (err) {
     logger.error(`Failed to read cache at ${cachePath}`, err);
     return {};
@@ -202,7 +207,7 @@ function evaluateRecentDrop(
 }
 
 export async function extractPriceDrops(options: ExtractPriceDropsOptions = {}): Promise<PriceDropsData> {
-  const cachePath = options.cachePath || path.join(process.cwd(), 'data/cache/paapi-product-cache.json');
+  const cachePath = options.cachePath || path.join(process.cwd(), 'data/cache');
   const articlesDir = options.articlesDir || path.join(process.cwd(), 'content/articles');
   const outputPath = options.outputPath || path.join(process.cwd(), 'data/recommendations/price-drops.json');
   const maxResults = options.maxResults ?? 15;

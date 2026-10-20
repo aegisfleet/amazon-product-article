@@ -14,6 +14,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import dotenv from 'dotenv';
+import { CreatorsAPICache } from '../../api/CreatorsAPICache';
 import { CreatorsAPIClient } from '../../api/CreatorsAPIClient';
 import { enhanceCategories } from '../enhance-categories';
 
@@ -57,16 +58,24 @@ function findParentAsinLocally(asin: string): string | null {
     }
   }
 
-  // 2. data/cache/paapi-product-cache.json
-  const cachePath = path.resolve(process.cwd(), 'data/cache/paapi-product-cache.json');
-  if (fs.existsSync(cachePath)) {
-    try {
-      const cache = JSON.parse(fs.readFileSync(cachePath, 'utf-8'));
+  // 2. data/cache/paapi/<shard>.json or legacy fallback
+  try {
+    const shardKey = CreatorsAPICache.getShardKey(asin);
+    const shardPath = path.resolve(process.cwd(), 'data/cache/paapi', `${shardKey}.json`);
+    if (fs.existsSync(shardPath)) {
+      const cache = JSON.parse(fs.readFileSync(shardPath, 'utf-8'));
       const p = cache[asin]?.data?.parentAsin;
       if (p) return p.toUpperCase();
-    } catch {
-      // キャッシュ解析エラー時は無視してフォールバック
+    } else {
+      const cachePath = path.resolve(process.cwd(), 'data/cache/paapi-product-cache.json');
+      if (fs.existsSync(cachePath)) {
+        const cache = JSON.parse(fs.readFileSync(cachePath, 'utf-8'));
+        const p = cache[asin]?.data?.parentAsin;
+        if (p) return p.toUpperCase();
+      }
     }
+  } catch {
+    // キャッシュ解析エラー時は無視してフォールバック
   }
 
   return null;
