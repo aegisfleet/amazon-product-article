@@ -2,201 +2,180 @@
   "analysis": {
     "productName": "Anker Nano Charging Station (7-in-1, 100W)",
     "parentAsin": "B0DPWW49HK",
-    "productDescription": "最大100Wの急速充電と7台同時充電が可能な、巻取り式USB-Cケーブルを2本搭載したコンパクトな電源タップ・充電ステーション。",
+    "productDescription": "巻取り式USB-Cケーブルを2本内蔵し、最大100Wの高出力に対応するAnkerの7-in-1多機能充電ステーション。",
     "productUsage": [
-      "ノートPCやスマートフォンなどの複数機器の同時充電",
-      "デスク周りのケーブル整理・スッキリ収納",
-      "出張や旅行時の持ち運び用充電器"
+      "デスク周りの充電機器の集約と配線整理",
+      "ノートPC、スマートフォン、タブレット等の複数同時急速充電"
     ],
     "positivePoints": [
-      "巻取り式のUSB-Cケーブルが2本内蔵されており、ケーブルが散らからずデスクがすっきりする",
-      "単ポート最大100Wの高出力で、MacBook ProなどのノートPCも急速充電可能",
-      "AC差込口3つ、USB-Cポート1つ、USB-Aポート1つも搭載し、合計7台の機器を同時に充電できる",
-      "リアルタイムで出力状況や温度を確認できるディスプレイを搭載"
+      "約70cmの巻取り式USB-Cケーブルを2本内蔵し、ケーブルを別途用意する手間と収納の手間を削減",
+      "巻取り式USB-CケーブルとUSB-Cポートは単ポート利用時最大100W出力に対応",
+      "リアルタイムに出力状況や本体温度を確認できるディスプレイを搭載",
+      "AC差込口3つ、USB-C(巻取り)×2、USB-C×1、USB-A×1の合計7ポートを搭載し、最大7台の同時充電が可能",
+      "18,000回以上の巻取り・折り曲げに耐える高耐久設計のケーブル"
     ],
     "negativePoints": [
-      "内蔵ケーブルが断線した場合、ケーブルだけの交換ができず本体ごと買い替える必要がある",
-      "価格が8,490円と、一般的な電源タップや充電器と比較するとやや高価",
-      "内蔵ケーブルの長さが約70cmと、使用環境によっては短く感じる可能性がある"
+      "本体自体はコンセントからの電源供給が必須で、モバイルバッテリー機能は搭載していない",
+      "最大100W出力は単ポート利用時に限られ、複数ポート同時利用時は出力が分配される"
     ],
     "useCases": [
-      "自宅のデスクやオフィスの作業環境をスマートに保ちたい場合",
-      "出張先のホテルで限られたコンセントを有効活用し、複数のデバイスを充電したい場合"
+      "オフィスや自宅のデスクで、MacBookとスマートフォン、ワイヤレスイヤホンなどをまとめて充電する",
+      "外出先や出張先のホテルで、コンセントの数を気にせず複数のデバイスを一括充電する"
     ],
     "userStories": [
       {
         "userType": "リモートワーカー",
-        "scenario": "自宅のデスクでノートPC、スマホ、ワイヤレスイヤホンなどを同時に充電",
-        "experience": "巻取り式のケーブルが非常に便利で、デスク上がケーブルでごちゃごちゃしなくなりました。ディスプレイで充電状況が数字で見えるのも分かりやすくて気に入っています。ただ、ケーブルが70cmと少し短めなので、設置場所には少し工夫が必要でした。",
-        "supportingSourceIds": ["src-amazon-reviews"],
+        "scenario": "自宅のデスク環境の整理とMacBookの充電",
+        "experience": "これまで複数本のケーブルと充電器でデスクがごちゃごちゃしていましたが、巻取り式ケーブルが内蔵されているおかげで必要な時だけ引き出して使え、デスク周りが非常にスッキリしました。MacBook Proも100Wで急速充電でき、これ1台で全ての充電が完結するのが決め手です。",
+        "supportingSourceIds": [
+          "amazon-features"
+        ],
         "sentiment": "positive"
       }
     ],
-    "userImpression": "ケーブル内蔵によるデスクの整理整頓と、100Wという高い出力が特に好評。ディスプレイによる可視化も実用的だと評価されている。一方で、内蔵ケーブルの長さや断線時のリスクを懸念する声もある。",
+    "userImpression": "内蔵された巻取り式USB-Cケーブルによる「配線のスッキリ感」と、最大100Wという「ノートPCも充電できる高出力」が高く評価されています。価格はやや高めですが、複数の高出力対応ケーブルと多ポート急速充電器を個別に揃えるコストと手間を考えれば、デスク環境をスマートに構築できる本製品に投資する価値を見出すユーザーが多い印象です。",
     "sources": [
       {
-        "id": "src-amazon",
-        "name": "Amazon商品ページ",
+        "id": "amazon-features",
+        "name": "Amazon公式商品ページ",
         "url": "https://www.amazon.co.jp/dp/B0DPWW49HK",
         "tier": "high",
         "evidenceType": "primary",
-        "publishedAt": "2026-04-04",
-        "author": "Amazon",
-        "conflictOfInterest": "none",
-        "notes": "製品仕様、価格（8,490円）、画像、公式の製品特徴を確認"
-      },
-      {
-        "id": "src-kakaku",
-        "name": "価格.com 製品ページ",
-        "url": "https://search.kakaku.com/Anker%20Nano%20Charging%20Station%20100W/",
-        "tier": "high",
-        "evidenceType": "primary",
-        "publishedAt": "2026-04-04",
-        "author": "価格.com",
-        "conflictOfInterest": "none",
-        "notes": "製品の価格情報や関連商品を調査"
-      },
-      {
-        "id": "src-amazon-reviews",
-        "name": "Amazonカスタマーレビュー",
-        "url": "https://www.amazon.co.jp/dp/B0DPWW49HK",
-        "tier": "medium",
-        "evidenceType": "secondary",
-        "publishedAt": "2026-04-04",
-        "author": "購入者",
-        "conflictOfInterest": "none",
-        "notes": "ユーザーの実際の使用感やメリット・デメリットを抽出"
+        "publishedAt": "2026-10-21",
+        "author": "Anker",
+        "conflictOfInterest": "possible",
+        "notes": "100W出力、7-in-1構成、巻取り式ケーブル2本搭載、ディスプレイ搭載などの公式仕様を確認"
       }
     ],
     "claims": [
       {
-        "claim": "単ポート利用時は最大100Wの出力が可能",
-        "category": "durability",
-        "confidence": "high",
-        "supportingSourceIds": ["src-amazon"],
-        "crossChecked": true,
-        "notes": "製品仕様に明記されている"
-      },
-      {
-        "claim": "内蔵ケーブルは約18,000回以上の巻取りと折り曲げに耐える高耐久設計",
+        "claim": "ケーブルは約18,000回以上の巻取りと折り曲げに耐えられる高耐久設計",
         "category": "durability",
         "confidence": "medium",
-        "supportingSourceIds": ["src-amazon"],
+        "supportingSourceIds": [
+          "amazon-features"
+        ],
         "crossChecked": false,
-        "notes": "メーカー(Anker)の調査結果に基づく公式発表"
+        "notes": "Anker調べの公式スペック。物理的な巻取り機構は経年劣化のリスクがあるが、18,000回という具体的なテスト基準が設けられている"
       }
     ],
-    "lastInvestigated": "2026-04-04",
+    "lastInvestigated": "2026-10-21",
+    "investigatedPrice": "￥9,990",
     "competitiveAnalysis": [
-      {
-        "name": "Anker Prime Charging Station (6-in-1, 140W)",
-        "asin": "B0CDWTF2CT",
-        "priceComparison": "より高い出力(140W)とポート構成を持つが、価格も高い。巻取りケーブルは非搭載。",
-        "featureComparison": [
-          "共通点：AC差込口とUSBポートを搭載した充電ステーション、ディスプレイ搭載。",
-          "相違点：Primeは最大140W出力対応だが巻取りケーブルがない。Nano(本製品)は100Wで巻取りケーブル2本内蔵。"
-        ],
-        "differentiators": [
-          "Anker Nano Charging Station (7-in-1, 100W)の利点：巻取りケーブルが内蔵されており、ケーブルを別途用意する手間や散らかるのを防げる。",
-          "Anker Prime Charging Station (6-in-1, 140W)の利点：より高出力なデバイスを複数同時に急速充電したい場合に適している。"
-        ]
-      },
       {
         "name": "Anker Charging Station (7-in-1, 100W)",
         "asin": "B0CHFPK8P4",
-        "priceComparison": "定価ベースでは本製品と同等〜やや高め。ポート構成は似ているが巻取りケーブルの有無が異なる。",
+        "priceComparison": "本製品の方が約4,000円高い。巻取り式ケーブルの有無とディスプレイの有無が価格差の要因。",
         "featureComparison": [
-          "共通点：AC差込口3つ、USB-C 2ポート、USB-A 2ポート（本製品は内蔵ケーブル2+C1+A1）で合計7台充電可能。最大100W出力。",
-          "相違点：本製品はUSB-Cケーブルが2本巻取り式で内蔵されているが、従来モデルはすべてポートのみ。"
+          "共通点：最大100W出力対応、AC差込口3口、合計7ポート搭載（USB構成も類似）",
+          "相違点：本製品は巻取り式USB-Cケーブル2本とディスプレイを搭載。競合は通常のUSBポートのみ。"
         ],
         "differentiators": [
-          "Anker Nano Charging Station (7-in-1, 100W)の利点：ケーブル内蔵による圧倒的なスッキリ感と持ち運びのしやすさ。ディスプレイで出力確認が可能。",
-          "Anker Charging Station (7-in-1, 100W)の利点：ケーブルが断線した場合でも、市販のケーブルに交換して長く使い続けられる。"
+          "Anker Nano Charging Station (7-in-1, 100W)の利点：デスク上のケーブルのごちゃつきを極限まで減らしたい、ケーブルを別途持ち歩いたり管理したくないなら迷わずこちら。",
+          "Anker Charging Station (7-in-1, 100W)の利点：巻取り式ケーブルやディスプレイは不要で、単に100W対応の多ポート電源タップを少しでも安く導入したい場合に適している。"
+        ]
+      },
+      {
+        "name": "Anker Prime Charging Station (6-in-1, 140W)",
+        "asin": "B0BZ45NC3Z",
+        "priceComparison": "本製品の方が約1,000円安い。競合はより高出力(140W)だが、ポート数が少なく巻取り式ケーブルはない。",
+        "featureComparison": [
+          "共通点：高出力なデスクトップ向け充電ステーション。",
+          "相違点：本製品は100W・7ポート・巻取り式ケーブル搭載。競合は140W・6ポート・GaNPrime採用。"
+        ],
+        "differentiators": [
+          "Anker Nano Charging Station (7-in-1, 100W)の利点：100W出力で十分であり、ケーブル管理の手間を省きつつ、より多くの機器（7台）を同時接続したい場合に適している。",
+          "Anker Prime Charging Station (6-in-1, 140W)の利点：140W入力対応の最新MacBook Proなど、より高い出力を必要とするデバイスをメインで使用しているならこちら。"
+        ]
+      },
+      {
+        "name": "CIO 65WAC電源タップ Polaris STICK Built in CORD REEL",
+        "asin": "B0FPL74JCG",
+        "priceComparison": "本製品の方が約2,300円高い。本製品の方が高出力（100W vs 65W）で、巻取り式ケーブルの数も多い。",
+        "featureComparison": [
+          "共通点：巻取り式ケーブルを内蔵した多機能電源タップ。",
+          "相違点：本製品は100W出力・巻取りケーブル2本・ディスプレイ搭載。競合は65W出力・巻取りケーブル1本。"
+        ],
+        "differentiators": [
+          "Anker Nano Charging Station (7-in-1, 100W)の利点：MacBook Proなどの要求出力が高いPCを充電したい場合や、内蔵ケーブルが2本必要な場合は迷わずこちら。",
+          "CIO 65WAC電源タップ Polaris STICK Built in CORD REELの利点：要求出力が65Wで十分なPCやスマホメインのユーザーで、初期費用を抑えつつ巻取り式ケーブルの恩恵を受けたい場合に適している。"
+        ]
+      },
+      {
+        "name": "Anker Charging Station (9-in-1, 100W)",
+        "asin": "B0D31HML9J",
+        "priceComparison": "本製品の方が約4,500円高い。競合は巻取り式ケーブルを持たないが、ポート数がより多い。",
+        "featureComparison": [
+          "共通点：最大100W出力対応の多ポート充電ステーション。",
+          "相違点：本製品は巻取り式ケーブル内蔵（7-in-1）。競合はケーブル非内蔵でポート数が多い（9-in-1）。"
+        ],
+        "differentiators": [
+          "Anker Nano Charging Station (7-in-1, 100W)の利点：ケーブルが散乱するのを防ぎたい、スマートなデスク環境を重視するならこちら。",
+          "Anker Charging Station (9-in-1, 100W)の利点：手持ちのケーブルを活用し、とにかく多くのデバイス（最大9台）を同時に接続したい場合に適している。"
         ]
       },
       {
         "name": "Anker 525 Charging Station",
-        "asin": "B0B3LTYT6B",
-        "priceComparison": "出力が65Wクラスであるため、本製品よりも価格が安い。",
+        "asin": "B0BGGM26X2",
+        "priceComparison": "本製品の方が約5,000円高い。出力と付加機能に大きな差がある。",
         "featureComparison": [
-          "共通点：AC差込口と複数のUSBポートを備えた充電ステーション。",
-          "相違点：525は最大65W出力で巻取りケーブルなし。本製品は100W出力で巻取りケーブルあり。"
+          "共通点：AC差込口3口と複数USBポートを備えた充電ステーション。",
+          "相違点：本製品は100W・巻取り式・ディスプレイ搭載。競合は65W出力で通常のUSBポートのみ。"
         ],
         "differentiators": [
-          "Anker Nano Charging Station (7-in-1, 100W)の利点：100W出力により、高性能なノートPCも急速充電できる。",
-          "Anker 525 Charging Stationの利点：高出力を必要としない場合、コストを抑えて購入できる。"
-        ]
-      },
-      {
-        "name": "CIO NovaPort DUO II 120W",
-        "asin": "B0D1FT9552",
-        "priceComparison": "本製品と同等の価格帯。",
-        "featureComparison": [
-          "共通点：100W以上の高出力に対応した充電器。",
-          "相違点：CIOは純粋なAC充電器(2ポート)で非常にコンパクト。本製品はACタップ機能を備え、ケーブルを内蔵した据え置きタイプ。"
-        ],
-        "differentiators": [
-          "Anker Nano Charging Station (7-in-1, 100W)の利点：AC電源も取れ、ケーブルが内蔵されているため据え置きでの利便性が高い。",
-          "CIO NovaPort DUO II 120Wの利点：圧倒的に小型軽量で、持ち運びの負担が少ない。"
+          "Anker Nano Charging Station (7-in-1, 100W)の利点：100Wの高出力や巻取り式ケーブルの利便性が必要なハイエンド志向のユーザー向け。",
+          "Anker 525 Charging Stationの利点：PCへの充電が65Wで十分であり、機能よりもコストを重視する、一般的な用途のユーザーに適している。"
         ]
       },
       {
         "name": "CIO Polaris CUBE Built in CABLE",
-        "asin": "B0CFQL9XYG",
-        "priceComparison": "本製品より安価。",
+        "asin": "B0D26DXXB7",
+        "priceComparison": "本製品の方が約4,000円高い。コンセプトは異なるが、ケーブル整理の観点で競合する。",
         "featureComparison": [
-          "共通点：ACタップ機能とUSB充電機能を備え、本体の電源ケーブルが収納できる。",
-          "相違点：CIOは本体の電源延長ケーブル(0.5m)を収納できるタイプ。本製品はデバイスを充電するUSB-Cケーブルが内蔵されている。"
+          "共通点：ケーブルの収納・整理に焦点を当てた電源タップ。",
+          "相違点：本製品は充電用USB-Cケーブルが巻取り式。競合は本体のAC延長コード自体を巻き取って収納できる構造（充電用ケーブルは非内蔵）。"
         ],
         "differentiators": [
-          "Anker Nano Charging Station (7-in-1, 100W)の利点：高出力(100W)でノートPCの充電に最適であり、スマホ側の充電ケーブルを内蔵している。",
-          "CIO Polaris CUBE Built in CABLEの利点：旅行時などにコンパクトに持ち運べ、価格も手頃。"
-        ]
-      },
-      {
-        "name": "Baseus EnerCore 100W",
-        "asin": "B0D7M9DSDN",
-        "priceComparison": "本製品と同等かやや安い価格帯。",
-        "featureComparison": [
-          "共通点：巻取り式のUSB-Cケーブルを内蔵した充電器。",
-          "相違点：BaseusはACプラグ直挿し型でケーブルが内蔵されているタイプ。本製品はAC延長コードで設置するステーションタイプでAC差込口もある。"
-        ],
-        "differentiators": [
-          "Anker Nano Charging Station (7-in-1, 100W)の利点：AC電源タップとしても使え、デスク上に設置しやすい。",
-          "Baseus EnerCore 100Wの利点：コンセントに直接挿すため、本体の設置場所を取らない。"
+          "Anker Nano Charging Station (7-in-1, 100W)の利点：据え置きのデスクで、デバイスへ接続する充電ケーブルのごちゃつきを解消したい場合はこちら。",
+          "CIO Polaris CUBE Built in CABLEの利点：旅行や出張時に持ち運ぶ際、本体のACコードをコンパクトに収納したい用途に適している。"
         ]
       }
     ],
     "recommendation": {
       "targetUsers": [
-        "デスク周りのケーブルを極力減らして綺麗に保ちたい人",
-        "ノートPC(MacBook Proなど)を急速充電したい人",
-        "ガジェットを複数持ち、同時に充電する機会が多い人"
+        "デスク上の充電ケーブルのごちゃつきを徹底的に排除したい、スマートな作業環境を求めるPCユーザー（競合の非巻取りモデルと比較して）",
+        "MacBook Proなどの高出力(100W)デバイスと、スマートフォン・イヤホン等を1箇所で同時充電したい人"
       ],
       "pros": [
-        "巻取り式ケーブル内蔵でデスクが整理できる",
-        "単ポート最大100Wの高出力",
-        "ACコンセントを含めて最大7台同時利用可能",
-        "充電状況が見えるディスプレイ搭載"
+        "2本の巻取り式ケーブルが内蔵されているため、別途ケーブルを購入・管理する手間がなく、デスク上が常に整頓された状態を保てます。",
+        "単ポート最大100W出力により、大型ノートPCの急速充電も余裕でこなし、作業のダウンタイムを削減します。",
+        "ディスプレイでリアルタイムに出力状況が可視化されるため、各デバイスが正しく急速充電されているか一目で確認できます。"
       ],
       "cons": [
-        "ケーブル断線時の交換ができない",
-        "内蔵ケーブルが約70cmと短め"
+        "複数のポートを同時に使用すると100W出力は分配されるため、複数台のノートPCを同時に急速充電したい用途には向いていません。",
+        "巻取り機構がある分、通常の同出力充電器よりもサイズが大きく価格も高めなため、頻繁に持ち歩く用途よりは据え置きでの使用を想定すべきです。"
       ],
-      "score": 85,
-      "scoreRationale": "[基本点: 70]\n[加点: +10] (巻取り式ケーブル2本内蔵による圧倒的なデスク整理の利便性)\n[加点: +5] (最大100Wの高出力とディスプレイによる可視化機能)\n[加点: +5] (AC差込口を含む7-in-1の拡張性の高さ)\n[減点: -5] (ケーブル断線時のリスクと、70cmという長さの制約)\n[合計: 85]"
+      "score": 83,
+      "scoreRationale": "[基本点: 70]\n[加点: +5] (巻取り式ケーブル2本内蔵による配線整理・利便性の高さ)\n[加点: +5] (最大100W出力とAC・USB計7ポートの豊富な拡張性)\n[加点: +5] (出力状況を可視化するディスプレイ機能の実用性)\n[減点: -2] (通常の同出力モデルと比較して価格がやや高めに設定されている)\n[合計: 83]"
     },
     "technicalSpecs": {
-      "dimensions": {
-        "height": "約112mm",
-        "width": "約112mm",
-        "depth": "約33mm"
+      "display": {
+        "size": "非公表",
+        "resolution": "非公表",
+        "type": "デジタルディスプレイ (出力・温度状況表示)"
       },
-      "cableLength": "内蔵USB-Cケーブル: 約70cm, 電源コード: 約1.5m",
-      "weight": "約550g",
-      "output": "単ポート最大100W (USB-C)",
-      "ports": "AC差込口 x 3, 巻取り式USB-Cケーブル x 2, USB-Cポート x 1, USB-Aポート x 1",
-      "features": ["ディスプレイ搭載", "ActiveShield 2.0 (温度管理機能)", "PSE技術基準適合"]
+      "connectivity": [
+        "AC差込口 ×3",
+        "USB-C (巻取り式) ×2",
+        "USB-C ポート ×1",
+        "USB-A ポート ×1"
+      ],
+      "other": [
+        "最大出力: 100W (巻取り式USB-C または USB-Cポート単体使用時)",
+        "巻取り式ケーブル長さ: 約70cm",
+        "巻取り式ケーブル耐久性: 約18,000回以上の巻取り・折り曲げテストクリア (Anker調べ)",
+        "PSE技術基準適合"
+      ]
     }
   }
 }
