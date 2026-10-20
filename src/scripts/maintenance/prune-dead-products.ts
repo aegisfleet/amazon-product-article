@@ -263,8 +263,10 @@ async function checkAsinsInBatches(
   const results: CheckResult[] = [];
   const total = asins.length;
 
-  for (let i = 0; i < total; i += concurrency) {
-    const chunk = asins.slice(i, i + concurrency);
+  const processBatch = async (startIndex: number): Promise<void> => {
+    if (startIndex >= total) return;
+
+    const chunk = asins.slice(startIndex, startIndex + concurrency);
     const chunkPromises = chunk.map(async (asin) => {
       const check = await checkAmazonUrl(asin);
       const articlePath = path.join(ARTICLES_DIR, `${asin}.md`);
@@ -291,11 +293,15 @@ async function checkAsinsInBatches(
     const chunkResults = await Promise.all(chunkPromises);
     results.push(...chunkResults);
 
-    process.stdout.write(`\rProgress: ${Math.min(i + concurrency, total)} / ${total}`);
-    if (i + concurrency < total && delayMs > 0) {
+    process.stdout.write(`\rProgress: ${Math.min(startIndex + concurrency, total)} / ${total}`);
+    if (startIndex + concurrency < total && delayMs > 0) {
       await new Promise((resolve) => setTimeout(resolve, delayMs));
     }
-  }
+
+    return processBatch(startIndex + concurrency);
+  };
+
+  await processBatch(0);
   process.stdout.write('\n');
 
   return results;
@@ -316,7 +322,7 @@ function saveCache(cache: Record<string, any>): void {
     const shards: Record<string, Record<string, any>> = {};
     for (const [asin, entry] of Object.entries(cache)) {
       const shardKey = CreatorsAPICache.getShardKey(asin);
-      if (!shards[shardKey]) shards[shardKey] = {};
+      shards[shardKey] ??= {};
       shards[shardKey][asin] = entry;
     }
 
