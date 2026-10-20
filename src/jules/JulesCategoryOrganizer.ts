@@ -185,6 +185,89 @@ export class JulesCategoryOrganizer {
   }
 
   /**
+   * カテゴリが有効な分類対象であるかを判定
+   */
+  private isValidCategory(category?: string | null): category is string {
+    return Boolean(category && category !== 'その他／全般' && category !== 'null');
+  }
+
+  /**
+   * キャッシュオブジェクトから有効なカテゴリを抽出してSetに追加
+   */
+  private extractCategories(data: ProductCache, target: Set<string>): void {
+    for (const key of Object.keys(data)) {
+      const entry = data[key];
+      const category = entry?.data?.categoryInfo?.main;
+      if (this.isValidCategory(category)) {
+        target.add(category);
+      }
+    }
+  }
+
+  /**
+   * 単一のシャードファイルを読み込んでカテゴリを抽出
+   */
+  private async loadShardCategories(filePath: string, categories: Set<string>): Promise<void> {
+    try {
+      const raw = await fs.readFile(filePath, 'utf-8');
+      const parsed = JSON.parse(raw) as ProductCache;
+      this.extractCategories(parsed, categories);
+    } catch {
+      // 破損したシャードはスキップ
+    }
+  }
+
+  /**
+   * シャード分割されたキャッシュ群から全カテゴリを収集
+   */
+  private async loadCategoriesFromShards(shardsDir: string): Promise<Set<string> | null> {
+    try {
+      const files = await fs.readdir(shardsDir);
+      const jsonFiles = files.filter((f) => f.endsWith('.json'));
+      if (jsonFiles.length === 0) {
+        return null;
+      }
+
+      const categories = new Set<string>();
+      await Promise.all(jsonFiles.map((file) => this.loadShardCategories(path.join(shardsDir, file), categories)));
+      return categories;
+    } catch {
+      // shardsDirが存在しないか読み取り失敗時はフォールバックのためnullを返す
+      return null;
+    }
+  }
+
+  /**
+   * エラーがENOENT（ファイル未検出）であるかを判定
+   */
+  private isFileNotFoundError(error: unknown): boolean {
+    return (
+      typeof error === 'object' && error !== null && 'code' in error && (error as { code: string }).code === 'ENOENT'
+    );
+  }
+
+  /**
+   * レガシーの単一キャッシュファイルから全カテゴリを収集
+   */
+  private async loadCategoriesFromLegacy(legacyPath: string): Promise<Set<string>> {
+    let content: string;
+    try {
+      content = await fs.readFile(legacyPath, 'utf-8');
+    } catch (error) {
+      if (this.isFileNotFoundError(error)) {
+        this.logger.warn('Product cache not found');
+        return new Set<string>();
+      }
+      throw error;
+    }
+
+    const cache = JSON.parse(content) as ProductCache;
+    const categories = new Set<string>();
+    this.extractCategories(cache, categories);
+    return categories;
+  }
+
+  /**
    * 商品キャッシュから全カテゴリを収集
    */
   async collectCategoriesFromCache(): Promise<Set<string>> {
@@ -192,66 +275,12 @@ export class JulesCategoryOrganizer {
       return this.productCacheCache;
     }
 
-    const categories = new Set<string>();
     const cacheDir = path.join(process.cwd(), 'data', 'cache');
     const shardsDir = path.join(cacheDir, 'paapi');
     const legacyPath = path.join(cacheDir, 'paapi-product-cache.json');
 
-    try {
-      const files = await fs.readdir(shardsDir);
-      const jsonFiles = files.filter((f) => f.endsWith('.json'));
-      if (jsonFiles.length > 0) {
-        for (const file of jsonFiles) {
-          try {
-            const raw = await fs.readFile(path.join(shardsDir, file), 'utf-8');
-            const parsed = JSON.parse(raw);
-            for (const key in parsed) {
-              const category = parsed[key]?.data?.categoryInfo?.main;
-              if (category && category !== 'その他／全般' && category !== 'null') {
-                categories.add(category);
-              }
-            }
-          } catch {
-            // ignore corrupt shard
-          }
-        }
-        this.productCacheCache = categories;
-        return categories;
-      }
-    } catch {
-      // shardsDir does not exist or readdir failed, fallback to legacy
-    }
-
-    let content: string;
-    try {
-      content = await fs.readFile(legacyPath, 'utf-8');
-    } catch (error) {
-      // Check for ENOENT (file not found)
-      if (
-        typeof error === 'object' &&
-        error !== null &&
-        'code' in error &&
-        (error as { code: string }).code === 'ENOENT'
-      ) {
-        this.logger.warn('Product cache not found');
-        this.productCacheCache = new Set<string>();
-        return this.productCacheCache;
-      }
-      throw error;
-    }
-
-    const cache = JSON.parse(content) as ProductCache;
-
-    // Use for...in loop instead of Object.values to avoid creating a large intermediate array
-    for (const key in cache) {
-      const entry = cache[key];
-      if (!entry) continue;
-
-      const category = entry.data?.categoryInfo?.main;
-      if (category && category !== 'その他／全般' && category !== 'null') {
-        categories.add(category);
-      }
-    }
+    const shardCategories = await this.loadCategoriesFromShards(shardsDir);
+    const categories = shardCategories ?? (await this.loadCategoriesFromLegacy(legacyPath));
 
     this.productCacheCache = categories;
     return categories;

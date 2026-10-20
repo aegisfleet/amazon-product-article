@@ -115,5 +115,29 @@ describe('JulesCategoryOrganizer', () => {
       const result = await organizer.getUnregisteredCategories();
       expect(result).toEqual(['電子レンジ']);
     });
+
+    it('should load categories from shards when shard files exist', async () => {
+      const mockGroups = {
+        categoryGroups: [{ name: '家電', slug: 'appliances', children: ['冷蔵庫'] }],
+      };
+      const mockShard1 = {
+        ASIN1: { data: { categoryInfo: { main: '電子レンジ' } }, status: 'valid' },
+        ASIN2: { data: { categoryInfo: { main: 'その他／全般' } }, status: 'valid' },
+      };
+      const mockShard2 = {
+        ASIN3: { data: { categoryInfo: { main: '炊飯器' } }, status: 'valid' },
+      };
+
+      (fs.readdir as jest.Mock).mockResolvedValue(['shard1.json', 'shard2.json', 'ignored.txt']);
+      (fs.readFile as jest.Mock).mockImplementation((path: string) => {
+        if (path.endsWith('categorygroups.json')) return Promise.resolve(JSON.stringify(mockGroups));
+        if (path.endsWith('shard1.json')) return Promise.resolve(JSON.stringify(mockShard1));
+        if (path.endsWith('shard2.json')) return Promise.resolve(JSON.stringify(mockShard2));
+        return Promise.resolve('');
+      });
+
+      const result = await organizer.getUnregisteredCategories();
+      expect(result).toEqual(['炊飯器', '電子レンジ']);
+    });
   });
 });
