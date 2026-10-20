@@ -128,7 +128,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (maxPrice !== 200000) params.set('maxPrice', String(maxPrice));
     if (minDiscount !== 0) params.set('minDiscount', String(minDiscount));
     if (dealType) params.set('dealType', dealType);
-    if (inStockFilter && inStockFilter.checked) params.set('inStock', '1');
+    if (inStockFilter?.checked) params.set('inStock', '1');
     if (category) params.set('category', category);
     if (currentSort !== 'date') params.set('sort', currentSort);
     const q = keywordInput ? keywordInput.value.trim() : '';
@@ -381,7 +381,7 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }
 
-    if (inStockFilter && inStockFilter.checked) {
+    if (inStockFilter?.checked) {
       chips.push({
         id: 'inStock',
         icon: 'inventory_2',

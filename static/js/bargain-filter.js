@@ -113,7 +113,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (minScore !== 80) params.set('minScore', String(minScore));
     if (minPrice !== 100) params.set('minPrice', String(minPrice));
     if (maxPrice < 200000) params.set('maxPrice', String(maxPrice));
-    if (inStockFilter && !inStockFilter.checked) params.set('inStock', '0');
+    if (inStockFilter?.checked === false) params.set('inStock', '0');
     if (category) params.set('category', category);
     if (currentSort !== 'date') params.set('sort', currentSort);
     const q = keywordInput ? keywordInput.value.trim() : '';
@@ -320,7 +320,7 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }
 
-    if (inStockFilter && inStockFilter.checked) {
+    if (inStockFilter?.checked) {
       chips.push({
         id: 'inStock',
         icon: 'inventory_2',
