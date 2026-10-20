@@ -28,8 +28,8 @@ importers:
         specifier: ^1.20.0
         version: 1.20.0
       dotenv:
-        specifier: ^18.0.6
-        version: 18.0.6
+        specifier: ^18.0.8
+        version: 18.0.8
       fuse.js:
         specifier: ^7.5.0
         version: 7.5.0
@@ -1224,8 +1224,8 @@ packages:
     resolution: {integrity: sha512-X07nttJQkwkfKfvTPG/KSnE2OMdcUCao6+eXF3wmnIQRn2aPAHH3VxDbDOdegkd6JbPsXqShpvEOHfAT+nCNwQ==}
     engines: {node: '>=0.3.1'}
 
-  dotenv@18.0.6:
-    resolution: {integrity: sha512-ZMVmohV6CvAJtj++pZNyggluUt6hbRdQAxc2+Z635RL6/AG/ruXv5lHnybUFoxMPL/yrTL/tsF4paZu2l7RA6Q==}
+  dotenv@18.0.8:
+    resolution: {integrity: sha512-2KDeoFoK/zRtcnbunCDlLG5VWVMcyqeQc6iK65o231nfNAcuGrKoqUQfJFUtBI+QlShk5HKIHxwebBtUl3rEfA==}
     engines: {node: '>=12'}
     hasBin: true
 
@@ -3528,7 +3528,7 @@ snapshots:
 
   diff@4.0.4: {}
 
-  dotenv@18.0.6: {}
+  dotenv@18.0.8: {}
 
   dunder-proto@1.0.1:
     dependencies:
