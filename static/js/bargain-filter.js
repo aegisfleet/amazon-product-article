@@ -55,6 +55,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const categoryResetBtn = document.getElementById('bargain-category-reset-btn');
   const keywordInput = document.getElementById('bargain-keyword-input');
   const keywordClearBtn = document.getElementById('bargain-keyword-clear-btn');
+  const inStockFilter = document.getElementById('bargain-in-stock-filter');
   const activeChipsContainer = document.getElementById('bargain-active-chips');
   const noResultsActionsEl = document.getElementById('bargain-no-results-actions');
   const loadMoreContainer = document.getElementById('bargain-load-more-container');
@@ -81,6 +82,11 @@ document.addEventListener('DOMContentLoaded', () => {
     setSliderFromParam(params, 'minScore', scoreSlider, null, 0, 100);
     setSliderFromParam(params, 'minPrice', minPriceSlider, (v) => Math.round(priceToValue(v)));
     setSliderFromParam(params, 'maxPrice', priceSlider, (v) => Math.round(priceToValue(v)));
+    if (inStockFilter && params.get('inStock') === '0') {
+      inStockFilter.checked = false;
+    } else if (inStockFilter && params.get('inStock') === '1') {
+      inStockFilter.checked = true;
+    }
     if (params.has('category') && categorySelect) {
       // We will set this after populating categories
       categorySelect.dataset.pendingValue = params.get('category');
@@ -107,6 +113,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (minScore !== 80) params.set('minScore', String(minScore));
     if (minPrice !== 100) params.set('minPrice', String(minPrice));
     if (maxPrice < 200000) params.set('maxPrice', String(maxPrice));
+    if (inStockFilter && !inStockFilter.checked) params.set('inStock', '0');
     if (category) params.set('category', category);
     if (currentSort !== 'date') params.set('sort', currentSort);
     const q = keywordInput ? keywordInput.value.trim() : '';
@@ -239,12 +246,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const rawQ = keywordInput ? keywordInput.value : '';
     const keywords = normalizeText(rawQ).split(/\s+/).filter(Boolean);
+    const showOnlyInStock = inStockFilter ? inStockFilter.checked : false;
 
-    // Step 1: Filter by Score, Price range, and Keyword
+    // Step 1: Filter by Score, Price range, Stock, and Keyword
     const preFiltered = allProducts.filter(p => {
       if (p.score < minScore) return false;
       if (p.priceRaw < minPrice) return false;
       if (maxPrice < 200000 && p.priceRaw > maxPrice) return false;
+      if (showOnlyInStock && (p.inStock === false || (typeof isAvailableInStock === 'function' && !isAvailableInStock(p.availability)))) return false;
       return matchesKeywords(p, keywords);
     });
 
@@ -311,6 +320,18 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }
 
+    if (inStockFilter && inStockFilter.checked) {
+      chips.push({
+        id: 'inStock',
+        icon: 'inventory_2',
+        label: '在庫ありのみ',
+        onRemove: () => {
+          inStockFilter.checked = false;
+          applyFilters();
+        }
+      });
+    }
+
     if (category) {
       chips.push({
         id: 'category',
@@ -347,6 +368,7 @@ document.addEventListener('DOMContentLoaded', () => {
     scoreSlider.value = '80';
     minPriceSlider.value = '13';
     priceSlider.value = '250';
+    if (inStockFilter) inStockFilter.checked = true;
     if (categorySelect) categorySelect.value = '';
     if (keywordInput) keywordInput.value = '';
     if (keywordClearBtn) keywordClearBtn.style.display = 'none';
@@ -389,6 +411,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
   setupSliderTouchPrevention(priceSlider);
 
+  if (inStockFilter) inStockFilter.addEventListener('change', applyFilters);
   if (categorySelect) categorySelect.addEventListener('change', applyFilters);
   if (resetBtn) resetBtn.addEventListener('click', resetFilters);
   if (categoryResetBtn) {

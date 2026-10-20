@@ -1,0 +1,30 @@
+{{- /*
+  utils-in-stock.html
+  商品ページ、辞書、またはavailability文字列を受け取り、在庫あり(true)か在庫切れ(false)かを返すパーシャル
+*/ -}}
+{{- $inStock := true -}}
+{{- $availability := "" -}}
+{{- $explicitInStock := true -}}
+
+{{- if reflect.IsMap . -}}
+  {{- with .Params -}}
+    {{- with .availability -}}{{- $availability = . -}}{{- end -}}
+    {{- if isset . "in_stock" -}}{{- $explicitInStock = .in_stock -}}{{- end -}}
+  {{- else -}}
+    {{- with index . "availability" -}}{{- $availability = . -}}{{- end -}}
+    {{- if isset . "in_stock" -}}{{- $explicitInStock = index . "in_stock" -}}{{- end -}}
+    {{- if isset . "inStock" -}}{{- $explicitInStock = index . "inStock" -}}{{- end -}}
+  {{- end -}}
+{{- else if (printf "%T" .) | eq "string" -}}
+  {{- $availability = . -}}
+{{- end -}}
+
+{{- if eq $explicitInStock false -}}
+  {{- $inStock = false -}}
+{{- else if $availability -}}
+  {{- if or (in $availability "在庫切れ") (in $availability "Currently unavailable") (in $availability "Out of Stock") -}}
+    {{- $inStock = false -}}
+  {{- end -}}
+{{- end -}}
+
+{{- return $inStock -}}

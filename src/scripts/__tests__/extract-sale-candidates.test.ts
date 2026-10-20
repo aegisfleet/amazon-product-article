@@ -414,4 +414,44 @@ categories: ["PC"]
     expect(result.candidates[0]?.asin).toBe('B0INVEST01');
     expect(result.candidates[0]?.articleScore).toBe(88);
   });
+
+  it('should filter out out-of-stock items even if they have a dealBadge', async () => {
+    const dummyCacheData = {
+      ASIN_IN_STOCK: {
+        status: 'valid',
+        timestamp: Date.now(),
+        data: {
+          asin: 'ASIN_IN_STOCK',
+          title: '在庫ありセール商品',
+          category: '家電',
+          price: { amount: 2000, currency: 'JPY', formatted: '￥2,000' },
+          dealBadge: 'タイムセール',
+          savingsPercentage: 15,
+          rating: { average: 4.2, count: 120 },
+          availability: '在庫あり。',
+        },
+      },
+      ASIN_OUT_OF_STOCK: {
+        status: 'valid',
+        timestamp: Date.now(),
+        data: {
+          asin: 'ASIN_OUT_OF_STOCK',
+          title: '在庫切れセール商品',
+          category: '家電',
+          price: { amount: 2500, currency: 'JPY', formatted: '￥2,500' },
+          dealBadge: 'タイムセール',
+          savingsPercentage: 25,
+          rating: { average: 4.5, count: 300 },
+          availability: '現在在庫切れです。',
+        },
+      },
+    };
+
+    fs.writeFileSync(dummyCachePath, JSON.stringify(dummyCacheData, null, 2), 'utf-8');
+
+    const result = await extractSaleCandidates(dummyCachePath, outputPath, 10, 3, dummyArticlesDir);
+
+    expect(result.totalCandidates).toBe(1);
+    expect(result.candidates[0]?.asin).toBe('ASIN_IN_STOCK');
+  });
 });

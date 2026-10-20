@@ -56,6 +56,8 @@
       "affiliate_url" .Params.affiliate_url
       "savings_percentage" .Params.savings_percentage
       "specs_json" $specsJson
+      "availability" (.Params.availability | default "")
+      "in_stock" (partial "utils-in-stock.html" .)
     -}}
   {{- $.Scratch.Add "index" $dict -}}
 {{- end -}}

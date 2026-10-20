@@ -146,7 +146,7 @@
             <div class="bargain-filter-group">
                 <span class="bargain-filter-label">
                     <span class="material-symbols-outlined bargain-filter-icon" aria-hidden="true">sell</span>
-                    セール状況
+                    セール・在庫状況
                 </span>
                 <div
                     style="display: flex; flex-wrap: wrap; gap: var(--spacing-sm); align-items: center; width: 100%; min-width: 0;">
@@ -155,6 +155,12 @@
                         <input type="checkbox" id="deal-filter" name="deal-filter" value="active"
                             style="width: 18px; height: 18px; accent-color: var(--color-primary);">
                         <span class="filter-label" style="font-size: 0.9rem; font-weight: 600;">タイムセール対象のみ</span>
+                    </label>
+                    <label class="filter-checkbox"
+                        style="padding: 0; margin-right: var(--spacing-md); display: inline-flex; align-items: center; gap: var(--spacing-xs); cursor: pointer; flex-shrink: 0;">
+                        <input type="checkbox" id="in-stock-filter" name="in-stock-filter" value="active"
+                            style="width: 18px; height: 18px; accent-color: var(--color-primary);">
+                        <span class="filter-label" style="font-size: 0.9rem; font-weight: 600;">在庫ありのみ</span>
                     </label>
                 </div>
             </div>
@@ -259,17 +265,17 @@
         {{- $dateRaw := .Date.Unix -}}
         {{- with .Params.last_investigated -}}{{- $dateRaw = (time .).Unix -}}{{- end -}}
 
-        {{- /* Check deal status */ -}}
         {{- $hasDeal := false -}}
         {{- if .Params.deal_badge -}}
         {{- if in .Params.deal_badge "セール" -}}
         {{- $hasDeal = true -}}
         {{- end -}}
         {{- end -}}
-
-        <article class="card" data-price="{{ $priceRaw }}" data-score="{{ .Params.score | default 0 }}"
+        {{- $inStock := partial "utils-in-stock.html" . -}}
+        <article class="card{{ if not $inStock }} is-out-of-stock{{ end }}" data-price="{{ $priceRaw }}" data-score="{{ .Params.score | default 0 }}"
             data-date="{{ $dateRaw }}" data-categories="{{ $catString }}" data-has-deal="{{ $hasDeal }}"
-            data-savings-percentage="{{ .Params.savings_percentage | default 0 }}" data-points-rate="{{ $pointsRate }}">
+            data-savings-percentage="{{ .Params.savings_percentage | default 0 }}" data-points-rate="{{ $pointsRate }}"
+            data-in-stock="{{ $inStock }}">
             <div class="card-image">
                 <a href="{{ .RelPermalink }}" tabindex="-1" aria-hidden="true">
                     {{- if .Params.images -}}
@@ -360,7 +366,7 @@
                         <span class="badge-points-rate m3-badge m3-badge-points">ポイント還元率 {{- printf "%.0f" $pointsRate -}}%</span>
                         {{- end -}}
                         {{- with .Params.availability -}}
-                        <span class="badge-availability m3-badge m3-badge-tertiary">{{ . }}</span>
+                        <span class="badge-availability m3-badge {{ if not $inStock }}m3-badge-error badge-out-of-stock{{ else }}m3-badge-tertiary{{ end }}">{{ . }}</span>
                         {{- end -}}
                     </div>
                 </div>

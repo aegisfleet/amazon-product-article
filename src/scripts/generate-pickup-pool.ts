@@ -68,6 +68,15 @@ interface ArticleFrontMatter {
   last_investigated?: string;
   images?: string[];
   specs?: Record<string, unknown>;
+  availability?: string;
+  in_stock?: boolean;
+}
+
+export function isAvailableInStock(availability?: string, inStock?: boolean): boolean {
+  if (inStock === false) return false;
+  if (!availability) return true;
+  const outOfStockPatterns = ['在庫切れ', '現在在庫切れ', '一時的に在庫切れ', 'Out of Stock', 'Currently unavailable'];
+  return !outOfStockPatterns.some((pattern) => availability.includes(pattern));
 }
 
 export function parseFrontMatter(content: string): ArticleFrontMatter | null {
@@ -124,6 +133,7 @@ export function parsePickupItem(
 
   const score = typeof fm.score === 'number' ? fm.score : 0;
   if (score < 80) return null;
+  if (!isAvailableInStock(fm.availability, fm.in_stock)) return null;
 
   const asin = typeof fm.asin === 'string' ? fm.asin.trim() : path.basename(filename, '.md');
   const title = typeof fm.title === 'string' ? fm.title.trim() : '';

@@ -52,6 +52,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const priceSlider = document.getElementById('deals-price-slider');
   const discountSlider = document.getElementById('deals-discount-slider');
   const dealTypeSelect = document.getElementById('deals-type-select');
+  const inStockFilter = document.getElementById('deals-in-stock-filter');
   const categorySelect = document.getElementById('deals-category-select');
   const sortButtons = document.getElementById('deals-sort-buttons');
   const gridEl = document.getElementById('deals-grid');
@@ -97,6 +98,9 @@ document.addEventListener('DOMContentLoaded', () => {
     if (dealTypeSelect && params.has('dealType')) {
       dealTypeSelect.value = params.get('dealType');
     }
+    if (inStockFilter && params.get('inStock') === '1') {
+      inStockFilter.checked = true;
+    }
     if (categorySelect && params.has('category')) {
       categorySelect.dataset.pendingValue = params.get('category');
     }
@@ -124,6 +128,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (maxPrice !== 200000) params.set('maxPrice', String(maxPrice));
     if (minDiscount !== 0) params.set('minDiscount', String(minDiscount));
     if (dealType) params.set('dealType', dealType);
+    if (inStockFilter && inStockFilter.checked) params.set('inStock', '1');
     if (category) params.set('category', category);
     if (currentSort !== 'date') params.set('sort', currentSort);
     const q = keywordInput ? keywordInput.value.trim() : '';
@@ -232,6 +237,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const normalizedQ = normalizeText(rawQ);
     const keywords = normalizedQ.split(/\s+/).filter(Boolean);
 
+    const showOnlyInStock = inStockFilter ? inStockFilter.checked : false;
+
     // Step 1: Filter by Score, Price, Discount, Deal Type, and Keyword
     let preFiltered = allProducts.filter(p => {
       if (p.score < minScore) return false;
@@ -240,6 +247,7 @@ document.addEventListener('DOMContentLoaded', () => {
       if (p.savingsPercentage < minDiscount) return false;
       if (!matchesDealType(p, dealType)) return false;
       if (!matchesKeywords(p, keywords)) return false;
+      if (showOnlyInStock && (p.inStock === false || (typeof isAvailableInStock === 'function' && !isAvailableInStock(p.availability)))) return false;
       return true;
     });
 
@@ -373,6 +381,18 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }
 
+    if (inStockFilter && inStockFilter.checked) {
+      chips.push({
+        id: 'inStock',
+        icon: 'inventory_2',
+        label: '在庫ありのみ',
+        onRemove: () => {
+          inStockFilter.checked = false;
+          applyFilters();
+        }
+      });
+    }
+
     if (category) {
       chips.push({
         id: 'category',
@@ -411,6 +431,7 @@ document.addEventListener('DOMContentLoaded', () => {
     priceSlider.value = '1000'; // max
     discountSlider.value = '0';
     if (dealTypeSelect) dealTypeSelect.value = '';
+    if (inStockFilter) inStockFilter.checked = false;
     if (categorySelect) categorySelect.value = '';
     if (keywordInput) keywordInput.value = '';
     if (keywordClearBtn) keywordClearBtn.style.display = 'none';
@@ -458,6 +479,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
   setupSliderTouchPrevention(discountSlider);
   if (dealTypeSelect) dealTypeSelect.addEventListener('change', applyFilters);
+  if (inStockFilter) inStockFilter.addEventListener('change', applyFilters);
   if (categorySelect) categorySelect.addEventListener('change', applyFilters);
   if (resetBtn) resetBtn.addEventListener('click', resetFilters);
   if (categoryResetBtn) {

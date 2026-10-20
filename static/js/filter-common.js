@@ -77,6 +77,20 @@ function scoreClass(score) {
   return 'score-caution';
 }
 
+// --- In-stock Helper ---
+function isAvailableInStock(availability, inStock) {
+  if (inStock === false) return false;
+  if (!availability) return true;
+  const outOfStockPatterns = [
+    '在庫切れ',
+    '現在在庫切れ',
+    '一時的に在庫切れ',
+    'Out of Stock',
+    'Currently unavailable',
+  ];
+  return !outOfStockPatterns.some((pattern) => availability.includes(pattern));
+}
+
 function safeUrl(url) {
   if (!url) return '#';
   try {
@@ -221,6 +235,9 @@ function bindCardDataset(article, p) {
     article.dataset.date = String(Number.isNaN(d.getTime()) ? 0 : Math.floor(d.getTime() / 1000));
   }
   if (p.pointsRate !== undefined) article.dataset.pointsRate = String(p.pointsRate);
+  const inStock = p.inStock !== undefined ? Boolean(p.inStock) : isAvailableInStock(p.availability);
+  article.dataset.inStock = String(inStock);
+  article.classList.toggle('is-out-of-stock', !inStock);
 }
 
 function bindCardImage(article, p) {
@@ -366,7 +383,11 @@ function bindCardDetailsRow(article, p) {
   const pointsText = isHighPoints ? `ポイント還元率${Math.round(p.pointsRate)}%` : null;
   toggleBadge(article, 'badge-points-rate', isHighPoints, pointsText);
 
-  toggleBadge(article, 'badge-availability', Boolean(p.availability), p.availability);
+  const inStock = p.inStock !== undefined ? Boolean(p.inStock) : isAvailableInStock(p.availability);
+  const availClass = inStock
+    ? 'badge-availability m3-badge m3-badge-tertiary'
+    : 'badge-availability m3-badge m3-badge-error badge-out-of-stock';
+  toggleBadge(article, 'badge-availability', Boolean(p.availability), p.availability, availClass);
 }
 
 function bindCardActionLink(article, p) {

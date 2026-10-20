@@ -76,6 +76,14 @@
                 </div>
             </div>
 
+            <div class="bargain-filter-group" style="align-self: flex-end;">
+                <label class="filter-checkbox-label" for="bargain-in-stock-filter">
+                    <input type="checkbox" id="bargain-in-stock-filter" class="filter-checkbox" checked>
+                    <span class="material-symbols-outlined bargain-filter-icon" aria-hidden="true" style="font-size: 1.1rem; vertical-align: middle;">inventory_2</span>
+                    在庫ありのみ
+                </label>
+            </div>
+
             <div class="bargain-filter-group">
                 <span class="bargain-filter-label">
                     <span class="material-symbols-outlined bargain-filter-icon" aria-hidden="true">swap_vert</span>
@@ -196,6 +204,7 @@
     "pointsRate" $pointsRate
     "savingsPercentage" (.Params.savings_percentage | default 0)
     "availability" (.Params.availability | default "")
+    "inStock" (partial "utils-in-stock.html" .)
     "dealBadge" (.Params.deal_badge | default "")
     "dealAccessType" (.Params.deal_access_type | default "")
     "specsHtml" (cond (not (not .Params.specs)) (partial "product-spec-tags.html" (dict "specs" .Params.specs "tagClass"

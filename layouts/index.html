@@ -70,8 +70,15 @@
 
     <!-- High Score Pickup Section (80点以上) -->
     {{- $highScoreArticles := where (where .Site.RegularPages "Section" "articles") ".Params.score" "ge" 80 -}}
-    {{- if gt (len $highScoreArticles) 0 -}}
-    {{- $rankedHighScoreArticles := partial "product-composite-ranked-pages.html" (dict "pages" $highScoreArticles) -}}
+    {{- $inStockHighScoreArticles := slice -}}
+    {{- range $highScoreArticles -}}
+      {{- if partial "utils-in-stock.html" . -}}
+        {{- $inStockHighScoreArticles = $inStockHighScoreArticles | append . -}}
+      {{- end -}}
+    {{- end -}}
+    {{- $targetHighScoreArticles := cond (gt (len $inStockHighScoreArticles) 0) $inStockHighScoreArticles $highScoreArticles -}}
+    {{- if gt (len $targetHighScoreArticles) 0 -}}
+    {{- $rankedHighScoreArticles := partial "product-composite-ranked-pages.html" (dict "pages" $targetHighScoreArticles) -}}
     {{- $pickupItems := first 6 $rankedHighScoreArticles -}}
     {{- $pickupData := index hugo.Data.recommendations "pickup-pool" | default hugo.Data.recommendations.pickup_pool -}}
     {{- if not $pickupData -}}
@@ -267,15 +274,25 @@
 
     <div class="card-grid" id="product-grid">
         {{- $articles := where .Site.RegularPages "Section" "articles" -}}
-        {{- $sorted := first 30 (sort $articles ".Params.last_investigated" "desc") -}}
-        {{- range $index, $element := $sorted -}}
+        {{- $sorted := first 60 (sort $articles ".Params.last_investigated" "desc") -}}
+        {{- $inStockSorted := slice -}}
+        {{- $outOfStockSorted := slice -}}
+        {{- range $sorted -}}
+          {{- if partial "utils-in-stock.html" . -}}
+            {{- $inStockSorted = $inStockSorted | append . -}}
+          {{- else -}}
+            {{- $outOfStockSorted = $outOfStockSorted | append . -}}
+          {{- end -}}
+        {{- end -}}
+        {{- $displayArticles := first 30 (union $inStockSorted $outOfStockSorted) -}}
+        {{- range $index, $element := $displayArticles -}}
         <div class="card-wrapper{{ if ge $index 15 }} card-hidden{{ end }}">
             {{- partial "product-card.html" . -}}
         </div>
         {{- end -}}
     </div>
 
-    {{- if gt (len $sorted) 15 -}}
+    {{- if gt (len $displayArticles) 15 -}}
     <div class="load-more-container" id="load-more-container">
         <button id="load-more-button" class="btn-load-more">もっと見る</button>
     </div>

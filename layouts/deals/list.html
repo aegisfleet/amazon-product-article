@@ -91,6 +91,14 @@
                         <option value="standard">タイムセール</option>
                     </select>
                 </div>
+                <div style="margin-top: var(--spacing-xs); display: flex; align-items: center;">
+                    <label class="filter-checkbox"
+                        style="padding: 0; display: inline-flex; align-items: center; gap: var(--spacing-xs); cursor: pointer;">
+                        <input type="checkbox" id="deals-in-stock-filter" name="deals-in-stock-filter" value="active"
+                            style="width: 18px; height: 18px; accent-color: var(--color-primary);">
+                        <span class="filter-label" style="font-size: 0.9rem; font-weight: 600;">在庫ありのみ表示</span>
+                    </label>
+                </div>
             </div>
         </div>
 
@@ -231,6 +239,7 @@
     "pointsRate" $pointsRate
     "savingsPercentage" (.Params.savings_percentage | default 0)
     "availability" (.Params.availability | default "")
+    "inStock" (partial "utils-in-stock.html" .)
     "dealBadge" (.Params.deal_badge | default "")
     "dealAccessType" (.Params.deal_access_type | default "")
     "specsHtml" (cond (not (not .Params.specs)) (partial "product-spec-tags.html" (dict "specs" .Params.specs "tagClass"

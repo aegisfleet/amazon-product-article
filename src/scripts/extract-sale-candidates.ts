@@ -10,6 +10,7 @@ import path from 'node:path';
 import { CreatorsAPICache } from '../api/CreatorsAPICache';
 import type { ProductDetail } from '../types/Product';
 import { Logger } from '../utils/Logger';
+import { isAvailableInStock } from './generate-pickup-pool';
 
 export interface SaleCandidate {
   asin: string;
@@ -52,6 +53,8 @@ export interface ArticleMetadata {
   score: number;
   brand?: string;
   category?: string;
+  availability?: string;
+  inStock?: boolean;
 }
 
 const LIMITED_SALE_KEYWORDS = ['限定', '24時間', '特選', '数量限定', '本日限定'];
@@ -76,6 +79,8 @@ const FRONT_MATTER_REGEX = /^---\r?\n([\s\S]*?)\r?\n---/;
 const SCORE_REGEX = /score:\s*(\d+)/;
 const BRAND_REGEX = /brand:\s*["']?([^"'\r\n]+)["']?/;
 const CATEGORIES_REGEX = /categories:\s*\[\s*["']([^"']+)["']/;
+const AVAILABILITY_REGEX = /availability:\s*["']?([^"'\r\n]+)["']?/;
+const IN_STOCK_REGEX = /in_stock:\s*(true|false)/;
 
 function parseArticleMetadata(content: string): ArticleMetadata | undefined {
   // Front Matter のみ（--- で囲まれた部分）を高速パース
@@ -91,6 +96,8 @@ function parseArticleMetadata(content: string): ArticleMetadata | undefined {
 
   const brandMatch = BRAND_REGEX.exec(fm);
   const catMatch = CATEGORIES_REGEX.exec(fm);
+  const availMatch = AVAILABILITY_REGEX.exec(fm);
+  const inStockMatch = IN_STOCK_REGEX.exec(fm);
 
   const result: ArticleMetadata = { score };
   if (brandMatch?.[1]) {
@@ -98,6 +105,12 @@ function parseArticleMetadata(content: string): ArticleMetadata | undefined {
   }
   if (catMatch?.[1]) {
     result.category = catMatch[1].trim();
+  }
+  if (availMatch?.[1]) {
+    result.availability = availMatch[1].trim();
+  }
+  if (inStockMatch?.[1]) {
+    result.inStock = inStockMatch[1] === 'true';
   }
 
   return result;
@@ -285,6 +298,13 @@ function isCandidateEligible(
   dealBadge: string | undefined,
 ): boolean {
   if (!dealBadge) {
+    return false;
+  }
+
+  if (!isAvailableInStock(product.availability, article?.inStock)) {
+    return false;
+  }
+  if (article?.availability && !isAvailableInStock(article.availability)) {
     return false;
   }
 

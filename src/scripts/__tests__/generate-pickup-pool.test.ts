@@ -1,7 +1,7 @@
 import * as fs from 'node:fs';
 import * as os from 'node:os';
 import * as path from 'node:path';
-import { derivePriceBucket, generatePickupPool, parsePickupItem } from '../generate-pickup-pool';
+import { derivePriceBucket, generatePickupPool, isAvailableInStock, parsePickupItem } from '../generate-pickup-pool';
 
 describe('generate-pickup-pool', () => {
   let tempDir: string;
@@ -36,6 +36,24 @@ describe('generate-pickup-pool', () => {
 
   afterEach(() => {
     fs.rmSync(tempDir, { recursive: true, force: true });
+  });
+
+  describe('isAvailableInStock', () => {
+    it('在庫ありの場合はtrueを返すこと', () => {
+      expect(isAvailableInStock('在庫あり。')).toBe(true);
+      expect(isAvailableInStock('残り3点 ご注文はお早めに')).toBe(true);
+      expect(isAvailableInStock('通常2〜3日以内に発送します。')).toBe(true);
+      expect(isAvailableInStock(undefined)).toBe(true);
+    });
+
+    it('在庫切れパターンの場合はfalseを返すこと', () => {
+      expect(isAvailableInStock('現在在庫切れです。')).toBe(false);
+      expect(isAvailableInStock('在庫切れ')).toBe(false);
+      expect(isAvailableInStock('一時的に在庫切れ')).toBe(false);
+      expect(isAvailableInStock('Currently unavailable')).toBe(false);
+      expect(isAvailableInStock('Out of Stock')).toBe(false);
+      expect(isAvailableInStock('在庫あり。', false)).toBe(false);
+    });
   });
 
   describe('derivePriceBucket', () => {
@@ -88,6 +106,34 @@ category: "マウス"
 ---`;
       const catToGroup = { マウス: 'PC／モニター／入力機器' };
       const item = parsePickupItem(mdContent, 'B00LOW0001.md', catToGroup);
+      expect(item).toBeNull();
+    });
+
+    it('在庫切れ商品はスコア80点以上でもnullを返すこと', () => {
+      const mdContent = `---
+title: "在庫切れキーボード"
+asin: "B00OOS0001"
+score: 92
+price: "￥12,000"
+category: "キーボード"
+availability: "現在在庫切れです。"
+---`;
+      const catToGroup = { キーボード: 'PC／モニター／入力機器' };
+      const item = parsePickupItem(mdContent, 'B00OOS0001.md', catToGroup);
+      expect(item).toBeNull();
+    });
+
+    it('in_stock: false の商品はスコア80点以上でもnullを返すこと', () => {
+      const mdContent = `---
+title: "在庫切れマウス"
+asin: "B00OOS0002"
+score: 90
+price: "￥6,000"
+category: "マウス"
+in_stock: false
+---`;
+      const catToGroup = { マウス: 'PC／モニター／入力機器' };
+      const item = parsePickupItem(mdContent, 'B00OOS0002.md', catToGroup);
       expect(item).toBeNull();
     });
   });

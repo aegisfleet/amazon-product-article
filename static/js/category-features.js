@@ -46,6 +46,14 @@ function matchesDeal(card, showOnlyDeals) {
 }
 
 /**
+ * Check if a card matches the in-stock status
+ */
+function matchesInStock(card, showOnlyInStock) {
+    if (!showOnlyInStock) return true;
+    return card.dataset.inStock !== 'false';
+}
+
+/**
  * Master check to see if a card should be visible
  */
 function isCardVisible(card, filters) {
@@ -54,6 +62,7 @@ function isCardVisible(card, filters) {
     if (!matchesScore(card, filters.minScore)) return false;
     if (!matchesSpecs(card, filters.requiredSpecs)) return false;
     if (!matchesDeal(card, filters.showOnlyDeals)) return false;
+    if (!matchesInStock(card, filters.showOnlyInStock)) return false;
 
     if (filters.keywords.length > 0) {
         const title = card.querySelector('.card-title')?.textContent || '';
@@ -90,6 +99,7 @@ function initCategoryFeatures() {
     const categoryResetBtn = document.getElementById('category-reset-btn');
     const sortButtons = document.getElementById('sort-buttons');
     const dealFilter = document.getElementById('deal-filter');
+    const inStockFilter = document.getElementById('in-stock-filter');
     const keywordSearch = document.getElementById('keyword-search');
     const keywordClearBtn = document.getElementById('keyword-clear-btn');
     const keywordCountBadge = document.getElementById('keyword-count-badge');
@@ -137,6 +147,7 @@ function initCategoryFeatures() {
         const maxPrice = priceSlider ? valueToPrice(Number.parseInt(priceSlider.value, 10)) : 200000;
         const category = categorySelect ? categorySelect.value : '';
         const showOnlyDeals = dealFilter ? dealFilter.checked : false;
+        const showOnlyInStock = inStockFilter ? inStockFilter.checked : false;
 
         const rawQ = keywordSearch ? keywordSearch.value : '';
         const keywords = normalizeText(rawQ).split(/\s+/).filter(Boolean);
@@ -150,6 +161,7 @@ function initCategoryFeatures() {
             maxPrice,
             minScore,
             showOnlyDeals,
+            showOnlyInStock,
             keywords,
             requiredSpecs
         };
@@ -329,6 +341,18 @@ function initCategoryFeatures() {
             });
         }
 
+        if (filters.showOnlyInStock) {
+            chips.push({
+                id: 'inStock',
+                icon: 'inventory_2',
+                label: '在庫ありのみ',
+                onRemove: () => {
+                    if (inStockFilter) inStockFilter.checked = false;
+                    filterCards();
+                }
+            });
+        }
+
         if (filters.category) {
             chips.push({
                 id: 'category',
@@ -478,7 +502,9 @@ function initCategoryFeatures() {
             params.set('deal', 'active');
         }
 
-
+        if (filters.showOnlyInStock) {
+            params.set('inStock', '1');
+        }
 
         const queryStr = params.toString();
         const newUrl = globalThis.location.pathname + (queryStr ? '?' + queryStr : '');
@@ -516,8 +542,6 @@ function initCategoryFeatures() {
     function applyUrlState() {
         const params = new URLSearchParams(globalThis.location.search);
 
-
-
         if (params.has('sort')) {
             currentSort = params.get('sort');
             updateSortButtons();
@@ -537,9 +561,11 @@ function initCategoryFeatures() {
         if (dealFilter) {
             dealFilter.checked = params.get('deal') === 'active';
         }
+
+        if (inStockFilter) {
+            inStockFilter.checked = params.get('inStock') === '1';
+        }
     }
-
-
 
     /**
      * Reset all filters to default state
@@ -550,6 +576,7 @@ function initCategoryFeatures() {
         if (priceSlider) priceSlider.value = '1000';
         if (categorySelect) categorySelect.value = '';
         if (dealFilter) dealFilter.checked = false;
+        if (inStockFilter) inStockFilter.checked = false;
 
         const specFilters = document.getElementById('spec-filters');
         if (specFilters) {
@@ -564,8 +591,6 @@ function initCategoryFeatures() {
         if (keywordClearBtn) {
             keywordClearBtn.style.display = 'none';
         }
-
-
 
         filterCards();
     }
@@ -620,9 +645,12 @@ function initCategoryFeatures() {
         });
     }
 
-    // --- Deal Filter Event ---
+    // --- Deal & InStock Filter Events ---
     if (dealFilter) {
         dealFilter.addEventListener('change', filterCards);
+    }
+    if (inStockFilter) {
+        inStockFilter.addEventListener('change', filterCards);
     }
 
     // --- Sort Button Events ---

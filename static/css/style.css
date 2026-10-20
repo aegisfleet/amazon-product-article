@@ -952,6 +952,21 @@ a.hero-tag-brand:hover {
   font-size: 0.9em;
 }
 
+.badge-availability.badge-out-of-stock::before {
+  content: "⚠️";
+}
+
+.card.is-out-of-stock,
+.bargain-card.is-out-of-stock {
+  opacity: 0.72;
+  transition: opacity 0.2s ease;
+}
+
+.card.is-out-of-stock:hover,
+.bargain-card.is-out-of-stock:hover {
+  opacity: 0.95;
+}
+
 .badge-savings {
   background: var(--badge-savings-bg);
   color: var(--badge-savings-text);

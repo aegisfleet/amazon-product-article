@@ -204,6 +204,8 @@ function mapIndexItemToProduct(item) {
         parentAsin: item.parent_asin || '',
         affiliateUrl: item.affiliate_url || '',
         savingsPercentage: item.savings_percentage || null,
+        availability: item.availability || '',
+        inStock: item.in_stock !== undefined ? Boolean(item.in_stock) : true,
         specsHtml: specsHtml
     };
 }
