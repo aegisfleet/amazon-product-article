@@ -10,21 +10,49 @@
         overflow-wrap: anywhere;
     }
 
+    .recommendations-container .competitor-card {
+        display: flex;
+        flex-direction: column;
+        gap: var(--spacing-md);
+        border-left: 4px solid var(--color-primary);
+        position: relative;
+        padding: var(--spacing-md) 32px;
+        margin-top: 12px;
+    }
+
+    .recommendations-container .rank-badge {
+        position: absolute;
+        top: -12px;
+        left: -12px;
+        background: var(--color-primary);
+        color: white;
+        width: 32px;
+        height: 32px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-weight: bold;
+        font-size: 1.1rem;
+        border-radius: var(--radius-sm);
+        box-shadow: var(--shadow-md);
+        z-index: 10;
+    }
+
     @media (max-width: 768px) {
-        .competitor-card {
-            padding-left: var(--spacing-md) !important;
-            padding-right: var(--spacing-md) !important;
+        .recommendations-container .competitor-card {
+            padding-left: var(--spacing-md);
+            padding-right: var(--spacing-md);
         }
 
-        .rank-badge {
-            left: 0 !important;
-            top: 0 !important;
-            border-top-left-radius: var(--radius-lg) !important;
-            border-bottom-right-radius: var(--radius-sm) !important;
+        .recommendations-container .rank-badge {
+            left: 0;
+            top: 0;
+            border-top-left-radius: var(--radius-lg);
+            border-bottom-right-radius: var(--radius-sm);
         }
 
         .pros-card h2 {
-            font-size: 1.25rem !important;
+            font-size: 1.25rem;
         }
     }
 
@@ -817,11 +845,9 @@
         {{- if and (not $imageUrl) $articlePage -}}
         {{- $imageUrl = $articlePage.Params.image -}}
         {{- end -}}
-        <div class="competitor-card" data-category="{{ $rec.category }}"
-            style="display: flex; flex-direction: column; gap: var(--spacing-md); border-left: 4px solid var(--color-primary); position: relative; padding: var(--spacing-md) 32px; margin-top: 12px;">
+        <div class="competitor-card" data-category="{{ $rec.category }}">
             <!-- Rank Badge -->
-            <div class="rank-badge"
-                style="position: absolute; top: -12px; left: -12px; background: var(--color-primary); color: white; width: 32px; height: 32px; display: flex; justify-content: center; align-items: center; font-weight: bold; font-size: 1.1rem; border-radius: var(--radius-sm); box-shadow: var(--shadow-md); z-index: 10;">
+            <div class="rank-badge">
                 {{ add $index 1 }}
             </div>
 
