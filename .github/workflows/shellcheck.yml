@@ -1,0 +1,31 @@
+name: ShellCheck
+
+on:
+  push:
+    branches: [ "main" ]
+    paths:
+      - '.github/workflows/scripts/**'
+      - '**/*.sh'
+  pull_request:
+    branches: [ "main" ]
+    paths:
+      - '.github/workflows/scripts/**'
+      - '**/*.sh'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  shellcheck:
+    name: Run ShellCheck
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Run ShellCheck
+        run: |
+          shellcheck .github/workflows/scripts/*.sh
