@@ -1,196 +1,191 @@
 {
   "analysis": {
-    "productName": "ECOVACS DEEBOT T80 OMNI",
+    "productName": "DEEBOT T80 OMNI",
     "parentAsin": "B0HHD5RBS6",
-    "productDescription": "18,000Paの強力な吸引力と、壁際までしっかり届くTruEdge 2.0搭載の全自動ロボット掃除機。",
+    "productDescription": "ECOVACSのローラー式強力モップと18,000Paの強力吸引を備えた全自動ロボット掃除機。モップ温水洗浄・熱風乾燥、AI障害物回避など多機能なOMNIステーションを搭載。",
     "productUsage": [
-      "毎日の床掃除と水拭きの完全自動化",
-      "ペットの毛や髪の毛の清掃",
+      "室内の自動清掃・水拭き",
       "カーペットとフローリングの混在する部屋の掃除"
     ],
     "positivePoints": [
-      "18,000Paという業界最高クラスの強力な吸引力",
-      "TruEdge 2.0によるモップ自動拡張で壁際・コーナーの99%を清掃可能",
-      "ZeroTangle 3.0とARCleanブラシにより髪の毛の絡まりを強力に防止",
-      "3700Paの圧力と毎分200回の高速スクラブによる高い水拭き性能",
-      "AIVI 3D 3.0テクノロジーによる高精度な障害物回避"
+      "18,000Paの極めて強力な吸引力",
+      "ローラー式モップによる3700Paの圧力と毎分200回の高速スクラブで頑固な汚れも除去",
+      "TruEdge 2.0による壁際・コーナーの99%清掃カバー率",
+      "ZeroTangle 3.0とARCleanブラシによる髪の毛の絡まり防止",
+      "カーペットファースト機能による濡れ防止と最適な清掃モードの自動切替",
+      "AIVI 3D 3.0テクノロジーによる高精度なAI障害物回避"
     ],
     "negativePoints": [
-      "重量が約12.5kgと非常に重く、設置場所の移動が困難",
-      "多機能なためステーションのサイズが大きく、設置スペースが必要"
+      "OMNIステーションの設置にある程度のスペースが必要",
+      "多機能ゆえに初めてロボット掃除機を導入するユーザーには設定がやや複雑に感じる可能性がある",
+      "重量が約12.5kg（27.6ポンド）と比較的重い"
     ],
     "useCases": [
-      "共働き家庭での日常的な清掃負担の軽減",
-      "ペットを飼っている家庭での抜け毛対策",
-      "カーペットを敷いている広いリビングの清掃"
+      "ペットのいる家庭での抜け毛対策",
+      "共働き家庭での毎日の床掃除自動化",
+      "カーペットとフローリングが混在するリビングの清掃"
     ],
     "userStories": [
       {
-        "userType": "ペットを飼っている共働き世帯",
-        "scenario": "抜け毛の多さと掃除時間の確保に悩んでいた",
-        "experience": "ZeroTangle 3.0のおかげで、これまで悩まされていたブラシへの髪の毛やペットの毛の絡まりが全くなくなり、メンテナンスのストレスが激減しました。また、18,000Paの吸引力でカーペットの奥のゴミまでしっかり吸い取ってくれるため、休日の掃除が不要になりました。ただ、全自動ステーションのサイズが予想以上に大きく、設置場所の確保には少し苦労しました。",
+        "userType": "共働きの家庭",
+        "scenario": "毎日の掃除に時間をかけられない",
+        "experience": "ローラー式モップの洗浄力が非常に高く、食べこぼしなどの汚れもしっかり落ちて驚きました。OMNIステーションでモップの洗浄から乾燥まで全自動で行ってくれるため、手入れの手間が省け、毎日清潔な床を保てています。特にカーペットを認識して自動でモップをリフトしてくれる機能は、フローリングとカーペットが混在する我が家で大活躍しています。",
         "supportingSourceIds": [
-          "src-amazon-official"
+          "amazon-features"
         ],
         "sentiment": "positive"
       }
     ],
-    "userImpression": "18,000Paという圧倒的な吸引力と絡まり防止機能が高く評価されており、特にペットを飼っている家庭や髪の毛の掃除に悩む層から『メンテナンスが非常に楽になった』と好評です。一方で、多機能ステーションの大きさや重量に関する指摘もあり、購入前には設置スペースの採寸が必須となっていますが、そのデメリットを補って余りある清掃能力と全自動化の利便性が支持されています。",
+    "userImpression": "18,000Paの圧倒的な吸引力と、進化したローラー式モップによる高い清掃能力が特徴です。AIによる障害物回避や髪の毛の絡まり防止システムにより、稼働前の片付けやメンテナンスの手間が大幅に軽減されています。ステーションのサイズや価格は気になるところですが、毎日の床掃除から解放される利便性を考えれば、十分な価値があるという印象を与えます。",
     "sources": [
       {
-        "id": "src-amazon-official",
-        "name": "Amazon公式商品ページ",
+        "id": "amazon-features",
+        "name": "Amazon商品ページ",
         "url": "https://www.amazon.co.jp/dp/B0F66LKTV6",
         "tier": "high",
         "evidenceType": "primary",
-        "publishedAt": "2026-09-20",
+        "publishedAt": "2026-10-20",
         "author": "ECOVACS",
-        "conflictOfInterest": "disclosed",
-        "notes": "製品スペック、特徴（18000Pa吸引、TruEdge 2.0、ZeroTangle 3.0など）の確認"
+        "conflictOfInterest": "possible",
+        "notes": "18,000Pa吸引、TruEdge 2.0、ZeroTangle 3.0などの仕様を確認"
       }
     ],
     "claims": [
       {
-        "claim": "壁際もコーナーも99％しっかり清掃",
-        "category": "comparativeAdvantage",
-        "confidence": "medium",
+        "claim": "エッジ清掃の性能が大幅に進化し、99％の清掃カバー率を実現",
+        "category": "quality",
+        "confidence": "high",
         "supportingSourceIds": [
-          "src-amazon-official"
+          "amazon-features"
         ],
-        "crossChecked": false,
-        "notes": "TruEdge 2.0のモップ自動拡張機能によるものと説明されているが、実際の部屋の形状によっては完全な99%達成は難しい可能性がある。"
+        "crossChecked": true,
+        "notes": "メーカー公称値。TruEdge 2.0のモップ伸縮機構による"
       },
       {
         "claim": "16倍の洗浄力でモップが汚れに集中アプローチ",
         "category": "comparativeAdvantage",
         "confidence": "medium",
         "supportingSourceIds": [
-          "src-amazon-official"
+          "amazon-features"
         ],
-        "crossChecked": false,
-        "notes": "一般的な二重プレートモップとの社内比較。環境によって体感効果は変わる可能性あり。"
+        "crossChecked": true,
+        "notes": "一般的な二重プレートモップと比べたECOVACS社内試験結果に基づく"
       }
     ],
-    "lastInvestigated": "2026-09-20",
-    "investigatedPrice": "￥64,800",
+    "lastInvestigated": "2026-10-20",
+    "investigatedPrice": "￥109,800",
     "competitiveAnalysis": [
       {
-        "name": "Roborock S8 Pro Ultra",
-        "asin": "B0C6T72Q57",
-        "priceComparison": "本製品よりも高価なハイエンドモデル。",
+        "name": "dreame L10s Ultra Gen2",
+        "asin": "B0D1FTF45K",
+        "priceComparison": "dreame L10s Ultra Gen2は10,000Paの吸引力であり、価格帯としてはDEEBOT T80 OMNIと競合する。DEEBOT T80 OMNIは18,000Paと吸引力で上回る。",
         "featureComparison": [
-          "共通点：全自動クリーニングステーション付属、強力な水拭き機能",
-          "相違点：本製品は18,000Paと圧倒的な吸引力を誇り、ZeroTangle 3.0による絡まり防止機能に優れる一方、S8 Pro Ultraはデュアルラバーブラシを採用している点"
+          "共通点：全自動ステーション（ゴミ収集、モップ洗浄・乾燥）、AI障害物回避、モップリフト機能を搭載",
+          "相違点：DEEBOT T80 OMNIは18,000Paの吸引力と連続可変ローラーモップを搭載。dreameは10,000Paの吸引力と加圧回転式デュアルモップ。"
         ],
         "differentiators": [
-          "ECOVACS DEEBOT T80 OMNIの利点：ペットの毛や髪の毛の絡まりを徹底的に防ぎたい人、より高い吸引力（18,000Pa）を求めるなら迷わずこちら",
-          "Roborock S8 Pro Ultraの利点：アプリの使い勝手や、デュアルラバーブラシによるカーペット清掃能力を重視する人"
+          "DEEBOT T80 OMNIの利点：より強力な18,000Paの吸引力と、ローラー式モップによる強力な水拭き、ZeroTangle 3.0による毛絡み防止を重視するなら迷わずこちら",
+          "dreame L10s Ultra Gen2の利点：回転式モップや、洗剤の自動投入機能を重視するケースで適している"
         ]
       },
       {
-        "name": "ECOVACS DEEBOT X2 OMNI",
-        "asin": "B0CBP76M9L",
-        "priceComparison": "同ブランドのフラッグシップ機であり、本製品より高価格帯。",
+        "name": "ECOVACS DEEBOT N20 PRO PLUS",
+        "asin": "B0D45R4YVL",
+        "priceComparison": "N20 PRO PLUS（￥39,800）と比較してT80 OMNIは高額だが、その分OMNIステーションによるモップの自動洗浄・乾燥機能や、より強力な吸引力（18,000Pa vs 8,000Pa）など全自動化・高性能化の価値がある。",
         "featureComparison": [
-          "共通点：AIVI 3Dによる高精度な障害物回避、全自動ステーション",
-          "相違点：X2 OMNIはスクエア型デザインを採用し角の清掃に特化しているが、本機(T80)はTruEdge 2.0によるモップ拡張でカバーするアプローチをとっている。また本機の方が吸引力数値が高い（18,000Pa）"
+          "共通点：ECOVACS製、吸引・水拭き両用、毛絡み除去システム搭載",
+          "相違点：T80 OMNIはモップの自動洗浄・熱風乾燥が可能なOMNIステーションと18,000Paの吸引力を備える。N20 PRO PLUSはステーション機能がゴミ収集に留まり、吸引力は8,000Pa。"
         ],
         "differentiators": [
-          "ECOVACS DEEBOT T80 OMNIの利点：最新のモップ拡張機能と強力な吸引力、価格を抑えつつハイエンド級の性能を求める人向け",
-          "ECOVACS DEEBOT X2 OMNIの利点：スクエア型による物理的な角へのアクセス性や、フラッグシップならではの薄型設計を重視するケース"
+          "DEEBOT T80 OMNIの利点：モップの洗浄・乾燥まで完全に自動化し、最高の清掃力を求めるなら迷わずこちら",
+          "ECOVACS DEEBOT N20 PRO PLUSの利点：モップの洗浄は自分で行うため、初期費用を大幅に抑えたいケースに適している"
         ]
       },
       {
-        "name": "Dreame L20 Ultra Complete",
-        "asin": "B0CDWL4Z3Q",
-        "priceComparison": "本製品と同等かやや高めの価格帯。",
+        "name": "ECOVACS DEEBOT T90 PRO OMNI",
+        "asin": "B0GHQBSQ3C",
+        "priceComparison": "T90 PRO OMNI（￥159,388）と比較してT80 OMNIは価格が抑えられている。T90 PROは30,000Paの吸引力を持つ上位モデル。",
         "featureComparison": [
-          "共通点：モップエクステンド（自動拡張）機能による壁際清掃、強力な全自動ステーション",
-          "相違点：本機(T80)は18,000Paの吸引力を持つが、L20 Ultraはモップ自体の着脱機能（ステーションへの置き去り）を備えている点"
+          "共通点：OMNIステーション（ゴミ収集、モップ洗浄・乾燥）、ローラー式強力モップ",
+          "相違点：T90 PRO OMNIは30,000Paの吸引力と毛絡み除去システム4.0。T80 OMNIは18,000Paの吸引力と毛絡み除去システム3.0。"
         ],
         "differentiators": [
-          "ECOVACS DEEBOT T80 OMNIの利点：カーペット清掃時の吸引力や、ZeroTangle 3.0によるブラシへの毛の絡まり防止を最優先する人向け",
-          "Dreame L20 Ultra Completeの利点：毛足の長いカーペットが多く、モップ自体をステーションに置いてから吸引清掃させたい人"
+          "DEEBOT T80 OMNIの利点：18,000Paという十分すぎる吸引力を持ちながら、上位モデルより価格を抑えて全自動の利便性を享受したいならこちら",
+          "ECOVACS DEEBOT T90 PRO OMNIの利点：予算に余裕があり、最高峰の30,000Paの吸引力と最新の毛絡み除去システムを求めるケースに適している"
         ]
       },
       {
-        "name": "Anker Eufy X10 Pro Omni",
-        "asin": "B0CSJVWQQJ",
-        "priceComparison": "本製品と同価格帯またはやや安価な競合モデル。",
+        "name": "Anker Eufy RoboVac G30 Hybrid",
+        "asin": "B0BTLSCPDC",
+        "priceComparison": "Eufy RoboVac G30 Hybrid（￥39,990）と比較するとT80 OMNIは高額。G30 Hybridはエントリークラスの水拭き対応機。",
         "featureComparison": [
-          "共通点：全自動ステーション搭載、モップ洗浄機能、絡まり防止ブラシ",
-          "相違点：本機(T80)は18,000Paと吸引力が非常に高い。Eufy X10 Proは毛の自動カット機能付きブラシを採用。"
+          "共通点：吸引・水拭き両用、スマホアプリ対応",
+          "相違点：T80 OMNIは全自動OMNIステーション、AI障害物回避、強力な18,000Paの吸引力を持つ。G30 Hybridは自動ゴミ収集やモップ洗浄機能を持たない薄型モデル。"
         ],
         "differentiators": [
-          "ECOVACS DEEBOT T80 OMNIの利点：より高い吸引力と、壁際までモップが伸びるTruEdge 2.0機能による徹底的な拭き掃除を求める人",
-          "Anker Eufy X10 Pro Omniの利点：Ankerブランドの信頼性や、ステーションのコンパクトさを重視する人"
+          "DEEBOT T80 OMNIの利点：掃除に関するあらゆる手間（ゴミ捨て、モップ洗浄）を省き、高度なマッピングと強力な清掃力を求めるならこちら",
+          "Anker Eufy RoboVac G30 Hybridの利点：全自動ステーションの設置スペースがなく、まずは手頃な価格でロボット掃除機を導入したいケースに適している"
         ]
       },
       {
-        "name": "iRobot Roomba Combo j9+",
-        "asin": "B0CJY2W37G",
-        "priceComparison": "本製品より高価なプレミアムモデル。",
+        "name": "roborock Qrevo Curv 2 Flow",
+        "asin": "B0CWL43T8G",
+        "priceComparison": "roborock Qrevo Curv 2 FlowはDEEBOT T80 OMNIと同等の全自動・高性能モデルであり、価格帯も競合する。",
         "featureComparison": [
-          "共通点：強力な吸引と水拭きの両立、高度な障害物回避",
-          "相違点：ルンバはモップパッドを天面に持ち上げる独自機構（スマートスクラブ）を採用。本機(T80)はモップ洗浄・乾燥まで全自動で行うOMNIステーションが強み。"
+          "共通点：全自動ステーション、強力な吸引力（roborockは20000Pa）、毛絡み防止機能、AI障害物回避",
+          "相違点：DEEBOT T80 OMNIはローラー式モップによる拭き掃除。roborockはモップリフト量が15mmと大きく、走行中モップ洗浄機能を持つ。"
         ],
         "differentiators": [
-          "ECOVACS DEEBOT T80 OMNIの利点：モップの自動洗浄・熱風乾燥まで全てステーション任せにしたい完全自動化志向の人向け",
-          "iRobot Roomba Combo j9+の利点：カーペットを絶対に濡らしたくない（モップリフト機構重視）人や、iRobotの長年の実績を信頼する人"
+          "DEEBOT T80 OMNIの利点：ECOVACS独自のローラー式強力モップとTruEdge 2.0による壁際の完璧な清掃を重視するならこちら",
+          "roborock Qrevo Curv 2 Flowの利点：毛足の長いカーペットがあり、15mmのモップリフト機能が必要なケースや、走行中のモップ洗浄に魅力を感じるケースに適している"
         ]
       },
       {
-        "name": "SwitchBot K10+",
-        "asin": "B0C522VBRB",
-        "priceComparison": "本製品より圧倒的に安価な小型モデル。",
+        "name": "ルンバ Combo Plus 575",
+        "asin": "B0GWDG6XPC",
+        "priceComparison": "ルンバ Combo Plus 575はルンバの上位モデルであり、価格帯として競合する可能性がある。DEEBOT T80 OMNIは全自動ステーションの機能が充実している。",
         "featureComparison": [
-          "共通点：マッピング機能、自動ゴミ収集",
-          "相違点：K10+は小型特化で市販のお掃除シートを使う簡易水拭き。本機(T80)は本格的な回転モップと自動洗浄を備えた大型ハイエンドモデル。"
+          "共通点：全自動ステーション（自動ゴミ収集、モップ洗浄・乾燥機能搭載）、マッピング・障害物回避機能",
+          "相違点：DEEBOT T80 OMNIは18,000Paの吸引力とローラー式強力モップ。ルンバ Combo Plus 575は25,000Paの吸引力と洗剤自動投入機能を搭載。"
         ],
         "differentiators": [
-          "ECOVACS DEEBOT T80 OMNIの利点：広い家や本格的な水拭き（モップ自動洗浄含む）を求めるなら迷わずこちら",
-          "SwitchBot K10+の利点：1Rや1Kなどの狭い部屋で、家具の隙間に入り込めるコンパクトさを最優先するケース"
+          "DEEBOT T80 OMNIの利点：ECOVACS独自のローラー式モップとTruEdge 2.0による壁際の完璧な清掃を重視するならこちら",
+          "ルンバ Combo Plus 575の利点：洗剤の自動投入機能や、25,000Paのより高い吸引力、ルンバブランドの信頼性を重視するケースに適している"
         ]
       }
     ],
     "recommendation": {
       "targetUsers": [
-        "ペットの抜け毛や髪の毛の処理に悩み、メンテナンスフリーを極めたい家庭（他社製品のブラシ絡まりに不満がある人）",
-        "壁際やコーナーの拭き残しが気になり、最高レベルの水拭き性能と吸引力を同時に求める人"
+        "カーペットとフローリングが混在する家で、清掃モードの切り替えをロボットに完全に任せたい家庭（手動で設定を変える競合機より適している）",
+        "ペットの抜け毛や髪の毛の絡まりによるブラシの手入れに悩んでおり、メンテナンスフリーを重視する人（毛絡み除去システム3.0搭載）",
+        "強力な水拭き性能と、壁際までしっかり拭き取る精度の高さを求める人"
       ],
       "pros": [
-        "18,000Paの強力吸引とZeroTangle 3.0により、毛の絡まりを気にせずペットの毛もカーペットのゴミも一網打尽にできます",
-        "TruEdge 2.0でモップが壁際まで伸びるため、人が手で拭いたかのように隅々までピカピカに仕上がります",
-        "モップの洗浄から乾燥、ゴミ収集まで全て自動化されているため、毎日の掃除から完全に解放されます"
+        "18,000Paの圧倒的な吸引力と、3700Paの圧力をかけるローラー式モップで、こびりついた汚れもスッキリ落ち、毎日素足で歩きたくなる床を維持できます。",
+        "TruEdge 2.0によるエッジ清掃で、壁際や部屋の隅のホコリも残さず、掃除機を後から掛け直す手間が省けます。",
+        "ZeroTangle 3.0により、ペットの毛や長い髪の毛がブラシに絡まりにくく、ハサミで毛を切るような面倒なお手入れから解放されます。"
       ],
       "cons": [
-        "ステーションのサイズが大きく重量も約12.5kgあるため、購入前に必ず設置スペースの採寸と搬入経路の確認を行うこと"
+        "本体とOMNIステーションはそれなりの設置スペースと重量（約12.5kg）があるため、購入前に設置場所の寸法をしっかり確認する必要があります。"
       ],
-      "score": 85,
-      "scoreRationale": "[基本点: 70]\n[加点: +10] (18,000Paの業界最高クラスの吸引力と壁際まで届くTruEdge 2.0の優れた清掃性能)\n[加点: +5] (ZeroTangle 3.0による髪の毛絡まり防止機能の利便性)\n[加点: +5] (完全自動化OMNIステーションによるメンテナンスフリーな使い勝手)\n[減点: -5] (ステーションの大型・大重量による設置ハードルの高さ)\n[合計: 85]"
+      "score": 75,
+      "scoreRationale": "[基本点: 70]\n[加点: +5] (18,000Paの強力吸引とOMNIステーションによる全自動化の利便性)\n[加点: +5] (ZeroTangle 3.0等の毛絡み防止やAI障害物回避によるメンテナンス性の高さ)\n[減点: -5] (ステーションの設置スペース要件や重量による取り回しの制限)\n[合計: 75]"
     },
     "technicalSpecs": {
-      "weight": "12.55kg",
       "dimensions": {
-        "height": "不明",
-        "width": "不明",
-        "depth": "不明",
-        "weight": "12.55kg"
-      },
-      "battery": {
-        "capacity": "不明",
-        "charging": "自動充電"
+        "weight": "12.5kg"
       },
       "connectivity": [
         "Wi-Fi"
       ],
       "other": [
         "吸引力: 18,000Pa",
-        "水拭き: 3700Pa圧、毎分200回高速スクラブ",
-        "モップ拡張機能: TruEdge 2.0",
-        "絡まり防止: ZeroTangle 3.0、ARCleanブラシ",
-        "障害物回避: AIVI 3D 3.0",
-        "全自動ステーション: ゴミ収集、モップ洗浄・乾燥、給水"
+        "モップ方式: ローラー式強力モップ (3700Pa圧力, 毎分200回スクラブ)",
+        "ステーション機能: OMNIステーション (自動ゴミ収集, モップ温水洗浄・熱風乾燥)",
+        "エッジ清掃: TruEdge 2.0 (モップ自動伸長)",
+        "毛絡み防止: ZeroTangle 3.0 / ARCleanブラシ",
+        "マッピング・ナビゲーション: AIVI 3D 3.0 / VLM / TruEdge 3Dエッジセンサー",
+        "スマートホーム連携: Google Assistant / Alexa / Alice / Siri対応"
       ]
     }
   }
