@@ -144,12 +144,6 @@ for i in 1 2 3; do
         rm -f .git/index.lock
         exit 1
       fi
-      else
-        echo "Merge failed due to other conflicts or issues, aborting..."
-        git merge --abort || true
-        rm -f .git/index.lock
-        exit 1
-      fi
     fi
   fi
 done
