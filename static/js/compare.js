@@ -151,7 +151,7 @@
                 <div class="compare-tray-content">
                     <div class="compare-tray-header">
                         <span class="compare-tray-title">
-                            <span class="compare-tray-icon">⚖️</span>
+                            <span class="material-symbols-outlined compare-tray-icon" aria-hidden="true">balance</span>
                             <span class="compare-tray-label">商品比較</span>
                             <span id="compare-tray-count" class="compare-tray-count">0/3</span>
                         </span>
@@ -162,11 +162,11 @@
                         <button type="button" id="compare-tray-open" class="compare-tray-open-btn" aria-label="選択した商品を比較する">
                             <span>比較する</span>
                         </button>
-                        <button type="button" id="compare-tray-minimize" class="compare-tray-minimize-btn" title="トレイを最小化" aria-label="商品比較トレイを最小化">▾</button>
+                        <button type="button" id="compare-tray-minimize" class="compare-tray-minimize-btn" title="トレイを最小化" aria-label="商品比較トレイを最小化"><span class="material-symbols-outlined" aria-hidden="true" style="font-size: 1.25rem; line-height: 1;">expand_more</span></button>
                     </div>
                 </div>
                 <button type="button" id="compare-tray-badge" class="compare-tray-badge" aria-label="商品比較トレイを展開" title="商品比較を開く">
-                    <span class="compare-tray-badge-icon">⚖️</span>
+                    <span class="material-symbols-outlined compare-tray-badge-icon" aria-hidden="true">balance</span>
                     <span class="compare-tray-badge-text">比較</span>
                     <span id="compare-tray-badge-count" class="compare-tray-badge-count">0</span>
                 </button>
@@ -252,7 +252,7 @@
                         </div>
                         <span class="compare-tray-item-title">${escapeHtml(item.title)}</span>
                     </a>
-                    <button type="button" class="compare-tray-item-remove" data-asin="${escapeHtml(item.asin)}" aria-label="${escapeHtml(item.title)}を比較から削除" title="削除">✕</button>
+                    <button type="button" class="compare-tray-item-remove" data-asin="${escapeHtml(item.asin)}" aria-label="${escapeHtml(item.title)}を比較から削除" title="削除"><span class="material-symbols-outlined" aria-hidden="true" style="font-size: 0.9rem; line-height: 1;">close</span></button>
                 `;
                 itemsContainer.appendChild(thumb);
             });
@@ -336,11 +336,7 @@
             const labelEl = btn.querySelector('.compare-label');
             const iconEl = btn.querySelector('.compare-icon');
             if (iconEl) {
-                if (iconEl.classList.contains('material-symbols-outlined')) {
-                    iconEl.textContent = active ? 'check_circle' : 'balance';
-                } else {
-                    iconEl.textContent = active ? '✅' : '⚖️';
-                }
+                iconEl.textContent = active ? 'check_circle' : 'balance';
             }
             if (labelEl) {
                 labelEl.textContent = active ? '比較中' : '比較';
@@ -375,9 +371,9 @@
                 <div class="compare-modal-container">
                     <div class="compare-modal-header">
                         <h2 class="compare-modal-title">
-                            <span aria-hidden="true">⚖️</span> 商品スペック・価格横並び比較表
+                            <span class="material-symbols-outlined" aria-hidden="true" style="vertical-align: middle; margin-right: 0.25rem;">balance</span> 商品スペック・価格横並び比較表
                         </h2>
-                        <button type="button" id="compare-modal-close" class="compare-modal-close-btn" aria-label="比較モーダルを閉じる">✕</button>
+                        <button type="button" id="compare-modal-close" class="compare-modal-close-btn" aria-label="比較モーダルを閉じる"><span class="material-symbols-outlined" aria-hidden="true">close</span></button>
                     </div>
                     <div id="compare-modal-body" class="compare-modal-body"></div>
                 </div>
@@ -490,7 +486,7 @@
                     <div class="compare-product-card-top">
                         <div class="compare-col-remove-wrapper">
                             <button type="button" class="compare-col-remove" data-asin="${escapeHtml(item.asin)}" title="この商品を比較から外す" aria-label="${escapeHtml(item.title)}を比較から外す">
-                                <span class="compare-col-remove-icon" aria-hidden="true">✕</span>
+                                <span class="material-symbols-outlined compare-col-remove-icon" aria-hidden="true" style="font-size: 1rem; line-height: 1;">close</span>
                                 <span class="compare-col-remove-text">削除</span>
                             </button>
                         </div>

@@ -56,9 +56,9 @@
     <!-- Keyword Filter -->
     <div class="brand-filter-container">
         <div class="brand-search-wrapper">
-            <span class="brand-search-icon" aria-hidden="true">🔍</span>
+            <span class="material-symbols-outlined brand-search-icon" aria-hidden="true">search</span>
             <input type="text" id="brand-search-input" class="brand-search-input" placeholder="ブランド名で絞り込み..." aria-label="ブランド名で絞り込み">
-            <button type="button" id="brand-search-clear" class="brand-search-clear-btn" style="display: none;" title="検索をクリア" aria-label="検索をクリア">✕</button>
+            <button type="button" id="brand-search-clear" class="brand-search-clear-btn" style="display: none;" title="検索をクリア" aria-label="検索をクリア"><span class="material-symbols-outlined" style="font-size: 1rem; line-height: 1;">close</span></button>
         </div>
         <div id="brand-search-status" class="brand-search-status" style="display: none;">
             該当ブランド: <strong id="filtered-brand-count">0</strong> 件 / 全 {{ len $brandList }} 件

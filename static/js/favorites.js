@@ -141,9 +141,9 @@
 
         // アイコン
         const iconSpan = document.createElement('span');
-        iconSpan.className = 'favorite-toast-icon';
+        iconSpan.className = 'favorite-toast-icon material-symbols-outlined';
         iconSpan.setAttribute('aria-hidden', 'true');
-        iconSpan.textContent = actionType === 'add' ? '❤️' : '🤍';
+        iconSpan.textContent = actionType === 'add' ? 'favorite' : 'favorite_border';
         toast.appendChild(iconSpan);
 
         // メッセージ
@@ -168,7 +168,13 @@
         closeBtn.type = 'button';
         closeBtn.className = 'favorite-toast-close';
         closeBtn.setAttribute('aria-label', '通知を閉じる');
-        closeBtn.textContent = '✕';
+        const closeIcon = document.createElement('span');
+        closeIcon.className = 'material-symbols-outlined';
+        closeIcon.setAttribute('aria-hidden', 'true');
+        closeIcon.style.fontSize = '1.1rem';
+        closeIcon.style.lineHeight = '1';
+        closeIcon.textContent = 'close';
+        closeBtn.appendChild(closeIcon);
         closeBtn.addEventListener('click', function () {
             toast.classList.remove('is-visible');
             if (toastTimer) {
@@ -221,7 +227,10 @@
             const titlePrefix = btn.dataset.title ? `${btn.dataset.title}を` : '';
             btn.setAttribute('aria-label', active ? `${titlePrefix}お気に入りから削除` : `${titlePrefix}お気に入りに追加`);
             const icon = btn.querySelector('.fav-icon');
-            if (icon) icon.textContent = active ? '❤️' : '🤍';
+            if (icon) {
+                icon.classList.add('material-symbols-outlined');
+                icon.textContent = active ? 'favorite' : 'favorite_border';
+            }
             const label = btn.querySelector('.fav-label');
             if (label) {
                 const defaultText = '保存';

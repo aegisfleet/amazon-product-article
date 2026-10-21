@@ -67,7 +67,7 @@
         {{- /* Keepa Price History Graph */ -}}
         {{- if .Params.asin -}}
         <div id="keepa-graph-section" class="keepa-section" style="display: none;">
-            <h3 class="keepa-section-title">📈 価格推移（Keepa）</h3>
+            <h3 class="keepa-section-title"><span class="material-symbols-outlined" aria-hidden="true" style="vertical-align: middle;">show_chart</span> 価格推移（Keepa）</h3>
             <div class="keepa-graph-container">
                 <a href="https://keepa.com/#!product/5-{{ .Params.asin }}" target="_blank" rel="noopener noreferrer"
                     aria-label="Keepaで価格推移を見る (新しいタブで開く)" title="Keepaで価格推移を見る">
@@ -243,7 +243,7 @@
         {{- if .TableOfContents -}}
         <nav class="table-of-contents" id="toc" style="display: none;">
             <details open>
-                <summary>📑 目次</summary>
+                <summary><span class="material-symbols-outlined" aria-hidden="true" style="vertical-align: middle;">format_list_bulleted</span> 目次</summary>
                 {{ .TableOfContents }}
             </details>
         </nav>
@@ -565,7 +565,7 @@
     {{- if .TableOfContents -}}
     <aside class="article-sidebar" aria-label="記事の目次（サイドバー）">
         <div class="toc-sidebar-container">
-            <h3 class="toc-sidebar-title">📑 目次</h3>
+            <h3 class="toc-sidebar-title"><span class="material-symbols-outlined" aria-hidden="true" style="vertical-align: middle;">format_list_bulleted</span> 目次</h3>
             <div class="toc-sidebar-body" id="toc-sidebar-body">
                 <!-- TOC contents cloned by JS -->
             </div>
@@ -727,7 +727,7 @@
     <section class="related-articles-container"
         style="margin-top: var(--md-sys-spacing-12); padding-top: var(--md-sys-spacing-8); border-top: 1px solid var(--color-border);">
         <div class="header-content" style="margin-bottom: var(--md-sys-spacing-6);">
-            <h2 class="m3-typescale-headline-small">🔍 あわせて読みたい：{{ $category }}の調査結果</h2>
+            <h2 class="m3-typescale-headline-small"><span class="material-symbols-outlined" aria-hidden="true" style="vertical-align: middle;">search</span> あわせて読みたい：{{ $category }}の調査結果</h2>
         </div>
         <div class="card-grid">
             {{- range first 3 (shuffle $related) -}}
