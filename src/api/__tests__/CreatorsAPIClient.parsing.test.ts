@@ -325,4 +325,69 @@ describe('CreatorsAPIClient Parsing Tests', () => {
       expect(product.features).toEqual([]);
     });
   });
+
+  describe('availability parsing', () => {
+    it('should set availability to "現在在庫切れです。" when offersV2 is missing', () => {
+      const mockItem: any = {
+        asin: 'B0NOOFFERS1',
+        itemInfo: {
+          title: { displayValue: 'No Offer Product' },
+        },
+      };
+      const product = (client as any).parseProduct(mockItem as CreatorsAPIItem);
+      expect(product.availability).toBe('現在在庫切れです。');
+    });
+
+    it('should set availability to "現在在庫切れです。" when listings array is empty', () => {
+      const mockItem: any = {
+        asin: 'B0EMPTYLIST',
+        itemInfo: {
+          title: { displayValue: 'Empty Listings Product' },
+        },
+        offersV2: {
+          listings: [],
+        },
+      };
+      const product = (client as any).parseProduct(mockItem as CreatorsAPIItem);
+      expect(product.availability).toBe('現在在庫切れです。');
+    });
+
+    it('should set availability from listing when offer exists', () => {
+      const mockItem: any = {
+        asin: 'B0HASOFFER1',
+        itemInfo: {
+          title: { displayValue: 'In Stock Product' },
+        },
+        offersV2: {
+          listings: [
+            {
+              availability: {
+                message: '在庫あり。',
+              },
+            },
+          ],
+        },
+      };
+      const product = (client as any).parseProduct(mockItem as CreatorsAPIItem);
+      expect(product.availability).toBe('在庫あり。');
+    });
+
+    it('should set availability to undefined when offer exists but availability message is omitted', () => {
+      const mockItem: any = {
+        asin: 'B0HASOFFER2',
+        itemInfo: {
+          title: { displayValue: 'Offer Without Avail Product' },
+        },
+        offersV2: {
+          listings: [
+            {
+              merchantInfo: { name: 'Amazon.co.jp' },
+            },
+          ],
+        },
+      };
+      const product = (client as any).parseProduct(mockItem as CreatorsAPIItem);
+      expect(product.availability).toBeUndefined();
+    });
+  });
 });

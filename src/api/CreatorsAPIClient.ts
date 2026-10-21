@@ -742,6 +742,10 @@ export class CreatorsAPIClient {
       }
     }
 
+    const listings = item.offersV2?.listings;
+    const hasOffer = Array.isArray(listings) && listings.length > 0;
+    const availability = listing?.availability?.message ?? (hasOffer ? undefined : '現在在庫切れです。');
+
     const product: Product = {
       asin: item.asin,
       title: title,
@@ -755,7 +759,7 @@ export class CreatorsAPIClient {
         average: item.customerReviews?.starRating || 0,
         count: item.customerReviews?.count || 0,
       },
-      availability: listing?.availability?.message,
+      availability,
       isAmazonDirect: listing?.merchantInfo?.name === 'Amazon.co.jp',
       isAmazonHaul: listing?.merchantInfo?.name === 'Haul Global',
       isFurusato: isFurusato ? true : undefined,
