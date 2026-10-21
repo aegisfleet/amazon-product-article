@@ -1,7 +1,7 @@
 {{- if .TableOfContents -}}
 <!-- Floating Action Button for Mobile TOC -->
 <button id="toc-fab" class="toc-fab" aria-label="目次を開く" aria-expanded="false" aria-controls="toc-modal" type="button">
-    <span class="toc-fab-icon" aria-hidden="true">📑</span>
+    <span class="material-symbols-outlined toc-fab-icon" aria-hidden="true">format_list_bulleted</span>
     <span class="toc-fab-text">目次</span>
 </button>
 
@@ -10,7 +10,7 @@
     <div class="toc-modal-overlay" id="toc-modal-overlay"></div>
     <div class="toc-modal-content">
         <div class="toc-modal-header">
-            <h3 class="toc-modal-title">📑 目次</h3>
+            <h3 class="toc-modal-title"><span class="material-symbols-outlined" aria-hidden="true" style="vertical-align: middle;">format_list_bulleted</span> 目次</h3>
             <button type="button" id="toc-modal-close" class="toc-modal-close" aria-label="目次を閉じる">&times;</button>
         </div>
         <div class="toc-modal-body" id="toc-modal-body">

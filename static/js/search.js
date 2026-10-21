@@ -2098,9 +2098,9 @@ document.addEventListener('DOMContentLoaded', function () {
         }
 
         const favIcon = document.createElement('span');
-        favIcon.className = 'fav-icon';
+        favIcon.className = 'fav-icon material-symbols-outlined';
         favIcon.setAttribute('aria-hidden', 'true');
-        favIcon.textContent = isFav ? '❤️' : '🤍';
+        favIcon.textContent = isFav ? 'favorite' : 'favorite_border';
 
         const favLabel = document.createElement('span');
         favLabel.className = 'fav-label';
