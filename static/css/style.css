@@ -197,13 +197,13 @@ a:hover {
   border: none;
   cursor: pointer;
   padding: 0.4rem;
-  border-radius: var(--radius-md);
+  border-radius: 9999px;
   color: var(--color-text-main);
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 44px;
-  min-width: 44px;
+  min-height: 40px;
+  min-width: 40px;
   transition: var(--transition-base);
 }
 
@@ -323,11 +323,13 @@ a:hover {
   border: none;
   cursor: pointer;
   padding: 0.5rem;
-  border-radius: var(--radius-md);
+  border-radius: 9999px;
   color: var(--color-text-main);
   display: flex;
   align-items: center;
   justify-content: center;
+  min-height: 40px;
+  min-width: 40px;
   transition: var(--transition-base);
 }
 
@@ -340,26 +342,39 @@ a:hover {
 }
 
 .theme-toggle-icon {
-  font-size: 1.25rem;
-  line-height: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .theme-toggle-icon::before {
-  content: '🌙';
+  content: "dark_mode";
+  font-family: "Material Symbols Outlined";
+  font-weight: normal;
+  font-style: normal;
+  font-size: 1.3rem;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-smoothing: antialiased;
 }
 
 @media (prefers-color-scheme: dark) {
   html:not([data-theme="light"]) .theme-toggle-icon::before {
-    content: '🌞';
+    content: "light_mode";
   }
 }
 
 [data-theme="light"] .theme-toggle-icon::before {
-  content: '🌙';
+  content: "dark_mode";
 }
 
 [data-theme="dark"] .theme-toggle-icon::before {
-  content: '🌞';
+  content: "light_mode";
 }
 
 /* ドロワーメニュー内の拡張ボタンスタイル */
@@ -634,6 +649,16 @@ a:hover {
   border-color: var(--color-primary);
 }
 
+[data-theme="dark"] .card {
+  border-color: rgba(148, 163, 184, 0.18);
+  box-shadow: 0 4px 12px rgba(2, 6, 23, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.04);
+}
+
+[data-theme="dark"] .card:hover {
+  border-color: rgba(148, 163, 184, 0.32);
+  box-shadow: 0 8px 20px rgba(2, 6, 23, 0.48), inset 0 1px 0 rgba(255, 255, 255, 0.06);
+}
+
 @media (hover: hover) {
   .card:hover {
     transform: translateY(-4px);
@@ -845,8 +870,8 @@ a.hero-tag-brand:hover {
 }
 
 [data-theme="dark"] .card-meta-ext {
-  background: rgba(255, 255, 255, 0.03);
-  border-color: rgba(255, 255, 255, 0.1);
+  background: var(--md-sys-color-surface-container-low, #0F172A);
+  border-color: rgba(148, 163, 184, 0.14);
   box-shadow: none;
 }
 
@@ -935,11 +960,7 @@ a.hero-tag-brand:hover {
 }
 
 .badge-availability {
-  background: var(--badge-availability-bg);
-  color: var(--badge-availability-text);
-  padding: 0.15rem 0.5rem;
-  border-radius: var(--radius-sm);
-  border: 1px solid var(--badge-availability-border);
+  padding: 0.15rem 0.25rem;
   font-size: 0.75rem;
   font-weight: 600;
   display: inline-flex;
@@ -947,13 +968,50 @@ a.hero-tag-brand:hover {
   gap: var(--spacing-xs);
 }
 
-.badge-availability::before {
-  content: "✅";
-  font-size: 0.9em;
+/* 通常在庫は背景なしのスッキリしたインジケーターに */
+.badge-availability:not(.badge-out-of-stock),
+.m3-badge.badge-availability:not(.badge-out-of-stock) {
+  background: transparent;
+  background-color: transparent;
+  border: none;
+  box-shadow: none;
+  color: #059669;
+  font-weight: 600;
+  padding: 0.15rem 0.25rem;
+}
+
+.badge-availability:not(.badge-out-of-stock)::before,
+.m3-badge.badge-availability:not(.badge-out-of-stock)::before {
+  content: "●";
+  font-size: 0.55em;
+  color: #10b981;
+  line-height: 1;
+  margin-right: 0.25rem;
+  vertical-align: 1px;
+}
+
+[data-theme="dark"] .badge-availability:not(.badge-out-of-stock),
+[data-theme="dark"] .m3-badge.badge-availability:not(.badge-out-of-stock) {
+  color: #34d399;
+}
+
+[data-theme="dark"] .badge-availability:not(.badge-out-of-stock)::before,
+[data-theme="dark"] .m3-badge.badge-availability:not(.badge-out-of-stock)::before {
+  color: #34d399;
+}
+
+/* 在庫切れ時はアラートバッジとして強調 */
+.badge-availability.badge-out-of-stock {
+  background: var(--badge-availability-bg);
+  color: var(--badge-availability-text);
+  border: 1px solid var(--badge-availability-border);
+  border-radius: var(--radius-sm);
+  padding: 0.15rem 0.5rem;
 }
 
 .badge-availability.badge-out-of-stock::before {
   content: "⚠️";
+  font-size: 0.9em;
 }
 
 .card.is-out-of-stock,
@@ -1161,13 +1219,20 @@ a.hero-tag-brand:hover {
 }
 
 .card-price {
-  font-size: 1.2rem;
+  font-size: 1.25rem;
   font-weight: 800;
   color: var(--color-text-main);
   line-height: 1.25;
   display: inline-flex;
   align-items: baseline;
   gap: 0.25rem;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.02em;
+}
+
+.card-price .icon-price {
+  font-size: 1.05rem;
+  opacity: 0.72;
 }
 
 .card-points {
@@ -2613,17 +2678,17 @@ a.competitor-link:hover,
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 0.25rem;
-  background: linear-gradient(135deg, #c2410c, #9a3412);
-  color: #fff;
-  padding: 0.5rem 0.25rem;
-  border: 1px solid #9a3412;
-  border-radius: var(--radius-md);
+  gap: 0.35rem;
+  background: var(--color-bg-card);
+  color: var(--color-text-main);
+  padding: 0.5rem 0.5rem;
+  border: 1px solid rgba(234, 88, 12, 0.3);
+  border-radius: 9999px;
   font-weight: 600;
   font-size: 0.8125rem;
   text-decoration: none;
   white-space: nowrap;
-  box-shadow: 0 2px 8px rgba(194, 65, 12, 0.25);
+  box-shadow: var(--shadow-sm);
   transition: all 0.2s ease;
   position: relative;
   overflow: hidden;
@@ -2642,14 +2707,15 @@ a.competitor-link:hover,
 
 .today-recommendation-link:visited,
 .today-recommendation-link:active {
-  color: #fff;
+  color: var(--color-text-main);
 }
 
 .today-recommendation-link:hover {
-  background: linear-gradient(135deg, #9a3412, #7c2d12);
-  color: #fff;
+  background: #fff7ed;
+  border-color: #ea580c;
+  color: #c2410c;
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(154, 52, 18, 0.35);
+  box-shadow: 0 4px 12px rgba(234, 88, 12, 0.14);
   cursor: pointer;
 }
 
@@ -2659,20 +2725,21 @@ a.competitor-link:hover,
 }
 
 [data-theme="dark"] .today-recommendation-link {
-  background: linear-gradient(135deg, #c2410c, #9a3412);
-  border-color: #ea580c;
-  color: #fff;
-  box-shadow: 0 2px 8px rgba(194, 65, 12, 0.2);
+  background: var(--color-bg-card);
+  border-color: rgba(251, 146, 60, 0.32);
+  color: var(--color-text-main);
+  box-shadow: var(--shadow-sm);
 }
 
 [data-theme="dark"] .today-recommendation-link:hover {
-  background: linear-gradient(135deg, #9a3412, #7c2d12);
-  color: #fff;
+  background: rgba(234, 88, 12, 0.18);
+  border-color: #fb923c;
+  color: #fdba74;
 }
 
 [data-theme="dark"] .today-recommendation-link:visited,
 [data-theme="dark"] .today-recommendation-link:active {
-  color: #fff;
+  color: var(--color-text-main);
 }
 
 .today-recommendation-icon {
@@ -5442,17 +5509,17 @@ body.is-scrolling-down .nav-menu-floating-toggle:focus-visible {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 0.25rem;
-  background: linear-gradient(135deg, #047857, #03543f);
-  color: #fff;
-  padding: 0.5rem 0.25rem;
-  border: 1px solid #03543f;
-  border-radius: var(--radius-md);
+  gap: 0.35rem;
+  background: var(--color-bg-card);
+  color: var(--color-text-main);
+  padding: 0.5rem 0.5rem;
+  border: 1px solid rgba(5, 150, 105, 0.3);
+  border-radius: 9999px;
   font-weight: 600;
   font-size: 0.8125rem;
   text-decoration: none;
   white-space: nowrap;
-  box-shadow: 0 2px 8px rgba(5, 150, 105, 0.25);
+  box-shadow: var(--shadow-sm);
   transition: all 0.2s ease;
   position: relative;
   overflow: hidden;
@@ -5470,15 +5537,16 @@ body.is-scrolling-down .nav-menu-floating-toggle:focus-visible {
 }
 
 .bargain-link:hover {
-  background: linear-gradient(135deg, #03543f, #022e22);
-  color: #fff;
+  background: #ecfdf5;
+  border-color: #059669;
+  color: #047857;
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(5, 150, 105, 0.35);
+  box-shadow: 0 4px 12px rgba(5, 150, 105, 0.14);
 }
 
 .bargain-link:visited,
 .bargain-link:active {
-  color: #fff;
+  color: var(--color-text-main);
 }
 
 .bargain-link:focus-visible {
@@ -5487,19 +5555,21 @@ body.is-scrolling-down .nav-menu-floating-toggle:focus-visible {
 }
 
 [data-theme="dark"] .bargain-link {
-  background: linear-gradient(135deg, #047857, #065f46);
-  border-color: #10b981;
-  box-shadow: 0 2px 8px rgba(16, 185, 129, 0.2);
+  background: var(--color-bg-card);
+  border-color: rgba(52, 211, 153, 0.32);
+  color: var(--color-text-main);
+  box-shadow: var(--shadow-sm);
 }
 
 [data-theme="dark"] .bargain-link:hover {
-  background: linear-gradient(135deg, #047857, #03543f);
-  color: #fff;
+  background: rgba(5, 150, 105, 0.18);
+  border-color: #34d399;
+  color: #6ee7b7;
 }
 
 [data-theme="dark"] .bargain-link:visited,
 [data-theme="dark"] .bargain-link:active {
-  color: #fff;
+  color: var(--color-text-main);
 }
 
 .bargain-link-icon {
@@ -5518,17 +5588,17 @@ body.is-scrolling-down .nav-menu-floating-toggle:focus-visible {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 0.25rem;
-  background: linear-gradient(135deg, #dc2626, #c2410c);
-  color: #fff;
-  padding: 0.5rem 0.25rem;
-  border: 1px solid #b91c1c;
-  border-radius: var(--radius-md);
+  gap: 0.35rem;
+  background: var(--color-bg-card);
+  color: var(--color-text-main);
+  padding: 0.5rem 0.5rem;
+  border: 1px solid rgba(220, 38, 38, 0.3);
+  border-radius: 9999px;
   font-weight: 600;
   font-size: 0.8125rem;
   text-decoration: none;
   white-space: nowrap;
-  box-shadow: 0 2px 8px rgba(220, 38, 38, 0.25);
+  box-shadow: var(--shadow-sm);
   transition: all 0.2s ease;
   position: relative;
   overflow: hidden;
@@ -5546,15 +5616,16 @@ body.is-scrolling-down .nav-menu-floating-toggle:focus-visible {
 }
 
 .deals-link:hover {
-  background: linear-gradient(135deg, #b91c1c, #9a3412);
-  color: #fff;
+  background: #fef2f2;
+  border-color: #dc2626;
+  color: #b91c1c;
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(185, 28, 28, 0.35);
+  box-shadow: 0 4px 12px rgba(220, 38, 38, 0.14);
 }
 
 .deals-link:visited,
 .deals-link:active {
-  color: #fff;
+  color: var(--color-text-main);
 }
 
 .deals-link:focus-visible {
@@ -5563,19 +5634,21 @@ body.is-scrolling-down .nav-menu-floating-toggle:focus-visible {
 }
 
 [data-theme="dark"] .deals-link {
-  background: linear-gradient(135deg, #dc2626, #b91c1c);
-  border-color: #ef4444;
-  box-shadow: 0 2px 8px rgba(239, 68, 68, 0.2);
+  background: var(--color-bg-card);
+  border-color: rgba(248, 113, 113, 0.32);
+  color: var(--color-text-main);
+  box-shadow: var(--shadow-sm);
 }
 
 [data-theme="dark"] .deals-link:hover {
-  background: linear-gradient(135deg, #b91c1c, #991b1b);
-  color: #fff;
+  background: rgba(220, 38, 38, 0.18);
+  border-color: #f87171;
+  color: #fca5a5;
 }
 
 [data-theme="dark"] .deals-link:visited,
 [data-theme="dark"] .deals-link:active {
-  color: #fff;
+  color: var(--color-text-main);
 }
 
 .deals-link-icon {
@@ -5594,17 +5667,17 @@ body.is-scrolling-down .nav-menu-floating-toggle:focus-visible {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 0.25rem;
-  background: linear-gradient(135deg, #4f46e5, #6366f1);
-  color: #fff;
-  padding: 0.5rem 0.25rem;
-  border: 1px solid #4338ca;
-  border-radius: var(--radius-md);
+  gap: 0.35rem;
+  background: var(--color-bg-card);
+  color: var(--color-text-main);
+  padding: 0.5rem 0.5rem;
+  border: 1px solid rgba(79, 70, 229, 0.3);
+  border-radius: 9999px;
   font-weight: 600;
   font-size: 0.8125rem;
   text-decoration: none;
   white-space: nowrap;
-  box-shadow: 0 2px 8px rgba(79, 70, 229, 0.25);
+  box-shadow: var(--shadow-sm);
   transition: all 0.2s ease;
   position: relative;
   overflow: hidden;
@@ -5622,15 +5695,16 @@ body.is-scrolling-down .nav-menu-floating-toggle:focus-visible {
 }
 
 .request-link:hover {
-  background: linear-gradient(135deg, #4338ca, #4f46e5);
-  color: #fff;
+  background: #eef2ff;
+  border-color: #4f46e5;
+  color: #4338ca;
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(79, 70, 229, 0.35);
+  box-shadow: 0 4px 12px rgba(79, 70, 229, 0.14);
 }
 
 .request-link:visited,
 .request-link:active {
-  color: #fff;
+  color: var(--color-text-main);
 }
 
 .request-link:focus-visible {
@@ -5650,19 +5724,21 @@ body.is-scrolling-down .nav-menu-floating-toggle:focus-visible {
 }
 
 [data-theme="dark"] .request-link {
-  background: linear-gradient(135deg, #4338ca, #3730a3);
-  border-color: #6366f1;
-  box-shadow: 0 2px 8px rgba(99, 102, 241, 0.2);
+  background: var(--color-bg-card);
+  border-color: rgba(129, 140, 248, 0.32);
+  color: var(--color-text-main);
+  box-shadow: var(--shadow-sm);
 }
 
 [data-theme="dark"] .request-link:hover {
-  background: linear-gradient(135deg, #3730a3, #312e81);
-  color: #fff;
+  background: rgba(79, 70, 229, 0.18);
+  border-color: #818cf8;
+  color: #a5b4fc;
 }
 
 [data-theme="dark"] .request-link:visited,
 [data-theme="dark"] .request-link:active {
-  color: #fff;
+  color: var(--color-text-main);
 }
 
 /* --- Bargain Hero --- */
@@ -6716,7 +6792,7 @@ body.is-scrolling-down .nav-menu-floating-toggle:focus-visible {
   justify-content: center;
   width: 2.5rem;
   height: 2.5rem;
-  border-radius: var(--radius-md);
+  border-radius: 9999px;
   color: var(--color-text-main);
   text-decoration: none;
   transition: var(--transition-base);
@@ -7765,8 +7841,8 @@ body.menu-open .nav-menu-floating-toggle {
   align-items: center;
   justify-content: center;
   gap: 0.375rem;
-  height: 34px;
-  min-height: 34px;
+  height: 38px;
+  min-height: 38px;
   padding: 0 0.5rem;
   font-size: 0.8125rem;
   font-weight: 600;
@@ -7802,8 +7878,8 @@ body.menu-open .nav-menu-floating-toggle {
   align-items: center;
   gap: 0.35rem;
   margin-top: 0;
-  height: 36px;
-  min-height: 36px;
+  height: 38px;
+  min-height: 38px;
   cursor: default;
 }
 
@@ -7814,8 +7890,8 @@ body.menu-open .nav-menu-floating-toggle {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  height: 36px;
-  min-height: 36px;
+  height: 38px;
+  min-height: 38px;
   padding: 0 0.5rem;
   font-size: 0.84375rem;
   font-weight: 700;
@@ -9905,7 +9981,8 @@ legend.font-size-label {
 .btn-shop--card {
   flex: 1;
   min-width: 0;
-  min-height: 40px;
+  height: 38px;
+  min-height: 38px;
   padding: 0.45rem 0.5rem;
   font-size: 0.82rem;
   font-weight: 700;
@@ -9924,12 +10001,85 @@ legend.font-size-label {
   width: 16px;
   height: 16px;
   font-size: 0.65rem;
+  border-radius: 4px;
+}
+
+/* カード内の楽天・Yahoo!ボタンを上品なサブCTA化 */
+.btn-shop--card.btn-shop-rakuten,
+.btn-shop--card.btn-shop-yahoo {
+  background: var(--md-sys-color-surface-container-low, #f8fafc);
+  color: var(--color-text-main);
+  border: 1px solid var(--md-sys-color-outline-variant, #e2e8f0);
+  box-shadow: none;
+  font-weight: 600;
+  transition:
+    background-color 0.2s cubic-bezier(0.2, 0, 0, 1),
+    border-color 0.2s cubic-bezier(0.2, 0, 0, 1),
+    color 0.2s cubic-bezier(0.2, 0, 0, 1),
+    transform 0.2s cubic-bezier(0.2, 0, 0, 1),
+    box-shadow 0.2s cubic-bezier(0.2, 0, 0, 1);
+}
+
+.btn-shop--card.btn-shop-rakuten .btn-shop-badge-icon {
+  background: #bf0000;
+  color: #ffffff;
+}
+
+.btn-shop--card.btn-shop-yahoo .btn-shop-badge-icon {
+  background: #0075c2;
+  color: #ffffff;
+}
+
+.btn-shop--card.btn-shop-rakuten:hover {
+  background: rgba(191, 0, 0, 0.06);
+  border-color: #bf0000;
+  color: #bf0000;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 6px rgba(191, 0, 0, 0.12);
+}
+
+.btn-shop--card.btn-shop-yahoo:hover {
+  background: rgba(0, 117, 194, 0.06);
+  border-color: #0075c2;
+  color: #0075c2;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 6px rgba(0, 117, 194, 0.12);
+}
+
+[data-theme="dark"] .btn-shop--card.btn-shop-rakuten,
+[data-theme="dark"] .btn-shop--card.btn-shop-yahoo {
+  background: rgba(15, 23, 42, 0.6);
+  color: var(--color-text-main);
+  border-color: rgba(148, 163, 184, 0.24);
+}
+
+[data-theme="dark"] .btn-shop--card.btn-shop-rakuten .btn-shop-badge-icon {
+  background: rgba(248, 113, 113, 0.18);
+  color: #fca5a5;
+}
+
+[data-theme="dark"] .btn-shop--card.btn-shop-yahoo .btn-shop-badge-icon {
+  background: rgba(56, 189, 248, 0.18);
+  color: #7dd3fc;
+}
+
+[data-theme="dark"] .btn-shop--card.btn-shop-rakuten:hover {
+  background: rgba(191, 0, 0, 0.22);
+  border-color: rgba(248, 113, 113, 0.5);
+  color: #fecaca;
+}
+
+[data-theme="dark"] .btn-shop--card.btn-shop-yahoo:hover {
+  background: rgba(0, 117, 194, 0.22);
+  border-color: rgba(56, 189, 248, 0.5);
+  color: #bae6fd;
 }
 
 @media (max-width: 480px) {
   .btn-shop--card {
     padding: 0.4rem 0.25rem;
     font-size: 0.78rem;
+    height: 38px;
     min-height: 38px;
     gap: 3px;
   }
@@ -9939,4 +10089,16 @@ legend.font-size-label {
     height: 14px;
     font-size: 0.6rem;
   }
+}
+
+/* Material Symbols in Nav Drawer */
+.nav-drawer-icon.material-symbols-outlined {
+  font-size: 1.25rem;
+  line-height: 1;
+  color: var(--color-text-muted);
+  transition: color 0.2s ease;
+}
+
+.nav-drawer-item:hover .nav-drawer-icon.material-symbols-outlined {
+  color: var(--color-primary);
 }
