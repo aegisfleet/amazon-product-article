@@ -54,6 +54,7 @@
 <link rel="stylesheet" href="{{ `css/variables.css` | relURL }}">
 <link rel="stylesheet" href="{{ `css/style.css` | relURL }}">
 <link rel="stylesheet" href="{{ `css/search.css` | relURL }}">
+<link rel="stylesheet" href="{{ `css/design-refinements.css` | relURL }}">
 
 <script>
   (() => {
@@ -206,7 +207,7 @@
   {{- $ratingValue := 0.0 -}}
   {{- if gt $score 0 -}}
     {{- $ratingValue = div (float $score) 20.0 -}}
-  {{- end -}}
+  -}}
   {{- $productDict := dict
     "@context" "https://schema.org"
     "@type" "Product"
@@ -233,4 +234,4 @@
     {{- $productDict = merge $productDict (dict "aggregateRating" $ratingDict) -}}
   {{- end -}}
 <script type="application/ld+json">{{- $productDict | jsonify | safeJS -}}</script>
-{{- end -}}
+{{- end -}}
