@@ -2746,9 +2746,9 @@ a.competitor-link:hover,
 }
 
 [data-theme="dark"] .today-recommendation-link:hover {
-  background: rgba(234, 88, 12, 0.18);
+  background: #332120;
   border-color: #fb923c;
-  color: #fdba74;
+  color: #ffedd5;
 }
 
 [data-theme="dark"] .today-recommendation-link:visited,
@@ -5637,9 +5637,9 @@ body.is-scrolling-down .nav-menu-floating-toggle:focus-visible {
 }
 
 [data-theme="dark"] .bargain-link:hover {
-  background: rgba(5, 150, 105, 0.18);
+  background: #15332b;
   border-color: #34d399;
-  color: #6ee7b7;
+  color: #d1fae5;
 }
 
 [data-theme="dark"] .bargain-link:visited,
@@ -5716,9 +5716,9 @@ body.is-scrolling-down .nav-menu-floating-toggle:focus-visible {
 }
 
 [data-theme="dark"] .deals-link:hover {
-  background: rgba(220, 38, 38, 0.18);
+  background: #361e22;
   border-color: #f87171;
-  color: #fca5a5;
+  color: #fee2e2;
 }
 
 [data-theme="dark"] .deals-link:visited,
@@ -5806,9 +5806,9 @@ body.is-scrolling-down .nav-menu-floating-toggle:focus-visible {
 }
 
 [data-theme="dark"] .request-link:hover {
-  background: rgba(79, 70, 229, 0.18);
+  background: #232240;
   border-color: #818cf8;
-  color: #a5b4fc;
+  color: #e0e7ff;
 }
 
 [data-theme="dark"] .request-link:visited,
@@ -10027,26 +10027,26 @@ legend.font-size-label {
 }
 
 [data-theme="dark"] .btn-shop-rakuten .btn-shop-badge-icon {
-  background: rgba(248, 113, 113, 0.18);
-  color: #fca5a5;
+  background: #3f191f;
+  color: #fee2e2;
 }
 
 [data-theme="dark"] .btn-shop-yahoo .btn-shop-badge-icon {
-  background: rgba(56, 189, 248, 0.18);
-  color: #7dd3fc;
+  background: #0c2b45;
+  color: #e0f2fe;
 }
 
 [data-theme="dark"] .btn-shop-rakuten:hover {
-  background: rgba(191, 0, 0, 0.22);
+  background: #3b1c20;
   border-color: rgba(248, 113, 113, 0.5);
-  color: #fecaca;
+  color: #fee2e2;
   box-shadow: 0 3px 8px rgba(248, 113, 113, 0.2);
 }
 
 [data-theme="dark"] .btn-shop-yahoo:hover {
-  background: rgba(0, 117, 194, 0.22);
+  background: #15344f;
   border-color: rgba(56, 189, 248, 0.5);
-  color: #bae6fd;
+  color: #e0f2fe;
   box-shadow: 0 3px 8px rgba(56, 189, 248, 0.2);
 }
 
