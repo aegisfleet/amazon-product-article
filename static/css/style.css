@@ -353,7 +353,7 @@ a:hover {
 
 .theme-toggle-icon::before {
   content: "dark_mode";
-  font-family: "Material Symbols Outlined";
+  font-family: "Material Symbols Outlined", sans-serif;
   font-weight: normal;
   font-style: normal;
   font-size: 1.3rem;
@@ -9966,7 +9966,7 @@ legend.font-size-label {
 }
 
 .btn-shop-rakuten:hover {
-  background: rgba(191, 0, 0, 0.06);
+  background: #fdf2f2;
   border-color: #bf0000;
   color: #bf0000;
   transform: translateY(-2px);
@@ -9974,11 +9974,11 @@ legend.font-size-label {
 }
 
 .btn-shop-yahoo:hover {
-  background: rgba(0, 117, 194, 0.06);
-  border-color: #0075c2;
-  color: #0075c2;
+  background: #f0f7fb;
+  border-color: #005fa3;
+  color: #005fa3;
   transform: translateY(-2px);
-  box-shadow: 0 3px 8px rgba(0, 117, 194, 0.14);
+  box-shadow: 0 3px 8px rgba(0, 95, 163, 0.14);
 }
 
 .btn-shop:active {
