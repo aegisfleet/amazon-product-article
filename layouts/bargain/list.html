@@ -74,14 +74,13 @@
                     <button type="button" id="bargain-category-reset-btn" class="bargain-category-reset-btn"
                         title="カテゴリ選択を解除" aria-label="カテゴリ選択を解除" disabled hidden>✕</button>
                 </div>
-            </div>
-
-            <div class="bargain-filter-group" style="align-self: flex-end;">
-                <label class="filter-checkbox-label" for="bargain-in-stock-filter">
-                    <input type="checkbox" id="bargain-in-stock-filter" class="filter-checkbox" checked>
-                    <span class="material-symbols-outlined bargain-filter-icon" aria-hidden="true" style="font-size: 1.1rem; vertical-align: middle;">inventory_2</span>
-                    在庫ありのみ
-                </label>
+                <div style="margin-top: var(--spacing-xs); display: flex; align-items: center;">
+                    <label class="filter-checkbox-label" for="bargain-in-stock-filter" style="cursor: pointer; display: inline-flex; align-items: center; gap: var(--spacing-xs); font-size: 0.9rem; font-weight: 600;">
+                        <input type="checkbox" id="bargain-in-stock-filter" class="filter-checkbox" checked style="accent-color: var(--color-primary); width: 16px; height: 16px;">
+                        <span class="material-symbols-outlined bargain-filter-icon" aria-hidden="true" style="font-size: 1.1rem; vertical-align: middle;">inventory_2</span>
+                        在庫ありのみ
+                    </label>
+                </div>
             </div>
 
             <div class="bargain-filter-group">
